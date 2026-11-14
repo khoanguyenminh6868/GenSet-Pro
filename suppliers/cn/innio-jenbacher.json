@@ -57,6 +57,167 @@
         1,
         2
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Jenbacher J208",
+      "fuel": "gas",
+      "engineMakes": [
+        "Jenbacher"
+      ],
+      "engineModels": [
+        "J208"
+      ],
+      "power": {
+        "min": 361,
+        "max": 361,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Jenbacher J312",
+      "fuel": "gas",
+      "engineMakes": [
+        "Jenbacher"
+      ],
+      "engineModels": [
+        "J312"
+      ],
+      "power": {
+        "min": 635,
+        "max": 635,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Jenbacher J412",
+      "fuel": "gas",
+      "engineMakes": [
+        "Jenbacher"
+      ],
+      "engineModels": [
+        "J412"
+      ],
+      "power": {
+        "min": 902,
+        "max": 902,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Jenbacher J316",
+      "fuel": "gas",
+      "engineMakes": [
+        "Jenbacher"
+      ],
+      "engineModels": [
+        "J316"
+      ],
+      "power": {
+        "min": 850,
+        "max": 850,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Jenbacher J320",
+      "fuel": "gas",
+      "engineMakes": [
+        "Jenbacher"
+      ],
+      "engineModels": [
+        "J320"
+      ],
+      "power": {
+        "min": 1150,
+        "max": 1150,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Jenbacher J416",
+      "fuel": "gas",
+      "engineMakes": [
+        "Jenbacher"
+      ],
+      "engineModels": [
+        "J416"
+      ],
+      "power": {
+        "min": 1200,
+        "max": 1200,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Jenbacher J420",
+      "fuel": "gas",
+      "engineMakes": [
+        "Jenbacher"
+      ],
+      "engineModels": [
+        "J420"
+      ],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
     }
   ],
   "certifications": [],
@@ -84,9 +245,304 @@
         "Containerized solutions for Type 2, 3 and 4 (249 – 1562 kW)"
       ],
       "file": "sources/innio-jenbacher/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://innio.com/images/medias/files/163/ijb_ets_t3_a4_en_2025_screen_ijb-125003-en.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "This engine type stands out in its 400 to 1,100 kW power",
+        "J312               635    664               43.1                    45.0       88.1           -                     -             -                 -     -"
+      ],
+      "file": "sources/innio-jenbacher/2001.md",
+      "official": false
+    },
+    {
+      "n": 2002,
+      "url": "https://innio.com/images/medias/files/161/ijb_ets_t2_a4_en_2025_screen_ijb-125002-en.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Introduced in 1976 and continuously improved, the Jenbacher Type 2",
+        "J208               361  325           41.8                          37.7        79.5           360                  366    40.5               41.2      81.7"
+      ],
+      "file": "sources/innio-jenbacher/2002.md",
+      "official": false
+    },
+    {
+      "n": 2003,
+      "url": "https://innio.com/images/medias/files/164/ijb_ets_t4_a4_en_2025_screen_ijb-125004-en.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Jenbacher Type 4 engines in the 800 to 1,560 kW power range are",
+        "J412  902            928    43.4        44.6      88.0            853          960     41.7   46.9          88.6             630    618    42.8  41.9                      84.7"
+      ],
+      "file": "sources/innio-jenbacher/2003.md",
+      "official": false
+    },
+    {
+      "n": 2004,
+      "url": "https://www.jenbacher.com/en/gas-engines/type-3/j316/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Jenbacher J316",
+        "up to 850 kW",
+        "J316 | 700kW-800kW Gas Engine | Products | Jenbacher"
+      ],
+      "file": "sources/innio-jenbacher/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://www.jenbacher.com/en/gas-engines/type-3/j320/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Jenbacher J320",
+        "up to 1,150 kW",
+        "J320 | 1000kW-1150kW Gas Engine | Products | Jenbacher"
+      ],
+      "file": "sources/innio-jenbacher/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://www.jenbacher.com/en/gas-engines/type-4/j416/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Jenbacher J416",
+        "up to 1,248 kW",
+        "J416 | 1200kW Gas Engine | Products | Jenbacher"
+      ],
+      "file": "sources/innio-jenbacher/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://www.jenbacher.com/en/gas-engines/type-4/j420/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Jenbacher J420 D/E",
+        "up to 1,562 kW",
+        "J420 | 1500kW Gas Engine | Products | Jenbacher"
+      ],
+      "file": "sources/innio-jenbacher/2007.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Jenbacher J312 – khí tự nhiên, Pel/Pth 50 Hz & 60 Hz",
+      "header": [
+        "Natural gas                                        1,500      1/min | 50    Hz                                                               1,800  1/min /   60  Hz",
+        "NOx<              Type        Pel (kW)2     Pth (kW)3         ηel (%)2      ηth (%)3             ηtot (%)  Pel (kW)2           Pth (kW)3            ηel (%)2      ηth (%)3  ηtot (%)"
+      ],
+      "rows": [
+        "J312               635    664               43.1                    45.0       88.1           -                     -             -                 -     -",
+        "J312               635    682               42.6                    45.7       88.3           635                   813           39.1              50.0  89.1",
+        "J312               635    684               42.2                    45.4       87.7           635                   847           38.1              50.7  88.8"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Jenbacher J316 – khí tự nhiên, Pel/Pth 50 Hz & 60 Hz",
+      "header": [
+        "Natural gas                                        1,500      1/min | 50    Hz                                                               1,800  1/min /   60  Hz",
+        "NOx<              Type        Pel (kW)2     Pth (kW)3         ηel (%)2      ηth (%)3             ηtot (%)  Pel (kW)2           Pth (kW)3            ηel (%)2      ηth (%)3  ηtot (%)"
+      ],
+      "rows": [
+        "500 mg/m3N        J316               850    926               42.6                    46.3       88.9           849                   1,084         39.2              50.0  89.2",
+        "250 mg/m3N        J316               850    929               42.2                    46.0       88.2           849                   1,129         38.1              50.7  88.9"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Jenbacher J320 – khí tự nhiên, Pel/Pth 50 Hz & 60 Hz",
+      "header": [
+        "Natural gas                                        1,500      1/min | 50    Hz                                                               1,800  1/min /   60  Hz",
+        "NOx<              Type        Pel (kW)2     Pth (kW)3         ηel (%)2      ηth (%)3             ηtot (%)  Pel (kW)2           Pth (kW)3            ηel (%)2      ηth (%)3  ηtot (%)"
+      ],
+      "rows": [
+        "J320               850    901               43.0                    45.6       88.7           -                     -             -                 -     -",
+        "J320               1,066  1,157             42.7                    46.3       89.0           1,062                 1,361         39.2              50.2  89.4",
+        "J320               1,066  1,161             42.3                    46.1       88.4           1,062                 1,399         38.2              50.3  88.5"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Jenbacher Type 3 – động cơ",
+      "header": [
+        "Engine type                                             J312        J316              J320       Cogeneration system                  J316                                     11,200"
+      ],
+      "rows": [
+        "No. of cylinders                                        12              16                  20                                        J320                                     14,400",
+        "Total displacement (lit)                                29.2        38.9              48.7"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Jenbacher J208 – khí tự nhiên, Pel/Pth 50 Hz & 60 Hz",
+      "header": [
+        "Natural gas                                    1,500    1/min | 50  Hz                                                                     1,800 1/min | 60 Hz",
+        "NOx<              Type        Pel (kW)2   Pth (kW)3     ηel (%)2    ηth (%)3                      ηtot (%)  Pel (kW)2          Pth (kW)3     ηel (%)2           ηth (%)3  ηtot (%)"
+      ],
+      "rows": [
+        "500 mg/m3N        J208               324  371           40.8                          46.6        87.4           -                    -      -                  -         -",
+        "J208               361  325           41.8                          37.7        79.5           360                  366    40.5               41.2      81.7",
+        "250 mg/m3N        J208               324  383           40.2                          47.5        87.7           360                  373    39.7               41.2      80.9",
+        "J208               361  331           41.0                          37.7        78.7           -                    -      -                  -         -"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Jenbacher Type 2 – động cơ",
+      "header": [
+        "Engine type                                                                           J208"
+      ],
+      "rows": [
+        "No. of cylinders                                                                            8",
+        "Total displacement (lit)                                                                    16.6"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "Jenbacher J412 – khí tự nhiên, Pel/Pth 50 Hz & 60 Hz",
+      "header": [
+        "Natural gas                          1,500 1/min | 50 Hz                                       1,800 1/min | 60 Hz                                  1,200 1/min | 60 Hz",
+        "NOx<            Type  Pel (kW)2      Pth (kW)3 ηel (%)2 ηth (%)3  ηtot (%)  Pel (kW)2     Pth (kW)3 ηel (%)2 ηth (%)3       ηtot (%)  Pel (kW)2     Pth (kW)3 ηel (%)2 ηth (%)3           ηtot (%)"
+      ],
+      "rows": [
+        "J412  902            928    43.4        44.6      88.0            853          960     41.7   46.9          88.6             630    618    42.8  41.9                      84.7",
+        "J412  902            967    42.2        45.2      87.4            853          1,003   40.7   47.9          88.5             630    641    41.8  42.5                      84.4"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "Jenbacher J416 – khí tự nhiên, Pel/Pth 50 Hz & 60 Hz",
+      "header": [
+        "Natural gas                          1,500 1/min | 50 Hz                                       1,800 1/min | 60 Hz                                  1,200 1/min | 60 Hz",
+        "NOx<            Type  Pel (kW)2      Pth (kW)3 ηel (%)2 ηth (%)3  ηtot (%)  Pel (kW)2     Pth (kW)3 ηel (%)2 ηth (%)3       ηtot (%)  Pel (kW)2     Pth (kW)3 ηel (%)2 ηth (%)3           ηtot (%)"
+      ],
+      "rows": [
+        "J416  1,201          1,244  43.4        44.9      88.3            1,142        1,281   41.8   46.9          88.7             846    824    43.0  41.9                      85.0",
+        "500 mg/m3N      J416  1,003          1,029  43.5        44.6      88.1            -            -       -            -           -               -   -      -             -                   -",
+        "J416  1,201          1,285  42.3        45.2      87.5            1,142        1,338  40.9    47.9          88.7             846    856    42.1  42.6                      84.7",
+        "250 mg/m3N      J416  1,003          1,045  42.9        44.7      87.6            -            -       -            -           -               -   -      -             -                   -"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "Jenbacher J420 – khí tự nhiên, Pel/Pth 50 Hz & 60 Hz",
+      "header": [
+        "Natural gas                          1,500 1/min | 50 Hz                                       1,800 1/min | 60 Hz                                  1,200 1/min | 60 Hz",
+        "NOx<            Type  Pel (kW)2      Pth (kW)3 ηel (%)2 ηth (%)3  ηtot (%)  Pel (kW)2     Pth (kW)3 ηel (%)2 ηth (%)3       ηtot (%)  Pel (kW)2     Pth (kW)3 ηel (%)2 ηth (%)3           ηtot (%)"
+      ],
+      "rows": [
+        "J420  1,562          1,649  43.7        46.1      89.9            1,427        1,602   41.8   46.9          88.8             1,057  1,029  43.0  41.9                      84.9",
+        "J420  1,562          1,833  42.4        49.7      92.1            -            -       -            -           -               -   -      -             -                   -",
+        "J420  1,501          1,605  42.7        45.6      88.4            1,427        1,648   41.1   47.5          88.7             1,057  1,085  41.7  42.8                      84.6",
+        "J420  1,562          1,906  41.4        50.5      91.9            -            -       -            -           -               -   -      -             -                   -"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "Jenbacher Type 4 – động cơ",
+      "header": [
+        "Engine type                                             J412      J416               J420                                             J412                                                   11,800"
+      ],
+      "rows": [
+        "No. of cylinders                                          12            16               20    Cogeneration system                    J416                                                   14,100",
+        "Total displacement (lit)                                36.7      48.9                   61.1                                      J420                                                    17,800"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "Jenbacher J316 – trang sản phẩm jenbacher.com",
+      "header": [
+        "Jenbacher J316"
+      ],
+      "rows": [
+        "J316 | 700kW-800kW Gas Engine | Products | Jenbacher",
+        "Electrical Output",
+        "up to 850 kW",
+        "Thermal Output",
+        "up to 1,081 kW",
+        "Voltage",
+        "400V, 6.3kV, 10.5kV",
+        "Electrical Efficiency",
+        "up to 43.0 %",
+        "Thermal Efficiency",
+        "up to 49.9 %"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "Jenbacher J320 – trang sản phẩm jenbacher.com",
+      "header": [
+        "Jenbacher J320"
+      ],
+      "rows": [
+        "J320 | 1000kW-1150kW Gas Engine | Products | Jenbacher",
+        "Electrical Output",
+        "up to 1,150 kW",
+        "Thermal Output",
+        "up to 1,366 kW",
+        "Voltage",
+        "400V, 6.3kV, 10.5kV",
+        "Electrical Efficiency",
+        "up to 43.2 %",
+        "Thermal Efficiency",
+        "up to 50 %"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "Jenbacher J416 – trang sản phẩm jenbacher.com",
+      "header": [
+        "Jenbacher J416"
+      ],
+      "rows": [
+        "J416 | 1200kW Gas Engine | Products | Jenbacher",
+        "Electrical Output",
+        "up to 1,248 kW",
+        "Thermal Output",
+        "up to 1,482 kW",
+        "Voltage",
+        "400V, 6.3kV, 10.5kV",
+        "Electrical Efficiency",
+        "up to 43.7 %",
+        "Thermal Efficiency",
+        "up to 50.4 %"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "Jenbacher J420 D/E – trang sản phẩm jenbacher.com",
+      "header": [
+        "Jenbacher J420 D/E"
+      ],
+      "rows": [
+        "J420 | 1500kW Gas Engine | Products | Jenbacher",
+        "Electrical Output",
+        "up to 1,562 kW",
+        "Thermal Output",
+        "up to 1,906 kW",
+        "Voltage",
+        "400V, 6.3kV, 10.5kV",
+        "Electrical Efficiency",
+        "up to 44.1 %",
+        "Thermal Efficiency",
+        "up to 50.5 %"
+      ]
+    }
+  ]
 }
