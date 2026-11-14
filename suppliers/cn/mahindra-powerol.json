@@ -56,6 +56,1127 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mahindra Powerol DR gensets 10 kVA - 650 kVA",
+      "fuel": "diesel",
+      "power": {
+        "min": 10,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M10DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "M2155G1"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 10,
+        "max": 10,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MB15DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "M2155G2"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 15,
+        "max": 15,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M15DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "M3205G1"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 15,
+        "max": 15,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MB20DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "M3205G2"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M20DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "M3205G3"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MB25DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "M3205G3"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 25,
+        "max": 25,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M25DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "M3205G4"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 25,
+        "max": 25,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M30DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "M3205G5"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MB35DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "M3205G5"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 35,
+        "max": 35,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M40DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "M4275G1"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 40,
+        "max": 40,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MB45DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "M4275G1"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 45,
+        "max": 45,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M50DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "V4355G1"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M58.5DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "V4355G2"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 58.5,
+        "max": 58.5,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MB62.5DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "V4355G2"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 62.5,
+        "max": 62.5,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M82.5DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "V4355G4"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 82.5,
+        "max": 82.5,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M100DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "H4485G2"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M125DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "H4485G1"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 125,
+        "max": 125,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M160DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "H6725G2"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 160,
+        "max": 160,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M180DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "H6725G3"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 180,
+        "max": 180,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M200DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "H6725G4"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M250DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "H6935G1"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M320DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "H6935G2"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 320,
+        "max": 320,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M400DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "2806FA-E18TAG1"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M500DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "2806FA-E18TAG1"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M525DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "2806FA-E18TAG1"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 525,
+        "max": 525,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M650DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "2806FA-E18TAG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M100DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "H4485G2"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M125DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "H4485G1"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 125,
+        "max": 125,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M160DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "H6725G2"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 160,
+        "max": 160,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mahindra Powerol 250 kVA (H6935G1)",
+      "fuel": "diesel",
+      "engineModels": [
+        "H6935G1"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mahindra Powerol 320 kVA (H6935G2)",
+      "fuel": "diesel",
+      "engineModels": [
+        "H6935G2"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 320,
+        "max": 320,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mahindra Powerol 400 kVA",
+      "fuel": "diesel",
+      "engineModels": [
+        "2206D-E13TAG3"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mahindra Powerol 500 kVA",
+      "fuel": "diesel",
+      "engineModels": [
+        "2506D-E15TAG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mahindra Powerol 625 kVA",
+      "fuel": "diesel",
+      "engineModels": [
+        "2806D-E18TAG 1A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 625,
+        "max": 625,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mahindra Powerol 20 kVA",
+      "fuel": "diesel",
+      "engineModels": [
+        "3285 GM-C2"
+      ],
+      "engineMakes": [
+        "Mahindra mPower"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mahindra Powerol 22.5 kVA",
+      "fuel": "diesel",
+      "engineModels": [
+        "3335 TCGM-C2"
+      ],
+      "engineMakes": [
+        "Mahindra mPower"
+      ],
+      "power": {
+        "min": 22.5,
+        "max": 22.5,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mahindra Powerol 25 kVA",
+      "fuel": "diesel",
+      "engineModels": [
+        "3385 ELSTCGMC2"
+      ],
+      "engineMakes": [
+        "Mahindra mPower"
+      ],
+      "power": {
+        "min": 25,
+        "max": 25,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mahindra Powerol 30 kVA (3445TCIGM-C2)",
+      "fuel": "diesel",
+      "engineModels": [
+        "3445TCIGM-C2"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mahindra Powerol 30 kVA (3385 ELSTCGMC2)",
+      "fuel": "diesel",
+      "engineModels": [
+        "3385 ELSTCGMC2"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mahindra Powerol 35 kVA",
+      "fuel": "diesel",
+      "engineModels": [
+        "3445 TCIGM-C2"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 35,
+        "max": 35,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mahindra Powerol 40 kVA",
+      "fuel": "diesel",
+      "engineModels": [
+        "4575 TCIGM-C2"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 40,
+        "max": 40,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mahindra Powerol 45 kVA",
+      "fuel": "diesel",
+      "engineModels": [
+        "4575TCIGM-C2"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 45,
+        "max": 45,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mahindra Powerol 75 kVA",
+      "fuel": "diesel",
+      "engineModels": [
+        "41035 GM-C2"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 75,
+        "max": 75,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mahindra Powerol 82.5 kVA",
+      "fuel": "diesel",
+      "engineModels": [
+        "41125A GM-C2"
+      ],
+      "engineMakes": [
+        "Mahindra"
+      ],
+      "power": {
+        "min": 82.5,
+        "max": 82.5,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mahindra Powerol 100 kVA",
+      "fuel": "diesel",
+      "engineModels": [
+        "mPower41265G"
+      ],
+      "engineMakes": [
+        "Mahindra mpower"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mahindra Powerol 125 kVA (mPower41565G)",
+      "fuel": "diesel",
+      "engineModels": [
+        "mPower41565G"
+      ],
+      "engineMakes": [
+        "Mahindra mpower"
+      ],
+      "power": {
+        "min": 125,
+        "max": 125,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M1010DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "4008-30TAG2"
+      ],
+      "engineMakes": [
+        "Perkins India"
+      ],
+      "power": {
+        "min": 1010,
+        "max": 1010,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "M1250DR",
+      "fuel": "diesel",
+      "engineModels": [
+        "4008-30TAG3"
+      ],
+      "engineMakes": [
+        "Perkins India"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
     }
   ],
   "certifications": [],
@@ -74,9 +1195,1101 @@
         "The company's range of 5kva to 625kva generators includes"
       ],
       "file": "sources/mahindra-powerol/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.mahindrapowerol.com/pdf/10-650kva.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Range - 10 kVA - 650 kVA",
+        "Genset Rating (kVA)                                              10                                        15",
+        "Genset Rating (kVA)                                             15*                                               20",
+        "Genset Rating (kVA)                                             20*                                        25",
+        "Genset Rating (kVA)                                             25*                                            30",
+        "Genset Rating (kVA)                                                35                                    40",
+        "Genset Rating (kVA)                                             45                                       50",
+        "Genset Rating (kVA)                                               58.5                                   62.5",
+        "Genset Rating (kVA)                                82.5                                           100",
+        "Genset Rating (kVA)                                                 125                                 160",
+        "Genset Rating (kVA)                                                 180                                 200",
+        "Genset Rating (kVA)                                                 250                                 320",
+        "Genset Rating (kVA)                                         400                                                 500",
+        "Genset Rating (kVA)                                         525                                              650"
+      ],
+      "file": "sources/mahindra-powerol/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://mahindrapowerol.com/genset-products/100-to-200-kva-gensets.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| GENSET RATING (kVA) | 100 kVA | 125 kVA | 160 kVA"
+      ],
+      "file": "sources/mahindra-powerol/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://www.mahindrapowerol.com/genset-products/250-to-320-kva-gensets.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| GENSET RATING (kVA) | 250kVA | 320kVA"
+      ],
+      "file": "sources/mahindra-powerol/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://www.mahindrapowerol.com/gensets/gensets-400-625kva.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Genset Prime Rating (kVA) * | 400",
+        "| Genset Prime Rating (kVA) * | 500",
+        "| Genset Prime Rating (kVA) * | 625"
+      ],
+      "file": "sources/mahindra-powerol/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://mahindrapowerol.com/gensets/gensets-20-25kva.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| 50 HZ PRIME | Rating(kVA) | 20 kVA",
+        "| 50 HZ PRIME | Rating(kVA) | 22.5 kVA",
+        "| 50 HZ PRIME | Rating(kVA) | 25 kVA"
+      ],
+      "file": "sources/mahindra-powerol/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://mahindrapowerol.com/gensets/gensets-30-40kva.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| 50 HZ PRIME | Rating(kVA) | 30 kVA | 30 kVA",
+        "| 50 HZ PRIME | Rating(kVA) | 35 kVA",
+        "| 50 HZ PRIME | Rating(kVA) | 40 kVA",
+        "| 50 HZ PRIME | Rating(kVA) | 45 kVA"
+      ],
+      "file": "sources/mahindra-powerol/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://mahindrapowerol.com/gensets/gensets-75-125kva.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| 50 HZ PRIME | Rating(kVA) | 75 kVA",
+        "| 50 HZ PRIME | Rating(kVA) | 82.5 kVA",
+        "| 50 HZ PRIME | Rating(kVA) | 100 kVA",
+        "| 50 HZ PRIME | Rating(kVA) | 125 kVA"
+      ],
+      "file": "sources/mahindra-powerol/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://www.mahindrapowerol.com/pdf/1010kva-1250kva-brochure.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Genset                                                                       1010kVA                                1250kVA*",
+        "are today powering Diesel Generating Sets ranging from 5kVA to 1250kVA."
+      ],
+      "file": "sources/mahindra-powerol/2008.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Technical specifications M10DR / MB15DR",
+      "header": [
+        "Genset Rating (kVA)                                              10                                        15"
+      ],
+      "rows": [
+        "DG Model                                                         M10DR                                     MB15DR",
+        "Power Rating (kWe)                                                                  8                      12",
+        "Fuel Tank Capacity (lit)                                         55                                        55",
+        "Genset Dimension (LxWxH) (mm)                               1750 X 900 X 1250                              1750 X 900 X 1250",
+        "Controller Model                                                GC 1115                                    GC 1115",
+        "Make                                                            Mahindra                                   Mahindra",
+        "Model                                                           M2155G1                                    M2155G2",
+        "Rated Power Output (Hp)                                          16.3                                      18.3",
+        "No. of Cylinders                                                                    2                      2",
+        "Displacement (Ltr)                                               1.5                                       1.5",
+        "Make                                                        CG/LS/Equivalent                               CG/LS/Equivalent"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Technical specifications M15DR / MB20DR",
+      "header": [
+        "Genset Rating (kVA)                                             15*                                               20"
+      ],
+      "rows": [
+        "DG Model                                                        M15DR                                          MB20DR",
+        "Power Rating (kWe)                                              12                                                16",
+        "Fuel Tank Capacity (lit)                                        75                                                75",
+        "Genset Dimension (LxWxH) (mm)                               1990 X 900 X 1330                              1990 X 900 X 1330",
+        "Controller Model                                                GC 1115                                        GC 1115",
+        "Make                                                            Mahindra                                       Mahindra",
+        "Model                                                           M3205G1                                        M3205G2",
+        "Rated Power Output (Hp)                                         22.7                                              25.2",
+        "No. of Cylinders                                                                    3                             3",
+        "Displacement (Ltr)                                              2.0                                               2.0",
+        "Make                                                        CG/LS/Equivalent                               CG/LS/Equivalent"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Technical specifications M20DR / MB25DR",
+      "header": [
+        "Genset Rating (kVA)                                             20*                                        25"
+      ],
+      "rows": [
+        "DG Model                                                        M20DR                                      MB25DR",
+        "Power Rating (kWe)                                              16                                         20",
+        "Fuel Tank Capacity (lit)                                        75                                         75",
+        "Genset Dimension (LxWxH) (mm)                               1990 X 900 X 1330                              1990 X 900 X 1330",
+        "Controller Model                                                GC 1115                                    GC 1115",
+        "Make                                                            Mahindra                                   Mahindra",
+        "Model                                                           M3205G3                                    M3205G3",
+        "Rated Power Output (Hp)                                         30.5                                       30.5",
+        "No. of Cylinders                                                                    3                      3",
+        "Displacement (Ltr)                                              2.0                                        2.0",
+        "Make                                                        CG/LS/Equivalent                               CG/LS/Equivalent"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Technical specifications M25DR / M30DR",
+      "header": [
+        "Genset Rating (kVA)                                             25*                                            30"
+      ],
+      "rows": [
+        "DG Model                                                        M25DR                                          M30DR",
+        "Power Rating (kWe)                                              20                                             24",
+        "Fuel Tank Capacity (lit)                                        75                                             115",
+        "Genset Dimension (LxWxH) (mm)                               1990 X 900 X 1330                              2325 X 980 X 1330",
+        "Controller Model                                                GC 1115                                        GC 1115",
+        "Make                                                            Mahindra                                       Mahindra",
+        "Model                                                           M3205G4                                        M3205G5",
+        "Rated Power Output (Hp)                                         35.1                                           40.0",
+        "No. of Cylinders                                                                    3                          3",
+        "Displacement (Ltr)                                              2.0                                            2.0",
+        "Make                                                        CG/LS/Equivalent                               CG/LS/Equivalent"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Technical specifications MB35DR / M40DR",
+      "header": [
+        "Genset Rating (kVA)                                                35                                    40"
+      ],
+      "rows": [
+        "DG Model                                                        MB35DR                                   M40DR",
+        "Power Rating (kWe)                                                 28                                    32",
+        "Fuel Tank Capacity (lit)                                           115                                   115",
+        "Genset Dimension (LxWxH) (mm)                               2325 X 980 X 1330                        2325 X 980 X 1330",
+        "Controller Model                                                GC 1115                                  GC 1115",
+        "Make                                                            Mahindra                                 Mahindra",
+        "Model                                                           M3205G5                                  M4275G1",
+        "Rated Power Output (Hp)                                            40.0                                  51.8",
+        "No. of Cylinders                                                                    3                    4",
+        "Displacement (Ltr)                                                 2.0                                   2.7",
+        "Make                                                        CG/LS/Equivalent                         CG/LS/Equivalent"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Technical specifications MB45DR / M50DR",
+      "header": [
+        "Genset Rating (kVA)                                             45                                       50"
+      ],
+      "rows": [
+        "DG Model                                                        MB45DR                                   M50DR",
+        "Power Rating (kWe)                                              36                                       40",
+        "Fuel Tank Capacity (lit)                                        115                                      156",
+        "Genset Dimension (LxWxH) (mm)                               2325 X 980 X 1330                        2600 X 1130 X 1575",
+        "Controller Model                                                GC 1115                                  GC 1115",
+        "Make                                                            Mahindra                                 Mahindra",
+        "Model                                                           M4275G1                                  V4355G1",
+        "Rated Power Output (Hp)                                         51.8                                     65.4",
+        "No. of Cylinders                                                                    4                    4",
+        "Displacement (Ltr)                                              2.7                                      3.5",
+        "Make                                                        CG/LS/Equivalent                         CG/LS/Equivalent"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Technical specifications M58.5DR / MB62.5DR",
+      "header": [
+        "Genset Rating (kVA)                                               58.5                                   62.5"
+      ],
+      "rows": [
+        "DG Model                                                          M58.5DR                                MB62.5DR",
+        "Power Rating (kWe)                                                46.8                                   50",
+        "Fuel Tank Capacity (lit)                                          156                                    156",
+        "Genset Dimension (LxWxH) (mm)                               2600  X 1130 X             1575          2600 X 1130 X 1575",
+        "Controller Model                                                  GC 1115                                GC 1115",
+        "Make                                                              Mahindra                               Mahindra",
+        "Model                                                             V4355G2                                V4355G2",
+        "Rated Power Output (Hp)                                           75.5                                   75.5",
+        "No. of Cylinders                                                                    4                    4",
+        "Displacement (Ltr)                                                3.5                                    3.5",
+        "Make                                                        CG/LS/Equivalent                         CG/LS/Equivalent"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Technical specifications M82.5DR / M100DR",
+      "header": [
+        "         Genset Rating (kVA)                                82.5                                           100"
+      ],
+      "rows": [
+        "         DG Model                                           M82.5DR                                        M100DR",
+        "         Power Rating (kWe)                                 66                                             80",
+        "         Fuel Tank Capacity (lit)                           169                                            250",
+        "Genset Dimension (LxWxH) (mm)                               3190X 1225 X 1575                        3700  X 1350 X    1550",
+        "         Controller Model                                   GC 1115                                        GC 111X",
+        "         Make                                               Mahindra                                       Mahindra",
+        "         Model                                              V4355G4                                        H4485G2",
+        "Rated Power Output (Hp)                                     101.3                                          126",
+        "         No. of Cylinders                                                           4                      4",
+        "         Displacement (Ltr)                                 3.5                                            4.7",
+        "         Make                                               CG/LS/Equivalent                         CG/LS/Equivalent"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Technical specifications M125DR / M160DR",
+      "header": [
+        "Genset Rating (kVA)                                                 125                                 160"
+      ],
+      "rows": [
+        "DG Model                                                            M125DR                              M160DR",
+        "Power Rating (kWe)                                                  100                                 128",
+        "Fuel Tank Capacity (lit)                                            250                                 388",
+        "Genset Dimension (LxWxH) (mm)                                 3700  X 1350 X            1550      4200  X 1400 X    1745",
+        "Controller Model                                                    GC 1115                             GC 1115",
+        "Make                                                                Mahindra                            Mahindra",
+        "Model                                                               H4485G1                             H6725G2",
+        "Rated Power Output (Hp)                                             156                                 199",
+        "No. of Cylinders                                                                     4                  6",
+        "Displacement (Ltr)                                                  4.7                                 7.2",
+        "Make                                                          CG/LS/Equivalent                    CG/LS/Equivalent"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Technical specifications M180DR / M200DR",
+      "header": [
+        "Genset Rating (kVA)                                                 180                                 200"
+      ],
+      "rows": [
+        "DG Model                                                            M180DR                              M200DR",
+        "Power Rating (kWe)                                                  144                                 160",
+        "Fuel Tank Capacity (lit)                                            388                                 388",
+        "Genset Dimension (LxWxH) (mm)                                 4200  X 1400 X            1745      4200  X 1400 X    1745",
+        "Controller Model                                                    GC 1115                             GC 1115",
+        "Make                                                                Mahindra                            Mahindra",
+        "Model                                                               H6725G3                             H6725G4",
+        "Rated Power Output (Hp)                                             223                                 247",
+        "No. of Cylinders                                                                     6                  6",
+        "Displacement (Ltr)                                                  7.2                                 7.2",
+        "Make                                                          CG/LS/Equivalent                    CG/LS/Equivalent"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Technical specifications M250DR / M320DR",
+      "header": [
+        "Genset Rating (kVA)                                                 250                                 320"
+      ],
+      "rows": [
+        "DG Model                                                            M250DR                              M320DR",
+        "Power Rating (kWe)                                                  200                                 256",
+        "Fuel Tank Capacity (lit)                                            425                                 570",
+        "Genset Dimension (LxWxH) (mm)                                 4400  x 1600 x            1850      4750  X 1600 X    2000",
+        "Controller Model                                                    GC 1116                             GC 1116",
+        "Make                                                                Mahindra                            Mahindra",
+        "Model                                                               H6935G1                             H6935G2",
+        "Rated Power Output (Hp)                                             310                                 390",
+        "No. of Cylinders                                                                     6                  6",
+        "Displacement (Ltr)                                                  9.3                                 9.3",
+        "Make                                                          CG/LS/Equivalent                    CG/LS/Equivalent"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Technical specifications M400DR / M500DR",
+      "header": [
+        "Genset Rating (kVA)                                         400                                                 500"
+      ],
+      "rows": [
+        "DG Model                                                    M400DR                                     M500DR",
+        "Power Rating (kWe)                                          320                                                 400",
+        "Fuel Tank Capacity (lit)                                    800                                                 800",
+        "Genset Dimension (LxWxH) (mm)                               5800 X 2200 X           2300           5800 X 2200 X       2300",
+        "Controller Model                                            DSE7320                                    DSE7320",
+        "Make                                                        Perkins                                    Perkins",
+        "Model                                                       2806FA-E18TAG1                         2806FA-E18TAG1",
+        "Rated Power Output (Hp)                                     605                                                 605",
+        "No. of Cylinders                                            6                                                   6",
+        "Displacement (Ltr)                                          18.1                                                18.1",
+        "Make                                                        CG/LS/Equivalent                       CG/LS/Equivalent"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Technical specifications M525DR / M650DR",
+      "header": [
+        "Genset Rating (kVA)                                         525                                              650"
+      ],
+      "rows": [
+        "DG Model                                                    M525DR                                      M650DR",
+        "Power Rating (kWe)                                                                  420                      520",
+        "Fuel Tank Capacity (lit)                                                            800                      800",
+        "Genset Dimension (LxWxH) (mm)                               5800 X 2200 X                2300       5800 X 2200 X     2300",
+        "Controller Model                                            DSE7320                                     DSE7320",
+        "Make                                                        Perkins                                          Perkins",
+        "Model                                                       2806FA-E18TAG1                          2806FA-E18TAG2",
+        "Rated Power Output (Hp)                                                             605                      746",
+        "No. of Cylinders                                                                    6                        6",
+        "Displacement (Ltr)                                          18.1                                             18.1",
+        "Make                                                        CG/LS/Equivalent                        CG/LS/Equivalent"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "100 - 200 kVA gensets - 160 kVA",
+      "header": [
+        "| PARAMETERS | DG MODELS"
+      ],
+      "rows": [
+        "| GENSET RATING (kVA) | 100 kVA | 125 kVA | 160 kVA",
+        "| DG Model | M100DR | M125DR | M160DR",
+        "| Power Rating (kWe) | 80 | 100 | 128",
+        "| No. of Phases | 3 | 3 | 3",
+        "| Output Voltage (V) | 415 | 415 | 415",
+        "| Power Factor (lagging) | 0.8 | 0.8 | 0.8",
+        "| Current (A) (1 Phase / 3 Phase) | 139 | 174 | 222",
+        "| Frequency (Hz) & RPM | 50/1500 | 50/1500 | 50/1500",
+        "| Governing Class | G3 | G3 | G3",
+        "| Starting System (volt) | 12 | 12 | 12",
+        "| Fuel Tank Capacity (lit) | 250 | 250 | 388",
+        "| Genset Weight Dry | 1970 | 2020 | 2500",
+        "| Genset dimensions (L x W x H) in mm | 3700 X 1350 X 1550 | 3700 X 1350 X 1550 | 4200 X 1400 X 1745",
+        "| Controller Model | GC 111X | GC 1115 | GC 1115",
+        "| Engine",
+        "| Make | Mahindra | Mahindra | Mahindra",
+        "| Make | H4485G2 | H4485G1 | H6725G2",
+        "| Fuel system | Electronic | Electronic | Electronic",
+        "| Rated Power Output (Hp) | 126 | 156 | 199",
+        "| Compression Ratio | 17.2:1 | 17.2:1 | 17.2:1",
+        "| Aspiration | TCIC | TCIC | TCIC",
+        "| No. of Cylinders | 4 | 4 | 6",
+        "| Bore x Stroke (mm) | 105 X 137 | 105 X 137 | 7.2",
+        "| Displacement (Ltr) | 4.7 | 4.7 | 105 x 137",
+        "| Total Lube Oil capacity (lit) | 13.5 | 35 | 20.2",
+        "| Lube Oil Change Period (hrs.) | 500Hrs | 500Hrs | 500Hrs",
+        "| System (Engine & radiator) Coolant Capacity (lit) | 19 | 19 | 25",
+        "| DEF Capacity (Lit) | 35 | 35 | 35",
+        "| Alternator",
+        "| Make | CG/LS/Equivalent | CG/LS/Equivalent | CG/LS/Equivalent",
+        "| Enclosure Type | IP23 | IP23 | IP23",
+        "| Voltage Regulation | +/- 1% | +/- 1% | +/- 1%",
+        "| Class of insulation | H | H | H",
+        "| Maximum Unbalanced Load across Phases | 25% | 25% | 25%",
+        "| Total Harmonic distortion | AT NO LOAD <2.5%% | AT NO LOAD <2.5%% | AT NO LOAD <2.5%%"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "250 - 320 kVA gensets - 320kVA",
+      "header": [
+        "| PARAMETERS | DG MODEL"
+      ],
+      "rows": [
+        "| GENSET RATING (kVA) | 250kVA | 320kVA",
+        "| Power Rating (kWe) | 200 | 256",
+        "| No. of Phases | 3 | 3",
+        "| Output Voltage (V) | 415 | 415",
+        "| Power Factor (lagging) | 0.8 | 0.8",
+        "| Current (A) (1 Phase / 3 Phase) | 348 | 445",
+        "| Frequency (Hz) & RPM | 50/1500 | 50/1500",
+        "| Governing Class | G3 | G3",
+        "| Starting System (volt) | 24 | 24",
+        "| Fuel Tank Capacity (lit) | 425 | 570",
+        "| Genset Weight Dry | 3850 | 3920",
+        "| Genset dimensions (L x W x H) in mm | 4400 x 1600 x 1850 | 4750 X 1600 X 2000",
+        "| Controller Model | GC 1116 | GC 1116",
+        "| Engine",
+        "| Make | Mahindra | Mahindra",
+        "| Model | H6935G1 | H6935G2",
+        "| Fuel system | Electronic | Electronic",
+        "| Rated Power Output (Hp) | 310 | 390",
+        "| Compression Ratio | 17.2:1 | 17.2:1",
+        "| Aspiration | TCIC | TCIC",
+        "| No. of Cylinders | 6 | 6",
+        "| Bore x Stroke (mm) | 116.6 X 146.1 | 116.6 X 146.1",
+        "| Displacement (Ltr) | 9.3 | 9.3",
+        "| Lube Oil Specification | 15W40 CI4+ | 15W40 CI4+",
+        "| Total Lube Oil capacity (lit) | 35 | 35",
+        "| Lube Oil Change Period (hrs.) | 500Hrs | 500Hrs",
+        "| System (Engine & radiator) Coolant Capacity (lit) | 31 | 31",
+        "| DEF Capacity (Lit) | 50 | 50",
+        "| Alternator",
+        "| Make | CG/LS/Equivalent | CG/LS/Equivalent",
+        "| Enclosure Type | IP23 | IP23",
+        "| Voltage Regulation | +/- 1% | +/- 1%",
+        "| Class of insulation | Brushless | Brushless",
+        "| Insulation | H | H",
+        "| Maximum Unbalanced Load across Phases Temperature rise | 25% | 25%",
+        "| Total Harmonic distortion | AT NO LOAD <2.5% | AT NO LOAD <2.5%"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "400 - 625 kVA gensets - 400",
+      "header": [
+        "| PARAMETERS | DG MODELS"
+      ],
+      "rows": [
+        "| Genset Prime Rating (kVA) * | 400",
+        "| Genset Prime Rating (KW) | 320",
+        "| Phase / Voltage (V) | 3/415",
+        "| Power Factor | 0.8 (lagging)",
+        "| Current (A) | 556",
+        "| Frequency (Hz)& RPM | 50/1500",
+        "| Governing class | G2",
+        "| Starting system | 24 V DC Electrical",
+        "| Fuel tank capacity (lit) | 700",
+        "| Genset dimensions w/o silencer (mm) (L x W x H) approx. | 5000x1900x2302",
+        "| Genset Weight (kg) approx. | 5200",
+        "| Engine Specification",
+        "| Make / Series | Perkins",
+        "| Engine Model | 2206D-E13TAG3",
+        "| Power Output# (Kw) | 367",
+        "| Aspiration | Turbo Charged After Cooled",
+        "| No. of cylinders | 6",
+        "| Bore x Stroke (mm) | 130*157",
+        "| Displacement (Lit) | 12.5",
+        "| Fuel consumption @ 75% load (lit/hr)^ | 65.5",
+        "| Fuel consumption @ 100% load (lit/hr)^ | 90.5",
+        "| Total lubrication system capacity (lit) | 40",
+        "| Lube oil consumption @ 100% load* | 0.1% of fuel consumption",
+        "| Lube oil change period (hrs.) | 500",
+        "| Radiator coolant capacity (lit) | 51.4",
+        "| Alternator",
+        "| Make | CG/LS/Stamford",
+        "| Enclosure Type | IP23",
+        "| Voltage regulation | ±1%",
+        "| Class of insulation | Class H",
+        "| Maximum Unbalanced Load across Phases | 25%"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "400 - 625 kVA gensets - 500",
+      "header": [
+        "| PARAMETERS | DG MODELS"
+      ],
+      "rows": [
+        "| Genset Prime Rating (kVA) * | 500",
+        "| Genset Prime Rating (KW) | 400",
+        "| Phase / Voltage (V) | 3/415",
+        "| Power Factor | 0.8 (lagging)",
+        "| Current (A) | 695",
+        "| Frequency (Hz)& RPM | 50/1500",
+        "| Governing class | G2",
+        "| Starting system | 24 V DC Electrical",
+        "| Fuel tank capacity (lit) | 700",
+        "| Genset dimensions w/o silencer (mm) (L x W x H) approx. | 5000x1900x2302",
+        "| Genset Weight (kg) approx. | 5800",
+        "| Engine Specification",
+        "| Make / Series | Perkins",
+        "| Engine Model | 2506D-E15TAG2",
+        "| Power Output# (Kw) | 453",
+        "| Aspiration | Turbo Charged After Cooled",
+        "| No. of cylinders | 6",
+        "| Bore x Stroke (mm) | 137*171",
+        "| Displacement (Lit) | 15.2",
+        "| Fuel consumption @ 75% load (lit/hr)^ | 78.6",
+        "| Fuel consumption @ 100% load (lit/hr)^ | 101",
+        "| Total lubrication system capacity (lit) | 62",
+        "| Lube oil consumption @ 100% load* | 0.1% of fuel consumption",
+        "| Lube oil change period (hrs.) | 500",
+        "| Radiator coolant capacity (lit) | 48",
+        "| Alternator",
+        "| Make | CG/LS/Stamford",
+        "| Enclosure Type | IP23",
+        "| Voltage regulation | ±1%",
+        "| Class of insulation | Class H",
+        "| Maximum Unbalanced Load across Phases | 25%"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "400 - 625 kVA gensets - 625",
+      "header": [
+        "| PARAMETERS | DG MODELS"
+      ],
+      "rows": [
+        "| Genset Prime Rating (kVA) * | 625",
+        "| Genset Prime Rating (KW) | 500",
+        "| Phase / Voltage (V) | 3/415",
+        "| Power Factor | 0.8 (lagging)",
+        "| Current (A) | 869",
+        "| Frequency (Hz)& RPM | 50/1500",
+        "| Governing class | G2",
+        "| Starting system | 24 V DC Electrical",
+        "| Fuel tank capacity (lit) | 800",
+        "| Genset dimensions w/o silencer (mm) (L x W x H) approx. | 5850 X 2000 X 2300",
+        "| Genset Weight (kg) approx. | 7500",
+        "| Engine Specification",
+        "| Make / Series | Perkins",
+        "| Engine Model | 2806D-E18TAG 1A",
+        "| Power Output# (Kw) | 540",
+        "| Aspiration | Turbo Charged After Cooled",
+        "| No. of cylinders | 6",
+        "| Bore x Stroke (mm) | 145*183",
+        "| Displacement (Lit) | 18.1",
+        "| Fuel consumption @ 75% load (lit/hr)^ | 97",
+        "| Fuel consumption @ 100% load (lit/hr)^ | 130",
+        "| Total lubrication system capacity (lit) | 71",
+        "| Lube oil consumption @ 100% load* | 0.1% of fuel consumption",
+        "| Lube oil change period (hrs.) | 500",
+        "| Radiator coolant capacity (lit) | 55.6",
+        "| Alternator",
+        "| Make | CG/LS/Stamford",
+        "| Enclosure Type | IP23",
+        "| Voltage regulation | ±1%",
+        "| Class of insulation | Class H",
+        "| Maximum Unbalanced Load across Phases | 25%"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "20 - 25 kVA gensets - 20 kVA",
+      "header": [
+        "| PARAMETERS | DG MODELS"
+      ],
+      "rows": [
+        "| Duty (Standby/ Prime) | Stand By",
+        "| 50 HZ PRIME | Rating(kVA) | 20 kVA",
+        "| Rated(kWe) | 16",
+        "| Engine Model | 3285 GM-C2",
+        "| No of Phases | 1/3",
+        "| Output Voltage (V) | 230/415",
+        "| Power Factor (lagging) | 0.8",
+        "| Current (A) (1Phase / 3Phase) | 87/27.8",
+        "| Frequency (Hz)/ RPM | 50/1500",
+        "| Governing class | A1",
+        "| Starting system | 24 V DC Elec",
+        "| Fuel tank capacity | 75",
+        "| Genset Dimension (LxWxH $$) (mm) Approx. | 1875 X 900 X 1287",
+        "| Genset Weight (kg) approx. | 746",
+        "| Engine Specification",
+        "| Make / Series | Mahindra mPower",
+        "| Power Output# (HP) | 28",
+        "| Aspiration | Naturally Aspirated",
+        "| Bore x Stroke (mm) | 88.9 x 110",
+        "| Displacement (Lit) | 2048",
+        "| Fuel consumption @ 75% load (lit/hr) ^ | 3.6",
+        "| Fuel consumption @ 100% load (lit/hr) ^ | 4.8",
+        "| Lube oil specification | SAE15W40 CH4",
+        "| Total lubrication system capacity (lit) | 6.5",
+        "| Lube oil consumption @ 100% load ($) | 0.15% of Fuel Consumption",
+        "| Lube oil change period (hrs.) | 300 hrs. for Oil Top Up 600 hrs. for Oil change",
+        "| Radiator coolant capacity (liter) | 5.5",
+        "| Alternator",
+        "| Make | CG/LS",
+        "| Enclosure Type | IP23",
+        "| Voltage regulation | +/- 1%",
+        "| Class of insulation | Class H",
+        "| Maximum Unbalanced Load across Phases | 25%"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "20 - 25 kVA gensets - 22.5 kVA",
+      "header": [
+        "| PARAMETERS | DG MODELS"
+      ],
+      "rows": [
+        "| Duty (Standby/ Prime) | Prime",
+        "| 50 HZ PRIME | Rating(kVA) | 22.5 kVA",
+        "| Rated(kWe) | 18",
+        "| Engine Model | 3335 TCGM-C2",
+        "| No of Phases | 1/3",
+        "| Output Voltage (V) | 230/415",
+        "| Power Factor (lagging) | 0.8",
+        "| Current (A) (1Phase / 3Phase) | 97.8 / 31.3",
+        "| Frequency (Hz)/ RPM | 50/1500",
+        "| Governing class | A1",
+        "| Starting system | 24 V DC Elec",
+        "| Fuel tank capacity | 75",
+        "| Genset Dimension (LxWxH $$) (mm) Approx. | 1875 X 900 X 1287",
+        "| Genset Weight (kg) approx. | 786",
+        "| Engine Specification",
+        "| Make / Series | Mahindra mPower",
+        "| Power Output# (HP) | 33",
+        "| Aspiration | Turbocharged",
+        "| Bore x Stroke (mm) | 88.9 X 101.6",
+        "| Displacement (Lit) | 1892",
+        "| Fuel consumption @ 75% load (lit/hr) ^ | 4.3",
+        "| Fuel consumption @ 100% load (lit/hr) ^ | 5.7",
+        "| Lube oil specification | SAE15W40 CI4",
+        "| Total lubrication system capacity (lit) | 7",
+        "| Lube oil consumption @ 100% load ($) | 0.15% of Fuel Consumption",
+        "| Lube oil change period (hrs.) | 300 hrs. for Oil Top Up 600 hrs. for Oil change",
+        "| Radiator coolant capacity (liter) | 5.5",
+        "| Alternator",
+        "| Make | CG/LS",
+        "| Enclosure Type | IP23",
+        "| Voltage regulation | +/- 1%",
+        "| Class of insulation | Class H",
+        "| Maximum Unbalanced Load across Phases | 25%"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "20 - 25 kVA gensets - 25 kVA",
+      "header": [
+        "| PARAMETERS | DG MODELS"
+      ],
+      "rows": [
+        "| Duty (Standby/ Prime) | Prime",
+        "| 50 HZ PRIME | Rating(kVA) | 25 kVA",
+        "| Rated(kWe) | 20",
+        "| Engine Model | 3385 ELSTCGMC2",
+        "| No of Phases | 1/3",
+        "| Output Voltage (V) | 230/415",
+        "| Power Factor (lagging) | 0.8",
+        "| Current (A) (1Phase / 3Phase) | 108.7/34.8",
+        "| Frequency (Hz)/ RPM | 50/1500",
+        "| Governing class | A1",
+        "| Starting system | 24 V DC Elec",
+        "| Fuel tank capacity | 75",
+        "| Genset Dimension (LxWxH $$) (mm) Approx. | 1875 X 900 X 1287",
+        "| Genset Weight (kg) approx. | 786",
+        "| Engine Specification",
+        "| Make / Series | Mahindra mPower",
+        "| Power Output# (HP) | 38.6",
+        "| Aspiration | Turbocharged",
+        "| Bore x Stroke (mm) | 88.9 X 120",
+        "| Displacement (Lit) | 2235",
+        "| Fuel consumption @ 75% load (lit/hr) ^ | 4.7",
+        "| Fuel consumption @ 100% load (lit/hr) ^ | 6.2",
+        "| Lube oil specification | SAE15W40 CI4",
+        "| Total lubrication system capacity (lit) | 7",
+        "| Lube oil consumption @ 100% load ($) | 0.15% of Fuel Consumption",
+        "| Lube oil change period (hrs.) | 300 hrs. for Oil Top Up 600 hrs. for Oil change",
+        "| Radiator coolant capacity (liter) | 9.5",
+        "| Alternator",
+        "| Make | CG/LS",
+        "| Enclosure Type | IP23",
+        "| Voltage regulation | +/- 1%",
+        "| Class of insulation | Class H",
+        "| Maximum Unbalanced Load across Phases | 25%"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "30 - 40 kVA gensets - 30 kVA",
+      "header": [
+        "| PARAMETERS | DG MODELS"
+      ],
+      "rows": [
+        "| Duty (Standby/ Prime) | Prime | Stand By",
+        "| 50 HZ PRIME | Rating(kVA) | 30 kVA | 30 kVA",
+        "| Rated(kWe) | 24 | 24",
+        "| Engine Model | 3445TCIGM-C2 | 3385 ELSTCGMC2",
+        "| No of Phases | 1/3 | 1/3",
+        "| No of Cylinders | 3 | 3",
+        "| Output Voltage (V) | 230V/415V | 230V/415V",
+        "| Current (A) (1Phase / 3Phase) | 130.4/ 41.7 | 130.4/ 41.7",
+        "| Power Factor (lagging) | 0.8 | 0.8",
+        "| Frequency (Hz)/ RPM | 50/1500 | 50/1500",
+        "| Governing class | A1 | A1",
+        "| Starting system | 12 V DC Elec | 12 V DC Elec",
+        "| Fuel Tank Capacity (lits) | 115 | 115",
+        "| Genset Dimension (LxWxH $$) (mm) Approx. | 3 Phase :- 2000 X 980 X 1280 1 Phase :- 2200 X 980 X 1280 | 3 Phase :- 2000 X 980 X 1280 1 Phase :- 2200 X 980 X 1280",
+        "| Genset Weight (Kg), Appx | 3 Phase :- 935 1 Phase :- 1026 | 3 Phase :- 935 1 Phase :- 1026",
+        "| Make | Mahindra | Mahindra",
+        "| Power Output# (HP) | 44 | 38.6",
+        "| Aspiration | Turbocharged & Intercooled | Turbocharged",
+        "| No of Cylinders | 3 | 3",
+        "| Bore x Stroke (mm) | 88.9 X 110 | 88.9 X 120",
+        "| Displacement (cc) | 2048 | 2235",
+        "| Fuel consumption @ 75% load (lit/hr) ^ | 5.7 | -",
+        "| Fuel consumption @ 100% load (lit/hr) ^ | 7.3 | -",
+        "| Lube oil specification | SAE15W40 CI4 | SAE15W40 CI4",
+        "| Total Lube Oil capacity (lit) | 7 | 7",
+        "| Lube Oil Consumtion (lit/hr) $ | 0.15% of Fuel Consumption | 0.15% of Fuel Consumption",
+        "| Lube oil change period (hrs.) | 300 hrs. for Oil Top Up 600 hrs. for Oil change | 300 hrs. for Oil Top Up 600 hrs. for Oil change",
+        "| Radiator coolant capacity (liter) | 9.5 | 9.5",
+        "| Alternator",
+        "| Enclosure Type | CG/LS",
+        "| Enclosure Type | IP23",
+        "| Voltage regulation | ±1%",
+        "| Class of insulation | Class H",
+        "| Maximum Unbalanced Load across Phases | 25%"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "30 - 40 kVA gensets - 35 kVA",
+      "header": [
+        "| PARAMETERS | DG MODELS"
+      ],
+      "rows": [
+        "| Duty (Standby/ Prime) | Stand By",
+        "| 50 HZ PRIME | Rating(kVA) | 35 kVA",
+        "| Rated(kWe) | 35",
+        "| Engine Model | 3445 TCIGM-C2",
+        "| No of Phases | 1/3",
+        "| No of Cylinders | 3",
+        "| Output Voltage (V) | 230V/415V",
+        "| Current (A) (1Phase / 3Phase) | 152.2 / 48.7",
+        "| Power Factor (lagging) | 0.8",
+        "| Frequency (Hz)/ RPM | 50/1500",
+        "| Governing class | A1",
+        "| Starting system | 12 V DC Elec",
+        "| Fuel Tank Capacity (lits) | 115",
+        "| Genset Dimension (LxWxH $$) (mm) Approx. | 3 Phase :- 2000 X 980 X 1280 1 Phase :- 2200 X 980 X 1280",
+        "| Genset Weight (Kg), Appx | 3 Phase :- 926 1 Phase :- 984",
+        "| Make | Mahindra",
+        "| Power Output# (HP) | 44",
+        "| Aspiration | Turbocharged & Intercooled",
+        "| No of Cylinders | 3",
+        "| Bore x Stroke (mm) | 88.9 X 110",
+        "| Displacement (cc) | 2048",
+        "| Fuel consumption @ 75% load (lit/hr) ^ | -",
+        "| Fuel consumption @ 100% load (lit/hr) ^ | -",
+        "| Lube oil specification | SAE15W40 CI4",
+        "| Total Lube Oil capacity (lit) | 7",
+        "| Lube Oil Consumtion (lit/hr) $ | 0.15% of Fuel Consumption",
+        "| Lube oil change period (hrs.) | 300 hrs. for Oil Top Up 600 hrs. for Oil change",
+        "| Radiator coolant capacity (liter) | 9.5",
+        "| Alternator",
+        "| Enclosure Type | CG/LS",
+        "| Enclosure Type | IP23",
+        "| Voltage regulation | ±1%",
+        "| Class of insulation | Class H",
+        "| Maximum Unbalanced Load across Phases | 25%"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "30 - 40 kVA gensets - 40 kVA",
+      "header": [
+        "| PARAMETERS | DG MODELS"
+      ],
+      "rows": [
+        "| Duty (Standby/ Prime) | Prime",
+        "| 50 HZ PRIME | Rating(kVA) | 40 kVA",
+        "| Rated(kWe) | 32",
+        "| Engine Model | 4575 TCIGM-C2",
+        "| No of Phases | 1/3",
+        "| No of Cylinders | 4",
+        "| Output Voltage (V) | 230V/415V",
+        "| Current (A) (1Phase / 3Phase) | 173.9 / 55.7",
+        "| Power Factor (lagging) | 0.8",
+        "| Frequency (Hz)/ RPM | 50/1500",
+        "| Governing class | A1",
+        "| Starting system | 12 V DC Elec",
+        "| Fuel Tank Capacity (lits) | 115",
+        "| Genset Dimension (LxWxH $$) (mm) Approx. | 3 Phase :- 2000 X 980 X 1280 1 Phase :- 2200 X 980 X 1280",
+        "| Genset Weight (Kg), Appx | 3 Phase :- 985 1 Phase :- 1051",
+        "| Make | Mahindra",
+        "| Power Output# (HP) | 57",
+        "| Aspiration | Turbocharged & Intercooled",
+        "| No of Cylinders | 4",
+        "| Bore x Stroke (mm) | 88.9 X 110",
+        "| Displacement (cc) | 2731",
+        "| Fuel consumption @ 75% load (lit/hr) ^ | 7.3",
+        "| Fuel consumption @ 100% load (lit/hr) ^ | 9.9",
+        "| Lube oil specification | SAE15W40 CI4",
+        "| Total Lube Oil capacity (lit) | 10.5",
+        "| Lube Oil Consumtion (lit/hr) $ | 0.15% of Fuel Consumption",
+        "| Lube oil change period (hrs.) | 300 hrs. for Oil Top Up 600 hrs. for Oil change",
+        "| Radiator coolant capacity (liter) | 9.5",
+        "| Alternator",
+        "| Enclosure Type | CG/LS",
+        "| Enclosure Type | IP23",
+        "| Voltage regulation | ±1%",
+        "| Class of insulation | Class H",
+        "| Maximum Unbalanced Load across Phases | 25%"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "30 - 40 kVA gensets - 45 kVA",
+      "header": [
+        "| PARAMETERS | DG MODELS"
+      ],
+      "rows": [
+        "| Duty (Standby/ Prime) | Stand By",
+        "| 50 HZ PRIME | Rating(kVA) | 45 kVA",
+        "| Rated(kWe) | 36",
+        "| Engine Model | 4575TCIGM-C2",
+        "| No of Phases | 1/3",
+        "| No of Cylinders | 4",
+        "| Output Voltage (V) | 230V/415V",
+        "| Current (A) (1Phase / 3Phase) | 195.7/62.6",
+        "| Power Factor (lagging) | 0.8",
+        "| Frequency (Hz)/ RPM | 50/1500",
+        "| Governing class | G2",
+        "| Starting system | 12 V DC Elec",
+        "| Fuel Tank Capacity (lits) | 115",
+        "| Genset Dimension (LxWxH $$) (mm) Approx. | 3 Phase :- 2000 X 980 X 1280 1 Phase :- 2200 X 980 X 1280",
+        "| Genset Weight (Kg), Appx | 3 Phase :- 996 1 Phase :- 1120",
+        "| Make | Mahindra",
+        "| Power Output# (HP) | 57",
+        "| Aspiration | Turbocharged & Intercooled",
+        "| No of Cylinders | 4",
+        "| 88.9 X 110",
+        "| Displacement (cc) | 2731",
+        "| Fuel consumption @ 75% load (lit/hr) ^ | -",
+        "| Fuel consumption @ 100% load (lit/hr) ^ | -",
+        "| Lube oil specification | SAE15W40 CI4",
+        "| Total Lube Oil capacity (lit) | 10.5",
+        "| Lube Oil Consumtion (lit/hr) $ | 0.15% of Fuel Consumption",
+        "| Lube oil change period (hrs.) | 300 hrs. for Oil Top Up 600 hrs. for Oil change",
+        "| Radiator coolant capacity (liter) | 9.5",
+        "| Alternator",
+        "| Enclosure Type | CG/LS",
+        "| Enclosure Type | IP23",
+        "| Voltage regulation | ±1%",
+        "| Class of insulation | Class H",
+        "| Maximum Unbalanced Load across Phases | 25%"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "75 - 125 kVA gensets - 75 kVA",
+      "header": [
+        "| PARAMETERS | DG MODELS"
+      ],
+      "rows": [
+        "| Duty (Standby/ Prime) | Prime",
+        "| 50 HZ PRIME | Rating(kVA) | 75 kVA",
+        "| Rated(kWe) | 60",
+        "| Engine Model | 41035 GM-C2",
+        "| No of Cylinders | 4",
+        "| Phase / Voltage (V) | 3 / 415",
+        "| Power Factor | 0.8 (lagging)",
+        "| Current (A) | 104.4",
+        "| Governing class | G2",
+        "| Starting system | 12 V DC Elec",
+        "| Fuel tank capacity | 180",
+        "| Genset Dimension (LxWxH $$) (mm) Approx. | 3000 X 1150 X 2135",
+        "| Genset Weight (kg) approx. | 1350",
+        "| Rated Speed RPM | 50/1500",
+        "| Engine Specification",
+        "| Make / Series | Mahindra",
+        "| Power Output# (HP) | 103",
+        "| Aspiration | Turbocharged Intercooled",
+        "| Bore x Stroke (mm) | 96 x 122",
+        "| Displacement (Lit) | 3532",
+        "| Fuel consumption @ 75% load (lit/hr) ^ | 13.5",
+        "| Fuel consumption @ 100% load (lit/hr) ^ | 17.8",
+        "| Lube oil specification | SAE15W40 CI4",
+        "| Total lubrication system capacity (lit) | 10",
+        "| Lube Oil Consumtion (lit/hr) $ | 0.1% of Fuel Consumption",
+        "| Lube oil change period (hrs.) | 300 hrs. for Oil Top Up 600 hrs. for Oil change",
+        "| Radiator coolant capacity (liter) | 19",
+        "| Alternator",
+        "| Make | CG/LS",
+        "| Enclosure Type | IP23",
+        "| Voltage regulation | ±1%",
+        "| Class of insulation | Class H",
+        "| Maximum Unbalanced Load across Phases | 25%"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "75 - 125 kVA gensets - 82.5 kVA",
+      "header": [
+        "| PARAMETERS | DG MODELS"
+      ],
+      "rows": [
+        "| Duty (Standby/ Prime) | Prime",
+        "| 50 HZ PRIME | Rating(kVA) | 82.5 kVA",
+        "| Rated(kWe) | 66",
+        "| Engine Model | 41125A GM-C2",
+        "| No of Cylinders | 4",
+        "| Phase / Voltage (V) | 3 / 415",
+        "| Power Factor | 0.8 (lagging)",
+        "| Current (A) | 114.8",
+        "| Governing class | G2",
+        "| Starting system | 12 V DC Elec",
+        "| Fuel tank capacity | 160",
+        "| Genset Dimension (LxWxH $$) (mm) Approx. | 2950 X 1075 X 1575",
+        "| Genset Weight (kg) approx. | 1500",
+        "| Rated Speed RPM | 50/1500",
+        "| Engine Specification",
+        "| Make / Series | Mahindra",
+        "| Power Output# (HP) | 111.5",
+        "| Aspiration | Turbocharged Intercooled",
+        "| Bore x Stroke (mm) | 96 x 132",
+        "| Displacement (Lit) | 3882",
+        "| Fuel consumption @ 75% load (lit/hr) ^ | 13.5",
+        "| Fuel consumption @ 100% load (lit/hr) ^ | 18.1",
+        "| Lube oil specification | SAE15W40 CI4",
+        "| Total lubrication system capacity (lit) | 13.5",
+        "| Lube Oil Consumtion (lit/hr) $ | 0.1% of Fuel Consumption",
+        "| Lube oil change period (hrs.) | 300 hrs. for Oil Top Up 600 hrs. for Oil change",
+        "| Radiator coolant capacity (liter) | 19",
+        "| Alternator",
+        "| Make | CG/LS",
+        "| Enclosure Type | IP23",
+        "| Voltage regulation | ±1%",
+        "| Class of insulation | Class H",
+        "| Maximum Unbalanced Load across Phases | 25%"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "75 - 125 kVA gensets - 100 kVA",
+      "header": [
+        "| PARAMETERS | DG MODELS"
+      ],
+      "rows": [
+        "| Duty (Standby/ Prime) | Prime",
+        "| 50 HZ PRIME | Rating(kVA) | 100 kVA",
+        "| Rated(kWe) | 80",
+        "| Engine Model | mPower41265G",
+        "| No of Cylinders | 4",
+        "| Phase / Voltage (V) | 3 / 415",
+        "| Power Factor | 0.8 (lagging)",
+        "| Current (A) | 139",
+        "| Governing class | G2",
+        "| Starting system | 12 V DC Elec",
+        "| Fuel tank capacity | 250",
+        "| Genset Dimension (LxWxH $$) (mm) Approx. | 3500 x 1230 x 1425",
+        "| Genset Weight (kg) approx. | 1650",
+        "| Rated Speed RPM | 50/1500",
+        "| Engine Specification",
+        "| Make / Series | Mahindra mpower",
+        "| Power Output# (HP) | 126",
+        "| Aspiration | Turbocharged Aftercooled",
+        "| Bore x Stroke (mm) | 105 x 137",
+        "| Displacement (Lit) | 4800",
+        "| Fuel consumption @ 75% load (lit/hr) ^ | 17.3",
+        "| Fuel consumption @ 100% load (lit/hr) ^ | 23.1",
+        "| Lube oil specification | SAE 15W40CI4+",
+        "| Total lubrication system capacity (lit) | 13.5",
+        "| Lube Oil Consumtion (lit/hr) $ |",
+        "| Lube oil change period (hrs.) | 500",
+        "| Radiator coolant capacity (liter) | 19",
+        "| Alternator",
+        "| Make | CG/LS/Stamford/Equivalent",
+        "| Enclosure Type | IP23",
+        "| Voltage regulation | ±1%",
+        "| Class of insulation | Class H",
+        "| Maximum Unbalanced Load across Phases | 25%"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "75 - 125 kVA gensets - 125 kVA",
+      "header": [
+        "| PARAMETERS | DG MODELS"
+      ],
+      "rows": [
+        "| Duty (Standby/ Prime) | Standby | Prime",
+        "| 50 HZ PRIME | Rating(kVA) | 125 kVA",
+        "| Rated(kWe) | 100",
+        "| Engine Model | mPower41565G | mPower61565G",
+        "| No of Cylinders | 4 | 6",
+        "| Phase / Voltage (V) | 3 / 415 | 3 / 415",
+        "| Power Factor | 0.8 (lagging) | 0.8 (lagging)",
+        "| Current (A) | 173.7 | 173.7",
+        "| Governing class | G2 | G2",
+        "| Starting system | 12 V DC Elec | 24 V DC Elec",
+        "| Fuel tank capacity | 250 | 250",
+        "| Genset Dimension (LxWxH $$) (mm) Approx. | 3500 x 1230 x 1425",
+        "| Genset Weight (kg) approx. | 1650 | 1855",
+        "| Rated Speed RPM | 50/1500 | 50/1500",
+        "| Engine Specification",
+        "| Make / Series | Mahindra mpower",
+        "| Power Output# (HP) | 156",
+        "| Aspiration | Turbocharged Aftercooled",
+        "| Bore x Stroke (mm) | 105 x 137",
+        "| Displacement (Lit) | 4800 | 7200",
+        "| Fuel consumption @ 75% load (lit/hr) ^ | 21.4 | 21.4",
+        "| Fuel consumption @ 100% load (lit/hr) ^ | 28 | 28",
+        "| Lube oil specification | SAE 15W40CI4+",
+        "| Total lubrication system capacity (lit) | 13.5 | 20.2",
+        "| Lube Oil Consumtion (lit/hr) $ | |",
+        "| Lube oil change period (hrs.) | 500 | 500",
+        "| Radiator coolant capacity (liter) | 19 | 22.5",
+        "| Alternator",
+        "| Make | CG/LS/Stamford/Equivalent",
+        "| Enclosure Type | IP23",
+        "| Voltage regulation | ±1%",
+        "| Class of insulation | Class H",
+        "| Maximum Unbalanced Load across Phases | 25%"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "Technical specifications 1010kVA / 1250kVA",
+      "header": [
+        "        Genset                                                                       1010kVA                                1250kVA*"
+      ],
+      "rows": [
+        "   Controller",
+        "        Genset Model                                                                 M1010DR                                M1250DR",
+        "        Cap-On DG Fuel Tank Capacity, Litres                                         905                                    905",
+        "        Governing Class                                                              G2/G3 as per ISO 8528-5                G2/G3 as per ISO 8528-5",
+        "        Engine Manufacturer                                                          Perkins India                          Perkins India",
+        "        Engine Model                                                                 4008-30TAG2                            4008-30TAG3",
+        "        Conﬁguration                                                                 8 Cyl. In-line                         8 Cyl. In-line",
+        "        Aspiration                                                                   TCAC                                   TCAC",
+        "        Gross Engine Power output kWm / BHP                                          901 / 1208                             1105 / 1481",
+        "        Net Engine power output kWm / BHP                                            851 / 1140                             1055 / 1414",
+        "        Displacement, Lit                                                            30.5                                   30.5",
+        "        Rated Voltage                                                                415V                                   415V",
+        "        Controller                                                                   DSE7320-MKII                           DSE7320-MKII",
+        "Controller                                       Assembly"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "Controller Model                                            DSE7320                                    DSE7320",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320-MKII",
+      "text": "DSE7320-MKII",
+      "line": "        Controller                                                                   DSE7320-MKII                           DSE7320-MKII",
+      "src": [
+        2008
+      ]
+    }
+  ]
 }
