@@ -42,6 +42,382 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "engine",
+      "series": "Generator drive engines: Engines for EU Stage V and EPA Final Tier 4 applications",
+      "fuel": "diesel",
+      "engineMakes": [
+        "John Deere"
+      ],
+      "power": {
+        "min": 30,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "Generator drive engines: Engines for EPA Final Tier 4 applications",
+      "fuel": "diesel",
+      "engineMakes": [
+        "John Deere"
+      ],
+      "power": {
+        "min": 55,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "Generator drive engines: Engines for EPA Tier 3 and New Source Performance Standards (NSPS) applications",
+      "fuel": "diesel",
+      "engineMakes": [
+        "John Deere"
+      ],
+      "power": {
+        "min": 35,
+        "max": 620,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "Generator drive engines: Engines for EU Stage III A and EPA Tier 3 applications",
+      "fuel": "diesel",
+      "engineMakes": [
+        "John Deere"
+      ],
+      "power": {
+        "min": 30,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "Generator drive engines: Engines for non-emissions regulated applications",
+      "fuel": "diesel",
+      "engineMakes": [
+        "John Deere"
+      ],
+      "power": {
+        "min": 30,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "6136CG550",
+      "fuel": "diesel",
+      "engineMakes": [
+        "John Deere"
+      ],
+      "engineModels": [
+        "6136CG550"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "6135HFG06",
+      "fuel": "diesel",
+      "engineMakes": [
+        "John Deere"
+      ],
+      "engineModels": [
+        "6135HFG06"
+      ],
+      "power": {
+        "min": 426,
+        "max": 426,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "6090HFG84",
+      "fuel": "diesel",
+      "engineMakes": [
+        "John Deere"
+      ],
+      "engineModels": [
+        "6090HFG84"
+      ],
+      "power": {
+        "min": 305,
+        "max": 305,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "4045HFG82",
+      "fuel": "diesel",
+      "engineMakes": [
+        "John Deere"
+      ],
+      "engineModels": [
+        "4045HFG82"
+      ],
+      "power": {
+        "min": 121,
+        "max": 121,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "6068HFG06",
+      "fuel": "diesel",
+      "engineMakes": [
+        "John Deere"
+      ],
+      "engineModels": [
+        "6068HFG06"
+      ],
+      "power": {
+        "min": 199,
+        "max": 199,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "6068HFG05",
+      "fuel": "diesel",
+      "engineMakes": [
+        "John Deere"
+      ],
+      "engineModels": [
+        "6068HFG05"
+      ],
+      "power": {
+        "min": 159,
+        "max": 159,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "4045HFG04",
+      "fuel": "diesel",
+      "engineMakes": [
+        "John Deere"
+      ],
+      "engineModels": [
+        "4045HFG04"
+      ],
+      "power": {
+        "min": 96,
+        "max": 96,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "6090HFG06",
+      "fuel": "diesel",
+      "engineMakes": [
+        "John Deere"
+      ],
+      "engineModels": [
+        "6090HFG06"
+      ],
+      "power": {
+        "min": 269,
+        "max": 269,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "6135HF485",
+      "fuel": "diesel",
+      "engineMakes": [
+        "John Deere"
+      ],
+      "engineModels": [
+        "6135HF485"
+      ],
+      "power": {
+        "min": 465,
+        "max": 465,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "6135HFG75",
+      "fuel": "diesel",
+      "engineMakes": [
+        "John Deere"
+      ],
+      "engineModels": [
+        "6135HFG75"
+      ],
+      "power": {
+        "min": 642,
+        "max": 642,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "6068HFG82",
+      "fuel": "diesel",
+      "engineMakes": [
+        "John Deere"
+      ],
+      "engineModels": [
+        "6068HFG82"
+      ],
+      "power": {
+        "min": 201,
+        "max": 201,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "3029HFG89",
+      "fuel": "diesel",
+      "engineMakes": [
+        "John Deere"
+      ],
+      "engineModels": [
+        "3029HFG89"
+      ],
+      "power": {
+        "min": 45,
+        "max": 45,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
     }
   ],
   "certifications": [],
@@ -61,9 +437,518 @@
         "offer an engine in the 522 – 677 kW (700 – 908 hp) power range without aftertreatment"
       ],
       "file": "sources/john-deere-power/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.deere.com/assets/pdfs/common/industries/engines-and-drivetrain/brochures/dswt39-gen-drive-selection-guide.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Engines for EU Stage V and",
+        "Engines for non-emissions",
+        "PF constant = 0.80",
+        "30      EWX 2.9L     3 cyl.           3029HG530  3029HP530                    1500   36     38            31   33   35             28   90          1.8",
+        "500     JD14X        6 cyl.           6136CG550                            —  1500   505    557  446           460  505            404  93          25.5",
+        "55 (40)       EWX 4.5L     4 cyl.  4045TFG03     1800   55   57   46     50   52             41   90          3.9    -",
+        "500 (400)     JD14P        6 cyl.  6136CG440     1500   505  474  379    391  428            343  93          22.5",
+        "35 (30)        M 2.9L       3 cyl.  3029TFG89  1800   35   37               30   31   32             29   90          2.2",
+        "620 (500)      E 13.5L      6 cyl.  6135HFG75  1800   563  628              503  -    -              -    93          22.5",
+        "30     M 2.9L       3 cyl.  3029TFG89†  3029TFU89†                       1500    31   33              27   28   30             24   90          2",
+        "300    E 9.0L       6 cyl.  6090HFG84   6090HFU84                        1500    304  336  269             277  304            243  93          17",
+        "30     M 2.9L       3 cyl.  3029DFG20  3029DFU20                            1500   31   33              27   28   30             24   90          1.6",
+        "500    E 13.5L      6 cyl.  6135HFG75                                    -  1500   -    -               -    -    -              -    -           -      -      Exempt"
+      ],
+      "file": "sources/john-deere-power/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.deere.com/assets/pdfs/common/industries/engines-and-drivetrain/specsheets/6135HFG06_PSL.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "6135HFG06 Diesel Engine",
+        "Model                              6135HFG06                                           Length – mm (in) to rear of block        1501 (59.1)",
+        "60 (1800)              432         579         473             634           93  24.7           33.1          0.8         379          473   417                 521",
+        "50 (1500)              389         521         427             572           93  22.2           29.8          0.8         341          426   376                 471"
+      ],
+      "file": "sources/john-deere-power/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://www.deere.com/assets/pdfs/common/industries/engines-and-drivetrain/specsheets/6090HFG84_A15.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "6090HFG84 Diesel Engine",
+        "Model                                          6090HFG84                            Length - mm (in) to rear of block               1208 (47.6)",
+        "50(1500)        230-277    308-371   253-304             339-408  90-94       17.0        23               0.8         192-244  240-305          213-270      266-337",
+        "60(1800)        235-286    315-384   258-315             346-422  90-94       29.4        39               0.8         185-242  232-302          206-268      258-336"
+      ],
+      "file": "sources/john-deere-power/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://www.deere.com/assets/pdfs/common/industries/engines-and-drivetrain/specsheets/4045HFG82_A15.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "4045HFG82 Diesel Engine",
+        "Model                                          4045HFG82                              Length - mm (in) to rear of block                860 (33.9)",
+        "50(1500)        76-112     102-150   83-123              111-165        88-92  7.0-9      9-12               0.8         59-97         73-121       65-107       81-134",
+        "60(1800)        77-115     103-154   85-126              114-169        88-92  10.3-15.5  14-21              0.8         54-96         68-120       61-107       76-133"
+      ],
+      "file": "sources/john-deere-power/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://www.deere.com/assets/pdfs/common/industries/engines-and-drivetrain/specsheets/6068HFG06_PSL.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "6068HFG06 Diesel Engine",
+        "Model                                  6068HFG06                                                Length – mm (in) to rear of block          1140 (44.9)",
+        "60 (1800)         197 – 219 265 – 294            216 & 240       290 – 3  2  2     91       13.0 – 14.4  17.4 – 19.3   0.8         168 – 187 210 – 233 185 – 205 231 – 257",
+        "50 (1500)** 167 –187 224 –251                    183 & 205       245 – 2  7  5     91       11.0 – 12.3  14.7 – 16.5   0.8         142 – 159 178 – 199 157 – 175 196 – 219"
+      ],
+      "file": "sources/john-deere-power/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://www.deere.com/assets/pdfs/common/industries/engines-and-drivetrain/specsheets/6068HFG05_PVL.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "6068HFG05 Diesel Engine",
+        "Model                             6068HFG05                                                  Length – mm (in) to rear of block        1140 (44.9)",
+        "60 (1800)    146–176 196–235                 160 & 192        215 – 2  5  7     90       9.0 – 10.8  12.0 – 14.4    0.8         124–148 154–185 136–163 170–204",
+        "50 (1500)** 146–151 196–202                  160 & 165        215 – 2  2  1     90       9.0 – 9.2   12.0 – 12.4    0.8         124–127 154 – 159 136 – 140 170 – 175"
+      ],
+      "file": "sources/john-deere-power/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://www.deere.com/assets/pdfs/common/industries/engines-and-drivetrain/specsheets/4045HFG04_PWL.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "4045HFG04 Diesel Engine",
+        "Model                                    4045HFG04                                        Length - mm (in) to rear of block                870 (34.3)",
+        "60(1800)     61-90               82-122     67-99            90-133  88-92       4.7-6.9  6.3-9.3                0.8         50-77         62-96        55-85        69-106"
+      ],
+      "file": "sources/john-deere-power/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://www.deere.com/assets/pdfs/common/industries/engines-and-drivetrain/specsheets/6090HFG06_PSL.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "6090HFG06 Diesel Engine",
+        "Model                             6090HFG06                                               Length – mm (in) to rear of block            1326 (52.2)",
+        "60 (1800)    250 – 298 335 – 400             273 – 326     366 – 437        91        16.4 – 19.6  22.0 – 26.2    0.8        212 – 254 265 – 317 234 – 279 292 – 349",
+        "60 (1800)†             —          —          345               463          91        20.7                  27.8  0.8              ­—         —       295               369",
+        "50 (1500)** 250 – 256 335 – 343              273 – 280 366 – 375            91        16.4 – 16.8  22.0 – 22.5    0.8        212 – 215 265 – 269 234 – 237 292 – 296"
+      ],
+      "file": "sources/john-deere-power/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://www.deere.com/assets/pdfs/common/industries/engines-and-drivetrain/specsheets/6135HF485_S.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "6135HF485 Diesel Engine",
+        "Model                                          6135HF485                               Length - mm (in) to rear of block               1334 (52.5)",
+        "60(1800)     311-419       417-562   345-460           463-617          90-94  18.98-  25-34                  0.8         264-372  330-465          293-409      367-511"
+      ],
+      "file": "sources/john-deere-power/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://www.deere.com/assets/pdfs/common/industries/engines-and-drivetrain/specsheets/6135HFG75_A.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "6135HFG75 Diesel Engine",
+        "Model                                6135HFG75                                    Length - mm (in) to rear of block               1362 (53.6)",
+        "60(1800)           0             0      755               563  91-95       22.5   30                     0.8         --           --           492-513      615-642"
+      ],
+      "file": "sources/john-deere-power/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://www.deere.ca/assets/pdfs/common/industries/engines-and-drivetrain/specsheets/6068HFG82_A15.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "6068HFG82 Diesel Engine",
+        "Model                                          6068HFG82                                Length - mm (in) to rear of block               1123 (44.2)",
+        "50(1500)        139-184    186-247   153-202           205-271          88-92  9.0-11.4       12-15            0.8         112-161  140-201          125-178      156-222",
+        "60(1800)        143-194    192-260   157-212           211-284          88-92  15-18.2        20-24            0.8         110-165  137-206          122-181      152-227"
+      ],
+      "file": "sources/john-deere-power/2011.md",
+      "official": false
+    },
+    {
+      "n": 2012,
+      "url": "https://www.deere.ca/assets/pdfs/common/industries/engines-and-drivetrain/specsheets/3029HFG89_60Hz.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "3029HFG89 Diesel Engine",
+        "Model                                          3029HFG89                            Length - mm (in)  to rear of  block                717 (28.2)",
+        "60(1800)            42           56  46                     62          88-92  2.6    3                     0.8          34-36         43-45       38-40         48-50"
+      ],
+      "file": "sources/john-deere-power/2012.md",
+      "official": false
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-04",
-  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Engines for EU Stage V and EPA Final Tier 4 applications — Dual frequency 50 Hz/60 Hz",
+      "header": [
+        "Node                                     Engine     Power unit                   Speed      Standby ratings            Prime ratings       Generator   Fan    Dual",
+        "           Engine name  Type             model      model*                                                                                 efficiency  power  freq.  RoHS †",
+        "kVA prime                                                                        rpm    kWm    kVA  kWe           kWm  kVA            kWe  %           kW"
+      ],
+      "rows": [
+        "   30      EWX 2.9L     3 cyl.           3029HG530  3029HP530                    1500   36     38            31   33   35             28   90          1.8",
+        "                                                                                 1800   36     38            31   33   35             28   90          1.8",
+        "   40      EWX 2.9L     3 cyl.           3029HG530 3029HP530                     1500   48     51            41   44   46             37   90          2.4",
+        "                                                                                 1800   48     51            41   44   46             37   90          2.4",
+        "   55      EWX 2.9L     3 cyl.           3029HG530  3029HP530                    1500   55     59            47   50   53             43   90          2.8",
+        "                                                                                 1800   55     59            47   50   53             43   90          2.8",
+        "   80      EWS 4.5L     4 cyl.           4045HG551  4045HP551                    1500   83     91            73   76   82             66   92          4.2",
+        "                                                                                 1800   86     94            75   78   85             68   92          4.3",
+        "   100     EWS 4.5L     4 cyl.           4045HG551  4045HP551                    1500   103    113           90   94   102            81   92          5.2",
+        "                                                                                 1800   106    116           93   96   105            84   92          5.3",
+        "   150     PVS 6.8L     6cyl. 6068HG550 6068HP550                                1500   165    182           146  150  165            132  93          8.3",
+        "                                                                                 1800   180    199           159  164  180            144  93          9.0",
+        "   200     PSS 6.8L     6cyl. 6068CG550 6068CP550                                1500   202    223           178  184  202            162  93          10.1",
+        "                                                                                 1800   216††  239           191  197  216            173  93          10.8",
+        "   275     PSS 9.0L     6cyl. 6090CG550 6090CP550                                1500   273    301           241  248  273            218  93          13.7",
+        "                                                                                 1800   273    301           241  248  273            218  93          13.7",
+        "   300     PSS 9.0L     6cyl. 6090CG550 6090CP550                                1500   304    336           269  277  304            243  93          15.2",
+        "                                                                                 1800   326    360  288           297  326            261  93          16.3",
+        "   500     JD14X        6 cyl.           6136CG550                            —  1500   505    557  446           460  505            404  93          25.5",
+        "                                                                                 1800   505    556  445           460  503            403  93          26.5"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Engines for EPA Final Tier 4 applications — Dual frequency 50 Hz/60 Hz",
+      "header": [
+        "   Node                                             Speed  Standby ratings       Prime ratings       Generator   Fan    Dual",
+        "                 Engine name  Type    Engine model                                                   efficiency  power  freq.",
+        "kVA (kWE) prime                                     rpm    kWm  kVA  kWe    kWm  kVA            kWe  %           kW"
+      ],
+      "rows": [
+        "   55 (40)       EWX 4.5L     4 cyl.  4045TFG03     1800   55   57   46     50   52             41   90          3.9    -",
+        "   60 (50)       PWL 4.5L     4 cyl.  4045HFG04     1500   68   72   57     62   65             52   90          4.4",
+        "                                                    1800   68   71   57     62   64             51   90          4.8",
+        "   75 (60)       PWL 4.5L     4 cyl.  4045HFG04     1500   80   84   67     73   76             61   90          5.1",
+        "                                                    1800   80   84   67     73   76             60   90          5.6",
+        "   95 (75)       PWL 4.5L     4 cyl.  4045HFG04     1500   80   85   68     73   77             61   92          6.3",
+        "                                                    1800   99   106  85     90   96             76   92          6.9",
+        "   125 (100)     PSL 4.5L     4 cyl.  4045CG440     1500   112  121  97     102  109            87   92          7.1",
+        "                                                    1800   128  138  111    117  126            101  92          7.7",
+        "   155 (125)     PVL 6.8L     6 cyl.  6068HFG05     1500   160  175  140    146  158            127  92          8.2",
+        "                                                    1800   160  174  139    146  158            126  92          9",
+        "   190 (150)     PVL 6.8L     6 cyl.  6068HFG05     1500   165  180  144    150  163            130  93          9.9",
+        "                                                    1800   192  211  169    175  191            153  93          10.8",
+        "   210 (170)     PSL 6.8L     6 cyl.  6068HFG06     1500   197  215  172    179  194            155  93          11.8",
+        "                                                    1800   216  236  189    196  213            171  93          13",
+        "   235 (190)     PSL 6.8L     6 cyl.  6068HFG06     1500   197  214  171    179  193            154  93          13.1",
+        "                                                    1800   240  262  210    218  237            190  93          14.4",
+        "   270 (215)     PSL 9.0L     6 cyl.  6090HFG06     1500   273  300  240    249  272            218  93          14.9",
+        "                                                    1800   273  298  239    249  270            216  93          16.4",
+        "   320 (250)     PSL 9.0L     6 cyl.  6090HFG06     1500   300  328  262    273  297            237  93          17.8",
+        "                                                    1800   326  356  285    297  322            258  93          19.6",
+        "   -             PSL 9.0L     6 cyl.  6090HFG06     1500   300  327  261    -    -              -    93          18.9",
+        "                                                    1800   345  377  302    -    -              -    93          20.7",
+        "   500 (400)     JD14P        6 cyl.  6136CG440     1500   505  474  379    391  428            343  93          22.5",
+        "                                                    1800   505  521  417    431  472            378  93          24.7"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Engines for EPA Tier 3 and New Source Performance Standards (NSPS) applications — 60 Hz",
+      "header": [
+        "    Node                                Engine     Speed       Standby ratings            Prime ratings       Generator   Fan",
+        "                   Engine name  Type    model                                                                 efficiency  power",
+        "kVA (kWe) standby                                  rpm    kWm  kVA              kWe  kWm  kVA            kWe  %           kW"
+      ],
+      "rows": [
+        "    35 (30)        M 2.9L       3 cyl.  3029TFG89  1800   35   37               30   31   32             29   90          2.2",
+        "    50 (40)        M 2.9L       3 cyl.  3029HFG89  1800   46   49               39   42   44             35   90          2.9",
+        "    60 (50)        M 4.5L       4 cyl.  4045TF290  1800   55   58               47   50   53             42   90          3.3",
+        "    70 (55)        M 4.5L       4 cyl.  4045TF280  1800   63   69               55   57   62             50   90          1.9",
+        "    80 (65)        M 4.5L       4 cyl.  4045HF280  1800   74   81               65   67   73             58   90          2.2",
+        "    80 (65)        E 4.5L       4 cyl.  4045TF285  1800   74   77               62   67   70             56   90          5.2",
+        "    100 (80)       E 4.5L       4 cyl.  4045HF285  1800   94   102              82   86   93             74   92          5.2",
+        "    125 (100)      E 4.5L       4 cyl.  4045HF285  1800   118  128              103  107  116            92   92          6.5",
+        "    160 (125)      Plus 4.5L    4 cyl.  4045HFG85  1800   147  162              129  134  147            117  92          6.5",
+        "    160 (125)      E 6.8L       6 cyl.  6068HF285  1800   147  160              128  134  145            116  92          8.1",
+        "    190 (150)      E 6.8L       6 cyl.  6068HF285  1800   177  192              154  161  174            139  92          9.8",
+        "    230 (180)      E 6.8L       6 cyl.  6068HFG82  1800   212  232              185  193  210            168  93          12.6",
+        "    255 (200)      Plus 6.8L    6 cyl.  6068HFG85  1800   235  257              205  214  232            186  93          14.1",
+        "    275 (220)      E 9.0L       6 cyl.  6090HFG84  1800   258  278              222  235  251            201  93          18.9",
+        "    310 (250)      E 9.0L       6 cyl.  6090HF484  1800   287  314              251  258  280            224  93          17.2",
+        "    340 (275)      E 9.0L       6 cyl.  6090HF484  1800   315  344              275  287  312            249  93          18.9",
+        "    345 (275)      Plus 9.0L    6 cyl.  6090HFG85  1800   315  347              278  287  315            252  93          16.1",
+        "    380 (300)      E 9.0L       6 cyl.  6090HFG86  1800   345  379              303  -    -              -    93          19.3",
+        "    440 (350)      E 13.5L      6 cyl.  6135HFG84  1800   401  44               358  -    -              -    93          16",
+        "    440 (350)      Plus 13.5L   6 cyl.  6135HF485  1800   401  441              352  365  399            319  93          22",
+        "    500 (400)      E 13.5L      6 cyl.  6135HFG84  1800   460  513              411  -    -              -    93          18.4",
+        "    500 (400)      Plus 13.5L   6 cyl.  6135HF485  1800   460  505              404  419  458            366  93          25.3",
+        "    620 (500)      E 13.5L      6 cyl.  6135HFG75  1800   563  628              503  -    -              -    93          22.5"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Engines for EU Stage III A and EPA Tier 3 applications — Dual frequency 50 Hz/60 Hz",
+      "header": [
+        "Node                            Engine      Power unit                       Speed       Standby ratings            Prime ratings       Generator   Fan    Dual",
+        "           Engine name  Type    model       model*                                                                                      efficiency  power  freq.  RoHS",
+        "kVA prime                                                                    rpm     kWm  kVA  kWe             kWm  kVA            kWe  %           kW"
+      ],
+      "rows": [
+        "    30     M 2.9L       3 cyl.  3029TFG89†  3029TFU89†                       1500    31   33              27   28   30             24   90          2",
+        "                                                                             1800    35   37              30   32   34             27   90          3.4",
+        "    40     M 2.9L       3 cyl.  3029HFG89†  3029HFU89†                       1500    43   46              37   39   42             33   90          2.2",
+        "                                                                             1800    46   49              39   42   45             36   90          2.2",
+        "    60     M 4.5L       4 cyl.  4045HFG81   4045HFU81                        1500    61   65              52   56   59             47   90          9.1",
+        "                                                                             1800    65   69              56   59   63             50   90          15.3",
+        "    80     E 4.5L       4 cyl.  4045HFG82   4045HFU82                        1500    83   89              71   76   80             64   90          9.1",
+        "                                                                             1800    86   92              74   78   83             67   90          15.3",
+        "    100    E 4.5L       4 cyl.  4045HFG82   4045HFU82                        1500    103  113             90   94   102            81   92          9.1",
+        "                                                                             1800    106  116             93   96   105            84   92          15.3",
+        "    120    E 4.5L       4 cyl.  4045HFG82   4045HFU82                        1500    123  134             108  112  122            97   92          5.2",
+        "                                                                             1800    126  138             110  115  125            100  92          9.1",
+        "    150    E 6.8L       6 cyl.  6068HFG82   6068HFU82                        1500    153  167             134  139  151            121  92          13.1",
+        "                                                                             1800    156  170             136  142  154            123  92          22.5",
+        "    200    E 6.8L       6 cyl.  6068HFG82   6068HFU82                        1500    202  223             178  184  202            162  93          14.3",
+        "                                                                             1800    212  234             187  193  212            170  93          24.7",
+        "    250    E 9.0L       6 cyl.  6090HFG84   6090HFU84                        1500    253  279             224  230  253            202  93          17",
+        "                                                                             1800    258  285             228  235  258            206  93          29.4",
+        "    300    E 9.0L       6 cyl.  6090HFG84   6090HFU84                        1500    304  336  269             277  304            243  93          17",
+        "                                                                             1800    315  348             278  287  315            252  93          29.4"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Engines for non-emissions regulated applications — Dual frequency 50 Hz/60 Hz",
+      "header": [
+        "Node                            Engine     Power unit                           Speed      Standby ratings            Prime ratings       Generator   Fan    Dual",
+        "           Engine name  Type    model      model*                                                                                         efficiency  power  freq.  RoHS",
+        "kVA prime                                                                       rpm    kWm  kVA  kWe             kWm  kVA            kWe  %           kW"
+      ],
+      "rows": [
+        "    30     M 2.9L       3 cyl.  3029DFG20  3029DFU20                            1500   31   33              27   28   30             24   90          1.6",
+        "                                                                                1800   35   38              30   32   34             27   90          1.8",
+        "    40     M 2.9L       3 cyl.  3029TFG20  3029TFU20                            1500   42   45              36   39   41             33   90          2.1",
+        "                                                                                1800   48   51              41   44   46             37   90          2.4",
+        "    60     M 2.9L       3 cyl.  3029HFG20  3029HFU20                            1500   58   62              49   55   58             47   90          3.1",
+        "                                                                                1800   67   71              57   62   66             53   90          3.6",
+        "    80     M 4.5L       4 cyl.  4045TFG20  4045TFU20                            1500   85   92              74   79   86             68   92          4.1",
+        "                                                                                1800   97   106             84   89   96             77   92          4.7",
+        "    100    M 4.5L       4cyl. 4045HFG20 4045HFU20                               1500   103  113             90   96   105            85   92          5.1",
+        "                                                                                1800   115  125  100             105  114            91   92          5.7",
+        "    120    M 4.5L       4cyl. 4045HFG20 4045HFU20                               1500   122  133             107  112  122            97   92          6.1",
+        "                                                                                1800   133  145             116  121  131            105  92          6.8",
+        "    150    M 6.8L       6cyl. 6068HFG20 6068HFU20                               1500   157  172             137  144  157            125  92          7.7",
+        "                                                                                1800   164  179             143  150  163            130  92          8.5",
+        "    180    M 6.8L       6cyl. 6068HFG20 6068HFU20                               1500   184  201             161  170  185            148  92          9.2",
+        "                                                                                1800   196  213             171  179  194            155  92          10.5",
+        "    200    M 6.8L       6cyl. 6068HFG20 6068HFU20                               1500   202  223             179  184  202            162  93          10.1",
+        "                                                                                1800   210  232  186             191  210            168  93          10.5",
+        "    225    E 6.8L       6cyl. 6068HFG25                                      -  1500   225  249  199             205  225            180  93          11.3          -",
+        "                                                                                1800   236  261  209             215  236            189  93          11.8",
+        "    250    E 6.8L       6cyl. 6068HFG55 6068HFU55                               1500   250  276             221  228  250            200  93          12.5",
+        "                                                                                1800   260  287  230             237  260            208  93          13.0",
+        "    300    E 9.0L       6cyl. 6090HFG84 6090HFU84                               1500   304  336  269             277  304            243  93          15.2          -",
+        "                                                                                1800   315  348  278             287  315            252  93          15.8",
+        "    350    E 13.5L      6 cyl.  6135HF475                                    -  1500   355  392             314  323  355            284  93          17.8   -      -",
+        "                                                                                1800   360  398             318  328  360            288  93          18.0",
+        "    400    E 13.5L      6 cyl.  6135HF475                                    -  1500   405  447  358             369  405            324  93          20.3   -      Exempt",
+        "                                                                                1800   420  464             371  382  420            336  93          21.0",
+        "    450    E 13.5L      6 cyl.  6135HF475                                    -  1500   456  504  403             415  456            365  93          22.8   -      Exempt",
+        "                                                                                1800   460  508  406             419  460            368  93          23.0",
+        "    500    E 13.5L      6 cyl.  6135HFG75                                    -  1500   -    -               -    -    -              -    -           -      -      Exempt",
+        "                                                                                1800   563  622  497             -    -              -    93          28.2"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "6135HFG06 Diesel Engine — Performance data range",
+      "header": [
+        "Rated speed                        Engine  power                    Generator    Rated fan power              Power             Calculated generator set output",
+        "                            Prime                     Standby       efficiency                                factor            Prime             Standby",
+        "Hz (rpm)               kW          hp          kW               hp           %   kW             hp                        kWe*         kVA   kWe                 kVA"
+      ],
+      "rows": [
+        "Model                              6135HFG06                                           Length – mm (in) to rear of block        1501 (59.1)",
+        "60 (1800)              432         579         473             634           93  24.7           33.1          0.8         379          473   417                 521",
+        "50 (1500)              389         521         427             572           93  22.2           29.8          0.8         341          426   376                 471"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "6090HFG84 Diesel Engine — Performance data range",
+      "header": [
+        "                                 Engine power                                 Rated  fan  power                              Calculated generator set output",
+        "Rated                     Prime                   Standby         Generator                           Power                  Prime                    Standby",
+        "speed                                                             efficiency                          factor",
+        "Hz(rpm)         kW               hp  kW                     hp            %   kW          hp                           kWe*         kVA          kWe           kVA"
+      ],
+      "rows": [
+        "Model                                          6090HFG84                            Length - mm (in) to rear of block               1208 (47.6)",
+        "50(1500)        230-277    308-371   253-304             339-408  90-94       17.0        23               0.8         192-244  240-305          213-270      266-337",
+        "60(1800)        235-286    315-384   258-315             346-422  90-94       29.4        39               0.8         185-242  232-302          206-268      258-336"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "4045HFG82 Diesel Engine — Performance data range",
+      "header": [
+        "                                 Engine power                                  Rated fan  power                                 Calculated generator set output",
+        "Rated                     Prime                   Standby         Generator                             Power                   Prime                    Standby",
+        "speed                                                             efficiency                            factor",
+        "Hz(rpm)         kW               hp  kW                     hp          %      kW         hp                             kWe*          kVA          kWe           kVA"
+      ],
+      "rows": [
+        "Model                                          4045HFG82                              Length - mm (in) to rear of block                860 (33.9)",
+        "50(1500)        76-112     102-150   83-123              111-165        88-92  7.0-9      9-12               0.8         59-97         73-121       65-107       81-134",
+        "60(1800)        77-115     103-154   85-126              114-169        88-92  10.3-15.5  14-21              0.8         54-96         68-120       61-107       76-133"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "6068HFG06 Diesel Engine — Performance data range",
+      "header": [
+        "Rated speed                            Engin  e  power                          Generator   Rated fan power            Power               Calculated generator set output",
+        "                           Prime                         Sta  n  dby            efficiency                             factor              Prime             Standby",
+        "Hz (rpm)               kW              hp         kW                  hp           %        kW           hp                        kWe*           kVA   kWe                 kVA"
+      ],
+      "rows": [
+        "Model                                  6068HFG06                                                Length – mm (in) to rear of block          1140 (44.9)",
+        "60 (1800)         197 – 219 265 – 294            216 & 240       290 – 3  2  2     91       13.0 – 14.4  17.4 – 19.3   0.8         168 – 187 210 – 233 185 – 205 231 – 257",
+        "50 (1500)** 167 –187 224 –251                    183 & 205       245 – 2  7  5     91       11.0 – 12.3  14.7 – 16.5   0.8         142 – 159 178 – 199 157 – 175 196 – 219"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "6068HFG05 Diesel Engine — Performance data range",
+      "header": [
+        "Rated speed                       Engin  e  power                            Generator   Rated fan power            Power             Calculated generator set output",
+        "                           Prime                      Sta  n  dby            efficiency                             factor            Prime             Standby",
+        "Hz (rpm)               kW         hp         kW                    hp           %        kW          hp                         kWe*         kVA   kWe                 kVA"
+      ],
+      "rows": [
+        "Model                             6068HFG05                                                  Length – mm (in) to rear of block        1140 (44.9)",
+        "60 (1800)    146–176 196–235                 160 & 192        215 – 2  5  7     90       9.0 – 10.8  12.0 – 14.4    0.8         124–148 154–185 136–163 170–204",
+        "50 (1500)** 146–151 196–202                  160 & 165        215 – 2  2  1     90       9.0 – 9.2   12.0 – 12.4    0.8         124–127 154 – 159 136 – 140 170 – 175"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "4045HFG04 Diesel Engine — Performance data range",
+      "header": [
+        "                                 Engine power                                    Rated fan power                                    Calculated generator set output",
+        "Rated                     Prime                     Standby          Generator                                   Power              Prime                    Standby",
+        "speed                                                                efficiency                                  factor",
+        "Hz(rpm)      kW                  hp         kW               hp      %           kW       hp                                 kWe*          kVA          kWe           kVA"
+      ],
+      "rows": [
+        "Model                                    4045HFG04                                        Length - mm (in) to rear of block                870 (34.3)",
+        "60(1800)     61-90               82-122     67-99            90-133  88-92       4.7-6.9  6.3-9.3                0.8         50-77         62-96        55-85        69-106"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "6090HFG06 Diesel Engine — Performance data range",
+      "header": [
+        "   Rated speed                       Engine  power                       Generator       Rated fan power             Power                Calculated generator set output",
+        "                              Prime                      Standby         efficiency                                  factor               Prime               Standby",
+        "   Hz (rpm)               kW         hp         kW                hp           %         kW                    hp               kWe*             kVA     kWe               kVA"
+      ],
+      "rows": [
+        "   Model                             6090HFG06                                               Length – mm (in) to rear of block            1326 (52.2)",
+        "   60 (1800)    250 – 298 335 – 400             273 – 326     366 – 437        91        16.4 – 19.6  22.0 – 26.2    0.8        212 – 254 265 – 317 234 – 279 292 – 349",
+        "   60 (1800)†             —          —          345               463          91        20.7                  27.8  0.8              ­—         —       295               369",
+        "   50 (1500)** 250 – 256 335 – 343              273 – 280 366 – 375            91        16.4 – 16.8  22.0 – 22.5    0.8        212 – 215 265 – 269 234 – 237 292 – 296"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "6135HF485 Diesel Engine — Performance data range",
+      "header": [
+        "                                 Engine power                                  Rated fan power                                  Calculated generator set output",
+        "Rated                     Prime                   Standby        Generator                               Power                  Prime                    Standby",
+        "speed                                                            efficiency                              factor",
+        "Hz(rpm)      kW                  hp  kW                     hp          %      kW      hp                                 kWe*         kVA          kWe           kVA"
+      ],
+      "rows": [
+        "Model                                          6135HF485                               Length - mm (in) to rear of block               1334 (52.5)",
+        "60(1800)     311-419       417-562   345-460           463-617          90-94  18.98-  25-34                  0.8         264-372  330-465          293-409      367-511"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "6135HFG75 Diesel Engine — Performance data range",
+      "header": [
+        "                                 Engine power                              Rated fan power                                 Calculated generator set output",
+        "Rated                     Prime                  Standby       Generator                                 Power             Prime                    Standby",
+        "speed                                                          efficiency                                factor",
+        "Hz(rpm)      kW                  hp     kW                hp   %           kW     hp                                 kWe*         kVA          kWe           kVA"
+      ],
+      "rows": [
+        "Model                                6135HFG75                                    Length - mm (in) to rear of block               1362 (53.6)",
+        "60(1800)           0             0      755               563  91-95       22.5   30                     0.8         --           --           492-513      615-642"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "6068HFG82 Diesel Engine — Performance data range",
+      "header": [
+        "                                 Engine power                                  Rated     fan  power                              Calculated generator set output",
+        "Rated                     Prime                   Standby        Generator                                Power                  Prime                    Standby",
+        "speed                                                            efficiency                               factor",
+        "Hz(rpm)         kW               hp  kW                     hp          %      kW             hp                           kWe*         kVA          kWe           kVA"
+      ],
+      "rows": [
+        "Model                                          6068HFG82                                Length - mm (in) to rear of block               1123 (44.2)",
+        "50(1500)        139-184    186-247   153-202           205-271          88-92  9.0-11.4       12-15            0.8         112-161  140-201          125-178      156-222",
+        "60(1800)        143-194    192-260   157-212           211-284          88-92  15-18.2        20-24            0.8         110-165  137-206          122-181      152-227"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "3029HFG89 Diesel Engine — Performance data range",
+      "header": [
+        "                                 Engine power                                  Rated fan power                                  Calculated generator set output",
+        "Rated                     Prime                   Standby        Generator                            Power                     Prime                   Standby",
+        "speed                                                            efficiency                           factor",
+        "Hz(rpm)             kW           hp  kW                     hp          %      kW     hp                                 kWe*          kVA         kWe           kVA"
+      ],
+      "rows": [
+        "Model                                          3029HFG89                            Length - mm (in)  to rear of  block                717 (28.2)",
+        "60(1800)            42           56  46                     62          88-92  2.6    3                     0.8          34-36         43-45       38-40         48-50"
+      ]
+    }
+  ]
 }
