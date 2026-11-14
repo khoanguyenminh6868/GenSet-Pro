@@ -81,6 +81,674 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Power Pack Green Line",
+      "fuel": "diesel",
+      "engineMakes": [
+        "KOHLER",
+        "IVECO",
+        "DEUTZ",
+        "VOLVO",
+        "PERKINS",
+        "MTU"
+      ],
+      "engineModels": [],
+      "power": {
+        "min": 9,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Power Pack Green Line – KOHLER",
+      "fuel": "diesel",
+      "engineMakes": [
+        "KOHLER"
+      ],
+      "engineModels": [
+        "KDW1003",
+        "KDW1404",
+        "KDW1603",
+        "KDI1903M",
+        "KDI2504M",
+        "KDI2504TM30",
+        "KDI2504TM",
+        "KDI3404TM"
+      ],
+      "power": {
+        "min": 8,
+        "max": 61,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Power Pack Green Line – IVECO",
+      "fuel": "diesel",
+      "engineMakes": [
+        "IVECO"
+      ],
+      "engineModels": [
+        "F32SM1A",
+        "N45AM2",
+        "N45SM1A",
+        "N45SM2A",
+        "N45SM3",
+        "N45TM2A",
+        "N45TM3",
+        "N67TM4",
+        "N67TE2A",
+        "C87TE3",
+        "C87TE1D",
+        "C87TE4",
+        "C13TE2A",
+        "C13TE3A"
+      ],
+      "power": {
+        "min": 40,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Power Pack Green Line – DEUTZ",
+      "fuel": "diesel",
+      "engineMakes": [
+        "DEUTZ"
+      ],
+      "engineModels": [
+        "F2M2011",
+        "F3M2011",
+        "F4M2011",
+        "BF4M2011",
+        "BF4M2011C",
+        "BF4M1013E",
+        "BF4M1013ECG2",
+        "BF4M1013FC",
+        "BF6M1013EC",
+        "BF6M1013FCG1",
+        "BF6M1013FCG2",
+        "BF6M1015C",
+        "BF6M1015CP",
+        "BF8M1015C",
+        "BF8M1015C2",
+        "BF8M1015CP"
+      ],
+      "power": {
+        "min": 13,
+        "max": 515,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Power Pack Green Line – VOLVO",
+      "fuel": "diesel",
+      "engineMakes": [
+        "VOLVO"
+      ],
+      "engineModels": [
+        "TAD530GE",
+        "TAD531GE",
+        "TAD532GE",
+        "TAD731GE",
+        "TAD732GE",
+        "TAD733GE",
+        "TAD734GE",
+        "TAD1341GE",
+        "TAD1342GE",
+        "TAD1343GE",
+        "TAD1344GE",
+        "TAD1345GE",
+        "TAD1641GE",
+        "TAD1642GE",
+        "TWD1643GE",
+        "TWD1644GE",
+        "TWD1645GE"
+      ],
+      "power": {
+        "min": 85,
+        "max": 700,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Power Pack Green Line – PERKINS",
+      "fuel": "diesel",
+      "engineMakes": [
+        "PERKINS"
+      ],
+      "engineModels": [
+        "403A-11G1",
+        "403A-15G1",
+        "403A-15G2",
+        "404A-22G",
+        "1103A-33G",
+        "1103A-33TG1",
+        "1103A-33TG2",
+        "1104A-44TG2",
+        "1104C-44TAG2",
+        "1106A-70TAG1",
+        "1106A-70TAG2",
+        "1106A-70TAG3",
+        "1106A-70TAG4",
+        "1506A-E88TAG2",
+        "1506A-E88TAG4",
+        "2206A-E13TAG2",
+        "2206A-E13TAG3",
+        "2506A-E15TAG1",
+        "2506A-E15TAG2",
+        "2806A-E18TAG1A",
+        "2806A-E18TAG2"
+      ],
+      "power": {
+        "min": 9,
+        "max": 671,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Power Pack Green Line – MTU (Industrie)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "12V2000G16F",
+        "12V2000G26F",
+        "16V2000G16F",
+        "16V2000G26F",
+        "16V2000G36F",
+        "18V2000G26F",
+        "12V4000G14F",
+        "12V4000G24F",
+        "16V4000G14F"
+      ],
+      "power": {
+        "min": 745,
+        "max": 2080,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Power Pack Green Line – MTU (Notstrom / Stand-By)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "12V2000G76F",
+        "12V2000G86F",
+        "16V2000G76F",
+        "16V2000G86F",
+        "18V2000G76F",
+        "12V4000G74F",
+        "12V4000G84F",
+        "16V4000G74F"
+      ],
+      "power": {
+        "min": 822,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Rental Range – FPT-IVECO",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT-IVECO"
+      ],
+      "engineModels": [
+        "F32SM1F",
+        "N45SM1F",
+        "N45TE1F",
+        "N45TE2F",
+        "N67TM1F",
+        "N67TE1F",
+        "N67TE2F",
+        "N67TE3F",
+        "C87TE3F",
+        "C10TE1F",
+        "C13TE1F",
+        "C13TE2F"
+      ],
+      "power": {
+        "min": 30,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Rental Range – VOLVO",
+      "fuel": "diesel",
+      "engineMakes": [
+        "VOLVO"
+      ],
+      "engineModels": [
+        "TAD550GE",
+        "TAD551GE",
+        "TAD750GE",
+        "TAD751GE",
+        "TAD752GE",
+        "TAD753GE",
+        "TAD754GE",
+        "TAD1351GE",
+        "TAD1352GE",
+        "TAD1354GE",
+        "TAD1355GE",
+        "TAD1650GE",
+        "TAD1651GE"
+      ],
+      "power": {
+        "min": 85,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Rental Range – KOHLER",
+      "fuel": "diesel",
+      "engineMakes": [
+        "KOHLER"
+      ],
+      "engineModels": [
+        "KDI1903M",
+        "KDI2504M",
+        "KDI 2504 TM30-TA",
+        "KDI2504TM-40EU",
+        "KDI3404TMCAC"
+      ],
+      "power": {
+        "min": 20,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "715C",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "12V2000G25"
+      ],
+      "power": {
+        "min": 715,
+        "max": 715,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "880C",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "12V2000G65"
+      ],
+      "power": {
+        "min": 880,
+        "max": 880,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1000C",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "16V2000G25"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1100C",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "16V2000G65"
+      ],
+      "power": {
+        "min": 1100,
+        "max": 1100,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1250C",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "18V2000G65"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1400",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MITSUBISHI"
+      ],
+      "engineModels": [
+        "S12R-PTA"
+      ],
+      "power": {
+        "min": 1403,
+        "max": 1403,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1540",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MITSUBISHI"
+      ],
+      "engineModels": [
+        "S12R-PTA2"
+      ],
+      "power": {
+        "min": 1540,
+        "max": 1540,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1650C",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [
+        "12V4000G23F"
+      ],
+      "power": {
+        "min": 1650,
+        "max": 1650,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1800C",
+      "fuel": "diesel",
+      "engineMakes": [
+        "KOHLER"
+      ],
+      "engineModels": [
+        "KD45V20"
+      ],
+      "power": {
+        "min": 1800,
+        "max": 1800,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "2000C",
+      "fuel": "diesel",
+      "engineMakes": [
+        "KOHLER"
+      ],
+      "engineModels": [
+        "KD62V12"
+      ],
+      "power": {
+        "min": 2000,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "2250C",
+      "fuel": "diesel",
+      "engineMakes": [
+        "KOHLER"
+      ],
+      "engineModels": [
+        "KD62V12"
+      ],
+      "power": {
+        "min": 2250,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "2500C",
+      "fuel": "diesel",
+      "engineMakes": [
+        "KOHLER"
+      ],
+      "engineModels": [
+        "KD62V12"
+      ],
+      "power": {
+        "min": 2500,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "2800C",
+      "fuel": "diesel",
+      "engineMakes": [
+        "KOHLER"
+      ],
+      "engineModels": [
+        "KD62V12"
+      ],
+      "power": {
+        "min": 2800,
+        "max": 2800,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
     }
   ],
   "certifications": [],
@@ -99,9 +767,503 @@
         "Prospekt Stromerzeuger Rental Range 22 bis 550 kVA"
       ],
       "file": "sources/krauter/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.krauter.de/assets/Uploads/Uploads/Prospekt-Stromerzeuger-Power-Pack-Green-Line-9-bis-2250-kVA-fuer-Internet.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "„Green Line“ von 9 kVa bis kVA bis 2.250 kVA",
+        "Antriebe von KOHLER",
+        "Antriebe von IVECO",
+        "Antriebe von DEUTZ",
+        "Antriebe von VOLVO",
+        "Antriebe von PERKINS",
+        "Antriebe von MTU",
+        "Werner Krauter GmbH",
+        "AK-009  K-009                   8       9  KDW1003              M                         3           L        N        1,03                     2            1300x580x1298          310     80    1600x900x1132    550     47",
+        "AK-011  K-011                   10   11    KDW1404              M                         4           L        N        1,4          2,5                      1300x580x1298          350     80    1600x900x1132    600     47",
+        "AK-017  K-017                   15   17    KDW1603              M                         3           L        N        1,6          3,09                     1300x580x1383          398     80    1600x900x1132    655     47",
+        "AK-022  K-022                   20   22    KDI1903M             M                         3           L        N        1,9          3,5                      1300x580x1398          460     80    2000x950x1353    825     85",
+        "AK-030  K-030                   27   30    KDI2504M             M                         4           L        N        2,5          4,7                      1700x730x1633          590     105   2000x950x1353    950     85",
+        "AK-033  K-033                   30   33    KDI2504TM30          M                         4           L        T        2,5          6,1                      1700x730x1614 M        610     105   2000x950x1353    970     85",
+        "AK-044  K-044                   40   44    KDI2504TM            4                      L           T           2,5      8            1700x730x1614 M                           4     660     105   2500x1100x1455   980     85",
+        "AK-066  K-066                   61   67    KDI3404TM            L            T                     3,4         11,5     1900x900x1955                                                920     180   2500x1100x1455   1340    85",
+        "AI-044  II-044                  40   44   F32SM1A  M                              4        L        T        3,2          8,5                      1700x730x1615     780     105   2500x1100x1455   1230    85",
+        "AI-055  II-055                  50   55   N45AM2   M                              4        L        N        4,5          9,8                      1900x900x1870     840     180   2500x1100x1455   1260    85",
+        "AI-066  II-066                  60   66   N45SM1A  M                              4        L        T        4,5          10,2                     1900x900x1955     860     180   2500x1100x1455   1298    85",
+        "AI-083  II-083                  75   83   N45SM2A  M                              4        L        T        4,5          12,7                     1900x900x1947     920     180   2950x1100x1760   1540    220",
+        "AI-090  II-090                  80   90   N45SM3   M                              4        L        T        4,5          15,4                     1900x900x1947     920     180   2950x1100x1760   1540    220",
+        "AI-110  II-110                  100  110  N45TM2A  M                              4        L        T-I      4,5          16,2                     1900x900x1966     1100    180   2950x1100x1760   1720    220",
+        "AI-135  II-135                  125  135  N45TM3   M                              4        L        T-I      4,5          21,6                     1900x900x1966     1200    180   2950x1100x1760   1910    220",
+        "AI-175  II-175                  160  175  N67TM4   M                              6        L        T-I      6,7          29,4                     2360x1035x2000    1500    220   2950x1100x1760   2040    220",
+        "AI-190  II-190                  170  190  N67TM4   M                              6        L        T-I      6,7          31,6                     2360x1035x1933    1525    220   2950x1100x1760   1980    220",
+        "AI-220  II-220                  200  220  N67TE2A  E                              6        L        T-I      6,7          35,7                     2360x1035x1938    1540    220   3600x1350x2040   2580    360",
+        "AI-275  II-275                  250  275  C87TE3   E                              6        L        T-I      8,7          46,8                     3000x1300x2063    2620    500   3600x1350x2040   3200    360",
+        "AI-300  II-300                  270  300  C87TE1D  E                              6        L        T-I      8,7          47,6                     3000x1300x2319    2700    500   3600x1350x2040   3280    360",
+        "AI-335  II-335                  300  330  C87TE4   E                              6        L        T-I      10,3         53,7                     3000x1300x2310    2750    500   4200x1600x2245   4001    534",
+        "AI-385  II-385                  350  390  C13TE2A  E                              6        L        T-I      12,9         57,3                     3000x1300x2420    2905    500   4200x1600x2245   4600    534",
+        "AI-440  II-440                  400  440  C13TE3A  E                              6        L        T-I      12,9         72,5                     3000x1300x2255    3040    500   4200x1600x2245   4780    534",
+        "AD-014  ID-014                  13   14   F2M2011               M                      2        O        N        -            2,86                     1300x580x1500          420   80    2000x950x1353    710     85",
+        "AD-022  ID-022                  20   22   F3M2011               M                      3        O        N        2,33         4,15                     1400x760x1560          550   70    2000x950x1353    875     85",
+        "AD-033  ID-033                  30   33   F4M2011               M                      4        O        N        3,11         6,3                      1700x730x1520          640   105   2000x950x1353    946     85",
+        "AD-044  ID-044                  40   44   BF4M2011              M                      4        O        T        3,11         8,4                      1700x730x1406          720   105   2000x950x1353    962     85",
+        "AD-066  ID-066                  60   66   BF4M2011C             M                      4        O        T        4,04         10,6                     1900x900x1625          820   180   2500x1100x1455   1280    85",
+        "AD-095  ID-095                  85   95   BF4M1013E             M                      4        L        T-I      4,76         15                       2050x930x1683    1240        200   2950x1100x1760   1680    220",
+        "AD-110  ID-110                  100  110  BF4M1013ECG2          M                      4        L        T-I      4,76         19,3                     2050x930x1711    1300        200   2950x1100x1760   1840    220",
+        "AD-145  ID-145                  130  145  BF4M1013FC            E                      4        L        T-I      4,76         23,5                     2250x1035x1740   1480        212   2950x1100x1760   1980    220",
+        "AD-165  ID-165                  150  165  BF6M1013EC            M                      6        L        T-I      7,15         28,9                     2500x1035x1607   1580        236   2950x1100x1760   2180    220",
+        "AD-200  ID-200                  180  190  BF6M1013FCG1          E                      6        L        T-I      7,15         34,2                     2500x1035x1840   1610        236   3600x1350x2040   2638    360",
+        "AD-220  ID-220                  200  220  BF6M1013FCG2          E                      6        L        T-I      7,15         37,7                     2500x1035x1840   1820        236   3600x1350x2040   2960    360",
+        "AD-330  ID-330                  300  330  BF6M1015C             E                      6        L        T-I      11,9         56,9                     2750x1515x2252   2660        500   4200x1600x2245   4005    534",
+        "AD-415  ID-415                  385  415  BF6M1015CP            E                      6        L        T-I      11,9         68,1                     2750x1515x2380   2740        500   4200x1600x2245   4460    534",
+        "AD-475  ID-475                  430  475  BF8M1015C             E                      8        L        T-I      15,9         75,8                     3000x1815x2406   3300        500   4200x1600x2245   4740    534",
+        "AD-500  ID-500                  450  500  BF8M1015C2            E                      8        L        T-I      15,9         84                       3000x1815x2410   3350        500   4200x1600x2245   4900    534",
+        "AD-550  ID-550                  515  565  BF8M1015CP            E                      8        L        T-I      15,9         93,2                     3000x1815x2406   3600        500   4200x1600x2245   5000    1000",
+        "AV-095  IV-095                  85   95   TAD530GE           M                      4        L        T-I      4,76         15                       2050x930x1713     1240        195   2950x1100x1760   1680    220",
+        "AV-110  IV-110                  100  110  TAD531GE           M                      4        L        T-I      4,76         17                       2050x930x1711     1300        212   2950x1100x1760   1840    220",
+        "AV-145  IV-145                  130  145  TAD532GE           E                      4        L        T-I      4,76         21                       2250x930x1732     1480        212   2950x1100x1760   1980    220",
+        "AV-165  IV-165                  150  165  TAD731GE           M                      6        L        T-I      7,15         26                       2500x1035x1683    1580        236   2950x1100x1760   2180    220",
+        "AV-200  IV-200                  180  200  TAD732GE           E                      6        L        T-I      7,15         31                       2500x1035x1845    1850        236   3600x1350x2040   2850    360",
+        "AV-220  IV-220                  200  220  TAD733GE           E                      6        L        T-I      7,15         34                       2500x1035x1845    1820        236   3600x1350x2040   2980    360",
+        "AV-275  IV-275                  250  275  TAD734GE           E                      6        L        T-I      7,15         42                       3000x1200x1834    2050        470   3600x1350x2040   3018    360",
+        "AV-330  IV-330                  300  330  TAD1341GE          E                      6        L        T-I      12,79        51                       3000x1200x2160    2800        470   4200x1600x2245   4200    534",
+        "AV-385  IV-385                  350  390  TAD1342GE          E                      6        L        T-I      12,78        53                       3000x1200x2163    2850        470   4200x1600x2245   4360    534",
+        "AV-415  IV-415                  380  415  TAD1343GE          E                      6        L        T-I      12,78        62                       3000x1200x2141    2940        470   4200x1600x2245   4600    534",
+        "AV-440  IV-440                  400  440  TAD1344GE          E                      6        L        T-I      12,78        63                       3000x1200x2141    2940        470   4200x1600x2245   4600    534",
+        "AV-500  IV-500                  450  500  TAD1345GE          E                      6        L        T-I      12,78        69                       3000x1200x2111    3180        470   4200x1600x2245   5900    534",
+        "AV-550  IV-550                  510  560  TAD1641GE          E                      6        L        T-I      16,12        77                       3490x1300x2097    3620        580   4860x2060x2585   5940    1000",
+        "AV-650  IV-650                  600  660  TAD1642GE          E                      6        L        T-I      16,12        89                       3490x1300x2097    3680        580   4860x2060x2585   6260    1000",
+        "AV-680  IV-680                  610  665  TWD1643GE          E                      6        L        T-I      16,12        96,5                     3500x1330x2400    4300        1023  4860x2060x2585   6480    1000",
+        "AV-700  IV-700                  640  710  TWD1643GE          E                      6        L        T-I      16,12        99,4                     3500x1330x2400    4350        1023  4860x2060x2585   6660    1000",
+        "AV-730  IV-730                  660  730  TWD1644GE          E                      6        L        T-I      16,12        100                      3500x1330x2816    4500        1023  4860x2060x2585   6800    1000",
+        "AV-770  IV-770                  700  770  TWD1645GE          E                      6        L        T-I      16,12        105                      3620x1330x2816    4750        1023  4860x2060x2585   7100    1000",
+        "AP-010  IP-010                  9    10   403A-11G1               M                      3        L        N        1,13         2,3                      1300x580x1298           400   80    1600x900x1132    622     47",
+        "AP-014  IP-014                  13   14   403A-15G1               M                      3        L        N        1,5          2,8                      1300x580x1298           423   80    1600x900x1132    656     47",
+        "AP-016  IP-016                  14   16   403A-15G2               M                      3        L        N        1,5          3,1                      1300x580x1298           428   80    1600x900x1132    661     47",
+        "AP-022  IP-022                  20   22   404A-22G                M                      4        L        N        2,2          4                        1300x580x1383           490   80    2000x950x1353    800     85",
+        "AP-033  IP-033                  30   33   1103A-33G               M                      3        L        N        3,3          5,4                      1700x730x1634           700   105   2000x950x1353    860     85",
+        "AP-050  IP-050                  45   50   1103A-33TG1             M                      3        L        T        3,3          8,2                      1700x730x1615           820   105   2500x1100x1455   1180    85",
+        "AP-066  IP-066                  60   66   1103A-33TG2             M                      3        L        T        3,3          10,4                     1900x900x1955     1020        192   2500x1100x1455   1280    85",
+        "AP-090  IP-090                  80   90   1104A-44TG2             M                      4        L        T        4,4          14                       1900x900x1969     1220        192   2950x1100x1760   1620    220",
+        "AP-115  IP-115                  105  115  1104C-44TAG2            E                      4        L        T-I      4,4          17,1                     1900x900x1969     1425        192   2950x1100x1760   1760    220",
+        "AP-145  IP-145                  130  145  1106A-70TAG1            M                      6        L        T        6            24,1                     2360x1035x1933    1442        320   2950x1100x1760   1900    220",
+        "AP-165  IP-165                  150  165  1106A-70TAG2            M                      6        L        T-I      6,6          25,8                     2360x1035x1933    1480        320   2950x1100x1760   2000    220",
+        "AP-200  IP-200                  180  200  1106A-70TAG3            M                      6        L        T-I      6,6          31                       2360x1035x1933    1510        320   3600x1350x2040   2450    360",
+        "AP-220  IP-220                  200  220  1106A-70TAG4            E                      6        L        T-I      8,7          35                       2360x1035x1938    1560        320   3600x1350x2040   2800    360",
+        "AP-260  IP-260                  232  258  1506A-E88TAG2           E                      6        L        T-I      8,7          35,7                     3000x1200x1834    1765        490   3600x1350x2040   3400    360",
+        "AP-300  IP-300                  285  311  1506A-E88TAG4           E                      6        L        T-I      8,7          36                       3000x1200x1834    2005        490   4200x1600x2245   3640    534",
+        "AP-385  IP-385                  350  400  2206A-E13TAG2           E                      6        L        T-I      12,5         54                       3000x1300x2163    2840        531   4200x1600x2245   4050    534",
+        "AP-440  IP-440                  400  450  2206A-E13TAG3           E                      6        L        T-I      12,5         62                       3000x1300x2141    3200        531   4200x1600x2245   4580    534",
+        "AP-500  IP-500                  464  508  2506A-E15TAG1           E                      6        L        T-I      15,2         72                       3500x1300x2097    3240        558   4860x2060x2585   4640    534",
+        "AP-550  IP-550                  514  565  2506A-E15TAG2           E                      6        L        T-I      15           81                       3500x1300x2097    3560        558   4860x2060x2585   6440    1000",
+        "AP-680  IP-680                  610  665  2806A-E18TAG1A          E                      6        L        T-I      18,1         90                       3500x1300x2097    4175        558   4860x2060x2585   6660    1000",
+        "AP-720  IP-720                  671  723  2806A-E18TAG2           E                      6        L        T-I      18,1         97                       3500x1300x2380    4300        558   4860x2060x2585   6550    1000",
+        "AT-820   IT-820                 745   822     12V2000G16F          E                      12       L        T-I      26,8         114                      4214x1690x2440   6700    6500x2220x2636   10000   1000",
+        "AT-880   IT-880                 797   860     12V2000G26F          E                      12       L        T-I      26,8         121                      4217x1690x2440   6700    6500x2220x2636   10000   1000",
+        "AT-995   IT-995                 905   998     16V2000G16F          E                      16       L        T-I      35,7         139                      4516x1810x2365   6920    6500x2220x2636   10600   1000",
+        "AT-1105  IT-1105                1006  1108    16V2000G26F          E                      16       L        T-I      35,7         152                      4516x1810x2365   7090    6500x2220x2636   11160   1000",
+        "AT-1230  IT-1230                1135  1230    16V2000G36F          E                      16       L        T-I      35,7         162                      4617x1810x2265   7400    6500x2220x2636   11380   1000",
+        "AT-1350  CT-1350                1256  1350    18V2000G26F          E                      18       L        T-I      40,2         184                      4817x1900x2262   8780    12192x2438x3010  14340   1000",
+        "AT-1765  CT-1765                1650  1770    12V4000G14F          E                      12       L        T-I      57,2         244                      6340x2320x2660   13820   12192x2438x3010  19380   1000",
+        "AT-2030  CT-2030                1830  2035    12V4000G24F          E                      12       L        T-I      57,2         270                      6340x2320x2660   14060   12192x2438x3010  19620   1000",
+        "AT-2245  CT-2245                2080  2250    16V4000G14F          E                      16       L        T-I      76,3         309                      6910x2320x2860   15840   12192x2438x3010  21400   1000",
+        "AT-825   IT-825                 -     822     12V2000G76F          E                      12       L        T-I      26,8         130                      4214x1690x2440   6700    6500x2220x2636   10000   1000",
+        "AT-1015  IT-1015                -     1010    12V2000G86F          E                      12       L        T-I      26,8         147                      4214x1690x2440   6920    6500x2220x2636   10600   1000",
+        "AT-1110  IT-1110                -     1108    16V2000G76F          E                      16       L        T-I      35,7         175                      4516x1810x2365   7090    6500x2220x2636   11160   1000",
+        "AT-1235  IT-1235                -     1230    16V2000G86F          E                      16       L        T-I      35,7         185                      4617x1810x2365   7400    6500x2220x2636   11380   1000",
+        "AT-1410  CT-1410                -     1410    18V2000G76F          E                      18       L        T-I      40,2         205                      4807x1810x2262   8780    12192x2438x3010  14340   1000",
+        "AT-1770  CT-1770                -     1770    12V4000G74F          E                      12       L        T-I      57,2         271                      6340x2320x2660   13820   12192x2438x3010  19380   1000",
+        "AT-2035  CT-2035                -     2035    12V4000G84F          E                      12       L        T-I      57,2         293                      6340x2320x2660   14060   12192x2438x3010  19620   1000",
+        "AT-2250  CT-2250                -     2250    16V4000G74F          E                      16       L        T-I      76,3         336                      6910x2320x2860   15840   12192x2438x3010  21400   1000"
+      ],
+      "file": "sources/krauter/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.krauter.de/assets/Uploads/Uploads/Prospekt-Stromerzeuger-Rental-Range-22-bis-550-kVA.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "von 22 bis 550 kVA",
+        "Fortschrittliche Aggregate-Steuerung: Deep Sea 6010 MKII / 7310 (Modellabhängig, siehe Tabellenseiten).",
+        "K-KRN-022  20     22     KDI1903M           2055x1000x1535    1100    180            60          ECP28-M    STD                           DSE  6010  MKII",
+        "K-VRN-550  500    550    TAD1651GE          4860x2060x2585    6460    1000           75          ECO40-3S   N/A                           DSE 7310",
+        "K-IRN-033  30     33     F32SM1F            2055x1000x1535    1160    180            62          ECP28-VL   STD                           DSE 6010 MKII",
+        "K-IRN-066  60     66     N45SM1F            2555x1140x1645    1600    250            62          ECP32-2L   STD                           DSE 6010 MKII",
+        "K-IRN-090  83     90     N45TE1F            2900x1140x1900    1930    480            62          ECP34-1S   STD                           DSE 6010 MKII",
+        "K-IRN-115  105    115    N45TE2F            2900x1140x1900    2010    480            62          ECP34-2S   STD                           DSE 6010 MKII",
+        "K-IRN-145  130    145    N67TM1F            3525x1140x1950    T.B.A.  690            68          ECP34-1L   STD                           DSE 6010 MKII",
+        "K-IRN-165  150    165    N67TE1F            3525x1140x1950    T.B.A.  690            68          ECP34-2L   STD                           DSE 6010 MKII",
+        "K-IRN-190  170    190    N67TE2F            3640x1380x2145    2840    1180           68          ECO38N-1S  STD                           DSE 6010 MKII",
+        "K-IRN-220  200    220    N67TE3F            3640x1380x2145    3130    1180           68          ECO38N-2S  STD                           DSE 6010 MKII",
+        "K-IRN-275  250    275    C87TE3F            3640x1380x2145    3600    1180           68          ECO38N-1L  STD                           DSE 7310",
+        "K-IRN-330  300    330    C10TE1F            4260x1660x2390    T.B.A.  1655           70          ECO38N-2L  STD                           DSE 7310",
+        "K-IRN-380  345    380    C13TE1F            4260x1660x2390    T.B.A.  1655           70          ECO38N-3L  STD                           DSE 7310",
+        "K-IRN-440  400    440    C13TE2F            4260x1660x2390    T.B.A.  1655           70          ECO40-1S   STD                           DSE 7310",
+        "K-VRN-095  85     95     TAD550GE           2900x1140x1900    2090    480            65          ECP34-1S   STD                           DSE 6010 MKII",
+        "K-VRN-115  105    115    TAD551GE           2900x1140x1900    2170    480            68          ECP34-2S   STD                           DSE 6010 MKII",
+        "K-VRN-145  130    145    TAD750GE           3525x1140x1950    3050    690            68          ECP34-1L   STD                           DSE 6010 MKII",
+        "K-VRN-165  150    165    TAD751GE           3525x1140x1950    3050    690            68          ECP34-2L   STD                           DSE 6010 MKII",
+        "K-VRN-200  180    200    TAD752GE           3640x1380x2145    3160    1180           68          ECO38N-1S  STD                           DSE 6010 MKII",
+        "K-VRN-220  200    220    TAD753GE           3640x1380x2145    3240    1180           68          ECO38N-2S  STD                           DSE 6010 MKII",
+        "K-VRN-275  250    275    TAD754GE           3640x1380x2145    3600    1180           70          ECO38N-1L  STD                           DSE 7310",
+        "K-VRN-330  300    330    TAD1351GE          4260x1660x2390    T.B.A.  1655           70          ECO38N-2L  STD                           DSE 7310",
+        "K-VRN-385  350    385    TAD1352GE          4260x1660x2390    T.B.A.  1655           70          ECO38N-3L  STD                           DSE 7310",
+        "K-VRN-420  380    420    TAD1354GE          4260x1660x2390    T.B.A.  1655           70          ECO40-1S   STD                           DSE 7310",
+        "K-VRN-440  400    440    TAD1355GE          4260x1660x2390    T.B.A.  1655           70          ECO40-1S   STD                           DSE 7310",
+        "K-VRN-500  450    500    TAD1650GE          4860x2060x2585    6410    1000           75          ECO40-2S   N/A                           DSE 7310",
+        "K-VRN-550  500    550    TAD1651GE          4860x2060x2585    6460    1000           75          ECO40-3S   N/A                           DSE 7310",
+        "K-KRN-022  20     22     KDI1903M           2055x1000x1535    1100    180            60          ECP28-M    STD                           DSE  6010  MKII",
+        "K-KRN-030  27     30     KDI2504M           2055x1000x1535    1180    180            60          ECP28-VL   STD                           DSE  6010  MKII",
+        "K-KRN-035  30     33     KDI 2504 TM30-TA   2055x1000x1535    1200    180            60          ECP28-VL   STD                           DSE  6010  MKII",
+        "K-KRN-042  38     42     KDI2504TM-40EU     2555x1140x1645    1380    250            60          ECP32-3S   STD                           DSE  6010  MKII",
+        "K-KRN-066  60     66     KDI3404TMCAC       2555x1140x1645    1620    250            60          ECP32-2L   STD                           DSE  6010  MKII"
+      ],
+      "file": "sources/krauter/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://www.krauter.de/assets/Uploads/Uploads/Prospekt-Stromerzeuger-Container-Lieferprogramm.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "für Stromerzeuger von 300 bis 2.800 kVA",
+        "MODELLE                     715C      880C        1000C            1100C                                       1250C   1400                 1540                  1650C        1800C       2000C       2250C    2500C           2800C",
+        "Marken         MTU       MTU         MTU              MTU                                         MTU     MITSUBISHI          MITSUBISHI             MTU          KOHLER      KOHLER      KOHLER   KOHLER          KOHLER",
+        "Motoren      12V2000G25  12V2000G65  16V2000G25       16V2000G65             18V2000G65                   S12R-PTA             S12R-PTA2             12V4000G23F     KD45V20  KD62V12     KD62V12  KD62V12         KD62V12",
+        "Leistung PRP (kVA)          650            800    909              1000                                        1136    1273                 1400                  1500             1636    1818        2045     2273            2545",
+        "Leistung ESP (kVA)          715            880    1000             1100                                        1250    1403                 1540                  1650             1800    2000        2250     2500            2800"
+      ],
+      "file": "sources/krauter/2003.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Green Line – Antriebe von KOHLER",
+      "header": [
+        "Type    Type                    kVA  kVA   MOTORTYPE                                                                                                          DIMENSIONS (mm)        WEIGHT  TANK  DIMENSIONS (mm)  WEIGHT  TANK",
+        "OFFEN   SILENT                  PRP  LTP                                                                                                                                             (kg)    (L)                    (kg)    (L)"
+      ],
+      "rows": [
+        "AK-009  K-009                   8       9  KDW1003              M                         3           L        N        1,03                     2            1300x580x1298          310     80    1600x900x1132    550     47",
+        "AK-011  K-011                   10   11    KDW1404              M                         4           L        N        1,4          2,5                      1300x580x1298          350     80    1600x900x1132    600     47",
+        "AK-017  K-017                   15   17    KDW1603              M                         3           L        N        1,6          3,09                     1300x580x1383          398     80    1600x900x1132    655     47",
+        "AK-022  K-022                   20   22    KDI1903M             M                         3           L        N        1,9          3,5                      1300x580x1398          460     80    2000x950x1353    825     85",
+        "AK-030  K-030                   27   30    KDI2504M             M                         4           L        N        2,5          4,7                      1700x730x1633          590     105   2000x950x1353    950     85",
+        "AK-033  K-033                   30   33    KDI2504TM30          M                         4           L        T        2,5          6,1                      1700x730x1614 M        610     105   2000x950x1353    970     85",
+        "AK-044  K-044                   40   44    KDI2504TM            4                      L           T           2,5      8            1700x730x1614 M                           4     660     105   2500x1100x1455   980     85",
+        "AK-066  K-066                   61   67    KDI3404TM            L            T                     3,4         11,5     1900x900x1955                                                920     180   2500x1100x1455   1340    85"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Green Line – Antriebe von IVECO",
+      "header": [
+        "Type    Type                    kVA  kVA                                                                                                           DIMENSIONS  (mm)  WEIGHT  TANK  DIMENSIONS (mm)  WEIGHT  TANK",
+        "offen   Silent..                PRP  LTP                                                                                                                             (kg)    (L)                    (kg)    (L)"
+      ],
+      "rows": [
+        "AI-044  II-044                  40   44   F32SM1A  M                              4        L        T        3,2          8,5                      1700x730x1615     780     105   2500x1100x1455   1230    85",
+        "AI-055  II-055                  50   55   N45AM2   M                              4        L        N        4,5          9,8                      1900x900x1870     840     180   2500x1100x1455   1260    85",
+        "AI-066  II-066                  60   66   N45SM1A  M                              4        L        T        4,5          10,2                     1900x900x1955     860     180   2500x1100x1455   1298    85",
+        "AI-083  II-083                  75   83   N45SM2A  M                              4        L        T        4,5          12,7                     1900x900x1947     920     180   2950x1100x1760   1540    220",
+        "AI-090  II-090                  80   90   N45SM3   M                              4        L        T        4,5          15,4                     1900x900x1947     920     180   2950x1100x1760   1540    220",
+        "AI-110  II-110                  100  110  N45TM2A  M                              4        L        T-I      4,5          16,2                     1900x900x1966     1100    180   2950x1100x1760   1720    220",
+        "AI-135  II-135                  125  135  N45TM3   M                              4        L        T-I      4,5          21,6                     1900x900x1966     1200    180   2950x1100x1760   1910    220",
+        "AI-175  II-175                  160  175  N67TM4   M                              6        L        T-I      6,7          29,4                     2360x1035x2000    1500    220   2950x1100x1760   2040    220",
+        "AI-190  II-190                  170  190  N67TM4   M                              6        L        T-I      6,7          31,6                     2360x1035x1933    1525    220   2950x1100x1760   1980    220",
+        "AI-220  II-220                  200  220  N67TE2A  E                              6        L        T-I      6,7          35,7                     2360x1035x1938    1540    220   3600x1350x2040   2580    360",
+        "AI-275  II-275                  250  275  C87TE3   E                              6        L        T-I      8,7          46,8                     3000x1300x2063    2620    500   3600x1350x2040   3200    360",
+        "AI-300  II-300                  270  300  C87TE1D  E                              6        L        T-I      8,7          47,6                     3000x1300x2319    2700    500   3600x1350x2040   3280    360",
+        "AI-335  II-335                  300  330  C87TE4   E                              6        L        T-I      10,3         53,7                     3000x1300x2310    2750    500   4200x1600x2245   4001    534",
+        "AI-385  II-385                  350  390  C13TE2A  E                              6        L        T-I      12,9         57,3                     3000x1300x2420    2905    500   4200x1600x2245   4600    534",
+        "AI-440  II-440                  400  440  C13TE3A  E                              6        L        T-I      12,9         72,5                     3000x1300x2255    3040    500   4200x1600x2245   4780    534"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Green Line – Antriebe von DEUTZ",
+      "header": [
+        "MODEL   MODEL                   kVA  kVA                                                                                                                DIMENSIONS (mm)  WEIGHT      TANK  DIMENSIONS (mm)  WEIGHT  TANK",
+        "PRP  LTP                                                                                                                                       (kg)  (L)                    (kg)    (L)"
+      ],
+      "rows": [
+        "AD-014  ID-014                  13   14   F2M2011               M                      2        O        N        -            2,86                     1300x580x1500          420   80    2000x950x1353    710     85",
+        "AD-022  ID-022                  20   22   F3M2011               M                      3        O        N        2,33         4,15                     1400x760x1560          550   70    2000x950x1353    875     85",
+        "AD-033  ID-033                  30   33   F4M2011               M                      4        O        N        3,11         6,3                      1700x730x1520          640   105   2000x950x1353    946     85",
+        "AD-044  ID-044                  40   44   BF4M2011              M                      4        O        T        3,11         8,4                      1700x730x1406          720   105   2000x950x1353    962     85",
+        "AD-066  ID-066                  60   66   BF4M2011C             M                      4        O        T        4,04         10,6                     1900x900x1625          820   180   2500x1100x1455   1280    85",
+        "AD-095  ID-095                  85   95   BF4M1013E             M                      4        L        T-I      4,76         15                       2050x930x1683    1240        200   2950x1100x1760   1680    220",
+        "AD-110  ID-110                  100  110  BF4M1013ECG2          M                      4        L        T-I      4,76         19,3                     2050x930x1711    1300        200   2950x1100x1760   1840    220",
+        "AD-145  ID-145                  130  145  BF4M1013FC            E                      4        L        T-I      4,76         23,5                     2250x1035x1740   1480        212   2950x1100x1760   1980    220",
+        "AD-165  ID-165                  150  165  BF6M1013EC            M                      6        L        T-I      7,15         28,9                     2500x1035x1607   1580        236   2950x1100x1760   2180    220",
+        "AD-200  ID-200                  180  190  BF6M1013FCG1          E                      6        L        T-I      7,15         34,2                     2500x1035x1840   1610        236   3600x1350x2040   2638    360",
+        "AD-220  ID-220                  200  220  BF6M1013FCG2          E                      6        L        T-I      7,15         37,7                     2500x1035x1840   1820        236   3600x1350x2040   2960    360",
+        "AD-330  ID-330                  300  330  BF6M1015C             E                      6        L        T-I      11,9         56,9                     2750x1515x2252   2660        500   4200x1600x2245   4005    534",
+        "AD-415  ID-415                  385  415  BF6M1015CP            E                      6        L        T-I      11,9         68,1                     2750x1515x2380   2740        500   4200x1600x2245   4460    534",
+        "AD-475  ID-475                  430  475  BF8M1015C             E                      8        L        T-I      15,9         75,8                     3000x1815x2406   3300        500   4200x1600x2245   4740    534",
+        "AD-500  ID-500                  450  500  BF8M1015C2            E                      8        L        T-I      15,9         84                       3000x1815x2410   3350        500   4200x1600x2245   4900    534",
+        "AD-550  ID-550                  515  565  BF8M1015CP            E                      8        L        T-I      15,9         93,2                     3000x1815x2406   3600        500   4200x1600x2245   5000    1000"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Green Line – Antriebe von VOLVO",
+      "header": [
+        "MODEL   MODEL                   kVA  kVA                                                                                                             DIMENSIONS  (mm)  WEIGHT      TANK  DIMENSIONS (mm)  WEIGHT  TANK",
+        "PRP  LTP                                                                                                                                     (kg)  (L)                    (kg)    (L)"
+      ],
+      "rows": [
+        "AV-095  IV-095                  85   95   TAD530GE           M                      4        L        T-I      4,76         15                       2050x930x1713     1240        195   2950x1100x1760   1680    220",
+        "AV-110  IV-110                  100  110  TAD531GE           M                      4        L        T-I      4,76         17                       2050x930x1711     1300        212   2950x1100x1760   1840    220",
+        "AV-145  IV-145                  130  145  TAD532GE           E                      4        L        T-I      4,76         21                       2250x930x1732     1480        212   2950x1100x1760   1980    220",
+        "AV-165  IV-165                  150  165  TAD731GE           M                      6        L        T-I      7,15         26                       2500x1035x1683    1580        236   2950x1100x1760   2180    220",
+        "AV-200  IV-200                  180  200  TAD732GE           E                      6        L        T-I      7,15         31                       2500x1035x1845    1850        236   3600x1350x2040   2850    360",
+        "AV-220  IV-220                  200  220  TAD733GE           E                      6        L        T-I      7,15         34                       2500x1035x1845    1820        236   3600x1350x2040   2980    360",
+        "AV-275  IV-275                  250  275  TAD734GE           E                      6        L        T-I      7,15         42                       3000x1200x1834    2050        470   3600x1350x2040   3018    360",
+        "AV-330  IV-330                  300  330  TAD1341GE          E                      6        L        T-I      12,79        51                       3000x1200x2160    2800        470   4200x1600x2245   4200    534",
+        "AV-385  IV-385                  350  390  TAD1342GE          E                      6        L        T-I      12,78        53                       3000x1200x2163    2850        470   4200x1600x2245   4360    534",
+        "AV-415  IV-415                  380  415  TAD1343GE          E                      6        L        T-I      12,78        62                       3000x1200x2141    2940        470   4200x1600x2245   4600    534",
+        "AV-440  IV-440                  400  440  TAD1344GE          E                      6        L        T-I      12,78        63                       3000x1200x2141    2940        470   4200x1600x2245   4600    534",
+        "AV-500  IV-500                  450  500  TAD1345GE          E                      6        L        T-I      12,78        69                       3000x1200x2111    3180        470   4200x1600x2245   5900    534",
+        "AV-550  IV-550                  510  560  TAD1641GE          E                      6        L        T-I      16,12        77                       3490x1300x2097    3620        580   4860x2060x2585   5940    1000",
+        "AV-650  IV-650                  600  660  TAD1642GE          E                      6        L        T-I      16,12        89                       3490x1300x2097    3680        580   4860x2060x2585   6260    1000",
+        "AV-680  IV-680                  610  665  TWD1643GE          E                      6        L        T-I      16,12        96,5                     3500x1330x2400    4300        1023  4860x2060x2585   6480    1000",
+        "AV-700  IV-700                  640  710  TWD1643GE          E                      6        L        T-I      16,12        99,4                     3500x1330x2400    4350        1023  4860x2060x2585   6660    1000",
+        "AV-730  IV-730                  660  730  TWD1644GE          E                      6        L        T-I      16,12        100                      3500x1330x2816    4500        1023  4860x2060x2585   6800    1000",
+        "AV-770  IV-770                  700  770  TWD1645GE          E                      6        L        T-I      16,12        105                      3620x1330x2816    4750        1023  4860x2060x2585   7100    1000"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Green Line – Antriebe von PERKINS",
+      "header": [
+        "MODEL   MODEL                   kVA  kVA                                                                                                                  DIMENSIONS  (mm)  WEIGHT      TANK  DIMENSIONS (mm)  WEIGHT  TANK",
+        "PRP  LTP                                                                                                                                          (kg)  (L)                    (kg)    (L)"
+      ],
+      "rows": [
+        "AP-010  IP-010                  9    10   403A-11G1               M                      3        L        N        1,13         2,3                      1300x580x1298           400   80    1600x900x1132    622     47",
+        "AP-014  IP-014                  13   14   403A-15G1               M                      3        L        N        1,5          2,8                      1300x580x1298           423   80    1600x900x1132    656     47",
+        "AP-016  IP-016                  14   16   403A-15G2               M                      3        L        N        1,5          3,1                      1300x580x1298           428   80    1600x900x1132    661     47",
+        "AP-022  IP-022                  20   22   404A-22G                M                      4        L        N        2,2          4                        1300x580x1383           490   80    2000x950x1353    800     85",
+        "AP-033  IP-033                  30   33   1103A-33G               M                      3        L        N        3,3          5,4                      1700x730x1634           700   105   2000x950x1353    860     85",
+        "AP-050  IP-050                  45   50   1103A-33TG1             M                      3        L        T        3,3          8,2                      1700x730x1615           820   105   2500x1100x1455   1180    85",
+        "AP-066  IP-066                  60   66   1103A-33TG2             M                      3        L        T        3,3          10,4                     1900x900x1955     1020        192   2500x1100x1455   1280    85",
+        "AP-090  IP-090                  80   90   1104A-44TG2             M                      4        L        T        4,4          14                       1900x900x1969     1220        192   2950x1100x1760   1620    220",
+        "AP-115  IP-115                  105  115  1104C-44TAG2            E                      4        L        T-I      4,4          17,1                     1900x900x1969     1425        192   2950x1100x1760   1760    220",
+        "AP-145  IP-145                  130  145  1106A-70TAG1            M                      6        L        T        6            24,1                     2360x1035x1933    1442        320   2950x1100x1760   1900    220",
+        "AP-165  IP-165                  150  165  1106A-70TAG2            M                      6        L        T-I      6,6          25,8                     2360x1035x1933    1480        320   2950x1100x1760   2000    220",
+        "AP-200  IP-200                  180  200  1106A-70TAG3            M                      6        L        T-I      6,6          31                       2360x1035x1933    1510        320   3600x1350x2040   2450    360",
+        "AP-220  IP-220                  200  220  1106A-70TAG4            E                      6        L        T-I      8,7          35                       2360x1035x1938    1560        320   3600x1350x2040   2800    360",
+        "AP-260  IP-260                  232  258  1506A-E88TAG2           E                      6        L        T-I      8,7          35,7                     3000x1200x1834    1765        490   3600x1350x2040   3400    360",
+        "AP-300  IP-300                  285  311  1506A-E88TAG4           E                      6        L        T-I      8,7          36                       3000x1200x1834    2005        490   4200x1600x2245   3640    534",
+        "AP-385  IP-385                  350  400  2206A-E13TAG2           E                      6        L        T-I      12,5         54                       3000x1300x2163    2840        531   4200x1600x2245   4050    534",
+        "AP-440  IP-440                  400  450  2206A-E13TAG3           E                      6        L        T-I      12,5         62                       3000x1300x2141    3200        531   4200x1600x2245   4580    534",
+        "AP-500  IP-500                  464  508  2506A-E15TAG1           E                      6        L        T-I      15,2         72                       3500x1300x2097    3240        558   4860x2060x2585   4640    534",
+        "AP-550  IP-550                  514  565  2506A-E15TAG2           E                      6        L        T-I      15           81                       3500x1300x2097    3560        558   4860x2060x2585   6440    1000",
+        "AP-680  IP-680                  610  665  2806A-E18TAG1A          E                      6        L        T-I      18,1         90                       3500x1300x2097    4175        558   4860x2060x2585   6660    1000",
+        "AP-720  IP-720                  671  723  2806A-E18TAG2           E                      6        L        T-I      18,1         97                       3500x1300x2380    4300        558   4860x2060x2585   6550    1000"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Green Line – Antriebe von MTU (Industrie Stromerzeuger)",
+      "header": [
+        "POWER R.P.M.               SERIES  REGULATOR /  GOVERNOR  N. CYL.  COOLING  SUCTION  CYL. Liters  CONSUMTION  75% (lit/h)  OPEN                     SOUNDPROOF",
+        "kVA   kVA     ENGINE                                                                                                                        WEIGHT                   WEIGHT  FUEL",
+        "MODEL    MODEL                  PRP   LTP                                                                                                                  DIMENSIONS (mm)  (kg)    DIMENSIONS (mm)  (kg)    TANK"
+      ],
+      "rows": [
+        "AT-820   IT-820                 745   822     12V2000G16F          E                      12       L        T-I      26,8         114                      4214x1690x2440   6700    6500x2220x2636   10000   1000",
+        "AT-880   IT-880                 797   860     12V2000G26F          E                      12       L        T-I      26,8         121                      4217x1690x2440   6700    6500x2220x2636   10000   1000",
+        "AT-995   IT-995                 905   998     16V2000G16F          E                      16       L        T-I      35,7         139                      4516x1810x2365   6920    6500x2220x2636   10600   1000",
+        "AT-1105  IT-1105                1006  1108    16V2000G26F          E                      16       L        T-I      35,7         152                      4516x1810x2365   7090    6500x2220x2636   11160   1000",
+        "AT-1230  IT-1230                1135  1230    16V2000G36F          E                      16       L        T-I      35,7         162                      4617x1810x2265   7400    6500x2220x2636   11380   1000",
+        "AT-1350  CT-1350                1256  1350    18V2000G26F          E                      18       L        T-I      40,2         184                      4817x1900x2262   8780    12192x2438x3010  14340   1000",
+        "AT-1765  CT-1765                1650  1770    12V4000G14F          E                      12       L        T-I      57,2         244                      6340x2320x2660   13820   12192x2438x3010  19380   1000",
+        "AT-2030  CT-2030                1830  2035    12V4000G24F          E                      12       L        T-I      57,2         270                      6340x2320x2660   14060   12192x2438x3010  19620   1000",
+        "AT-2245  CT-2245                2080  2250    16V4000G14F          E                      16       L        T-I      76,3         309                      6910x2320x2860   15840   12192x2438x3010  21400   1000"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Green Line – Antriebe von MTU (Notstrom / Stand-By Aggregat)",
+      "header": [
+        "POWER R.P.M.               SERIES  REGULATOR /  GOVERNOR  N. CYL.  COOLING  SUCTION  CYL. Liters  CONSUMTION  75% (lit/h)  OPEN                     SOUNDPROOF",
+        "kVA   kVA     ENGINE                                                                                                                        WEIGHT                   WEIGHT  FUEL",
+        "MODEL    MODEL                  PRP   LTP                                                                                                                  DIMENSIONS (mm)  (kg)    DIMENSIONS (mm)  (kg)    TANK"
+      ],
+      "rows": [
+        "AT-825   IT-825                 -     822     12V2000G76F          E                      12       L        T-I      26,8         130                      4214x1690x2440   6700    6500x2220x2636   10000   1000",
+        "AT-1015  IT-1015                -     1010    12V2000G86F          E                      12       L        T-I      26,8         147                      4214x1690x2440   6920    6500x2220x2636   10600   1000",
+        "AT-1110  IT-1110                -     1108    16V2000G76F          E                      16       L        T-I      35,7         175                      4516x1810x2365   7090    6500x2220x2636   11160   1000",
+        "AT-1235  IT-1235                -     1230    16V2000G86F          E                      16       L        T-I      35,7         185                      4617x1810x2365   7400    6500x2220x2636   11380   1000",
+        "AT-1410  CT-1410                -     1410    18V2000G76F          E                      18       L        T-I      40,2         205                      4807x1810x2262   8780    12192x2438x3010  14340   1000",
+        "AT-1770  CT-1770                -     1770    12V4000G74F          E                      12       L        T-I      57,2         271                      6340x2320x2660   13820   12192x2438x3010  19380   1000",
+        "AT-2035  CT-2035                -     2035    12V4000G84F          E                      12       L        T-I      57,2         293                      6340x2320x2660   14060   12192x2438x3010  19620   1000",
+        "AT-2250  CT-2250                -     2250    16V4000G74F          E                      16       L        T-I      76,3         336                      6910x2320x2860   15840   12192x2438x3010  21400   1000"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Rental Range – KOHLER (K-KRN)",
+      "header": [
+        "PRP    LTP                       DIMENSIONS (mm)   WEIGHT  FUEL           SOUND                  SKID MOUNTED",
+        "MODEL      (kVA)  (kVA)  SIIIA ENGNE MODEL  LENGHT x WIDTH x  (kg)    TANK (L)       LEVEL                  GENERATOR SET                 CONTROL PANEL",
+        "HEIGHT                                   (dB(A)@7m)"
+      ],
+      "rows": [
+        "K-KRN-022  20     22     KDI1903M           2055x1000x1535    1100    180            60          ECP28-M    STD                           DSE  6010  MKII",
+        "K-KRN-030  27     30     KDI2504M           2055x1000x1535    1180    180            60          ECP28-VL   STD                           DSE  6010  MKII",
+        "K-KRN-035  30     33     KDI 2504 TM30-TA   2055x1000x1535    1200    180            60          ECP28-VL   STD                           DSE  6010  MKII",
+        "K-KRN-042  38     42     KDI2504TM-40EU     2555x1140x1645    1380    250            60          ECP32-3S   STD                           DSE  6010  MKII",
+        "K-KRN-066  60     66     KDI3404TMCAC       2555x1140x1645    1620    250            60          ECP32-2L   STD                           DSE  6010  MKII"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Rental Range – FPT-IVECO (K-IRN)",
+      "header": [
+        "PRP    LTP                       DIMENSIONS (mm)   WEIGHT  FUEL           SOUND                  SKID MOUNTED",
+        "MODEL      (kVA)  (kVA)  SIIIA ENGNE MODEL  LENGHT x WIDTH x  (kg)    TANK (L)       LEVEL                  GENERATOR SET                 CONTROL PANEL",
+        "HEIGHT                                   (dB(A)@7m)"
+      ],
+      "rows": [
+        "K-IRN-033  30     33     F32SM1F            2055x1000x1535    1160    180            62          ECP28-VL   STD                           DSE 6010 MKII",
+        "K-IRN-066  60     66     N45SM1F            2555x1140x1645    1600    250            62          ECP32-2L   STD                           DSE 6010 MKII",
+        "K-IRN-090  83     90     N45TE1F            2900x1140x1900    1930    480            62          ECP34-1S   STD                           DSE 6010 MKII",
+        "K-IRN-115  105    115    N45TE2F            2900x1140x1900    2010    480            62          ECP34-2S   STD                           DSE 6010 MKII",
+        "K-IRN-145  130    145    N67TM1F            3525x1140x1950    T.B.A.  690            68          ECP34-1L   STD                           DSE 6010 MKII",
+        "K-IRN-165  150    165    N67TE1F            3525x1140x1950    T.B.A.  690            68          ECP34-2L   STD                           DSE 6010 MKII",
+        "K-IRN-190  170    190    N67TE2F            3640x1380x2145    2840    1180           68          ECO38N-1S  STD                           DSE 6010 MKII",
+        "K-IRN-220  200    220    N67TE3F            3640x1380x2145    3130    1180           68          ECO38N-2S  STD                           DSE 6010 MKII",
+        "K-IRN-275  250    275    C87TE3F            3640x1380x2145    3600    1180           68          ECO38N-1L  STD                           DSE 7310",
+        "K-IRN-330  300    330    C10TE1F            4260x1660x2390    T.B.A.  1655           70          ECO38N-2L  STD                           DSE 7310",
+        "K-IRN-380  345    380    C13TE1F            4260x1660x2390    T.B.A.  1655           70          ECO38N-3L  STD                           DSE 7310",
+        "K-IRN-440  400    440    C13TE2F            4260x1660x2390    T.B.A.  1655           70          ECO40-1S   STD                           DSE 7310"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Rental Range – VOLVO (K-VRN)",
+      "header": [
+        "PRP    LTP                       DIMENSIONS (mm)   WEIGHT  FUEL           SOUND                  SKID MOUNTED",
+        "MODEL      (kVA)  (kVA)  SIIIA ENGNE MODEL  LENGHT x WIDTH x  (kg)    TANK (L)       LEVEL                  GENERATOR SET                 CONTROL PANEL",
+        "HEIGHT                                   (dB(A)@7m)"
+      ],
+      "rows": [
+        "K-VRN-095  85     95     TAD550GE           2900x1140x1900    2090    480            65          ECP34-1S   STD                           DSE 6010 MKII",
+        "K-VRN-115  105    115    TAD551GE           2900x1140x1900    2170    480            68          ECP34-2S   STD                           DSE 6010 MKII",
+        "K-VRN-145  130    145    TAD750GE           3525x1140x1950    3050    690            68          ECP34-1L   STD                           DSE 6010 MKII",
+        "K-VRN-165  150    165    TAD751GE           3525x1140x1950    3050    690            68          ECP34-2L   STD                           DSE 6010 MKII",
+        "K-VRN-200  180    200    TAD752GE           3640x1380x2145    3160    1180           68          ECO38N-1S  STD                           DSE 6010 MKII",
+        "K-VRN-220  200    220    TAD753GE           3640x1380x2145    3240    1180           68          ECO38N-2S  STD                           DSE 6010 MKII",
+        "K-VRN-275  250    275    TAD754GE           3640x1380x2145    3600    1180           70          ECO38N-1L  STD                           DSE 7310",
+        "K-VRN-330  300    330    TAD1351GE          4260x1660x2390    T.B.A.  1655           70          ECO38N-2L  STD                           DSE 7310",
+        "K-VRN-385  350    385    TAD1352GE          4260x1660x2390    T.B.A.  1655           70          ECO38N-3L  STD                           DSE 7310",
+        "K-VRN-420  380    420    TAD1354GE          4260x1660x2390    T.B.A.  1655           70          ECO40-1S   STD                           DSE 7310",
+        "K-VRN-440  400    440    TAD1355GE          4260x1660x2390    T.B.A.  1655           70          ECO40-1S   STD                           DSE 7310",
+        "K-VRN-500  450    500    TAD1650GE          4860x2060x2585    6410    1000           75          ECO40-2S   N/A                           DSE 7310",
+        "K-VRN-550  500    550    TAD1651GE          4860x2060x2585    6460    1000           75          ECO40-3S   N/A                           DSE 7310"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "Container-Module 300 bis 2.800 kVA – Beispiel-Daten (unverbindlich)",
+      "header": [
+        "MODELLE                     715C      880C        1000C            1100C                                       1250C   1400                 1540                  1650C        1800C       2000C       2250C    2500C           2800C"
+      ],
+      "rows": [
+        "Marken         MTU       MTU         MTU              MTU                                         MTU     MITSUBISHI          MITSUBISHI             MTU          KOHLER      KOHLER      KOHLER   KOHLER          KOHLER",
+        "Motoren      12V2000G25  12V2000G65  16V2000G25       16V2000G65             18V2000G65                   S12R-PTA             S12R-PTA2             12V4000G23F     KD45V20  KD62V12     KD62V12  KD62V12         KD62V12",
+        "Leistung PRP (kVA)          650            800    909              1000                                        1136    1273                 1400                  1500             1636    1818        2045     2273            2545",
+        "Leistung PRP (kW)           520            640    727              800                                         909     1018                 1120                  1200             1309    1454        1636     1818            2036",
+        "Leistung ESP (kVA)          715            880    1000             1100                                        1250    1403                 1540                  1650             1800    2000        2250     2500            2800",
+        "Leistung ESP (kW)           572            704    800              880                                         1000    1122                 1232                  1320             1440    1600        1800     2000            2240"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE 3110",
+      "text": "DSE 3110",
+      "line": "INDUSTRIE AGGREGAT mit Steuerung DSE 3110 - DSE 7310 MKII",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE 7310 MKII",
+      "text": "DSE 7310 MKII",
+      "line": "INDUSTRIE AGGREGAT mit Steuerung DSE 3110 - DSE 7310 MKII",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE 6020 MKII",
+      "text": "DSE 6020 MKII",
+      "line": "NOTSTROM/STAND-BY AGGREGAT mit Steuerung DSE 6020 MKII - DSE 7320 MKII*",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE 7320 MKII",
+      "text": "DSE 7320 MKII",
+      "line": "NOTSTROM/STAND-BY AGGREGAT mit Steuerung DSE 6020 MKII - DSE 7320 MKII*",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE 6010 MKII",
+      "text": "DSE 6010 MKII",
+      "line": "Die DSE 6010 MKII Kontrolleinheit ist eine                                            Die DSE 7310 hat alle Funktionen der DSE",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE 7310",
+      "text": "DSE 7310",
+      "line": "DSE 7310 is an advanced controller with all the features of",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE 334",
+      "text": "DSE 334",
+      "line": "•  Steuereinheit DSE 334/ Control Module DSE 334",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "DSE8610",
+      "line": "Breaker from 200 kVA PRP inclusive.                                                      The DSE8610 is an intelligent",
+      "src": [
+        2002
+      ]
+    }
+  ]
 }
