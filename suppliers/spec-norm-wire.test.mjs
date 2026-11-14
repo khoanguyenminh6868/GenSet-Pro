@@ -33,7 +33,9 @@ test("by group: fuel on alone leaves a displacement in cc compared as before", (
 });
 
 test("normFig: fuel needs L/h at the HSMT's load; noise its distance; weight / size open or canopied", () => {
-  assert.deepEqual(normFig({ key: "fuel", label: "Fuel Consumption (L/h)", value: "99" }, { header: [] }, { unit: "L/h", load: 100 }).why, ["load"]);
+  // A heading that names no load is the 100% figure, as the catalog files it (Khoa 14/11/2026: giữ quy ước cũ); a 75% heading is not.
+  assert.deepEqual(normFig({ key: "fuel", label: "Fuel Consumption (L/h)", value: "99" }, { header: [] }, { unit: "L/h", load: 100 }).why, []);
+  assert.deepEqual(normFig({ key: "fuel", label: "Fuel consumption 75% load (L/h)", value: "74" }, { header: [] }, { unit: "L/h", load: 100 }).ok, false);
   assert.equal(normFig({ key: "fuel", label: "Fuel consumption 100% load (L/h)", value: "99" }, { header: [] }, { unit: "L/h", load: 100 }).r.num, 99);
   assert.deepEqual(normFig({ key: "fuel75", label: "Fuel consumption 75% load (L/h)", value: "74" }, { header: [] }, { unit: "L/h", load: 75 }).why, []);
   assert.deepEqual(normFig({ key: "fuel", label: "Fuel consumption 100% load", value: "230 g/kWh" }, { header: [] }, { unit: "L/h", load: 100 }).why, ["đơn vị g/kWh"]);
@@ -47,7 +49,7 @@ test("normFig: fuel needs L/h at the HSMT's load; noise its distance; weight / s
   assert.deepEqual(normFig({ key: "disp", label: "Displacement (cc)", value: "11000" }, { header: [] }, { unit: "L" }).why, ["đơn vị cc"]);
 });
 
-test("candidates: a fuel figure whose heading names no load is not compared under the flag (kept, no points off)", () => {
+test("candidates: a fuel figure whose heading names no load is the 100% figure under the flag too (kept, the old 300 points off)", () => {
   const H100 = "| Model | Prime kVA | Prime kW | Engine | Alternator | Fuel consumption 100% load (L/h) |", HNL = "| Model | Prime kVA | Prime kW | Engine | Alternator | Fuel Consumption (L/h) |";
   const list = [sup("nl", ["| n-1 | 420 | 336 | WP13D405E200 | XY1 | 99 |"], HNL), sup("fl", ["| f-1 | 420 | 336 | YC6K520-D30 | XY1 | 99 |"], H100)];
   const h = free("Tiêu hao nhiên liệu ở 100% tải ≤ 90 L/h\n50 Hz");
@@ -55,10 +57,11 @@ test("candidates: a fuel figure whose heading names no load is not compared unde
   assert.equal(x.fuelNoLoad, true);
   assert.deepEqual(off.dropped.map((d) => d.u.supplierId), ["fl"]);
   assert.ok(!("normSkip" in x));
+  // Khoa 14/11/2026 ("cũ"): the same as with the flag off.
   const n = on(() => run(list, h)), y = n.top.find((r) => r.u.supplierId === "nl");
-  assert.equal(y.fuelOver, false); assert.equal(y.fuelNoLoad, false);
-  assert.equal(y.score, x.score + 300);
-  assert.deepEqual(y.normSkip.map((s) => [s.key, s.why]), [["fuel", ["load"]]]);
+  assert.equal(y.fuelOver, true); assert.equal(y.fuelNoLoad, true);
+  assert.equal(y.score, x.score);
+  assert.deepEqual(y.normSkip ?? [], []);
   // The 100% figure written with its load is still left out.
   assert.deepEqual(n.dropped.map((d) => [d.u.supplierId, d.ruled]), [["fl", ["fuel"]]]);
 });

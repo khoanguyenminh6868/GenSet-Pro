@@ -100,10 +100,12 @@ const NORM_VI = { unit: "không ghi đơn vị", number: "số viết không rõ
 export function normFig(s, ctx, want = {}) {
   const r = SN.normalize({ key: s.key, label: s.label, value: s.value }, ctx || NORM_CTX.get(s) || { title: "", header: [], rows: s.line ? [s.line] : [] });
   if (!r) return { r: null, ok: false, why: ["value"] };
-  const why = r.missing.filter((m) => NORM_GAP.has(m) || (NORM_NEED[s.key] || []).includes(m));
+  // A fuel figure whose heading names no load is the 100% figure, as the catalog files it (Khoa 14/11/2026: giữ quy ước cũ).
+  const at100 = want.load === 100 && r.cond?.load == null;
+  const why = r.missing.filter((m) => (NORM_GAP.has(m) || (NORM_NEED[s.key] || []).includes(m)) && !(m === "load" && at100));
   const units = want.unit == null ? null : [].concat(want.unit);
   if (units && !why.includes("unit") && !units.includes(r.unit)) why.push(`đơn vị ${r.unit}`);
-  if (want.load != null && !why.includes("load") && r.cond?.load !== want.load) why.push(`mức tải ${r.cond?.load}%`);
+  if (want.load != null && !why.includes("load") && !at100 && r.cond?.load !== want.load) why.push(`mức tải ${r.cond?.load}%`);
   if (want.distance != null && !why.includes("distance") && r.cond?.distance_m !== want.distance) why.push(r.cond?.distance_m != null ? `khoảng cách ${r.cond.distance_m} m` : "distance");
   if (want.measure && r.cond?.measure && r.cond.measure !== want.measure) why.push(`đo ${r.cond.measure}`);
   if (want.enclosure && r.cond?.enclosure && r.cond.enclosure !== want.enclosure) why.push(`bản ${r.cond.enclosure}`);
@@ -1217,14 +1219,14 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       let fuelOver = false, fuelNoLoad = false;
       for (const [fk, hk, at] of [["fuel", "maxFuel", ""], ["fuel75", "maxFuel75", " ở 75% tải"], ["fuel50", "maxFuel50", " ở 50% tải"]]) {
         let fl = hints[hk] && (u.specs || []).find((x) => x.key === fk && /l\s*\/\s*h|l\/hr|lít|lph/i.test(`${x.label} ${x.value}`) && !/g\s*\/\s*(k?w|hp|ps)/i.test(String(x.value)));
-        let fv = fl ? fuelAt(fl, FUEL_LOAD[fk]) : null;
+        let fv = fl ? fuelAt(fl, FUEL_LOAD[fk]) : null, nNoLoad = false;
         // Normalized: the first figure of the key in L/h at the HSMT's load (100 / 75 / 50%), the load written in the
         // source (a 75 / 50% cell counts, loadFrom "key"); none → not compared, the row stays with no points off.
         if (NF && hints[hk]) {
           fl = null; fv = null;
           for (const x of (u.specs || []).filter((y) => y.key === fk)) {
             const r = nfig(x, { unit: "L/h", load: FUEL_LOAD[fk] });
-            if (r && r.num != null) { fl = x; fv = r.num; break; }
+            if (r && r.num != null) { fl = x; fv = r.num; nNoLoad = r.cond?.load == null; break; }
           }
         }
         // Not judged: a bound ("< 10": only says it is under 10) and a figure no genset of this size burns (> 0.6 L/h per kVA: a
@@ -1232,7 +1234,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         const unsure = fl && (/^\s*[<≤]|<=/.test(String(fl.value)) || (cap && fv != null && fv > (cap.unit === "kVA" ? cap.value : cap.value / 0.8) * 0.6));
         // A 100% figure whose heading names no load (the catalog files "Fuel consumption (L/h)" under 100%) is not left out either (the old
         // 300 points off stay): only a load written in the label that is the HSMT's (100% / full load) counts. 75% and 50% are in the label by construction.
-        const loadUnstated = !NF && fk === "fuel" && fl && !LOAD_100.test(String(fl.label));
+        const loadUnstated = fk === "fuel" && fl && (NF ? nNoLoad : !LOAD_100.test(String(fl.label)));
         if (fv != null && !unsure && fv > hints[hk]) { score -= 300; fuelOver = true; if (loadUnstated) fuelNoLoad = true; else ruled.push(fk); why.push(`tiêu hao${at} ${fv} L/h > ${hints[hk]} L/h HSMT cho phép`); }
       }
       if (a) { score += 40; if ((a.make || "").split(" / ").some((m) => hints.altMakes.includes(m)) || named(hints, a.model)) { score += 80; why.push("đầu phát HSMT nêu"); } score += 3 * Math.min(new Set(af.map((f) => f.key)).size, 6); }
