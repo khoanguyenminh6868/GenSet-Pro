@@ -1253,9 +1253,10 @@ function ourStats() {
 }
 function statTiles() {
   const st = ourStats(), pct = (v) => (100 * v).toLocaleString("vi-VN", { maximumFractionDigits: 1 }) + "%";
-  const tile = (l, v, sub, c) => h`<div class="kpi kstat" role="button" tabindex="0" data-kstat="${st?.id || ""}" style="--kc:${raw(c)}"><span class="kl">${l}</span><span class="kv">${v}</span><span class="ks">${sub}</span></div>`;
-  return tile("Tỉ lệ thắng thầu", st?.decided ? pct(st.wins / st.decided) : "—", st?.decided ? `trúng ${st.wins} / ${st.decided} gói có kết quả` : state.loaded.hist ? "chưa có gói có kết quả" : "", "var(--mint)")
-    + tile("Giá thường bỏ", st?.median ? pct(st.median) : "—", st?.median ? `giá gói, trung vị ${st.n} lượt dự thầu` : state.loaded.hist ? "chưa có giá dự thầu" : "", "var(--violet)");
+  // No sub-line under the figure (Khoa, 2026-11-14).
+  const tile = (l, v, c) => h`<div class="kpi kstat" role="button" tabindex="0" data-kstat="${st?.id || ""}" style="--kc:${raw(c)}"><span class="kl">${l}</span><span class="kv">${v}</span></div>`;
+  return tile("Tỉ lệ thắng thầu", st?.decided ? pct(st.wins / st.decided) : "—", "var(--mint)")
+    + tile("Giá thường bỏ", st?.median ? pct(st.median) : "—", "var(--violet)");
 }
 const syncDoneNote = { at: "", base: undefined };
 function renderTop() {
