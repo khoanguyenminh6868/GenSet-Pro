@@ -50,6 +50,420 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Scania DC09 320A. 250-250 kVA (223-225 kW)",
+      "fuel": "diesel",
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC09 320A"
+      ],
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Scania DC09 072A. 289-358 kW (329-405 kVA)",
+      "fuel": "diesel",
+      "power": {
+        "min": 329,
+        "max": 329,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC09 072A"
+      ],
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Scania DC13 505A. 350/350 kVA (312/318 kW)",
+      "fuel": "diesel",
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC13 505A"
+      ],
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Scania DC13 506A. 500/500 kVA (437/443 kW)",
+      "fuel": "diesel",
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC13 506A"
+      ],
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Scania DC13 507A. 300-330 kVA (269-301 kW)",
+      "fuel": "diesel",
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC13 507A"
+      ],
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Scania DC13 507A. 400-440 kVA (355-395 kW)",
+      "fuel": "diesel",
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC13 507A"
+      ],
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Scania DC13 507A. 500-550 kVA (437-485 kW)",
+      "fuel": "diesel",
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC13 507A"
+      ],
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Scania DC13 507A. 600-660 kVA (522-579 kW)",
+      "fuel": "diesel",
+      "power": {
+        "min": 600,
+        "max": 600,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2009
+        ]
+      },
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC13 507A"
+      ],
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Scania DC16 320A. 398-408 kW (450-450 kVA)",
+      "fuel": "diesel",
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2010
+        ]
+      },
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC16 320A"
+      ],
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Scania DC16 084A. 367 kW (400 kVA)",
+      "fuel": "diesel",
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2011
+        ]
+      },
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC16 084A"
+      ],
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Scania DC16 078A. 700-770 kVA (620-680 kW)",
+      "fuel": "diesel",
+      "power": {
+        "min": 700,
+        "max": 700,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2012
+        ]
+      },
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC16 078A"
+      ],
+      "src": [
+        2012
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Scania DC16 093A. 558-634 kW (640-720 kVA)",
+      "fuel": "diesel",
+      "power": {
+        "min": 640,
+        "max": 640,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2013
+        ]
+      },
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC16 093A"
+      ],
+      "src": [
+        2013
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Scania DC09 085A (brochure) – PRP 260 kVA",
+      "fuel": "diesel",
+      "power": {
+        "min": 260,
+        "max": 260,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC09 085A"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Scania DC09 086A (brochure) – PRP 300 kVA",
+      "fuel": "diesel",
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC09 086A"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Scania DC09 071A (brochure) – PRP 253–329 kVA",
+      "fuel": "diesel",
+      "power": {
+        "min": 253,
+        "max": 329,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC09 071A"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Scania DC09 073A (brochure) – PRP 253–329 kVA",
+      "fuel": "diesel",
+      "power": {
+        "min": 253,
+        "max": 329,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC09 073A"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Scania DC16 071A (brochure) – PRP 500–549 kVA",
+      "fuel": "diesel",
+      "power": {
+        "min": 500,
+        "max": 549,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC16 071A"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Scania DC16 072A (brochure) – PRP 601–701 kVA",
+      "fuel": "diesel",
+      "power": {
+        "min": 601,
+        "max": 701,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "engineMakes": [
+        "Scania"
+      ],
+      "engineModels": [
+        "DC16 072A"
+      ],
+      "src": [
+        2001
+      ]
     }
   ],
   "certifications": [],
@@ -69,9 +483,577 @@
         "330-660 kVA (50 Hz and 60 Hz)"
       ],
       "file": "sources/scania-engines/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.scania.com/content/dam/www/market/master/pdf/engines/power-solutions-product-range-brochure.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Engine data 9-series*",
+        "DC09 085A             –         –     –         –    234       260                   –             –",
+        "DC09 086A             –         –     –         –    268       300                   –             –",
+        "DC09  071A            226       253   –         –    251       278                   –             –",
+        "DC09  071A            289       329   –         –    313       353                   –             –",
+        "DC09  073A            226       253   249       280  251       278                  276            309",
+        "DC09  073A            289       329   317       361  325       366                  358            405",
+        "DC16 071A           438       500   –         –            483       540             –        –",
+        "DC16 071A           480       549   –         –            483       540             –        –    Ratings",
+        "DC16  072A          536       601   587       661          576       650      632             715",
+        "DC16  072A          621       701   680       771          642       728      704             800"
+      ],
+      "file": "sources/scania-engines/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.scania.com/content/dam/www/market/master/products/power-solutions/engine-pdfs/power-generation/DC09-320A_223-225kW_ATS.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "DC09 320A. 250-250 kVA (223-225 kW)",
+        "250                                                  250                     kVA"
+      ],
+      "file": "sources/scania-engines/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://www.scania.com/content/dam/www/market/master/products/power-solutions/engine-pdfs/power-generation/DC09-072A_289-358kW.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "DC09 072A.                      289-358 kW (329-405                                     kVA)",
+        "Gross power (kVA)                      329        361                366                   405"
+      ],
+      "file": "sources/scania-engines/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://www.scania.com/content/dam/www/market/master/products/power-solutions/engine-pdfs-next-generation/power-generation/DC13-505A_350-350kVA_ATS.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "DC13 505A. 350/350 kVA (312/318 kW)",
+        "Gross power                                                                          350                        350                     kVA"
+      ],
+      "file": "sources/scania-engines/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://www.scania.com/content/dam/www/market/master/products/power-solutions/engine-pdfs-next-generation/power-generation/DC13-506A_500-500kVA_ATS.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "DC13 506A. 500/500 kVA (437/443 kW)",
+        "Gross power                                                                          500                        500                     kVA"
+      ],
+      "file": "sources/scania-engines/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://www.scania.com/content/dam/www/market/master/products/power-solutions/engine-pdfs-next-generation/power-generation/DC13-507A_300-330kVA.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "DC13 507A. 300-330 kVA (269-301 kW)",
+        "Gross power                                       300                         330           300                         330                  kVA"
+      ],
+      "file": "sources/scania-engines/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://www.scania.com/content/dam/www/market/master/products/power-solutions/engine-pdfs-next-generation/power-generation/DC13-507A_400-440kVA.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "DC13 507A. 400-440 kVA (355-395 kW)",
+        "Gross power                                       400                         440           400                         440                  kVA"
+      ],
+      "file": "sources/scania-engines/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://www.scania.com/content/dam/www/market/master/products/power-solutions/engine-pdfs-next-generation/power-generation/DC13-507A_500-550kVA.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "DC13 507A. 500-550 kVA (437-485 kW)",
+        "Gross power                                       500                         550           500                         550                  kVA"
+      ],
+      "file": "sources/scania-engines/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://www.scania.com/content/dam/www/market/master/products/power-solutions/engine-pdfs-next-generation/power-generation/DC13-507A_600-660kVA.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "DC13 507A. 600-660 kVA (522-579 kW)",
+        "Gross power                                       600                         660           600                         660                  kVA"
+      ],
+      "file": "sources/scania-engines/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://www.scania.com/content/dam/www/market/master/products/power-solutions/engine-pdfs/power-generation/DC16-320A_398-408kW_ATS.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "DC16 320A. 398-408 kW (450-450 kVA)",
+        "450                                                        450           kVA"
+      ],
+      "file": "sources/scania-engines/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://www.scania.com/content/dam/www/market/master/products/power-solutions/engine-pdfs/power-generation/DC16-084A_367kW_SCR.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "DC16 084A. 367 kW (400 kVA)",
+        "Gross power (kVA)                         400"
+      ],
+      "file": "sources/scania-engines/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "https://www.scania.com/content/dam/www/market/master/products/power-solutions/engine-pdfs/power-generation/DC16-078A_620-680kW.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "DC16 078A. 700-770 kVA (620-680 kW)",
+        "Gross power                              700                         770                                   702                         772        kVA"
+      ],
+      "file": "sources/scania-engines/2012.md",
+      "official": true
+    },
+    {
+      "n": 2013,
+      "url": "https://www.scania.com/content/dam/www/market/master/products/power-solutions/engine-pdfs/power-generation/DC16-093A_558-634kW.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "DC16 093A.                      558-634 kW (640-720                                     kVA)",
+        "Gross power (kVA)                      640        706                652                   720"
+      ],
+      "file": "sources/scania-engines/2013.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Engine data 9-series – EU Stage V compliant engines (PRP/ESP kW, kVA)",
+      "header": [
+        "Engine type                PRP             ESP            PRP                            ESP",
+        "kW        kVA   kW        kVA  kW        kVA                  kW             kVA"
+      ],
+      "rows": [
+        "generation    DC09  320A            223       250   –         –    225       250                   –             –",
+        "DC09  320A            244       275   –         –    247       275                   –             –",
+        "engine range  DC09  320A            265       300   –         –    268       300                   –             –",
+        "DC09  320A            289       330   –         –    303       353                   –             –"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Engine data 9-series – US Tier 4f compliant engines",
+      "header": [
+        "Engine type                PRP             ESP            PRP                            ESP",
+        "kW        kVA   kW        kVA  kW        kVA                  kW             kVA"
+      ],
+      "rows": [
+        "DC09 085A             –         –     –         –    234       260                   –             –",
+        "DC09 086A             –         –     –         –    268       300                   –             –"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Engine data 9-series – EU Stage IIIA, China Stage III and CPCB-II compliant engines",
+      "header": [
+        "Engine type                PRP             ESP            PRP                            ESP",
+        "kW        kVA   kW        kVA  kW        kVA                  kW             kVA"
+      ],
+      "rows": [
+        "DC09  071A            226       253   –         –    251       278                   –             –",
+        "DC09  071A            248       279   –         –    273       306                   –             –",
+        "DC09  071A            267       304   –         –    292       328                   –             –",
+        "DC09  071A            289       329   –         –    313       353                   –             –"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Engine data 9-series – EU Stage II and China Stage II compliant engines",
+      "header": [
+        "Engine type                PRP             ESP            PRP                            ESP",
+        "kW        kVA   kW        kVA  kW        kVA                  kW             kVA"
+      ],
+      "rows": [
+        "DC09  073A            226       253   249       280  251       278                  276            309",
+        "DC09  073A            248       279   273       310  273       303                  300            338",
+        "DC09  073A            267       304   294       335  292       328                  321            361",
+        "DC09  073A            289       329   317       361  325       366                  358            405"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Engine data 9-series – Fuel-optimised, non-compliant engines",
+      "header": [
+        "Engine type                PRP             ESP            PRP                            ESP",
+        "kW        kVA   kW        kVA  kW        kVA                  kW             kVA"
+      ],
+      "rows": [
+        "DC09  072A            226       253   249       280  251       278                  276            309",
+        "DC09  072A            248       279   273       310  273       306                  300            338",
+        "DC09  072A            267       304   294       335  292       328                  321            361",
+        "DC09  072A            289       329   317       361  325       366                  358            405"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Engine data 13-series – EU Stage V compliant engines (PRP kVA, kW)",
+      "header": [
+        "DC09 072A      1,242 (48.9)   861 (33.4)     1,292 (50.9)   approx. 950 (2,094)                                1,500  rpm  (50  Hz)  PRP                1,800  rpm  (60  Hz)  PRP",
+        "DC09 073A      1,242 (48.9)   861 (33.4)     1,292 (50.9)   approx. 950 (2,094)  Engine type                   kVA                   kW                 kVA                   kW"
+      ],
+      "rows": [
+        "DC09 085/086A  1,234 (59.80)  982 (37.60)    1,088 (43.74)  approx. 975 (2,150)  DC13  505A                    300                   269                300                   275",
+        "* Excluding oil and coolant.                                                     DC13  505A                    350                   312                350                   318",
+        "DC13  505A                    400                   355                400                   361",
+        "DC13  505A                    450                   398                450                   404",
+        "DC13  505A                    500                   437                500                   443"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Engine data 13-series – China Stage IV compliant engines (PRP kVA, kW)",
+      "header": [
+        "1,500  rpm  (50  Hz)  PRP                1,800  rpm  (60  Hz)  PRP",
+        "Engine type                   kVA                   kW                 kVA                   kW"
+      ],
+      "rows": [
+        "DC13  506A                    300                   269                300                   275",
+        "DC13  506A                    350                   312                350                   318",
+        "DC13  506A                    400                   355                400                   361",
+        "DC13  506A                    450                   398                450                   404",
+        "DC13  506A                    500                   437                500                   443"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Engine data 13-series – CO2 optimised, non-compliant engines (PRP/ESP kVA, kW)",
+      "header": [
+        "Engine type                   PRP                   ESP                PRP                   ESP",
+        "kVA            kW          kVA       kW   kVA           kW          kVA       kW"
+      ],
+      "rows": [
+        "DC13  507A          300            269         330       295  300           275         330       301",
+        "DC13  507A          350            312         385       342  350           318         385       348",
+        "DC13  507A          400            355         440       389  400           361         440       395",
+        "DC13  507A          450            398         495       437  450           404         495       443",
+        "DC13  507A          500            437         550       479  500           443         550       485",
+        "DC13  507A          550            479         605       526  550           485         605       532",
+        "DC13  507A          600            522         660       573  600           528         660       579"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Engine data 16-series – EU Stage V compliant engines",
+      "header": [
+        "Engine type              PRP             ESP                    PRP                      ESP       OC16  071A*                   372                   409       411                          455",
+        "kW        kVA   kW        kVA          kW        kVA      kW              kVA  OC16  071A*                   407                   455       426                          477"
+      ],
+      "rows": [
+        "DC16 320A           398       450   –         –            408       450             –        –    OC16  071A**                  360                   395       360                          395",
+        "DC16 320A           439       500   –         –            449       500             –        –    * For natural gas.",
+        "DC16 320A           481       550   –         –            491       550             –        –    ** For biogas."
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Engine data 16-series – US Tier 4f compliant engines",
+      "header": [
+        "Engine type              PRP             ESP                    PRP                      ESP                                                                                    1,361 (3,000)",
+        "kW        kVA   kW        kVA          kW        kVA      kW              kVA  DC16 071A                1,324 (52.1)          1,127 (44.4)   1,288 (50.7)   approx."
+      ],
+      "rows": [
+        "DC16 084A           –         –     –         –            367       400             –        –                                                                                 1,340 (2,954)",
+        "DC16 084A           –         –     –         –            436       480             –        –    DC16 072/078A            1,315 (51.8)          1,126 (44.3)   1,207 (47.5)   approx.",
+        "DC16 084A           –         –     –         –            448       500             –        –    DC016 084A               1,400 (55.12)         1,199 (47.20)  1,289 (50.75)  approx."
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Engine data 16-series – EU Stage IIIA, China Stage III and CPCB-II compliant engines",
+      "header": [
+        "Engine type              PRP             ESP                    PRP                      ESP       * Excluding oil and coolant.",
+        "kW        kVA   kW        kVA          kW        kVA             kW       kVA"
+      ],
+      "rows": [
+        "DC16 071A           438       500   –         –            483       540             –        –",
+        "DC16 071A           480       549   –         –            483       540             –        –    Ratings"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Engine data 16-series – Fuel-optimised, non-compliant engines",
+      "header": [
+        "Engine type              PRP             ESP                    PRP                      ESP       load factor of 70% of rated power over 24 h of operation. Not for applications intended for more",
+        "kW        kVA   kW        kVA          kW        kVA      kW              kVA"
+      ],
+      "rows": [
+        "DC16  072A          536       601   587       661          576       650      632             715",
+        "DC16  072A          578       651   634       716          619       700      678             770",
+        "DC16  072A          621       701   680       771          642       728      704             800",
+        "DC16  078A          536       600   587       660          534       600      585             660",
+        "DC16  078A          578       650   634       715          576       650      632             715",
+        "DC16  078A          621       700   680       770          620       702      680             772",
+        "DC16  078A          644       725   706       800          640       725      702             800",
+        "DC16  093A          451       514   496       567          447       501      492             553",
+        "DC16  093A          486       555   535       613          489       550      538             607",
+        "DC16  093A          529       606   582       668          532       600      585             663",
+        "DC16  093A          558       640   614       706          576       652      634             720"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Scania DC09 320A – datasheet (web/4.txt)",
+      "header": [
+        "DC09 320A. 250-250 kVA (223-225 kW)"
+      ],
+      "rows": [
+        "Engine speed         1,500/1,800 rpm                                                    Standard equipment",
+        "Emission compliance  EU Stage V                                                         • Scania Engine Management System, EMS",
+        "Rating               PRP                                                                • Variable Geometry Turbocharger",
+        "No of cylinders      5 in-line                                                          • Saver ring in cylinder liner",
+        "Displacement         9.3 litres                                                         • Thermal recirculation fuel heater",
+        "Weight               950 kg (excluding oil and coolant)                                 • Centrifugal oil cleaner",
+        "1,500  rpm (50                            Hz)        1,800  rpm (60  Hz)            Unit",
+        "Gross power                                              223                                                  225                     kW",
+        "250                                                  250                     kVA",
+        "at full load                                             197                                                  199                     g/kWh",
+        "PRP - Prime power: For continuous operation and unlimited yearly operating time at varying"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "Scania DC09 072A – datasheet (web/5.txt)",
+      "header": [
+        "DC09 072A.                      289-358 kW (329-405                                     kVA)"
+      ],
+      "rows": [
+        "PRP        ESP                PRP                   ESP",
+        "Gross power (kW)                       289        317                325                   358",
+        "Gross power (kVA)                      329        361                366                   405",
+        "Fuel consumption at full load (g/kWh)  197        197                204                   205",
+        "PRP – Prime Power: For continuous operation and unlimited yearly operating time at varying load.",
+        "No of cylinders            5 in-line",
+        "Displacement               9.3 litres",
+        "Weight                     950 kg (excl oil and coolant)"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "Scania DC13 505A – datasheet (web/6.txt)",
+      "header": [
+        "DC13 505A. 350/350 kVA (312/318 kW)"
+      ],
+      "rows": [
+        "Engine speed         1,500/1,800 rpm                                                    Standard equipment",
+        "Emission compliance  EU Stage V                                                         • Variable GeometryTurbocharger (VGT)",
+        "Rating               PRP                                                                • Saver ring in cylinder liner",
+        "No of cylinders      6 in-line                                                          • Aluminum flywheel housing, SAE 1 flange",
+        "Displacement         12.7 litres                                                        • Open crankcase ventilation",
+        "Weight               1,074 kg (excluding oil      and coolant)                          • Front- and rear-mounted lifting eyes",
+        "1,500                              rpm (50  Hz)        1,800  rpm (60  Hz)            Unit",
+        "Gross power                                                                          350                        350                     kVA",
+        "at full load                                                                         183                        187                     g/kWh",
+        "PRP - Prime power: For continuous operation and unlimited yearly operating time at varying load."
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "Scania DC13 506A – datasheet (web/7.txt)",
+      "header": [
+        "DC13 506A. 500/500 kVA (437/443 kW)"
+      ],
+      "rows": [
+        "Engine speed         1,500/1,800 rpm                                                    Standard equipment",
+        "Emission compliance  China Stage IV                                                     • Variable GeometryTurbocharger (VGT)",
+        "Rating               PRP                                                                • Saver ring in cylinder liner",
+        "No of cylinders      6 in-line                                                          • Aluminum flywheel housing, SAE 1 flange",
+        "Displacement         12.7 litres                                                        • Open crankcase ventilation",
+        "Weight               1,074 kg (excluding oil      and coolant)                          • Front- and rear-mounted lifting eyes",
+        "1,500                              rpm (50  Hz)        1,800  rpm (60  Hz)            Unit",
+        "Gross power                                                                          500                        500                     kVA",
+        "at full load                                                                         187                        191                     g/kWh",
+        "PRP - Prime power: For continuous operation and unlimited yearly operating time at varying load."
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "Scania DC13 507A – datasheet (web/8.txt)",
+      "header": [
+        "DC13 507A. 300-330 kVA (269-301 kW)"
+      ],
+      "rows": [
+        "Engine speed               1,500/1,800 rpm                                         Standard equipment",
+        "Emission compliance        CO2 optimised, unregulated                              • Scania Engine Management System, EMS",
+        "Rating                     PRP, ESP                                                • Wastegate control turbocharger",
+        "No of cylinders            6 in-line                                               • Dual overhead camshaft (DOHC)",
+        "Displacement               12.7 litres                                             with water separator, for separate mounting",
+        "Weight                     1,074 kg (excluding oil and coolant)                    • Oil filter, full flow",
+        "1,500  rpm  (50  Hz)                      1,800  rpm  (60  Hz)",
+        "PRP                         ESP           PRP                         ESP                  Unit",
+        "Gross power                                       300                         330           300                         330                  kVA",
+        "at full load                                      179                         178           183                         183                  g/kWh",
+        "PRP - Prime power: For continuous operation and unlimited yearly operating time at varying load. Max mean load factor of 70% of rated power"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "Scania DC13 507A – datasheet (web/9.txt)",
+      "header": [
+        "DC13 507A. 400-440 kVA (355-395 kW)"
+      ],
+      "rows": [
+        "Engine speed               1,500/1,800 rpm                                         Standard equipment",
+        "Emission compliance        CO2 optimised, unregulated                              • Scania Engine Management System, EMS",
+        "Rating                     PRP, ESP                                                • Wastegate control turbocharger",
+        "No of cylinders            6 in-line                                               • Dual overhead camshaft (DOHC)",
+        "Displacement               12.7 litres                                             with water separator, for separate mounting",
+        "Weight                     1,074 kg (excluding oil and coolant)                    • Oil filter, full flow",
+        "1,500  rpm  (50  Hz)                      1,800  rpm  (60  Hz)",
+        "PRP                         ESP           PRP                         ESP                  Unit",
+        "Gross power                                       400                         440           400                         440                  kVA",
+        "at full load                                      179                         180           182                         183                  g/kWh",
+        "PRP - Prime power: For continuous operation and unlimited yearly operating time at varying load. Max mean load factor of 70% of rated power"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "Scania DC13 507A – datasheet (web/10.txt)",
+      "header": [
+        "DC13 507A. 500-550 kVA (437-485 kW)"
+      ],
+      "rows": [
+        "Engine speed               1,500/1,800 rpm                                         Standard equipment",
+        "Emission compliance        CO2 optimised, unregulated                              • Scania Engine Management System, EMS",
+        "Rating                     PRP, ESP                                                • Wastegate control turbocharger",
+        "No of cylinders            6 in-line                                               • Dual overhead camshaft (DOHC)",
+        "Displacement               12.7 litres                                             with water separator, for separate mounting",
+        "Weight                     1,074 kg (excluding oil and coolant)                    • Oil filter, full flow",
+        "1,500  rpm  (50  Hz)                      1,800  rpm  (60  Hz)",
+        "PRP                         ESP           PRP                         ESP                  Unit",
+        "Gross power                                       500                         550           500                         550                  kVA",
+        "at full load                                      183                         186           185                         187                  g/kWh",
+        "PRP - Prime power: For continuous operation and unlimited yearly operating time at varying load. Max mean load factor of 70% of rated power"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "Scania DC13 507A – datasheet (web/11.txt)",
+      "header": [
+        "DC13 507A. 600-660 kVA (522-579 kW)"
+      ],
+      "rows": [
+        "Engine speed               1,500/1,800 rpm                                         Standard equipment",
+        "Emission compliance        CO2 optimised, unregulated                              • Scania Engine Management System, EMS",
+        "Rating                     PRP, ESP                                                • Wastegate control turbocharger",
+        "No of cylinders            6 in-line                                               • Dual overhead camshaft (DOHC)",
+        "Displacement               12.7 litres                                             with water separator, for separate mounting",
+        "Weight                     1,074 kg (excluding oil and coolant)                    • Oil filter, full flow",
+        "1,500  rpm  (50  Hz)                      1,800  rpm  (60  Hz)",
+        "PRP                         ESP           PRP                         ESP                  Unit",
+        "Gross power                                       600                         660           600                         660                  kVA",
+        "at full load                                      188                         190           189                         192                  g/kWh",
+        "PRP - Prime power: For continuous operation and unlimited yearly operating time at varying load. Max mean load factor of 70% of rated power"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "Scania DC16 320A – datasheet (web/12.txt)",
+      "header": [
+        "DC16 320A. 398-408 kW (450-450 kVA)"
+      ],
+      "rows": [
+        "Engine speed         1,500/1,800 rpm                                                    Standard equipment",
+        "Emission compliance  EU Stage V                                                         • Scania Engine Management System, EMS",
+        "Rating               PRP                                                                • Waste-gate controlled turbocharger",
+        "No of cylinders      90° V8                                                             • Saver ring in cylinder liner",
+        "Displacement         16.4 litres                                                        • Oil filter, full flow",
+        "Weight               1,361 kg (excluding oil           and coolant)                     • Oil cooler, integrated in cylinder block",
+        "Gross power                                      398                                                        408           kW",
+        "450                                                        450           kVA",
+        "PRP - Prime power: For continuous operation and unlimited yearly operating time at varying                                        Edition 03"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "Scania DC16 084A – datasheet (web/13.txt)",
+      "header": [
+        "DC16 084A. 367 kW (400 kVA)"
+      ],
+      "rows": [
+        "Engine speed (rpm)                                        • Ramp start delay",
+        "Gross power (kW)                          367",
+        "Gross power (kWe)                         325",
+        "Gross power (kVA)                         400",
+        "Fuel consumption at full load (g/kWh)     199",
+        "Rating: PRP – Prime Power: For continuous operation and unlimited yearly operating time at varying",
+        "No of cylinders             90º V8",
+        "Displacement                16.4 litres",
+        "Weight                      1375 kg (excl oil and coolant)"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "Scania DC16 078A – datasheet (web/14.txt)",
+      "header": [
+        "DC16 078A. 700-770 kVA (620-680 kW)"
+      ],
+      "rows": [
+        "Engine speed         1,500/1,800 rpm                                                Standard equipment",
+        "Emission compliance  Fuel optimized                                                 • Scania Engine Management System, EMS",
+        "Rating               PRP/ESP                                                        • Turbocharger",
+        "No of cylinders      90° V8                                                         • Saver ring in cylinder liner",
+        "Displacement         16.4 litres                                                    • Fuel heater",
+        "Weight               1,340 kg (excluding oil and coolant)                           • Centrifugal oil cleaner",
+        "Engine speed",
+        "PRP                         ESP                                   PRP                         ESP        Unit",
+        "Gross power                              700                         770                                   702                         772        kVA",
+        "PRP – Prime power: For continuous operation and unlimited yearly operating time at varying load. Max. mean load factor of 70% of rated                    Edition 04"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "Scania DC16 093A – datasheet (web/15.txt)",
+      "header": [
+        "DC16 093A.                      558-634 kW (640-720                                     kVA)"
+      ],
+      "rows": [
+        "PRP        ESP                PRP                   ESP",
+        "Gross power (kW)                       558        614                576                   634",
+        "Gross power (kVA)                      640        706                652                   720",
+        "Fuel consumption at full load (g/kWh)  197        198                202                   207",
+        "PRP – Prime power: For continuous operation and unlimited yearly operating time at varying load.",
+        "No of cylinders            90º V8",
+        "Displacement               16.4 litres",
+        "Weight                     1340 kg (excl oil and coolant)"
+      ]
+    }
+  ]
 }
