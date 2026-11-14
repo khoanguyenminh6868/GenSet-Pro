@@ -14,7 +14,7 @@
    "valuePct": 100,
    "missingPct": {
     "load": 79.5,
-    "unit": 10.3,
+    "unit": 10.5,
     "number": 0,
     "ambiguous": 0.2
    }
@@ -51,7 +51,7 @@
    "missingPct": {
     "order": 58.8,
     "enclosure": 86.9,
-    "unit": 34,
+    "unit": 34.4,
     "ambiguous": 0.3,
     "number": 0.1
    }
@@ -79,7 +79,7 @@
    "n": 7095,
    "valuePct": 100,
    "missingPct": {
-    "unit": 16.8,
+    "unit": 20.5,
     "ambiguous": 0.1,
     "stroke": 6
    }
@@ -101,7 +101,7 @@
    "n": 2778,
    "valuePct": 100,
    "missingPct": {
-    "unit": 14.3,
+    "unit": 15.8,
     "number": 0
    }
   },
@@ -109,7 +109,7 @@
    "n": 3279,
    "valuePct": 98.4,
    "missingPct": {
-    "unit": 10.5,
+    "unit": 10.6,
     "kind": 1.6
    }
   },

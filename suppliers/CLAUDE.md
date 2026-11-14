@@ -14,7 +14,9 @@
 ## Lớp chuẩn hoá thông số (`web/spec-norm.js`, `quality.mjs`)
 - Chỉ đọc lại `{key, label, value}` của `fromSupplier`; bảng gốc không đổi, `raw` luôn nguyên văn. Đơn vị / điều kiện chỉ lấy từ chữ trong ô, nhãn, ô đơn vị cùng cột ở dòng tiêu đề, tên bảng; thiếu thì ghi `missing`, KHÔNG đoán theo độ lớn (205 không thành g/kWh). Quy đổi chỉ bằng `conversions.js` (in³, hp, PS); cc, gal, cm giữ nguyên. Thang khí thải không quy đổi; "T3", "Tier 3", "Stage II" không kèm EPA / EU / China thì `scale` trống.
 - "1,642" (phẩy + đúng 3 chữ số) có thể là nghìn hoặc thập phân (himoinsa ghi phẩy thập phân) → `missing: number`. Dòng tiêu đề không có `|` cuối: ô cuối vẫn là ô (đừng `slice(1, -1)`). Tên bảng chỉ cho biết trần / vỏ khi là chữ về kiểu máy ("open type", "Soundproof"); "Silent, Robust, and Reliable" của trang catalog không tính.
+- Ô đơn vị ở tiêu đề nhiều tầng không thẳng cột (`soleUnit`): chỉ gán khi cả tiêu đề có ĐÚNG MỘT tiêu đề (mọi họ, `COMP`) nhận được loại đơn vị đó; "(mm)" dưới cả "缸径/行程" và "外形尺寸" → `missing: unit`. Chữ viết sai ("lir/hr"), "转" trong "转速" (chữ "tốc độ") không là đơn vị; Nm³ khác m³.
 - Đổi `catalog.js` (SPECS) hay `spec-norm.js` → chạy `node suppliers/quality.mjs --check`; xấu đi có chủ ý thì `--write-baseline` và ghi lý do trong PR. Ca test lấy dòng thật: `web/test/spec-norm.test.mjs`.
+- CI (`ci.yml`, bước `quality --check`) chỉ CHẶN PR sửa code đọc (`web/catalog.js`, `web/spec-norm.js`, `web/conversions.js`, `suppliers/quality*`, so `git diff --name-only HEAD^1 HEAD`, checkout `fetch-depth: 2`). PR dữ liệu và push main chỉ in `::warning::`: bot tự merge PR Tìm Thông Số bằng `gh pr checks --watch --fail-fast` (`mergeWhenGreen`), check đỏ sẽ làm PR kẹt mà không ai biết. Thêm thư mục / tệp đọc mới thì thêm vào regex của bước đó.
 
 ## Bẫy cào / gộp
 - Sau mọi lần `merge-specs` toàn bộ: chạy verify VÀ so số dòng bảng/nguồn từng bản ghi với origin/main.

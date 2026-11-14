@@ -26,6 +26,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2 # quality --check below compares the PR merge commit with its base (HEAD^1)
       - uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -33,5 +35,14 @@ jobs:
       - run: node --test suppliers/*.test.mjs
       - run: node --test web/test/spec-norm.test.mjs
       - run: node suppliers/catalog-stats.mjs
-      # Chất lượng thông số sau lớp chuẩn hoá web/spec-norm.js: đỏ khi xấu đi quá ngưỡng ghi trong quality-baseline.json.
-      - run: node suppliers/quality.mjs --check
+      # Chất lượng thông số sau lớp chuẩn hoá web/spec-norm.js (so với quality-baseline.json). CHỈ CHẶN PR sửa code đọc
+      # (catalog.js, spec-norm.js, conversions.js, suppliers/quality*): PR dữ liệu do bot tự merge (config-bot.mjs
+      # mergeWhenGreen dùng `gh pr checks --watch --fail-fast`) và push main chỉ nhận ::warning::, không đỏ.
+      - name: quality --check
+        run: |
+          gate=0
+          if [ "${{ github.event_name }}" = "pull_request" ] && git diff --name-only HEAD^1 HEAD | grep -qE '^(web/catalog\.js|web/spec-norm\.js|web/conversions\.js|suppliers/quality)'; then gate=1; fi
+          if node suppliers/quality.mjs --check > /tmp/quality.txt; then tail -1 /tmp/quality.txt; exit 0; fi
+          cat /tmp/quality.txt
+          if [ "$gate" = 1 ]; then exit 1; fi
+          echo "::warning::quality.mjs --check: chỉ số thông số xấu đi so với quality-baseline.json (không chặn vì PR / push này không sửa code đọc). Xem log bước này; dữ liệu đúng thì sinh lại baseline bằng --write-baseline."

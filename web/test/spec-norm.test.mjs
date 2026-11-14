@@ -17,6 +17,11 @@ const AGESTAR = ["| Model | Specification 50HZ 400-230V | General specifications
 const AOSIF = ["| Prime Power | Standby Power | Engine Model | Fuel Consumption | Cylinder | Displacement", "| KVA/KW | KVA/KW | | L/h | |"];
 // cgm-italia datasheet: the noise column title names the distance.
 const CGM = ["| M/E Engine governor | EU Emission standard | consumo ¾ caricoconsumption 3/4 loadconsommation 3/4 charge", "| OPEN BASE FRAME | SOUNDPROOF CANOPY | dB(A) at 7 mt"];
+// One "(mm)" unit cell under two titles that could take it (bore and size): the unit belongs to neither as the source
+// writes it. haifeng-taizhou n2001 (vantek-jiangsu n104 / n108 have the same header).
+const HAIFENG = ["| 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程 | 燃油消耗量 | 外形尺寸 | 重量", "| KVA | KW | (mm) | (g/kw.h) | (L×W×H) (mm) | (kg)"];
+// jet-power n134 "FAWDE Water Cooled Diesel Generator": "(MM)" once, but "(L x W x H)" titles could take mm too.
+const JET = ["| Model | 400V / 50Hz / 1500RPM | FAWDE Diesel Engine | Alternator | Open type | Soundproof type", "| Standby | Prime | Model | Engine type | Displacement | Bore×Stroke | JET POWER BRAND | Packing (mm) | Weight | Packing (mm) | Weight", "| KVA | KW | KVA | KW | No. of Cylinder | Governor | (L) | (MM) | BRUSHLESS TYPE | (L x W x H) | Kg | (L x W x H) | Kg"];
 
 // [key, label, value, ctx, expected subset] — expected.missing is compared as a set, other fields deep-equal.
 const CASES = [
@@ -31,7 +36,9 @@ const CASES = [
   ["fuel", "Fuel Consumption", "254", { header: AOSIF }, { unit: "L/h", num: 254, cond: { headerUnit: "L/h" }, missing: ["load"] }], // aosif
   ["fuel", "Fuel consumption @25/50/75/100% load", "8.25/13.2/18.7/24.6", null, { num: 24.6, cond: { load: 100 }, missing: ["unit"] }], // hyundai-power-products
   ["fuel", "最低燃油耗（g/kW.h）", "198", null, { unit: "g/kWh", num: 198, cond: { minimum: true }, missing: ["load"] }], // wudong-wuxi
-  ["fuel", "Cons 100% ( L/H )", "180/225", null, { unit: "L/h", options: [180, 225], cond: { load: 100 }, missing: ["ambiguous"] }], // wintpower
+  ["fuel", "Gas consumption（Nm³/hr）", "234.31", null, { unit: "Nm³/h", num: 234.31, missing: ["load"] }], // googol: Nm³ kept apart from m³
+  ["fuel", "燃油消耗率(lir/hr)","88", null, { unit: null, num: 88, missing: ["unit", "load"] }], // fukangsi-yangzhou n2010: misspelt unit is not read
+  ["fuel", "Cons 100% ( L/H )", "180/225", null,{ unit: "L/h", options: [180, 225], cond: { load: 100 }, missing: ["ambiguous"] }], // wintpower
   // fuel75
   ["fuel75", "Fuel Consumption 75 % PRP", "2,50 l/h", null, { unit: "L/h", num: 2.5, cond: { load: 75, rating: "prime" }, missing: [] }], // himoinsa-china
   ["fuel75", "Fuel consumption75% (of the Prime Power)", "56.8L", null, { unit: null, num: 56.8, cond: { load: 75, rating: "prime" }, missing: ["unit"] }], // westinpower: "L" is no rate
@@ -85,6 +92,10 @@ const CASES = [
   ["bore", "Bore×Stroke", "90×100", null, { unit: null, bore: { bore: 90, stroke: 100 }, missing: ["unit"] }], // jet-power
   ["bore", "Bore / stroke", "1200", null, { options: [1200], missing: ["unit", "ambiguous"] }], // agco-power
   ["bore", "Bore × Stroke", "127mm × 165mm", null, { unit: "mm", bore: { bore: 127, stroke: 165 }, missing: [] }], // jiuan-power
+  ["bore", "缸径/行程", "102/120", { header: HAIFENG }, { unit: null, bore: { bore: 102, stroke: 120 }, missing: ["unit"] }], // haifeng-taizhou: "(mm)" also fits 外形尺寸
+  ["bore", "Bore×Stroke", "85×100", { header: JET }, { unit: null, missing: ["unit"] }], // jet-power n134
+  ["dims", "外形尺寸", "1600*720*1200", { header: HAIFENG }, { unit: null, missing: ["unit", "order", "enclosure"] }], // haifeng-taizhou
+  ["disp", "Displacement", "2.27", { header: JET }, { unit: "L", num: 2.27, cond: { headerUnit: "(L)" }, missing: [] }], // jet-power n134: "(L)" has one title that takes litres
   // cyl
   ["cyl", "缸数", "6", null, { count: 6, missing: ["layout"] }], // aoke-yangzhou
   ["cyl", "Cylinder", "6L", null, { count: 6, cond: { layout: "L" }, missing: [] }], // aosif
@@ -93,7 +104,7 @@ const CASES = [
   ["cyl", "Number of cylinders / arrangement", "16 cyl / 60°V", null, { count: 16, cond: { layout: "V", angle: 60 }, missing: [] }], // gfe-power
   ["cyl", "Cylinder Configuration", "16-cylinder, 60° Vee", null, { count: 16, cond: { layout: "V", angle: 60 }, missing: [] }], // huali-shandong
   // compr (no compression cell in the data lacks a figure: the missing case is a cell of another kind)
-  ["compr", "Compression Ratio", "14:1", null, { num: 14, unit: ":1", missing: [] }], // fdk-energy
+  ["compr", "Compression Ratio", "14:1", null, { num: 14, unit: null, missing: [] }], // fdk-energy
   ["compr", "Compression ratio", "13.6: 1", null, { num: 13.6, missing: [] }], // westinpower
   ["compr", "Compression Ratio", "18·2 :1", null, { num: 18.2, missing: [] }], // weiman-fujian
   ["compr", "Compression Ratio", "16.5：1", null, { num: 16.5, missing: [] }], // full-width colon
@@ -104,7 +115,8 @@ const CASES = [
   ["speed", "额定转速 (RPM)", "1500", null, { unit: "rpm", num: 1500, missing: [] }], // chuangyuan-zhongshan
   ["speed", "Speed", "1800", null, { unit: null, num: 1800, missing: ["unit"] }], // acepow-fuan
   ["speed", "Rated Rotation Speed [rpm]", "3000 3600", null, { unit: "rpm", options: [3000, 3600], missing: [] }], // acepow-fuan
-  ["speed", "Rated speed", "1200 r/min", null, { unit: "rpm", num: 1200, missing: [] }], // repower-gas
+  ["speed", "转速", "1500", null, { unit: null, num: 1500, missing: ["unit"] }], // "转速" is the word "speed", not a unit
+  ["speed", "Rated speed", "1200 r/min", null,{ unit: "rpm", num: 1200, missing: [] }], // repower-gas
   ["speed", "Rated rotation speed", "1191", null, { unit: null, num: 1191, missing: ["unit"] }], // westinpower
   // voltage
   ["voltage", "电压(V)", "230/400", null, { unit: "V", options: [[230, 400]], missing: [] }], // zhengchi-power
@@ -113,7 +125,8 @@ const CASES = [
   ["voltage", "Fre/Volt HZ/V 频率 /电压", "1000", null, { missing: ["kind"] }], // kangwo-guangdong: a power figure under a frequency/voltage title
   ["voltage", "Voltage", "208/120; 220/127; 416/240;", null, { unit: null, options: [[208, 120], [220, 127], [416, 240]], missing: ["unit"] }], // lees-power
   ["voltage", "Voltage/", "220V / 50Hz", null, { unit: "V", num: 220, missing: [] }], // cameo-power
-  ["voltage", "Rated voltage line to line", "400/230", null, { cond: { kind: "line-line" }, missing: ["unit"] }], // longkai-power
+  ["voltage", "Rated Voltage", "380V/400V/415V、10.5kv(Optional)", null, { unit: null, missing: ["unit"] }], // superwatt-swt: V and kV in one cell
+  ["voltage", "Rated voltage line to line", "400/230", null,{ cond: { kind: "line-line" }, missing: ["unit"] }], // longkai-power
   // phase
   ["phase", "Phases", "3", null, { num: 3, missing: [] }], // aosif
   ["phase", "Phase", "Three", null, { num: 3, missing: [] }], // fdk-energy

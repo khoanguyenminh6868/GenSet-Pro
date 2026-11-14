@@ -61,11 +61,13 @@
     return null;
   }
   // A header whose title lines span columns ("| ESP | PRP | Engine type | Consumption 100% |" over "| KVA | KW | KVA | KW |
-  // L/H |"): no index lines up, but when the header has one title of this kind and one unit cell of this kind (each
-  // written once, repeats of the same text aside), that unit is the column's.
-  function soleUnit(header, titleRe, unitRe) {
+  // L/H |"): no index lines up, but when the header has one unit cell of this kind and ONE title of ANY kind that could
+  // take that unit (each written once, repeats of the same text aside), that unit is the column's. compRe names every
+  // such title: a lone "(mm)" under "缸径/行程" and "外形尺寸" belongs to neither as far as the source says (haifeng-taizhou,
+  // vantek-jiangsu, jet-power: 355 values before 2026-11-14).
+  function soleUnit(header, compRe, unitRe) {
     const cells = uniq((header || []).map((l) => nf(l))).flatMap(cellsOf).map((c) => nf(c)).filter(Boolean);
-    const titles = cells.filter((c) => titleRe.test(c) && !UNIT_ONLY.test(c.replace(/[[\]]/g, "")));
+    const titles = cells.filter((c) => compRe.test(c) && !UNIT_ONLY.test(c.replace(/[[\]]/g, "")));
     const units = cells.filter((c) => UNIT_ONLY.test(c.replace(/[[\]]/g, "")) && unitRe.test(c));
     return titles.length === 1 && units.length === 1 ? units[0] : null;
   }
@@ -117,7 +119,8 @@
     if ((OPEN.test(ctx.headerText) || T_OPEN.test(ctx.headerText)) && (SILENT.test(ctx.headerText) || T_SILENT.test(ctx.headerText))) return null;
     return titleEnclosure(ctx.title);
   }
-  const RPM =/rpm|r\s*\/\s*min|r\.p\.m|转\s*\/\s*分|转|min-1|v\/p/i;
+  // A unit of shaft speed. "转" only right after a figure ("1500转"): in "转速" it is the word "speed", not a unit.
+  const RPM = /rpm|r\s*\/\s*min|r\.p\.m|转\s*\/\s*分|\d\s*转(?!速)|min-1|v\/p/i;
   // A single shaft speed named in a text ("1500rpm", "1500 r/min"); two different ones → none.
   function rpmIn(s) {
     const v = uniq([...nf(s).matchAll(/(\d{3,4})\s*(rpm|r\s*\/\s*min|r\.p\.m|转)/gi)].map((m) => Number(m[1])));
@@ -143,11 +146,14 @@
   // ---- per key ----
   const FUEL_UNITS = [
     [/g\s*\/\s*\(?\s*k\s*w\s*[.·\-]?\s*h|g\/kwh|克\/千瓦/i, "g/kWh"],
-    [/n?m3\s*\/\s*k\s*w\s*[.·]?\s*h/i, "m³/kWh"],
-    [/n?m3\s*\/\s*h/i, "m³/h"],
+    // Nm³ (normal cubic metre, gas at reference conditions) is not m³: kept apart, no conversion.
+    [/nm3\s*\/\s*k\s*w\s*[.·]?\s*h/i, "Nm³/kWh"],
+    [/m3\s*\/\s*k\s*w\s*[.·]?\s*h/i, "m³/kWh"],
+    [/nm3\s*\/\s*h/i, "Nm³/h"],
+    [/m3\s*\/\s*h/i, "m³/h"],
     [/kg\s*\/\s*h/i, "kg/h"],
     [/gal\w*\.?\s*\/\s*h|\bgph\b/i, "gal/h"],
-    [/(?<![a-z])l\s*\/\s*h|(?<![a-z])lph\b|lit(re|er)s?\s*\/\s*h|lir\s*\/\s*hr|升\s*\/\s*小?时/i, "L/h"],
+    [/(?<![a-z])l\s*\/\s*h|(?<![a-z])lph\b|lit(re|er)s?\s*\/\s*h|升\s*\/\s*小?时/i, "L/h"],
   ];
   const unitBy = (list, ...texts) => { for (const t of texts) { if (!t) continue; for (const [re, u] of list) if (re.test(nf(t))) return u; } return null; };
 
@@ -308,7 +314,8 @@
     const m = V.match(/(\d+(?:[.,·]\d+)?)\s*:\s*1\b/) || V.match(/^\s*(\d+(?:[.,·]\d+)?)\s*$/);
     if (!m) return miss(r, "value");
     const n = numOf(m[1]); if (n.amb) return miss(r, "number");
-    r.num = n.n; r.unit = ":1";
+    r.num = n.n; // a ratio "x : 1": no unit
+
     return r;
   }
 
@@ -335,7 +342,9 @@
     // "voltage" in the label names the quantity, not its unit: only a "V" written counts.
     if (!/\d\s*v\b|\bv\b|vac|volts?\b|伏/i.test(V) && !/\(\s*v\s*\)|\[\s*v\s*\]|\bv\b|（v）/i.test(L) && !/\bv\b/i.test(H)) { r.unit = null; miss(r, "unit"); }
     const kv = /\d\s*kv\b/i.test(V);
-    if (kv) r.unit = "kV";
+    // "380V/400V/415V、10.5kv(Optional)" (superwatt-swt): V and kV in one cell, no single unit for the figures.
+    if (kv && /\d\s*v\b/i.test(V.replace(/\d\s*kv\b/gi, ""))) { r.unit = null; miss(r, "unit"); }
+    else if (kv) r.unit = "kV";
     // "220V / 50Hz": the frequency is not a voltage; "120V / 240V 277V" → "120/240 277" (a "/" joins, a space parts).
     const vt = V.replace(/\(.*?\)/g, " ").replace(/\d+(\.\d+)?\s*hz/gi, " ").replace(/(\d)\s*(k?v|vac|volts?)\b/gi, "$1").replace(/\s*\/\s*/g, "/").replace(/\/\s*$/, "").replace(/^\s*\//, "");
     const groups = vt.split(/[,;，、]|\bor\b|\band\b/i).map((g) => g.trim()).filter((g) => /\d/.test(g));
@@ -497,11 +506,20 @@
     return r;
   }
 
-  // Title and unit cell of each kind, for soleUnit (the label must be that title too).
-  const FUEL_FAM = [/consum|油耗|耗油|fuel/i, /l\/h|l\/hr|lt\/hr|lph|g\/kw|m3\/h/i];
-  const FAMILY = { fuel: FUEL_FAM, fuel75: FUEL_FAM, fuel50: FUEL_FAM, noise: [/noise|db|噪/i, /db/i], dims: [/dimen|size|尺寸/i, /^\W*(mm|cm|m)\W*$/i],
-    weight: [/weigh|重量|毛重|净重|^kgs?$/i, /kg/i], disp: [/displace|排量|swept/i, /^\W*(l|cc)\W*$/i], tank: [/tank|油箱/i, /^\W*(l|lt|ltr)\W*$/i],
-    speed: [/speed|转速/i, /rpm|r\/min/i], bore: [/bore|缸径/i, /mm/i] };
+  // For soleUnit, per key: [the label must be a title of this kind, the unit cell, every title of any kind that could
+  // take that unit]. A second title able to take the unit leaves the unit to no one.
+  const COMP = {
+    mm: /bore|缸径|stroke|storke|行程|diameter|dimen|size|尺寸|l\s*[x×*]\s*[wm]\s*[x×*]\s*h|长.{0,3}宽/i,
+    L: /displace|排量|swept|oil|机油|润滑油|tank|油箱|coolant|冷却|water|capacity|容量|volume/i,
+    kg: /weigh|重量|毛重|净重/i,
+    fuel: /consum|油耗|耗油|fuel(?!\s*tank)/i,
+    dB: /noise|db|噪|sound/i,
+    rpm: /speed|转速|rpm|r\/min|engine\s*(power|output)|柴油机功率|发动机功率/i,
+  };
+  const FUEL_FAM = [/consum|油耗|耗油|fuel/i, /l\/h|l\/hr|lt\/hr|lph|g\/kw|m3\/h/i, COMP.fuel];
+  const FAMILY = { fuel: FUEL_FAM, fuel75: FUEL_FAM, fuel50: FUEL_FAM, noise: [/noise|db|噪/i, /db/i, COMP.dB], dims: [/dimen|size|尺寸/i, /^\W*(mm|cm|m)\W*$/i, COMP.mm],
+    weight: [/weigh|重量|毛重|净重|^kgs?$/i, /kg/i, COMP.kg], disp: [/displace|排量|swept/i, /^\W*(l|cc)\W*$/i, COMP.L], tank: [/tank|油箱/i, /^\W*(l|lt|ltr)\W*$/i, COMP.L],
+    speed: [/speed|转速/i, /rpm|r\/min/i, COMP.rpm], bore: [/bore|缸径/i, /mm/i, COMP.mm] };
 
   const BY_KEY = { fuel, fuel75: fuel, fuel50: fuel, noise, dims, weight, disp, bore, cyl, compr, speed, voltage, phase, pf, tank, engPower, emission };
 
@@ -511,7 +529,7 @@
     if (!spec || !BY_KEY[spec.key]) return null;
     const header = ctx.header || [];
     const fam = FAMILY[spec.key];
-    const c = { title: nf(ctx.title || ""), headerText: nf(header.join(" ")), header, hUnit: headerUnit(spec.label, header) || (fam && fam[0].test(nf(spec.label)) ? soleUnit(header, fam[0], fam[1]) : null) };
+    const c = { title: nf(ctx.title || ""), headerText: nf(header.join(" ")), header, hUnit: headerUnit(spec.label, header) || (fam && fam[0].test(nf(spec.label)) ? soleUnit(header, fam[2], fam[1]) : null) };
     const r = base(spec);
     if (c.hUnit) r.cond.headerUnit = c.hUnit;
     BY_KEY[spec.key](spec, c, r);
