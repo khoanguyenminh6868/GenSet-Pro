@@ -42,7 +42,9 @@ test("normFig: fuel needs L/h at the HSMT's load; noise its distance; weight / s
   assert.deepEqual(normFig({ key: "noise", label: "Noise dB(A)", value: "72" }, { header: [] }, { unit: ["dB(A)", "dB"], distance: 7 }).why, ["distance"]);
   assert.equal(normFig({ key: "noise", label: "Noise level dB(A)@7m", value: "72" }, { header: [] }, { unit: ["dB(A)", "dB"], distance: 7 }).ok, true);
   assert.deepEqual(normFig({ key: "noise", label: "Noise level dB(A)@1m", value: "72" }, { header: [] }, { unit: ["dB(A)", "dB"], distance: 7 }).why, ["khoảng cách 1 m"]);
-  assert.deepEqual(normFig({ key: "weight", label: "Gross Weight(kg)", value: "3550" }, { header: [] }, { unit: "kg" }).why, ["enclosure"]);
+  // Open or canopied counts only when the HSMT asks one build (Khoa 14/11/2026: "so").
+  assert.deepEqual(normFig({ key: "weight", label: "Gross Weight(kg)", value: "3550" }, { header: [] }, { unit: "kg" }).why, []);
+  assert.deepEqual(normFig({ key: "weight", label: "Gross Weight(kg)", value: "3550" }, { header: [] }, { unit: "kg", enclosure: "enclosed" }).why, ["enclosure"]);
   assert.equal(normFig({ key: "weight", label: "Weight (kg)", value: "3550" }, { title: "Open type diesel generator", header: [] }, { unit: "kg" }).ok, true);
   assert.deepEqual(normFig({ key: "weight", label: "Weight (kg)", value: "3550" }, { title: "Open type diesel generator", header: [] }, { unit: "kg", enclosure: "enclosed" }).why, ["bản open"]);
   // Displacement in cc: no formula in web/conversions.js, not compared with litres.
@@ -90,13 +92,12 @@ test("candidates: a source the layer cannot compare keeps the row (Chưa rõ), e
   assert.deepEqual(on(() => run(list.slice(0, 1), h)).dropped.map((d) => d.ruled), [["disp"]]);
 });
 
-test("khoaRules: a weight with no open / canopy written is compared off, \"Chưa rõ\" under the flag", () => {
+test("khoaRules: a weight with no open / canopy written is compared, under the flag too, unless the HSMT asks one build", () => {
   const ROW = { header: ["| Model | Prime kVA | Prime kW | Engine | Gross Weight(kg)"], line: "| SD-440 | 400 | 320 | 6ETAA12.8-G21 | 3550", title: "", power: { prime: { kVA: 400, kW: 320 } },
     specs: [{ key: "weight", label: "Gross Weight(kg)", value: "3550" }] };
   const W = { code: "weight", item: "Khối lượng", requirement: "≤ 3000 kg", quote: "≤ 3000 kg", part: "genset", level: "core" };
   assert.equal(khoaRules({ rank: 1, checks: [] }, [W], ROW).checks[0].status, "not_met");
-  const x = on(() => khoaRules({ rank: 1, checks: [] }, [W], ROW)).checks[0];
-  assert.equal(x.status, "unclear"); assert.equal(x.rule, "chuan-hoa"); assert.match(x.note, /trần hay có vỏ/);
+  assert.equal(on(() => khoaRules({ rank: 1, checks: [] }, [W], ROW)).checks[0].status, "not_met");
   // The build written in the cell: compared. (Written in the header or table title, khoaRules leaves it unchanged under
   // either flag: its older guard against a table of two builds.)
   const open = { ...ROW, specs: [{ key: "weight", label: "Gross Weight(kg)", value: "3550 (open type)" }] };
@@ -111,4 +112,7 @@ test("enginePowerOf: two figures with no rating per figure are not used under th
   const amb = { ...row, specs: [{ key: "engPower", label: "Engine Prime power (kW)", value: "284/312" }] };
   assert.ok(enginePowerOf(amb));
   assert.equal(on(() => enginePowerOf(amb)), null);
+  // The label gives the order of the two (Khoa 14/11/2026: "đọc"): read as without the flag.
+  const pair = { ...row, specs: [{ key: "engPower", label: "Engine Power(kw) (prime/standby)", value: "110/121" }] };
+  assert.deepEqual((({ prime, standby }) => ({ prime, standby }))(on(() => enginePowerOf(pair))), { prime: 110, standby: 121 });
 });

@@ -92,7 +92,8 @@ export function useNormCtx(u, rowsMap = NORM_ROWS.map) {
 }
 // What makes a normalized figure not comparable, whatever the HSMT asks; and per key, the condition the HSMT's limit is at.
 const NORM_GAP = new Set(["unit", "number", "ambiguous", "kind", "value"]);
-const NORM_NEED = { fuel: ["load"], fuel75: ["load"], fuel50: ["load"], noise: ["distance"], dims: ["enclosure"], weight: ["enclosure"], bore: ["bore", "stroke"] };
+// dims / weight: open or canopied counts only when the HSMT asks one build (want.enclosure, normFig; Khoa 14/11/2026: "so").
+const NORM_NEED = { fuel: ["load"], fuel75: ["load"], fuel50: ["load"], noise: ["distance"], bore: ["bore", "stroke"] };
 const NORM_VI = { unit: "không ghi đơn vị", number: "số viết không rõ phẩy nghìn / thập phân", ambiguous: "ghi nhiều giá trị không rõ cái nào", kind: "ô thuộc loại khác", value: "không có số",
   load: "không ghi mức tải", distance: "không ghi khoảng cách đo", enclosure: "không ghi máy trần hay có vỏ", stroke: "không ghi hành trình", bore: "không ghi đường kính" };
 // The normalized figure of one spec, compared only when it has everything `want` asks: { r, ok, why[] }.
@@ -109,6 +110,7 @@ export function normFig(s, ctx, want = {}) {
   if (want.distance != null && !why.includes("distance") && r.cond?.distance_m !== want.distance) why.push(r.cond?.distance_m != null ? `khoảng cách ${r.cond.distance_m} m` : "distance");
   if (want.measure && r.cond?.measure && r.cond.measure !== want.measure) why.push(`đo ${r.cond.measure}`);
   if (want.enclosure && r.cond?.enclosure && r.cond.enclosure !== want.enclosure) why.push(`bản ${r.cond.enclosure}`);
+  if (want.enclosure && r.missing.includes("enclosure") && !why.includes("enclosure")) why.push("enclosure");
   return { r, ok: !why.length, why };
 }
 const BLOCK = Symbol("chưa so được");
@@ -2676,7 +2678,8 @@ export function enginePowerOf(row) {
   for (const s of row?.specs || []) {
     if (s.key !== "engPower") continue;
     // GENBID_SPEC_NORM=1: not a figure the layer reads with no unit, several values, an unreadable number or of another kind.
-    if (specNormOn("other") && !normFig(s, useNormCtx(row), {}).ok) continue;
+    // "(prime/standby) | 110/121": two figures the layer calls ambiguous, read in the order the label gives (ratedPower; Khoa 14/11/2026: "đọc").
+    if (specNormOn("other")) { const n = normFig(s, useNormCtx(row), {}); if (!n.ok && !(n.why.every((w) => w === "ambiguous") && /(prime|standby)\s*\/\s*(prime|standby)/i.test(s.label) && ratedPower(s.label, s.value))) continue; }
     const p = ratedPower(s.label, s.value);
     if (p) return { ...p, line: row.line };
   }
