@@ -42,6 +42,190 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "HRD270T1",
+      "fuel": "diesel",
+      "engineModels": [
+        "Kohler KDI 2504M"
+      ],
+      "engineMakes": [
+        "Kohler"
+      ],
+      "alternatorMakes": [
+        "MeccAlte"
+      ],
+      "power": {
+        "min": 27,
+        "max": 27,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HRD120D1",
+      "fuel": "diesel",
+      "engineModels": [
+        "Kubota V1505"
+      ],
+      "engineMakes": [
+        "Kubota"
+      ],
+      "alternatorMakes": [
+        "MeccAlte"
+      ],
+      "power": {
+        "min": 12,
+        "max": 12,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HRD160D1",
+      "fuel": "diesel",
+      "engineModels": [
+        "Kubota D1703"
+      ],
+      "engineMakes": [
+        "Kubota"
+      ],
+      "alternatorMakes": [
+        "MeccAlte"
+      ],
+      "power": {
+        "min": 16,
+        "max": 16,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HRD300T1",
+      "fuel": "diesel",
+      "engineModels": [
+        "Perkins 1103D-33-G3"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "alternatorMakes": [
+        "MeccAlte"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HRD600T1",
+      "fuel": "diesel",
+      "engineModels": [
+        "Perkins 1104D-44-TG3"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "alternatorMakes": [
+        "MeccAlte"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HRD200T1",
+      "fuel": "diesel",
+      "engineModels": [
+        "Kubota V2203",
+        "Kohler KDI 2504M"
+      ],
+      "engineMakes": [
+        "Kubota",
+        "Kohler"
+      ],
+      "alternatorMakes": [
+        "MeccAlte"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HRD1000T1",
+      "fuel": "diesel",
+      "engineModels": [
+        "Perkins 1104D-E44-TAG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "alternatorMakes": [
+        "MeccAlte"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
     }
   ],
   "certifications": [],
@@ -61,9 +245,270 @@
         "Mobile and trailer-mounted generators"
       ],
       "file": "sources/hgi-generators/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://web.archive.org/web/20170301182315/http://www.hgigenerators.com/hrd270t1.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "21.6kW (27kVA) (Multi Phase)",
+        "| | Model | HRD270T1",
+        "| Output Power | 21.6 kW (27.0 kVA)",
+        "| Engine | Kohler KDI 2504M",
+        "| Alternator | MeccAlte"
+      ],
+      "file": "sources/hgi-generators/2001.md",
+      "official": false
+    },
+    {
+      "n": 2002,
+      "url": "https://web.archive.org/web/20170301150215/http://www.hgigenerators.com/hrd120d1.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "9.6kW (12kVA) (Dual Volt)",
+        "| | Model | HRD120D1",
+        "| Output Power | 9.6 kW (12.0 kVA)",
+        "| Engine | Kubota V1505",
+        "| Alternator | MeccAlte"
+      ],
+      "file": "sources/hgi-generators/2002.md",
+      "official": false
+    },
+    {
+      "n": 2003,
+      "url": "https://web.archive.org/web/20170301114202/http://www.hgigenerators.com/hrd160d1.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "12.8 kW (16kVA) Dual Volt",
+        "| | Model | HRD160D1",
+        "| Output Power | 12.8 kW (16.0 kVA)",
+        "| Engine | Kubota D1703",
+        "| Alternator | MeccAlte"
+      ],
+      "file": "sources/hgi-generators/2003.md",
+      "official": false
+    },
+    {
+      "n": 2004,
+      "url": "https://web.archive.org/web/20170301175502/http://www.hgigenerators.com/hrd300t1.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "24kW (30kVA) (Fixed Voltage)",
+        "| | Model | HRD300T1",
+        "| Output Power | 24.0 kW (30.0 kVA)",
+        "| Engine | Perkins 1103D-33-G3",
+        "| Alternator | MeccAlte"
+      ],
+      "file": "sources/hgi-generators/2004.md",
+      "official": false
+    },
+    {
+      "n": 2005,
+      "url": "https://web.archive.org/web/20170301112817/http://www.hgigenerators.com/hrd600t1.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "48kW (60kVA) (Fixed Voltage",
+        "| | Model | HRD600T1",
+        "| Output Power | 48.0 kW (60.0 kVA)",
+        "| Engine | Perkins 1104D-44-TG3",
+        "| Alternator | MeccAlte"
+      ],
+      "file": "sources/hgi-generators/2005.md",
+      "official": false
+    },
+    {
+      "n": 2006,
+      "url": "https://web.archive.org/web/20170301172029/http://www.hgigenerators.com/hrd200t1.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "16kW (20kVA) (Multi Phase)",
+        "| | Model | HRD200T1",
+        "| Output Power | 16.0 kW (20.0 kVA)",
+        "| Engine | Kubota V2203 / Kohler KDI 2504M",
+        "| Alternator | MeccAlte"
+      ],
+      "file": "sources/hgi-generators/2006.md",
+      "official": false
+    },
+    {
+      "n": 2007,
+      "url": "https://web.archive.org/web/20170301114615/http://www.hgigenerators.com/hrd800t1.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "80kW (100kVA) (Fixed Voltage)",
+        "| | Model | HRD1000T1",
+        "| Output Power | 80.0 kW (100.0 kVA)",
+        "| Engine | Perkins 1104D-E44-TAG2",
+        "| Alternator | MeccAlte"
+      ],
+      "file": "sources/hgi-generators/2007.md",
+      "official": false
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-04",
-  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "HRD270T1 21.6kW (27kVA) (Multi Phase)",
+      "header": [
+        "| | Model | HRD270T1"
+      ],
+      "rows": [
+        "| Output Power | 21.6 kW (27.0 kVA)",
+        "| Fuel Type | Diesel",
+        "| Frequency (Hz) | 50",
+        "| Voltage | 110 / 230 / 400 Volt",
+        "| Engine | Kohler KDI 2504M",
+        "| Speed (rpm) | 1500",
+        "| Standard Tank Capacity (litres) | 150",
+        "| Standard Tank Run Time @ 75% Load (hr) | 29",
+        "| Sound Level @ 7m (dB A) | 63",
+        "| Cooling System | Water Cooled",
+        "| Alternator | MeccAlte",
+        "| Frame Dimensions (mm) | 1850 x 969 x 1348",
+        "| Dry Weight (kg) | 896"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "HRD120D1 9.6kW (12kVA) (Dual Volt)",
+      "header": [
+        "| | Model | HRD120D1"
+      ],
+      "rows": [
+        "| Output Power | 9.6 kW (12.0 kVA)",
+        "| Fuel Type | Diesel",
+        "| Frequency (Hz) | 50",
+        "| Voltage | 110 / 230 Volt",
+        "| Engine | Kubota V1505",
+        "| Speed (rpm) | 1500",
+        "| Standard Tank Capacity (litres) | 150",
+        "| Standard Tank Run Time @ 75% Load (hr) | 54",
+        "| Sound Level @ 7m (dB A) | 63",
+        "| Cooling System | Water Cooled",
+        "| Alternator | MeccAlte",
+        "| Frame Dimensions (mm) | 1850 x 969 x 1348",
+        "| Dry Weight (kg) | 682"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "HRD160D1 12.8 kW (16kVA) Dual Volt",
+      "header": [
+        "| | Model | HRD160D1"
+      ],
+      "rows": [
+        "| Output Power | 12.8 kW (16.0 kVA)",
+        "| Fuel Type | Diesel",
+        "| Frequency (Hz) | 50",
+        "| Voltage | 110 / 230 Volt",
+        "| Engine | Kubota D1703",
+        "| Speed (rpm) | 1500",
+        "| Standard Tank Capacity (litres) | 150",
+        "| Standard Tank Run Time @ 75% Load (hr) | 42",
+        "| Sound Level @ 7m (dB A) | 63",
+        "| Cooling System | Water Cooled",
+        "| Alternator | MeccAlte",
+        "| Frame Dimensions (mm) | 1850 x 969 x 1348",
+        "| Dry Weight (kg) | 758"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "HRD300T1 24kW (30kVA) (Fixed Voltage)",
+      "header": [
+        "| | Model | HRD300T1"
+      ],
+      "rows": [
+        "| Output Power | 24.0 kW (30.0 kVA)",
+        "| Fuel Type | Diesel",
+        "| Frequency (Hz) | 50",
+        "| Voltage | 230 / 400 Volt",
+        "| Engine | Perkins 1103D-33-G3",
+        "| Speed (rpm) | 1500",
+        "| Standard Tank Capacity (litres) | 220",
+        "| Standard Tank Run Time @ 75% Load (hr) | 37.6",
+        "| Sound Level @ 7m (dB A) | 63",
+        "| Cooling System | Water Cooled",
+        "| Alternator | MeccAlte",
+        "| Frame Dimensions (mm) | 2470 x 950 x 1643",
+        "| Dry Weight (kg) | 945"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HRD600T1 48kW (60kVA) (Fixed Voltage",
+      "header": [
+        "| | Model | HRD600T1"
+      ],
+      "rows": [
+        "| Output Power | 48.0 kW (60.0 kVA)",
+        "| Fuel Type | Diesel",
+        "| Frequency (Hz) | 50",
+        "| Voltage | 230 / 400 Volt",
+        "| Engine | Perkins 1104D-44-TG3",
+        "| Speed (rpm) | 1500",
+        "| Standard Tank Capacity (litres) | 320",
+        "| Standard Tank Run Time @ 75% Load (hr) | 25.8",
+        "| Sound Level @ 7m (dB A) | 65",
+        "| Cooling System | Water Cooled",
+        "| Alternator | MeccAlte",
+        "| Frame Dimensions (mm) | 2800 x 1050 x 1782",
+        "| Dry Weight (kg) | 1645"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "HRD200T1 16kW (20kVA) (Multi Phase)",
+      "header": [
+        "| | Model | HRD200T1"
+      ],
+      "rows": [
+        "| Output Power | 16.0 kW (20.0 kVA)",
+        "| Fuel Type | Diesel",
+        "| Frequency (Hz) | 50",
+        "| Voltage | 110 / 230 / 400 Volt",
+        "| Engine | Kubota V2203 / Kohler KDI 2504M",
+        "| Speed (rpm) | 1500",
+        "| Standard Tank Capacity (litres) | 150",
+        "| Standard Tank Run Time @ 75% Load (hr) | 32",
+        "| Sound Level @ 7m (dB A) | 63",
+        "| Cooling System | Water Cooled",
+        "| Alternator | MeccAlte",
+        "| Frame Dimensions (mm) | 1850 x 969 x 1348",
+        "| Dry Weight (kg) | 820"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "HRD1000T1 80kW (100kVA) (Fixed Voltage)",
+      "header": [
+        "| | Model | HRD1000T1"
+      ],
+      "rows": [
+        "| Output Power | 80.0 kW (100.0 kVA)",
+        "| Fuel Type | Diesel",
+        "| Frequency (Hz) | 50",
+        "| Voltage | 230 / 400 Volt",
+        "| Engine | Perkins 1104D-E44-TAG2",
+        "| Speed (rpm) | 1500",
+        "| Standard Tank Capacity (litres) | 320",
+        "| Standard Tank Run Time @ 75% Load (hr) | 16.2",
+        "| Sound Level @ 7m (dB A) | 65",
+        "| Cooling System | Water Cooled",
+        "| Alternator | MeccAlte",
+        "| Frame Dimensions (mm) | 2800 x 1050 x 1782",
+        "| Dry Weight (kg) | 1870"
+      ]
+    }
+  ]
 }
