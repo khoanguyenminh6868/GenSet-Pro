@@ -45,6 +45,98 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "D703E0.GEN",
+      "fuel": "diesel",
+      "engineMakes": [
+        "VM Motori"
+      ],
+      "engineModels": [
+        "D703E0.GEN"
+      ],
+      "power": {
+        "min": 31,
+        "max": 31,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "D703TE0.GEN",
+      "fuel": "diesel",
+      "engineMakes": [
+        "VM Motori"
+      ],
+      "engineModels": [
+        "D703TE0.GEN"
+      ],
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "D754TPE2.GEN",
+      "fuel": "diesel",
+      "engineMakes": [
+        "VM Motori"
+      ],
+      "engineModels": [
+        "D754TPE2.GEN"
+      ],
+      "power": {
+        "min": 69,
+        "max": 69,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "D756IPE2.GEN",
+      "fuel": "diesel",
+      "engineMakes": [
+        "VM Motori"
+      ],
+      "engineModels": [
+        "D756IPE2.GEN"
+      ],
+      "power": {
+        "min": 110,
+        "max": 110,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
     }
   ],
   "certifications": [],
@@ -63,9 +155,103 @@
         "Fondata nel 1947 a Cento, VM nasce come produttore di motori diesel agricoli."
       ],
       "file": "sources/vm-motori/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.vmmotori.it/wp-content/uploads/vmmotori_product_range.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "D703E0.GEN    2.1L          3          94 x 100       25              23  31              29  862   –  586  –  796  250         Fuel optimised"
+      ],
+      "file": "sources/vm-motori/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.vmmotori.it/wp-content/uploads/vmmotori_product_range.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "D703TE0.GEN   2.1L          3          94 x 100       41              37  50              45  862   –  586  –  796  265         Fuel optimised"
+      ],
+      "file": "sources/vm-motori/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://www.vmmotori.it/wp-content/uploads/vmmotori_product_range.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "D754TPE2.GEN  3.0L          4          94 x 107       63              57  69              63  1158  –  641  –  887  305         Stage II"
+      ],
+      "file": "sources/vm-motori/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://www.vmmotori.it/wp-content/uploads/vmmotori_product_range.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "D756IPE2.GEN  4.5L          6          94 x 107       101             91  110      100        1158  –  641  –  887  445         Stage II"
+      ],
+      "file": "sources/vm-motori/2004.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-04",
-  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "VM Motori product range – Generator Sets – D703E0.GEN",
+      "header": [
+        "                                                      Output (kVA)        Output (kVA)",
+        "Version       Displacement  Cylinders  Bore x Stroke      @ 1500 rpm          @ 1800 rpm      Dimensions            Dry Weight  Emissions",
+        "                                                      Standby  Prime      Standby  Prime"
+      ],
+      "rows": [
+        "D703E0.GEN    2.1L          3          94 x 100       25              23  31              29  862   –  586  –  796  250         Fuel optimised"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "VM Motori product range – Generator Sets – D703TE0.GEN",
+      "header": [
+        "                                                      Output (kVA)        Output (kVA)",
+        "Version       Displacement  Cylinders  Bore x Stroke      @ 1500 rpm          @ 1800 rpm      Dimensions            Dry Weight  Emissions",
+        "                                                      Standby  Prime      Standby  Prime"
+      ],
+      "rows": [
+        "D703TE0.GEN   2.1L          3          94 x 100       41              37  50              45  862   –  586  –  796  265         Fuel optimised"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "VM Motori product range – Generator Sets – D754TPE2.GEN",
+      "header": [
+        "                                                      Output (kVA)        Output (kVA)",
+        "Version       Displacement  Cylinders  Bore x Stroke      @ 1500 rpm          @ 1800 rpm      Dimensions            Dry Weight  Emissions",
+        "                                                      Standby  Prime      Standby  Prime"
+      ],
+      "rows": [
+        "D754TPE2.GEN  3.0L          4          94 x 107       63              57  69              63  1158  –  641  –  887  305         Stage II"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VM Motori product range – Generator Sets – D756IPE2.GEN",
+      "header": [
+        "                                                      Output (kVA)        Output (kVA)",
+        "Version       Displacement  Cylinders  Bore x Stroke      @ 1500 rpm          @ 1800 rpm      Dimensions            Dry Weight  Emissions",
+        "                                                      Standby  Prime      Standby  Prime"
+      ],
+      "rows": [
+        "D756IPE2.GEN  4.5L          6          94 x 107       101             91  110      100        1158  –  641  –  887  445         Stage II"
+      ]
+    }
+  ]
 }
