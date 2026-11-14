@@ -56,6 +56,292 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "FDK-CC1500/H1",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA50-G8"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "FDK-CD50/H1",
+      "fuel": "diesel",
+      "engineModels": [
+        "4BTA3.9G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "FDK-P88/H1",
+      "fuel": "diesel",
+      "engineModels": [
+        "1104A-44TG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 88,
+        "max": 88,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "FDK-CD206V2/H1",
+      "fuel": "diesel",
+      "engineModels": [
+        "6CTA8.3-G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 206,
+        "max": 206,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "FDK-W275/H1",
+      "fuel": "diesel",
+      "engineModels": [
+        "WP10D264E200"
+      ],
+      "engineMakes": [
+        "Weichai"
+      ],
+      "alternatorMakes": [
+        "Nianfeng"
+      ],
+      "power": {
+        "min": 275,
+        "max": 275,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "FDK-Y344 V1/ H1",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC6MK420-D30"
+      ],
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "alternatorMakes": [
+        "Nianfeng"
+      ],
+      "power": {
+        "min": 344,
+        "max": 344,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "FDK-CC350/H1",
+      "fuel": "diesel",
+      "engineModels": [
+        "NTA855-G1B"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 344,
+        "max": 344,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "FDK-SC413 V1 /H1",
+      "fuel": "diesel",
+      "engineModels": [
+        "6ETAA11.8-G31"
+      ],
+      "engineMakes": [
+        "Shangchai"
+      ],
+      "alternatorMakes": [
+        "Nianfeng"
+      ],
+      "power": {
+        "min": 413,
+        "max": 413,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "FDK-M825/H1",
+      "fuel": "diesel",
+      "engineModels": [
+        "S6R2-PTAA-C"
+      ],
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 825,
+        "max": 825,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "FDK-Y825 / H1",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC6TD1000-D30"
+      ],
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "alternatorMakes": [
+        "Nianfeng"
+      ],
+      "power": {
+        "min": 825,
+        "max": 825,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "FDK-W1250/H1",
+      "fuel": "diesel",
+      "engineModels": [
+        "12M33D1108E200"
+      ],
+      "engineMakes": [
+        "Weichai"
+      ],
+      "alternatorMakes": [
+        "Nianfeng"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
     }
   ],
   "certifications": [
@@ -88,9 +374,405 @@
         "公司取得了IS09001:2015质量管理体系认证证书，ISO 14001:2015环境管理体系认证证书，并获得了国家信息产业部电信设备进网许可证，国家内燃机组检验合格"
       ],
       "file": "sources/fudiankang-hunan/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.fudiankang.com/products/1500kva-generator-cummins-kta50-g8",
+      "accessedAt": "2026-11-14",
+      "tier": "B",
+      "quote": [
+        "FDK-CC1500/H1: 1100KW/1375KVA Prime, 1200KW/1500KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version.",
+        "Engine Model: Cummins KTA50-G8",
+        "FDK Genset Model: FDK-CC1500/H1",
+        "Prime Power: 1100KW/1375KVA",
+        "Standby Power: 1001-1500KVA",
+        "Alternator Model: Stamford S6L1D-H41",
+        "Control System: DSE7320"
+      ],
+      "file": "sources/fudiankang-hunan/2001.md",
+      "official": false
+    },
+    {
+      "n": 2002,
+      "url": "https://www.fudiankang.com/products/50kva-generator-cummins-4bta3-9g2",
+      "accessedAt": "2026-11-14",
+      "tier": "B",
+      "quote": [
+        "FDK-CD50/H1: 36KW/45KVA Prime, 40KW/50KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version.",
+        "Engine Model: Cummins 4BTA3.9G2",
+        "FDK Genset Model: FDK-CD50/H1",
+        "Prime Power: 36KW/45KVA",
+        "Standby Power: 10-200KVA",
+        "Alternator Model: Stamford S1L2-N1",
+        "Control System: DSE7320"
+      ],
+      "file": "sources/fudiankang-hunan/2002.md",
+      "official": false
+    },
+    {
+      "n": 2003,
+      "url": "https://www.fudiankang.com/products/88kva-generator-perkins-1104a-44tg2",
+      "accessedAt": "2026-11-14",
+      "tier": "B",
+      "quote": [
+        "FDK-P88/H1: 64KW/80KVA Prime, 70KW/88KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version.",
+        "Engine Model: Perkins 1104A-44TG2",
+        "FDK Genset Model: FDK-P88/H1",
+        "Prime Power: 64KW/80KVA",
+        "Standby Power: 10-200KVA",
+        "Alternator Model: Stamford UCI224G",
+        "Control System: DSE7320"
+      ],
+      "file": "sources/fudiankang-hunan/2003.md",
+      "official": false
+    },
+    {
+      "n": 2004,
+      "url": "https://www.fudiankang.com/products/200kva-generator-cummins-6cta8-3g2",
+      "accessedAt": "2026-11-14",
+      "tier": "B",
+      "quote": [
+        "FDK-CD206V2/H1: 150KW/188KVA Prime, 165KW/206KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version.",
+        "Engine Model: Cummins 6CTA8.3-G2",
+        "FDK Genset Model: FDK-CD206V2/H1",
+        "Prime Power: 150KW/188KVA",
+        "Standby Power: 201-500KVA",
+        "Alternator Model: Stamford UCI274H",
+        "Control System: DSE7320"
+      ],
+      "file": "sources/fudiankang-hunan/2004.md",
+      "official": false
+    },
+    {
+      "n": 2005,
+      "url": "https://www.fudiankang.com/products/275kva-generator-weichai-wp10d264e200",
+      "accessedAt": "2026-11-14",
+      "tier": "B",
+      "quote": [
+        "FDK-W275/H1: 200KW/250KVA Prime, 220KW/275KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version.",
+        "Engine Model: WEICHAI WP10D264E200",
+        "FDK Genset Model: FDK-W275/H1",
+        "Prime Power: 200 KW/250 KVA",
+        "Standby Power: 201-500KVA",
+        "Alternator Model: NIANFENG NFS274-K",
+        "Control System: HGM6110"
+      ],
+      "file": "sources/fudiankang-hunan/2005.md",
+      "official": false
+    },
+    {
+      "n": 2006,
+      "url": "https://www.fudiankang.com/products/344kva-generator-yuchai-yc6mk420-d30",
+      "accessedAt": "2026-11-14",
+      "tier": "B",
+      "quote": [
+        "FDK-Y344V1/H1: 250KW/313KVA Prime, 275KW/344KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version.",
+        "Engine Model: YUCHAI YC6MK420-D30",
+        "FDK Genset Model: FDK-Y344 V1/ H1",
+        "Prime Power: 250KW/313KVA",
+        "Standby Power: 201-500KVA",
+        "Alternator Model: NIANFENG NFS4-ES",
+        "Control System: HGM6110"
+      ],
+      "file": "sources/fudiankang-hunan/2006.md",
+      "official": false
+    },
+    {
+      "n": 2007,
+      "url": "https://www.fudiankang.com/products/350kva-generator-cummins-nta855-g1b",
+      "accessedAt": "2026-11-14",
+      "tier": "B",
+      "quote": [
+        "FDK-CC350/H1: 250KW/312KVA Prime, 275KW/344KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version.",
+        "Engine Model: Cummins NTA855-G1B",
+        "FDK Genset Model: FDK-CC350/H1",
+        "Prime Power: 250KW/312KVA",
+        "Standby Power: 201-500KVA",
+        "Alternator Model: Stamford S4L1D-E41",
+        "Control System: DSE7320"
+      ],
+      "file": "sources/fudiankang-hunan/2007.md",
+      "official": false
+    },
+    {
+      "n": 2008,
+      "url": "https://www.fudiankang.com/products/413kva-generator-shangchai-6etaa11-8-g31",
+      "accessedAt": "2026-11-14",
+      "tier": "B",
+      "quote": [
+        "FDK-SC413V1/H1: 300KW/375KVA Prime, 300KW/413KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version.",
+        "Engine Model: SHANGCHAI 6ETAA11.8-G31",
+        "FDK Genset Model: FDK-SC413 V1 /H1",
+        "Prime Power: 300 KW/375 KVA",
+        "Standby Power: 201-500KVA",
+        "Alternator Model: NIANFENG NFS4-G",
+        "Control System: HGM6110"
+      ],
+      "file": "sources/fudiankang-hunan/2008.md",
+      "official": false
+    },
+    {
+      "n": 2009,
+      "url": "https://www.fudiankang.com/products/825kva-generator-mitsubishi-sme-s6r2-ptaa-c",
+      "accessedAt": "2026-11-14",
+      "tier": "B",
+      "quote": [
+        "FDK-M825/H1: 600KW/750KVA Prime, 660KW/825KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version.",
+        "Engine Model: Mitsubishi SME S6R2-PTAA-C",
+        "FDK Genset Model: FDK-M825/H1",
+        "Prime Power: 600KW/750KVA",
+        "Standby Power: 801-1000KVA",
+        "Alternator Model: Stamford S5L1D-H4",
+        "Control System: DSE7320"
+      ],
+      "file": "sources/fudiankang-hunan/2009.md",
+      "official": false
+    },
+    {
+      "n": 2010,
+      "url": "https://www.fudiankang.com/products/825kva-generator-yuchai-yc6td1000-d30",
+      "accessedAt": "2026-11-14",
+      "tier": "B",
+      "quote": [
+        "FDK-Y825/H1: 600KW/750KVA Prime, 660KW/825KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version.",
+        "Engine Model: YUCHAI YC6TD1000-D30",
+        "FDK Genset Model: FDK-Y825 / H1",
+        "Prime Power: 600KW/750KVA",
+        "Standby Power: 801-1000KVA",
+        "Alternator Model: NIANFENG NFS5-H",
+        "Control System: HGM6110"
+      ],
+      "file": "sources/fudiankang-hunan/2010.md",
+      "official": false
+    },
+    {
+      "n": 2011,
+      "url": "https://www.fudiankang.com/products/1250kva-generator-weichai-12m33d1108e200",
+      "accessedAt": "2026-11-14",
+      "tier": "B",
+      "quote": [
+        "FDK-W1250/H1: 900KW/1125KVA Prime, 1000KW/1250KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version.",
+        "Engine Model: WEICHAI 12M33D1108E200",
+        "FDK Genset Model: FDK-W1250/H1",
+        "Prime Power: 900 KW/1125 KVA",
+        "Standby Power: 1001-1500KVA",
+        "Alternator Model: NIANFENG NFS6-F",
+        "Control System: HGM6110"
+      ],
+      "file": "sources/fudiankang-hunan/2011.md",
+      "official": false
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "FDK-CC1500/H1",
+      "header": [
+        "FDK-CC1500/H1: 1100KW/1375KVA Prime, 1200KW/1500KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version."
+      ],
+      "rows": [
+        "Engine Model: Cummins KTA50-G8",
+        "FDK Genset Model: FDK-CC1500/H1",
+        "Prime Power: 1100KW/1375KVA",
+        "Standby Power: 1200KW/1500KVA",
+        "Output Frequency: 50Hz/1500rpm",
+        "Alternator Model: Stamford S6L1D-H41",
+        "Rated Voltage: 230V/400V",
+        "Control System: DSE7320"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "FDK-CD50/H1",
+      "header": [
+        "FDK-CD50/H1: 36KW/45KVA Prime, 40KW/50KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version."
+      ],
+      "rows": [
+        "Engine Model: Cummins 4BTA3.9G2",
+        "FDK Genset Model: FDK-CD50/H1",
+        "Prime Power: 36KW/45KVA",
+        "Standby Power: 40KW/50KVA",
+        "Output Frequency: 50Hz/1500rpm",
+        "Alternator Model: Stamford S1L2-N1",
+        "Rated Voltage: 230V/400V",
+        "Control System: DSE7320"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "FDK-P88/H1",
+      "header": [
+        "FDK-P88/H1: 64KW/80KVA Prime, 70KW/88KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version."
+      ],
+      "rows": [
+        "Engine Model: Perkins 1104A-44TG2",
+        "FDK Genset Model: FDK-P88/H1",
+        "Prime Power: 64KW/80KVA",
+        "Standby Power: 70KW/88KVA",
+        "Output Frequency: 50Hz/1500rpm",
+        "Alternator Model: Stamford UCI224G",
+        "Rated Voltage: 230V/400V",
+        "Control System: DSE7320"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "FDK-CD206V2/H1",
+      "header": [
+        "FDK-CD206V2/H1: 150KW/188KVA Prime, 165KW/206KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version."
+      ],
+      "rows": [
+        "Engine Model: Cummins 6CTA8.3-G2",
+        "FDK Genset Model: FDK-CD206V2/H1",
+        "Prime Power: 150KW/188KVA",
+        "Standby Power: 165KW/206KVA",
+        "Output Frequency: 50Hz/1500rpm",
+        "Alternator Model: Stamford UCI274H",
+        "Rated Voltage: 230V/400V",
+        "Control System: DSE7320"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "FDK-W275/H1",
+      "header": [
+        "FDK-W275/H1: 200KW/250KVA Prime, 220KW/275KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version."
+      ],
+      "rows": [
+        "Engine Model: WEICHAI WP10D264E200",
+        "FDK Genset Model: FDK-W275/H1",
+        "Prime Power: 200 KW/250 KVA",
+        "Standby Power: 220 KW/275 KVA",
+        "Output Frequency: 50Hz/1500rpm",
+        "Alternator Model: NIANFENG NFS274-K",
+        "Rated Voltage: 230V/400V",
+        "Control System: HGM6110"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "FDK-Y344 V1/ H1",
+      "header": [
+        "FDK-Y344V1/H1: 250KW/313KVA Prime, 275KW/344KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version."
+      ],
+      "rows": [
+        "Engine Model: YUCHAI YC6MK420-D30",
+        "FDK Genset Model: FDK-Y344 V1/ H1",
+        "Prime Power: 250KW/313KVA",
+        "Standby Power: 275KW/344KVA",
+        "Output Frequency: 50Hz/1500rpm",
+        "Alternator Model: NIANFENG NFS4-ES",
+        "Rated Voltage: 230V/400V",
+        "Control System: HGM6110"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "FDK-CC350/H1",
+      "header": [
+        "FDK-CC350/H1: 250KW/312KVA Prime, 275KW/344KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version."
+      ],
+      "rows": [
+        "Engine Model: Cummins NTA855-G1B",
+        "FDK Genset Model: FDK-CC350/H1",
+        "Prime Power: 250KW/312KVA",
+        "Standby Power: 275KW/344KVA",
+        "Output Frequency: 50Hz/1500rpm",
+        "Alternator Model: Stamford S4L1D-E41",
+        "Rated Voltage: 230V/400V",
+        "Control System: DSE7320"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "FDK-SC413 V1 /H1",
+      "header": [
+        "FDK-SC413V1/H1: 300KW/375KVA Prime, 300KW/413KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version."
+      ],
+      "rows": [
+        "Engine Model: SHANGCHAI 6ETAA11.8-G31",
+        "FDK Genset Model: FDK-SC413 V1 /H1",
+        "Prime Power: 300 KW/375 KVA",
+        "Standby Power: 330 KW/413 KVA",
+        "Output Frequency: 50Hz/1500rpm",
+        "Alternator Model: NIANFENG NFS4-G",
+        "Rated Voltage: 230V/400V",
+        "Control System: HGM6110"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "FDK-M825/H1",
+      "header": [
+        "FDK-M825/H1: 600KW/750KVA Prime, 660KW/825KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version."
+      ],
+      "rows": [
+        "Engine Model: Mitsubishi SME S6R2-PTAA-C",
+        "FDK Genset Model: FDK-M825/H1",
+        "Prime Power: 600KW/750KVA",
+        "Standby Power: 660KW/825KVA",
+        "Output Frequency: 50Hz/1500rpm",
+        "Alternator Model: Stamford S5L1D-H4",
+        "Rated Voltage: 230V/400V",
+        "Control System: DSE7320"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "FDK-Y825 / H1",
+      "header": [
+        "FDK-Y825/H1: 600KW/750KVA Prime, 660KW/825KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version."
+      ],
+      "rows": [
+        "Engine Model: YUCHAI YC6TD1000-D30",
+        "FDK Genset Model: FDK-Y825 / H1",
+        "Prime Power: 600KW/750KVA",
+        "Standby Power: 660KW/825KVA",
+        "Output Frequency: 50Hz/1500rpm",
+        "Alternator Model: NIANFENG NFS5-H",
+        "Rated Voltage: 230V/400V",
+        "Control System: HGM6110"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "FDK-W1250/H1",
+      "header": [
+        "FDK-W1250/H1: 900KW/1125KVA Prime, 1000KW/1250KVA Standby, Three-Phase. 230V/400V, Open/Soundproof Version."
+      ],
+      "rows": [
+        "Engine Model: WEICHAI 12M33D1108E200",
+        "FDK Genset Model: FDK-W1250/H1",
+        "Prime Power: 900 KW/1125 KVA",
+        "Standby Power: 1000 KW/1250 KVA",
+        "Output Frequency: 50Hz/1500rpm",
+        "Alternator Model: NIANFENG NFS6-F",
+        "Rated Voltage: 230V/400V",
+        "Control System: HGM6110"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "Control System: DSE7320",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6110",
+      "text": "HGM6110",
+      "line": "Control System: HGM6110",
+      "src": [
+        2005
+      ]
+    }
+  ]
 }
