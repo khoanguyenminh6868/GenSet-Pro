@@ -23,10 +23,16 @@
   const nf = (s) => String(s == null ? "" : s).normalize("NFKC").replace(/\s+/g, " ").trim();
   const NUM_RE = /\d+(?:[.,·]\d+)*/g;
   // One number written in the source → { n } or { amb: true } (comma + 3 digits: thousands or decimal, not read).
+  // "1,642": thousands (Khoa, 2026-11-14: "1,642 nên đọc là 1642"), except in a table that itself writes decimal commas
+  // ("0,667 L", "3,51 l/h" in its cells: himoinsa writes "Displacement 1,642 L" next to "0,667 L"); there the figure is
+  // not read (missing "number"), neither 1642 nor 1.642. Set by normalize() from the rows of the same table.
+  let DEC_COMMA = false;
   function numOf(tok) {
     let t = String(tok);
     if (/,/.test(t) && /\./.test(t)) t = t.replace(/,/g, "");
-    else if (/^\d{1,3}(,\d{3})+$/.test(t)) return { amb: true };
+    // "0,667": a leading 0 is never a group of thousands, so the comma is a decimal one (notation, not size).
+    else if (/^0,\d+$/.test(t)) t = t.replace(",", ".");
+    else if (/^\d{1,3}(,\d{3})+$/.test(t)) { if (DEC_COMMA) return { amb: true }; t = t.replace(/,/g, ""); }
     t = t.replace(/[,·]/g, ".");
     if (!/^\d+(\.\d+)?$/.test(t)) return { amb: true };
     return { n: Number(t) };
@@ -123,7 +129,8 @@
   const RPM = /rpm|r\s*\/\s*min|r\.p\.m|转\s*\/\s*分|\d\s*转(?!速)|min-1|v\/p/i;
   // A single shaft speed named in a text ("1500rpm", "1500 r/min"); two different ones → none.
   function rpmIn(s) {
-    const v = uniq([...nf(s).matchAll(/(\d{3,4})\s*(rpm|r\s*\/\s*min|r\.p\.m|转)/gi)].map((m) => Number(m[1])));
+    // "1,500 rpm" is one figure (numOf decides the comma), not "500".
+    const v = uniq([...nf(s).matchAll(/(?<![\d.,])(\d{1,2},\d{3}|\d{3,4})\s*(rpm|r\s*\/\s*min|r\.p\.m|转)/gi)].map((m) => numOf(m[1]).n).filter((n) => n != null));
     return v.length === 1 ? v[0] : null;
   }
   const freqIn = (s) => { const v = uniq([...nf(s).matchAll(/\b(50|60)\s*hz\b/gi)].map((m) => Number(m[1]))); return v.length === 1 ? v[0] : null; };
@@ -224,12 +231,13 @@
     return r;
   }
 
-  const LEN_UNIT = (s) => (/\bmm\b|毫米|\(mm/i.test(s) ? "mm" : /\bcm\b|厘米/i.test(s) ? "cm" : /[(（]\s*m\s*[)）]|\d\s*m\b(?!m)|\bmeters?\b|\bmetres?\b|\(米\)|（米）/i.test(s) ? "m" : null);
+  const LEN_UNIT = (s) => (/(?<![a-z])mm\b|毫米|\(mm/i.test(s) ? "mm" : /(?<![a-z])cm\b|厘米/i.test(s) ? "cm" : /[(（]\s*m\s*[)）]|\d\s*m\b(?!m)|\bmeters?\b|\bmetres?\b|\(米\)|（米）/i.test(s) ? "m" : null);
   function dims(spec, ctx, r) {
     const L = nf(spec.label), V = nf(spec.value), H = ctx.hUnit || "";
     r.unit = LEN_UNIT(V) || LEN_UNIT(L) || LEN_UNIT(H);
     if (!r.unit) miss(r, "unit");
-    const ns = numsIn(V.replace(/\(.*?\)/g, " "));
+    // "4300 × 1600 × 2250mm / 4,300kg" (jiuan-power): the weight after "/" is not a size.
+    const ns = numsIn(V.replace(/\(.*?\)/g, " ").replace(/\/\s*[\d.,]+\s*kgs?\b.*$/i, " "));
     if (ns.some((x) => x.amb)) return miss(r, "number");
     if (ns.length !== 3) { if (ns.length) r.options = ns.map((x) => x.n); return miss(r, ns.length ? "ambiguous" : "value"); }
     const n = ns.map((x) => x.n);
@@ -321,6 +329,8 @@
 
   function speed(spec, ctx, r) {
     const L = nf(spec.label), V = nf(spec.value), H = ctx.hUnit || "";
+    // "kWm @ rpm 50Hz Standby | 1,240 @ 1500" (hd-hyundai-infracore): a power and a speed under one title.
+    if (/\bkw/i.test(L)) return miss(r, "kind");
     r.unit = RPM.test(V) || RPM.test(L) || RPM.test(H) ? "rpm" : null;
     if (!r.unit) miss(r, "unit");
     // "1500rpm(50Hz)/1800rpm(60Hz)": the frequency figures are not speeds.
@@ -443,7 +453,8 @@
       else if (/rpm|r|转/.test(second)) { r.num = a.n; r.unit = "kW"; r.cond.rpm = b.n; }
       else { r.options = [a.n, b.n]; r.unit = /kw/i.test(vs[2] || "") ? "kW" : null; miss(r, "ambiguous"); }
     } else {
-      const f = figures(V.replace(/\d+\s*(rpm|r\/min|转)/gi, " ").replace(/\(.*?\)/g, " "));
+      // "1,097 kWm at 1,500 rpm": the speed (with its comma) is not a power figure.
+      const f = figures(V.replace(/(\bat\b|@)?\s*\d[\d,.]*\s*(rpm|r\/min|转)/gi, " ").replace(/\(.*?\)/g, " "));
       if (!f) return miss(r, "value");
       if (f.amb) return miss(r, "number");
       if (f.list) { r.options = f.list; miss(r, "ambiguous"); } else if (f.range) r.range = f.range; else r.num = f.num;
@@ -532,13 +543,27 @@
     const c = { title: nf(ctx.title || ""), headerText: nf(header.join(" ")), header, hUnit: headerUnit(spec.label, header) || (fam && fam[0].test(nf(spec.label)) ? soleUnit(header, fam[2], fam[1]) : null) };
     const r = base(spec);
     if (c.hUnit) r.cond.headerUnit = c.hUnit;
-    BY_KEY[spec.key](spec, c, r);
+    DEC_COMMA = ctx.decimalComma != null ? !!ctx.decimalComma : !!decimalCommaEvidence(ctx.rows);
+    try { BY_KEY[spec.key](spec, c, r); } finally { DEC_COMMA = false; }
     if (!Object.keys(r.cond).length) delete r.cond;
     return r;
   }
-  // Every spec of a catalog record (GenbidCatalog.fromSupplier) with the record's table context.
-  function normalizeRecord(o) {
-    const ctx = { title: o.title, header: o.header || o.lines?.header || [] };
+  // The first cell of a table's rows that writes a decimal comma: a whole cell that is one number with a comma and one
+  // or two digits after it ("3,51 l/h", "12,5", "≤ 4,2"), or "0,ddd" ("0,667 L"). A list "220,230,240" is not one.
+  function decimalCommaEvidence(rows) {
+    // A row "Displacement: 1,642 L" (no bars, as catalog.js cellsOf reads it): label, then the value cells.
+    const cells = (line) => { const s = String(line || "").trim(); if (s.startsWith("|")) return cellsOf(s); const m = s.match(/^([^:：]{2,60})[:：]\s*(.+)$/); return m ? [m[1], ...m[2].split("|")] : [s]; };
+    for (const line of rows || []) for (const cell of cells(line)) {
+      const x = nf(cell);
+      if (/^[≤<~≈]?\s*\d+,\d{1,2}\s*[a-z%/.()°³²·]*\s*$/i.test(x) || /^[≤<~≈]?\s*0,\d+\s*[a-z%/.()°³²·]*\s*$/i.test(x)) return { line, cell: x };
+    }
+    return null;
+  }
+  // Every spec of a catalog record (GenbidCatalog.fromSupplier) with the record's table context. `rows`: all rows of the
+  // record's table (s.specTables[o.table].rows), for the decimal-comma evidence; a label table carries them itself.
+  function normalizeRecord(o, rows) {
+    const rs = rows || o.lines?.rows || (o.line ? [o.line] : []);
+    const ctx = { title: o.title, header: o.header || o.lines?.header || [], decimalComma: !!decimalCommaEvidence(rs) };
     return (o.specs || []).map((s) => normalize(s, ctx)).filter(Boolean);
   }
   // Genset power of a record as catalog.js powersIn read it: flags only, the reading is unchanged. "rating" when only an
@@ -553,5 +578,5 @@
   // A normalized value has a figure (or a level for emission).
   const hasValue = (r) => r && (r.num != null || r.range || r.options || r.enum || r.dims || r.bore || r.count != null || r.cond?.exempt);
 
-  root.GenbidSpecNorm = { KEYS, normalize, normalizeRecord, powerFlags, hasValue, headerUnit, numOf };
+  root.GenbidSpecNorm = { KEYS, normalize, normalizeRecord, powerFlags, hasValue, headerUnit, numOf, decimalCommaEvidence };
 })(typeof window !== "undefined" ? window : globalThis);

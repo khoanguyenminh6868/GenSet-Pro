@@ -55,7 +55,7 @@ export function measure(suppliers, { keepSamples = 0 } = {}) {
   for (const s of suppliers) {
     if (s.status === "incomplete") continue;
     for (const o of C.fromSupplier(s)) {
-      const norm = SN.normalizeRecord(o);
+      const norm = SN.normalizeRecord(o, s.specTables?.[o.table]?.rows);
       for (const r of norm) {
         const k = keys[r.key];
         k.n++;

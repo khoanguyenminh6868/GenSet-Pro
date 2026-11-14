@@ -17,6 +17,9 @@ const AGESTAR = ["| Model | Specification 50HZ 400-230V | General specifications
 const AOSIF = ["| Prime Power | Standby Power | Engine Model | Fuel Consumption | Cylinder | Displacement", "| KVA/KW | KVA/KW | | L/h | |"];
 // cgm-italia datasheet: the noise column title names the distance.
 const CGM = ["| M/E Engine governor | EU Emission standard | consumo ¾ caricoconsumption 3/4 loadconsommation 3/4 charge", "| OPEN BASE FRAME | SOUNDPROOF CANOPY | dB(A) at 7 mt"];
+// Rows of himoinsa-china "12.5 kVA ... HYW-13 T5 Soundproof" (n114) and "7.9 kVA ... HSY-10 M6" (n142): decimal commas.
+const HIMOINSA_13 = ["Rated Engine Output: 12,2kW prp ; 13,2kW standby", "Displacement: 1,642 L", "Fuel Consumption ESP: 3,51 l/h", "Fuel Consumption 100% PRP: 3,19 l/h"];
+const HIMOINSA_10 = ["Displacement: 1,116 L", "Fuel Consumption ESP: 3,767 l/h", "Fuel Consumption 100% PRP: 2,80 l/h", "Fuel Consumption 75 % PRP: 2,21 l/h", "Fuel Consumption 50 % PRP: 1,74 l/h"];
 // One "(mm)" unit cell under two titles that could take it (bore and size): the unit belongs to neither as the source
 // writes it. haifeng-taizhou n2001 (vantek-jiangsu n104 / n108 have the same header).
 const HAIFENG = ["| 机组型号 | 常用功率 | 发动机型号 | 缸数 | 缸径/行程 | 燃油消耗量 | 外形尺寸 | 重量", "| KVA | KW | (mm) | (g/kw.h) | (L×W×H) (mm) | (kg)"];
@@ -80,7 +83,15 @@ const CASES = [
   ["weight", "Weight", "630", { header: AGESTAR }, { unit: "kg", num: 630, missing: ["basis", "enclosure"] }], // agestar
   // disp
   ["disp", "Displacement (L)", "3.9", null, { unit: "L", num: 3.9, missing: [] }], // genlitec
-  ["disp", "Displacement", "1,642 L", null, { unit: "L", missing: ["number"] }], // himoinsa-china: thousands or decimal comma
+  // "1,642" (comma + 3 digits): thousands (Khoa 14/11), except in a table that itself writes decimal commas (himoinsa:
+  // "3,51 l/h", "2,80 l/h" in the same table) → not read at all.
+  ["disp", "Displacement", "1,642 L", { rows: HIMOINSA_13 }, { unit: "L", missing: ["number"] }], // himoinsa-china n114
+  ["disp", "Displacement", "1,116 L", { rows: HIMOINSA_10 }, { unit: "L", missing: ["number"] }], // himoinsa-china n142
+  ["fuel", "Fuel Consumption ESP", "3,767 l/h", { rows: HIMOINSA_10 }, { unit: "L/h", cond: { rating: "standby" }, missing: ["number", "load"] }], // himoinsa-china n142
+  ["disp", "Displacement", "0,667 L", { rows: ["Displacement: 0,667 L"] }, { unit: "L", num: 0.667, missing: [] }], // himoinsa-china n122: a leading 0 is never thousands
+  ["weight", "Dry Weight", "4,095kg", { rows: ["| Dry Weight | 4,095kg"] }, { unit: "kg", num: 4095, cond: { basis: "dry" }, missing: ["enclosure"] }], // ade-power n2001
+  ["dims", "Dimension (L × W × H)", "1,381 x 1,138 x 1,207 mm", null, { unit: "mm", dims: { L: 1381, W: 1138, H: 1207 }, missing: ["enclosure"] }], // hd-hyundai-infracore
+  ["dims", "Dimensions (L×W×H)", "4300 × 1600 × 2250mm / 4,300kg", null, { unit: "mm", dims: { L: 4300, W: 1600, H: 2250 }, missing: ["enclosure"] }], // jiuan-power: weight after "/"
   ["disp", "Displacement (cc)", "418", null, { unit: "cc", num: 418, missing: [] }], // mingbang-mbkl: no cc→L formula, kept
   ["disp", "Displacement", "38", null, { unit: null, num: 38, missing: ["unit"] }], // aosif
   ["disp", "Displacement", "6.44L", null, { unit: "L", num: 6.44, missing: [] }], // jiuan-power
@@ -115,7 +126,8 @@ const CASES = [
   ["speed", "额定转速 (RPM)", "1500", null, { unit: "rpm", num: 1500, missing: [] }], // chuangyuan-zhongshan
   ["speed", "Speed", "1800", null, { unit: null, num: 1800, missing: ["unit"] }], // acepow-fuan
   ["speed", "Rated Rotation Speed [rpm]", "3000 3600", null, { unit: "rpm", options: [3000, 3600], missing: [] }], // acepow-fuan
-  ["speed", "转速", "1500", null, { unit: null, num: 1500, missing: ["unit"] }], // "转速" is the word "speed", not a unit
+  ["speed", "kWm @ rpm 50Hz Standby", "1,240 @ 1500", null, { missing: ["kind"] }], // hd-hyundai-infracore: power and speed under one title
+  ["speed", "转速", "1500", null,{ unit: null, num: 1500, missing: ["unit"] }], // "转速" is the word "speed", not a unit
   ["speed", "Rated speed", "1200 r/min", null,{ unit: "rpm", num: 1200, missing: [] }], // repower-gas
   ["speed", "Rated rotation speed", "1191", null, { unit: null, num: 1191, missing: ["unit"] }], // westinpower
   // voltage
@@ -155,6 +167,8 @@ const CASES = [
   // engPower
   ["engPower", "Rated Engine Output", "12,2kW prp ; 13,2kW standby", null, { unit: "kW", options: [12.2, 13.2], cond: { ratings: ["prime", "standby"] }, missing: ["speed"] }], // himoinsa-china
   ["engPower", "Engine power (kW)", "36", null, { unit: "kW", num: 36, missing: ["speed"] }], // eastern-lion-fuan
+  ["engPower", "Gross Engine Output — Prime", "1,097 kWm at 1,500 rpm", null, { unit: "kW", num: 1097, cond: { rpm: 1500, rating: "prime" }, missing: [] }], // huali-shandong
+  ["engPower", "Engine power (kW)", "30.1KW/1500转", null, { unit: "kW", num: 30.1, cond: { rpm: 1500 }, missing: [] }], // eastern-lion-fuan: "1500转" = v/p (Khoa 14/11)
   ["engPower", "Max Power (kW/Hp)", "575/771", null, { unit: "kW", num: 575, cond: { hp: 771 }, missing: ["speed"] }], // ettes-power
   ["engPower", "Prime power / Speed (KW/RPM)", "340/1500", null, { unit: "kW", num: 340, cond: { rpm: 1500, rating: "prime" }, missing: [] }], // fdk-energy
   ["engPower", "Engine Power", "96-105kw", null, { unit: "kW", range: [96, 105], missing: ["speed"] }], // yongcai-elecmama
