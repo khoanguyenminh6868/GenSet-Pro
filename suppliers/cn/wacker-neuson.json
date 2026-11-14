@@ -42,6 +42,170 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "G14",
+      "fuel": "diesel",
+      "engineModels": [
+        "KSD1403NA"
+      ],
+      "engineMakes": [
+        "Kohler"
+      ],
+      "power": {
+        "min": 13.5,
+        "max": 13.5,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "G25",
+      "fuel": "diesel",
+      "engineModels": [
+        "KDI1903"
+      ],
+      "engineMakes": [
+        "Kohler"
+      ],
+      "power": {
+        "min": 25,
+        "max": 25,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "G35",
+      "fuel": "diesel",
+      "engineModels": [
+        "KDI1903"
+      ],
+      "engineMakes": [
+        "Kohler"
+      ],
+      "power": {
+        "min": 35,
+        "max": 35,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "G50",
+      "fuel": "diesel",
+      "engineModels": [
+        "KDI2504"
+      ],
+      "engineMakes": [
+        "Kohler"
+      ],
+      "power": {
+        "min": 48,
+        "max": 48,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "G70",
+      "fuel": "diesel",
+      "engineModels": [
+        "KDI3404"
+      ],
+      "engineMakes": [
+        "Kohler"
+      ],
+      "power": {
+        "min": 72,
+        "max": 72,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "G100",
+      "fuel": "diesel",
+      "engineModels": [
+        "KDI3404-TCR"
+      ],
+      "engineMakes": [
+        "Rehlko"
+      ],
+      "power": {
+        "min": 105,
+        "max": 105,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "G130",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSB5-G11"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 162,
+        "max": 162,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ]
     }
   ],
   "certifications": [],
@@ -60,9 +224,96 @@
         "Wacker Neuson mobile generators can handle all the requirements for most applications on a construction site."
       ],
       "file": "sources/wacker-neuson/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://cdn.mediapool.wackerneusongroup.com/asset/491085414967/document_6qel8f66rh01r3k5n64crpjg3o",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Prime output                             kW / kVA  13.5 / 13.5                20 / 25         28 / 35                           I  E ciency",
+        "Prime output                             kW / kVA                    38 / 48                                                    58 / 72                                     84 / 105",
+        "Engine type                                        Kohler KSD1403NA  Kohler KDI1903           Kohler KDI1903                       service e ciency, better fuel economy and longer",
+        "Engine type                                                         Kohler KDI2504                                              Kohler KDI3404                              Rehlko KDI3404-TCR",
+        "Frequency                                Hz            60                          60         60                                  User-friendly, Deep Sea controller with"
+      ],
+      "file": "sources/wacker-neuson/2001.md",
+      "official": false
+    },
+    {
+      "n": 2002,
+      "url": "https://cdn.mediapool.wackerneusongroup.com/asset/491085414967/document_0tospiv09t1d545v055bkhtl7o",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "■ Cummins QSB5-G11 Engine",
+        "Generator Rating 3~ (Continuous)   162.0 kVA               Load)",
+        "Generator Manufacturer             Mecc Alte               Fuel consumption (Prime load)                                                                                                      27.0  l/h"
+      ],
+      "file": "sources/wacker-neuson/2002.md",
+      "official": false
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Wacker Neuson mobile generators G14 / G25 / G35 (brochure 2/2026, 60 Hz)",
+      "header": [
+        "Performance Data                         Unit          G14                    G25             G35                               I  Performance"
+      ],
+      "rows": [
+        "Prime output                             kW / kVA  13.5 / 13.5                20 / 25         28 / 35                           I  E ciency",
+        "Standby output                           kW / kVA      15 / 15                22 / 27         31 / 39",
+        "Engine type                                        Kohler KSD1403NA  Kohler KDI1903           Kohler KDI1903                       service e ciency, better fuel economy and longer",
+        "Rated standby power                      hp            25.7                      49.6         49.6                                 service intervals",
+        "Fuel tank capacity                       gal           63                          63         63                                   access for servicing",
+        "Fuel consumption @ prime                 gal/h         1.8                         1.8        2.4"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Wacker Neuson mobile generators G50 / G70 / G100 (brochure 2/2026, 60 Hz)",
+      "header": [
+        "                                         Unit                        G50                                                        G70                                         G100"
+      ],
+      "rows": [
+        "Prime output                             kW / kVA                    38 / 48                                                    58 / 72                                     84 / 105",
+        "Standby output                           kW / kVA                    42 / 52                                                    63 / 79                                     92 / 115",
+        "Engine type                                                         Kohler KDI2504                                              Kohler KDI3404                              Rehlko KDI3404-TCR",
+        "Rated standby power                      hp                          73.1                                                          109                                      169",
+        "Fuel tank capacity                       gal                         88                                                            112                                      152",
+        "Fuel consumption @ max.                  gal/h                       3.3                                                           4.2                                      6.0"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "G130 Mobile Generator (datasheet 2026-09-30)",
+      "header": [
+        "                                                                  G130"
+      ],
+      "rows": [
+        "■ Cummins QSB5-G11 Engine",
+        "Generator Rating 1~ (Continuous)   75.0 kVA",
+        "Generator Rating 3~ (Continuous)   162.0 kVA               Load)",
+        "Generator Manufacturer             Mecc Alte               Fuel consumption (Prime load)                                                                                                      27.0  l/h",
+        "Cylinder                           4.0                     Height for shipping                                                                                                                1,993.0    mm",
+        "Cylinder capacity                  4,500.0 cm³             Shipping weight                                                                                                                    2,482.0    kg",
+        "Exhaust-gas limit                  IIIB/Tier IV Final      Length for shipping (with Trailer)                                                                                                 4,470.0    mm"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deep Sea controller",
+      "line": "Frequency                                Hz            60                          60         60                                  User-friendly, Deep Sea controller with",
+      "src": [
+        2001
+      ]
+    }
+  ]
 }
