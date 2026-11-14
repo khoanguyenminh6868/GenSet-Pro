@@ -66,6 +66,11 @@ Step "Nhánh hsmt-inbox -> $Root\hsmt-inbox"
 $inbox = Join-Path $Root 'hsmt-inbox'
 if ((Has git) -and -not (Test-Path (Join-Path $inbox '.git'))) {
     & git clone --single-branch -b hsmt-inbox https://github.com/khoanguyenminh6868/GenSet-Pro.git $inbox
+} elseif (Has git) {
+    # Clone cũ (máy từng chạy worker) phải theo kịp GitHub: Publish-GenBidHsmt.ps1 commit rồi push thẳng, không pull,
+    # nên clone chậm thì push bị từ chối và Lấy tệp báo "đăng tệp bị lỗi" (KayenGram, 2026-11-14).
+    & git -C $inbox pull -q --ff-only origin hsmt-inbox
+    if ($LASTEXITCODE) { $missing.Add("$inbox không cập nhật được (git pull --ff-only): kiểm commit chưa đẩy rồi chạy lại") }
 }
 if ((Has git) -and $Repo -ne (Join-Path $Root 'GenSet-Pro')) {
     $missing.Add("Repo nên ở $Root\GenSet-Pro (bot đọc suppliers\config-bot.mjs ở đó; hiện chạy từ $Repo)")
