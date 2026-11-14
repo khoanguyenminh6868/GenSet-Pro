@@ -45,6 +45,17 @@
     "vietnam": { "type": "object", "properties": { "distributors": { "type": "array", "items": { "type": "object", "required": ["name", "src"], "properties": { "name": { "type": "string" }, "website": { "type": ["string", "null"] }, "src": { "$ref": "#/$defs/src" } } } }, "note": { "type": ["string", "null"] } } },
     "contacts": { "type": "array", "items": { "type": "object", "required": ["type", "value", "src"], "properties": { "type": { "enum": ["email", "phone", "whatsapp", "wechat"] }, "value": { "type": "string" }, "src": { "$ref": "#/$defs/src" } } } },
     "controllers": { "type": "array", "items": { "type": "object", "required": ["brand", "text", "line", "src"], "properties": { "brand": { "type": "string" }, "model": { "type": ["string", "null"] }, "text": { "type": "string" }, "line": { "type": "string" }, "src": { "$ref": "#/$defs/src" } } } },
+    "brandLicensed": { "type": "boolean", "description": "Thương hiệu cấp phép (NCC chỉ mang tên hãng, không sản xuất); named-genset.mjs brandLicensedSeller đọc" },
+    "specTables": {
+      "type": "array",
+      "description": "Bảng thông số lưu nguyên văn từ nguồn n (crawl-specs / catalog PDF / OCR); web/catalog.js đọc lúc chạy",
+      "items": {
+        "type": "object",
+        "required": ["n", "title", "header", "rows"],
+        "additionalProperties": false,
+        "properties": { "n": { "type": "integer" }, "title": { "type": "string" }, "header": { "type": "array", "items": { "type": "string" } }, "rows": { "type": "array", "items": { "type": "string" } } }
+      }
+    },
     "exportMarkets": { "type": "array", "items": { "type": "string" } },
     "missing": { "type": "array", "items": { "type": "string" } },
     "sources": {

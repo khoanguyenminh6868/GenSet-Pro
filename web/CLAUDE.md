@@ -27,6 +27,7 @@ Chỉ bản web Vercel + bot Windows được dùng; không phát triển nhánh
 - `state.quote`: bỏ qua khoá bắt đầu bằng `_` (`quote/_cost` = tỷ giá + thuế dùng chung); lưu `quote/*` phải giữ trường khác (`{...cũ, ...mới}`). `numIn` coi "." là phân cách nghìn.
 - `GenbidCatalog.build` mất 4–7 s: không gọi `catalog()` đồng bộ lúc mở màn hình. Sửa `catalog.js`: so md5 JSON của `build()` trên `suppliers/cn` với bản origin/main.
 - `placeOf` (xuất xứ): chuẩn hoá NFC; regex `\b` của JS không coi ỹ, đ, ý là chữ → dùng `(?<![\p{L}\p{N}])` với cờ `u`. Tên ngắn trùng chữ thường/tên riêng (Anh, Ý, Mỹ "Mỹ Tho", Đức, Pháp "hợp pháp / biện pháp", Áo, Nga, EU) chỉ tính khi là cả một trường, sau "xuất xứ", hoặc đứng cuối dòng; không đưa vào danh sách nước tự do.
+- `catalog.js` đọc thông số (`SPECS`): nhãn "consum / 消耗 / 耗率" là tiêu hao dầu, không phải dung tích dầu (`oil`); "electrical / thermal / overall efficiency" của tổ máy gas không phải `eff`; cột mô-men (torque / 扭矩) không phải `speed`; `cooling` phải nêu môi chất (`COOL`). Từ khoá `cos` chỉ khớp cả từ ("técnicos" không phải hệ số công suất). Mỗi thay đổi thêm ca vào `suppliers/spec-read.test.mjs` lấy dòng thật. `keyOf` bỏ dấu `*` cuối model và `tidyModel` bỏ tiền tố hãng ở bảng ngang; KHÔNG gộp O/0, I/1 (là suy ra, Khoa chưa duyệt).
 - `bidprice.js`, `catalog.js`, `conversions.js` dùng chung cho web và bot (`suppliers/`): sửa thì chạy test của cả hai.
 
 ## Thử cục bộ
