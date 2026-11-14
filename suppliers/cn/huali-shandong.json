@@ -42,6 +42,71 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "HL100GF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6BTAA5.9-G2"
+      ],
+      "power": {
+        "min": 125,
+        "max": 125,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HL50GF",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "4BTA3.9-G2"
+      ],
+      "power": {
+        "min": 62.5,
+        "max": 62.5,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2014
+        ]
+      },
+      "src": [
+        2014
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HL…GF diesel generator sets (Huali Power)",
+      "fuel": "diesel",
+      "power": {
+        "min": 30,
+        "max": 1500,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2002,
+          2013
+        ]
+      },
+      "src": [
+        2002,
+        2013
+      ]
     }
   ],
   "certifications": [],
@@ -62,9 +127,653 @@
         "山东华力机电亮相2026印尼雅加达电力展｜400kW静音柴油发电机组"
       ],
       "file": "sources/huali-shandong/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "http://www.hualijidian.com/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "800KW-3000KW",
+        "20KW-200KW"
+      ],
+      "file": "sources/huali-shandong/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.worldgens.com/product/30kw-weichai-diesel-generator.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Set Model | HL30GF",
+        "Prime Power | 30 kW / 37.5 kVA",
+        "Engine Model | WP2.3D33E200",
+        "Alternator Model | HLF30"
+      ],
+      "file": "sources/huali-shandong/2002.md",
+      "official": false
+    },
+    {
+      "n": 2003,
+      "url": "https://www.worldgens.com/product/50kw-weichai-diesel-generator.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Set Model | HL50GF",
+        "Prime Power | 50 kW / 62.5 kVA",
+        "Engine Model | WP4.1D66E200",
+        "Alternator Model | HLF50"
+      ],
+      "file": "sources/huali-shandong/2003.md",
+      "official": false
+    },
+    {
+      "n": 2004,
+      "url": "https://www.worldgens.com/product/100kw-cummins-generator.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Model | HL100GF",
+        "Prime Power | 100kW / 125kVA",
+        "Engine Model | 6BTAA5.9-G2",
+        "Alternator Model | HLF100"
+      ],
+      "file": "sources/huali-shandong/2004.md",
+      "official": false
+    },
+    {
+      "n": 2005,
+      "url": "https://www.worldgens.com/product/150kw-perkins-diesel-generator-set.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Set Model | HL150GF",
+        "Prime Power | 150 kW / 187.5 kVA",
+        "Engine Model | 1106A-70TAG4",
+        "Alternator Model | HLF150"
+      ],
+      "file": "sources/huali-shandong/2005.md",
+      "official": false
+    },
+    {
+      "n": 2006,
+      "url": "https://www.worldgens.com/product/200kw-yuchai-generator.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Genset Model | HL200GF",
+        "Prime Power | 200 kW / 250 kVA",
+        "Engine Model | YC6MK350L-D20",
+        "Alternator Model | HLF200"
+      ],
+      "file": "sources/huali-shandong/2006.md",
+      "official": false
+    },
+    {
+      "n": 2007,
+      "url": "https://www.worldgens.com/product/300kw-weichai-diesel-generator-set.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Set Model | HL300GF",
+        "Prime Power | 300 kW / 375 kVA",
+        "Engine Model | WP13D385E200",
+        "Alternator Model | HLF300"
+      ],
+      "file": "sources/huali-shandong/2007.md",
+      "official": false
+    },
+    {
+      "n": 2008,
+      "url": "https://www.worldgens.com/product/400kw-perkins-diesel-generator.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Set Model | HL400GF",
+        "Prime Power | 400 kW / 500 kVA",
+        "Engine Model | 2506C-E15TAG2",
+        "Alternator Model | HLF-400"
+      ],
+      "file": "sources/huali-shandong/2008.md",
+      "official": false
+    },
+    {
+      "n": 2009,
+      "url": "https://www.worldgens.com/product/600kw-weichai-diesel-generator.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Set Model | HL600GF",
+        "Prime Power | 600 kW / 750 kVA",
+        "Engine Model | 6M33D725E310",
+        "Alternator Model | HLF600"
+      ],
+      "file": "sources/huali-shandong/2009.md",
+      "official": false
+    },
+    {
+      "n": 2010,
+      "url": "https://www.worldgens.com/product/800kw-cummins-generator.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Set Model | HL800GF",
+        "Prime Power | 800 kW / 1000 kVA",
+        "Engine Model | KTA38-G5",
+        "Alternator Model | HLF800"
+      ],
+      "file": "sources/huali-shandong/2010.md",
+      "official": false
+    },
+    {
+      "n": 2011,
+      "url": "https://www.worldgens.com/product/1000kw-cummins-generator.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Set Model | HL1000GF",
+        "Prime Power | 1000 kW",
+        "Engine Model | KTA50-G3",
+        "Alternator Model | HLF1000"
+      ],
+      "file": "sources/huali-shandong/2011.md",
+      "official": false
+    },
+    {
+      "n": 2012,
+      "url": "https://www.worldgens.com/product/1200kw-Perkins-diesel-generator.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Set Model | HL1200GF",
+        "Prime Power | 1200 kW / 1500 kVA",
+        "Engine Model | 4012-46TAG2A",
+        "Alternator Model | HLF1200"
+      ],
+      "file": "sources/huali-shandong/2012.md",
+      "official": false
+    },
+    {
+      "n": 2013,
+      "url": "https://www.worldgens.com/product/1500kw-perkins-diesel-generator-set.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Generator Set Model | HL1500GF",
+        "Prime Power | 1500 kW / 1875 kVA",
+        "Engine Model | 4016TAG2A",
+        "Alternator Model | HLF1500"
+      ],
+      "file": "sources/huali-shandong/2013.md",
+      "official": false
+    },
+    {
+      "n": 2014,
+      "url": "https://www.worldgens.com/product/62-5kva-cummins-generator.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Model | HL50GF",
+        "Prime Power | 50KW/62.5KVA",
+        "Model | 4BTA3.9-G2",
+        "Type | HLF50",
+        "The DSE7320 is an Auto Mains (Utility) Failure Control Modul"
+      ],
+      "file": "sources/huali-shandong/2014.md",
+      "official": false
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2002,
+      "title": "HL30GF – 30 kW Weichai",
+      "header": [
+        "| Generator Set Model | HL30GF"
+      ],
+      "rows": [
+        "| Prime Power | 30 kW / 37.5 kVA",
+        "| Standby Power | 33 kW / 41.25 kVA",
+        "| Rated Voltage | 400/230 V",
+        "| Rated Current | 54 A",
+        "| B. Weichai Engine",
+        "| Engine Brand | Weichai",
+        "| Engine Model | WP2.3D33E200",
+        "| Rated Engine Speed | 1500 r/min",
+        "| Cylinders / Arrangement | 4 / In-line",
+        "| Displacement | 2.289 L",
+        "| Bore × Stroke | 89 mm × 92 mm",
+        "| Compression Ratio | 17.5:1",
+        "| C. Alternator",
+        "| Alternator Brand | Shanhua",
+        "| Alternator Model | HLF30",
+        "| Number of Phases | 3",
+        "| Rated Power Factor | 0.8",
+        "| Number of Poles | 4",
+        "| Bearing Arrangement | Single-bearing",
+        "| Excitation System | Brushless, shunt-excited",
+        "| Insulation Class | H",
+        "| Alternator Protection Rating | IP21"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "HL50GF – 50 kW Weichai",
+      "header": [
+        "| Generator Set Model | HL50GF"
+      ],
+      "rows": [
+        "| Prime Power | 50 kW / 62.5 kVA",
+        "| Standby Power | 55 kW / 68.75 kVA",
+        "| Rated Voltage | 400/230 V",
+        "| Rated Current | 90 A",
+        "| Phases | 3",
+        "| Rated Power Factor | 0.8",
+        "Weichai Engine | Engine Brand | Weichai",
+        "| Engine Model | WP4.1D66E200",
+        "| Rated Speed | 1500 r/min",
+        "| Cylinders / Arrangement | 4 / In-line",
+        "| Displacement | 4.087 L",
+        "| Bore × Stroke | 105 mm × 118 mm",
+        "| Compression Ratio | 17.5:1",
+        "Alternator | Alternator Brand | Shanhua",
+        "| Alternator Model | HLF50",
+        "| Excitation System | Brushless, shunt-excited",
+        "| Insulation Class | H",
+        "| Alternator Protection Rating | IP21"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "HL100GF – 100 kW Cummins",
+      "header": [
+        "| Product Name | 100kW Cummins Diesel Generator Set"
+      ],
+      "rows": [
+        "| Generator Model | HL100GF",
+        "| Prime Power | 100kW / 125kVA",
+        "| Standby Power | 110kW / 137.5kVA",
+        "| Rated Voltage | 400 / 230V",
+        "| Rated Current | 180A",
+        "| Frequency | 50Hz",
+        "| Phase | 3 Phase",
+        "| Connection | 3 Phase, 4 Wire",
+        "| Power Factor | 0.8",
+        "| Engine",
+        "| Engine Brand | Cummins",
+        "| Engine Model | 6BTAA5.9-G2",
+        "| Rated Speed | 1500rpm",
+        "| Cylinders | 6",
+        "| Displacement | 5.9L",
+        "| Bore × Stroke | 102mm × 120mm",
+        "| Compression Ratio | 17.3 : 1",
+        "| Starting Voltage | 24V",
+        "| Air Intake | Turbocharged",
+        "| Alternator",
+        "| Alternator Brand | Shanhua",
+        "| Alternator Model | HLF100",
+        "| Excitation | Brushless, Self-Exciting",
+        "| Insulation Class / Temperature Rise | H / H",
+        "| Protection Grade | IP23",
+        "| Rated Altitude | ≤1000m for the listed configuration"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HL150GF – 150 kW Perkins",
+      "header": [
+        "| Generator Set Model | HL150GF"
+      ],
+      "rows": [
+        "| Prime Power | 150 kW / 187.5 kVA",
+        "| Standby Power | 165 kW / 206.25 kVA",
+        "| Rated Voltage | 400 / 230 V",
+        "| Rated Current | Approx. 270 A at 400 V, 3-phase",
+        "| Frequency | 50 Hz",
+        "| Rated Speed | 1500 rpm",
+        "| Phase / Connection | 3-phase, 4-wire",
+        "| Power Factor | 0.8",
+        "| Reference Site Altitude | ≤ 1000 m",
+        "| Perkins Diesel Engine",
+        "| Engine Manufacturer | Perkins",
+        "| Engine Model | 1106A-70TAG4",
+        "| Cylinder Configuration | 6-cylinder, vertical in-line",
+        "| Displacement | 7.01 L",
+        "| Bore × Stroke | 105 × 135 mm",
+        "| Aspiration | Turbocharged and aftercooled",
+        "| Combustion System | Direct injection",
+        "| Cooling System | Liquid cooled",
+        "| Engine Speed | 1500 rpm for this 50 Hz configuration",
+        "| Alternator",
+        "| Alternator Manufacturer | Shanhua",
+        "| Alternator Model | HLF150",
+        "| Rated Frequency | 50 Hz",
+        "| Rated Speed | 1500 rpm",
+        "| Rated Voltage | 400 / 230 V",
+        "| Number of Phases | 3",
+        "| Power Factor | 0.8"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "HL200GF – 200 kW Yuchai",
+      "header": [
+        "| Genset Model | HL200GF"
+      ],
+      "rows": [
+        "| Prime Power | 200 kW / 250 kVA",
+        "| Standby Power | 220 kW / 275 kVA",
+        "| Rated Voltage | 400/230 V",
+        "| Rated Current | 360 A",
+        "| Frequency | 50 Hz",
+        "| Phase | 3 Phase",
+        "| Power Factor | 0.8",
+        "| Connection | 3 Phase, 4 Wire",
+        "| Yuchai Engine",
+        "| Engine Brand | Yuchai",
+        "| Engine Model | YC6MK350L-D20",
+        "| Engine Rated Speed | 1500 rpm",
+        "| Cylinders / Arrangement | 6 / In-line",
+        "| Displacement | 10.338 L",
+        "| Bore × Stroke | 123 × 145 mm",
+        "| Compression Ratio | 16.8:1",
+        "| Starting Motor Voltage | 24 V DC",
+        "| Aspiration | Turbocharged & Intercooled",
+        "| Alternator",
+        "| Alternator Brand | Shanhua",
+        "| Alternator Model | HLF200",
+        "| Rated Frequency | 50 Hz",
+        "| Rated Speed | 1500 rpm",
+        "| Rated Voltage | 400/230 V",
+        "| Phase | 3 Phase",
+        "| Power Factor | 0.8",
+        "| Protection Grade | IP21",
+        "| Connection | 3 Phase, 4 Wire",
+        "| Excitation Type | Brushless, Self-Excited",
+        "| Insulation Class | Class H"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "HL300GF – 300 kW Weichai",
+      "header": [
+        "| Generator Set Model | HL300GF"
+      ],
+      "rows": [
+        "| Prime Power | 300 kW / 375 kVA",
+        "| Standby Power | 330 kW / 412.5 kVA",
+        "| Rated Voltage | 400/230 V",
+        "| Rated Current | 540 A",
+        "| Phases | 3",
+        "| Rated Power Factor | 0.8",
+        "Weichai Engine | Engine Brand | Weichai",
+        "| Engine Model | WP13D385E200",
+        "| Rated Speed | 1500 r/min",
+        "| Cylinders / Arrangement | 6 / In-line",
+        "| Displacement | 12.54 L",
+        "| Bore × Stroke | 127 mm × 165 mm",
+        "| Compression Ratio | 16:1",
+        "Alternator | Alternator Brand | Shanhua",
+        "| Alternator Model | HLF300",
+        "| Excitation System | Brushless, shunt-excited",
+        "| Insulation Class | H",
+        "| Alternator Protection Rating | IP21"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "HL400GF – 400 kW Perkins",
+      "header": [
+        "| Generator Set Model | HL400GF"
+      ],
+      "rows": [
+        "| Prime Power | 400 kW / 500 kVA",
+        "| Standby Power | 440 kW / 550 kVA",
+        "| Rated Voltage | 400 / 230 V",
+        "| Rated Current | 720 A at 400 V, 3-phase",
+        "| Frequency | 50 Hz",
+        "| Rated Speed | 1500 rpm",
+        "| Number of Phases | 3",
+        "| Connection | 3-phase, 4-wire",
+        "| Power Factor | 0.8",
+        "| Perkins Diesel Engine",
+        "| Engine Manufacturer | Perkins",
+        "| Engine Model | 2506C-E15TAG2",
+        "| Engine Speed | 1500 rpm",
+        "| Net Engine Power – Prime | 435 kWm",
+        "| Net Engine Power – Standby | 478 kWm",
+        "| Cylinder Configuration | 6-cylinder, vertical in-line",
+        "| Displacement | 15.2 L",
+        "| Bore × Stroke | 137 × 171 mm",
+        "| Compression Ratio | 16:1",
+        "| Aspiration | Turbocharged and air-to-air charge cooled",
+        "| Combustion System | Direct injection",
+        "| Cooling System | Water-cooled",
+        "| Starting System | 24 V DC electric start",
+        "| Engine Control | Electronic engine management with ECM",
+        "| Alternator",
+        "| Alternator Manufacturer | Shanhua",
+        "| Alternator Model | HLF-400",
+        "| Frequency | 50 Hz",
+        "| Rated Speed | 1500 rpm",
+        "| Rated Voltage | 400 V",
+        "| Number of Phases | 3",
+        "| Power Factor | 0.8",
+        "| Altitude Requirement | ≤ 1000 m",
+        "| Protection Class | IP21",
+        "| Connection | 3-phase, 4-wire",
+        "| Excitation System | Brushless, self-exciting",
+        "| Insulation Class | H",
+        "| Temperature Rise Class | H"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "HL600GF – 600 kW Weichai",
+      "header": [
+        "| Generator Set Model | HL600GF"
+      ],
+      "rows": [
+        "| Prime Power | 600 kW / 750 kVA",
+        "| Standby Power | 660 kW / 825 kVA",
+        "| Rated Voltage | 400/230 V",
+        "| Rated Current | 1080 A",
+        "| Phases | 3",
+        "| Rated Power Factor | 0.8",
+        "Weichai Engine | Engine Brand | Weichai",
+        "| Engine Model | 6M33D725E310",
+        "| Rated Speed | 1500 r/min",
+        "| Cylinders / Arrangement | 6 / In-line",
+        "| Displacement | 19.6 L",
+        "| Bore × Stroke | 150 mm × 185 mm",
+        "| Compression Ratio | 15:1",
+        "Alternator | Alternator Brand | Shanhua",
+        "| Alternator Model | HLF600",
+        "| Excitation System | Brushless, shunt-excited",
+        "| Insulation Class | H",
+        "| Alternator Protection Rating | IP21"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "HL800GF – 800 kW Cummins",
+      "header": [
+        "| Generator Set Model | HL800GF"
+      ],
+      "rows": [
+        "| Prime Power | 800 kW / 1000 kVA",
+        "| Standby Power | 880 kW / 1100 kVA",
+        "| Rated Voltage | 400 / 230 V",
+        "| Frequency | 50 Hz",
+        "| Phase | 3-phase",
+        "| Power Factor | 0.8",
+        "| Connection | 3-phase, 4-wire",
+        "| Engine",
+        "| Engine Brand | Cummins",
+        "| Engine Model | KTA38-G5",
+        "| Rated Speed | 1,500 rpm",
+        "| Cylinder Configuration | 12-cylinder, 60° Vee",
+        "| Displacement | 37.8 L",
+        "| Bore × Stroke | 159 × 159 mm",
+        "| Aspiration | Turbocharged, aftercooled",
+        "| Starting Voltage | 24 V",
+        "| Cycle | 4-cycle",
+        "| Alternator",
+        "| Alternator Brand | Shanhua",
+        "| Alternator Model | HLF800",
+        "| Rated Speed | 1,500 rpm",
+        "| Degree of Protection | IP23",
+        "| Excitation System | Brushless, self-excited",
+        "| Insulation Class / Temperature Rise | H / H"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "HL1000GF – 1000 kW Cummins",
+      "header": [
+        "| Generator Set Model | HL1000GF"
+      ],
+      "rows": [
+        "| Prime Power | 1000 kW",
+        "| Standby Power | 1100 kW",
+        "| Rated Voltage | 400 / 230 V",
+        "| Frequency | 50 Hz",
+        "| Phase | 3-phase",
+        "| Power Factor | 0.8",
+        "| Connection | 3-phase, 4-wire",
+        "| Engine",
+        "| Engine Brand | Cummins",
+        "| Engine Model | KTA50-G3",
+        "| Rated Speed | 1,500 rpm",
+        "| Cylinder Configuration | 16-cylinder, 60° Vee",
+        "| Displacement | 50.3 L",
+        "| Bore × Stroke | 159 × 159 mm",
+        "| Compression Ratio | 13.9:1",
+        "| Aspiration | Turbocharged, low-temperature aftercooled",
+        "| Starting Voltage | 24 V, negative ground",
+        "| Cycle | 4-cycle",
+        "| Gross Engine Output — Prime | 1,097 kWm at 1,500 rpm",
+        "| Gross Engine Output — Standby | 1,227 kWm at 1,500 rpm",
+        "| Alternator",
+        "| Alternator Brand | Shanhua",
+        "| Alternator Model | HLF1000"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "HL1200GF – 1200 kW Perkins",
+      "header": [
+        "| Generator Set Model | HL1200GF"
+      ],
+      "rows": [
+        "| Prime Power | 1200 kW / 1500 kVA",
+        "| Standby Power | 1320 kW / 1650 kVA",
+        "| Rated Voltage | 400 / 230 V",
+        "| Rated Current | 2165 A",
+        "| Frequency | 50 Hz",
+        "| Rated Speed | 1500 rpm",
+        "| Phase | 3-phase",
+        "| Power Factor | 0.8",
+        "| Perkins Diesel Engine",
+        "| Engine Manufacturer | Perkins",
+        "| Engine Model | 4012-46TAG2A",
+        "| Engine Rated Speed | 1500 rpm",
+        "| Cylinder Configuration | 12-cylinder, Vee",
+        "| Displacement | 45.8 L",
+        "| Bore × Stroke | 160 × 190 mm",
+        "| Aspiration | Turbocharged and air-to-air charge cooled",
+        "| Combustion System | Direct injection",
+        "| Cooling System | Liquid-cooled",
+        "| Governor | Electronic",
+        "| Alternator",
+        "| Alternator Manufacturer | Shanhua",
+        "| Alternator Model | HLF1200"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "HL1500GF – 1500 kW Perkins",
+      "header": [
+        "| Generator Set Model | HL1500GF"
+      ],
+      "rows": [
+        "| Prime Power | 1500 kW / 1875 kVA",
+        "| Standby Power | 1650 kW / 2062.5 kVA",
+        "| Rated Voltage | 400 / 230 V",
+        "| Rated Current | 2706 A",
+        "| Frequency | 50 Hz",
+        "| Rated Speed | 1500 rpm",
+        "| Phase | 3-phase",
+        "| Power Factor | 0.8",
+        "| Perkins Diesel Engine",
+        "| Engine Manufacturer | Perkins",
+        "| Engine Model | 4016TAG2A",
+        "| Engine Rated Speed | 1500 rpm",
+        "| Cylinder Configuration | 16-cylinder, Vee",
+        "| Displacement | 61.123 L",
+        "| Bore × Stroke | 160 × 190 mm",
+        "| Compression Ratio | 13.6:1",
+        "| Aspiration | Turbocharged and air-to-air charge cooled",
+        "| Cooling System | Liquid-cooled",
+        "| Starting Electrical System | 24 V electric start",
+        "| Governor | Electronic",
+        "| Alternator",
+        "| Alternator Manufacturer | Shanhua",
+        "| Alternator Model | HLF1500",
+        "| Protection Class | IP21",
+        "| Insulation Class | Class H"
+      ]
+    },
+    {
+      "n": 2014,
+      "title": "HL50GF – 62.5 kVA Cummins",
+      "header": [
+        "| Model | HL50GF"
+      ],
+      "rows": [
+        "| Prime Power | 50KW/62.5KVA",
+        "| Standby Power | 55KW/68.75KVA",
+        "| Rated Voltage | 400/230V",
+        "| Rated Current | 90A",
+        "| Engine | Cummins",
+        "| Model | 4BTA3.9-G2",
+        "| Engine speed Rated | 1500 RPM",
+        "| Cylinder /Arrangement | 4",
+        "| Displacement | 3.9L",
+        "| Bore and Stroke | 102 mm×120 mm",
+        "| Compression ratio | 18.0:1",
+        "| Max. stand by power at rated RPM | 64KW",
+        "| Frequency regulation , steady state | =1%",
+        "| Governor type | Electrical",
+        "| Aspiration and Cooling | Turbocharged",
+        "| Alternator | Shanhua",
+        "| Type | HLF50",
+        "| Number of phase power | 3",
+        "| actor (Cos Phi) | 0.8",
+        "| Pole | 4",
+        "| Bearing | 1",
+        "| Coupling | Direct",
+        "| Exciter type | Brushless SHUNT",
+        "| lnsulation: class , temperaturerise | H / H",
+        "| Degree of protection | IP23",
+        "| Altitude | ≤1000m",
+        "| Winding Pitch | 2/3",
+        "| Winding Leads | 6/12"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "The DSE7320 is an Auto Mains (Utility) Failure Control Module suitable for a wide variety of single, diesel or gas, gen-set applications.",
+      "src": [
+        2014
+      ]
+    }
+  ]
 }
