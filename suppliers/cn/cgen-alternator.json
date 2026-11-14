@@ -46,6 +46,126 @@
         1,
         2
       ]
+    },
+    {
+      "kind": "alternator",
+      "series": "MYI182/184",
+      "fuel": null,
+      "power": {
+        "min": 22.6,
+        "max": 37.5,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "alternatorMakes": [
+        "C.GEN"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "MYI 224 Series",
+      "fuel": null,
+      "power": {
+        "min": 42.5,
+        "max": 88,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "alternatorMakes": [
+        "C.GEN"
+      ],
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "MYI274",
+      "fuel": null,
+      "power": {
+        "min": 100,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "alternatorMakes": [
+        "C.GEN"
+      ],
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "MYI4",
+      "fuel": null,
+      "power": {
+        "min": 250,
+        "max": 375,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "alternatorMakes": [
+        "C.GEN"
+      ],
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "MYI5",
+      "fuel": null,
+      "power": {
+        "min": 450,
+        "max": 625,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "alternatorMakes": [
+        "C.GEN"
+      ],
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "MYI6",
+      "fuel": null,
+      "power": {
+        "min": 750,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "alternatorMakes": [
+        "C.GEN"
+      ],
+      "src": [
+        2006
+      ]
     }
   ],
   "certifications": [],
@@ -75,9 +195,181 @@
         "Rated Capacity:750-1250KVA"
       ],
       "file": "sources/cgen-alternator/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "http://wkmachine.com/index.php/website/29.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "MYI182/184-Brushless Alternator-C.GEN TECH",
+        "Rated Capacity:22.6~37.5KVA",
+        "Rated Power:18~30KW"
+      ],
+      "file": "sources/cgen-alternator/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "http://wkmachine.com/index.php/website/30.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "MYI 224 Series-Brushless Alternator-C.GEN TECH",
+        "Rated Capacity: 42.5~88KVA",
+        "Rated Power: 34~70KW"
+      ],
+      "file": "sources/cgen-alternator/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "http://wkmachine.com/index.php/website/31.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "MYI274-Brushless Alternator-C.GEN TECH",
+        "Rated Capacity: 100~250KVA",
+        "Rated Power:80~200KW"
+      ],
+      "file": "sources/cgen-alternator/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "http://wkmachine.com/index.php/website/33.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "MYI4-Brushless Alternator-C.GEN TECH",
+        "Rated Capacity: 250~375KVA",
+        "Rated Power:200~300KW"
+      ],
+      "file": "sources/cgen-alternator/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "http://wkmachine.com/index.php/website/34.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "MYI5-Brushless Alternator-C.GEN TECH",
+        "Rated Capacity:450-625KVA",
+        "Rated Power: 360~500KW"
+      ],
+      "file": "sources/cgen-alternator/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "http://wkmachine.com/index.php/website/35.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "MYI6-Brushless Alternator-C.GEN TECH",
+        "Rated Capacity:750-1250KVA",
+        "Rated Power:600~1000KW"
+      ],
+      "file": "sources/cgen-alternator/2006.md",
+      "official": true
     }
   ],
   "confidence": "low",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "claude-code"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "MYI182/184 Brushless Alternator",
+      "header": [
+        "MYI182/184"
+      ],
+      "rows": [
+        "Voltage:120V~600V",
+        "Rated Capacity:22.6~37.5KVA",
+        "Rated Power:18~30KW",
+        "IP22/23,Class H, 50/60HZ",
+        "1500/1800 & 3000/3600 RPM",
+        "Single /Three Phase",
+        "Single bearing & Double bearings"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "MYI 224 Series Brushless Alternator",
+      "header": [
+        "MYI 224 Series"
+      ],
+      "rows": [
+        "Voltage:120V~690V",
+        "Rated Capacity: 42.5~88KVA",
+        "Rated Power: 34~70KW",
+        "Insulation IP22/23,Class H, 50/60HZ",
+        "1500/ 1800 RPM",
+        "Single /Three Phase"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "MYI274 Brushless Alternator",
+      "header": [
+        "MYI274"
+      ],
+      "rows": [
+        "Voltage:120V~690V",
+        "Rated Capacity: 100~250KVA",
+        "Rated Power:80~200KW",
+        "IP22/23,Class H, 50/60HZ",
+        "1500/1800 & 3000/3600 RPM",
+        "Single /Three Phase",
+        "Single bearing & Double bearings"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "MYI4 Brushless Alternator",
+      "header": [
+        "MYI4"
+      ],
+      "rows": [
+        "Voltage:120V~690V",
+        "Rated Capacity: 250~375KVA",
+        "Rated Power:200~300KW",
+        "IP22/23,Class H, 50/60HZ",
+        "1500/1800 & 3000/3600 RPM",
+        "Single /Three Phase"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "MYI5 Brushless Alternator",
+      "header": [
+        "MYI5"
+      ],
+      "rows": [
+        "Voltage:120V-690V",
+        "Rated Capacity:450-625KVA",
+        "Rated Power: 360~500KW",
+        "IP22/23,Class H, 50/60HZ",
+        "1500/1800 & 3000/3600 RPM",
+        "Single /Three Phase"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "MYI6 Brushless Alternator",
+      "header": [
+        "MYI6"
+      ],
+      "rows": [
+        "Voltage:120V~690V",
+        "Rated Capacity:750-1250KVA",
+        "Rated Power:600~1000KW",
+        "IP22/23,Class H, 50/60HZ",
+        "1500/1800 & 3000/3600 RPM",
+        "Single /Three Phase"
+      ]
+    }
+  ]
 }
