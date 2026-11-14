@@ -45,6 +45,282 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "MPL 220 S-I",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "NEF67TM7"
+      ],
+      "power": {
+        "min": 220,
+        "max": 220,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MPL 176 S-I",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "NEF67TM4"
+      ],
+      "power": {
+        "min": 176,
+        "max": 176,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MPL 132 SS-I",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "NEF45TM3"
+      ],
+      "power": {
+        "min": 132,
+        "max": 132,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MPL 110 SS-I",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FPT"
+      ],
+      "engineModels": [
+        "NEF45TM2A"
+      ],
+      "power": {
+        "min": 110,
+        "max": 110,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MPL 50 SS-Y",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "4TNV98T"
+      ],
+      "power": {
+        "min": 44,
+        "max": 44,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MPL 50 I-SY",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "4TNV98T"
+      ],
+      "power": {
+        "min": 44,
+        "max": 44,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MPL 35 SS-Y",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "4TNV98T"
+      ],
+      "power": {
+        "min": 33,
+        "max": 33,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MPL 33 I-SY",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "4TNV98"
+      ],
+      "power": {
+        "min": 33,
+        "max": 33,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MPL 16 I-SY",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "3TNV88"
+      ],
+      "power": {
+        "min": 16,
+        "max": 16,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MPF 44 BA",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "4TNV98T"
+      ],
+      "power": {
+        "min": 44,
+        "max": 44,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MPF 33 Y 5B",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "4TNV98C"
+      ],
+      "power": {
+        "min": 33,
+        "max": 33,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MPF 22 BA",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "4TNV88"
+      ],
+      "power": {
+        "min": 22,
+        "max": 22,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
     }
   ],
   "certifications": [],
@@ -63,9 +339,345 @@
         "Dal 1970 GENERATORI, MOTOSALDATRICI e TORRI FARO"
       ],
       "file": "sources/mase-generators/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.masegenerators.com/wp-content/uploads/2020/12/MPL-220-S-I_ITA-01.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Potenza trifase (emergenza): 220kVA - 400V",
+        "Tipo: FPT NEF 67 TM7 - turbo - 6 cil. - 6700 cm3",
+        "Potenza trifase (continua): 200kVA - 400V"
+      ],
+      "file": "sources/mase-generators/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.masegenerators.com/wp-content/uploads/2020/12/MPL-176-S-I_ITA-1.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Potenza trifase (emergenza): 176kVA - 400V",
+        "Tipo: FPT NEF 67 TM4 - turbo - 6 cil. - 6700 cm3",
+        "Potenza trifase (continua): 160kVA - 400V"
+      ],
+      "file": "sources/mase-generators/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://www.masegenerators.com/wp-content/uploads/2021/09/MPL-132-SS-I_ITA-3.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Potenza trifase (emergenza): 132kVA - 400V",
+        "Tipo: FPT NEF 45 TM3 - Turbo - 4 cyl. - 4500 cm3",
+        "Potenza trifase (continua): 120kVA - 400V"
+      ],
+      "file": "sources/mase-generators/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://www.masegenerators.com/wp-content/uploads/2021/09/MPL-110-SS-I_ITA-3.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Potenza trifase (emergenza): 110kVA - 400V",
+        "Tipo: FPT NEF 45 TM2A - Turbo - 4 cyl.",
+        "Potenza trifase (continua): 99kVA - 400V"
+      ],
+      "file": "sources/mase-generators/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://www.masegenerators.com/wp-content/uploads/2021/02/MPL-50-SS-Y_ITA_01-2.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Potenza trifase (emergenza): 44kVA - 400V",
+        "Tipo: Yanmar 4TNV98T - 4 cil. - 3319 cm3",
+        "Potenza trifase (continua): 40kVA - 400V"
+      ],
+      "file": "sources/mase-generators/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://www.masegenerators.com/wp-content/uploads/2021/02/MPL-50-I-SY_ITA.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Potenza trifase (emergenza): 44kVA - 400V",
+        "Tipo: Yanmar 4TNV98T - STAGE 0 - 4 cil. - 3319 cm3",
+        "Potenza trifase (continua): 40kVA - 400V"
+      ],
+      "file": "sources/mase-generators/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://www.masegenerators.com/wp-content/uploads/2021/02/MPL-35-SS-Y_ITA_Stage-0.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Potenza trifase (emergenza): 33kVA - 400V",
+        "Tipo: Yanmar 4TNV98T",
+        "Potenza trifase (continua): 30kVA - 400V"
+      ],
+      "file": "sources/mase-generators/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://www.masegenerators.com/wp-content/uploads/2021/04/MPL-33-I-SY_ITA-stage-0.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Potenza trifase (emergenza): 33kVA - 400V",
+        "Tipo: Yanmar 4TNV98 - 4 cil.- 3319 cm3",
+        "Potenza trifase (continua): 30kVA - 400V"
+      ],
+      "file": "sources/mase-generators/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://www.masegenerators.com/wp-content/uploads/2021/02/MPL-16-I-SY_ITA-Stage-0.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Potenza trifase (emergenza): 16kVA - 400V",
+        "Tipo: Yanmar 3TNV88 - 3 cil. - 1642 cm3",
+        "Potenza trifase (continua): 15kVA - 400V"
+      ],
+      "file": "sources/mase-generators/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://www.masegenerators.com/wp-content/uploads/2021/04/MPF-44-BA_ITA-2.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Potenza massima trifase: 44 kVA - 400 V",
+        "Tipo: Yanmar 4TNV98T - 4 cil. - 55,9 hp (41,7"
+      ],
+      "file": "sources/mase-generators/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://www.masegenerators.com/wp-content/uploads/2025/04/MASE_SCHEDA-TECNICA_MPF_33_Y_ITA.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Potenza max. trifase                                 33         kVA - 400   V",
+        "Mot. Yanmar 1500 giri                                           4 TNV 98C*"
+      ],
+      "file": "sources/mase-generators/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "https://www.masegenerators.com/wp-content/uploads/2021/11/MPF-22-BA_ITA.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Potenza massima trifase: 22 kVA - 400 V",
+        "Tipo: Yanmar 4TNV88 - 4 cil. - 24,1 hp (18"
+      ],
+      "file": "sources/mase-generators/2012.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-04",
-  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "MPL 220 S-I – scheda tecnica (Mase, ITA)",
+      "header": [
+        "MPL 220 S-I"
+      ],
+      "rows": [
+        "•  Potenza trifase (emergenza): 220kVA - 400V                    •  Fattore di potenza: cos ф 0,8",
+        "•  Potenza trifase (continua): 200kVA - 400V",
+        "Motore Diesel    •  Tipo: FPT NEF 67 TM7 - turbo - 6 cil. - 6700 cm3              •  Raffreddamento: acqua",
+        "1500 giri/min    •  Potenza massima: 263,8 hp (194 kWm)                           •  Consumo carburante al 75% del carico: 37,3 lt/h",
+        "•  Temperatura ambiente: 40 °C (*)                               •  Dimensioni (L x W x H): 3400 x 1100 x 1820 mm",
+        "•  Altitudine di riferimento: 1000 m (*)                         •  Peso a vuoto: 1995 kg"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "MPL 176 S-I – scheda tecnica (Mase, ITA)",
+      "header": [
+        "MPL 176 S-I"
+      ],
+      "rows": [
+        "•  Potenza trifase (emergenza): 176kVA - 400V                       230V",
+        "•  Potenza trifase (continua): 160kVA - 400V                     •  Fattore di potenza: cos ф 0,8",
+        "Motore Diesel    •  Tipo: FPT NEF 67 TM4 - turbo - 6 cil. - 6700 cm3              •  Raffreddamento: acqua",
+        "1500 giri/min    •  Potenza massima: 224 hp (165 kWm)                             •  Consumo carburante al 75% del       carico: 29,4            lt/h",
+        "•  Temperatura ambiente: 40 °C (*)                               •  Dimensioni (L x W x H): 3400 x 1100 x 1820 mm",
+        "•  Altitudine di riferimento: 1000 m (*)                         •  Peso a vuoto: 1945 kg"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "MPL 132 SS-I – scheda tecnica (Mase, ITA)",
+      "header": [
+        "MPL 132 SS-I"
+      ],
+      "rows": [
+        "•  Potenza trifase (emergenza): 132kVA - 400V                    •  Fattore di potenza: cos ф 0,8",
+        "•  Potenza trifase (continua): 120kVA - 400V",
+        "Motore Diesel    •  Tipo: FPT NEF 45 TM3 - Turbo - 4 cyl. - 4500 cm3              •  Raffreddamento: acqua",
+        "1500 giri/min    •  Potenza massima: 160,3 HP (118 kWm)                           •  Consumo carburante all’ 80% del carico: 21,6 lt/h",
+        "•  Temperatura ambiente: 40 °C (*)                               •  Dimensioni (Lu x La x H): 3000 x 1150 x 1950 mm",
+        "•  Altitudine di riferimento: 1000 mt (*)                        •  Peso a secco: 1745 kg"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "MPL 110 SS-I – scheda tecnica (Mase, ITA)",
+      "header": [
+        "MPL 110 SS-I"
+      ],
+      "rows": [
+        "•  Potenza trifase (emergenza): 110kVA - 400V                    •  Fattore di potenza: cos ф 0,8",
+        "•  Potenza trifase (continua): 99kVA - 400V",
+        "Motore Diesel    •  Tipo: FPT NEF 45 TM2A - Turbo - 4 cyl.                        •  Avviamento: elettrico (12Vcc)",
+        "•  Potenza massima: 133 HP (98 kWm)                              •  Consumo carburante all’ 80% del carico: 16,2 lt/h",
+        "•  Temperatura ambiente: 40 °C (*)                               •  Dimensioni (Lu x La x H): 3000 x 1150 x 1950 mm",
+        "•  Altitudine di riferimento: 1000 mt (*)                        •  Peso a secco: 1645 kg"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "MPL 50 SS-Y – scheda tecnica (Mase, ITA)",
+      "header": [
+        "MPL 50 SS-Y"
+      ],
+      "rows": [
+        "•  Potenza trifase (emergenza): 44kVA - 400V                     •  Fattore di potenza: cos ф 0,8",
+        "•  Potenza trifase (continua): 40kVA - 400V",
+        "Motore Diesel    •  Tipo: Yanmar 4TNV98T - 4 cil. - 3319 cm3                      •  Raffreddamento: acqua",
+        "1500 giri/min    •  Potenza massima: 55,9 HP (41,7 kWm)                           •  Consumo carburante al 75% del carico: 8,1 lt/h",
+        "•  Temperatura ambiente: 40 °C (*)                               •  Dimensioni (Lu x La x H): 1970 x 900 x 1420 mm",
+        "•  Altitudine di riferimento: 1000 m (*)                         •  Peso a vuoto: 1020 kg"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "MPL 50 I-SY – scheda tecnica (Mase, ITA)",
+      "header": [
+        "MPL 50 I-SY"
+      ],
+      "rows": [
+        "•  Potenza trifase (emergenza): 44kVA - 400V                     •  Fattore di potenza: cos ф 0,8",
+        "•  Potenza trifase (continua): 40kVA - 400V",
+        "Motore Diesel    •  Tipo: Yanmar 4TNV98T - STAGE 0 - 4 cil. - 3319 cm3            •  Raffreddamento: acqua",
+        "1500 giri/min    •  Potenza massima: 55,9 hp (41,7 kWm)                           •  Consumo carburante al 75% del carico: 8,1 lt/h",
+        "•  Temperatura ambiente: 40 °C (*)                               •  Dimensioni (Lu x La x H): 1900 x 910 x 1164 mm",
+        "•  Altitudine di riferimento: 1000 m (*)                         •  Peso a vuoto: 735 kg"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "MPL 35 SS-Y – scheda tecnica (Mase, ITA)",
+      "header": [
+        "MPL 35 SS-Y"
+      ],
+      "rows": [
+        "•  Potenza trifase (emergenza): 33kVA - 400V                     •  Fattore di potenza: cos ф 0,8",
+        "•  Potenza trifase (continua): 30kVA - 400V",
+        "Motore Diesel    •  Tipo: Yanmar 4TNV98T                                          •  Avviamento: elettrico (12Vcc)",
+        "•  Potenza massima: 46,1 HP (34,4 kWm)                           •  Consumo carburante al 75% del carico: 6,4 lt/h",
+        "•  Temperatura ambiente: 40 °C (*)                               •  Dimensioni (Lu x La x H): 1970 x 900 x 1420 mm",
+        "•  Altitudine di riferimento: 1000 m (*)                         •  Peso a vuoto: 940 kg"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "MPL 33 I-SY – scheda tecnica (Mase, ITA)",
+      "header": [
+        "MPL 33 I-SY"
+      ],
+      "rows": [
+        "•  Potenza trifase (emergenza): 33kVA - 400V                     •  Fattore di potenza: cos ф 0,8",
+        "•  Potenza trifase (continua): 30kVA - 400V",
+        "Motore Diesel    •  Tipo: Yanmar 4TNV98 - 4 cil.- 3319 cm3                        •  Raffreddamento: acqua",
+        "1500 giri/min    •  Potenza massima: 46,1 hp (34,4 kWm)                           •  Consumo carburante al 75% del carico: 6,4 lt/h",
+        "•  Temperatura ambiente: 40 °C (*)                               •  Dimensioni (Lu x La x H): 1900 x 910 x 1164",
+        "•  Grado di protezione: IP 23                                    •  Peso a vuoto: 690 kg"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "MPL 16 I-SY – scheda tecnica (Mase, ITA)",
+      "header": [
+        "MPL 16 I-SY"
+      ],
+      "rows": [
+        "•  Potenza trifase (emergenza): 16kVA - 400V                     •  Fattore di potenza: cos ф 0,8",
+        "•  Potenza trifase (continua): 15kVA - 400V",
+        "Motore Diesel    •  Tipo: Yanmar 3TNV88 - 3 cil. - 1642 cm3                       •  Raffreddamento: acqua",
+        "1500 giri/min    •  Potenza massima: 18,1 hp (13,5 kWm)                           •  Consumo carburante al 75% del carico: 2,7 lt/h",
+        "•  Temperatura ambiente: 40 °C (*)                               •  Dimensioni (Lu x La x H): 1650 x 700 x 1045 mm",
+        "•  Altitudine di riferimento: 1000 m (*)                         •  Peso a vuoto: 445 kg"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "MPF 44 BA – scheda tecnica (Mase, ITA)",
+      "header": [
+        "MPF 44 BA"
+      ],
+      "rows": [
+        "•  Potenza massima trifase: 44 kVA - 400 V                       •  Fattore di potenza: cos ф 0,8",
+        "Generatore CA-50Hz     •  Tipo: sincrono                                                •  Potenza massima monofase: 14,7 kVA - 230 V",
+        "Motore Diesel          •  Tipo: Yanmar 4TNV98T - 4 cil. - 55,9 hp (41,7                 •  Avviamento: elettrico",
+        "•  Raffreddamento: acqua                                         •  Consumo carburante al 75% del carico: 8,1 lt/h",
+        "•  Temperatura ambiente: 40 °C (*)                               •  Dimensioni (L x W x H): 1640 x 770 x 1076 mm",
+        "•  Altitudine di riferimento: 1000 mt (*)                        •  Peso a secco: 725 kg"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "MPF 33 Y 5B – scheda tecnica (Mase, ITA)",
+      "header": [
+        "MPF 33 Y 5B"
+      ],
+      "rows": [
+        "Potenza max. trifase                                 33         kVA - 400   V",
+        "Potenza max. monofase                                11         kVA - 230   V",
+        "Mot. Yanmar 1500 giri                                           4 TNV 98C*",
+        "CIlindrata                                                      3319 cm3",
+        "Consumo carburante                                              6,4 lt/h",
+        "Dimensioni (LxWxH)                                   1752       x835x1170   mm",
+        "Peso a secco                                                    726 kg"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "MPF 22 BA – scheda tecnica (Mase, ITA)",
+      "header": [
+        "MPF 22 BA"
+      ],
+      "rows": [
+        "•  Potenza massima trifase: 22 kVA - 400 V                       •  Fattore di potenza: cos ф 0,8",
+        "Generatore CA-50Hz     •  Tipo: sincrono                                                •  Potenza massima monofase: 7,3 kVA - 230 V",
+        "Motore Diesel          •  Tipo: Yanmar 4TNV88 - 4 cil. - 24,1 hp (18                    •  Avviamento: elettrico",
+        "•  Raffreddamento: acqua                                         •  Consumo carburante al 75% del carico: 3,5 lt/h",
+        "•  Temperatura ambiente: 40 °C (*)                               •  Dimensioni (L x W x H): 1430 x 690 x 930 mm",
+        "•  Altitudine di riferimento: 1000 mt (*)                        •  Peso a secco: 480 kg"
+      ]
+    }
+  ]
 }
