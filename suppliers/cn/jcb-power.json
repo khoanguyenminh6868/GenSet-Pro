@@ -81,6 +81,121 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "G27QS",
+      "fuel": "diesel",
+      "engineModels": [
+        "KDI 2504M"
+      ],
+      "engineMakes": [
+        "Kohler"
+      ],
+      "power": {
+        "min": 24.5,
+        "max": 24.5,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "G115QS",
+      "fuel": "diesel",
+      "engineModels": [
+        "444 G-TCA-100"
+      ],
+      "engineMakes": [
+        "JCB"
+      ],
+      "power": {
+        "min": 105,
+        "max": 105,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "G220QS",
+      "fuel": "diesel",
+      "engineModels": [
+        "672 TA2G-170"
+      ],
+      "engineMakes": [
+        "JCB"
+      ],
+      "power": {
+        "min": 199,
+        "max": 199,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "G330QS",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSL9-G5"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "G500QX",
+      "fuel": "diesel",
+      "engineModels": [
+        "DC13-72A (02-13)"
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
     }
   ],
   "certifications": [],
@@ -100,9 +215,204 @@
         "For larger scale power requirements, JCB’s mid range generators cover 250kVA-780kVA. With engines sourced from well-established manufacturers like Scania, Cummins, and Volvo"
       ],
       "file": "sources/jcb-power/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://cdn.prod.website-files.com/669f7a0cea6090f2e754958c/66a3694b3c247bbf5e640049_JCB%20G27S%20&%20G27QS%20Specification%20Sheet.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "B",
+      "quote": [
+        "G27S | G27QS",
+        "PRIME KVA: 24.50| STANDBY KVA 27.00",
+        "50 3 400/230V 24.5 19.6 27.0 21.6 1500",
+        "Manufacturer and Model JCB by Kohler KDI 2504 M",
+        "ALTERNATOR ECP28-2L/4"
+      ],
+      "file": "sources/jcb-power/2001.md",
+      "official": false
+    },
+    {
+      "n": 2002,
+      "url": "https://accesshiremiddleeast.com/wp-content/uploads/2024/12/G115QS.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "B",
+      "quote": [
+        "G115QS | Canopy Set",
+        "50 3 400/230V 105.0 84.0 115.5 92.4 160 160 1500",
+        "Manufacturer and Model JCB 444 G-TCA- 100",
+        "ALTERNATOR ECP34-2S/4"
+      ],
+      "file": "sources/jcb-power/2002.md",
+      "official": false
+    },
+    {
+      "n": 2003,
+      "url": "https://www.greenshieldsjcb.com/wp-content/uploads/2021/01/G220SQS-Generator-Specification-Sheet.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "B",
+      "quote": [
+        "G220S | G220QS",
+        "PRIME KVA: 199.00| STANDBY KVA 219.00",
+        "50 3 400/230V 199.0 159.0 219.0 176.0 1500",
+        "Manufacturer and Model JCB 672 TA2G- 170",
+        "ALTERNATOR ECO38-2S4 A"
+      ],
+      "file": "sources/jcb-power/2003.md",
+      "official": false
+    },
+    {
+      "n": 2004,
+      "url": "https://www.greenshieldsjcb.com/wp-content/uploads/2021/01/G330QS-Generator-Specification-Sheet.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "B",
+      "quote": [
+        "G330QS | Canopy Set",
+        "50 3 400/230V 300 240 330 264 0.8 1500 ECO38 2L4A",
+        "Manufacturer and Model Cummins QSL9-G5"
+      ],
+      "file": "sources/jcb-power/2004.md",
+      "official": false
+    },
+    {
+      "n": 2005,
+      "url": "https://cdn.prod.website-files.com/669f7a0cea6090f2e754958c/66a36a5b1135db84b23d42e5_JCB%20G500X%20&%20G500QX%20Specification%20Sheet.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "B",
+      "quote": [
+        "G500X | G500QX",
+        "50 3 400/230V 450 360 491 393 1500",
+        "Manufacturer and Model Scania DC13-72A (02-13)"
+      ],
+      "file": "sources/jcb-power/2005.md",
+      "official": false
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "G27S | G27QS (JCB spec sheet QS_G27S_EN)",
+      "header": [
+        "Frequency (Hz) Phases Voltage (V) kVA kW kVA kW Rated Speed (RPM)"
+      ],
+      "rows": [
+        "50 3 400/230V 24.5 19.6 27.0 21.6 1500",
+        "50% Load Prime L/h 3.52 Manufacturer and Model JCB by Kohler KDI 2504 M",
+        "ALTERNATOR ECP28-2L/4 MECHANICAL FEATURES"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "G115QS | Canopy Set (JCB spec sheet)",
+      "header": [
+        "Frequency (Hz) Phases Voltage (V) kVA kW kVA kW MCB Rating (A) Minimum ATP Rated Speed (RPM)"
+      ],
+      "rows": [
+        "50 3 400/230V 105.0 84.0 115.5 92.4 160 160 1500",
+        "High Density Fire Retardant Foam ● Manufacturer and Model JCB 444 G-TCA- 100",
+        "ALTERNATOR ECP34-2S/4 Bore and Stroke mm 103 x 132"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "G220S | G220QS (JCB spec sheet QS_G220S_EN)",
+      "header": [
+        "Frequency (Hz) Phases Voltage (V) kVA kW kVA kW Rated Speed (RPM)"
+      ],
+      "rows": [
+        "50 3 400/230V 199.0 159.0 219.0 176.0 1500",
+        "50% Load Prime L/h 24.70 Manufacturer and Model JCB 672 TA2G- 170",
+        "ALTERNATOR ECO38-2S4 A MECHANICAL FEATURES"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "G330QS | Canopy Set (JCB spec sheet G330QS_EN)",
+      "header": [
+        "Frequency (Hz) Phases Voltage (V) kVA kW kVA kW Power Factor Rated Speed Alternator"
+      ],
+      "rows": [
+        "50 3 400/230V 300 240 330 264 0.8 1500 ECO38 2L4A",
+        "Manufacturer and Model Cummins QSL9-G5 50% Load Prime L/h 38.8"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "G500X | G500QX (JCB spec sheet 60Hz_G500X_EN)",
+      "header": [
+        "Frequency (Hz) Phases Voltage (V) kVA kW kVA kW Rated Speed (RPM)"
+      ],
+      "rows": [
+        "50 3 400/230V 450 360 491 393 1500",
+        "50% Load Prime L/h 49.16 Manufacturer and Model Scania DC13-72A (02-13)"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE4520",
+      "text": "DSE 4520",
+      "line": "AVR DSR ● DSE 4520 ●",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE4520",
+      "text": "DSE 4520",
+      "line": "AVR DER x DSE 4520 ●",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE4520",
+      "text": "DSE 4520",
+      "line": "AVR DSR ● DSE 4520 ●",
+      "src": [
+        2003
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE4520",
+      "text": "DSE 4520",
+      "line": "Cooling Pack ● DSE 4520 ●",
+      "src": [
+        2004
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7310",
+      "text": "DSE 7310",
+      "line": "Air Filter ● DSE 7310 ∆",
+      "src": [
+        2004
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "Winding Protection Standard + x DSE7320 ●",
+      "src": [
+        2005
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "DSE8610",
+      "line": "Anti-Condensation Heater ∆ DSE8610 ∆",
+      "src": [
+        2005
+      ]
+    }
+  ]
 }
