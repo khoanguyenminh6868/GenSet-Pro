@@ -45,6 +45,53 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "engine",
+      "series": "Generator diesel engines (P086TI – DX37 DP372CC), 50Hz prime",
+      "fuel": "diesel",
+      "engineMakes": [
+        "HD Hyundai"
+      ],
+      "engineModels": [
+        "P086TI",
+        "DP086LA",
+        "P126TI",
+        "DP126LB",
+        "P158LE",
+        "DP158LC",
+        "DP158LD",
+        "DP180LA",
+        "DP180LB",
+        "DP222LC",
+        "DX22 (DP222CC)",
+        "DX37 (DP372CC)"
+      ],
+      "power": {
+        "min": 177,
+        "max": 1127,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2002,
+          2013
+        ]
+      },
+      "src": [
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013
+      ]
     }
   ],
   "certifications": [],
@@ -63,9 +110,479 @@
         "HD Construction Equipment Accelerates Large-Scale Generator Engine Development to Target Data Center Market"
       ],
       "file": "sources/hd-hyundai-infracore/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.hd-hyundaiengine.com/en/engine/generator-detail/27",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| model | DP158LD",
+        "| Maximum Rating | 556 kWm",
+        "| kWm @ rpm 50Hz Prime | 464 @ 1,500",
+        "| kWm @ rpm 50Hz Standby | 510 @ 1,500"
+      ],
+      "file": "sources/hd-hyundai-infracore/2001.md",
+      "official": false
+    },
+    {
+      "n": 2002,
+      "url": "https://www.hd-hyundaiengine.com/en/engine/generator-detail/11",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| model | P086TI",
+        "| Maximum Rating | 223 kWm",
+        "| kWm @ rpm 50Hz Prime | 177 @ 1,500",
+        "| kWm @ rpm 50Hz Standby | 199 @ 1,500"
+      ],
+      "file": "sources/hd-hyundai-infracore/2002.md",
+      "official": false
+    },
+    {
+      "n": 2003,
+      "url": "https://www.hd-hyundaiengine.com/en/engine/generator-detail/12",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| model | DP086LA",
+        "| Maximum Rating | 253 kWm",
+        "| kWm @ rpm 50Hz Prime | 201 @ 1,500",
+        "| kWm @ rpm 50Hz Standby | 224 @ 1,500"
+      ],
+      "file": "sources/hd-hyundai-infracore/2003.md",
+      "official": false
+    },
+    {
+      "n": 2004,
+      "url": "https://www.hd-hyundaiengine.com/en/engine/generator-detail/13",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| model | P126TI",
+        "| Maximum Rating | 298 kWm",
+        "| kWm @ rpm 50Hz Prime | 241 @ 1,500",
+        "| kWm @ rpm 50Hz Standby | 272 @ 1,500"
+      ],
+      "file": "sources/hd-hyundai-infracore/2004.md",
+      "official": false
+    },
+    {
+      "n": 2005,
+      "url": "https://www.hd-hyundaiengine.com/en/engine/generator-detail/16",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| model | DP126LB",
+        "| Maximum Rating | 402 kWm",
+        "| kWm @ rpm 50Hz Prime | 327 @ 1,500",
+        "| kWm @ rpm 50Hz Standby | 362 @ 1,500"
+      ],
+      "file": "sources/hd-hyundai-infracore/2005.md",
+      "official": false
+    },
+    {
+      "n": 2006,
+      "url": "https://www.hd-hyundaiengine.com/en/engine/generator-detail/25",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| model | P158LE",
+        "| Maximum Rating | 458 kWm",
+        "| kWm @ rpm 50Hz Prime | 363 @ 1,500",
+        "| kWm @ rpm 50Hz Standby | 414 @ 1,500"
+      ],
+      "file": "sources/hd-hyundai-infracore/2006.md",
+      "official": false
+    },
+    {
+      "n": 2007,
+      "url": "https://www.hd-hyundaiengine.com/en/engine/generator-detail/26",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| model | DP158LC",
+        "| Maximum Rating | 513 kWm",
+        "| kWm @ rpm 50Hz Prime | 408 @ 1,500",
+        "| kWm @ rpm 50Hz Standby | 449 @ 1,500"
+      ],
+      "file": "sources/hd-hyundai-infracore/2007.md",
+      "official": false
+    },
+    {
+      "n": 2008,
+      "url": "https://www.hd-hyundaiengine.com/en/engine/generator-detail/28",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| model | DP180LA",
+        "| Maximum Rating | 615 kWm",
+        "| kWm @ rpm 50Hz Prime | 502 @ 1,500",
+        "| kWm @ rpm 50Hz Standby | 552 @ 1,500"
+      ],
+      "file": "sources/hd-hyundai-infracore/2008.md",
+      "official": false
+    },
+    {
+      "n": 2009,
+      "url": "https://www.hd-hyundaiengine.com/en/engine/generator-detail/29",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| model | DP180LB",
+        "| Maximum Rating | 661 kWm",
+        "| kWm @ rpm 50Hz Prime | 556 @ 1,500",
+        "| kWm @ rpm 50Hz Standby | 612 @ 1,500"
+      ],
+      "file": "sources/hd-hyundai-infracore/2009.md",
+      "official": false
+    },
+    {
+      "n": 2010,
+      "url": "https://www.hd-hyundaiengine.com/en/engine/generator-detail/30",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| model | DP222LA",
+        "| Maximum Rating | 737 kWm",
+        "| kWm @ rpm 50Hz Prime | -",
+        "| kWm @ rpm 50Hz Standby | -"
+      ],
+      "file": "sources/hd-hyundai-infracore/2010.md",
+      "official": false
+    },
+    {
+      "n": 2011,
+      "url": "https://www.hd-hyundaiengine.com/en/engine/generator-detail/32",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| model | DP222LC",
+        "| Maximum Rating | 828 kWm",
+        "| kWm @ rpm 50Hz Prime | 657 @ 1,500",
+        "| kWm @ rpm 50Hz Standby | 723 @ 1,500"
+      ],
+      "file": "sources/hd-hyundai-infracore/2011.md",
+      "official": false
+    },
+    {
+      "n": 2012,
+      "url": "https://www.hd-hyundaiengine.com/en/engine/generator-detail/35",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| model | DX22 (DP222CC)",
+        "| Maximum Rating | 995 kWm",
+        "| kWm @ rpm 50Hz Prime | 790 @ 1,500",
+        "| kWm @ rpm 50Hz Standby | 875 @ 1,500"
+      ],
+      "file": "sources/hd-hyundai-infracore/2012.md",
+      "official": false
+    },
+    {
+      "n": 2013,
+      "url": "https://www.hd-hyundaiengine.com/en/engine/generator-detail/218",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| model | DX37 (DP372CC)",
+        "| Maximum Rating | 1,420 kWm",
+        "| kWm @ rpm 50Hz Prime | 1,127 @ 1500",
+        "| kWm @ rpm 50Hz Standby | 1,240 @ 1500"
+      ],
+      "file": "sources/hd-hyundai-infracore/2013.md",
+      "official": false
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "DP158LD generator diesel engine – Specifications (HD CE engine site)",
+      "header": [
+        "| model | DP158LD"
+      ],
+      "rows": [
+        "| Cylinder | V8",
+        "| Displacement | 14.6 ℓ",
+        "| Maximum Rating | 556 kWm",
+        "| Minimum Rating | 464 kWm",
+        "| Aspiration | Turbo Charger & Inter Cooler",
+        "| Bore x Stroke | 128 x 142 mm",
+        "| kWm @ rpm 50Hz Standby | 510 @ 1,500",
+        "| kWm @ rpm 50Hz Prime | 464 @ 1,500",
+        "| kWm @ rpm 60Hz Standby | 556 @ 1,800",
+        "| kWm @ rpm 60Hz Prime | 505 @ 1,800",
+        "| Dimension (L × W × H) | 1,381 x 1,138 x 1,207 mm",
+        "| Dry Weight | 1,155 kg",
+        "| Emissions | Unregulated"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "P086TI generator diesel engine – Specifications (HD CE engine site)",
+      "header": [
+        "| model | P086TI"
+      ],
+      "rows": [
+        "| Cylinder | L6",
+        "| Displacement | 8.1 ℓ`",
+        "| Maximum Rating | 223 kWm",
+        "| Minimum Rating | 177 kWm",
+        "| Aspiration | Turbo Charger & Inter Cooler",
+        "| Bore x Stroke | 111 x 139 mm",
+        "| kWm @ rpm 50Hz Standby | 199 @ 1,500",
+        "| kWm @ rpm 50Hz Prime | 177 @ 1,500",
+        "| kWm @ rpm 60Hz Standby | 223 @ 1,800",
+        "| kWm @ rpm 60Hz Prime | 205 @ 1,800",
+        "| Dimension (L × W × H) | 1,242 x 923 x 1,095 mm",
+        "| Dry Weight | 790 kg",
+        "| Emissions | Unregulated"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "DP086LA generator diesel engine – Specifications (HD CE engine site)",
+      "header": [
+        "| model | DP086LA"
+      ],
+      "rows": [
+        "| Cylinder | L6",
+        "| Displacement | 8.1 ℓ",
+        "| Maximum Rating | 253 kWm",
+        "| Minimum Rating | 201 kWm",
+        "| Aspiration | Turbo Charger & Inter Cooler",
+        "| Bore x Stroke | 111 x 139 mm",
+        "| kWm @ rpm 50Hz Standby | 224 @ 1,500",
+        "| kWm @ rpm 50Hz Prime | 201 @ 1,500",
+        "| kWm @ rpm 60Hz Standby | 253 @ 1,800",
+        "| kWm @ rpm 60Hz Prime | 228 @ 1,800",
+        "| Dimension (L × W × H) | 1,242 x 1,122 x 1,113 mm",
+        "| Dry Weight | 790 kg",
+        "| Emissions | Unregulated"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "P126TI generator diesel engine – Specifications (HD CE engine site)",
+      "header": [
+        "| model | P126TI"
+      ],
+      "rows": [
+        "| Cylinder | L6",
+        "| Displacement | 11.1 ℓ",
+        "| Maximum Rating | 298 kWm",
+        "| Minimum Rating | 241 kWm",
+        "| Aspiration | Turbo Charger & Inter Cooler",
+        "| Bore x Stroke | 123 x 155 mm",
+        "| kWm @ rpm 50Hz Standby | 272 @ 1,500",
+        "| kWm @ rpm 50Hz Prime | 241 @ 1,500",
+        "| kWm @ rpm 60Hz Standby | 298 @ 1,800",
+        "| kWm @ rpm 60Hz Prime | 278 @ 1,800",
+        "| Dimension (L × W × H) | 1,384 x 1,109 x 1,195 mm",
+        "| Dry Weight | 910 kg",
+        "| Emissions | Unregulated"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "DP126LB generator diesel engine – Specifications (HD CE engine site)",
+      "header": [
+        "| model | DP126LB"
+      ],
+      "rows": [
+        "| Cylinder | L6",
+        "| Displacement | 11.1 ℓ",
+        "| Maximum Rating | 402 kWm",
+        "| Minimum Rating | 327 kWm",
+        "| Aspiration | Turbo Charger & Inter Cooler",
+        "| Bore x Stroke | 123 x 155 mm",
+        "| kWm @ rpm 50Hz Standby | 362 @ 1,500",
+        "| kWm @ rpm 50Hz Prime | 327 @ 1,500",
+        "| kWm @ rpm 60Hz Standby | 402 @ 1,800",
+        "| kWm @ rpm 60Hz Prime | 366 @ 1,800",
+        "| Dimension (L × W × H) | 1,426 x 1,096 x 1,295 mm",
+        "| Dry Weight | 1,008 kg",
+        "| Emissions | Unregulated"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "P158LE generator diesel engine – Specifications (HD CE engine site)",
+      "header": [
+        "| model | P158LE"
+      ],
+      "rows": [
+        "| Cylinder | V8",
+        "| Displacement | 14.6 ℓ",
+        "| Maximum Rating | 458 kWm",
+        "| Minimum Rating | 363 kWm",
+        "| Aspiration | Turbo Charger & Inter Cooler",
+        "| Bore x Stroke | 128 x 142 mm",
+        "| kWm @ rpm 50Hz Standby | 414 @ 1,500",
+        "| kWm @ rpm 50Hz Prime | 363 @ 1,500",
+        "| kWm @ rpm 60Hz Standby | 458 @ 1,800",
+        "| kWm @ rpm 60Hz Prime | 402 @ 1,800",
+        "| Dimension (L × W × H) | 1,389 x 1,389 x 1,216 mm",
+        "| Dry Weight | 950 kg",
+        "| Emissions | Unregulated"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "DP158LC generator diesel engine – Specifications (HD CE engine site)",
+      "header": [
+        "| model | DP158LC"
+      ],
+      "rows": [
+        "| Cylinder | V8",
+        "| Displacement | 14.6 ℓ",
+        "| Maximum Rating | 513 kWm",
+        "| Minimum Rating | 408 kWm",
+        "| Aspiration | Turbo Charger & Inter Cooler",
+        "| Bore x Stroke | 128 x 142 mm",
+        "| kWm @ rpm 50Hz Standby | 449 @ 1,500",
+        "| kWm @ rpm 50Hz Prime | 408 @ 1,500",
+        "| kWm @ rpm 60Hz Standby | 513 @ 1,800",
+        "| kWm @ rpm 60Hz Prime | 466 @ 1,800",
+        "| Dimension (L × W × H) | 1,381 x 1,138 x 1,207 mm",
+        "| Dry Weight | 1,155 kg",
+        "| Emissions | Unregulated"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "DP180LA generator diesel engine – Specifications (HD CE engine site)",
+      "header": [
+        "| model | DP180LA"
+      ],
+      "rows": [
+        "| Cylinder | V10",
+        "| Displacement | 18.3 ℓ",
+        "| Maximum Rating | 615 kWm",
+        "| Minimum Rating | 502 kWm",
+        "| Aspiration | Turbo Charger & Inter Cooler",
+        "| Bore x Stroke | 128 x 142 mm",
+        "| kWm @ rpm 50Hz Standby | 552 @ 1,500",
+        "| kWm @ rpm 50Hz Prime | 502 @ 1,500",
+        "| kWm @ rpm 60Hz Standby | 615 @ 1,800",
+        "| kWm @ rpm 60Hz Prime | 559 @ 1,800",
+        "| Dimension (L × W × H) | 1,594 x 1,389 x 1,223 mm",
+        "| Dry Weight | 1,250 kg",
+        "| Emissions | Unregulated"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "DP180LB generator diesel engine – Specifications (HD CE engine site)",
+      "header": [
+        "| model | DP180LB"
+      ],
+      "rows": [
+        "| Cylinder | V10",
+        "| Displacement | 18.3 ℓ",
+        "| Maximum Rating | 661 kWm",
+        "| Minimum Rating | 556 kWm",
+        "| Aspiration | Turbo Charger & Inter Cooler",
+        "| Bore x Stroke | 128 x 142 mm",
+        "| kWm @ rpm 50Hz Standby | 612 @ 1,500",
+        "| kWm @ rpm 50Hz Prime | 556 @ 1,500",
+        "| kWm @ rpm 60Hz Standby | 661 @ 1,800",
+        "| kWm @ rpm 60Hz Prime | 601 @ 1,800",
+        "| Dimension (L × W × H) | 1,594 x 1,389 x 1,223 mm",
+        "| Dry Weight | 1,250 kg",
+        "| Emissions | Unregulated"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "DP222LA generator diesel engine – Specifications (HD CE engine site)",
+      "header": [
+        "| model | DP222LA"
+      ],
+      "rows": [
+        "| Cylinder | V12",
+        "| Displacement | 21.9 ℓ",
+        "| Maximum Rating | 737 kWm",
+        "| Minimum Rating | 670 kWm",
+        "| Aspiration | Turbo Charger & Inter Cooler",
+        "| Bore x Stroke | 128 x 142 mm",
+        "| kWm @ rpm 50Hz Standby | -",
+        "| kWm @ rpm 50Hz Prime | -",
+        "| kWm @ rpm 60Hz Standby | 737 @ 1,800",
+        "| kWm @ rpm 60Hz Prime | 670 @ 1,800",
+        "| Dimension (L × W × H) | 1,738 x 1,389 x 1,258 mm",
+        "| Dry Weight | 1,420 kg",
+        "| Emissions | Unregulated"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "DP222LC generator diesel engine – Specifications (HD CE engine site)",
+      "header": [
+        "| model | DP222LC"
+      ],
+      "rows": [
+        "| Cylinder | V12",
+        "| Displacement | 21.9 ℓ",
+        "| Maximum Rating | 828 kWm",
+        "| Minimum Rating | 657 kWm",
+        "| Aspiration | Turbo Charger & Inter Cooler",
+        "| Bore x Stroke | 128 x 142 mm",
+        "| kWm @ rpm 50Hz Standby | 723 @ 1,500",
+        "| kWm @ rpm 50Hz Prime | 657 @ 1,500",
+        "| kWm @ rpm 60Hz Standby | 828 @ 1,800",
+        "| kWm @ rpm 60Hz Prime | 753 @ 1,800",
+        "| Dimension (L × W × H) | 1,738 x 1,389 x 1,258 mm",
+        "| Dry Weight | 1,420 kg",
+        "| Emissions | Unregulated"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "DX22 (DP222CC) generator diesel engine – Specifications (HD CE engine site)",
+      "header": [
+        "| model | DX22 (DP222CC)"
+      ],
+      "rows": [
+        "| Cylinder | V12",
+        "| Displacement | 21.9 ℓ",
+        "| Maximum Rating | 995 kWm",
+        "| Minimum Rating | 790 kWm",
+        "| Aspiration | Turbo Charger & Inter Cooler",
+        "| Bore x Stroke | 128 x 142 mm",
+        "| kWm @ rpm 50Hz Standby | 875 @ 1,500",
+        "| kWm @ rpm 50Hz Prime | 790 @ 1,500",
+        "| kWm @ rpm 60Hz Standby | 995 @ 1,800",
+        "| kWm @ rpm 60Hz Prime | 900 @ 1,800",
+        "| Dimension (L × W × H) | 1,658 x 1,593 x 1,701 mm",
+        "| Dry Weight | 1,676 kg",
+        "| Emissions | Unregulated"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "DX37 (DP372CC) generator diesel engine – Specifications (HD CE engine site)",
+      "header": [
+        "| model | DX37 (DP372CC)"
+      ],
+      "rows": [
+        "| Cylinder | V12",
+        "| Displacement | 36.9ℓ",
+        "| Maximum Rating | 1,420 kWm",
+        "| Minimum Rating | 1,127 kWm",
+        "| Aspiration | Turbo Charger & Inter Cooler",
+        "| Bore x Stroke | 147 x 181 mm",
+        "| kWm @ rpm 50Hz Standby | 1,240 @ 1500",
+        "| kWm @ rpm 50Hz Prime | 1,127 @ 1500",
+        "| kWm @ rpm 60Hz Standby | 1,420 @ 1800",
+        "| kWm @ rpm 60Hz Prime | 1,291 @ 1800",
+        "| Dimension (L × W × H) | 3,018 x 2,189 x 2,197 mm (with Radiator)",
+        "| Dry Weight | 4,500 kg",
+        "| Emissions | Unregulated"
+      ]
+    }
+  ]
 }
