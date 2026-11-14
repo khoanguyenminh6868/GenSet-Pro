@@ -69,6 +69,250 @@
       "src": [
         2
       ]
+    },
+    {
+      "kind": "alternator",
+      "series": "KAL164 series (4 poles, AC brushless)",
+      "fuel": null,
+      "power": {
+        "min": 11,
+        "max": 17.5,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ],
+      "alternatorMakes": [
+        "KWISE"
+      ],
+      "alternatorModels": [
+        "KAL164B1",
+        "KAL164C2",
+        "KAL164D2",
+        "KAL164E2"
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "KAL184 series (4 poles, AC brushless)",
+      "fuel": null,
+      "power": {
+        "min": 20,
+        "max": 42.5,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ],
+      "alternatorMakes": [
+        "KWISE"
+      ],
+      "alternatorModels": [
+        "KAL184A1",
+        "KAL184B1",
+        "KAL184C2",
+        "KAL184D2",
+        "KAL184E3",
+        "KAL184F4",
+        "KAL184G4",
+        "KAL184H5",
+        "KAL184K5"
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "KAL224 series (4 poles, AC brushless)",
+      "fuel": null,
+      "power": {
+        "min": 40,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ],
+      "alternatorMakes": [
+        "KWISE"
+      ],
+      "alternatorModels": [
+        "KAL224A1",
+        "KAL224B1",
+        "KAL224C1",
+        "KAL224D2",
+        "KAL224E2",
+        "KAL224F3",
+        "KAL224G3",
+        "KAL224H4",
+        "KAL224K4",
+        "KAL224L5",
+        "KAL224M5"
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "KAL274 series (4 poles, AC brushless)",
+      "fuel": null,
+      "power": {
+        "min": 100,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ],
+      "alternatorMakes": [
+        "KWISE"
+      ],
+      "alternatorModels": [
+        "KAL274A1",
+        "KAL274B2",
+        "KAL274C2",
+        "KAL274D3",
+        "KAL274E3",
+        "KAL274F4",
+        "KAL274G4",
+        "KAL274H5",
+        "KAL274K5",
+        "KAL274L6",
+        "KAL274M7"
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "KAL314 series (4 poles, AC brushless)",
+      "fuel": null,
+      "power": {
+        "min": 250,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ],
+      "alternatorMakes": [
+        "KWISE"
+      ],
+      "alternatorModels": [
+        "KAL314A1",
+        "KAL314B1",
+        "KAL314C2",
+        "KAL314D2",
+        "KAL314E2",
+        "KAL314F3",
+        "KAL314G3",
+        "KAL314H4",
+        "KAL314K5"
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "KAL354 series (4 poles, AC brushless)",
+      "fuel": null,
+      "power": {
+        "min": 450,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ],
+      "alternatorMakes": [
+        "KWISE"
+      ],
+      "alternatorModels": [
+        "KAL354A1",
+        "KAL354B1",
+        "KAL354C2",
+        "KAL354D3",
+        "KAL354E3",
+        "KAL354F4",
+        "KAL354G4",
+        "KAL354H5"
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "KAL404 series (4 poles, AC brushless)",
+      "fuel": null,
+      "power": {
+        "min": 750,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ],
+      "alternatorMakes": [
+        "KWISE"
+      ],
+      "alternatorModels": [
+        "KAL404A1",
+        "KAL404B1",
+        "KAL404C2",
+        "KAL404D2",
+        "KAL404E3",
+        "KAL404F3",
+        "KAL404G4",
+        "KAL404H4"
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "KAL454 series (4 poles, AC brushless)",
+      "fuel": null,
+      "power": {
+        "min": 1400,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ],
+      "alternatorMakes": [
+        "KWISE"
+      ],
+      "alternatorModels": [
+        "KAL454A1",
+        "KAL454B1",
+        "KAL454C2",
+        "KAL454D2",
+        "KAL454E3",
+        "KAL454F4",
+        "KAL454G5",
+        "KAL454H5"
+      ]
     }
   ],
   "certifications": [],
@@ -95,9 +339,271 @@
         "| 50/60Hz | 6300V 10500V 13800V | 4/6/8/10 poles | 300-4000KW 375-5000kVA |"
       ],
       "file": "sources/kwise-generator/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://kwisegenerator.com/wp-content/uploads/2023/05/KAL164-series-generator%E2%80%98s-technical-data-sheet-Rev.B.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "KAL164 Series",
+        "6.5kW - 14 kW",
+        "KAL164B1      kVA        11      11         11     10.5      12.5    12.5        12.5     11.5  7.5   8.8",
+        "KAL164E2      kVA        17.5    17.5       17.5   16.6      19.6    19.6        19.6     18.3  11.9  14.0"
+      ],
+      "file": "sources/kwise-generator/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://kwisegenerator.com/wp-content/uploads/2023/06/KAL184-series-generator%E2%80%98s-technical-data-sheet-Rev.B.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "KAL184 Series",
+        "16kW - 34 kW",
+        "KAL184A1      kVA        20      20         20     19        22.4    22.4        22.4     20.9  13.6     16",
+        "KAL184K5      kVA        42.5    42.5       42.5   40        47.6    47.6        47.6     44.4  29       34"
+      ],
+      "file": "sources/kwise-generator/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://kwisegenerator.com/wp-content/uploads/2023/06/KAL224-series-generator%E2%80%98s-technical-data-sheet-Rev.B.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "KAL224 Series",
+        "32kW - 80 kW",
+        "KAL224A1      kVA        40      40               40        38      45           45            45   42",
+        "KAL224M5      kVA        100     100              100       95      112          112       112      105"
+      ],
+      "file": "sources/kwise-generator/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://kwisegenerator.com/wp-content/uploads/2023/06/KAL274-series-generator%E2%80%98s-technical-data-sheet-Rev.B.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "KAL274 Series",
+        "80kW - 200 kW",
+        "KAL274A1      kVA        100     100              100       95      112          112       112      105",
+        "KAL274M7      kVA        250     250              250       238     280          280       280      261"
+      ],
+      "file": "sources/kwise-generator/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://kwisegenerator.com/wp-content/uploads/2023/06/KAL314-series-generator%E2%80%98s-technical-data-sheet-Rev.B.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "KAL314 Series",
+        "200kW - 360 kW",
+        "KAL314A1      kVA       250     250              250       238   280           280         280      261",
+        "KAL314K5      kVA       450     450              450       428   504           504         504      470"
+      ],
+      "file": "sources/kwise-generator/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://kwisegenerator.com/wp-content/uploads/2023/06/KAL354-series-generator%E2%80%98s-technical-data-sheet-Rev.B.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "KAL354 Series",
+        "360kW - 600 kW",
+        "KAL354A1      kVA      450          450       450       428         504    504         504      470",
+        "KAL354H5      kVA      750          750       750       713         840    840         840      784"
+      ],
+      "file": "sources/kwise-generator/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://kwisegenerator.com/wp-content/uploads/2023/06/KAL404-series-generator%E2%80%98s-technical-data-sheet-Rev.B.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "KAL404 Series",
+        "600kW - 1200 kW",
+        "KAL404A1      kVA      750          750       750       713         840    840         840      784",
+        "KAL404H4      kVA      1500         1500      1500      1425        1680   1680        1680     1568"
+      ],
+      "file": "sources/kwise-generator/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://kwisegenerator.com/wp-content/uploads/2023/06/KAL454-series-generator%E2%80%98s-technical-data-sheet-Rev.B.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "KAL454 Series",
+        "1120kW - 2000 kW",
+        "KAL454A1      kVA      1400         1400      1400      1330        1568   1568        1568     1463",
+        "KAL454H5      kVA      2500         2500      2500      2375        2800   2800        2800     2613"
+      ],
+      "file": "sources/kwise-generator/2008.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "claude-code"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "KAL164 – 50Hz/1500RPM, PF 0.8, Cont./125K/40℃ và Standby/163K/27℃ (kVA)",
+      "header": [
+        "50Hz/1500RPM                           Standard Winding      / Power Factor 0.8                 Special winding",
+        "Y          380V    400V       415V   440V      380V    400V        415V     440V  220V/230V/240V"
+      ],
+      "rows": [
+        "KAL164B1      kVA        11      11         11     10.5      12.5    12.5        12.5     11.5  7.5   8.8",
+        "KAL164C2      kVA        13.5    13.5       13.5   12.8      15.1    15.1        15.1     14.1  9.2   10.8",
+        "KAL164D2      kVA        16      16         16     15.2      17.9    17.9        17.9     16.7  10.9  12.8",
+        "KAL164E2      kVA        17.5    17.5       17.5   16.6      19.6    19.6        19.6     18.3  11.9  14.0"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "KAL184 – 50Hz/1500RPM, PF 0.8, Cont./125K/40℃ và Standby/163K/27℃ (kVA)",
+      "header": [
+        "50Hz/1500RPM                           Standard Winding      / Power Factor 0.8                 Special winding",
+        "Y          380V    400V       415V   440V      380V    400V        415V     440V  220V/230V/240V"
+      ],
+      "rows": [
+        "KAL184A1      kVA        20      20         20     19        22.4    22.4        22.4     20.9  13.6     16",
+        "KAL184B1      kVA        22.5    22.5       22.5   21.4      25      25          25       23.5  15.3     18",
+        "KAL184C2      kVA        25      25         25     23.8      28      28          28       26    17       20",
+        "KAL184D2      kVA        27.5    27.5       27.5   26        30.8    30.8        30.8     28.7  18.7     22",
+        "KAL184E3      kVA        31      31         31     30        35      35          35       32.7  21.3     25",
+        "KAL184F4      kVA        35      35         35     33.3      39.2    39.2        39.2     36.6  23.8     28",
+        "KAL184G4      kVA        37.5    37.5       37.5   35.6      42      42          42       39    25.5     30",
+        "KAL184H5      kVA        40      40         40     38        44.8    44.8        44.8     41.8  27       32",
+        "KAL184K5      kVA        42.5    42.5       42.5   40        47.6    47.6        47.6     44.4  29       34"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "KAL224 – 50Hz/1500RPM, PF 0.8, Cont./125K/40℃ và Standby/163K/27℃ (kVA)",
+      "header": [
+        "50Hz/1500RPM                                      Standard  Winding / Power Factor 0.8",
+        "Y          380V    400V             415V      440V    380V         400V      415V     440V"
+      ],
+      "rows": [
+        "KAL224A1      kVA        40      40               40        38      45           45            45   42",
+        "KAL224B1      kVA        43      43               43        40      48           48            48   44",
+        "KAL224C1      kVA        50      50               50        48      56           56            56   52",
+        "KAL224D2      kVA        56      56               56        53      63           63            63   59",
+        "KAL224E2      kVA        63      63               63        59      70           70            70   65",
+        "KAL224F3      kVA        68      68               68        64      76           76            76   71",
+        "KAL224G3      kVA        73      73               73        69      81           81            81   76",
+        "KAL224H4      kVA        80      80               80        76      90           90            90   84",
+        "KAL224K4      kVA        85      85               85        81      95           95            95   89",
+        "KAL224L5      kVA        94      94               94        89      105          105       105      98",
+        "KAL224M5      kVA        100     100              100       95      112          112       112      105"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "KAL274 – 50Hz/1500RPM, PF 0.8, Cont./125K/40℃ và Standby/163K/27℃ (kVA)",
+      "header": [
+        "50Hz/1500RPM                                      Standard  Winding / Power Factor 0.8",
+        "Y          380V    400V             415V      440V    380V         400V      415V     440V"
+      ],
+      "rows": [
+        "KAL274A1      kVA        100     100              100       95      112          112       112      105",
+        "KAL274B2      kVA        113     113              113       107     126          126       126      118",
+        "KAL274C2      kVA        125     125              125       119     140          140       140      131",
+        "KAL274D3      kVA        140     140              140       133     157          157       157      146",
+        "KAL274E3      kVA        150     150              150       143     168          168       168      157",
+        "KAL274F4      kVA        160     160              160       152     179          179       179      167",
+        "KAL274G4      kVA        175     175              175       166     196          196       196      183",
+        "KAL274H5      kVA        188     188              188       178     210          210       210      196",
+        "KAL274K5      kVA        200     200              200       190     224          224       224      209",
+        "KAL274L6      kVA        225     225              225       214     252          252       252      235",
+        "KAL274M7      kVA        250     250              250       238     280          280       280      261"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "KAL314 – 50Hz/1500RPM, PF 0.8, Cont./125K/40℃ và Standby/163K/27℃ (kVA)",
+      "header": [
+        "50Hz/1500RPM                                     Standard Winding / Power      Factor 0.8",
+        "Y         380V    400V             415V      440V  380V          400V        415V     440V"
+      ],
+      "rows": [
+        "KAL314A1      kVA       250     250              250       238   280           280         280      261",
+        "KAL314B1      kVA       275     275              275       261   308           308         308      287",
+        "KAL314C2      kVA       300     300              300       285   336           336         336      314",
+        "KAL314D2      kVA       313     313              313       297   350           350         350      327",
+        "KAL314E2      kVA       325     325              325       309   364           364         364      340",
+        "KAL314F3      kVA       350     350              350       333   392           392         392      366",
+        "KAL314G3      kVA       375     375              375       356   420           420         420      392",
+        "KAL314H4      kVA       400     400              400       380   448           448         448      418",
+        "KAL314K5      kVA       450     450              450       428   504           504         504      470"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "KAL354 – 50Hz/1500RPM, PF 0.8, Cont./125K/40℃ và Standby/163K/27℃ (kVA)",
+      "header": [
+        "50Hz/1500RPM                                  Standard  Winding  /  Power  Factor 0.8",
+        "Voltage       Y        380V         400V      415V      440V        380V   400V        415V     440V"
+      ],
+      "rows": [
+        "KAL354A1      kVA      450          450       450       428         504    504         504      470",
+        "KAL354B1      kVA      500          500       500       475         560    560         560      523",
+        "KAL354C2      kVA      563          563       563       534         630    630         630      588",
+        "KAL354D3      kVA      600          600       600       570         672    672         672      627",
+        "KAL354E3      kVA      625          625       625       594         700    700         700      653",
+        "KAL354F4      kVA      675          675       675       641         756    756         756      705",
+        "KAL354G4      kVA      700          700       700       665         784    784         784      732",
+        "KAL354H5      kVA      750          750       750       713         840    840         840      784"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "KAL404 – 50Hz/1500RPM, PF 0.8, Cont./125K/40℃ và Standby/163K/27℃ (kVA)",
+      "header": [
+        "50Hz/1500RPM                                  Standard  Winding  /  Power  Factor 0.8",
+        "Voltage       Y        380V         400V      415V      440V        380V   400V        415V     440V"
+      ],
+      "rows": [
+        "KAL404A1      kVA      750          750       750       713         840    840         840      784",
+        "KAL404B1      kVA      800          800       800       760         896    896         896      836",
+        "KAL404C2      kVA      910          910       910       865         1019   1019        1019     951",
+        "KAL404D2      kVA      1000         1000      1000      950         1120   1120        1120     1045",
+        "KAL404E3      kVA      1125         1125      1125      1069        1260   1260        1260     1176",
+        "KAL404F3      kVA      1250         1250      1250      1188        1400   1400        1400     1306",
+        "KAL404G4      kVA      1375         1375      1375      1306        1540   1540        1540     1437",
+        "KAL404H4      kVA      1500         1500      1500      1425        1680   1680        1680     1568"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "KAL454 – 50Hz/1500RPM, PF 0.8, Cont./125K/40℃ và Standby/163K/27℃ (kVA)",
+      "header": [
+        "50Hz/1500RPM                                  Standard  Winding  /  Power  Factor 0.8",
+        "Voltage       Y        380V         400V      415V      440V        380V   400V        415V     440V"
+      ],
+      "rows": [
+        "KAL454A1      kVA      1400         1400      1400      1330        1568   1568        1568     1463",
+        "KAL454B1      kVA      1563         1563      1563      1484        1750   1750        1750     1633",
+        "KAL454C2      kVA      1688         1688      1688      1603        1890   1890        1890     1763",
+        "KAL454D2      kVA      1900         1900      1900      1805        2128   2128        2128     1986",
+        "KAL454E3      kVA      2063         2063      2063      1959        2310   2310        2310     2155",
+        "KAL454F4      kVA      2250         2250      2250      2138        2520   2520        2520     2351",
+        "KAL454G5      kVA      2375         2375      2375      2256        2660   2660        2660     2482",
+        "KAL454H5      kVA      2500         2500      2500      2375        2800   2800        2800     2613"
+      ]
+    }
+  ]
 }
