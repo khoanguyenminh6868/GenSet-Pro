@@ -71,6 +71,73 @@
       "src": [
         1
       ]
+    },
+    {
+      "fuel": "diesel",
+      "kind": "genset",
+      "series": "SD-SC (H / D / E / G / W series engine)",
+      "power": {
+        "min": 69,
+        "max": 900,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "engineMakes": [
+        "SDEC"
+      ],
+      "src": [
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2007
+      ]
+    },
+    {
+      "fuel": "diesel",
+      "kind": "genset",
+      "series": "SME (SR series, D…MG)",
+      "power": {
+        "min": 550,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001,
+        2006
+      ]
+    },
+    {
+      "fuel": "diesel",
+      "kind": "engine",
+      "series": "Engine for Genset Z / H / D / E / G / K / W / VK",
+      "power": {
+        "min": 10,
+        "max": 2010,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "engineMakes": [
+        "SDEC"
+      ],
+      "src": [
+        2008,
+        2009,
+        2010,
+        2011,
+        2012
+      ]
     }
   ],
   "certifications": [],
@@ -99,9 +166,323 @@
         "35W▲ 功率范围： 660~970kW"
       ],
       "file": "sources/sdec/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://sdeciepower.com/Generator.htm",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "SD-SC Open Type Diesel Generator (69 - 900KVA)",
+        "SME Diesel Generator (550 - 2000KVA)",
+        "SME diesel generators produced by SDEC are powered by R series engines"
+      ],
+      "file": "sources/sdec/2001.md",
+      "official": false
+    },
+    {
+      "n": 2002,
+      "url": "https://sdeciepower.com/2018/3-1-d-series-diesel-generator-set.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "SDEC Engine D Series Diesel Generator Set"
+      ],
+      "file": "sources/sdec/2002.md",
+      "official": false
+    },
+    {
+      "n": 2003,
+      "url": "https://sdeciepower.com/2018/3-2-e-series-diesel-generator-set.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "SDEC Engine E Series Diesel Generator Set"
+      ],
+      "file": "sources/sdec/2003.md",
+      "official": false
+    },
+    {
+      "n": 2004,
+      "url": "https://sdeciepower.com/2018/3-3-g-series-diesel-generator-set.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "SDEC Engine G Series Diesel Generator Set"
+      ],
+      "file": "sources/sdec/2004.md",
+      "official": false
+    },
+    {
+      "n": 2005,
+      "url": "https://sdeciepower.com/2018/3-4-h-series-diesel-generator-set.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "SDEC Engine H Series Diesel Generator Set"
+      ],
+      "file": "sources/sdec/2005.md",
+      "official": false
+    },
+    {
+      "n": 2006,
+      "url": "https://sdeciepower.com/2018/3-5-sr-series-diesel-generator-set.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "SDEC Engine SR Series Diesel Generator Set"
+      ],
+      "file": "sources/sdec/2006.md",
+      "official": false
+    },
+    {
+      "n": 2007,
+      "url": "https://sdeciepower.com/2018/3-6-w-series-diesel-generator-set.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "SDEC Engine W Series Diesel Generator Set"
+      ],
+      "file": "sources/sdec/2007.md",
+      "official": false
+    },
+    {
+      "n": 2008,
+      "url": "https://sdeciepower.com/2018/1-industrial-diesel-engines.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Power range: 10-81kW",
+        "Rated Power: 1160-2010kW"
+      ],
+      "file": "sources/sdec/2008.md",
+      "official": false
+    },
+    {
+      "n": 2009,
+      "url": "https://sdeciepower.com/2018/1-6-k-series-industrial-diesel-engine.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Model | 6KTAA25 (G33-G311) | 6KTAA25 (G31-G321)"
+      ],
+      "file": "sources/sdec/2009.md",
+      "official": false
+    },
+    {
+      "n": 2010,
+      "url": "https://sdeciepower.com/2018/1-4-w-series-industrial-diesel-engine.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Model | 6WTAA35 (G31-G311)"
+      ],
+      "file": "sources/sdec/2010.md",
+      "official": false
+    },
+    {
+      "n": 2011,
+      "url": "https://sdeciepower.com/2018/1-1-e-series-industrial-diesel-engine.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Model | SC10E (350-380D2) | SC12E (420-460D2) | SC13E (500-550D2) | 6ETAA11.8 (G31-G33) | 6ETAA12.8 (G30-G32)"
+      ],
+      "file": "sources/sdec/2011.md",
+      "official": false
+    },
+    {
+      "n": 2012,
+      "url": "https://sdeciepower.com/2018/1-8-vk-series-diesel-engine-for-genset.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Rated Power | kW | 2010 | 1850 | 1720 | 1560 | 1420 | 1280 | 1160 | 1560"
+      ],
+      "file": "sources/sdec/2012.md",
+      "official": false
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 2002,
+      "title": "SDEC D series genset (SD-SC200 / SD-SC250)",
+      "header": [
+        "| Genset model | Genset rated power kW | Genset standby power kW | Engine Model | Engine Rated Power kW | Type of governor | Rated current A | Rated speed | Dimensions mm | Weight kg"
+      ],
+      "rows": [
+        "| SD-SC200 | 160 | 176 | SC9D280D2 | 185 | Electronic speed controller | 289 | 1500 | 2515×980×1500 | 1520",
+        "| SD-SC250 | 200 | 220 | SC9D340D2 | 228 | Electronic speed controller | 361 | 1500 | 2706×1040×1486 | 1750"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "SDEC E series genset (SD-SC325)",
+      "header": [
+        "| Genset model | Genset rated power kW | Genset standby power kW | Engine Model | Engine Rated Power kW | Type of governor | Rated current A | Rated speed | Dimensions mm | Weight kg"
+      ],
+      "rows": [
+        "| SD-SC325 | | 300 | SC12E460D2 | 307 | Electronic speed controller | 492 | 1500 | 3175×1100×1595 | 2900"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "SDEC G series genset (SD-SC313 – SD-SC682)",
+      "header": [
+        "| Genset model | Genset rated power kW | Genset standby power kW | Engine Model | Engine Rated Power kW | Type of governor | Rated current A | Rated speed | Dimensions mm | Weight kg"
+      ],
+      "rows": [
+        "| SD-SC313 | 250 | 275 | SC13G420D2 | 280 | Electronic speed controller | 451 | 1500 | 3156×1230×1674 | 2850",
+        "| SD-SC375 | 300 | 330 | SC15G500D2 | 330 | Electronic speed controller | 541 | 1500 | 3156×1230×1674 | 2970",
+        "| SD-SC450 | | 400 | SC25G610D2 | 405 | Electronic speed controller | 656 | 1500 | 3533×1400×1992 | 4300",
+        "| SD-SC500 | 400 | 440 | SC25G690D2 | 459 | Electronic speed controller | 722 | 1500 | 3548×1400×1992 | 4300",
+        "| SD-SC563 | | 500 | SC27G755D2 | 505 | Electronic speed controller | 820 | 1500 | 3548×1400×1992 | 4450",
+        "| SD-SC625 | 500 | 550 | SC27G830D2 | 565 | Electronic speed controller | 902 | 1500 | 3548×1400×1992 | 4450",
+        "| SD-SC682 | | 600 | SC27G900D2 | 662 | Electronic speed controller | 984 | 1500 | 3548×1400×1992 | 4450"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "SDEC H series genset (SD-SC63 – SD-SC188)",
+      "header": [
+        "| Genset model | Genset rated power kW | Genset standby power kW | Engine Model | Engine Rated Power kW | Type of governor | Rated current A | Rated speed | Dimensions mm | Weight kg"
+      ],
+      "rows": [
+        "| SD-SC63 | 50 | 55 | SC4H95D2 | 62 | Electronic speed controller | 90 | 1500 | 1910×893×1170 | 940",
+        "| SD-SC80 | 64 | 70 | SC4H115D2 | 78 | Electronic speed controller | 115 | 1500 | 1950×893×1170 | 970",
+        "| SD-SC100 | 80 | 88 | SC4H160D2 | 105 | Electronic speed controller | 144 | 1500 | 2060×933×1185 | 1020",
+        "| SD-SC125 | 100 | 110 | SC4H180D2 | 120 | Electronic speed controller | 180 | 1500 | 2100×933×1185 | 1080",
+        "| SD-SC150 | 120 | 132 | SC7H230D2 | 154 | Electronic speed controller | 217 | 1500 | 2400×940×1376 | 1250",
+        "| SD-SC188 | 150 | 165 | SC7H250D2 | 168 | Electronic speed controller | 271 | 1500 | 2446×940×1376 | 1330"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "SDEC SR series genset (D500MG – D1600MG)",
+      "header": [
+        "| Genset model | Genset rated power kW | Genset standby power kW | Engine Model | Engine Rated Power kW | Type of governor | Rated current A | Dimensions mm | Weight kg"
+      ],
+      "rows": [
+        "| D500MG | 500 | 550 | S6R2-PTA-C | 575 | Electronic speed controller | 902 | 3440×1410×1880 | 4880",
+        "| D540MG | 540 | 594 | S6R2-PTA-C | 575 | Electronic speed controller | 974 | 3800×1410×1880 | 5280",
+        "| D600MG | 600 | 660 | S6R2-PTAA-C | 645 | Electronic speed controller | 1083 | 4050×1660×1900 | 6040",
+        "| D800MG | 800 | 880 | S12H-PTA | 878 | Electronic speed controller | 1443 | 4530×1660×2070 | 8150",
+        "| D1000MG | 1000 | 1100 | S12R-PTA-C | 1080 | Electronic speed controller | 1804 | 4690×2100×2600 | 10800",
+        "| D1100MG | 1100 | 1210 | S12R-PTA2-C | 1165 | Electronic speed controller | 1985 | 4580×1850×2575 | 11000",
+        "| D1200MG | 1200 | 1320 | S12R-PTAA2-C | 1277 | Electronic speed controller | 2165 | 5155*2195*2950 | 11300",
+        "| D1360MG | 1360 | 1496 | S16R-PTA-C | 1450 | Electronic speed controller | 2454 | 5400×1850×2595 | 13000",
+        "| D1500MG | 1500 | 1650 | S16R-PTA2-C | 1600 | Electronic speed controller | 2706 | 5380×2560×2930 | 15500",
+        "| D1600MG | 1600 | 1760 | S16R-PTAA2-C | 1684 | Electronic speed controller | 2887 | 5870×2395×3150 | 17500"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "SDEC W series genset (SD-SC750)",
+      "header": [
+        "| Genset model | Genset rated power kW | Genset standby power kW | Engine Model | Engine Rated Power kW | Type of governor | Rated current A | Rated speed | Dimensions mm | Weight kg"
+      ],
+      "rows": [
+        "| SD-SC750 | 600 | 660 | SC33W990D2 | 660 | Electronic speed controller | 1083 | 1500 | 4362×1570×2135 | 7070"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "SDEC K series 6KTAA25 – Typical Generator Capacity",
+      "header": [
+        "| Typical Generator Capacity (kVA) | Diesel Engine Model | Engine Output (kW) | Type",
+        "| 50Hz | 60Hz | 1500rpm | 1800rpm | Cylinder | Flywheel & Housing | Fuel System | Emission",
+        "| Prime (PRP) | Standby (ESP) | Prime (PRP) | Standby (ESP) | Prime | Standby | Prime | Standby"
+      ],
+      "rows": [
+        "| 500 | 563 | 563 | 625 | 6KTAA25-G311 | 460 | 506 | 520 | 572 | L6 | SAE 0#18# | EUI | CN III",
+        "| 563 | 625 | 625 | 688 | 6KTAA25-G310 | 520 | 572 | 572 | 629 | L6 | SAE 0#18# | EUI | CN III",
+        "| 625 | 700 | 700 | 750 | 6KTAA25-G39 | 572 | 629 | 622 | 684 | L6 | SAE 0#18# | EUI | CN III",
+        "| 500 | 563 | 563 | 625 | 6KTAA25-G36 | 460 | 506 | 520 | 572 | L6 | SAE 0#18# | ECR | CN III",
+        "| 563 | 625 | 625 | 688 | 6KTAA25-G35 | 520 | 572 | 572 | 629 | L6 | SAE 0#18# | ECR | CN III",
+        "| 625 | 688 | 700 | 750 | 6KTAA25-G34 | 572 | 629 | 622 | 684 | L6 | SAE 0#18# | ECR | CN III",
+        "| 700 | 750 | 700 | 750 | 6KTAA25-G33 | 622 | 684 | 622 | 684 | L6 | SAE 0#18# | ECR | CN III",
+        "| 750 | 825 | 750 | 825 | 6KTAA25-G32 | 685 | 754 | 685 | 754 | L6 | SAE 0#18# | ECR | CN III",
+        "| 825 | 908 | / | / | 6KTAA25-G31 | 728 | 800 | / | / | L6 | SAE 0#18# | ECR | CN III",
+        "| / | / | 825 | 900 | 6KTAA25-G31.1 | / | / | 728 | 800 | L6 | SAE 0#18# | ECR | CN III",
+        "| 900 | 1000 | / | / | 6KTAA25-G320 | 820 | 902 | / | / | L6 | SAE 0#18# | ECR | CN III",
+        "| 1000 | 1100 | / | / | 6KTAA25-G321 | 880 | 968 | / | / | L6 | SAE 0#18# | ECR | CN III"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "SDEC W series SC33W / 6WTAA35 – Typical Generator Capacity",
+      "header": [
+        "| Typical Generator Capacity (kVA) | Diesel Engine Model | Engine Output (kW) | Type",
+        "| 50Hz | 60Hz | 1500rpm | 1800rpm | Cylinder | Flywheel & Housing | Fuel System | Emission",
+        "| Prime (PRP) | Standby (ESP) | Prime (PRP) | Standby (ESP) | Prime | Standby | Prime | Standby"
+      ],
+      "rows": [
+        "| 750 | 825 | / | / | SC33W990D2 | 660 | 726 | / | / | L6 | SAE 0#18# | m-FIP+e-gov. | CN II",
+        "| 875 | 975 | / | / | SC33W1150D2 | 782 | 860 | / | / | L6 | SAE 0#18# | m-FIP+e-gov. | CN II",
+        "| 900 | 1000 | / | / | 6WTAA35-G32 | 818 | 900 | / | / | L6 | SAE 0#18# | EUI | CN III",
+        "| 1000 | 1100 | / | / | 6WTAA35-G31 | 882 | 970 | / | / | L6 | SAE 0#18# | EUI | CN III",
+        "| 1125 | 1250 | / | / | 6WTAA35-G310 | 1018 | 1120 | / | / | L6 | SAE 0#18# | EUI | CN III",
+        "| 1250 | 1375 | / | / | 6WTAA35-G311 | 1118 | 1230 | / | / | L6 | SAE 0#18# | EUI | CN III"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "SDEC E series SC10E/SC12E/SC13E/6ETAA – Typical Generator Capacity",
+      "header": [
+        "| Typical Generator Capacity (kVA) | Diesel Engine Model | Engine Output (kW) | Type",
+        "| 50Hz | 60Hz | 1500rpm | 1800rpm | Cylinder | Flywheel & Housing | Fuel System | Emission",
+        "| Prime (PRP) | Standby (ESP) | Prime (PRP) | Standby (ESP) | Prime | Standby | Prime | Standby"
+      ],
+      "rows": [
+        "| 275 | 313 | / | / | SC10E380D2 | 255 | 280 | / | / | L6 | SAE 1#14# | m-FIP+e-gov. | CN II",
+        "| 313 | 350 | / | / | SC12E420D2 | 280 | 308 | / | / | L6 | SAE 1#14# | m-FIP+e-gov. | CN II",
+        "| 350 | 375 | / | / | SC12E460D2 | 307 | 338 | / | / | L6 | SAE 1#14# | m-FIP+e-gov. | CN II",
+        "| 313 | 350 | 350 | 375 | 6ETAA11.8-G22 | 280 | 308 | 307 | 338 | L6 | SAE 1#14# | m-FIP+e-gov. | CN II",
+        "| 350 | 375 | 350 | 375 | 6ETAA11.8-G21 | 307 | 338 | 307 | 338 | L6 | SAE 1#14# | m-FIP+e-gov. | CN II",
+        "| 375 | 413 | 375 | 413 | 6ETAA11.8-G31 | 340 | 380 | 340 | 380 | L6 | SAE 1#14# | ECR | CN III",
+        "| 313 | 350 | 350 | 375 | 6ETAA11.8-G32 | 280 | 308 | 307 | 338 | L6 | SAE 1#14# | ECR | CN III",
+        "| 350 | 375 | 375 | 413 | 6ETAA11.8-G33 | 307 | 338 | 340 | 380 | L6 | SAE 1#14# | ECR | CN III",
+        "| 375 | 413 | / | / | SC13E520D2 | 348 | 383 | / | / | L6 | SAE 1#14# | m-FIP+e-gov. | CN II",
+        "| 400 | 450 | / | / | SC13E550D2 | 368 | 405 | / | / | L6 | SAE 1#14# | m-FIP+e-gov. | CN II",
+        "| 375 | 413 | 375 | 413 | 6ETAA12.8-G22 | 339 | 373 | 339 | 373 | L6 | SAE 1#14# | m-FIP+e-gov. | CN II",
+        "| 400 | 450 | 400 | 450 | 6ETAA12.8-G21 | 368 | 405 | 368 | 405 | L6 | SAE 1#14#\" | m-FIP+e-gov. | CN II",
+        "| 400 | 440 | / | / | 6ETAA12.8-G32 | 360 | 400 | 401 | 441 | L6 | SAE 1#14# | ECR | CN III",
+        "| / | / | 400 | 440 | 6ETAA12.8-G32.1 | / | / | 360 | 400 | L6 | SAE 1#14# | ECR | CN III",
+        "| 450 | 500 | / | / | 6ETAA12.8-G31 | 401 | 441 | / | / | L6 | SAE 1#14# | ECR | CN III",
+        "| / | / | 450 | 500 | 6ETAA12.8-G31.1 | / | / | 401 | 441 | L6 | SAE 1#14# | ECR | CN III",
+        "| 500 | 550 | / | / | 6ETAA12.8-G310 | 450 | 495 | / | / | L6 | SAE 1#14# | ECR | CN III",
+        "| / | / | 500 | 550 | 6ETAA12.8-G310.1 | / | / | 450 | 495 | L6 | SAE 1#14# | ECR | CN III"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "SDEC VK series 12KTA58 engine for genset",
+      "header": [
+        "| Model | Unit | 12KTA58-G31 | 12KTA58-G32 | 12KTA58-G33 | 12KTA58-G34 | 12KTA58-G35 | 12KTA58-G36 | 12KTA58-G37 | 12KTA58-G334 (Compatible with Indonesian B50 biodiesel)"
+      ],
+      "rows": [
+        "| Engine Type | | V-type, 4-stroke, direct injection, turbocharged, air-to-water intercooled",
+        "| Aspiration | | Turbocharged and intercooled",
+        "| No. of Cylinders×Bore×Stroke | mm | 12×170×210",
+        "| Cylinder Liner Type | | Wet liner",
+        "| Compression Ratio | | 18:1",
+        "| Displacement | L | 57.2",
+        "| Fuel System | | High-pressure common rail",
+        "| Rated Power | kW | 2010 | 1850 | 1720 | 1560 | 1420 | 1280 | 1160 | 1560",
+        "| Rated Speed | rpm | 1500",
+        "| Standby Power | kW | 2210 | 2035 | 1890 | 1720 | 1560 | 1410 | 1280 | 1720",
+        "| Min. Fuel Consumption | g/kW·h | 188",
+        "| Lubricating Oil Capacity | L | 222-313",
+        "| Cooling System Capacity | L | 198.7",
+        "| Engine Oil Consumption | g/kW·h | ≤0.3",
+        "| Emission Standard | | STAGE III",
+        "| Noise Level | dB(A) | 102",
+        "| Net Weight | kg | 7610",
+        "| Dimensions (L×W×H) | mm | 2762×1582×2193"
+      ]
+    }
+  ]
 }
