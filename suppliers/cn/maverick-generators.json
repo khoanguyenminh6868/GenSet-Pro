@@ -50,6 +50,188 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGF-33S",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FAWDE"
+      ],
+      "engineModels": [
+        "4DX21-45D"
+      ],
+      "alternatorMakes": [
+        "WERNA"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGF-44S",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FAWDE"
+      ],
+      "engineModels": [
+        "4DX21-53D"
+      ],
+      "alternatorMakes": [
+        "WERNA"
+      ],
+      "power": {
+        "min": 40,
+        "max": 40,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGF-55S",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FAWDE"
+      ],
+      "engineModels": [
+        "4DX23-65D"
+      ],
+      "alternatorMakes": [
+        "WERNA"
+      ],
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGF-66S",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FAWDE"
+      ],
+      "engineModels": [
+        "4DX23-78D"
+      ],
+      "alternatorMakes": [
+        "WERNA"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGF-82S",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FAWDE"
+      ],
+      "engineModels": [
+        "4110/125Z09D"
+      ],
+      "alternatorMakes": [
+        "WERNA"
+      ],
+      "power": {
+        "min": 75,
+        "max": 75,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGF-110S",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FAWDE"
+      ],
+      "engineModels": [
+        "6DF2D-14D"
+      ],
+      "alternatorMakes": [
+        "WERNA"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AGF-165S",
+      "fuel": "diesel",
+      "engineMakes": [
+        "FAWDE"
+      ],
+      "engineModels": [
+        "6DF2-19D"
+      ],
+      "alternatorMakes": [
+        "WERNA"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
     }
   ],
   "certifications": [],
@@ -68,9 +250,279 @@
         "© 2018 Maverick Generators"
       ],
       "file": "sources/maverick-generators/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://maverickgenerators.co.za/wp-content/uploads/2022/12/FAW-33S-50Hz-3-Phase-Silent.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "• Complete protection functions and safety labels       AGF-33/S     30               24      33         26.5",
+        "Engine Make & Model:               4DX21-45D",
+        "Alternator Model:                  WR184G16",
+        "Control System:           Digital Panel HGM420"
+      ],
+      "file": "sources/maverick-generators/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://maverickgenerators.co.za/wp-content/uploads/2022/12/AGF-44S-50Hz-3-Phase-Silent-MTN-Spec.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "• Complete protection functions and safety labels       AGF-44/S     40               32      44    35.2",
+        "Engine Make & Model:               4DX21-53D",
+        "Alternator Model:                  WR184J16",
+        "Control System:           Smartgen HGM420"
+      ],
+      "file": "sources/maverick-generators/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://maverickgenerators.co.za/wp-content/uploads/2022/12/FAW-55S-50Hz-3-Phase-Silent.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "• Complete protection functions and safety labels       AGF-55/S     50               40      55         44",
+        "Engine Make & Model:               4DX23-65D",
+        "Alternator Model:                      WR224D16",
+        "Control System:           Digital Panel HGM420"
+      ],
+      "file": "sources/maverick-generators/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://maverickgenerators.co.za/wp-content/uploads/2022/12/FAW-66S-50Hz-3-Phase-Silent.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "• Complete protection functions and safety labels       AGF-69/S     60               48      66         53",
+        "Engine Make & Model:               4DX23-78D",
+        "Alternator Model:                  WR224E16",
+        "Control System:           Digital Panel HGM420"
+      ],
+      "file": "sources/maverick-generators/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://maverickgenerators.co.za/wp-content/uploads/2022/12/FAW-82S-50Hz-3-Phase-Silent.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "• Complete protection functions and safety labels       AGF-82/S     75               60      82.5       66",
+        "Engine Make & Model:               4110/125Z09D",
+        "Alternator Model:                      WR224F16",
+        "Control System:           Digital Panel HGM420"
+      ],
+      "file": "sources/maverick-generators/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://maverickgenerators.co.za/wp-content/uploads/2022/12/FAW-110S-50Hz-3-Phase-Silent.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "• Complete protection functions and safety labels       AGF-110/S    100              80      110        88",
+        "Engine Make & Model:               6DF2D-14D",
+        "Alternator Model:                  WR274C14",
+        "Control System:           Digital Panel HGM420"
+      ],
+      "file": "sources/maverick-generators/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://maverickgenerators.co.za/wp-content/uploads/2022/12/FAW-165S-50Hz-3-Phase-Silent.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "• Complete protection functions and safety labels       AGF-165/S    150              120     165        132",
+        "Engine Make & Model:               6DF2-19D",
+        "Alternator Model:                  WR274EL14",
+        "Control System:           Digital Panel HGM420"
+      ],
+      "file": "sources/maverick-generators/2007.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "AGF-33S 50Hz 3-Phase Silent (Maverick Econo Range)",
+      "header": [
+        "• Top lifting and steel base frame with forklift holes  Model        KVA          KW          KVA   KW"
+      ],
+      "rows": [
+        "• Complete protection functions and safety labels       AGF-33/S     30               24      33         26.5",
+        "Engine Brand                           FAWDE",
+        "Engine Make & Model:               4DX21-45D",
+        "Alternator Model:                  WR184G16",
+        "Alternator manufacturer/Brand   WERNA",
+        "Control System:           Digital Panel HGM420"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "AGF-44S 50Hz 3-Phase Silent (Maverick Econo Range)",
+      "header": [
+        "• Top lifting and steel base frame with forklift holes  Model        KVA          KW          KVA   KW"
+      ],
+      "rows": [
+        "• Complete protection functions and safety labels       AGF-44/S     40               32      44    35.2",
+        "Engine Brand                           FAWDE",
+        "Engine Make & Model:               4DX21-53D",
+        "Alternator Model:                  WR184J16",
+        "Alternator manufacturer/Brand   WERNA",
+        "Control System:           Smartgen HGM420"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "AGF-55S 50Hz 3-Phase Silent (Maverick Econo Range)",
+      "header": [
+        "• Top lifting and steel base frame with forklift holes  Model        KVA          KW          KVA  KW"
+      ],
+      "rows": [
+        "• Complete protection functions and safety labels       AGF-55/S     50               40      55         44",
+        "Engine Brand                           FAWDE",
+        "Engine Make & Model:               4DX23-65D",
+        "Alternator Model:                      WR224D16",
+        "Alternator manufacturer/Brand   WERNA",
+        "Control System:           Digital Panel HGM420"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "AGF-66S 50Hz 3-Phase Silent (Maverick Econo Range)",
+      "header": [
+        "• Top lifting and steel base frame with forklift holes  Model        KVA          KW          KVA  KW"
+      ],
+      "rows": [
+        "• Complete protection functions and safety labels       AGF-69/S     60               48      66         53",
+        "Engine Brand                           FAWDE",
+        "Engine Make & Model:               4DX23-78D",
+        "Alternator Model:                  WR224E16",
+        "Alternator manufacturer/Brand   WERNA",
+        "Control System:           Digital Panel HGM420"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "AGF-82S 50Hz 3-Phase Silent (Maverick Econo Range)",
+      "header": [
+        "• Top lifting and steel base frame with forklift holes  Model        KVA          KW          KVA   KW"
+      ],
+      "rows": [
+        "• Complete protection functions and safety labels       AGF-82/S     75               60      82.5       66",
+        "Engine Brand                           FAWDE",
+        "Engine Make & Model:               4110/125Z09D",
+        "Alternator Model:                      WR224F16",
+        "Alternator manufacturer/Brand   WERNA",
+        "Control System:           Digital Panel HGM420"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "AGF-110S 50Hz 3-Phase Silent (Maverick Econo Range)",
+      "header": [
+        "• Top lifting and steel base frame with forklift holes  Model        KVA          KW          KVA  KW"
+      ],
+      "rows": [
+        "• Complete protection functions and safety labels       AGF-110/S    100              80      110        88",
+        "Engine Brand                           FAWDE",
+        "Engine Make & Model:               6DF2D-14D",
+        "Alternator Model:                  WR274C14",
+        "Alternator manufacturer/Brand   WERNA",
+        "Control System:           Digital Panel HGM420"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "AGF-165S 50Hz 3-Phase Silent (Maverick Econo Range)",
+      "header": [
+        "• Top lifting and steel base frame with forklift holes  Model        KVA          KW          KVA  KW"
+      ],
+      "rows": [
+        "• Complete protection functions and safety labels       AGF-165/S    150              120     165        132",
+        "Engine Brand                           FAWDE",
+        "Engine Make & Model:               6DF2-19D",
+        "Alternator Model:                  WR274EL14",
+        "Alternator manufacturer/Brand   WERNA",
+        "Control System:           Digital Panel HGM420"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "SmartGen",
+      "model": "HGM420",
+      "text": "HGM420",
+      "line": "Control System:           Digital Panel HGM420",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM420",
+      "text": "HGM420",
+      "line": "Control System:           Smartgen HGM420",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM420",
+      "text": "HGM420",
+      "line": "Control System:           Digital Panel HGM420",
+      "src": [
+        2003
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM420",
+      "text": "HGM420",
+      "line": "Control System:           Digital Panel HGM420",
+      "src": [
+        2004
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM420",
+      "text": "HGM420",
+      "line": "Control System:           Digital Panel HGM420",
+      "src": [
+        2005
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM420",
+      "text": "HGM420",
+      "line": "Control System:           Digital Panel HGM420",
+      "src": [
+        2006
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM420",
+      "text": "HGM420",
+      "line": "Control System:           Digital Panel HGM420",
+      "src": [
+        2007
+      ]
+    }
+  ]
 }
