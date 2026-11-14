@@ -60,6 +60,49 @@ test("fuel: a percentage is not a fuel figure (lees-power 'Gas Consumption' colu
   assert.equal(fits("Gas Consumption", "12.2"), "fuel");
   assert.equal(fits("Fuel consumption", "35L/h"), "fuel");
 });
+
+// chuan-hoa-1c (2026-11-14): reading errors left over from chuan-hoa-1 / 1b. Lines are from suppliers/cn.
+const rec = (specTables, extra = {}) => ({ id: "x", country: "CN", role: "genset_oem", status: "partial", names: { en: "X", brands: [] }, productLines: [], sources: [], specTables, ...extra });
+const specsOf = (r, re) => CAT.fromSupplier(r).filter((o) => re.test(o.line || "")).map((o) => o.specs.map((s) => `${s.key}=${s.value}`));
+test("lees-power: the header has no title over the engine column, so no figure is laid under a title one column to the left", () => {
+  // lees-power source 134 / 135: "Electrical Power KW" sits over the engine model, "Gas Consumption" over the efficiency (33%, 0.33).
+  const hdr = ["| Model | Electrical Power KW | Electrical Efficiency | Gas Consumption | Open Type | Soundproof Type | Specifications", "| LEES | CUMMINS | n % | Nm3/h | Dimensions L×W×H (mm) | Weight (kg) | Dimensions L×W×H (mm) | Weight (kg)"];
+  const r = rec([
+    { n: 134, title: "t", header: hdr, rows: ["| LSC30NGE3 | QSB3.9-G35 | 30 | 33% | 12.2 | 1950×900×1250 | 925 | 2450×1006×1257 | 1350 | PDF"] },
+    { n: 135, title: "t", header: ["| Model | Electrical Power KW | Electrical Efficiency (n %) | Gas Consumption | Open Type | Soundproof Type | Specifications", "| LEES | Kubota | Nm3/h | Dimensions L×W×H (mm) | Weight (kg) | Dimensions L×W×H (mm) | Weight (kg)"], rows: ["| LSK13NGE3 | WG1605N | 13 | 0.33 | 19.5 | 2100×950×1310 | 1125 | 2560×1100×1650 | 1480 | PDF"] },
+  ]);
+  for (const s of [...specsOf(r, /LSC30NGE3/), ...specsOf(r, /LSK13NGE3/)]) assert.ok(!s.some((x) => x.startsWith("fuel=")), s.join());
+  assert.equal(CAT.fromSupplier(r).filter((o) => o.kind === "engine").length, 2);
+});
+test("model: a make before the model is dropped on the line read from a product line too (genesal-energy 'VOLVO TAD1642GE')", () => {
+  const r = rec([{ n: 2007, title: "t", header: [], rows: ["33.0kVA / 26.4kW - Perkins 1103A-33G water cooled diesel engine close coupled to Mecc Alte brushless maintenance free alternator"] }],
+    { productLines: [{ kind: "genset", series: "Perkins 1103A-33G", engineModels: ["Perkins 1103A-33G"], power: { min: 26.4, max: 26.4, unit: "kW", rating: "standby" }, src: [2007] }] });
+  assert.deepEqual(CAT.fromSupplier(r).filter((o) => o.kind === "engine").map((o) => o.model), ["1103A-33G"]);
+});
+test("horizontal table: a make of two words before the code ('Volvo Penta TAD734GE') still names an engine row", () => {
+  const r = rec([{ n: 1, title: "t", header: ["| Genset model | Prime kW | Engine model |"], rows: ["| AV250 | 200 | Volvo Penta TAD734GE |", "| CGM | 120 | Hyundai Infracore DM03VP |", "| X1 | 60 | Perkins 1103A-33G |"] }]);
+  assert.deepEqual(CAT.fromSupplier(r).filter((o) => o.kind === "engine").map((o) => o.model), ["TAD734GE", "DM03VP", "1103A-33G"]);
+  // a series word is not part of the make: no guess
+  assert.equal(CAT.fromSupplier(rec([{ n: 1, title: "t", header: ["| Genset model | Prime kW | Engine model |"], rows: ["| v200F | 160 | FPT NEF N67 TEVP05.00 |"] }])).filter((o) => o.kind === "engine").length, 0);
+});
+test("runtime: 'Running time @ 75% PRP' and 'Fuel Tank running hours' are hours, not the 75% fuel consumption or the tank", () => {
+  assert.equal(CAT.specKey("Running time @ 75% PRP"), "runtime"); // endress-stromerzeuger 1008: "| Running time @ 75% PRP | 5"
+  assert.equal(CAT.specKey("Fuel Tank running hours:"), "runtime"); // acepow-fuan 112: "8/10/12H"
+  assert.equal(CAT.specKey("Fuel tank Vol.(L):"), "tank");
+  assert.equal(CAT.specKey("10 Hours Fuel Tank Capacity"), "tank"); // gb-power 1036: "120L" is a capacity
+  assert.equal(CAT.specKey("Fuel Consumption 75% load"), "fuel75");
+});
+test("speed / voltage: a rating-condition title ('1500 rpm, 400V/50Hz/3P, 0.8PF') and 'Fre/Volt HZ/V 频率 /电压' are not speed / voltage", () => {
+  for (const l of ["1500 rpm, 400V/50Hz/3P, 0.8PF", "1800 rpm, 380V/60Hz/3P, 0.8PF"]) assert.notEqual(CAT.specKey(l), "speed", l); // gtl-power 109 / 126: the values below are powers
+  for (const l of ["Fre/Volt HZ/V 频率 /电压", "Frequency/Voltage"]) assert.notEqual(CAT.specKey(l), "voltage", l); // kangwo-guangdong 108: "| CCFJ30JW | 30 | 37.5 | 50/400 | ..."
+  assert.equal(CAT.specKey("Speed (rpm)"), "speed");
+  assert.equal(CAT.specKey("Rated voltage (V)"), "voltage");
+});
+test("dims: the engine's own size ('Engine Size(mm)') is not the genset's", () => {
+  assert.equal(CAT.specKey("Engine Size(mm)"), null); // acepow-fuan 112: "770x520x680"
+  assert.equal(CAT.specKey("Size"), "dims");
+  assert.equal(CAT.specKey("Dimension(MM)L*W*H"), "dims");
+});
 test("keyOf: a trailing * (footnote) is dropped; O/0 and I/1 stay apart", () => {
   assert.equal(CAT.keyOf("QSK19-G4*"), CAT.keyOf("QSK19-G4"));
   assert.equal(CAT.keyOf("QSK19-G4**"), "QSK19G4");

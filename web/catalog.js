@@ -108,18 +108,18 @@
   const COOL = /water|liquid|wasser|radiator|glycol|coolant|cool|air[\s/-]*(to|water|air)|oil\s*to\s*air|[水风油液]冷|冷却|fan\b/i;
   const N = /\d/, TXT = /[a-z一-鿿]{3}/i, BY = /\d\s*[*×xX/]\s*\d/;
   // A fuel figure: "35L/h", "199g/KW.h", "0.191", "31,5".
-  const FUEL_OK = /^[≤<~≈]?\s*\d[\d.,\s/~-]*\s*(l\s*\/\s*h(r|our)?|lph|g\/kw\.?h|g\/\(kw\.?h\)|g\/kwh|kg\/kw\w*[·.-]?h\w*|l|g|kg\/h|m³\/h|m3\/h|nm3\/h|nm³\/h|litres?\/h(our)?|gal\/h)?\s*$/i, NOT_FUEL = /lub|oil\s*consum|air\s*consum|fan/i;
+  const FUEL_OK = /^[≤<~≈]?\s*\d[\d.,\s/~-]*\s*(l\s*\/\s*h(r|our)?|lph|g\/kw\.?h|g\/\(kw\.?h\)|g\/kwh|kg\/kw\w*[·.-]?h\w*|l|g|kg\/h|m³\/h|m3\/h|nm3\/h|nm³\/h|litres?\/h(our)?|gal\/h)?\s*$/i, NOT_FUEL = /lub|oil\s*consum|air\s*consum|fan|run(ning)?\s*(time|hours?)/i;
   const SPECS = [
-    ["tank", "genset", "Bình nhiên liệu", /fuel\s*tank|fuel\s*capacity|tank\s*capacity|油箱/i, null, N],
+    ["tank", "genset", "Bình nhiên liệu", /fuel\s*tank|fuel\s*capacity|tank\s*capacity|油箱/i, /run(ning)?\s*(time|hours?)/i, N],
     // Part loads first: "75%Prime", "75% load(Prime power)", "Fuel consumption75% (of the Prime Power)", "Fuel @75% (L/h)",
     // "75 % Load" (a column title), "75%负载油耗", "3/4 load" (2026-11-09).
     ["fuel75", "genset", "Tiêu hao nhiên liệu 75% tải", /(75\s*%|3\/4)\s*(load|prime|prp|功率|负载|\(?\s*of\s*(the\s*)?prime)|(consum|fuel|油耗|tiêu hao)[^|]{0,40}?(75\s*%|3\/4\s*(load|prp))|@\s*75\s*%/i, NOT_FUEL, FUEL_OK],
     ["fuel50", "genset", "Tiêu hao nhiên liệu 50% tải", /(50\s*%|1\/2)\s*(load|prime|prp|功率|负载|\(?\s*of\s*(the\s*)?prime)|(consum|fuel|油耗|tiêu hao)[^|]{0,40}?(50\s*%|1\/2\s*(load|prp))|@\s*50\s*%/i, NOT_FUEL, FUEL_OK],
     ["fuel", "genset", "Tiêu hao nhiên liệu", /consum|cons\.|\bcons\b|fuel\s*(rate|usage|efficien)|油耗|耗油|燃油消耗|燃油率|燃气消耗|tiêu hao|100\s*%\s*(load|prime|prp|功率|负载)/i, NOT_FUEL, FUEL_OK],
     ["noise", "genset", "Độ ồn", /noise|sound\s*(level|pressure)|噪音|噪声|độ ồn|\bdb\(?a?\)?\b/i, null, /(^|\D)([4-9]\d|1[01]\d)(?!\d)/],
-    ["dims", "genset", "Kích thước", /dimen|dimention|overall\s*(size|l)|\bsize\b|l\s*[x×*]\s*[wm]\s*[x×*]\s*h|尺寸|kích thước/i, null, BY],
+    ["dims", "genset", "Kích thước", /dimen|dimention|overall\s*(size|l)|\bsize\b|l\s*[x×*]\s*[wm]\s*[x×*]\s*h|尺寸|kích thước/i, /engine\s*(size|dimen)|(发动机|柴油机)\s*尺寸/i, BY],
     ["weight", "genset", "Khối lượng", /weigh|重量|毛重|khối lượng|trọng lượng|^\s*kgs?\s*(\(|$)/i, null, /^[≈~]?\s*\d/],
-    ["runtime", "genset", "Chạy liên tục", /continuous\s*(run|work)|run(ning)?\s*time/i, null, N],
+    ["runtime", "genset", "Chạy liên tục", /continuous\s*(run|work)|run(ning)?\s*(time|hours?)/i, null, N],
     ["bore", "engine", "Đường kính × hành trình", /bore|stroke|storke|strock|cylinder\s*diameter|缸径|行程/i, null, /^\d+(\.\d+)?(\s*(mm)?\s*[*×xX/]\s*\d+(\.\d+)?)?\s*[(（]?(mm)?[)）]?$/i],
     ["disp", "engine", "Dung tích xi lanh", /displace|swept|\bdisp\b|排量/i, null, /^\d+([.,]\d+)?\s*(l|ltr|litres?|cc|ml)?$/i],
     ["cyl", "engine", "Số xi lanh", /cylinder|^cyl|^cil|气缸|缸数/i, /air\s*flow/i, /^(\d{1,2}|\d{1,2}\s*[-–]?\s*(l|v|in-?line|cyl\w*)\b.*|[lv]\s?-?\d{1,2}|in-?line.*|vertical.*|v-?type.*)$/i],
@@ -134,7 +134,7 @@
     ["oil", "engine", "Dầu bôi trơn", /lub|oil\s*(capacity|tank|system|sump|ststem)|机油|润滑油/i, /brand|temp|温度|pressure|压力|consum|消耗|耗率|耗量/i, N],
     ["start", "engine", "Khởi động", /start/i, null, /\d\s*v|electric|电/i],
     ["engPower", "engine", "Công suất động cơ", /(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp/i, null, /^\d/],
-    ["speed", "engine", "Tốc độ quay", /speed|\brpm\b|r\/min|转速/i, /regul|rate\s*\(%\)|torque|扭矩/i, /\b(1[05]00|1800|3000|3600|[12]\d{3})\b/],
+    ["speed", "engine", "Tốc độ quay", /speed|\brpm\b|r\/min|转速/i, /regul|rate\s*\(%\)|torque|扭矩|\d\s*v\s*\/\s*\d+\s*hz/i, /\b(1[05]00|1800|3000|3600|[12]\d{3})\b/],
     ["engType", "engine", "Kiểu động cơ", /^(diesel\s*)?engine\s*type$/i, null, /stroke|cool|line|turbo|vertical|冲程/i],
     ["eff", "alternator", "Hiệu suất đầu phát", /efficien|效率/i, /fuel|thermal|overall|total|electrical|热效|综合/i, /\d\s*[%％]|^\d{2}(\.\d+)?$/],
     ["insul", "alternator", "Cấp cách điện", /insulat|绝缘/i, null, /\b[bfh]\b|class|级/i],
@@ -144,7 +144,7 @@
     ["vreg", "alternator", "Ổn định điện áp", /voltage\s*(regul|stab|stead)|调压/i, /time|时间/i, /\d\s*[%％]/i],
     ["freg", "genset", "Ổn định tần số", /frequency\s*(regul|wav|recover|stab)|frequencyrecovery|smooth\s*speed/i, null, /\d\s*[%％s]/i],
     ["current", "genset", "Dòng điện định mức", /rated\s*current|电流/i, null, /^\d/],
-    ["voltage", "genset", "Điện áp", /voltage|电压|điện áp/i, /dc|start|level|type|regul|stab|sudden|warp|dip|transient|drop|偏差/i, /^\D{0,3}\d{3}/],
+    ["voltage", "genset", "Điện áp", /voltage|电压|điện áp/i, /dc|start|level|type|regul|stab|sudden|warp|dip|transient|drop|偏差|fre\w*\s*\/\s*volt|频率\s*\/\s*电压/i, /^\D{0,3}\d{3}/],
     ["pf", "genset", "Hệ số công suất", /power\s*factor|(?<![a-z])cos(?![a-z])|功率因数/i, null, /0[.,]\d|^1$/],
     ["phase", "genset", "Số pha", /phase|wire|相数/i, null, /^[13]$|[13]\s*-?\s*(ph|phase|相)|\d\s*-?\s*wire|three|single|三相|单相/i],
     ["controller", "genset", "Bộ điều khiển", /^(controller|control\s*(module|panel)|控制器)\s*(model|type|brand)?\s*[:：]?$/i, null, /[a-z]{2,}\s?-?\d{3,}/i],
@@ -433,6 +433,9 @@
       default: return true;
     }
   }
+  // A genset's power title laid over the engine's (alternator's) cell: the header has no title for that column, so every
+  // title after it is one column too far left (lees-power: "Electrical Power KW" over the engine, "Gas Consumption" over the efficiency).
+  const POWER_TITLE = /^(?!.*(brand|make|品牌|厂家)).*(power|output|功率)/i;
   const kWOf = (power) => (power?.prime || power?.rated || power?.standby)?.kW || null;
   function walkedSpecs(hs, cells, { ei = -1, ai = -1, gi = -1, power = null } = {}) {
     if (ei < 0 && ai < 0) return [];
@@ -455,7 +458,7 @@
           // A title of the engine or alternator over another cell: a title before it spans two cells; what came before stays.
           if ((engT(x) && c !== ei) || (altT(x) && c !== ai)) break;
           // A line that names neither ("| Model | Cylinder No. | ... | Brushless") may lay a title that is no figure over them.
-          if ((c === ei && !engT(x)) || (c === ai && !altT(x))) { if (named || specKey(x)) break; }
+          if ((c === ei && !engT(x)) || (c === ai && !altT(x))) { if (named || specKey(x) || POWER_TITLE.test(x)) break; }
           if (c === ei || c === ai) { anchored = true; continue; }
           const key = specKey(x), val = key && specVal(cells[c]);
           if (!val) continue;
@@ -522,7 +525,7 @@
       const engineTable = s.role === "engine_maker" && !GENSET_LBL.test(headerText) && !/genset|generator set|机组/i.test(cellsOf(t.header?.[0] || "")[0] || "");
       t.rows.forEach((line, ri) => {
         const cells = cellsOf(line);
-        const codes = cells.map((c, i) => (isCode(c) ? i : -1)).filter((i) => i >= 0);
+        const codes = cells.map((c, i) => (isCode(c) || brandedCode(c, ENGINE_BRANDS) || brandedCode(c, ALT_BRANDS) ? i : -1)).filter((i) => i >= 0);
         if (!codes.length) return;
         const rowText = cells.join(" ");
         const freq = freqIn(rowText) || tFreq;
@@ -561,7 +564,7 @@
         const makes = [];
         for (const m of p.engineMakes || []) for (const b of brandIn(m, ENGINE_BRANDS)) addMake(makes, b, "tên trang");
         out.push({ supplierId: s.id, n, table: ti, title: String(t.title || ""), row: t.rows.indexOf(line), line, genset: isCode(p.series) ? p.series : null, power: { [kind]: { [pw.unit]: pw.min } },
-          freq: freqIn((p.frequency || []).join(" ")) || freqIn(`${(t.header || []).join(" ")} ${t.title || ""}`), header: t.header || [], specs: [], kind: "engine", model, makes, other: null, fromLine: true });
+          freq: freqIn((p.frequency || []).join(" ")) || freqIn(`${(t.header || []).join(" ")} ${t.title || ""}`), header: t.header || [], specs: [], kind: "engine", model: tidyModel(model, ENGINE_BRANDS), makes, other: null, fromLine: true });
         break;
       }
     }
@@ -585,7 +588,15 @@
     let s = String(cell || "").trim().replace(/\s*[*＊†‡]+$/, "");
     const m = s.match(/^(\S+)\s+(?:penta\s+)?(?=\S*\d)/i);
     if (m && brandIn(m[1], list).length && isCode(s.slice(m[0].length))) s = s.slice(m[0].length);
+    else { const w = brandedCode(s, list); if (w) s = w; }
     return s;
+  };
+  // "Volvo Penta TAD734GE", "Hyundai Infracore DM01VP", "Weichai Power WP13D490E310": a make of two words before the code
+  // (isCode allows one space). Returns the code, or null. The second word must be part of a make's name, not a series
+  // ("FPT NEF N67 TEVP05.00" names the series NEF, which stays out of this).
+  const brandedCode = (cell, list) => {
+    const m = String(cell || "").trim().replace(/\s*[*＊†‡]+$/, "").match(/^([a-z]+)\s+(penta|infracore|heavy|power|diesel|engines?)\s+(\S.*)$/i);
+    return m && brandIn(m[1], list).length && isCode(m[3]) ? m[3] : null;
   };
 
   // Bộ điều khiển (Khoa, 2026-11-01): make and model read from one line of a saved page or a table row, word for word.
