@@ -61,6 +61,245 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "DCEC 4BT3.9 Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins (DCEC)"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 16,
+        "max": 72,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DCEC 6BT5.9 Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins (DCEC)"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 68,
+        "max": 120,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DCEC 6CTA8.3 Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins (DCEC)"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 128,
+        "max": 183,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DCEC 6LTAA8.9 Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins (DCEC)"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 182,
+        "max": 220,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CCEC NH Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins (CCEC)"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 200,
+        "max": 320,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CCEC QSN Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins (CCEC)"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 200,
+        "max": 360,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CCEC K19 Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins (CCEC)"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 360,
+        "max": 460,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CCEC QSK19 Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins (CCEC)"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 360,
+        "max": 655,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CCEC K38 Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins (CCEC)"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 580,
+        "max": 800,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CCEC QSK38 Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins (CCEC)"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 600,
+        "max": 1280,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CCEC K50 Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins (CCEC)"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 1000,
+        "max": 1340,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
     }
   ],
   "certifications": [],
@@ -79,9 +318,396 @@
         "covering the power range from 20-2000kW."
       ],
       "file": "sources/sinogen/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://dcec-generator.com/cdlo72psoa-diesel-generator-set/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "SinoGen CDLO72PSOA diesel generator set is the complete generator set manufactured by SinoGen. SinoGen CDLO72PSOA diesel generator set powered by DCEC 4BT3.9 series diesel engine, comes with 50-degree aluminum radiator, coupled with Stamford alternator, controlled by Deepsea 6120 intelligent generator set controller.",
+        "| CDLO16PSOA | 16 kW / 1500 RPM | 4B3.9-G11 | Stamford | PI144D | 1700 mm * 930 mm * 1470 mm",
+        "| CDLO72PSOA | 72 kW / 1500 RPM | 4BTA3.9-G13 | Stamford | UCI274C | 2250 mm * 930 mm * 1600 mm"
+      ],
+      "file": "sources/sinogen/2001.md",
+      "official": false
+    },
+    {
+      "n": 2002,
+      "url": "https://dcec-generator.com/cdlo120psoa-diesel-generator-set/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "SinoGen CDLO120PSOA diesel generator set is the complete generator set manufactured by SinoGen. SinoGen CDLO120PSOA diesel generator set powered by DCEC 6BT5.9 series diesel engine, comes with 50-degree aluminum radiator, coupled with Stamford alternator, controlled by Deepsea 6120 intelligent generator set controller.",
+        "| CDLO68PSOA-I | 68 kW / 1500 RPM | 6BT5.9-G1 | Stamford | UCI224G | 2150 mm * 930 mm * 1560 mm",
+        "| CDLO120PSOA | 120 kW / 1500 RPM | 6BTAA5.9-G12 | Stamford | UCI274F | 2400 mm * 930 mm * 1500 mm"
+      ],
+      "file": "sources/sinogen/2002.md",
+      "official": false
+    },
+    {
+      "n": 2003,
+      "url": "https://dcec-generator.com/cdlo160psoa-diesel-generator-set/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "SinoGen CDLO160PSOA diesel generator set is the complete generator set manufactured by SinoGen. SinoGen CDLO160PSOA diesel generator set powered by DCEC 6CTA8.3 series diesel engine, comes with 50-degree aluminum radiator, coupled with Stamford alternator, controlled by Deepsea 6120 intelligent generator set controller.",
+        "| CDLO128PSOA-I | 128 kW / 1500 RPM | 6CTA8.3-G1 | Stamford | UCI274F | 2360 mm * 960 mm * 1690 mm",
+        "| CDLO165PSOA | 183 kW / 1500 RPM | 6CTAA8.3-G2 | Stamford | UCI274H | 2370 mm * 850 mm * 1300 mm"
+      ],
+      "file": "sources/sinogen/2003.md",
+      "official": false
+    },
+    {
+      "n": 2004,
+      "url": "https://dcec-generator.com/cdlo200psoa-diesel-generator-set/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "SinoGen CDLO200PSOA diesel generator set is the complete generator set manufactured by SinoGen. SinoGen CDLO200PSOA diesel generator set powered by DCEC 6LTAA8.9 series diesel engine, comes with 50-degree aluminum radiator, coupled with Stamford alternator, controlled by Deepsea 6120 intelligent generator set controller.",
+        "| CDLO182PSOA | 182 kW / 1500 RPM | 6LTAA8.9-G2 | Stamford | UCDI274J | 2550 mm * 1050 mm * 1860 mm",
+        "| CDLO180PSOA | 220 kW / 1500 RPM | 6LTAA8.9-G2 | Stamford | UCD274K | 2670 mm * 1250 mm * 1410 mm"
+      ],
+      "file": "sources/sinogen/2004.md",
+      "official": false
+    },
+    {
+      "n": 2005,
+      "url": "https://ccec-generator.com/cdlo320psoa-industrial-generator-set/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "SinoGen Also Provide Complete Power Supply Solutions that Powered by CCEC",
+        "| CDLO200PSOA-I | 200 kW | NT855-GA | UCDI274K | 3050 mm * 1170 mm * 1780 mm",
+        "| CDLO320PSOA | 320 kW | NTAA855G7A | HCI444F | 3270 mm * 1230 mm * 2020 mm"
+      ],
+      "file": "sources/sinogen/2005.md",
+      "official": false
+    },
+    {
+      "n": 2006,
+      "url": "https://ccec-generator.com/cdlo250psoa-industrial-generator-set/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "SinoGen Also Provide Complete Power Supply Solutions that Powered by CCEC",
+        "| CDLO200PSOA | 200 kW | QSNT-G6 | UCDI274K | 3050 mm * 1170 mm * 1780 mm",
+        "| CDLO360PSOA | 360 kW | QSNT-G4Ｘ | HCI544C | 3450 mm * 1340 mm * 2170 mm"
+      ],
+      "file": "sources/sinogen/2006.md",
+      "official": false
+    },
+    {
+      "n": 2007,
+      "url": "https://ccec-generator.com/cdlo360psoa-industrial-generator-set/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "SinoGen Also Provide Complete Power Supply Solutions that Powered by CCEC",
+        "| CDLO360PSOA | 360 kW | KTA19G3 | HCI544C | 3450 mm * 1340 mm * 2170 mm",
+        "| CDLO460PSOA | 460 kW | KTAA19G6 | HCI544E | 3700 mm * 1500 mm * 2170 mm"
+      ],
+      "file": "sources/sinogen/2007.md",
+      "official": false
+    },
+    {
+      "n": 2008,
+      "url": "https://ccec-generator.com/cdlo500psoa-industrial-generator-set/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "SinoGen Also Provide Complete Power Supply Solutions that Powered by CCEC",
+        "| CDLO360PSOA-I | 360 kW | QSK19-G15 | HCI544C | 3450 mm * 1340 mm * 2170 mm",
+        "| CDLO655PSOA | 655 kW | QSK19-G21 | HCI634H | N/A"
+      ],
+      "file": "sources/sinogen/2008.md",
+      "official": false
+    },
+    {
+      "n": 2009,
+      "url": "https://ccec-generator.com/cdlo800psoa-industrial-generator-set/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "SinoGen Also Provide Complete Power Supply Solutions that Powered by CCEC",
+        "| CDLO580PSOA | 580 kW | KT38-GA | LVI 634B | 4350 mm * 1720 mm * 2480 mm",
+        "| CDLO800PSOA | 800 kW | KTA38G5 | HCI634J | 4350 mm * 1790 mm * 2250 mm"
+      ],
+      "file": "sources/sinogen/2009.md",
+      "official": false
+    },
+    {
+      "n": 2010,
+      "url": "https://ccec-generator.com/cdlo1200psoa-industrial-generator-set-2/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "SinoGen Also Provide Complete Power Supply Solutions that Powered by CCEC",
+        "| CDLO600PSOA | 600 kW | QSK38-G8 | LVI634B | 4350 mm * 1720 mm * 2480 mm",
+        "| CDLO1280PSOA | 1280 kW | QSK38-G15 | PI734D | N/A"
+      ],
+      "file": "sources/sinogen/2010.md",
+      "official": false
+    },
+    {
+      "n": 2011,
+      "url": "https://ccec-generator.com/cdlo1340psoa-industrial-generator-set/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "SinoGen Also Provide Complete Power Supply Solutions that Powered by CCEC",
+        "| CDLO1000PSOA-I | 1000 kW | KTA50G3 | LVI634G | 5000 mm * 2070 mm * 2440 mm",
+        "| CDLO1340PSOA | 1340 kW | KTA50-G15X | PI734ES | 5720 mm * 2150 mm * 2540 mm"
+      ],
+      "file": "sources/sinogen/2011.md",
+      "official": false
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "DCEC 4BT3.9 Series",
+      "header": [
+        "| Generator Model | Prime Power | Engine Model | Alternator Brand | Alternator Model | Generator Dimension"
+      ],
+      "rows": [
+        "| CDLO30PSOA | 36 kW / 1500 RPM | 4BT3.9-G1 | Stamford | PI144J | 1800 mm * 700 mm * 1370 mm",
+        "| CDLO16PSOA | 16 kW / 1500 RPM | 4B3.9-G11 | Stamford | PI144D | 1700 mm * 930 mm * 1470 mm",
+        "| CDLO20PSOA-I | 20kW / 1500 RPM | 4B3.9-G12 | Stamford | PI144E | 1700 mm * 930 mm * 1470 mm",
+        "| CDLO22PSOA-I | 22 kW / 1500 RPM | 4B3.9-G12 | Stamford | PI144F | 1700 mm * 930 mm * 1470 mm",
+        "| CDLO24PSOA | 24 kW / 1500 RPM | 4B3.9-G12 | Stamford | PI144G | 1700 mm * 930 mm * 1470 mm",
+        "| CDLO20PSOA-II | 20 kW / 1500 RPM | 4B3.9-G1 | Stamford | PI144E | 1700 mm * 930 mm * 1470 mm",
+        "| CDLO22PSOA-II | 22 kW / 1500 RPM | 4B3.9-G1 | Stamford | PI144F | 1700 mm * 930 mm * 1470 mm",
+        "| CDLO20PSOA-III | 20 kW / 1500 RPM | 4B3.9-G2 | Stamford | PI144E | 1700 mm * 930 mm * 1470 mm",
+        "| CDLO22PSOA-III | 22 kW / 1500 RPM | 4B3.9-G2 | Stamford | PI144F | 1700 mm * 930 mm * 1470 mm",
+        "| CDLO32PSOA-I | 32 kW / 1500 RPM | 4BT3.9-G1 | Stamford | PI144J | 1700 mm * 930 mm * 1470 mm",
+        "| CDLO32PSOA-II | 32 kW / 1500 RPM | 4BT3.9-G2 | Stamford | PI144J | 1700 mm * 930 mm * 1470 mm",
+        "| CDLO40PSOA | 40 kW / 1500 RPM | 4BTA3.9-G2 | Stamford | UCI224D | 1900 mm * 930 mm * 1500 mm",
+        "| CDLO45PSOA | 45 kW / 1500 RPM | 4BTA3.9-G2 | Stamford | UCI224E | 1900 mm * 930 mm * 1500 mm",
+        "| CDLO48PSOA-I | 48 kW / 1500 RPM | 4BTA3.9-G2 | Stamford | UCI224E | 1900 mm * 930 mm * 1500 mm",
+        "| CDLO48PSOA-II | 48 kW / 1500 RPM | 4BTA3.9-G11 | Stamford | UCI224E | 1900 mm * 930 mm * 1500 mm",
+        "| CDLO58PSOA | 58 kW / 1500 RPM | 4BTA3.9-G11 | Stamford | UCI224F | 1900 mm * 930 mm * 1500 mm",
+        "| CDLO64PSOA | 64 kW / 1500 RPM | 4BTA3.9-G11 | Stamford | UCI224G | 1900 mm * 930 mm * 1500 mm",
+        "| CDLO72PSOA | 72 kW / 1500 RPM | 4BTA3.9-G13 | Stamford | UCI274C | 2250 mm * 930 mm * 1600 mm"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "DCEC 6BT5.9 Series",
+      "header": [
+        "| Generator Model | Prime Power | Engine Model | Alternator Brand | Alternator Model | Generator Dimension"
+      ],
+      "rows": [
+        "| CDLO50PSOA | 92 kW / 1500 RPM | 6BT5.9-G1 | Stamford | UCI224F | 2220 mm * 830 mm * 1435 mm",
+        "| CDLO75PSOA | 90 kW / 1500 RPM | 6BT5.9-G2 | Stamford | UCI274C | 2370 mm * 830 mm * 1435 mm",
+        "| CDLO100PSOA-I | 100 kW / 1500 RPM | 6BTA5.9-G2 | Stamford | UCI274D | 2355 mm * 844 mm * 1460 mm",
+        "| CDLO68PSOA-I | 68 kW / 1500 RPM | 6BT5.9-G1 | Stamford | UCI224G | 2150 mm * 930 mm * 1560 mm",
+        "| CDLO72PSOA-I | 72 kW / 1500 RPM | 6BT5.9-G1 | Stamford | UCI274C | 2150 mm * 930 mm * 1560 mm",
+        "| CDLO80PSOA-I | 80 kW / 1500 RPM | 6BT5.9-G1 | Stamford | UCI274C | 2150 mm * 930 mm * 1560 mm",
+        "| CDLO68PSOA-II | 68 kW / 1500 RPM | 6BT5.9-G2 | Stamford | UCI224G | 2150 mm * 930 mm * 1560 mm",
+        "| CDLO72PSOA-II | 72 kW / 1500 RPM | 6BT5.9-G2 | Stamford | UCI274C | 2150 mm * 930 mm * 1560 mm",
+        "| CDLO80PSOA-II | 80 kW / 1500 RPM | 6BT5.9-G2 | Stamford | UCI274C | 2150 mm * 930 mm * 1560 mm",
+        "| CDLO80PSOA-III | 80 kW / 1500 RPM | 6BT5.9-G2 | Stamford | UCI274C | 2150 mm * 930 mm * 1560 mm",
+        "| CDLO90PSOA | 90 kW / 1500 RPM | 6BTA5.9-G2 | Stamford | UCI274D | 2150 mm * 930 mm * 1560 mm",
+        "| CDLO100PSOA-II | 100 kW / 1500 RPM | 6BTAA5.9-G2 | Stamford | UCI274ES | 2230 mm * 930 mm * 1560 mm",
+        "| CDLO110PSOA | 110 kW / 1500 RPM | 6BTAA5.9-G2 | Stamford | UCI274E | 2230 mm * 930 mm * 1560 mm",
+        "| CDLO120PSOA | 120 kW / 1500 RPM | 6BTAA5.9-G12 | Stamford | UCI274F | 2400 mm * 930 mm * 1500 mm"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "DCEC 6CTA8.3 Series",
+      "header": [
+        "| Generator Model | Prime Power | Engine Model | Alternator Brand | Alternator Model | Generator Dimension"
+      ],
+      "rows": [
+        "| CDLO150PSOA | 163 kW / 1500 RPM | 6CTA8.3-G1 | Stamford | UCI274H | 2370 mm * 850 mm * 1300 mm",
+        "| CDLO165PSOA | 183 kW / 1500 RPM | 6CTAA8.3-G2 | Stamford | UCI274H | 2370 mm * 850 mm * 1300 mm",
+        "| CDLO128PSOA-I | 128 kW / 1500 RPM | 6CTA8.3-G1 | Stamford | UCI274F | 2360 mm * 960 mm * 1690 mm",
+        "| CDLO128PSOA-II | 128 kW / 1500 RPM | 6CTA8.3-G2 | Stamford | UCI274F | 2360 mm * 960 mm * 1690 mm",
+        "| CDLO145.6PSOA-I | 145.6 kW / 1500 RPM | 6CTA8.3-G1 | Stamford | UCI274G | 2360 mm * 960 mm * 1690 mm",
+        "| CDLO145.6PSOA-II | 145.6 kW / 1500 RPM | 6CTA8.3-G2 | Stamford | UCI274G | 2360 mm * 960 mm * 1690 mm",
+        "| CDLO160PSOA | 150 kW / 1500 RPM | 6CTAA8.3-G2 | Stamford | UCI274H | 2500 mm * 970 mm * 1740 mm"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "DCEC 6LTAA8.9 Series",
+      "header": [
+        "| Generator Model | Prime Power | Engine Model | Alternator Brand | Alternator Model | Generator Dimension"
+      ],
+      "rows": [
+        "| CDLO180PSOA | 220 kW / 1500 RPM | 6LTAA8.9-G2 | Stamford | UCD274K | 2670 mm * 1250 mm * 1410 mm",
+        "| CDLO182PSOA | 182 kW / 1500 RPM | 6LTAA8.9-G2 | Stamford | UCDI274J | 2550 mm * 1050 mm * 1860 mm",
+        "| CDLO200PSOA | 200 kW / 1500 RPM | 6LTAA8.9-G3 | Stamford | UCDI274K | 2550 mm * 1050 mm * 1860 mm"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "CCEC NH Series",
+      "header": [
+        "| Generator Model | Prime Power | Engine Model | Alternator Model | Generator Dimension"
+      ],
+      "rows": [
+        "| CDLO200PSOA-I | 200 kW | NT855-GA | UCDI274K | 3050 mm * 1170 mm * 1780 mm",
+        "| CDLO200PSOA-II | 200 kW | NTA855-G1 | UCDI274K | 3050 mm * 1170 mm * 1780 mm",
+        "| CDLO220PSOA | 220 kW | NTA855G1A | HCI444D | 3070 mm * 1100 mm * 1960 mm",
+        "| CDLO250PSOA-I | 250 kW | NTA855G1B | HCI444ES | 3070 mm * 1100 mm * 1960 mm",
+        "| CDLO250PSOA-II | 250 kW | NTA855G2 | HCI444ES | 3070 mm * 1100 mm * 1960 mm",
+        "| CDLO280PSOA-I | 280 kW | NTA855G2A | HCI444E | 3070 mm * 1100 mm * 1960 mm",
+        "| CDLO280PSOA-II | 280 kW | NTA855G4 | HCI444E | 3070 mm * 1100 mm * 1960 mm",
+        "| CDLO300PSOA | 300 kW | NTAA855G7 | HCI444FS | 3270 mm * 1230 mm * 2020 mm",
+        "| CDLO320PSOA | 320 kW | NTAA855G7A | HCI444F | 3270 mm * 1230 mm * 2020 mm"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "CCEC QSN Series",
+      "header": [
+        "| Generator Model | Prime Power | Engine Model | Alternator Model | Generator Dimension"
+      ],
+      "rows": [
+        "| CDLO200PSOA | 200 kW | QSNT-G6 | UCDI274K | 3050 mm * 1170 mm * 1780 mm",
+        "| CDLO220PSOA | 220 kW | QSNT-G7 | HCI444D | N/A",
+        "| CDLO240PSOA | 240 kW | QSNT-G1 | HCI444D | 3050 mm * 1170 mm * 1780 mm",
+        "| CDLO250PSOA | 250 kW | QSNT-G1 | HCI444ES | 3070 mm * 1100 mm * 1960 mm",
+        "| CDLO280PSOA | 280 kW | QSNT-G2 | HCI444E | 3250 mm * 1140 mm * 1930 mm",
+        "| CDLO320PSOA | 320 kW | QSNT-G3 | HCI444F | 3250 mm * 1140 mm * 1930 mm",
+        "| CDLO360PSOA | 360 kW | QSNT-G4Ｘ | HCI544C | 3450 mm * 1340 mm * 2170 mm"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "CCEC K19 Series",
+      "header": [
+        "| Generator Model | Prime Power | Engine Model | Alternator Model | Generator Dimension"
+      ],
+      "rows": [
+        "| CDLO360PSOA | 360 kW | KTA19G3 | HCI544C | 3450 mm * 1340 mm * 2170 mm",
+        "| CDLO400PSOA-I | 400 kW | KTA19-G3A | HCI544C | 3450 mm * 1340 mm * 2170 mm",
+        "| CDLO400PSOA-II | 400 kW | KTA19-G4 | HCI544C | 3450 mm * 1340 mm * 2170 mm",
+        "| CDLO420PSOA-I | 420 kW | KTAA19G5 | HCI544D | 3700 mm * 1500 mm * 2170 mm",
+        "| CDLO420PSOA-II | 420 kW | KTAA19G5 | HCI544E | 3700 mm * 1500 mm * 2170 mm",
+        "| CDLO460PSOA | 460 kW | KTAA19G6 | HCI544E | 3700 mm * 1500 mm * 2170 mm"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "CCEC QSK19 Series",
+      "header": [
+        "| Generator Model | Prime Power | Engine Model | Alternator Model | Generator Dimension"
+      ],
+      "rows": [
+        "| CDLO360PSOA-I | 360 kW | QSK19-G15 | HCI544C | 3450 mm * 1340 mm * 2170 mm",
+        "| CDLO400PSOA | 400 kW | QSK19-G16 | HCI544C | 3450 mm * 1340 mm * 2170 mm",
+        "| CDLO450PSOA | 450 kW | QSK19-G17 | HCI544E | 3700 mm * 1500 mm * 2170 mm",
+        "| CDLO500PSOA | 500 kW | QSK19-G18 | HCI544FS | 3700 mm * 1500 mm * 2180 mm",
+        "| CDLO510PSOA | 510 kW | QSK19-G18 | HCI544F | N/A",
+        "| CDLO550PSOA-I | 550 kW | QSK19-G19 | LVI634B | 3600 mm * 1720 mm * 2220 mm",
+        "| CDLO600PSOA | 600 kW | QSK19-G20 | LVI634B | 4350 mm * 1720 mm * 2480 mm",
+        "| CDLO640PSOA | 640 kW | QSK19-G21 | HCI634G | N/A",
+        "| CDLO655PSOA | 655 kW | QSK19-G21 | HCI634H | N/A",
+        "| CDLO360PSOA-II | 360 kW | QSK19-G14 | HCI544C | 3450 mm * 1340 mm * 2170 mm",
+        "| CDLO410PSOA | 410 kW | QSK19-G13 | HCI544D | N/A",
+        "| CDLO460PSOA | 460 kW | QSK19-G12 | HCI544E | N/A",
+        "| CDLO470PSOA | 470 kW | QSK19-G6 | HCI544E | 3450 mm * 1340 mm * 2170 mm",
+        "| CDLO520PSOA | 520 kW | QSK19-G4 | HCI544F | 3600 mm * 1720 mm * 2220 mm",
+        "| CDLO550PSOA-II | 550 kW | QSK19-G11 | N/A | 3600 mm * 1720 mm * 2220 mm"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "CCEC K38 Series",
+      "header": [
+        "| Generator Model | Prime Power | Engine Model | Alternator Model | Generator Dimension"
+      ],
+      "rows": [
+        "| CDLO580PSOA | 580 kW | KT38-GA | LVI 634B | 4350 mm * 1720 mm * 2480 mm",
+        "| CDLO600PSOA | 600 kW | KTA38G2 | LVI 634B | 4350 mm * 1720 mm * 2480 mm",
+        "| CDLO640PSOA | 640 kW | KTA38G2B | HCI634G | 4350 mm * 1720 mm * 2480 mm",
+        "| CDLO720PSOA | 720 kW | KTA38G2A | HCI634H | 4350 mm * 1720 mm * 2480 mm",
+        "| CDLO800PSOA | 800 kW | KTA38G5 | HCI634J | 4350 mm * 1790 mm * 2250 mm"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "CCEC QSK38 Series",
+      "header": [
+        "| Generator Model | Prime Power | Engine Model | Alternator Model | Generator Dimension"
+      ],
+      "rows": [
+        "| CDLO600PSOA | 600 kW | QSK38-G8 | LVI634B | 4350 mm * 1720 mm * 2480 mm",
+        "| CDLO640PSOA | 640 kW | QSK38-G7 | HCI634G | 4350 mm * 1720 mm * 2480 mm",
+        "| CDLO720PSOA | 720 kW | QSK38-G9 | HCI634H | 4350 mm * 1720 mm * 2480 mm",
+        "| CDLO728PSOA | 728 kW | QSK38-G6 | HCI634H | 4350 mm * 1720 mm * 2480 mm",
+        "| CDLO740PSOA | 740 kW | QSK38-G9 | HCI634H | N/A",
+        "| CDLO800PSOA-I | 800 kW | QSK38-G1 | HCI634J | 4350 mm * 1790 mm * 2250 mm",
+        "| CDLO800PSOA-II | 800 kW | QSK38-G10 | HCI634J | 4350 mm * 1790 mm * 2250 mm",
+        "| CDLO820PSOA | 820 kW | QSK38-G10 | HCI634J | N/A",
+        "| CDLO900PSOA-I | 900 kW | QSK38-G2 | HCI634K | 4470 mm * 2150 mm * 2240 mm",
+        "| CDLO900PSOA-II | 900 kW | QSK38-G11 | HCI634K | 4470 mm * 2150 mm * 2240 mm",
+        "| CDLO1000PSOA-I | 1000 kW | QSK38-G5 | LVI634G | 5000 mm * 2070 mm * 2440 mm",
+        "| CDLO1000PSOA-II | 1000 kW | QSK38-G12 | LVI634G | 5000 mm * 2070 mm * 2440 mm",
+        "| CDLO1100PSOA-I | 1100 kW | QSK38-G19 | PI734B | 5720 mm * 2150 mm * 2540 mm",
+        "| CDLO1100PSOA-II | 1100 kW | QSK38-G13 | PI734B | 5720 mm * 2150 mm * 2540 mm",
+        "| CDLO1200PSOA | 1200 kW | QSK38-G14 | PI734C | 5720 mm * 2150 mm * 2540 mm",
+        "| CDLO1280PSOA | 1280 kW | QSK38-G15 | PI734D | N/A"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "CCEC K50 Series",
+      "header": [
+        "| Generator Model | Prime Power | Engine Model | Alternator Model | Generator Dimension"
+      ],
+      "rows": [
+        "| CDLO1000PSOA-I | 1000 kW | KTA50G3 | LVI634G | 5000 mm * 2070 mm * 2440 mm",
+        "| CDLO1000PSOA-II | 1000 kW | KTA50-G12 | LVI634G | 5000 mm * 2070 mm * 2440 mm",
+        "| CDLO1100PSOA | 1100 kW | KTA50G8 | PI734B | 5720 mm * 2150 mm * 2540 mm",
+        "| CDLO1200PSOA | 1200 kW | KTA50GS8 | PI734C | 5720 mm * 2150 mm * 2540 mm",
+        "| CDLO1340PSOA | 1340 kW | KTA50-G15X | PI734ES | 5720 mm * 2150 mm * 2540 mm"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "Deepsea 6120",
+      "line": "SinoGen CDLO72PSOA diesel generator set is the complete generator set manufactured by SinoGen. SinoGen CDLO72PSOA diesel generator set powered by DCEC 4BT3.9 series diesel engine, comes with 50-degree aluminum radiator, coupled with Stamford alternator, controlled by Deepsea 6120 intelligent generator set controller.",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "Deepsea 6120",
+      "line": "SinoGen CDLO120PSOA diesel generator set is the complete generator set manufactured by SinoGen. SinoGen CDLO120PSOA diesel generator set powered by DCEC 6BT5.9 series diesel engine, comes with 50-degree aluminum radiator, coupled with Stamford alternator, controlled by Deepsea 6120 intelligent generator set controller.",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "Deepsea 6120",
+      "line": "SinoGen CDLO160PSOA diesel generator set is the complete generator set manufactured by SinoGen. SinoGen CDLO160PSOA diesel generator set powered by DCEC 6CTA8.3 series diesel engine, comes with 50-degree aluminum radiator, coupled with Stamford alternator, controlled by Deepsea 6120 intelligent generator set controller.",
+      "src": [
+        2003
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "Deepsea 6120",
+      "line": "SinoGen CDLO200PSOA diesel generator set is the complete generator set manufactured by SinoGen. SinoGen CDLO200PSOA diesel generator set powered by DCEC 6LTAA8.9 series diesel engine, comes with 50-degree aluminum radiator, coupled with Stamford alternator, controlled by Deepsea 6120 intelligent generator set controller.",
+      "src": [
+        2004
+      ]
+    }
+  ]
 }
