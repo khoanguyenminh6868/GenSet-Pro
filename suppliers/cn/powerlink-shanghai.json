@@ -60,6 +60,3971 @@
       "src": [
         2
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "GMS30CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "4B3.9-G1"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GMS42CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "4BT3.9-G1"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 43,
+        "max": 43,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GMS60CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "4BTA3.9-G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GMS80CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "4BTA3.9-G11"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GMS100CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "6BT5.9-G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GMS150CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "6CTA8.3-G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GMS180CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "6CTA8.3-G1"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 190,
+        "max": 190,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GMS200CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "6CTA8.3-G1"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 190,
+        "max": 190,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GMS320CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "6LTAA9.5-G1"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 320,
+        "max": 320,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GMS380CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "6ZTAA13-G3"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 388,
+        "max": 388,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GMS450CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSZ13-G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GMS500CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSZ13-G3"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GMS650CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA19-G8"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GMS800CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA38-G2B"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GMS900CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA38-G2A"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 900,
+        "max": 900,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GMS1000CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA38-G5"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GMS1250CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA50–G3"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GMS1500CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA50-GS8"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PowerLink EC Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 30,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS10S",
+      "fuel": "diesel",
+      "engineModels": [
+        "403D-11G"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 10,
+        "max": 10,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS13S",
+      "fuel": "diesel",
+      "engineModels": [
+        "403D-15G"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 13,
+        "max": 13,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS15S",
+      "fuel": "diesel",
+      "engineModels": [
+        "403A-15G2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 15,
+        "max": 15,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS20S",
+      "fuel": "diesel",
+      "engineModels": [
+        "404D-22G"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS30S",
+      "fuel": "diesel",
+      "engineModels": [
+        "1103A-33G"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS45S",
+      "fuel": "diesel",
+      "engineModels": [
+        "1103A-33TG1"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 45,
+        "max": 45,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS60S",
+      "fuel": "diesel",
+      "engineModels": [
+        "1103A-33TG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS80S",
+      "fuel": "diesel",
+      "engineModels": [
+        "1104A-44TG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS100S",
+      "fuel": "diesel",
+      "engineModels": [
+        "1104C-44TAG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS135S",
+      "fuel": "diesel",
+      "engineModels": [
+        "1106A-70TG1"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 135,
+        "max": 135,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS150BS",
+      "fuel": "diesel",
+      "engineModels": [
+        "1106A-70TG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS180BS",
+      "fuel": "diesel",
+      "engineModels": [
+        "1106A-70TAG3"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 180,
+        "max": 180,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS200BS",
+      "fuel": "diesel",
+      "engineModels": [
+        "1306C-E87TAG3"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS250S",
+      "fuel": "diesel",
+      "engineModels": [
+        "1306C-E87TAG6"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS300S",
+      "fuel": "diesel",
+      "engineModels": [
+        "1606A-E93TAG5"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS350S",
+      "fuel": "diesel",
+      "engineModels": [
+        "2206A-E13TAG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS400S",
+      "fuel": "diesel",
+      "engineModels": [
+        "2206A-E13TAG3"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS450S",
+      "fuel": "diesel",
+      "engineModels": [
+        "2506C-E15TAG1"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS600S",
+      "fuel": "diesel",
+      "engineModels": [
+        "2806C-E18TAG1"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 600,
+        "max": 600,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS650S",
+      "fuel": "diesel",
+      "engineModels": [
+        "2806C-E18TAG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS725S",
+      "fuel": "diesel",
+      "engineModels": [
+        "4006-23TAG3A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 725,
+        "max": 725,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS750S",
+      "fuel": "diesel",
+      "engineModels": [
+        "2806A-E18TTAG5"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 717,
+        "max": 717,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS800S",
+      "fuel": "diesel",
+      "engineModels": [
+        "4006-23TAG3A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS900S",
+      "fuel": "diesel",
+      "engineModels": [
+        "4006-23TAG3A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS1000S",
+      "fuel": "diesel",
+      "engineModels": [
+        "4008-TAG2A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS1125S",
+      "fuel": "diesel",
+      "engineModels": [
+        "4008-TAG3"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 1125,
+        "max": 1125,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS1250S",
+      "fuel": "diesel",
+      "engineModels": [
+        "4012-46TWG2A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS1500S",
+      "fuel": "diesel",
+      "engineModels": [
+        "4012-46TAG2A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS1710S",
+      "fuel": "diesel",
+      "engineModels": [
+        "4012-46TAG3A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 1710,
+        "max": 1710,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS1850S",
+      "fuel": "diesel",
+      "engineModels": [
+        "4016-61TRG1"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 1850,
+        "max": 1850,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS2000S",
+      "fuel": "diesel",
+      "engineModels": [
+        "4016-TAG2A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 2000,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS2250S",
+      "fuel": "diesel",
+      "engineModels": [
+        "4016-61TRG3"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 2250,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PowerLink EP Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 6,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV10KS",
+      "fuel": "diesel",
+      "engineModels": [
+        "D1105-BG"
+      ],
+      "engineMakes": [
+        "KUBOTA"
+      ],
+      "power": {
+        "min": 10,
+        "max": 10,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV15KS",
+      "fuel": "diesel",
+      "engineModels": [
+        "D1703-BG"
+      ],
+      "engineMakes": [
+        "KUBOTA"
+      ],
+      "power": {
+        "min": 15,
+        "max": 15,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV18KS",
+      "fuel": "diesel",
+      "engineModels": [
+        "D1803-M-DI-BG"
+      ],
+      "engineMakes": [
+        "KUBOTA"
+      ],
+      "power": {
+        "min": 18,
+        "max": 18,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV20KS",
+      "fuel": "diesel",
+      "engineModels": [
+        "V2203-BG"
+      ],
+      "engineMakes": [
+        "KUBOTA"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV23KS",
+      "fuel": "diesel",
+      "engineModels": [
+        "V2403-M-DI-BG"
+      ],
+      "engineMakes": [
+        "KUBOTA"
+      ],
+      "power": {
+        "min": 23,
+        "max": 23,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV30KS",
+      "fuel": "diesel",
+      "engineModels": [
+        "V3300-BG"
+      ],
+      "engineMakes": [
+        "KUBOTA"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV37KS",
+      "fuel": "diesel",
+      "engineModels": [
+        "V3300-T-E2BG2"
+      ],
+      "engineMakes": [
+        "KUBOTA"
+      ],
+      "power": {
+        "min": 37,
+        "max": 37,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV45KS",
+      "fuel": "diesel",
+      "engineModels": [
+        "V3800DI-T-BG"
+      ],
+      "engineMakes": [
+        "KUBOTA"
+      ],
+      "power": {
+        "min": 45,
+        "max": 45,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SG10KS",
+      "fuel": "diesel",
+      "engineModels": [
+        "D1105-BG"
+      ],
+      "engineMakes": [
+        "KUBOTA"
+      ],
+      "power": {
+        "min": 10,
+        "max": 10,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SG15KS",
+      "fuel": "diesel",
+      "engineModels": [
+        "D1703-BG"
+      ],
+      "engineMakes": [
+        "KUBOTA"
+      ],
+      "power": {
+        "min": 15,
+        "max": 15,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SG18KS",
+      "fuel": "diesel",
+      "engineModels": [
+        "D1803-M-DI-BG"
+      ],
+      "engineMakes": [
+        "KUBOTA"
+      ],
+      "power": {
+        "min": 18,
+        "max": 18,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SG20KS",
+      "fuel": "diesel",
+      "engineModels": [
+        "V2203-BG"
+      ],
+      "engineMakes": [
+        "KUBOTA"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SG23KS",
+      "fuel": "diesel",
+      "engineModels": [
+        "V2403-M-DI-BG"
+      ],
+      "engineMakes": [
+        "KUBOTA"
+      ],
+      "power": {
+        "min": 23,
+        "max": 23,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SG30KS",
+      "fuel": "diesel",
+      "engineModels": [
+        "V3300-BG"
+      ],
+      "engineMakes": [
+        "KUBOTA"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SG45KS",
+      "fuel": "diesel",
+      "engineModels": [
+        "V3800DI-T-BG"
+      ],
+      "engineMakes": [
+        "KUBOTA"
+      ],
+      "power": {
+        "min": 45,
+        "max": 45,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SG30CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "4B3.9-G12"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SG45CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "4BT3.9-G1"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 45,
+        "max": 45,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SG60CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "4BTA3.9-G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV10PS",
+      "fuel": "diesel",
+      "engineModels": [
+        "403D-11G"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 10,
+        "max": 10,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV13PS",
+      "fuel": "diesel",
+      "engineModels": [
+        "403D-15G"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 13,
+        "max": 13,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV15PS",
+      "fuel": "diesel",
+      "engineModels": [
+        "403A-15G2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 15,
+        "max": 15,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV20PS",
+      "fuel": "diesel",
+      "engineModels": [
+        "404D-22G"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV30PS",
+      "fuel": "diesel",
+      "engineModels": [
+        "1103A-33G"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV45PS",
+      "fuel": "diesel",
+      "engineModels": [
+        "1103A-33TG1"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 45,
+        "max": 45,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV60PS",
+      "fuel": "diesel",
+      "engineModels": [
+        "1103A-33TG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV80PS",
+      "fuel": "diesel",
+      "engineModels": [
+        "1104A-44TG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV100PS",
+      "fuel": "diesel",
+      "engineModels": [
+        "1104C-44TAG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV135PS",
+      "fuel": "diesel",
+      "engineModels": [
+        "1106A-70TG1"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 135,
+        "max": 135,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV150PS",
+      "fuel": "diesel",
+      "engineModels": [
+        "1106A-70TAG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV180PS",
+      "fuel": "diesel",
+      "engineModels": [
+        "1106A-70TAG3"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 180,
+        "max": 180,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV200PS",
+      "fuel": "diesel",
+      "engineModels": [
+        "1106A-70TAG4"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV250PS",
+      "fuel": "diesel",
+      "engineModels": [
+        "1206A-E70TTAG3"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV300PS",
+      "fuel": "diesel",
+      "engineModels": [
+        "1506A-E88TAG5"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV400PS",
+      "fuel": "diesel",
+      "engineModels": [
+        "2206C-E13TAG3"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV450PS",
+      "fuel": "diesel",
+      "engineModels": [
+        "2506C-E15TAG1"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV500PS",
+      "fuel": "diesel",
+      "engineModels": [
+        "2506C-E15TAG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV27CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "4B3.9-G1"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 27,
+        "max": 27,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV30CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "4B3.9-G12"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV42CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "4BT3.9-G1"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 43,
+        "max": 43,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV60CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "4BTA3.9-G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV80CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "4BTA3.9-G11"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV100CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "6BT5.9-G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV135CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "6BTAA5.9-G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 135,
+        "max": 135,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV150CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "6BTAA5.9-G12"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV180CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "6CTA8.3-G1"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 180,
+        "max": 180,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV200CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "6CTAA8.3-G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV250CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "6LTAA8.9-G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV320CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "6LTAA9.5-G1"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 320,
+        "max": 320,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV380CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "6ZTAA13-G3"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 388,
+        "max": 388,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV440CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSZ13-G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 438,
+        "max": 438,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV650CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA19-G8"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV800CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA38-G2B"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV900CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA38-G2A"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 900,
+        "max": 900,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV1000CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA38-G5"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV10XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR3-1.4G1"
+      ],
+      "engineMakes": [
+        "POWERLINK"
+      ],
+      "power": {
+        "min": 10,
+        "max": 10,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV15XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR4-2.3G1"
+      ],
+      "engineMakes": [
+        "POWERLINK"
+      ],
+      "power": {
+        "min": 15,
+        "max": 15,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV20XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR4-2.7G1"
+      ],
+      "engineMakes": [
+        "POWERLINK"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV30XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR4-3.2G1"
+      ],
+      "engineMakes": [
+        "POWERLINK"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV45XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR4-3.2TG2"
+      ],
+      "engineMakes": [
+        "POWERLINK"
+      ],
+      "power": {
+        "min": 45,
+        "max": 45,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV60XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR4-4.1TG2"
+      ],
+      "engineMakes": [
+        "POWERLINK"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV70XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR4-4.1TAG2"
+      ],
+      "engineMakes": [
+        "POWERLINK"
+      ],
+      "power": {
+        "min": 70,
+        "max": 70,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV80XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR4-4.1TAG3"
+      ],
+      "engineMakes": [
+        "POWERLINK"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PowerLink QSV Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "PowerLink",
+        "Perkins",
+        "Kubota",
+        "Cummins"
+      ],
+      "power": {
+        "min": 10,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR10XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR3-1.4G1"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 10,
+        "max": 10,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR15XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR4-2.3G1"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 15,
+        "max": 15,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR20XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR4-2.7G1"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR30XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR4-3.2G1"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR45XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR4-3.2TG2"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 45,
+        "max": 45,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR60XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR4-3.5TAG2"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR80XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR4-4.1TAG3"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR100XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR4-4.3TAG4"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR110XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR4-4.3TAG2"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 110,
+        "max": 110,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR125XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR4-4.3TAG3"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 125,
+        "max": 125,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR135XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR4-4.3TAG5"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 138,
+        "max": 138,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR160XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR6-6.5TAG3"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 169,
+        "max": 169,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR165XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR6-6.5TAG2"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 165,
+        "max": 165,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR200XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR6-8.3TAG2"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR250XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "SC9D340D2"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR310XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "6ETAA11.8-G32"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 313,
+        "max": 313,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR315XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR6-12TAG2"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 313,
+        "max": 313,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR375XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR6-13TAG2"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 375,
+        "max": 375,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR450XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR6-13TAG3"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR625XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR6-17TAG3"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 625,
+        "max": 625,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR750XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR6-25TAG3"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR800XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR6-25TAG5"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR900XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR6-25TAG6"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 900,
+        "max": 900,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR1000XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR6-25TAG7"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR1250XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "12D39TAG3"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR1500XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "12D39TAG4"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR1750XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "12D58TWG3"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 1875,
+        "max": 1875,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR2000XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "12D58TWG4"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 2000,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR2250XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "12D58TWG5"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 2250,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR2500XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "16D76TWG2"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 2500,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR2750XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "16D76TWG3"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 2750,
+        "max": 2750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR3000XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "16D76TWG4"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 3000,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HVC1500S",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA50-GS8"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HVC1600S",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK60-G12"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 1601,
+        "max": 1601,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HVC1875S",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK60G3"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 1875,
+        "max": 1875,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HVC2045S",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK60G4"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 2045,
+        "max": 2045,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HVC2750S",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK78-G9"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 2750,
+        "max": 2750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HVC1400S",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK50-G3"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 1400,
+        "max": 1400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HVC1540S",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK50-G4"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 1540,
+        "max": 1540,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HVC1650S",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK50-G7"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 1650,
+        "max": 1650,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HVC1829S",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK60-G12"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 1829,
+        "max": 1829,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HVC2000S",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK60-G13"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 2003,
+        "max": 2003,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HVM1290S",
+      "fuel": "diesel",
+      "engineModels": [
+        "S12R-PTA-C"
+      ],
+      "engineMakes": [
+        "MITSUBISHI"
+      ],
+      "power": {
+        "min": 1290,
+        "max": 1290,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HVM1500S",
+      "fuel": "diesel",
+      "engineModels": [
+        "S12R-PTAA2-C"
+      ],
+      "engineMakes": [
+        "MITSUBISHI"
+      ],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HVM1728S",
+      "fuel": "diesel",
+      "engineModels": [
+        "S16R-PTA-C"
+      ],
+      "engineMakes": [
+        "MITSUBISHI"
+      ],
+      "power": {
+        "min": 1728,
+        "max": 1728,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HVM2045S",
+      "fuel": "diesel",
+      "engineModels": [
+        "S16R-PTAA2-C"
+      ],
+      "engineMakes": [
+        "MITSUBISHI"
+      ],
+      "power": {
+        "min": 2045,
+        "max": 2045,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HVP1250S",
+      "fuel": "diesel",
+      "engineModels": [
+        "4012-46TWG2A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HVP1500S",
+      "fuel": "diesel",
+      "engineModels": [
+        "4012-46TAG2A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HVP1710S",
+      "fuel": "diesel",
+      "engineModels": [
+        "4012-46TAG3A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 1710,
+        "max": 1710,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HVP1850S",
+      "fuel": "diesel",
+      "engineModels": [
+        "4016-61TRG1"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 1850,
+        "max": 1850,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HVP2000S",
+      "fuel": "diesel",
+      "engineModels": [
+        "4016-61TRG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 2000,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HVP2250S",
+      "fuel": "diesel",
+      "engineModels": [
+        "4016-61TRG3"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 2250,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WPS500S",
+      "fuel": "diesel",
+      "engineModels": [
+        "2506C-E15TAG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "alternatorMakes": [
+        "Leroy-somer"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VR500XS",
+      "fuel": "diesel",
+      "engineModels": [
+        "VR6-13TAG4"
+      ],
+      "engineMakes": [
+        "PowerLink"
+      ],
+      "alternatorMakes": [
+        "PowerLink"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "QSV500CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSZ13-G3"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "HVC1275S",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA50-G3"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "power": {
+        "min": 1275,
+        "max": 1275,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GMS250CS",
+      "fuel": "diesel",
+      "engineModels": [
+        "6LTAA8.9-G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "alternatorMakes": [
+        "LSA"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
     }
   ],
   "certifications": [],
@@ -90,9 +4055,2657 @@
         "The EP range of diesel generators, powered by Perkins engines, provides 6kVA to 2250kVA"
       ],
       "file": "sources/powerlink-shanghai/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://powerlinkenergy.com/product/ec-series/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "The EC Series diesel generator sets offer a versatile power range from 30 kVA to 1500 kVA, featuring premium Cummins engines and Stamford alternators. These Cummins engine generators are engineered to provide exceptional reliability and durability. They serve effectively as both a continuous power source and a robust solution for emergency or backup power.",
+        "| PRP | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW",
+        "| PRP | 43 kVA / 34 kW | 43 kVA / 34 kW | 43 kVA / 34 kW | 43 kVA / 34 kW",
+        "| PRP | 60 kVA / 48 kW | 60 kVA / 48 kW | 60 kVA / 48 kW | 60 kVA / 48 kW",
+        "| PRP | 80 kVA / 64 kW | 80 kVA / 64 kW | 80 kVA / 64 kW | 80 kVA / 64 kW",
+        "| PRP | 100kVA / 80 kW | 100kVA / 80 kW | 100kVA / 80 kW | 100kVA / 80 kW",
+        "| PRP | 150 kVA / 120 kW | 150 kVA / 120 kW | 150 kVA / 120 kW | 150 kVA / 120 kW",
+        "| PRP | 190 kVA / 144 kW | 190 kVA / 144 kW | 190 kVA / 144 kW | 190 kVA / 144 kW",
+        "| PRP | 320 kVA / 256 kW | 320 kVA / 256 kW | 320 kVA / 256 kW | 320 kVA / 256 kW",
+        "| PRP | 388 kVA / 310 kW | 388 kVA / 310 kW | 388 kVA / 310 kW | 388 kVA / 310 kW",
+        "| PRP | 450 kVA / 360 kW | 450 kVA / 360 kW | 450 kVA / 360 kW | 450 kVA / 360 kW",
+        "| PRP | 500 kVA / 400 kW | 500 kVA / 400 kW | 500 kVA / 400 kW | 500 kVA / 400 kW",
+        "| ESP | 650 kVA / 520 kW | 650 kVA / 520 kW | 650 kVA / 520 kW | 650 kVA / 520 kW",
+        "| PRP | 800 kVA / 640 kW | 800 kVA / 640 kW | 800 kVA / 640 kW | 800 kVA / 640 kW",
+        "| PRP | 900 kVA / 720 kW | 900 kVA / 720 kW | 900 kVA / 720 kW | 900 kVA / 720 kW",
+        "| PRP | 1000 kVA / 800 kW | 1000 kVA / 800 kW | 1000 kVA / 800 kW | 1000 kVA / 800 kW",
+        "| PRP | 1250kVA / 1000 kW | 1250kVA / 1000 kW | 1250kVA / 1000 kW | 1250kVA / 1000 kW",
+        "| PRP | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW"
+      ],
+      "file": "sources/powerlink-shanghai/2001.md",
+      "official": false
+    },
+    {
+      "n": 2002,
+      "url": "https://powerlinkenergy.com/product/ep-series/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "The EP Series generators, equipped with Perkins engines, deliver a robust power range of 6 to 2250 kVA. Renowned for their reliability and durability, these Perkins engine generator are ideal for various applications, whether as a primary continuous power source or a rapid emergency backup.",
+        "| PRP | 10 kVA / 8 kW | 10 kVA / 8 kW | 10 kVA / 8 kW | 10 kVA / 8 kW",
+        "| PRP | 13 kVA / 10 kW | 13 kVA / 10 kW | 13 kVA / 10 kW | 13 kVA / 10 kW",
+        "| PRP | 15 kVA / 12 kW | 15 kVA / 12 kW | 15 kVA / 12 kW | 15 kVA / 12 kW",
+        "| PRP | 20 kVA / 16 kW | 20 kVA / 16 kW | 20 kVA / 16 kW | 20 kVA / 16 kW",
+        "| PRP | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW",
+        "| PRP | 45 kVA / 36 kW | 45 kVA / 36 kW | 45 kVA / 36 kW | 45 kVA / 36 kW",
+        "| PRP | 60 kVA / 48 kW | 60 kVA / 48 kW | 60 kVA / 48 kW | 60 kVA / 48 kW",
+        "| PRP | 80 kVA / 64 kW | 80 kVA / 64 kW | 80 kVA / 64 kW | 80 kVA / 64 kW",
+        "| PRP | 100 kVA / 80 kW | 100 kVA / 80 kW | 100 kVA / 80 kW | 100 kVA / 80 kW",
+        "| PRP | 135 kVA / 108 kW | 135 kVA / 108 kW | 135 kVA / 108 kW | 135 kVA / 108 kW",
+        "| PRP | 150 kVA / 120 kW | 150 kVA / 120 kW | 150 kVA / 120 kW | 150 kVA / 120 kW",
+        "| PRP | 180 kVA / 144 kW | 180 kVA / 144 kW | 180 kVA / 144 kW | 180 kVA / 144 kW",
+        "| PRP | 200 kVA / 160 kW | 200 kVA / 160 kW | 200 kVA / 160 kW | 200 kVA / 160 kW",
+        "| PRP | 250 kVA / 200 kW | 250 kVA / 200 kW | 250 kVA / 200 kW | 250 kVA / 200 kW",
+        "| PRP | 300 kVA / 240 kW | 300 kVA / 240 kW | 300 kVA / 240 kW | 300 kVA / 240 kW",
+        "| PRP | 350 kVA / 280 kW | 350 kVA / 280 kW | 350 kVA / 280 kW | 350 kVA / 280 kW",
+        "| PRP | 400 kVA / 320 kW | 400 kVA / 320 kW | 400 kVA / 320 kW | 400 kVA / 320 kW",
+        "| PRP | 450 kVA / 360 kW | 450 kVA / 360 kW | 450 kVA / 360 kW | 450 kVA / 360 kW",
+        "| PRP | 600 kVA / 480 kW | 600 kVA / 480 kW | 600 kVA / 480 kW | 600 kVA / 480 kW",
+        "| PRP | 650 kVA / 520 kW | 650 kVA / 520 kW | 650 kVA / 520 kW | 650 kVA / 520 kW",
+        "| PRP | 725 kVA / 580 kW | 725 kVA / 580 kW | 725 kVA / 580 kW | 725 kVA / 580 kW",
+        "| PRP | 717 kVA / 617 kW | 717 kVA / 617 kW | 717 kVA / 617 kW | 717 kVA / 617 kW",
+        "| PRP | 800 kVA / 640 kW | 800 kVA / 640 kW | 800 kVA / 640 kW | 800 kVA / 640 kW",
+        "| PRP | 1000 kVA / 800 kW | 1000 kVA / 800 kW | 1000 kVA / 800 kW | 1000 kVA / 800 kW",
+        "| PRP | 1125 kVA / 900 kW | 1125 kVA / 900 kW | 1125 kVA / 900 kW | 1125 kVA / 900 kW",
+        "| PRP | 1250 kVA / 1000 kW | 1250 kVA / 1000 kW | 1250 kVA / 1000 kW | 1250 kVA / 1000 kW",
+        "| PRP | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW",
+        "| PRP | 1710 kVA / 1368 kW | 1710 kVA / 1368 kW | 1710 kVA / 1368 kW | 1710 kVA / 1368 kW",
+        "| PRP | 1850 kVA/ 1480 kW | 1850 kVA/ 1480 kW | 1850 kVA/ 1480 kW | 1850 kVA/ 1480 kW",
+        "| PRP | 2000 kVA / 1600 kW | 2000 kVA / 1600 kW | 2000 kVA / 1600 kW | 2000 kVA / 1600 kW",
+        "| PRP | 2250 kVA / 1800 kW | 2250 kVA / 1800 kW | 2250 kVA / 1800 kW | 2250 kVA / 1800 kW"
+      ],
+      "file": "sources/powerlink-shanghai/2002.md",
+      "official": false
+    },
+    {
+      "n": 2003,
+      "url": "https://powerlinkenergy.com/product/qsv-series/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "The QSV series diesel generator sets are built with international brand components, featuring engines from PowerLink, Perkins, Kubota, and Cummins. These generators offer high quality, cost-effectiveness, sound insulation, and rain protection. With a power range of 10KVA to 2500KVA, they suffice as dependable primary and standby power supply sources, meeting various application needs with safety and efficiency.",
+        "| PRP | 10 kVA / 8 kW | 10 kVA / 8 kW | 10 kVA / 8 kW | 10 kVA / 8 kW",
+        "| PRP | 15 kVA / 12 kW | 15 kVA / 12 kW | 15 kVA / 12 kW | 15 kVA / 12 kW",
+        "| PRP | 18 kVA / 14 kW | 18 kVA / 14 kW | 18 kVA / 14 kW | 18 kVA / 14 kW",
+        "| PRP | 20 kVA / 16 kW | 20 kVA / 16 kW | 20 kVA / 16 kW | 20 kVA / 16 kW",
+        "| PRP | 23 kVA / 18 kW | 23 kVA / 18 kW | 23 kVA / 18 kW | 23 kVA / 18 kW",
+        "| PRP | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW",
+        "| PRP | 37 kVA / 30 kW | 37 kVA / 30 kW | 37 kVA / 30 kW | 37 kVA / 30 kW",
+        "| PRP | 45 kVA / 36 kW | 45 kVA / 36 kW | 45 kVA / 36 kW | 45 kVA / 36 kW",
+        "| PRP | 10 kVA / 8 kW | 10 kVA / 8 kW | 10 kVA / 8 kW",
+        "| PRP | 15 kVA / 12 kW | 15 kVA / 12 kW | 15 kVA / 12 kW",
+        "| PRP | 18 kVA / 14 kW | 18 kVA / 14 kW | 18 kVA / 14 kW",
+        "| PRP | 20 kVA / 16 kW | 20 kVA / 16 kW | 20 kVA / 16 kW",
+        "| PRP | 23 kVA / 18 kW | 23 kVA / 18 kW | 23 kVA / 18 kW",
+        "| PRP | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW",
+        "| PRP | 45 kVA / 36 kW | 45 kVA / 36 kW | 45 kVA / 36 kW",
+        "| PRP | 60 kVA / 48 kW | 60 kVA / 48 kW | 60 kVA / 48 kW",
+        "| PRP | 13 kVA / 10 kW | 13 kVA / 10 kW | 13 kVA / 10 kW | 13 kVA / 10 kW",
+        "| PRP | 60 kVA / 48 kW | 60 kVA / 48 kW | 60 kVA / 48 kW | 60 kVA / 48 kW",
+        "| PRP | 80 kVA / 64 kW | 80 kVA / 64 kW | 80 kVA / 64 kW | 80 kVA / 64 kW",
+        "| PRP | 100 kVA / 80 kW | 100 kVA / 80 kW | 100 kVA / 80 kW | 100 kVA / 80 kW",
+        "| PRP | 135 kVA / 105 kW | 135 kVA / 105 kW | 135 kVA / 105 kW | 135 kVA / 105 kW",
+        "| PRP | 150 kVA / 120 kW | 150 kVA / 120 kW | 150 kVA / 120 kW | 150 kVA / 120 kW",
+        "| PRP | 180 kVA / 144 kW | 180 kVA / 144 kW | 180 kVA / 144 kW | 180 kVA / 144 kW",
+        "| PRP | 200 kVA / 160 kW | 200 kVA / 160 kW | 200 kVA / 160 kW | 200 kVA / 160 kW",
+        "| PRP | 250 kVA / 200 kW | 250 kVA / 200 kW | 250 kVA / 200 kW | 250 kVA / 200 kW",
+        "| PRP | 300 kVA / 240 kW | 300 kVA / 240 kW | 300 kVA / 240 kW | 300 kVA / 240 kW",
+        "| PRP | 400 kVA / 320 kW | 400 kVA / 320 kW | 400 kVA / 320 kW | 400 kVA / 320 kW",
+        "| PRP | 450 kVA / 360 kW | 450 kVA / 360 kW | 450 kVA / 360 kW | 450 kVA / 360 kW",
+        "| PRP | 500 kVA / 400 kW | 500 kVA / 400 kW | 500 kVA / 400 kW | 500 kVA / 400 kW",
+        "| PRP | 27 kVA / 22 kW | 27 kVA / 22 kW | 27 kVA / 22 kW | 27 kVA / 22 kW",
+        "| PRP | 43 kVA / 34 kW | 43 kVA / 34 kW | 43 kVA / 34 kW | 43 kVA / 34 kW",
+        "| PRP | 180 kVA / 145 kW | 180 kVA / 145 kW | 180 kVA / 145 kW | 180 kVA / 145 kW",
+        "| PRP | 320 kVA / 256 kW | 320 kVA / 256 kW | 320 kVA / 256 kW | 320 kVA / 256 kW",
+        "| PRP | 388 kVA / 310 kW | 388 kVA / 310 kW | 388 kVA / 310 kW | 388 kVA / 310 kW",
+        "| PRP | 438 kVA / 350 kW | 438 kVA / 350 kW | 438 kVA / 350 kW | 438 kVA / 350 kW",
+        "| PRP | 650 kVA / 520 kW | 650 kVA / 520 kW | 650 kVA / 520 kW | 650 kVA / 520 kW",
+        "| PRP | 800 kVA / 640 kW | 800 kVA / 640 kW | 800 kVA / 640 kW | 800 kVA / 640 kW",
+        "| PRP | 900 kVA / 720 kW | 900 kVA / 720 kW | 900 kVA / 720 kW | 900 kVA / 720 kW",
+        "| PRP | 1000 kVA / 800 kW | 1000 kVA / 800 kW | 1000 kVA / 800 kW | 1000 kVA / 800 kW",
+        "| PRP | 70 kVA / 54 kW | 70 kVA / 54 kW | 70 kVA / 54 kW | 70 kVA / 54 kW"
+      ],
+      "file": "sources/powerlink-shanghai/2003.md",
+      "official": false
+    },
+    {
+      "n": 2004,
+      "url": "https://powerlinkenergy.com/product/vr-series/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| PRP | 10 kVA / 8 kW | 10 kVA / 8 kW",
+        "| PRP | 15 kVA / 12 kW | 15 kVA / 12 kW",
+        "| PRP | 20 kVA / 16 kW | 20 kVA / 16 kW",
+        "| PRP | 30 kVA / 24 kW | 30 kVA / 24 kW",
+        "| PRP | 45 kVA / 36 kW | 45 kVA / 36kW",
+        "| PRP | 60kVA / 48 kW | 60 kVA / 48 kW",
+        "| PRP | 80 kVA / 64 kW | 80 kVA / 64 kW",
+        "| PRP | 100 kVA / 80 kW | 100 kVA / 80 kW",
+        "| PRP | 110 kVA / 88 kW | 110 kVA / 88 kW",
+        "| PRP | 125 kVA / 100 kW | 125 kVA / 100 kW",
+        "| PRP | 138 kVA / 110 kW | 138kVA /110kW",
+        "| PRP | 169 kVA / 135 kW | 169 kVA / 135kW",
+        "| PRP | 165 kVA / 132 kW | 165 kVA / 132 kW",
+        "| PRP | 200 kVA / 160 kW | 200kVA / 160kW",
+        "| PRP | 250kVA / 200kW | 250kVA / 200kW",
+        "| PRP | 313 kVA / 250 kW | 313 kVA / 250 kW",
+        "| PRP | 313kVA /250kW | 313kVA / 250kW",
+        "| PRP | 375 kVA / 300 kW | 375kVA / 300 kW",
+        "| PRP | 450 kVA / 360 kW | 450 kVA / 360 kW",
+        "| PRP | 625kVA / 500 kW | 625kVA / 500 kW",
+        "| PRP | 750 kVA / 600 kW | 750 kVA / 600 kW",
+        "| PRP | 800 kVA / 640 kW | 800 kVA / 640kW",
+        "| PRP | 900 kVA / 720 kW | 900kVA / 720kW",
+        "| PRP | 1000 kVA / 800 kW | 1000 kVA / 800 kW",
+        "| PRP | 1250 kVA / 1000 kW | 1250 kVA / 1000 kW",
+        "| PRP | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW",
+        "| PRP | 1875 kVA / 1500 kW | 1875 kVA / 1500 kW",
+        "| PRP | 2000 kVA / 1600 kW | 2000 kVA / 1600 kW",
+        "| PRP | 2250 kVA / 1800 kW | 2250 kVA / 1800 kW",
+        "| PRP | 2500 kVA / 2000 kW | 2500 kVA / 2000 kW",
+        "| PRP | 2750kVA / 2200 kW | 2750kVA / 2200 kW",
+        "| PRP | 3000 kVA / 2400 kW | 3000kVA / 2400 kW"
+      ],
+      "file": "sources/powerlink-shanghai/2004.md",
+      "official": false
+    },
+    {
+      "n": 2005,
+      "url": "https://powerlinkenergy.com/product/hv-series/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| PRP | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW",
+        "| PRP | 1601 kVA / 1474 kW | 1601 kVA / 1474 kW | 1601 kVA / 1474 kW | 1601 kVA / 1474 kW",
+        "| PRP | 1875 kVA / 1500 kW | 1875 kVA / 1500 kW | 1875 kVA / 1500 kW | 1875 kVA / 1500 kW",
+        "| PRP | 2045 kVA / 1636 kW | 2045 kVA / 1636 kW | 2045 kVA / 1636 kW | 2045 kVA / 1636 kW",
+        "| PRP | 2750 kVA / 2200 kW | 2750 kVA / 2200 kW | 2750 kVA / 2200 kW | 2750 kVA / 2200 kW",
+        "| PRP | 1400 kVA / 1120 kW | 1400 kVA / 1120 kW | 1400 kVA / 1120 kW | 1400 kVA / 1120 kW",
+        "| PRP | 1540 kVA / 1232 kW | 1540 kVA / 1232 kW | 1540 kVA / 1232 kW | 1540 kVA / 1232 kW",
+        "| PRP | 1650 kVA / 1320 kW | 1650 kVA / 1320 kW | 1650 kVA / 1320 kW | 1650 kVA / 1320 kW",
+        "| PRP | 1829 kVA / 1463 kW | 1829 kVA / 1463 kW | 1829 kVA / 1463 kW | 1829 kVA / 1463 kW",
+        "| PRP | 2003 kVA / 1602 kW | 2003 kVA / 1602 kW | 2003 kVA / 1602 kW | 2003 kVA / 1602 kW",
+        "| PRP | 1290 kVA / 1032 kW | 1290 kVA / 1032 kW | 1290 kVA / 1032 kW | 1290 kVA / 1032 kW",
+        "| PRP | 1728 kVA / 1382 kW | 1728 kVA / 1382 kW | 1728 kVA / 1382 kW | 1728 kVA / 1382 kW",
+        "| PRP | 1250 kVA / 1000 kW | 1250 kVA / 1000 kW | 1250 kVA / 1000 kW | 1250 kVA / 1000 kW",
+        "| PRP | 1710 kVA / 1368 kW | 1710 kVA / 1368 kW | 1710 kVA / 1368 kW | 1710 kVA / 1368 kW",
+        "| PRP | 1850 kVA / 1480 kW | 1850 kVA / 1480 kW | 1850 kVA / 1480 kW | 1850 kVA / 1480 kW",
+        "| PRP | 2000 kVA / 1600 kW | 2000 kVA / 1600 kW | 2000 kVA / 1600 kW | 2000 kVA / 1600 kW",
+        "| PRP | 2250 kVA / 1800 kW | 2250 kVA / 1800 kW | 2250 kVA / 1800 kW | 2250 kVA / 1800 kW"
+      ],
+      "file": "sources/powerlink-shanghai/2005.md",
+      "official": false
+    },
+    {
+      "n": 2006,
+      "url": "https://powerlinkenergy.com/wp-content/uploads/1000008597_WPS500S_IN_S_S_E_P.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Prime power (PRP)：kVA / kW                  500 / 400                400                721.7",
+        "Model                                  2506C-E15TAG2        Intake resistance: kPa             ≦6.2"
+      ],
+      "file": "sources/powerlink-shanghai/2006.md",
+      "official": false
+    },
+    {
+      "n": 2007,
+      "url": "https://powerlinkenergy.com/wp-content/uploads/1000034911_VR500XS_IN_A_S_E_P.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Prime power (PRP)：kVA / kW                  500/ 400                 400                721.7",
+        "Model                                  VR6-13TAG4           Intake resistance: kPa             ≦5.0"
+      ],
+      "file": "sources/powerlink-shanghai/2007.md",
+      "official": false
+    },
+    {
+      "n": 2008,
+      "url": "https://powerlinkenergy.com/wp-content/uploads/1000033656_QSV500CS_A_S_E_P.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Prime power (PRP)：kVA / kW                  500 / 400                400                721.7",
+        "Model                                  QSZ13-G3             Intake resistance: kPa             ≦6.23"
+      ],
+      "file": "sources/powerlink-shanghai/2008.md",
+      "official": false
+    },
+    {
+      "n": 2009,
+      "url": "https://powerlinkenergy.com/wp-content/uploads/1000032040_HVC1275S_IN_A_S_E_P.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "•  PT Cabinet (optional)                                       Prime Power............................................. 1275kVA/1020kW",
+        "•  Cummins engine KTA50-G3                                     Dry weight................................................................15843kg"
+      ],
+      "file": "sources/powerlink-shanghai/2009.md",
+      "official": false
+    },
+    {
+      "n": 2010,
+      "url": "https://powerlinkenergy.com/wp-content/uploads/2024/05/1000029549_GMS250CS_IN_A_S_E_P.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "   Microprocessor control module PLC-920                       Prime Power................................................250kVA/200kW",
+        "•  Cummins engine 6LTAA8.9-G2                                  Sound pressure level @7m ................................. 74.7dB(A)"
+      ],
+      "file": "sources/powerlink-shanghai/2010.md",
+      "official": false
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "EC Series GMS30CS",
+      "header": [
+        "| Engine Model | 4B3.9-G1 | 4B3.9-G1 | 4B3.9-G1 | 4B3.9-G1"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW",
+        "| ESP | 33 kVA / 26 kW | 33 kVA / 26 kW | 33 kVA / 26 kW | 33 kVA / 26 kW"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "EC Series GMS42CS",
+      "header": [
+        "| Engine Model | 4BT3.9-G1 | 4BT3.9-G1 | 4BT3.9-G1 | 4BT3.9-G1"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 43 kVA / 34 kW | 43 kVA / 34 kW | 43 kVA / 34 kW | 43 kVA / 34 kW",
+        "| ESP | 47 kVA / 37 kW | 47 kVA / 37 kW | 47 kVA / 37 kW | 47 kVA / 37 kW"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "EC Series GMS60CS",
+      "header": [
+        "| Engine Model | 4BTA3.9-G2 | 4BTA3.9-G2 | 4BTA3.9-G2 | 4BTA3.9-G2"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 60 kVA / 48 kW | 60 kVA / 48 kW | 60 kVA / 48 kW | 60 kVA / 48 kW",
+        "| ESP | 66 kVA / 53 kW | 66 kVA / 53 kW | 66 kVA / 53 kW | 66 kVA / 53 kW"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "EC Series GMS80CS",
+      "header": [
+        "| Engine Model | 4BTA3.9-G11 | 4BTA3.9-G11 | 4BTA3.9-G11 | 4BTA3.9-G11"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 80 kVA / 64 kW | 80 kVA / 64 kW | 80 kVA / 64 kW | 80 kVA / 64 kW",
+        "| ESP | 88 kVA / 70 kW | 88 kVA / 70 kW | 88 kVA / 70 kW | 88 kVA / 70 kW"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "EC Series GMS100CS",
+      "header": [
+        "| Engine Model | 6BT5.9-G2 | 6BT5.9-G2 | 6BT5.9-G2 | 6BT5.9-G2"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 100kVA / 80 kW | 100kVA / 80 kW | 100kVA / 80 kW | 100kVA / 80 kW",
+        "| ESP | 110 kVA / 88 kW | 110 kVA / 88 kW | 110 kVA / 88 kW | 110 kVA / 88 kW"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "EC Series GMS150CS",
+      "header": [
+        "| Engine Model | 6CTA8.3-G2 | 6CTA8.3-G2 | 6CTA8.3-G2 | 6CTA8.3-G2"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 150 kVA / 120 kW | 150 kVA / 120 kW | 150 kVA / 120 kW | 150 kVA / 120 kW",
+        "| ESP | 165 kVA / 132 kW | 165 kVA / 132 kW | 165 kVA / 132 kW | 165 kVA / 132 kW"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "EC Series GMS180CS",
+      "header": [
+        "| Engine Model | 6CTA8.3-G1 | 6CTA8.3-G1 | 6CTA8.3-G1 | 6CTA8.3-G1"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 190 kVA / 144 kW | 190 kVA / 144 kW | 190 kVA / 144 kW | 190 kVA / 144 kW",
+        "| ESP | 198 kVA / 158 kW | 198 kVA / 158 kW | 198 kVA / 158 kW | 198 kVA / 158 kW"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "EC Series GMS200CS",
+      "header": [
+        "| Engine Model | 6CTA8.3-G1 | 6CTA8.3-G1 | 6CTA8.3-G1 | 6CTA8.3-G1"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 190 kVA / 144 kW | 190 kVA / 144 kW | 190 kVA / 144 kW | 190 kVA / 144 kW",
+        "| ESP | 198 kVA / 158 kW | 198 kVA / 158 kW | 198 kVA / 158 kW | 198 kVA / 158 kW"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "EC Series GMS250CS",
+      "header": [
+        "| Engine Model | 6LTAA8.9-G2 | 6LTAA8.9-G2 | 6LTAA8.9-G2 | 6LTAA8.9-G2"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 250 kVA / 200 kW | 250 kVA / 200 kW | 250 kVA / 200 kW | 250 kVA / 200 kW",
+        "| ESP | 275 kVA / 220 kW | 275 kVA / 220 kW | 275 kVA / 220 kW | 275 kVA / 220 kW"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "EC Series GMS320CS",
+      "header": [
+        "| Engine Model | 6LTAA9.5-G1 | 6LTAA9.5-G1 | 6LTAA9.5-G1 | 6LTAA9.5-G1"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 320 kVA / 256 kW | 320 kVA / 256 kW | 320 kVA / 256 kW | 320 kVA / 256 kW",
+        "| ESP | 352 kVA / 282 kW | 352 kVA / 282 kW | 352 kVA / 282 kW | 352 kVA / 282 kW"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "EC Series GMS380CS",
+      "header": [
+        "| Engine Model | 6ZTAA13-G3 | 6ZTAA13-G3 | 6ZTAA13-G3 | 6ZTAA13-G3"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 388 kVA / 310 kW | 388 kVA / 310 kW | 388 kVA / 310 kW | 388 kVA / 310 kW",
+        "| ESP | 425 kVA / 340 kW | 425 kVA / 340 kW | 425 kVA / 340 kW | 425 kVA / 340 kW"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "EC Series GMS450CS",
+      "header": [
+        "| Engine Model | QSZ13-G2 | QSZ13-G2 | QSZ13-G2 | QSZ13-G2"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 450 kVA / 360 kW | 450 kVA / 360 kW | 450 kVA / 360 kW | 450 kVA / 360 kW",
+        "| ESP | 495 kVA / 396 kW | 495 kVA / 396 kW | 495 kVA / 396 kW | 495 kVA / 396 kW"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "EC Series GMS500CS",
+      "header": [
+        "| Engine Model | QSZ13-G3 | QSZ13-G3 | QSZ13-G3 | QSZ13-G3"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 500 kVA / 400 kW | 500 kVA / 400 kW | 500 kVA / 400 kW | 500 kVA / 400 kW",
+        "| ESP | 550 kVA / 440 kW | 550 kVA / 440 kW | 550 kVA / 440 kW | 550 kVA / 440 kW"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "EC Series GMS650CS",
+      "header": [
+        "| Engine Model | KTA19-G8 | KTA19-G8 | KTA19-G8 | KTA19-G8"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| ESP | 650 kVA / 520 kW | 650 kVA / 520 kW | 650 kVA / 520 kW | 650 kVA / 520 kW"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "EC Series GMS800CS",
+      "header": [
+        "| Engine Model | KTA38-G2B | KTA38-G2B | KTA38-G2B | KTA38-G2B"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 800 kVA / 640 kW | 800 kVA / 640 kW | 800 kVA / 640 kW | 800 kVA / 640 kW",
+        "| ESP | 880 kVA / 704 kW | 880 kVA / 704 kW | 880 kVA / 704 kW | 880 kVA / 704 kW"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "EC Series GMS900CS",
+      "header": [
+        "| Engine Model | KTA38-G2A | KTA38-G2A | KTA38-G2A | KTA38-G2A"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 900 kVA / 720 kW | 900 kVA / 720 kW | 900 kVA / 720 kW | 900 kVA / 720 kW",
+        "| ESP | 990 kVA / 792 kW | 990 kVA / 792 kW | 990 kVA / 792 kW | 990 kVA / 792 kW"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "EC Series GMS1000CS",
+      "header": [
+        "| Engine Model | KTA38-G5 | KTA38-G5 | KTA38-G5 | KTA38-G5"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 1000 kVA / 800 kW | 1000 kVA / 800 kW | 1000 kVA / 800 kW | 1000 kVA / 800 kW",
+        "| ESP | 1100 kVA / 880 kW | 1100 kVA / 880 kW | 1100 kVA / 880 kW | 1100 kVA / 880 kW"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "EC Series GMS1250CS",
+      "header": [
+        "| Engine Model | KTA50–G3 | KTA50–G3 | KTA50–G3 | KTA50–G3"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 1250kVA / 1000 kW | 1250kVA / 1000 kW | 1250kVA / 1000 kW | 1250kVA / 1000 kW",
+        "| ESP | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "EC Series GMS1500CS",
+      "header": [
+        "| Engine Model | KTA50-GS8 | KTA50-GS8 | KTA50-GS8 | KTA50-GS8"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW",
+        "| ESP | 1650 kVA / 1320 kW | 1650 kVA / 1320 kW | 1650 kVA / 1320 kW | 1650 kVA / 1320 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS10S",
+      "header": [
+        "| Engine Model | 403D-11G | 403D-11G | 403D-11G | 403D-11G"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 10 kVA / 8 kW | 10 kVA / 8 kW | 10 kVA / 8 kW | 10 kVA / 8 kW",
+        "| ESP | 11 kVA / 9 kW | 11 kVA / 9 kW | 11 kVA / 9 kW | 11 kVA / 9 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS13S",
+      "header": [
+        "| Engine Model | 403D-15G | 403D-15G | 403D-15G | 403D-15G"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 13 kVA / 10 kW | 13 kVA / 10 kW | 13 kVA / 10 kW | 13 kVA / 10 kW",
+        "| ESP | 14 kVA / 11 kW | 14 kVA / 11 kW | 14 kVA / 11 kW | 14 kVA / 11 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS15S",
+      "header": [
+        "| Engine Model | 403A-15G2 | 403A-15G2 | 403A-15G2 | 403A-15G2"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 15 kVA / 12 kW | 15 kVA / 12 kW | 15 kVA / 12 kW | 15 kVA / 12 kW",
+        "| ESP | 17 kVA / 13 kW | 17 kVA / 13 kW | 17 kVA / 13 kW | 17 kVA / 13 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS20S",
+      "header": [
+        "| Engine Model | 404D-22G | 404D-22G | 404D-22G | 404D-22G"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 20 kVA / 16 kW | 20 kVA / 16 kW | 20 kVA / 16 kW | 20 kVA / 16 kW",
+        "| ESP | 21.5 kVA / 17.2 kW | 21.5 kVA / 17.2 kW | 21.5 kVA / 17.2 kW | 21.5 kVA / 17.2 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS30S",
+      "header": [
+        "| Engine Model | 1103A-33G | 1103A-33G | 1103A-33G | 1103A-33G"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW",
+        "| ESP | 33 kVA / 26.4 kW | 33 kVA / 26.4 kW | 33 kVA / 26.4 kW | 33 kVA / 26.4 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS45S",
+      "header": [
+        "| Engine Model | 1103A-33TG1 | 1103A-33TG1 | 1103A-33TG1 | 1103A-33TG1"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 45 kVA / 36 kW | 45 kVA / 36 kW | 45 kVA / 36 kW | 45 kVA / 36 kW",
+        "| ESP | 50 kVA / 40 kW | 50 kVA / 40 kW | 50 kVA / 40 kW | 50 kVA / 40 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS60S",
+      "header": [
+        "| Engine Model | 1103A-33TG2 | 1103A-33TG2 | 1103A-33TG2 | 1103A-33TG2"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 60 kVA / 48 kW | 60 kVA / 48 kW | 60 kVA / 48 kW | 60 kVA / 48 kW",
+        "| ESP | 66 kVA / 53 kW | 66 kVA / 53 kW | 66 kVA / 53 kW | 66 kVA / 53 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS80S",
+      "header": [
+        "| Engine Model | 1104A-44TG2 | 1104A-44TG2 | 1104A-44TG2 | 1104A-44TG2"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 80 kVA / 64 kW | 80 kVA / 64 kW | 80 kVA / 64 kW | 80 kVA / 64 kW",
+        "| ESP | 83.7 kVA / 67 kW | 83.7 kVA / 67 kW | 83.7 kVA / 67 kW | 83.7 kVA / 67 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS100S",
+      "header": [
+        "| Engine Model | 1104C-44TAG2 | 1104C-44TAG2 | 1104C-44TAG2 | 1104C-44TAG2"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 100 kVA / 80 kW | 100 kVA / 80 kW | 100 kVA / 80 kW | 100 kVA / 80 kW",
+        "| ESP | 110 kVA / 88 kW | 110 kVA / 88 kW | 110 kVA / 88 kW | 110 kVA / 88 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS135S",
+      "header": [
+        "| Engine Model | 1106A-70TG1 | 1106A-70TG1 | 1106A-70TG1 | 1106A-70TG1"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 135 kVA / 108 kW | 135 kVA / 108 kW | 135 kVA / 108 kW | 135 kVA / 108 kW",
+        "| ESP | 150 kVA / 120 kW | 150 kVA / 120 kW | 150 kVA / 120 kW | 150 kVA / 120 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS150BS",
+      "header": [
+        "| Engine Model | 1106A-70TG2 | 1106A-70TG2 | 1106A-70TG2 | 1106A-70TG2"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 150 kVA / 120 kW | 150 kVA / 120 kW | 150 kVA / 120 kW | 150 kVA / 120 kW",
+        "| ESP | 165 kVA / 132 kW | 165 kVA / 132 kW | 165 kVA / 132 kW | 165 kVA / 132 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS180BS",
+      "header": [
+        "| Engine Model | 1106A-70TAG3 | 1106A-70TAG3 | 1106A-70TAG3 | 1106A-70TAG3"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 180 kVA / 144 kW | 180 kVA / 144 kW | 180 kVA / 144 kW | 180 kVA / 144 kW",
+        "| ESP | 198 kVA / 158 kW | 198 kVA / 158 kW | 198 kVA / 158 kW | 198 kVA / 158 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS200BS",
+      "header": [
+        "| Engine Model | 1306C-E87TAG3 | 1306C-E87TAG3 | 1306C-E87TAG3 | 1306C-E87TAG3"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 200 kVA / 160 kW | 200 kVA / 160 kW | 200 kVA / 160 kW | 200 kVA / 160 kW",
+        "| ESP | 213.7 kVA / 171 kW | 213.7 kVA / 171 kW | 213.7 kVA / 171 kW | 213.7 kVA / 171 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS250S",
+      "header": [
+        "| Engine Model | 1306C-E87TAG6 | 1306C-E87TAG6 | 1306C-E87TAG6 | 1306C-E87TAG6"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 250 kVA / 200 kW | 250 kVA / 200 kW | 250 kVA / 200 kW | 250 kVA / 200 kW",
+        "| ESP | 260 kVA / 208 kW | 260 kVA / 208 kW | 260 kVA / 208 kW | 260 kVA / 208 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS300S",
+      "header": [
+        "| Engine Model | 1606A-E93TAG5 | 1606A-E93TAG5 | 1606A-E93TAG5 | 1606A-E93TAG5"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 300 kVA / 240 kW | 300 kVA / 240 kW | 300 kVA / 240 kW | 300 kVA / 240 kW",
+        "| ESP | 330 kVA / 264 kW | 330 kVA / 264 kW | 330 kVA / 264 kW | 330 kVA / 264 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS350S",
+      "header": [
+        "| Engine Model | 2206A-E13TAG2 | 2206A-E13TAG2 | 2206A-E13TAG2 | 2206A-E13TAG2"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 350 kVA / 280 kW | 350 kVA / 280 kW | 350 kVA / 280 kW | 350 kVA / 280 kW",
+        "| ESP | 385 kVA / 308 kW | 385 kVA / 308 kW | 385 kVA / 308 kW | 385 kVA / 308 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS400S",
+      "header": [
+        "| Engine Model | 2206A-E13TAG3 | 2206A-E13TAG3 | 2206A-E13TAG3 | 2206A-E13TAG3"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 400 kVA / 320 kW | 400 kVA / 320 kW | 400 kVA / 320 kW | 400 kVA / 320 kW",
+        "| ESP | 440 kVA / 352 kW | 440 kVA / 352 kW | 440 kVA / 352 kW | 440 kVA / 352 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS450S",
+      "header": [
+        "| Engine Model | 2506C-E15TAG1 | 2506C-E15TAG1 | 2506C-E15TAG1 | 2506C-E15TAG1"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 450 kVA / 360 kW | 450 kVA / 360 kW | 450 kVA / 360 kW | 450 kVA / 360 kW",
+        "| ESP | 495 kVA / 396 kW | 495 kVA / 396 kW | 495 kVA / 396 kW | 495 kVA / 396 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS500S",
+      "header": [
+        "| Engine Model | 2506C-E15TAG2 | 2506C-E15TAG2 | 2506C-E15TAG2 | 2506C-E15TAG2"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 500 kVA / 400 kW | 500 kVA / 400 kW | 500 kVA / 400 kW | 500 kVA / 400 kW",
+        "| ESP | 550 kVA / 440 kW | 550 kVA / 440 kW | 550 kVA / 440 kW | 550 kVA / 440 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS600S",
+      "header": [
+        "| Engine Model | 2806C-E18TAG1 | 2806C-E18TAG1 | 2806C-E18TAG1 | 2806C-E18TAG1"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 600 kVA / 480 kW | 600 kVA / 480 kW | 600 kVA / 480 kW | 600 kVA / 480 kW",
+        "| ESP | 660 kVA / 528 kW | 660 kVA / 528 kW | 660 kVA / 528 kW | 660 kVA / 528 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS650S",
+      "header": [
+        "| Engine Model | 2806C-E18TAG2 | 2806C-E18TAG2 | 2806C-E18TAG2 | 2806C-E18TAG2"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 650 kVA / 520 kW | 650 kVA / 520 kW | 650 kVA / 520 kW | 650 kVA / 520 kW",
+        "| ESP | 715 kVA / 572 kW | 715 kVA / 572 kW | 715 kVA / 572 kW | 715 kVA / 572 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS725S",
+      "header": [
+        "| Engine Model | 4006-23TAG3A | 4006-23TAG3A | 4006-23TAG3A | 4006-23TAG3A"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 725 kVA / 580 kW | 725 kVA / 580 kW | 725 kVA / 580 kW | 725 kVA / 580 kW",
+        "| ESP | 798 kVA / 638 kW | 798 kVA / 638 kW | 798 kVA / 638 kW | 798 kVA / 638 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS750S",
+      "header": [
+        "| Engine Model | 2806A-E18TTAG5 | 2806A-E18TTAG5 | 2806A-E18TTAG5 | 2806A-E18TTAG5"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 717 kVA / 617 kW | 717 kVA / 617 kW | 717 kVA / 617 kW | 717 kVA / 617 kW",
+        "| ESP | 850 kVA / 678 kW | 850 kVA / 678 kW | 850 kVA / 678 kW | 850 kVA / 678 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS800S",
+      "header": [
+        "| Engine Model | 4006-23TAG3A | 4006-23TAG3A | 4006-23TAG3A | 4006-23TAG3A"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 800 kVA / 640 kW | 800 kVA / 640 kW | 800 kVA / 640 kW | 800 kVA / 640 kW",
+        "| ESP | 880 kVA / 704 kW | 880 kVA / 704 kW | 880 kVA / 704 kW | 880 kVA / 704 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS900S",
+      "header": [
+        "| Engine Model | 4006-23TAG3A | 4006-23TAG3A | 4006-23TAG3A | 4006-23TAG3A"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 800 kVA / 640 kW | 800 kVA / 640 kW | 800 kVA / 640 kW | 800 kVA / 640 kW",
+        "| ESP | 880 kVA / 704 kW | 880 kVA / 704 kW | 880 kVA / 704 kW | 880 kVA / 704 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS1000S",
+      "header": [
+        "| Engine Model | 4008-TAG2A | 4008-TAG2A | 4008-TAG2A | 4008-TAG2A"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 1000 kVA / 800 kW | 1000 kVA / 800 kW | 1000 kVA / 800 kW | 1000 kVA / 800 kW",
+        "| ESP | 1100 kVA / 880 kW | 1100 kVA / 880 kW | 1100 kVA / 880 kW | 1100 kVA / 880 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS1125S",
+      "header": [
+        "| Engine Model | 4008-TAG3 | 4008-TAG3 | 4008-TAG3 | 4008-TAG3"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 1125 kVA / 900 kW | 1125 kVA / 900 kW | 1125 kVA / 900 kW | 1125 kVA / 900 kW",
+        "| ESP | 1250 kVA / 1000 kW | 1250 kVA / 1000 kW | 1250 kVA / 1000 kW | 1250 kVA / 1000 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS1250S",
+      "header": [
+        "| Engine Model | 4012-46TWG2A | 4012-46TWG2A | 4012-46TWG2A | 4012-46TWG2A"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 1250 kVA / 1000 kW | 1250 kVA / 1000 kW | 1250 kVA / 1000 kW | 1250 kVA / 1000 kW",
+        "| ESP | 1375 kVA / 1100 kW | 1375 kVA / 1100 kW | 1375 kVA / 1100 kW | 1375 kVA / 1100 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS1500S",
+      "header": [
+        "| Engine Model | 4012-46TAG2A | 4012-46TAG2A | 4012-46TAG2A | 4012-46TAG2A"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW",
+        "| ESP | 1575 kVA / 1260 kW | 1575 kVA / 1260 kW | 1575 kVA / 1260 kW | 1575 kVA / 1260 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS1710S",
+      "header": [
+        "| Engine Model | 4012-46TAG3A | 4012-46TAG3A | 4012-46TAG3A | 4012-46TAG3A"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 1710 kVA / 1368 kW | 1710 kVA / 1368 kW | 1710 kVA / 1368 kW | 1710 kVA / 1368 kW",
+        "| ESP | 1881 kVA / 1505 kW | 1881 kVA / 1505 kW | 1881 kVA / 1505 kW | 1881 kVA / 1505 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS1850S",
+      "header": [
+        "| Engine Model | 4016-61TRG1 | 4016-61TRG1 | 4016-61TRG1 | 4016-61TRG1"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 1850 kVA/ 1480 kW | 1850 kVA/ 1480 kW | 1850 kVA/ 1480 kW | 1850 kVA/ 1480 kW",
+        "| ESP | 2035 kVA / 1628 kW | 2035 kVA / 1628 kW | 2035 kVA / 1628 kW | 2035 kVA / 1628 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS2000S",
+      "header": [
+        "| Engine Model | 4016-TAG2A | 4016-TAG2A | 4016-TAG2A | 4016-TAG2A"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 2000 kVA / 1600 kW | 2000 kVA / 1600 kW | 2000 kVA / 1600 kW | 2000 kVA / 1600 kW",
+        "| ESP | 2100 kVA / 1680 kW | 2100 kVA / 1680 kW | 2100 kVA / 1680 kW | 2100 kVA / 1680 kW"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "EP Series WPS2250S",
+      "header": [
+        "| Engine Model | 4016-61TRG3 | 4016-61TRG3 | 4016-61TRG3 | 4016-61TRG3"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 2250 kVA / 1800 kW | 2250 kVA / 1800 kW | 2250 kVA / 1800 kW | 2250 kVA / 1800 kW",
+        "| ESP | 2475 kVA / 1980 kW | 2475 kVA / 1980 kW | 2475 kVA / 1980 kW | 2475 kVA / 1980 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV10KS",
+      "header": [
+        "| Engine Model | D1105-BG | D1105-BG | D1105-BG | D1105-BG"
+      ],
+      "rows": [
+        "| Engine Brand | KUBOTA | KUBOTA | KUBOTA | KUBOTA",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 10 kVA / 8 kW | 10 kVA / 8 kW | 10 kVA / 8 kW | 10 kVA / 8 kW",
+        "| ESP | 11 kVA / 9 kW | 11 kVA / 9 kW | 11 kVA / 9 kW | 11 kVA / 9 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV15KS",
+      "header": [
+        "| Engine Model | D1703-BG | D1703-BG | D1703-BG | D1703-BG"
+      ],
+      "rows": [
+        "| Engine Brand | KUBOTA | KUBOTA | KUBOTA | KUBOTA",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 15 kVA / 12 kW | 15 kVA / 12 kW | 15 kVA / 12 kW | 15 kVA / 12 kW",
+        "| ESP | 17 kVA / 13 kW | 17 kVA / 13 kW | 17 kVA / 13 kW | 17 kVA / 13 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV18KS",
+      "header": [
+        "| Engine Model | D1803-M-DI-BG | D1803-M-DI-BG | D1803-M-DI-BG | D1803-M-DI-BG"
+      ],
+      "rows": [
+        "| Engine Brand | KUBOTA | KUBOTA | KUBOTA | KUBOTA",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 18 kVA / 14 kW | 18 kVA / 14 kW | 18 kVA / 14 kW | 18 kVA / 14 kW",
+        "| ESP | 19 kVA / 15 kW | 19 kVA / 15 kW | 19 kVA / 15 kW | 19 kVA / 15 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV20KS",
+      "header": [
+        "| Engine Model | V2203-BG | V2203-BG | V2203-BG | V2203-BG"
+      ],
+      "rows": [
+        "| Engine Brand | KUBOTA | KUBOTA | KUBOTA | KUBOTA",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 20 kVA / 16 kW | 20 kVA / 16 kW | 20 kVA / 16 kW | 20 kVA / 16 kW",
+        "| ESP | 22 kVA / 18 kW | 22 kVA / 18 kW | 22 kVA / 18 kW | 22 kVA / 18 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV23KS",
+      "header": [
+        "| Engine Model | V2403-M-DI-BG | V2403-M-DI-BG | V2403-M-DI-BG | V2403-M-DI-BG"
+      ],
+      "rows": [
+        "| Engine Brand | KUBOTA | KUBOTA | KUBOTA | KUBOTA",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 23 kVA / 18 kW | 23 kVA / 18 kW | 23 kVA / 18 kW | 23 kVA / 18 kW",
+        "| ESP | 25 kVA / 20 kW | 25 kVA / 20 kW | 25 kVA / 20 kW | 25 kVA / 20 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV30KS",
+      "header": [
+        "| Engine Model | V3300-BG | V3300-BG | V3300-BG | V3300-BG"
+      ],
+      "rows": [
+        "| Engine Brand | KUBOTA | KUBOTA | KUBOTA | KUBOTA",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW",
+        "| ESP | 33 kVA / 26 kW | 33 kVA / 26 kW | 33 kVA / 26 kW | 33 kVA / 26 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV37KS",
+      "header": [
+        "| Engine Model | V3300-T-E2BG2 | V3300-T-E2BG2 | V3300-T-E2BG2 | V3300-T-E2BG2"
+      ],
+      "rows": [
+        "| Engine Brand | KUBOTA | KUBOTA | KUBOTA | KUBOTA",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 37 kVA / 30 kW | 37 kVA / 30 kW | 37 kVA / 30 kW | 37 kVA / 30 kW",
+        "| ESP | 41 kVA / 32 kW | 41 kVA / 32 kW | 41 kVA / 32 kW | 41 kVA / 32 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV45KS",
+      "header": [
+        "| Engine Model | V3800DI-T-BG | V3800DI-T-BG | V3800DI-T-BG | V3800DI-T-BG"
+      ],
+      "rows": [
+        "| Engine Brand | KUBOTA | KUBOTA | KUBOTA | KUBOTA",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 45 kVA / 36 kW | 45 kVA / 36 kW | 45 kVA / 36 kW | 45 kVA / 36 kW",
+        "| ESP | 50 kVA / 40 kW | 50 kVA / 40 kW | 50 kVA / 40 kW | 50 kVA / 40 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series SG10KS",
+      "header": [
+        "| Engine Model | D1105-BG | D1105-BG | D1105-BG"
+      ],
+      "rows": [
+        "| Engine Brand | KUBOTA | KUBOTA | KUBOTA",
+        "| Voltage | 220V | 230V | 240V",
+        "| PRP | 10 kVA / 8 kW | 10 kVA / 8 kW | 10 kVA / 8 kW",
+        "| ESP | 11 kVA / 9 kW | 11 kVA / 9 kW | 11 kVA / 9 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series SG15KS",
+      "header": [
+        "| Engine Model | D1703-BG | D1703-BG | D1703-BG"
+      ],
+      "rows": [
+        "| Engine Brand | KUBOTA | KUBOTA | KUBOTA",
+        "| Voltage | 220V | 230V | 240V",
+        "| PRP | 15 kVA / 12 kW | 15 kVA / 12 kW | 15 kVA / 12 kW",
+        "| ESP | 17 kVA / 13 kW | 17 kVA / 13 kW | 17 kVA / 13 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series SG18KS",
+      "header": [
+        "| Engine Model | D1803-M-DI-BG | D1803-M-DI-BG | D1803-M-DI-BG"
+      ],
+      "rows": [
+        "| Engine Brand | KUBOTA | KUBOTA | KUBOTA",
+        "| Voltage | 220V | 230V | 240V",
+        "| PRP | 18 kVA / 14 kW | 18 kVA / 14 kW | 18 kVA / 14 kW",
+        "| ESP | 19 kVA / 15 kW | 19 kVA / 15 kW | 19 kVA / 15 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series SG20KS",
+      "header": [
+        "| Engine Model | V2203-BG | V2203-BG | V2203-BG"
+      ],
+      "rows": [
+        "| Engine Brand | KUBOTA | KUBOTA | KUBOTA",
+        "| Voltage | 220V | 230V | 240V",
+        "| PRP | 20 kVA / 16 kW | 20 kVA / 16 kW | 20 kVA / 16 kW",
+        "| ESP | 22 kVA / 18 kW | 22 kVA / 18 kW | 22 kVA / 18 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series SG23KS",
+      "header": [
+        "| Engine Model | V2403-M-DI-BG | V2403-M-DI-BG | V2403-M-DI-BG"
+      ],
+      "rows": [
+        "| Engine Brand | KUBOTA | KUBOTA | KUBOTA",
+        "| Voltage | 220V | 230V | 240V",
+        "| PRP | 23 kVA / 18 kW | 23 kVA / 18 kW | 23 kVA / 18 kW",
+        "| ESP | 25 kVA / 20 kW | 25 kVA / 20 kW | 25 kVA / 20 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series SG30KS",
+      "header": [
+        "| Engine Model | V3300-BG | V3300-BG | V3300-BG"
+      ],
+      "rows": [
+        "| Engine Brand | KUBOTA | KUBOTA | KUBOTA",
+        "| Voltage | 220V | 230V | 240V",
+        "| PRP | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW",
+        "| ESP | 33 kVA / 26 kW | 33 kVA / 26 kW | 33 kVA / 26 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series SG45KS",
+      "header": [
+        "| Engine Model | V3800DI-T-BG | V3800DI-T-BG | V3800DI-T-BG"
+      ],
+      "rows": [
+        "| Engine Brand | KUBOTA | KUBOTA | KUBOTA",
+        "| Voltage | 220V | 230V | 240V",
+        "| PRP | 45 kVA / 36 kW | 45 kVA / 36 kW | 45 kVA / 36 kW",
+        "| ESP | 50 kVA / 40 kW | 50 kVA / 40 kW | 50 kVA / 40 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series SG30CS",
+      "header": [
+        "| Engine Model | 4B3.9-G12 | 4B3.9-G12 | 4B3.9-G12"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins",
+        "| Voltage | 220V | 230V | 240V",
+        "| PRP | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW",
+        "| ESP | 33 kVA / 26 kW | 33 kVA / 26 kW | 33 kVA / 26 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series SG45CS",
+      "header": [
+        "| Engine Model | 4BT3.9-G1 | 4BT3.9-G1 | 4BT3.9-G1"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins",
+        "| Voltage | 220V | 230V | 240V",
+        "| PRP | 45 kVA / 36 kW | 45 kVA / 36 kW | 45 kVA / 36 kW",
+        "| ESP | 50 kVA / 40 kW | 50 kVA / 40 kW | 50 kVA / 40 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series SG60CS",
+      "header": [
+        "| Engine Model | 4BTA3.9-G2 | 4BTA3.9-G2 | 4BTA3.9-G2"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins",
+        "| Voltage | 220V | 230V | 240V",
+        "| PRP | 60 kVA / 48 kW | 60 kVA / 48 kW | 60 kVA / 48 kW",
+        "| ESP | 66 kVA / 53 kW | 66 kVA / 53 kW | 66 kVA / 53 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV10PS",
+      "header": [
+        "| Engine Model | 403D-11G | 403D-11G | 403D-11G | 403D-11G"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 10 kVA / 8 kW | 10 kVA / 8 kW | 10 kVA / 8 kW | 10 kVA / 8 kW",
+        "| ESP | 11 kVA / 9 kW | 11 kVA / 9 kW | 11 kVA / 9 kW | 11 kVA / 9 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV13PS",
+      "header": [
+        "| Engine Model | 403D-15G | 403D-15G | 403D-15G | 403D-15G"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 13 kVA / 10 kW | 13 kVA / 10 kW | 13 kVA / 10 kW | 13 kVA / 10 kW",
+        "| ESP | 15 kVA / 11 kW | 15 kVA / 11 kW | 15 kVA / 11 kW | 15 kVA / 11 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV15PS",
+      "header": [
+        "| Engine Model | 403A-15G2 | 403A-15G2 | 403A-15G2 | 403A-15G2"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 15 kVA / 12 kW | 15 kVA / 12 kW | 15 kVA / 12 kW | 15 kVA / 12 kW",
+        "| ESP | 17 kVA / 13 kW | 17 kVA / 13 kW | 17 kVA / 13 kW | 17 kVA / 13 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV20PS",
+      "header": [
+        "| Engine Model | 404D-22G | 404D-22G | 404D-22G | 404D-22G"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 20 kVA / 16 kW | 20 kVA / 16 kW | 20 kVA / 16 kW | 20 kVA / 16 kW",
+        "| ESP | 22 kVA / 18 kW | 22 kVA / 18 kW | 22 kVA / 18 kW | 22 kVA / 18 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV30PS",
+      "header": [
+        "| Engine Model | 1103A-33G | 1103A-33G | 1103A-33G | 1103A-33G"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW",
+        "| ESP | 33 kVA / 26 kW | 33 kVA / 26 kW | 33 kVA / 26 kW | 33 kVA / 26 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV45PS",
+      "header": [
+        "| Engine Model | 1103A-33TG1 | 1103A-33TG1 | 1103A-33TG1 | 1103A-33TG1"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 45 kVA / 36 kW | 45 kVA / 36 kW | 45 kVA / 36 kW | 45 kVA / 36 kW",
+        "| ESP | 50 kVA / 40 kW | 50 kVA / 40 kW | 50 kVA / 40 kW | 50 kVA / 40 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV60PS",
+      "header": [
+        "| Engine Model | 1103A-33TG2 | 1103A-33TG2 | 1103A-33TG2 | 1103A-33TG2"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 60 kVA / 48 kW | 60 kVA / 48 kW | 60 kVA / 48 kW | 60 kVA / 48 kW",
+        "| ESP | 66 kVA / 53 kW | 66 kVA / 53 kW | 66 kVA / 53 kW | 66 kVA / 53 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV80PS",
+      "header": [
+        "| Engine Model | 1104A-44TG2 | 1104A-44TG2 | 1104A-44TG2 | 1104A-44TG2"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 80 kVA / 64 kW | 80 kVA / 64 kW | 80 kVA / 64 kW | 80 kVA / 64 kW",
+        "| ESP | 88 kVA / 70 kW | 88 kVA / 70 kW | 88 kVA / 70 kW | 88 kVA / 70 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV100PS",
+      "header": [
+        "| Engine Model | 1104C-44TAG2 | 1104C-44TAG2 | 1104C-44TAG2 | 1104C-44TAG2"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 100 kVA / 80 kW | 100 kVA / 80 kW | 100 kVA / 80 kW | 100 kVA / 80 kW",
+        "| ESP | 110 kVA / 90 kW | 110 kVA / 90 kW | 110 kVA / 90 kW | 110 kVA / 90 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV135PS",
+      "header": [
+        "| Engine Model | 1106A-70TG1 | 1106A-70TG1 | 1106A-70TG1 | 1106A-70TG1"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 135 kVA / 105 kW | 135 kVA / 105 kW | 135 kVA / 105 kW | 135 kVA / 105 kW",
+        "| ESP | 150 kVA / 120 kW | 150 kVA / 120 kW | 150 kVA / 120 kW | 150 kVA / 120 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV150PS",
+      "header": [
+        "| Engine Model | 1106A-70TAG2 | 1106A-70TAG2 | 1106A-70TAG2 | 1106A-70TAG2"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 150 kVA / 120 kW | 150 kVA / 120 kW | 150 kVA / 120 kW | 150 kVA / 120 kW",
+        "| ESP | 165 kVA / 132 kW | 165 kVA / 132 kW | 165 kVA / 132 kW | 165 kVA / 132 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV180PS",
+      "header": [
+        "| Engine Model | 1106A-70TAG3 | 1106A-70TAG3 | 1106A-70TAG3 | 1106A-70TAG3"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 180 kVA / 144 kW | 180 kVA / 144 kW | 180 kVA / 144 kW | 180 kVA / 144 kW",
+        "| ESP | 200 kVA / 160 kW | 200 kVA / 160 kW | 200 kVA / 160 kW | 200 kVA / 160 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV200PS",
+      "header": [
+        "| Engine Model | 1106A-70TAG4 | 1106A-70TAG4 | 1106A-70TAG4 | 1106A-70TAG4"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 200 kVA / 160 kW | 200 kVA / 160 kW | 200 kVA / 160 kW | 200 kVA / 160 kW",
+        "| ESP | 220 kVA / 176 kW | 220 kVA / 176 kW | 220 kVA / 176 kW | 220 kVA / 176 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV250PS",
+      "header": [
+        "| Engine Model | 1206A-E70TTAG3 | 1206A-E70TTAG3 | 1206A-E70TTAG3 | 1206A-E70TTAG3"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 250 kVA / 200 kW | 250 kVA / 200 kW | 250 kVA / 200 kW | 250 kVA / 200 kW",
+        "| ESP27 | 275 kVA / 220 kW | 275 kVA / 220 kW | 275 kVA / 220 kW | 275 kVA / 220 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV300PS",
+      "header": [
+        "| Engine Model | 1506A-E88TAG5 | 1506A-E88TAG5 | 1506A-E88TAG5 | 1506A-E88TAG5"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 300 kVA / 240 kW | 300 kVA / 240 kW | 300 kVA / 240 kW | 300 kVA / 240 kW",
+        "| ESP | 330 kVA / 264 kW | 330 kVA / 264 kW | 330 kVA / 264 kW | 330 kVA / 264 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV400PS",
+      "header": [
+        "| Engine Model | 2206C-E13TAG3 | 2206C-E13TAG3 | 2206C-E13TAG3 | 2206C-E13TAG3"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 400 kVA / 320 kW | 400 kVA / 320 kW | 400 kVA / 320 kW | 400 kVA / 320 kW",
+        "| ESP | 440 kVA / 352 kW | 440 kVA / 352 kW | 440 kVA / 352 kW | 440 kVA / 352 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV450PS",
+      "header": [
+        "| Engine Model | 2506C-E15TAG1 | 2506C-E15TAG1 | 2506C-E15TAG1 | 2506C-E15TAG1"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 450 kVA / 360 kW | 450 kVA / 360 kW | 450 kVA / 360 kW | 450 kVA / 360 kW",
+        "| ESP | 495 kVA / 396 kW | 495 kVA / 396 kW | 495 kVA / 396 kW | 495 kVA / 396 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV500PS",
+      "header": [
+        "| Engine Model | 2506C-E15TAG2 | 2506C-E15TAG2 | 2506C-E15TAG2 | 2506C-E15TAG2"
+      ],
+      "rows": [
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 500 kVA / 400 kW | 500 kVA / 400 kW | 500 kVA / 400 kW | 500 kVA / 400 kW",
+        "| ESP | 550 kVA / 440 kW | 550 kVA / 440 kW | 550 kVA / 440 kW | 550 kVA / 440 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV27CS",
+      "header": [
+        "| Engine Model | 4B3.9-G1 | 4B3.9-G1 | 4B3.9-G1 | 4B3.9-G1"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 27 kVA / 22 kW | 27 kVA / 22 kW | 27 kVA / 22 kW | 27 kVA / 22 kW",
+        "| ESP | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV30CS",
+      "header": [
+        "| Engine Model | 4B3.9-G12 | 4B3.9-G12 | 4B3.9-G12 | 4B3.9-G12"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW",
+        "| ESP | 33 kVA / 27 kW | 33 kVA / 27 kW | 33 kVA / 27 kW | 33 kVA / 27 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV42CS",
+      "header": [
+        "| Engine Model | 4BT3.9-G1 | 4BT3.9-G1 | 4BT3.9-G1 | 4BT3.9-G1"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 43 kVA / 34 kW | 43 kVA / 34 kW | 43 kVA / 34 kW | 43 kVA / 34 kW",
+        "| ESP | 47 kVA / 38 kW | 47 kVA / 38 kW | 47 kVA / 38 kW | 47 kVA / 38 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV60CS",
+      "header": [
+        "| Engine Model | 4BTA3.9-G2 | 4BTA3.9-G2 | 4BTA3.9-G2 | 4BTA3.9-G2"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 60 kVA / 48 kW | 60 kVA / 48 kW | 60 kVA / 48 kW | 60 kVA / 48 kW",
+        "| ESP | 66 kVA / 53 kW | 66 kVA / 53 kW | 66 kVA / 53 kW | 66 kVA / 53 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV80CS",
+      "header": [
+        "| Engine Model | 4BTA3.9-G11 | 4BTA3.9-G11 | 4BTA3.9-G11 | 4BTA3.9-G11"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 80 kVA / 64 kW | 80 kVA / 64 kW | 80 kVA / 64 kW | 80 kVA / 64 kW",
+        "| ESP | 90 kVA / 72 kW | 90 kVA / 72 kW | 90 kVA / 72 kW | 90 kVA / 72 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV100CS",
+      "header": [
+        "| Engine Model | 6BT5.9-G2 | 6BT5.9-G2 | 6BT5.9-G2 | 6BT5.9-G2"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 100 kVA / 80 kW | 100 kVA / 80 kW | 100 kVA / 80 kW | 100 kVA / 80 kW",
+        "| ESP | 110 kVA / 88 kW | 110 kVA / 88 kW | 110 kVA / 88 kW | 110 kVA / 88 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV135CS",
+      "header": [
+        "| Engine Model | 6BTAA5.9-G2 | 6BTAA5.9-G2 | 6BTAA5.9-G2 | 6BTAA5.9-G2"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 135 kVA / 105 kW | 135 kVA / 105 kW | 135 kVA / 105 kW | 135 kVA / 105 kW",
+        "| ESP | 145 kVA / 116 kW | 145 kVA / 116 kW | 145 kVA / 116 kW | 145 kVA / 116 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV150CS",
+      "header": [
+        "| Engine Model | 6BTAA5.9-G12 | 6BTAA5.9-G12 | 6BTAA5.9-G12 | 6BTAA5.9-G12"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 150 kVA / 120 kW | 150 kVA / 120 kW | 150 kVA / 120 kW | 150 kVA / 120 kW",
+        "| ESP | 165 kVA / 132 kW | 165 kVA / 132 kW | 165 kVA / 132 kW | 165 kVA / 132 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV180CS",
+      "header": [
+        "| Engine Model | 6CTA8.3-G1 | 6CTA8.3-G1 | 6CTA8.3-G1 | 6CTA8.3-G1"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 180 kVA / 145 kW | 180 kVA / 145 kW | 180 kVA / 145 kW | 180 kVA / 145 kW",
+        "| ESP | 200 kVA / 160 kW | 200 kVA / 160 kW | 200 kVA / 160 kW | 200 kVA / 160 kW",
+        "| Engine Model | 6CTA8.3-G2 | 6CTA8.3-G2 | 6CTA8.3-G2 | 6CTA8.3-G2"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV200CS",
+      "header": [
+        "| Engine Model | 6CTAA8.3-G2 | 6CTAA8.3-G2 | 6CTAA8.3-G2 | 6CTAA8.3-G2"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 200 kVA / 160 kW | 200 kVA / 160 kW | 200 kVA / 160 kW | 200 kVA / 160 kW",
+        "| ESP | 220 kVA / 176 kW | 220 kVA / 176 kW | 220 kVA / 176 kW | 220 kVA / 176 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV250CS",
+      "header": [
+        "| Engine Model | 6LTAA8.9-G2 | 6LTAA8.9-G2 | 6LTAA8.9-G2 | 6LTAA8.9-G2"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 250 kVA / 200 kW | 250 kVA / 200 kW | 250 kVA / 200 kW | 250 kVA / 200 kW",
+        "| ESP | 264 kVA / 211 kW | 264 kVA / 211 kW | 264 kVA / 211 kW | 264 kVA / 211 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV320CS",
+      "header": [
+        "| Engine Model | 6LTAA9.5-G1 | 6LTAA9.5-G1 | 6LTAA9.5-G1 | 6LTAA9.5-G1"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 320 kVA / 256 kW | 320 kVA / 256 kW | 320 kVA / 256 kW | 320 kVA / 256 kW",
+        "| ESP | 350 kVA / 280 kW | 350 kVA / 280 kW | 350 kVA / 280 kW | 350 kVA / 280 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV380CS",
+      "header": [
+        "| Engine Model | 6ZTAA13-G3 | 6ZTAA13-G3 | 6ZTAA13-G3 | 6ZTAA13-G3"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 388 kVA / 310 kW | 388 kVA / 310 kW | 388 kVA / 310 kW | 388 kVA / 310 kW",
+        "| ESP | 425 kVA / 340 kW | 425 kVA / 340 kW | 425 kVA / 340 kW | 425 kVA / 340 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV440CS",
+      "header": [
+        "| Engine Model | QSZ13-G2 | QSZ13-G2 | QSZ13-G2 | QSZ13-G2"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 438 kVA / 350 kW | 438 kVA / 350 kW | 438 kVA / 350 kW | 438 kVA / 350 kW",
+        "| ESP | 468 kVA / 375 kW | 468 kVA / 375 kW | 468 kVA / 375 kW | 468 kVA / 375 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV500CS",
+      "header": [
+        "| Engine Model | QSZ13-G3 | QSZ13-G3 | QSZ13-G3 | QSZ13-G3"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 500 kVA / 400 kW | 500 kVA / 400 kW | 500 kVA / 400 kW | 500 kVA / 400 kW",
+        "| ESP | 550 kVA / 440 kW | 550 kVA / 440 kW | 550 kVA / 440 kW | 550 kVA / 440 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV650CS",
+      "header": [
+        "| Engine Model | KTA19-G8 | KTA19-G8 | KTA19-G8 | KTA19-G8"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 650 kVA / 520 kW | 650 kVA / 520 kW | 650 kVA / 520 kW | 650 kVA / 520 kW",
+        "| ESP | 715 kVA / 572 kW | 715 kVA / 572 kW | 715 kVA / 572 kW | 715 kVA / 572 kW",
+        "| Engine Model | QSK19-G4 | QSK19-G4 | QSK19-G4 | QSK19-G4"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV800CS",
+      "header": [
+        "| Engine Model | KTA38-G2B | KTA38-G2B | KTA38-G2B | KTA38-G2B"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 800 kVA / 640 kW | 800 kVA / 640 kW | 800 kVA / 640 kW | 800 kVA / 640 kW",
+        "| ESP | 880 kVA / 704 kW | 880 kVA / 704 kW | 880 kVA / 704 kW | 880 kVA / 704 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV900CS",
+      "header": [
+        "| Engine Model | KTA38-G2A | KTA38-G2A | KTA38-G2A | KTA38-G2A"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 900 kVA / 720 kW | 900 kVA / 720 kW | 900 kVA / 720 kW | 900 kVA / 720 kW",
+        "| ESP | 990 kVA / 792 kW | 990 kVA / 792 kW | 990 kVA / 792 kW | 990 kVA / 792 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV1000CS",
+      "header": [
+        "| Engine Model | KTA38-G5 | KTA38-G5 | KTA38-G5 | KTA38-G5"
+      ],
+      "rows": [
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 1000 kVA / 800 kW | 1000 kVA / 800 kW | 1000 kVA / 800 kW | 1000 kVA / 800 kW",
+        "| ESP | 1100 kVA / 880 kW | 1100 kVA / 880 kW | 1100 kVA / 880 kW | 1100 kVA / 880 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV10XS",
+      "header": [
+        "| Engine Model | VR3-1.4G1 | VR3-1.4G1 | VR3-1.4G1 | VR3-1.4G1"
+      ],
+      "rows": [
+        "| Engine Brand | POWERLINK | POWERLINK | POWERLINK | POWERLINK",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 10 kVA / 8 kW | 10 kVA / 8 kW | 10 kVA / 8 kW | 10 kVA / 8 kW",
+        "| ESP | 11 kVA / 9 kW | 11 kVA / 9 kW | 11 kVA / 9 kW | 11 kVA / 9 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV15XS",
+      "header": [
+        "| Engine Model | VR4-2.3G1 | VR4-2.3G1 | VR4-2.3G1 | VR4-2.3G1"
+      ],
+      "rows": [
+        "| Engine Brand | POWERLINK | POWERLINK | POWERLINK | POWERLINK",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 15 kVA / 12 kW | 15 kVA / 12 kW | 15 kVA / 12 kW | 15 kVA / 12 kW",
+        "| ESP | 16 kVA / 13 kW | 16 kVA / 13 kW | 16 kVA / 13 kW | 16 kVA / 13 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV20XS",
+      "header": [
+        "| Engine Model | VR4-2.7G1 | VR4-2.7G1 | VR4-2.7G1 | VR4-2.7G1"
+      ],
+      "rows": [
+        "| Engine Brand | POWERLINK | POWERLINK | POWERLINK | POWERLINK",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 20 kVA / 16 kW | 20 kVA / 16 kW | 20 kVA / 16 kW | 20 kVA / 16 kW",
+        "| ESP | 22 kVA / 18 kW | 22 kVA / 18 kW | 22 kVA / 18 kW | 22 kVA / 18 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV30XS",
+      "header": [
+        "| Engine Model | VR4-3.2G1 | VR4-3.2G1 | VR4-3.2G1 | VR4-3.2G1"
+      ],
+      "rows": [
+        "| Engine Brand | POWERLINK | POWERLINK | POWERLINK | POWERLINK",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW | 30 kVA / 24 kW",
+        "| ESP | 33 kVA / 26 kW | 33 kVA / 26 kW | 33 kVA / 26 kW | 33 kVA / 26 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV45XS",
+      "header": [
+        "| Engine Model | VR4-3.2TG2 | VR4-3.2TG2 | VR4-3.2TG2 | VR4-3.2TG2"
+      ],
+      "rows": [
+        "| Engine Brand | POWERLINK | POWERLINK | POWERLINK | POWERLINK",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 45 kVA / 36 kW | 45 kVA / 36 kW | 45 kVA / 36 kW | 45 kVA / 36 kW",
+        "| ESP | 50 kVA / 40 kW | 50 kVA / 40 kW | 50 kVA / 40 kW | 50 kVA / 40 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV60XS",
+      "header": [
+        "| Engine Model | VR4-4.1TG2 | VR4-4.1TG2 | VR4-4.1TG2 | VR4-4.1TG2"
+      ],
+      "rows": [
+        "| Engine Brand | POWERLINK | POWERLINK | POWERLINK | POWERLINK",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 60 kVA / 48 kW | 60 kVA / 48 kW | 60 kVA / 48 kW | 60 kVA / 48 kW",
+        "| ESP | 66 kVA / 53 kW | 66 kVA / 53 kW | 66 kVA / 53 kW | 66 kVA / 53 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV70XS",
+      "header": [
+        "| Engine Model | VR4-4.1TAG2 | VR4-4.1TAG2 | VR4-4.1TAG2 | VR4-4.1TAG2"
+      ],
+      "rows": [
+        "| Engine Brand | POWERLINK | POWERLINK | POWERLINK | POWERLINK",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 70 kVA / 54 kW | 70 kVA / 54 kW | 70 kVA / 54 kW | 70 kVA / 54 kW",
+        "| ESP | 77 kVA / 59 kW | 77 kVA / 59 kW | 77 kVA / 59 kW | 77 kVA / 59 kW"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "QSV Series QSV80XS",
+      "header": [
+        "| Engine Model | VR4-4.1TAG3 | VR4-4.1TAG3 | VR4-4.1TAG3 | VR4-4.1TAG3"
+      ],
+      "rows": [
+        "| Engine Brand | POWERLINK | POWERLINK | POWERLINK | POWERLINK",
+        "| Voltage | 380V | 400V | 415V | 440V",
+        "| PRP | 80 kVA / 64 kW | 80 kVA / 64 kW | 80 kVA / 64 kW | 80 kVA / 64 kW",
+        "| ESP | 88 kVA / 70 kW | 88 kVA / 70 kW | 88 kVA / 70 kW | 88 kVA / 70 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR10XS",
+      "header": [
+        "| Engine Model | VR3-1.4G1 | VR3-1.4G1"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 10 kVA / 8 kW | 10 kVA / 8 kW",
+        "| ESP | 11 kVA / 9 kW | 11 kVA / 9 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR15XS",
+      "header": [
+        "| Engine Model | VR4-2.3G1 | VR4-2.3G1"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 15 kVA / 12 kW | 15 kVA / 12 kW",
+        "| ESP | 17 kVA / 13 kW | 17 kVA / 13 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR20XS",
+      "header": [
+        "| Engine Model | VR4-2.7G1 | VR4-2.7G1"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 20 kVA / 16 kW | 20 kVA / 16 kW",
+        "| ESP | 22 kVA / 18 kW | 22 kVA / 18 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR30XS",
+      "header": [
+        "| Engine Model | VR4-3.2G1 | VR4-3.2G1"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 30 kVA / 24 kW | 30 kVA / 24 kW",
+        "| ESP | 33 kVA / 26 kW | 33 kVA / 26 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR45XS",
+      "header": [
+        "| Engine Model | VR4-3.2TG2 | VR4-3.2TG2"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 45 kVA / 36 kW | 45 kVA / 36kW",
+        "| ESP | 50 kVA / 40 kW | 50kVA / 40 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR60XS",
+      "header": [
+        "| Engine Model | VR4-3.5TAG2 | VR4-3.5TAG2"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 60kVA / 48 kW | 60 kVA / 48 kW",
+        "| ESP | 66 kVA / 53kW | 66kVA / 53kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR80XS",
+      "header": [
+        "| Engine Model | VR4-4.1TAG3 | VR4-4.1TAG3"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 80 kVA / 64 kW | 80 kVA / 64 kW",
+        "| ESP | 88 kVA / 70kW | 88kVA / 70kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR100XS",
+      "header": [
+        "| Engine Model | VR4-4.3TAG4 | VR4-4.3TAG4"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 100 kVA / 80 kW | 100 kVA / 80 kW",
+        "| ESP | 110 kVA / 90 kW | 110 kVA / 90 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR110XS",
+      "header": [
+        "| Engine Model | VR4-4.3TAG2 | VR4-4.3TAG2"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 110 kVA / 88 kW | 110 kVA / 88 kW",
+        "| ESP | 121 kVA / 97 kW | 121 kVA / 97 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR125XS",
+      "header": [
+        "| Engine Model | VR4-4.3TAG3 | VR4-4.3TAG3"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 125 kVA / 100 kW | 125 kVA / 100 kW",
+        "| ESP | 138 kVA / 110 kW | 138 kVA / 110 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR135XS",
+      "header": [
+        "| Engine Model | VR4-4.3TAG5 | VR4-4.3TAG5"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 138 kVA / 110 kW | 138kVA /110kW",
+        "| ESP | 151 kVA / 120 kW | 151 kVA / 120 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR160XS",
+      "header": [
+        "| Engine Model | VR6-6.5TAG3 | VR6-6.5TAG3"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 169 kVA / 135 kW | 169 kVA / 135kW",
+        "| ESP | 186 kVA / 150 kW | 186kVA / 150kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR165XS",
+      "header": [
+        "| Engine Model | VR6-6.5TAG2 | VR6-6.5TAG2"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 165 kVA / 132 kW | 165 kVA / 132 kW",
+        "| ESP | 182 kVA / 142 kW | 182kVA / 142kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR200XS",
+      "header": [
+        "| Engine Model | VR6-8.3TAG2 | VR6-8.3TAG2"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 200 kVA / 160 kW | 200kVA / 160kW",
+        "| ESP | 220kVA / 9176kW | 220kVA / 176kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR250XS",
+      "header": [
+        "| Engine Model | SC9D340D2 | SC9D340D2"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 250kVA / 200kW | 250kVA / 200kW",
+        "| ESP | 275kVA / 220kW | 275kVA / 220kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR310XS",
+      "header": [
+        "| Engine Model | 6ETAA11.8-G32 | 6ETAA11.8-G32"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 313 kVA / 250 kW | 313 kVA / 250 kW",
+        "| ESP | 344 kVA /280 kW | 344 kVA / 280kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR315XS",
+      "header": [
+        "| Engine Model | VR6-12TAG2 | VR6-12TAG2"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 313kVA /250kW | 313kVA / 250kW",
+        "| ESP | 344kVA / 280kW | 344kVA / 280kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR375XS",
+      "header": [
+        "| Engine Model | VR6-13TAG2 | VR6-13TAG2"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 375 kVA / 300 kW | 375kVA / 300 kW",
+        "| ESP | 413kVA / 330 kW | 413 kVA / 330kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR450XS",
+      "header": [
+        "| Engine Model | VR6-13TAG3 | VR6-13TAG3"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 450 kVA / 360 kW | 450 kVA / 360 kW",
+        "| ESP | 495 kVA / 396 kW | 495kVA / 396 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR500XS",
+      "header": [
+        "| Engine Model | VR6-13TAG4 | VR6-13TAG4"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 500 kVA / 400 kW | 500 kVA / 400kW",
+        "| ESP | 550 kVA / 440 kW | 550 kVA / 440 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR625XS",
+      "header": [
+        "| Engine Model | VR6-17TAG3 | VR6-17TAG3"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 625kVA / 500 kW | 625kVA / 500 kW",
+        "| ESP | 688 kVA / 550 kW | 688 kVA / 550 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR750XS",
+      "header": [
+        "| Engine Model | VR6-25TAG3 | VR6-25TAG3"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 750 kVA / 600 kW | 750 kVA / 600 kW",
+        "| ESP | 825 kVA / 660 kW | 825 kVA / 660 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR800XS",
+      "header": [
+        "| Engine Model | VR6-25TAG5 | VR6-25TAG5"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 800 kVA / 640 kW | 800 kVA / 640kW",
+        "| ESP | 880 kVA / 704 kW | 880 kVA / 704 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR900XS",
+      "header": [
+        "| Engine Model | VR6-25TAG6 | VR6-25TAG6"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 900 kVA / 720 kW | 900kVA / 720kW",
+        "| ESP | 990kVA / 792kW | 990kVA / 792kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR1000XS",
+      "header": [
+        "| Engine Model | VR6-25TAG7 | VR6-25TAG7"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 1000 kVA / 800 kW | 1000 kVA / 800 kW",
+        "| ESP | 1100 kVA / 880 kW | 1100 kVA / 880 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR1250XS",
+      "header": [
+        "| Engine Model | 12D39TAG3 | 12D39TAG3"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 1250 kVA / 1000 kW | 1250 kVA / 1000 kW",
+        "| ESP | 1375 kVA / 1100 kW | 1375kVA / 1100 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR1500XS",
+      "header": [
+        "| Engine Model | 12D39TAG4 | 12D39TAG4"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW",
+        "| ESP | 1650 kVA /1320 kW | 1650 kVA / 1320 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR1750XS",
+      "header": [
+        "| Engine Model | 12D58TWG3 | 12D58TWG3"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 1875 kVA / 1500 kW | 1875 kVA / 1500 kW",
+        "| ESP | 2063 kVA / 1650 kW | 2063 kVA / 1650 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR2000XS",
+      "header": [
+        "| Engine Model | 12D58TWG4 | 12D58TWG4"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 2000 kVA / 1600 kW | 2000 kVA / 1600 kW",
+        "| ESP | 2200 kVA / 1800 kW | 2200 kVA / 1800 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR2250XS",
+      "header": [
+        "| Engine Model | 12D58TWG5 | 12D58TWG5"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 2250 kVA / 1800 kW | 2250 kVA / 1800 kW",
+        "| ESP | 2475 kVA /2000 kW | 2475 kVA / 2000 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR2500XS",
+      "header": [
+        "| Engine Model | 16D76TWG2 | 16D76TWG2"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 2500 kVA / 2000 kW | 2500 kVA / 2000 kW",
+        "| ESP | 2750 kVA / 2200 kW | 2750 kVA / 2200 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR2750XS",
+      "header": [
+        "| Engine Model | 16D76TWG3 | 16D76TWG3"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 2750kVA / 2200 kW | 2750kVA / 2200 kW",
+        "| ESP | 3025 kVA / 2400 kW | 3025kVA / 2400 kW"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "VR Series VR3000XS",
+      "header": [
+        "| Engine Model | 16D76TWG4 | 16D76TWG4"
+      ],
+      "rows": [
+        "| Engine Brand | PowerLink | PowerLink",
+        "| Voltage | 240V | 415V",
+        "| PRP | 3000 kVA / 2400 kW | 3000kVA / 2400 kW",
+        "| ESP | 3300kVA / 2600 kW | 3300 kVA / 2600 kW"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HV Series HVC1275S",
+      "header": [
+        "| Engine Model | KTA50-G3 | KTA50-G3 | KTA50-G3 | KTA50-G3"
+      ],
+      "rows": [
+        "| Emission Standard | Non | Non | Non | Non",
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 3300V | 3300V | 3300V | 3300V",
+        "| PRP | 1275 kVA / 1020 kW | 1275 kVA / 1020 kW | 1275 kVA / 1020 kW | 1275 kVA / 1020 kW",
+        "| ESP | 1400 kVA / 1120 kW | 1400 kVA / 1120 kW | 1400 kVA / 1120 kW | 1400 kVA / 1120 kW",
+        "| Voltage | 6300V | 6300V | 6300V | 6300V",
+        "| Voltage | 10500V | 10500V | 10500V | 10500V"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HV Series HVC1500S",
+      "header": [
+        "| Engine Model | KTA50-GS8 | KTA50-GS8 | KTA50-GS8 | KTA50-GS8"
+      ],
+      "rows": [
+        "| Emission Standard | Non | Non | Non | Non",
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 3300V | 3300V | 3300V | 3300V",
+        "| PRP | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW",
+        "| ESP | 1675 kVA / 1340 kW | 1675 kVA / 1340 kW | 1675 kVA / 1340 kW | 1675 kVA / 1340 kW",
+        "| Voltage | 6300V | 6300V | 6300V | 6300V",
+        "| Voltage | 10500V | 10500V | 10500V | 10500V"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HV Series HVC1600S",
+      "header": [
+        "| Engine Model | QSK60-G12 | QSK60-G12 | QSK60-G12 | QSK60-G12"
+      ],
+      "rows": [
+        "| Emission Standard | Non | Non | Non | Non",
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 3300V | 3300V | 3300V | 3300V",
+        "| PRP | 1601 kVA / 1474 kW | 1601 kVA / 1474 kW | 1601 kVA / 1474 kW | 1601 kVA / 1474 kW",
+        "| ESP | 1843 kVA / 1601 kW | 1843 kVA / 1601 kW | 1843 kVA / 1601 kW | 1843 kVA / 1601 kW",
+        "| Voltage | 6300V | 6300V | 6300V | 6300V",
+        "| Voltage | 10500V | 10500V | 10500V | 10500V"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HV Series HVC1875S",
+      "header": [
+        "| Engine Model | QSK60G3 | QSK60G3 | QSK60G3 | QSK60G3"
+      ],
+      "rows": [
+        "| Emission Standard | Non | Non | Non | Non",
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 3300V | 3300V | 3300V | 3300V",
+        "| PRP | 1875 kVA / 1500 kW | 1875 kVA / 1500 kW | 1875 kVA / 1500 kW | 1875 kVA / 1500 kW",
+        "| ESP | 2063 kVA / 650 kW | 2063 kVA / 650 kW | 2063 kVA / 650 kW | 2063 kVA / 650 kW",
+        "| Voltage | 6300V | 6300V | 6300V | 6300V",
+        "| ESP | 2063 kVA / 1650 kW | 2063 kVA / 1650 kW | 2063 kVA / 1650 kW | 2063 kVA / 1650 kW",
+        "| Voltage | 10500V | 10500V | 10500V | 10500V"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HV Series HVC2045S",
+      "header": [
+        "| Engine Model | QSK60G4 | QSK60G4 | QSK60G4 | QSK60G4"
+      ],
+      "rows": [
+        "| Emission Standard | Non | Non | Non | Non",
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 3300V | 3300V | 3300V | 3300V",
+        "| PRP | 2045 kVA / 1636 kW | 2045 kVA / 1636 kW | 2045 kVA / 1636 kW | 2045 kVA / 1636 kW",
+        "| ESP | 2250 kVA / 1800 kW | 2250 kVA / 1800 kW | 2250 kVA / 1800 kW | 2250 kVA / 1800 kW",
+        "| Voltage | 6300V | 6300V | 6300V | 6300V",
+        "| Voltage | 10500V | 10500V | 10500V | 10500V"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HV Series HVC2750S",
+      "header": [
+        "| Engine Model | QSK78-G9 | QSK78-G9 | QSK78-G9 | QSK78-G9"
+      ],
+      "rows": [
+        "| Emission Standard | Non | Non | Non | Non",
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 3300V | 3300V | 3300V | 3300V",
+        "| PRP | 2750 kVA / 2200 kW | 2750 kVA / 2200 kW | 2750 kVA / 2200 kW | 2750 kVA / 2200 kW",
+        "| ESP | 3000 kVA / 2400 kW | 3000 kVA / 2400 kW | 3000 kVA / 2400 kW | 3000 kVA / 2400 kW",
+        "| Voltage | 6300V | 6300V | 6300V | 6300V",
+        "| Voltage | 10500V | 10500V | 10500V | 10500V",
+        "| Emission Standard | Tire2 | Tire2 | Tire2 | Tire2",
+        "| Engine Model | QSK78-G15 | QSK78-G15 | QSK78-G15 | QSK78-G15"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HV Series HVC1400S",
+      "header": [
+        "| Engine Model | QSK50-G3 | QSK50-G3 | QSK50-G3 | QSK50-G3"
+      ],
+      "rows": [
+        "| Emission Standard | Tire2 | Tire2 | Tire2 | Tire2",
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 3300V | 3300V | 3300V | 3300V",
+        "| PRP | 1400 kVA / 1120 kW | 1400 kVA / 1120 kW | 1400 kVA / 1120 kW | 1400 kVA / 1120 kW",
+        "| ESP | 1540 kVA / 1232 kW | 1540 kVA / 1232 kW | 1540 kVA / 1232 kW | 1540 kVA / 1232 kW",
+        "| Voltage | 6300V | 6300V | 6300V | 6300V",
+        "| Voltage | 10500V | 10500V | 10500V | 10500V"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HV Series HVC1540S",
+      "header": [
+        "| Engine Model | QSK50-G4 | QSK50-G4 | QSK50-G4 | QSK50-G4"
+      ],
+      "rows": [
+        "| Emission Standard | Tire2 | Tire2 | Tire2 | Tire2",
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 3300V | 3300V | 3300V | 3300V",
+        "| PRP | 1540 kVA / 1232 kW | 1540 kVA / 1232 kW | 1540 kVA / 1232 kW | 1540 kVA / 1232 kW",
+        "| ESP | 1700 kVA / 1360 kW | 1700 kVA / 1360 kW | 1700 kVA / 1360 kW | 1700 kVA / 1360 kW",
+        "| Voltage | 6300V | 6300V | 6300V | 6300V",
+        "| Voltage | 10500V | 10500V | 10500V | 10500V"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HV Series HVC1650S",
+      "header": [
+        "| Engine Model | QSK50-G7 | QSK50-G7 | QSK50-G7 | QSK50-G7"
+      ],
+      "rows": [
+        "| Emission Standard | Tire2 | Tire2 | Tire2 | Tire2",
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 3300V | 3300V | 3300V | 3300V",
+        "| PRP | 1650 kVA / 1320 kW | 1650 kVA / 1320 kW | 1650 kVA / 1320 kW | 1650 kVA / 1320 kW",
+        "| ESP | 1825 kVA / 1460 kW | 1825 kVA / 1460 kW | 1825 kVA / 1460 kW | 1825 kVA / 1460 kW",
+        "| Voltage | 6300V | 6300V | 6300V | 6300V",
+        "| Voltage | 10500V | 10500V | 10500V | 10500V"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HV Series HVC1829S",
+      "header": [
+        "| Engine Model | QSK60-G12 | QSK60-G12 | QSK60-G12 | QSK60-G12"
+      ],
+      "rows": [
+        "| Emission Standard | Tire2 | Tire2 | Tire2 | Tire2",
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 3300V | 3300V | 3300V | 3300V",
+        "| PRP | 1829 kVA / 1463 kW | 1829 kVA / 1463 kW | 1829 kVA / 1463 kW | 1829 kVA / 1463 kW",
+        "| ESP | 2008 kVA / 1606 kW | 2008 kVA / 1606 kW | 2008 kVA / 1606 kW | 2008 kVA / 1606 kW",
+        "| Voltage | 6300V | 6300V | 6300V | 6300V",
+        "| Voltage | 10500V | 10500V | 10500V | 10500V"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HV Series HVC2000S",
+      "header": [
+        "| Engine Model | QSK60-G13 | QSK60-G13 | QSK60-G13 | QSK60-G13"
+      ],
+      "rows": [
+        "| Emission Standard | Tire2 | Tire2 | Tire2 | Tire2",
+        "| Engine Brand | Cummins | Cummins | Cummins | Cummins",
+        "| Voltage | 3300V | 3300V | 3300V | 3300V",
+        "| PRP | 2003 kVA / 1602 kW | 2003 kVA / 1602 kW | 2003 kVA / 1602 kW | 2003 kVA / 1602 kW",
+        "| ESP | 2254 kVA / 1803 kW | 2254 kVA / 1803 kW | 2254 kVA / 1803 kW | 2254 kVA / 1803 kW",
+        "| Voltage | 6300V | 6300V | 6300V | 6300V",
+        "| Voltage | 10500V | 10500V | 10500V | 10500V"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HV Series HVM1290S",
+      "header": [
+        "| Engine Model | S12R-PTA-C | S12R-PTA-C | S12R-PTA-C | S12R-PTA-C"
+      ],
+      "rows": [
+        "| Emission Standard | Non | Tire2 | Tire2 | Tire2",
+        "| Engine Brand | MITSUBISHI | MITSUBISHI | MITSUBISHI | MITSUBISHI",
+        "| Voltage | 3300V | 3300V | 3300V | 3300V",
+        "| PRP | 1290 kVA / 1032 kW | 1290 kVA / 1032 kW | 1290 kVA / 1032 kW | 1290 kVA / 1032 kW",
+        "| ESP | 1425 kVA / 1140 kW | 1425 kVA / 1140 kW | 1425 kVA / 1140 kW | 1425 kVA / 1140 kW",
+        "| Voltage | 6300V | 6300V | 6300V | 6300V",
+        "| Emission Standard | Non | Non | Non | Non",
+        "| Voltage | 10500V | 10500V | 10500V | 10500V"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HV Series HVM1500S",
+      "header": [
+        "| Engine Model | S12R-PTAA2-C | S12R-PTAA2-C | S12R-PTAA2-C | S12R-PTAA2-C"
+      ],
+      "rows": [
+        "| Emission Standard | Non | Non | Non | Non",
+        "| Engine Brand | MITSUBISHI | MITSUBISHI | MITSUBISHI | MITSUBISHI",
+        "| Voltage | 3300V | 3300V | 3300V | 3300V",
+        "| PRP | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW",
+        "| ESP | 1650 kVA / 1320 kW | 1650 kVA / 1320 kW | 1650 kVA / 1320 kW | 1650 kVA / 1320 kW",
+        "| Voltage | 6300V | 6300V | 6300V | 6300V",
+        "| Voltage | 10500V | 10500V | 10500V | 10500V"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HV Series HVM1728S",
+      "header": [
+        "| Engine Model | S16R-PTA-C | S16R-PTA-C | S16R-PTA-C | S16R-PTA-C"
+      ],
+      "rows": [
+        "| Emission Standard | Non | Non | Non | Non",
+        "| Engine Brand | MITSUBISHI | MITSUBISHI | MITSUBISHI | MITSUBISHI",
+        "| Voltage | 3300V | 3300V | 3300V | 3300V",
+        "| PRP | 1728 kVA / 1382 kW | 1728 kVA / 1382 kW | 1728 kVA / 1382 kW | 1728 kVA / 1382 kW",
+        "| ESP | 1900 kVA / 1520 kW | 1900 kVA / 1520 kW | 1900 kVA / 1520 kW | 1900 kVA / 1520 kW",
+        "| Voltage | 6300V | 6300V | 6300V | 6300V",
+        "| Voltage | 10500V | 10500V | 10500V | 10500V"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HV Series HVM2045S",
+      "header": [
+        "| Engine Model | S16R-PTAA2-C | S16R-PTAA2-C | S16R-PTAA2-C | S16R-PTAA2-C"
+      ],
+      "rows": [
+        "| Emission Standard | Non | Non | Non | Non",
+        "| Engine Brand | MITSUBISHI | MITSUBISHI | MITSUBISHI | MITSUBISHI",
+        "| Voltage | 3300V | 3300V | 3300V | 3300V",
+        "| PRP | 2045 kVA / 1636 kW | 2045 kVA / 1636 kW | 2045 kVA / 1636 kW | 2045 kVA / 1636 kW",
+        "| ESP | 2250 kVA / 1800 kW | 2250 kVA / 1800 kW | 2250 kVA / 1800 kW | 2250 kVA / 1800 kW",
+        "| Voltage | 6300V | 6300V | 6300V | 6300V",
+        "| Voltage | 10500V | 10500V | 10500V | 10500V"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HV Series HVP1250S",
+      "header": [
+        "| Engine Model | 4012-46TWG2A | 4012-46TWG2A | 4012-46TWG2A | 4012-46TWG2A"
+      ],
+      "rows": [
+        "| Emission Standard | Non | Non | Non | Non",
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 3300V | 3300V | 3300V | 3300V",
+        "| PRP | 1250 kVA / 1000 kW | 1250 kVA / 1000 kW | 1250 kVA / 1000 kW | 1250 kVA / 1000 kW",
+        "| ESP | 1375 kVA / 1100 kW | 1375 kVA / 1100 kW | 1375 kVA / 1100 kW | 1375 kVA / 1100 kW",
+        "| Voltage | 6300V | 6300V | 6300V | 6300V",
+        "| Voltage | 10500V | 10500V | 10500V | 10500V"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HV Series HVP1500S",
+      "header": [
+        "| Engine Model | 4012-46TAG2A | 4012-46TAG2A | 4012-46TAG2A | 4012-46TAG2A"
+      ],
+      "rows": [
+        "| Emission Standard | Non | Non | Non | Non",
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 3300V | 3300V | 3300V | 3300V",
+        "| PRP | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW | 1500 kVA / 1200 kW",
+        "| ESP | 1650 kVA / 1320 kW | 1650 kVA / 1320 kW | 1650 kVA / 1320 kW | 1650 kVA / 1320 kW",
+        "| Voltage | 6300V | 6300V | 6300V | 6300V",
+        "| Voltage | 10500V | 10500V | 10500V | 10500V"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HV Series HVP1710S",
+      "header": [
+        "| Engine Model | 4012-46TAG3A | 4012-46TAG3A | 4012-46TAG3A | 4012-46TAG3A"
+      ],
+      "rows": [
+        "| Emission Standard | Non | Non | Non | Non",
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 3300V | 10500V | 10500V | 10500V",
+        "| PRP | 1710 kVA / 1368 kW | 1710 kVA / 1368 kW | 1710 kVA / 1368 kW | 1710 kVA / 1368 kW",
+        "| ESP | 1881 kVA / 1505 kW | 1881 kVA / 1505 kW | 1881 kVA / 1505 kW | 1881 kVA / 1505 kW",
+        "| Voltage | 6300V | 10500V | 10500V | 10500V",
+        "| Voltage | 10500V | 10500V | 10500V | 10500V"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HV Series HVP1850S",
+      "header": [
+        "| Engine Model | 4016-61TRG1 | 4016-61TRG1 | 4016-61TRG1 | 4016-61TRG1"
+      ],
+      "rows": [
+        "| Emission Standard | Non | Non | Non | Non",
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 3300V | 3300V | 3300V | 3300V",
+        "| PRP | 1850 kVA / 1480 kW | 1850 kVA / 1480 kW | 1850 kVA / 1480 kW | 1850 kVA / 1480 kW",
+        "| ESP | 2035 kVA / 1628 kW | 2035 kVA / 1628 kW | 2035 kVA / 1628 kW | 2035 kVA / 1628 kW",
+        "| Voltage | 6300V | 6300V | 6300V | 6300V",
+        "| Voltage | 10500V | 10500V | 10500V | 10500V"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HV Series HVP2000S",
+      "header": [
+        "| Engine Model | 4016-61TRG2 | 4016-61TRG2 | 4016-61TRG2 | 4016-61TRG2"
+      ],
+      "rows": [
+        "| Emission Standard | Non | Non | Non | Non",
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 3300V | 3300V | 3300V | 3300V",
+        "| PRP | 2000 kVA / 1600 kW | 2000 kVA / 1600 kW | 2000 kVA / 1600 kW | 2000 kVA / 1600 kW",
+        "| ESP | 2200 kVA / 1760 kW | 2200 kVA / 1760 kW | 2200 kVA / 1760 kW | 2200 kVA / 1760 kW",
+        "| Voltage | 6300V | 6300V | 6300V | 6300V",
+        "| Voltage | 10500V | 10500V | 10500V | 10500V"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "HV Series HVP2250S",
+      "header": [
+        "| Engine Model | 4016-61TRG3 | 4016-61TRG3 | 4016-61TRG3 | 4016-61TRG3"
+      ],
+      "rows": [
+        "| Emission Standard | Non | Non | Non | Non",
+        "| Engine Brand | Perkins | Perkins | Perkins | Perkins",
+        "| Voltage | 3300V | 3300V | 3300V | 3300V",
+        "| PRP | 2250 kVA / 1800 kW | 2250 kVA / 1800 kW | 2250 kVA / 1800 kW | 2250 kVA / 1800 kW",
+        "| ESP | 2500 kVA / 2000 kW | 2500 kVA / 2000 kW | 2500 kVA / 2000 kW | 2500 kVA / 2000 kW",
+        "| Voltage | 6300V | 6300V | 6300V | 6300V",
+        "| Voltage | 10500V | 10500V | 10500V | 10500V"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "WPS500S datasheet",
+      "header": [
+        "Model                                      WPS500S                   Rated  voltage  V  Current  A"
+      ],
+      "rows": [
+        "Prime power (PRP)：kVA / kW                  500 / 400                400                721.7",
+        "Standby power (ESP)：kVA / kW                550 / 440                415                695.6",
+        "Manufacturer / brand                   Perkins              Intake system                      Turbocharged",
+        "Model                                  2506C-E15TAG2        Intake resistance: kPa             ≦6.2",
+        "Manufacturer / brand                   Leroy-somer          Insulation class                              H",
+        "Model                                  LSA47.3M7            Protection class                   IP23",
+        "Brand                                  DSE",
+        "Model                                  DSE-7420"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "VR500XS datasheet",
+      "header": [
+        "Model                                       VR500XS                  Rated  voltage  V  Current  A"
+      ],
+      "rows": [
+        "Prime power (PRP)：kVA / kW                  500/ 400                 400                721.7",
+        "Standby power (ESP)：kVA / kW                550 / 440                415                695.6",
+        "Manufacturer / brand                   PowerLink            Intake system                      Turbocharged",
+        "Model                                  VR6-13TAG4           Intake resistance: kPa             ≦5.0",
+        "Manufacturer / brand                   PowerLink            Insulation class                   H",
+        "Model                                  PL5M                 Temperature rising class           H",
+        "Brand                                  POWERLINK",
+        "Model                                  PLC-920"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "QSV500CS datasheet",
+      "header": [
+        "Model                                      QSV500CS                  Rated  voltage  V  Current  A"
+      ],
+      "rows": [
+        "Prime power (PRP)：kVA / kW                  500 / 400                400                721.7",
+        "Standby power (ESP)：kVA / kW                550 / 440                415                695.6",
+        "Manufacturer / brand                   Cummins              Intake system                      Turbo charged",
+        "Model                                  QSZ13-G3             Intake resistance: kPa             ≦6.23",
+        "Manufacturer / brand                   Stamford             Insulation class                   H",
+        "Model                                  S5L1D-D4             Temperature rising class           H",
+        "Brand                                  POWERLINK",
+        "Model                                  PLC-920"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "HVC1275S datasheet",
+      "header": [
+        "                                                               Model................................................................. HVC1275S"
+      ],
+      "rows": [
+        "•  PT Cabinet (optional)                                       Prime Power............................................. 1275kVA/1020kW",
+        "•  HV Switchgear Panel (optional) : ABB 630A                   Standby Power ........................................ 1400kVA/1120kW",
+        "•  Cummins engine KTA50-G3                                     Dry weight................................................................15843kg",
+        "•  Close coupled to Leroy Somer alternator      LSA52.2L45     Noise level @7m ........................................................79dBA",
+        "                                                                                         Alternator Model ............................................... LSA52.2L45",
+        "Engine Manufacturer/Brand...................................Cummins                      Voltage Regulation .....................................................±0.5%",
+        "Engine Model.......................................................KTA50-G3              Total harmonic TGH / THC...................................... < 3.5%",
+        "•  Microprocessor control module PLC-500                       Dimensions L×W×H...........................12192x2438x3153mm"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "GMS250CS datasheet",
+      "header": [
+        "•  The customer could also choose the color which the          Model.................................................................GMS250CS"
+      ],
+      "rows": [
+        "   Microprocessor control module PLC-920                       Prime Power................................................250kVA/200kW",
+        "•                                                              Standby Power............................................275kVA/220kW",
+        "•  Cummins engine 6LTAA8.9-G2                                  Sound pressure level @7m ................................. 74.7dB(A)",
+        "•  Close coupled to LSA alternator LSA46.3S5                   Dimensions L×W×H............................3662×1322×1958mm",
+        "                                                                                        Alternator Model .................................................LSA46.3S5",
+        "Engine Manufacturer/Brand...................................Cummins                     Voltage Regulation .....................................................±1.0%",
+        "Engine Model..................................................6LTAA8.9-G2               Total Harmonic TGH / THCat no load < 1.5 % - on load < 5%"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7420",
+      "text": "DSE-7420",
+      "line": "Model                                  DSE-7420",
+      "src": [
+        2006
+      ]
+    },
+    {
+      "brand": "PowerLink",
+      "model": "PLC-920",
+      "text": "PLC-920",
+      "line": "Model                                  PLC-920",
+      "src": [
+        2007
+      ]
+    },
+    {
+      "brand": "PowerLink",
+      "model": "PLC-920",
+      "text": "PLC-920",
+      "line": "Model                                  PLC-920",
+      "src": [
+        2008
+      ]
+    },
+    {
+      "brand": "PowerLink",
+      "model": "PLC-500",
+      "text": "PLC-500",
+      "line": "•  Microprocessor control module PLC-500                       Dimensions L×W×H...........................12192x2438x3153mm",
+      "src": [
+        2009
+      ]
+    },
+    {
+      "brand": "PowerLink",
+      "model": "PLC-920",
+      "text": "PLC-920",
+      "line": "   Microprocessor control module PLC-920                       Prime Power................................................250kVA/200kW",
+      "src": [
+        2010
+      ]
+    }
+  ]
 }
