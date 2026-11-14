@@ -51,6 +51,40 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "alternator",
+      "series": "1FC6系列低压-陆用发电机",
+      "fuel": null,
+      "power": {
+        "min": 50,
+        "max": 5000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "1FC6系列低压-船用发电机",
+      "fuel": null,
+      "power": {
+        "min": 300,
+        "max": 3000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
     }
   ],
   "certifications": [],
@@ -71,9 +105,34 @@
         "地址：广西柳州市鱼峰区洛维工业集中区维兴路8号"
       ],
       "file": "sources/jiali-liuzhou/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "http://www.lzjldj.com/products_detail/5.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "1FC6系列低压-陆用发电机",
+        "容量：50~5000kVA"
+      ],
+      "file": "sources/jiali-liuzhou/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "http://www.lzjldj.com/products_detail/3.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "1FC6系列低压-船用发电机",
+        "n 功率范围广： 300kW~3000kW"
+      ],
+      "file": "sources/jiali-liuzhou/2002.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": []
 }
