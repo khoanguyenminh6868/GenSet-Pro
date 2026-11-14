@@ -10,21 +10,20 @@
  },
  "keys": {
   "fuel": {
-   "n": 11365,
+   "n": 11139,
    "valuePct": 100,
    "missingPct": {
-    "load": 79.5,
-    "unit": 10.5,
+    "load": 79.1,
+    "unit": 8.7,
     "number": 0,
     "ambiguous": 0.2
    }
   },
   "fuel75": {
-   "n": 914,
-   "valuePct": 99.1,
+   "n": 908,
+   "valuePct": 99.8,
    "missingPct": {
-    "unit": 26.8,
-    "kind": 0.7,
+    "unit": 27,
     "value": 0.2
    }
   },
@@ -46,7 +45,7 @@
    }
   },
   "dims": {
-   "n": 21805,
+   "n": 21803,
    "valuePct": 100,
    "missingPct": {
     "order": 58.9,
@@ -56,7 +55,7 @@
    }
   },
   "weight": {
-   "n": 18669,
+   "n": 18670,
    "valuePct": 100,
    "missingPct": {
     "enclosure": 92.3,
@@ -69,8 +68,8 @@
    "n": 11028,
    "valuePct": 99.2,
    "missingPct": {
-    "unit": 13.2,
-    "number": 0.8
+    "number": 0.8,
+    "unit": 1.8
    }
   },
   "bore": {
@@ -83,7 +82,7 @@
    }
   },
   "cyl": {
-   "n": 14749,
+   "n": 14748,
    "valuePct": 100,
    "missingPct": {
     "layout": 68.4,
@@ -96,19 +95,18 @@
    "missingPct": {}
   },
   "speed": {
-   "n": 2778,
+   "n": 2761,
    "valuePct": 100,
    "missingPct": {
-    "unit": 15.8,
+    "unit": 15.9,
     "kind": 0
    }
   },
   "voltage": {
-   "n": 3279,
-   "valuePct": 98.4,
+   "n": 3227,
+   "valuePct": 100,
    "missingPct": {
-    "unit": 10.6,
-    "kind": 1.6
+    "unit": 10.7
    }
   },
   "phase": {
@@ -127,9 +125,8 @@
   },
   "tank": {
    "n": 779,
-   "valuePct": 93.1,
+   "valuePct": 93.3,
    "missingPct": {
-    "kind": 0.3,
     "unit": 33.9,
     "value": 6.7
    }
@@ -153,7 +150,7 @@
   }
  },
  "power": {
-  "n": 49348,
+  "n": 49352,
   "missingPct": {
    "rating": 13.4,
    "freq": 74.2,
@@ -168,7 +165,7 @@
   },
   "disp": {
    "before": 352,
-   "strict": 314,
+   "strict": 351,
    "loose": 352
   },
   "bore": {

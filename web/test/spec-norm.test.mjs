@@ -93,7 +93,17 @@ const CASES = [
   ["dims", "Dimension (L × W × H)", "1,381 x 1,138 x 1,207 mm", null, { unit: "mm", dims: { L: 1381, W: 1138, H: 1207 }, missing: ["enclosure"] }], // hd-hyundai-infracore
   ["dims", "Dimensions (L×W×H)", "4300 × 1600 × 2250mm / 4,300kg", null, { unit: "mm", dims: { L: 4300, W: 1600, H: 2250 }, missing: ["enclosure"] }], // jiuan-power: weight after "/"
   ["disp", "Displacement (cc)", "418", null, { unit: "cc", num: 418, missing: [] }], // mingbang-mbkl: no cc→L formula, kept
-  ["disp", "Displacement", "38", null, { unit: null, num: 38, missing: ["unit"] }], // aosif
+  // No unit written anywhere: disp only takes a default unit by magnitude (Khoa 14/11, "displacement nên default đơn vị là
+  // L hoặc cm³ (cc)"): 0.4–100 → L, 400–100000 → cc, cond.unitFrom "default"; outside both bands still missing.
+  ["disp", "Displacement", "38", null, { unit: "L", num: 38, cond: { unitFrom: "default" }, missing: [] }], // aosif
+  ["disp", "排量", "7.146", null, { unit: "L", num: 7.146, cond: { unitFrom: "default" }, missing: [] }], // kanpor-fuan n122
+  ["disp", "Displacement", "1642", null, { unit: "cc", num: 1642, cond: { unitFrom: "default" }, missing: [] }], // rule test: cc band
+  ["disp", "Displacement", "171", null, { unit: null, num: 171, missing: ["unit"] }], // rule test: between the bands
+  ["disp", "Displacement", "1.6", { title: "Engine data (cc)" }, { unit: null, num: 1.6, missing: ["unit"] }], // rule test: the title writes a unit
+  // A label that writes some other unit is not "no unit": no default (jlmech "(mm)", honny "(A)" for displacement).
+  ["disp", "Displacement (mm)", "4.3", null, { unit: null, num: 4.3, missing: ["unit"] }], // jlmech-wuhan n102
+  ["disp", "排量 (A)", "14", null, { unit: null, num: 14, missing: ["unit"] }], // honny-dongguan n101
+  ["disp", "Displacement [ccm]", "171", null, { unit: "cc", num: 171, missing: [] }], // endress-stromerzeuger n108: ccm = cm³, read from the label
   ["disp", "Displacement", "6.44L", null, { unit: "L", num: 6.44, missing: [] }], // jiuan-power
   ["disp", "排量(L)", "8.2", null, { unit: "L", num: 8.2, missing: [] }], // zhengchi-power
   // bore
