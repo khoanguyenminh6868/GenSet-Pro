@@ -810,6 +810,28 @@ const AI_TASK_OF = { analysis: "analysis", compare: "compare", tlkt: "compare" }
 function aiUseOf(settingsText, task) {
   return task && parseJson(settingsText)?.use?.[task] === "plan" ? "plan" : "api";
 }
+// Lĩnh vực trong Cấu hình hệ thống (settings/ai.fields; Khoa 14/11/2026: "trước mắt default chọn Máy phát điện, nếu sau
+// này có lĩnh vực khác thì sẽ cào thêm các gói thầu khác trong lĩnh vực đó"). Mỗi lĩnh vực: các từ khoá tìm trên
+// muasamcong. Thêm lĩnh vực = thêm một dòng ở đây và ở FIELDS của web/api/webreq.js + AI_FIELDS của web/index.html.
+const FIELDS = { genset: { label: "Máy phát điện", keywords: ["máy phát điện"] } };
+const FIELD_DEFAULT = ["genset"];
+// The configured fields that exist here; none (no file, broken file, only unknown keys) → Máy phát điện.
+function fieldsOf(settingsText) {
+  const f = parseJson(settingsText)?.fields;
+  const ok = Array.isArray(f) ? [...new Set(f.filter((k) => Object.hasOwn(FIELDS, k)))] : [];
+  return ok.length ? ok : FIELD_DEFAULT;
+}
+// The muasamcong search texts of the configured fields, each once.
+const searchTermsOf = (settingsText) => [...new Set(fieldsOf(settingsText).flatMap((k) => FIELDS[k].keywords))];
+// One search result out of several (one per keyword): a tender found by two keywords counts once.
+function mergeFound(parts) {
+  const present = new Set(), changed = new Map();
+  for (const p of parts) {
+    for (const n of p.present || []) present.add(n);
+    for (const t of p.changed || []) if (!changed.has(t.notifyNo)) changed.set(t.notifyNo, t);
+  }
+  return { count: present.size, present: [...present], changed: [...changed.values()] };
+}
 
 // Noise and fuel limits of an HSMT against what diesel sets can do (Khoa, 2026-11-13: "xác định ngưỡng độ ồn bình quân và
 // tối đa có thể đạt được cho từng cấu hình máy để có thể cảnh báo bất thường khi phân tích. làm tương tự cho tiêu hao nhiên
@@ -935,7 +957,7 @@ const withNormHighlights = (result) => [...(Array.isArray(result?.highlights) ? 
 
 module.exports = {
   NORM_BANDS, normPower, noiseLimits, fuelLimits, normHighlights, withNormHighlights,
-  feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF, API_PRICE, usageUsd, spendMeter,
+  feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF, FIELDS, FIELD_DEFAULT, fieldsOf, searchTermsOf, mergeFound, API_PRICE, usageUsd, spendMeter,
   sig, isDecisionFile, HIST_PREFIX, has, GENSET_RE, PLANT_RE, SET_RE, isGenset, vnTime, histUrl, histTender,
   POWER_RE, POWER_PAIR_RE, histNum, histPower, histNeedsConfig, CONFIG_TEXT_MAX, CONFIG_KEY, configText, setsOf,
   histConfigOf, histTbmtUrl, CFG_FILE_RE, CFG_SKIP_RE, SPEC_TITLE_RE, plainVi, chapterV, specsPick, specsFinish,

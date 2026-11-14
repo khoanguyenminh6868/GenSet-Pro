@@ -51,7 +51,7 @@ const {
   histTbmtUrl, CFG_FILE_RE, CFG_SKIP_RE, plainVi, chapterV, specsPick, specsFinish, isServiceTender, NOTICE_MAX,
   GOODS_MAX, WEBFORM_MAX, KEEP, splitSections, technicalOfIII, trimHsmt, compact, headCut, noticeBody,
   densestCut, SPECS_PART_OVERLAP, SPECS_PARTS_MAX, partsOf, specsMerge, specsEmpty, partHead, askCut, askTrace,
-  checkResult, feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF, spendMeter,
+  checkResult, feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF, spendMeter, searchTermsOf, mergeFound,
 } = require("./sync-pure.js");
 
 // ---------- web (Vercel) ----------
@@ -218,9 +218,15 @@ const pageInfo = (page) => page.evaluate(() => {
   return d ? { total: d.totalElements, pages: d.totalPages, last: d.last } : null;
 });
 
-// Search "máy phát điện" (open tenders only) and read every result page with search-extract.js.
+// Search each keyword of the Lĩnh vực chosen in Cấu hình hệ thống (settings/ai.fields, default Máy phát điện → "máy phát
+// điện"; Khoa 14/11/2026), open tenders only, and read every result page with search-extract.js.
 async function searchTenders(page, known) {
-  await search(page, "máy phát điện", true);
+  const parts = [];
+  for (const term of searchTermsOf(textOf(AI_SETTINGS))) parts.push(await searchTerm(page, known, term));
+  return mergeFound(parts);
+}
+async function searchTerm(page, known, term) {
+  await search(page, term, true);
   let info = await pageInfo(page);
   if (info && info.total > 10) {
     const resp = page.waitForResponse((r) => r.url().includes("/smart/search"));
