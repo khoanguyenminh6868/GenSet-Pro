@@ -66,6 +66,857 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS65P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104A-44TG1"
+      ],
+      "power": {
+        "min": 65,
+        "max": 65,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS80P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104A-44TG2"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS100P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104C-44TAG2"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS8P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "403A-11G1"
+      ],
+      "power": {
+        "min": 9,
+        "max": 9,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS13P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "403A-15G1"
+      ],
+      "power": {
+        "min": 13,
+        "max": 13,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS15P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "403A-15G2"
+      ],
+      "power": {
+        "min": 15,
+        "max": 15,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS20P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "404A-22G1"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS30P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33G"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS45P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33TG1"
+      ],
+      "power": {
+        "min": 45,
+        "max": 45,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS60P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33TG2"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS135P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TG1"
+      ],
+      "power": {
+        "min": 135,
+        "max": 135,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS150P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TAG2"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS180P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TAG3"
+      ],
+      "power": {
+        "min": 180,
+        "max": 180,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS200P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TAG4"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS225P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1206A-E70TTAG2"
+      ],
+      "power": {
+        "min": 225,
+        "max": 225,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS250P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1206A-E70TTAG3"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS225P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1506A-E88TAG2"
+      ],
+      "power": {
+        "min": 225,
+        "max": 225,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS250P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1506A-E88TAG3"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS275P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1506A-E88TAG4"
+      ],
+      "power": {
+        "min": 275,
+        "max": 275,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS300P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1506A-E88TAG5"
+      ],
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS350P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2206A-E13TAG2"
+      ],
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS400P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2206A-E13TAG3"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS450P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2506A-E15TAG1"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS500P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2506A-E15TAG2"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS600P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2806A-E18TAG1"
+      ],
+      "power": {
+        "min": 600,
+        "max": 600,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS650P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2806A-E18TAG2"
+      ],
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS700P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2806A-E18TTAG4"
+      ],
+      "power": {
+        "min": 700,
+        "max": 700,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS750P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2806A-E18TTAG5"
+      ],
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS745P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4006-23TAG2A"
+      ],
+      "power": {
+        "min": 745,
+        "max": 745,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS800P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4006-23TAG3A"
+      ],
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS910P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4008TAG1A"
+      ],
+      "power": {
+        "min": 910,
+        "max": 910,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS1000P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4008TAG2A"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS1125P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4008-30TAG3"
+      ],
+      "power": {
+        "min": 1125,
+        "max": 1125,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS1250P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4012-46TWG2A"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS1350P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4012-46TWG3A"
+      ],
+      "power": {
+        "min": 1350,
+        "max": 1350,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS1500P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4012-46TAG2A"
+      ],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PCS1700P",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4012-46TAG3A"
+      ],
+      "power": {
+        "min": 1720,
+        "max": 1720,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
     }
   ],
   "certifications": [],
@@ -85,9 +936,557 @@
         "PowerCo Systems Ltd are independent British manufacturer of a comprehensive range of diesel generator sets with outputs from 5kVA to 3000kVA, 50Hz and 60Hz. Powered by internationally accepted engines such as Perkins, Cummins, and Volvo"
       ],
       "file": "sources/powerco-systems/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://generatorsets.co.uk/wp-content/uploads/2025/10/Data-Sheet-PCS65P-PCS100P.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "PERKINS 1104 SERIES TECHNICAL DATA SHEET",
+        "PCS65P (PRIME)                      1104A-44TG1                                 65       52                       74        59.2",
+        "PCS80P (PRIME)                      1104A-44TG2                                 80       64                       90        72",
+        "PCS100P (PRIME)                     1104C-44TAG2                                100      80                       112       89.6",
+        "Deep Sea Electronics model 6120 microprocessor engine controller           I/O expansion"
+      ],
+      "file": "sources/powerco-systems/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://generatorsets.co.uk/wp-content/uploads/2025/10/Data-Sheet-PCS8P-PCS20P.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "PERKINS 400 SERIES TECHNICAL DATA SHEET",
+        "PCS8P (PRIME)                               403A-11G1                           9        7.2                      N/A       N/A",
+        "PCS13P (PRIME)                              403A-15G1                           13       10.4                     N/A       N/A",
+        "PCS15P (PRIME)                              403A-15G2                           15       12                       18        14.4",
+        "PCS20P (PRIME)                              404A-22G1                           20       16                       N/A       N/A",
+        "Deep Sea Electronics model 6120 microprocessor engine controller           I/O expansion"
+      ],
+      "file": "sources/powerco-systems/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://generatorsets.co.uk/wp-content/uploads/2025/10/Data-Sheet-PCS30P-PCS60P.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "PERKINS 1103 SERIES TECHNICAL DATA SHEET",
+        "PCS30P (PRIME)                              1103A-33G                           30       24                       24        27",
+        "PCS45P (PRIME)                      1103A-33TG1                                 45       36                       52        41.6",
+        "PCS60P (PRIME)                      1103A-33TG2                                 60       48                       65        52",
+        "Deep Sea Electronics model 6120 microprocessor engine controller           I/O expansion"
+      ],
+      "file": "sources/powerco-systems/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://generatorsets.co.uk/wp-content/uploads/2025/10/Data-Sheet-PCS135-PCS200P.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "PERKINS 1106 SERIES TECHNICAL DATA SHEET",
+        "PCS135P (PRIME)                       1106A-70TG1                               135      108                      N/A   N/A",
+        "PCS150P (PRIME)                       1106A-70TAG2                              150      120                      169   135",
+        "PCS180P (PRIME)                       1106A-70TAG3                              180      144                      197   158",
+        "PCS200P (PRIME)                       1106A-70TAG4                              200      160                      N/A   N/A",
+        "Deep Sea Electronics model 6120 microprocessor engine controller           I/O expansion"
+      ],
+      "file": "sources/powerco-systems/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://generatorsets.co.uk/wp-content/uploads/2025/10/Data-Sheet-PCS225P-PCS250P-1206.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "PERKINS 1200 SERIES TECHNICAL DATA SHEET",
+        "PCS225P (PRIME)                     1206A-E70TTAG2                              225      180                      235   188",
+        "PCS250P (PRIME)                     1206A-E70TTAG3                              250      200                      235   188",
+        "Deep Sea Electronics model 6120 microprocessor engine controller           I/O expansion"
+      ],
+      "file": "sources/powerco-systems/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://generatorsets.co.uk/wp-content/uploads/2025/10/Data-Sheet-PCS225P-PCS300P-1506.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "PERKINS 1500 SERIES TECHNICAL DATA SHEET",
+        "PCS225P (PRIME)                     1506A-E88TAG2                               225      180                      250   200",
+        "PCS250P (PRIME)                     1506A-E88TAG3                               250      200                      290   230",
+        "PCS275P (PRIME)                     1506A-E88TAG4                               275      220                      315   250",
+        "PCS300P (PRIME)                     1506A-E88TAG5                               300      240                      350   280",
+        "Deep Sea Electronics model 6120 microprocessor engine controller           I/O expansion"
+      ],
+      "file": "sources/powerco-systems/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://generatorsets.co.uk/wp-content/uploads/2025/10/Data-Sheet-PCS350P-PCS400P.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "PERKINS 2200 SERIES TECHNICAL DATA SHEET",
+        "PCS350P (PRIME)                     2206A-E13TAG2                               350      280                      400   320",
+        "PCS400P (PRIME)                     2206A-E13TAG3                               400      320                      400   320",
+        "Deep Sea Electronics model 6120 microprocessor engine controller           I/O expansion"
+      ],
+      "file": "sources/powerco-systems/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://generatorsets.co.uk/wp-content/uploads/2025/10/Data-Sheet-PCS450P-PCS500P.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "PERKINS 2500 SERIES TECHNICAL DATA SHEET",
+        "PCS450P (PRIME)                     2506A-E15TAG1                               450      360                      500   400",
+        "PCS500P (PRIME)                     2506A-E15TAG2                               500      400                      500   400",
+        "Deep Sea Electronics model 6120 microprocessor engine controller           I/O expansion"
+      ],
+      "file": "sources/powerco-systems/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://generatorsets.co.uk/wp-content/uploads/2025/10/Data-Sheet-PCS600P-PCS750P.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "PERKINS 2800 SERIES TECHNICAL DATA SHEET",
+        "PCS600P (PRIME)                     2806A-E18TAG1                               600      480                      625   500",
+        "PCS650P (PRIME)                     2806A-E18TAG2                               650      520                      625   500",
+        "PCS700P (PRIME)                     2806A-E18TTAG4                              700      560                      820   656",
+        "PCS750P (PRIME)                     2806A-E18TTAG5                              750      600                      820   656",
+        "Deep Sea Electronics model 6120 microprocessor engine controller           I/O expansion"
+      ],
+      "file": "sources/powerco-systems/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://generatorsets.co.uk/wp-content/uploads/2025/10/Data-Sheet-PCS745P-PCS800P.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "PERKINS 4006 SERIES TECHNICAL DATA SHEET",
+        "PCS745P (PRIME)                     4006-23TAG2A                                745      596                      750   600",
+        "PCS800P (PRIME)                     4006-23TAG3A                                800      640                      844   675",
+        "Deep Sea Electronics model 6120 microprocessor engine controller           I/O expansion"
+      ],
+      "file": "sources/powerco-systems/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://generatorsets.co.uk/wp-content/uploads/2025/10/Data-Sheet-PCS910P-PCS1125P.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "PERKINS 4008 SERIES TECHNICAL DATA SHEET",
+        "PCS910P (PRIME)                     4008TAG1A                                   910      728                      884   707",
+        "PCS1000P (PRIME)                    4008TAG2A                                   1000     800                      1000  800",
+        "PCS1125P (PRIME)                    4008-30TAG3                                 1125     900                      N/A   N/A",
+        "Deep Sea Electronics model 6120 microprocessor engine controller           I/O expansion"
+      ],
+      "file": "sources/powerco-systems/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "https://generatorsets.co.uk/wp-content/uploads/2025/10/Data-Sheet-PCS1250P-PCS1700P.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "PERKINS 4012 SERIES TECHNICAL DATA SHEET",
+        "PCS1250P (PRIME)                    4012-46TWG2A                                1250     1000                     1250  1000",
+        "PCS1350P (PRIME)                    4012-46TWG3A                                1350     1080                     1364  1091",
+        "PCS1500P (PRIME)                    4012-46TAG2A                                1500     1200                     1513  1210",
+        "PCS1700P (PRIME)                    4012-46TAG3A                                1720     1366                     1706  1366",
+        "Deep Sea Electronics model 6120 microprocessor engine controller           I/O expansion"
+      ],
+      "file": "sources/powerco-systems/2012.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "PowerCo PERKINS 1104 SERIES TECHNICAL DATA SHEET – ratings (400-415V 50Hz / 480V 60Hz)",
+      "header": [
+        "PowerCo                                     Perkins                             400-415  50hz                         480v  60hz",
+        "Generating Set Model                Engine Model                                KVA      KW                       KVA       KW"
+      ],
+      "rows": [
+        "PCS65P (PRIME)                      1104A-44TG1                                 65       52                       74        59.2",
+        "PCS65P (STANDBY)                    1104A-44TG1                                 72       57.6                     81        64.8",
+        "PCS80P (PRIME)                      1104A-44TG2                                 80       64                       90        72",
+        "PCS80P (STANDBY)                    1104A-44TG2                                 88       69.6                     100       80",
+        "PCS100P (PRIME)                     1104C-44TAG2                                100      80                       112       89.6",
+        "PCS100P (STANDBY)                   1104C-44TAG2                                110      88                       125       100"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "PowerCo PERKINS 1104 SERIES TECHNICAL DATA SHEET – alternator models",
+      "header": [
+        "                Generating Set Model:              PCS65P                   PCS80P              PCS100P"
+      ],
+      "rows": [
+        "                Mecc Alte (UK)                     ECP32-1L                 ECP32-2L            ECP34-2S",
+        "                Newage Stamford                    UCI224F                  UCI224G             UCI274C",
+        "                Leroy Somer                        TAL044A                  TAL044B             TAL044D"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "PowerCo PERKINS 400 SERIES TECHNICAL DATA SHEET – ratings (400-415V 50Hz / 480V 60Hz)",
+      "header": [
+        "PowerCo                                     Perkins                             400-415  50hz                         480v  60hz",
+        "Generating Set Model                Engine Model                                KVA      KW                       KVA       KW"
+      ],
+      "rows": [
+        "PCS8P (PRIME)                               403A-11G1                           9        7.2                      N/A       N/A",
+        "PCS8P (STANDBY)                             403A-11G1                           10       8                        N/A       N/A",
+        "PCS13P (PRIME)                              403A-15G1                           13       10.4                     N/A       N/A",
+        "PCS13P (STANDBY)                            403A-15G1                           14.3     11.4                     N/A       N/A",
+        "PCS15P (PRIME)                              403A-15G2                           15       12                       18        14.4",
+        "PCS15P (STANDBY)                            403A-15G2                           16       12.8                     20        16",
+        "PCS20P (PRIME)                              404A-22G1                           20       16                       N/A       N/A",
+        "PCS20P (STANDBY)                            404A-22G1                           22       17.6                     N/A       N/A"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "PowerCo PERKINS 400 SERIES TECHNICAL DATA SHEET – alternator models",
+      "header": [
+        "Generating Set Model:        PCS8P               PCS12P                              PCS15P        PCS20P"
+      ],
+      "rows": [
+        "Mecc Alte (UK)               ECP3-1L             ECP3-2L                             ECP3-3L       ECP28-M",
+        "Newage Stamford              S0L1-H              S0L1-P                              S0L1-P        S0L2-G",
+        "Leroy Somer                  TAL040B             TAL040D                             TAL040D       TAL040F"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "PowerCo PERKINS 1103 SERIES TECHNICAL DATA SHEET – ratings (400-415V 50Hz / 480V 60Hz)",
+      "header": [
+        "PowerCo                                     Perkins                             400-415  50hz                         480v  60hz",
+        "Generating Set Model                Engine Model                                KVA      KW                       KVA       KW"
+      ],
+      "rows": [
+        "PCS30P (PRIME)                              1103A-33G                           30       24                       24        27",
+        "PCS30P (STANDBY)                            1103A-33G                           33       26                       35.6      28.5",
+        "PCS45P (PRIME)                      1103A-33TG1                                 45       36                       52        41.6",
+        "PCS45P (STANDBY)                    1103A-33TG1                                 49.5     39.6                     56        44.8",
+        "PCS60P (PRIME)                      1103A-33TG2                                 60       48                       65        52",
+        "PCS60P (STANDBY)                    1103A-33TG2                                 66       52.8                     72.5      58"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "PowerCo PERKINS 1103 SERIES TECHNICAL DATA SHEET – alternator models",
+      "header": [
+        "Generating Set Model:                    PCS30P             PCS45P                              PCS60P"
+      ],
+      "rows": [
+        "Mecc Alte (UK)                           ECP28-VL          ECP32-2S                             ECP32-2M",
+        "Newage Stamford                          S0L2-P             S1L2-N                              UCI224E",
+        "Leroy Somer                              TAL042C            TAL042F                             TAL042H"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "PowerCo PERKINS 1106 SERIES TECHNICAL DATA SHEET – ratings (400-415V 50Hz / 480V 60Hz)",
+      "header": [
+        "PowerCo                                      Perkins                            400-415  50hz                     480v  60hz",
+        "Generating Set Model                  Engine Model                              KVA      KW                       KVA   KW"
+      ],
+      "rows": [
+        "PCS135P (PRIME)                       1106A-70TG1                               135      108                      N/A   N/A",
+        "PCS135P (STANDBY)                     1106A-70TG1                               150      120                      N/A   N/A",
+        "PCS150P (PRIME)                       1106A-70TAG2                              150      120                      169   135",
+        "PCS150P (STANDBY)                     1106A-70TAG2                              165      132                      188   150",
+        "PCS180P (PRIME)                       1106A-70TAG3                              180      144                      197   158",
+        "PCS180P (STANDBY)                     1106A-70TAG3                              200      160                      219   175",
+        "PCS200P (PRIME)                       1106A-70TAG4                              200      160                      N/A   N/A",
+        "PCS200P (STANDBY)                     1106A-70TAG4                              220      176                      N/A   N/A"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "PowerCo PERKINS 1106 SERIES TECHNICAL DATA SHEET – alternator models",
+      "header": [
+        "Generating Set Model:                    PCS135P    PCS150P                                     PCS180P                         PCS200P"
+      ],
+      "rows": [
+        "Mecc Alte (UK)                           ECP34-1L   ECP34-1L                                    ECO38-1S                        ECO38-2S",
+        "Newage Stamford                          UCI274F    UCI274F                                     UCI274G                         UCI274H",
+        "Leroy Somer                              TAL044H    TAL044J                                     TAL044L                         TAL044M"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "PowerCo PERKINS 1200 SERIES TECHNICAL DATA SHEET – ratings (400-415V 50Hz / 480V 60Hz)",
+      "header": [
+        "PowerCo                             Perkins                                     400-415  50hz                     480v  60hz",
+        "Generating Set Model                Engine Model                                KVA      KW                       KVA   KW"
+      ],
+      "rows": [
+        "PCS225P (PRIME)                     1206A-E70TTAG2                              225      180                      235   188",
+        "PCS225P (STANDBY)                   1206A-E70TTAG2                              250      200                      260   208",
+        "PCS250P (PRIME)                     1206A-E70TTAG3                              250      200                      235   188",
+        "PCS250P (STANDBY)                   1206A-E70TTAG3                              275      220                      260   208"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "PowerCo PERKINS 1200 SERIES TECHNICAL DATA SHEET – alternator models",
+      "header": [
+        "                                 Generating Set Model:            PCS225P                         PCS250P"
+      ],
+      "rows": [
+        "                                 Mecc Alte (UK)                   ECO38-1M                        ECO38-2M",
+        "                                 Newage Stamford                  UCDI274J                        UCDI274K",
+        "                                 Leroy Somer                      TAL046C                         TAL046D"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "PowerCo PERKINS 1500 SERIES TECHNICAL DATA SHEET – ratings (400-415V 50Hz / 480V 60Hz)",
+      "header": [
+        "PowerCo                                    Perkins                              400-415  50hz                     480v  60hz",
+        "Generating Set Model                Engine Model                                KVA      KW                       KVA   KW"
+      ],
+      "rows": [
+        "PCS225P (PRIME)                     1506A-E88TAG2                               225      180                      250   200",
+        "PCS225P (STANDBY)                   1506A-E88TAG2                               250      200                      275   220",
+        "PCS250P (PRIME)                     1506A-E88TAG3                               250      200                      290   230",
+        "PCS250P (STANDBY)                   1506A-E88TAG3                               275      220                      320   250",
+        "PCS275P (PRIME)                     1506A-E88TAG4                               275      220                      315   250",
+        "PCS275P (STANDBY)                   1506A-E88TAG4                               303      242                      350   275",
+        "PCS300P (PRIME)                     1506A-E88TAG5                               300      240                      350   280",
+        "PCS300P (STANDBY)                   1506A-E88TAG5                               330      264                      390   310"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "PowerCo PERKINS 1500 SERIES TECHNICAL DATA SHEET – alternator models",
+      "header": [
+        "                Generating Set Model:              PCS225P       PCS250P                         PCS275P                   PCS300P"
+      ],
+      "rows": [
+        "                Mecc Alte (UK)                     ECO38-1M      ECO38-2M                        ECO38-1L                  ECO38-1L",
+        "                Newage Stamford                    UCDI274J      UCDI274K                        S4L1D-D                   S4L1D-D",
+        "                Leroy Somer                        TAL046C       TAL046D                         TAL046E                   TAL046F"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "PowerCo PERKINS 2200 SERIES TECHNICAL DATA SHEET – ratings (400-415V 50Hz / 480V 60Hz)",
+      "header": [
+        "PowerCo                             Perkins                                     400-415  50hz                     480v  60hz",
+        "Generating Set Model                Engine Model                                KVA      KW                       KVA   KW"
+      ],
+      "rows": [
+        "PCS350P (PRIME)                     2206A-E13TAG2                               350      280                      400   320",
+        "PCS350P (STANDBY)                   2206A-E13TAG2                               385      308                      438   350",
+        "PCS400P (PRIME)                     2206A-E13TAG3                               400      320                      400   320",
+        "PCS400P (STANDBY)                   2206A-E13TAG3                               440      352                      438   350"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "PowerCo PERKINS 2200 SERIES TECHNICAL DATA SHEET – alternator models",
+      "header": [
+        "                                 Generating Set Model:       PCS350P                       PCS400P"
+      ],
+      "rows": [
+        "                                 Mecc Alte (UK)              ECO38-2L                      ECO40-1S",
+        "                                 Newage Stamford             S41LD-E                       S41LD-F",
+        "                                 Leroy Somer                 TAL046H                       TAL0473A"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "PowerCo PERKINS 2500 SERIES TECHNICAL DATA SHEET – ratings (400-415V 50Hz / 480V 60Hz)",
+      "header": [
+        "Generating Set Model                Engine Model                                KVA      KW                       KVA   KW"
+      ],
+      "rows": [
+        "PCS450P (PRIME)                     2506A-E15TAG1                               450      360                      500   400",
+        "PCS450P (STANDBY)                   2506A-E15TAG1                               495      396                      563   450",
+        "PCS500P (PRIME)                     2506A-E15TAG2                               500      400                      500   400",
+        "PCS500P (STANDBY)                   2506A-E15TAG2                               550      440                      563   450"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "PowerCo PERKINS 2500 SERIES TECHNICAL DATA SHEET – alternator models",
+      "header": [
+        "                                 Generating Set Model:       PCS450P                       PCS500P"
+      ],
+      "rows": [
+        "                                 Mecc Alte (UK)              ECO40-2S                      ECO40-3S",
+        "                                 Newage Stamford             S4L1D-G                       S5L1D-C",
+        "                                 Leroy Somer                 TAL0473B                      TAL0473C"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "PowerCo PERKINS 2800 SERIES TECHNICAL DATA SHEET – ratings (400-415V 50Hz / 480V 60Hz)",
+      "header": [
+        "PowerCo                             Perkins                                     400-415  50hz                     480v  60hz",
+        "Generating Set Model                Engine Model                                KVA      KW                       KVA   KW"
+      ],
+      "rows": [
+        "PCS600P (PRIME)                     2806A-E18TAG1                               600      480                      625   500",
+        "PCS600P (STANDBY)                   2806A-E18TAG1                               660      528                      687   550",
+        "PCS650P (PRIME)                     2806A-E18TAG2                               650      520                      625   500",
+        "PCS650P (STANDBY)                   2806A-E18TAG2                               710      568                      687   550",
+        "PCS700P (PRIME)                     2806A-E18TTAG4                              700      560                      820   656",
+        "PCS700P (STANDBY)                   2806A-E18TTAG4                              770      616                      900   720",
+        "PCS750P (PRIME)                     2806A-E18TTAG5                              750      600                      820   656",
+        "PCS750P (STANDBY)                   2806A-E18TTAG5                              825      660                      900   720"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "PowerCo PERKINS 2800 SERIES TECHNICAL DATA SHEET – alternator models",
+      "header": [
+        "Generating Set Model:        PCS600P             PCS650P                            PCS700P                   PCS750P"
+      ],
+      "rows": [
+        "Mecc Alte (UK)               ECO40-1.5L          ECO40-2L                           ECO40-VL                  ECO40-VL",
+        "Newage Stamford              S5L1D-E             S5L1D-F                            S5L1D-G                   S5L1D-H",
+        "Leroy Somer                  TAL0473E            TAL0473F                           TAL049B                   TAL049C"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "PowerCo PERKINS 4006 SERIES TECHNICAL DATA SHEET – ratings (400-415V 50Hz / 480V 60Hz)",
+      "header": [
+        "Generating Set Model                Engine Model                                KVA      KW                       KVA   KW"
+      ],
+      "rows": [
+        "PCS745P (PRIME)                     4006-23TAG2A                                745      596                      750   600",
+        "PCS745P (STANDBY)                   4006-23TAG2A                                815      652                      825   660",
+        "PCS800P (PRIME)                     4006-23TAG3A                                800      640                      844   675",
+        "PCS800P (STANDBY)                   4006-23TAG3A                                890      712                      938   750"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "PowerCo PERKINS 4006 SERIES TECHNICAL DATA SHEET – alternator models",
+      "header": [
+        "                                 Generating Set Model:       PCS745P                       PCS800P"
+      ],
+      "rows": [
+        "                                 Mecc Alte (UK)              ECO40-VL                      ECO43-1S",
+        "                                 Newage Stamford             S5L1D-H                       S6L1D-C",
+        "                                 Leroy Somer                 TAL049C                       TAL049C"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "PowerCo PERKINS 4008 SERIES TECHNICAL DATA SHEET – ratings (400-415V 50Hz / 480V 60Hz)",
+      "header": [
+        "PowerCo                             Perkins                                     400-415  50hz                     480v  60hz",
+        "Generating Set Model                Engine Model                                KVA      KW                       KVA   KW"
+      ],
+      "rows": [
+        "PCS910P (PRIME)                     4008TAG1A                                   910      728                      884   707",
+        "PCS910P (STANDBY)                   4008TAG1A                                   1000     800                      875   700",
+        "PCS1000P (PRIME)                    4008TAG2A                                   1000     800                      1000  800",
+        "PCS1000P (STANDBY)                  4008TAG2A                                   1100     880                      1100  880",
+        "PCS1125P (PRIME)                    4008-30TAG3                                 1125     900                      N/A   N/A",
+        "PCS1125P (STANDBY)                  4008-30TAG3                                 1250     1000                     N/A   N/A"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "PowerCo PERKINS 4008 SERIES TECHNICAL DATA SHEET – alternator models",
+      "header": [
+        "                             Generating Set Model:    PCS910P            PCS1000P                  PCS1125P"
+      ],
+      "rows": [
+        "                             Mecc Alte (UK)           ECO43-2S           ECO43-1M                  ECO43-2M",
+        "                             Newage Stamford          S6L1D-D            S6L1D-E                   S6L1D-F",
+        "                             Leroy Somer              TAL049D            TAL049E                   LSA50.2M6"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "PowerCo PERKINS 4012 SERIES TECHNICAL DATA SHEET – ratings (400-415V 50Hz / 480V 60Hz)",
+      "header": [
+        "PowerCo                             Perkins                                     400-415  50hz                     480v  60hz",
+        "Generating Set Model                Engine Model                                KVA      KW                       KVA   KW"
+      ],
+      "rows": [
+        "PCS1250P (PRIME)                    4012-46TWG2A                                1250     1000                     1250  1000",
+        "PCS1250P (STANDBY)                  4012-46TWG2A                                1375     1100                     1375  1097",
+        "PCS1350P (PRIME)                    4012-46TWG3A                                1350     1080                     1364  1091",
+        "PCS1350P (STANDBY)                  4012-46TWG3A                                1485     1188                     1500  1200",
+        "PCS1500P (PRIME)                    4012-46TAG2A                                1500     1200                     1513  1210",
+        "PCS1500P (STANDBY)                  4012-46TAG2A                                1650     1320                     1663  1330",
+        "PCS1700P (PRIME)                    4012-46TAG3A                                1720     1366                     1706  1366",
+        "PCS1700P (STANDBY)                  4012-46TAG3A                                1890     1512                     1875  1500"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "PowerCo PERKINS 4012 SERIES TECHNICAL DATA SHEET – alternator models",
+      "header": [
+        "Generating Set Model:        PCS1250P            PCS1350P                            PCS1500P      PCS1700P"
+      ],
+      "rows": [
+        "Mecc Alte (UK)               ECO43-2L            ECO43-VL                            ECO46-1S      ECO46-2S",
+        "Newage Stamford              S6L1D-G             S6L1D-H                             S7L1D-C       S7L1D-E",
+        "Leroy Somer                  LSA50.2M6           LSA50.2L7                           LSA50.2L8     LSA52.3S5"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "Deep Sea Electronics model 6120",
+      "line": "Deep Sea Electronics model 6120 microprocessor engine controller           I/O expansion",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "7320",
+      "line": "We use Cummins Generator Technology (Newage        Stamford),       Leroy  7320 gives the following extras:",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "8610",
+      "line": "Generator volts line/line                                                  8610 auto-synchronising unit gives you the following upgrades:-",
+      "src": [
+        2001
+      ]
+    }
+  ]
 }
