@@ -67,6 +67,343 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "新款潍柴股份WP10D264E200原装240kw/300kva静音发电机组",
+      "fuel": "diesel",
+      "engineModels": [
+        "WP10D264E200"
+      ],
+      "engineMakes": [
+        "潍柴"
+      ],
+      "power": {
+        "min": 240,
+        "max": 240,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ],
+      "alternatorMakes": [
+        "斯坦福"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "潍柴股份WP13D400E200原装400kw全自动静音工业发电机组",
+      "fuel": "diesel",
+      "engineModels": [
+        "WP13D400E200"
+      ],
+      "engineMakes": [
+        "潍柴"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "潍柴原厂350kw双频率大油箱静音发电机组",
+      "fuel": "diesel",
+      "engineModels": [
+        "WP13D385E201"
+      ],
+      "engineMakes": [
+        "潍柴"
+      ],
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ],
+      "alternatorMakes": [
+        "斯坦福"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "潍柴锐动力WP4.1D100E200配斯坦福75kw发电机组",
+      "fuel": "diesel",
+      "engineModels": [
+        "WP4.1D100E200"
+      ],
+      "engineMakes": [
+        "潍柴"
+      ],
+      "power": {
+        "min": 75,
+        "max": 75,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ],
+      "alternatorMakes": [
+        "斯坦福"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WFHUAZHONG出口潍柴锐动力40kw50kva超静音全自动发电机组",
+      "fuel": "diesel",
+      "engineModels": [
+        "WP2.3D48E200"
+      ],
+      "engineMakes": [
+        "潍柴"
+      ],
+      "power": {
+        "min": 40,
+        "max": 40,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "华众动力出口潍柴道依茨系列120kw150kva静音柴油发电机组",
+      "fuel": "diesel",
+      "engineModels": [
+        "WP6D132"
+      ],
+      "engineMakes": [
+        "潍柴"
+      ],
+      "power": {
+        "min": 120,
+        "max": 120,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "R6105英国里卡多系列120kw全自动静音柴油发电机组",
+      "fuel": "diesel",
+      "engineModels": [
+        "R6105IZD"
+      ],
+      "engineMakes": [
+        "潍坊"
+      ],
+      "power": {
+        "min": 120,
+        "max": 120,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ],
+      "alternatorMakes": [
+        "斯坦福"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WFHUAZHONG牌潍柴博杜安系列500kw发电机组",
+      "fuel": "diesel",
+      "engineModels": [
+        "6M33D"
+      ],
+      "engineMakes": [
+        "潍柴"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WFHUAZHONG牌里卡多系列50kw发电机组",
+      "fuel": "diesel",
+      "engineModels": [
+        "R4105ZD"
+      ],
+      "engineMakes": [
+        "潍坊"
+      ],
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WFHUAZHONG牌80kw全自动发电机组",
+      "fuel": "diesel",
+      "engineModels": [
+        "R6105ZD"
+      ],
+      "engineMakes": [
+        "潍坊"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "潍柴股份WP10D320E200原装300kw发电机组带四保护",
+      "fuel": "diesel",
+      "engineModels": [
+        "WP10D320E200"
+      ],
+      "engineMakes": [
+        "潍柴"
+      ],
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WFHUAZHONG牌120kw兰电船用发电机组带远传",
+      "fuel": "diesel",
+      "engineModels": [
+        "R6105IZLCD"
+      ],
+      "engineMakes": [
+        "潍坊"
+      ],
+      "power": {
+        "min": 120,
+        "max": 120,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ],
+      "alternatorMakes": [
+        "兰电"
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WFHUAZHONG 牌30kw全铜无刷三相发电机组",
+      "fuel": "diesel",
+      "engineModels": [
+        "ZH4102D"
+      ],
+      "engineMakes": [
+        "潍坊"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WFHUAZHONG牌30kw全自动ATS发电机组",
+      "fuel": "diesel",
+      "engineModels": [
+        "K4100D"
+      ],
+      "engineMakes": [
+        "潍坊"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2014
+        ]
+      },
+      "src": [
+        2014
+      ]
     }
   ],
   "certifications": [],
@@ -86,9 +423,338 @@
         "核心部件采用国际***品牌（如 潍柴、玉柴、 康明斯、珀金斯等）"
       ],
       "file": "sources/huazhong-weifang/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "http://www.wfhuazhong.com/ProductDetail/4962409.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "新款潍柴股份WP10D264E200原装240kw/300kva静音发电机组",
+        "WFHUAZHONG牌240kw/300kva静音全自动发电机组组成动力为潍柴股份WP10D264E200原装柴油发动机，匹配上海斯坦福全铜无刷发电机，按需可定制众智全自动控制系统，四保护系统等，潍柴原厂设计静音箱，质量好，价格优。"
+      ],
+      "file": "sources/huazhong-weifang/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "http://www.wfhuazhong.com/ProductDetail/4962351.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "潍柴股份WP13D400E200原装400kw全自动静音工业发电机组",
+        "WFHUAZHONG牌400kw静音全自动发电机组，选择潍柴股份WP13D400E200工业动力匹配纯铜无刷，三相励磁发电机400kw，安装全自动控制系统，带自启动四保护功能，科学设计高质量静音箱，隔音防水防尘，经济实惠。"
+      ],
+      "file": "sources/huazhong-weifang/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "http://www.wfhuazhong.com/ProductDetail/10034553.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "潍柴原厂350kw双频率大油箱静音发电机组",
+        "350kw潍柴原厂50hz/60hz双频率加大油箱发电机,静音发电机组动力来自潍柴股份WP13D385E201，匹配上海斯坦福全铜无刷发电机，深海控制系统，潍柴原厂静音箱体，加大油箱容积可达1600升，通过BV认证。尺寸合理适合集装箱运输。"
+      ],
+      "file": "sources/huazhong-weifang/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "http://www.wfhuazhong.com/ProductDetail/5025507.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "潍柴锐动力WP4.1D100E200配斯坦福75kw发电机组",
+        "潍柴锐动力WP4.1D100E200，单缸四气门，油耗低，动力强劲，4缸体积小，配斯坦福75kw发电机，安装四保护系统，机组性能稳定，发电效率高，可以按需要装静音箱，ATS系统，以及移动拖车等，接受定制。"
+      ],
+      "file": "sources/huazhong-weifang/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "http://www.wfhuazhong.com/ProductDetail/9425104.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "WFHUAZHONG出口潍柴锐动力40kw50kva超静音全自动发电机组",
+        "WFHUAZHONG出口潍柴锐动力40kw,50kva超静音全自动发电机组，动力采用潍柴WP2.3D48E200柴油机，带增压中冷，动力足，排量小，油耗低，经济性强；匹配全铜无刷发电机，华众专利的单向开门设计静音箱和全自动控制系统，体积小，静音效果好，有品质保证。"
+      ],
+      "file": "sources/huazhong-weifang/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "http://www.wfhuazhong.com/ProductDetail/9428170.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "华众动力出口潍柴道依茨系列120kw150kva静音柴油发电机组",
+        "华众动力出口潍柴道依茨系列120kw150kva静音柴油发电机组,动力选用潍柴WP6D132，动力强劲，低油耗，故障率极低，匹配全铜无刷发电机，喷塑的静音箱，知名品牌控制系统，强强联合，品质超群。"
+      ],
+      "file": "sources/huazhong-weifang/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "http://www.wfhuazhong.com/ProductDetail/6892589.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "R6105英国里卡多系列120kw全自动静音柴油发电机组",
+        "R6105英国里卡多系列120kw,全自动静音柴油发电机组，选用R6105IZD，132kw,该机型技术成熟，耐久力强，油耗低，效率高，匹配上海斯坦福系列无刷发电机，装配全自动控制系统，可实现自动监控，自我启停，自我保护功能，全新设计超静音箱体，实现无噪音供电。"
+      ],
+      "file": "sources/huazhong-weifang/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "http://www.wfhuazhong.com/ProductDetail/4759027.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "WFHUAZHONG牌潍柴博杜安系列500kw发电机组",
+        "WFHUAZHONG牌潍柴博杜安系列500kw发电机组，动力组成为潍柴股份博杜安系列柴油机6M33D，储备功率大，扭矩大，油耗低，匹配品牌纯铜无刷三相发电机，机组调压精度高，动态性能好，结构紧凑，使用寿命长，操作简单，易保养，全国联保。"
+      ],
+      "file": "sources/huazhong-weifang/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "http://www.wfhuazhong.com/ProductDetail/4703633.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "WFHUAZHONG牌里卡多系列50kw发电机组",
+        "WFHUAZHONG牌里卡多系列50kw发电机组，选用潍坊R4105ZD柴油发动机，机型成熟，英国里卡多技术，动力强劲，油耗低，性能稳定，该机型市场占有率高，配件通用性强，易维护保养，配50千瓦纯铜无刷电机，内置AVR，发电效率高，电压稳定，机组质量可靠，全国三包。"
+      ],
+      "file": "sources/huazhong-weifang/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "http://www.wfhuazhong.com/ProductDetail/4759026.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "WFHUAZHONG牌80kw全自动发电机组",
+        "WFHUAZHONG牌80kw全自动发电机组,选用里卡多系列6缸机带增压器，R6105ZD作为动力，全铜无刷发电机，全自动控制柜带四保护系统，市电监测并完成自动双切换，真正实现无人值守，省心省力，安全放心。"
+      ],
+      "file": "sources/huazhong-weifang/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "http://www.wfhuazhong.com/ProductDetail/4962440.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "潍柴股份WP10D320E200原装300kw发电机组带四保护"
+      ],
+      "file": "sources/huazhong-weifang/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "http://www.wfhuazhong.com/ProductDetail/4735173.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "WFHUAZHONG牌120kw兰电船用发电机组带远传",
+        "WFHUAZHONG牌120kw兰电船用发电机组带远传，选用潍坊R6105IZLCD作为动力，里卡多系列船机加长行程带中冷，动力足，油耗低，扭矩大，匹配兰电全铜无刷船用发电机，防水处理好，内置AVR，性能稳定，带远传仪表，数字显示，操作方便，便于随时观察机器状态。性价比高，品质优良。"
+      ],
+      "file": "sources/huazhong-weifang/2012.md",
+      "official": true
+    },
+    {
+      "n": 2013,
+      "url": "http://www.wfhuazhong.com/ProductDetail/4734673.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "WFHUAZHONG 牌30kw全铜无刷三相发电机组",
+        "WFHUAZHONG 牌30kw全铜无刷三相发电机组，选用ZH4102D柴油机，技术成熟，维修成本低，油耗低，配全铜无刷发电机，内置AVR调节器，无需维护，结构简单，成本低，性价比高，是工地电焊机，空压机，喷雾剂，养殖户等的选择。"
+      ],
+      "file": "sources/huazhong-weifang/2013.md",
+      "official": true
+    },
+    {
+      "n": 2014,
+      "url": "http://www.wfhuazhong.com/ProductDetail/4605973.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "WFHUAZHONG牌30kw全自动ATS发电机组",
+        "WFHUAZHONG牌30kw全自动ATS发电机组,选用潍坊K4100D柴油发动机，性能稳定，市场占有率高，配件通用性强，发电机可以根据实际需要选配全铜无刷或者有刷电机，控制系统全自动带四保护，实现真正的无人值守。"
+      ],
+      "file": "sources/huazhong-weifang/2014.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "新款潍柴股份WP10D264E200原装240kw/300kva静音发电机组",
+      "header": [
+        "新款潍柴股份WP10D264E200原装240kw/300kva静音发电机组"
+      ],
+      "rows": [
+        "WFHUAZHONG牌240kw/300kva静音全自动发电机组组成动力为潍柴股份WP10D264E200原装柴油发动机，匹配上海斯坦福全铜无刷发电机，按需可定制众智全自动控制系统，四保护系统等，潍柴原厂设计静音箱，质量好，价格优。"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "潍柴股份WP13D400E200原装400kw全自动静音工业发电机组",
+      "header": [
+        "潍柴股份WP13D400E200原装400kw全自动静音工业发电机组"
+      ],
+      "rows": [
+        "WFHUAZHONG牌400kw静音全自动发电机组，选择潍柴股份WP13D400E200工业动力匹配纯铜无刷，三相励磁发电机400kw，安装全自动控制系统，带自启动四保护功能，科学设计高质量静音箱，隔音防水防尘，经济实惠。"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "潍柴原厂350kw双频率大油箱静音发电机组",
+      "header": [
+        "潍柴原厂350kw双频率大油箱静音发电机组"
+      ],
+      "rows": [
+        "350kw潍柴原厂50hz/60hz双频率加大油箱发电机,静音发电机组动力来自潍柴股份WP13D385E201，匹配上海斯坦福全铜无刷发电机，深海控制系统，潍柴原厂静音箱体，加大油箱容积可达1600升，通过BV认证。尺寸合理适合集装箱运输。"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "潍柴锐动力WP4.1D100E200配斯坦福75kw发电机组",
+      "header": [
+        "潍柴锐动力WP4.1D100E200配斯坦福75kw发电机组"
+      ],
+      "rows": [
+        "潍柴锐动力WP4.1D100E200，单缸四气门，油耗低，动力强劲，4缸体积小，配斯坦福75kw发电机，安装四保护系统，机组性能稳定，发电效率高，可以按需要装静音箱，ATS系统，以及移动拖车等，接受定制。"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "WFHUAZHONG出口潍柴锐动力40kw50kva超静音全自动发电机组",
+      "header": [
+        "WFHUAZHONG出口潍柴锐动力40kw50kva超静音全自动发电机组"
+      ],
+      "rows": [
+        "WFHUAZHONG出口潍柴锐动力40kw,50kva超静音全自动发电机组，动力采用潍柴WP2.3D48E200柴油机，带增压中冷，动力足，排量小，油耗低，经济性强；匹配全铜无刷发电机，华众专利的单向开门设计静音箱和全自动控制系统，体积小，静音效果好，有品质保证。"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "华众动力出口潍柴道依茨系列120kw150kva静音柴油发电机组",
+      "header": [
+        "华众动力出口潍柴道依茨系列120kw150kva静音柴油发电机组"
+      ],
+      "rows": [
+        "华众动力出口潍柴道依茨系列120kw150kva静音柴油发电机组,动力选用潍柴WP6D132，动力强劲，低油耗，故障率极低，匹配全铜无刷发电机，喷塑的静音箱，知名品牌控制系统，强强联合，品质超群。"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "R6105英国里卡多系列120kw全自动静音柴油发电机组",
+      "header": [
+        "R6105英国里卡多系列120kw全自动静音柴油发电机组"
+      ],
+      "rows": [
+        "R6105英国里卡多系列120kw,全自动静音柴油发电机组，选用R6105IZD，132kw,该机型技术成熟，耐久力强，油耗低，效率高，匹配上海斯坦福系列无刷发电机，装配全自动控制系统，可实现自动监控，自我启停，自我保护功能，全新设计超静音箱体，实现无噪音供电。"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "WFHUAZHONG牌潍柴博杜安系列500kw发电机组",
+      "header": [
+        "WFHUAZHONG牌潍柴博杜安系列500kw发电机组"
+      ],
+      "rows": [
+        "WFHUAZHONG牌潍柴博杜安系列500kw发电机组，动力组成为潍柴股份博杜安系列柴油机6M33D，储备功率大，扭矩大，油耗低，匹配品牌纯铜无刷三相发电机，机组调压精度高，动态性能好，结构紧凑，使用寿命长，操作简单，易保养，全国联保。"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "WFHUAZHONG牌里卡多系列50kw发电机组",
+      "header": [
+        "WFHUAZHONG牌里卡多系列50kw发电机组"
+      ],
+      "rows": [
+        "WFHUAZHONG牌里卡多系列50kw发电机组，选用潍坊R4105ZD柴油发动机，机型成熟，英国里卡多技术，动力强劲，油耗低，性能稳定，该机型市场占有率高，配件通用性强，易维护保养，配50千瓦纯铜无刷电机，内置AVR，发电效率高，电压稳定，机组质量可靠，全国三包。"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "WFHUAZHONG牌80kw全自动发电机组",
+      "header": [
+        "WFHUAZHONG牌80kw全自动发电机组"
+      ],
+      "rows": [
+        "WFHUAZHONG牌80kw全自动发电机组,选用里卡多系列6缸机带增压器，R6105ZD作为动力，全铜无刷发电机，全自动控制柜带四保护系统，市电监测并完成自动双切换，真正实现无人值守，省心省力，安全放心。"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "潍柴股份WP10D320E200原装300kw发电机组带四保护",
+      "header": [
+        "潍柴股份WP10D320E200原装300kw发电机组带四保护"
+      ],
+      "rows": [
+        "潍柴股份WP10D320E200原装300kw发电机组带四保护"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "WFHUAZHONG牌120kw兰电船用发电机组带远传",
+      "header": [
+        "WFHUAZHONG牌120kw兰电船用发电机组带远传"
+      ],
+      "rows": [
+        "WFHUAZHONG牌120kw兰电船用发电机组带远传，选用潍坊R6105IZLCD作为动力，里卡多系列船机加长行程带中冷，动力足，油耗低，扭矩大，匹配兰电全铜无刷船用发电机，防水处理好，内置AVR，性能稳定，带远传仪表，数字显示，操作方便，便于随时观察机器状态。性价比高，品质优良。"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "WFHUAZHONG 牌30kw全铜无刷三相发电机组",
+      "header": [
+        "WFHUAZHONG 牌30kw全铜无刷三相发电机组"
+      ],
+      "rows": [
+        "WFHUAZHONG 牌30kw全铜无刷三相发电机组，选用ZH4102D柴油机，技术成熟，维修成本低，油耗低，配全铜无刷发电机，内置AVR调节器，无需维护，结构简单，成本低，性价比高，是工地电焊机，空压机，喷雾剂，养殖户等的选择。"
+      ]
+    },
+    {
+      "n": 2014,
+      "title": "WFHUAZHONG牌30kw全自动ATS发电机组",
+      "header": [
+        "WFHUAZHONG牌30kw全自动ATS发电机组"
+      ],
+      "rows": [
+        "WFHUAZHONG牌30kw全自动ATS发电机组,选用潍坊K4100D柴油发动机，性能稳定，市场占有率高，配件通用性强，发电机可以根据实际需要选配全铜无刷或者有刷电机，控制系统全自动带四保护，实现真正的无人值守。"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "众智",
+      "line": "WFHUAZHONG牌240kw/300kva静音全自动发电机组组成动力为潍柴股份WP10D264E200原装柴油发动机，匹配上海斯坦福全铜无刷发电机，按需可定制众智全自动控制系统，四保护系统等，潍柴原厂设计静音箱，质量好，价格优。",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "深海",
+      "line": "350kw潍柴原厂50hz/60hz双频率加大油箱发电机,静音发电机组动力来自潍柴股份WP13D385E201，匹配上海斯坦福全铜无刷发电机，深海控制系统，潍柴原厂静音箱体，加大油箱容积可达1600升，通过BV认证。尺寸合理适合集装箱运输。",
+      "src": [
+        2003
+      ]
+    }
+  ]
 }
