@@ -70,6 +70,279 @@
       "src": [
         2
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "固升CK系列 (康明斯)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 20,
+        "max": 2750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CK31200",
+      "fuel": "diesel",
+      "engineModels": [
+        "6CTA8.3-G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CK30500",
+      "fuel": "diesel",
+      "engineModels": [
+        "4BTA3.9-G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 62.5,
+        "max": 62.5,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CK33600",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSZ13-G2"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 450,
+        "max": 450,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "CK38000",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA38-G5"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PK34000",
+      "fuel": "diesel",
+      "engineModels": [
+        "2506C-E15TAG2"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PK38000",
+      "fuel": "diesel",
+      "engineModels": [
+        "4008-TAG2A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WK30800",
+      "fuel": "diesel",
+      "engineModels": [
+        "WP4.1D100E200"
+      ],
+      "engineMakes": [
+        "Weichai"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WCK32500",
+      "fuel": "diesel",
+      "engineModels": [
+        "WP10D320E200"
+      ],
+      "engineMakes": [
+        "Weichai"
+      ],
+      "power": {
+        "min": 312.5,
+        "max": 312.5,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WK36400",
+      "fuel": "diesel",
+      "engineModels": [
+        "12M26D792E200"
+      ],
+      "engineMakes": [
+        "Weichai"
+      ],
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PK31000",
+      "fuel": "diesel",
+      "engineModels": [
+        "1106A-70TG1"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 125,
+        "max": 125,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "VK32500",
+      "fuel": "diesel",
+      "engineModels": [
+        "TAD1341GE"
+      ],
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "power": {
+        "min": 312.5,
+        "max": 312.5,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
     }
   ],
   "certifications": [],
@@ -99,9 +372,530 @@
         "Kusing成立于2007年"
       ],
       "file": "sources/kusing-guangzhou/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.cnkusing.net/page101",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "固升CK系列柴油发电机组采用康明斯发动机作为动力。康明斯公司是一家著名的发动机制",
+        "| CK30160 | 22.5 | 18 | 20 | 16 | 详细参数",
+        "| CK322000 | 3025 | 2420 | 2750 | 2200 | 详细参数"
+      ],
+      "file": "sources/kusing-guangzhou/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.cnkusing.net/CK31200",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| CK31200",
+        "| 最大功率 | KVA | 165.0",
+        "| 额定功率 | KVA | 150.0",
+        "| 发电机型号 | 6CTA8.3-G2",
+        "| 交流电机型号 | KAL274E3"
+      ],
+      "file": "sources/kusing-guangzhou/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://www.cnkusing.net/CK30500",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| CK30500",
+        "| 最大功率 | KVA | 68.8",
+        "| 额定功率 | KVA | 62.5",
+        "| 发电机型号 | 4BTA3.9-G2",
+        "| 交流电机型号 | KAL224E2"
+      ],
+      "file": "sources/kusing-guangzhou/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://www.cnkusing.net/CK33600",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| CK33600",
+        "| 最大功率 | KVA | 495.0",
+        "| 额定功率 | KVA | 450.0",
+        "| 发电机型号 | QSZ13-G2",
+        "| 交流电机型号 | KAL314K5/KAL354A1"
+      ],
+      "file": "sources/kusing-guangzhou/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://www.cnkusing.net/CK38000",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| CK38000",
+        "| 最大功率 | KVA | 1100.0",
+        "| 额定功率 | KVA | 1000.0",
+        "| 发电机型号 | KTA38-G5",
+        "| 交流电机型号 | KAL404D2"
+      ],
+      "file": "sources/kusing-guangzhou/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://www.cnkusing.net/PK34000",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| PK34000",
+        "| 最大功率 | KVA | 550.0",
+        "| 额定功率 | KVA | 500.0",
+        "| 发电机型号 | 2506C-E15TAG2",
+        "| 交流电机型号 | KAL354B1"
+      ],
+      "file": "sources/kusing-guangzhou/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://www.cnkusing.net/PK38000",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| PK38000",
+        "| 最大功率 | KVA | 1100.0",
+        "| 额定功率 | KVA | 1000.0",
+        "| 发电机型号 | 4008-TAG2A",
+        "| 交流电机型号 | KAL404D2"
+      ],
+      "file": "sources/kusing-guangzhou/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://www.cnkusing.net/WK30800",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| WK30800",
+        "| 最大功率 | KVA | 110.0",
+        "| 额定功率 | KVA | 100.0",
+        "| 发电机型号 | WP4.1D100E200",
+        "| 交流电机型号 | KAL224M5"
+      ],
+      "file": "sources/kusing-guangzhou/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://www.cnkusing.net/WCK32500",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| WCK32500",
+        "| 最大功率 | KVA | 343.8",
+        "| 额定功率 | KVA | 312.5",
+        "| 发电机型号 | WP10D320E200",
+        "| 交流电机型号 | KAL314D2"
+      ],
+      "file": "sources/kusing-guangzhou/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://www.cnkusing.net/WK36400",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| WK36400",
+        "| 最大功率 | KVA | 880.0",
+        "| 额定功率 | KVA | 800.0",
+        "| 发电机型号 | 12M26D792E200",
+        "| 交流电机型号 | KAL404B1"
+      ],
+      "file": "sources/kusing-guangzhou/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://www.cnkusing.net/PK31000",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| PK31000",
+        "| 最大功率 | KVA | 137.5",
+        "| 额定功率 | KVA | 125.0",
+        "| 发电机型号 | 1106A-70TG1",
+        "| 交流电机型号 | KAL274C2"
+      ],
+      "file": "sources/kusing-guangzhou/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "https://www.cnkusing.net/VK32500",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| VK32500",
+        "| 最大功率 | KVA | 343.8",
+        "| 额定功率 | KVA | 312.5",
+        "| 发电机型号 | TAD1341GE",
+        "| 交流电机型号 | KAL314D2"
+      ],
+      "file": "sources/kusing-guangzhou/2012.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-09",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2002,
+      "title": "CK31200 技术参数 (Cummins)",
+      "header": [
+        "| CK31200"
+      ],
+      "rows": [
+        "| 相数 | 3相",
+        "| 功率因数 | 0.8cos",
+        "| 频率 | 50HZ",
+        "| 转速 | RPM | 1500",
+        "| 最大功率 | KVA | 165.0",
+        "| KW | 132.0",
+        "| 额定功率 | KVA | 150.0",
+        "| KW | 120.0",
+        "| 额定电压 | V | 400",
+        "| 额定电流 | A | 217",
+        "| 燃油消耗率 | G/KW.H | ≤211",
+        "| 机组控制型式 | 全自动多功能",
+        "| 发电机型号 | 6CTA8.3-G2",
+        "| 交流电机型号 | KAL274E3",
+        "| 缸数 | 6/L",
+        "| 启动方式 | 电启动",
+        "| 冷却方式 | 水冷",
+        "| 防护等级 | IP21-IP23",
+        "| 绝缘等级 | H",
+        "| 尺寸(MM) | 静音型 | 3400*1100*1800",
+        "| 敞开型 | 2280*850*1380",
+        "| 可选择性的 | ATS(自动切换装置)"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "CK30500 技术参数 (Cummins)",
+      "header": [
+        "| CK30500"
+      ],
+      "rows": [
+        "| 相数 | 3相",
+        "| 功率因数 | 0.8cos",
+        "| 频率 | 50HZ",
+        "| 转速 | RPM | 1500",
+        "| 最大功率 | KVA | 68.8",
+        "| KW | 55.0",
+        "| 额定功率 | KVA | 62.5",
+        "| KW | 50.0",
+        "| 额定电压 | V | 400",
+        "| 额定电流 | A | 90",
+        "| 燃油消耗率 | G/KW.H | ≤216",
+        "| 机组控制型式 | 全自动多功能",
+        "| 发电机型号 | 4BTA3.9-G2",
+        "| 交流电机型号 | KAL224E2",
+        "| 缸数 | 4/L",
+        "| 启动方式 | 电启动",
+        "| 冷却方式 | 水冷",
+        "| 防护等级 | IP21-IP23",
+        "| 绝缘等级 | H",
+        "| 尺寸(MM) | 静音型 | 2600*1100*1450",
+        "| 敞开型 | 1850*850*1280",
+        "| 可选择性的 | ATS(自动切换装置)"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "CK33600 技术参数 (Cummins)",
+      "header": [
+        "| CK33600"
+      ],
+      "rows": [
+        "| 相数 | 3相",
+        "| 功率因数 | 0.8cos",
+        "| 频率 | 50HZ",
+        "| 转速 | RPM | 1500",
+        "| 最大功率 | KVA | 495.0",
+        "| KW | 396.0",
+        "| 额定功率 | KVA | 450.0",
+        "| KW | 360.0",
+        "| 额定电压 | V | 400",
+        "| 额定电流 | A | 650",
+        "| 燃油消耗率 | G/KW.H | ≤208",
+        "| 机组控制型式 | 全自动多功能",
+        "| 发电机型号 | QSZ13-G2",
+        "| 交流电机型号 | KAL314K5/KAL354A1",
+        "| 缸数 | 6/L",
+        "| 启动方式 | 电启动",
+        "| 冷却方式 | 水冷",
+        "| 防护等级 | IP21-IP23",
+        "| 绝缘等级 | H",
+        "| 尺寸(MM) | 静音型 | 4800*1700*2250",
+        "| 敞开型 | 3320*1380*1950",
+        "| 可选择性的 | ATS(自动切换装置)"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "CK38000 技术参数 (Cummins)",
+      "header": [
+        "| CK38000"
+      ],
+      "rows": [
+        "| 相数 | 3相",
+        "| 功率因数 | 0.8cos",
+        "| 频率 | 50HZ",
+        "| 转速 | RPM | 1500",
+        "| 最大功率 | KVA | 1100.0",
+        "| KW | 880.0",
+        "| 额定功率 | KVA | 1000.0",
+        "| KW | 800.0",
+        "| 额定电压 | V | 400",
+        "| 额定电流 | A | 1443",
+        "| 燃油消耗率 | G/KW.H | ≤198",
+        "| 机组控制型式 | 全自动多功能",
+        "| 发电机型号 | KTA38-G5",
+        "| 交流电机型号 | KAL404D2",
+        "| 缸数 | 12V",
+        "| 启动方式 | 电启动",
+        "| 冷却方式 | 水冷",
+        "| 防护等级 | IP21-IP23",
+        "| 绝缘等级 | H",
+        "| 尺寸(MM) | 静音型 | 40'FT container",
+        "| 敞开型 | 4600*2010*2450",
+        "| 可选择性的 | ATS(自动切换装置)"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "PK34000 技术参数 (Perkins)",
+      "header": [
+        "| PK34000"
+      ],
+      "rows": [
+        "| 相数 | 3相",
+        "| 功率因数 | 0.8cos",
+        "| 频率 | 50HZ",
+        "| 转速 | RPM | 1500",
+        "| 最大功率 | KVA | 550.0",
+        "| KW | 440.0",
+        "| 额定功率 | KVA | 500.0",
+        "| KW | 400.0",
+        "| 额定电压 | V | 400",
+        "| 额定电流 | A | 722",
+        "| 燃油消耗率 | G/KW.H | ≤202",
+        "| 机组控制型式 | 全自动多功能",
+        "| 发电机型号 | 2506C-E15TAG2",
+        "| 交流电机型号 | KAL354B1",
+        "| 缸数 | 6",
+        "| 启动方式 | 电启动",
+        "| 冷却方式 | 水冷",
+        "| 防护等级 | IP21-IP23",
+        "| 绝缘等级 | H",
+        "| 尺寸(MM) | 静音型 | 4800*1700*2250",
+        "| 敞开型 | 3300*1150*1990",
+        "| 可选择性的 | ATS(自动切换装置)"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "PK38000 技术参数 (Perkins)",
+      "header": [
+        "| PK38000"
+      ],
+      "rows": [
+        "| 相数 | 3相",
+        "| 功率因数 | 0.8cos",
+        "| 频率 | 50HZ",
+        "| 转速 | RPM | 1500",
+        "| 最大功率 | KVA | 1100.0",
+        "| KW | 880.0",
+        "| 额定功率 | KVA | 1000.0",
+        "| KW | 800.0",
+        "| 额定电压 | V | 400",
+        "| 额定电流 | A | 1443",
+        "| 燃油消耗率 | G/KW.H | ≤208",
+        "| 机组控制型式 | 全自动多功能",
+        "| 发电机型号 | 4008-TAG2A",
+        "| 交流电机型号 | KAL404D2",
+        "| 缸数 | 8/L",
+        "| 启动方式 | 电启动",
+        "| 冷却方式 | 水冷",
+        "| 防护等级 | IP21-IP23",
+        "| 绝缘等级 | H",
+        "| 尺寸(MM) | 静音型 | 40'HQ container",
+        "| 敞开型 | 5050*2035*2450",
+        "| 可选择性的 | ATS(自动切换装置)"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "WK30800 技术参数 (Weichai)",
+      "header": [
+        "| WK30800"
+      ],
+      "rows": [
+        "| 相数 | 3相",
+        "| 功率因数 | 0.8cos",
+        "| 频率 | 50HZ",
+        "| 转速 | RPM | 1500",
+        "| 最大功率 | KVA | 110.0",
+        "| KW | 88.0",
+        "| 额定功率 | KVA | 100.0",
+        "| KW | 80.0",
+        "| 额定电压 | V | 400",
+        "| 额定电流 | A | 144",
+        "| 燃油消耗率 | G/KW.H | ≤220",
+        "| 机组控制型式 | 全自动多功能",
+        "| 发电机型号 | WP4.1D100E200",
+        "| 交流电机型号 | KAL224M5",
+        "| 缸数 | 4/L",
+        "| 启动方式 | 电启动",
+        "| 冷却方式 | 水冷",
+        "| 防护等级 | IP21-IP23",
+        "| 绝缘等级 | H",
+        "| 尺寸(MM) | 静音型 | 3400*1200*1800",
+        "| 敞开型 | 2100*800*1100",
+        "| 可选择性的 | ATS(自动切换装置)"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "WCK32500 技术参数 (Weichai)",
+      "header": [
+        "| WCK32500"
+      ],
+      "rows": [
+        "| 相数 | 3相",
+        "| 功率因数 | 0.8cos",
+        "| 频率 | 50HZ",
+        "| 转速 | RPM | 1500",
+        "| 最大功率 | KVA | 343.8",
+        "| KW | 275.0",
+        "| 额定功率 | KVA | 312.5",
+        "| KW | 250.0",
+        "| 额定电压 | V | 400",
+        "| 额定电流 | A | 451",
+        "| 燃油消耗率 | G/KW.H | ≤207",
+        "| 机组控制型式 | 全自动多功能",
+        "| 发电机型号 | WP10D320E200",
+        "| 交流电机型号 | KAL314D2",
+        "| 缸数 | 6/L",
+        "| 启动方式 | 电启动",
+        "| 冷却方式 | 水冷",
+        "| 防护等级 | IP21-IP23",
+        "| 绝缘等级 | H",
+        "| 尺寸(MM) | 静音型 | 4500*1400*2100",
+        "| 敞开型 | 3000*1100*1600",
+        "| 可选择性的 | ATS(自动切换装置)"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "WK36400 技术参数 (Weichai)",
+      "header": [
+        "| WK36400"
+      ],
+      "rows": [
+        "| 相数 | 3相",
+        "| 功率因数 | 0.8cos",
+        "| 频率 | 50HZ",
+        "| 转速 | RPM | 1500",
+        "| 最大功率 | KVA | 880.0",
+        "| KW | 704.0",
+        "| 额定功率 | KVA | 800.0",
+        "| KW | 640.0",
+        "| 额定电压 | V | 400",
+        "| 额定电流 | A | 1173",
+        "| 燃油消耗率 | G/KW.H | ≤207",
+        "| 机组控制型式 | 全自动多功能",
+        "| 发电机型号 | 12M26D792E200",
+        "| 交流电机型号 | KAL404B1",
+        "| 缸数 | 12/L",
+        "| 启动方式 | 电启动",
+        "| 冷却方式 | 水冷",
+        "| 防护等级 | IP21-IP23",
+        "| 绝缘等级 | H",
+        "| 尺寸(MM) | 静音型 | 20FT",
+        "| 敞开型 | 4400*1800*2200",
+        "| 可选择性的 | ATS(自动切换装置)"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "PK31000 技术参数 (Perkins)",
+      "header": [
+        "| PK31000"
+      ],
+      "rows": [
+        "| 相数 | 3相",
+        "| 功率因数 | 0.8cos",
+        "| 频率 | 50HZ",
+        "| 转速 | RPM | 1500",
+        "| 最大功率 | KVA | 137.5",
+        "| KW | 110.0",
+        "| 额定功率 | KVA | 125.0",
+        "| KW | 100.0",
+        "| 额定电压 | V | 400",
+        "| 额定电流 | A | 180",
+        "| 燃油消耗率 | G/KW.H | ≤205",
+        "| 机组控制型式 | 全自动多功能",
+        "| 发电机型号 | 1106A-70TG1",
+        "| 交流电机型号 | KAL274C2",
+        "| 缸数 | 6",
+        "| 启动方式 | 电启动",
+        "| 冷却方式 | 水冷",
+        "| 防护等级 | IP21-IP23",
+        "| 绝缘等级 | H",
+        "| 尺寸(MM) | 静音型 | 3400*1100*1450",
+        "| 敞开型 | 2400*950*1200",
+        "| 可选择性的 | ATS(自动切换装置)"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "VK32500 技术参数 (Volvo Penta)",
+      "header": [
+        "| VK32500"
+      ],
+      "rows": [
+        "| 相数 | 3相",
+        "| 功率因数 | 0.8cos",
+        "| 频率 | 50HZ",
+        "| 转速 | RPM | 1500",
+        "| 最大功率 | KVA | 343.8",
+        "| KW | 275.0",
+        "| 额定功率 | KVA | 312.5",
+        "| KW | 250.0",
+        "| 额定电压 | V | 400",
+        "| 额定电流 | A | 451",
+        "| 燃油消耗率 | G/KW.H | ≤204",
+        "| 机组控制型式 | 全自动多功能",
+        "| 发电机型号 | TAD1341GE",
+        "| 交流电机型号 | KAL314D2",
+        "| 缸数 | 6",
+        "| 启动方式 | 电启动",
+        "| 冷却方式 | 水冷",
+        "| 防护等级 | IP21-IP23",
+        "| 绝缘等级 | H",
+        "| 尺寸(MM) | 静音型 | 4500*1400*2200",
+        "| 敞开型 | 3000*1100*1600",
+        "| 可选择性的 | ATS(自动切换装置)"
+      ]
+    }
+  ]
 }
