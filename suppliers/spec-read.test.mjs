@@ -103,6 +103,16 @@ test("dims: the engine's own size ('Engine Size(mm)') is not the genset's", () =
   assert.equal(CAT.specKey("Size"), "dims");
   assert.equal(CAT.specKey("Dimension(MM)L*W*H"), "dims");
 });
+test("fuel is the 100% load figure: a label naming another load (25%, 70%, 110%, 1/4) is not `fuel`", () => {
+  // lees-power 1122…: "Fuel Consumption 25% load" next to 50% / 75%; lees-power "25%负载油耗"; "Cons. 70%"; "Fuel Consumption 110%";
+  // hyundai-power-products "Fuel consumption @25/50/75/100% load" (one cell lists four levels)
+  for (const l of ["Fuel Consumption 25% load", "25%负载油耗", "Cons. 70%", "Fuel Consumption 110%", "Fuel consumption @25/50/75/100% load", "Fuel consumption 1/4 load", "Fuel Consumption 80% load"])
+    assert.notEqual(CAT.specKey(l), "fuel", l);
+  for (const l of ["Fuel Cons. (100% Load)", "Cons 100% ( L/H )", "Fuel consumption @100% Load（L/h）", "100% 负载 燃油耗 （L/h）", "Full-Load Diesel Consumption (L/H)", "Fuel consumption (g/kW.h)", "Consumption", "燃油消耗率", "Fuel Consumption 100% Load", "Fuel Consumption Standby", "Min.specific fuel consumption at full load (g/kW.h)"])
+    assert.equal(CAT.specKey(l), "fuel", l);
+  assert.equal(CAT.specKey("Fuel Consumption 75% load"), "fuel75");
+  assert.equal(CAT.specKey("Fuel Consumption 50% load"), "fuel50");
+});
 test("keyOf: a trailing * (footnote) is dropped; O/0 and I/1 stay apart", () => {
   assert.equal(CAT.keyOf("QSK19-G4*"), CAT.keyOf("QSK19-G4"));
   assert.equal(CAT.keyOf("QSK19-G4**"), "QSK19G4");

@@ -109,13 +109,17 @@
   const N = /\d/, TXT = /[a-z一-鿿]{3}/i, BY = /\d\s*[*×xX/]\s*\d/;
   // A fuel figure: "35L/h", "199g/KW.h", "0.191", "31,5".
   const FUEL_OK = /^[≤<~≈]?\s*\d[\d.,\s/~-]*\s*(l\s*\/\s*h(r|our)?|lph|g\/kw\.?h|g\/\(kw\.?h\)|g\/kwh|kg\/kw\w*[·.-]?h\w*|l|g|kg\/h|m³\/h|m3\/h|nm3\/h|nm³\/h|litres?\/h(our)?|gal\/h)?\s*$/i, NOT_FUEL = /lub|oil\s*consum|air\s*consum|fan|run(ning)?\s*(time|hours?)/i;
+  // `fuel` is the consumption at 100% load: a label naming another load (25%, 70%, 110%, 1/4, "25/50/75/100%") is not it.
+  // 75% and 50% are the keys above.
+  const OTHER_LOAD = /(?<![\d.])(?!(?:100|75|50)(?![\d.])\s*%)\d{1,3}(?:\.\d+)?\s*%|(?<![\d.])1\s*\/\s*4(?!\d)|¼|25\s*\/\s*50/;
+  const NOT_FUEL_100 = new RegExp(`${NOT_FUEL.source}|${OTHER_LOAD.source}`, "i");
   const SPECS = [
     ["tank", "genset", "Bình nhiên liệu", /fuel\s*tank|fuel\s*capacity|tank\s*capacity|油箱/i, /run(ning)?\s*(time|hours?)/i, N],
     // Part loads first: "75%Prime", "75% load(Prime power)", "Fuel consumption75% (of the Prime Power)", "Fuel @75% (L/h)",
     // "75 % Load" (a column title), "75%负载油耗", "3/4 load" (2026-11-09).
     ["fuel75", "genset", "Tiêu hao nhiên liệu 75% tải", /(75\s*%|3\/4)\s*(load|prime|prp|功率|负载|\(?\s*of\s*(the\s*)?prime)|(consum|fuel|油耗|tiêu hao)[^|]{0,40}?(75\s*%|3\/4\s*(load|prp))|@\s*75\s*%/i, NOT_FUEL, FUEL_OK],
     ["fuel50", "genset", "Tiêu hao nhiên liệu 50% tải", /(50\s*%|1\/2)\s*(load|prime|prp|功率|负载|\(?\s*of\s*(the\s*)?prime)|(consum|fuel|油耗|tiêu hao)[^|]{0,40}?(50\s*%|1\/2\s*(load|prp))|@\s*50\s*%/i, NOT_FUEL, FUEL_OK],
-    ["fuel", "genset", "Tiêu hao nhiên liệu", /consum|cons\.|\bcons\b|fuel\s*(rate|usage|efficien)|油耗|耗油|燃油消耗|燃油率|燃气消耗|tiêu hao|100\s*%\s*(load|prime|prp|功率|负载)/i, NOT_FUEL, FUEL_OK],
+    ["fuel", "genset", "Tiêu hao nhiên liệu", /consum|cons\.|\bcons\b|fuel\s*(rate|usage|efficien)|油耗|耗油|燃油消耗|燃油率|燃气消耗|tiêu hao|100\s*%\s*(load|prime|prp|功率|负载)/i, NOT_FUEL_100, FUEL_OK],
     ["noise", "genset", "Độ ồn", /noise|sound\s*(level|pressure)|噪音|噪声|độ ồn|\bdb\(?a?\)?\b/i, null, /(^|\D)([4-9]\d|1[01]\d)(?!\d)/],
     ["dims", "genset", "Kích thước", /dimen|dimention|overall\s*(size|l)|\bsize\b|l\s*[x×*]\s*[wm]\s*[x×*]\s*h|尺寸|kích thước/i, /engine\s*(size|dimen)|(发动机|柴油机)\s*尺寸/i, BY],
     ["weight", "genset", "Khối lượng", /weigh|重量|毛重|khối lượng|trọng lượng|^\s*kgs?\s*(\(|$)/i, null, /^[≈~]?\s*\d/],
