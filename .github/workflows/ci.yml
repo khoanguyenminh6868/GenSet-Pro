@@ -31,4 +31,7 @@ jobs:
           node-version: 22
       - run: node suppliers/verify.mjs > /tmp/verify.txt || (cat /tmp/verify.txt | grep -B1 "lỗi:" | head -80; exit 1)
       - run: node --test suppliers/*.test.mjs
+      - run: node --test web/test/spec-norm.test.mjs
       - run: node suppliers/catalog-stats.mjs
+      # Chất lượng thông số sau lớp chuẩn hoá web/spec-norm.js: đỏ khi xấu đi quá ngưỡng ghi trong quality-baseline.json.
+      - run: node suppliers/quality.mjs --check

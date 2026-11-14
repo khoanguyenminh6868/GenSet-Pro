@@ -11,6 +11,11 @@
 - Tìm Thông Số một NCC: `config-bot.mjs spec --id X` (skill `tim-thong-so-ncc`). NCC không có `website` thì `specPrep` dừng ngay, không chạy agent (`specSkip`, Khoa 13/11); yêu cầu nhận lỗi "chưa có website".
 - NCC còn cần tìm thông số: `spec-todo.mjs` (chưa có dòng bảng, trừ `spec-none.json`). Đã thử tìm website + cào + Tìm Thông Số mà không ra bảng → `spec-todo.mjs --mark <id> --why "…"` để lần sau không tìm lại (gaps.mjs cũng không gửi specreq cho chúng); có nguồn mới thì `--unmark`.
 
+## Lớp chuẩn hoá thông số (`web/spec-norm.js`, `quality.mjs`)
+- Chỉ đọc lại `{key, label, value}` của `fromSupplier`; bảng gốc không đổi, `raw` luôn nguyên văn. Đơn vị / điều kiện chỉ lấy từ chữ trong ô, nhãn, ô đơn vị cùng cột ở dòng tiêu đề, tên bảng; thiếu thì ghi `missing`, KHÔNG đoán theo độ lớn (205 không thành g/kWh). Quy đổi chỉ bằng `conversions.js` (in³, hp, PS); cc, gal, cm giữ nguyên. Thang khí thải không quy đổi; "T3", "Tier 3", "Stage II" không kèm EPA / EU / China thì `scale` trống.
+- "1,642" (phẩy + đúng 3 chữ số) có thể là nghìn hoặc thập phân (himoinsa ghi phẩy thập phân) → `missing: number`. Dòng tiêu đề không có `|` cuối: ô cuối vẫn là ô (đừng `slice(1, -1)`). Tên bảng chỉ cho biết trần / vỏ khi là chữ về kiểu máy ("open type", "Soundproof"); "Silent, Robust, and Reliable" của trang catalog không tính.
+- Đổi `catalog.js` (SPECS) hay `spec-norm.js` → chạy `node suppliers/quality.mjs --check`; xấu đi có chủ ý thì `--write-baseline` và ghi lý do trong PR. Ca test lấy dòng thật: `web/test/spec-norm.test.mjs`.
+
 ## Bẫy cào / gộp
 - Sau mọi lần `merge-specs` toàn bộ: chạy verify VÀ so số dòng bảng/nguồn từng bản ghi với origin/main.
 - `crawl-specs.mjs --render` có thể treo hàng giờ → bọc `timeout 1200`. Bản ghi `website: null` không được cào; crawl chỉ cào một host của `website` (thương hiệu có website thứ hai → bản ghi riêng + `relatedIds`).
