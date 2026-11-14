@@ -62,6 +62,374 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "404D-22G",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "404D-22G"
+      ],
+      "power": {
+        "min": 20.3,
+        "max": 20.3,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "403D-15G",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "403D-15G"
+      ],
+      "power": {
+        "min": 13.1,
+        "max": 13.1,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "404D-22TG",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "404D-22TG"
+      ],
+      "power": {
+        "min": 27.4,
+        "max": 27.4,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "404D-22TAG",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "404D-22TAG"
+      ],
+      "power": {
+        "min": 37,
+        "max": 37,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "404D-22TAG",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "404D-22TAG"
+      ],
+      "power": {
+        "min": 40,
+        "max": 40,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1103A-33G",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33G"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1103A-33TG",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33TG"
+      ],
+      "power": {
+        "min": 45,
+        "max": 45,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1103A-33TG",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33TG"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1104A-44TG",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104A-44TG"
+      ],
+      "power": {
+        "min": 65,
+        "max": 65,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1104A-44TG",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104A-44TG"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1104C-44TAG",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104C-44TAG"
+      ],
+      "power": {
+        "min": 80.4,
+        "max": 80.4,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1104C-44TAG",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104C-44TAG"
+      ],
+      "power": {
+        "min": 101.4,
+        "max": 101.4,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1104C-44TG",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1104C-44TG"
+      ],
+      "power": {
+        "min": 60.4,
+        "max": 60.4,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1106A-70TG",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TG"
+      ],
+      "power": {
+        "min": 135,
+        "max": 135,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1106A-70TAG",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TAG"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "1106A-70TAG",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TAG"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
     }
   ],
   "certifications": [],
@@ -89,9 +457,535 @@
         "Since 2008 Wuxi has supplied customers across China and the wider Asia region with the compact 400 Series of 2, 3 and 4 cylinder engines."
       ],
       "file": "sources/perkins-wuxi/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.perkins.com/en_GB/products/new/perkins/electric-power-generation/diesel-engines/1000002596.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for 404D-22G",
+        "| Typical Electrical Output | 20-26 kVA (16-21 kWe) 20-26 kVA (16-21 kWe)",
+        "| Prime | 20.3 kVA 20.3 kVA"
+      ],
+      "file": "sources/perkins-wuxi/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.perkins.com/en_GB/products/new/perkins/electric-power-generation/diesel-engines/1000002672.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for 403D-15G",
+        "| Typical Electrical Output | 13.1-17.5 kVA (10.4-14 kWe) 13.1-17.5 kVA (10.4-14 kWe)",
+        "| Prime | 13.1 kVA 13.1 kVA"
+      ],
+      "file": "sources/perkins-wuxi/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://www.perkins.com/en_GB/products/new/perkins/electric-power-generation/diesel-engines/1000002660.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for 404D-22TG",
+        "| Typical Electrical Output | 27-36 kVA (22-29 kWe) 27-36 kVA (22-29 kWe)",
+        "| Prime | 27.4 kVA 27.4 kVA"
+      ],
+      "file": "sources/perkins-wuxi/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://www.perkins.com/en_GB/products/new/perkins/electric-power-generation/diesel-engines/1000002620.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for 404D-22TAG",
+        "| Typical Electrical Output | 37-40 kVA (29-32 kWe) 37-40 kVA (29-32 kWe)"
+      ],
+      "file": "sources/perkins-wuxi/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://www.perkins.com/en_GB/products/new/perkins/electric-power-generation/diesel-engines/1000002495.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for 1103A-33G",
+        "| Typical Electrical Output | 30-38 kVA (24-31 kWe) 30-38 kVA (24-31 kWe)",
+        "| Prime | 30 kVA 30 kVA"
+      ],
+      "file": "sources/perkins-wuxi/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://www.perkins.com/en_GB/products/new/perkins/electric-power-generation/diesel-engines/1000002507.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for 1103A-33TG",
+        "| Typical Electrical Output | 45-75 kVA (36-60 kWe) 45-75 kVA (36-60 kWe)",
+        "| Prime | 45 - 60 kVA 45 - 60 kVA"
+      ],
+      "file": "sources/perkins-wuxi/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://www.perkins.com/en_GB/products/new/perkins/electric-power-generation/diesel-engines/1000002360.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for 1104A-44TG",
+        "| Typical Electrical Output | 65-100 kVA (52-80 kWe) 65-100 kVA (52-80 kWe)",
+        "| Prime | 65-80 kVA 65-80 kVA"
+      ],
+      "file": "sources/perkins-wuxi/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://www.perkins.com/en_GB/products/new/perkins/electric-power-generation/diesel-engines/1000002449.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for 1104C-44TAG",
+        "| Typical Electrical Output | 80-126.5 kVA (64-101 kWe) 80-126.5 kVA (64-101 kWe)",
+        "| Prime | 80.4-101.4 kVA 80.4-101.4 kVA"
+      ],
+      "file": "sources/perkins-wuxi/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://www.perkins.com/en_GB/products/new/perkins/electric-power-generation/diesel-engines/1000002443.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for 1104C-44TG",
+        "| Typical Electrical Output | 60-67 kVA (48-53 kWe) 60-67 kVA (48-53 kWe)",
+        "| Prime | 60.4 kVA 60.4 kVA"
+      ],
+      "file": "sources/perkins-wuxi/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://www.perkins.com/en_GB/products/new/perkins/electric-power-generation/diesel-engines/1000002366.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for 1106A-70TG",
+        "| Typical Electrical Output | 135-169 kVA (108-135 kWe) 135-169 kVA (108-135 kWe)",
+        "| Prime | 135 kVA 135 kVA"
+      ],
+      "file": "sources/perkins-wuxi/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://www.perkins.com/en_GB/products/new/perkins/electric-power-generation/diesel-engines/1000002183.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Product Specifications for 1106A-70TAG",
+        "| Typical Electrical Output | 150-220 kVA (120-176 kWe) 150-220 kVA (120-176 kWe)",
+        "| Prime | 150.0-200 kVA 150.0-200 kVA"
+      ],
+      "file": "sources/perkins-wuxi/2011.md",
+      "official": true
     }
   ],
   "confidence": "high",
-  "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Perkins 404D-22G Electric Power – Product Specifications",
+      "header": [
+        "| Gross Mechanical Output | 18-24 kWm 18-24 kWm"
+      ],
+      "rows": [
+        "| Typical Electrical Output | 20-26 kVA (16-21 kWe) 20-26 kVA (16-21 kWe)",
+        "| Rated Speed | 1500/1800 rpm 1500/1800 rpm",
+        "| Emissions | UN ECE R96 Stage IIIA constant speed and U.S. EPA Stationary Emergency Engine UN ECE R96 Stage IIIA constant speed and U.S. EPA Stationary Emergency Engine",
+        "| Prime | 20.3 kVA 20.3 kVA",
+        "| Standby | 22.1 kVA 22.1 kVA",
+        "| Prime | 19.2 kWe 19.2 kWe",
+        "| Standby | 21.3 kWe 21.3 kWe",
+        "| Number of Cylinders | 4 inline 4 inline",
+        "| Bore | 3.3 in 84 mm",
+        "| Stroke | 3.9 in 100 mm",
+        "| Displacement | 135.2 in³ 2.2 l",
+        "| Compression Ratio | 23.3:1 23.3:1",
+        "| Aspiration | Naturally aspirated Naturally aspirated",
+        "| Combustion System | Indirect injection Indirect injection",
+        "| Rotation from Flywheel End | Anti-clockwise Anti-clockwise",
+        "| Cooling System | Liquid Liquid",
+        "| Aftertreatment | - -",
+        "| Typical Alternator Efficiency | 87-89% 87-89%",
+        "| Switchable | Yes Yes",
+        "| Length | 37.3 in 948 mm",
+        "| Width | 19.6 in 498 mm",
+        "| Height | 33.1 in 841 mm",
+        "| Dry Weight | 534 lb 242 kg"
+      ],
+      "src": [
+        2
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Perkins 403D-15G Electric Power – Product Specifications",
+      "header": [
+        "| Gross Mechanical Output | 12.2-16.2 kWm 12.2-16.2 kWm"
+      ],
+      "rows": [
+        "| Typical Electrical Output | 13.1-17.5 kVA (10.4-14 kWe) 13.1-17.5 kVA (10.4-14 kWe)",
+        "| Rated Speed | 1500/1800 rpm 1500/1800 rpm",
+        "| Emissions | UN ECE R96 Stage IIIA constant speed and U.S. EPA Stationary Emergency Engine UN ECE R96 Stage IIIA constant speed and U.S. EPA Stationary Emergency Engine",
+        "| Prime | 13.1 kVA 13.1 kVA",
+        "| Standby | 14.5 kVA 14.5 kVA",
+        "| Prime | 12.7 kWe 12.7 kWe",
+        "| Standby | 14 kWe 14 kWe",
+        "| Number of Cylinders | 3 inline 3 inline",
+        "| Bore | 3.3 in 84 mm",
+        "| Stroke | 3.5 in 90 mm",
+        "| Displacement | 91.3 in³ 1.5 l",
+        "| Compression Ratio | 22.5:1 22.5:1",
+        "| Aspiration | Naturally aspirated Naturally aspirated",
+        "| Combustion System | Indirect injection Indirect injection",
+        "| Rotation from Flywheel End | Anti-clockwise Anti-clockwise",
+        "| Cooling System | Liquid Liquid",
+        "| Aftertreatment | - -",
+        "| Typical Alternator Efficiency | 87-88% 87-88%",
+        "| Switchable | No No",
+        "| Length | 32.3 in 820 mm",
+        "| Width | 18.7 in 476 mm",
+        "| Height | 31.1 in 791 mm",
+        "| Dry Weight | 434 lb 197 kg"
+      ],
+      "src": [
+        3
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "Perkins 404D-22TG Electric Power – Product Specifications",
+      "header": [
+        "| Gross Mechanical Output | 33.3 kWm 33.3 kWm"
+      ],
+      "rows": [
+        "| Typical Electrical Output | 27-36 kVA (22-29 kWe) 27-36 kVA (22-29 kWe)",
+        "| Rated Speed | 1500/1800 rpm 1500/1800 rpm",
+        "| Emissions | UN ECE R96 Stage IIIA constant speed and U.S. EPA Stationary Emergency Engine UN ECE R96 Stage IIIA constant speed and U.S. EPA Stationary Emergency Engine",
+        "| Prime | 27.4 kVA 27.4 kVA",
+        "| Standby | 30.1 kVA 30.1 kVA",
+        "| Prime | 26.3 kWe 26.3 kWe",
+        "| Standby | 29 kWe 29 kWe",
+        "| Number of Cylinders | 4 inline 4 inline",
+        "| Bore | 3.3 in 84 mm",
+        "| Stroke | 3.9 in 100 mm",
+        "| Displacement | 135.2 in³ 2.2 l",
+        "| Compression Ratio | 23.3:1 23.3:1",
+        "| Aspiration | Turbocharged Turbocharged",
+        "| Combustion System | Indirect injection Indirect injection",
+        "| Rotation from Flywheel End | Anti-clockwise Anti-clockwise",
+        "| Cooling System | Liquid Liquid",
+        "| Aftertreatment | - -",
+        "| Typical Alternator Efficiency | 88-89% 88-89%",
+        "| Switchable | Yes Yes",
+        "| Length | 38.3 in 973 mm",
+        "| Width | 23.2 in 590 mm",
+        "| Height | 38.3 in 973 mm",
+        "| Dry Weight | 534 lb 242 kg"
+      ],
+      "src": [
+        4
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "Perkins 404D-22TAG Electric Power – Product Specifications",
+      "header": [
+        "| Gross Mechanical Output | 34.4-36.3 kWm 34.4-36.3 kWm"
+      ],
+      "rows": [
+        "| Typical Electrical Output | 37-40 kVA (29-32 kWe) 37-40 kVA (29-32 kWe)",
+        "| Rated Speed | 1800 rpm 1800 rpm",
+        "| Emissions | UN ECE R96 Stage IIIA constant speed and U.S. EPA Stationary Emergency Engine UN ECE R96 Stage IIIA constant speed and U.S. EPA Stationary Emergency Engine",
+        "| Prime | 29.2 kWe 29.2 kWe",
+        "| Standby | 32.1 kWe 32.1 kWe",
+        "| Number of Cylinders | 4 inline 4 inline",
+        "| Bore | 3.3 in 84 mm",
+        "| Stroke | 3.9 in 100 mm",
+        "| Displacement | 135.2 in³ 2.2 l",
+        "| Compression Ratio | 23.3:1 23.3:1",
+        "| Aspiration | Turbocharged aftercooled Turbocharged aftercooled",
+        "| Combustion System | Indirect injection Indirect injection",
+        "| Rotation from Flywheel End | Anti-clockwise Anti-clockwise",
+        "| Cooling System | Liquid Liquid",
+        "| Aftertreatment | - -",
+        "| Typical Alternator Efficiency | 90% 90%",
+        "| Switchable | No No",
+        "| Length | 41.3 in 1050 mm",
+        "| Width | 28 in 710 mm",
+        "| Height | 39.3 in 998 mm",
+        "| Dry Weight | 675 lb 306 kg"
+      ],
+      "src": [
+        5
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "Perkins 1103A-33G Electric Power – Product Specifications",
+      "header": [
+        "| Gross Mechanical Output | 28 - 36.5 kWm 28 - 36.5 kWm"
+      ],
+      "rows": [
+        "| Typical Electrical Output | 30-38 kVA (24-31 kWe) 30-38 kVA (24-31 kWe)",
+        "| Rated Speed | 1500/1800 rpm 1500/1800 rpm",
+        "| Emissions | Fuel Optimised Fuel Optimised",
+        "| Prime | 30 kVA 30 kVA",
+        "| Standby | 33 KVA 33 KVA",
+        "| Prime | 27.9 kWe 27.9 kWe",
+        "| Standby | 30.6 kWe 30.6 kWe",
+        "| Number of Cylinders | 3 vertical inline 3 vertical inline",
+        "| Bore | 4.13 in 105 mm",
+        "| Stroke | 5 in 127 mm",
+        "| Displacement | 201 in³ 3.3 l",
+        "| Compression Ratio | 19.25:1 19.25:1",
+        "| Aspiration | Naturally aspirated Naturally aspirated",
+        "| Combustion System | Direct injection Direct injection",
+        "| Rotation from Flywheel End | Anti-clockwise Anti-clockwise",
+        "| Cooling System | Liquid Liquid",
+        "| Aftertreatment | - -",
+        "| Typical Alternator Efficiency | 87% 87%",
+        "| Switchable | Yes Yes",
+        "| Length | 39.4 in 1000 mm",
+        "| Width | 24.8 in 629 mm",
+        "| Height | 37.4 in 951 mm",
+        "| Dry Weight | 908 lb 412 kg"
+      ],
+      "src": [
+        6
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "Perkins 1103A-33TG Electric Power – Product Specifications",
+      "header": [
+        "| Gross Mechanical Output | 42 - 70 kWm 42 - 70 kWm"
+      ],
+      "rows": [
+        "| Typical Electrical Output | 45-75 kVA (36-60 kWe) 45-75 kVA (36-60 kWe)",
+        "| Rated Speed | 1500/1800 rpm 1500/1800 rpm",
+        "| Emissions | Fuel Optimised Fuel Optimised",
+        "| Prime | 45 - 60 kVA 45 - 60 kVA",
+        "| Standby | 50 - 66 kVA 50 - 66 kVA",
+        "| Prime | 43 - 55 kWe 43 - 55 kWe",
+        "| Standby | 47- 60 kWe 47- 60 kWe",
+        "| Number of Cylinders | 3 vertical inline 3 vertical inline",
+        "| Bore | 4.13 in 105 mm",
+        "| Stroke | 5 in 127 mm",
+        "| Displacement | 201 in³ 3.3 l",
+        "| Compression Ratio | 17.3:1 17.3:1",
+        "| Aspiration | Turbocharged Turbocharged",
+        "| Combustion System | Direct injection Direct injection",
+        "| Rotation from Flywheel End | Anti-clockwise Anti-clockwise",
+        "| Cooling System | Liquid Liquid",
+        "| Aftertreatment | - -",
+        "| Typical Alternator Efficiency | 89% 89%",
+        "| Switchable | Yes Yes",
+        "| Length | 45.3 in 1150 mm",
+        "| Width | 30 in 760 mm",
+        "| Height | 51.2 in 1300 mm",
+        "| Dry Weight | 926 lb 420 kg"
+      ],
+      "src": [
+        7
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "Perkins 1104A-44TG Electric Power – Product Specifications",
+      "header": [
+        "| Gross Mechanical Output | 59.6 -94.5 kWm 59.6 -94.5 kWm"
+      ],
+      "rows": [
+        "| Typical Electrical Output | 65-100 kVA (52-80 kWe) 65-100 kVA (52-80 kWe)",
+        "| Rated Speed | 1500/1800 rpm 1500/1800 rpm",
+        "| Emissions | Fuel Optimised Fuel Optimised",
+        "| Prime | 65-80 kVA 65-80 kVA",
+        "| Standby | 71.5-88 kVA 71.5-88 kVA",
+        "| Prime | 60.8-73 kWe 60.8-73 kWe",
+        "| Standby | 66.9-80.3 kWe 66.9-80.3 kWe",
+        "| Number of Cylinders | 4 vertical inline 4 vertical inline",
+        "| Bore | 4.13 in 105 mm",
+        "| Stroke | 5 in 127 mm",
+        "| Displacement | 269 in³ 4.4 l",
+        "| Compression Ratio | 17.25:1 17.25:1",
+        "| Aspiration | Turbocharged Turbocharged",
+        "| Combustion System | Direct injection Direct injection",
+        "| Rotation from Flywheel End | Anti-clockwise Anti-clockwise",
+        "| Cooling System | Liquid Liquid",
+        "| Aftertreatment | - -",
+        "| Typical Alternator Efficiency | 89% 89%",
+        "| Switchable | Yes Yes",
+        "| Length | 48.9 in 1241 mm",
+        "| Width | 24.8 in 629 mm",
+        "| Height | 37.4 in 951 mm",
+        "| Dry Weight | 1021 lb 463 kg"
+      ],
+      "src": [
+        8
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "Perkins 1104C-44TAG Electric Power – Product Specifications",
+      "header": [
+        "| Gross Mechanical Output | 75-117.5 kWm 75-117.5 kWm"
+      ],
+      "rows": [
+        "| Typical Electrical Output | 80-126.5 kVA (64-101 kWe) 80-126.5 kVA (64-101 kWe)",
+        "| Rated Speed | 1500/1800 rpm 1500/1800 rpm",
+        "| Emissions | EU Stage II/U.S. EPA Tier 2 EU Stage II/U.S. EPA Tier 2",
+        "| Prime | 80.4-101.4 kVA 80.4-101.4 kVA",
+        "| Standby | 88.8-111.9 kVA 88.8-111.9 kVA",
+        "| Prime | 72.4-91.5 kWe 72.4-91.5 kWe",
+        "| Standby | 80-101.2 kWe 80-101.2 kWe",
+        "| Number of Cylinders | 4 inline 4 inline",
+        "| Bore | 4.13 in 105 mm",
+        "| Stroke | 5 in 127 mm",
+        "| Displacement | 269 in³ 4.4 l",
+        "| Compression Ratio | 18.2:1 18.2:1",
+        "| Aspiration | Turbocharged air-to-air charge cooled Turbocharged air-to-air charge cooled",
+        "| Combustion System | Direct injection Direct injection",
+        "| Rotation from Flywheel End | Anti-clockwise Anti-clockwise",
+        "| Cooling System | Liquid Liquid",
+        "| Aftertreatment | - -",
+        "| Typical Alternator Efficiency | 90 90",
+        "| Switchable | Yes Yes",
+        "| Length | 49.6 in 1259 mm",
+        "| Width | 28.4 in 721 mm",
+        "| Height | 38 in 966 mm"
+      ],
+      "src": [
+        9
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "Perkins 1104C-44TG Electric Power – Product Specifications",
+      "header": [
+        "| Gross Mechanical Output | 56-62 kWm 56-62 kWm"
+      ],
+      "rows": [
+        "| Typical Electrical Output | 60-67 kVA (48-53 kWe) 60-67 kVA (48-53 kWe)",
+        "| Rated Speed | 1500/1800 rpm 1500/1800 rpm",
+        "| Emissions | EU Stage II/U.S. EPA Tier 2 EU Stage II/U.S. EPA Tier 2",
+        "| Prime | 60.4 kVA 60.4 kVA",
+        "| Standby | 66.7 kVA 66.7 kVA",
+        "| Prime | 54.3 kWe 54.3 kWe",
+        "| Standby | 60 kWe 60 kWe",
+        "| Number of Cylinders | 4 inline 4 inline",
+        "| Bore | 4.13 in 105 mm",
+        "| Stroke | 5 in 127 mm",
+        "| Displacement | 269 in³ 4.4 l",
+        "| Compression Ratio | 18.2:1 18.2:1",
+        "| Aspiration | Turbocharged Turbocharged",
+        "| Combustion System | Direct injection Direct injection",
+        "| Rotation from Flywheel End | Anti-clockwise Anti-clockwise",
+        "| Cooling System | Liquid Liquid",
+        "| Aftertreatment | - -",
+        "| Typical Alternator Efficiency | 90% 90%",
+        "| Switchable | Yes Yes",
+        "| Length | 48.8 in 1239 mm",
+        "| Width | 24.2 in 615 mm",
+        "| Height | 37.4 in 951 mm",
+        "| Dry Weight | 884 lb 401 kg"
+      ],
+      "src": [
+        10
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "Perkins 1106A-70TG Electric Power – Product Specifications",
+      "header": [
+        "| Gross Mechanical Output | 127-160 kWm 127-160 kWm"
+      ],
+      "rows": [
+        "| Typical Electrical Output | 135-169 kVA (108-135 kWe) 135-169 kVA (108-135 kWe)",
+        "| Rated Speed | 1500/1800 rpm 1500/1800 rpm",
+        "| Emissions | Fuel Optimised Fuel Optimised",
+        "| Prime | 135 kVA 135 kVA",
+        "| Standby | 150 kVA 150 kVA",
+        "| Prime | 121.5 kWe 121.5 kWe",
+        "| Standby | 135 kWe 135 kWe",
+        "| Number of Cylinders | 6 vertical inline 6 vertical inline",
+        "| Bore | 4.13 in 105 mm",
+        "| Stroke | 5.3 in 135 mm",
+        "| Displacement | 428 in³ 7 l",
+        "| Compression Ratio | 18.2:1 18.2:1",
+        "| Aspiration | Turbocharged Turbocharged",
+        "| Combustion System | Direct injection Direct injection",
+        "| Rotation from Flywheel End | Anti-clockwise Anti-clockwise",
+        "| Cooling System | Liquid Liquid",
+        "| Aftertreatment | - -",
+        "| Typical Alternator Efficiency | 91% 91%",
+        "| Switchable | No No",
+        "| Length | 65 in 1648 mm",
+        "| Width | 30 in 760 mm",
+        "| Height | 43 in 1092 mm",
+        "| Dry Weight | 1629 lb 739 kg"
+      ],
+      "src": [
+        11
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "Perkins 1106A-70TAG Electric Power – Product Specifications",
+      "header": [
+        "| Gross Mechanical Output | 140-204 kWm 140-204 kWm"
+      ],
+      "rows": [
+        "| Typical Electrical Output | 150-220 kVA (120-176 kWe) 150-220 kVA (120-176 kWe)",
+        "| Rated Speed | 1500/1800 rpm 1500/1800 rpm",
+        "| Emissions | Fuel Optimised Fuel Optimised",
+        "| Prime | 150.0-200 kVA 150.0-200 kVA",
+        "| Standby | 165.0-220 kVA 165.0-220 kVA",
+        "| Prime | 132.0-156.8 kWe 132.0-156.8 kWe",
+        "| Standby | 146.5-173 kWe 146.5-173 kWe",
+        "| Number of Cylinders | 6 vertical inline 6 vertical inline",
+        "| Bore | 4.13 in 105 mm",
+        "| Stroke | 5.3 in 135 mm",
+        "| Displacement | 428 in³ 7.01 l",
+        "| Compression Ratio | 16:1-18.2:1 16:1-18.2:1",
+        "| Aspiration | Turbocharged aftercooled Turbocharged aftercooled",
+        "| Combustion System | Direct injection Direct injection",
+        "| Rotation from Flywheel End | Anti-clockwise Anti-clockwise",
+        "| Cooling System | Liquid Liquid",
+        "| Aftertreatment | - -",
+        "| Typical Alternator Efficiency | 91-92% 91-92%",
+        "| Switchable | Yes Yes",
+        "| Length | 67.2 in 1706 mm",
+        "| Width | 29.8 in 756 mm",
+        "| Height | 43 in 1092 mm",
+        "| Dry Weight | 1638 lb 743 kg"
+      ],
+      "src": [
+        12
+      ]
+    }
+  ]
 }
