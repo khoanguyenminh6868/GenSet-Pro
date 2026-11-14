@@ -44,6 +44,22 @@ test("keywords: 吸气方式 → asp, 燃油率 → fuel, 润滑油 容量 → o
   assert.equal(fits("燃油率", "205"), "fuel");
 });
 
+test("pf: Power factor / 功率因数 labels (the word 'power' no longer drops them)", () => {
+  for (const l of ["Power Factor", "功率因数", "额定功率因数", "Rated Power Factor(cosφ)", "功率因数 Power Factor", "Power factor (Cos Phi)"])
+    assert.equal(fits(l, "0.8"), "pf", l);
+  assert.equal(CAT.specKey("Rated power"), null);
+  assert.equal(CAT.specKey("Prime Power (kW)"), null);
+});
+test("cooling: engine cooling only — aftercooling, charge air, piston and air/air cooling are other systems", () => {
+  for (const l of ["Aftercooling", "Charge Air Cooling", "Piston Cooling", "Air/Air cooling", "Air/Water cooling", "Aftercooling Method"])
+    assert.equal(CAT.specKey(l), "aircool", l);
+  for (const l of ["Cooling System", "Cooling method", "冷却方式 Cooling system"]) assert.equal(CAT.specKey(l), "cooling", l);
+});
+test("fuel: a percentage is not a fuel figure (lees-power 'Gas Consumption' column sits over the efficiency column: '33%')", () => {
+  assert.equal(fits("Gas Consumption", "33%"), null);
+  assert.equal(fits("Gas Consumption", "12.2"), "fuel");
+  assert.equal(fits("Fuel consumption", "35L/h"), "fuel");
+});
 test("keyOf: a trailing * (footnote) is dropped; O/0 and I/1 stay apart", () => {
   assert.equal(CAT.keyOf("QSK19-G4*"), CAT.keyOf("QSK19-G4"));
   assert.equal(CAT.keyOf("QSK19-G4**"), "QSK19G4");
