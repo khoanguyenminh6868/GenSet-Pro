@@ -50,6 +50,215 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Perkins/Mecc Alte",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "404A-22G",
+        "1103A-33G",
+        "1103A-33TG1",
+        "1103A-33TG2",
+        "1104A-44TG1",
+        "1104A-44TG2",
+        "1104C-44TAG2",
+        "1106A-70TG1",
+        "1106A-70TAG2",
+        "1106A-70TAG3",
+        "1106A-70TAG4",
+        "1206A-E70TTAG3",
+        "1506A-E88TAG5",
+        "2206A-E13TAG2",
+        "2206A-E13TAG3",
+        "2506A-E15TAG1",
+        "2506A-E15TAG2",
+        "2806A-E18TAG1",
+        "2806A-E18TAG2",
+        "2806A-E18TTAG4",
+        "2806A-E18TTAG5",
+        "4006-23TAG2A",
+        "4006-23TAG3A",
+        "4008TAG1A",
+        "4008TAG2A",
+        "4008-30TAG3",
+        "4012-46TWG2A",
+        "4012-46TWG3A",
+        "4012-46TAG2A",
+        "4012-46TAG3A",
+        "4016-61TRG1",
+        "4016-61TRG2",
+        "4016-61TRG3",
+        "4016-61TRG3X"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 20,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Perkins/Leroy",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "403A-15G",
+        "403A-15G2",
+        "404A-22G",
+        "1103A-33G",
+        "1103A-33TG1",
+        "1103A-33TG2",
+        "1104A-44TG1",
+        "1104A-44TG2",
+        "1104C-44TAG2",
+        "1106A-70TG1",
+        "1106A-70TAG2",
+        "1106A-70TAG3",
+        "1106A-70TAG4",
+        "1206A-E70TTAG3",
+        "1506A-E88TAG5",
+        "2206A-E13TAG2",
+        "2206A-E13TAG3",
+        "2506A-E15TAG1",
+        "2506A-E15TAG2",
+        "2806A-E18TAG1",
+        "2806A-E18TAG2",
+        "2806A-E18TTAG4",
+        "2806A-E18TTAG5",
+        "4006-23TAG2A",
+        "4006-23TAG3A",
+        "4008TAG1A",
+        "4008TAG2A",
+        "4008-30TAG3",
+        "4012-46TWG2A",
+        "4012-46TWG3A",
+        "4012-46TAG2A",
+        "4012-46TAG3A",
+        "4016-61TRG1",
+        "4016-61TRG2",
+        "4016-61TRG3",
+        "4016-61TRG3X"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 12.5,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Volvo/Mecc Alte",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TAD840GE",
+        "TAD841GE",
+        "TAD1341GE",
+        "TAD842GE",
+        "TAD1342GE",
+        "TAD1343GE",
+        "TAD1344GE",
+        "TAD1345GE",
+        "TAD1641GE",
+        "TAD1642GE",
+        "TWD1644GE",
+        "TWD1645GE",
+        "TWD1744GE"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 200,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Volvo/Leroy",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Volvo Penta"
+      ],
+      "engineModels": [
+        "TAD840GE",
+        "TAD841GE",
+        "TAD842GE",
+        "TAD1341GE",
+        "TAD843GE",
+        "TAD1342GE",
+        "TAD1343GE",
+        "TAD1344GE",
+        "TAD1345GE",
+        "TAD1641GE",
+        "TAD1642GE",
+        "TWD1644GE",
+        "TWD1645GE",
+        "TWD1744GE"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 200,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
     }
   ],
   "certifications": [],
@@ -69,9 +278,269 @@
         "Our product portfolio comprises diesel generating sets from 10kVA to 2,500kVA and Battery Energy Storage Systems ranging from 250kW to 3MW."
       ],
       "file": "sources/gti-power/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://gtipowergeneration.com/project/perkins-mecc-alte/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "We manufacture Perkins with Meccalte gensets ranging from 10kva – 2,250kVA for 50Hz and 11kVA – 1,700kVA 60Hz.",
+        "All gensets are supplied complete with DSE7120/DSE7320 control panel",
+        "| 20 kva | 404A-22G | ECP28-MC | DSE6120 |",
+        "| 2500 kva | 4016-61TRG3X * | ECO46-2L | DSE7320 |"
+      ],
+      "file": "sources/gti-power/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://gtipowergeneration.com/project/perkins-leroy/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "We manufacture Perkins with Leroy gensets ranging from 10kVA – 2,200kVA for 50Hz and 11kVA – 1,700kVA 60Hz.",
+        "All gensets are supplied complete with DSE7120/DSE7320 control panel",
+        "| 12.5 kva | 403A-15G | TAL040C | DSE6120 |",
+        "| 2500 kva | 4016-61TRG3X * | LSA52.3L12 | DSE7320 |"
+      ],
+      "file": "sources/gti-power/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://gtipowergeneration.com/project/volvo-mecc-alte/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "We manufacture Volvo with Mecc Alte gensets ranging from 80kVA – 630kVA 50Hz and 88kVA – 680kVA 60Hz.",
+        "All gensets are supplied complete with DSE7120/DSE7320 control panel",
+        "| 200 kva | TAD840GE | ECO38-2SC | DSE7320 |",
+        "| 750 kva | TWD1744GE | ECO40-VL | DSE7320 |"
+      ],
+      "file": "sources/gti-power/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://gtipowergeneration.com/project/volvo-leroy/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "We manufacture Volvo with Stamford gensets ranging from 80kVA – 630kVA 50Hz and 88kVA – 680kVA 60Hz.",
+        "All gensets are supplied complete with DSE7120/DSE7320 control panel",
+        "| 200 kva | TAD840GE | TAL044M | DSE7320 |",
+        "| 750 kva | TWD1744GE | TAL049C | DSE7320 |"
+      ],
+      "file": "sources/gti-power/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://gtipowergeneration.com/project/control-panels/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "supplied with a Deep Sea DSE7120 or DSE7220 control panel",
+        "from a basic DSE3110 panel with analogue gauges to a DSE8610 synchronising system panel"
+      ],
+      "file": "sources/gti-power/2005.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "GTI Perkins / Mecc Alte 50Hz",
+      "header": [
+        "| Prime Power | Engine | Alternator | DSE panel | Canopy Model"
+      ],
+      "rows": [
+        "| 20 kva | 404A-22G | ECP28-MC | DSE6120 |",
+        "| 30 kva | 1103A-33G | ECP28-VLC | DSE6120 |",
+        "| 45 kva | 1103A-33TG1 | ECP32-2SC | DSE6120 |",
+        "| 60kva | 1103A-33TG2 | ECP32-2MC | DSE6120 |",
+        "| 65 kva | 1104A-44TG1 | ECP32-1LC | DSE6120 |",
+        "| 80 kva | 1104A-44TG2 | ECP32-2LC | DSE6120 |",
+        "| 100 kva | 1104C-44TAG2 | ECP34-2SC | DSE6120 |",
+        "| 135 kva | 1106A-70TG1 | ECP34-2MC | DSE6120 |",
+        "| 150 kva | 1106A-70TAG2 | ECP34-1LC | DSE6120 |",
+        "| 180 kva | 1106A-70TAG3 | ECO38-1SC | DSE6120 |",
+        "| 200 kva | 1106A-70TAG4 | ECO38-2SC | DSE6120 |",
+        "| 250 kva | 1206A-E70TTAG3 | ECO38-2MC | DSE7320 |",
+        "| 300 kva | 1506A-E88TAG5 | ECO38-1LC | DSE7320 |",
+        "| 350 kva | 2206A-E13TAG2 | ECO38-2LC | DSE7320 |",
+        "| 400 kva | 2206A-E13TAG3 | ECO40-1S | DSE7320 |",
+        "| 450 kva | 2506A-E15TAG1 | ECO40-2S | DSE7320 |",
+        "| 500 kva | 2506A-E15TAG2 | ECO40-3S | DSE7320 |",
+        "| 600 kva | 2806A-E18TAG1 | ECO40-2L | DSE7320 |",
+        "| 650 kva | 2806A-E18TAG2 | ECO40-3L | DSE7320 |",
+        "| 700 kva | 2806A-E18TTAG4 | ECO40-VL | DSE7320 |",
+        "| 750 kva | 2806A-E18TTAG5 | ECO40-VL | DSE7320 |",
+        "| 750 kva | 4006-23TAG2A | ECO40-VL | DSE7320 |",
+        "| 800 kva | 4006-23TAG3A | ECO43-1S | DSE7320 |",
+        "| 900 kva | 4008TAG1A | ECO43-2S | DSE7320 |",
+        "| 1000 kva | 4008TAG2A | ECO43-1M | DSE7320 |",
+        "| 1100 kva | 4008-30TAG3 | ECO43-2M | DSE7320 |",
+        "| 1250 kva | 4012-46TWG2A | ECO43-2LN | DSE7320 |",
+        "| 1350 kva | 4012-46TWG3A | ECO43-VL | DSE7320 |",
+        "| 1500 kva | 4012-46TAG2A | ECO46-1S | DSE7320 |",
+        "| 1700 kva | 4012-46TAG3A | ECO46-2S | DSE7320 |",
+        "| 1850 kva | 4016-61TRG1 | ECO46-1L | DSE7320 |",
+        "| 2000 kva | 4016-61TRG2 | ECO46-1L | DSE7320 |",
+        "| 2250 kva | 4016-61TRG3 | ECO46-1.5L | DSE7320 |",
+        "| 2500 kva | 4016-61TRG3X * | ECO46-2L | DSE7320 |"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "GTI Perkins / Leroy 50Hz",
+      "header": [
+        "| Prime Power | Engine | Alternator | Control Panel | Canopy"
+      ],
+      "rows": [
+        "| 12.5 kva | 403A-15G | TAL040C | DSE6120 |",
+        "| 15 kva | 403A-15G2 | TAL040D | DSE6120 |",
+        "| 20 kva | 404A-22G | TAL040F | DSE6120 |",
+        "| 30 kva | 1103A-33G | TAL042C | DSE6120 |",
+        "| 45 kva | 1103A-33TG1 | TAL042F | DSE6120 |",
+        "| 60kva | 1103A-33TG2 | TAL042H | DSE6120 |",
+        "| 65 kva | 1104A-44TG1 | TAL044A | DSE6120 |",
+        "| 80 kva | 1104A-44TG2 | TAL044B | DSE6120 |",
+        "| 100 kva | 1104C-44TAG2 | TAL044D | DSE6120 |",
+        "| 135 kva | 1106A-70TG1 | TAL044H | DSE6120 |",
+        "| 150 kva | 1106A-70TAG2 | TAL044J | DSE6120 |",
+        "| 180 kva | 1106A-70TAG3 | TAL044L | DSE6120 |",
+        "| 200 kva | 1106A-70TAG4 | TAL044M | DSE6120 |",
+        "| 250 kva | 1206A-E70TTAG3 | TAL046D | DSE7320 |",
+        "| 300 kva | 1506A-E88TAG5 | TAL046F | DSE7320 |",
+        "| 350 kva | 2206A-E13TAG2 | TAL046H | DSE7320 |",
+        "| 400 kva | 2206A-E13TAG3 | TAL047A | DSE7320 |",
+        "| 450 kva | 2506A-E15TAG1 | TAL047B | DSE7320 |",
+        "| 500 kva | 2506A-E15TAG2 | TAL047C | DSE7320 |",
+        "| 600 kva | 2806A-E18TAG1 | TAL047E | DSE7320 |",
+        "| 650 kva | 2806A-E18TAG2 | TAL047F | DSE7320 |",
+        "| 700 kva | 2806A-E18TTAG4 | TAL049B | DSE7320 |",
+        "| 750 kva | 2806A-E18TTAG5 | TAL049C | DSE7320 |",
+        "| 750 kva | 4006-23TAG2A | TAL049C | DSE7320 |",
+        "| 800 kva | 4006-23TAG3A | TAL049C | DSE7320 |",
+        "| 900 kva | 4008TAG1A | TAL049D | DSE7320 |",
+        "| 1000 kva | 4008TAG2A | TAL049E | DSE7320 |",
+        "| 1100 kva | 4008-30TAG3 | LSA50.2M6 | DSE7320 |",
+        "| 1250 kva | 4012-46TWG2A | LSA50.2M6 | DSE7320 |",
+        "| 1350 kva | 4012-46TWG3A | LSA50.2L7 | DSE7320 |",
+        "| 1500 kva | 4012-46TAG2A | LSA50.2L8 | DSE7320 |",
+        "| 1700 kva | 4012-46TAG3A | LSA52.3S5 | DSE7320 |",
+        "| 1850 kva | 4016-61TRG1 | LSA52.3S5 | DSE7320 |",
+        "| 2000 kva | 4016-61TRG2 | LSA52.3S6 | DSE7320 |",
+        "| 2200 kva | 4016-61TRG3 | LSA52.3S7 | DSE7320 |",
+        "| 2500 kva | 4016-61TRG3X * | LSA52.3L12 | DSE7320 |"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "GTI Volvo / Mecc Alte 50Hz",
+      "header": [
+        "| Prime Power | Engine | Alternator | Control Panel | Canopy"
+      ],
+      "rows": [
+        "| 200 kva | TAD840GE | ECO38-2SC | DSE7320 |",
+        "| 250 kva | TAD841GE | ECO38-2MC | DSE7320 |",
+        "| 300 kva | TAD1341GE | ECO38-1LC | DSE7320 |",
+        "| 300 kva | TAD842GE | ECO38-1LC | DSE7320 |",
+        "| 325 kva | TAD842GE | ECO38-2LC | DSE7320 |",
+        "| 350 kva | TAD1342GE | ECO38-2LC | DSE7320 |",
+        "| 375 kva | TAD1343GE | ECO40-1S | DSE7320 |",
+        "| 400 kva | TAD1344GE | ECO40-1S | DSE7320 |",
+        "| 450 kva | TAD1345GE | ECO40-2S | DSE7320 |",
+        "| 500 kva | TAD1641GE | ECO40-3S | DSE7320 |",
+        "| 590 kva | TAD1642GE | ECO40-2L | DSE7320 |",
+        "| 650 kva | TWD1644GE | ECO40-3L | DSE7320 |",
+        "| 700 kva | TWD1645GE | ECO40-VL | DSE7320 |",
+        "| 750 kva | TWD1744GE | ECO40-VL | DSE7320 |"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "GTI Volvo / Leroy 50Hz",
+      "header": [
+        "| Prime Power | Engine | Alternator | DSE panel | Canopy"
+      ],
+      "rows": [
+        "| 200 kva | TAD840GE | TAL044M | DSE7320 |",
+        "| 250 kva | TAD841GE | TAL046D | DSE7320 |",
+        "| 300 kva | TAD842GE | TAL046F | DSE7320 |",
+        "| 300 kva | TAD1341GE | TAL046F | DSE7320 |",
+        "| 325 kva | TAD843GE | TAL046G | DSE7320 |",
+        "| 350 kva | TAD1342GE | TAL046H | DSE7320 |",
+        "| 375 kva | TAD1343GE | TAL047A | DSE7320 |",
+        "| 400 kva | TAD1344GE | TAL047A | DSE7320 |",
+        "| 450 kva | TAD1345GE | TAL047B | DSE7320 |",
+        "| 500 kva | TAD1641GE | TAL047C | DSE7320 |",
+        "| 590 kva | TAD1642GE | TAL047E | DSE7320 |",
+        "| 650 kva | TWD1644GE | TAL047F | DSE7320 |",
+        "| 700 kva | TWD1645GE | TAL049B | DSE7320 |",
+        "| 750 kva | TWD1744GE | TAL049C | DSE7320 |"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "DSE6120",
+      "line": "| 20 kva | 404A-22G | ECP28-MC | DSE6120 |",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "| 250 kva | 1206A-E70TTAG3 | ECO38-2MC | DSE7320 |",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7120",
+      "text": "DSE7120",
+      "line": "All gensets are supplied complete with DSE7120/DSE7320 control panel, battery charger, appropriately sized ABB circuit breaker, steel welded baseframe with minimum 8 hour fuel tank, AVMs, batteries, silencers, flex and all other standard accessories so that your genset is ready for use. All you need to add is fuel, oil and coolant.",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7220",
+      "text": "DSE7220",
+      "line": "All of our gensets come as standard supplied with a Deep Sea DSE7120 or DSE7220 control panel along with a Deep Sea battery charger and an appropriately sized ABB circuit breaker. Deep Sea Electronics is one of the world’s top manufacturers of generator control and battery charger equipment. All of our control panels are made in the UK and are of excellent quality.",
+      "src": [
+        2005
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE3110",
+      "text": "DSE3110",
+      "line": "However we are not limited to these and can supply a panel to meet any customer’s requirements… from a basic DSE3110 panel with analogue gauges to a DSE8610 synchronising system panel. Whatever you require we will help you to find a solution.",
+      "src": [
+        2005
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "DSE8610",
+      "line": "However we are not limited to these and can supply a panel to meet any customer’s requirements… from a basic DSE3110 panel with analogue gauges to a DSE8610 synchronising system panel. Whatever you require we will help you to find a solution.",
+      "src": [
+        2005
+      ]
+    }
+  ]
 }
