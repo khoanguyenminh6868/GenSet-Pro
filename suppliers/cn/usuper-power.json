@@ -63,6 +63,282 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Usuper 500kVA Yuchai Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [
+        "YC6T660L-D20"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Usuper 30kVA Yuchai Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [
+        "YC4V45Z-D20"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Usuper 60kVA Yuchai Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [
+        "YC4D90Z-D21"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Usuper 80kVA Yuchai Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [
+        "YC4A100Z-D20"
+      ],
+      "power": {
+        "min": 80,
+        "max": 80,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Usuper 100kVA Yuchai Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [
+        "YC4A140L-D20"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Usuper 150kVA Yuchai Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [
+        "YC6B205L-D20"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Usuper 250kVA Yuchai Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [
+        "YC6MK350L-D20"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Usuper 375kVA Yuchai Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [
+        "YC6MJ500L-D21"
+      ],
+      "power": {
+        "min": 375,
+        "max": 375,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Usuper 625kVA Yuchai Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [
+        "YC6TD840-D31"
+      ],
+      "power": {
+        "min": 625,
+        "max": 625,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Usuper 750kVA Yuchai Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [
+        "YC6TD900-D31"
+      ],
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Usuper 1000kVA Yuchai Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [
+        "YC6TH1320-D31"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Usuper 1250kVA Yuchai Generator",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [
+        "YC6C1660-D31"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
     }
   ],
   "certifications": [
@@ -94,9 +370,273 @@
         "We also provide full ODM&OEM customized services"
       ],
       "file": "sources/usuper-power/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://usuperpower.com/500kva-yuchai-generator-specs/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "500kVA Yuchai YC6T660L-D20 Generator Specs - Usuper Power",
+        "Powered by Yuchai’s YC6T 6-cylinder turbocharged intercooled engine, this generator delivers 400kW prime/440kW standby power at 50Hz/1500rpm (400V/230V, 0.8 lagging). It offers excellent fuel efficiency (195-210g/kWh), robust high-altitude performance (<5% power loss at 3000m), and optional -30℃ cold-start capability."
+      ],
+      "file": "sources/usuper-power/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://usuperpower.com/30kva-yuchai-generator-specs/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Usuper Power 30kVA YC4V45Z-D20 Yuchai Engine Generator"
+      ],
+      "file": "sources/usuper-power/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://usuperpower.com/60kva-yuchai-generator-specs/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Usuper Power 60kVA Yuchai YC4D90Z-D21 Generator Specs"
+      ],
+      "file": "sources/usuper-power/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://usuperpower.com/80kva-yuchai-generator-specs/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "80kVA Yuchai YC4A100Z-D20 Diesel Engine Generator Specs"
+      ],
+      "file": "sources/usuper-power/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://usuperpower.com/100kva-yuchai-generator-specs/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "100kVA Yuchai YC4A140L-D20 Generator Specs - Usuper Power"
+      ],
+      "file": "sources/usuper-power/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://usuperpower.com/150kva-yuchai-generator-specs/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "150kVA Yuchai YC6B205L-D20 Engine Generator - Usuper Power",
+        "150kVA Yuchai generator delivers 120kW prime/132kW standby power at 400V/230V 50Hz, powered by YC4A/YC6B turbocharged intercooled engines with high-pressure common rail technology. Equipped with 100% copper brushless alternator and a digital intelligent control system, it supports 110% overload for 1 hour and -15°C cold start, available in open, silent, trailer, and marine models."
+      ],
+      "file": "sources/usuper-power/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://usuperpower.com/250kva-yuchai-generator-specs/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "250kVA Yuchai YC6MK350L-D20 Generator Specs - Usuper Power",
+        "250kVA Yuchai generator delivers 200kW prime/220kW standby power at 400V/230V 50Hz, powered by YC6MK 6-cylinder turbocharged intercooled engine with high-pressure common rail technology. It is available in open, silent, trailer, containerized, and marine models."
+      ],
+      "file": "sources/usuper-power/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://usuperpower.com/375kva-yuchai-generator-specs/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Usuper Power 375kVA Yuchai YC6MJ500L-D21 Generator Specs"
+      ],
+      "file": "sources/usuper-power/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://usuperpower.com/625kva-yuchai-generator-specs/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Usuper Power 625kVA Yuchai YC6TD840-D31 Generator Specs",
+        "The 625kVA Yuchai generator provides 500kW prime/550kW standby power, driven by Yuchai’s YC6TD turbocharged engine with low fuel consumption. Equipped with premium brushless alternators and digital controllers, it comes in open, silent, and trailer types."
+      ],
+      "file": "sources/usuper-power/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://usuperpower.com/750kva-yuchai-generator-specs/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "750kVA Yuchai YC6TD900-D31 Generator Specs - Usuper Power"
+      ],
+      "file": "sources/usuper-power/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://usuperpower.com/1000kva-yuchai-generator-specs/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Usuper Power 1000kVA YC6TH1320-D31 Engine Generator Specs",
+        "The 1000kVA Yuchai diesel generator (800kW prime/880kW standby) is a reliable, fuel-efficient power solution from China’s leading engine manufacturer. Available in multiple configurations, this durable, low-maintenance generator provides prime/standby power for data centers, factories, hospitals, and infrastructure worldwide, backed by an extensive service network."
+      ],
+      "file": "sources/usuper-power/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "https://usuperpower.com/1250kva-yuchai-generator-specs/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "1250kVA Yuchai YC6C1660-D31 Engine Generator Specs"
+      ],
+      "file": "sources/usuper-power/2012.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Usuper 500kVA Yuchai Generator",
+      "header": [
+        "500kVA Yuchai Generator Specs"
+      ],
+      "rows": [
+        "500kVA Yuchai YC6T660L-D20 Generator Specs - Usuper Power",
+        "Powered by Yuchai’s YC6T 6-cylinder turbocharged intercooled engine, this generator delivers 400kW prime/440kW standby power at 50Hz/1500rpm (400V/230V, 0.8 lagging). It offers excellent fuel efficiency (195-210g/kWh), robust high-altitude performance (<5% power loss at 3000m), and optional -30℃ cold-start capability."
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Usuper 30kVA Yuchai Generator",
+      "header": [
+        "30kVA Yuchai Generator Specs"
+      ],
+      "rows": [
+        "Usuper Power 30kVA YC4V45Z-D20 Yuchai Engine Generator"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "Usuper 60kVA Yuchai Generator",
+      "header": [
+        "60kVA Yuchai Generator Specs"
+      ],
+      "rows": [
+        "Usuper Power 60kVA Yuchai YC4D90Z-D21 Generator Specs"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "Usuper 80kVA Yuchai Generator",
+      "header": [
+        "80kVA Yuchai Generator Specs"
+      ],
+      "rows": [
+        "80kVA Yuchai YC4A100Z-D20 Diesel Engine Generator Specs"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "Usuper 100kVA Yuchai Generator",
+      "header": [
+        "100kVA Yuchai Generator Specs"
+      ],
+      "rows": [
+        "100kVA Yuchai YC4A140L-D20 Generator Specs - Usuper Power"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "Usuper 150kVA Yuchai Generator",
+      "header": [
+        "150kVA Yuchai Generator Specs"
+      ],
+      "rows": [
+        "150kVA Yuchai YC6B205L-D20 Engine Generator - Usuper Power",
+        "150kVA Yuchai generator delivers 120kW prime/132kW standby power at 400V/230V 50Hz, powered by YC4A/YC6B turbocharged intercooled engines with high-pressure common rail technology. Equipped with 100% copper brushless alternator and a digital intelligent control system, it supports 110% overload for 1 hour and -15°C cold start, available in open, silent, trailer, and marine models."
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "Usuper 250kVA Yuchai Generator",
+      "header": [
+        "250kVA Yuchai Generator Specs"
+      ],
+      "rows": [
+        "250kVA Yuchai YC6MK350L-D20 Generator Specs - Usuper Power",
+        "250kVA Yuchai generator delivers 200kW prime/220kW standby power at 400V/230V 50Hz, powered by YC6MK 6-cylinder turbocharged intercooled engine with high-pressure common rail technology. It is available in open, silent, trailer, containerized, and marine models."
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "Usuper 375kVA Yuchai Generator",
+      "header": [
+        "375kVA Yuchai Generator Specs"
+      ],
+      "rows": [
+        "Usuper Power 375kVA Yuchai YC6MJ500L-D21 Generator Specs"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "Usuper 625kVA Yuchai Generator",
+      "header": [
+        "625kVA Yuchai Generator Specs"
+      ],
+      "rows": [
+        "Usuper Power 625kVA Yuchai YC6TD840-D31 Generator Specs",
+        "The 625kVA Yuchai generator provides 500kW prime/550kW standby power, driven by Yuchai’s YC6TD turbocharged engine with low fuel consumption. Equipped with premium brushless alternators and digital controllers, it comes in open, silent, and trailer types."
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "Usuper 750kVA Yuchai Generator",
+      "header": [
+        "750kVA Yuchai Generator Specs"
+      ],
+      "rows": [
+        "750kVA Yuchai YC6TD900-D31 Generator Specs - Usuper Power"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "Usuper 1000kVA Yuchai Generator",
+      "header": [
+        "1000kVA Yuchai Generator Specs"
+      ],
+      "rows": [
+        "Usuper Power 1000kVA YC6TH1320-D31 Engine Generator Specs",
+        "The 1000kVA Yuchai diesel generator (800kW prime/880kW standby) is a reliable, fuel-efficient power solution from China’s leading engine manufacturer. Available in multiple configurations, this durable, low-maintenance generator provides prime/standby power for data centers, factories, hospitals, and infrastructure worldwide, backed by an extensive service network."
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "Usuper 1250kVA Yuchai Generator",
+      "header": [
+        "1250kVA Yuchai Generator Specs"
+      ],
+      "rows": [
+        "1250kVA Yuchai YC6C1660-D31 Engine Generator Specs"
+      ]
+    }
+  ]
 }
