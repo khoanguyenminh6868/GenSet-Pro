@@ -52,12 +52,14 @@
     return p;
   }
 
+  // Past tenders (bidhist, ~14 MB) load silently, even right after a click (Khoa, 2026-11-14).
+  const quiet = (u) => /[?&]coll=eq\.bidhist(&|$)/.test(String(u || ""));
   const fetch0 = window.fetch.bind(window);
-  window.fetch = (...a) => { const p = fetch0(...a); return active() ? track(p) : p; };
+  window.fetch = (...a) => { const p = fetch0(...a); return active() && !quiet(a[0]?.url || a[0]) ? track(p) : p; };
   // A response's body can take longer than its headers (a large file): reading it counts too.
   for (const m of ["json", "text", "blob", "arrayBuffer", "formData"]) {
     const read = Response.prototype[m];
-    if (read) Response.prototype[m] = function () { const p = read.call(this); return active() ? track(p) : p; };
+    if (read) Response.prototype[m] = function () { const p = read.call(this); return active() && !quiet(this.url) ? track(p) : p; };
   }
   // Other slow work an action waits for, counted like a fetch (loading a library, building a file): window.genbidBusy(promise) returns the promise.
   window.genbidBusy = (p) => (active() ? track(p) : p);

@@ -22,6 +22,9 @@
       const ua = navigator.userAgent;
       sb.rpc("log_activity", { p_action: "login", p_detail: { device: /Mobi|Android|iPhone|iPad/.test(ua) ? "Điện thoại" : "Máy tính", ua: ua.slice(0, 200) } }).then(() => {}, () => {});
     }
+    // Ask the browser to keep this device's copy of the documents (IndexedDB): a site not opened for a while is the first
+    // one cleared when the disk fills, and the next visit then reads every collection again (~30 MB, a long first load).
+    navigator.storage?.persisted?.().then((p) => p || navigator.storage.persist()).catch(() => {});
     window.genbidRole = member.role;
     window.genbidEmail = member.email;
     if (member.role === "superadmin") logButton();
@@ -288,6 +291,7 @@
     const at = (coll) => (LITE.has(coll) ? coll + "@lite" : coll);
     return {
       read: (coll) => tx("readonly", (s) => s.index("coll").getAll(at(coll))),
+      count: (coll) => tx("readonly", (s) => s.index("coll").count(at(coll))),
       put: (rows) => rows.length && tx("readwrite", (s) => rows.forEach((r) => s.put({ ...r, coll: at(r.coll) }))),
       del: (coll, ids) => ids.length && tx("readwrite", (s) => ids.forEach((id) => s.delete([at(coll), id]))),
       dropWhole: (coll) => tx("readwrite", (s) => s.delete(IDBKeyRange.bound([coll, ""], [coll, "￿"]))),
@@ -400,6 +404,8 @@
       }));
       changed.forEach(notify);
     },
+    // Whether this device holds a copy of a collection (null when it cannot tell): without one the first read is the whole collection.
+    async hasCopy(coll) { const n = await local.count(coll); return n == null ? null : n > 0; },
     // The whole document behind a light copy (the open tender's analysis); listeners hear when it arrives.
     full(path) {
       const [coll, id] = split(path);

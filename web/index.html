@@ -1254,8 +1254,8 @@ function ourStats() {
 function statTiles() {
   const st = ourStats(), pct = (v) => (100 * v).toLocaleString("vi-VN", { maximumFractionDigits: 1 }) + "%";
   const tile = (l, v, sub, c) => h`<div class="kpi kstat" role="button" tabindex="0" data-kstat="${st?.id || ""}" style="--kc:${raw(c)}"><span class="kl">${l}</span><span class="kv">${v}</span><span class="ks">${sub}</span></div>`;
-  return tile("Tỉ lệ thắng thầu", st?.decided ? pct(st.wins / st.decided) : "—", st?.decided ? `trúng ${st.wins} / ${st.decided} gói có kết quả` : state.loaded.hist ? "chưa có gói có kết quả" : "đang tải lịch sử thầu", "var(--mint)")
-    + tile("Giá thường bỏ", st?.median ? pct(st.median) : "—", st?.median ? `giá gói, trung vị ${st.n} lượt dự thầu` : state.loaded.hist ? "chưa có giá dự thầu" : "đang tải lịch sử thầu", "var(--violet)");
+  return tile("Tỉ lệ thắng thầu", st?.decided ? pct(st.wins / st.decided) : "—", st?.decided ? `trúng ${st.wins} / ${st.decided} gói có kết quả` : state.loaded.hist ? "chưa có gói có kết quả" : "", "var(--mint)")
+    + tile("Giá thường bỏ", st?.median ? pct(st.median) : "—", st?.median ? `giá gói, trung vị ${st.n} lượt dự thầu` : state.loaded.hist ? "chưa có giá dự thầu" : "", "var(--violet)");
 }
 const syncDoneNote = { at: "", base: undefined };
 function renderTop() {
@@ -1390,7 +1390,9 @@ function passFilters(t) {
 }
 const FUNNEL = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 5h18l-7 8v6l-4 2v-8z"/></svg>';
 // Wait for the deleted, closed (seen) and past (bidhist) lists too, so counts do not jump once they arrive.
-const listReady = () => state.loaded.feed && state.loaded.deleted && state.loaded.seen && state.loaded.tracked && state.loaded.hist;
+// The list waits for bidhist only when this device has a copy of it (read at once); without one (first visit, or the
+// browser cleared it) bidhist is ~14 MB and loads silently after the list shows (Khoa, 2026-11-14).
+const listReady = () => state.loaded.feed && state.loaded.deleted && state.loaded.seen && state.loaded.tracked && (state.loaded.hist || histQuiet);
 function renderGrid() {
   if (urlTender && findTender(urlTender)) { const k = urlTender; urlTender = null; openDrawer(k); return; }
   if (urlInvestor && listReady()) { const n = urlInvestor; urlInvestor = null; drawerBack = []; openInvestor(n); }
@@ -2120,7 +2122,8 @@ const pct0 = (x) => Math.round(100 * x) + "%";
 function competeHtml(t) {
   if (!isGensetName(t.bidName)) return "";
   const c = competeOf(t);
-  if (!c) return state.loaded.hist ? "" : '<div class="compete"><div class="row"><h2 style="flex:1">Cạnh tranh dự báo</h2></div><div class="muted small">Đang tải lịch sử thầu...</div></div>';
+  // Lịch sử thầu chưa về: không hiện gì, khối tự hiện khi tải xong (Khoa, 2026-11-14).
+  if (!c) return "";
   const { fc } = c, L = fc.lock, st = L.stats, iv = fc.parts.investor, pv = fc.parts.province, n = t.result?.numBidderJoin;
   const chip = L.level === "high" ? '<span class="chip bad">Nhiều khả năng đã có nhà thầu quen</span>' : L.level === "some" ? '<span class="chip warn">Có dấu hiệu nhà thầu quen</span>' : L.level === "open" ? '<span class="chip ok">Chưa thấy nhà thầu quen</span>' : "";
   const share = (x, k) => (x.n ? pct0(x[k] / x.n) : "—");
@@ -4475,10 +4478,11 @@ function comparisonHtml(c) {
 // bidhist/<TBMT>: every "máy phát điện" tender on muasamcong that was opened, with each lot's price, every bidder's bid,
 // result and reason, and the won goods (Windows bot, genbid-sync.js history). Read only when the Nhà thầu screen or
 // Gợi ý giá đấu needs it. Tenders of our own list read before (bidders/<TBMT>) count too when the history lacks them.
-let histLoad = null, histIdx = null;
+let histLoad = null, histIdx = null, histQuiet = false;
 function loadHist() {
   // Chưa có db (mở thẳng /#nha-thau trước initDb): không nhớ kết quả rỗng, initDb gọi lại loadHist() khi có db.
   if (!state.db) { state.bidhist ||= {}; state.loaded.hist = true; return Promise.resolve(); }
+  if (!histLoad) state.db.hasCopy?.("bidhist").then((has) => { if (has === false && !state.loaded.hist) { histQuiet = true; renderSoon(); } }, () => {});
   return (histLoad ||= new Promise((res) => {
     state.db.collection("bidhist").onSnapshot((snap) => {
       const next = {};
