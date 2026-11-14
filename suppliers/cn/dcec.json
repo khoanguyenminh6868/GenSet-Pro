@@ -65,6 +65,60 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "engine",
+      "series": "QSB6.7 发电用发动机",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSB6.7-G3",
+        "QSB6.7-G4",
+        "QSB6.7-G31",
+        "QSB6.7-G32"
+      ],
+      "power": {
+        "min": 151,
+        "max": 209,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "QSB5.9 发电用发动机",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSB5.9-G2",
+        "QSB5.9-G3",
+        "QSB5.9-G30",
+        "QSB5.9-G31",
+        "QSB5.9-G32",
+        "QSB5.9-G33"
+      ],
+      "power": {
+        "min": 96,
+        "max": 159,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
     }
   ],
   "certifications": [],
@@ -100,9 +154,69 @@
         "With more than 2,000 DCEC authorized service outlets across the country, and overseas Cummins dealers in more than 190 countries and regions"
       ],
       "file": "sources/dcec/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.dcec.com.cn/product/fdy-pro-detail-2082.htm",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "QSB6.7 发电用发动机",
+        "额定功率至209KW",
+        "备用功率至230kW",
+        "| QSB6.7-G3 | 151/1500 | 166/1500",
+        "| QSB6.7-G31 | 209/1500 | 230/1500"
+      ],
+      "file": "sources/dcec/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.dcec.com.cn/product/fdy-pro-detail-2081.htm",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "QSB5.9 发电用发动机",
+        "额定功率至159KW",
+        "备用功率至175kW",
+        "| QSB5.9-G2 | 96/1500 | 106/1500",
+        "| QSB5.9-G33 | 159/1500 | 175/1500"
+      ],
+      "file": "sources/dcec/2002.md",
+      "official": true
     }
   ],
   "confidence": "high",
-  "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "QSB6.7 发电用发动机 – 产品型谱",
+      "header": [
+        "| 机型 | 额定功率/转速(kW/rpm) | 备用功率/转速(kW/rpm)"
+      ],
+      "rows": [
+        "| QSB6.7-G3 | 151/1500 | 166/1500",
+        "| QSB6.7-G4 | 168/1500 | 185/1500",
+        "| QSB6.7-G31 | 209/1500 | 230/1500",
+        "| QSB6.7-G32 | 173/1500 | 190/1500"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "QSB5.9 发电用发动机 – 产品型谱",
+      "header": [
+        "| 机型 | 额定功率/转速(kW/rpm) | 备用功率/转速(kW/rpm)"
+      ],
+      "rows": [
+        "| QSB5.9-G2 | 96/1500 | 106/1500",
+        "| QSB5.9-G3 | 120/1500 | 132/1500",
+        "| QSB5.9-G30 | 116/1500 | 128/1500",
+        "| QSB5.9-G31 | 132/1500 | 145/1500",
+        "| QSB5.9-G32 | 140/1500 | 155/1500",
+        "| QSB5.9-G33 | 159/1500 | 175/1500"
+      ]
+    }
+  ]
 }
