@@ -69,6 +69,29 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "engine",
+      "series": "MAN 21/31DF-M甲醇双燃料发动机",
+      "fuel": "dual",
+      "engineMakes": [
+        "MAN"
+      ],
+      "engineModels": [
+        "MAN 21/31DF-M"
+      ],
+      "power": {
+        "min": 1320,
+        "max": 1980,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
     }
   ],
   "certifications": [
@@ -132,9 +155,21 @@
         "公司生产区占地面积约78万平方米，建筑面积约28万平方米。"
       ],
       "file": "sources/sxd-shaanxi/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "http://www.sxd408.com/cpzs/mxcp/7ec495a67b7f4677baca3287e7d288e0.htm",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "MAN 21/31DF-M甲醇双燃料发动机基于成熟的MAN 21/31MK2-PLO柴油机平台开发，并结合了先进的甲醇燃料喷射技术，兼具燃料灵活性和高效性。机组功率范围1320~1980kW，适用与船舶副机和柴电推进船舶动力。"
+      ],
+      "file": "sources/sxd-shaanxi/2001.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": []
 }
