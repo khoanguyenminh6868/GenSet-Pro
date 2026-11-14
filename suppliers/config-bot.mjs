@@ -55,6 +55,62 @@ await import(pathToFileURL(path.join(ROOT, "..", "web", "catalog.js")).href);
 const CAT = globalThis.GenbidCatalog;
 await import(pathToFileURL(path.join(ROOT, "..", "web", "bidprice.js")).href);
 const BP = globalThis.GenbidBidprice;
+await import(pathToFileURL(path.join(ROOT, "..", "web", "spec-norm.js")).href);
+const SN = globalThis.GenbidSpecNorm;
+// ---------- Lớp chuẩn hoá nối vào so số (việc noi-chuan-hoa, 14/11/2026: CHỈ ĐO, cờ mặc định tắt) ----------
+// GENBID_SPEC_NORM=1: every place the code compares a source figure with an HSMT limit (candidates: displacement, cylinders,
+// bore × stroke, fuel; fuelChecks; khoaRules: weight, size, noise; makerSheetChecks: compression, displacement, cylinders;
+// kwmOf: the row's engine power) reads the figure through web/spec-norm.js. A figure whose normalized form misses its unit,
+// is ambiguous / unreadable (number, kind, value), or lacks the condition the HSMT's limit is at (the load for fuel, the
+// distance for noise, open / canopy for size and weight, the stroke for bore) is not compared: "Chưa rõ" (a candidate stays,
+// with no points off). One that has them is compared in its own unit (no conversion beyond web/conversions.js: cc, cm, t
+// stay unconverted, so not compared with L, mm, kg). Off (default): every result is the same as before.
+// By group, for Khoa to turn on one part at a time: GENBID_SPEC_NORM=fuel,disp,other ("1" = all). fuel: fuel consumption
+// (candidates, fuelChecks); disp: displacement and bore × stroke (candidates, makerSheetChecks); other: cylinders,
+// compression, weight, size, noise, engine power. specNormOn() with no group: any group on.
+const NORM_GROUPS = ["fuel", "disp", "other"];
+export const specNormOn = (group) => {
+  const v = String(process.env.GENBID_SPEC_NORM || "").trim();
+  if (!v || v === "0") return false;
+  const on = v === "1" ? NORM_GROUPS : v.split(/[,\s]+/);
+  return group ? on.includes(group) : on.some((g) => NORM_GROUPS.includes(g));
+};
+// The table a spec / fact was read from ({ title, header, rows }), for the layer's header units and decimal-comma rule.
+const NORM_CTX = new WeakMap();
+let NORM_ROWS = { of: null, map: new Map() };
+// The rows of every supplier table, by `${supplierId}|${table index}` (normalizeRecord takes the whole table's rows).
+function normRowsOf(suppliers) {
+  if (NORM_ROWS.of === suppliers) return NORM_ROWS.map;
+  const map = new Map();
+  for (const s of suppliers || []) (s?.specTables || []).forEach((t, i) => map.set(`${s.id}|${i}`, t.rows || []));
+  NORM_ROWS = { of: suppliers, map };
+  return map;
+}
+// The context of a catalog use (a genset row of web/catalog.js).
+export function useNormCtx(u, rowsMap = NORM_ROWS.map) {
+  return { title: u?.title || "", header: u?.header || u?.lines?.header || [], rows: rowsMap.get(`${u?.supplierId}|${u?.table}`) || u?.lines?.rows || (u?.line ? [u.line] : []) };
+}
+// What makes a normalized figure not comparable, whatever the HSMT asks; and per key, the condition the HSMT's limit is at.
+const NORM_GAP = new Set(["unit", "number", "ambiguous", "kind", "value"]);
+const NORM_NEED = { fuel: ["load"], fuel75: ["load"], fuel50: ["load"], noise: ["distance"], dims: ["enclosure"], weight: ["enclosure"], bore: ["bore", "stroke"] };
+const NORM_VI = { unit: "không ghi đơn vị", number: "số viết không rõ phẩy nghìn / thập phân", ambiguous: "ghi nhiều giá trị không rõ cái nào", kind: "ô thuộc loại khác", value: "không có số",
+  load: "không ghi mức tải", distance: "không ghi khoảng cách đo", enclosure: "không ghi máy trần hay có vỏ", stroke: "không ghi hành trình", bore: "không ghi đường kính" };
+// The normalized figure of one spec, compared only when it has everything `want` asks: { r, ok, why[] }.
+// want: { unit: "L/h" | ["dB(A)", "dB"]..., load, distance, enclosure ("enclosed" when the HSMT asks the canopied set) }.
+export function normFig(s, ctx, want = {}) {
+  const r = SN.normalize({ key: s.key, label: s.label, value: s.value }, ctx || NORM_CTX.get(s) || { title: "", header: [], rows: s.line ? [s.line] : [] });
+  if (!r) return { r: null, ok: false, why: ["value"] };
+  const why = r.missing.filter((m) => NORM_GAP.has(m) || (NORM_NEED[s.key] || []).includes(m));
+  const units = want.unit == null ? null : [].concat(want.unit);
+  if (units && !why.includes("unit") && !units.includes(r.unit)) why.push(`đơn vị ${r.unit}`);
+  if (want.load != null && !why.includes("load") && r.cond?.load !== want.load) why.push(`mức tải ${r.cond?.load}%`);
+  if (want.distance != null && !why.includes("distance") && r.cond?.distance_m !== want.distance) why.push(r.cond?.distance_m != null ? `khoảng cách ${r.cond.distance_m} m` : "distance");
+  if (want.measure && r.cond?.measure && r.cond.measure !== want.measure) why.push(`đo ${r.cond.measure}`);
+  if (want.enclosure && r.cond?.enclosure && r.cond.enclosure !== want.enclosure) why.push(`bản ${r.cond.enclosure}`);
+  return { r, ok: !why.length, why };
+}
+const BLOCK = Symbol("chưa so được");
+const normWhyVi = (why) => [...new Set(why.map((w) => NORM_VI[w] || w))].join(", ");
 export const ORIGIN = { cn: "Trung Quốc", g7: "G7 (Mỹ, Anh, Đức, Pháp, Ý, Nhật, Canada)", g20: "G20 (các nước thành viên trừ Trung Quốc)", other: "Khác (không phải Trung Quốc)", all: "Tất cả",
   // Only read from the HSMT ("G7, EU"), never chosen on the web (Khoa, 2026-11-10).
   g7eu: "G7 hoặc EU (Mỹ, Anh, Đức, Pháp, Ý, Nhật, Canada và các nước Liên minh Châu Âu)", g20eu: "G20 (trừ Trung Quốc) hoặc EU" };
@@ -554,7 +610,7 @@ export function controllerSheetFacts(s, t) {
 // A model of a frame: TAL-A46 + "C", LSA 44.3 + "S2" … "VL14" (the frame and its size and winding).
 const FRAME_SUFFIX = /^([A-Z]{1,2}|[A-Z]{0,2}\d{1,2})$/;
 export function modelFacts(cat, suppliers = []) {
-  const facts = new Map(), single = new Map(), roleOf = new Map((suppliers || []).map((s) => [s?.id, s?.role]));
+  const facts = new Map(), single = new Map(), roleOf = new Map((suppliers || []).map((s) => [s?.id, s?.role])), rowsMap = normRowsOf(suppliers);
   const add = (k, f) => { const out = facts.get(k) || []; if (!out.some((g) => g.key === f.key && g.supplierId === f.supplierId && g.line === f.line)) out.push(f); facts.set(k, out); };
   for (const s of suppliers) {
     if (s?.role === "controller_maker") {
@@ -585,7 +641,7 @@ export function modelFacts(cat, suppliers = []) {
         if (key === "engPower" && kind === "engine") { for (const f of ratedFacts(c[0], c.slice(1).join(" | "), { maker: s.role === "engine_maker" })) for (const m of covered) add(`${kind}:${m}`, { ...f, supplierId: s.id, n: t.n, line, text: line }); continue; }
         if (!key || CAT.SPEC[key]?.scope !== kind || ROW_ONLY.has(key)) continue;
         const value = c.slice(1).find((v) => CAT.SPEC[key].ok.test(v));
-        if (value) for (const m of covered) add(`${kind}:${m}`, { key, label: c[0], value, supplierId: s.id, n: t.n, line, text: line, ...(sheet ? { sheet: true } : {}) });
+        if (value) for (const m of covered) { const f = { key, label: c[0], value, supplierId: s.id, n: t.n, line, text: line, ...(sheet ? { sheet: true } : {}) }; NORM_CTX.set(f, { title: t.title || "", header: t.header || [], rows: t.rows || [] }); add(`${kind}:${m}`, f); }
       }
     }
   }
@@ -608,7 +664,7 @@ export function modelFacts(cat, suppliers = []) {
       }
       // A row of the part maker's own table (role engine_maker / alternator_maker) names the model by its catalog key.
       const sheet = !rated.length && roleOf.get(u.supplierId) === `${kind}_maker`;
-      for (const f of rated.length ? rated : [{ key: s.key, label: s.label, value: s.value }]) if (!out.some((g) => g.key === f.key && g.supplierId === u.supplierId && g.line === line)) out.push({ ...f, supplierId: u.supplierId, n: u.n, line, text, ...(sheet ? { sheet: true } : {}) });
+      for (const f of rated.length ? rated : [{ key: s.key, label: s.label, value: s.value }]) if (!out.some((g) => g.key === f.key && g.supplierId === u.supplierId && g.line === line)) { const g = { ...f, supplierId: u.supplierId, n: u.n, line, text, ...(sheet ? { sheet: true } : {}) }; NORM_CTX.set(g, useNormCtx(u, rowsMap)); out.push(g); }
     }
     if (out.length) facts.set(`${kind}:${e.key}`, out);
   }
@@ -1087,7 +1143,7 @@ export function bandOf(cap) {
   return { low: NEAR_LOW, high: small ? NEAR_HIGH_SMALL : NEAR_HIGH, text: small ? "100% đến 140%" : "100% đến 120%" };
 }
 export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30, sync = null, keep = null, makeCap = MAKE_CAP, patches = true } = {}) {
-  const hints = plausible(hints0, cap), sup = new Map(suppliers.map((s) => [s.id, s])), alts = new Map((cat.alternators || []).map((a) => [a.key, a]));
+  const hints = plausible(hints0, cap), sup = new Map(suppliers.map((s) => [s.id, s])), alts = new Map((cat.alternators || []).map((a) => [a.key, a])), rowsMap = normRowsOf(suppliers);
   const band = bandOf(cap);
   const near = (u) => !cap || Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * band.low && p[cap.unit] <= cap.value * band.high + 1e-9);
   // `dropped`: the rows a minimum of the HSMT rules out (left out of the candidates), with the reasons.
@@ -1125,22 +1181,32 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       if (offers.some((c) => c.model && factsFor(facts, "controller", c.model).length)) { score += 40; why.push("bộ điều khiển có datasheet hãng"); }
       score += 8 * Math.min(eKeys.size, 8);
       // Below a minimum of the HSMT by every source that gives the figure (an engine no source gives it for is not).
-      const srcOf = {};
-      const below = (key, min, read) => { const fs = [...ef, ...(u.specs || [])].filter((f) => f.key === key).map((f) => [f, read(f.value, f)]).filter(([, x]) => x != null), v = fs.map(([, x]) => x);
-        const hit = min && v.length && v.every((x) => x < min); if (hit) srcOf[key] = { n: v.length, sources: new Set(fs.map(([f]) => `${f.supplierId ?? ""}#${f.n ?? ""}`)).size, ofRow: fs.filter(([f]) => (u.specs || []).includes(f)).length };
+      const srcOf = {}, NORM = specNormOn(), ND = specNormOn("disp"), NC = specNormOn("other"), NF = specNormOn("fuel"), normSkip = [];
+      // GENBID_SPEC_NORM=1: a figure is read through the normalization layer (normFig); one it cannot compare gives null.
+      const ctxOf = (f) => NORM_CTX.get(f) || ((u.specs || []).includes(f) ? useNormCtx(u, rowsMap) : undefined);
+      const nfig = (f, want) => { const x = normFig(f, ctxOf(f), want); if (!x.ok) normSkip.push({ key: f.key, label: f.label, value: f.value, why: x.why, supplierId: f.supplierId ?? u.supplierId, line: f.line ?? u.line }); return x.ok ? x.r : null; };
+      const below = (key, min, read) => { const all = [...ef, ...(u.specs || [])].filter((f) => f.key === key).map((f) => [f, read(f.value, f)]), fs = all.filter(([, x]) => x != null && x !== BLOCK), v = fs.map(([, x]) => x);
+        // Normalized: a source giving a figure the layer cannot compare (no unit, cc...) is "Chưa rõ": the row is not left out.
+        const hit = min && v.length && !all.some(([, x]) => x === BLOCK) && v.every((x) => x < min); if (hit) srcOf[key] = { n: v.length, sources: new Set(fs.map(([f]) => `${f.supplierId ?? ""}#${f.n ?? ""}`)).size, ofRow: fs.filter(([f]) => (u.specs || []).includes(f)).length };
         return hit ? v[0] : null; };
       // No displacement given: bore × stroke × cylinders (web/conversions.js displacement), when the sources give them.
       const given = [...ef, ...(u.specs || [])], bs = given.find((f) => f.key === "bore"), z = given.find((f) => f.key === "cyl");
-      const [b, st] = bs ? numbersIn(bs.value) : [], n = z ? numbersIn(z.value)[0] : null;
+      const nbs = ND && bs && hints.minDisp && !given.some((f) => f.key === "disp") ? nfig(bs, { unit: "mm" }) : null, nz = ND && z && nbs ? nfig(z, {}) : null;
+      const [b, st] = ND ? [nbs?.bore?.bore, nbs?.bore?.stroke] : bs ? numbersIn(bs.value) : [], n = ND ? nz?.count ?? null : z ? numbersIn(z.value)[0] : null;
       const calcL = !given.some((f) => f.key === "disp") && b > 50 && st > 50 && n ? Math.round(Math.PI / 4 * b * b * st * n / 1e4) / 100 : null;
-      const dl = below("disp", hints.minDisp, (v, f) => dispLitres(f)) ?? (hints.minDisp && calcL != null && calcL < hints.minDisp ? calcL : null), cl = below("cyl", hints.minCyl, (v) => numbersIn(v)[0] ?? null);
+      // Normalized: litres only as the source writes them (cc has no formula in web/conversions.js: not compared).
+      // BLOCK: the layer read a figure but cannot compare it (a figure, not just an empty / text cell).
+      const nread = (f, want, get) => { const x = normFig(f, ctxOf(f), want); if (x.ok) return get(x.r) ?? null; normSkip.push({ key: f.key, label: f.label, value: f.value, why: x.why, supplierId: f.supplierId ?? u.supplierId, line: f.line ?? u.line }); return x.why.includes("value") ? null : BLOCK; };
+      const dispOf = ND ? (v, f) => nread(f, { unit: "L" }, (r) => r.num) : (v, f) => dispLitres(f);
+      const cylOf = NC ? (v, f) => nread(f, {}, (r) => r.count) : (v) => numbersIn(v)[0] ?? null;
+      const dl = (hints.minDisp ? below("disp", hints.minDisp, dispOf) : null) ?? (hints.minDisp && calcL != null && calcL < hints.minDisp ? calcL : null), cl = hints.minCyl ? below("cyl", hints.minCyl, cylOf) : null;
       // Below a minimum of the HSMT (displacement, cylinders, prime) or past its largest displacement: the row is left out,
       // unless the HSMT names its engine model (`named`): then its sources disagree with the HSMT's own choice, and it
       // stays with 600 points off and the reason, for the agent to see.
       const ruled = [];
       if (dl != null) { score -= 600; ruled.push("disp"); why.push(`dung tích ${dl} L < ${hints.minDisp} L HSMT yêu cầu`); }
-      const dh = hints.maxDisp ? given.filter((f) => f.key === "disp").map(dispLitres).filter((x) => x != null) : [];
-      if (dh.length && dh.every((x) => x > hints.maxDisp * 1.005)) { score -= 600; ruled.push("maxDisp"); why.push(`dung tích ${dh[0]} L > ${hints.maxDisp} L HSMT cho phép`); }
+      const dh0 = hints.maxDisp ? given.filter((f) => f.key === "disp").map((f) => dispOf(f.value, f)) : [], dh = dh0.filter((x) => x != null && x !== BLOCK);
+      if (dh.length && !dh0.includes(BLOCK) && dh.every((x) => x > hints.maxDisp * 1.005)) { score -= 600; ruled.push("maxDisp"); why.push(`dung tích ${dh[0]} L > ${hints.maxDisp} L HSMT cho phép`); }
       if (cl != null) { score -= 600; ruled.push("cyl"); why.push(`${cl} xi lanh < ${hints.minCyl} HSMT yêu cầu`); }
       // The row's prime output (catalog.js reads it from the column titles) below the prime the HSMT asks for.
       const pr = u.power?.prime, mp = hints.minPrime;
@@ -1150,14 +1216,23 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // a minimum (same exception: `named` stays, with 300 points off). A row with no L/h figure at that load is kept.
       let fuelOver = false, fuelNoLoad = false;
       for (const [fk, hk, at] of [["fuel", "maxFuel", ""], ["fuel75", "maxFuel75", " ở 75% tải"], ["fuel50", "maxFuel50", " ở 50% tải"]]) {
-        const fl = hints[hk] && (u.specs || []).find((x) => x.key === fk && /l\s*\/\s*h|l\/hr|lít|lph/i.test(`${x.label} ${x.value}`) && !/g\s*\/\s*(k?w|hp|ps)/i.test(String(x.value)));
-        const fv = fl ? fuelAt(fl, FUEL_LOAD[fk]) : null;
+        let fl = hints[hk] && (u.specs || []).find((x) => x.key === fk && /l\s*\/\s*h|l\/hr|lít|lph/i.test(`${x.label} ${x.value}`) && !/g\s*\/\s*(k?w|hp|ps)/i.test(String(x.value)));
+        let fv = fl ? fuelAt(fl, FUEL_LOAD[fk]) : null;
+        // Normalized: the first figure of the key in L/h at the HSMT's load (100 / 75 / 50%), the load written in the
+        // source (a 75 / 50% cell counts, loadFrom "key"); none → not compared, the row stays with no points off.
+        if (NF && hints[hk]) {
+          fl = null; fv = null;
+          for (const x of (u.specs || []).filter((y) => y.key === fk)) {
+            const r = nfig(x, { unit: "L/h", load: FUEL_LOAD[fk] });
+            if (r && r.num != null) { fl = x; fv = r.num; break; }
+          }
+        }
         // Not judged: a bound ("< 10": only says it is under 10) and a figure no genset of this size burns (> 0.6 L/h per kVA: a
         // kW / kVA pair or a g/kWh figure under a wrong heading, "Cons 100% (L/H) 220/275" for 242 kVA).
         const unsure = fl && (/^\s*[<≤]|<=/.test(String(fl.value)) || (cap && fv != null && fv > (cap.unit === "kVA" ? cap.value : cap.value / 0.8) * 0.6));
         // A 100% figure whose heading names no load (the catalog files "Fuel consumption (L/h)" under 100%) is not left out either (the old
         // 300 points off stay): only a load written in the label that is the HSMT's (100% / full load) counts. 75% and 50% are in the label by construction.
-        const loadUnstated = fk === "fuel" && fl && !LOAD_100.test(String(fl.label));
+        const loadUnstated = !NF && fk === "fuel" && fl && !LOAD_100.test(String(fl.label));
         if (fv != null && !unsure && fv > hints[hk]) { score -= 300; fuelOver = true; if (loadUnstated) fuelNoLoad = true; else ruled.push(fk); why.push(`tiêu hao${at} ${fv} L/h > ${hints[hk]} L/h HSMT cho phép`); }
       }
       if (a) { score += 40; if ((a.make || "").split(" / ").some((m) => hints.altMakes.includes(m)) || named(hints, a.model)) { score += 80; why.push("đầu phát HSMT nêu"); } score += 3 * Math.min(new Set(af.map((f) => f.key)).size, 6); }
@@ -1166,8 +1241,8 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       if (cap && !gNamed) score -= Math.round(100 * Math.max(0, rowPower(u, cap) / cap.value - 1));
       const maker = sync && s?.role === "genset_oem" ? gensetMakerOf(s) : null;
       if (maker) why.push(`tổ máy của chính hãng ${maker} (HSMT đòi đồng bộ thương hiệu)`);
-      if (ruled.length && !isNamed) { dropped.push({ e, u, ruled, src: srcOf }); continue; }
-      rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad });
+      if (ruled.length && !isNamed) { dropped.push({ e, u, ruled, src: srcOf, ...(NORM ? { normSkip } : {}) }); continue; }
+      rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(NORM ? { normSkip } : {}) });
     }
   }
   rows.sort((x, y) => y.score - x.score);
@@ -2598,6 +2673,8 @@ export function hsmtCombo(text, reqs = []) {
 export function enginePowerOf(row) {
   for (const s of row?.specs || []) {
     if (s.key !== "engPower") continue;
+    // GENBID_SPEC_NORM=1: not a figure the layer reads with no unit, several values, an unreadable number or of another kind.
+    if (specNormOn("other") && !normFig(s, useNormCtx(row), {}).ok) continue;
     const p = ratedPower(s.label, s.value);
     if (p) return { ...p, line: row.line };
   }
@@ -3037,8 +3114,24 @@ export function fuelChecks(c, reqs, row) {
     if (!key) continue;
     const m = `${r.requirement || ""} ${r.quote || ""}`.match(/(?:≤|<=|<|t[ốo]i\s*đa|kh[ôo]ng\s*(?:l[ớo]n|v[ưư][ợo]t|qu[áa])(?:\s*h[ơo]n)?)\s*:?\s*(\d{1,3}(?:[.,]\d+)?)\s*(?:l[íi]t|l|L)\s*\/\s*(?:gi[ờo]|h)(?![a-z])/i);
     if (!m) continue;
-    const max = Number(m[1].replace(",", ".")), s = (row.specs || []).find((x) => x.key === key && LH_UNIT.test(`${x.label} ${x.value}`));
-    const v = s ? fuelAt(s, FUEL_LOAD[key]) : null;
+    const max = Number(m[1].replace(",", "."));
+    let s = (row.specs || []).find((x) => x.key === key && LH_UNIT.test(`${x.label} ${x.value}`));
+    let v = s ? fuelAt(s, FUEL_LOAD[key]) : null, skip = null;
+    // GENBID_SPEC_NORM=1: the first figure of the key in L/h at the HSMT's load (normFig); a figure the old reading would
+    // have compared but the layer cannot → "Chưa rõ" with why.
+    if (specNormOn("fuel")) {
+      const old = s, ctx = useNormCtx(row);
+      s = null; v = null;
+      for (const y of (row.specs || []).filter((q) => q.key === key)) { const n = normFig(y, ctx, { unit: "L/h", load: FUEL_LOAD[key] }); if (n.ok && n.r.num != null) { s = y; v = n.r.num; break; } if (y === old) skip = n.why; }
+      if (v == null && old && skip) {
+        const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
+        if (x && (x.status === "met" || x.status === "not_met") && !x.unverified) continue;
+        const check = { item: r.item, requirement: r.requirement, hsmtQuote: r.quote || "", offered: `${old.value} (${old.label})`, sourceQuote: row.line, part: "genset", level: r.level || "core", status: "unclear", byCode: true, rule: "chuan-hoa",
+          note: `Code chưa so: số tiêu hao của dòng tổ máy ${normWhyVi(skip)} (lớp chuẩn hoá).` };
+        if (x) { delete x.unverified; delete x.hint; Object.assign(x, check); } else c.checks = [...(c.checks || []), check];
+        continue;
+      }
+    }
     if (v == null) continue;
     const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
     if (x && (x.status === "met" || x.status === "not_met") && !x.unverified) continue;
@@ -3334,7 +3427,16 @@ export function makerSheetChecks(c, reqs, facts = {}) {
     if (!sheets.length || sheets.some((f) => sheets.some((g) => differ(f.value, g.value)))) continue;
     const others = list.filter((f) => !f.sheet && sheets.some((g) => differ(f.value, g.value)));
     if (!others.length) continue;
-    const v = sheets.map((f) => SHEET_CMP[r.code](f.value, r.requirement || ""));
+    // GENBID_SPEC_NORM=1: compression, displacement (litres as written; cc not converted) and the cylinder count from the
+    // normalized figure of each sheet; one the layer cannot compare leaves the check as it is.
+    const NK = { compression: [(n) => n.num, {}], displacement: [(n) => n.num, { unit: "L" }], cylinders: [(n) => n.count, {}] }[r.code];
+    let vals = sheets.map((f) => f.value);
+    if (NK && specNormOn(r.code === "displacement" ? "disp" : "other")) {
+      const ns = sheets.map((f) => normFig(f, NORM_CTX.get(f), NK[1]));
+      if (ns.some((n) => !n.ok || NK[0](n.r) == null)) continue;
+      vals = ns.map((n) => String(NK[0](n.r)));
+    }
+    const v = vals.map((val) => SHEET_CMP[r.code](val, r.requirement || ""));
     if (v.some((b) => b == null) || new Set(v).size !== 1) continue;
     // A supplier of this very configuration (its rows' src, or among its suppliers) is one that writes otherwise: what it
     // delivers may be that other build (acepow-fuan offers WP10D320E200 both "Mechanically" and "Electronic"), so the
@@ -3467,6 +3569,32 @@ export function khoaRules(c, reqs, row, { origin } = {}) {
     } else if (code === "noise") {
       const lim = oneFig(req, /(\d{2,3}(?:[.,]\d)?)\s*dB/gi), dist = (req.match(/(\d{1,2})\s*m\b/) || [])[1], v = numbersIn(s.value)[0];
       if (lim != null && v != null && dist && new RegExp(`\\b${dist}\\s*m\\b`, "i").test(`${s.label} ${s.value}`)) { ok = v <= lim; off = `${figVi(v)} dB(A) (${s.label})`; }
+    }
+    // GENBID_SPEC_NORM=1: the same comparison on the normalized figure (normFig): kg / mm / dB(A) as the source writes
+    // them, the size open or canopied as the source says (the canopied one when the HSMT asks it), the noise at the HSMT's
+    // distance. Not comparable where the old reading compared → "Chưa rõ" with why.
+    if (specNormOn("other")) {
+      const old = ok, canopy = /v[ỏo]\s*(gi[ảa]m|c[áa]ch)\s*[âa]m|canopy|silent|soundproof|c[áa]ch\s*[âa]m/i.test(t) ? "enclosed" : null;
+      let n = null;
+      ok = null;
+      if (code === "weight") {
+        const lim = oneFig(req, /(\d[\d.,]*)\s*kg\b/gi);
+        n = normFig(s, useNormCtx(row), { unit: "kg", enclosure: canopy });
+        if (lim != null && n.ok && n.r.num != null) { ok = n.r.num <= lim; off = `${figVi(n.r.num)} kg (${s.label})`; }
+      } else if (code === "dimensions") {
+        const lim = mmOf(req);
+        n = normFig(s, useNormCtx(row), { unit: "mm", enclosure: canopy });
+        const d = n.ok && n.r.dims, v = d ? (d.asWritten || [d.L, d.W, d.H]) : null;
+        if (lim && v && v.every((x) => x != null)) { ok = v.every((x, i) => x <= lim[i]) ? true : v.some((x, i) => x > lim[i]) ? false : null; off = `${s.value} mm (${s.label})`; }
+      } else if (code === "noise") {
+        const lim = oneFig(req, /(\d{2,3}(?:[.,]\d)?)\s*dB/gi), dist = Number((req.match(/(\d{1,2})\s*m\b/) || [])[1]) || null;
+        n = normFig(s, useNormCtx(row), { unit: ["dB(A)", "dB"], distance: dist, measure: "LpA" });
+        if (lim != null && dist && n.ok && n.r.num != null) { ok = n.r.num <= lim; off = `${figVi(n.r.num)} dB(A) (${s.label})`; }
+      }
+      if (ok == null && old != null) {
+        set(r, o.x, "unclear", { offered: `${s.value} (${s.label})`, sourceQuote: row.line, rule: "chuan-hoa", note: `Code chưa so: số của dòng tổ máy ${n && !n.ok ? normWhyVi(n.why) : "không ra một số đủ đơn vị / điều kiện"} (lớp chuẩn hoá).` });
+        continue;
+      }
     }
     if (ok == null) continue;
     set(r, o.x, ok ? "met" : "not_met", { offered: off, sourceQuote: row.line, rule: "vo-may", note: `Code so số của dòng tổ máy với mức HSMT.` });
