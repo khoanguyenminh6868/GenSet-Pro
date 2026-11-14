@@ -52,6 +52,50 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "汉马柴油发电机组 (神驰 SC…HM)",
+      "fuel": "diesel",
+      "power": {
+        "min": 230,
+        "max": 410,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "engineMakes": [
+        "汉马"
+      ],
+      "engineModels": [
+        "CM6D12F.250 30",
+        "CM6D18F.290 30",
+        "CM6D28F.300 30",
+        "CM6D28F.350 30",
+        "CM6D30F.408 30"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "汉马动力 CM6D10 / CM6D18 / CM6D28 / CM6D30",
+      "fuel": "diesel",
+      "power": {
+        "min": 199,
+        "max": 412,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
     }
   ],
   "certifications": [],
@@ -82,9 +126,50 @@
         "拥有华菱汽车、星马汽车、汉马动力三大品牌"
       ],
       "file": "sources/hanma-tech/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.jssenci.com/pd48661701.html",
+      "accessedAt": "2026-11-14",
+      "tier": "B",
+      "quote": [
+        "汉马动力系列发动机均采用直列6缸、整体缸盖、四气门、顶置凸轮轴、后置齿轮系技术",
+        "| SC230HM | 230/253 | CM6D12F.250 30 | 250/275 | 128X153 | 6 | 30 | ≤200 | 国Ⅲ | |",
+        "| SC410HM | 410/450 | CM6D30F.408 30 | 450/490 | 130X161 | 6 | 41 | ≤195 | 国Ⅲ | |"
+      ],
+      "file": "sources/hanma-tech/2001.md",
+      "official": false
+    },
+    {
+      "n": 2002,
+      "url": "http://www.camc-tw.url.tw/html/product/power/engine.html",
+      "accessedAt": "2026-11-14",
+      "tier": "B",
+      "quote": [
+        "主要包括CM6D10、CM6D18、CM6D28和CM6D30系列柴油機，排量分別為7.8升、9.8升、11.8升和12.8升，功率覆蓋範圍199Kw-412Kw",
+        "該發動機適用於物流運輸車輛、工程運輸車輛、特種車輛以及長途客車、工程機械和發電機組等。"
+      ],
+      "file": "sources/hanma-tech/2002.md",
+      "official": false
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "汉马系列 汉马 SERIES (国Ⅲ排放 STAGEⅢ EMISSION) — tổ máy 神驰 SC…HM dùng động cơ 汉马",
+      "header": [
+        "| 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径X行程（mm） Bore-stroke ratio | 缸数 Number of vat | 机油容量（L）Machine oil capacity | 燃油消耗 Fuel consumption g/kw·h | 排放 Discharge | 开架机组 Open Type"
+      ],
+      "rows": [
+        "| SC230HM | 230/253 | CM6D12F.250 30 | 250/275 | 128X153 | 6 | 30 | ≤200 | 国Ⅲ | |",
+        "| SC265HM | 265/290 | CM6D18F.290 30 | 290/319 | 118X150 | 6 | 34.5 | ≤240 | 国Ⅲ | |",
+        "| SC274HM | 274/300 | CM6D28F.300 30 | 300/330 | 128X153 | 6 | 34.5 | ≤200 | 国Ⅲ | |",
+        "| SC320HM | 320/350 | CM6D28F.350 30 | 350/385 | 128X153 | 6 | 41.6 | ≤200 | 国Ⅲ | |",
+        "| SC410HM | 410/450 | CM6D30F.408 30 | 450/490 | 130X161 | 6 | 41 | ≤195 | 国Ⅲ | |"
+      ]
+    }
+  ]
 }
