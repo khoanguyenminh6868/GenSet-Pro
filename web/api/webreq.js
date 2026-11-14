@@ -59,6 +59,9 @@ export default async function handler(req, res) {
 // POST { coll: "settings", ai: { use: { analysis|config|bidprice|compare: "api"|"plan" }, switchAtUsd, spentUsd } }.
 // spentUsd (optional): the spend this period as of now; the bot adds what it spends after `spent.at`.
 const AI_TASKS = ["analysis", "config", "bidprice", "compare"];
+// Lĩnh vực the bot crawls on muasamcong (Khoa, 2026-11-14): keys of FIELDS in bot/genbid-hsmt/sync-pure.js; at least one,
+// Máy phát điện when none is given.
+const FIELDS = ["genset"];
 async function saveAiSettings(req, res, member) {
   if (member.role !== "superadmin") return res.status(403).json({ error: "Chỉ Superadmin được đổi cấu hình hệ thống." });
   const ai = req.body?.ai || {};
@@ -74,12 +77,14 @@ async function saveAiSettings(req, res, member) {
     use: Object.fromEntries(AI_TASKS.map((k) => [k, ai.use?.[k] === "plan" ? "plan" : "api"])),
     ...(sw != null ? { switchAtUsd: sw } : {}),
     ...(sp != null ? { spent: { usd: sp, at } } : {}),
+    fields: fieldsIn(ai.fields ?? cur.fields),
     updatedAt: at, by: member.email,
   };
   const w = await fetch(`${SB_URL}/rest/v1/docs`, { method: "POST", headers: { ...sbHeaders, "x-actor": member.email, Prefer: "resolution=merge-duplicates,return=minimal" }, body: JSON.stringify([{ coll: "settings", id: "ai", data, updated_at: at }]) });
   if (!w.ok) return res.status(502).json({ error: `Lưu thất bại (HTTP ${w.status}): ${(await w.text()).slice(0, 200)}` });
   res.json({ saved: [{ key: "ai", data }] });
 }
+const fieldsIn = (f) => { const ok = Array.isArray(f) ? [...new Set(f.filter((k) => FIELDS.includes(k)))] : []; return ok.length ? ok : ["genset"]; };
 
 // Only model / make strings of the configuration, its size label and rank.
 function findTarget(t) {

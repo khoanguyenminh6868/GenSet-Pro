@@ -5185,6 +5185,10 @@ async function syncNew() {
 // The bot reads it with its heartbeat (api/requests.js) and reports its count in botstatus/current.api.
 const AI_TASKS = [["analysis", "Phân tích"], ["config", "Gợi ý cấu hình"], ["bidprice", "Gợi ý giá"], ["compare", "Đối chiếu hồ sơ"]];
 const AI_SWITCH_DEFAULT = 98;
+// Lĩnh vực the bot crawls on muasamcong (settings/ai.fields; Khoa, 2026-11-14): Máy phát điện for now; a new field is a
+// new row here, in FIELDS of web/api/webreq.js and in FIELDS (with its search keywords) of bot/genbid-hsmt/sync-pure.js.
+const AI_FIELDS = [["genset", "Máy phát điện"]];
+const AI_FIELD_DEFAULT = ["genset"];
 const usdText = (n) => (Number.isFinite(n) ? n.toLocaleString("en-US", { maximumFractionDigits: 2 }) : "");
 // "12,5" or "12.5" → 12.5 (numIn would read "." as a thousands mark); "" → null; anything else → NaN.
 const usdIn = (s) => { const t = String(s || "").trim().replace(/\s|\$|usd/gi, "").replace(",", "."); return t ? (/^\d+(\.\d+)?$/.test(t) ? Number(t) : NaN) : null; };
@@ -5207,6 +5211,7 @@ function aiCfgRedraw() { const el = $("#aiCfgStat"); if (el) el.textContent = ai
 function openAiConfig() {
   if (!isSuperadmin() || state.readOnly) { toast("Chỉ Superadmin được đổi cấu hình hệ thống."); return; }
   const cfg = state.aiSettings || {}, use = { ...cfg.use };
+  const fields = Array.isArray(cfg.fields) && cfg.fields.some((k) => AI_FIELDS.some(([f]) => f === k)) ? cfg.fields : AI_FIELD_DEFAULT;
   const sp = aiSpent(), at = cfg.switchAtUsd ?? state.botstatus?.api?.switchAt ?? AI_SWITCH_DEFAULT;
   const segOf = (k) => h`<div class="seg" role="tablist" aria-label="Cách trả tiền">${raw(["api", "plan"].map((v) => h`<button type="button" data-aiuse="${k}" data-v="${v}" aria-selected="${(use[k] || "api") === v ? "true" : "false"}">${v === "api" ? "API" : "Gói tháng"}</button>`).join(""))}</div>`;
   modal(h`<div class="row"><h2 style="flex:1">Cấu hình hệ thống</h2><button class="btn sm" data-close>Đóng</button></div>
@@ -5216,8 +5221,12 @@ function openAiConfig() {
       <div class="muted small" id="aiCfgStat">${aiCfgStatus()}</div>
       <div class="qgrid" style="margin-top:8px">
         <div class="field"><label for="aiSpent">Đã dùng kỳ này (USD)</label><input type="text" id="aiSpent" inputmode="decimal" autocomplete="off" value="${sp ? usdText(sp.usd) : ""}" placeholder="vd 42.5"></div>
-        <div class="field"><label for="aiSwitch">Chuyển sang gói tháng khi tới (USD)</label><input type="text" id="aiSwitch" inputmode="decimal" autocomplete="off" value="${usdText(at)}"></div>
+        <div class="field"><label for="aiSwitch">Hạn mức tối đa (USD)</label><input type="text" id="aiSwitch" inputmode="decimal" autocomplete="off" value="${usdText(at)}"></div>
       </div></details>
+    <details class="supsec" id="aiCfgFields" open style="margin:0"><summary>Lĩnh vực</summary>
+      <div class="muted small" style="margin-top:8px">Bot tìm gói thầu mới trên muasamcong theo các lĩnh vực được chọn.</div>
+      <div style="margin-top:6px">${raw(AI_FIELDS.map(([k, label]) => h`<label class="small" style="display:flex;gap:8px;align-items:center;margin:4px 0"><input type="checkbox" data-aifield="${k}"${raw(fields.includes(k) ? " checked" : "")}> ${label}</label>`).join(""))}</div>
+    </details>
     ${raw(cfg.updatedAt ? h`<p class="muted small" style="margin:0">Lưu gần nhất ${fmtDate(cfg.updatedAt)}${cfg.by ? `, ${cfg.by}` : ""}.</p>` : "")}
     <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn primary" id="aiCfgOk">Lưu</button></div>`, (m, close) => {
     m.addEventListener("click", (e) => {
@@ -5244,7 +5253,9 @@ function openAiConfig() {
     $("#aiCfgOk", m).addEventListener("click", async () => {
       const spentIn = $("#aiSpent", m).value, spent = usdIn(spentIn), sw = usdIn($("#aiSwitch", m).value);
       if (Number.isNaN(spent) || Number.isNaN(sw)) { toast("Số tiền USD không hợp lệ (vd 42.5)."); return; }
-      const ai = { use: Object.fromEntries(AI_TASKS.map(([k]) => [k, use[k] === "plan" ? "plan" : "api"])), switchAtUsd: sw ?? AI_SWITCH_DEFAULT };
+      const picked = [...m.querySelectorAll("[data-aifield]")].filter((x) => x.checked).map((x) => x.dataset.aifield);
+      if (!picked.length) { toast("Chọn ít nhất một lĩnh vực."); return; }
+      const ai = { use: Object.fromEntries(AI_TASKS.map(([k]) => [k, use[k] === "plan" ? "plan" : "api"])), switchAtUsd: sw ?? AI_SWITCH_DEFAULT, fields: picked };
       // Only a changed figure resets the bot's count.
       if (spent != null && spentIn.trim() !== shown.trim()) ai.spentUsd = spent;
       const btn = $("#aiCfgOk", m); btn.disabled = true;

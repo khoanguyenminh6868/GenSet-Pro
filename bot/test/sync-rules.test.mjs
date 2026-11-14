@@ -324,6 +324,23 @@ test("cấu hình hệ thống: việc đặt gói tháng; việc khác, tệp h
   assert.equal(P.aiUseOf("", "analysis"), "api");
   assert.equal(P.AI_TASK_OF.translation, undefined);
 });
+test("cấu hình hệ thống: lĩnh vực mặc định Máy phát điện; khoá lạ bỏ qua; từ khoá tìm mỗi từ một lần", () => {
+  assert.deepEqual(P.fieldsOf(""), ["genset"]);
+  assert.deepEqual(P.fieldsOf("{hỏng"), ["genset"]);
+  assert.deepEqual(P.fieldsOf(JSON.stringify({ fields: [] })), ["genset"]);
+  assert.deepEqual(P.fieldsOf(JSON.stringify({ fields: ["xyz", "toString"] })), ["genset"]);
+  assert.deepEqual(P.fieldsOf(JSON.stringify({ fields: ["genset", "genset"] })), ["genset"]);
+  assert.deepEqual(P.searchTermsOf(""), ["máy phát điện"]);
+});
+test("tìm nhiều từ khoá: gói trùng giữa hai lượt tìm chỉ tính một lần", () => {
+  const m = P.mergeFound([
+    { count: 2, present: ["IB1", "IB2"], changed: [{ notifyNo: "IB1", a: 1 }] },
+    { count: 2, present: ["IB2", "IB3"], changed: [{ notifyNo: "IB1", a: 2 }, { notifyNo: "IB3" }] },
+  ]);
+  assert.equal(m.count, 3);
+  assert.deepEqual(m.present, ["IB1", "IB2", "IB3"]);
+  assert.deepEqual(m.changed, [{ notifyNo: "IB1", a: 1 }, { notifyNo: "IB3" }]);
+});
 
 // ---------- câu trả lời một lần gọi bị cắt ----------
 test("câu trả lời Claude bị cắt: dừng ở giới hạn đầu ra, lượt không hoàn tất, subtype lỗi; trọn vẹn thì rỗng", () => {

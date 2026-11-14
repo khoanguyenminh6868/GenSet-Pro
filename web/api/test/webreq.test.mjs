@@ -34,6 +34,15 @@ test("Cấu hình hệ thống (settings/ai): chỉ Superadmin; lọc giá trị
   assert.equal((await post({ coll: "settings", ai: { spentUsd: "abc" } }, "tok-admin")).statusCode, 400);
 });
 
+test("Cấu hình hệ thống: lĩnh vực mặc định Máy phát điện, lọc khoá lạ, không gửi thì giữ cũ", async () => {
+  await post({ coll: "settings", ai: { use: {} } }, "tok-admin");
+  assert.deepEqual(db.get("settings", "ai").data.fields, ["genset"]);
+  await post({ coll: "settings", ai: { use: {}, fields: ["genset", "lạ", "genset"] } }, "tok-admin");
+  assert.deepEqual(db.get("settings", "ai").data.fields, ["genset"]);
+  await post({ coll: "settings", ai: { use: {}, fields: ["lạ"] } }, "tok-admin");
+  assert.deepEqual(db.get("settings", "ai").data.fields, ["genset"]);
+});
+
 test("Chỉ nhận POST; chưa đăng nhập hoặc token lạ thì 401, không ghi gì", async () => {
   assert.equal((await call(h, mkReq({ method: "GET", token: "tok-user" }))).statusCode, 405);
   assert.equal((await post({ coll: "hsmtreq", items: [{ key: "A" }] }, null)).statusCode, 401);
