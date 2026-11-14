@@ -52,6 +52,30 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "潍坊柴油发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "潍柴"
+      ],
+      "engineModels": [
+        "R4105",
+        "R6105"
+      ],
+      "power": {
+        "min": 8,
+        "max": 200,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
     }
   ],
   "certifications": [],
@@ -72,9 +96,33 @@
         "200KW沃尔沃柴油发电机组"
       ],
       "file": "sources/meikangsi-sichuan/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "http://www.scmks.com/index.php?m=content&c=index&a=show&catid=71&id=29",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "四川美康斯发电设备有限公司的柴油机动力选用R4105、R6105发动机，功率范围8KW-200KW。",
+        "180KW潍坊柴油发电机组"
+      ],
+      "file": "sources/meikangsi-sichuan/2001.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "潍坊柴油发电机组 (R4105 / R6105, 8–200 kW)",
+      "header": [
+        "180KW潍坊柴油发电机组"
+      ],
+      "rows": [
+        "四川美康斯发电设备有限公司的柴油机动力选用R4105、R6105发动机，功率范围8KW-200KW。潍坊柴油发电机组质量稳定，价廉物美。潍柴6100系列柴油发动机是由******大型企业潍坊柴油机厂生产，是潍柴20世纪90年代设计开发的新一代机型。"
+      ]
+    }
+  ]
 }
