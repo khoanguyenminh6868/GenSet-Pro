@@ -53,6 +53,341 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Rental specification DNV container generator",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA50G3"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "alternatorMakes": [
+        "Newage"
+      ],
+      "power": {
+        "min": 1290,
+        "max": 1290,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GFE BSC / BMC range (Baudouin engine, Stamford alternator)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 18,
+        "max": 829,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GFE275BSC",
+      "fuel": "diesel",
+      "engineModels": [
+        "6M16G6D0/S"
+      ],
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GFE20BMC",
+      "fuel": "diesel",
+      "engineModels": [
+        "4M06G20/5"
+      ],
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "alternatorMakes": [
+        "Meccalte"
+      ],
+      "power": {
+        "min": 18.2,
+        "max": 18.2,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GFE50BSC",
+      "fuel": "diesel",
+      "engineModels": [
+        "4M06G50/5"
+      ],
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 45,
+        "max": 45,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GFE88BSC",
+      "fuel": "diesel",
+      "engineModels": [
+        "4M10G88/5"
+      ],
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 78.7,
+        "max": 78.7,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GFE145BSC",
+      "fuel": "diesel",
+      "engineModels": [
+        "6M11G2D0/S"
+      ],
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 131.8,
+        "max": 131.8,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GFE220BSC",
+      "fuel": "diesel",
+      "engineModels": [
+        "6M16G2D0/S"
+      ],
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GFE350BSC",
+      "fuel": "diesel",
+      "engineModels": [
+        "6M16G350/5"
+      ],
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 320,
+        "max": 320,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GFE440BSC",
+      "fuel": "diesel",
+      "engineModels": [
+        "6M21G440/5"
+      ],
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GFE560BSC",
+      "fuel": "diesel",
+      "engineModels": [
+        "6M21G550/5"
+      ],
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 513.9,
+        "max": 513.9,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GFE724BSC",
+      "fuel": "diesel",
+      "engineModels": [
+        "6M33G715/5"
+      ],
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 658.4,
+        "max": 658.4,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GFE830BSC",
+      "fuel": "diesel",
+      "engineModels": [
+        "6M33G825/5"
+      ],
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "power": {
+        "min": 771.7,
+        "max": 771.7,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ]
     }
   ],
   "certifications": [],
@@ -72,9 +407,463 @@
         "Interpower is a division of Musgrave Generators"
       ],
       "file": "sources/interpower-international/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://interpower.co.uk/blogs/news/rental-specification-dnv-container-generators",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Interpower have supplied a Middle Eastern rental company with a number of DNV versions of their 1290kVA Cummins powered rental specification containers.",
+        "The standard 20ft rental generator container features the Cummins KTA50G3 engine, coupled to a Newage P7 alternator. This reliable, and time proven design offers a high power output for a small site footprint."
+      ],
+      "file": "sources/interpower-international/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://musgrave-generators.com/pages/products",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| GFE20BMC | 18 | 20 | Download",
+        "| GFE830BSC | 771 | 829 | Download",
+        "Featuring The Baudouin Engine"
+      ],
+      "file": "sources/interpower-international/2002.md",
+      "official": false
+    },
+    {
+      "n": 2003,
+      "url": "https://musgrave-generators.com/cdn/shop/files/GFE275BSC.pdf?v=1690388613",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Baudouin                Stamford           GFE275BSC",
+        "6M16G6D0/S              UCDI274K           (Canopied)",
+        "400/230                 200                250          220                    275                 361                  56.9",
+        "Baudouin 6M16G6D0/S"
+      ],
+      "file": "sources/interpower-international/2003.md",
+      "official": false
+    },
+    {
+      "n": 2004,
+      "url": "https://musgrave-generators.com/cdn/shop/files/GFE20BMC.pdf?v=1690388613",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Baudouin                Meccalte           GFE20BMC",
+        "4M06G20/5               ECP28-M4 C         (Canopied)",
+        "400/230                 14.5               18.2        16.1                   20.2                26.3                  4.7",
+        "Baudouin 4M06G20/5"
+      ],
+      "file": "sources/interpower-international/2004.md",
+      "official": false
+    },
+    {
+      "n": 2005,
+      "url": "https://musgrave-generators.com/cdn/shop/files/GFE50BSC.pdf?v=1690388613",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Baudouin                Stamford           GFE50BSC",
+        "4M06G50/5               S1L2-N1            (Canopied)",
+        "400/230                 36                 45          39.6                   49.5                65                    10.7",
+        "Baudouin 4M06G50/5"
+      ],
+      "file": "sources/interpower-international/2005.md",
+      "official": false
+    },
+    {
+      "n": 2006,
+      "url": "https://musgrave-generators.com/cdn/shop/files/GFE88BSC.pdf?v=1690388613",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Baudouin                Stamford           GFE88BSC",
+        "4M10G88/5               UCI274C            (Canopied)",
+        "400/230                 63                 78.7        70                     87.5                113.6                 18.8",
+        "Baudouin 4M10G88/5"
+      ],
+      "file": "sources/interpower-international/2006.md",
+      "official": false
+    },
+    {
+      "n": 2007,
+      "url": "https://musgrave-generators.com/cdn/shop/files/GFE145BSC.pdf?v=1690388613",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Baudouin                Stamford           GFE145BSC",
+        "6M11G2D0/S              UCI274E            (Canopied)",
+        "400/230                 105                131.8        115.5                  145.1               190                  30.2",
+        "Baudouin 6M11G2D0/S"
+      ],
+      "file": "sources/interpower-international/2007.md",
+      "official": false
+    },
+    {
+      "n": 2008,
+      "url": "https://musgrave-generators.com/cdn/shop/files/GFE220BSC.pdf?v=1690388613",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Baudouin                Stamford           GFE220BSC",
+        "6M16G2D0/S              UCI274H            (Canopied)",
+        "400/230                 160                200          176                    220                 288.7                43.1",
+        "Baudouin 6M16G2D0/S"
+      ],
+      "file": "sources/interpower-international/2008.md",
+      "official": false
+    },
+    {
+      "n": 2009,
+      "url": "https://musgrave-generators.com/cdn/shop/files/GFE350BSC.pdf?v=1690388613",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Baudouin                Stamford           GFE350BSC",
+        "6M16G350/5              S4L1D-E41          (Canopied)",
+        "400/230                 256                320          280                    350                 462                  70.5",
+        "Baudouin 6M16G350/5"
+      ],
+      "file": "sources/interpower-international/2009.md",
+      "official": false
+    },
+    {
+      "n": 2010,
+      "url": "https://musgrave-generators.com/cdn/shop/files/GFE440BSC.pdf?v=1690388613",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Baudouin                Stamford           GFE440BSC",
+        "6M21G440/5              S4L1D-F41          (Canopied)",
+        "400/230                 320                400          352                    440                 577.4                85.5",
+        "Baudouin 6M21G440/5"
+      ],
+      "file": "sources/interpower-international/2010.md",
+      "official": false
+    },
+    {
+      "n": 2011,
+      "url": "https://musgrave-generators.com/cdn/shop/files/GFE560BSC.pdf?v=1690388613",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Baudouin                Stamford           GFE560BSC",
+        "6M21G550/5              HCI544D            (Canopied)",
+        "400/230                 411                513.9        447.4                  559.3               742                  109.5",
+        "Baudouin 6M21G550/5"
+      ],
+      "file": "sources/interpower-international/2011.md",
+      "official": false
+    },
+    {
+      "n": 2012,
+      "url": "https://musgrave-generators.com/cdn/shop/files/GFE724BSC.pdf?v=1690388613",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Baudouin                Stamford           GFE724BSC",
+        "6M33G715/5              HCI544F            (Canopied)",
+        "400/230                 526.7               658.4       579.3                  724.2               950                  136.3",
+        "Baudouin 6M33G715/5"
+      ],
+      "file": "sources/interpower-international/2012.md",
+      "official": false
+    },
+    {
+      "n": 2013,
+      "url": "https://musgrave-generators.com/cdn/shop/files/GFE830BSC.pdf?v=1690388613",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Baudouin                Stamford           GFE830BSC",
+        "6M33G825/5              S6L1D-C41          (Canopied)",
+        "400/230                 617.4               771.7       663.2                  829                 1114                 161.5",
+        "Baudouin 6M33G825/5"
+      ],
+      "file": "sources/interpower-international/2013.md",
+      "official": false
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-04",
-  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Interpower rental specification DNV container generator (20ft)",
+      "header": [],
+      "rows": [
+        "Interpower have supplied a Middle Eastern rental company with a number of DNV versions of their 1290kVA Cummins powered rental specification containers.",
+        "The standard 20ft rental generator container features the Cummins KTA50G3 engine, coupled to a Newage P7 alternator. This reliable, and time proven design offers a high power output for a small site footprint."
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Musgrave Generators – Products (Baudouin engine, Stamford alternator)",
+      "header": [
+        "| Genset Model | Prime kVA | Standby kVA | Data Sheet"
+      ],
+      "rows": [
+        "| GFE20BMC | 18 | 20 | Download",
+        "| GFE26BSC | 24 | 26 | Download",
+        "| GFE34BSC | 31.4 | 34 | Download",
+        "| GFE44BSC | 40 | 44 | Download",
+        "| GFE50BSC | 45 | 50 | Download",
+        "| GFE57BSC | 52 | 57 | Download",
+        "| GFE69BSC | 63 | 69 | Download",
+        "| GFE88BSC | 79 | 88 | Download",
+        "| GFE108BSC | 98 | 108 | Download",
+        "| GFE145BSC | 132 | 145 | Download",
+        "| GFE169BSC | 153 | 169 | Download",
+        "| GFE220BSC | 200 | 220 | Download",
+        "| GFE235BSC | 235 | 259 | Download",
+        "| GFE275BSC | 250 | 275 | Download",
+        "| GFE340BSC | 310 | 340 | Download",
+        "| GFE350BSC | 320 | 350 | Download",
+        "| GFE415BSC | 360 | 415 | Download",
+        "| GFE440BSC | 400 | 440 | Download",
+        "| GFE495BSC | 450 | 495 | Download",
+        "| GFE560BSC | 514 | 559 | Download",
+        "| GFE647BSC | 590 | 647 | Download",
+        "| GFE724BSC | 658 | 724 | Download",
+        "| GFE830BSC | 771 | 829 | Download"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "GFE275BSC (Canopied) – datasheet 50Hz 1500rpm, Prime/Standby",
+      "header": [
+        "(V)                     kWe                kVA          kWe                    kVA                 (A)                  L/h"
+      ],
+      "rows": [
+        "Baudouin                Stamford           GFE275BSC",
+        "6M16G6D0/S              UCDI274K           (Canopied)",
+        "400/230                 200                250          220                    275                 361                  56.9",
+        "Baudouin 6M16G6D0/S",
+        "Stamford UCDI 274K"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "GFE20BMC (Canopied) – datasheet 50Hz 1500rpm, Prime/Standby",
+      "header": [
+        "(V)                     kWe                kVA         kWe                    kVA                 (A)                   L/h"
+      ],
+      "rows": [
+        "Baudouin                Meccalte           GFE20BMC",
+        "4M06G20/5               ECP28-M4 C         (Canopied)",
+        "400/230                 14.5               18.2        16.1                   20.2                26.3                  4.7",
+        "Baudouin 4M06G20/5",
+        "Meccalte ECP28-M4 C"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "GFE50BSC (Canopied) – datasheet 50Hz 1500rpm, Prime/Standby",
+      "header": [
+        "(V)                     kWe                kVA         kWe                    kVA                 (A)                   L/h"
+      ],
+      "rows": [
+        "Baudouin                Stamford           GFE50BSC",
+        "4M06G50/5               S1L2-N1            (Canopied)",
+        "400/230                 36                 45          39.6                   49.5                65                    10.7",
+        "Baudouin 4M06G50/5",
+        "Stamford S1L2-N1"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "GFE88BSC (Canopied) – datasheet 50Hz 1500rpm, Prime/Standby",
+      "header": [
+        "(V)                     kWe                kVA         kWe                    kVA                 (A)                   L/h"
+      ],
+      "rows": [
+        "Baudouin                Stamford           GFE88BSC",
+        "4M10G88/5               UCI274C            (Canopied)",
+        "400/230                 63                 78.7        70                     87.5                113.6                 18.8",
+        "Baudouin 4M10G88/5",
+        "Stamford UCI 274C"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "GFE145BSC (Canopied) – datasheet 50Hz 1500rpm, Prime/Standby",
+      "header": [
+        "(V)                     kWe                kVA          kWe                    kVA                 (A)                  L/h"
+      ],
+      "rows": [
+        "Baudouin                Stamford           GFE145BSC",
+        "6M11G2D0/S              UCI274E            (Canopied)",
+        "400/230                 105                131.8        115.5                  145.1               190                  30.2",
+        "Baudouin 6M11G2D0/S",
+        "Stamford UCI 274E"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "GFE220BSC (Canopied) – datasheet 50Hz 1500rpm, Prime/Standby",
+      "header": [
+        "(V)                     kWe                kVA          kWe                    kVA                 (A)                  L/h"
+      ],
+      "rows": [
+        "Baudouin                Stamford           GFE220BSC",
+        "6M16G2D0/S              UCI274H            (Canopied)",
+        "400/230                 160                200          176                    220                 288.7                43.1",
+        "Baudouin 6M16G2D0/S",
+        "Stamford UCI 274H"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "GFE350BSC (Canopied) – datasheet 50Hz 1500rpm, Prime/Standby",
+      "header": [
+        "(V)                     kWe                kVA          kWe                    kVA                 (A)                  L/h"
+      ],
+      "rows": [
+        "Baudouin                Stamford           GFE350BSC",
+        "6M16G350/5              S4L1D-E41          (Canopied)",
+        "400/230                 256                320          280                    350                 462                  70.5",
+        "Baudouin 6M16G350/5",
+        "Stamford SAL1D-E41"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "GFE440BSC (Canopied) – datasheet 50Hz 1500rpm, Prime/Standby",
+      "header": [
+        "(V)                     kWe                kVA          kWe                    kVA                 (A)                  L/h"
+      ],
+      "rows": [
+        "Baudouin                Stamford           GFE440BSC",
+        "6M21G440/5              S4L1D-F41          (Canopied)",
+        "400/230                 320                400          352                    440                 577.4                85.5",
+        "Baudouin 6M21G440/5",
+        "Stamford S4L1D-F41"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "GFE560BSC (Canopied) – datasheet 50Hz 1500rpm, Prime/Standby",
+      "header": [
+        "(V)                     kWe                kVA          kWe                    kVA                 (A)                  L/h"
+      ],
+      "rows": [
+        "Baudouin                Stamford           GFE560BSC",
+        "6M21G550/5              HCI544D            (Canopied)",
+        "400/230                 411                513.9        447.4                  559.3               742                  109.5",
+        "Baudouin 6M21G550/5",
+        "Stamford HCI544D"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "GFE724BSC (Canopied) – datasheet 50Hz 1500rpm, Prime/Standby",
+      "header": [
+        "(V)                     kWe                 kVA         kWe                    kVA                 (A)                  L/h"
+      ],
+      "rows": [
+        "Baudouin                Stamford           GFE724BSC",
+        "6M33G715/5              HCI544F            (Canopied)",
+        "400/230                 526.7               658.4       579.3                  724.2               950                  136.3",
+        "Baudouin 6M33G715/5",
+        "Stamford HCI544F"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "GFE830BSC (Canopied) – datasheet 50Hz 1500rpm, Prime/Standby",
+      "header": [
+        "(V)                     kWe                 kVA         kWe                    kVA                 (A)                  L/h"
+      ],
+      "rows": [
+        "Baudouin                Stamford           GFE830BSC",
+        "6M33G825/5              S6L1D-C41          (Canopied)",
+        "400/230                 617.4               771.7       663.2                  829                 1114                 161.5",
+        "Baudouin 6M33G825/5",
+        "Stamford S6L1D-C41"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE4520",
+      "text": "DSE4520",
+      "line": "DSE4520               DSE6120    DSE7320    DSE8610",
+      "src": [
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE6120",
+      "text": "DSE6120",
+      "line": "DSE4520               DSE6120    DSE7320    DSE8610",
+      "src": [
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "DSE4520               DSE6120    DSE7320    DSE8610",
+      "src": [
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "DSE8610",
+      "line": "DSE4520               DSE6120    DSE7320    DSE8610",
+      "src": [
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013
+      ]
+    }
+  ]
 }
