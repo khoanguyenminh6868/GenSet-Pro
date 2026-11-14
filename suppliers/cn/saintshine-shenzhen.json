@@ -76,6 +76,180 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "CUMMINS Series Diesel Generator Sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Stamford",
+        "Leroy Somer",
+        "Marathon",
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 10,
+        "max": 2300,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MTU Series Diesel Generator Sets (Series 1600)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 460,
+        "max": 730,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MTU Series Diesel Generator Sets (Series 2000)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 770,
+        "max": 1270,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "MTU Series Diesel Generator Sets (Series 4000)",
+      "fuel": "diesel",
+      "engineMakes": [
+        "MTU"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 1600,
+        "max": 4000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "PERKINS Series Diesel Generator Sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Stamford",
+        "Leroy Somer",
+        "Marathon",
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 10,
+        "max": 1875,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "WEICHAI Series Diesel Generator Sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Stamford",
+        "Leroy Somer",
+        "Marathon",
+        "Engga"
+      ],
+      "power": {
+        "min": 27.5,
+        "max": 1375,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "YUCHAI Series Diesel Generator Sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [
+        "Stamford",
+        "Leroy Somer",
+        "Marathon",
+        "Mecc Alte"
+      ],
+      "power": {
+        "min": 16.5,
+        "max": 4125,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
     }
   ],
   "certifications": [],
@@ -105,9 +279,132 @@
         "35,000 square meters"
       ],
       "file": "sources/saintshine-shenzhen/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.saintshinepower.com/CUMMINS-Series-Diesel-Generator-Sets-pd772938388.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "· Power coverage from 10KVA~2300KVA",
+        "· Engine:Chongqing Cummins",
+        "· Alternator: Stamford/Leroy Somer/Marathon/Mecc Alte",
+        "· Controller:Deepsea/SmartGen"
+      ],
+      "file": "sources/saintshine-shenzhen/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.saintshinepower.com/MTU-Series-Diesel-Generator-Sets-pd711838388.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "MTU Series Diesel Generator Sets from China manufacturer",
+        "1600-4000kVA",
+        "770-1270kVA",
+        "460-730kVA"
+      ],
+      "file": "sources/saintshine-shenzhen/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://www.saintshinepower.com/PERKINS-Series-Diesel-Generator-Sets-pd705938388.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "· Power coverage from 10KVA~1875KVA",
+        "· Engine: PERKINS",
+        "· Alternator: Stamford/Leroy Somer/Marathon/Mecc Alte",
+        "· Controller: Deepsea/Comap/SmartGen/Mebay/DATAKOM/Others"
+      ],
+      "file": "sources/saintshine-shenzhen/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://www.saintshinepower.com/WEICHAI-Series-Diesel-Generator-Sets-pd791838388.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "· Power: 27.5~1375KVA",
+        "· Engine: WEICHAI",
+        "· Alternator: Stamford/Leroy Somer/Marathon/Engga",
+        "· Controller: Deepsea/SmartGen"
+      ],
+      "file": "sources/saintshine-shenzhen/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://www.saintshinepower.com/YUCHAI-Series-Diesel-Generator-Sets-pd723838388.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "· Power coverage from 16.5-4125kVA",
+        "· Engine: YUCHAI",
+        "· Alternator: Stamford/Leroy Somer/Marathon/Mecc Alte",
+        "· Controller: Deepsea/Comap/SmartGen/Mebay/DATAKOM/Others"
+      ],
+      "file": "sources/saintshine-shenzhen/2005.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "Deepsea",
+      "line": "· Controller: Deepsea/Comap/SmartGen/Mebay/DATAKOM/Others",
+      "src": [
+        2003,
+        2005
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": null,
+      "text": "SmartGen",
+      "line": "· Controller: Deepsea/Comap/SmartGen/Mebay/DATAKOM/Others",
+      "src": [
+        2003,
+        2005
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": null,
+      "text": "Comap",
+      "line": "· Controller: Deepsea/Comap/SmartGen/Mebay/DATAKOM/Others",
+      "src": [
+        2003,
+        2005
+      ]
+    },
+    {
+      "brand": "Datakom",
+      "model": null,
+      "text": "DATAKOM",
+      "line": "· Controller: Deepsea/Comap/SmartGen/Mebay/DATAKOM/Others",
+      "src": [
+        2003,
+        2005
+      ]
+    },
+    {
+      "brand": "Mebay",
+      "model": null,
+      "text": "Mebay",
+      "line": "· Controller: Deepsea/Comap/SmartGen/Mebay/DATAKOM/Others",
+      "src": [
+        2003,
+        2005
+      ]
+    }
+  ]
 }
