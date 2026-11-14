@@ -50,6 +50,322 @@
       "src": [
         2
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "GEN22K-A",
+      "fuel": "diesel",
+      "engineModels": [
+        "KDI 1903"
+      ],
+      "engineMakes": [
+        "Kohler"
+      ],
+      "power": {
+        "min": 22,
+        "max": 22,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GEN44K-A",
+      "fuel": "diesel",
+      "engineModels": [
+        "KDI 2504"
+      ],
+      "engineMakes": [
+        "Kohler"
+      ],
+      "power": {
+        "min": 44,
+        "max": 44,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GEN110F-A",
+      "fuel": "diesel",
+      "engineModels": [
+        "NEF45 TM2A"
+      ],
+      "engineMakes": [
+        "Fpt"
+      ],
+      "power": {
+        "min": 110,
+        "max": 110,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GEN200F-A",
+      "fuel": "diesel",
+      "engineModels": [
+        "NEF67 TM7"
+      ],
+      "engineMakes": [
+        "Fpt"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GEN330F-A",
+      "fuel": "diesel",
+      "engineModels": [
+        "CURSOR87 TE4"
+      ],
+      "engineMakes": [
+        "Fpt"
+      ],
+      "power": {
+        "min": 330,
+        "max": 330,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GEN440F-A",
+      "fuel": "diesel",
+      "engineModels": [
+        "CURSOR13 TE2A"
+      ],
+      "engineMakes": [
+        "Fpt"
+      ],
+      "power": {
+        "min": 440,
+        "max": 440,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GEN500S A",
+      "fuel": "diesel",
+      "engineModels": [
+        "DC13 072A"
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GEN650V-A",
+      "fuel": "diesel",
+      "engineModels": [
+        "VOLVO TAD1642GE"
+      ],
+      "engineMakes": [
+        "Volvo"
+      ],
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GEN825N-A",
+      "fuel": "diesel",
+      "engineModels": [
+        "DOOSAN DP222LCF"
+      ],
+      "engineMakes": [
+        "Doosan"
+      ],
+      "power": {
+        "min": 825,
+        "max": 825,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GEN880H-A",
+      "fuel": "diesel",
+      "engineModels": [
+        "MITSUBISHI S12A2-PTA"
+      ],
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "power": {
+        "min": 880,
+        "max": 880,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GEN900P-A",
+      "fuel": "diesel",
+      "engineModels": [
+        "PERKINS 4006-23TAG3A"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 900,
+        "max": 900,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GEN1100C-A",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA38 G5"
+      ],
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 1100,
+        "max": 1100,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2014
+        ]
+      },
+      "src": [
+        2014
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "GEN1250P-A",
+      "fuel": "diesel",
+      "engineModels": [
+        "PERKINS 4008-30TAG3"
+      ],
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2015
+        ]
+      },
+      "src": [
+        2015
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Grupos electrógenos a gas (GNL)",
+      "fuel": "gas",
+      "power": {
+        "min": 10,
+        "max": 404,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
     }
   ],
   "certifications": [],
@@ -77,9 +393,540 @@
         "5-5.250 kVA | 50/60 Hz | 1.500/1.800 rpm | Monofásicos/Trifásicos"
       ],
       "file": "sources/genesal-energy/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://api.genesalenergy.com/uploads/Genesal_Energy_ES_Catalogo_producto_2020_23d8635f21.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "GNL     9 - 364     10 - 404    7 - 291             8 - 323          2,8 - 96,8 3,1 - 107,5  eficiencia de combustible y bajas emisiones.",
+        "Central de control ComAp InteliDrive DCU Marine.",
+        "Panel de control y operaciones automático digital GEINTEL."
+      ],
+      "file": "sources/genesal-energy/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://genesalenergy.com/catalogo/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Consulta las más de 200 referencias en nuestro catálogo de grupos electrógenos diésel desde 5,5kVA hasta 2.650kVA"
+      ],
+      "file": "sources/genesal-energy/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://genesalenergy.com/grupo-electrogeno/gen22k-a/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Modelo KOHLER KDI 1903 M",
+        "PRP/STP (kVA) 20/22"
+      ],
+      "file": "sources/genesal-energy/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://genesalenergy.com/grupo-electrogeno/gen44k-a/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Modelo KOHLER KDI 2504 TM-40",
+        "PRP/STP (kVA) 40/44"
+      ],
+      "file": "sources/genesal-energy/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://genesalenergy.com/grupo-electrogeno/gen110f-a/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Modelo FPT NEF45 TM2A",
+        "PRP/STP (kVA) 100/110"
+      ],
+      "file": "sources/genesal-energy/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://genesalenergy.com/grupo-electrogeno/gen200f-a/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Modelo FPT NEF67 TM7",
+        "PRP/STP (kVA) 180/200"
+      ],
+      "file": "sources/genesal-energy/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://genesalenergy.com/grupo-electrogeno/gen330f-a/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Modelo FPT CURSOR87 TE4",
+        "PRP/STP (kVA) 300/330"
+      ],
+      "file": "sources/genesal-energy/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://genesalenergy.com/grupo-electrogeno/gen440f-a/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Modelo FPT CURSOR13 TE2A",
+        "PRP/STP (kVA) 400/440"
+      ],
+      "file": "sources/genesal-energy/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://genesalenergy.com/grupo-electrogeno/gen500s-a/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Modelo SCANIA DC13 072A (02-13)",
+        "PRP/STP (kVA) 450/500"
+      ],
+      "file": "sources/genesal-energy/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://genesalenergy.com/grupo-electrogeno/gen650v-a/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Modelo VOLVO TAD1642GE",
+        "PRP/STP (kVA) 590/650"
+      ],
+      "file": "sources/genesal-energy/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://genesalenergy.com/grupo-electrogeno/gen825n-a/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Modelo DOOSAN DP222LCF",
+        "PRP/STP (kVA) 750/825"
+      ],
+      "file": "sources/genesal-energy/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "https://genesalenergy.com/grupo-electrogeno/gen880h-a/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Modelo MITSUBISHI S12A2-PTA",
+        "PRP/STP (kVA) 800/880"
+      ],
+      "file": "sources/genesal-energy/2012.md",
+      "official": true
+    },
+    {
+      "n": 2013,
+      "url": "https://genesalenergy.com/grupo-electrogeno/gen900p-a/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Modelo PERKINS 4006-23TAG3A",
+        "PRP/STP (kVA) 800/900"
+      ],
+      "file": "sources/genesal-energy/2013.md",
+      "official": true
+    },
+    {
+      "n": 2014,
+      "url": "https://genesalenergy.com/grupo-electrogeno/gen1100c-a/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Modelo CUMMIS KTA38 G5",
+        "PRP/STP (kVA) 1000/1100"
+      ],
+      "file": "sources/genesal-energy/2014.md",
+      "official": true
+    },
+    {
+      "n": 2015,
+      "url": "https://genesalenergy.com/grupo-electrogeno/gen1250p-a/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Modelo PERKINS 4008-30TAG3",
+        "PRP/STP (kVA) 1130/1250"
+      ],
+      "file": "sources/genesal-energy/2015.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2003,
+      "title": "GEN22K-A – Genesal Energy, 50 Hz, abierto",
+      "header": [
+        "GEN22K-A"
+      ],
+      "rows": [
+        "Frecuencia 50 HZ",
+        "Gama de potencia XS (5,5-22kVA)",
+        "PRP/STP (kVA) 20/22",
+        "Estilo Estático abierto",
+        "Tensión Trifásico",
+        "Motor Marca KOHLER",
+        "Modelo KOHLER KDI 1903 M",
+        "RPM 1500",
+        "Combustible Diesel",
+        "Potencia KVA 20/22",
+        "Cont. PRP (kVA/kWe) 20/16",
+        "Emerg. STP (kVA/kWe) 22/18",
+        "Cons. 75% PRP (l/h) 3.89 L/h",
+        "Dimensiones (LxAnxAl) 1500x750x1193",
+        "Peso (Kg) 450",
+        "Depósito (l) 160",
+        "Voltaje (V) 400/230 - 415/240 - 380/220"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "GEN44K-A – Genesal Energy, 50 Hz, abierto",
+      "header": [
+        "GEN44K-A"
+      ],
+      "rows": [
+        "Frecuencia 50 HZ",
+        "Gama de potencia S (23-110kVA)",
+        "PRP/STP (kVA) 40/44",
+        "Estilo Estático abierto",
+        "Tensión Trifásico",
+        "Motor Marca KOHLER",
+        "Modelo KOHLER KDI 2504 TM-40",
+        "RPM 1500",
+        "Combustible Diesel",
+        "Potencia KVA 40/44",
+        "Cont. PRP (kVA/kWe) 40/32",
+        "Emerg. STP (kVA/kWe) 44/35",
+        "Cons. 75% PRP (l/h) 7.6 L/h",
+        "Dimensiones (LxAnxAl) 1824x750x1203",
+        "Peso (Kg) 605",
+        "Depósito (l) 200",
+        "Voltaje (V) 400/230 - 415/240 - 380/220"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "GEN110F-A – Genesal Energy, 50 Hz, abierto",
+      "header": [
+        "GEN110F-A"
+      ],
+      "rows": [
+        "Frecuencia 50 HZ",
+        "Gama de potencia S (23-110kVA)",
+        "PRP/STP (kVA) 100/110",
+        "Estilo Estático abierto",
+        "Tensión Trifásico",
+        "Motor Marca FPT",
+        "Modelo FPT NEF45 TM2A",
+        "RPM 1500",
+        "Combustible Diesel",
+        "Potencia KVA 100/110",
+        "Cont. PRP (kVA/kWe) 100/80",
+        "Emerg. STP (kVA/kWe) 110/88",
+        "Cons. 75% PRP (l/h) 16.2 L/h",
+        "Dimensiones (LxAnxAl) 2201x753x1517",
+        "Peso (Kg) 1029",
+        "Depósito (l) 200",
+        "Voltaje (V) 400/230 - 415/240 - 380/220"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "GEN200F-A – Genesal Energy, 50 Hz, abierto",
+      "header": [
+        "GEN200F-A"
+      ],
+      "rows": [
+        "Frecuencia 50 HZ",
+        "Gama de potencia M (111-385kVA)",
+        "PRP/STP (kVA) 180/200",
+        "Estilo Estático abierto",
+        "Tensión Trifásico",
+        "Motor Marca FPT",
+        "Modelo FPT NEF67 TM7",
+        "RPM 1500",
+        "Combustible Diesel",
+        "Potencia KVA 180/200",
+        "Cont. PRP (kVA/kWe) 180/144",
+        "Emerg. STP (kVA/kWe) 200/160",
+        "Cons. 75% PRP (l/h) 37.3 L/h",
+        "Dimensiones (LxAnxAl) 2641x820x1750",
+        "Peso (Kg) 1300",
+        "Depósito (l) 300",
+        "Voltaje (V) 400/230 - 415/240 - 380/220"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "GEN330F-A – Genesal Energy, 50 Hz, abierto",
+      "header": [
+        "GEN330F-A"
+      ],
+      "rows": [
+        "Frecuencia 50 HZ",
+        "Gama de potencia M (111-385kVA)",
+        "PRP/STP (kVA) 300/330",
+        "Estilo Estático abierto",
+        "Tensión Trifásico",
+        "Motor Marca FPT",
+        "Modelo FPT CURSOR87 TE4",
+        "RPM 1500",
+        "Combustible Diesel",
+        "Potencia KVA 300/330",
+        "Cont. PRP (kVA/kWe) 300/240",
+        "Emerg. STP (kVA/kWe) 330/264",
+        "Cons. 75% PRP (l/h) 57.6 L/h",
+        "Dimensiones (LxAnxAl) 3071x1050x1739",
+        "Peso (Kg) 2095",
+        "Depósito (l) 350",
+        "Voltaje (V) 400/230 - 415/240 - 380/220"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "GEN440F-A – Genesal Energy, 50 Hz, abierto",
+      "header": [
+        "GEN440F-A"
+      ],
+      "rows": [
+        "Frecuencia 50 HZ",
+        "Gama de potencia L (386-825kVA)",
+        "PRP/STP (kVA) 400/440",
+        "Estilo Estático abierto",
+        "Tensión Trifásico",
+        "Motor Marca FPT",
+        "Modelo FPT CURSOR13 TE2A",
+        "RPM 1500",
+        "Combustible Diesel",
+        "Potencia KVA 400/440",
+        "Cont. PRP (kVA/kWe) 400/320",
+        "Emerg. STP (kVA/kWe) 440/352",
+        "Cons. 75% PRP (l/h) 57.3 L/h",
+        "Dimensiones (LxAnxAl) 3252x1055x1822",
+        "Peso (Kg) 2500",
+        "Depósito (l) 350",
+        "Voltaje (V) 400/230 - 415/240 - 380/220"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "GEN500S A – Genesal Energy, 50 Hz, abierto",
+      "header": [
+        "GEN500S A"
+      ],
+      "rows": [
+        "Frecuencia 50 HZ",
+        "Gama de potencia L (386-825kVA)",
+        "PRP/STP (kVA) 450/500",
+        "Estilo Estático abierto",
+        "Tensión Trifásico",
+        "Motor Marca SCANIA",
+        "Modelo SCANIA DC13 072A (02-13)",
+        "RPM 1500",
+        "Combustible Diesel",
+        "Potencia KVA 450/500",
+        "Cont. PRP (kVA/kWe) 450/360",
+        "Emerg. STP (kVA/kWe) 500/400",
+        "Cons. 75% PRP (l/h) 65.8 L/h",
+        "Dimensiones (LxAnxAl) 3437X1120X2079",
+        "Peso (Kg) 2648",
+        "Depósito (l) 350",
+        "Voltaje (V) 400/230 - 415/240 - 380/220"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "GEN650V-A – Genesal Energy, 50 Hz, abierto",
+      "header": [
+        "GEN650V-A"
+      ],
+      "rows": [
+        "Frecuencia 50 HZ",
+        "Gama de potencia L (386-825kVA)",
+        "PRP/STP (kVA) 590/650",
+        "Estilo Estático abierto",
+        "Tensión Trifásico",
+        "Motor Marca VOLVO",
+        "Modelo VOLVO TAD1642GE",
+        "RPM 1500",
+        "Combustible Diesel",
+        "Potencia KVA 590/650",
+        "Cont. PRP (kVA/kWe) 590/472",
+        "Emerg. STP (kVA/kWe) 650/520",
+        "Cons. 75% PRP (l/h) 85.3 L/h",
+        "Dimensiones (LxAnxAl) 3519X1160X2100",
+        "Peso (Kg) 3330",
+        "Depósito (l) 1000 Independiente",
+        "Voltaje (V) 400/230 - 415/240 - 380/220"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "GEN825N-A – Genesal Energy, 50 Hz, abierto",
+      "header": [
+        "GEN825N-A"
+      ],
+      "rows": [
+        "Frecuencia 50 HZ",
+        "Gama de potencia L (386-825kVA)",
+        "PRP/STP (kVA) 750/825",
+        "Estilo Estático abierto",
+        "Tensión Trifásico",
+        "Motor Marca DOOSAN",
+        "Modelo DOOSAN DP222LCF",
+        "RPM 1500",
+        "Combustible Diesel",
+        "Potencia KVA 750/825",
+        "Cont. PRP (kVA/kWe) 750/600",
+        "Emerg. STP (kVA/kWe) 825/660",
+        "Cons. 75% PRP (l/h) 119.1 L/h",
+        "Dimensiones (LxAnxAl) 3712X1389X1558",
+        "Peso (Kg) 3793",
+        "Depósito (l) 1000 independiente",
+        "Voltaje (V) 400/230 - 415/240 - 380/220"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "GEN880H-A – Genesal Energy, 50 Hz, abierto",
+      "header": [
+        "GEN880H-A"
+      ],
+      "rows": [
+        "Frecuencia 50 HZ",
+        "Gama de potencia XL (826-3900kVA)",
+        "PRP/STP (kVA) 800/880",
+        "Estilo Estático abierto",
+        "Tensión Trifásico",
+        "Motor Marca MITSUBISHI",
+        "Modelo MITSUBISHI S12A2-PTA",
+        "RPM 1500",
+        "Combustible Diesel",
+        "Potencia KVA 800/880",
+        "Cont. PRP (kVA/kWe) 800/640",
+        "Emerg. STP (kVA/kWe) 880/704",
+        "Cons. 75% PRP (l/h) 129 L/h",
+        "Dimensiones (LxAnxAl) 4051X1447X2142",
+        "Peso (Kg) 6370",
+        "Depósito (l) 1000 independiente",
+        "Voltaje (V) 400/230 - 415/240 - 380/220"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "GEN900P-A – Genesal Energy, 50 Hz, abierto",
+      "header": [
+        "GEN900P-A"
+      ],
+      "rows": [
+        "Frecuencia 50 HZ",
+        "Gama de potencia XL (826-3900kVA)",
+        "PRP/STP (kVA) 800/900",
+        "Estilo Estático abierto",
+        "Tensión Trifásico",
+        "Motor Marca PERKINS",
+        "Modelo PERKINS 4006-23TAG3A",
+        "RPM 1500",
+        "Combustible Diesel",
+        "Potencia KVA 800/900",
+        "Cont. PRP (kVA/kWe) 800/640",
+        "Emerg. STP (kVA/kWe) 900/720",
+        "Cons. 75% PRP (l/h) 132 L/h",
+        "Dimensiones (LxAnxAl) 4079x1706x2264",
+        "Peso (Kg) 4933",
+        "Depósito (l) 1000 independiente",
+        "Voltaje (V) 400/230 - 415/240 - 380/220"
+      ]
+    },
+    {
+      "n": 2014,
+      "title": "GEN1100C-A – Genesal Energy, 50 Hz, abierto",
+      "header": [
+        "GEN1100C-A"
+      ],
+      "rows": [
+        "Frecuencia 50 HZ",
+        "Gama de potencia XL (826-3900kVA)",
+        "PRP/STP (kVA) 1000/1100",
+        "Estilo Estático abierto",
+        "Tensión Trifásico",
+        "Motor Marca CUMMINS",
+        "Modelo CUMMIS KTA38 G5",
+        "RPM 1500",
+        "Combustible Diesel",
+        "Potencia KVA 1000/1100",
+        "Cont. PRP (kVA/kWe) 1000/800",
+        "Emerg. STP (kVA/kWe) 1100/880",
+        "Cons. 75% PRP (l/h) 161 L/h",
+        "Dimensiones (LxAnxAl) 4679X1752X2763",
+        "Peso (Kg) 7987",
+        "Depósito (l) 1000 independiente",
+        "Voltaje (V) 400/230 - 415/240 - 380/220"
+      ]
+    },
+    {
+      "n": 2015,
+      "title": "GEN1250P-A – Genesal Energy, 50 Hz, abierto",
+      "header": [
+        "GEN1250P-A"
+      ],
+      "rows": [
+        "Frecuencia 50 HZ",
+        "Gama de potencia XL (826-3900kVA)",
+        "PRP/STP (kVA) 1130/1250",
+        "Estilo Estático abierto",
+        "Tensión Trifásico",
+        "Motor Marca PERKINS",
+        "Modelo PERKINS 4008-30TAG3",
+        "RPM 1500",
+        "Combustible Diesel",
+        "Potencia KVA 1130/1250",
+        "Cont. PRP (kVA/kWe) 1130/904",
+        "Emerg. STP (kVA/kWe) 1250/1000",
+        "Cons. 75% PRP (l/h) 188 L/h",
+        "Dimensiones (LxAnxAl) 4808x2194x2220",
+        "Peso (Kg) 7268",
+        "Depósito (l) 1000 independiente",
+        "Voltaje (V) 400/230 - 415/240 - 380/220"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "ComAp",
+      "model": "InteliDrive DCU Marine",
+      "text": "ComAp InteliDrive DCU Marine",
+      "line": "Personalización mecánica.                                       Central de control ComAp InteliDrive DCU Marine.",
+      "src": [
+        2001
+      ]
+    }
+  ]
 }
