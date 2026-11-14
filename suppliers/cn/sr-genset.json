@@ -50,6 +50,148 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "SRGENSET Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "SRGENSET"
+      ],
+      "power": {
+        "min": 16.5,
+        "max": 968,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Cummins Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "power": {
+        "min": 19,
+        "max": 1650,
+        "unit": "kW",
+        "rating": "standby",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Weichai Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "power": {
+        "min": 18,
+        "max": 1600,
+        "unit": "kW",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Perkins Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "power": {
+        "min": 8,
+        "max": 1320,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Mitsubishi Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "power": {
+        "min": 600,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "EU Stage 3A Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "YTO",
+        "Perkins",
+        "FPT"
+      ],
+      "power": {
+        "min": 20,
+        "max": 550,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Hyundai Series",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Hyundai"
+      ],
+      "power": {
+        "min": 50,
+        "max": 900,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
     }
   ],
   "certifications": [
@@ -86,9 +228,715 @@
         "Our company has passed ISO9001 quality"
       ],
       "file": "sources/sr-genset/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://generatorsr.com/srgenset-series/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Diesel Generator Set With SRGENSET Engine",
+        "· Standby Power:16.5KVA-968KVA",
+        "Yes, SRGENSET is a diesel generator manufacturer, and we have our own production plant in Huai’an City, Jiangsu Province, China.",
+        "DEEPSEA Controller",
+        "ComAp IG200 + Electrical breaker"
+      ],
+      "file": "sources/sr-genset/2001.md",
+      "official": false
+    },
+    {
+      "n": 2002,
+      "url": "https://generatorsr.com/cummins-series/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Cummins Diesel Generator Sets | 19kVA-1650kVA Generator | Open & Silent Types - SRGENSET",
+        "· Standby Power: 19kW-1650kW",
+        "DEEPSEA Controller",
+        "ComAp IG200 + Electrical breaker"
+      ],
+      "file": "sources/sr-genset/2002.md",
+      "official": false
+    },
+    {
+      "n": 2003,
+      "url": "https://generatorsr.com/weichai-series/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Weichai Engine Diesel Generator Set Supplier丨18kVA-1600kVA 丨SRGENSET",
+        "· Standby Power:18KW-1600KW",
+        "DEEPSEA Controller",
+        "ComAp IG200 + Electrical breaker"
+      ],
+      "file": "sources/sr-genset/2003.md",
+      "official": false
+    },
+    {
+      "n": 2004,
+      "url": "https://generatorsr.com/perkins-series/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Perkins Engine Diesel Generator Sets Supplier - SRGENSET",
+        "· Standby Power:8kw-1320kw",
+        "DEEPSEA Controller",
+        "ComAp IG200 + Electrical breaker"
+      ],
+      "file": "sources/sr-genset/2004.md",
+      "official": false
+    },
+    {
+      "n": 2005,
+      "url": "https://generatorsr.com/sdec-series/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "SDEC Stage V Diesel Generators from China supplier - SRGENSET",
+        "· Standby Power:50kw-275kw",
+        "DEEPSEA Controller",
+        "ComAp IG200 + Electrical breaker"
+      ],
+      "file": "sources/sr-genset/2005.md",
+      "official": false
+    },
+    {
+      "n": 2006,
+      "url": "https://generatorsr.com/yanmar-series/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Yanmar Diesel Generator Sets Supplier | 3kVA-50kVA Generator - SRGENSET",
+        "· Standby Power:3kw-50kw",
+        "DEEPSEA Controller",
+        "ComAp IG200 + Electrical breaker"
+      ],
+      "file": "sources/sr-genset/2006.md",
+      "official": false
+    },
+    {
+      "n": 2007,
+      "url": "https://generatorsr.com/volvo-series/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Volvo Engine Diesel Generator Sets Supplier - SRGENSET",
+        "· Standby Power:180kw-600kw",
+        "DEEPSEA Controller",
+        "ComAp IG200 + Electrical breaker"
+      ],
+      "file": "sources/sr-genset/2007.md",
+      "official": false
+    },
+    {
+      "n": 2008,
+      "url": "https://generatorsr.com/mitsubishi-series/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Mitsubishi Engine Diesel Generator Sets Supplier - SRGENSET",
+        "· Standby Power:600kw-2000kw",
+        "DEEPSEA Controller",
+        "ComAp IG200 + Electrical breaker"
+      ],
+      "file": "sources/sr-genset/2008.md",
+      "official": false
+    },
+    {
+      "n": 2009,
+      "url": "https://generatorsr.com/eu-stage-3a-series/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "EU Stage 3A Engine Diesel Generator Sets from Supplier- SRGENSET",
+        "· Standby Power:180kw-600kw",
+        "· Power Range from 20kVA to 550kVA+",
+        "DEEPSEA Controller",
+        "ComAp IG200 + Electrical breaker"
+      ],
+      "file": "sources/sr-genset/2009.md",
+      "official": false
+    },
+    {
+      "n": 2010,
+      "url": "https://generatorsr.com/hyundai-series/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Hyundai Engine Generator Series | 50-900kW Industrial Gensets - SRGENSET",
+        "· Standby Power:50kw-900kw",
+        "DEEPSEA Controller",
+        "ComAp IG200 + Electrical breaker"
+      ],
+      "file": "sources/sr-genset/2010.md",
+      "official": false
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "SRGENSET series – bảng 1",
+      "header": [
+        "| Frequency | Voltage | Rated power | Standby Power | Engine | Modle | Alternator | Modle | Specifications",
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| 50 | 400 | 12 | 15 | 13.2 | 16.5 | SRGENSET | 4AW | SRGENSET | SAL164D2 | PDF",
+        "| 50 | 400 | 16 | 20 | 17.6 | 22 | SRGENSET | 4BW | SRGENSET | SAL184A1 | PDF",
+        "| 50 | 400 | 18 | 22.5 | 19.8 | 24.75 | SRGENSET | 4BW1 | SRGENSET | SAL184B1 | PDF",
+        "| 50 | 400 | 20 | 25 | 22 | 27.5 | SRGENSET | 4DW | SRGENSET | SAL184C2 | PDF",
+        "| 50 | 400 | 22 | 27.5 | 24.2 | 30.25 | SRGENSET | 4DW1 | SRGENSET | SAL184D2 | PDF",
+        "| 50 | 400 | 25 | 31.25 | 27.5 | 34.375 | SRGENSET | 4BWZ | SRGENSET | SAL184E3 | PDF",
+        "| 50 | 400 | 30 | 37.5 | 33 | 41.25 | SRGENSET | 4DEZ | SRGENSET | SAL184G | PDF",
+        "| 50 | 400 | 40 | 50 | 44 | 55 | SRGENSET | 4BMZ | SRGENSET | SAL224C1 | PDF",
+        "| 50 | 400 | 50 | 62.5 | 55 | 68.75 | SRGENSET | 4BMZ1 | SRGENSET | SAL224E2 | PDF",
+        "| 50 | 400 | 60 | 75 | 66 | 82.5 | SRGENSET | 4BMZL | SRGENSET | SAL224H4 | PDF",
+        "| 50 | 400 | 70 | 87.5 | 77 | 96.25 | SRGENSET | 4FWZL | SRGENSET | SAL224L5 | PDF",
+        "| 50 | 400 | 95 | 118.75 | 104.5 | 130.625 | SRGENSET | 4FWZL1 | SRGENSET | SAL274C2 | PDF"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "SRGENSET series – bảng 2",
+      "header": [
+        "| Standby | Prime | Engine | Alternator | Open Type Dimension | Silent Type Dimension",
+        "| kVA | kW | kVA | kW | Model | Gov | SRGENSET"
+      ],
+      "rows": [
+        "| 20 | 18 | 18 | 16 | 4Z2.3-G12 | Mech | SA164-16 | 1510*900*980 | 1900*900*1100",
+        "| 24 | 22 | 22 | 20 | 4Z2.7-G12 | Mech | SA184-20 | 1510*900*980 | 1900*900*1100",
+        "| 29 | 26 | 26.4 | 24 | 4Z3.0-G12 | Mech | SA184-24 | 1810*950*1020 | 2200*950*1230",
+        "| 39 | 35 | 35 | 32 | 4Z3.2-G12 | Mech | SA184-33.6 | 1810*950*1020 | 2200*950*1230",
+        "| 42 | 39 | 38.5 | 35 | 4ZT3.2-G12 | Mech | SA184-36 | 1810*950*1020 | 2200*950*1230",
+        "| 61 | 55 | 55 | 50 | 4ZT3.5-G21 | Elec | SA224-54 | 1995*950*1240 | 2500*950*1500",
+        "| 73 | 66 | 66 | 60 | 4ZT4.1-G21 | Elec | SA224-60 | 1995*950*1240 | 2500*950*1500",
+        "| 77 | 70 | 70 | 64 | 4ZTAA4.1-G21 | Elec | SA224-65 | 1995*950*1240 | 2700*1000*1600",
+        "| 85 | 77 | 77 | 70 | 4ZTAA4.1-G22 | Elec | SA224-70 | 1995*950*1325 | 2700*1000*1600",
+        "| 110 | 99 | 100 | 90 | 4HTAA4.3-G21 | Elec | SA224-90 | 2195*1000*1400 | 2700*1000*1600",
+        "| 121 | 110 | 110 | 100 | 4HTAA4.3-G23 | Elec | SA224-96 | 2195*1050*1440 | 2700*1000*1600",
+        "| 145 | 132 | 132 | 120 | 6HTAA6.5-G21 | Elec | SA274-120 | 2550*1150*1515 | 3400*1150*1920",
+        "| 154 | 141 | 140 | 128 | 6HTAA6.5-G22 | Elec | SA274-134 | 2550*1150*1515 | 3400*1150*1920",
+        "| 198 | 182 | 180 | 165 | 6HTAA6.5-G23 | Elec | SA274-168 | 2550*1150*1515 | 3400*1150*1920",
+        "| 220 | 198 | 200 | 180 | 6DTAA8.9-G21 | Elec | SA274-180 | 2550*1150*1515 | 3400*1150*1920",
+        "| 242 | 220 | 220 | 200 | 6DTAA8.9-G24 | Elec | SA274-216 | 2550*1150*1515 | 3400*1150*1920",
+        "| 264 | 242 | 240 | 220 | 6DTAA8.9-G23 | Elec | SA274-216 | 2950*1300*1680 | 3900*1300*2000",
+        "| 330 | 308 | 300 | 280 | 6ETAA11.8-G22 | Elec | SA314-288 | 2950*1300*1680 | 3900*1300*2000",
+        "| 396 | 352 | 360 | 320 | 6ETAA12.8-G22 | Elec | SA314-336 | 2950*1300*1680 | 3900*1300*2000",
+        "| 440 | 396 | 400 | 360 | 6ETAA12.8-G32 | ECM | SA314-360 | 3500*1400*1850 | 4400*1400*2100",
+        "| 484 | 440 | 440 | 400 | 6ETAA12.8-G310.1 | ECM | SA314-432 | 3500*1400*1850 | 4400*1400*2100",
+        "| 550 | 495 | 500 | 450 | 6KTAA25-G311 | EUP | SA354-480 | 3500*1400*1850 | 4400*1400*2100",
+        "| 605 | 550 | 550 | 500 | 6KTAA25-G310 | EUP | SA354-540 | 3500*1400*1850 | 4400*1400*2100",
+        "| 660 | 616 | 600 | 560 | 6KTAA25-G39 | EUP | SA354-576 | 4200*1781*2200 | 5300*2000*2514",
+        "| 726 | 660 | 660 | 600 | 6KTAA25-G32.1 | ECM | SA354-600 | 4600*2000*2300 | 5300*2000*2514",
+        "| 792 | 726 | 720 | 660 | 6KTAA25-G31.1 | ECM | SA354-672 | 4600*2000*2300 | 5300*2000*2514",
+        "| 880 | 792 | 800 | 720 | 6KTAA25-G320.1 | ECM | SA354-720 | 4800*2030*2300 | 5300*2000*2514",
+        "| 968 | 880 | 880 | 800 | 6KTAA25-G321.1 | ECM | SA404-874 | 4800*2030*2300 | 5300*2000*2514"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Cummins series – bảng 1",
+      "header": [
+        "| Standby | Prime | Engine | Alternator | Open Type Dimension | Silent Type Dimension",
+        "| kVA | kW | kVA | kW | Model | Gov | Stamford | Leroy Somer | SRGENSET"
+      ],
+      "rows": [
+        "| 23.75 | 19 | 21.25 | 17 | 4B3.9-G11 | Mech | SOL2-M1 | TAL-A40-G | SA184-18 | 1900*940*1450 | 2286*956*1255",
+        "| 30 | 24 | 27.5 | 22 | 4B3.9-G1 | Mech | SOL2-P1 | TAL-A42-C | SA184-22 | 1900*940*1450 | 2286*956*1255",
+        "| 33 | 26 | 30 | 24 | 4B3.9-G12 | Elec | SOL2-P1 | TAL-A42-C | SA184-25 | 1900*940*1450 | 2286*956*1255",
+        "| 43.75 | 35 | 40 | 32 | 4BT3.9-G1 | Mech | S1L2-K1 | TAL-A42-F | SA224-34 | 1900*940*1450 | 2286*956*1255",
+        "| 62.5 | 50 | 56.25 | 45 | 4BTA3.9-G2 (QC50/60E) | Elec | S1L2-Y1 | TAL-A42-H | SA224-50 | 1900*940*1450 | 2460*1006*1255",
+        "| 70 | 56 | 62.5 | 50 | 4BTA3.9-G2 (QC58/67E) | Elec | UCI224F | TAL-A42-H | SA224-50 | 1900*940*1450 | 2460*1006*1255",
+        "| 90 | 72 | 80 | 64 | 4BTA3.9-G11 | Elec | UCI224G | TAL-A44-C | SA224-70 | 1900*940*1450 | 2460*1006*1255",
+        "| 105 | 84 | 95 | 76 | 4BTA3.9-G13 | Elec | UCI274C | TAL-A44-D | SA274-80 | 2250*990*1450 | 2960*1100*1650",
+        "| 110 | 88 | 100 | 80 | 4BTAA3.9-G3 | Elec | UCI274C | TAL-A44-D | SA274-80 | 2250*990*1450 | 2960*1100*1650",
+        "| 145 | 116 | 135 | 108 | 6BTAA5.9-G2 | Elec | UCI274E | TAL-A44-H | SA274-112 | 2380*990*1450 | 3360*1110*1700",
+        "| 165 | 132 | 150 | 120 | 6BTAA5.9-G12 | Elec | UCI274F | TAL-A44-J | SA274-128 | 2425*990*1560 | 3360*1110*1700",
+        "| 200 | 160 | 181.25 | 145 | 6CTA8.3-G2 | Elec | UCI274G | TAL-A44-L | SA274-144 | 2490*1114*1560 | 3360*1110*1700",
+        "| 215 | 172 | 200 | 160 | 6CTAA8.3-G2 | Elec | UCI274H | TAL-A44-M | SA274-160 | 2490*1114*1560 | 3620*1232*2050",
+        "| 275 | 220 | 250 | 200 | 6LTAA8.9-G3 | Elec | UCDI274K | TAL-A46-D | SA274-200 | 2680*1150*1700 | 3620*1232*2050",
+        "| 300 | 240 | 270 | 216 | 6LTAA9.5-G3 | Elec | S4L1D-D4 | TAL-A46-E | SAC4-240 | 3370*1250*1950 | 4260*1462*2100",
+        "| 340 | 272 | 310 | 248 | 6LTAA9.5-G1 | Elec | S4L1D-D4 | TAL-A46-G | SAC4-250 | 3370*1250*1950 | 4260*1462*2100",
+        "| 375 | 300 | 343.75 | 275 | NTA855-G2A | Elec | S4L1D-E4 | TAL-A46-H | SAC4-280 | 3600*1400*2150 | 4700*1630*2400",
+        "| 425 | 340 | 387.5 | 310 | 6ZTAA13-G3 | Elec | S4L1D-F4 | TAL-A473-A | SAC4-320 | 3600*1400*2150 | 4700*1630*2400",
+        "| 475 | 380 | 437.5 | 350 | 6ZTAA13-G4 | Elec | S4L1D-G4 | TAL-A473-B | SAC4-350 | 3600*1400*2150 | 4700*1630*2400",
+        "| 550 | 440 | 500 | 400 | QSZ13-G10 | ECM | S5L1D-C4 | TAL-A473-C | SAC5-400 | 3600*1400*2150 | 4700*1630*2400",
+        "| 650 | 520 | 575 | 460 | KTAA19-G6 | Elec | S5L1D-E4 | TAL-A473-E | SAC5-450 | 4550*2100*2320 | 5060*1912*2500",
+        "| 700 | 560 | 625 | 500 | KT38-G | Elec | S5L1D-F4 | TAL-A473-F | SAC5-500 | 4550*2100*2320 | 5060*1912*2500",
+        "| 825 | 660 | 750 | 600 | KTA38-G2 | Elec | S5L1D-H4 | TAL-A49-B | SAC5-600 | 4550*2100*2320 | 5400*2260*2550",
+        "| 887.5 | 710 | 800 | 640 | KTA38-G2B | Elec | S6L1D-C4 | TAL-A49-C | SAV6-640 | 4550*2100*2320 | 5400*2260*2550",
+        "| 1000 | 800 | 910 | 728 | KTA38-G2A | Elec | S6L1D-D4 | TAL-A49-D | SAV6-728 | 4750*2100*2320 | 5400*2260*2550",
+        "| 1100 | 880 | 1000 | 800 | KTA38-G5 | Elec | S6L1D-E4 | TAL-A49-E | SAV6-800 | 4750*2100*2320 | 5400*2260*2550",
+        "| 1375 | 1100 | 1250 | 1000 | KTA50-G3 | Elec | S6L1D-G4 | LSA50.2 M6 | SAV6-1000 | 5283*2260*2510 | 20'GP Container",
+        "| 1650 | 1320 | 1375 | 1100 | KTA50-G8 | Elec | S6L1D-H4 | LSA50.2 L7 | SAV6-1120 | 5900*2300*2600 | 40'HQ Container",
+        "| 1650 | 1320 | 1475 | 1180 | KTA50-GS8 | Elec | S7L1D-C41 | LSA50.2 L8 | SAV6-1240 | 5900*2300*2600 | 40'HQ Container",
+        "| 1770 | 1416 | 1650 | 1320 | KTA50-G15X | Elec | S7L1D-D41 | LSA50.2 VL10 | SAP7-1320 | 5900*2300*2600 | 40'HQ Container",
+        "| 2062.5 | 1650 | 2000 | 1600 | KTA50-G16B | Elec | S7L1D-G41 | LSA52.3 S6 | SAP7-1664 | 5900*2300*2600 | 40'HQ Container"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Cummins series – bảng 2",
+      "header": [
+        "| Standby | Prime | Engine | Alternator | Open Type Dimension | Silent Type Dimension",
+        "| kVA | kW | kVA | kW | Model | Gov | Stamford | Leroy Somer | SRGENSET"
+      ],
+      "rows": [
+        "| 27.5 | 22 | 25 | 20 | 4B3.9-G11 | Mech | S0L2-M1 | TAL-A40-F | SA184-19.2 | 1900*940*1450 | 2286*956*1255",
+        "| 33.75 | 27 | 30 | 24 | 4B3.9-G2 | Mech | S0L2-P1 | TAL-A40-G | SA184-24 | 1900*940*1450 | 2286*956*1255",
+        "| 37.5 | 30 | 35 | 28 | 4B3.9-G12 | Elec | S0L2-P1 | TAL-A42-C | SA184-30 | 1900*940*1450 | 2286*956*1255",
+        "| 50 | 40 | 45 | 36 | 4BT3.9-G2 | Mech | S1L2-K1 | TAL-A42-E | SA184-36 | 1900*940*1450 | 2286*956*1255",
+        "| 70 | 56 | 63.75 | 51 | 4BTA3.9-G2 (QC50/60E) | Elec | S1L2-R1 | TAL-A42-G | SA224-54 | 1900*940*1450 | 2460*1006*1255",
+        "| 85 | 68 | 75 | 60 | 4BTA3.9-G2 (QC58/67E) | Elec | S1L2-Y1 | TAL-A42-H | SA224-60 | 1900*940*1450 | 2460*1006*1255",
+        "| 100 | 80 | 90 | 72 | 4BTA3.9-G11 | Elec | UCI 224F | TAL-A44-C | SA224-77 | 1900*940*1450 | 2460*1006*1255",
+        "| 115 | 92 | 105 | 84 | 6BT5.9-G2 (QC86/100E) | Elec | UCI 224G | TAL-A44-C | SA224-82 | 2250*990*1450 | 3360*1110*1700",
+        "| 137.5 | 110 | 125 | 100 | 6BT5.9-G2 (QC96/115E) | Elec | UCI 274C | TAL-A44-D | SA224-96 | 2250*990*1450 | 3360*1110*1700",
+        "| 156.25 | 125 | 145 | 116 | 6BTAA5.9-G2 | Elec | UCI 274D | TAL-A44-E | SA274-120 | 2380*990*1450 | 3360*1110*1700",
+        "| 175 | 140 | 160 | 128 | 6BTAA5.9-G12 | Elec | UCI 274E | TAL-A44-K | SA274-134 | 2380*990*1450 | 3360*1110*1700",
+        "| 208.75 | 167 | 190 | 152 | 6CTA8.3-G2 | Elec | UCI 274F | TAL-A44-K | SA274-154 | 2490*1114*1560 | 3360*1110*1700",
+        "| 230 | 184 | 210 | 168 | 6CTAA8.3-G2 | Elec | UCI 274F | TAL-A44-L | SA274-168 | 2490*1114*1560 | 3620*1232*2050",
+        "| 285 | 228 | 260 | 208 | 6LTAA8.9-G2 | Elec | UCI 274H | TAL-A46-C | SA274-216 | 2680*1150*1700 | 3620*1232*2050",
+        "| 310 | 248 | 280 | 224 | 6LTAA8.9-G3 | Elec | UCDI 274J | TAL-A46-C | SA274-240 | 3370*1250*1950 | 4260*1462*2100",
+        "| 350 | 280 | 320 | 256 | 6LTAA9.5-G1 | Elec | S4L1D-C4 | TAL-A46-D | SA314-264 | 3370*1250*1950 | 4260*1462*2100",
+        "| 385 | 308 | 350 | 280 | NTA855-G1B | Elec | S4L1D-D4 | TAL-A46-E | SA314-288 | 3600*1400*2150 | 4700*1630*2400",
+        "| 425 | 340 | 387.5 | 310 | 6ZTAA13-G3 | Elec | S4L1D-D4 | TAL-A46-G | SA314-312 | 3600*1400*2150 | 4700*1630*2400",
+        "| 440 | 352 | 400 | 320 | NTA855-G3 | Elec | S4L1D-E4 | TAL-A46-G | SA314-336 | 3600*1400*2150 | 4700*1630*2400",
+        "| 481.25 | 385 | 437.5 | 350 | 6ZTAA13-G2 | Elec | S4L1D-E4 | TAL-A46-H | SA314-360 | 3600*1400*2150 | 4700*1630*2400",
+        "| 500 | 400 | 475 | 380 | QSZ13-G3 | Elec | S4L1D-F4 | TAL-A473-A | SA314-384 | 3600*1400*2150 | 4700*1630*2400",
+        "| 575 | 460 | 525 | 420 | KTA19-G3 | Elec | S4L1D-F4 | TAL-A473-B | SA314-432 | 3600*1400*2150 | 4700*1630*2400",
+        "| 600 | 480 | 550 | 440 | QSZ13-G11 | Elec | S4L1D-G4 | TAL-A473-B | SA354-480 | 3600*1400*2150 | 4700*1630*2400",
+        "| 635 | 508 | 577.5 | 462 | KTA19-G3A | Elec | S5L1D-C4 | TAL-A473-B | SA354-480 | 4550*2100*2320 | 5060*1912*2500",
+        "| 687.5 | 550 | 625 | 500 | KTAA19-G5 | Elec | S5L1D-D4 | TAL-A473-C | SA354-540 | 4550*2100*2320 | 5400*2260*2550",
+        "| 850 | 680 | 772.5 | 618 | KTA38-G | Elec | S5L1D-F4 | TAL-A473-F | SA354-648 | 4550*2100*2320 | 5400*2260*2550",
+        "| 950 | 760 | 863.75 | 691 | KTA38-G1 | Elec | S5L1D-G4 | TAL-A49-B | SA354-720 | 4550*2100*2320 | 5400*2260*2550",
+        "| 1000 | 800 | 908.75 | 727 | KTA38-G2 | Elec | S5L1D-H4 | TAL-A49-B | SA354-720 | 4550*2100*2320 | 5400*2260*2550",
+        "| 1125 | 900 | 1025 | 820 | KTA38-G2A | Elec | S6L1D-C4 | TAL-A49-C | SA404-874 | 4550*2100*2320 | 5400*2260*2550",
+        "| 1265 | 1012 | 1150 | 920 | KTA38-G4 | Elec | S6L1D-D4 | LSA49.3 L9 | SA404-960 | 4550*2100*2320 | 5400*2260*2550",
+        "| 1587.5 | 1270 | 1443.75 | 1155 | KTA50-G3 | Elec | S6L1D-F4 | LSA50.2 M6 | SA404-1200 | 5283*2260*2510 | 20'GP Container",
+        "| 1930 | 1544 | 1755 | 1404 | KTA50-G9 | Elec | S7L1D-C41 | LSA50.2 L8 | SA404-1440 | 5900*2300*2600 | 40'HQ Container"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "Weichai series – bảng 1",
+      "header": [
+        "| Standby（KW） | Engine Model | Motor-Nianfeng | Silent Model"
+      ],
+      "rows": [
+        "| 18 | WP2.3D25E200 | 184L-E | Slience",
+        "| 25 | WP2.3D33E200 | 184L-G | Slience",
+        "| 30 | WP2.3D40E200 | 184L-H | Slience",
+        "| 36 | WP2.3D48E200 | 224L-D | Slience",
+        "| 50 | WP4.1D66E200 | 224L-E | Slience",
+        "| 60 | WP4.1D80E200 | 224L-F | Slience",
+        "| 80 | WP4.1D100E200 | 274L-C | Slience",
+        "| 100 | WP6D132E200 | 274L-D | Slience",
+        "| 120 | WP6D152E200 | 274L-FS | Slience",
+        "| 136 | WP6D167E200 | 274L-G | Slience",
+        "| 160 | WP10D200E200 | 274L-H | Slience",
+        "| 180 | WP10D238E200 | 274L-J | Slience",
+        "| 200 | WP10D264E200 | 274L-K | Slience",
+        "| 250 | WP10D320E200 | 4L-ES | Slience",
+        "| 300 | WP13D385E200 | 4L-FS | Slience",
+        "| 320 | WP13D405E200 | 4L-F | Slience",
+        "| 350 | WP13D440E310 | 5L-C | Slience",
+        "| 400 | WP13D490E310 | 5L-D | Slience",
+        "| 450 | 6M33D572E200 | 5L-E | Slience",
+        "| 520 | 6M33D633E200 | 5L-G | Slience",
+        "| 540 | 6M33D670E200 | 5L-G | Slience",
+        "| 600 | 6M33D725E310 | 6L-B | 20-foot container",
+        "| 640 | 12M26D792E200 | 6L-C | 20-foot container",
+        "| 720 | 12M26D902E200 | 6L-D | 20-foot container",
+        "| 800 | 12M26D968E200 | 6L-E | 20-foot container",
+        "| 900 | 12M33D1108E200 | 6L-F | 20-foot container",
+        "| 1000 | 12M33D1210E200 | 6L-G | 20-foot container",
+        "| 1100 | 12M33D1320E200 | 7L-B | 40-foot container",
+        "| 1200 | 12M33D1500E310 | 7L-C | 40-foot container",
+        "| 1240 | 16M33D1530E310 | 7L-C | 40-foot container",
+        "| 1300 | 16M33D1580E310 | 7L-D | 40-foot container",
+        "| 1400 | 16M33D1680E310 | 7L-E | 40-foot container",
+        "| 1500 | 16M33D1800E310 | 7L-E | 40-foot container",
+        "| 1600 | 16M33D1980E310 | 7L-F | 40-foot container"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "Weichai series – bảng 2",
+      "header": [
+        "| Standy(kw) | Engine Model | Motor-Nianfeng | Silent Model"
+      ],
+      "rows": [
+        "| 20 | WP2.3D30E201 | 184L-E | Slience",
+        "| 30 | WP2.3D41E201 | 184L-G | Slience",
+        "| 35 | WP2.3D47E201 | 184L-H | Slience",
+        "| 40 | WP2.3D58E201 | 224L-C | Slience",
+        "| 60 | WP4.1D80E201 | 224L-E | Slience",
+        "| 72 | WP4.1D95E201 | 224L-F | Slience",
+        "| 90 | WP4.1D115E201 | 274L-C | Slience",
+        "| 100 | WP6D132E201 | 274L-DS | Slience",
+        "| 120 | WP6D158E201 | 274L-D | Slience",
+        "| 144 | WP6D180E201 | 274L-FS | Slience",
+        "| 150 | WP10D200E201 | 274L-F | Slience",
+        "| 180 | WP10D238E201 | 274L-G | Slience",
+        "| 192 | WP10D264E201 | 274L-H | Slience",
+        "| 240 | WP10D360E201 | 274L-K | Slience",
+        "| 300 | WP13D385E201 | 4L-E | Slience",
+        "| 320 | WP13D448E201 | 4L-F | Slience",
+        "| 350 | WP13D460E311 | 4L-G | Slience",
+        "| 400 | WP13D510E311 | 5L-C | Slience",
+        "| 500 | 6M33D633E201 | 5L-E | Slience",
+        "| 520 | 6M33D670E201 | 5L-E | Slience",
+        "| 540 | 6M33D710E201 | 5L-E | Slience",
+        "| 600 | 6M33D740E311 | 5L-F | 20-foot container"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "Perkins series – bảng 1",
+      "header": [
+        "| Frequency | Voltage | Standy Power | Backup Power | Engine | Model | Motor | Model",
+        "| kW | kVA | kW | kVA"
+      ],
+      "rows": [
+        "| 50 | 400 | 12 | 15 | 13.2 | 16.5 | Perkins | 403A-15G2 | Nidec | TAL-A40-D",
+        "| 50 | 400 | 12 | 15 | 13.2 | 16.5 | Perkins | 403A-15G2 | SRGENSET | SAL164D2",
+        "| 50 | 400 | 16 | 20 | 17.6 | 22 | Perkins | 404A-22G | Nidec | TAL-A40-F",
+        "| 50 | 400 | 16 | 20 | 17.6 | 22 | Perkins | 404A-22G | SRGENSET | SAL184A1",
+        "| 50 | 400 | 24 | 30 | 26.4 | 33 | Perkins | 1103A-33G | Nidec | TAL-A42-C",
+        "| 50 | 400 | 24 | 30 | 26.4 | 33 | Perkins | 1103A-33G | SRGENSET | SAL184E3",
+        "| 50 | 400 | 36 | 45 | 40 | 50 | Perkins | 1103A-33TG1 | Nidec | TAL-A42-F",
+        "| 50 | 400 | 36 | 45 | 40 | 50 | Perkins | 1103A-33TG1 | SRGENSET | SAL224C1",
+        "| 50 | 400 | 48 | 60 | 53 | 66 | Perkins | 1103A-33TG2 | Nidec | TAL-A42-H",
+        "| 50 | 400 | 48 | 60 | 53 | 66 | Perkins | 1103A-33TG2 | SRGENSET | SAL224E2",
+        "| 50 | 400 | 64 | 80 | 70 | 88 | Perkins | 1104A-44TG2 | Nidec | TAL-A44-C",
+        "| 50 | 400 | 64 | 80 | 70 | 88 | Perkins | 1104A-44TG2 | SRGENSET | SAL224H4",
+        "| 50 | 400 | 80 | 100 | 88 | 110 | Perkins | 1104C-44TAG2 | Nidec | TAL-A44-D",
+        "| 50 | 400 | 80 | 100 | 88 | 110 | Perkins | 1104C-44TAG2 | SRGENSET | SAL224M5",
+        "| 50 | 400 | 108 | 135 | 119 | 149 | Perkins | 1106A-70TG1 | Nidec | TAL-A44-H",
+        "| 50 | 400 | 108 | 135 | 119 | 149 | Perkins | 1106A-70TG1 | SRGENSET | SAL274D3",
+        "| 50 | 400 | 120 | 150 | 144 | 165 | Perkins | 1106A-70TAG2 | Nidec | TAL-A44-J",
+        "| 50 | 400 | 120 | 150 | 144 | 165 | Perkins | 1106A-70TAG2 | SRGENSET | SAL274E3",
+        "| 50 | 400 | 160 | 200 | 176 | 220 | Perkins | 1106A-70TAG4 | Nidec | TAL-A44-M",
+        "| 50 | 400 | 160 | 200 | 176 | 220 | Perkins | 1106A-70TAG4 | SRGENSET | SAL274K5",
+        "| 50 | 400 | 200 | 250 | 220 | 275 | Perkins | 1206A-E70TTAG3 | Nidec | TAL-A46-D",
+        "| 50 | 400 | 200 | 250 | 220 | 275 | Perkins | 1206A-E70TTAG3 | SRGENSET | SAL274M7",
+        "| 50 | 400 | 240 | 300 | 264 | 330 | Perkins | 1706A-E93TAG1 L | Nidec | TAL-A46-F",
+        "| 50 | 400 | 240 | 300 | 264 | 330 | Perkins | 1706A-E93TAG1 L | SRGENSET | SAL314C2",
+        "| 50 | 400 | 280 | 350 | 308 | 385 | Perkins | 2206C-E13TAG2 L | Nidec | TAL-A46-H",
+        "| 50 | 400 | 280 | 350 | 308 | 385 | Perkins | 2206C-E13TAG2 L | SRGENSET | SAL314F3",
+        "| 50 | 400 | 320 | 400 | 352 | 440 | Perkins | 2206D-E13TAG3 L | Nidec | TAL-A473-A",
+        "| 50 | 400 | 320 | 400 | 352 | 440 | Perkins | 2206D-E13TAG3 L | SRGENSET | SAL314H4",
+        "| 50 | 400 | 400 | 500 | 440 | 550 | Perkins | 2506C-E15TAG2 L | Nidec | TAL-A473-C",
+        "| 50 | 400 | 400 | 500 | 440 | 550 | Perkins | 2506C-E15TAG2 L | SRGENSET | SAL354B1",
+        "| 50 | 400 | 520 | 650 | 572 | 715 | Perkins | 2806A-E18TAG2 L | Nidec | TAL-A473-F",
+        "| 50 | 400 | 520 | 650 | 572 | 715 | Perkins | 2806A-E18TAG2 L | SRGENSET | SAL354F4"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "Perkins series – bảng 2",
+      "header": [
+        "| Standby | Prime | Engine | Alternator | Open Type Dimension | Silent Type Dimension",
+        "| kVA | kW | kVA | kW | Model | Gov | Stamford | Leroy Somer | SRGENSET"
+      ],
+      "rows": [
+        "| 11 | 8.8 | 10 | 8 | 403A-11G1 | Mech | S0L1-H1 | TAL-A40-C | SA164-8 | 1400*690*1000 | 1860*810*1152",
+        "| 12.1 | 9.9 | 11 | 9 | 403D-11G commodity | Mech | S0L1-H1 | TAL-A40-C | SA164-10.6 | 1400*690*1000 | 1860*810*1152",
+        "| 17.6 | 14.3 | 16 | 13 | 403D-15G L | Mech | S0L1-P1 | TAL-A40-D | SA164-13 | 1400*690*1000 | 1860*810*1152",
+        "| 19.8 | 15.4 | 18 | 14 | 403A-15G2 | Mech | S0L1-P1 | TAL-A40-D | SA164-15.4 | 1400*690*1000 | 1860*810*1152",
+        "| 38.5 | 30.8 | 35 | 28 | 1103A-33G | Mech | S0L2-P1 | TAL-A42-C | SA184-30 | 1600*790*1320 | 2152*960*1450",
+        "| 58.3 | 47.3 | 53 | 43 | 1103A-33TG1 | Mech | S1L2-N1 | TAL-A42-F | SA224-41 | 1600*790*1280 | 2152*960*1450",
+        "| 74.8 | 60.5 | 68 | 55 | 1103A-33TG2 | Mech | S1L2-Y1 | TAL-A42-H | SA224-54 | 2000*850*1350 | 2510*1060*1600",
+        "| 83.6 | 67.1 | 76 | 61 | 1104A-44TG1 | Mech | S1L2-Y1 | TAL-A42-H | SA224-60 | 2000*850*1350 | 2510*1060*1600",
+        "| 100.1 | 80.3 | 91 | 73 | 1104A-44TG2 | Mech | UCI 224F | TAL-A44-C | SA224-76 | 2000*850*1350 | 2510*1060*1600",
+        "| 125.4 | 101.2 | 114 | 92 | 1104C-44TAG2 | Elec | UCI 274C | TAL-A44-D | SA224-96 | 2250*960*1350 | 3360*1110*1750",
+        "| 185.9 | 148.5 | 169 | 135 | 1106A-70TAG2 Switchable | Elec | UCI 274E | TAL-A44-H | SA274-134 | 2650*960*1650 | 3360*1110*1750",
+        "| 216.7 | 173.8 | 197 | 158 | 1106A-70TAG3 Switchable | Elec | UCI 274F | TAL-A44-K | SA274-154 | 2650*960*1650 | 3360*1110*1750",
+        "| 247.5 | 198 | 225 | 180 | 1206A-E70TTAG3 | ECM | UCI 274G | TAL-A44-L | SA274-180 | 2900*1230*1670 | 3620*1230*2050",
+        "| 272.8 | 217.8 | 248 | 198 | 1506A-E88TAG2 L | ECM | UCI 274H | TAL-A44-M | SA274-192 | 3000*1300*1680 | 3940*1300*2050",
+        "| 319 | 255.2 | 290 | 232 | 1506A-E88TAG3 L | ECM | UCDI 274J | TAL-A46-C | SA274-240 | 3000*1300*1680 | 3940*1300*2050",
+        "| 392.7 | 314.6 | 357 | 286 | 1706A-E93TAG1 L | ECM | S4L1D-D4 | TAL-A46-F | SA314-288 | 3000*1300*1680 | 3940*1300*2050",
+        "| 440 | 352 | 400 | 320 | 2206C-E13TAG2 L | ECM | S4L1D-E4 | TAL-A46-G | SA314-336 | 3490*1330*2050 | 4260*1462*2150",
+        "| 481.8 | 385 | 438 | 350 | 2206A-E13TAG6 | ECM | S4L1D-E4 | TAL-A46-H | SA314-360 | 3490*1330*2050 | 4260*1462*2150",
+        "| 550 | 440 | 500 | 400 | 2506C-E15TAG1 L | ECM | S4L1D-F4 | TAL-A473-A | SA314-432 | 3750*1350*2100 | 5060*1920*2500",
+        "| 687.5 | 550 | 625 | 500 | 2806C-E18TAG1A L | ECM | S5L1D-D4 | TAL-A473-C | SA354-540 | 3600*1750*2200 | 5400*2260*2500",
+        "| 825 | 660 | 750 | 600 | 4006-23TAG2A Switchable | Elec | S5L1D-E4 | TAL-A473-E | SA354-600 | 4350*1750*2270 | 5400*2260*2500",
+        "| 882.2 | 706.2 | 802 | 642 | 2806A-E18TTAG4 | ECM | S5L1D-F4 | TAL-A473-F | SA354-648 | 5000*2182*2460 | 5400*2260*2500",
+        "| 1100 | 880 | 1000 | 800 | 4008TAG2 Switchable | Elec | S6L1D-C4 | TAL-A49-C | SA404-874 | 5000*2182*2460 | 5400*2260*2500",
+        "| 1375 | 1100 | 1250 | 1000 | 4012-46TWG2A Switchable | Elec | S6L1D-E4 | TAL-A49-E | SA404-1080 | 5000*2182*2460 | 40'HQ Container",
+        "| 1650 | 1320 | 1500 | 1200 | 4012-46TAG2A Switchable | Elec | S6L1D-G4 | LSA50.2 M6 | SA404-1200 | 5000*2182*2460 | 40'HQ Container"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "SDEC series (Stage V)",
+      "header": [
+        "| Typical generator capacity (kVA) | Diesel Engine Model | Engine output (kW) | Engine Type",
+        "| 50Hz | 60Hz | 1500rpm | 1800rpm | Cylinder | Flywheel & Housing | Injection system | Exhaust system | Emission",
+        "| Prime (PRP) | Standby (ESP) | Prime (PRP) | Standby (ESP) | Prime | Standby | Prime | Standby"
+      ],
+      "rows": [
+        "| 50 | 55 | / | / | 4HTAA4.5-G5E1 | 51 | 56 | / | / | L4 | SAE 3#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| 63 | 69 | / | / | 4HTAA4.5-G5E2 | 62 | 68 | / | / | L4 | SAE 3#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| 80 | 88 | / | / | 4HTAA4.5-G5E3 | 78 | 86 | / | / | L4 | SAE 3#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| 100 | 113 | / | / | 4HTAA4.5-G5E4 | 95 | 105 | / | / | L4 | SAE 3#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| 125 | 138 | / | / | 4HTAA4.5-G5E5 | 120 | 132 | / | / | L4 | SAE 3#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| 138 | 150 | / | / | 4HTAA4.5-G5E6 | 125 | 140 | / | / | L4 | SAE 3#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| 150 | 165 | / | / | 6HTAA7.2-G5E1 | 140 | 155 | / | / | L6 | SAE 3#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| 169 | 188 | / | / | 6HTAA7.2-G5E2 | 155 | 170 | / | / | L6 | SAE 3#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| 188 | 206 | / | / | 6HTAA7.2-G5E3 | 168 | 185 | / | / | L6 | SAE 3#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| 200 | 225 | / | / | 6HTAA7.2-G5E4 | 186 | 205 | / | / | L6 | SAE 3#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| 200 | 225 | / | / | 6DTAA8.9-G5E1 | 186 | 205 | / | / | L6 | SAE 2#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| 225 | 250 | / | / | 6DTAA8.9-G5E2 | 208 | 228 | / | / | L6 | SAE 2#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| 250 | 275 | / | / | 6DTAA8.9-G5E3 | 230 | 253 | / | / | L6 | SAE 2#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| 275 | 313 | / | / | 6DTAA8.9-G5E4 | 255 | 280 | / | / | L6 | SAE 2#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| / | / | 50 | 55 | 4HTAA4.5-G5E1.1 | / | / | 51 | 56 | L4 | SAE 3#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| / | / | 63 | 69 | 4HTAA4.5-G5E2.1 | / | / | 62 | 68 | L4 | SAE 3#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| / | / | 80 | 88 | 4HTAA4.5-G5E3.1 | / | / | 78 | 86 | L4 | SAE 3#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| / | / | 100 | 113 | 4HTAA4.5-G5E4.1 | / | / | 95 | 105 | L4 | SAE 3#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| / | / | 125 | 138 | 4HTAA4.5-G5E5.1 | / | / | 120 | 132 | L4 | SAE 3#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| / | / | 138 | 150 | 4HTAA4.5-G5E6.1 | / | / | 125 | 140 | L4 | SAE 3#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| / | / | 150 | 165 | 4HTAA4.5-G5E7.1 | / | / | 140 | 155 | L4 | SAE 3#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| / | / | 150 | 165 | 6HTAA7.2-G5E1.1 | / | / | 140 | 155 | L6 | SAE 3#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| / | / | 169 | 188 | 6HTAA7.2-G5E2.1 | / | / | 155 | 170 | L6 | SAE 3#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| / | / | 188 | 206 | 6HTAA7.2-G5E3.1 | / | / | 168 | 185 | L6 | SAE 3#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| / | / | 200 | 225 | 6HTAA7.2-G5E4.1 | / | / | 186 | 205 | L6 | SAE 3#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| / | / | 200 | 225 | 6DTAA8.9-G5E1.1 | / | / | 186 | 205 | L6 | SAE 2#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| / | / | 225 | 250 | 6DTAA8.9-G5E2.1 | / | / | 208 | 228 | L6 | SAE 2#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| / | / | 250 | 275 | 6DTAA8.9-G5E3.1 | / | / | 230 | 253 | L6 | SAE 2#11.5# | ECR | SCR+DOC+DPF | Stage V",
+        "| / | / | 275 | 313 | 6DTAA8.9-G5E4.1 | / | / | 255 | 280 | L6 | SAE 2#11.5# | ECR | SCR+DOC+DPF | Stage V"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "Yanmar series",
+      "header": [
+        "| Standby | Prime | Engine | Alternator | Open Type Dimension | Silent Type Dimension",
+        "| kVA | kW | kVA | kW | Model | Gov | Leroy Somer | SRGENSET | Stamford"
+      ],
+      "rows": [
+        "| 10.78 | 8.58 | 9.8 | 7.8 | 3TNV76-GGE | Mech | TAL-A40-C | SA164-7.8 | S0L1-H1 | 1460*730*1170 | 1800*750*1050",
+        "| 13.2 | 10.56 | 12.0 | 9.6 | 3TNV82A-GGE | Mech | TAL-A40-C | SA164-10.6 | S0L1-H1 | 1460*730*1170 | 1800*750*1050",
+        "| 16.17 | 12.87 | 14.7 | 11.7 | 3TNV88-GGE | Mech | TAL-A40-C | SA164-13 | S0L1-L1 | 1460*730*1170 | 1800*750*1050",
+        "| 18.15 | 14.52 | 16.5 | 13.2 | 3TNV84T-GGE | Mech | TAL-A40-D | SA164-13 | S0L1-P1 | 1460*730*1170 | 1800*750*1050",
+        "| 21.56 | 17.16 | 19.6 | 15.6 | 4TNV88-GGE | Mech | TAL-A40-E | SA164-16.8 | S0L2-F1 | 1460*730*1170 | 2000*900*1150",
+        "| 26.62 | 21.23 | 24.2 | 19.3 | 4TNV84T-GGE | Mech | TAL-A40-F | SA184-19.2 | S0L2-G1 | 1460*730*1170 | 2000*900*1150",
+        "| 40.04 | 32.01 | 36.4 | 29.1 | 4TNV98-GGE | Mech | TAL-A42-C | SA184-30 | S0L2-P1 | 1910*730*1170 | 2200*880*1100",
+        "| 49.83 | 39.82 | 45.3 | 36.2 | 4TNV98T-GGE | Mech | TAL-A42-E | SA184-36 | S1L2-K1 | 1910*730*1170 | 2200*880*1100",
+        "| 58.63 | 46.86 | 53.3 | 42.6 | 4TNV106-GGE | Mech | TAL-A42-F | SA224-41 | S1L2-N1 | 1995*950*1240 | 2500*950*1500",
+        "| 66.99 | 53.57 | 60.9 | 48.7 | 4TNV106T-GGE | Mech | TAL-A42-G | SA224-48 | S1L2-R1 | 1995*950*1240 | 2500*950*1500"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "Volvo series – bảng 1",
+      "header": [
+        "| Standby | Prime | Engine | Alternator | Open Type Dimension | Silent Type Dimension",
+        "| kVA | kW | kVA | kW | Model | Gov | Stamford | Leroy Somer | SRGENSET"
+      ],
+      "rows": [
+        "| 225 | 180 | 200 | 160 | TAD733GE | Elec | UCI274H | TAL-A44-M | SA274-160 | 2830*1300*1670 | 3620*1232*2050",
+        "| 275 | 220 | 250 | 200 | TAD734GE | Elec | UCDI274K | TAL-A46-D | SA274-200 | 2900*1300*1670 | 3910*1332*2050",
+        "| 350 | 280 | 318 | 254 | TAD1341GE-B | Elec | S4L1D-D4 | TAL-A46-G | SAC4-260 | 3250*1350*1800 | 4260*1450*2100",
+        "| 385 | 308 | 350 | 280 | TAD1342GE-B | Elec | S4L1D-E4 | TAL-A46-H | SAC4-280 | 3250*1350*1800 | 4260*1450*2100",
+        "| 415 | 332 | 377 | 302 | TAD1343GE-B | Elec | S4L1D-F4 | TAL-A473-A | SAC4-300 | 3250*1350*1800 | 4260*1450*2100",
+        "| 450 | 360 | 410 | 328 | TAD1344GE-B | Elec | S4L1D-F4 | TAL-A473-A | SAC4-350 | 3250*1350*1800 | 4260*1450*2100",
+        "| 505 | 404 | 460 | 368 | TAD1345GE-B | Elec | S4L1D-G4 | TAL-A473-B | SAC5-360 | 3250*1350*1800 | 4260*1450*2100",
+        "| 550 | 440 | 500 | 400 | TAD1641GE-B | Elec | S5L1D-C4 | TAL-A473-C | SAC5-400 | 3600*1680*2300 | 4700*1630*2350",
+        "| 650 | 520 | 590 | 472 | TAD1642GE-B | Elec | S5L1D-E4 | TAL-A473-E | SAC5-500 | 3965*1710*2200 | 5060*1912*2530",
+        "| 770 | 616 | 700 | 560 | TWD1645GE | Elec | S5L1D-G4 | TAL-A49-B | SAC5-600 | 4100*1710*2200 | 5350*1912*2560"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "Volvo series – bảng 2",
+      "header": [
+        "| Standby | Prime | Engine | Alternator | Open Type Dimension | Silent Type Dimension",
+        "| kVA | kW | kVA | kW | Model | Gov | Stamford | Leroy Somer | SRGENSET"
+      ],
+      "rows": [
+        "| 243 | 195 | 221 | 177 | TAD733GE | Elec | UCI 274G | TAL-A44-L | SA274-180 | 2830*1300*1670 | 3620*1232*2050",
+        "| 275 | 220 | 250 | 200 | TAD734GE | Elec | UCI 274H | TAL-A44-M | SA274-200 | 2900*1300*1670 | 3910*1332*2050",
+        "| 380 | 304 | 345 | 276 | TAD1341GE | Elec | S4L1D-D4 | TAL-A46-E | SA314-288 | 3250*1350*1800 | 4260*1450*2100",
+        "| 440 | 352 | 400 | 320 | TAD1342GE | Elec | S4L1D-E4 | TAL-A46-G | SA314-336 | 3250*1350*1800 | 4260*1450*2100",
+        "| 457 | 365 | 415 | 332 | TAD1343GE | Elec | S4L1D-E4 | TAL-A46-H | SA314-336 | 3250*1350*1800 | 4260*1450*2100",
+        "| 506 | 405 | 460 | 368 | TAD1344GE | Elec | S4L1D-E4 | TAL-A46-H | SA314-384 | 3250*1350*1800 | 4260*1450*2100",
+        "| 564 | 451 | 513 | 410 | TAD1650GE | Elec | S4L1D-F4 | TAL-A473-A | SA314-432 | 3250*1350*1800 | 4260*1450*2100",
+        "| 633 | 506 | 575 | 460 | TAD1641GE | Elec | S5L1D-C4 | TAL-A473-B | SA354-480 | 3600*1680*2300 | 4700*1630*2350",
+        "| 693 | 554 | 630 | 504 | TAD1642GE | Elec | S5L1D-D4 | TAL-A473-C | SA354-540 | 3965*1710*2200 | 5060*1912*2530",
+        "| 799 | 639 | 726 | 581 | TWD1645GE | Elec | S5L1D-E4 | TAL-A473-E | SA354-576 | 4100*1710*2200 | 5350*1912*2560"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "Mitsubishi (SEM) series",
+      "header": [
+        "| Standby | Prime | Engine | Alternator | Open Type Dimension | Silent Type Dimension",
+        "| kVA | kW | kVA | kW | Stamford"
+      ],
+      "rows": [
+        "| 825 | 660 | 750 | 600 | S6R2-PTAA-C | S5L1D-H41 | 4080*1715*2000 | 20'GP Container",
+        "| 1375 | 1100 | 1250 | 1000 | S12R-PTA-C | S6L1D-G4 | 4520*2200*2510 | 20'GP Container",
+        "| 1500 | 1200 | 1375 | 1100 | S12R-PTA2-C | S6L1D-H4 | 4520*2200*2510 | 20'GP Container",
+        "| 1650 | 1320 | 1500 | 1200 | S12R-PTAA2-C | S7L1D-C41 | 4920*2200*3000 | 20'GP Container",
+        "| 1915 | 1532 | 1740 | 1392 | S16R-PTA-C | S7L1D-E41 | 5470*2200*2550 | 40'HQ Container",
+        "| 2100 | 1680 | 1900 | 1520 | S16R-PTA2-C | S7L1D-F41 | 5470*2200*2550 | 40'HQ Container",
+        "| 2250 | 1800 | 2050 | 1640 | S16R-PTAA2-C | S7L1D-G4 | 5985*2555*2775 | 40'HQ Container",
+        "| 2500 | 2000 | 2250 | 1800 | S16R2-PTAW-C | S7L1D-H41 | 5985*2555*2775 | 40'HQ Container"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "EU Stage IIIA series",
+      "header": [
+        "| | Standby | Prime | Engine | Alternator",
+        "| | kVA | kW | kVA | kW | Model | Brand | Stamford | Kwise | SRGENSET"
+      ],
+      "rows": [
+        "| YTO | 25 | 20 | 23 | 18 | YTN4NR-24 | YTO | / | KAL184B1 | SA184-18",
+        "| 30 | 24 | 27 | 22 | YTN4NR-28 | YTO | / | KAL184D2 | SA184-22",
+        "| 35 | 28 | 32 | 25 | YTN4NR-33 | YTO | / | KAL184E3 |",
+        "| 40 | 32 | 36 | 29 | YTN4NR-36.8 | YTO | / | KAL184G4-30KW | SA184-30",
+        "| 45 | 36 | 41 | 33 | YTN4T-42 | YTO | / | KAL184K5-34KW | SA224-34",
+        "| 55 | 44 | 50 | 40 | YTN4T-52 | YTO | / | KAL224C1 | SA224-40",
+        "| 65 | 52 | 59 | 47 | YTN4T-61 | YTO | / | KAL224D2-45KW | SA224-50",
+        "| 75 | 60 | 68 | 55 | YTN4T-71 | YTO | / | KAL224F3-54KW | SA224-58",
+        "| 90 | 72 | 82 | 65 | LR4M3LR-82 | YTO | / | KAL224H4-64KW | SA224-70",
+        "| 100 | 80 | 91 | 73 | LR4M3LR-91 | YTO | / | KAL224L5-75KW | SA274-80",
+        "| 110 | 88 | 100 | 80 | LR4M3LR-100 | YTO | / | KAL224M5 | SA274-80",
+        "| 125 | 100 | 114 | 91 | LR4M3LR-114 | YTO | / | KAL274B2-90KW | SA274-96",
+        "| 135 | 108 | 123 | 98 | LR4M3LR-123 | YTO | / | KAL274C2-100KW | SA274-96",
+        "| 150 | 120 | 136 | 109 | LR6M3LR-133 | YTO | / | KAL274D3-112KW | SA274-112",
+        "| 165 | 132 | 150 | 120 | LR6M3LR-147 | YTO | / | KAL274E3 | SA274-128",
+        "| 180 | 144 | 164 | 131 | LR6M3LR-160 | YTO | / | KAL274F4-128 | SA274-128",
+        "| 200 | 160 | 182 | 144 | LR6M3LR-178 | YTO | / | KAL274G4-140KW | SA274-144",
+        "| 220 | 176 | 200 | 160 | LR6M3LR-196 | YTO | / | KAL274K5 | SA274-160",
+        "| 250 | 200 | 227 | 180 | LR6M5RF-211 | YTO | / | KAL274L6 | SA274-180",
+        "| 275 | 220 | 250 | 200 | LR6M5RF-232 | YTO | / | KAL274M7 | SA274-200",
+        "| 300 | 240 | 273 | 218 | YTN12-253 | YTO | / | KAL314B1-220KW | SAC4-240",
+        "| 330 | 264 | 300 | 240 | YTN12-278 | YTO | / | KAL314C2 | SAC4-240",
+        "| 350 | 280 | 318 | 255 | YTN12-295 | YTO | / | KAL314D2-250KW | SAC4-260",
+        "| 400 | 320 | 364 | 291 | YTN12-337 | YTO | / | KAL314G3-300KW | SAC4-300",
+        "| 450 | 360 | 409 | 327 | YTN12-379 | YTO | / | KAL314H4-320KW | SAC4-350",
+        "| PERKINS | 22 | 18 | 20 | 16 | 404D-22G L | Perkins | SOL2-G1 | TAL-A40-F | /",
+        "| 30 | 24 | 27 | 22 | 404D-22TG | Perkins | SOL2-P1 | TAL-A42-C | /",
+        "| 66 | 53 | 60 | 48 | 1104D-44TG2 EU | Perkins | S1L2-Y1 | TAL-A42-H | /",
+        "| 88 | 70 | 80 | 64 | 1104D-E44TAG1 EU | Perkins | UCI224G | TAL-A44-C | /",
+        "| 110 | 88 | 100 | 80 | 1104D-E44TAG2 EU | Perkins | UCI274C | TAL-A44-D | /",
+        "| 154 | 123 | 140 | 112 | 1106D-E70TAG2 EU | Perkins | UCI274E | TAL-A44-H | /",
+        "| 172 | 138 | 156 | 125 | 1106D-E70TAG3 EU | Perkins | UCI274F | TAL-A44-J | /",
+        "| 198 | 158 | 180 | 144 | 1106D-E70TAG4 EU | Perkins | UCI274G | TAL-A44-L | /",
+        "| 220 | 176 | 200 | 160 | 1206D-E70TTAG1 | Perkins | UCI274H | TAL-A44-M | /",
+        "| 253 | 202 | 230 | 184 | 1206D-E70TTAG2 | Perkins | UCDI274J | TAL-A46-C | /",
+        "| 275 | 220 | 250 | 200 | 1206D-E70TTAG3 | Perkins | UCDI274K | TAL-A46-D | /",
+        "| 440 | 352 | 400 | 320 | 2206D-E13TAG3 L | Perkins | S4L1D-F4 | TAL-A473-A | /",
+        "| 550 | 440 | 500 | 400 | 2506D-E15TAG2 L | Perkins | S5L1D-C4 | TAL-A473-C | /",
+        "| FPT | 24 | 20 | 24 | 20 | R24MAFS01.23A01 | FPT | SOL2-M1 | TAL-A40-G | /",
+        "| 33 | 26 | 30 | 24 | R24MSFS01.31A01 | FPT | SOL2-P1 | TAL-A42-C | /",
+        "| 42 | 34 | 38 | 30 | R24MSFS01.40A01 | FPT | S1L2-K1 | TAL-A42-E | /",
+        "| 68 | 55 | 63 | 50 | NEF45SM1F | FPT | S1L2-Y1 | TAL-A42-H | /",
+        "| 91 | 73 | 83 | 66 | NEF45TE1P.A82 | FPT | UCI224G | TAL-A44-C | /",
+        "| 113 | 91 | 103 | 82 | NEF45TE2P.A100 | FPT | UCI274C | TAL-A44-D | /",
+        "| 167 | 133 | 151 | 121 | NEF67TE1PV | FPT | UCI274F | TAL-A44-J | /",
+        "| 192 | 153 | 174 | 140 | NEF67TE2PV | FPT | UCI274G | TAL-A44-L | /",
+        "| 227 | 181 | 206 | 164 | NEF67TE3PV | FPT | UCI274H | TAL-A44-M | /",
+        "| 298 | 238 | 267 | 214 | CURSOR87TE3F | FPT | S4L1D-C4 | TAL-A46-E | /",
+        "| 335 | 268 | 303 | 243 | CURSOR87TE1PV | FPT | S4L1D-D4 | TAL-A46-F | /",
+        "| 449 | 359 | 406 | 325 | CURSOR13TE2F | FPT | S4L1D-F4 | TAL-A473-A | /"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "Hyundai series – bảng 1",
+      "header": [
+        "| Standby | Prime | Engine | Alternator | Open Type Dimension | Silent Type Dimension",
+        "| kVA | kW | kVA | kW | Model | Gov | Leroy Somer | SRGENSET | Stamford"
+      ],
+      "rows": [
+        "| 70 | 56 | 62.5 | 50 | SP344CB | ECM | TAL-A42-H | SA224-50 | S1L2-Y1 | 2000*950*1060 | 2650*950*1450",
+        "| 87.5 | 70 | 80 | 64 | SP344CC | ECM | TAL-A44-C | SA224-70 | UCI224G | 2268*1094*1576 | 3151*1142*1714",
+        "| 185 | 148 | 167.5 | 134 | P086TI-1 | Elec | TAL-A44-K | SA274-144 | UCI274G | 2700*1200*1650 | 3860*1200*1850",
+        "| 220 | 176 | 200 | 160 | P086TI | Elec | TAL-A44-M | SA274-160 | UCI274H | 2700*1200*1650 | 3860*1200*1850",
+        "| 250 | 200 | 228.75 | 183 | DP086LA | Elec | TAL-A46-C | SA274-180 | UCDI274J | 2700*1200*1650 | 3860*1200*1850",
+        "| 300 | 240 | 272.5 | 218 | P126TI | Elec | TAL-A46-E | SAC4-240 | S4L1D-D4 | 3250*1300*1700 | 4260*1462*2100",
+        "| 400 | 320 | 365 | 292 | DP126LB | Elec | TAL-A46-H | SAC4-300 | S4L1D-E4 | 3250*1600*2000 | 4260*1612*2300",
+        "| 450 | 360 | 407.5 | 326 | P158LE | Elec | TAL-A473-A | SAC4-320 | S4L1D-F4 | 3250*1600*2000 | 4260*1612*2300",
+        "| 500 | 400 | 456.25 | 365 | DP158LC | Elec | TAL-A473-B | SAC5-360 | S4L1D-G4 | 3350*1600*2000 | 4260*1612*2300",
+        "| 580 | 464 | 528.75 | 423 | DP158LD | Elec | TAL-A473-D | SAC5-450 | S5L1D-D4 | 3350*1600*2000 | 4260*1612*2300",
+        "| 625 | 500 | 573.75 | 459 | DP180LA | Elec | TAL-A473-E | SAC5-450 | S5L1D-E4 | 3500*1600*2050 | 4700*1630*2430",
+        "| 700 | 560 | 636.25 | 509 | DP180LB | Elec | TAL-A473-F | SAC5-500 | S5L1D-F4 | 3500*1600*2050 | 4700*1630*2430",
+        "| 750 | 600 | 688.75 | 551 | DP222LB | Elec | TAL-A49-B | SAC5-550 | S5L1D-G4 | 3960*1600*2250 | 5060*1912*2500",
+        "| 825 | 660 | 750 | 600 | DP222LC | Elec | TAL-A49-B | SAC5-550 | S5L1D-H4 | 3960*1600*2250 | 5060*1912*2500",
+        "| 906.25 | 725 | 807.5 | 646 | DP222CB | ECM | TAL-A49-C | SAV6-640 | S6L1D-C4 | 3960*1600*2250 | 5060*1912*2500",
+        "| 1000 | 800 | 908.75 | 727 | DP222CC | ECM | TAL-A49-D | SAV6-728 | S6L1D-D4 | 3960*1600*2250 | 5060*1912*2500"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "Hyundai series – bảng 2",
+      "header": [
+        "| Standby | Prime | Engine | Alternator | Open Type Dimension | Silent Type Dimension",
+        "| kVA | kW | kVA | kW | Model | Gov | Leroy Somer | SRGENSET | Stamford"
+      ],
+      "rows": [
+        "| 70.4 | 63.8 | 64 | 58 | SP344CB | ECM | TAL-A42-H | SA224-60 | S1L2-Y1 | 2000*950*1060 | 2650*950*1450",
+        "| 88 | 80.3 | 80 | 73 | SP344CC | ECM | TAL-A44-C | SA224-77 | UCI 224F | 2268*1094*1576 | 3151*1142*1714",
+        "| 187 | 169.4 | 170 | 154 | P086TI-1 | Elec | TAL-A44-K | SA274-154 | UCI 274F | 2700*1200*1650 | 3860*1200*1850",
+        "| 220 | 201.3 | 200 | 183 | P086TI | Elec | TAL-A44-L | SA274-180 | UCI 274G | 2700*1200*1650 | 3860*1200*1850",
+        "| 250.8 | 224.4 | 228 | 204 | DP086LA | Elec | TAL-A44-M | SA274-216 | UCI 274H | 2700*1200*1650 | 3860*1200*1850",
+        "| 293.7 | 272.8 | 267 | 248 | P126TI | Elec | TAL-A46-D | SA274-240 | UCDI 274K | 3250*1300*1700 | 4260*1462*2100",
+        "| 390.5 | 353.1 | 355 | 321 | DP126LB | Elec | TAL-A46-G | SA314-336 | S4L1D-E4 | 3250*1600*2000 | 4260*1612*2300",
+        "| 448.8 | 390.5 | 408 | 355 | P158LE | Elec | TAL-A46-H | SA314-360 | S4L1D-E4 | 3250*1600*2000 | 4260*1612*2300",
+        "| 507.1 | 457.6 | 461 | 416 | DP158LC | Elec | TAL-A473-A | SA314-432 | S4L1D-F4 | 3350*1600*2000 | 4260*1612*2300",
+        "| 551.1 | 498.3 | 501 | 453 | DP158LD | Elec | TAL-A473-B | SA354-480 | S4L1D-G4 | 3350*1600*2000 | 4260*1612*2300",
+        "| 611.6 | 554.4 | 556 | 504 | DP180LA | Elec | TAL-A473-C | SA354-540 | S5L1D-D4 | 3500*1600*2050 | 4700*1630*2430",
+        "| 660 | 597.3 | 600 | 543 | DP180LB | Elec | TAL-A473-D | SA354-540 | S5L1D-E4 | 3500*1600*2050 | 4700*1630*2430",
+        "| 724.9 | 655.6 | 659 | 596 | DP222LB | Elec | TAL-A473-E | SA354-600 | S5L1D-E4 | 3960*1600*2250 | 5060*1912*2500",
+        "| 771.1 | 698.5 | 701 | 635 | DP222LC | Elec | TAL-A473-F | SA354-648 | S5L1D-F4 | 3960*1600*2250 | 5060*1912*2500",
+        "| 818.4 | 741.4 | 744 | 674 | DP222CB | ECM | TAL-A49-B | SA354-672 | S5L1D-G4 | 3960*1600*2250 | 5060*1912*2500",
+        "| 995.5 | 897.6 | 905 | 816 | DP222CC | ECM | TAL-A49-C | SA404-874 | S6L1D-D4 | 3960*1600*2250 | 5060*1912*2500"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": null,
+      "text": "DEEPSEA Controller",
+      "line": "DEEPSEA Controller",
+      "src": [
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010
+      ]
+    },
+    {
+      "brand": "ComAp",
+      "model": "IG200",
+      "text": "ComAp IG200",
+      "line": "ComAp IG200 + Electrical breaker",
+      "src": [
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2007,
+        2008,
+        2009,
+        2010
+      ]
+    }
+  ]
 }
