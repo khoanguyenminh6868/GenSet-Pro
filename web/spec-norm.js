@@ -269,10 +269,21 @@
 
   function disp(spec, ctx, r) {
     const L = nf(spec.label), V = nf(spec.value), H = ctx.hUnit || "";
-    const u = (s) => (/in3|cu\.?\s*in|cubic\s*inch/i.test(s) ? "in³" : /\bcc\b|\dcc\b|cm3|\bml\b/i.test(s) ? "cc" : /\(\s*l\s*\)|\bl\b|\bltrs?\b|\blit(re|er)s?\b|\dl$|升/i.test(s) ? "L" : null);
+    const u = (s) => (/in3|cu\.?\s*in|cubic\s*inch/i.test(s) ? "in³" : /\bcc\b|\dcc\b|\bccm\b|cm3|\bml\b/i.test(s) ? "cc" : /\(\s*l\s*\)|\bl\b|\bltrs?\b|\blit(re|er)s?\b|\dl$|升/i.test(s) ? "L" : null);
     r.unit = u(V) || u(L) || u(H);
-    if (!r.unit) miss(r, "unit");
     const f = figures(V);
+    // Khoa's decision 14/11/2026 ("displacement nên default đơn vị là L hoặc cm³ (cc)"): the ONE exception to "never
+    // guess a unit from magnitude", for disp only. When the cell, label, header unit line and table title write no unit,
+    // every figure 0.4–100 is L and every figure 400–100000 is cc (the bands catalog.js `likely` uses), then the value is
+    // read as if the cell wrote that unit; cond.unitFrom = "default" tells users the unit was not read from the source.
+    // A cell, label or header unit that writes some other unit ("Displacement (mm)", "排量 (A)") is not "no unit": missing.
+    const otherUnit = (s) => /[(\[（【]\s*[a-z°³²/.·%\s]+\s*[)\]）】]|\b(mm|cm|m|kg|kw|kva|hp|ps|rpm|bar|kpa|mpa|v|a)\b|毫米|公斤/i.test(s);
+    if (!r.unit && f && !f.amb && !u(ctx.title) && ![L, V, H].some(otherUnit)) {
+      const xs = f.list || f.range || [f.num];
+      r.unit = xs.every((x) => x >= 0.4 && x <= 100) ? "L" : xs.every((x) => x >= 400 && x <= 100000) ? "cc" : null;
+      if (r.unit) r.cond.unitFrom = "default";
+    }
+    if (!r.unit) miss(r, "unit");
     if (!f) return miss(r, "value");
     if (f.amb) return miss(r, "number");
     if (f.list || f.range) { r.options = f.list || f.range; return miss(r, "ambiguous"); }
