@@ -137,6 +137,126 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "玉柴发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "广西玉柴"
+      ],
+      "power": {
+        "min": 30,
+        "max": 2400,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "潍柴发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "潍柴动力"
+      ],
+      "power": {
+        "min": 30,
+        "max": 2200,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "济柴发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "中油济柴"
+      ],
+      "power": {
+        "min": 500,
+        "max": 2400,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "瑞典沃尔沃发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "瑞典沃尔沃"
+      ],
+      "power": {
+        "min": 68,
+        "max": 550,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "英国珀金斯发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "英国珀金斯"
+      ],
+      "power": {
+        "min": 10,
+        "max": 2000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "韩国斗山发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "韩国斗山"
+      ],
+      "power": {
+        "min": 10,
+        "max": 2664,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
     }
   ],
   "certifications": [],
@@ -158,9 +278,26 @@
         "**德国奔驰发电机组** _功率范围：200-2400KW_ _发动机品牌：德国MTU发动机_"
       ],
       "file": "sources/gwas-sichuan/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.china-gwas.com/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "功率范围：30-2400kw 发动机品牌：广西玉柴",
+        "功率范围：30~2200KW 发动机品牌：潍柴动力",
+        "功率范围：500KW~2400KW 发动机品牌：中油济柴",
+        "功率范围：68-550KW 发动机品牌：瑞典沃尔沃",
+        "功率范围：10-2000kw 发动机品牌：英国珀金斯",
+        "功率范围：10-2664KW 发动机品牌：韩国斗山"
+      ],
+      "file": "sources/gwas-sichuan/2001.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": []
 }
