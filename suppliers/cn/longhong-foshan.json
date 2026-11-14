@@ -60,6 +60,425 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "LHGF 潍柴动力柴油发电机组 (50Hz)",
+      "fuel": "diesel",
+      "power": {
+        "min": 30,
+        "max": 650,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2010,
+          2005
+        ]
+      },
+      "src": [
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LHGF-600",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "engineModels": [
+        "6M33D725E310"
+      ],
+      "alternatorMakes": [
+        "LongHong"
+      ],
+      "power": {
+        "min": 600,
+        "max": 600,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LHGF-500",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "engineModels": [
+        "6M33D633E200"
+      ],
+      "alternatorMakes": [
+        "LongHong"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LHGF-200",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "engineModels": [
+        "WP10D264E200"
+      ],
+      "alternatorMakes": [
+        "LongHong"
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LHGF-75",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "engineModels": [
+        "WP4.1D100E200"
+      ],
+      "alternatorMakes": [
+        "LongHong"
+      ],
+      "power": {
+        "min": 75,
+        "max": 75,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LHGF-650",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "engineModels": [
+        "12M26D792E200"
+      ],
+      "alternatorMakes": [
+        "LongHong"
+      ],
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LHGF-350",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "engineModels": [
+        "WP13D405E200"
+      ],
+      "alternatorMakes": [
+        "LongHong"
+      ],
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LHGFS-1500",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "engineModels": [
+        "16M33D1785E311"
+      ],
+      "alternatorMakes": [
+        "LongHong"
+      ],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LHGFS-1000",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "engineModels": [
+        "12M33D1265E201"
+      ],
+      "alternatorMakes": [
+        "LongHong"
+      ],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LHGFS-800",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "engineModels": [
+        "12M26D1012E201"
+      ],
+      "alternatorMakes": [
+        "LongHong"
+      ],
+      "power": {
+        "min": 800,
+        "max": 800,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LHGF-30",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "engineModels": [
+        "WP2.3D33E200"
+      ],
+      "alternatorMakes": [
+        "LongHong"
+      ],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LHGF-50",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "engineModels": [
+        "WP4.1D66E200"
+      ],
+      "alternatorMakes": [
+        "LongHong"
+      ],
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LHGF-100",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "engineModels": [
+        "WP6D132E200"
+      ],
+      "alternatorMakes": [
+        "LongHong"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LHGF-150",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "engineModels": [
+        "WP6D167E200"
+      ],
+      "alternatorMakes": [
+        "LongHong"
+      ],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LHGF-250",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "engineModels": [
+        "WP10D320E200"
+      ],
+      "alternatorMakes": [
+        "LongHong"
+      ],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2014
+        ]
+      },
+      "src": [
+        2014
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "LHGF-400",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "engineModels": [
+        "6M26D484E200"
+      ],
+      "alternatorMakes": [
+        "LongHong"
+      ],
+      "power": {
+        "min": 400,
+        "max": 400,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2015
+        ]
+      },
+      "src": [
+        2015
+      ]
     }
   ],
   "certifications": [],
@@ -82,9 +501,967 @@
         "1500KW大型低噪音发电机 1875KVA潍柴动力 静音型柴油发电机组 全铜线无刷"
       ],
       "file": "sources/longhong-foshan/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.gdfsfdj.com/products_27/559.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "600KW(750KVA)潍柴动力柴油发电机组技术参数 6M33D725E310"
+      ],
+      "file": "sources/longhong-foshan/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.gdfsfdj.com/products_27/558.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "500KW(625KVA)潍柴动力柴油发电机组技术参数 6M33D633E200"
+      ],
+      "file": "sources/longhong-foshan/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://www.gdfsfdj.com/products_27/365.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "200KW(250KVA)潍柴动力柴油发电机组技术参数 WP10D264E200"
+      ],
+      "file": "sources/longhong-foshan/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://www.gdfsfdj.com/products_27/350.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "75KW(93.75KVA)潍柴动力柴油发电机组技术参数 WP4.1D100E200"
+      ],
+      "file": "sources/longhong-foshan/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://www.gdfsfdj.com/products_27/379.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "650KW(812.5KVA)潍柴动力柴油发电机组技术参数 12M26D792E200"
+      ],
+      "file": "sources/longhong-foshan/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://www.gdfsfdj.com/products_27/373.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "350KW(437.5KVA)潍柴动力柴油发电机组技术参数 WP13D405E200"
+      ],
+      "file": "sources/longhong-foshan/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://www.gdfsfdj.com/products_30/514.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "1500KW(1875KVA)潍柴动力静音（低噪音）柴油发电机组技术参数 16M33D1785E311"
+      ],
+      "file": "sources/longhong-foshan/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://www.gdfsfdj.com/products_30/508.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "1000KW(1250KVA)潍柴动力静音（低噪音）柴油发电机组技术参数 12M33D1265E201"
+      ],
+      "file": "sources/longhong-foshan/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://www.gdfsfdj.com/products_30/506.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "800KW(1000KVA)潍柴动力静音（低噪音）柴油发电机组技术参数 12M26D1012E201"
+      ],
+      "file": "sources/longhong-foshan/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://www.gdfsfdj.com/products_27/310.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "30KW(37.5KVA)潍柴动力柴油发电机组技术参数 WP2.3D33E200"
+      ],
+      "file": "sources/longhong-foshan/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://www.gdfsfdj.com/products_27/344.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "50KW(62.5KVA)潍柴动力柴油发电机组技术参数 WP4.1D66E200"
+      ],
+      "file": "sources/longhong-foshan/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "https://www.gdfsfdj.com/products_27/355.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "100KW(125KVA)潍柴动力柴油发电机组技术参数 WP6D132E200"
+      ],
+      "file": "sources/longhong-foshan/2012.md",
+      "official": true
+    },
+    {
+      "n": 2013,
+      "url": "https://www.gdfsfdj.com/products_27/368.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "150KW(187.5KVA)潍柴动力柴油发电机组技术参数 WP6D167E200"
+      ],
+      "file": "sources/longhong-foshan/2013.md",
+      "official": true
+    },
+    {
+      "n": 2014,
+      "url": "https://www.gdfsfdj.com/products_27/366.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "250KW(312.5KVA)潍柴动力柴油发电机组技术参数 WP10D320E200"
+      ],
+      "file": "sources/longhong-foshan/2014.md",
+      "official": true
+    },
+    {
+      "n": 2015,
+      "url": "https://www.gdfsfdj.com/products_27/376.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "400KW(500KVA)潍柴动力柴油发电机组技术参数 6M26D484E200"
+      ],
+      "file": "sources/longhong-foshan/2015.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "600KW(750KVA)潍柴动力柴油发电机组技术参数 6M33D725E310",
+      "header": [
+        "| 发电机组参数(Generator parameters)："
+      ],
+      "rows": [
+        "| 600KW(750KVA)潍柴动力柴油发电机组技术参数 6M33D725E310",
+        "| 发电机组制造商： Turbine manufacturer: | 广东隆宏机电设备有限公司 Guangdong LongHong Electrical Equipment Co., Ltd.",
+        "| 发电机组型号： Generator set model: | LHGF-600",
+        "| 机组额定功率: Rated power unit: | 600KW",
+        "| 机组额定容量: Rated capacity: | 750KVA",
+        "| 机组额定电流: Rated current | 1080A",
+        "| 机组额定电压: Rated voltage: | 220V/380V 230V/400V （可生产不同的电压） 220V/380V 230V/400V( Can produce different voltage）",
+        "| 额定频率: Rated frequency: | 50Hz",
+        "| 额定转速： Rated speed: | 1500rpm",
+        "| 功率因素： Power factor： | 0.8 滞后 0.8 lagging",
+        "| 调试方式： Debug mode: | 高压共轨电喷 High pressure common rail\"",
+        "| 机组尺寸： The unit size: | 3800×1600×2050(mm)",
+        "| 机组重量: Rated power unit:83 | 4700KG",
+        "| 发动机参数(Theengineparameters)：",
+        "| 发动机品牌: Enginebrand: | 潍柴动力/潍柴动力股份有限公司 weichaipower / Weichai Power Co Ltd",
+        "| 发动机型号: Enginemodel: | 6M33D725E310",
+        "| 发动机功率: Thepoweroftheengine | 725KW",
+        "| 气缸型式: Cylindertype | 6缸L列、4冲程 6cylinder, 4 stroke L",
+        "| 缸径*行程: Bore*stroke: | 150*158(mm)",
+        "| 吸气方式: Aspiration | 涡轮增压带中冷 A turbocharged inter-cooled",
+        "| 调试方式: Debugmode | 高压共轨电喷 High pressure common rail\"",
+        "| 额定转速 Ratedspeed | 1500rpm",
+        "| 燃油消耗率： Fuelconsumptionrate: | ≤195g/kW·h",
+        "| 排量: Displacement: | 19.6L",
+        "| 冷却方式: Coolingmode | 强制水冷 Forced water cooling",
+        "| 调试稳定性: Debuggingstability | ≤5％",
+        "| 启动方式: Startup mode: | DC24V",
+        "| 发电机参数（Electric machine parameters）：",
+        "| 发电机品牌： Generator brand： | 隆宏发电机/广东佛山发电机 LongHong generator / guangdong Foshan",
+        "| 发电机型号： Generator model： | HTW-600",
+        "| 额定功率： Rated power | 600KW",
+        "| 额定电压： Rated voltage： | 400V/230V 220V/380V",
+        "| 额定电流： Rated current: | 1080A",
+        "| 额定频率： Rated frequency： | 50Hz",
+        "| 额定转速： Rated speed： | 1500rpm",
+        "| 励磁方式： Excitation mode： | 无刷自励 Brushless self excitation",
+        "| 电压调整范围： Voltage regulation range | ≥5％",
+        "| 电压波动范围： Voltage fluctuation range: | ≤±5％",
+        "| 绝缘等级： Insulation grade: | H",
+        "| 防护等级： Protection level: | IP21",
+        "| 4、LONGHONG控制系统6110K"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "500KW(625KVA)潍柴动力柴油发电机组技术参数 6M33D633E200",
+      "header": [
+        "| 发电机组参数(Generator parameters)："
+      ],
+      "rows": [
+        "| 500KW(625KVA)潍柴动力柴油发电机组技术参数 6M33D633E200",
+        "| 发电机组制造商： Turbine manufacturer: | 广东隆宏机电设备有限公司 Guangdong LongHong Electrical Equipment Co., Ltd.",
+        "| 发电机组型号： Generator set model: | LHGF-500",
+        "| 机组额定功率: Rated power unit: | 500KW",
+        "| 机组额定容量: Rated capacity: | 625KVA",
+        "| 机组额定电流: Rated current | 900A",
+        "| 机组额定电压: Rated voltage: | 220V/380V 230V/400V （可生产不同的电压） 220V/380V 230V/400V( Can produce different voltage）",
+        "| 额定频率: Rated frequency: | 50Hz",
+        "| 额定转速： Rated speed: | 1500rpm",
+        "| 功率因素： Power factor： | 0.8 滞后 0.8 lagging",
+        "| 调试方式： Debug mode: | 电子调速 Electronic speed",
+        "| 机组尺寸： The unit size: | 3800×1600×2050(mm)",
+        "| 机组重量: Rated power unit:83 | 4500KG",
+        "| 发动机参数(Theengineparameters)：",
+        "| 发动机品牌: Enginebrand: | 潍柴动力/潍柴动力股份有限公司 weichaipower / Weichai Power Co Ltd",
+        "| 发动机型号: Enginemodel: | 6M33D633E200",
+        "| 发动机功率: Thepoweroftheengine | 633KW",
+        "| 气缸型式: Cylindertype | 6缸L列、4冲程 6cylinder, 4 stroke L",
+        "| 缸径*行程: Bore*stroke: | 150*158(mm)",
+        "| 吸气方式: Aspiration | 涡轮增压带中冷 A turbocharged inter-cooled",
+        "| 调试方式: Debugmode | 电子调速 Electronic speed",
+        "| 额定转速 Ratedspeed | 1500rpm",
+        "| 燃油消耗率： Fuelconsumptionrate: | ≤195g/kW·h",
+        "| 排量: Displacement: | 19.6L",
+        "| 冷却方式: Coolingmode | 强制水冷 Forced water cooling",
+        "| 调试稳定性: Debuggingstability | ≤5％",
+        "| 启动方式: Startup mode: | DC24V",
+        "| 发电机参数（Electric machine parameters）：",
+        "| 发电机品牌： Generator brand： | 隆宏发电机/广东佛山发电机 LongHong generator / guangdong Foshan",
+        "| 发电机型号： Generator model： | HTW-500",
+        "| 额定功率： Rated power | 500KW",
+        "| 额定电压： Rated voltage： | 400V/230V 220V/380V",
+        "| 额定电流： Rated current: | 900A",
+        "| 额定频率： Rated frequency： | 50Hz",
+        "| 额定转速： Rated speed： | 1500rpm",
+        "| 励磁方式： Excitation mode： | 无刷自励 Brushless self excitation",
+        "| 电压调整范围： Voltage regulation range | ≥5％",
+        "| 电压波动范围： Voltage fluctuation range: | ≤±5％",
+        "| 绝缘等级： Insulation grade: | H",
+        "| 防护等级： Protection level: | IP21",
+        "| 4、LONGHONG控制系统6110K"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "200KW(250KVA)潍柴动力柴油发电机组技术参数 WP10D264E200",
+      "header": [
+        "| 发电机组参数(Generator parameters)："
+      ],
+      "rows": [
+        "| 200KW(250KVA)潍柴动力柴油发电机组技术参数 WP10D264E200",
+        "| 发电机组制造商： Turbine manufacturer: | 广东隆宏机电设备有限公司 Guangdong LongHong Electrical Equipment Co., Ltd.",
+        "| 发电机组型号： Generator set model: | LHGF-200",
+        "| 机组额定功率: Rated power unit: | 200KW",
+        "| 机组额定容量: Rated capacity: | 250KVA",
+        "| 机组额定电流: Rated current | 360A",
+        "| 机组额定电压: Rated voltage: | 220V/380V 230V/400V （可生产不同的电压） 220V/380V 230V/400V( Can produce different voltage）",
+        "| 额定频率: Rated frequency: | 50Hz",
+        "| 额定转速： Rated speed: | 1500rpm",
+        "| 功率因素： Power factor： | 0.8 滞后 0.8 lagging",
+        "| 燃油消耗率： The rate of fuel consumption： | ≤197g/kW·h",
+        "| 调试方式： Debug mode: | 电子调速 electronic speed governor",
+        "| 机组尺寸： The unit size: | 2900×1150×1750(mm)",
+        "| 机组重量: Rated power unit:83 | 2290KG",
+        "| 发动机参数(Theengineparameters)：",
+        "| 发动机品牌: Enginebrand: | 潍柴动力/潍柴动力股份有限公司 weichaipower / Weichai Power Co Ltd",
+        "| 发动机型号: Enginemodel: | WP10D264E200",
+        "| 发动机功率: Thepoweroftheengine | 264KW",
+        "| 气缸型式: Cylindertype | 6缸L列、4冲程 6cylinder, 4 stroke L",
+        "| 缸径*行程: Bore*stroke: | 126*130(mm)",
+        "| 吸气方式: Aspiration | 涡轮增压带中冷 Turbocharged with intercooling",
+        "| 调试方式: Debugmode | 电子调速 electronic speed governor",
+        "| 额定转速 Ratedspeed | 1500rpm",
+        "| 燃油消耗率： Fuelconsumptionrate: | ≤197g/kW·h",
+        "| 排量: Displacement: | 9.726L",
+        "| 冷却方式: Coolingmode | 强制水冷 Forced water cooling",
+        "| 调试稳定性: Debuggingstability | ≤5％",
+        "| 启动方式: Startup mode: | DC24V",
+        "| 发电机参数（Electric machine parameters）：",
+        "| 发电机品牌： Generator brand： | 隆宏发电机/广东佛山发电机 LongHong generator / guangdong Foshan",
+        "| 发电机型号： Generator model： | HTW-200",
+        "| 额定功率： Rated power | 200KW",
+        "| 额定电压： Rated voltage： | 400V/230V 220V/380V",
+        "| 额定电流： Rated current: | 360A",
+        "| 额定频率： Rated frequency： | 50Hz",
+        "| 额定转速： Rated speed： | 1500rpm",
+        "| 励磁方式： Excitation mode： | 无刷自励 Brushless self excitation",
+        "| 电压调整范围： Voltage regulation range | ≥5％",
+        "| 电压波动范围： Voltage fluctuation range: | ≤±5％",
+        "| 绝缘等级： Insulation grade: | H",
+        "| 防护等级： Protection level: | IP21",
+        "| 4、LONGHONG控制系统6110K"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "75KW(93.75KVA)潍柴动力柴油发电机组技术参数 WP4.1D100E200",
+      "header": [
+        "| 发电机组参数(Generator parameters)："
+      ],
+      "rows": [
+        "| 75KW(93.75KVA)潍柴动力柴油发电机组技术参数 WP4.1D100E200",
+        "| 发电机组制造商： Turbine manufacturer: | 广东隆宏机电设备有限公司 Guangdong LongHong Electrical Equipment Co., Ltd.",
+        "| 发电机组型号： Generator set model: | LHGF-75",
+        "| 机组额定功率: Rated power unit: | 75KW",
+        "| 机组额定容量: Rated capacity: | 93.75KVA",
+        "| 机组额定电流: Rated current | 135A",
+        "| 机组额定电压: Rated voltage: | 220V/380V 230V/400V （可生产不同的电压） 220V/380V 230V/400V( Can produce different voltage）",
+        "| 额定频率: Rated frequency: | 50Hz",
+        "| 额定转速： Rated speed: | 1500rpm",
+        "| 功率因素： Power factor： | 0.8 滞后 0.8 lagging",
+        "| 燃油消耗率： The rate of fuel consumption： | 205g/kW·h",
+        "| 调试方式： Debug mode: | 电子调速 electronic speed governor",
+        "| 机组尺寸： The unit size: | 2050×760×1350(mm)",
+        "| 机组重量: Rated power unit:83 | 930KG",
+        "| 发动机参数(Theengineparameters)：",
+        "| 发动机品牌: Enginebrand: | 潍柴动力/潍柴动力股份有限公司 weichaipower / Weichai Power Co Ltd",
+        "| 发动机型号: Enginemodel: | WP4.1D100E200",
+        "| 发动机功率: Thepoweroftheengine | 100KW",
+        "| 气缸型式: Cylindertype | 4缸L列、4冲程 4cylinder, 4 stroke L",
+        "| 缸径*行程: Bore*stroke: | 105*120(mm)",
+        "| 吸气方式: Aspiration | 涡轮增压 Turbo",
+        "| 调试方式: Debugmode | 电子调速 electronic speed governor",
+        "| 额定转速 Ratedspeed | 1500rpm",
+        "| 燃油消耗率： Fuelconsumptionrate: | ≤205g/kW·h",
+        "| 排量: Displacement: | 4.088L",
+        "| 冷却方式: Coolingmode | 强制水冷 Forced water cooling",
+        "| 调试稳定性: Debuggingstability | ≤5％",
+        "| 启动方式: Startup mode: | DC24V",
+        "| 发电机参数（Electric machine parameters）：",
+        "| 发电机品牌： Generator brand： | 隆宏发电机/广东佛山发电机 LongHong generator / guangdong Foshan",
+        "| 发电机型号： Generator model： | HTW-75",
+        "| 额定功率： Rated power | 75KW",
+        "| 额定电压： Rated voltage： | 400V/230V 220V/380V",
+        "| 额定电流： Rated current: | 135A",
+        "| 额定频率： Rated frequency： | 50Hz",
+        "| 额定转速： Rated speed： | 1500rpm",
+        "| 励磁方式： Excitation mode： | 无刷自励 Brushless self excitation",
+        "| 电压调整范围： Voltage regulation range | ≥5％",
+        "| 电压波动范围： Voltage fluctuation range: | ≤±5％",
+        "| 绝缘等级： Insulation grade: | H",
+        "| 防护等级： Protection level: | IP21",
+        "| 4、LONGHONG控制系统6110K"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "650KW(812.5KVA)潍柴动力柴油发电机组技术参数 12M26D792E200",
+      "header": [
+        "| 发电机组参数(Generator parameters)："
+      ],
+      "rows": [
+        "| 650KW(812.5KVA)潍柴动力柴油发电机组技术参数 12M26D792E200",
+        "| 发电机组制造商： Turbine manufacturer: | 广东隆宏机电设备有限公司 Guangdong LongHong Electrical Equipment Co., Ltd.",
+        "| 发电机组型号： Generator set model: | LHGF-650",
+        "| 机组额定功率: Rated power unit: | 650KW",
+        "| 机组额定容量: Rated capacity: | 812.5KVA",
+        "| 机组额定电流: Rated current | 1170A",
+        "| 机组额定电压: Rated voltage: | 220V/380V 230V/400V （可生产不同的电压） 220V/380V 230V/400V( Can produce different voltage）",
+        "| 额定频率: Rated frequency: | 50Hz",
+        "| 额定转速： Rated speed: | 1500rpm",
+        "| 功率因素： Power factor： | 0.8 滞后 0.8 lagging",
+        "| 调试方式： Debug mode: | 电子调速 Electronic speed",
+        "| 机组尺寸： The unit size: | 4300×1990×2150(mm)",
+        "| 机组重量: Rated power unit:83 | 5900KG",
+        "| 发动机参数(Theengineparameters)：",
+        "| 发动机品牌: Enginebrand: | 潍柴动力/潍柴动力股份有限公司 weichaipower / Weichai Power Co Ltd",
+        "| 发动机型号: Enginemodel: | 12M26D792E200",
+        "| 发动机功率: Thepoweroftheengine | 792KW",
+        "| 气缸型式: Cylindertype | 12缸V列、4冲程 12cylinder, 4 stroke V",
+        "| 缸径*行程: Bore*stroke: | 150*150(mm)",
+        "| 吸气方式: Aspiration | 涡轮增压带中冷 A turbocharged inter-cooled",
+        "| 调试方式: Debugmode | 电子调速 Electronic speed",
+        "| 额定转速 Ratedspeed | 1500rpm",
+        "| 燃油消耗率： Fuelconsumptionrate: | ≤195g/kW·h",
+        "| 排量: Displacement: | 31.8L",
+        "| 冷却方式: Coolingmode | 强制水冷 Forced water cooling",
+        "| 调试稳定性: Debuggingstability | ≤5％",
+        "| 启动方式: Startup mode: | DC24V",
+        "| 发电机参数（Electric machine parameters）：",
+        "| 发电机品牌： Generator brand： | 隆宏发电机/广东佛山发电机 LongHong generator / guangdong Foshan",
+        "| 发电机型号： Generator model： | HTW-650",
+        "| 额定功率： Rated power | 650KW",
+        "| 额定电压： Rated voltage： | 400V/230V 220V/380V",
+        "| 额定电流： Rated current: | 1170A",
+        "| 额定频率： Rated frequency： | 50Hz",
+        "| 额定转速： Rated speed： | 1500rpm",
+        "| 励磁方式： Excitation mode： | 无刷自励 Brushless self excitation",
+        "| 电压调整范围： Voltage regulation range | ≥5％",
+        "| 电压波动范围： Voltage fluctuation range: | ≤±5％",
+        "| 绝缘等级： Insulation grade: | H",
+        "| 防护等级： Protection level: | IP21",
+        "| 4、LONGHONG控制系统6110K"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "350KW(437.5KVA)潍柴动力柴油发电机组技术参数 WP13D405E200",
+      "header": [
+        "| 发电机组参数(Generator parameters)："
+      ],
+      "rows": [
+        "| 350KW(437.5KVA)潍柴动力柴油发电机组技术参数 WP13D405E200",
+        "| 发电机组制造商： Turbine manufacturer: | 广东隆宏机电设备有限公司 Guangdong LongHong Electrical Equipment Co., Ltd.",
+        "| 发电机组型号： Generator set model: | LHGF-350",
+        "| 机组额定功率: Rated power unit: | 350KW",
+        "| 机组额定容量: Rated capacity: | 437.5KVA",
+        "| 机组额定电流: Rated current | 630A",
+        "| 机组额定电压: Rated voltage: | 220V/380V 230V/400V （可生产不同的电压） 220V/380V 230V/400V( Can produce different voltage）",
+        "| 额定频率: Rated frequency: | 50Hz",
+        "| 额定转速： Rated speed: | 1500rpm",
+        "| 功率因素： Power factor： | 0.8 滞后 0.8 lagging",
+        "| 调试方式： Debug mode: | 电子调速 Electronic speed",
+        "| 机组尺寸： The unit size: | 3150×1250×1850(mm)",
+        "| 机组重量: Rated power unit:83 | 3000KG",
+        "| 发动机参数(Theengineparameters)：",
+        "| 发动机品牌: Enginebrand: | 潍柴动力/潍柴动力股份有限公司 weichaipower / Weichai Power Co Ltd",
+        "| 发动机型号: Enginemodel: | WP13D405E200",
+        "| 发动机功率: Thepoweroftheengine | 405KW",
+        "| 气缸型式: Cylindertype | 6缸L列、4冲程 6cylinder, 4 stroke L",
+        "| 缸径*行程: Bore*stroke: | 127*165(mm)",
+        "| 吸气方式: Aspiration | 涡轮增压带中冷 A turbocharged inter-cooled",
+        "| 调试方式: Debugmode | 电子调速 Electronic speed",
+        "| 额定转速 Ratedspeed | 1500rpm",
+        "| 燃油消耗率： Fuelconsumptionrate: | ≤198g/kW·h",
+        "| 排量: Displacement: | 12.54L",
+        "| 冷却方式: Coolingmode | 强制水冷 Forced water cooling",
+        "| 调试稳定性: Debuggingstability | ≤5％",
+        "| 启动方式: Startup mode: | DC24V",
+        "| 发电机参数（Electric machine parameters）：",
+        "| 发电机品牌： Generator brand： | 隆宏发电机/广东佛山发电机 LongHong generator / guangdong Foshan",
+        "| 发电机型号： Generator model： | HTW-350",
+        "| 额定功率： Rated power | 350KW",
+        "| 额定电压： Rated voltage： | 400V/230V 220V/380V",
+        "| 额定电流： Rated current: | 630A",
+        "| 额定频率： Rated frequency： | 50Hz",
+        "| 额定转速： Rated speed： | 1500rpm",
+        "| 励磁方式： Excitation mode： | 无刷自励 Brushless self excitation",
+        "| 电压调整范围： Voltage regulation range | ≥5％",
+        "| 电压波动范围： Voltage fluctuation range: | ≤±5％",
+        "| 绝缘等级： Insulation grade: | H",
+        "| 防护等级： Protection level: | IP21",
+        "| 4、LONGHONG控制系统6110K"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "1500KW(1875KVA)潍柴动力静音（低噪音）柴油发电机组技术参数 16M33D1785E311",
+      "header": [
+        "| 发电机组参数(Generator parameters)："
+      ],
+      "rows": [
+        "| 1500KW(1875KVA)潍柴动力静音（低噪音）柴油发电机组技术参数 16M33D1785E311",
+        "| 发电机组制造商： Turbine manufacturer: | 广东隆宏机电设备有限公司 Guangdong LongHong Electrical Equipment Co., Ltd.",
+        "| 发电机组型号： Generator set model: | LHGFS-1500",
+        "| 机组额定功率: Rated power unit: | 1500KW",
+        "| 机组额定容量: Rated capacity: | 1875KVA",
+        "| 机组额定电流: Rated current | 2700A",
+        "| 机组额定电压: Rated voltage: | 400V/230V（可生产不同的电压） 400V/230V ( Can produce different voltage）",
+        "| 额定频率: Rated frequency: | 60Hz",
+        "| 额定转速： Rated speed: | 1800rpm",
+        "| 功率因素： Power factor： | 0.8 滞后 0.8 lagging",
+        "| 燃油消耗率： The rate of fuel consumption： | ≤215.9g/kW·h",
+        "| 调试方式： Debug mode: | 高压共轨，电控电喷 Electronically controlled high pressure common rail, efi",
+        "| 机组尺寸： The unit size: | 7200×2300×3000(mm)",
+        "| 机组重量: Rated power unit: | 14300KG",
+        "| 发动机参数(Theengineparameters)：",
+        "| 发动机品牌: Enginebrand: | 潍柴动力/潍柴动力股份有限公司 weichaipower / Weichai Power Co Ltd",
+        "| 发动机型号: Enginemodel: | 16M33D1785E311",
+        "| 发动机功率: Thepoweroftheengine: | 1785KW",
+        "| 气缸型式: Cylindertype | 16缸V列、4冲程 16 cylinder, 4 stroke V",
+        "| 缸径*行程: Bore*stroke: | 150×185(mm)",
+        "| 吸气方式: Aspiration | 涡轮增压带中冷 A turbocharged inter-cooled",
+        "| 调试方式: Debugmode | 高压共轨，电控电喷 Electronically controlled high pressure common rail, efi",
+        "| 额定转速 Ratedspeed | 1800rpm",
+        "| 燃油消耗率： Fuelconsumptionrate: | ≤215.9g/kW·h",
+        "| 排量: Displacement: | 52.3L",
+        "| 冷却方式: Coolingmode | 强制水冷 Forced water cooling",
+        "| 调试稳定性: Debuggingstability | ≤5％",
+        "| 启动方式: Startup mode: | DC24V",
+        "| 发电机参数（Electric machine parameters）：",
+        "| 发电机品牌： Generator brand： | 隆宏发电机/广东佛山 LongHong generator / guangdong Foshan",
+        "| 发电机型号： Generator model： | HTW-1500",
+        "| 额定功率： Rated power | 1500KW",
+        "| 额定电压： Rated voltage： | 400V/230V",
+        "| 额定电流： Rated current: | 2700A",
+        "| 额定频率： Rated frequency： | 60Hz",
+        "| 额定转速： Rated speed： | 1800rpm",
+        "| 励磁方式： Excitation mode： | 无刷自励 Brushless self excitation",
+        "| 电压调整范围： Voltage regulation range | ≥5％",
+        "| 电压波动范围： Voltage fluctuation range: | ≤±5％",
+        "| 绝缘等级： Insulation grade: | H",
+        "| 防护等级： Protection level: | IP21",
+        "| 4、 郑州众智控制系统6110K"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "1000KW(1250KVA)潍柴动力静音（低噪音）柴油发电机组技术参数 12M33D1265E201",
+      "header": [
+        "| 发电机组参数(Generator parameters)："
+      ],
+      "rows": [
+        "| 1000KW(1250KVA)潍柴动力静音（低噪音）柴油发电机组技术参数 12M33D1265E201",
+        "| 发电机组制造商： Turbine manufacturer: | 广东隆宏机电设备有限公司 Guangdong LongHong Electrical Equipment Co., Ltd.",
+        "| 发电机组型号： Generator set model: | LHGFS-1000",
+        "| 机组额定功率: Rated power unit: | 1000KW",
+        "| 机组额定容量: Rated capacity: | 1250KVA",
+        "| 机组额定电流: Rated current | 1800A",
+        "| 机组额定电压: Rated voltage: | 400V/230V（可生产不同的电压） 400V/230V ( Can produce different voltage）",
+        "| 额定频率: Rated frequency: | 60Hz",
+        "| 额定转速： Rated speed: | 1800rpm",
+        "| 功率因素： Power factor： | 0.8 滞后 0.8 lagging",
+        "| 燃油消耗率： The rate of fuel consumption： | ≤197.3g/kW·h",
+        "| 调试方式： Debug mode: | 电子调速 electronic speed governor",
+        "| 机组尺寸： The unit size: | 7200×2300×3000(mm)",
+        "| 机组重量: Rated power unit: | 8900KG",
+        "| 发动机参数(Theengineparameters)：",
+        "| 发动机品牌: Enginebrand: | 潍柴动力/潍柴动力股份有限公司 weichaipower / Weichai Power Co Ltd",
+        "| 发动机型号: Enginemodel: | 12M33D1265E201",
+        "| 发动机功率: Thepoweroftheengine: | 1265KW",
+        "| 气缸型式: Cylindertype | 12缸V列、4冲程 12 cylinder, 4 stroke V",
+        "| 缸径*行程: Bore*stroke: | 150×185(mm)",
+        "| 吸气方式: Aspiration | 涡轮增压带中冷 A turbocharged inter-cooled",
+        "| 调试方式: Debugmode | 电子调速 electronic speed governor",
+        "| 额定转速 Ratedspeed | 1800rpm",
+        "| 燃油消耗率： Fuelconsumptionrate: | ≤197.3g/kW·h",
+        "| 排量: Displacement: | 39.2L",
+        "| 冷却方式: Coolingmode | 强制水冷 Forced water cooling",
+        "| 调试稳定性: Debuggingstability | ≤5％",
+        "| 启动方式: Startup mode: | DC24V",
+        "| 发电机参数（Electric machine parameters）：",
+        "| 发电机品牌： Generator brand： | 隆宏发电机/广东佛山 LongHong generator / guangdong Foshan",
+        "| 发电机型号： Generator model： | HTW-1000",
+        "| 额定功率： Rated power | 1000KW",
+        "| 额定电压： Rated voltage： | 400V/230V",
+        "| 额定电流： Rated current: | 1800A",
+        "| 额定频率： Rated frequency： | 60Hz",
+        "| 额定转速： Rated speed： | 1800rpm",
+        "| 励磁方式： Excitation mode： | 无刷自励 Brushless self excitation",
+        "| 电压调整范围： Voltage regulation range | ≥5％",
+        "| 电压波动范围： Voltage fluctuation range: | ≤±5％",
+        "| 绝缘等级： Insulation grade: | H",
+        "| 防护等级： Protection level: | IP21",
+        "| 4、 郑州众智控制系统6110K"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "800KW(1000KVA)潍柴动力静音（低噪音）柴油发电机组技术参数 12M26D1012E201",
+      "header": [
+        "| 发电机组参数(Generator parameters)："
+      ],
+      "rows": [
+        "| 800KW(1000KVA)潍柴动力静音（低噪音）柴油发电机组技术参数 12M26D1012E201",
+        "| 发电机组制造商： Turbine manufacturer: | 广东隆宏机电设备有限公司 Guangdong LongHong Electrical Equipment Co., Ltd.",
+        "| 发电机组型号： Generator set model: | LHGFS-800",
+        "| 机组额定功率: Rated power unit: | 800KW",
+        "| 机组额定容量: Rated capacity: | 1000KVA",
+        "| 机组额定电流: Rated current | 1440A",
+        "| 机组额定电压: Rated voltage: | 400V/230V（可生产不同的电压） 400V/230V ( Can produce different voltage）",
+        "| 额定频率: Rated frequency: | 60Hz",
+        "| 额定转速： Rated speed: | 1800rpm",
+        "| 功率因素： Power factor： | 0.8 滞后 0.8 lagging",
+        "| 燃油消耗率： The rate of fuel consumption： | ≤201.7g/kW·h",
+        "| 调试方式： Debug mode: | 电子调速 electronic speed governor",
+        "| 机组尺寸： The unit size: | 5800×2300×2500(mm)",
+        "| 机组重量: Rated power unit: | 7900KG",
+        "| 发动机参数(Theengineparameters)：",
+        "| 发动机品牌: Enginebrand: | 潍柴动力/潍柴动力股份有限公司 weichaipower / Weichai Power Co Ltd",
+        "| 发动机型号: Enginemodel: | 12M26D1012E201",
+        "| 发动机功率: Thepoweroftheengine: | 1012KW",
+        "| 气缸型式: Cylindertype | 12缸V列、4冲程 12 cylinder, 4 stroke V",
+        "| 缸径*行程: Bore*stroke: | 150×150(mm)",
+        "| 吸气方式: Aspiration | 涡轮增压带中冷 A turbocharged inter-cooled",
+        "| 调试方式: Debugmode | 电子调速 electronic speed governor",
+        "| 额定转速 Ratedspeed | 1800rpm",
+        "| 燃油消耗率： Fuelconsumptionrate: | ≤201.7g/kW·h",
+        "| 排量: Displacement: | 31.8L",
+        "| 冷却方式: Coolingmode | 强制水冷 Forced water cooling",
+        "| 调试稳定性: Debuggingstability | ≤5％",
+        "| 启动方式: Startup mode: | DC24V",
+        "| 发电机参数（Electric machine parameters）：",
+        "| 发电机品牌： Generator brand： | 隆宏发电机/广东佛山 LongHong generator / guangdong Foshan",
+        "| 发电机型号： Generator model： | HTW-800",
+        "| 额定功率： Rated power | 800KW",
+        "| 额定电压： Rated voltage： | 400V/230V",
+        "| 额定电流： Rated current: | 1440A",
+        "| 额定频率： Rated frequency： | 60Hz",
+        "| 额定转速： Rated speed： | 1800rpm",
+        "| 励磁方式： Excitation mode： | 无刷自励 Brushless self excitation",
+        "| 电压调整范围： Voltage regulation range | ≥5％",
+        "| 电压波动范围： Voltage fluctuation range: | ≤±5％",
+        "| 绝缘等级： Insulation grade: | H",
+        "| 防护等级： Protection level: | IP21",
+        "| 4、 郑州众智控制系统6110K"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "30KW(37.5KVA)潍柴动力柴油发电机组技术参数 WP2.3D33E200",
+      "header": [
+        "| 发电机组参数(Generator parameters)："
+      ],
+      "rows": [
+        "| 30KW(37.5KVA)潍柴动力柴油发电机组技术参数 WP2.3D33E200",
+        "| 发电机组制造商： Turbine manufacturer: | 广东隆宏机电设备有限公司 Guangdong LongHong Electrical Equipment Co., Ltd.",
+        "| 发电机组型号： Generator set model: | LHGF-30",
+        "| 机组额定功率: Rated power unit: | 30KW",
+        "| 机组额定容量: Rated capacity: | 37.5KVA",
+        "| 机组额定电流: Rated current | 54A",
+        "| 机组额定电压: Rated voltage: | 220V/380V 230V/400V （可生产不同的电压） 220V/380V 230V/400V( Can produce different voltage）",
+        "| 额定频率: Rated frequency: | 50Hz",
+        "| 额定转速： Rated speed: | 1500rpm",
+        "| 功率因素： Power factor： | 0.8 滞后 0.8 lagging",
+        "| 调试方式： Debug mode: | 机械调速 Mechanical control of motor speed",
+        "| 机组尺寸： The unit size: | 1450×700×1100(mm)",
+        "| 机组重量: Rated power unit:83 | 550KG",
+        "| 发动机参数(Theengineparameters)：",
+        "| 发动机品牌: Enginebrand: | 潍柴动力/潍柴动力股份有限公司 weichaipower / Weichai Power Co Ltd",
+        "| 发动机型号: Enginemodel: | WP2.3D33E200",
+        "| 发动机功率: Thepoweroftheengine | 33KW",
+        "| 气缸型式: Cylindertype | 4缸L列、4冲程 4cylinder, 4 stroke L",
+        "| 缸径*行程: Bore*stroke: | 89*92(mm)",
+        "| 吸气方式: Aspiration | 涡轮增压 Turbo",
+        "| 调试方式: Debugmode | 机械调速 Mechanical control of motor speed",
+        "| 额定转速 Ratedspeed | 1500rpm",
+        "| 燃油消耗率： Fuelconsumptionrate: | ≤205g/kW·h",
+        "| 排量: Displacement: | 2.289L",
+        "| 冷却方式: Coolingmode | 强制水冷 Forced water cooling",
+        "| 调试稳定性: Debuggingstability | ≤5％",
+        "| 启动方式: Startup mode: | DC12V",
+        "| 发电机参数（Electric machine parameters）：",
+        "| 发电机品牌： Generator brand： | 隆宏发电机/广东佛山发电机 LongHong generator / guangdong Foshan",
+        "| 发电机型号： Generator model： | HTW-30",
+        "| 额定功率： Rated power | 30KW",
+        "| 额定电压： Rated voltage： | 400V/230V 220V/380V",
+        "| 额定电流： Rated current: | 54A",
+        "| 额定频率： Rated frequency： | 50Hz",
+        "| 额定转速： Rated speed： | 1500rpm",
+        "| 励磁方式： Excitation mode： | 无刷自励 Brushless self excitation",
+        "| 电压调整范围： Voltage regulation range | ≥5％",
+        "| 电压波动范围： Voltage fluctuation range: | ≤±5％",
+        "| 绝缘等级： Insulation grade: | H",
+        "| 防护等级： Protection level: | IP21",
+        "| 4、LONGHONG控制系统6110K"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "50KW(62.5KVA)潍柴动力柴油发电机组技术参数 WP4.1D66E200",
+      "header": [
+        "| 发电机组参数(Generator parameters)："
+      ],
+      "rows": [
+        "| 50KW(62.5KVA)潍柴动力柴油发电机组技术参数 WP4.1D66E200",
+        "| 发电机组制造商： Turbine manufacturer: | 广东隆宏机电设备有限公司 Guangdong LongHong Electrical Equipment Co., Ltd.",
+        "| 发电机组型号： Generator set model: | LHGF-50",
+        "| 机组额定功率: Rated power unit: | 50KW",
+        "| 机组额定容量: Rated capacity: | 62.5KVA",
+        "| 机组额定电流: Rated current | 90A",
+        "| 机组额定电压: Rated voltage: | 220V/380V 230V/400V （可生产不同的电压） 220V/380V 230V/400V( Can produce different voltage）",
+        "| 额定频率: Rated frequency: | 50Hz",
+        "| 额定转速： Rated speed: | 1500rpm",
+        "| 功率因素： Power factor： | 0.8 滞后 0.8 lagging",
+        "| 燃油消耗率： The rate of fuel consumption： | 205g/kW·h",
+        "| 调试方式： Debug mode: | 机械调速/电子调速 Mechanical / electronic speed governor",
+        "| 机组尺寸： The unit size: | 1920×760×1250(mm)",
+        "| 机组重量: Rated power unit:83 | 830KG",
+        "| 发动机参数(Theengineparameters)：",
+        "| 发动机品牌: Enginebrand: | 潍柴动力/潍柴动力股份有限公司 weichaipower / Weichai Power Co Ltd",
+        "| 发动机型号: Enginemodel: | WP4.1D66E200",
+        "| 发动机功率: Thepoweroftheengine | 66KW",
+        "| 气缸型式: Cylindertype | 4缸L列、4冲程 4cylinder, 4 stroke L",
+        "| 缸径*行程: Bore*stroke: | 105*118(mm)",
+        "| 吸气方式: Aspiration | 涡轮增压 Turbo",
+        "| 调试方式: Debugmode | 机械调速/电子调速 Mechanical / electronic speed governor",
+        "| 额定转速 Ratedspeed | 1500rpm",
+        "| 燃油消耗率： Fuelconsumptionrate: | ≤205g/kW·h",
+        "| 排量: Displacement: | 4.1L",
+        "| 冷却方式: Coolingmode | 强制水冷 Forced water cooling",
+        "| 调试稳定性: Debuggingstability | ≤5％",
+        "| 启动方式: Startup mode: | DC24V",
+        "| 发电机参数（Electric machine parameters）：",
+        "| 发电机品牌： Generator brand： | 隆宏发电机/广东佛山发电机 LongHong generator / guangdong Foshan",
+        "| 发电机型号： Generator model： | HTW-50",
+        "| 额定功率： Rated power | 50KW",
+        "| 额定电压： Rated voltage： | 400V/230V 220V/380V",
+        "| 额定电流： Rated current: | 90A",
+        "| 额定频率： Rated frequency： | 50Hz",
+        "| 额定转速： Rated speed： | 1500rpm",
+        "| 励磁方式： Excitation mode： | 无刷自励 Brushless self excitation",
+        "| 电压调整范围： Voltage regulation range | ≥5％",
+        "| 电压波动范围： Voltage fluctuation range: | ≤±5％",
+        "| 绝缘等级： Insulation grade: | H",
+        "| 防护等级： Protection level: | IP22",
+        "| 4、LONGHONG控制系统6110K"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "100KW(125KVA)潍柴动力柴油发电机组技术参数 WP6D132E200",
+      "header": [
+        "| 发电机组参数(Generator parameters)："
+      ],
+      "rows": [
+        "| 100KW(125KVA)潍柴动力柴油发电机组技术参数 WP6D132E200",
+        "| 发电机组制造商： Turbine manufacturer: | 广东隆宏机电设备有限公司 Guangdong LongHong Electrical Equipment Co., Ltd.",
+        "| 发电机组型号： Generator set model: | LHGF-100",
+        "| 机组额定功率: Rated power unit: | 100KW",
+        "| 机组额定容量: Rated capacity: | 125KVA",
+        "| 机组额定电流: Rated current | 180A",
+        "| 机组额定电压: Rated voltage: | 220V/380V 230V/400V （可生产不同的电压） 220V/380V 230V/400V( Can produce different voltage）",
+        "| 额定频率: Rated frequency: | 50Hz",
+        "| 额定转速： Rated speed: | 1500rpm",
+        "| 功率因素： Power factor： | 0.8 滞后 0.8 lagging",
+        "| 燃油消耗率： The rate of fuel consumption： | 198g/kW·h",
+        "| 调试方式： Debug mode: | 电子调速 electronic speed governor",
+        "| 机组尺寸： The unit size: | 2500×770×1450(mm)",
+        "| 机组重量: Rated power unit:83 | 1450KG",
+        "| 发动机参数(Theengineparameters)：",
+        "| 发动机品牌: Enginebrand: | 潍柴动力/潍柴动力股份有限公司 weichaipower / Weichai Power Co Ltd",
+        "| 发动机型号: Enginemodel: | WP6D132E200",
+        "| 发动机功率: Thepoweroftheengine | 132KW",
+        "| 气缸型式: Cylindertype | 6缸L列、4冲程 6cylinder, 4 stroke L",
+        "| 缸径*行程: Bore*stroke: | 105*130(mm)",
+        "| 吸气方式: Aspiration | 涡轮增压 Turbo",
+        "| 调试方式: Debugmode | 电子调速 electronic speed governor",
+        "| 额定转速 Ratedspeed | 1500rpm",
+        "| 燃油消耗率： Fuelconsumptionrate: | ≤198g/kW·h",
+        "| 排量: Displacement: | 6.75L",
+        "| 冷却方式: Coolingmode | 强制水冷 Forced water cooling",
+        "| 调试稳定性: Debuggingstability | ≤5％",
+        "| 启动方式: Startup mode: | DC24V",
+        "| 发电机参数（Electric machine parameters）：",
+        "| 发电机品牌： Generator brand： | 隆宏发电机/广东佛山发电机 LongHong generator / guangdong Foshan",
+        "| 发电机型号： Generator model： | HTW-100",
+        "| 额定功率： Rated power | 100KW",
+        "| 额定电压： Rated voltage： | 400V/230V 220V/380V",
+        "| 额定电流： Rated current: | 180A",
+        "| 额定频率： Rated frequency： | 50Hz",
+        "| 额定转速： Rated speed： | 1500rpm",
+        "| 励磁方式： Excitation mode： | 无刷自励 Brushless self excitation",
+        "| 电压调整范围： Voltage regulation range | ≥5％",
+        "| 电压波动范围： Voltage fluctuation range: | ≤±5％",
+        "| 绝缘等级： Insulation grade: | H",
+        "| 防护等级： Protection level: | IP21",
+        "| 4、LONGHONG控制系统6110K"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "150KW(187.5KVA)潍柴动力柴油发电机组技术参数 WP6D167E200",
+      "header": [
+        "| 发电机组参数(Generator parameters)："
+      ],
+      "rows": [
+        "| 150KW(187.5KVA)潍柴动力柴油发电机组技术参数 WP6D167E200",
+        "| 发电机组制造商： Turbine manufacturer: | 广东隆宏机电设备有限公司 Guangdong LongHong Electrical Equipment Co., Ltd.",
+        "| 发电机组型号： Generator set model: | LHGF-150",
+        "| 机组额定功率: Rated power unit: | 150KW",
+        "| 机组额定容量: Rated capacity: | 187.5KVA",
+        "| 机组额定电流: Rated current | 270A",
+        "| 机组额定电压: Rated voltage: | 220V/380V 230V/400V （可生产不同的电压） 220V/380V 230V/400V( Can produce different voltage）",
+        "| 额定频率: Rated frequency: | 50Hz",
+        "| 额定转速： Rated speed: | 1500rpm",
+        "| 功率因素： Power factor： | 0.8 滞后 0.8 lagging",
+        "| 调试方式： Debug mode: | 电子调速 Electronic speed",
+        "| 机组尺寸： The unit size: | 2550×950×1500(mm)",
+        "| 机组重量: Rated power unit:83 | 1670KG",
+        "| 发动机参数(Theengineparameters)：",
+        "| 发动机品牌: Enginebrand: | 潍柴动力/潍柴动力股份有限公司 weichaipower / Weichai Power Co Ltd",
+        "| 发动机型号: Enginemodel: | WP6D167E200",
+        "| 发动机功率: Thepoweroftheengine | 167KW",
+        "| 气缸型式: Cylindertype | 6缸L列、4冲程 6cylinder, 4 stroke L",
+        "| 缸径*行程: Bore*stroke: | 105*130(mm)",
+        "| 吸气方式: Aspiration | 涡轮增压带中冷 A turbocharged inter-cooled",
+        "| 调试方式: Debugmode | 电子调速 Electronic speed",
+        "| 额定转速 Ratedspeed | 1500rpm",
+        "| 燃油消耗率： Fuelconsumptionrate: | ≤190g/kW·h",
+        "| 排量: Displacement: | 6.75L",
+        "| 冷却方式: Coolingmode | 强制水冷 Forced water cooling",
+        "| 调试稳定性: Debuggingstability | ≤5％",
+        "| 启动方式: Startup mode: | DC24V",
+        "| 发电机参数（Electric machine parameters）：",
+        "| 发电机品牌： Generator brand： | 隆宏发电机/广东佛山发电机 LongHong generator / guangdong Foshan",
+        "| 发电机型号： Generator model： | HTW-150",
+        "| 额定功率： Rated power | 150KW",
+        "| 额定电压： Rated voltage： | 400V/230V 220V/380V",
+        "| 额定电流： Rated current: | 270A",
+        "| 额定频率： Rated frequency： | 50Hz",
+        "| 额定转速： Rated speed： | 1500rpm",
+        "| 励磁方式： Excitation mode： | 无刷自励 Brushless self excitation",
+        "| 电压调整范围： Voltage regulation range | ≥5％",
+        "| 电压波动范围： Voltage fluctuation range: | ≤±5％",
+        "| 绝缘等级： Insulation grade: | H",
+        "| 防护等级： Protection level: | IP21",
+        "| 4、LONGHONG控制系统6110K"
+      ]
+    },
+    {
+      "n": 2014,
+      "title": "250KW(312.5KVA)潍柴动力柴油发电机组技术参数 WP10D320E200",
+      "header": [
+        "| 发电机组参数(Generator parameters)："
+      ],
+      "rows": [
+        "| 250KW(312.5KVA)潍柴动力柴油发电机组技术参数 WP10D320E200",
+        "| 发电机组制造商： Turbine manufacturer: | 广东隆宏机电设备有限公司 Guangdong LongHong Electrical Equipment Co., Ltd.",
+        "| 发电机组型号： Generator set model: | LHGF-250",
+        "| 机组额定功率: Rated power unit: | 250KW",
+        "| 机组额定容量: Rated capacity: | 312.5KVA",
+        "| 机组额定电流: Rated current | 450A",
+        "| 机组额定电压: Rated voltage: | 220V/380V 230V/400V （可生产不同的电压） 220V/380V 230V/400V( Can produce different voltage）",
+        "| 额定频率: Rated frequency: | 50Hz",
+        "| 额定转速： Rated speed: | 1500rpm",
+        "| 功率因素： Power factor： | 0.8 滞后 0.8 lagging",
+        "| 燃油消耗率： The rate of fuel consumption： | ≤197g/kW·h",
+        "| 调试方式： Debug mode: | 电子调速 electronic speed governor",
+        "| 机组尺寸： The unit size: | 3000×1150×1750(mm)",
+        "| 机组重量: Rated power unit:83 | 2400KG",
+        "| 发动机参数(Theengineparameters)：",
+        "| 发动机品牌: Enginebrand: | 潍柴动力/潍柴动力股份有限公司 weichaipower / Weichai Power Co Ltd",
+        "| 发动机型号: Enginemodel: | WP10D320E200",
+        "| 发动机功率: Thepoweroftheengine | 320KW",
+        "| 气缸型式: Cylindertype | 6缸L列、4冲程 6cylinder, 4 stroke L",
+        "| 缸径*行程: Bore*stroke: | 126*130(mm)",
+        "| 吸气方式: Aspiration | 涡轮增压带中冷 Turbocharged with intercooling",
+        "| 调试方式: Debugmode | 电子调速 electronic speed governor",
+        "| 额定转速 Ratedspeed | 1500rpm",
+        "| 燃油消耗率： Fuelconsumptionrate: | ≤197g/kW·h",
+        "| 排量: Displacement: | 9.726L",
+        "| 冷却方式: Coolingmode | 强制水冷 Forced water cooling",
+        "| 调试稳定性: Debuggingstability | ≤5％",
+        "| 启动方式: Startup mode: | DC24V",
+        "| 发电机参数（Electric machine parameters）：",
+        "| 发电机品牌： Generator brand： | 隆宏发电机/广东佛山发电机 LongHong generator / guangdong Foshan",
+        "| 发电机型号： Generator model： | HTW-250",
+        "| 额定功率： Rated power | 250KW",
+        "| 额定电压： Rated voltage： | 400V/230V 220V/380V",
+        "| 额定电流： Rated current: | 450A",
+        "| 额定频率： Rated frequency： | 50Hz",
+        "| 额定转速： Rated speed： | 1500rpm",
+        "| 励磁方式： Excitation mode： | 无刷自励 Brushless self excitation",
+        "| 电压调整范围： Voltage regulation range | ≥5％",
+        "| 电压波动范围： Voltage fluctuation range: | ≤±5％",
+        "| 绝缘等级： Insulation grade: | H",
+        "| 防护等级： Protection level: | IP21",
+        "| 4、LONGHONG控制系统6110K"
+      ]
+    },
+    {
+      "n": 2015,
+      "title": "400KW(500KVA)潍柴动力柴油发电机组技术参数 6M26D484E200",
+      "header": [
+        "| 发电机组参数(Generator parameters)："
+      ],
+      "rows": [
+        "| 400KW(500KVA)潍柴动力柴油发电机组技术参数 6M26D484E200",
+        "| 发电机组制造商： Turbine manufacturer: | 广东隆宏机电设备有限公司 Guangdong LongHong Electrical Equipment Co., Ltd.",
+        "| 发电机组型号： Generator set model: | LHGF-400",
+        "| 机组额定功率: Rated power unit: | 400KW",
+        "| 机组额定容量: Rated capacity: | 500KVA",
+        "| 机组额定电流: Rated current | 720A",
+        "| 机组额定电压: Rated voltage: | 220V/380V 230V/400V （可生产不同的电压） 220V/380V 230V/400V( Can produce different voltage）",
+        "| 额定频率: Rated frequency: | 50Hz",
+        "| 额定转速： Rated speed: | 1500rpm",
+        "| 功率因素： Power factor： | 0.8 滞后 0.8 lagging",
+        "| 调试方式： Debug mode: | 电子调速 Electronic speed",
+        "| 机组尺寸： The unit size: | 3750×1510×1850(mm)",
+        "| 机组重量: Rated power unit:83 | 3370KG",
+        "| 发动机参数(Theengineparameters)：",
+        "| 发动机品牌: Enginebrand: | 潍柴动力/潍柴动力股份有限公司 weichaipower / Weichai Power Co Ltd",
+        "| 发动机型号: Enginemodel: | 6M26D484E200",
+        "| 发动机功率: Thepoweroftheengine | 484KW",
+        "| 气缸型式: Cylindertype | 6缸L列、4冲程 6cylinder, 4 stroke L",
+        "| 缸径*行程: Bore*stroke: | 150*150(mm)",
+        "| 吸气方式: Aspiration | 涡轮增压带中冷 A turbocharged inter-cooled",
+        "| 调试方式: Debugmode | 电子调速 Electronic speed",
+        "| 额定转速 Ratedspeed | 1500rpm",
+        "| 燃油消耗率： Fuelconsumptionrate: | ≤195g/kW·h",
+        "| 排量: Displacement: | 15.9L",
+        "| 冷却方式: Coolingmode | 强制水冷 Forced water cooling",
+        "| 调试稳定性: Debuggingstability | ≤5％",
+        "| 启动方式: Startup mode: | DC24V",
+        "| 发电机参数（Electric machine parameters）：",
+        "| 发电机品牌： Generator brand： | 隆宏发电机/广东佛山发电机 LongHong generator / guangdong Foshan",
+        "| 发电机型号： Generator model： | HTW-400",
+        "| 额定功率： Rated power | 400KW",
+        "| 额定电压： Rated voltage： | 400V/230V 220V/380V",
+        "| 额定电流： Rated current: | 720A",
+        "| 额定频率： Rated frequency： | 50Hz",
+        "| 额定转速： Rated speed： | 1500rpm",
+        "| 励磁方式： Excitation mode： | 无刷自励 Brushless self excitation",
+        "| 电压调整范围： Voltage regulation range | ≥5％",
+        "| 电压波动范围： Voltage fluctuation range: | ≤±5％",
+        "| 绝缘等级： Insulation grade: | H",
+        "| 防护等级： Protection level: | IP21",
+        "| 4、LONGHONG控制系统6110K"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "LONGHONG",
+      "model": "6110K",
+      "text": "LONGHONG控制系统6110K",
+      "line": "| 4、LONGHONG控制系统6110K",
+      "src": [
+        2001,
+        2002,
+        2003,
+        2004,
+        2005,
+        2006,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "6110K",
+      "text": "郑州众智控制系统6110K",
+      "line": "| 4、 郑州众智控制系统6110K",
+      "src": [
+        2007,
+        2008,
+        2009
+      ]
+    }
+  ]
 }
