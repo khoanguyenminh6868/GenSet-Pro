@@ -1,0 +1,185 @@
+{
+ "note": "Mốc của suppliers/quality.mjs --check. Sinh lại: node suppliers/quality.mjs --write-baseline (chỉ khi thay đổi có chủ ý, ghi lý do trong PR).",
+ "thresholds": {
+  "valuePctDrop": 2,
+  "missingPctRise": 2,
+  "powerPctRise": 1,
+  "conflictRise": 5,
+  "smallN": 1000,
+  "smallFactor": 5
+ },
+ "keys": {
+  "fuel": {
+   "n": 11365,
+   "valuePct": 100,
+   "missingPct": {
+    "load": 79.5,
+    "unit": 10.5,
+    "number": 0,
+    "ambiguous": 0.2
+   }
+  },
+  "fuel75": {
+   "n": 914,
+   "valuePct": 99.1,
+   "missingPct": {
+    "unit": 26.8,
+    "kind": 0.7,
+    "value": 0.2
+   }
+  },
+  "fuel50": {
+   "n": 568,
+   "valuePct": 99.6,
+   "missingPct": {
+    "unit": 42.3,
+    "value": 0.4
+   }
+  },
+  "noise": {
+   "n": 534,
+   "valuePct": 100,
+   "missingPct": {
+    "distance": 2.8,
+    "ambiguous": 0.6,
+    "unit": 0.6
+   }
+  },
+  "dims": {
+   "n": 21805,
+   "valuePct": 100,
+   "missingPct": {
+    "order": 58.9,
+    "enclosure": 87,
+    "unit": 33.5,
+    "ambiguous": 0.3
+   }
+  },
+  "weight": {
+   "n": 18669,
+   "valuePct": 100,
+   "missingPct": {
+    "enclosure": 92.3,
+    "basis": 83.7,
+    "unit": 5.3,
+    "ambiguous": 0.1
+   }
+  },
+  "disp": {
+   "n": 11028,
+   "valuePct": 99.2,
+   "missingPct": {
+    "unit": 13.2,
+    "number": 0.8
+   }
+  },
+  "bore": {
+   "n": 7095,
+   "valuePct": 100,
+   "missingPct": {
+    "unit": 20.5,
+    "ambiguous": 0.1,
+    "stroke": 6
+   }
+  },
+  "cyl": {
+   "n": 14749,
+   "valuePct": 100,
+   "missingPct": {
+    "layout": 68.4,
+    "value": 0
+   }
+  },
+  "compr": {
+   "n": 1319,
+   "valuePct": 100,
+   "missingPct": {}
+  },
+  "speed": {
+   "n": 2778,
+   "valuePct": 100,
+   "missingPct": {
+    "unit": 15.8,
+    "kind": 0
+   }
+  },
+  "voltage": {
+   "n": 3279,
+   "valuePct": 98.4,
+   "missingPct": {
+    "unit": 10.6,
+    "kind": 1.6
+   }
+  },
+  "phase": {
+   "n": 2413,
+   "valuePct": 99.9,
+   "missingPct": {
+    "value": 0.1
+   }
+  },
+  "pf": {
+   "n": 1175,
+   "valuePct": 100,
+   "missingPct": {
+    "ambiguous": 1.8
+   }
+  },
+  "tank": {
+   "n": 779,
+   "valuePct": 93.1,
+   "missingPct": {
+    "kind": 0.3,
+    "unit": 33.9,
+    "value": 6.7
+   }
+  },
+  "engPower": {
+   "n": 5075,
+   "valuePct": 100,
+   "missingPct": {
+    "speed": 69.9,
+    "ambiguous": 2,
+    "unit": 1.6
+   }
+  },
+  "emission": {
+   "n": 2538,
+   "valuePct": 99.8,
+   "missingPct": {
+    "scale": 44.9,
+    "value": 0.2
+   }
+  }
+ },
+ "power": {
+  "n": 49348,
+  "missingPct": {
+   "rating": 13.4,
+   "freq": 74.2,
+   "value": 27.7
+  }
+ },
+ "conflicts": {
+  "cyl": {
+   "before": 113,
+   "strict": 113,
+   "loose": 113
+  },
+  "disp": {
+   "before": 352,
+   "strict": 314,
+   "loose": 352
+  },
+  "bore": {
+   "before": 144,
+   "strict": 111,
+   "loose": 144
+  },
+  "compr": {
+   "before": 37,
+   "strict": 37,
+   "loose": 37
+  }
+ }
+}
