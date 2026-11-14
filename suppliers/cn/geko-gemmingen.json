@@ -42,6 +42,121 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "100015 ED-S/IEDA SS",
+      "fuel": "diesel",
+      "engineModels": [
+        "N45TE2F"
+      ],
+      "engineMakes": [
+        "Iveco"
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "60015 ED-S/IEDA SS",
+      "fuel": "diesel",
+      "engineModels": [
+        "N45SM1F"
+      ],
+      "engineMakes": [
+        "Iveco"
+      ],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "35019 ED-S/ZEDA RSS 'Stage V'",
+      "fuel": "diesel",
+      "engineModels": [
+        "4H50 TICD"
+      ],
+      "engineMakes": [
+        "Hatz"
+      ],
+      "power": {
+        "min": 35,
+        "max": 35,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "20014 ED-S/DEDA offen",
+      "fuel": "diesel",
+      "engineModels": [
+        "F3M2011"
+      ],
+      "engineMakes": [
+        "Deutz"
+      ],
+      "power": {
+        "min": 20,
+        "max": 20,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "15014 ED-S/MEDA SS IS10",
+      "fuel": "diesel",
+      "engineModels": [
+        "S4L2"
+      ],
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "power": {
+        "min": 15,
+        "max": 15,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
     }
   ],
   "certifications": [],
@@ -59,9 +174,297 @@
         "Die Metallwarenfabrik Gemmingen GmbH produziert in zwei Werken Komponenten f&uuml;r den Elektro-Maschinenbau, Generatoren und Stromerzeuger-Systeme."
       ],
       "file": "sources/geko-gemmingen/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.gekoeisemann.com/produkte/p/style-01-ej5na-adcjn-w2gw6-8728l-5ybnz-e8g4g-y8lsh-2b69x-ega5f-g8jgc-j4w36-w9g9t-9hbcx-ztlla-jw3ge-6cwyn-24n6j",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "100015 ED-S/IEDA SS — Geko & Eisemann",
+        "Motorhersteller: Iveco",
+        "Motortyp: N45TE2F",
+        "Elektr. Leistung 3~ (kVA): 100"
+      ],
+      "file": "sources/geko-gemmingen/2001.md",
+      "official": false
+    },
+    {
+      "n": 2002,
+      "url": "https://www.gekoeisemann.com/produkte/p/style-01-ej5na-adcjn-w2gw6-8728l-5ybnz-e8g4g-y8lsh-2b69x-ega5f-g8jgc-j4w36-w9g9t-9hbcx-ztlla-jw3ge-6cwyn-7acdn",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "60015 ED-S/IEDA SS — Geko & Eisemann",
+        "Motorhersteller: Iveco",
+        "Motortyp: N45SM1F",
+        "Elektr. Leistung 3~ (kVA): 60"
+      ],
+      "file": "sources/geko-gemmingen/2002.md",
+      "official": false
+    },
+    {
+      "n": 2003,
+      "url": "https://www.gekoeisemann.com/produkte/p/style-01-ej5na-adcjn-w2gw6-8728l-5ybnz-e8g4g-y8lsh-2b69x-ega5f-g8jgc-77eg7-p7ptw-byfdy-wjk39-mbmh2",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "35019 ED-S/ZEDA RSS 'Stage V' — Geko & Eisemann",
+        "Motorhersteller: Hatz",
+        "Motortyp: 4H50 TICD",
+        "Elektr. Leistung 3~ (kVA): 35"
+      ],
+      "file": "sources/geko-gemmingen/2003.md",
+      "official": false
+    },
+    {
+      "n": 2004,
+      "url": "https://www.gekoeisemann.com/produkte/p/style-01-ej5na-adcjn-w2gw6-8728l-5ybnz-e8g4g-y8lsh-2b69x-ega5f-g8jgc-j4w36-w9g9t-9hbcx-ztlla-jw3ge-6cwyn",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "20014 ED-S/DEDA offen — Geko & Eisemann",
+        "Motorhersteller: Deutz",
+        "Motortyp: F3M2011",
+        "Elektr. Leistung 3~ (kVA): 20"
+      ],
+      "file": "sources/geko-gemmingen/2004.md",
+      "official": false
+    },
+    {
+      "n": 2005,
+      "url": "https://www.gekoeisemann.com/produkte/p/style-01-ej5na-adcjn-w2gw6-8728l-5ybnz-e8g4g-y8lsh-2b69x-ega5f-g8jgc-77eg7-ytja3-lxckh-cggzj-my2te-8n7z8-b2546-ybrx2-scamr-e9ry9-4xcc7-pbpsp",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "15014 ED-S/MEDA SS IS10 — Geko & Eisemann",
+        "Motorhersteller: Mitsubishi",
+        "Motortyp: S4L2",
+        "Elektr. Leistung 3~ (kVA): 15"
+      ],
+      "file": "sources/geko-gemmingen/2005.md",
+      "official": false
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-04",
-  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "100015 ED-S/IEDA SS",
+      "header": [
+        "Marke: Geko"
+      ],
+      "rows": [
+        "Bestellnummer: 985853",
+        "Serie: Serie 15",
+        "Globale Artikelidentnummer: 4038469220000",
+        "Katalog Pos. Nr.: 97",
+        "Festanschluss: Ja",
+        "Länge (mm): 2.560",
+        "Breite (mm): 1.040",
+        "Höhe (mm): 1.810",
+        "Motorhersteller: Iveco",
+        "Motortyp: N45TE2F",
+        "Zylinder: 4",
+        "Kraftstoff: Diesel",
+        "Ölfüllmenge (l): 12,8",
+        "Kühlsystem: Wasser",
+        "Bordspannung (V): 12",
+        "E-Start: Ja",
+        "Generatortyp: synchron",
+        "Tankvolumen (l): 160",
+        "Gewicht (kg): 1600",
+        "Drehzahl (1/min): 1500",
+        "Frequenz (Hz): 50",
+        "Spannung 1~ (V): 230",
+        "Elektr. Leistung 3~ (kVA): 100",
+        "Spannung 3~ (V): 400",
+        "Strom 3~ (A): 145",
+        "Leistungsfaktor 3~ (cosφ): 0,8",
+        "Schutzart: 23",
+        "DIN-Norm: 6280",
+        "Gehäusetyp: vollgekapselt"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "60015 ED-S/IEDA SS",
+      "header": [
+        "Marke: Geko"
+      ],
+      "rows": [
+        "Bestellnummer: 985827",
+        "Serie: Serie 15",
+        "Globale Artikelidentnummer: 4038469100630",
+        "Katalog Pos. Nr.: 96",
+        "Festanschluss: Ja",
+        "Länge (mm): 2.260",
+        "Breite (mm): 1.040",
+        "Höhe (mm): 1.820",
+        "Motorhersteller: Iveco",
+        "Motortyp: N45SM1F",
+        "Zylinder: 4",
+        "Kraftstoff: Diesel",
+        "Ölfüllmenge (l): 12,8",
+        "Kühlsystem: Wasser",
+        "Bordspannung (V): 12",
+        "E-Start: Ja",
+        "Generatortyp: synchron",
+        "Tankvolumen (l): 160",
+        "Gewicht (kg): 1270",
+        "Drehzahl (1/min): 1500",
+        "Schallleistungspegel dB(A): 96",
+        "Schalldruckpegel dB(A): 68",
+        "Frequenz (Hz): 50",
+        "Spannung 1~ (V): 230",
+        "Elektr. Leistung 3~ (kVA): 60",
+        "Spannung 3~ (V): 400",
+        "Strom 3~ (A): 87",
+        "Leistungsfaktor 3~ (cosφ): 0,8",
+        "Schutzart: 23",
+        "DIN-Norm: 6280",
+        "Gehäusetyp: vollgekapselt"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "35019 ED-S/ZEDA RSS 'Stage V'",
+      "header": [
+        "Marke: Geko"
+      ],
+      "rows": [
+        "Bestellnummer: 987254",
+        "Serie: Serie 19",
+        "Globale Artikelidentnummer: 4038469235530",
+        "Katalog Pos. Nr.: 98",
+        "Laufzeit bei 25% Last (h): 58,25",
+        "Laufzeit bei 50% Last (h): 33,25",
+        "Laufzeit bei 75% Last (h): 25",
+        "Laufzeit bei 100% Last (h): 17,25",
+        "Festanschluss: Ja",
+        "Steckdose Schuko (Stk.): 2",
+        "Steckdose CEE 5 pol. 16A (Stk.): 1",
+        "Steckdose CEE 5 pol. 32A (Stk.): 1",
+        "Steckdose CEE 5 pol. 63A (Stk.): 1",
+        "Länge (mm): 2.370",
+        "Breite (mm): 950",
+        "Höhe (mm): 1.500",
+        "Motorhersteller: Hatz",
+        "Motortyp: 4H50 TICD",
+        "Zylinder: 4",
+        "Leistung Motornenndrehzahl (kW): 55",
+        "Kraftstoff: Diesel",
+        "Abgasnorm: Stage V",
+        "Ölfüllmenge (l): 7",
+        "Kühlsystem: Wasser",
+        "Bordspannung (V): 12",
+        "Drehzahlregelung: elektrisch",
+        "E-Start: Ja",
+        "Generatortyp: synchron",
+        "Tankvolumen (l): 140",
+        "Gewicht (kg): 1238",
+        "Drehzahl (1/min): 1500",
+        "Schallleistungspegel dB(A): 88",
+        "Schalldruckpegel dB(A): 60",
+        "Frequenz (Hz): 50",
+        "Spannung 1~ (V): 230",
+        "Elektr. Leistung 3~ (kVA): 35",
+        "Spannung 3~ (V): 400",
+        "Strom 3~ (A): 50",
+        "Leistungsfaktor 3~ (cosφ): 0,8",
+        "Schutzart: 23",
+        "DIN-Norm: 8523",
+        "Gehäusetyp: vollgekapselt"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "20014 ED-S/DEDA offen",
+      "header": [
+        "Marke: Geko"
+      ],
+      "rows": [
+        "Bestellnummer: 986992",
+        "Serie: Serie 14",
+        "Globale Artikelidentnummer: 4038469100333",
+        "Katalog Pos. Nr.: 31",
+        "Laufzeit bei 25% Last (h): 64",
+        "Laufzeit bei 50% Last (h): 51,6",
+        "Laufzeit bei 75% Last (h): 40",
+        "Laufzeit bei 100% Last (h): 30,2",
+        "Festanschluss: Ja",
+        "Länge (mm): 1.420",
+        "Breite (mm): 910",
+        "Höhe (mm): 1.100",
+        "Motorhersteller: Deutz",
+        "Motortyp: F3M2011",
+        "Zylinder: 3",
+        "Kraftstoff: Diesel",
+        "Ölfüllmenge (l): 8,5",
+        "Kühlsystem: Öl",
+        "Bordspannung (V): 12",
+        "E-Start: Ja",
+        "Generatortyp: synchron",
+        "Tankvolumen (l): 160",
+        "Gewicht (kg): 555",
+        "Drehzahl (1/min): 1500",
+        "Frequenz (Hz): 50",
+        "Spannung 1~ (V): 230",
+        "Elektr. Leistung 3~ (kVA): 20",
+        "Spannung 3~ (V): 400",
+        "Strom 3~ (A): 29",
+        "Leistungsfaktor 3~ (cosφ): 0,8",
+        "Schutzart: 23",
+        "DIN-Norm: 6280",
+        "Gehäusetyp: offen"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "15014 ED-S/MEDA SS IS10",
+      "header": [
+        "Marke: Geko"
+      ],
+      "rows": [
+        "Bestellnummer: 987240",
+        "Serie: Serie 14",
+        "Globale Artikelidentnummer: 4038469101354",
+        "Katalog Pos. Nr.: 92",
+        "Laufzeit bei 50% Last (h): 85",
+        "Laufzeit bei 100% Last (h): 50",
+        "Festanschluss: Nein",
+        "Steckdose Schuko (Stk.): 1",
+        "Steckdose CEE 5 pol. 32A (Stk.): 1",
+        "Länge (mm): 1.645",
+        "Breite (mm): 735",
+        "Höhe (mm): 1.180",
+        "Motorhersteller: Mitsubishi",
+        "Motortyp: S4L2",
+        "Zylinder: 4",
+        "Kraftstoff: Diesel",
+        "Ölfüllmenge (l): 6",
+        "Kühlsystem: Wasser",
+        "Bordspannung (V): 12",
+        "Drehzahlregelung: mechanisch",
+        "E-Start: Ja",
+        "Generatortyp: synchron",
+        "Tankvolumen (l): 205",
+        "Gewicht (kg): 572",
+        "Drehzahl (1/min): 1500",
+        "Schallleistungspegel dB(A): 61",
+        "Schalldruckpegel dB(A): 33",
+        "Frequenz (Hz): 50",
+        "Spannung 1~ (V): 230",
+        "Elektr. Leistung 3~ (kVA): 15",
+        "Spannung 3~ (V): 400",
+        "Strom 3~ (A): 21",
+        "Leistungsfaktor 3~ (cosφ): 0,8",
+        "Schutzart: 23",
+        "DIN-Norm: 6280",
+        "Gehäusetyp: vollgekapselt"
+      ]
+    }
+  ]
 }
