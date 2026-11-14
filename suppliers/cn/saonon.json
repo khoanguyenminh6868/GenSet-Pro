@@ -79,6 +79,1644 @@
       "src": [
         4
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "S30HC",
+      "fuel": "diesel",
+      "engineModels": [
+        "4B3.9-G2"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S45HC",
+      "fuel": "diesel",
+      "engineModels": [
+        "4BT3.9-G2"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 44,
+        "max": 44,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S55HC",
+      "fuel": "diesel",
+      "engineModels": [
+        "4BTA3.9-G2"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 55,
+        "max": 55,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S88HC",
+      "fuel": "diesel",
+      "engineModels": [
+        "4BTA3.9-G11"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 88,
+        "max": 88,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S105HC",
+      "fuel": "diesel",
+      "engineModels": [
+        "4BTA3.9-G13"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 105,
+        "max": 105,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S110HC",
+      "fuel": "diesel",
+      "engineModels": [
+        "6BT5.9-G2"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 110,
+        "max": 110,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S150HC",
+      "fuel": "diesel",
+      "engineModels": [
+        "6BTAA5.9-G2"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S165HC",
+      "fuel": "diesel",
+      "engineModels": [
+        "6BTAA5.9-G12"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 165,
+        "max": 165,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S200HC",
+      "fuel": "diesel",
+      "engineModels": [
+        "6CTA8.3-G2"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S220HC",
+      "fuel": "diesel",
+      "engineModels": [
+        "6CTAA8.3-G2"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 220,
+        "max": 220,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S275HC",
+      "fuel": "diesel",
+      "engineModels": [
+        "6LTAA8.9-G2"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 275,
+        "max": 275,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S500HC",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSZ13-G3"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S315CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "NTA855-G1A"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 315,
+        "max": 315,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S350CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "NTA855-G1B"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2014
+        ]
+      },
+      "src": [
+        2014
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S375CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "NTA855-G2A"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 375,
+        "max": 375,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2015
+        ]
+      },
+      "src": [
+        2015
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S415CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "NTAA855-G7"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 415,
+        "max": 415,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2016
+        ]
+      },
+      "src": [
+        2016
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S440CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSNT-G3"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 440,
+        "max": 440,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2017
+        ]
+      },
+      "src": [
+        2017
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S500CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSNT-G4X"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2018
+        ]
+      },
+      "src": [
+        2018
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S550CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA19-G3A"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 550,
+        "max": 550,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2019
+        ]
+      },
+      "src": [
+        2019
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S650CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA19-G8"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2020
+        ]
+      },
+      "src": [
+        2020
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S688CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTAA19-G6A"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 688,
+        "max": 688,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2021
+        ]
+      },
+      "src": [
+        2021
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S715CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK19-G4"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 715,
+        "max": 715,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2022
+        ]
+      },
+      "src": [
+        2022
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S750CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK19-G19"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2023
+        ]
+      },
+      "src": [
+        2023
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S825CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA38-G2"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 825,
+        "max": 825,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2024
+        ]
+      },
+      "src": [
+        2024
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S880CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA38-G2B"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 880,
+        "max": 880,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2025
+        ]
+      },
+      "src": [
+        2025
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S880CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK19-G21"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 880,
+        "max": 880,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2026
+        ]
+      },
+      "src": [
+        2026
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S1000CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA38-G2A"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2027
+        ]
+      },
+      "src": [
+        2027
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S1100CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA38-G5"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 1100,
+        "max": 1100,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2028
+        ]
+      },
+      "src": [
+        2028
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S1250CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA38-G9"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2029
+        ]
+      },
+      "src": [
+        2029
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S1375CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA50-G3"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 1375,
+        "max": 1375,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2030
+        ]
+      },
+      "src": [
+        2030
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S1500CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK38-G13"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2031
+        ]
+      },
+      "src": [
+        2031
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S1650CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA50-GS8"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 1650,
+        "max": 1650,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2032
+        ]
+      },
+      "src": [
+        2032
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S1750CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK38-G15"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 1750,
+        "max": 1750,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2033
+        ]
+      },
+      "src": [
+        2033
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S1875CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA50-G15A"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 1875,
+        "max": 1875,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2034
+        ]
+      },
+      "src": [
+        2034
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S2000CC",
+      "fuel": "diesel",
+      "engineModels": [
+        "KTA50-G16A"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 2000,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2035
+        ]
+      },
+      "src": [
+        2035
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S2250EC",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK60-G4"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 2250,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2036
+        ]
+      },
+      "src": [
+        2036
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S2500EC",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK60-G8"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 2500,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2037
+        ]
+      },
+      "src": [
+        2037
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S2750EC",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK60-G23"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 2750,
+        "max": 2750,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2038
+        ]
+      },
+      "src": [
+        2038
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S3000EC",
+      "fuel": "diesel",
+      "engineModels": [
+        "QSK78-G9"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 3000,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2039
+        ]
+      },
+      "src": [
+        2039
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S40YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YCDV254FHZ-50"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 40,
+        "max": 40,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2040
+        ]
+      },
+      "src": [
+        2040
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S110YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC4D140-D31"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 110,
+        "max": 110,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2041
+        ]
+      },
+      "src": [
+        2041
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S150YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC4A190-D30"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2042
+        ]
+      },
+      "src": [
+        2042
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S220YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC6A275-D30"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 220,
+        "max": 220,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2043
+        ]
+      },
+      "src": [
+        2043
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S275YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YCA08350-D30"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 275,
+        "max": 275,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2044
+        ]
+      },
+      "src": [
+        2044
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S375YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC6MK450-D30"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 375,
+        "max": 375,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2045
+        ]
+      },
+      "src": [
+        2045
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S415YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC6MJ500-D30"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 415,
+        "max": 415,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2046
+        ]
+      },
+      "src": [
+        2046
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S440YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC6MJ540-D30"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 440,
+        "max": 440,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2047
+        ]
+      },
+      "src": [
+        2047
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S500YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC6MJ600-D30"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2048
+        ]
+      },
+      "src": [
+        2048
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S550YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC6T660-D31"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 550,
+        "max": 550,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2049
+        ]
+      },
+      "src": [
+        2049
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S625YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC6TD780-D31"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 625,
+        "max": 625,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2050
+        ]
+      },
+      "src": [
+        2050
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S688YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC6TD840-D31"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 688,
+        "max": 688,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2051
+        ]
+      },
+      "src": [
+        2051
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S750YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC6TD900-D31"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2052
+        ]
+      },
+      "src": [
+        2052
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S825YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC6TD1000-D30"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 825,
+        "max": 825,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2053
+        ]
+      },
+      "src": [
+        2053
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S888YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC6C1070-D31"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 888,
+        "max": 888,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2054
+        ]
+      },
+      "src": [
+        2054
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S1000YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC6C1220-D31"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 1000,
+        "max": 1000,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2055
+        ]
+      },
+      "src": [
+        2055
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S1125YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC6C1320-D31"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 1125,
+        "max": 1125,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2056
+        ]
+      },
+      "src": [
+        2056
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S1250YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC6C1520-D31"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2057
+        ]
+      },
+      "src": [
+        2057
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S1375YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC6C1660-D30"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 1375,
+        "max": 1375,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2058
+        ]
+      },
+      "src": [
+        2058
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S1500YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC12VTD1830-D30"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2059
+        ]
+      },
+      "src": [
+        2059
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S1650YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC12VTD2000-D30"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 1650,
+        "max": 1650,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2060
+        ]
+      },
+      "src": [
+        2060
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S1875YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC16VTD2270-D30"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 1875,
+        "max": 1875,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2061
+        ]
+      },
+      "src": [
+        2061
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S2000YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC16VTD2510-D30"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 2000,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2062
+        ]
+      },
+      "src": [
+        2062
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S2250YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC12VC2700-D31"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 2250,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2063
+        ]
+      },
+      "src": [
+        2063
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S2500YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC12VC3000-D30"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 2500,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2064
+        ]
+      },
+      "src": [
+        2064
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S2750YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "YC16VC3300-D31"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 2750,
+        "max": 2750,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2065
+        ]
+      },
+      "src": [
+        2065
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S3000YC",
+      "fuel": "diesel",
+      "engineModels": [
+        "Yc16VC3600-D31"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 3000,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2066
+        ]
+      },
+      "src": [
+        2066
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S750SSM",
+      "fuel": "diesel",
+      "engineModels": [
+        "S6R2-PTA-C"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 750,
+        "max": 750,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2067
+        ]
+      },
+      "src": [
+        2067
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S2500YM",
+      "fuel": "diesel",
+      "engineModels": [
+        "16V4000G63F"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 2500,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2068
+        ]
+      },
+      "src": [
+        2068
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S825SSM",
+      "fuel": "diesel",
+      "engineModels": [
+        "S6R2-PTAA-C"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 825,
+        "max": 825,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2069
+        ]
+      },
+      "src": [
+        2069
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S1375SSM",
+      "fuel": "diesel",
+      "engineModels": [
+        "S12R-PTA-C"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 1375,
+        "max": 1375,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2070
+        ]
+      },
+      "src": [
+        2070
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S2750YM",
+      "fuel": "diesel",
+      "engineModels": [
+        "20V4000G23F"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 2750,
+        "max": 2750,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2071
+        ]
+      },
+      "src": [
+        2071
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S1500SSM",
+      "fuel": "diesel",
+      "engineModels": [
+        "S12R-PTA2-C"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 1500,
+        "max": 1500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2072
+        ]
+      },
+      "src": [
+        2072
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S1650SSM",
+      "fuel": "diesel",
+      "engineModels": [
+        "S12R-PTAA2-C"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 1650,
+        "max": 1650,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2073
+        ]
+      },
+      "src": [
+        2073
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S3000YM",
+      "fuel": "diesel",
+      "engineModels": [
+        "20V4000G63F"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 3000,
+        "max": 3000,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2074
+        ]
+      },
+      "src": [
+        2074
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S1875SSM",
+      "fuel": "diesel",
+      "engineModels": [
+        "S16R-PTA-C"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 1875,
+        "max": 1875,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2075
+        ]
+      },
+      "src": [
+        2075
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S2000SSM",
+      "fuel": "diesel",
+      "engineModels": [
+        "S16R-PTA2-C"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 2000,
+        "max": 2000,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2076
+        ]
+      },
+      "src": [
+        2076
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S2250SSM",
+      "fuel": "diesel",
+      "engineModels": [
+        "S16R-PTAA2-C"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 2250,
+        "max": 2250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2077
+        ]
+      },
+      "src": [
+        2077
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "S2500SSM",
+      "fuel": "diesel",
+      "engineModels": [
+        "S16R2-PTAW-C"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 2500,
+        "max": 2500,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2078
+        ]
+      },
+      "src": [
+        2078
+      ]
     }
   ],
   "certifications": [],
@@ -118,9 +1756,1649 @@
         "9 kVA -2250 kVA （ 50 Hz"
       ],
       "file": "sources/saonon/4.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S30HC        30    24    27    22    6.5     1900*790*1210       700    2200*1094*1454   1145   4B3.9-G2"
+      ],
+      "file": "sources/saonon/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S45HC        44    35    40    32    9.4     1950*790*1210       750    2200*1094*1454   1200   4BT3.9-G2"
+      ],
+      "file": "sources/saonon/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S55HC        55    44    50    40    11.7    1950*790*1235       780    2500*1094*1454   1260   4BTA3.9-G2"
+      ],
+      "file": "sources/saonon/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S88HC        88    70    80    64    16.2    2150*790*1255       970    2500*1094*1454   1435   4BTA3.9-G11"
+      ],
+      "file": "sources/saonon/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S105HC       105   84    95    76    18.8    2100*790*1320       980    2500*1094*1454   1470   4BTA3.9-G13"
+      ],
+      "file": "sources/saonon/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S110HC       110   88    100   80    22.9    2150*935*1270       1020   2800*1144*1554   1680   6BT5.9-G2"
+      ],
+      "file": "sources/saonon/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S150HC       150   120   138   110   29.5    2350*935*1280       1300   3100*1244*1681   1980   6BTAA5.9-G2"
+      ],
+      "file": "sources/saonon/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S165HC       165   132   150   120   34.8    2400*935*1360       1310   3100*1244*1681   2025   6BTAA5.9-G12"
+      ],
+      "file": "sources/saonon/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S200HC       200   160   182   145   41.2    2400*935*1360       1600   3600*1294*1984   2550   6CTA8.3-G2"
+      ],
+      "file": "sources/saonon/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S220HC       220   176   200   160   43.3    2500*1035*1395      1700   3600*1294*1984   2650   6CTAA8.3-G2"
+      ],
+      "file": "sources/saonon/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S275HC       275   220   250   200   53      2650*1035*1500      2000   3600*1294*1984   2900   6LTAA8.9-G2"
+      ],
+      "file": "sources/saonon/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S500HC       500   400   475   380   96.5    3200*1400*1915      3300   4400*1544*2234   4850   QSZ13-G3"
+      ],
+      "file": "sources/saonon/2012.md",
+      "official": true
+    },
+    {
+      "n": 2013,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S315CC       315   250   275   220   61      3050*1100*1750      2800   4000*1444*2134   3900   NTA855-G1A"
+      ],
+      "file": "sources/saonon/2013.md",
+      "official": true
+    },
+    {
+      "n": 2014,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S350CC       350   280   313   250   68.3    3050*1100*1750      2880   4000*1444*2134   3990   NTA855-G1B"
+      ],
+      "file": "sources/saonon/2014.md",
+      "official": true
+    },
+    {
+      "n": 2015,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S375CC       375   300   344   275   72      3050*1100*1750      2880   4000*1444*2134   4000   NTA855-G2A"
+      ],
+      "file": "sources/saonon/2015.md",
+      "official": true
+    },
+    {
+      "n": 2016,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S415CC       415   330   375   300   83.5    3150*1130*1755      3000   4000*1444*2134   4150   NTAA855-G7"
+      ],
+      "file": "sources/saonon/2016.md",
+      "official": true
+    },
+    {
+      "n": 2017,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S440CC       440   352   400   320   87      3300*1025*1770      3300   4400*1544*2234   4800   QSNT-G3"
+      ],
+      "file": "sources/saonon/2017.md",
+      "official": true
+    },
+    {
+      "n": 2018,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S500CC       500   400   450   360   98.8    3300*1230*1770      3250   4400*1544*2234   4850   QSNT-G4X"
+      ],
+      "file": "sources/saonon/2018.md",
+      "official": true
+    },
+    {
+      "n": 2019,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S550CC       550   440   500   400   94.6    3450*1380*1900      3500   4650*1744*2434   5400   KTA19-G3A"
+      ],
+      "file": "sources/saonon/2019.md",
+      "official": true
+    },
+    {
+      "n": 2020,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S650CC       650   520   /     /     126     3450*1380*1900      4000   4650*1744*2434   5680   KTA19-G8"
+      ],
+      "file": "sources/saonon/2020.md",
+      "official": true
+    },
+    {
+      "n": 2021,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S688CC       688   550   /     /     128     3650*1500*2105      4100   5000*1844*2534   5850   KTAA19-G6A"
+      ],
+      "file": "sources/saonon/2021.md",
+      "official": true
+    },
+    {
+      "n": 2022,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S715CC       715   570   650   520   145     3700*1700*2215      4750   5600*2144*2604   7500   QSK19-G4"
+      ],
+      "file": "sources/saonon/2022.md",
+      "official": true
+    },
+    {
+      "n": 2023,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S750CC       750   600   680   545   143     3700*1690*2115      4800   5600*2144*2604   7650   QSK19-G19"
+      ],
+      "file": "sources/saonon/2023.md",
+      "official": true
+    },
+    {
+      "n": 2024,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S825CC       825   660   750   600   167     4200*1805*2385      6700   5600*2144*2604   7800   KTA38-G2"
+      ],
+      "file": "sources/saonon/2024.md",
+      "official": true
+    },
+    {
+      "n": 2025,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S880CC       880   720   800   640   169     4200*1805*2385      6800   5900*2294*2604   9200   KTA38-G2B"
+      ],
+      "file": "sources/saonon/2025.md",
+      "official": true
+    },
+    {
+      "n": 2026,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S880CC       880   720   800   640   167     3700*1690*2112      4850   5900*2294*2604   9300   QSK19-G21"
+      ],
+      "file": "sources/saonon/2026.md",
+      "official": true
+    },
+    {
+      "n": 2027,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S1000CC      1000  800   910   728   196     4200*1805*2385      6800   5900*2294*2604   9600   KTA38-G2A"
+      ],
+      "file": "sources/saonon/2027.md",
+      "official": true
+    },
+    {
+      "n": 2028,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S1100CC      1100  880   1000  800   209     4350*2035*2320      6900   5900*2294*2604   9750   KTA38-G5"
+      ],
+      "file": "sources/saonon/2028.md",
+      "official": true
+    },
+    {
+      "n": 2029,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S1250CC      1250  1000  /     /     210     4350*2035*2320      7200   6400*2294*2604   10500  KTA38-G9"
+      ],
+      "file": "sources/saonon/2029.md",
+      "official": true
+    },
+    {
+      "n": 2030,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S1375CC      1375  1100  1250  1000  254     5000*2035*2375      9700   6800*2294*2604   12500  KTA50-G3"
+      ],
+      "file": "sources/saonon/2030.md",
+      "official": true
+    },
+    {
+      "n": 2031,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S1500CC      1500  1200  1375  1100  291     4600*2200*2200      8200   6800*2294*2604   14500  QSK38-G13"
+      ],
+      "file": "sources/saonon/2031.md",
+      "official": true
+    },
+    {
+      "n": 2032,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S1650CC      1650  1320  1500  1200  309     5600*2160*2480      10400  12192*2438*2896  18500  KTA50-GS8"
+      ],
+      "file": "sources/saonon/2032.md",
+      "official": true
+    },
+    {
+      "n": 2033,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S1750CC      1750  1400  1600  1280  334     4800*2300*2200      8500   12192*2438*2896  17300  QSK38-G15"
+      ],
+      "file": "sources/saonon/2033.md",
+      "official": true
+    },
+    {
+      "n": 2034,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S1875CC      1875  1500  1675  1340  359     5700*2160*2655      10800  12192*2438*2896  19100  KTA50-G15A"
+      ],
+      "file": "sources/saonon/2034.md",
+      "official": true
+    },
+    {
+      "n": 2035,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S2000CC 2000       1600  1875  1500  402     5450*2220*2820      10900  12192*2438*2896  19200  KTA50-G16A"
+      ],
+      "file": "sources/saonon/2035.md",
+      "official": true
+    },
+    {
+      "n": 2036,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S2250EC 2250       1800  2000  1600  434     6000*2500*3000      16000  /                  /    QSK60-G4"
+      ],
+      "file": "sources/saonon/2036.md",
+      "official": true
+    },
+    {
+      "n": 2037,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S2500EC 2500       2000  2250  1800  449     6200*2500*3000      16500  /                  /    QSK60-G8"
+      ],
+      "file": "sources/saonon/2037.md",
+      "official": true
+    },
+    {
+      "n": 2038,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S2750EC      2750  2200  2500  2000  497     6500*2568*2767      17000  /                  /    QSK60-G23"
+      ],
+      "file": "sources/saonon/2038.md",
+      "official": true
+    },
+    {
+      "n": 2039,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S3000EC      3000  2400  2750  2200  528     6950*2744*3318      22000  /                  /    QSK78-G9"
+      ],
+      "file": "sources/saonon/2039.md",
+      "official": true
+    },
+    {
+      "n": 2040,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S40YC        40    33    37    30    10.1    1750*760*1160   550     2200*1094*1454   1150   YCDV254FHZ-50"
+      ],
+      "file": "sources/saonon/2040.md",
+      "official": true
+    },
+    {
+      "n": 2041,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S110YC       110   88    100   80    23.7    2300*810*1215   1165    2800*1100*1554   1580   YC4D140-D31"
+      ],
+      "file": "sources/saonon/2041.md",
+      "official": true
+    },
+    {
+      "n": 2042,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S150YC       150   120   138   110   31.9    2500*850*1235   1200    2800*1100*1554   1980   YC4A190-D30"
+      ],
+      "file": "sources/saonon/2042.md",
+      "official": true
+    },
+    {
+      "n": 2043,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S220YC       220   176   200   160   47.1    2750*1025*1470  1960    3600*1294*1984   2950   YC6A275-D30"
+      ],
+      "file": "sources/saonon/2043.md",
+      "official": true
+    },
+    {
+      "n": 2044,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S275YC       275   220   250   200   59.07   2750*1200*1465  2000    3600*1294*1984   3000   YCA08350-D30"
+      ],
+      "file": "sources/saonon/2044.md",
+      "official": true
+    },
+    {
+      "n": 2045,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S375YC       375   300   350   280   72.6    3000*1100*1615  2500    4000*1444*2134   4050   YC6MK450-D30"
+      ],
+      "file": "sources/saonon/2045.md",
+      "official": true
+    },
+    {
+      "n": 2046,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S415YC       415   330   375   300   82      3060*1200*1620  2700    4000*1444*2134   4050   YC6MJ500-D30"
+      ],
+      "file": "sources/saonon/2046.md",
+      "official": true
+    },
+    {
+      "n": 2047,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S440YC       440   350   400   320   87.9    3060*1250*1730  2820    4000*1444*2134   4420   YC6MJ540-D30"
+      ],
+      "file": "sources/saonon/2047.md",
+      "official": true
+    },
+    {
+      "n": 2048,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S500YC       500   400   450   360   97.3    3080*1250*1730  2850    4400*1544*2234   4450   YC6MJ600-D30"
+      ],
+      "file": "sources/saonon/2048.md",
+      "official": true
+    },
+    {
+      "n": 2049,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S550YC       550   440   500   400   113.8   3550*1260*1750  4000    4650*1744*2434   5400   YC6T660-D31"
+      ],
+      "file": "sources/saonon/2049.md",
+      "official": true
+    },
+    {
+      "n": 2050,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S625YC       625   500   562   450   130.8   3600*1625*1990  4550    5000*1844*2534   6550   YC6TD780-D31"
+      ],
+      "file": "sources/saonon/2050.md",
+      "official": true
+    },
+    {
+      "n": 2051,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S688YC       688   550   625   500   143.2   3600*1625*1990  4700    5000*1844*2534   6700   YC6TD840-D31"
+      ],
+      "file": "sources/saonon/2051.md",
+      "official": true
+    },
+    {
+      "n": 2052,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S750YC       750   600   688   550   154.3   3700*1625*1990  4800    5600*2144*2604   6780   YC6TD900-D31"
+      ],
+      "file": "sources/saonon/2052.md",
+      "official": true
+    },
+    {
+      "n": 2053,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S825YC       825   660   750   600   166.4   3850*1880*2000  5200    5600*2144*2604   6850   YC6TD1000-D30"
+      ],
+      "file": "sources/saonon/2053.md",
+      "official": true
+    },
+    {
+      "n": 2054,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S888YC       888   710   812   650   181.6   4450*1680*2195  7650    5900*2294*2604   10500  YC6C1070-D31"
+      ],
+      "file": "sources/saonon/2054.md",
+      "official": true
+    },
+    {
+      "n": 2055,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S1000YC      1000  800   912   730   203.7   4450*2165*2460  7850    5900*2294*2604   10840  YC6C1220-D31"
+      ],
+      "file": "sources/saonon/2055.md",
+      "official": true
+    },
+    {
+      "n": 2056,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S1125YC      1125  900   1000  800   220.2   4600*2165*2460  7950    5900*2294*2604   11050  YC6C1320-D31"
+      ],
+      "file": "sources/saonon/2056.md",
+      "official": true
+    },
+    {
+      "n": 2057,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S1250YC      1250  1000  1125  900   253.3   4600*2166*2460  8300    6400*2294*2604   11180  YC6C1520-D31"
+      ],
+      "file": "sources/saonon/2057.md",
+      "official": true
+    },
+    {
+      "n": 2058,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S1375YC      1375  1100  1250  1000  276.8   4700*2020*2185  8400    6800*2294*2604   11500  YC6C1660-D30"
+      ],
+      "file": "sources/saonon/2058.md",
+      "official": true
+    },
+    {
+      "n": 2059,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S1500YC      1500  1200  1375  1100  305.7   4500*2200*2520  9200    12192*2438*2896  15200  YC12VTD1830-D30"
+      ],
+      "file": "sources/saonon/2059.md",
+      "official": true
+    },
+    {
+      "n": 2060,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S1650YC      1650  1320  1500  1200  338.6   4450*2715*2678  10200   12192*2438*2896  16200  YC12VTD2000-D30"
+      ],
+      "file": "sources/saonon/2060.md",
+      "official": true
+    },
+    {
+      "n": 2061,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S1875YC      1875  1500  1688  1350  374.4   5600*2220*2520  13500   12192*2438*2896  16500  YC16VTD2270-D30"
+      ],
+      "file": "sources/saonon/2061.md",
+      "official": true
+    },
+    {
+      "n": 2062,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S2000YC      2000  1600  1875  1500  412.5   5600*2220*2520  14100   12192*2438*2896  16900  YC16VTD2510-D30"
+      ],
+      "file": "sources/saonon/2062.md",
+      "official": true
+    },
+    {
+      "n": 2063,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S2250YC      2250  1800  2125  1700  441.9   5850*2220*2725  15500   12192*2438*2896  21900  YC12VC2700-D31"
+      ],
+      "file": "sources/saonon/2063.md",
+      "official": true
+    },
+    {
+      "n": 2064,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S2500YC      2500  2000  2250  1800  505.9   5850*2220*2725  15500   12192*2438*2896  22500  YC12VC3000-D30"
+      ],
+      "file": "sources/saonon/2064.md",
+      "official": true
+    },
+    {
+      "n": 2065,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S2750YC      2750  2200  2500  2000  543.2   6600*2450*3155  19500   12192*2438*2896  26189  YC16VC3300-D31"
+      ],
+      "file": "sources/saonon/2065.md",
+      "official": true
+    },
+    {
+      "n": 2066,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S3000YC      3000  2400  2750  2200  594.4   6600*2450*3155  20500   12192*2438*2896  26189  Yc16VC3600-D31"
+      ],
+      "file": "sources/saonon/2066.md",
+      "official": true
+    },
+    {
+      "n": 2067,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S750SSM      750   600   663   530   139     3800*1800*1980  5400    6058*2438*2591     9500  S6R2-PTA-C"
+      ],
+      "file": "sources/saonon/2067.md",
+      "official": true
+    },
+    {
+      "n": 2068,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S2500YM      2500  2000  2250      1800                 448                  16V4000G63F"
+      ],
+      "file": "sources/saonon/2068.md",
+      "official": true
+    },
+    {
+      "n": 2069,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S825SSM      825   660   750   600   170     4100*1800*2000  6000    6058*2438*2591   10000   S6R2-PTAA-C"
+      ],
+      "file": "sources/saonon/2069.md",
+      "official": true
+    },
+    {
+      "n": 2070,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S1375SSM     1375  1100  1250  1000  2266    4550*2200*2443  9000    12192*2438*2896  14400   S12R-PTA-C"
+      ],
+      "file": "sources/saonon/2070.md",
+      "official": true
+    },
+    {
+      "n": 2071,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S2750YM      2750  2200  2500      2000                 509                  20V4000G23F"
+      ],
+      "file": "sources/saonon/2071.md",
+      "official": true
+    },
+    {
+      "n": 2072,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S1500SSM     1500  1200  1375  1100  281     4550*2200*2443  9480    12192*2438*2896  14880   S12R-PTA2-C"
+      ],
+      "file": "sources/saonon/2072.md",
+      "official": true
+    },
+    {
+      "n": 2073,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S1650SSM     1650  1320  1500  1200  308     5100*2200*2547  11360   12192*2438*2896  17000   S12R-PTAA2-C"
+      ],
+      "file": "sources/saonon/2073.md",
+      "official": true
+    },
+    {
+      "n": 2074,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S3000YM      3000  2400  2750      2200                 554                  20V4000G63F"
+      ],
+      "file": "sources/saonon/2074.md",
+      "official": true
+    },
+    {
+      "n": 2075,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S1875SSM     1875  1500  1713  1370  310     5300*2200*2438  12000   12192*2438*2896  17400   S16R-PTA-C"
+      ],
+      "file": "sources/saonon/2075.md",
+      "official": true
+    },
+    {
+      "n": 2076,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S2000SSM     2000  1600  1875  1500  418     5350*2200*2474  12400   12192*2438*2896  17800   S16R-PTA2-C"
+      ],
+      "file": "sources/saonon/2076.md",
+      "official": true
+    },
+    {
+      "n": 2077,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S2250SSM     2250  1800  2000  1600  432     5600*2210*2867  13000   12192*2438*2896  21000   S16R-PTAA2-C"
+      ],
+      "file": "sources/saonon/2077.md",
+      "official": true
+    },
+    {
+      "n": 2078,
+      "url": "https://www.saonon.com/vancheerfile/files/2023/12/20231220145229031.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "S2500SSM     2500 2000 2250    1800 504.6    5900*2200*2550  15900   12192*2438*2896  23900   S16R2-PTAW-C"
+      ],
+      "file": "sources/saonon/2078.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "SC S30HC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S30HC        30    24    27    22    6.5     1900*790*1210       700    2200*1094*1454   1145   4B3.9-G2          3.9     4L   11       20              S0L2-P"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "SC S45HC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S45HC        44    35    40    32    9.4     1950*790*1210       750    2200*1094*1454   1200   4BT3.9-G2         3.9     4L   11       20              S1L2-K"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "SC S55HC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S55HC        55    44    50    40    11.7    1950*790*1235       780    2500*1094*1454   1260   4BTA3.9-G2        3.9     4L   11       23              S1L2-R"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "SC S88HC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S88HC        88    70    80    64    16.2    2150*790*1255       970    2500*1094*1454   1435   4BTA3.9-G11       3.9     4L   11       23              UCI224G"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "SC S105HC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S105HC       105   84    95    76    18.8    2100*790*1320       980    2500*1094*1454   1470   4BTA3.9-G13       3.9     4L   11       23              UCI274C"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "SC S110HC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S110HC       110   88    100   80    22.9    2150*935*1270       1020   2800*1144*1554   1680   6BT5.9-G2         5.9     6L   16       24              UCI274C"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "SC S150HC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S150HC       150   120   138   110   29.5    2350*935*1280       1300   3100*1244*1681   1980   6BTAA5.9-G2       5.9     6L   16       28              UCI274E"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "SC S165HC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S165HC       165   132   150   120   34.8    2400*935*1360       1310   3100*1244*1681   2025   6BTAA5.9-G12      5.9     6L   16       28              UCI274F"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "SC S200HC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S200HC       200   160   182   145   41.2    2400*935*1360       1600   3600*1294*1984   2550   6CTA8.3-G2        8.3     6L   28       32              UCI274G"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "SC S220HC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S220HC       220   176   200   160   43.3    2500*1035*1395      1700   3600*1294*1984   2650   6CTAA8.3-G2       8.3     6L   24       34              UCI274H"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "SC S275HC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S275HC       275   220   250   200   53      2650*1035*1500      2000   3600*1294*1984   2900   6LTAA8.9-G2       8.9     6L   28       35              S4L1S-C4"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "SC S500HC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S500HC       500   400   475   380   96.5    3200*1400*1915      3300   4400*1544*2234   4850   QSZ13-G3          13      6L   45       75              S5L1D-C4"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "SC S315CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S315CC       315   250   275   220   61      3050*1100*1750      2800   4000*1444*2134   3900   NTA855-G1A        14      6L   39       61              S4L1D-D4"
+      ]
+    },
+    {
+      "n": 2014,
+      "title": "SC S350CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S350CC       350   280   313   250   68.3    3050*1100*1750      2880   4000*1444*2134   3990   NTA855-G1B        14      6L   39       61              S4L1D-E4"
+      ]
+    },
+    {
+      "n": 2015,
+      "title": "SC S375CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S375CC       375   300   344   275   72      3050*1100*1750      2880   4000*1444*2134   4000   NTA855-G2A        14      6L   39       68              S4L1D-E4"
+      ]
+    },
+    {
+      "n": 2016,
+      "title": "SC S415CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S415CC       415   330   375   300   83.5    3150*1130*1755      3000   4000*1444*2134   4150   NTAA855-G7        14      6L   39       76              S4L1D-F4"
+      ]
+    },
+    {
+      "n": 2017,
+      "title": "SC S440CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S440CC       440   352   400   320   87      3300*1025*1770      3300   4400*1544*2234   4800   QSNT-G3           14      6L   39       84              S4L1D-F4"
+      ]
+    },
+    {
+      "n": 2018,
+      "title": "SC S500CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S500CC       500   400   450   360   98.8    3300*1230*1770      3250   4400*1544*2234   4850   QSNT-G4X          14      6L   39       84              S4L1D-G4"
+      ]
+    },
+    {
+      "n": 2019,
+      "title": "SC S550CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S550CC       550   440   500   400   94.6    3450*1380*1900      3500   4650*1744*2434   5400   KTA19-G3A         18.9    6L   50       89              S5L1D-C4"
+      ]
+    },
+    {
+      "n": 2020,
+      "title": "SC S650CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S650CC       650   520   /     /     126     3450*1380*1900      4000   4650*1744*2434   5680   KTA19-G8          18.9    6L   50       98              S5L1D-E4"
+      ]
+    },
+    {
+      "n": 2021,
+      "title": "SC S688CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S688CC       688   550   /     /     128     3650*1500*2105      4100   5000*1844*2534   5850   KTAA19-G6A        18.9    6L   50       122             S5L1D-F4"
+      ]
+    },
+    {
+      "n": 2022,
+      "title": "SC S715CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S715CC       715   570   650   520   145     3700*1700*2215      4750   5600*2144*2604   7500   QSK19-G4          18.9    6L   84       133             S5L1D-F4"
+      ]
+    },
+    {
+      "n": 2023,
+      "title": "SC S750CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S750CC       750   600   680   545   143     3700*1690*2115      4800   5600*2144*2604   7650   QSK19-G19         18.9    6L   84       122             S5L1D-G4"
+      ]
+    },
+    {
+      "n": 2024,
+      "title": "SC S825CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S825CC       825   660   750   600   167     4200*1805*2385      6700   5600*2144*2604   7800   KTA38-G2          37.8    12V  135      259             S5L1D-H4"
+      ]
+    },
+    {
+      "n": 2025,
+      "title": "SC S880CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S880CC       880   720   800   640   169     4200*1805*2385      6800   5900*2294*2604   9200   KTA38-G2B         37.8    12V  135      263             S6L1D-C4"
+      ]
+    },
+    {
+      "n": 2026,
+      "title": "SC S880CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S880CC       880   720   800   640   167     3700*1690*2112      4850   5900*2294*2604   9300   QSK19-G21         18.9    6L   84       122             S6L1D-C4"
+      ]
+    },
+    {
+      "n": 2027,
+      "title": "SC S1000CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S1000CC      1000  800   910   728   196     4200*1805*2385      6800   5900*2294*2604   9600   KTA38-G2A         37.8    12V  135      263             S6L1D-D4"
+      ]
+    },
+    {
+      "n": 2028,
+      "title": "SC S1100CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S1100CC      1100  880   1000  800   209     4350*2035*2320      6900   5900*2294*2604   9750   KTA38-G5          37.8    12V  135      263             S6L1D-E4"
+      ]
+    },
+    {
+      "n": 2029,
+      "title": "SC S1250CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S1250CC      1250  1000  /     /     210     4350*2035*2320      7200   6400*2294*2604   10500  KTA38-G9          37.8    12V  135      289             S6L1D-F4"
+      ]
+    },
+    {
+      "n": 2030,
+      "title": "SC S1375CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "1  Международный известный бренд, высокий уровень технологий, комплексное формирование, высокая надежность        S1375CC      1375  1100  1250  1000  254     5000*2035*2375      9700   6800*2294*2604   12500  KTA50-G3          50      16V  177      351             S6L1D-G4"
+      ]
+    },
+    {
+      "n": 2031,
+      "title": "SC S1500CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "2  Профессиональное двигателестроение, проверенные технологии                                                     S1500CC      1500  1200  1375  1100  291     4600*2200*2200      8200   6800*2294*2604   14500  QSK38-G13         37.8    12V  117      360             S6L1D-H4"
+      ]
+    },
+    {
+      "n": 2032,
+      "title": "SC S1650CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "Низкая вероятность возникновение неисправностей, низкая себестоимость технического обслуживания предоставляют  S1650CC      1650  1320  1500  1200  309     5600*2160*2480      10400  12192*2438*2896  18500  KTA50-GS8         50      16V  204      445             S7L1D-C4"
+      ]
+    },
+    {
+      "n": 2033,
+      "title": "SC S1750CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "клиентам оптимальные экономические выгоды                                                                      S1750CC      1750  1400  1600  1280  334     4800*2300*2200      8500   12192*2438*2896  17300  QSK38-G15         37.8    12V  117      360             S7L1D-D4"
+      ]
+    },
+    {
+      "n": 2034,
+      "title": "SC S1875CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "4  Высокий технологический потенциал, высокая перспективность, низкий расход топлива, низкий выброс обеспечивают  S1875CC      1875  1500  1675  1340  359     5700*2160*2655      10800  12192*2438*2896  19100  KTA50-G15A        50      16V  204      460             S7L1D-E4"
+      ]
+    },
+    {
+      "n": 2035,
+      "title": "SC S2000CC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S2000CC 2000       1600  1875  1500  402     5450*2220*2820      10900  12192*2438*2896  19200  KTA50-G16A        50      16V  234.7    460             S7L1D-F4"
+      ]
+    },
+    {
+      "n": 2036,
+      "title": "SC S2250EC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "комплектующих, поэтому продукция имеет низкую себестоимость                                                    S2250EC 2250       1800  2000  1600  434     6000*2500*3000      16000  /                  /    QSK60-G4          60      16V  280      242*            S7L1D-G4"
+      ]
+    },
+    {
+      "n": 2037,
+      "title": "SC S2500EC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S2500EC 2500       2000  2250  1800  449     6200*2500*3000      16500  /                  /    QSK60-G8          60      16V  280      242*            S7L1D-H4"
+      ]
+    },
+    {
+      "n": 2038,
+      "title": "SC S2750EC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S2750EC      2750  2200  2500  2000  497     6500*2568*2767      17000  /                  /    QSK60-G23         60      16V  280      242*            S7L1D-J4"
+      ]
+    },
+    {
+      "n": 2039,
+      "title": "SC S3000EC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                               Модель двигателя  объём  счита машинного жидкости"
+      ],
+      "rows": [
+        "S3000EC      3000  2400  2750  2200  528     6950*2744*3318      22000  /                  /    QSK78-G9          78      18V  466      295*            LVSI804S"
+      ]
+    },
+    {
+      "n": 2040,
+      "title": "SYC S40YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S40YC        40    33    37    30    10.1    1750*760*1160   550     2200*1094*1454   1150   YCDV254FHZ-50     2.5     4L        6.5   13        LSA42.3S5"
+      ]
+    },
+    {
+      "n": 2041,
+      "title": "SYC S110YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S110YC       110   88    100   80    23.7    2300*810*1215   1165    2800*1100*1554   1580   YC4D140-D31       4.75    4L        11.5  24        TAL-A44-D"
+      ]
+    },
+    {
+      "n": 2042,
+      "title": "SYC S150YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S150YC       150   120   138   110   31.9    2500*850*1235   1200    2800*1100*1554   1980   YC4A190-D30       4.84    4L        15    27        TAL-A44-H"
+      ]
+    },
+    {
+      "n": 2043,
+      "title": "SYC S220YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S220YC       220   176   200   160   47.1    2750*1025*1470  1960    3600*1294*1984   2950   YC6A275-D30       7.255   6L        22    55        TAL-A44-M"
+      ]
+    },
+    {
+      "n": 2044,
+      "title": "SYC S275YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S275YC       275   220   250   200   59.07   2750*1200*1465  2000    3600*1294*1984   3000   YCA08350-D30      7.53    6L        22    55        TAL-A46-D"
+      ]
+    },
+    {
+      "n": 2045,
+      "title": "SYC S375YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S375YC       375   300   350   280   72.6    3000*1100*1615  2500    4000*1444*2134   4050   YC6MK450-D30      10.34   6L        28    65        TAL-A46-H"
+      ]
+    },
+    {
+      "n": 2046,
+      "title": "SYC S415YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S415YC       415   330   375   300   82      3060*1200*1620  2700    4000*1444*2134   4050   YC6MJ500-D30      11.73   6L        28    62        TAL-A473-A"
+      ]
+    },
+    {
+      "n": 2047,
+      "title": "SYC S440YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S440YC       440   350   400   320   87.9    3060*1250*1730  2820    4000*1444*2134   4420   YC6MJ540-D30      11.73   6L        35    86        TAL-A473-A"
+      ]
+    },
+    {
+      "n": 2048,
+      "title": "SYC S500YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S500YC       500   400   450   360   97.3    3080*1250*1730  2850    4400*1544*2234   4450   YC6MJ600-D30      11.73   6L        35    86        TAL-A473-B"
+      ]
+    },
+    {
+      "n": 2049,
+      "title": "SYC S550YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S550YC       550   440   500   400   113.8   3550*1260*1750  4000    4650*1744*2434   5400   YC6T660-D31       16.35   6L        52    88        TAL-A473-C"
+      ]
+    },
+    {
+      "n": 2050,
+      "title": "SYC S625YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S625YC       625   500   562   450   130.8   3600*1625*1990  4550    5000*1844*2534   6550   YC6TD780-D31      19.6    6L        50    131       TAL-A473-E"
+      ]
+    },
+    {
+      "n": 2051,
+      "title": "SYC S688YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S688YC       688   550   625   500   143.2   3600*1625*1990  4700    5000*1844*2534   6700   YC6TD840-D31      19.6    6L        50    131       TAL-A473-F"
+      ]
+    },
+    {
+      "n": 2052,
+      "title": "SYC S750YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S750YC       750   600   688   550   154.3   3700*1625*1990  4800    5600*2144*2604   6780   YC6TD900-D31      19.6    6L        50    148       TAL-A49-B"
+      ]
+    },
+    {
+      "n": 2053,
+      "title": "SYC S825YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S825YC       825   660   750   600   166.4   3850*1880*2000  5200    5600*2144*2604   6850   YC6TD1000-D30     19.6    6L        50    160       TAL-A49-B"
+      ]
+    },
+    {
+      "n": 2054,
+      "title": "SYC S888YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S888YC       888   710   812   650   181.6   4450*1680*2195  7650    5900*2294*2604   10500  YC6C1070-D31      39.58   6L        155   230       TAL-A49-C"
+      ]
+    },
+    {
+      "n": 2055,
+      "title": "SYC S1000YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S1000YC      1000  800   912   730   203.7   4450*2165*2460  7850    5900*2294*2604   10840  YC6C1220-D31      39.58   6L        155   230       TAL-A49-D"
+      ]
+    },
+    {
+      "n": 2056,
+      "title": "SYC S1125YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S1125YC      1125  900   1000  800   220.2   4600*2165*2460  7950    5900*2294*2604   11050  YC6C1320-D31      39.58   6L        155   230       TAL-A49-E"
+      ]
+    },
+    {
+      "n": 2057,
+      "title": "SYC S1250YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S1250YC      1250  1000  1125  900   253.3   4600*2166*2460  8300    6400*2294*2604   11180  YC6C1520-D31      39.58   6L        155   230       LSA50.2M6"
+      ]
+    },
+    {
+      "n": 2058,
+      "title": "SYC S1375YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S1375YC      1375  1100  1250  1000  276.8   4700*2020*2185  8400    6800*2294*2604   11500  YC6C1660-D30      39.58   6L        155   230       LSA50.2M6"
+      ]
+    },
+    {
+      "n": 2059,
+      "title": "SYC S1500YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S1500YC      1500  1200  1375  1100  305.7   4500*2200*2520  9200    12192*2438*2896  15200  YC12VTD1830-D30   39.2    12V       210   485       LSA50.2L7"
+      ]
+    },
+    {
+      "n": 2060,
+      "title": "SYC S1650YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S1650YC      1650  1320  1500  1200  338.6   4450*2715*2678  10200   12192*2438*2896  16200  YC12VTD2000-D30   39.2    12V       210   485       LSA50.2L8"
+      ]
+    },
+    {
+      "n": 2061,
+      "title": "SYC S1875YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S1875YC      1875  1500  1688  1350  374.4   5600*2220*2520  13500   12192*2438*2896  16500  YC16VTD2270-D30   52.26   16V       280   547       LSA52.3S5"
+      ]
+    },
+    {
+      "n": 2062,
+      "title": "SYC S2000YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S2000YC      2000  1600  1875  1500  412.5   5600*2220*2520  14100   12192*2438*2896  16900  YC16VTD2510-D30   52.26   16V       280   554       LSA52.3S6"
+      ]
+    },
+    {
+      "n": 2063,
+      "title": "SYC S2250YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S2250YC      2250  1800  2125  1700  441.9   5850*2220*2725  15500   12192*2438*2896  21900  YC12VC2700-D31    79.17   12V       310   676       LSA52.3S7"
+      ]
+    },
+    {
+      "n": 2064,
+      "title": "SYC S2500YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S2500YC      2500  2000  2250  1800  505.9   5850*2220*2725  15500   12192*2438*2896  22500  YC12VC3000-D30    79.17   12V       310   755       LSA52.3L9"
+      ]
+    },
+    {
+      "n": 2065,
+      "title": "SYC S2750YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S2750YC      2750  2200  2500  2000  543.2   6600*2450*3155  19500   12192*2438*2896  26189  YC16VC3300-D31    105.56  16V       370   624       LSA52.3L12"
+      ]
+    },
+    {
+      "n": 2066,
+      "title": "SYC S3000YC (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "S  YC Cер                                                                                                                        экипажа      kVA   kW    kVA   kW    (L/h)                           Внешний размер          Модель двигателя  объём   счита Ёмкостьохлаждающей  Модель"
+      ],
+      "rows": [
+        "S3000YC      3000  2400  2750  2200  594.4   6600*2450*3155  20500   12192*2438*2896  26189  Yc16VC3600-D31    105.56  16V       370   624       LSA52.3UL16"
+      ]
+    },
+    {
+      "n": 2067,
+      "title": "SSM S750SSM (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                             Модель двигателя  объём   счита машинногоохлаждающей              экипажа      kVA   kW    kVA       kW                   (L/h)                Модель двигателя  объём  Цилиндров      машинного  охлаждающей"
+      ],
+      "rows": [
+        "S750SSM      750   600   663   530   139     3800*1800*1980  5400    6058*2438*2591     9500  S6R2-PTA-C        29.96   6L   92           205       S5L1D-G4"
+      ]
+    },
+    {
+      "n": 2068,
+      "title": "SSM S2500YM (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                             Модель двигателя  объём   счита машинногоохлаждающей              экипажа      kVA   kW    kVA       kW                   (L/h)                Модель двигателя  объём  Цилиндров      машинного  охлаждающей"
+      ],
+      "rows": [
+        "S2500YM      2500  2000  2250      1800                 448                  16V4000G63F       76.3   16             240        175*             S7L1D-H4"
+      ]
+    },
+    {
+      "n": 2069,
+      "title": "SSM S825SSM (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                             Модель двигателя  объём   счита машинногоохлаждающей              экипажа      kVA   kW    kVA       kW                   (L/h)                Модель двигателя  объём  Цилиндров      машинного  охлаждающей"
+      ],
+      "rows": [
+        "S825SSM      825   660   750   600   170     4100*1800*2000  6000    6058*2438*2591   10000   S6R2-PTAA-C       29.96   6L   92           258       S5L1D-H4"
+      ]
+    },
+    {
+      "n": 2070,
+      "title": "SSM S1375SSM (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                             Модель двигателя  объём   счита машинногоохлаждающей              экипажа      kVA   kW    kVA       kW                   (L/h)                Модель двигателя  объём  Цилиндров      машинного  охлаждающей"
+      ],
+      "rows": [
+        "S1375SSM     1375  1100  1250  1000  2266    4550*2200*2443  9000    12192*2438*2896  14400   S12R-PTA-C        49.03   12V  180          391       S6L1D-G4    S2750YM      2750  2200  2500      2000                 509                  20V4000G23F       95.4   16             340        205*             S7L1D-J4"
+      ]
+    },
+    {
+      "n": 2071,
+      "title": "SSM S2750YM (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                             Модель двигателя  объём   счита машинногоохлаждающей              экипажа      kVA   kW    kVA       kW                   (L/h)                Модель двигателя  объём  Цилиндров      машинного  охлаждающей"
+      ],
+      "rows": [
+        "S1375SSM     1375  1100  1250  1000  2266    4550*2200*2443  9000    12192*2438*2896  14400   S12R-PTA-C        49.03   12V  180          391       S6L1D-G4    S2750YM      2750  2200  2500      2000                 509                  20V4000G23F       95.4   16             340        205*             S7L1D-J4"
+      ]
+    },
+    {
+      "n": 2072,
+      "title": "SSM S1500SSM (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                             Модель двигателя  объём   счита машинногоохлаждающей              экипажа      kVA   kW    kVA       kW                   (L/h)                Модель двигателя  объём  Цилиндров      машинного  охлаждающей"
+      ],
+      "rows": [
+        "S1500SSM     1500  1200  1375  1100  281     4550*2200*2443  9480    12192*2438*2896  14880   S12R-PTA2-C       49.03   12V  180          391       S6L1D-H4"
+      ]
+    },
+    {
+      "n": 2073,
+      "title": "SSM S1650SSM (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                             Модель двигателя  объём   счита машинногоохлаждающей              экипажа      kVA   kW    kVA       kW                   (L/h)                Модель двигателя  объём  Цилиндров      машинного  охлаждающей"
+      ],
+      "rows": [
+        "S1650SSM     1650  1320  1500  1200  308     5100*2200*2547  11360   12192*2438*2896  17000   S12R-PTAA2-C      49.03   12V  180          391       S7L1D-C4    S3000YM      3000  2400  2750      2200                 554                  20V4000G63F       95.4   16             340        205*             LVSI804S"
+      ]
+    },
+    {
+      "n": 2074,
+      "title": "SSM S3000YM (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                             Модель двигателя  объём   счита машинногоохлаждающей              экипажа      kVA   kW    kVA       kW                   (L/h)                Модель двигателя  объём  Цилиндров      машинного  охлаждающей"
+      ],
+      "rows": [
+        "S1650SSM     1650  1320  1500  1200  308     5100*2200*2547  11360   12192*2438*2896  17000   S12R-PTAA2-C      49.03   12V  180          391       S7L1D-C4    S3000YM      3000  2400  2750      2200                 554                  20V4000G63F       95.4   16             340        205*             LVSI804S"
+      ]
+    },
+    {
+      "n": 2075,
+      "title": "SSM S1875SSM (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                             Модель двигателя  объём   счита машинногоохлаждающей              экипажа      kVA   kW    kVA       kW                   (L/h)                Модель двигателя  объём  Цилиндров      машинного  охлаждающей"
+      ],
+      "rows": [
+        "S1875SSM     1875  1500  1713  1370  310     5300*2200*2438  12000   12192*2438*2896  17400   S16R-PTA-C        65.37   16V  230          560       S7L1D-E4"
+      ]
+    },
+    {
+      "n": 2076,
+      "title": "SSM S2000SSM (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                             Модель двигателя  объём   счита машинногоохлаждающей              экипажа      kVA   kW    kVA       kW                   (L/h)                Модель двигателя  объём  Цилиндров      машинного  охлаждающей"
+      ],
+      "rows": [
+        "S2000SSM     2000  1600  1875  1500  418     5350*2200*2474  12400   12192*2438*2896  17800   S16R-PTA2-C       65.37   16V  230          560       S7L1D-F4    S3300YM      3300  2640  3000      2400                 600                  20V4000G63LF      95.4   16             340        205*             LVSI804T"
+      ]
+    },
+    {
+      "n": 2077,
+      "title": "SSM S2250SSM (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                             Модель двигателя  объём   счита машинногоохлаждающей              экипажа      kVA   kW    kVA       kW                   (L/h)                Модель двигателя  объём  Цилиндров      машинного  охлаждающей"
+      ],
+      "rows": [
+        "S2250SSM     2250  1800  2000  1600  432     5600*2210*2867  13000   12192*2438*2896  21000   S16R-PTAA2-C      65.37   16V  230          560       S7L1D-G4"
+      ]
+    },
+    {
+      "n": 2078,
+      "title": "SSM S2500SSM (50Hz 3Ph 400V Pf0.8)",
+      "header": [
+        "экипажа      kVA   kW    kVA   kW                                                             Модель двигателя  объём   счита машинногоохлаждающей              экипажа      kVA   kW    kVA       kW                   (L/h)                Модель двигателя  объём  Цилиндров      машинного  охлаждающей"
+      ],
+      "rows": [
+        "S2500SSM     2500 2000 2250    1800 504.6    5900*2200*2550  15900   12192*2438*2896  23900   S16R2-PTAW-C      79.9    16V  260          600       S7L1D-H4"
+      ]
+    }
+  ]
 }
