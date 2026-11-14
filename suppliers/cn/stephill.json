@@ -42,6 +42,531 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "Super Silent Diesel 1500rpm 29.3kW - 136.8kVA EU Stage V",
+      "fuel": "diesel",
+      "power": {
+        "min": 33.8,
+        "max": 136.8,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "engineMakes": [
+        "Perkins",
+        "Yanmar"
+      ],
+      "engineModels": [
+        "Yanmar 4TNV98C",
+        "Perkins 404J-E22T",
+        "Perkins 404J-E22TA",
+        "Yanmar 4TNV98CT",
+        "Perkins 904J-E28TA",
+        "Perkins 904J-E36TAG3",
+        "Perkins 1204J-E44TAG2"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "emission": [
+        "EU Stage V"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Super Silent Diesel Kubota & Yanmar Range 1500rpm 12.0 to 21.0kVA EU Stage V",
+      "fuel": "diesel",
+      "power": {
+        "min": 12,
+        "max": 21,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "engineMakes": [
+        "Kubota",
+        "Yanmar"
+      ],
+      "engineModels": [
+        "Kubota V1505",
+        "Kubota D1703",
+        "Kubota V2203",
+        "Yanmar 4TNV88"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "emission": [
+        "EU Stage V"
+      ],
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Standby Generators 30.0 to 115.0kVA Super Silent Diesel 1500rpm",
+      "fuel": "diesel",
+      "power": {
+        "min": 30,
+        "max": 115,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "Perkins 1103A-33G",
+        "Perkins 1103A-33TG1",
+        "Perkins 1103A-33TG2",
+        "Perkins 1104C-E44TAG2"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "src": [
+        2003,
+        2004,
+        2005,
+        2006,
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SSDP140V",
+      "fuel": "diesel",
+      "power": {
+        "min": 136.8,
+        "max": 136.8,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2009
+        ]
+      },
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "Perkins 1204J-E44TTAG2"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "emission": [
+        "EU Stage V"
+      ],
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SSDP65V",
+      "fuel": "diesel",
+      "power": {
+        "min": 64.1,
+        "max": 64.1,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2010
+        ]
+      },
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "Perkins 904J-E36TAG3"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "emission": [
+        "EU Stage V"
+      ],
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SSDY50V",
+      "fuel": "diesel",
+      "power": {
+        "min": 47.5,
+        "max": 47.5,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2011
+        ]
+      },
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "Yanmar 4TNV98CT-IYE"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "emission": [
+        "EU Stage V"
+      ],
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SSDP115",
+      "fuel": "diesel",
+      "power": {
+        "min": 115,
+        "max": 115,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "Perkins 1104C-E44TAG2"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SSDP70",
+      "fuel": "diesel",
+      "power": {
+        "min": 67,
+        "max": 67,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "Perkins 1103A-33TG2"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SSDP50",
+      "fuel": "diesel",
+      "power": {
+        "min": 50,
+        "max": 50,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "Perkins 1103A-33TG1"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SSDP33",
+      "fuel": "diesel",
+      "power": {
+        "min": 33,
+        "max": 33,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "Perkins 1103A-33G"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SSDP34V",
+      "fuel": "diesel",
+      "power": {
+        "min": 33.8,
+        "max": 33.8,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "Perkins 404J-E22T"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "emission": [
+        "EU Stage V"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SSDY40V",
+      "fuel": "diesel",
+      "power": {
+        "min": 38.5,
+        "max": 38.5,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "Yanmar 4TNV98C"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "emission": [
+        "EU Stage V"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SSDP45V",
+      "fuel": "diesel",
+      "power": {
+        "min": 42.5,
+        "max": 42.5,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "Perkins 404J-E22TA"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "emission": [
+        "EU Stage V"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SSDP60V",
+      "fuel": "diesel",
+      "power": {
+        "min": 56,
+        "max": 56,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "Perkins 904J-E28TA"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "emission": [
+        "EU Stage V"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SSDK12M",
+      "fuel": "diesel",
+      "power": {
+        "min": 12,
+        "max": 12,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "engineMakes": [
+        "Kubota"
+      ],
+      "engineModels": [
+        "Kubota V1505"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "emission": [
+        "EU Stage V"
+      ],
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SSDK16M",
+      "fuel": "diesel",
+      "power": {
+        "min": 16,
+        "max": 16,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "engineMakes": [
+        "Kubota"
+      ],
+      "engineModels": [
+        "Kubota D1703"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "emission": [
+        "EU Stage V"
+      ],
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SSDK20M",
+      "fuel": "diesel",
+      "power": {
+        "min": 19,
+        "max": 19,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "engineMakes": [
+        "Kubota"
+      ],
+      "engineModels": [
+        "Kubota V2203"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "emission": [
+        "EU Stage V"
+      ],
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SSDY21M",
+      "fuel": "diesel",
+      "power": {
+        "min": 21,
+        "max": 21,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "engineMakes": [
+        "Yanmar"
+      ],
+      "engineModels": [
+        "Yanmar 4TNV88"
+      ],
+      "alternatorMakes": [
+        "Mecc Alte"
+      ],
+      "emission": [
+        "EU Stage V"
+      ],
+      "src": [
+        2002
+      ]
     }
   ],
   "certifications": [],
@@ -81,10 +606,165 @@
         "SSDP30-70 INTELILITE"
       ],
       "file": "sources/stephill/3002.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.stephill-generators.co.uk/products/super-silent-diesel-1500rpm-35kva---140kva-stage-v%20eu",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Super Silent Diesel 1500rpm 29.3kW - 136.8kVA EU Stage V | Stephill Generators",
+        "33.8kVA / 27.0kW - Perkins 404J-E22T EU Stage V Compliant water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "136.8kVA / 109.5kW - Perkins 1204J-E44TAG2 EU Stage V Compliant water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "29.3kW - Yanmar 4TNV98C EU Stage V Compliant water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "38.5kVA / 30.8kW - Yanmar 4TNV98C EU Stage V Compliant water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "42.5kVA / 34.0kW - Perkins 404J-E22TA EU Stage V Compliant water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "47.5kVA / 38.0kW - Yanmar 4TNV98CT EU Stage V Compliant water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "56.0kVA / 44.8kW - Perkins 904J-E28TA EU Stage V Compliant water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "64.0kVA / 53.1kW - Perkins 904J-E36TAG3 EU Stage V Compliant water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator."
+      ],
+      "file": "sources/stephill/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.stephill-generators.co.uk/products/super-silent-diesel-Kubota-yanmar-range-1500rpm-generator-yanmar%20generator-kubota%20generator",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "12.0 to 21.0KVA Diesel Generators – Kubota & Yanmar EU Stage V emission compliant diesel engines close coupled to Mecc Alte brushless maintenance free alternators. Multi-phase, close fitting acoustic canopies, long run bunded fuel tanks. Versatile generators for hire fleets, construction, outdoor event, utility or standby power applications.",
+        "12.0kVA / 9.6kW - Kubota V1505 EU Stage V emission compliant 4 cylinder water cooled diesel engine close coupled to a Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "21.0kVA / 16.9kW - Yanmar 4TNV88 EU Stage V emission compliant 4 cylinder water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "16.0kVA / 12.7kW - Kubota D1703 EU Stage V emission compliant 3 cylinder water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "19.0kVA / 15.2kW - Kubota V2203 EU Stage V emission compliant 4 cylinder water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator."
+      ],
+      "file": "sources/stephill/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://www.stephill-generators.co.uk/products/super-silent-diesel-standby-1500rpm-p%20range",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "30.0 to 115.0KVA Diesel generators - Perkins engines close coupled to Mecc Alte brushless maintenance free alternators. Un-regulated engines for stationary, permanently fixed standby applications. Close fitting acoustic canopies complete with long run bunded fuel tanks.",
+        "115.0kVA / 92.0kW - 400V 3Ph Generator for stationary, permanently fixed standby use. Close fitting acoustic canopy, fully bunded long range tank with connections for remote fuel supply,..."
+      ],
+      "file": "sources/stephill/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://www.stephill-generators.co.uk/products/super-silent-diesel-standby-1500rpm-p%20range/SSDP115%20-%20Standby%20Generator",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "115.0kVA / 92.0kW - Perkins 1104C-44TAG2 water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "| OUTPUT: | 115.0kVA / 92.0kW",
+        "| ENGINE: | Perkins 1104C-E44TAG2"
+      ],
+      "file": "sources/stephill/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://www.stephill-generators.co.uk/products/super-silent-diesel-standby-1500rpm-p%20range/SSDP70-diesel%20generator",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "67.0kVA / 53.6kW - Perkins 1103A-33TG2 water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "| OUTPUT: | 67.0kVA / 53.6kW",
+        "| ENGINE: | Perkins 1103A-33TG2"
+      ],
+      "file": "sources/stephill/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://www.stephill-generators.co.uk/products/super-silent-diesel-standby-1500rpm-p%20range/SSDP50-standby%20generator",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "50.0kVA / 40.0kW - Perkins 1103A-33TG1 water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "| OUTPUT: | 50.0kVA / 40.0kW",
+        "| ENGINE: | Perkins 1103A-33TG1"
+      ],
+      "file": "sources/stephill/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://www.stephill-generators.co.uk/products/super-silent-diesel-standby-1500rpm-p%20range/SSDP33-",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "33.0kVA / 26.4kW - Perkins 1103A-33G water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "| OUTPUT: | 33.0kVA / 26.4kW",
+        "| ENGINE: | Perkins 1103A-33G"
+      ],
+      "file": "sources/stephill/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://www.stephill-generators.co.uk/products/super-silent-diesel-1500rpm-35kva---140kva-stage-v%20eu/SSDP140V-stage%20V%20-%20diesel%20generator",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| OUTPUT: | 136.8kVA / 109.5kW",
+        "| ENGINE: | Perkins 1204J-E44TAG2"
+      ],
+      "file": "sources/stephill/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://www.stephill-generators.co.uk/contentfiles/SG-392.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Standby Power       136.8 kVA / 109.5 kW                Cylinders                  4",
+        "Prime Power         123.7 kVA / 98.9 kW                 Combustion System          Direct Injection",
+        "Voltage             400/230                             Engine                     Perkins 1204J-E44TTAG2",
+        "Alternator          Meccalte ECP34-2M4                  Cooling                    Water Cooled",
+        "                          DEEP SEA ELECTRONINCS 7310          START/STOP CONTROL MODULE"
+      ],
+      "file": "sources/stephill/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://www.stephill-generators.co.uk/contentfiles/SG-438.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Standby Power       64.1 kVA / 51.3 kW                     Cylinders                  4",
+        "Prime Power         58.1 kVA / 46.4 kW                     Combustion System          Direct Injection - Common    Rail",
+        "Voltage             400/230                                Engine                     Perkins 904J-E36TAG3",
+        "Alternator          Meccalte ECP32-2M4                     Cooling                    Water Cooled",
+        "                          DEEP SEA ELECTRONINCS 7310        START/STOP CONTROL MODULE"
+      ],
+      "file": "sources/stephill/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://www.stephill-generators.co.uk/contentfiles/SG-360.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Standby Power       47.5 kVA / 38.0 kW                     Cylinders                  4",
+        "Prime Power         43.4 kVA / 34.7 kW                     Combustion System          Direct Injection - Common Rail",
+        "Voltage             400/230                                Engine                     Yanmar 4TNV98CT-IYE",
+        "Alternator          Meccalte ECP32-2S4 C                   Cooling                    Water Cooled",
+        "                          DEEP SEA ELECTRONINCS 7310        START/STOP CONTROL MODULE"
+      ],
+      "file": "sources/stephill/2011.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-04",
+  "checkedAt": "2026-11-14",
   "checkedBy": "claude (rà nhà cung cấp G7, 04/11)",
   "controllers": [
     {
@@ -149,6 +829,200 @@
       "src": [
         3001,
         3002
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7310",
+      "text": "DEEP SEA ELECTRONINCS 7310",
+      "line": "                          DEEP SEA ELECTRONINCS 7310          START/STOP CONTROL MODULE",
+      "src": [
+        2009
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7310",
+      "text": "DEEP SEA ELECTRONINCS 7310",
+      "line": "                          DEEP SEA ELECTRONINCS 7310        START/STOP CONTROL MODULE",
+      "src": [
+        2010
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7310",
+      "text": "DEEP SEA ELECTRONINCS 7310",
+      "line": "                          DEEP SEA ELECTRONINCS 7310        START/STOP CONTROL MODULE",
+      "src": [
+        2011
+      ]
+    }
+  ],
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Super Silent Diesel 1500rpm 29.3kW - 136.8kVA EU Stage V",
+      "header": [
+        "Super Silent Diesel 1500rpm 29.3kW - 136.8kVA EU Stage V | Stephill Generators"
+      ],
+      "rows": [
+        "29.3kW - Yanmar 4TNV98C EU Stage V Compliant water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "33.8kVA / 27.0kW - Perkins 404J-E22T EU Stage V Compliant water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "38.5kVA / 30.8kW - Yanmar 4TNV98C EU Stage V Compliant water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "42.5kVA / 34.0kW - Perkins 404J-E22TA EU Stage V Compliant water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "47.5kVA / 38.0kW - Yanmar 4TNV98CT EU Stage V Compliant water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "56.0kVA / 44.8kW - Perkins 904J-E28TA EU Stage V Compliant water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "64.0kVA / 53.1kW - Perkins 904J-E36TAG3 EU Stage V Compliant water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "136.8kVA / 109.5kW - Perkins 1204J-E44TAG2 EU Stage V Compliant water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator."
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Super Silent Diesel Kubota & Yanmar Range 1500rpm 12.0 to 21.0kVA EU Stage V",
+      "header": [
+        "Super Silent Diesel Kubota & Yanmar Range 1500rpm 12.0 to 21.0kVA EU Stage V | Stephill Generators"
+      ],
+      "rows": [
+        "12.0kVA / 9.6kW - Kubota V1505 EU Stage V emission compliant 4 cylinder water cooled diesel engine close coupled to a Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "16.0kVA / 12.7kW - Kubota D1703 EU Stage V emission compliant 3 cylinder water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "19.0kVA / 15.2kW - Kubota V2203 EU Stage V emission compliant 4 cylinder water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "21.0kVA / 16.9kW - Yanmar 4TNV88 EU Stage V emission compliant 4 cylinder water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator."
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "SSDP115",
+      "header": [
+        "| OUTPUT: | 115.0kVA / 92.0kW"
+      ],
+      "rows": [
+        "115.0kVA / 92.0kW - Perkins 1104C-44TAG2 water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "| ENGINE: | Perkins 1104C-E44TAG2",
+        "| HP/CYLINDERS: | 4",
+        "| FUEL TANK: | 470 Litres",
+        "| RUN TIME: | 24.0 Hours @ 75% Load",
+        "| NOISE LEVEL: | 69dBA @ 7 metres",
+        "| DIMENSIONS: | L2710 x W1100 x H1650mm",
+        "| WEIGHT: | 1900 KG"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "SSDP70",
+      "header": [
+        "| OUTPUT: | 67.0kVA / 53.6kW"
+      ],
+      "rows": [
+        "67.0kVA / 53.6kW - Perkins 1103A-33TG2 water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "| ENGINE: | Perkins 1103A-33TG2",
+        "| HP/CYLINDERS: | 79.5 / 3",
+        "| FUEL TANK: | 360 Litres",
+        "| RUN TIME: | 34.0 Hours",
+        "| NOISE LEVEL: | 65dBA @ 7 metres",
+        "| DIMENSIONS: | L2500 x W1050 x H1740mm (MK4)",
+        "| WEIGHT: | MGW 1766 KG"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "SSDP50",
+      "header": [
+        "| OUTPUT: | 50.0kVA / 40.0kW"
+      ],
+      "rows": [
+        "50.0kVA / 40.0kW - Perkins 1103A-33TG1 water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "| ENGINE: | Perkins 1103A-33TG1",
+        "| HP/CYLINDERS: | 61.1 / 3",
+        "| FUEL TANK: | 350.0 Litres",
+        "| RUN TIME: | 42.0 Hours",
+        "| NOISE LEVEL: | 63dBA @ 7 metres",
+        "| DIMENSIONS: | L2450 x W1000 x H1490mm",
+        "| WEIGHT: | 1375 KG KG"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "SSDP33",
+      "header": [
+        "| OUTPUT: | 33.0kVA / 26.4kW"
+      ],
+      "rows": [
+        "33.0kVA / 26.4kW - Perkins 1103A-33G water cooled diesel engine close coupled to Mecc Alte brushless maintenance-free electronically regulated alternator.",
+        "| ENGINE: | Perkins 1103A-33G",
+        "| HP/CYLINDERS: | 40.2 / 3",
+        "| FUEL TANK: | 320 Litres",
+        "| RUN TIME: | 55 hours @ 75% Load",
+        "| NOISE LEVEL: | 67dBA @ 7 metres",
+        "| DIMENSIONS: | L2150 x W1050 x H1580mm",
+        "| WEIGHT: | 1300 KG KG"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "SSDP140V",
+      "header": [
+        "| OUTPUT: | 136.8kVA / 109.5kW"
+      ],
+      "rows": [
+        "| ENGINE: | Perkins 1204J-E44TAG2",
+        "| HP/CYLINDERS: | 4",
+        "| FUEL TANK: | 500 Litres",
+        "| RUN TIME: | 24 Hours @ 75% Load",
+        "| NOISE LEVEL: | 72dBA @ 7 metres*",
+        "| DIMENSIONS: | L3000 x W1200 x H2115mm",
+        "| WEIGHT: | 2410 KG"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "SSDP140V spec sheet",
+      "header": [
+        "Voltage             400/230                             Engine                     Perkins 1204J-E44TTAG2"
+      ],
+      "rows": [
+        "Phase               3                                   Emissions Certified        EU Stage V Compliant",
+        "Frequency           50Hz                                After Treatment            DOC, DPF & SCR (DEF/AdBlue)",
+        "Standby Power       136.8 kVA / 109.5 kW                Cylinders                  4",
+        "Prime Power         123.7 kVA / 98.9 kW                 Combustion System          Direct Injection",
+        "Alternator          Meccalte ECP34-2M4                  Cooling                    Water Cooled",
+        "Fuel tank capacity  500 Litres                          Rpm                        1500",
+        "Autonomy 100% load 18 Hours       27 Litres per hour    Governor Type              Electronic Control",
+        "Autonomy 75% load   24 Hours      20.2 Litres per hour  Aspiration                 Turbocharged & Chargecooled"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "SSDP65V spec sheet",
+      "header": [
+        "Voltage             400/230                                Engine                     Perkins 904J-E36TAG3"
+      ],
+      "rows": [
+        "Phase               3                                      Emissions Certified        EU Stage V Compliant",
+        "Frequency           50Hz                                   After Treatment            DOC & DPF",
+        "Standby Power       64.1 kVA / 51.3 kW                     Cylinders                  4",
+        "Prime Power         58.1 kVA / 46.4 kW                     Combustion System          Direct Injection - Common    Rail",
+        "Alternator          Meccalte ECP32-2M4                     Cooling                    Water Cooled",
+        "Fuel tank capacity  360 Litres                             Rpm                        1500",
+        "Autonomy 100% load  TBC                                    Governor Type              Electronic Control",
+        "Autonomy 75% load   TBC                                    Aspiration                 Turbocharged aftercooled"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "SSDY50V spec sheet",
+      "header": [
+        "Voltage             400/230                                Engine                     Yanmar 4TNV98CT-IYE"
+      ],
+      "rows": [
+        "Phase               3                                      Emissions Certified        EU Stage V Compliant",
+        "Frequency           50Hz                                   After Treatment            DOC & DPF",
+        "Standby Power       47.5 kVA / 38.0 kW                     Cylinders                  4",
+        "Prime Power         43.4 kVA / 34.7 kW                     Combustion System          Direct Injection - Common Rail",
+        "Alternator          Meccalte ECP32-2S4 C                   Cooling                    Water Cooled",
+        "Fuel tank capacity  310 Litres                             Rpm                        1500",
+        "Autonomy 100% load  27 Hours 11.6 Litres per hour          Governor Type              Electronic Control",
+        "Autonomy 75% load   35 Hours 8.7 Litres per hour           Aspiration                 Turbo"
       ]
     }
   ]
