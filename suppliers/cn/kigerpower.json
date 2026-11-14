@@ -35,6 +35,237 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG10000DE",
+      "fuel": "diesel",
+      "engineModels": [
+        "KG1105F"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 10,
+        "max": 10,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG10000DWE",
+      "fuel": "diesel",
+      "engineModels": [
+        "KG1103F"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 10,
+        "max": 10,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG10000LE",
+      "fuel": "diesel",
+      "engineModels": [
+        "KG1105F"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 10,
+        "max": 10,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG12000DWE",
+      "fuel": "diesel",
+      "engineModels": [
+        "KG1105F"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 11,
+        "max": 11,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG13000LE",
+      "fuel": "diesel",
+      "engineModels": [
+        "2V88"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 10,
+        "max": 10,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG15000DE",
+      "fuel": "diesel",
+      "engineModels": [
+        "2V92"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 12,
+        "max": 12,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG15000LE",
+      "fuel": "diesel",
+      "engineModels": [
+        "2V92"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 12,
+        "max": 12,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG15000SiE",
+      "fuel": "diesel",
+      "engineModels": [
+        "2V95F"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 12,
+        "max": 12,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG9900LiE",
+      "fuel": "diesel",
+      "engineModels": [
+        "KG1100F"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 10,
+        "max": 10,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG13000E",
+      "fuel": "gasoline",
+      "engineModels": [
+        "2V78FD"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 10,
+        "max": 10,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "KG15000E",
+      "fuel": "gasoline",
+      "engineModels": [
+        "2V80FD"
+      ],
+      "engineMakes": [],
+      "power": {
+        "min": 12,
+        "max": 12,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
     }
   ],
   "certifications": [
@@ -72,9 +303,439 @@
         "© 2026 Ningde Kinger Electrical Machinery CO.,LTD. Bảo lưu mọi quyền."
       ],
       "file": "sources/kigerpower/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://kin-power.com/products/kg10000de-10kw-silent-diesel-generator-set/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Rated Power (kVA) | 10",
+        "| Engine | Model | KG1105F",
+        "| Model | KG10000DE"
+      ],
+      "file": "sources/kigerpower/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://kin-power.com/products/10kw-water-cooling-silent-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Rated Power (kVA) | 10",
+        "| Engine | Model | KG1103F",
+        "| Model | KG10000DWE"
+      ],
+      "file": "sources/kigerpower/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://kin-power.com/products/kg10000le-10kw-portable-diesel-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Rated Power (kVA) | 10",
+        "| Engine | Model | KG1105F",
+        "| Model | KG10000LE"
+      ],
+      "file": "sources/kigerpower/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://kin-power.com/products/11kw-water-cooling-silent-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Rated Power (kVA) | 11",
+        "| Engine | Model | KG1105F",
+        "| Model | KG12000DWE"
+      ],
+      "file": "sources/kigerpower/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://kin-power.com/products/kg13000le-10kw-portable-diesel-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Rated Power (kVA) | 10",
+        "| Engine | Model | 2V88",
+        "| Model | KG13000LE"
+      ],
+      "file": "sources/kigerpower/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://kin-power.com/products/kg15000de-12kw-silent-diesel-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Rated Power (kVA) | 12",
+        "| Engine | Model | 2V92",
+        "| Model | KG15000DE"
+      ],
+      "file": "sources/kigerpower/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://kin-power.com/products/kg15000le-12kw-portable-diesel-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Rated Power (kVA) | 12",
+        "| Engine | Model | 2V92",
+        "| Model | KG15000LE"
+      ],
+      "file": "sources/kigerpower/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://kin-power.com/products/kg15000sie-13kw-diesel-inverter-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Rated Power | 12kW",
+        "| Engine Model | 2V95F",
+        "| Model | KG15000SiE"
+      ],
+      "file": "sources/kigerpower/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://kin-power.com/products/kg9900lie-10-5kw-diesel-inverter-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Rated Power | 10kW",
+        "| Engine Model | KG1100F",
+        "| Model | KG9900LiE"
+      ],
+      "file": "sources/kigerpower/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://kin-power.com/products/kg13000e-10kw-portable-gasoline-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Rated Power (VA) | 10000",
+        "| Engine | Model | 2V78FD",
+        "| Model | KG13000E",
+        "KG13000E 10kw portable gasoline generator"
+      ],
+      "file": "sources/kigerpower/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://kin-power.com/products/kg15000e-12kw-portable-gasoline-generator/",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "| Rated Power (VA) | 12000",
+        "| Engine | Model | 2V80FD",
+        "| Model | KG15000E",
+        "KG15000E 12kw portable gasoline generator"
+      ],
+      "file": "sources/kigerpower/2011.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-10-28",
-  "checkedBy": "claude-code"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "KG10000DE - Specifications",
+      "header": [
+        "| Generator | Frequency (Hz) | 50"
+      ],
+      "rows": [
+        "| Max. Power (kVA) | 11",
+        "| Rated Power (kVA) | 10",
+        "| DC Output | 12V/8.3A",
+        "| Rated Voltage (V) | 220",
+        "| Power Factor (cos φ) | 1",
+        "| Phase | Single-Phase",
+        "| Excitation System | Transistorized self-excitation Constant(AVR)",
+        "| Engine | Model | KG1105F",
+        "| Type | single cylinder,4-stroke, air-cooled,direct-injection",
+        "| Displacement (cc) | 733",
+        "| Rated Output (ps/rpm) | 20/3600",
+        "| Fuel Tank Capacity (L) | 15",
+        "| Lube Oil Capacity (L) | 2.0",
+        "| Package | Dimensions (L×W×H, mm) | 1130*640*860",
+        "| Net Weight (kg) | 220",
+        "| Model | KG10000DE"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "KG10000DWE - Specifications",
+      "header": [
+        "| Generator | Frequency (Hz) | 50"
+      ],
+      "rows": [
+        "| Max. Power (kVA) | 11",
+        "| Rated Power (kVA) | 10",
+        "| DC Output | 12V/8.3A",
+        "| Rated Voltage (V) | 220",
+        "| Power Factor (cos φ) | 1",
+        "| Phase | Single-Phase",
+        "| Excitation System | Transistorized self-excitation Constant(AVR)",
+        "| Engine | Model | KG1103F",
+        "| Type | single cylinder,4-stroke, water-cooled,direct-injection",
+        "| Displacement (cc) | 733",
+        "| Rated Output (ps/rpm) | 18/3600",
+        "| Fuel Tank Capacity (L) | 25",
+        "| Lube Oil Capacity (L) | 2.0",
+        "| Water Capacity (L) | 3.5",
+        "| Package | Dimensions (L×W×H, mm) | 1240*700*900",
+        "| Net Weight (kg) | 240",
+        "| Model | KG10000DWE"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "KG10000LE - Specifications",
+      "header": [
+        "| Generator | Frequency (Hz) | 50"
+      ],
+      "rows": [
+        "| Max. Power (kVA) | 11",
+        "| Rated Power (kVA) | 10",
+        "| DC Output | 12V/8.3A",
+        "| Rated Voltage (V) | 220",
+        "| Power Factor (cos φ) | 1",
+        "| Phase | Single-Phase",
+        "| Excitation System | Transistorized self-excitation Constant(AVR)",
+        "| Engine | Model | KG1105F",
+        "| Type | single cylinder,4-stroke, air-cooled,direct-injection",
+        "| Displacement (cc) | 762",
+        "| Rated Output (ps/rpm) | 20/3600",
+        "| Fuel Tank Capacity (L) | 12.5",
+        "| Lube Oil Capacity (L) | 2",
+        "| Package | Dimensions (L×W×H, mm) | 770*540*700",
+        "| Net Weight (kg) | 182",
+        "| Model | KG10000LE"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "KG12000DWE - Specifications",
+      "header": [
+        "| Generator | Frequency (Hz) | 50"
+      ],
+      "rows": [
+        "| Max. Power (kVA) | 12",
+        "| Rated Power (kVA) | 11",
+        "| DC Output | 12V/8.3A",
+        "| Rated Voltage (V) | 220",
+        "| Power Factor (cos φ) | 1",
+        "| Phase | Single-Phase",
+        "| Excitation System | Transistorized self-excitation Constant(AVR)",
+        "| Engine | Model | KG1105F",
+        "| Type | single cylinder,4-stroke, water-cooled,direct-injection",
+        "| Displacement (cc) | 762",
+        "| Rated Output (ps/rpm) | 20/3600",
+        "| Fuel Tank Capacity (L) | 25",
+        "| Lube Oil Capacity (L) | 2.0",
+        "| Water Capacity (L) | 3.5",
+        "| Package | Dimensions (L×W×H, mm) | 1240*700*900",
+        "| Net Weight (kg) | 246",
+        "| Model | KG12000DWE"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "KG13000LE - Specifications",
+      "header": [
+        "| Generator | Frequency (Hz) | 50"
+      ],
+      "rows": [
+        "| Max. Power (kVA) | 11",
+        "| Rated Power (kVA) | 10",
+        "| DC Output | 12V/8.3A",
+        "| Rated Voltage (V) | 220",
+        "| Power Factor (cos φ) | 1",
+        "| Phase | Single-Phase",
+        "| Excitation System | Transistorized self-excitation Constant(AVR)",
+        "| Engine | Model | 2V88",
+        "| Type | Two-cylinder, V-twin, air-cooled,4-stroke, direct injection",
+        "| Displacement (cc) | 875",
+        "| Rated Output (ps/rpm) | 21/3600",
+        "| Fuel Tank Capacity (L) | 30",
+        "| Lube Oil Capacity (L) | 3.8",
+        "| Package | Dimensions (L×W×H, mm) | 925*600*810",
+        "| Net Weight (kg) | 185",
+        "| Model | KG13000LE"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "KG15000DE - Specifications",
+      "header": [
+        "| Generator | Frequency (Hz) | 50"
+      ],
+      "rows": [
+        "| Max. Power (kVA) | 14",
+        "| Rated Power (kVA) | 12",
+        "| DC Output | 12V/8.3A",
+        "| Rated Voltage (V) | 220",
+        "| Power Factor (cos φ) | 1",
+        "| Phase | Single-Phase",
+        "| Excitation System | Transistorized self-excitation Constant(AVR)",
+        "| Engine | Model | 2V92",
+        "| Type | Two-cylinder,V-twin, air-cooled,4-stroke, direct injection",
+        "| Displacement (cc) | 997",
+        "| Rated Output (ps/rpm) | 22/3600",
+        "| Fuel Tank Capacity (L) | 30",
+        "| Lube Oil Capacity (L) | 3.8",
+        "| Package | Dimensions (L×W×H, mm) | 1200*720*860",
+        "| Net Weight (kg) | 260",
+        "| Model | KG15000DE"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "KG15000LE - Specifications",
+      "header": [
+        "| Generator | Frequency (Hz) | 50"
+      ],
+      "rows": [
+        "| Max. Power (kVA) | 13",
+        "| Rated Power (kVA) | 12",
+        "| DC Output | 12V/8.3A",
+        "| Rated Voltage (V) | 220",
+        "| Power Factor (cos φ) | 1",
+        "| Phase | Single-Phase",
+        "| Excitation System | Transistorized self-excitation Constant(AVR)",
+        "| Engine | Model | 2V92",
+        "| Type | Two-cylinder, V-twin, air-cooled,4-stroke, direct injection",
+        "| Displacement (cc) | 997",
+        "| Rated Output (ps/rpm) | 22/3600",
+        "| Fuel Tank Capacity (L) | 30",
+        "| Lube Oil Capacity (L) | 3.8",
+        "| Package | Dimensions (L×W×H, mm) | 925*600*810",
+        "| Net Weight (kg) | 193",
+        "| Model | KG15000LE"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "KG15000SiE - Specifications",
+      "header": [
+        "| Diesel Inverter Generator — high-power SiE series | Max. Power | 13kW"
+      ],
+      "rows": [
+        "| Rated Power | 12kW",
+        "| Engine Model | 2V95F",
+        "| Max. Power Output (HP) | 29HP",
+        "| Displacement | 1247cc",
+        "| Gross Weight | 158kg",
+        "| Oil Capacity | 2.3L",
+        "| Dimensions (L×W×H) | 950X700X890mm",
+        "| Rated Speed | 3600rpm",
+        "| Frequency | 50Hz / 60Hz",
+        "| Voltage | 110V / 220V / 230V / 380V / 400V",
+        "| DC Output | 12V / 8.3A",
+        "| Power Factor (cos φ) | 1",
+        "| Noise Level (at 7m) | 86dB",
+        "| Starting System | Electric Start",
+        "| Type | Air-cooled, direct injection / Two-cylinder, V-twin",
+        "| Fuel Tank | 24L",
+        "| Model | KG15000SiE"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "KG9900LiE - Specifications",
+      "header": [
+        "| Diesel Inverter Generator — L series | Max. Power | 10.5kW"
+      ],
+      "rows": [
+        "| Rated Power | 10kW",
+        "| Engine Model | KG1100F",
+        "| Max. Power Output (HP) | 15HP",
+        "| Displacement | 660cc",
+        "| Gross Weight | 137kg",
+        "| Oil Capacity | 1.65L",
+        "| Dimensions (L×W×H) | 820X600X790mm",
+        "| Rated Speed | 3600rpm",
+        "| Frequency | 50Hz / 60Hz",
+        "| Voltage | 110V / 220V / 230V / 380V / 400V",
+        "| DC Output | 12V / 8.3A",
+        "| Power Factor (cos φ) | 1 / 0.8",
+        "| Noise Level (at 7m) | 85dB",
+        "| Starting System | Electric Start",
+        "| Type | Single cylinder vertical, 4-stroke, air-cooled",
+        "| Fuel Tank | 12.5L",
+        "| Model | KG9900LiE"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "KG13000E - Specifications",
+      "header": [
+        "| Generator | Frequency (Hz) | 50"
+      ],
+      "rows": [
+        "| Voltage (V) | 220",
+        "| Max. Power (VA) | 11000",
+        "| Rated Power (VA) | 10000",
+        "| DC Output | 12V/8.3A",
+        "| Power Factor (cos φ) | 1",
+        "| Engine | Model | 2V78FD",
+        "| Max. Power Output (HP) | 21/3600rpm",
+        "| Displacement (cc) | 678",
+        "| Noise Level (at 7m) | 71dB",
+        "| Starting System | Electric Start",
+        "| Type | Force air-cooled,4stroke,OHV",
+        "| Ignition System | Non-contact transistorized ignition(T.C.I.)",
+        "| Fuel Tank Capacity (L) | 30",
+        "| Lube Oil Capacity (L) | 1.4",
+        "| Package | Dimensions (L×W×H, mm) | 970*600*780",
+        "| Gross Weight (kg) | 134",
+        "| Container Load (20FT/40HQ) | 60/132",
+        "| Model | KG13000E"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "KG15000E - Specifications",
+      "header": [
+        "| Generator | Frequency (Hz) | 50"
+      ],
+      "rows": [
+        "| Voltage (V) | 220",
+        "| Max. Power (VA) | 13000",
+        "| Rated Power (VA) | 12000",
+        "| DC Output | 12V/8.3A",
+        "| Power Factor (cos φ) | 1",
+        "| Engine | Model | 2V80FD",
+        "| Max. Power Output (HP) | 25/3600rpm",
+        "| Displacement (cc) | 764",
+        "| Noise Level (at 7m) | 71dB",
+        "| Starting System | Electric Start",
+        "| Type | Force air-cooled,4stroke,OHV",
+        "| Ignition System | Non-contact transistorized ignition(T.C.I.)",
+        "| Fuel Tank Capacity (L) | 30",
+        "| Lube Oil Capacity (L) | 1.8",
+        "| Package | Dimensions (L×W×H, mm) | 980*600*780",
+        "| Gross Weight (kg) | 162",
+        "| Container Load (20FT/40HQ) | 60/132",
+        "| Model | KG15000E"
+      ]
+    }
+  ]
 }
