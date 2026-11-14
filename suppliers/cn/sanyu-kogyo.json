@@ -42,6 +42,406 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "SQP22",
+      "fuel": "diesel",
+      "types": [],
+      "engineMakes": [
+        "Kubota"
+      ],
+      "engineModels": [
+        "D1105"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 22,
+        "max": 22,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SQP30",
+      "fuel": "diesel",
+      "types": [],
+      "engineMakes": [
+        "Kubota"
+      ],
+      "engineModels": [
+        "V1505-H-BS"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 30,
+        "max": 30,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SQP38",
+      "fuel": "diesel",
+      "types": [],
+      "engineMakes": [
+        "Kubota"
+      ],
+      "engineModels": [
+        "V1505-T"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 38,
+        "max": 38,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SQP53",
+      "fuel": "diesel",
+      "types": [],
+      "engineMakes": [
+        "Mitsubishi Heavy Industries"
+      ],
+      "engineModels": [
+        "S4S9"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 53.5,
+        "max": 53.5,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SQP82",
+      "fuel": "diesel",
+      "types": [],
+      "engineMakes": [
+        "Mitsubishi Heavy Industries"
+      ],
+      "engineModels": [
+        "S6S9"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 82,
+        "max": 82,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SQPF60",
+      "fuel": "diesel",
+      "types": [],
+      "engineMakes": [
+        "Isuzu"
+      ],
+      "engineModels": [
+        "A-4BG1T"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 60,
+        "max": 60,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SQPF100",
+      "fuel": "diesel",
+      "types": [],
+      "engineMakes": [
+        "Isuzu"
+      ],
+      "engineModels": [
+        "DD-6BG1T"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SQPF150H",
+      "fuel": "diesel",
+      "types": [],
+      "engineMakes": [
+        "Hino"
+      ],
+      "engineModels": [
+        "J08C-U"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SQPF150M",
+      "fuel": "diesel",
+      "types": [],
+      "engineMakes": [
+        "Mitsubishi Fuso"
+      ],
+      "engineModels": [
+        "6D16-T"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 150,
+        "max": 150,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SQPF215",
+      "fuel": "diesel",
+      "types": [],
+      "engineMakes": [
+        "Mitsubishi Fuso"
+      ],
+      "engineModels": [
+        "6D24-T"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 215,
+        "max": 215,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SQPF250",
+      "fuel": "diesel",
+      "types": [],
+      "engineMakes": [
+        "Mitsubishi Fuso"
+      ],
+      "engineModels": [
+        "6D24-TC"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 250,
+        "max": 250,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SQPF300",
+      "fuel": "diesel",
+      "types": [],
+      "engineMakes": [
+        "Komatsu"
+      ],
+      "engineModels": [
+        "SA6D125"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SQPF350",
+      "fuel": "diesel",
+      "types": [],
+      "engineMakes": [
+        "Komatsu"
+      ],
+      "engineModels": [
+        "SA6D125"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 350,
+        "max": 350,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SQPF420",
+      "fuel": "diesel",
+      "types": [],
+      "engineMakes": [
+        "Komatsu"
+      ],
+      "engineModels": [
+        "SA6D140A"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 420,
+        "max": 420,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SQPF550",
+      "fuel": "diesel",
+      "types": [],
+      "engineMakes": [
+        "Komatsu"
+      ],
+      "engineModels": [
+        "SA6D170B"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 550,
+        "max": 550,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "SQPF650",
+      "fuel": "diesel",
+      "types": [],
+      "engineMakes": [
+        "Komatsu"
+      ],
+      "engineModels": [
+        "SA6D170A"
+      ],
+      "alternatorMakes": [],
+      "power": {
+        "min": 650,
+        "max": 650,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
     }
   ],
   "certifications": [],
@@ -60,9 +460,66 @@
         "防災用発電装置の紹介"
       ],
       "file": "sources/sanyu-kogyo/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "http://www.sanyu-group.com/dynamo/pdf/SQP_SQPF_SCF_2022_06.pdf",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "SQP                        22                 30                     38                     53                     82",
+        "出                         kVA        20/22              24/30                  33/38                  53/53.5                80/82",
+        "機  関  名  称                 クボタ D1105          クボタ V1505-H-BS         クボタ V1505-T      三菱重工          S4S9          三菱重工      S6S9",
+        "SQPF                     60                         100                      150H        150M",
+        "kVA     50/60                 80/100                        125/150     130/150",
+        "機  関  名  称                  いすゞ A-4BG1T           いすゞ  DD-6BG1T                 日野  J08C-U  三菱ふそう 6D16-T",
+        "SQPF                   215                250           300                350            420            550                650",
+        "kVA     185/215            220/250       250/300            300/350        380/420        450/550            550/650",
+        "機  関  名  称                三菱ふそう 6D24-T      三菱ふそう 6D24-TC  コマツ        SA6D125                コマツ SA6D140A   コマツ SA6D170B      コマツ SA6D170A"
+      ],
+      "file": "sources/sanyu-kogyo/2001.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-04",
-  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "SQP シリーズ 機種別 仕様一覧",
+      "header": [
+        "                       SQP                        22                 30                     38                     53                     82"
+      ],
+      "rows": [
+        "             出                         kVA        20/22              24/30                  33/38                  53/53.5                80/82",
+        "             力                         kVA        18/20              24/27                  30/35                  47.5/48.0              73/75",
+        "                    機  関  名  称                 クボタ D1105          クボタ V1505-H-BS         クボタ V1505-T      三菱重工          S4S9          三菱重工      S6S9"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "SQPF シリーズ 機種別 仕様一覧 (60–150)",
+      "header": [
+        "                             SQPF                     60                         100                      150H        150M"
+      ],
+      "rows": [
+        "                                              kVA     50/60                 80/100                        125/150     130/150",
+        "                                              kVA     50/60                 80/100                        125/150     115/135",
+        "                          機  関  名  称                  いすゞ A-4BG1T           いすゞ  DD-6BG1T                 日野  J08C-U  三菱ふそう 6D16-T"
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "SQPF シリーズ 機種別 仕様一覧 (215–650)",
+      "header": [
+        "                        SQPF                   215                250           300                350            420            550                650"
+      ],
+      "rows": [
+        "                                       kVA     185/215            220/250       250/300            300/350        380/420        450/550            550/650",
+        "                                       kVA     180/210            200/225       250/300            280/315        380/420        450/550            500/625",
+        "                     機  関  名  称                三菱ふそう 6D24-T      三菱ふそう 6D24-TC  コマツ        SA6D125                コマツ SA6D140A   コマツ SA6D170B      コマツ SA6D170A"
+      ]
+    }
+  ]
 }
