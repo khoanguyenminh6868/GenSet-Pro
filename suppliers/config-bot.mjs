@@ -65,7 +65,16 @@ const SN = globalThis.GenbidSpecNorm;
 // distance for noise, open / canopy for size and weight, the stroke for bore) is not compared: "Chưa rõ" (a candidate stays,
 // with no points off). One that has them is compared in its own unit (no conversion beyond web/conversions.js: cc, cm, t
 // stay unconverted, so not compared with L, mm, kg). Off (default): every result is the same as before.
-export const specNormOn = () => process.env.GENBID_SPEC_NORM === "1";
+// By group, for Khoa to turn on one part at a time: GENBID_SPEC_NORM=fuel,disp,other ("1" = all). fuel: fuel consumption
+// (candidates, fuelChecks); disp: displacement and bore × stroke (candidates, makerSheetChecks); other: cylinders,
+// compression, weight, size, noise, engine power. specNormOn() with no group: any group on.
+const NORM_GROUPS = ["fuel", "disp", "other"];
+export const specNormOn = (group) => {
+  const v = String(process.env.GENBID_SPEC_NORM || "").trim();
+  if (!v || v === "0") return false;
+  const on = v === "1" ? NORM_GROUPS : v.split(/[,\s]+/);
+  return group ? on.includes(group) : on.some((g) => NORM_GROUPS.includes(g));
+};
 // The table a spec / fact was read from ({ title, header, rows }), for the layer's header units and decimal-comma rule.
 const NORM_CTX = new WeakMap();
 let NORM_ROWS = { of: null, map: new Map() };
@@ -1172,7 +1181,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       if (offers.some((c) => c.model && factsFor(facts, "controller", c.model).length)) { score += 40; why.push("bộ điều khiển có datasheet hãng"); }
       score += 8 * Math.min(eKeys.size, 8);
       // Below a minimum of the HSMT by every source that gives the figure (an engine no source gives it for is not).
-      const srcOf = {}, NORM = specNormOn(), normSkip = [];
+      const srcOf = {}, NORM = specNormOn(), ND = specNormOn("disp"), NC = specNormOn("other"), NF = specNormOn("fuel"), normSkip = [];
       // GENBID_SPEC_NORM=1: a figure is read through the normalization layer (normFig); one it cannot compare gives null.
       const ctxOf = (f) => NORM_CTX.get(f) || ((u.specs || []).includes(f) ? useNormCtx(u, rowsMap) : undefined);
       const nfig = (f, want) => { const x = normFig(f, ctxOf(f), want); if (!x.ok) normSkip.push({ key: f.key, label: f.label, value: f.value, why: x.why, supplierId: f.supplierId ?? u.supplierId, line: f.line ?? u.line }); return x.ok ? x.r : null; };
@@ -1182,14 +1191,14 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         return hit ? v[0] : null; };
       // No displacement given: bore × stroke × cylinders (web/conversions.js displacement), when the sources give them.
       const given = [...ef, ...(u.specs || [])], bs = given.find((f) => f.key === "bore"), z = given.find((f) => f.key === "cyl");
-      const nbs = NORM && bs && hints.minDisp && !given.some((f) => f.key === "disp") ? nfig(bs, { unit: "mm" }) : null, nz = NORM && z && nbs ? nfig(z, {}) : null;
-      const [b, st] = NORM ? [nbs?.bore?.bore, nbs?.bore?.stroke] : bs ? numbersIn(bs.value) : [], n = NORM ? nz?.count ?? null : z ? numbersIn(z.value)[0] : null;
+      const nbs = ND && bs && hints.minDisp && !given.some((f) => f.key === "disp") ? nfig(bs, { unit: "mm" }) : null, nz = ND && z && nbs ? nfig(z, {}) : null;
+      const [b, st] = ND ? [nbs?.bore?.bore, nbs?.bore?.stroke] : bs ? numbersIn(bs.value) : [], n = ND ? nz?.count ?? null : z ? numbersIn(z.value)[0] : null;
       const calcL = !given.some((f) => f.key === "disp") && b > 50 && st > 50 && n ? Math.round(Math.PI / 4 * b * b * st * n / 1e4) / 100 : null;
       // Normalized: litres only as the source writes them (cc has no formula in web/conversions.js: not compared).
       // BLOCK: the layer read a figure but cannot compare it (a figure, not just an empty / text cell).
       const nread = (f, want, get) => { const x = normFig(f, ctxOf(f), want); if (x.ok) return get(x.r) ?? null; normSkip.push({ key: f.key, label: f.label, value: f.value, why: x.why, supplierId: f.supplierId ?? u.supplierId, line: f.line ?? u.line }); return x.why.includes("value") ? null : BLOCK; };
-      const dispOf = NORM ? (v, f) => nread(f, { unit: "L" }, (r) => r.num) : (v, f) => dispLitres(f);
-      const cylOf = NORM ? (v, f) => nread(f, {}, (r) => r.count) : (v) => numbersIn(v)[0] ?? null;
+      const dispOf = ND ? (v, f) => nread(f, { unit: "L" }, (r) => r.num) : (v, f) => dispLitres(f);
+      const cylOf = NC ? (v, f) => nread(f, {}, (r) => r.count) : (v) => numbersIn(v)[0] ?? null;
       const dl = (hints.minDisp ? below("disp", hints.minDisp, dispOf) : null) ?? (hints.minDisp && calcL != null && calcL < hints.minDisp ? calcL : null), cl = hints.minCyl ? below("cyl", hints.minCyl, cylOf) : null;
       // Below a minimum of the HSMT (displacement, cylinders, prime) or past its largest displacement: the row is left out,
       // unless the HSMT names its engine model (`named`): then its sources disagree with the HSMT's own choice, and it
@@ -1211,7 +1220,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         let fv = fl ? fuelAt(fl, FUEL_LOAD[fk]) : null;
         // Normalized: the first figure of the key in L/h at the HSMT's load (100 / 75 / 50%), the load written in the
         // source (a 75 / 50% cell counts, loadFrom "key"); none → not compared, the row stays with no points off.
-        if (NORM && hints[hk]) {
+        if (NF && hints[hk]) {
           fl = null; fv = null;
           for (const x of (u.specs || []).filter((y) => y.key === fk)) {
             const r = nfig(x, { unit: "L/h", load: FUEL_LOAD[fk] });
@@ -1223,7 +1232,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         const unsure = fl && (/^\s*[<≤]|<=/.test(String(fl.value)) || (cap && fv != null && fv > (cap.unit === "kVA" ? cap.value : cap.value / 0.8) * 0.6));
         // A 100% figure whose heading names no load (the catalog files "Fuel consumption (L/h)" under 100%) is not left out either (the old
         // 300 points off stay): only a load written in the label that is the HSMT's (100% / full load) counts. 75% and 50% are in the label by construction.
-        const loadUnstated = !NORM && fk === "fuel" && fl && !LOAD_100.test(String(fl.label));
+        const loadUnstated = !NF && fk === "fuel" && fl && !LOAD_100.test(String(fl.label));
         if (fv != null && !unsure && fv > hints[hk]) { score -= 300; fuelOver = true; if (loadUnstated) fuelNoLoad = true; else ruled.push(fk); why.push(`tiêu hao${at} ${fv} L/h > ${hints[hk]} L/h HSMT cho phép`); }
       }
       if (a) { score += 40; if ((a.make || "").split(" / ").some((m) => hints.altMakes.includes(m)) || named(hints, a.model)) { score += 80; why.push("đầu phát HSMT nêu"); } score += 3 * Math.min(new Set(af.map((f) => f.key)).size, 6); }
@@ -2665,7 +2674,7 @@ export function enginePowerOf(row) {
   for (const s of row?.specs || []) {
     if (s.key !== "engPower") continue;
     // GENBID_SPEC_NORM=1: not a figure the layer reads with no unit, several values, an unreadable number or of another kind.
-    if (specNormOn() && !normFig(s, useNormCtx(row), {}).ok) continue;
+    if (specNormOn("other") && !normFig(s, useNormCtx(row), {}).ok) continue;
     const p = ratedPower(s.label, s.value);
     if (p) return { ...p, line: row.line };
   }
@@ -3110,7 +3119,7 @@ export function fuelChecks(c, reqs, row) {
     let v = s ? fuelAt(s, FUEL_LOAD[key]) : null, skip = null;
     // GENBID_SPEC_NORM=1: the first figure of the key in L/h at the HSMT's load (normFig); a figure the old reading would
     // have compared but the layer cannot → "Chưa rõ" with why.
-    if (specNormOn()) {
+    if (specNormOn("fuel")) {
       const old = s, ctx = useNormCtx(row);
       s = null; v = null;
       for (const y of (row.specs || []).filter((q) => q.key === key)) { const n = normFig(y, ctx, { unit: "L/h", load: FUEL_LOAD[key] }); if (n.ok && n.r.num != null) { s = y; v = n.r.num; break; } if (y === old) skip = n.why; }
@@ -3422,7 +3431,7 @@ export function makerSheetChecks(c, reqs, facts = {}) {
     // normalized figure of each sheet; one the layer cannot compare leaves the check as it is.
     const NK = { compression: [(n) => n.num, {}], displacement: [(n) => n.num, { unit: "L" }], cylinders: [(n) => n.count, {}] }[r.code];
     let vals = sheets.map((f) => f.value);
-    if (specNormOn() && NK) {
+    if (NK && specNormOn(r.code === "displacement" ? "disp" : "other")) {
       const ns = sheets.map((f) => normFig(f, NORM_CTX.get(f), NK[1]));
       if (ns.some((n) => !n.ok || NK[0](n.r) == null)) continue;
       vals = ns.map((n) => String(NK[0](n.r)));
@@ -3564,7 +3573,7 @@ export function khoaRules(c, reqs, row, { origin } = {}) {
     // GENBID_SPEC_NORM=1: the same comparison on the normalized figure (normFig): kg / mm / dB(A) as the source writes
     // them, the size open or canopied as the source says (the canopied one when the HSMT asks it), the noise at the HSMT's
     // distance. Not comparable where the old reading compared → "Chưa rõ" with why.
-    if (specNormOn()) {
+    if (specNormOn("other")) {
       const old = ok, canopy = /v[ỏo]\s*(gi[ảa]m|c[áa]ch)\s*[âa]m|canopy|silent|soundproof|c[áa]ch\s*[âa]m/i.test(t) ? "enclosed" : null;
       let n = null;
       ok = null;

@@ -15,6 +15,21 @@ test("the flag is off by default", () => {
   delete process.env.GENBID_SPEC_NORM;
   assert.equal(specNormOn(), false);
   assert.equal(on(specNormOn), true);
+  process.env.GENBID_SPEC_NORM = "fuel";
+  try { assert.deepEqual(["fuel", "disp", "other"].map(specNormOn), [true, false, false]); assert.equal(specNormOn(), true); }
+  finally { delete process.env.GENBID_SPEC_NORM; }
+  process.env.GENBID_SPEC_NORM = "0";
+  try { assert.equal(specNormOn(), false); } finally { delete process.env.GENBID_SPEC_NORM; }
+});
+
+test("by group: fuel on alone leaves a displacement in cc compared as before", () => {
+  const H = "| Model | Prime kVA | Prime kW | Engine | Alternator | Displacement (cc) |";
+  const list = [sup("cc", ["| c-1 | 420 | 336 | WP13D405E200 | XY1 | 11000 |"], H)];
+  const h = free("Dung tích xi lanh ≥ 12 lít\n50 Hz");
+  process.env.GENBID_SPEC_NORM = "fuel";
+  try { assert.deepEqual(run(list, h).dropped.map((d) => d.ruled), [["disp"]]); } finally { delete process.env.GENBID_SPEC_NORM; }
+  process.env.GENBID_SPEC_NORM = "disp";
+  try { assert.equal(run(list, h).dropped.length, 0); } finally { delete process.env.GENBID_SPEC_NORM; }
 });
 
 test("normFig: fuel needs L/h at the HSMT's load; noise its distance; weight / size open or canopied", () => {
