@@ -60,6 +60,130 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "潍柴系列发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Weichai"
+      ],
+      "engineModels": [],
+      "power": {
+        "min": 30,
+        "max": 1000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "玉柴系列发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Yuchai"
+      ],
+      "engineModels": [],
+      "power": {
+        "min": 50,
+        "max": 1000,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "上柴系列发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "SDEC"
+      ],
+      "engineModels": [],
+      "power": {
+        "min": 50,
+        "max": 800,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "康明斯发电机组",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [],
+      "power": {
+        "min": 30,
+        "max": 1500,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "博创系列发电机组",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "power": {
+        "min": 20,
+        "max": 400,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "珀金斯系列发电机",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [],
+      "power": {
+        "min": 100,
+        "max": 150,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
     }
   ],
   "certifications": [],
@@ -78,9 +202,82 @@
         "公司位于“动力之城”潍坊，地处交通环境优越"
       ],
       "file": "sources/bochuang-weifang/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "http://www.bocreat.cn/weichai.asp",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "潍柴系列发电机 组30kw",
+        "潍柴系列发电机 组 1000kw"
+      ],
+      "file": "sources/bochuang-weifang/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "http://www.bocreat.cn/yuchai.asp",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "玉柴系列发电机组50KW",
+        "玉柴系列发电机组 1000KW"
+      ],
+      "file": "sources/bochuang-weifang/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "http://www.bocreat.cn/shangchai.asp",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "上柴系列发电机 组50kw",
+        "上柴系列发电机 组 800kw"
+      ],
+      "file": "sources/bochuang-weifang/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "http://www.bocreat.cn/cummins.asp",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "康明斯发电机组30kw",
+        "康明斯发电机组1500kw"
+      ],
+      "file": "sources/bochuang-weifang/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "http://www.bocreat.cn/ricardo.asp",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "博创系列发电机组20kw",
+        "博创系列发电机组400kw"
+      ],
+      "file": "sources/bochuang-weifang/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "http://www.bocreat.cn/perkins.asp",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "珀金斯系列发电机 100kw",
+        "珀金斯系列发电机 150kw"
+      ],
+      "file": "sources/bochuang-weifang/2006.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": []
 }
