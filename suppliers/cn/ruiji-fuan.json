@@ -52,6 +52,29 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "engine",
+      "series": "FK1200-TLD11",
+      "fuel": "diesel",
+      "engineModels": [
+        "FK1200-TLD11"
+      ],
+      "engineMakes": [
+        "福康"
+      ],
+      "power": {
+        "min": 1200,
+        "max": 1200,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
     }
   ],
   "certifications": [],
@@ -73,9 +96,55 @@
         "FK1100-TLD11 /1100KW柴油机是我公司为满足大功率需求自主研发的一款产品。"
       ],
       "file": "sources/ruiji-fuan/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "http://www.fjkmspower.com/show-article-108014.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "福康四气门FK1100-TLD11 /1100KW",
+        "FK1100-TLD11 /1100KW柴油机是我公司为满足大功率需求自主研发的一款产品。"
+      ],
+      "file": "sources/ruiji-fuan/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "http://www.fjkmspower.com/show-article-77188.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "福康四增压FK1200-TLD11 /1200KW",
+        "FK1200-TLD11 /1200KW柴油机是我公司为满足大功率需求自主研发的一款产品。"
+      ],
+      "file": "sources/ruiji-fuan/2002.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "福康四气门FK1100-TLD11 /1100KW",
+      "header": [
+        "福康四气门FK1100-TLD11 /1100KW"
+      ],
+      "rows": [
+        "FK1100-TLD11 /1100KW柴油机是我公司为满足大功率需求自主研发的一款产品。采用高增压技术，更大限度使用排气能量，柴油机的燃油经济"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "福康四增压FK1200-TLD11 /1200KW",
+      "header": [
+        "福康四增压FK1200-TLD11 /1200KW"
+      ],
+      "rows": [
+        "FK1200-TLD11 /1200KW柴油机是我公司为满足大功率需求自主研发的一款产品。采用高增压技术，更大限度使用排气能量，柴油机的燃油经济 性更好，减少有害物排放。采用双置式淡水泵、大流量机油泵，改善了柴油机的冷却及润滑系统性能。采用 PH 泵配备电子调速器， 调速性能优。"
+      ]
+    }
+  ]
 }
