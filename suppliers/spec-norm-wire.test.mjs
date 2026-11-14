@@ -74,8 +74,8 @@ test("candidates: a displacement in cc is not compared with the HSMT's litres un
 });
 
 test("candidates: a source the layer cannot compare keeps the row (Chưa rõ), even when another source is below", () => {
-  const H1 = "| Model | Prime kVA | Prime kW | Engine | Alternator | Displacement (L) |", H2 = "| Model | Prime kVA | Prime kW | Engine | Alternator | Displacement |";
-  // Two suppliers of one engine: 5.9 L (with unit) below 8.3 L, and "8.3" with no unit.
+  const H1 = "| Model | Prime kVA | Prime kW | Engine | Alternator | Displacement (L) |", H2 = "| Model | Prime kVA | Prime kW | Engine | Alternator | Displacement (mm) |";
+  // Two suppliers of one engine: 5.9 L (with unit) below 8.3 L, and "8.3" under a wrong unit (no default L: chuan-hoa-2b).
   const list = [sup("u", ["| u-1 | 420 | 336 | 6BTAA5.9-G2 | XY1 | 5.9 |"], H1), sup("n", ["| n-1 | 420 | 336 | 6BTAA5.9-G2 | XY1 | 8.3 |"], H2)];
   const h = free("Dung tích xi lanh ≥ 8,3 lít\n50 Hz");
   // Off: "8.3" is read as litres, so not every source is below. On: it has no unit, which blocks the drop too.
