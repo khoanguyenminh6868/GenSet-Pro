@@ -4,6 +4,7 @@
 - Tuyệt đối không bịa, không suy ra. Mỗi thông tin có nguồn [n] + câu trích nguyên văn trong `sources/<id>/<n>.md`; `verify.mjs` kiểm bằng code. Quy đổi chỉ bằng công thức `web/conversions.js`. URL lấy từ kết quả tìm kiếm, không đoán. Trang trả 403 thì dừng, không đổi User-Agent.
 - Thêm/cập nhật NCC: `discover.mjs save/grep` → `drafts/<id>.json` → `discover.mjs finish <id>` → `verify.mjs` → PR. Merge vào main thì workflow tự đăng web.
 - Số nguồn: 1–99 trang chính, 101+ crawl-specs, 1001+ datasheet, 2001+ Tìm NCC, 3001+ BĐK, 4001+ OCR, 5001+ catalog PDF tải lên.
+- `schema.json` khai MỌI khoá của hồ sơ (kể cả `specTables`, `brandLicensed`); `verify.mjs` báo lỗi khoá lạ ở hồ sơ và ở từng bảng (`n, title, header, rows`) — agent thêm khoá mới (vd. `src` trong bảng) thì phải khai trong schema hoặc bỏ. Test: `schema-keys.test.mjs`.
 - Datasheet hãng: `maker-datasheets.mjs <id> <pdf...>` → `merge-specs.mjs <id>` → `verify.mjs`.
 - Catalog PDF: `catalog-pdf.mjs <id> <url> <pdf> [--rows|--single|--spread|--engines|--ocr]`. Trang ngang ghép 50|60 Hz → `--spread`; có lớp chữ mà không ra bảng → `--rows`; bảng vẽ bằng nét hoặc PDF có lớp chữ ẩn/chồng đôi → chạy thêm `--ocr` và so theo model. Luôn đối chiếu vài dòng với ảnh crop; sau lượt OCR so model trong chữ OCR với bản ghi để tìm cả nhóm bị loại.
 - OCR bảng ảnh: `ocr-specs.mjs <id> <trang> <ảnh|pdf>...`; chỉ giữ dòng code kiểm được. Tesseract nhầm 6/8/B, 5/S, Z/7/2, mất dấu chấm; còn đường kẻ thì mất gần hết số.

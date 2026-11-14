@@ -15,6 +15,13 @@ const TIERS = new Set(["A", "B", "C"]);
 const KINDS = new Set(["genset", "engine", "alternator", "controller"]);
 const CONTACTS = new Set(["email", "phone", "whatsapp", "wechat"]);
 
+// Keys a record may carry: whatever suppliers/schema.json declares (a missing schema file = no key check).
+let SCHEMA_KEYS = null;
+try {
+  const sch = JSON.parse(fs.readFileSync(path.join(ROOT, "schema.json"), "utf8"));
+  SCHEMA_KEYS = { top: new Set(Object.keys(sch.properties)), table: new Set(Object.keys(sch.properties.specTables.items.properties)) };
+} catch { /* no schema next to this file */ }
+
 // Same text either side: whitespace collapsed, full-width tildes and dashes read as their ASCII forms.
 export const norm = (s) => String(s ?? "").normalize("NFKC").replace(/[～〜]/g, "~").replace(/[‐-―−]/g, "-").replace(/\s+/g, " ").trim().toLowerCase();
 // "3 000" and "3.750" (space or dot thousands, as European sources write them) also read as 3000 and 3750.
@@ -32,6 +39,10 @@ export function checkRecord(rec, file) {
   if (!ROLES.has(rec.role)) err(`role ${rec.role}`);
   if (!STATUS.has(rec.status)) err(`status ${rec.status}`);
   if (!rec.names?.en && !rec.names?.zh) err("names: cần tên");
+  if (SCHEMA_KEYS) {
+    for (const k of Object.keys(rec)) if (!SCHEMA_KEYS.top.has(k)) err(`khoá ${k} không khai trong schema.json`);
+    for (const [i, t] of (rec.specTables || []).entries()) for (const k of Object.keys(t)) if (!SCHEMA_KEYS.table.has(k)) err(`specTables[${i}]: khoá ${k} không khai trong schema.json`);
+  }
   const sources = new Map();
   for (const s of rec.sources || []) {
     if (sources.has(s.n)) err(`source ${s.n} trùng`);

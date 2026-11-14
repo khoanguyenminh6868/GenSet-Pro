@@ -104,6 +104,8 @@
   // Order matters: the first label that fits wins ("fuel tank" before "fuel", "cylinder bore" before "cylinder").
   // Each entry: key, scope, Vietnamese name, label pattern, labels to leave out, and the shape a value must have
   // (a value of another shape means the column did not line up with its title).
+  // A cooling value names a medium or says "cooled" ("ATS auto load transfer screen" from a shifted column is not one).
+  const COOL = /water|liquid|wasser|radiator|glycol|coolant|cool|air[\s/-]*(to|water|air)|oil\s*to\s*air|[水风油液]冷|冷却|fan\b/i;
   const N = /\d/, TXT = /[a-z一-鿿]{3}/i, BY = /\d\s*[*×xX/]\s*\d/;
   // A fuel figure: "35L/h", "199g/KW.h", "0.191", "31,5".
   const FUEL_OK = /^[≤<~≈]?\s*\d[\d.,\s/~-]*\s*(%|l\s*\/\s*h(r|our)?|lph|g\/kw\.?h|g\/\(kw\.?h\)|g\/kwh|kg\/kw\w*[·.-]?h\w*|l|g|kg\/h|m³\/h|m3\/h|nm3\/h|nm³\/h|litres?\/h(our)?|gal\/h)?\s*$/i, NOT_FUEL = /lub|oil\s*consum|air\s*consum|fan/i;
@@ -113,7 +115,7 @@
     // "75 % Load" (a column title), "75%负载油耗", "3/4 load" (2026-11-09).
     ["fuel75", "genset", "Tiêu hao nhiên liệu 75% tải", /(75\s*%|3\/4)\s*(load|prime|prp|功率|负载|\(?\s*of\s*(the\s*)?prime)|(consum|fuel|油耗|tiêu hao)[^|]{0,40}?(75\s*%|3\/4\s*(load|prp))|@\s*75\s*%/i, NOT_FUEL, FUEL_OK],
     ["fuel50", "genset", "Tiêu hao nhiên liệu 50% tải", /(50\s*%|1\/2)\s*(load|prime|prp|功率|负载|\(?\s*of\s*(the\s*)?prime)|(consum|fuel|油耗|tiêu hao)[^|]{0,40}?(50\s*%|1\/2\s*(load|prp))|@\s*50\s*%/i, NOT_FUEL, FUEL_OK],
-    ["fuel", "genset", "Tiêu hao nhiên liệu", /consum|cons\.|\bcons\b|fuel\s*(rate|usage|efficien)|油耗|耗油|燃油消耗|燃气消耗|tiêu hao|100\s*%\s*(load|prime|prp|功率|负载)/i, NOT_FUEL, FUEL_OK],
+    ["fuel", "genset", "Tiêu hao nhiên liệu", /consum|cons\.|\bcons\b|fuel\s*(rate|usage|efficien)|油耗|耗油|燃油消耗|燃油率|燃气消耗|tiêu hao|100\s*%\s*(load|prime|prp|功率|负载)/i, NOT_FUEL, FUEL_OK],
     ["noise", "genset", "Độ ồn", /noise|sound\s*(level|pressure)|噪音|噪声|độ ồn|\bdb\(?a?\)?\b/i, null, /(^|\D)([4-9]\d|1[01]\d)(?!\d)/],
     ["dims", "genset", "Kích thước", /dimen|dimention|overall\s*(size|l)|\bsize\b|l\s*[x×*]\s*[wm]\s*[x×*]\s*h|尺寸|kích thước/i, null, BY],
     ["weight", "genset", "Khối lượng", /weigh|重量|毛重|khối lượng|trọng lượng|^\s*kgs?\s*(\(|$)/i, null, /^[≈~]?\s*\d/],
@@ -122,17 +124,17 @@
     ["disp", "engine", "Dung tích xi lanh", /displace|swept|\bdisp\b|排量/i, null, /^\d+([.,]\d+)?\s*(l|ltr|litres?|cc|ml)?$/i],
     ["cyl", "engine", "Số xi lanh", /cylinder|^cyl|^cil|气缸|缸数/i, /air\s*flow/i, /^(\d{1,2}|\d{1,2}\s*[-–]?\s*(l|v|in-?line|cyl\w*)\b.*|[lv]\s?-?\d{1,2}|in-?line.*|vertical.*|v-?type.*)$/i],
     ["compr", "engine", "Tỉ số nén", /compression/i, null, /\d\s*:\s*1|^\d+(\.\d+)?$/],
-    ["asp", "engine", "Nạp khí", /aspirat|intake|进气/i, null, /turbo|natural|aftercool|intercool|增压|自然|ta\b|na\b/i],
+    ["asp", "engine", "Nạp khí", /aspirat|intake|进气|吸气/i, null, /turbo|natural|aftercool|intercool|增压|自然|ta\b|na\b/i],
     ["gov", "engine", "Điều tốc", /gov|调速/i, null, /electr|mechan|electron|ecu|governor|电子|机械|\bg[123]\b|class/i],
     ["emission", "engine", "Tiêu chuẩn khí thải", /emission|排放/i, null, /stage|tier|euro|epa|non-road|exempt|china|\bgb\b|国[一二三四五ⅡⅢⅣ]|[ⅡⅢⅣ]|\b(ii|iii|iv|v)\b|\bt[1-4]\b/i],
     ["coolant", "engine", "Nước làm mát", /coolant|cooling\s*water|water\s*(tank|capacity)/i, /temp|温度|pressure|压力|flow/i, /^\d/],
-    ["cooling", "engine", "Làm mát", /cooling\s*(system|type|method|mode)?$|冷却方式/i, /air\s*flow/i, TXT],
-    ["oil", "engine", "Dầu bôi trơn", /lub|oil\s*(capacity|tank|system|sump|ststem)|机油/i, /brand|temp|温度|pressure|压力/i, N],
+    ["cooling", "engine", "Làm mát", /cooling\s*(system|type|method|mode)?$|冷却方式/i, /air\s*flow/i, COOL],
+    ["oil", "engine", "Dầu bôi trơn", /lub|oil\s*(capacity|tank|system|sump|ststem)|机油|润滑油/i, /brand|temp|温度|pressure|压力|consum|消耗|耗率|耗量/i, N],
     ["start", "engine", "Khởi động", /start/i, null, /\d\s*v|electric|电/i],
     ["engPower", "engine", "Công suất động cơ", /(engine|gross).*(power|output)|kw\s*\/\s*rpm|kw\/hp/i, null, /^\d/],
-    ["speed", "engine", "Tốc độ quay", /speed|\brpm\b|r\/min|转速/i, /regul|rate\s*\(%\)/i, /\b(1[05]00|1800|3000|3600|[12]\d{3})\b/],
+    ["speed", "engine", "Tốc độ quay", /speed|\brpm\b|r\/min|转速/i, /regul|rate\s*\(%\)|torque|扭矩/i, /\b(1[05]00|1800|3000|3600|[12]\d{3})\b/],
     ["engType", "engine", "Kiểu động cơ", /^(diesel\s*)?engine\s*type$/i, null, /stroke|cool|line|turbo|vertical|冲程/i],
-    ["eff", "alternator", "Hiệu suất đầu phát", /efficien|效率/i, /fuel/i, /\d\s*[%％]|^\d{2}(\.\d+)?$/],
+    ["eff", "alternator", "Hiệu suất đầu phát", /efficien|效率/i, /fuel|thermal|overall|total|electrical|热效|综合/i, /\d\s*[%％]|^\d{2}(\.\d+)?$/],
     ["insul", "alternator", "Cấp cách điện", /insulat|绝缘/i, null, /\b[bfh]\b|class|级/i],
     ["ip", "alternator", "Cấp bảo vệ", /protection|\bip\b|防护/i, null, /ip\s?\d/i],
     ["excit", "alternator", "Kích từ / AVR", /excit|\bavr\b|励磁/i, null, /brush|self|pmg|shunt|aref|separately|\bavr\b|自励|永磁|无刷|有刷/i],
@@ -141,7 +143,7 @@
     ["freg", "genset", "Ổn định tần số", /frequency\s*(regul|wav|recover|stab)|frequencyrecovery|smooth\s*speed/i, null, /\d\s*[%％s]/i],
     ["current", "genset", "Dòng điện định mức", /rated\s*current|电流/i, null, /^\d/],
     ["voltage", "genset", "Điện áp", /voltage|电压|điện áp/i, /dc|start|level|type|regul|stab|sudden|warp|dip|transient|drop|偏差/i, /^\D{0,3}\d{3}/],
-    ["pf", "genset", "Hệ số công suất", /power\s*factor|cos|功率因数/i, null, /0[.,]\d|^1$/],
+    ["pf", "genset", "Hệ số công suất", /power\s*factor|(?<![a-z])cos(?![a-z])|功率因数/i, null, /0[.,]\d|^1$/],
     ["phase", "genset", "Số pha", /phase|wire|相数/i, null, /^[13]$|[13]\s*-?\s*(ph|phase|相)|\d\s*-?\s*wire|three|single|三相|单相/i],
     ["controller", "genset", "Bộ điều khiển", /^(controller|control\s*(module|panel)|控制器)\s*(model|type|brand)?\s*[:：]?$/i, null, /[a-z]{2,}\s?-?\d{3,}/i],
   ];
@@ -538,8 +540,8 @@
         const stop = ei >= 0 ? ei : ai >= 0 ? ai : cells.length;
         const power = engineTable ? null : powersIn(cells.slice(gi >= 0 ? gi + 1 : 0, stop), headerText + " " + title);
         const common = { ...base, row: ri, line, genset: gi >= 0 ? cells[gi] : null, power, freq, header: t.header || [], specs: rowSpecs(t, cells, { ei, ai, gi, power }) };
-        if (ei >= 0) out.push({ ...common, kind: "engine", model: cells[ei], makes: makesFor("engine", rowText, null), other: ai >= 0 ? cells[ai] : null, own: engineTable });
-        if (ai >= 0) out.push({ ...common, kind: "alternator", model: cells[ai], makes: makesFor("alternator", rowText, null, cells[ai]), other: ei >= 0 ? cells[ei] : null });
+        if (ei >= 0) out.push({ ...common, kind: "engine", model: tidyModel(cells[ei], ENGINE_BRANDS), makes: makesFor("engine", rowText, null), other: ai >= 0 ? cells[ai] : null, own: engineTable });
+        if (ai >= 0) out.push({ ...common, kind: "alternator", model: tidyModel(cells[ai], ALT_BRANDS), makes: makesFor("alternator", rowText, null, cells[ai]), other: ei >= 0 ? cells[ei] : null });
       });
     });
     // A one-model datasheet whose table gives the power but not the engine (Rehlko D440: a two-column PDF puts "Engine
@@ -573,7 +575,16 @@
     const top = Math.max(...makes.map((m) => RANK[m.via] || 0));
     return [...new Set(makes.filter((m) => (RANK[m.via] || 0) === top).map((m) => m.name))].join(" / ");
   }
-  const keyOf = (m) => String(m).normalize("NFKC").toUpperCase().replace(/[\s\-_.·]/g, "");
+  // A trailing "*" / "†" is a footnote mark, not part of the model ("QSK19-G4*"). O/0 and I/1 are NOT merged.
+  const keyOf = (m) => String(m).normalize("NFKC").toUpperCase().replace(/[\s\-_.·]/g, "").replace(/[*†‡]+$/, "");
+  // The model a row of a horizontal table names: footnote mark and a make written before it ("PERKINS 1103A-33G")
+  // left out, only when what remains is still a model code.
+  const tidyModel = (cell, list) => {
+    let s = String(cell || "").trim().replace(/\s*[*＊†‡]+$/, "");
+    const m = s.match(/^(\S+)\s+(?:penta\s+)?(?=\S*\d)/i);
+    if (m && brandIn(m[1], list).length && isCode(s.slice(m[0].length))) s = s.slice(m[0].length);
+    return s;
+  };
 
   // Bộ điều khiển (Khoa, 2026-11-01): make and model read from one line of a saved page or a table row, word for word.
   // A model code is taken where it is written (DSE7320, HGM6120N, InteliLite NT AMF25, DKG-309, easYgen-3000...); a
