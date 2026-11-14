@@ -42,6 +42,82 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "POWGEN diésel 550kVA (Scania DC13)",
+      "fuel": "diesel",
+      "engineModels": [
+        "DC13"
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "alternatorMakes": [
+        "Weg"
+      ],
+      "power": {
+        "min": 550,
+        "max": 550,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "POWGEN gas natural 500kVA (Scania OC16)",
+      "fuel": "gas",
+      "engineModels": [
+        "OC16"
+      ],
+      "engineMakes": [
+        "Scania"
+      ],
+      "alternatorMakes": [
+        "Weg"
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "POWGEN biogás 395kVA (Scania 8 cilindros)",
+      "fuel": "gas",
+      "engineModels": [],
+      "engineMakes": [
+        "Scania"
+      ],
+      "alternatorMakes": [
+        "Weg"
+      ],
+      "power": {
+        "min": 395,
+        "max": 395,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
     }
   ],
   "certifications": [],
@@ -60,9 +136,44 @@
         "POWGEN - Soluciones Energéticas"
       ],
       "file": "sources/powgen-argentina/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.powgen.com.ar/Noticias.html",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "El 16 de junio del 2025, POWGEN instaló en la isla un grupo electrógeno diésel de 550kVA con motorización Scania DC13 con Alternador Weg, cabina isonorizada y un tablero de transferencia automática con llave conmutadora Socomec.",
+        "El 21 de junio del 2025, POWGEN instaló un Grupo electrógeno a Gas Natural de 500kVA con motor Scania OC16, alternador Weg, cabina isonorizada con tablero de comando y control paralelo con central IG200 y regulador de presión en Minera Rio Colorado.",
+        "En esta oportunidad presentamos un equipo con motorización Scania de 8 cilindros con alternador Weg que alcanzan una potencia máxima de 395kVA."
+      ],
+      "file": "sources/powgen-argentina/2001.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-02",
-  "checkedBy": "discover-bot (Claude)"
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Isla Martín García: grupo electrógeno diésel 550kVA",
+      "header": [
+        "ENERGÍA PARA LA ISLA MARTÍN GARCÍA"
+      ],
+      "rows": [
+        "El 16 de junio del 2025, POWGEN instaló en la isla un grupo electrógeno diésel de 550kVA con motorización Scania DC13 con Alternador Weg, cabina isonorizada y un tablero de transferencia automática con llave conmutadora Socomec."
+      ]
+    },
+    {
+      "n": 2001,
+      "title": "Minera Rio Colorado: grupo electrógeno a gas natural 500kVA",
+      "header": [
+        "MINERA RIO COLORADO"
+      ],
+      "rows": [
+        "El 21 de junio del 2025, POWGEN instaló un Grupo electrógeno a Gas Natural de 500kVA con motor Scania OC16, alternador Weg, cabina isonorizada con tablero de comando y control paralelo con central IG200 y regulador de presión en Minera Rio Colorado."
+      ]
+    }
+  ]
 }
