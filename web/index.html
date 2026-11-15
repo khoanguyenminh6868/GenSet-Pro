@@ -112,7 +112,7 @@ html.kbd .banner a.home:focus-visible{outline:2px solid var(--violet);outline-of
 .note.won{border-color:var(--mint);background:var(--mint-soft);display:flex;gap:10px;align-items:center}
 .note.won svg{width:18px;height:18px;color:var(--mint);flex:none}
 .note.won .wtext{flex:1;min-width:0}
-.note.won .ibtn{width:20px;height:20px;flex:none}
+.note.won .ibtn{width:22px;height:22px;flex:none}
 .note.won .linkbtn{background:none;border:0;padding:0;font:inherit;font-weight:600;color:var(--mint);text-decoration:underline;cursor:pointer}
 @media (max-width:640px){.bnote{justify-content:space-between;text-align:left;margin-top:0;padding-top:10px;border-top:1px dashed var(--line)}.bnote span{max-width:none}}
 .syncline .spin{width:10px;height:10px}
@@ -282,9 +282,9 @@ html.gb-busy,html.gb-busy *{cursor:progress}
 @media (max-width:640px){.ccopy.cc-d{display:none}.ccopy.cc-m{display:inline-grid}}
 #dmeta{margin-bottom:4px}
 /* Nút đóng: chỉ biểu tượng X, nền đỏ, không chữ (Khoa, 2026-11-15). */
-.xclose{background:#dc2626;border-color:#dc2626;color:#fff;padding:0;width:20px;height:20px;border-radius:5px;justify-content:center;flex:none}
-.xclose svg{width:20px;height:20px;flex:none}
-.xclose:hover{background:#b91c1c;border-color:#b91c1c}
+.xclose{background:none;border:0;padding:0;width:22px;height:22px;border-radius:50%;justify-content:center;flex:none;box-shadow:none}
+.xclose svg{width:22px;height:22px;flex:none}
+.xclose:hover{filter:brightness(.88)}
 /* Đóng like the one on the supplier / catalog screens: yellow edge on hover (Khoa, 2026-11-04). */
 #dclose{flex:none}
 .dtabs{padding:0 16px;align-items:center;border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto}
@@ -553,7 +553,7 @@ details.sec>div{margin-top:10px}
 <aside id="drawer" aria-hidden="true" aria-label="Chi tiết gói thầu">
   <div class="dhead">
     <div class="t"><div class="row" id="dmeta"></div><h2 id="dtitle"></h2></div>
-    <button class="btn sm xclose" id="dclose" type="button" aria-label="Đóng" title="Đóng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" aria-hidden="true"><path d="M2.5 2.5l19 19M21.5 2.5l-19 19"/></svg></button>
+    <button class="btn sm xclose" id="dclose" type="button" aria-label="Đóng" title="Đóng"><svg viewBox="0 0 512 512" aria-hidden="true"><defs><linearGradient id="xcg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff6b35"/><stop offset="1" stop-color="#f03e3e"/></linearGradient><clipPath id="xcc"><circle cx="256" cy="256" r="256"/></clipPath></defs><circle cx="256" cy="256" r="256" fill="url(#xcg)"/><path clip-path="url(#xcc)" fill="#000" opacity=".22" d="M380 140L520 280V520H280L140 380L256 256Z"/><path d="M158 158L354 354M354 158L158 354" stroke="#fff" stroke-width="66" stroke-linecap="round"/></svg></button>
   </div>
   <div class="dtabs" role="tablist" id="dtabs">
     <button data-dt="info" aria-selected="true">Tổng quan</button>
@@ -583,7 +583,7 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 const safeUrl = (u) => { const s = String(u ?? "").trim(); return /^https?:\/\/[^\s]/i.test(s) || /^\/(?![\/\\])/.test(s) ? s : "#"; };
 const h = (strings, ...vals) => strings.reduce((a, s, i) => a + s + (i < vals.length ? (vals[i] && vals[i].__html !== undefined ? vals[i].__html : esc(vals[i])) : ""), "");
 const raw = (s) => ({ __html: s });
-const CLOSE_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" aria-hidden="true"><path d="M2.5 2.5l19 19M21.5 2.5l-19 19"/></svg>';
+const CLOSE_ICON = '<svg viewBox="0 0 512 512" aria-hidden="true"><defs><linearGradient id="xcg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff6b35"/><stop offset="1" stop-color="#f03e3e"/></linearGradient><clipPath id="xcc"><circle cx="256" cy="256" r="256"/></clipPath></defs><circle cx="256" cy="256" r="256" fill="url(#xcg)"/><path clip-path="url(#xcc)" fill="#000" opacity=".22" d="M380 140L520 280V520H280L140 380L256 256Z"/><path d="M158 158L354 354M354 158L158 354" stroke="#fff" stroke-width="66" stroke-linecap="round"/></svg>';
 const CLOSE_BTN = '<button class="btn sm xclose" type="button" data-close aria-label="Đóng" title="Đóng">' + CLOSE_ICON + '</button>';
 const TAB_ID = "t" + Math.random().toString(36).slice(2, 10);
 
