@@ -179,7 +179,9 @@ function Send-Unanswered($handedReqs, [string]$reason) {
     Remove-Item -Recurse -Force $dir -ErrorAction SilentlyContinue
 }
 
-function Test-ClaudeLogin { Test-Path (Join-Path $env:USERPROFILE '.claude\.credentials.json') }
+# Đăng nhập /login của máy chỉ dùng khi không có .claude-bot-token: tệp đó là lựa chọn cho bot chạy tự động, còn
+# .credentials.json vẫn nằm đó sau khi phiên hết hạn ("this login reached its time limit", KayenGram 15/11/2026).
+function Test-ClaudeLogin { (Test-Path (Join-Path $env:USERPROFILE '.claude\.credentials.json')) -and -not (Test-Path $ClaudeTokenFile) }
 
 # Khoa 11/11/2026: Phân tích, Gợi ý cấu hình, Giá gợi ý trả tiền theo API key thay vì hạn mức tháng của gói Claude.
 # Có tệp .anthropic-api-key thì đặt ANTHROPIC_API_KEY (claude -p ưu tiên nó hơn đăng nhập /login); không có thì như cũ.
