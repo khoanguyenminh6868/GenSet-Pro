@@ -281,8 +281,12 @@ html.gb-busy,html.gb-busy *{cursor:progress}
 .ccopy.cc-m{display:none}
 @media (max-width:640px){.ccopy.cc-d{display:none}.ccopy.cc-m{display:inline-grid}}
 #dmeta{margin-bottom:4px}
+/* Nút đóng: chỉ biểu tượng X, nền đỏ, không chữ (Khoa, 2026-11-15). */
+.xclose{background:#dc2626;border-color:#dc2626;color:#fff;padding:0;width:30px;height:30px;justify-content:center;flex:none}
+.xclose svg{width:16px;height:16px}
+.xclose:hover{background:#b91c1c;border-color:#b91c1c}
 /* Đóng like the one on the supplier / catalog screens: yellow edge on hover (Khoa, 2026-11-04). */
-#dclose{--violet:#ffcc00;flex:none}
+#dclose{flex:none}
 .dtabs{padding:0 16px;align-items:center;border-bottom:1px solid var(--line);display:flex;gap:4px;overflow-x:auto}
 .dtabs button{border:0;background:none;padding:5px 12px;color:var(--muted);font-weight:500;border-top:2px solid transparent;border-bottom:2px solid transparent;white-space:nowrap}
 .dtabs button[aria-selected="true"]{color:var(--fg);border-bottom-color:var(--violet)}
@@ -549,7 +553,7 @@ details.sec>div{margin-top:10px}
 <aside id="drawer" aria-hidden="true" aria-label="Chi tiết gói thầu">
   <div class="dhead">
     <div class="t"><div class="row" id="dmeta"></div><h2 id="dtitle"></h2></div>
-    <button class="btn sm" id="dclose">Đóng</button>
+    <button class="btn sm xclose" id="dclose" type="button" aria-label="Đóng" title="Đóng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
   </div>
   <div class="dtabs" role="tablist" id="dtabs">
     <button data-dt="info" aria-selected="true">Tổng quan</button>
@@ -579,6 +583,8 @@ const esc = (s) => String(s ?? "").replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "
 const safeUrl = (u) => { const s = String(u ?? "").trim(); return /^https?:\/\/[^\s]/i.test(s) || /^\/(?![\/\\])/.test(s) ? s : "#"; };
 const h = (strings, ...vals) => strings.reduce((a, s, i) => a + s + (i < vals.length ? (vals[i] && vals[i].__html !== undefined ? vals[i].__html : esc(vals[i])) : ""), "");
 const raw = (s) => ({ __html: s });
+const CLOSE_ICON = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>';
+const CLOSE_BTN = '<button class="btn sm xclose" type="button" data-close aria-label="Đóng" title="Đóng">' + CLOSE_ICON + '</button>';
 const TAB_ID = "t" + Math.random().toString(36).slice(2, 10);
 
 // Rows per page: 10 on phones, 20 elsewhere.
@@ -1056,7 +1062,7 @@ async function setStage(key, stage, extra = {}) {
   if (stage === "submitted" && prev.stage !== "submitted" && !(prev.stage === "dropped" && prev.prevStage === "submitted")) {
     const b = submitBlockers(key);
     if (b.length) {
-      modal(h`<div class="row"><h2 style="flex:1">Chưa chuyển được sang Đã nộp</h2><button class="btn sm" data-close>Đóng</button></div>
+      modal(h`<div class="row"><h2 style="flex:1">Chưa chuyển được sang Đã nộp</h2>${raw(CLOSE_BTN)}</div>
         <p style="margin:0">Gói chỉ chuyển sang Đã nộp khi hồ sơ dự thầu đã được đối chiếu và đầy đủ, hợp lệ với yêu cầu của gói.</p>
         <ul class="clean">${raw(b.map((x) => h`<li>${x}</li>`).join(""))}</ul>
         <div class="row"><div class="spacer"></div>${raw(stageOf(t) === "preparing" ? h`<button class="btn primary" id="goCompare" data-key="${key}">Mở Đối chiếu HSDT</button>` : '<span class="muted small">Chuyển gói sang Chuẩn bị HSDT để đối chiếu.</span>')}</div>`);
@@ -1105,7 +1111,7 @@ function bidLine(t) {
 // Nộp asks for the bid price, which then shows under the tender price.
 function askBidPrice(key, edit = false) {
   const t = findTender(key);
-  modal(h`<div class="row"><h2 style="flex:1">${edit ? "Giá dự thầu" : "Nộp hồ sơ dự thầu"}</h2><button class="btn sm" data-close>Đóng</button></div>
+  modal(h`<div class="row"><h2 style="flex:1">${edit ? "Giá dự thầu" : "Nộp hồ sơ dự thầu"}</h2>${raw(CLOSE_BTN)}</div>
     <p class="muted small" style="margin:0">${t?.notifyNo || ""} · ${t?.bidName || ""}${raw(t?.estimatedPrice != null ? h`<br>Giá gói thầu: ${fmtVnd(t.estimatedPrice)}` : "")}</p>
     <div class="field"><label for="bidPriceIn">Giá dự thầu (đồng)</label><input id="bidPriceIn" inputmode="numeric" autocomplete="off" placeholder="vd 1.250.000.000"><div class="muted small" id="bidPriceView"></div></div>
     <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn primary" id="bidPriceOk" disabled>${edit ? "Lưu" : "Nộp"}</button></div>`, (m, close) => {
@@ -1299,7 +1305,7 @@ function renderTop() {
   // Tenders Sync moved to Trúng thầu (api/ingest.js sets wonAt), under the banner until × (wonSeenAt).
   const wins = Object.entries(state.tracked).filter(([id, r]) => r.stage === "won" && r.wonAt && !(r.wonSeenAt >= r.wonAt) && !state.deleted[id]);
   $("#wonNotes").innerHTML = wins.map(([id, r]) => { const t = findTender(id) || r.tender || {};
-    return h`<div class="note won">${raw(STAGE_ICON.win)}<span class="wtext">Chúc mừng! Công ty trúng thầu gói <button class="linkbtn" data-openkey="${id}">${t.notifyNo || id}</button>${t.bidName ? " · " + t.bidName : ""}${r.bidPrice ? " · giá " + fmtVnd(r.bidPrice) : ""} (kết quả LCNT, Agent cập nhật lúc ${fmtDate(r.wonAt)}).</span><button class="ibtn" data-wonx="${id}" aria-label="Đóng thông báo" title="Đóng">×</button></div>`; }).join("");
+    return h`<div class="note won">${raw(STAGE_ICON.win)}<span class="wtext">Chúc mừng! Công ty trúng thầu gói <button class="linkbtn" data-openkey="${id}">${t.notifyNo || id}</button>${t.bidName ? " · " + t.bidName : ""}${r.bidPrice ? " · giá " + fmtVnd(r.bidPrice) : ""} (kết quả LCNT, Agent cập nhật lúc ${fmtDate(r.wonAt)}).</span><button class="ibtn xclose" data-wonx="${id}" aria-label="Đóng thông báo" title="Đóng">${raw(CLOSE_ICON)}</button></div>`; }).join("");
 }
 
 // ---------- Grid ----------
@@ -1443,7 +1449,7 @@ function renderBulk(items) {
 function askDelete() {
   const keys = [...state.sel]; if (!keys.length) return;
   const list = keys.map((k) => findTender(k)).filter(Boolean);
-  modal(h`<div class="row"><h2 style="flex:1">Xoá ${keys.length} ${state.stage === "project" ? "dự án" : "gói thầu"}?</h2><button class="btn sm" data-close>Đóng</button></div>
+  modal(h`<div class="row"><h2 style="flex:1">Xoá ${keys.length} ${state.stage === "project" ? "dự án" : "gói thầu"}?</h2>${raw(CLOSE_BTN)}</div>
     <ul class="clean">${raw(list.slice(0, 8).map((t) => h`<li><b>${t.notifyNo || ""}</b> ${t.bidName || ""}</li>`).join(""))}${raw(list.length > 8 ? h`<li class="muted">và ${list.length - 8} gói khác</li>` : "")}</ul>
     <p class="muted small" style="margin:0">Các gói này sẽ biến mất khỏi danh sách và không hiện lại khi refresh hay khi dữ liệu được cập nhật hằng ngày.</p>
     <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn primary" id="delOk" style="background:var(--rose);border-color:var(--rose)">Xoá</button></div>`, (m, close) => {
@@ -1801,7 +1807,7 @@ function askRemoveQuote(key, rowId, i) {
   const who = supName(state.supplier?.[r.supplierId]) || "chưa chọn";
   // A supplier with no files goes without asking.
   if (!f && !files.length) { saveQuote(key, quoteRows(key).filter((x) => x.id !== rowId)); return; }
-  modal(h`<div class="row"><h2 style="flex:1">${f ? "Xoá tệp này?" : "Bỏ nhà cung cấp này?"}</h2><button class="btn sm" data-close>Đóng</button></div>
+  modal(h`<div class="row"><h2 style="flex:1">${f ? "Xoá tệp này?" : "Bỏ nhà cung cấp này?"}</h2>${raw(CLOSE_BTN)}</div>
     <p class="small" style="margin:0;overflow-wrap:anywhere">${f ? `${f.name} của nhà cung cấp ${who} sẽ bị xoá.` : `${files.length} tệp báo giá của nhà cung cấp ${who} sẽ bị xoá.`}</p>
     <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn" id="qDelOk" style="color:var(--red)">Xoá</button></div>`, (m, close) => {
     $("#qDelOk", m).addEventListener("click", async () => {
@@ -1882,7 +1888,7 @@ function askQuoteItem(key, rowId, itemId) {
   const x = (row.items || []).find((i) => i.id === itemId) || { qty: 1, currency: "VND", date: new Date(Date.now() - new Date().getTimezoneOffset() * 60000).toISOString().slice(0, 10) };
   const t = findTender(key), cap = t && capacityOf(t);
   const f = (id, label, val, attrs = "") => h`<div class="field"><label for="${id}">${label}</label><input ${raw(/type=/.test(attrs) ? "" : 'type="text"')} id="${id}" value="${val ?? ""}" autocomplete="off" ${raw(attrs)}></div>`;
-  modal(h`<div class="row"><h2 style="flex:1">${itemId ? "Sửa dòng giá" : "Thêm dòng giá"}</h2><button class="btn sm" data-close>Đóng</button></div>
+  modal(h`<div class="row"><h2 style="flex:1">${itemId ? "Sửa dòng giá" : "Thêm dòng giá"}</h2>${raw(CLOSE_BTN)}</div>
     <p class="muted small" style="margin:0">${supName(state.supplier?.[row.supplierId]) || row.supplierId}${cap ? ` · gói cần ${cap.text}` : ""}</p>
     ${raw(f("qiDesc", "Hàng báo giá (tên / model tổ máy hoặc hạng mục)", x.desc, 'placeholder="vd Tổ máy 500 kVA có vỏ cách âm"'))}
     <div class="qgrid">${raw(f("qiKva", "Công suất (kVA)", x.kva, 'inputmode="decimal"'))}${raw(f("qiQty", "Số lượng", x.qty ?? 1, 'inputmode="decimal"'))}</div>
@@ -1913,7 +1919,7 @@ const COST_LABELS = ["Vận chuyển quốc tế, thông quan", "Thuế nhập k
 // Tỷ giá và thuế GTGT: một bản cho mọi gói (quote/_cost).
 function askQuoteAll() {
   const BP = window.GenbidBidprice, g = quoteAll(), last = lastFx();
-  modal(h`<div class="row"><h2 style="flex:1">Tỷ giá và thuế GTGT</h2><button class="btn sm" data-close>Đóng</button></div>
+  modal(h`<div class="row"><h2 style="flex:1">Tỷ giá và thuế GTGT</h2>${raw(CLOSE_BTN)}</div>
     <p class="muted small" style="margin:0">Lưu một lần, dùng cho mọi gói: đổi ở đây thì giá vốn của mọi gói tính lại theo.${g.updatedAt ? ` Lưu gần nhất ${fmtDate(g.updatedAt)}${g.by ? `, ${g.by}` : ""}.` : ""}</p>
     <div class="qgrid">${raw(BP.CURRENCIES.filter((k) => k !== "VND").map((k) => h`<div class="field"><label for="fx-${k}">1 ${k} = ? đồng</label><input type="text" id="fx-${k}" data-fx="${k}" inputmode="decimal" autocomplete="off" value="${g.fx?.[k] ? qNum(g.fx[k]) : ""}" placeholder="${last?.fx?.[k] ? `gói trước: ${qNum(last.fx[k])}` : ""}"></div>`).join(""))}</div>
     <div class="field"><label for="qaVat">Thuế GTGT (%)</label><input type="text" id="qaVat" inputmode="decimal" autocomplete="off" value="${g.vat > 0 ? qNum(g.vat) : ""}" placeholder="vd 10 hoặc 8; để trống: không cộng thuế">
@@ -1940,7 +1946,7 @@ function askQuoteCost(key, preset = null) {
   let extras = (c.extras || []).map((e) => ({ ...e }));
   if (preset) extras.push({ label: preset.label, kind: preset.kind, value: null });
   const exRow = (e, i) => h`<div class="qcx" data-ex="${i}"><div class="qcpick"><input type="text" data-exl="${i}" value="${e.label || ""}" placeholder="Chọn hoặc gõ tên chi phí" autocomplete="off" aria-label="Tên chi phí" aria-haspopup="listbox"><button type="button" class="qcarrow" data-expick="${i}" tabindex="-1" aria-label="Chọn chi phí có sẵn">▾</button></div><input type="text" data-exv="${i}" value="${e.value ? qNum(e.value) : ""}" inputmode="decimal" placeholder="Số tiền hoặc %" aria-label="Giá trị"><select data-exk="${i}" aria-label="Cách tính" title="Đồng, hoặc % tiền hàng"><option value="vnd" ${e.kind !== "pct" ? "selected" : ""}>đồng</option><option value="pct" ${e.kind === "pct" ? "selected" : ""}>${matchMedia("(max-width:640px)").matches ? "%" : "% tiền hàng"}</option></select><button class="btn sm" data-exdel="${i}" aria-label="Bỏ khoản này">${raw(TRASH_SVG)}</button></div>`;
-  modal(h`<div class="row"><h2 style="flex:1">Chi phí phát sinh của gói này</h2><button class="btn sm" data-close>Đóng</button></div>
+  modal(h`<div class="row"><h2 style="flex:1">Chi phí phát sinh của gói này</h2>${raw(CLOSE_BTN)}</div>
     <p class="muted small" style="margin:0">Giá vốn = tiền hàng theo dòng giá (quy ra đồng) + chi phí phát sinh + thuế GTGT. Nhập chi phí chưa gồm thuế GTGT${c.vat > 0 ? ` (thuế ${qNum(c.vat)}% được cộng sau)` : ""}; tỷ giá và thuế GTGT nhập ở nút "Tỷ giá, thuế GTGT", dùng cho mọi gói.</p>
     <div class="field"><div id="qcExtras" style="display:flex;flex-direction:column;gap:8px"></div><div class="qcmenu" id="qcMenu" role="listbox" aria-label="Chi phí có sẵn" hidden></div>
       <div><button class="btn sm tint c-orange" id="qcAdd">+ Thêm chi phí</button></div></div>
@@ -2193,7 +2199,7 @@ function financeHtml(t, fin, ro) {
 }
 function askFinance(key) {
   const g = quoteAll(), c = state.quote[key]?.cost || {}, terms = analysisOf(key)?.result?.contractTerms || [], hint = terms.length ? window.GenbidBidprice.readTerms(terms).daysHint : null;
-  modal(h`<div class="row"><h2 style="flex:1">Lãi suất và số ngày</h2><button class="btn sm" data-close>Đóng</button></div>
+  modal(h`<div class="row"><h2 style="flex:1">Lãi suất và số ngày</h2>${raw(CLOSE_BTN)}</div>
     <div class="field"><label for="fnRate">Lãi suất vay vốn (%/năm) — dùng cho mọi gói</label><input type="text" id="fnRate" inputmode="decimal" autocomplete="off" value="${g.rate > 0 ? qNum(g.rate) : ""}" placeholder="lãi suất ngân hàng đang vay"></div>
     <div class="field"><label for="fnDays">Số ngày thực hiện hợp đồng — riêng gói này</label><input type="text" id="fnDays" inputmode="numeric" autocomplete="off" value="${c.days > 0 ? qNum(c.days, 0) : ""}" placeholder="${hint ? `điều khoản ghi ${hint} ngày` : "từ ký hợp đồng tới nghiệm thu"}">
       <div class="muted small">Từ ký hợp đồng tới nghiệm thu bàn giao, chưa gồm thời hạn thanh toán.</div></div>
@@ -2283,7 +2289,7 @@ function projectInfoHtml(t) {
     </div>`;
 }
 function askNewProject() {
-  modal(h`<div class="row"><h2 style="flex:1">Tạo dự án</h2><button class="btn sm" data-close>Đóng</button></div>
+  modal(h`<div class="row"><h2 style="flex:1">Tạo dự án</h2>${raw(CLOSE_BTN)}</div>
     <div class="field"><label for="npName">Tên dự án</label><input type="text" id="npName" style="width:100%" autocomplete="off"></div>
     <div class="grid2"><div class="field"><label for="npInv">Chủ đầu tư</label><input type="text" id="npInv" style="width:100%" autocomplete="off"></div><div class="field"><label for="npLoc">Địa điểm</label><input type="text" id="npLoc" style="width:100%" autocomplete="off"></div></div>
     <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn primary" id="npOk" disabled>Tạo</button></div>`, (m, close) => {
@@ -2356,7 +2362,7 @@ async function addProjectFiles(key, list) {
 function askRemoveProjectFile(key, i) {
   const f = state.hsmt[key]?.files?.[i];
   if (!f) return;
-  modal(h`<div class="row"><h2 style="flex:1">Bỏ tệp này?</h2><button class="btn sm" data-close>Đóng</button></div>
+  modal(h`<div class="row"><h2 style="flex:1">Bỏ tệp này?</h2>${raw(CLOSE_BTN)}</div>
     <p class="small" style="margin:0;overflow-wrap:anywhere">${f.name} sẽ không còn trong hồ sơ ${isProject(findTender(key)) ? "của dự án" : "mời thầu"}, và các lần Phân tích, Đối chiếu sau sẽ không đọc tệp này.</p>
     <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn" id="pDelOk" style="color:var(--red)">Bỏ tệp</button></div>`, (m, close) => {
     $("#pDelOk", m).addEventListener("click", async () => {
@@ -2683,7 +2689,7 @@ async function downloadHsmtFile(key, i) {
 // In-page PDF viewer: attachments are fetched from the artifact's own storage and drawn with pdf.js.
 async function openPdf(key, i) {
   const f = state.hsmt[key].files[i];
-  modal(h`<div class="row"><h2 style="flex:1;min-width:0;overflow-wrap:anywhere">${f.name}</h2><button class="btn sm" id="pvSave">Tải về</button><button class="btn sm" data-close>Đóng</button></div>
+  modal(h`<div class="row"><h2 style="flex:1;min-width:0;overflow-wrap:anywhere">${f.name}</h2><button class="btn sm" id="pvSave">Tải về</button>${raw(CLOSE_BTN)}</div>
     <div id="pvBody" class="pv"><div class="loading">${raw(progress("Đang mở tệp..."))}</div></div>`, null, "wide");
   let blob;
   try {
@@ -3034,7 +3040,7 @@ const ADD_SVG = '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" str
 const TRASH_SVG = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18"/><path d="M8 6V4h8v2"/><path d="M19 6l-1 14H6L5 6"/><path d="M10 11v6M14 11v6"/></svg>';
 // Xóa: remove the current comparison (and with it the "đã đối chiếu" mark), after a confirmation.
 function askDeleteCompare(key) {
-  modal(h`<div class="row"><h2 style="flex:1">Xóa kết quả đối chiếu?</h2><button class="btn sm" data-close>Đóng</button></div>
+  modal(h`<div class="row"><h2 style="flex:1">Xóa kết quả đối chiếu?</h2>${raw(CLOSE_BTN)}</div>
     <p class="small" style="margin:0">Kết quả đối chiếu lúc ${fmtDate(state.compare[key].at)}${state.compare[key].accepted ? " (đã đánh dấu là đã đối chiếu)" : ""} sẽ bị xóa. Nút Nộp sẽ khóa cho tới khi có kết quả đối chiếu mới.</p>
     <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn" id="cmDelOk" style="color:var(--red)">Xóa</button></div>`, (m, close) => {
     $("#cmDelOk", m).addEventListener("click", async () => {
@@ -3050,7 +3056,7 @@ function askDeleteCompare(key) {
 }
 // Mismatches left after a comparison: fix and compare again, or accept it as compared.
 function askAfterCompare(key, left) {
-  modal(h`<div class="row"><h2 style="flex:1">Hồ sơ còn điểm chưa khớp</h2><button class="btn sm" data-close>Đóng</button></div>
+  modal(h`<div class="row"><h2 style="flex:1">Hồ sơ còn điểm chưa khớp</h2>${raw(CLOSE_BTN)}</div>
     <ul class="clean">${raw(left.map((x) => h`<li>${x}</li>`).join(""))}</ul>
     <p class="muted small" style="margin:0">Anh sửa hồ sơ rồi đối chiếu lại, hoặc đánh dấu là đã đối chiếu để mở nút Nộp.</p>
     <div class="row"><div class="spacer"></div><button class="btn" data-close>Sửa và đối chiếu lại</button><button class="btn primary" id="cmAccept">Đánh dấu đã đối chiếu</button></div>`, (m, close) => {
@@ -3059,7 +3065,7 @@ function askAfterCompare(key, left) {
 }
 function askAccept(key) {
   const left = submitBlockers(key);
-  modal(h`<div class="row"><h2 style="flex:1">Xác nhận đã đối chiếu?</h2><button class="btn sm" data-close>Đóng</button></div>
+  modal(h`<div class="row"><h2 style="flex:1">Xác nhận đã đối chiếu?</h2>${raw(CLOSE_BTN)}</div>
     <p class="small" style="margin:0">Kết quả đối chiếu còn các điểm sau. Đánh dấu là đã đối chiếu thì nút Nộp sẽ mở.</p>
     <ul class="clean">${raw(left.map((x) => h`<li>${x}</li>`).join(""))}</ul>
     <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn green" id="cmAcceptOk">Xác nhận</button></div>`, (m, close) => {
@@ -3075,7 +3081,7 @@ async function acceptCompare(key) {
 }
 // A previous comparison exists: confirm before spending another run on it.
 function askRecompare(key) {
-  modal(h`<div class="row"><h2 style="flex:1">Đối chiếu lại?</h2><button class="btn sm" data-close>Đóng</button></div>
+  modal(h`<div class="row"><h2 style="flex:1">Đối chiếu lại?</h2>${raw(CLOSE_BTN)}</div>
     <p class="small" style="margin:0">Gói này đã có kết quả đối chiếu lúc ${fmtDate(state.compare[key].at)}${state.compare[key].accepted ? " và đã được đánh dấu là đã đối chiếu" : ""}. Đối chiếu lại sẽ xóa ngay kết quả cũ${state.compare[key].accepted ? " và dấu đã đối chiếu" : ""}, rồi chờ kết quả mới.</p>
     <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn primary" id="cmAgain">Đối chiếu lại</button></div>`, (m, close) => {
     $("#cmAgain", m).addEventListener("click", async () => {
@@ -3353,7 +3359,7 @@ async function toggleExcl(id) {
 const supWait = () => (state.db && !state.loaded.supplier ? h`<div class="mscroll loading">${raw(progress("Đang tải nhà cung cấp..."))}</div>` : "");
 const supChanged = () => { renderSuppliers(); if ($("#catBody")) renderCatalog(); partsFill(); };
 const mBanner = (icon, title, tag, tid = "", href = "/") => h`<header class="banner mbanner"><svg class="wave" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><path d="M0 60 C 25 20, 50 20, 75 60 S 125 100, 150 60 S 200 20, 225 60 S 275 100, 300 60 S 350 20, 375 60 S 425 100, 450 60 S 500 20, 525 60 S 575 100, 600 60" fill="none" stroke="var(--wave)" stroke-width="2"/><path d="M0 60 H600" stroke="var(--wave)" stroke-width="1" stroke-dasharray="2 6" opacity=".6"/></svg>
-  <a class="home" href="${href}" title="${title}"><div class="mark" aria-hidden="true">${raw(MB_ICON[icon])}</div><div class="btitle"><h2 id="${tid}">${title}</h2><span class="tag">${tag}</span></div></a><button class="btn sm" data-close>Đóng</button></header>`;
+  <a class="home" href="${href}" title="${title}"><div class="mark" aria-hidden="true">${raw(MB_ICON[icon])}</div><div class="btitle"><h2 id="${tid}">${title}</h2><span class="tag">${tag}</span></div></a>${raw(CLOSE_BTN)}</header>`;
 // A product line matches a needed power when it is stated in that same unit (kW and kVA are never converted).
 function supLinesFor(s, f = supFilter) {
   const v = Number(String(f.power).replace(",", "."));
@@ -4286,7 +4292,7 @@ function askDeleteCfg(key, size, rank) {
   const c = part?.configs?.find((x) => String(x.rank) === String(rank));
   if (!c) return;
   const name = [c.engine?.model, c.alternator?.model, c.controller?.model].filter(Boolean).join(" + ");
-  modal(h`<div class="row"><h2 style="flex:1">Xoá cấu hình #${rank}?</h2><button class="btn sm" data-close>Đóng</button></div>
+  modal(h`<div class="row"><h2 style="flex:1">Xoá cấu hình #${rank}?</h2>${raw(CLOSE_BTN)}</div>
     <p class="small" style="margin:0">Cấu hình ${name}${size ? ` (máy ${size})` : ""} sẽ bị xoá khỏi danh sách gợi ý của mọi người; các cấu hình còn lại được đánh số lại từ #1.</p>
     <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn" id="cfgDelOk" style="color:var(--red)">Xoá</button></div>`, (m, close) => {
     $("#cfgDelOk", m).addEventListener("click", async () => {
@@ -4305,7 +4311,7 @@ function askDeleteCfg(key, size, rank) {
   });
 }
 function askDeleteTlkt(key) {
-  modal(h`<div class="row"><h2 style="flex:1">Xóa kết quả đối chiếu TLKT?</h2><button class="btn sm" data-close>Đóng</button></div>
+  modal(h`<div class="row"><h2 style="flex:1">Xóa kết quả đối chiếu TLKT?</h2>${raw(CLOSE_BTN)}</div>
     <p class="small" style="margin:0">Kết quả đối chiếu tài liệu kỹ thuật lúc ${fmtDate(state.tlkt[key].at)} sẽ bị xóa.</p>
     <div class="row"><div class="spacer"></div><button class="btn" data-close>Huỷ</button><button class="btn" id="tkDelOk" style="color:var(--red)">Xóa</button></div>`, (m, close) => {
     $("#tkDelOk", m).addEventListener("click", async () => {
@@ -5219,7 +5225,7 @@ function openAiConfig() {
   const fields = Array.isArray(cfg.fields) && cfg.fields.some((k) => AI_FIELDS.some(([f]) => f === k)) ? cfg.fields : AI_FIELD_DEFAULT;
   const sp = aiSpent(), at = cfg.switchAtUsd ?? state.botstatus?.api?.switchAt ?? AI_SWITCH_DEFAULT;
   const segOf = (k) => h`<div class="seg" role="tablist" aria-label="Cách trả tiền">${raw(["api", "plan"].map((v) => h`<button type="button" data-aiuse="${k}" data-v="${v}" aria-selected="${(use[k] || "api") === v ? "true" : "false"}">${v === "api" ? "API" : "Gói tháng"}</button>`).join(""))}</div>`;
-  modal(h`<div class="row"><h2 style="flex:1">Cấu hình hệ thống</h2><button class="btn sm" data-close>Đóng</button></div>
+  modal(h`<div class="row"><h2 style="flex:1">Cấu hình hệ thống</h2>${raw(CLOSE_BTN)}</div>
     <details class="supsec" id="aiCfgUse" open style="margin:0"><summary>Cấu hình Claude</summary>
       <div class="aicfg" style="margin-top:8px">${raw(AI_TASKS.map(([k, label]) => h`<span>${label}</span>${raw(segOf(k))}`).join(""))}</div>
       <h4 style="margin:14px 0 4px">Tiền API</h4>
