@@ -104,6 +104,11 @@ if ((ConvertTo-Json $s -Depth 20) -notmatch 'Test-GenBidBotGit') {
 }
 $missing.Add('Skill /hsmt trên claude.ai: Settings > Skills > Upload bot\claude\skills\hsmt\SKILL.md (không làm bằng script được)')
 
+Step "Cờ chuẩn hoá số nguồn (GENBID_SPEC_NORM=1)"
+# Gợi ý cấu hình đọc số nguồn qua lớp chuẩn hoá (PR #786; Khoa 15/11/2026 "commit và apply"). Code mặc định tắt cờ;
+# bot đọc biến người dùng khi tác vụ khởi động. Đã đặt giá trị khác (vd. 0 hay "fuel") thì giữ nguyên.
+if (-not [Environment]::GetEnvironmentVariable('GENBID_SPEC_NORM', 'User')) { [Environment]::SetEnvironmentVariable('GENBID_SPEC_NORM', '1', 'User') }
+
 Step "Token và khoá (không có trong git)"
 if (-not (Test-Path (Join-Path $Root '.genbid-ingest-token'))) { $missing.Add("$Root\.genbid-ingest-token: token Vercel (biến INGEST_TOKEN của project genset-pro-web), một dòng") }
 if (-not (Test-Path (Join-Path $Root '.claude-bot-token'))) { $missing.Add("$Root\.claude-bot-token: chạy claude setup-token rồi lưu token (không cần nếu claude đã đăng nhập)") }
