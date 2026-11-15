@@ -20,7 +20,7 @@ Không bao giờ tự gõ mật khẩu hay token vào ô đăng nhập; tệp to
 ## 1. Phần mềm (Khoa cài, em kiểm bằng lệnh)
 
 `winget install Git.Git GitHub.cli OpenJS.NodeJS.LTS` · `winget install --id oschwartz10612.Poppler -e --scope user` ·
-`winget install UB-Mannheim.TesseractOCR --scope user` · WinRAR · Microsoft Word (đọc .doc) · Claude Code CLI
+`winget install UB-Mannheim.TesseractOCR` (cài cho cả máy, không có bản `--scope user`) · WinRAR · Microsoft Word (đọc .doc) · Claude Code CLI
 (`irm https://claude.ai/install.ps1 | iex`) · VNeGP Client Agent bản chính thức vào `C:\MPI\EGP-AGENT` (cổng 1234, tải từ muasamcong) ·
 tuỳ chọn Antigravity `agy` (dịch Gemini). Sau đó Khoa chạy `gh auth login` và `claude` (đăng nhập).
 
@@ -30,7 +30,8 @@ tuỳ chọn Antigravity `agy` (dịch Gemini). Sau đó Khoa chạy `gh auth lo
 git clone https://github.com/khoanguyenminh6868/GenSet-Pro.git "C:\Projects\GenSet Pro\GenSet-Pro"
 powershell -NoProfile -ExecutionPolicy Bypass -File "C:\Projects\GenSet Pro\GenSet-Pro\bot\Install-GenBidBot.ps1"
 ```
-Install chép kit vào `genbid-hsmt\`, `npm ci`, Chromium, tessdata_best, clone nhánh `hsmt-inbox`, skills Claude, bộ nhớ Claude
+Install chép kit vào `genbid-hsmt\`, `npm ci`, Chromium (vào `C:\Projects\GenSet Pro\.ms-playwright`, biến người dùng
+`PLAYWRIGHT_BROWSERS_PATH`; dưới AppData có máy báo "side-by-side configuration is incorrect"), tessdata_best, clone nhánh `hsmt-inbox`, skills Claude, bộ nhớ Claude
 (`bot/claude/memory` → `~\.claude\projects\C--Projects-GenSet-Pro\memory`, chỉ khi trống), `CLAUDE.md` gốc, Stop hook kiểm GitHub,
 tác vụ Windows "GenBid Bot". Nó in danh sách còn thiếu: xử lý từng dòng, chạy lại tới khi hết.
 Thêm `git config user.name/user.email` trong `GenSet-Pro` và `hsmt-inbox` (hỏi Khoa nếu chưa biết, mặc định như máy cũ: Khoa).

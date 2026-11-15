@@ -26,7 +26,7 @@ param(
 )
 # gh ghi ra stderr cả khi chỉ báo "release not found"; lỗi thật được kiểm tra qua $LASTEXITCODE.
 $ErrorActionPreference = 'Continue'
-if (-not $Src) { $Src = "C:\Users\Khoa\Downloads\GenBid-HSMT\$Key" }
+if (-not $Src) { $Src = Join-Path ([Environment]::GetFolderPath('UserProfile')) "Downloads\GenBid-HSMT\$Key" }
 $utf8 = New-Object Text.UTF8Encoding $false
 $tag = "hsmt-$Key"
 

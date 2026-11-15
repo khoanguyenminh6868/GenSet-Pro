@@ -29,7 +29,7 @@ if (-not (Has gh)) { $missing.Add('GitHub CLI: winget install GitHub.cli, rồi 
 else { & gh auth status *> $null; if ($LASTEXITCODE) { $missing.Add('GitHub CLI chưa đăng nhập: gh auth login') } }
 if (-not (Has claude)) { $missing.Add('Claude Code CLI: irm https://claude.ai/install.ps1 | iex, rồi claude (đăng nhập) hoặc claude setup-token') }
 $tess = @("$env:LOCALAPPDATA\Programs\Tesseract-OCR\tesseract.exe", 'C:\Program Files\Tesseract-OCR\tesseract.exe') | Where-Object { Test-Path $_ }
-if (-not $tess) { $missing.Add('Tesseract 5 (OCR bản gốc, nhanh hơn tesseract.js): winget install UB-Mannheim.TesseractOCR --scope user') }
+if (-not $tess) { $missing.Add('Tesseract 5 (OCR bản gốc, nhanh hơn tesseract.js): winget install UB-Mannheim.TesseractOCR (không có bản --scope user)') }
 $poppler = (Test-Path "$env:LOCALAPPDATA\Microsoft\WinGet\Links\pdftoppm.exe") -or (Has pdftoppm) -or
     @(Get-ChildItem "$env:LOCALAPPDATA\Microsoft\WinGet\Packages" -Directory -Filter 'oschwartz10612.Poppler*' -ErrorAction SilentlyContinue).Count
 if (-not $poppler) { $missing.Add('Poppler (pdftotext/pdftoppm): winget install --id oschwartz10612.Poppler -e --scope user') }
@@ -46,7 +46,10 @@ $state = Join-Path $Root '.hsmt-worker-state.json'
 if (-not (Test-Path $state)) { '{"done": []}' | Out-File -Encoding ascii $state }
 
 if (Has node) {
-    Step "npm ci + Chromium"
+    Step "npm ci + Chromium -> $Root\.ms-playwright"
+    # Chromium ngoài AppData: có máy chrome.exe dưới AppData báo "side-by-side configuration is incorrect" (KayenGram, 2026-11-14).
+    $env:PLAYWRIGHT_BROWSERS_PATH = Join-Path $Root '.ms-playwright'
+    [Environment]::SetEnvironmentVariable('PLAYWRIGHT_BROWSERS_PATH', $env:PLAYWRIGHT_BROWSERS_PATH, 'User')
     Push-Location $Kit
     try { & npm ci --no-audit --no-fund; & npx --yes playwright-core install chromium } finally { Pop-Location }
 }
@@ -63,6 +66,11 @@ Step "Nhánh hsmt-inbox -> $Root\hsmt-inbox"
 $inbox = Join-Path $Root 'hsmt-inbox'
 if ((Has git) -and -not (Test-Path (Join-Path $inbox '.git'))) {
     & git clone --single-branch -b hsmt-inbox https://github.com/khoanguyenminh6868/GenSet-Pro.git $inbox
+} elseif (Has git) {
+    # Clone cũ (máy từng chạy worker) phải theo kịp GitHub: Publish-GenBidHsmt.ps1 commit rồi push thẳng, không pull,
+    # nên clone chậm thì push bị từ chối và Lấy tệp báo "đăng tệp bị lỗi" (KayenGram, 2026-11-14).
+    & git -C $inbox pull -q --ff-only origin hsmt-inbox
+    if ($LASTEXITCODE) { $missing.Add("$inbox không cập nhật được (git pull --ff-only): kiểm commit chưa đẩy rồi chạy lại") }
 }
 if ((Has git) -and $Repo -ne (Join-Path $Root 'GenSet-Pro')) {
     $missing.Add("Repo nên ở $Root\GenSet-Pro (bot đọc suppliers\config-bot.mjs ở đó; hiện chạy từ $Repo)")

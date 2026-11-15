@@ -163,9 +163,13 @@ function ps(script, psArgs, timeoutMin = 60) {
 class Captcha extends Error {}
 function chromePath() {
   if (process.env.GENBID_CHROME) return process.env.GENBID_CHROME;
-  const base = path.join(process.env.LOCALAPPDATA || "", "ms-playwright");
-  const dirs = fs.existsSync(base) ? fs.readdirSync(base).filter((d) => /^chromium-\d+$/.test(d)).sort((a, b) => b.split("-")[1] - a.split("-")[1]) : [];
-  for (const d of dirs) { const f = path.join(base, d, "chrome-win", "chrome.exe"); if (fs.existsSync(f)) return f; }
+  // Install-GenBidBot.ps1 puts Chromium in PLAYWRIGHT_BROWSERS_PATH (outside AppData: on some PCs a chrome.exe under
+  // AppData fails with "side-by-side configuration is incorrect"); older installs still have it in LOCALAPPDATA.
+  for (const base of [process.env.PLAYWRIGHT_BROWSERS_PATH, path.join(process.env.LOCALAPPDATA || "", "ms-playwright")]) {
+    if (!base || !fs.existsSync(base)) continue;
+    const dirs = fs.readdirSync(base).filter((d) => /^chromium-\d+$/.test(d)).sort((a, b) => b.split("-")[1] - a.split("-")[1]);
+    for (const d of dirs) { const f = path.join(base, d, "chrome-win", "chrome.exe"); if (fs.existsSync(f)) return f; }
+  }
   return null;
 }
 async function openBrowser() {
