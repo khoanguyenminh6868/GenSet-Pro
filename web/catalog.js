@@ -567,7 +567,9 @@
         const t = s.specTables[ti], line = t.rows.find((r) => numbersOf(r).includes(pw.min)), kind = pw.rating === "prime" || pw.rating === "standby" ? pw.rating : "rated";
         const makes = [];
         for (const m of p.engineMakes || []) for (const b of brandIn(m, ENGINE_BRANDS)) addMake(makes, b, "tên trang");
-        out.push({ supplierId: s.id, n, table: ti, title: String(t.title || ""), row: t.rows.indexOf(line), line, genset: isCode(p.series) ? p.series : null, power: { [kind]: { [pw.unit]: pw.min } },
+        // Every rating the row gives (AGG CU1250D5 "1250/1000" ESP and "1125/900" PRP), else the line's one figure.
+        const both = rowPowerOf(t, line, pw, [p.series, ...(p.engineModels || [])]);
+        out.push({ supplierId: s.id, n, table: ti, title: String(t.title || ""), row: t.rows.indexOf(line), line, genset: isCode(p.series) ? p.series : null, power: both || { [kind]: { [pw.unit]: pw.min } },
           freq: freqIn((p.frequency || []).join(" ")) || freqIn(`${(t.header || []).join(" ")} ${t.title || ""}`), header: t.header || [], specs: [], kind: "engine", model: tidyModel(model, ENGINE_BRANDS), makes, other: null, fromLine: true });
         break;
       }
@@ -575,6 +577,46 @@
     return out;
   }
   const numbersOf = (s) => (String(s).replace(/(\d),(\d)/g, "$1.$2").match(/\d+(?:\.\d+)?/g) || []).map(Number);
+  // A table saved one cell per line (Tìm NCC from a page whose text puts each cell on its own line: AGG "Generator Model",
+  // "ESP (kVA/kW)", "PRP (kVA/kW)", "Engine Model" over "AGG CU1250D5", "1250/1000", "1125/900", "KTA38G9"): one record,
+  // as many lines as column titles, no cell bars, no runs of spaces (a pdftotext row), no "label: value".
+  const cellPerLine = (t) => (t.header || []).length > 1 && t.rows.length === t.header.length
+    && [...t.header, ...t.rows].every((l) => !/\||\s{2,}|[:：]/.test(String(l).trim()));
+  // The ratings a table row gives for a product line of one power (min = max), read as powersIn reads a genset row:
+  // two kVA / kW pairs are standby (larger) and prime (smaller), one pair takes the rating the header names. Kept only
+  // when the line's own figure is among them in its unit, and under the rating the line gives (unspecified: any).
+  // Returns { prime?, standby?, rated? } or null.
+  function rowPowerOf(t, line, pw, models0) {
+    if (!t || !pw || pw.min !== pw.max || !/^(kVA|kW)$/.test(pw.unit)) return null;
+    // A row without cell bars (pdftotext "570   712   627    784 …") is read word by word.
+    let cells = cellPerLine(t) ? t.rows : line != null ? cellsOf(line) : null;
+    if (!cells) return null;
+    if (cells.length === 1) cells = String(cells[0]).split(/\s{2,}|\s(?=\d)/).filter(Boolean);
+    const head = `${(t.header || []).join(" ")} ${t.title || ""}`, p = powersIn(cells, head);
+    if (!p) return null;
+    // Two pairs are read as standby and prime only when the column titles name both ratings and the row (or the titles of a
+    // one-model sheet) names this line's model: a row of several models ("(kVA) Standby 55 66 88 110", denyo) or of
+    // engine kWm next to kWe ("11 12 10 11.1 8 10", lister-petter) would pair figures of different columns.
+    if (p.standby && p.prime) {
+      const models = (models0 || []).filter(isCode).map(keyOf);
+      const named = cellPerLine(t) || models.some((k) => keyOf(`${line || ""}`).includes(k) || keyOf(head).includes(k));
+      if (!(PRIME.test(head) && STANDBY.test(head) && named)) return null;
+    }
+    const hit = Object.entries(p).filter(([, v]) => v[pw.unit] === pw.min).map(([k]) => k);
+    return hit.length && (pw.rating === "unspecified" || hit.includes(pw.rating)) ? p : null;
+  }
+  // The ratings shown for a supplier's product line of one power: the row of a table of its source holding that figure.
+  function linePower(s, p) {
+    const pw = p?.power;
+    if (!pw || pw.min !== pw.max) return null;
+    const ns = new Set([...(pw.src || []), ...(p.src || [])]);
+    for (const t of s?.specTables || []) {
+      if (!ns.has(t.n)) continue;
+      const rows = cellPerLine(t) ? [null] : t.rows.filter((r) => numbersOf(r).includes(pw.min));
+      for (const r of rows) { const x = rowPowerOf(t, r, pw, [p.series, ...(p.engineModels || [])]); if (x) return x; }
+    }
+    return null;
+  }
 
   // The make shown: the names given by the strongest kind of evidence (a cell of the row, a column title or the
   // maker itself before a page title, which on dealer sites often lists several brands).
@@ -897,7 +939,7 @@
     return out;
   }
 
-  const api = { build, builder, partsIn, fromSupplier, prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS };
+  const api = { build, builder, partsIn, fromSupplier, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);
