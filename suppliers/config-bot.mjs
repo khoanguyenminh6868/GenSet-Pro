@@ -2679,7 +2679,16 @@ export function enginePowerOf(row) {
     if (s.key !== "engPower") continue;
     // GENBID_SPEC_NORM=1: not a figure the layer reads with no unit, several values, an unreadable number or of another kind.
     // "(prime/standby) | 110/121": two figures the layer calls ambiguous, read in the order the label gives (ratedPower; Khoa 14/11/2026: "đọc").
-    if (specNormOn("other")) { const n = normFig(s, useNormCtx(row), {}); if (!n.ok && !(n.why.every((w) => w === "ambiguous") && /(prime|standby)\s*\/\s*(prime|standby)/i.test(s.label) && ratedPower(s.label, s.value))) continue; }
+    // "Prime power | 284/312": two kW figures with no order in the label: the smaller is prime, the larger standby (Khoa 15/11/2026).
+    if (specNormOn("other")) {
+      const n = normFig(s, useNormCtx(row), {}), amb = !n.ok && n.why.every((w) => w === "ambiguous");
+      if (amb && /(prime|standby)\s*\/\s*(prime|standby)/i.test(s.label) && ratedPower(s.label, s.value)) { /* read below by ratedPower */ }
+      else if (amb && n.r?.unit === "kW" && /^\s*\d+(?:[.,]\d+)?\s*\/\s*\d+(?:[.,]\d+)?\s*(kw)?\s*$/i.test(s.value)) {
+        const [x, y] = numbersIn(s.value), [prime, standby] = x <= y ? [x, y] : [y, x];
+        if (prime !== standby) return { prime, standby, rpm: null, gross: false, net: false, label: s.label, value: s.value, line: row.line };
+        continue;
+      } else if (!n.ok) continue;
+    }
     const p = ratedPower(s.label, s.value);
     if (p) return { ...p, line: row.line };
   }

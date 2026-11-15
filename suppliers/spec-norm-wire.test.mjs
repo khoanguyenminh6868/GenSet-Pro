@@ -105,13 +105,16 @@ test("khoaRules: a weight with no open / canopy written is compared, under the f
   assert.equal(khoaRules({ rank: 1, checks: [] }, [W], { ...ROW, title: "Open type diesel generator set" }).checks.length, 0);
 });
 
-test("enginePowerOf: two figures with no rating per figure are not used under the flag", () => {
+test("enginePowerOf: two kW figures with no order under the flag: the smaller is prime, the larger standby", () => {
   const row = { line: "| X | 284/312 |", header: ["| Model | Engine power (kW) |"], specs: [{ key: "engPower", label: "Engine Prime power (kW)", value: "284" }] };
   assert.ok(enginePowerOf(row));
   assert.ok(on(() => enginePowerOf(row)));
   const amb = { ...row, specs: [{ key: "engPower", label: "Engine Prime power (kW)", value: "284/312" }] };
   assert.ok(enginePowerOf(amb));
-  assert.equal(on(() => enginePowerOf(amb)), null);
+  // Khoa 15/11/2026: no order written → the smaller figure is prime, the larger standby (either way round).
+  assert.deepEqual((({ prime, standby }) => ({ prime, standby }))(on(() => enginePowerOf(amb))), { prime: 284, standby: 312 });
+  const rev = { ...row, specs: [{ key: "engPower", label: "Engine Prime power (kW)", value: "312/284" }] };
+  assert.deepEqual((({ prime, standby }) => ({ prime, standby }))(on(() => enginePowerOf(rev))), { prime: 284, standby: 312 });
   // The label gives the order of the two (Khoa 14/11/2026: "đọc"): read as without the flag.
   const pair = { ...row, specs: [{ key: "engPower", label: "Engine Power(kw) (prime/standby)", value: "110/121" }] };
   assert.deepEqual((({ prime, standby }) => ({ prime, standby }))(on(() => enginePowerOf(pair))), { prime: 110, standby: 121 });
