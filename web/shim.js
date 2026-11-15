@@ -141,7 +141,7 @@
       @media (max-width:640px){#gbLog{padding:0}#gbLog .lp{width:100vw;height:100dvh;border-radius:0}#gbLog .r{grid-template-columns:64px 1fr}#gbLog .w{grid-column:1/-1}}
     </style>
     <div class="lp" role="dialog" aria-modal="true" aria-label="Nhật ký hoạt động">
-      <div class="lh"><h2>Nhật ký hoạt động</h2><button class="ibtn" id="lgX" aria-label="Đóng">✕</button></div>
+      <div class="lh"><h2>Nhật ký hoạt động</h2><button class="ibtn xclose" id="lgX" aria-label="Đóng" title="Đóng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button></div>
       <div class="lf">
         <select id="lgWho" aria-label="Người thực hiện"><option value="">Tất cả người dùng</option></select>
         <select id="lgKind" aria-label="Loại hoạt động">
