@@ -141,7 +141,7 @@
       @media (max-width:640px){#gbLog{padding:0}#gbLog .lp{width:100vw;height:100dvh;border-radius:0}#gbLog .r{grid-template-columns:64px 1fr}#gbLog .w{grid-column:1/-1}}
     </style>
     <div class="lp" role="dialog" aria-modal="true" aria-label="Nhật ký hoạt động">
-      <div class="lh"><h2>Nhật ký hoạt động</h2><button class="ibtn xclose" id="lgX" aria-label="Đóng" title="Đóng"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" aria-hidden="true"><path d="M2.5 2.5l19 19M21.5 2.5l-19 19"/></svg></button></div>
+      <div class="lh"><h2>Nhật ký hoạt động</h2><button class="ibtn xclose" id="lgX" aria-label="Đóng" title="Đóng"><svg viewBox="0 0 512 512" aria-hidden="true"><defs><linearGradient id="xcg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ff6b35"/><stop offset="1" stop-color="#f03e3e"/></linearGradient><clipPath id="xcc"><circle cx="256" cy="256" r="256"/></clipPath></defs><circle cx="256" cy="256" r="256" fill="url(#xcg)"/><path clip-path="url(#xcc)" fill="#000" opacity=".22" d="M380 140L520 280V520H280L140 380L256 256Z"/><path d="M158 158L354 354M354 158L158 354" stroke="#fff" stroke-width="66" stroke-linecap="round"/></svg></button></div>
       <div class="lf">
         <select id="lgWho" aria-label="Người thực hiện"><option value="">Tất cả người dùng</option></select>
         <select id="lgKind" aria-label="Loại hoạt động">
