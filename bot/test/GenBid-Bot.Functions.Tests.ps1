@@ -45,7 +45,12 @@ Describe 'GenBid-Bot.ps1: hàm' {
             $r = Auth $global:Now0
             Assert-Eq $r.Text 'plan'; Assert-Null $r.ApiKey; Assert-Eq $r.OAuth 'claude-token'
         }
-        It 'đã đăng nhập /login thì không đặt token setup-token' {
+        It 'có .claude-bot-token thì dùng token, kể cả khi máy còn .credentials.json (phiên /login có thể đã hết hạn)' {
+            $r = Auth $global:Now0 $true
+            Assert-Eq $r.Text 'plan'; Assert-Eq $r.OAuth 'claude-token'
+        }
+        It 'đã đăng nhập /login và không có .claude-bot-token thì không đặt token' {
+            Remove-Item $global:ClaudeTokenFile
             $r = Auth $global:Now0 $true
             Assert-Eq $r.Text 'plan'; Assert-Null $r.OAuth
         }
