@@ -387,7 +387,10 @@
         if ((at.ei >= 0 && engTitle(ttl) && i + shift !== at.ei) || (at.ai >= 0 && altTitle(ttl) && i + shift !== at.ai)) return null;
         if (!key || !val) continue;
         if (!specFits(key, val) || (kW !== undefined && !likely(key, val, kW))) return null;
-        if (!out.some((x) => x.key === key)) out.push({ key, label, value: val });
+        // Two engine power columns, one standby and one not ("额定功率/转速 | 备用功率/转速", dcec; nenjo "Engine prime
+        // power | Engine standby power"): both, each with its title. Other keys: the first column.
+        const sb = (l) => /standby|stand-by|\besp\b|备用/i.test(l);
+        if (!out.some((x) => x.key === key && !(key === "engPower" && sb(x.label) !== sb(label)))) out.push({ key, label, value: val });
       }
       return out;
     };
@@ -398,10 +401,41 @@
     let shift = null;
     if (titles.length === cells.length) shift = 0;
     else if (titles.length === cells.length - 1 && isCode(cells[0]) && !/model|型号/i.test(titles[0])) shift = 1;
-    if (shift != null) { const r = lined(titles, units, shift); if (r?.length) return r; }
+    if (shift != null) { const r = lined(titles, units, shift); if (r?.length) return engRatings(hs, cells, at, r); }
     // A header of several lines whose second line names every column ("| | KW | kVA | KW | kVA | Cummins | ...").
-    for (const h of hs.slice(1)) if (h.length === cells.length && h.some((x) => specKey(x))) { const r = lined(h, [], 0, kWOf(at.power)); if (r?.length) return r; }
-    return walkedSpecs(hs, cells, at);
+    for (const h of hs.slice(1)) if (h.length === cells.length && h.some((x) => specKey(x))) { const r = lined(h, [], 0, kWOf(at.power)); if (r?.length) return engRatings(hs, cells, at, r); }
+    return engRatings(hs, cells, at, walkedSpecs(hs, cells, at));
+  }
+  // The engine's power over two cells, its ratings on a line below (keliang "Engine power(kw)" over "Prime | Standby",
+  // hanyang "Engine power" over "Rated Power (kW) | Standby Power (kW)", acepow "Rated | Standby"): one title gives one
+  // figure with no rating, and a walk from the right put acepow's standby 33 under "Engine Power(KW)". Read as two when
+  // the engine power title comes right after a model title, the rating subtitles of the lower line go prime-like then
+  // standby, pair after pair (genset outputs first, the engine's next: the order is the same), the two cells after the
+  // engine model are figures (or "—", "/" for none) and the second is 1.05–1.25 times the first. The label keeps the
+  // subtitle as written ("Rated" stays "Rated"). Anything else: the figures as they were.
+  const SUB_PRIME = /^\(?\s*(prime|rated|cop|continuous|prp|额定|常用|主用)/i, SUB_SB = /^\(?\s*(standby|esp|max|备用)/i;
+  const NONE_CELL = /^[—–\-/]$/;
+  function engRatings(hs, cells, at, specs) {
+    const ei = at.ei, ep = specs.filter((x) => x.key === "engPower");
+    if (!(ei >= 0) || ep.length !== 1 || /prime|standby|\bprp\b|\besp\b|\bcop\b|rated|额定|备用|常用|主用|continuous/i.test(ep[0].label)) return specs;
+    let title = null;
+    for (const h of hs) {
+      const j = h.findIndex((x) => specKey(x) === "engPower");
+      if (j > 0 && /model|型号/i.test(h[j - 1])) { title = h[j]; break; }
+    }
+    if (!title) return specs;
+    const sub = hs.map((h) => h.filter((x) => SUB_PRIME.test(x) || SUB_SB.test(x))).find((r) => r.length >= 2);
+    if (!sub || sub.length % 2 || sub.some((x, i) => !(i % 2 ? SUB_SB.test(x) && !SUB_PRIME.test(x) : SUB_PRIME.test(x)))) return specs;
+    const a = String(cells[ei + 1] ?? "").trim(), b = String(cells[ei + 2] ?? "").trim();
+    const na = NONE_CELL.test(a) ? null : num(a), nb = NONE_CELL.test(b) ? null : num(b);
+    if ((na == null && !NONE_CELL.test(a)) || (nb == null && !NONE_CELL.test(b)) || (na == null && nb == null)) return specs;
+    if (na != null && nb != null && !(nb >= na * 1.05 && nb <= na * 1.25)) return specs;
+    // The walked figure must be one of the two cells (else the walk read another column: leave it).
+    if (![a, b].includes(String(ep[0].value).trim())) return specs;
+    const lp = sub[sub.length - 2], ls = sub[sub.length - 1], out = specs.filter((x) => x.key !== "engPower");
+    if (na != null) out.push({ key: "engPower", label: `${title} ${lp}`, value: a });
+    if (nb != null) out.push({ key: "engPower", label: `${title} ${ls}`, value: b });
+    return out;
   }
   // A header of several lines whose titles span columns ("Standby output" over "KVA | KW", "Displacement (L)" over two
   // lines): no line has the row's width. Each line is laid over the row from the cells whose column is known: the

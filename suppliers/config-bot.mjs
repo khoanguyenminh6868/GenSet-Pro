@@ -2675,6 +2675,9 @@ export function hsmtCombo(text, reqs = []) {
 // 625kW standby"), by rating; a figure whose rating the row does not name ("Engine power (kW) = 264") is not used:
 // the engine's prime and standby differ by ~10%, so guessing would decide the balance.
 export function enginePowerOf(row) {
+  // Prime and standby may come as two figures (catalog.js: "Engine power(kw) Prime | 17", "… Standby | 19"): each rating
+  // from the first figure that names it, the label and value of the first.
+  let acc = null;
   for (const s of row?.specs || []) {
     if (s.key !== "engPower") continue;
     // GENBID_SPEC_NORM=1: not a figure the layer reads with no unit, several values, an unreadable number or of another kind.
@@ -2690,9 +2693,12 @@ export function enginePowerOf(row) {
       } else if (!n.ok) continue;
     }
     const p = ratedPower(s.label, s.value);
-    if (p) return { ...p, line: row.line };
+    if (!p) continue;
+    if (!acc) acc = { ...p, line: row.line };
+    else for (const r of ["prime", "standby"]) if (acc[r] == null && p[r] != null) acc[r] = p[r];
+    if (acc.prime != null && acc.standby != null) break;
   }
-  return null;
+  return acc;
 }
 // One engine power figure (label, value) by rating: { prime?, standby?, rpm, gross, net, label, value } or null when the
 // source does not name the rating or the unit is not kW. Shared by the genset row and the model's facts (modelFacts).
