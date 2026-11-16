@@ -299,7 +299,7 @@ html.gb-busy,html.gb-busy *{cursor:progress}
 @media (max-width:640px){.kv.kv1m{grid-template-columns:minmax(0,1fr);row-gap:0}.kv.kv1m dt{color:var(--fg);font-weight:600;padding-top:10px;border-top:1px solid var(--line)}.kv.kv1m dt:first-child{padding-top:0;border-top:0}.kv.kv1m dd{padding:2px 0 10px}
 table.spec1 thead{display:none}table.spec1,table.spec1 tbody,table.spec1 tr,table.spec1 td{display:block;width:auto}table.spec1 tr{padding:10px 12px;border-bottom:1px solid var(--line)}table.spec1 tr:last-child{border-bottom:0}table.spec1 td{border:0;padding:2px 0}table.spec1 td.s-item{font-weight:600}table.spec1 td.s-ref:empty{display:none}table.spec1 td.s-ref:not(:empty)::before{content:"Nguồn: "}}
 .kv dt{color:var(--muted)}.kv dd{margin:0;overflow-wrap:anywhere}
-.kv dd.hl-price{color:var(--mint);font-weight:600}.kv dd.hl-close{color:var(--rose);font-weight:600}
+.kv dd.hl-price{color:var(--mint);font-weight:600}.kv dd.hl-qty,.pline .qty{color:var(--amber);font-weight:600}.kv dd.hl-close{color:var(--rose);font-weight:600}
 .doclist{display:flex;flex-direction:column;gap:6px}
 .docrow{display:flex;gap:10px;align-items:center;background:var(--panel2);border:1px solid var(--line);border-radius:8px;padding:7px 10px;flex-wrap:wrap}
 .docrow .fn{flex:1;min-width:160px;overflow-wrap:anywhere;font-size:13px}
@@ -1675,10 +1675,10 @@ function renderDrawer(force = true) {
 function infoHtml(t) {
   const key = t._key, d = state.hsmt[key], files = d?.files || [];
   const c = capacityOf(t);
-  const facts = [["Chủ đầu tư", t.investorName && h`<a href="${invHref(t.investorName)}" class="invlink" data-invopen="${t.investorName}" title="Xem mọi gói thầu của chủ đầu tư này">${t.investorName}</a>`], ["Công suất", c ? `${c.text} (${c.src})` : ""], ["Địa điểm", locOf(t)], ["Giá gói thầu", fmtVnd(t.estimatedPrice)], ["Hình thức", BID_FORM[t.bidForm] || t.bidForm], ["Ngày đăng", fmtDate(t.publicDate)], ["Đóng thầu", fmtDate(t.bidCloseDate)], ["Mở thầu", fmtDate(t.result?.openedAt || (state.portalids?.[t._key]?.bidRealityOpenDate && state.portalids[t._key].bidRealityOpenDate + "+07:00"))], ["Nhà thầu trúng", (t.result?.winners || []).map((w) => bdNameLink(w) + (w.price ? h` (${fmtVnd(w.price)})` : "")).join("; ")]].filter(([, v]) => v);
+  const facts = [["Chủ đầu tư", t.investorName && h`<a href="${invHref(t.investorName)}" class="invlink" data-invopen="${t.investorName}" title="Xem mọi gói thầu của chủ đầu tư này">${t.investorName}</a>`], ["Công suất", c ? `${c.text} (${c.src})` : ""], ["Địa điểm", locOf(t)], ["Giá gói thầu", fmtVnd(t.estimatedPrice)], ["Số lượng", qtyOf(t) ? `${qtyOf(t)} máy` : ""], ["Hình thức", BID_FORM[t.bidForm] || t.bidForm], ["Ngày đăng", fmtDate(t.publicDate)], ["Đóng thầu", fmtDate(t.bidCloseDate)], ["Mở thầu", fmtDate(t.result?.openedAt || (state.portalids?.[t._key]?.bidRealityOpenDate && state.portalids[t._key].bidRealityOpenDate + "+07:00"))], ["Nhà thầu trúng", (t.result?.winners || []).map((w) => bdNameLink(w) + (w.price ? h` (${fmtVnd(w.price)})` : "")).join("; ")]].filter(([, v]) => v);
   // bidders/<key> is read for closed tenders we did not submit too (Get-GenBidBidderTargets.ps1): show it whatever the stage (Khoa, 2026-11-12).
   return h`<div class="field"><label for="dNote">Ghi chú nội bộ</label><textarea id="dNote" rows="2" style="min-height:56px" placeholder="Người phụ trách, giá dự kiến, việc cần làm...">${state.tracked[key]?.note || ""}</textarea></div>
-    <dl class="kv kvo">${raw(facts.map(([k, v]) => h`<dt>${k}</dt><dd class="${k === "Giá gói thầu" ? "hl-price" : k === "Đóng thầu" ? "hl-close" : ""}">${k === "Nhà thầu trúng" || k === "Chủ đầu tư" ? raw(v) : v}</dd>`).join(""))}</dl>
+    <dl class="kv kvo">${raw(facts.map(([k, v]) => h`<dt>${k}</dt><dd class="${k === "Giá gói thầu" ? "hl-price" : k === "Số lượng" ? "hl-qty" : k === "Đóng thầu" ? "hl-close" : ""}">${k === "Nhà thầu trúng" || k === "Chủ đầu tư" ? raw(v) : v}</dd>`).join(""))}</dl>
     ${raw(ownBidHtml(t))}${raw(["submitted", "won", "lost"].includes(stageOf(t)) || state.bidhist?.[t._key] || state.bidders?.[t._key]?.list?.length ? biddersHtml(t) : "")}
     <div style="display:flex;flex-direction:column;gap:8px">
       <div class="row"><h2>Hồ sơ mời thầu</h2></div>
