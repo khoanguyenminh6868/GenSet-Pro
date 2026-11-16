@@ -3229,7 +3229,15 @@ function supWonChip(s, cls = "") {
   return h`<div class="${cls}"><span class="chip ok" title="${tip}">${raw(STAGE_ICON.win)} Trúng ${n} gói</span></div>`;
 }
 const fmtNum = (n) => Number(n).toLocaleString("vi-VN");
-const fmtPower = (p) => (p ? `${fmtNum(p.min)}–${fmtNum(p.max)} ${p.unit}${p.rating && p.rating !== "unspecified" ? " " + p.rating : ""}` : "");
+// A product line of one power (min = max): every rating the row of its source table gives ("1.125 kVA prime · 1.250 kVA
+// standby", catalog.js linePower), else that one figure; a range stays "min–max".
+const supLinePower = (s, line) => (s && line?.power?.min === line.power.max && window.GenbidCatalog?.linePower ? window.GenbidCatalog.linePower(s, line) : null);
+const fmtPower = (p, s, line) => {
+  if (!p) return "";
+  const all = supLinePower(s, line);
+  if (all) return ["prime", "standby", "rated"].filter((k) => all[k]?.[p.unit]).map((k) => `${fmtNum(all[k][p.unit])} ${p.unit}${k === "rated" ? "" : " " + k}`).join(" · ");
+  return `${p.min === p.max ? fmtNum(p.min) : `${fmtNum(p.min)}–${fmtNum(p.max)}`} ${p.unit}${p.rating && p.rating !== "unspecified" ? " " + p.rating : ""}`;
+};
 const supRefs = (src) => (src || []).map((n) => h`<a class="supref" href="#sup-src-${n}" data-supsrc="${n}">[${n}]</a>`).join("");
 let supFilter = { excl: false, fav: false, won: false, q: "", role: "", conf: "", make: "", country: "", year: "", fuel: "", power: "", unit: "kVA" };
 // Sort by founding year or country (Khoa, 2026-11-04): click a header for ▲, again for ▼, a third time back to A–Z; a supplier with no value goes last.
@@ -3481,7 +3489,7 @@ function renderSupList() {
       <td data-l="Vai trò">${SUP_ROLE[s.role] || s.role}${raw(s.specTables?.length ? h`<div class="muted small">${s.specTables.reduce((a, x) => a + x.rows.length, 0)} model</div>` : "")}${raw(s.status === "partial" ? '<div><span class="chip mut">Thiếu dữ liệu</span></div>' : "")}${raw(supWonChip(s, "wond"))}${raw(supQuoteChip(s))}</td>
       <td data-l="Quốc gia">${supCountryName(s) || "—"}</td>
       <td data-l="Năm thành lập">${s.founded || "—"}</td>
-      <td data-l="Dòng máy">${raw(lines.map((p) => h`<div class="small">${SUP_KIND[p.kind] || ""}${p.power ? ": " : ""}<b>${fmtPower(p.power)}</b>${raw(p.power ? "" : '<span class="muted"> chưa có dải công suất</span>')}</div>`).join(""))}</td>
+      <td data-l="Dòng máy">${raw(lines.map((p) => h`<div class="small">${SUP_KIND[p.kind] || ""}${p.power ? ": " : ""}<b>${fmtPower(p.power, s, p)}</b>${raw(p.power ? "" : '<span class="muted"> chưa có dải công suất</span>')}</div>`).join(""))}</td>
       <td class="small" data-l="Động cơ">${[...new Set(lines.flatMap((p) => p.engineMakes || []))].join(", ") || "—"}</td>
       <td data-l="Độ tin cậy"><span class="chip ${conf[1]}" title="${conf[0]}">${conf[2] || conf[0]}</span></td></tr>`;
   }).join(""))}</tbody></table></div>` : h`<div class="note">Không có nhà cung cấp nào khớp bộ lọc.${raw(Number(supFilter.power) > 0 ? " Lưu ý: chỉ so với dòng máy ghi cùng đơn vị (kVA hoặc kW), không quy đổi." : "")}</div>`;
@@ -3533,7 +3541,7 @@ function supDetailHtml(s) {
     <h4>Thế mạnh</h4>${raw(list(s.strengths, (x) => h`<li>${x.text} ${raw(supRefs(x.src))}</li>`))}
     ${raw(s.productLines?.length ? h`<details class="supsec"><summary>Dòng máy phân phối (${s.productLines.length})</summary><div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Loại</th><th>Dòng máy</th><th>Công suất</th><th>Động cơ</th><th>Đầu phát</th><th>Khác</th></tr></thead><tbody>${raw(s.productLines.map((p) => h`<tr>
       <td data-l="Loại">${SUP_KIND[p.kind] || p.kind}</td><td data-l="Dòng máy">${p.series} ${raw(supRefs(p.src))}</td>
-      <td data-l="Công suất">${raw(p.power ? h`<b>${fmtPower(p.power)}</b> ${raw(supRefs(p.power.src))}${raw(p.power.rating === "unspecified" ? '<div class="muted small">nguồn không ghi prime/standby</div>' : "")}` : '<span class="muted">chưa có</span>')}</td>
+      <td data-l="Công suất">${raw(p.power ? h`<b>${fmtPower(p.power, s, p)}</b> ${raw(supRefs(p.power.src))}${raw(p.power.rating === "unspecified" && !["prime", "standby"].some((k) => supLinePower(s, p)?.[k]) ? '<div class="muted small">nguồn không ghi prime/standby</div>' : "")}` : '<span class="muted">chưa có</span>')}</td>
       <td class="small" data-l="Động cơ">${[...(p.engineMakes || []), ...(p.engineModels?.length ? ["(" + p.engineModels.join(", ") + ")"] : [])].join(" ") || "—"}</td>
       <td class="small" data-l="Đầu phát">${(p.alternatorMakes || []).join(", ") || "—"}</td>
       <td class="small" data-l="Khác">${[p.fuel && p.kind !== "alternator" ? p.fuel : "", ...(p.frequency || []), ...(p.types || []), ...(p.emission || []), ...(p.standards || [])].filter(Boolean).join(" · ")}</td></tr>`).join(""))}</tbody></table></div></details>` : '<h4>Dòng máy phân phối</h4><div class="muted small">Chưa có dữ liệu.</div>')}
