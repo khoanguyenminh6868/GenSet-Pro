@@ -491,7 +491,7 @@ details.sec>div{margin-top:10px}
   table.grid td.c-no .closed-at,table.grid td.c-no .tleft{display:inline-block}
   table.grid td.c-no .tleft{margin:0 0 0 8px}
   table.grid td.c-name .dprice{display:none}
-  table.grid td.c-no .mprice{display:block;float:right;text-align:right;margin-left:10px}
+  table.grid td.c-no .mprice{display:block;margin:3px 0 1px}
   table.grid td.c-no .mprice>div{margin-top:0}
   table.grid td.c-offerer,table.grid td.c-cap,table.grid td.c-loc{grid-column:1/-1}
   table.grid tr:has(td.c-stage .stepbtns,td.c-stage .aline) td.c-offerer{margin-top:5px}
@@ -1102,8 +1102,21 @@ function ownBid(key) {
   return p ? { ...r, bidPrice: p, bidPriceSrc: state.bidhist[key].final ? "KQLCNT" : "biên bản mở thầu" } : r;
 }
 const bidLabel = (t) => (stageOf(t) === "won" && ownBid(t._key).bidPriceSrc === "KQLCNT" ? "Giá trúng" : "Giá dự thầu");
-// The tender price: under the name, and on a phone at the right of the Mã số row instead (Khoa, 2026-11-05).
-const priceLine = (t) => (t.estimatedPrice != null ? h`<div class="pline num">Giá ${priceShort(t.estimatedPrice)}</div>` : "");
+// How many sets the tender buys: the sets the analysis read (generatorSets), else the ones the bot read from a past
+// tender's HSMT (bidhist config.sets), else a count written in the name before "máy phát / tổ máy" ("Mua sắm 02 máy phát").
+function qtyOf(t) {
+  const sum = (xs) => { const ok = (xs || []).filter((g) => g && typeof g === "object"); return ok.length ? ok.reduce((s, g) => s + (Number(g.qty) > 0 ? Number(g.qty) : 1), 0) : 0; };
+  const a = sum(analysisOf(t._key)?.result?.generatorSets);
+  if (a) return a;
+  const b = sum(state.bidhist?.[t._key]?.config?.sets);
+  if (b) return b;
+  const m = String(t.bidName || "").normalize("NFC").match(/(?<![\p{L}\p{N}.,])0*(\d{1,2})\s*(?:bộ|cái|chiếc|tổ|hệ\s*thống)?\s*(?:máy\s*phát|tổ\s*máy)/iu);
+  return m ? Number(m[1]) : 0;
+}
+// The tender price, with the number of sets beside it when more than one (Khoa, 2026-11-17): under the name, and on a
+// phone on the line under the Mã số + stage (Khoa, 2026-11-17; was at the right of that line).
+const priceLine = (t) => { const q = qtyOf(t), qs = q > 1 ? h`<span class="qty">${q} máy</span>` : "";
+  return t.estimatedPrice != null ? h`<div class="pline num">Giá ${priceShort(t.estimatedPrice)}${raw(qs ? " · " + qs : "")}</div>` : qs ? h`<div class="pline num">${raw(qs)}</div>` : ""; };
 // The way of choosing the contractor: under the price, and on a phone a row of its own under Chủ đầu tư (Khoa, 2026-11-09).
 const formOf = (t) => BID_FORM[t.bidForm] || t.bidForm || "";
 const formLine = (t) => (formOf(t) ? h`<div class="fline">${formOf(t)}</div>` : "");
@@ -1374,7 +1387,7 @@ const COLS = [
   // Mã Số sorts by the posting date (Đăng), then the number: the number alone is not posting order (Khoa, 2026-11-03).
   { k: "no", label: "Mã Số", cls: "noc", val: (t) => `${pubOf(t)}|${isProject(t) ? projectNo(t) : t.notifyNo || ""}`, text: (t) => `${isProject(t) ? projectNo(t) : t.notifyNo || ""} ${fmtDate(pubOf(t))} ${fmtDate(t.bidCloseDate)}`,
     cell: (t) => { if (isProject(t)) return h`<span class="kcell st-project">${projectNo(t)}</span>${raw(copyCodeBtn(projectNo(t), "cc-d"))}${raw(mStage(t))}${raw(copyCodeBtn(projectNo(t), "cc-m"))}<div class="src num">Tạo ${fmtDate(t.addedAt) || "—"}</div>`;
-      const tl = timeLeft(t.bidCloseDate); return h`${raw(mPrice(t))}<a class="kcell tlink st-${shownStage(t).key}" href="${statusLink(t)}" target="_blank" rel="noopener" title="${statusLinkTitle(t)}">${t.notifyNo || "Mở trang"} ↗</a>${raw(copyCodeBtn(t.notifyNo, "cc-d"))}${raw(t.isManual ? ' <span class="badge">Thêm tay</span>' : "")}${raw(mStage(t))}${raw(copyCodeBtn(t.notifyNo, "cc-m"))}
+      const tl = timeLeft(t.bidCloseDate); return h`<a class="kcell tlink st-${shownStage(t).key}" href="${statusLink(t)}" target="_blank" rel="noopener" title="${statusLinkTitle(t)}">${t.notifyNo || "Mở trang"} ↗</a>${raw(copyCodeBtn(t.notifyNo, "cc-d"))}${raw(t.isManual ? ' <span class="badge">Thêm tay</span>' : "")}${raw(mStage(t))}${raw(copyCodeBtn(t.notifyNo, "cc-m"))}${raw(mPrice(t))}
       <div class="src num">Đăng ${fmtDate(pubOf(t)) || "—"}</div><div class="src num closed-at">Đóng ${fmtDate(t.bidCloseDate) || "—"}</div>${raw(isCancelled(t) ? '<div class="tleft closed-at">Đã hủy TBMT</div>' : stageOf(t) === "dropped" ? "" : tl ? h`<div class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</div>` : "")}`; } },
   { k: "name", label: "Tên gói thầu", cls: "wrap", val: (t) => t.bidName || "", text: (t) => `${t.bidName || ""} ${priceShort(t.estimatedPrice)} ${formOf(t)} ${noteOf(t)}`, cell: (t) => { const bp = state.tracked[t._key]?.bidPrice; return h`${t.bidName}<div class="dprice">${raw(priceLine(t))}${raw(formLine(t))}${raw(noteLine(t))}</div>${raw(bidLine(t))}${raw(resultLine(t))}` + anaInline(t); } },
   { k: "offerer", label: "Chủ Đầu Tư", pick: true, cls: "org", val: (t) => t.investorName || offererOf(t)?.text || "", cell: (t) => { const v = t.investorName || offererOf(t)?.text; return (v ? h`${v}` : '<span class="muted">Chưa có</span>') + mForm(t); } },
