@@ -1,0 +1,6 @@
+Gói đã đo: 1297 (chạy được 1285; không có chữ HSMT 12; lỗi 0)
+1: catalog khác 240 gói; danh sách ứng viên đổi 0 gói (thêm 0, bớt 0 model), chỉ đổi thứ tự 90 gói
+fuel: catalog khác 104 gói; danh sách ứng viên đổi 0 gói (thêm 0, bớt 0 model), chỉ đổi thứ tự 15 gói
+disp: catalog khác 154 gói; danh sách ứng viên đổi 0 gói (thêm 0, bớt 0 model), chỉ đổi thứ tự 75 gói
+other: catalog khác 0 gói; danh sách ứng viên đổi 0 gói (thêm 0, bớt 0 model), chỉ đổi thứ tự 0 gói
+Cụm lý do mới khi bật cờ (dòng catalog chỉ có khi bật): [["không ghi",821],["không ghi hãng",158],["không ghi model tổ máy",140],["không ghi model",68],["xi lanh: # — factSrc: { \"supplierId\": \"comappower\"",20],["xi lanh: # — factSrc: { \"supplierId\": \"fdk-energy\"",17],["Dung tích xi lanh: # — factSrc: { \"supplierId\": \"waeta-fujia",16],["Dung tích xi lanh: # — factSrc: { \"supplierId\": \"hanyang-wei",16],["Dung tích xi lanh: #L — factSrc: { \"supplierId\": \"fdk-energy",14],["xi lanh: # — factSrc: { \"supplierId\": \"ricardo-weifang\"",9],["Dung tích xi lanh: # — factSrc: { \"supplierId\": \"jet-power\"",8],["Dung tích xi lanh: # — factSrc: { \"supplierId\": \"huatai-yang",7]]
