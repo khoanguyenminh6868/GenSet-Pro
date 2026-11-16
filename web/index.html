@@ -648,8 +648,10 @@ function minutesLink(t, kq = false) {
 }
 const tenderLink = (t) => (safeUrl(t.sourceUrl) !== "#" && t.sourceUrl) || (t.notifyNo ? portalSearch(t.notifyNo) : "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?render=index");
 // The link shown for a tender follows its status on the portal: Kết quả LCNT once results are out, Biên bản mở thầu once bids are opened, else the TBMT notice (tenderLink). tenderLink stays the TBMT link, which the bot's HSMT requests need.
-const statusLink = (t) => minutesLink(t, true) || minutesLink(t) || tenderLink(t);
-const statusLinkTitle = (t) => minutesLink(t, true) ? "Mở Kết quả lựa chọn nhà thầu trên muasamcong" : minutesLink(t) ? "Mở Biên bản mở thầu trên muasamcong" : "Mở trên muasamcong";
+// Without portal ids the bot may still have saved the minutes / results page (bidders/<TBMT>.url, bidhist/<TBMT>.url): better than the TBMT notice for a tender whose bids are open.
+const savedStepLink = (t) => { const u = state.bidders?.[t._key]?.url || state.bidhist?.[t._key]?.url; return safeUrl(u) !== "#" && /stepCode=notify-contractor-step-[24]/.test(u) ? u : null; };
+const statusLink = (t) => minutesLink(t, true) || minutesLink(t) || savedStepLink(t) || tenderLink(t);
+const statusLinkTitle = (t) => minutesLink(t, true) ? "Mở Kết quả lựa chọn nhà thầu trên muasamcong" : minutesLink(t) ? "Mở Biên bản mở thầu trên muasamcong" : savedStepLink(t) ? (/step-4-kqlcnt/.test(savedStepLink(t)) ? "Mở Kết quả lựa chọn nhà thầu trên muasamcong" : "Mở Biên bản mở thầu trên muasamcong") : "Mở trên muasamcong";
 // The link for a tender known only by its key (past-tender tables): its status link when the portal ids are known, else the link the bot saved with the record, else the tender's own link, else a portal search.
 function keyLink(key, saved) {
   const t = findTender(key);
