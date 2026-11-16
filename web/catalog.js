@@ -891,6 +891,29 @@
     const top = Math.max(...makes.map((m) => RANK[m.via] || 0));
     return [...new Set(makes.filter((m) => (RANK[m.via] || 0) === top).map((m) => m.name))].join(" / ");
   }
+  // Names that are one engine maker, both right (Khoa 2026-11-16): Doosan Infracore, before that Daewoo, now HD Hyundai;
+  // Weichai builds Deutz 226B (WP4 / WP6) and Baudouin under licence; Kofo builds the Ricardo-type 4105 / 6105; Xichai
+  // (锡柴) is FAW's diesel works. Only these pairs; Weichai's two do not make Deutz / Baudouin one.
+  const SAME_MAKER = [["Doosan", "Hyundai"], ["Doosan", "Daewoo"], ["Hyundai", "Daewoo"], ["Weichai", "Deutz"], ["Kofo", "Ricardo"], ["Baudouin", "Weichai"], ["FAWDE", "Xichai"]];
+  const sameMaker = (a, b) => a === b || SAME_MAKER.some(([x, y]) => (x === a && y === b) || (x === b && y === a));
+  // The makes an engine / alternator keeps (Khoa 2026-11-14 / 16), read from its rows:
+  // 1. Only the names of the strongest kind of evidence (a row cell > a column title or the maker itself > a page
+  //    title): a dealer page "Cummins Perkins Weichai generators" no longer adds Weichai to a Cummins row.
+  // 2. Two names or more there that are not one maker (SAME_MAKER): the one that 3 suppliers or more give, 3 times or
+  //    more as many as each other name, is kept (with the names that are the same maker as it); else no make
+  //    ("chưa rõ hãng", not guessed). Returns { makes, conflict } (conflict: the names left out undecided, or null).
+  function keptMakes(e) {
+    if (!e.makes.length) return { makes: e.makes, conflict: null };
+    const top = Math.max(...e.makes.map((m) => RANK[m.via] || 0));
+    const best = e.makes.filter((m) => (RANK[m.via] || 0) === top), names = [...new Set(best.map((m) => m.name))];
+    if (names.every((a) => names.every((b) => sameMaker(a, b)))) return { makes: best, conflict: null };
+    const sups = new Map(names.map((n) => [n, new Set()]));
+    for (const u of e.uses) for (const m of u.makes || []) if ((RANK[m.via] || 0) === top && sups.has(m.name)) sups.get(m.name).add(u.supplierId);
+    const count = (n) => sups.get(n).size, lead = [...names].sort((a, b) => count(b) - count(a))[0];
+    const win = count(lead) >= 3 && names.every((n) => sameMaker(lead, n) || count(lead) >= 3 * count(n));
+    if (win) return { makes: best.filter((m) => sameMaker(lead, m.name)), conflict: null };
+    return { makes: [], conflict: names.map((n) => ({ name: n, suppliers: count(n) })) };
+  }
   // A trailing "*" / "†" is a footnote mark, not part of the model ("QSK19-G4*"). O/0 and I/1 are NOT merged.
   const keyOf = (m) => String(m).normalize("NFKC").toUpperCase().replace(/[\s\-_.·]/g, "").replace(/[*†‡]+$/, "");
   // The model a row of a horizontal table names: footnote mark and a make written before it ("PERKINS 1103A-33G")
@@ -1031,9 +1054,12 @@
         const g = specs.get(k);
         return { ...g, values: [...g.values.values()].map((v) => ({ ...v, suppliers: [...v.suppliers] })).sort((a, b) => b.suppliers.length - a.suppliers.length || b.rows - a.rows) };
       });
+      // `makes`: the makes kept (keptMakes), which make, origin and group are read from; every make a source gave stays in
+      // `makesAll`; `makeConflict`: the names the sources disagree on when none is kept.
+      const kept = e.kind === "controller" ? { makes: e.makes, conflict: null } : keptMakes(e);
       return { ...e, specs: specList, names: [...e.names], suppliers: [...e.suppliers], freq: [...e.freq].sort(),
         kva: kva.length ? [Math.min(...kva), Math.max(...kva)] : null, kw: kw.length ? [Math.min(...kw), Math.max(...kw)] : null,
-        make: makeOf(e.makes) };
+        makesAll: e.makes, makes: kept.makes, makeConflict: kept.conflict, make: makeOf(kept.makes) };
     };
     const sort = (a, b) => b.suppliers.length - a.suppliers.length || b.uses.length - a.uses.length || a.model.localeCompare(b.model);
     // Suppliers one by one, then the models of each kind one by one (in the order they were met), then the sort.

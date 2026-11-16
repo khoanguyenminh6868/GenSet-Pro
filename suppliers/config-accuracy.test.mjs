@@ -217,16 +217,31 @@ test("configurations meeting the HSMT alike: the one with an engine of a Chinese
   assert.deepEqual(r.configs.map((c) => c.suppliers[0].supplierId), ["weichai", "cummins", "yuchai"]);
 });
 
-test("candidate rows: an engine whose sources name two makes still counts as the make the HSMT names", () => {
+test("candidate rows: two makes of one maker both count as the make the HSMT names; sources that disagree give no make (Khoa 16/11)", () => {
   const t = (title, row) => [{ n: 101, title, header: ["| Model | Prime kVA | Prime kW | Engine | Alternator |"], rows: [row] }];
-  const list = [
+  const w = { id: "w", country: "CN", confidence: "high", specTables: t("Yuchai gensets 50Hz", "| W-1 | 275 | 220 | YC6MK420-D30 | HCI444ES |") };
+  // Doosan / Hyundai (one maker): either one is the HSMT's.
+  const dh = [
+    { id: "p", country: "CN", specTables: t("Doosan gensets 50Hz", "| P-1 | 275 | 220 | DP086LA | HCI444ES |") },
+    { id: "l", country: "CN", specTables: t("Hyundai gensets 50Hz", "| L-1 | 275 | 220 | DP086LA | HCI444ES |") }, w];
+  let cat = C.build(dh);
+  assert.equal(cat.engines.find((e) => e.model === "DP086LA").make, "Doosan / Hyundai");
+  let { top } = candidates(cat, { value: 250, unit: "kVA" }, hintsOf("Chương V. Yêu cầu kỹ thuật\nĐộng cơ Hyundai, 50 Hz"), { suppliers: dh });
+  assert.equal(top[0].e.model, "DP086LA");
+  assert.match(top[0].why.join(" "), /hãng động cơ Hyundai/);
+  // Perkins from one supplier, Lovol from another (not a pair Khoa approved): no make, no bonus.
+  const pl = [
     { id: "p", country: "CN", specTables: t("Perkins gensets 50Hz", "| P-1 | 275 | 220 | 1506A-E88TAG3 | HCI444ES |") },
-    { id: "l", country: "CN", specTables: t("Lovol gensets 50Hz", "| L-1 | 275 | 220 | 1506A-E88TAG3 | HCI444ES |") },
-    { id: "w", country: "CN", confidence: "high", specTables: t("Weichai gensets 50Hz", "| W-1 | 275 | 220 | WP10D264E200 | HCI444ES |") },
-  ];
-  const cat = C.build(list);
-  assert.match(cat.engines.find((e) => e.model === "1506A-E88TAG3").make, / \/ /);
-  const { top } = candidates(cat, { value: 250, unit: "kVA" }, hintsOf("Chương V. Yêu cầu kỹ thuật\nĐộng cơ Perkins, 50 Hz"), { suppliers: list });
+    { id: "l", country: "CN", specTables: t("Lovol gensets 50Hz", "| L-1 | 275 | 220 | 1506A-E88TAG3 | HCI444ES |") }, w];
+  cat = C.build(pl);
+  assert.equal(cat.engines.find((e) => e.model === "1506A-E88TAG3").make, null);
+  ({ top } = candidates(cat, { value: 250, unit: "kVA" }, hintsOf("Chương V. Yêu cầu kỹ thuật\nĐộng cơ Perkins, 50 Hz"), { suppliers: pl }));
+  assert.ok(!top.some((r) => /hãng động cơ Perkins/.test(r.why.join(" "))));
+  // Perkins from three suppliers, Lovol from one: Perkins.
+  const p3 = [...["p1", "p2", "p3"].map((id) => ({ id, country: "CN", specTables: t("Perkins gensets 50Hz", `| ${id} | 275 | 220 | 1506A-E88TAG3 | HCI444ES |`) })), pl[1], w];
+  cat = C.build(p3);
+  assert.equal(cat.engines.find((e) => e.model === "1506A-E88TAG3").make, "Perkins");
+  ({ top } = candidates(cat, { value: 250, unit: "kVA" }, hintsOf("Chương V. Yêu cầu kỹ thuật\nĐộng cơ Perkins, 50 Hz"), { suppliers: p3 }));
   assert.equal(top[0].e.model, "1506A-E88TAG3");
   assert.match(top[0].why.join(" "), /hãng động cơ Perkins/);
 });

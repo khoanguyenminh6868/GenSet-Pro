@@ -1479,7 +1479,7 @@ export function catalogMd(cat, cap, hints, opts = {}) {
     const { e, u, a } = r, s = sup.get(u.supplierId);
     shown.add(u.supplierId);
     if (u.header?.length) headers.set(`${u.supplierId} n ${u.n}`, u.header.join(" "));
-    out.push(`### ${i + 1}. ${u.genset || (r.why.some((w) => w.startsWith("tổ máy đúng model")) && u.title ? `bảng "${u.title}" (tổ máy HSMT nêu)` : "(không ghi model tổ máy)")} — động cơ ${e.model}${e.make ? ` (hãng ${e.make}, theo ${[...new Set(e.makes.map((m) => m.via))].join(", ")})` : " (nguồn không ghi hãng)"}, đầu phát ${a ? `${a.model}${a.make ? ` (${a.make})` : ""}` : u.other || "không ghi"}`,
+    out.push(`### ${i + 1}. ${u.genset || (r.why.some((w) => w.startsWith("tổ máy đúng model")) && u.title ? `bảng "${u.title}" (tổ máy HSMT nêu)` : "(không ghi model tổ máy)")} — động cơ ${e.model}${e.make ? ` (hãng ${e.make}, theo ${[...new Set(e.makes.map((m) => m.via))].join(", ")})` : e.makeConflict ? ` (chưa rõ hãng: nguồn ghi khác nhau ${e.makeConflict.map((x) => x.name).join(" / ")})` : " (nguồn không ghi hãng)"}, đầu phát ${a ? `${a.model}${a.make ? ` (${a.make})` : ""}` : u.other || "không ghi"}`,
       `- supplierId: ${u.supplierId}, n: ${u.n}${s ? `, quốc gia: ${s.country || "?"}, độ tin cậy: ${s.confidence}, vai trò: ${s.role}` : ""}`, rowText(u));
     if (u.specs?.length) out.push(`  thông số trong dòng: ${u.specs.map((x) => `${x.label} = ${x.value}`).join(" ; ")}`);
     // The genset's one-model datasheet (gensetSheetOf), every block, once per source.

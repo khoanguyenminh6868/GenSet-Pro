@@ -53,6 +53,33 @@ test("the same row in a 50 Hz and a 60 Hz table stays one record per frequency",
   assert.deepEqual(C.fromSupplier(s).filter((x) => x.kind === "engine").map((e) => e.freq), [50, 60]);
 });
 
+test("makes kept (Khoa 16/11): page title dropped under a row make; same-maker pairs; 3 suppliers and 3× wins; else no make", () => {
+  const sup = (id, title, row) => ({ id, role: "genset_oem", status: "verified", country: "CN", names: { en: id }, specTables: [{ n: 101, title, header: ["| Model | kVA | Make | Engine"], rows: [row] }] });
+  // 1. A dealer page "Weichai …" whose row names no make no longer adds Weichai to an engine another supplier's row
+  // says is Cummins: the engine is in G20 again.
+  let e = C.build([sup("a", "Gensets", "| G1 | 100 | Cummins | 6BTA5.9-G2"), sup("b", "Weichai Generators", "| G2 | 100 | - | 6BTA5.9-G2")]).engines[0];
+  assert.equal(e.make, "Cummins");
+  assert.deepEqual(e.makes.map((m) => m.name), ["Cummins"]);
+  assert.deepEqual([...new Set(e.makesAll.map((m) => m.name))].sort(), ["Cummins", "Weichai"]);
+  assert.equal(C.groupOf(e, "g20"), true);
+  // 2. Doosan and Hyundai in rows: one maker, both kept.
+  e = C.build([sup("a", "Gensets", "| G1 | 200 | Doosan | DP158LC"), sup("b", "Gensets", "| G2 | 200 | Hyundai | DP158LC")]).engines[0];
+  assert.equal(e.make, "Doosan / Hyundai");
+  assert.equal(e.makeConflict, null);
+  // 3. Cummins from 3 suppliers, Perkins from 1: Cummins.
+  const rows = ["a", "b", "c"].map((id) => sup(id, "Gensets", "| G | 80 | Cummins | 4BTA3.9-G11"));
+  e = C.build([...rows, sup("d", "Gensets", "| G | 80 | Perkins | 4BTA3.9-G11")]).engines[0];
+  assert.equal(e.make, "Cummins");
+  // 4. One against one (and Lovol / Perkins is not a pair Khoa approved): no make, the names kept as the conflict.
+  e = C.build([sup("a", "Gensets", "| G | 80 | Lovol | 1006TAG"), sup("b", "Gensets", "| G | 80 | Perkins | 1006TAG")]).engines[0];
+  assert.equal(e.make, null);
+  assert.deepEqual(e.makes, []);
+  assert.deepEqual(e.makeConflict.map((x) => [x.name, x.suppliers]), [["Lovol", 1], ["Perkins", 1]]);
+  // 2 against 1 is not 3×: no make.
+  e = C.build([sup("a", "G", "| G | 80 | Weichai | K4100D"), sup("b", "G", "| G | 80 | Weichai | K4100D"), sup("c", "G", "| G | 80 | Yuchai | K4100D")]).engines[0];
+  assert.equal(e.make, null);
+});
+
 test("no make unless a source states it", () => {
   const s = rec("genset_oem", [{ n: 101, title: "Generator set", header: ["| Model | kVA | kW | Engine"], rows: ["| AB100 | 100 | 80 | 6BTA5.9-G2"] }]);
   const [e] = C.fromSupplier(s);
