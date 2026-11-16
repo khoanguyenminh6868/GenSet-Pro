@@ -6,9 +6,9 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import os from "node:os";
 import path from "node:path";
-import { API_OUT, viaApi, noteApiSpend, switchToPlan } from "./api-budget.mjs";
+import { API_OUT, viaApi, noteApiSpend, switchToPlan, taskEnv } from "./api-budget.mjs";
 
-const KEYS = ["ANTHROPIC_API_KEY", "GENBID_API_SPEND_FILE", "GENBID_CLAUDE_TOKEN_FILE", "CLAUDE_CODE_OAUTH_TOKEN", "HOME", "USERPROFILE"];
+const KEYS = ["ANTHROPIC_API_KEY", "GENBID_API_SPEND_FILE", "GENBID_CLAUDE_TOKEN_FILE", "GENBID_AI_SETTINGS_FILE", "CLAUDE_CODE_OAUTH_TOKEN", "HOME", "USERPROFILE"];
 function sandbox(fn) {
   const saved = Object.fromEntries(KEYS.map((k) => [k, process.env[k]]));
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "api-budget-"));
@@ -117,12 +117,32 @@ test("switchToPlan: máy chưa đăng nhập gói tháng (không có .credential
   assert.equal(switchToPlan("reached your specified API usage limits", "bid"), true);
   assert.equal(process.env.CLAUDE_CODE_OAUTH_TOKEN, "oat-123");
 }));
-test("switchToPlan: đã đăng nhập gói tháng (.credentials.json) → không đụng CLAUDE_CODE_OAUTH_TOKEN", () => sandbox((dir, f) => {
+test("taskEnv: việc đặt gói tháng, máy có .credentials.json VÀ có tệp token → bỏ API key, dùng token; không đổi process.env", () => sandbox((dir) => {
+  fs.mkdirSync(path.join(dir, ".claude"));
+  fs.writeFileSync(path.join(dir, ".claude", ".credentials.json"), "{}");
+  const tok = path.join(dir, "token"), set = path.join(dir, "ai.json");
+  fs.writeFileSync(tok, "oat-123\n"); fs.writeFileSync(set, JSON.stringify({ use: { config: "plan" } }));
+  process.env.ANTHROPIC_API_KEY = "sk-test"; process.env.GENBID_CLAUDE_TOKEN_FILE = tok; process.env.GENBID_AI_SETTINGS_FILE = set;
+  const env = taskEnv("config");
+  assert.equal(env.ANTHROPIC_API_KEY, undefined);
+  assert.equal(env.CLAUDE_CODE_OAUTH_TOKEN, "oat-123");
+  assert.equal(process.env.ANTHROPIC_API_KEY, "sk-test");
+  assert.equal(taskEnv("bidprice"), process.env); // việc không đặt gói tháng: giữ nguyên
+}));
+// Khoa 17/11/2026: .credentials.json còn đó sau khi /login hết hạn → có tệp token thì luôn dùng token.
+test("switchToPlan: có .credentials.json VÀ có tệp token → vẫn nạp token (đăng nhập máy có thể đã hết hạn)", () => sandbox((dir, f) => {
   fs.mkdirSync(path.join(dir, ".claude"));
   fs.writeFileSync(path.join(dir, ".claude", ".credentials.json"), "{}");
   const tok = path.join(dir, "token"); fs.writeFileSync(tok, "oat-123\n");
   process.env.GENBID_API_SPEND_FILE = f; process.env.ANTHROPIC_API_KEY = "sk-test"; process.env.GENBID_CLAUDE_TOKEN_FILE = tok;
   // os.homedir() trên Windows đọc USERPROFILE, trên Linux đọc HOME: cả hai đã trỏ về thư mục tạm.
+  assert.equal(switchToPlan("credit balance is too low", "x"), true);
+  assert.equal(process.env.CLAUDE_CODE_OAUTH_TOKEN, "oat-123");
+}));
+test("switchToPlan: có .credentials.json, không có tệp token → không đụng CLAUDE_CODE_OAUTH_TOKEN (dùng /login của máy)", () => sandbox((dir, f) => {
+  fs.mkdirSync(path.join(dir, ".claude"));
+  fs.writeFileSync(path.join(dir, ".claude", ".credentials.json"), "{}");
+  process.env.GENBID_API_SPEND_FILE = f; process.env.ANTHROPIC_API_KEY = "sk-test";
   assert.equal(switchToPlan("credit balance is too low", "x"), true);
   assert.equal(process.env.CLAUDE_CODE_OAUTH_TOKEN, undefined);
 }));

@@ -3,7 +3,6 @@
 // đổi sang gói tháng khi tiêu tới ngưỡng. API báo hết tiền / chạm hạn mức thì ghi "exhausted", bỏ ANTHROPIC_API_KEY
 // khỏi tiến trình này (các lần gọi sau dùng gói tháng) và gọi lại.
 import fs from "node:fs";
-import os from "node:os";
 import path from "node:path";
 import { createRequire } from "node:module";
 import { fileURLToPath } from "node:url";
@@ -20,16 +19,22 @@ export function aiUse(task, text) {
   if (text === undefined) { try { text = fs.readFileSync(process.env.GENBID_AI_SETTINGS_FILE || "", "utf8"); } catch { text = ""; } }
   try { return JSON.parse(String(text).replace(/^﻿/, ""))?.use?.[task] === "plan" ? "plan" : "api"; } catch { return "api"; }
 }
-// The environment for one claude -p run of `task`: without the API key (and with the monthly plan's token when this PC
-// has no /login) when Cấu hình hệ thống says the monthly plan; else this process's own.
+// The monthly plan's token (first line of GENBID_CLAUDE_TOKEN_FILE, made by `claude setup-token`), "" when there is none.
+// It goes before the PC's /login (Khoa, 2026-11-17; same rule as Test-ClaudeLogin in GenBid-Bot.ps1): .credentials.json
+// stays there after the login ran out ("this login reached its time limit and cannot be renewed"), and every run fails.
+function planToken() {
+  const tok = process.env.GENBID_CLAUDE_TOKEN_FILE;
+  if (!tok) return "";
+  try { return fs.readFileSync(tok, "utf8").trim().split(/\r?\n/)[0] || ""; } catch { return ""; }
+}
+// The environment for one claude -p run of `task`: without the API key (and with the monthly plan's token when there is
+// one, else the PC's /login) when Cấu hình hệ thống says the monthly plan; else this process's own.
 export function taskEnv(task) {
   if (!process.env.ANTHROPIC_API_KEY || aiUse(task) !== "plan") return process.env;
   const env = { ...process.env };
   delete env.ANTHROPIC_API_KEY;
-  const tok = process.env.GENBID_CLAUDE_TOKEN_FILE;
-  if (!fs.existsSync(path.join(os.homedir(), ".claude", ".credentials.json")) && tok) {
-    try { env.CLAUDE_CODE_OAUTH_TOKEN = fs.readFileSync(tok, "utf8").trim().split(/\r?\n/)[0]; } catch {}
-  }
+  const tok = planToken();
+  if (tok) env.CLAUDE_CODE_OAUTH_TOKEN = tok;
   return env;
 }
 
@@ -73,10 +78,8 @@ export function switchToPlan(text, src) {
   if (!process.env.ANTHROPIC_API_KEY || !API_OUT.test(String(text || ""))) return false;
   append({ usd: 0, exhausted: true, src });
   delete process.env.ANTHROPIC_API_KEY;
-  const tok = process.env.GENBID_CLAUDE_TOKEN_FILE;
-  if (!fs.existsSync(path.join(os.homedir(), ".claude", ".credentials.json")) && tok) {
-    try { process.env.CLAUDE_CODE_OAUTH_TOKEN = fs.readFileSync(tok, "utf8").trim().split(/\r?\n/)[0]; } catch {}
-  }
+  const tok = planToken();
+  if (tok) process.env.CLAUDE_CODE_OAUTH_TOKEN = tok;
   console.log(`Hạn mức API key đã hết (${src}); chuyển sang gói tháng.`);
   return true;
 }

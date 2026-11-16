@@ -1802,10 +1802,10 @@ function taskEnv(task) {
   if (!process.env.ANTHROPIC_API_KEY || aiUseOf(textOf(AI_SETTINGS), task) !== "plan") return process.env;
   const env = { ...process.env };
   delete env.ANTHROPIC_API_KEY;
-  if (!fs.existsSync(path.join(require("os").homedir(), ".claude", ".credentials.json"))) {
-    const tok = textOf(process.env.GENBID_CLAUDE_TOKEN_FILE || path.join(ROOT, ".claude-bot-token")).trim().split(/\r?\n/)[0];
-    if (tok) env.CLAUDE_CODE_OAUTH_TOKEN = tok;
-  }
+  // Có token gói tháng thì dùng token, không xét .credentials.json (Khoa 17/11/2026, cùng luật với Test-ClaudeLogin của
+  // GenBid-Bot.ps1): tệp đó vẫn nằm đó sau khi /login hết hạn ("this login reached its time limit"), lượt nào cũng lỗi.
+  const tok = textOf(process.env.GENBID_CLAUDE_TOKEN_FILE || path.join(ROOT, ".claude-bot-token")).trim().split(/\r?\n/)[0];
+  if (tok) env.CLAUDE_CODE_OAUTH_TOKEN = tok;
   return env;
 }
 if (!process.env.ANTHROPIC_API_KEY && apiBudget().ok) {
@@ -1816,10 +1816,8 @@ function switchToPlan(text, src) {
   if (!process.env.ANTHROPIC_API_KEY || !API_OUT.test(text)) return false;
   try { fs.appendFileSync(process.env.GENBID_API_SPEND_FILE || API_SPEND, JSON.stringify({ t: new Date().toISOString(), usd: 0, exhausted: true, src }) + "\n"); } catch {}
   delete process.env.ANTHROPIC_API_KEY;
-  const tok = process.env.GENBID_CLAUDE_TOKEN_FILE;
-  if (tok && !fs.existsSync(path.join(require("os").homedir(), ".claude", ".credentials.json"))) {
-    try { process.env.CLAUDE_CODE_OAUTH_TOKEN = fs.readFileSync(tok, "utf8").trim().split(/\r?\n/)[0]; } catch {}
-  }
+  const tok = textOf(process.env.GENBID_CLAUDE_TOKEN_FILE || path.join(ROOT, ".claude-bot-token")).trim().split(/\r?\n/)[0];
+  if (tok) process.env.CLAUDE_CODE_OAUTH_TOKEN = tok;
   console.log("  Hạn mức API key đã hết (" + src + "); chuyển sang gói tháng.");
   return true;
 }
