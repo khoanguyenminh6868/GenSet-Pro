@@ -133,7 +133,8 @@ $task = Get-ScheduledTask 'GenBid Bot' -ErrorAction SilentlyContinue
 $procs = @(Get-CimInstance Win32_Process -Filter "Name='powershell.exe' OR Name='pwsh.exe'" | Where-Object { $_.CommandLine -match 'GenBid-Bot\.ps1' })
 $disp = @($procs | Where-Object { $_.CommandLine -notmatch '\s-Job\b' })
 $kids = @($procs | Where-Object { $_.CommandLine -match '\s-Job\b' })
-$code = Get-ChildItem $Kit -File | Where-Object { $_.Extension -in '.ps1', '.psm1' } | Sort-Object LastWriteTime -Descending | Select-Object -First 1
+# Chỉ GenBid-Bot.ps1 nạp một lần; các .ps1 khác (Post-GenBidDocs, Sync-DieuPhoi...) chạy tiến trình mới mỗi lần gọi.
+$code = Get-Item (Join-Path $Kit 'GenBid-Bot.ps1') -ErrorAction SilentlyContinue
 $restart = 'không'
 if (-not $task) { $notes.Add("máy này chưa có tác vụ 'GenBid Bot' (Install-GenBidBot.ps1)"); $restart = 'không có tác vụ' }
 elseif ($task.State -eq 'Disabled') { $notes.Add("tác vụ 'GenBid Bot' đang tắt (Disabled) trên máy này: không đụng tới"); $restart = 'tác vụ tắt' }
