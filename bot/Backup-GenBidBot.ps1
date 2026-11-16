@@ -50,7 +50,7 @@ if ((Test-Path $hw) -and (Get-FileHash $hw).Hash -ne (Get-FileHash (Join-Path $R
 }
 $t = Get-ScheduledTask 'GenBid Bot' -ErrorAction SilentlyContinue
 if ($t -and ($t.Actions[0].Arguments -notmatch 'genbid-hsmt\\GenBid-Bot\.ps1')) { Write-Warning "Tác vụ GenBid Bot chạy lệnh khác Install-GenBidBot.ps1: $($t.Actions[0].Arguments)" }
-foreach ($x in Get-ScheduledTask | Where-Object { $_.TaskName -like 'GenBid*' -and $_.TaskName -ne 'GenBid Bot' -and $_.State -ne 'Disabled' }) {
+foreach ($x in Get-ScheduledTask | Where-Object { $_.TaskName -like 'GenBid*' -and $_.TaskName -notin 'GenBid Bot', 'GenBid DieuPhoi Sync' -and $_.State -ne 'Disabled' }) {
     Write-Warning "Tác vụ Windows '$($x.TaskName)' không có trong Install-GenBidBot.ps1"
 }
 

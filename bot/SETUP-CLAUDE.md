@@ -57,4 +57,8 @@ Báo Khoa: đã chạy được gì, còn thiếu gì, máy cũ đã tắt bot c
 
 Phiên khác sửa bot và merge lên main thì máy này chưa có (bot chạy từ `genbid-hsmt\`, không từ repo). Khoa nói "updateBot" /
 "cập nhật bot" → skill `update-bot`: `bot\Update-GenBidBot.ps1` kéo main, chép bot, skills, bộ nhớ sang máy (giữ và báo tệp sửa tay
-chưa lên GitHub), khởi động lại "GenBid Bot" nếu đang chạy code cũ. `-Check` để chỉ xem.
+chưa lên GitHub), khởi động lại "GenBid Bot" nếu đang chạy code cũ, đồng bộ sổ điều phối. `-Check` để chỉ xem.
+
+Sổ điều phối `genbid-work\dieu-phoi\` là clone nhánh `dieu-phoi`, chung cho mọi máy: `genbid-hsmt\Sync-DieuPhoi.ps1` (Install và
+update-bot tạo tác vụ "GenBid DieuPhoi Sync" chạy nó mỗi 15 phút). Máy mới có sẵn tệp sổ cũ thì tệp khác bản GitHub được đổi tên
+`<tên>.ban-<MÁY>.<đuôi>` để gộp tay.

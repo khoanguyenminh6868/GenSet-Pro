@@ -125,6 +125,9 @@ if (-not $NoTask) {
     $pri = New-ScheduledTaskPrincipal -UserId "$env:USERDOMAIN\$env:USERNAME" -LogonType Interactive
     Register-ScheduledTask -TaskName 'GenBid Bot' -Action $act -Trigger $trg -Settings $set -Principal $pri -Force | Out-Null
     if ($StartBot) { Start-ScheduledTask 'GenBid Bot' }
+    # Sổ điều phối (genbid-work\dieu-phoi) đồng bộ giữa các máy qua nhánh dieu-phoi, tác vụ "GenBid DieuPhoi Sync" mỗi 15 phút.
+    Step "Sổ điều phối + tác vụ 'GenBid DieuPhoi Sync'"
+    & powershell.exe -NoProfile -ExecutionPolicy Bypass -File (Join-Path $Kit 'Sync-DieuPhoi.ps1') -Root $Root -EnsureTask
 }
 
 Write-Host ''
