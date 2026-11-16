@@ -195,7 +195,7 @@
         "min": 162,
         "max": 162,
         "unit": "kVA",
-        "rating": "unspecified",
+        "rating": "continuous",
         "src": [
           2002
         ]

@@ -490,7 +490,7 @@
         "min": 60,
         "max": 60,
         "unit": "kVA",
-        "rating": "unspecified",
+        "rating": "prime",
         "src": [
           2012
         ]
@@ -764,7 +764,8 @@
         "PC66/PC70",
         "48/53kW 60/66kVA",
         "52/56kW 65/70kVA",
-        "4×102×120mm/3.9L"
+        "4×102×120mm/3.9L",
+        "Prime/Standby Power@50Hz:"
       ],
       "file": "sources/plus-power/2012.md",
       "official": true
