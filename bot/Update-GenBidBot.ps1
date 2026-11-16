@@ -16,9 +16,11 @@ param(
     [string]$Root = 'C:\Projects\GenSet Pro',
     [switch]$Check,
     [switch]$Force,
-    [switch]$NoRestart
+    [switch]$NoRestart,
+    [switch]$Reexec   # nội bộ: lượt chạy lại bằng bản script vừa kéo về
 )
 $ErrorActionPreference = 'Stop'
+$selfHash = (Get-FileHash $PSCommandPath).Hash
 $Repo = Join-Path $Root 'GenSet-Pro'
 $Kit = Join-Path $Root 'genbid-hsmt'
 $Cl = Join-Path $env:USERPROFILE '.claude'
@@ -49,6 +51,14 @@ else {
     G merge -q --ff-only --autostash origin/main | Where-Object { $_ -notmatch '^Updating files' } | ForEach-Object { Write-Host "  git: $_" }
     if ($LASTEXITCODE) { throw 'git merge --ff-only origin/main lỗi (xem dòng git ở trên).' }
     Write-Host "  $old -> $((G rev-parse --short HEAD) | Select-Object -Last 1) ($behind commit)."
+    # Chính script này vừa đổi: chạy tiếp bằng bản mới (PowerShell đã nạp bản cũ vào bộ nhớ).
+    if (-not $Reexec -and (Get-FileHash $PSCommandPath).Hash -ne $selfHash) {
+        Write-Host '  Update-GenBidBot.ps1 vừa đổi: chạy tiếp bằng bản mới.'
+        $a = @('-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', $PSCommandPath, '-Root', $Root, '-Reexec')
+        if ($Force) { $a += '-Force' }; if ($NoRestart) { $a += '-NoRestart' }
+        & powershell.exe @a
+        exit $LASTEXITCODE
+    }
 }
 
 # ---------- 2. Chép bot sang chỗ chạy ----------
@@ -157,8 +167,21 @@ $sup = Get-ChildItem (Join-Path $Repo 'suppliers') -File | Where-Object { $_.Ext
 $oldCfg = @(Get-CimInstance Win32_Process -Filter "Name='node.exe'" | Where-Object { $_.CommandLine -match 'config-bot\.mjs' -and $sup -and $_.CreationDate -lt $sup.LastWriteTime })
 if ($oldCfg.Count) { $notes.Add("config-bot.mjs đang chạy code suppliers cũ (PID $($oldCfg.ProcessId -join ', ')); lượt sau tự dùng code mới") }
 
+# ---------- 4. Sổ điều phối ----------
+# Đồng bộ sổ giữa các máy (nhánh dieu-phoi) và tạo tác vụ "GenBid DieuPhoi Sync" nếu máy chưa có.
+$dp = 'chưa chạy'
+$sync = Join-Path $Kit 'Sync-DieuPhoi.ps1'
+if ($Check) { $dp = 'bỏ qua (-Check)' }
+elseif (Test-Path $sync) {
+    Step 'Sổ điều phối'
+    $o = & powershell.exe -NoProfile -ExecutionPolicy Bypass -File $sync -Root $Root -EnsureTask 2>&1 | ForEach-Object { "$_" }
+    $o | Where-Object { $_ -notmatch '^SUMMARY:' } | ForEach-Object { Write-Host "  $_" }
+    $dp = (($o | Where-Object { $_ -match '^SUMMARY:' } | Select-Object -Last 1) -replace '^SUMMARY: sổ điều phối \S+ - ', '')
+    if ($LASTEXITCODE) { $notes.Add("sổ điều phối: $dp") }
+}
+
 $head = (G rev-parse --short HEAD) | Select-Object -Last 1
 $s = "SUMMARY: main $(if ($Check -and $behind) { "$old, tụt $behind commit" } elseif ($behind) { "$old -> $head" } else { "$head (đã mới)" }); " +
-     "$($updated.Count) tệp bot $(if ($Check) { 'sẽ ' })cập nhật; khởi động lại: $restart"
+     "$($updated.Count) tệp bot $(if ($Check) { 'sẽ ' })cập nhật; khởi động lại: $restart; sổ điều phối: $dp"
 if ($notes.Count) { $s += '; lưu ý: ' + ($notes -join '; ') }
 Write-Host $s
