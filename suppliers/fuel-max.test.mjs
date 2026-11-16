@@ -66,3 +66,25 @@ test("a heading that names no load is filed under 100% by the catalog but is not
   assert.equal(x.fuelOver, true); assert.equal(x.fuelNoLoad, true); assert.deepEqual(x.ruled, []);
   assert.deepEqual(r.dropped.map((d) => d.u.supplierId), ["fl"]);
 });
+
+// IB2600603983 (2026-11-17), bảng pdftotext: nhãn của ô xuống dòng DƯỚI số ("mức 100% tải" nằm sau "≤ 156 lít/giờ").
+// Trước đây "100%" đóng dòng trên bị gán cho số của dòng dưới: 113 L/h (70% tải) thành mức 100% tải.
+test("nhãn mức tải xuống dòng dưới con số: mỗi số nhận mức tải của dòng ngay dưới nó", () => {
+  const h = free([
+    "12    Tiêu hao nhiên liệu",
+    " +    Tiêu hao nhiên liệu ở                       ≤ 156 lít/giờ",
+    "      mức 100% tải",
+    " +    Tiêu hao nhiên liệu ở                       ≤ 113 lít/giờ",
+    "      mức 70% tải",
+    " +    Tiêu hao nhiên liệu ở                        ≤ 77 lít/giờ",
+    "      mức 50% tải",
+    "13    Khả năng đáp ứng tải             Đóng tải từ mức 0% tải",
+  ].join("\n"));
+  assert.deepEqual([h.maxFuel, h.maxFuel75, h.maxFuel50], [156, null, 77]);
+});
+test("nhãn mức tải đứng TRƯỚC con số (dòng trên hoặc cùng dòng) vẫn đọc như cũ", () => {
+  const a = free("Tiêu hao nhiên liệu ở 100% tải:\n≤ 105 lít/giờ\nTiêu hao nhiên liệu ở 75% tải:\n≤ 80 lít/giờ");
+  assert.deepEqual([a.maxFuel, a.maxFuel75], [105, 80]);
+  const b = free("Tiêu hao nhiên liệu ở 100% tải ≤ 105 lít/giờ\nTiêu hao nhiên liệu ở 75% tải ≤ 80 lít/giờ\nmức 50% tải");
+  assert.deepEqual([b.maxFuel, b.maxFuel75, b.maxFuel50], [105, 80, null]);
+});

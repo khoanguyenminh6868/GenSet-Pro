@@ -1047,7 +1047,14 @@ export function powerRead(t) {
   for (const m of text.matchAll(/(?:≤|<=|tối đa|không (?:lớn|vượt|quá)(?: hơn)?)\s*:?\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,3}(?:[.,]\d+)?)\s*(?:l[íi]t\s*\/\s*gi[ờo]|l\/h|lph|l\/hr)/gi)) {
     const before = text.slice(Math.max(0, m.index - 200), m.index);
     if (!/ti[êe]u hao|nhi[êe]n li[ệe]u|fuel/i.test(before)) continue;
-    const load = before.slice(-60).match(/(\d{2,3})\s*%(?![\s\S]*\d{2,3}\s*%)/);
+    // A table row whose label wraps under its figure (IB2600603983, 2026-11-17: "+ Tiêu hao nhiên liệu ở   ≤ 156 lít/giờ"
+    // then "mức 100% tải" alone on the next line, three rows of them): the load is the next line's, not the "100%" that
+    // closes the row before (113 L/h of the 70% row was read as the 100% limit, and rows at 138–151 L/h were left out).
+    // Only when the figure's own line has a label and no load, and the next line is nothing but the load.
+    const ls = text.lastIndexOf("\n", m.index - 1) + 1, own = text.slice(ls, m.index), le = text.indexOf("\n", m.index);
+    const ne = le < 0 ? -1 : text.indexOf("\n", le + 1), next = le < 0 ? "" : text.slice(le + 1, ne < 0 ? text.length : ne);
+    const under = /\p{L}{2}/u.test(own) && !/\d{2,3}\s*%/.test(own) ? next.match(/^\s*(?:ở\s+)?(?:mức\s+)?(\d{2,3})\s*%\s*(?:tải|phụ tải|công suất|load)?\s*[.;,]?\s*$/i) : null;
+    const load = under || before.slice(-60).match(/(\d{2,3})\s*%(?![\s\S]*\d{2,3}\s*%)/);
     fuel.push({ v: numOf(m[1]), load: load ? Number(load[1]) : /đầy tải|full load/i.test(before.slice(-60)) ? 100 : null });
   }
   const one = (list) => (new Set(list).size === 1 ? list[0] : null);
