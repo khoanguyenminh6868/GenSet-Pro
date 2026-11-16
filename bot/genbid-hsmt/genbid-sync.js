@@ -51,7 +51,7 @@ const {
   histTbmtUrl, CFG_FILE_RE, CFG_SKIP_RE, plainVi, chapterV, specsPick, specsFinish, isServiceTender, NOTICE_MAX,
   GOODS_MAX, WEBFORM_MAX, KEEP, splitSections, technicalOfIII, trimHsmt, compact, headCut, noticeBody,
   densestCut, SPECS_PART_OVERLAP, SPECS_PARTS_MAX, partsOf, specsMerge, specsEmpty, partHead, askCut, askTrace,
-  checkResult, feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF, spendMeter, searchTermsOf, mergeFound,
+  checkResult, feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF, spendMeter, searchTermsOf, mergeFound, isGpkd,
 } = require("./sync-pure.js");
 
 // ---------- web (Vercel) ----------
@@ -1446,11 +1446,31 @@ async function hsmtText(key) {
   return chunks.map((d) => d?.text || "").join("");
 }
 
+// Đối chiếu (Khoa, 2026-11-16): the text read from an HSDT file is kept by the file's content (sha256), on this PC only,
+// next to the HSDT folders, so a file sent again in a later Đối chiếu is not read (OCR) again. Entries unused for
+// OCR_CACHE_DAYS are removed.
+const OCR_CACHE = path.join(HSDT_DIR, ".ocr-cache"), OCR_CACHE_DAYS = 120;
+function cachedFileText(file, cacheDir) {
+  const h = require("crypto").createHash("sha256").update(fs.readFileSync(file)).digest("hex"), c = path.join(cacheDir, h + ".txt");
+  if (fs.existsSync(c)) { const now = new Date(); try { fs.utimesSync(c, now, now); } catch {} log(`    Dùng lại chữ đã đọc trước đây: ${path.basename(file)}`); return fs.readFileSync(c, "utf8"); }
+  const tx = fileText(file);
+  if (tx.trim()) { fs.mkdirSync(cacheDir, { recursive: true }); fs.writeFileSync(c, tx, "utf8"); }
+  return tx;
+}
+function pruneOcrCache(cacheDir) {
+  const old = Date.now() - OCR_CACHE_DAYS * 864e5;
+  for (const f of fs.existsSync(cacheDir) ? fs.readdirSync(cacheDir) : []) { const p = path.join(cacheDir, f); try { if (fs.statSync(p).mtimeMs < old) fs.rmSync(p); } catch {} }
+}
+// Giấy phép kinh doanh in an HSDT (Khoa, 2026-11-16): not read; only that the file is there counts (isGpkd, sync-pure.js).
+const GPKD_LINE = "Giấy phép kinh doanh: có tệp (bot không đọc nội dung tệp này theo quy tắc)";
+
 // Files the page uploaded to the scratch bucket, downloaded into <hd>, with their text; unread = files with no text.
-async function scratchDocs(files, pasted, hd) {
+// opts.cache: folder of cachedFileText; opts.gpkd: a Giấy phép kinh doanh is noted as present, not read (Đối chiếu).
+async function scratchDocs(files, pasted, hd, opts = {}) {
   // Pasted text (also the text the page read from a file it could not upload) is compacted like a file's.
   let text = pasted ? `### Nội dung dán vào\n${compact(pasted)}\n` : "";
   const unread = [];
+  if (opts.cache) pruneOcrCache(opts.cache);
   for (const f of [].concat(files || [])) {
     try {
       const r = await fetch(`${API}/scratch?path=${encodeURIComponent(f.path)}`, { headers: { Authorization: `Bearer ${token()}` } });
@@ -1459,7 +1479,8 @@ async function scratchDocs(files, pasted, hd) {
       const out = path.join(hd, (f.name || path.basename(f.path)).replace(/[\\/:*?"<>|]+/g, "_"));
       fs.mkdirSync(hd, { recursive: true });
       fs.writeFileSync(out, Buffer.from(await (await fetch(url)).arrayBuffer()));
-      const tx = fileText(out);
+      if (opts.gpkd && isGpkd(f.name || out)) { text += `\n--- Tệp: ${f.name} ---\n${GPKD_LINE}\n`; log(`    Giấy phép kinh doanh, chỉ ghi nhận có tệp: ${f.name}`); continue; }
+      const tx = opts.cache ? cachedFileText(out, opts.cache) : fileText(out);
       if (tx.replace(/\s+/g, "").length > 300) text += `\n--- Tệp: ${f.name} ---\n${compact(tx)}\n`;
       else unread.push(out);
     } catch (e) { unread.push(`${f.name} (không tải được: ${e.message})`); }
@@ -1669,7 +1690,7 @@ async function prepOne(kind, key, requestedAt, dir) {
     // request (Khoa, 2026-11-05), never in git or GitHub. A supplier's technical proposal (Đối chiếu TLKT) is the
     // partner's: it stays in this folder, deleted after the round.
     const subDir = kind === "compare" ? path.join(HSDT_DIR, key.replace(/[\\/:*?"<>|]+/g, "_"), String(req.requestedAt || now()).replace(/[^0-9T]/g, "").slice(0, 15)) : path.join(dir, kind);
-    const { text: sub, unread } = await scratchDocs(req.files, req.text, subDir);
+    const { text: sub, unread } = await scratchDocs(req.files, req.text, subDir, kind === "compare" ? { cache: OCR_CACHE, gpkd: true } : {});
     if (kind === "compare" && [].concat(req.files || []).length) log(`Đối chiếu ${key}: HSDT lưu ở ${subDir}`);
     log(`${KIND_NAME[kind]} ${key}: ${[].concat(req.files || []).length} tệp tải lên, ${(req.text || "").length.toLocaleString("vi-VN")} ký tự chữ gửi kèm`
       + (ownReq ? `; YCKT rút gọn: ${[].concat(req.reqFiles || []).length} tệp, ${(req.reqText || "").length.toLocaleString("vi-VN")} ký tự` : "")

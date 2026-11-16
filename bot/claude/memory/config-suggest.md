@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-13T00:55:12.430Z
+  modified: 2026-11-14T12:02:10.960Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Code xếp sẵn 30 dòng ứng viên; mọi số/câu trích phải có nguyên văn trong nguồn, sai → "Đạt" thành "Chưa rõ". ~6–11 phút, ~3 USD/gói. Yêu cầu theo bộ mã cố định `suppliers/reqcodes.mjs` (thêm mã: dòng `R(...)` đúng thứ tự + test; tăng `REQ_VERSION`).
@@ -33,6 +33,10 @@ metadata:
 - Trang bên bán / không chính hãng (tier C) không đưa vào danh mục NCC (kết quả gợi ý của lượt vẫn hiện).
 - 7 chỉ tiêu Thảo Nguyên từng bị loại → cảnh báo trên cấu hình hạng 1–3, không đổi thứ hạng.
 - Web không in câu trích. Có nút "Chép bảng câu hỏi" (RFQ cho NCC) và khối "Câu hỏi làm rõ HSMT".
+
+**Danh mục (`web/catalog.js`), Khoa duyệt 14/11/2026, làm xong phải đo tắt ↔ bật trên toàn bộ gói:**
+- Dòng nguyên văn lặp ở nhiều bảng của cùng NCC → GỘP thành một bản ghi, cộng dồn hãng + nguồn (không xoá thẳng bản sao).
+- Gán hãng động cơ / đầu phát: chỉ tin hãng ghi ở dòng bảng hoặc tiêu đề cột; hãng chỉ đến từ tên trang không dùng khi model đã có hãng mức cao hơn; còn mâu thuẫn → chưa rõ hãng, không đoán (cách siết do em đề xuất, Khoa trả lời "nên làm").
 
 **Tìm NCC:** CHỈ Claude. NCC mới trùng cấu hình có sẵn → gắn vào; không trùng → cấu hình mới. Không chạy lại cả Gợi ý. Gợi ý lại giữ kết quả Tìm NCC và cấu hình tìm trên internet (trang lưu ở `genbid-work\config-web\`). Nút trên từng cấu hình: Xoá, Tìm nhà cung cấp.
 

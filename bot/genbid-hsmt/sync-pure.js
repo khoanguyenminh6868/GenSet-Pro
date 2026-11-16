@@ -15,6 +15,10 @@ async function sig(o) {
   const b = new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s)));
   return [...b].map((x) => x.toString(16).padStart(2, "0")).join("").slice(0, 12);
 }
+// Giấy phép kinh doanh (also "Giấy chứng nhận đăng ký doanh nghiệp / kinh doanh", GPKD, ĐKKD) in an HSDT (Khoa,
+// 2026-11-16): Đối chiếu does not read it, only notes that the file is there. Matched on the file name without marks.
+const GPKD_NAME = /giay[\s_.-]*phep[\s_.-]*kinh[\s_.-]*doanh|(^|[^a-z])(gpkd|dkkd)([^a-z]|$)|dang[\s_.-]*ky[\s_.-]*(kinh[\s_.-]*doanh|doanh[\s_.-]*nghiep)/;
+const isGpkd = (name) => GPKD_NAME.test(String(name || "").normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/[đĐ]/g, "d").toLowerCase());
 const isDecisionFile = (name) => {
   const nm = String(name || "").normalize("NFC");
   if (/y(ê|e)u\s*c(ầ|a)u\s*(v(ề|e)\s*)?k(ỹ|y|i)?\s*thu(ậ|a)t|(^|[^a-z])yckt([^a-z]|$)|ch(ư|u)?(ơ|o|ô)ng[\s_.-]*(v|5)(?![ivx\d])/i.test(nm) && !/^[\d\s._-]*(q(đ|d)|quy(ế|e)t[\s_]*(đ|d)(ị|i)nh|quyetdinh)/i.test(nm)) return false;
@@ -958,7 +962,7 @@ const withNormHighlights = (result) => [...(Array.isArray(result?.highlights) ? 
 module.exports = {
   NORM_BANDS, normPower, noiseLimits, fuelLimits, normHighlights, withNormHighlights,
   feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF, FIELDS, FIELD_DEFAULT, fieldsOf, searchTermsOf, mergeFound, API_PRICE, usageUsd, spendMeter,
-  sig, isDecisionFile, HIST_PREFIX, has, GENSET_RE, PLANT_RE, SET_RE, isGenset, vnTime, histUrl, histTender,
+  sig, isDecisionFile, isGpkd, HIST_PREFIX, has, GENSET_RE, PLANT_RE, SET_RE, isGenset, vnTime, histUrl, histTender,
   POWER_RE, POWER_PAIR_RE, histNum, histPower, histNeedsConfig, CONFIG_TEXT_MAX, CONFIG_KEY, configText, setsOf,
   histConfigOf, histTbmtUrl, CFG_FILE_RE, CFG_SKIP_RE, SPEC_TITLE_RE, plainVi, chapterV, specsPick, specsFinish,
   SERVICE_RE, BUY_SET_RE, isServiceTender, NOTICE_MAX, GOODS_MAX, WEBFORM_MAX, KEEP, splitSections,

@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-13T00:55:15.001Z
+  modified: 2026-11-14T13:41:20.178Z
 ---
 
 Phiên chính đóng vai kỹ sư trưởng + điều phối (business, sales, kỹ thuật): phân rã, viết brief, kiểm kết quả, quyết định. Việc thực thi giao session khác với model theo độ khó.
@@ -18,5 +18,6 @@ Phiên chính đóng vai kỹ sư trưởng + điều phối (business, sales, k
 - **Trạng thái nằm trong tệp, không trong hội thoại:** đầu phiên đọc `C:\Projects\GenSet Pro\genbid-work\dieu-phoi\so-dieu-phoi.md`, cập nhật sau mỗi cổng duyệt; việc còn dở và việc chờ Khoa chỉ ghi ở sổ này (không có tệp nhật ký trong bộ nhớ). Sổ chỉ ghi việc ĐANG MỞ, dưới ~5 KB (13/11/2026 sổ từng lên 66 KB vì chép cả kết quả): việc khép thì xoá dòng và thêm một dòng vào `so-dieu-phoi-da-khep.md`; số đo nằm ở bản nghiệm thu; quyết định của Khoa vào bộ nhớ; mục "Khoa đã bảo BỎ" trong sổ để không đề xuất lại. Quy tắc chung cho session con ở `dieu-phoi\quy-trinh-session-con.md`; bản nghiệm thu ở `dieu-phoi\nghiem-thu\`; đầu vào dùng chung ở `dieu-phoi\dau-vao\`.
 - **Brief ≤ ~15 dòng:** mục tiêu, tệp đầu vào, phạm vi tệp code, thế nào là xong; trỏ tới quy trình thay vì chép lại; session con tự nạp bẫy code từ `CLAUDE.md` của repo. Hai session không đụng cùng tệp.
 - **Session con chỉ nhắn ≤5 dòng**, chỉ ở cổng duyệt / khi bị chặn / khi xong. Khi kiểm, lọc đầu ra lệnh, không đổ cả diff.
+- **Mẹo đã dùng tốt (14/11/2026, đợt chuẩn hoá thông số):** đầu vào chung + script đo để trong `dieu-phoi\dau-vao\<việc>\` rồi brief chỉ trỏ tới; brief ghi rõ tệp KHÔNG được sửa (tên phiên đang giữ tệp đó); việc cùng sửa một tệp thì xếp hàng trong mục "Chưa giao" kèm điều kiện mở; `send_later` 40–50 phút tự kiểm và tự đặt lại; PR nhỏ nối tiếp cùng tệp thì giao tiếp cho chính phiên vừa làm (tối đa 2 PR). CI có bước nào chặn thì kiểm trước xem có làm kẹt PR dữ liệu bot tự merge không (`mergeWhenGreen` chỉ merge khi mọi check xanh, đỏ thì im lặng).
 - **Một việc (một PR) một session mới** (Khoa 12/11/2026 hỏi vì phiên Sonnet lên 70% context): không giao nhiều việc nối tiếp cho một phiên; việc sau trỏ tới tệp nghiệm thu của việc trước. Context >~25% hoặc đã xong 2 PR → bàn giao, mở phiên mới. Áp dụng cả phiên điều phối: mỗi ngày/đợt việc một phiên mới.
 - **Kiểm bắt buộc** (Khoa 10/11/2026): session con KHÔNG tự merge, không tự thay tệp bot đang chạy ([[bot-ops]]); gửi nghiệm thu gồm link PR, lệnh kiểm + đầu ra thật, số đo trước/sau, rủi ro + cách quay lui. Phiên điều phối kiểm ĐỘC LẬP: CI, diff đúng phạm vi, chạy lại lệnh kiểm chính, đối chiếu ngẫu nhiên vài mẫu với nguồn, kiểm quy tắc trong bộ nhớ, đo hiệu quả bằng chỉ số của việc. PR lớn/rủi ro cao: thêm một session review độc lập (model khác tác giả, chỉ đọc). Đạt mới merge ([[git-workflow]]) rồi kiểm lại sau merge.
