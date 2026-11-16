@@ -86,3 +86,46 @@ test("Cat: figures under Standby / Prime column titles of a kVA table", () => {
   const dm = { n: 2033, title: "", header: ["Genset Model  Standby Power  Prime Power  Engine Model  No. of  Details"], rows: ["DM250C  250kVA  200kW  /  /  6CTAA8.3-G9  6  Contact  us"] };
   assert.equal(C.linePower({ id: "dm", specTables: [dm] }, line("DM250C", "6CTAA8.3-G9", 250, "standby", 2033)), null);
 });
+
+// Dòng thật, 2026-11-16 (Khoa: "làm cho airman, sửa cho powerco, nới cho cps AP450S").
+test("airman: models side by side, the j-th kVA / kW pair of each rating line", () => {
+  const t = { n: 2001, title: "AIRMAN SDG mobile generators – specifications (60Hz, Tier 4 Final)",
+    header: ["GENERATOR SPECIFICATIONS    SDG13LAX-8E1            SDG25S-8E1              SDG40S-8E1              SDG45S-8E2                   SDG65S-8E1          SDG125S-8E1            SDG150S-8E1             SDG220S-8E1             SDG400S-8E1"],
+    rows: ["PRIME POWER                 12.5kVA / 10kW          25kVA / 20kW            36kVA / 28.8kW          45kVA    /  36kW             65kVA / 51kW        125kVA /  100kW        150kVA / 120kW          220kVA / 176kW          400kVA / 320kW",
+      "STANDBY POWER               13.8kVA / 11kW          27.5kVA / 22kW          37.8kVA / 30.2kW        48.5kVA  /  38.8kW           69.3kVA / 55.4kW    137.5kVA  / 110kW      165kVA / 132kW          242kVA / 194kW          420kVA / 336kW"] };
+  assert.deepEqual(C.linePower({ id: "airman", specTables: [t] }, line("SDG150S-8E1", "6068HFG05", 150, "prime", 2001)), { prime: { kVA: 150, kW: 120 }, standby: { kVA: 165, kW: 132 } });
+  // A rating line missing one pair would shift every column after it: left out.
+  const short = { ...t, rows: [t.rows[0], t.rows[1].replace("165kVA / 132kW", "")] };
+  assert.equal(C.linePower({ id: "airman", specTables: [short] }, line("SDG150S-8E1", "6068HFG05", 150, "prime", 2001)), null);
+});
+
+test("powerlink VR200XS: a model heading two columns that disagree (typo 9176kW) gives nothing", () => {
+  const t = { n: 2004, title: "VR Series VR200XS", header: ["| Engine Model | VR6-8.3TAG2 | VR6-8.3TAG2"], rows: ["| PRP | 200 kVA / 160 kW | 200kVA / 160kW", "| ESP | 220kVA / 9176kW | 220kVA / 176kW"] };
+  const p = line("VR200XS", "VR6-8.3TAG2", 200, "prime", 2004);
+  assert.equal(C.linePower({ id: "pl", specTables: [t] }, p), null);
+});
+
+test("powerco: rating in the row name, the 50 Hz pair picked by the line's figure", () => {
+  const t = { n: 2001, title: "PowerCo PERKINS 1104 SERIES TECHNICAL DATA SHEET – ratings (400-415V 50Hz / 480V 60Hz)",
+    header: ["PowerCo                  Perkins          400-415     50hz       480v      60hz", "Generating Set Model     Engine Model     KVA         KW         KVA       KW"],
+    rows: ["PCS65P (PRIME)           1104A-44TG1      65          52         74        59.2", "PCS65P (STANDBY)         1104A-44TG1      72          57.6       81        64.8",
+      "PCS80P (PRIME)           1104A-44TG2      80          64         90        72", "PCS80P (STANDBY)         1104A-44TG2      88          69.6       100       80"] };
+  const s = { id: "powerco-systems", specTables: [t] };
+  assert.deepEqual(C.linePower(s, line("PCS65P", "1104A-44TG1", 65, "prime", 2001)), { prime: { kVA: 65, kW: 52 }, standby: { kVA: 72, kW: 57.6 } });
+  // The old pairing read 74 (60 Hz prime) as standby: never.
+  assert.notEqual(C.linePower(s, line("PCS65P", "1104A-44TG1", 65, "prime", 2001))?.standby?.kVA, 74);
+  // PCS400P: prime 400 in both the 50 Hz and the 60 Hz column — which standby goes with it is unknown.
+  const t4 = { ...t, rows: ["PCS400P (PRIME)          2206A-E13TAG3    400         320        400       320", "PCS400P (STANDBY)        2206A-E13TAG3    440         352        438       350"] };
+  assert.equal(C.linePower({ id: "pc", specTables: [t4] }, line("PCS400P", "2206A-E13TAG3", 400, "prime", 2001)), null);
+  // No frequency line over the columns (2500 series: only the title says "50Hz / 480V 60Hz"): left out.
+  const t5 = { ...t, header: [t.header[1]] };
+  assert.equal(C.linePower({ id: "pc", specTables: [t5] }, line("PCS65P", "1104A-44TG1", 65, "prime", 2001)), null);
+});
+
+test("cps AP450S: a line of one figure and one rating word after it", () => {
+  const t = { n: 2001, title: "CPS AP450S – thông số tổ máy", header: ["450KVA 3PH CANOPIED DIESEL GENERATOR POWERED BY PERKINS 2506A-E15TAG1"], rows: ["450 Kva Prime Power", "495 Kva Standby Power", "Model Number AP450S"] };
+  assert.deepEqual(C.linePower({ id: "cps", specTables: [t] }, line("AP450S", "2506A-E15TAG1", 450, "prime", 2001)), { prime: { kVA: 450 }, standby: { kVA: 495 } });
+  // Two figures before the word stay out ("1100KW/1375KVA Prime, …").
+  const t2 = { ...t, rows: ["400kW/450 Kva Prime Power", "495 Kva Standby Power"] };
+  assert.equal(C.linePower({ id: "cps", specTables: [t2] }, line("AP450S", "2506A-E15TAG1", 450, "prime", 2001)), null);
+});
