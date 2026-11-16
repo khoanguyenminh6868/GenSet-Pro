@@ -150,7 +150,7 @@
         "min": 1000,
         "max": 1000,
         "unit": "kVA",
-        "rating": "unspecified",
+        "rating": "continuous",
         "src": [
           2003
         ]
@@ -440,7 +440,8 @@
       "tier": "A",
       "quote": [
         "Gas Genset Selector Sheets",
-        "TM1000G     TCG3016V16S     1000           1000"
+        "TM1000G     TCG3016V16S     1000           1000",
+        "Model       Model                 (COP)"
       ],
       "file": "sources/tide-power/2003.md",
       "official": true
