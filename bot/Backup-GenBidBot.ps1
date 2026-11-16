@@ -20,6 +20,7 @@ $map = [ordered]@{
     'claude\skills\run-hsmt-worker'             = Join-Path $Cl 'skills\run-hsmt-worker'
     'claude\skills\genbid-setup'                = Join-Path $Cl 'skills\genbid-setup'
     'claude\skills\tim-thong-so-ncc'            = Join-Path $Cl 'skills\tim-thong-so-ncc'
+    'claude\skills\update-bot'                  = Join-Path $Cl 'skills\update-bot'
     'claude\scheduled-tasks\hsmt-worker'        = Join-Path $Cl 'scheduled-tasks\hsmt-worker'
     'claude\memory'                             = Join-Path $Cl ('projects\' + ($Root -replace '[:\\ ]', '-') + '\memory')
 }

@@ -52,3 +52,9 @@ Thêm `git config user.name/user.email` trong `GenSet-Pro` và `hsmt-inbox` (h�
 5. `powershell -File GenSet-Pro\bot\Backup-GenBidBot.ps1 -Check` → "Repo đã giống bản đang chạy."
 
 Báo Khoa: đã chạy được gì, còn thiếu gì, máy cũ đã tắt bot chưa.
+
+## Về sau: cập nhật bot theo main
+
+Phiên khác sửa bot và merge lên main thì máy này chưa có (bot chạy từ `genbid-hsmt\`, không từ repo). Khoa nói "updateBot" /
+"cập nhật bot" → skill `update-bot`: `bot\Update-GenBidBot.ps1` kéo main, chép bot, skills, bộ nhớ sang máy (giữ và báo tệp sửa tay
+chưa lên GitHub), khởi động lại "GenBid Bot" nếu đang chạy code cũ. `-Check` để chỉ xem.

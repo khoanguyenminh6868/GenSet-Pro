@@ -4,7 +4,7 @@
 - [Điều phối, giao task theo model](orchestrator-delegate-by-model.md) — phiên chính là kỹ sư trưởng; đầu phiên đọc `genbid-work\dieu-phoi\so-dieu-phoi.md`
 - [Gợi ý cấu hình](config-suggest.md) — quy tắc Khoa chốt về xếp hạng, xuất xứ, nguồn thông số; nguồn datasheet hãng
 - [Giá gợi ý](bidprice-suggest.md) — quy tắc chọn gói tương tự, báo giá/giá vốn, số liệu thị trường, việc chờ quyết
-- [Supplier DB](supplier-db.md) — không bịa + verify, quy tắc thu thập, mẹo tìm NCC, hãng chưa làm được
+- [Supplier DB](supplier-db.md) — không bịa + verify, quy tắc thu thập, mẹo tìm NCC, mức prime/standby (ESP = standby), hãng chưa làm được
 - [Công ty của Khoa](company-thao-nguyen.md) — Thảo Nguyên, MST 4101623015 (vn4101623015 trên muasamcong)
 - [Không dùng bản artifact](no-artifact-version.md) — chỉ web Vercel + bot Windows, bỏ qua nhánh claude.ai
 - [Phân tích: bỏ cảnh báo thủ tục](phan-tich-bo-canh-bao.md) — không cảnh báo đóng thầu, bảo đảm dự thầu, hiệu lực E-HSDT
