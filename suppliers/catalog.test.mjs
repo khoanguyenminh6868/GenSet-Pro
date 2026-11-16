@@ -27,6 +27,32 @@ test("genset row: engine, alternator, make from the column title, standby and pr
   assert.equal(e.genset, "SQP500");
 });
 
+test("a row repeated word for word in several tables of one supplier is one record, makes and sources added (Khoa 14/11: gộp)", () => {
+  // kente-power n 102 / 159 / 175: the same KT-SC138 row on three pages; one page title names the make.
+  const line = "| KT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L | 105 | 124 | 4.3 | Elec. | 2150*930*1580 | 1170";
+  const header = ["| Model | Standby kVA/kW | Prime kVA/kW | Fuel | Engine | Cyl | Bore | Stroke | Disp | Gov | Dims | Weight"];
+  const s = rec("genset_oem", [
+    { n: 102, title: "Diesel Generator Manufacture and Factory", header, rows: [line] },
+    { n: 159, title: "SDEC Series Diesel Generator", header, rows: [line] },
+    { n: 175, title: "Diesel Generator Manufacturing", header, rows: [line, "| KT-SC110 | 110/88 | 100/80 | 22 | SC4H160D2 | 4L"] },
+  ]);
+  const es = C.fromSupplier(s).filter((x) => x.kind === "engine");
+  assert.deepEqual(es.map((e) => e.model), ["SC4H180D2", "SC4H160D2"]);
+  assert.equal(es[0].n, 102);
+  assert.deepEqual(es[0].also.map((x) => x.n), [159, 175]);
+  assert.deepEqual(es[0].makes.map((m) => [m.name, m.via]), [["SDEC", "tên trang"]]);
+  const e = C.build([s]).engines.find((x) => x.model === "SC4H180D2");
+  assert.equal(e.uses.length, 1);
+  assert.equal(e.make, "SDEC");
+});
+
+test("the same row in a 50 Hz and a 60 Hz table stays one record per frequency", () => {
+  const line = "| WT-SC138 | 138/110 | 125/100 | 28.6 | SC4H180D2 | 4L";
+  const header = ["| Model | Standby kVA/kW | Prime kVA/kW | Fuel | Engine | Cyl"];
+  const s = rec("genset_oem", [{ n: 145, title: "Generator 50Hz", header, rows: [line] }, { n: 145, title: "Generator 60Hz", header, rows: [line] }]);
+  assert.deepEqual(C.fromSupplier(s).filter((x) => x.kind === "engine").map((e) => e.freq), [50, 60]);
+});
+
 test("no make unless a source states it", () => {
   const s = rec("genset_oem", [{ n: 101, title: "Generator set", header: ["| Model | kVA | kW | Engine"], rows: ["| AB100 | 100 | 80 | 6BTA5.9-G2"] }]);
   const [e] = C.fromSupplier(s);
