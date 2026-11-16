@@ -101,15 +101,16 @@ async function ocrFile(file, max = 300, find = 0, opts = {}) {
   const { createWorker } = require(path.join(__dirname, "node_modules", "tesseract.js"));
   let worker = null;
   const ocrJs = async (img) => { worker ||= await createWorker("vie+eng", 1, { cachePath: CACHE }); return (await worker.recognize(img)).data.text; };
-  const ocr = async (img) => {
-    if (NATIVE) {
-      // Two OCR runs share the 4 cores: two threads each.
-      const r = cp.spawnSync(NATIVE, [img, "stdout", "-l", "vie+eng", "--oem", "1", "--psm", "4", "--tessdata-dir", TESSDATA],
-        { encoding: "utf8", maxBuffer: 64 << 20, timeout: 300e3, env: { ...process.env, OMP_THREAD_LIMIT: "2" }, windowsHide: true });
-      if (r.status === 0 && (r.stdout || "").trim()) return r.stdout;
-    }
-    return ocrJs(img);
+  // Native Tesseract's text, or null when it is missing, fails or reads nothing. dpi: the resolution of a PGM, which carries
+  // none (a PNG of pdftoppm does): given, the text is the same as from the PNG, letter for letter (checked 2026-11-16).
+  const native = (img, dpi) => {
+    if (!NATIVE) return null;
+    // Two OCR runs share the 4 cores: two threads each.
+    const r = cp.spawnSync(NATIVE, [img, "stdout", "-l", "vie+eng", "--oem", "1", "--psm", "4", ...(dpi ? ["--dpi", String(dpi)] : []), "--tessdata-dir", TESSDATA],
+      { encoding: "utf8", maxBuffer: 64 << 20, timeout: 300e3, env: { ...process.env, OMP_THREAD_LIMIT: "2" }, windowsHide: true });
+    return r.status === 0 && (r.stdout || "").trim() ? r.stdout : null;
   };
+  const ocr = async (img) => native(img) ?? ocrJs(img);
   try {
     if ([".jpg", ".jpeg", ".png", ".tif", ".tiff", ".bmp"].includes(ext)) {
       // A copy under a plain name, for a path with Vietnamese letters.
@@ -181,11 +182,27 @@ async function ocrFile(file, max = 300, find = 0, opts = {}) {
         const c = cached("p", n);
         if (c !== null) { pages[n - 1] = c; continue; }
         if (late()) { partial = true; break; }
-        cp.spawnSync(exe("pdftoppm"), ["-r", "250", "-gray", "-png", "-f", String(n), "-l", String(n), plain, path.join(tmp, "p")], { timeout: 120e3 });
-        const img = fs.readdirSync(tmp).find((x) => x.startsWith("p") && x.endsWith(".png"));
-        if (!img) continue;
-        let text = await ocr(path.join(tmp, img));
-        fs.rmSync(path.join(tmp, img));
+        // The page as a PGM for native Tesseract (Khoa, 2026-11-16): no PNG compression, which took up to 80 s a page on a
+        // scan with a 72 ppi image (a page of 1412×1996 pt is 34 million pixels at 250 dpi). tesseract.js (the fallback)
+        // gets a PNG as before.
+        const render = (png) => {
+          cp.spawnSync(exe("pdftoppm"), ["-r", "250", "-gray", ...(png ? ["-png"] : []), "-f", String(n), "-l", String(n), plain, path.join(tmp, "p")], { timeout: 120e3 });
+          const f = fs.readdirSync(tmp).find((x) => x.startsWith("p") && x.endsWith(png ? ".png" : ".pgm"));
+          return f ? path.join(tmp, f) : "";
+        };
+        let text = null;
+        if (NATIVE) {
+          const img = render(false);
+          if (!img) continue;
+          text = native(img, 250);
+          fs.rmSync(img);
+        }
+        if (text === null) {
+          const img = render(true);
+          if (!img) continue;
+          text = await ocrJs(img);
+          fs.rmSync(img);
+        }
         // At most 60 tries per file, and none after 8 tries that found no rotation (an upright table of figures also reads
         // as "not legible": it must not cost a second render and an OSD run on every page).
         if (OSD_DIR && osdTries < 60 && !(osdTries >= 8 && !osdRotated) && text.replace(/\s/g, "").length > 20 && legible(text) < BAD_PAGE) {
