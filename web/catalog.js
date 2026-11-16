@@ -642,6 +642,31 @@
         break;
       }
     }
+    return mergeRepeats(out);
+  }
+  // One row written word for word in several tables of the same supplier (a dealer's page per series that repeats the
+  // same genset row, a PDF table and the page's own table; 5,250 of 64,788 records on 2026-11-16) is one record, not
+  // several (Khoa 2026-11-14: "gộp", not dropped: dropping the repeats took the only make of 59 models). The first
+  // record stays; the makes, figures, power, frequency and alternator of the repeats are added to it, and their sources
+  // go in `also` ({ n, table, row, title }). A fromLine record (a product line's power row) is never merged, nor two
+// records of different frequencies.
+  function mergeRepeats(list) {
+    const first = new Map(), out = [];
+    for (const o of list) {
+      if (!o.line || o.fromLine) { out.push(o); continue; }
+      // A row in both a 50 Hz and a 60 Hz table (wintpower WT-SC138) stays twice: one record per frequency.
+      const k = `${o.kind}\n${keyOf(o.model)}\n${String(o.line).trim()}`, f = first.get(k);
+      if (!f || (f.freq && o.freq && f.freq !== o.freq)) { if (!f) first.set(k, o); out.push(o); continue; }
+      for (const m of o.makes || []) if (!f.makes.some((x) => x.name === m.name && x.via === m.via)) f.makes.push(m);
+      // A new array: the engine and alternator records of one row share theirs.
+      const add = (o.specs || []).filter((sp) => !f.specs.some((x) => x.key === sp.key && x.value === sp.value));
+      if (add.length) f.specs = [...f.specs, ...add];
+      if (!f.power && o.power) f.power = o.power;
+      if (!f.freq && o.freq) f.freq = o.freq;
+      if (!f.other && o.other) f.other = o.other;
+      if (o.own) f.own = true;
+      (f.also = f.also || []).push({ n: o.n, table: o.table, row: o.row, title: o.title });
+    }
     return out;
   }
   const numbersOf = (s) => (String(s).replace(/(\d),(\d)/g, "$1.$2").match(/\d+(?:\.\d+)?/g) || []).map(Number);

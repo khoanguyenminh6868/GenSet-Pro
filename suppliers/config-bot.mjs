@@ -1926,7 +1926,8 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   const built = CAT.build(suppliers), facts = modelFacts(built, suppliers), altKva = altKvaOf(suppliers, built), RT = sourceRatings(suppliers, sourcesDir);
   // A genset row as web/catalog.js reads it (its power per rating), by the src that names it.
   const rows = new Map();
-  for (const e of built.engines || []) for (const u of e.uses) if (u.line) rows.set(`${u.supplierId}|${u.n}|${CAT.keyOf(u.line)}`, u);
+  // A row catalog.js merged from several tables (`also`) answers to each of their sources.
+  for (const e of built.engines || []) for (const u of e.uses) if (u.line) for (const n of [u.n, ...(u.also || []).map((x) => x.n)]) rows.set(`${u.supplierId}|${n}|${CAT.keyOf(u.line)}`, u);
   const rowOf = (src) => (src?.kind === "catalog" ? rows.get(`${src.supplierId}|${Number(src.n)}|${CAT.keyOf(src.line || "")}`) : null);
   const hints = [];
   // The line of a configuration's sources that may answer an "unclear" check: a figure of its engine / alternator
