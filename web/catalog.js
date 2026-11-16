@@ -603,7 +603,7 @@
         for (const m of p.engineMakes || []) for (const b of brandIn(m, ENGINE_BRANDS)) addMake(makes, b, "tên trang");
         // Every rating the row gives (AGG CU1250D5 "1250/1000" ESP and "1125/900" PRP), else the line's one figure.
         const ms = [p.series, ...(p.engineModels || [])], row = rowPowerOf(t, line, pw, ms);
-        const both = row && Object.keys(row).length > 1 ? row : colPowerOf(t, line, pw, ms) || sheetPowerOf(t, pw, ms) || row;
+        const both = row && Object.keys(row).length > 1 ? row : colPowerOf(t, line, pw, ms) || sheetPowerOf(t, pw, ms) || acrossPowerOf(t, pw, ms) || namedRowsPowerOf(t, pw, ms) || row;
         out.push({ supplierId: s.id, n, table: ti, title: String(t.title || ""), row: t.rows.indexOf(line), line, genset: isCode(p.series) ? p.series : null, power: both || { [kind]: { [pw.unit]: pw.min } },
           freq: freqIn((p.frequency || []).join(" ")) || freqIn(`${(t.header || []).join(" ")} ${t.title || ""}`), header: t.header || [], specs: [], kind: "engine", model: tidyModel(model, ENGINE_BRANDS), makes, other: null, fromLine: true });
         break;
@@ -660,6 +660,10 @@
     const got = { prime: { kVA: new Set(), kW: new Set() }, standby: { kVA: new Set(), kW: new Set() } };
     const TOK = /(prime|\bprp\b|常用|主用|servicio\s+principal)|(standby|stand[\s-]by|\besp\b|\bltp\b|备用|emergencia|secours)|(continuous|\bcop\b|\bmax(?:imum)?\s*power|持续|连续)|\(\s*(kva|kw)\s*\)|(\d+(?:[.,]\d+)?)\s*(kva|kwe|kw)(?![a-z])|(\d+(?:[.,]\d+)?)/gi;
     for (const line of [...(t.header || []), ...(t.rows || [])]) {
+      // A line of one figure and one rating word after it, nothing else ("450 Kva Prime Power", cps AP450S): the word can
+      // only name that figure.
+      const lone = String(line).replace(/\|/g, " ").trim().match(/^(\d+(?:[.,]\d+)?)\s*(kva|kw)\s+(prime|standby)(?:\s+(?:power|output|rating))?$/i);
+      if (lone) { got[lone[3].toLowerCase()][/kva/i.test(lone[2]) ? "kVA" : "kW"].add(Number(lone[1].replace(",", "."))); continue; }
       let rate = null, unit = null, postfix = false, fig = false;
       const figs = [];
       for (const c of cellsOf(line)) {
@@ -728,6 +732,73 @@
     }
     return null;
   }
+  const splitCells = (l) => { const c = cellsOf(l); return c.length > 1 ? c : String(l).trim().split(/\s{2,}/); };
+  const ratingOf = (x) => (SHEET_OTHER.test(x) || SHEET_ENG.test(x) ? null : SHEET_PR.test(x) && !SHEET_SB.test(x) ? "prime" : SHEET_SB.test(x) && !SHEET_PR.test(x) ? "standby" : null);
+  const checked = (out, pw) => {
+    const pr = out.prime?.[pw.unit], sb = out.standby?.[pw.unit];
+    if (!(pr > 0 && sb > 0) || !(sb > pr && sb <= pr * 1.3)) return null;
+    if (pw.rating === "unspecified" ? pr !== pw.min && sb !== pw.min : out[pw.rating]?.[pw.unit] !== pw.min) return null;
+    return out;
+  };
+  // A table of several models side by side, one line per rating (airman "GENERATOR SPECIFICATIONS  SDG13LAX-8E1 …
+  // SDG400S-8E1" over "PRIME POWER  12.5kVA / 10kW … 400kVA / 320kW"): the line's model is the j-th of the title line, and
+  // its figures the j-th "kVA / kW" pair of a line whose label names one rating. Only when the title line is a label and
+  // models only, and that line holds exactly one pair per model (a pair split off or missing would shift the columns).
+  function acrossPowerOf(t, pw, models0) {
+    if (!t || !pw || pw.min !== pw.max || !/^(kVA|kW)$/.test(pw.unit)) return null;
+    const models = (models0 || []).filter(isCode).map(keyOf);
+    for (const h of [...(t.header || []), ...(t.rows || [])]) {
+      const cells = splitCells(h).slice(1);
+      if (cells.length < 2 || !cells.every(isCode)) continue;
+      // The model may head several columns (powerlink: one per voltage); they must all give the same pair, and a pair must
+      // be a kVA / kW pair (powerlink VR200XS "220kVA / 9176kW" next to "220kVA / 176kW": a typo of the source, left out).
+      const js = cells.map((c, i) => (models.includes(keyOf(c)) ? i : -1)).filter((i) => i >= 0);
+      if (!js.length) continue;
+      const got = {};
+      for (const r of t.rows || []) {
+        const lbl = String(r).replace(/^\s*\|?\s*/, "").split(/\d/)[0], k = ratingOf(lbl);
+        if (!k) continue;
+        const pairs = [...String(r).matchAll(/(\d+(?:\.\d+)?)\s*kva\s*\|?\s*\/\s*\|?\s*(\d+(?:\.\d+)?)\s*kw(?![a-z])/gi)];
+        if (pairs.length !== cells.length) continue;
+        for (const j of js) {
+          const v = { kVA: Number(pairs[j][1]), kW: Number(pairs[j][2]) }, p = pairOf(v.kVA, v.kW);
+          if (!p || p.kVA !== v.kVA || (got[k] && (got[k].kVA !== v.kVA || got[k].kW !== v.kW))) return null;
+          got[k] = v;
+        }
+      }
+      return checked(got, pw);
+    }
+    return null;
+  }
+  // One row per model and rating, the rating in the row's name, figures under "KVA | KW" titles of each frequency (powerco
+  // "PCS65P (PRIME) | 1104A-44TG1 | 65 | 52 | 74 | 59.2" and "PCS65P (STANDBY) | … | 72 | 57.6 | 81 | 64.8" under "… | 50hz |
+  // 480v | 60hz" and "Generating Set Model | Engine Model | KVA | KW | KVA | KW"). The pair is the column whose title line
+  // has as many titles as the row has cells and whose frequency line names one frequency over it; the line's figure picks
+  // the column, and the other rating is read in that same column.
+  function namedRowsPowerOf(t, pw, models0) {
+    if (!t || !pw || pw.min !== pw.max || !/^(kVA|kW)$/.test(pw.unit)) return null;
+    const models = (models0 || []).filter(isCode).map(keyOf);
+    const rows = {};
+    for (const r of t.rows || []) {
+      const cells = splitCells(r), k = ratingOf(cells[0] || "");
+      if (!k || !models.includes(keyOf(String(cells[0]).replace(/\(?\s*(prime|standby|prp|esp)\s*\)?/i, "")))) continue;
+      if (rows[k]) return null;
+      rows[k] = cells;
+    }
+    if (!rows.prime || !rows.standby || rows.prime.length !== rows.standby.length) return null;
+    const n = rows.prime.length, hs = (t.header || []).map(splitCells).filter((h) => h.length === n);
+    const titles = hs.find((h) => h.some((x) => /^kva$/i.test(x))), freqs = hs.find((h) => h.some((x) => /^\d{2}\s*hz$/i.test(x)));
+    if (!titles || !freqs) return null;
+    const cols = [];
+    for (let i = 0; i + 1 < n; i++) {
+      if (!/^kva$/i.test(titles[i]) || !/^kw$/i.test(titles[i + 1])) continue;
+      const hz = [freqs[i], freqs[i + 1]].filter((x) => /^\d{2}\s*hz$/i.test(x));
+      if (hz.length === 1) cols.push(i);
+    }
+    const pick = (i) => ({ prime: { kVA: num(rows.prime[i]), kW: num(rows.prime[i + 1]) }, standby: { kVA: num(rows.standby[i]), kW: num(rows.standby[i + 1]) } });
+    const hits = cols.map(pick).filter((o) => checked(o, pw));
+    return hits.length === 1 ? hits[0] : null;
+  }
   // The ratings shown for a supplier's product line of one power: the row of a table of its source holding that figure,
   // else the labelled prime and standby lines of a one-model datasheet of its source.
   function linePower(s, p) {
@@ -748,7 +819,7 @@
     }
     for (const t of s?.specTables || []) {
       if (!ns.has(t.n)) continue;
-      const x = sheetPowerOf(t, pw, models);
+      const x = sheetPowerOf(t, pw, models) || acrossPowerOf(t, pw, models) || namedRowsPowerOf(t, pw, models);
       if (x) return x;
     }
     return one;
