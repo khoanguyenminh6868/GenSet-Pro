@@ -3238,6 +3238,26 @@ const fmtPower = (p, s, line) => {
   if (all) return ["prime", "standby", "rated"].filter((k) => all[k]?.[p.unit]).map((k) => `${fmtNum(all[k][p.unit])} ${p.unit}${k === "rated" ? "" : " " + k}`).join(" · ");
   return `${p.min === p.max ? fmtNum(p.min) : `${fmtNum(p.min)}–${fmtNum(p.max)}`} ${p.unit}${p.rating && p.rating !== "unspecified" ? " " + p.rating : ""}`;
 };
+// Supplier grid "Dòng máy" cell (Khoa, 2026-11-16): up to 3 lines are listed one by one; a supplier with more (deman-power
+// has 458) gets one row per kind — the overall power span per unit and the number of lines. The full list is in the detail view.
+const SUP_LINES_LIST = 3;
+function supLinesBrief(s, lines) {
+  if (lines.length <= SUP_LINES_LIST) return lines.map((p) => h`<div class="small">${SUP_KIND[p.kind] || ""}${p.power ? ": " : ""}<b>${fmtPower(p.power, s, p)}</b>${raw(p.power ? "" : '<span class="muted"> chưa có dải công suất</span>')}</div>`).join("");
+  const kinds = new Map();
+  for (const p of lines) {
+    if (!kinds.has(p.kind)) kinds.set(p.kind, { n: 0, none: 0, units: new Map() });
+    const k = kinds.get(p.kind);
+    k.n++;
+    if (!p.power) { k.none++; continue; }
+    const u = k.units.get(p.power.unit);
+    k.units.set(p.power.unit, u ? [Math.min(u[0], p.power.min), Math.max(u[1], p.power.max)] : [p.power.min, p.power.max]);
+  }
+  return [...kinds].map(([kind, k]) => {
+    const spans = [...k.units].map(([u, [a, b]]) => `${a === b ? fmtNum(a) : `${fmtNum(a)}–${fmtNum(b)}`} ${u}`).join(" · ");
+    const extra = k.none ? (spans ? `, ${k.none} chưa có dải công suất` : ", chưa có dải công suất") : "";
+    return h`<div class="small">${SUP_KIND[kind] || kind}${spans ? ": " : ""}<b>${spans}</b> <span class="muted">(${k.n} dòng${extra})</span></div>`;
+  }).join("");
+}
 const supRefs = (src) => (src || []).map((n) => h`<a class="supref" href="#sup-src-${n}" data-supsrc="${n}">[${n}]</a>`).join("");
 let supFilter = { excl: false, fav: false, won: false, q: "", role: "", conf: "", make: "", country: "", year: "", fuel: "", power: "", unit: "kVA" };
 // Sort by founding year or country (Khoa, 2026-11-04): click a header for ▲, again for ▼, a third time back to A–Z; a supplier with no value goes last.
@@ -3489,7 +3509,7 @@ function renderSupList() {
       <td data-l="Vai trò">${SUP_ROLE[s.role] || s.role}${raw(s.specTables?.length ? h`<div class="muted small">${s.specTables.reduce((a, x) => a + x.rows.length, 0)} model</div>` : "")}${raw(s.status === "partial" ? '<div><span class="chip mut">Thiếu dữ liệu</span></div>' : "")}${raw(supWonChip(s, "wond"))}${raw(supQuoteChip(s))}</td>
       <td data-l="Quốc gia">${supCountryName(s) || "—"}</td>
       <td data-l="Năm thành lập">${s.founded || "—"}</td>
-      <td data-l="Dòng máy">${raw(lines.map((p) => h`<div class="small">${SUP_KIND[p.kind] || ""}${p.power ? ": " : ""}<b>${fmtPower(p.power, s, p)}</b>${raw(p.power ? "" : '<span class="muted"> chưa có dải công suất</span>')}</div>`).join(""))}</td>
+      <td data-l="Dòng máy">${raw(supLinesBrief(s, lines))}</td>
       <td class="small" data-l="Động cơ">${[...new Set(lines.flatMap((p) => p.engineMakes || []))].join(", ") || "—"}</td>
       <td data-l="Độ tin cậy"><span class="chip ${conf[1]}" title="${conf[0]}">${conf[2] || conf[0]}</span></td></tr>`;
   }).join(""))}</tbody></table></div>` : h`<div class="note">Không có nhà cung cấp nào khớp bộ lọc.${raw(Number(supFilter.power) > 0 ? " Lưu ý: chỉ so với dòng máy ghi cùng đơn vị (kVA hoặc kW), không quy đổi." : "")}</div>`;
