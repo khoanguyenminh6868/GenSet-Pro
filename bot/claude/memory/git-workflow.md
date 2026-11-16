@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-13T00:27:23.922Z
+  modified: 2026-11-14T13:41:15.426Z
 ---
 
 Repo: github.com/khoanguyenminh6868/GenSet-Pro, checkout chính `C:\Projects\GenSet Pro\GenSet-Pro`.
@@ -17,5 +17,7 @@ Repo: github.com/khoanguyenminh6868/GenSet-Pro, checkout chính `C:\Projects\Gen
    **Why:** Vercel chỉ deploy từ `main`, Khoa không muốn làm nút cổ chai.
    Ngoại lệ: session con được điều phối giao việc KHÔNG tự merge, xem [[orchestrator-delegate-by-model]].
 4. **PR merge xong tự xoá worktree + thư mục wt-* của mình, không hỏi** (Khoa 11/11/2026): `git worktree remove --force` rồi `rm -rf`; thư mục bị khoá (Permission denied) thì để đó. CHỈ xoá worktree mình tạo; dọn hàng loạt phải kiểm từng cái ngay trước lúc xoá (nhánh đã merge, không có thay đổi chưa commit, không phải của phiên đang chạy) — 11/11 đã lỡ xoá worktree của phiên OCR đang chạy. Commit WIP sớm.
+
+   Từ 14/11/2026 lệnh `rm -rf` thư mục `wt-*` bị kiểm an toàn của Claude Code chặn (cả phiên điều phối lẫn phiên con), không lách: ghi tên thư mục vào mục "Chờ Khoa" của sổ điều phối để Khoa xoá tay. Phiên điều phối kiểm PR thì dùng lại MỘT worktree kiểm (`git -C <wt> checkout --detach origin/<nhánh>`) thay vì tạo mới mỗi PR.
 
 Commit dữ liệu suppliers: `-c user.name=khoanguyenminh6868 -c user.email=...`. Sửa bot thì thêm bước ở [[bot-ops]].

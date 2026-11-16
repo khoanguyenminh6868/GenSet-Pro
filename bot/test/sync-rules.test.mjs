@@ -351,3 +351,11 @@ test("câu trả lời Claude bị cắt: dừng ở giới hạn đầu ra, lư
   assert.equal(P.askCut(null), "");
   assert.match(P.askTrace({ num_turns: 2, stop_reason: "end_turn", terminal_reason: "completed" }), /num_turns=2 .* — 2 lượt, kiểm tra$/);
 });
+
+// ---------- Đối chiếu: Giấy phép kinh doanh chỉ ghi nhận có tệp, không đọc (Khoa 16/11) ----------
+test("Giấy phép kinh doanh nhận theo tên tệp, có dấu hay không dấu", () => {
+  for (const n of ["Giấy phép kinh doanh.pdf", "Giay_phep_kinh_doanh.pdf", "GPKD.pdf", "01. GPKD cong ty.pdf", "Giấy chứng nhận đăng ký doanh nghiệp.pdf", "ĐKKD.pdf", "Dang ky kinh doanh.jpg", "GIẤY PHÉP KINH DOANH.pdf".normalize("NFD")])
+    assert.equal(P.isGpkd(n), true, n);
+  for (const n of ["3.Uỷ quyền  bán hàng.pdf", "1. BCTC 2024.pdf", "2. Cam kết nhà thầu.pdf", "Giấy phép xây dựng.pdf", "abcgpkdx.pdf", "SPEC 160KVA  KAICHEN.docx"])
+    assert.equal(P.isGpkd(n), false, n);
+});
