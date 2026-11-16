@@ -650,6 +650,11 @@ const tenderLink = (t) => (safeUrl(t.sourceUrl) !== "#" && t.sourceUrl) || (t.no
 // The link shown for a tender follows its status on the portal: Kết quả LCNT once results are out, Biên bản mở thầu once bids are opened, else the TBMT notice (tenderLink). tenderLink stays the TBMT link, which the bot's HSMT requests need.
 const statusLink = (t) => minutesLink(t, true) || minutesLink(t) || tenderLink(t);
 const statusLinkTitle = (t) => minutesLink(t, true) ? "Mở Kết quả lựa chọn nhà thầu trên muasamcong" : minutesLink(t) ? "Mở Biên bản mở thầu trên muasamcong" : "Mở trên muasamcong";
+// The link for a tender known only by its key (past-tender tables): its status link when the portal ids are known, else the link the bot saved with the record, else the tender's own link, else a portal search.
+function keyLink(key, saved) {
+  const t = findTender(key);
+  return (t && (minutesLink(t, true) || minutesLink(t))) || (safeUrl(saved) !== "#" && saved) || (t ? tenderLink(t) : portalSearch(String(key).split("-")[0]));
+}
 // Copy mã gói, the button beside the tender code at the top of a tender (Khoa, 2026-11-10).
 document.addEventListener("click", async (e) => {
   const b = e.target.closest?.("[data-copycode]");
@@ -3218,7 +3223,7 @@ function supWonHtml(s) {
   const rows = [...by.values()].sort((p, q) => (q[0].at > p[0].at ? 1 : -1));
   return h`<div id="supWon">${raw(head)}<div class="muted small">${rows.length} phần / ${new Set(a.map((x) => x.key)).size} gói mua sắm máy phát có hàng tổ máy ghi ${[...new Set(a.map((x) => x.word))].join(", ")}. "Hãng / nhãn hiệu": ghi ở hãng, nhãn hiệu, tên hoặc mã tổ máy; "Trong cấu hình": động cơ, đầu phát hoặc bộ điều khiển của tổ máy.</div>
     <div class="tablewrap" style="margin-top:8px"><table class="suptable supcards"><thead><tr><th>Mở thầu</th><th>Gói thầu</th><th>Nhà thầu trúng</th><th>Hàng trúng</th></tr></thead><tbody>${raw(rows.map((xs) => {
-      const x = xs[0], url = (safeUrl(x.url) !== "#" && x.url) || portalSearch(x.key.split("-")[0]);
+      const x = xs[0], url = keyLink(x.key, x.url);
       return h`<tr><td data-l="Mở thầu">${x.at ? fmtDate(x.at, false) : "—"}</td>
         <td data-l="Gói thầu"><div><b>${raw(findTender(x.key) ? h`<a href="${tenderHref(x.key)}" data-suptender="${x.key}" title="Mở chi tiết gói thầu">${x.bidName || x.key}</a>` : h`${x.bidName || x.key}`)}</b></div>${raw(x.lotName && x.lotName.trim() !== String(x.bidName).trim() ? h`<div class="small">${x.lotName}</div>` : "")}<div class="small"><a class="tlink" href="${url}" target="_blank" rel="noopener" title="Mở trên muasamcong">${x.key} ↗</a></div></td>
         <td data-l="Nhà thầu trúng" class="small">${raw(x.bidder ? bdNameLink({ name: x.bidder, taxCode: x.bidderId }) : "—")}</td>
@@ -4726,7 +4731,7 @@ function bdGoodsHtml(goods, label = "Hàng chào", max = 0) {
 // Mã gói in its status colour, linked to muasamcong like the main list (Khoa, 2026-11-04).
 function bdKeyLink(r) {
   const t = findTender(r.key), st = t ? " st-" + shownStage(t).key : "";
-  const url = (safeUrl(r.d.url) !== "#" && r.d.url) || (t ? tenderLink(t) : portalSearch(r.key.split("-")[0]));
+  const url = keyLink(r.key, r.d.url);
   return h`<a class="kcell tlink${st}" href="${url}" target="_blank" rel="noopener" title="Mở trên muasamcong">${r.key} ↗</a>`;
 }
 function bdDetailHtml(c0) {
