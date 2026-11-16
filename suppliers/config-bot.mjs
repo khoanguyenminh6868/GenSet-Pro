@@ -1054,7 +1054,12 @@ export function powerRead(t) {
     const ls = text.lastIndexOf("\n", m.index - 1) + 1, own = text.slice(ls, m.index), le = text.indexOf("\n", m.index);
     const ne = le < 0 ? -1 : text.indexOf("\n", le + 1), next = le < 0 ? "" : text.slice(le + 1, ne < 0 ? text.length : ne);
     const under = /\p{L}{2}/u.test(own) && !/\d{2,3}\s*%/.test(own) ? next.match(/^\s*(?:ở\s+)?(?:mức\s+)?(\d{2,3})\s*%\s*(?:tải|phụ tải|công suất|load)?\s*[.;,]?\s*$/i) : null;
-    const load = under || before.slice(-60).match(/(\d{2,3})\s*%(?![\s\S]*\d{2,3}\s*%)/);
+    // The load right after the figure on its own line ("≤ 3,7 lít/giờ tại (75 %) tải định mức" then "≤ 5,0 lít/giờ tại
+    // (100 %) tải định mức", IB2600570050 / IB2600588204, found by hints-audit.mjs 2026-11-17): 5,0 took the 75% of the
+    // line before. Only when the figure's own line gives no load before it.
+    const rest = text.slice(m.index + m[0].length, le < 0 ? text.length : le);
+    const after = /\d{2,3}\s*%/.test(own) ? null : rest.match(/^\s*(?:t[ạa]i|[ởo]|khi|at|@)?\s*(?:m[ứu]c\s*)?\(?\s*(\d{2,3})\s*%\s*\)?\s*(?:t[ảa]i|ph[ụu] t[ảa]i|c[ôo]ng su[ấa]t|load)/i);
+    const load = after || under || before.slice(-60).match(/(\d{2,3})\s*%(?![\s\S]*\d{2,3}\s*%)/);
     fuel.push({ v: numOf(m[1]), load: load ? Number(load[1]) : /đầy tải|full load/i.test(before.slice(-60)) ? 100 : null });
   }
   const one = (list) => (new Set(list).size === 1 ? list[0] : null);

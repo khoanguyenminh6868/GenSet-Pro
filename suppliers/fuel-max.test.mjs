@@ -82,6 +82,11 @@ test("nhãn mức tải xuống dòng dưới con số: mỗi số nhận mức 
   ].join("\n"));
   assert.deepEqual([h.maxFuel, h.maxFuel75, h.maxFuel50], [156, null, 77]);
 });
+// IB2600570050 / IB2600588204 (hints-audit.mjs, 2026-11-17): mức tải đứng ngay SAU con số trên cùng dòng.
+test("mức tải ngay sau con số (\"≤ 3,7 lít/giờ tại (75 %) tải\"): mỗi số nhận mức tải của chính dòng nó", () => {
+  const h = free("Định mức tiêu hao nhiên liệu\n≤ 3,7 lít/giờ tại (75 %) tải định mức\n≤ 5,0 lít/giờ tại (100 %) tải định mức\nĐạt");
+  assert.deepEqual([h.maxFuel, h.maxFuel75, h.maxFuel50], [5, 3.7, null]);
+});
 test("nhãn mức tải đứng TRƯỚC con số (dòng trên hoặc cùng dòng) vẫn đọc như cũ", () => {
   const a = free("Tiêu hao nhiên liệu ở 100% tải:\n≤ 105 lít/giờ\nTiêu hao nhiên liệu ở 75% tải:\n≤ 80 lít/giờ");
   assert.deepEqual([a.maxFuel, a.maxFuel75], [105, 80]);
