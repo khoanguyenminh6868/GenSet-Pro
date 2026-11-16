@@ -248,7 +248,36 @@
   // alternator code (a page listing gensets one after the other: "Model: KTAA19-G6A" ... "Model: HC534FS").
   // engineModel: an engine maker's table (a datasheet that lists its engines side by side: "| Model | NEF45TM2A | NEF67TM3A"):
   // the bare "Model" row names the engines, one per column, not gensets.
-  function fromLabelTable(lines, { bareModel = false, engineModel = false } = {}) {
+  // Sheets of one model whose rows hold two label | value pairs, each part under a "Details" row (Depco, Kena:
+  // "| Details Engine | Brand | Weichai", "| Model | WP10D238E201 | Fuel | Diesel", "| Prime output | 180kW/225kVA |
+  // Standby output | 200kW/250kVA"; Khoa 16/11/2026): the "Details" cell is a heading, every pair a line of its own.
+  const DETAILS = /^details\s+(\S.*)$/i;
+  function unpairDetails(lines) {
+    if (!lines.some((l) => DETAILS.test(cellsOf(l)[0] || ""))) return lines;
+    const out = [];
+    for (const l of lines) {
+      let c = cellsOf(l);
+      const d = (c[0] || "").match(DETAILS);
+      if (d) {
+        out.push(`| ${d[1].trim()}`); c = c.slice(1);
+        // "| Details Genset | Model | ZSY-300" (Kena): the model of the genset section is the genset's.
+        if (/genset|generator\s+set/i.test(d[1]) && /^model$/i.test(c[0] || "")) c = ["Genset Model", ...c.slice(1)];
+      }
+      // "| 3 phase power | Rated power | 300kw/375kva | Rated voltage | 230V/380V" (Kena): a sub-heading, then pairs.
+      if (c.length >= 5 && c.length % 2 === 1) { out.push(`| ${c[0]}`); c = c.slice(1); }
+      if (c.length >= 4 && c.length % 2 === 0) for (let i = 0; i < c.length; i += 2) out.push(`| ${c[i]} | ${c[i + 1]}`);
+      else if (c.length) out.push(`| ${c.join(" | ")}`);
+    }
+    return out;
+  }
+  function fromLabelTable(lines0, { bareModel = false, engineModel = false } = {}) {
+    const lines = unpairDetails(lines0);
+    // A "Details" sheet names its genset in the heading row: a bare "Model" whose part heading the page lost
+    // (depco "| Model | 4B3.9-G1 | Fuel | Diesel" with no "Details Engine" above) is the engine or the alternator.
+    // The engine comes first on these sheets: the first bare "Model" is the engine, the next the alternator (an
+    // alternator-like code is no sign here: Mitsubishi's engine "S4L2" looks like a Stamford frame).
+    const details = lines !== lines0;
+    if (details) bareModel = true;
     const cols = [];
     // The first line naming a value wins: single-model pages often list related models further down.
     const put = (j, k, v) => { const c = (cols[j] = cols[j] || {}); if (c[k] == null) c[k] = v; };
@@ -304,7 +333,7 @@
       const bare = L.replace(/[:：\s]+$/, "");
       if (M && !MODEL_ROW.test(bare) && c.slice(1).filter((v) => v && !UNIT_CELL.test(v)).length !== M) continue;
       if (part && /^(model|model\s*no\.?|type\s*model|型号)$/.test(bare)) { if (isCode(vals[0])) put(0, part === "engine" ? "engine" : "alternator", vals[0]); continue; }
-      if (bareModel && !part && /^(model|model\s*no\.?|型号)$/.test(bare)) { if (isCode(vals[0])) put(0, ALT_CODE.test(vals[0]) ? "alternator" : "engine", vals[0]); continue; }
+      if (bareModel && !part && /^(model|model\s*no\.?|型号)$/.test(bare)) { if (isCode(vals[0])) put(0, (details ? cols[0]?.engine != null : ALT_CODE.test(vals[0])) ? "alternator" : "engine", vals[0]); continue; }
       if (part && /^(brand|make|manufacturer|品牌|厂家|制造商)$/.test(bare)) { put(0, part === "engine" ? "engineBrand" : "altBrand", vals[0]); continue; }
       const sk = specKey(label);
       if (sk && /^fuel/.test(sk) && !W) {
@@ -367,6 +396,10 @@
   const isLabelTable = (t) => {
     if (!t.header?.length) return true;
     const h = cellsOf(t.header[0]);
+    // "| Details Generator Set | GenSet Model | DPK-DW-250 | Type | Silent": a one-model sheet of label pairs (unpairDetails).
+    // Only a genset's sheet: a lighting tower's ("Details Lighting Tower") is not a generating set to offer.
+    const dh = (h[0] || "").match(DETAILS);
+    if (dh) return /genset|generator\s+set/i.test(dh[1]);
     // "| Genset Model | YCM150DCM | YCM150DCE": the models run across, one per column.
     return h.length >= 2 && /model|型号/i.test(h[0]) && h.slice(1).every((x) => isCode(x)) && t.rows.every((r) => !isCode(cellsOf(r)[0]));
   };

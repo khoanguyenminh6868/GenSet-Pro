@@ -175,6 +175,29 @@ test("fuel at 75 % and 50 % load: keys of their own; a one-model sheet's two uni
   assert.deepEqual(Object.fromEntries(C.fromSupplier(t)[0].specs.map((x) => [x.key, x.value])), { fuel75: "25", fuel: "33" });
 });
 
+test("a 'Details' sheet of label pairs (depco, kena 16/11/2026): genset model in the heading, engine first, lighting towers not read", () => {
+  // depco-power T65: the page lost its "Details Engine" row, the bare "Model" is the engine.
+  const depco = rec("genset_oem", [{ n: 165, title: "Custom Cummins Ranges 24 kW Diesel Generator", header: ["| Details Generator Set | GenSet Model | DPK-DC-30 | Type | Silent"],
+    rows: ["| Frequency (Hz) | 50 | Speed ( rpm ) | 1500", "| Prime output | 22kW/28kVA | Standby output | 24kW/30kVA", "| Model | 4B3.9-G1 | Fuel | Diesel", "| Governor | Mechanical | Displacement(L) | 3.9"] }]);
+  const e = C.fromSupplier(depco);
+  assert.deepEqual(e.map((x) => [x.kind, x.model, x.genset]), [["engine", "4B3.9-G1", "DPK-DC-30"]]);
+  assert.deepEqual(e[0].power, { prime: { kW: 22, kVA: 28 }, standby: { kW: 24, kVA: 30 } });
+  // Mitsubishi's engine S4L2 looks like a Stamford frame: still the engine, the next bare model the alternator.
+  const mit = rec("genset_oem", [{ n: 166, title: "x", header: ["| Details Generator Set | GenSet Model | DPK-DM-11 | Type | Silent"],
+    rows: ["| Prime output | 8.5kW/8.5kVA | Standby output | 9.5kW/9.5kVA", "| Model | S4L2 | Fuel | Diesel", "| Details Alternator | Brand | Depco", "| Model | DPC164D"] }]);
+  assert.deepEqual(C.fromSupplier(mit).map((x) => [x.kind, x.model]), [["engine", "S4L2"], ["alternator", "DPC164D"]]);
+  // kena-chongqing T0: "Details Genset | Model" is the genset; a five-cell row is a sub-heading then pairs.
+  const kena = rec("genset_oem", [{ n: 1, title: "Custom 200kva 300kva 400kva 500kva Silent Diesel Generator", header: ["| Details Genset | Model | ZSY-300 | Type | silent optional open"],
+    rows: ["| Model | 618ZLD | Fuel | Diesel", "| 3 phase power | Rated power | 300kw/375kva | Rated voltage | 230V/380V/400V/415V", "| Standby power | 330kw/413kva | Rated current | 941A/570A/541A/522A"] }]);
+  const k = C.fromSupplier(kena);
+  assert.deepEqual(k.map((x) => [x.kind, x.model, x.genset]), [["engine", "618ZLD", "ZSY-300"]]);
+  assert.deepEqual(k[0].power, { standby: { kW: 330, kVA: 413 }, rated: { kW: 300, kVA: 375 } });
+  // A lighting tower's sheet is not a genset to offer.
+  const lt = rec("genset_oem", [{ n: 101, title: "4X400W LED 8.8kVA Lighting Tower", header: ["| Details Lighting Tower | GenSet Model | LT5021057 | Type | Silent"],
+    rows: ["| Prime output | 8kW/8kVA | Standby output | 8.8kW/8.8kVA", "| Model | YD385D | Fuel | Diesel"] }]);
+  assert.deepEqual(C.fromSupplier(lt), []);
+});
+
 test("partsIn reads the engine, alternator and controller a won goods row names", () => {
   const p = (t) => C.partsIn(t).map((x) => `${x.kind}:${x.make || "-"}:${x.model}`);
   assert.deepEqual(p("POWERED BY MITSUBISHI - Model: MS825L - Ðộng cơ: Mitsubishi - Model: S6R2-PTAA-C - Thương hiệu Nhât/Sx China - Ðầu phát: Leroy Somer - Model TAL-A49-B - Bộ điều khiển: Deepsea DSE7320 MKII - UK"),
