@@ -14,15 +14,1218 @@
   "founded": null,
   "relatedIds": [],
   "strengths": [],
-  "productLines": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "C110D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "6BTA5.9-G5"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 100,
+        "max": 100,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C220D5e",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSB7-G5"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 200,
+        "max": 200,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C330D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSL9-G5"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 300,
+        "max": 300,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2003
+        ]
+      },
+      "src": [
+        2003
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C550D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QSZ13-G10"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 500,
+        "max": 500,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2004
+        ]
+      },
+      "src": [
+        2004
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C1000D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "QST30-G3"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 939,
+        "max": 939,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2005
+        ]
+      },
+      "src": [
+        2005
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "C1400D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins"
+      ],
+      "engineModels": [
+        "KTA50-G3"
+      ],
+      "alternatorMakes": [
+        "Stamford"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 1250,
+        "max": 1250,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2006
+        ]
+      },
+      "src": [
+        2006
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP50D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1103A-33TG1"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 45,
+        "max": 45,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2007
+        ]
+      },
+      "src": [
+        2007
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP150D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1106A-70TG1"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 136,
+        "max": 136,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2008
+        ]
+      },
+      "src": [
+        2008
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP250D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "1206A-E70TTAG2"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 228,
+        "max": 228,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2009
+        ]
+      },
+      "src": [
+        2009
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP500D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "2506A-E15TAG1"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 467,
+        "max": 467,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2010
+        ]
+      },
+      "src": [
+        2010
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AP1000D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Perkins"
+      ],
+      "engineModels": [
+        "4008TAG1A"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 915,
+        "max": 915,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2011
+        ]
+      },
+      "src": [
+        2011
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AD400D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Doosan"
+      ],
+      "engineModels": [
+        "DP126LB"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 365,
+        "max": 365,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2012
+        ]
+      },
+      "src": [
+        2012
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AD750D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Doosan"
+      ],
+      "engineModels": [
+        "DP222LB"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 680,
+        "max": 680,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2013
+        ]
+      },
+      "src": [
+        2013
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AB100D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "4M10G6D0/S"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 90,
+        "max": 90,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2014
+        ]
+      },
+      "src": [
+        2014
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AB650D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Baudouin"
+      ],
+      "engineModels": [
+        "8M21G660/5"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 590,
+        "max": 590,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2015
+        ]
+      },
+      "src": [
+        2015
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "AM1500D5",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Mitsubishi"
+      ],
+      "engineModels": [
+        "S12R-PTA2"
+      ],
+      "alternatorMakes": [
+        "Leroy Somer"
+      ],
+      "frequency": [
+        50
+      ],
+      "power": {
+        "min": 1391,
+        "max": 1391,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2016
+        ]
+      },
+      "src": [
+        2016
+      ]
+    }
+  ],
   "certifications": [],
   "exportMarkets": [],
   "missing": [],
-  "sources": [],
+  "sources": [
+    {
+      "n": 2001,
+      "url": "https://ade-power.com.au/generators/cummins/c110d5",
+      "accessedAt": "2026-11-16",
+      "tier": "A",
+      "quote": [
+        "Cummins C110D5 | 110 kVA 50Hz 3 Phase Silent Diesel Generator",
+        "| Standby Power (ESP) Rating | 110 kVA / 88 kW",
+        "| Prime Power (PRP) Rating | 100 kVA / 80 kW",
+        "| Engine | Cummins 6BTA5.9-G5",
+        "| Alternator | Stamford UCI274C",
+        "| Control Panel | Cummins PowerCommand 1.2",
+        "2/230 Old Maitland Road, Hexham, NSW 2322, Australia"
+      ],
+      "file": "sources/ade-power/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://ade-power.com.au/generators/cummins/c220d5e",
+      "accessedAt": "2026-11-16",
+      "tier": "A",
+      "quote": [
+        "Cummins C220D5e | 220 kVA 50Hz 3 Phase Silent Diesel Generator",
+        "| Standby Power (ESP) Rating | 220 kVA / 176 kW",
+        "| Prime Power (PRP) Rating | 200 kVA / 160 kW",
+        "| Engine | Cummins QSB7-G5",
+        "| Alternator | Stamford UCI274H",
+        "| Control Panel | Cummins PowerCommand 1.2"
+      ],
+      "file": "sources/ade-power/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://ade-power.com.au/generators/cummins/c330d5",
+      "accessedAt": "2026-11-16",
+      "tier": "A",
+      "quote": [
+        "Cummins C330D5 | 330 kVA 50Hz 3 Phase Silent Diesel Generator",
+        "| Standby Power (ESP) Rating | 330 kVA / 264 kW",
+        "| Prime Power (PRP) Rating | 300 kVA / 240 kW",
+        "| Engine | Cummins QSL9-G5",
+        "| Alternator | Stamford HC4D",
+        "| Control Panel | Cummins PowerCommand 1.2"
+      ],
+      "file": "sources/ade-power/2003.md",
+      "official": true
+    },
+    {
+      "n": 2004,
+      "url": "https://ade-power.com.au/generators/cummins/c550d5",
+      "accessedAt": "2026-11-16",
+      "tier": "A",
+      "quote": [
+        "Cummins C550D5 | 550 kVA 50Hz 3 Phase Silent Diesel Generator",
+        "| Standby Power (ESP) Rating | 550 kVA / 440 kW",
+        "| Prime Power (PRP) Rating | 500 kVA / 400 kW",
+        "| Engine | Cummins QSZ13-G10",
+        "| Alternator | Stamford S5E",
+        "| Control Panel | Cummins PowerCommand 2.2"
+      ],
+      "file": "sources/ade-power/2004.md",
+      "official": true
+    },
+    {
+      "n": 2005,
+      "url": "https://ade-power.com.au/generators/cummins/c1000d5",
+      "accessedAt": "2026-11-16",
+      "tier": "A",
+      "quote": [
+        "Cummins C1000D5 | 1000 kVA 50Hz 3 Phase Open Diesel Generator",
+        "| Standby Power (ESP) Rating | 1041 kVA / 833 kW",
+        "| Prime Power (PRP) Rating | 939 kVA / 751 kW",
+        "| Engine | Cummins QST30-G3",
+        "| Alternator | Stamford S6E",
+        "| Control Panel | Cummins PowerCommand 3.3"
+      ],
+      "file": "sources/ade-power/2005.md",
+      "official": true
+    },
+    {
+      "n": 2006,
+      "url": "https://ade-power.com.au/generators/cummins/c1400d5",
+      "accessedAt": "2026-11-16",
+      "tier": "A",
+      "quote": [
+        "Cummins C1400D5 | 1400 kVA 50Hz 3 Phase Open Diesel Generator",
+        "| Standby Power (ESP) Rating | 1400 kVA / 1120 kW",
+        "| Prime Power (PRP) Rating | 1250 kVA / 1000 kW",
+        "| Engine | Cummins KTA50-G3",
+        "| Alternator | Stamford PI734B",
+        "| Control Panel | Cummins PowerCommand 3.3"
+      ],
+      "file": "sources/ade-power/2006.md",
+      "official": true
+    },
+    {
+      "n": 2007,
+      "url": "https://ade-power.com.au/generators/perkins/ap50d5",
+      "accessedAt": "2026-11-16",
+      "tier": "A",
+      "quote": [
+        "ADE Perkins AP50D5 | 50 kVA 50Hz 3 Phase Silent Diesel Generator",
+        "| Standby Power (ESP) Rating | 50 kVA / 40 kW",
+        "| Prime Power (PRP) Rating | 45 kVA / 36 kW",
+        "| Engine | Perkins 1103A-33TG1",
+        "| Alternator | Leroy Somer",
+        "| Control Panel | Deep Sea DSE7320"
+      ],
+      "file": "sources/ade-power/2007.md",
+      "official": true
+    },
+    {
+      "n": 2008,
+      "url": "https://ade-power.com.au/generators/perkins/ap150d5",
+      "accessedAt": "2026-11-16",
+      "tier": "A",
+      "quote": [
+        "ADE Perkins AP150D5 | 150 kVA 50Hz 3 Phase Silent Diesel Generator",
+        "| Standby Power (ESP) Rating | 150 kVA / 120 kW",
+        "| Prime Power (PRP) Rating | 136 kVA / 108 kW",
+        "| Engine | Perkins 1106A-70TG1",
+        "| Alternator | Leroy Somer",
+        "| Control Panel | Deep Sea DSE7320"
+      ],
+      "file": "sources/ade-power/2008.md",
+      "official": true
+    },
+    {
+      "n": 2009,
+      "url": "https://ade-power.com.au/generators/perkins/ap250d5",
+      "accessedAt": "2026-11-16",
+      "tier": "A",
+      "quote": [
+        "ADE Perkins AP250D5 | 250 kVA 50Hz 3 Phase Silent Diesel Generator",
+        "| Standby Power (ESP) Rating | 252 kVA / 201 kW",
+        "| Prime Power (PRP) Rating | 228 kVA / 182 kW",
+        "| Engine | Perkins 1206A-E70TTAG2",
+        "| Alternator | Leroy Somer",
+        "| Control Panel | Deep Sea DSE7320"
+      ],
+      "file": "sources/ade-power/2009.md",
+      "official": true
+    },
+    {
+      "n": 2010,
+      "url": "https://ade-power.com.au/generators/perkins/ap500d5",
+      "accessedAt": "2026-11-16",
+      "tier": "A",
+      "quote": [
+        "ADE Perkins AP500D5 | 500 kVA 50Hz 3 Phase Silent Diesel Generator",
+        "| Standby Power (ESP) Rating | 511 kVA / 408 kW",
+        "| Prime Power (PRP) Rating | 467 kVA / 373 kW",
+        "| Engine | Perkins 2506A-E15TAG1",
+        "| Alternator | Leroy Somer",
+        "| Control Panel | Deep Sea DSE7320"
+      ],
+      "file": "sources/ade-power/2010.md",
+      "official": true
+    },
+    {
+      "n": 2011,
+      "url": "https://ade-power.com.au/generators/perkins/ap1000d5",
+      "accessedAt": "2026-11-16",
+      "tier": "A",
+      "quote": [
+        "ADE Perkins AP1000D5 | 1000 kVA 50Hz 3 Phase Silent Diesel Generator",
+        "| Standby Power (ESP) Rating | 1006 kVA / 804 kW",
+        "| Prime Power (PRP) Rating | 915 kVA / 732 kW",
+        "| Engine | Perkins 4008TAG1A",
+        "| Alternator | Leroy Somer",
+        "| Control Panel | Deep Sea DSE7320"
+      ],
+      "file": "sources/ade-power/2011.md",
+      "official": true
+    },
+    {
+      "n": 2012,
+      "url": "https://ade-power.com.au/generators/doosan/ad400d5",
+      "accessedAt": "2026-11-16",
+      "tier": "A",
+      "quote": [
+        "ADE Doosan AD400D5 | 400 kVA 50Hz 3 Phase Silent Diesel Generator",
+        "| Standby Power (ESP) Rating | 403 kVA / 322 kW",
+        "| Prime Power (PRP) Rating | 365 kVA / 292 kW",
+        "| Engine | Doosan DP126LB",
+        "| Alternator | Leroy Somer",
+        "| Control Panel | Deep Sea DSE7320"
+      ],
+      "file": "sources/ade-power/2012.md",
+      "official": true
+    },
+    {
+      "n": 2013,
+      "url": "https://ade-power.com.au/generators/doosan/ad750d5",
+      "accessedAt": "2026-11-16",
+      "tier": "A",
+      "quote": [
+        "ADE Doosan AD750D5 | 750 kVA 50Hz 3 Phase Silent Diesel Generator",
+        "| Standby Power (ESP) Rating | 750 kVA / 600 kW",
+        "| Prime Power (PRP) Rating | 680 kVA / 544 kW",
+        "| Engine | Doosan DP222LB",
+        "| Alternator | Leroy Somer",
+        "| Control Panel | Deep Sea DSE7320"
+      ],
+      "file": "sources/ade-power/2013.md",
+      "official": true
+    },
+    {
+      "n": 2014,
+      "url": "https://ade-power.com.au/generators/baudouin/ab100d5",
+      "accessedAt": "2026-11-16",
+      "tier": "A",
+      "quote": [
+        "ADE Baudouin AB100D5 | 100 kVA 50Hz 3 Phase Silent Diesel Generator",
+        "| Standby Power (ESP) Rating | 100 kVA / 80 kW",
+        "| Prime Power (PRP) Rating | 90 kVA / 72 kW",
+        "| Engine | Baudouin 4M10G6D0/S",
+        "| Alternator | Leroy Somer",
+        "| Control Panel | Deep Sea DSE7320"
+      ],
+      "file": "sources/ade-power/2014.md",
+      "official": true
+    },
+    {
+      "n": 2015,
+      "url": "https://ade-power.com.au/generators/baudouin/ab650d5",
+      "accessedAt": "2026-11-16",
+      "tier": "A",
+      "quote": [
+        "ADE Baudouin AB650D5 | 650 kVA 50Hz 3 Phase Silent Diesel Generator",
+        "| Standby Power (ESP) Rating | 648 kVA / 518 kW",
+        "| Prime Power (PRP) Rating | 590 kVA / 472 kW",
+        "| Engine | Baudouin 8M21G660/5",
+        "| Alternator | Leroy Somer",
+        "| Control Panel | Deep Sea DSE7320"
+      ],
+      "file": "sources/ade-power/2015.md",
+      "official": true
+    },
+    {
+      "n": 2016,
+      "url": "https://ade-power.com.au/generators/mitsubishi/am1500d5",
+      "accessedAt": "2026-11-16",
+      "tier": "A",
+      "quote": [
+        "ADE Mitsubishi AM1500D5 | 1500 kVA 50Hz 3 Phase Silent Diesel Generator",
+        "| Standby Power (ESP) Rating | 1532 kVA / 1225 kW",
+        "| Prime Power (PRP) Rating | 1391 kVA / 1112 kW",
+        "| Engine | Mitsubishi S12R-PTA2",
+        "| Alternator | Leroy Somer",
+        "| Control Panel | Deep Sea DSE7320"
+      ],
+      "file": "sources/ade-power/2016.md",
+      "official": true
+    }
+  ],
   "confidence": "low",
   "checkedAt": "2026-11-16",
   "checkedBy": "config-bot",
-  "specTables": [],
-  "controllers": [],
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "Cummins C110D5 | 110 kVA 50Hz 3 Phase Silent Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Standby Power (ESP) Rating | 110 kVA / 88 kW",
+        "| Prime Power (PRP) Rating | 100 kVA / 80 kW",
+        "| Engine | Cummins 6BTA5.9-G5",
+        "| Engine Governor | Electronic",
+        "| Engine Speed | 1500 rpm",
+        "| Alternator | Stamford UCI274C",
+        "| Voltage | 380-415V",
+        "| Frequency | 50Hz",
+        "| Phase | 3",
+        "| Amps Per Phase | 159",
+        "| Control Panel | Cummins PowerCommand 1.2",
+        "| Connection Type | Circuit Breaker",
+        "| Circuit Breaker | 4-Pole",
+        "| Exhaust Emissions Level | Unregulated",
+        "| Base Fuel Tank Capacity | 350 Litres",
+        "| Fuel Consumption | 24.7 litres per hour (at 100% load)",
+        "| Dimensions (L x W x H) | 3151mm x 1142mm x 1714mm",
+        "| Dry Weight | 1,963kg",
+        "| Canopy Noise Level | 78 dB(A) at 1m",
+        "| Warranty | 2 years or 500 hours standby / 1 year unlimited hours prime"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "Cummins C220D5e | 220 kVA 50Hz 3 Phase Silent Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Standby Power (ESP) Rating | 220 kVA / 176 kW",
+        "| Prime Power (PRP) Rating | 200 kVA / 160 kW",
+        "| Engine | Cummins QSB7-G5",
+        "| Engine Governor | Electronic",
+        "| Engine Speed | 1500 rpm",
+        "| Alternator | Stamford UCI274H",
+        "| Voltage | 380-415V",
+        "| Frequency | 50Hz",
+        "| Phase | 3",
+        "| Amps Per Phase | 318",
+        "| Control Panel | Cummins PowerCommand 1.2",
+        "| Connection Type | Circuit Breaker",
+        "| Circuit Breaker | 4-Pole",
+        "| Exhaust Emissions Level | Stage IIIa",
+        "| Base Fuel Tank Capacity | 464 Litres",
+        "| Fuel Consumption | 45.6 litres per hour (at 100% load)",
+        "| Dimensions (L x W x H) | 4209mm x 1130mm x 2227mm",
+        "| Dry Weight | 2,984kg",
+        "| Canopy Noise Level | 77 dB(A) at 1m",
+        "| Warranty | 2 years or 500 hours standby / 1 year unlimited hours prime"
+      ]
+    },
+    {
+      "n": 2003,
+      "title": "Cummins C330D5 | 330 kVA 50Hz 3 Phase Silent Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Standby Power (ESP) Rating | 330 kVA / 264 kW",
+        "| Prime Power (PRP) Rating | 300 kVA / 240 kW",
+        "| Engine | Cummins QSL9-G5",
+        "| Engine Governor | Electronic",
+        "| Engine Speed | 1500 rpm",
+        "| Alternator | Stamford HC4D",
+        "| Voltage | 380-415V",
+        "| Frequency | 50Hz",
+        "| Phase | 3",
+        "| Amps Per Phase | 475.2",
+        "| Control Panel | Cummins PowerCommand 1.2",
+        "| Connection Type | Circuit Breaker",
+        "| Circuit Breaker | 4-Pole",
+        "| Exhaust Emissions Level | Unregulated",
+        "| Base Fuel Tank Capacity | 691 Litres",
+        "| Fuel Consumption | 63 litres per hour (at 100% load)",
+        "| Dimensions (L x W x H) | 4258mm x 1424mm x 2215mm",
+        "| Dry Weight | 4,095kg",
+        "| Canopy Noise Level | 77 dB(A) at 1m",
+        "| Warranty | 2 years or 500 hours standby / 1 year unlimited hours prime"
+      ]
+    },
+    {
+      "n": 2004,
+      "title": "Cummins C550D5 | 550 kVA 50Hz 3 Phase Silent Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Standby Power (ESP) Rating | 550 kVA / 440 kW",
+        "| Prime Power (PRP) Rating | 500 kVA / 400 kW",
+        "| Engine | Cummins QSZ13-G10",
+        "| Engine Governor | Electronic",
+        "| Engine Speed | 1500 rpm",
+        "| Alternator | Stamford S5E",
+        "| Voltage | 380-440V",
+        "| Frequency | 50Hz",
+        "| Phase | 3",
+        "| Amps Per Phase | 792",
+        "| Control Panel | Cummins PowerCommand 2.2",
+        "| Connection Type | Circuit Breaker",
+        "| Circuit Breaker | 4-Pole",
+        "| Exhaust Emissions Level | Unregulated",
+        "| Base Fuel Tank Capacity | 820 Litres",
+        "| Fuel Consumption | 93.1 litres per hour (at 100% load)",
+        "| Dimensions (L x W x H) | 5095mm x 1564mm x 2441mm",
+        "| Dry Weight | 5,439kg",
+        "| Canopy Noise Level | 81 dB(A) at 1m",
+        "| Warranty | 2 years or 500 hours standby / 1 year unlimited hours prime"
+      ]
+    },
+    {
+      "n": 2005,
+      "title": "Cummins C1000D5 | 1000 kVA 50Hz 3 Phase Open Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Standby Power (ESP) Rating | 1041 kVA / 833 kW",
+        "| Prime Power (PRP) Rating | 939 kVA / 751 kW",
+        "| Engine | Cummins QST30-G3",
+        "| Engine Governor | Electronic",
+        "| Engine Speed | 1500 rpm",
+        "| Alternator | Stamford S6E",
+        "| Voltage | 380-440V",
+        "| Frequency | 50Hz",
+        "| Phase | 3",
+        "| Amps Per Phase | 1503",
+        "| Control Panel | Cummins PowerCommand 3.3",
+        "| Connection Type | Circuit Breaker",
+        "| Circuit Breaker | 4-Pole",
+        "| Exhaust Emissions Level | Unregulated",
+        "| Base Fuel Tank Capacity | TBA",
+        "| Fuel Consumption | 184 litres per hour (at 100% load)",
+        "| Dimensions (L x W x H) | 4302mm x 1702mm x 2139mm",
+        "| Dry Weight | 6,304kg",
+        "| Warranty | 2 years or 500 hours standby / 1 year unlimited hours prime"
+      ]
+    },
+    {
+      "n": 2006,
+      "title": "Cummins C1400D5 | 1400 kVA 50Hz 3 Phase Open Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Standby Power (ESP) Rating | 1400 kVA / 1120 kW",
+        "| Prime Power (PRP) Rating | 1250 kVA / 1000 kW",
+        "| Engine | Cummins KTA50-G3",
+        "| Engine Governor | Electronic",
+        "| Engine Speed | 1500 rpm",
+        "| Alternator | Stamford PI734B",
+        "| Voltage | 380-440V",
+        "| Frequency | 50Hz",
+        "| Phase | 3",
+        "| Amps Per Phase | 2016",
+        "| Control Panel | Cummins PowerCommand 3.3",
+        "| Connection Type | Circuit Breaker",
+        "| Circuit Breaker | 4-Pole",
+        "| Exhaust Emissions Level | Unregulated",
+        "| Base Fuel Tank Capacity | TBA",
+        "| Fuel Consumption | 261 litres per hour (at 100% load)",
+        "| Dimensions (L x W x H) | 5143mm x 2000mm x 2518mm",
+        "| Dry Weight | 9,913kg",
+        "| Warranty | 2 years or 500 hours standby / 1 year unlimited hours prime"
+      ]
+    },
+    {
+      "n": 2007,
+      "title": "ADE Perkins AP50D5 | 50 kVA 50Hz 3 Phase Silent Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Standby Power (ESP) Rating | 50 kVA / 40 kW",
+        "| Prime Power (PRP) Rating | 45 kVA / 36 kW",
+        "| Engine | Perkins 1103A-33TG1",
+        "| Engine Governor | Mechanical",
+        "| Engine Speed | 1500 rpm",
+        "| Alternator | Leroy Somer",
+        "| Voltage | 400V",
+        "| Frequency | 50Hz",
+        "| Phase | 3",
+        "| Amps Per Phase | 72",
+        "| Control Panel | Deep Sea DSE7320",
+        "| Connection Type | Circuit Breaker",
+        "| Circuit Breaker | 4-Pole",
+        "| Exhaust Emissions Level | Unregulated",
+        "| Base Fuel Tank Capacity | 90 Litres",
+        "| Fuel Consumption | 10.7 litres per hour (at 100% load)",
+        "| Dimensions (L x W x H) | 2650mm x 950mm x 1450mm",
+        "| Dry Weight | 1,148kg",
+        "| Canopy Noise Level | 65 dB(A) at 7m",
+        "| Warranty | 2 Years / 1000 Hours"
+      ]
+    },
+    {
+      "n": 2008,
+      "title": "ADE Perkins AP150D5 | 150 kVA 50Hz 3 Phase Silent Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Standby Power (ESP) Rating | 150 kVA / 120 kW",
+        "| Prime Power (PRP) Rating | 136 kVA / 108 kW",
+        "| Engine | Perkins 1106A-70TG1",
+        "| Engine Governor | Mechanical",
+        "| Engine Speed | 1500 rpm",
+        "| Alternator | Leroy Somer",
+        "| Voltage | 400V",
+        "| Frequency | 50Hz",
+        "| Phase | 3",
+        "| Amps Per Phase | 216",
+        "| Control Panel | Deep Sea DSE7320",
+        "| Connection Type | Circuit Breaker",
+        "| Circuit Breaker | 4-Pole",
+        "| Exhaust Emissions Level | Unregulated",
+        "| Base Fuel Tank Capacity | 260 Litres",
+        "| Fuel Consumption | 30.3 litres per hour (at 100% load)",
+        "| Dimensions (L x W x H) | 3320mm x 1100mm x 1600mm",
+        "| Dry Weight | 1,857kg",
+        "| Canopy Noise Level | 71 dB(A) at 7m",
+        "| Warranty | 2 Years / 1000 Hours"
+      ]
+    },
+    {
+      "n": 2009,
+      "title": "ADE Perkins AP250D5 | 250 kVA 50Hz 3 Phase Silent Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Standby Power (ESP) Rating | 252 kVA / 201 kW",
+        "| Prime Power (PRP) Rating | 228 kVA / 182 kW",
+        "| Engine | Perkins 1206A-E70TTAG2",
+        "| Engine Governor | Electronic",
+        "| Engine Speed | 1500 rpm",
+        "| Alternator | Leroy Somer",
+        "| Voltage | 400V",
+        "| Frequency | 50Hz",
+        "| Phase | 3",
+        "| Amps Per Phase | 357.1",
+        "| Control Panel | Deep Sea DSE7320",
+        "| Connection Type | Circuit Breaker",
+        "| Circuit Breaker | 4-Pole",
+        "| Exhaust Emissions Level | Unregulated",
+        "| Base Fuel Tank Capacity | 330 Litres",
+        "| Fuel Consumption | 51 litres per hour (at 100% load)",
+        "| Dimensions (L x W x H) | 3860mm x 1200mm x 1850mm",
+        "| Dry Weight | 2,489kg",
+        "| Canopy Noise Level | 71 dB(A) at 7m",
+        "| Warranty | 2 Years / 1000 Hours"
+      ]
+    },
+    {
+      "n": 2010,
+      "title": "ADE Perkins AP500D5 | 500 kVA 50Hz 3 Phase Silent Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Standby Power (ESP) Rating | 511 kVA / 408 kW",
+        "| Prime Power (PRP) Rating | 467 kVA / 373 kW",
+        "| Engine | Perkins 2506A-E15TAG1",
+        "| Engine Governor | Electronic",
+        "| Engine Speed | 1500 rpm",
+        "| Alternator | Leroy Somer",
+        "| Voltage | 400V",
+        "| Frequency | 50Hz",
+        "| Phase | 3",
+        "| Amps Per Phase | 735.8",
+        "| Control Panel | Deep Sea DSE7320",
+        "| Connection Type | Circuit Breaker",
+        "| Circuit Breaker | 4-Pole",
+        "| Exhaust Emissions Level | Unregulated",
+        "| Base Fuel Tank Capacity | 970 Litres",
+        "| Fuel Consumption | 95 litres per hour (at 100% load)",
+        "| Dimensions (L x W x H) | 5360mm x 1650mm x 2250mm",
+        "| Dry Weight | 4,819kg",
+        "| Canopy Noise Level | 80 dB(A) at 7m",
+        "| Warranty | 2 Years / 1000 Hours"
+      ]
+    },
+    {
+      "n": 2011,
+      "title": "ADE Perkins AP1000D5 | 1000 kVA 50Hz 3 Phase Silent Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Standby Power (ESP) Rating | 1006 kVA / 804 kW",
+        "| Prime Power (PRP) Rating | 915 kVA / 732 kW",
+        "| Engine | Perkins 4008TAG1A",
+        "| Engine Governor | Electronic",
+        "| Engine Speed | 1500 rpm",
+        "| Alternator | Leroy Somer",
+        "| Voltage | 400V",
+        "| Frequency | 50Hz",
+        "| Phase | 3",
+        "| Amps Per Phase | 1448.6",
+        "| Control Panel | Deep Sea DSE7320",
+        "| Connection Type | Circuit Breaker",
+        "| Circuit Breaker | 4-Pole",
+        "| Exhaust Emissions Level | Unregulated",
+        "| Base Fuel Tank Capacity | 1650 Litres",
+        "| Fuel Consumption | 194 litres per hour (at 100% load)",
+        "| Dimensions (L x W x H) | 5820mm x 2200mm x 2400mm",
+        "| Dry Weight | 9,830kg",
+        "| Canopy Noise Level | 85 dB(A) at 7m",
+        "| Warranty | 2 Years / 1000 Hours"
+      ]
+    },
+    {
+      "n": 2012,
+      "title": "ADE Doosan AD400D5 | 400 kVA 50Hz 3 Phase Silent Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Standby Power (ESP) Rating | 403 kVA / 322 kW",
+        "| Prime Power (PRP) Rating | 365 kVA / 292 kW",
+        "| Engine | Doosan DP126LB",
+        "| Engine Governor | Electronic",
+        "| Engine Speed | 1500 rpm",
+        "| Alternator | Leroy Somer",
+        "| Voltage | 400V",
+        "| Frequency | 50Hz",
+        "| Phase | 3",
+        "| Amps Per Phase | 580.3",
+        "| Control Panel | Deep Sea DSE7320",
+        "| Connection Type | Circuit Breaker",
+        "| Circuit Breaker | 4-Pole",
+        "| Exhaust Emissions Level | Unregulated",
+        "| Base Fuel Tank Capacity | 780 Litres",
+        "| Fuel Consumption | 76 litres per hour (at 100% load)",
+        "| Dimensions (L x W x H) | 4700mm x 1650mm x 2250mm",
+        "| Dry Weight | 3,834kg",
+        "| Canopy Noise Level | 69 dB(A) at 7m",
+        "| Warranty | 2 Years / 1000 Hours"
+      ]
+    },
+    {
+      "n": 2013,
+      "title": "ADE Doosan AD750D5 | 750 kVA 50Hz 3 Phase Silent Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Standby Power (ESP) Rating | 750 kVA / 600 kW",
+        "| Prime Power (PRP) Rating | 680 kVA / 544 kW",
+        "| Engine | Doosan DP222LB",
+        "| Engine Governor | Electronic",
+        "| Engine Speed | 1500 rpm",
+        "| Alternator | Leroy Somer",
+        "| Voltage | 400V",
+        "| Frequency | 50Hz",
+        "| Phase | 3",
+        "| Amps Per Phase | 1080",
+        "| Control Panel | Deep Sea DSE7320",
+        "| Connection Type | Circuit Breaker",
+        "| Circuit Breaker | 4-Pole",
+        "| Exhaust Emissions Level | Unregulated",
+        "| Base Fuel Tank Capacity | 970 Litres",
+        "| Fuel Consumption | 147.1 litres per hour (at 100% load)",
+        "| Dimensions (L x W x H) | 5360mm x 1650mm x 2450mm",
+        "| Dry Weight | 5,422kg",
+        "| Canopy Noise Level | 82 dB(A) at 7m",
+        "| Warranty | 2 Years / 1000 Hours"
+      ]
+    },
+    {
+      "n": 2014,
+      "title": "ADE Baudouin AB100D5 | 100 kVA 50Hz 3 Phase Silent Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Standby Power (ESP) Rating | 100 kVA / 80 kW",
+        "| Prime Power (PRP) Rating | 90 kVA / 72 kW",
+        "| Engine | Baudouin 4M10G6D0/S",
+        "| Engine Governor | Electronic",
+        "| Engine Speed | 1500 rpm",
+        "| Alternator | Leroy Somer",
+        "| Voltage | 400V",
+        "| Frequency | 50Hz",
+        "| Phase | 3",
+        "| Amps Per Phase | 144",
+        "| Control Panel | Deep Sea DSE7320",
+        "| Connection Type | Circuit Breaker",
+        "| Circuit Breaker | 4-Pole",
+        "| Exhaust Emissions Level | Unregulated",
+        "| Base Fuel Tank Capacity | 260 Litres",
+        "| Fuel Consumption | 21.3 litres per hour (at 100% load)",
+        "| Dimensions (L x W x H) | 3320mm x 1100mm x 1600mm",
+        "| Dry Weight | 1,497kg",
+        "| Canopy Noise Level | 71 dB(A) at 7m",
+        "| Warranty | 2 Years / 1000 Hours"
+      ]
+    },
+    {
+      "n": 2015,
+      "title": "ADE Baudouin AB650D5 | 650 kVA 50Hz 3 Phase Silent Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Standby Power (ESP) Rating | 648 kVA / 518 kW",
+        "| Prime Power (PRP) Rating | 590 kVA / 472 kW",
+        "| Engine | Baudouin 8M21G660/5",
+        "| Engine Governor | Electronic",
+        "| Engine Speed | 1500 rpm",
+        "| Alternator | Leroy Somer",
+        "| Voltage | 400V",
+        "| Frequency | 50Hz",
+        "| Phase | 3",
+        "| Amps Per Phase | 933.1",
+        "| Control Panel | Deep Sea DSE7320",
+        "| Connection Type | Circuit Breaker",
+        "| Circuit Breaker | 4-Pole",
+        "| Exhaust Emissions Level | Unregulated",
+        "| Base Fuel Tank Capacity | 970 Litres",
+        "| Fuel Consumption | 124.2 litres per hour (at 100% load)",
+        "| Dimensions (L x W x H) | 5360mm x 1650mm x 2450mm",
+        "| Dry Weight | 5,264kg",
+        "| Canopy Noise Level | 84 dB(A) at 7m",
+        "| Warranty | 2 Years / 1000 Hours"
+      ]
+    },
+    {
+      "n": 2016,
+      "title": "ADE Mitsubishi AM1500D5 | 1500 kVA 50Hz 3 Phase Silent Diesel Generator",
+      "header": [],
+      "rows": [
+        "| Standby Power (ESP) Rating | 1532 kVA / 1225 kW",
+        "| Prime Power (PRP) Rating | 1391 kVA / 1112 kW",
+        "| Engine | Mitsubishi S12R-PTA2",
+        "| Engine Governor | Electronic",
+        "| Engine Speed | 1500 rpm",
+        "| Alternator | Leroy Somer",
+        "| Voltage | 400V",
+        "| Frequency | 50Hz",
+        "| Phase | 3",
+        "| Amps Per Phase | 2206",
+        "| Control Panel | Deep Sea DSE7320",
+        "| Connection Type | Circuit Breaker",
+        "| Circuit Breaker | 4-Pole",
+        "| Exhaust Emissions Level | Unregulated",
+        "| Base Fuel Tank Capacity | 1540 Litres",
+        "| Fuel Consumption | 288 litres per hour (at 100% load)",
+        "| Dimensions (L x W x H) | 6080mm x 2470mm x 2930mm",
+        "| Dry Weight | 13,673kg",
+        "| Canopy Noise Level | 93 dB(A) at 7m",
+        "| Warranty | 2 Years / 1000 Hours"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Cummins",
+      "model": "PowerCommand 1.2",
+      "text": "Cummins PowerCommand 1.2",
+      "line": "| Control Panel | Cummins PowerCommand 1.2",
+      "src": [
+        2001,
+        2002,
+        2003
+      ]
+    },
+    {
+      "brand": "Cummins",
+      "model": "PowerCommand 2.2",
+      "text": "Cummins PowerCommand 2.2",
+      "line": "| Control Panel | Cummins PowerCommand 2.2",
+      "src": [
+        2004
+      ]
+    },
+    {
+      "brand": "Cummins",
+      "model": "PowerCommand 3.3",
+      "text": "Cummins PowerCommand 3.3",
+      "line": "| Control Panel | Cummins PowerCommand 3.3",
+      "src": [
+        2005,
+        2006
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "Deep Sea DSE7320",
+      "line": "| Control Panel | Deep Sea DSE7320",
+      "src": [
+        2007,
+        2008,
+        2009,
+        2010,
+        2011,
+        2012,
+        2013,
+        2014,
+        2015,
+        2016
+      ]
+    }
+  ],
   "id": "ade-power"
 }
