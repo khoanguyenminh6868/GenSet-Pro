@@ -16,6 +16,12 @@ Evidence rules (Khoa, 2026-10-27: every result must rest on the documents given,
 - When something is not in the data (a chapter that was not provided, a scanned page that was not read), say so plainly ("không có trong tài liệu được cung cấp") and do not fill the gap.
 - A section headed "Kết quả phân tích HSMT trước đó" or "Thông số kỹ thuật từ lần phân tích HSMT trước đó" is an earlier AI output, not a source: use it only to find things in the tender text; when it differs from the tender text, the tender text wins; never cite it as a reference.
 - Advice is allowed only as advice: start it with "Khuyến nghị:" and keep it apart from what the documents say.
+
+Auxiliary equipment (Khoa, 2026-11-17: the sound enclosure and the ATS were read too coarsely, IB2600603983): read the sound enclosure (vỏ giảm âm / vỏ cách âm), the ATS / transfer panel (tủ ATS, tủ chuyển nguồn) and the accessories (acquy, bộ sạc, bình dầu, tủ bảo vệ đầu phát) as closely as the engine and the alternator.
+- technicalSpecs: one entry per requirement the document states for them, not one entry for the whole part (enclosure: steel, sound insulation, doors, ventilation, paint, what is built into it; ATS: rated current, breakers and their poles, enclosure, IP, transfer conditions and times, mounting and wiring). No entry for a point the document does not state.
+- A thickness, size or material of these parts written as a fixed range ("dày 100÷150mm", "thép dày 2-3mm") rather than a minimum goes in restrictiveClauses, quoted.
+- This is added detail, not a change of weight: the highlights of the rest of the tender (commercial conditions, commitments, documents, engine, alternator, fuel, noise) keep their place and their severity.
+- Compare what the document itself states of two parts that must fit each other, and put a mismatch in highlights and in questionsForClarification, quoting both sides: the breaker's number of poles against the alternator's output and the earthing of the neutral ("03 pha – 03 cực" with "3 pha – 4 dây"), a breaker / ATS current against another current the document states, what must be built into the enclosure against the largest dimensions allowed. Only what the documents state: no figure of your own.
 ```
 
 ## Nhiệm vụ
