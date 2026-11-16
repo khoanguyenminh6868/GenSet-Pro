@@ -602,7 +602,8 @@
         const makes = [];
         for (const m of p.engineMakes || []) for (const b of brandIn(m, ENGINE_BRANDS)) addMake(makes, b, "tên trang");
         // Every rating the row gives (AGG CU1250D5 "1250/1000" ESP and "1125/900" PRP), else the line's one figure.
-        const both = rowPowerOf(t, line, pw, [p.series, ...(p.engineModels || [])]);
+        const ms = [p.series, ...(p.engineModels || [])], row = rowPowerOf(t, line, pw, ms);
+        const both = row && Object.keys(row).length > 1 ? row : colPowerOf(t, line, pw, ms) || sheetPowerOf(t, pw, ms) || row;
         out.push({ supplierId: s.id, n, table: ti, title: String(t.title || ""), row: t.rows.indexOf(line), line, genset: isCode(p.series) ? p.series : null, power: both || { [kind]: { [pw.unit]: pw.min } },
           freq: freqIn((p.frequency || []).join(" ")) || freqIn(`${(t.header || []).join(" ")} ${t.title || ""}`), header: t.header || [], specs: [], kind: "engine", model: tidyModel(model, ENGINE_BRANDS), makes, other: null, fromLine: true });
         break;
@@ -639,17 +640,118 @@
     const hit = Object.entries(p).filter(([, v]) => v[pw.unit] === pw.min).map(([k]) => k);
     return hit.length && (pw.rating === "unspecified" || hit.includes(pw.rating)) ? p : null;
   }
-  // The ratings shown for a supplier's product line of one power: the row of a table of its source holding that figure.
+  // The prime and standby figures of a one-model datasheet that gives each on its own labelled line ("Prime Power Rating |
+  // 300 kVA / 240 kW", "Standby Power Rating | 330 kVA / 264 kW"; "Potenza PRP (kVA) | 500", "Potenza ESP (kVA) | 550";
+  // "Prime output | 400kW/500kVA | Standby output | 440kW/550kVA"). A figure counts only with its unit written next to
+  // it (or a "(kVA)" just before it) and after a rating word of its own cell or an earlier cell of the line. Only the
+  // words prime/PRP/主用/常用/servicio principal and standby/ESP/LTP/备用/emergencia/secours: "continuous", "COP" and
+  // "max power" are other ratings and stop the reading, as does a cell about the engine (gross kWm). Kept only when the
+  // table names the line's model, each rating has one value per unit (a table of several models gives several),
+  // standby is above prime by at most 30%, and the line's own figure is the one of its rating in its unit.
+  const SHEET_PR = /prime|\bprp\b|常用|主用|servicio\s+principal/i;
+  const SHEET_SB = /standby|stand[\s-]by|\besp\b|\bltp\b|备用|emergencia|secours/i;
+  const SHEET_OTHER = /continuous|\bcop\b|\bmax(imum)?\s*power|持续|连续/i;
+  const SHEET_ENG = /engine|gross|lorda|motor|发动机|柴油机|机械|mechanical|\bkwm\b/i;
+  function sheetPowerOf(t, pw, models0) {
+    if (!t || !pw || pw.min !== pw.max || !/^(kVA|kW)$/.test(pw.unit)) return null;
+    const models = (models0 || []).filter(isCode).map(keyOf);
+    const head = keyOf(`${t.title || ""} ${(t.header || []).join(" ")}`);
+    if (!models.some((k) => head.includes(k))) return null;
+    const got = { prime: { kVA: new Set(), kW: new Set() }, standby: { kVA: new Set(), kW: new Set() } };
+    const TOK = /(prime|\bprp\b|常用|主用|servicio\s+principal)|(standby|stand[\s-]by|\besp\b|\bltp\b|备用|emergencia|secours)|(continuous|\bcop\b|\bmax(?:imum)?\s*power|持续|连续)|\(\s*(kva|kw)\s*\)|(\d+(?:[.,]\d+)?)\s*(kva|kwe|kw)(?![a-z])|(\d+(?:[.,]\d+)?)/gi;
+    for (const line of [...(t.header || []), ...(t.rows || [])]) {
+      let rate = null, unit = null, postfix = false, fig = false;
+      const figs = [];
+      for (const c of cellsOf(line)) {
+        if (SHEET_ENG.test(c)) { rate = null; unit = null; continue; }
+        // A "(kVA)" title holds for the bare figures of the cells right after it: a row of several models ("Leistung ESP (kVA) |
+        // 715 | 880 | …") then gives several figures and is left out; a cell of words ends it.
+        if (!/^[\d.,\s]+$/.test(c)) unit = null;
+        let end = -1;
+        for (const m of String(c).matchAll(TOK)) {
+          // A rating word right after a figure ("1100KW/1375KVA Prime, 1200KW/1500KVA Standby") names the figure before
+          // it, which this reading would give to the next rating: the whole line is left out.
+          if ((m[1] || m[2]) && end >= 0 && /^[\s,]*$/.test(String(c).slice(end, m.index))) postfix = true;
+          // A second rating word with no figure since the first ("Prime/Standby Power") names neither.
+          const word = m[1] ? "prime" : m[2] ? "standby" : null;
+          if (word) { rate = rate && rate !== word && !fig ? "mixed" : word; unit = null; fig = false; }
+          else if (m[3]) { rate = null; unit = null; }
+          else if (m[4]) unit = /kva/i.test(m[4]) ? "kVA" : "kW";
+          else {
+            const v = Number((m[5] || m[7]).replace(",", ".")), u = m[6] ? (/kva/i.test(m[6]) ? "kVA" : "kW") : m[7] ? unit : null;
+            if (u) { end = m.index + m[0].length; fig = true; }
+            if (u && got[rate]) figs.push([rate, u, v]);
+            // "Prime/Standby Power: 60/66": two rating words with no figure between them name no one figure.
+            if (rate === "mixed") rate = null;
+          }
+        }
+      }
+      if (!postfix) for (const [k, u, v] of figs) got[k][u].add(v);
+    }
+    const out = {};
+    for (const k of ["prime", "standby"]) {
+      for (const u of ["kVA", "kW"]) {
+        const vs = [...got[k][u]];
+        if (vs.length > 1) return null;
+        if (vs.length) (out[k] ||= {})[u] = vs[0];
+      }
+    }
+    const pr = out.prime?.[pw.unit], sb = out.standby?.[pw.unit];
+    if (!(pr > 0 && sb > 0) || !(sb > pr && sb <= pr * 1.3)) return null;
+    if (pw.rating === "unspecified" ? pr !== pw.min && sb !== pw.min : out[pw.rating]?.[pw.unit] !== pw.min) return null;
+    return out;
+  }
+  // The prime and standby figures of a row under column titles that name each rating ("kVA" over "Standby  Prime  Model
+  // Engine", Cat "| 9.5 | 8.5 | DE9.5E3 | C1.1 |"): only when a title line has as many titles as the row has cells, so
+  // each title sits over its cell, the row names the line's model, and the unit is the one the titles (or the cell)
+  // give. Same checks on the figures as sheetPowerOf.
+  function colPowerOf(t, line, pw, models0) {
+    if (!t || line == null || !pw || pw.min !== pw.max || !/^(kVA|kW)$/.test(pw.unit)) return null;
+    let cells = cellsOf(line);
+    if (cells.length === 1) cells = String(cells[0]).trim().split(/\s{2,}/);
+    const models = (models0 || []).filter(isCode).map(keyOf);
+    if (!cells.some((c) => models.includes(keyOf(c)))) return null;
+    const words = `${t.title || ""} ${(t.header || []).join(" ")}`;
+    const tUnit = /kva/i.test(words) && !/\bkw/i.test(words) ? "kVA" : /\bkw/i.test(words) && !/kva/i.test(words) ? "kW" : null;
+    for (const h of t.header || []) {
+      const titles = String(h).trim().startsWith("|") ? cellsOf(h) : String(h).trim().split(/\s{2,}/);
+      if (titles.length !== cells.length) continue;
+      const at = (re, no) => titles.findIndex((x) => re.test(x) && !no.test(x) && !SHEET_OTHER.test(x) && !SHEET_ENG.test(x));
+      const ip = at(SHEET_PR, SHEET_SB), is = at(SHEET_SB, SHEET_PR);
+      if (ip < 0 || is < 0) continue;
+      const val = (c) => { const u = /kva/i.test(c) ? "kVA" : /kw/i.test(c) ? "kW" : tUnit; return u === pw.unit ? num(c) : null; };
+      const pr = val(cells[ip]), sb = val(cells[is]);
+      if (!(pr > 0 && sb > 0) || !(sb > pr && sb <= pr * 1.3)) return null;
+      const out = { prime: { [pw.unit]: pr }, standby: { [pw.unit]: sb } };
+      if (pw.rating === "unspecified" ? pr !== pw.min && sb !== pw.min : out[pw.rating]?.[pw.unit] !== pw.min) return null;
+      return out;
+    }
+    return null;
+  }
+  // The ratings shown for a supplier's product line of one power: the row of a table of its source holding that figure,
+  // else the labelled prime and standby lines of a one-model datasheet of its source.
   function linePower(s, p) {
     const pw = p?.power;
     if (!pw || pw.min !== pw.max) return null;
-    const ns = new Set([...(pw.src || []), ...(p.src || [])]);
+    const ns = new Set([...(pw.src || []), ...(p.src || [])]), models = [p.series, ...(p.engineModels || [])];
+    let one = null;
     for (const t of s?.specTables || []) {
       if (!ns.has(t.n)) continue;
       const rows = cellPerLine(t) ? [null] : t.rows.filter((r) => numbersOf(r).includes(pw.min));
-      for (const r of rows) { const x = rowPowerOf(t, r, pw, [p.series, ...(p.engineModels || [])]); if (x) return x; }
+      for (const r of rows) {
+        const x = rowPowerOf(t, r, pw, models);
+        if (x && Object.keys(x).length > 1) return x;
+        one ||= x;
+        const y = colPowerOf(t, r, pw, models);
+        if (y) return y;
+      }
     }
-    return null;
+    for (const t of s?.specTables || []) {
+      if (!ns.has(t.n)) continue;
+      const x = sheetPowerOf(t, pw, models);
+      if (x) return x;
+    }
+    return one;
   }
 
   // The make shown: the names given by the strongest kind of evidence (a cell of the row, a column title or the
