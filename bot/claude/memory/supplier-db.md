@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-14T13:41:12.602Z
+  modified: 2026-11-16T14:43:57.259Z
 ---
 
 CSDL ở `suppliers/cn/<id>.json` (cả nước ngoài, `country` ghi nước thật). Mỗi thông tin có nguồn [n] + câu trích nguyên văn trong `sources/<id>/<n>.md`; `verify.mjs` kiểm bằng code; merge vào main thì workflow tự đăng web.
@@ -22,6 +22,15 @@ CSDL ở `suppliers/cn/<id>.json` (cả nước ngoài, `country` ghi nước th
 - Chuẩn hoá thông số (`web/spec-norm.js`, Khoa 14/11/2026): "T3" / "Tier 3" / "Stage V" không kèm EPA / EU / China → KHÔNG gán thang khí thải; viết tắt "OP" ở ô kích thước → KHÔNG coi là máy trần; số "1,642" (phẩy + 3 chữ số) đọc là 1642; số bắt đầu "0," ("0,667 L") giữ nguyên là thập phân; bảng tự cho thấy phẩy thập phân (Himoinsa: "1,642 L", "3,767 l/h") thì ĐỂ THIẾU, không đọc 1642 cũng không đọc 1,642 (Khoa: "để thiếu như đang làm"). Dung tích xi lanh không ghi đơn vị → mặc định L hoặc cm³ (Khoa 14/11, nguyên văn "displacement nên default đơn vị là L hoặc cm³ (cc)"; em chọn dải: 0,4–100 = L, 400–100.000 = cc, ngoài dải để thiếu); là ngoại lệ duy nhất của luật không đoán theo độ lớn. Lớp này chưa nối vào Gợi ý cấu hình / web; nối là việc riêng, cần Khoa duyệt.
 - Khoa bảo BỎ (14/11/2026), đừng đề xuất lại: lập bảng chuẩn động cơ / đầu phát từ nguồn hãng để phân xử mâu thuẫn giữa các NCC; gộp model chỉ khác O/0, I/1. Nối lớp chuẩn hoá vào Gợi ý cấu hình: Khoa đòi đo trước / sau trên TOÀN BỘ gói rồi mới quyết.
 - Trang bên bán (tier C) không vào danh mục. EPA/vecc.org.cn: đã kiểm, KHÔNG nhập (trùng model quá ít, phải suy ra).
+
+## Mức công suất prime / standby (16/11/2026, PR #796–#800)
+- Khoa: "ESP chính là Standby. Hiện cả 2, sửa cho toàn bộ". Dòng máy một model (min = max) hiện "prime · standby" khi dòng bảng cùng nguồn có cả hai; động cơ cũng mang cả hai mức (864 dòng).
+- Em tự chốt, Khoa chưa duyệt riêng: mức chỉ lấy từ chữ nguyên văn; "Rated"/"额定" KHÔNG đổi thành prime; DCC (pramac) không gán continuous; chữ prime/standby của model khác, cột khác hay câu chung thì không gán.
+- 565 dòng "unspecified": báo cáo `C:\Projects\GenSet Pro\unspecified-565.md` (ngoài git, 16/11). Nhóm B chỉ gán được 3 dòng; 68 giữ nguyên kèm lý do.
+- Khoa bảo BỎ QUA (16/11): igsa-mexico 46 dòng (cột "CAPACIDAD (Kw)" không ghi mức) và sdec bảng 2002 ("Engine Rated Power" một cột).
+- Dòng máy một model có hai mức: 533 → 863 (PR #799, bảng nhãn + bảng Cat) → 897 (PR #800, Khoa bảo "làm cho airman, sửa cho powerco, nới cho cps AP450S").
+- Cố ý vẫn bỏ (đã giải thích, Khoa không bảo làm): krauter (dòng "Motoren" 14 ô / 13 model, ghép cột dễ lệch); denyo (mức thứ hai là Continuous, không phải Prime → chỉ hiện được "continuous · standby"); powerco PCS400P/PCS500P (prime trùng ở 50 và 60 Hz) và bảng 2500 series (không có dòng tần số trên cột); deman (cột Prime ghi "/" — nguồn để trống, KHÔNG phải lệch đơn vị); số đứng trước chữ mức khi có ≥2 số ("1100KW/1375KVA Prime"); powerlink VR200XS (nguồn gõ nhầm "9176kW").
+- ~1.200 dòng nguồn chỉ có một mức: không có gì để đọc, muốn thêm phải tìm datasheet mới.
 
 ## Cách làm
 Lệnh, số nguồn, cách đọc catalog PDF/OCR và bẫy cào: `suppliers/CLAUDE.md` trong repo.
