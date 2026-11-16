@@ -647,6 +647,9 @@ function minutesLink(t, kq = false) {
   return "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?" + Object.entries(q).map(([k, v]) => `${k}=${encodeURIComponent(v ?? "undefined")}`).join("&");
 }
 const tenderLink = (t) => (safeUrl(t.sourceUrl) !== "#" && t.sourceUrl) || (t.notifyNo ? portalSearch(t.notifyNo) : "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?render=index");
+// The link shown for a tender follows its status on the portal: Kết quả LCNT once results are out, Biên bản mở thầu once bids are opened, else the TBMT notice (tenderLink). tenderLink stays the TBMT link, which the bot's HSMT requests need.
+const statusLink = (t) => minutesLink(t, true) || minutesLink(t) || tenderLink(t);
+const statusLinkTitle = (t) => minutesLink(t, true) ? "Mở Kết quả lựa chọn nhà thầu trên muasamcong" : minutesLink(t) ? "Mở Biên bản mở thầu trên muasamcong" : "Mở trên muasamcong";
 // Copy mã gói, the button beside the tender code at the top of a tender (Khoa, 2026-11-10).
 document.addEventListener("click", async (e) => {
   const b = e.target.closest?.("[data-copycode]");
@@ -1364,7 +1367,7 @@ const COLS = [
   // Mã Số sorts by the posting date (Đăng), then the number: the number alone is not posting order (Khoa, 2026-11-03).
   { k: "no", label: "Mã Số", cls: "noc", val: (t) => `${pubOf(t)}|${isProject(t) ? projectNo(t) : t.notifyNo || ""}`, text: (t) => `${isProject(t) ? projectNo(t) : t.notifyNo || ""} ${fmtDate(pubOf(t))} ${fmtDate(t.bidCloseDate)}`,
     cell: (t) => { if (isProject(t)) return h`<span class="kcell st-project">${projectNo(t)}</span>${raw(copyCodeBtn(projectNo(t), "cc-d"))}${raw(mStage(t))}${raw(copyCodeBtn(projectNo(t), "cc-m"))}<div class="src num">Tạo ${fmtDate(t.addedAt) || "—"}</div>`;
-      const tl = timeLeft(t.bidCloseDate); return h`${raw(mPrice(t))}<a class="kcell tlink st-${shownStage(t).key}" href="${tenderLink(t)}" target="_blank" rel="noopener" title="Mở trên muasamcong">${t.notifyNo || "Mở trang"} ↗</a>${raw(copyCodeBtn(t.notifyNo, "cc-d"))}${raw(t.isManual ? ' <span class="badge">Thêm tay</span>' : "")}${raw(mStage(t))}${raw(copyCodeBtn(t.notifyNo, "cc-m"))}
+      const tl = timeLeft(t.bidCloseDate); return h`${raw(mPrice(t))}<a class="kcell tlink st-${shownStage(t).key}" href="${statusLink(t)}" target="_blank" rel="noopener" title="${statusLinkTitle(t)}">${t.notifyNo || "Mở trang"} ↗</a>${raw(copyCodeBtn(t.notifyNo, "cc-d"))}${raw(t.isManual ? ' <span class="badge">Thêm tay</span>' : "")}${raw(mStage(t))}${raw(copyCodeBtn(t.notifyNo, "cc-m"))}
       <div class="src num">Đăng ${fmtDate(pubOf(t)) || "—"}</div><div class="src num closed-at">Đóng ${fmtDate(t.bidCloseDate) || "—"}</div>${raw(isCancelled(t) ? '<div class="tleft closed-at">Đã hủy TBMT</div>' : stageOf(t) === "dropped" ? "" : tl ? h`<div class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</div>` : "")}`; } },
   { k: "name", label: "Tên gói thầu", cls: "wrap", val: (t) => t.bidName || "", text: (t) => `${t.bidName || ""} ${priceShort(t.estimatedPrice)} ${formOf(t)} ${noteOf(t)}`, cell: (t) => { const bp = state.tracked[t._key]?.bidPrice; return h`${t.bidName}<div class="dprice">${raw(priceLine(t))}${raw(formLine(t))}${raw(noteLine(t))}</div>${raw(bidLine(t))}${raw(resultLine(t))}` + anaInline(t); } },
   { k: "offerer", label: "Chủ Đầu Tư", pick: true, cls: "org", val: (t) => t.investorName || offererOf(t)?.text || "", cell: (t) => { const v = t.investorName || offererOf(t)?.text; return (v ? h`${v}` : '<span class="muted">Chưa có</span>') + mForm(t); } },
@@ -1626,7 +1629,7 @@ function renderDrawer(force = true) {
   if (!t) { closeDrawer(); return; }
   const stg = stageOf(t), canCompare = stg === "preparing" || isProject(t);
   const tl = timeLeft(t.bidCloseDate);
-  $("#dmeta").innerHTML = h`${raw(isProject(t) ? h`<span class="kcell">${projectNo(t)}</span>` : t.notifyNo ? h`<a class="kcell tlink st-${shownStage(t).key}" href="${tenderLink(t)}" target="_blank" rel="noopener" title="Mở trên muasamcong">${t.notifyNo} ↗</a>` : "")}<span class="stage st-${shownStage(t).key}">${shownStage(t).label}</span>${raw(copyCodeBtn(isProject(t) ? projectNo(t) : t.notifyNo))}${raw(tl ? h`<span class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</span>` : "")}`;
+  $("#dmeta").innerHTML = h`${raw(isProject(t) ? h`<span class="kcell">${projectNo(t)}</span>` : t.notifyNo ? h`<a class="kcell tlink st-${shownStage(t).key}" href="${statusLink(t)}" target="_blank" rel="noopener" title="${statusLinkTitle(t)}">${t.notifyNo} ↗</a>` : "")}<span class="stage st-${shownStage(t).key}">${shownStage(t).label}</span>${raw(copyCodeBtn(isProject(t) ? projectNo(t) : t.notifyNo))}${raw(tl ? h`<span class="tleft ${tl.urgent ? "urgent" : ""}">${tl.text}</span>` : "")}`;
   $("#dtitle").textContent = t.bidName || "";
   $$("#dtabs button").forEach((b) => {
     b.setAttribute("aria-selected", String(b.dataset.dt === state.dtab));
