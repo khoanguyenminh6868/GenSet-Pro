@@ -213,11 +213,11 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    chào, cần giấy tờ của nhà sản xuất (CO, CQ, thư uỷ quyền)") and asks the supplier for those papers; never write `met`
    on that check for it yourself.
    Two configurations per engine make (Khoa, 2026-11-11): when the catalog has two different engine models of one make
-   that fit (Baudouin 6M33G825/5 and 6M31G825/5, Cummins QSK23-G2 and QSK19-G20), give both, each as its own
+   that fit (Baudouin 6M33G825/5 and 6M31G825/5, Mitsubishi S6R2-PTAA and S6R-PTA-S), give both, each as its own
    configuration; never more than 2 of one make (the code drops a third). Leave the second out only to make room for
    another make that meets the HSMT better.
-   Perkins and Volvo Penta: ONE configuration each, the one that meets the HSMT best (Khoa, 2026-11-17; the code drops a
-   second). Give the place it frees to another make of the catalog, so the list still has up to 6.
+   Perkins, Volvo Penta and Cummins: ONE configuration each, the one that meets the HSMT best (Khoa, 2026-11-17; the code
+   drops a second). Give the place it frees to another make of the catalog, so the list still has up to 6.
 3. For every configuration, name the suppliers in the system that sell it (`suppliers`, at most 3, best first): only
    `supplierId`s from catalog.md, each with a row of that supplier (`n`, `line` exactly as in catalog.md) that names
    this engine and, best, this alternator at the power required. Under "Đồng bộ thương hiệu", a supplier truly fits only
