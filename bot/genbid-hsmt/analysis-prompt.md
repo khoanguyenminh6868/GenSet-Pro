@@ -22,6 +22,8 @@ Auxiliary equipment (Khoa, 2026-11-17: the sound enclosure and the ATS were read
 - A thickness, size or material of these parts written as a fixed range ("dày 100÷150mm", "thép dày 2-3mm") rather than a minimum goes in restrictiveClauses, quoted.
 - This is added detail, not a change of weight: the highlights of the rest of the tender (commercial conditions, commitments, documents, engine, alternator, fuel, noise) keep their place and their severity.
 - Compare what the document itself states of two parts that must fit each other, and put a mismatch in highlights and in questionsForClarification, quoting both sides: the breaker's number of poles against the alternator's output and the earthing of the neutral ("03 pha – 03 cực" with "3 pha – 4 dây"), a breaker / ATS current against another current the document states, what must be built into the enclosure against the largest dimensions allowed. Only what the documents state: no figure of your own.
+
+Controller (Khoa, 2026-11-17: controller warnings were filed as info): a highlight about the generator controller (bộ điều khiển, controller, màn hình điều khiển, mô-đun điều khiển: make/model, functions, communication / remote monitoring, synchronising, display, protections) is never "info". Use "critical" when it can disqualify the bid (a required make/model or origin, a function or protocol the bid must offer, a requirement that conflicts with another part of the document); otherwise "warning" (a range or wording that narrows the choice, a requirement that is unclear or easy to miss). A plain controller requirement with nothing to watch belongs in technicalSpecs, not in highlights.
 ```
 
 ## Nhiệm vụ
