@@ -31,11 +31,29 @@ Tệp: `setup-sandbox.sh` (Wine + VNeGP Agent bản Windows, Chrome, pwsh, Claud
   Snapshot hết hạn (1 năm không dùng) hoặc xoá sandbox thì phải đăng nhập lại.
 - Tắt: xoá `SANDBOX_WAKE` (hoặc đặt khác 1), redeploy. Tác vụ Windows "GenBid Bot" giữ nguyên.
 
-## Đã kiểm
-Agent dưới Wine tải HSMT khớp MD5; Chrome 157 + playwright-core 1.45.3 tìm kiếm muasamcong từ IP sin1 không CAPTCHA;
-OCR; Pester trên Linux / Windows; web: `web/api/test/wake.test.mjs` (sandbox giả: bật, cài lần đầu, dừng, gia hạn, nhường việc).
+## Đã kiểm (chạy thật 17/11/2026)
+OIDC của project + SDK thật; nối lại từ snapshot < 1 s (snapshot ~2,8 GB); Sync; tải HSMT qua Agent dưới Wine; đăng tệp
+(Release + `hsmt-inbox` + ghi thẳng web, `GITHUB_TOKEN` của Vercel đủ quyền); Phân tích; dịch (Claude; Gemini qua `agy` gọi thử);
+OCR tesseract vie (~3 s/trang); .doc qua antiword; Gợi ý cấu hình (11 phút); máy Windows bật lại giữa lúc sandbox làm dở → máy
+nhường, sandbox làm xong rồi dừng sau 44 s; rảnh 20 phút → dừng; gia hạn phiên khi còn việc.
+Test: `web/api/test/wake.test.mjs` (sandbox giả).
 
 ## Chưa kiểm
-Chạy thật (OIDC của project, SDK thật, Sync / Lấy tệp / lượt AI / gh push từ sandbox); `GITHUB_TOKEN` của Vercel có đủ quyền
-ghi Release + nhánh `hsmt-inbox` không; reCAPTCHA khi tần suất cao; .doc trên Ubuntu; Wine không được Bộ Tài chính hỗ trợ.
+Gợi ý giá; Đối chiếu HSDT / TLKT; Tạo HSDT tham khảo; Tìm thông số NCC (cần `FIRECRAWL_KEY` trên Vercel); nút Lấy tệp bấm
+trực tiếp (sau #863/#864); một bản dịch thật qua Gemini; reCAPTCHA khi tần suất cao; Wine không được Bộ Tài chính hỗ trợ.
 Việc theo lịch của máy Windows (Sync định kỳ...) không chạy khi máy tắt: sandbox chỉ lo yêu cầu từ web.
+Sổ tiền API (`.anthropic-api-spend.jsonl`) mỗi máy một sổ, không cộng lại (chưa sửa).
+
+## Bẫy đã gặp (17/11/2026)
+- Image mặc định (`runtime: node22`) không có apt; image `vercel/sandbox/ubuntu` tối giản: không curl, git, node → `up()` cài
+  curl/git trước, `setup-sandbox.sh` tự tải Node 22. Lỗi cài nằm ở `$HOME/setup.log` (HOME = `/vercel`).
+- `start-bot.sh` tự `git merge` nhưng bash đã đọc bản cũ trong snapshot → bước mới chỉ chạy từ lần khởi động sau. `up()` kéo
+  main TRƯỚC khi chạy script.
+- Script PowerShell của bot trên Linux: đường dẫn ghép bằng `"$a\$b"` đưa cho .NET (`[IO.File]`) thì `\` thành ký tự tên tệp
+  (tài liệu không gửi lên web mà vẫn báo đã ghi). Dùng `[IO.Path]::Combine`. `Join-Path` với ổ `C:` lỗi trên Linux khi test ép
+  `GENBID_OS=windows`. Đừng ghi cứng `C:\Projects\GenSet Pro`: dùng `GENBID_ROOT`.
+- Yêu cầu gửi lúc máy vừa tắt (< 3 phút) thấy "bot còn chạy" nên không bật sandbox → trang tự nhắc (`coll: wake`) mỗi 2 phút khi
+  cảnh báo máy tắt đang hiện; server chỉ bật khi có yêu cầu chờ.
+- Đừng dừng sandbox (`stop_session`) khi bot đang làm (`running` ở `/api/requests?kind=bots`): việc dở bị cắt.
+- `agy` không đọc `~/.gemini/oauth_creds.json` (của Gemini CLI cũ); trên Windows nó giữ đăng nhập trong Credential Manager. Trên
+  Linux lưu tệp ở `~/.config/antigravity` → đăng nhập một lần trong sandbox (mục Bật).

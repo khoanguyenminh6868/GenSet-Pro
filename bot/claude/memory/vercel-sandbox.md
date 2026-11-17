@@ -1,0 +1,28 @@
+---
+name: vercel-sandbox
+description: "Bot dự phòng trong Vercel Sandbox: chạy theo nhu cầu khi máy Windows tắt; quyết định của Khoa, cách vận hành, Gemini, việc chưa thử (17/11/2026)"
+metadata:
+  node_type: memory
+  type: project
+  originSessionId: 002f765c-d667-4ca2-b611-252cd3c8bf93
+  modified: 2026-11-17T12:09:54.205Z
+---
+
+Bot GenBid dự phòng chạy trong Vercel Sandbox `genbid-bot` (project genset-pro-web, sin1, image `vercel/sandbox/ubuntu`, persistent). Chi tiết kỹ thuật và bẫy: `bot/sandbox/README.md`. Mã bật/dừng: `web/api/_sandbox.js`, `_wake.js`.
+
+**Khoa quyết (17/11/2026):**
+- Chạy THEO NHU CẦU, không 24/7: web có yêu cầu mà không máy Windows nào có nhịp tim 3 phút → web tự bật sandbox (hàm Vercel, OIDC, không token). Rảnh 20 phút hoặc máy Windows bật lại (và sandbox không làm dở) → web dừng. Tắt bằng xoá biến Vercel `SANDBOX_WAKE`.
+- KHÔNG dùng GitHub Actions cho sandbox (repo private lại từ 01/12, 2.000 phút/tháng; 17/11 Actions còn bị chặn vì thanh toán). Đã bỏ workflow `sandbox-ensure.yml`.
+- Snapshot giữ 1 năm (nối lại < 1 giây; mọi thứ đã cài + đăng nhập còn nguyên).
+- Bot sandbox trả bằng gói tháng: biến Vercel `CLAUDE_CODE_OAUTH_TOKEN` (Khoa đặt).
+- Gemini cho bản dịch: cách 2 = đăng nhập Google như máy Windows, KHÔNG dùng API key. Chép `~/.gemini/oauth_creds.json` không được (agy Windows giữ đăng nhập trong Credential Manager); Khoa đăng nhập agy MỘT LẦN trong sandbox (`vercel sandbox connect genbid-bot --project genset-pro-web --scope khoanguyenminh6868-3812`, chạy `~/.local/bin/agy`). Snapshot hết hạn / xoá sandbox thì phải đăng nhập lại.
+
+**Why:** máy Windows tắt thì yêu cầu trên web treo; chạy 24/7 tốn tiền Vercel; Actions tốn phút / hay bị chặn.
+
+**How to apply:**
+- Thử sandbox: tạm dừng bot Windows (đừng dừng giữa lượt), chờ > 3 phút rồi Khoa bấm yêu cầu trên web; xem log qua Vercel MCP `run_session_command` (`$HOME/genset-pro/genbid-bot-logs/sandbox.out`). Đừng `stop_session` khi bot sandbox đang làm (kiểm `running` ở `/api/requests?kind=bots`).
+- Sửa `bot/genbid-hsmt/*` thì bot sandbox tự lấy khi khởi động lại (up() kéo main trước khi chạy start-bot.sh); bot đang chạy giữ mã cũ.
+- Đã thử thật đạt (17/11): Sync, tải HSMT qua Agent/Wine, đăng tệp, Phân tích, dịch, OCR, .doc, Gợi ý cấu hình, nhường việc khi máy Windows bật lại, tự dừng. CHƯA thử: Gợi ý giá, Đối chiếu HSDT/TLKT, Tạo HSDT, Tìm thông số NCC (thiếu `FIRECRAWL_KEY` trên Vercel), nút Lấy tệp bấm trực tiếp, một bản dịch thật qua Gemini. Sổ tiền API tách đôi giữa 2 máy (chưa sửa).
+- Claude không được đặt / xoá token: Khoa tự làm (17/11 còn chờ Khoa xoá 7 secret GitHub tạo hôm đó + biến Vercel `GEMINI_OAUTH_CREDS`, thu hồi token Vercel và PAT).
+
+Liên quan: [[bot-ops]], [[git-workflow]], [[repo-public-khong-hoi]].
