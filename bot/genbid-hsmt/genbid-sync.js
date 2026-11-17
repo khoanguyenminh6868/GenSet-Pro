@@ -257,8 +257,20 @@ async function readNotice(ctx, page, t, chapters = /^Chương\s+(II|III|V|VII)\b
   await page.goto(t.sourceUrl, { waitUntil: "domcontentloaded" });
   await page.waitForFunction(() => /Mã (E-)?TBMT\s*\n\s*IB\d+/.test(document.body.innerText) && document.body.innerText.includes("Nộp hồ sơ"), null, { timeout: 40000 }).catch(() => {});
   if (await challenged(page)) throw new Captcha("muasamcong yêu cầu xác minh");
-  const info = await page.evaluate(() => { const s = document.body.innerText, a = s.indexOf("Thông tin cơ bản"), z = s.indexOf("Nộp hồ sơ", a); return a < 0 ? "" : s.slice(a, z > a ? z : a + 20000).trim(); });
-  const out = { notifyNo: t.notifyNo, info, hsmtList: "", chapters: [], at: now() };
+  let info = await page.evaluate(() => { const s = document.body.innerText, a = s.indexOf("Thông tin cơ bản"), z = s.indexOf("Nộp hồ sơ", a); return a < 0 ? "" : s.slice(a, z > a ? z : a + 20000).trim(); });
+  // "Tóm tắt công việc chính" of the package in its KHLCNT (tab Thông tin gói thầu of the plan), which the notice page
+  // holds in its data (tbmt.bidpPlanDetail.generalTasks) but does not show: often the only place giving the number of
+  // sets (IB2600612866: "Trang bị 27 máy phát điện 8,5KVA và 28 ATS", none in its HSMT; Khoa 17/11/2026). At the top of
+  // info, so the cut of the notice for Phân tích never drops it.
+  const plan = await page.evaluate(() => {
+    for (const el of document.querySelectorAll("*")) {
+      const d = el.__vue__?.$data?.tbmt?.bidpPlanDetail;
+      if (d && typeof d.generalTasks === "string" && d.generalTasks.trim()) return { tasks: d.generalTasks.replace(/\s+/g, " ").trim(), planNo: d.planNo || "" };
+    }
+    return null;
+  }).catch(() => null);
+  if (plan) info = `Tóm tắt công việc chính của gói thầu (KHLCNT${plan.planNo ? " " + plan.planNo : ""}): ${plan.tasks}\n${info}`;
+  const out = { notifyNo: t.notifyNo, info, hsmtList: "", chapters: [], at: now(), ...(plan ? { planTasks: plan.tasks } : {}) };
   // The goods list of tab Thông tin chung (Danh mục hàng hóa with its Thông số kỹ thuật column), for Phân tích when the
   // tender has no technical document (Khoa, 2026-11-04).
   out.goods = await specsGoods(page).catch(() => "");
@@ -2030,11 +2042,15 @@ async function runFinish() {
         summary = out.join("; ");
       } finally { await ctx.close().catch(() => {}); }
     }
-    else if (cmd === "notice") { // check: read one tender's notice from feed/current and print its size, post nothing
+    else if (cmd === "notice") { // check: read one tender's notice from feed/current and print its size; --post also saves it (notice/<TBMT>)
       const t = ((await doc("feed", "current"))?.tenders || []).find((x) => x.notifyNo === opt("key"));
       if (!t) throw new Error("không có gói này trong feed");
       const { ctx, page } = await openBrowser();
-      try { const n = await readNotice(ctx, page, t); summary = `info ${n.info.length} ký tự; ${n.hsmtList.split("\n").length} dòng chương; webform: ${n.chapters.map((c) => c.name + " " + c.text.length).join(", ") || "không"}`; }
+      try {
+        const n = await readNotice(ctx, page, t);
+        summary = `info ${n.info.length} ký tự; ${n.hsmtList.split("\n").length} dòng chương; webform: ${n.chapters.map((c) => c.name + " " + c.text.length).join(", ") || "không"}; KHLCNT: ${n.planTasks || "không"}`;
+        if (opt("post")) { await post([{ coll: "notice", id: t.notifyNo, data: n }]); summary += "; đã lưu notice"; }
+      }
       finally { await ctx.close().catch(() => {}); }
     }
     else { summary = "Lệnh: sync | files | prep | finish"; code = 1; }
