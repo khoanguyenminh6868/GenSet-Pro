@@ -1,0 +1,69 @@
+name: spec-diff
+
+# Kiểm chéo TOÀN BỘ bản ghi danh mục khi PR sửa mã đọc (việc chat-luong-2, 18/11/2026): so mọi trường của mọi bản ghi
+# fromSupplier giữa nhánh gốc (HEAD^1 của commit merge) và PR, đăng bảng tóm tắt vào PR (bình luận + job summary).
+# Không chặn vì có thay đổi (thay đổi là chủ ý); CHỈ chặn khi số ca đảo vai động cơ ↔ đầu phát tăng.
+# Chỉ chạy khi PR đổi tệp dưới đây: PR dữ liệu của bot (suppliers/cn/*) không có check này nên mergeWhenGreen không chờ nó.
+# Repo hết phút Actions tháng 11: chỉ chạy trên PR, huỷ lượt cũ, không đo top 30 ở đây (đo tay).
+on:
+  pull_request:
+    paths:
+      - 'web/catalog.js'
+      - 'web/spec-norm.js'
+      - 'web/conversions.js'
+      - 'suppliers/spec-diff.mjs'
+      - '.github/workflows/spec-diff.yml'
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  spec-diff:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2 # HEAD = commit merge của PR, HEAD^1 = nhánh gốc
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: so bản ghi gốc ↔ PR
+        id: diff
+        run: |
+          set +e
+          node suppliers/spec-diff.mjs git:HEAD^1 . --out spec-diff.txt --md spec-diff.md --swap-list swap.txt --gate \
+            --label-old "$BASE_REF ($(git rev-parse --short=8 HEAD^1))" --label-new "PR #$PR ($(git rev-parse --short=8 HEAD^2))"
+          echo "code=$?" >> "$GITHUB_OUTPUT"
+          cat spec-diff.md >> "$GITHUB_STEP_SUMMARY"
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          PR: ${{ github.event.pull_request.number }}
+      - uses: actions/upload-artifact@v4
+        with:
+          name: spec-diff
+          path: |
+            spec-diff.txt
+            spec-diff.md
+            swap.txt
+          retention-days: 14
+      # Một bình luận cho mỗi PR, sửa lại ở lượt sau (dấu <!-- spec-diff -->). PR từ fork không có quyền ghi: bỏ qua.
+      - name: bình luận vào PR
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR: ${{ github.event.pull_request.number }}
+        run: |
+          id=$(gh api "repos/$GITHUB_REPOSITORY/issues/$PR/comments" --paginate --jq '.[] | select(.user.login == "github-actions[bot]" and (.body | startswith("<!-- spec-diff -->"))) | .id' | tail -1)
+          if [ -n "$id" ]; then gh api -X PATCH "repos/$GITHUB_REPOSITORY/issues/comments/$id" -F body=@spec-diff.md > /dev/null
+          else gh api "repos/$GITHUB_REPOSITORY/issues/$PR/comments" -F body=@spec-diff.md > /dev/null; fi
+      - name: chặn khi đảo vai tăng
+        if: steps.diff.outputs.code != '0'
+        run: |
+          echo "::error::spec-diff thoát mã ${{ steps.diff.outputs.code }} (1 = số ca đảo vai động cơ ↔ đầu phát tăng; xem swap.txt trong artifact)"
+          exit 1
