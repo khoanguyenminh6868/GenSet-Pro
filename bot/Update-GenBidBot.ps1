@@ -161,7 +161,7 @@ if ($task -and -not $Check -and $task.Actions[0].Execute -ne 'conhost.exe') {
     }
 }
 # Bot bật ngoài tác vụ (cha không phải conhost của tác vụ, vd. Start-Process từ phiên Claude): End tác vụ không tắt được nó.
-$outside = @($disp | Where-Object { (Get-CimInstance Win32_Process -Filter "ProcessId=$($_.ParentProcessId)" -ErrorAction SilentlyContinue).Name -ne 'conhost.exe' })
+$outside = @($disp | Where-Object { (Get-CimInstance Win32_Process -Filter "ProcessId=$($_.ParentProcessId)" -ErrorAction SilentlyContinue).Name -notin 'conhost.exe', 'svchost.exe' })  # svchost: tác vụ kiểu cũ
 if ($outside.Count) { $notes.Add("bot đang chạy NGOÀI tác vụ (PID $($outside.ProcessId -join ', ')): cần khởi động lại qua tác vụ") }
 if (-not $task) { $notes.Add("máy này chưa có tác vụ 'GenBid Bot' (Install-GenBidBot.ps1)"); $restart = 'không có tác vụ' }
 elseif ($task.State -eq 'Disabled') { $notes.Add("tác vụ 'GenBid Bot' đang tắt (Disabled) trên máy này: không đụng tới"); $restart = 'tác vụ tắt' }

@@ -614,7 +614,8 @@ if (-not $OnLinux -and -not $Once) {
         $me = Get-CimInstance Win32_Process -Filter "ProcessId=$PID"
         $par = Get-CimInstance Win32_Process -Filter "ProcessId=$($me.ParentProcessId)"
         if ($par.Name -eq 'conhost.exe') { $script:HostPid = [int]$par.ProcessId }
-        else { Log "Bot không chạy qua tác vụ 'GenBid Bot' (cha: $($par.Name)): End tác vụ sẽ không tắt được bot này." }
+        # svchost.exe: tác vụ kiểu cũ gọi thẳng powershell.exe (End tắt được bot); cha khác = bật tay / Start-Process.
+        elseif ($par.Name -ne 'svchost.exe') { Log "Bot không chạy qua tác vụ 'GenBid Bot' (cha: $($par.Name)): End tác vụ sẽ không tắt được bot này." }
     } catch { Log "Không kiểm được tác vụ 'GenBid Bot': $($_.Exception.Message)" }
 }
 if ($script:PauseUntil -gt (Get-Date)) { Log "Đang tạm dừng gọi Agent tới $($script:PauseUntil.ToString('HH:mm')) (hết hạn mức)." }
