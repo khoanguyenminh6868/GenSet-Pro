@@ -168,8 +168,16 @@ if (-not $NoCommit) {
     if (-not $NoInbox) {
         git -C $Clone add -A "inbox/$Key"
         git -C $Clone commit -q --allow-empty -m "HSMT $Key"
-        git -C $Clone push -q origin hsmt-inbox
-        if ($LASTEXITCODE -ne 0) { throw 'git push không thành công.' }
+        # Nhánh hsmt-inbox còn nhận commit từ nơi khác (Action ingest, phiên Claude, máy khác): đẩy thẳng thì bị từ chối
+        # (non-fast-forward, 17/11/2026: Lấy tệp báo "đăng tệp bị lỗi" từ 16/11). Kéo về rebase commit của mình rồi đẩy, thử lại một lần.
+        $pushed = $false
+        for ($try = 1; $try -le 2 -and -not $pushed; $try++) {
+            git -C $Clone pull --rebase -q origin hsmt-inbox
+            if ($LASTEXITCODE -ne 0) { git -C $Clone rebase --abort 2>$null; throw 'git pull --rebase hsmt-inbox không thành công (clone có thay đổi chưa commit hay xung đột).' }
+            git -C $Clone push -q origin hsmt-inbox
+            $pushed = ($LASTEXITCODE -eq 0)
+        }
+        if (-not $pushed) { throw 'git push không thành công.' }
     }
     # Ghi thẳng lên bản web (hsmt, hsmttext, hsmtreq) bằng chữ đọc từ tệp trên máy này, để trang có tệp ngay,
     # không phải chờ Action "hsmt inbox" (Action vẫn chạy và ghi lại đúng dữ liệu đó).
