@@ -841,7 +841,7 @@ function histTenders() {
 // Opening and result as the daily feed has them (t.result): bidder count, winners and their prices.
 function histResult(d) {
   const bidders = (d.lots || []).flatMap((l) => l.bidders || []);
-  const winners = bidders.filter((b) => b.won).map((b) => ({ name: b.name, taxCode: b.taxCode || "", price: b.winPrice ?? b.finalPrice ?? b.bidPrice ?? null }));
+  const winners = bidders.filter((b) => b.won).map((b) => ({ name: b.name, taxCode: b.taxCode || "", price: b.winPrice ?? window.GenbidBidprice.bdPrice(b) ?? null }));
   return { openedAt: d.openedAt || null, numBidderJoin: new Set(bidders.map(taxKey)).size || null, winners };
 }
 // Our own place in a tender read from muasamcong's results: Đã nộp until the result, then Trúng thầu or Không trúng (as ingest.js markJoined does for bidders/<TBMT>).
@@ -2516,11 +2516,11 @@ function histBidders(key) {
   const d = state.bidhist?.[key];
   if (!d?.lots?.length) return null;
   const multi = d.lots.length > 1;
-  const list = d.lots.flatMap((l) => (l.bidders || []).map((x) => ({ name: x.name, taxCode: x.taxCode, bidPrice: x.bidPrice, priceAfterDiscount: x.finalPrice, won: !!x.won,
+  const list = d.lots.flatMap((l) => (l.bidders || []).map((x) => ({ name: x.name, taxCode: x.taxCode, bidPrice: x.bidPrice, priceAfterDiscount: window.GenbidBidprice.afterDiscount(x), won: !!x.won,
     note: [multi && l.lotName, x.won ? `Trúng thầu${x.winPrice ? ", giá trúng " + Number(x.winPrice).toLocaleString("vi-VN") : ""}` : x.reason && "Không được chọn: " + x.reason,
       ].filter(Boolean).join(" · "),
     // The won goods, shown as a list under the winner (bdGoodsHtml, Khoa 2026-11-07: hãng and cấu hình kỹ thuật too).
-    goods: x.won && l.goods?.length ? l.goods : null })));
+    goods: x.won && l.goods?.length ? window.GenbidBidprice.lotGoods(l) : null })));
   const price = (x) => x.priceAfterDiscount ?? x.bidPrice ?? 9e15;
   list.sort((a, b) => (b.won ? 1 : 0) - (a.won ? 1 : 0) || price(a) - price(b));
   return { list, source: d.final ? "muasamcong (kết quả lựa chọn nhà thầu)" : "muasamcong (biên bản mở thầu)", at: d.at, final: !!d.final };
@@ -4621,7 +4621,7 @@ function histIndex() {
       const at = d.openedAt || d.bidCloseDate || d.publicDate || "";
       c.rows.push({ key, d, lot, b, at, multi });
       c.n++;
-      if (b.won) { c.wins++; c.wonValue += Number(b.winPrice ?? b.finalPrice ?? b.bidPrice) || 0; }
+      if (b.won) { c.wins++; c.wonValue += Number(b.winPrice ?? window.GenbidBidprice.bdPrice(b)) || 0; }
       if (at > c.lastAt) c.lastAt = at;
     }
   }
@@ -4632,7 +4632,8 @@ function histIndex() {
   }
   return (histIdx = [...by.values()]);
 }
-const bdPrice = (b) => b.finalPrice ?? b.bidPrice;
+// Giá sau giảm cao hơn giá dự thầu là số sai của nguồn: web/bidprice.js afterDiscount bỏ nó.
+const bdPrice = (b) => window.GenbidBidprice.bdPrice(b);
 const bdIsUs = (c) => c.tax === OUR_TAX || OUR_RE.test(c.name || "");
 const OUR_TAX = "4101623015";
 const BD_SORT = { n: ["Số gói tham dự", (c) => c.n], wins: ["Số gói trúng", (c) => c.wins], rate: ["Tỉ lệ trúng", (c) => (c.decided ? c.wins / c.decided : 0) + c.decided / 1e6], value: ["Giá trị trúng", (c) => c.wonValue], last: ["Gần đây", (c) => c.lastAt] };
@@ -4801,7 +4802,7 @@ function bdDetailHtml(c0) {
       return h`<tr><td data-l="Mở thầu">${fmtDate(r.at, false)}</td>
         <td><div><b>${raw(findTender(r.key) ? h`<a href="#" data-bdtender="${r.key}" title="Mở chi tiết gói thầu">${r.d.bidName || r.key}</a>` : h`${r.d.bidName || r.key}`)}</b></div>${raw(r.multi && r.lot.lotName ? h`<div class="small">${r.lot.lotName}</div>` : "")}
           <div class="muted small" style="margin-top:6px">${raw(bdKeyLink(r))} · ${[r.d.investorName, r.d.location, BID_FORM[r.d.bidForm] || r.d.bidForm].filter(Boolean).join(" · ")}</div>
-          ${raw(r.b.won && r.lot.goods?.length ? bdGoodsHtml(r.lot.goods) : "")}
+          ${raw(r.b.won && r.lot.goods?.length ? bdGoodsHtml(window.GenbidBidprice.lotGoods(r.lot)) : "")}
           ${raw(!r.lot.goods?.length && r.d.config?.kvas?.length ? h`<div class="muted small" title="${r.d.config.text || ""}">Công suất theo HSMT: ${r.d.config.kvas.slice(0, 5).map((p) => p.v.toLocaleString("vi-VN") + " " + p.u).join(", ")}</div>` : "")}
           ${raw(w.length ? h`<div class="muted small">Nhà thầu trúng: ${w.join(", ")}${(() => { const x = r.lot.bidders.find((y) => y.won); return x ? " · " + fmtVnd(x.winPrice ?? bdPrice(x)) : ""; })()}</div>` : "")}</td>
         <td class="num" data-l="Giá gói">${base ? fmtVnd(base) : "—"}</td>

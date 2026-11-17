@@ -49,7 +49,7 @@ const readJson = (f, d) => { try { return JSON.parse(fs.readFileSync(f, "utf8").
 const writeJson = (f, o) => { fs.mkdirSync(path.dirname(f), { recursive: true }); fs.writeFileSync(f, JSON.stringify(o, null, 2), "utf8"); };
 // Pure helpers (file choice, sections, Chương V parts and join, quote checks, history rows): sync-pure.js, tested in bot/test.
 const {
-  sig, isDecisionFile, has, isGenset, histUrl, histTender, histPower, histNeedsConfig, configText, setsOf, histConfigOf, withNormHighlights,
+  sig, isDecisionFile, has, isGenset, histUrl, histTender, histWinningPrice, histPower, histNeedsConfig, configText, setsOf, histConfigOf, withNormHighlights,
   histTbmtUrl, CFG_FILE_RE, CFG_SKIP_RE, plainVi, chapterV, specsPick, specsFinish, isServiceTender, NOTICE_MAX,
   GOODS_MAX, WEBFORM_MAX, KEEP, splitSections, technicalOfIII, trimHsmt, compact, headCut, noticeBody,
   densestCut, SPECS_PART_OVERLAP, SPECS_PARTS_MAX, partsOf, specsMerge, specsEmpty, partHead, askCut, askTrace,
@@ -592,6 +592,7 @@ async function historyRound(page, { maxPages = 60, maxTenders = 2000 } = {}) {
       goodsAudit(c.notifyNo, r);
       const cfg = readJson(HISTCFG_FILE, {})[c.notifyNo];
       const data = { ...histTender(c), ...r, url: histUrl(c), at: now(), ...(cfg ? { config: cfg } : {}) };
+      data.winningPrice = histWinningPrice(data.winningPrice, data.lots);
       buf.push({ coll: "bidhist", id: c.notifyNo, data });
       state.read[c.notifyNo] = { step: c.stepCode, final: !!r.final, at: data.at };
       done++;
@@ -722,6 +723,7 @@ async function historyKeys(page, spec) {
       }
       goodsAudit(id, r);
       const data = { ...old, ...r, at: now() };
+      data.winningPrice = histWinningPrice(data.winningPrice, data.lots);
       buf.push({ coll: "bidhist", id, data });
       if (state.read[id]) state.read[id] = { ...state.read[id], final: !!r.final, at: data.at };
       done++;

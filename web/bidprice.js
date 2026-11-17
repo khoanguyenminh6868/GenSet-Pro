@@ -112,7 +112,24 @@
     return v ? { kva: v, rating: null } : null;
   }
   const taxKey = (x) => String(x.taxCode || "").replace(/\D/g, "") || String(x.name || "").trim().toUpperCase();
-  const bdPrice = (b) => b.finalPrice ?? b.bidPrice;
+  // Chốt chặn lịch sử giá (rà soát 18/11/2026; số sai do NGUỒN muasamcong ghi, không phải bot đọc lệch; quy tắc: thà thiếu còn hơn sai).
+  // 1) Giá sau giảm không thể cao hơn giá dự thầu của chính nhà thầu (giảm giá chỉ làm giá thấp đi): IB2500312373 phần 2 ghi
+  //    dự thầu 25,06 tỷ, sau giảm 62,64 tỷ (giá phần 1). Gặp vậy bỏ giá sau giảm, dùng giá dự thầu. Dung sai 0,1% cho làm tròn.
+  const afterDiscount = (b) => { const f = Number(b.finalPrice), p = Number(b.bidPrice); return f > 0 && p > 0 && f > p * 1.001 ? null : b.finalPrice ?? null; };
+  const bdPrice = (b) => afterDiscount(b) ?? b.bidPrice;
+  // 2) Dòng hàng có số lượng × đơn giá lớn hơn cả giá của lô (cao nhất trong giá trúng, giá dự thầu của nhà thầu trúng, giá lô) thêm
+  //    25% (thuế, làm tròn): một dòng không thể đắt hơn cả lô, nên "đơn giá" đó là thành tiền gõ nhầm vào ô đơn giá
+  //    (IB2500304762 phần 2: 60 m × 96.000.000 = 5,76 tỷ trong lô trúng 974 triệu). Chỉ bỏ đơn giá của dòng đó; các dòng khác,
+  //    số lượng, tên hàng giữ nguyên. Lô không có giá nào để so thì giữ. Đo trên 910 lô có hàng và giá trúng: đơn giá giảm giá trước
+  //    khi trúng (dòng cao hơn giá trúng 1,02–1,16 lần) vẫn dưới ngưỡng; chỉ 2 dòng (5,4 và 5,9 lần) bị bỏ.
+  const LINE_OVER = 1.25;
+  const lotGoods = (lot) => {
+    const goods = lot?.goods || [];
+    const refs = [lot?.price, ...(lot?.bidders || []).filter((b) => b.won).flatMap((b) => [b.winPrice, b.bidPrice])].map(Number).filter((x) => x > 0);
+    const ref = refs.length ? Math.max(...refs) : 0;
+    if (!ref) return goods;
+    return goods.map((g) => (g.unitPrice > 0 && g.qty > 0 && g.qty * g.unitPrice > ref * LINE_OVER ? { ...g, unitPrice: null } : g));
+  };
 
   // What a text says about the configuration (Khoa, 2026-11-03: chọn gói tương tự theo cấu hình yêu cầu, không theo hình
   // thức đấu thầu hay tuổi gói). group: "cn" (only Chinese engine makes named, or Trung Quốc as the origin), "foreign" (only
@@ -310,7 +327,7 @@
         if (ratio < 0.3 || ratio > 1.02) continue;
         total++;
         if (bidKind((multi && lot.lotName) || d.bidName) !== kind) continue;
-        const goods = (lot.goods || []).filter((g) => g.name || g.code || g.maker || g.label);
+        const goods = lotGoods(lot).filter((g) => g.name || g.code || g.maker || g.label);
         // A name that does not say so, but an HSMT that moves an owned set and no set among the won goods: a move.
         if (kind === "supply" && movesOldSet(d.config?.text) && !goods.some((g) => isGensetRow(g.name))) continue;
         if (vnMadeSet(goods)) { vnMade++; continue; }
@@ -977,5 +994,5 @@
     return { list: list.slice(0, limit), total: list.length, basis: { investor: !!inv, province: prov || "", kva: K, tol: RIVAL_TOL, min: RIVAL_MIN } };
   }
 
-  root.GenbidBidprice = { CALIB, calibLevels, wQuantile, engineWords, engineGroup, groupPrices, costHints, COST_HINTS, monthsIn, readTerms, financeCost, feasibility, rivalsOf, STALE_DAYS, quoteStale, conflict, wonSets, wonEvidence, nbForecast, winCurve, profitTable, compRows, lockStats, provinceOf, invKeyOf, nbBucket, NB_LABELS, quoteCost, quoteLedger, CURRENCIES, supWon, wonTokens, wonSetRow, SYNC_TAG, VN_WORD, vnMadeSet, brandSyncOf, familyOf, kvaOf, kvaRated, powerMatch, unitsOf, placeOf, keyText, capPick, isGensetName, isGensetRow, bidKind, movesOldSet, cfgKva, cfgPower, taxKey, bdPrice, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL, SYNC_POWER_TOL, WIDE_TOL, STANDBY_FACTOR };
+  root.GenbidBidprice = { CALIB, calibLevels, wQuantile, engineWords, engineGroup, groupPrices, costHints, COST_HINTS, monthsIn, readTerms, financeCost, feasibility, rivalsOf, STALE_DAYS, quoteStale, conflict, wonSets, wonEvidence, nbForecast, winCurve, profitTable, compRows, lockStats, provinceOf, invKeyOf, nbBucket, NB_LABELS, quoteCost, quoteLedger, CURRENCIES, supWon, wonTokens, wonSetRow, SYNC_TAG, VN_WORD, vnMadeSet, brandSyncOf, familyOf, kvaOf, kvaRated, powerMatch, unitsOf, placeOf, keyText, capPick, isGensetName, isGensetRow, bidKind, movesOldSet, cfgKva, cfgPower, taxKey, bdPrice, afterDiscount, lotGoods, LINE_OVER, profileOf, goodsGroup, compareCfg, candidates, sampleText, cfgLine, suggest, GROUP, LEVELS, MAX, POWER_TOL, SYNC_POWER_TOL, WIDE_TOL, STANDBY_FACTOR };
 })(typeof window !== "undefined" ? window : globalThis);
