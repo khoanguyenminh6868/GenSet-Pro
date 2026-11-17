@@ -1,0 +1,79 @@
+{
+  "id": "woodward",
+  "country": "US",
+  "role": "controller_maker",
+  "status": "incomplete",
+  "names": {
+    "en": "Woodward, Inc.",
+    "zh": null,
+    "brands": [
+      "Woodward",
+      "easYgen"
+    ]
+  },
+  "website": "https://www.woodward.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "strengths": [],
+  "certifications": [],
+  "productLines": [
+    {
+      "kind": "controller",
+      "series": "easYgen-3000XT",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        6001
+      ]
+    }
+  ],
+  "manufacturing": [
+    {
+      "country": "PL",
+      "city": "Kraków",
+      "scope": "manufacture",
+      "products": "easYgen-1500/2000/3000/3000XT, LS5, DTSC200, IKD1M",
+      "src": [
+        6001
+      ],
+      "quote": [
+        "All Stuttgart controls manufactured in Woodward Krakow,"
+      ],
+      "note": "Không áp dụng cho easYgen-800 (chưa xác minh)."
+    }
+  ],
+  "manufacturingNote": "easYgen-800: chưa xác minh nơi sản xuất (PDF hướng dẫn không đọc được); không ghi.",
+  "sources": [
+    {
+      "n": 6001,
+      "url": "https://support.woodward.com/en-US/kb/articles/ipcs-controls-products-pcba-s-are-conformal-coated-2",
+      "accessedAt": "2026-11-17",
+      "tier": "A",
+      "quote": [
+        "easYgen-1500/2000/3000/3000XT/LS5/DTSC200/IKD1M"
+      ],
+      "file": "sources/woodward/6001.md",
+      "official": true
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "năm thành lập",
+    "trụ sở",
+    "dải công suất (bộ điều khiển không có)",
+    "thông số bộ điều khiển"
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-17"
+}

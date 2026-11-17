@@ -1,0 +1,109 @@
+{
+  "id": "deif",
+  "country": "DK",
+  "role": "controller_maker",
+  "status": "incomplete",
+  "names": {
+    "en": "DEIF A/S",
+    "zh": null,
+    "brands": [
+      "DEIF"
+    ]
+  },
+  "website": "https://www.deif.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "strengths": [],
+  "certifications": [],
+  "productLines": [
+    {
+      "kind": "controller",
+      "series": "AGC 150 series",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        6001
+      ]
+    },
+    {
+      "kind": "controller",
+      "series": "iE 250 Intelligent Energy Controller",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        6001
+      ]
+    }
+  ],
+  "manufacturing": [
+    {
+      "country": "DK",
+      "city": "Skive",
+      "scope": "manufacture",
+      "products": "All products",
+      "src": [
+        6001,
+        6002
+      ],
+      "quote": [
+        "We manufacture all our products in-house at our Danish HQ in Skive",
+        "now being manufactured in Denmark"
+      ],
+      "note": "Bài 27/02/2024 nêu iE 250 sản xuất tại Đan Mạch."
+    }
+  ],
+  "sources": [
+    {
+      "n": 6001,
+      "url": "https://www.deif.com/land-power/",
+      "accessedAt": "2026-11-17",
+      "tier": "A",
+      "quote": [
+        "The AGC 150 series",
+        "iE 250 - Intelligent Energy Controller",
+        "We manufacture all our products in-house at our Danish HQ in Skive"
+      ],
+      "file": "sources/deif/6001.md",
+      "official": true
+    },
+    {
+      "n": 6002,
+      "url": "https://www.deif.com/news/state-of-the-art-controller-being-built-in-state-of-the-art-factory",
+      "accessedAt": "2026-11-17",
+      "tier": "A",
+      "quote": [
+        "now being manufactured in Denmark"
+      ],
+      "file": "sources/deif/6002.md",
+      "official": true
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "năm thành lập",
+    "trụ sở",
+    "dải công suất (bộ điều khiển không có)",
+    "thông số bộ điều khiển"
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-17"
+}
