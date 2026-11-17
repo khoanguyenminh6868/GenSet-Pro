@@ -32,7 +32,11 @@ for (const e of cat.engines) {
       const odd = figs.filter((g) => g.x !== mj.win && g.x != null);
       if (!odd.length) continue;
       const gk = `${e.key}|${key}|${mj.win}`;
-      const g = groups.get(gk) || { model: e.model, key, make: e.make || "", win: mj.win, votes: mj.votes, blocked: mj.blocked, rows: 0, odd: new Map() };
+      // bdadl-shanghai, fukangsi-yangzhou, pengpai-yangzhou chép chung một bảng: giá trị thắng khi bỏ cả ba (null = hết thắng).
+      const TRIO = new Set(["bdadl-shanghai", "fukangsi-yangzhou", "pengpai-yangzhou"]);
+      const noTrio = B.majorityOf(figs.filter((g) => !TRIO.has(g.sid)).map((g) => [g.sid, g.x]))?.win ?? null;
+      const bySid = {}; for (const g of figs) if (g.x != null) (bySid[g.x === B.BLOCK ? "X" : g.x] ||= new Set()).add(g.sid);
+      const g = groups.get(gk) || { model: e.model, key, make: e.make || "", win: mj.win, votes: mj.votes, blocked: mj.blocked, noTrio, who: Object.fromEntries(Object.entries(bySid).map(([v, s]) => [v, [...s].sort()])), rows: 0, odd: new Map() };
       g.rows++;
       for (const o of odd) {
         const ok = `${o.sid}|${o.f.n ?? ""}|${o.f.value}`;
@@ -46,7 +50,7 @@ for (const e of cat.engines) {
 const list = [...groups.values()].sort((a, b) => a.key.localeCompare(b.key) || a.model.localeCompare(b.model));
 const lines = [`Động cơ: ${models}; có giá trị thắng (disp/cyl, ít nhất một dòng): ${withWin}; model + thông số có nguồn ghi khác: ${list.length}`];
 for (const g of list) {
-  lines.push(`\n## ${g.make} ${g.model} · ${g.key} · thắng ${g.win} · phiếu ${JSON.stringify(g.votes)}${g.blocked ? ` · ${g.blocked} NCC không so được` : ""} · ${g.rows} dòng`);
+  lines.push(`\n## ${g.make} ${g.model} · ${g.key} · thắng ${g.win} · phiếu ${JSON.stringify(g.votes)}${g.blocked ? ` · ${g.blocked} NCC không so được` : ""} · ${g.rows} dòng · bỏ bộ ba bdadl/fukangsi/pengpai: ${g.noTrio ?? "KHÔNG CÒN THẮNG"}\n   NCC theo giá trị: ${JSON.stringify(g.who)}`);
   for (const o of g.odd.values()) lines.push(`   - ${o.sid} [${o.n}] «${o.label} | ${o.value}» → ${o.read}   ${o.line}`);
 }
 fs.writeFileSync(OUT, lines.join("\n"));
