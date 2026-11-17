@@ -83,6 +83,82 @@ test("lịch sử, mẫu cũ formValue.lotContent.Table: chỉ bảng của nhà
   assert.deepEqual(r.lots[0].goods, [{ name: "Máy phát điện 100 kVA", code: "C110D5", label: "", maker: "Cummins", origin: "Ấn Độ", year: "", qty: 2, unit: "Bộ", unitPrice: 694800000, desc: "Động cơ Cummins 6BTAA5.9-G2" }]);
 });
 
+// ---------- Rà soát lệch dòng / cột 17/11/2026: ca lấy từ dòng thô của trang thật (dumpH.cjs, 81 gói) ----------
+const hist = async (kq) => (await runSnippet("history-extract.js", { root: vueRoot({ dtlKqlcnt: { bideContractorInputResultDTO: kq } }), tables: [table(GOODS_HEADS)] }));
+const fv = (contractorCode, Table) => ({ formCode: "X", lotNo: "BP1", contractorCode, formValue: { lotContent: { Table, amount: 1 } } });
+
+test("lịch sử, mẫu hàng nhập khẩu (IB2300296794): trường unitPrice là thành tiền, đơn giá là priceIncludeTax", async () => {
+  const r296794 = { name: "Máy phát điện công suất ≥ 20 KVA", quantity: 100, unit: "Bộ", unitPrice: 60899000000, amount: 60899000000, amountBeforeTax: 60899000000, priceIncludeTax: 608990000, priceExcludeTax: 608990000 };
+  const r371415 = { name: "Tổ máy phát điện, 1 pha, 230V, 50Hz, 5kW", quantity: 10, unit: "Bộ", unitPrice: 4360000000, amount: 4708800000, amountBeforeTax: 4360000000, priceIncludeTax: 436000000, priceExcludeTax: 436000000 };
+  const kq = { lotResultDTO: [{ lotNo: "BP1", lotPrice: 66100000000, goodsList: JSON.stringify([fv("vn1", [r296794, r371415])]), contractorList: [c("vn1", "A", 60899000000, { bidResult: 1, bidWiningPrice: 60899000000 })] }] };
+  const g = (await hist(kq)).lots[0].goods;
+  assert.deepEqual(g.map((x) => [x.qty, x.unitPrice]), [[100, 608990000], [10, 436000000]], "trước đây 100 máy × 60,9 tỷ");
+});
+
+test("lịch sử: unitPrice trơ bằng thành tiền của dòng nhiều chiếc thì không là đơn giá; một chiếc hoặc không có thành tiền thì giữ", async () => {
+  const rows = [
+    { name: "A", quantity: 2, unitPrice: 4196880000, amount: 4196880000 },
+    { name: "B", quantity: 1, unitPrice: 500, amount: 500 },
+    { name: "C", quantity: 3, unitPrice: 700 },
+    { name: "D", quantity: 20, bidPrice: 119880000, amount: 2397600000 },
+  ];
+  const kq = { lotResultDTO: [{ lotNo: "BP1", lotPrice: 1, goodsList: JSON.stringify([fv("vn1", rows)]), contractorList: [c("vn1", "A", 1, { bidResult: 1 })] }] };
+  assert.deepEqual((await hist(kq)).lots[0].goods.map((x) => x.unitPrice), [null, 500, 700, 119880000]);
+});
+
+test("lịch sử, mẫu cũ lặp cả danh sách bảng (IB2200053768): bảng y hệt của cùng nhà thầu lấy một lần; dòng y hệt trong một bảng thì giữ", async () => {
+  const tab = [{ name: "Máy phát điện 1 pha, công suất 12,5KVA", quantity: 20, bidPrice: 119880000, amount: 2397600000 }, { name: "Tủ ATS 65A", quantity: 20, bidPrice: 3300000, amount: 66000000 }];
+  const other = [{ name: "Máy phát điện 1 pha, công suất 12,5KVA", quantity: 20, bidPrice: 117720000 }];
+  const kq = { lotResultDTO: [{ lotNo: "BP1", lotPrice: 2662000000, goodsList: JSON.stringify([fv("vn1", tab), fv("vn2", other), fv("vn1", tab), fv("vn2", other)]),
+    contractorList: [c("vn1", "A", 2463600000, { bidResult: 1, bidWiningPrice: 2463600000 }), c("vn2", "B", 2505600000)] }] };
+  const g = (await hist(kq)).lots[0].goods;
+  assert.deepEqual(g.map((x) => [x.name, x.qty, x.unitPrice]), [["Máy phát điện 1 pha, công suất 12,5KVA", 20, 119880000], ["Tủ ATS 65A", 20, 3300000]], "trước đây 4 dòng, Σ gấp đôi giá trúng");
+  // IB2200100465: cùng một món cho nhiều nơi nhận là dòng thật.
+  const same = { name: "Máy vi tính", quantity: 3, bidPrice: 14990000, amount: 44970000 };
+  const kq2 = { lotResultDTO: [{ lotNo: "BP1", lotPrice: 1, goodsList: JSON.stringify([fv("vn1", [same, same, same])]), contractorList: [c("vn1", "A", 1, { bidResult: 1 })] }] };
+  assert.equal((await hist(kq2)).lots[0].goods.length, 3);
+});
+
+test("lịch sử: bảng hàng hoá hơn 100 dòng không còn bị cắt (IB2300203745: 279 dòng)", async () => {
+  const rows = Array.from({ length: 279 }, (_, i) => ({ name: "Ắc quy " + i, quantity: 5, bidPrice: 2200000, amount: 11000000 }));
+  const kq = { lotResultDTO: [{ lotNo: "BP1", lotPrice: 1, goodsList: JSON.stringify([fv("vn1", rows)]), contractorList: [c("vn1", "A", 1, { bidResult: 1 })] }] };
+  const r = await hist(kq);
+  assert.equal(r.lots[0].goods.length, 279);
+  assert.equal(r.audit, undefined);
+});
+
+test("lịch sử, mẫu mảng dòng nhiều phần lô (IB2600064877): dòng của mọi phần nằm ở phần đầu, mỗi phần chỉ lấy dòng mang lotNo của nó", async () => {
+  const goods = [
+    { lotNo: "PP2600065830", contractorCode: KB, name: "Máy phát điện dầu 30kVA", unit: "Tổ máy", quantity: 312, origin: "Việt Nam", code: 8502, priceUnit: 116640000 },
+    { lotNo: "PP2600065831", contractorCode: VN, name: "Máy phát điện dầu 20kVA", unit: "Tổ máy", quantity: 1263, origin: "Trung Quốc", code: 8502, priceUnit: 93639251 },
+  ];
+  const kq = { lotResultDTO: [
+    { lotNo: "PP2600065830", lotPrice: 43804800000, goodsList: JSON.stringify(goods), contractorList: [c(VN, "VN", 39328086096), c(KB, "KB", 36391680000, { bidResult: 1, bidWiningPrice: 36391680000 })] },
+    { lotNo: "PP2600065831", lotPrice: 131245200720, goodsList: "[]", contractorList: [c(VN, "VN", 118266374013, { bidResult: 1, bidWiningPrice: 118266374013 }), c(KB, "KB", 122763600000)] },
+  ] };
+  const r = await hist(kq);
+  assert.deepEqual(r.lots.map((l) => l.goods.map((x) => [x.name, x.qty, x.unitPrice])), [[["Máy phát điện dầu 30kVA", 312, 116640000]], [["Máy phát điện dầu 20kVA", 1263, 93639251]]],
+    "trước đây phần 1 nhận cả hai dòng (Σ gấp 4,25 lần giá trúng), phần 2 không có dòng nào");
+  assert.equal(312 * 116640000, 36391680000);
+  assert.equal(1263 * 93639251, 118266374013);
+  assert.equal(r.audit, undefined);
+});
+
+test("lịch sử: mảng dòng không mang lotNo (gói một phần, IB2600041928) đọc như cũ", async () => {
+  const goods = [{ id: "x", name: "Màn hình giám sát điều khiển HMI", quantity: 2, unit: "Bộ", origin: "Đức", priceUnit: 29352240 }];
+  const kq = { lotResultDTO: [{ lotNo: "BP2500854425", lotPrice: 1, goodsList: JSON.stringify(goods), contractorList: [c("vn1", "A", 1, { bidResult: 1 })] }] };
+  assert.deepEqual((await hist(kq)).lots[0].goods.map((x) => [x.qty, x.unitPrice]), [[2, 29352240]]);
+});
+
+test("lịch sử: nhà thầu lặp trong danh sách của một phần, chỉ khác id (IB2200019427: trúng ba lần) chỉ lấy một", async () => {
+  const w = (id) => ({ id, ...c("vn0100684716", "A", 2462400000, { bidResult: 1, bidWiningPrice: 2462400000 }) });
+  const kq = { lotResultDTO: [{ lotNo: "BP2200166592", lotPrice: 2165000000, goodsList: "[]", contractorList: [{ id: "0", ...c("vn0400562719", "B", 2165000000) }, w("1"), w("2"), w("3")] }] };
+  const r = await hist(kq);
+  assert.deepEqual(r.lots[0].bidders.map((b) => [b.taxCode, b.won]), [["0400562719", false], ["0100684716", true]]);
+  const b = await runSnippet("bidders-extract.js", { root: vueRoot({ dtlKqlcnt: { bideContractorInputResultDTO: kq } }) });
+  assert.equal(b.list.length, 2);
+});
+
 test("lịch sử, kiểm mẫu bảng (Khoa 07/11): trường lạ có giá trị, khoá lạ của dsHhKq, cột lạ được báo; trường lạ rỗng thì không", async () => {
   const k = kq268027();
   const list = JSON.parse(k.lotResultDTO[0].goodsList);

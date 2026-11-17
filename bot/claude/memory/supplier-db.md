@@ -5,9 +5,10 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-17T00:50:58.684Z
+  modified: 2026-11-17T16:34:58.162Z
 ---
 
+- **Sửa cách đọc dữ liệu thì kiểm chéo TOÀN BỘ** (Khoa 17/11/2026, khi duyệt 7 đề xuất rà soát lệch dòng / cột: "cần cross check toàn bộ chứ không phải chỉ làm vài mẫu. Làm kỹ coi chừng sai"): so từng bản ghi trước / sau trên cả `suppliers/cn`, soát mọi lớp thay đổi, không lấy mẫu. Cách làm (diễn giải của em): `cmpP.cjs` / `revP.cjs` ở `genbid-work\dieu-phoi\dau-vao\ra-soat-lech-dong-cot\`.
 CSDL ở `suppliers/cn/<id>.json` (cả nước ngoài, `country` ghi nước thật). Mỗi thông tin có nguồn [n] + câu trích nguyên văn trong `sources/<id>/<n>.md`; `verify.mjs` kiểm bằng code; merge vào main thì workflow tự đăng web.
 
 **Why:** Khoa yêu cầu tuyệt đối không bịa, không suy ra thông tin NCC. Quy đổi chỉ bằng công thức `web/conversions.js`.
