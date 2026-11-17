@@ -33,7 +33,7 @@ const rows = [
   sup("bare", ["| b-1 | 750 | 600 | 4006-23TAG2A | S5L1D-H41 | 6 |"]),
 ];
 test("HSMT đòi thẳng hàng: dòng ghi chữ V bị loại kèm lý do; dòng thẳng hàng và dòng chỉ ghi số xi lanh ở lại", () => {
-  const r = run(rows, free("Số xi lanh: 6 xy lanh, bố trí thẳng hàng\n50 Hz"));
+  const r = run(rows, free("Số xi lanh: ≥ 6 xy lanh, bố trí thẳng hàng\n50 Hz"));
   assert.deepEqual(ids(r), ["bare", "line"]);
   assert.deepEqual(r.dropped.map((d) => [d.u.supplierId, d.ruled]), [["vee", ["layout"]]]);
 });
@@ -45,7 +45,7 @@ test("dòng không ghi bố trí: theo động cơ khi ÍT NHẤT HAI nhà cung 
   // "12V" dưới cột số xi lanh là thông số của động cơ (catalog đọc được); "12.V" chỉ đọc được ở chính dòng đó.
   const other = sup("other", ["| o-1 | 750 | 600 | KTA38-G2 | S5L1D-H41 | 12 |"]);
   const vee2 = sup("vee2", ["| w-1 | 750 | 600 | KTA38-G2 | S5L1D-H41 | 12V |"]), vee3 = sup("vee3", ["| x-1 | 750 | 600 | KTA38-G2 | S5L1D-H41 | 12V |"]);
-  const ask = free("Số xi lanh: 6 xy lanh, bố trí thẳng hàng\n50 Hz");
+  const ask = free("Số xi lanh: ≥ 6 xy lanh, bố trí thẳng hàng\n50 Hz");
   // Một nhà cung cấp ghi 12V (như aosif ghi nhầm "12V" cho KTA19-G9A): dòng của họ bị loại, dòng nhà khác ở lại.
   const r1 = run([...rows, vee2, other], ask);
   assert.ok(r1.dropped.some((d) => d.u.supplierId === "vee2" && d.ruled.includes("layout")));
@@ -61,6 +61,29 @@ test("dòng không ghi bố trí: theo động cơ khi ÍT NHẤT HAI nhà cung 
   // Hai nhà ghi thẳng hàng, hai nhà ghi chữ V: không xét, dòng không ghi bố trí ở lại.
   const clash2 = sup("clash2", ["| d-1 | 750 | 600 | KTA38-G2 | S5L1D-H41 | 12 L |"]);
   assert.ok(ids(run([...rows, vee2, vee3, other, clash, clash2], ask)).includes("other"));
+});
+
+// Khoa 17/11/2026: "nếu HSMT ghi rõ 6 thì nên loại 12".
+test("cylExact: HSMT ghi trơ số xi lanh là số chính xác; có ≥ / tối thiểu / trở lên thì vẫn là tối thiểu", () => {
+  const h = (t) => hintsOf(`Chương V. Yêu cầu kỹ thuật\n${t}`);
+  assert.deepEqual([h("12    Số xilanh                          6 xy lanh, bố trí thẳng hàng").minCyl, h("12    Số xilanh                          6 xy lanh, bố trí thẳng hàng").cylExact], [6, true]);
+  assert.deepEqual([h("Số xi lanh: 06").minCyl, h("Số xi lanh: 06").cylExact], [6, true]);
+  for (const t of ["Số xi lanh: ≥ 6", "Tối thiểu 06 xi lanh", "Số xi lanh: 6 trở lên", "Số xi lanh không nhỏ hơn 6"]) assert.deepEqual([h(t).minCyl, h(t).cylExact], [6, false], t);
+  assert.equal(h("Công suất liên tục 700 kVA").cylExact, false);
+});
+test("HSMT ghi rõ 6 xi lanh: dòng 12 xi lanh bị loại dù không ghi bố trí; dòng 6 xi lanh và dòng không ghi số ở lại", () => {
+  const twelve = sup("twelve", ["| t-1 | 750 | 600 | KTA38-GA | S5L1D-H41 | 12 |"]), none = sup("none", ["| n-1 | 750 | 600 | S6R2-PTAA | S5L1D-H41 | |"]);
+  const r = run([...rows, twelve, none], free("Số xi lanh: 6 xy lanh\n50 Hz"));
+  assert.deepEqual(ids(r), ["bare", "line", "none"]);
+  assert.deepEqual(r.dropped.map((d) => d.u.supplierId).sort(), ["twelve", "vee"]);
+  assert.ok(r.dropped.every((d) => d.ruled.includes("cyl")));
+  // "≥ 6": 12 xi lanh vẫn đạt (số trần có dấu ≥ là tối thiểu).
+  assert.deepEqual(ids(run([...rows, twelve, none], free("Số xi lanh: ≥ 6\n50 Hz"))), ["bare", "line", "none", "twelve", "vee"]);
+});
+test("HSMT ghi rõ 6 xi lanh: nguồn của động cơ mâu thuẫn về số xi lanh thì không xét dòng không ghi số", () => {
+  const a = sup("a", ["| a-1 | 750 | 600 | KTA38-GA | S5L1D-H41 | 12 |"]), b = sup("b", ["| b-1 | 750 | 600 | KTA38-GA | S5L1D-H41 | 6 |"]), c = sup("c", ["| c-1 | 750 | 600 | KTA38-GA | S5L1D-H41 | |"]);
+  const r = run([a, b, c], free("Số xi lanh: 6 xy lanh\n50 Hz"));
+  assert.deepEqual(ids(r), ["b", "c"]);
 });
 
 const B = "| Model | Prime kVA | Prime kW | Engine | Alternator |";

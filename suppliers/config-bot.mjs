@@ -858,14 +858,17 @@ const tankNear = (cell) => { const m = cell.match(DISP_LABEL) || cell.match(/(?:
 // "Tổng dung tích ≥ 19.6 lít" among the lines of the cylinders (bore, stroke, piston, compression ratio) is the engine's.
 const DISP_BARE = /^(?:.*\s)?(?:t[ổo]ng\s+)?dung t[íi]ch\s*(?::|≥|≤|<|>|\d|$)/i, ENGINE_LINES = /(?:xi|xy)[\s-]?lanh|piston|h[àa]nh tr[ìi]nh|đ[ườu]*ng k[ií]nh|t[ỷy] s[ốo] n[ée]n|compression|\bbore\b|\bstroke\b/i;
 export function engineMins(t) {
-  const { disp, dmax, cyl } = engineLists(t), one = (list) => (new Set(list).size === 1 ? list[0] : null);
-  return { minDisp: one(disp), maxDisp: one(dmax), minCyl: one(cyl), ...powerMins(t) };
+  const { disp, dmax, cyl, cylBare } = engineLists(t), one = (list) => (new Set(list).size === 1 ? list[0] : null);
+  // cylExact (Khoa, 2026-11-17: "nếu HSMT ghi rõ 6 thì nên loại 12"): every line that gives the cylinders gives the bare
+  // count ("6 xy lanh, bố trí thẳng hàng"), none a least ("≥ 6", "tối thiểu 06 xi lanh", "6 trở lên") or a most: the count
+  // is then the one asked, not a minimum, and candidates() leaves out an engine of another count.
+  return { minDisp: one(disp), maxDisp: one(dmax), minCyl: one(cyl), cylExact: one(cyl) != null && cylBare.length === cyl.length, ...powerMins(t) };
 }
 // Every figure of the minimums of the engine the text gives (engineMins takes the one value of each).
 export function engineLists(t) {
   // A table laid out in columns puts 40+ spaces between the label and its figure ("Số xilanh      ...      04"): one space.
   t = withoutOtherEquipment(unflatten(t));
-  const disp = [], dmax = [], cyl = [], lines = t.split("\n").map((l) => l.replace(/[ \t ]{2,}/g, " "));
+  const disp = [], dmax = [], cyl = [], cylBare = [], lines = t.split("\n").map((l) => l.replace(/[ \t ]{2,}/g, " "));
   lines.forEach((line, i) => {
     // A table cell often puts the label on one line and the figure on the next ("Dung tích xi lanh" / "11.051 L").
     // Only a figure with its sign or unit: a number alone is often the row number of the next item ("Số xy lanh: Nêu rõ" / "7").
@@ -898,9 +901,13 @@ export function engineLists(t) {
     else if (du) disp.push(lowered(/cc|cm/i.test(du[0]) ? Number(du[1].replace(/[.,]/, "")) / 1000 : Number(du[1].replace(",", ".")), du));
     const c = cell.match(/(?:≥|>=|tối thiểu|ít nhất)\s*:?\s*0?(\d{1,2})\s*(?:xi|xy)\s?lanh/i) || cell.match(/s[ốo]\s*(?:xi|xy)\s?lanh[^\d\n]{0,30}?\b0?(\d{1,2})\s*(?:xi|xy)?\s?(?:lanh)?\b/i)
       || line.match(/^\s*[-+•]?\s*0?(\d{1,2})\s*(?:xi|xy)\s?lanh/i);
-    if (c && Number(c[1]) >= 1 && Number(c[1]) <= 20) cyl.push(Number(c[1]));
+    if (c && Number(c[1]) >= 1 && Number(c[1]) <= 20) {
+      cyl.push(Number(c[1]));
+      // The bare count: no sign or word of a least or a most in the cell (cylExact, engineMins).
+      if (!AT_LEAST.test(cell) && !MAXIMUM.test(cell)) cylBare.push(Number(c[1]));
+    }
   });
-  return { disp, dmax, cyl };
+  return { disp, dmax, cyl, cylBare };
 }
 // ---------- Ngưỡng của HSMT theo từng cỡ máy (Khoa, 2026-11-12) ----------
 // A tender of several sizes has the minimums of each genset in the text of that genset (IB2600594596: "≥ 8 xy lanh,
@@ -1247,6 +1254,15 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       const dh0 = hints.maxDisp ? given.filter((f) => f.key === "disp").map((f) => dispOf(f.value, f)) : [], dh = dh0.filter((x) => x != null && x !== BLOCK);
       if (dh.length && !dh0.includes(BLOCK) && dh.every((x) => x > hints.maxDisp * 1.005)) { score -= 600; ruled.push("maxDisp"); why.push(`dung tích ${dh[0]} L > ${hints.maxDisp} L HSMT cho phép`); }
       if (cl != null) { score -= 600; ruled.push("cyl"); why.push(`${cl} xi lanh < ${hints.minCyl} HSMT yêu cầu`); }
+      // The HSMT gives the bare count (cylExact, Khoa 2026-11-17): another count by every source that gives one, the
+      // row's own cell first ("12V", "12.V"), is left out too (a 12-cylinder engine for "6 xy lanh"). Sources that
+      // disagree on the count: not judged, as for the minimums.
+      else if (hints.minCyl && hints.cylExact) {
+        const cnt = (v) => { const m = String(v ?? "").match(/\d{1,2}/); return m ? Number(m[0]) : null; };
+        const ownC = [...(u.specs || []).filter((f) => f.key === "cyl").map((f) => cnt(f.value)), ...(u.line ? CAT.cellsOf(u.line).filter((c) => /^\s*(?:\d{1,2}\s*[.\-]\s*[VL]|[VL]\s*-?\s*\d{1,2})\s*$/i.test(c)).map(cnt) : [])].filter((x) => x != null);
+        const cs = ownC.length ? ownC : ef.filter((f) => f.key === "cyl").map((f) => cnt(f.value)).filter((x) => x != null);
+        if (cs.length && cs.every((x) => x !== hints.minCyl)) { score -= 600; ruled.push("cyl"); why.push(`${cs[0]} xi lanh, HSMT ghi ${hints.minCyl} xi lanh`); }
+      }
       // The row's prime output (catalog.js reads it from the column titles) below the prime the HSMT asks for.
       const pr = u.power?.prime, mp = hints.minPrime;
       const lowPrime = pr && mp && ((mp.kVA && pr.kVA != null && pr.kVA < mp.kVA * 0.995) || (!mp.kVA && mp.kW && pr.kW != null && pr.kW < mp.kW * 0.995));
