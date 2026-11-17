@@ -17,7 +17,7 @@ Describe 'GenBid-Bot.ps1: vòng quét' {
             [pscustomobject]@{ RawContentStream = (New-Object IO.MemoryStream (, [Text.Encoding]::UTF8.GetBytes(($global:Pend | ConvertTo-Json -Depth 8)))) }
         }
         function global:Start-Process {
-            param($FilePath, $ArgumentList, $WorkingDirectory, $WindowStyle, [switch]$PassThru)
+            param($FilePath, $ArgumentList, $WorkingDirectory, $WindowStyle, [switch]$NoNewWindow, [switch]$PassThru)
             $global:Spawned += , @{ File = $FilePath; Args = @($ArgumentList) }
             [pscustomobject]@{ Id = 424200 + $global:Spawned.Count; Handle = 1; StartTime = [datetime]'2026-11-13 08:00:00'; HasExited = $false; ExitCode = $null }
         }

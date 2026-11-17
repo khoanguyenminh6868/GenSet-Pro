@@ -595,6 +595,25 @@ if ($Job) {
 $mutex = New-Object Threading.Mutex($false, 'Global\GenBidBot')
 if (-not $mutex.WaitOne(0)) { Write-Host 'Bot GenBid đã chạy ở cửa sổ khác.'; exit 0 }
 Log "Bot GenBid bắt đầu: quét mỗi $PollSeconds giây, các lượt chạy song song."
+# Tác vụ "GenBid Bot" chạy qua conhost --headless (Khoa 17/11/2026): không nháy cửa sổ, và Start-ScheduledTask từ phiên Claude
+# không treo như powershell.exe trực tiếp (treo 2 lần ngày 17/11, chưa chạy dòng nào). Máy có tác vụ kiểu cũ thì sửa luôn ở đây
+# (áp dụng lần chạy sau). Bấm End tác vụ chỉ tắt conhost, không tắt bot: bot nhớ conhost của mình và tự thoát khi nó mất.
+$script:HostPid = 0
+if (-not $OnLinux -and -not $Once) {
+    try {
+        $t = Get-ScheduledTask 'GenBid Bot' -ErrorAction SilentlyContinue
+        if ($t -and $t.Actions[0].Execute -ne 'conhost.exe') {
+            $act = New-ScheduledTaskAction -Execute 'conhost.exe' -WorkingDirectory $Root `
+                -Argument "--headless powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$PSCommandPath`""
+            Set-ScheduledTask -TaskName 'GenBid Bot' -Action $act | Out-Null
+            Log "Đã sửa tác vụ 'GenBid Bot' chạy qua conhost --headless (áp dụng lần bật sau)."
+        }
+        $me = Get-CimInstance Win32_Process -Filter "ProcessId=$PID"
+        $par = Get-CimInstance Win32_Process -Filter "ProcessId=$($me.ParentProcessId)"
+        if ($par.Name -eq 'conhost.exe') { $script:HostPid = [int]$par.ProcessId }
+        else { Log "Bot không chạy qua tác vụ 'GenBid Bot' (cha: $($par.Name)): End tác vụ sẽ không tắt được bot này." }
+    } catch { Log "Không kiểm được tác vụ 'GenBid Bot': $($_.Exception.Message)" }
+}
 if ($script:PauseUntil -gt (Get-Date)) { Log "Đang tạm dừng gọi Agent tới $($script:PauseUntil.ToString('HH:mm')) (hết hạn mức)." }
 $warned = @{}
 # Tệp lượt -> tiến trình con do vòng quét này khởi động (đọc được mã thoát).
@@ -608,11 +627,13 @@ function Start-Lane([string]$lane, [string[]]$sigs, [hashtable]$extra = @{}, [st
     foreach ($k in $extra.Keys) { $info[$k] = $extra[$k] }
     [IO.File]::WriteAllText($file, ($info | ConvertTo-Json), $Utf8)
     $q = { param($v) '"' + $v + '"' }
-    $argList = @('-NoProfile') + $(if (-not $OnLinux) { @('-ExecutionPolicy', 'Bypass', '-WindowStyle', 'Hidden') }) + @('-File', (& $q $PSCommandPath), '-Job', (& $q $file),
+    $argList = @('-NoProfile') + $(if (-not $OnLinux) { @('-ExecutionPolicy', 'Bypass') }) + @('-File', (& $q $PSCommandPath), '-Job', (& $q $file),
         '-Root', (& $q $Root), '-Endpoint', (& $q $Endpoint), '-RepoDir', (& $q $RepoDir), '-LightModel', $LightModel, '-DeepModel', $DeepModel,
         '-PollSeconds', $PollSeconds, '-RunTimeoutMinutes', $RunTimeoutMinutes, '-LimitPauseMinutes', $LimitPauseMinutes) + $(if ($Resume) { '-Resume' })
-    $p = if ($OnLinux) { Start-Process $PsExe -ArgumentList $argList -WorkingDirectory $Root -PassThru }
-         else { Start-Process $PsExe -ArgumentList $argList -WorkingDirectory $Root -WindowStyle Hidden -PassThru }
+    # Windows: the lane shares this bot's console (-NoNewWindow), the hidden one of conhost --headless when the task runs it.
+    # A new console of its own (-WindowStyle Hidden) still flashed a window, Windows Terminal being the default console
+    # (Khoa 17/11/2026). Tried: the lane keeps running when this bot or its conhost is stopped, and Resume follows it as before.
+    $p = Start-Process $PsExe -ArgumentList $argList -WorkingDirectory $Root -NoNewWindow -PassThru
     try { $null = $p.Handle } catch {}  # giữ handle để đọc được ExitCode khi tiến trình kết thúc (Linux: không có Handle)
     $info.pid = $p.Id; $info.started = $p.StartTime.ToString('o')
     [IO.File]::WriteAllText($file, ($info | ConvertTo-Json), $Utf8)
@@ -728,6 +749,10 @@ try {
         }
         if ($Once) { break }
         Start-Sleep -Seconds $PollSeconds
+        if ($script:HostPid -and -not (Get-Process -Id $script:HostPid -ErrorAction SilentlyContinue)) {
+            Log 'Tác vụ "GenBid Bot" đã dừng (End): bot thoát; lượt con đang chạy làm nốt, lần bật sau theo dõi tiếp.'
+            break
+        }
     }
 } finally {
     $mutex.ReleaseMutex()
