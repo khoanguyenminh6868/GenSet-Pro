@@ -72,3 +72,19 @@ test("Gợi ý NCC: bỏ hãng không có trong danh sách đã đưa; nhận đ
     assert.match(result.notes.join("\n"), /model "C999" không khớp dòng nào/);
   } finally { fs.rmSync(dir, { recursive: true, force: true }); }
 });
+
+test("giá trúng của gói từ danh sách tìm kiếm: nhà thầu lặp làm gấp ba (IB2200019427: 7,39 tỷ ↔ 2,46 tỷ) thì bỏ, không đoán", () => {
+  const lots = [{ bidders: [{ won: false, winPrice: null }, { won: true, winPrice: 2462400000 }] }];
+  assert.equal(P.histWinningPrice(7387200000, lots), null);
+  assert.equal(P.histWinningPrice(2462400000, lots), 2462400000);
+  assert.equal(P.histWinningPrice(2462400000 * 1.004, lots), 2462400000 * 1.004, "sai số làm tròn trong 0,5%");
+  // liên danh: mỗi thành viên mang giá của lô, tổng đã là mức tối đa
+  const jv = [{ bidders: [{ won: true, winPrice: 100 }, { won: true, winPrice: 100 }] }];
+  assert.equal(P.histWinningPrice(100, jv), 100);
+  // hai phần: giá trúng của gói là tổng hai phần
+  assert.equal(P.histWinningPrice(300, [{ bidders: [{ won: true, winPrice: 100 }] }, { bidders: [{ won: true, winPrice: 200 }] }]), 300);
+  // nhà thầu trúng không có giá: không có gì để kiểm, giữ
+  assert.equal(P.histWinningPrice(7387200000, [{ bidders: [{ won: true, winPrice: null }] }]), 7387200000);
+  assert.equal(P.histWinningPrice(5, []), 5);
+  assert.equal(P.histWinningPrice(null, lots), null);
+});

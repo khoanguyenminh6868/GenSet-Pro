@@ -61,6 +61,21 @@ function histTender(t) {
     winningPrice: sum(t.bidWinningPrice),
   };
 }
+// winningPrice of the search list adds the winning price of every contractor row of the tender; a contractor listed several times
+// triples it (IB2200019427: 7,39 tỷ = 3 × 2,46 tỷ, giá gói 2,5 tỷ; rà soát 18/11/2026). The result page's own winners are the
+// check: a list figure above every winning price of the lots added together (a joint venture's members each carry the lot's
+// price, so this sum is already the most the tender can have) is not true, and nothing says which figure is: null, not a guess.
+// Any winner of the result page without a price leaves the list figure as it is (nothing to check it by).
+function histWinningPrice(listPrice, lots) {
+  const p = Number(listPrice);
+  if (!(p > 0)) return listPrice ?? null;
+  let top = 0;
+  for (const l of lots || []) for (const b of (l.bidders || []).filter((x) => x.won)) {
+    if (!(Number(b.winPrice) > 0)) return listPrice;
+    top += Number(b.winPrice);
+  }
+  return top > 0 && p > top * 1.005 ? null : listPrice;
+}
 const POWER_RE = /(\d+(?:[.,]\d+)?)\s*(kva|kw|mva)\b/gi;
 // Also "Công suất liên tục (kW/kVA) ≥ 100/125": the unit pair before the value pair.
 const POWER_PAIR_RE = /\(\s*kw\s*\/\s*kva\s*\)[^\d\n]{0,12}(\d+(?:[.,]\d+)?)\s*\/\s*(\d+(?:[.,]\d+)?)/gi;
@@ -973,7 +988,7 @@ const withNormHighlights = (result) => [...(Array.isArray(result?.highlights) ? 
 module.exports = {
   NORM_BANDS, normPower, noiseLimits, fuelLimits, normHighlights, withNormHighlights,
   feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF, FIELDS, FIELD_DEFAULT, fieldsOf, searchTermsOf, mergeFound, API_PRICE, usageUsd, spendMeter,
-  sig, isDecisionFile, isGpkd, HIST_PREFIX, has, GENSET_RE, PLANT_RE, SET_RE, isGenset, vnTime, histUrl, histTender,
+  sig, isDecisionFile, isGpkd, HIST_PREFIX, has, GENSET_RE, PLANT_RE, SET_RE, isGenset, vnTime, histUrl, histTender, histWinningPrice,
   POWER_RE, POWER_PAIR_RE, histNum, histPower, histNeedsConfig, CONFIG_TEXT_MAX, CONFIG_KEY, configText, setsOf,
   histConfigOf, histTbmtUrl, CFG_FILE_RE, CFG_SKIP_RE, SPEC_TITLE_RE, plainVi, chapterV, specsPick, specsFinish,
   SERVICE_RE, BUY_SET_RE, isServiceTender, NOTICE_MAX, GOODS_MAX, WEBFORM_MAX, KEEP, splitSections,

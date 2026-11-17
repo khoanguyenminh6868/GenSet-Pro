@@ -530,3 +530,30 @@ test("costHints: địa điểm trên đảo / vùng xa → vận chuyển xa; �
   assert.deepEqual(BP.costHints(null), []);
   assert.deepEqual(BP.costHints(undefined), []);
 });
+
+// ---------- Chốt chặn số sai của nguồn (rà soát 18/11/2026, lech-cot-10) ----------
+test("afterDiscount / bdPrice: giá sau giảm cao hơn giá dự thầu là số sai của nguồn, bỏ (IB2500312373 phần 2: 25,056 tỷ ↔ 62,64 tỷ)", () => {
+  const b = { bidPrice: 25056000000, finalPrice: 62640000000, winPrice: 25056000000 };
+  assert.equal(BP.afterDiscount(b), null);
+  assert.equal(BP.bdPrice(b), 25056000000);
+  assert.equal(BP.bdPrice({ bidPrice: 950, finalPrice: 900 }), 900); // giảm giá thật vẫn thắng
+  assert.equal(BP.bdPrice({ bidPrice: 1000, finalPrice: 1000.5 }), 1000.5); // làm tròn trong 0,1%
+  assert.equal(BP.bdPrice({ bidPrice: null, finalPrice: 777 }), 777); // không có giá dự thầu thì không có gì để so
+  assert.equal(BP.bdPrice({ bidPrice: 500 }), 500);
+});
+
+test("lotGoods: dòng có số lượng × đơn giá lớn hơn cả lô là thành tiền gõ vào ô đơn giá, bỏ đơn giá (IB2500304762 phần 2)", () => {
+  const lot = { price: 1114437014, bidders: [{ won: true, bidPrice: 974185700, finalPrice: 974185700, winPrice: 974185700 }, { won: false, bidPrice: 9e12 }],
+    goods: [{ name: "Thép hình chữ I 300*150*8*13", qty: 60, unit: "m", unitPrice: 96000000 }, { name: "Thép chữ U", qty: 468, unitPrice: 11232000 },
+      { name: "Thép tấm 25 THK", qty: 960, unitPrice: 24000 }, { name: "Bộ hiển thị mức", qty: 1, unitPrice: 81400000 }, { name: "không giá", qty: 3 }] };
+  const g = BP.lotGoods(lot);
+  assert.deepEqual(g.map((x) => x.unitPrice), [null, null, 24000, 81400000, undefined]);
+  assert.deepEqual(g.map((x) => x.qty), [60, 468, 960, 1, 3]); // số lượng, tên giữ
+  assert.equal(lot.goods[0].unitPrice, 96000000, "không sửa dữ liệu gốc");
+});
+
+test("lotGoods: đơn giá chưa giảm (cao hơn giá trúng 1,16 lần) và dòng của lô không có giá để so đều giữ", () => {
+  const lot = { price: 1303732800, bidders: [{ won: true, winPrice: 1121210208 }], goods: [{ name: "Tổ máy 250 KVA", qty: 2, unitPrice: 651866400 }] }; // IB2200068759
+  assert.equal(BP.lotGoods(lot)[0].unitPrice, 651866400);
+  assert.equal(BP.lotGoods({ goods: [{ name: "x", qty: 5, unitPrice: 1e12 }] })[0].unitPrice, 1e12);
+});
