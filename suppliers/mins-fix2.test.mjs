@@ -65,3 +65,15 @@ test("rows left out say how many sources gave the figure (one table row alone, f
   assert.equal(r.dropped[0].src.disp.sources >= 1, true);
   assert.equal(typeof r.dropped[0].src.disp.n, "number");
 });
+
+// hints-audit.mjs 2026-11-17 (soat-nguong-2): số xi lanh. Dòng thật của HSMT.
+test("\"Số xilanh >3\" là mức tối thiểu, không phải số chính xác (IB2400063033)", async () => {
+  const { engineMins } = await import("./config-bot.mjs");
+  const m = engineMins("5 Dung tích xilanh >1.64 lít Đạt Không đạt\n8 Ti số nén >19:1 Đạt Không đạt\n9 Số xilanh >3 Đạt Không đạt");
+  assert.equal(m.cylExact, false);
+});
+test("giá trị lệch dòng \"Số xilanh, đường kính x hành trình mm: 2.197\" không là 2 xi lanh (IB2200029975)", async () => {
+  const { engineMins } = await import("./config-bot.mjs");
+  const m = engineMins("Kiểu động cơ: 25.0/1500\nCông suất động cơ kW/Tốc độ⁻¹: 4 - 87 x 92.4\nSố xilanh, đường kính x hành trình mm: 2.197\nDung tích xilanh L: ASTM No. 2 Diesel Fuel hoặc tương đương");
+  assert.equal(m.minCyl, null);
+});

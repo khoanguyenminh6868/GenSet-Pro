@@ -93,3 +93,21 @@ test("nhãn mức tải đứng TRƯỚC con số (dòng trên hoặc cùng dòn
   const b = free("Tiêu hao nhiên liệu ở 100% tải ≤ 105 lít/giờ\nTiêu hao nhiên liệu ở 75% tải ≤ 80 lít/giờ\nmức 50% tải");
   assert.deepEqual([b.maxFuel, b.maxFuel75, b.maxFuel50], [105, 80, null]);
 });
+
+// hints-audit.mjs 2026-11-17 (soat-nguong-2): mức tải đứng SAU con số, có chữ dẫn hoặc gãy dòng. Dòng thật của HSMT.
+test("mức 75% tải sau con số với chữ dẫn: số của mức 75%, không phải mức 100% (IB2300204857, IB2300230061, IB2400389666, IB2500261097)", () => {
+  for (const [line, v] of [
+    ["1.8\nMức tiêu thụ nhiên liệu\n≤ 34 Lít/ giờ với mức 75% tải (chế độ vận hành liên tục)", 34],
+    ["3.9 Tiêu thụ nhiên liệu ≤ 23 lít/giờ ở chế độ hoạt động 75% tải liên tục", 23],
+    ["8      Tiêu hao nhiên liệu                ≤53 L/h (khi mức tải là 75%)", 53],
+    ["- Tiêu thụ nhiên liệu: ≤ 85 L/h (khi mức tải là 75%).", 85],
+  ]) { const h = free(line); assert.deepEqual([h.maxFuel, h.maxFuel75], [null, v], line); }
+});
+test("≤23 L/h (khi mức tải là / 75%) gãy dòng (IB2500073242)", () => {
+  const h = free(" 7    Nhiên liệu                 Dầu Diesel\n                                 ≤23 L/h (khi mức tải là\n 8    Tiêu hao nhiên liệu\n                                 75%)\n                            Dài ≤3100mm");
+  assert.deepEqual([h.maxFuel, h.maxFuel75], [null, 23]);
+});
+test("nhãn 'hoạt động 75% tải' xuống dòng dưới con số (IB2600438484): 150.1 là mức 75%, 198.2 là mức 100%", () => {
+  const h = free("13    Hệ thống đốt                    Loại phun nhiên liệu trực tiếp\n14    Tiêu hao nhiên liệu ở mức ≤ 150.1 lít/giờ\n      hoạt động 75% tải\n15    Tiêu hao nhiên liệu ở mức ≤ 198.2 lít/giờ\n      hoạt động 100% tải");
+  assert.deepEqual([h.maxFuel, h.maxFuel75], [198.2, 150.1]);
+});
