@@ -55,32 +55,6 @@
   },
   {
    "rank": 3,
-   "engine": "Cummins 6LTAA9.5-G1",
-   "alternator": "Bobig BW-314DS",
-   "controller": "Deep Sea DSE7320",
-   "named": null,
-   "suppliers": [
-    "bobig-power:111",
-    "fdk-energy:102",
-    "victory-generator:110"
-   ],
-   "checks": {
-    "genset": "4/2/8/9",
-    "engine": "7/0/2/0",
-    "alternator": "1/0/7/0",
-    "controller": "1/0/4/0"
-   },
-   "unverifiedChecks": 0,
-   "notMet": [
-    "Đồng bộ thương hiệu",
-    "Kích thước"
-   ],
-   "lossWarn": [
-    "fuel_consumption_50:unclear"
-   ]
-  },
-  {
-   "rank": 4,
    "engine": "Yuchai YC6MK420-D30",
    "alternator": "Nianfeng NIANFENG NF314E",
    "controller": "Deep Sea DSE7320",
@@ -102,10 +76,12 @@
     "Hãng đầu phát",
     "Hãng bộ điều khiển"
    ],
-   "lossWarn": []
+   "lossWarn": [
+    "fuel_consumption_50:unclear"
+   ]
   },
   {
-   "rank": 5,
+   "rank": 4,
    "engine": "Yuchai YC6MK420L-D20",
    "alternator": "Nianfeng NIANFENG NF314E",
    "controller": "Deep Sea DSE7320",
@@ -130,7 +106,7 @@
    "lossWarn": []
   },
   {
-   "rank": 6,
+   "rank": 5,
    "engine": "Weichai WP10D320E200",
    "alternator": "Nianfeng NIANFENG NF314E",
    "controller": "Deep Sea DSE7320",
