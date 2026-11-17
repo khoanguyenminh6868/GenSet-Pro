@@ -42,6 +42,12 @@ test("\"N xy lanh\" giữa câu tả động cơ (IB2200032133, IB2200012854, IB
   // "tối thiều" (OCR) vẫn là tối thiểu
   assert.equal(engineMins("2. | Kiểu động cơ: 4 thì, tối thiều 2 xi lanh.").cylExact, false);
 });
+test("số dính chữ trước \"xy lanh\" (OCR \"S6\" = \"Số\") không là số xi lanh; ngưỡng là \"> 4\" (IB2400313681)", () => {
+  const m = engineMins("5 | S6 xy lanh, kiểu b tri > 4 thắng hàng Dat Không dat");
+  assert.notEqual(m.minCyl, 6);
+  assert.equal(m.cylExact, false);
+  assert.equal(engineMins("Động cơ: 6 xilanh, bố trí thẳng hàng, tỷ số nén ≥ 17: 1").minCyl, 6);
+});
 test("không đọc: nhiều lựa chọn, động cơ xuồng, đường kính xi lanh, \"≤ 6\"", () => {
   assert.equal(engineMins("Engine type: 4 strokes, 6 or 8- or 12-cylinder").minCyl, null);
   assert.equal(engineMins("Kiểu động cơ: 4 thì, 6 hoặc 8 xi lanh").minCyl, null);

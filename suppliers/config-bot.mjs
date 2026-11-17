@@ -866,7 +866,10 @@ const CYL_LABEL = /(?:s[ốo]\s*(?:l[ưu][ợo]ng\s*)?(?:xi|xy)[\s-]*lanh|s[ốo
 function inlineCyl(line) {
   if (!/đ[ộo]ng c[ơo]|\bth[ìi]\b|\bk[ỳy]\b|ki[ểe]u|lo[ạa]i|engine|diesel|k[ếe]t c[ấa]u|c[ấa]u h[ìi]nh|th[ẳa]ng\s*h[àa]ng|ch[ữu]\s*V\b|b[ốo] tr[íi]/i.test(line)) return null;
   if (/ho[ặa]c|\bor\b|xu[ồo]ng|\bt[àa]u\b|ca\s*n[ôo]|xe\s+(?:n[âa]ng|t[ảa]i|c[ẩa]u)/i.test(line)) return null;
-  const all = [...line.matchAll(/(?<![\d×*\/-]\s?)(?<![\d.,]|\bx\s?)0?(\d{1,2})\s*(?:xi|xy)[\s-]?lanh/gi)]
+  // Not a figure glued to a letter: "5 | S6 xy lanh, kiểu b tri > 4 thắng hàng" (IB2400313681, OCR of "Số") is no 6 cylinders;
+  // nor a line that gives the count with a sign before the layout ("> 4 thắng hàng"): the count is that least, read above.
+  if (/(?:≥|>=|>|tối thiểu)\s*0?\d{1,2}\s*,?\s*(?:th[ẳắa]ng\s*h[àa]ng|(?:h[ìi]nh\s*)?ch[ữu]\s*V\b)/i.test(line)) return null;
+  const all = [...line.matchAll(/(?<![\d×*\/-]\s?)(?<![\p{L}\d.,]|\bx\s?)0?(\d{1,2})\s*(?:xi|xy)[\s-]?lanh/giu)]
     .filter((m) => !/(?:đ[ườu]*ng k[ií]nh|h[àa]nh tr[ìi]nh|dung t[íi]ch|bore|stroke)[^\d]{0,15}$/i.test(line.slice(Math.max(0, m.index - 30), m.index)));
   return all.length && all.every((m) => m[1] === all[0][1]) ? all[0] : null;
 }
