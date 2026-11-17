@@ -1,0 +1,1754 @@
+[
+ {
+  "cap": "0.5 kVA",
+  "fitsOld": 0,
+  "fitsNew": 0,
+  "rows95_140": 0,
+  "rows100_140": 0,
+  "rowsNew": 0
+ },
+ {
+  "cap": "2 kVA",
+  "fitsOld": 16,
+  "fitsNew": 14,
+  "rows95_140": 3,
+  "rows100_140": 3,
+  "rowsNew": 2
+ },
+ {
+  "cap": "3 kVA",
+  "fitsOld": 19,
+  "fitsNew": 19,
+  "rows95_140": 3,
+  "rows100_140": 3,
+  "rowsNew": 1
+ },
+ {
+  "cap": "3 kW",
+  "fitsOld": 14,
+  "fitsNew": 14,
+  "rows95_140": 4,
+  "rows100_140": 4,
+  "rowsNew": 3
+ },
+ {
+  "cap": "4.5 kVA",
+  "fitsOld": 44,
+  "fitsNew": 39,
+  "rows95_140": 15,
+  "rows100_140": 15,
+  "rowsNew": 4
+ },
+ {
+  "cap": "5 kVA",
+  "fitsOld": 48,
+  "fitsNew": 44,
+  "rows95_140": 17,
+  "rows100_140": 17,
+  "rowsNew": 9
+ },
+ {
+  "cap": "5 kW",
+  "fitsOld": 40,
+  "fitsNew": 27,
+  "rows95_140": 48,
+  "rows100_140": 48,
+  "rowsNew": 22
+ },
+ {
+  "cap": "5.1 kVA",
+  "fitsOld": 48,
+  "fitsNew": 44,
+  "rows95_140": 17,
+  "rows100_140": 16,
+  "rowsNew": 7
+ },
+ {
+  "cap": "5.5 kVA",
+  "fitsOld": 49,
+  "fitsNew": 44,
+  "rows95_140": 18,
+  "rows100_140": 18,
+  "rowsNew": 14
+ },
+ {
+  "cap": "5.5 kW",
+  "fitsOld": 40,
+  "fitsNew": 36,
+  "rows95_140": 50,
+  "rows100_140": 50,
+  "rowsNew": 20
+ },
+ {
+  "cap": "5.6 kVA",
+  "fitsOld": 49,
+  "fitsNew": 44,
+  "rows95_140": 18,
+  "rows100_140": 18,
+  "rowsNew": 14
+ },
+ {
+  "cap": "6 kVA",
+  "fitsOld": 61,
+  "fitsNew": 48,
+  "rows95_140": 21,
+  "rows100_140": 21,
+  "rowsNew": 16
+ },
+ {
+  "cap": "6.25 kVA",
+  "fitsOld": 61,
+  "fitsNew": 49,
+  "rows95_140": 27,
+  "rows100_140": 27,
+  "rowsNew": 14
+ },
+ {
+  "cap": "6.5 kVA",
+  "fitsOld": 72,
+  "fitsNew": 49,
+  "rows95_140": 49,
+  "rows100_140": 47,
+  "rowsNew": 10
+ },
+ {
+  "cap": "7 kVA",
+  "fitsOld": 72,
+  "fitsNew": 61,
+  "rows95_140": 47,
+  "rows100_140": 47,
+  "rowsNew": 17
+ },
+ {
+  "cap": "7 kW",
+  "fitsOld": 50,
+  "fitsNew": 50,
+  "rows95_140": 55,
+  "rows100_140": 55,
+  "rowsNew": 55
+ },
+ {
+  "cap": "7.2 kVA",
+  "fitsOld": 93,
+  "fitsNew": 61,
+  "rows95_140": 54,
+  "rows100_140": 54,
+  "rowsNew": 20
+ },
+ {
+  "cap": "7.5 kVA",
+  "fitsOld": 93,
+  "fitsNew": 72,
+  "rows95_140": 54,
+  "rows100_140": 54,
+  "rowsNew": 47
+ },
+ {
+  "cap": "8 kVA",
+  "fitsOld": 93,
+  "fitsNew": 72,
+  "rows95_140": 54,
+  "rows100_140": 54,
+  "rowsNew": 47
+ },
+ {
+  "cap": "8 kW",
+  "fitsOld": 69,
+  "fitsNew": 50,
+  "rows95_140": 56,
+  "rows100_140": 55,
+  "rowsNew": 41
+ },
+ {
+  "cap": "8.3 kVA",
+  "fitsOld": 93,
+  "fitsNew": 72,
+  "rows95_140": 54,
+  "rows100_140": 52,
+  "rowsNew": 44
+ },
+ {
+  "cap": "8.5 kVA",
+  "fitsOld": 93,
+  "fitsNew": 93,
+  "rows95_140": 53,
+  "rows100_140": 52,
+  "rowsNew": 52
+ },
+ {
+  "cap": "8.7 kVA",
+  "fitsOld": 93,
+  "fitsNew": 93,
+  "rows95_140": 53,
+  "rows100_140": 52,
+  "rowsNew": 51
+ },
+ {
+  "cap": "8.8 kVA",
+  "fitsOld": 93,
+  "fitsNew": 93,
+  "rows95_140": 53,
+  "rows100_140": 52,
+  "rowsNew": 51
+ },
+ {
+  "cap": "9 kVA",
+  "fitsOld": 93,
+  "fitsNew": 93,
+  "rows95_140": 53,
+  "rows100_140": 53,
+  "rowsNew": 51
+ },
+ {
+  "cap": "9.5 kVA",
+  "fitsOld": 93,
+  "fitsNew": 93,
+  "rows95_140": 53,
+  "rows100_140": 53,
+  "rowsNew": 39
+ },
+ {
+  "cap": "10 kW",
+  "fitsOld": 70,
+  "fitsNew": 69,
+  "rows95_140": 60,
+  "rows100_140": 60,
+  "rowsNew": 59
+ },
+ {
+  "cap": "10 kVA",
+  "fitsOld": 93,
+  "fitsNew": 92,
+  "rows95_140": 53,
+  "rows100_140": 53,
+  "rowsNew": 43
+ },
+ {
+  "cap": "10.4 kVA",
+  "fitsOld": 92,
+  "fitsNew": 92,
+  "rows95_140": 53,
+  "rows100_140": 52,
+  "rowsNew": 28
+ },
+ {
+  "cap": "10.5 kVA",
+  "fitsOld": 92,
+  "fitsNew": 92,
+  "rows95_140": 53,
+  "rows100_140": 52,
+  "rowsNew": 40
+ },
+ {
+  "cap": "11 kVA",
+  "fitsOld": 95,
+  "fitsNew": 92,
+  "rows95_140": 60,
+  "rows100_140": 60,
+  "rowsNew": 52
+ },
+ {
+  "cap": "11 kW",
+  "fitsOld": 74,
+  "fitsNew": 70,
+  "rows95_140": 62,
+  "rows100_140": 61,
+  "rowsNew": 56
+ },
+ {
+  "cap": "12 kW",
+  "fitsOld": 76,
+  "fitsNew": 70,
+  "rows95_140": 70,
+  "rows100_140": 70,
+  "rowsNew": 56
+ },
+ {
+  "cap": "12 kVA",
+  "fitsOld": 95,
+  "fitsNew": 92,
+  "rows95_140": 60,
+  "rows100_140": 60,
+  "rowsNew": 52
+ },
+ {
+  "cap": "12.5 kVA",
+  "fitsOld": 95,
+  "fitsNew": 94,
+  "rows95_140": 60,
+  "rows100_140": 60,
+  "rowsNew": 60
+ },
+ {
+  "cap": "13 kVA",
+  "fitsOld": 97,
+  "fitsNew": 94,
+  "rows95_140": 62,
+  "rows100_140": 59,
+  "rowsNew": 57
+ },
+ {
+  "cap": "13.5 kVA",
+  "fitsOld": 96,
+  "fitsNew": 94,
+  "rows95_140": 62,
+  "rows100_140": 61,
+  "rowsNew": 56
+ },
+ {
+  "cap": "13.5 kW",
+  "fitsOld": 78,
+  "fitsNew": 76,
+  "rows95_140": 72,
+  "rows100_140": 71,
+  "rowsNew": 68
+ },
+ {
+  "cap": "13.7 kVA",
+  "fitsOld": 96,
+  "fitsNew": 94,
+  "rows95_140": 61,
+  "rows100_140": 61,
+  "rowsNew": 56
+ },
+ {
+  "cap": "14 kVA",
+  "fitsOld": 96,
+  "fitsNew": 94,
+  "rows95_140": 61,
+  "rows100_140": 61,
+  "rowsNew": 56
+ },
+ {
+  "cap": "15 kVA",
+  "fitsOld": 105,
+  "fitsNew": 96,
+  "rows95_140": 71,
+  "rows100_140": 71,
+  "rowsNew": 57
+ },
+ {
+  "cap": "15 kW",
+  "fitsOld": 89,
+  "fitsNew": 78,
+  "rows95_140": 80,
+  "rows100_140": 80,
+  "rowsNew": 71
+ },
+ {
+  "cap": "15.2 kW",
+  "fitsOld": 89,
+  "fitsNew": 78,
+  "rows95_140": 80,
+  "rows100_140": 78,
+  "rowsNew": 67
+ },
+ {
+  "cap": "16 kVA",
+  "fitsOld": 105,
+  "fitsNew": 96,
+  "rows95_140": 71,
+  "rows100_140": 71,
+  "rowsNew": 39
+ },
+ {
+  "cap": "16 kW",
+  "fitsOld": 89,
+  "fitsNew": 78,
+  "rows95_140": 79,
+  "rows100_140": 79,
+  "rowsNew": 68
+ },
+ {
+  "cap": "17 kVA",
+  "fitsOld": 106,
+  "fitsNew": 105,
+  "rows95_140": 75,
+  "rows100_140": 75,
+  "rowsNew": 69
+ },
+ {
+  "cap": "18 kVA",
+  "fitsOld": 108,
+  "fitsNew": 105,
+  "rows95_140": 80,
+  "rows100_140": 80,
+  "rowsNew": 69
+ },
+ {
+  "cap": "18 kW",
+  "fitsOld": 93,
+  "fitsNew": 89,
+  "rows95_140": 80,
+  "rows100_140": 80,
+  "rowsNew": 70
+ },
+ {
+  "cap": "20 kVA",
+  "fitsOld": 109,
+  "fitsNew": 106,
+  "rows95_140": 79,
+  "rows100_140": 79,
+  "rowsNew": 71
+ },
+ {
+  "cap": "20 kW",
+  "fitsOld": 93,
+  "fitsNew": 91,
+  "rows95_140": 80,
+  "rows100_140": 79,
+  "rowsNew": 78
+ },
+ {
+  "cap": "22 kVA",
+  "fitsOld": 112,
+  "fitsNew": 109,
+  "rows95_140": 80,
+  "rows100_140": 80,
+  "rowsNew": 69
+ },
+ {
+  "cap": "23 kVA",
+  "fitsOld": 112,
+  "fitsNew": 108,
+  "rows95_140": 80,
+  "rows100_140": 79,
+  "rowsNew": 70
+ },
+ {
+  "cap": "24 kW",
+  "fitsOld": 98,
+  "fitsNew": 92,
+  "rows95_140": 82,
+  "rows100_140": 82,
+  "rowsNew": 74
+ },
+ {
+  "cap": "24 kVA",
+  "fitsOld": 111,
+  "fitsNew": 108,
+  "rows95_140": 79,
+  "rows100_140": 78,
+  "rowsNew": 70
+ },
+ {
+  "cap": "25 kVA",
+  "fitsOld": 111,
+  "fitsNew": 111,
+  "rows95_140": 79,
+  "rows100_140": 79,
+  "rowsNew": 78
+ },
+ {
+  "cap": "26 kVA",
+  "fitsOld": 111,
+  "fitsNew": 111,
+  "rows95_140": 79,
+  "rows100_140": 76,
+  "rowsNew": 74
+ },
+ {
+  "cap": "27 kVA",
+  "fitsOld": 112,
+  "fitsNew": 111,
+  "rows95_140": 82,
+  "rows100_140": 82,
+  "rowsNew": 74
+ },
+ {
+  "cap": "27 kW",
+  "fitsOld": 98,
+  "fitsNew": 98,
+  "rows95_140": 81,
+  "rows100_140": 81,
+  "rowsNew": 75
+ },
+ {
+  "cap": "28.6 kVA",
+  "fitsOld": 114,
+  "fitsNew": 111,
+  "rows95_140": 82,
+  "rows100_140": 82,
+  "rowsNew": 74
+ },
+ {
+  "cap": "30 kVA",
+  "fitsOld": 114,
+  "fitsNew": 111,
+  "rows95_140": 82,
+  "rows100_140": 82,
+  "rowsNew": 76
+ },
+ {
+  "cap": "31 kVA",
+  "fitsOld": 114,
+  "fitsNew": 111,
+  "rows95_140": 82,
+  "rows100_140": 75,
+  "rowsNew": 54
+ },
+ {
+  "cap": "32 kW",
+  "fitsOld": 99,
+  "fitsNew": 98,
+  "rows95_140": 81,
+  "rows100_140": 81,
+  "rowsNew": 70
+ },
+ {
+  "cap": "33 kVA",
+  "fitsOld": 115,
+  "fitsNew": 113,
+  "rows95_140": 81,
+  "rows100_140": 81,
+  "rowsNew": 69
+ },
+ {
+  "cap": "34 kVA",
+  "fitsOld": 115,
+  "fitsNew": 114,
+  "rows95_140": 81,
+  "rows100_140": 81,
+  "rowsNew": 75
+ },
+ {
+  "cap": "35 kVA",
+  "fitsOld": 115,
+  "fitsNew": 114,
+  "rows95_140": 81,
+  "rows100_140": 81,
+  "rowsNew": 75
+ },
+ {
+  "cap": "36 kVA",
+  "fitsOld": 116,
+  "fitsNew": 113,
+  "rows95_140": 84,
+  "rows100_140": 83,
+  "rowsNew": 73
+ },
+ {
+  "cap": "36 kW",
+  "fitsOld": 104,
+  "fitsNew": 99,
+  "rows95_140": 86,
+  "rows100_140": 86,
+  "rowsNew": 78
+ },
+ {
+  "cap": "37 kVA",
+  "fitsOld": 115,
+  "fitsNew": 113,
+  "rows95_140": 83,
+  "rows100_140": 83,
+  "rowsNew": 73
+ },
+ {
+  "cap": "37.5 kVA",
+  "fitsOld": 115,
+  "fitsNew": 114,
+  "rows95_140": 83,
+  "rows100_140": 83,
+  "rowsNew": 79
+ },
+ {
+  "cap": "40 kVA",
+  "fitsOld": 115,
+  "fitsNew": 114,
+  "rows95_140": 83,
+  "rows100_140": 81,
+  "rowsNew": 71
+ },
+ {
+  "cap": "40 kW",
+  "fitsOld": 104,
+  "fitsNew": 100,
+  "rows95_140": 85,
+  "rows100_140": 85,
+  "rowsNew": 77
+ },
+ {
+  "cap": "42 kVA",
+  "fitsOld": 115,
+  "fitsNew": 114,
+  "rows95_140": 82,
+  "rows100_140": 80,
+  "rowsNew": 77
+ },
+ {
+  "cap": "44 kVA",
+  "fitsOld": 115,
+  "fitsNew": 114,
+  "rows95_140": 82,
+  "rows100_140": 82,
+  "rowsNew": 77
+ },
+ {
+  "cap": "45 kVA",
+  "fitsOld": 115,
+  "fitsNew": 114,
+  "rows95_140": 85,
+  "rows100_140": 85,
+  "rowsNew": 77
+ },
+ {
+  "cap": "48 kW",
+  "fitsOld": 103,
+  "fitsNew": 103,
+  "rows95_140": 86,
+  "rows100_140": 86,
+  "rowsNew": 80
+ },
+ {
+  "cap": "50 kVA",
+  "fitsOld": 115,
+  "fitsNew": 115,
+  "rows95_140": 85,
+  "rows100_140": 85,
+  "rowsNew": 78
+ },
+ {
+  "cap": "50 kW",
+  "fitsOld": 104,
+  "fitsNew": 103,
+  "rows95_140": 86,
+  "rows100_140": 85,
+  "rowsNew": 80
+ },
+ {
+  "cap": "51.5 kW",
+  "fitsOld": 104,
+  "fitsNew": 103,
+  "rows95_140": 85,
+  "rows100_140": 84,
+  "rowsNew": 71
+ },
+ {
+  "cap": "53 kVA",
+  "fitsOld": 115,
+  "fitsNew": 115,
+  "rows95_140": 83,
+  "rows100_140": 83,
+  "rowsNew": 79
+ },
+ {
+  "cap": "55 kVA",
+  "fitsOld": 115,
+  "fitsNew": 115,
+  "rows95_140": 86,
+  "rows100_140": 86,
+  "rowsNew": 82
+ },
+ {
+  "cap": "60 kVA",
+  "fitsOld": 115,
+  "fitsNew": 115,
+  "rows95_140": 86,
+  "rows100_140": 86,
+  "rowsNew": 80
+ },
+ {
+  "cap": "62.5 kVA",
+  "fitsOld": 115,
+  "fitsNew": 114,
+  "rows95_140": 86,
+  "rows100_140": 85,
+  "rowsNew": 80
+ },
+ {
+  "cap": "63 kVA",
+  "fitsOld": 115,
+  "fitsNew": 114,
+  "rows95_140": 86,
+  "rows100_140": 85,
+  "rowsNew": 78
+ },
+ {
+  "cap": "65 kVA",
+  "fitsOld": 114,
+  "fitsNew": 114,
+  "rows95_140": 85,
+  "rows100_140": 84,
+  "rowsNew": 72
+ },
+ {
+  "cap": "65 kW",
+  "fitsOld": 106,
+  "fitsNew": 104,
+  "rows95_140": 81,
+  "rows100_140": 79,
+  "rowsNew": 64
+ },
+ {
+  "cap": "66 kVA",
+  "fitsOld": 114,
+  "fitsNew": 114,
+  "rows95_140": 85,
+  "rows100_140": 84,
+  "rowsNew": 66
+ },
+ {
+  "cap": "68 kVA",
+  "fitsOld": 114,
+  "fitsNew": 114,
+  "rows95_140": 84,
+  "rows100_140": 84,
+  "rowsNew": 83
+ },
+ {
+  "cap": "70 kVA",
+  "fitsOld": 114,
+  "fitsNew": 114,
+  "rows95_140": 84,
+  "rows100_140": 81,
+  "rowsNew": 80
+ },
+ {
+  "cap": "72.5 kVA",
+  "fitsOld": 114,
+  "fitsNew": 114,
+  "rows95_140": 85,
+  "rows100_140": 82,
+  "rowsNew": 80
+ },
+ {
+  "cap": "72.8 kVA",
+  "fitsOld": 114,
+  "fitsNew": 114,
+  "rows95_140": 82,
+  "rows100_140": 82,
+  "rowsNew": 80
+ },
+ {
+  "cap": "75 kW",
+  "fitsOld": 106,
+  "fitsNew": 106,
+  "rows95_140": 81,
+  "rows100_140": 81,
+  "rowsNew": 77
+ },
+ {
+  "cap": "75 kVA",
+  "fitsOld": 114,
+  "fitsNew": 114,
+  "rows95_140": 82,
+  "rows100_140": 82,
+  "rowsNew": 80
+ },
+ {
+  "cap": "78 kVA",
+  "fitsOld": 114,
+  "fitsNew": 114,
+  "rows95_140": 82,
+  "rows100_140": 77,
+  "rowsNew": 73
+ },
+ {
+  "cap": "80 kVA",
+  "fitsOld": 114,
+  "fitsNew": 114,
+  "rows95_140": 77,
+  "rows100_140": 77,
+  "rowsNew": 72
+ },
+ {
+  "cap": "80 kW",
+  "fitsOld": 104,
+  "fitsNew": 104,
+  "rows95_140": 81,
+  "rows100_140": 81,
+  "rowsNew": 77
+ },
+ {
+  "cap": "82 kVA",
+  "fitsOld": 114,
+  "fitsNew": 114,
+  "rows95_140": 79,
+  "rows100_140": 78,
+  "rowsNew": 62
+ },
+ {
+  "cap": "82.5 kVA",
+  "fitsOld": 114,
+  "fitsNew": 114,
+  "rows95_140": 80,
+  "rows100_140": 78,
+  "rowsNew": 60
+ },
+ {
+  "cap": "86 kW",
+  "fitsOld": 104,
+  "fitsNew": 104,
+  "rows95_140": 82,
+  "rows100_140": 82,
+  "rowsNew": 75
+ },
+ {
+  "cap": "88 kW",
+  "fitsOld": 104,
+  "fitsNew": 104,
+  "rows95_140": 82,
+  "rows100_140": 82,
+  "rowsNew": 76
+ },
+ {
+  "cap": "100 kVA",
+  "fitsOld": 113,
+  "fitsNew": 113,
+  "rows95_140": 83,
+  "rows100_140": 83,
+  "rowsNew": 79
+ },
+ {
+  "cap": "102 kVA",
+  "fitsOld": 113,
+  "fitsNew": 113,
+  "rows95_140": 83,
+  "rows100_140": 82,
+  "rowsNew": 68
+ },
+ {
+  "cap": "110 kVA",
+  "fitsOld": 113,
+  "fitsNew": 113,
+  "rows95_140": 85,
+  "rows100_140": 85,
+  "rowsNew": 77
+ },
+ {
+  "cap": "110 kW",
+  "fitsOld": 103,
+  "fitsNew": 101,
+  "rows95_140": 82,
+  "rows100_140": 82,
+  "rowsNew": 80
+ },
+ {
+  "cap": "113 kW",
+  "fitsOld": 102,
+  "fitsNew": 101,
+  "rows95_140": 82,
+  "rows100_140": 82,
+  "rowsNew": 80
+ },
+ {
+  "cap": "116 kVA",
+  "fitsOld": 113,
+  "fitsNew": 113,
+  "rows95_140": 85,
+  "rows100_140": 83,
+  "rowsNew": 73
+ },
+ {
+  "cap": "118 kVA",
+  "fitsOld": 113,
+  "fitsNew": 113,
+  "rows95_140": 85,
+  "rows100_140": 83,
+  "rowsNew": 75
+ },
+ {
+  "cap": "120 kVA",
+  "fitsOld": 113,
+  "fitsNew": 113,
+  "rows95_140": 84,
+  "rows100_140": 83,
+  "rowsNew": 75
+ },
+ {
+  "cap": "125 kVA",
+  "fitsOld": 113,
+  "fitsNew": 113,
+  "rows95_140": 84,
+  "rows100_140": 84,
+  "rowsNew": 83
+ },
+ {
+  "cap": "135 kVA",
+  "fitsOld": 113,
+  "fitsNew": 113,
+  "rows95_140": 85,
+  "rows100_140": 85,
+  "rowsNew": 83
+ },
+ {
+  "cap": "136 kW",
+  "fitsOld": 101,
+  "fitsNew": 101,
+  "rows95_140": 81,
+  "rows100_140": 81,
+  "rowsNew": 79
+ },
+ {
+  "cap": "137 kVA",
+  "fitsOld": 113,
+  "fitsNew": 113,
+  "rows95_140": 85,
+  "rows100_140": 84,
+  "rowsNew": 82
+ },
+ {
+  "cap": "150 kVA",
+  "fitsOld": 114,
+  "fitsNew": 112,
+  "rows95_140": 87,
+  "rows100_140": 87,
+  "rowsNew": 82
+ },
+ {
+  "cap": "151 kVA",
+  "fitsOld": 114,
+  "fitsNew": 112,
+  "rows95_140": 87,
+  "rows100_140": 82,
+  "rowsNew": 64
+ },
+ {
+  "cap": "160 kVA",
+  "fitsOld": 114,
+  "fitsNew": 112,
+  "rows95_140": 82,
+  "rows100_140": 82,
+  "rowsNew": 76
+ },
+ {
+  "cap": "163 kVA",
+  "fitsOld": 114,
+  "fitsNew": 112,
+  "rows95_140": 83,
+  "rows100_140": 83,
+  "rowsNew": 76
+ },
+ {
+  "cap": "165 kVA",
+  "fitsOld": 114,
+  "fitsNew": 112,
+  "rows95_140": 83,
+  "rows100_140": 83,
+  "rowsNew": 75
+ },
+ {
+  "cap": "175 kW",
+  "fitsOld": 104,
+  "fitsNew": 103,
+  "rows95_140": 82,
+  "rows100_140": 82,
+  "rowsNew": 81
+ },
+ {
+  "cap": "175 kVA",
+  "fitsOld": 115,
+  "fitsNew": 114,
+  "rows95_140": 84,
+  "rows100_140": 84,
+  "rowsNew": 81
+ },
+ {
+  "cap": "180 kVA",
+  "fitsOld": 120,
+  "fitsNew": 114,
+  "rows95_140": 87,
+  "rows100_140": 86,
+  "rowsNew": 78
+ },
+ {
+  "cap": "180 kW",
+  "fitsOld": 105,
+  "fitsNew": 103,
+  "rows95_140": 82,
+  "rows100_140": 82,
+  "rowsNew": 81
+ },
+ {
+  "cap": "182 kVA",
+  "fitsOld": 120,
+  "fitsNew": 114,
+  "rows95_140": 87,
+  "rows100_140": 86,
+  "rowsNew": 78
+ },
+ {
+  "cap": "195 kVA",
+  "fitsOld": 120,
+  "fitsNew": 114,
+  "rows95_140": 85,
+  "rows100_140": 84,
+  "rowsNew": 78
+ },
+ {
+  "cap": "196 kVA",
+  "fitsOld": 120,
+  "fitsNew": 114,
+  "rows95_140": 85,
+  "rows100_140": 84,
+  "rowsNew": 78
+ },
+ {
+  "cap": "200 kVA",
+  "fitsOld": 120,
+  "fitsNew": 115,
+  "rows95_140": 84,
+  "rows100_140": 84,
+  "rowsNew": 79
+ },
+ {
+  "cap": "200 kW",
+  "fitsOld": 106,
+  "fitsNew": 104,
+  "rows95_140": 82,
+  "rows100_140": 82,
+  "rowsNew": 81
+ },
+ {
+  "cap": "220 kVA",
+  "fitsOld": 123,
+  "fitsNew": 120,
+  "rows95_140": 87,
+  "rows100_140": 87,
+  "rowsNew": 83
+ },
+ {
+  "cap": "240 kVA",
+  "fitsOld": 122,
+  "fitsNew": 118,
+  "rows95_140": 87,
+  "rows100_140": 87,
+  "rowsNew": 81
+ },
+ {
+  "cap": "250 kVA",
+  "fitsOld": 123,
+  "fitsNew": 122,
+  "rows95_140": 88,
+  "rows100_140": 88,
+  "rowsNew": 86
+ },
+ {
+  "cap": "250 kW",
+  "fitsOld": 107,
+  "fitsNew": 107,
+  "rows95_140": 88,
+  "rows100_140": 86,
+  "rowsNew": 83
+ },
+ {
+  "cap": "275 kVA",
+  "fitsOld": 120,
+  "fitsNew": 118,
+  "rows95_140": 89,
+  "rows100_140": 89,
+  "rowsNew": 82
+ },
+ {
+  "cap": "275 kW",
+  "fitsOld": 107,
+  "fitsNew": 107,
+  "rows95_140": 87,
+  "rows100_140": 87,
+  "rowsNew": 84
+ },
+ {
+  "cap": "300 kVA",
+  "fitsOld": 119,
+  "fitsNew": 118,
+  "rows95_140": 91,
+  "rows100_140": 91,
+  "rowsNew": 84
+ },
+ {
+  "cap": "320 kVA",
+  "fitsOld": 117,
+  "fitsNew": 116,
+  "rows95_140": 88,
+  "rows100_140": 88,
+  "rowsNew": 81
+ },
+ {
+  "cap": "325 kVA",
+  "fitsOld": 117,
+  "fitsNew": 116,
+  "rows95_140": 88,
+  "rows100_140": 88,
+  "rowsNew": 81
+ },
+ {
+  "cap": "330 kVA",
+  "fitsOld": 117,
+  "fitsNew": 116,
+  "rows95_140": 88,
+  "rows100_140": 87,
+  "rowsNew": 80
+ },
+ {
+  "cap": "338 kVA",
+  "fitsOld": 117,
+  "fitsNew": 117,
+  "rows95_140": 88,
+  "rows100_140": 87,
+  "rowsNew": 84
+ },
+ {
+  "cap": "350 kVA",
+  "fitsOld": 118,
+  "fitsNew": 117,
+  "rows95_140": 87,
+  "rows100_140": 87,
+  "rowsNew": 86
+ },
+ {
+  "cap": "354 kVA",
+  "fitsOld": 118,
+  "fitsNew": 117,
+  "rows95_140": 87,
+  "rows100_140": 86,
+  "rowsNew": 84
+ },
+ {
+  "cap": "375 kVA",
+  "fitsOld": 124,
+  "fitsNew": 117,
+  "rows95_140": 92,
+  "rows100_140": 92,
+  "rowsNew": 84
+ },
+ {
+  "cap": "377 kVA",
+  "fitsOld": 124,
+  "fitsNew": 117,
+  "rows95_140": 92,
+  "rows100_140": 91,
+  "rowsNew": 82
+ },
+ {
+  "cap": "380 kVA",
+  "fitsOld": 124,
+  "fitsNew": 117,
+  "rows95_140": 92,
+  "rows100_140": 91,
+  "rowsNew": 82
+ },
+ {
+  "cap": "400 kVA",
+  "fitsOld": 124,
+  "fitsNew": 118,
+  "rows95_140": 91,
+  "rows100_140": 91,
+  "rowsNew": 83
+ },
+ {
+  "cap": "400 kW",
+  "fitsOld": 110,
+  "fitsNew": 104,
+  "rows95_140": 90,
+  "rows100_140": 90,
+  "rowsNew": 87
+ },
+ {
+  "cap": "405 kVA",
+  "fitsOld": 124,
+  "fitsNew": 117,
+  "rows95_140": 91,
+  "rows100_140": 90,
+  "rowsNew": 81
+ },
+ {
+  "cap": "410 kVA",
+  "fitsOld": 124,
+  "fitsNew": 117,
+  "rows95_140": 91,
+  "rows100_140": 90,
+  "rowsNew": 81
+ },
+ {
+  "cap": "414 kW",
+  "fitsOld": 110,
+  "fitsNew": 104,
+  "rows95_140": 90,
+  "rows100_140": 87,
+  "rowsNew": 74
+ },
+ {
+  "cap": "425 kW",
+  "fitsOld": 109,
+  "fitsNew": 106,
+  "rows95_140": 88,
+  "rows100_140": 87,
+  "rowsNew": 84
+ },
+ {
+  "cap": "440 kVA",
+  "fitsOld": 124,
+  "fitsNew": 123,
+  "rows95_140": 89,
+  "rows100_140": 88,
+  "rowsNew": 88
+ },
+ {
+  "cap": "450 kVA",
+  "fitsOld": 124,
+  "fitsNew": 123,
+  "rows95_140": 90,
+  "rows100_140": 89,
+  "rowsNew": 88
+ },
+ {
+  "cap": "460 kVA",
+  "fitsOld": 124,
+  "fitsNew": 123,
+  "rows95_140": 89,
+  "rows100_140": 89,
+  "rowsNew": 87
+ },
+ {
+  "cap": "465 kW",
+  "fitsOld": 109,
+  "fitsNew": 108,
+  "rows95_140": 89,
+  "rows100_140": 88,
+  "rowsNew": 85
+ },
+ {
+  "cap": "475 kVA",
+  "fitsOld": 125,
+  "fitsNew": 123,
+  "rows95_140": 89,
+  "rows100_140": 89,
+  "rowsNew": 87
+ },
+ {
+  "cap": "480 kVA",
+  "fitsOld": 125,
+  "fitsNew": 123,
+  "rows95_140": 89,
+  "rows100_140": 89,
+  "rowsNew": 87
+ },
+ {
+  "cap": "480 kW",
+  "fitsOld": 109,
+  "fitsNew": 109,
+  "rows95_140": 89,
+  "rows100_140": 89,
+  "rowsNew": 85
+ },
+ {
+  "cap": "500 kVA",
+  "fitsOld": 125,
+  "fitsNew": 124,
+  "rows95_140": 91,
+  "rows100_140": 91,
+  "rowsNew": 87
+ },
+ {
+  "cap": "500 kW",
+  "fitsOld": 109,
+  "fitsNew": 109,
+  "rows95_140": 89,
+  "rows100_140": 89,
+  "rowsNew": 87
+ },
+ {
+  "cap": "530 kVA",
+  "fitsOld": 120,
+  "fitsNew": 119,
+  "rows95_140": 90,
+  "rows100_140": 87,
+  "rowsNew": 81
+ },
+ {
+  "cap": "550 kVA",
+  "fitsOld": 120,
+  "fitsNew": 120,
+  "rows95_140": 87,
+  "rows100_140": 87,
+  "rowsNew": 83
+ },
+ {
+  "cap": "560 kVA",
+  "fitsOld": 120,
+  "fitsNew": 118,
+  "rows95_140": 87,
+  "rows100_140": 87,
+  "rowsNew": 83
+ },
+ {
+  "cap": "581 kVA",
+  "fitsOld": 118,
+  "fitsNew": 118,
+  "rows95_140": 88,
+  "rows100_140": 88,
+  "rowsNew": 83
+ },
+ {
+  "cap": "584 kVA",
+  "fitsOld": 119,
+  "fitsNew": 118,
+  "rows95_140": 88,
+  "rows100_140": 88,
+  "rowsNew": 85
+ },
+ {
+  "cap": "600 kVA",
+  "fitsOld": 119,
+  "fitsNew": 118,
+  "rows95_140": 88,
+  "rows100_140": 88,
+  "rowsNew": 86
+ },
+ {
+  "cap": "600 kW",
+  "fitsOld": 104,
+  "fitsNew": 104,
+  "rows95_140": 83,
+  "rows100_140": 83,
+  "rowsNew": 81
+ },
+ {
+  "cap": "625 kVA",
+  "fitsOld": 119,
+  "fitsNew": 117,
+  "rows95_140": 88,
+  "rows100_140": 87,
+  "rowsNew": 86
+ },
+ {
+  "cap": "630 kVA",
+  "fitsOld": 119,
+  "fitsNew": 115,
+  "rows95_140": 88,
+  "rows100_140": 85,
+  "rowsNew": 83
+ },
+ {
+  "cap": "650 kVA",
+  "fitsOld": 119,
+  "fitsNew": 115,
+  "rows95_140": 87,
+  "rows100_140": 85,
+  "rowsNew": 83
+ },
+ {
+  "cap": "660 kVA",
+  "fitsOld": 117,
+  "fitsNew": 115,
+  "rows95_140": 85,
+  "rows100_140": 84,
+  "rowsNew": 81
+ },
+ {
+  "cap": "700 kVA",
+  "fitsOld": 116,
+  "fitsNew": 114,
+  "rows95_140": 83,
+  "rows100_140": 82,
+  "rowsNew": 81
+ },
+ {
+  "cap": "706 kVA",
+  "fitsOld": 115,
+  "fitsNew": 114,
+  "rows95_140": 83,
+  "rows100_140": 79,
+  "rowsNew": 78
+ },
+ {
+  "cap": "750 kVA",
+  "fitsOld": 117,
+  "fitsNew": 115,
+  "rows95_140": 82,
+  "rows100_140": 81,
+  "rowsNew": 78
+ },
+ {
+  "cap": "800 kVA",
+  "fitsOld": 117,
+  "fitsNew": 114,
+  "rows95_140": 82,
+  "rows100_140": 82,
+  "rowsNew": 77
+ },
+ {
+  "cap": "820 kVA",
+  "fitsOld": 118,
+  "fitsNew": 114,
+  "rows95_140": 83,
+  "rows100_140": 81,
+  "rowsNew": 72
+ },
+ {
+  "cap": "825 kVA",
+  "fitsOld": 117,
+  "fitsNew": 114,
+  "rows95_140": 83,
+  "rows100_140": 81,
+  "rowsNew": 72
+ },
+ {
+  "cap": "850 kVA",
+  "fitsOld": 117,
+  "fitsNew": 116,
+  "rows95_140": 81,
+  "rows100_140": 81,
+  "rowsNew": 78
+ },
+ {
+  "cap": "880 kVA",
+  "fitsOld": 117,
+  "fitsNew": 116,
+  "rows95_140": 81,
+  "rows100_140": 79,
+  "rowsNew": 76
+ },
+ {
+  "cap": "900 kVA",
+  "fitsOld": 117,
+  "fitsNew": 116,
+  "rows95_140": 84,
+  "rows100_140": 82,
+  "rowsNew": 77
+ },
+ {
+  "cap": "990 kVA",
+  "fitsOld": 117,
+  "fitsNew": 117,
+  "rows95_140": 83,
+  "rows100_140": 83,
+  "rowsNew": 77
+ },
+ {
+  "cap": "1000 kW",
+  "fitsOld": 104,
+  "fitsNew": 101,
+  "rows95_140": 86,
+  "rows100_140": 86,
+  "rowsNew": 85
+ },
+ {
+  "cap": "1000 kVA",
+  "fitsOld": 118,
+  "fitsNew": 117,
+  "rows95_140": 83,
+  "rows100_140": 83,
+  "rowsNew": 77
+ },
+ {
+  "cap": "1100 kVA",
+  "fitsOld": 116,
+  "fitsNew": 115,
+  "rows95_140": 84,
+  "rows100_140": 84,
+  "rowsNew": 79
+ },
+ {
+  "cap": "1133 kVA",
+  "fitsOld": 116,
+  "fitsNew": 113,
+  "rows95_140": 84,
+  "rows100_140": 83,
+  "rowsNew": 76
+ },
+ {
+  "cap": "1200 kW",
+  "fitsOld": 92,
+  "fitsNew": 92,
+  "rows95_140": 77,
+  "rows100_140": 75,
+  "rowsNew": 73
+ },
+ {
+  "cap": "1250 kVA",
+  "fitsOld": 114,
+  "fitsNew": 114,
+  "rows95_140": 84,
+  "rows100_140": 84,
+  "rowsNew": 83
+ },
+ {
+  "cap": "1265 kVA",
+  "fitsOld": 114,
+  "fitsNew": 109,
+  "rows95_140": 84,
+  "rows100_140": 77,
+  "rowsNew": 76
+ },
+ {
+  "cap": "1275 kVA",
+  "fitsOld": 114,
+  "fitsNew": 109,
+  "rows95_140": 84,
+  "rows100_140": 77,
+  "rowsNew": 76
+ },
+ {
+  "cap": "1400 kVA",
+  "fitsOld": 109,
+  "fitsNew": 108,
+  "rows95_140": 76,
+  "rows100_140": 76,
+  "rowsNew": 74
+ },
+ {
+  "cap": "1500 kVA",
+  "fitsOld": 108,
+  "fitsNew": 108,
+  "rows95_140": 78,
+  "rows100_140": 77,
+  "rowsNew": 72
+ },
+ {
+  "cap": "1500 kW",
+  "fitsOld": 90,
+  "fitsNew": 90,
+  "rows95_140": 71,
+  "rows100_140": 71,
+  "rowsNew": 70
+ },
+ {
+  "cap": "1600 kVA",
+  "fitsOld": 107,
+  "fitsNew": 107,
+  "rows95_140": 70,
+  "rows100_140": 68,
+  "rowsNew": 64
+ },
+ {
+  "cap": "1600 kW",
+  "fitsOld": 86,
+  "fitsNew": 85,
+  "rows95_140": 71,
+  "rows100_140": 71,
+  "rowsNew": 69
+ },
+ {
+  "cap": "1650 kVA",
+  "fitsOld": 107,
+  "fitsNew": 107,
+  "rows95_140": 71,
+  "rows100_140": 70,
+  "rowsNew": 64
+ },
+ {
+  "cap": "1675 kVA",
+  "fitsOld": 107,
+  "fitsNew": 106,
+  "rows95_140": 70,
+  "rows100_140": 70,
+  "rowsNew": 68
+ },
+ {
+  "cap": "1710 kW",
+  "fitsOld": 85,
+  "fitsNew": 85,
+  "rows95_140": 69,
+  "rows100_140": 65,
+  "rowsNew": 65
+ },
+ {
+  "cap": "1800 kW",
+  "fitsOld": 85,
+  "fitsNew": 85,
+  "rows95_140": 65,
+  "rows100_140": 63,
+  "rowsNew": 63
+ },
+ {
+  "cap": "1800 kVA",
+  "fitsOld": 106,
+  "fitsNew": 106,
+  "rows95_140": 71,
+  "rows100_140": 71,
+  "rowsNew": 68
+ },
+ {
+  "cap": "1850 kVA",
+  "fitsOld": 106,
+  "fitsNew": 105,
+  "rows95_140": 71,
+  "rows100_140": 71,
+  "rowsNew": 67
+ },
+ {
+  "cap": "1900 kVA",
+  "fitsOld": 105,
+  "fitsNew": 104,
+  "rows95_140": 72,
+  "rows100_140": 71,
+  "rowsNew": 68
+ },
+ {
+  "cap": "2000 kW",
+  "fitsOld": 81,
+  "fitsNew": 81,
+  "rows95_140": 52,
+  "rows100_140": 52,
+  "rowsNew": 50
+ },
+ {
+  "cap": "2000 kVA",
+  "fitsOld": 104,
+  "fitsNew": 104,
+  "rows95_140": 71,
+  "rows100_140": 71,
+  "rowsNew": 68
+ },
+ {
+  "cap": "2135 kVA",
+  "fitsOld": 96,
+  "fitsNew": 96,
+  "rows95_140": 66,
+  "rows100_140": 66,
+  "rowsNew": 65
+ },
+ {
+  "cap": "2250 kVA",
+  "fitsOld": 96,
+  "fitsNew": 96,
+  "rows95_140": 68,
+  "rows100_140": 66,
+  "rowsNew": 64
+ },
+ {
+  "cap": "2275 kVA",
+  "fitsOld": 96,
+  "fitsNew": 93,
+  "rows95_140": 68,
+  "rows100_140": 53,
+  "rowsNew": 49
+ },
+ {
+  "cap": "2400 kW",
+  "fitsOld": 57,
+  "fitsNew": 56,
+  "rows95_140": 47,
+  "rows100_140": 46,
+  "rowsNew": 44
+ },
+ {
+  "cap": "2500 kVA",
+  "fitsOld": 93,
+  "fitsNew": 92,
+  "rows95_140": 53,
+  "rows100_140": 53,
+  "rowsNew": 53
+ },
+ {
+  "cap": "2573 kVA",
+  "fitsOld": 93,
+  "fitsNew": 78,
+  "rows95_140": 53,
+  "rows100_140": 50,
+  "rowsNew": 49
+ },
+ {
+  "cap": "2750 kVA",
+  "fitsOld": 78,
+  "fitsNew": 77,
+  "rows95_140": 51,
+  "rows100_140": 51,
+  "rowsNew": 49
+ },
+ {
+  "cap": "3875 kVA",
+  "fitsOld": 44,
+  "fitsNew": 33,
+  "rows95_140": 17,
+  "rows100_140": 4,
+  "rowsNew": 4
+ },
+ {
+  "cap": "3925 kVA",
+  "fitsOld": 44,
+  "fitsNew": 33,
+  "rows95_140": 17,
+  "rows100_140": 4,
+  "rowsNew": 4
+ },
+ {
+  "cap": "4000 kVA",
+  "fitsOld": 33,
+  "fitsNew": 33,
+  "rows95_140": 5,
+  "rows100_140": 4,
+  "rowsNew": 4
+ },
+ {
+  "cap": "7500 kVA",
+  "fitsOld": 2,
+  "fitsNew": 1,
+  "rows95_140": 0,
+  "rows100_140": 0,
+  "rowsNew": 0
+ },
+ {
+  "cap": "10000 kVA",
+  "fitsOld": 1,
+  "fitsNew": 1,
+  "rows95_140": 0,
+  "rows100_140": 0,
+  "rowsNew": 0
+ },
+ {
+  "cap": "32000 kW",
+  "fitsOld": 0,
+  "fitsNew": 0,
+  "rows95_140": 0,
+  "rows100_140": 0,
+  "rowsNew": 0
+ },
+ {
+  "cap": "47000 kVA",
+  "fitsOld": 0,
+  "fitsNew": 0,
+  "rows95_140": 0,
+  "rows100_140": 0,
+  "rowsNew": 0
+ },
+ {
+  "cap": "120000 kW",
+  "fitsOld": 0,
+  "fitsNew": 0,
+  "rows95_140": 0,
+  "rows100_140": 0,
+  "rowsNew": 0
+ },
+ {
+  "cap": "141200 kVA",
+  "fitsOld": 0,
+  "fitsNew": 0,
+  "rows95_140": 0,
+  "rows100_140": 0,
+  "rowsNew": 0
+ },
+ {
+  "cap": "277000 kVA",
+  "fitsOld": 0,
+  "fitsNew": 0,
+  "rows95_140": 0,
+  "rows100_140": 0,
+  "rowsNew": 0
+ },
+ {
+  "cap": "299000 kVA",
+  "fitsOld": 0,
+  "fitsNew": 0,
+  "rows95_140": 0,
+  "rows100_140": 0,
+  "rowsNew": 0
+ },
+ {
+  "cap": "300000 kW",
+  "fitsOld": 0,
+  "fitsNew": 0,
+  "rows95_140": 0,
+  "rows100_140": 0,
+  "rowsNew": 0
+ },
+ {
+  "cap": "356000 kVA",
+  "fitsOld": 0,
+  "fitsNew": 0,
+  "rows95_140": 0,
+  "rows100_140": 0,
+  "rowsNew": 0
+ }
+]

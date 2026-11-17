@@ -1,0 +1,77 @@
+== SẢN LƯỢNG ĐỌC ==
+dòng bảng: 173266 | bản ghi đọc ra: 58268 (động cơ 46655 , đầu phát 11613)
+dòng bảng ngang sinh ra bản ghi: 44427
+NCC có bảng nhưng đọc ra 0 bản ghi: 63 astra-fuan(g584) atlas-copco-power(g96) avs-aggregatebau(g130) bertoli(g64) calsion-hefei(g19) cgen-alternator(a38) comap(c2370) conductorjasa(g150) deep-sea-electronics(c2282) depco-power(g1132) deutz-ag(e15) dianbida(g466) eneria(g296) engga(a85) everllence(e71) evotec-power(a77) faraday-wuxi(a278) firstall-power(a63) fpt-industrial(e21) generac(g71) genpower-turkey(g6) grupel(g16) haitai-weifang(g6) hiearns-changzhou(g39) hutai-fujian(a36) itc-power(g45) jinjia-power(g524) kaichen-genset-jiangsu(g36) kangjin-power(d10) kena-chongqing(g30) kerui-gas(g5) kofo(e13) kubota-japan(g526) kwise-generator(a68) lanzhou-electric(a95) leroy-somer-fuzhou(a546) leton-power(g155) linz-electric(a114) liyu-power(g25) marathon-generators(a9)
+NCC ≥200 dòng mà <3% dòng đọc ra: 35 keypower[genset] 100/4428; shanhua[genset] 66/3603; comap[controller] 0/2370; deep-sea-electronics[controller] 0/2282; smartgen[controller] 0/2099; endress-stromerzeuger[genset] 54/2079; mwm[genset] 14/1908; teksan[genset] 12/1511; gfe-power[genset] 32/1149; depco-power[genset] 0/1132; sevenpower-chengdu[genset] 0/876; ronsun-power[genset] 11/815; winco[genset] 8/706; tide-power[genset] 11/696; mahindra-powerol[genset] 8/688; hengke-jiangsu[genset] 12/676; vpower-hk[genset] 0/666; mpmc-powertech[genset] 6/651; longhong-foshan[genset] 15/623; astra-fuan[genset] 0/584; leroy-somer-fuzhou[alternator] 0/546; bison-zhejiang[genset] 14/543; kirloskar-oil-engines[genset] 15/539; naipute-weifang[genset] 11/532; kubota-japan[genset] 0/526; jinjia-power[genset] 0/524; pramac[genset] 7/521; dianbida[genset] 0/466; volvo-penta[engine] 0/408; stamford-avk-china[alternator] 0/301
+
+== ĐỘ PHỦ TRÊN DÒNG TỔ MÁY (dòng có model động cơ, không phải bảng của hãng động cơ): 45447 ==
+công suất: không đọc được 12101 26.6% | có prime 26678 58.7% | có standby 25473 56.0% | cả hai 24864 54.7% | chỉ 'rated' (không rõ chế độ) 6429 14.1%
+  đơn vị: cặp kVA+kW 31563 | chỉ kVA 1352 | chỉ kW 431
+tần số: null=33620 (74.0%), 50=8322 (18.3%), 60=3505 (7.7%)
+có model tổ máy: 40664 89.5% | có đầu phát cùng dòng: 11006 24.2% | biết hãng động cơ: 34296 75.5%
+độ phủ từng thông số (số dòng tổ máy có giá trị):
+   dims        Kích thước                      16571 36.5%
+   weight      Khối lượng                      14162 31.2%
+   cyl         Số xi lanh                      12618 27.8%
+   fuel        Tiêu hao nhiên liệu             10011 22.0%
+   disp        Dung tích xi lanh                9032 19.9%
+   bore        Đường kính × hành trình          5741 12.6%
+   engPower    Công suất động cơ                3442 7.6%
+   oil         Dầu bôi trơn                     3257 7.2%
+   voltage     Điện áp                          2699 5.9%
+   gov         Điều tốc                         2063 4.5%
+   emission    Tiêu chuẩn khí thải              1983 4.4%
+   speed       Tốc độ quay                      1882 4.1%
+   current     Dòng điện định mức               1748 3.8%
+   controller  Bộ điều khiển                    1221 2.7%
+   phase       Số pha                            908 2.0%
+   compr       Tỉ số nén                         827 1.8%
+   ip          Cấp bảo vệ                        739 1.6%
+   fuel75      Tiêu hao nhiên liệu 75% tải       636 1.4%
+   excit       Kích từ / AVR                     587 1.3%
+   asp         Nạp khí                           586 1.3%
+   insul       Cấp cách điện                     572 1.3%
+   noise       Độ ồn                             457 1.0%
+   tank        Bình nhiên liệu                   436 1.0%
+   fuel50      Tiêu hao nhiên liệu 50% tải       374 0.8%
+   vreg        Ổn định điện áp                   361 0.8%
+   start       Khởi động                         303 0.7%
+   cooling     Làm mát                           205 0.5%
+   freg        Ổn định tần số                    198 0.4%
+   engType     Kiểu động cơ                      172 0.4%
+   coolant     Nước làm mát                      151 0.3%
+   pf          Hệ số công suất                   145 0.3%
+   eff         Hiệu suất đầu phát                 37 0.1%
+   thd         Méo sóng hài (THD)                 29 0.1%
+   runtime     Chạy liên tục                      23 0.1%
+số NCC (có dòng tổ máy): 253 | NCC có ít nhất 1 dòng mang thông số:
+   tank=27, fuel75=15, fuel50=10, fuel=79, noise=16, dims=101, weight=101, runtime=5, bore=79, disp=80, cyl=83, compr=26, asp=20, gov=32, emission=28, coolant=2, cooling=16, oil=22, start=20, engPower=39, speed=47, engType=12, eff=4, insul=15, ip=19, excit=10, thd=3, vreg=16, freg=4, current=29, voltage=47, pf=1, phase=21, controller=11
+
+== ĐỊNH DẠNG GIÁ TRỊ TRONG CÙNG MỘT THÔNG SỐ (mẫu hình, N = số) ==
+  fuel (11048 giá trị, 13 mẫu hình): N×7703  ≤N×2041  Ng/kw.h×598  Nl/h×325  <N×321  N/N×19  N%×17  Ng/kwh×9  NN×6  N~N×5  N.×2  Nl/hr×1
+  fuel75 (908 giá trị, 7 mẫu hình): N×370  Nl/h×298  N/N×167  Nl×38  Ng/kwh×30  ~Nl/h×3  Ng/kw.h×2
+  disp (10607 giá trị, 3 mẫu hình): N×9515  Nl×1082  Ncc×10
+  bore (7034 giá trị, 15 mẫu hình): N*N×3097  N×N×1493  N/N×753  NxN×502  N×425  NxNmm×398  N×Nmm×182  Nmm×Nmm×139  N×N(mm)×20  NmmxNmm×11  Nmm×7  N*Nmm×3
+  cyl (13780 giá trị, 27 mẫu hình): N×9334  Nl×2805  Nv×1076  vN×241  lN×141  N-l×41  Ninline×22  Ncylinderdiesell×19  Nin-line×12  Ncyl/verticalin-line×12  N-v×9  Ncyl/atvee×8
+  weight (17655 giá trị, 9 mẫu hình): N×17008  Nkg×454  Nkgs×138  N–Nkg×17  N/Nkg×15  N(N)×10  N/N×9  NxNxN×2  N-Nkg×2
+  dims (20721 giá trị, 30 mẫu hình): N*N*N×12902  N×N×N×3713  NxNxN×3315  opN*N*N×344  N*N*Nmm×131  N×N×Nmm×91  N×N×Ncm×34  NxNxNmm×32  N*N*N(nofueltank)×30  NxNxN(mm)×30  NN×N×N×29  N*N×14
+  noise (534 giá trị, 18 mẫu hình): N×435  Ndb（a）×20  ≤Ndb(a)@Nm×18  N-N×11  ≤Ndb(a)@Nm(silentcanopy)×10  Ndba@Nm×8  N–Ndb(a)@Nm×8  ≤Ndb(a)@Nm/-N°cto+N°c×4  ≤Ndb(a)×4  aslowasNdb(a)×4  N≤N×3  ≤N×2
+  voltage (3242 giá trị, 43 mẫu hình): N/N×1210  Nv×1016  N×652  N/Nv×143  N/N/Nv×45  N/Nv,N/Nv,N/Nv×39  NN×15  N/N;N/N;N/N;×15  NN/N×9  N/N/N×7  N/Nv,N/Nv,N/Nv,N/Nv×7  N/Nv;N/Nv;N/Nv×7
+  speed (2762 giá trị, 12 mẫu hình): N×2325  Nrpm×361  N/N×19  NN×18  Nr/min×17  Nrpm(Nhz)/Nrpm(Nhz)×8  Nrpm/Nrpm×7  N/Nrpm×3  N~N×1  N@N×1  Nhz/Nrpm,Nhz/Nrpm×1  Nrpm/Nrpm(adjustable)×1
+  gov (3023 giá trị, 41 mẫu hình): electronic×976  mechanical×551  electrical×404  ecu×341  electroniccontrol×123  electric×110  electronicgovernor×72  emsN/ecu×70  fortrustelectronic×50  efcelectrical×49  electronicspeed×44  mechanically×42
+  emission (2328 giá trị, 54 mẫu hình): tN×761  国ⅱ×356  国ii×235  stagev×110  non-roademissionexempt×109  国ⅲ×105  国iii×77  euN(euN/N/ecstageⅱ)×51  stageiiia/tierN×48  epatierNfinal×46  国二tN×46  国二×37
+  asp (1043 giá trị, 58 mẫu hình): turbo-charged×296  turbocharged×121  涡轮增压×64  natural×62  turbo/intercooling×56  涡轮增压turbo×41  增压中冷×39  turbochargedandaftercooled×30  naturallyaspirated×28  turbo×27  turbocharged&air-to-air×27  turbochargedand×25
+  start (447 giá trị, 30 mẫu hình): Nv×161  Nvelectricalstarting×60  Nvdcelectricstart×55  electric（电启动）×24  electricstartingwithbattery×20  Nvdcelectricalstart×19  dcNvelectricstart×14  dcNvelectricalstarting×14  electricstart×12  recoil/electric×11  electricstartwithbattery×10  electric×9
+  cooling (351 giá trị, 21 mẫu hình): watercooled×85  watercool×68  liquid(water+N%glycol)×62  water×28  radiator×18  liquid(water+×18  watercooling×15  water-cooled×12  air-water×11  水冷watercooled×10  wassergekühlt×6  liquid-cooled×4
+  tank (779 giá trị, 24 mẫu hình): N×475  Nl×206  capableofcontinuoususeforove×22  NxN×12  integrated(Nhfullprimeautono×11  N~Nhourscontinuousrunning×8  Nl(integratedbasetank)×6  Nhrs,extendedfueltankoption×5  Ngal.(Nl.)metalfueltankwithg×5  Nl(N-Nhruntime)×4  Nl(N–Nhoursatfullload)×4  uptoNoperationhours×4
+  engPower (4867 giá trị, 19 mẫu hình): N×3302  N/N×667  Nkw×223  N-N×196  Nkwprp;Nkwstandby×169  Nkw/N×164  Nkw/N转×42  N-Nkw×42  N-—×12  N-N/N×11  N/N/N×11  Nkw/Nrpm×9
+  phase (1747 giá trị, 19 mẫu hình): N×1125  three×402  Nphase×79  Nphase,Nwires×37  N-phase/N-pole×32  singlephase×24  NphaseNwire×19  N-phase,N-phase×5  Nphase/Nwire×5  threephase×3  Nhz/threephase×2  NphaseNwires×2
+  pf (145 giá trị, 1 mẫu hình): N×145
+  insul (1239 giá trị, 11 mẫu hình): h×731  h/h×309  hclass×72  h/ipNorf/ipN×60  nemamgN,classh×29  classh×11  h级×9  ipN/h×8  classh/ipN(ipNoptional)×5  ipN/hclass×3  classf×2
+  ip (1335 giá trị, 2 mẫu hình): ipN×1334  ipNinsulationgrade:h×1
+  excit (1162 giá trị, 15 mẫu hình): singlebearing,brushless,×382  brushless,self-excitation×159  self-excited×151  brushless,self-excited×150  shunt×85  pmg×52  self-excited,brushless×50  brushlessshunt×40  brushless,permanent-magnet,×29  brushless,self-exciting×27  无刷自励磁×16  无刷自励×10
+  controller (2014 giá trị, 19 mẫu hình): smartgenN×1348  ruifenN×302  deepseaN×128  dseN×92  mebayN×48  fgN×43  hgmNfour-foldprotection+auto×12  deepseabrandmodeldseN×8  dseN/smartgen×5  smartgenhgmNn×4  deepseadseN×4  deepseaN/smartgenhgmN×4
+
+đơn vị tiêu hao nhiên liệu: g/kWh=4734, L/h=4295, KHÔNG GHI ĐƠN VỊ=3406, m³/h (gas)=72, %=17
+mức tải của cột tiêu hao (key fuel): KHÔNG GHI MỨC TẢI=8576, ghi 100% tải=2238, ghi theo standby=134, ghi theo prime=67, nhiều mức trong 1 ô=33
+độ ồn: KHÔNG GHI KHOẢNG CÁCH=319, @7m=195, @1m=20

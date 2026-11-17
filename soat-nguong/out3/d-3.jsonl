@@ -1,0 +1,2 @@
+{"key":"IB2300087393","i":null,"cap":{"value":400,"unit":"kVA"},"nDroppedOld":608,"nDroppedNew":271,"rescued":337,"newlyDropped":0,"reasonChanged":0,"h":{"minDisp":12.513,"maxDisp":null},"rescuedEx":[["acepow-fuan|WP13D385E200|115|0|HC434F","disp",null],["acepow-fuan|WP13D385E200|115|1|HC434F","disp",null],["agestar|WP13D385E200|103|11|ASG314F","disp",null],["agestar|WP13D385E200|107|11|ASG314F","disp",null],["agg-fuzhou|WP13D385E200|109|15|","disp",null]],"newlyEx":[],"top3Changed":true,"top30Diff":13}
+{"done":276}

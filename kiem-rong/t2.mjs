@@ -1,0 +1,12 @@
+import * as L from "./lib.mjs";
+const C=L.corpus(); const env=new L.Env(L.loadSuppliers());
+const e=C.get("IB2600581977"); const cap=L.sizesOfEntry(e).runs[0].cap;
+const r=env.prep(e,cap);
+const d=r.dropped.find(x=>x.ruled.includes("disp"));
+console.log(r.hints.minDisp, d.ruled, d.e.key, d.e.model, d.e.make);
+const facts=r.opts.facts; const ef=facts.get(`engine:${d.e.key}`)||[];
+console.log(JSON.stringify(ef.filter(f=>["disp","cyl","bore","stroke"].includes(f.key)),null,0).slice(0,800));
+console.log(JSON.stringify((d.u.specs||[]).filter(f=>["disp","cyl"].includes(f.key))).slice(0,500));
+console.log(JSON.stringify({line:d.u.line, lines:d.u.lines, power:d.u.power, sid:d.u.supplierId, keys:Object.keys(d.u)}).slice(0,900));
+const dp=r.dropped.find(x=>x.ruled.includes("prime")); console.log(JSON.stringify({power:dp.u.power,line:dp.u.line,sid:dp.u.supplierId, mp:r.hints.minPrime}).slice(0,700));
+process.exit(0);

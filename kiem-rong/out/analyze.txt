@@ -1,0 +1,223 @@
+== 1. BAO PHỦ ==
+lượt (gói×cỡ) chạy được: 1539 | gói: 1162 | lỗi chạy: 0 | không đọc được cỡ: 95
+theo nguồn: { full12: 13, specs: 910, hc243: 616 }
+gói theo nguồn: { full12: 11, specs: 910, hc243: 241 }
+cỡ (kVA): {
+  '151-400': 336,
+  '401-1000': 225,
+  '61-150': 242,
+  '<=20': 376,
+  '21-60': 188,
+  '>1000': 172
+}
+cỡ khác nhau: 219 | min 0.5 max 375000
+nhóm xuất xứ: { all: 1311, g20: 24, g7: 109, g7eu: 87, g20eu: 8 }
+đồng bộ thương hiệu: có 101 không 1438 | partsOnly 49 brand 14
+gói một cỡ: 919 | gói nhiều cỡ: 243 (lượt cỡ: 620)
+có keep (configmatch): 12 | freq 50/60: 961 8 | HSMT nêu hãng động cơ: 554 | capOn: 973
+
+== 2. BẤT BIẾN ==
+vi phạm theo loại: { makeCap: 19, perEngine: 15, perSupplier: 7 }
+  VP IB2600574589 400 {"t":"perEngine","engine":"YC6K520D30","n":4,"keepRun":true}
+  VP IB2600574589 400 {"t":"perSupplier","sup":"jet-power","n":5,"keepRun":true}
+  VP IB2600574589 400 {"t":"perSupplier","sup":"eastern-lion-fuan","n":5,"keepRun":true}
+  VP IB2600581294 500 {"t":"perEngine","engine":"YC6T660D31","n":4,"keepRun":true}
+  VP IB2600581294 500 {"t":"perEngine","engine":"WP13D490E310","n":4,"keepRun":true}
+  VP IB2600581294 500 {"t":"perEngine","engine":"YC6T660LD20","n":4,"keepRun":true}
+  VP IB2600581294 500 {"t":"perSupplier","sup":"jet-power","n":6,"keepRun":true}
+  VP IB2600592684 500 {"t":"perEngine","engine":"QSZ13G3","n":11,"keepRun":true}
+  VP IB2600592684 500 {"t":"perEngine","engine":"KTA19G3A","n":4,"keepRun":true}
+  VP IB2600592684 500 {"t":"perEngine","engine":"KTAA19G5","n":5,"keepRun":true}
+  VP IB2600594596 300 {"t":"perEngine","engine":"YC6MK420LD20","n":5,"keepRun":true}
+  VP IB2600594596 300 {"t":"perSupplier","sup":"fdk-energy","n":5,"keepRun":true}
+  VP IB2600602880 150 {"t":"perEngine","engine":"6BTAA59G12","n":9,"keepRun":true}
+  VP IB2600586587 160 {"t":"perEngine","engine":"1106A70TAG3","n":4,"keepRun":true}
+  VP IB2600586587 160 {"t":"perEngine","engine":"YC6A245LD21","n":4,"keepRun":true}
+  VP IB2600586587 160 {"t":"perEngine","engine":"YC6A245D30","n":5,"keepRun":true}
+  VP IB2600586587 160 {"t":"perEngine","engine":"6CTA83G2","n":5,"keepRun":true}
+  VP IB2600586587 160 {"t":"perSupplier","sup":"uleengen","n":5,"keepRun":true}
+  VP IB2600586587 160 {"t":"perSupplier","sup":"eastern-lion-fuan","n":5,"keepRun":true}
+  VP IB2600586587 160 {"t":"perSupplier","sup":"fdk-energy","n":5,"keepRun":true}
+  VP IB2600603983 700 {"t":"perEngine","engine":"400623TAG2A","n":4,"keepRun":true}
+  VP IB2600603983 700 {"t":"perEngine","engine":"400623TAG3A","n":4,"keepRun":true}
+trần hãng >10: 19 lượt; trong đó còn dòng hãng khác hợp lệ chưa chọn (otherLeft>0): 15 | keep: 4 | sync: 13
+  makeCap IB2600574589 400 Yuchai 11 topN 30 otherLeft 1038 keep 
+  makeCap IB2500152724 5 ? 13 topN 29 otherLeft 0  
+  makeCap IB2500597081 300 Cummins 12 topN 30 otherLeft 878  sync
+  makeCap IB2300135189 30 Cummins 11 topN 30 otherLeft 347  sync
+  makeCap IB2300343668 750 Cummins 11 topN 30 otherLeft 385  sync
+  makeCap IB2500327119 320 Cummins 12 topN 30 otherLeft 991  sync
+  makeCap IB2300371415 5 ? 13 topN 29 otherLeft 0  
+  makeCap IB2500189935 8.5 Yanmar 11 topN 30 otherLeft 0  
+  makeCap IB2300146335 300 Cummins 12 topN 30 otherLeft 909  sync
+  makeCap IB2600490077 165 Perkins 15 topN 30 otherLeft 74  sync
+  makeCap IB2600581977 250 Cummins 13 topN 30 otherLeft 250 keep sync
+  makeCap IB2600594596 300 Cummins 11 topN 30 otherLeft 894 keep sync
+  makeCap IB2300111427 5 ? 13 topN 30 otherLeft 0  
+  makeCap IB2500287209 10 Perkins 12 topN 30 otherLeft 11  sync
+  makeCap IB2500287209 10 Yanmar 11 topN 30 otherLeft 11  sync
+  makeCap IB2600586587 160 Yuchai 12 topN 30 otherLeft 451 keep 
+  makeCap IB2600448676 300 Cummins 12 topN 30 otherLeft 439  sync
+  makeCap IB2300307974 120 Cummins 11 topN 30 otherLeft 247  sync
+  makeCap IB2200049662 500 Cummins 12 topN 30 otherLeft 296  sync
+capOn: hãng lớn nhất trong top = 15 | lượt capOn có topN<30: 160
+không capOn (HSMT nêu hãng/model): 566 | hãng lớn nhất >10: 288
+
+== 3. THIẾU ỨNG VIÊN ==
+dòng trong dải TRƯỚC khi loại theo ngưỡng — dải cũ 95-140%: { '0': 22, '1-9': 67, '10-29': 68, '>=30': 1382 }
+dòng trong dải TRƯỚC khi loại theo ngưỡng — dải mới 99,5-120%: { '0': 23, '1-9': 90, '10-29': 108, '>=30': 1318 }
+dòng còn xếp hạng SAU khi loại ngưỡng (dải mới): { '0': 25, '1-9': 101, '10-29': 109, '>=30': 1304 }
+topN (≤30) dải mới: { '0': 25, '1-9': 182, '10-29': 67, '>=30': 1265 }
+lượt có chạy đầy đủ dải cũ: 303 | topN cũ <30: 232 | topN mới <30: 274
+RỦI RO: cỡ có ứng viên ở dải cũ mà dải mới (sau khi loại) <5: 56
+  IB2400186078 6kVA [hc243 2cỡ] cũ=1 mớiTrongDải=0 mớiSauNgưỡng=0 top=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.917 / trên 1.25 | ngưỡng {"minDisp":0.499,"maxDisp":null,"minCyl":1,"minPrime":null}
+  IB2600304011 2400kW [specs] cũ=2 mớiTrongDải=2 mớiSauNgưỡng=0 top=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":2} gần nhất: dưới 0.933 / trên null | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":{"kW":2400}}
+  IB2600126365 2400kW [specs] cũ=2 mớiTrongDải=2 mớiSauNgưỡng=0 top=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":2} gần nhất: dưới 0.933 / trên null | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":{"kW":2400}}
+  IB2200066148 3kVA [hc243 2cỡ] cũ=39 mớiTrongDải=1 mớiSauNgưỡng=1 top=1 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.9 / trên 1.25 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2500471911 12kVA [specs] cũ=7 mớiTrongDải=4 mớiSauNgưỡng=1 top=1 loại={"disp":2,"maxDisp":0,"cyl":0,"prime":1} gần nhất: dưới 0.917 / trên 1.25 | ngưỡng {"minDisp":2.3,"maxDisp":null,"minCyl":null,"minPrime":{"kVA":12,"kW":12}}
+  IB2500189560 12.5kVA [specs] cũ=7 mớiTrongDải=6 mớiSauNgưỡng=1 top=1 loại={"disp":5,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.96 / trên 1.232 | ngưỡng {"minDisp":2.3,"maxDisp":null,"minCyl":null,"minPrime":{"kVA":12.5}}
+  IB2400542354 12.5kVA [specs] cũ=7 mớiTrongDải=6 mớiSauNgưỡng=1 top=1 loại={"disp":5,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.96 / trên 1.232 | ngưỡng {"minDisp":2.3,"maxDisp":null,"minCyl":null,"minPrime":{"kVA":12.5}}
+  IB2500476713 13kVA [specs] cũ=8 mớiTrongDải=6 mớiSauNgưỡng=1 top=1 loại={"disp":5,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.923 / trên 1.269 | ngưỡng {"minDisp":2.3,"maxDisp":null,"minCyl":null,"minPrime":{"kVA":13}}
+  IB2600588204 12kVA [specs] cũ=7 mớiTrongDải=4 mớiSauNgưỡng=1 top=1 loại={"disp":2,"maxDisp":0,"cyl":0,"prime":1} gần nhất: dưới 0.917 / trên 1.25 | ngưỡng {"minDisp":2.3,"maxDisp":null,"minCyl":null,"minPrime":{"kVA":12}}
+  IB2300249535 5kVA [specs] cũ=1 mớiTrongDải=1 mớiSauNgưỡng=1 top=1 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới null / trên 1.5 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2200006257 3kVA [hc243 2cỡ] cũ=39 mớiTrongDải=1 mớiSauNgưỡng=1 top=1 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.9 / trên 1.25 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":1,"minPrime":null}
+  IB2400311574 12.5kVA [specs] cũ=7 mớiTrongDải=6 mớiSauNgưỡng=1 top=1 loại={"disp":5,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.96 / trên 1.232 | ngưỡng {"minDisp":2.3,"maxDisp":null,"minCyl":4,"minPrime":{"kVA":12.5}}
+  IB2300150966 3kVA [specs] cũ=39 mớiTrongDải=1 mớiSauNgưỡng=1 top=1 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.9 / trên 1.25 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2500198459 12kVA [specs] cũ=7 mớiTrongDải=4 mớiSauNgưỡng=1 top=1 loại={"disp":2,"maxDisp":0,"cyl":0,"prime":1} gần nhất: dưới 0.917 / trên 1.25 | ngưỡng {"minDisp":2.3,"maxDisp":null,"minCyl":3,"minPrime":{"kVA":12,"kW":12}}
+  IB2400257256 12kVA [specs] cũ=7 mớiTrongDải=4 mớiSauNgưỡng=1 top=1 loại={"disp":2,"maxDisp":0,"cyl":0,"prime":1} gần nhất: dưới 0.917 / trên 1.25 | ngưỡng {"minDisp":2.3,"maxDisp":null,"minCyl":4,"minPrime":{"kVA":12}}
+  IB2400531851 12.5kVA [specs] cũ=7 mớiTrongDải=6 mớiSauNgưỡng=1 top=1 loại={"disp":5,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.96 / trên 1.232 | ngưỡng {"minDisp":2.3,"maxDisp":null,"minCyl":null,"minPrime":{"kVA":12.5}}
+  IB2300223728 5kVA [specs] cũ=1 mớiTrongDải=1 mớiSauNgưỡng=1 top=1 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới null / trên 1.5 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2600545098 4.5kVA [specs] cũ=1 mớiTrongDải=1 mớiSauNgưỡng=1 top=1 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới null / trên 1.222 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2400317224 8kVA [specs] cũ=6 mớiTrongDải=3 mớiSauNgưỡng=2 top=2 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":1} gần nhất: dưới 0.938 / trên 1.25 | ngưỡng {"minDisp":1.6,"maxDisp":null,"minCyl":3,"minPrime":{"kVA":8.5}}
+  IB2500211376 15kVA [specs] cũ=11 mớiTrongDải=7 mớiSauNgưỡng=2 top=2 loại={"disp":5,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.953 / trên 1.32 | ngưỡng {"minDisp":2.43,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2500084609 15kVA [specs] cũ=11 mớiTrongDải=7 mớiSauNgưỡng=2 top=2 loại={"disp":5,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.953 / trên 1.32 | ngưỡng {"minDisp":2.43,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2500498271 15kVA [specs] cũ=11 mớiTrongDải=7 mớiSauNgưỡng=2 top=2 loại={"disp":5,"maxDisp":0,"cyl":0,"prime":2} gần nhất: dưới 0.953 / trên 1.32 | ngưỡng {"minDisp":2.3,"maxDisp":null,"minCyl":null,"minPrime":{"kVA":15}}
+  IB2500571943 12kVA [specs] cũ=7 mớiTrongDải=4 mớiSauNgưỡng=3 top=2 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":1} gần nhất: dưới 0.917 / trên 1.25 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":{"kVA":12,"kW":12}}
+  IB2200008717 12kVA [specs] cũ=7 mớiTrongDải=4 mớiSauNgưỡng=3 top=2 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":1} gần nhất: dưới 0.917 / trên 1.25 | ngưỡng {"minDisp":null,"maxDisp":1.826,"minCyl":3,"minPrime":{"kVA":12,"kW":12}}
+  IB2500118283 12kVA [specs] cũ=7 mớiTrongDải=4 mớiSauNgưỡng=3 top=2 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":1} gần nhất: dưới 0.917 / trên 1.25 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":3,"minPrime":{"kVA":12}}
+  IB2500118294 12kVA [specs] cũ=7 mớiTrongDải=4 mớiSauNgưỡng=3 top=2 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":1} gần nhất: dưới 0.917 / trên 1.25 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":3,"minPrime":{"kVA":12}}
+  IB2500118275 12kVA [specs] cũ=7 mớiTrongDải=4 mớiSauNgưỡng=3 top=2 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":1} gần nhất: dưới 0.917 / trên 1.25 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":3,"minPrime":{"kVA":12}}
+  IB2400473260 12kVA [specs] cũ=7 mớiTrongDải=4 mớiSauNgưỡng=3 top=2 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":1} gần nhất: dưới 0.917 / trên 1.25 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":{"kVA":12,"kW":12}}
+  IB2500323621 12kVA [specs] cũ=7 mớiTrongDải=4 mớiSauNgưỡng=3 top=2 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":1} gần nhất: dưới 0.917 / trên 1.25 | ngưỡng {"minDisp":null,"maxDisp":1.826,"minCyl":3,"minPrime":{"kVA":12}}
+  IB2300266461 40kVA [specs] cũ=12 mớiTrongDải=8 mớiSauNgưỡng=3 top=3 loại={"disp":2,"maxDisp":0,"cyl":2,"prime":3} gần nhất: dưới 0.963 / trên 1.238 | ngưỡng {"minDisp":3.75,"maxDisp":null,"minCyl":4,"minPrime":{"kVA":42}}
+  IB2400482562 23kVA [specs] cũ=10 mớiTrongDải=3 mớiSauNgưỡng=3 top=3 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.957 / trên 1.304 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":4,"minPrime":{"kVA":23}}
+  IB2600243028 800kVA [specs] cũ=24 mớiTrongDải=15 mớiSauNgưỡng=3 top=3 loại={"disp":8,"maxDisp":0,"cyl":8,"prime":5} gần nhất: dưới 0.963 / trên 1.238 | ngưỡng {"minDisp":29.6,"maxDisp":null,"minCyl":12,"minPrime":{"kVA":800,"kW":640}}
+  IB2400514819 12kVA [specs] cũ=7 mớiTrongDải=4 mớiSauNgưỡng=3 top=2 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":1} gần nhất: dưới 0.917 / trên 1.25 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":{"kVA":12,"kW":12}}
+  IB2300236743 10kVA [hc243 2cỡ] cũ=6 mớiTrongDải=3 mớiSauNgưỡng=3 top=3 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.94 / trên 1.3 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":4,"minPrime":null}
+  IB2400457172 8.5kVA [specs] cũ=6 mớiTrongDải=4 mớiSauNgưỡng=3 top=3 loại={"disp":1,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.965 / trên 1.235 | ngưỡng {"minDisp":2.3,"maxDisp":null,"minCyl":3,"minPrime":{"kVA":8.5}}
+  IB2400365165 7.2kVA [hc243 2cỡ] cũ=5 mớiTrongDải=3 mớiSauNgưỡng=3 top=3 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.764 / trên 1.306 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2500419471 12kVA [specs] cũ=7 mớiTrongDải=4 mớiSauNgưỡng=3 top=2 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":1} gần nhất: dưới 0.917 / trên 1.25 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":{"kVA":12}}
+  IB2500376934 8.5kVA [specs] cũ=6 mớiTrongDải=4 mớiSauNgưỡng=4 top=4 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.965 / trên 1.235 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":3,"minPrime":{"kVA":8.5}}
+  IB2500498331 12kVA [specs] cũ=7 mớiTrongDải=4 mớiSauNgưỡng=4 top=3 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.917 / trên 1.25 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2500500319 8.5kVA [hc243 2cỡ] cũ=6 mớiTrongDải=4 mớiSauNgưỡng=4 top=4 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.965 / trên 1.235 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2500500319 12kVA [hc243 2cỡ] cũ=7 mớiTrongDải=4 mớiSauNgưỡng=4 top=3 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.917 / trên 1.25 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2400475109 1000kVA [specs] cũ=20 mớiTrongDải=10 mớiSauNgưỡng=4 top=3 loại={"disp":0,"maxDisp":0,"cyl":4,"prime":2} gần nhất: dưới 0.99 / trên 1.25 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":12,"minPrime":{"kVA":1000}}
+  IB2500381511 2573kVA [specs] cũ=9 mớiTrongDải=4 mớiSauNgưỡng=4 top=4 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.972 / trên null | ngưỡng {"minDisp":60.2,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2600307179 8.5kVA [specs] cũ=6 mớiTrongDải=4 mớiSauNgưỡng=4 top=4 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.965 / trên 1.235 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":{"kVA":8.5}}
+  IB2500480924 8.5kVA [specs] cũ=6 mớiTrongDải=4 mớiSauNgưỡng=4 top=4 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.965 / trên 1.235 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":3,"minPrime":{"kVA":8.5}}
+  IB2500460613 8.5kVA [hc243 2cỡ] cũ=6 mớiTrongDải=4 mớiSauNgưỡng=4 top=4 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.965 / trên 1.235 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2400186078 12kVA [hc243 2cỡ] cũ=7 mớiTrongDải=4 mớiSauNgưỡng=4 top=3 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.917 / trên 1.25 | ngưỡng {"minDisp":0.499,"maxDisp":null,"minCyl":1,"minPrime":null}
+  IB2300173662 2kVA [hc243 8cỡ] cũ=8 mớiTrongDải=4 mớiSauNgưỡng=4 top=3 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.938 / trên 1.25 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2400446772 1000kVA [specs] cũ=20 mớiTrongDải=10 mớiSauNgưỡng=4 top=3 loại={"disp":0,"maxDisp":0,"cyl":4,"prime":2} gần nhất: dưới 0.99 / trên 1.25 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":12,"minPrime":{"kVA":1000}}
+  IB2400127023 8.5kVA [specs] cũ=6 mớiTrongDải=4 mớiSauNgưỡng=4 top=4 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.965 / trên 1.235 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":3,"minPrime":{"kVA":8.5}}
+  IB2500271331 12kVA [hc243 2cỡ] cũ=7 mớiTrongDải=4 mớiSauNgưỡng=4 top=3 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.917 / trên 1.25 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2300292168 12kVA [specs] cũ=7 mớiTrongDải=4 mớiSauNgưỡng=4 top=3 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.917 / trên 1.25 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":3,"minPrime":null}
+  IB2500598824 12kVA [hc243 3cỡ] cũ=7 mớiTrongDải=4 mớiSauNgưỡng=4 top=3 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.917 / trên 1.25 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2500280002 11kVA [hc243 2cỡ] cũ=9 mớiTrongDải=4 mớiSauNgưỡng=4 top=4 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.955 / trên 1.273 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":2,"minPrime":null}
+  IB2500314001 8.5kVA [specs] cũ=6 mớiTrongDải=4 mớiSauNgưỡng=4 top=4 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.965 / trên 1.235 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":3,"minPrime":{"kVA":8.5}}
+  IB2600280799 8.5kVA [specs] cũ=6 mớiTrongDải=4 mớiSauNgưỡng=4 top=4 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.965 / trên 1.235 | ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":3,"minPrime":{"kVA":8.5}}
+cỡ có 0 dòng sau khi loại / top=0: 25
+  IB2300042764 7500kVA [hc243] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.667 trên 2.25 ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2600413498 300000kW [specs] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.053 trên null ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2600152962 300000kW [specs] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.053 trên null ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2400289478 277000kVA [hc243] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.075 trên null ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2400289478 356000kVA [hc243] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.058 trên null ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2500344109 141200kVA [specs] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.146 trên null ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2500404441 300000kW [specs] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.053 trên null ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2500027056 10000kVA [hc243] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.5 trên 1.688 ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2400248480 7500kVA [hc243] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.667 trên 2.25 ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2300059621 47000kVA [specs] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.439 trên null ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2300030459 7500kVA [hc243] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.667 trên 2.25 ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2400186078 6kVA [hc243] cũ=1 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.917 trên 1.25 ngưỡng {"minDisp":0.499,"maxDisp":null,"minCyl":1,"minPrime":null}
+  IB2600241796 299000kVA [specs] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.069 trên null ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2300305637 120000kW [specs] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.133 trên null ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2600304011 2400kW [specs] cũ=2 mớiTrongDải=2 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":2} gần nhất: dưới 0.933 trên null ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":{"kW":2400}}
+  IB2600126365 2400kW [specs] cũ=2 mớiTrongDải=2 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":2} gần nhất: dưới 0.933 trên null ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":{"kW":2400}}
+  IB2500344870 32000kW [specs] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.5 trên null ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2400152756 300000kW [specs] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.053 trên null ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2600325773 4000kVA [specs] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.77 trên null ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2400121273 0.5kVA [specs] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới null trên 3.75 ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2400168837 120000kW [specs] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.133 trên null ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2200061557 120000kW [specs] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.133 trên null ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2600157125 141200kVA [specs] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.146 trên null ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2500412991 277000kVA [hc243] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.075 trên null ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+  IB2500412991 300000kW [hc243] cũ=0 mớiTrongDải=0 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":0} gần nhất: dưới 0.053 trên null ngưỡng {"minDisp":null,"maxDisp":null,"minCyl":null,"minPrime":null}
+cỡ KHÔNG có dòng nào trong dải mới (dù chưa xét ngưỡng): 23 | trong đó dải cũ >0: 1 | cả hai =0: 22
+dải mới giữ <30% số dòng của dải cũ: 26
+tổng dòng trong dải: cũ 2263610 mới 1352889 → sau loại 1181921
+
+== DROPPED ==
+tổng dòng bị loại: 170968 theo loại: { disp: 59789, maxDisp: 6562, cyl: 42437, prime: 91593 } (nhiều lý do: 27307) | lượt có dòng bị loại: 664 | gói: 622
+dòng Prime bị loại theo kiểu công suất của dòng: {
+  'standby+prime': 87267,
+  'prime+standby+rated': 1078,
+  'prime+standby': 2993,
+  'prime+rated': 80,
+  prime: 175
+}
+Prime bị loại: tiêu đề/dòng có chữ prime/liên tục (nhãn rõ): 86802 | KHÔNG có chữ prime trong tiêu đề/dòng: 4791
+disp bị loại: đơn vị lạ 153 | chỉ tính từ đường kính×hành trình (không có dung tích): 1000 | nhãn bình/dầu: 0
+
+== minPrime chỉ có từ đầu phát/động cơ ==
+lượt có minPrime mà mọi giá trị prime thô nằm ở phần alt/engine: 30 | trong đó dòng bị loại vì prime: 3802
+   IB2500235727 220kVA minPrime {"kVA":200} thô [{"kVA":200,"sec":"alt"},{"kVA":200,"sec":"alt"}] loạiPrime 9 nRows 1535
+   IB2600192365 1500kVA minPrime {"kVA":1500} thô [{"kVA":1675,"sec":"alt"},{"kVA":1500,"sec":"alt"}] loạiPrime 302 nRows 314
+   IB2200008717 12kVA minPrime {"kVA":12,"kW":12} thô [{"kW":15.5,"sec":"engine"},{"kVA":12,"kW":12,"sec":"alt"},{"kW":15.5,"sec":"engine"},{"kVA":12,"kW":12,"sec":"alt"}] loạiPrime 1 nRows 3
+   IB2300275509 250kVA minPrime {"kVA":250} thô [{"kVA":250,"sec":"alt"}] loạiPrime 292 nRows 1355
+   IB2300369012 1000kVA minPrime {"kVA":1000} thô [{"kVA":1000,"sec":"alt"}] loạiPrime 220 nRows 591
+   IB2300356137 80kVA minPrime {"kVA":80} thô [{"kVA":80,"sec":"alt"}] loạiPrime 193 nRows 128
+   IB2400367041 500kVA minPrime {"kVA":500,"kW":400} thô [{"kVA":500,"kW":400,"sec":"engine"},{"kVA":500,"sec":"engine"}] loạiPrime 423 nRows 1342
+   IB2600511196 1000kVA minPrime {"kVA":900,"kW":720} thô [{"kW":810,"sec":"engine"},{"kVA":900,"kW":720,"sec":"engine"}] loạiPrime 7 nRows 979
+   IB2300067312 12kVA minPrime {"kVA":12,"kW":12} thô [{"kW":15.5,"sec":"engine"},{"kVA":12,"kW":12,"sec":"alt"}] loạiPrime 36 nRows 172
+   IB2400495407 60kVA minPrime {"kVA":60} thô [{"kVA":60,"sec":"alt"}] loạiPrime 40 nRows 310
+   IB2500442970 12.5kVA minPrime {"kVA":13,"kW":13} thô [{"kW":22,"sec":"engine"},{"kVA":13,"kW":13,"sec":"alt"}] loạiPrime 48 nRows 91
+   IB2300080302 1000kVA minPrime {"kVA":1000} thô [{"kVA":1000,"sec":"alt"}] loạiPrime 220 nRows 591
+   IB2200065274 800kVA minPrime {"kVA":800} thô [{"kVA":800,"sec":"alt"}] loạiPrime 470 nRows 514
+   IB2400067509 12kVA minPrime {"kVA":12} thô [{"kW":15.5,"sec":"engine"},{"kVA":12,"sec":"alt"}] loạiPrime 36 nRows 177
+   IB2300254910 12.5kVA minPrime {"kVA":12} thô [{"kW":15.5,"sec":"engine"},{"kVA":12,"sec":"alt"}] loạiPrime 8 nRows 167
+   IB2600118095 20kVA minPrime {"kVA":20,"kW":16} thô [{"kVA":20,"kW":16,"sec":"alt"}] loạiPrime 48 nRows 421
+   IB2400362458 60kVA minPrime {"kVA":60} thô [{"kVA":60,"sec":"alt"}] loạiPrime 40 nRows 310
+   IB2500386455 50kVA minPrime {"kVA":60} thô [{"kVA":60,"sec":"alt"}] loạiPrime 3 nRows 6
+   IB2400446772 1000kVA minPrime {"kVA":1000} thô [{"kVA":1000,"sec":"alt"},{"kVA":1000,"sec":"alt"}] loạiPrime 2 nRows 4
+   IB2300266461 40kVA minPrime {"kVA":42} thô [{"kVA":42,"sec":"alt"}] loạiPrime 3 nRows 3
+   IB2400495088 300kVA minPrime {"kVA":300} thô [{"kVA":300,"sec":"alt"}] loạiPrime 314 nRows 890
+   IB2300356147 80kVA minPrime {"kVA":80} thô [{"kVA":80,"sec":"alt"}] loạiPrime 193 nRows 285
+   IB2300230061 150kVA minPrime {"kVA":136} thô [{"kVA":136,"sec":"engine"}] loạiPrime 1 nRows 13
+   IB2400497572 12kVA minPrime {"kVA":12} thô [{"kVA":12,"sec":"alt"}] loạiPrime 36 nRows 173
+   IB2400475145 8.5kVA minPrime {"kVA":10} thô [{"kW":16,"sec":"engine"},{"kVA":10,"sec":"alt"}] loạiPrime 85 nRows 25
+   IB2300179052 250kVA minPrime {"kVA":250} thô [{"kVA":250,"sec":"alt"}] loạiPrime 266 nRows 965
+   IB2400382139 12kVA minPrime {"kVA":12} thô [{"kVA":12,"sec":"alt"}] loạiPrime 36 nRows 64
+   IB2600434462 12kVA minPrime {"kVA":12,"kW":12} thô [{"kW":16,"sec":"engine"},{"kVA":12,"kW":12,"sec":"alt"}] loạiPrime 36 nRows 53
+   IB2200016199 8.5kVA minPrime {"kVA":12} thô [{"kVA":12,"sec":"alt"}] loạiPrime 130 nRows 14
+   IB2300248981 1200kW minPrime {"kW":1200} thô [{"kW":1200,"sec":"engine"}] loạiPrime 304 nRows 747
+
+== gói nhiều cỡ: ảnh hưởng ==
+   IB2400030247 50 kVA {"minPrime":"minPrime {\"kVA\":60,\"kW\":48} lệch cỡ 50 kVA"} → nBand=809 nRows=282 top=30 loại={"disp":0,"maxDisp":0,"cyl":0,"prime":527}
+   IB2400114476 12 kVA {"maxDisp":"maxDisp 1.826 nhưng HSMT còn dung tích tối thiểu 4.5"} → nBand=216 nRows=207 top=30 loại={"disp":0,"maxDisp":9,"cyl":0,"prime":0}
+   IB2400114476 45 kVA {"minDisp":"minDisp 4.5 nhưng HSMT còn dung tích tối đa 1.826"} → nBand=626 nRows=175 top=30 loại={"disp":451,"maxDisp":0,"cyl":0,"prime":0}
+   IB2400311120 12 kVA {"maxDisp":"maxDisp 1.826 nhưng HSMT còn dung tích tối thiểu 3.3/4.5"} → nBand=216 nRows=207 top=30 loại={"disp":0,"maxDisp":9,"cyl":0,"prime":0}
+   IB2400311120 30 kVA {"maxDisp":"maxDisp 1.826 nhưng HSMT còn dung tích tối thiểu 3.3/4.5"} → nBand=645 nRows=155 top=30 loại={"disp":0,"maxDisp":490,"cyl":0,"prime":0}
+   IB2400311120 45 kVA {"maxDisp":"maxDisp 1.826 nhưng HSMT còn dung tích tối thiểu 3.3/4.5"} → nBand=626 nRows=166 top=30 loại={"disp":0,"maxDisp":460,"cyl":0,"prime":0}
+   IB2400487460 8.8 kVA {"minDisp":"minDisp 3.9 nhưng HSMT còn dung tích tối đa 2.3"} → nBand=160 nRows=41 top=29 loại={"disp":119,"maxDisp":0,"cyl":1,"prime":0}
+   IB2400487460 40 kVA {"minDisp":"minDisp 3.9 nhưng HSMT còn dung tích tối đa 2.3"} → nBand=769 nRows=403 top=30 loại={"disp":366,"maxDisp":0,"cyl":0,"prime":0}
+
+== top: nhóm xuất xứ động cơ, NCC ==
+quốc gia NCC của dòng trong top (tổng): [
+  [ 'CN', 39070 ],
+  [ 'IT', 619 ],
+  [ 'GB', 116 ],
+  [ 'US', 80 ],
+  [ 'SA', 3 ],
+  [ 'JP', 2 ],
+  [ 'DE', 1 ]
+]

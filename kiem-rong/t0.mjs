@@ -1,0 +1,10 @@
+import * as L from "./lib.mjs";
+const t=Date.now();
+const C=L.corpus(); console.log("corpus",C.size,"no-analysis specs",L.noAnalysis(), Date.now()-t,"ms");
+const src={}; for(const e of C.values()) src[e.src]=(src[e.src]||0)+1; console.log(src);
+const sups=L.loadSuppliers(); console.log("suppliers",sups.length);
+const env=new L.Env(sups);
+let tt=Date.now(); const e=C.get("IB2600574589"); const s=L.sizesOfEntry(e); console.log(s.runs.map(r=>r.cap));
+const r=env.prep(e,s.runs[0].cap); console.log(Date.now()-tt,"ms", r.top.length, r.all.length, r.dropped.length, r.origin, r.hints0.minDisp);
+tt=Date.now(); const r2=env.prep(e,s.runs[0].cap,{mod:L.OLD}); console.log(Date.now()-tt,"ms old", r2.top.length, r2.all.length, r2.dropped.length);
+process.exit(0);

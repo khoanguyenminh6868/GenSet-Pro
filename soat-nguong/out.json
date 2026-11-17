@@ -1,0 +1,5555 @@
+[
+ {
+  "key": "IB2200001635",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 100,
+   "unit": "kVA"
+  },
+  "newly": 14,
+  "measured": {
+   "minDisp": 4.4,
+   "maxDisp": null
+  },
+  "minDisp": 4.4,
+  "maxDisp": null,
+  "rawMin": 4.4,
+  "rawMax": null,
+  "wholeMin": 4.4,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 4.4,
+    "cell": "Dung tích buồng đốt ≥ 4,4 lít"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2200012797",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 85,
+  "measured": {
+   "minDisp": 1.6,
+   "maxDisp": null
+  },
+  "minDisp": 1.6,
+  "maxDisp": null,
+  "rawMin": 1.6,
+  "rawMax": null,
+  "wholeMin": 1.6,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 1.6,
+    "cell": "4 Dung tích xilanh\r≥ 1,6 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2200012854",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 36,
+   "unit": "kW"
+  },
+  "newly": 54,
+  "measured": {
+   "minDisp": 4.5,
+   "maxDisp": null
+  },
+  "minDisp": 4.5,
+  "maxDisp": null,
+  "rawMin": 4.5,
+  "rawMax": null,
+  "wholeMin": 4.5,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 4.5,
+    "cell": " - Dung tích xylanh: 4,5 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2200016199",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 86,
+  "measured": {
+   "minDisp": 1.826,
+   "maxDisp": null
+  },
+  "minDisp": 1.826,
+  "maxDisp": null,
+  "rawMin": 1.826,
+  "rawMax": null,
+  "wholeMin": 1.826,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 1.826,
+    "cell": "6 Tổng dung tích xilanh ≥ 1,826 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2200020589",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 12.5,
+   "unit": "kVA"
+  },
+  "newly": 123,
+  "measured": {
+   "minDisp": 2.5,
+   "maxDisp": null
+  },
+  "minDisp": 2.5,
+  "maxDisp": null,
+  "rawMin": 2.5,
+  "rawMax": null,
+  "wholeMin": 2.5,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.5,
+    "cell": "4 Dung tích xilanh\r≥ 2.5\rĐạt\rKhông đạt"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2200029877",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 85,
+  "measured": {
+   "minDisp": 2.1,
+   "maxDisp": null
+  },
+  "minDisp": 2.1,
+  "maxDisp": null,
+  "rawMin": 2.1,
+  "rawMax": null,
+  "wholeMin": 2.1,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.1,
+    "cell": " 4 Dung tích xilanh ≥ 2,1 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2200029921",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 85,
+  "measured": {
+   "minDisp": 2.1,
+   "maxDisp": null
+  },
+  "minDisp": 2.1,
+  "maxDisp": null,
+  "rawMin": 2.1,
+  "rawMax": null,
+  "wholeMin": 2.1,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.1,
+    "cell": " 4 Dung tích xilanh ≥ 2,1 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2200029952",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 85,
+  "measured": {
+   "minDisp": 2.1,
+   "maxDisp": null
+  },
+  "minDisp": 2.1,
+  "maxDisp": null,
+  "rawMin": 2.1,
+  "rawMax": null,
+  "wholeMin": 2.1,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.1,
+    "cell": " 4 Dung tích xilanh ≥ 2,1 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2200030059",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 85,
+  "measured": {
+   "minDisp": 2.1,
+   "maxDisp": null
+  },
+  "minDisp": 2.1,
+  "maxDisp": null,
+  "rawMin": 2.1,
+  "rawMax": null,
+  "wholeMin": 2.1,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.1,
+    "cell": " 4 Dung tích xilanh ≥ 2,1 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2200037783",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 110,
+   "unit": "kVA"
+  },
+  "newly": 16,
+  "measured": {
+   "minDisp": 5.9,
+   "maxDisp": null
+  },
+  "minDisp": 5.9,
+  "maxDisp": null,
+  "rawMin": 5.9,
+  "rawMax": null,
+  "wholeMin": 5.9,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 5.9,
+    "cell": " - Dung tích xi lanh: 5900cc\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2200046063",
+  "i": 0,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 10.5,
+   "unit": "kVA"
+  },
+  "newly": 59,
+  "measured": {
+   "minDisp": 2.5,
+   "maxDisp": null
+  },
+  "minDisp": null,
+  "maxDisp": null,
+  "rawMin": null,
+  "rawMax": null,
+  "wholeMin": 2.5,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.5,
+    "cell": "4 Dung tích xilanh\r≥ 2,5 lít\rĐạt\rKhông đạt"
+   },
+   {
+    "k": "minDisp",
+    "v": 2.5,
+    "cell": "23 Dung tích xilanh\r≥ 2.5\rĐạt\rKhông đạt"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 10.5,
+    "unit": "kVA"
+   },
+   {
+    "value": 13.5,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2200046063",
+  "i": 1,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 13.5,
+   "unit": "kVA"
+  },
+  "newly": 119,
+  "measured": {
+   "minDisp": 2.5,
+   "maxDisp": null
+  },
+  "minDisp": null,
+  "maxDisp": null,
+  "rawMin": null,
+  "rawMax": null,
+  "wholeMin": 2.5,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.5,
+    "cell": "4 Dung tích xilanh\r≥ 2,5 lít\rĐạt\rKhông đạt"
+   },
+   {
+    "k": "minDisp",
+    "v": 2.5,
+    "cell": "23 Dung tích xilanh\r≥ 2.5\rĐạt\rKhông đạt"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 10.5,
+    "unit": "kVA"
+   },
+   {
+    "value": 13.5,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2200049662",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 500,
+   "unit": "kVA"
+  },
+  "newly": 53,
+  "measured": {
+   "minDisp": 19,
+   "maxDisp": null
+  },
+  "minDisp": 19,
+  "maxDisp": null,
+  "rawMin": 19,
+  "rawMax": null,
+  "wholeMin": 19,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 19,
+    "cell": "8 Tổng dung tích xylanh 19 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2200052056",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 31,
+  "measured": {
+   "minDisp": 2.26,
+   "maxDisp": null
+  },
+  "minDisp": 2.26,
+  "maxDisp": null,
+  "rawMin": 2.26,
+  "rawMax": null,
+  "wholeMin": 2.26,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.26,
+    "cell": "4 Dung tích xilanh\r≥ 2.26\rĐạt\rKhông đạt"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2200062073",
+  "i": 0,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 12.5,
+   "unit": "kVA"
+  },
+  "newly": 188,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": null,
+  "maxDisp": null,
+  "rawMin": null,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "Dung tích xilanh ≥ 2,3 lít"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 12.5,
+    "unit": "kVA"
+   },
+   {
+    "value": 30,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2200062073",
+  "i": 1,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 30,
+   "unit": "kVA"
+  },
+  "newly": 5,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "Dung tích xilanh ≥ 2,3 lít"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 12.5,
+    "unit": "kVA"
+   },
+   {
+    "value": 30,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2200067764",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 160,
+   "unit": "kVA"
+  },
+  "newly": 58,
+  "measured": {
+   "minDisp": 8.3,
+   "maxDisp": null
+  },
+  "minDisp": 8.3,
+  "maxDisp": null,
+  "rawMin": 8.3,
+  "rawMax": null,
+  "wholeMin": 8.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 8.3,
+    "cell": "Dung tích xi lanh: ≥ 8.3 L"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2200071778",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 15,
+   "unit": "kVA"
+  },
+  "newly": 172,
+  "measured": {
+   "minDisp": 2.54,
+   "maxDisp": null
+  },
+  "minDisp": 2.54,
+  "maxDisp": null,
+  "rawMin": 2.54,
+  "rawMax": null,
+  "wholeMin": 2.54,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.54,
+    "cell": " Dung tích xy lanh ≥ 2.54 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2200082109",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 250,
+   "unit": "kVA"
+  },
+  "newly": 3,
+  "measured": {
+   "minDisp": 9.726,
+   "maxDisp": null
+  },
+  "minDisp": 9.726,
+  "maxDisp": null,
+  "rawMin": 9.726,
+  "rawMax": null,
+  "wholeMin": 9.726,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 9.726,
+    "cell": " 6 Dung tích xi lanh (L) 9.726\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2200100465",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 75,
+   "unit": "kVA"
+  },
+  "newly": 29,
+  "measured": {
+   "minDisp": 4.837,
+   "maxDisp": null
+  },
+  "minDisp": 4.837,
+  "maxDisp": null,
+  "rawMin": 4.837,
+  "rawMax": null,
+  "wholeMin": 4.837,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 4.837,
+    "cell": "- Dung tích xi lanh (L) 4,837"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300020482",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 10,
+   "unit": "kVA"
+  },
+  "newly": 50,
+  "measured": {
+   "minDisp": 1.6,
+   "maxDisp": null
+  },
+  "minDisp": 1.6,
+  "maxDisp": null,
+  "rawMin": 1.6,
+  "rawMax": null,
+  "wholeMin": 1.6,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 1.6,
+    "cell": "9 | Dung tích xylanh > 1600 cc Bắt buộc\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300022380",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 48,
+   "unit": "kW"
+  },
+  "newly": 13,
+  "measured": {
+   "minDisp": 3.9,
+   "maxDisp": null
+  },
+  "minDisp": 3.9,
+  "maxDisp": null,
+  "rawMin": 3.9,
+  "rawMax": null,
+  "wholeMin": 3.9,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 3.9,
+    "cell": "Dung tích xilanh (L): 3.9"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300022940",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 625,
+   "unit": "kVA"
+  },
+  "newly": 9,
+  "measured": {
+   "minDisp": 19.6,
+   "maxDisp": null
+  },
+  "minDisp": 19.6,
+  "maxDisp": null,
+  "rawMin": 19.6,
+  "rawMax": null,
+  "wholeMin": 19.6,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 19.6,
+    "cell": "Dung tích xi lanh ≥ 19,6 L"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300026252",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 15,
+   "unit": "kVA"
+  },
+  "newly": 1,
+  "measured": {
+   "minDisp": 1.8,
+   "maxDisp": null
+  },
+  "minDisp": 1.8,
+  "maxDisp": null,
+  "rawMin": 1.8,
+  "rawMax": null,
+  "wholeMin": 1.8,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 1.8,
+    "cell": "- Dung tích xy lanh (cc): ≥ 1.800 "
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300042675",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 250,
+   "unit": "kVA"
+  },
+  "newly": 95,
+  "measured": {
+   "minDisp": 11.051,
+   "maxDisp": null
+  },
+  "minDisp": 11.051,
+  "maxDisp": null,
+  "rawMin": 11.051,
+  "rawMax": null,
+  "wholeMin": 11.051,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 11.051,
+    "cell": "Dung tích xi lanh ≥ 11.051 L\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300046353",
+  "i": 0,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 15,
+   "unit": "kVA"
+  },
+  "newly": 11,
+  "measured": {
+   "minDisp": 1.95,
+   "maxDisp": null
+  },
+  "minDisp": 1.95,
+  "maxDisp": null,
+  "rawMin": 1.95,
+  "rawMax": null,
+  "wholeMin": 1.95,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 1.95,
+    "cell": " 6 Tổng dung tích xilanh > 1,950 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 15,
+    "unit": "kVA"
+   },
+   {
+    "value": 20,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2300048778",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 10,
+   "unit": "kVA"
+  },
+  "newly": 86,
+  "measured": {
+   "minDisp": 1.809,
+   "maxDisp": null
+  },
+  "minDisp": 1.809,
+  "maxDisp": null,
+  "rawMin": 1.809,
+  "rawMax": null,
+  "wholeMin": 1.809,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 1.809,
+    "cell": " Dung tich xy lanh > 1.809 lit\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300062472",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 62,
+  "measured": {
+   "minDisp": 2.15,
+   "maxDisp": null
+  },
+  "minDisp": 2.15,
+  "maxDisp": null,
+  "rawMin": 2.15,
+  "rawMax": null,
+  "wholeMin": 2.15,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.15,
+    "cell": "10 Dung tích xi lanh ≥ 2,150 lít đáp ứng\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300065474",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 85,
+  "measured": {
+   "minDisp": 2,
+   "maxDisp": null
+  },
+  "minDisp": 2,
+  "maxDisp": null,
+  "rawMin": 2,
+  "rawMax": null,
+  "wholeMin": 2,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2,
+    "cell": "Dung tích xilanh ≥ 2 lít"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300067330",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 10.5,
+   "unit": "kVA"
+  },
+  "newly": 45,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "4 Dung tích xilanh ≥ 2,3 lít Đạt\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300083611",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 60,
+   "unit": "kVA"
+  },
+  "newly": 67,
+  "measured": {
+   "minDisp": 4.33,
+   "maxDisp": null
+  },
+  "minDisp": 4.33,
+  "maxDisp": null,
+  "rawMin": 4.33,
+  "rawMax": null,
+  "wholeMin": 4.33,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 4.33,
+    "cell": " 6 Tổng dung tích xilanh > 4,33 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300087393",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 400,
+   "unit": "kVA"
+  },
+  "newly": 47,
+  "measured": {
+   "minDisp": 12.9,
+   "maxDisp": null
+  },
+  "minDisp": 12.9,
+  "maxDisp": null,
+  "rawMin": 12.9,
+  "rawMax": null,
+  "wholeMin": 12.9,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 12.9,
+    "cell": " + Tổng dung tích xylanh: 12,9 L (± 3%)\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300088930",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 20,
+   "unit": "kVA"
+  },
+  "newly": 207,
+  "measured": {
+   "minDisp": 2.9,
+   "maxDisp": null
+  },
+  "minDisp": 2.9,
+  "maxDisp": null,
+  "rawMin": 2.9,
+  "rawMax": null,
+  "wholeMin": 2.9,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.9,
+    "cell": "Tổng dung tích xilanh ≥ 2,9 lít."
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300089150",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 45,
+   "unit": "kVA"
+  },
+  "newly": 35,
+  "measured": {
+   "minDisp": 4.2,
+   "maxDisp": null
+  },
+  "minDisp": 4.2,
+  "maxDisp": null,
+  "rawMin": 4.2,
+  "rawMax": null,
+  "wholeMin": 4.2,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 4.2,
+    "cell": "8 Dung tích xylanh ≥ 4,2 L\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300102941",
+  "i": 0,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 15,
+   "unit": "kVA"
+  },
+  "newly": 11,
+  "measured": {
+   "minDisp": 1.95,
+   "maxDisp": null
+  },
+  "minDisp": 1.95,
+  "maxDisp": null,
+  "rawMin": 1.95,
+  "rawMax": null,
+  "wholeMin": 1.95,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 1.95,
+    "cell": " 6 Tổng dung tích xilanh > 1,950 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 15,
+    "unit": "kVA"
+   },
+   {
+    "value": 20,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2300120176",
+  "i": 0,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 12.5,
+   "unit": "kVA"
+  },
+  "newly": 118,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": null,
+  "maxDisp": null,
+  "rawMin": null,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": " 6 Dung tích xilanh ≥ 2,3 lít Đạt Không đạt\r"
+   },
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "6 Dung tích xilanh ≥ 2,3 lít Đạt Không đạt\r"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 12.5,
+    "unit": "kVA"
+   },
+   {
+    "value": 40,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2300120176",
+  "i": 1,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 40,
+   "unit": "kVA"
+  },
+  "newly": 2,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": " 6 Dung tích xilanh ≥ 2,3 lít Đạt Không đạt\r"
+   },
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "6 Dung tích xilanh ≥ 2,3 lít Đạt Không đạt\r"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 12.5,
+    "unit": "kVA"
+   },
+   {
+    "value": 40,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2300131371",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 30,
+   "unit": "kVA"
+  },
+  "newly": 74,
+  "measured": {
+   "minDisp": 3.331,
+   "maxDisp": null
+  },
+  "minDisp": 3.331,
+  "maxDisp": null,
+  "rawMin": 3.331,
+  "rawMax": null,
+  "wholeMin": 3.331,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 3.331,
+    "cell": " - Dung tích xi lanh: 3.331L\r"
+   },
+   {
+    "k": "minDisp",
+    "v": 3.331,
+    "cell": " - Dung tích xi lanh: 3.331L\r  - Số xi lanh: 4\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300133361",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 31,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "Dung tích xilanh ≥ 2,3 lít"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300147640",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 200,
+   "unit": "kVA"
+  },
+  "newly": 90,
+  "measured": {
+   "minDisp": 10.09,
+   "maxDisp": null
+  },
+  "minDisp": 10.09,
+  "maxDisp": null,
+  "rawMin": 10.09,
+  "rawMax": null,
+  "wholeMin": 10.09,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 10.09,
+    "cell": " Dung tích xi lanh: 10.09 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300158982",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 250,
+   "unit": "kVA"
+  },
+  "newly": 3,
+  "measured": {
+   "minDisp": 8.9,
+   "maxDisp": null
+  },
+  "minDisp": 8.9,
+  "maxDisp": null,
+  "rawMin": 8.9,
+  "rawMax": null,
+  "wholeMin": 8.9,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 8.9,
+    "cell": "Dung tích xi lanh 8.9 lít"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300179052",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 250,
+   "unit": "kVA"
+  },
+  "newly": 3,
+  "measured": {
+   "minDisp": 8.9,
+   "maxDisp": null
+  },
+  "minDisp": 8.9,
+  "maxDisp": null,
+  "rawMin": 8.9,
+  "rawMax": null,
+  "wholeMin": 8.9,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 8.9,
+    "cell": " + Dung tích xylanh 8.9L.\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300188511",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 2500,
+   "unit": "kVA"
+  },
+  "newly": 36,
+  "measured": {
+   "minDisp": 78,
+   "maxDisp": null
+  },
+  "minDisp": 78,
+  "maxDisp": null,
+  "rawMin": 78,
+  "rawMax": null,
+  "wholeMin": 78,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 78,
+    "cell": " Tổng dung tích xy-\r  - ≥78 L\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300192935",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 1250,
+   "unit": "kVA"
+  },
+  "newly": 80,
+  "measured": {
+   "minDisp": 49.03,
+   "maxDisp": null
+  },
+  "minDisp": 49.03,
+  "maxDisp": null,
+  "rawMin": 49.03,
+  "rawMax": null,
+  "wholeMin": 49.03,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 49.03,
+    "cell": "Tổng dung tích xylanh 49.03 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300198424",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 40,
+   "unit": "kVA"
+  },
+  "newly": 29,
+  "measured": {
+   "minDisp": 3.765,
+   "maxDisp": null
+  },
+  "minDisp": 3.765,
+  "maxDisp": null,
+  "rawMin": 3.765,
+  "rawMax": null,
+  "wholeMin": 3.765,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 3.765,
+    "cell": "6 Tổng dung tích xilanh ≥ 3,765 lít.\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300204696",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 120,
+   "unit": "kVA"
+  },
+  "newly": 5,
+  "measured": {
+   "minDisp": 7.7,
+   "maxDisp": null
+  },
+  "minDisp": 7.7,
+  "maxDisp": null,
+  "rawMin": 7.7,
+  "rawMax": null,
+  "wholeMin": 7.7,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 7.7,
+    "cell": "Dung tích xi lanh 7.7 Lít"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300217401",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 10.5,
+   "unit": "kVA"
+  },
+  "newly": 11,
+  "measured": {
+   "minDisp": 2.156,
+   "maxDisp": null
+  },
+  "minDisp": 2.156,
+  "maxDisp": null,
+  "rawMin": 2.156,
+  "rawMax": null,
+  "wholeMin": 2.156,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.156,
+    "cell": "- Động cơ: Công xuất liên tục ≥17KW; Tốc độ quay 1500 vòng/phút; Số xi lanh 4; Hành trình piston (mm) 85x95; Tỷ lệ nén 18:01; Khởi động đề nổ; Dung tích xi lanh ≥ 2.156 cc; Dung tích dầu bôi trơn ≥7.8."
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300222010",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 15,
+   "unit": "kVA"
+  },
+  "newly": 174,
+  "measured": {
+   "minDisp": 2.42,
+   "maxDisp": null
+  },
+  "minDisp": 2.42,
+  "maxDisp": null,
+  "rawMin": 2.42,
+  "rawMax": null,
+  "wholeMin": 2.42,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.42,
+    "cell": " 3 Dung tích xilanh ≥ 2.42 L\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300239791",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 50,
+   "unit": "kVA"
+  },
+  "newly": 56,
+  "measured": {
+   "minDisp": 4.3,
+   "maxDisp": null
+  },
+  "minDisp": 4.3,
+  "maxDisp": null,
+  "rawMin": 4.3,
+  "rawMax": null,
+  "wholeMin": 4.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 4.3,
+    "cell": " Dung tích xy lanh ≥ 4.300 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300245556",
+  "i": 0,
+  "multi": true,
+  "nSizes": 3,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 30,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "5 Dung tích xilanh ≥ 2.3 lít Đạt Không đạt\r"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 8.5,
+    "unit": "kVA"
+   },
+   {
+    "value": 10.5,
+    "unit": "kVA"
+   },
+   {
+    "value": 12.5,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2300245556",
+  "i": 1,
+  "multi": true,
+  "nSizes": 3,
+  "cap": {
+   "value": 10.5,
+   "unit": "kVA"
+  },
+  "newly": 56,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "5 Dung tích xilanh ≥ 2.3 lít Đạt Không đạt\r"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 8.5,
+    "unit": "kVA"
+   },
+   {
+    "value": 10.5,
+    "unit": "kVA"
+   },
+   {
+    "value": 12.5,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2300245556",
+  "i": 2,
+  "multi": true,
+  "nSizes": 3,
+  "cap": {
+   "value": 12.5,
+   "unit": "kVA"
+  },
+  "newly": 118,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": null,
+  "maxDisp": null,
+  "rawMin": null,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "5 Dung tích xilanh ≥ 2.3 lít Đạt Không đạt\r"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 8.5,
+    "unit": "kVA"
+   },
+   {
+    "value": 10.5,
+    "unit": "kVA"
+   },
+   {
+    "value": 12.5,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2300245748",
+  "i": 0,
+  "multi": true,
+  "nSizes": 3,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 30,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "5 Dung tích xilanh ≥ 2.3 lít Đạt Không đạt\r"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 8.5,
+    "unit": "kVA"
+   },
+   {
+    "value": 10,
+    "unit": "kVA"
+   },
+   {
+    "value": 12,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2300245748",
+  "i": 1,
+  "multi": true,
+  "nSizes": 3,
+  "cap": {
+   "value": 10,
+   "unit": "kVA"
+  },
+  "newly": 78,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": null,
+  "maxDisp": null,
+  "rawMin": null,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "5 Dung tích xilanh ≥ 2.3 lít Đạt Không đạt\r"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 8.5,
+    "unit": "kVA"
+   },
+   {
+    "value": 10,
+    "unit": "kVA"
+   },
+   {
+    "value": 12,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2300245748",
+  "i": 2,
+  "multi": true,
+  "nSizes": 3,
+  "cap": {
+   "value": 12,
+   "unit": "kVA"
+  },
+  "newly": 116,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": null,
+  "maxDisp": null,
+  "rawMin": null,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "5 Dung tích xilanh ≥ 2.3 lít Đạt Không đạt\r"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 8.5,
+    "unit": "kVA"
+   },
+   {
+    "value": 10,
+    "unit": "kVA"
+   },
+   {
+    "value": 12,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2300247709",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 60,
+   "unit": "kVA"
+  },
+  "newly": 13,
+  "measured": {
+   "minDisp": 3.9,
+   "maxDisp": null
+  },
+  "minDisp": 3.9,
+  "maxDisp": null,
+  "rawMin": 3.9,
+  "rawMax": null,
+  "wholeMin": 3.9,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 3.9,
+    "cell": " Dung tích xi lanh: 3,9 lít;\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300252125",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 400,
+   "unit": "kVA"
+  },
+  "newly": 6,
+  "measured": {
+   "minDisp": 14.618,
+   "maxDisp": null
+  },
+  "minDisp": 14.618,
+  "maxDisp": null,
+  "rawMin": 14.618,
+  "rawMax": null,
+  "wholeMin": 14.618,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 14.618,
+    "cell": " Dung tích xy lanh 14,618 L\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300253227",
+  "i": 0,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 100,
+   "unit": "kVA"
+  },
+  "newly": 1,
+  "measured": {
+   "minDisp": 5.9,
+   "maxDisp": null
+  },
+  "minDisp": 5.9,
+  "maxDisp": null,
+  "rawMin": 5.9,
+  "rawMax": null,
+  "wholeMin": 5.9,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 5.9,
+    "cell": " - Tổng dung tích xi lanh: 5,9l\r"
+   },
+   {
+    "k": "minDisp",
+    "v": 5.9,
+    "cell": "- Tổng dung tích xi lanh: 5,9l\r"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 100,
+    "unit": "kVA"
+   },
+   {
+    "value": 150,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2300253626",
+  "i": 1,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 220,
+   "unit": "kVA"
+  },
+  "newly": 164,
+  "measured": {
+   "minDisp": 11.945,
+   "maxDisp": null
+  },
+  "minDisp": 11.945,
+  "maxDisp": null,
+  "rawMin": 11.945,
+  "rawMax": null,
+  "wholeMin": 11.945,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 11.945,
+    "cell": "Tổng dung tích xylanh 11,945 lít"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 7.5,
+    "unit": "kVA"
+   },
+   {
+    "value": 220,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2300254910",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 12.5,
+   "unit": "kVA"
+  },
+  "newly": 182,
+  "measured": {
+   "minDisp": 2.27,
+   "maxDisp": null
+  },
+  "minDisp": 2.27,
+  "maxDisp": null,
+  "rawMin": 2.27,
+  "rawMax": null,
+  "wholeMin": 2.27,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.27,
+    "cell": "Tổng dung tích xilanh ≥ 2,27 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300255495",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 10.5,
+   "unit": "kVA"
+  },
+  "newly": 11,
+  "measured": {
+   "minDisp": 2.156,
+   "maxDisp": null
+  },
+  "minDisp": 2.156,
+  "maxDisp": null,
+  "rawMin": 2.156,
+  "rawMax": null,
+  "wholeMin": 2.156,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.156,
+    "cell": "- Động cơ: Công xuất liên tục ≥17KW; Tốc độ quay 1500 vòng/phút; Số xi lanh 4; Hành trình piston (mm) 85x95; Tỷ lệ nén 18:01; Khởi động đề nổ; Dung tích xi lanh ≥ 2.156 cc; Dung tích dầu bôi trơn ≥7.8."
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300255930",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 800,
+   "unit": "kVA"
+  },
+  "newly": 10,
+  "measured": {
+   "minDisp": 22.9,
+   "maxDisp": null
+  },
+  "minDisp": 22.9,
+  "maxDisp": null,
+  "rawMin": 22.9,
+  "rawMax": null,
+  "wholeMin": 22.9,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 22.9,
+    "cell": " 8 Tổng dung tích xilanh ≥ 22,9 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300278731",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 100,
+   "unit": "kVA"
+  },
+  "newly": 15,
+  "measured": {
+   "minDisp": 5.9,
+   "maxDisp": null
+  },
+  "minDisp": 5.9,
+  "maxDisp": null,
+  "rawMin": 5.9,
+  "rawMax": null,
+  "wholeMin": 5.9,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 5.9,
+    "cell": "- Dung tích xy lanh: > 5.9 lít.\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300293753",
+  "i": 0,
+  "multi": true,
+  "nSizes": 3,
+  "cap": {
+   "value": 10,
+   "unit": "kVA"
+  },
+  "newly": 2,
+  "measured": {
+   "minDisp": 1.3,
+   "maxDisp": null
+  },
+  "minDisp": 1.3,
+  "maxDisp": null,
+  "rawMin": 1.3,
+  "rawMax": null,
+  "wholeMin": 1.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 1.3,
+    "cell": "11 Tổng dung tích xy lanh ≥ 1,3 (lít) ± 5%\r"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 10,
+    "unit": "kVA"
+   },
+   {
+    "value": 36,
+    "unit": "kVA"
+   },
+   {
+    "value": 200,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2300299959",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 86,
+  "measured": {
+   "minDisp": 1.64,
+   "maxDisp": null
+  },
+  "minDisp": 1.64,
+  "maxDisp": null,
+  "rawMin": 1.64,
+  "rawMax": null,
+  "wholeMin": 1.64,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 1.64,
+    "cell": "5 Dung tích xilanh ≥ 1.64 lít Đạt Không đạt\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300301452",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 31,
+   "unit": "kVA"
+  },
+  "newly": 39,
+  "measured": {
+   "minDisp": 3.568,
+   "maxDisp": null
+  },
+  "minDisp": 3.568,
+  "maxDisp": null,
+  "rawMin": 3.568,
+  "rawMax": null,
+  "wholeMin": 3.568,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 3.568,
+    "cell": "Dung tích xi lanh (L): ≥ 3,568"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300315082",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 750,
+   "unit": "kVA"
+  },
+  "newly": 2,
+  "measured": {
+   "minDisp": 21.927,
+   "maxDisp": null
+  },
+  "minDisp": 21.927,
+  "maxDisp": null,
+  "rawMin": 21.927,
+  "rawMax": null,
+  "wholeMin": 21.927,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 21.927,
+    "cell": " + Dung tích xi lanh: 21.927 L"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300329776",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 85,
+  "measured": {
+   "minDisp": 1.64,
+   "maxDisp": null
+  },
+  "minDisp": 1.64,
+  "maxDisp": null,
+  "rawMin": 1.64,
+  "rawMax": null,
+  "wholeMin": 1.64,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 1.64,
+    "cell": "5 Dung tích xilanh ≥ 1.64 lít Đạt\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300335088",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 85,
+  "measured": {
+   "minDisp": 2,
+   "maxDisp": null
+  },
+  "minDisp": 2,
+  "maxDisp": null,
+  "rawMin": 2,
+  "rawMax": null,
+  "wholeMin": 2,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2,
+    "cell": "Dung tích xilanh ≥ 2 lít"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300335255",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 200,
+   "unit": "kVA"
+  },
+  "newly": 43,
+  "measured": {
+   "minDisp": 8,
+   "maxDisp": null
+  },
+  "minDisp": 8,
+  "maxDisp": null,
+  "rawMin": 8,
+  "rawMax": null,
+  "wholeMin": 8,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 8,
+    "cell": " - Dung tích xy lanh: ≥ 8.0 lít.\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300340671",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 75,
+   "unit": "kVA"
+  },
+  "newly": 28,
+  "measured": {
+   "minDisp": 4.83,
+   "maxDisp": null
+  },
+  "minDisp": 4.83,
+  "maxDisp": null,
+  "rawMin": 4.83,
+  "rawMax": null,
+  "wholeMin": 4.83,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 4.83,
+    "cell": " - Dung tích xi lanh: 4830CC\r"
+   },
+   {
+    "k": "minDisp",
+    "v": 4.83,
+    "cell": " - Dung tích xi lanh: 4830CC\r  - Số xi lanh: 4\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300349583",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 18,
+   "unit": "kVA"
+  },
+  "newly": 117,
+  "measured": {
+   "minDisp": 2.5,
+   "maxDisp": null
+  },
+  "minDisp": 2.5,
+  "maxDisp": null,
+  "rawMin": 2.5,
+  "rawMax": null,
+  "wholeMin": 2.5,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.5,
+    "cell": "8 | Dung tich xylanh = 2.5L Bắt buộc\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300356137",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 80,
+   "unit": "kVA"
+  },
+  "newly": 2,
+  "measured": {
+   "minDisp": 6.494,
+   "maxDisp": null
+  },
+  "minDisp": 6.494,
+  "maxDisp": null,
+  "rawMin": 6.494,
+  "rawMax": null,
+  "wholeMin": 6.494,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 6.494,
+    "cell": " 5 Dung tích xi lanh > 6.494 L\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300356147",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 80,
+   "unit": "kVA"
+  },
+  "newly": 24,
+  "measured": {
+   "minDisp": 4.95,
+   "maxDisp": null
+  },
+  "minDisp": 4.95,
+  "maxDisp": null,
+  "rawMin": 4.95,
+  "rawMax": null,
+  "wholeMin": 4.95,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 4.95,
+    "cell": "Dung tích xi lanh: ≥ 4.95 L"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300359120",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 165,
+   "unit": "kVA"
+  },
+  "newly": 1,
+  "measured": {
+   "minDisp": 6.8,
+   "maxDisp": null
+  },
+  "minDisp": 6.8,
+  "maxDisp": null,
+  "rawMin": 6.8,
+  "rawMax": null,
+  "wholeMin": 6.8,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 6.8,
+    "cell": "6 Dung tích xylanh 6.800 cm³\r"
+   },
+   {
+    "k": "minDisp",
+    "v": 6.8,
+    "cell": "6 Dung tích xylanh 6.800 cm³\r 7 Số xylanh 06\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300363623",
+  "i": 0,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 5,
+   "unit": "kW"
+  },
+  "newly": 37,
+  "measured": {
+   "minDisp": 1.758,
+   "maxDisp": null
+  },
+  "minDisp": 1.758,
+  "maxDisp": null,
+  "rawMin": 1.758,
+  "rawMax": null,
+  "wholeMin": 1.758,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 1.758,
+    "cell": "- Dung tích xy lanh: > 1.758 lit\r"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 5,
+    "unit": "kW"
+   },
+   {
+    "value": 15,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2300363623",
+  "i": 1,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 15,
+   "unit": "kVA"
+  },
+  "newly": 1,
+  "measured": {
+   "minDisp": 1.758,
+   "maxDisp": null
+  },
+  "minDisp": 1.758,
+  "maxDisp": null,
+  "rawMin": 1.758,
+  "rawMax": null,
+  "wholeMin": 1.758,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 1.758,
+    "cell": "- Dung tích xy lanh: > 1.758 lit\r"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 5,
+    "unit": "kW"
+   },
+   {
+    "value": 15,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2300364488",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 200,
+   "unit": "kVA"
+  },
+  "newly": 25,
+  "measured": {
+   "minDisp": 7.98,
+   "maxDisp": null
+  },
+  "minDisp": 7.98,
+  "maxDisp": null,
+  "rawMin": 7.98,
+  "rawMax": null,
+  "wholeMin": 7.98,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 7.98,
+    "cell": " - Dung tích xi lanh: 7.98 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2300370623",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 30,
+   "unit": "kVA"
+  },
+  "newly": 25,
+  "measured": {
+   "minDisp": 2.54,
+   "maxDisp": null
+  },
+  "minDisp": 2.54,
+  "maxDisp": null,
+  "rawMin": 2.54,
+  "rawMax": null,
+  "wholeMin": 2.54,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.54,
+    "cell": "Dung tích xilanh (L) 2.54"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400026437",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 350,
+   "unit": "kVA"
+  },
+  "newly": 26,
+  "measured": {
+   "minDisp": 11.051,
+   "maxDisp": null
+  },
+  "minDisp": 11.051,
+  "maxDisp": null,
+  "rawMin": 11.051,
+  "rawMax": null,
+  "wholeMin": 11.051,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 11.051,
+    "cell": " - Dung tích xylanh: ≥ 11,051 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400031785",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 23,
+   "unit": "kVA"
+  },
+  "newly": 26,
+  "measured": {
+   "minDisp": 2.434,
+   "maxDisp": null
+  },
+  "minDisp": 2.434,
+  "maxDisp": null,
+  "rawMin": 2.434,
+  "rawMax": null,
+  "wholeMin": 2.434,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.434,
+    "cell": " - Dung tích xi lanh: 2434cc\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400041536",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 410,
+   "unit": "kVA"
+  },
+  "newly": 1,
+  "measured": {
+   "minDisp": 13,
+   "maxDisp": null
+  },
+  "minDisp": 13,
+  "maxDisp": null,
+  "rawMin": 13,
+  "rawMax": null,
+  "wholeMin": 13,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 13,
+    "cell": " Dung tích xi lanh: 13L\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400054276",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 15,
+   "unit": "kVA"
+  },
+  "newly": 151,
+  "measured": {
+   "minDisp": 2.27,
+   "maxDisp": null
+  },
+  "minDisp": 2.27,
+  "maxDisp": null,
+  "rawMin": 2.27,
+  "rawMax": null,
+  "wholeMin": 2.27,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.27,
+    "cell": " - Dung tích xi lanh(L) 2,27\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400063033",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8,
+   "unit": "kVA"
+  },
+  "newly": 86,
+  "measured": {
+   "minDisp": 1.64,
+   "maxDisp": null
+  },
+  "minDisp": 1.64,
+  "maxDisp": null,
+  "rawMin": 1.64,
+  "rawMax": null,
+  "wholeMin": 1.64,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 1.64,
+    "cell": "5 Dung tích xilanh >1.64 lít Đạt Không đạt\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400090868",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 15,
+   "unit": "kVA"
+  },
+  "newly": 151,
+  "measured": {
+   "minDisp": 2.27,
+   "maxDisp": null
+  },
+  "minDisp": 2.27,
+  "maxDisp": null,
+  "rawMin": 2.27,
+  "rawMax": null,
+  "wholeMin": 2.27,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.27,
+    "cell": " - Dung tích xi lanh(L) 2,27\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400095756",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 300,
+   "unit": "kVA"
+  },
+  "newly": 26,
+  "measured": {
+   "minDisp": 10.34,
+   "maxDisp": null
+  },
+  "minDisp": 10.34,
+  "maxDisp": null,
+  "rawMin": 10.34,
+  "rawMax": null,
+  "wholeMin": 10.34,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 10.34,
+    "cell": " Tỷ số nén: 16.8; Dung tích xilanh (L): > 10.34.\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400103308",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 85,
+  "measured": {
+   "minDisp": 1.645,
+   "maxDisp": null
+  },
+  "minDisp": 1.645,
+  "maxDisp": null,
+  "rawMin": 1.645,
+  "rawMax": null,
+  "wholeMin": 1.645,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 1.645,
+    "cell": "5 Dung tích xilanh ≥ 1.645 lít Đạt Không đạt\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400114476",
+  "i": 1,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 45,
+   "unit": "kVA"
+  },
+  "newly": 54,
+  "measured": {
+   "minDisp": 4.5,
+   "maxDisp": null
+  },
+  "minDisp": 4.5,
+  "maxDisp": null,
+  "rawMin": 4.5,
+  "rawMax": null,
+  "wholeMin": 4.5,
+  "wholeMax": 1.826,
+  "cells": [
+   {
+    "k": "maxDisp",
+    "v": 1.826,
+    "cell": " 6 Tổng dung tích xilanh ≤1,826 lít\r"
+   },
+   {
+    "k": "minDisp",
+    "v": 4.5,
+    "cell": " 6 Tổng dung tích xilanh ≥ 4,5 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 12,
+    "unit": "kVA"
+   },
+   {
+    "value": 45,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2400116787",
+  "i": 0,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 12,
+   "unit": "kVA"
+  },
+  "newly": 204,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "Tổng dung tích xilanh ≥ 2.3 lít"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 12,
+    "unit": "kVA"
+   },
+   {
+    "value": 40,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2400116787",
+  "i": 1,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 40,
+   "unit": "kVA"
+  },
+  "newly": 2,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "Tổng dung tích xilanh ≥ 2.3 lít"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 12,
+    "unit": "kVA"
+   },
+   {
+    "value": 40,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2400129388",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 300,
+   "unit": "kVA"
+  },
+  "newly": 26,
+  "measured": {
+   "minDisp": 10.34,
+   "maxDisp": null
+  },
+  "minDisp": 10.34,
+  "maxDisp": null,
+  "rawMin": 10.34,
+  "rawMax": null,
+  "wholeMin": 10.34,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 10.34,
+    "cell": " Tỷ số nén: 16.8; Dung tích xilanh (L): > 10.34.\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400134652",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 68,
+   "unit": "kVA"
+  },
+  "newly": 5,
+  "measured": {
+   "minDisp": 4.087,
+   "maxDisp": null
+  },
+  "minDisp": 4.087,
+  "maxDisp": null,
+  "rawMin": 4.087,
+  "rawMax": null,
+  "wholeMin": 4.087,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 4.087,
+    "cell": "- Dung tích xi lanh: > 4.087 lit.\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400153322",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8,
+   "unit": "kVA"
+  },
+  "newly": 86,
+  "measured": {
+   "minDisp": 1.64,
+   "maxDisp": null
+  },
+  "minDisp": 1.64,
+  "maxDisp": null,
+  "rawMin": 1.64,
+  "rawMax": null,
+  "wholeMin": 1.64,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 1.64,
+    "cell": "5 Dung tích xilanh >1.64 lít Dat Khong dat\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400159665",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 7,
+  "measured": {
+   "minDisp": 2.67,
+   "maxDisp": null
+  },
+  "minDisp": 2.67,
+  "maxDisp": null,
+  "rawMin": 2.67,
+  "rawMax": null,
+  "wholeMin": 2.67,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.67,
+    "cell": "6 | Tổng dung tích xilanh > 2,67 lít Dat Khong dat\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400164837",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 23,
+   "unit": "kVA"
+  },
+  "newly": 83,
+  "measured": {
+   "minDisp": 2.672,
+   "maxDisp": null
+  },
+  "minDisp": 2.672,
+  "maxDisp": null,
+  "rawMin": 2.672,
+  "rawMax": null,
+  "wholeMin": 2.672,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.672,
+    "cell": " 7 Dung tích xylanh 2.672 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400216393",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 250,
+   "unit": "kVA"
+  },
+  "newly": 3,
+  "measured": {
+   "minDisp": 8.9,
+   "maxDisp": null
+  },
+  "minDisp": 8.9,
+  "maxDisp": null,
+  "rawMin": 8.9,
+  "rawMax": null,
+  "wholeMin": 8.9,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 8.9,
+    "cell": " + Dung tích xy lanh: 8.9 L\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400217107",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 125,
+   "unit": "kVA"
+  },
+  "newly": 5,
+  "measured": {
+   "minDisp": 6.87,
+   "maxDisp": null
+  },
+  "minDisp": 6.87,
+  "maxDisp": null,
+  "rawMin": 6.87,
+  "rawMax": null,
+  "wholeMin": 6.87,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 6.87,
+    "cell": " Dung tích xi lanh 6.87L\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400226406",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 85,
+  "measured": {
+   "minDisp": 2,
+   "maxDisp": null
+  },
+  "minDisp": 2,
+  "maxDisp": null,
+  "rawMin": 2,
+  "rawMax": null,
+  "wholeMin": 2,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2,
+    "cell": "Dung tích xilanh ≥ 2 lít"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400257256",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 12,
+   "unit": "kVA"
+  },
+  "newly": 5,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": " 8 Dung tích xilanh ≥ 2300 cc Đạt Không đạt\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400282042",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 62,
+  "measured": {
+   "minDisp": 1.532,
+   "maxDisp": null
+  },
+  "minDisp": 1.532,
+  "maxDisp": null,
+  "rawMin": 1.532,
+  "rawMax": null,
+  "wholeMin": 1.532,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 1.532,
+    "cell": "8 Dung tích xi lanh (lít) ≥ 1.532 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400296884",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 12,
+   "unit": "kVA"
+  },
+  "newly": 165,
+  "measured": {
+   "minDisp": 2.27,
+   "maxDisp": null
+  },
+  "minDisp": 2.27,
+  "maxDisp": null,
+  "rawMin": 2.27,
+  "rawMax": null,
+  "wholeMin": 2.27,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.27,
+    "cell": "Tổng dung tích xilanh ≥ 2,27 lít "
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400298819",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 250,
+   "unit": "kVA"
+  },
+  "newly": 95,
+  "measured": {
+   "minDisp": 11.051,
+   "maxDisp": null
+  },
+  "minDisp": 11.051,
+  "maxDisp": null,
+  "rawMin": 11.051,
+  "rawMax": null,
+  "wholeMin": 11.051,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 11.051,
+    "cell": "Dung tích xi lanh 11.051 L"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400303471",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 150,
+   "unit": "kVA"
+  },
+  "newly": 1,
+  "measured": {
+   "minDisp": 6.75,
+   "maxDisp": null
+  },
+  "minDisp": 6.75,
+  "maxDisp": null,
+  "rawMin": 6.75,
+  "rawMax": null,
+  "wholeMin": 6.75,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 6.75,
+    "cell": " - Dung tích xilanh: ≥ 6.75 L\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400311574",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 12.5,
+   "unit": "kVA"
+  },
+  "newly": 5,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": " 9 Dung tích xilanh: ≥ 2,3 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400313681",
+  "i": 0,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 30,
+   "unit": "kVA"
+  },
+  "newly": 77,
+  "measured": {
+   "minDisp": 3.3,
+   "maxDisp": null
+  },
+  "minDisp": 3.3,
+  "maxDisp": null,
+  "rawMin": 3.3,
+  "rawMax": null,
+  "wholeMin": 3.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 3.3,
+    "cell": "6 Tong dung tich xilanh > 3.3 lit Dat Khong dat\r"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 30,
+    "unit": "kVA"
+   },
+   {
+    "value": 42,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2400313681",
+  "i": 1,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 42,
+   "unit": "kVA"
+  },
+  "newly": 11,
+  "measured": {
+   "minDisp": 3.3,
+   "maxDisp": null
+  },
+  "minDisp": 3.3,
+  "maxDisp": null,
+  "rawMin": 3.3,
+  "rawMax": null,
+  "wholeMin": 3.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 3.3,
+    "cell": "6 Tong dung tich xilanh > 3.3 lit Dat Khong dat\r"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 30,
+    "unit": "kVA"
+   },
+   {
+    "value": 42,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2400339967",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 10,
+   "unit": "kVA"
+  },
+  "newly": 11,
+  "measured": {
+   "minDisp": 2.2,
+   "maxDisp": null
+  },
+  "minDisp": 2.2,
+  "maxDisp": null,
+  "rawMin": 2.2,
+  "rawMax": null,
+  "wholeMin": 2.2,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.2,
+    "cell": " Dung tích xy lanh ≥ 2.2 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400356423",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 16,
+   "unit": "kVA"
+  },
+  "newly": 160,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": " 5. Tổng dung tích xylanh ≥ 2,3 L\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400382139",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 12,
+   "unit": "kVA"
+  },
+  "newly": 182,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "Tổng dung tích xilanh ≥ 2,3 lít "
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400389856",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 100,
+   "unit": "kVA"
+  },
+  "newly": 15,
+  "measured": {
+   "minDisp": 5.9,
+   "maxDisp": null
+  },
+  "minDisp": 5.9,
+  "maxDisp": null,
+  "rawMin": 5.9,
+  "rawMax": null,
+  "wholeMin": 5.9,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 5.9,
+    "cell": " Dung tích xy lanh: 5.9 L,\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400434949",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 45,
+   "unit": "kVA"
+  },
+  "newly": 46,
+  "measured": {
+   "minDisp": 4.5,
+   "maxDisp": null
+  },
+  "minDisp": 4.5,
+  "maxDisp": null,
+  "rawMin": 4.5,
+  "rawMax": null,
+  "wholeMin": 4.5,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 4.5,
+    "cell": "\f6 Tổng dung tích xilanh ≥ 4,5 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400439995",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 250,
+   "unit": "kVA"
+  },
+  "newly": 95,
+  "measured": {
+   "minDisp": 11.051,
+   "maxDisp": null
+  },
+  "minDisp": 11.051,
+  "maxDisp": null,
+  "rawMin": 11.051,
+  "rawMax": null,
+  "wholeMin": 11.051,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 11.051,
+    "cell": "Dung tích xi lanh 11.051 L"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400440257",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 23,
+   "unit": "kVA"
+  },
+  "newly": 83,
+  "measured": {
+   "minDisp": 2.672,
+   "maxDisp": null
+  },
+  "minDisp": 2.672,
+  "maxDisp": null,
+  "rawMin": 2.672,
+  "rawMax": null,
+  "wholeMin": 2.672,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.672,
+    "cell": "Dung tích xylanh > 2.672 lít"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400442989",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 30,
+   "unit": "kVA"
+  },
+  "newly": 5,
+  "measured": {
+   "minDisp": 2.4,
+   "maxDisp": null
+  },
+  "minDisp": 2.4,
+  "maxDisp": null,
+  "rawMin": 2.4,
+  "rawMax": null,
+  "wholeMin": 2.4,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.4,
+    "cell": " - Tổng dung tích xy-lanh: ≥ 2,4 lít. Đáp ứng yêu cầu - Không đáp ứng yêu cầu\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400457172",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 1,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "4 Dung tích xilanh ≥ 2,3 lít Đạt Không đạt\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400470242",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 33,
+   "unit": "kVA"
+  },
+  "newly": 19,
+  "measured": {
+   "minDisp": 3.9,
+   "maxDisp": null
+  },
+  "minDisp": 3.9,
+  "maxDisp": null,
+  "rawMin": 3.9,
+  "rawMax": null,
+  "wholeMin": 3.9,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 3.9,
+    "cell": " Dung tích xy lanh: 3.9L\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400475145",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 116,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": " 9 Tổng dung tích xilanh ≥ 2,3 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400481610",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "newly": 85,
+  "measured": {
+   "minDisp": 1.645,
+   "maxDisp": null
+  },
+  "minDisp": 1.645,
+  "maxDisp": null,
+  "rawMin": 1.645,
+  "rawMax": null,
+  "wholeMin": 1.645,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 1.645,
+    "cell": "5 Dung tích xilanh ≥ 1.645 lít Đạt\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400487460",
+  "i": 0,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 8.8,
+   "unit": "kVA"
+  },
+  "newly": 127,
+  "measured": {
+   "minDisp": 3.9,
+   "maxDisp": null
+  },
+  "minDisp": null,
+  "maxDisp": null,
+  "rawMin": null,
+  "rawMax": null,
+  "wholeMin": 3.9,
+  "wholeMax": 2.3,
+  "cells": [
+   {
+    "k": "maxDisp",
+    "v": 2.3,
+    "cell": "Dung tích xilanh ≤ 2.3 lít"
+   },
+   {
+    "k": "minDisp",
+    "v": 3.9,
+    "cell": "Tổng dung tích xilanh  ≥ 3,9 lít"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 8.8,
+    "unit": "kVA"
+   },
+   {
+    "value": 40,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2400487460",
+  "i": 1,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 40,
+   "unit": "kVA"
+  },
+  "newly": 71,
+  "measured": {
+   "minDisp": 3.9,
+   "maxDisp": null
+  },
+  "minDisp": 3.9,
+  "maxDisp": null,
+  "rawMin": 3.9,
+  "rawMax": null,
+  "wholeMin": 3.9,
+  "wholeMax": 2.3,
+  "cells": [
+   {
+    "k": "maxDisp",
+    "v": 2.3,
+    "cell": "Dung tích xilanh ≤ 2.3 lít"
+   },
+   {
+    "k": "minDisp",
+    "v": 3.9,
+    "cell": "Tổng dung tích xilanh  ≥ 3,9 lít"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 8.8,
+    "unit": "kVA"
+   },
+   {
+    "value": 40,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2400493077",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 80,
+   "unit": "kVA"
+  },
+  "newly": 1,
+  "measured": {
+   "minDisp": 4.5,
+   "maxDisp": null
+  },
+  "minDisp": 4.5,
+  "maxDisp": null,
+  "rawMin": 4.5,
+  "rawMax": null,
+  "wholeMin": 4.5,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 4.5,
+    "cell": " 5 Dung tích xilanh ≥ 4.5 lít\r"
+   },
+   {
+    "k": "minDisp",
+    "v": 4.5,
+    "cell": " 5 Dung tích xilanh ≥ 4.5 lít\r  6 Số xilanh ≥4\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400495088",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 300,
+   "unit": "kVA"
+  },
+  "newly": 76,
+  "measured": {
+   "minDisp": 11,
+   "maxDisp": null
+  },
+  "minDisp": 11,
+  "maxDisp": null,
+  "rawMin": 11,
+  "rawMax": null,
+  "wholeMin": 11,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 11,
+    "cell": " Dung tích xilanh L ≥ 11\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400495696",
+  "i": 1,
+  "multi": true,
+  "nSizes": 3,
+  "cap": {
+   "value": 100,
+   "unit": "kVA"
+  },
+  "newly": 15,
+  "measured": {
+   "minDisp": 4.837,
+   "maxDisp": null
+  },
+  "minDisp": 4.837,
+  "maxDisp": null,
+  "rawMin": 4.837,
+  "rawMax": null,
+  "wholeMin": 4.837,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 4.837,
+    "cell": "4. | Dung tich xylanh >4,837 lit\r"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 30,
+    "unit": "kVA"
+   },
+   {
+    "value": 100,
+    "unit": "kVA"
+   },
+   {
+    "value": 200,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2400513782",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 12.5,
+   "unit": "kVA"
+  },
+  "newly": 2,
+  "measured": {
+   "minDisp": 1.8,
+   "maxDisp": null
+  },
+  "minDisp": 1.8,
+  "maxDisp": null,
+  "rawMin": 1.8,
+  "rawMax": null,
+  "wholeMin": 1.8,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 1.8,
+    "cell": " Tổng dung tích\r 7 >= 1,8 lít X\r  xilanh\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400531851",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 12.5,
+   "unit": "kVA"
+  },
+  "newly": 5,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "Dung tích xilanh ≥ 2300 cc"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400533611",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 630,
+   "unit": "kVA"
+  },
+  "newly": 34,
+  "measured": {
+   "minDisp": 26.6,
+   "maxDisp": null
+  },
+  "minDisp": 26.6,
+  "maxDisp": null,
+  "rawMin": 26.6,
+  "rawMax": null,
+  "wholeMin": 26.6,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 26.6,
+    "cell": "Tổng dung tích xy lanh Lít ≥26.6\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400542354",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 12.5,
+   "unit": "kVA"
+  },
+  "newly": 5,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "Dung tích xilanh ≥ 2300 cc"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400546306",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 125,
+   "unit": "kVA"
+  },
+  "newly": 1,
+  "measured": {
+   "minDisp": 5.9,
+   "maxDisp": null
+  },
+  "minDisp": 5.9,
+  "maxDisp": null,
+  "rawMin": 5.9,
+  "rawMax": null,
+  "wholeMin": 5.9,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 5.9,
+    "cell": " - Dung tích xy lanh (lít): 5.9\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400560277",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 200,
+   "unit": "kVA"
+  },
+  "newly": 43,
+  "measured": {
+   "minDisp": 8.8,
+   "maxDisp": null
+  },
+  "minDisp": 8.8,
+  "maxDisp": null,
+  "rawMin": 8.8,
+  "rawMax": null,
+  "wholeMin": 8.8,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 8.8,
+    "cell": "Dung tích xylanh ≥ 8,8 lít"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400595350",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 50,
+   "unit": "kVA"
+  },
+  "newly": 56,
+  "measured": {
+   "minDisp": 4.329,
+   "maxDisp": null
+  },
+  "minDisp": 4.329,
+  "maxDisp": null,
+  "rawMin": 4.329,
+  "rawMax": null,
+  "wholeMin": 4.329,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 4.329,
+    "cell": " - Dung tích xi lanh: > 4.329 L"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2400596787",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 630,
+   "unit": "kVA"
+  },
+  "newly": 34,
+  "measured": {
+   "minDisp": 26.6,
+   "maxDisp": null
+  },
+  "minDisp": 26.6,
+  "maxDisp": null,
+  "rawMin": 26.6,
+  "rawMax": null,
+  "wholeMin": 26.6,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 26.6,
+    "cell": "Tổng dung tích xy lanh Lít ≥26.6\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2500057816",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 100,
+   "unit": "kVA"
+  },
+  "newly": 1,
+  "measured": {
+   "minDisp": 5.9,
+   "maxDisp": null
+  },
+  "minDisp": 5.9,
+  "maxDisp": null,
+  "rawMin": 5.9,
+  "rawMax": null,
+  "wholeMin": 5.9,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 5.9,
+    "cell": " 5 Dung tích xi lanh 5.9 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2500084609",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 15,
+   "unit": "kVA"
+  },
+  "newly": 7,
+  "measured": {
+   "minDisp": 2.43,
+   "maxDisp": null
+  },
+  "minDisp": 2.43,
+  "maxDisp": null,
+  "rawMin": 2.43,
+  "rawMax": null,
+  "wholeMin": 2.43,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.43,
+    "cell": "Dung tích xi lanh (litres) ≥ 2.430 "
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2500189560",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 12.5,
+   "unit": "kVA"
+  },
+  "newly": 5,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "Tổng dung tích xilanh ≥ 2.3 lít"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2500198459",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 12,
+   "unit": "kVA"
+  },
+  "newly": 5,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "9 Tổng dung tích xilanh ≥ 2.3 lít Đạt Không đạt\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2500211376",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 15,
+   "unit": "kVA"
+  },
+  "newly": 7,
+  "measured": {
+   "minDisp": 2.43,
+   "maxDisp": null
+  },
+  "minDisp": 2.43,
+  "maxDisp": null,
+  "rawMin": 2.43,
+  "rawMax": null,
+  "wholeMin": 2.43,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.43,
+    "cell": "Dung tích xi lanh (litres) ≥ 2.430 "
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2500271735",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 200,
+   "unit": "kVA"
+  },
+  "newly": 25,
+  "measured": {
+   "minDisp": 7.98,
+   "maxDisp": null
+  },
+  "minDisp": 7.98,
+  "maxDisp": null,
+  "rawMin": 7.98,
+  "rawMax": null,
+  "wholeMin": 7.98,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 7.98,
+    "cell": " Dung tích xi lanh(L) 7.98\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2500291421",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 550,
+   "unit": "kVA"
+  },
+  "newly": 61,
+  "measured": {
+   "minDisp": 23.15,
+   "maxDisp": null
+  },
+  "minDisp": 23.15,
+  "maxDisp": null,
+  "rawMin": 23.15,
+  "rawMax": null,
+  "wholeMin": 23.15,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 23.15,
+    "cell": "- Dung tích xilanh: 23.150 L"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2500336823",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 12,
+   "unit": "kVA"
+  },
+  "newly": 12,
+  "measured": {
+   "minDisp": 1.8,
+   "maxDisp": null
+  },
+  "minDisp": 1.8,
+  "maxDisp": null,
+  "rawMin": 1.8,
+  "rawMax": null,
+  "wholeMin": 1.8,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 1.8,
+    "cell": "Tổng dung tích xilanh ≥ 1,8 lít"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2500364714",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 500,
+   "unit": "kVA"
+  },
+  "newly": 47,
+  "measured": {
+   "minDisp": 18.8,
+   "maxDisp": null
+  },
+  "minDisp": 18.8,
+  "maxDisp": null,
+  "rawMin": 18.8,
+  "rawMax": null,
+  "wholeMin": 18.8,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 18.8,
+    "cell": "Dung tích xy lanh ≥ 18,8 lít"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2500372309",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 630,
+   "unit": "kVA"
+  },
+  "newly": 61,
+  "measured": {
+   "minDisp": 25,
+   "maxDisp": null
+  },
+  "minDisp": 25,
+  "maxDisp": null,
+  "rawMin": 25,
+  "rawMax": null,
+  "wholeMin": 25,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 25,
+    "cell": "Dung tích xi lanh ≥ 25 L"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2500385135",
+  "i": 0,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 10.5,
+   "unit": "kVA"
+  },
+  "newly": 69,
+  "measured": {
+   "minDisp": 2.197,
+   "maxDisp": null
+  },
+  "minDisp": 2.197,
+  "maxDisp": null,
+  "rawMin": 2.197,
+  "rawMax": null,
+  "wholeMin": 2.197,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.197,
+    "cell": "Dung tích xy lanh  2.197 L"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 10.5,
+    "unit": "kVA"
+   },
+   {
+    "value": 20,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2500385135",
+  "i": 1,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 20,
+   "unit": "kVA"
+  },
+  "newly": 10,
+  "measured": {
+   "minDisp": 2.197,
+   "maxDisp": null
+  },
+  "minDisp": 2.197,
+  "maxDisp": null,
+  "rawMin": 2.197,
+  "rawMax": null,
+  "wholeMin": 2.197,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.197,
+    "cell": "Dung tích xy lanh  2.197 L"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 10.5,
+    "unit": "kVA"
+   },
+   {
+    "value": 20,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2500442970",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 12.5,
+   "unit": "kVA"
+  },
+  "newly": 118,
+  "measured": {
+   "minDisp": 2.67,
+   "maxDisp": null
+  },
+  "minDisp": 2.67,
+  "maxDisp": null,
+  "rawMin": 2.67,
+  "rawMax": null,
+  "wholeMin": 2.67,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.67,
+    "cell": " 9 Tổng dung tích xilanh ≥ 2,67 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2500464050",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 750,
+   "unit": "kVA"
+  },
+  "newly": 113,
+  "measured": {
+   "minDisp": 30,
+   "maxDisp": null
+  },
+  "minDisp": 30,
+  "maxDisp": null,
+  "rawMin": 30,
+  "rawMax": null,
+  "wholeMin": 30,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 30,
+    "cell": "2.7 | Dung tich xilanh 30L + 1%\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2500471911",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 12,
+   "unit": "kVA"
+  },
+  "newly": 5,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "Tổng dung tích xilanh ≥ 2,3 lít"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2500473200",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 630,
+   "unit": "kVA"
+  },
+  "newly": 34,
+  "measured": {
+   "minDisp": 26.6,
+   "maxDisp": null
+  },
+  "minDisp": 26.6,
+  "maxDisp": null,
+  "rawMin": 26.6,
+  "rawMax": null,
+  "wholeMin": 26.6,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 26.6,
+    "cell": "Tổng dung tích xy lanh Lít ≥ 26.6\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2500476713",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 13,
+   "unit": "kVA"
+  },
+  "newly": 5,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "Tổng dung tích xilanh ≥ 2.3 lít"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2500498271",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 15,
+   "unit": "kVA"
+  },
+  "newly": 5,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "Tổng dung tích xilanh ≥ 2,3 lít"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2500512614",
+  "i": 0,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 22,
+   "unit": "kVA"
+  },
+  "newly": 2,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "Tổng dung tích xy lanh ≥ 2.3 L\r"
+   }
+  ],
+  "cm": false,
+  "src": "hc243",
+  "sizes": [
+   {
+    "value": 22,
+    "unit": "kVA"
+   },
+   {
+    "value": 40,
+    "unit": "kVA"
+   }
+  ]
+ },
+ {
+  "key": "IB2500532997",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 12,
+   "unit": "kVA"
+  },
+  "newly": 193,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "Tổng dung tích xilanh ≥ 2.3 lít"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2500553750",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 200,
+   "unit": "kVA"
+  },
+  "newly": 42,
+  "measured": {
+   "minDisp": 9.726,
+   "maxDisp": null
+  },
+  "minDisp": 9.726,
+  "maxDisp": null,
+  "rawMin": 9.726,
+  "rawMax": null,
+  "wholeMin": 9.726,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 9.726,
+    "cell": "- Dung tích xi lanh: 9.726L"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2500611943",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 100,
+   "unit": "kVA"
+  },
+  "newly": 14,
+  "measured": {
+   "minDisp": 4.7,
+   "maxDisp": null
+  },
+  "minDisp": 4.7,
+  "maxDisp": null,
+  "rawMin": 4.7,
+  "rawMax": null,
+  "wholeMin": 4.7,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 4.7,
+    "cell": "Tổng dung tích xy lanh ≥ 4.7 L"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2600252022",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 100,
+   "unit": "kVA"
+  },
+  "newly": 3,
+  "measured": {
+   "minDisp": 6.871,
+   "maxDisp": null
+  },
+  "minDisp": 6.871,
+  "maxDisp": null,
+  "rawMin": 6.871,
+  "rawMax": null,
+  "wholeMin": 6.871,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 6.871,
+    "cell": "Dung tích xilanh: ≥6,871 L "
+   },
+   {
+    "k": "minDisp",
+    "v": 6.871,
+    "cell": " - Dung tích xilanh: ≥6,871 L\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2600315904",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 354,
+   "unit": "kVA"
+  },
+  "newly": 62,
+  "measured": {
+   "minDisp": 12.78,
+   "maxDisp": null
+  },
+  "minDisp": 12.78,
+  "maxDisp": null,
+  "rawMin": 12.78,
+  "rawMax": null,
+  "wholeMin": 12.78,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 12.78,
+    "cell": " + Tổng dung tích Piston: ≥ 12.78 lít;\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2600337362",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 1500,
+   "unit": "kVA"
+  },
+  "newly": 3,
+  "measured": {
+   "minDisp": 49,
+   "maxDisp": null
+  },
+  "minDisp": 49,
+  "maxDisp": null,
+  "rawMin": 49,
+  "rawMax": null,
+  "wholeMin": 49,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 49,
+    "cell": "Dung tích xi lanh | ≥ 49 lít | Đạt: Đáp ứng\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2600350175",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 825,
+   "unit": "kVA"
+  },
+  "newly": 15,
+  "measured": {
+   "minDisp": 28.14,
+   "maxDisp": null
+  },
+  "minDisp": 28.14,
+  "maxDisp": null,
+  "rawMin": 28.14,
+  "rawMax": null,
+  "wholeMin": 28.14,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 28.14,
+    "cell": "15 Dung tích xi lanh 28.14L\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2600434462",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 12,
+   "unit": "kVA"
+  },
+  "newly": 115,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": " 9 Tổng dung tích xilanh ≥ 2,3 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2600448676",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 300,
+   "unit": "kVA"
+  },
+  "newly": 73,
+  "measured": {
+   "minDisp": 11,
+   "maxDisp": null
+  },
+  "minDisp": 11,
+  "maxDisp": null,
+  "rawMin": 11,
+  "rawMax": null,
+  "wholeMin": 11,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 11,
+    "cell": " - Dung tích xy lanh ≥ 11L\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2600464766",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 150,
+   "unit": "kVA"
+  },
+  "newly": 1,
+  "measured": {
+   "minDisp": 6.7,
+   "maxDisp": null
+  },
+  "minDisp": 6.7,
+  "maxDisp": null,
+  "rawMin": 6.7,
+  "rawMax": null,
+  "wholeMin": 6.7,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 6.7,
+    "cell": " (Displacement)≥ 6.7 lít đến 7.5 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2600472762",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 750,
+   "unit": "kVA"
+  },
+  "newly": 3,
+  "measured": {
+   "minDisp": 30,
+   "maxDisp": null
+  },
+  "minDisp": 30,
+  "maxDisp": null,
+  "rawMin": 30,
+  "rawMax": null,
+  "wholeMin": 30,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 30,
+    "cell": "2.8 Dung tích xi-lanh ≥ 30L\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2600511162",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 1500,
+   "unit": "kVA"
+  },
+  "newly": 71,
+  "measured": {
+   "minDisp": 50,
+   "maxDisp": null
+  },
+  "minDisp": 50,
+  "maxDisp": null,
+  "rawMin": 50,
+  "rawMax": null,
+  "wholeMin": 50,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 50,
+    "cell": "> Ấn - Dung tích xylanh: > 50 lít\r"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2600574589",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 400,
+   "unit": "kVA"
+  },
+  "newly": 7,
+  "measured": {
+   "minDisp": 12,
+   "maxDisp": null
+  },
+  "minDisp": 12,
+  "maxDisp": null,
+  "rawMin": 12,
+  "rawMax": null,
+  "wholeMin": 12,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 12,
+    "cell": "\fII.3 Dung tích xi lanh Dung tích xi lanh tổng tối thiểu: ≥ 12 Lít."
+   }
+  ],
+  "cm": true,
+  "src": "full12",
+  "sizes": null
+ },
+ {
+  "key": "IB2600581977",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 250,
+   "unit": "kVA"
+  },
+  "newly": 95,
+  "measured": {
+   "minDisp": 11.05,
+   "maxDisp": null
+  },
+  "minDisp": 11.05,
+  "maxDisp": null,
+  "rawMin": 11.05,
+  "rawMax": null,
+  "wholeMin": 11.05,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 11.05,
+    "cell": " Dung tích xy lanh ≥ 11,05 L"
+   }
+  ],
+  "cm": true,
+  "src": "full12",
+  "sizes": null
+ },
+ {
+  "key": "IB2600587429",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 50,
+   "unit": "kVA"
+  },
+  "newly": 5,
+  "measured": {
+   "minDisp": 3.61,
+   "maxDisp": null
+  },
+  "minDisp": 3.61,
+  "maxDisp": null,
+  "rawMin": 3.61,
+  "rawMax": null,
+  "wholeMin": 3.61,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 3.61,
+    "cell": "- Dung tích xy lanh: 3.61 L"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2600588204",
+  "i": null,
+  "multi": false,
+  "nSizes": 1,
+  "cap": {
+   "value": 12,
+   "unit": "kVA"
+  },
+  "newly": 5,
+  "measured": {
+   "minDisp": 2.3,
+   "maxDisp": null
+  },
+  "minDisp": 2.3,
+  "maxDisp": null,
+  "rawMin": 2.3,
+  "rawMax": null,
+  "wholeMin": 2.3,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 2.3,
+    "cell": "Tổng dung tích xilanh ≥ 2.3 lít"
+   }
+  ],
+  "cm": false,
+  "src": "specs",
+  "sizes": null
+ },
+ {
+  "key": "IB2600592684",
+  "i": 0,
+  "multi": true,
+  "nSizes": 2,
+  "cap": {
+   "value": 30,
+   "unit": "kVA"
+  },
+  "newly": 131,
+  "measured": {
+   "minDisp": 3.9,
+   "maxDisp": null
+  },
+  "minDisp": 3.9,
+  "maxDisp": null,
+  "rawMin": 3.9,
+  "rawMax": null,
+  "wholeMin": 3.9,
+  "wholeMax": null,
+  "cells": [
+   {
+    "k": "minDisp",
+    "v": 3.9,
+    "cell": " + Dung tích xi lanh: 3.9L"
+   }
+  ],
+  "cm": true,
+  "src": "full12",
+  "sizes": [
+   {
+    "value": 30,
+    "unit": "kVA"
+   },
+   {
+    "value": 500,
+    "unit": "kVA"
+   }
+  ]
+ }
+]

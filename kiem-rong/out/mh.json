@@ -1,0 +1,119 @@
+[
+ {
+  "key": "IB2300245748",
+  "size": "10 kVA",
+  "k": "minPrime",
+  "old": null,
+  "now": "10kVA",
+  "howOld": "of another size",
+  "howNow": "own"
+ },
+ {
+  "key": "IB2300245748",
+  "size": "10 kVA",
+  "k": "maxFuel",
+  "old": null,
+  "now": 4.35,
+  "howOld": "of another size",
+  "howNow": "own"
+ },
+ {
+  "key": "IB2300245748",
+  "size": "10 kVA",
+  "k": "maxFuel75",
+  "old": null,
+  "now": 3.5,
+  "howOld": "of another size",
+  "howNow": "own"
+ },
+ {
+  "key": "IB2300245748",
+  "size": "10 kVA",
+  "k": "maxFuel50",
+  "old": null,
+  "now": 2.7,
+  "howOld": "of another size",
+  "howNow": "own"
+ },
+ {
+  "key": "IB2300245748",
+  "size": "12 kVA",
+  "k": "minPrime",
+  "old": null,
+  "now": "12kVA",
+  "howOld": "of another size",
+  "howNow": "own"
+ },
+ {
+  "key": "IB2300245748",
+  "size": "12 kVA",
+  "k": "maxFuel",
+  "old": null,
+  "now": 4.9,
+  "howOld": "of another size",
+  "howNow": "own"
+ },
+ {
+  "key": "IB2300245748",
+  "size": "12 kVA",
+  "k": "maxFuel75",
+  "old": null,
+  "now": 3.8,
+  "howOld": "of another size",
+  "howNow": "own"
+ },
+ {
+  "key": "IB2300245748",
+  "size": "12 kVA",
+  "k": "maxFuel50",
+  "old": null,
+  "now": 3.1,
+  "howOld": "of another size",
+  "howNow": "own"
+ },
+ {
+  "key": "IB2500280002",
+  "size": "11 kVA",
+  "k": "minDisp",
+  "old": null,
+  "now": 0.79,
+  "howOld": "of another size",
+  "howNow": "own"
+ },
+ {
+  "key": "IB2500280002",
+  "size": "11 kVA",
+  "k": "minCyl",
+  "old": null,
+  "now": 2,
+  "howOld": "of another size",
+  "howNow": "own"
+ },
+ {
+  "key": "IB2500280002",
+  "size": "11 kVA",
+  "k": "minPrime",
+  "old": null,
+  "now": "11kVA",
+  "howOld": "of another size",
+  "howNow": "own"
+ },
+ {
+  "key": "IB2500280002",
+  "size": "15 kVA",
+  "k": "minDisp",
+  "old": null,
+  "now": 1.6,
+  "howOld": "of another size",
+  "howNow": "own"
+ },
+ {
+  "key": "IB2500280002",
+  "size": "15 kVA",
+  "k": "minPrime",
+  "old": null,
+  "now": "15kVA",
+  "howOld": "of another size",
+  "howNow": "own"
+ }
+]

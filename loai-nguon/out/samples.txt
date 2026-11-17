@@ -1,0 +1,66 @@
+distinct engine×reason rescued samples: 280
+
+== IB2400265303 8.5kVA min {"cyl":{"multi":75,"single":17}} | rise-power Caterpillar CAT C1.1 weak cyl inTop true
+    rise-power #108 genset_oem v=1.1 | | DE9.5E3 | 8.5 | 6.8 | 9.5 | 7.6 | CAT C1.1 | LC1114B | 3 | 1.1 | < 2.9 | 4.9 | 5.2 | 1400*620*996 | 301
+    null #null null v=1.1 | 
+    rise-power #108 genset_oem v=3 | | DE9.5E3 | 8.5 | 6.8 | 9.5 | 7.6 | CAT C1.1 | LC1114B | 3 | 1.1 | < 2.9 | 4.9 | 5.2 | 1400*620*996 | 301
+    null #null null v=3 | 
+
+== IB2400265303 8.5kVA min {"cyl":{"multi":75,"single":17}} | voltgent Yanmar 3TNV76-GGE weak cyl inTop true
+    genlitec #115 genset_oem v=1.116L | | Displacement | 1.116L
+    genlitec #115 genset_oem v=3 | | Cylinder Number | 3
+
+== IB2400384429 5.5kVA min {"disp":{"maker":3,"single":5},"cyl":{"single":1}} | victory-generator null LA188FG weak disp inTop true
+    null #null null v=474 | 
+
+== IB2400384429 5.5kVA min {"disp":{"maker":3,"single":5},"cyl":{"single":1}} | victory-generator null LPG420 weak disp inTop true
+    null #null null v=389 | 
+
+== IB2200004914 160kVA min {"maxDisp":{"multi":197,"single":63},"prime":{"single":134,"maker":1}} | westinpower MAN E2676E302 weak maxDisp inTop true
+    westinpower #112 genset_oem v=12.4 | | 7 | RN160N | 128 | 160 | E2676 E302 | 6/L | 126*166 | 12.4 | 3319*960*1206
+    westinpower #112 genset_oem v=12.4 | | RN185NT | 148 | 185 | E2676 E302 | UCI274G | 6/L | 126*166 | 12.4 | 38.7 | 54.7 | 281 | 200AH/24V | T5N400 TMA R320 FF 3P | 3219*895*1206 | 1630
+    null #null null v=12.4 | 
+
+== IB2200001635 100kVA min {"prime":{"single":184},"disp":{"multi":108,"single":57}} | longkai-power Baudouin 4M10G100/6 weak disp inTop false
+    waeta-fujian #103 genset_oem v=4.08 | | WTA-B125 | 125 | 100 | 114 | 91 | 4M10G100/6 | 4 L | 4.08 | Baudouin Series.xlsx
+    comappower #105 genset_oem v=4 | | COM125B | 100kVA | 80kW | 90kVA | 112.5kW | 4M10G100/6 | 4 | COM125B
+    waeta-fujian #103 genset_oem v=4 L | | WTA-B125 | 125 | 100 | 114 | 91 | 4M10G100/6 | 4 L | 4.08 | Baudouin Series.xlsx
+    yanan-power #106 genset_oem v=4 | | YN125B | 125kVA | 100kW | 113kVA | 90kW | 4M10G100/6 | 4 | YN125B
+
+== IB2400041536 410kVA min {"prime":{"single":731,"maker":3},"disp":{"multi":268,"maker":89,"single":127},"cyl":{"single":3}} | longkai-power Baudouin 6M21G400/6 weak disp inTop false
+    waeta-fujian #103 genset_oem v=12.54 | | WTA-B500 | 500 | 400 | 450 | 360 | 6M21G400/6 | 6 L | 12.54 | Baudouin Series.xlsx
+    comappower #105 genset_oem v=6 | | COM500B | 400kVA | 320kW | 360kVA | 450kW | 6M21G400/6 | 6 | COM500B
+    waeta-fujian #103 genset_oem v=6 L | | WTA-B500 | 500 | 400 | 450 | 360 | 6M21G400/6 | 6 L | 12.54 | Baudouin Series.xlsx
+    yanan-power #106 genset_oem v=6 | | YN500B | 500kVA | 400kW | 450kVA | 360kW | 6M21G400/6 | 6 | YN500B
+
+== IB2500314401 350kVA min {"maxDisp":{"multi":941,"maker":103,"single":270},"prime":{"single":335,"maker":1},"cyl":{"single":3}} | wintpower Wudong WD145TAD30 weak maxDisp inTop false
+    liangzi-yangzhou #115 genset_oem v=14.5 | | LZ- X300 | 300/375 | 无锡动力 | WD145TAD30 | 6L | 14.5 | 28 | ≤213 | 3140*1170*1700 | 3000 | 详细参数
+    liangzi-yangzhou #115 genset_oem v=6L | | LZ- X300 | 300/375 | 无锡动力 | WD145TAD30 | 6L | 14.5 | 28 | ≤213 | 3140*1170*1700 | 3000 | 详细参数
+    taihai-taizhou #116 genset_oem v=6 | | TH-280GF | 350 | 280 | WD145TAD30 | 6 | 138/160 | 14.5 | 198 | 3000×1250×1900 | 3200
+    vantek-jiangsu #108 genset_oem v=6 | | TPD280GF | 350 | 280 | WD145TAD30 | 6 | 138/160 | 198 | 3000×1250×1900 | 3200
+    world-power-fuzhou #103 genset_oem v=6 | | WD350 | 280 | 350 | 308 | 385 | WD145TAD30 | 6 | E |
+    xingguang-jiangsu #106 genset_oem v=6 | | XG-308GF-1 | 280/308 | WD145TAD30 | 309/340 | 6 | 40 | ≤195 | 国 II | 3250×1250×1800 | 3400
+
+== IB2200069368 118kVA min {"prime":{"single":291},"disp":{"multi":95,"single":49}} | jet-power SDEC 4HTAA4.3-G22 weak disp inTop false
+    jet-power #101 genset_oem v=4.3 | | SD-138 | 138 | 110 | 125 | 100 | 4HTAA4.3-G22 | 4L | 105×124 | 4.3 | 192 | JET274DM
+    null #null null v=4.3 | 
+    jet-power #101 genset_oem v=4L | | SD-138 | 138 | 110 | 125 | 100 | 4HTAA4.3-G22 | 4L | 105×124 | 4.3 | 192 | JET274DM
+    null #null null v=4L | 
+
+== IB2300191244 200kW min {"prime":{"single":127,"maker":1},"maxDisp":{"multi":184,"single":69}} | longkai-power Baudouin 6M16G275/5 weak maxDisp inTop false
+    waeta-fujian #103 genset_oem v=9.73 | | WTA-B275 | 275 | 220 | 250 | 200 | 6M16G275/5 | 6 L | 9.73 | Baudouin Series.xlsx
+    westinpower #1107 genset_oem v=9.726L | | Displacement | 9.726L
+    comappower #105 genset_oem v=6 | | COM275B | 275kVA | 220kW | 200kVA | 250kW | 6M16G275/5 | 6 | COM275B
+    gfe-power #1028 genset_oem v=6 cyl / vertical in-line | | Number of cylinders / arrangement | 6 cyl / vertical in-line
+    waeta-fujian #103 genset_oem v=6 L | | WTA-B275 | 275 | 220 | 250 | 200 | 6M16G275/5 | 6 L | 9.73 | Baudouin Series.xlsx
+    yanan-power #106 genset_oem v=6 | | YN275B | 275kVA | 220kW | 250kVA | 200kW | 6M16G275/5 | 6 | YN275B
+
+== IB2300088930 20kVA min {"cyl":{"multi":15,"single":9,"maker":2},"prime":{"single":48},"disp":{"multi":72,"single":101,"maker":7}} | jet-power Isuzu JE493DB-04/21KW weak disp inTop false
+    jet-power #128 genset_oem v=2.771 | | IS-22 | 22 | 17.6 | 20 | 16 | JE493DB-04/21KW | L4 | Mechanical | 2.771 | 93×102 | JET184D/16KW
+    null #null null v=2.771 | 
+    jet-power #128 genset_oem v=L4 | | IS-22 | 22 | 17.6 | 20 | 16 | JE493DB-04/21KW | L4 | Mechanical | 2.771 | 93×102 | JET184D/16KW
+    null #null null v=L4 | 
+
+== IB2300285618 330kVA min {"cyl":{"single":2}} | yingtai-jiangsu Weichai WP2.1D18E2 weak cyl inTop false
+    huipu-power #104 genset_oem v=2.09 | | HP-W18 | 15 | 18 | WP2.1D18E2 | 4 | 85*92 | 2.09 | 4.8 | 30 | 8.9 | 1465*650*1240 | 480
+    huipu-power #104 genset_oem v=4 | | HP-W18 | 15 | 18 | WP2.1D18E2 | 4 | 85*92 | 2.09 | 4.8 | 30 | 8.9 | 1465*650*1240 | 480

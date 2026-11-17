@@ -1,0 +1,349 @@
+{
+ "log": [
+  {
+   "step": "prep IB2600586587",
+   "code": 0,
+   "stdout": "{\"cap\":{\"value\":160,\"unit\":\"kVA\"},\"size\":null,\"origin\":\"cn\",\"originAuto\":null,\"reqHash\":\"a3d1ddd72363fce5\",\"reused\":false,\"candidates\":30,\"engines\":5606,\"alternators\":2611}",
+   "stderr": ""
+  },
+  {
+   "step": "prep IB2600592684",
+   "code": 0,
+   "stdout": "{\"cap\":{\"value\":500,\"unit\":\"kVA\"},\"size\":null,\"origin\":\"cn\",\"originAuto\":null,\"reqHash\":\"6a584241af7b7eff\",\"reused\":false,\"candidates\":30,\"engines\":5606,\"alternators\":2611}",
+   "stderr": ""
+  },
+  {
+   "step": "prep IB2600594596",
+   "code": 0,
+   "stdout": "{\"cap\":{\"value\":400,\"unit\":\"kVA\"},\"size\":null,\"origin\":\"cn\",\"originAuto\":null,\"reqHash\":\"ed905e6c3062dc7e\",\"reused\":false,\"candidates\":30,\"engines\":5606,\"alternators\":2611}",
+   "stderr": ""
+  },
+  {
+   "step": "prep IB2600601812",
+   "code": 0,
+   "stdout": "{\"cap\":{\"value\":100,\"unit\":\"kVA\"},\"size\":null,\"origin\":\"cn\",\"originAuto\":null,\"reqHash\":\"e7bc531dc303f359\",\"reused\":false,\"candidates\":30,\"engines\":5606,\"alternators\":2611}",
+   "stderr": ""
+  },
+  {
+   "step": "prep IB2600603983",
+   "code": 0,
+   "stdout": "{\"cap\":{\"value\":700,\"unit\":\"kVA\"},\"size\":null,\"origin\":\"cn\",\"originAuto\":null,\"reqHash\":\"32810390f1d83e6c\",\"reused\":false,\"candidates\":30,\"engines\":5606,\"alternators\":2611}",
+   "stderr": ""
+  },
+  {
+   "step": "prep IB2600592684 --size 1",
+   "code": 0,
+   "stdout": "{\"cap\":{\"value\":30,\"unit\":\"kVA\"},\"size\":{\"cap\":{\"value\":30,\"unit\":\"kVA\"},\"kva\":30,\"qty\":null,\"label\":\"30 kVA\",\"quote\":\"Tổ 30kVA: Prime Power 30KVA/24KW\"},\"origin\":\"cn\",\"originAuto\":null,\"reqHash\":\"6a584241af7b7eff\",\"reused\":false,\"candidates\":30,\"engines\":5606,\"alternators\":2611}",
+   "stderr": ""
+  },
+  {
+   "step": "prep IB2600592684 --size 2",
+   "code": 0,
+   "stdout": "{\"cap\":{\"value\":500,\"unit\":\"kVA\"},\"size\":{\"cap\":{\"value\":500,\"unit\":\"kVA\"},\"kva\":500,\"qty\":null,\"label\":\"500 kVA\",\"quote\":\"Tổ 500kVA: Prime Power 500KVA/400KW\"},\"origin\":\"cn\",\"originAuto\":null,\"reqHash\":\"6a584241af7b7eff\",\"reused\":false,\"candidates\":30,\"engines\":5606,\"alternators\":2611}",
+   "stderr": ""
+  },
+  {
+   "step": "sizesFor IB2600592684",
+   "info": [
+    {
+     "cap": {
+      "value": 30,
+      "unit": "kVA"
+     },
+     "kva": 30,
+     "qty": null,
+     "label": "30 kVA",
+     "quote": "Tổ 30kVA: Prime Power 30KVA/24KW"
+    },
+    {
+     "cap": {
+      "value": 500,
+      "unit": "kVA"
+     },
+     "kva": 500,
+     "qty": null,
+     "label": "500 kVA",
+     "quote": "Tổ 500kVA: Prime Power 500KVA/400KW"
+    }
+   ]
+  },
+  {
+   "step": "doc analysis",
+   "info": [
+    "by",
+    "notes",
+    "result",
+    "status",
+    "analyzedAt"
+   ]
+  },
+  {
+   "step": "findPrep IB2600586587",
+   "info": {
+    "cap": {
+     "value": 160,
+     "unit": "kVA"
+    },
+    "size": null,
+    "origin": "all",
+    "originAuto": null,
+    "reqHash": "a3d1ddd72363fce5",
+    "reused": false,
+    "candidates": 30,
+    "engines": 6638,
+    "alternators": 2611
+   }
+  },
+  {
+   "step": "findPrep IB2600592684",
+   "info": {
+    "cap": [
+     {
+      "value": 30,
+      "unit": "kVA"
+     },
+     {
+      "value": 500,
+      "unit": "kVA"
+     }
+    ],
+    "size": {
+     "cap": {
+      "value": 30,
+      "unit": "kVA"
+     },
+     "kva": 30,
+     "qty": null,
+     "label": "30 kVA",
+     "quote": "Tổ 30kVA: Prime Power 30KVA/24KW"
+    },
+    "origin": "all",
+    "originAuto": null,
+    "reqHash": "6a584241af7b7eff",
+    "reused": false,
+    "candidates": 30,
+    "engines": 6638,
+    "alternators": 2611
+   }
+  },
+  {
+   "step": "findPrep IB2600592684",
+   "info": {
+    "cap": {
+     "value": 30,
+     "unit": "kVA"
+    },
+    "size": {
+     "cap": {
+      "value": 30,
+      "unit": "kVA"
+     },
+     "kva": 30,
+     "qty": null,
+     "label": "30 kVA",
+     "quote": "Tổ 30kVA: Prime Power 30KVA/24KW"
+    },
+    "origin": "all",
+    "originAuto": null,
+    "reqHash": "6a584241af7b7eff",
+    "reused": false,
+    "candidates": 30,
+    "engines": 6638,
+    "alternators": 2611
+   }
+  },
+  {
+   "step": "specPrep kaichen-jiangsu",
+   "ok": true
+  },
+  {
+   "step": "specPrep cps-generators",
+   "ok": true
+  }
+ ],
+ "md5": {
+  "find-IB2600586587-x/catalog.md": "d33db7e380b7cdddfc889ccaae14f1a8",
+  "find-IB2600586587-x/controllers.md": "03708396ccb38bad5108486c1ec2de03",
+  "find-IB2600586587-x/ctl-lookup.md": "0205576073e21cd8968a31125a1bc3b5",
+  "find-IB2600586587-x/hsmt.txt": "257aa5a9cc29c6612c5edb793cbecccf",
+  "find-IB2600586587-x/input.md": "d539805a8383f82f725e010b564afa43",
+  "find-IB2600586587-x/meta.json": "c7397cfa021922a1c8a9bca90a9f0e06",
+  "find-IB2600586587-x/models.json": "3bbc41424df8255e7e6caf8cc69d195e",
+  "find-IB2600586587-x/prompt.md": "8c325dae8bd9c317abc1ff9aec20917d",
+  "find-IB2600586587-x/specs.json": "ac6ab5fd9f5b36d3def1575759a121fe",
+  "find-IB2600586587-x/suppliers.json": "326706f6528ba1c871d9ac228484c6e1",
+  "find-IB2600592684-30 kVA/catalog.md": "0a3d715018301157b2d17738a45c4ba6",
+  "find-IB2600592684-30 kVA/controllers.md": "f96c31226d51a565656d032449ebbaf5",
+  "find-IB2600592684-30 kVA/ctl-lookup.md": "6be5aa06d0006c40eaeeedad38954d25",
+  "find-IB2600592684-30 kVA/hsmt.txt": "3edee018d09d8045dcb7a2f83d38d73c",
+  "find-IB2600592684-30 kVA/input.md": "4fc6d423889fcf662986ac67e7409475",
+  "find-IB2600592684-30 kVA/meta.json": "6b183026b96b955312d9482d1ef9f334",
+  "find-IB2600592684-30 kVA/models.json": "a90a413e6f73c5187172496a332d519a",
+  "find-IB2600592684-30 kVA/prompt.md": "8c325dae8bd9c317abc1ff9aec20917d",
+  "find-IB2600592684-30 kVA/specs.json": "9956194d6891d1dcd6dd83c2e06dedaf",
+  "find-IB2600592684-30 kVA/suppliers.json": "326706f6528ba1c871d9ac228484c6e1",
+  "find-IB2600592684-x/catalog.md": "0a3d715018301157b2d17738a45c4ba6",
+  "find-IB2600592684-x/controllers.md": "f96c31226d51a565656d032449ebbaf5",
+  "find-IB2600592684-x/ctl-lookup.md": "6be5aa06d0006c40eaeeedad38954d25",
+  "find-IB2600592684-x/hsmt.txt": "3edee018d09d8045dcb7a2f83d38d73c",
+  "find-IB2600592684-x/input.md": "c66e28f9fa6d4a95a600be5cc3fc0d66",
+  "find-IB2600592684-x/meta.json": "d9bf4d8b25a74d7ff5e414324003e279",
+  "find-IB2600592684-x/models.json": "a90a413e6f73c5187172496a332d519a",
+  "find-IB2600592684-x/prompt.md": "8c325dae8bd9c317abc1ff9aec20917d",
+  "find-IB2600592684-x/specs.json": "9956194d6891d1dcd6dd83c2e06dedaf",
+  "find-IB2600592684-x/suppliers.json": "326706f6528ba1c871d9ac228484c6e1",
+  "prep-IB2600586587/catalog-1.md": "4283499c709dbacefaf135290cf68636",
+  "prep-IB2600586587/catalog-2.md": "cfa14a69c271541d5cda0547042eebf3",
+  "prep-IB2600586587/catalog-3.md": "805f546223fb0510e43f287536d89cbb",
+  "prep-IB2600586587/catalog-4.md": "bb61852c3b08fdd713d0612690d23bad",
+  "prep-IB2600586587/catalog-5.md": "08deadfbe6128e8be36e416d6df5020c",
+  "prep-IB2600586587/catalog-6.md": "cf733ad78c067716a85e8b72181b64bd",
+  "prep-IB2600586587/catalog-7.md": "19fef8e9aedce3eaae308abafb410288",
+  "prep-IB2600586587/catalog.md": "3b233d2338aaf39d3658677e913f7535",
+  "prep-IB2600586587/controllers.md": "81f4810a1ddd93dfaef83e855ddf0f27",
+  "prep-IB2600586587/ctl-lookup.md": "6ac4605fdcc393224e671feaa42e1e56",
+  "prep-IB2600586587/hsmt.txt": "257aa5a9cc29c6612c5edb793cbecccf",
+  "prep-IB2600586587/input.md": "3bf54be6f0b285397b196d3700491b2f",
+  "prep-IB2600586587/meta.json": "58e18e1e95cd0dcbaf7028f1a109ed38",
+  "prep-IB2600586587/models.json": "cf9c3c4d2d63bb319785dfed44e054d4",
+  "prep-IB2600586587/prompt.md": "b917d1a486468ae301c9b5bdda149eb7",
+  "prep-IB2600586587/read-order.json": "195e364a54d24f8a9237d8a2e790a4b2",
+  "prep-IB2600586587/specs.json": "ac6ab5fd9f5b36d3def1575759a121fe",
+  "prep-IB2600586587/suppliers.json": "2240d653091f8575c7ad01622d5f36a4",
+  "prep-IB2600592684/catalog-1.md": "0d40dfc0d8db0580bb6f6f9b1043ed74",
+  "prep-IB2600592684/catalog-2.md": "c80473ce9e522a40e3e1db4b1b4ebc98",
+  "prep-IB2600592684/catalog-3.md": "9122b65f9327165be784a5fab87c10e5",
+  "prep-IB2600592684/catalog-4.md": "5f17498a06c0507a2dd35a4ae8110fee",
+  "prep-IB2600592684/catalog-5.md": "7ab94d3a69607543cb84e4606d8e1b09",
+  "prep-IB2600592684/catalog-6.md": "35e1943e2c4773e39368c691eb4752b6",
+  "prep-IB2600592684/catalog-7.md": "d364485b554358a603cfd2ee3c4ac057",
+  "prep-IB2600592684/catalog-8.md": "a7d994463537e5e22a3a2a797a753e27",
+  "prep-IB2600592684/catalog.md": "5a6743213e1c3d1d0d2d14572744ac96",
+  "prep-IB2600592684/controllers.md": "a6a9501e373027ad4ae6fc1517c6db4a",
+  "prep-IB2600592684/ctl-lookup.md": "e971b79cafe3aa108b15071f456902d8",
+  "prep-IB2600592684/hsmt.txt": "3edee018d09d8045dcb7a2f83d38d73c",
+  "prep-IB2600592684/input-1.md": "54a9879a0e0595ba36db7c7ac5b17ecf",
+  "prep-IB2600592684/input-2.md": "4f1dec3780fd1390b556f086324f5961",
+  "prep-IB2600592684/input.md": "da262cfafb27ddd87830b4cc11f6d0bc",
+  "prep-IB2600592684/meta.json": "58e18e1e95cd0dcbaf7028f1a109ed38",
+  "prep-IB2600592684/models.json": "a7391b5360c7452fbddb935e8cd83593",
+  "prep-IB2600592684/prompt.md": "b917d1a486468ae301c9b5bdda149eb7",
+  "prep-IB2600592684/read-order.json": "4f61e04f6531c6b1810e499be5b5676e",
+  "prep-IB2600592684/specs.json": "9956194d6891d1dcd6dd83c2e06dedaf",
+  "prep-IB2600592684/suppliers.json": "2240d653091f8575c7ad01622d5f36a4",
+  "prep-IB2600592684-size1/catalog-1.md": "aafe73e6ca69d6eec8f786b3ad9152aa",
+  "prep-IB2600592684-size1/catalog-2.md": "496e63c068fbfa4e43749318da10aa5d",
+  "prep-IB2600592684-size1/catalog-3.md": "15e18c01a218e7c3223ec78f031096f6",
+  "prep-IB2600592684-size1/catalog-4.md": "6d838d3a07a6cf157b1df5cc4f76fa49",
+  "prep-IB2600592684-size1/catalog-5.md": "c8b03fa5b5db58ce760b06fe4b4a9ec8",
+  "prep-IB2600592684-size1/catalog-6.md": "408ffb1b539812d07c99cc821e109425",
+  "prep-IB2600592684-size1/catalog.md": "b1278f5ba488bc32763c40d9cea1e68b",
+  "prep-IB2600592684-size1/controllers.md": "f96c31226d51a565656d032449ebbaf5",
+  "prep-IB2600592684-size1/ctl-lookup.md": "6be5aa06d0006c40eaeeedad38954d25",
+  "prep-IB2600592684-size1/hsmt.txt": "3edee018d09d8045dcb7a2f83d38d73c",
+  "prep-IB2600592684-size1/input-1.md": "f5c702433b89e044d27af22f82aa3cfb",
+  "prep-IB2600592684-size1/input-2.md": "4f1dec3780fd1390b556f086324f5961",
+  "prep-IB2600592684-size1/input.md": "c1f4c6bfe7ef1f378267871dd98e4891",
+  "prep-IB2600592684-size1/meta.json": "805b809c2d5f866db3965b8e7d03b332",
+  "prep-IB2600592684-size1/models.json": "a90a413e6f73c5187172496a332d519a",
+  "prep-IB2600592684-size1/prompt.md": "b917d1a486468ae301c9b5bdda149eb7",
+  "prep-IB2600592684-size1/read-order.json": "bf05c409d98f42f8ae0ed07116768b6d",
+  "prep-IB2600592684-size1/specs.json": "9956194d6891d1dcd6dd83c2e06dedaf",
+  "prep-IB2600592684-size1/suppliers.json": "2240d653091f8575c7ad01622d5f36a4",
+  "prep-IB2600592684-size2/catalog-1.md": "72807de7f17265d9fafd330a8975722d",
+  "prep-IB2600592684-size2/catalog-2.md": "5ff6f3f321c43a00185fccf98e5d8732",
+  "prep-IB2600592684-size2/catalog-3.md": "6484e38fd6fb96173d102fea3542d001",
+  "prep-IB2600592684-size2/catalog-4.md": "01cf0bc974d22f3792b19e8f1c07b8f2",
+  "prep-IB2600592684-size2/catalog-5.md": "f67cc67eeffb22c6d35c059c97f963cc",
+  "prep-IB2600592684-size2/catalog-6.md": "7b032519f7556f01bb3b1adc79954836",
+  "prep-IB2600592684-size2/catalog-7.md": "8a95faa3a760a27e912f5f649ebc5b42",
+  "prep-IB2600592684-size2/catalog-8.md": "349423423a4d2fc5a17ef4c6cf4d3695",
+  "prep-IB2600592684-size2/catalog.md": "53724bfe4e6e3ae0bc79b89a108f6eba",
+  "prep-IB2600592684-size2/controllers.md": "900f9cf0e933990a6a25c264a564e8f9",
+  "prep-IB2600592684-size2/ctl-lookup.md": "e28b8d321dfb84dc04eb2843132214fd",
+  "prep-IB2600592684-size2/hsmt.txt": "3edee018d09d8045dcb7a2f83d38d73c",
+  "prep-IB2600592684-size2/input-1.md": "777571ba09c59db21c18a04f2cb63742",
+  "prep-IB2600592684-size2/input-2.md": "4f1dec3780fd1390b556f086324f5961",
+  "prep-IB2600592684-size2/input.md": "d572f3bc47787362c803ce6677c76b11",
+  "prep-IB2600592684-size2/meta.json": "805b809c2d5f866db3965b8e7d03b332",
+  "prep-IB2600592684-size2/models.json": "3714123199d6f9d0f9674e7657ad0a10",
+  "prep-IB2600592684-size2/prompt.md": "b917d1a486468ae301c9b5bdda149eb7",
+  "prep-IB2600592684-size2/read-order.json": "4f61e04f6531c6b1810e499be5b5676e",
+  "prep-IB2600592684-size2/specs.json": "9956194d6891d1dcd6dd83c2e06dedaf",
+  "prep-IB2600592684-size2/suppliers.json": "2240d653091f8575c7ad01622d5f36a4",
+  "prep-IB2600594596/catalog-1.md": "a4419b15302f4c515613b4dbcd563fb2",
+  "prep-IB2600594596/catalog-2.md": "8c25f9fa91c955cf637c9eb0da989cd6",
+  "prep-IB2600594596/catalog-3.md": "1bf239142197f3e771b8c4223fc25f91",
+  "prep-IB2600594596/catalog-4.md": "38ad75648acb266c9e373c8d9993d7b1",
+  "prep-IB2600594596/catalog-5.md": "37918429121e275dd8a1ed01b8766398",
+  "prep-IB2600594596/catalog-6.md": "ad3177f8487fdc73ff97dd7a827f3f17",
+  "prep-IB2600594596/catalog-7.md": "25c3fd8f0dfca578e9e93299efd3b0a0",
+  "prep-IB2600594596/catalog.md": "ae5bc2cf2ac9c6e325c2415c7d4c965c",
+  "prep-IB2600594596/controllers.md": "65b131cbffb464c724f9334334a071e5",
+  "prep-IB2600594596/ctl-lookup.md": "d55548e5513757777e59d818b660f67c",
+  "prep-IB2600594596/hsmt.txt": "9589a68ff4283b676bfd23700f1e828b",
+  "prep-IB2600594596/input-1.md": "386c98d1d8a5eaa092ebb3b0ea39bab0",
+  "prep-IB2600594596/input-2.md": "e5d650d5c98e295ee2ed23107f59c6a4",
+  "prep-IB2600594596/input-3.md": "8246869e08cac13089a3e1b41f7d94bd",
+  "prep-IB2600594596/input.md": "5b2b35f8e691099948fb188142faa493",
+  "prep-IB2600594596/meta.json": "58e18e1e95cd0dcbaf7028f1a109ed38",
+  "prep-IB2600594596/models.json": "056870cbe3d74f7bb63aba0e3d7e3b0b",
+  "prep-IB2600594596/prompt.md": "b917d1a486468ae301c9b5bdda149eb7",
+  "prep-IB2600594596/read-order.json": "f95b26eda7383d515089d1e6e3c7f6d3",
+  "prep-IB2600594596/specs.json": "cd633639fe1ae9942472103bca17ee78",
+  "prep-IB2600594596/suppliers.json": "2240d653091f8575c7ad01622d5f36a4",
+  "prep-IB2600601812/catalog-1.md": "923d3437fcd9757352154c0694d85897",
+  "prep-IB2600601812/catalog-2.md": "337bfc126b8346315bc1f93b195a458b",
+  "prep-IB2600601812/catalog-3.md": "02518523d602a46816ed7230f490cd64",
+  "prep-IB2600601812/catalog-4.md": "9c74b31e8538374419a21d2573f70362",
+  "prep-IB2600601812/catalog-5.md": "24cd481d2b8a26962db769e6a9d93c73",
+  "prep-IB2600601812/catalog-6.md": "1e289030ee693931ef91de29139ed4c5",
+  "prep-IB2600601812/catalog-7.md": "1feeb5adc4b8131767c012e1cdfbca57",
+  "prep-IB2600601812/catalog.md": "d6a642121769f61b5eb11976cd963996",
+  "prep-IB2600601812/controllers.md": "9a91446efbbdbf096f6100b2ffe98f0f",
+  "prep-IB2600601812/ctl-lookup-1.md": "a635970a03c36b7b8140730de9e6fd1b",
+  "prep-IB2600601812/ctl-lookup-2.md": "2de20c923b31949c5fbe57e8189705dd",
+  "prep-IB2600601812/ctl-lookup.md": "79af29f1284a3d3b2f45fc7f85ecc115",
+  "prep-IB2600601812/hsmt.txt": "465451b64a274afcb204b7a04e6ff74d",
+  "prep-IB2600601812/input-1.md": "a03d33d2e8cc3b5ba4a1540b62aeb5de",
+  "prep-IB2600601812/input-2.md": "5cdca90bc17aed0834e159336ec629ea",
+  "prep-IB2600601812/input.md": "f62f90de95bc75d4c0b1a4c99ce1987f",
+  "prep-IB2600601812/meta.json": "58e18e1e95cd0dcbaf7028f1a109ed38",
+  "prep-IB2600601812/models.json": "b49bbbd4537eedec382f1cdb912ec149",
+  "prep-IB2600601812/prompt.md": "b917d1a486468ae301c9b5bdda149eb7",
+  "prep-IB2600601812/read-order.json": "c5dc0f65351fa9fccc5d0a412bc6fc7f",
+  "prep-IB2600601812/specs.json": "bf149a4c75d5331e80ba55e13bdef290",
+  "prep-IB2600601812/suppliers.json": "2240d653091f8575c7ad01622d5f36a4",
+  "prep-IB2600603983/catalog-1.md": "fc8d4b1cdca15b73d56fda6ed1537ac5",
+  "prep-IB2600603983/catalog-2.md": "9135c45c543cc52c8e28944302eb2e1f",
+  "prep-IB2600603983/catalog-3.md": "8dc1cf72845292f73c992a47ee16a8c4",
+  "prep-IB2600603983/catalog-4.md": "483962144839605290e763f1cdcf04c3",
+  "prep-IB2600603983/catalog-5.md": "6d850b681bf9b535d293fa9c48d43bb4",
+  "prep-IB2600603983/catalog.md": "3ca4b25583dedc862ce4733343c7c3fe",
+  "prep-IB2600603983/controllers.md": "e67ad07697529d670cd4ca7a687389c4",
+  "prep-IB2600603983/ctl-lookup-1.md": "e0d1f38fe1f8f2cc28f4414608b1aa5d",
+  "prep-IB2600603983/ctl-lookup-2.md": "0719fc59925f75abbeca8ecdce1f6d0d",
+  "prep-IB2600603983/ctl-lookup.md": "319e3387454911d5c9db9b5baddfbdf4",
+  "prep-IB2600603983/hsmt.txt": "f9340297a78026fc3f83a2d1748375cc",
+  "prep-IB2600603983/input-1.md": "1060e2af02e913c24bc17f1972457cb3",
+  "prep-IB2600603983/input-2.md": "dab5525c7ef4b9f9782b90af774b6626",
+  "prep-IB2600603983/input-3.md": "17a0e4fbc062aa516ce240a6ccdd337e",
+  "prep-IB2600603983/input.md": "1ba49a6a324c6e024d4e9e0cfb04d38e",
+  "prep-IB2600603983/meta.json": "58e18e1e95cd0dcbaf7028f1a109ed38",
+  "prep-IB2600603983/models.json": "5d266aa2490ef3039a2c644346e3f394",
+  "prep-IB2600603983/prompt.md": "b917d1a486468ae301c9b5bdda149eb7",
+  "prep-IB2600603983/read-order.json": "421ade8ce8743da9a4609d295cd56c38",
+  "prep-IB2600603983/specs.json": "24e62f771f8c4fe3c72eb8ed4b566e8a",
+  "prep-IB2600603983/suppliers.json": "2240d653091f8575c7ad01622d5f36a4",
+  "spec-cps-generators/input.md": "8aefac28e222cbd6ad74aabe97f60c7b",
+  "spec-cps-generators/meta.json": "120ad5a6f328437dfd3530acb76f698b",
+  "spec-cps-generators/prompt.md": "6b2612c4154586b719a5b7760d4479e7",
+  "spec-cps-generators/supplier.json": "8de5a54c082ed75dcb32fdec17492af3",
+  "spec-cps-generators/suppliers.json": "326706f6528ba1c871d9ac228484c6e1",
+  "spec-kaichen-jiangsu/input.md": "4140140da9b9ee048124d8bd8f778f04",
+  "spec-kaichen-jiangsu/meta.json": "1368c4c1ebc9563342e6e9459c818627",
+  "spec-kaichen-jiangsu/prompt.md": "6b2612c4154586b719a5b7760d4479e7",
+  "spec-kaichen-jiangsu/supplier.json": "9959610ca6893905b8e2a0edffb6c6d4",
+  "spec-kaichen-jiangsu/suppliers.json": "326706f6528ba1c871d9ac228484c6e1"
+ }
+}

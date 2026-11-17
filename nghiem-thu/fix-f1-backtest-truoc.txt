@@ -1,0 +1,37 @@
+Hậu kiểm Gợi ý giá đấu — 1556 gói bidhist, 808 phần đo, 281 s
+Giới hạn: mọi ứng viên code chọn coi là "gần" (không có bước agent xếp mức); chỉ dùng phần có kết quả công bố trước ngày đóng thầu.
+
+== Chung (như hạng 1 hiện nay): 636/808 phần có giá gợi ý (172 không đủ gói)
+  tất cả       n= 636  trong [thấp,cao]  36.3%  |sai số mức giữa| trung vị   7.0 điểm  (lệch -1.3)  độ rộng 10.9
+  2–3 NT       n= 232  trong [thấp,cao]  33.6%  |sai số mức giữa| trung vị   7.0 điểm  (lệch -3.3)  độ rộng 11.9
+  4–5 NT       n= 129  trong [thấp,cao]  41.9%  |sai số mức giữa| trung vị   7.9 điểm  (lệch 3.4)  độ rộng 11.2
+  ≥6 NT        n= 111  trong [thấp,cao]  39.6%  |sai số mức giữa| trung vị   9.6 điểm  (lệch 8.1)  độ rộng 10.9
+  1 NT         n= 164  trong [thấp,cao]  33.5%  |sai số mức giữa| trung vị   5.2 điểm  (lệch -4.2)  độ rộng 9.2
+  cn           n= 164  trong [thấp,cao]  31.7%  |sai số mức giữa| trung vị   9.8 điểm  (lệch 4.6)  độ rộng 11.0
+  cnmade       n=  34  trong [thấp,cao]  41.2%  |sai số mức giữa| trung vị   8.8 điểm  (lệch -6.8)  độ rộng 11.9
+  foreign      n=  66  trong [thấp,cao]  24.2%  |sai số mức giữa| trung vị   7.7 điểm  (lệch -3.5)  độ rộng 12.4
+  không rõ     n= 372  trong [thấp,cao]  40.1%  |sai số mức giữa| trung vị   5.8 điểm  (lệch -1.9)  độ rộng 10.1
+
+== Chung, chỉ phần biết nhóm hàng trúng: 264/340 phần có giá gợi ý (76 không đủ gói)
+  tất cả       n= 264  trong [thấp,cao]  31.1%  |sai số mức giữa| trung vị   8.8 điểm  (lệch -0.0)  độ rộng 11.2
+  2–3 NT       n=  89  trong [thấp,cao]  29.2%  |sai số mức giữa| trung vị   8.0 điểm  (lệch -1.9)  độ rộng 12.2
+  4–5 NT       n=  64  trong [thấp,cao]  35.9%  |sai số mức giữa| trung vị   9.0 điểm  (lệch 6.2)  độ rộng 11.6
+  ≥6 NT        n=  48  trong [thấp,cao]  33.3%  |sai số mức giữa| trung vị  12.0 điểm  (lệch 12.0)  độ rộng 10.8
+  1 NT         n=  63  trong [thấp,cao]  27.0%  |sai số mức giữa| trung vị   9.6 điểm  (lệch -8.1)  độ rộng 9.4
+  cn           n= 164  trong [thấp,cao]  31.7%  |sai số mức giữa| trung vị   9.8 điểm  (lệch 4.6)  độ rộng 11.0
+  cnmade       n=  34  trong [thấp,cao]  41.2%  |sai số mức giữa| trung vị   8.8 điểm  (lệch -6.8)  độ rộng 11.9
+  foreign      n=  66  trong [thấp,cao]  24.2%  |sai số mức giữa| trung vị   7.7 điểm  (lệch -3.5)  độ rộng 12.4
+
+== Theo nhóm xuất xứ của hàng trúng (mục 3): 189/340 phần có giá gợi ý (151 không đủ gói)
+  tất cả       n= 189  trong [thấp,cao]  34.4%  |sai số mức giữa| trung vị  11.4 điểm  (lệch -2.6)  độ rộng 13.1
+  2–3 NT       n=  64  trong [thấp,cao]  31.3%  |sai số mức giữa| trung vị   9.7 điểm  (lệch -7.4)  độ rộng 13.3
+  4–5 NT       n=  49  trong [thấp,cao]  40.8%  |sai số mức giữa| trung vị  12.2 điểm  (lệch 4.3)  độ rộng 12.5
+  ≥6 NT        n=  35  trong [thấp,cao]  28.6%  |sai số mức giữa| trung vị  17.0 điểm  (lệch 7.0)  độ rộng 11.5
+  1 NT         n=  41  trong [thấp,cao]  36.6%  |sai số mức giữa| trung vị  11.4 điểm  (lệch -8.2)  độ rộng 15.6
+  cn           n= 122  trong [thấp,cao]  34.4%  |sai số mức giữa| trung vị  12.8 điểm  (lệch -2.3)  độ rộng 14.9
+  cnmade       n=  33  trong [thấp,cao]  42.4%  |sai số mức giữa| trung vị   9.4 điểm  (lệch -6.5)  độ rộng 11.6
+  foreign      n=  34  trong [thấp,cao]  26.5%  |sai số mức giữa| trung vị   5.3 điểm  (lệch -1.7)  độ rộng 6.8
+
+real	4m41.155s
+user	0m0.015s
+sys	0m0.046s

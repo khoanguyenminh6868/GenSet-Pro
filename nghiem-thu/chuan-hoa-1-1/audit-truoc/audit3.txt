@@ -1,0 +1,83 @@
+== A. MAU THUAN HANG SO DONG CO (cung model, khac gia tri) ==
+model dong co (khoa chuan hoa): 7588 | xuat hien o >=2 NCC: 2576
+  cyl: model co gia tri 3114, co >=2 NCC ghi 1344, MAU THUAN 113 (8.4%)
+       WP4.1D80E200: 4(13 NCC) / 6(1 NCC)
+       WP4D100E200: 4(12 NCC) / 6(1 NCC)
+       WP4D108E200: 4(6 NCC) / 6(1 NCC)
+       WP13D440E310: 6(6 NCC) / 9(1 NCC)
+       12M26D902E200: 12(13 NCC) / 8(1 NCC)
+       12M26D968E200: 12(14 NCC) / 8(1 NCC)
+       12M33D1108E200: 12(14 NCC) / 8(1 NCC)
+       12M33D1210E200: 12(13 NCC) / 10(1 NCC)
+  disp: model co gia tri 2974, co >=2 NCC ghi 966, MAU THUAN 352 (36.4%)
+       WP2.3D48E200: 2.3(5 NCC) / 3.1(1 NCC) / 2.5(1 NCC)
+       WP4.1D66E200: 4.1(6 NCC) / 4.8(1 NCC) / 4.5(1 NCC)
+       WP4.1D80E200: 4.1(6 NCC) / 4.8(1 NCC) / 4.5(1 NCC)
+       WP4.1D100E200: 4.1(3 NCC) / 6.8(1 NCC) / 4.5(2 NCC)
+       WP4D100E200: 4.5(8 NCC) / 6.3(1 NCC)
+       WP6D132E200: 6.8(9 NCC) / 4.5(1 NCC) / 6.3(1 NCC)
+       WP6D152E200: 6.8(10 NCC) / 6.3(1 NCC)
+       WP10D200E200: 9.7(11 NCC) / 6.8(1 NCC) / 6.3(1 NCC)
+  bore: model co gia tri 2055, co >=2 NCC ghi 851, MAU THUAN 144 (16.9%)
+       WP2.3D48E200: 89x92(8 NCC) / 105x125(1 NCC)
+       WP4.1D66E200: 105x118(10 NCC) / 105x130(1 NCC)
+       WP4.1D80E200: 105x118(8 NCC) / 105x130(1 NCC)
+       WP4.1D100E200: 105x118(3 NCC) / 105x130(2 NCC)
+       WP4D100E200: 105x130(4 NCC) / 105x118(3 NCC)
+       WP6D167E200: 126x130(1 NCC) / 105x130(6 NCC)
+       WP12D317E200: 126x130(1 NCC) / 126x155(5 NCC) / 125x155(1 NCC)
+       WP10D320E200: 127x165(1 NCC) / 126x130(9 NCC)
+  compr: model co gia tri 417, co >=2 NCC ghi 122, MAU THUAN 37 (30.3%)
+       BF4M2012: 19(1 NCC) / 18.4(1 NCC)
+       4B3.9-G1: 18(2 NCC) / 17.3(1 NCC)
+       4B3.9-G2: 18(4 NCC) / 17.5(1 NCC)
+       4BT3.9-G1: 18(2 NCC) / 17.3(1 NCC)
+       4BTA3.9-G2: 18(2 NCC) / 16.5(1 NCC) / 17.5(1 NCC) / 17.3(2 NCC)
+       6BTAA5.9-G2: 17.3(3 NCC) / 16.5(1 NCC)
+       6CTA8.3-G2: 17.3(3 NCC) / 16.5(1 NCC)
+       6CTAA8.3-G2: 18(3 NCC) / 16.5(1 NCC)
+
+== B. NHAN DANG MODEL ==
+khoa co >=2 cach viet (da gop nho keyOf): 380
+nhom model chi khac O/0, I/L/1, dau ngoac (CHUA gop): 95 vd: WP10D320E200~WP1OD320E200; 12M26D968E200~L2M26D968E200; CA6DL124D~CA6DLL24D; CA6DNI45D~CA6DN145D; DP158CD1~DP158CDI; QSK19G4~QSK19G4*; QSK38G5~QSK38G5*; P086TI~PO86TI; QSNTG3~QSNTG3*; KTA38G5E~KTA38G5E*; KTA38G7E~KTA38G7E*; KTA38G9E~KTA38G9E*; KTA38G9A~KTA38G9A*; KTA50G7E~KTA50G7E*
+model mang tien to hang trung voi model khong tien to: 45 PERKINS1103A33G->1103A33G; PERKINS1103A33TG2->1103A33TG2; PERKINS4008TAG1A->4008TAG1A; BAUDOUIN8M33G1100/5->8M33G1100/5; VOLVOTAD1642GE->TAD1642GE; DOOSANDP222LCF->DP222LCF; MITSUBISHIS12A2PTA->S12A2PTA; PERKINS400623TAG3A->400623TAG3A
+'model' dang ngo (don vi, tieu chuan, qua dai): 90 2206D-E13TAG3 /2206A-E13TAG6[ettes-power]; GB380D[gb-power]; GB385D[gb-power]; GB480D[gb-power]; GB485D[gb-power]; GB490D[gb-power]; GB4102D[gb-power]; GB4105D[gb-power]; GB4105D-2[gb-power]; GB4108[gb-power]; GB4115D[gb-power]; GB4112ZD[gb-power]; GB4112ZLD[gb-power]; GB6112ZLD[gb-power]; GB6112ZD-1[gb-power]; GB6126ZLD[gb-power]; GB6126ZLD-1[gb-power]; GB6126ZLD-2[gb-power]; GB135TAD28[gb-power]; GB138TAD35L[gb-power]; GB38TAD33L[gb-power]; GB12138TAD[gb-power]; GB12V138 TAD[gb-power]; GB12V140TAD[gb-power]; GB498D[gb-power]
+model dong co KHONG biet hang: 1805 23.8% | trong do o >=2 NCC: 130
+model bi gan >=2 hang khac nhau: 617 8.1% WP2.3D48E200:Weichai/Baudouin; WP4.1D66E200:Weichai/Baudouin; WP4.1D80E200:Weichai/Baudouin; WP4.1D100E200:Weichai/Deutz; WP4D100E200:Weichai/Deutz; WP4D108E200:Weichai/Deutz; WP6D132E200:Weichai/Baudouin/Deutz; WP6D152E200:Weichai/Baudouin/Deutz; WP10D200E200:Weichai/Baudouin/Deutz; WP10D238E200:Weichai/Baudouin/Deutz; WP10D264E200:Weichai/Baudouin/Deutz; WP12D317E200:Weichai/Deutz; WP10D320E200:Weichai/Baudouin; Y4102ZLD:Yangdong/YTO; Y4105ZLD:Yangdong/YTO
+
+== C. KIEM TRA HOP LY VAT LY ==
+cos phi ngam (kW/kVA): 0.80x55063  0.79x2584  0.81x946  0.82x554  0.78x424  0.83x215  0.77x180  0.76x110  0.86x102  0.75x101  0.85x86  0.87x74
+dong co ca prime+standby: 26563 | standby = prime: 63 0.2% | ti le ngoai 1,03-1,20: 172 0.6%
+      agg-fuzhou CU513E5: prime 500 / standby 513 (x1.03)
+      agg-fuzhou CU1450E6: prime 1206 / standby 1450 (x1.20)
+      agg-fuzhou CU2750E6: prime 2250 / standby 2750 (x1.22)
+      aosif AD221: prime 218 / standby 221 (x1.01)
+      aosif AC431: prime 343 / standby 431 (x1.26)
+      aosif AC1450: prime 1206 / standby 1450 (x1.20)
+      aosif AC2750: prime 2250 / standby 2750 (x1.22)
+      aosif AW63: prime 50 / standby 63 (x1.26)
+tieu hao L/h co kW di kem: 3548 | ngoai khoang 0,17-0,36 L/kWh: 421 11.9% | trung vi 0.268 p5 0.166 p95 0.378
+      acepow-fuan APX-60: 7 "Fuel consumption(L/h)" voi 48 kW -> 0.15 L/kWh
+      acepow-fuan APX-85: ≤7 "Fuel consumption(L/h)" voi 68 kW -> 0.10 L/kWh
+      agestar GC-313(S): 84 "Consumption 100%" voi 220 kW -> 0.38 L/kWh
+      agestar GC-350(S): 94 "Consumption 100%" voi 250 kW -> 0.38 L/kWh
+      agestar GC-413(S): 111 "Consumption 100%" voi 300 kW -> 0.37 L/kWh
+      agestar GC-450(S): 121 "Consumption 100%" voi 330 kW -> 0.37 L/kWh
+      agestar GC-500(S): 135 "Consumption 100%" voi 360 kW -> 0.38 L/kWh
+      agestar GC-550(S): 148 "Consumption 100%" voi 400 kW -> 0.37 L/kWh
+gia tri nghi lech cot: 534 excit: "Single bearing, Brushless," [fdk-energy]x382; cooling: "ATS auto load transfer screen" [longkai-power]x128; cooling: "Control module with" Three Remote" [longkai-power]x23; cooling: "ATS auto load transfer screen" [xinhengxin-fujian]x1
+
+== D. TRUNG LAP ==
+bang trung nguyen van trong cung NCC: 45 0.5% | dong trung nguyen van trong cung NCC: 71008 41.0%
+model to may (cung NCC) co >=2 muc cong suat khac nhau: 1988 9.0% acepow-fuan|APYD30:{38|50,38|}; acepow-fuan|APW1500:{2063|50,1875|50}; acepow-fuan|API30:{38|50,37.5|50}; agestar|GF165(S):{15|50,150|50}; agestar|GF165:{15|50,150|50}; agestar|GW69(S):{63|50,63|60}
+
+== E. NGUON VA DO TUOI ==
+nguon: 7799 | tier: A=7699, B=74, C=26 | official: undefined=6168, true=953, false=678
+thang doc nguon: 2026-10=1231, 2026-11=6568
+productLines: 3109 | co cong suat: 2852 91.7% | rating: prime=1528, unspecified=1017, standby=306, continuous=1 | don vi: kVA=2465, kW=385, hp=2
+  co tan so: 2.4% | dien ap: 0.8% | khi thai: 0.7% | tieu chuan: 0.3% | engineModels: 75.8% | alternatorMakes: 13.1%
+do phu truong ho so: website=83.2%, founded=29.2%, certifications=20.9%, contacts=11.7%, controllers=30.8%, hq.city=60.5%, exportMarkets=0.0%, vietnam.distributors=0.2%, specTables=75.6%
+ten chung nhan khac nhau: 44 | vd: iso9001x58, cex52, iso14001x25, iso45001x6, ccsx6, bvx6, isox6, epax4, csax4, ohsas18001x4, iso9001:2015x4, iso9001:2008x4, cccx4, soncapx3
+missing[] khac nhau: 337 tren 483 muc (van ban tu do)
+theo nuoc: ngoai CN: 109 NCC, 98 co bang, 28162 dong | CN: 326 NCC, 231 co bang, 145104 dong
+theo vai tro: genset_oem: 280 NCC, 246 co bang, 151078 dong -> 56223 ban ghi doc ra | distributor: 55 NCC, 8 co bang, 2264 dong -> 404 ban ghi doc ra | engine_maker: 56 NCC, 46 co bang, 6442 dong -> 2039 ban ghi doc ra | alternator_maker: 40 NCC, 26 co bang, 6731 dong -> 4910 ban ghi doc ra | controller_maker: 4 NCC, 3 co bang, 6751 dong -> 0 ban ghi doc ra

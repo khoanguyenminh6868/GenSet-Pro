@@ -1,0 +1,14 @@
+import fs from "node:fs"; import { pathToFileURL } from "node:url";
+const B = await import(pathToFileURL("C:/Projects/GenSet Pro/wt-loai-nguon/suppliers/config-bot.mjs").href), CAT = globalThis.GenbidCatalog;
+const W = "C:/Projects/GenSet Pro/genbid-work", J = (f) => JSON.parse(fs.readFileSync(f, "utf8"));
+const sups = Object.values(J(W + "/doc-cache/supplier.json").docs).map((x) => x.d).filter((d) => d && d.status !== "incomplete");
+const [key, ek] = process.argv.slice(2);
+const text = fs.readFileSync(`${W}/specs/${key}/text.txt`, "utf8"), hints = B.hintsOf(text, "");
+const cat = CAT.build(sups), facts = B.modelFacts(cat, sups), e = cat.engines.find((x) => x.key === ek);
+console.log("hints", B.plausible(hints, null)?.maxDisp, hints.minDisp, hints.minCyl);
+for (const f of (facts.get(`engine:${ek}`) || []).filter((f) => ["disp", "cyl"].includes(f.key))) console.log("fact", f.key, f.supplierId, f.n, JSON.stringify(f.value), f.label, f.sheet || "");
+for (const u of e.uses.slice(0, 40)) for (const f of (u.specs || []).filter((f) => ["disp", "cyl"].includes(f.key))) console.log("spec", u.supplierId, f.key, JSON.stringify(f.value), f.label, f.supplierId);
+const cap = { value: 200, unit: "kW" };
+B.PROOF_RULES.clear();
+const r = B.candidates(cat, cap, hints, { suppliers: sups, facts });
+for (const d of r.dropped.filter((d) => d.e.key === ek)) console.log("dropped", d.u.supplierId, d.ruled, JSON.stringify(d.src));

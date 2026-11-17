@@ -1,0 +1,29 @@
+== a. Nhan cot long leo co thuc su lay gia tri ==
+  eff: 26/88 "electrical efficiency（η）"x11, "electrical efficiency3)"x8, "electrical efficiency (n %)"x3, "electrical efficiency"x2, "electrical efficiency3) %"x2
+  speed: 2/2776 "peak torque nm- rpm"x2
+  pf: 0/145 
+  start: 0/447 
+  coolant: 0/151 
+  compr: 0/1319 
+  oil: 282/1949 "机油消耗率（g/kw.h）"x182, "lube oil consumption at full"x32, "lub. oil consumption rate,kw.h"x19, "机油 耗率g/kw·h"x14, "机油消耗率 oil consumption"x13
+  voltage: 0/3279 
+  weight: 3056/18669 "gross weight(kg)"x1055, "毛重（kg）"x955, "净重 net weight (kg)"x302, "gross weight (kg)"x151, "net weight"x127
+
+== b. Khi thai == 2522 gia tri: CN Stage II=901 | CN Stage III=574 | KHONG PHAN LOAI DUOC: 国 ii=235 | EU Stage V=134 | khong quy dinh / mien=110 | EU Stage II / Euro 2=80 | EPA Tier 4=78 | EPA Tier 3=78 | KHONG PHAN LOAI DUOC: 国 iii=77 | KHONG PHAN LOAI DUOC: v=48 | KHONG PHAN LOAI DUOC: china stage3=32 | KHONG PHAN LOAI DUOC: cn iii=29 | EU Stage IIIA=25 | KHONG PHAN LOAI DUOC: epa tier ii=22 | KHONG PHAN LOAI DUOC: non-emission/epa t=22 | EPA Tier 2=20
+
+== c. Tieu hao khong don vi: 1671 | trong do so vua hop L/h vua hop g/kWh (khong the phan biet): 223
+
+== d. Dong khong doc duoc cong suat: 12685 | co o so: 11693 | co cap so bang nhau lien ke <=60 (kW = kVA, 1 pha / cos phi 1): 46
+      acepow-fuan | | 50 | 50 | 55 | LR4B5-D | 48 | 53 | Mechanical | UC224D
+      acepow-fuan | | APYT-50 | 50 | 50 | 55 | YT4B2Z-D | 60 | 65 | UC224E
+      aoke-yangzhou | | AOKE-P160 | 145KW | 160KW | 珀金斯 | 1106A-70TAG3 | 6 | 6 | 2419 | 200 | 2500×1120×1470 | 1602 | | 详细参数
+      aoke-yangzhou | | AOKE-P160 | 145KW | 160KW | 珀金斯 | 1106A-70TAG3 | 6 | 6 | 19 | 200 | 2500×1120×1470 | 1602 | | 详细参数
+      bruno-generators | | SL 9810 PK** | 10 | 250 W | 2500 W | AC | 230 V | 8.8 | 8 | 12 | 11 | PERKINS 403D-11G | 1131 | 8.4 | 10.3 | 1 | 1 | N | 140 | 245 | 130 |
+   co it nhat 1 o so don (co the la cong suat 1 don vi): 11693
+
+== e. Dong to may < 30 kVA: 2991 | co so pha: 88 | co dien ap: 119 | co khoi dong: 50 | co lam mat: 60
+   dong to may theo dai kVA: 700-1500=5436, 0-30=2991, 30-100=6184, 300-700=9335, 1500-1000000000=3421, 100-300=8329
+
+== f. productLines to may theo nhien lieu: diesel=2763, gas=81, gasoline=5, other=3, hfo=1
+== g. controllers[]: 619 muc, co model: 475 76.7% | hang: Deep Sea=277, SmartGen=154, ComAp=91, DEIF=14, DynaGen=12, Cat=11, Rehlko=11, Mebay=9, SICES=7, Datakom=6, Harsen=6, Cummins=4
+== h. kich thuoc/khoi luong: 40474 gia tri | co ghi tran / vo cach am (trong nhan cot hoac ten bang): 6594 16.3%

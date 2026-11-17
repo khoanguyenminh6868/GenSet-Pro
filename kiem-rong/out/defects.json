@@ -1,0 +1,549 @@
+{
+ "T1": [
+  {
+   "key": "IB2300260615",
+   "i": 0,
+   "cap": {
+    "value": 500,
+    "unit": "kVA"
+   },
+   "minDisp": 20,
+   "cell": "Dung tích xi lanh < 20 lít"
+  },
+  {
+   "key": "IB2300260615",
+   "i": 1,
+   "cap": {
+    "value": 2000,
+    "unit": "kVA"
+   },
+   "minDisp": 20,
+   "cell": "Dung tích xi lanh < 20 lít"
+  },
+  {
+   "key": "IB2400564384",
+   "i": null,
+   "cap": {
+    "value": 500,
+    "unit": "kVA"
+   },
+   "minDisp": 20,
+   "cell": " 2.5 Dung tích xi lanh < 20 lít\r"
+  },
+  {
+   "key": "IB2500360231",
+   "i": null,
+   "cap": {
+    "value": 2500,
+    "unit": "kVA"
+   },
+   "minDisp": 78,
+   "cell": "- Dung tích xi lanh <78 lit\r"
+  }
+ ],
+ "T2": [
+  {
+   "key": "IB2200021335",
+   "i": null,
+   "cap": {
+    "value": 163,
+    "unit": "kVA"
+   },
+   "minPrime": {
+    "kVA": 180
+   },
+   "ctx": "s II Tổ máy phát điện 1 Máy phát điện 163kVA liên tục Prime/180kVA dự phòng Standby Máy phát điện 163 kVA Prim"
+  },
+  {
+   "key": "IB2200075147",
+   "i": null,
+   "cap": {
+    "value": 163,
+    "unit": "kVA"
+   },
+   "minPrime": {
+    "kVA": 180
+   },
+   "ctx": "s II Tổ máy phát điện 1 Máy phát điện 163kVA liên tục Prime/180kVA dự phòng Standby Máy phát điện 163 kVA Prim"
+  }
+ ],
+ "T4disp": [
+  {
+   "key": "IB2500039578",
+   "i": 0,
+   "cap": {
+    "value": 550,
+    "unit": "kVA"
+   },
+   "minDisp": 13,
+   "cell": " - Dung tích buồng đốt ≥13 lít\r"
+  },
+  {
+   "key": "IB2500039578",
+   "i": 1,
+   "cap": {
+    "value": 2500,
+    "unit": "kVA"
+   },
+   "minDisp": 13,
+   "cell": " - Dung tích buồng đốt ≥13 lít\r"
+  },
+  {
+   "key": "IB2200001635",
+   "i": null,
+   "cap": {
+    "value": 100,
+    "unit": "kVA"
+   },
+   "minDisp": 4.4,
+   "cell": "Dung tích buồng đốt ≥ 4,4 lít"
+  },
+  {
+   "key": "IB2200065274",
+   "i": null,
+   "cap": {
+    "value": 800,
+    "unit": "kVA"
+   },
+   "minDisp": 21.927,
+   "cell": " - Dung tích xy-lanh: ≥ 21.927 lít\r"
+  },
+  {
+   "key": "IB2200065274",
+   "i": null,
+   "cap": {
+    "value": 800,
+    "unit": "kVA"
+   },
+   "minDisp": 21.927,
+   "cell": " - Dung tích xy-lanh: ≥ 21.927 lít\r  - Số xi-lanh: ≥ 14.6:1\r"
+  },
+  {
+   "key": "IB2300031444",
+   "i": null,
+   "cap": {
+    "value": 500,
+    "unit": "kVA"
+   },
+   "minDisp": 55,
+   "cell": "Tổng dung tích làm mát  ≥ 55L"
+  },
+  {
+   "key": "IB2300116009",
+   "i": null,
+   "cap": {
+    "value": 600,
+    "unit": "kVA"
+   },
+   "minDisp": 18.273,
+   "cell": " Displacement: 18.273L\r"
+  },
+  {
+   "key": "IB2300188511",
+   "i": null,
+   "cap": {
+    "value": 2500,
+    "unit": "kVA"
+   },
+   "minDisp": 78,
+   "cell": " Tổng dung tích xy-\r  - ≥78 L\r"
+  },
+  {
+   "key": "IB2300214975",
+   "i": null,
+   "cap": {
+    "value": 300,
+    "unit": "kVA"
+   },
+   "minDisp": 22,
+   "cell": "Tổng dung tích làm mát: ≥ 22L"
+  },
+  {
+   "key": "IB2400180911",
+   "i": null,
+   "cap": {
+    "value": 12,
+    "unit": "kVA"
+   },
+   "minDisp": 1.7,
+   "cell": " Dung tích Đạt Không đạt\r 6 ≥ 1700 cc\r"
+  },
+  {
+   "key": "IB2400410218",
+   "i": null,
+   "cap": {
+    "value": 8.5,
+    "unit": "kVA"
+   },
+   "minDisp": 2.1,
+   "cell": "4 Dung tích\r  ≥ 2.1 L\r"
+  },
+  {
+   "key": "IB2400442989",
+   "i": null,
+   "cap": {
+    "value": 30,
+    "unit": "kVA"
+   },
+   "minDisp": 2.4,
+   "cell": " - Tổng dung tích xy-lanh: ≥ 2,4 lít. Đáp ứng yêu cầu - Không đáp ứng yêu cầu\r"
+  },
+  {
+   "key": "IB2400503492",
+   "i": null,
+   "cap": {
+    "value": 600,
+    "unit": "kVA"
+   },
+   "minDisp": 19.6,
+   "cell": "10 Tổng dung tích ≥ 19.6 lít\r"
+  },
+  {
+   "key": "IB2400513782",
+   "i": null,
+   "cap": {
+    "value": 12.5,
+    "unit": "kVA"
+   },
+   "minDisp": 1.8,
+   "cell": " Tổng dung tích\r 7 >= 1,8 lít X\r"
+  },
+  {
+   "key": "IB2500110812",
+   "i": null,
+   "cap": {
+    "value": 2400,
+    "unit": "kW"
+   },
+   "minDisp": 2,
+   "cell": " Dung tích ≥ 2.000 lít + Đạt: Đáp ứng yêu\r"
+  },
+  {
+   "key": "IB2500110812",
+   "i": null,
+   "cap": {
+    "value": 2400,
+    "unit": "kW"
+   },
+   "minDisp": 2,
+   "cell": " Dung tích ≥ 2.000 lít (theo thiết kế).\r"
+  },
+  {
+   "key": "IB2500110816",
+   "i": null,
+   "cap": {
+    "value": 2400,
+    "unit": "kW"
+   },
+   "minDisp": 2,
+   "cell": " Dung tích ≥ 2.000 lít Kiểm tra tài liệu\r"
+  },
+  {
+   "key": "IB2500110816",
+   "i": null,
+   "cap": {
+    "value": 2400,
+    "unit": "kW"
+   },
+   "minDisp": 2,
+   "cell": " Dung tích ≥ 2.000 lít + Đạt: Đáp ứng yêu\r"
+  },
+  {
+   "key": "IB2500110816",
+   "i": null,
+   "cap": {
+    "value": 2400,
+    "unit": "kW"
+   },
+   "minDisp": 2,
+   "cell": " Dung tích ≥ 2.000 lít (theo thiết kế).\r"
+  },
+  {
+   "key": "IB2500314401",
+   "i": null,
+   "cap": {
+    "value": 350,
+    "unit": "kVA"
+   },
+   "minDisp": 42,
+   "cell": " Dung tích làm mát: ≥ 42L\r"
+  },
+  {
+   "key": "IB2500432527",
+   "i": null,
+   "cap": {
+    "value": 1000,
+    "unit": "kVA"
+   },
+   "minDisp": 21.9,
+   "cell": "10. Dung tích động cơ Tối thiểu 21.900 cm3\r"
+  },
+  {
+   "key": "IB2600243028",
+   "i": null,
+   "cap": {
+    "value": 800,
+    "unit": "kVA"
+   },
+   "minDisp": 29.6,
+   "cell": " 7 Dung tích xy-lanh ≥ 29.6 lít\r"
+  },
+  {
+   "key": "IB2600315904",
+   "i": null,
+   "cap": {
+    "value": 354,
+    "unit": "kVA"
+   },
+   "minDisp": 12.78,
+   "cell": " + Tổng dung tích Piston: ≥ 12.78 lít;\r"
+  },
+  {
+   "key": "IB2600418114",
+   "i": null,
+   "cap": {
+    "value": 1000,
+    "unit": "kVA"
+   },
+   "minDisp": 25,
+   "cell": "7. Dung tích động cơ Tối thiểu 25.000 cm3\r"
+  },
+  {
+   "key": "IB2600438484",
+   "i": null,
+   "cap": {
+    "value": 800,
+    "unit": "kVA"
+   },
+   "minDisp": 23,
+   "cell": " 8 Dung tích xy-lanh ≥ 23.0 lít\r"
+  },
+  {
+   "key": "IB2600464766",
+   "i": null,
+   "cap": {
+    "value": 150,
+    "unit": "kVA"
+   },
+   "minDisp": 6.7,
+   "cell": " (Displacement)≥ 6.7 lít đến 7.5 lít\r"
+  },
+  {
+   "key": "IB2600472762",
+   "i": null,
+   "cap": {
+    "value": 750,
+    "unit": "kVA"
+   },
+   "minDisp": 30,
+   "cell": "2.8 Dung tích xi-lanh ≥ 30L\r"
+  },
+  {
+   "key": "IB2600490077",
+   "i": null,
+   "cap": {
+    "value": 165,
+    "unit": "kVA"
+   },
+   "minDisp": 6.44,
+   "cell": "Dung tích xy-lanh: ≥ 6,44 lít\r"
+  }
+ ],
+ "T4cyl": [
+  {
+   "key": "IB2300129273",
+   "i": 0,
+   "cap": {
+    "value": 2000,
+    "unit": "kW"
+   },
+   "minCyl": 4,
+   "cell": "4 xi lanh, tổng CTCB\r"
+  },
+  {
+   "key": "IB2300129273",
+   "i": 1,
+   "cap": {
+    "value": 2400,
+    "unit": "kW"
+   },
+   "minCyl": 4,
+   "cell": "4 xi lanh, tổng CTCB\r"
+  },
+  {
+   "key": "IB2400236068",
+   "i": 0,
+   "cap": {
+    "value": 500,
+    "unit": "kVA"
+   },
+   "minCyl": 6,
+   "cell": "6 xy lanh, xếp thẳng"
+  },
+  {
+   "key": "IB2400236068",
+   "i": 1,
+   "cap": {
+    "value": 660,
+    "unit": "kVA"
+   },
+   "minCyl": 6,
+   "cell": "6 xy lanh, xếp thẳng"
+  },
+  {
+   "key": "IB2200038691",
+   "i": null,
+   "cap": {
+    "value": 500,
+    "unit": "kVA"
+   },
+   "minCyl": 6,
+   "cell": " 6 xy lanh, bố trí hình thẳng\r"
+  },
+  {
+   "key": "IB2300031444",
+   "i": null,
+   "cap": {
+    "value": 500,
+    "unit": "kVA"
+   },
+   "minCyl": 6,
+   "cell": "6 xy lanh , bố trí thẳng hàng."
+  },
+  {
+   "key": "IB2300363513",
+   "i": null,
+   "cap": {
+    "value": 1800,
+    "unit": "kW"
+   },
+   "minCyl": 2,
+   "cell": "2 xi lanh, tổng dung tích CTCB + Không Đạt: Không đáp ứng X\r"
+  },
+  {
+   "key": "IB2400298819",
+   "i": null,
+   "cap": {
+    "value": 250,
+    "unit": "kVA"
+   },
+   "minCyl": 6,
+   "cell": "6 xy lanh, xếp trên 1 đường thẳng"
+  },
+  {
+   "key": "IB2400439995",
+   "i": null,
+   "cap": {
+    "value": 250,
+    "unit": "kVA"
+   },
+   "minCyl": 6,
+   "cell": "6 xy lanh, xếp trên 1 đường thẳng"
+  },
+  {
+   "key": "IB2500110812",
+   "i": null,
+   "cap": {
+    "value": 2400,
+    "unit": "kW"
+   },
+   "minCyl": 4,
+   "cell": "4 xi lanh, tổng dung tích CB\r"
+  },
+  {
+   "key": "IB2500110816",
+   "i": null,
+   "cap": {
+    "value": 2400,
+    "unit": "kW"
+   },
+   "minCyl": 4,
+   "cell": "4 xi lanh, tổng dung tích CB\r"
+  },
+  {
+   "key": "IB2500320544",
+   "i": null,
+   "cap": {
+    "value": 1000,
+    "unit": "kVA"
+   },
+   "minCyl": 12,
+   "cell": "12 xilanh, bố trí hình V"
+  }
+ ],
+ "T6": [
+  {
+   "engine": "YC16VC3300-D31",
+   "make": "Yuchai",
+   "vals": [
+    "105.56L",
+    "105.56"
+   ]
+  },
+  {
+   "engine": "YC16VC3600-D31",
+   "make": "Yuchai",
+   "vals": [
+    "105.56L",
+    "105.56"
+   ]
+  },
+  {
+   "engine": "YC16VC3000-D31",
+   "make": "Yuchai",
+   "vals": [
+    "105.56L",
+    "105.56"
+   ]
+  },
+  {
+   "engine": "YC16VC4000-D31",
+   "make": "Yuchai",
+   "vals": [
+    "105.56L"
+   ]
+  },
+  {
+   "engine": "6WH32D3000-7.2",
+   "make": "Weichai",
+   "vals": [
+    "193"
+   ]
+  },
+  {
+   "engine": "6WH32D3000-7.5",
+   "make": "Weichai",
+   "vals": [
+    "193"
+   ]
+  },
+  {
+   "engine": "8WH32D4000-7.2",
+   "make": "Weichai",
+   "vals": [
+    "257"
+   ]
+  },
+  {
+   "engine": "8WH32D4000-7.5",
+   "make": "Weichai",
+   "vals": [
+    "257"
+   ]
+  },
+  {
+   "engine": "JTA20V-NG2066",
+   "make": "Googol",
+   "vals": [
+    "107.5"
+   ]
+  },
+  {
+   "engine": "YC16VC2470N-D30",
+   "make": "Yuchai",
+   "vals": [
+    "105.6"
+   ]
+  }
+ ]
+}

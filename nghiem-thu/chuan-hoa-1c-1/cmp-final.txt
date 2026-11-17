@@ -1,0 +1,83 @@
+ban ghi main / PR: 63576 63580
+ban ghi chi o main: 0 | chi o PR: 4
+  + THEM kc-generatorset engine WP13D490E310 | | Power Factor | 400/230 | 50 | 3 | 720 | 400 | 0.8 | Engine parameters | Manufacturer/Model | Weich | []
+  + THEM kc-generatorset engine WP6D167E200 | | Power Factor | 400/230 | 50 | 3 | 252 | 140 | 0.8 | Engine parameters | Manufacturer/Model | Weich | []
+  + THEM kc-generatorset engine 12M26D902E200 | | Power Factor | 400/230 | 50 | 3 | 1440 | 800 | 0.8 | Engine parameters | Manufacturer/Model | Weic | []
+  + THEM kc-generatorset engine WP10D238E200 | | Power Factor | 400/230 | 50 | 3 | 324 | 180 | 0.8 | Engine parameters | Manufacturer/Model | Weich | []
+doi cong suat/tan so/genset/hang: 0
+
+GIA TRI MAT: voltage=52, speed=17, fuel75=6, fuel=3, tank=2, dims=2
+  tank - ( 1 mau):
+      2 "Fuel Tank running hours:" = "8/10/12H" [acepow-fuan]
+  dims - ( 1 mau):
+      2 "Engine Size(mm)" = "770x520x680" [acepow-fuan]
+  fuel75 - ( 3 mau):
+      3 "Running time @ 75% PRP" = "5" [endress-stromerzeuger]
+      2 "Running time @ 75% PRP" = "4,2" [endress-stromerzeuger]
+      1 "Running time @ 75% PRP" = "6,7" [endress-stromerzeuger]
+  speed - ( 8 mau):
+      4 "1500 rpm, 400V/50Hz/3P, 0.8PF" = "1500" [gtl-power]
+      4 "1800 rpm, 380V/60Hz/3P, 0.8PF" = "1500" [gtl-power]
+      2 "1500 rpm, 400V/50Hz/3P, 0.8PF" = "1000" [gtl-power]
+      2 "1500 rpm, 400V/50Hz/3P, 0.8PF" = "1800" [gtl-power]
+      2 "1800 rpm, 380V/60Hz/3P, 0.8PF" = "1000" [gtl-power]
+      1 "1500 rpm, 400V/50Hz/3P, 0.8PF" = "1200" [gtl-power]
+      1 "1800 rpm, 380V/60Hz/3P, 0.8PF" = "1200" [gtl-power]
+      1 "Speed (r/m)" = "1000" [zichai]
+  voltage - ( 26 mau):
+      4 "Fre/Volt HZ/V 频率 /电压" = "112.5" [kangwo-guangdong]
+      4 "Fre/Volt HZ/V 频率 /电压" = "250" [kangwo-guangdong]
+      4 "Fre/Volt HZ/V 频率 /电压" = "1000" [kangwo-guangdong]
+      3 "Fre/Volt HZ/V 频率 /电压" = "125" [kangwo-guangdong]
+      3 "Fre/Volt HZ/V 频率 /电压" = "187.5" [kangwo-guangdong]
+      3 "Fre/Volt HZ/V 频率 /电压" = "225" [kangwo-guangdong]
+      3 "Fre/Volt HZ/V 频率 /电压" = "375" [kangwo-guangdong]
+      3 "Fre/Volt HZ/V 频率 /电压" = "500" [kangwo-guangdong]
+  fuel - ( 1 mau):
+      3 "Gas Consumption" = "0.33" [lees-power]
+
+GIA TRI THEM: runtime=19, tank=2
+  runtime - ( 13 mau):
+      5 "Running time @ 75% PRP" = "5" [endress-stromerzeuger]
+      2 "Fuel Tank running hours:" = "8/10/12H" [acepow-fuan]
+      2 "Running time @ 75% PRP" = "4,2" [endress-stromerzeuger]
+      1 "Running time @ 75% PRP" = "6,7" [endress-stromerzeuger]
+      1 "Running time @ 75% PRP" = "24,8" [endress-stromerzeuger]
+      1 "Running time @ 75% PRP" = "12,5" [endress-stromerzeuger]
+      1 "Running time @ 75% PRP" = "10,3" [endress-stromerzeuger]
+      1 "Running time @ 75% PRP" = "9,3" [endress-stromerzeuger]
+  tank - ( 1 mau):
+      2 "Fuel tank Vol.(L):" = "50" [acepow-fuan]
+
+MODEL DOI TEN: 31 kieu, 34 ban ghi
+      2 Perkins 1103A-33G -> 1103A-33G
+      2 Perkins 1103A-33TG2 -> 1103A-33TG2
+      2 Kubota V1505 -> V1505
+      1 J.Deere 6068HFG05 -> 6068HFG05
+      1 J.Deere® 6068HFG06 -> 6068HFG06
+      1 B50 -> DM01VP
+      1 B50 -> DM02VP
+      1 B100 -> DM03VG
+      1 B100 -> DM03VP
+      1 B100 -> DP034CDV
+      1 B200 -> DP054CBV
+      1 B200 -> DP054CCV
+      1 B300 -> DP086CCV
+      1 B300 -> DP086CEV
+      1 Perkins 4008-TAG1A -> 4008-TAG1A
+      1 Baudouin 8M33G1100/5 -> 8M33G1100/5
+      1 VOLVO TAD1642GE -> TAD1642GE
+      1 DOOSAN DP222LCF -> DP222LCF
+      1 MITSUBISHI S12A2-PTA -> S12A2-PTA
+      1 PERKINS 4006-23TAG3A -> 4006-23TAG3A
+      1 PERKINS 4008-30TAG3 -> 4008-30TAG3
+      1 Kubota D1703 -> D1703
+      1 Perkins 1103D-33-G3 -> 1103D-33-G3
+      1 Perkins 1104D-44-TG3 -> 1104D-44-TG3
+      1 Perkins 1104D-E44-TAG2 -> 1104D-E44-TAG2
+      1 Perkins 1204J-E44TTAG2 -> 1204J-E44TTAG2
+      1 Perkins 904J-E36TAG3 -> 904J-E36TAG3
+      1 Yanmar 4TNV98CT-IYE -> 4TNV98CT-IYE
+      1 Perkins 1104C-E44TAG2 -> 1104C-E44TAG2
+      1 Perkins 1103A-33TG1 -> 1103A-33TG1
+      1 Perkins 404J-E22T -> 404J-E22T

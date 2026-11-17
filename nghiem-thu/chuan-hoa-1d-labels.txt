@@ -1,0 +1,11 @@
+MAT
+1 fuel | Fuel consumption @25/50/75/100% load [hyundai-power-products]
+9 fuel | 25%负载油耗 [lees-power]
+24 fuel | Fuel Consumption 25% load [lees-power]
+220 fuel | Cons. 70% [tecnogen]
+1 cyl | Cylinder [tecnogen]
+2 fuel | Fuel Consumption 110% [westinpower]
+THEM
+9 fuel | 100%负载油耗 [lees-power]
+24 fuel | Fuel Consumption 100% load [lees-power]
+1 weight | Kg [tecnogen]

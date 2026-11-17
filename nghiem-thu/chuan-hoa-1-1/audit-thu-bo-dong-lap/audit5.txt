@@ -1,0 +1,29 @@
+== a. Nhan cot long leo co thuc su lay gia tri ==
+  eff: 0/62 
+  speed: 0/2762 
+  pf: 0/145 
+  start: 0/447 
+  coolant: 0/151 
+  compr: 0/1318 
+  oil: 0/3290 
+  voltage: 0/3242 
+  weight: 2674/17655 "gross weight(kg)"x1021, "毛重（kg）"x643, "净重 net weight (kg)"x302, "gross weight (kg)"x143, "net weight"x127
+
+== b. Khi thai == 2328 gia tri: CN Stage II=822 | CN Stage III=502 | KHONG PHAN LOAI DUOC: 国 ii=235 | EU Stage V=128 | khong quy dinh / mien=110 | EU Stage II / Euro 2=80 | EPA Tier 3=78 | KHONG PHAN LOAI DUOC: 国 iii=77 | EPA Tier 4=76 | KHONG PHAN LOAI DUOC: cn iii=29 | EU Stage IIIA=25 | KHONG PHAN LOAI DUOC: epa tier ii=22 | KHONG PHAN LOAI DUOC: non-emission/epa t=22 | KHONG PHAN LOAI DUOC: v=22 | EPA Tier 2=20 | KHONG PHAN LOAI DUOC: imo ii=17
+
+== c. Tieu hao khong don vi: 1670 | trong do so vua hop L/h vua hop g/kWh (khong the phan biet): 223
+
+== d. Dong khong doc duoc cong suat: 11134 | co o so: 10338 | co cap so bang nhau lien ke <=60 (kW = kVA, 1 pha / cos phi 1): 44
+      acepow-fuan | | 50 | 50 | 55 | LR4B5-D | 48 | 53 | Mechanical | UC224D
+      acepow-fuan | | APYT-50 | 50 | 50 | 55 | YT4B2Z-D | 60 | 65 | UC224E
+      aoke-yangzhou | | AOKE-P160 | 145KW | 160KW | 珀金斯 | 1106A-70TAG3 | 6 | 6 | 2419 | 200 | 2500×1120×1470 | 1602 | | 详细参数
+      aoke-yangzhou | | AOKE-P160 | 145KW | 160KW | 珀金斯 | 1106A-70TAG3 | 6 | 6 | 19 | 200 | 2500×1120×1470 | 1602 | | 详细参数
+      bruno-generators | | SL 9810 PK** | 10 | 250 W | 2500 W | AC | 230 V | 8.8 | 8 | 12 | 11 | PERKINS 403D-11G | 1131 | 8.4 | 10.3 | 1 | 1 | N | 140 | 245 | 130 |
+   co it nhat 1 o so don (co the la cong suat 1 don vi): 10338
+
+== e. Dong to may < 30 kVA: 2832 | co so pha: 88 | co dien ap: 119 | co khoi dong: 50 | co lam mat: 60
+   dong to may theo dai kVA: 700-1500=5080, 0-30=2832, 30-100=5785, 300-700=8756, 1500-1000000000=3134, 100-300=7759
+
+== f. productLines to may theo nhien lieu: diesel=2763, gas=81, gasoline=5, other=3, hfo=1
+== g. controllers[]: 619 muc, co model: 475 76.7% | hang: Deep Sea=277, SmartGen=154, ComAp=91, DEIF=14, DynaGen=12, Cat=11, Rehlko=11, Mebay=9, SICES=7, Datakom=6, Harsen=6, Cummins=4
+== h. kich thuoc/khoi luong: 38376 gia tri | co ghi tran / vo cach am (trong nhan cot hoac ten bang): 6407 16.7%

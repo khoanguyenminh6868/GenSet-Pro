@@ -1,0 +1,15 @@
+{
+ "state": {
+  "state": "none",
+  "why": "Văn bản Chương V không đọc được vì tệp 'XL1.2 mục III Yêu cầu kỹ thuật Gia lễ.doc' bị lỗi mã hóa ký tự, còn 'Phụ lục bảng giá hợp đồng' chỉ là biểu mẫu trống, nên không có thông số kỹ thuật nào của tổ máy phát điện để liệt kê (gói thầu này là xây dựng nhà xưởng, 'Nhà để máy phát điện' chỉ là hạng mục xây dựng).",
+  "at": "2026-11-03T13:28:16.090Z"
+ },
+ "analysis": null,
+ "bidhistConfig": {
+  "at": "2026-11-02T15:56:40.583Z",
+  "src": "tệp HSMT: XL1.2 mục III Yêu cầu kỹ thuật Gia lễ.doc (bản scan, không đọc được chữ)",
+  "kvas": [],
+  "text": ""
+ },
+ "hsmtTextNote": "hsmttext/hsmt không lưu ở đây"
+}

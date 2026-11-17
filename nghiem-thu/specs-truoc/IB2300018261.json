@@ -1,0 +1,10 @@
+{
+ "state": {
+  "state": "none",
+  "why": "Tệp Chương V là bản quét bị lỗi nhận dạng (OCR) nên toàn bộ nội dung chỉ là ký tự rời rạc, không đọc được thông số kỹ thuật nào của tổ máy phát điện; chỉ có tên gói thầu nêu '01 máy 300KVA', không phải yêu cầu kỹ thuật trong Chương V.",
+  "at": "2026-11-03T12:08:49.612Z"
+ },
+ "analysis": null,
+ "bidhistConfig": null,
+ "hsmtTextNote": "hsmttext/hsmt không lưu ở đây"
+}

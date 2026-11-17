@@ -1,0 +1,66 @@
+{
+ "runs": 1539,
+ "packages": 1162,
+ "errors": 0,
+ "rowsBefore": 1267532,
+ "dropped": 163861,
+ "rowsAfter": 1285459,
+ "rowsPrime": 1363304,
+ "bandRows": 1431393,
+ "byReason": {
+  "prime": {
+   "single": 90184,
+   "maker": 379
+  },
+  "disp": {
+   "multi": 28276,
+   "single": 16144,
+   "maker": 1874
+  },
+  "cyl": {
+   "multi": 35996,
+   "maker": 1660,
+   "single": 6243
+  },
+  "maxDisp": {
+   "multi": 6820,
+   "single": 2881,
+   "maker": 301
+  }
+ },
+ "rowClass": {
+  "maker": 3104,
+  "multi": 52267,
+  "single": 17927,
+  "prime+multi": 11679,
+  "prime+single": 3874,
+  "prime+maker": 709
+ },
+ "rowClassP": {
+  "maker": 4156,
+  "multi": 63933,
+  "single": 95772
+ },
+ "runsWithDrop": 654,
+ "runsRescued": 397,
+ "pkgRescued": 360,
+ "top3Changed": 0,
+ "top3SetChanged": 0,
+ "pkgTop3": 0,
+ "pkgTop3Set": 0,
+ "top3ChangedP": 2,
+ "top3SetChangedP": 2,
+ "pkgTop3P": 2,
+ "pkgTop3SetP": 2,
+ "runsTop30New": 11,
+ "top30New": 52,
+ "runsTop30NewP": 32,
+ "top30NewP": 84,
+ "weakTop": 52,
+ "weakTopP": 84,
+ "weakTop3": 0,
+ "weakTop3P": 4,
+ "topNup": 10,
+ "topNupP": 31
+}
+top3 đổi (luật mới):

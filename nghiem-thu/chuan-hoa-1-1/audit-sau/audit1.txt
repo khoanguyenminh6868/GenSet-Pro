@@ -1,0 +1,125 @@
+== HỒ SƠ ==
+NCC: 435 | có specTables: 329 | bảng: 9161 | dòng: 173266
+role: genset_oem=280, engine_maker=56, distributor=55, alternator_maker=40, controller_maker=4
+status: verified=237, partial=198
+country: CN=326, IT=20, GB=19, DE=15, US=12, JP=8, FR=5, ES=4, IN=4, TR=3, SE=3, FI=2, ID=2, KR=2, CA=1, CZ=1, PT=1, MX=1, AT=1, ZA=1, AR=1, SA=1, BR=1, LB=1
+khoá trong 1 bảng: n=9161, title=9161, header=9161, rows=9161
+bảng theo dải nguồn: 101+ crawl=4764 | 2001+ Tìm NCC=2140 | 1001+ datasheet=2105 | 5001+ catalog PDF=125 | 4001+ OCR=27
+dòng theo dải nguồn: 101+ crawl=82113 | 1001+ datasheet=70830 | 2001+ Tìm NCC=17743 | 5001+ catalog PDF=2188 | 4001+ OCR=392
+
+== DẠNG BẢNG ==
+bảng không tiêu đề: 3771 41.2% | tiêu đề nhiều dòng: 1940 21.2%
+bảng nhãn-giá trị (dọc): 4090 44.6% | bảng ngang (mỗi dòng 1 model): 5071 dòng: 75100
+dòng bắt đầu '|': 142611 | dòng chữ thường: 30655 17.7%
+bảng ngang mà >50% dòng lệch số cột so tiêu đề: 1836 36.2% | dòng lệch: 38939 51.8%
+
+== TỪ VỰNG TIÊU ĐỀ CỘT (bảng ngang) ==
+ô tiêu đề: 42782 | khác nhau: 6921 | ngôn ngữ: {"zh":8381,"en":32289,"other":2112}
+gán được mã thông số: 9042 21.1% | cột model/hãng: 8374 19.6% | cột công suất: 9908 23.2% | KHÔNG nhận ra: 15458 36.1%
+theo mã: dims=1400, weight=1206, cyl=1101, fuel=832, disp=748, bore=541, voltage=537, phase=349, speed=315, current=279, gov=272, oil=251, emission=210, engPower=198, noise=121, asp=107, engType=93, controller=83, pf=72, tank=67, eff=56, fuel75=45, compr=34, start=28, excit=23, cooling=17, fuel50=13, ip=12, coolant=11, insul=11, thd=4, runtime=3, vreg=3
+tiêu đề không nhận ra, hay gặp nhất:
+   290 v
+   267 400/230
+   247 download
+   207 standby
+   204 mm
+   184 prime
+   176 a
+   174 click here
+   167 l
+   163 prp
+   160 stamford
+   143 3
+   133 type
+   132 frequency
+   130 longkai
+   123 l/h
+   121 esp
+   121 open type
+   105 cummins (ccec china)
+   99 50hz
+   90 %
+   86 silent
+   84 datasheet
+   79 6
+   75 silent type
+   71 pdf
+   65 详细参数
+   65 details lighting tower
+   65 模型
+   64 (l)
+   64 prime (prp)
+   64 standby (esp)
+   64 输出
+   62 year
+   62 频率
+   61 50
+   61 fuel type
+   60 manufacturer
+   59 china
+   59 wattage
+   59 condition
+   59 hours
+   59 整机编号
+   59 高压(kv)
+   59 参数
+   55 hz
+   54 技术咨询
+   53 download pdf
+   53 w x l x h (mm)
+   51 detail data
+   50 view
+   49 cummins
+   47 (kg)
+   46 modello
+   45 (mm)
+   44 frequency (hz)
+   43 h
+   42 leroy somer
+   39 specifications
+   38 lxlwxh [mm]
+   37 柴油机参数
+   36 ecm
+   36 gas inlet pressure
+   36 kpa
+   35 open type (mm)
+   35 输出因数（滞后）
+   34 详细
+   33 general specifications
+   33 w
+   33 60hz
+
+Số cách viết tiêu đề cho cùng một thông số:
+   dims 211 cách; vd: "外形尺寸(l×w×h)"×123, "dimension"×106, "size"×66, "l*w*h (mm)"×61, "外形尺寸 (l×w×h mm×mm×mm)"×54
+   fuel 129 cách; vd: "燃油消耗 (g/kw.h)"×116, "燃油率"×59, "fuel consumption"×51, "fuel cons."×33, "consumption 100%"×31
+   bore 101 cách; vd: "bore × stroke (mm)"×34, "孔径x行程（mm）"×25, "bore*stroke (mm)"×23, "bore xstroke(mm)"×23, "bore*stroke"×22
+   speed 72 cách; vd: "rated speed (rpm)"×37, "rpm"×32, "speed"×26, "speed (rpm)"×13, "rated speed"×10
+   weight 69 cách; vd: "weight (kg)"×204, "kg"×153, "weight"×128, "重量kg"×61, "机组重量(kg)"×57
+   cyl 55 cách; vd: "缸数"×308, "no. of cylinder"×126, "cylinder"×112, "cylinder no."×90, "cylinders"×70
+   phase 50 cách; vd: "phase"×161, "3-phase"×50, "number of phases"×24, "50hz pf=0.8 400/230v 3phase 4wire"×22, "50hz,400/230v,3-phase"×15
+   emission 34 cách; vd: "emission standard"×39, "emission"×26, "排放 discharge"×20, "排放阶段"×18, "emission standards"×16
+   disp 34 cách; vd: "排量(l)"×155, "displacement"×112, "displacement (l)"×108, "排量 (l)"×96, "displacement(l)"×82
+   engPower 31 cách; vd: "engine power (kw)"×55, "engine power(kw)"×19, "max power (kw/hp)"×12, "engine power/kw"×11, "engine rated power (kw)"×11
+   voltage 31 cách; vd: "voltage"×229, "rated voltage line to line"×131, "电压(v)"×62, "voltage v"×35, "voltage (v)"×9
+   eff 31 cách; vd: "efficiency 4/4 p.f. 0,8 50 hz"×11, "efficiency 4/4 p.f. 0,8 60 hz"×5, "efficiency 4/4 p.f.1 50 hz"×3, "efficiency 4/4 p.f.1 60 hz"×3, "generator efficiency"×2
+   current 30 cách; vd: "rated current"×131, "rated current a"×30, "电流（a）"×13, "电流a current"×11, "电流 a"×9
+   oil 28 cách; vd: "润滑油 容量(l)"×126, "机油容量(l)"×54, "机油容量l lube oil"×11, "机油 容量 （ l ）"×10, "机油容量 （l）"×8
+   gov 24 cách; vd: "gov"×78, "gov."×43, "governing system"×34, "governor"×33, "governor type"×24
+   start 15 cách; vd: "limité par circuit de démarrage en douceur (soft-start)"×4, "avviamento starting"×4, "start method"×3, "volt. for start (dc)"×3, "starting motor 发动机"×2
+   noise 12 cách; vd: "noise db(a) @ 7m"×52, "db(a) at 7 mt"×19, "db(a)"×19, "db(a) (•) 7 m"×7, "noise (no load)"×6
+   asp 11 cách; vd: "aspiration"×41, "吸气方式"×35, "进气方式"×12, "intake way"×4, "air intake way"×4
+   tank 8 cách; vd: "fuel tank (lt)"×52, "tank capacity"×6, "fuel tank"×4, "fuel tank running hours:"×1, "fuel tank capacity(l)"×1
+   fuel75 8 cách; vd: "consumo al 75% prp consumption at 75% prp"×19, "75 % load"×10, "consumo ¾ caricoconsumption 3/4 loadconsommation 3/4 charge"×8, "fuel l/h @75% / @100%"×4, "fuel consumption 75% l/h"×1
+   excit 7 cách; vd: "励磁方式"×7, "无刷自励磁"×7, "avr"×4, "mx341 avr"×2, "excitation system 6 wire"×1
+   cooling 7 cách; vd: "cooling system"×5, "water-cooling"×4, "cooling type"×2, "cooling"×2, "cooling method"×2
+   coolant 5 cách; vd: "set coolant"×6, "heat carry off by coolant"×2, "max. coolant temerature"×1, "coolant"×1, "charge air coolant"×1
+   ip 5 cách; vd: "防护等级"×7, "防护等级ip"×2, "class of protection"×1, "ip"×1, "protection grade"×1
+   compr 5 cách; vd: "compression ratio"×23, "压缩比 compression ratio"×6, "compression ratio 压缩比"×2, "micro-pilot fuel compression"×2, "压缩比compression ratio"×1
+   pf 4 cách; vd: "cos&phi;=0.8（滞后）"×35, "cos&phi;=0.8"×35, "(cos)"×1, "(cosφ)"×1
+   controller 3 cách; vd: "controller"×79, "control panel"×3, "control panel:"×1
+   fuel50 2 cách; vd: "50 % load"×12, "50% load"×1
+   insul 2 cách; vd: "绝缘等级"×9, "insulation class"×2
+   runtime 2 cách; vd: "runtime (50%)"×2, "run time (hours)"×1
+   vreg 2 cách; vd: "调压率%"×2, "voltage regulation"×1
+   engType 1 cách; vd: "engine type"×93
+   thd 1 cách; vd: "distorsion du courant thd"×4

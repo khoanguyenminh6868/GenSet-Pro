@@ -1,0 +1,108 @@
+== 1. BANG KHONG DOC RA BAN GHI NAO (du lieu toi) ==
+  alternator / 1001+ datasheet       bang 43/44 (97.7%)  dong 969/987 (98.2%)
+  alternator / 101+ crawl            bang 124/234 (53.0%)  dong 2278/5363 (42.5%)
+  alternator / 2001+ Tim NCC         bang 28/33 (84.8%)  dong 316/381 (82.9%)
+  engine / 1001+ datasheet           bang 95/98 (96.9%)  dong 928/956 (97.1%)
+  engine / 101+ crawl                bang 246/486 (50.6%)  dong 1220/3793 (32.2%)
+  engine / 2001+ Tim NCC             bang 33/218 (15.1%)  dong 303/1484 (20.4%)
+  engine / 5001+ catalog PDF         bang 3/24 (12.5%)  dong 22/209 (10.5%)
+  to may / 1001+ datasheet           bang 883/1937 (45.6%)  dong 14880/62136 (23.9%)
+  to may / 101+ crawl                bang 1643/4044 (40.6%)  dong 20322/72957 (27.9%)
+  to may / 2001+ Tim NCC             bang 388/1889 (20.5%)  dong 3542/15878 (22.3%)
+  to may / 4001+ OCR                 bang 0/27 (0.0%)  dong 0/392 (0.0%)
+  to may / 5001+ catalog PDF         bang 6/101 (5.9%)  dong 64/1979 (3.2%)
+  NCC nhieu dong toi nhat: lees-power=6372, mwm=1634, teksan=1498, koten-power=1276, longkai-power=1271, depco-power=1132, aosif=961, kente-power=895, sevenpower-chengdu=876, yingtai-jiangsu=857, shanhua=796, green-power-generators=766, vpower-hk=666, ronsun-power=657, man-engines=611, mpmc-powertech=590, astra-fuan=584, genlitec=572
+  tieu de bang toi hay gap (to may, crawl):
+      26 | | kWe | kVA
+      23 | General Information | Prime Power | Standby Power
+      17 | 发电机组参数 | 柴油机参数 | 发电机参数
+      14 | Generating Set Model | Prime | Standby
+      13 | Gensets Model | Prime | Standby
+      10 | 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长×宽×高) | 机 组 数 据
+      8 | Specification | Prime Power | Standby Power
+      8 | | | kVA | kW
+      8 | Series | Model | Aspiration | Rated power kW/Ps | Speed r/min | Fuel system | Emission | Power rating
+      8 | frequency | Hz | 50
+      6 | Gensets Model | Prime Power | Standby Power
+      5 | Model | Rated power output (kW@RPM) | Peak torque (N.m@RPM) | Cylinders | Displacement (L) | Aspiration
+      4 | Open Type | kVA | kW | kVA | kW
+      4 | Silent Canopy | kVA | kW | kVA | kW
+
+== 2. DONG TRUNG NGUYEN VAN: O DAU ==
+  theo dai nguon: 1001+ datasheet=45126, 101+ crawl=21980, 2001+ Tim NCC=3877, 5001+ catalog PDF=24, 4001+ OCR=1 | cung dai: 70312 khac dai: 696
+  NCC: fdk-energy=7814, aosif=6388, longkai-power=6184, lees-power=5391, westinpower=4868, keypower=4066, sanq-power=2705, shanhua=2627, genlitec=1760, voltgent=1716, endress-stromerzeuger=1662, gb-power=1418, comap=1060, depco-power=1031
+  dong lap nhieu nhat:
+      303 | Frequency | Hz | 50
+      288 | Voltage regulation | % | ±0.5
+      285 | Rated speed | r/min | 1500
+      248 | Power Factor | 0.8
+      240 | Rated output | Fuel consumption rate | ISO9001 | ISO14001
+      209 | Engine | Alternator
+      206 | Rated frequency | 50Hz
+      205 Standard Features
+      202 Alternator Specifications
+      199 | Phase | Three
+  ban ghi dong co doc ra tu dong trung (cung NCC): 2 0.0%
+
+== 3. NGUON CHUAN CUA HANG (dong co / dau phat) ==
+  engine: model dung boi >=2 NCC: 2574 | co dong tu chinh hang: 587 (22.8%)
+  engine: model dung boi >=5 NCC: 1368 | co dong tu chinh hang: 369 (27.0%)
+  engine: model dung boi >=10 NCC: 842 | co dong tu chinh hang: 276 (32.8%)
+    model pho bien (>=10 NCC) chua co dong hang, theo hang: Cummins=127, Ricardo=69, SDEC=59, Yuchai=46, Baudouin=46, MTU=41, Weichai=40, Deutz=38, Volvo Penta=32, FAWDE=19, Mitsubishi=13, Yanmar=9, Isuzu=8, Perkins=7
+    vd: 4BT3.9-G2(85), KTA38-G9(84), KTA50-G8(84), KTA50-GS8(84), KTA38-G2B(82), KTAA19-G6A(81), 6BT5.9-G2(80), 4B3.9-G2(79), 6BTAA5.9-G12(78), NTA855-G2A(76), KTAA19-G5(76), NTA855-G1A(72), 4016TAG2A(71), 4BTA3.9-G11(69)
+  alternator: model dung boi >=2 NCC: 411 | co dong tu chinh hang: 27 (6.6%)
+  alternator: model dung boi >=5 NCC: 118 | co dong tu chinh hang: 10 (8.5%)
+  alternator: model dung boi >=10 NCC: 27 | co dong tu chinh hang: 6 (22.2%)
+    model pho bien (>=10 NCC) chua co dong hang, theo hang: Stamford=19, Leroy-Somer=2
+    vd: UCI274E(15), HCI544FS(14), HCI544C(13), S1L2-Y1(12), UCDI274J(12), UCDI274K(12), UCI 224D(12), HCI544E(11), S1L2-K1(11), UCI274D(11), HCI444E(11), LSA50.2M6(11), LSA50.2L8(11), HCI444FS(11)
+
+== 4. MAU MAU THUAN DUNG TICH: do nguon hay do doc? ==
+  WP6D132E200 [aosif n124] disp="6.8" nhan="Displacement"
+     dong: | AW150 | 125/100 | 150/120 | WP6D132E200 | 30.1 | 6L | 6.8 |
+  WP6D132E200 [bdadl-shanghai n123] disp="6.75" nhan="排量 (L)"
+     dong: | BDA-W100 | 100/125 | 潍柴动力 | WP6D132E200 | 6 | 6.75 | 18 | ≤218 | 2400*850*1400 | 1400
+  WP6D132E200 [bdadl-shanghai n128] disp="4.5" nhan="排量 (L)"
+     dong: | BDA-W100 | 100/120 | 潍柴动力 | WP6D132E200 | 6 | 4.5 | 18 | ≤210 | 2410*930*1540 | 1020
+  WP6D132E200 [victory-generator n114] disp="6.25" nhan="Displacement (L)"
+     dong: | V110F | 50 | 100 | 125 | 110 | 138 | WP6D132E200 | 227 | 6 | 105 | 120 | 6.25 | 14 | 25.8 | 24 V | 2300 x 1000 x 1600 | 1560
+  WP10D200E200 [aosif n124] disp="9.7" nhan="Displacement"
+     dong: | AW220 | 200/160 | 200/176 | WP10D200E200 | 42.3 | 6L | 9.7 |
+  WP10D200E200 [bdadl-shanghai n121] disp="9.72" nhan="排量 (L)"
+     dong: | BDA-W150 | 150/187.5 | 潍柴动力 | WP10D200E200 | 6 | 9.72 | 20 | ≤218 | 2500*950*1650 | 1600
+  WP10D200E200 [fukangsi-yangzhou n2004] disp="6.75" nhan="排量 (L)"
+     dong: | FKS-W150 | 150/187.5 | 潍柴动力 | WP10D200E200 | 6 | 6.75 | 18 | ≤210 | 2500*950*1650 | 1800
+  WP10D200E200 [hanyang-weifang n113] disp="9.726" nhan="Displacement (L)"
+     dong: | HY-150 | WP10D200E200 | 182 | 200 | 6 | 126*130 | 9.726 | 210 | 2400*970*1500 | 1600 | T2
+  WP10D200E200 [jiuan-power n117] disp="9.726L" nhan="Displacement"
+     dong: undefined
+  WP10D200E200 [victory-generator n114] disp="6.25" nhan="Displacement (L)"
+     dong: | V176F | 50 | 160 | 200 | 176 | 220 | WP10D200E200 | 227 | 6 | 105 | 120 | 6.25 | 14 | 25.8 | 24 V | 2500 x 1000 x 1600 | 2000
+  WP10D200E200 [waeta-fujian n107] disp="9.73" nhan="Displacement(L)"
+     dong: | WTA-W206 | 206 | 165 | 188 | 150 | WP10D200E200 | 6 L | 9.73 | Wechai Series.xlsx
+  WP4.1D100E200 [aosif n124] disp="4.1" nhan="Displacement"
+     dong: | AW110 | 100/80 | 110/88 | WP4.1D100E200 | 21.4 | 4L | 4.1 |
+  WP4.1D100E200 [hanyang-weifang n113] disp="6.75" nhan="Displacement (L)"
+     dong: | HY-80 | WP4.1D100E200 | 90 | 100 | 4 | 105*118 | 6.75 | 210 | 2250*800*1300 | 950 | T2
+  WP4.1D100E200 [jet-power n135] disp="4.5" nhan="Displacement"
+     dong: | WP-100 | 100 | 80 | 90 | 72 | WP4.1D100E200 | 4L | Mechanical | 105×130 | 4.5 | 16 | JET224G1
+  WP4.1D100E200 [waeta-fujian n107] disp="4.08" nhan="Displacement(L)"
+     dong: | WTA-W110 | 110 | 88 | 100 | 80 | WP4.1D100E200 | 4 L | 4.08 | Wechai Series.xlsx
+
+== 5. DONG TO MAY KHONG DOC DUOC CONG SUAT ==
+   12101 dong; NCC: legapower=630, powerlink-shanghai=596, zhengchi-power=582, nenjo-generator=546, elitech-power=398, lees-power=341, starlight-power=339, walter-yangzhou=328, acepow-fuan=327, hanyang-weifang=317, tellhow-power=312, jiangchai-xuzhou=311
+      acepow-fuan | | APW-18 | 18 | 20 | BC184E | WP2.3D25E200 | 23 | 29 | 4#7.5-104 | T2 | Mechanically
+      chuangyuan-zhongshan | | 10 | 50 | 400 | 1500 | 0.8 | 50 | 1900*960*1200 | 950 | SC4H95D2 | 4/105/124 | 4.3
+      hanyang-weifang | | HY-520 | 2806A-E18TAG2 | 565 | 609 | 6 | 145*183 | 18.1 | 202 | 3600*800*1850 | 4200 | T2
+      kaihua-genset | | KH-300GF | 413 | 375 | YC6K500-D31 | 3200*1200*1800 | 3100
+      nenjo-generator | | HJ114P | 帕金斯 PERKINS | 1106D-E70TAG2 | 114.0 | 142.0 | 171.2 | Y | ECM | Stage IIIA
+      powerlink-shanghai | undefined
+      starlight-power | | XG825S3 | 825 | 750 | Mitsubishi | S6R2-PTAA-C | PDF
+      welland-power | | 53WP0660A01 | 665 | 3 | 50 | Perkins | 2806A-E18TAG1A | None | TROP | Stamford | S5L1D-E41 | View
+
+== 6. KHONG RO TAN SO == 33620 dong o 231 NCC; nhieu nhat: agg-fuzhou=994, mecca-power=867, landtop-fuzhou=789, walter-yangzhou=781, yanan-power=760, rcg-power=753, previa-ningde=718, longkai-power=708, waeta-fujian=703, voltgent=690
+
+== 7. SCHEMA ==
+  khoa la trong specTables: 
+  kieu title/header: string/arr=9161
+  bang khong co title: 9 0.1% | title la URL/ten tep: 531
+  NCC ma moi nguon chua co co 'official': 335 / 435

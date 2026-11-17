@@ -1,0 +1,10 @@
+{
+ "state": {
+  "state": "none",
+  "why": "Văn bản Chương V cung cấp là kết quả OCR của tệp PDF dạng ảnh quét bị lỗi, chỉ gồm các ký tự rời rạc không đọc được, nên không có thông số kỹ thuật nào của tổ máy phát điện có thể trích xuất.",
+  "at": "2026-11-03T12:05:18.121Z"
+ },
+ "analysis": null,
+ "bidhistConfig": null,
+ "hsmtTextNote": "hsmttext/hsmt không lưu ở đây"
+}

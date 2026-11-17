@@ -1,0 +1,204 @@
+(a) hàng tổ máy có xuất xứ: 1247; đổi: 90 hàng, 52 giá trị khác nhau
+7	null→foreign	"Ý"
+6	null→foreign	"Mỹ"
+6	null→foreign	"Malaysia"
+5	null→foreign	"Anh"
+5	null→cn	"Trung Quốc"
+4	null→foreign	"Anh Quốc"
+3	null→foreign	"C4.4 /Anh Quốc / Caterpillar"
+2	null→foreign	"Indonesia, DCA-25ESK-DA, DENYO"
+2	null→foreign	"Indonesia"
+2	null→foreign	"Thái Lan"
+2	null→foreign	"Terex, Anh"
+2	null→foreign	"C18 / Mỹ/ Caterpillar"
+2	null→foreign	"EU"
+2	null→foreign	"BỒ ĐÀO NHA"
+2	null→foreign	"INDONESIA"
+2	null→foreign	"Đức"
+1	null→foreign	"Việt Nam / Đài Loan"
+1	null→foreign	"Gucbir/Thổ Nhĩ Kỳ"
+1	null→foreign	"1600REOZM/Kohler/Singapore"
+1	null→foreign	"C9.3/Caterpillar/Mỹ"
+1	null→foreign	"Đài Loan - Makitta"
+1	null→foreign	"Mã hiệu: C7.1 Hãng SX:Caterpillar Xuất xứ:Anh"
+1	null→foreign	"\"II-165 INMESOL/ TÂY BAN NHA\""
+1	null→foreign	"Lắp ráp hoàn thiện tại nhà máy Mitsubishi Heavy Industries Engine System Asia Pte. Ltd tại Singapore"
+1	null→foreign	"- Hãng sản xuất: ATLAS - Xuất xứ: EU - Model: QES 30 - Tiêu chuẩn chế tạo: EC Directive 2006/42/EC - Chất lượn"
+1	null→foreign	"Singapore, 1600REOZM, Kohler"
+1	null→foreign	"Anh Quốc, 10000-12943 hãng FG Wilson"
+1	null→cn	"Trung Quốc, Weifang Huatian Diesel Engine Co., Ltd; Model: DPK-DM-100"
+1	null→foreign	"217-0617 (Quy cách đóng gói 20 lít/thùng), Caterpillar - Malaysia"
+1	null→foreign	"DCA4 (Quy cách đóng gói DCA65, 1.89 lít/bình), Fleetguard - Malaysia"
+1	foreign→null	"Model: ATS-400/4P Nhà sản xuất: Công ty TNHH Giải pháp và Công nghệ Tân Sinh Xuất xứ: Việt Nam"
+1	null→cn	"TRUNG QUÔC, MODEL: MKW500HDS, MAKAWA POWER, HÃNG SẢN XUẤT: GUANGDONG FUDIANKANG DIESEL GENSETS CO.,LTD (FDK EN"
+1	null→foreign	"C9.3 / Mỹ/ Caterpillar"
+1	null→foreign	"Model: DCA-25ESK-DA Nhà sản xuất: Denyo Xuất xứ: Indonesia"
+1	null→foreign	"Indonexia/ Donalson"
+1	null→foreign	"Model: AG22P Hãng sản xuất: Anaxi Xuất xứ: Anh Quốc"
+1	null→foreign	"LBR-08-0800DN4-380A3H, AKTIF/ Thổ Nhĩ Kỳ; LBL-02-0125DN4-380A3H, AKTIF/ Thổ Nhĩ Kỳ"
+1	null→foreign	"\"Mỹ/ ONAN MARINE QD MDCT/ CUMMINS ONAN\""
+1	null→foreign	"\"Mỹ/ ONAN MARINE QD MDKDP/ CUMMINS ONAN\""
+1	null→foreign	"Anh/C4.4/Caterpillar"
+1	null→foreign	"Anh Quốc, C1100D5, Cummins Power Generation"
+1	null→foreign	"Tây Ban Nha"
+1	null→foreign	"Singapore"
+1	null→foreign	"LB Nga"
+1	null→foreign	"LB NGA"
+1	null→foreign	"Máy phát:Anh Quốc; Tủ hòa: Việt Nam; Máy cắt 6kV: Việt Nam"
+1	null→foreign	"Thổ Nhĩ Kỳ"
+1	null→foreign	"Hoa Kỳ"
+1	null→foreign	"ComAp/Czech"
+1	null→foreign	"ÁO"
+1	null→foreign	"Liên bang Nga"
+1	null→cn	"Vĩnh Tế - Trung Quốc"
+(b) lô: 1627; profileOf(text lô).group đổi 98, .place đổi 98; goodsGroup đổi 50
+IB2200001635	goodsGroup null→foreign
+IB2200014769	group foreign→null
+IB2200025990	group foreign→null
+IB2200029975	group null→foreign
+IB2200029975	goodsGroup null→foreign
+IB2200033737	group foreign→null
+IB2200036847	group null→foreign
+IB2200042854	group foreign→null
+IB2200043097	group foreign→null
+IB2200044785	group null→foreign
+IB2200044785	goodsGroup null→foreign
+IB2200063776	goodsGroup cn→null
+IB2200066148	group null→foreign
+IB2200066148	goodsGroup null→foreign
+IB2200067367	goodsGroup null→foreign
+IB2200067475	group null→foreign
+IB2200069185	group null→foreign
+IB2200069368	group foreign→null
+IB2200075032	group foreign→null
+IB2200091251	group foreign→null
+IB2200100977	group null→foreign
+IB2300000347	group null→foreign
+IB2300003199	goodsGroup null→foreign
+IB2300008330	group foreign→null
+IB2300013484	group null→foreign
+IB2300013484	goodsGroup null→foreign
+IB2300023194	goodsGroup null→foreign
+IB2300026252	group foreign→null
+IB2300032459	group foreign→null
+IB2300061020	goodsGroup null→foreign
+IB2300064290	group null→foreign
+IB2300064290	goodsGroup null→foreign
+IB2300066507	group foreign→null
+IB2300067330	group foreign→null
+IB2300073034	group null→foreign
+IB2300073034	goodsGroup null→foreign
+IB2300076217	group null→foreign
+IB2300076217	goodsGroup null→foreign
+IB2300077135	group null→foreign
+IB2300077135	goodsGroup null→foreign
+IB2300088957	group foreign→null
+IB2300093176	group null→foreign
+IB2300095238	goodsGroup cn→null
+IB2300116330	group foreign→null
+IB2300139646	group null→foreign
+IB2300139646	goodsGroup null→foreign
+IB2300160925	group null→foreign
+IB2300176119	goodsGroup null→foreign
+IB2300188511	group null→foreign
+IB2300204857	group foreign→null
+IB2300217672	group null→cn
+IB2300217672	goodsGroup null→cn
+IB2300232221	group null→foreign
+IB2300232221	goodsGroup null→foreign
+IB2300239791	group foreign→null
+IB2300242385	group null→foreign
+IB2300244692	group null→foreign
+IB2300244692	goodsGroup null→foreign
+IB2300252125	group foreign→null
+IB2300255930	group null→foreign
+IB2300255930	goodsGroup null→foreign
+IB2300262487	group null→foreign
+IB2300275509	group null→foreign
+IB2300277166	group null→foreign
+IB2300279842	goodsGroup null→foreign
+IB2300296794	group null→foreign
+IB2300296794	goodsGroup null→foreign
+IB2300301211	group null→foreign
+IB2300307198	group foreign→null
+IB2300311829	group null→foreign
+IB2300311829	goodsGroup null→foreign
+IB2300329118	group foreign→null
+IB2300329294	group null→foreign
+IB2300359120	group null→foreign
+IB2300363458	group null→foreign
+IB2300363458	goodsGroup null→foreign
+IB2300369012	group null→foreign
+IB2300369012	goodsGroup null→foreign
+IB2300387049	group null→foreign
+IB2300393435	group null→foreign
+IB2400031211	group null→foreign
+IB2400031211	goodsGroup null→foreign
+IB2400032584	group null→foreign
+IB2400044943	group foreign→null
+IB2400065926	group foreign→null
+IB2400073077	group null→foreign
+IB2400095756	group foreign→null
+IB2400104800	group foreign→null
+IB2400105724	group foreign→null
+IB2400122312	goodsGroup null→foreign
+IB2400142224	group null→foreign
+IB2400152304	goodsGroup null→foreign
+IB2400162597	group foreign→null
+IB2400168837	goodsGroup null→foreign
+IB2400172565	group null→foreign
+IB2400186998	group null→foreign
+IB2400216847	group null→foreign
+IB2400216847	goodsGroup null→foreign
+IB2400232266	group null→foreign
+IB2400232266	goodsGroup null→foreign
+IB2400257226	group null→foreign
+IB2400257226	goodsGroup null→foreign
+IB2400298819	group foreign→null
+IB2400323739	goodsGroup null→foreign
+IB2400333932	group null→foreign
+IB2400333932	goodsGroup null→foreign
+IB2400335311	group foreign→null
+IB2400373577	group foreign→null
+IB2400377239	group null→foreign
+IB2400377239	goodsGroup null→foreign
+IB2400389666	group null→foreign
+IB2400416979	group foreign→null
+IB2400439995	group foreign→null
+IB2400449941	group null→foreign
+IB2400479634	group foreign→null
+IB2400479634	goodsGroup null→foreign
+IB2400489361	group null→foreign
+IB2400489361	goodsGroup null→foreign
+IB2400495088	group foreign→null
+IB2400516548	group foreign→null
+IB2400546306	goodsGroup null→foreign
+IB2400560998	group foreign→null
+IB2500015269	group foreign→null
+IB2500020231	group foreign→null
+IB2500118115	group foreign→null
+IB2500140418	group foreign→null
+IB2500159012	group foreign→null
+IB2500249901	goodsGroup null→foreign
+IB2500337345	group foreign→null
+IB2500412991	group null→foreign
+IB2500456429	goodsGroup cn→null
+IB2500503506	goodsGroup null→foreign
+IB2500598996	group foreign→null
+IB2600036141	goodsGroup cn→null
+IB2600112737	goodsGroup null→foreign
+IB2600115755	group null→foreign
+IB2600116950	goodsGroup null→foreign
+IB2600118095	group null→foreign
+IB2600118095	goodsGroup null→foreign
+IB2600121532	goodsGroup null→foreign
+IB2600219527	group null→foreign
+IB2600241796	group foreign→null
+IB2600252436	group foreign→null
+IB2600313010	group null→foreign
+IB2600313010	goodsGroup null→foreign
+IB2600457659	goodsGroup null→foreign
+IB2600465194	goodsGroup null→foreign
+IB2600511196	group foreign→null
+engineGroup trên make/model hàng trúng: 1257 hàng, đổi 0
+

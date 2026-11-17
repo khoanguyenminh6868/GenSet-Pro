@@ -1,0 +1,10 @@
+import fs from "node:fs";
+const D = "C:/Projects/GenSet Pro/wt-test-h1-prep/suppliers/";
+const src = fs.readFileSync(D + "config-bot.mjs", "utf8");
+const names = [...src.matchAll(/^export (?:async )?(?:function|const|let) (\w+)/gm)].map((m) => m[1]);
+const files = fs.readdirSync(D).filter((f) => f.endsWith(".test.mjs"));
+const left = (fl) => { const t = fl.map((f) => fs.readFileSync(D + f, "utf8").replace(/^\s*\/\/.*$/gm, "")).join("\n"); return names.filter((n) => !new RegExp(`\\b${n}\\b`).test(t)); };
+const before = left(files.filter((f) => f !== "cover-prep.test.mjs")), after = left(files);
+console.log("exports", names.length);
+console.log("untested before", before.length, before.join(", "));
+console.log("untested after", after.length, after.join(", "));

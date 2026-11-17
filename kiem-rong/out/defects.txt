@@ -1,0 +1,66 @@
+
+== T1: 4 lượt, 3 gói
+  {"key":"IB2300260615","i":0,"cap":{"value":500,"unit":"kVA"},"minDisp":20,"cell":"Dung tích xi lanh < 20 lít","nBand":1765,"nRows":598,"top":30,"loạiDisp":1167,"loạiCyl":0,"loạiPrime":0}
+  {"key":"IB2300260615","i":1,"cap":{"value":2000,"unit":"kVA"},"minDisp":20,"cell":"Dung tích xi lanh < 20 lít","nBand":847,"nRows":675,"top":30,"loạiDisp":15,"loạiCyl":0,"loạiPrime":0}
+  {"key":"IB2400564384","i":null,"cap":{"value":500,"unit":"kVA"},"minDisp":20,"cell":" 2.5 Dung tích xi lanh < 20 lít\r","nBand":1765,"nRows":483,"top":30,"loạiDisp":1167,"loạiCyl":0,"loạiPrime":423}
+  {"key":"IB2500360231","i":null,"cap":{"value":2500,"unit":"kVA"},"minDisp":78,"cell":"- Dung tích xi lanh <78 lit\r","nBand":8,"nRows":6,"top":5,"loạiDisp":2,"loạiCyl":0,"loạiPrime":0}
+
+== T2: 2 lượt, 2 gói
+  {"key":"IB2200021335","i":null,"cap":{"value":163,"unit":"kVA"},"minPrime":{"kVA":180},"ctx":"s II Tổ máy phát điện 1 Máy phát điện 163kVA liên tục Prime/180kVA dự phòng Standby Máy phát điện 163 kVA Prim","nBand":1293,"nRows":566,"top":30,"loạiDisp":0,"loạiCyl":0,"loạiPrime":727}
+  {"key":"IB2200075147","i":null,"cap":{"value":163,"unit":"kVA"},"minPrime":{"kVA":180},"ctx":"s II Tổ máy phát điện 1 Máy phát điện 163kVA liên tục Prime/180kVA dự phòng Standby Máy phát điện 163 kVA Prim","nBand":1293,"nRows":566,"top":30,"loạiDisp":0,"loạiCyl":0,"loạiPrime":727}
+
+== T4disp: 28 lượt, 23 gói
+  {"key":"IB2500039578","i":0,"cap":{"value":550,"unit":"kVA"},"minDisp":13,"cell":" - Dung tích buồng đốt ≥13 lít\r","nBand":26,"nRows":25,"top":4,"loạiDisp":1,"loạiCyl":0,"loạiPrime":0}
+  {"key":"IB2500039578","i":1,"cap":{"value":2500,"unit":"kVA"},"minDisp":13,"cell":" - Dung tích buồng đốt ≥13 lít\r","nBand":8,"nRows":5,"top":5,"loạiDisp":0,"loạiCyl":0,"loạiPrime":0}
+  {"key":"IB2200001635","i":null,"cap":{"value":100,"unit":"kVA"},"minDisp":4.4,"cell":"Dung tích buồng đốt ≥ 4,4 lít","nBand":1005,"nRows":680,"top":30,"loạiDisp":177,"loạiCyl":0,"loạiPrime":183}
+  {"key":"IB2200065274","i":null,"cap":{"value":800,"unit":"kVA"},"minDisp":21.927,"cell":" - Dung tích xy-lanh: ≥ 21.927 lít\r","nBand":1335,"nRows":514,"top":30,"loạiDisp":134,"loạiCyl":562,"loạiPrime":470}
+  {"key":"IB2200065274","i":null,"cap":{"value":800,"unit":"kVA"},"minDisp":21.927,"cell":" - Dung tích xy-lanh: ≥ 21.927 lít\r  - Số xi-lanh: ≥ 14.6:1\r","nBand":1335,"nRows":514,"top":30,"loạiDisp":134,"loạiCyl":562,"loạiPrime":470}
+  {"key":"IB2300031444","i":null,"cap":{"value":500,"unit":"kVA"},"minDisp":55,"cell":"Tổng dung tích làm mát  ≥ 55L","nBand":1765,"nRows":304,"top":30,"loạiDisp":1361,"loạiCyl":0,"loạiPrime":423}
+  {"key":"IB2300116009","i":null,"cap":{"value":600,"unit":"kVA"},"minDisp":18.273,"cell":" Displacement: 18.273L\r","nBand":1565,"nRows":476,"top":30,"loạiDisp":333,"loạiCyl":1014,"loạiPrime":272}
+  {"key":"IB2300188511","i":null,"cap":{"value":2500,"unit":"kVA"},"minDisp":78,"cell":" Tổng dung tích xy-\r  - ≥78 L\r","nBand":572,"nRows":315,"top":30,"loạiDisp":257,"loạiCyl":0,"loạiPrime":0}
+  {"key":"IB2300214975","i":null,"cap":{"value":300,"unit":"kVA"},"minDisp":22,"cell":"Tổng dung tích làm mát: ≥ 22L","nBand":1499,"nRows":217,"top":30,"loạiDisp":1233,"loạiCyl":3,"loạiPrime":276}
+  {"key":"IB2400180911","i":null,"cap":{"value":12,"unit":"kVA"},"minDisp":1.7,"cell":" Dung tích Đạt Không đạt\r 6 ≥ 1700 cc\r","nBand":141,"nRows":62,"top":23,"loạiDisp":29,"loạiCyl":70,"loạiPrime":23}
+  {"key":"IB2400410218","i":null,"cap":{"value":8.5,"unit":"kVA"},"minDisp":2.1,"cell":"4 Dung tích\r  ≥ 2.1 L\r","nBand":155,"nRows":57,"top":29,"loạiDisp":86,"loạiCyl":90,"loạiPrime":7}
+  {"key":"IB2400442989","i":null,"cap":{"value":30,"unit":"kVA"},"minDisp":2.4,"cell":" - Tổng dung tích xy-lanh: ≥ 2,4 lít. Đáp ứng yêu cầu - Không đáp ứng yêu cầu\r","nBand":645,"nRows":412,"top":30,"loạiDisp":29,"loạiCyl":105,"loạiPrime":114}
+  {"key":"IB2400503492","i":null,"cap":{"value":600,"unit":"kVA"},"minDisp":19.6,"cell":"10 Tổng dung tích ≥ 19.6 lít\r","nBand":19,"nRows":11,"top":4,"loạiDisp":5,"loạiCyl":0,"loạiPrime":3}
+  {"key":"IB2400513782","i":null,"cap":{"value":12.5,"unit":"kVA"},"minDisp":1.8,"cell":" Tổng dung tích\r 7 >= 1,8 lít X\r","nBand":197,"nRows":178,"top":30,"loạiDisp":19,"loạiCyl":0,"loạiPrime":4}
+  {"key":"IB2500110812","i":null,"cap":{"value":2400,"unit":"kW"},"minDisp":2,"cell":" Dung tích ≥ 2.000 lít + Đạt: Đáp ứng yêu\r","nBand":299,"nRows":274,"top":30,"loạiDisp":25,"loạiCyl":0,"loạiPrime":0}
+  {"key":"IB2500110812","i":null,"cap":{"value":2400,"unit":"kW"},"minDisp":2,"cell":" Dung tích ≥ 2.000 lít (theo thiết kế).\r","nBand":299,"nRows":274,"top":30,"loạiDisp":25,"loạiCyl":0,"loạiPrime":0}
+  {"key":"IB2500110816","i":null,"cap":{"value":2400,"unit":"kW"},"minDisp":2,"cell":" Dung tích ≥ 2.000 lít Kiểm tra tài liệu\r","nBand":299,"nRows":274,"top":30,"loạiDisp":25,"loạiCyl":0,"loạiPrime":0}
+  {"key":"IB2500110816","i":null,"cap":{"value":2400,"unit":"kW"},"minDisp":2,"cell":" Dung tích ≥ 2.000 lít + Đạt: Đáp ứng yêu\r","nBand":299,"nRows":274,"top":30,"loạiDisp":25,"loạiCyl":0,"loạiPrime":0}
+  {"key":"IB2500110816","i":null,"cap":{"value":2400,"unit":"kW"},"minDisp":2,"cell":" Dung tích ≥ 2.000 lít (theo thiết kế).\r","nBand":299,"nRows":274,"top":30,"loạiDisp":25,"loạiCyl":0,"loạiPrime":0}
+  {"key":"IB2500314401","i":null,"cap":{"value":350,"unit":"kVA"},"minDisp":42,"cell":" Dung tích làm mát: ≥ 42L\r","nBand":1870,"nRows":288,"top":30,"loạiDisp":1532,"loạiCyl":3,"loạiPrime":336}
+  {"key":"IB2500432527","i":null,"cap":{"value":1000,"unit":"kVA"},"minDisp":21.9,"cell":"10. Dung tích động cơ Tối thiểu 21.900 cm3\r","nBand":1125,"nRows":704,"top":30,"loạiDisp":8,"loạiCyl":362,"loạiPrime":122}
+  {"key":"IB2600243028","i":null,"cap":{"value":800,"unit":"kVA"},"minDisp":29.6,"cell":" 7 Dung tích xy-lanh ≥ 29.6 lít\r","nBand":15,"nRows":3,"top":3,"loạiDisp":8,"loạiCyl":8,"loạiPrime":5}
+  {"key":"IB2600315904","i":null,"cap":{"value":354,"unit":"kVA"},"minDisp":12.78,"cell":" + Tổng dung tích Piston: ≥ 12.78 lít;\r","nBand":1589,"nRows":1038,"top":30,"loạiDisp":551,"loạiCyl":1,"loạiPrime":0}
+  {"key":"IB2600418114","i":null,"cap":{"value":1000,"unit":"kVA"},"minDisp":25,"cell":"7. Dung tích động cơ Tối thiểu 25.000 cm3\r","nBand":1125,"nRows":754,"top":30,"loạiDisp":17,"loạiCyl":362,"loạiPrime":7}
+  {"key":"IB2600438484","i":null,"cap":{"value":800,"unit":"kVA"},"minDisp":23,"cell":" 8 Dung tích xy-lanh ≥ 23.0 lít\r","nBand":15,"nRows":9,"top":5,"loạiDisp":4,"loạiCyl":0,"loạiPrime":5}
+  {"key":"IB2600464766","i":null,"cap":{"value":150,"unit":"kVA"},"minDisp":6.7,"cell":" (Displacement)≥ 6.7 lít đến 7.5 lít\r","nBand":1143,"nRows":795,"top":30,"loạiDisp":197,"loạiCyl":0,"loạiPrime":214}
+  {"key":"IB2600472762","i":null,"cap":{"value":750,"unit":"kVA"},"minDisp":30,"cell":"2.8 Dung tích xi-lanh ≥ 30L\r","nBand":16,"nRows":5,"top":4,"loạiDisp":8,"loạiCyl":0,"loạiPrime":4}
+  {"key":"IB2600490077","i":null,"cap":{"value":165,"unit":"kVA"},"minDisp":6.44,"cell":"Dung tích xy-lanh: ≥ 6,44 lít\r","nBand":317,"nRows":307,"top":30,"loạiDisp":10,"loạiCyl":5,"loạiPrime":0}
+
+== T4cyl: 12 lượt, 10 gói
+  {"key":"IB2300129273","i":0,"cap":{"value":2000,"unit":"kW"},"minCyl":4,"cell":"4 xi lanh, tổng CTCB\r","nBand":569,"nRows":569,"top":30,"loạiDisp":0,"loạiCyl":0,"loạiPrime":0}
+  {"key":"IB2300129273","i":1,"cap":{"value":2400,"unit":"kW"},"minCyl":4,"cell":"4 xi lanh, tổng CTCB\r","nBand":299,"nRows":299,"top":30,"loạiDisp":0,"loạiCyl":0,"loạiPrime":0}
+  {"key":"IB2400236068","i":0,"cap":{"value":500,"unit":"kVA"},"minCyl":6,"cell":"6 xy lanh, xếp thẳng","nBand":1814,"nRows":1814,"top":30,"loạiDisp":0,"loạiCyl":0,"loạiPrime":0}
+  {"key":"IB2400236068","i":1,"cap":{"value":660,"unit":"kVA"},"minCyl":6,"cell":"6 xy lanh, xếp thẳng","nBand":1628,"nRows":1627,"top":30,"loạiDisp":0,"loạiCyl":1,"loạiPrime":0}
+  {"key":"IB2200038691","i":null,"cap":{"value":500,"unit":"kVA"},"minCyl":6,"cell":" 6 xy lanh, bố trí hình thẳng\r","nBand":1765,"nRows":1342,"top":30,"loạiDisp":0,"loạiCyl":0,"loạiPrime":423}
+  {"key":"IB2300031444","i":null,"cap":{"value":500,"unit":"kVA"},"minCyl":6,"cell":"6 xy lanh , bố trí thẳng hàng.","nBand":1765,"nRows":304,"top":30,"loạiDisp":1361,"loạiCyl":0,"loạiPrime":423}
+  {"key":"IB2300363513","i":null,"cap":{"value":1800,"unit":"kW"},"minCyl":2,"cell":"2 xi lanh, tổng dung tích CTCB + Không Đạt: Không đáp ứng X\r","nBand":593,"nRows":593,"top":30,"loạiDisp":0,"loạiCyl":0,"loạiPrime":0}
+  {"key":"IB2400298819","i":null,"cap":{"value":250,"unit":"kVA"},"minCyl":6,"cell":"6 xy lanh, xếp trên 1 đường thẳng","nBand":1490,"nRows":513,"top":30,"loạiDisp":903,"loạiCyl":2,"loạiPrime":266}
+  {"key":"IB2400439995","i":null,"cap":{"value":250,"unit":"kVA"},"minCyl":6,"cell":"6 xy lanh, xếp trên 1 đường thẳng","nBand":1490,"nRows":513,"top":30,"loạiDisp":903,"loạiCyl":2,"loạiPrime":266}
+  {"key":"IB2500110812","i":null,"cap":{"value":2400,"unit":"kW"},"minCyl":4,"cell":"4 xi lanh, tổng dung tích CB\r","nBand":299,"nRows":274,"top":30,"loạiDisp":25,"loạiCyl":0,"loạiPrime":0}
+  {"key":"IB2500110816","i":null,"cap":{"value":2400,"unit":"kW"},"minCyl":4,"cell":"4 xi lanh, tổng dung tích CB\r","nBand":299,"nRows":274,"top":30,"loạiDisp":25,"loạiCyl":0,"loạiPrime":0}
+  {"key":"IB2500320544","i":null,"cap":{"value":1000,"unit":"kVA"},"minCyl":12,"cell":"12 xilanh, bố trí hình V","nBand":1125,"nRows":763,"top":30,"loạiDisp":0,"loạiCyl":362,"loạiPrime":0}
+
+== T6 engine có dung tích >100 (không có cc): 10
+  {"engine":"YC16VC3300-D31","make":"Yuchai","vals":["105.56L","105.56"]}
+  {"engine":"YC16VC3600-D31","make":"Yuchai","vals":["105.56L","105.56"]}
+  {"engine":"YC16VC3000-D31","make":"Yuchai","vals":["105.56L","105.56"]}
+  {"engine":"YC16VC4000-D31","make":"Yuchai","vals":["105.56L"]}
+  {"engine":"6WH32D3000-7.2","make":"Weichai","vals":["193"]}
+  {"engine":"6WH32D3000-7.5","make":"Weichai","vals":["193"]}
+  {"engine":"8WH32D4000-7.2","make":"Weichai","vals":["257"]}
+  {"engine":"8WH32D4000-7.5","make":"Weichai","vals":["257"]}
+  {"engine":"JTA20V-NG2066","make":"Googol","vals":["107.5"]}
+  {"engine":"YC16VC2470N-D30","make":"Yuchai","vals":["105.6"]}
