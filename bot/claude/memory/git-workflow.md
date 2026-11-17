@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-16T11:01:34.063Z
+  modified: 2026-11-17T06:16:45.929Z
 ---
 
 Repo: github.com/khoanguyenminh6868/GenSet-Pro, checkout chính `C:\Projects\GenSet Pro\GenSet-Pro`.
@@ -18,6 +18,7 @@ Repo: github.com/khoanguyenminh6868/GenSet-Pro, checkout chính `C:\Projects\Gen
    Ngoại lệ: session con được điều phối giao việc KHÔNG tự merge, xem [[orchestrator-delegate-by-model]].
 4. **PR merge xong tự xoá worktree + thư mục wt-* của mình, không hỏi** (Khoa 11/11/2026): `git worktree remove --force` rồi `rm -rf`; thư mục bị khoá (Permission denied) thì để đó. CHỈ xoá worktree mình tạo; dọn hàng loạt phải kiểm từng cái ngay trước lúc xoá (nhánh đã merge, không có thay đổi chưa commit, không phải của phiên đang chạy) — 11/11 đã lỡ xoá worktree của phiên OCR đang chạy. Commit WIP sớm.
 
-   Từ 14/11/2026 lệnh `rm -rf` thư mục `wt-*` bị kiểm an toàn của Claude Code chặn (cả phiên điều phối lẫn phiên con), không lách. Khoa 16/11: KHÔNG cần ghi thư mục còn sót vào sổ điều phối hay báo xoá tay; cứ để đó. Phiên điều phối kiểm PR thì dùng lại MỘT worktree kiểm (`git -C <wt> checkout --detach origin/<nhánh>`) thay vì tạo mới mỗi PR.
+   Từ 14/11/2026 lệnh `rm -rf` thư mục `wt-*` bị kiểm an toàn của Claude Code chặn (cả phiên điều phối lẫn phiên con), không lách. Khoa 16/11: KHÔNG cần ghi thư mục còn sót vào sổ điều phối hay báo xoá tay; cứ để đó.
+   **"Permission denied" / "in use" khi gỡ worktree** (Khoa 17/11/2026 bảo tìm nguyên nhân, cho phép xoá khi làm xong): thường là chính phiên còn đứng trong thư mục (thư mục làm việc của Bash/PowerShell của phiên, hay server preview chạy từ đó), Windows không cho xoá. Cách làm: dừng preview, `cd` ra `C:\Projects\GenSet Pro\GenSet-Pro` TRƯỚC, rồi `git worktree remove` và `Remove-Item -LiteralPath <thư mục> -Recurse -Force` (PowerShell, không bị chặn như `rm -rf`). Khoa đã cho phép xoá thư mục wt-* của mình sau khi PR merge. Phiên điều phối kiểm PR thì dùng lại MỘT worktree kiểm (`git -C <wt> checkout --detach origin/<nhánh>`) thay vì tạo mới mỗi PR.
 
 Commit dữ liệu suppliers: `-c user.name=khoanguyenminh6868 -c user.email=...`. Sửa bot thì thêm bước ở [[bot-ops]].
