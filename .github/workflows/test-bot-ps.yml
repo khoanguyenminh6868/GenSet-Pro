@@ -5,12 +5,15 @@ name: Test bot (PowerShell)
 # Merge-GenBidFeed, Publish-GenBidHsmt (Get-FileText), Send-GenBidIngest. No network, no claude, no real .genbid-* files:
 # web, gh, Start-Process, Get-Date are faked in the tests. The bot itself runs on Windows PowerShell 5.1 (Pester 3.4 on its
 # machine); the tests avoid `Should` syntax so they run on both Pester 3.4 and 5.
+# Repo private (2.000 phút/tháng, Windows tính x2): chỉ chạy trên PR sửa PowerShell của bot hoặc test của nó.
 on:
   pull_request:
-    paths: ['bot/**', '.github/workflows/test-bot-ps.yml']
-  push:
-    branches: [main]
-    paths: ['bot/**', '.github/workflows/test-bot-ps.yml']
+    paths: ['bot/**/*.ps1', 'bot/**/*.psm1', 'bot/test/**', '.github/workflows/test-bot-ps.yml']
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   bot-ps:

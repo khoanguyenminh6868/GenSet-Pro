@@ -33,6 +33,7 @@ import { REQ_CODES, CODE_BY, OTHER as OTHER_CODE, codeOf, withCode, missingCodes
 import { ratingsOf, stamfordRatings, altSheetAttrs } from "./ratings.mjs";
 import { apiMeter, switchToPlan, taskEnv } from "./api-budget.mjs";
 import * as MEMO from "./web-memo.mjs";
+import * as FC from "./firecrawl.mjs";
 import * as RG from "./read-guard.mjs";
 import * as NG from "./named-genset.mjs";
 import { skippedOf, dropSkipped, UNFILTERED_WARNING } from "./sup-skip.mjs";
@@ -1956,24 +1957,39 @@ export function pdfToText(file, exec = execFileSync) {
   const run = (mode) => exec("pdftotext", [mode, "-enc", "UTF-8", file, "-"], { maxBuffer: 64 << 20, stdio: ["ignore", "pipe", "ignore"] }).toString("utf8");
   try { return run("-table"); } catch { return run("-layout"); }
 }
-async function save(dir, url) {
-  const r = await fetch(url, { headers: { "User-Agent": UA, "Accept-Language": "en,zh-CN;q=0.8,vi;q=0.7" }, redirect: "follow", signal: AbortSignal.timeout(60000) });
-  if (!r.ok) throw new Error(`HTTP ${r.status}`);
-  const buf = Buffer.from(await r.arrayBuffer()), type = r.headers.get("content-type") || "";
+// A public page this PC cannot read (HTTP 401 / 403 / 429 / 5xx, network error, a JavaScript page with almost no text)
+// is read again through Firecrawl when its key is there (firecrawl.mjs; Khoa 2026-11-17: "dự phòng khi bị chặn"); the
+// saved file then says "Via: firecrawl". io: tests pass fetch / firecrawl fakes.
+export async function save(dir, url, io = {}) {
+  const { fetchImpl = fetch, fc = FC } = io;
   const webDir = path.join(dir, "web"); fs.mkdirSync(webDir, { recursive: true });
   const n = fs.readdirSync(webDir).filter((f) => /^\d+\.txt$/.test(f)).length + 1;
-  let text;
-  if (type.includes("pdf") || /\.pdf($|\?)/i.test(url)) {
-    const tmp = path.join(webDir, `${n}.pdf`); fs.writeFileSync(tmp, buf);
-    text = pdfToText(tmp); fs.unlinkSync(tmp);
-  } else {
-    const head = buf.subarray(0, 4000).toString("latin1");
-    const cs = (type.match(/charset=([\w-]+)/i) || head.match(/charset=["']?([\w-]+)/i) || [, "utf-8"])[1].toLowerCase();
-    let html; try { html = new TextDecoder(cs === "gb2312" || cs === "gbk" ? "gb18030" : cs).decode(buf); } catch { html = buf.toString("utf8"); }
-    text = htmlToText(html);
+  let text = null, final = url, status = null, error = "";
+  try {
+    const r = await fetchImpl(url, { headers: { "User-Agent": UA, "Accept-Language": "en,zh-CN;q=0.8,vi;q=0.7" }, redirect: "follow", signal: AbortSignal.timeout(60000) });
+    status = r.status;
+    if (r.ok) {
+      const buf = Buffer.from(await r.arrayBuffer()), type = r.headers.get("content-type") || "";
+      final = r.url || url;
+      if (type.includes("pdf") || /\.pdf($|\?)/i.test(url)) {
+        const tmp = path.join(webDir, `${n}.pdf`); fs.writeFileSync(tmp, buf);
+        try { text = pdfToText(tmp); } finally { fs.unlinkSync(tmp); }
+      } else {
+        const head = buf.subarray(0, 4000).toString("latin1");
+        const cs = (type.match(/charset=([\w-]+)/i) || head.match(/charset=["']?([\w-]+)/i) || [, "utf-8"])[1].toLowerCase();
+        let html; try { html = new TextDecoder(cs === "gb2312" || cs === "gbk" ? "gb18030" : cs).decode(buf); } catch { html = buf.toString("utf8"); }
+        text = htmlToText(html);
+      }
+    }
+  } catch (e) { error = String(e?.cause?.code || e?.message || e); }
+  let via = "";
+  if (fc.hasKey() && fc.shouldRetry({ status, error, textLength: text == null ? null : text.trim().length })) {
+    try { const f = await fc.scrape(url); text = f.markdown; final = f.url; via = "Via: firecrawl\n"; }
+    catch (e) { if (text == null) throw new Error(`${status ? `HTTP ${status}` : error}; ${e.message}`); }
   }
+  if (text == null) throw new Error(status ? `HTTP ${status}` : error || "không tải được");
   const file = path.join(webDir, `${n}.txt`);
-  fs.writeFileSync(file, `URL: ${r.url || url}\nAccessed: ${new Date().toISOString().slice(0, 10)}\n\n${text}\n`, "utf8");
+  fs.writeFileSync(file, `URL: ${final}\nAccessed: ${new Date().toISOString().slice(0, 10)}\n${via}\n${text}\n`, "utf8");
   return `web/${n}.txt`;
 }
 

@@ -1,9 +1,15 @@
 name: CI
 
+# Repo private từ 17/11/2026 (2.000 phút Actions/tháng): chỉ chạy trên PR (bản squash vào main giống PR, không chạy lại),
+# bỏ qua PR chỉ sửa bot/ hay web/api/ (có workflow riêng); PR đẩy thêm commit thì huỷ lượt cũ.
 on:
   pull_request:
-  push:
-    branches: [main]
+    paths-ignore: ['bot/**', 'web/api/**', '.github/workflows/test-*.yml']
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   server:
