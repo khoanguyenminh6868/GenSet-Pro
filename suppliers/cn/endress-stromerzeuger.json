@@ -62,16 +62,6 @@
       "file": "sources/endress-stromerzeuger/1.md"
     },
     {
-      "n": 101,
-      "url": "https://www.endress-generator.com/en/mobile-light-tower",
-      "accessedAt": "2026-11-13",
-      "tier": "A",
-      "quote": [
-        "| Weight in [kg] | 650"
-      ],
-      "file": "sources/endress-stromerzeuger/101.md"
-    },
-    {
       "n": 102,
       "url": "https://www.endress-generator.com/en/petrolwelding-generator",
       "accessedAt": "2026-11-13",
@@ -836,27 +826,6 @@
   "checkedAt": "2026-11-04",
   "checkedBy": "claude (rà nhà cung cấp G7, 04/11)",
   "specTables": [
-    {
-      "n": 101,
-      "title": "Endress Generators: Mobile Light Tower",
-      "header": [],
-      "rows": [
-        "| Weight in [kg] | 650",
-        "| Dimensions L x W x H [mm] | 2480 x 1190 x 2450",
-        "| Weight in [kg] | 980",
-        "| Dimensions L x W x H [mm] | 1220 x 1150 x 2420",
-        "| Weight in [kg] | 719",
-        "| Dimensions L x W x H [mm] | 2650 x 1300 x 2460",
-        "| Power [kVA/kW] | 3.5",
-        "| Weight in [kg] | 923",
-        "| Dimensions L x W x H [mm] | 2156 x 1400 x 2403",
-        "| Weight in [kg] | 246",
-        "| Dimensions L x W x H [mm] | 1230 x 780 x 2180",
-        "| Power [kVA/kW] | 4",
-        "| Weight in [kg] | 1175",
-        "| Dimensions L x W x H [mm] | 1230 x 1150 x 2383"
-      ]
-    },
     {
       "n": 102,
       "title": "Endress Generators: Petrol/welding generator",

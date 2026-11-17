@@ -169,26 +169,6 @@
       "file": "sources/mpmc-powertech/107.md"
     },
     {
-      "n": 108,
-      "url": "https://www.mpmc-china.com/mpmc-hybrid-gsb-series",
-      "accessedAt": "2026-11-13",
-      "tier": "A",
-      "quote": [
-        "| Inverter / PCS | Inverter Architecture | Hybrid | Hybrid | Hybrid | Hybrid | Hybrid | Hybrid | PCS + PV Inverter | Hybrid"
-      ],
-      "file": "sources/mpmc-powertech/108.md"
-    },
-    {
-      "n": 109,
-      "url": "https://www.mpmc-china.com/mpmc-hybrid-gb-series",
-      "accessedAt": "2026-11-13",
-      "tier": "A",
-      "quote": [
-        "| Inverter / PCS | Inverter Architecture | Hybrid | Hybrid | Hybrid | Hybrid | Hybrid | Hybrid | PCS | Hybrid"
-      ],
-      "file": "sources/mpmc-powertech/109.md"
-    },
-    {
       "n": 110,
       "url": "https://www.mpmc-china.com/mp800-1-800kva-diesel-generator-set-powered-by-perkins-5006a-e23tag2",
       "accessedAt": "2026-11-13",
@@ -690,45 +670,6 @@
         "| Cylinders / Displacement | 6 / 22.92L",
         "| Engine Noise Level @1m 100% Load | 103.8dB(A)",
         "| Fuel Consumption 100% Load | 165.7 L/H"
-      ]
-    },
-    {
-      "n": 108,
-      "title": "MPMC GSB Series: Integrated Solar-Storage-Diesel Hybrid Power Stations | MPMC Powertech Corp.",
-      "header": [
-        "| Inverter / PCS | Inverter Architecture | Hybrid | Hybrid | Hybrid | Hybrid | Hybrid | Hybrid | PCS + PV Inverter | Hybrid"
-      ],
-      "rows": [
-        "| Rated Power (kVA) | 20 kVA | 30 kVA | 30 kVA | 40 kVA | 40 kVA | 50 kVA | 60 kVA | 150 kVA",
-        "| Phase Configuration | 3P4W | 3P4W | 3P4W | 3P4W | 3P4W | 3P4W | 3P4W | 3P4W",
-        "| Max. MPPT Solar Input | 26 kWp | 75 kWp | 75 kWp | 75 kWp | 75 kWp | 75 kWp | 22.5 kWp | 300 kWp",
-        "| LFP Battery Bank | Nominal Capacity (kWh) | 41 kWh | 62.7 kWh | 91.4 kWh | 62.7 kWh | 91.4 kWh | 91.4 kWh | 112.5 kWh | 173 kWh",
-        "| Integrated PV Array | Onboard Peak Power (Wp) | 2,550 Wp | 2,550 Wp | 2,550 Wp | 2,550 Wp | 2,550 Wp | 2,550 Wp | 2,550 Wp | 2,550 Wp"
-      ]
-    },
-    {
-      "n": 108,
-      "title": "MPMC GSB Series: Integrated Solar-Storage-Diesel Hybrid Power Stations | MPMC Powertech Corp.",
-      "header": [],
-      "rows": [
-        "| Genset Prime Power | Prime kW | 16 kW | 24 kW | 24 kW | 32 kW | 32 kW | 40 kW | 48 kW | 120 kW",
-        "| Prime kVA | 20 kVA | 30 kVA | 30 kVA | 40 kVA | 40 kVA | 50 kVA | 60 kVA | 150 kVA",
-        "| Engine Partner | Engine Brand Available | YANMAR | YANMAR | YANMAR | YANMAR | YANMAR | PERKINS | PERKINS | PERKINS",
-        "| Fuel Tank Capacity | Internal Fuel Tank (L) | 100 L | 180 L | 150 L | 180 L | 150 L | 150 L | 350 L | ~500 L",
-        "| Max. Output Power | Peak Combined (kVA) | 20 kVA | 60 kVA | 60 kVA | 80 kVA | 80 kVA | 100 kVA | 120 kVA | 166 kVA"
-      ]
-    },
-    {
-      "n": 109,
-      "title": "MPMC Hybrid Power Station GB Series | Diesel Genset & LFP Battery Hybrid Power Station | MPMC Powertech Corp.",
-      "header": [
-        "| Inverter / PCS | Inverter Architecture | Hybrid | Hybrid | Hybrid | Hybrid | Hybrid | Hybrid | PCS | Hybrid"
-      ],
-      "rows": [
-        "| Rated Power (kVA) | 20 kVA | 30 kVA | 30 kVA | 40 kVA | 40 kVA | 50 kVA | 60 kVA | 150 kVA",
-        "| Phase Configuration | 3P4W | 3P4W | 3P4W | 3P4W | 3P4W | 3P4W | 3P4W | 3P4W",
-        "| Max. MPPT Solar Input | 26 kWp | 75 kWp | 75 kWp | 75 kWp | 75 kWp | 75 kWp | OPTION | 300 kWp",
-        "| LFP Battery Bank | Nominal Capacity (kWh) | 41 kWh | 62.7 kWh | 91.4 kWh | 62.7 kWh | 91.4 kWh | 91.4 kWh | 112.5 kWh | 173 kWh"
       ]
     },
     {

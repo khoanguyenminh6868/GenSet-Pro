@@ -9,7 +9,8 @@ import { fileURLToPath } from "node:url";
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const only = process.argv.slice(2);
 const FOREIGN = /[Ѐ-ӿ֐-ۿऀ-෿฀-๿ᄀ-ᇿ぀-ヿ가-힯]/;
-const OTHER = /(motor|transformer|pump|compressor|excavator|light(ing)? tower|weld|tractor|truck|vehicle|forklift|load bank|energy storage|bess|solar|inverter|cable|switchgear|fog cannon|agv|mower|washer)/i;
+// Rà soát 17/11/2026 (Khoa): thêm UPS, động cơ máy chính tàu / máy công trình / nông nghiệp, máy xúc, tháp đèn, bơm (chữ Trung).
+const OTHER = /(motor|transformer|pump|compressor|excavator|light(ing)? tower|weld|tractor|truck|vehicle|forklift|load bank|energy storage|bess|solar|inverter|cable|switchgear|fog cannon|agv|mower|washer|\bups\b|uninterrupt|propulsion|wheel loader|agricultur|construction machinery|灯塔|泵|叉车|挖掘|装载|拖拉机|收割)/i;
 const GEN = /(generat|genset|gen-set|alternator|power station|发电)/i;
 let total = 0, recs = 0;
 const listed = (d) => (fs.existsSync(path.join(ROOT, d)) ? fs.readdirSync(path.join(ROOT, d)).filter((f) => f.endsWith(".json")) : []);

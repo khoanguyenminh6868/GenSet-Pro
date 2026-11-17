@@ -175,9 +175,17 @@
   "at": "2026-11-14",
   "why": "14/11/2026: không tìm được website chính thức (nhóm A/B 13/11) hoặc Tìm Thông Số không ra bảng (aksa-china: quá 40 phút + lỗi máy; chongfa-cummins-shenzhen, juwei-zhenjiang, sices: không ra bảng)"
  },
+ "eneria": {
+  "at": "2026-11-17",
+  "why": "17/11/2026 Khoa: không bán máy phát (UPS / tuabin nhà máy điện / máy chính tàu), đã xoá bảng"
+ },
  "epower-fuan": {
   "at": "2026-11-14",
   "why": "Tìm Thông Số 14/11/2026 (đợt tìm lại 96 NCC có website): không ra bảng thông số"
+ },
+ "everllence": {
+  "at": "2026-11-17",
+  "why": "17/11/2026 Khoa: không bán máy phát (UPS / tuabin nhà máy điện / máy chính tàu), đã xoá bảng"
  },
  "falande-jiangsu": {
   "at": "2026-11-14",
@@ -294,6 +302,10 @@
  "lingyu-jiangsu": {
   "at": "2026-11-14",
   "why": "Tìm Thông Số 14/11/2026 (đợt tìm lại 96 NCC có website): không ra bảng thông số"
+ },
+ "mhi-china": {
+  "at": "2026-11-17",
+  "why": "17/11/2026 Khoa: không bán máy phát (UPS / tuabin nhà máy điện / máy chính tàu), đã xoá bảng"
  },
  "mtu-yuchai": {
   "at": "2026-11-14",
