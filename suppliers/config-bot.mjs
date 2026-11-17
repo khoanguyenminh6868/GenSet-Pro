@@ -1424,13 +1424,14 @@ export function keepOf(result) {
   }
   return out;
 }
-// At most 6 configurations (Khoa 2026-11-03: a run checked 49 requirements × 8 configurations in 11 minutes).
-export const MAX_CONFIGS = 6, PER_MAKE_CONFIGS = 2;
+// At most 8 configurations (Khoa 2026-11-17: 6 → 8, with Mitsubishi down to one; 2026-11-03 had cut 10 → 6 for speed).
+export const MAX_CONFIGS = 8, PER_MAKE_CONFIGS = 2;
 // Perkins and Volvo Penta: one configuration only, the best ranked (Khoa, 2026-11-17, IB2600603983: 4006-23TAG2A and
 // 4006-23TAG3A took ranks 1 and 2, the same set one size apart; the place goes to another make). The other makes keep 2.
 // A configuration kept from Tìm NCC or of the genset the HSMT names is outside the limit, as before.
 // Cummins too (Khoa, 2026-11-17, same tender: QSK23-G2 and QSK19-G20 at ranks 1 and 3).
-export const ONE_CONFIG_MAKES = ["perkins", "volvo penta", "cummins"];
+// Mitsubishi too (Khoa, 2026-11-17).
+export const ONE_CONFIG_MAKES = ["perkins", "volvo penta", "cummins", "mitsubishi"];
 export const perMakeConfigs = (make) => (ONE_CONFIG_MAKES.includes(String(make || "").split("/")[0].trim().toLowerCase()) ? 1 : PER_MAKE_CONFIGS);
 // A configuration whose controller (engine, alternator) is that of an earlier one may leave out the checks of that
 // part: the code copies them: a check read from the model's figures (factSrc), one whose quote is also in this

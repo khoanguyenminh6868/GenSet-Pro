@@ -116,7 +116,7 @@ test("requirements of this run differ from the last: kept, with a note that its 
 });
 
 test("a configuration kept is outside the 2-per-make limit; one the run found is not", () => {
-  // Baudouin: a make of the 2-per-make limit (Perkins, Volvo Penta and Cummins keep one, Khoa 2026-11-17).
+  // Baudouin: a make of the 2-per-make limit (Perkins, Volvo Penta, Cummins and Mitsubishi keep one, Khoa 2026-11-17).
   const mk = (rank, model, extra = {}) => ({ rank, engine: { model, make: "Baudouin" }, checks: [], suppliers: [{ supplierId: "a" }], ...extra });
   const three = (extra) => ({ requirements: [], configs: [mk(1, "E1"), mk(2, "E2"), mk(3, "E3", extra)] });
   assert.deepEqual(rankConfigs(three()).configs.map((c) => c.engine.model), ["E1", "E2"]);

@@ -114,9 +114,9 @@ test("check: cấu hình model nêu giữ dù NCC ngoài TQ, nhãn tương đư�
   assert.ok((result.clarify || []).some((x) => x.named && x.quoteA === "3 Nhà sản xuất Huyndai"));
 });
 
-test("check: cấu hình model nêu đứng thứ 7 không bị cắt ở giới hạn 6 cấu hình", () => {
+test("check: cấu hình model nêu đứng thứ 9 không bị cắt ở giới hạn 8 cấu hình", () => {
   const sup = [hyundai(), ...assemblers()];
-  const { result } = check({ requirements: REQS.map((r) => ({ ...r })), configs: [...Array.from({ length: 6 }, (_, i) => equiv(i)), { ...named1(), rank: 7 }] }, { hsmtText: HSMT, suppliers: sup, readWeb: () => null, origin: "all" });
+  const { result } = check({ requirements: REQS.map((r) => ({ ...r })), configs: [...Array.from({ length: 8 }, (_, i) => equiv(i)), { ...named1(), rank: 9 }] }, { hsmtText: HSMT, suppliers: sup, readWeb: () => null, origin: "all" });
   rankConfigs(result);
   assert.equal(result.configs[0].named, "model");
   assert.equal(result.named.found, true);
