@@ -25,6 +25,9 @@ Tệp:
 - `GENBID_OS=windows|linux` ép hệ điều hành cho script bot (test dùng `windows`).
 
 ## Bật (Khoa làm, em không đọc token)
+Đã đặt (17/11): `GENBID_INGEST_TOKEN`, `VERCEL_TEAM_ID`, `VERCEL_PROJECT_ID`. Phần token còn lại: Khoa chạy
+`powershell -File bot\sandbox\Set-SandboxSecrets.ps1` (đọc token từ tệp trên máy, hỏi VERCEL_TOKEN và một PAT GitHub, đặt luôn
+`GH_DISPATCH_TOKEN` trên Vercel bằng Vercel CLI), rồi Claude làm bước 2 và redeploy web.
 1. Secrets repo GitHub: `VERCEL_TOKEN`, `VERCEL_TEAM_ID`, `VERCEL_PROJECT_ID`, `GENBID_INGEST_TOKEN`, `CLAUDE_CODE_OAUTH_TOKEN` và/hoặc
    `ANTHROPIC_API_KEY`, `GH_BOT_TOKEN` (PAT fine-grained chỉ repo này, contents + releases), tuỳ chọn `FIRECRAWL_KEY`.
 2. Biến repo `GENBID_SANDBOX_ENABLED=true`, chạy workflow bằng tay một lần (lần đầu cài đặt ~20 phút; sau đó sandbox tự dừng khi rảnh).
