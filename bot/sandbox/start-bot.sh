@@ -29,7 +29,11 @@ main() {
     mkdir -p "$HOME/.gemini"
     local SUM; SUM="$(printf '%s' "$GEMINI_OAUTH_CREDS" | sha256sum | cut -d' ' -f1)"
     if [ "$(cat "$HOME/.gemini/.from-vercel.sha" 2>/dev/null)" != "$SUM" ]; then
-      printf '%s' "$GEMINI_OAUTH_CREDS" > "$HOME/.gemini/oauth_creds.json" && printf '%s' "$SUM" > "$HOME/.gemini/.from-vercel.sha"
+      # JSON thô, hoặc base64 của nó (lệnh trong bot/sandbox/README.md: PowerShell 5.1 làm hỏng dấu " khi truyền JSON).
+      case "$GEMINI_OAUTH_CREDS" in
+        \{*) printf '%s' "$GEMINI_OAUTH_CREDS" > "$HOME/.gemini/oauth_creds.json" ;;
+        *)   printf '%s' "$GEMINI_OAUTH_CREDS" | base64 -d > "$HOME/.gemini/oauth_creds.json" ;;
+      esac && printf '%s' "$SUM" > "$HOME/.gemini/.from-vercel.sha"
     fi
   fi
   # Bot tự chọn token / API key theo từng việc (đọc từ các tệp trên): các biến này không được lọt vào tiến trình con
