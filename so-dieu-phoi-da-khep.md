@@ -188,3 +188,7 @@ Cập nhật 18:25Z 12/11: đăng kết quả check lại của IB2600601812 (co
 - 17/11/2026 · Bộ nhớ gộp hai máy (luật số đông, thương hiệu / nơi sản xuất, việc bỏ 16/11) + KHOAMINIPC kéo bot theo #819, #821 · #826
 - 17/11/2026 · Soát ngưỡng HSMT toàn kho (1.499 gói): lệch 16 → 9 (9 còn lại là lỗi Phân tích / gói nhiều cỡ), sửa 8 gói code đọc sai tiêu hao 75% / số xi lanh · #844 (b78668e2) · `nghiem-thu\soat-nguong-2.md`
 - 17/11/2026 · Nhãn "Công suất chưa xác nhận" trên thẻ Gợi ý cấu hình (chỉ hiển thị) · #842 (ae0559d0) · `nghiem-thu\nhan-cong-suat.md`
+- 17/11/2026 · 6 NCC nghi thương hiệu cấp phép: trang chính thức không có căn cứ (cat-tianjin công ty con 100%, bruno tự SX ở Ý…) → KHÔNG đánh dấu · không PR · `nghiem-thu\ncc-cap-phep.md`
+- 17/11/2026 · Luật tên gói "Diezel": đã sửa từ #692 (13/11) ở cả 3 nơi, test có sẵn · không PR · `nghiem-thu\diezel.md`
+- 17/11/2026 · BCĐG IB2600354007 verdict rỗng là ĐÚNG (BMT chỉ đánh giá hạng 1); "fetch failed" chưa rõ nguyên nhân, #591 đã thử lại + log `cause`, chờ lần lỗi sau · không PR · `nghiem-thu\bcdg-5.md`
+- 17/11/2026 · Kiểm bằng mắt trên Vercel: Khoa bảo không cần làm nữa
