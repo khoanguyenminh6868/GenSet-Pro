@@ -5,6 +5,10 @@
   `~\.claude\scheduled-tasks\hsmt-worker`, hay thêm tác vụ Windows/phần mềm mới cho bot → trong worktree từ `origin/main` chạy
   `powershell -File bot\Backup-GenBidBot.ps1`, commit `bot/`, push, PR, squash merge. Tác vụ Windows hay bước cài mới thì sửa
   `bot/Install-GenBidBot.ps1` và `bot/SETUP-CLAUDE.md`. Stop hook `genbid-hsmt\Test-GenBidBotGit.ps1` chặn kết thúc lượt khi còn khác.
+- Bộ nhớ Claude (`bot/claude/memory`) được `Backup-GenBidBot.ps1` GỘP theo từng tệp, không chép đè (Khoa 17/11/2026: hai phiên từng
+  đè mất phần của nhau): chỉ máy sửa thì đẩy lên, git mới hơn thì kéo về máy, cả hai cùng sửa thì gộp. Báo "XUNG ĐỘT" (thoát mã 2) →
+  sửa tay cho tệp trên máy và tệp trong `bot\claude\memory` của worktree GIỐNG NHAU, giữ phần của cả hai, rồi chạy lại. Luôn chạy
+  Backup trong worktree vừa tạo từ `origin/main` mới nhất. Bản gốc lần đồng bộ trước ở `genbid-work\memory-base\` (trên máy, đừng xoá).
 - Test bot Node ở `bot/test/*.test.mjs` (CI `test-bot.yml`), KHÔNG đặt thư mục con trong `bot/genbid-hsmt/`: Stop hook so
   `git ls-tree -r` (đệ quy) với danh sách tệp không đệ quy của `genbid-hsmt\` nên tệp trong thư mục con bị báo "deleted on
   this PC" mãi. Hàm thuần của `genbid-sync.js` nằm ở `sync-pure.js` (require lại): sửa / chép sang `genbid-hsmt\` cả hai cùng lúc.
