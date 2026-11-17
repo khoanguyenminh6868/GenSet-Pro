@@ -9,7 +9,7 @@ import { check, rankConfigs, technicalPart } from "./config-bot.mjs";
 import { missingCodes } from "./reqcodes.mjs";
 import { runsOf, readBundle, tmpDir, matchExpected, configSummary } from "./fixtures/runs/regress.mjs";
 
-delete process.env.GENBID_NAMED_SELLER; // cờ nhận tổ máy nêu đích danh từ trang bên bán: mặc định tắt
+delete process.env.GENBID_NAMED_SELLER; // cờ nhận tổ máy nêu đích danh từ trang bên bán: mặc định BẬT như bot (Khoa 17/11)
 
 const CASES = {
   "IB2600586587/config": "máy một cỡ thường 160 kVA, xuất xứ Tất cả, không điều kiện đặc biệt",

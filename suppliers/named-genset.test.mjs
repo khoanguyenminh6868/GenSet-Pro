@@ -137,7 +137,7 @@ test("check: nguồn bên bán cho model nêu — cờ tắt thì bỏ, bật th
   const run = () => check({ requirements: REQS.map((r) => ({ ...r })), configs: [web(), equiv(0)] }, { hsmtText: HSMT, suppliers: assemblers(), readWeb: (f) => (f === "web/1.txt" ? page : null), origin: "all" }).result;
   const prev = process.env.GENBID_NAMED_SELLER;
   try {
-    delete process.env.GENBID_NAMED_SELLER;
+    process.env.GENBID_NAMED_SELLER = "0";
     let r = run();
     assert.ok(!r.configs.some((c) => c.named));
     assert.equal(r.named.found, false);

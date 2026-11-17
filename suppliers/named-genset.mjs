@@ -244,10 +244,11 @@ export function namedSuppliers(suppliers, named) {
 }
 const NG_tableNames = (t, m) => namesModel([t.title, ...(t.header || []), ...(t.rows || [])].join("\n"), m);
 // ---------- the configurations ----------
-// GENBID_NAMED_SELLER=1 (điều phối 2026-11-12; Khoa has not ruled on it): a seller's page (tier C) may stand for the
+// On by default on every machine (Khoa 2026-11-17: "bật cho mọi máy"; a flag set only by the installer missed machines
+// that had not run it again); GENBID_NAMED_SELLER=0 turns it off. A seller's page (tier C) may stand for the
 // named model when no page of its maker does, the configuration marked unverified with no check above "chưa rõ". Off:
 // such a configuration is dropped and the named model shows as "chưa có nguồn thông số".
-export const sellerAllowed = () => process.env.GENBID_NAMED_SELLER === "1";
+export const sellerAllowed = () => String(process.env.GENBID_NAMED_SELLER ?? "").trim() !== "0";
 // What of a configuration is the named genset: "model" (its genset row / page names the model), "make" (its genset is of
 // the make), or null.
 export function namedHit(c, named, { supOf = () => null, srcText = () => null } = {}) {

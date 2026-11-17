@@ -79,14 +79,13 @@ test("makerOf: phủ định — nhà phân phối, hãng khác, không có hãn
 });
 
 // ---------- sellerAllowed ----------
-test("sellerAllowed: chỉ bật khi GENBID_NAMED_SELLER = '1' (Khoa chưa quyết, mặc định tắt)", () => {
+test("sellerAllowed: mặc định BẬT trên mọi máy (Khoa 17/11), chỉ GENBID_NAMED_SELLER = '0' mới tắt", () => {
   const old = process.env.GENBID_NAMED_SELLER;
   try {
     delete process.env.GENBID_NAMED_SELLER;
-    assert.equal(sellerAllowed(), false);
-    process.env.GENBID_NAMED_SELLER = "1";
     assert.equal(sellerAllowed(), true);
-    for (const v of ["0", "true", "", "yes"]) { process.env.GENBID_NAMED_SELLER = v; assert.equal(sellerAllowed(), false, v); }
+    for (const v of ["1", "true", "", "yes"]) { process.env.GENBID_NAMED_SELLER = v; assert.equal(sellerAllowed(), true, v); }
+    for (const v of ["0", " 0 "]) { process.env.GENBID_NAMED_SELLER = v; assert.equal(sellerAllowed(), false, v); }
   } finally { if (old === undefined) delete process.env.GENBID_NAMED_SELLER; else process.env.GENBID_NAMED_SELLER = old; }
 });
 
