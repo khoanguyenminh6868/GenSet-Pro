@@ -255,17 +255,14 @@ async function save() {
   for (const f of used) if (head(sourceFile(id, f)).url === url) die(`trang này đã lưu: sources/${id}/${f}.md`);
   let file;
   if (args.includes("--firecrawl")) {
-    // For sites that block this PC (cummins.com answers 403 even to Chromium); allowed by Khoa 2026-10-29.
-    // The key is read from the file and never printed.
-    const keyFile = process.env.GENBID_FIRECRAWL_KEY_FILE || "C:/Projects/GenSet Pro/genbid-hsmt/.firecrawl-key";
-    const r = await fetch("https://api.firecrawl.dev/v2/scrape", { method: "POST", signal: AbortSignal.timeout(120000),
-      headers: { Authorization: `Bearer ${fs.readFileSync(keyFile, "utf8").trim()}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ url, formats: ["markdown"], onlyMainContent: true }) });
-    const j = await r.json().catch(() => ({}));
-    if (!r.ok || !j.data?.markdown) die(`firecrawl không lưu được ${url}: HTTP ${r.status} ${String(j.error || "").slice(0, 160)}`);
+    // For public pages that block this PC (cummins.com answers 403 even to Chromium) or build their text with JavaScript;
+    // allowed by Khoa 2026-10-29, the fallback whenever a page is blocked since 2026-11-17 (firecrawl.mjs).
+    const FC = await import(pathToFileURL(path.join(ROOT, "firecrawl.mjs")).href);
+    let f;
+    try { f = await FC.scrape(url); } catch (e) { die(`firecrawl không lưu được ${url}: ${e.message}`); }
     fs.mkdirSync(dir, { recursive: true });
     file = sourceFile(id, n);
-    fs.writeFileSync(file, `URL: ${j.data.metadata?.sourceURL || url}\nAccessed: ${today()}\nVia: firecrawl\n\n${j.data.markdown}\n`, "utf8");
+    fs.writeFileSync(file, `URL: ${f.url}\nAccessed: ${today()}\nVia: firecrawl\n\n${f.markdown}\n`, "utf8");
   } else if (args.includes("--render")) {
     const { getRendered, htmlToText, closeBrowser } = await import(pathToFileURL(path.join(ROOT, "crawl-specs.mjs")).href);
     try {
@@ -278,7 +275,7 @@ async function save() {
     const r = node("fetch-source.mjs", id, String(n), url);
     if (r.status) {
       const out = (r.stderr || r.stdout).trim(), why = (out.match(/code: '(\w+)'|HTTP \d+/) || [out.split("\n").pop()]);
-      die(`không lưu được ${url}: ${why[1] || why[0]}${/ENOTFOUND/.test(out) ? " (tên miền không tồn tại — đừng đoán địa chỉ, lấy URL từ kết quả tìm kiếm)" : " — thử thêm --render, hoặc bỏ trang này"}`);
+      die(`không lưu được ${url}: ${why[1] || why[0]}${/ENOTFOUND/.test(out) ? " (tên miền không tồn tại — đừng đoán địa chỉ, lấy URL từ kết quả tìm kiếm)" : /HTTP (401|403|429|5\d\d)/.test(out) ? " — trang công khai bị chặn: lưu lại với --firecrawl" : " — thử thêm --render, hoặc --firecrawl"}`);
     }
     file = sourceFile(id, n);
   }
@@ -286,7 +283,7 @@ async function save() {
   const blocked = /(captcha|verify you are human|access denied|安全验证|滑动验证|请登录|cloudflare)/i.test(text.slice(0, 3000));
   console.log(`đã lưu sources/${id}/${n}.md (${size} ký tự) — nguồn số ${n}`);
   if (blocked) console.log("lưu ý: trang đòi đăng nhập / CAPTCHA; không dùng trang này, xoá file và ghi skip nếu không có trang khác");
-  else if (size < 600) console.log(args.includes("--render") ? "lưu ý: trang gần như trống hoặc không mở được; xoá file này, thử trang khác của hãng" : "lưu ý: trang gần như trống (dựng bằng JavaScript?); xoá file này rồi lưu lại với --render");
+  else if (size < 600) console.log(args.includes("--render") ? "lưu ý: trang gần như trống hoặc không mở được; xoá file này, lưu lại với --firecrawl (hoặc thử trang khác của hãng)" : "lưu ý: trang gần như trống (dựng bằng JavaScript?); xoá file này rồi lưu lại với --render");
 }
 
 function grep() {

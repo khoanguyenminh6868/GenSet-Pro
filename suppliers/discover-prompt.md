@@ -72,7 +72,7 @@ node suppliers/discover.mjs check "<tên công ty>" <url website>
 ```
 node suppliers/discover.mjs save <id> <url>
 ```
-Mỗi lệnh in số nguồn (1, 2, 3...). Lệnh báo "trang gần như trống" thì xoá file `suppliers/sources/<id>/<n>.md` vừa lưu rồi lưu lại với `--render`. Báo CAPTCHA / đăng nhập thì xoá file đó, dùng trang khác. Trang công khai mà cả `--render` cũng bị chặn (HTTP 403) thì lưu lại với `--firecrawl` (Khoa cho phép, 2026-10-29); không dùng `--firecrawl` cho trang đòi đăng nhập hay CAPTCHA.
+Mỗi lệnh in số nguồn (1, 2, 3...). Lệnh báo "trang gần như trống" thì xoá file `suppliers/sources/<id>/<n>.md` vừa lưu rồi lưu lại với `--render`. Báo CAPTCHA / đăng nhập thì xoá file đó, dùng trang khác. Trang công khai bị chặn (HTTP 401 / 403 / 429) hoặc `--render` vẫn trống thì lưu lại với `--firecrawl` (Khoa cho phép 2026-10-29, là đường dự phòng mặc định từ 2026-11-17; 1.000 credit/tháng nên chỉ dùng khi hai cách trên không được); không dùng `--firecrawl` cho trang đòi đăng nhập hay CAPTCHA. Firecrawl báo HTTP 402 (hết credit) thì thôi, dùng trang khác.
 
 ### Bước 4 — Tìm câu trích
 ```

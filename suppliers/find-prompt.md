@@ -44,7 +44,9 @@ with "genset" / "generator" and the power, its maker's genset range, and Chinese
    alibaba.com...) are tier C only, never the website. Never use wikipedia, baike, zhihu, social media or company
    registries as a source.
 4. Save every page you rely on with the save command of input.md; it prints the saved file (web/1.txt, web/2.txt...).
-   Then read that file and copy quotes from it. Never use a page you did not save.
+   Then read that file and copy quotes from it. Never use a page you did not save. A public page WebFetch cannot read
+   (401 / 403 / 429, almost empty) is still saved with that command: it reads it again through Firecrawl. When the
+   save command fails too, or the page asks for a login or a CAPTCHA, skip that page.
 5. Write `newCatalog.json`: a list of supplier records in the shape of suppliers/schema.json, from the saved pages only:
    - `id` (a-z 0-9 -, the company's short name; the id of catalog.md for a supplier already in the system, then give
      only the new `sources`, `productLines`, `specTables`), `country` (2 letters), `role` (genset_oem,

@@ -1,15 +1,16 @@
 name: test-api
 
+# Repo private (2.000 phút/tháng): chỉ chạy trên PR; PR đẩy thêm commit thì huỷ lượt cũ.
 on:
   pull_request:
     paths:
       - "web/api/**"
       - ".github/workflows/test-api.yml"
-  push:
-    branches: [main]
-    paths:
-      - "web/api/**"
-      - ".github/workflows/test-api.yml"
+  workflow_dispatch:
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   api:

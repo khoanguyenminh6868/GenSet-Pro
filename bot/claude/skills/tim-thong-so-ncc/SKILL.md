@@ -44,7 +44,9 @@ bằng lệnh save; code kiểm bằng verify.mjs và bỏ những gì không t�
 3. Ưu tiên một bảng nhiều model (model tổ máy | công suất | động cơ | đầu phát | bộ điều khiển) hơn nhiều trang lẻ.
    Tối đa khoảng 15 trang lưu; công suất 10–3000 kVA; tập trung các dải công suất hay gặp trong thầu (20–1500 kVA).
 4. Lưu mỗi trang dùng tới bằng lệnh save của input.md (in ra web/1.txt, web/2.txt...; PDF được chuyển thành chữ).
-   Đọc tệp đã lưu rồi mới chép. Không dùng trang chưa lưu. Trang trả lỗi (403, cần đăng nhập) thì bỏ, ghi vào spec.json.
+   Đọc tệp đã lưu rồi mới chép. Không dùng trang chưa lưu. Trang công khai bị chặn (401 / 403 / 429) hay dựng bằng
+   JavaScript vẫn lưu bằng lệnh save: lệnh tự đọc lại qua Firecrawl (Khoa 17/11/2026). Lệnh save vẫn lỗi, hoặc trang
+   đòi đăng nhập / CAPTCHA thì bỏ, ghi vào spec.json.
 5. Ghi `newCatalog.json`: một danh sách đúng MỘT mục, `id` là id của nhà cung cấp trong input.md, chỉ gồm phần MỚI:
    - `sources`: `{ "n": 1, "file": "web/1.txt", "tier": "A|B|C", "quote": ["câu nguyên văn của trang, ≥ 8 ký tự"] }`
      (A: trang / datasheet chính thức của nhà cung cấp, C: B2B, tự giới thiệu). Mỗi số trong productLines phải có

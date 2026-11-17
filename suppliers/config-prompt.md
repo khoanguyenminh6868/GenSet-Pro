@@ -264,10 +264,11 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
      — only when a saved page names the controller; `text` is the name as written in `line`, `model` null for a make alone.
    The code checks it with verify.mjs, adds what passes to the catalog (web and a pull request in the repo) and drops
    what fails; nothing you write there is shown unless it is found word for word in the saved pages.
-   - A page that answers 401 / 403 / 429 or a bot check is closed to automated download (Khoa's rule: never get
-     around a block): do not try it again, do not change the User-Agent or any header, do not use another tool, a cache,
-     an archive or a copy on another site to reach that same file. Declare it in `searched` (`outcome: "blocked"`)
-     and use a different source you can save, if one exists.
+   - A public page that answers 401 / 403 / 429 to WebFetch is not final: save it once with the save command, which
+     reads a blocked or JavaScript-built page again through Firecrawl (Khoa, 2026-11-17). Only when the save command
+     fails too, or the page asks for a login or a CAPTCHA, is it closed: do not try it again, do not change the
+     User-Agent or any header, do not use another tool, a cache, an archive or a copy on another site to reach that
+     same file. Declare it in `searched` (`outcome: "blocked"`) and use a different source you can save, if one exists.
    - Before searching, read "Đã tra trên mạng ở lượt trước" in catalog.md: a search listed there (not found, or blocked)
      is not done again at the same place; a check it was about is written as when the source is silent (`unclear`).
    - `searched` in result.json: every search of this run that did NOT find what it looked for, one entry per part,
