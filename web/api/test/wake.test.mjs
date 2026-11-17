@@ -47,10 +47,11 @@ const webreq = async (items, env = ENV) => {
 const poll = async (query, env = ENV) => { const r = (await call(await fresh("requests.js", env), mkReq({ query, token: INGEST }))).jsonBody; await S.lastBackground; return r; };
 const startCmd = () => box.cmds.find((c) => c.detached);
 
-test("shouldWake: bot có tim < 3 phút thì thôi; đã thử < 5 phút thì chờ; còn lại thì bật", () => {
-  assert.equal(shouldWake({ current: { lastPollAt: ago(2) } }, NOW), "bot-on");
+test("shouldWake: bot có tim < 1 phút thì thôi; đã thử < 5 phút thì chờ; còn lại thì bật", () => {
+  assert.equal(shouldWake({ current: { lastPollAt: ago(0.5) } }, NOW), "bot-on");
   assert.equal(shouldWake({ current: { lastPollAt: ago(4) }, wake: { at: ago(4) } }, NOW), "waking");
   assert.equal(shouldWake({ current: { lastPollAt: ago(4) }, wake: { at: ago(6) } }, NOW), "wake");
+  assert.equal(shouldWake({ current: { lastPollAt: ago(1.5) } }, NOW), "wake", "im 1 phút 30 giây = tắt");
   assert.equal(shouldWake({}, NOW), "wake");
 });
 
@@ -100,8 +101,8 @@ test("Bot đã chạy trong sandbox: không chạy thêm; thiếu INGEST_TOKEN h
   assert.equal(box.cmds.length, 1);
 });
 
-test("Bot đang mở (tim < 3 phút), huỷ yêu cầu, hoặc chưa đặt SANDBOX_WAKE=1: không bật sandbox", async () => {
-  db.put("botstatus", "current", { lastPollAt: ago(1) });
+test("Bot đang mở (tim < 1 phút), huỷ yêu cầu, hoặc chưa đặt SANDBOX_WAKE=1: không bật sandbox", async () => {
+  db.put("botstatus", "current", { lastPollAt: ago(0.5) });
   assert.equal((await webreq([{ key: "IB1" }])).wake, "bot-on");
   db.put("botstatus", "current", { lastPollAt: ago(30) });
   assert.equal((await webreq([{ key: "IB1", cancel: true }])).wake, "off");
@@ -131,10 +132,11 @@ test("Bật sandbox lỗi: yêu cầu vẫn lưu, trả lời không chờ, khô
 test("decide: tắt → bật khi có việc và máy Windows im; chạy → dừng khi máy bật lại hoặc rảnh 20 phút; đang làm dở thì giữ", () => {
   const RUN = { status: "running", statusUpdatedAt: new Date(NOW - 60 * 60e3) };
   assert.equal(S.decide({ pending: true, pc: { lastPollAt: ago(10) } }, null, NOW), "up");
-  assert.equal(S.decide({ pending: true, pc: { lastPollAt: ago(1) } }, { status: "stopped" }, NOW), "none");
+  assert.equal(S.decide({ pending: true, pc: { lastPollAt: ago(0.5) } }, { status: "stopped" }, NOW), "none");
+  assert.equal(S.decide({ pending: true, pc: { lastPollAt: ago(1.5) } }, { status: "stopped" }, NOW), "up", "máy Windows im 1 phút 30 giây = tắt (Khoa 17/11: ngưỡng 1 phút)");
   assert.equal(S.decide({ pending: false }, { status: "stopped" }, NOW), "none");
-  assert.equal(S.decide({ pending: false, pc: { lastPollAt: ago(1) }, sandbox: { lastPollAt: ago(0), running: false } }, RUN, NOW), "stop");
-  assert.equal(S.decide({ pending: true, pc: { lastPollAt: ago(1) }, sandbox: { lastPollAt: ago(0), running: true } }, RUN, NOW), "up");
+  assert.equal(S.decide({ pending: false, pc: { lastPollAt: ago(0.5) }, sandbox: { lastPollAt: ago(0), running: false } }, RUN, NOW), "stop");
+  assert.equal(S.decide({ pending: true, pc: { lastPollAt: ago(0.5) }, sandbox: { lastPollAt: ago(0), running: true } }, RUN, NOW), "up");
   assert.equal(S.decide({ pending: false, sandboxBusyAt: ago(25) }, RUN, NOW), "stop");
   assert.equal(S.decide({ pending: false, sandboxBusyAt: ago(5) }, RUN, NOW), "up");
   assert.equal(S.decide({ pending: false, sandboxBusyAt: ago(600) }, { status: "running", statusUpdatedAt: new Date(NOW - 2 * 60e3) }, NOW), "up", "vừa nối lại phiên");
@@ -157,8 +159,8 @@ test("Nhịp tim sandbox: rảnh 20 phút → dừng; có việc → ghi sandbox
   assert.equal(box.stopped + box.extended.length, 0);
 });
 
-test("Nhịp tim sandbox khi máy Windows đã bật lại (tim < 3 phút) và không làm dở: dừng sandbox", async () => {
-  db.put("botstatus", "pc", { lastPollAt: ago(1), running: false });
+test("Nhịp tim sandbox khi máy Windows đã bật lại (tim < 1 phút) và không làm dở: dừng sandbox", async () => {
+  db.put("botstatus", "pc", { lastPollAt: ago(0.5), running: false });
   db.put("hsmtreq", "IB1", { requestedAt: ago(1) });
   await poll({ kind: "all", host: "sandbox" });
   assert.equal(box.stopped, 1);

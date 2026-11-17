@@ -2448,11 +2448,12 @@ async function requestRefetch(key, cancel = false) {
   toast(cancel ? "Đã huỷ yêu cầu lấy tệp" : "Đã gửi yêu cầu tải hồ sơ", 3000);
   renderDrawer(true);
 }
-// The bot asks the web for requests every minute (botstatus/current.lastPollAt). Silent for 3 minutes = the PC is off.
+// The bot asks the web for requests every 15 s and writes botstatus/current.lastPollAt about every 30 s. Silent for 1 minute
+// = the PC is off (Khoa, 2026-11-17; was 3 minutes).
 function botOfflineText() {
   if (state.botstatus === undefined) return "";
   const at = state.botstatus?.lastPollAt;
-  if (at && Date.now() - new Date(at).getTime() < 3 * 60e3) return "";
+  if (at && Date.now() - new Date(at).getTime() < 60e3) return "";
   return at ? `Agent chưa nhận yêu cầu (lần cuối kết nối lúc ${fmtDate(at)}). Yêu cầu sẽ được xử lý khi Agent bật lại.` : "Agent chưa kết nối. Yêu cầu sẽ được xử lý khi Agent bật lại.";
 }
 const sinceText = (iso) => { const m = Math.max(0, Math.round((Date.now() - new Date(iso).getTime()) / 60e3)); return m < 1 ? "vừa gửi" : `đã chờ ${m} phút`; };
@@ -2470,12 +2471,13 @@ function refreshWaits() {
   if (off) sandboxWakePing();
 }
 setInterval(refreshWaits, 30e3);
-// PC off: ask the web to start the bot in the Vercel Sandbox (api/_wake.js), at most every 2 minutes from this page.
+// PC off: ask the web to start the bot in the Vercel Sandbox (api/_wake.js), at most every 30 seconds from this page
+// (Khoa, 2026-11-17; was 2 minutes). refreshWaits runs every 30 s, so each of its runs may ping.
 // The server starts it only when a request is waiting, at most once every 5 minutes, and only with SANDBOX_WAKE=1.
 // Covers a request sent while the PC had just gone off (its own wake then saw the PC still on).
 let sandboxWakeAt = 0;
 function sandboxWakePing() {
-  if (!window.genbidWeb || !window.genbidApi || Date.now() - sandboxWakeAt < 2 * 60e3) return;
+  if (!window.genbidWeb || !window.genbidApi || Date.now() - sandboxWakeAt < 25e3) return;
   sandboxWakeAt = Date.now();
   window.genbidApi("/api/webreq", { coll: "wake" }).catch(() => {});
 }

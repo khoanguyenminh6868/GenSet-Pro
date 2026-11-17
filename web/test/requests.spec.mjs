@@ -1,6 +1,6 @@
 // Gửi yêu cầu cho bot Windows (việc H2, 13/11/2026): mỗi nút ghi đúng collection và đúng trường qua genbidApi("/api/webreq")
 // (giả, fake-shim.js), rồi cho chính yêu cầu đó đi qua handler thật web/api/webreq.js (fixtures/real-api.mjs) để kiểm trường
-// bot thật sự nhận. Trạng thái "đang chờ" và "máy bot tắt" (nhịp tim botstatus/current.lastPollAt quá 3 phút).
+// bot thật sự nhận. Trạng thái "đang chờ" và "máy bot tắt" (nhịp tim botstatus/current.lastPollAt quá 1 phút).
 import { test, expect, SEED, RICH, openApp, openTab, reqsOf } from "./fixtures.mjs";
 import { throughWebreq } from "./fixtures/real-api.mjs";
 import { NOW } from "./fixtures/fake-data.mjs";
@@ -10,7 +10,7 @@ const tender = (k) => SEED.colls.feed.current.tenders.find((t) => t.notifyNo ===
 const MIN = 60e3, ago = (ms) => new Date(Date.parse(NOW) - ms).toISOString();
 // Tệp HSMT đã có (tên, cỡ bịa): Phân tích, Gợi ý cấu hình... cần gói có tệp.
 const HSMT = { [RICH]: { files: [{ name: "E-HSMT (BỊA).pdf", size: 120000 }], updatedAt: "2026-11-02T00:00:00.000Z" } };
-// Bot đang chạy mà không cần giờ giả: nhịp tim ở tương lai thì "now − lastPollAt < 3 phút" luôn đúng. (Đồng hồ giả của
+// Bot đang chạy mà không cần giờ giả: nhịp tim ở tương lai thì "now − lastPollAt < 1 phút" luôn đúng. (Đồng hồ giả của
 // Playwright làm lệch mốc 3 giây của "Đã gửi yêu cầu phân tích", nên chỉ các ca nhịp tim mới cài giờ.)
 const online = { current: { lastPollAt: "2099-01-01T00:00:00.000Z" } };
 
@@ -140,8 +140,8 @@ test.describe("máy bot tắt / chưa kết nối", () => {
   test.beforeEach(async ({ page }) => { await page.clock.install({ time: new Date(NOW) }); });
   const pending = { [RICH]: { notifyNo: RICH, requestedAt: ago(5 * MIN), by: "test@example.invalid", from: "web" } };
   for (const [name, bot, warn] of [
-    ["nhịp tim 2 phút 30 giây trước: bot đang chạy, không cảnh báo", { current: { lastPollAt: ago(150e3) } }, null],
-    ["nhịp tim 3 phút 30 giây trước: máy bot tắt, nêu lần cuối kết nối", { current: { lastPollAt: ago(210e3) } }, "Agent chưa nhận yêu cầu (lần cuối kết nối lúc"],
+    ["nhịp tim 45 giây trước: bot đang chạy, không cảnh báo", { current: { lastPollAt: ago(45e3) } }, null],
+    ["nhịp tim 1 phút 30 giây trước: máy bot tắt, nêu lần cuối kết nối", { current: { lastPollAt: ago(90e3) } }, "Agent chưa nhận yêu cầu (lần cuối kết nối lúc"],
     ["chưa từng có nhịp tim: bot chưa kết nối", null, "Agent chưa kết nối. Yêu cầu sẽ được xử lý khi Agent bật lại."],
   ]) {
     test.describe(name, () => {

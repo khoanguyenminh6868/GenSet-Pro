@@ -53,7 +53,7 @@ export default async function handler(req, res) {
     // The dates of every request type are read in one Supabase request (each request is a line of Supabase's log
     // ingestion, and this runs every 15 s); only the pending rows are then read whole.
     if (req.query?.kind === "all") {
-      // beat=0: the bot (GenBid-Bot.ps1) wrote the heartbeat less than a minute ago; the page waits 3 minutes before
+      // beat=0: the bot (GenBid-Bot.ps1) wrote the heartbeat less than 30 seconds ago; the page waits 1 minute before
       // saying the PC is off. Without beat (an older bot) the heartbeat is written every poll, as before.
       // With a heartbeat (about once a minute) the bot also gets Cấu hình hệ thống (settings/ai, superadmin; Khoa 2026-11-13)
       // and reports its API spend (?api=<json>), which the page shows there.
