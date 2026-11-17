@@ -33,7 +33,7 @@
     [/\bavk\b/i, "AvK"], [/\blinz\b/i, "Linz Electric"], [/\bsincro\b/i, "Sincro"], [/\bweg\b/i, "WEG"],
   ];
   // Mã đầu phát của các dòng phổ biến: dùng để biết ô nào là đầu phát khi bảng có cả động cơ lẫn đầu phát.
-  const ALT_CODE = /^(UC[DIM]{0,2}\s?\d{3}|UCI\d|HC[IKM]?\s?\d{3}|PI\s?\d{3}|PE\s?\d{3}|S[0-9][LM]\d|P[0-9]\s?\d{2,}|LV[ISM]?\d{3}|TAL[\s-]?[A-Z]?\d{2}|LSA\s?\d{2}|LL\d{4}|ECP\s?\d{2}|ECO\s?\d{2}|NPE\s?\d{2}|MP[\s-]?\d{2,}|MX[\s-]?\d{3}|EG\s?\d{3}|1FC\d|FD\d[A-Z]|LTP\d{3}|BW(?:C|LV|P)?-?\d|BC[IA]?\s?1[0-9]{2}[A-Z])\/?/i; // LTP / BW: landtop, bobig (alternator model right after the engine, no brand in the header); BC164 / BC184: acepow's alternator stands BEFORE the engine ("| BC184E | ISUZU | JE493DB-04", read as the engine)
+  const ALT_CODE = /^(UC[DIM]{0,2}\s?\d{3}|UCI\d|HC[IKM]?\s?\d{3}|PI\s?\d{3}|PE\s?\d{3}|S[0-9][LM]\d|P[0-9]\s?\d{2,}|LV[ISM]?\d{3}|TAL[\s-]?[A-Z]?\d{2}|LSA\s?\d{2}|LL\d{4}|ECP\s?\d{2}|ECO\s?\d{2}|NPE\s?\d{2}|MP[\s-]?\d{2,}|MX[\s-]?\d{3}|EG\s?\d{3}|1FC\d|FD\d[A-Z]|LTP\d{3}|BW(?:C|LV|P)?-?\d)\/?/i; // LTP / BW: landtop, bobig (alternator model right after the engine, no brand in the header); BC164 / BC184: acepow's alternator stands BEFORE the engine ("| BC184E | ISUZU | JE493DB-04", read as the engine)
   // Series codes of Chinese alternator makers (Nianfeng NFS, Bobig BW, Jet-Power JET, Wintpower WT): such a model is not
   // the Stamford that the column title or page title of the table names ("Stamford UCDI274J" rows above, "with stamford
   // alternator" title): 2026-11-03 regression run showed "NIANFENG NFS5-G (Stamford)", "BW-404B (Stamford)".
