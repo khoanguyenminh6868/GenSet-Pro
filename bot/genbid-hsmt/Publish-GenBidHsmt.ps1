@@ -58,8 +58,11 @@ function Merge-Doc($base, [hashtable]$add) {
 function Send-WebDocs([object[]]$rows) {
     $post = Join-Path $TmpDir "genbid-post-$Key-$(Get-Random)"
     foreach ($r in $rows) {
-        New-Item -ItemType Directory -Force "$post\$($r.coll)" | Out-Null
-        [IO.File]::WriteAllText("$post\$($r.coll)\$($r.id).json", ($r.data | ConvertTo-Json -Depth 16), $utf8)
+        # IO.Path: trên Linux .NET coi "\" là một ký tự của tên tệp (sandbox 17/11: tài liệu ghi ra ngoài thư mục, không gửi
+        # được mà vẫn báo đã ghi lên web).
+        $cdir = [IO.Path]::Combine($post, $r.coll)
+        New-Item -ItemType Directory -Force $cdir | Out-Null
+        [IO.File]::WriteAllText([IO.Path]::Combine($cdir, "$($r.id).json"), ($r.data | ConvertTo-Json -Depth 16), $utf8)
     }
     & $PsExe -NoProfile @PsPolicy -File (Join-Path $PSScriptRoot 'Post-GenBidDocs.ps1') -Dir $post | Write-Host
     $ok = $LASTEXITCODE -eq 0
