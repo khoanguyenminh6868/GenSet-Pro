@@ -7,7 +7,6 @@ Viết gọn lại 13/11/2026 (sáng, giờ VN). Cập nhật 16/11: #786 (nối
 ## Đang chạy
 | Việc | Session (id để báo về / hỏi) | Model | Chờ gì |
 |---|---|---|---|
-| Việc 5: sửa mâu thuẫn số liệu (depco), đề xuất 1–3 (Khoa bỏ đề xuất 4) | `local_5797c61c-3491-4f85-aa01-f81e24095047` (depco-sua, 17/11) | Sonnet | PR draft + `nghiem-thu\depco-sua.md`; xong → catalog đọc `manufacturing[]` → FG Wilson / ô hai hãng |
 | Phủ test: việc còn mở sau 13/11 (trưa) | — (phiên H1, H2, H3, W1, W2 đã xong, chưa lưu trữ: chờ Khoa) | — | (6) Chưa phủ: nhánh trình duyệt `server/`, tải tệp báo giá / HSMT dự án, Forward sau Back từ link thẳng |
 
 ## Chưa giao
