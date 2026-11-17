@@ -6,7 +6,7 @@ Không in token ra màn hình. Thoát mã 1 khi không tải được.
 param(
     [Parameter(Mandatory)][string]$Path,
     [Parameter(Mandatory)][string]$Out,
-    [string]$TokenFile = (Join-Path $(if ($env:GENBID_ROOT) { $env:GENBID_ROOT } elseif ($PSVersionTable.Platform -eq 'Unix') { Join-Path $HOME 'genset-pro' } else { 'C:\Projects\GenSet Pro' }) '.genbid-ingest-token'),
+    [string]$TokenFile = (Join-Path $(if ($env:GENBID_ROOT) { $env:GENBID_ROOT } elseif (($env:GENBID_OS -eq 'linux' -or (-not $env:GENBID_OS -and $PSVersionTable.Platform -eq 'Unix'))) { Join-Path $HOME 'genset-pro' } else { 'C:\Projects\GenSet Pro' }) '.genbid-ingest-token'),
     [string]$Endpoint = 'https://genset-pro-web.vercel.app/api/scratch'
 )
 $ErrorActionPreference = 'Stop'

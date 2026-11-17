@@ -29,7 +29,7 @@ $ErrorActionPreference = 'Continue'
 if (-not $Src) { $Src = Join-Path ([Environment]::GetFolderPath('UserProfile')) "Downloads/GenBid-HSMT/$Key" }
 $utf8 = New-Object Text.UTF8Encoding $false
 # Linux (sandbox Vercel): pwsh, thư mục tạm của hệ điều hành ($env:TEMP chỉ có trên Windows).
-$PsExe = if ($PSVersionTable.Platform -eq 'Unix') { 'pwsh' } else { 'powershell' }
+$PsExe = if (($env:GENBID_OS -eq 'linux' -or (-not $env:GENBID_OS -and $PSVersionTable.Platform -eq 'Unix'))) { 'pwsh' } else { 'powershell' }
 $PsPolicy = if ($PsExe -eq 'powershell') { @('-ExecutionPolicy', 'Bypass') } else { @() }
 $TmpDir = [IO.Path]::GetTempPath()
 $tag = "hsmt-$Key"

@@ -7,7 +7,8 @@ const os = require("os");
 const path = require("path");
 const cp = require("child_process");
 
-const IS_WIN = process.platform === "win32";
+// GENBID_OS (windows | linux) ép hệ điều hành, để test chạy được logic Windows trên Linux (TestHelpers.ps1 đặt windows).
+const IS_WIN = process.env.GENBID_OS ? process.env.GENBID_OS === "windows" : process.platform === "win32";
 const HOME = os.homedir();
 const ROOT = process.env.GENBID_ROOT || (IS_WIN ? "C:\\Projects\\GenSet Pro" : path.join(HOME, "genset-pro"));
 

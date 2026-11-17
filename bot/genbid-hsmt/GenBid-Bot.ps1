@@ -35,7 +35,7 @@ param(
     [int]$RunTimeoutMinutes = 180,
     [int]$LimitPauseMinutes = 30,
     # Linux (sandbox Vercel, 2026-11-17): GENBID_ROOT hoặc ~/genset-pro; cấu trúc bên trong giống C:\Projects\GenSet Pro.
-    [string]$Root = $(if ($env:GENBID_ROOT) { $env:GENBID_ROOT } elseif ($PSVersionTable.Platform -eq 'Unix') { Join-Path $HOME 'genset-pro' } else { 'C:\Projects\GenSet Pro' }),
+    [string]$Root = $(if ($env:GENBID_ROOT) { $env:GENBID_ROOT } elseif (($env:GENBID_OS -eq 'linux' -or (-not $env:GENBID_OS -and $PSVersionTable.Platform -eq 'Unix'))) { Join-Path $HOME 'genset-pro' } else { 'C:\Projects\GenSet Pro' }),
     [string]$Endpoint = 'https://genset-pro-web.vercel.app/api/requests?kind=all',
     # Sync theo lịch (thay tác vụ hẹn giờ "hsmt-worker" của app Claude, Khoa 2026-10-26): bot tự chạy genbid-sync.js,
     # không mở phiên Claude. 10:10, 14:10 và 18:10 mỗi ngày, cả thứ Bảy và Chủ nhật (Khoa, 2026-11-04). Máy tắt lúc đó thì chạy một lần
@@ -52,7 +52,7 @@ param(
 
 $ErrorActionPreference = 'Stop'
 # Windows PowerShell 5.1 (máy của Khoa) hay pwsh 7 (Linux, sandbox Vercel). $IsWindows chỉ có từ pwsh 6.
-$OnLinux = $PSVersionTable.Platform -eq 'Unix'
+$OnLinux = ($env:GENBID_OS -eq 'linux' -or (-not $env:GENBID_OS -and $PSVersionTable.Platform -eq 'Unix'))
 # PowerShell dùng cho tiến trình con và script của bộ công cụ.
 $PsExe = if ($OnLinux) { 'pwsh' } else { 'powershell.exe' }
 # genbid-sync.js in UTF-8: đọc đúng tiếng Việt từ đầu ra của nó.
@@ -182,7 +182,7 @@ function Send-Unanswered($handedReqs, [string]$reason) {
     if (-not $n) { return }
     Log "Báo lỗi về web cho $n yêu cầu chưa được xử lý: $reason"
     # Windows: powershell + -ExecutionPolicy Bypass như trước; Linux: pwsh. Xác định ngay tại đây (hàm được test nạp riêng).
-    $ps = if ($PSVersionTable.Platform -eq 'Unix') { 'pwsh' } else { 'powershell' }
+    $ps = if (($env:GENBID_OS -eq 'linux' -or (-not $env:GENBID_OS -and $PSVersionTable.Platform -eq 'Unix'))) { 'pwsh' } else { 'powershell' }
     $pol = if ($ps -eq 'powershell') { @('-ExecutionPolicy', 'Bypass') } else { @() }
     & $ps -NoProfile @pol -File (Join-Path $PSScriptRoot 'Post-GenBidDocs.ps1') -Dir $dir | ForEach-Object { Log "  $_" }
     Remove-Item -Recurse -Force $dir -ErrorAction SilentlyContinue

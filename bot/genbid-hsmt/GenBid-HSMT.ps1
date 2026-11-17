@@ -44,7 +44,7 @@ function Find-AgentExe {
 function Start-Agent {
     if (Test-Agent) { Write-Host 'VNeGP Client Agent đang chạy (cổng 1234).'; return $true }
     # Linux (sandbox Vercel): Agent là bản Windows chạy dưới Wine, bật bằng start-egp-agent.sh.
-    if ($PSVersionTable.Platform -eq 'Unix') {
+    if (($env:GENBID_OS -eq 'linux' -or (-not $env:GENBID_OS -and $PSVersionTable.Platform -eq 'Unix'))) {
         & bash (Join-Path $PSScriptRoot 'start-egp-agent.sh') | Out-Host
         return [bool](Test-Agent)
     }

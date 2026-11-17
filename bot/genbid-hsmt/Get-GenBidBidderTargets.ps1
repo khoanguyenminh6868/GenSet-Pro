@@ -18,7 +18,7 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $utf8 = New-Object Text.UTF8Encoding $false
-$PsExe = if ($PSVersionTable.Platform -eq 'Unix') { 'pwsh' } else { 'powershell' }
+$PsExe = if (($env:GENBID_OS -eq 'linux' -or (-not $env:GENBID_OS -and $PSVersionTable.Platform -eq 'Unix'))) { 'pwsh' } else { 'powershell' }
 $tmp = Join-Path ([IO.Path]::GetTempPath()) "genbid-targets-$(Get-Random)"
 New-Item -ItemType Directory $tmp | Out-Null
 function Get-Coll([string]$coll, [string]$id) {

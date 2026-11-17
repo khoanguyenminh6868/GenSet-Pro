@@ -11,7 +11,7 @@ param(
     [ValidateSet('files', 'sync', 'analysis', 'translation', 'compare', 'hsdt', 'tlkt', 'docs')][string]$Kind = 'files',
     [string]$Coll,
     [string]$Id,
-    [string]$TokenFile = (Join-Path $(if ($env:GENBID_ROOT) { $env:GENBID_ROOT } elseif ($PSVersionTable.Platform -eq 'Unix') { Join-Path $HOME 'genset-pro' } else { 'C:\Projects\GenSet Pro' }) '.genbid-ingest-token'),
+    [string]$TokenFile = (Join-Path $(if ($env:GENBID_ROOT) { $env:GENBID_ROOT } elseif (($env:GENBID_OS -eq 'linux' -or (-not $env:GENBID_OS -and $PSVersionTable.Platform -eq 'Unix'))) { Join-Path $HOME 'genset-pro' } else { 'C:\Projects\GenSet Pro' }) '.genbid-ingest-token'),
     [string]$Endpoint = 'https://genset-pro-web.vercel.app/api/requests'
 )
 
