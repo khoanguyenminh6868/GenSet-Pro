@@ -16,7 +16,7 @@ Viết gọn lại 13/11/2026 (sáng, giờ VN). Cập nhật 16/11: #786 (nối
 ## Chưa giao
 | Việc | Ghi chú | Model |
 |---|---|---|
-| Chất lượng 1 (Khoa duyệt 18/11, Opus): cổng kiểm khi nhập NCC mới sau mỗi lượt Tìm Thông Số (số vô lý, mã đảo vai, lệch số đông, tỉ lệ dòng đọc được); DÒNG nghi tự bị loại khỏi Gợi ý cấu hình, liệt kê ở màn Nhà cung cấp để Khoa xem khi muốn lấy lại. Khoa hỏi "ai, vào đâu xem": đã trả lời 18/11, chờ Khoa chốt thiết kế | Mở sau khi Lệch cột 9 merge (đụng `config-bot.mjs`) và Chất lượng 2 merge (dùng lại công cụ) | Opus |
+| Chất lượng 1 (Khoa duyệt 18/11, Opus): cổng kiểm khi nhập NCC mới sau mỗi lượt Tìm Thông Số (số vô lý, mã đảo vai, lệch số đông, tỉ lệ dòng đọc được); DÒNG nghi tự bị loại khỏi Gợi ý cấu hình, dòng sạch vẫn dùng. KHOA CHỐT 18/11 thiết kế: chặn theo DÒNG, không chặn cả NCC; không ai xem thì hệ thống vẫn chạy; màn Nhà cung cấp (PHẢI LÀM MỚI) hiện nhãn "n dòng nghi sai" + từng dòng, lý do, link nguồn + hai nút "Dòng này đúng, cho dùng" / "Bỏ hẳn" (Khoa bấm khi cần model đó); NCC có quá nửa bảng nghi → ghi sổ để sửa mã đọc | Mở sau khi Lệch cột 9 merge (đụng `config-bot.mjs`) và Chất lượng 2 merge (dùng lại công cụ) | Opus |
 | Chất lượng 3 (Khoa duyệt 18/11, Opus): bảng có tiêu đề không khớp mẫu đã biết thì KHÔNG đọc đoán, ghi danh sách "bảng chưa đọc được"; phải đo trước mất bao nhiêu số đúng rồi trình Khoa | Mở sau khi Lệch cột 8 merge (cùng `catalog.js`) | Opus |
 | Sửa 10 ca `todo` trong `suppliers/domain.test.mjs` (PR #622; bảng ở `nghiem-thu\test-review.md`) | Chờ Khoa duyệt; sửa xong bỏ `todo` | Sonnet |
 | Cho `catalog.js` đọc `manufacturing[]` (#862, #866) thay `MADE_DEFAULT` cứng | Sau depco (cùng catalog.js) | Sonnet |
