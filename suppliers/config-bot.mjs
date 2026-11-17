@@ -1329,6 +1329,21 @@ export function bandOf(cap) {
   const small = !!cap && cap.value > 0 && (cap.unit === "kW" ? cap.value <= SMALL_KVA * 0.8 + 1e-9 : cap.value <= SMALL_KVA + 1e-9);
   return { low: NEAR_LOW, high: small ? NEAR_HIGH_SMALL : NEAR_HIGH, text: small ? "100% đến 140%" : "100% đến 120%" };
 }
+// The alternator record a row's "other" cell names. The cell often carries the make ("Stamford S5L1D-H41", "Leroy-Somer
+// TAL044"), which the catalog's key leaves out: try the cell as written, then without the make words at its start.
+export function altOf(alts, cell) {
+  const s = String(cell || "").trim(), hit = alts.get(CAT.keyOf(s));
+  if (hit) return hit;
+  let rest = s;
+  for (let i = 0; i < 3; i++) {
+    const m = rest.match(/^(\S+)\s+(\S.*)$/);
+    if (!m || !CAT.ALT_BRANDS.some(([re]) => re.test(m[1]))) break;
+    rest = m[2].trim();
+    const r = alts.get(CAT.keyOf(rest));
+    if (r) return r;
+  }
+  return null;
+}
 export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30, sync = null, keep = null, makeCap = MAKE_CAP, patches = true } = {}) {
   const hints = plausible(hints0, cap), sup = new Map(suppliers.map((s) => [s.id, s])), alts = new Map((cat.alternators || []).map((a) => [a.key, a])), rowsMap = normRowsOf(suppliers);
   const band = bandOf(cap);
@@ -1344,7 +1359,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // power reads (Hyundai's DHY110KSE table gives the engine's 100 kW only, no kVA) and goes first.
       const gNamed = !!hints.named?.models?.length && !!(u.line || u.lines) && hints.named.models.some((m) => NG.namesModel([u.title, u.genset, u.line, ...(u.lines?.rows || [])].filter(Boolean).join("\n"), m));
       if (!(gNamed && hints.named.strict) && ((!u.line && !u.lines) || !near(u) || (hints.freq && u.freq && u.freq !== hints.freq) || (viaCn && !cn.has(u.supplierId)))) continue;
-      const a = u.other ? alts.get(CAT.keyOf(u.other)) : null, af = a ? facts.get(`alternator:${a.key}`) || [] : [];
+      const a = u.other ? altOf(alts, u.other) : null, af = a ? facts.get(`alternator:${a.key}`) || [] : [];
       const s = sup.get(u.supplierId), rowCtrl = CAT.controllersIn(u.line || (u.lines?.rows || []).join(" "));
       const offers = [...rowCtrl, ...(s?.controllers || [])];
       const ctrlNamed = offers.some((c) => hints.ctrlModels.includes(CAT.keyOf(c.model || "")) || hints.ctrlMakes.includes(c.brand));
