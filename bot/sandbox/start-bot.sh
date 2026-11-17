@@ -5,7 +5,8 @@
 #   CLAUDE_CODE_OAUTH_TOKEN token của `claude setup-token` (gói tháng) và/hoặc ANTHROPIC_API_KEY (trả theo API)
 #   GH_TOKEN                GitHub token có quyền ghi repo (Publish-GenBidHsmt.ps1: Release + nhánh hsmt-inbox)
 #   FIRECRAWL_KEY           (tuỳ chọn) khoá Firecrawl cho Tìm NCC
-#   GEMINI_OAUTH_CREDS      (tuỳ chọn) nội dung ~/.gemini/oauth_creds.json của máy Windows: agy dịch bằng Gemini
+# Gemini (agy) cho bản dịch: đăng nhập Google một lần trong sandbox (`vercel sandbox connect genbid-bot`, chạy agy), lưu ở
+# ~/.config/antigravity và giữ qua snapshot. Tệp oauth_creds.json của máy Windows không dùng được (thử 17/11).
 # Bot chạy tới khi sandbox dừng (rảnh, máy Windows bật lại, hoặc hết phiên); web/api/_sandbox.js khởi chạy lại khi cần.
 #
 # Toàn bộ logic nằm trong main(): script này tự `git merge` kéo code mới (có thể ghi đè chính nó) mà bash đọc script
@@ -23,24 +24,11 @@ main() {
   [ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ] || printf '%s\n' "$CLAUDE_CODE_OAUTH_TOKEN" > "$ROOT/.claude-bot-token"
   [ -z "${ANTHROPIC_API_KEY:-}" ]       || printf '%s\n' "$ANTHROPIC_API_KEY"       > "$ROOT/.anthropic-api-key"
   [ -z "${FIRECRAWL_KEY:-}" ]           || printf '%s\n' "$FIRECRAWL_KEY"           > "$KIT/.firecrawl-key"
-  # GEMINI_OAUTH_CREDS: nội dung ~/.gemini/oauth_creds.json (đăng nhập Google của agy) chép từ máy Windows (Khoa 17/11/2026,
-  # dịch bằng Gemini như máy Windows). Chỉ ghi khi bản trên Vercel đổi: agy tự làm mới token và ghi lại tệp này.
-  if [ -n "${GEMINI_OAUTH_CREDS:-}" ]; then
-    mkdir -p "$HOME/.gemini"
-    local SUM; SUM="$(printf '%s' "$GEMINI_OAUTH_CREDS" | sha256sum | cut -d' ' -f1)"
-    if [ "$(cat "$HOME/.gemini/.from-vercel.sha" 2>/dev/null)" != "$SUM" ]; then
-      # JSON thô, hoặc base64 của nó (lệnh trong bot/sandbox/README.md: PowerShell 5.1 làm hỏng dấu " khi truyền JSON).
-      case "$GEMINI_OAUTH_CREDS" in
-        \{*) printf '%s' "$GEMINI_OAUTH_CREDS" > "$HOME/.gemini/oauth_creds.json" ;;
-        *)   printf '%s' "$GEMINI_OAUTH_CREDS" | base64 -d > "$HOME/.gemini/oauth_creds.json" ;;
-      esac && printf '%s' "$SUM" > "$HOME/.gemini/.from-vercel.sha"
-    fi
-  fi
   # Bot tự chọn token / API key theo từng việc (đọc từ các tệp trên): các biến này không được lọt vào tiến trình con
   # (agent Claude có công cụ Bash, đọc tài liệu HSMT của bên thứ ba: biến môi trường là thứ dễ bị lấy nhất).
   # GH_TOKEN: lưu vào cấu hình của gh (gh từ chối `login` khi biến còn trong môi trường) rồi bỏ biến. Dùng PAT hạn chế quyền (README).
   local GHT="${GH_TOKEN:-}"
-  unset GENBID_INGEST_TOKEN CLAUDE_CODE_OAUTH_TOKEN ANTHROPIC_API_KEY FIRECRAWL_KEY GH_TOKEN GITHUB_TOKEN GEMINI_OAUTH_CREDS
+  unset GENBID_INGEST_TOKEN CLAUDE_CODE_OAUTH_TOKEN ANTHROPIC_API_KEY FIRECRAWL_KEY GH_TOKEN GITHUB_TOKEN
   if [ -n "$GHT" ]; then
     printf '%s\n' "$GHT" | gh auth login --with-token >/dev/null 2>&1 && gh auth setup-git >/dev/null 2>&1 \
       || echo "Cảnh báo: gh auth login không được, tải HSMT lên GitHub sẽ lỗi" >&2
