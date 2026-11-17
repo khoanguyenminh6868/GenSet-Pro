@@ -33,6 +33,7 @@
 ## config-bot / bidprice-bot
 - Mỗi lượt là tiến trình node mới (không cần restart bot), nhưng `config-bot.mjs run` đang chạy giữ code cũ tới khi thoát. Khoá `genbid-config.lock` chỉ tính khi PID còn sống.
 - Tệp import `config-bot.mjs` không được bị `config-bot.mjs` import ngược (node thoát 13, kẹt khoá).
+- Tóm tắt của agent đếm cấu hình NÓ viết; code có thể bỏ bớt sau đó (IB2600612866 17/11/2026: tóm tắt "6", danh sách 5). `noteDropped` (checkDir) sửa số trong tóm tắt và ghi chú cấu hình bị bỏ + lý do; đừng tin số trong `summary` khi so với `configs`. NCC mới trong `newCatalog.json`: `names` phải là object `{ en, zh }` (agent từng ghi danh sách → `verify.mjs` "names: cần tên" → NCC không vào danh mục → cấu hình chỉ có NCC đó bị bỏ); `namesOf` đổi danh sách / chuỗi, agent kiểm bằng `find-check --dir .`.
 - `check` cắt `MAX_CONFIGS` TRƯỚC `rankConfigs`: cấu hình cần giữ phải đưa lên trước khi cắt. Kết quả lưu không ghi origin → `originOfReq(undefined)` = "cn".
 - Trần cấu hình mỗi hãng động cơ (`rankConfigs`, `perMakeConfigs`): 2, riêng Perkins, Volvo Penta, Cummins và Mitsubishi 1 (`ONE_CONFIG_MAKES`, Khoa 17/11/2026). Code chỉ BỎ cấu hình thừa, không tự lấp chỗ: `config-prompt.md` phải nói cùng luật để agent đưa hãng khác vào (sửa một nơi thì sửa cả hai).
 - Check hiếm khi mang `code` → khớp theo item của yêu cầu. Từ khoá của mã `alt_vreg` bắt cả dòng tần số, đừng dùng để quét HSMT.

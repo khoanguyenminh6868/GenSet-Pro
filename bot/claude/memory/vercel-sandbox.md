@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 002f765c-d667-4ca2-b611-252cd3c8bf93
-  modified: 2026-11-17T14:11:29.024Z
+  modified: 2026-11-17T14:30:34.773Z
 ---
 
 Bot GenBid dự phòng chạy trong Vercel Sandbox `genbid-bot` (project genset-pro-web, sin1, image `vercel/sandbox/ubuntu`, persistent). Chi tiết kỹ thuật và bẫy: `bot/sandbox/README.md`. Mã bật/dừng: `web/api/_sandbox.js`, `_wake.js`.
@@ -14,6 +14,7 @@ Bot GenBid dự phòng chạy trong Vercel Sandbox `genbid-bot` (project genset-
 - Chạy THEO NHU CẦU, không 24/7: web có yêu cầu mà không máy Windows nào có nhịp tim 1 phút → web tự bật sandbox (hàm Vercel, OIDC, không token). Rảnh 5 phút hoặc máy Windows bật lại (và sandbox không làm dở) → web dừng. Tắt bằng xoá biến Vercel `SANDBOX_WAKE`.
 - Mốc thời gian (Khoa 17/11 tối, #876 #884): máy im 1 phút = tắt (trước 3 phút; bot ghi nhịp tim ~30 s); trang nhắc đánh thức mỗi 30 s (trước 2 phút); sandbox rảnh 5 phút thì dừng (trước 20 phút).
 - Tắt / bật bot Windows: skill `/tat-bot`, `/bat-bot` (chỉ qua tác vụ "GenBid Bot", xem [[bot-ops]]).
+- Mọi máy Windows ghi chung `botstatus/pc` (KHOAMINIPC, KayenGram): một máy còn bật là sandbox không thức. Máy bản bot cũ ghi tim ~1 phút → web có thể tưởng tắt và bật sandbox thừa: cập nhật bằng `/update-bot`. Sandbox rảnh 5 phút tính từ việc CUỐI (`sandboxbusy`), không từ lúc bật. Máy Windows chỉ nhận việc khi tim sandbox im 2 phút (đề xuất hạ 1 phút, chờ Khoa).
 - KHÔNG dùng GitHub Actions cho sandbox (repo private lại từ 01/12, 2.000 phút/tháng; 17/11 Actions còn bị chặn vì thanh toán). Đã bỏ workflow `sandbox-ensure.yml`.
 - Snapshot giữ 1 năm (nối lại < 1 giây; mọi thứ đã cài + đăng nhập còn nguyên).
 - Bot sandbox trả bằng gói tháng: biến Vercel `CLAUDE_CODE_OAUTH_TOKEN` (Khoa đặt).
