@@ -5,7 +5,7 @@
 #   CLAUDE_CODE_OAUTH_TOKEN token của `claude setup-token` (gói tháng) và/hoặc ANTHROPIC_API_KEY (trả theo API)
 #   GH_TOKEN                GitHub token có quyền ghi repo (Publish-GenBidHsmt.ps1: Release + nhánh hsmt-inbox)
 #   FIRECRAWL_KEY           (tuỳ chọn) khoá Firecrawl cho Tìm NCC
-# Bot chạy tới khi sandbox hết phiên; bot/sandbox/ensure.mjs khởi chạy lại ở phiên sau.
+# Bot chạy tới khi sandbox dừng (rảnh, máy Windows bật lại, hoặc hết phiên); bot/sandbox/ensure.mjs khởi chạy lại khi cần.
 #
 # Toàn bộ logic nằm trong main(): script này tự `git merge` kéo code mới (có thể ghi đè chính nó) mà bash đọc script
 # từng đoạn, nên phải đọc hết hàm trước khi chạy.
@@ -43,6 +43,7 @@ main() {
   pgrep -x Xvfb >/dev/null || { nohup Xvfb :99 -screen 0 1280x900x24 >/tmp/xvfb.log 2>&1 & sleep 2; }
 
   cd "$ROOT"
-  exec pwsh -NoProfile -File "$KIT/GenBid-Bot.ps1"
+  # host=sandbox: nhịp tim ghi botstatus/sandbox (ensure.mjs dừng sandbox khi rảnh hoặc khi máy Windows bật lại).
+  exec pwsh -NoProfile -File "$KIT/GenBid-Bot.ps1" -Endpoint "${GENBID_WEB:-https://genset-pro-web.vercel.app}/api/requests?kind=all&host=sandbox"
 }
 main "$@"; exit $?

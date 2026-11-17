@@ -56,10 +56,21 @@ export default async function handler(req, res) {
       // saying the PC is off. Without beat (an older bot) the heartbeat is written every poll, as before.
       // With a heartbeat (about once a minute) the bot also gets Cấu hình hệ thống (settings/ai, superadmin; Khoa 2026-11-13)
       // and reports its API spend (?api=<json>), which the page shows there.
+      // host=sandbox: the bot in the Vercel Sandbox (bot/sandbox/start-bot.sh), started only while no PC is on (Khoa 2026-11-17).
       const beat = req.query.beat !== "0";
-      const [marks, , settings] = await Promise.all([pendingMarks(), beat ? heartbeat(req.query.running, req.query.api) : null, beat ? aiSettings() : undefined]);
+      const sandbox = req.query.host === "sandbox";
+      // A PC that comes back while the sandbox bot is still on gets nothing, so the two never take the same request:
+      // the sandbox finishes and bot/sandbox/ensure.mjs stops it once it is idle. Read only when the sandbox is set up.
+      const [marks, settings, sbx] = await Promise.all([pendingMarks(), beat ? aiSettings() : undefined, !sandbox && WAKE_ON ? botDoc("sandbox") : null]);
+      if (beat) await heartbeat(req.query.running, req.query.api, sandbox ? "sandbox" : "pc", hasPending(marks));
+      if (sbx && fresh(sbx.lastPollAt, 2 * 60e3)) return res.json({ files: [], analysis: [], sync: { pending: false, requestedAt: null, mode: "" }, translation: [], compare: [], hsdt: [], tlkt: [], supplier: [], config: [], find: [], bidprice: [], spec: [], yieldTo: "sandbox", ...(settings !== undefined ? { settings } : {}) });
       const [files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice, spec] = await Promise.all([fileReqs(marks), analysisReqs(marks), syncReq(marks), reqsOf("translationreq", marks), reqsOf("comparereq", marks), reqsOf("hsdtreq", marks), reqsOf("tlktreq", marks), reqsOf("supplierreq", marks), reqsOf("configreq", marks), reqsOf("findreq", marks), reqsOf("bidpricereq", marks), reqsOf("specreq", marks)]);
       return res.json({ files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice, spec, ...(settings !== undefined ? { settings } : {}) });
+    }
+    // ?kind=bots: what bot/sandbox/ensure.mjs needs to start or stop the sandbox bot. Writes nothing.
+    if (req.query?.kind === "bots") {
+      const [marks, pc, sbx, busy] = await Promise.all([pendingMarks(), botDoc("pc"), botDoc("sandbox"), botDoc("sandboxbusy")]);
+      return res.json({ pending: hasPending(marks), pc: pc || null, sandbox: sbx || null, sandboxBusyAt: busy?.at || null });
     }
     // ?kind=analysis: tenders whose "Phân tích" button was pressed on the web (analysisreq/<key>).
     if (req.query?.kind === "analysis") return res.json(await analysisReqs());
@@ -83,16 +94,33 @@ export default async function handler(req, res) {
 
 // The bot's poll doubles as a heartbeat (botstatus/current), so the page can tell when the Windows PC is off.
 // api: the bot's API key spend this period, {spent, since, switchAt, exhausted} (GenBid-Bot.ps1 Get-ApiBudget).
-async function heartbeat(running, api) {
-  const data = { lastPollAt: new Date().toISOString(), running: running === "1" };
+// host "pc" also writes botstatus/pc, "sandbox" botstatus/sandbox, and botstatus/sandboxbusy while it has work (requests
+// waiting or a worker running): bot/sandbox/ensure.mjs stops the sandbox after a while without work, or once a PC is on.
+// Set up (WAKE_ON) or not, the same rows are written, so turning the sandbox on later needs no other change.
+export const WAKE_ON = !!process.env.GH_DISPATCH_TOKEN;
+async function heartbeat(running, api, host = "pc", pending = false) {
+  const at = new Date().toISOString();
+  const data = { lastPollAt: at, running: running === "1", host };
   const a = apiOf(api);
   if (a) data.api = a;
+  const row = (id, d) => ({ coll: "botstatus", id, data: d, updated_at: at });
+  const rows = [row("current", data), row(host, { lastPollAt: at, running: data.running })];
+  if (host === "sandbox" && (data.running || pending)) rows.push(row("sandboxbusy", { at }));
   await fetch(`${SB_URL}/rest/v1/docs`, {
     method: "POST",
     headers: { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=minimal" },
-    body: JSON.stringify([{ coll: "botstatus", id: "current", data, updated_at: data.lastPollAt }]),
+    body: JSON.stringify(rows),
   }).catch(() => {});
 }
+// botstatus/<id>.data, or null (missing or unreadable: never stops a poll).
+async function botDoc(id) {
+  try {
+    const r = await fetch(`${SB_URL}/rest/v1/docs?coll=eq.botstatus&id=eq.${id}&select=data`, { headers: { apikey: SERVICE, Authorization: `Bearer ${SERVICE}` } });
+    return r.ok ? ((await r.json())[0]?.data ?? null) : null;
+  } catch { return null; }
+}
+export const fresh = (iso, ms, now = Date.now()) => !!iso && now - new Date(iso).getTime() < ms;
+const hasPending = (marks) => Object.values(marks || {}).some((list) => list.some((m) => pendingOf({ data: m })));
 function apiOf(text) {
   let j; try { j = JSON.parse(String(text || "")); } catch { return null; }
   const n = (v) => (Number.isFinite(Number(v)) && Number(v) >= 0 && Number(v) < 1e6 ? Math.round(Number(v) * 100) / 100 : null);

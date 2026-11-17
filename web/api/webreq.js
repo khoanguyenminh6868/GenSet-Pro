@@ -4,6 +4,7 @@
 // (tlktreq/<TBMT>, a supplier's technical proposal uploaded under tlkt/<TBMT>/) Gợi ý nhà cung cấp (supplierreq/<TBMT>), Gợi ý cấu hình (configreq/<TBMT>) and its Tìm NCC (findreq/<TBMT>). Written server-side for a signed-in member, so they never depend on the
 // browser's direct database write. POST { coll, items: [{ key, notifyNo?, bidName?, sourceUrl?, auto?, cancel? }] }.
 import { SB_URL, memberFrom } from "./_supabase.js";
+import { wakeSandbox } from "./_wake.js";
 
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
 const COLLS = new Set(["analysisreq", "hsmtreq", "syncreq", "translationreq", "comparereq", "hsdtreq", "tlktreq", "supplierreq", "configreq", "findreq", "bidpricereq", "specreq"]);
@@ -53,7 +54,9 @@ export default async function handler(req, res) {
   // x-actor: the activity log's trigger records the member, not the service role, as the one who did it.
   const w = await fetch(`${SB_URL}/rest/v1/docs`, { method: "POST", headers: { ...sbHeaders, "x-actor": member.email, Prefer: "resolution=merge-duplicates,return=minimal" }, body: JSON.stringify(rows) });
   if (!w.ok) return res.status(502).json({ error: `Lưu thất bại (HTTP ${w.status}): ${(await w.text()).slice(0, 200)}` });
-  res.json({ saved: rows.map((r) => ({ key: r.id, data: r.data })) });
+  // No bot on: start the one in the Vercel Sandbox (api/_wake.js). Cancelling wakes nothing.
+  const wake = items.some((i) => !i.cancel) ? await wakeSandbox() : "off";
+  res.json({ saved: rows.map((r) => ({ key: r.id, data: r.data })), wake });
 }
 
 // POST { coll: "settings", ai: { use: { analysis|config|bidprice|compare: "api"|"plan" }, switchAtUsd, spentUsd } }.
