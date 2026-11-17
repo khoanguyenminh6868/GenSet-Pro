@@ -226,11 +226,6 @@ function github(db, req) {
     if (accept.includes("octet-stream")) return a.noLocation ? text("x", 200) : new Response(null, { status: 302, headers: { location: `https://objects.example/file/${m[1]}` } });
     return json(a.meta);
   }
-  // Bật sandbox (api/_wake.js): ghi lại lần chạy workflow; db.gh.dispatchStatus đổi mã trả về.
-  if (p === "/repos/owner/repo/actions/workflows/sandbox-ensure.yml/dispatches" && method === "POST") {
-    (db.gh.dispatches ||= []).push({ auth: req.headers.Authorization, body: req.body });
-    return new Response(null, { status: db.gh.dispatchStatus || 204 });
-  }
   if (p === "/repos/owner/repo/releases" && method === "GET") return json(u.searchParams.get("page") === "1" ? db.gh.releases : []);
   if ((m = p.match(/^\/repos\/owner\/repo\/(releases\/\d+|git\/refs\/tags\/.+)$/)) && method === "DELETE") return new Response(null, { status: 204 });
   if ((m = p.match(/^\/repos\/owner\/repo\/releases\/assets\/(\d+)$/))) return text("x", 404);
