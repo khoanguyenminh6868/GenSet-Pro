@@ -31,8 +31,6 @@ Viết gọn lại 13/11/2026 (sáng, giờ VN). Cập nhật 16/11: #786 (nối
 - specs: không nhận ra tệp YCKT thì tải tối đa 4 tệp không phải QĐ phê duyệt (điều phối đã duyệt thay) — xin xác nhận.
 - (17/11, từ KAYENGRAM) Số xi lanh HSMT ghi trơ là số chính xác (#825) mới áp ở bước chọn ứng viên: bước chấm đạt / không đạt (`makerSheetChecks`) có theo không? Khi chạy hints-audit toàn kho đếm luôn số gói ghi trơ (`cylExact`).
 - (17/11, từ KAYENGRAM) IB2600603983: web đang là kết quả Fable chạy TRƯỚC #820, #823, #825. Chạy Gợi ý lại (≈3 USD Opus) hay giữ? Bản 12/11 ở `genbid-work\so-sanh-model\IB2600603983\web-truoc\` trên máy KAYENGRAM.
-- Gỡ tác vụ Windows "GenBid specs pause" / "GenBid specs resume" trên KHOAMINIPC (Khoa 16/11 qua máy KAYENGRAM: "không cần nữa"): chờ Khoa xác nhận lại trước khi gỡ.
-
 ## Khoa đã bảo BỎ (đừng đề xuất lại)
 - Realtime bỏ hsmttext (#570 đã đóng). Egress chờ số Usage / lên Pro. Thử Sonnet thay Opus cho Phân tích + xếp gói. Xin datasheet đại lý. Bổ sung bảng cho 223/431 NCC chưa có dòng bảng. Ứng viên 30 → 50 dòng. Nới trần 6 cấu hình. Đầu phát mã TQ / S5L1D-H41. Giao hàng + MAF + giá vốn vào xếp hạng. Vụ repo public. Bảng chuẩn động cơ / đầu phát từ nguồn hãng (14/11). Gộp model chỉ khác O/0, I/1 (14/11). Code điền sẵn check để giảm token agent Gợi ý cấu hình (16/11). Chạy Đối chiếu HSDT một gói thật (16/11). Tải tay datasheet Perkins / Cummins đuôi -G2 (16/11). Ghi việc xoá tay thư mục `wt-*` vào sổ (16/11: không cần). IB2600601812: chạy lại Gợi ý, lấy datasheet ComAp AMF9 (16/11). Tài liệu đầy đủ Deep Sea để lập bảng chức năng BĐK (16/11). 247power.vn: KHÔNG revert 9fa5787 (16/11, giữ như main).
 
