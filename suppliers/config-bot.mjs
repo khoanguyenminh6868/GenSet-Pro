@@ -901,12 +901,16 @@ export function engineLists(t) {
     const lowered = (v, m) => Math.round(v * (1 - tolOf(m)) * 1000) / 1000;
     if (d) disp.push(lowered(Number(d[1].replace(",", ".")), d));
     else if (du) disp.push(lowered(/cc|cm/i.test(du[0]) ? Number(du[1].replace(/[.,]/, "")) / 1000 : Number(du[1].replace(",", ".")), du));
-    const c = cell.match(/(?:≥|>=|tối thiểu|ít nhất)\s*:?\s*0?(\d{1,2})\s*(?:xi|xy)\s?lanh/i) || cell.match(/s[ốo]\s*(?:xi|xy)\s?lanh[^\d\n]{0,30}?\b0?(\d{1,2})\s*(?:xi|xy)?\s?(?:lanh)?\b/i)
+    // Not a figure with a decimal part: "Số xilanh, đường kính x hành trình mm: 2.197" (IB2200029975, a table whose values
+    // sit one row off) is the displacement, not 2 cylinders (hints-audit 2026-11-17).
+    const c = cell.match(/(?:≥|>=|tối thiểu|ít nhất)\s*:?\s*0?(\d{1,2})\s*(?:xi|xy)\s?lanh/i) || cell.match(/s[ốo]\s*(?:xi|xy)\s?lanh[^\d\n]{0,30}?\b0?(\d{1,2})(?![.,]?\d)\s*(?:xi|xy)?\s?(?:lanh)?\b/i)
       || line.match(/^\s*[-+•]?\s*0?(\d{1,2})\s*(?:xi|xy)\s?lanh/i);
     if (c && Number(c[1]) >= 1 && Number(c[1]) <= 20) {
       cyl.push(Number(c[1]));
       // The bare count: no sign or word of a least or a most in the cell (cylExact, engineMins).
-      if (!AT_LEAST.test(cell) && !MAXIMUM.test(cell)) cylBare.push(Number(c[1]));
+      // ">3" ("Số xilanh >3", IB2400063033) is a least too, not the exact count: AT_LEAST has no ">" (the displacement
+      // rows lean on that), so only here.
+      if (!AT_LEAST.test(cell) && !MAXIMUM.test(cell) && !/(?<![-=])>\s*0?\d/.test(cell.slice(0, c.index + c[0].length))) cylBare.push(Number(c[1]));
     }
   });
   return { disp, dmax, cyl, cylBare };
@@ -1085,12 +1089,21 @@ export function powerRead(t) {
     // Only when the figure's own line has a label and no load, and the next line is nothing but the load.
     const ls = text.lastIndexOf("\n", m.index - 1) + 1, own = text.slice(ls, m.index), le = text.indexOf("\n", m.index);
     const ne = le < 0 ? -1 : text.indexOf("\n", le + 1), next = le < 0 ? "" : text.slice(le + 1, ne < 0 ? text.length : ne);
-    const under = /\p{L}{2}/u.test(own) && !/\d{2,3}\s*%/.test(own) ? next.match(/^\s*(?:ở\s+)?(?:mức\s+)?(\d{2,3})\s*%\s*(?:tải|phụ tải|công suất|load)?\s*[.;,]?\s*$/i) : null;
+    const under = /\p{L}{2}/u.test(own) && !/\d{2,3}\s*%/.test(own) ? next.match(/^\s*(?:ở\s+)?(?:ho[ạa]t [đd][ộo]ng\s+)?(?:mức\s+)?(\d{2,3})\s*%\s*(?:tải|phụ tải|công suất|load)?\s*[.;,]?\s*$/i) : null;
     // The load right after the figure on its own line ("≤ 3,7 lít/giờ tại (75 %) tải định mức" then "≤ 5,0 lít/giờ tại
     // (100 %) tải định mức", IB2600570050 / IB2600588204, found by hints-audit.mjs 2026-11-17): 5,0 took the 75% of the
     // line before. Only when the figure's own line gives no load before it.
     const rest = text.slice(m.index + m[0].length, le < 0 ? text.length : le);
-    const after = /\d{2,3}\s*%/.test(own) ? null : rest.match(/^\s*(?:t[ạa]i|[ởo]|khi|at|@)?\s*(?:m[ứu]c\s*)?\(?\s*(\d{2,3})\s*%\s*\)?\s*(?:t[ảa]i|ph[ụu] t[ảa]i|c[ôo]ng su[ấa]t|load)/i);
+    // The load after the figure may be introduced by a few words (IB2300204857 "≤ 34 Lít/ giờ với mức 75% tải", IB2300230061
+    // "≤ 23 lít/giờ ở chế độ hoạt động 75% tải", IB2400389666 "≤53 L/h (khi mức tải là 75%)"), or wrap to the next line
+    // ("≤23 L/h (khi mức tải là" / "75%)", IB2500073242): without it a 75% limit was taken for the 100% one (hints-audit 2026-11-17).
+    const lead = String.raw`^[\s(]*(?:(?:t[ạa]i|[ởo]|khi|at|@|v[ớo]i)\s+)*(?:(?:ch[ếe] [đd][ộo]\s+)?ho[ạa]t [đd][ộo]ng\s+|m[ứu]c\s+|t[ảa]i\s+(?:l[àa]\s+)?)*[\s(]*`;
+    const afterOne = (s) => s.match(new RegExp(lead + String.raw`(\d{2,3})\s*%`, "i")) && s.match(new RegExp(lead + String.raw`(\d{2,3})\s*%\s*\)?\s*(?:t[ảa]i|ph[ụu] t[ảa]i|c[ôo]ng su[ấa]t|load|[.;,)]|$)`, "i"));
+    // The figure's own cell wraps after "là" and the "75%)" is alone on one of the next three lines (a neighbouring cell's
+    // label may sit between them).
+    const tail = /(?:l[àa]|khi|m[ứu]c|t[ạa]i|[ởo])\s*$/i.test(rest) && le >= 0 ? text.slice(le + 1).split("\n", 3).find((l) => /^\s*\d{2,3}\s*%\s*\)?\s*$/.test(l)) : null;
+    const wrapped = tail ? rest + " " + tail.trim() : rest;
+    const after = /\d{2,3}\s*%/.test(own) ? null : afterOne(wrapped);
     const load = after || under || before.slice(-60).match(/(\d{2,3})\s*%(?![\s\S]*\d{2,3}\s*%)/);
     fuel.push({ v: numOf(m[1]), load: load ? Number(load[1]) : /đầy tải|full load/i.test(before.slice(-60)) ? 100 : null });
   }
