@@ -1,0 +1,2849 @@
+{
+ "at": "2026-11-17T07:56:00.976Z",
+ "count": {
+  "goi": 1499,
+  "coPhanTich": 1243,
+  "lech": 9,
+  "thieu": 274
+ },
+ "findings": [
+  {
+   "key": "IB2200004914",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    6
+   ],
+   "why": "Phân tích ghi 6 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2200008717",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3
+   ],
+   "why": "Phân tích ghi 3 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200016199",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2.9
+   ],
+   "why": "Phân tích ghi 2.9 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200019427",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    6
+   ],
+   "why": "Phân tích ghi 6 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2200022333",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    6
+   ],
+   "why": "Phân tích ghi 6 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2200029975",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4
+   ],
+   "why": "Phân tích ghi 4 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2200035219",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    1.65
+   ],
+   "why": "Phân tích ghi 1.65 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200043601",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    15
+   ],
+   "why": "Phân tích ghi 15 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200049662",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    79.83
+   ],
+   "why": "Phân tích ghi 79.83 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200062073",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4
+   ],
+   "why": "Phân tích ghi 4 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2200062524",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    1.65
+   ],
+   "why": "Phân tích ghi 1.65 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200063776",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    485
+   ],
+   "why": "Phân tích ghi 485 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200064629",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    5.57
+   ],
+   "why": "Phân tích ghi 5.57 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200064629",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4
+   ],
+   "why": "Phân tích ghi 4 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2200065469",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    23
+   ],
+   "why": "Phân tích ghi 23 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200065469",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    12
+   ],
+   "why": "Phân tích ghi 12 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200069368",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    28.5
+   ],
+   "why": "Phân tích ghi 28.5 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200069368",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    22
+   ],
+   "why": "Phân tích ghi 22 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200082109",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    56.9
+   ],
+   "why": "Phân tích ghi 56.9 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200082109",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    42.2
+   ],
+   "why": "Phân tích ghi 42.2 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200082109",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    28.4
+   ],
+   "why": "Phân tích ghi 28.4 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200083057",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    104
+   ],
+   "why": "Phân tích ghi 104 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200083057",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    80
+   ],
+   "why": "Phân tích ghi 80 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200093803",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    210
+   ],
+   "why": "Phân tích ghi 210 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200093814",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    360
+   ],
+   "why": "Phân tích ghi 360 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200093814",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    277
+   ],
+   "why": "Phân tích ghi 277 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200093814",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    190
+   ],
+   "why": "Phân tích ghi 190 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200095862",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    23.3
+   ],
+   "why": "Phân tích ghi 23.3 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2200100465",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4
+   ],
+   "why": "Phân tích ghi 4 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2300013484",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    360
+   ],
+   "why": "Phân tích ghi 360 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300013484",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    277
+   ],
+   "why": "Phân tích ghi 277 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300013484",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    190
+   ],
+   "why": "Phân tích ghi 190 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300022940",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    12
+   ],
+   "why": "Phân tích ghi 12 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2300023194",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    6
+   ],
+   "why": "Phân tích ghi 6 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2300031444",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    104
+   ],
+   "why": "Phân tích ghi 104 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300031444",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    82
+   ],
+   "why": "Phân tích ghi 82 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300048778",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4.2
+   ],
+   "why": "Phân tích ghi 4.2 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300048778",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4
+   ],
+   "why": "Phân tích ghi 4 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2300067312",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3
+   ],
+   "why": "Phân tích ghi 3 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300083662",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    42.1
+   ],
+   "why": "Phân tích ghi 42.1 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300083662",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    24
+   ],
+   "why": "Phân tích ghi 24 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300089882",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    12.9
+   ],
+   "why": "Phân tích ghi 12.9 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300089882",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    10.1
+   ],
+   "why": "Phân tích ghi 10.1 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300096122",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    181
+   ],
+   "why": "Phân tích ghi 181 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300096122",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    137
+   ],
+   "why": "Phân tích ghi 137 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300098387",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    27
+   ],
+   "why": "Phân tích ghi 27 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300123990",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    8.76
+   ],
+   "why": "Phân tích ghi 8.76 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300123990",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4
+   ],
+   "why": "Phân tích ghi 4 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2300131371",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    6.6
+   ],
+   "why": "Phân tích ghi 6.6 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300135650",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    5.5
+   ],
+   "why": "Phân tích ghi 5.5 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300135650",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4.5
+   ],
+   "why": "Phân tích ghi 4.5 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300153051",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    28.7
+   ],
+   "why": "Phân tích ghi 28.7 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300158982",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    6
+   ],
+   "why": "Phân tích ghi 6 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2300177056",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    1.2
+   ],
+   "why": "Phân tích ghi 1.2 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300191244",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    28.4
+   ],
+   "why": "Phân tích ghi 28.4 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300191244",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    6
+   ],
+   "why": "Phân tích ghi 6 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2300192935",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    1154
+   ],
+   "why": "Phân tích ghi 1154 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300193337",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    6
+   ],
+   "why": "Phân tích ghi 6 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2300198424",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    8.26
+   ],
+   "why": "Phân tích ghi 8.26 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300212821",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2
+   ],
+   "why": "Phân tích ghi 2 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2300217672",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    115.1
+   ],
+   "why": "Phân tích ghi 115.1 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300217672",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    83.4
+   ],
+   "why": "Phân tích ghi 83.4 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300220302",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    44
+   ],
+   "why": "Phân tích ghi 44 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300220302",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    33
+   ],
+   "why": "Phân tích ghi 33 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300230061",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    6
+   ],
+   "why": "Phân tích ghi 6 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2300230755",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3
+   ],
+   "why": "Phân tích ghi 3 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300231276",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    6
+   ],
+   "why": "Phân tích ghi 6 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2300232850",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    8
+   ],
+   "why": "Phân tích ghi 8 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300233670",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    400
+   ],
+   "why": "Phân tích ghi 400 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300233670",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    300
+   ],
+   "why": "Phân tích ghi 300 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300236144",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4
+   ],
+   "why": "Phân tích ghi 4 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2300238745",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    60
+   ],
+   "why": "Phân tích ghi 60 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300238745",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    36
+   ],
+   "why": "Phân tích ghi 36 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300248981",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    324
+   ],
+   "why": "Phân tích ghi 324 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300248981",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    174
+   ],
+   "why": "Phân tích ghi 174 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300255930",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    91
+   ],
+   "why": "Phân tích ghi 91 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300255930",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    6
+   ],
+   "why": "Phân tích ghi 6 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2300265021",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    12
+   ],
+   "why": "Phân tích ghi 12 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300266461",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    8.56
+   ],
+   "why": "Phân tích ghi 8.56 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300275509",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    12
+   ],
+   "why": "Phân tích ghi 12 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2300275764",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    54
+   ],
+   "why": "Phân tích ghi 54 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300275764",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    46.9
+   ],
+   "why": "Phân tích ghi 46.9 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300275764",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    30.5
+   ],
+   "why": "Phân tích ghi 30.5 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300275764",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    6
+   ],
+   "why": "Phân tích ghi 6 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2300278513",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    71.5
+   ],
+   "why": "Phân tích ghi 71.5 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300278731",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    6
+   ],
+   "why": "Phân tích ghi 6 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2300285618",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    63.1
+   ],
+   "why": "Phân tích ghi 63.1 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300288169",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    78
+   ],
+   "why": "Phân tích ghi 78 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300291304",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    20.5
+   ],
+   "why": "Phân tích ghi 20.5 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300291304",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    6
+   ],
+   "why": "Phân tích ghi 6 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2300293753",
+   "field": "minCyl",
+   "level": "lech",
+   "code": 3,
+   "analysis": [
+    6
+   ],
+   "why": "Phân tích ghi 6 xi lanh"
+  },
+  {
+   "key": "IB2300298164",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    26
+   ],
+   "why": "Phân tích ghi 26 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300299959",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2.05
+   ],
+   "why": "Phân tích ghi 2.05 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300301452",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    9.5
+   ],
+   "why": "Phân tích ghi 9.5 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300312776",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.5
+   ],
+   "why": "Phân tích ghi 3.5 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300329776",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2.3
+   ],
+   "why": "Phân tích ghi 2.3 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300340905",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    21.25
+   ],
+   "why": "Phân tích ghi 21.25 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300349583",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    7.5
+   ],
+   "why": "Phân tích ghi 7.5 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300356147",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    14.5
+   ],
+   "why": "Phân tích ghi 14.5 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300356147",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    10.2
+   ],
+   "why": "Phân tích ghi 10.2 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300363458",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4
+   ],
+   "why": "Phân tích ghi 4 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2300363623",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3
+   ],
+   "why": "Phân tích ghi 3 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300364915",
+   "field": "maxFuel",
+   "level": "lech",
+   "code": 113,
+   "analysis": [
+    84,
+    113
+   ],
+   "why": "code lấy số của mức 75% tải làm mức 100% tải"
+  },
+  {
+   "key": "IB2300371415",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    6
+   ],
+   "why": "Phân tích ghi 6 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2300371456",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.8
+   ],
+   "why": "Phân tích ghi 3.8 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2300372629",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4
+   ],
+   "why": "Phân tích ghi 4 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2300386535",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4
+   ],
+   "why": "Phân tích ghi 4 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400008052",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    20
+   ],
+   "why": "Phân tích ghi 20 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400030643",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    0.22
+   ],
+   "why": "Phân tích ghi 0.22 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400031785",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    5.5
+   ],
+   "why": "Phân tích ghi 5.5 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400031785",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4.5
+   ],
+   "why": "Phân tích ghi 4.5 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400043110",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    140
+   ],
+   "why": "Phân tích ghi 140 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400054276",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    5.43
+   ],
+   "why": "Phân tích ghi 5.43 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400062449",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4.5
+   ],
+   "why": "Phân tích ghi 4.5 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400062449",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.6
+   ],
+   "why": "Phân tích ghi 3.6 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400063033",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.18
+   ],
+   "why": "Phân tích ghi 3.18 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400063033",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2.6
+   ],
+   "why": "Phân tích ghi 2.6 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400063033",
+   "field": "minCyl",
+   "level": "lech",
+   "code": 3,
+   "analysis": [
+    19
+   ],
+   "why": "Phân tích ghi 19 xi lanh"
+  },
+  {
+   "key": "IB2400073077",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    12
+   ],
+   "why": "Phân tích ghi 12 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2400085846",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    350
+   ],
+   "why": "Phân tích ghi 350 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400085846",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    300
+   ],
+   "why": "Phân tích ghi 300 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400085846",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    12
+   ],
+   "why": "Phân tích ghi 12 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2400090868",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    5.43
+   ],
+   "why": "Phân tích ghi 5.43 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400100405",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    446
+   ],
+   "why": "Phân tích ghi 446 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400103308",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2.05
+   ],
+   "why": "Phân tích ghi 2.05 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400111485",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    56.9
+   ],
+   "why": "Phân tích ghi 56.9 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400111485",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    42.2
+   ],
+   "why": "Phân tích ghi 42.2 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400111485",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    28.4
+   ],
+   "why": "Phân tích ghi 28.4 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400111737",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    20
+   ],
+   "why": "Phân tích ghi 20 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2400121273",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3
+   ],
+   "why": "Phân tích ghi 3 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2400127023",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.5
+   ],
+   "why": "Phân tích ghi 3.5 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400127023",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2.8
+   ],
+   "why": "Phân tích ghi 2.8 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400133175",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3
+   ],
+   "why": "Phân tích ghi 3 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400134652",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    11.5
+   ],
+   "why": "Phân tích ghi 11.5 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400153322",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.18
+   ],
+   "why": "Phân tích ghi 3.18 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400153322",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2.05
+   ],
+   "why": "Phân tích ghi 2.05 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400155713",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4.83
+   ],
+   "why": "Phân tích ghi 4.83 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400182235",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.1
+   ],
+   "why": "Phân tích ghi 3.1 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400186078",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2.8
+   ],
+   "why": "Phân tích ghi 2.8 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400226406",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4
+   ],
+   "why": "Phân tích ghi 4 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2400255232",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    7.5
+   ],
+   "why": "Phân tích ghi 7.5 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400255232",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    5.4
+   ],
+   "why": "Phân tích ghi 5.4 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400257256",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4.5
+   ],
+   "why": "Phân tích ghi 4.5 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400258097",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    6
+   ],
+   "why": "Phân tích ghi 6 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2400265203",
+   "field": "maxFuel75",
+   "level": "lech",
+   "code": 17,
+   "analysis": [
+    12,
+    9,
+    23,
+    17
+   ],
+   "why": "code lấy số của mức 100% tải làm mức 75% tải"
+  },
+  {
+   "key": "IB2400265203",
+   "field": "minCyl",
+   "level": "lech",
+   "code": 3,
+   "analysis": [
+    1
+   ],
+   "why": "Phân tích ghi 1 xi lanh"
+  },
+  {
+   "key": "IB2400268027",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4.5
+   ],
+   "why": "Phân tích ghi 4.5 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400268027",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.6
+   ],
+   "why": "Phân tích ghi 3.6 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400270154",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    37
+   ],
+   "why": "Phân tích ghi 37 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400270154",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    31
+   ],
+   "why": "Phân tích ghi 31 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400291063",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4
+   ],
+   "why": "Phân tích ghi 4 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400291063",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3
+   ],
+   "why": "Phân tích ghi 3 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400298819",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    58.1
+   ],
+   "why": "Phân tích ghi 58.1 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400298819",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    43.6
+   ],
+   "why": "Phân tích ghi 43.6 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400298819",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    30
+   ],
+   "why": "Phân tích ghi 30 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400311574",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4.5
+   ],
+   "why": "Phân tích ghi 4.5 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400311574",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.5
+   ],
+   "why": "Phân tích ghi 3.5 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400313213",
+   "field": "maxFuel",
+   "level": "lech",
+   "code": 486,
+   "analysis": [
+    118,
+    486
+   ],
+   "why": "code lấy số của mức 25% tải làm mức 100% tải"
+  },
+  {
+   "key": "IB2400333932",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    446
+   ],
+   "why": "Phân tích ghi 446 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400352866",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    77
+   ],
+   "why": "Phân tích ghi 77 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400352866",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    55
+   ],
+   "why": "Phân tích ghi 55 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400362458",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4
+   ],
+   "why": "Phân tích ghi 4 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2400371783",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    69
+   ],
+   "why": "Phân tích ghi 69 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400389856",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    24.2
+   ],
+   "why": "Phân tích ghi 24.2 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400389856",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    18.2
+   ],
+   "why": "Phân tích ghi 18.2 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400389856",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    12.5
+   ],
+   "why": "Phân tích ghi 12.5 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400427929",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.2
+   ],
+   "why": "Phân tích ghi 3.2 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400427929",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2.5
+   ],
+   "why": "Phân tích ghi 2.5 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400429887",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    6
+   ],
+   "why": "Phân tích ghi 6 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2400439995",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    58.1
+   ],
+   "why": "Phân tích ghi 58.1 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400439995",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    43.6
+   ],
+   "why": "Phân tích ghi 43.6 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400439995",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    30
+   ],
+   "why": "Phân tích ghi 30 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400457172",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.1
+   ],
+   "why": "Phân tích ghi 3.1 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400474549",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4
+   ],
+   "why": "Phân tích ghi 4 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400481610",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2.05
+   ],
+   "why": "Phân tích ghi 2.05 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400482148",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2
+   ],
+   "why": "Phân tích ghi 2 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2400487460",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4
+   ],
+   "why": "Phân tích ghi 4 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2400487645",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.5
+   ],
+   "why": "Phân tích ghi 3.5 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400489361",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    66.8
+   ],
+   "why": "Phân tích ghi 66.8 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400489361",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    49.8
+   ],
+   "why": "Phân tích ghi 49.8 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400489361",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    32.7
+   ],
+   "why": "Phân tích ghi 32.7 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400491226",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    6
+   ],
+   "why": "Phân tích ghi 6 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2400493077",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2
+   ],
+   "why": "Phân tích ghi 2 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400493077",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2
+   ],
+   "why": "Phân tích ghi 2 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400493077",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2
+   ],
+   "why": "Phân tích ghi 2 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400495407",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4
+   ],
+   "why": "Phân tích ghi 4 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2400497000",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3
+   ],
+   "why": "Phân tích ghi 3 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2400517601",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    75
+   ],
+   "why": "Phân tích ghi 75 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400529458",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    0.5
+   ],
+   "why": "Phân tích ghi 0.5 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400529458",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    0.5
+   ],
+   "why": "Phân tích ghi 0.5 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400529458",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    0.5
+   ],
+   "why": "Phân tích ghi 0.5 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400545050",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    67
+   ],
+   "why": "Phân tích ghi 67 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400545050",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    53
+   ],
+   "why": "Phân tích ghi 53 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400545050",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    38
+   ],
+   "why": "Phân tích ghi 38 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400560982",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    0.5
+   ],
+   "why": "Phân tích ghi 0.5 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400560982",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    0.5
+   ],
+   "why": "Phân tích ghi 0.5 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400560982",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    0.5
+   ],
+   "why": "Phân tích ghi 0.5 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400561834",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    0.5
+   ],
+   "why": "Phân tích ghi 0.5 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400561834",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    0.5
+   ],
+   "why": "Phân tích ghi 0.5 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400561834",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    0.5
+   ],
+   "why": "Phân tích ghi 0.5 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2400573523",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    65.11
+   ],
+   "why": "Phân tích ghi 65.11 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500001551",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4
+   ],
+   "why": "Phân tích ghi 4 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2500076938",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.18
+   ],
+   "why": "Phân tích ghi 3.18 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500076938",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2.05
+   ],
+   "why": "Phân tích ghi 2.05 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500102600",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    446
+   ],
+   "why": "Phân tích ghi 446 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500118275",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4.2
+   ],
+   "why": "Phân tích ghi 4.2 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500118275",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.2
+   ],
+   "why": "Phân tích ghi 3.2 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500118275",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2.5
+   ],
+   "why": "Phân tích ghi 2.5 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500118283",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4.2
+   ],
+   "why": "Phân tích ghi 4.2 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500118283",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.2
+   ],
+   "why": "Phân tích ghi 3.2 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500118283",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2.5
+   ],
+   "why": "Phân tích ghi 2.5 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500118294",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4.2
+   ],
+   "why": "Phân tích ghi 4.2 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500118294",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.2
+   ],
+   "why": "Phân tích ghi 3.2 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500118294",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2.5
+   ],
+   "why": "Phân tích ghi 2.5 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500129189",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    47
+   ],
+   "why": "Phân tích ghi 47 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500177469",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3
+   ],
+   "why": "Phân tích ghi 3 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2500189935",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.5
+   ],
+   "why": "Phân tích ghi 3.5 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500198459",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.1
+   ],
+   "why": "Phân tích ghi 3.1 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500279384",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    5.5
+   ],
+   "why": "Phân tích ghi 5.5 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500279384",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4.5
+   ],
+   "why": "Phân tích ghi 4.5 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500280916",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4.5
+   ],
+   "why": "Phân tích ghi 4.5 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500280916",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.6
+   ],
+   "why": "Phân tích ghi 3.6 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500314001",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2.1
+   ],
+   "why": "Phân tích ghi 2.1 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500314401",
+   "field": "maxFuel",
+   "level": "lech",
+   "code": 70.6,
+   "analysis": [
+    53.5,
+    70.6
+   ],
+   "why": "code lấy số của mức 75% tải làm mức 100% tải"
+  },
+  {
+   "key": "IB2500360458",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    335
+   ],
+   "why": "Phân tích ghi 335 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500372309",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    135
+   ],
+   "why": "Phân tích ghi 135 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500372309",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    105
+   ],
+   "why": "Phân tích ghi 105 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500372309",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    70
+   ],
+   "why": "Phân tích ghi 70 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500376934",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.5
+   ],
+   "why": "Phân tích ghi 3.5 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500376934",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2.8
+   ],
+   "why": "Phân tích ghi 2.8 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500381511",
+   "field": "maxFuel50",
+   "level": "lech",
+   "code": 232,
+   "analysis": [
+    336,
+    232
+   ],
+   "why": "code lấy số của mức 75% tải làm mức 50% tải"
+  },
+  {
+   "key": "IB2500385135",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    4
+   ],
+   "why": "Phân tích ghi 4 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2500390999",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.1
+   ],
+   "why": "Phân tích ghi 3.1 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500402318",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    70
+   ],
+   "why": "Phân tích ghi 70 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500405459",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    160
+   ],
+   "why": "Phân tích ghi 160 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500405459",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    115
+   ],
+   "why": "Phân tích ghi 115 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500405459",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    78
+   ],
+   "why": "Phân tích ghi 78 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500432527",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    190
+   ],
+   "why": "Phân tích ghi 190 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500432527",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    147
+   ],
+   "why": "Phân tích ghi 147 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500432527",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    102
+   ],
+   "why": "Phân tích ghi 102 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500442970",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.5
+   ],
+   "why": "Phân tích ghi 3.5 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500442970",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3
+   ],
+   "why": "Phân tích ghi 3 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500445635",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    89.3
+   ],
+   "why": "Phân tích ghi 89.3 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500447006",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2.9
+   ],
+   "why": "Phân tích ghi 2.9 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500448140",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    82
+   ],
+   "why": "Phân tích ghi 82 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500498331",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3
+   ],
+   "why": "Phân tích ghi 3 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2500570880",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    41.6
+   ],
+   "why": "Phân tích ghi 41.6 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500570880",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    30.4
+   ],
+   "why": "Phân tích ghi 30.4 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500570880",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    21
+   ],
+   "why": "Phân tích ghi 21 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500570880",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    6
+   ],
+   "why": "Phân tích ghi 6 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2500571943",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.1
+   ],
+   "why": "Phân tích ghi 3.1 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2500598824",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2
+   ],
+   "why": "Phân tích ghi 2 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2500626302",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    108
+   ],
+   "why": "Phân tích ghi 108 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600184587",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    532
+   ],
+   "why": "Phân tích ghi 532 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600184587",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    295
+   ],
+   "why": "Phân tích ghi 295 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600192365",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    309
+   ],
+   "why": "Phân tích ghi 309 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600192365",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    238
+   ],
+   "why": "Phân tích ghi 238 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600192365",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    167
+   ],
+   "why": "Phân tích ghi 167 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600252436",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    86
+   ],
+   "why": "Phân tích ghi 86 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600252436",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    62
+   ],
+   "why": "Phân tích ghi 62 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600253287",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    31
+   ],
+   "why": "Phân tích ghi 31 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600278676",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    19.4
+   ],
+   "why": "Phân tích ghi 19.4 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600278676",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    9.6
+   ],
+   "why": "Phân tích ghi 9.6 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600280799",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3.5
+   ],
+   "why": "Phân tích ghi 3.5 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600280799",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2.8
+   ],
+   "why": "Phân tích ghi 2.8 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600280799",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    2.4
+   ],
+   "why": "Phân tích ghi 2.4 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600350175",
+   "field": "maxFuel75",
+   "level": "lech",
+   "code": 160,
+   "analysis": [
+    220,
+    160
+   ],
+   "why": "code lấy số của mức 100% tải làm mức 75% tải"
+  },
+  {
+   "key": "IB2600374560",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    6
+   ],
+   "why": "Phân tích ghi 6 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2600392438",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    19.4
+   ],
+   "why": "Phân tích ghi 19.4 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600392438",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    9.6
+   ],
+   "why": "Phân tích ghi 9.6 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600395994",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    6
+   ],
+   "why": "Phân tích ghi 6 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2600418114",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    195
+   ],
+   "why": "Phân tích ghi 195 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600418114",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    140
+   ],
+   "why": "Phân tích ghi 140 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600418114",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    110
+   ],
+   "why": "Phân tích ghi 110 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600434462",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3
+   ],
+   "why": "Phân tích ghi 3 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600448676",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    65
+   ],
+   "why": "Phân tích ghi 65 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600450900",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    3
+   ],
+   "why": "Phân tích ghi 3 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2600511162",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    240
+   ],
+   "why": "Phân tích ghi 240 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600511162",
+   "field": "minCyl",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    16
+   ],
+   "why": "Phân tích ghi 16 xi lanh, code không đọc ra"
+  },
+  {
+   "key": "IB2600511196",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    200
+   ],
+   "why": "Phân tích ghi 200 L/h ở 100% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600511196",
+   "field": "maxFuel75",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    150
+   ],
+   "why": "Phân tích ghi 150 L/h ở 75% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600511196",
+   "field": "maxFuel50",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    105
+   ],
+   "why": "Phân tích ghi 105 L/h ở 50% tải, code không đọc ra"
+  },
+  {
+   "key": "IB2600587429",
+   "field": "maxFuel",
+   "level": "thieu",
+   "code": null,
+   "analysis": [
+    11.3
+   ],
+   "why": "Phân tích ghi 11.3 L/h ở 100% tải, code không đọc ra"
+  }
+ ]
+}
