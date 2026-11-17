@@ -42,7 +42,8 @@
   // "油机型号" (oil engine model, comler-power) and "动力型号" / "配套动力" (power unit model, kanpor-fuan) name the engine too.
   const ENGINE_LBL = /engine|发动机|柴油机|引擎|motor\s*model|油机|动力型号|配套动力/i;
   const ALT_LBL = /alternator|generator\s*(model|type|brand)|发电机|电球|stamford|leroy|mecc|marathon|engga|alternador/i;
-  const GENSET_LBL = /genset|gen-set|generator\s*set|机组/i;
+  const STROKE_VAL = /\b(4|four|2|two)[\s-]*(stroke|cycle)|[四二42]\s*冲程/i;
+  const GENSET_LBL =/genset|gen-set|generator\s*set|机组/i;
   const PRIME = /prime|\bprp\b|continuous|\bcop\b|常用|主用|liên tục/i;
   const STANDBY = /standby|stand[\s-]by|\besp\b|\bltp\b|backup|备用|dự phòng|max(imum)?\s*power/i;
   // Engine makes from outside China (Khoa, 2026-10-29: "Xuất xứ: Trung Quốc" in Gợi ý cấu hình leaves them out).
@@ -541,7 +542,15 @@
     const cols = [];
     // The first line naming a value wins: single-model pages often list related models further down.
     const put = (j, k, v) => { const c = (cols[j] = cols[j] || {}); if (c[k] == null) c[k] = v; };
-    const merge = (j, k, v) => { const c = (cols[j] = cols[j] || {}); c[k] = { ...v, ...(c[k] || {}) }; };
+    // A second line adds the other unit of a rating only when the two are one output: kW = 0,8 × kVA (rounded) or
+    // kW = kVA. Else the later line is another machine's ("Prime Power: 312.5KVA" of the genset, then "Prime power |
+    // KW | 280" of its engine, longkai: 312,5 kVA / 280 kW; rà soát 18/11/2026) and is left out.
+    const merge = (j, k, v) => {
+      const c = (cols[j] = cols[j] || {}), cur = c[k] || {}, nx = { ...v, ...cur };
+      const cross = (cur.kVA != null) !== (cur.kW != null) && nx.kVA != null && nx.kW != null;
+      if (cross && nx.kW !== nx.kVA && Math.abs(nx.kW - 0.8 * nx.kVA) > Math.max(0.5, 0.02 * nx.kVA)) return;
+      c[k] = nx;
+    };
     // Datasheets put the engine and the alternator under their own heading ("Engine specification", then
     // "Model | 4B3.9-G11"): a bare "Model" or "Brand" line belongs to the part whose heading it is under.
     let part = null;
@@ -570,7 +579,11 @@
       if (v.length !== M) continue;
       v.forEach((x, j) => { const r = Number(((/power|kw/.test(lb) && x.includes("/") ? x.split("/")[1] : x).match(/\d{3,4}/) || [])[0]); if (r && ![1000, 1200, 1500, 1800, 3000, 3600].includes(r)) badCol.add(j); });
     }
-    for (const l of lines) {
+    // The label of a line ("Engine Type: 4-stroke diesel", "| Rated Engine Output | …"): what stands before the value.
+    const labelOf = (x) => String(x || "").replace(/^\|\s*/, "").split(/[:：|]/)[0];
+    const plainSheet = !details && lines.every((x) => !String(x).includes("|")) && lines.filter((x) => /^\s*model\s*[:：]/i.test(x)).length >= 2
+      && !lines.some((x) => /(engine|alternator|generator|genset)\s*(model|ref)/i.test(labelOf(x)));
+    for (const [li, l] of lines.entries()) {
       let c = cellsOf(l);
       // Only label words are joined; numbers there are a second figure per model (50 / 60 Hz columns).
       if (W && c.length - 1 > W && c.length - 1 <= W + 2 && !c.slice(1, c.length - W).some((x) => /\d/.test(x))) c = [c.slice(0, c.length - W).filter(Boolean).join(" "), ...c.slice(c.length - W)];
@@ -594,6 +607,19 @@
       if (M && !MODEL_ROW.test(bare) && c.slice(1).filter((v) => v && !UNIT_CELL.test(v)).length !== M) continue;
       if (part && /^(model|model\s*no\.?|type\s*model|型号)$/.test(bare)) { if (isCode(vals[0])) put(0, part === "engine" ? "engine" : "alternator", vals[0]); continue; }
       if (bareModel && !part && /^(model|model\s*no\.?|型号)$/.test(bare)) { if (isCode(vals[0])) put(0, (details ? cols[0]?.engine != null : ALT_CODE.test(vals[0])) ? "alternator" : "engine", vals[0]); continue; }
+      // A sheet with no part headings (himoinsa, hipower: "Rated Engine Output: …", "Model: 4TNV88BGGEH", "Engine Type:
+      // 4-stroke diesel" … "Model: S1L2.J1"): a bare "Model" beside an engine's line is the engine, not the genset;
+      // a later one written as an alternator's code is the alternator (rà soát 18/11/2026: the engine was read as the
+      // genset, "4-stroke diesel" as the engine).
+      // Only such a sheet: every line "label: value" with no cells, two "Model" lines or more, none of them naming its part.
+      if (plainSheet && !part && !bareModel && bare === "model" && c.length === 2) {
+        const eng = cols[0]?.sheetEngine, code = isCode(vals[0]) && !/\s/.test(vals[0]);
+        if (!eng && !code) continue;
+        if (!eng && [lines[li - 1], lines[li + 1]].some((x) => ENGINE_LBL.test(labelOf(x)))) { put(0, "engine", vals[0]); cols[0].sheetEngine = true; continue; }
+        if (eng && code && cols[0].alternator == null && ALT_CODE.test(vals[0])) { put(0, "alternator", vals[0]); continue; }
+        // A third one (a second alternator offered, a controller) is not the genset's model.
+        if (eng) continue;
+      }
       if (part && /^(brand|make|manufacturer|品牌|厂家|制造商)$/.test(bare)) { put(0, part === "engine" ? "engineBrand" : "altBrand", vals[0]); continue; }
       const sk = specKey(label);
       if (sk && /^fuel/.test(sk) && !W) {
@@ -621,11 +647,12 @@
       // "Power model" (动力型号) is the engine on Koop pages ("| Power model | KD292F").
       if (/^engine\s+ref\.?$|^power\s+model$/.test(bare)) { vals.forEach((v, j) => isCode(v.replace(/\s*\*$/, "")) && put(j, "engine", v.replace(/\s*\*$/, ""))); continue; }
       if (ENGINE_LBL.test(L) && /model|type|型号|^\s*(diesel\s*)?engine\s*$|发动机$|柴油机$/i.test(L) && !/brand|make|manufactur|speed|power|output|cylinder|displace|bore|governor|consum|oil|cool|start|origin|品牌|厂家/i.test(L))
-        vals.forEach((v, j) => put(j, "engine", v));
+        vals.forEach((v, j) => !(STROKE_VAL.test(v) && !String(v).split(/[\s,]+/).some((w) => /[a-z]/i.test(w) && /\d/.test(w) && !/stroke|cycle|冲程/i.test(w))) && put(j, "engine", v)); // "Engine Type: 4-stroke diesel" names no model
       else if (ENGINE_LBL.test(L) && /brand|make|manufactur|品牌|厂家/i.test(L)) vals.forEach((v, j) => put(j, "engineBrand", v));
       else if (ALT_LBL.test(L) && /brand|make|manufactur|品牌|厂家/i.test(L)) vals.forEach((v, j) => put(j, "altBrand", v));
       else if (ALT_LBL.test(L) && !/power|output|efficien|insulat|protect|voltage|regulat|excit|bearing|winding|pitch|temp|speed|frequency|cool/i.test(L)) vals.forEach((v, j) => /\d/.test(v) && put(j, "alternator", v)); // a model has a digit: "| Alternator | Control system" is two headings
-      else if (/power|output|capacity|rating|功率|công suất/i.test(L) && !/factor|engine|消耗|consum/i.test(L)) {
+      // "Starting power: 1,4 kW" is the starter motor's, a heater's or a charger's power is its own: not the genset's.
+      else if (/power|output|capacity|rating|功率|công suất/i.test(L) && !/factor|engine|消耗|consum|start|heater|charg|battery|启动|起动|加热|充电/i.test(L)) {
         const kind = PRIME.test(L) ? "prime" : STANDBY.test(L) ? "standby" : "rated";
         vals.forEach((v, j) => {
           const both = String(v).match(/(\d+(?:[.,]\d+)?)\s*(kva|kw)\s*[/／]\s*(\d+(?:[.,]\d+)?)\s*(kva|kw)/i);
