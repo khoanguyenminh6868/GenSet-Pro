@@ -115,26 +115,6 @@
       "file": "sources/saudi-diesel/105.md"
     },
     {
-      "n": 106,
-      "url": "https://www.saudidiesel.com.sa/our-products/construction-equipment/develon-wheel-loaders/",
-      "accessedAt": "2026-11-13",
-      "tier": "A",
-      "quote": [
-        "Engine power: 127 kW @ 2,200 rpm"
-      ],
-      "file": "sources/saudi-diesel/106.md"
-    },
-    {
-      "n": 107,
-      "url": "https://www.saudidiesel.com.sa/our-products/construction-equipment/disd-wheel-loaders/",
-      "accessedAt": "2026-11-13",
-      "tier": "A",
-      "quote": [
-        "Engine power: 92 kW"
-      ],
-      "file": "sources/saudi-diesel/107.md"
-    },
-    {
       "n": 109,
       "url": "https://www.saudidiesel.com.sa/our-products/power-equipment/bobcat-large-generators/pg220w/",
       "accessedAt": "2026-11-13",
@@ -598,29 +578,6 @@
         "Engine Model: S16R-PTA3",
         "Standby Power: 2500 kVA / 2000 kW",
         "Prime Power: 2262.5 kVA / 1810 kW"
-      ]
-    },
-    {
-      "n": 106,
-      "title": "DEVELON Wheel Loaders in Saudi Arabia | SDEC",
-      "header": [],
-      "rows": [
-        "Engine power: 127 kW @ 2,200 rpm",
-        "Engine power: 156 kW @ 2,100 rpm",
-        "Engine power: 257 kW @ 1,800 rpm",
-        "Engine power: 218 kW @ 2,000 rpm",
-        "Engine power: 294 kW @ 2,100 rpm"
-      ]
-    },
-    {
-      "n": 107,
-      "title": "DISD Small Wheel Loaders in Saudi Arabia | SDEC",
-      "header": [],
-      "rows": [
-        "Engine power: 92 kW",
-        "Engine power: 162 kW",
-        "Engine power: 160 kW @ 2,000 rpm",
-        "Engine Power: 178 KW"
       ]
     },
     {

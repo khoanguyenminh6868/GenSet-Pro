@@ -224,16 +224,6 @@
       "file": "sources/rcg-power/114.md"
     },
     {
-      "n": 115,
-      "url": "https://www.rcgpower.com/products/Lighting-Towers/RCG-4000-Series-LIGHT-TOWER.html",
-      "accessedAt": "2026-11-13",
-      "tier": "A",
-      "quote": [
-        "| | RCG4000PMH | RCG4000PLED"
-      ],
-      "file": "sources/rcg-power/115.md"
-    },
-    {
       "n": 120,
       "url": "https://www.rcgpower.com/cn/products/Diesel-Generator-Set/R-H-Series.html",
       "accessedAt": "2026-11-13",
@@ -242,16 +232,6 @@
         "| | 型号 | 主电源 | 备用电源 | 发动机 | 交流发电机 | 下载"
       ],
       "file": "sources/rcg-power/120.md"
-    },
-    {
-      "n": 122,
-      "url": "https://www.rcgpower.com/cn/products/Lighting-Towers/RCG-4000-Series-LIGHT-TOWER.html",
-      "accessedAt": "2026-11-13",
-      "tier": "A",
-      "quote": [
-        "| | RCG4000PMH | RCG4000PLED"
-      ],
-      "file": "sources/rcg-power/122.md"
     },
     {
       "n": 124,
@@ -1304,33 +1284,6 @@
       ]
     },
     {
-      "n": 115,
-      "title": "RCG 4000 Series LIGHT TOWER-Jiangsu Ruichang Gold Generating Equipment Co. Ltd",
-      "header": [
-        "| | RCG4000PMH | RCG4000PLED",
-        "| LIGHT | 4x1000w METAL HALIDE | 4x350w LED",
-        "| FUEL / POWER SOURCE | Diesel | Diesel",
-        "| ENGINE | Perkins | Perkins"
-      ],
-      "rows": [
-        "| ENGINE MODEL | 403D-11G | 403D-11G",
-        "| DISPLACEMENT (L) | 1.1 | 1.1",
-        "| CYLINDERS | 3 | 3",
-        "| MAST TYPE | Vertical | Vertical",
-        "| MAST SECTIONS | 5 | 5",
-        "| MAST HEIGHT FT (M) | 30FT (9M) | 30FT (9M)",
-        "| STANDARD WINCH | MANUAL | MANUAL",
-        "| CONTINUOUS POWER (MAX KW) | 7KW | 7KW",
-        "| SOUND dB | 68 | 68",
-        "| LUMINAIRE EXPECTED LIFE SPAN (hr) | 1000 | 50000",
-        "| AUTO ON/OFF | Optional | Optional",
-        "| DUST TO DAWN SENSOR | Optional | Optional",
-        "| ELECTRICAL OUTLETS | (1) 120V 20A duplex (1) 120/240V 30A | (1) 120V 20A duplex (1) 120/240V 30A",
-        "| DIMENTION (MM) | 3035*1488*3327 | 3035*1488*3220",
-        "| WEIGHT (KGS) | 1280 | 1250"
-      ]
-    },
-    {
       "n": 120,
       "title": "R-WB 系列 (博杜安) -江苏瑞昌哥尔德发电设备股份有限公司",
       "header": [
@@ -1425,33 +1378,6 @@
         "| R-HD200D5-S | 200 kVA / 160 kW | 220 kVA / 176 kW | P086TI | TAL-A44-M | PDF",
         "| R-HD225D5-S | 225 kVA / 180 kW | 248 kVA / 198 kW | DP086LA | TAL-A46-C | PDF",
         "| R-HD250D5-S | 250 kVA / 200 kW | 275 kVA / 220 kW | P126TI | TAL-A46-D | PDF"
-      ]
-    },
-    {
-      "n": 122,
-      "title": "RCG 4000系列灯塔-江苏瑞昌哥尔德发电设备股份有限公司",
-      "header": [
-        "| | RCG4000PMH | RCG4000PLED",
-        "| LIGHT | 4x1000w金属卤化物灯 | 4x350w LED",
-        "| FUEL / POWER SOURCE | 柴油 | 柴油",
-        "| ENGINE | Perkins | Perkins"
-      ],
-      "rows": [
-        "| ENGINE MODEL | 403D-11G | 403D-11G",
-        "| DISPLACEMENT (L) | 1.1 | 1.1",
-        "| CYLINDERS | 3 | 3",
-        "| MAST TYPE | 垂直 | 垂直",
-        "| MAST SECTIONS | 5 | 5",
-        "| MAST HEIGHT FT (M) | 30FT (9M) | 30FT (9M)",
-        "| STANDARD WINCH | MANUAL | MANUAL",
-        "| CONTINUOUS POWER (MAX KW) | 7KW | 7KW",
-        "| 声音 dB | 68 | 68",
-        "| 灯具预期寿命 (hr) | 1000 | 50000",
-        "| AUTO ON/OFF | 可选 | 可选",
-        "| DUST TO DAWN SENSOR | 可选 | 可选",
-        "| ELECTRICAL OUTLETS | (1) 120V 20A 双联插座 (1) 120/240V 30A | (1) 120V 20A 双联插座 (1) 120/240V 30A",
-        "| DIMENTION (MM) | 3035*1488*3327 | 3035*1488*3220",
-        "| WEIGHT (KGS) | 1280 | 1250"
       ]
     },
     {

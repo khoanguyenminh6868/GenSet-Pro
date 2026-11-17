@@ -12,20 +12,6 @@
   ]
  },
  {
-  "n": 102,
-  "url": "https://baudouin.com/engine_product/non-road-mobile-wp36n/",
-  "title": "Mobile WP3.6N - Baudouin Non Road mobile engines",
-  "header": [
-   "| Model | Rated Power - kW | Rated Power - HP | Rated Speed - RPM | Peak Torque Speed - RPM | Peak Torque Nm- RPM | Displacement - l"
-  ],
-  "rows": [
-   "| WP3.6NG75E645 | 56 | 74 | 2200 | 330 | 1600 | 3,6",
-   "| WP3.6NG112E680 | 82 | 110 | 2200 | 500 | 1500 | 3,6",
-   "| WP3.6NG143E680 | 105 | 141 | 2300 | 580 | 1400-1600 | 3,6",
-   "| WP3.6NG175E680 | 129 | 173 | 2200 | 610 | 1800 | 3,6"
-  ]
- },
- {
   "n": 103,
   "url": "https://baudouin.com/engine_product/20m55-generator-set/",
   "title": "20M55 Generator Set - Baudouin Generator Sets",
@@ -43,32 +29,6 @@
    "| 20M55G3600 | / | / | 4125 | 3300",
    "| 20M55G4000 | 5000 | 4000 | 4500 | 3600",
    "| 20M55G4250 | / | / | 4750 | 3800"
-  ]
- },
- {
-  "n": 104,
-  "url": "https://baudouin.com/engine_product/6f21/",
-  "title": "6F21 - Baudouin Marine Propulsion Engines",
-  "header": [
-   "| Duty | HP | kW | RPM | Certifications"
-  ],
-  "rows": [
-   "| P3 | 815 | 599 | 2300 | IMO II | EPA 3 (REC)",
-   "| P4 | 900 | 662 | 2300 | IMO II | EPA 3 (REC)",
-   "| P5 | 1000 | 735 | 2300 | IMO II | EPA 3 (REC)"
-  ]
- },
- {
-  "n": 105,
-  "url": "https://baudouin.com/engine_product/8f21/",
-  "title": "8F21 - Baudouin Marine Propulsion Engines",
-  "header": [
-   "| Duty | HP | kW | RPM | Certifications"
-  ],
-  "rows": [
-   "| P3 | 1100 | 809 | 2300 | IMO II",
-   "| P4 | 1250 | 919 | 2300 | IMO II",
-   "| P5 | 1360 | 1000 | 2300 | IMO II"
   ]
  },
  {
