@@ -8,18 +8,19 @@ Viết gọn lại 13/11/2026 (sáng, giờ VN). Cập nhật 16/11: #786 (nối
 | Việc | Session (id để báo về / hỏi) | Model | Chờ gì |
 |---|---|---|---|
 | Việc 1 `chi-tiet-viec-mo.md`: thương hiệu ≠ nơi SX trong Gợi ý cấu hình (dùng `madeOf` của #841) | `local_d21240b6-6371-4acb-81aa-0c684b7cb1b5` (noi-san-xuat, KHOAMINIPC, 17/11) | Opus | PR draft + `nghiem-thu\noi-san-xuat.md`; sau đó mở việc 3 rồi 5 (cùng catalog.js) |
+| (a) Đánh dấu 6 NCC nghi thương hiệu cấp phép | `local_0db49c30-e941-468d-a5e9-ddd6b908290b` (ncc-cap-phep, 17/11) | Sonnet | PR draft + `nghiem-thu\ncc-cap-phep.md` |
+| (b) Luật tên gói nhận "Diezel" (cả 3 nơi) | `local_b5c7fcca-1361-4c7f-9d5e-fc5c3df1eaa9` (diezel) | Sonnet | PR draft + `nghiem-thu\diezel.md` |
+| (c) BCĐG: IB2600354007 verdict rỗng; "fetch failed" sau OCR dài | `local_ec82f54e-d34c-4a5b-9dc8-61182f3d963d` (bcdg-loi) | Sonnet | `nghiem-thu\bcdg-5.md` (+ PR nếu sửa; điều phối chép sang genbid-hsmt) |
+| (d) Log lượt thật #605, #547, #573 | `local_1a1e5f5d-438a-4a00-ba2f-39bfe944e2ea` (log-bot) | Haiku | `nghiem-thu\log-bot-605-547-573.md` |
+| (e) depco-power: phân loại 130 ca (chưa sửa code) | `local_0b9a2e70-cc1b-42b1-87c9-c33e1c78a40f` (depco-phan-loai) | Sonnet | `nghiem-thu\depco-phan-loai.md`; phần sửa sau việc 1 + 3 |
+| (f) Kiểm bằng mắt trên Vercel | `local_4d2e46da-35d6-439b-8fa0-29004a9d09c1` (kiem-vercel) | Sonnet | Có thể chờ Khoa đăng nhập trong trình duyệt app; `nghiem-thu\kiem-vercel.md` |
 | Phủ test: việc còn mở sau 13/11 (trưa) | — (phiên H1, H2, H3, W1, W2 đã xong, chưa lưu trữ: chờ Khoa) | — | (1) Chưa thử Back / quẹt trên điện thoại thật sau #691 (đổi `navKey`, `navDirect`; quay lui: revert từng commit). (2) Gói đã bấm Gợi ý giá từ web trong 11–13/11 tính dự báo số nhà thầu thiếu tỉnh / lĩnh vực / ngày đóng (#690 đã sửa): Khoa bấm lại gói còn dùng. (3) Luật tên gói không nhận chữ "Diezel" làm dấu hiệu tổ máy diesel (IB2400069058 bị loại vì "Tổ máy 300MW"): sửa phải sửa cả ba nơi. (4) Khoa bổ sung website cho `xcmg-doosan-engine`, `mtu-yuchai`. (5) Xem lượt Sync / lịch sử / nhà thầu thật đầu tiên bằng bản bot mới. (6) Chưa phủ: nhánh trình duyệt `server/`, tải tệp báo giá / HSMT dự án, Forward sau Back từ link thẳng |
 
 ## Chưa giao
 | Việc | Ghi chú | Model |
 |---|---|---|
-| Kiểm bằng mắt trên Vercel thật các PR web (từ #239) | Cần trình duyệt đã đăng nhập web | Sonnet |
-| Đánh dấu hồ sơ NCC nghi là thương hiệu cấp phép: himoinsa-china, hipower, aksa-china, agg-fuzhou, cat-tianjin, bruno-generators | Theo quy tắc "cần xác nhận" Khoa chốt 13/11 | Sonnet |
 | Sửa 10 ca `todo` trong `suppliers/domain.test.mjs` (PR #622; bảng ở `nghiem-thu\test-review.md`) | Chờ Khoa duyệt; sửa xong bỏ `todo` | Sonnet |
-| BCĐG: IB2600354007 verdict rỗng (mình hạng 2) chưa đối chiếu; "fetch failed" khi post sau OCR dài chưa rõ nguyên nhân | Chi tiết `nghiem-thu\bcdg-3.md`, `bcdg-4.md` | Sonnet |
-| Lượt thật đầu tiên chưa có: giữ mức xếp cũ của agent giá (#605); `savePages` (#547); `gaps.mjs` sau khi lọc NCC loại trừ (#573) | Xem log lượt bot kế tiếp | Haiku |
 | "Model" rác trong danh mục (Khoa 16/11: OK, sửa sau khi xong gán hãng + nơi sản xuất): ô không phải mã máy lọt `isCode` / bảng ngang thành bản ghi động cơ: "≤6S", "≤5S", "6-cylinder/inline", "12-cylinder/V-type", "1-PHASE", "100% copper", "800(KW)", "330(KW)", "195(g/kw.h)", "300 W", "330+250 W", "Container 20'"; mã đầu phát "LTP224S-52/60" đọc thành động cơ | Cách sửa: loại dạng có đơn vị trong ngoặc, %, ≤, "-cylinder", PHASE, "W" sau số; đầu phát nhầm cột sửa chỗ chọn cột. Đo trước/sau: số model loại, model thật bị loại nhầm, top 30 ứng viên toàn bộ gói. Cùng tệp catalog.js: làm SAU 2 việc dưới | Sonnet |
-| **Thương hiệu ≠ nơi sản xuất** cho động cơ, đầu phát, BĐK (Khoa chốt 16/11, chi tiết bộ nhớ `config-suggest.md`): HSMT đòi bộ phận G7 → đọc thương hiệu hay nơi SX; nhà máy TQ ghi rõ → không đạt, nhập/G7 → đạt, không ghi → cần xác nhận (CO); Xuất xứ TQ: hãng ngoại làm ở TQ tính là SX tại TQ. Dữ liệu: agent đang tra nhà máy Stamford, Leroy-Somer, Marathon, Mecc Alte, Deep Sea, ComAp, DEIF, Datakom, Woodward, SICES, Lovato, DynaGen, SmartGen (nguồn hãng + trích nguyên văn) → thêm trường nhà máy vào hồ sơ hãng (schema + verify) | LÀM TIẾP (gán hãng đã merge #839). Nhà máy theo hãng Khoa đã chốt (bộ nhớ `config-suggest.md`). Ảnh hưởng 37/928 gói chỉ đòi G7/G20 cho bộ phận. Đo toàn bộ gói trước khi merge | Opus |
 | Mâu thuẫn số liệu depco-power (#806): kiểm 130 ca, sửa ca đọc sai (vd. 4006-23TAG3A xi lanh "6,8L"); ca nguồn lệch xét theo luật số đông (Khoa 16/11) | Khoa: "xử lý sau" | Sonnet |
 
 ## Chờ Khoa
