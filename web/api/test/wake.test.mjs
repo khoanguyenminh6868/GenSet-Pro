@@ -81,9 +81,24 @@ test("Lần đầu: tạo sandbox persistent sin1 phiên 60 phút (Hobby: 45 ph�
   const o = box.created[0];
   assert.equal(o.name, "genbid-bot"); assert.equal(o.persistent, true); assert.equal(o.region, "sin1"); assert.equal(o.timeout, 60 * 60e3);
   assert.equal(o.image, "vercel/sandbox/ubuntu"); assert.equal(o.runtime, undefined);
-  assert.equal(o.snapshotExpiration, 365 * 24 * 3600e3);
+  assert.equal(o.snapshotExpiration, 5 * 365 * 24 * 3600e3);
   assert.equal(box.created[1].timeout, 45 * 60e3);
   assert.match(startCmd().args[1], /command -v curl .*apt-get install .*curl .*setup-sandbox\.sh main && touch .*sandbox-setup-done; } > \$HOME\/setup\.log 2>&1 && .*start-bot\.sh/);
+});
+
+test("Sandbox có sẵn giữ hạn snapshot cũ: cập nhật lên 5 năm, lỗi thì vẫn chạy bot", async () => {
+  const updates = [];
+  box = fakeBox({ status: "stopped" }); S._setSandbox(box.Sandbox);
+  const sb = await box.Sandbox.get();
+  sb.snapshotExpiration = 365 * 24 * 3600e3;
+  sb.update = async (o) => { updates.push(o); throw new Error("không cho"); };
+  assert.equal(await S.up({ env: ENV, log() {} }), "started");
+  assert.equal(updates.length, 1);
+  assert.equal(updates[0].snapshotExpiration, 5 * 365 * 24 * 3600e3);
+  assert.equal(updates[0].keepLastSnapshots.expiration, 5 * 365 * 24 * 3600e3);
+  sb.snapshotExpiration = S.SNAPSHOT_MS; updates.length = 0;
+  await S.up({ env: ENV, log() {} });
+  assert.equal(updates.length, 0, "đã đúng hạn thì không cập nhật");
 });
 
 test("Đang có lượt cài chạy dở: không chạy thêm lượt thứ hai", async () => {

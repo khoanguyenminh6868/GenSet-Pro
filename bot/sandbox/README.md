@@ -28,7 +28,7 @@ Tệp: `setup-sandbox.sh` (Wine + VNeGP Agent bản Windows, Chrome, pwsh, Claud
   `vercel sandbox connect genbid-bot --project genset-pro-web --scope khoanguyenminh6868-3812`, chạy `~/.local/bin/agy`, mở link
   đăng nhập, xong thì thoát. Lưu ở `~/.config/antigravity` (tệp, không keyring), giữ qua snapshot. Chép `~/.gemini/oauth_creds.json`
   của máy Windows KHÔNG dùng được (agy trên Windows giữ đăng nhập trong Credential Manager). Chưa đăng nhập / lỗi: dịch bằng Claude.
-  Snapshot hết hạn (1 năm không dùng) hoặc xoá sandbox thì phải đăng nhập lại.
+  Snapshot hết hạn (5 năm không dùng; `up()` tự nâng hạn của sandbox cũ) hoặc xoá sandbox thì phải đăng nhập lại.
 - Tắt: xoá `SANDBOX_WAKE` (hoặc đặt khác 1), redeploy. Tác vụ Windows "GenBid Bot" giữ nguyên.
 
 ## Đã kiểm (chạy thật 17/11/2026)

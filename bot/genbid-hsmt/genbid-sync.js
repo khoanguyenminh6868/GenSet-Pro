@@ -1442,19 +1442,15 @@ async function hsmtText(key) {
 }
 
 // Đối chiếu (Khoa, 2026-11-16): the text read from an HSDT file is kept by the file's content (sha256), on this PC only,
-// next to the HSDT folders, so a file sent again in a later Đối chiếu is not read (OCR) again. Entries unused for
-// OCR_CACHE_DAYS are removed.
-const OCR_CACHE = path.join(HSDT_DIR, ".ocr-cache"), OCR_CACHE_DAYS = 120;
+// next to the HSDT folders, so a file sent again in a later Đối chiếu is not read (OCR) again. Kept for good: never
+// removed (Khoa, 2026-11-17).
+const OCR_CACHE = path.join(HSDT_DIR, ".ocr-cache");
 function cachedFileText(file, cacheDir) {
   const h = require("crypto").createHash("sha256").update(fs.readFileSync(file)).digest("hex"), c = path.join(cacheDir, h + ".txt");
   if (fs.existsSync(c)) { const now = new Date(); try { fs.utimesSync(c, now, now); } catch {} log(`    Dùng lại chữ đã đọc trước đây: ${path.basename(file)}`); return fs.readFileSync(c, "utf8"); }
   const tx = fileText(file);
   if (tx.trim()) { fs.mkdirSync(cacheDir, { recursive: true }); fs.writeFileSync(c, tx, "utf8"); }
   return tx;
-}
-function pruneOcrCache(cacheDir) {
-  const old = Date.now() - OCR_CACHE_DAYS * 864e5;
-  for (const f of fs.existsSync(cacheDir) ? fs.readdirSync(cacheDir) : []) { const p = path.join(cacheDir, f); try { if (fs.statSync(p).mtimeMs < old) fs.rmSync(p); } catch {} }
 }
 // Giấy phép kinh doanh in an HSDT (Khoa, 2026-11-16): not read; only that the file is there counts (isGpkd, sync-pure.js).
 const GPKD_LINE = "Giấy phép kinh doanh: có tệp (bot không đọc nội dung tệp này theo quy tắc)";
@@ -1465,7 +1461,6 @@ async function scratchDocs(files, pasted, hd, opts = {}) {
   // Pasted text (also the text the page read from a file it could not upload) is compacted like a file's.
   let text = pasted ? `### Nội dung dán vào\n${compact(pasted)}\n` : "";
   const unread = [];
-  if (opts.cache) pruneOcrCache(opts.cache);
   for (const f of [].concat(files || [])) {
     try {
       const r = await fetch(`${API}/scratch?path=${encodeURIComponent(f.path)}`, { headers: { Authorization: `Bearer ${token()}` } });
