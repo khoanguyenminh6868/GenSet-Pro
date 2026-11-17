@@ -34,6 +34,9 @@ Mọi việc nằm trong `bot\Update-GenBidBot.ps1`; skill chỉ chạy nó và 
      hai bot cùng chạy sẽ trả lời trùng yêu cầu).
    - **Sổ điều phối xung đột / có tệp `*.ban-<MÁY>.*`:** gộp tay giữ phần của cả hai máy (xem CLAUDE.md), rồi chạy
      `powershell -File "C:\Projects\GenSet Pro\genbid-hsmt\Sync-DieuPhoi.ps1"` tới khi hết lỗi.
-   - **Lỗi khởi động lại:** xem log mới nhất trong `C:\Projects\GenSet Pro\genbid-bot-logs\`.
+   - **Lỗi khởi động lại:** xem log mới nhất trong `C:\Projects\GenSet Pro\genbid-bot-logs\`, báo Khoa. KHÔNG bật bot bằng
+     `Start-Process` hay chạy tay `GenBid-Bot.ps1` (17/11/2026: bot ngoài tác vụ thì Khoa End tác vụ cũng không tắt được, bot
+     vẫn nhận việc và chặn sandbox). Bật / tắt bot chỉ qua tác vụ "GenBid Bot" (chạy `conhost --headless`, script tự sửa tác vụ kiểu cũ).
+   - **Bot chạy NGOÀI tác vụ:** script tự khởi động lại qua tác vụ (hoãn nếu có lượt con đang chạy, như trên).
 4. Kiểm: `powershell -File "C:\Projects\GenSet Pro\GenSet-Pro\bot\Backup-GenBidBot.ps1" -Check` → "Repo đã giống bản đang chạy."
 5. Báo Khoa ngắn: main từ commit nào lên commit nào, tệp bot nào đổi, có khởi động lại không, còn gì phải làm.

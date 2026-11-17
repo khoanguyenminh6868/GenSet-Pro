@@ -147,12 +147,23 @@ $kids = @($procs | Where-Object { $_.CommandLine -match '\s-Job\b' })
 # Chỉ GenBid-Bot.ps1 nạp một lần; các .ps1 khác (Post-GenBidDocs, Sync-DieuPhoi...) chạy tiến trình mới mỗi lần gọi.
 $code = Get-Item (Join-Path $Kit 'GenBid-Bot.ps1') -ErrorAction SilentlyContinue
 $restart = 'không'
+# Tác vụ kiểu cũ (powershell.exe trực tiếp): nháy cửa sổ, và Start-ScheduledTask từ phiên Claude từng treo (17/11/2026) → conhost --headless.
+if ($task -and -not $Check -and $task.Actions[0].Execute -ne 'conhost.exe') {
+    $act = New-ScheduledTaskAction -Execute 'conhost.exe' -WorkingDirectory $Root `
+        -Argument "--headless powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$Kit\GenBid-Bot.ps1`""
+    Set-ScheduledTask -TaskName 'GenBid Bot' -Action $act | Out-Null
+    $task = Get-ScheduledTask 'GenBid Bot'
+    $notes.Add("đã sửa tác vụ 'GenBid Bot' chạy qua conhost --headless (không nháy cửa sổ)")
+}
+# Bot bật ngoài tác vụ (cha không phải conhost của tác vụ, vd. Start-Process từ phiên Claude): End tác vụ không tắt được nó.
+$outside = @($disp | Where-Object { (Get-CimInstance Win32_Process -Filter "ProcessId=$($_.ParentProcessId)" -ErrorAction SilentlyContinue).Name -ne 'conhost.exe' })
+if ($outside.Count) { $notes.Add("bot đang chạy NGOÀI tác vụ (PID $($outside.ProcessId -join ', ')): cần khởi động lại qua tác vụ") }
 if (-not $task) { $notes.Add("máy này chưa có tác vụ 'GenBid Bot' (Install-GenBidBot.ps1)"); $restart = 'không có tác vụ' }
 elseif ($task.State -eq 'Disabled') { $notes.Add("tác vụ 'GenBid Bot' đang tắt (Disabled) trên máy này: không đụng tới"); $restart = 'tác vụ tắt' }
 elseif (-not $disp.Count) { $notes.Add("bot không chạy (tác vụ $($task.State)); bật: Start-ScheduledTask 'GenBid Bot'"); $restart = 'bot không chạy' }
 else {
     $started = ($disp | Sort-Object CreationDate | Select-Object -First 1).CreationDate
-    $stale = $code -and $code.LastWriteTime -gt $started
+    $stale = ($code -and $code.LastWriteTime -gt $started) -or $outside.Count
     Write-Host "  Bot chạy từ $($started.ToString('dd/MM HH:mm:ss')); script mới nhất $($code.Name) sửa lúc $($code.LastWriteTime.ToString('dd/MM HH:mm:ss'))."
     if (-not $stale) { Write-Host '  Bot đang chạy code mới nhất.'; $restart = 'không cần' }
     elseif ($Check) { Write-Host '  Bot chạy code cũ: cần khởi động lại.'; $restart = 'cần (đang -Check)' }
@@ -164,14 +175,19 @@ else {
         Stop-ScheduledTask 'GenBid Bot'
         for ($i = 0; $i -lt 30 -and (Get-Process -Id $disp.ProcessId -ErrorAction SilentlyContinue); $i++) { Start-Sleep 1 }
         Get-Process -Id $disp.ProcessId -ErrorAction SilentlyContinue | Stop-Process -Force
+        $at = Get-Date
         Start-ScheduledTask 'GenBid Bot'
-        $new = $null
-        for ($i = 0; $i -lt 20 -and -not $new; $i++) {
+        # Chỉ coi là đã chạy khi log ghi "Bot GenBid bắt đầu" sau lúc bật: 17/11/2026 tiến trình có mà treo, không chạy dòng nào.
+        # Không thấy thì báo, KHÔNG tự bật bằng Start-Process (bot ngoài tác vụ: End không tắt được, Khoa tưởng đã tắt).
+        $ok = $false
+        for ($i = 0; $i -lt 45 -and -not $ok; $i++) {
             Start-Sleep 1
-            $new = Get-CimInstance Win32_Process -Filter "Name='powershell.exe'" | Where-Object { $_.CommandLine -match 'GenBid-Bot\.ps1' -and $_.CommandLine -notmatch '\s-Job\b' -and $_.CreationDate -gt $started }
+            $lg = Join-Path $Root ('genbid-bot-logs\bot-{0:yyyy-MM}.log' -f $at)
+            $ok = [bool](Get-Content $lg -Tail 30 -Encoding UTF8 -ErrorAction SilentlyContinue | Where-Object {
+                $_ -match '^(\d{4}-\d\d-\d\d \d\d:\d\d:\d\d)\s+Bot GenBid bắt đầu' -and [datetime]$Matches[1] -ge $at.AddSeconds(-1) })
         }
-        if ($new) { Write-Host "  Đã khởi động lại (PID $(@($new)[0].ProcessId))."; $restart = 'đã khởi động lại' }
-        else { $notes.Add("đã Start-ScheduledTask nhưng chưa thấy tiến trình bot mới: xem $Root\genbid-bot-logs"); $restart = 'lỗi khởi động lại' }
+        if ($ok) { Write-Host '  Đã khởi động lại qua tác vụ (log ghi "Bot GenBid bắt đầu").'; $restart = 'đã khởi động lại' }
+        else { $notes.Add("đã Start-ScheduledTask nhưng 45 giây chưa thấy log 'Bot GenBid bắt đầu': bot có thể treo lúc mở; xem $Root\genbid-bot-logs, báo Khoa, KHÔNG bật bằng Start-Process"); $restart = 'lỗi khởi động lại' }
     }
 }
 # config-bot.mjs run (suppliers\ của repo) chạy tiến trình mới mỗi lượt: lượt đang chạy giữ code cũ tới khi thoát.
