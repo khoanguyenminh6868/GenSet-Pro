@@ -3,7 +3,7 @@
 // - up(): web có yêu cầu mà không bot nào có tim 1 phút (api/_wake.js) → nối lại / tạo sandbox "genbid-bot" (sin1,
 //   persistent), lần đầu cài (bot/sandbox/setup-sandbox.sh), rồi chạy bot/sandbox/start-bot.sh nền (lệnh detached).
 // - tick(): mỗi nhịp tim của bot sandbox (api/requests.js ?host=sandbox, ~1 phút) → dừng khi máy Windows bật lại hoặc
-//   rảnh 20 phút, gia hạn phiên khi còn việc. Bot treo không có tim thì phiên tự hết sau SESSION_MS.
+//   rảnh 5 phút, gia hạn phiên khi còn việc. Bot treo không có tim thì phiên tự hết sau SESSION_MS.
 // Bật bằng biến Vercel SANDBOX_WAKE=1. Bí mật cho bot lấy từ biến của project: INGEST_TOKEN, ANTHROPIC_API_KEY,
 // CLAUDE_CODE_OAUTH_TOKEN (nếu có), GH_BOT_TOKEN hoặc GITHUB_TOKEN, FIRECRAWL_KEY (nếu có).
 const MIN = 60e3;
@@ -11,7 +11,7 @@ export const NAME = "genbid-bot";
 export const IMAGE = "vercel/sandbox/ubuntu";
 export const SNAPSHOT_MS = 365 * 24 * 60 * MIN;
 export const PC_SILENT_MS = MIN; // như trang web: im 1 phút = máy tắt (Khoa 17/11/2026, trước là 3 phút)
-export const IDLE_STOP_MS = 20 * MIN;
+export const IDLE_STOP_MS = 5 * MIN; // Khoa 17/11/2026: rảnh 5 phút thì dừng (trước 20 phút)
 export const SESSION_MS = 60 * MIN;
 const HOBBY_SESSION_MS = 45 * MIN;
 export const EXTEND_BELOW_MS = 20 * MIN;

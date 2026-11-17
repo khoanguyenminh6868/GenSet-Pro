@@ -129,7 +129,7 @@ test("Bật sandbox lỗi: yêu cầu vẫn lưu, trả lời không chờ, khô
   assert.ok(db.get("hsmtreq", "IB1"));
 });
 
-test("decide: tắt → bật khi có việc và máy Windows im; chạy → dừng khi máy bật lại hoặc rảnh 20 phút; đang làm dở thì giữ", () => {
+test("decide: tắt → bật khi có việc và máy Windows im; chạy → dừng khi máy bật lại hoặc rảnh 5 phút; đang làm dở thì giữ", () => {
   const RUN = { status: "running", statusUpdatedAt: new Date(NOW - 60 * 60e3) };
   assert.equal(S.decide({ pending: true, pc: { lastPollAt: ago(10) } }, null, NOW), "up");
   assert.equal(S.decide({ pending: true, pc: { lastPollAt: ago(0.5) } }, { status: "stopped" }, NOW), "none");
@@ -138,11 +138,12 @@ test("decide: tắt → bật khi có việc và máy Windows im; chạy → d�
   assert.equal(S.decide({ pending: false, pc: { lastPollAt: ago(0.5) }, sandbox: { lastPollAt: ago(0), running: false } }, RUN, NOW), "stop");
   assert.equal(S.decide({ pending: true, pc: { lastPollAt: ago(0.5) }, sandbox: { lastPollAt: ago(0), running: true } }, RUN, NOW), "up");
   assert.equal(S.decide({ pending: false, sandboxBusyAt: ago(25) }, RUN, NOW), "stop");
-  assert.equal(S.decide({ pending: false, sandboxBusyAt: ago(5) }, RUN, NOW), "up");
+  assert.equal(S.decide({ pending: false, sandboxBusyAt: ago(3) }, RUN, NOW), "up", "rảnh 3 phút: giữ");
+  assert.equal(S.decide({ pending: false, sandboxBusyAt: ago(6) }, RUN, NOW), "stop", "rảnh 6 phút: dừng (Khoa 17/11: ngưỡng 5 phút)");
   assert.equal(S.decide({ pending: false, sandboxBusyAt: ago(600) }, { status: "running", statusUpdatedAt: new Date(NOW - 2 * 60e3) }, NOW), "up", "vừa nối lại phiên");
 });
 
-test("Nhịp tim sandbox: rảnh 20 phút → dừng; có việc → ghi sandboxbusy, gia hạn khi phiên còn < 20 phút; beat=0 không quyết gì", async () => {
+test("Nhịp tim sandbox: rảnh 5 phút → dừng; có việc → ghi sandboxbusy, gia hạn khi phiên còn < 20 phút; beat=0 không quyết gì", async () => {
   db.put("botstatus", "sandboxbusy", { at: ago(25) });
   await poll({ kind: "all", host: "sandbox" });
   assert.equal(box.stopped, 1);
