@@ -24,10 +24,11 @@ Tệp: `setup-sandbox.sh` (Wine + VNeGP Agent bản Windows, Chrome, pwsh, Claud
 - Biến Vercel (genset-pro-web, Production) `SANDBOX_WAKE=1`. Bí mật bot lấy từ biến có sẵn: `INGEST_TOKEN`,
   `ANTHROPIC_API_KEY`, `GITHUB_TOKEN` (hoặc `GH_BOT_TOKEN` nếu đặt). Thêm `CLAUDE_CODE_OAUTH_TOKEN` (gói tháng) và
   `FIRECRAWL_KEY` trên Vercel nếu muốn bot sandbox dùng (Khoa đặt; Claude không đặt token).
-- Gemini cho bản dịch (Khoa 17/11): biến `GEMINI_OAUTH_CREDS` = base64 của `~/.gemini/oauth_creds.json` máy Windows (đăng nhập
-  Google của `agy`). Khoa chạy trên máy Windows, trong một thư mục có `.vercel\project.json` của genset-pro-web:
-  `vercel env add GEMINI_OAUTH_CREDS production --sensitive --yes --value ([Convert]::ToBase64String([IO.File]::ReadAllBytes("$env:USERPROFILE\.gemini\oauth_creds.json")))`
-  rồi redeploy. `start-bot.sh` cài `agy` nếu chưa có và ghi tệp đăng nhập; thiếu hoặc lỗi thì dịch bằng Claude.
+- Gemini cho bản dịch (Khoa 17/11): `start-bot.sh` cài `agy` nếu chưa có. Đăng nhập Google MỘT LẦN trong sandbox (đang chạy):
+  `vercel sandbox connect genbid-bot --project genset-pro-web --scope khoanguyenminh6868-3812`, chạy `~/.local/bin/agy`, mở link
+  đăng nhập, xong thì thoát. Lưu ở `~/.config/antigravity` (tệp, không keyring), giữ qua snapshot. Chép `~/.gemini/oauth_creds.json`
+  của máy Windows KHÔNG dùng được (agy trên Windows giữ đăng nhập trong Credential Manager). Chưa đăng nhập / lỗi: dịch bằng Claude.
+  Snapshot hết hạn (1 năm không dùng) hoặc xoá sandbox thì phải đăng nhập lại.
 - Tắt: xoá `SANDBOX_WAKE` (hoặc đặt khác 1), redeploy. Tác vụ Windows "GenBid Bot" giữ nguyên.
 
 ## Đã kiểm

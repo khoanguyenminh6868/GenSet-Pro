@@ -67,7 +67,7 @@ fi
 export PATH="$HOME/.npm-global/bin:$PATH"
 claude --version || true
 
-step "Antigravity CLI (agy: Gemini cho bản dịch; đăng nhập Google chép qua GEMINI_OAUTH_CREDS của start-bot.sh)"
+step "Antigravity CLI (agy: Gemini cho bản dịch; đăng nhập Google một lần: vercel sandbox connect genbid-bot, chạy agy)"
 [ -x "$HOME/.local/bin/agy" ] || curl -fsSL https://antigravity.google/cli/install.sh | bash || echo "Không cài được agy: bản dịch dùng Claude"
 
 step "Repo GenSet-Pro ($BRANCH) -> $ROOT/GenSet-Pro"

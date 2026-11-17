@@ -69,8 +69,8 @@ function claudeExe() {
   return found.sort((a, b) => fs.statSync(b).mtimeMs - fs.statSync(a).mtimeMs)[0] || "claude";
 }
 
-// Antigravity CLI (Gemini, tuỳ chọn): máy Windows của Khoa, và sandbox Linux (~/.local/bin/agy, đăng nhập Google chép từ
-// máy Windows qua biến GEMINI_OAUTH_CREDS của start-bot.sh; Khoa 17/11/2026). null = không có, bản dịch quay về Claude.
+// Antigravity CLI (Gemini, tuỳ chọn): máy Windows của Khoa, và sandbox Linux (~/.local/bin/agy, Khoa đăng nhập Google một lần
+// trong sandbox, giữ qua snapshot; 17/11/2026). Không có / chưa đăng nhập: bản dịch quay về Claude.
 const agyExe = () => {
   if (process.env.GENBID_AGY) return process.env.GENBID_AGY;
   return IS_WIN ? path.join(process.env.LOCALAPPDATA || "", "agy", "bin", "agy.exe") : path.join(HOME, ".local", "bin", "agy");
