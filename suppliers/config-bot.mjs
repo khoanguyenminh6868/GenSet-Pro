@@ -859,6 +859,17 @@ const DISP_LABEL = /dung t[íi]ch\s*(?:t[ổo]ng\s*)?(?:c[ủu]a\s*)?(?:c[áa]c\
 const tankNear = (cell) => { const m = cell.match(DISP_LABEL) || cell.match(/(?:t[ổo]ng\s+)?dung t[íi]ch/i); return !!m && TANK_W.test(cell.slice(Math.max(0, m.index - 25), m.index + m[0].length + 25)); };
 // "Tổng dung tích ≥ 19.6 lít" among the lines of the cylinders (bore, stroke, piston, compression ratio) is the engine's.
 const DISP_BARE = /^(?:.*\s)?(?:t[ổo]ng\s+)?dung t[íi]ch\s*(?::|≥|≤|<|>|\d|$)/i, ENGINE_LINES = /(?:xi|xy)[\s-]?lanh|piston|h[àa]nh tr[ìi]nh|đ[ườu]*ng k[ií]nh|t[ỷy] s[ốo] n[ée]n|compression|\bbore\b|\bstroke\b/i;
+// The label of the count of cylinders ("Số xi lanh", "Số xy-lanh", "Số lượng xi lanh", "Số cylinder", "Number of cylinders").
+const CYL_LABEL = /(?:s[ốo]\s*(?:l[ưu][ợo]ng\s*)?(?:xi|xy)[\s-]*lanh|s[ốo]\s*cylind(?:er|re)s?|number\s+of\s+cylinders?)/i;
+// "Động cơ diesel 4 thì, 6 xy lanh, thẳng hàng" / "Kiểu: 6 xylanh, 4 thì": the count inside a line that describes the engine.
+// Not after a bore, a stroke or a displacement, not a line of choices ("6 hoặc 8 xi lanh"), nor another vehicle's engine.
+function inlineCyl(line) {
+  if (!/đ[ộo]ng c[ơo]|\bth[ìi]\b|\bk[ỳy]\b|ki[ểe]u|lo[ạa]i|engine|diesel|k[ếe]t c[ấa]u|c[ấa]u h[ìi]nh|th[ẳa]ng\s*h[àa]ng|ch[ữu]\s*V\b|b[ốo] tr[íi]/i.test(line)) return null;
+  if (/ho[ặa]c|\bor\b|xu[ồo]ng|\bt[àa]u\b|ca\s*n[ôo]|xe\s+(?:n[âa]ng|t[ảa]i|c[ẩa]u)/i.test(line)) return null;
+  const all = [...line.matchAll(/(?<![\d×*\/-]\s?)(?<![\d.,]|\bx\s?)0?(\d{1,2})\s*(?:xi|xy)[\s-]?lanh/gi)]
+    .filter((m) => !/(?:đ[ườu]*ng k[ií]nh|h[àa]nh tr[ìi]nh|dung t[íi]ch|bore|stroke)[^\d]{0,15}$/i.test(line.slice(Math.max(0, m.index - 30), m.index)));
+  return all.length && all.every((m) => m[1] === all[0][1]) ? all[0] : null;
+}
 export function engineMins(t) {
   const { disp, dmax, cyl, cylBare } = engineLists(t), one = (list) => (new Set(list).size === 1 ? list[0] : null);
   // cylExact (Khoa, 2026-11-17: "nếu HSMT ghi rõ 6 thì nên loại 12"): every line that gives the cylinders gives the bare
@@ -874,7 +885,9 @@ export function engineLists(t) {
   lines.forEach((line, i) => {
     // A table cell often puts the label on one line and the figure on the next ("Dung tích xi lanh" / "11.051 L").
     // Only a figure with its sign or unit: a number alone is often the row number of the next item ("Số xy lanh: Nêu rõ" / "7").
-    const prev = lines[i - 1] || "", alone = !/[a-zà-ỹ]{3}/i.test(line.replace(/l[íi]t|xi|xy|lanh|mm|cc/gi, "")) && /[≥>]|l[íi]t|\bL\b|lanh/i.test(line);
+    // Not a line that has its own label of the count ("8 Số xilanh ≥ 4", IB2200029877: joined to the row above "7 Tỉ số nén ≤ 19"
+    // it was taken for a most and left out; hints-audit 2026-11-17).
+    const prev = lines[i - 1] || "", alone = !/[a-zà-ỹ]{3}/i.test(line.replace(/l[íi]t|xi|xy|lanh|mm|cc/gi, "")) && /[≥>]|l[íi]t|\bL\b|lanh/i.test(line) && !CYL_LABEL.test(line);
     // "Tổng dung tích" / "8 ≥ 0.79 lít" / "xilanh": the label goes on to the line after the figure.
     const cell = alone ? prev + " " + line + (/^\s*(?:xi|xy)[\s-]?lanh\b/i.test(lines[i + 1] || "") ? " " + lines[i + 1] : "") : line;
     // A largest displacement ("Dung tích xi lanh ≤ 15,2 L", an HSMT written around one engine): 2026-11-03, the best
@@ -903,14 +916,25 @@ export function engineLists(t) {
     else if (du) disp.push(lowered(/cc|cm/i.test(du[0]) ? Number(du[1].replace(/[.,]/, "")) / 1000 : Number(du[1].replace(",", ".")), du));
     // Not a figure with a decimal part: "Số xilanh, đường kính x hành trình mm: 2.197" (IB2200029975, a table whose values
     // sit one row off) is the displacement, not 2 cylinders (hints-audit 2026-11-17).
-    const c = cell.match(/(?:≥|>=|tối thiểu|ít nhất)\s*:?\s*0?(\d{1,2})\s*(?:xi|xy)\s?lanh/i) || cell.match(/s[ốo]\s*(?:xi|xy)\s?lanh[^\d\n]{0,30}?\b0?(\d{1,2})(?![.,]?\d)\s*(?:xi|xy)?\s?(?:lanh)?\b/i)
-      || line.match(/^\s*[-+•]?\s*0?(\d{1,2})\s*(?:xi|xy)\s?lanh/i);
+    // hints-audit 2026-11-17 (184 gói Phân tích có số xi lanh mà code không đọc): the label "Số xy-lanh", "Số lượng xi lanh",
+    // "Số cylinder", "Number of cylinder"; the figure "6L" / "4/L"; the label on the line above "≥ 3 thẳng hàng" (a table cell
+    // "Số xy lanh, kiểu bố trí" | "≥ 3 thẳng hàng"); "Động cơ 4 thì, 6 xy lanh, thẳng hàng" inside a line.
+    const c = cell.match(/(?:≥|>=|tối thiểu|ít nhất)\s*:?\s*0?(\d{1,2})\s*(?:xi|xy)[\s-]?lanh/i)
+      // Not a row number before the sign ("Số lượng xi lanh của" / "2 ≥ 16 (*)", IB2300015080: the 16 is read below).
+      || cell.match(new RegExp(CYL_LABEL.source + String.raw`[^\d\n]{0,30}?(?<![\d.,])0?(\d{1,2})(?![.,]?\d)(?!\s*(?:≥|>|≤|<|tối))\s*(?:(?:xi|xy)[\s-]?(?:lanh)?|\/?\s*[LV]\b|\b)`, "i"))
+      || line.match(/^\s*[-+•]?\s*0?(\d{1,2})\s*(?:xi|xy)[\s-]?lanh/i)
+      // The label alone on the line above, then a least and nothing but words of the layout or of the grading (no other figure).
+      || (CYL_LABEL.test(prev) && !new RegExp(CYL_LABEL.source + String.raw`[^\n]*\d`, "i").test(prev) && line.match(/^\s*(?:\d{1,2}(?:\.\d{1,2})*\.?\s+)?(?:≥|>=|>|tối thiểu)\s*0?(\d{1,2})(?![\d.,])[^\d]*$/i))
+      || inlineCyl(line);
     if (c && Number(c[1]) >= 1 && Number(c[1]) <= 20) {
       cyl.push(Number(c[1]));
       // The bare count: no sign or word of a least or a most in the cell (cylExact, engineMins).
       // ">3" ("Số xilanh >3", IB2400063033) is a least too, not the exact count: AT_LEAST has no ">" (the displacement
       // rows lean on that), so only here.
-      if (!AT_LEAST.test(cell) && !MAXIMUM.test(cell) && !/(?<![-=])>\s*0?\d/.test(cell.slice(0, c.index + c[0].length))) cylBare.push(Number(c[1]));
+      // An OCR slip of "tối thiểu" ("tối thiều 2 xi lanh") is a least too.
+      // Nor the engine of goods "for reference" ("Loại động cơ: 4 thì 2 xi lanh" then "* Hàng hóa tương tự để nhà thầu tham
+      // khảo", IB2400474549): a least, not the count that rules other engines out.
+      if (!AT_LEAST.test(cell) && !MAXIMUM.test(cell) && !/t[ốo]i\s*thi[ểềeế]u/i.test(cell) && !/tham\s*kh[ảa]o|t[ươ]+ng\s*t[ựu]/i.test(`${prev} ${cell} ${lines[i + 1] || ""}`) && !/(?<![-=])>\s*0?\d/.test(cell.slice(0, c.index + c[0].length))) cylBare.push(Number(c[1]));
     }
   });
   return { disp, dmax, cyl, cylBare };
@@ -1047,9 +1071,48 @@ const PRIME_W = /prime|li[êe]n t[ụu]c|continuous|c[ơo] b[ảa]n|th[ưư][ờ
 const ENGINE_W = /đ[ộo]ng c[ơo]|engine|t[ốo]i [đd]a|max/i, KVA_FIG = /c[ôo]ng su[ấa]t[^\n]{0,60}\n?\s*(?:≥|>=)?\s*\d[\d.,]*\s*kVA/i;
 const nearest = (t, i, re) => { let best = Infinity; for (const m of t.matchAll(re)) best = Math.min(best, Math.abs(m.index - i)); return best; };
 export const powerMins = (t) => powerRead(t).mins;
+// The fuel limits of an HSMT in L/h (hints-audit 2026-11-17: 480 rows of the analyses the code did not read). Three forms:
+//  1. a most and the figure, then the unit: "≤ 104 lít/giờ", "< 26.5 lít/h" ("<" too: a most), "≤ 105 (l/h)", "≤ 503,2 L/hr";
+//  2. the unit, then a most and the figure: "Tiêu hao nhiên liệu ở L/h ≤ 135", "(lít/giờ) ≤ 320", "(L/h): ≤ 4,5"; with no sign
+//     only when the fuel label is on the same line ("Tiêu thụ nhiên liệu tại 75% tải (L/h): 3.9");
+//  3. a figure with no sign and its unit after the label on the same line ("Tiêu hao nhiên liệu (100% CS): 17.7 L/h", the
+//     figure of the HSMT is its most), or in a list of loads under the label ("Tiêu hao nhiên liệu:" / "+ 75% tải: 47 l/h").
+// Not a figure with a tolerance ("≤ 21±2 lít/giờ", "≤19,4 lít/h ±5%": the HSMT allows more), nor an approximate one
+// ("khoảng 13 đến 15 L/h", "~ 42.1", "≈"), nor a least ("≥ 135 L/giờ" is a slip of the HSMT: none).
+const FUEL_LABEL = /ti[êe]u\s*hao|ti[êe]u\s*th[ụu]|nhi[êe]n\s*li[ệe]u|fuel/i;
+const FUEL_NUM = String.raw`(\d{1,3}(?:[.,]\d{3})+(?![.,]?\d)|\d{1,3}(?:[.,]\d+)?)`;
+const FUEL_UNIT = String.raw`(?:\(\s*)?(?:l[íi]t\s*\/\s*(?:gi[ờo]|hr?\b)|l\s*\/\s*(?:hr?\b|gi[ờo])|lph\b)`;
+const FUEL_MOST = String.raw`(?:≤|<=|=<|<(?![=-])|tối đa|không (?:lớn|vượt|quá)(?: hơn)?)`;
+function fuelFigures(text) {
+  const out = new Map(), lineOf = (i) => { const s = text.lastIndexOf("\n", i - 1) + 1, e = text.indexOf("\n", i); return { s, line: text.slice(s, e < 0 ? text.length : e) }; };
+  const tolAfter = (i) => /^\s*\)?\s*(?:\(?\s*)?(?:±|\+\s?\/\s?-|\+-)/.test(text.slice(i, i + 12));
+  const add = (figAt, index, s, num) => { if (!out.has(figAt)) out.set(figAt, Object.assign([s, num], { index })); };
+  for (const m of text.matchAll(new RegExp(FUEL_MOST + String.raw`\s*:?\s*` + FUEL_NUM + String.raw`\s*` + FUEL_UNIT, "gi"))) {
+    if (tolAfter(m.index + m[0].length)) continue;
+    add(m.index + m[0].search(/\d/), m.index, m[0], m[1]);
+  }
+  // On one line: "≤34.5 lít/h" then a row number "15" alone on the next line is no limit (IB2600313010).
+  for (const m of text.matchAll(new RegExp(FUEL_UNIT + String.raw`[ \t]*\)?[ \t]*:?[ \t]*(` + FUEL_MOST + String.raw`)?[ \t]*` + FUEL_NUM + String.raw`(?![\d.,]|[ \t]*(?:%|±|\+|kw|kva|v\b|hz|l\b|l[íi]t|lit|giờ|h\b|x\b|mm|kg|db|a\b|vòng|rpm|~|-\s*\d))`, "gi"))) {
+    const at = m.index + m[0].length - m[2].length, { s, line } = lineOf(m.index);
+    if (!m[1] && !FUEL_LABEL.test(line.slice(0, m.index - s))) continue;
+    add(at, at, m[2], m[2]);
+  }
+  for (const m of text.matchAll(new RegExp(String.raw`(?<![\d.,])` + FUEL_NUM + String.raw`\s*` + FUEL_UNIT, "gi"))) {
+    const { s, line } = lineOf(m.index), own = line.slice(0, m.index - s);
+    // Not a worked example of the HSMT ("Ví dụ: máy A tuyên bố tiêu thụ nhiên liệu ở 75% ... là 3,7 l/h", IB2400062449).
+    if (tolAfter(m.index + m[0].length) || /(?:kho[ảa]ng|~|≈|±|≥|>|=|≤|<|đ[ếe]n|t[ừu]|[-–]|\d[.,]?)\s*$/i.test(own) || /v[íi]\s*d[ụu]|example|tuy[êe]n\s*b[ốo]/i.test(line)) continue;
+    const listed = /^\s*[-+*•]?\s*(?:(?:t[ạa]i|[ởo]|m[ứu]c)\s+)?@?\s*\d{2,3}\s*%\s*(?:t[ảa]i|c[ôo]ng su[ấa]t)?[^\d]{0,30}$/i.test(own)
+      && FUEL_LABEL.test(text.slice(Math.max(0, s - 300), s).split("\n").slice(-3).join(" "));
+    if (!FUEL_LABEL.test(own) && !listed) continue;
+    add(m.index, m.index, m[0], m[1]);
+  }
+  return [...out.values()].sort((a, b) => a.index - b.index);
+}
 // The prime figures and the fuel limits the text gives, and the minimums taken from them.
 export function powerRead(t) {
-  const text = lowest(withoutOtherEquipment(unflatten(t))), prime = [], fuel = [], secAt = sectionsOf(text);
+  // The fuel limits are read in the text as written (`ft`): `lowest` turns "≤ 21±2 lít/giờ" into 19, a most stricter than the
+  // HSMT's (it allows 23); fuelFigures leaves a figure with a tolerance out (hints-audit 2026-11-17, IB2400493077).
+  const ft = withoutOtherEquipment(unflatten(t)), text = lowest(ft), prime = [], fuel = [], secAt = sectionsOf(text);
   const pair = (a, ua, b, ub, at) => { const v = { [ua.toLowerCase() === "kva" ? "kVA" : "kW"]: numOf(a) }; Object.defineProperty(v, "sec", { value: secAt(at) }); if (b && ub.toLowerCase() !== ua.toLowerCase()) v[ub.toLowerCase() === "kva" ? "kVA" : "kW"] = numOf(b); return v; };
   for (const m of text.matchAll(/(?:≥|>=|tối thiểu|không (?:nhỏ|thấp) hơn)\s*:?\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b(?:\s*\/\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)\s*(kVA|kW)\b)?/gi)) {
     const around = text.slice(Math.max(0, m.index - 160), m.index + 160), at = Math.min(m.index, 160);
@@ -1080,32 +1143,45 @@ export function powerRead(t) {
     if (m && !suffixed && !STANDBY_W.test(line.slice(0, m.index + 20)) && !ENGINE_W.test(m[0])) prime.push(pair(m[1], m[2], m[3], m[4], off));
     STANDBY_W.lastIndex = 0;
   }
-  for (const m of text.matchAll(/(?:≤|<=|tối đa|không (?:lớn|vượt|quá)(?: hơn)?)\s*:?\s*(\d{1,3}(?:[.,]\d{3})+|\d{1,3}(?:[.,]\d+)?)\s*(?:l[íi]t\s*\/\s*gi[ờo]|l\/h|lph|l\/hr)/gi)) {
-    const before = text.slice(Math.max(0, m.index - 200), m.index);
-    if (!/ti[êe]u hao|nhi[êe]n li[ệe]u|fuel/i.test(before)) continue;
+  for (const m of fuelFigures(ft)) {
+    const before = ft.slice(Math.max(0, m.index - 200), m.index);
+    if (!FUEL_LABEL.test(before)) continue;
     // A table row whose label wraps under its figure (IB2600603983, 2026-11-17: "+ Tiêu hao nhiên liệu ở   ≤ 156 lít/giờ"
     // then "mức 100% tải" alone on the next line, three rows of them): the load is the next line's, not the "100%" that
     // closes the row before (113 L/h of the 70% row was read as the 100% limit, and rows at 138–151 L/h were left out).
     // Only when the figure's own line has a label and no load, and the next line is nothing but the load.
-    const ls = text.lastIndexOf("\n", m.index - 1) + 1, own = text.slice(ls, m.index), le = text.indexOf("\n", m.index);
-    const ne = le < 0 ? -1 : text.indexOf("\n", le + 1), next = le < 0 ? "" : text.slice(le + 1, ne < 0 ? text.length : ne);
+    const ls = ft.lastIndexOf("\n", m.index - 1) + 1, own = ft.slice(ls, m.index), le = ft.indexOf("\n", m.index);
+    const ne = le < 0 ? -1 : ft.indexOf("\n", le + 1), next = le < 0 ? "" : ft.slice(le + 1, ne < 0 ? ft.length : ne);
     const under = /\p{L}{2}/u.test(own) && !/\d{2,3}\s*%/.test(own) ? next.match(/^\s*(?:ở\s+)?(?:ho[ạa]t [đd][ộo]ng\s+)?(?:mức\s+)?(\d{2,3})\s*%\s*(?:tải|phụ tải|công suất|load)?\s*[.;,]?\s*$/i) : null;
     // The load right after the figure on its own line ("≤ 3,7 lít/giờ tại (75 %) tải định mức" then "≤ 5,0 lít/giờ tại
     // (100 %) tải định mức", IB2600570050 / IB2600588204, found by hints-audit.mjs 2026-11-17): 5,0 took the 75% of the
     // line before. Only when the figure's own line gives no load before it.
-    const rest = text.slice(m.index + m[0].length, le < 0 ? text.length : le);
+    const rest = ft.slice(m.index + m[0].length, le < 0 ? ft.length : le);
     // The load after the figure may be introduced by a few words (IB2300204857 "≤ 34 Lít/ giờ với mức 75% tải", IB2300230061
     // "≤ 23 lít/giờ ở chế độ hoạt động 75% tải", IB2400389666 "≤53 L/h (khi mức tải là 75%)"), or wrap to the next line
     // ("≤23 L/h (khi mức tải là" / "75%)", IB2500073242): without it a 75% limit was taken for the 100% one (hints-audit 2026-11-17).
     const lead = String.raw`^[\s(]*(?:(?:t[ạa]i|[ởo]|khi|at|@|v[ớo]i)\s+)*(?:(?:ch[ếe] [đd][ộo]\s+)?ho[ạa]t [đd][ộo]ng\s+|m[ứu]c\s+|t[ảa]i\s+(?:l[àa]\s+)?)*[\s(]*`;
-    const afterOne = (s) => s.match(new RegExp(lead + String.raw`(\d{2,3})\s*%`, "i")) && s.match(new RegExp(lead + String.raw`(\d{2,3})\s*%\s*\)?\s*(?:t[ảa]i|ph[ụu] t[ảa]i|c[ôo]ng su[ấa]t|load|[.;,)]|$)`, "i"));
+    const afterOne = (s) => s.match(new RegExp(lead + String.raw`(\d{2,3})\s*%`, "i")) && s.match(new RegExp(lead + String.raw`(\d{2,3})\s*%\s*\)?\s*(?:t[ảa]i|ph[ụu] t[ảa]i|c[ôo]ng(?:\s*su[ấa]t)?|cs\b|load|[.;,)]|$)`, "i"));
     // The figure's own cell wraps after "là" and the "75%)" is alone on one of the next three lines (a neighbouring cell's
     // label may sit between them).
-    const tail = /(?:l[àa]|khi|m[ứu]c|t[ạa]i|[ởo])\s*$/i.test(rest) && le >= 0 ? text.slice(le + 1).split("\n", 3).find((l) => /^\s*\d{2,3}\s*%\s*\)?\s*$/.test(l)) : null;
+    const tail = /(?:l[àa]|khi|m[ứu]c|t[ạa]i|[ởo])\s*$/i.test(rest) && le >= 0 ? ft.slice(le + 1).split("\n", 3).find((l) => /^\s*\d{2,3}\s*%\s*\)?\s*$/.test(l)) : null;
     const wrapped = tail ? rest + " " + tail.trim() : rest;
     const after = /\d{2,3}\s*%/.test(own) ? null : afterOne(wrapped);
-    const load = after || under || before.slice(-60).match(/(\d{2,3})\s*%(?![\s\S]*\d{2,3}\s*%)/);
-    fuel.push({ v: numOf(m[1]), load: load ? Number(load[1]) : /đầy tải|full load/i.test(before.slice(-60)) ? 100 : null });
+    // The load on the line under the figure, after a few words ("Tiêu thụ nhiên liệu mức" / "14 ≤ 3,5 L/h" / "100% tải liên
+    // tục", "Tiêu hao nhiên liệu" / "- ≤ 370 L/hr (Lít/giờ)" / "tại 75% công suất": hints-audit 2026-11-17). Only when the
+    // figure's line gives no load, and the next line gives no other figure (it would be the next row's own load and limit).
+    // A load before the figure that sits before its fuel label is the row above's ("75% tải liên tục" closing it); one after
+    // the label that differs from the line under leaves the figure of no load we can use (-1).
+    const nm = !after && !/\d{2,3}\s*%/.test(own) ? next.match(/^\s*[(\-–+*•]?\s*(?:(?:t[ạa]i|[ởo]|m[ứu]c|t[ảa]i|khi)\s*)*(\d{2,3})\s*%/i) : null;
+    const below = nm && !/\d/.test(next.slice(nm.index + nm[0].length)) && !/[≤<]|l[íi]t\s*\//i.test(next) ? nm : null;
+    const tail60 = before.slice(-60), bl = tail60.match(/(\d{2,3})\s*%(?![\s\S]*\d{2,3}\s*%)/);
+    const labelAt = Math.max(-1, ...[...tail60.matchAll(new RegExp(FUEL_LABEL.source, "gi"))].map((x) => x.index));
+    // A load before the figure's own line when that line has its own fuel label is the row above's too ("Thời gian chạy liên
+    // tục 16h(50% CS)" then "Tiêu hao nhiên liệu « 4,83 L/h (100% CS)", IB2500266050).
+    const ownLabel = FUEL_LABEL.test(own) && bl && bl.index < tail60.length - own.length;
+    const fromBefore = (bl && below && bl.index < labelAt) || ownLabel ? null : bl;
+    const load = after || under || (below && fromBefore && below[1] !== fromBefore[1] ? ["", "-1"] : below || fromBefore);
+    fuel.push({ v: m.v ?? numOf(m[1]), load: load ? Number(load[1]) : /đầy tải|full load/i.test(before.slice(-60)) ? 100 : null });
   }
   const one = (list) => (new Set(list).size === 1 ? list[0] : null);
   // A figure in the engine's or the alternator's section (an alternator of 11 kVA for an 8.5 kVA genset) is the genset's
