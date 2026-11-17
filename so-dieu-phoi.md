@@ -7,6 +7,9 @@ Viết gọn lại 13/11/2026 (sáng, giờ VN). Cập nhật 16/11: #786 (nối
 ## Đang chạy
 | Việc | Session (id để báo về / hỏi) | Model | Chờ gì |
 |---|---|---|---|
+| Việc 1 `chi-tiet-viec-mo.md`: thương hiệu ≠ nơi SX trong Gợi ý cấu hình (dùng `madeOf` của #841) | `local_d21240b6-6371-4acb-81aa-0c684b7cb1b5` (noi-san-xuat, KHOAMINIPC, 17/11) | Opus | PR draft + `nghiem-thu\noi-san-xuat.md`; sau đó mở việc 3 rồi 5 (cùng catalog.js) |
+| Việc 2: nhãn "Công suất chưa xác nhận" | `local_adb98bd9-fbfc-4f38-9eb1-357391c5d6fa` (nhan-cong-suat) | Sonnet | PR draft + `nghiem-thu\nhan-cong-suat.md` |
+| Việc 4: soát ngưỡng HSMT toàn kho | `local_69028fd4-1cc8-43f5-9e01-3dee9fcb7e57` (soat-nguong) | Sonnet | `nghiem-thu\soat-nguong-2.md` (+ PR nếu code sai) |
 | Phủ test: việc còn mở sau 13/11 (trưa) | — (phiên H1, H2, H3, W1, W2 đã xong, chưa lưu trữ: chờ Khoa) | — | (1) Chưa thử Back / quẹt trên điện thoại thật sau #691 (đổi `navKey`, `navDirect`; quay lui: revert từng commit). (2) Gói đã bấm Gợi ý giá từ web trong 11–13/11 tính dự báo số nhà thầu thiếu tỉnh / lĩnh vực / ngày đóng (#690 đã sửa): Khoa bấm lại gói còn dùng. (3) Luật tên gói không nhận chữ "Diezel" làm dấu hiệu tổ máy diesel (IB2400069058 bị loại vì "Tổ máy 300MW"): sửa phải sửa cả ba nơi. (4) Khoa bổ sung website cho `xcmg-doosan-engine`, `mtu-yuchai`. (5) Xem lượt Sync / lịch sử / nhà thầu thật đầu tiên bằng bản bot mới. (6) Chưa phủ: nhánh trình duyệt `server/`, tải tệp báo giá / HSMT dự án, Forward sau Back từ link thẳng |
 
 ## Chưa giao
