@@ -773,6 +773,10 @@
   function walkedSpecs(hs, cells, { ei = -1, ai = -1, gi = -1, power = null } = {}) {
     if (ei < 0 && ai < 0) return [];
     const kW = kWOf(power);
+    // Two cells that hold the kVA and the kW of ONE rating read for this row (not a prime kW next to a standby kW,
+    // frs-shenyang: each under a title of its own).
+    const figOf = (v) => { const t = String(v ?? "").replace(/\s+/g, "").replace(/(kva|kwe?)$/i, "").replace(",", "."); return /^\d+(\.\d+)?$/.test(t) ? +t : null; };
+    const onePair = (a, b) => { const x = figOf(a), y = figOf(b); return x != null && y != null && x !== y && Object.values(power || {}).some((p) => p && ((p.kVA === x && p.kW === y) || (p.kVA === y && p.kW === x))); };
     const engT = engTitle, altT = altTitle;
     const got = new Map(), bad = new Set();
     for (const h of hs) {
@@ -785,7 +789,7 @@
       starts.push([h.length - 1, cells.length - 1, -1, true]);
       for (const [j0, c0, d, edge] of starts) {
         const mine = [];
-        let anchored = !edge;
+        let anchored = !edge, skips = 0, keep = 0, miss = false;
         for (let j = j0, c = c0; j >= 0 && j < h.length && c >= 0 && c < cells.length; j += d, c += d) {
           const x = h[j];
           // A title of the engine or alternator over another cell: a title before it spans two cells; what came before stays.
@@ -794,6 +798,13 @@
           if ((c === ei && !engT(x)) || (c === ai && !altT(x))) { if (named || specKey(x) || POWER_TITLE.test(x)) break; }
           if (c === ei || c === ai) { anchored = true; continue; }
           const key = specKey(x), val = key && specVal(cells[c]);
+          // A genset power title in a row wider than this header line spans two cells ("输出功率" over "KVA | KW",
+          // "主用功率" over "KW | KVA"): every title after it lay one cell off, and a current or a standby kW was read as
+          // the weight (yingtai-jiangsu "净重" = 36 on a 710 kg set; rà soát 17/11/2026). The title covers its cell and
+          // the next one when both hold an output read for this row (titledPowers): the walk steps over the second.
+          // Only on the walk from the genset model at the left: one from the engine's cell may start a cell off when the
+          // header names the engine's make and model apart ("Engine | Model", sr-genset: a kVA was read as the voltage).
+          if (!key && d === 1 && c0 === 0 && cells.length > h.length && POWER_TITLE.test(x) && !/电流|current|amp|\(A\)/i.test(x)) { if (!onePair(cells[c], cells[c + 1])) miss = true; else { if (!skips++) keep = mine.length; c++; } }
           if (!val) continue;
           if (!specFits(key, val) || !likely(key, val, kW)) break;
           // Two columns of one kind (open and silent size, weight): the one further left.
@@ -801,11 +812,20 @@
           if (same >= 0) { if (c < mine[same].c) mine[same] = { key, label: x, value: val, c }; }
           else mine.push({ key, label: x, value: val, c });
         }
+        // Every power title of the line must cover such a pair: a row where one was not read (yingtai-jiangsu
+        // "64 | 75 | 88 | 88", "330 | 375 | 380 | 475") is still a cell off after it, so nothing past the first pair
+        // is kept (thà thiếu còn hơn đọc sai).
+        if (skips && miss) mine.length = keep;
         // From the last cell alone, with no known cell on the way: only when two figures or more fit.
         if (!anchored && mine.length < 2) continue;
         for (const m of mine) { const g = got.get(m.key); if (g && g.c !== m.c) bad.add(m.key); else if (!g) got.set(m.key, m); }
       }
     }
+    // One cell read under two titles by two walks (a row with a cell left out: yingtai-jiangsu "… | 115.2 | 1200 |
+    // 2.35*1.0*1.5", 1200 kg read as the speed from the left and the weight from the right): neither is known.
+    // A title already read at two places says nothing about the cell.
+    const at = new Map();
+    for (const m of [...got.values()].filter((m) => !bad.has(m.key))) { const k = at.get(m.c); if (k && k !== m.key) { bad.add(k); bad.add(m.key); } else at.set(m.c, m.key); }
     return [...got.values()].filter((m) => !bad.has(m.key)).map(({ key, label, value }) => ({ key, label, value }));
   }
 

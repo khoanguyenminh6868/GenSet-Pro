@@ -152,3 +152,25 @@ test("table row: a note after the engine code, or an empty engine cell, does not
   assert.deepEqual(of(l, "engine"), []);
   assert.deepEqual(of(l, "alternator"), ["LTP224S-50"]);
 });
+
+test("walkedSpecs: a power title over two cells (kVA | kW) does not shift the titles after it (rà soát lệch cột 18/11/2026)", () => {
+  const rec = (header, rows) => ({ id: "x", country: "CN", role: "genset_oem", status: "partial", names: { en: "X", brands: [] }, productLines: [], sources: [], specTables: [{ n: 1, title: "柴油发电机组", header, rows }] });
+  const sp = (r) => CAT.fromSupplier(r).map((o) => Object.fromEntries((o.specs || []).map((s) => [s.key, s.value])));
+  const H = ["| 机组型号 Genset Model | 主用功率（主用） | 备用功率（备用） | 电流（主用）Power(A) | 电流（备用）Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimensions L*W*H(m) | 品牌 Brand | 发 动 机型号 Engine Type", "| KW | KVA | KW | KVA"];
+  // yingtai-group n2002: the weight was read as 36 (the prime current) on a 710 kg set
+  const [a] = sp(rec(H, ["| 20GF | 20 | 25 | 22 | 27.5 | 36 | 39.6 | 710 | 1.7*0.9*1.4 | 4B3.9-G2"]));
+  assert.equal(a.weight, "710");
+  assert.equal(a.dims, "1.7*0.9*1.4");
+  // one pair is no kVA / kW of one rating (330 | 375 | 380 | 475): the walk from the left is still a cell off and
+  // gives nothing; the weight is the one read back from the engine's cell, never a current (594, 675)
+  for (const [row, kg] of [["| 330GF | 330 | 375 | 380 | 475 | 594 | 675 | 2850 | 3.3*1.15*2.15 | QSZ13-G7", "2850"], ["| 64GF | 64 | 75 | 88 | 88 | 115.2 | 126.7 | 1180 | 1.9*0.9*1.4 | WP4.1D80E200", "1180"]])
+    assert.ok([kg, undefined].includes(sp(rec(H, [row]))[0]?.weight), row);
+  // xinzhengfa n101: "输出功率" over KVA | KW, the kW was read as the current
+  const [x] = sp(rec(["| 机组型号 | 输出功率 | 额定 电流A | 频率/转速 Hz/RPM | 柴油机型号 | 机组外型尺寸(L × B × H)mm | 机组重量Kg", "| KVA | KW"], ["| ZF24GF | 30 | 24 | 33.2 | 50/1500 | K4100D | 1800 × 750 × 1100 | 810"]));
+  assert.equal(x.current, "33.2");
+  assert.equal(x.weight, "810");
+  // yingtai-jiangsu n114: a row with the speed cell left out, 1200 is the speed from the left and the weight from the right: neither
+  const [g] = sp(rec(["| 机组型号 Genset Model | 输出功率（主用） | 备用功率（备用） | 电流Power(A) | 额定转速 | 净重 Net Weight (kg) | 外形尺寸 Overall Dimensions L*W*H(m) | 发动 机型号 Engine Type | 缸数 Number of", "| KW | KVA | KW | KVA"], ["| 64GF-A | 64 | 80 | 75 | 83 | 115.2 | 1200 | 2.35*1.0*1.5 | YC6G180N-D30 | 4"]));
+  assert.equal(g.speed, undefined);
+  assert.equal(g.weight, undefined);
+});
