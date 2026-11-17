@@ -8,6 +8,8 @@
 // CLAUDE_CODE_OAUTH_TOKEN (nếu có), GH_BOT_TOKEN hoặc GITHUB_TOKEN, FIRECRAWL_KEY (nếu có).
 const MIN = 60e3;
 export const NAME = "genbid-bot";
+export const IMAGE = "vercel/sandbox/ubuntu";
+export const SNAPSHOT_MS = 365 * 24 * 60 * MIN;
 export const PC_SILENT_MS = 3 * MIN; // như trang web: im 3 phút = máy tắt
 export const IDLE_STOP_MS = 20 * MIN;
 export const SESSION_MS = 60 * MIN;
@@ -75,9 +77,15 @@ export async function up({ env = process.env, log = console.log } = {}) {
   try { sb = await Sandbox.get({ name: NAME }); }
   catch (e) {
     if (!isNotFound(e)) throw e;
-    const base = { name: NAME, persistent: true, runtime: "node22", region: "sin1", resources: { vcpus: 4 }, snapshotExpiration: 30 * 24 * 60 * MIN, keepLastSnapshots: { count: 1, deleteEvicted: true } };
+    // Ubuntu: setup-sandbox.sh dùng apt-get (image mặc định không có, thử thật 17/11). Snapshot giữ 1 năm (Khoa 17/11).
+    const base = { name: NAME, persistent: true, image: IMAGE, region: "sin1", resources: { vcpus: 4 }, snapshotExpiration: SNAPSHOT_MS, keepLastSnapshots: { count: 1, expiration: SNAPSHOT_MS, deleteEvicted: true } };
     try { sb = await Sandbox.create({ ...base, timeout: SESSION_MS }); }
-    catch (e2) { log(`sandbox: tạo phiên 60 phút không được (${String(e2.message).slice(0, 100)}), thử 45 phút (Hobby)`); sb = await Sandbox.create({ ...base, timeout: HOBBY_SESSION_MS }); }
+    catch (e2) {
+      // Hobby (phiên tối đa 45 phút) hoặc gói không cho giữ snapshot 1 năm: thử phiên 45 phút, snapshot 30 ngày.
+      log(`sandbox: tạo không được (${String(e2.message).slice(0, 160)}), thử phiên 45 phút + snapshot 30 ngày`);
+      const d30 = 30 * 24 * 60 * MIN;
+      sb = await Sandbox.create({ ...base, timeout: HOBBY_SESSION_MS, snapshotExpiration: d30, keepLastSnapshots: { ...base.keepLastSnapshots, expiration: d30 } });
+    }
     log("sandbox: đã tạo");
   }
   // Lệnh đầu tiên nối lại phiên nếu sandbox đang dừng.

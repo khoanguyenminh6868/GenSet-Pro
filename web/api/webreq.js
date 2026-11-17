@@ -22,6 +22,8 @@ export default async function handler(req, res) {
   // Cấu hình hệ thống (settings/ai), the superadmin only (Khoa, 2026-11-13): API key or monthly plan for each task, and
   // the API money spent this period (corrected by hand). The bot reads it with its heartbeat (api/requests.js).
   if (coll === "settings") return saveAiSettings(req, res, member);
+  // The page saw the PC off (index.html sandboxWakePing): start the sandbox bot if a request is waiting.
+  if (coll === "wake") return res.json({ wake: await wakeSandbox({ needPending: true }) });
   const items = Array.isArray(req.body?.items) ? req.body.items : [];
   if (!COLLS.has(coll)) return res.status(400).json({ error: "Loại yêu cầu không hợp lệ." });
   // Tìm Thông Số of a supplier (specreq/<supplier id>, config-bot.mjs specJob): the superadmin only (Khoa, 2026-11-06).

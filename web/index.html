@@ -2457,8 +2457,18 @@ function refreshWaits() {
   $$("[data-since]").forEach((el) => (el.textContent = `(${sinceText(el.dataset.since)})`));
   const off = botOfflineText();
   $$("[data-botwarn]").forEach((el) => { el.textContent = off; el.hidden = !off; });
+  if (off) sandboxWakePing();
 }
 setInterval(refreshWaits, 30e3);
+// PC off: ask the web to start the bot in the Vercel Sandbox (api/_wake.js), at most every 2 minutes from this page.
+// The server starts it only when a request is waiting, at most once every 5 minutes, and only with SANDBOX_WAKE=1.
+// Covers a request sent while the PC had just gone off (its own wake then saw the PC still on).
+let sandboxWakeAt = 0;
+function sandboxWakePing() {
+  if (!window.genbidWeb || !window.genbidApi || Date.now() - sandboxWakeAt < 2 * 60e3) return;
+  sandboxWakeAt = Date.now();
+  window.genbidApi("/api/webreq", { coll: "wake" }).catch(() => {});
+}
 // While a request waits for Agent, re-read its answer every 10 seconds, so the result shows (and the waiting
 // note goes away) even if the realtime change never reaches this page. Nothing is read when nothing waits.
 async function pollPending() {

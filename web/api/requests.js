@@ -129,6 +129,7 @@ async function botDoc(id) {
   } catch { return null; }
 }
 export const fresh = (iso, ms, now = Date.now()) => !!iso && now - new Date(iso).getTime() < ms;
+export const anyPending = async () => hasPending(await pendingMarks());
 const hasPending = (marks) => Object.values(marks || {}).some((list) => list.some((m) => pendingOf({ data: m })));
 function apiOf(text) {
   let j; try { j = JSON.parse(String(text || "")); } catch { return null; }

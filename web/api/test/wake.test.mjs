@@ -78,6 +78,8 @@ test("Lần đầu: tạo sandbox persistent sin1 phiên 60 phút (Hobby: 45 ph�
   assert.equal(box.created.length, 2);
   const o = box.created[0];
   assert.equal(o.name, "genbid-bot"); assert.equal(o.persistent, true); assert.equal(o.region, "sin1"); assert.equal(o.timeout, 60 * 60e3);
+  assert.equal(o.image, "vercel/sandbox/ubuntu"); assert.equal(o.runtime, undefined);
+  assert.equal(o.snapshotExpiration, 365 * 24 * 3600e3);
   assert.equal(box.created[1].timeout, 45 * 60e3);
   assert.match(startCmd().args[1], /setup-sandbox\.sh main .*&& touch .*sandbox-setup-done && .*start-bot\.sh/);
 });
@@ -97,6 +99,18 @@ test("Bot đang mở (tim < 3 phút), huỷ yêu cầu, hoặc chưa đặt SAND
   assert.equal((await webreq([{ key: "IB1", cancel: true }])).wake, "off");
   assert.equal((await webreq([{ key: "IB1" }], { ...ENV, SANDBOX_WAKE: undefined })).wake, "off");
   assert.equal(box.cmds.length, 0);
+});
+
+test("Trang thấy máy tắt (coll=wake): chỉ bật khi có yêu cầu chờ; bỏ qua mốc 'bot-on' của lần gửi yêu cầu lúc máy vừa tắt", async () => {
+  const ping = async () => { const h = await fresh("webreq.js", ENV); const r = (await call(h, mkReq({ method: "POST", body: { coll: "wake" }, token: "tok-user" }))).jsonBody; await S.lastBackground; return r.wake; };
+  db.put("botstatus", "current", { lastPollAt: ago(30) });
+  assert.equal(await ping(), "idle");
+  assert.equal(box.cmds.length, 0);
+  assert.equal(db.get("botstatus", "wake"), undefined, "không có việc thì không ghi mốc");
+  db.put("syncreq", "current", { requestedAt: ago(2) });
+  assert.equal(await ping(), "sent");
+  assert.ok(startCmd());
+  assert.equal(await ping(), "waking");
 });
 
 test("Bật sandbox lỗi: yêu cầu vẫn lưu, trả lời không chờ, không ném lỗi", async () => {
