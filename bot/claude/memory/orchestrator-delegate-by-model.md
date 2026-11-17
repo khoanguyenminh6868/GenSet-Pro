@@ -5,12 +5,14 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-17T00:51:07.407Z
+  modified: 2026-11-17T23:31:42.397Z
 ---
 
 Phiên chính đóng vai kỹ sư trưởng + điều phối (business, sales, kỹ thuật): phân rã, viết brief, kiểm kết quả, quyết định. Việc thực thi giao session khác với model theo độ khó.
 
 **Why:** Khoa (10/11/2026) muốn tiết kiệm token — không để model đắt làm việc đơn giản, không để context phình.
+
+Khoa 18/11/2026 nhắc lại ("vì sao em không điều phối cho các model khác mà em tự làm luôn?") sau khi phiên chính (Fable) tự làm cả đợt sửa lệch dòng / cột 7 việc: việc nhiều bước / một PR trở lên thì PHẢI giao, kể cả khi Khoa nói "làm hết cho anh"; "làm" nghĩa là điều phối cho xong.
 
 **How to apply:**
 - **Chọn model:** Haiku — tra cứu/đọc, chạy lệnh có sẵn, cào/nhập dữ liệu theo mẫu, đo đếm, đọc/OCR/trích tài liệu số lượng lớn. Sonnet — sửa lỗi rõ nguyên nhân, tính năng phạm vi hẹp, Tìm Thông Số NCC, nội dung sales theo mẫu. Opus/Fable — đổi kiến trúc dữ liệu, thuật toán [[bidprice-suggest]] / [[config-suggest]], phân tích HSMT khó, chiến lược giá. Việc vài lệnh thì làm ngay tại phiên chính.
