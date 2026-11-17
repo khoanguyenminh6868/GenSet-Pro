@@ -151,9 +151,14 @@ $restart = 'không'
 if ($task -and -not $Check -and $task.Actions[0].Execute -ne 'conhost.exe') {
     $act = New-ScheduledTaskAction -Execute 'conhost.exe' -WorkingDirectory $Root `
         -Argument "--headless powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$Kit\GenBid-Bot.ps1`""
-    Set-ScheduledTask -TaskName 'GenBid Bot' -Action $act | Out-Null
-    $task = Get-ScheduledTask 'GenBid Bot'
-    $notes.Add("đã sửa tác vụ 'GenBid Bot' chạy qua conhost --headless (không nháy cửa sổ)")
+    # Tác vụ tạo bằng quyền admin (Install chạy admin) thì người thường sửa bị "Access is denied" (17/11/2026).
+    try {
+        Set-ScheduledTask -TaskName 'GenBid Bot' -Action $act -ErrorAction Stop | Out-Null
+        $task = Get-ScheduledTask 'GenBid Bot'
+        $notes.Add("đã sửa tác vụ 'GenBid Bot' chạy qua conhost --headless (không nháy cửa sổ)")
+    } catch {
+        $notes.Add("tác vụ 'GenBid Bot' còn kiểu cũ, sửa cần quyền admin: Khoa chạy powershell -NoProfile -ExecutionPolicy Bypass -File `"$Repo\bot\Repair-GenBidBotTask.ps1`" (bấm Yes ở UAC; script tự bật lại bot qua tác vụ)")
+    }
 }
 # Bot bật ngoài tác vụ (cha không phải conhost của tác vụ, vd. Start-Process từ phiên Claude): End tác vụ không tắt được nó.
 $outside = @($disp | Where-Object { (Get-CimInstance Win32_Process -Filter "ProcessId=$($_.ParentProcessId)" -ErrorAction SilentlyContinue).Name -ne 'conhost.exe' })

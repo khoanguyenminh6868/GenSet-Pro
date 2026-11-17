@@ -38,5 +38,8 @@ Mọi việc nằm trong `bot\Update-GenBidBot.ps1`; skill chỉ chạy nó và 
      `Start-Process` hay chạy tay `GenBid-Bot.ps1` (17/11/2026: bot ngoài tác vụ thì Khoa End tác vụ cũng không tắt được, bot
      vẫn nhận việc và chặn sandbox). Bật / tắt bot chỉ qua tác vụ "GenBid Bot" (chạy `conhost --headless`, script tự sửa tác vụ kiểu cũ).
    - **Bot chạy NGOÀI tác vụ:** script tự khởi động lại qua tác vụ (hoãn nếu có lượt con đang chạy, như trên).
+   - **Tác vụ còn kiểu cũ, sửa cần quyền admin:** đưa Khoa lệnh `powershell -NoProfile -ExecutionPolicy Bypass -File
+     "C:\Projects\GenSet Pro\GenSet-Pro\bot\Repair-GenBidBotTask.ps1"` (tự hiện hộp UAC, Khoa bấm Yes; sửa xong tự bật lại bot
+     qua tác vụ nếu bot đang chạy). Claude không tự bấm UAC.
 4. Kiểm: `powershell -File "C:\Projects\GenSet Pro\GenSet-Pro\bot\Backup-GenBidBot.ps1" -Check` → "Repo đã giống bản đang chạy."
 5. Báo Khoa ngắn: main từ commit nào lên commit nào, tệp bot nào đổi, có khởi động lại không, còn gì phải làm.

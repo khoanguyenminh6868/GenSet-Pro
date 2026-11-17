@@ -605,8 +605,11 @@ if (-not $OnLinux -and -not $Once) {
         if ($t -and $t.Actions[0].Execute -ne 'conhost.exe') {
             $act = New-ScheduledTaskAction -Execute 'conhost.exe' -WorkingDirectory $Root `
                 -Argument "--headless powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$PSCommandPath`""
-            Set-ScheduledTask -TaskName 'GenBid Bot' -Action $act | Out-Null
-            Log "Đã sửa tác vụ 'GenBid Bot' chạy qua conhost --headless (áp dụng lần bật sau)."
+            # Tác vụ tạo bằng quyền admin thì người thường sửa bị "Access is denied": bot\Repair-GenBidBotTask.ps1 (tự xin quyền).
+            try {
+                Set-ScheduledTask -TaskName 'GenBid Bot' -Action $act -ErrorAction Stop | Out-Null
+                Log "Đã sửa tác vụ 'GenBid Bot' chạy qua conhost --headless (áp dụng lần bật sau)."
+            } catch { Log "Tác vụ 'GenBid Bot' còn kiểu cũ (sửa cần quyền admin: chạy bot\Repair-GenBidBotTask.ps1): $($_.Exception.Message)" }
         }
         $me = Get-CimInstance Win32_Process -Filter "ProcessId=$PID"
         $par = Get-CimInstance Win32_Process -Filter "ProcessId=$($me.ParentProcessId)"
