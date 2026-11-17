@@ -78,6 +78,8 @@ test("Lần đầu: tạo sandbox persistent sin1 phiên 60 phút (Hobby: 45 ph�
   assert.equal(box.created.length, 2);
   const o = box.created[0];
   assert.equal(o.name, "genbid-bot"); assert.equal(o.persistent, true); assert.equal(o.region, "sin1"); assert.equal(o.timeout, 60 * 60e3);
+  assert.equal(o.image, "vercel/sandbox/ubuntu"); assert.equal(o.runtime, undefined);
+  assert.equal(o.snapshotExpiration, 365 * 24 * 3600e3);
   assert.equal(box.created[1].timeout, 45 * 60e3);
   assert.match(startCmd().args[1], /setup-sandbox\.sh main .*&& touch .*sandbox-setup-done && .*start-bot\.sh/);
 });
