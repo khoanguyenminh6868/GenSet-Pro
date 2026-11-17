@@ -52,7 +52,7 @@ Dòng nguồn ghi rõ nhà máy TQ luôn thắng mặc định (vd. "Stamford (C
 
 ---
 
-## 2. Nhãn "Công suất chưa xác nhận" trên thẻ cấu hình
+## 2. Nhãn "Công suất chưa xác nhận" trên thẻ cấu hình — XONG #842 (17/11)
 
 - Khoa 17/11: "ok làm". Mục công suất kết quả "chưa rõ" (nguồn chỉ ghi một số, không rõ Prime / Standby) → nhãn nổi trên đầu thẻ cấu hình.
 - **Chỉ hiển thị**, không đổi thứ hạng, không đổi dữ liệu.
@@ -69,7 +69,7 @@ Dòng nguồn ghi rõ nhà máy TQ luôn thắng mặc định (vd. "Stamford (C
 
 ---
 
-## 4. Soát ngưỡng HSMT do code đọc trên toàn bộ kho
+## 4. Soát ngưỡng HSMT do code đọc trên toàn bộ kho — XONG #844 (17/11; còn "thiếu" 664 chỉ đếm, `nghiem-thu\soat-nguong-2.md`)
 
 - Khoa 17/11 (ghi từ KAYENGRAM): `node suppliers\hints-audit.mjs --texts "C:\Projects\GenSet Pro\genbid-work\specs" --out "C:\Projects\GenSet Pro\genbid-work\dieu-phoi\nghiem-thu\soat-nguong.json"`. Không tốn agent, không ghi web. Chạy trên máy có `genbid-work\specs` đầy đủ.
 - Mục "LỆCH": mở dòng HSMT, xem code hay Phân tích sai; code sai thì sửa `powerRead` / `engineMins` + ca test dòng thật. "THIẾU" chỉ đếm.

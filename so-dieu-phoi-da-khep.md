@@ -186,3 +186,5 @@ Cập nhật 18:25Z 12/11: đăng kết quả check lại của IB2600601812 (co
 - 17/11/2026 · Gợi ý giá: thêm gói 1 nhà thầu vào mẫu, bù prior khi pool < 10 (Khoa xem số rồi chọn merge cả hai: phủ 62,4 → 58,8%, sai mức giữa 5,7 → 4,5, lệch +0,7 → +2,4) · #838
 - 17/11/2026 · Gán hãng động cơ / đầu phát (mức bằng chứng cao nhất, cặp cùng hãng, số đông; 609 / 1.093 lượt đổi ứng viên, soi tay 10 gói) · #839 (38a1bb16) · `nghiem-thu\gan-hang.md`
 - 17/11/2026 · Bộ nhớ gộp hai máy (luật số đông, thương hiệu / nơi sản xuất, việc bỏ 16/11) + KHOAMINIPC kéo bot theo #819, #821 · #826
+- 17/11/2026 · Soát ngưỡng HSMT toàn kho (1.499 gói): lệch 16 → 9 (9 còn lại là lỗi Phân tích / gói nhiều cỡ), sửa 8 gói code đọc sai tiêu hao 75% / số xi lanh · #844 (b78668e2) · `nghiem-thu\soat-nguong-2.md`
+- 17/11/2026 · Nhãn "Công suất chưa xác nhận" trên thẻ Gợi ý cấu hình (chỉ hiển thị) · #842 (ae0559d0) · `nghiem-thu\nhan-cong-suat.md`
