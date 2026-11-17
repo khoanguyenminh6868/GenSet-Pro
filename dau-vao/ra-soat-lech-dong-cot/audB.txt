@@ -1,0 +1,177 @@
+﻿bản ghi 58999 | từ dòng bảng 54340 | cặp kVA/kW trong một ô 19167 | cặp từ hai ô kề 51051
+
+### B1a ghép hai ô CÙNG đơn vị thành cặp kVA / kW: 92 bản ghi | 9 NCC: zhengchi-power×35, elitech-power×19, jiangchai-xuzhou×10, comappower×8, aoke-yangzhou×7, lees-power×4, wintpower×4, bruno-generators×3, hichai-power×2
+  [aoke-yangzhou n101] engine QSK60G13 | AOKE-C2000 → rated 2000 kVA / 1700 kW ← "1700KW" | "2000KW" dưới "主用功率(KW)" | "备用功率(KW)"
+     H: | 机组型号 | 主用功率(KW) | 备用功率(KW) | 发动机品牌 | 柴油机型号 | 缸数 | 排量(L) | 机油容量(L) | 燃油消(g/kw/h) | 外形尺寸 (L×W×H mm×mm×mm) | 机组重量(KG) | 技术咨询 | 详细参数
+     R: | AOKE-C2000 | 1700KW | 2000KW | 康明斯 | QSK60G13 | 16 | 50.3 | 280 | 200 | 6400×2800×3700 | 15500 | | 详细参数
+  [bruno-generators n101] engine MCP 120-80 | null → standby 5.9 kVA / 5 kW ← "5" | "5.9" dưới "kWm" | "kWm"
+     H: | | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 HZ | | 60 HZ | | | | | | | | | TANK l | DIMENSIONS cm | | | MAXIMUM SIZE cm | | | WEIGHT kg | STANDARD PANEL
+     H: | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 Hz | | 60 Hz | | Engine | cm3 | kWm | kWm | fuel consumption (l/h) | fuel consumption (l/h) | Aspiration | TANK (l) | DIMENSIONS (cm) | | | MAXIMUM SIZE (cm) | | | 
+     R: | SL 9506 KL | 6 | 250 W | 1500 W | AC | 230 V | 5.3 | 4.5 | 6.5 | 6 | KOHLER KDW 702 | 686 | 5 | 5.9 | 0.8 | 0.7 | N | 140 | 245 | 130 | 230 | 245 | 280 | 920 | 1050 | MCP 120-80
+  [comappower n105] engine 4M06G20/5 | COM20B → prime 18.75 kVA / 15 kW ← "15kW" | "18.75kW"
+     H: | | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data
+     R: | COM20B | 20kW | 16kW | 15kW | 18.75kW | 4M06G20/5 | 4 | COM20B
+  [elitech-power n1001] engine 4B3.9-G12 | EPS30CMA-3 → rated 35 kVA / 30 kW ← "30KVA" | "35KVA"
+     H: | | Genset Model | Engine Brand | Prime Power | Standby Power | Engine Model | Freq. | Phase | Specificmation Download | SEO ID
+     R: | EPS30CMA-3 | CUMMINS | 30KVA | 35KVA | 4B3.9-G12 | 50Hz | 3-Phase | DOWNLOAD PDF | eps30cma-3-cummins-30kva-diesel-generator-specs
+
+### B1b ghép ô không phải công suất (tần số, dòng điện, khối lượng…) thành cặp: 169 bản ghi | 6 NCC: tecnogen×121, chuangyuan-zhongshan×20, kangwo-guangdong×15, bruno-generators×5, yingtai-group×4, yingtai-jiangsu×4
+  [bruno-generators n101] engine MCP 120-80 | null → prime 5.3 kVA / 4.5 kW ← "5.3" | "4.5" dưới "50 Hz" | ""
+     H: | | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 HZ | | 60 HZ | | | | | | | | | TANK l | DIMENSIONS cm | | | MAXIMUM SIZE cm | | | WEIGHT kg | STANDARD PANEL
+     H: | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 Hz | | 60 Hz | | Engine | cm3 | kWm | kWm | fuel consumption (l/h) | fuel consumption (l/h) | Aspiration | TANK (l) | DIMENSIONS (cm) | | | MAXIMUM SIZE (cm) | | | 
+     R: | SL 9506 KL | 6 | 250 W | 1500 W | AC | 230 V | 5.3 | 4.5 | 6.5 | 6 | KOHLER KDW 702 | 686 | 5 | 5.9 | 0.8 | 0.7 | N | 140 | 245 | 130 | 230 | 245 | 280 | 920 | 1050 | MCP 120-80
+  [chuangyuan-zhongshan n101] engine S6R2-PTA-C | null → prime 500 kVA / 400 kW ← "500" | "400" dưới "主用功率 (KW)" | "额定电压 (V)"
+     H: | | 菱重系列机组参数 | 发动机技术参数
+     H: | 序号 | 主用功率 (KW) | 额定电压 (V) | 额定转速 (RPM) | 额定功率因数 | 频率 (HZ) | 参考机组尺寸 （长*宽*高）mm | 参考重量 (KG) | 发动机型号 | 气缸数/缸径/行程 | 排量(L)
+     R: | 1 | 500 | 400 | 1500 | 0.8 | 50 | 3650*1850*2200 | 5650 | S6R2-PTA-C | 6/170/220 | 29.96
+  [kangwo-guangdong n103] engine 6M26D484E200 | GKW-440GF → rated 550 kVA / 440 kW ← "440" | "550" dưới "功率" | "电流 A"
+     H: | 机组型号 | 功率 | 电流 A | 发动机型号 | 缸数 | 缸径 *行程 （ mm) | 排气量（ L） | 燃油消耗率 g/kw.h | 机组尺寸 mm L*W*H | 机组 重量 kg | 详细参数
+     H: | KW | KVA
+     R: | GKW-440GF | 440 | 550 | 792 | 6M26D484E200 | 6 | 150*150 | 15.9 | 210 | 3500*1500*1800 | 4100 |
+  [tecnogen n2001] engine 403A-15G2 | PK17MSX → rated 20 kVA / 15 kW ← "15" | "20" dưới "" | "60 Hz"
+     H: | MODEL | kVA LTP | kVA PRP | kVA LTP | kVA PRP | | Regulator | Cylinder | cm3 | kWm 1500 rpm | kWm 1800 rpm | (l/h) 1500 rpm | (l/h) 1800 rpm | Aspiration | Standard panel | Automatic panel | dB(A) (•) 7 m | | | | |
+     H: | | 50 Hz | | 60 Hz | | Engine | | | | | | Cons. 70% | Cons. 70% | | | | | Tank l | L | W | H | Kg
+     R: | PK17MSX | 16,5 | 15 | 20 | 18 | 403A-15G2 | M | 3 | 1496 | 13 | 16 | 2,9 | 3,5 | N | AUS7310-17 | ACP7320 | 65 | 75 | 150 | 80 | 125 | 590
+
+### B1c nghi ô tần số 50 / 60 bị đọc thành công suất: 35 bản ghi | 3 NCC: victory-generator×27, acepow-fuan×6, eastern-lion-fuan×2
+  [acepow-fuan n130] engine YT3A2Z-D | null → standby 50 kVA / 38 kW ← "50" | "38"
+     H: | Frequency | Genset power(KVA) | Engine Model | Engine Power(KW) | Governing | Alternator Model
+     H: | Rated | Standby | Rated | Standby
+     R: | 50 | 38 | 41 | YT3A2Z-D | 36 | 38 | Mechanical | BC184H
+  [eastern-lion-fuan n122] engine Y4102ZD | GF/GFS-YD50 → standby 50 kVA / 42 kW ← "42" | "50"
+     H: | | Genset Specification 400/230V 60HZ | Engine | Brushless Alternator | Controller | Datasheet
+     H: | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller | Datasheet
+     R: | GF/GFS-YD50 | 38 | 46 | 42 | 50 | Y4102ZD | 48 | ELS 184J | 35.2 | RUIFEN6120 | Detail
+  [victory-generator n101] engine 4DX23-82D | V55XC → prime 60 kVA / 50 kW ← "60" | "50"
+     H: | Genset model | Frequency (Hz) | Prime Power | Standby Power | Engine | Cylinder No. | Air intake way | Combustion chamber | Displacement (L) | Bore*Stroke (mm) | Stable Timing Rate（%） | Fuel consumption (g/kW.h) | SIZE for silent type (L*
+     H: | KW | KVA | KW | KVA
+     R: | V55XC | 60 | 50 | 62.5 | 55 | 68.75 | 4DX23-82D | 4 | Natural | Direct injection | 3.857 | 102*118 | ≤5 | ≤240 | 2250*1000*1200
+
+### B1d cặp từ hai ô kề, tỉ số không phải 0,8 (nghi ghép lệch): 266 bản ghi | 48 NCC: eastern-lion-fuan×28, aj-power×20, kachai-hangzhou×19, acepow-fuan×18, ettes-power×18, yingtai-jiangsu×16, frs-shenyang×14, walter-yangzhou×12, lees-power×10, penlucky×10, wintpower×8, tecnogen×7, baifa-power×6, huipu-power×6
+  [acepow-fuan n114] engine BC184H | APYD-30 → standby 38 kVA / 33 kW = 0.868 ← "33" | "38"
+     H: | Genset Model | Frequency | Kw | Kva | Alternator | Engine model | Rated Power
+     H: | Rated | Standby | Rated | Standby | Model
+     R: | APYD-30 | 50HZ | 30 | 33 | 38 | 41 | BC184H | Y4105D | 38KW/1500rpm
+  [agestar n104] engine KTA38-G2A | GC-1000(S) → prime 850 kVA / 720 kW = 0.847 ← "850" | "720"
+     H: | Model | Specification 50HZ 400-230V | General specifications | Displacement (L) | Alternator | Silent type
+     H: | ESP | PRP | Engine | Consumption 100% | Gov | Dimensions (mm) | Weight (kg)
+     R: | GC-1000(S) | 1000 | 800 | 850 | 720 | KTA38-G2A | 280 | Electrical | 37.8 | ASG634D | 4900*1830*2500 | 8900
+  [aj-power n103] engine MA5114A S4L1D-F | AJ440 → rated 500 kVA / 431.3 kW = 0.863 ← "431.3" | "500.0"
+     H: | | Model | Frequency | Phase | R.P.M | Prime-kVA | Standby kVA | Engine | Engine Model | Alternator Model | Datasheet
+     R: | AJ440 | 60hz | Three Phase | 1800 | 431.3 | 500.0 | | DC13 072A 02-12 | MA5114A S4L1D-F | AJ440 Three Phase Scania 60Hz
+  [aosif n108] engine K50N-G11H | AGC1350 → prime 1350 kVA / 1000 kW = 0.741 ← "1350" | "1000"
+     H: | Prime Power | Prime Power | Natural Gas Engine model | Natural Gas Consumption | Cylinder | Displacement/L
+     H: | KVA | KW | | Rate KG/H
+     R: | AGC1350 | 1350 | 1000 | K50N-G11H | 217.1 | 16 | 50
+
+### B1e một ô "a/b" là prime / standby cùng đơn vị, bị đọc thành kVA / kW: 12 bản ghi | 3 NCC: bdadl-shanghai×8, senci-jiangsu×2, senci×2
+  [bdadl-shanghai n127] engine 4HTAA4.3-G32 | BDA-S60 → rated 70 kVA / 60 kW; tiêu đề ghi "(主用/备用)"
+     H: | | 机组型号 | 输出功率 (主用/备用) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油 容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重 量(KG)
+     R: | BDA-S60 | 60/70 | 上柴动力 | 4HTAA4.3-G32 | 4 | 4.3 | 13 | ≤192 | 2100*960*1450 | 1150
+  [senci-jiangsu n104] engine SC4H95D2 | SC58SC → rated 58 kVA / 50 kW; tiêu đề ghi "（主用/备用）"
+     H: | 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径×行程（mm） Bore-stroke ratio | 缸数 Number of vat | 机油容量（L）Machine oil capacity | 燃油消耗 Fuel consumption g/kw·h | 排放 Discharge | 开架机组 Open Type
+     H: | 外形尺寸Overall Size (L×W×H)(mm) | 机组重量 Welght (kg)
+     R: | SC58SC | 50/58 | SC4H95D2 | 62/68 | 105×124 | 4 | 13 | 195 | 国Ⅱ | 1900×900×1200 |
+  [senci n2003] engine SC4H95D2 | SC58SC → rated 58 kVA / 50 kW; tiêu đề ghi "（主用/备用）"
+     H: | 上柴系列 SHANGCHAI SERIES (国Ⅱ排放 STAGEⅡ EMISSION )
+     H: | 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径×行程（mm） Bore-stroke ratio | 缸数 Number of vat | 机油容量（L）Machine oil capacity | 燃油消耗 Fuel consumption g/kw·h | 排放 Discharge | 开架机组 Open Type
+     R: | SC58SC | 50/58 | SC4H95D2 | 62/68 | 105×124 | 4 | 13 | 195 | 国Ⅱ | 1900×900×1200 |
+
+### B2 model không phải mã máy: 90 bản ghi | 5 NCC: himoinsa×34, himoinsa-china×33, hipower×19, huachai-deutz×2, shanhua×2
+  [himoinsa-china n101] engine 4-stroke diesel | 4TNV88BGGEH → model = "4-stroke diesel", tổ máy = "4TNV88BGGEH", công suất {"rated":{"kW":1.4}}
+  [himoinsa n101] engine 4-stroke diesel | 4TNV88BGGEH → model = "4-stroke diesel", tổ máy = "4TNV88BGGEH", công suất {"rated":{"kW":1.4}}
+  [hipower n102] engine 4-stroke diesel | TWD1683GE → model = "4-stroke diesel", tổ máy = "TWD1683GE", công suất {"rated":{"kW":7}}
+  [huachai-deutz n117] engine 12KW,10.8KW | null → model = "12KW,10.8KW", tổ máy = "null", công suất null
+     H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+     H: | Model | 20GF | Model | F3L912D | Model | XN184H,XN184F
+     R: | Rated prime power | 20KW | Prime power | 24KW | Rated power | 12KW,10.8KW
+
+### B4 mã bị đọc thành đầu phát, đa số NCC ghi là động cơ: 216 bản ghi | 4 NCC: longkai-power×152, acepow-fuan×46, cldj-fujian×16, vantek-jiangsu×2
+  [acepow-fuan n104] alternator WP2.3D25E200 | APW-18 → WP2.3D25E200: động cơ ở 30 NCC, đầu phát ở 2 NCC
+     H: | Model | 50Hz | | Engine | Engine | Connector | Emission | Governor
+     H: | Generating Sets | Acepow | Prime
+     R: | APW-18 | 18 | 20 | BC184E | WP2.3D25E200 | 23 | 29 | 4#7.5-104 | T2 | Mechanically
+  [longkai-power n1123] alternator WP2.3D25E200 | LG18WP → WP2.3D25E200: động cơ ở 30 NCC, đầu phát ở 2 NCC
+  [cldj-fujian n101] alternator SC4H95D2 | CLS-80 → SC4H95D2: động cơ ở 50 NCC, đầu phát ở 2 NCC
+     H: | 机组型号 | 输出功率 kw KVA | 电流（A） | 发电机型号 | 发动机型号 | 缸径(mm) *行程(mm) | 缸数 | 机油容量 （L） | 燃油消耗率 （g/kw.h） | 排气量 （L） | 机组重量 （KG） | 长*宽*高 L*W*H（mm）
+     R: | CLS-80 | 60/80 | 108 | CLG-224F | SC4H95D2 | 105*124 | 4 | 15 | 204 | 4.3 | 1280 | 1900*800*1200 详细参数
+  [vantek-jiangsu n101] alternator N855-DM | CCFJ280J-WTP → N855-DM: động cơ ở 6 NCC, đầu phát ở 1 NCC
+     H: | 发电机组规格 | 柴油机规格 | 机组外形
+     H: | 型号 | 额定功率 | 型号 | 功率 | 汽缸数 | 外形 尺寸 | 重量
+     R: | CCFJ280J-WTP | 280 | 3S0 | N855-DM | 317 | 6 | 2998-1000-1790 | 2950
+
+### B4 mã bị đọc thành động cơ, đa số NCC ghi là đầu phát: 9 bản ghi | 4 NCC: uleengen×4, acepow-fuan×2, depco-power×2, aosif×1
+  [acepow-fuan n134] engine TAL-A40-F | null → TAL-A40-F: động cơ ở 1 NCC, đầu phát ở 4 NCC
+  [aosif n1112] engine P086TI-1 | null → P086TI-1: động cơ ở 2 NCC, đầu phát ở 6 NCC
+  [depco-power n2110] engine P086TI-1 | DPK-DD-212 → P086TI-1: động cơ ở 2 NCC, đầu phát ở 6 NCC
+  [uleengen n132] engine 224E | UD60GF → 224E: động cơ ở 1 NCC, đầu phát ở 3 NCC
+     H: | 发电机组型号 | 50HZ | 柴油发动机 | 交流发电机 | 外形尺寸（mm） | 毛重 （kg）
+     H: | 功率（kW） | 功率（kVA） | 模型 | 额定功率 （kW） | 气缸数量 | 孔径x行程（mm） | 位移 L | 额定燃油消耗量 （L/h） | 模型
+     R: | UD60GF | 48 | 60 | f6l912吨 | 61 | 6 | 100*120 | 5.655 | 11.8 | 224E | 2250×800×1350 | 1200
+
+### B4x mã vừa là động cơ vừa là đầu phát, chưa rõ bên nào đúng: 74 bản ghi | 20 NCC: eastern-lion-fuan×19, long-gen×7, acepow-fuan×6, uleengen×6, agestar×4, aj-power×4, baifa-power×4, jet-power×4, sr-genset×4, ade-power×3, hosem-power×2, xingguang-jiangsu×2, rcg-power×2, comappower×1
+  [acepow-fuan n104] engine BC184E | APW-18 → BC184E: động cơ ở 1 NCC, đầu phát ở 1 NCC
+     H: | Model | 50Hz | | Engine | Engine | Connector | Emission | Governor
+     H: | Generating Sets | Acepow | Prime
+     R: | APW-18 | 18 | 20 | BC184E | WP2.3D25E200 | 23 | 29 | 4#7.5-104 | T2 | Mechanically
+  [comappower n113] engine Y490D-P | COM25 → Y490D-P: động cơ ở 2 NCC, đầu phát ở 1 NCC
+     H: | | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data
+     R: | COM25 | 25kVA | 20kW | 23kVA | 18kW | Y490D-P | 4 | COM25
+  [eastern-lion-fuan n129] engine YN27GBZ | GF/GFS-YN25I → YN27GBZ: động cơ ở 2 NCC, đầu phát ở 1 NCC
+     H: | | Genset Specification 400/230V 50HZ | Engine | Brushless Alternator | Controller | Datasheet
+     H: | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller | Datasheet
+     R: | GF/GFS-YN25I | 25 | 31 | 28 | 34 | YN27GBZ | 30kw/1500 | EL 184G | 25kw | RUIFEN6120 | Detail
+  [hosem-power n108] engine 4TNV88-GTE | A-AY25M → 4TNV88-GTE: động cơ ở 1 NCC, đầu phát ở 1 NCC
+     H: | Model | Rated Power | Frequency/ Voltage | Engine Model | Dimensions for Open-Type
+     H: | | kVA | kW | Hz/V | | L | W | H
+     R: | A-AY25M | 23 | 18 | 50Hz/ 400V | 4TNV88-GTE | 1180 | 570 | 910
+
+### B6a công suất lấy từ dòng không phải công suất tổ máy: 95 bản ghi | 3 NCC: himoinsa×34, himoinsa-china×33, hipower×28
+  [himoinsa-china n101] engine 4-stroke diesel | 4TNV88BGGEH → rated {"kW":1.4} ← "Starting power: 1,4 kW"
+  [himoinsa n101] engine 4-stroke diesel | 4TNV88BGGEH → rated {"kW":1.4} ← "Starting power: 1,4 kW"
+  [hipower n102] engine 4-stroke diesel | TWD1683GE → rated {"kW":7} ← "Starting power: 7 kW"
+
+### B6b cặp kVA / kW ghép từ hai dòng khác nhau: 68 bản ghi | 4 NCC: longkai-power×46, genlitec×11, hosem-power×9, long-gen×2
+  [genlitec n102] engine 6BTAA5.9-G12 | null → rated 150 kVA / 140 kW
+  [hosem-power n109] engine QSZ13-G3 | null → standby 500 kVA / 22 kW
+  [long-gen n1001] alternator WHI164D | null → prime 15 kVA / 22 kW
+  [longkai-power n1012] alternator SC12E420D2 | LG250SC → prime 312.5 kVA / 280 kW
+
+### B6c prime > standby ở bảng nhãn | giá trị: 8 bản ghi | 4 NCC: depco-power×2, kingway-power×2, shanhua×2, tecgen-fujian×2
+  [depco-power n2050] engine YT4B2Z-D | DPK-DTY-70 → kVA: prime 70, standby 69
+  [kingway-power n119] alternator Kingway KAI2500 | YC6C935N-D30 → kVA: prime 2500, standby 628
+  [shanhua n1024] alternator UCDI274K14 | HL200GF → kW: prime 240, standby 220
+  [tecgen-fujian n127] engine Y4105D | TG34YDS → kVA: prime 38, standby 34
+
+### B8 lệch cột: tiêu đề hai tầng, giá trị lấy theo cột đếm từ trái: 245 bản ghi | 3 NCC: yingtai-jiangsu×165, xinzhengfa×71, kangwo-guangdong×9
+  [kangwo-guangdong n110] engine 170F | GKW-1.5GF → current "电流（ A ）" = "1.875" (ô thứ 3; dòng 9 ô, tiêu đề 8 ô)
+     H: | 机组型号 | 输出功率（ KW ） | 电流（ A ） | 柴油机型号 | 缸数 | 缸径 * 行程（ mm ） | 机组尺寸 mmL*W*H | 机组重量 Kg
+     H: | kw | KVA
+     R: | GKW-1.5GF | 1.5 | 1.875 | 2.7 | 单缸 | 170F | 78*62 | 660*480*530 | 63
+  [xinzhengfa n101] engine S175M | ZF3GF → current "额定 电流A" = "3" (ô thứ 3; dòng 8 ô, tiêu đề 7 ô)
+     H: | 机组型号 | 输出功率 | 额定 电流A | 频率/转速 Hz/RPM | 柴油机型号 | 机组外型尺寸(L × B × H)mm | 机组重量Kg
+     H: | KVA | KW
+     R: | ZF3GF | 3.75 | 3 | 12.2 | 50/3000 | S175M | 630 × 480 × 510 | 65
+  [yingtai-jiangsu n103] engine 4B3.9-G2 | 20GF → weight "净重 Net Weight (kg)" = "36" (ô thứ 6; dòng 10 ô, tiêu đề 9 ô)
+     H: | 机组型号 Genset Model | 主用功率（主用） | 备用功率（备用） | 电流（主用）Power(A) | 电流（备用）Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimensions L*W*H(m) | 品牌 Brand | 发 动 机型号 Engine Type
+     H: | KW | KVA | KW | KVA
+     R: | 20GF | 20 | 25 | 22 | 27.5 | 36 | 39.6 | 710 | 1.7*0.9*1.4 | 4B3.9-G2
+
+### N1 nguồn ghi cặp kVA / kW lạ trong cùng một dòng: 32 bản ghi | 7 NCC: sanq-power×13, depco-power×11, ade-power×2, genlitec×2, tecgen-fujian×2, changchai×1, sunkings×1
+  [ade-power n2193] engine 1106A-70TAG2 | null → prime 151 kVA / 137 kW
+  [changchai n2002] engine ZN390 | CC15M → standby 18 kVA / 13 kW
+  [depco-power n2013] engine 4TNV98T-GGE | DPK-DYM-44 → standby 344 kVA / 35 kW
+  [genlitec n118] engine 4Z2.7-G11 | null → rated 20 kVA / 22 kW
+
+### N1 nguồn ghi cặp kVA / kW lạ trong cùng một ô: 8 bản ghi | 3 NCC: huatai-yangzhou×4, wintpower×2, xinzhengfa×2
+  [huatai-yangzhou n111] engine WD145TAD30 | 300GF → rated 160 kVA / 138 kW
+     H: | 组型号Type of set | 输出功率 Power of output (KW/KVA) | 额定电流Rated current (A) | 柴油机参数 Parameters of set | 机组尺寸及重量 Size and weight of machine set
+     H: | 型号 Type | 额定功率 power (KW) | 缸数及类型Numbers& Type of cylinder | 燃油消耗 (g/kw.h)Consumption of fuel(g/kw.h) | 机油容量 Oil capacity (L) | 长×宽×高 Length Width Height (MM) | 净重 Net Weight (kg)
+     R: | 300GF | 138/160 | 543 | WD145TAD30 | 340 | 6缸直列 | 198 | 24 | 2800×900×1500 | 2200
+  [wintpower n107] engine CA6DF2-21D | WT-FA165 → prime 150 kVA / 130 kW
+     H: | Genset Model | 60HZ PF=0.8 440/220V 3Phase 4Wire | Engine Model | Stamford Alternator | Leroy Somer Alternator | Wintpower Alternator
+     H: | Prime Power | Standby Power
+     R: | WT-FA165 | 130/150 | 132/165 | CA6DF2-21D | UCI 274E | TAL-A44-J | WT274G112
+  [xinzhengfa n105] engine NT855-GA | ZF-200 → standby 254 kVA / 220 kW
+     H: | 型号 | 额定功率 备用/额定 | 柴油机型号 | 柴油机功率 kw | 缸数 | 缸径 mm | 行程 mm | 机油容量 L | 燃油消耗量 g/kw.h | 外形尺寸 mm | 重量 kg
+     R: | ZF-200 | 254/220 | NT855-GA | 254/231 | 6 | 140 | 152 | 37 | 206 | 3000*980*1760 | 2600

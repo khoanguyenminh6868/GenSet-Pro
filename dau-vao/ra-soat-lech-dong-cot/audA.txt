@@ -1,0 +1,50 @@
+﻿bản ghi: 58999 | có dòng bảng: 54340 | bề rộng: {"same":15739,"diff":38589,"diffWithSpecs":24517,"noHeader":12}
+số lần kiểm: {"pair":77111,"ps":68185,"speed":3763,"cyl":14647,"disp":11200,"phase":3437,"voltage":4660,"bore":7630,"pf":1180,"noise":741,"engPower":4861,"weight":18074,"dims":21707,"fuel":12107,"compr":2122,"physics":3353,"current":956,"crossPower":44170,"crossdisp":3340,"crosscyl":1615}
+
+### P10 công suất tổ máy lệch xa các NCC khác cùng động cơ: 65 (dòng lệch bề rộng: 49) | NCC 12: yingtai-jiangsu×18, frs-shenyang×12, comappower×9, mecca-power×8, depco-power×4, ade-power×3, hosem-power×2, huaquan-power×2, voltgent×2, fdk-energy×2, gtl-power×2, sanyu-kogyo×1
+
+### P11 dung tích khác số đông cùng động cơ: 204 (dòng lệch bề rộng: 160) | NCC 26: agestar×42, mingbang-mbkl×34, bdadl-shanghai×20, victory-generator×16, jet-power×10, wintpower×10, depco-power×8, aosif×8, huipu-power×8, liangzi-yangzhou×7, hanyang-weifang×6, aoke-yangzhou×6
+
+### P11 số xi lanh khác số đông cùng động cơ: 139 (dòng lệch bề rộng: 90) | NCC 27: bdadl-shanghai×26, depco-power×24, mingbang-mbkl×18, aoke-yangzhou×13, victory-generator×9, xinhengxin-fujian×6, huipu-power×5, waeta-fujian×5, comappower×4, xinzhengfa×3, aosif×2, suneco-linyi×2
+
+### P1a kW > kVA (đảo cột?): 23 (dòng lệch bề rộng: 0) | NCC 5: sanq-power×13, genlitec×4, hosem-power×2, long-gen×2, longkai-power×2
+
+### P1b kW/kVA ngoài 0,8 và 1,0: 204 (dòng lệch bề rộng: 73) | NCC 42: longkai-power×44, acepow-fuan×19, perkins-wuxi×12, depco-power×11, tecnogen×10, genlitec×9, aj-power×7, elitech-power×7, hosem-power×7, victory-generator×7, zhengchi-power×7, lees-power×6
+
+### P2a prime > standby (đảo trước / sau?): 10 (dòng lệch bề rộng: 2) | NCC 5: depco-power×2, kingway-power×2, rise-power×2, shanhua×2, tecgen-fujian×2
+
+### P2b standby / prime > 1,26: 165 (dòng lệch bề rộng: 137) | NCC 17: victory-generator×44, yingtai-jiangsu×36, comappower×20, tecnogen×16, app-power-anpu×12, yingtai-group×8, sr-genset×6, bruno-generators×4, suneco-linyi×4, depco-power×3, voltgent×3, kangwo-guangdong×2
+
+### P2c prime = standby: 169 (dòng lệch bề rộng: 62) | NCC 18: fdk-energy×52, cgm-italia×24, voltgent×24, rcg-power×16, shengfeng-fuan×16, aosif×10, jet-power×8, sr-genset×4, agg-fuzhou×2, comappower×2, depco-power×2, generatordieselchina×2
+
+### P3a tốc độ không phải số vòng chuẩn: 6 (dòng lệch bề rộng: 0) | NCC 4: aosif×2, jichai×2, westinpower×1, yongcai-elecmama×1
+
+### P4 số xi lanh lạ: 5 (dòng lệch bề rộng: 3) | NCC 2: yunding-jiangsu×3, fdk-energy×2
+
+### P5a đk×ht không đủ hai số: 432 (dòng lệch bề rộng: 36) | NCC 22: zhengdian-zhengzhou×104, sanq-power×68, yangdong×68, xinzhengfa×42, shanhua×38, jianghao-genset×34, hosem-power×19, bdadl-shanghai×14, fukangsi-yangzhou×14, jichai×7, koten-power×5, gtl-power×3
+
+### P5b dung tích ngoài dải: 25 (dòng lệch bề rộng: 0) | NCC 5: endress-stromerzeuger×12, jlmech-wuhan×4, weichai-heavy-machinery×4, weichai-power×4, bison-zhejiang×1
+
+### P5c đk×ht×xi lanh ≠ dung tích: 225 (dòng lệch bề rộng: 93) | NCC 19: depco-power×85, mingbang-mbkl×37, huipu-power×22, hanyang-weifang×17, jet-power×10, aosif×8, genlitec×7, kanpor-fuan×7, huatai-yangzhou×5, yunding-jiangsu×5, fukangsi-yangzhou×3, jianghao-genset×3
+
+### P6 công suất động cơ không hợp tổ máy: 228 (dòng lệch bề rộng: 110) | NCC 9: eastern-lion-fuan×110, hipower×38, himoinsa×34, himoinsa-china×33, endress-stromerzeuger×4, koop-changzhou×4, fdk-energy×2, mamo-power×2, cameo-power×1
+
+### P7a tiêu hao g/kWh ngoài 150–300: 68 (dòng lệch bề rộng: 40) | NCC 7: taihai-taizhou×34, bdadl-shanghai×9, fukangsi-yangzhou×8, pengpai-yangzhou×8, haifeng-taizhou×6, xinshengan-shandong×2, liangzi-yangzhou×1
+
+### P7b tiêu hao L/h không hợp công suất: 224 (dòng lệch bề rộng: 21) | NCC 10: himoinsa×96, himoinsa-china×92, wintpower×12, aosif×6, endress-stromerzeuger×5, acepow-fuan×4, rise-power×4, haifeng-taizhou×3, huadong-yangzhou×1, zc-power×1
+
+### P7c tiêu hao (không đơn vị) không hợp công suất: 138 (dòng lệch bề rộng: 82) | NCC 20: jet-power×16, mecca-power×16, longkai-power×13, agestar×12, westinpower×12, fengfa-taizhou×11, frs-shenyang×11, jlmech-wuhan×11, mingbang-mbkl×9, genlitec×4, shanhua×4, aosif×3
+
+### P8b số pha lạ: 4 (dòng lệch bề rộng: 0) | NCC 2: acepow-fuan×2, hosem-power×2
+
+### P8d tỉ số nén lạ: 2 (dòng lệch bề rộng: 0) | NCC 1: fdk-energy×2
+
+### P8f dòng điện không hợp kVA: 22 (dòng lệch bề rộng: 14) | NCC 5: huatai-yangzhou×7, zhengdian-zhengzhou×5, yingtai-group×4, yingtai-jiangsu×4, honny-dongguan×2
+
+### P9a khối lượng < 20: 2 (dòng lệch bề rộng: 0) | NCC 2: himoinsa-china×1, himoinsa×1
+
+### P9b khối lượng không hợp kVA: 454 (dòng lệch bề rộng: 374) | NCC 12: yingtai-jiangsu×158, yingtai-group×133, cgm-italia×69, himoinsa×31, himoinsa-china×30, frs-shenyang×13, mwm×8, longkai-power×5, bruno-generators×3, ade-power×2, aosif×1, kangwo-guangdong×1
+
+### P9c kích thước không đủ ba số: 14 (dòng lệch bề rộng: 0) | NCC 2: xinhengxin-fujian×12, jlmech-wuhan×2
+
+### P9d kích thước ngoài dải: 41 (dòng lệch bề rộng: 5) | NCC 7: zhengdian-zhengzhou×29, bdadl-shanghai×3, changchai×3, acepow-fuan×2, pengpai-yangzhou×2, aoke-yangzhou×1, xinzhengfa×1

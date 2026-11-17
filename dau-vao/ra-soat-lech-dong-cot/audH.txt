@@ -1,0 +1,148 @@
+﻿gói 1556 | lô 1627 (có hàng hoá 897, có nhà thầu 1625) | dòng hàng hoá 8250 | dòng nhà thầu 4743
+Σ SL×đơn giá so giá trúng: kiểm 833 lô, khớp ±0,5%: 518
+
+### H11 công suất đọc từ Chương V không có số nào trùng tên gói: 17 (17 gói)
+  IB2200021336: tên: 120 kVA ↔ đọc: 132 kVA | Mua sắm máy phát điện 120KVA
+  IB2300111838: tên: 150 kVA ↔ đọc: 200 kVA | XD-02: Nhà làm việc cơ quan; Cung cấp, lắp đặt tủ ATS và Máy phát điện dự phòng 
+  IB2300220257: tên: 630 kVA ↔ đọc: 150 kVA, 120 kW, 165 kVA, 132 kW | Gói thầu số 06 (xây dựng và thiết bị): Xây dựng, cung cấp và lắp đặt thiết bị Hệ
+  IB2400111485: tên: 750 kVA ↔ đọc: 250 kVA, 275 kVA | Gói thầu XL-03: Thi công xây dựng Trạm biến áp 750kVA và lắp đặt máy phát điện d
+  IB2500067386: tên: 2000 kVA ↔ đọc: 1000 kVA, 300 kVA, 75 kVA | Cung cấp dịch vụ bảo trì, bảo dưỡng trạm biến áp 35/22/0,4kV/2x2000kVA, Trạm phâ
+
+### H12 công suất đọc ra ngoài dải: 48 (45 gói)
+  IB2200020589: 0.5 kVA
+  IB2300067330: 0.5 kVA
+  IB2400044943: 0.5 kVA
+  IB2400487645: 0.5 kVA
+  IB2500415487: 0.5 kVA
+
+### H1a hàng hoá không có số lượng: 135 (24 gói)
+  IB2200069368: Phần xây dựng
+  IB2400168837: Vật tư, thiết bị đại tu tự dùng trung thế chính khối 3
+  IB2400449941: Lọc nhiên liệu
+  IB2500393358: 
+  IB2600083151: C - CHI PHÍ VẬN CHUYỂN, MÁY MÓC THI CÔNG, QUẢN LÝ
+
+### H1b số lượng > 100.000: 2 (1 gói)
+  IB2200090514: Dầu Diezen: 285920 Lít
+  IB2200090514: Chi phí vận chuyển: 285920 Lít
+
+### H1c số lượng lẻ với đơn vị đếm: 6 (4 gói)
+  IB2200097596: Xây dựng và đổ bệ máy: 1.35 gói
+  IB2300252125: Mốc báo cáp: 64.6 Bộ
+  IB2300252125: Ống co ngót 240: 14.4 Cái
+  IB2300349583: Đầu cốt cáp nguồn CVV 2x25 mm2: 30.4 10 cái
+  IB2300349583: Đầu cốt dây tiếp đất CV 1x16 mm2: 15.2 10 cái
+
+### H2a hàng hoá không có đơn giá: 438 (60 gói)
+  IB2200053768: Phụ kiện và nhân công lắp đặt
+  IB2300260615: Bộ điều khiển, hiển thị
+  IB2300270603: Louver lấy gió tươi: - Sử dụng thép đen dày 1.5mm, sơn tĩnh 
+  IB2400362865: Vật tư phụ hoàn thiện
+  IB2500189675: Bồn dầu ngày đáp ứng đủ dầu chạy trong 03 giờ (bao gồm khay 
+
+### H2b đơn giá < 1.000 đ: 17 (2 gói)
+  IB2300247684: Đệm kênh M6 inox hoặc tương đương: 869
+  IB2500393358: : 1
+  IB2500393358: : 1
+  IB2500393358: : 1
+  IB2500393358: : 1
+
+### H3a Σ SL×đơn giá thấp hơn giá trúng ~8–10% (đơn giá chưa VAT?): 94 (94 gói)
+  IB2200011710: 1,290,740,000 / 1,440,736,000 = 0.896
+  IB2300134568: 350,935,750 / 379,390,000 = 0.925
+  IB2400183459: 3,488,818,000 / 3,868,818,000 = 0.902
+  IB2500058119: 259,699,000 / 278,399,000 = 0.933
+  IB2500459891: 1,244,160,000 / 1,438,560,000 = 0.865
+
+### H3b Σ SL×đơn giá lệch giá trúng 0,5–50%: 191 (187 gói)
+  IB2200028736: 1 dòng: 2,088,720,000 / 1,942,509,600 = 1.075
+  IB2300173469: 100 dòng: 485,666,178 / 861,786,724 = 0.564
+  IB2400031785: 3 dòng: 250,962,800 / 261,962,800 = 0.958
+  IB2400418716: 100 dòng: 485,666,178 / 861,786,724 = 0.564
+  IB2500261097: 1 dòng: 769,000,000 / 789,000,000 = 0.975
+
+### H3c Σ SL×đơn giá lệch XA giá trúng (<0,5 hoặc >1,5): 30 (30 gói)
+  IB2200026268: 2 dòng: 577,800,000 / 288,900,000 = 2.000
+  IB2300203745: 100 dòng: 215,091,000 / 892,000,000 = 0.241
+  IB2300371415: 2 dòng: 94,540,000,000 / 13,878,000,000 = 6.812
+  IB2500304762: 57 dòng: 12,412,196,040 / 461,100,000 = 26.919
+  IB2600036141: 99 dòng: 652,231,374,100 / 79,156,418,000 = 8.240
+
+### H4a năm sản xuất không có năm: 142 (30 gói)
+  IB2400067509: Máy phát điện 12 KVA: "Theo nội dung đề xuất kỹ thuật đính kèm"
+  IB2400270154: Dây cáp điện (chôn ngầm) 3*95+1*70mm2 0,6/1kV: "Mới 100%"
+  IB2400562787: Loa Aray: "Chi tiết trong E-HSDT kèm theo"
+  IB2400596787: Dầu + bộ tải giả phục vụ cho việc chạy nghiệm thu máy tại cô: "-"
+  IB2500351271: : "Theo E-HSDT"
+
+### H4b đơn vị tính lạ (có số / quá dài): 83 (10 gói)
+  IB2200069368: Ống xoắn HDPE: "100m"
+  IB2200104478: Ống bảo ôn Superlon dầy 13mm; D19.1: "100m"
+  IB2300262532: Lấp đất hố móng bằng đầm đất cầm tay 70kg, độ chặt yêu cầu K: "100m3"
+  IB2400139788: Tưới lớp dính bám mặt đường bằng nhựa pha dầu, lượng nhựa 1,: "100m2"
+  IB2500021409: Đắp đất công trình bằng đầm đất cầm tay 70kg, độ chặt yêu cầ: "100m3"
+
+### H4c xuất xứ là số: 175 (25 gói)
+  IB2200074392: Máy phát điện 7,5 KVA nhiên liệu xăng: "Máy phát điện Hyundai; Model: HY11000LE; Xuất xứ: "
+  IB2300102683: Máy nạp ắc quy: "3016627 - hãng Cummins sản xuất tại các nước G20"
+  IB2300213569: Bulông bắt cổ xả: "OE52323 SX tại Các nước G20"
+  IB2300269124: ACB-4P-2500-85kA (Fixed Type): ""+ Xuất xứ: Italy + Mã hiệu: 1SDA071702R1 + Hãng s"
+  IB2300293341: Bộ điều khiển động cơ (ECM) của máy phát điện CPS 180kVA: "T435123 Perkins Poland"
+
+### H5 nghi đảo số lượng ↔ đơn giá: 10 (9 gói)
+  IB2200059725: Dầu nhờn động cơ đốt trong CI4 - 15W40: SL 55000, đơn giá 50700
+  IB2200090514: Chi phí vận chuyển: SL 285920, đơn giá 1530
+  IB2300273447: Dầu DO 0,05S-II: SL 40000, đơn giá 22013
+  IB2400123323: Dầu Điezen 0,05-II: SL 25200, đơn giá 19840
+  IB2400509672: Dầu DO 0,05S-II: SL 60000, đơn giá 18180
+
+### H6a nhà thầu không có giá dự thầu: 969 (394 gói)
+  IB2200001635: CÔNG TY CỔ PHẦN SYNERGY POWER (0105579786)
+  IB2200066534: CÔNG TY TRÁCH NHIỆM HỮU HẠN MỘT THÀNH VIÊN THƯƠNG MẠI VÀ DỊCH VỤ ĐỨC TÀI (3300483635)
+  IB2300131187: CÔNG TY CỔ PHẦN THIẾT BỊ BƯU ĐIỆN  (0100686865)
+  IB2300343208: CÔNG TY CỔ PHẦN SÁNG BAN MAI (3700887738)
+  IB2400281653: CÔNG TY CỔ PHẦN DỊCH VỤ KỸ THUẬT CÔNG NGHỆ HÀ NỘI (0105429741)
+
+### H6b giá sau giảm > giá dự thầu: 1 (1 gói)
+  IB2500312373: CÔNG TY CỔ PHẦN CÔNG NGHIỆP KIM BÌNH: 62,640,000,000 > 25,056,000,000
+
+### H6c giá dự thầu / giá lô ngoài 0,25–2 (nghi lệch chữ số hoặc lệch lô): 22 (16 gói)
+  IB2300014304: CÔNG TY TNHH XÂY LẮP ĐIỆN NƯỚC THÁI HƯNG: 4,742,100,000 / 1,980,000,000 = 2.40
+  IB2300259645: CÔNG TY TNHH DỊCH VỤ KỸ THUẬT MINH ĐỨC: 1,229,239,000 / 468,881,840 = 2.62
+  IB2400043707: CÔNG TY TNHH THIẾT BỊ CÔNG NGHỆ MAKAWA: 2,017,440,000 / 11,640,000,000 = 0.17
+  IB2500304762: Công ty TNHH Thiết Bị Quốc Tế: 951,146,240 / 66,145,750 = 14.38
+  IB2600268468: CÔNG TY TNHH KỸ THUẬT VÀ DỊCH VỤ TES: 666,836,610 / 258,620,267 = 2.58
+
+### H6d giá trúng lệch > 20% so với giá sau giảm của chính nhà thầu: 2 (2 gói)
+  IB2300029269: CÔNG TY TRÁCH NHIỆM HỮU HẠN VẬT TƯ VÀ THIẾT BỊ K S N: trúng 209,477,538, sau giảm 327,285,506
+  IB2500312373: CÔNG TY CỔ PHẦN CÔNG NGHIỆP KIM BÌNH: trúng 25,056,000,000, sau giảm 62,640,000,000
+
+### H6e MST nhà thầu sai dạng: 1 (1 gói)
+  IB2300111875: CÔNG TY TNHH VIVABLAST VIỆT NAM: "z000000869"
+
+### H7a giá trúng > giá gói: 43 (43 gói)
+  IB2200005800: 5,059,838,666 > 4,381,280,000
+  IB2300088957: 1,909,670,000 > 1,279,191,000
+  IB2300189145: 9,298,090,000 > 2,623,300,000
+  IB2300322971: 5,299,681,000 > 1,950,000,000
+  IB2400306559: 2,230,000,000 > 1,500,000,000
+
+### H7b giá trúng < 40% giá gói: 2 (2 gói)
+  IB2500025236: 319,440,000 / 869,801,856
+  IB2500085435: 293,865,000 / 873,695,060
+
+### H7c lô có kết quả mà số nhà thầu trúng ≠ 1: 1 (1 gói)
+  IB2200019427: BP2200166592: 3 trúng / 4 nhà thầu
+
+### H7d MST trúng thầu của gói ≠ MST nhà thầu trúng trong lô: 1 (1 gói)
+  IB2600025042: z000039465 ↔ 8930184400-001
+
+### H7e Σ giá trúng các lô ≠ giá trúng của gói: 1 (1 gói)
+  IB2200019427: 2,462,400,000 ↔ 7,387,200,000 (1 lô)
+
+### H9 số nhà thầu tham dự ≠ số dòng nhà thầu: 262 (262 gói)
+  IB2200001635: 5 ↔ 6
+  IB2300133361: 1 ↔ 2
+  IB2300365638: 1 ↔ 2
+  IB2400377756: 2 ↔ 4
+  IB2500222084: 1 ↔ 2

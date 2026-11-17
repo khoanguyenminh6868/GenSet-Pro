@@ -1,0 +1,145 @@
+﻿nhà thầu lặp trong lô: 6 dòng ở 5 lô
+IB2200004282 0305610095|Liên danh Công ty TNHH Sản xuất Thương mại và Dịch vụ Trâm Anh và Công ty TNHH Tư vấn Đầu tư Xây dựng Khải Đạt×2
+IB2200012797 3700363445|×2
+IB2200016199 0100369062|×2
+IB2200019427 0100684716|×3
+IB2200020589 0400562719|×2
+H9 phân loại: {"dup":5,"venture":256,"other":1}
+IB2200021336: tham dự 2, dòng 1: 0309730097*(không giá)
+
+không giá dự thầu: trúng 412 trượt 557 [
+  [ '(trống)', 435 ],
+  [ 'Nhà thầu không đáp ứng yêu cầu về kỹ thu', 20 ],
+  [ 'Không đánh giá', 18 ],
+  [ 'Không đáp ứng yêu cầu về kỹ thuật', 18 ],
+  [ 'Không đạt yêu cầu về kỹ thuật', 16 ],
+  [ 'Nhà thầu không đạt tại bước Đánh giá Kỹ ', 15 ]
+]
+IB2200001635 0102925501 winPrice 13,896,000,000 final 13,896,000,000 venture ""
+IB2200003043 0200171429 winPrice 13,103,320,000 final 13,103,319,661 venture ""
+IB2200003383 0201035524 winPrice 22,727,659,000 final 22,727,659,363 venture "Liên danh Công ty cổ phần xây dựng và tư vấn thiết kế Đông Bắc, Công ty TNHH tư vấn và thương mại Vinagreen, Công ty cổ phần Nam Kinh"
+IB2200003383 0202020739 winPrice 22,727,659,000 final 22,727,659,363 venture "Liên danh Công ty cổ phần xây dựng và tư vấn thiết kế Đông Bắc, Công ty TNHH tư vấn và thương mại Vinagreen, Công ty cổ phần Nam Kinh"
+IB2200003383 0200769032 winPrice 22,727,659,000 final 22,727,659,363 venture "Liên danh Công ty cổ phần xây dựng và tư vấn thiết kế Đông Bắc, Công ty TNHH tư vấn và thương mại Vinagreen, Công ty cổ phần Nam Kinh"
+IB2200004282 0304700691 winPrice 13,673,285,537 final 13,673,285,537 venture ""
+IB2200004363 0302637363 winPrice 15,468,382,620 final 15,468,382,620 venture ""
+IB2200004566 0312352310 winPrice 677,430,000 final 677,430,000 venture ""
+
+lô có ≥95 dòng hàng hoá: 98→1, 99→1, 100→15 | đúng 100 dòng: 15 IB2200100465 IB2300100347 IB2300173469 IB2300173578 IB2300203745 IB2300247684 IB2300269124 IB2400139788 IB2400418716 IB2400418903 IB2500021409 IB2500057816
+dòng hàng hoá lặp y hệt: 404 ở 43 lô: IB2200006257: 1/10 dòng lặp; IB2200026268: 1/2 dòng lặp; IB2200042292: 1/2 dòng lặp; IB2200046063: 3/5 dòng lặp; IB2200053768: 3/6 dòng lặp; IB2200067367: 2/55 dòng lặp; IB2200086314: 2/4 dòng lặp; IB2200100465: 67/100 dòng lặp; IB2300022380: 4/53 dòng lặp; IB2300034820: 16/52 dòng lặp; IB2300067330: 4/5 dòng lặp; IB2300148471: 43/91 dòng lặp; IB2300190927: 6/28 dòng lặp; IB2300212910: 1/86 dòng lặp
+
+== H3c ==
+IB2200026268 lô 1 | 2 dòng | Σ 577,800,000 / trúng 288,900,000 = 2.00 | lớn nhất: Máy phát điện công suất 30KVA SL 1 Tổ máy × 288,900,000
+IB2200042292 lô 1 | 2 dòng | Σ 731,101,680 / trúng 365,550,840 = 2.00 | lớn nhất: Bảo dưỡng và thay thế một số thiết bị ch SL 1 hệ thống × 365,550,840
+IB2200070120 lô 1 | 5 dòng | Σ 10,093,400 / trúng 27,693,400 = 0.36 | lớn nhất: Nhớt động cơ SL 4 Xô × 1,595,000
+IB2200086314 lô 1 | 4 dòng | Σ 1,239,840,000 / trúng 619,920,000 = 2.00 | lớn nhất: Máy phát điện công suất 8KVA, chạy dầu d SL 7 Chiếc × 86,940,000
+IB2300029269 lô 4 | 13 dòng | Σ 75,623,900 / trúng 63,644,900 = 1.19 | lớn nhất: Sắt chữ U 250*90*9*13 SL 476 kg × 62,700
+IB2300029269 lô 4 | 17 dòng | Σ 327,285,506 / trúng 209,477,538 = 1.56 | lớn nhất: Vòi phun nhiên liệu - INJECTOR 253-0618 SL 2 Cái × 59,629,108
+IB2300029269 lô 4 | 52 dòng | Σ 250,696,600 / trúng 250,696,600 = 1.00 | lớn nhất: Bộ nạp ác quy SL 2 Cái × 20,350,000
+IB2300029269 lô 4 | 14 dòng | Σ 37,301,000 / trúng 36,184,500 = 1.03 | lớn nhất: Dung môi tẩy rửa ARROW C04320XAM SL 60 L × 368,500
+IB2300154006 lô 1 | 12 dòng | Σ 360,454,000 / trúng 759,702,000 = 0.47 | lớn nhất: Hạng mục Cáp ngầm 0,4kV (bao gồm cả nhân SL 561 m × 255,000
+IB2300203745 lô 1 | 100 dòng | Σ 215,091,000 / trúng 892,000,000 = 0.24 | lớn nhất: Chân kích, trục ren T65x3x500 SL 4 Bộ × 4,500,000
+IB2300247684 lô 1 | 100 dòng | Σ 157,146,020 / trúng 424,211,814 = 0.37 | lớn nhất: Thép ống SS400 mạ kẽm F168.3 dày 4.78 ho SL 345 Kg × 43,450
+IB2300263757 lô 1 | 1 dòng | Σ 319,600,000,000 / trúng 15,980,000,000 = 20.00 | lớn nhất: Máy phát điện + hệ thống đèn pha 10-30 k SL 20 Hệ thống × 15,980,000,000
+IB2300296794 lô 1 | 1 dòng | Σ 6,089,900,000,000 / trúng 60,899,000,000 = 100.00 | lớn nhất: Máy phát điện công suất ≥ 20 KVA SL 100 Chiếc × 60,899,000,000
+IB2300363458 lô 1 | 2 dòng | Σ 60,656,556,352 / trúng 19,624,180,000 = 3.09 | lớn nhất: Tổ máy phát điện 3 pha, 380V, 50Hz, 40kW SL 4 Chiếc × 9,478,167,636
+IB2300363576 lô 1 | 1 dòng | Σ 8,393,760,000 / trúng 4,196,880,000 = 2.00 | lớn nhất: Tổ máy phát điện 3 pha, 380V, 50Hz, 51,5 SL 2 Chiếc × 4,196,880,000
+IB2300371415 lô 1 | 2 dòng | Σ 94,540,000,000 / trúng 13,878,000,000 = 6.81 | lớn nhất: Động cơ xuồng SL 6 Chiếc × 8,490,000,000
+IB2400257226 lô 1 | 1 dòng | Σ 6,932,576,000 / trúng 3,592,000,000 = 1.93 | lớn nhất: Động cơ diesel thủy lai máy phát điện SL 2 chiếc × 3,466,288,000
+IB2400479634 lô 1 | 1 dòng | Σ 18,723,960,000 / trúng 9,855,000,000 = 1.90 | lớn nhất: Tổ hợp máy phát điện thủy SL 2 Tổ hợp × 9,361,980,000
+IB2400496799 lô 1 | 3 dòng | Σ 1,257,170,000 / trúng 2,821,844,000 = 0.45 | lớn nhất: Máy phát điện 250KVA, kèm ATS 400A SL 1 Trọn bộ × 704,550,000
+IB2500021409 lô 1 | 100 dòng | Σ 448,518,909 / trúng 1,191,365,009 = 0.38 | lớn nhất: Cáp 24kV CXV/DSTA-3x50mm2 x1,01 (bao gồm SL 72.72 mét × 1,035,000
+IB2500025236 lô 1 | 1 dòng | Σ 865,359,000 / trúng 319,440,000 = 2.71 | lớn nhất: CÁP NGUỒN BIẾN TẦN 3x50mm2+E SL 150 m × 5,769,060
+IB2500304762 lô 3 | 57 dòng | Σ 12,412,196,040 / trúng 461,100,000 = 26.92 | lớn nhất: Thép hình chữ I 300*150*8*13 CT3/SS400 SL 60 m × 96,000,000
+IB2500335504 lô 3 | 3 dòng | Σ 1,775,973,600 / trúng 225,093,600 = 7.89 | lớn nhất: NHÓM HÀNG II SL 1 Lot/ Trọn gói × 1,339,200,000
+IB2500386288 lô 1 | 2 dòng | Σ 125,444,000,000 / trúng 28,336,000,000 = 4.43 | lớn nhất: Tổ hợp máy phát điện 136 KW, 400V, 50 Hz SL 4 Tổ hợp × 16,236,000,000
+IB2500456429 lô 1 | 2 dòng | Σ 56,717,000,000 / trúng 19,475,600,000 = 2.91 | lớn nhất: Tổ hợp máy phát điện thủy 250ekW (tương  SL 3 Tổ × 18,459,000,000
+IB2500551987 lô 4 | 4 dòng | Σ 523,020,400 / trúng 76,501,810 = 6.84 | lớn nhất: Nhóm 4: Vật tư điện (Mục 80-126) SL 1 LUMSUM × 240,733,680
+IB2600006758 lô 1 | 100 dòng | Σ 5,066,937,000 / trúng 14,338,302,000 = 0.35 | lớn nhất:  SL 120 Bộ × 13,076,000
+IB2600036141 lô 1 | 99 dòng | Σ 652,231,374,100 / trúng 79,156,418,000 = 8.24 | lớn nhất: Máy húc B12-Lọc nhớt SL 143 Cái × 815,786,400
+IB2600064877 lô 2 | 2 dòng | Σ 154,658,054,013 / trúng 36,391,680,000 = 4.25 | lớn nhất: Máy phát điện dầu 20kVA SL 1263 Tổ máy × 93,639,251
+IB2600064878 lô 3 | 3 dòng | Σ 354,230,884,800 / trúng 155,908,022,400 = 2.27 | lớn nhất: Máy phát điện dầu 12kVA SL 1746 Tổ máy × 89,294,400
+IB2600174926 lô 2 | 2 dòng | Σ 579,434,000 / trúng 133,232,000 = 4.35 | lớn nhất: Nhóm 2: Vật tư cho động cơ điện (Mục 7-1 SL 1 LUMSUM × 446,202,000
+IB2600304011 lô 2 | 3 dòng | Σ 303,588,000,000 / trúng 180,792,000,000 = 1.68 | lớn nhất: Máy phát điện công suất liên tục 2.400kW SL 9 Hệ thống × 20,088,000,000
+IB2600455248 lô 1 | 100 dòng | Σ 2,693,772,400 / trúng 8,801,016,400 = 0.31 | lớn nhất: Đệm kín trục nước SL 1 cái × 407,000,000
+
+== H7a giá trúng > giá gói ==
+IB2200005800 gói 4,381,280,000 dự toán 4,381,280,000 trúng 5,059,838,666 | lô: 5,059,838,666→5,059,838,666 | DTRR XL
+IB2200019427 gói 2,496,050,000 dự toán 2,496,050,000 trúng 7,387,200,000 | lô: 2,165,000,000→2,462,400,000 | CHCT HH
+IB2200022891 gói 12,137,736,000 dự toán 12,137,736,000 trúng 12,302,255,000 | lô: 12,137,736,000→12,302,255,000 | DTRR XL
+IB2200029720 gói 40,878,295,000 dự toán 40,878,295,000 trúng 45,232,307,000 | lô: 40,878,295,000→45,232,307,000 | DTRR XL
+IB2200037783 gói 33,814,000,000 dự toán 33,814,000,000 trúng 43,545,395,000 | lô: 33,814,000,000→43,545,395,000 | DTRR XL
+IB2200067764 gói 660,000,000 dự toán 660,000,000 trúng 779,887,000 | lô: 660,000,000→779,887,000 | CHCTRG XL
+IB2300014304 gói 1,980,000,000 dự toán 4,781,513,000 trúng 3,450,888,400 | lô: 1,980,000,000→3,450,888,400 | CHCT HH
+IB2300016900 gói 42,420,022,000 dự toán 44,958,969,000 trúng 44,908,582,000 | lô: 42,420,022,000→44,908,582,000 | DTRR XL
+IB2300088957 gói 1,279,191,000 dự toán 1,922,142,000 trúng 1,909,670,000 | lô: 1,279,191,000→1,909,670,000 | DTRR HH
+IB2300096122 gói 119,281,905,000 dự toán 124,035,367,000 trúng 122,347,994,000 | lô: 119,281,905,000→122,347,994,000 | DTRR XL
+IB2300099865 gói 28,731,100,000 dự toán 30,205,339,000 trúng 30,154,986,000 | lô: 28,731,100,000→30,154,986,000 | DTRR XL
+IB2300111838 gói 42,398,820,000 dự toán 45,282,713,000 trúng 45,279,609,000 | lô: 42,398,820,000→45,279,609,000 | DTRR XL
+
+IB2500312373 gói 153,679,677,096 trúng 125,452,800,000
+   PP2500312754 0305259631 won true bid 62,640,000,000 discount "" final 62,640,000,000 win 62,640,000,000 venture ""
+   PP2500312754 0104265868 won false bid 60,087,588,200 discount "" final 60,087,588,200 win null venture "LIÊN DANH VN"
+   PP2500312754 0102562840 won false bid 60,892,750,000 discount "" final 60,892,750,000 win null venture ""
+   PP2500312754 0107540583 won false bid 63,704,300,000 discount "" final 63,704,300,000 win null venture "Liên danh VB"
+   PP2500312754 0100369062 won false bid 69,373,800,000 discount "" final 69,373,800,000 win null venture "LIÊN DANH THIÊN HÒA AN – TRƯỜNG LỘC"
+   PP2500312755 0305259631 won true bid 25,056,000,000 discount "" final 62,640,000,000 win 25,056,000,000 venture ""
+   PP2500312755 0104265868 won false bid 24,109,687,660 discount "" final 24,109,687,660 win null venture "LIÊN DANH VN"
+   PP2500312755 0102562840 won false bid 23,977,200,000 discount "" final 23,977,200,000 win null venture ""
+   PP2500312755 0107540583 won false bid 24,321,720,000 discount "" final 24,321,720,000 win null venture "Liên danh VB"
+   PP2500312755 0100369062 won false bid 28,188,000,000 discount "" final 28,188,000,000 win null venture "LIÊN DANH THIÊN HÒA AN – TRƯỜNG LỘC"
+   PP2500312755 0105146253 won false bid 24,810,950,000 discount "" final 24,810,950,000 win null venture ""
+   PP2500312756 0305259631 won true bid 37,756,800,000 discount "" final 37,756,800,000 win 37,756,800,000 venture ""
+   PP2500312756 0104265868 won false bid 36,535,063,805 discount "" final 36,535,063,805 win null venture "LIÊN DANH VN"
+   PP2500312756 0102562840 won false bid 36,703,630,000 discount "" final 36,703,630,000 win null venture ""
+   PP2500312756 0107540583 won false bid 37,961,316,000 discount "" final 37,961,316,000 win null venture "Liên danh VB"
+   PP2500312756 0100369062 won false bid 42,476,400,000 discount "" final 42,476,400,000 win null venture "LIÊN DANH THIÊN HÒA AN – TRƯỜNG LỘC"
+
+IB2200019427 gói 2,496,050,000 trúng 7,387,200,000
+   BP2200166592 0400562719 won false bid null discount "" final 2,165,000,000 win null venture ""
+   BP2200166592 0100684716 won true bid null discount "" final 2,462,400,000 win 2,462,400,000 venture ""
+   BP2200166592 0100684716 won true bid null discount "" final 2,462,400,000 win 2,462,400,000 venture ""
+   BP2200166592 0100684716 won true bid null discount "" final 2,462,400,000 win 2,462,400,000 venture ""
+
+IB2300029269 gói 590,852,695 trúng 560,003,538
+   PP2300019962 3502339666 won true bid 75,623,900 discount "" final 75,623,900 win 63,644,900 venture ""
+   PP2300019962 3501761089 won false bid 227,797,790 discount "" final 227,797,790 win null venture ""
+   PP2300019963 0305260845 won false bid 296,214,600 discount "" final 296,214,600 win null venture ""
+   PP2300019963 3501761089 won true bid 327,285,506 discount "" final 327,285,506 win 209,477,538 venture ""
+   PP2300019964 3502339666 won true bid 250,696,600 discount "" final 250,696,600 win 250,696,600 venture ""
+   PP2300019964 3501761089 won false bid 256,252,154 discount "" final 256,252,154 win null venture ""
+   PP2300019965 3502339666 won true bid 37,301,000 discount "" final 37,301,000 win 36,184,500 venture ""
+   PP2300019965 3501761089 won false bid 38,980,240 discount "" final 38,980,240 win null venture ""
+
+== H12 ==
+[
+  [ '0.5 kVA', 37 ],
+  [ '7500 kVA', 4 ],
+  [ '141200 kVA', 2 ],
+  [ '120000 kW', 2 ],
+  [ '47000 kVA', 1 ],
+  [ '40000 kW', 1 ],
+  [ '10000 kVA', 1 ]
+]
+IB2200020589 kvas [{"u":"kVA","v":12.5},{"u":"kVA","v":0.5}] at 2026-11-03T14:32:54.399Z rebuilt 2026-11-06T16:25:30.987Z | …ấp; xuất xứ do nhà thầu tự đề xuất. Tổ máy 12.5 KVA: Công suất liên tục: ≥ 12.5 ±0.5 KVA. Tổ máy 12.5 KVA: Công suất tối đa: ≥ 110% công suấ…
+IB2200046063 kvas [{"u":"kVA","v":10.5},{"u":"kVA","v":0.5},{"u":"kVA","v":13.5}] at 2026-11-03T14:17:31.373Z rebuilt 2026-11-06T16:25:30.994Z | …Máy 10.5 kVA - Tổ máy: Yêu cầu chung: Mới 100%, lắp ráp năm 2022 …
+IB2200052323 kvas [{"u":"kVA","v":0.5},{"u":"kVA","v":9.35}] at 2026-11-03T14:15:20.700Z rebuilt 2026-11-06T16:25:30.996Z | …n hiệu/Xuất xứ: Nhà thầu tự đề xuất Tổ máy phát điện: Công suất liên tục: ≥ 8.5 ±0.5 KVA Tổ máy phát điện: Công suất tối đa: ≥ 9.35 KVA Tổ m…
+IB2300030459 kvas [{"u":"kVA","v":2500},{"u":"kVA","v":7500},{"u":"kW","v":2000},{"u":"kVA","v":2250}] at 2026-11-03T22:18:27.999Z rebuilt 2026-11-06T16:25:31.009Z | …Tổ hợp 3 máy phát điện Diesel 2500kVA - 6,3kV: Tổng công su…
+
+== H11 ==
+IB2200021336: tên: 120 kVA ↔ đọc: 132 kVA | Mua sắm máy phát điện 120KVA
+IB2200035219: tên: 6 kVA ↔ đọc: 6.5 kVA | Mua 10 máy phát điện diesel 6KVA
+IB2300078874: tên: 630 kVA ↔ đọc: 250 kVA, 200 kW | Số 3: Nhánh rẽ cáp ngầm 22kV và Trạm biến áp 630kVA-22/0,4kV; Máy phát điện dự p
+IB2300111838: tên: 150 kVA ↔ đọc: 200 kVA | XD-02: Nhà làm việc cơ quan; Cung cấp, lắp đặt tủ ATS và Máy phát điện dự phòng 
+IB2300117998: tên: 150, 150 kVA ↔ đọc: 50 kVA, 55 kVA | Gói thầu số 02: Xây lắp trạm biến áp 150KVA; Hệ thống cấp điện, chiếu sáng ngoài
+IB2300136367: tên: 630 kVA ↔ đọc: 150 kVA, 120 kW, 165 kVA, 132 kW | Gói thầu số 06 (xây dựng và thiết bị): Xây dựng, cung cấp và lắp đặt thiết bị Hệ
+IB2300220257: tên: 630 kVA ↔ đọc: 150 kVA, 120 kW, 165 kVA, 132 kW | Gói thầu số 06 (xây dựng và thiết bị): Xây dựng, cung cấp và lắp đặt thiết bị Hệ
+IB2300308025: tên: 50, 400, 560 kVA ↔ đọc: 377 kVA | Bảo trì tủ điện ATS 800A, tủ điện phân phối tổng, tủ tụ bù, MCCB định kì, sửa ch
+IB2300340274: tên: 630 kVA ↔ đọc: 150 kVA, 120 kW, 165 kVA, 132 kW | Gói thầu số 06 (xây dựng và thiết bị): Xây dựng, cung cấp và lắp đặt thiết bị Hệ
+IB2400111485: tên: 750 kVA ↔ đọc: 250 kVA, 275 kVA | Gói thầu XL-03: Thi công xây dựng Trạm biến áp 750kVA và lắp đặt máy phát điện d
+IB2400116021: tên: 1600, 500 kVA ↔ đọc: 670 kVA, 610 kVA | Gói thầu XL01: Thi công xây dựng toàn bộ các hạng mục công trình và lắp đặt thiế
+IB2400191798: tên: 350 kVA ↔ đọc: 250 kVA, 275 kVA | Cung cấp lắp đặt Máy phát điện dự phòng 350KVA vỏ cách âm cách nhiệt, tủ đổi ngu
+IB2500067386: tên: 2000 kVA ↔ đọc: 1000 kVA, 300 kVA, 75 kVA | Cung cấp dịch vụ bảo trì, bảo dưỡng trạm biến áp 35/22/0,4kV/2x2000kVA, Trạm phâ
+IB2500124299: tên: 151 kVA ↔ đọc: 165 kVA | Mua máy phát điện 151 kVA
+IB2500364714: tên: 400 kVA ↔ đọc: 500 kVA | Gói thầu số 03: Cung cấp Máy phát điện, Cột điện chiếu sáng, Trạm biến áp 400 KV
+IB2500415487: tên: 12.5, 15 kVA ↔ đọc: 0.5 kVA | Mua sắm máy phát điện 12.5KVA và 15KVA
+IB2500536474: tên: 12.5 kVA ↔ đọc: 0.5 kVA | Mua sắm máy phát điện 12.5KVA
