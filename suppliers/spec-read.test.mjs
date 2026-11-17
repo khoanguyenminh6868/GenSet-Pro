@@ -152,3 +152,86 @@ test("table row: a note after the engine code, or an empty engine cell, does not
   assert.deepEqual(of(l, "engine"), []);
   assert.deepEqual(of(l, "alternator"), ["LTP224S-50"]);
 });
+
+test("walkedSpecs: a power title over two cells (kVA | kW) does not shift the titles after it (rà soát lệch cột 18/11/2026)", () => {
+  const rec = (header, rows) => ({ id: "x", country: "CN", role: "genset_oem", status: "partial", names: { en: "X", brands: [] }, productLines: [], sources: [], specTables: [{ n: 1, title: "柴油发电机组", header, rows }] });
+  const sp = (r) => CAT.fromSupplier(r).map((o) => Object.fromEntries((o.specs || []).map((s) => [s.key, s.value])));
+  const H = ["| 机组型号 Genset Model | 主用功率（主用） | 备用功率（备用） | 电流（主用）Power(A) | 电流（备用）Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimensions L*W*H(m) | 品牌 Brand | 发 动 机型号 Engine Type", "| KW | KVA | KW | KVA"];
+  // yingtai-group n2002: the weight was read as 36 (the prime current) on a 710 kg set
+  const [a] = sp(rec(H, ["| 20GF | 20 | 25 | 22 | 27.5 | 36 | 39.6 | 710 | 1.7*0.9*1.4 | 4B3.9-G2"]));
+  assert.equal(a.weight, "710");
+  assert.equal(a.dims, "1.7*0.9*1.4");
+  // one pair is no kVA / kW of one rating (330 | 375 | 380 | 475): the walk from the left is still a cell off and
+  // gives nothing; the weight is the one read back from the engine's cell, never a current (594, 675)
+  for (const [row, kg] of [["| 330GF | 330 | 375 | 380 | 475 | 594 | 675 | 2850 | 3.3*1.15*2.15 | QSZ13-G7", "2850"], ["| 64GF | 64 | 75 | 88 | 88 | 115.2 | 126.7 | 1180 | 1.9*0.9*1.4 | WP4.1D80E200", "1180"]])
+    assert.ok([kg, undefined].includes(sp(rec(H, [row]))[0]?.weight), row);
+  // xinzhengfa n101: "输出功率" over KVA | KW, the kW was read as the current
+  const [x] = sp(rec(["| 机组型号 | 输出功率 | 额定 电流A | 频率/转速 Hz/RPM | 柴油机型号 | 机组外型尺寸(L × B × H)mm | 机组重量Kg", "| KVA | KW"], ["| ZF24GF | 30 | 24 | 33.2 | 50/1500 | K4100D | 1800 × 750 × 1100 | 810"]));
+  assert.equal(x.current, "33.2");
+  assert.equal(x.weight, "810");
+  // yingtai-jiangsu n114: a row with the speed cell left out, 1200 is the speed from the left and the weight from the right: neither
+  const [g] = sp(rec(["| 机组型号 Genset Model | 输出功率（主用） | 备用功率（备用） | 电流Power(A) | 额定转速 | 净重 Net Weight (kg) | 外形尺寸 Overall Dimensions L*W*H(m) | 发动 机型号 Engine Type | 缸数 Number of", "| KW | KVA | KW | KVA"], ["| 64GF-A | 64 | 80 | 75 | 83 | 115.2 | 1200 | 2.35*1.0*1.5 | YC6G180N-D30 | 4"]));
+  assert.equal(g.speed, undefined);
+  assert.equal(g.weight, undefined);
+});
+
+test("label sheet with no part headings (himoinsa, hipower): the Model beside the engine lines is the engine, Starting power is not the output (rà soát 18/11/2026)", () => {
+  const rec = (rows) => ({ id: "x", country: "CN", role: "genset_oem", status: "partial", names: { en: "X", brands: [] }, productLines: [], sources: [], specTables: [{ n: 1, title: "16.3 kVA Generator set Diesel HYW-20 M5 Soundproof", header: [], rows }] });
+  const out = CAT.fromSupplier(rec(["Rated Engine Output: 16,4kW prp ; 18kW standby", "Model: 4TNV88BGGEH", "Engine Type: 4-stroke diesel", "Bore and Stroke: 88 x 90 mm", "Displacement: 2,19 L", "Fuel Consumption 100% PRP: 4,27 l/h", "Model: S1L2.J1", "Cooling Air Flow: 0,8 m3/s", "Starting power: 1,4 kW", "Starting power: 1,9 CV", "Fuel Tank: 100 L", "Weight with liquids in radiator and sump: 818 kg"]));
+  assert.deepEqual(out.map((o) => [o.kind, o.model, o.genset, o.power]), [["engine", "4TNV88BGGEH", null, null], ["alternator", "S1L2.J1", null, null]]);
+  // an engine named with its cycle keeps its model (hosem-power)
+  const h = CAT.fromSupplier({ ...rec(["| Engine Model | Yanmar 4TNV88-GLE 4 Cycle", "| Prime Power | 20kVA 16kW"]), specTables: [{ n: 1, title: "20kVA Yanmar generator", header: [], rows: ["| Engine Model | Yanmar 4TNV88-GLE 4 Cycle", "| Alternator Model | S0L2-P1", "| Prime Power | 20kVA"] }] });
+  assert.ok(h.some((o) => o.other === "Yanmar 4TNV88-GLE 4 Cycle" || /4TNV88-GLE/.test(o.model)));
+});
+test("label sheet: the kVA of the genset and the kW of its engine, on two lines, are not one output (longkai, rà soát 18/11/2026)", () => {
+  const rec = (rows) => ({ id: "x", country: "CN", role: "genset_oem", status: "partial", names: { en: "X", brands: [] }, productLines: [], sources: [], specTables: [{ n: 1, title: "Datasheet", header: [], rows }] });
+  const pw = (rows) => CAT.fromSupplier(rec(rows))[0]?.power;
+  assert.deepEqual(pw(["| Model | LG250SC", "| Rated prime power | kva | 312.5", "| Engine Model | SC12E420D2", "| Prime power | KW | 280"]).prime, { kVA: 312.5 });
+  assert.deepEqual(pw(["| Model | LG250SC", "| Rated prime power | kva | 312.5", "| Engine Model | SC12E420D2", "| Prime power | KW | 250"]).prime, { kW: 250, kVA: 312.5 });
+});
+
+test("engine and alternator are not swapped (acepow, cldj-fujian, longkai, tecnogen; rà soát 18/11/2026)", () => {
+  const rec = (header, rows, title = "Diesel Generator") => ({ id: "x", country: "CN", role: "genset_oem", status: "partial", names: { en: "X", brands: [] }, productLines: [], sources: [], specTables: [{ n: 1, title, header, rows }] });
+  const of = (r, kind) => CAT.fromSupplier(r).filter((o) => o.kind === kind).map((o) => o.model);
+  // acepow-fuan n109: its own alternator BC184E stands before the engine
+  const a = rec(["| 3Phases/50Hz/400V/PF=0.8 | | Brand | Engine", "| Generating Sets | Acepow | Model | Prime | Standby"], ["| 18.0 | 22.5 | 19.8 | 24.8 | BC184E | ISUZU | JE493DB-04 | 21 | 23"]);
+  assert.deepEqual([of(a, "engine"), of(a, "alternator")], [["JE493DB-04"], []]); // no alternator title: BC184E is left out, not read as the engine
+  // acepow-fuan n114: the titles give the order, "Alternator" before "Engine model"
+  const b = rec(["| Genset Model | Frequency | Kw | Kva | Alternator | Engine model | Rated Power", "| Rated | Standby | Rated | Standby | Model"], ["| APYD-9 | 60HZ | 9 | 9.9 | 11.3 | 12.4 | APS164B | YD380D | 12KW/1800rpm"]);
+  assert.deepEqual([of(b, "engine"), of(b, "alternator")], [["YD380D"], ["APS164B"]]);
+  // cldj-fujian n101: 发电机型号 before 发动机型号
+  const c = rec(["| 机组型号 | 输出功率 kw KVA | 电流（A） | 发电机型号 | 发动机型号 | 缸径(mm) *行程(mm) | 缸数"], ["| CLS-80 | 60/80 | 108 | CLG-224F | SC4H95D2 | 105*124 | 4"]);
+  assert.deepEqual([of(c, "engine"), of(c, "alternator")], [["SC4H95D2"], ["CLG-224F"]]);
+  // the genset title is not the alternator title: engine first stays
+  const g = rec(["| 发电机组型号 | 发动机型号 | 发电机型号"], ["| CLS-80 | SC4H95D2 | CLG-224F"]);
+  assert.deepEqual([of(g, "engine"), of(g, "alternator")], [["SC4H95D2"], ["CLG-224F"]]);
+  // tecnogen: a set of two engines gives no engine (the controller SCP8610 was read as one)
+  const t = rec(["| Model | kVA LTP | kVA PRP | Engine | Controller"], ["| VO1100TSX-C20 | 1100 | 1000 | 2 x TAD1641GE | SCP8610"]);
+  assert.deepEqual(of(t, "engine"), []);
+  // the same with a code written with spaces (Scania "DC13 072A 02 14")
+  const t2 = rec(["| Model | kVA LTP | kVA PRP | Engine | Controller"], ["| SA1100TSX-D20 | 1100 | 1000 | 2 x DC13 072A 02 14 | SCP8610"]);
+  assert.deepEqual(of(t2, "engine"), []);
+  // longkai datasheet (two-column PDF): "Engine-SDEC" in front of another line starts the engine part
+  const l = rec([], ["| Model | LG250SC", "Alternator", "| Rated prime power | kva | 312.5", "| Model | LONGKAI | LK444E", "| Engine-SDEC | Power factor | 0.8", "| Model | SC12E420D2", "| Prime power | KW | 280"], "Datasheet");
+  assert.deepEqual([of(l, "engine"), of(l, "alternator")], [["SC12E420D2"], ["LK444E"]]);
+  // acepow: two "label: | value" pairs on one line
+  const p = rec([], ["| Engine Model: | 404A-22G1 | Alternator Model: | TAL-A40-F"], "Datasheet");
+  assert.deepEqual([of(p, "engine"), of(p, "alternator")], [["404A-22G1"], ["TAL-A40-F"]]);
+});
+
+test("saneSpecs: figures the row's own output rules out are left out (rà soát 18/11/2026, mục A5)", () => {
+  const rec = (header, rows) => ({ id: "x", country: "CN", role: "genset_oem", status: "partial", names: { en: "X", brands: [] }, productLines: [], sources: [], specTables: [{ n: 1, title: "Diesel Generator", header, rows }] });
+  const sp = (r) => Object.fromEntries((CAT.fromSupplier(r)[0]?.specs || []).map((s) => [s.key, s.value]));
+  // eastern-lion-fuan n121: "Engine power (kW)" = 19408 on a 10 kW set; mamo-power: a real one stays
+  const H = ["| Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model"];
+  assert.equal(sp(rec(H, ["| GFS-P14 | 10 | 13 | 11 | 14 | 403A-15G1 | 19408 | El 164C"])).engPower, undefined);
+  assert.equal(sp(rec(H, ["| GFS-P14 | 10 | 13 | 11 | 14 | 403A-15G1 | 13.3 | El 164C"])).engPower, "13.3");
+  // taihai-taizhou n105: 62 under "g/kw.h" is no g/kWh
+  const T = ["| 机组型号 | 常用功率 (kVA) | 常用功率 (kW) | 发动机型号 | 缸数 | 燃油消耗量 (g/kw.h) | 重量 (kg)"];
+  const t = sp(rec(T, ["| TH-320GF | 400 | 320 | 2206A-E13TAG3 | 6 | 62 | 3385"]));
+  assert.equal(t.fuel, undefined);
+  assert.equal(t.weight, "3385");
+  assert.equal(sp(rec(T, ["| TH-320GF | 400 | 320 | 2206A-E13TAG3 | 6 | 205 | 3385"])).fuel, "205");
+  // a weight under 2,5 kg per kVA is no weight of the set
+  assert.equal(sp(rec(T, ["| TH-320GF | 400 | 320 | 2206A-E13TAG3 | 6 | 205 | 594"])).weight, undefined);
+});
