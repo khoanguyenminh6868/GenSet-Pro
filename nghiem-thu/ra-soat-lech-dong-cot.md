@@ -137,10 +137,13 @@ Ghi nhận thêm: `catalog-pdf.mjs` cố ý chỉ giữ dòng kiểm được b�
 - `config.kvas`: 43 gói (không phải 37) có số dung sai, đã soát tay từng gói (`kvaTol.cjs` → `kvaFix.json`) và ghi lên web (`applyKva.mjs --write`). IB2400121273 giữ 85 kVA (chữ bản scan): chờ Khoa.
 - Không cần restart tác vụ "GenBid Bot": không sửa `GenBid-Bot.ps1`, mỗi lượt là tiến trình node mới nên đã dùng mã mới.
 
-### Việc 1: công suất đọc theo tiêu đề — PR #892 (chờ đo top 30 rồi merge)
-242 lớp đổi (10.543 bản ghi) đã soát hết bằng `cmpP.cjs` / `revP.cjs`.
+### Việc 1: công suất đọc theo tiêu đề — XONG 18/11 (PR #892 đã merge)
+242 lớp đổi (10.543 bản ghi) đã soát hết bằng `cmpP.cjs` / `revP.cjs`. Top 30 ứng viên: 1.008 / 1.093 lượt đổi, mọi dòng vào / ra giải thích bằng `gopWhy.cjs` (bình luận PR).
 
-### Việc 2–5 (nhánh `fix/bang-nhan-himoinsa`, xếp chồng trên việc 1; chờ đo top 30 rồi mở PR)
+### Việc 2–5 — XONG 18/11 (PR #894 đã merge, 7b3ba722)
+Top 30 ứng viên so với main sau việc 1: 791 / 1.093 lượt đổi tập, hãng hiện không đổi lượt nào. Dòng vào: 1.609 dòng longkai mới đọc ra động cơ, 741 dòng acepow / stone đổi vai động cơ ↔ đầu phát hay công suất, 437 dòng không đổi (lấp chỗ). Dòng ra: 43 dòng đổi, 2.736 không đổi (bị chen). 19 lượt không có dòng nào tự đổi đã chạy lại bằng mã cũ và mới (`gopRow.mjs`, `gopRowCmp.cjs`): 15 lượt do điểm +8 mỗi loại thông số động cơ mới đọc được; IB2300204696 loại đúng 6BTA5.9-GM120 theo dung tích (5,9 < 7,7 L); IB2300080302 lộ dòng tecnogen "2 x DC13 072A 02 14" lấy tủ SCP8610 làm động cơ, đã sửa trong PR (bỏ đúng 2 bản ghi); IB2400517601 / IB2400617546 (HSMT ≥ 12 xi lanh) nay giữ 2 dòng QSK19-G4 vì datasheet longkai in sai "V 12" nên nguồn không còn thống nhất — CHƯA sửa, chờ Khoa (cho `candidates` dùng giá trị thắng theo số đông).
+
+
 Mỗi việc đo bằng `cmpSpec.cjs` (mọi trường của mọi bản ghi, trước ↔ sau) và soát MỌI thay đổi, không lấy mẫu:
 
 | Việc | Thay đổi trên `suppliers/cn` | Kiểm |
