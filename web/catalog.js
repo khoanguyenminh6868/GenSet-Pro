@@ -691,6 +691,16 @@
       } else if (engineModel && /^(model|model\s*series|models?|型号)$/.test(bare)) vals.forEach((v, j) => isCode(v) && !badCol.has(j) && put(j, "engine", v));
       else if (/^(genset\s*)?model|机组型号|型号$/i.test(L) && !ENGINE_LBL.test(L) && !ALT_LBL.test(L)) vals.forEach((v, j) => isCode(v) && put(j, "genset", v));
     }
+    // A page that lists several products takes the first line of each label, so a rating can come from another product
+    // (hosem "Buy 500kva diesel generator": "Prime Power 500kVA" with "Standby Power 22kW"). When the kVA of one rating and
+    // the kW of the other do not fit one set (kW / kVA ≈ 0.8) neither is trusted: both ratings are left out.
+    for (const c of cols) {
+      const p = c?.prime, s = c?.standby;
+      if (!p || !s) continue;
+      const only = (r, u) => r[u] != null && r[u === "kVA" ? "kW" : "kVA"] == null;
+      const ratio = only(p, "kVA") && only(s, "kW") ? s.kW / p.kVA : only(p, "kW") && only(s, "kVA") ? p.kW / s.kVA : null;
+      if (ratio != null && (ratio < 0.5 || ratio > 1.2)) { delete c.prime; delete c.standby; }
+    }
     return cols.filter(Boolean);
   }
   const isLabelTable = (t) => {
