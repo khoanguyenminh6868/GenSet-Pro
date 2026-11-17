@@ -186,6 +186,11 @@ async function sbPost(rows) {
   const r = await fetch(`${SB}/rest/v1/docs`, { method: "POST", headers: { ...sbHeaders, Prefer: "resolution=merge-duplicates,return=minimal" }, body: JSON.stringify(rows.map((x) => ({ coll: x.coll, id: x.id, data: x.data, updated_at: now }))) });
   if (!r.ok) throw new Error(`ghi docs: HTTP ${r.status} ${(await r.text()).slice(0, 200)}`);
 }
+// Một dòng log: số NCC bị bỏ do loại trừ / xoá mềm (chứng minh bộ lọc của #573 có tác dụng).
+export function skipLine(skip, before, after) {
+  if (!skip.ok) return "Bỏ NCC loại trừ / xoá mềm: không đọc được supexcl/supdeleted (xem cảnh báo bên dưới)";
+  return `Bỏ NCC loại trừ / xoá mềm: ${before - after} hồ sơ (${skip.ids.size} id trong supexcl/supdeleted; còn ${after}/${before} hồ sơ)`;
+}
 async function main() {
   const arg = (n) => { const i = process.argv.indexOf("--" + n); return i > 0 ? process.argv[i + 1] : null; }, has = (n) => process.argv.includes("--" + n);
   const bot = await import("./config-bot.mjs");
@@ -196,6 +201,7 @@ async function main() {
   // nhưng có cảnh báo và KHÔNG gửi specreq lượt này (điều phối 2026-11-12). --skipfile {supexcl:[..],supdeleted:[..]} để thử.
   const skip = await skippedOf((coll) => (arg("skipfile") ? JSON.parse(fs.readFileSync(arg("skipfile"), "utf8"))[coll] : SB && SERVICE ? sbDocs(coll) : bot.allDocs(coll)));
   const suppliers = dropSkipped(all, skip.ids);
+  console.log(skipLine(skip, all.length, suppliers.length));
   const [hist, cms, sms, sreq] = await Promise.all([read("bidhist", arg("bidhist")), read("configmatch", arg("configmatch")).catch(() => []), read("specmatch").catch(() => []), read("specreq").catch(() => [])]);
   const docs = Object.fromEntries(hist.map((d) => [d.id, d.data]));
   // Một hãng coi như vừa tìm khi có kết quả (specmatch.at) hoặc đang có yêu cầu chờ (specreq chưa doneAt).
