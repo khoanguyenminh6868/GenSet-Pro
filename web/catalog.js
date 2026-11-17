@@ -1181,28 +1181,97 @@
     Mebay: "CN", Lixise: "CN", Emko: "TR" };
   const MADE_DEFAULT = { Stamford: "GB", "Leroy-Somer": "FR", "Mecc Alte": "IT", AvK: "RO", "Deep Sea": "GB", DEIF: "DK", Woodward: "PL",
     Datakom: "TR", ComAp: "CZ" };
+  // Nơi sản xuất of one row (Khoa, 2026-11-16/17, việc "thương hiệu ≠ nơi sản xuất"): what the row, its column titles
+  // and the page title say of the make, never guessed from the model.
+  // - A Chinese plant of the make (CN_PLANT: DCEC / CCEC, Perkins Wuxi, SME, MTU Yuchai, 潍柴博杜安, 无锡斯坦福,
+  //   福州利莱森玛…), "合资 / 国产 <make>", or China written beside the make ("Perkins China", "Stamford (China)"): CN.
+  // - Imported ("进口康明斯", "Imported Cummins Series": the make's own country) or a country written beside the make
+  //   ("UK Perkins", "日本三菱", "德国MTU", "瑞典沃尔沃", "Cummins India"): that country.
+  // - Both kinds, or two countries ("进口康明斯系列_..._合资康明斯系列", sanq-power's page title): not known.
+  // - Nothing written: China for a Chinese make, the country Khoa settled on for the make (MADE_DEFAULT), else not known.
+  // { at: "CN" | "GB" | … | "?", why: the words read (or how it was decided), null when nothing tells }.
   const CN_PLANT = {
-    engine: /\bDCEC\b|\bCCEC\b|dongfeng[\s-]*cummins|chongqing[\s-]*cummins|东风康明斯|重庆康明斯|perkins[\s-]*\(?\s*(china|wuxi)|wuxi[\s-]*perkins|无锡珀金斯|shanghai[\s-]*mhi|上海菱重|mtu[\s-]*yuchai|玉柴\s*mtu|weichai[\s-]*baudouin|潍柴博杜安/i,
-    alternator: /stamford[\s-]*\(?\s*(china|wuxi)|wuxi[\s-]*stamford|无锡斯坦福|leroy[\s-]?somer[\s-]*\(?\s*(china|fuzhou)|福州利莱森玛|mecc[\s-]?alte[\s-]*\(?\s*china/i,
-    controller: null,
+    Cummins: /\b[DCX]CEC\b|(dong\s?feng|chong\s?qing|xi'?an)[\s-]*cummins|(东风|重庆|西安)康明斯/i,
+    Perkins: /wuxi[\s-]*perkins|perkins[\s-]*wuxi|无锡(珀|帕)金斯/i,
+    Mitsubishi: /\bSME\b|上海菱重|上海三菱|shanghai[\s-]*(mhi|mitsubishi)/i,
+    MTU: /mtu[\s-]*(yuchai|yc)\b|yuchai[\s-]*mtu|玉柴\s*mtu/i,
+    Baudouin: /weichai[\s-]*baudouin|潍柴\s*博杜安/i,
+    Doosan: /烟台\s*斗山|doosan[\s-]*yantai/i,
+    Stamford: /wuxi[\s-]*stamford|stamford[\s-]*wuxi|无锡\s*斯坦福/i,
+    "Leroy-Somer": /fuzhou[\s-]*leroy|leroy[\s-]?somer[\s-]*\(?\s*fuzhou|福州\s*利莱森玛/i,
+  };
+  // Names of a make in a row beyond the catalog's own (ENGINE_BRANDS / ALT_BRANDS / CONTROLLERS).
+  const MAKE_ALSO = { Perkins: "帕金斯", Mitsubishi: "菱重" };
+  // China only right after the make, in brackets or not followed by a trader's words: "China Perkins Series Diesel
+  // Generator factory and manufacturers" (mamo-power), "Powered by Kubota China Manufacturers" (superwatt-power) are page
+  // titles of a seller in China, not of a plant.
+  const CN_AFTER = "[\\s-]*[(（]\\s*(china|p\\.?r\\.?c\\.?|中国)|[\\s-]+china(?![a-z])(?![\\s-]*(manufactur|supplier|factor|export|wholesal|compan|co\\b|co\\.|ltd|price|quot|dealer|seller|brand))";
+  const COUNTRY_WORD = [["GB", "uk|u\\.k\\.?|england|britain|英国"], ["US", "usa|u\\.s\\.a\\.?|america|美国"],
+    ["JP", "japan|日本"], ["DE", "germany|德国"], ["FR", "france|法国"], ["IT", "italy|意大利"], ["SE", "sweden|瑞典"], ["KR", "korea|韩国"],
+    ["IN", "india|印度"]];
+  const makeWord = (kind, n) => {
+    const list = kind === "engine" ? ENGINE_BRANDS : kind === "alternator" ? ALT_BRANDS : CONTROLLERS.map((c) => [c.word, c.brand]);
+    const src = list.filter(([, b]) => b === n).map(([re]) => re.source);
+    return src.length ? `(?:${[...src, MAKE_ALSO[n]].filter(Boolean).join("|")})` : null;
+  };
+  const madeRe = new Map();
+  // The signs of one make: [[place ("CN", a country, or "home" for imported), RegExp], …].
+  function madeSigns(kind, n) {
+    const k = `${kind}|${n}`;
+    if (madeRe.has(k)) return madeRe.get(k);
+    const mk = makeWord(kind, n), out = [];
+    if (CN_PLANT[n]) out.push(["CN", CN_PLANT[n]]);
+    if (mk) {
+      out.push(["CN", new RegExp(`(合资|国产)\\s*${mk}`, "i")]);
+      out.push(["home", new RegExp(`(进口|imported\\s*)${mk}|${mk}\\s*(diesel\\s*)?(engines?\\s*)?[-(（]?\\s*(进口|imported\\b)`, "i")]);
+      out.push(["CN", new RegExp(`${mk}(${CN_AFTER})`, "i")]);
+      for (const [c, w] of COUNTRY_WORD) out.push([c, new RegExp(`(?<![a-z])(${w})(?![a-z])\\s*[-(（]?\\s*${mk}|${mk}\\s*[-(（]?\\s*(made\\s*in\\s*)?(${w})(?![a-z])`, "i")]);
+    }
+    madeRe.set(k, out);
+    return out;
+  }
+  // The signs in one text: [{ at, why }].
+  const signsIn = (kind, list, t) => {
+    const hits = [];
+    for (const n of list) for (const [p, re] of madeSigns(kind, n)) {
+      const m = t.match(re);
+      if (m) hits.push({ at: p === "home" ? makeCountry(kind, n) || "?" : p, why: m[0].trim() });
+    }
+    return hits;
   };
   const entryMakes = (e) => String(e.make || "").split(" / ").filter(Boolean);
   const makeCountry = (kind, n) => (kind === "engine" ? (FOREIGN_ENGINE.has(n) ? ENGINE_COUNTRY[n] : "CN") : (kind === "alternator" ? ALT_COUNTRY : CTRL_COUNTRY)[n]) || null;
+  // Woodward: Kraków makes the easYgen-1500 / 2000 / 3000 / 3000XT; the easYgen-800 may be made in China (not checked).
+  const madeDefault = (n, model) => (n === "Woodward" ? (/easy\s?gen\s?-?(1500|2000|3000)/i.test(String(model || "")) ? "PL" : null) : MADE_DEFAULT[n] || null);
+  // `text`: one text, or the texts from the nearest to the farthest (the row, its column titles, the page title): the
+  // nearest that tells decides ("Cummins (USA)" on fdk-energy's row under a page title naming CCEC and Cummins India).
+  function madeIn(kind, makes, text, model) {
+    const levels = [].concat(text ?? "").map((x) => String(x || "").normalize("NFC")).filter(Boolean), list = (makes || []).filter(Boolean);
+    // No make the sources agree on: only a Chinese plant (which names its make) tells.
+    if (!list.length) {
+      for (const t of levels) for (const [n, re] of Object.entries(CN_PLANT)) { const m = t.match(re); if (m && makeWord(kind, n)) return { at: "CN", why: m[0] }; }
+      return { at: "?", why: null };
+    }
+    for (const t of levels) {
+      const hits = signsIn(kind, list, t), at = [...new Set(hits.map((h) => h.at))];
+      if (!hits.length) continue;
+      if (at.length === 1 && at[0] !== "?") return { at: at[0], why: hits.map((h) => h.why).join("; ") };
+      return { at: "?", why: `nguồn ghi nhiều nơi: ${hits.map((h) => h.why).join("; ")}` };
+    }
+    const cnMake = list.find((n) => makeCountry(kind, n) === "CN");
+    if (cnMake) return { at: "CN", why: `hãng Trung Quốc (${cnMake})` };
+    const d = [...new Set(list.map((n) => madeDefault(n, model)))];
+    if (d.length === 1 && d[0]) return { at: d[0], why: "mặc định theo hãng (Khoa chốt 16/11/2026)" };
+    return { at: "?", why: null };
+  }
+  // The text of one row of an entry that may tell the place: the row, its column titles, the table / page title.
+  const useText = (u) => [[u.line, u.text, ...(u.lines?.rows || [])], [...(u.header || []), ...(u.lines?.header || [])], [u.title]].map((l) => l.filter(Boolean).join(" \n "));
+  // Place of manufacture of one row of a catalog entry.
+  const madeAt = (e, u) => madeIn(e.kind, entryMakes(e), useText(u || {}), e.model);
   // Countries of the brand; [] when no source names the make.
   const brandOf = (e) => [...new Set(entryMakes(e).map((n) => makeCountry(e.kind, n)).filter(Boolean))];
   // Places of manufacture over the rows of the entry ("?" for a row that does not tell).
-  function madeOf(e) {
-    const makes = entryMakes(e), plant = CN_PLANT[e.kind], out = new Set();
-    for (const u of e.uses.length ? e.uses : [{}]) {
-      const text = [u.line, u.text, u.title, ...(u.header || [])].filter(Boolean).join(" ");
-      if (!makes.length) { out.add(plant && plant.test(text) ? "CN" : "?"); continue; }
-      for (const n of makes) {
-        const c = makeCountry(e.kind, n);
-        out.add(c === "CN" || (plant && plant.test(text)) ? "CN" : MADE_DEFAULT[n] || "?");
-      }
-    }
-    return [...out];
-  }
+  const madeOf = (e) => [...new Set((e.uses.length ? e.uses : [{}]).map((u) => madeAt(e, u).at))];
 
   // Động cơ, đầu phát, bộ điều khiển named in a won goods row (bidhist goods: "Cấu hình, tính năng kỹ thuật cơ bản",
   // Khoa 2026-11-09): after each label ("Động cơ:", "Đầu phát:", "Bộ điều khiển:", "Engine", "Alternator"...) up to the
@@ -1264,7 +1333,7 @@
     return out;
   }
 
-  const api = { build, builder, partsIn, fromSupplier, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS };
+  const api = { build, builder, partsIn, fromSupplier, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, madeAt, madeIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);

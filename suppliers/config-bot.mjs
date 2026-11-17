@@ -212,6 +212,49 @@ export function originOfHsmt(text) {
   });
   return { ...best, scope: whole ? "genset" : "parts", basis: whole && kinds.size === 1 && kinds.has("brand") ? "brand" : "origin" };
 }
+// Thương hiệu or nơi sản xuất of EACH part (Khoa, 2026-11-16/17: "nên phân biệt rõ thương hiệu và nơi sản xuất", for the
+// engine, the alternator and the controller): over the G7 / G20 lines that are a rule (as the basis pass of
+// originOfHsmt: not an example, a preference, a score), the clause of the line that names the group decides:
+// "Xuất xứ nhà thầu đề xuất; thương hiệu thuộc các nước G7 hoặc EU" is the brand, "Hãng sản xuất thuộc các nước G7;
+// xuất xứ thuộc các nước G7 hoặc G20" the place too; a clause that says neither ("Xuất xứ: EU – G7") goes by its label
+// (basisOfLine). "Thương hiệu xuất xứ G7", "xuất xứ hãng sản xuất" are the brand's country. A clause on a standard or a
+// technology ("tiêu chuẩn G7", "công nghệ của các nước G7") or a reference ("tham khảo") is no rule of either.
+// The part is the one the label names (the line up to the clause: "Động cơ - Thương hiệu", "Thương hiệu động cơ, đầu
+// phát"); a line of another item (ATS, tủ, bơm, van, ống, vỏ) is left out; a line naming no part is of every part.
+// { engine, alternator, controller }: each { basis: "brand" | "origin", quote } or null (no G7 / G20 line for it).
+const PART_OF = [["engine", /động cơ|engine/i], ["alternator", /đầu phát|củ phát|alternator/i], ["controller", /(bộ|bảng|hệ thống|màn hình) điều khiển|controller|control (panel|module)/i]];
+const OTHER_ITEM = /\bATS\b|tủ (chuyển|điện|hòa|điều khiển bơm)|bơm|van\b|ống|vỏ|giá đỡ|phụ tùng|vật tư|linh kiện|cáp\b/i;
+const BRAND_PLACE = /th[ưu][ơo]ng\s*hi[ệe]u\s*(c[óo]\s*)?xu[ấa]t\s*x[ứu]|xu[ấa]t\s*x[ứu]\s*(c[ủu]a\s*)?(h[ãa]ng|th[ưu][ơo]ng\s*hi[ệe]u|nh[àa]\s*s[ảa]n\s*xu[ấa]t)/gi;
+const NOT_PART_RULE = /ti[êe]u\s*chu[ẩa]n|c[ôo]ng\s*ngh[ệe]|tham\s*kh[ảa]o/i;
+const placeOrBrand = (t) => { const c = String(t || "").replace(BRAND_PLACE, "thương hiệu"); return BASIS_ORIGIN.test(c) ? "origin" : BASIS_BRAND.test(c) ? "brand" : null; };
+export function partOriginOfHsmt(text) {
+  const out = { engine: null, alternator: null, controller: null };
+  const NOT_BASIS = /ví dụ|vi du|ưu đãi|ưu tiên|khuyến (nghị|khích)|\(\s*\d+\s*điểm/i;
+  const L = String(text ?? "").split("\n").map((x) => x.replace(/\s+/g, " ").trim());
+  const G = /\bG\s?-?(7|20)\b/, says = placeOrBrand;
+  L.forEach((l, i) => {
+    if (l.length > 600 || !G.test(l) || (!ROW_START.test(l) && NOT_BASIS.test(L[i - 1] || ""))) return;
+    if (!ORIGIN_W.test([L[i - 2], L[i - 1], l].join(" "))) return;
+    // The clauses ("; " or ". " apart) that name the group.
+    const parts = l.split(/;\s*|\.\s+(?=[A-ZÀ-Ỹ])/), lineBasis = basisOfLine(L, i);
+    let at = 0;
+    for (const cl of parts) {
+      const start = l.indexOf(cl, at); at = start + cl.length;
+      if (!G.test(cl) || NOT_PART_RULE.test(cl) || NOT_BASIS.test(cl)) continue;
+      // The value: the clause after its last ":" before the group; the label: the line up to there ("Máy 18KVA: Động
+      // cơ - Thương hiệu"), its last segment the nearest label ("Xuất xứ hãng sản xuất").
+      const g = start + cl.search(G), cut = l.lastIndexOf(":", g), label = cut >= 0 ? l.slice(0, cut) : "";
+      const value = l.slice(Math.max(cut + 1, start), start + cl.length), near = label.slice(label.lastIndexOf(":") + 1);
+      if (OTHER_ITEM.test(label) && !PART_OF.some(([, re]) => re.test(label))) continue;
+      // A line naming no part is of the genset (originOfHsmt's scope), not of each part.
+      const named = PART_OF.filter(([, re]) => re.test(label) || re.test(l.slice(Math.max(cut + 1, start), g))).map(([p]) => p);
+      if (!named.length) continue;
+      const basis = says(value) || says(near) || lineBasis;
+      for (const p of named) if (!out[p] || (basis === "origin" && out[p].basis !== "origin")) out[p] = { basis, quote: l.slice(0, 300) };
+    }
+  });
+  return out;
+}
 const extraOf = (req) => String(req?.extra || "").trim().slice(0, 2000);
 // The requirements read last time are used again only when the HSMT, Yêu cầu khác and the way they are read are the
 // same: REQ_VERSION goes up when config-prompt.md changes how requirements are written (e.g. the grouped controller
@@ -315,6 +358,9 @@ export const partsOnlyOf = (origin, hsmtText) => GROUP_ORIGIN.has(origin) && ori
 const groupName = (origin) => GROUP_NAME[origin] || "Trung Quốc";
 const COUNTRY_VI = { CN: "Trung Quốc", TR: "Thổ Nhĩ Kỳ", IN: "Ấn Độ", KR: "Hàn Quốc", ES: "Tây Ban Nha", SE: "Thụy Điển", AE: "UAE", SG: "Singapore", VN: "Việt Nam" };
 const countryVi = (c) => (c ? COUNTRY_VI[c] || c : "chưa ghi nước");
+// The country of a place of manufacture (catalog.js madeIn), in Vietnamese.
+const MADE_VI = { US: "Mỹ", GB: "Anh", JP: "Nhật", DE: "Đức", FR: "Pháp", IT: "Ý", CA: "Canada", PL: "Ba Lan", DK: "Đan Mạch", CZ: "Séc", RO: "Romania" };
+const madeVi = (c) => MADE_VI[c] || countryVi(c);
 // `grp` (groupSuppliers): under G7 / G20 only the rows of those suppliers stay, and an engine none of them offers goes.
 export function byOrigin(engines, origin, cn = new Set(), grp = null) {
   if (origin === "cn") return engines.filter((e) => CAT.originOf(e) === "cn" || (CAT.originOf(e) === "other" && (e.uses || []).some((u) => cn.has(u.supplierId))));
@@ -806,7 +852,7 @@ export function hintsOf(text, extra = "", sizing = null) {
   const f50 = /\b50\s?hz\b/i.test(t), f60 = /\b60\s?hz\b/i.test(t);
   const sized = sizing?.sizes?.length > 1 ? minsForSize(technicalPart(text), sizing.size, sizing.sizes, extra) : null;
   return { engineMakes: names(CAT.ENGINE_BRANDS), altMakes: names(CAT.ALT_BRANDS), ctrlMakes: ctrl, ctrlModels: CAT.controllersIn(t).filter((c) => c.model).map((c) => CAT.keyOf(c.model)),
-    freq: f50 && !f60 ? 50 : f60 && !f50 ? 60 : null, cylLayout: cylLayoutOf(t), text: squashOf(t), ...engineMins(t), ...(sized ? sized.mins : {}), ...(sized?.note ? { sizeNote: sized.note } : {}) };
+    freq: f50 && !f60 ? 50 : f60 && !f50 ? 60 : null, cylLayout: cylLayoutOf(t), madeRule: partOriginOfHsmt(text), text: squashOf(t), ...engineMins(t), ...(sized ? sized.mins : {}), ...(sized?.note ? { sizeNote: sized.note } : {}) };
 }
 // The engine minimums the HSMT states ("Dung tích xy lanh ≥ 11,05 L", "Tối thiểu 06 xi lanh"), one value each: a tender
 // of several gensets that gives two values is left alone. candidates() ranks an engine a source shows below them lower
@@ -1317,6 +1363,31 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // Xuất xứ Trung Quốc (Khoa, 2026-11-03): an engine of a Chinese make before a foreign one a supplier in China
       // offers. Those had more datasheet figures and filled 20 of the 30 rows; the make the HSMT names (300) still wins.
       if (origin === "cn" && !viaCn) { score += 250; why.push("động cơ hãng Trung Quốc"); }
+      // A foreign make whose row names a Chinese plant (DCEC, SME, Perkins Wuxi…) is made in China (Khoa, 2026-11-16,
+      // in place of 2026-10-29): it counts as a Chinese engine.
+      else if (origin === "cn") { const m = CAT.madeAt(e, u); if (m.at === "CN") { score += 250; why.push(`động cơ hãng ngoại sản xuất tại Trung Quốc (nguồn ghi «${m.why}»)`); } }
+      // Nơi sản xuất of each part the HSMT asks of the group (partOriginOfHsmt basis "origin", Khoa 2026-11-16/17): a
+      // place the row names outside the group is not met — the engine's row is left out, an alternator / controller made
+      // there takes 300 points off; a place in the group (or the country Khoa settled on for the make) is met; nothing
+      // written: kept, "cần xác nhận nơi sản xuất" (the CO). A brand asked keeps the make filter as before.
+      const made = {};
+      let madeOut = false;
+      if (GROUP_ORIGIN.has(origin) && hints.madeRule) {
+        const inG = (c) => CAT.COUNTRY_GROUP[origin].includes(c), MR = hints.madeRule;
+        const judge = (part, m) => {
+          made[part] = m.at;
+          if (m.at === "?") return why.push(`cần xác nhận nơi sản xuất ${PART_VI[part].toLowerCase()}`) && 0;
+          why.push(`${PART_VI[part].toLowerCase()} sản xuất tại ${madeVi(m.at)}${m.why ? ` (${/^(hãng|mặc định)/.test(m.why) ? m.why : `nguồn ghi «${m.why}»`})` : ""}${inG(m.at) ? "" : `, HSMT đòi nơi sản xuất ${GROUP_NAME[origin]}`}`);
+          return inG(m.at) ? 1 : -1;
+        };
+        if (MR.engine?.basis === "origin" && judge("engine", CAT.madeAt(e, u)) < 0) { score -= 600; madeOut = true; }
+        if (MR.alternator?.basis === "origin" && a && judge("alternator", CAT.madeAt(a, u)) < 0) score -= 300;
+        if (MR.controller?.basis === "origin" && offers.length) {
+          const ms = offers.map((c) => CAT.madeIn("controller", [c.brand], [u.line, c.line || c.text], c.model));
+          const best = ms.find((m) => m.at !== "?" && inG(m.at)) || ms.find((m) => m.at === "?") || ms[0];
+          if (judge("controller", best) < 0) score -= 300;
+        }
+      }
       if (offers.length) score += 50;
       // A controller with its maker's datasheet: its functions can be checked against the HSMT.
       if (offers.some((c) => c.model && factsFor(facts, "controller", c.model).length)) { score += 40; why.push("bộ điều khiển có datasheet hãng"); }
@@ -1344,7 +1415,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // Below a minimum of the HSMT (displacement, cylinders, prime) or past its largest displacement: the row is left out,
       // unless the HSMT names its engine model (`named`): then its sources disagree with the HSMT's own choice, and it
       // stays with 600 points off and the reason, for the agent to see.
-      const ruled = [];
+      const ruled = madeOut ? ["made"] : [];
       if (dl != null) { score -= 600; ruled.push("disp"); why.push(`dung tích ${dl} L < ${hints.minDisp} L HSMT yêu cầu`); }
       const dh0 = hints.maxDisp ? given.filter((f) => f.key === "disp").map((f) => dispOf(f.value, f)) : [], dh = dh0.filter((x) => x != null && x !== BLOCK);
       if (dh.length && !dh0.includes(BLOCK) && dh.every((x) => x > hints.maxDisp * 1.005)) { score -= 600; ruled.push("maxDisp"); why.push(`dung tích ${dh[0]} L > ${hints.maxDisp} L HSMT cho phép`); }
@@ -1415,7 +1486,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         if (known.length >= 2 && known.every((f) => f !== hints.freq)) { score -= 600; ruled.push("freq"); why.push(`động cơ chỉ có dòng ${known[0]} Hz, HSMT yêu cầu ${hints.freq} Hz`); }
       }
       if (ruled.length && !isNamed) { dropped.push({ e, u, ruled, src: srcOf, ...(NORM ? { normSkip } : {}) }); continue; }
-      rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(NORM ? { normSkip } : {}) });
+      rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(Object.keys(made).length ? { made } : {}), ...(NORM ? { normSkip } : {}) });
     }
   }
   rows.sort((x, y) => y.score - x.score);
@@ -2543,6 +2614,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     makerSheetChecks(c, result.requirements || [], { engine: factsOf(c, "engine"), alternator: factsOf(c, "alternator") });
     khoaRules(c, result.requirements || [], row, { origin });
     originChecks(c, result, origin, sup);
+    madeChecks(c, result.requirements || [], row, built);
     if (namedHere) NG.brandLicensedChecks(c, result.requirements || [], namedHere, NG.namedHit(c, namedHere, namedCtx), (id) => sup.get(id));
     comboChecks(c, { combo, row: rowOf(c.genset?.src || c.engine?.src), engFacts: [...factsOf(c, "engine"), ...ratingsFor(RT.eng, c.engine?.model)], altFacts: factsOf(c, "alternator"), altRatings: ratingsFor(RT.alt, c.alternator?.model), altKva: c.alternator?.model ? altKva.get(CAT.keyOf(c.alternator.model)) || [] : [], reqs: result.requirements || [] });
     if (!c.suppliers.length) c.gaps = [...(c.gaps || []), "Chưa có nhà cung cấp nào trong hệ thống có dòng bảng chào đúng cấu hình này."];
@@ -2673,6 +2745,50 @@ export function originChecks(c, result, origin, sup) {
   const check = { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: `Nhà cung cấp ${s.names?.en || s.id} đặt tại ${countryVi(s.country)}`, part: "genset", level: r.level || "core", status: "met", byCode: true,
     note: `Code ghi: nhà cung cấp tổ máy đặt tại nước thuộc nhóm ${G} (hồ sơ nhà cung cấp); nơi sản xuất động cơ, đầu phát cần CO.` };
   if (x) { delete x.unverified; delete x.hint; Object.assign(x, check); } else c.checks = [...(c.checks || []), check];
+  return c;
+}
+// Xuất xứ động cơ / đầu phát / bộ điều khiển (engine_origin, alt_origin, ctl_origin) asked of a group as the place it is
+// made (Khoa 2026-11-16/17: "phân biệt rõ thương hiệu và nơi sản xuất"): the code decides from the part's source row
+// (catalog.js madeIn: the row, its column titles, the page title; for an internet part the quote): a place outside
+// the group (a Chinese plant: DCEC, SME, Stamford Wuxi…) is not met; a place in the group, or the country Khoa settled on
+// for the make (Deep Sea, Stamford, Leroy-Somer…), is met; nothing written is "Cần chứng từ" (CO), whatever the agent
+// judged from the make. The group is the one the requirement names ("G7, EU", "G20"). A brand asked ("Thương hiệu
+// thuộc các nước G7"), or a requirement that names no group, stays the agent's.
+const MADE_CODES = { engine_origin: "engine", alt_origin: "alternator", ctl_origin: "controller" };
+export function madeBasisOf(t) {
+  const s = String(t || "").replace(/\s+/g, " "), G = /\bG\s?-?(7|20)\b/;
+  for (const cl of s.split(/;\s*|\.\s+(?=[A-ZÀ-Ỹ])/)) {
+    if (!G.test(cl) || NOT_PART_RULE.test(cl)) continue;
+    const g = cl.search(G), cut = cl.lastIndexOf(":", g), value = cl.slice(cut + 1), label = cut >= 0 ? cl.slice(0, cut) : "";
+    const b = placeOrBrand(value) || placeOrBrand(label.slice(label.lastIndexOf(":") + 1));
+    if (b) return b;
+  }
+  return null;
+}
+export function madeChecks(c, reqs, row, built) {
+  for (const r of reqs || []) {
+    const part = MADE_CODES[r.code], p = part && c[part];
+    if (!p?.model || r.byCode) continue;
+    const t = `${r.requirement || ""} ${r.quote || ""}`;
+    if (!/\bG\s?-?(7|20)\b/.test(t) || (madeBasisOf(r.quote) || madeBasisOf(r.requirement)) !== "origin") continue;
+    const grp = `${/\bG\s?-?20\b/.test(t) ? "g20" : "g7"}${EU_W.test(t) ? "eu" : ""}`, G = GROUP_NAME[grp];
+    const list = part === "engine" ? built.engines : part === "alternator" ? built.alternators : built.controllers;
+    const makes = String(p.make || (list || []).find((x) => x.key === CAT.keyOf(p.model))?.make || "").split(" / ").filter(Boolean);
+    const own = p.src?.kind !== "internet" && row ? row : null;
+    const m = CAT.madeIn(part, makes, own ? [[own.line, ...(own.lines?.rows || [])].join(" \n "), (own.header || []).join(" "), own.title || ""] : [p.src?.quote || ""], p.model);
+    const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
+    const inG = m.at !== "?" && CAT.COUNTRY_GROUP[grp].includes(m.at);
+    const status = m.at === "?" ? "confirm" : inG ? "met" : "not_met";
+    // A not met / met the agent verified from a source of its own stays, unless the row says otherwise.
+    const rowSays = !!m.why && !/^(hãng|mặc định)/.test(m.why);
+    if (x && !x.unverified && (x.status === "met" || x.status === "not_met") && !rowSays && x.sourceQuote && CAT.madeIn(part, makes, x.sourceQuote, p.model).at !== "?") continue;
+    const at = m.at === "?" ? "" : `sản xuất tại ${madeVi(m.at)}${/^(hãng|mặc định)/.test(m.why || "") ? ` (${m.why})` : ""}`;
+    putCheck(c, x, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: [PART_VI[part], p.model, at].filter(Boolean).join(" "),
+      ...(m.why && !/^(hãng|mặc định)/.test(m.why) ? { sourceQuote: m.why } : {}), part, level: r.level === "option" ? "option" : "core", status, byCode: true, rule: "noi-san-xuat",
+      ...(status === "confirm" ? { confirm: "document" } : {}),
+      note: status === "confirm" ? `Cần xác nhận nơi sản xuất ${PART_VI[part].toLowerCase()} (CO): nguồn của cấu hình không ghi${m.why ? ` rõ (${m.why})` : ""}; HSMT đòi nơi sản xuất ${G}.`
+        : status === "met" ? `Code ghi: ${PART_VI[part].toLowerCase()} sản xuất tại ${madeVi(m.at)}, thuộc nhóm ${G}.` : `Code ghi: ${PART_VI[part].toLowerCase()} sản xuất tại ${madeVi(m.at)}, ngoài nhóm ${G} HSMT đòi.` });
+  }
   return c;
 }
 // Bốn loại yêu cầu (reqcodes.mjs kind, 2026-11-10): a point the sources do not state is not in doubt the same way for
