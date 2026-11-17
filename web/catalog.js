@@ -220,14 +220,37 @@
     return f50 && !f60 ? 50 : f60 && !f50 ? 60 : null;
   };
   // Genset outputs in a list of cells: pairs "a/b" in one cell, or two neighbouring numbers.
-  function powersIn(cells, headerText) {
+  // strict (a genset row whose column titles could not be laid over it, 2026-11-17): two neighbouring cells are a kVA / kW
+  // pair only when they can be one. Not two cells written with the same unit ("30KVA | 35KVA" is prime and standby), and
+  // only at power factor 0.8 within rounding: "550 | 727" (two weights, frs-shenyang), "350 | 408" (genset and engine kW)
+  // and "431.3 | 500" (prime and standby kVA) were read as pairs at any ratio from 1.15 to 1.35.
+  const unitOfCell = (c) => { const m = String(c).replace(/\s+/g, "").match(/\d(kva|kwe?)$/i); return m ? (/kva/i.test(m[1]) ? "kVA" : "kW") : null; };
+  // Within rounding: a kW written whole may be rounded by up to 1 ("13 | 10"); one written with a decimal is not rounded
+  // ("5.3 | 4.5", bruno: two kVA).
+  const pf08 = (kVA, kW) => Math.abs(kW - 0.8 * kVA) <= Math.max(Number.isInteger(kW) ? 1.01 : 0.11, 0.025 * kVA);
+  function powersIn(cells, headerText, strict = false) {
     const pairs = [];
     for (let i = 0; i < cells.length && pairs.length < 2; i++) {
       const c = cells[i];
       const m = String(c).replace(/\s+/g, "").replace(/(kva|kw)/gi, "").match(/^(\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/);
-      if (m) { const p = pairOf(+m[1], +m[2]); if (p) pairs.push(p); continue; }
+      // strict: "254/220" with no unit in the cell is a pair only at power factor about 0.8 (0.75 to 0.86, as fitPair).
+      if (m) { const p = pairOf(+m[1], +m[2]); if (p && (!strict || pf08(p.kVA, p.kW) || (p.kW >= 0.75 * p.kVA && p.kW <= 0.86 * p.kVA) || (/kva/i.test(c) && /kw(?!a)/i.test(c)))) pairs.push(p); continue; }
       const a = num(c), b = i + 1 < cells.length ? num(cells[i + 1]) : null;
-      if (a != null && b != null) { const p = pairOf(a, b); if (p) { pairs.push(p); i++; } }
+      if (a != null && b != null) {
+        const ua = unitOfCell(c), ub = unitOfCell(cells[i + 1]);
+        if (strict && ua && ub) {
+          // Both units written: a pair when they differ, whatever the ratio; never when they are the same. More kW than
+          // kVA is the two units written the wrong way round ("25kVA | 31.25kW", comappower): the larger is the kVA.
+          if (ua !== ub) {
+            const p = { [ua]: a, [ub]: b };
+            if (p.kW <= p.kVA) pairs.push(p); else if (pf08(p.kW, p.kVA)) pairs.push({ kVA: p.kW, kW: p.kVA });
+            i++;
+          }
+          continue;
+        }
+        const p = pairOf(a, b);
+        if (p && (!strict || pf08(p.kVA, p.kW))) { pairs.push(p); i++; }
+      }
     }
     if (!pairs.length) return null;
     if (pairs.length === 2) {
@@ -236,6 +259,238 @@
     }
     const p = PRIME.test(headerText), s = STANDBY.test(headerText);
     return p && !s ? { prime: pairs[0] } : s && !p ? { standby: pairs[0] } : { rated: pairs[0] };
+  }
+  // The outputs of a genset row read by its column titles (Khoa 2026-11-17: every table checked, 574 records had a pair
+  // made of two cells that are no pair). powersIn pairs neighbouring numbers by their ratio alone, so it made a kVA / kW pair of
+  // prime and standby in one unit (elitech "Prime Power | Standby Power" over "30KVA | 35KVA"; lees "Standby KVA | Prime
+  // KVA | Standby KW | Prime KW"), of the frequency and the first output (victory "Frequency | Prime Power …" over "60 | 50 |
+  // 62.5"), of an output and the current, voltage or heat next to it (kangwo, chuangyuan, ettes), and of 50 and 60 Hz
+  // columns (tecnogen). Here each output cell gets its unit and its rating from what is written: the cell's own unit
+  // ("800kW"), its title ("Prime Power (kVA)"), and the line of sub-titles under a title that spans several cells
+  // ("Prime Power | Standby Power" over "KW | KVA | KW | KVA"; "Kw | Kva" over "Rated | Standby | Rated | Standby").
+  // Titles are laid from the left: those before the first output title cover one cell each (model, frequency, phase), so
+  // the first output cell is known; a spanning title takes as many cells as it has sub-titles. Every cell of the block
+  // must be a figure, and the block must end before the engine, else the titles do not fit this row.
+  // Returns { power } when the titles fit (power null when they name no unit: "主用功率 | 备用功率" over "20 | 23" is
+  // prime and standby in a unit nobody wrote), undefined when they do not (the caller then pairs by ratio, strictly).
+  // Every header line with output titles is tried, alone and with each line of sub-titles; the reading that places the
+  // most figures wins, and one the figures contradict (more kW than kVA, prime above standby) is dropped. Each change was
+  // checked row by row on suppliers/cn (10,543 records); cases in suppliers/power-titles.test.mjs.
+  const PW_TITLE = /power|output|capacity|rating|potenza|leistung|puissance|potencia|功率|容量|\bkva\b|\bkwe?\b|prime|st(?:an|na)d?[\s-]?y?by|\bstyb\b|\besp\b|\bprp\b|\bltp\b|主用|备用|常用/i;
+  const PW_NOT = /\bcons\b|g\s*\/\s*kw|engine|motor|发动机|柴油机|alternator|发电机(?!组)|电球|heat|therm|\bkwt\b|\bkwm\b|factor|因数|consum|消耗|耗|current|电流|volt|电压|speed|rpm|转速|r\/min|tank|oil|start|charger|lamp|\bw\b|model|型号|frequen|频率|hz\b|weight|重量|dimension|尺寸/i;
+  // Ratings as the sources spell them: "Stanby", "Standyby", "STNADBY", "Stand-by", "STYB" (cgm-italia), "P.R.P" /
+  // "E.S.P" and "备 用" (undot). "Max power" is standby, as STANDBY above has it; continuous / COP and overload (过载) are
+  // neither prime nor standby (Khoa, sheetPowerOf).
+  const RATE_PR = /prime|primary|\bprp\b|常用|主用|servicio\s+principal/i, RATE_SB = /st(?:an|na)d?[\s-]?y?by|\bstyb\b|\besp\b|\bltp\b|backup|备用|emergencia|secours|max(imum)?\s*power/i;
+  const RATE_OTHER = /continuous|\bcop\b|持续|连续|过载|overload/i;
+  const undot = (x) => String(x || "").replace(/(?<=\b[a-z])\.(?=[a-z]\b)/gi, "").replace(/(?<=[一-鿿])\s+(?=[一-鿿])/g, "");
+  // A sub-title made only of units and rating words: "KW", "(kVA)", "Standby", "Standby KVA", "COP/Prime", "主用",
+  // "Prime Power (KW)", "额定功率".
+  const PW_TOKEN = /^(?:[\s()（）\/.:-]*(?:kva|kwe?|st(?:an|na)d?[\s-]?y?by|styb|prime|rated|esp|prp|ltp|cop|master|backup|continuous|power|output|备用|主用|常用|额定|功率))+[\s()（）\/.:-]*$/i;
+  const unitsOfTitle = (x) => {
+    const s = String(x || "").replace(/g\s*\/\s*kw|kw\s*\.?\s*h|kwm|kwt/gi, " ");
+    const dual = s.match(/(kva|kwe?)(?:\s*[\/／\\,-]\s*|\s+)(kva|kwe?)(?![a-z])/i);
+    if (dual && /kva/i.test(dual[1]) !== /kva/i.test(dual[2])) return [/kva/i.test(dual[1]) ? "kVA" : "kW", /kva/i.test(dual[2]) ? "kVA" : "kW"];
+    const a = /kva/i.test(s), w = /kwe?(?![a-z])/i.test(s);
+    return a && !w ? ["kVA"] : w && !a ? ["kW"] : [];
+  };
+  const rateOfTitle = (x) => {
+    const s = undot(x), pr = RATE_PR.test(s), sb = RATE_SB.test(s);
+    return pr && !sb ? "prime" : sb && !pr ? "standby" : pr && sb ? "mixed" : RATE_OTHER.test(s) ? "other" : null;
+  };
+  const orderOfTitle = (x) => { const m = String(x || "").match(/(prime|主用|常用|standby|备用)\s*[\/／]\s*(prime|主用|常用|standby|备用)/i); if (!m) return null; const k = (w) => (RATE_SB.test(w) ? "standby" : "prime"); return k(m[1]) !== k(m[2]) ? [k(m[1]), k(m[2])] : null; };
+  const FIG_CELL = /^\d+(?:[.,]\d+)?(?:kva|kwe?)?$/i, PAIR_CELL = /^(\d+(?:[.,]\d+)?)(kva|kwe?)?[\/／](\d+(?:[.,]\d+)?)(kva|kwe?)?$/i, NO_CELL = /^[-–—/]*$/;
+  // Two figures under one title that names both units ("Prime (KVA/KW)" over "2750/2200" or over "20 | 16"): the larger
+  // is the kVA whatever order the title has (sunny-weifang writes "KW/KVA" over "2750/2200"), and they are a pair only at
+  // power factor about 0.8 (0.75 to 0.86: "27.5/33", xinhengxin) or 1: "250/275" under "功率 (KW/KVA)" (xingguang) is
+  // prime and standby kW, so it is left out.
+  const fitPair = (a, b) => { const p = a >= b ? { kVA: a, kW: b } : { kVA: b, kW: a }; return pf08(p.kVA, p.kW) || p.kVA === p.kW || (p.kW >= 0.75 * p.kVA && p.kW <= 0.86 * p.kVA) ? p : null; };
+  function titledPowers(hs, cells, { gi = -1, ei = -1, ai = -1 } = {}, title = "") {
+    const stop = Math.min(...[ei, ai, cells.length].filter((i) => i >= 0));
+    const isPT = (x) => PW_TITLE.test(undot(x)) && !PW_NOT.test(x);
+    const isTok = (x) => PW_TOKEN.test(undot(x));
+    const flat = (c) => String(c ?? "").replace(/\s+/g, "");
+    const val = (c) => Number(c.replace(/(kva|kwe?)$/i, "").replace(",", "."));
+    const ratedWord = (x) => /rated|额定|master/i.test(undot(x));
+    const sig = (x) => `${unitsOfTitle(x).join("/")}|${rateOfTitle(x) || (ratedWord(x) ? "rated" : "")}`;
+    // The rating a lone figure set takes from the rest of the header: the table's title and the titles that are not about
+    // the engine or another quantity ("柴油机功率（KW）主/备用" says nothing about the genset's output).
+    const ctx = title + " " + hs.flat().filter((x) => !PW_NOT.test(x)).join(" ");
+    // One reading: the titles PT of line h laid from cell p0, with the sub-titles sub (none: []); two = a title naming both
+    // units spans two cells of bare figures. Null when the titles do not fit the row or contradict its figures.
+    const read = (PT, p0, wider, sub, two, lone) => {
+      const run = PT.length;
+      // Cells per title: as many sub-titles as stay different from one another ("KW | KVA", "Rated | Standby"), one when
+      // there is a sub-title per title ("(kW) | (kW)": units, not columns) or none.
+      let k = 1;
+      if (sub.length >= 2 * run) {
+        k = 2;
+        while ((k + 1) * run <= sub.length && new Set(sub.slice(0, k + 1).map(sig)).size === k + 1) k++;
+        if (new Set(sub.slice(0, k).map(sig)).size !== k) k = 1;
+      }
+      const perTitle = k === 1 && sub.length === run;
+      // A row wider than its titles, the titles naming no unit and no sub-title naming one: which title spans is not known.
+      if (k === 1 && wider >= run && PT.every((x) => !unitsOfTitle(x).length) && !(perTitle && sub.some((x) => unitsOfTitle(x).length))) return null;
+      const got = {}, clash = new Set(), bare = new Set(), at = {};
+      let pos = p0, any = false, twoUsed = false, same = false, own = false, ordered = false;
+      const put = (rate, unit, v, soft, key) => {
+        if (!rate || rate === "other" || rate === "mixed" || !unit || !(v > 0)) return;
+        const r = (got[rate] = got[rate] || {});
+        // A second figure for one rating and unit: a title of its own (the 60 Hz columns after the 50 Hz ones) leaves the
+        // first; a cell that only inherits its rating ("Standby power | /kw" over "20kW | 16kW") contradicts it; two
+        // titles that name no rating ("kW/kVa | kW/kVa", sanq-power; "Pierwsza moc | Maksymalna moc", fengmao) do not say
+        // which is which.
+        if (r[unit] != null) { if (soft && r[unit] !== v) clash.add(rate); else if (rate === "rated" && r[unit] !== v && !/[56]0\s*hz|1[58]00\s*(rpm|r\/min)/i.test(key)) same = true; return; }
+        r[unit] = v;
+        at[rate] = title;
+      };
+      let last = null, title = 0;
+      for (let j = 0; j < run; j++) {
+        title = j;
+        const t = PT[j], tUnits = unitsOfTitle(t), order = orderOfTitle(t);
+        let tRate = rateOfTitle(t);
+        // A title that is only a unit ("/kw", "KVA") carries the rating of the title before it.
+        const inherits = !tRate && /^[\s()（）\/.:-]*(kva|kwe?)[\s()（）\/.:-]*$/i.test(t) && last;
+        if (inherits) tRate = last; else if (tRate && tRate !== "mixed") last = tRate;
+        for (let i = 0; i < k; i++) {
+          const s = k > 1 ? sub[j * k + i] : perTitle ? sub[j] : "";
+          const sUnits = unitsOfTitle(s), sRate = rateOfTitle(s) || (ratedWord(s) ? "rated" : null);
+          const dualU = sUnits.length === 2 ? sUnits : tUnits.length === 2 && !sUnits.length ? tUnits : null;
+          // The title's own rating first: a sub-title is asked only when the title names none ("Kw" over "Rated | Standby").
+          const rate = (tRate && tRate !== "mixed" ? tRate : null) || (sRate && sRate !== "mixed" ? sRate : null) || "rated";
+          const key = (t + "|" + s).toLowerCase().replace(/\s+/g, "");
+          if (two && dualU) {
+            const a = flat(cells[pos]), b = flat(cells[pos + 1]);
+            pos += 2;
+            if (pos > stop) return null;
+            if (NO_CELL.test(a) && NO_CELL.test(b)) continue;
+            if (!FIG_CELL.test(a) || !FIG_CELL.test(b)) return null;
+            any = twoUsed = true;
+            const ua = unitOfCell(a), ub = unitOfCell(b);
+            if (ua && ub) { if (ua !== ub) { put(rate, ua, val(a), inherits, key); put(rate, ub, val(b), inherits, key); } continue; }
+            const p = fitPair(val(a), val(b));
+            if (p) { put(rate, "kVA", p.kVA, inherits, key); put(rate, "kW", p.kW, inherits, key); }
+            continue;
+          }
+          const c = flat(cells[pos]);
+          pos++;
+          if (pos > stop) return null;
+          if (NO_CELL.test(c)) continue;
+          const pm = c.match(PAIR_CELL);
+          if (!pm && !FIG_CELL.test(c)) return null;
+          any = true;
+          if (pm) {
+            const a = +pm[1].replace(",", "."), b = +pm[3].replace(",", "."), ua = pm[2] && (/kva/i.test(pm[2]) ? "kVA" : "kW"), ub = pm[4] && (/kva/i.test(pm[4]) ? "kVA" : "kW");
+            const ord = order || orderOfTitle(s);
+            if (ua && ub) { if (ua !== ub) { put(rate, ua, a, inherits, key); put(rate, ub, b, inherits, key); } else if (ord) { put(ord[0], ua, a); put(ord[1], ua, b); } }
+            // "60/70" under "输出功率 (主用/备用)" (bdadl): prime and standby in a unit nobody wrote, no kVA / kW pair.
+            else if (ord) { const u = ua || ub || (tUnits.length === 1 ? tUnits[0] : sUnits.length === 1 ? sUnits[0] : null); if (!u) ordered = true; put(ord[0], u, a); put(ord[1], u, b); }
+            else { const p = dualU ? fitPair(a, b) : pairOf(a, b); if (p && (dualU || pf08(p.kVA, p.kW))) { put(rate, "kVA", p.kVA, inherits, key); put(rate, "kW", p.kW, inherits, key); } }
+            continue;
+          }
+          // The unit: the cell's own, then (a title over several cells) its sub-title, then the title.
+          const tUnit = tUnits.length === 1 ? tUnits[0] : null, sUnit = sUnits.length === 1 ? sUnits[0] : null;
+          const unit = unitOfCell(c) || (k > 1 ? sUnit || tUnit : tUnit || sUnit) || null;
+          if (!unit && !dualU && wider <= 0 && (rate === "prime" || rate === "standby")) bare.add(rate);
+          if (unitOfCell(c)) own = true;
+          put(rate, unit, val(c), inherits, key);
+        }
+      }
+      if (!any || same || (two && !twoUsed)) return null;
+      for (const r of clash) delete got[r];
+      // What the figures themselves rule out: more kW than kVA, a prime output above the standby one, and a "prime" that
+      // is 0.8 of the "standby" in the one unit both have ("输出功率(kw)" over "主用 | 备用" over "50 | 62.5", bdadl: kW and
+      // kVA under the wrong titles). A pair below power factor 0.7 is a figure typed wrong ("150 | 1187.5", gordon-power;
+      // "2068 | 165", kaihua): that rating is left out.
+      for (const r of Object.values(got)) if (r.kVA && r.kW && r.kW > r.kVA * 1.001) return null;
+      for (const [k, r] of Object.entries(got)) if (r.kVA && r.kW && r.kW < 0.7 * r.kVA) delete got[k];
+      for (const u of ["kVA", "kW"]) {
+        const p = got.prime && got.prime[u], s = got.standby && got.standby[u];
+        if (!p || !s) continue;
+        if (p > s * 1.001) return null;
+        // (the row's titles are then not trusted at all; figures that carry their own unit, "8kVA | 10kVA", or that
+        // each have a title of their own, "kVA LTP | kVA PRP" over "2500 | 2000", stand)
+        if (!own && at.prime === at.standby && Object.keys(got.prime).length === 1 && Object.keys(got.standby).length === 1 && Math.abs(p - 0.8 * s) <= 0.011 * s) return { veto: true };
+      }
+      let n = 0;
+      for (const r of Object.values(got)) n += Object.keys(r).length;
+      // Prime and standby titled over figures in a unit nobody wrote ("主用功率 | 备用功率" over "20 | 23", no line of
+      // sub-titles, no figure after them): no output can be read, and the two cells are no kVA / kW pair either.
+      if (!n && ordered) return { n: 0, got: null, end: pos };
+      if (!n) return lone && bare.size === 2 && !(pos < stop && (FIG_CELL.test(flat(cells[pos])) || PAIR_CELL.test(flat(cells[pos])))) ? { n: 0, got: null, end: pos } : null;
+      // One figure set with no rating word on its title: the rating the rest of the header names.
+      let power = got;
+      if (got.rated && !got.prime && !got.standby) {
+        const p = RATE_PR.test(undot(ctx)), s = RATE_SB.test(undot(ctx));
+        if (p && !s) power = { prime: got.rated }; else if (s && !p) power = { standby: got.rated };
+      }
+      return { n: n * 4 + (got.prime ? 1 : 0) + (got.standby ? 1 : 0), got: power, end: pos };
+    };
+    // Every line that has output titles is tried, with each line of sub-titles and with none; the reading that places the
+    // most figures is kept (the line "Prime Power (kW) | Prime Power (kVA) | …" under "… | Prime | Standby", acepow).
+    let best = null, veto = false;
+    for (const h of hs) {
+      const tp = h.findIndex(isPT);
+      if (tp < 0) continue;
+      let run = 0;
+      while (tp + run < h.length && isPT(h[tp + run])) run++;
+      // Where the first output cell is: the genset's model under its title, else the titles from the row's first cell (a
+      // blank first title with a row one cell shorter is a stray cell), else, on a line of sub-titles that starts with the
+      // outputs, right after the model.
+      const tm = h.slice(0, tp).findIndex((x) => /model|型号|机组|^\s*type\s*$|set\s*type/i.test(x));
+      let p0;
+      const subline = gi >= 0 && tm < 0 && tp === 0;
+      if (gi >= 0 && tm >= 0) p0 = tp + gi - tm;
+      else if (subline) p0 = gi + 1;
+      else if (!h[0] && h.length === cells.length + 1) p0 = tp - 1;
+      else p0 = tp;
+      if (p0 < 0 || (gi >= 0 && tm < 0 && tp > 0 && p0 <= gi)) continue;
+      // A figure where the model's title is (the row has no model cell, weiman "10 | 12.5 | 11 | 14"): the titles are
+      // shifted by cells nobody can count.
+      if (gi < 0 && tm >= 0 && FIG_CELL.test(flat(cells[tm]))) continue;
+      // How many cells the row has beyond this line's titles (laid from the same first cell).
+      const wider = subline ? 0 : cells.length - h.length - (p0 - tp);
+      // The sub-titles of the outputs: the first run of unit / rating words on another line, where the outputs start.
+      // A title followed by blank titles spans them when that line has a sub-title under each ("STANDBY POWER |  | PRIME
+      // POWER | " over " | KVA | KW | KVA | KW", sunkings): each cell then has its title and its sub-title.
+      const PT = h.slice(tp, tp + run), tries = [[PT, []]];
+      for (const u of hs) {
+        if (u === h) continue;
+        const i = u.findIndex(isTok);
+        if (i < 0 || ![0, tp - 1, tp, p0].includes(i)) continue;
+        let n = 0;
+        while (i + n < u.length && isTok(u[i + n])) n++;
+        tries.push([PT, u.slice(i, i + n)]);
+        if (i !== tp) continue;
+        const wide = [];
+        for (let t = tp; t < h.length && isTok(u[t]) && (isPT(h[t]) || (!h[t] && wide.length)); t++) wide.push(h[t] || wide[wide.length - 1]);
+        if (wide.length > run) tries.push([wide, u.slice(tp, tp + wide.length)]);
+      }
+      for (const [titles, sub] of tries) for (const two of [false, true]) {
+        const r = read(titles, p0, wider - (titles.length - run), sub, two, tries.length === 1);
+        if (r && r.veto) { veto = true; continue; }
+        // The cells this line's titles account for: its outputs and, on a line that goes on, the titles after them.
+        if (r && (!best || r.n > best.n)) best = { ...r, start: p0, end: subline ? r.end : Math.max(r.end, p0 + h.length - tp) };
+      }
+    }
+    if (!best || veto) return undefined;
+    // The figures against the titles. Two neighbouring cells that are a kVA / kW pair at power factor 0.8 stand against
+    // the reading when the titles do not account for them: a header shorter than the row ("Model | [kVA]" over "10P | 10 |
+    // 8 | 11 | 8,8", cgm-italia), or two such pairs of which the titles call a kVA a kW ("功率（主用）Power(KW) | 功率（备用）
+    // Power(KW)" over "250 | 313 | 275 | 344", yingtai-group). Then the titles are not trusted and the caller pairs strictly.
+    // Not when such a pair starts before the outputs, on a cell with a title of its own ("Frequency | Prime Power …" over
+    // "50 | 64 | 80 | 70 | 88", victory: 50 Hz and 64 kW are no pair).
+    const from = gi >= 0 ? gi + 1 : 0, alt = powersIn(cells.slice(from, stop), "", true);
+    if (alt) {
+      const has = (c, v) => { const m = c.match(PAIR_CELL); return m ? +m[1].replace(",", ".") === v || +m[3].replace(",", ".") === v : FIG_CELL.test(c) && val(c) === v; };
+      const at = (v) => { const i = cells.findIndex((c, j) => j >= from && j < stop && has(flat(c), v)); return i < 0 ? Infinity : i; };
+      const figs = Object.values(alt).flatMap((p) => Object.entries(p)).map(([u, v]) => [u, v, at(v)]);
+      const mine = new Map();
+      for (const p of Object.values(best.got || {})) for (const [u, v] of Object.entries(p)) mine.set(v, u);
+      const both = Object.values(alt).filter((p) => p.kVA && p.kW).length === 2;
+      if (!figs.some(([, , i]) => i < best.start) && (figs.some(([, , i]) => i >= best.end) || (both && figs.some(([u, v]) => mine.has(v) && mine.get(v) !== u)))) return undefined;
+    }
+    return { power: best.got };
   }
   // Label tables ("Engine model: X", "| Prime power | 300kVA |"): one model per value column.
   // A heading line of a datasheet: "engine" / "alternator" for the part the lines below are about, null for a genset
@@ -502,9 +757,11 @@
       case "weight": return /^[≈~]?\s*\d+(?:[.,]\d+)?\s*(kg|kgs|t)?$/i.test(String(v).trim()) && x >= 30 && x <= 80000;
       case "speed": return [1000, 1200, 1500, 1800, 3000, 3600].includes(x);
       case "engPower": return !kW || (x >= kW * 0.9 && x <= kW * 1.8);
-      case "fuel": return x < 1.5 || (x >= 150 && x <= 260) || (kW ? x >= kW * 0.12 && x <= kW * 0.45 : x <= 800);
-      case "fuel75": return x < 1.5 || (x >= 150 && x <= 260) || (kW ? x >= kW * 0.09 && x <= kW * 0.36 : x <= 650);
-      case "fuel50": return x < 1.5 || (x >= 150 && x <= 280) || (kW ? x >= kW * 0.06 && x <= kW * 0.26 : x <= 450);
+      // g/kWh up to 300 on a set of 30 kW or less: a 10 kW set burns 264 (frs-shenyang FRS-10P), which no L/h band of
+      // its power allows. Not on larger sets, where 271 is a current and 280 an engine's standby kW next to the fuel.
+      case "fuel": return x < 1.5 || (x >= 150 && x <= (kW && kW <= 30 ? 300 : 260)) || (kW ? x >= kW * 0.12 && x <= kW * 0.45 : x <= 800);
+      case "fuel75": return x < 1.5 || (x >= 150 && x <= (kW && kW <= 30 ? 300 : 260)) || (kW ? x >= kW * 0.09 && x <= kW * 0.36 : x <= 650);
+      case "fuel50": return x < 1.5 || (x >= 150 && x <= (kW && kW <= 30 ? 300 : 280)) || (kW ? x >= kW * 0.06 && x <= kW * 0.26 : x <= 450);
       case "noise": return x >= 40 && x <= 120;
       default: return true;
     }
@@ -621,7 +878,8 @@
           if (gi < 0 && ei === codes[0] && !hasEngineCol) ei = -1;
         }
         const stop = ei >= 0 ? ei : ai >= 0 ? ai : cells.length;
-        const power = engineTable ? null : powersIn(cells.slice(gi >= 0 ? gi + 1 : 0, stop), headerText + " " + title);
+        const titled = engineTable ? null : titledPowers((t.header || []).map(cellsOf), cells, { gi, ei, ai }, title);
+        const power = engineTable ? null : titled ? titled.power : powersIn(cells.slice(gi >= 0 ? gi + 1 : 0, stop), headerText + " " + title, true);
         const common = { ...base, row: ri, line, genset: gi >= 0 ? cells[gi] : null, power, freq, header: t.header || [], specs: rowSpecs(t, cells, { ei, ai, gi, power }) };
         if (ei >= 0) out.push({ ...common, kind: "engine", model: tidyModel(cells[ei], ENGINE_BRANDS), makes: makesFor("engine", rowText, null), other: ai >= 0 ? cells[ai] : null, own: engineTable });
         if (ai >= 0) out.push({ ...common, kind: "alternator", model: tidyModel(cells[ai], ALT_BRANDS), makes: makesFor("alternator", rowText, null, cells[ai]), other: ei >= 0 ? cells[ei] : null });
@@ -1376,7 +1634,7 @@
     return { votes, win: winOf(new Map([...votes].map(([v, ss]) => [v, ss.length]))), split, dropped };
   }
 
-  const api = { build, builder, tally, partsIn, fromSupplier, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, madeAt, madeIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS };
+  const api = { build, builder, tally, partsIn, fromSupplier, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, powersIn, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, madeAt, madeIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);
