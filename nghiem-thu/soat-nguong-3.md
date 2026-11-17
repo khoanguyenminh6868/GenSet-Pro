@@ -37,6 +37,27 @@ Còn lại 7 ca cũ (đều Phân tích sai / nhiều cỡ / nhiễu audit, xem 
 14 ngưỡng thành null (maxFuel 2, maxFuel75 4, minCyl 8): xem từng gói đều là gói nhiều cỡ mà code mới thấy thêm số của cỡ kia
 (vd IB2300120176: 4,5 / 3,5 L/h của máy nhỏ và 10,7 / 8 L/h của máy lớn; trước đây lấy 8 cho mọi cỡ). Hướng an toàn (bỏ lọc, không loại nhầm).
 
+### Bảng MẤT (main đọc ra, nhánh null khi gọi `hintsOf` không chia cỡ) — điều phối hỏi 17/11
+Cả 14 mục thuộc 12 gói đều là **gói nhiều cỡ máy** (`sizesOf` trên chữ HSMT ra 2–7 cỡ). Không chia cỡ, main chỉ thấy số của
+MỘT cỡ và áp cho mọi cỡ; nhánh đọc thêm số của cỡ khác nên các số khác nhau → null (đúng luật "nhiều cỡ không gán được thì
+không đọc"). Bot chạy gói nhiều cỡ bằng `hintsOf(text, "", {size, sizes})` → `minsForSize` theo từng khối. So từng cỡ
+(`hintsOf` có sizing + `plausible`), nhánh **bằng hoặc hơn** main ở mọi cỡ, không cỡ nào mất số:
+
+| Gói | Main, không chia cỡ | Dòng HSMT gây khác | Main theo cỡ | Nhánh theo cỡ |
+|---|---|---|---|---|
+| IB2500039578 | minCyl 6 | "Số xy lanh ≥6" (500 kVA) và "2 Động cơ" / "4 thì, 16 xilanh xếp hình chữ V" (2.250 kVA) | 500: 6 · 2250: – | 500: 6 · 2250: **16** |
+| IB2500114642 | minCyl 6, **cylExact** (áp cả máy 8,3 kVA!) | "-Loại động cơ 4 thì, 1 xylanh" (8,3 kVA) và "- Số xylanh: 6" (250 kVA) | 8,3: – · 250: 6 (exact) | 8,3: **1** · 250: 6 |
+| IB2500280002 | minCyl 2 | "6 ≥ 3 thẳng hàng" (một cỡ) và "7 Số xy lanh ≥2" (cỡ kia) | 11: – · 15: – | 11: – · 15: – |
+| IB2600490227 | minCyl 2 | bảng hiệu chỉnh: 10 kVA "2 xi lanh" → "≥ 2 xi lanh"; 50 kVA "6 xi lanh" → "4 xi lanh" | 10: 2 | 10: 2 |
+| IB2400186078 | minCyl 1, maxFuel 4.2, maxFuel75 3.2 | "≥ 1 xy lanh" của máy nhỏ, khối máy 12 kVA "≥ 4"; tiêu hao từng cỡ | 19 kW: 4.2/3.2, còn lại – | 6 kVA: **2.6/2** · 12 kVA: **4 xl, 4.2/3.2** · 19 kW: 4.2/3.2 |
+| IB2300120176 | maxFuel75 8 | 4,5 / 3,5 L/h (máy nhỏ) và 10,7 / 8 L/h (40 kVA) | 40: 4 xl, 75%: 8 | 40: 4 xl, **100%: 10.7**, 75%: 8 |
+| IB2400218348 | maxFuel75 42.6 | 7,9 / 5,7 L/h (30 kVA) và 56,9 / 42,6 L/h (250 kVA) | 30: 7.9 · 250: 56.9/42.6 | 30: 7.9/**5.7** · 250: 56.9/42.6 |
+| IB2500410768 | maxFuel 28.3 | 7,5 / 28,3 / 43,1 L/h của 30 / 100 / 200 kVA | 30: 7.5 · 100: 28.3 · 200: 43.1 | như main |
+| IB2300230061, IB2400145438, IB2400313681, IB2400487460 | (điều phối đã cho phép) | hai cỡ / xe nâng cùng gói: 150 & 136 kVA; 7 & 12 kVA; 30 & 42 kVA ("> 4 thẳng hàng" và ">6"); 8,8 & 40 kVA ("≥ 3" và "≥ 4") | | |
+
+Kết luận: không phải hồi quy, không sửa code (nếu sửa cho main "có số" lại thì là áp số một cỡ cho cỡ kia, như IB2500114642
+từng loại mọi động cơ ≠ 6 xi lanh cho cả máy 8,3 kVA). Lệnh: `scratchpad\persize.mjs <gói...>` (hintsOf main ↔ nhánh, có / không chia cỡ).
+
 ## Soi tay (ngẫu nhiên, nguyên văn HSMT)
 58 mục mới đọc, chọn ngẫu nhiên 3 lượt (26 mọi loại, 14 xi lanh, 18 xi lanh sau sửa). **Sai: 1 trước sửa, 0 sau sửa.**
 Ca sai (đã sửa, có test): IB2300015080 "Số lượng xi lanh của" / "2 ≥ 16 (*)" → code đọc 2 (số thứ tự hàng); nay 16 (tối thiểu).
