@@ -130,6 +130,28 @@ Mỗi PR đo trước / sau bằng `cmpk.cjs` (đã có) + `audA.cjs` / `audB.cj
 
 Ghi nhận thêm: `catalog-pdf.mjs` cố ý chỉ giữ dòng kiểm được bằng code, nên catalog scan thiếu dòng so với PDF (APP trang 7: thiếu APP-300GF ×2 có ô "/", và APP-350GF YC6MJ500-D30 vì OCR đọc thành "YC8MJ500"). Là thiếu, không sai.
 
+### Việc 6: bot bidhist — XONG 18/11 (PR #893 đã merge)
+- `goods-read.js`: đơn giá lấy `priceUnit` / `bidPrice` / `priceIncludeTax` trước, `unitPrice` chỉ khi không phải thành tiền (mẫu hàng nhập khẩu `unitPrice` = thành tiền); dòng theo đúng phần lô (`lotNo`); bỏ bảng lặp y hệt của cùng nhà thầu và nhà thầu lặp (`contractorsOf`); trần 100 → 1000 dòng. `sync-pure.js` bỏ số dung sai sau "±". Đề xuất gốc "bỏ dòng hàng hoá lặp y hệt" KHÔNG làm: 36 / 40 gói kiểm trên dòng thô là dòng thật.
+- Kiểm trên dòng thô của 81 gói (`dumpH.cjs` → `checkH.cjs`): lô có Σ số lượng × đơn giá khớp giá trúng ±0,5%: 13 → 47 / 98. Lượt đọc lại thật 84 gói (`dryH.cjs` so từng gói với bản lưu): 38 lô từ sai thành khớp, 0 xấu đi, 17 lô đổi mà chưa khớp (giảm giá / liên danh / nguồn sai), ngoài hàng hoá chỉ đổi ở 5 gói có nhà thầu lặp.
+- Không sửa được vì nguồn sai: IB2500312373 phần 2 (trang ghi giá sau giảm 62,64 tỷ), IB2500304762 phần 2 (nhà thầu gõ thành tiền vào ô đơn giá), IB2200019427 (giá trúng của gói từ danh sách tìm kiếm = 7,39 tỷ).
+- `config.kvas`: 43 gói (không phải 37) có số dung sai, đã soát tay từng gói (`kvaTol.cjs` → `kvaFix.json`) và ghi lên web (`applyKva.mjs --write`). IB2400121273 giữ 85 kVA (chữ bản scan): chờ Khoa.
+- Chưa restart tác vụ "GenBid Bot" (`sync-pure.js` mới chỉ có hiệu lực ở tiến trình mới).
+
+### Việc 1: công suất đọc theo tiêu đề — PR #892 (chờ đo top 30 rồi merge)
+242 lớp đổi (10.543 bản ghi) đã soát hết bằng `cmpP.cjs` / `revP.cjs`.
+
+### Việc 2–5 (nhánh `fix/bang-nhan-himoinsa`, xếp chồng trên việc 1; chờ đo top 30 rồi mở PR)
+Mỗi việc đo bằng `cmpSpec.cjs` (mọi trường của mọi bản ghi, trước ↔ sau) và soát MỌI thay đổi, không lấy mẫu:
+
+| Việc | Thay đổi trên `suppliers/cn` | Kiểm |
+|---|---|---|
+| 2. `walkedSpecs` tiêu đề hai tầng | 1.327 bản ghi ở 56 bảng: thêm 628 dòng điện, 274 kích thước, 202 điều tốc, 73 × (công suất động cơ, xi lanh, dung tích); 269 khối lượng sai (dòng điện) thành đúng, 17 khối lượng sai bị bỏ | `verSpec.cjs` tự kiểm từng số với công suất của dòng: 29 ca không tự xác nhận, đã xem tay hết (số cũ sai bị bỏ, hoặc số mới đúng theo nguồn) |
+| 3. Bảng nhãn himoinsa / hipower + ghép hai dòng | 105 bản ghi đổi model ("4-stroke diesel", "2,839 scfm" → mã thật), thêm 62 bản ghi đầu phát, bỏ công suất mô-tơ đề; 117 cặp kVA tổ máy + kW động cơ không còn ghép (longkai 93) | Mọi dạng thay đổi đã liệt kê và xem |
+| 4. Động cơ ↔ đầu phát | `swap.cjs` (mã mà ≥ 3 NCC khác đọc ở vai kia): 211 → 3 (2 dòng vantek do OCR "3S0", 1 depco P158LE-1 là báo nhầm); longkai 136 động cơ, acepow 86, cldj 42 đúng vai | Danh sách model mới của từng NCC đã xem (LK###X là đầu phát, mã động cơ thật) |
+| 5. Chốt chặn số vô lý | Bỏ 117 công suất động cơ (eastern-lion 108), 47 tiêu hao g/kWh, 93 khối lượng | Từng bảng đã xem |
+
+Đã thử rồi KHÔNG làm vì quá tay: "một mức ≥ 3 số thì bỏ công suất" (keypower, elitech, endress mất số đúng); "mã dạng đầu phát đứng trước động cơ khi không có tiêu đề" (P158LE Doosan, S4L2 Mitsubishi thành đầu phát ở 6 NCC). Còn biết mà chưa sửa: hosem trang liệt kê nhiều sản phẩm (công suất trộn), koop KDF6700WE tổ máy đọc 2 kVA, sr-genset n2001 điện áp 104.5, vantek "3S0".
+
 ## Chạy lại
 
 ```
