@@ -5,13 +5,13 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-17T01:26:01.683Z
+  modified: 2026-11-17T06:51:34.233Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Code xếp sẵn 30 dòng ứng viên; mọi số/câu trích phải có nguyên văn trong nguồn, sai → "Đạt" thành "Chưa rõ". ~6–11 phút, ~3 USD/gói. Yêu cầu theo bộ mã cố định `suppliers/reqcodes.mjs` (thêm mã: dòng `R(...)` đúng thứ tự + test; tăng `REQ_VERSION`).
 
 ## Quy tắc Khoa chốt
-**Xếp hạng:** số "không đạt" ở động cơ + BĐK (đếm từng chức năng) → không đạt ở đầu phát + tổ máy → có NCC phù hợp → "chưa rõ" cùng thứ tự → yêu cầu tuỳ chọn (bồn dầu, kích thước, độ ồn) sau cùng. Chưa kiểm = chưa rõ. Tối đa 8 cấu hình (Khoa 17/11/2026 nâng từ 6), 2 cấu hình mỗi hãng động cơ; riêng Perkins, Volvo Penta, Cummins và Mitsubishi chỉ 1 cấu hình, cái xếp cao nhất (Khoa 17/11/2026, PR #828, PR Cummins và PR Mitsubishi sau đó; Khoa không nêu lý do). Khoa 17/11 còn muốn "cấu hình nào thiếu đầu phát hoặc bộ điều khiển thì không đưa vào": Khoa bảo TẠM CHƯA LÀM (17/11, sau khi xem số đo trên 16 kết quả ngày 14/11: 39% cấu hình thiếu, 7 kết quả sẽ mất hết cấu hình); đừng tự làm, đừng hỏi lại trừ khi Khoa nhắc. HSMT có yêu cầu BĐK mà cấu hình không có BĐK → không đạt. NCC chào đúng cả động cơ và BĐK lên đầu. Đại lý tại VN KHÔNG là tiêu chí. Hàng từng trúng thầu chỉ là tiêu chí cuối.
+**Xếp hạng:** số "không đạt" ở động cơ + BĐK (đếm từng chức năng) → không đạt ở đầu phát + tổ máy → có NCC phù hợp → "chưa rõ" cùng thứ tự → yêu cầu tuỳ chọn (bồn dầu, kích thước, độ ồn) sau cùng. Chưa kiểm = chưa rõ. Tối đa 8 cấu hình (Khoa 17/11/2026 nâng từ 6), 2 cấu hình mỗi hãng động cơ; riêng Perkins, Volvo Penta, Cummins và Mitsubishi chỉ 1 cấu hình, cái xếp cao nhất (Khoa 17/11/2026, PR #828, PR Cummins và PR Mitsubishi sau đó; Khoa không nêu lý do). Khoa 17/11 còn muốn "cấu hình nào thiếu đầu phát hoặc bộ điều khiển thì không đưa vào": Khoa HUỶ hẳn (17/11 chiều: "không cần làm nữa"; số đo 14/11: 39% cấu hình thiếu, 7 kết quả sẽ mất hết cấu hình); đừng làm, đừng đề xuất lại, kể cả bản nhẹ (xếp sau / phạt điểm cấu hình thiếu đầu phát). HSMT có yêu cầu BĐK mà cấu hình không có BĐK → không đạt. NCC chào đúng cả động cơ và BĐK lên đầu. Đại lý tại VN KHÔNG là tiêu chí. Hàng từng trúng thầu chỉ là tiêu chí cuối.
 
 **Xuất xứ:**
 - Web mặc định "Tất cả"; "Tất cả" và yêu cầu từ Sync thì đọc HSMT: thấy G7/G20 → nhóm đó. Chọn tay trên web giữ nguyên. Nhóm g20 của mình KHÔNG gồm Trung Quốc. HSMT cho phép EU cùng G7/G20 → mở thêm EU (chỉ đọc từ HSMT; web không có lựa chọn EU; HSMT chỉ đòi EU thì không có nhóm).
