@@ -38,4 +38,4 @@ Bản đang chạy vẫn ở `C:\Projects\GenSet Pro\genbid-hsmt\`; sửa ở đ
 - Tệp trạng thái `C:\Projects\GenSet Pro\.genbid-*.json`, `.hsmt-worker-state.json`: nhớ gói nào đã đọc/tải. Mất thì bot đọc lại (specs ~100 gói/giờ, tốn lượt Claude); dữ liệu thật nằm trên Supabase (web).
 - `Downloads\GenBid-HSMT\`, `genbid-work\`: tệp HSMT đã tải (có trên GitHub Releases `hsmt-<TBMT>`) và bản chữ/OCR tạm.
 - Hồ sơ Chrome của bot `.genbid-browser*`, nhật ký `genbid-bot-logs\`.
-- Script một lần trong `genbid-work\` (specs-requeue.js, specs-reread.ps1…) và tác vụ "GenBid specs pause/resume" đã chạy xong, không cần.
+- Script một lần trong `genbid-work\` (specs-requeue.js, specs-reread.ps1…) đã chạy xong, không cần.
