@@ -1,0 +1,1517 @@
+đổi 10543 | tự xác nhận độc lập (ô + đơn vị + mức đều có chữ làm chứng) 4978 | còn 5565 bản ghi ở 242 lớp cần soát bằng mắt
+bất biến vi phạm trên mọi bản ghi mới: pf 260, prime/standby 79
+
+#1 THÊM · 8 ô ×416 | legapower
+  H: Genset Specification 4 | Engine Soecification | Datasheet
+  H: Genset Model | KVA | Cons 100%（L/h） | Engine Model | Cyl | Gov | Displacement(L)
+  H: ESP | PRP
+  R: LG27.5C1 | 27.5 | 25 | 7.1 | 4B3.9-G1  ⇒  ∅  →  P 25/·  S 27.5/·
+  R: LG27.5C | 27.5 | 25 | 6.7 | 4B3.9G2  ⇒  ∅  →  P 25/·  S 27.5/·
+  R: LG275C | 275 | 250 | 55 | MTA11G2A  ⇒  ∅  →  P 250/·  S 275/·
+  R: LG75C | 75 | 67.5 | 15.9 | 4BTA3.9G2  ⇒  ∅  →  P 67.5/·  S 75/·
+
+#2 THÊM · 6 ô ×339 | starlight-power
+  H: GensetModel | Power（kVA） | EngineBrand | EngineModel | Specifications
+  H: Standby | Prime
+  R: XG1000S3 | 1000 | 910 | Cummins | KTA38-G2A  ⇒  ∅  →  P 910/·  S 1000/·
+  R: XG1100S3 | 1100 | 1000 | Cummins | KTA38-G5  ⇒  ∅  →  P 1000/·  S 1100/·
+  R: XG2250S3 | 2250 | 2050 | MTU | 16V4000G23F  ⇒  ∅  →  P 2050/·  S 2250/·
+  R: XG1925S3-6 | 1925 | 1750 | MTU | 12V4000G14S  ⇒  ∅  →  P 1750/·  S 1925/·
+
+#3 THÊM · 6 ô ×328 | walter-yangzhou
+  H: GensetModel | Power（kVA） | Engine Brand | Engine Model | Dimension(MM)L*W*H
+  H: Standby | Prime
+  R: WET-C2090 | 2090 | 2000 | Cummins | KTA50-G16B  ⇒  ∅  →  P 2000/·  S 2090/·
+  R: WET-P2200A | 2200 | 2000 | Perkins | 4016TAG2A  ⇒  ∅  →  P 2000/·  S 2200/·
+  R: WET-P2000 | 2000 | 1850 | Perkins | 4016TAG1A  ⇒  ∅  →  P 1850/·  S 2000/·
+  R: WET-C500 | 500 | 450 | Cummins | KTA19-G3  ⇒  ∅  →  P 450/·  S 500/·
+
+#4 THÊM · 9 ô ×198 | legapower
+  H: Genset Specification 4 | Engine Soecification | Datasheet
+  H: Genset Model | KVA | Cons 100%（L/h） | Engine Model | Cyl | Gov | Displacement(L)
+  H: ESP | PRP
+  R: LG27.5C1 | 27.5 | 25 | 7.1 | 4B3.9-G1  ⇒  ∅  →  P 25/·  S 27.5/·
+  R: LG27.5C | 27.5 | 25 | 6.7 | 4B3.9G2  ⇒  ∅  →  P 25/·  S 27.5/·
+  R: LG388C | 388 | 350 | 71.9 | NTA855G2A  ⇒  ∅  →  P 350/·  S 388/·
+  R: LG344C | 344 | 313 | 73.4 | NTA855-G1  ⇒  ∅  →  P 313/·  S 344/·
+
+#5 THÊM · 6 ô ×190 | kaihua-genset
+  H: Genset Model | Standby Power | Prime Power | Engine Model | Dimension(mm) | Weight(kg)
+  H: KVA | KVA
+  R: KH-600GF | 825 | 750 | S6R2-PTAA-C  ⇒  ∅  →  P 750/·  S 825/·
+  R: KH-1000GF | 1375 | 1250 | S12R-PTA-C  ⇒  ∅  →  P 1250/·  S 1375/·
+  R: KH-110GF | 150 | 138 | YC4A190-D30  ⇒  ∅  →  P 138/·  S 150/·
+  R: KH-150GF | 206 | 188 | YC6A245L-D20  ⇒  ∅  →  P 188/·  S 206/·
+
+#6 THÊM · 20 ô ×166 | honny-dongguan
+  H:  | 机组技术参数 | 发动机技术参数 | 机组尺寸与重量
+  H: 机组 型号 | 备用 容量 (kVA) | 常用 容量 (kVA) | 备用 功率 (kW) | 常用 功率 (kW) | 燃油 消耗 (L) | 额定 电流 (A) | 发动机 型号 | 备用 功率 (kW) | 常用 功率 (kW) | 缸数 | 缸径 | 行程 | 排量 (A) | 压缩比 | 发电机 型号 | 机组尺寸(mm) | 重量
+  H: 长 | 宽 | 高 | (kg)
+  R: HGM550E | 550 | 500 | 440 | 400 | 109 | 722 | PTAA6L-EG490  ⇒  ∅  →  P 500/400  S 550/440
+  R: HGM550E | 550 | 500 | 440 | 400 | 109 | 722 | PTAA6L-EG490  ⇒  ∅  →  P 500/400  S 550/440
+  R: HGM1875 EA | 1875 | 1688 | 1500 | 1350 | 344 | 2435 | QTAA10V-EG1670  ⇒  ∅  →  P 1688/1350  S 1875/1500
+  R: HGM3300E | 3300 | 3000 | 2640 | 2400 | 611 | 4330 | QTA20V-EG2950D  ⇒  ∅  →  P 3000/2400  S 3300/2640
+
+#7 THÊM · 11 ô ×156 | tellhow-power
+  H: Model | Prime power | Standby power | Overall size Length (L | Weight | Engine model | Number of cylinders /a | Displacement | Fuel consumption rate | Lubricating oil capaci | Total coolant capacity
+  H: (kW) | (kW) | mm | (Kg) | (L) | g/kw.h | (L) | (L)
+  R: THHS1000 | 1000 | 1100 | 5150×2200×2315 | 11900 | S12R-PTA-C  ⇒  ∅  →  P ·/1000  S ·/1100
+  R: THHS1100 | 1100 | 1200 | 5350×2200×2315 | 12100 | S12R-PTA2-C  ⇒  ∅  →  P ·/1100  S ·/1200
+  R: THLV230 | 230 | 253 | 2740×1372×1706 | 1930 | TAD852GE ★  ⇒  ∅  →  P ·/230  S ·/253
+  R: THHC730 | 730 | 800 | 5100×2000×2484 | 9450 | QSK38-G9 *  ⇒  ∅  →  P ·/730  S ·/800
+
+#8 ĐỔI · 9 ô ×132 | kachai-hangzhou
+  H: Genset (Cummins) | Engine | Alternator
+  H: Unit Model | Rated Power | Standby Power | Silent type | Model | Power KW
+  H: KW | KVA | KW | KVA | Dimension mm | Rated / Standby | Model
+  R: C20M5 | 16 | 20 | 17.6 | 22 | 2280*950*1400 | 4B3.9-G11  ⇒  P 20/16  S 22/17.6  →  S 22/17.6  R 20/16
+  R: C20M5 | 16 | 20 | 17.6 | 22 | 2280*950*1400 | 4B3.9-G11  ⇒  P 20/16  S 22/17.6  →  S 22/17.6  R 20/16
+  R: C180M5 | 144 | 180 | 160 | 200 | 3250*1130*1700 | 6CTA8.3-G1  ⇒  P 180/144  S 200/160  →  S 200/160  R 180/144
+  R: C225E5-T3 | 180 | 225 | 200 | 250 | 3600*1350*1850 | QSL8.9-G2  ⇒  P 225/180  S 250/200  →  S 250/200  R 225/180
+
+#9 ĐỔI · 8 ô ×118 | vantek-jiangsu
+  H: 型号 | 额定功率 (KVA/KW) | 备用功率 (KVA/KW) | 柴油机型号 | 机组尺寸 (MM) | 重量 (KG)
+  R: TPD86V6 | 86 | 69 | 95 | 75 | TAD530GE  ⇒  P 86/69  S 95/75  →  S 95/75  R 86/69
+  R: TPD105V6 | 105 | 84 | 115 | 92 | TAD531GE  ⇒  P 105/84  S 115/92  →  S 115/92  R 105/84
+  R: TPD200Y5 | 200 | 160 | 225 | 180 | YC6A275-D30  ⇒  P 200/160  S 225/180  →  S 225/180  R 200/160
+  R: TPD505V5 | 505 | 404 | 556 | 445 | TAD1651GE  ⇒  P 505/404  S 556/445  →  S 556/445  R 505/404
+
+#10 THÊM · 14 ô ×116 | frs-shenyang
+  H: 产品详情 | 控制系统可选品牌 | 英国深海、郑州众智、捷克科迈 | 绝缘等级 | H级
+  H: 机组类型 | 开架式、静音式、拖车式、集装箱式、车载式 | 防护等级 | IP22、IP23（船用IP44&IP54）
+  H: 交流发电机品牌 | 利莱森玛、马拉松、斯坦福、德科、普得利 | 功率因素 | 三相0.8或单相1.0
+  R: FRS-50Y | 50 | 55 | 1900*750*1120 | 2500*1100*1450 | 900 | 1480 | YC4D90Z-D21  ⇒  ∅  →  S ·/55  R ·/50
+  R: FRS-58Y | 58 | 64 | 1950*840*1175 | 2500*1100*1450 | 1050 | 1630 | YC4A100Z-D20  ⇒  ∅  →  S ·/64  R ·/58
+  R: FRS-400Y | 400 | 440 | 3450*1360*1750 | 4200*1800*2100 | 3925 | 5500 | YC6T660-D31  ⇒  ∅  →  S ·/440  R ·/400
+  R: FRS-280S | 280 | 308 | 3000*1100*1700 | 4300*2100*2320 | 2750 | 4250 | SC12E460D2  ⇒  ∅  →  S ·/308  R ·/280
+
+#11 THÊM · 9 ô ×115 | power-hf
+  H: 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型
+  R: 2 | PHF-20KX | 20 | 22 | 36 | 495D10-1  ⇒  ∅  →  P ·/20  S ·/22
+  R: 3 | PHF-20RX | 20 | 22 | 36 | R3105D1-1  ⇒  ∅  →  P ·/20  S ·/22
+  R: 5 | PHF-60YX | 60 | 66 | 108 | YC4A100Z-D20  ⇒  ∅  →  P ·/60  S ·/66
+  R: 9 | PHF-64PX | 64 | 70.4 | 115.2 | 1104A-44TG2  ⇒  ∅  →  P ·/64  S ·/70.4
+
+#12 THÊM · 7 ô ×104 | wintpower
+  H: Genset Model | 50HZ PF=0.8 400/230V 3 | Engine specification
+  H: Standby Power | Prime Power | Engine Model | Leroy SomerAlternator | Stamford Alternator | Wintpower Alternator
+  H: KW | KW
+  R: WT-H250 | 200 | 180kw | TBD234V6-1A  ⇒  ∅  →  P ·/180  S ·/200
+  R: WT-H250 | 200 | 180kw | TBD234V6-1A  ⇒  ∅  →  P ·/180  S ·/200
+  R: WT-H2200 | 1760 | 1600kw | TBD620V16-2A  ⇒  ∅  →  P ·/1600  S ·/1760
+  R: WT-LP250 | 200kw | 180kw | OWTA6 2015-200  ⇒  ∅  →  P ·/180  S ·/200
+
+#13 THÊM · 9 ô ×96 | stone-power
+  H: Genset Model | Genset Power(kW) | Genset Capacity(kVA) | Engine Model | Alternator
+  H: Standby | Prime | Standby | Prime | (Cummins) | Stamford | Marathon | Wattek
+  R: SC25M5 | 22 | 20 | 28 | 25 | 4B3.9-G1  ⇒  ∅  →  P 25/20  S 28/22
+  R: SC25M5 | 22 | 20 | 28 | 25 | 4B3.9-G1  ⇒  ∅  →  P 25/20  S 28/22
+  R: SC180M5 | 160 | 144 | 200 | 180 | 6CTA8.3-G1  ⇒  ∅  →  P 180/144  S 200/160
+  R: SC600E5 | 520 | 475 | 650 | 594 | KTA19-G8  ⇒  ∅  →  P 594/475  S 650/520
+
+#14 THÊM · 15 ô ×95 | zhengchi-power
+  H:  | 机组型号 | 输出功率(KW) | 电流 | 柴油机型号 | 缸数 | 缸径×行程 | 排气量 | 燃油消耗率 | 机组尺寸mm | 机组重量 | 电压(V) | 频率 | 输出 | 详细参数
+  H: 主用 | 备用
+  R: ZCDL-V75 | 70 | 75 | 126A | TAD550GE  ⇒  ∅  →  P ·/70  S ·/75
+  R: ZCDL-V88 | 80 | 88 | 144A | TAD551GE  ⇒  ∅  →  P ·/80  S ·/88
+  R: ZCDL-S600 | 550 | 600 | 990A | SC27G900D2  ⇒  ∅  →  P ·/550  S ·/600
+  R: ZCDL-W550 | 500 | 550 | 902A | 6M33D605E200  ⇒  ∅  →  P ·/500  S ·/550
+
+#15 ĐỔI · 22 ô ×94 | tecnogen
+  H: MODEL | kVA LTP | kVA PRP | kVA LTP | kVA PRP |  | Regulator | Cylinder | cm3 | kWm 1500 rpm | kWm 1800 rpm | (l/h) 1500 rpm | (l/h) 1800 rpm | Aspiration | Standard panel | Automatic panel | dB(A) (•) 7 m |  |  |  | 
+  H:  | 50 Hz |  | 60 Hz |  | Engine |  |  |  |  |  | Cons. 70% | Cons. 70% |  |  |  |  | Tank l | L | W | H | Kg
+  R: PK17MSX | 16,5 | 15 | 20 | 18 | 403A-15G2  ⇒  R 20/15  →  P 15/·  S 16.5/·
+  R: PK17TSX | 16,5 | 15 | 19,3 | 17,5 | 403A-15G2  ⇒  R 19.3/15  →  P 15/·  S 16.5/·
+  R: CU151TSX** | 150 | 135 | 156 | 141 | QSB5G6  ⇒  R 156/135  →  P 135/·  S 150/·
+  R: JD53TSX** | 44 | 40 | 48 | 44 | 3029HFG80  ⇒  R 48/40  →  P 40/·  S 44/·
+
+#16 THÊM · 9 ô ×92 | stone-power
+  H: GENSET MODEL | Output(kW) | Output(kVA) | Engine | Alternator Model
+  H: Standby | Prime | Standby | Prime | Cummins | Stamford | Marathon | Wattek
+  R: SC30E6 | 26 | 24 | 33 | 30 | 4B3.9-G2  ⇒  ∅  →  P 30/24  S 33/26
+  R: SC30E6 | 26 | 24 | 33 | 30 | 4B3.9-G2  ⇒  ∅  →  P 30/24  S 33/26
+  R: SC288E6 | 253 | 230 | 316 | 288 | 6LTAA8.9-G3  ⇒  ∅  →  P 288/230  S 316/253
+  R: SC875E6 | 770 | 700 | 963 | 875 | KTA38-G1  ⇒  ∅  →  P 875/700  S 963/770
+
+#17 ĐỔI · 9 ô ×89 | kachai-hangzhou
+  H: Genset (high power Cum | Engine | Alternator
+  H: Unit Model | Rated Power | Standby Power | Silent type | Model | Power KW
+  H: KW | KVA | KW | KVA | Dimension mm | Rated / Standby | Model
+  R: C250D5A | 200 | 250 | 220 | 275 | 3800*1350*1800 | MTA11-G2  ⇒  P 250/200  S 275/220  →  S 275/220  R 250/200
+  R: C250D5A | 200 | 250 | 220 | 275 | 3800*1350*1800 | MTA11-G2  ⇒  P 250/200  S 275/220  →  S 275/220  R 250/200
+  R: C688E5 | 550 | 688 | 600 | 750 | 5200*1700*2500 | QSK19-G11  ⇒  P 688/550  S 750/600  →  S 750/600  R 688/550
+  R: KCC775E6 | 620 | 775 | 680 | 850 | 5850*2200*2550 | KT38-G  ⇒  P 775/620  S 850/680  →  S 850/680  R 775/620
+
+#18 ĐỔI · 9 ô ×85 | huadong-yangzhou
+  H: 机组型号 | 输出功率（KVA/KW） | 额定电流 (A) | 100% 负载 燃油耗 （L/h） | 发动机 | 外形尺寸（mm） L ×W×H | 净重量 （Kg）
+  H: 额定功率 | 备用功率 | 型号 | 最大功率 （KW）
+  R: HDC250 | 250/200 | 275/220 | 362 | 47 | MTA11-G2A  ⇒  P 250/200  S 275/220  →  S 275/220  R 250/200
+  R: HDC275 | 275/220 | 303/242 | 398 | 51 | NTA855-G1A  ⇒  P 275/220  S 303/242  →  S 303/242  R 275/220
+  R: HDCP750 | 750/600 | 825/660 | 1086 | 138 | QSK23-G2  ⇒  P 750/600  S 825/660  →  S 825/660  R 750/600
+  R: HDP750 | 750/600 | 825/660 | 1086 | 157 | 4006-23TAG2A  ⇒  P 750/600  S 825/660  →  S 825/660  R 750/600
+
+#19 THÊM · 9 ô ×72 | acepow-fuan
+  H: GENSET | Alternator | Engine Model
+  H: Model | Frequ ency | Phase | Genset power(KW) | Genset power(KVA) | Model | Model
+  H: Rated | Standby | Rated | Standby
+  R: APYT-26 | 50 | 3 | 26 | 29 | 33 | 36 | BC184G  ⇒  ∅  →  S 36/29  R 33/26
+  R: APYT-26 | 50 | 3 | 26 | 29 | 33 | 36 | BC184G  ⇒  ∅  →  S 36/29  R 33/26
+  R: APYT-33 | 60 | 3 | 33 | 36 | 41 | 45 | BC184H  ⇒  ∅  →  S 45/36  R 41/33
+
+#20 THÊM · 8 ô ×72 | acepow-fuan
+  H: Model | Frequency | Genset power(KW) | Engine Model | Engine Power(KW) | Alternator Model
+  H: Rated | Standby | Rated | Standby
+  R: APYT-26 | 50 | 26 | 29 | YT3B2-D  ⇒  ∅  →  S ·/29  R ·/26
+  R: APYT-26 | 50 | 26 | 29 | YT3B2-D  ⇒  ∅  →  S ·/29  R ·/26
+  R: APYT-30 | 60 | 30 | 33 | YT3B2-D  ⇒  ∅  →  S ·/33  R ·/30
+
+#21 THÊM · 22 ô ×70 | tecnogen
+  H: MODEL | kVA LTP | kVA PRP | kVA LTP | kVA PRP |  | Regulator | Cylinder | cm3 | kWm 1500 rpm | kWm 1800 rpm | (l/h) 1500 rpm | (l/h) 1800 rpm | Aspiration | Standard panel | Automatic panel | dB(A) (•) 7 m |  |  |  | 
+  H:  | 50 Hz |  | 60 Hz |  | Engine |  |  |  |  |  | Cons. 70% | Cons. 70% |  |  |  |  | Tank l | L | W | H | Kg
+  R: PK14MSX | 14,3 | 13 | -- | -- | 403A-15G1  ⇒  ∅  →  P 13/·  S 14.3/·
+  R: PK22MSX | 22 | 20 | -- | -- | 404A-22G1  ⇒  ∅  →  P 20/·  S 22/·
+  R: JD170TSX | 165 | 150 | 209 | 190 | 6068HF158  ⇒  ∅  →  P 150/·  S 165/·
+
+#22 THÊM · 8 ô ×68 | acepow-fuan
+  H: Frequency | Genset power(KVA) | Engine Model | Engine Power(KW) | Governing | Alternator Model
+  H: Rated | Standby | Rated | Standby
+  R: 50 | 33 | 36 | YT3B2-D  ⇒  ∅  →  S 36/·  R 33/·
+  R: 50 | 33 | 36 | YT3B2-D  ⇒  ∅  →  S 36/·  R 33/·
+  R: 60 | 55 | 61 | LR4B5-D  ⇒  ∅  →  S 61/·  R 55/·
+
+#23 THÊM · 10 ô ×64 | acepow-fuan
+  H: Model | 50Hz |  | Engine | Engine | Connector | Emission | Governor
+  H: Generating Sets | Acepow | Prime
+  H: Prime Power (KW) | Standby Power (KW) | Alternator | KW | KVA
+  R: APW-18 | 18 | 20 | BC184E  ⇒  ∅  →  P ·/18  S ·/20
+  R: APW-18 | 18 | 20 | BC184E  ⇒  ∅  →  P ·/18  S ·/20
+  R: APW-100 | 100 | 110 | UC274DS  ⇒  ∅  →  P ·/100  S ·/110
+
+#24 THÊM · 15 ô ×62 | zhengdian-zhengzhou
+  H:  | 机组型号 | 机组功率（ kw ） | 电流A | 柴油机型号 | 柴油机功 率 KW | 缸 数 | 缸径 mm | 行程 mm | 排气量 L | 压缩比 | 机油 容量 L | 燃油消耗率 g/KW.h | 机组重量 kg | 机组外型尺寸 mm×mm×mm
+  H: 备用 | 额定
+  R: 20GF | 22 | 20 | 39 /36 | 4B3.9-G1  ⇒  ∅  →  S ·/22  R ·/20
+  R: 2 0GF | 22 | 20 | 39 /36 | 4B5.9-G2  ⇒  ∅  →  S ·/22  R ·/20
+  R: 121GF | 133 | 121 | 240/218 | TAD720GE  ⇒  ∅  →  S ·/133  R ·/121
+
+#25 THÊM · 9 ô ×60 | acepow-fuan
+  H: Genset Model | Frequency | Kw | Kva | Alternator | Engine model | Rated Power
+  H: Rated | Standby | Rated | Standby | Model
+  R: APYD-7 | 50HZ | 7 | 7.7 | 8.8 | 9.6 | BC164B  ⇒  ∅  →  S 9.6/7.7  R 8.8/7
+  R: APYD-7 | 50HZ | 7 | 7.7 | 8.8 | 9.6 | BC164B  ⇒  ∅  →  S 9.6/7.7  R 8.8/7
+  R: APYD-16 | 60HZ | 16 | 17.6 | 20.0 | 22.0 | APS184E  ⇒  ∅  →  S 22/17.6  R 20/16
+
+#26 ĐỔI · 8 ô ×60 | vantek-jiangsu
+  H: 型号 | 额定功率 (KVA/KW) | 备用功率 (KVA/KW) | 柴油机 | 机组尺寸 (MM) | 重量 (KG)
+  R: TPD20C5-1 | 20 | 16 | 22 | 18 | 4B3.9-G1  ⇒  P 20/16  S 22/18  →  S 22/18  R 20/16
+  R: TPD20C5-2 | 20 | 16 | 22 | 18 | 4B3.9-G2  ⇒  P 20/16  S 22/18  →  S 22/18  R 20/16
+  R: TPD375C5-2 | 375 | 300 | 413 | 330 | KTA19-G2  ⇒  P 375/300  S 413/330  →  S 413/330  R 375/300
+
+#27 THÊM · 15 ô ×57 | frs-shenyang
+  H: 产品详情 | 控制系统可选品牌 | 英国深海、郑州众智、捷克科迈 | 绝缘等级 | H级
+  H: 机组类型 | 开架式、静音式、拖车式、集装箱式、车载式 | 防护等级 | IP22、IP23（船用IP44&IP54）
+  H: 交流发电机品牌 | 利莱森玛、马拉松、斯坦福、德科、普得利 | 功率因素 | 三相0.8或单相1.0
+  R: FRS-10P | 10 | 11 | 1200*670*1313 | 2000*920*1252 | 550 | 800 | 403A-15G1  ⇒  ∅  →  S ·/11  R ·/10
+  R: FRS-16P | 16 | 18 | 1230*670*1313 | 2000*920*1252 | 550 | 880 | 404A-22G1  ⇒  ∅  →  S ·/18  R ·/16
+  R: FRS-400V | 400 | 440 | 3185*1235*1960 | 4350*1720*2402 | 3500 | 4833 | TAD1651GE  ⇒  ∅  →  S ·/440  R ·/400
+
+#28 ĐỔI · 8 ô ×56 | acepow-fuan
+  H: 50Hz |  | Engine | Engine | Speed(rpm) | Emission
+  H: Generating Sets | Acepow | Prime | Standby
+  H: Prime Power (KW) | Prime Power (KVA) | Alternator | KW | KW
+  R: 300 | 375 | HC434F  ⇒  R 375/300  →  P 375/300
+  R: 300 | 375 | HC434F  ⇒  R 375/300  →  P 375/300
+  R: 720 | 900 | LV634C  ⇒  R 900/720  →  P 900/720
+
+#29 THÊM · 9 ô ×56 | sr-genset
+  H: Standby | Prime | Engine | Alternator | Open Type Dimension | Silent Type Dimension
+  H: kVA | kW | kVA | kW | Model | Gov | SRGENSET
+  R: 20 | 18 | 18 | 16 | 4Z2.3-G12  ⇒  ∅  →  P 18/16  S 20/18
+  R: 20 | 18 | 18 | 16 | 4Z2.3-G12  ⇒  ∅  →  P 18/16  S 20/18
+  R: 396 | 352 | 360 | 320 | 6ETAA12.8-G22  ⇒  ∅  →  P 360/320  S 396/352
+
+#30 THÊM · 13 ô ×55 | kachai-hangzhou
+  H: Diesel Generator Model | Generator Specificatio | Engine Specifcation | Alternator Specifcatio | Open Type | Silent Type
+  H: Power(KVA) ( KVA) | Power(KW) ( KW) | Engine |  | KACHAI | Stamford | Dimension | Weight | Dimension | Weight
+  H: Prime | Standby | Prime | Standby | Model | Model | Model | L×W×H(mm) * * ( mm) | (kg) | L×W×H(mm) * * ( mm) | (kg)
+  R: SDD16D | 20 | 22 | 16 | 18 | BFM3 G1  ⇒  ∅  →  P 20/16  S 22/18
+  R: SDD16D | 20 | 22 | 16 | 18 | BFM3 G1  ⇒  ∅  →  P 20/16  S 22/18
+  R: SDH360D | 450 | 500 | 360 | 400 | BF8M1015C-LA G2  ⇒  ∅  →  P 450/360  S 500/400
+
+#31 THÊM · 13 ô ×54 | kachai-hangzhou
+  H: Diesel Generator Model | Generator Specificatio | Engine Specifcation | Alternator Specifcatio | Open Type | Silent Type
+  H: Power(KVA) ( KVA ) | Power(KW) ( KW ) | Engine | Fuel System | KACHAI | Stamford | Dimension | Weight | Dimension | Weight
+  H: Prime | Standby | Prime | Standby | Model | Model | Model | L×W×H(mm) * * ( mm ) | (kg) | L×W×H(mm) * * ( mm ) | (kg)
+  R: SPC10M | 13 | 14 | 10 | 11 | 403A-15G1  ⇒  ∅  →  P 13/10  S 14/11
+  R: SPC10M | 13 | 14 | 10 | 11 | 403A-15G1  ⇒  ∅  →  P 13/10  S 14/11
+  R: SPU520E | 650 | 715 | 520 | 572 | 2806A-E18TAG2  ⇒  ∅  →  P 650/520  S 715/572
+
+#32 THÊM · 7 ô ×49 | baifa-power
+  H: BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / 
+  H: Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+  H: BF-V770-T2 | 770 | 700 | VOLVO | TWD1645GE | EMS2 / ECU | S5L1D-G4 | STAGE II /TIER 2 | SWEDEN
+  R: BF-M880-T2 | 880 | 800 | MTU | 12V2000G26F  ⇒  ∅  →  P 800/·  S 880/·
+  R: BF-M880-T2 | 880 | 800 | MTU | 12V2000G26F  ⇒  ∅  →  P 800/·  S 880/·
+  R: BF-BD1250-T2 | 1250 | 1125 | 12M33G4D2/5  ⇒  ∅  →  P 1125/·  S 1250/·
+
+#33 THÊM · 7 ô ×49 | baifa-power
+  H: BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / 
+  H: Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+  H: BF-C28Q-3 | 28 | 25 | CUMMINS (CHINA) | QSB3.9-G31 | ECM | S0L2-M1 | Stage IIIA / CHINA STA | CHINA
+  R: BF-C625-3 | 625 | 569 | QSK19-G17  ⇒  ∅  →  P 569/·  S 625/·
+  R: BF-C700-3 | 700 | 636 | QSK19-G18  ⇒  ∅  →  P 636/·  S 700/·
+  R: BF-BD1650-3 | 1650 | 1500 | 12M33G14D3/5  ⇒  ∅  →  P 1500/·  S 1650/·
+
+#34 ĐỔI · 10 ô ×48 | sr-genset
+  H: Frequency | Voltage | Standy Power | Backup Power | Engine | Model | Motor | Model
+  H: kW | kVA | kW | kVA
+  R: 50 | 400 | 12 | 15 | 13.2 | 16.5 | Perkins | 403A-15G2  ⇒  P 15/12  S 16.5/13.2  →  S 16.5/13.2  R 15/12
+  R: 50 | 400 | 12 | 15 | 13.2 | 16.5 | Perkins | 403A-15G2  ⇒  P 15/12  S 16.5/13.2  →  S 16.5/13.2  R 15/12
+  R: 50 | 400 | 280 | 350 | 308 | 385 | Perkins | 2206C-E13TAG2 L  ⇒  P 350/280  S 385/308  →  S 385/308  R 350/280
+
+#35 ĐỔI · 8 ô ×44 | kachai-hangzhou
+  H: Genset model | Rated power | Standby power | Diesel engine | Alternator model
+  H: KW | KVA | KW | KVA | Model | Power (KW)
+  R: SCD16M-K | 16 | 20 | 18 | 22.5 | 4B3.9-G11  ⇒  P 20/16  S 22.5/18  →  S 22.5/18  R 20/16
+  R: SCD16M-K | 16 | 20 | 18 | 22.5 | 4B3.9-G11  ⇒  P 20/16  S 22.5/18  →  S 22.5/18  R 20/16
+  R: SCD140D-K | 140 | 175 | 160 | 200 | 6CTA8.3-G2  ⇒  P 175/140  S 200/160  →  S 200/160  R 175/140
+
+#36 THÊM · 9 ô ×39 | baifa-power
+  H: BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / 
+  H: Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+  R: BF-P35-T3 | 35 | 32 | PERKINS | 1103D-33G2  ⇒  ∅  →  P 32/·  S 35/·
+  R: BF-P35-T3 | 35 | 32 | PERKINS | 1103D-33G2  ⇒  ∅  →  P 32/·  S 35/·
+  R: BF-V720-T3 | 720 | 650 | VOLVO | TWD1653GE  ⇒  ∅  →  P 650/·  S 720/·
+
+#37 THÊM · 9 ô ×36 | acepow-fuan
+  H: 50HZ Three Phase Gense | Engine Model
+  H: Genset power(KW) | Genset power(KVA) | Model | Engine Power(KW) | Governing | Bore / stroke
+  H: Rated | Standby | Rated | Standby | Rated | Standby | MM
+  R: 26 | 29 | 33 | 36 | YT3B2-D  ⇒  ∅  →  S 36/29  R 33/26
+  R: 40 | 44 | 50 | 55 | LR4B5-D  ⇒  ∅  →  S 55/44  R 50/40
+
+#38 ĐỔI · 10 ô ×36 | huadong-yangzhou
+  H: 机组型号 | 输出功率（KVA/KW） | 额定电流 (A) | 100% 负载 燃油耗 （L/h） | 发动机 | 外形尺寸（mm） L ×W×H | 净重量 （Kg）
+  H: 额定功率 | 备用功率 | 型号 | 最大功率 （KW）
+  R: HDC25 | 25/20 | 27.5/22 | 36 | 5.5 | 4B3.9-G2  ⇒  P 25/20  S 27.5/22  →  S 27.5/22  R 25/20
+  R: HDC38 | 38/30 | 42/33 | 54 | 7.6 | 4BT3.9-G2  ⇒  P 38/30  S 42/33  →  S 42/33  R 38/30
+
+#39 THÊM · 11 ô ×33 | senci-jiangsu
+  H: 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/ | 缸径X行程（mm） Bore-stroke  | 缸数 Number of vat | 机油容量（L）Machine oil cap | 燃油消耗 Fuel consumption  | 排放 Discharge | 开架机组 Open Type
+  H: 外形尺寸Overall Size (LXWX | 机组重量 Welght (kg)
+  R:  | 68/75 | TAD530GE  ⇒  ∅  →  P ·/68  S ·/75
+  R:  | 80/88 | TAD531GE  ⇒  ∅  →  P ·/80  S ·/88
+
+#40 THÊM · 11 ô ×33 | senci
+  H: 沃尔沃系列 VOLVO SERIES
+  H: 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/ | 缸径X行程（mm） Bore-stroke  | 缸数 Number of vat | 机油容量（L）Machine oil cap | 燃油消耗 Fuel consumption  | 排放 Discharge | 开架机组 Open Type
+  H: 外形尺寸Overall Size (LXWX | 机组重量 Welght (kg)
+  R:  | 68/75 | TAD530GE  ⇒  ∅  →  P ·/68  S ·/75
+  R:  | 80/88 | TAD531GE  ⇒  ∅  →  P ·/80  S ·/88
+
+#41 THÊM · 11 ô ×32 | sr-genset
+  H: Standby | Prime | Engine | Alternator | Open Type Dimension | Silent Type Dimension
+  H: kVA | kW | kVA | kW | Model | Gov | Leroy Somer | SRGENSET | Stamford
+  R: 70.4 | 63.8 | 64 | 58 | SP344CB  ⇒  ∅  →  P 64/58  S 70.4/63.8
+  R: 70.4 | 63.8 | 64 | 58 | SP344CB  ⇒  ∅  →  P 64/58  S 70.4/63.8
+
+#42 ĐỔI · 9 ô ×32 | wintpower
+  H: GENSET MODEL | RATED POWER | STANDBY POWER | ENGINE | STAMFORD ALTERNATOR | LEROY SOMER ALTERNATOR | WINT ALTERNATOR | DIMENSION
+  H: KW/KVA | KW/KVA | MODEL | MODEL | MODEL | MODEL | SILENT TYPE | OPEN TYPE
+  R: WT-KU8 | 5/6.3 | 6/7.5 | D905  ⇒  P 6.3/5  S 7.5/6  →  S 7.5/6  R 6.3/5
+  R: WT-KU8 | 5/6.3 | 6/7.5 | D905  ⇒  P 6.3/5  S 7.5/6  →  S 7.5/6  R 6.3/5
+
+#43 THÊM · 11 ô ×31 | tellhow-power
+  H: Model | Prime power | Standby power | Overall size Length (L | Weigh | Engine model | Number of cylinders /a | Displacement | Fuel consumption rate | Lubricating oil capaci | Total coolant capacity
+  H: (kW) | (kW) | mm | (Kg) | (L) | g/kw.h | (L) | (L)
+  R: THLY16 | 16 | 17.6 | 1650×730×1268 | 455 | YCDA2530-D42  ⇒  ∅  →  P ·/16  S ·/17.6
+  R: THLY20 | 20 | 22 | 1650×730×1268 | 455 | YCDA2540-D42  ⇒  ∅  →  P ·/20  S ·/22
+
+#44 THÊM · 8 ô ×28 | acepow-fuan
+  H: Genset Model | Kw | Kva | Alternator | Engine model
+  H: Rated | Standby | Rated | Standby | Model | Kw
+  R: APYD-7 | 7 | 7.7 | 8.8 | 9.6 | BC164B  ⇒  ∅  →  S 9.6/7.7  R 8.8/7
+  R: APYD-7 | 7 | 7.7 | 8.8 | 9.6 | BC164B  ⇒  ∅  →  S 9.6/7.7  R 8.8/7
+
+#45 THÊM · 7 ô ×28 | baifa-power
+  H:  | POWERED BY VOLVO | 1500RPM | STAGE 2 TIER 2
+  H: BAIFA MODEL | STANBY kVA | PRIME kVA | BRAND | ENGINE MODEL | GOV. | ALTERNATOR STAMFORD | DIMENSION MM SOUNDPROO
+  H: BF-V900TWIN-T2 | 900 | 820 | VOLVO PENTA | 2*TAD1344GE | EMS2 / ECU | 2*S4L1D-F41 | ISO 20'ft HC
+  R: BF-V1670TWIN-T2 | 1672 | 1520 | 2*TWD1744GE  ⇒  ∅  →  P 1520/·  S 1672/·
+  R: BF-V1100TWIN-60 | 1128 | 1024 | 2*TAD1346GE  ⇒  ∅  →  P 1024/·  S 1128/·
+
+#46 THÊM · 8 ô ×28 | power-hf
+  H: 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型
+  R: 20 | PHF-600WX | 600 | 660 | 1080 | 12M26D748E200  ⇒  ∅  →  P ·/600  S ·/660
+  R: 21 | PHF-650WX | 650 | 715 | 1170 | 12M26D792E200  ⇒  ∅  →  P ·/650  S ·/715
+
+#47 THÊM · 9 ô ×26 | acepow-fuan
+  H: Model | 50Hz,1500rpm |  | Engine
+  H: Generating Sets | Acepow | Prime | Standby
+  H: Prime Power (kW) | Prime Power (kVA) | Standby Power (kW) | Standby Power (KVA) | Alternator | KW | KW
+  R: APYN-10 | 10 | 11 | 12.5 | 14 | BC164C  ⇒  ∅  →  P 11/10  S 14/12.5
+  R: APYN-10 | 10 | 11 | 12.5 | 14 | BC164C  ⇒  ∅  →  P 11/10  S 14/12.5
+
+#48 ĐỔI · 14 ô ×26 | excel-power-ningde
+  H: Generator Set Model | Continuous output | Standby output | Doosan Engine Model | Fuel consumption (L/h) | No.of cylinder | Displacement (L) | Alternator model | Dimension (L×W×H) mm | N.W (kg) | Fuel tank capacity(L) | download
+  H: KW | KVA | KW | KVA | Open type | silent type
+  R: EP-VM250 | 200 | 250 | 220 | 275 | D11A2  ⇒  P 250/200  S 275/220  →  S 275/220
+  R: EP-VM250 | 200 | 250 | 220 | 275 | D11A2  ⇒  P 250/200  S 275/220  →  S 275/220
+
+#49 THÊM · 10 ô ×25 | senci-jiangsu
+  H: 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/ | 缸径X行程（mm） Bore-stroke  | 缸数 Number of vat | 机油容量（L）Machine oil cap | 燃油消耗 Fuel consumption  | 排放 Discharge | 开架机组 Open Type
+  H: 外形尺寸Overall Size (LXWX | 机组重量 Welght (kg)
+  R:  | 16/17.6 | BFM3 G1  ⇒  ∅  →  P ·/16  S ·/17.6
+  R:  | 24/26.4 | BFM3 G2  ⇒  ∅  →  P ·/24  S ·/26.4
+
+#50 THÊM · 10 ô ×24 | senci-jiangsu
+  H: 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/ | 缸径×行程（mm） Bore-stroke  | 缸数 Number of vat | 机油容量（L）Machine oil cap | 燃油消耗 Fuel consumption  | 排放 Discharge | 开架机组 Open Type
+  H: 外形尺寸Overall Size (L×W× | 机组重量 Welght (kg)
+  R: SC100SC | 90/100 | SC4H160D2  ⇒  ∅  →  P ·/90  S ·/100
+  R: SC110SC | 100/110 | SC4H180D2  ⇒  ∅  →  P ·/100  S ·/110
+
+#51 THÊM · 10 ô ×24 | senci
+  H: 上柴系列 SHANGCHAI SERIES 
+  H: 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/ | 缸径×行程（mm） Bore-stroke  | 缸数 Number of vat | 机油容量（L）Machine oil cap | 燃油消耗 Fuel consumption  | 排放 Discharge | 开架机组 Open Type
+  H: 外形尺寸Overall Size (L×W× | 机组重量 Welght (kg)
+  R: SC100SC | 90/100 | SC4H160D2  ⇒  ∅  →  P ·/90  S ·/100
+  R: SC110SC | 100/110 | SC4H180D2  ⇒  ∅  →  P ·/100  S ·/110
+
+#52 ĐỔI · 11 ô ×24 | sr-genset
+  H: Frequency | Voltage | Rated power | Standby Power | Engine | Modle | Alternator | Modle | Specifications
+  H: kW | kVA | kW | kVA
+  R: 50 | 400 | 12 | 15 | 13.2 | 16.5 | SRGENSET | 4AW  ⇒  P 15/12  S 16.5/13.2  →  S 16.5/13.2  R 15/12
+  R: 50 | 400 | 12 | 15 | 13.2 | 16.5 | SRGENSET | 4AW  ⇒  P 15/12  S 16.5/13.2  →  S 16.5/13.2  R 15/12
+
+#53 ĐỔI · 9 ô ×22 | excel-power-ningde
+  H: Genset Model | 50Hz,400/230V,3-Phase | Engine Model | Fuel consumption (L/h) | Dimension | Download
+  H: Prime Power (KW/KVA) | Standby Power (KW/KVA) | OPEN | SILENT
+  R: EP-YC150 | 120 | 150 | 72 | 165 | YC6B210L-D20  ⇒  R 150/120  →  P 150/120
+  R: EP-YC200 | 160 | 200 | 100 | 220 | YC6MK265Z-D20  ⇒  R 200/160  →  P 200/160
+
+#54 ĐỔI · 10 ô ×22 | googol
+  H: Generator Set | Diesel Engine | Alternator | Dimension (L×W×H mm) | Weight (kg)
+  H: Genset Model | Standby (kW / kVA) | DCP ( kW / kVA ) | Engine Model | Standby ( kW ) | Prime ( kW) | No.of Cylinders
+  R: GPDG3300E | 2640/3300 | 2400/3000 | QTA20V-EG2950D  ⇒  P 3000/2400  S 3300/2640  →  S 3300/2640  R 3000/2400
+  R: GPDG3300E | 2640/3300 | 2400/3000 | QTA20V-EG2950D  ⇒  P 3000/2400  S 3300/2640  →  S 3300/2640  R 3000/2400
+
+#55 THÊM · 13 ô ×22 | kachai-hangzhou
+  H: Doosan Diesel Generato | Generator Specificatio | Engine Specifcation | Alternator Specifcatio | Open Type | Silent Type
+  H: Power(KVA) ( KVA) | Power(KW) ( KW) | Engine |  | KACHAI | Stamford | Dimension | Weight | Dimension | Weight
+  H: Prime | Standby | Prime | Standby | Model | Model | Model | L×W×H(mm) * * ( mm) | (kg) | L×W×H(mm) * * ( mm) | (kg)
+  R: SDK120D | 150 | 165 | 120 | 132 | DP086TA  ⇒  ∅  →  P 150/120  S 165/132
+  R: SDK120D | 150 | 165 | 120 | 132 | DP086TA  ⇒  ∅  →  P 150/120  S 165/132
+
+#56 THÊM · 11 ô ×21 | baifa-power
+  H: BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR |  |  |  | 
+  H:  | Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD | FUEL CONSUMPTION 75% L | Emission | ENGINE MANUFACTURER /  | ESTIMATED ENGINE DELIV | 1500/1800 RPM SWITCHAB
+  R: BF-V165-V | 165 | 150 | VOLVO PENTA | TAD880GE  ⇒  ∅  →  P 150/·  S 165/·
+  R: BF-V165-V | 165 | 150 | VOLVO PENTA | TAD880GE  ⇒  ∅  →  P 150/·  S 165/·
+
+#57 THÊM · 10 ô ×20 | ettes-power
+  H: Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Power (kW) | Cyls.& Type | Dspl. (L) | Elec Eff. | Heat Eff. | Total Eff. | Tech Specs
+  R: ※TCG-400N5 | 400 | 404 | TCG3016V08 CG132  ⇒  ∅  →  R ·/400
+  R: TCG-600N5 | 600 | 654 | TCG3016V12 CG132  ⇒  ∅  →  R ·/600
+
+#58 THÊM · 13 ô ×20 | kachai-hangzhou
+  H: Genset Model | Genset Specification | Engine Specifcation | Alternator Specifcatio | Open Type | Sound Proof
+  H: Power(KVA) ( KVA) | Power(KW) ( KW) | Engine |  | KACHAI | Stamford | Dimension | Weight | Dimension | Weight
+  H: Prime | Standby | Prime | Standby | Model | Model | Model | L×W×H(mm) * * ( mm) | (kg) | L×W×H(mm) * * ( mm) | (kg)
+  R: SSM500D | 625 | 700 | 500 | 560 | S6R2-PTA-C  ⇒  ∅  →  P 625/500  S 700/560
+  R: SSM500D | 625 | 700 | 500 | 560 | S6R2-PTA-C  ⇒  ∅  →  P 625/500  S 700/560
+
+#59 THÊM · 10 ô ×20 | senci
+  H: 道依茨系列 DAOYICI SERIES (
+  H: 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/ | 缸径X行程（mm） Bore-stroke  | 缸数 Number of vat | 机油容量（L）Machine oil cap | 燃油消耗 Fuel consumption  | 排放 Discharge | 开架机组 Open Type
+  H: 外形尺寸Overall Size (LXWX | 机组重量 Welght (kg)
+  R:  | 16/17.6 | BFM3 G1  ⇒  ∅  →  P ·/16  S ·/17.6
+  R:  | 24/26.4 | BFM3 G2  ⇒  ∅  →  P ·/24  S ·/26.4
+
+#60 THÊM · 9 ô ×20 | stone-power
+  H: GENSET MODEL | OUTPUT(kW) | OUTPUT(kVA) | ENGINE | ALTERNATOR
+  H: STANDBY | PRIME | STNADBY | PRIME | MITSUBISHI | STAMFORD | MARATHON | WATTEK
+  R: SM675E5 | 600 | 540 | 750 | 675 | S6R2-PTA  ⇒  ∅  →  P 675/540  S 750/600
+  R: SM675E5 | 600 | 540 | 750 | 675 | S6R2-PTA  ⇒  ∅  →  P 675/540  S 750/600
+
+#61 ĐỔI · 9 ô ×20 | wintpower
+  H: GENSET MODEL | RATED POWER | STANDBY POWER | ENGINE | STAMFORD ALTERNATOR | LEROY SOMER ALTERNATOR | WINT ALTERNATOR | DIMENSION
+  H:  | KW/KVA | KW/KVA | MODEL | MODEL | MODEL | MODEL | SILENT TYPE | OPEN TYPE
+  R: WT-YM9 | 6/8.0 | 7/9.0 | 3TNM68-GGE  ⇒  P 8/6  S 9/7  →  S 9/7  R 8/6
+  R: WT-YM9 | 6/8.0 | 7/9.0 | 3TNM68-GGE  ⇒  P 8/6  S 9/7  →  S 9/7  R 8/6
+
+#62 THÊM · 10 ô ×19 | huayuan-weifang
+  H: 型号 | 常用 功率 (kw) | 过载 功率(kw) | 华柴道依茨柴油机 | 外形尺寸 (mm)
+  H: 型号 | 功率说明 | 常用 功率 (kw) | 备用 功率 (kw) | 额定 转速 (r/min) | 冷却 方式
+  R: HY90GF | 90 | 99 | F8L413F  ⇒  ∅  →  P ·/90
+  R: HY100GF | 100 | 110 | F8L413F  ⇒  ∅  →  P ·/100
+
+#63 THÊM · 9 ô ×19 | weiman-fujian
+  H: Typical generator capa | Diesel Engine Model | Engine output (kW) | Type
+  H: 50HZ | 1500rpm | Cylinder | Flywheel & Housing | Fuel system | Download
+  H: Prime | Standby | COP/Prime | Standby
+  R: 20 | 22 | WT2.3D25E  ⇒  ∅  →  P 20/·  S 22/·
+  R: 30 | 33 | WT2.3D33E  ⇒  ∅  →  P 30/·  S 33/·
+
+#64 ĐỔI · 10 ô ×18 | ettes-power
+  H: Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Power (kW) | Cyls. & Type | Dspl. (L) | Elec. Eff. | Heat Eff. | Total Eff. | Tech Specs D/L
+  R: EM-100B6 | 100 | 135 | E0836LE302  ⇒  R 135/100  →  R ·/100
+  R: ★EM-200B6 | 200 | 255 | E2876LE302  ⇒  R 255/200  →  R ·/200
+
+#65 ĐỔI · 22 ô ×18 | tecnogen
+  H: MODEL | kVA LTP | kVA PRP | kVA LTP | kVA PRP |  | Regulator | Cylinder | cm3 | kWm 1500 rpm | kWm 1800 rpm | (l/h) 1500 rpm | (l/h) 1800 rpm | Aspiration | Standard panel | Automatic panel | dB(A) (ï) 7 m |  |  |  | 
+  H:  | 50 Hz |  | 60 Hz |  | Engine |  |  |  |  |  | Cons. 70% | Cons. 70% |  |  |  |  | Tank l | L | W | H | Kg
+  R: VO227TSX* | 220 | 200 | 249 | 226 | TAD840GE-B  ⇒  R 249/200  →  P 200/·  S 220/·
+  R: VO352TSX* | 341 | 315 | 369 | 335 | TAD1341GE-B  ⇒  R 369/315  →  P 315/·  S 341/·
+
+#66 THÊM · 7 ô ×18 | wintpower
+  H: Genset Model | 60HZ PF=0.8 440/220V 3 | Engine specification
+  H: Standby Power | Prime Power | Engine Model | Leroy SomerAlternator | Stamford Alternator | Wintpower Alternator
+  H: KW | KW
+  R: WT-H275 | 220kw | 200kw | TBD234V6-2A  ⇒  ∅  →  P ·/200  S ·/220
+  R: WT-H275 | 220kw | 200kw | TBD234V6-2A  ⇒  ∅  →  P ·/200  S ·/220
+
+#67 ĐỔI · 7 ô ×17 | acepow-fuan
+  H: Model | Rated Output | Standby Output | Alternator | Model
+  H: Kw | kva | Kw | kva
+  R: APDS-50 | 50 | 63 | 55 | 69 | UC224E  ⇒  P 63/50  S 69/55  →  S 69/55  R 63/50
+  R: APDS-120 | 120 | 150 | 132 | 165 | UC274E  ⇒  P 150/120  S 165/132  →  S 165/132  R 150/120
+
+#68 THÊM · 7 ô ×17 | beidou-yangzhou
+  H: Genset Model | Genset Power (KVA) | Engine Model | Engine Power | Diemension (MM) | Weight (KG)
+  H: Rated | Backup
+  R: BD-S18 | 18 | 20 | 4Z2.3-G11  ⇒  ∅  →  S 20/·  R 18/·
+  R: BD-S63 | 63 | 69 | 4ZT4.1-G21  ⇒  ∅  →  S 69/·  R 63/·
+
+#69 ĐỔI · 9 ô ×17 | excel-power-ningde
+  H: Genset Nodel | Continuous output | Standby output | EVOL Engine model | Fuel Consumption（L/h） | Dimension（L×W×H）mm | Download
+  H: kW | kVA | kW | kVA | Open type | silent type
+  R: EP-EV22.5 | 18 | 22.5 | 20 | 25 | E904G1A  ⇒  P 22.5/18  S 25/20  →  S 25/20
+  R: EP-EV27.5 | 22 | 28 | 24 | 30 | E904G2A  ⇒  P 28/22  S 30/24  →  S 30/24
+
+#70 THÊM · 12 ô ×17 | zhengdian-zhengzhou
+  H:  | 机组 型号 | 机组功率 （ kw ） | 电流A | 柴油机型号 | 柴油机 功率 KW | 缸径 mm | 行程 mm | 排气量 L | 燃油消耗率 g/KW.h | 机组重量 kg | 机组外型尺寸 mm × mm × mm
+  H: 备 用 | 额 定
+  R: 20GF | 22 | 20 | 39/36 | 495D 6  ⇒  ∅  →  S ·/22  R ·/20
+  R: 24GF | 26.4 | 24 | 47/43 | 495D 6  ⇒  ∅  →  S ·/26.4  R ·/24
+
+#71 THÊM · 15 ô ×17 | zhengdian-zhengzhou
+  H:  | 机组型号 | 机组功率 （ kw ） | 电流Ａ | 柴油机型号 | 柴油机功率k W | 缸 数 | 缸径 mm | 行程 mm | 排气量 L | 压缩比 | 机油 容量 L | 燃油消耗率 g/KW.h | 机组重量 kg | 机组外型尺寸 mm×mm×mm
+  H: 备用 | 额定
+  R: 100GF | 110 | 100 | 198/180 | 6135AD  ⇒  ∅  →  S ·/110  R ·/100
+  R: 120GF | 132 | 120 | 238/216 | 6135ZD  ⇒  ∅  →  S ·/132  R ·/120
+
+#72 THÊM · 10 ô ×16 | ettes-power
+  H: Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Max Power (kW) | Cyls. & Type | Dspl.(L) | Elec. Eff. | Heat Eff. | Total Eff. | Specs D/L
+  R: EC-30N5 | 30 | 45 | 4BTA3.9-G  ⇒  ∅  →  R ·/30
+  R: EC-40N5 | 40 | 60 | 4BTA3.9-G  ⇒  ∅  →  R ·/40
+
+#73 THÊM · 7 ô ×16 | huayuan-weifang
+  H: 机组型号 | 机组额定输出 | 柴油机 | 最大耗油量 | 外型尺寸及重量
+  H: 功率(KW) | 型号 | 额定功率(KW) | 柴油 | 长 x 宽 x 高 (MM) | 净重 (KGS)
+  R: HY30MC | 30 | 4BTA3.9-G2M  ⇒  ∅  →  R ·/30
+  R: HY40MC | 40 | 4BTA3.9-G2M  ⇒  ∅  →  R ·/40
+
+#74 ĐỔI · 12 ô ×16 | jet-power
+  H: Model | 440V / 60Hz / 1800rpm | HYUNDAI Diesel Engine | Emission | Alternator
+  H: Standby output | Prime Output | Model | No. of Cylinder | Displacement | Bore×Stroke | Fuel cons. | Leroy Somer
+  H: KVA | KW | KVA | KW | (L) | (MM) | （ L/h ） | level
+  R: HD-163T3 | 163 | 130 | / | / | DP54CAK  ⇒  R 163/130  →  S 163/130
+  R: HD-163T3 | 163 | 130 | / | / | DP54CAK  ⇒  R 163/130  →  S 163/130
+
+#75 THÊM · 8 ô ×16 | legapower
+  H: Genset Model | KVA | Cons 100% （ g/kW.h ） | Engine Model | CYL | GOV | Displacement(L)
+  H: ESP | PRP
+  R: LG20.6IS5 | 20.6 | 18.8 | ≤230 | JE493DB-04  ⇒  ∅  →  P 18.8/·  S 20.6/·
+  R: LG20.6IS5 | 20.6 | 18.8 | ≤230 | JE493DBE-04  ⇒  ∅  →  P 18.8/·  S 20.6/·
+
+#76 ĐỔI · 9 ô ×16 | wintpower
+  H: GENSET TYPE | RATED | STANDBY | ENGINE | STAMFORD ALTERNATOR | LEROY SOMER ALTERNATOR | WINT ALTERNATOR | DIMENSION
+  H: KW/KVA | KW/KVA | MODEL | MODEL | MODEL | MODEL | SILENT TYPE | OPEN TYPE
+  R: WT-KU8 | 6/7.5 | 6.6/8.3 | D905  ⇒  P 7.5/6  S 8.3/6.6  →  S 8.3/6.6  R 7.5/6
+  R: WT-KU8 | 6/7.5 | 6.6/8.3 | D905  ⇒  P 7.5/6  S 8.3/6.6  →  S 8.3/6.6  R 7.5/6
+
+#77 THÊM · 8 ô ×15 | baifa-power
+  H: BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / 
+  H: Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+  H: BF-C28Q-3 | 28 | 25 | CUMMINS (CHINA) | QSB3.9-G31 | ECM | S0L2-M1 | Stage IIIA / CHINA STA | CHINA
+  R: BF-C1600-3 | 1650 | 1500 | KTA50-G8E  ⇒  ∅  →  P 1500/·  S 1650/·
+  R: BF-M1800 | 1800 | 1640 | 12V4000G23F  ⇒  ∅  →  P 1640/·  S 1800/·
+
+#78 THÊM · 6 ô ×14 | baifa-power
+  H:  | POWERED BY VOLVO | 1800RPM TIER 3
+  H: BAIFA MODEL | STANBY kVA | PRIME kVA | BRAND | ENGINE STAMFORD | GOV. | ALTERNATOR STAMFORD
+  H: MODEL | kVA | kVA |  |  | 
+  R: BF-V320T3-60 | 316 | 287 | TAD852GE  ⇒  ∅  →  P 287/·  S 316/·
+  R: BF-V320T3-60 | 316 | 287 | TAD852GE  ⇒  ∅  →  P 287/·  S 316/·
+
+#79 THÊM · 10 ô ×14 | ettes-power
+  H: Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Power (kW) | Cyls. Type | Dspl. (L) | Elec. Eff. | Heat Eff. | Total Eff. | Tech Specs
+  R: EM-66B5 | 66 | 93 | E0834LE322  ⇒  ∅  →  R ·/66
+  R: ※EM-130B5 | 130 | / | E2876TE302  ⇒  ∅  →  R ·/130
+
+#80 ĐỔI · 10 ô ×14 | ettes-power
+  H: Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Power (kW) | Cyls. Type | Dspl. (L) | Elec. Eff. | Heat Eff. | Total Eff. | Tech Specs
+  R: EM-100B5 | 100 | 135 | E0836LE302  ⇒  R 135/100  →  R ·/100
+  R: EM-200B5 | 200 | 255 | E2876LE202  ⇒  R 255/200  →  R ·/200
+
+#81 THÊM · 14 ô ×14 | sr-genset
+  H: Typical generator capa | Diesel Engine Model | Engine output (kW) | Engine Type
+  H: 50Hz | 60Hz | 1500rpm | 1800rpm | Cylinder | Flywheel & Housing | Injection system | Exhaust system | Emission
+  H: Prime (PRP) | Standby (ESP) | Prime (PRP) | Standby (ESP) | Prime | Standby | Prime | Standby
+  R: 50 | 55 | / | / | 4HTAA4.5-G5E1  ⇒  ∅  →  P 50/·  S 55/·
+  R: 63 | 69 | / | / | 4HTAA4.5-G5E2  ⇒  ∅  →  P 63/·  S 69/·
+
+#82 THÊM · 11 ô ×14 | taihai-taizhou
+  H: 机组型号 | 输出功率 (kw) | 电流 (A) | 柴油机型号 | 缸数 | 缸径 * 行程（ mm ） | 润滑油容量（ L ） | 燃油消耗率 g/kw.h | 机组尺寸 mm L×W×H | 机组重量 kg
+  H: 常用 | 备用
+  R: T H-300GF | 300 | 330 | 540 | PTA780G5  ⇒  ∅  →  P ·/300  S ·/330
+  R: T H-320GF | 320 | 355 | 576 | PTAA780G1  ⇒  ∅  →  P ·/320  S ·/355
+
+#83 ĐỔI · 8 ô ×14 | vantek-jiangsu
+  H: 型号 | 额定功率 | 备用功率 | 柴油机型号 | 机组尺寸 | 重量
+  H: KVA | KW | KVA | KW | MM | KG
+  R: TPD461B5 | 461 | 369 | 507 | 406 | 6M33D447E200  ⇒  P 461/369  S 507/406  →  S 507/406  R 461/369
+  R: TPD461B5 | 461 | 369 | 507 | 406 | 6M26D447E200  ⇒  P 461/369  S 507/406  →  S 507/406  R 461/369
+
+#84 ĐỔI · 10 ô ×14 | xinhengxin-fujian
+  H: Generator Set Performa | Generator Set Performa | Dimension
+  H: Model | OUTPUT POWER | Fre. Hz | ENGINE | Power | Fuel Comsumption | Cylinder | Open type /weight | Soundproof type /weigh
+  H: PRIME OUTPUT (KW/KVA) | STANDBY Power (KW/KVA)
+  R: XHX-X10 | 8/10 | 9/10 | 50 | QC380D  ⇒  R 10/8  →  P 10/8  S 10/9
+  R: XHX-X10 | 8/10 | 9/10 | 50 | QC385D  ⇒  R 10/8  →  P 10/8  S 10/9
+
+#85 ĐỔI · 11 ô ×14 | yingtai-jiangsu
+  H: 机组型号 Genset Model | 主用功率（主用） | 备用功率（备用） | 电流（主用）Power(A) | 电流（备用）Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimension | 品牌 Brand | 发 动 机型号 Engine Type | 主要功 率 power()KW
+  H: KW | KVA | KW | KVA
+  R: 50GF | 50 | 62.5 | 70.4 | 68.8 | 90 | 99 | 960 | 1.8*0.9*1.4 | WP4.1D66E200  ⇒  P 62.5/50  S 90/68.8  →  R 62.5/50
+  R: 64GF | 64 | 75 | 88 | 88 | 115.2 | 126.7 | 1180 | 1.9*0.9*1.4 | WP4.1D80E200  ⇒  P 75/64  S 115.2/88  →  P 75/64  S 88/88
+
+#86 THÊM · 11 ô ×13 | acepow-fuan
+  H: Model | P | Hz | KW | kva | Model | Output | Engine
+  H: Rated | Standby | Rated | Standby | Rated(KW) | Standy(kw) | Model
+  R: APW-10.5 | 3 | 50 | 10.5 | 12 | 13 | 14 | BC164C  ⇒  ∅  →  S 14/12  R 13/10.5
+  R: APW-15 | 3 | 50 | 15 | 17 | 19 | 21 | BC164E  ⇒  ∅  →  S 21/17  R 19/15
+
+#87 THÊM · 22 ô ×13 | tecnogen
+  H: MODEL | kVA LTP | kVA PRP | kVA LTP | kVA PRP |  | Regulator | Cylinder | cm3 | kWm 1500 rpm | kWm 1800 rpm | (l/h) 1500 rpm | (l/h) 1800 rpm | Aspiration | Standard control panel | Optional |  |  |  |  | 
+  H:  | 50 Hz |  | 60 Hz |  | Engine |  |  |  |  |  | Cons. 70% | Cons. 70% |  |  |  |  | Tank l | L | W | H | Kg
+  R: PK1001TV | 1000 | 910 | 968 | 880 | 4008TAG1A/1  ⇒  ∅  →  P 910/·  S 1000/·
+  R: PK1100TV | 1100 | 1000 | 1100 | 1000 | 4008-TAG2A/2  ⇒  ∅  →  P 1000/·  S 1100/·
+
+#88 ĐỔI · 10 ô ×12 | ettes-power
+  H: Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Max Power (kW) | Cyls. & Type | Dspl.(L) | Elec. Eff. | Heat Eff. | Total Eff. | Specs D/L
+  R: EC-280N5 | 280 | 351 | KTA19-G  ⇒  S 351/280  →  R ·/280
+  R: EC-300N5 | 300 | 375 | KTA19-G  ⇒  S 375/300  →  R ·/300
+
+#89 ĐỔI · 10 ô ×12 | excel-power-ningde
+  H: Genset Nodel | Continuous output | Standby output | EVOL Engine model | Fuel Consumption（L/h） | Dimension（L×W×H）mm | Download
+  H: kW | kVA | kW | kVA | Open type | silent type
+  R: EP-EV30 | 24 | 30 | 26 | 33 | E904G2A  ⇒  P 30/24  S 33/26  →  S 33/26
+  R: EP-EV33.8 | 27 | 33.8 | 30 | 37 | E904TG1A  ⇒  P 33.8/27  S 37/30  →  S 37/30
+
+#90 THÊM · 21 ô ×12 | tecnogen
+  H: MODEL | kVA LTP | kVA PRP | kVA LTP | kVA PRP |  | Regulator | Cylinder | cm3 | kWm 1500 rpm | kWm 1800 rpm | (l/h) 1500 rpm | (l/h) 1800 rpm | Aspiration | Standard panel | Automatic panel |  |  |  | 
+  H:  | 50 Hz |  | 60 Hz |  | Engine |  |  |  |  |  | Cons. 70% | Cons. 70% |  |  |  | Tank l | L | W | H | Kg
+  R: CU1101TV | 1100 | 1000 | - | - | KTA38G5  ⇒  ∅  →  P 1000/·  S 1100/·
+  R: CU1600TV | 1540 | 1400 | -- | -- | KTA50G8  ⇒  ∅  →  P 1400/·  S 1540/·
+
+#91 ĐỔI · 6 ô ×12 | walter-yangzhou
+  H: GensetModel | Power（kVA） | Engine Brand | Engine Model | Dimension(MM)L*W*H
+  H: Standby | Prime
+  R: WET-C1650 | 1650 | 1375 | Cummins | KTA50-G8  ⇒  R 1650/1375  →  P 1375/·  S 1650/·
+  R: WET-M1500 | 1500 | 1287 | Mitsubishi | S12R-PTA2-C  ⇒  R 1500/1287  →  P 1287/·  S 1500/·
+
+#92 THÊM · 7 ô ×12 | wintpower
+  H: Gensets model | Power output(KVA) | Power output (KW) | Cummins Engine Model | Leroy Somer Alternator
+  H: Prime Power | Standby Power | Prime Power | Standby Power
+  R: WT-C220 | 200 | 220 | 160 | 176 | 6CTAA8.3G2  ⇒  ∅  →  P 200/160  S 220/176
+  R: WT-C220 | 200 | 220 | 160 | 176 | 6CTAA8.3G2  ⇒  ∅  →  P 200/160  S 220/176
+
+#93 THÊM · 13 ô ×12 | yingtai-jiangsu
+  H: 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式
+  H: 主用 | 备用 | V | A | （kg) | L×W×H(m) | 主用 | 备用 | （L) | (g/kW.h)
+  R: 1000GF | 1000 | 1100 | 114.3 | 11330 | 6.40×2.04×2.64 | KTA50-G3  ⇒  ∅  →  P ·/1000  S ·/1100
+  R: 1160GF | 1160 | 1300 | 132.6 | 11880 | 6.20×2.04×2.70 | KTA50-GS8  ⇒  ∅  →  P ·/1160  S ·/1300
+
+#94 ĐỔI · 10 ô ×11 | yingtai-jiangsu
+  H: 机组型号 Genset Model | 输出功率（主用） | 备用功率（备用） | 电流Power(A) | 额定转速 | 净重 Net Weight (kg) | 外形尺寸 Overall Dimension | 发动 机型号 Engine Type | 缸数 Number of
+  H: KW | KVA | KW | KVA
+  R: 100GF-A | 100 | 125 | 110 | 125 | 180 | 1500 | 1.8*0.9*1.4 | NT855-GA  ⇒  R 125/100  →  P 125/100  S 125/110
+  R: 120GF-A | 120 | 150 | 140 | 160 | 216 | 1700 | 1.8*0.9*1.4 | NTA855-G7  ⇒  P 150/120  S 216/160  →  P 150/120  S 160/140
+
+#95 THÊM · 10 ô ×10 | ettes-power
+  H: Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Power (kW) | Cyls. & Type | Dspl. (L) | Elec. Eff. | Heat Eff. | Total Eff. | Tech Specs
+  R: ☆EM-35N5 | 35 | / | E0834E312  ⇒  ∅  →  R ·/35
+  R: EM-50N5 | 50 | 73 | E0834E302  ⇒  ∅  →  R ·/50
+
+#96 THÊM · 7 ô ×10 | huayuan-weifang
+  H: 机组型号 | 机组额定功率 KW | 柴油机 | 最大油耗 | 外形尺寸及重量
+  H: 型号 | 额定 功率 | 长宽高 MM | 重量 KGS
+  R: HY40M | 40 | 4135Caf  ⇒  ∅  →  R ·/40
+  R: HY50M | 50 | 4135Caf  ⇒  ∅  →  R ·/50
+
+#97 THÊM · 22 ô ×10 | tecnogen
+  H: MODEL | kVA LTP | kVA PRP | kVA LTP | kVA PRP |  | Regulator | Cylinder | cm3 | kWm 1500 rpm | kWm 1800 rpm | (l/h) 1500 rpm | (l/h) 1800 rpm | Aspiration | Standard panel | Automatic panel | dB(A) (ï) 7 m |  |  |  | 
+  H:  | 50 Hz |  | 60 Hz |  | Engine |  |  |  |  |  | Cons. 70% | Cons. 70% |  |  |  |  | Tank l | L | W | H | Kg
+  R: VO277TSX* | 275 | 250 | 286 | 260 | TAD841GE  ⇒  ∅  →  P 250/·  S 275/·
+  R: VO330TSX* | 330 | 300 | 334 | 304 | TAD842GE  ⇒  ∅  →  P 300/·  S 330/·
+
+#98 ĐỔI · 9 ô ×10 | wintpower
+  H: Genset Model | 60HZ PF=0.8 440/220V 3 | Engine specification | Genset canopy data | Genset open data
+  H: Prime Power | Standby Power | Engine Model | Stamford Alternator | Leroy Somer Alternator | Wintpower Alternator | Dimention ( MM ) | Dimention ( MM )
+  H: KVA/KW | KVA/KW
+  R: WT-L41 | 26/33 | 29/41 | 1003G  ⇒  R 33/26  →  P 33/26
+  R: WT-L41 | 26/33 | 29/41 | 1003G  ⇒  R 33/26  →  P 33/26
+
+#99 THÊM · 11 ô ×9 | zhengdian-zhengzhou
+  H:  | 机组型号 | 机组功率 （ kw ） | 电流Ａ | 柴油机型号 | 品牌 | 柴油机功率k W | 缸 数 | 机油 容量 L | 机组重量 kg | 机组外型尺寸 mm×mm×mm
+  H: 备用 | 额定
+  R: 500GF1 | 500 | / | 902 | G6190ZLD  ⇒  ∅  →  S ·/500
+  R: 500GF1 | 500 | / | 902 | Z8V190  ⇒  ∅  →  S ·/500
+
+#100 ĐỔI · 9 ô ×8 | acepow-fuan
+  H: Model | 50Hz |  | 3Phases/50Hz/ 400V/PF= | Engine | Engine
+  H: Generating Sets | Acepow | Prime | Standby | Prime
+  H: Prime Power (KW) | Prime Power (KVA) | Standby Power (KW) | Standby Power (KVA) | Alternator | KW | KW | KW
+  R: APW-540 |  |  | 600 | 750 | HC534G  ⇒  R 750/600  →  S 750/600
+  R: APW-540 |  |  | 600 | 750 | HC534G  ⇒  R 750/600  →  S 750/600
+
+#101 ĐỔI · 8 ô ×8 | acepow-fuan
+  H: Frequency | Genset power(KVA) | Engine Model | Engine Power(KW) | Governing | Alternator Model
+  H: Rated | Standby | Rated | Standby
+  R: 50 | 38 | 41 | YT3A2Z-D  ⇒  S 50/38  →  S 41/·  R 38/·
+  R: 50 | 38 | 41 | YT3A2Z-D  ⇒  S 50/38  →  S 41/·  R 38/·
+
+#102 ĐỔI · 9 ô ×8 | acepow-fuan
+  H: Model | 50Hz,1500rpm |  | 3Phases/50Hz/400V/PF=0 | Engine
+  H: Generating Sets | Acepow | Prime | Standby
+  H: Prime Power (kW) | Prime Power (kVA) | Standby Power (kW) | Standby Power (KVA) | Alternator | KW | KW
+  R: API-16 | 16 | 20 |  |  | BC184E  ⇒  R 20/16  →  P 20/16
+  R: API-16 | 16 | 20 |  |  | BC184E  ⇒  R 20/16  →  P 20/16
+
+#103 ĐỔI · 15 ô ×8 | frs-shenyang
+  H: 产品详情 | 控制系统可选品牌 | 英国深海、郑州众智、捷克科迈 | 绝缘等级 | H级
+  H: 机组类型 | 开架式、静音式、拖车式、集装箱式、车载式 | 防护等级 | IP22、IP23（船用IP44&IP54）
+  H: 交流发电机品牌 | 利莱森玛、马拉松、斯坦福、德科、普得利 | 功率因素 | 三相0.8或单相1.0
+  R: FRS-7P | 7 | 8 | 1100*670*1313 | 2000*920*1252 | 550 | 727 | 403A-11G1  ⇒  S 727/550  →  S ·/8  R ·/7
+  R: FRS-184P | 184 | 200 | 2565*1087*1680 | 3750*1220*2100 | 2000 | 2625 | 1206A-E70TTAG2  ⇒  S 2625/2000  →  S ·/200  R ·/184
+
+#104 ĐỔI · 21 ô ×8 | jinlongteng-fujian
+  H: Gensets | Technical Data of Dies |  |  | Alternator (50hz/1500r | Size & Weight
+  H: Model | Gensets power(KW/KVA) | Engine model | Engine power/kw | Fuel consumption | Cylinder *Bore*Stroke  | Displacement (L) | Compression Ratio | Oil sump capacity | coolent capacity | JLT -POWER | Stamford |  | Silent Type Size (mm) | Weight (KG) | Open Type Size (mm) | Weight (KG)
+  H: Prime | Standby | Prime | Standby | g/kw.h | L/h | L | L
+  R: JDC250 | / | / | 200 | 250 | 6CTAA8.3-G9  ⇒  R 250/200  →  S 250/200
+  R: JDC250 | / | / | 200 | 250 | 6CTAA8.3-G9  ⇒  R 250/200  →  S 250/200
+
+#105 ĐỔI · 10 ô ×8 | wiseke-taizhou
+  H:  | Genset Model | Genset Power (kVA / kW | Engine Model | Engine Power (kW) | Cyl. | Bore x Stroke (mm) | Dimension (mm) | Weight (kg)
+  H: Prime | Standby | Prime | Standby
+  R: WDL-520C1 | — | 650 / 520 | KTA19-G8  ⇒  R 650/520  →  S 650/520
+  R: WDL-550C1 | — | 688 / 550 | KTAA19-G6A  ⇒  R 688/550  →  S 688/550
+
+#106 THÊM · 26 ô ×7 | bruno-generators
+  H:  | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 HZ |  | 60 HZ |  |  |  |  |  |  |  |  | TANK l | DIMENSIONS cm |  |  | MAXIMUM SIZE cm |  |  | WEIGHT kg | STANDARD PANEL
+  H: MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 Hz |  | 60 Hz |  | Engine | cm3 | kWm | kWm | fuel consumption (l/h) | fuel consumption (l/h) | Aspiration | TANK (l) | DIMENSIONS (cm) |  |  | MAXIMUM SIZE (cm) |  |  | WEIGHT | STANDARD PANEL
+  H:  |  |  |  |  |  | kVA LTP | kVA PRP | kVA LTP | kVA PRP |  |  | 1500 rpm | 1800 rpm | 1500 rpm* | 1800 rpm* |  |  | L | W | H | L | W | H | 
+  R: SL 9606 YM | 6 | 250 W | 2000 W | AC | 230 V | 5 | 4.5 | 6.6 | 6  ⇒  ∅  →  P 4.5/·  S 5/·
+  R: SL 9608 YM | 8 | 250 W | 2000 W | AC | 230 V | 5 | 4.5 | 6.6 | 6  ⇒  ∅  →  P 4.5/·  S 5/·
+
+#107 THÊM · 8 ô ×7 | power-hf
+  H: 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 发动机型号 | 敞开型 | 静音型
+  R: 2 | PHF-24RX-Q | 24 | 26.4 | 43.2 | PHF3030Z1Q1  ⇒  ∅  →  P ·/24  S ·/26.4
+  R: 3 | PHF-30RX-Q | 30 | 33 | 54 | PHF4035ZX1Q1  ⇒  ∅  →  P ·/30  S ·/33
+
+#108 ĐỔI · 5 ô ×7 | simpson-power
+  H: 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × | 机 组 数 据
+  H: SP1800D-L | 1800/2250 | SME | S16R-PTAA2-C | 5720×2400×3436 | SP1800D-L.pdf
+  H: SP1800D-M | 1800/2250 | MITSUBISHI | S16R-PTAA2 | 5720×2480×3440 | SP1800D-M.pdf
+  R: SP2000D-U | 2000/2500 | 16V4000G63  ⇒  R 2500/2000  →  S 2500/2000
+  R: SP2200D-U | 2200/2750 | 20V4000G23  ⇒  R 2750/2200  →  S 2750/2200
+
+#109 ĐỔI · 6 ô ×7 | starlight-power
+  H: GensetModel | Power（kVA） | EngineBrand | EngineModel | Specifications
+  H: Standby | Prime
+  R: XG1930S3-6 | 1930 | 1610 | Cummins | KTA50-G9  ⇒  R 1930/1610  →  P 1610/·  S 1930/·
+  R: XG4375S3-6 | 4375 | 3750 | Cummins | QSK95-G2  ⇒  R 4375/3750  →  P 3750/·  S 4375/·
+
+#110 ĐỔI · 21 ô ×7 | tecnogen
+  H: MODEL | kVA LTP | kVA PRP | kVA LTP | kVA PRP |  | Regulator | Cylinder | cm3 | kWm 1500 rpm | kWm 1800 rpm | (l/h) 1500 rpm | (l/h) 1800 rpm | Aspiration | Standard panel | Automatic panel |  |  |  | 
+  H:  | 50 Hz |  | 60 Hz |  | Engine |  |  |  |  |  | Cons. 70% | Cons. 70% |  |  |  | Tank l | L | W | H | Kg
+  R: CU700TV | 695 | 630 | 740 | 675 | VTA28G5  ⇒  R 740/630  →  P 630/·  S 695/·
+  R: CU1000TV | 1000 | 910 | 1145 | 1040 | QST30G3  ⇒  R 1145/910  →  P 910/·  S 1000/·
+
+#111 THÊM · 11 ô ×6 | baifa-power
+  H: BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / 
+  H: Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+  H: BF-C28Q-3 | 28 | 25 | CUMMINS (CHINA) | QSB3.9-G31 | ECM | S0L2-M1 | Stage IIIA / CHINA STA | CHINA
+  R: BF-P10-V | 10 | 9 | PERKINS | 403J-11G  ⇒  ∅  →  P 9/·  S 10/·
+  R: BF-P10-V | 10 | 9 | PERKINS | 403J-11G  ⇒  ∅  →  P 9/·  S 10/·
+
+#112 ĐỔI · 10 ô ×6 | ettes-power
+  H: Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Power (kW) | Cyls. & Type | Dspl. (L) | Elec. Eff. | Heat Eff. | Total Eff. | Tech Specs
+  R: ★EM-66N5 | 66 | 82 | E0834LE312  ⇒  R 82/66  →  R ·/66
+  R: EM-200N5 | 200 | 263 | E2876LE302  ⇒  R 263/200  →  R ·/200
+
+#113 ĐỔI · 14 ô ×6 | frs-shenyang
+  H: 产品详情 | 控制系统可选品牌 | 英国深海、郑州众智、捷克科迈 | 绝缘等级 | H级
+  H: 机组类型 | 开架式、静音式、拖车式、集装箱式、车载式 | 防护等级 | IP22、IP23（船用IP44&IP54）
+  H: 交流发电机品牌 | 利莱森玛、马拉松、斯坦福、德科、普得利 | 功率因素 | 三相0.8或单相1.0
+  R: FRS-30Y | 30 | 35 | 1850*750*1120 | 2400*1100*1450 | 850 | 1280 | YC4D60-D21  ⇒  S 35/30  →  S ·/35  R ·/30
+  R: FRS-45Y | 45 | 50 | 1850*750*1120 | 2400*1100*1450 | 1160 | 1500 | YC4D80-D34  ⇒  S 1500/1160  →  S ·/50  R ·/45
+
+#114 ĐỔI · 9 ô ×6 | meao-jiangsu
+  H: 型号 | 备用功率 | 主用功率 | 发动机型号 | 发电机型号 | 尺寸 | 重量
+  H: kVA | kWe | kVA | kWe | mm | KG
+  R: MP-300GF | 412.5 | 275 | 375 | 300 | 8V1600G10F  ⇒  R 375/300  →  P 375/300
+  R: MP-300GF | 412.5 | 275 | 375 | 300 | 8V1600G10F  ⇒  R 375/300  →  P 375/300
+
+#115 ĐỔI · 5 ô ×6 | simpson-power
+  H: 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × | 机 组 数 据
+  H: SP1800D-L | 1800/2250 | 菱重 | S16R-PTAA2-C | 5720×2400×3436 | SP1800D-L.pdf
+  H: SP1800D-M | 1800/2250 | 三菱 MITSUBISHI | S16R-PTAA2 | 5720×2480×3440 | SP1800D-M.pdf
+  R: SP2000D-U | 2000/2500 | 16V4000G63  ⇒  R 2500/2000  →  S 2500/2000
+  R: SP2200D-U | 2200/2750 | 20V4000G23  ⇒  R 2750/2200  →  S 2750/2200
+
+#116 ĐỔI · 11 ô ×5 | acepow-fuan
+  H: Model | P | Hz | KW | kva | Model | Output | Engine
+  H: Rated | Standby | Rated | Standby | Rated(KW) | Standy(kw) | Model
+  R: APW-12 | 3 | 50 | 12 | 13 | 15 | 17 | BC164D  ⇒  S 15/13  →  S 17/13  R 15/12
+  R: APW-18 | 3 | 50 | 18 | 20 | 23 | 25 | BC184E  ⇒  S 23/20  →  S 25/20  R 23/18
+
+#117 ĐỔI · 7 ô ×5 | aosif
+  H: Prime Power | Standby Power | Engine Model | Fuel Consumption | Cylinder | Displacement
+  H: KVA/KW | KVA/KW |  | L/h
+  R: AC150 | 136/120 | 150/120 | QSB5-G6  ⇒  R 150/120  →  S 150/120
+  R: AC3000 | 2750/2400 | 3000/2400 | QSK78-G9  ⇒  R 3000/2400  →  S 3000/2400
+
+#118 THÊM · 5 ô ×5 | awt-aiweite
+  H: Model | Prime / Standby | Engine | Open Type (mm / kg) | Silent Type (mm / kg)
+  R: AWT-B50 | 50 / 55 kW | 4M10G2D3/5  ⇒  ∅  →  P ·/50  S ·/55
+  R: AWT-B200 | 200 / 220 kW | 6M12G8D3/5  ⇒  ∅  →  P ·/200  S ·/220
+
+#119 THÊM · 8 ô ×5 | baifa-power
+  H: BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / 
+  H: Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+  H: BF-V770-T2 | 770 | 700 | VOLVO | TWD1645GE | EMS2 / ECU | S5L1D-G4 | STAGE II /TIER 2 | SWEDEN
+  R: BF-C3763Q-T2 | 3763 | 3363 | QSK95-G10  ⇒  ∅  →  P 3363/·  S 3763/·
+  R: BF-C3763Q-T2 | 3763 | 3363 | QSK95-G10  ⇒  ∅  →  P 3363/·  S 3763/·
+
+#120 THÊM · 7 ô ×5 | baifa-power
+  H: BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR
+  H: Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+  R: BF-BD1250-T2 | 1250 | 1125 | 12M33G5D2/5 W/A  ⇒  ∅  →  P 1125/·  S 1250/·
+  R: BF-BD1400-T2 | 1400 | 1273 | 12M33G7D2/5 W/A  ⇒  ∅  →  P 1273/·  S 1400/·
+
+#121 ĐỔI · 11 ô ×5 | ettes-power
+  H: Model | Prime Power | Standby Power | Engine Model | Max Power (kW/Hp) | Cyls.& Type | Dspl. (L) | Overall Dimmension (mm | Weight (kg) | PDF D/L
+  H: kW | kVa | kW | kVa
+  R: ET-1250P | 1000 | 1250 | / | / | 18V2000G26F  ⇒  R 1250/1000  →  P 1250/1000
+  R: ET-1375S | / | / | 1100 | 1375 | 18V2000G76F  ⇒  R 1375/1100  →  S 1375/1100
+
+#122 THÊM · 10 ô ×5 | hanma-tech
+  H: 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/ | 缸径X行程（mm） Bore-stroke  | 缸数 Number of vat | 机油容量（L）Machine oil cap | 燃油消耗 Fuel consumption  | 排放 Discharge | 开架机组 Open Type
+  R: SC230HM | 230/253 | CM6D12F.250 30  ⇒  ∅  →  P ·/230  S ·/253
+  R: SC265HM | 265/290 | CM6D18F.290 30  ⇒  ∅  →  P ·/265  S ·/290
+
+#123 THÊM · 10 ô ×5 | senci
+  H: 汉马系列 汉马 SERIES (国Ⅲ排放 S
+  H: 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/ | 缸径X行程（mm） Bore-stroke  | 缸数 Number of vat | 机油容量（L）Machine oil cap | 燃油消耗 Fuel consumption  | 排放 Discharge | 开架机组 Open Type
+  H: 外形尺寸Overall Size (LXWX | 机组重量 Welght (kg)
+  R: SC230HM | 230/253 | CM6D12F.250 30  ⇒  ∅  →  P ·/230  S ·/253
+  R: SC265HM | 265/290 | CM6D18F.290 30  ⇒  ∅  →  P ·/265  S ·/290
+
+#124 ĐỔI · 12 ô ×5 | victory-generator
+  H: Genset Model | Frequency (Hz) | Prime Power | Stanby Power | Current (A) | Voltage (V) | Engine Model | Engine Power(KW) | Rated Speed (rpm) | Cylinder
+  H: KW | KVA | KW | KVA
+  R: CCFJ-64KW | 50 | 64 | 80 | 75 | 94 | 116 | 400 | 6BT5.9GM  ⇒  P 64/50  S 94/75  →  P 80/64  S 94/75
+  R: CCFJ-45KW | 60 | 45 | 56 | 50 | 63 | 74 | 440 | 4BTA3.9GM  ⇒  P 60/45  S 63/50  →  P 56/45  S 63/50
+
+#125 ĐỔI · 9 ô ×5 | waeta-fujian
+  H: Model | Standby Power | Prime Power | Engine | Read More
+  H: Kva | Kw | Kva | Kw | Engine Model | No. of Cylinder | Displacement(L) | Download
+  R: WTA-W187 | 188 | 150 | / | / | WP6D167E200  ⇒  R 188/150  →  S 188/150
+  R: WTA-W438 | 438 | 350 | / | / | WP13D405E200  ⇒  R 438/350  →  S 438/350
+
+#126 THÊM · 14 ô ×5 | zhengdian-zhengzhou
+  H:  | 机组型号 | 机组功率 （kw） | 电流 A | 柴油机 型号 | 柴油机功率 KW | 缸数 | 缸径 mm | 行程 mm | 排气量 L | 机油 容量 L | 燃油消耗率g/KW.h | 机组重量kg | 机组包装外型尺寸 mm×mm×mm
+  H: 备用 | 额定
+  R: 24GF1 | 24 | 22 | 43/40 | DB33  ⇒  ∅  →  S ·/24  R ·/22
+  R: 55GF1 | 55 | 50 | 99/90 | DB58  ⇒  ∅  →  S ·/55  R ·/50
+
+#127 ĐỔI · 9 ô ×4 | acepow-fuan
+  H: Genset Model | Frequency | Kw | Kva | Alternator | Engine model | Rated Power
+  H: Rated | Standby | Rated | Standby | Model
+  R: APYD-30 | 50HZ | 30 | 33 | 38 | 41 | BC184H  ⇒  S 38/33  →  S 41/33  R 38/30
+  R: APYD-30 | 50HZ | 30 | 33 | 38 | 41 | BC184H  ⇒  S 38/33  →  S 41/33  R 38/30
+
+#128 ĐỔI · 9 ô ×4 | acepow-fuan
+  H: GENSET | Alternator | Engine Model
+  H: Model | Frequ ency | Phase | Genset power(KW) | Genset power(KVA) | Model | Model
+  H: Rated | Standby | Rated | Standby
+  R: APYT-30 | 50 | 3 | 30 | 33 | 38 | 41 | BC184H  ⇒  S 38/33  →  S 41/33  R 38/30
+  R: APYT-30 | 50 | 3 | 30 | 33 | 38 | 41 | BC184H  ⇒  S 38/33  →  S 41/33  R 38/30
+
+#129 ĐỔI · 8 ô ×4 | acepow-fuan
+  H: Model | Frequency | Genset power(KW) | Engine Model | Engine Power(KW) | Alternator Model
+  H: Rated | Standby | Rated | Standby
+  R: APYT-40 | 50 | 40 | 44 | LR4B5-D  ⇒  S 50/40  →  S ·/44  R ·/40
+  R: APYT-40 | 50 | 40 | 44 | LR4B5-D  ⇒  S 50/40  →  S ·/44  R ·/40
+
+#130 ĐỔI · 8 ô ×4 | acepow-fuan
+  H: Genset Model | Kw | Kva | Alternator | Engine model
+  H: Rated | Standby | Rated | Standby | Model | Kw
+  R: APYD-30 | 30 | 33 | 38 | 41 | BC184H  ⇒  S 38/33  →  S 41/33  R 38/30
+  R: APYD-30 | 30 | 33 | 38 | 41 | BC184H  ⇒  S 38/33  →  S 41/33  R 38/30
+
+#131 ĐỔI · 11 ô ×4 | agestar
+  H: Model | Specification 50HZ 400 | General specifications | Alternator | Dimensions | Weight (kg)
+  H: ESP | PRP | Engine type | Consumption 100% | Gov
+  H: KVA | KW | KVA | KW | L/H
+  R: GK8 | 8 | 7 | 7.5 | 6 | D905  ⇒  R 7.5/6  →  P 7.5/6  S 8/7
+  R: GK8 | 8 | 7 | 7.5 | 6 | D905  ⇒  R 7.5/6  →  P 7.5/6  S 8/7
+
+#132 THÊM · 8 ô ×4 | baifa-power
+  H: BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / 
+  H: Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+  R: BF-P66-T3 | 66 | 60 | 1104D-44TG2  ⇒  ∅  →  P 60/·  S 66/·
+  R: BF-P66-T3 | 66 | 60 | 1104D-44TG2  ⇒  ∅  →  P 60/·  S 66/·
+
+#133 ĐỔI · 6 ô ×4 | cgm-italia
+  H: M/E Engine governor | EU Emission standard | consumo ¾ caricoconsum
+  H: OPEN BASE FRAME | SOUNDPROOF CANOPY | dB(A) at 7 mt
+  H: quadro manualemanual p | quadro automaticoAMF p
+  R: v60F | 60 | 48 | 60 | 48 | F34TEVP01.00  ⇒  P 60/48  S 60/48  →  R 60/48
+  R: v100F | 100 | 80 | 100 | 80 | F36ETVP03.A94  ⇒  P 100/80  S 100/80  →  R 100/80
+
+#134 MẤT · 8 ô ×4 | comappower
+  H:  | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data
+  R: COM20B | 20kW | 16kW | 15kW | 18.75kW | 4M06G20/5  ⇒  P 18.75/15  S 20/16  →  ∅
+  R: COM25B | 25kW | 20kW | 18kW | 22.5kW | 4M06G25/5  ⇒  P 22.5/18  S 25/20  →  ∅
+
+#135 THÊM · 10 ô ×4 | ettes-power
+  H: Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Power (kW) | Cyls. & Type | Dspl. (L) | Elec. Eff. | Heat Eff. | Total Eff. | Tech Specs D/L
+  R: EM-66B6 | 66 | 93 | E0834LE322  ⇒  ∅  →  R ·/66
+  R: EM-430B6 | 430 | 481 | E3262LE242  ⇒  ∅  →  R ·/430
+
+#136 ĐỔI · 11 ô ×4 | jet-power
+  H: Model | 480V/ 60Hz / 1800rpm | Cummins Diesel Engine | Alternator
+  H: Standby | Prime | Model | No. of Cylinder | Displacement | Bore×Stroke | Fuel cons. | Leroy Somer
+  H: KVA | KW | KVA | KW | (L) | (MM) | （ L/h ）
+  R: C-750s | 750 | 600 | / | / | KTAA19-G6A  ⇒  R 750/600  →  S 750/600
+  R: C-750s | 750 | 600 | / | / | KTAA19-G6A  ⇒  R 750/600  →  S 750/600
+
+#137 THÊM · 9 ô ×4 | kachai-hangzhou
+  H: Genset (Cummins) | Engine | Alternator
+  H: Unit Model | Rated Power | Standby Power | Silent type | Model | Power KW
+  H: KW | KVA | KW | KVA | Dimension mm | Rated / Standby | Model
+  R: C32D6-1P | 28 | 28 | 32 | 32 | 2280*950*1250 | 4B3.9-G12  ⇒  ∅  →  S 32/32  R 28/28
+  R: C32D6-1P | 28 | 28 | 32 | 32 | 2280*950*1250 | 4B3.9-G12  ⇒  ∅  →  S 32/32  R 28/28
+
+#138 ĐỔI · 13 ô ×4 | kachai-hangzhou
+  H: Genset Model | Genset Specification | Engine Specifcation | Alternator Specifcatio | Open Type | Sound Proof
+  H: Power(KVA) ( KVA ) | Power(KW) ( KW ) | Engine |  | KACHAI | Stamford | Dimension | Weight | Dimension | Weight
+  H: Prime | Standby | Prime | Standby | Model | Model | Model | L×W×H(mm) * * ( mm ) | (kg) | L×W×H(mm) * * ( mm ) | (kg)
+  R: SFW24D | 30.0 | 35.0 | 24.0 | 28.0 | 4JB1T  ⇒  P 28/24  S 35/30  →  P 30/24  S 35/28
+  R: SFW24D | 30.0 | 35.0 | 24.0 | 28.0 | 4JB1T  ⇒  P 28/24  S 35/30  →  P 30/24  S 35/28
+
+#139 ĐỔI · 7 ô ×4 | rise-power
+  H: Model | Power (kw/kVA) | Engine Model | Alternator Model | Dimension | Weight
+  H: Prime | Standby | Open Type | Open Type
+  R: RDL964-60 | 964/1080 | 1060/1325 | TBD620V8  ⇒  R 1325/1060  →  S 1325/1060
+  R: RDL964-60 | 964/1080 | 1060/1325 | TBD620V8  ⇒  R 1325/1060  →  S 1325/1060
+
+#140 ĐỔI · 15 ô ×4 | victory-generator
+  H: Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Fuel consumption (g/kw | NO. OF CYCLINDER | BORE (mm) | STROKE (mm) | LUB-OIL CAPACITY (L) | COOLANT CAPACITY (L) | Open type Dimensions L
+  H: KW | KVA | KW | KVA | (mm) | (kg)
+  R: V65L | 50 | 58 | 73 | 65 | 81 | 1004TG  ⇒  P 58/50  S 81/65  →  P 73/58  S 81/65
+  R: V40L | 60 | 36 | 40 | 40 | 50 | 1004G  ⇒  R 50/40  →  P 40/36  S 50/40
+
+#141 ĐỔI · 12 ô ×4 | victory-generator
+  H: Genset Model | Frequency (Hz) | Prime Power | Standby Power | Engine Model | Fuel Consumption (g/kw | Governor Type | Intaking method | Bore*Stroke (mm) | Displacement (L)
+  H: KW | KVA | KW | KVA
+  R: VD65F | 50 | 58 | 72.5 | 65 | 81 | BF6L913D  ⇒  P 58/50  S 81/65  →  P 72.5/58  S 81/65
+  R: VD50F | 60 | 45 | 56 | 50 | 63 | BF4L913D  ⇒  P 60/45  S 63/50  →  P 56/45  S 63/50
+
+#142 ĐỔI · 7 ô ×4 | wintpower
+  H: Genset Model | 50HZ PF=0.8 400/230V 3 | Engine Model | Stamford Alternator | Leroy Somer Alternator | Wintpower Alternator
+  H: Prime Power | Standby Power
+  H: KW/KVA | KW/KVA
+  R: WT-FA16 | 1215 | 13/16 | 4DW81-23D  ⇒  R 16/13  →  S 16/13
+  R: WT-FA16 | 1215 | 13/16 | 4DW81-23D  ⇒  R 16/13  →  S 16/13
+
+#143 ĐỔI · 7 ô ×4 | wintpower
+  H: Genset Model | 50HZ PF=0.8 400/230V 3 | Engine specification | Genset Canopy data
+  H: Prime Power | Standby Power | Engine Model | Wintpower Alternator | Dimention ( MM ) | Dimention(MM)
+  H: KVA/KW | KVA/KW
+  R: WT-YC124 | 90/113 | / | YC6B155L-D21  ⇒  R 113/90  →  P 113/90
+  R: WT-YC124 | 90/113 | / | YC6B155L-D21  ⇒  R 113/90  →  P 113/90
+
+#144 ĐỔI · 7 ô ×4 | wintpower
+  H: Genset Model | 50HZ PF=0.8 400/230V 3 | Engine specification
+  H: Standby Power | Prime Power | Engine Model | Leroy SomerAlternator | Stamford Alternator | Wintpower Alternator
+  H: KW | KW
+  R: WT-LP7 | 6kw | 5kw | TR1A08TR1STD  ⇒  R 6/5  →  P ·/5  S ·/6
+  R: WT-LP7 | 6kw | 5kw | TR1A08TR1STD  ⇒  R 6/5  →  P ·/5  S ·/6
+
+#145 ĐỔI · 5 ô ×4 | wintpower
+  H: Genset Model | 60HZ PF=0.8 440/220V 3 | Engine specification
+  H: Prime Power | Standby Power | Engine Model | Alternator Model
+  H: KW/KVA | KW/KVA
+  R: WT-IS30 | 22/30 | 24/30 | JE493DB-01  ⇒  R 30/24  →  S 30/24
+  R: WT-IS30 | 22/30 | 24/30 | JE493DB-01  ⇒  R 30/24  →  S 30/24
+
+#146 ĐỔI · 8 ô ×4 | world-power-fuzhou
+  H: MODEL | P.R.P kW | P.R.P kVA | E.S.P kW | E.S.P kVA | ENGINE | CYL. | GOV | DOWNLOAD
+  R: WDPG-C400 | / | / | 360 | 450 | NTAA855-G7A  ⇒  R 450/360  →  S 450/360
+  R: WDPG-C600 | / | / | 520 | 650 | KTA19-G8  ⇒  R 650/520  →  S 650/520
+
+#147 ĐỔI · 7 ô ×3 | baifa-power
+  H: BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / 
+  H: Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+  H: BF-V770-T2 | 770 | 700 | VOLVO | TWD1645GE | EMS2 / ECU | S5L1D-G4 | STAGE II /TIER 2 | SWEDEN
+  R: BF-BD45-T3 | 45 | 37.5 | 4M08G10D3/5  ⇒  R 45/37.5  →  P 37.5/·  S 45/·
+  R: BF-BD150-T3 | 150 | 125 | 4M12G2D3/5  ⇒  R 150/125  →  P 125/·  S 150/·
+
+#148 ĐỔI · 11 ô ×3 | ettes-power
+  H: Model | Prime Power | Standby Power | Engine Model | Max Power (kW/Hp) | Cyls.& Type | Dspl. (liters) | Overall Dimmension (mm | Weight (kg) | PDF D/L
+  H: kW | kVa | kW | kVa
+  R: ★ ES-575 | 460 | 575 | / | / | S6R-PTA  ⇒  R 575/460  →  P 575/460
+  R: ★ ES-1150 | 920 | 1150 | / | / | S12R-PTA  ⇒  R 1150/920  →  P 1150/920
+
+#149 MẤT · 12 ô ×3 | huipu-power
+  H: Type | Set power | Diesel engine model | Cylinder number(mm) | Bore*stroke | Swept volume(L) | Fuel consumption rate( | Set coolant | Engine oil ststem capa | DimensionL*W*H(mm*mm*m | Weight(kg)
+  H: Prime | Standby
+  R: HP-C520 | 450 | 520 | KTA19-G8  ⇒  R 520/450  →  ∅
+  R: HP-C1300 | 1100 | 1300 | KTA50-G8  ⇒  R 1300/1100  →  ∅
+
+#150 ĐỔI · 8 ô ×3 | legapower
+  H: Genset Specification 2 | Engine Soecification | Datasheet
+  H: Genset Model | KVA | Cons 100%（L/h） | Engine Model | Cyl | Gov | Displacement(L)
+  H: ESP | PRP
+  R: LG1450C | 1450 | 1200 | 274 | QSK38-G5  ⇒  R 1450/1200  →  P 1200/·  S 1450/·
+  R: C1450 | 1450 | 1200 | 262 | QSK38-G5  ⇒  R 1450/1200  →  P 1200/·  S 1450/·
+
+#151 ĐỔI · 9 ô ×3 | mamo-power
+  H: GENSET MODEL | PRIME POWER (KW) | PRIME POWER (KVA) | STANDBY POWER (KW) | STANDBY POWER (KVA) | ENGINE MODEL | ENGINE RATED POWER (KW | OPEN | SOUNDPROOF | TRAILER
+  R: TYC1100 | 800 | 1000 | 160 | 1100 | YC6C1320-D31  ⇒  R 1000/800  →  P 1000/800
+  R: TYC1250 | 900 | 1125 | 200 | 1250 | YC6C1520-D31  ⇒  R 1125/900  →  P 1125/900
+
+#152 ĐỔI · 12 ô ×3 | mingbang-mbkl
+  H: No. | GENSET Model | Prime Power | Standby Power | Engine Model | Cylinder | Displacement | Bore*Stroke | Fuel Consumption | Dimension
+  H: KVA | KW | KVA | KW | PERKINS | (nos) | (L) | (mm) | (g/kw.h) | mm
+  R: 32 | MB-P520 | 650 | 520 | 700 | 640 | 2806A-E18TAG2  ⇒  R 650/520  →  P 650/520  S 700/640
+  R: 33 | MB-P584 | 730 | 584 | 800 | 720 | 4006-23TAG2A  ⇒  R 730/584  →  P 730/584  S 800/720
+
+#153 ĐỔI · 11 ô ×3 | taihai-taizhou
+  H: 机组型号 | 输出功率 (kw) | 电流 (A) | 柴油机型号 | 缸数 | 缸径 * 行程（ mm ） | 润滑油容量（ L ） | 燃油消耗率 g/kw.h | 机组尺寸 mm L×W×H | 机组重量 kg
+  H: 常用 | 备用
+  R: T H-900GF | 900 | 1036 | 1620 | QTA2160G5  ⇒  R 1036/900  →  P ·/900  S ·/1036
+  R: T H-2000GF | 2000 | 2420 | 3600 | QTA4320G7  ⇒  R 2420/2000  →  P ·/2000  S ·/2420
+
+#154 ĐỔI · 17 ô ×3 | victory-generator
+  H: Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine model | Fuel consumption (g/kw | No. of cylinder | Bore (mm) | Stroke (mm) | Displacement (L) | Lub-oil pan capacity ( | Coolant capacity (L) | Volt. For start(DC) | Measurement L X W X H  | Weight (kg)
+  H: KW | KVA | KW | KVA
+  R: V64F | 50 | 58 | 73 | 64 | 80 | WP4D100E200  ⇒  P 58/50  S 80/64  →  P 73/58  S 80/64
+  R: V55F | 60 | 50 | 63 | 55 | 69 | WP4D66E201  ⇒  P 60/50  S 69/55  →  P 63/50  S 69/55
+
+#155 ĐỔI · 12 ô ×3 | victory-generator
+  H: Genset model | Frequency (HZ) | Prime Power | Standby Power | Engine model | Fuel consumption under | Cylinder | Volt. For start (DC) | Measurement L X W X H  | Weight (kg)
+  H: KW | KVA | KW | KVA
+  R: V65DG | 50 | 58 | 73 | 65 | 81 | BF4M2012C  ⇒  P 58/50  S 81/65  →  P 73/58  S 81/65
+  R: V77DG | 60 | 70 | 88 | 77 | 96 | BF4M2012C  ⇒  P 70/60  S 96/77  →  P 88/70  S 96/77
+
+#156 ĐỔI · 8 ô ×3 | yanan-power
+  H: Genset Model | Standby power | Prime power | Engine Model | NO.of Cylinder | Detail Data
+  R: YNS3080B | 3080kVA | 2464k W | 2464kVA | 2240k W | 16M55G0D3/5  ⇒  R 3080/2464  →  P 2464/2240  S 3080/2464
+  R: YNS3080B | 3080kVA | 2464kW | 2464kVA | 2240kW | 16M55G0D3/5  ⇒  R 3080/2464  →  P 2464/2240  S 3080/2464
+
+#157 ĐỔI · 9 ô ×2 | acepow-fuan
+  H: 50HZ Three Phase Gense | Engine Model
+  H: Genset power(KW) | Genset power(KVA) | Model | Engine Power(KW) | Governing | Bore / stroke
+  H: Rated | Standby | Rated | Standby | Rated | Standby | MM
+  R: 30 | 33 | 38 | 41 | YT3A2Z-D  ⇒  S 38/33  →  S 41/33  R 38/30
+  R: 30 | 33 | 38 | 41 | YT3B2-D  ⇒  S 38/33  →  S 41/33  R 38/30
+
+#158 THÊM · 9 ô ×2 | acepow-fuan
+  H: Model | 50Hz,1500rpm |  | 3Phases/50Hz/400V/PF=0 | Engine
+  H: Generating Sets | Acepow | Prime | Standby
+  H: Prime Power (kW) | Prime Power (kVA) | Standby Power (kW) | Standby Power (KVA) | Alternator | KW | KW
+  R: API-12 | 12 | 13 |  |  | BC164D  ⇒  ∅  →  P 13/12
+  R: API-12 | 12 | 13 |  |  | BC164D  ⇒  ∅  →  P 13/12
+
+#159 ĐỔI · 9 ô ×2 | baifa-power
+  H: BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / 
+  H: Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+  R: BF-V400-T3 | 415 | 360 | VOLVO | TAD1354GE  ⇒  R 415/360  →  P 360/·  S 415/·
+  R: BF-V400-T3 | 415 | 360 | VOLVO | TAD1354GE  ⇒  R 415/360  →  P 360/·  S 415/·
+
+#160 THÊM · 9 ô ×2 | baifa-power
+  H: BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / 
+  H: Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+  H: BF-C28Q-3 | 28 | 25 | CUMMINS (CHINA) | QSB3.9-G31 | ECM | S0L2-M1 | Stage IIIA / CHINA STA | CHINA
+  R: BF-M1700 | 1700 | 1550 | MTU JV CHINA | 12V4000G23F  ⇒  ∅  →  P 1550/·  S 1700/·
+  R: BF-M1700 | 1700 | 1550 | MTU JV CHINA | 12V4000G23F  ⇒  ∅  →  P 1550/·  S 1700/·
+
+#161 THÊM · 12 ô ×2 | baifa-power
+  H: BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / 
+  H: Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+  H: BF-C28Q-3 | 28 | 25 | CUMMINS (CHINA) | QSB3.9-G31 | ECM | S0L2-M1 | Stage IIIA / CHINA STA | CHINA
+  R: BF-P44-V | 44 | 40 | PERKINS | 404J-E22TAG  ⇒  ∅  →  P 40/·  S 44/·
+  R: BF-P44-V | 44 | 40 | PERKINS | 404J-E22TAG  ⇒  ∅  →  P 40/·  S 44/·
+
+#162 THÊM · 7 ô ×2 | baifa-power
+  H:  | POWERED BY VOLVO | 1800RPM TIER 3
+  H: BAIFA MODEL | STANBY kVA | PRIME kVA | BRAND | ENGINE STAMFORD | GOV. | ALTERNATOR STAMFORD
+  H: MODEL | kVA | kVA |  |  | 
+  R: BF-V220T3-60 | 285 | 259 | VOLVO PENTA | TAD851GE  ⇒  ∅  →  P 259/·  S 285/·
+  R: BF-V220T3-60 | 285 | 259 | VOLVO PENTA | TAD851GE  ⇒  ∅  →  P 259/·  S 285/·
+
+#163 MẤT · 26 ô ×2 | bruno-generators
+  H:  | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 HZ |  | 60 HZ |  |  |  |  |  |  |  |  | TANK l | DIMENSIONS cm |  |  | MAXIMUM SIZE cm |  |  | WEIGHT kg | STANDARD PANEL
+  H: MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 Hz |  | 60 Hz |  | Engine | cm3 | kWm | kWm | fuel consumption (l/h) | fuel consumption (l/h) | Aspiration | TANK (l) | DIMENSIONS (cm) |  |  | MAXIMUM SIZE (cm) |  |  | WEIGHT | STANDARD PANEL
+  H:  |  |  |  |  |  | kVA LTP | kVA PRP | kVA LTP | kVA PRP |  |  | 1500 rpm | 1800 rpm | 1500 rpm* | 1800 rpm* |  |  | L | W | H | L | W | H | 
+  R: MB 9504 KL | 4 | 250 W | 1000 W | DC | 48 V | - | - | - | - | KOHLER LDW 702 | 686 | - | 5,9 | - | 0,35 | N | 110 | 235 | 148 | 225 | 235 | 202 | 883 | 1060 | Q401 AUS-80  ⇒  P 235/202  S 1060/883  →  ∅
+  R: MB 9504 KL | 4 | 300 W | 1200 W | DC | 48 V | - | - | - | - | KOHLER LDW 702 | 686 | - | 5,9 | - | 0,46 | N | 110 | 235 | 148 | 225 | 235 | 202 | 883 | 1065 | Q401 AUS-80  ⇒  P 235/202  S 1065/883  →  ∅
+
+#164 ĐỔI · 8 ô ×2 | comappower
+  H:  | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data
+  R: COM85C | 85kVA | 68kW | 0kVA | 60kW | 4BTA3.9-G2(G52E1  ⇒  R 85/68  →  P ·/60  S 85/68
+  R: COM500V | 500kVA | 463kW | 455kVA | 364kW | TAD1344GE-B  ⇒  R 455/364  →  P 455/364  S 500/463
+
+#165 MẤT · 12 ô ×2 | fukangsi-yangzhou
+  H: 机组型号 | 功率(KW) 机组 / 柴油机 (1/h) | 输出电流(A) | 发动机型号 | 缸数 (L) | 缸径 (mm) | 行程 (mm) | 排气量 (L) | 燃油消耗率(lir/hr) | 机组重量(KG) | 机组尺寸 长*宽*高(mm)
+  R: FKS-350 | 350 | 408 | 630 | PTAA780G1  ⇒  R 408/350  →  ∅
+  R: FKS-2500 | 2500 | 2930 | 4500 | QTA5400G5  ⇒  R 2930/2500  →  ∅
+
+#166 ĐỔI · 6 ô ×2 | gb-power
+  H:  | Frequency 60HZ | DEUTZ Diesel Engine | Dimension ( L * W *H ) | Detail Data (Click for
+  H: Model | Standby (KVA/KW) | Prime (KVA/KW) | Open Type | Soundproof
+  R: GB-D62.5 | 69/55 | 62.5/60 | BF4M2012  ⇒  R 69/55  →  S 69/55
+  R: GB-D100 | 110/88 | 100/88 | BF4M1013E  ⇒  R 110/88  →  S 110/88
+
+#167 ĐỔI · 6 ô ×2 | gb-power
+  H:  | Frequency 50HZ | GB POWER Diesel Engine | Dimension ( L * W *H ) | Detail Data (Click for
+  H: Model | Standby (KVA/KW) | Prime (KVA/KW) | Open Type | Soundproof
+  R: GB-700 | 770/616 | 700/500 | GB12V138TAD  ⇒  R 770/616  →  S 770/616
+  R: GB-750 | 825/660 | 750/560 | GB12V138TAD  ⇒  P 750/560  S 825/660  →  S 825/660
+
+#168 ĐỔI · 13 ô ×2 | gordon-power
+  H: Genset Perfomance | Engine Performance | Dimension(L×W×H)
+  H: Genset Model | Prime Power | Standby Power | Engine Model | Speed | Prime Power | Fuel Cons. (100% Load) | Cylinder- Bore×Stroke | Displace -ment | Open Type | Silent Type
+  H: kW | kVA | kW | kVA | rpm | kW | L/h | Qty.-mm | L | cm | cm
+  R: GD-DS188 | 135 | 168 | 150 | 1187.5 | P086TI-1 | 1500 | 149 | 26.7 | L6-111×139  ⇒  R 168/135  →  P 168/135
+  R: GD-DS450 | 320 | 400 | 360 | 560 | P158LE | 1500 | 363 | 65.1 | V8-128×142  ⇒  R 400/320  →  P 400/320
+
+#169 ĐỔI · 20 ô ×2 | honny-dongguan
+  H:  | 机组技术参数 | 发动机技术参数 | 机组尺寸与重量
+  H: 机组 型号 | 备用 容量 (kVA) | 常用 容量 (kVA) | 备用 功率 (kW) | 常用 功率 (kW) | 燃油 消耗 (L) | 额定 电流 (A) | 发动机 型号 | 备用 功率 (kW) | 常用 功率 (kW) | 缸数 | 缸径 | 行程 | 排量 (A) | 压缩比 | 发电机 型号 | 机组尺寸(mm) | 重量
+  H: 长 | 宽 | 高 | (kg)
+  R: HGM3000EHV10.5 | 3300 | 3000 | 2400 | 2200 | 555 | 151.2 | QTA16V-EG2660D  ⇒  R 3000/2400  →  P 3000/2200  S 3300/2400
+  R: HGM3000EHV10.5 | 3300 | 3000 | 2400 | 2200 | 555 | 151.2 | QTA16V-EG2660D  ⇒  R 3000/2400  →  P 3000/2200  S 3300/2400
+
+#170 MẤT · 12 ô ×2 | huipu-power
+  H: Type | Set power | Diesel engine model | Cylinder number(mm) | Bore*stroke | Swept volume(L) | FuelConsumption rate(L | Set coolant | Engine oil system capa | DimensionL*W*H(mm*mm*m | Weight(kg)
+  H: Master | Standby
+  R: HP-Z40 | 30 | 40 | HP4100ZD  ⇒  S 40/30  →  ∅
+  R: HP-Z660 | 500 | 660 | HPV720D  ⇒  S 660/500  →  ∅
+
+#171 ĐỔI · 13 ô ×2 | kachai-hangzhou
+  H: Diesel Generator Model | Generator Specificatio | Engine Specifcation | Alternator Specifcatio | Open Type | Silent Type
+  H: Power(KVA) ( KVA) | Power(KW) ( KW) | Engine |  | KACHAI | Stamford | Dimension | Weight | Dimension | Weight
+  H: Prime | Standby | Prime | Standby | Model | Model | Model | L×W×H(mm) * * ( mm) | (kg) | L×W×H(mm) * * ( mm) | (kg)
+  R: SWF24M | 30 | 35 | 24 | 28 | ZH4100D  ⇒  P 28/24  S 35/30  →  P 30/24  S 35/28
+  R: SWF150M | 187.5 | 200 | 150 | 160 | R6113ZLD  ⇒  R 200/150  →  P 187.5/150  S 200/160
+
+#172 THÊM · 10 ô ×2 | kangwo-guangdong
+  H: Genset Specification 发 | Engine Specification 柴 | Dimension L*W*H (mm) 外 | Weight (kgs) 重量
+  H: Model 型号 | Rated Outout 额定功率 | Fre/Volt HZ/V 频率 /电压 | Model 型号 | POwer/Speed 功率 /转速 KW/ | Cyl. 缸数 | Dis(L) 排量
+  H: KW | KVA
+  R: CCFJ600J | 600 | 625 | 60/440 | KTA38-DM  ⇒  ∅  →  R 625/600
+  R: CCFJ700J | 600 | 625 | 60/440 | KTA38-DM  ⇒  ∅  →  R 625/600
+
+#173 ĐỔI · 12 ô ×2 | long-gen
+  H: Model | Prime Power | Standby Power | Engine | Alternator | Dimension& Weight
+  H:  | KW | kVA | KW | kVA | Longen | Longen | L*M*H(mm) (open) | KG (open) | L*M*H(mm) (silent) | KG (silent) | download
+  R: LGXL-14 | 10 | 14 | 12 | 15 | NC485BD  ⇒  R 14/12  →  P 14/10  S 15/12
+  R: LGXL-14 | 10 | 14 | 12 | 15 | NC485BD  ⇒  R 14/12  →  P 14/10  S 15/12
+
+#174 ĐỔI · 13 ô ×2 | mecca-power
+  H: Model | LTP | PRP | Engine | Fuel Cons. | Cylinder | Displacement | Gov. | Dimention | Weight
+  H: KVA / KW | KVA/KW | Model | Origin | L/H(100%) | L | L*W*H (MM) | KGS
+  R: MC10D | 10 | 7.4 | 9 | 6.8 | SP103NE  ⇒  R 9/7.4  →  P 9/6.8  S 10/7.4
+  R: MC10D | 10 | 7.4 | 9 | 6.8 | SP103NH  ⇒  R 9/7.4  →  P 9/6.8  S 10/7.4
+
+#175 ĐỔI · 10 ô ×2 | senci-jiangsu
+  H: 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/ | 缸径×行程（mm） Bore-stroke  | 缸数 Number of vat | 机油容量（L）Machine oil cap | 燃油消耗 Fuel consumption  | 排放 Discharge | 开架机组 Open Type
+  H: 外形尺寸Overall Size (L×W× | 机组重量 Welght (kg)
+  R: SC58SC | 50/58 | SC4H95D2  ⇒  R 58/50  →  P ·/50  S ·/58
+  R: SC75SC | 65/75 | SC4H115D2  ⇒  R 75/65  →  P ·/65  S ·/75
+
+#176 ĐỔI · 10 ô ×2 | senci
+  H: 上柴系列 SHANGCHAI SERIES 
+  H: 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/ | 缸径×行程（mm） Bore-stroke  | 缸数 Number of vat | 机油容量（L）Machine oil cap | 燃油消耗 Fuel consumption  | 排放 Discharge | 开架机组 Open Type
+  H: 外形尺寸Overall Size (L×W× | 机组重量 Welght (kg)
+  R: SC58SC | 50/58 | SC4H95D2  ⇒  R 58/50  →  P ·/50  S ·/58
+  R: SC75SC | 65/75 | SC4H115D2  ⇒  R 75/65  →  P ·/65  S ·/75
+
+#177 ĐỔI · 6 ô ×2 | simpson-power
+  H: 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × | 机 组 数 据
+  H: SP1800D-L | 1800/2250 | SME | S16R-PTAA2-C | 5720×2400×3436 | SP1800D-L.pdf
+  H: SP1800D-M | 1800/2250 | MITSUBISHI | S16R-PTAA2 | 5720×2480×3440 | SP1800D-M.pdf
+  R: SP1800D-U | 1800/2250 | MTU | 16V4000G23  ⇒  R 2250/1800  →  S 2250/1800
+  R: SP1800D-P | 1800/2250 | Perkins | 4016TAG2A  ⇒  R 2250/1800  →  S 2250/1800
+
+#178 ĐỔI · 6 ô ×2 | simpson-power
+  H: 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × | 机 组 数 据
+  H: SP1800D-L | 1800/2250 | 菱重 | S16R-PTAA2-C | 5720×2400×3436 | SP1800D-L.pdf
+  H: SP1800D-M | 1800/2250 | 三菱 MITSUBISHI | S16R-PTAA2 | 5720×2480×3440 | SP1800D-M.pdf
+  R: SP1800D-U | 1800/2250 | 奔驰 MTU | 16V4000G23  ⇒  R 2250/1800  →  S 2250/1800
+  R: SP1800D-P | 1800/2250 | 珀金斯 Perkins | 4016TAG2A  ⇒  R 2250/1800  →  S 2250/1800
+
+#179 ĐỔI · 9 ô ×2 | stone-power
+  H: Genset Model | Genset Power(kW) | Genset Capacity(kVA) | Engine Model | Alternator
+  H: Standby | Prime | Standby | Prime | (Cummins) | Stamford | Marathon | Wattek
+  R: SC60E5 | 55 | 48 | 69 | 60 | 4BTA3.9-G2  ⇒  R 69/60  →  P 60/48  S 69/55
+  R: SC60E5 | 55 | 48 | 69 | 60 | 4BTA3.9-G2  ⇒  R 69/60  →  P 60/48  S 69/55
+
+#180 ĐỔI · 15 ô ×2 | victory-generator
+  H: Genset model | Frequency (Hz) | Prime Power | Standby Power | Engine | Cylinder No. | Air intake way | Combustion chamber | Displacement (L) | Bore*Stroke (mm) | Stable Timing Rate（%） | Fuel consumption (g/kW | SIZE for silent type (
+  H: KW | KVA | KW | KVA
+  R: V55XC | 60 | 50 | 62.5 | 55 | 68.75 | 4DX23-82D  ⇒  P 60/50  S 68.75/55  →  P 62.5/50  S 68.75/55
+  R: V58YD | 60 | 52 | 65 | 58 | 72.5 | YD4EZLD  ⇒  P 60/52  S 72.5/58  →  P 65/52  S 72.5/58
+
+#181 ĐỔI · 16 ô ×2 | victory-generator
+  H: Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | NO. OF CYCLINDER | DISPLACEMENT | BORE | STROKE | ASPIRATION | COMBUSTION | COOLING SYSTEM | Dimensions (mm) | Weight (kg)
+  H: KW | KVA | KW | KVA
+  R: V50YM | 60 | 45 | 56 | 50 | 62.5 | 4TNV106  ⇒  P 60/45  S 62.5/50  →  P 56/45  S 62.5/50
+  R: V58YM | 60 | 52 | 65 | 58 | 72 | 4TNV106T  ⇒  P 60/52  S 72/58  →  P 65/52  S 72/58
+
+#182 ĐỔI · 11 ô ×2 | victory-generator
+  H: Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Full-Load Fuel Consump | CYCLINDER | Generator Set
+  H: KW | KVA | KW | KVA | MEASUREMENT/L*W*H (mm) | WEIGHT (kg)
+  R: V72DE | 50 | 66 | 82.5 | 72 | 90 | D1146  ⇒  P 66/50  S 90/72  →  P 82.5/66  S 90/72
+  R: V88DE | 60 | 80 | 100 | 88 | 110 | D1146  ⇒  P 80/60  S 110/88  →  P 100/80  S 110/88
+
+#183 ĐỔI · 15 ô ×2 | victory-generator
+  H: Model | Frequency | Prime Power | Standby Power | Engine Model | Full-Load Diesel Consu | Displacement (L) | Cylinders & arrangemen | Governor Type | Open Type | Silent Type
+  H: HZ | kW | kVA | kW | kVA | Dimension L*W*H (mm) | Weight (KG) | Dimension L*W*H (mm) | Weight (KG)
+  R: V72C | 50 | 64 | 80 | 72 | 90 | 4BTA3.9-G11  ⇒  P 64/50  S 90/72  →  P 80/64  S 90/72
+  R: V92C | 60 | 80 | 100 | 92 | 115 | 6BT5.9-G2  ⇒  P 80/60  S 115/92  →  P 100/80  S 115/92
+
+#184 ĐỔI · 15 ô ×2 | victory-generator
+  H: Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Fuel Consumption @Prim | CYCLINDER | BORE (mm) | STROKE (mm) | LUB-OIL CAPACITY (L) | COOLANT CAPACITY (L) | Open Generator Set
+  H: KW | KVA | KW | KVA | DIMENSION (mm) | WEIGHT (kg)
+  R: V72P | 50 | 64 | 80 | 72 | 90 | 1104A-44TG2  ⇒  P 64/50  S 90/72  →  P 80/64  S 90/72
+  R: V80P | 60 | 72 | 90 | 80 | 100 | 1104A/C-44TG2/ 1  ⇒  P 72/60  S 100/80  →  P 90/72  S 100/80
+
+#185 ĐỔI · 13 ô ×2 | victory-generator
+  H: Genset model | Frequency | Prime Power | Standby Power | Engine model | Fuel comsuption | Lube comsuption | Open type | Silent Type
+  H: KW | KVA | KW | KVA | g/kw.h | g/kw.h | Dimension (mm) | Weight (kg) | Dimension (mm) | Weight (kg)
+  R: V64T | 50 | 58 | 72.5 | 64 | 80 | R4105AZLD  ⇒  P 58/50  S 80/64  →  P 72.5/58  S 80/64
+  R: V98T | 60 | 80 | 100 | 88 | 110 | R6105ZD  ⇒  P 80/60  S 110/88  →  P 100/80  S 110/88
+
+#186 ĐỔI · 12 ô ×2 | wintpower
+  H: Genset Model | 60HZ PF=0.8 440/220V 3 | Engine specification | Genset canopy data | Genset open data
+  H: Standby Power | Prime Power | Cons 100% ( L/H ) | Engine Model | Cyl. | Gov. | Displacement ( L ) | Dimention ( MM ) | weight ( KG ) | Dimention ( MM ) | Weight ( KG )
+  H: KVA/KW | KVA/KW
+  R: WT-C125 | 125/100 | 110/68 | 28.5 | 6BT5.9G2  ⇒  R 125/100  →  S 125/100
+  R: WT-C185 | 185/186 | 168/135 | 44 | 6CTA8.3G2  ⇒  R 168/135  →  P 168/135
+
+#187 THÊM · 7 ô ×2 | wintpower
+  H: Gensets model | Power output(KVA) | Power output (KW) | Mitsubishi Engine Mode | Leroy somer Alternator
+  H: PRP | ESP | PRP | ESP
+  R: WT-M1375 | 1250 | 1375 | 1000 | 1100 | S12R-PTA-C  ⇒  ∅  →  P 1250/1000  S 1375/1100
+  R: WT-M1375 | 1250 | 1375 | 1000 | 1100 | S12R-PTA-C  ⇒  ∅  →  P 1250/1000  S 1375/1100
+
+#188 ĐỔI · 7 ô ×2 | wintpower
+  H: Genset Model | 60HZ PF=0.8 440/220V 3 | Engine Model | Stamford Alternator | Leroy Somer Alternator | Wintpower Alternator
+  H: Prime Power | Standby Power
+  H: KW/KVA | KW/KVA
+  R: WT-FA165 | 130/150 | 132/165 | CA6DF2-21D  ⇒  P 150/130  S 165/132  →  S 165/132
+  R: WT-FA165 | 130/150 | 132/165 | CA6DF2-21D  ⇒  P 150/130  S 165/132  →  S 165/132
+
+#189 THÊM · 7 ô ×2 | wintpower
+  H: GENSET STANDARD SPECIF |  |  |  |  |  | 
+  H: Gensets model | Power output(KVA) | Power output (KW) | P erkins Engine Model | Leroy Somer Alternator
+  H: PRP | ESP | PRP | ESP
+  R: WT-P220 | 200 | 220 | 160 | 176 | 1106A-70TAG3  ⇒  ∅  →  P 200/160  S 220/176
+  R: WT-P220 | 200 | 220 | 160 | 176 | 1106A-70TAG3  ⇒  ∅  →  P 200/160  S 220/176
+
+#190 ĐỔI · 5 ô ×2 | wintpower
+  H: Genset Model | 50HZ PF=0.8 400/230V 3 | Engine Model | Alternator Model
+  H: Prime Power | Standby Power
+  H: KW/KVA | KW/KVA
+  R: WT-IS30 | 22/30 | 24/30 | JE493ZDB-04  ⇒  R 30/24  →  S 30/24
+  R: WT-IS30 | 22/30 | 24/30 | JE493ZDB-04  ⇒  R 30/24  →  S 30/24
+
+#191 THÊM · 7 ô ×2 | wintpower
+  H: GENSET STANDARD SPECIF |  |  |  |  |  | 
+  H: Gensets model | Power output(KVA) | Power output (KW) | Cummins Engine Model | WINTPOWER Alternator
+  H: Prime Power | Standby Power | Prime Power | Standby Power
+  R: WT-C75 | 68 | 75 | 54 | 60 | 4BTA3.9G11  ⇒  ∅  →  P 68/54  S 75/60
+  R: WT-C75 | 68 | 75 | 54 | 60 | 4BTA3.9G11  ⇒  ∅  →  P 68/54  S 75/60
+
+#192 ĐỔI · 9 ô ×2 | yihua-fujian
+  H: Model | Rated power | Standby power | Engine | Alternator
+  H: kw | kva | kw | kva | Brand | Model | Brand | Model
+  R: YH-1000C | 800 | 1000 | 880 | 1100 | Cummins | KTA38-G5  ⇒  P 1000/800  S 1100/880  →  S 1100/880  R 1000/800
+  R: YH-1000C | 800 | 1000 | 880 | 1100 | Cummins | KTA38-G5  ⇒  P 1000/800  S 1100/880  →  S 1100/880  R 1000/800
+
+#193 THÊM · 14 ô ×2 | yingtai-group
+  H: 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式
+  R: 1120GF | 1120 | 1230 | 128 | 11830 | 6.40×2.04×2.64 | QSK50-G3  ⇒  ∅  →  R ·/1120
+  R: 1120GF | 1120 | 1230 | 76.8 | 12230 | 6.60×2.04×2.64 | QSK50-G3  ⇒  ∅  →  R ·/1120
+
+#194 ĐỔI · 10 ô ×2 | yingtai-jiangsu
+  H: 机组型号 Genset Model | 主用功率（主用） | 备用功率（备用） | 电流（主用）Power(A) | 电流（备用）Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimension | 品牌 Brand | 发 动 机型号 Engine Type
+  H: KW | KVA | KW | KVA
+  R: 330GF | 330 | 375 | 380 | 475 | 594 | 675 | 2850 | 3.3*1.15*2.15 | QSZ13-G7  ⇒  R 475/380  →  P 375/330  S 475/380
+  R: 24GF | 24 | 30 | 36 | 32.5 | 43.2 | 46.8 | 500 | 1.5*0.6*1.08 | 4D24TG2/A  ⇒  P 30/24  S 43.2/32.5  →  R 30/24
+
+#195 THÊM · 15 ô ×2 | yingtai-jiangsu
+  H: 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式
+  H: 主用 | 备用 | V | A | （kg) | L×W×H(m) | 主用 | 备用 | （L) | (g/kW.h)
+  R: 1000GF1 |  | 1000 | 6300 | / | 9620 | 5.60×1.85×2.60 | KTA38-G9  ⇒  ∅  →  S ·/1000
+  R: 1000GF1 |  | 1000 | 10500 |  | 9840 | 5.62×1.85×2.60 | KTA38-G9  ⇒  ∅  →  S ·/1000
+
+#196 ĐỔI · 13 ô ×2 | yingtai-jiangsu
+  H: 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式
+  H: 主用 | 备用 | V | A | （kg) | L×W×H(m) | 主用 | 备用 | （L) | (g/kW.h)
+  R: 1100GF | 1100 | 1300 | 125.7 | 11350 | 6.40×2.04×2.70 | KTA50-G8  ⇒  R 1300/1100  →  P ·/1100  S ·/1300
+  R: 1100GF | 1100 | 1300 | 75.4 | 11750 | 6.60×2.04×2.70 | KTA50-G8  ⇒  R 1300/1100  →  P ·/1100  S ·/1300
+
+#197 THÊM · 14 ô ×2 | yingtai-jiangsu
+  H: 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式
+  H: 主用 | 备用 | V | A | （kg) | L×W×H(m) | 主用 | 备用 | （L) | (g/kW.h)
+  R: 1120GF | 1120 | 1230 | 128 | 11830 | 6.40×2.04×2.64 | QSK50-G3  ⇒  ∅  →  P ·/1120  S ·/1230
+  R: 1120GF | 1120 | 1230 | 76.8 | 12230 | 6.60×2.04×2.64 | QSK50-G3  ⇒  ∅  →  P ·/1120  S ·/1230
+
+#198 ĐỔI · 15 ô ×2 | zhengdian-zhengzhou
+  H:  | 机组型号 | 机组功率（ kw ） | 电流A | 柴油机型号 | 柴油机功 率 KW | 缸 数 | 缸径 mm | 行程 mm | 排气量 L | 压缩比 | 机油 容量 L | 燃油消耗率 g/KW.h | 机组重量 kg | 机组外型尺寸 mm×mm×mm
+  H: 备用 | 额定
+  R: 420GF1 | 462 | 420 | 911/758 | KTAA19 -G5  ⇒  S 911/758  →  S ·/462  R ·/420
+  R: 400GF1 | 385 | 350 | 772/650 | TBD234V12  ⇒  S 772/650  →  S ·/385  R ·/350
+
+#199 ĐỔI · 7 ô ×1 | baifa-power
+  H: BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / 
+  H: Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+  H: BF-C28Q-3 | 28 | 25 | CUMMINS (CHINA) | QSB3.9-G31 | ECM | S0L2-M1 | Stage IIIA / CHINA STA | CHINA
+  R: BF-BD3750-3 | 3750 | 3250 | 16M55G4D3/5  ⇒  R 3750/3250  →  P 3250/·  S 3750/·
+
+#200 ĐỔI · 7 ô ×1 | cgm-italia
+  H: M/E Engine governor | EU Emission standard | consumo ¾ caricoconsum
+  H: OPEN BASE FRAME | SOUNDPROOF CANOPY | dB(A) at 7 mt
+  H: quadro manualemanual p | quadro automaticoAMF p
+  R: STAGE V | v82F | 82 | 65.6 | 82 | 65.6 | F36ETVP03.A85  ⇒  P 82/65.6  S 82/65.6  →  R 82/65.6
+
+#201 ĐỔI · 8 ô ×1 | eastpower-genset
+  H: Model | Prime Power (KVA/KW) | Standby Power (KVA/KW) | Engine | Deminsions (MM) | Weight (KG)
+  R: VPD2050M5 | 2050 | 1640 | 2250 | 2000 | 16V4000G23  ⇒  R 2050/1640  →  P 2050/1640
+
+#202 ĐỔI · 10 ô ×1 | ettes-power
+  H: Model | Elec. Power (kWe) | Heat Output (kWt) | Engine Model | Engine Power (kW) | Cyls.& Type | Dspl. (L) | Elec Eff. | Heat Eff. | Total Eff. | Tech Specs
+  R: ※TCG-1000N5 | 1000 | 1177 | TCG2020V12K CG17  ⇒  R 1177/1000  →  R ·/1000
+
+#203 THÊM · 11 ô ×1 | ettes-power
+  H: Model | Prime Power | Standby Power | Engine Model | Max Power (kW/Hp) | Cyls.& Type | Dspl. (liters) | Overall Dimmension (mm | Weight (kg) | PDF Download
+  H: kW | kVa | kW | kVa
+  R: EC-22 | 18 | 20 | 20 | 22 | 4B3.9-G11  ⇒  ∅  →  P 20/18  S 22/20
+
+#204 ĐỔI · 6 ô ×1 | gb-power
+  H:  | Frequency 50HZ | DEUTZ Diesel Engine | Dimension ( L * W *H ) | Detail Data (Click for
+  H: Model | Standby (KVA/KW) | Prime (KVA/KW) | Open Type | Soundproof
+  R: GB-D100 | 110/88 | 100/88 | BF4M1013EC  ⇒  R 110/88  →  S 110/88
+
+#205 ĐỔI · 6 ô ×1 | gb-power
+  H:  | Frequency 60HZ | PERKINS Diesel Engine | Dimension ( L * W *H ) | Detail Data (Click for
+  H: Model | Standby (KVA/KW) | Prime (KVA/KW) | Open Type | Soundproof
+  R: GB-P125 | 138/110 | 125/110 | 1106A-70TG1  ⇒  R 138/110  →  S 138/110
+
+#206 MẤT · 16 ô ×1 | green-power-generators
+  H:  | MODELLO MODEL | TIPO TYPE | POTENZA POWER | MOTORE ENGINE | SERBATOIO TANK | DIMENSIONI DIMENSIONS | PESO WEIGHT | DOWNLOAD
+  H: kVA - 50 Hz | MODELLO MODEL | REG | CIL. | CONSUMO AL 75% PRP CON | Lu | La | A | LEROY SOMER | LINZ | MECC ALTE | STAMFORD
+  H: PRP | ESP | N. | L/h | L | mm | mm | mm | kg
+  R: GP22 A/Y-SV | O | 19 | 22 | 4TNV88  ⇒  R 22/19  →  ∅
+
+#207 THÊM · 8 ô ×1 | huatai-yangzhou
+  H: 型号GENSET MODEL | 功率POWER(kw) | 柴油机型号ENGINEMODEL | 缸数CYL.NO | 缸径/行程BORE/STROKE(mm) | 排量DISP (L) | 机油容量CAPACITY OF ENGINE | 重量WEIGHT(kg) | 长×宽×高 L X B X H(mm)
+  R: 300GF | 300 | WP12D315E10  ⇒  ∅  →  R ·/300
+
+#208 MẤT · 12 ô ×1 | huipu-power
+  H: Type | Set power | Diesel engine model | Cylinder number(mm) | Bore*stroke | Swept volume(L) | Fuel consumption rate( | Set coolant | Engine oil ststem capa | DimensionL*W*H(mm*mm*m | Weight(kg)
+  H: Master | Standby
+  R: HP-W350 | 300 | 350 | WP13D385E200  ⇒  S 350/300  →  ∅
+
+#209 MẤT · 11 ô ×1 | jianghao-genset
+  H: Type | Output Power | Cuurrent (A) | Engine model | Cylinder | Bore*Stroke (mm) | FuelCon. (L) | Lube capacity（L） | Dimension(mm ) L*W*H | Weight(kg)
+  H: KW | KVA
+  R: JHRQ-200 | 200 | 312.5 | 360 | NT855  ⇒  R 360/312.5  →  ∅
+
+#210 ĐỔI · 8 ô ×1 | kaihua-genset
+  H: Genset Model | Standby Power | Prime power | Engine model | Dimension | Weight(KG)
+  H: KVA | KW | KVA | KW
+  R: KH-150GF | 2068 | 165 | 188 | 150 | TAD840GE-B  ⇒  R 188/150  →  P 188/150
+
+#211 ĐỔI · 6 ô ×1 | kaihua-genset
+  H: Genset Model | Standby Power | Prime Power | Engine Model | Dimension(mm) | Weight(kg)
+  H: KVA | KVA
+  R: KH-16GF | 23 | 20 | YCDV254FHZ-25  ⇒  R 23/20  →  P 20/·  S 23/·
+
+#212 MẤT · 12 ô ×1 | kangwo-guangdong
+  H: 机组型号 | 功率 | 电流 A | 发动机型号 | 缸数 | 缸径 *行程 （ mm) | 排气量（ L） | 燃油消耗率 g/kw.h | 机组尺寸 mm L*W*H | 机组 重量 kg | 详细参数
+  H: KW | KVA
+  R: GKW-250GF | 250 | 375 | 450 | SC13G420D2  ⇒  R 450/375  →  ∅
+
+#213 THÊM · 12 ô ×1 | kangwo-guangdong
+  H: 机组型号 | 功率 | 电流 A | 发动机型号 | 缸数 | 缸径 *行程 （ mm) | 排气量（ L） | 燃油消耗率 g/kw.h | 机组尺寸 mm L*W*H | 机组 重量 kg | 详细参数
+  H: KW | KVA
+  R: GKW-180GF | 160 | 225 | 324 | WP10D200E200  ⇒  ∅  →  R 225/160
+
+#214 ĐỔI · 10 ô ×1 | kangwo-guangdong
+  H: Genset Specification 发 | Engine Specification 柴 | Dimension L*W*H (mm) 外 | Weight (kgs) 重量
+  H: Model 型号 | Rated Outout 额定功率 | Fre/Volt HZ/V 频率 /电压 | Model 型号 | POwer/Speed 功率 /转速 KW/ | Cyl. 缸数 | Dis(L) 排量
+  H: KW | KVA
+  R: CCFJ800J | 800 | 1000 | 50/40 | KTA38-DM  ⇒  P 50/40  S 1000/800  →  R 1000/800
+
+#215 ĐỔI · 9 ô ×1 | legapower
+  H: Genset Specification 2 | Engine Soecification | Datasheet
+  H: Genset Model | KVA | Cons 100%（L/h） | Engine Model | Cyl | Gov | Displacement(L)
+  H: ESP | PRP
+  R: LG1450C | 1450 | 1200 | 274 | QSK38-G5  ⇒  R 1450/1200  →  P 1200/·  S 1450/·
+
+#216 ĐỔI · 8 ô ×1 | longkai-power
+  H: GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet
+  H: KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)
+  R: LG5DS | 8 | 6 | 7 | 5 | SP103NA  ⇒  R 8/6  →  P 7/5  S 8/6
+
+#217 MẤT · 6 ô ×1 | nenjo-generator
+  H: 型号 Model | 柴油机 Engine | 主用功率 Prime power | 备用功率 Standby power | 柴油机型号 Engine model | 排放标准 Emission level
+  R: HJ20C | 康明斯 Cummins | 20 | 23 | 4B3.9-G11  ⇒  R 23/20  →  ∅
+
+#218 ĐỔI · 8 ô ×1 | previa-ningde
+  H: GENSET MODEL | ESP | PRP | Engine type | Dimension
+  H: KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)
+  R: PR5DS | 8 | 6 | 7 | 5 | SP103NA  ⇒  R 8/6  →  P 7/5  S 8/6
+
+#219 ĐỔI · 14 ô ×1 | rise-power
+  H: Model | Prime Power | Standby Power | Engine | Cylinders | Displacement (L) | Fuel Consumption (L/h) | Lube Capacity(L) | Open Version | Soundproofed Version
+  H: kVA | kW | kVA | kW | L*W*H(mm) | Weight (kg) | L*W*H(mm) | Weight (kg)
+  R: RCM140 | 175 | 140 | 193 | 193 | 6CTA8.3-G2  ⇒  R 175/140  →  P 175/140  S 193/193
+
+#220 ĐỔI · 6 ô ×1 | rise-power
+  H: Model | Power (kVA/kW) | Engine Model | Dimension | Weight(kg)
+  H: Prime | Standby | Open Type | Open Type
+  R: RMM1312 | 1640/1312 | 18000/1440 | 12V4000G23  ⇒  R 1640/1312  →  P 1640/1312
+
+#221 ĐỔI · 11 ô ×1 | sanq-power
+  H: Genset Model | Standby Power | Prime Power | Electric current | Diesel Model | Engine Model | Cyli-nders | Exhaust | Fuel Consumption
+  H: Genset Weight | Genset overrall L×W×H
+  H: KW/KVA | KW/KVA | A | L | g/kw.h | kg | mm
+  R: SQWD200 | 160/200 | 150/165 | 270 | WD129TD16  ⇒  R 200/160  →  S 200/160
+
+#222 ĐỔI · 11 ô ×1 | sanq-power
+  H: 机组型号 | 备用功率 | 主用功率 | 电流 | 发动机型号 | 发电机型号 | 气缸形式 | 排量 | 耗油率 | 机组重量 | 机组尺寸 L×W×H
+  H: KW/KVA | KW/KVA | A | 万迪（无锡动力） | V | L | g/kw.h | kg | mm
+  R: SQWD200 | 160/200 | 150/165 | 270 | WD129TD16  ⇒  R 200/160  →  S 200/160
+
+#223 ĐỔI · 5 ô ×1 | simpson-power
+  H: 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发动机型号 | 机 组 尺 寸 (mm) ( 长×宽×高) | 机 组 数 据
+  R: SP0013D-D | 13/16 | F2L912  ⇒  R 16/13  →  S 16/13
+
+#224 ĐỔI · 22 ô ×1 | tecnogen
+  H: MODEL | kVA LTP | kVA PRP | kVA LTP | kVA PRP |  | Regulator | Cylinder | cm3 | kWm 1500 rpm | kWm 1800 rpm | (l/h) 1500 rpm | (l/h) 1800 rpm | Aspiration | Standard control panel | Optional |  |  |  |  | 
+  H:  | 50 Hz |  | 60 Hz |  | Engine |  |  |  |  |  | Cons. 70% | Cons. 70% |  |  |  |  | Tank l | L | W | H | Kg
+  R: PK901TV | 880 | 800 | 940 | 845 | 4006-23TAG3A  ⇒  R 940/800  →  P 800/·  S 880/·
+
+#225 ĐỔI · 11 ô ×1 | tellhow-power
+  H: Model | Prime power | Standby power | Overall size Length (L | Weight | Engine model | Number of cylinders/ar | Displacement | Fuel consumption rate | Lubricating oil capaci | Total coolant capacity
+  H: (kW) | (kW) | mm | (Kg) | (L) | g/kw.h | (L) | (L)
+  R: THLV368 | 368 | 431 | 3060×1301×1665 | 3020 | TAD1345GE-B  ⇒  R 431/368  →  P ·/368  S ·/431
+
+#226 ĐỔI · 13 ô ×1 | victory-generator
+  H: Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Full-Load Fuel Consump | Cylinder | Open Generator Set | Silent Generator Set
+  H: KW | KVA | KW | KVA | Dimensions/ L*W*H (mm) | Weight (kg) | Dimensions/ L*W*H (mm) | Weight (kg)
+  R: V440M | 50 | 200 | 500 | 440 | 550 | 10V1600G80F  ⇒  R 550/440  →  S 550/440
+
+#227 ĐỔI · 11 ô ×1 | victory-generator
+  H: Genset Model | Frequency (Hz) | Prime Power | Standby Power | Engine Model | Cylinder | Displacement (L) | Dimensions (mm) | Weight (kg)
+  H: KW | KVA | KW | KVA
+  R: V70SC | 50 | 64 | 80 | 70 | 88 | SC4H115D2  ⇒  P 64/50  S 88/70  →  P 80/64  S 88/70
+
+#228 ĐỔI · 7 ô ×1 | walter-yangzhou
+  H: Genset Model | Standby Power | Prime Power | Engine Model | Dimension(MM)L*W*H
+  H: KVA | KW | KVA | KW
+  R: WET-6 | 8 | 6 | 7 | 5 | SP103NA  ⇒  R 8/6  →  P 7/5  S 8/6
+
+#229 ĐỔI · 9 ô ×1 | weiman-fujian
+  H: Typical generator capa | Diesel Engine Model | Engine output (kW) | Type
+  H: 50HZ | 1500rpm | Cylinder | Flywheel & Housing | Fuel system | Download
+  H: Prime | Standby | COP/Prime | Standby
+  R: 200 | 230 | WT10D238E  ⇒  R 230/200  →  P 200/·  S 230/·
+
+#230 ĐỔI · 15 ô ×1 | weiman-fujian
+  H: Gensets | Technical Data of Dies | Download
+  H: Model | Gensets power(KW/KVA) | Engine model | Engine power/kw | Fuel consumption | Cylinder *Bore*Stroke  | Displacement (L) | Compression Ratio | Asp.
+  H: Prime | Standby | Prime | Standby | g/kw.h | L/h
+  R: WT-M19 | 16 | 20 | 14.9 | 19 | S4Q2-65SAG  ⇒  P 19/14.9  S 20/16  →  R 20/16
+
+#231 ĐỔI · 15 ô ×1 | weiman-fujian
+  H: Gensets | Technical Data of Dies
+  H: Model | Gensets power(KW/KVA) | Engine model | Engine power/kw | Fuel consumption | Cylinder *Bore*Stroke  | Displacement (L) | Compression Ratio | Asp. | DOWNLOAD
+  H: Prime | Standby | Prime | Standby | g/kw.h | L/h
+  R: WT-P10 | 7 | 8 | 7.7 | 9.6 | 403A-11G1  ⇒  R 9.6/7.7  →  P 8/7  S 9.6/7.7
+
+#232 ĐỔI · 10 ô ×1 | westinpower
+  H: Genset Model | Standby Power | Prime Power | Engine Model | Displacement (L) | Fuel Consumption (L/h) | 
+  H:  | kVA | kW | kVA | kW |  |  |  | L*W*H (mm) | L*W*H (mm)
+  R: TP15 | 15 | 11 | 13 | 10 | 403A-15G1  ⇒  R 13/11  →  P 13/10  S 15/11
+
+#233 ĐỔI · 12 ô ×1 | wintpower
+  H: Genset Model | 50HZ PF=0.8 400/230V 3 | Engine Model | cyl | displacement | Battery Vol. | Max power | Gov. | Open Type Dimension
+  H: Standby Power | Prime Power | Cons 100% ( L/H )
+  H: KVA/KW | KVA/KW | L | V | KW |  | L×W×H ( MM ) | Weight KG
+  R: WT-C88 | 88/70 | 70/64 | 17.6 | 4BTA3.9-G11  ⇒  R 88/70  →  S 88/70
+
+#234 ĐỔI · 6 ô ×1 | wintpower
+  H: Genset Model | 50HZ PF=0.8 400/230V 3 | Engine Model | Alternator Model
+  H: Prime Power | Standby Power | Cons 100% ( L/H )
+  H: KW/KVA | KW/KVA
+  R: WT-YTO41 | 33/41 | 30/338 | YT3A2Z-15  ⇒  R 41/33  →  P 41/33
+
+#235 ĐỔI · 6 ô ×1 | wintpower
+  H: Genset Model | 60HZ PF=0.8 440/220V 3 | Engine specification
+  H: Prime Power | Standby Power | Cons 100% ( L/H ) | Engine Model | Alternator Model
+  H: KW/KVA | KW/KVA
+  R: WT-YTO261 | 209/261 | 190/248 | YM6H4LF-18  ⇒  P 248/190  S 261/209  →  P 261/209
+
+#236 ĐỔI · 13 ô ×1 | yanfa-yancheng
+  H: 发电机组型号 Generator Model | 备用功率 Reserve Power | 常用功率 Normal power | 发动机型谱 Engine Spectrum | 燃油消耗 Fuel Consumption  | 外形尺寸(mm) Dimensions | 净重(kg) Net Weight
+  H: KW | KVA | KW | KVA | 型号 Model | 排量 NDisplaement(L) | 最大功率 Max. power(kw) | L | W | H
+  R: YC-220GF | 220 | 344 | 200 | 250 | NT855-GA  ⇒  R 250/200  →  P 250/200
+
+#237 ĐỔI · 10 ô ×1 | yingtai-group
+  H: 机组型号 Genset Model | 主用功率（主用） | 备用功率（备用） | 电流（主用）Power(A) | 电流（备用）Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimension | 品牌 Brand | 发 动 机型号 Engine Type
+  R: 24GF | 24 | 30 | 36 | 32.5 | 43.2 | 46.8 | 500 | 1.5*0.6*1.08 | 4D24TG2/A  ⇒  P 30/24  S 43.2/32.5  →  R 30/24
+
+#238 ĐỔI · 11 ô ×1 | yingtai-group
+  H: 机组型号 Genset Model | 主用功率（主用） | 备用功率（备用） | 电流（主用）Power(A) | 电流（备用）Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimension | 品牌 Brand | 发 动 机型号 Engine Type | 主要功 率 power()KW
+  R: 50GF | 50 | 62.5 | 70.4 | 68.8 | 90 | 99 | 960 | 1.8*0.9*1.4 | WP4.1D66E200  ⇒  P 62.5/50  S 90/68.8  →  R 62.5/50
+
+#239 MẤT · 11 ô ×1 | yingtai-group
+  H: 机组型号 Genset Model | 主用功率（主用） | 备用功率（备用） | 电流（主用）Power(A) | 电流（备用）Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimension | 品牌 Brand | 发 动 机型号 Engine Type | 主要功 率 power()KW
+  R: 64GF | 64 | 75 | 88 | 88 | 115.2 | 126.7 | 1180 | 1.9*0.9*1.4 | WP4.1D80E200  ⇒  P 75/64  S 115.2/88  →  ∅
+
+#240 MẤT · 11 ô ×1 | yingtai-jiangsu
+  H: 机组型号 Genset Model | 主用功率（主用） | 备用功率（备用） | 电流（主用）Power(A) | 电流（备用）Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimension | 品牌 Brand | 发 动 机型号 Engine Type | 主要功 率 power()KW
+  H: KW | KVA | KW | KVA
+  R: 75GF | 75 | 62.5 | 110 | 112.5 | 135 | 198 | 1400 | 2.4*1.0*1.6 | QSB6.7-G4  ⇒  P 75/62.5  S 135/112.5  →  ∅
+
+#241 ĐỔI · 15 ô ×1 | zhengchi-power
+  H:  | 机组型号 | 输出功率(KW) | 电流 | 柴油机型号 | 缸数 | 缸径×行程 | 排气量 | 燃油消耗率 | 机组尺寸mm | 机组重量 | 电压(V) | 频率 | 输出 | 详细参数
+  H: 主用 | 备用
+  R: ZCDL-W3000 | 2600 | 3000 | 5400A | 16M55D3300E310  ⇒  R 3000/2600  →  P ·/2600  S ·/3000
+
+#242 ĐỔI · 15 ô ×1 | zhengdian-zhengzhou
+  H:  | 机组型号 | 机组功率 （ kw ） | 电流Ａ | 柴油机型号 | 柴油机功率k W | 缸 数 | 缸径 mm | 行程 mm | 排气量 L | 压缩比 | 机油 容量 L | 燃油消耗率 g/KW.h | 机组重量 kg | 机组外型尺寸 mm×mm×mm
+  H: 备用 | 额定
+  R: 500GF1 | 462 | 420 | 902/756 | TC12V138ZDW  ⇒  S 902/756  →  S ·/462  R ·/420
