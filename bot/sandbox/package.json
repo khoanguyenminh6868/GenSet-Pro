@@ -1,0 +1,9 @@
+{
+  "name": "genbid-sandbox-ensure",
+  "private": true,
+  "type": "module",
+  "description": "Giữ bot GenBid chạy trong Vercel Sandbox (ensure.mjs, chạy bằng GitHub Actions)",
+  "dependencies": {
+    "@vercel/sandbox": "^4"
+  }
+}

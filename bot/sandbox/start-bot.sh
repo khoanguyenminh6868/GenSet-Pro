@@ -18,9 +18,15 @@ umask 077
 [ -z "${CLAUDE_CODE_OAUTH_TOKEN:-}" ] || printf '%s\n' "$CLAUDE_CODE_OAUTH_TOKEN" > "$ROOT/.claude-bot-token"
 [ -z "${ANTHROPIC_API_KEY:-}" ]       || printf '%s\n' "$ANTHROPIC_API_KEY"       > "$ROOT/.anthropic-api-key"
 [ -z "${FIRECRAWL_KEY:-}" ]           || printf '%s\n' "$FIRECRAWL_KEY"           > "$KIT/.firecrawl-key"
-# Bot tự chọn token / API key theo từng việc; các biến này không được lọt vào tiến trình con ngoài ý muốn.
-unset GENBID_INGEST_TOKEN CLAUDE_CODE_OAUTH_TOKEN ANTHROPIC_API_KEY FIRECRAWL_KEY
-if [ -n "${GH_TOKEN:-}" ]; then gh auth setup-git >/dev/null 2>&1 || true; fi
+# Bot tự chọn token / API key theo từng việc (đọc từ các tệp trên): các biến này không được lọt vào tiến trình con
+# (agent Claude có công cụ Bash, đọc tài liệu HSMT của bên thứ ba: biến môi trường là thứ dễ bị lấy nhất).
+# GH_TOKEN: lưu vào cấu hình của gh (gh refuse `login` khi biến còn trong môi trường) rồi bỏ biến. Dùng PAT hạn chế quyền (README).
+GHT="${GH_TOKEN:-}"
+unset GENBID_INGEST_TOKEN CLAUDE_CODE_OAUTH_TOKEN ANTHROPIC_API_KEY FIRECRAWL_KEY GH_TOKEN GITHUB_TOKEN
+if [ -n "$GHT" ]; then
+  printf '%s\n' "$GHT" | gh auth login --with-token >/dev/null 2>&1 && gh auth setup-git >/dev/null 2>&1 || echo "Cảnh báo: gh auth login không được, tải HSMT lên GitHub sẽ lỗi" >&2
+  unset GHT
+fi
 
 # Kéo code mới nhất của nhánh đang dùng (bot/ và suppliers/), như Update-GenBidBot.ps1 trên Windows.
 BRANCH="$(git -C "$ROOT/GenSet-Pro" rev-parse --abbrev-ref HEAD)"
