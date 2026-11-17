@@ -1,0 +1,67 @@
+=== alternator
+  3395 Stamford | NCC TQ | không ghi
+   887 Leroy-Somer | NCC TQ | không ghi
+   246 Stamford | NCC ngoài TQ | không ghi
+   155 Leroy-Somer | NCC ngoài TQ | không ghi
+   129 Marathon | NCC TQ | không ghi
+   125 Stamford | NCC TQ | CN
+         UCI274F fdk-energy: Datasheet: Download | 
+         UCI274F fdk-energy: Datasheet: Download | 
+    52 Mecc Alte | NCC ngoài TQ | không ghi
+    29 Mecc Alte | NCC TQ | không ghi
+    17 Stamford | NHÀ SX CN | không ghi
+=== controller
+   128 Deep Sea | NCC TQ | không ghi
+    83 Deep Sea | NCC ngoài TQ | không ghi
+    40 Deep Sea | NCC TQ | CN
+         DSE7320 jiuan-power:  | Separate insulated control compartment inside container pre-installed Deepsea DSE7320 LCD 
+         DSE7320 sunny-weifang:  | 4.Control panel : standard: Smartgen; Optional: Deepsea, Comap, Dief,Mebay,Fortrust, inclu
+    35 ComAp | NCC TQ | không ghi
+    26 ComAp | NCC TQ | CN
+         AMF25 bobig-power:  | | Controller | Smartgen,Deepsea,Comap AMF20,AMF25
+         AMF25 hosem-power:  | Hosem Power uses the most famous brand controller for our diesel generator, include Deepse
+    21 Deep Sea | NHÀ SX GB | không ghi
+    21 ComAp | NCC ngoài TQ | không ghi
+     9 Rehlko | NCC ngoài TQ | không ghi
+     8 DEIF | NCC TQ | không ghi
+     7 SICES | NHÀ SX IT | không ghi
+     6 Deep Sea | NHÀ SX CN | không ghi
+     5 Cummins | NCC ngoài TQ | không ghi
+     5 DEIF | NCC TQ | CN
+         DEIF (không ghi model) byc-power:  | For easy operation and control, the generators can be equipped with various controller opt
+         DEIF (không ghi model) mecca-power:  | We can offer controller brand like Deepsea,Smartgen,DEIF,MECCA,etc.
+     4 ComAp | NHÀ SX CZ | không ghi
+     4 Cat | NCC TQ | không ghi
+     3 Cummins | NCC TQ | không ghi
+     3 PowerLink | NCC TQ | không ghi
+     3 Electra Molins | NCC ngoài TQ | không ghi
+     3 Woodward | NCC TQ | không ghi
+     3 Deep Sea | NCC TQ | CN+G
+         Deep Sea (không ghi model) frs-shenyang:  | | 控制系统可选品牌 | 英国深海、郑州众智、捷克科迈 | 绝缘等级 | H级
+         Deep Sea (không ghi model) yunding-jiangsu:  | 控制系统采用英国深海、捷克科迈、郑州众智、上海孚创等知名品牌
+     3 Datakom | NCC TQ | CN
+         Datakom (không ghi model) byc-power:  | generators are equipped with state-of-the-art controllers from leading brands including De
+         Datakom (không ghi model) runda-fujian:  | 3)Optional controller brands: Deepsea,Comap, Datakom,Smartgen,Mebay.
+     2 DynaGen | NCC ngoài TQ | không ghi
+     2 Datakom | NCC TQ | không ghi
+     2 ComAp | NHÀ SX CN | không ghi
+     2 ComAp | NCC TQ | CN+G
+         ComAp (không ghi model) yunding-jiangsu:  | 控制系统采用英国深海、捷克科迈、郑州众智、上海孚创等知名品牌
+         ComAp (không ghi model) yunding-jiangsu:  | 发动机采用上海新动力汽车科技股份有限公司（原上海柴油机股份有限公司）生产制造，电机采用斯坦福、马拉松、英格、利莱森玛、凯捷利等品牌。控制器品牌有：郑州众智、英国深海、捷克科迈、上海
+     1 LONGHONG | NCC TQ | không ghi
+     1 LONGHONG | NCC TQ | CN
+         6110K longhong-foshan:  | | 4、 郑州众智控制系统6110K
+     1 Woodward | NCC ngoài TQ | không ghi
+     1 Lovato | NCC ngoài TQ | không ghi
+     1 Deep Sea | NHÀ SX CN | CN
+         Deep Sea (không ghi model) nenjo-generator:  | | 控制面板Control panel | 众智SMARTGEN/深海DEEPSEA/科迈COMAP/丹控DEIF
+comap role=controller_maker country=CZ
+comappower role=genset_oem country=CN
+deep-sea-electronics role=controller_maker country=GB
+geshin-marathon role=alternator_maker country=CN
+leroy-somer-fuzhou role=alternator_maker country=CN
+marathon-generators role=alternator_maker country=US
+mecc-alte role=alternator_maker country=IT
+mecca-power role=genset_oem country=CN
+smartgen role=controller_maker country=CN
+stamford-avk-china role=alternator_maker country=CN

@@ -18,7 +18,7 @@ Danh mục (main ↔ nhánh, cùng `suppliers/cn`):
 
 Top 30 ứng viên (`candidates`, không agent, `GENBID_SPEC_NORM=1`), 1.093 lượt (928 gói có Chương V, `genbid-test\noi-chuan-hoa\bidhist.json`), main 978d5f24 ↔ nhánh fec6ebf5: y hệt 446, chỉ đổi thứ tự 38, đổi tập 609 (2.128 vào / 2.082 ra). Theo hãng: Weichai +458, Cummins +181, Perkins +151, Baudouin +101; Yuchai −519, FAWDE −248, Ricardo −97.
 
-Soi tay 10 gói đổi nhiều nhất (IB2200023019, IB2200092179, IB2300022940, IB2300074496, IB2300083662, IB2300324220, IB2300366912, IB2500124299, IB2500611943, IB2600194231; chi tiết từng dòng điểm + lý do trong scratchpad phiên `d10.txt`):
+Soi tay 10 gói đổi nhiều nhất (IB2200023019, IB2200092179, IB2300022940, IB2300074496, IB2300083662, IB2300324220, IB2300366912, IB2500124299, IB2500611943, IB2600194231; chi tiết từng dòng điểm + lý do trong `nghiem-thu\gan-hang-d10.txt`):
 - Điểm từng dòng không đổi. Cơ chế: gói không đòi G7 / G20 dành 12 dòng cho hãng TQ (`CN_ROWS`); SDEC SC / Weichai WP nay là hãng TQ, điểm cao, lấp các chỗ đó, đẩy dòng TQ điểm thấp hơn (Yuchai, FAWDE, SDEC 6DTAA / 12GTAA) ra; chỗ hãng ngoài chúng chiếm sai trước đây về Cummins, Perkins, Baudouin, Deutz, Doosan, MTU.
 - Gói G7 / G20: Cummins 6BT / 6CTA / 6BTA5.9 (điểm 250–284) vào thay dòng điểm 144–228; "BW-274E" (mã đầu phát đọc thành động cơ) ra.
 
