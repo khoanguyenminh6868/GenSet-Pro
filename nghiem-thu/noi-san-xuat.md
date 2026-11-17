@@ -51,7 +51,9 @@ dòng nêu động cơ. Chi tiết từng gói + dòng HSMT: `noi-san-xuat/dong-
 ### Top 30 ứng viên toàn bộ gói, main ↔ nhánh (do-gop.mjs + cmp-gop.mjs, đo)
 Đo (GENBID_SPEC_NORM=1, 928 gói / 1.093 lượt cỡ, NCC của nhánh; main = checkout chính 98792510):
 `{ runs: 1093, err: 0, same: 1082, orderOnly: 0, setChanged: 11, rowsIn: 30, rowsOut: 30, allCountChanged: 13, droppedCountChanged: 13, makeShownChanged: 0 }`.
-Đầu ra đủ: `noi-san-xuat/do/cmp.txt`, dữ liệu `do/main.json`, `do/nhanh.json`. Gói không đòi G7/G20 ("all") và gói chỉ đòi thương hiệu: không đổi.
+Đầu ra đủ: `noi-san-xuat/do/cmp.txt`, dữ liệu `do/main.json`, `do/nhanh.json`.
+**Đo lại trên main mới** (theo phiên điều phối: sau #844 sửa powerMins / engineLists, #842): main = origin/main ae0559d0 (worktree tách tạm), nhánh = b1f4da52:
+cùng `{ runs: 1093, same: 1082, setChanged: 11, rowsIn: 30, rowsOut: 30 }`, cùng 11 lượt, dòng vào / ra giống hệt lần đo đầu (so từng lượt: 0 khác). Đầu ra `noi-san-xuat/do2/`. Gói không đòi G7/G20 ("all") và gói chỉ đòi thương hiệu: không đổi.
 Không đo được nhánh Xuất xứ TQ (+250 cho hãng ngoại làm ở TQ): do-gop chỉ dùng xuất xứ đọc từ HSMT, không có gói "cn" (chỉ chọn tay trên web); có test riêng.
 
 ### Soi tay 10 gói đổi nhiều nhất (pick10.mjs + cmp-d10.mjs)
