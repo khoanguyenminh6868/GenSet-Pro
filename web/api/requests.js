@@ -5,6 +5,7 @@
 // ?kind=docs&coll=<c> returns the documents the worker reads.
 import { SB_URL } from "./_supabase.js";
 import { authorized } from "./ingest.js";
+import { sandboxOn, tick, background } from "./_sandbox.js";
 
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
 // tracked travels without notes and bid prices: those stay on the web.
@@ -60,14 +61,18 @@ export default async function handler(req, res) {
       const beat = req.query.beat !== "0";
       const sandbox = req.query.host === "sandbox";
       // A PC that comes back while the sandbox bot is still on gets nothing, so the two never take the same request:
-      // the sandbox finishes and bot/sandbox/ensure.mjs stops it once it is idle. Read only when the sandbox is set up.
-      const [marks, settings, sbx] = await Promise.all([pendingMarks(), beat ? aiSettings() : undefined, !sandbox && WAKE_ON ? botDoc("sandbox") : null]);
-      if (beat) await heartbeat(req.query.running, req.query.api, sandbox ? "sandbox" : "pc", hasPending(marks));
+      // the sandbox finishes and api/_sandbox.js tick() stops it once it is idle. Read only when the sandbox is set up.
+      const on = sandboxOn();
+      const [marks, settings, sbx] = await Promise.all([pendingMarks(), beat ? aiSettings() : undefined, !sandbox && on ? botDoc("sandbox") : null]);
+      const pending = hasPending(marks);
+      if (beat) await heartbeat(req.query.running, req.query.api, sandbox ? "sandbox" : "pc", pending);
+      // Each heartbeat of the sandbox bot decides whether the sandbox stops (idle, or a PC is back) or gets more time.
+      if (beat && sandbox && on) await background(sandboxTick(req.query.running === "1", pending));
       if (sbx && fresh(sbx.lastPollAt, 2 * 60e3)) return res.json({ files: [], analysis: [], sync: { pending: false, requestedAt: null, mode: "" }, translation: [], compare: [], hsdt: [], tlkt: [], supplier: [], config: [], find: [], bidprice: [], spec: [], yieldTo: "sandbox", ...(settings !== undefined ? { settings } : {}) });
       const [files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice, spec] = await Promise.all([fileReqs(marks), analysisReqs(marks), syncReq(marks), reqsOf("translationreq", marks), reqsOf("comparereq", marks), reqsOf("hsdtreq", marks), reqsOf("tlktreq", marks), reqsOf("supplierreq", marks), reqsOf("configreq", marks), reqsOf("findreq", marks), reqsOf("bidpricereq", marks), reqsOf("specreq", marks)]);
       return res.json({ files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice, spec, ...(settings !== undefined ? { settings } : {}) });
     }
-    // ?kind=bots: what bot/sandbox/ensure.mjs needs to start or stop the sandbox bot. Writes nothing.
+    // ?kind=bots: the state api/_sandbox.js decides on (to look at by hand). Writes nothing.
     if (req.query?.kind === "bots") {
       const [marks, pc, sbx, busy] = await Promise.all([pendingMarks(), botDoc("pc"), botDoc("sandbox"), botDoc("sandboxbusy")]);
       return res.json({ pending: hasPending(marks), pc: pc || null, sandbox: sbx || null, sandboxBusyAt: busy?.at || null });
@@ -95,9 +100,13 @@ export default async function handler(req, res) {
 // The bot's poll doubles as a heartbeat (botstatus/current), so the page can tell when the Windows PC is off.
 // api: the bot's API key spend this period, {spent, since, switchAt, exhausted} (GenBid-Bot.ps1 Get-ApiBudget).
 // host "pc" also writes botstatus/pc, "sandbox" botstatus/sandbox, and botstatus/sandboxbusy while it has work (requests
-// waiting or a worker running): bot/sandbox/ensure.mjs stops the sandbox after a while without work, or once a PC is on.
-// Set up (WAKE_ON) or not, the same rows are written, so turning the sandbox on later needs no other change.
-export const WAKE_ON = !!process.env.GH_DISPATCH_TOKEN;
+// waiting or a worker running): api/_sandbox.js stops the sandbox after a while without work, or once a PC is on.
+// Sandbox on (SANDBOX_WAKE=1) or not, the same rows are written, so turning it on later needs no other change.
+async function sandboxTick(running, pending) {
+  const now = new Date().toISOString();
+  const [pc, busy] = await Promise.all([botDoc("pc"), botDoc("sandboxbusy")]);
+  return tick({ pending, pc, sandbox: { lastPollAt: now, running }, sandboxBusyAt: running || pending ? now : busy?.at || null });
+}
 async function heartbeat(running, api, host = "pc", pending = false) {
   const at = new Date().toISOString();
   const data = { lastPollAt: at, running: running === "1", host };
