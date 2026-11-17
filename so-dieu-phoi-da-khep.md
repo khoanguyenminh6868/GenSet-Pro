@@ -182,4 +182,5 @@ Cập nhật 18:25Z 12/11: đăng kết quả check lại của IB2600601812 (co
 - 16/11/2026 · SQL tay cho `activity_log`: Khoa đã chạy · nhánh `feed-data` và `wt-actions-sync` (thử chạy bot trên GitHub Actions) đã xoá, bỏ hướng này
 - 17/11/2026 · Khoa trả lời: IB2600603983 đã chạy Gợi ý lại; specs tải tối đa 4 tệp không phải QĐ phê duyệt khi không nhận ra YCKT: xác nhận
 - 17/11/2026 · `GENBID_NAMED_SELLER` bật mặc định trong code cho mọi máy (Khoa: "bật cho mọi máy"; `=0` mới tắt); dải mặc định đơn vị dung tích: giữ · #830
+- 17/11/2026 · `GENBID_SPEC_NORM` bật mặc định trong code trên mọi máy (KHOAMINIPC đang tắt vì chưa cài lại sau #790); `=0` mới tắt · #833
 - 17/11/2026 · Bộ nhớ gộp hai máy (luật số đông, thương hiệu / nơi sản xuất, việc bỏ 16/11) + KHOAMINIPC kéo bot theo #819, #821 · #826

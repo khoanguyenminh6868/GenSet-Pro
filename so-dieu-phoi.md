@@ -27,7 +27,6 @@ Viết gọn lại 13/11/2026 (sáng, giờ VN). Cập nhật 16/11: #786 (nối
 
 ## Chờ Khoa
 - Chuẩn hoá: dải mặc định cho dung tích (0,4–100 = L; 400–100.000 = cc) do em chọn, Khoa chưa nói gì về ngưỡng.
-- `GENBID_SPEC_NORM` (Khoa duyệt áp dụng 15/11, #790) CHƯA bật trên KHOAMINIPC: #790 chỉ đặt biến trong `Install-GenBidBot.ps1`, máy chưa cài lại. Có đổi mặc định trong code thành bật (như #830 làm cho `GENBID_NAMED_SELLER`) không?
 ## Khoa đã bảo BỎ (đừng đề xuất lại)
 - Realtime bỏ hsmttext (#570 đã đóng). Egress chờ số Usage / lên Pro. Thử Sonnet thay Opus cho Phân tích + xếp gói. Xin datasheet đại lý. Bổ sung bảng cho 223/431 NCC chưa có dòng bảng. Ứng viên 30 → 50 dòng. Nới trần 6 cấu hình. Đầu phát mã TQ / S5L1D-H41. Giao hàng + MAF + giá vốn vào xếp hạng. Vụ repo public. Bảng chuẩn động cơ / đầu phát từ nguồn hãng (14/11). Gộp model chỉ khác O/0, I/1 (14/11). Code điền sẵn check để giảm token agent Gợi ý cấu hình (16/11). Chạy Đối chiếu HSDT một gói thật (16/11). Tải tay datasheet Perkins / Cummins đuôi -G2 (16/11). Phân vị nội suy cho Gợi ý giá (17/11). Số xi lanh ghi trơ = chính xác ở bước chấm đạt / không đạt (17/11: chỉ ở bước chọn ứng viên). Ghi việc xoá tay thư mục `wt-*` vào sổ (16/11: không cần). IB2600601812: chạy lại Gợi ý, lấy datasheet ComAp AMF9 (16/11). Tài liệu đầy đủ Deep Sea để lập bảng chức năng BĐK (16/11). 247power.vn: KHÔNG revert 9fa5787 (16/11, giữ như main).
 
