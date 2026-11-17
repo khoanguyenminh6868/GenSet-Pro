@@ -63,6 +63,7 @@ test("Yêu cầu lúc máy tắt: nối lại sandbox, chạy start-bot.sh nền
   const c = startCmd();
   assert.ok(c, "có lệnh chạy nền");
   assert.match(c.args[1], /exec bash .*start-bot\.sh .*< \/dev\/null$/);
+  assert.match(c.args[1], /merge -q --ff-only origin\/main.*\|\| true && exec bash .*start-bot\.sh/, "kéo mã mới trước khi chạy start-bot.sh");
   assert.doesNotMatch(c.args[1], /setup-sandbox/, "đã cài thì không cài lại");
   assert.deepEqual(c.env, { GENBID_INGEST_TOKEN: INGEST, ANTHROPIC_API_KEY: "ak", GH_TOKEN: "gh" });
   for (const x of box.cmds) assert.ok(!JSON.stringify(x.args).includes(INGEST), "bí mật không nằm trong dòng lệnh");

@@ -99,6 +99,9 @@ export async function up({ env = process.env, log = console.log } = {}) {
   const steps = [
     installed ? null : `{ { command -v curl >/dev/null || { sudo apt-get update -qq && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends curl ca-certificates git >/dev/null; }; } && curl -fsSL ${RAW("bot/sandbox/setup-sandbox.sh")} -o /tmp/setup-sandbox.sh && bash /tmp/setup-sandbox.sh main && touch ${SETUP_MARK}; } > $HOME/setup.log 2>&1`,
     "mkdir -p $HOME/genset-pro/genbid-bot-logs",
+    // Kéo mã mới TRƯỚC khi chạy start-bot.sh: script đó tự kéo, nhưng bash đã đọc bản cũ trong snapshot, nên bước mới của
+    // nó (vd. cài agy, ghi đăng nhập Gemini) chỉ chạy từ lần khởi động sau (thử thật 17/11).
+    "{ git -C $HOME/genset-pro/GenSet-Pro fetch -q origin main && git -C $HOME/genset-pro/GenSet-Pro merge -q --ff-only origin/main; } >> $HOME/genset-pro/genbid-bot-logs/sandbox.out 2>&1 || true",
     "exec bash $HOME/genset-pro/GenSet-Pro/bot/sandbox/start-bot.sh >> $HOME/genset-pro/genbid-bot-logs/sandbox.out 2>&1 < /dev/null",
   ].filter(Boolean);
   await sb.runCommand({ cmd: "bash", args: ["-lc", steps.join(" && ")], env: secrets, detached: true });
