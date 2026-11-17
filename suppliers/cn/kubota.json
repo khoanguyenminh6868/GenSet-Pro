@@ -1,0 +1,79 @@
+{
+  "country": "JP",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "KUBOTA Corporation"
+  },
+  "website": "https://generator.kubota.com/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "SQ-1120",
+      "fuel": "diesel",
+      "engineModels": [
+        "D1703"
+      ],
+      "power": {
+        "min": 11.2,
+        "max": 11.2,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "controller model",
+    "alternator model",
+    "governor",
+    "injection type"
+  ],
+  "sources": [
+    {
+      "n": 2001,
+      "url": "https://generator.kubota.com/products/50hz/sq_1120.html",
+      "accessedAt": "2026-11-17",
+      "tier": "A",
+      "quote": [
+        "Kubota Generators SQ-1120",
+        "| Prime Output | kVA (kW) | 11.2 (11.2)",
+        "| Model | - | D1703",
+        "URL: https://generator.kubota.com/products/50hz/sq_1120.html"
+      ],
+      "file": "sources/kubota/2001.md",
+      "official": true
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-17",
+  "checkedBy": "config-bot",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "SQ-1120",
+      "header": [
+        "URL: https://generator.kubota.com/products/50hz/sq_1120.html"
+      ],
+      "rows": [
+        "| Model | - | D1703",
+        "| Prime Output | kVA (kW) | 11.2 (11.2)"
+      ]
+    }
+  ],
+  "id": "kubota"
+}
