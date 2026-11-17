@@ -1,0 +1,10 @@
+bản ghi cũ 59224, mới 59222 | khác 0 | chỉ cũ 2, chỉ mới 0 | bảng có đổi 1
+{}
+
+[tecnogen n2004 bảng 3] ×2
+  H: | MODEL | kVA LTP | kVA PRP | kVA LTP | kVA PRP | | Regulator | Cylinder | cm3 | kWm 1500 rpm | kWm 1800 rpm | (l/h) 1500 rpm | (l/h) 1800 rpm | Aspiration | Standard panel | Automatic panel | dB(A) (•) 7 m | | | | |
+  H: | | 50 Hz | | 60 Hz | | Engine | | | | | | Cons. 70% | Cons. 70% | | | | | Tank l | L | W | H | Kg
+   14 | SA1100TSX-D20 1 | 1100 | 1000 | 1100 | 1000 | 2 x DC13 072A 02 14 | E | 8V | 12700 | 428 | 428 | 129.4 | 133.2 | T | SCP8610 | ACP 7320 | 69 | 2000 | 20' CONTAINER | | | 12100
+        ⇒ MẤT bản ghi engine SCP8610
+   23 | SA1103TSX-D20 1 | 1100 | 1000 | 1196 | 1086 | 2 x DC13 072A 02 14 | E | 8V | 16400 | 425 | 460 | 148.6 | 164.0 | T | SCP8610 | ACP 7320 | 69 | 2000 | 20' CONTAINER | | | 12100
+        ⇒ MẤT bản ghi engine SCP8610
