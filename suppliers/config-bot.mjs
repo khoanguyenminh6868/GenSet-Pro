@@ -772,6 +772,29 @@ export function factConflicts(list) {
 // weigh more than the alternator (Khoa, 2026-11-02).
 const squashOf = (s) => norm(s).replace(/[^a-z0-9]/g, "");
 // `sizing` ({ size, sizes }, sizesOf): the run of one size of a tender of several sizes: the minimums of that size's own block.
+// The cylinder arrangement (Khoa, 2026-11-17, IB2600603983: "6 xy lanh, bố trí thẳng hàng" and the nine Cummins rows of
+// the candidates were KTA38, 12 cylinders in V, which the agent then turned down; QSK23-G2, in line, stood 127th).
+// Of the HSMT: "inline" / "v" when its lines about the cylinders name one arrangement only, else null.
+export function cylLayoutOf(text) {
+  const seen = new Set(), L = String(text || "").split("\n");
+  for (let i = 0; i < L.length; i++) {
+    if (!/(?:xi|xy)\s*-?\s*lanh|cylinders?/i.test(L[i])) continue;
+    // The value of a table row often wraps onto the next line.
+    const s = `${L[i]} ${/(?:xi|xy)\s*-?\s*lanh|cylinders?/i.test(L[i + 1] || "") ? "" : L[i + 1] || ""}`;
+    if (/th[ẳa]ng\s*h[àa]ng|in-?\s*line/i.test(s)) seen.add("inline");
+    if (/ch[ữu]\s*V\b|ki[ểe]u\s*V\b|h[ìi]nh\s*(?:ch[ữu]\s*)?V\b|\bV\s*-?\s*type|\bvee\b/i.test(s)) seen.add("v");
+  }
+  return seen.size === 1 ? [...seen][0] : null;
+}
+// Of a source's "cyl" value ("12V", "12.V", "V12", "6L", "6 L", "6 in-line", "12 cylinders V type"): "inline", "v" or
+// null when it gives the count only.
+export function layoutOf(value) {
+  const s = String(value ?? "");
+  if (/in-?\s*line|th[ẳa]ng\s*h[àa]ng|\bL\s*type\b/i.test(s)) return "inline";
+  if (/\bvee\b|°\s*V\b|\bV\s*-?\s*type|^\s*\d{1,2}\s*[.\-]?\s*V\s*$|^\s*V\s*-?\s*\d{1,2}\s*$|\d\s*cylinders?\s*,?\s*V\b|\bDiesel\s*\.?\s*V/i.test(s)) return "v";
+  if (/^\s*\d{1,2}\s*[.\-]?\s*L\s*$|^\s*L\s*-?\s*\d{1,2}\s*$|\bDiesel\s*L\b/i.test(s)) return "inline";
+  return null;
+}
 export function hintsOf(text, extra = "", sizing = null) {
   const t = `${technicalPart(text)}\n${String(extra ?? "").normalize("NFC")}`;
   const names = (list) => list.filter(([re]) => re.test(t)).map(([, n]) => n);
@@ -780,7 +803,7 @@ export function hintsOf(text, extra = "", sizing = null) {
   const f50 = /\b50\s?hz\b/i.test(t), f60 = /\b60\s?hz\b/i.test(t);
   const sized = sizing?.sizes?.length > 1 ? minsForSize(technicalPart(text), sizing.size, sizing.sizes, extra) : null;
   return { engineMakes: names(CAT.ENGINE_BRANDS), altMakes: names(CAT.ALT_BRANDS), ctrlMakes: ctrl, ctrlModels: CAT.controllersIn(t).filter((c) => c.model).map((c) => CAT.keyOf(c.model)),
-    freq: f50 && !f60 ? 50 : f60 && !f50 ? 60 : null, text: squashOf(t), ...engineMins(t), ...(sized ? sized.mins : {}), ...(sized?.note ? { sizeNote: sized.note } : {}) };
+    freq: f50 && !f60 ? 50 : f60 && !f50 ? 60 : null, cylLayout: cylLayoutOf(t), text: squashOf(t), ...engineMins(t), ...(sized ? sized.mins : {}), ...(sized?.note ? { sizeNote: sized.note } : {}) };
 }
 // The engine minimums the HSMT states ("Dung tích xy lanh ≥ 11,05 L", "Tối thiểu 06 xi lanh"), one value each: a tender
 // of several gensets that gives two values is left alone. candidates() ranks an engine a source shows below them lower
@@ -1257,6 +1280,29 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       if (cap && !gNamed) score -= Math.round(100 * Math.max(0, rowPower(u, cap) / cap.value - 1));
       const maker = sync && s?.role === "genset_oem" ? gensetMakerOf(s) : null;
       if (maker) why.push(`tổ máy của chính hãng ${maker} (HSMT đòi đồng bộ thương hiệu)`);
+      // The other arrangement of cylinders than the HSMT asks (Khoa, 2026-11-17): by the row's own "cyl" cell when it
+      // names one, else by the engine's sources (below). A source giving the count only says nothing.
+      if (hints.cylLayout) {
+        // Also a cell of the row written "12.V" / "6.L" / "V-12" (uleengen: the catalog reads no "cyl" from "12.V"); a bare
+        // "12V" or "6L" cell is not read here: it may be the battery's volts or the litres.
+        const cellLay = (c) => (/^\s*(?:\d{1,2}\s*[.\-]\s*V|V\s*-\s*\d{1,2}|V\d{1,2})\s*$/i.test(c) ? "v" : /^\s*(?:\d{1,2}\s*[.\-]\s*L|L\s*-\s*\d{1,2})\s*$/i.test(c) ? "inline" : null);
+        const own = [...(u.specs || []).filter((f) => f.key === "cyl").map((f) => layoutOf(f.value)), ...(u.line ? CAT.cellsOf(u.line).map(cellLay) : [])].filter(Boolean);
+        // Of the engine: an arrangement two suppliers at least write. One supplier's table alone is not taken for the
+        // engine (aosif writes "12V" for the 6-in-line KTA19-G9A and QSK19; liangzi-yangzhou "12 L" for KTA38), only
+        // for its own row. Both arrangements written by two suppliers each: not judged.
+        const bySup = { v: new Set(), inline: new Set() };
+        for (const f of ef) { const l = f.key === "cyl" ? layoutOf(f.value) : null; if (l) bySup[l].add(f.supplierId ?? ""); }
+        const lay = own.length ? own : Object.keys(bySup).filter((k) => bySup[k].size >= 2);
+        if (lay.length && lay.every((x) => x !== hints.cylLayout)) { score -= 600; ruled.push("layout"); why.push(`xi lanh ${lay[0] === "v" ? "chữ V" : "thẳng hàng"}, HSMT yêu cầu ${hints.cylLayout === "v" ? "chữ V" : "thẳng hàng"}`); }
+      }
+      // An engine of the other frequency (Khoa, 2026-11-17: Baudouin 6M33G660/6 and 6M33G633/6, the 1800 rpm / 60 Hz
+      // versions, held two of Baudouin's three places for a 50 Hz tender; their rows in tables that name no frequency
+      // passed the frequency filter above): every row of the engine that names a frequency names the other one, two
+      // rows at least. An engine sold at both (KTA38-G2: 27 rows at 50 Hz, 22 at 60) is not touched.
+      if (hints.freq && !u.freq) {
+        const known = e.uses.map((x) => x.freq).filter(Boolean);
+        if (known.length >= 2 && known.every((f) => f !== hints.freq)) { score -= 600; ruled.push("freq"); why.push(`động cơ chỉ có dòng ${known[0]} Hz, HSMT yêu cầu ${hints.freq} Hz`); }
+      }
       if (ruled.length && !isNamed) { dropped.push({ e, u, ruled, src: srcOf, ...(NORM ? { normSkip } : {}) }); continue; }
       rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(NORM ? { normSkip } : {}) });
     }
@@ -1346,6 +1392,10 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
 }
 // The rows of the configurations a result chose (candidates `keep`): supplierId + engine key of each supplier and of
 // the engine's catalog source.
+// NOT passed by prep any more (Khoa, 2026-11-17: "khi gợi ý lại thì không cần giữ dòng của các lượt trước"): the rule
+// (PR #543, 2026-11-12) kept a shown configuration from vanishing when places were held for other rows, but it also
+// hid that a configuration no longer earned its place (IB2600603983: QSK23-G2 stood 127th and stayed only by it).
+// Gợi ý lại now ranks from nothing. keepFound (what Tìm NCC and the internet added) is another rule and stays.
 export function keepOf(result) {
   const out = new Set();
   for (const c of result?.configs || []) {
@@ -1683,7 +1733,7 @@ export async function prep(key, dir, reqData = {}, given = null, multi = null, i
   // the same engine in a Chinese table); only the rows offered as configurations are those of the group's suppliers.
   const facts = grp ? modelFacts({ ...full, engines: byOrigin(full.engines, origin, cn) }, all) : undefined;
   const offGroup = grp ? new Set(byOrigin(full.engines, origin, cn).flatMap((e) => (e.uses || []).map((u) => u.supplierId)).filter((id) => !grp.has(id))).size : 0;
-  const { md, ctlMd, shown, top, ctlLookup } = catalogMd(cat, cap, hints, { suppliers: all, origin, cn, focus: reqData.focus || null, sync, keep: keepOf(reqData.prevResult), hsmtText: text, ...(facts ? { facts } : {}) });
+  const { md, ctlMd, shown, top, ctlLookup } = catalogMd(cat, cap, hints, { suppliers: all, origin, cn, focus: reqData.focus || null, sync, hsmtText: text, ...(facts ? { facts } : {}) });
   // What earlier runs searched on the internet and did not find, for the models of this run (web-memo.mjs, Khoa 2026-11-12).
   const runList = runModels(top), negMd = MEMO.negativesMd(MEMO.loadNeg(memoDir), runList, today, { origin, hsmtText: text });
   // catalog.md whole for the code and grep; parts under the Read limit for the agent (writeForRead, read-order.json).
