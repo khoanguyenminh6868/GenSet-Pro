@@ -50,6 +50,15 @@ if ! command -v unrar >/dev/null; then
   $SUDO install -m 755 /tmp/rar/unrar /usr/local/bin/unrar
 fi
 
+step "Node.js 22 (image vercel/sandbox/ubuntu không có sẵn)"
+if ! command -v node >/dev/null; then
+  NODE_TGZ="$(curl -fsSL https://nodejs.org/dist/latest-v22.x/SHASUMS256.txt | grep -oE 'node-v22\.[0-9.]+-linux-x64\.tar\.gz' | head -1)"
+  [ -n "$NODE_TGZ" ] || { echo "Không tìm được bản Node 22 trên nodejs.org" >&2; exit 1; }
+  curl -fsSL -o /tmp/node.tgz "https://nodejs.org/dist/latest-v22.x/$NODE_TGZ"
+  $SUDO tar -xzf /tmp/node.tgz -C /usr/local --strip-components=1
+fi
+node --version
+
 step "Claude Code CLI"
 if ! command -v claude >/dev/null; then
   npm config set prefix "$HOME/.npm-global"
