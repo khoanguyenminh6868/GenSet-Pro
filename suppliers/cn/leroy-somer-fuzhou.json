@@ -221,6 +221,28 @@
         "The Leroy-SomerTM LSA52.3 alternator has been designed to offer you the best power generation performances."
       ],
       "file": "sources/leroy-somer-fuzhou/1014.md"
+    },
+    {
+      "n": 6001,
+      "url": "https://www.nidec.com/en/nidec-leroysomer/corporate/network/factory/",
+      "accessedAt": "2026-11-17",
+      "tier": "A",
+      "quote": [
+        "Design and manufacture of low voltage alternators"
+      ],
+      "file": "sources/leroy-somer-fuzhou/6001.md",
+      "official": true
+    },
+    {
+      "n": 6002,
+      "url": "https://moen.nidec.com/en/power/News-And-Media/News/Articles/2020/02/18/Leroy-Somer-Industrial-Perfection",
+      "accessedAt": "2026-11-17",
+      "tier": "A",
+      "quote": [
+        "we manufacture industrial alternators"
+      ],
+      "file": "sources/leroy-somer-fuzhou/6002.md",
+      "official": true
     }
   ],
   "confidence": "high",
@@ -870,6 +892,112 @@
         "| LSA 52.3 L12 | 1 116.4 | 2 117 | 1 827 | 56.5 | 1.79 E+7 | 3.36 E+7 | 1.67 E+7 | 7.8 | 47.2 | 1.5",
         "| LSA 52.3 UL16 | 1 204.1 | 2 267 | 2 114 | 66.6 | 1.79 E+7 | 3.13 E+7 | 1.32 E+7 | 7.8 | 57.5 | 1.3"
       ]
+    }
+  ],
+  "manufacturing": [
+    {
+      "country": "FR",
+      "city": "Sillac (Angoulême)",
+      "scope": "manufacture",
+      "products": "LV alternators; LSA/TAL 463, LSA/TAL 493",
+      "src": [
+        6001,
+        6002
+      ],
+      "quote": [
+        "Design and manufacture of low voltage alternators",
+        "LSA/TAL 463 and LSA/TAL 493"
+      ]
+    },
+    {
+      "country": "FR",
+      "city": "Orléans",
+      "scope": "manufacture",
+      "products": "MV and HV alternators",
+      "src": [
+        6001
+      ],
+      "quote": [
+        "R&D and production of medium & high voltage alternators"
+      ]
+    },
+    {
+      "country": "CZ",
+      "city": "Olomouc (Olomouc 1 and Olomouc 2)",
+      "scope": "manufacture",
+      "products": "LV alternators",
+      "src": [
+        6001
+      ],
+      "quote": [
+        "Production of low voltage alternators"
+      ]
+    },
+    {
+      "country": "CN",
+      "city": "Fuzhou",
+      "scope": "manufacture",
+      "products": "LV alternators",
+      "src": [
+        6001
+      ],
+      "quote": [
+        "Design and manufacture of AC, synchronous and permanent magnet motors, low voltage alternators"
+      ]
+    },
+    {
+      "country": "IN",
+      "city": "Bangalore and Hubli",
+      "scope": "manufacture",
+      "products": "Alternators",
+      "src": [
+        6001
+      ],
+      "quote": [
+        "Production of alternators"
+      ]
+    },
+    {
+      "country": "MX",
+      "city": "Reynosa",
+      "scope": "manufacture",
+      "products": "Alternators",
+      "src": [
+        6001
+      ],
+      "quote": [
+        "Production of alternators"
+      ]
+    },
+    {
+      "country": "RO",
+      "city": "Cluj",
+      "scope": "manufacture",
+      "products": "Alternators",
+      "src": [
+        6001
+      ],
+      "quote": [
+        "Production of alternators"
+      ]
+    },
+    {
+      "country": "US",
+      "city": "Lexington, TN",
+      "scope": "manufacture",
+      "products": "Generators up to 5MW",
+      "src": [
+        6001
+      ],
+      "quote": [
+        "designing and producing generators up to 5MW"
+      ]
+    },
+    {
+      "country": "FR",
+      "scope": "manufacture",
+      "khoa": "Khoa chốt 16/11/2026",
+      "note": "Mặc định theo hãng khi dòng nguồn không ghi nhà máy (Leroy-Somer → Pháp); nguồn hãng nêu 7 nước, gồm Phúc Châu"
     }
   ]
 }

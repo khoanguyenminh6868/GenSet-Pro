@@ -79,6 +79,17 @@
       ],
       "file": "sources/sices/2003.md",
       "official": true
+    },
+    {
+      "n": 6001,
+      "url": "https://www.meccalte.com/en/news-and-events/mecc-alte-acquires-sices-controllers",
+      "accessedAt": "2026-11-17",
+      "tier": "A",
+      "quote": [
+        "will continue to be designed and developed in its Italian plants"
+      ],
+      "file": "sources/sices/6001.md",
+      "official": true
     }
   ],
   "confidence": "medium",
@@ -149,5 +160,21 @@
         2003
       ]
     }
-  ]
+  ],
+  "manufacturing": [
+    {
+      "country": "IT",
+      "city": null,
+      "scope": "design",
+      "products": "SMARTECH",
+      "src": [
+        6001
+      ],
+      "quote": [
+        "will continue to be designed and developed in its Italian plants"
+      ],
+      "note": "SICES thuộc Mecc Alte từ 07/03/2024; nhà máy SICES không được nêu tên, Ấn Độ chỉ là kế hoạch"
+    }
+  ],
+  "manufacturingNote": "SICES: nhà máy sản xuất chưa xác nhận (Khoa 16/11/2026: cần xác nhận); nguồn hãng chỉ nói thiết kế ở Ý"
 }

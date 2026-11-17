@@ -56,6 +56,26 @@
         "properties": { "n": { "type": "integer" }, "title": { "type": "string" }, "header": { "type": "array", "items": { "type": "string" } }, "rows": { "type": "array", "items": { "type": "string" } } }
       }
     },
+    "manufacturing": {
+      "type": "array",
+      "description": "Nơi sản xuất (đầu phát / bộ điều khiển / hãng): nước, thành phố, dòng sản phẩm nếu nguồn nói. Có src + quote (nguyên văn, kiểm trong trang đã lưu) hoặc khoa (quyết định của Khoa khi nguồn không nói thẳng)",
+      "items": {
+        "type": "object",
+        "required": ["country", "scope"],
+        "additionalProperties": false,
+        "properties": {
+          "country": { "type": "string", "pattern": "^[A-Z]{2}$" },
+          "city": { "type": ["string", "null"] },
+          "scope": { "enum": ["manufacture", "design"], "description": "manufacture = nguồn nói sản xuất / lắp ráp ở đó; design = nguồn chỉ nói thiết kế / phát triển" },
+          "products": { "type": ["string", "null"], "description": "Dòng sản phẩm nếu nguồn nói; null = nguồn không nói" },
+          "src": { "$ref": "#/$defs/src" },
+          "quote": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+          "khoa": { "type": "string", "pattern": "^Khoa chốt \\d{2}/\\d{2}/\\d{4}", "description": "Mặc định Khoa chốt mà nguồn không nói thẳng; nếu có src + quote thì chúng là phần nguồn nói" },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "manufacturingNote": { "type": "string", "description": "Chưa xác nhận được nơi sản xuất và vì sao (ghi tình trạng tra cứu, không phải dữ kiện về hãng)" },
     "exportMarkets": { "type": "array", "items": { "type": "string" } },
     "missing": { "type": "array", "items": { "type": "string" } },
     "sources": {

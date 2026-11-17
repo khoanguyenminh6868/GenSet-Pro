@@ -289,6 +289,39 @@
         "S4L1D-G4 Wdg.311 - Technical Data Sheet"
       ],
       "file": "sources/stamford-avk-china/1020.md"
+    },
+    {
+      "n": 6001,
+      "url": "https://www.stamford-avk.com/about/manufacturing-locations",
+      "accessedAt": "2026-11-17",
+      "tier": "A",
+      "quote": [
+        "Our STAMFORD and AvK alternators are produced in five manufacturing facilities across the globe"
+      ],
+      "file": "sources/stamford-avk-china/6001.md",
+      "official": true
+    },
+    {
+      "n": 6002,
+      "url": "https://www.stamford-avk.com/news/celebrating-100-years-avk",
+      "accessedAt": "2026-11-17",
+      "tier": "A",
+      "quote": [
+        "AvK products are only manufactured at their Romanian plant in Craiova"
+      ],
+      "file": "sources/stamford-avk-china/6002.md",
+      "official": true
+    },
+    {
+      "n": 6003,
+      "url": "https://www.stamford-avk.com/news/7-ways-our-UK-facility-is-focusing-on-sustainability",
+      "accessedAt": "2026-11-17",
+      "tier": "A",
+      "quote": [
+        "The Stamford facility manufactures the STAMFORD range, including the S4, S5, S6 and S7"
+      ],
+      "file": "sources/stamford-avk-china/6003.md",
+      "official": true
     }
   ],
   "confidence": "high",
@@ -735,6 +768,76 @@
         "| Efficiency (%) | 92.8 | 92.8 | 93.0 | 93.4 | 93.1 | 93.0 | 93.2 | 93.6 | 93.3 | 93.3 | 93.5 | 93.7 | 93.7 | 93.7 | 93.8 | 94.0",
         "| Efficiency (%) | 92.9 | 92.9 | 93.1 | 93.2 | 93.2 | 93.1 | 93.3 | 93.3 | 93.4 | 93.4 | 93.6 | 93.6 | 93.7 | 93.8 | 93.9 | 93.9"
       ]
+    }
+  ],
+  "manufacturing": [
+    {
+      "country": "CN",
+      "city": "Wuxi (Xinrong and Xiangjiang plants)",
+      "scope": "manufacture",
+      "products": null,
+      "src": [
+        6001
+      ],
+      "quote": [
+        "Founded in 1996, our Wuxi facilities represent the first STAMFORD brand alternators manufactured in China."
+      ],
+      "note": "Nguồn chỉ nói thương hiệu STAMFORD, không nêu dòng"
+    },
+    {
+      "country": "IN",
+      "city": "Ahilyanagar (formerly Ahmednagar)",
+      "scope": "manufacture",
+      "products": null,
+      "src": [
+        6001
+      ],
+      "quote": [
+        "The first STAMFORD factory was built in Ahilyanagar (formerly Ahmednagar) in 1992"
+      ]
+    },
+    {
+      "country": "IN",
+      "city": "Ranjangaon",
+      "scope": "manufacture",
+      "products": null,
+      "src": [
+        6001
+      ],
+      "quote": [
+        "with a second to follow in Ranjangaon in 2007 and production has risen ever since."
+      ]
+    },
+    {
+      "country": "RO",
+      "city": "Craiova",
+      "scope": "manufacture",
+      "products": "AvK (all)",
+      "src": [
+        6002
+      ],
+      "quote": [
+        "AvK products are only manufactured at their Romanian plant in Craiova"
+      ]
+    },
+    {
+      "country": "GB",
+      "city": "Stamford, Lincolnshire",
+      "scope": "manufacture",
+      "products": "S4, S5, S6, S7",
+      "src": [
+        6003
+      ],
+      "quote": [
+        "The Stamford facility manufactures the STAMFORD range, including the S4, S5, S6 and S7"
+      ],
+      "note": "Bài 01/03/2023. Trang manufacturing-locations hiện nay chỉ gọi Stamford (Anh) là dịch vụ thử nghiệm và phát triển kỹ thuật, không đếm vào năm nhà máy: nguồn mâu thuẫn về vai trò nhà máy Anh"
+    },
+    {
+      "country": "GB",
+      "scope": "manufacture",
+      "khoa": "Khoa chốt 16/11/2026",
+      "note": "Mặc định theo hãng khi dòng nguồn không ghi nhà máy (Stamford → Anh); nguồn hãng nêu cả Trung Quốc, Ấn Độ, Anh"
     }
   ]
 }
