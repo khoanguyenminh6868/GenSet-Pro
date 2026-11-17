@@ -192,3 +192,5 @@ Cập nhật 18:25Z 12/11: đăng kết quả check lại của IB2600601812 (co
 - 17/11/2026 · Luật tên gói "Diezel": đã sửa từ #692 (13/11) ở cả 3 nơi, test có sẵn · không PR · `nghiem-thu\diezel.md`
 - 17/11/2026 · BCĐG IB2600354007 verdict rỗng là ĐÚNG (BMT chỉ đánh giá hạng 1); "fetch failed" chưa rõ nguyên nhân, #591 đã thử lại + log `cause`, chờ lần lỗi sau · không PR · `nghiem-thu\bcdg-5.md`
 - 17/11/2026 · Kiểm bằng mắt trên Vercel: Khoa bảo không cần làm nữa
+- 17/11/2026 · Log lượt thật: #605 giữ mức xếp cũ ĐÚNG (IB2600603983), #547 savePages ĐÚNG (IB2600594596), #573 gaps.mjs chạy không báo lỗi lọc (workflow 16/11, không có số NCC bị loại) · `nghiem-thu\log-bot-605-547-573.md`
+- 17/11/2026 · depco-power phân loại: 0 ca code đọc sai; 160 nguồn lệch (47 có số đông thắng), 134 không do depco, 41 làm tròn; 4 đề xuất sửa · `nghiem-thu\depco-phan-loai.md`
