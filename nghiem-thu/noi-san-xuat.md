@@ -1,6 +1,6 @@
 # Nghiệm thu: thương hiệu ≠ nơi sản xuất theo từng bộ phận (việc 1)
 
-PR: __PR__ (draft, chưa merge). Nhánh `noi-san-xuat-bo-phan`, worktree `wt-noi-sx`, từ origin/main 88cc4b65.
+PR: https://github.com/khoanguyenminh6868/GenSet-Pro/pull/849 (draft, chưa merge). Nhánh `noi-san-xuat-bo-phan` (commit b1f4da52 trên origin/main ae0559d0), worktree `wt-noi-sx`. Test sau rebase: `node --test suppliers/` 914/914.
 
 ## Tệp đã đổi
 - `web/catalog.js`: thay khối `CN_PLANT` / `madeOf` của #841 bằng một bộ nhận duy nhất `madeIn(kind, makes, texts, model)` → `{ at, why }`;
@@ -49,10 +49,18 @@ Xem `noi-san-xuat/dem-bo-phan.txt`. 37 gói chỉ đòi bộ phận: 10 gói đ�
 dòng nêu động cơ. Chi tiết từng gói + dòng HSMT: `noi-san-xuat/dong-bo-phan-nhanh.txt` (main: `dong-bo-phan-main.txt`).
 
 ### Top 30 ứng viên toàn bộ gói, main ↔ nhánh (do-gop.mjs + cmp-gop.mjs, đo)
-__CMP__
+Đo (GENBID_SPEC_NORM=1, 928 gói / 1.093 lượt cỡ, NCC của nhánh; main = checkout chính 98792510):
+`{ runs: 1093, err: 0, same: 1082, orderOnly: 0, setChanged: 11, rowsIn: 30, rowsOut: 30, allCountChanged: 13, droppedCountChanged: 13, makeShownChanged: 0 }`.
+Đầu ra đủ: `noi-san-xuat/do/cmp.txt`, dữ liệu `do/main.json`, `do/nhanh.json`. Gói không đòi G7/G20 ("all") và gói chỉ đòi thương hiệu: không đổi.
+Không đo được nhánh Xuất xứ TQ (+250 cho hãng ngoại làm ở TQ): do-gop chỉ dùng xuất xứ đọc từ HSMT, không có gói "cn" (chỉ chọn tay trên web); có test riêng.
 
 ### Soi tay 10 gói đổi nhiều nhất (pick10.mjs + cmp-d10.mjs)
-__D10__
+Chỉ 11 lượt đổi (dưới 10 gói khác nhau: 9 gói), soi tay cả 11 bằng `script/soi-d10.mjs` + `script/cmp-d10.mjs` → `noi-san-xuat/do/d10.txt` (top 30 ra / vào kèm lý do) và danh sách dòng bị loại vì nơi SX theo NCC + chữ nguồn.
+- 9 gói đều thuộc 37 gói chỉ đòi bộ phận và có bộ phận đòi NƠI SX (IB2400362458, IB2400495407 "Xuất xứ: EU – G7"; IB2400509473 "thương hiệu/hãng sản xuất/xuất xứ: G7"; IB2500503506, IB2500541094 "Xuất xứ: G7"; IB2500533266 "Sản xuất tại chính quốc gia…"; IB2600392438; IB2300062472 và IB2600490077 chỉ BĐK).
+- Dòng bị loại vì động cơ: chữ nguồn đều là nhà máy TQ ghi rõ: DCEC / CCEC / dongfeng / Chongqing Cummins / 东风康明斯 / 重庆康明斯 (aosif, rcg-power, mecca-power, wiseke-taizhou, generatordieselchina, yingtai, pengpai…), «Cummins (China» và «Perkins China» (fdk-energy), «Shanghai MITSUBISHI» (rcg-power, dòng RDC… / RYC…), và «Perkins India» / «Cummins INDIA» (Ấn Độ ngoài G7/EU). Không thấy dòng bị loại vì tên trang người bán.
+- Dòng ra khỏi top mà không bị loại: eastern-lion-fuan (BĐK SMARTGEN6120), comappower (BĐK SmartGen) bị −300 vì HSMT đòi nơi SX bộ điều khiển G7, SmartGen là hãng TQ. Đúng luật mới.
+- Dòng vào: cùng hãng (Perkins, Cummins 6ZTAA13 / KTA19 / 6BT, Baudouin, Mitsubishi S6B/S6R) của NCC không ghi nơi SX → mang "cần xác nhận nơi sản xuất động cơ"; BĐK DSE/ComAp mang "sản xuất tại Anh / Séc (mặc định theo hãng (Khoa chốt 16/11/2026))".
+- Không thấy bất thường.
 
 ## 3 mẫu đối chiếu nguồn
 1. aosif [102] https://www.aosif.com/p/5-6.html — tên trang «CCEC Series(50HZ)-Xiamen Aosif Engineering Ltd.» → KTA50-G3 sản xuất tại TQ (CCEC).

@@ -1,0 +1,7002 @@
+{
+ "IB2300062472#0": {
+  "cap": {
+   "value": 8.5,
+   "unit": "kVA"
+  },
+  "origin": "g7",
+  "bidName": "Cung cấp lắp đặt máy phát điện",
+  "engineMakes": [],
+  "madeRule": null,
+  "top": [
+   {
+    "k": "jet-power|403A11G1|PI044E||P10|10|8|9|7|403A11G1|3L|77X81|1131|3|PI044E|1200*650*950|352|1950*860*1060|552",
+    "model": "403A-11G1",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "jet-power",
+    "power": {
+     "standby": {
+      "kVA": 10,
+      "kW": 8
+     },
+     "prime": {
+      "kVA": 9,
+      "kW": 7
+     }
+    },
+    "score": 272,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|403A11G1|PI044E||SQP10|8/10|7/9|403A11G1|PI044E|WUXI|450|896|1260X630X730|2200X1033X1304",
+    "model": "403A-11G1",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 10,
+      "kW": 8
+     },
+     "prime": {
+      "kVA": 9,
+      "kW": 7
+     }
+    },
+    "score": 272,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "uleengen|403A11G1|S0L1H1||UP10GF|8|10|403A11G1|PERKINS|9|3L|77×81|1131|19|S0L1H1|1580X810X930|500",
+    "model": "403A-11G1",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "uleengen",
+    "power": {
+     "rated": {
+      "kVA": 10,
+      "kW": 8
+     }
+    },
+    "score": 263,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "wintpower|3TNM68GGE|PI044D||WTYM9|6/80|7/90|3TNM68GGE|PI044D|TALA40C|WT164A|1700X850X1050|1250X750X1000",
+    "model": "3TNM68-GGE",
+    "make": "Yanmar",
+    "origin": "other",
+    "sup": "wintpower",
+    "power": {
+     "standby": {
+      "kVA": 9,
+      "kW": 7
+     },
+     "prime": {
+      "kVA": 8,
+      "kW": 6
+     }
+    },
+    "score": 221,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "powerzoo|3TNM74FNGGE|||Y8P6|64/8|72/9|3TNM74FNGGE|VIEWDETAIL»",
+    "model": "3TNM74F-NGGE",
+    "make": "Yanmar",
+    "origin": "other",
+    "sup": "powerzoo",
+    "power": {
+     "standby": {
+      "kVA": 9,
+      "kW": 7.2
+     },
+     "prime": {
+      "kVA": 8,
+      "kW": 6.4
+     }
+    },
+    "score": 165,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "superwatt-swt|3PHASE|||SP10|50HZ|72KW/9KVA|8KW/10KVA|380/400/415V|3PHASE|403D11G",
+    "model": "3-PHASE",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "superwatt-swt",
+    "power": {
+     "standby": {
+      "kVA": 10,
+      "kW": 8
+     },
+     "prime": {
+      "kVA": 9,
+      "kW": 7.2
+     }
+    },
+    "score": 159,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "voltgent|403A11G|||VP105|10|8|9|7|PERKINS|403A11G|[EN][RU][ES][PT]",
+    "model": "403A-11G",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "voltgent",
+    "power": {
+     "standby": {
+      "kVA": 10,
+      "kW": 8
+     },
+     "prime": {
+      "kVA": 9,
+      "kW": 7
+     }
+    },
+    "score": 159,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "voltgent|3TNV80FNGGE|||VYM105S5|10|8|9|7|YANMAR|3TNV80FNGGE|[EN][RU][ES][PT]",
+    "model": "3TNV80F-NGGE",
+    "make": "Yanmar",
+    "origin": "other",
+    "sup": "voltgent",
+    "power": {
+     "standby": {
+      "kVA": 10,
+      "kW": 8
+     },
+     "prime": {
+      "kVA": 9,
+      "kW": 7
+     }
+    },
+    "score": 159,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "victory-generator|D1105B2BG|||50|72|9|8|10|1500|KUBOTAD1105B2BG|STAMFORD/VICTORY",
+    "model": "D1105-B2BG",
+    "make": "Kubota",
+    "origin": "other",
+    "sup": "victory-generator",
+    "power": {
+     "standby": {
+      "kVA": 10,
+      "kW": 8
+     },
+     "prime": {
+      "kVA": 9,
+      "kW": 7.2
+     }
+    },
+    "score": 159,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "victory-generator|403A11G1/403D11G|||V8P|50|72|9|8|10|403A11G1/403D11G|3|3|77|81|49|52|1480*750*1270|390",
+    "model": "403A-11G1/ 403D-11G",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "victory-generator",
+    "power": {
+     "standby": {
+      "kVA": 10,
+      "kW": 8
+     },
+     "prime": {
+      "kVA": 9,
+      "kW": 7.2
+     }
+    },
+    "score": 159,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "westinpower|403A11G1/403D11G|||TP10|10|8|9|7|403A11G1/403D11G|11|26|1402*715*1155|1856*826*1415",
+    "model": "403A-11G1/ 403D-11G",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "westinpower",
+    "power": {
+     "standby": {
+      "kVA": 10,
+      "kW": 8
+     },
+     "prime": {
+      "kVA": 9,
+      "kW": 7
+     }
+    },
+    "score": 159,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "ettes-power|403A11G1★|||EP10|7|9|8|10|403A11G1★|TBA|3L|TBA|1150*500*1100|280|",
+    "model": "403A-11G1★",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "ettes-power",
+    "power": {
+     "standby": {
+      "kVA": 10,
+      "kW": 8
+     },
+     "prime": {
+      "kVA": 9,
+      "kW": 7
+     }
+    },
+    "score": 159,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "bobig-power|BW164B|||BP10|7|9|8|10|403A11G1MADEINCHINA|7|BW164B|1100*650*1000|1700*850*1000",
+    "model": "BW-164B",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "bobig-power",
+    "power": {
+     "standby": {
+      "kVA": 10,
+      "kW": 8
+     },
+     "prime": {
+      "kVA": 9,
+      "kW": 7
+     }
+    },
+    "score": 159,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "superwatt-power|D1105BG|||SK11|8/10|88/11|D1105BG|1460X730X1170|1715X900X1235",
+    "model": "D1105-BG",
+    "make": "Kubota",
+    "origin": "other",
+    "sup": "superwatt-power",
+    "power": {
+     "standby": {
+      "kVA": 11,
+      "kW": 8.8
+     },
+     "prime": {
+      "kVA": 10,
+      "kW": 8
+     }
+    },
+    "score": 155,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sr-genset|403D11GCOMMODITY|S0L1H1||121|99|11|9|403D11GCOMMODITY|MECH|S0L1H1|TALA40C|SA164106|1400*690*1000|1860*810*1152",
+    "model": "403D-11G commodity",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "sr-genset",
+    "power": {
+     "standby": {
+      "kVA": 12.1,
+      "kW": 9.9
+     },
+     "prime": {
+      "kVA": 11,
+      "kW": 9
+     }
+    },
+    "score": 148,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "victory-generator|V1505E2BG|||50|9|11|10|125|1500|KUBOTAV1505E2BG|STAMFORD/VICTORY",
+    "model": "V1505-E2BG",
+    "make": "Kubota",
+    "origin": "other",
+    "sup": "victory-generator",
+    "power": {
+     "standby": {
+      "kVA": 12.5,
+      "kW": 10
+     },
+     "prime": {
+      "kVA": 11,
+      "kW": 9
+     }
+    },
+    "score": 144,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "comappower|V1505E2BG|||COM12K|12KVA|99KW|113KVA|9KW|V1505E2BG|4|COM12K",
+    "model": "V1505-E2BG",
+    "make": "Kubota",
+    "origin": "other",
+    "sup": "comappower",
+    "power": {
+     "standby": {
+      "kVA": 12,
+      "kW": 9.9
+     },
+     "prime": {
+      "kVA": 11.3,
+      "kW": 9
+     }
+    },
+    "score": 140,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "ettes-power|403D11G★|||EP12|9|11|10|12|403D11G★|TBA|3L|TBA|1300*690*1320|280|",
+    "model": "403D-11G ★",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "ettes-power",
+    "power": {
+     "standby": {
+      "kVA": 12,
+      "kW": 10
+     },
+     "prime": {
+      "kVA": 11,
+      "kW": 9
+     }
+    },
+    "score": 136,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "long-gen|D1105E2BGCHN1|S0L1H1||LGKS11|8|10|88|11|D1105E2BGCHN1|95|S0L1H1|10|AMF20|DOWNLOAD",
+    "model": "D1105-E2BG-CHN-1",
+    "make": "Kubota",
+    "origin": "other",
+    "sup": "long-gen",
+    "power": {
+     "standby": {
+      "kVA": 11,
+      "kW": 8.8
+     },
+     "prime": {
+      "kVA": 10,
+      "kW": 8
+     }
+    },
+    "score": 109,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "mecca-power|3TNV82ABGGE|||MC11YM|8|10|9|11|3TNV82ABGGE|",
+    "model": "3TNV82A-BGGE",
+    "make": "Yanmar",
+    "origin": "other",
+    "sup": "mecca-power",
+    "power": {
+     "standby": {
+      "kVA": 11,
+      "kW": 9
+     },
+     "prime": {
+      "kVA": 10,
+      "kW": 8
+     }
+    },
+    "score": 107,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "depco-power|S4L2||11",
+    "model": "S4L2",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "depco-power",
+    "power": {
+     "prime": {
+      "kVA": 11
+     }
+    },
+    "score": 94,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "suneco-linyi|V1505E2BG|ECO12K||ECO12K|12KVA|99KW|113KVA|9KW|V1505E2BG|4|ECO12K",
+    "model": "V1505-E2BG",
+    "make": "Kubota",
+    "origin": "other",
+    "sup": "suneco-linyi",
+    "power": {
+     "standby": {
+      "kVA": 12,
+      "kW": 9.9
+     },
+     "prime": {
+      "kVA": 11.3,
+      "kW": 9
+     }
+    },
+    "score": 75,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "landtop-fuzhou|LTP164S7|||LTP10P|10|8|9|7|403D11G无锡|LTP164S7",
+    "model": "LTP164S-7",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "landtop-fuzhou",
+    "power": {
+     "standby": {
+      "kVA": 10,
+      "kW": 8
+     },
+     "prime": {
+      "kVA": 9,
+      "kW": 7
+     }
+    },
+    "score": 69,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "huadong-yangzhou|X13G2|||HDCP10|10/8|11/88|14|25|X13G2|115|1345×650×1050|495",
+    "model": "X1.3-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "huadong-yangzhou",
+    "power": {
+     "standby": {
+      "kVA": 11,
+      "kW": 8.8
+     },
+     "prime": {
+      "kVA": 10,
+      "kW": 8
+     }
+    },
+    "score": 65,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "yanfa-yancheng|X13G2|||YC88GF|88|11|8|10|X13G2|13|115|25|1345|650|1050|495",
+    "model": "X1.3-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "yanfa-yancheng",
+    "power": {
+     "standby": {
+      "kVA": 11,
+      "kW": 8.8
+     },
+     "prime": {
+      "kVA": 10,
+      "kW": 8
+     }
+    },
+    "score": 65,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "landtop-fuzhou|LTP164S9|||LTP12P|12|10|11|9|403D11G无锡|LTP164S9",
+    "model": "LTP164S-9",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "landtop-fuzhou",
+    "power": {
+     "standby": {
+      "kVA": 12,
+      "kW": 10
+     },
+     "prime": {
+      "kVA": 11,
+      "kW": 9
+     }
+    },
+    "score": 46,
+    "why": [],
+    "made": null
+   }
+  ],
+  "madeDropped": []
+ },
+ "IB2400362458#0": {
+  "cap": {
+   "value": 60,
+   "unit": "kVA"
+  },
+  "origin": "g7eu",
+  "bidName": "Máy phát điện 60KVA",
+  "engineMakes": [],
+  "madeRule": null,
+  "top": [
+   {
+    "k": "sanq-power|1103A33TG2|UCI224F||SQP65|52/65|48/60|1103A33TG2|UCI224F|UK/INDIA|908|1434|1650×750×1280|2300×1133×1376",
+    "model": "1103A-33TG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 65,
+      "kW": 52
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 284,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "uleengen|4BTA39G2|S1L2Y1||UC60GF|48|60|4BTA39G2|CUMMINS|50|4L|102×120|39|113|S1L2Y1|2000X750X1300|800",
+    "model": "4BTA3.9-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "uleengen",
+    "power": {
+     "rated": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 284,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "uleengen|1104A44TG1|S1L2Y1||UP60GF|48|60|1104A44TG1|PERKINS|58|4L|105×127|44|112|S1L2Y1|1580X810X1166|780",
+    "model": "1104A-44TG1",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "uleengen",
+    "power": {
+     "rated": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 284,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "jet-power|1104A44TG1|UCI224F||P71|71|57|65|52|1104A44TG1|4L|105X127|44|148|UCI224F|1900*760*1200|923|2450*1000*1250|1253",
+    "model": "1104A-44TG1",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "jet-power",
+    "power": {
+     "standby": {
+      "kVA": 71,
+      "kW": 57
+     },
+     "prime": {
+      "kVA": 65,
+      "kW": 52
+     }
+    },
+    "score": 276,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|1104A44TG1|UCI224F||SQP73|58/73|52/65|1104A44TG1|UCI224F|WUXI|923|1547|1750×850×1300|2300×1133×1376",
+    "model": "1104A-44TG1",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 73,
+      "kW": 58
+     },
+     "prime": {
+      "kVA": 65,
+      "kW": 52
+     }
+    },
+    "score": 276,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "koten-power|4BTA39G2|UCI224E||KC60D5|48|60|53|66|4BTA39G2|UCI224E",
+    "model": "4BTA3.9-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "koten-power",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 53
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 272,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|4BTA39G2|UCI224E||SQC65|53/66|48/60|4BTA39G2|UCI224E|138|975|1540|1900×783×1257|2350×1133×1516",
+    "model": "4BTA3.9-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 53
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 272,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "jet-power|1103A33TG2|UCI224E||P66|66|53|60|48|1103A33TG2|3L|105X127|33|139|UCI224E|1900*760*1200|890|2450*1000*1250|1220",
+    "model": "1103A-33TG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "jet-power",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 53
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 272,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "eastern-lion-fuan|1104D44TG2|EL224E||GFSP67|48|60|53|67|1104D44TG2|43486|EL224E|48|SMARTGEN6120|DETAIL",
+    "model": "1104D-44TG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "eastern-lion-fuan",
+    "power": {
+     "standby": {
+      "kVA": 67,
+      "kW": 53
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 253,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|4M10G2D3/5|S1L2Y1||RWB63D5S(STAGE3)|63KVA/50KW|69KVA/55KW|4M10G2D3/5|S1L2Y1|PDF",
+    "model": "4M10G2D3/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 69,
+      "kW": 55
+     },
+     "prime": {
+      "kVA": 63,
+      "kW": 50
+     }
+    },
+    "score": 239,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "victory-generator|4BTA39G11|||V53C|50|48|60|53|66|4BTA39G11|13|39|4L|ELECTRONIC|1850*980*1500|970|2670*1080*1905|1500",
+    "model": "4BTA3.9-G11",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "victory-generator",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 53
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 229,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rise-power|CATC33|LC1514P||DE65E0|60|48|65|52|CATC33|LC1514P|3|33|<149|83|102|1925*1120*1361|887",
+    "model": "CAT C3.3",
+    "make": "Caterpillar",
+    "origin": "other",
+    "sup": "rise-power",
+    "power": {
+     "standby": {
+      "kVA": 65,
+      "kW": 52
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 221,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rise-power|CATC44|LC1514P||DE65E3|60|48|65|52|CATC44|LC1514P|4|44|<175|8|126|1925*1120*1361|927",
+    "model": "CAT C4.4",
+    "make": "Caterpillar",
+    "origin": "other",
+    "sup": "rise-power",
+    "power": {
+     "standby": {
+      "kVA": 65,
+      "kW": 52
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 221,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "westinpower|E0834E302|UCI224F||RN70NT|56|70|E0834E302|UCI224F|4/L|108*125|46|365|528|106|100AH/24V|A1N125TMF125/1250FF3P|2075*740*960|830",
+    "model": "E0834E302",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "westinpower",
+    "power": {
+     "rated": {
+      "kVA": 70,
+      "kW": 56
+     }
+    },
+    "score": 219,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "westinpower|E0836E312|UCI224F||RN71NT|57|71|E0836E312|UCI224F|6/L|108*125|69|333|552|107|100AH/24V|A1N125TMF125/1250FF3P|2340*740*960|930",
+    "model": "E0836 E312",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "westinpower",
+    "power": {
+     "rated": {
+      "kVA": 71,
+      "kW": 57
+     }
+    },
+    "score": 218,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|S38G7|UCI224E||SQIC66|53/66|48/60|S38G7|USA|UCI224E|127|1105|1499|2115×1044×1516|2350×1133×1516",
+    "model": "S3.8-G7",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 53
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 216,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "koten-power|4M10G70/5|||KB60DS|48|60|53|66|4M10G70/5|",
+    "model": "4M10G70/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "koten-power",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 53
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 213,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "elitech-power|4M06G55/5|||EPS60BDA3|BAUDOUIN|60KVA|70KVA|4M06G55/5|50HZ|3PHASE|DOWNLOADPDF|EPS60BDA3BAUDOUIN60KVADIESELGENERATORSPECS",
+    "model": "4M06G55/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "elitech-power",
+    "power": {
+     "rated": {
+      "kVA": 70,
+      "kW": 60
+     }
+    },
+    "score": 204,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "victory-generator|4TNV106T|||V58YM|60|52|65|58|72|4TNV106T|4|4412|106|125|TURBO|DIRECTINJECTION|RADIATOR|2100*730*1450|867",
+    "model": "4TNV106T",
+    "make": "Yanmar",
+    "origin": "other",
+    "sup": "victory-generator",
+    "power": {
+     "standby": {
+      "kVA": 72,
+      "kW": 58
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 52
+     }
+    },
+    "score": 197,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "victory-generator|4TNV106|||V50YM|60|45|56|50|625|4TNV106|4|4412|106|125|NATURAL|DIRECTINJECTION|RADIATOR|2100*730*1450|822",
+    "model": "4TNV106",
+    "make": "Yanmar",
+    "origin": "other",
+    "sup": "victory-generator",
+    "power": {
+     "standby": {
+      "kVA": 62.5,
+      "kW": 50
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 45
+     }
+    },
+    "score": 197,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sr-genset|4TNV106TGGE|TALA42G||6699|5357|609|487|4TNV106TGGE|MECH|TALA42G|SA22448|S1L2R1|1995*950*1240|2500*950*1500",
+    "model": "4TNV106T-GGE",
+    "make": "Yanmar",
+    "origin": "other",
+    "sup": "sr-genset",
+    "power": {
+     "standby": {
+      "kVA": 66.99,
+      "kW": 53.57
+     },
+     "prime": {
+      "kVA": 60.9,
+      "kW": 48.7
+     }
+    },
+    "score": 192,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "sr-genset|1104D44TG2EU|S1L2Y1||66|53|60|48|1104D44TG2EU|PERKINS|S1L2Y1|TALA42H|/",
+    "model": "1104D-44TG2 EU",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "sr-genset",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 53
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 180,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "long-gen|NEF45SM1AS500|S1L2Y1||LGFS66|48|60|528|66|NEF45SM1AS500|S1L2Y1|WHI224E|DOWNLOAD",
+    "model": "NEF45SM1A.S500",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "long-gen",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 52.8
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 178,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "sr-genset|NEF45SM1F|S1L2Y1||68|55|63|50|NEF45SM1F|FPT|S1L2Y1|TALA42H|/",
+    "model": "NEF45SM1F",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "sr-genset",
+    "power": {
+     "standby": {
+      "kVA": 68,
+      "kW": 55
+     },
+     "prime": {
+      "kVA": 63,
+      "kW": 50
+     }
+    },
+    "score": 175,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "voltgent|R38MSNS0170A01|||VFP666|66|53|60|48|FPT|R38MSNS0170A01|[EN][RU][ES][PT]",
+    "model": "R38MSNS01.70A01",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "voltgent",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 53
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 165,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|RDC4N3|RC224E||R50N6|63KVA/50KW|69KVA/55KW|RDC4N3|RC224E|PDF",
+    "model": "RDC4-N3",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 69,
+      "kW": 55
+     },
+     "prime": {
+      "kVA": 63,
+      "kW": 50
+     }
+    },
+    "score": 160,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "mecca-power|JE493ZLDCE01|||MC69IS|50|63|55|69|JE493ZLDCE01|",
+    "model": "JE493ZLDCE-01",
+    "make": "Isuzu",
+    "origin": "other",
+    "sup": "mecca-power",
+    "power": {
+     "standby": {
+      "kVA": 69,
+      "kW": 55
+     },
+     "prime": {
+      "kVA": 63,
+      "kW": 50
+     }
+    },
+    "score": 144,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "mecca-power|JE493ZLDC01|||MC69IS|50|63|55|69|JE493ZLDC01|",
+    "model": "JE493ZLDC-01",
+    "make": "Isuzu",
+    "origin": "other",
+    "sup": "mecca-power",
+    "power": {
+     "standby": {
+      "kVA": 69,
+      "kW": 55
+     },
+     "prime": {
+      "kVA": 63,
+      "kW": 50
+     }
+    },
+    "score": 136,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "agestar|4BG1Z|ASG224E||GI32(S)|66|528|60|48|4BG1Z|145|ELECTRICAL|ASG224E|2600*1030*1500|1450",
+    "model": "4BG1-Z",
+    "make": "Isuzu",
+    "origin": "other",
+    "sup": "agestar",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 52.8
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 123,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "weiman-fujian|S4KDT65SAG|||WTM66|48|60|528|66|S4KDT65SAG|547|597|235|1512|4×102×130|4249|17:1|TC|MOREDATA",
+    "model": "S4K-DT65SAG",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "weiman-fujian",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 52.8
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 91,
+    "why": [],
+    "made": null
+   }
+  ],
+  "madeDropped": []
+ },
+ "IB2400495407#0": {
+  "cap": {
+   "value": 60,
+   "unit": "kVA"
+  },
+  "origin": "g7eu",
+  "bidName": "Máy phát điện 60KVA",
+  "engineMakes": [],
+  "madeRule": null,
+  "top": [
+   {
+    "k": "sanq-power|1103A33TG2|UCI224F||SQP65|52/65|48/60|1103A33TG2|UCI224F|UK/INDIA|908|1434|1650×750×1280|2300×1133×1376",
+    "model": "1103A-33TG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 65,
+      "kW": 52
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 284,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "uleengen|4BTA39G2|S1L2Y1||UC60GF|48|60|4BTA39G2|CUMMINS|50|4L|102×120|39|113|S1L2Y1|2000X750X1300|800",
+    "model": "4BTA3.9-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "uleengen",
+    "power": {
+     "rated": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 284,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "uleengen|1104A44TG1|S1L2Y1||UP60GF|48|60|1104A44TG1|PERKINS|58|4L|105×127|44|112|S1L2Y1|1580X810X1166|780",
+    "model": "1104A-44TG1",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "uleengen",
+    "power": {
+     "rated": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 284,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "jet-power|1104A44TG1|UCI224F||P71|71|57|65|52|1104A44TG1|4L|105X127|44|148|UCI224F|1900*760*1200|923|2450*1000*1250|1253",
+    "model": "1104A-44TG1",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "jet-power",
+    "power": {
+     "standby": {
+      "kVA": 71,
+      "kW": 57
+     },
+     "prime": {
+      "kVA": 65,
+      "kW": 52
+     }
+    },
+    "score": 276,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|1104A44TG1|UCI224F||SQP73|58/73|52/65|1104A44TG1|UCI224F|WUXI|923|1547|1750×850×1300|2300×1133×1376",
+    "model": "1104A-44TG1",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 73,
+      "kW": 58
+     },
+     "prime": {
+      "kVA": 65,
+      "kW": 52
+     }
+    },
+    "score": 276,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "koten-power|4BTA39G2|UCI224E||KC60D5|48|60|53|66|4BTA39G2|UCI224E",
+    "model": "4BTA3.9-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "koten-power",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 53
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 272,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|4BTA39G2|UCI224E||SQC65|53/66|48/60|4BTA39G2|UCI224E|138|975|1540|1900×783×1257|2350×1133×1516",
+    "model": "4BTA3.9-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 53
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 272,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "jet-power|1103A33TG2|UCI224E||P66|66|53|60|48|1103A33TG2|3L|105X127|33|139|UCI224E|1900*760*1200|890|2450*1000*1250|1220",
+    "model": "1103A-33TG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "jet-power",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 53
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 272,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "eastern-lion-fuan|1104D44TG2|EL224E||GFSP67|48|60|53|67|1104D44TG2|43486|EL224E|48|SMARTGEN6120|DETAIL",
+    "model": "1104D-44TG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "eastern-lion-fuan",
+    "power": {
+     "standby": {
+      "kVA": 67,
+      "kW": 53
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 253,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|4M10G2D3/5|S1L2Y1||RWB63D5S(STAGE3)|63KVA/50KW|69KVA/55KW|4M10G2D3/5|S1L2Y1|PDF",
+    "model": "4M10G2D3/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 69,
+      "kW": 55
+     },
+     "prime": {
+      "kVA": 63,
+      "kW": 50
+     }
+    },
+    "score": 239,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "victory-generator|4BTA39G11|||V53C|50|48|60|53|66|4BTA39G11|13|39|4L|ELECTRONIC|1850*980*1500|970|2670*1080*1905|1500",
+    "model": "4BTA3.9-G11",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "victory-generator",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 53
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 229,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rise-power|CATC33|LC1514P||DE65E0|60|48|65|52|CATC33|LC1514P|3|33|<149|83|102|1925*1120*1361|887",
+    "model": "CAT C3.3",
+    "make": "Caterpillar",
+    "origin": "other",
+    "sup": "rise-power",
+    "power": {
+     "standby": {
+      "kVA": 65,
+      "kW": 52
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 221,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rise-power|CATC44|LC1514P||DE65E3|60|48|65|52|CATC44|LC1514P|4|44|<175|8|126|1925*1120*1361|927",
+    "model": "CAT C4.4",
+    "make": "Caterpillar",
+    "origin": "other",
+    "sup": "rise-power",
+    "power": {
+     "standby": {
+      "kVA": 65,
+      "kW": 52
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 221,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "westinpower|E0834E302|UCI224F||RN70NT|56|70|E0834E302|UCI224F|4/L|108*125|46|365|528|106|100AH/24V|A1N125TMF125/1250FF3P|2075*740*960|830",
+    "model": "E0834E302",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "westinpower",
+    "power": {
+     "rated": {
+      "kVA": 70,
+      "kW": 56
+     }
+    },
+    "score": 219,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "westinpower|E0836E312|UCI224F||RN71NT|57|71|E0836E312|UCI224F|6/L|108*125|69|333|552|107|100AH/24V|A1N125TMF125/1250FF3P|2340*740*960|930",
+    "model": "E0836 E312",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "westinpower",
+    "power": {
+     "rated": {
+      "kVA": 71,
+      "kW": 57
+     }
+    },
+    "score": 218,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|S38G7|UCI224E||SQIC66|53/66|48/60|S38G7|USA|UCI224E|127|1105|1499|2115×1044×1516|2350×1133×1516",
+    "model": "S3.8-G7",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 53
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 216,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "koten-power|4M10G70/5|||KB60DS|48|60|53|66|4M10G70/5|",
+    "model": "4M10G70/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "koten-power",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 53
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 213,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "elitech-power|4M06G55/5|||EPS60BDA3|BAUDOUIN|60KVA|70KVA|4M06G55/5|50HZ|3PHASE|DOWNLOADPDF|EPS60BDA3BAUDOUIN60KVADIESELGENERATORSPECS",
+    "model": "4M06G55/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "elitech-power",
+    "power": {
+     "rated": {
+      "kVA": 70,
+      "kW": 60
+     }
+    },
+    "score": 204,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "victory-generator|4TNV106T|||V58YM|60|52|65|58|72|4TNV106T|4|4412|106|125|TURBO|DIRECTINJECTION|RADIATOR|2100*730*1450|867",
+    "model": "4TNV106T",
+    "make": "Yanmar",
+    "origin": "other",
+    "sup": "victory-generator",
+    "power": {
+     "standby": {
+      "kVA": 72,
+      "kW": 58
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 52
+     }
+    },
+    "score": 197,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "victory-generator|4TNV106|||V50YM|60|45|56|50|625|4TNV106|4|4412|106|125|NATURAL|DIRECTINJECTION|RADIATOR|2100*730*1450|822",
+    "model": "4TNV106",
+    "make": "Yanmar",
+    "origin": "other",
+    "sup": "victory-generator",
+    "power": {
+     "standby": {
+      "kVA": 62.5,
+      "kW": 50
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 45
+     }
+    },
+    "score": 197,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sr-genset|4TNV106TGGE|TALA42G||6699|5357|609|487|4TNV106TGGE|MECH|TALA42G|SA22448|S1L2R1|1995*950*1240|2500*950*1500",
+    "model": "4TNV106T-GGE",
+    "make": "Yanmar",
+    "origin": "other",
+    "sup": "sr-genset",
+    "power": {
+     "standby": {
+      "kVA": 66.99,
+      "kW": 53.57
+     },
+     "prime": {
+      "kVA": 60.9,
+      "kW": 48.7
+     }
+    },
+    "score": 192,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "sr-genset|1104D44TG2EU|S1L2Y1||66|53|60|48|1104D44TG2EU|PERKINS|S1L2Y1|TALA42H|/",
+    "model": "1104D-44TG2 EU",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "sr-genset",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 53
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 180,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "long-gen|NEF45SM1AS500|S1L2Y1||LGFS66|48|60|528|66|NEF45SM1AS500|S1L2Y1|WHI224E|DOWNLOAD",
+    "model": "NEF45SM1A.S500",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "long-gen",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 52.8
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 178,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "sr-genset|NEF45SM1F|S1L2Y1||68|55|63|50|NEF45SM1F|FPT|S1L2Y1|TALA42H|/",
+    "model": "NEF45SM1F",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "sr-genset",
+    "power": {
+     "standby": {
+      "kVA": 68,
+      "kW": 55
+     },
+     "prime": {
+      "kVA": 63,
+      "kW": 50
+     }
+    },
+    "score": 175,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "voltgent|R38MSNS0170A01|||VFP666|66|53|60|48|FPT|R38MSNS0170A01|[EN][RU][ES][PT]",
+    "model": "R38MSNS01.70A01",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "voltgent",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 53
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 165,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|RDC4N3|RC224E||R50N6|63KVA/50KW|69KVA/55KW|RDC4N3|RC224E|PDF",
+    "model": "RDC4-N3",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 69,
+      "kW": 55
+     },
+     "prime": {
+      "kVA": 63,
+      "kW": 50
+     }
+    },
+    "score": 160,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "mecca-power|JE493ZLDCE01|||MC69IS|50|63|55|69|JE493ZLDCE01|",
+    "model": "JE493ZLDCE-01",
+    "make": "Isuzu",
+    "origin": "other",
+    "sup": "mecca-power",
+    "power": {
+     "standby": {
+      "kVA": 69,
+      "kW": 55
+     },
+     "prime": {
+      "kVA": 63,
+      "kW": 50
+     }
+    },
+    "score": 144,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "mecca-power|JE493ZLDC01|||MC69IS|50|63|55|69|JE493ZLDC01|",
+    "model": "JE493ZLDC-01",
+    "make": "Isuzu",
+    "origin": "other",
+    "sup": "mecca-power",
+    "power": {
+     "standby": {
+      "kVA": 69,
+      "kW": 55
+     },
+     "prime": {
+      "kVA": 63,
+      "kW": 50
+     }
+    },
+    "score": 136,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "agestar|4BG1Z|ASG224E||GI32(S)|66|528|60|48|4BG1Z|145|ELECTRICAL|ASG224E|2600*1030*1500|1450",
+    "model": "4BG1-Z",
+    "make": "Isuzu",
+    "origin": "other",
+    "sup": "agestar",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 52.8
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 123,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "weiman-fujian|S4KDT65SAG|||WTM66|48|60|528|66|S4KDT65SAG|547|597|235|1512|4×102×130|4249|17:1|TC|MOREDATA",
+    "model": "S4K-DT65SAG",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "weiman-fujian",
+    "power": {
+     "standby": {
+      "kVA": 66,
+      "kW": 52.8
+     },
+     "prime": {
+      "kVA": 60,
+      "kW": 48
+     }
+    },
+    "score": 91,
+    "why": [],
+    "made": null
+   }
+  ],
+  "madeDropped": []
+ },
+ "IB2400509473#0": {
+  "cap": {
+   "value": 200,
+   "unit": "kVA"
+  },
+  "origin": "g7",
+  "bidName": "Cung cấp Máy phát điện 200KVA Agribank Chi nhánh Bến Thành",
+  "engineMakes": [],
+  "madeRule": null,
+  "top": [
+   {
+    "k": "sanq-power|6CTAA83G2|UCI274H||SQC220|176/220|160/200|6CTAA83G2|UCI274H|433|1850|3040|2400×980×1460|3600×1333×2040",
+    "model": "6CTAA8.3-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 220,
+      "kW": 176
+     },
+     "prime": {
+      "kVA": 200,
+      "kW": 160
+     }
+    },
+    "score": 284,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|1106A70TAG4|UCI274H||SQP220|176/220|160/200|1106A70TAG4|UCI274H|WUXI|1830|2959|2900×900×1536|3600×1333×2040",
+    "model": "1106A-70TAG4",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 220,
+      "kW": 176
+     },
+     "prime": {
+      "kVA": 200,
+      "kW": 160
+     }
+    },
+    "score": 284,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|1106A70TAG3|UCI274F||SQP2206|176/220|160/200|1106A70TAG3|UCI274F|WUXI|1840|2914|2900×900×1536|3600×1333×2040|",
+    "model": "1106A-70TAG3",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 220,
+      "kW": 176
+     },
+     "prime": {
+      "kVA": 200,
+      "kW": 160
+     }
+    },
+    "score": 284,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "uleengen|6CTAA83G2|UCI274H||UC200GF|160|200|6CTAA83G2|CUMMINS|185|6L|114×135|827|374|UCI274H|2500X850X1400|1400",
+    "model": "6CTAA8.3-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "uleengen",
+    "power": {
+     "rated": {
+      "kVA": 200,
+      "kW": 160
+     }
+    },
+    "score": 284,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "tecgen-fujian|1106A70TAG4|UCI274G||MODELNUMBER|TG220P|GENSETMODEL|TG220P|PRIMEPOWER|200KVA/160KW|STANDBYPOWER|220KVA/176KW|RATEDVOLTAGE(V)|380|RATEDFREQUENCY(HZ)|50|RATEDSPEED(RPM)|1500|POWERFACTOR(COS&CENT;)|08(LAGGING)|ENGINEMODEL|1106A70TAG4|ENGINEPOWER(KW)|1963|BORE*STROKE(MM*MM)|105*135|DISPLACEMENT(LITER)|701|STARTINGMETHOD|DC24VELECTRICALSTARTING|FUELCONSUMPTION(G/KWH)|2069|ALTERNATORMODEL|UCI274G|VOLTAGEREGULATION,STEADYSTATE|100%",
+    "model": "1106A-70TAG4",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "tecgen-fujian",
+    "power": {
+     "prime": {
+      "kVA": 200,
+      "kW": 160
+     },
+     "standby": {
+      "kVA": 220,
+      "kW": 176
+     }
+    },
+    "score": 284,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "uleengen|1106A70TAG4|UCI274H||UP200GF|160|200|1106A70TAG4|PERKINS|174|6L|105×135|701|374|UCI274H|2240X960X1590|1300",
+    "model": "1106A-70TAG4",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "uleengen",
+    "power": {
+     "rated": {
+      "kVA": 200,
+      "kW": 160
+     }
+    },
+    "score": 284,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "tecgen-fujian|1206AE70TTAG1|TALA44M||MODELNUMBER|TG220PS|FREQUENCY|50|POWEROUTPUT|200KVA|GENERATORTYPE|SILENT|WARRANTY|1500HOURS|NOISELEVEL|≤68DB(A)|VOLTAGE|400/230VNOISELEVEL:≤68DB(A)FREQUENCY:50/60HZ|GENSETMODEL|TG220P|TG220PS|TG220P|TG220PS|FREQUENCY|50HZ|VOLTAGE|415/240V|PHASE|3|PRIMEPOWER|160KW/200KVA|STANDBYPOWER|176KW/220KVA|ENGINEMODEL|1206AE70TTAG1|ALTERNATORMODEL|TALA44M|CONTROLLER|SMARTGENHGM6120N|FUELTANKCAPACITY|320L|WEIGHT(KGS)|1750|2350|1890|2850|PRIMEPOWER(KW)|1789|BOREOFSTROKE(MM)|105X135|DISPLACEMENT(L)|701|ENGINEOILCAPACITY(L)|21|FUELCONSUMPTION|AT50HZ|MODEL|TALA44M|MODEL|HGM6120N",
+    "model": "1206A-E70TTAG1",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "tecgen-fujian",
+    "power": {
+     "prime": {
+      "kW": 160,
+      "kVA": 200
+     },
+     "standby": {
+      "kW": 176,
+      "kVA": 220
+     }
+    },
+    "score": 281,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "acepow-fuan|6CTAA83G2|UC274H||APC160|160|200|172|215|6CTAA83G2|183|203|UC274H",
+    "model": "6CTAA8.3-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "acepow-fuan",
+    "power": {
+     "standby": {
+      "kVA": 215,
+      "kW": 172
+     },
+     "prime": {
+      "kVA": 200,
+      "kW": 160
+     }
+    },
+    "score": 269,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "koten-power|1106A70TAG3|274G||KP200D6|160|200|176|220|1106A70TAG3|274G",
+    "model": "1106A-70TAG3",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "koten-power",
+    "power": {
+     "standby": {
+      "kVA": 220,
+      "kW": 176
+     },
+     "prime": {
+      "kVA": 200,
+      "kW": 160
+     }
+    },
+    "score": 269,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "eastern-lion-fuan|1206AE70TTAG1|EL274H||GFSP222|160|200|178|222|1206AE70TTAG1|110277|EL274H|160|SMARTGEN6120|DETAIL",
+    "model": "1206A-E70TTAG1",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "eastern-lion-fuan",
+    "power": {
+     "standby": {
+      "kVA": 222,
+      "kW": 178
+     },
+     "prime": {
+      "kVA": 200,
+      "kW": 160
+     }
+    },
+    "score": 269,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|QSB7G5|UCI274H||SQIC220|176/220|160/200|QSB7G5|USA|UCI274H|424|1572|2948|2656×1100×1658|3200×1133×1766",
+    "model": "QSB7-G5",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 220,
+      "kW": 176
+     },
+     "prime": {
+      "kVA": 200,
+      "kW": 160
+     }
+    },
+    "score": 268,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "longkai-power|6M16G220/5|LSA443VL14||LG160BD|176|220|160|200|6M16G220/5|LK274H|LSA443VL14|OP2850*1040*1580|AT3958*1280*2150|",
+    "model": "6M16G220/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "longkai-power",
+    "power": {
+     "standby": {
+      "kVA": 220,
+      "kW": 176
+     },
+     "prime": {
+      "kVA": 200,
+      "kW": 160
+     }
+    },
+    "score": 268,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "voltgent|1506AE88TAG2|LL5114H||P2505|230|184|250|200|1506AE88TAG2|LL5114H|DSE7410",
+    "model": "1506A-E88TAG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "voltgent",
+    "power": {
+     "standby": {
+      "kVA": 250,
+      "kW": 200
+     },
+     "prime": {
+      "kVA": 230,
+      "kW": 184
+     }
+    },
+    "score": 260,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "longkai-power|6M16G250/5|LSA463S4||LG184BD|2024|253|184|230|6M16G250/5|LK274J|LSA463S4|OP2850*1040*1580|AT3958*1280*2150|",
+    "model": "6M16G250/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "longkai-power",
+    "power": {
+     "standby": {
+      "kVA": 253,
+      "kW": 202.4
+     },
+     "prime": {
+      "kVA": 230,
+      "kW": 184
+     }
+    },
+    "score": 258,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "uleengen|6LTAA89G2|UCD274J||UC225GF|180|225|6LTAA89G2|CUMMINS|220|6L|114×145|89|421|UCD274J|3010X1000X1700|2600",
+    "model": "6LTAA8.9-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "uleengen",
+    "power": {
+     "rated": {
+      "kVA": 225,
+      "kW": 180
+     }
+    },
+    "score": 256,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "dingbo|1506AE88TAG2|MP1804A||XG180GF|180/225|198/2475|1506AE88TAG2|MP1804A|2600X1050X1600|2380",
+    "model": "1506A-E88TAG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "dingbo",
+    "power": {
+     "standby": {
+      "kVA": 247.5,
+      "kW": 198
+     },
+     "prime": {
+      "kVA": 225,
+      "kW": 180
+     }
+    },
+    "score": 256,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "koten-power|1206AE70TTAG1|274G||KP225D6|180|225|200|250|1206AE70TTAG1|274G",
+    "model": "1206A-E70TTAG1",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "koten-power",
+    "power": {
+     "standby": {
+      "kVA": 250,
+      "kW": 200
+     },
+     "prime": {
+      "kVA": 225,
+      "kW": 180
+     }
+    },
+    "score": 256,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "eastern-lion-fuan|QSL89G2|EL274J||GFSC184|184|230|204|256|QSL89G2|206KW|EL274J|184KW|SMARTGEN6120|DETAIL",
+    "model": "QSL8.9-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "eastern-lion-fuan",
+    "power": {
+     "standby": {
+      "kVA": 256,
+      "kW": 204
+     },
+     "prime": {
+      "kVA": 230,
+      "kW": 184
+     }
+    },
+    "score": 238,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "mingbang-mbkl|6LTAA89G2|MBC160|ENGINEMODEL:CUMMINS6LTAA89G2|GENERATORMODEL|MBC160|PRIMEPOWER|160KW/200KVA|POWERFACTOR|COSΦ=08|DIMENSIONS(L×W×H)|2700*1000*1600MM|RATEDVOLTAGE|400/230V|RATEDFREQUENCY|50HZ/60HZ|ENGINEMODEL|6LTAA89G2|POWER|275KVA/220KW|FUELCONSUMPTIONAT100%LOAD|≤205G/KWH|BORE×STROKE|114×135MM|DISPLACEMENT|890L|ENGINESTRUCTURE|6CYLINDERINLINE|STARTINGMETHOD|24VELECTRICALSTARTING|VOLTAGEREGULATIONFACTOR|±1%|INSULATIONCLASS/PROTECTIONGRADE|H/IP22ORF/IP21",
+    "model": "6LTAA8.9-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "mingbang-mbkl",
+    "power": {
+     "prime": {
+      "kW": 160,
+      "kVA": 200
+     },
+     "rated": {
+      "kVA": 275,
+      "kW": 220
+     }
+    },
+    "score": 235,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "minsun-motor|6CTA83G2|SYA274G||GFC200|200|160|6CTA83G2|SYA274G",
+    "model": "6CTA8.3-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "minsun-motor",
+    "power": {
+     "rated": {
+      "kVA": 200,
+      "kW": 160
+     }
+    },
+    "score": 229,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "rise-power|6CTA83G2|||RCM160|200|160|220|176|6CTA83G2|6L|83|<44|24|2360*850*1366|1760|3600*1330*2010|3060",
+    "model": "6CTA8.3-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "rise-power",
+    "power": {
+     "standby": {
+      "kVA": 220,
+      "kW": 176
+     },
+     "prime": {
+      "kVA": 200,
+      "kW": 160
+     }
+    },
+    "score": 229,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "victory-generator|6CTA83G2|||V176C|60|160|200|176|220|6CTA83G2|43|83|6L|ELECTRONIC|2450*950*1690|1760|3500*1080*2120|2290",
+    "model": "6CTA8.3-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "victory-generator",
+    "power": {
+     "standby": {
+      "kVA": 220,
+      "kW": 176
+     },
+     "prime": {
+      "kVA": 200,
+      "kW": 160
+     }
+    },
+    "score": 229,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "westinpower|E2876LE302|UCDI274J||5|RB225NT|180|225|E2876LE302|UCDI274J|6/L|128*166|1282|404|495|342|200AH/24V|T5N400TMAR400FF3P|3370*870*1210|1940",
+    "model": "E2876LE302",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "westinpower",
+    "power": {
+     "rated": {
+      "kVA": 225,
+      "kW": 180
+     }
+    },
+    "score": 223,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rise-power|CATC71|LC5014F||DE220E0|200|160|218|174|CATC71|LC5014F|6|7|<495|165|27|2500*1320*1626|1758",
+    "model": "CAT C7.1",
+    "make": "Caterpillar",
+    "origin": "other",
+    "sup": "rise-power",
+    "power": {
+     "standby": {
+      "kVA": 218,
+      "kW": 174
+     },
+     "prime": {
+      "kVA": 200,
+      "kW": 160
+     }
+    },
+    "score": 221,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rise-power|CATC9|LC5014H||C9|230|184|250|200|CATC9|LC5014H|6|88|<519|39|36|3300*1100*1771|2426",
+    "model": "CAT C9",
+    "make": "Caterpillar",
+    "origin": "other",
+    "sup": "rise-power",
+    "power": {
+     "standby": {
+      "kVA": 250,
+      "kW": 200
+     },
+     "prime": {
+      "kVA": 230,
+      "kW": 184
+     }
+    },
+    "score": 206,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sr-genset|NEF67TE3PV|UCI274H||227|181|206|164|NEF67TE3PV|FPT|UCI274H|TALA44M|/",
+    "model": "NEF67TE3PV",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "sr-genset",
+    "power": {
+     "standby": {
+      "kVA": 227,
+      "kW": 181
+     },
+     "prime": {
+      "kVA": 206,
+      "kW": 164
+     }
+    },
+    "score": 177,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "voltgent|NEF67TM7S502|||VFP2205|220|176|200|160|FPT|NEF67TM7S502|[EN][RU][ES][PT]",
+    "model": "NEF67TM7.S502",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "voltgent",
+    "power": {
+     "standby": {
+      "kVA": 220,
+      "kW": 176
+     },
+     "prime": {
+      "kVA": 200,
+      "kW": 160
+     }
+    },
+    "score": 165,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|RDC10N1|RC274J||R180N5|225KVA/180KW|248KVA/198KW|RDC10N1|RC274J|PDF",
+    "model": "RDC10-N1",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 248,
+      "kW": 198
+     },
+     "prime": {
+      "kVA": 225,
+      "kW": 180
+     }
+    },
+    "score": 152,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "long-gen|NEF67M7S500|UCI274G||LGFS220|160|200|176|220|NEF67M7S500|UCI274G|WHI274G|DOWNLOAD",
+    "model": "NEF67M7.S500",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "long-gen",
+    "power": {
+     "standby": {
+      "kVA": 220,
+      "kW": 176
+     },
+     "prime": {
+      "kVA": 200,
+      "kW": 160
+     }
+    },
+    "score": 130,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "weichai-power|6M12G4D3/5|||WPG220L8|1500|220/176|200/160|6M12G4D3/5|6|108×136|ELECTRONICCONTROL|STAGEIIIA",
+    "model": "6M12G4D3/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "weichai-power",
+    "power": {
+     "standby": {
+      "kVA": 220,
+      "kW": 176
+     },
+     "prime": {
+      "kVA": 200,
+      "kW": 160
+     }
+    },
+    "score": 122,
+    "why": [],
+    "made": null
+   }
+  ],
+  "madeDropped": []
+ },
+ "IB2500503506#0": {
+  "cap": {
+   "value": 380,
+   "unit": "kVA"
+  },
+  "origin": "g7",
+  "bidName": "Cung cấp và lắp đặt 15 động cơ máy phát điện",
+  "engineMakes": [],
+  "madeRule": null,
+  "top": [
+   {
+    "k": "sanq-power|NTA855G2A|HCI444E||SQC385|308/385|280/350|NTA855G2A|HCI444E|72|3120|4495|3000×1054×1758|4300×1483×2145",
+    "model": "NTA855-G2A",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 385,
+      "kW": 308
+     },
+     "prime": {
+      "kVA": 350,
+      "kW": 280
+     }
+    },
+    "score": 364,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "yongcai-elecmama|NTA855G2A|HCI444E||YCM280CC|385|308|350|280|CCEC|NTA855G2A|310343|6|ELECTRONIC|HCI444E|280KW",
+    "model": "NTA855-G2A",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "yongcai-elecmama",
+    "power": {
+     "standby": {
+      "kVA": 385,
+      "kW": 308
+     },
+     "prime": {
+      "kVA": 350,
+      "kW": 280
+     }
+    },
+    "score": 364,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|2206CE13TAG2|HCI444E||SQP400|320/400|280/350|2206CE13TAG2|HCI444E|USA|2932|4724|3200×1206×1980|4500×1583×2200",
+    "model": "2206C-E13TAG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 400,
+      "kW": 320
+     },
+     "prime": {
+      "kVA": 350,
+      "kW": 280
+     }
+    },
+    "score": 364,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|2206CE13TAG3|HCI444E||SQP450|360/450|320/400|2206CE13TAG3|HCI444E|USA|3069|4860|3200×1206×1980|4500×1583×2200",
+    "model": "2206C-E13TAG3",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 450,
+      "kW": 360
+     },
+     "prime": {
+      "kVA": 400,
+      "kW": 320
+     }
+    },
+    "score": 359,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|2206CE13TAG2|HCI444ES||SQP4386|352/438|320/400|2206CE13TAG2|HCI444ES|USA|2955|4774|3200×1206×1980|4500×1583×2200|",
+    "model": "2206C-E13TAG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 438,
+      "kW": 352
+     },
+     "prime": {
+      "kVA": 400,
+      "kW": 320
+     }
+    },
+    "score": 356,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "koten-power|6ZTAA13G2|HCI544C||KC425D5|340|425|374|4675|6ZTAA13G2|HCI544C",
+    "model": "6ZTAA13-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "koten-power",
+    "power": {
+     "standby": {
+      "kVA": 467.5,
+      "kW": 374
+     },
+     "prime": {
+      "kVA": 425,
+      "kW": 340
+     }
+    },
+    "score": 355,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "uleengen|NTAA855G7|HCI444F||UC400GF|320|400|NTAA855G7|CUMMINS|343|6L|140×152|14|748|HCI444F|3300X1150X1700|3000",
+    "model": "NTAA855-G7",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "uleengen",
+    "power": {
+     "rated": {
+      "kVA": 400,
+      "kW": 320
+     }
+    },
+    "score": 353,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "yongcai-elecmama|NTAA855G7A|HCI444F||YCM320CC|440|352|400|320|CCEC|NTAA855G7A|407|6|ELECTRONIC|HCI444F|320KW",
+    "model": "NTAA855-G7A",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "yongcai-elecmama",
+    "power": {
+     "standby": {
+      "kVA": 440,
+      "kW": 352
+     },
+     "prime": {
+      "kVA": 400,
+      "kW": 320
+     }
+    },
+    "score": 353,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|6ZTAA13G3|S4L1DD41||RDC388D6S|388KVA/310KW|427KVA/341KW|6ZTAA13G3|S4L1DD41|PDF",
+    "model": "6ZTAA13-G3",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 427,
+      "kW": 341
+     },
+     "prime": {
+      "kVA": 388,
+      "kW": 310
+     }
+    },
+    "score": 319,
+    "why": [
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "westinpower|E3268LE242|HCI544C||RN395NT|316|395|E3268LE242|HCI544C|8/V|132*157|172|403|482|600|200AH/24V|T5N630PR221DSLS/IR630FF3P|3880*1500*1650|3055",
+    "model": "E3268LE242",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "westinpower",
+    "power": {
+     "rated": {
+      "kVA": 395,
+      "kW": 316
+     }
+    },
+    "score": 315,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|6M21G440/5|S4L1DF41||RWB400D5S(STAGE2)|400KVA/320KW|440KVA/352KW|6M21G440/5|S4L1DF41|PDF",
+    "model": "6M21G440/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 440,
+      "kW": 352
+     },
+     "prime": {
+      "kVA": 400,
+      "kW": 320
+     }
+    },
+    "score": 303,
+    "why": [
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "westinpower|E3268LE222|HCI544C||7|RB445NT|356|445|E3268LE222|HCI544C|8/V|132*157|1719|417|469|676|200AH/24V|T6N800TMAR800FF3P|4170*1210*1500|3727",
+    "model": "E3268LE222",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "westinpower",
+    "power": {
+     "rated": {
+      "kVA": 445,
+      "kW": 356
+     }
+    },
+    "score": 302,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "westinpower|E3268LE212|HCI544C||RN455NT|364|455|E3268LE212|HCI544C|8/V|132*157|172|408|479|691|200AH/24V|T6N800TMAR800FF3P|4170*1600*1700|3750",
+    "model": "E3268LE212",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "westinpower",
+    "power": {
+     "rated": {
+      "kVA": 455,
+      "kW": 364
+     }
+    },
+    "score": 299,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|6M21G6D3/5|S4L1DG41||RWB438D5S(STAGE3)|438KVA/350KW|482KVA/385KW|6M21G6D3/5|S4L1DG41|PDF",
+    "model": "6M21G6D3/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 482,
+      "kW": 385
+     },
+     "prime": {
+      "kVA": 438,
+      "kW": 350
+     }
+    },
+    "score": 298,
+    "why": [
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "long-gen|CURSOR13TE3AS551|S4L1DF41||LGFS440|320|400|352|440|CURSOR13TE3AS551|S4L1DF41|WHI4G|DOWNLOAD",
+    "model": "CURSOR13TE3A.S551",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "long-gen",
+    "power": {
+     "standby": {
+      "kVA": 440,
+      "kW": 352
+     },
+     "prime": {
+      "kVA": 400,
+      "kW": 320
+     }
+    },
+    "score": 253,
+    "why": [
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "meao-jiangsu|8V1600G20F|HCI444F||MP320GF|440|330|400|320|8V1600G20F|HCI444F|3000×1590×1940|3570",
+    "model": "8V1600G20F",
+    "make": "MTU",
+    "origin": "other",
+    "sup": "meao-jiangsu",
+    "power": {
+     "standby": {
+      "kVA": 440,
+      "kW": 330
+     },
+     "prime": {
+      "kVA": 400,
+      "kW": 320
+     }
+    },
+    "score": 247,
+    "why": [
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "ettes-power|QSZ13G6|||EC425|310|388|340|425|QSZ13G6|410/550|6L|13|3300*1150*1700|2720|",
+    "model": "QSZ13-G6",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "ettes-power",
+    "power": {
+     "standby": {
+      "kVA": 425,
+      "kW": 340
+     },
+     "prime": {
+      "kVA": 388,
+      "kW": 310
+     }
+    },
+    "score": 219,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rise-power|CATC13|LC6114C||C13|400|320|450|360|CATC13|LC6114C|6|125|<928|36|45|3800*1130*2156|3215",
+    "model": "CAT C13",
+    "make": "Caterpillar",
+    "origin": "other",
+    "sup": "rise-power",
+    "power": {
+     "standby": {
+      "kVA": 450,
+      "kW": 360
+     },
+     "prime": {
+      "kVA": 400,
+      "kW": 320
+     }
+    },
+    "score": 216,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "fengmao-weifang|NTAA855G7|HI444FS||304GF|304/380|334/418|NTAA855G7|343|HI444FS|304/380|3250×1190×1700|3200",
+    "model": "NTAA855-G7",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "fengmao-weifang",
+    "power": {
+     "standby": {
+      "kVA": 418,
+      "kW": 334
+     },
+     "prime": {
+      "kVA": 380,
+      "kW": 304
+     }
+    },
+    "score": 214,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "voltgent|CURSOR13TE2AS551|||VFP4206|420|336|38125|305|FPT|CURSOR13TE2AS551|[EN][RU][ES][PT]",
+    "model": "CURSOR13TE2A.S551",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "voltgent",
+    "power": {
+     "standby": {
+      "kVA": 420,
+      "kW": 336
+     },
+     "prime": {
+      "kVA": 381.25,
+      "kW": 305
+     }
+    },
+    "score": 213,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rise-power|CATC15|LC6114D||C15|455|364|500|400|CATC15|LC6114D|6|152|<1037|60|58|3823*1110*2166|3676",
+    "model": "CAT C1.5",
+    "make": "Caterpillar",
+    "origin": "other",
+    "sup": "rise-power",
+    "power": {
+     "standby": {
+      "kVA": 500,
+      "kW": 400
+     },
+     "prime": {
+      "kVA": 455,
+      "kW": 364
+     }
+    },
+    "score": 201,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "wintpower|S6A3PTA|||WTME485|485/388|440/352|97|S6A3PTA|6L|186|24|430|ELEC|3530*1350*1850|3863",
+    "model": "S6A3-PTA",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "wintpower",
+    "power": {
+     "standby": {
+      "kVA": 485,
+      "kW": 388
+     },
+     "prime": {
+      "kVA": 440,
+      "kW": 352
+     }
+    },
+    "score": 197,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "aosif|400623TRS1|||AGP384|384|307|400623TRS1|611|6|23",
+    "model": "4006-23TRS1",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "aosif",
+    "power": {
+     "prime": {
+      "kVA": 384,
+      "kW": 307
+     }
+    },
+    "score": 188,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "victory-generator|8V1600G80F|||V352M|50|320|400|352|440|8V1600G80F|72|8V|2840*1660*1975|3270|4350*1600*2500|5270",
+    "model": "8V1600G80F",
+    "make": "MTU",
+    "origin": "other",
+    "sup": "victory-generator",
+    "power": {
+     "standby": {
+      "kVA": 440,
+      "kW": 352
+     },
+     "prime": {
+      "kVA": 400,
+      "kW": 320
+     }
+    },
+    "score": 184,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "kaihua-genset|8V1600G20G|||KH320GF|440|352|400|320|8V1600G20G|3000X1590X1940|3570",
+    "model": "8V1600G20G",
+    "make": "MTU",
+    "origin": "other",
+    "sup": "kaihua-genset",
+    "power": {
+     "standby": {
+      "kVA": 440,
+      "kW": 352
+     },
+     "prime": {
+      "kVA": 400,
+      "kW": 320
+     }
+    },
+    "score": 160,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|RYC16N1|RC444F||R320N5|400KVA/320KW|438KVA/350KW|RYC16N1|RC444F|PDF",
+    "model": "RYC16-N1",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 438,
+      "kW": 350
+     },
+     "prime": {
+      "kVA": 400,
+      "kW": 320
+     }
+    },
+    "score": 160,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "mecca-power|CURSOR13TE2A|||MC419FP|304|380|335|419|CURSOR13TE2A|",
+    "model": "CURSOR13 TE2A",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "mecca-power",
+    "power": {
+     "standby": {
+      "kVA": 419,
+      "kW": 335
+     },
+     "prime": {
+      "kVA": 380,
+      "kW": 304
+     }
+    },
+    "score": 125,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "weichai-power|6M21G4D3/5|||WPG440L8|1500|440/350|400/320|6M21G4D3/5|6|127×165|ELECTRONICCONTROL|STAGEIIIA",
+    "model": "6M21G4D3/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "weichai-power",
+    "power": {
+     "standby": {
+      "kVA": 440,
+      "kW": 350
+     },
+     "prime": {
+      "kVA": 400,
+      "kW": 320
+     }
+    },
+    "score": 117,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "depco-power|S6A3PTAA||ITEMNO:DPKDM550FREQUENCY(HZ):50PHASE:3VOLTAGE(V):380ENGINE:MITSUBISHIENGINEMODEL:S6A3PTAAPRP(KW):400PRP(KVA):500ESP(KW):440ESP(KVA):550ARRANGEMENT:6LGOVERNOR:ELECTRICAL|DETAILSGENERATORSET|GENSETMODEL|DPKDM550|TYPE|SILENT|FREQUENCY(HZ)|50|SPEED(RPM)|1500|PHASE|3|RATEDVOLTAGE|380V|PRIMEOUTPUT|362KW/450KVA|STANDBYOUTPUT|396KW/495KVA|CYLINDER|6|COOLINGSYSTEM|WATER|NW(KG)|5800|SIZE(L*W*H)MM|4370*1900*2230|FUELCON(L/H)|98|FUELCAPACITYTANK|970L|RUNNINGTIME(H)|8|SOUNDDECIBEL|70DB75DB|DETAILSENGINE|BRAND|MITSUBISHI|MODEL|S6A3PTAA|FUEL|DIESEL|CYLINDER|6|COOLINGSYSTEM|WATERCOOLING|CYLIDERARRANGEMANT|INLINE|BOREANDSTROKE(MM)|150X175|CYLE|4STAOKE|COMPRESSIONRATIO|145:1|GOVERNOR|ELECTRICAL|DISPLACEMENT(L)|1856|DETAILSALTERNATOR|BRAND|STAMFORD,LEROYSOMER,MECCALTE|MODEL|HCI544D/S5L1DD4/TALA473D/LSA472M7/ECO403S4B|NOOFBEARINGS|1|INSULATIONCLASS|H|WIRES|12|INGRESSPROTECTION|IP23|EXCITATIONSYSTEM|SHUNT|VOLRAGE|±1%",
+    "model": "S6A3-PTAA",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "depco-power",
+    "power": {
+     "prime": {
+      "kW": 362,
+      "kVA": 450
+     },
+     "standby": {
+      "kW": 396,
+      "kVA": 495
+     }
+    },
+    "score": 105,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "cooltech-shanghai|6135HF475(C)||PRIMEPOWER286KW/357KVA",
+    "model": "6135HF475(C)",
+    "make": "John Deere",
+    "origin": "other",
+    "sup": "cooltech-shanghai",
+    "power": {
+     "prime": {
+      "kVA": 357,
+      "kW": 286
+     },
+     "standby": {
+      "kVA": 395,
+      "kW": 316
+     }
+    },
+    "score": 75,
+    "why": [],
+    "made": null
+   }
+  ],
+  "madeDropped": []
+ },
+ "IB2500533266#0": {
+  "cap": {
+   "value": 100,
+   "unit": "kVA"
+  },
+  "origin": "g20eu",
+  "bidName": "Mua sắm máy phát điện",
+  "engineMakes": [],
+  "madeRule": null,
+  "top": [
+   {
+    "k": "jet-power|1104C44TAG2|UCI274C||P110|110|88|100|80|1104C44TAG2|4L|105X127|44|226|UCI274C|2150*760*1250|1067|2850*1080*1550|1567",
+    "model": "1104C-44TAG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "jet-power",
+    "power": {
+     "standby": {
+      "kVA": 110,
+      "kW": 88
+     },
+     "prime": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 364,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "koten-power|6BT59G2|UCI274C||KC100D5|80|100|88|110|6BT59G2|UCI274C",
+    "model": "6BT5.9-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "koten-power",
+    "power": {
+     "standby": {
+      "kVA": 110,
+      "kW": 88
+     },
+     "prime": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 364,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|6BT59G1|UCI274C||SQC110|88/110|80/100|6BT59G1|UCI274C|229|1272|2059|2200×830×1278|3200×1133×1766",
+    "model": "6BT5.9-G1",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 110,
+      "kW": 88
+     },
+     "prime": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 364,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "tecgen-fujian|1104C44TAG2|UCI274C||MODELNUMBER|TGP110S|GENSETMODEL|TG110PS|PRIMEPOWER|100KVA/80KW|STANDBYPOWER|110KVA/88KW|RATEDVOLTAGE(V)|380|RATEDFREQUENCY(HZ)|50|RATEDSPEED(RPM)|1500|POWERFACTOR(COS&CENT;)|08(LAGGING)|ENGINEMODEL|1104C44TAG2|ENGINEPOWER(KW)|103|BORE*STROKE(MM*MM)|105*127|DISPLACEMENT(LITER)|441|STARTINGMETHOD|DC24VELECTRICALSTARTING|FUELCONSUMPTION(G/KWH)|205|ALTERNATORMODEL|UCI274C|VOLTAGEREGULATION,STEADYSTATE|100%",
+    "model": "1104C-44TAG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "tecgen-fujian",
+    "power": {
+     "prime": {
+      "kVA": 100,
+      "kW": 80
+     },
+     "standby": {
+      "kVA": 110,
+      "kW": 88
+     }
+    },
+    "score": 364,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "uleengen|1104C44TAG2|UCI274C||UP100GF|80|100|1104C44TAG2|PERKINS|90|6L|105×127|441|187|UCI274C|2240X960X1315|1030",
+    "model": "1104C-44TAG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "uleengen",
+    "power": {
+     "rated": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 364,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "uleengen|6BT59G2|UCI274C||UC100GF|80|100|6BT59G2|CUMMINS|92|6L|102×120|588|187|UCI274C|2250×830×1550|1000",
+    "model": "6BT5.9-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "uleengen",
+    "power": {
+     "rated": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 364,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "jet-power|TAD551GE|UCI274C||V110|110|88|100|80|TAD551GE|4/INLINE|108×130MM|476|ELECTRONIC|180:1|UCI274C",
+    "model": "TAD551GE",
+    "make": "Volvo Penta",
+    "origin": "other",
+    "sup": "jet-power",
+    "power": {
+     "standby": {
+      "kVA": 110,
+      "kW": 88
+     },
+     "prime": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 356,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "longkai-power|4M10G110/5|LSA443S5||LG80BD|88|110|80|100|4M10G110/5|LK274C|LSA443S5|OP2050*880*1230|AT2938*1080*1690|",
+    "model": "4M10G110/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "longkai-power",
+    "power": {
+     "standby": {
+      "kVA": 110,
+      "kW": 88
+     },
+     "prime": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 356,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "dingbo|TAD531GE|LSA443S5||XG80GF|80/100|88/110|TAD531GE|LSA443S5|2200X720X1380|1200",
+    "model": "TAD531GE",
+    "make": "Volvo Penta",
+    "origin": "other",
+    "sup": "dingbo",
+    "power": {
+     "standby": {
+      "kVA": 110,
+      "kW": 88
+     },
+     "prime": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 340,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|QSB5G5|UCI274C||SQIC110|88/110|80/100|QSB5G5|USA|UCI274C|212|1272|2019|2200×955×1490|3200×1133×1766",
+    "model": "QSB5-G5",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 110,
+      "kW": 88
+     },
+     "prime": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 332,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|NEF45TM3S500|UCI274D||SQFP132|106/132|96/120|NEF45TM3S500|UCI274D|4L|45",
+    "model": "NEF45TM3.S500",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 132,
+      "kW": 106
+     },
+     "prime": {
+      "kVA": 120,
+      "kW": 96
+     }
+    },
+    "score": 328,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|4M10G6D3/5|UCI274C||RWB100D5S(STAGE3)|100KVA/80KW|110KVA/88KW|4M10G6D3/5|UCI274C|PDF",
+    "model": "4M10G6D3/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 110,
+      "kW": 88
+     },
+     "prime": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 324,
+    "why": [
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|6BT59G2|UCI274C||RDC100D5S(6BT59G2)|100KVA/80KW|110KVA/88KW|6BT59G2|UCI274C|PDF",
+    "model": "6BT5.9-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 110,
+      "kW": 88
+     },
+     "prime": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 324,
+    "why": [
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "sr-genset|4BTAA39G3|UCI274C||110|88|100|80|4BTAA39G3|ELEC|UCI274C|TALA44D|SA27480|2250*990*1450|2960*1100*1650",
+    "model": "4BTAA3.9-G3",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "sr-genset",
+    "power": {
+     "standby": {
+      "kVA": 110,
+      "kW": 88
+     },
+     "prime": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 324,
+    "why": [
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "minsun-motor|1104A44TG2|SYA224G||GFP80|80|100|1104A44TG2|SYA224G",
+    "model": "1104A-44TG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "minsun-motor",
+    "power": {
+     "rated": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 309,
+    "why": [
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "minsun-motor|6BT59G1|SYA274C||GFC100|100|80|6BT59G1|SYA274C",
+    "model": "6BT5.9-G1",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "minsun-motor",
+    "power": {
+     "rated": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 309,
+    "why": [
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|TAD551GE(531GE)|UCI274C||SQV110|88/110|80/100|TAD551GE(531GE)|GERMANY|UCI274C|218|1350|1900|2080×920×1550|2810×1140×1830|",
+    "model": "TAD551GE(531GE)",
+    "make": "Volvo Penta",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 110,
+      "kW": 88
+     },
+     "prime": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 300,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "minsun-motor|6BTA59G2|SYA274D||GFC120|120|96|6BTA59G2|SYA274D",
+    "model": "6BTA5.9-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "minsun-motor",
+    "power": {
+     "rated": {
+      "kVA": 120,
+      "kW": 96
+     }
+    },
+    "score": 289,
+    "why": [
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "long-gen|6BT59G1|UCI274C||LGCS110|80|100|88|110|6BT59G1|UCI274C|WHI274C|2200*880*1530|1050|3000*1050*1740|1800|DOWNLOAD",
+    "model": "6BT5.9-G1",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "long-gen",
+    "power": {
+     "standby": {
+      "kVA": 110,
+      "kW": 88
+     },
+     "prime": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 274,
+    "why": [
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "rise-power|D1146|LSA442VS3||RDL8060|80/100|88/110|D1146|LSA442VS3|2200×820×1370|2900×1080×1600|1350|2900",
+    "model": "D1146",
+    "make": "Doosan / Hyundai",
+    "origin": "other",
+    "sup": "rise-power",
+    "power": {
+     "standby": {
+      "kVA": 110,
+      "kW": 88
+     },
+     "prime": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 269,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sr-genset|1104DE44TAG2EU|UCI274C||110|88|100|80|1104DE44TAG2EU|PERKINS|UCI274C|TALA44D|/",
+    "model": "1104D-E44TAG2 EU",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "sr-genset",
+    "power": {
+     "standby": {
+      "kVA": 110,
+      "kW": 88
+     },
+     "prime": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 260,
+    "why": [
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "long-gen|NEF45TM2AS500|UCI274C||LGFS110|80|100|88|110|NEF45TM2AS500|UCI274C|WHI274C|DOWNLOAD",
+    "model": "NEF45TM2A.S500",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "long-gen",
+    "power": {
+     "standby": {
+      "kVA": 110,
+      "kW": 88
+     },
+     "prime": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 258,
+    "why": [
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "sr-genset|NEF45TE2PA100|UCI274C||113|91|103|82|NEF45TE2PA100|FPT|UCI274C|TALA44D|/",
+    "model": "NEF45TE2P.A100",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "sr-genset",
+    "power": {
+     "standby": {
+      "kVA": 113,
+      "kW": 91
+     },
+     "prime": {
+      "kVA": 103,
+      "kW": 82
+     }
+    },
+    "score": 257,
+    "why": [
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "eastern-lion-fuan|1104DE44TAG2|EL274C||GFSP111|80|100|89|111|1104DE44TAG2|60552|EL274C|80|SMARTGEN6120|DETAIL",
+    "model": "1104D-E44TAG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "eastern-lion-fuan",
+    "power": {
+     "standby": {
+      "kVA": 111,
+      "kW": 89
+     },
+     "prime": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 253,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rise-power|CATC44|LC3114F||DE110E2|100|80|110|88|CATC44|LC3114F|4|44|<238|8|175|2089*1120*1375|1147",
+    "model": "CAT C4.4",
+    "make": "Caterpillar",
+    "origin": "other",
+    "sup": "rise-power",
+    "power": {
+     "standby": {
+      "kVA": 110,
+      "kW": 88
+     },
+     "prime": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 221,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "kaihua-genset|D1146T|||KH90GF|1238|99|1125|90|D1146T|2300X790X1500|1500",
+    "model": "D1146T",
+    "make": "Doosan / Hyundai",
+    "origin": "other",
+    "sup": "kaihua-genset",
+    "power": {
+     "standby": {
+      "kVA": 123.8,
+      "kW": 99
+     },
+     "prime": {
+      "kVA": 112.5,
+      "kW": 90
+     }
+    },
+    "score": 216,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "mecca-power|4M10G125/5|||MC125BD|80|100|100|125|4M10G125/5|",
+    "model": "4M10G125/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "mecca-power",
+    "power": {
+     "standby": {
+      "kVA": 125,
+      "kW": 100
+     },
+     "prime": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 173,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "longkai-power|6BG1Z1|||LG50I|110|88|100|80|6BG1Z1|OP2250*880*1300|AT3288*1130*1850|",
+    "model": "6BG1-Z1",
+    "make": "Isuzu",
+    "origin": "other",
+    "sup": "longkai-power",
+    "power": {
+     "standby": {
+      "kVA": 110,
+      "kW": 88
+     },
+     "prime": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 165,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|RDC6N2|RC274C||R80N5|100KVA/80KW|110KVA/88KW|RDC6N2|RC274C|PDF",
+    "model": "RDC6-N2",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 110,
+      "kW": 88
+     },
+     "prime": {
+      "kVA": 100,
+      "kW": 80
+     }
+    },
+    "score": 165,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "rcg-power|RDC6N3|RC274D||R90N5|113KVA/90KW|128KVA/99KW|RDC6N3|RC274D|PDF",
+    "model": "RDC6-N3",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 128,
+      "kW": 99
+     },
+     "prime": {
+      "kVA": 113,
+      "kW": 90
+     }
+    },
+    "score": 152,
+    "why": [],
+    "made": null
+   }
+  ],
+  "madeDropped": []
+ },
+ "IB2500533266#1": {
+  "cap": {
+   "value": 250,
+   "unit": "kVA"
+  },
+  "origin": "g20eu",
+  "bidName": "Mua sắm máy phát điện",
+  "engineMakes": [],
+  "madeRule": null,
+  "top": [
+   {
+    "k": "hosem-power|6LTAA89G2|UCDI274K||PRIMEPOWER|250KVA|STANDBYPOWER|275KVA|FREQUENCY|50HZ|ENGINEMODEL|CUMMINS6LTAA89G2|MODEL|AC250HS|ENGINEMODEL|6CTAA83G2|MODEL|AC275S|ENGINEMODEL|6LTAA89G2|MODEL|ASH250S|ENGINEMODEL|6DTAA89G22|STANDBYPOWER|250KVA200KW|PRIMEPOWER|227KVA182KW|RATEDVOLTAGE|220/127V|RATEDCURRENT|5965A|ENGINEMODEL|1206AE70TTAG3|ALTERNATORMODEL|UCDI274K|FUELCONSUMPTION|569|CONTINUOUSOUTPUT|250KVA|STANDBYOUTPUT|275KVA|VOLTAGE|400/230V|PHASE|3PHASE4WIRES|FREQUENCY|60HZ|STANDBYOUTPUT|300KVA|PRIMEOUTPUT|275KVA",
+    "model": "6LTAA8.9-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "hosem-power",
+    "power": {
+     "prime": {
+      "kVA": 250
+     },
+     "standby": {
+      "kVA": 275
+     }
+    },
+    "score": 367,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|NT855GA|UCDI274K||SQC275|220/275|200/250|NT855GA|UCDI274K|523|2490|4250|3000×1054×1758|4300×1483×2145",
+    "model": "NT855-GA",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 275,
+      "kW": 220
+     },
+     "prime": {
+      "kVA": 250,
+      "kW": 200
+     }
+    },
+    "score": 367,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|MTA11G2|UCDI274K||SQC275|220/275|200/250|MTA11G2|UCDI274K|532|2370|4123|2750×1050×1585|4300×1483×2145",
+    "model": "MTA11-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 275,
+      "kW": 220
+     },
+     "prime": {
+      "kVA": 250,
+      "kW": 200
+     }
+    },
+    "score": 367,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|1506AE88TAG3|UCDI274K||SQP275|220/275|200/250|1506AE88TAG3|UCDI274K|USA|2760|4500|3000×1200×2000|4100×1490×2000",
+    "model": "1506A-E88TAG3",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 275,
+      "kW": 220
+     },
+     "prime": {
+      "kVA": 250,
+      "kW": 200
+     }
+    },
+    "score": 367,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|1506AE88TAG2|UCI274H||SQP2756|220/275|200/250|1506AE88TAG2|UCI274H|USA|2760|4500|3000×1200×2000|4100×1490×2000|",
+    "model": "1506A-E88TAG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 275,
+      "kW": 220
+     },
+     "prime": {
+      "kVA": 250,
+      "kW": 200
+     }
+    },
+    "score": 364,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "jet-power|TAD754GE|UCDI274K||V275|275|220|250|200|TAD754GE|6/INLINE|108×130MM|715|ELECTRONIC|180:1|UCDI274K",
+    "model": "TAD754GE",
+    "make": "Volvo Penta",
+    "origin": "other",
+    "sup": "jet-power",
+    "power": {
+     "standby": {
+      "kVA": 275,
+      "kW": 220
+     },
+     "prime": {
+      "kVA": 250,
+      "kW": 200
+     }
+    },
+    "score": 359,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "longkai-power|6M16G275/5|LSA463S5||LG200BD|220|275|200|250|6M16G275/5|LK274K|LSA463S5|OP2850*1050*1620|AT3958*1280*2150|",
+    "model": "6M16G275/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "longkai-power",
+    "power": {
+     "standby": {
+      "kVA": 275,
+      "kW": 220
+     },
+     "prime": {
+      "kVA": 250,
+      "kW": 200
+     }
+    },
+    "score": 353,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "dingbo|TAD734GE|LSA463S5||XG200GF|200/250|220/275|TAD734GE|LSA463S5|2650X1070X1650|1650",
+    "model": "TAD734GE",
+    "make": "Volvo Penta",
+    "origin": "other",
+    "sup": "dingbo",
+    "power": {
+     "standby": {
+      "kVA": 275,
+      "kW": 220
+     },
+     "prime": {
+      "kVA": 250,
+      "kW": 200
+     }
+    },
+    "score": 337,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "jet-power|TAD841GE|ECO382M4C||V275T2|275|220|250|200|TAD841GE|L6|EMS|77|110*135|49|STAGEII|ECO382M4C",
+    "model": "TAD841GE",
+    "make": "Volvo Penta",
+    "origin": "other",
+    "sup": "jet-power",
+    "power": {
+     "standby": {
+      "kVA": 275,
+      "kW": 220
+     },
+     "prime": {
+      "kVA": 250,
+      "kW": 200
+     }
+    },
+    "score": 333,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|1206AE70TTAG3|UCDI274K||RP250D5S|250KVA/200KW|275KVA/220KW|1206AE70TTAG3|UCDI274K|PDF",
+    "model": "1206A-E70TTAG3",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 275,
+      "kW": 220
+     },
+     "prime": {
+      "kVA": 250,
+      "kW": 200
+     }
+    },
+    "score": 327,
+    "why": [
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|6M12G8D3/5|UCDI274K||RWB250D5S(STAGE3)|250KVA/200KW|275KVA/220KW|6M12G8D3/5|UCDI274K|PDF",
+    "model": "6M12G8D3/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 275,
+      "kW": 220
+     },
+     "prime": {
+      "kVA": 250,
+      "kW": 200
+     }
+    },
+    "score": 327,
+    "why": [
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "jet-power|DP086CCV|TALA46D||HD275V|275|220|250|200|DP086CCV|L6|75|110X132|524|EUSTAGEV|TALA46D",
+    "model": "DP086CCV",
+    "make": "Hyundai",
+    "origin": "other",
+    "sup": "jet-power",
+    "power": {
+     "standby": {
+      "kVA": 275,
+      "kW": 220
+     },
+     "prime": {
+      "kVA": 250,
+      "kW": 200
+     }
+    },
+    "score": 321,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|6M16G300/5|TALA46E||RWB275D5S(STAGE2)|275KVA/220KW|300KVA/240KW|6M16G300/5|TALA46E|PDF",
+    "model": "6M16G300/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 300,
+      "kW": 240
+     },
+     "prime": {
+      "kVA": 275,
+      "kW": 220
+     }
+    },
+    "score": 295,
+    "why": [
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "jet-power|JET274K/200KW|P126TI/241KW||DS275|275|220|250|200|P126TI/241KW|L6|ELECTRIC|11051|123×155|JET274K/200KW|2970*1100*1600|2000|3650*1300*2000|2700",
+    "model": "JET274K/200KW",
+    "make": "Doosan",
+    "origin": "other",
+    "sup": "jet-power",
+    "power": {
+     "standby": {
+      "kVA": 275,
+      "kW": 220
+     },
+     "prime": {
+      "kVA": 250,
+      "kW": 200
+     }
+    },
+    "score": 285,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "long-gen|DP086LA|TALA46D||LGDO280|204|255|224|281|DP086LA|WHI274J|TALA46D|3100X1050X1650|2100|3450X1180X2100|2800|DOWNLOAD",
+    "model": "DP086LA",
+    "make": "Doosan / Hyundai",
+    "origin": "other",
+    "sup": "long-gen",
+    "power": {
+     "standby": {
+      "kVA": 281,
+      "kW": 224
+     },
+     "prime": {
+      "kVA": 255,
+      "kW": 204
+     }
+    },
+    "score": 261,
+    "why": [
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "sr-genset|CURSOR87TE3F|S4L1DC4||298|238|267|214|CURSOR87TE3F|FPT|S4L1DC4|TALA46E|/",
+    "model": "CURSOR87TE3F",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "sr-genset",
+    "power": {
+     "standby": {
+      "kVA": 298,
+      "kW": 238
+     },
+     "prime": {
+      "kVA": 267,
+      "kW": 214
+     }
+    },
+    "score": 238,
+    "why": [
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "westinpower|E2676LE202|S4L1SC||RN250NT|200|250|E2676LE202|S4L1SC|6/L|126*166|124|394|491|380|200AH/24V|T5N400TMAR400FF3P|3319*1080*1206|1795",
+    "model": "E2676LE202",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "westinpower",
+    "power": {
+     "rated": {
+      "kVA": 250,
+      "kW": 200
+     }
+    },
+    "score": 224,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rise-power|CATC9|LC5014H||C9|250|200|275|220|CATC9|LC5014H|6|88|<57|39|36|3300*1100*1771|2426",
+    "model": "CAT C9",
+    "make": "Caterpillar",
+    "origin": "other",
+    "sup": "rise-power",
+    "power": {
+     "standby": {
+      "kVA": 275,
+      "kW": 220
+     },
+     "prime": {
+      "kVA": 250,
+      "kW": 200
+     }
+    },
+    "score": 221,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "comappower|S6BPTA|||COM275SL|275KVA|220KW|250KVA|200KW|S6BPTA|JAPAN|6|COM275SL",
+    "model": "S6B-PTA",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "comappower",
+    "power": {
+     "standby": {
+      "kVA": 275,
+      "kW": 220
+     },
+     "prime": {
+      "kVA": 250,
+      "kW": 200
+     }
+    },
+    "score": 213,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "westinpower|E2676LE212|S4L1SD||6|RB285NT|228|285|E2676LE212|S4L1SD|6/L|126*166|124|403|464|433|200AH/24V|T5N630TMAR500FF3P|3939*1000*1206|1845",
+    "model": "E2676LE212",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "westinpower",
+    "power": {
+     "rated": {
+      "kVA": 285,
+      "kW": 228
+     }
+    },
+    "score": 210,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "ettes-power|6R1600G20F|||ET330|240|300|260|330|6R1600G20F|301|6L|TBA|3120*1180*1800|2950|",
+    "model": "6R1600G20F",
+    "make": "MTU",
+    "origin": "other",
+    "sup": "ettes-power",
+    "power": {
+     "standby": {
+      "kVA": 330,
+      "kW": 260
+     },
+     "prime": {
+      "kVA": 300,
+      "kW": 240
+     }
+    },
+    "score": 201,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "long-gen|C87TE3|S4L1DC41||LGFS275|200|250|220|275|C87TE3|S4L1DC41|WHI274K|DOWNLOAD",
+    "model": "C87TE3",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "long-gen",
+    "power": {
+     "standby": {
+      "kVA": 275,
+      "kW": 220
+     },
+     "prime": {
+      "kVA": 250,
+      "kW": 200
+     }
+    },
+    "score": 195,
+    "why": [
+     "đầu phát HSMT nêu"
+    ],
+    "made": null
+   },
+   {
+    "k": "gordon-power|D11A2|||GDVM275|200|250|220|275|D11A2|1500|240|54|V6128×142|10964|266×140192|400×170×223",
+    "model": "D11A2",
+    "make": "Doosan",
+    "origin": "other",
+    "sup": "gordon-power",
+    "power": {
+     "standby": {
+      "kVA": 275,
+      "kW": 220
+     },
+     "prime": {
+      "kVA": 250,
+      "kW": 200
+     }
+    },
+    "score": 189,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "victory-generator|6R1600G70F|||V240M|50|220|275|240|300|6R1600G70F|52|6L|3000*1450*1815|2760|4350*1500*2260|4870",
+    "model": "6R1600G70F",
+    "make": "MTU",
+    "origin": "other",
+    "sup": "victory-generator",
+    "power": {
+     "standby": {
+      "kVA": 300,
+      "kW": 240
+     },
+     "prime": {
+      "kVA": 275,
+      "kW": 220
+     }
+    },
+    "score": 179,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "ettes-power|E2876LE302|||★EM200B6|200|255|E2876LE302|200|6L|128|367%|468%|835%|",
+    "model": "E2876LE302",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "ettes-power",
+    "power": {
+     "rated": {
+      "kVA": 255,
+      "kW": 200
+     }
+    },
+    "score": 179,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|RDC10N2|RC274K||R200N5|250KVA/200KW|275KVA/220KW|RDC10N2|RC274K|PDF",
+    "model": "RDC10-N2",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 275,
+      "kW": 220
+     },
+     "prime": {
+      "kVA": 250,
+      "kW": 200
+     }
+    },
+    "score": 165,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "depco-power|P126TI||ITEMNO:DPKDD275FREQUENCY(HZ):50PHASE:3VOLTAGE(V):380ENGINE:HYUNDAIENGINEMODEL:P126TIPRP(KW):200PRP(KVA):250ESP(KW):220ESP(KVA):275ARRANGEMENT:6LGOVERNOR:ELECTRICAL|DETAILSGENERATORSET|GENSETMODEL|DPKDD275|TYPE|SILENT|FREQUENCY(HZ)|50|SPEED(RPM)|1500|PHASE|3|RATEDVOLTAGE|380V|PRIMEOUTPUT|200KW/250KVA|STANDBYOUTPUT|220KW/275KVA|CYLINDER|6|COOLINGSYSTEM|WATER|NW(KG)|3020|SIZE(L*W*H)MM|3700*1250*1790|FUELCON(L/H)|581|FUELCAPACITYTANK|500L|RUNNINGTIME(H)|8|SOUNDDECIBEL|70DB75DB|DETAILSENGINE|BRAND|HYUNDAI|MODEL|P126TI|FUEL|DIESEL|CYLINDER|6|COOLINGSYSTEM|WATERCOOLING|CYLIDERARRANGEMANT|INLINE|BOREANDSTROKE(MM)|123X155|CYLE|4STAOKE|COMPRESSIONRATIO|170:1|GOVERNOR|ELECTRICAL|DISPLACEMENT(L)|1105|DETAILSALTERNATOR|BRAND|DEPCO,LEROYSOMER,STAMFORD,MECCALTE|MODEL|DPC274K/TALA46D/LSA463M7/S4L1DC4/ECO381L4A|NOOFBEARINGS|1|INSULATIONCLASS|H|WIRES|12|INGRESSPROTECTION|IP23|EXCITATIONSYSTEM|SHUNT|VOLRAGE|±1%",
+    "model": "P126TI",
+    "make": "Hyundai / Doosan",
+    "origin": "other",
+    "sup": "depco-power",
+    "power": {
+     "prime": {
+      "kW": 200,
+      "kVA": 250
+     },
+     "standby": {
+      "kW": 220,
+      "kVA": 275
+     }
+    },
+    "score": 131,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "depco-power|CURSOR87TE3||ITEMNO:DPKDFPT275FREQUENCY(HZ):50PHASE:3VOLTAGE(V):380ENGINE:FPTENGINEMODEL:CURSOR87TE3PRP(KW):200PRP(KVA):250ESP(KW):220ESP(KVA):275ARRANGEMENT:6LGOVERNOR:ECU|DETAILSGENERATORSET|GENSETMODEL|DPKDFPT275|TYPE|SILENT|FREQUENCY(HZ)|50|SPEED(RPM)|1500|PHASE|3|RATEDVOLTAGE|380V|PRIMEOUTPUT|200KW/250KVA|STANDBYOUTPUT|220KW/275KVA|CYLINDER|6|COOLINGSYSTEM|WATER|NW(KG)|2640|SIZE(L*W*H)MM|3500*1250*1880|FUELCON(L/H)|58|FUELCAPACITYTANK|560L|RUNNINGTIME(H)|8|SOUNDDECIBEL|70DB75DB|DETAILSENGINE|BRAND|FPT|MODEL|CURSOR87TE3|FUEL|DIESEL|CYLINDER|6|COOLINGSYSTEM|WATERCOOLING|CYLIDERARRANGEMANT|INLINE|BOREANDSTROKE(MM)|117X135|CYLE|4STAOKE|COMPRESSIONRATIO|159:1|GOVERNOR|ECU|DISPLACEMENT(L)|87|DETAILSALTERNATOR|BRAND|DEPCO,STAMFORD,LEROYSOMER,MECCALTE|MODEL|DPC274K/UCI274K/S4L1SC4/LSA463M7/TALA46E/ECO381L4A|NOOFBEARINGS|1|INSULATIONCLASS|H|WIRES|12|INGRESSPROTECTION|IP23|EXCITATIONSYSTEM|SHUNT|VOLRAGE|±1%",
+    "model": "CURSOR87TE3",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "depco-power",
+    "power": {
+     "prime": {
+      "kW": 200,
+      "kVA": 250
+     },
+     "standby": {
+      "kW": 220,
+      "kVA": 275
+     }
+    },
+    "score": 123,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "xingguang-jiangsu|6R1600G10F|||XG220GF|200/250|220/275|6R1600G10F|6|46|199|国II|2800×1150×1650|2500",
+    "model": "6R1600G10F",
+    "make": "MTU",
+    "origin": "other",
+    "sup": "xingguang-jiangsu",
+    "power": {
+     "standby": {
+      "kVA": 275,
+      "kW": 220
+     },
+     "prime": {
+      "kVA": 250,
+      "kW": 200
+     }
+    },
+    "score": 123,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "agg-fuzhou|DP086CB|||H275E6|275/220|250/200|DP086CB|HYUNDAI",
+    "model": "DP086CB",
+    "make": "Hyundai / Doosan",
+    "origin": "other",
+    "sup": "agg-fuzhou",
+    "power": {
+     "standby": {
+      "kVA": 275,
+      "kW": 220
+     },
+     "prime": {
+      "kVA": 250,
+      "kW": 200
+     }
+    },
+    "score": 107,
+    "why": [],
+    "made": null
+   }
+  ],
+  "madeDropped": []
+ },
+ "IB2500541094#0": {
+  "cap": {
+   "value": 430,
+   "unit": "kVA"
+  },
+  "origin": "g7",
+  "bidName": "Cung cấp 06 tổ hợp máy phát điện công suất 475KVA÷500KVA",
+  "engineMakes": [],
+  "madeRule": null,
+  "top": [
+   {
+    "k": "sanq-power|6ZTAA13G2|HCI544C||SQC460|368/460|350/438|6ZTAA13G2|HCI544C|87|3700|6450|3250×1360×2100|5000×1983×2371",
+    "model": "6ZTAA13-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 460,
+      "kW": 368
+     },
+     "prime": {
+      "kVA": 438,
+      "kW": 350
+     }
+    },
+    "score": 285,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "koten-power|6ZTAA13G4|HCI544C||KC438D5|350|438|384|480|6ZTAA13G4|HCI544C",
+    "model": "6ZTAA13-G4",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "koten-power",
+    "power": {
+     "standby": {
+      "kVA": 480,
+      "kW": 384
+     },
+     "prime": {
+      "kVA": 438,
+      "kW": 350
+     }
+    },
+    "score": 285,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|KTA19G3|HCI544C||SQC500|400/500|360/450|KTA19G3|HCI544C|951|3800|6500|3350×1280×1934|4800×1683×2200",
+    "model": "KTA19-G3",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 500,
+      "kW": 400
+     },
+     "prime": {
+      "kVA": 450,
+      "kW": 360
+     }
+    },
+    "score": 282,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "uleengen|KTA19G3|HCI544C||UC450GF|360|450|KTA19G3|CUMMINS|408|6L|159×159|189|841|HCI544C|3300X1150X1700|4200",
+    "model": "KTA19-G3",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "uleengen",
+    "power": {
+     "rated": {
+      "kVA": 450,
+      "kW": 360
+     }
+    },
+    "score": 282,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "yongcai-elecmama|KTA19G3|HCI544C||YCM360CC|495|396|450|360|CCEC|KTA19G3|403448|6|ELECTRONIC|HCI544C|400KW",
+    "model": "KTA19-G3",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "yongcai-elecmama",
+    "power": {
+     "standby": {
+      "kVA": 495,
+      "kW": 396
+     },
+     "prime": {
+      "kVA": 450,
+      "kW": 360
+     }
+    },
+    "score": 282,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "koten-power|QSZ13G5|HCI544C||KC450D5|360|450|400|500|QSZ13G5|HCI544C",
+    "model": "QSZ13-G5",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "koten-power",
+    "power": {
+     "standby": {
+      "kVA": 500,
+      "kW": 400
+     },
+     "prime": {
+      "kVA": 450,
+      "kW": 360
+     }
+    },
+    "score": 282,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "uleengen|2506CE15TAG1|S4L1DG41||UP450GF|360|450|2506CE15TAG1|PERKINS|396|6L|137×171|152|841|S4L1DG41|3280X1130X1950|3800",
+    "model": "2506C-E15TAG1",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "uleengen",
+    "power": {
+     "rated": {
+      "kVA": 450,
+      "kW": 360
+     }
+    },
+    "score": 276,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "yongcai-elecmama|KTA19G3A|HCI544C||YCM400CC|550|440|500|400|CCEC|KTA19G3A|448504|6|ELECTRONIC|HCI544C|400KW",
+    "model": "KTA19-G3A",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "yongcai-elecmama",
+    "power": {
+     "standby": {
+      "kVA": 550,
+      "kW": 440
+     },
+     "prime": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 271,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "koten-power|QSZ13G3|HCI544C||KC500D5|400|500|440|550|QSZ13G3|HCI544C",
+    "model": "QSZ13-G3",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "koten-power",
+    "power": {
+     "standby": {
+      "kVA": 550,
+      "kW": 440
+     },
+     "prime": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 271,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "uleengen|QSZ13G3|HCI544C||UC500GF|400|500|QSZ13G3|CUMMINS|450|6L|130×163|13|935|HCI544C|3300X1460X2100|3550",
+    "model": "QSZ13-G3",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "uleengen",
+    "power": {
+     "rated": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 271,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "acepow-fuan|QSZ13G2|315C||APC350|350|438|375|468|QSZ13G2|400|440|315C",
+    "model": "QSZ13-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "acepow-fuan",
+    "power": {
+     "standby": {
+      "kVA": 468,
+      "kW": 375
+     },
+     "prime": {
+      "kVA": 438,
+      "kW": 350
+     }
+    },
+    "score": 267,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "dingbo|2506CE15TAG1|MP3604A||XG350GF|350/4375|385/48125|2506CE15TAG1|MP3604A|3500X1200X2050|3600",
+    "model": "2506C-E15TAG1",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "dingbo",
+    "power": {
+     "standby": {
+      "kVA": 481.25,
+      "kW": 385
+     },
+     "prime": {
+      "kVA": 437.5,
+      "kW": 350
+     }
+    },
+    "score": 267,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|CR13TE6WS550|HCI544C||SQFP495|400/495|360/450|CR13TE6WS550|HCI544C|6L|129",
+    "model": "CR13TE6W. S550",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 495,
+      "kW": 400
+     },
+     "prime": {
+      "kVA": 450,
+      "kW": 360
+     }
+    },
+    "score": 266,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "longkai-power|6M21G500/5|LSA473M7||LG360BD|396|495|360|450|6M21G500/5|LK544C|LSA473M7|OP3350*1150*1800|AT4588*1600*2500|",
+    "model": "6M21G500/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "longkai-power",
+    "power": {
+     "standby": {
+      "kVA": 495,
+      "kW": 396
+     },
+     "prime": {
+      "kVA": 450,
+      "kW": 360
+     }
+    },
+    "score": 260,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "longkai-power|6M21G550/5|LSA473M8||LG400BD|440|550|400|500|6M21G550/5|LK544D|LSA473M8|OP3350*1150*1800|AT4588*1600*2500|",
+    "model": "6M21G550/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "longkai-power",
+    "power": {
+     "standby": {
+      "kVA": 550,
+      "kW": 440
+     },
+     "prime": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 257,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|CR13TE7WS550|HCI544D||SQFP550|440/550|400/500|CR13TE7WS550|HCI544D|6L|129",
+    "model": "CR13TE7W. S550",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 550,
+      "kW": 440
+     },
+     "prime": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 252,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "westinpower|E3268LE222|HCI544C||7|RB445NT|356|445|E3268LE222|HCI544C|8/V|132*157|1719|417|469|676|200AH/24V|T6N800TMAR800FF3P|4170*1210*1500|3727",
+    "model": "E3268LE222",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "westinpower",
+    "power": {
+     "rated": {
+      "kVA": 445,
+      "kW": 356
+     }
+    },
+    "score": 236,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "westinpower|E3268LE212|HCI544C||RN455NT|364|455|E3268LE212|HCI544C|8/V|132*157|172|408|479|691|200AH/24V|T6N800TMAR800FF3P|4170*1600*1700|3750",
+    "model": "E3268LE212",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "westinpower",
+    "power": {
+     "rated": {
+      "kVA": 455,
+      "kW": 364
+     }
+    },
+    "score": 233,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "eastern-lion-fuan|2506CE15TAG1L|EL354C||GFSP506|364|455|404|506|2506CE15TAG1L|215397|EL354C|360|SMARTGEN6120|DETAIL",
+    "model": "2506C-E15TAG1 L",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "eastern-lion-fuan",
+    "power": {
+     "standby": {
+      "kVA": 506,
+      "kW": 404
+     },
+     "prime": {
+      "kVA": 455,
+      "kW": 364
+     }
+    },
+    "score": 231,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|6M21G6D3/5|TALA473B||RWB438D5S(STAGE3)|438KVA/350KW|482KVA/385KW|6M21G6D3/5|TALA473B|PDF",
+    "model": "6M21G6D3/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 482,
+      "kW": 385
+     },
+     "prime": {
+      "kVA": 438,
+      "kW": 350
+     }
+    },
+    "score": 231,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "westinpower|E3262LE242|HCI544D||8|RB500NT|400|500|E3262LE242|HCI544D|12/V|132*157|2578|411|478|760|200AH/24V|T6N800TMAR800FF3P|4408*1350*1650|4334",
+    "model": "E3262LE242",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "westinpower",
+    "power": {
+     "rated": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 220,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rise-power|CATC15|LC6114D||C15|455|364|500|400|CATC15|LC6114D|6|152|<1037|60|58|3823*1110*2166|3676",
+    "model": "CAT C1.5",
+    "make": "Caterpillar",
+    "origin": "other",
+    "sup": "rise-power",
+    "power": {
+     "standby": {
+      "kVA": 500,
+      "kW": 400
+     },
+     "prime": {
+      "kVA": 455,
+      "kW": 364
+     }
+    },
+    "score": 215,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "wintpower|S6A3PTA|||WTME485|485/388|440/352|97|S6A3PTA|6L|186|24|430|ELEC|3530*1350*1850|3863",
+    "model": "S6A3-PTA",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "wintpower",
+    "power": {
+     "standby": {
+      "kVA": 485,
+      "kW": 388
+     },
+     "prime": {
+      "kVA": 440,
+      "kW": 352
+     }
+    },
+    "score": 211,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "victory-generator|10V1600G70F|||V400M|50|360|450|400|500|10V1600G70F|80|10V|3230*1660*2045|3850|4650*1600*2500|5270",
+    "model": "10V1600G70F",
+    "make": "MTU",
+    "origin": "other",
+    "sup": "victory-generator",
+    "power": {
+     "standby": {
+      "kVA": 500,
+      "kW": 400
+     },
+     "prime": {
+      "kVA": 450,
+      "kW": 360
+     }
+    },
+    "score": 184,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "victory-generator|8V1600G80S|||V392M|60|356|445|392|490|8V1600G80S|80|8V|2840*1660*1975|3270|4350*1600*2500|5270",
+    "model": "8V1600G80S",
+    "make": "MTU",
+    "origin": "other",
+    "sup": "victory-generator",
+    "power": {
+     "standby": {
+      "kVA": 490,
+      "kW": 392
+     },
+     "prime": {
+      "kVA": 445,
+      "kW": 356
+     }
+    },
+    "score": 178,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "ettes-power|2206DE13TAG3/2206AE13TAG6|||EP500|350|440|400|500|2206DE13TAG3/2206AE13TAG6|TBA|6L|TBA|2600*1255*1850|2100|",
+    "model": "2206D-E13TAG3 /2206A-E13TAG6",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "ettes-power",
+    "power": {
+     "standby": {
+      "kVA": 500,
+      "kW": 400
+     },
+     "prime": {
+      "kVA": 440,
+      "kW": 350
+     }
+    },
+    "score": 163,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|RYC20N1|RC544C||R400N5|500KVA/400KW|550KVA/440KW|RYC20N1|RC544C|PDF",
+    "model": "RYC20-N1",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 550,
+      "kW": 440
+     },
+     "prime": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 149,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "xingguang-jiangsu|10V1600G10F|||XG385GF|350/438|385/481|10V1600G10F|10|61|191|国II|3230×1660×2040|3800",
+    "model": "10V1600G10F",
+    "make": "MTU",
+    "origin": "other",
+    "sup": "xingguang-jiangsu",
+    "power": {
+     "standby": {
+      "kVA": 481,
+      "kW": 385
+     },
+     "prime": {
+      "kVA": 438,
+      "kW": 350
+     }
+    },
+    "score": 129,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "depco-power|S6A3PTAA||ITEMNO:DPKDM550FREQUENCY(HZ):50PHASE:3VOLTAGE(V):380ENGINE:MITSUBISHIENGINEMODEL:S6A3PTAAPRP(KW):400PRP(KVA):500ESP(KW):440ESP(KVA):550ARRANGEMENT:6LGOVERNOR:ELECTRICAL|DETAILSGENERATORSET|GENSETMODEL|DPKDM550|TYPE|SILENT|FREQUENCY(HZ)|50|SPEED(RPM)|1500|PHASE|3|RATEDVOLTAGE|380V|PRIMEOUTPUT|362KW/450KVA|STANDBYOUTPUT|396KW/495KVA|CYLINDER|6|COOLINGSYSTEM|WATER|NW(KG)|5800|SIZE(L*W*H)MM|4370*1900*2230|FUELCON(L/H)|98|FUELCAPACITYTANK|970L|RUNNINGTIME(H)|8|SOUNDDECIBEL|70DB75DB|DETAILSENGINE|BRAND|MITSUBISHI|MODEL|S6A3PTAA|FUEL|DIESEL|CYLINDER|6|COOLINGSYSTEM|WATERCOOLING|CYLIDERARRANGEMANT|INLINE|BOREANDSTROKE(MM)|150X175|CYLE|4STAOKE|COMPRESSIONRATIO|145:1|GOVERNOR|ELECTRICAL|DISPLACEMENT(L)|1856|DETAILSALTERNATOR|BRAND|STAMFORD,LEROYSOMER,MECCALTE|MODEL|HCI544D/S5L1DD4/TALA473D/LSA472M7/ECO403S4B|NOOFBEARINGS|1|INSULATIONCLASS|H|WIRES|12|INGRESSPROTECTION|IP23|EXCITATIONSYSTEM|SHUNT|VOLRAGE|±1%",
+    "model": "S6A3-PTAA",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "depco-power",
+    "power": {
+     "prime": {
+      "kW": 362,
+      "kVA": 450
+     },
+     "standby": {
+      "kW": 396,
+      "kVA": 495
+     }
+    },
+    "score": 118,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "mecca-power|CURSOR13TE6W|||MC539FP|380|475|431|539|CURSOR13TE6W|",
+    "model": "CURSOR 13TE6W",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "mecca-power",
+    "power": {
+     "standby": {
+      "kVA": 539,
+      "kW": 431
+     },
+     "prime": {
+      "kVA": 475,
+      "kW": 380
+     }
+    },
+    "score": 115,
+    "why": [],
+    "made": null
+   }
+  ],
+  "madeDropped": []
+ },
+ "IB2500541094#1": {
+  "cap": {
+   "value": 500,
+   "unit": "kVA"
+  },
+  "origin": "g7",
+  "bidName": "Cung cấp 06 tổ hợp máy phát điện công suất 475KVA÷500KVA",
+  "engineMakes": [],
+  "madeRule": null,
+  "top": [
+   {
+    "k": "yongcai-elecmama|KTA19G3A|HCI544C||YCM400CC|550|440|500|400|CCEC|KTA19G3A|448504|6|ELECTRONIC|HCI544C|400KW",
+    "model": "KTA19-G3A",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "yongcai-elecmama",
+    "power": {
+     "standby": {
+      "kVA": 550,
+      "kW": 440
+     },
+     "prime": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 287,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "koten-power|QSZ13G3|HCI544C||KC500D5|400|500|440|550|QSZ13G3|HCI544C",
+    "model": "QSZ13-G3",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "koten-power",
+    "power": {
+     "standby": {
+      "kVA": 550,
+      "kW": 440
+     },
+     "prime": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 287,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|KTA19G3|HCI544C||SQC500|400/500|360/450|KTA19G3|HCI544C|951|3800|6500|3350×1280×1934|4800×1683×2200",
+    "model": "KTA19-G3",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 500,
+      "kW": 400
+     },
+     "prime": {
+      "kVA": 450,
+      "kW": 360
+     }
+    },
+    "score": 287,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "uleengen|QSZ13G3|HCI544C||UC500GF|400|500|QSZ13G3|CUMMINS|450|6L|130×163|13|935|HCI544C|3300X1460X2100|3550",
+    "model": "QSZ13-G3",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "uleengen",
+    "power": {
+     "rated": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 287,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "koten-power|QSZ13G5|HCI544C||KC450D5|360|450|400|500|QSZ13G5|HCI544C",
+    "model": "QSZ13-G5",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "koten-power",
+    "power": {
+     "standby": {
+      "kVA": 500,
+      "kW": 400
+     },
+     "prime": {
+      "kVA": 450,
+      "kW": 360
+     }
+    },
+    "score": 287,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|2506CE15TAG1|HCI544C||SQP5756|460/575|410/512|2506CE15TAG1|HCI544C|USA|3410|5100|3500×1540×1850|4700×1583×2200|",
+    "model": "2506C-E15TAG1",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 575,
+      "kW": 460
+     },
+     "prime": {
+      "kVA": 512,
+      "kW": 410
+     }
+    },
+    "score": 285,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|KTA19G4|HCI544D||SQC550|440/550|400/500|KTA19G4|HCI544D|97|3940|6630|3350×1280×1934|4800×1683×2200",
+    "model": "KTA19-G4",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 550,
+      "kW": 440
+     },
+     "prime": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 284,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "huali-shandong|2506CE15TAG2|HLF400||PRIMEPOWER|400KW/500KVA|STANDBYPOWER|440KW/550KVA|RATEDVOLTAGE|400/230V|RATEDCURRENT|720AAT400V,3PHASE|FREQUENCY|50HZ|RATEDSPEED|1500RPM|NUMBEROFPHASES|3|CONNECTION|3PHASE,4WIRE|POWERFACTOR|08|PERKINSDIESELENGINE|ENGINEMANUFACTURER|PERKINS|ENGINEMODEL|2506CE15TAG2|ENGINESPEED|1500RPM|NETENGINEPOWER–PRIME|435KWM|NETENGINEPOWER–STANDBY|478KWM|CYLINDERCONFIGURATION|6CYLINDER,VERTICALINLINE|DISPLACEMENT|152L|BORE×STROKE|137×171MM|COMPRESSIONRATIO|16:1|ASPIRATION|TURBOCHARGEDANDAIRTOAIRCHARGECOOLED|COMBUSTIONSYSTEM|DIRECTINJECTION|COOLINGSYSTEM|WATERCOOLED|STARTINGSYSTEM|24VDCELECTRICSTART|ENGINECONTROL|ELECTRONICENGINEMANAGEMENTWITHECM|ALTERNATOR|ALTERNATORMANUFACTURER|SHANHUA|ALTERNATORMODEL|HLF400|FREQUENCY|50HZ|RATEDSPEED|1500RPM|RATEDVOLTAGE|400V|NUMBEROFPHASES|3|POWERFACTOR|08|ALTITUDEREQUIREMENT|≤1000M|PROTECTIONCLASS|IP21|CONNECTION|3PHASE,4WIRE|EXCITATIONSYSTEM|BRUSHLESS,SELFEXCITING|INSULATIONCLASS|H|TEMPERATURERISECLASS|H",
+    "model": "2506C-E15TAG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "huali-shandong",
+    "power": {
+     "prime": {
+      "kW": 400,
+      "kVA": 500
+     },
+     "standby": {
+      "kW": 440,
+      "kVA": 550
+     }
+    },
+    "score": 284,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "uleengen|2506CE15TAG2|S5L1DC41||UP500GF|400|500|2506CE15TAG2|PERKINS|435|6L|137×171|152|935|S5L1DC41|3310X1180X1950|3940",
+    "model": "2506C-E15TAG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "uleengen",
+    "power": {
+     "rated": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 281,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sunkings|6ZTAA13G4|DC24V||MODELNUMBER:|SHX500|ENGINEMODEL|6ZTAA13G4|BORE×STROKE|159MMX159MM|DISPLACEMENT|19L|STANDBYPOWER/SPEED|580KVA/1500RPM|FUELCONSUMPTIONAT100%LOAD|2038G/KWH|ALTERNATOR|DC24V|PRIMEPOWER|500KVA|FREQUENCY/SPEED|50HZ/1500RPM|POWERFACTOR|08|VOLTAGEADJUSTRANGE|≥5%|VOLTAGEREGULATIONNLFL|≤±05%|PROTECTIONGRADE|IP23",
+    "model": "6ZTAA13-G4",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "sunkings",
+    "power": {
+     "prime": {
+      "kVA": 500
+     }
+    },
+    "score": 275,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "yongcai-elecmama|KTAA19G5|HCI544D||YCM440CC|605|484|550|440|CCEC|KTAA19G5|470555|6|ELECTRONIC|HCI544D|440KW",
+    "model": "KTAA19-G5",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "yongcai-elecmama",
+    "power": {
+     "standby": {
+      "kVA": 605,
+      "kW": 484
+     },
+     "prime": {
+      "kVA": 550,
+      "kW": 440
+     }
+    },
+    "score": 274,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "longkai-power|6M21G550/5|LSA473M8||LG400BD|440|550|400|500|6M21G550/5|LK544D|LSA473M8|OP3350*1150*1800|AT4588*1600*2500|",
+    "model": "6M21G550/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "longkai-power",
+    "power": {
+     "standby": {
+      "kVA": 550,
+      "kW": 440
+     },
+     "prime": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 273,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "tecgen-fujian|KTA19G3|TGI354S360||MODELNUMBER|TG500CS|COOLINGMETHOD|WATERCOOLING|AMBIENTTEMP|≤40C|GENSETMODEL|TG500CS|PRIMEPOWER|450KVA/360KW|STANDBYPOWER|500KVA/400KW|RATEDVOLTAGE(V)|380|RATEDFREQUENCY(HZ)|50|RATEDSPEED(RPM)|1500|POWERFACTOR(COS&CENT;)|08(LAGGING)|ENGINEMODEL|KTA19G3|BORE*STROKE(MM*MM)|159*159|DISPLACEMENT(LITER)|189|STARTINGMETHOD|DC24VELECTRICALSTARTING|FUELCONSUMPTION(G/KWH)|203|ALTERNATORMODEL|TGI354S360|VOLTAGEREGULATION,STEADYSTATE|100%",
+    "model": "KTA19-G3",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "tecgen-fujian",
+    "power": {
+     "prime": {
+      "kVA": 450,
+      "kW": 360
+     },
+     "standby": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 272,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|CR13TE7WS550|HCI544D||SQFP550|440/550|400/500|CR13TE7WS550|HCI544D|6L|129",
+    "model": "CR13TE7W. S550",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 550,
+      "kW": 440
+     },
+     "prime": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 268,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|6M21G8D3/5|TALA473C||RWB500D5S(STAGE3)|500KVA/400KW|550KVA/440KW|6M21G8D3/5|TALA473C|PDF",
+    "model": "6M21G8D3/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 550,
+      "kW": 440
+     },
+     "prime": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 241,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "eastern-lion-fuan|2506CE15TAG2L|EL354D||GFSP556|400|500|444|556|2506CE15TAG2L|236762|EL354D|400|SMARTGEN6120|DETAIL",
+    "model": "2506C-E15TAG2 L",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "eastern-lion-fuan",
+    "power": {
+     "standby": {
+      "kVA": 556,
+      "kW": 444
+     },
+     "prime": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 237,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "westinpower|E3262LE242|HCI544D||8|RB500NT|400|500|E3262LE242|HCI544D|12/V|132*157|2578|411|478|760|200AH/24V|T6N800TMAR800FF3P|4408*1350*1650|4334",
+    "model": "E3262LE242",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "westinpower",
+    "power": {
+     "rated": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 236,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "westinpower|E3262LE232|HCI544D||RN525NT|420|525|E3262LE232|HCI544D|12/V|132*157|258|396|504|798|200AH/24V|T6N800TMAR800FF3P|4408*1680*1750|4334",
+    "model": "E3262LE232",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "westinpower",
+    "power": {
+     "rated": {
+      "kVA": 525,
+      "kW": 420
+     }
+    },
+    "score": 231,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|6M21G500/5|TALA473C||RWB500D5S(STAGE2)|500KVA/400KW|550KVA/440KW|6M21G500/5|TALA473C|PDF",
+    "model": "6M21G500/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 550,
+      "kW": 440
+     },
+     "prime": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 225,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "ettes-power|10V1600G20F|||ET550|400|500|440|550|10V1600G20F|493|10V|TBA|3350*1630*2030|4400|",
+    "model": "10V1600G20F",
+    "make": "MTU",
+    "origin": "other",
+    "sup": "ettes-power",
+    "power": {
+     "standby": {
+      "kVA": 550,
+      "kW": 440
+     },
+     "prime": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 221,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rise-power|CATC15|LC6115F||C15|500|400|550|440|CATC15|LC6115F|6|152|<1118|60|58|3823*1110*2166|3800",
+    "model": "CAT C1.5",
+    "make": "Caterpillar",
+    "origin": "other",
+    "sup": "rise-power",
+    "power": {
+     "standby": {
+      "kVA": 550,
+      "kW": 440
+     },
+     "prime": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 221,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rise-power|CATC18|LC7024F||C18|550|440|605|484|CATC18|LC7024F|6|1813|<1227|38|82|3910*1461*2155|4264",
+    "model": "CAT C18",
+    "make": "Caterpillar",
+    "origin": "other",
+    "sup": "rise-power",
+    "power": {
+     "standby": {
+      "kVA": 605,
+      "kW": 484
+     },
+     "prime": {
+      "kVA": 550,
+      "kW": 440
+     }
+    },
+    "score": 211,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "wintpower|10V1600G80F|||WTMT550|550/440|500/400|120|10V1600G80F|10V|175|24|493|ECM|3250*1295*2058|3850",
+    "model": "10V1600G80F",
+    "make": "MTU",
+    "origin": "other",
+    "sup": "wintpower",
+    "power": {
+     "standby": {
+      "kVA": 550,
+      "kW": 440
+     },
+     "prime": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 189,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "victory-generator|10V1600G70S|||V452M|60|410|5125|452|565|10V1600G70S|91|10V|3230*1660*2045|3850|4650*1600*2500|5270",
+    "model": "10V1600G70S",
+    "make": "MTU",
+    "origin": "other",
+    "sup": "victory-generator",
+    "power": {
+     "standby": {
+      "kVA": 565,
+      "kW": 452
+     },
+     "prime": {
+      "kVA": 512.5,
+      "kW": 410
+     }
+    },
+    "score": 179,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|RYC20N1|RC544C||R400N5|500KVA/400KW|550KVA/440KW|RYC20N1|RC544C|PDF",
+    "model": "RYC20-N1",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 550,
+      "kW": 440
+     },
+     "prime": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 165,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "ettes-power|S6A3PTAS|||ES600|435|544|480|600|S6A3PTAS|TBA|6L|TBA|3560*1420*2050|4885|",
+    "model": "S6A3-PTA-S",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "ettes-power",
+    "power": {
+     "standby": {
+      "kVA": 600,
+      "kW": 480
+     },
+     "prime": {
+      "kVA": 544,
+      "kW": 435
+     }
+    },
+    "score": 156,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "chuangyuan-zhongshan|S6R2PTAC|||1|500|400|1500|08|50|3650*1850*2200|5650|S6R2PTAC|6/170/220|2996",
+    "model": "S6R2-PTA-C",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "chuangyuan-zhongshan",
+    "power": {
+     "prime": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 139,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "long-gen|CR13TE7W|S4L1DG41||LGFS550|400|500|440|550|CR13TE7W|S4L1DG41|WHI4G|DOWNLOAD",
+    "model": "CR13TE7W",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "long-gen",
+    "power": {
+     "standby": {
+      "kVA": 550,
+      "kW": 440
+     },
+     "prime": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 127,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "mecca-power|CURSOR13TE7W|||MC545FP|404|505|436|545|CURSOR13TE7W|",
+    "model": "CURSOR13TE7W",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "mecca-power",
+    "power": {
+     "standby": {
+      "kVA": 545,
+      "kW": 436
+     },
+     "prime": {
+      "kVA": 505,
+      "kW": 404
+     }
+    },
+    "score": 124,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "xinzhengfa|D2876LE203|||ZF400GF|500|400|722|50/1500|D2876LE203|3420×1135×1954|2980",
+    "model": "D2876LE203",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "xinzhengfa",
+    "power": {
+     "rated": {
+      "kVA": 500,
+      "kW": 400
+     }
+    },
+    "score": 75,
+    "why": [],
+    "made": null
+   }
+  ],
+  "madeDropped": []
+ },
+ "IB2600392438#0": {
+  "cap": {
+   "value": 80,
+   "unit": "kVA"
+  },
+  "origin": "g7eu",
+  "bidName": "Gói thầu: Mua sắm máy phát điện 80CSA và tủ chuyển nguồn tự động ATS 4P-150A",
+  "engineMakes": [],
+  "madeRule": null,
+  "top": [
+   {
+    "k": "jet-power|1104A44TG2|UCI224G||P88|88|70|80|64|1104A44TG2|4L|105X127|44|187|UCI224G|2150*760*1250|1037|2850*1080*1550|1537",
+    "model": "1104A-44TG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "jet-power",
+    "power": {
+     "standby": {
+      "kVA": 88,
+      "kW": 70
+     },
+     "prime": {
+      "kVA": 80,
+      "kW": 64
+     }
+    },
+    "score": 287,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "koten-power|4BTA39G11|UCI224G||KC80D5|64|80|70|88|4BTA39G11|UCI224G",
+    "model": "4BTA3.9-G11",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "koten-power",
+    "power": {
+     "standby": {
+      "kVA": 88,
+      "kW": 70
+     },
+     "prime": {
+      "kVA": 80,
+      "kW": 64
+     }
+    },
+    "score": 287,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "uleengen|1104A44TG2|UCI224G||UP80GF|64|80|1104A44TG2|PERKINS|72|4L|105×127|44|149|UCI224G|1760X810X1165|800",
+    "model": "1104A-44TG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "uleengen",
+    "power": {
+     "rated": {
+      "kVA": 80,
+      "kW": 64
+     }
+    },
+    "score": 287,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|1104C44TAG1|UCI274C||SQP88|70/88|64/80|1104C44TAG1|UCI274C|WUXI|1175|1735|1750×850×1300|2300×1133×1376",
+    "model": "1104C-44TAG1",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 88,
+      "kW": 70
+     },
+     "prime": {
+      "kVA": 80,
+      "kW": 64
+     }
+    },
+    "score": 284,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "uleengen|6BT59G2|UCI224G||UC85GF|68|85|6BT59G2|CUMMINS|92|6L|102×120|588|158|UCI224G|2150X800X1550|900",
+    "model": "6BT5.9-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "uleengen",
+    "power": {
+     "rated": {
+      "kVA": 85,
+      "kW": 68
+     }
+    },
+    "score": 281,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|NEF45SM3S500|UCI224G||SQFP88|70/88|64/80|NEF45SM3S500|UCI224G|4L|45",
+    "model": "NEF45SM3.S500",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 88,
+      "kW": 70
+     },
+     "prime": {
+      "kVA": 80,
+      "kW": 64
+     }
+    },
+    "score": 271,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "dingbo|1104A44TG2|MP644||XG64GF|64/80|70/875|1104A44TG2|MP644|1950X750X1250|1100",
+    "model": "1104A-44TG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "dingbo",
+    "power": {
+     "standby": {
+      "kVA": 87.5,
+      "kW": 70
+     },
+     "prime": {
+      "kVA": 80,
+      "kW": 64
+     }
+    },
+    "score": 269,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "acepow-fuan|4BTA39G11|UC224G||APC64|64|80|72|90|4BTA39G11|70|80|UC224G",
+    "model": "4BTA3.9-G11",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "acepow-fuan",
+    "power": {
+     "standby": {
+      "kVA": 90,
+      "kW": 72
+     },
+     "prime": {
+      "kVA": 80,
+      "kW": 64
+     }
+    },
+    "score": 269,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "dingbo|4BTA39G11|UCI224G14||XG64GF|64/80|70/875|4BTA39G11|UCI224G14|2150X830X1400|1100",
+    "model": "4BTA3.9-G11",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "dingbo",
+    "power": {
+     "standby": {
+      "kVA": 87.5,
+      "kW": 70
+     },
+     "prime": {
+      "kVA": 80,
+      "kW": 64
+     }
+    },
+    "score": 269,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "eastern-lion-fuan|1104C44TAG1|EL224G||GFSP89|64|80|71|89|1104C44TAG1|44402|EL224G|68|SMARTGEN6120|DETAIL",
+    "model": "1104C-44TAG1",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "eastern-lion-fuan",
+    "power": {
+     "standby": {
+      "kVA": 89,
+      "kW": 71
+     },
+     "prime": {
+      "kVA": 80,
+      "kW": 64
+     }
+    },
+    "score": 269,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "wintpower|1006TG1A|UCI224G||WTL96|70/88|77/96|1006TG1A|UCI224G|TALA44D|WT224G|2800X1000X1450|2300X900X1330",
+    "model": "1006TG1A",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "wintpower",
+    "power": {
+     "standby": {
+      "kVA": 96,
+      "kW": 77
+     },
+     "prime": {
+      "kVA": 88,
+      "kW": 70
+     }
+    },
+    "score": 269,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "longkai-power|4M10G88/5|LSA443S2||LG64BD|704|88|64|80|4M10G88/5|LK224F|LSA443S2|OP1900*870*1180|AT2688*1080*1450|",
+    "model": "4M10G88/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "longkai-power",
+    "power": {
+     "standby": {
+      "kVA": 88,
+      "kW": 70.4
+     },
+     "prime": {
+      "kVA": 80,
+      "kW": 64
+     }
+    },
+    "score": 268,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "eastern-lion-fuan|6BT59G2|EL224G||GFSC68I|68|85|76|94|6BT59G2|86KW|EL224G|68KW|SMARTGEN6120|DETAIL",
+    "model": "6BT5.9-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "eastern-lion-fuan",
+    "power": {
+     "standby": {
+      "kVA": 94,
+      "kW": 76
+     },
+     "prime": {
+      "kVA": 85,
+      "kW": 68
+     }
+    },
+    "score": 263,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "eastern-lion-fuan|6BT59G1|EL224G||GFSC68|68|85|76|94|6BT59G1|86KW|EL224G|68KW|SMARTGEN6120|DETAIL",
+    "model": "6BT5.9-G1",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "eastern-lion-fuan",
+    "power": {
+     "standby": {
+      "kVA": 94,
+      "kW": 76
+     },
+     "prime": {
+      "kVA": 85,
+      "kW": 68
+     }
+    },
+    "score": 263,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|QSB5G3|UCI224G||SQIC90|72/90|66/82|QSB5G3|USA|UCI224G|175|1150|1978|1500×830×1250|3200×1133×1766",
+    "model": "QSB5-G3",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 90,
+      "kW": 72
+     },
+     "prime": {
+      "kVA": 82,
+      "kW": 66
+     }
+    },
+    "score": 261,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "dingbo|TAD530GE|LSA443S4||XG68GF|68/85|75/9375|TAD530GE|LSA443S4|2200X720X1380|1050",
+    "model": "TAD530GE",
+    "make": "Volvo Penta",
+    "origin": "other",
+    "sup": "dingbo",
+    "power": {
+     "standby": {
+      "kVA": 93.75,
+      "kW": 75
+     },
+     "prime": {
+      "kVA": 85,
+      "kW": 68
+     }
+    },
+    "score": 254,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|4M10G4D3/5|UCI224G||RWB80D5S(STAGE3)|80KVA/64KW|88KVA/70KW|4M10G4D3/5|UCI224G|PDF",
+    "model": "4M10G4D3/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 88,
+      "kW": 70
+     },
+     "prime": {
+      "kVA": 80,
+      "kW": 64
+     }
+    },
+    "score": 247,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "eastern-lion-fuan|1104DE44TAG1|EL224G||GFSP89|64|80|71|89|1104DE44TAG1|58989|EL224G|68|SMARTGEN6120|DETAIL",
+    "model": "1104D-E44TAG1",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "eastern-lion-fuan",
+    "power": {
+     "standby": {
+      "kVA": 89,
+      "kW": 71
+     },
+     "prime": {
+      "kVA": 80,
+      "kW": 64
+     }
+    },
+    "score": 245,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "kaihua-genset|6BT59G2|||KH64GF|83|66|80|64|6BT59G2|2160*800*1300|1040",
+    "model": "6BT5.9-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "kaihua-genset",
+    "power": {
+     "standby": {
+      "kVA": 83,
+      "kW": 66
+     },
+     "prime": {
+      "kVA": 80,
+      "kW": 64
+     }
+    },
+    "score": 229,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "westinpower|E0834LE322|UCI224G||1|RB90NT|72|90|E0834LE322|UCI224G|4/L|108*125|458|386|490|137|100AH/24V|A2N250TMF160/1600FF3P|2305*809*960|899",
+    "model": "E0834LE322",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "westinpower",
+    "power": {
+     "rated": {
+      "kVA": 90,
+      "kW": 72
+     }
+    },
+    "score": 226,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rise-power|CATC44|LC3114D||DE88E0|80|64|88|704|CATC44|LC3114D|4|44|<198|8|13|1925*1120*1361|1071",
+    "model": "CAT C4.4",
+    "make": "Caterpillar",
+    "origin": "other",
+    "sup": "rise-power",
+    "power": {
+     "standby": {
+      "kVA": 88,
+      "kW": 70.4
+     },
+     "prime": {
+      "kVA": 80,
+      "kW": 64
+     }
+    },
+    "score": 221,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|TAD550GE(530GE)|UCI224G||SQV95|75/95|68/85|TAD550GE(530GE)|GERMANY|UCI224G|217|1290|1850|2080×940×1550|2810×1140×1830|",
+    "model": "TAD550GE(530GE)",
+    "make": "Volvo Penta",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 95,
+      "kW": 75
+     },
+     "prime": {
+      "kVA": 85,
+      "kW": 68
+     }
+    },
+    "score": 217,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "westinpower|E0836E302|UCI274C||RN95NT|76|95|E0836E302|UCI274C|6/L|108*125|69|364|536|144|100AH/24V|A2N250TMF160/1600FF3P|2440*740*1030|1000",
+    "model": "E0836E302",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "westinpower",
+    "power": {
+     "rated": {
+      "kVA": 95,
+      "kW": 76
+     }
+    },
+    "score": 217,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rise-power|TAD550GE|||RVM69|86|69|96|76|TAD550GE|4L|476|<193|2080*940*1550|1290|2920*1100*1750|1710",
+    "model": "TAD550GE",
+    "make": "Volvo Penta",
+    "origin": "other",
+    "sup": "rise-power",
+    "power": {
+     "standby": {
+      "kVA": 96,
+      "kW": 76
+     },
+     "prime": {
+      "kVA": 86,
+      "kW": 69
+     }
+    },
+    "score": 214,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "acepow-fuan|6BG1Z1|UC274C||API75|75|9375|825|103125|UC274C|80|88|6BG1Z1",
+    "model": "6BG1-Z1",
+    "make": "Isuzu",
+    "origin": "other",
+    "sup": "acepow-fuan",
+    "power": {
+     "standby": {
+      "kVA": 103.125,
+      "kW": 82.5
+     },
+     "prime": {
+      "kVA": 93.75,
+      "kW": 75
+     }
+    },
+    "score": 188,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sr-genset|NEF45TE1PA82|UCI224G||91|73|83|66|NEF45TE1PA82|FPT|UCI224G|TALA44C|/",
+    "model": "NEF45TE1P.A82",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "sr-genset",
+    "power": {
+     "standby": {
+      "kVA": 91,
+      "kW": 73
+     },
+     "prime": {
+      "kVA": 83,
+      "kW": 66
+     }
+    },
+    "score": 179,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "ettes-power|E0834LE312|||★EM66N5|66|82|E0834LE312|72|4L|55|370%|460%|830%|",
+    "model": "E0834LE312",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "ettes-power",
+    "power": {
+     "rated": {
+      "kVA": 82,
+      "kW": 66
+     }
+    },
+    "score": 179,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|RDC6N1|RC224G||R64N5|80KVA/64KW|88KVA/70KW|RDC6N1|RC224G|PDF",
+    "model": "RDC6-N1",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 88,
+      "kW": 70
+     },
+     "prime": {
+      "kVA": 80,
+      "kW": 64
+     }
+    },
+    "score": 165,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "depco-power|NEF45TM1AS500||ITEMNO:DPKDFPT94FREQUENCY(HZ):50PHASE:3VOLTAGE(V):380ENGINE:FPTENGINEMODEL:NEF45TM1AS500PRP(KW):68PRP(KVA):85ESP(KW):75ESP(KVA):94ARRANGEMENT:4LGOVERNOR:MECHANICAL|DETAILSGENERATORSET|GENSETMODEL|DPKDFPT94|TYPE|SILENT|FREQUENCY(HZ)|50|SPEED(RPM)|1500|PHASE|3|RATEDVOLTAGE|380V|PRIMEOUTPUT|68KW/85KVA|STANDBYOUTPUT|75KW/94KVA|CYLINDER|4|COOLINGSYSTEM|WATER|NW(KG)|1420|SIZE(L*W*H)MM|2750*1000*1600|FUELCON(L/H)|193|FUELCAPACITYTANK|230L|RUNNINGTIME(H)|8|SOUNDDECIBEL|70DB75DB|DETAILSENGINE|BRAND|FPT|MODEL|NEF45TM1AS500|FUEL|DIESEL|CYLINDER|4|COOLINGSYSTEM|WATERCOOLING|CYLIDERARRANGEMANT|INLINE|BOREANDSTROKE(MM)|104X132|CYLE|4STAOKE|COMPRESSIONRATIO|175:1|GOVERNOR|MECHANICAL|DISPLACEMENT(L)|45|DETAILSALTERNATOR|BRAND|DEPCO,STAMFORD,LEROYSOMER,MECCALTE|MODEL|DPC224G/UCI224G/TALA44D/LSA443S4/ECP341S4C|NOOFBEARINGS|1|INSULATIONCLASS|H|WIRES|12|INGRESSPROTECTION|IP23|EXCITATIONSYSTEM|SHUNT|VOLRAGE|±1%",
+    "model": "NEF45TM1A.S500",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "depco-power",
+    "power": {
+     "prime": {
+      "kW": 68,
+      "kVA": 85
+     },
+     "standby": {
+      "kW": 75,
+      "kVA": 94
+     }
+    },
+    "score": 117,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "weiman-fujian|S6KDT65SAG|||WTM103|75|94|825|103|S6KDT65SAG|816|897|230|2208|6×102×130|6373|17:1|TC|MOREDATA",
+    "model": "S6K-DT65SAG",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "weiman-fujian",
+    "power": {
+     "standby": {
+      "kVA": 103,
+      "kW": 82.5
+     },
+     "prime": {
+      "kVA": 94,
+      "kW": 75
+     }
+    },
+    "score": 73,
+    "why": [],
+    "made": null
+   }
+  ],
+  "madeDropped": []
+ },
+ "IB2600490077#0": {
+  "cap": {
+   "value": 165,
+   "unit": "kVA"
+  },
+  "origin": "g7",
+  "bidName": "Mua sắm, lắp đặt Máy phát điện phục vụ hệ thống phòng cháy chữa cháy khu B",
+  "engineMakes": [],
+  "madeRule": null,
+  "top": [
+   {
+    "k": "sanq-power|6CTA83G2|UCI274F||SQC175|140/175|128/160|6CTA83G2|UCI274F|357|1782|3040|2360×847×1366|3600×1333×2040",
+    "model": "6CTA8.3-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 175,
+      "kW": 140
+     },
+     "prime": {
+      "kVA": 160,
+      "kW": 128
+     }
+    },
+    "score": 284,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "jet-power|1106A70TAG2|UCI274F||P165|165|132|150|120|1106A70TAG2|6L|105X135|701|334|UCI274F|2500*850*1400|1420|3100*1100*1700|2450",
+    "model": "1106A-70TAG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "jet-power",
+    "power": {
+     "standby": {
+      "kVA": 165,
+      "kW": 132
+     },
+     "prime": {
+      "kVA": 150,
+      "kW": 120
+     }
+    },
+    "score": 284,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "tổ máy của chính hãng Jet-Power (HSMT đòi đồng bộ thương hiệu)"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|1106A70TAG2|UCI274F||SQP160|132/165|120/150|1106A70TAG2|UCI274F|WUXI|1760|2864|2900×900×1536|3600×1333×2040",
+    "model": "1106A-70TAG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 165,
+      "kW": 132
+     },
+     "prime": {
+      "kVA": 150,
+      "kW": 120
+     }
+    },
+    "score": 284,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "koten-power|6BTAA59G12|UCI274F||KC150D5|120|150|132|165|6BTAA59G12|UCI274F",
+    "model": "6BTAA5.9-G12",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "koten-power",
+    "power": {
+     "standby": {
+      "kVA": 165,
+      "kW": 132
+     },
+     "prime": {
+      "kVA": 150,
+      "kW": 120
+     }
+    },
+    "score": 284,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|6BTAA59G12|UCI274F||SQC165|132/165|120/150|6BTAA59G12|UCI274F|348|1420|2430|2360×830×1334|3200×1133×1766",
+    "model": "6BTAA5.9-G12",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 165,
+      "kW": 132
+     },
+     "prime": {
+      "kVA": 150,
+      "kW": 120
+     }
+    },
+    "score": 284,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "sanq-power|1106A70TG1|UCI274E||SQP1656|135/169|122/152|1106A70TG1|UCI274E|WUXI|1710|2820|2900×900×1536|3600×1333×2040|",
+    "model": "1106A-70TG1",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "sanq-power",
+    "power": {
+     "standby": {
+      "kVA": 169,
+      "kW": 135
+     },
+     "prime": {
+      "kVA": 152,
+      "kW": 122
+     }
+    },
+    "score": 284,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "jet-power|1106A70TAG3|UCI274G||P200|200|160|180|144|1106A70TAG3|6L|105X135|701|416|UCI274G|2500*850*1400|1595|3100*1100*1700|2625",
+    "model": "1106A-70TAG3",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "jet-power",
+    "power": {
+     "standby": {
+      "kVA": 200,
+      "kW": 160
+     },
+     "prime": {
+      "kVA": 180,
+      "kW": 144
+     }
+    },
+    "score": 275,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "tổ máy của chính hãng Jet-Power (HSMT đòi đồng bộ thương hiệu)"
+    ],
+    "made": null
+   },
+   {
+    "k": "bobig-power|6CTA83G1|BW274G||BC206|150|188|165|206|6CTA83G1|165|BW274G|2900*1120*1450|3800*1290*1900",
+    "model": "6CTA8.3-G1",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "bobig-power",
+    "power": {
+     "standby": {
+      "kVA": 206,
+      "kW": 165
+     },
+     "prime": {
+      "kVA": 188,
+      "kW": 150
+     }
+    },
+    "score": 255,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "tổ máy của chính hãng Bobig (HSMT đòi đồng bộ thương hiệu)"
+    ],
+    "made": null
+   },
+   {
+    "k": "comappower|6CTA83G2|||COM185C|185KVA|148KW|168KVA|134KW|6CTA83G2|6|COM185C",
+    "model": "6CTA8.3-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "comappower",
+    "power": {
+     "standby": {
+      "kVA": 185,
+      "kW": 148
+     },
+     "prime": {
+      "kVA": 168,
+      "kW": 134
+     }
+    },
+    "score": 227,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "ettes-power|1106A70TAG2|||EP188|135|168|150|188|1106A70TAG2|TBA|6L|TBA|1760*760*1380|900|",
+    "model": "1106A-70TAG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "ettes-power",
+    "power": {
+     "standby": {
+      "kVA": 188,
+      "kW": 150
+     },
+     "prime": {
+      "kVA": 168,
+      "kW": 135
+     }
+    },
+    "score": 227,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "westinpower|E2676E302|UCI274G||RN185NT|148|185|E2676E302|UCI274G|6/L|126*166|124|387|547|281|200AH/24V|T5N400TMAR320FF3P|3219*895*1206|1630",
+    "model": "E2676E302",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "westinpower",
+    "power": {
+     "rated": {
+      "kVA": 185,
+      "kW": 148
+     }
+    },
+    "score": 224,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|6M12G2D3/5|UCI274H||RWB188D5S(STAGE3)|188KVA/150KW|206KVA/165KW|6M12G2D3/5|UCI274H|PDF",
+    "model": "6M12G2D3/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 206,
+      "kW": 165
+     },
+     "prime": {
+      "kVA": 188,
+      "kW": 150
+     }
+    },
+    "score": 222,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "wintpower|1106A70TAG3|||WTP200|200/160|180/144|416|1106A70TAG3|6L|7|12|1798|MECH|2800*790*1650|1749",
+    "model": "1106A-70TAG3",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "wintpower",
+    "power": {
+     "standby": {
+      "kVA": 200,
+      "kW": 160
+     },
+     "prime": {
+      "kVA": 180,
+      "kW": 144
+     }
+    },
+    "score": 220,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "tổ máy của chính hãng Wintpower (HSMT đòi đồng bộ thương hiệu)"
+    ],
+    "made": null
+   },
+   {
+    "k": "westinpower|E2876E312|UCI274H||RN195NT|156|195|E2876E312|UCI274H|6/L|128*166|128|380|541|296|200AH/24V|T5N400TMAR400FF3P|3056*830*1035|1539",
+    "model": "E2876E312",
+    "make": "MAN",
+    "origin": "other",
+    "sup": "westinpower",
+    "power": {
+     "rated": {
+      "kVA": 195,
+      "kW": 156
+     }
+    },
+    "score": 218,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "wintpower|6CTA83G2|||WTC206|206/165|185/150|42|6CTA83G2|6L|83|24|180|ELEC|2420*950*1690|1690",
+    "model": "6CTA8.3-G2",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "wintpower",
+    "power": {
+     "standby": {
+      "kVA": 206,
+      "kW": 165
+     },
+     "prime": {
+      "kVA": 185,
+      "kW": 150
+     }
+    },
+    "score": 217,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "tổ máy của chính hãng Wintpower (HSMT đòi đồng bộ thương hiệu)"
+    ],
+    "made": null
+   },
+   {
+    "k": "generatordieselchina|6BTAA59G12|||RDC165D6/S|145/180|132/165|6BTAA59G12|245/327|DETAILS→",
+    "model": "6BTAA5.9-G12",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "generatordieselchina",
+    "power": {
+     "standby": {
+      "kVA": 180,
+      "kW": 145
+     },
+     "prime": {
+      "kVA": 165,
+      "kW": 132
+     }
+    },
+    "score": 214,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "ade-power|1106A70TAG3|||STANDBYPOWER(ESP)RATING|182KVA/145KW|PRIMEPOWER(PRP)RATING|165KVA/132KW|ENGINE|PERKINS1106A70TAG3|ENGINEGOVERNOR|MECHANICAL|ENGINESPEED|1500RPM|ALTERNATOR|LEROYSOMER|VOLTAGE|400V|FREQUENCY|50HZ|PHASE|3|AMPSPERPHASE|262|CONTROLPANEL|DEEPSEADSE7320|CONNECTIONTYPE|CIRCUITBREAKER|CIRCUITBREAKER|4POLE|EXHAUSTEMISSIONSLEVEL|UNREGULATED|BASEFUELTANKCAPACITY|330LITRES|FUELCONSUMPTION|412LITRESPERHOUR(AT100%LOAD)|DIMENSIONS(LXWXH)|3860MMX1200MMX1850MM|DRYWEIGHT|2,114KG|CANOPYNOISELEVEL|69DB(A)AT7M|WARRANTY|2YEARS/1000HOURS",
+    "model": "1106A-70TAG3",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "ade-power",
+    "power": {
+     "prime": {
+      "kVA": 165,
+      "kW": 132
+     },
+     "standby": {
+      "kVA": 182,
+      "kW": 145
+     }
+    },
+    "score": 214,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rise-power|CATC71|LC5014D||DE200E0|180|144|200|160|CATC71|LC5014D|6|7|<438|165|27|2510*1010*1646|1718",
+    "model": "CAT C7.1",
+    "make": "Caterpillar",
+    "origin": "other",
+    "sup": "rise-power",
+    "power": {
+     "standby": {
+      "kVA": 200,
+      "kW": 160
+     },
+     "prime": {
+      "kVA": 180,
+      "kW": 144
+     }
+    },
+    "score": 212,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "comappower|1106DE70TAG2|||COM179PE|179KVA|143KW|168KVA|134KW|1106DE70TAG2|6|COM179PE",
+    "model": "1106D-E70TAG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "comappower",
+    "power": {
+     "standby": {
+      "kVA": 179,
+      "kW": 143
+     },
+     "prime": {
+      "kVA": 168,
+      "kW": 134
+     }
+    },
+    "score": 211,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "voltgent|NEF67TM3AS500|||VFP1886|1875|150|17125|137|FPT|NEF67TM3AS500|[EN][RU][ES][PT]",
+    "model": "NEF67TM3A.S500",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "voltgent",
+    "power": {
+     "standby": {
+      "kVA": 187.5,
+      "kW": 150
+     },
+     "prime": {
+      "kVA": 171.25,
+      "kW": 137
+     }
+    },
+    "score": 209,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "depco-power|NEF67TM4S500|LSA443L12|ITEMNO:DPKDFPT180FREQUENCY(HZ):50PHASE:3VOLTAGE(V):380ENGINE:FPTENGINEMODEL:NEF67TM4S500PRP(KW):132PRP(KVA):165ESP(KW):144ESP(KVA):180ARRANGEMENT:6LGOVERNOR:MECHANICAL|DETAILSGENERATORSET|GENSETMODEL|DPKDFPT180|TYPE|SILENT|FREQUENCY(HZ)|50|SPEED(RPM)|1500|PHASE|3|RATEDVOLTAGE|380V|PRIMEOUTPUT|132KW/165KVA|STANDBYOUTPUT|144KW/180KVA|CYLINDER|6|COOLINGSYSTEM|WATER|NW(KG)|2148|SIZE(L*W*H)MM|3400*1100*1800|FUELCON(L/H)|36|FUELCAPACITYTANK|230L|RUNNINGTIME(H)|8|SOUNDDECIBEL|70DB75DB|DETAILSENGINE|BRAND|FPT|MODEL|NEF67TM4S500|FUEL|DIESEL|CYLINDER|6|COOLINGSYSTEM|WATERCOOLING|CYLIDERARRANGEMANT|INLINE|BOREANDSTROKE(MM)|104X132|CYLE|4STAOKE|COMPRESSIONRATIO|175:1|GOVERNOR|MECHANICAL|DISPLACEMENT(L)|67|DETAILSALTERNATOR|BRAND|LEROYSOMER|MODEL|LSA443L12|NOOFBEARINGS|1|INSULATIONCLASS|H|WIRES|12|INGRESSPROTECTION|IP23|EXCITATIONSYSTEM|SHUNT|VOLRAGE|±1%",
+    "model": "NEF67TM4.S500",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "depco-power",
+    "power": {
+     "prime": {
+      "kW": 132,
+      "kVA": 165
+     },
+     "standby": {
+      "kW": 144,
+      "kVA": 180
+     }
+    },
+    "score": 178,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "rcg-power|RDC8N1|RC274EL||R120N5|150KVA/120KW|165KVA/132KW|RDC8N1|RC274EL|PDF",
+    "model": "RDC8-N1",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 165,
+      "kW": 132
+     },
+     "prime": {
+      "kVA": 150,
+      "kW": 120
+     }
+    },
+    "score": 165,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "landtop-fuzhou|6M11G188/5|LTP274S135||LTP186B|186|149|169|135|ELEC|6M11G188/5|LTP274S135",
+    "model": "6M11G188/5",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "landtop-fuzhou",
+    "power": {
+     "standby": {
+      "kVA": 186,
+      "kW": 149
+     },
+     "prime": {
+      "kVA": 169,
+      "kW": 135
+     }
+    },
+    "score": 161,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "ade-power|6M16G2D0/S|||STANDBYPOWER(ESP)RATING|182KVA/145KW|PRIMEPOWER(PRP)RATING|165KVA/132KW|ENGINE|BAUDOUIN6M16G2D0/S|ENGINEGOVERNOR|ELECTRONIC|ENGINESPEED|1500RPM|ALTERNATOR|LEROYSOMER|VOLTAGE|400V|FREQUENCY|50HZ|PHASE|3|AMPSPERPHASE|262|CONTROLPANEL|DEEPSEADSE7320|CONNECTIONTYPE|CIRCUITBREAKER|CIRCUITBREAKER|4POLE|EXHAUSTEMISSIONSLEVEL|UNREGULATED|BASEFUELTANKCAPACITY|330LITRES|FUELCONSUMPTION|431LITRESPERHOUR(AT100%LOAD)|DIMENSIONS(LXWXH)|3860MMX1200MMX1850MM|DRYWEIGHT|2,421KG|CANOPYNOISELEVEL|69DB(A)AT7M|WARRANTY|2YEARS/1000HOURS",
+    "model": "6M16G2D0/S",
+    "make": "Baudouin",
+    "origin": "other",
+    "sup": "ade-power",
+    "power": {
+     "prime": {
+      "kVA": 165,
+      "kW": 132
+     },
+     "standby": {
+      "kVA": 182,
+      "kW": 145
+     }
+    },
+    "score": 158,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "mecca-power|6CTA83GM155|||CCFJ132|182|145|165|132|6CTA83GM155|39|6L|83|E|2080*1000*1790|1720",
+    "model": "6CTA8.3-GM155",
+    "make": "Cummins",
+    "origin": "other",
+    "sup": "mecca-power",
+    "power": {
+     "standby": {
+      "kVA": 182,
+      "kW": 145
+     },
+     "prime": {
+      "kVA": 165,
+      "kW": 132
+     }
+    },
+    "score": 157,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "bobig-power|BW274H|||BP198|144|180|158|198|1106A70TAG3MADEINCHINA|144|BW274H|2400*820*1550|3150*1040*1500",
+    "model": "BW-274H",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "bobig-power",
+    "power": {
+     "standby": {
+      "kVA": 198,
+      "kW": 158
+     },
+     "prime": {
+      "kVA": 180,
+      "kW": 144
+     }
+    },
+    "score": 156,
+    "why": [
+     "bộ điều khiển có datasheet hãng",
+     "tổ máy của chính hãng Bobig (HSMT đòi đồng bộ thương hiệu)"
+    ],
+    "made": null
+   },
+   {
+    "k": "genmac|6068HFU20||GAMMAG180JO2001826068HFU201500DIESEL668002708,6QT2AG45002388102017001600",
+    "model": "6068HFU20",
+    "make": "John Deere",
+    "origin": "other",
+    "sup": "genmac",
+    "power": {
+     "prime": {
+      "kVA": 182
+     }
+    },
+    "score": 155,
+    "why": [
+     "bộ điều khiển có datasheet hãng"
+    ],
+    "made": null
+   },
+   {
+    "k": "rcg-power|RDC9N1|RC274H||R150N5|188KVA/150KW|207KVA/165KW|RDC9N1|RC274H|PDF",
+    "model": "RDC9-N1",
+    "make": "Mitsubishi",
+    "origin": "other",
+    "sup": "rcg-power",
+    "power": {
+     "standby": {
+      "kVA": 207,
+      "kW": 165
+     },
+     "prime": {
+      "kVA": 188,
+      "kW": 150
+     }
+    },
+    "score": 151,
+    "why": [],
+    "made": null
+   },
+   {
+    "k": "fg-wilson|1106DE70TAG2|||MINIMUMRATING|150KVA/120KW150KVA/120KW",
+    "model": "1106D-E70TAG2",
+    "make": "Perkins",
+    "origin": "other",
+    "sup": "fg-wilson",
+    "power": {
+     "prime": {
+      "kVA": 150,
+      "kW": 120
+     },
+     "standby": {
+      "kVA": 165,
+      "kW": 132
+     }
+    },
+    "score": 123,
+    "why": [
+     "tổ máy của chính hãng Caterpillar (HSMT đòi đồng bộ thương hiệu)"
+    ],
+    "made": null
+   },
+   {
+    "k": "cgm-italia|B200|||165DZ||165|132|182|1456|BF6M1013EC|M|2|6|1903/142|25|250|B200|1750|2400X1100X2000|C200|2080|3200X1135X2100|69|QM200|QA200",
+    "model": "B200",
+    "make": "FPT",
+    "origin": "other",
+    "sup": "cgm-italia",
+    "power": {
+     "standby": {
+      "kVA": 182,
+      "kW": 145.6
+     },
+     "prime": {
+      "kVA": 165,
+      "kW": 132
+     }
+    },
+    "score": 75,
+    "why": [],
+    "made": null
+   }
+  ],
+  "madeDropped": []
+ }
+}

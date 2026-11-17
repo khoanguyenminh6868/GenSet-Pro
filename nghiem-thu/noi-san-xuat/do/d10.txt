@@ -1,0 +1,104 @@
+
+=== IB2300062472#0 | 8.5 kVA | origin g7 | hãng HSMT nêu: — | Cung cấp lắp đặt máy phát điện
+  RA (1):
+   - V1505-E2BG [Kubota|other] comappower 11.3kVA P s=140 (bộ điều khiển có datasheet hãng)
+  VÀO (1):
+   + V1505-E2BG [Kubota|other] yanan-power 11.3kVA P s=50 ()
+
+=== IB2400362458#0 | 60 kVA | origin g7eu | hãng HSMT nêu: — | Máy phát điện 60KVA
+  RA (2):
+   - 1104D-44TG2 [Perkins|other] eastern-lion-fuan 60kVA P s=253 (bộ điều khiển có datasheet hãng)
+   - RDC4-N3 [Mitsubishi|other] rcg-power 63kVA P s=160 ()
+  VÀO (2):
+   + 1103A-33TG2 [Perkins|other] dingbo 60kVA P s=269 (cần xác nhận nơi sản xuất động cơ; cần xác nhận nơi sản xuất đầu phát; bộ điều khiển sản x)
+   + 1104C-44TG2 [Perkins|other] ettes-power 60kVA P s=173 (cần xác nhận nơi sản xuất động cơ; bộ điều khiển sản xuất tại Séc (mặc định theo hãng (Kho)
+
+=== IB2400495407#0 | 60 kVA | origin g7eu | hãng HSMT nêu: — | Máy phát điện 60KVA
+  RA (2):
+   - 1104D-44TG2 [Perkins|other] eastern-lion-fuan 60kVA P s=253 (bộ điều khiển có datasheet hãng)
+   - RDC4-N3 [Mitsubishi|other] rcg-power 63kVA P s=160 ()
+  VÀO (2):
+   + 1103A-33TG2 [Perkins|other] dingbo 60kVA P s=269 (cần xác nhận nơi sản xuất động cơ; cần xác nhận nơi sản xuất đầu phát; bộ điều khiển sản x)
+   + 1104C-44TG2 [Perkins|other] ettes-power 60kVA P s=173 (cần xác nhận nơi sản xuất động cơ; bộ điều khiển sản xuất tại Séc (mặc định theo hãng (Kho)
+
+=== IB2400509473#0 | 200 kVA | origin g7 | hãng HSMT nêu: — | Cung cấp Máy phát điện 200KVA Agribank Chi nhánh Bến Thành
+  RA (3):
+   - 1206A-E70TTAG1 [Perkins|other] eastern-lion-fuan 200kVA P s=269 (bộ điều khiển có datasheet hãng)
+   - QSL8.9-G2 [Cummins|other] eastern-lion-fuan 230kVA P s=238 (bộ điều khiển có datasheet hãng)
+   - RDC10-N1 [Mitsubishi|other] rcg-power 225kVA P s=152 ()
+  VÀO (3):
+   + 1206A-E70TTAG3 [Perkins|other] sr-genset 225kVA P s=231 (cần xác nhận nơi sản xuất động cơ; đầu phát sản xuất tại Anh (mặc định theo hãng (Khoa chố)
+   + 6M12G6D3/5 [Baudouin|other] rcg-power 230kVA P s=229 (cần xác nhận nơi sản xuất động cơ; đầu phát sản xuất tại Anh (mặc định theo hãng (Khoa chố)
+   + 6M16G220/5 [Baudouin|other] rcg-power 200kVA P s=228 (cần xác nhận nơi sản xuất động cơ; đầu phát sản xuất tại Anh (mặc định theo hãng (Khoa chố)
+
+=== IB2500503506#0 | 380 kVA | origin g7 | hãng HSMT nêu: — | Cung cấp và lắp đặt 15 động cơ máy phát điện
+  RA (4):
+   - NTA855-G2A [Cummins|other] yongcai-elecmama 350kVA P s=364 (bộ điều khiển có datasheet hãng; đầu phát HSMT nêu)
+   - NTAA855-G7A [Cummins|other] yongcai-elecmama 400kVA P s=353 (bộ điều khiển có datasheet hãng; đầu phát HSMT nêu)
+   - 6ZTAA13-G3 [Cummins|other] rcg-power 388kVA P s=319 (đầu phát HSMT nêu)
+   - RYC16-N1 [Mitsubishi|other] rcg-power 400kVA P s=160 ()
+  VÀO (4):
+   + 6ZTAA13-G2 [Cummins|other] koten-power 400kVA P s=353 (cần xác nhận nơi sản xuất động cơ; bộ điều khiển sản xuất tại Anh (mặc định theo hãng (Kho)
+   + 2206C-E13TAG3 [Perkins|other] uleengen 400kVA s=353 (cần xác nhận nơi sản xuất động cơ; bộ điều khiển sản xuất tại Anh (mặc định theo hãng (Kho)
+   + 6ZTAA13-G3 [Cummins|other] sr-genset 387.5kVA P s=316 (cần xác nhận nơi sản xuất động cơ; bộ điều khiển sản xuất tại Anh (mặc định theo hãng (Kho)
+   + S6B3-PTA [Mitsubishi|other] wintpower 365kVA P s=213 (cần xác nhận nơi sản xuất động cơ; bộ điều khiển sản xuất tại Anh (mặc định theo hãng (Kho)
+
+=== IB2500533266#0 | 100 kVA | origin g20eu | hãng HSMT nêu: — | Mua sắm máy phát điện
+  RA (5):
+   - 6BT5.9-G2 [Cummins|other] rcg-power 100kVA P s=324 (đầu phát HSMT nêu)
+   - 6BT5.9-G1 [Cummins|other] long-gen 100kVA P s=274 (đầu phát HSMT nêu)
+   - 1104D-E44TAG2 [Perkins|other] eastern-lion-fuan 100kVA P s=253 (bộ điều khiển có datasheet hãng)
+   - RDC6-N2 [Mitsubishi|other] rcg-power 100kVA P s=165 ()
+   - RDC6-N3 [Mitsubishi|other] rcg-power 113kVA P s=152 ()
+  VÀO (5):
+   + 4M10G6D3/5 [Baudouin|other] rcg-power 100kVA P s=321 (cần xác nhận nơi sản xuất động cơ; bộ điều khiển sản xuất tại Anh (mặc định theo hãng (Kho)
+   + 4M10G110/5 [Baudouin|other] rcg-power 100kVA P s=316 (cần xác nhận nơi sản xuất động cơ; bộ điều khiển sản xuất tại Anh (mặc định theo hãng (Kho)
+   + 4M10G110/5 [Baudouin|other] rcg-power 100kVA P s=313 (cần xác nhận nơi sản xuất động cơ; bộ điều khiển sản xuất tại Anh (mặc định theo hãng (Kho)
+   + 6BT5.9-G2 [Cummins|other] minsun-motor 100kVA s=309 (cần xác nhận nơi sản xuất động cơ; bộ điều khiển sản xuất tại Anh (mặc định theo hãng (Kho)
+   + 1006TG1A [Perkins|other] gordon-power 100kVA P s=221 (cần xác nhận nơi sản xuất động cơ; bộ điều khiển sản xuất tại Séc (mặc định theo hãng (Kho)
+
+=== IB2500533266#1 | 250 kVA | origin g20eu | hãng HSMT nêu: — | Mua sắm máy phát điện
+  RA (1):
+   - RDC10-N2 [Mitsubishi|other] rcg-power 250kVA P s=165 ()
+  VÀO (1):
+   + S6B-PTA2 [Mitsubishi|other] wintpower 288kVA P s=198 (cần xác nhận nơi sản xuất động cơ; bộ điều khiển sản xuất tại Séc (mặc định theo hãng (Kho)
+
+=== IB2500541094#0 | 430 kVA | origin g7 | hãng HSMT nêu: — | Cung cấp 06 tổ hợp máy phát điện công suất 475KVA÷500KVA
+  RA (4):
+   - KTA19-G3 [Cummins|other] yongcai-elecmama 450kVA P s=282 (bộ điều khiển có datasheet hãng)
+   - KTA19-G3A [Cummins|other] yongcai-elecmama 500kVA P s=271 (bộ điều khiển có datasheet hãng)
+   - 2506C-E15TAG1 L [Perkins|other] eastern-lion-fuan 455kVA P s=231 (bộ điều khiển có datasheet hãng)
+   - RYC20-N1 [Mitsubishi|other] rcg-power 500kVA P s=149 ()
+  VÀO (4):
+   + 2506C-E15TAG2 [Perkins|other] huali-shandong 500kVA P s=268 (cần xác nhận nơi sản xuất động cơ; bộ điều khiển sản xuất tại Anh (mặc định theo hãng (Kho)
+   + KTA19-G3 [Cummins|other] tecgen-fujian 450kVA P s=267 (cần xác nhận nơi sản xuất động cơ; bộ điều khiển sản xuất tại Anh (mặc định theo hãng (Kho)
+   + 2506C-E15TAG2 [Perkins|other] jiuan-power 450kVA P s=224 (cần xác nhận nơi sản xuất động cơ; bộ điều khiển sản xuất tại Anh (mặc định theo hãng (Kho)
+   + S6R2-PTA-C [Mitsubishi|other] chuangyuan-zhongshan 500kVA P s=123 (cần xác nhận nơi sản xuất động cơ)
+
+=== IB2500541094#1 | 500 kVA | origin g7 | hãng HSMT nêu: — | Cung cấp 06 tổ hợp máy phát điện công suất 475KVA÷500KVA
+  RA (5):
+   - KTA19-G3A [Cummins|other] yongcai-elecmama 500kVA P s=287 (bộ điều khiển có datasheet hãng)
+   - KTA19-G3 [Cummins|other] sanq-power 450kVA P s=287 (bộ điều khiển có datasheet hãng)
+   - KTAA19-G5 [Cummins|other] yongcai-elecmama 550kVA P s=274 (bộ điều khiển có datasheet hãng)
+   - 2506C-E15TAG2 L [Perkins|other] eastern-lion-fuan 500kVA P s=237 (bộ điều khiển có datasheet hãng)
+   - RYC20-N1 [Mitsubishi|other] rcg-power 500kVA P s=165 ()
+  VÀO (5):
+   + KTA19-G3A [Cummins|other] sanq-power 500kVA P s=284 (cần xác nhận nơi sản xuất động cơ; bộ điều khiển sản xuất tại Anh (mặc định theo hãng (Kho)
+   + QSZ13-G3 [Cummins|other] acepow-fuan 475kVA P s=269 (cần xác nhận nơi sản xuất động cơ; bộ điều khiển sản xuất tại Anh (mặc định theo hãng (Kho)
+   + 2506C-E15TAG2 [Perkins|other] dingbo 500kVA P s=269 (cần xác nhận nơi sản xuất động cơ; bộ điều khiển sản xuất tại Anh (mặc định theo hãng (Kho)
+   + 2506C-E15TAG2 L [Perkins|other] rcg-power 500kVA P s=209 (cần xác nhận nơi sản xuất động cơ; bộ điều khiển sản xuất tại Anh (mặc định theo hãng (Kho)
+   + S6A3-PTAA-S [Mitsubishi|other] ettes-power 575kVA P s=150 (cần xác nhận nơi sản xuất động cơ; bộ điều khiển sản xuất tại Anh (mặc định theo hãng (Kho)
+
+=== IB2600392438#0 | 80 kVA | origin g7eu | hãng HSMT nêu: — | Gói thầu: Mua sắm máy phát điện 80CSA và tủ chuyển nguồn tự động ATS 4
+  RA (1):
+   - RDC6-N1 [Mitsubishi|other] rcg-power 80kVA P s=165 ()
+  VÀO (1):
+   + 1006TG1A [Perkins|other] jet-power 85kVA P s=255 (cần xác nhận nơi sản xuất động cơ; bộ điều khiển có datasheet hãng)
+
+=== IB2600490077#0 | 165 kVA | origin g7 | hãng HSMT nêu: — | Mua sắm, lắp đặt Máy phát điện phục vụ hệ thống phòng cháy chữa cháy k
+  RA (2):
+   - 6CTA8.3-G2 [Cummins|other] comappower 168kVA P s=227 (bộ điều khiển có datasheet hãng)
+   - 1106D-E70TAG2 [Perkins|other] comappower 168kVA P s=211 (bộ điều khiển có datasheet hãng)
+  VÀO (2):
+   + 1106A-70TAG2 Switchable [Perkins|other] sr-genset 169kVA P s=178 (bộ điều khiển sản xuất tại Anh (mặc định theo hãng (Khoa chốt 16/11/2026)))
+   + 6CTA8.3-G2 [Cummins|other] suneco-linyi 168kVA P s=162 ()
