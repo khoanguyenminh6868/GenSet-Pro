@@ -465,5 +465,116 @@
    }
   },
   "fuel": "264"
+ },
+ {
+  "supplier": "tecnogen",
+  "n": 2010,
+  "why": "LTP 2500 and PRP 2000 kVA under titles of their own are no kVA / kW pair",
+  "title": "Tecnogen Tenax (Cummins) open skid: model | kVA LTP/PRP 50 Hz | kVA LTP/PRP 60 Hz | engine | panel",
+  "header": [
+   "| MODEL | kVA LTP | kVA PRP | kVA LTP | kVA PRP | | Regulator | Cylinder | cm3 | kWm 1500 rpm | kWm 1800 rpm | (l/h) 1500 rpm | (l/h) 1800 rpm | Aspiration | Standard panel | Automatic panel | | | | |",
+   "| | 50 Hz | | 60 Hz | | Engine | | | | | | Cons. 70% | Cons. 70% | | | | Tank l | L | W | H | Kg"
+  ],
+  "row": "| CU2500TV | 2500 | 2000 | -- | -- | QSK60G13 | E | 16 | 60200 | 1692 | -- | 276,4 | -- | T | AUS 7310 | ACP 7320 | 2300 | 765 | 310 | 510 | 18400",
+  "engine": "QSK60G13",
+  "power": {
+   "standby": {
+    "kVA": 2500
+   },
+   "prime": {
+    "kVA": 2000
+   }
+  }
+ },
+ {
+  "supplier": "bruno-generators",
+  "n": 101,
+  "why": "two kVA written with decimals are no pair by rounding",
+  "title": "Bruno Generators - SITE LIGHT - SOFT LIGHT EN",
+  "header": [
+   "| | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 HZ | | 60 HZ | | | | | | | | | TANK l | DIMENSIONS cm | | | MAXIMUM SIZE cm | | | WEIGHT kg | STANDARD PANEL",
+   "| MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 Hz | | 60 Hz | | Engine | cm3 | kWm | kWm | fuel consumption (l/h) | fuel consumption (l/h) | Aspiration | TANK (l) | DIMENSIONS (cm) | | | MAXIMUM SIZE (cm) | | | WEIGHT | STANDARD PANEL",
+   "| | | | | | | kVA LTP | kVA PRP | kVA LTP | kVA PRP | | | 1500 rpm | 1800 rpm | 1500 rpm* | 1800 rpm* | | | L | W | H | L | W | H | |",
+   "| SL SITE LIGHT LED | | | | | | | | | | | | | | | | | | | | | | | | |",
+   "| SINGLE-PHASE | | | | | | | | | | | | | | | | | | | | | | | | |"
+  ],
+  "row": "| SL 9506 KL | 6 | 250 W | 1500 W | AC | 230 V | 5.3 | 4.5 | 6.5 | 6 | KOHLER KDW 702 | 686 | 5 | 5.9 | 0.8 | 0.7 | N | 140 | 245 | 130 | 230 | 245 | 280 | 920 | 1050 | MCP 120-80",
+  "engine": "MCP 120-80",
+  "power": {
+   "standby": {
+    "kVA": 5.3
+   },
+   "prime": {
+    "kVA": 4.5
+   }
+  }
+ },
+ {
+  "supplier": "bdadl-shanghai",
+  "n": 127,
+  "why": "a/b under a prime/standby title with no unit",
+  "title": "上柴系列-上海博杜安动力科技有限公司",
+  "header": [
+   "| | 机组型号 | 输出功率 (主用/备用) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油 容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重 量(KG)"
+  ],
+  "row": "| BDA-S60 | 60/70 | 上柴动力 | 4HTAA4.3-G32 | 4 | 4.3 | 13 | ≤192 | 2100*960*1450 | 1150",
+  "engine": "4HTAA4.3-G32",
+  "power": null
+ },
+ {
+  "supplier": "sanq-power",
+  "n": 107,
+  "why": "two pairs under titles that name no rating: the larger is standby, as before",
+  "title": "Powered by Joint Venture Cummins -Cummins genset|Perkins Genset|Imported Cummins|Diesel gensets -Guangzhou Sanq Power Equipment Co., Ltd.",
+  "header": [
+   "| kW/kVa | kW/kVa | Cummins | Stamford | L/H | Open type | Silent type | Open Type | Silent type"
+  ],
+  "row": "| SQC315 | 260/315 | 240/300 | NTA855-G1A | HCI444D | 61 | 2810 | 4450 | 3000×1054×1758 | 4300×1483×2145 |",
+  "engine": "NTA855-G1A",
+  "power": {
+   "standby": {
+    "kVA": 315,
+    "kW": 260
+   },
+   "prime": {
+    "kVA": 300,
+    "kW": 240
+   }
+  }
+ },
+ {
+  "supplier": "cldj-fujian",
+  "n": 101,
+  "why": "a title naming both units with a space between",
+  "title": "上柴股份 发电机组批发,上柴股份 发电机组供应,上柴股份 发电机组生产厂家详细介绍_昌隆电机",
+  "header": [
+   "| 机组型号 | 输出功率 kw KVA | 电流（A） | 发电机型号 | 发动机型号 | 缸径(mm) *行程(mm) | 缸数 | 机油容量 （L） | 燃油消耗率 （g/kw.h） | 排气量 （L） | 机组重量 （KG） | 长*宽*高 L*W*H（mm）"
+  ],
+  "row": "| CLS-80 | 60/80 | 108 | CLG-224F | SC4H95D2 | 105*124 | 4 | 15 | 204 | 4.3 | 1280 | 1900*800*1200 详细参数",
+  "engine": "CLG-224F",
+  "power": {
+   "rated": {
+    "kVA": 80,
+    "kW": 60
+   }
+  }
+ },
+ {
+  "supplier": "starlight-power",
+  "n": 101,
+  "why": "standby and prime under one kVA title at exactly 0.8: titles not trusted",
+  "title": "1000-4000kVA-Jiangsu Starlight Electricity Equipment Co., Ltd",
+  "header": [
+   "| GensetModel | Power（kVA） | EngineBrand | EngineModel | Specifications",
+   "| Standby | Prime"
+  ],
+  "row": "| XG2500S3 | 2500 | 2000 | Cummins | QSK60G8 | PDF",
+  "engine": "QSK60G8",
+  "power": {
+   "rated": {
+    "kVA": 2500,
+    "kW": 2000
+   }
+  }
  }
 ]

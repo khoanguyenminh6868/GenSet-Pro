@@ -225,13 +225,16 @@
   // only at power factor 0.8 within rounding: "550 | 727" (two weights, frs-shenyang), "350 | 408" (genset and engine kW)
   // and "431.3 | 500" (prime and standby kVA) were read as pairs at any ratio from 1.15 to 1.35.
   const unitOfCell = (c) => { const m = String(c).replace(/\s+/g, "").match(/\d(kva|kwe?)$/i); return m ? (/kva/i.test(m[1]) ? "kVA" : "kW") : null; };
-  const pf08 = (kVA, kW) => Math.abs(kW - 0.8 * kVA) <= Math.max(1.01, 0.025 * kVA);
+  // Within rounding: a kW written whole may be rounded by up to 1 ("13 | 10"); one written with a decimal is not rounded
+  // ("5.3 | 4.5", bruno: two kVA).
+  const pf08 = (kVA, kW) => Math.abs(kW - 0.8 * kVA) <= Math.max(Number.isInteger(kW) ? 1.01 : 0.11, 0.025 * kVA);
   function powersIn(cells, headerText, strict = false) {
     const pairs = [];
     for (let i = 0; i < cells.length && pairs.length < 2; i++) {
       const c = cells[i];
       const m = String(c).replace(/\s+/g, "").replace(/(kva|kw)/gi, "").match(/^(\d+(?:\.\d+)?)\/(\d+(?:\.\d+)?)$/);
-      if (m) { const p = pairOf(+m[1], +m[2]); if (p) pairs.push(p); continue; }
+      // strict: "254/220" with no unit in the cell is a pair only at power factor about 0.8 (0.75 to 0.86, as fitPair).
+      if (m) { const p = pairOf(+m[1], +m[2]); if (p && (!strict || pf08(p.kVA, p.kW) || (p.kW >= 0.75 * p.kVA && p.kW <= 0.86 * p.kVA) || (/kva/i.test(c) && /kw(?!a)/i.test(c)))) pairs.push(p); continue; }
       const a = num(c), b = i + 1 < cells.length ? num(cells[i + 1]) : null;
       if (a != null && b != null) {
         const ua = unitOfCell(c), ub = unitOfCell(cells[i + 1]);
@@ -286,7 +289,7 @@
   const PW_TOKEN = /^(?:[\s()（）\/.:-]*(?:kva|kwe?|st(?:an|na)d?[\s-]?y?by|styb|prime|rated|esp|prp|ltp|cop|master|backup|continuous|power|output|备用|主用|常用|额定|功率))+[\s()（）\/.:-]*$/i;
   const unitsOfTitle = (x) => {
     const s = String(x || "").replace(/g\s*\/\s*kw|kw\s*\.?\s*h|kwm|kwt/gi, " ");
-    const dual = s.match(/(kva|kwe?)\s*[\/／\\,-]\s*(kva|kwe?)/i);
+    const dual = s.match(/(kva|kwe?)(?:\s*[\/／\\,-]\s*|\s+)(kva|kwe?)(?![a-z])/i);
     if (dual && /kva/i.test(dual[1]) !== /kva/i.test(dual[2])) return [/kva/i.test(dual[1]) ? "kVA" : "kW", /kva/i.test(dual[2]) ? "kVA" : "kW"];
     const a = /kva/i.test(s), w = /kwe?(?![a-z])/i.test(s);
     return a && !w ? ["kVA"] : w && !a ? ["kW"] : [];
@@ -328,8 +331,8 @@
       const perTitle = k === 1 && sub.length === run;
       // A row wider than its titles, the titles naming no unit and no sub-title naming one: which title spans is not known.
       if (k === 1 && wider >= run && PT.every((x) => !unitsOfTitle(x).length) && !(perTitle && sub.some((x) => unitsOfTitle(x).length))) return null;
-      const got = {}, clash = new Set(), bare = new Set();
-      let pos = p0, any = false, twoUsed = false, same = false, own = false;
+      const got = {}, clash = new Set(), bare = new Set(), at = {};
+      let pos = p0, any = false, twoUsed = false, same = false, own = false, ordered = false;
       const put = (rate, unit, v, soft, key) => {
         if (!rate || rate === "other" || rate === "mixed" || !unit || !(v > 0)) return;
         const r = (got[rate] = got[rate] || {});
@@ -339,9 +342,11 @@
         // which is which.
         if (r[unit] != null) { if (soft && r[unit] !== v) clash.add(rate); else if (rate === "rated" && r[unit] !== v && !/[56]0\s*hz|1[58]00\s*(rpm|r\/min)/i.test(key)) same = true; return; }
         r[unit] = v;
+        at[rate] = title;
       };
-      let last = null;
+      let last = null, title = 0;
       for (let j = 0; j < run; j++) {
+        title = j;
         const t = PT[j], tUnits = unitsOfTitle(t), order = orderOfTitle(t);
         let tRate = rateOfTitle(t);
         // A title that is only a unit ("/kw", "KVA") carries the rating of the title before it.
@@ -378,7 +383,8 @@
             const a = +pm[1].replace(",", "."), b = +pm[3].replace(",", "."), ua = pm[2] && (/kva/i.test(pm[2]) ? "kVA" : "kW"), ub = pm[4] && (/kva/i.test(pm[4]) ? "kVA" : "kW");
             const ord = order || orderOfTitle(s);
             if (ua && ub) { if (ua !== ub) { put(rate, ua, a, inherits, key); put(rate, ub, b, inherits, key); } else if (ord) { put(ord[0], ua, a); put(ord[1], ua, b); } }
-            else if (ord) { const u = ua || ub || (tUnits.length === 1 ? tUnits[0] : sUnits.length === 1 ? sUnits[0] : null); put(ord[0], u, a); put(ord[1], u, b); }
+            // "60/70" under "输出功率 (主用/备用)" (bdadl): prime and standby in a unit nobody wrote, no kVA / kW pair.
+            else if (ord) { const u = ua || ub || (tUnits.length === 1 ? tUnits[0] : sUnits.length === 1 ? sUnits[0] : null); if (!u) ordered = true; put(ord[0], u, a); put(ord[1], u, b); }
             else { const p = dualU ? fitPair(a, b) : pairOf(a, b); if (p && (dualU || pf08(p.kVA, p.kW))) { put(rate, "kVA", p.kVA, inherits, key); put(rate, "kW", p.kW, inherits, key); } }
             continue;
           }
@@ -402,13 +408,15 @@
         const p = got.prime && got.prime[u], s = got.standby && got.standby[u];
         if (!p || !s) continue;
         if (p > s * 1.001) return null;
-        // (the row's titles are then not trusted at all; figures that carry their own unit, "8kVA | 10kVA", stand)
-        if (!own && Object.keys(got.prime).length === 1 && Object.keys(got.standby).length === 1 && Math.abs(p - 0.8 * s) <= 0.011 * s) return { veto: true };
+        // (the row's titles are then not trusted at all; figures that carry their own unit, "8kVA | 10kVA", or that
+        // each have a title of their own, "kVA LTP | kVA PRP" over "2500 | 2000", stand)
+        if (!own && at.prime === at.standby && Object.keys(got.prime).length === 1 && Object.keys(got.standby).length === 1 && Math.abs(p - 0.8 * s) <= 0.011 * s) return { veto: true };
       }
       let n = 0;
       for (const r of Object.values(got)) n += Object.keys(r).length;
       // Prime and standby titled over figures in a unit nobody wrote ("主用功率 | 备用功率" over "20 | 23", no line of
       // sub-titles, no figure after them): no output can be read, and the two cells are no kVA / kW pair either.
+      if (!n && ordered) return { n: 0, got: null, end: pos };
       if (!n) return lone && bare.size === 2 && !(pos < stop && (FIG_CELL.test(flat(cells[pos])) || PAIR_CELL.test(flat(cells[pos])))) ? { n: 0, got: null, end: pos } : null;
       // One figure set with no rating word on its title: the rating the rest of the header names.
       let power = got;
