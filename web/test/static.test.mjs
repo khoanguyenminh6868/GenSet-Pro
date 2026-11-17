@@ -108,3 +108,23 @@ test("SHOW_SRC = false và danh sách mặc định theo ngày đăng giảm d�
   // Cột "no" xếp theo ngày đăng rồi mới tới Mã số.
   assert.match(APP, /\{ k: "no", label: "Mã Số"[^\n]*val: \(t\) => `\$\{pubOf\(t\)\}\|/);
 });
+
+test("nhãn 'Công suất chưa xác nhận': chỉ hiển thị, nằm trong tiêu đề thẻ cấu hình, chỉ tính mục công suất tổ máy ở kết quả chưa rõ", () => {
+  assert.match(APP, /Công suất chưa xác nhận/);
+  const a = APP.indexOf("const CFG_POWER_ITEM"), b = APP.indexOf("function cfgResultHtml");
+  assert.ok(a > 0 && b > a);
+  const ctx = {};
+  vm.runInNewContext(`const cfgGridSt = (x) => (x.status === "not_met" ? "not_met" : x.status === "confirm" ? "confirm" : x.status === "met" && !x.unverified ? "met" : "unclear");\n${APP.slice(a, b)}\nthis.f = cfgPowerUnclear; this.chip = cfgPowerChip;`, ctx);
+  const c = (...checks) => ({ checks });
+  assert.equal(ctx.f(c({ item: "Công suất liên tục", status: "unclear" })), true);
+  assert.equal(ctx.f(c({ item: "Công suất", part: "genset", status: "met", unverified: true })), true);
+  assert.equal(ctx.f(c({ item: "Công suất liên tục", status: "met", offered: "200 kVA (Prime)" })), false);
+  assert.equal(ctx.f(c({ item: "Công suất liên tục", status: "confirm" })), false);
+  for (const item of ["Công suất động cơ", "Công suất đầu phát", "Hệ số công suất", "Quá tải trên công suất dự phòng"]) assert.equal(ctx.f(c({ item, status: "unclear" })), false, item);
+  assert.equal(ctx.f({}), false);
+  assert.match(ctx.chip(c({ item: "Công suất", status: "unclear" })), /Công suất chưa xác nhận/);
+  assert.equal(ctx.chip(c()), "");
+  // Nhãn nằm trong <summary> của thẻ, không đổi thứ hạng (không sort theo nó).
+  assert.match(APP, /\$\{raw\(cfgPowerChip\(c\)\)\}/);
+  assert.doesNotMatch(APP, /cfgPowerUnclear\([^)]*\)[^\n]*\.sort|sort\([^\n]*cfgPowerUnclear/);
+});
