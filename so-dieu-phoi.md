@@ -7,8 +7,8 @@ Viết gọn lại 13/11/2026 (sáng, giờ VN). Cập nhật 16/11: #786 (nối
 ## Đang chạy
 | Việc | Session (id để báo về / hỏi) | Model | Chờ gì |
 |---|---|---|---|
-| Ghép đầu phát ghi kèm hãng ở `candidates` | `local_0436fd67-7738-43be-b233-530deb631164` (ghep-dau-phat) | Sonnet | PR draft + `nghiem-thughep-dau-phat.md` |
 | Cho `catalog.js` đọc `manufacturing[]` thay `MADE_DEFAULT` cứng (#862) | Sau model rác + depco (cùng catalog.js) | Sonnet |
+| Đọc đầu phát FG Wilson và ô hai hãng ("Stamford X / Leroy-Somer Y") trong `catalog.js` (đề xuất của #873) | Sau depco (cùng catalog.js) | Sonnet |
 ha-may-hang.md` |
 | Phủ test: việc còn mở sau 13/11 (trưa) | — (phiên H1, H2, H3, W1, W2 đã xong, chưa lưu trữ: chờ Khoa) | — | (6) Chưa phủ: nhánh trình duyệt `server/`, tải tệp báo giá / HSMT dự án, Forward sau Back từ link thẳng |
 
