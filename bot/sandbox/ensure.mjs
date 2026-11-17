@@ -1,5 +1,6 @@
-// Giữ bot GenBid chạy trong Vercel Sandbox (Khoa, 2026-11-17). Chạy định kỳ (GitHub Actions mỗi 5 phút, xem
-// .github/workflows/sandbox-ensure.yml); mỗi lần chạy là idempotent:
+// Bot GenBid dự phòng trong Vercel Sandbox (Khoa, 2026-11-17): chỉ chạy khi web có yêu cầu mà không máy Windows nào mở.
+// run() (cuối tệp) đọc trạng thái từ web rồi bật (ensure), dừng, hoặc để yên. Gọi từ .github/workflows/sandbox-ensure.yml:
+// web chạy workflow ngay khi có yêu cầu lúc bot tắt (web/api/_wake.js), cron 5 phút là lưới an toàn. ensure() idempotent:
 //   1. lấy sandbox tên GENBID_SANDBOX_NAME (mặc định "genbid-bot"), chưa có thì tạo (persistent, vùng sin1, 4 vCPU);
 //   2. sandbox đang dừng thì tự nối lại từ snapshot (lệnh đầu tiên nối lại phiên; bot, Chrome profile, tệp trạng thái còn nguyên);
 //   3. lần đầu: chạy bot/sandbox/setup-sandbox.sh (Wine + VNeGP Agent, Chrome, pwsh, Claude CLI, tessdata...);
@@ -112,11 +113,54 @@ export async function ensure({ Sandbox, creds, env, log = console.log, now = Dat
   return { name: cfg.name, botUp: true };
 }
 
+// ---- Chạy theo nhu cầu (Khoa, 2026-11-17): chỉ bật sandbox khi web có yêu cầu mà không máy Windows nào đang mở. ----
+// Trạng thái đọc từ /api/requests?kind=bots: { pending, pc: {lastPollAt, running}, sandbox: {lastPollAt, running}, sandboxBusyAt }.
+// Web gọi workflow ngay khi có yêu cầu lúc không bot nào chạy (web/api/_wake.js); cron 5 phút là lưới an toàn và lo việc dừng.
+export const PC_SILENT_MS = 3 * 60e3; // như trang web: im 3 phút = máy tắt
+export const IDLE_STOP_MS = 20 * MIN; // sandbox rảnh chừng này thì dừng (bộ nhớ tính tiền theo giờ chạy)
+const LIVE = new Set(["pending", "running"]);
+const ms = (v) => (v == null ? 0 : new Date(v).getTime() || 0);
+
+// st: trạng thái từ web; box: { status, statusUpdatedAt } của sandbox, null khi chưa tạo. Trả "up" | "stop" | "none".
+export function decide(st, box, now = Date.now()) {
+  const pcOn = now - ms(st?.pc?.lastPollAt) < PC_SILENT_MS;
+  const live = !!box && LIVE.has(box.status);
+  if (!live) return st?.pending && !pcOn ? "up" : "none";
+  // Đang làm dở một việc: để làm xong (tim của sandbox còn mới và báo running).
+  if (st?.sandbox?.running && now - ms(st.sandbox.lastPollAt) < PC_SILENT_MS) return "up";
+  // Máy Windows đã bật: nó nhận việc ngay khi sandbox im (web/api/requests.js cho máy nhường sandbox 2 phút).
+  if (pcOn) return "stop";
+  const lastBusy = Math.max(ms(st?.sandboxBusyAt), ms(box.statusUpdatedAt));
+  if (!st?.pending && now - lastBusy >= IDLE_STOP_MS) return "stop";
+  return "up";
+}
+
+export async function fetchState(env, fetchImpl = fetch) {
+  const base = env.GENBID_WEB || "https://genset-pro-web.vercel.app";
+  const r = await fetchImpl(`${base}/api/requests?kind=bots`, { headers: { Authorization: `Bearer ${env.GENBID_INGEST_TOKEN}` } });
+  if (!r.ok) throw new Error(`Đọc trạng thái bot từ web lỗi HTTP ${r.status}`);
+  return r.json();
+}
+
+export async function run({ Sandbox, creds, env, getState = () => fetchState(env), log = console.log, now = Date.now }) {
+  if (!env.GENBID_INGEST_TOKEN) throw new Error("Thiếu bí mật: GENBID_INGEST_TOKEN");
+  const name = env.GENBID_SANDBOX_NAME || DEFAULTS.name;
+  const st = await getState();
+  let sb = null;
+  try { sb = await Sandbox.get({ name, ...creds }); } // không nối lại phiên (resume mặc định false)
+  catch (e) { if (!isNotFound(e)) throw e; }
+  const action = decide(st, sb && { status: sb.status, statusUpdatedAt: sb.statusUpdatedAt }, now());
+  log(`Yêu cầu chờ: ${st.pending ? "có" : "không"}; máy Windows: ${st.pc?.lastPollAt || "chưa từng"}; sandbox: ${sb ? sb.status : "chưa tạo"} → ${action}`);
+  if (action === "up") return { action, ...(await ensure({ Sandbox, creds, env, log, now })) };
+  if (action === "stop") { await sb.stop(); log(`Đã dừng sandbox ${name} (giữ snapshot, lần sau nối lại).`); }
+  return { action };
+}
+
 // Chạy trực tiếp: node ensure.mjs
 if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
   const { Sandbox } = await import("@vercel/sandbox");
   const creds = { token: process.env.VERCEL_TOKEN, teamId: process.env.VERCEL_TEAM_ID, projectId: process.env.VERCEL_PROJECT_ID };
   if (!creds.token || !creds.teamId || !creds.projectId) { console.error("Thiếu VERCEL_TOKEN / VERCEL_TEAM_ID / VERCEL_PROJECT_ID"); process.exit(2); }
-  try { await ensure({ Sandbox, creds, env: process.env }); }
+  try { await run({ Sandbox, creds, env: process.env }); }
   catch (e) { console.error(`LỖI: ${e.message}`); process.exit(1); }
 }

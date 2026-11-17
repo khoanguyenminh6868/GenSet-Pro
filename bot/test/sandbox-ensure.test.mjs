@@ -1,7 +1,7 @@
 // bot/sandbox/ensure.mjs: logic giữ bot sống trong Vercel Sandbox, với sandbox giả (không gọi mạng, không cần @vercel/sandbox).
 import test from "node:test";
 import assert from "node:assert/strict";
-import { ensure, secretsEnv, checkSecrets, BOT_UP_CMD, rawUrl } from "../sandbox/ensure.mjs";
+import { ensure, secretsEnv, checkSecrets, BOT_UP_CMD, rawUrl, decide, run, fetchState } from "../sandbox/ensure.mjs";
 
 const ENV = { GENBID_INGEST_TOKEN: "i", CLAUDE_CODE_OAUTH_TOKEN: "c", GH_TOKEN: "g" };
 const CREDS = { token: "t", teamId: "team", projectId: "prj" };
@@ -106,6 +106,52 @@ test("phiên sắp hết hạn thì gia hạn; còn nhiều thì thôi; hết tr
   r = fakeSandbox({ botUp: true, expiresAt: t0 + 60e3 });
   r.sb.extendTimeout = async () => { throw new Error("vượt trần của gói"); };
   await ensure({ Sandbox: SandboxWith(r.sb), creds: CREDS, env: ENV, log() {}, now: () => t0 });
+});
+
+// ---- Theo nhu cầu: decide() / run() ----
+const T = 2_000_000_000_000;
+const ago = (min) => new Date(T - min * 60e3).toISOString();
+const RUN = { status: "running", statusUpdatedAt: new Date(T - 60 * 60e3) };
+
+test("decide: sandbox tắt → bật chỉ khi có yêu cầu chờ và máy Windows im ≥ 3 phút", () => {
+  assert.equal(decide({ pending: true, pc: { lastPollAt: ago(10) } }, null, T), "up");
+  assert.equal(decide({ pending: true, pc: null }, { status: "stopped" }, T), "up");
+  assert.equal(decide({ pending: true, pc: { lastPollAt: ago(1) } }, { status: "stopped" }, T), "none");
+  assert.equal(decide({ pending: false, pc: null }, { status: "stopped" }, T), "none");
+});
+
+test("decide: sandbox chạy → dừng khi máy Windows bật lại hoặc rảnh 20 phút; đang làm dở thì giữ", () => {
+  assert.equal(decide({ pending: false, pc: { lastPollAt: ago(1) }, sandbox: { lastPollAt: ago(0), running: false } }, RUN, T), "stop");
+  assert.equal(decide({ pending: true, pc: { lastPollAt: ago(1) }, sandbox: { lastPollAt: ago(0), running: true } }, RUN, T), "up", "làm xong việc dở");
+  assert.equal(decide({ pending: false, pc: null, sandboxBusyAt: ago(25) }, RUN, T), "stop");
+  assert.equal(decide({ pending: false, pc: null, sandboxBusyAt: ago(5) }, RUN, T), "up");
+  assert.equal(decide({ pending: true, pc: null, sandboxBusyAt: ago(60) }, RUN, T), "up");
+  // vừa nối lại phiên (statusUpdatedAt mới) dù busyAt cũ: chưa dừng
+  assert.equal(decide({ pending: false, pc: null, sandboxBusyAt: ago(600) }, { status: "running", statusUpdatedAt: new Date(T - 2 * 60e3) }, T), "up");
+});
+
+test("run: dừng gọi sb.stop(), không chạy lệnh nào (không nối lại phiên); chưa có sandbox và không việc thì không tạo", async () => {
+  const { sb, calls } = fakeSandbox();
+  Object.assign(sb, RUN, { stopped: 0, async stop() { sb.stopped++; } });
+  const r = await run({ Sandbox: SandboxWith(sb), creds: CREDS, env: ENV, getState: async () => ({ pending: false, pc: { lastPollAt: ago(1) } }), log() {}, now: () => T });
+  assert.equal(r.action, "stop"); assert.equal(sb.stopped, 1); assert.equal(calls.length, 0);
+  const S = SandboxWith(sb, { exists: false });
+  assert.equal((await run({ Sandbox: S, creds: CREDS, env: ENV, getState: async () => ({ pending: false }), log() {}, now: () => T })).action, "none");
+  assert.equal(S.created.length, 0);
+});
+
+test("run: có yêu cầu, máy tắt → ensure (khởi chạy bot); fetchState gửi token ingest tới ?kind=bots", async () => {
+  const { sb, calls } = fakeSandbox({ botUp: false });
+  sb.status = "stopped";
+  const r = await run({ Sandbox: SandboxWith(sb), creds: CREDS, env: ENV, getState: async () => ({ pending: true, pc: { lastPollAt: ago(30) } }), log() {}, now: () => T });
+  assert.equal(r.action, "up");
+  assert.ok(calls.some((c) => c.args[1].includes("start-bot.sh")));
+  let seen;
+  const st = await fetchState({ GENBID_INGEST_TOKEN: "i" }, async (url, o) => { seen = { url, o }; return { ok: true, json: async () => ({ pending: false }) }; });
+  assert.deepEqual(st, { pending: false });
+  assert.equal(seen.url, "https://genset-pro-web.vercel.app/api/requests?kind=bots");
+  assert.equal(seen.o.headers.Authorization, "Bearer i");
+  await assert.rejects(fetchState({ GENBID_INGEST_TOKEN: "i" }, async () => ({ ok: false, status: 401 })), /401/);
 });
 
 test("secretsEnv chỉ lấy bí mật có giá trị", () => {
