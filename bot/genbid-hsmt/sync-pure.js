@@ -711,7 +711,10 @@ function autoConfigSkip(bidName, result = null) {
 // settingsText (optional): .genbid-ai-settings.json, Cấu hình hệ thống on the web (settings/ai; Khoa 2026-11-13). Its
 // switchAtUsd wins over the budget file; its spent {usd, at} (corrected by hand) replaces the book up to `at` when `at`
 // is in this period: spent = usd + what the book has after `at`, and an "exhausted" before `at` no longer counts.
-function apiBudgetOf(budgetText, spendText, at, settingsText = "") {
+// othersText (optional): .genbid-api-others.json, what the other machines spent on the same key ({usd, exhausted, since,
+// fixAt}, from the web's heartbeat answer; Get-ApiBudget in GenBid-Bot.ps1): added when it is of this period (same
+// reset date) and the same hand correction.
+function apiBudgetOf(budgetText, spendText, at, settingsText = "", othersText = "") {
   let b = { monthlyUsd: 100, resetDay: 2, switchAtUsd: 90 };
   try { b = { ...b, ...JSON.parse(String(budgetText).replace(/^﻿/, "")) }; } catch {}
   const s = parseJson(settingsText);
@@ -730,6 +733,11 @@ function apiBudgetOf(budgetText, spendText, at, settingsText = "") {
       spent += (Number(e.usd) || 0) * (fix ? afterShare(e, from) : 1); if (e.exhausted) exhausted = true;
     }
   } catch {}
+  const o = parseJson(othersText), ymd = (d) => `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+  if (o && String(o.since || "").slice(0, 10) === ymd(since) && String(o.fixAt || "") === (fix ? new Date(fix.at).toISOString().slice(0, 19) + "Z" : "")) {
+    spent += Number(o.usd) || 0;
+    if (o.exhausted === true) exhausted = true;
+  }
   return { ...b, since, spent: Math.round(spent * 100) / 100, exhausted, ok: !exhausted && spent < b.switchAtUsd };
 }
 // A run that was going when the spend was corrected by hand (t0 < at < t): Platform already counted the part before, so

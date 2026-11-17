@@ -65,12 +65,14 @@ export default async function handler(req, res) {
       const on = sandboxOn();
       const [marks, settings, sbx] = await Promise.all([pendingMarks(), beat ? aiSettings() : undefined, !sandbox && on ? botDoc("sandbox") : null]);
       const pending = hasPending(marks);
-      if (beat) await heartbeat(req.query.running, req.query.api, sandbox ? "sandbox" : "pc", pending);
+      // apiOthers: what the other machines spent on the shared API key (Windows PCs, sandbox), for the bot's budget.
+      const apiOthers = beat ? await heartbeat(req.query.running, req.query.api, sandbox ? "sandbox" : "pc", pending) : null;
+      const extra = { ...(settings !== undefined ? { settings } : {}), ...(apiOthers ? { apiOthers } : {}) };
       // Each heartbeat of the sandbox bot decides whether the sandbox stops (idle, or a PC is back) or gets more time.
       if (beat && sandbox && on) await background(sandboxTick(req.query.running === "1", pending));
-      if (sbx && fresh(sbx.lastPollAt, 2 * 60e3)) return res.json({ files: [], analysis: [], sync: { pending: false, requestedAt: null, mode: "" }, translation: [], compare: [], hsdt: [], tlkt: [], supplier: [], config: [], find: [], bidprice: [], spec: [], yieldTo: "sandbox", ...(settings !== undefined ? { settings } : {}) });
+      if (sbx && fresh(sbx.lastPollAt, 2 * 60e3)) return res.json({ files: [], analysis: [], sync: { pending: false, requestedAt: null, mode: "" }, translation: [], compare: [], hsdt: [], tlkt: [], supplier: [], config: [], find: [], bidprice: [], spec: [], yieldTo: "sandbox", ...extra });
       const [files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice, spec] = await Promise.all([fileReqs(marks), analysisReqs(marks), syncReq(marks), reqsOf("translationreq", marks), reqsOf("comparereq", marks), reqsOf("hsdtreq", marks), reqsOf("tlktreq", marks), reqsOf("supplierreq", marks), reqsOf("configreq", marks), reqsOf("findreq", marks), reqsOf("bidpricereq", marks), reqsOf("specreq", marks)]);
-      return res.json({ files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice, spec, ...(settings !== undefined ? { settings } : {}) });
+      return res.json({ files, analysis, sync, translation, compare, hsdt, tlkt, supplier, config, find, bidprice, spec, ...extra });
     }
     // ?kind=bots: the state api/_sandbox.js decides on (to look at by hand). Writes nothing.
     if (req.query?.kind === "bots") {
@@ -107,6 +109,10 @@ async function sandboxTick(running, pending) {
   const [pc, busy] = await Promise.all([botDoc("pc"), botDoc("sandboxbusy")]);
   return tick({ pending, pc, sandbox: { lastPollAt: now, running }, sandboxBusyAt: running || pending ? now : busy?.at || null });
 }
+// Every machine keeps its own spend book (.anthropic-api-spend.jsonl) of the one API key: each heartbeat also writes
+// botstatus/api-<machine> {own, since, fixAt, exhausted} (sandbox: api-sandbox), and gets back what the others spent
+// in the same period (apiOthersOf), which the bot adds to its own book (Khoa 17/11/2026: the books were split in two).
+// Returns { usd, exhausted, since, fixAt } or null (no API key, older bot, unreadable).
 async function heartbeat(running, api, host = "pc", pending = false) {
   const at = new Date().toISOString();
   const data = { lastPollAt: at, running: running === "1", host };
@@ -115,11 +121,32 @@ async function heartbeat(running, api, host = "pc", pending = false) {
   const row = (id, d) => ({ coll: "botstatus", id, data: d, updated_at: at });
   const rows = [row("current", data), row(host, { lastPollAt: at, running: data.running })];
   if (host === "sandbox" && (data.running || pending)) rows.push(row("sandboxbusy", { at }));
-  await fetch(`${SB_URL}/rest/v1/docs`, {
-    method: "POST",
-    headers: { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=minimal" },
-    body: JSON.stringify(rows),
-  }).catch(() => {});
+  const me = a && a.own != null ?`api-${host === "sandbox" ? "sandbox" : a.id || "pc"}` : null;
+  // exhausted of the row is this machine's own (the others' come back to it through apiOthers, not round again).
+  if (me) rows.push(row(me, { own: a.own, since: a.since, fixAt: a.fixAt, exhausted: a.ownExhausted, at }));
+  const [, list] = await Promise.all([
+    fetch(`${SB_URL}/rest/v1/docs`, {
+      method: "POST",
+      headers: { apikey: SERVICE, Authorization: `Bearer ${SERVICE}`, "Content-Type": "application/json", Prefer: "resolution=merge-duplicates,return=minimal" },
+      body: JSON.stringify(rows),
+    }).catch(() => {}),
+    me ? fetch(`${SB_URL}/rest/v1/docs?coll=eq.botstatus&id=like.api-*&select=id,data&order=id`, { headers: { apikey: SERVICE, Authorization: `Bearer ${SERVICE}` } })
+      .then((r) => (r.ok ? r.json() : null)).catch(() => null) : null,
+  ]);
+  return me && Array.isArray(list) ? apiOthersOf(list, me, a) : null;
+}
+// The others' spend in the same period (same reset day: `since` compared by date, a PC and the sandbox are in other
+// time zones) and after the same hand correction (fixAt): rows of another period or correction are what that machine
+// spent before, already in the corrected number.
+export function apiOthersOf(list, me, a) {
+  let usd = 0, exhausted = false;
+  for (const d of list) {
+    const o = d?.data;
+    if (!o || d.id === me || String(o.since || "").slice(0, 10) !== a.since.slice(0, 10) || String(o.fixAt || "") !== a.fixAt) continue;
+    usd += Number(o.own) || 0;
+    if (o.exhausted === true) exhausted = true;
+  }
+  return { usd: Math.round(usd * 100) / 100, exhausted, since: a.since, fixAt: a.fixAt };
 }
 // botstatus/<id>.data, or null (missing or unreadable: never stops a poll).
 async function botDoc(id) {
@@ -136,7 +163,11 @@ function apiOf(text) {
   const n = (v) => (Number.isFinite(Number(v)) && Number(v) >= 0 && Number(v) < 1e6 ? Math.round(Number(v) * 100) / 100 : null);
   if (!j || n(j.spent) === null) return null;
   const since = String(j.since || "").slice(0, 40);
-  return { spent: n(j.spent), since, switchAt: n(j.switchAt), exhausted: j.exhausted === true, key: j.key !== false };
+  // own: this machine's book alone (no hand correction, no other machine); id: the machine (a bot older than 17/11 sends neither).
+  const id = /^[A-Za-z0-9_-]{1,40}$/.test(String(j.id || "")) ? String(j.id) : "";
+  const own = j.own === undefined ? null : n(j.own);
+  return { spent: n(j.spent), since, switchAt: n(j.switchAt), exhausted: j.exhausted === true, key: j.key !== false,
+    ...(own !== null ? { own, ownExhausted: j.ownExhausted === true, id, fixAt: String(j.fixAt || "").slice(0, 40) } : {}) };
 }
 // settings/ai: { use: { analysis, config, bidprice, compare: "api" | "plan" }, switchAtUsd, spent: { usd, at } }, or null.
 async function aiSettings() {

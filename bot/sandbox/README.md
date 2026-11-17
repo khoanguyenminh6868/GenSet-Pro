@@ -38,11 +38,18 @@ OCR tesseract vie (~3 s/trang); .doc qua antiword; Gợi ý cấu hình (11 phú
 nhường, sandbox làm xong rồi dừng sau 44 s; rảnh 20 phút → dừng (nay 5 phút); gia hạn phiên khi còn việc.
 Test: `web/api/test/wake.test.mjs` (sandbox giả).
 
+Khoa thử thêm (17/11): Gợi ý giá, Đối chiếu HSDT / TLKT, Tạo HSDT tham khảo, nút Lấy tệp bấm trực tiếp, bản dịch thật qua Gemini.
+
 ## Chưa kiểm
-Gợi ý giá; Đối chiếu HSDT / TLKT; Tạo HSDT tham khảo; Tìm thông số NCC (cần `FIRECRAWL_KEY` trên Vercel); nút Lấy tệp bấm
-trực tiếp (sau #863/#864); một bản dịch thật qua Gemini; reCAPTCHA khi tần suất cao; Wine không được Bộ Tài chính hỗ trợ.
+Tìm thông số NCC (cần biến `FIRECRAWL_KEY` trên Vercel: Settings → Environment Variables, Production, rồi redeploy; sandbox
+đang chạy lấy biến mới ở lần bật sau); reCAPTCHA khi tần suất cao; Wine không được Bộ Tài chính hỗ trợ.
 Việc theo lịch của máy Windows (Sync định kỳ...) không chạy khi máy tắt: sandbox chỉ lo yêu cầu từ web.
-Sổ tiền API (`.anthropic-api-spend.jsonl`) mỗi máy một sổ, không cộng lại (chưa sửa).
+
+## Sổ tiền API chung
+Mỗi máy (máy Windows, sandbox) vẫn ghi sổ riêng `.anthropic-api-spend.jsonl`. Nhịp tim gửi phần riêng (`own`, tên máy, lần sửa
+tay `fixAt`); web ghi `botstatus/api-<máy>` (sandbox: `api-sandbox`) và trả `apiOthers` = tổng các máy khác cùng kỳ, cùng lần sửa
+tay; bot lưu vào `.genbid-api-others.json` và cộng vào ngưỡng chuyển gói (Get-ApiBudget, apiBudgetOf). Bot bản cũ không gửi
+`own` thì không được cộng.
 
 ## Bẫy đã gặp (17/11/2026)
 - Image mặc định (`runtime: node22`) không có apt; image `vercel/sandbox/ubuntu` tối giản: không curl, git, node → `up()` cài

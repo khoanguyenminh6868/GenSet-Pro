@@ -166,6 +166,28 @@ test("Cấu hình hệ thống: nhịp tim trả settings/ai (null khi chưa có
   assert.equal(db.get("botstatus", "current").data.api, undefined);
 });
 
+test("Sổ tiền API chung: mỗi máy ghi botstatus/api-<máy>, nhịp tim trả phần các máy khác cùng kỳ, cùng lần sửa tay", async () => {
+  const h = await fresh("requests.js");
+  const api = (o) => JSON.stringify({ spent: 0, since: "2026-11-02T00:00:00", switchAt: 90, exhausted: false, fixAt: "", ...o });
+  // Máy cũ (không gửi own) không ghi sổ riêng, không nhận apiOthers.
+  assert.equal("apiOthers" in (await get(h, { kind: "all", api: api({ spent: 5 }) })).jsonBody, false);
+  assert.equal(db.get("botstatus", "api-pc"), undefined);
+  const r1 = await get(h, { kind: "all", api: api({ own: 10, id: "KHOAMINIPC" }) });
+  assert.deepEqual(r1.jsonBody.apiOthers, { usd: 0, exhausted: false, since: "2026-11-02T00:00:00", fixAt: "" });
+  assert.equal(db.get("botstatus", "api-KHOAMINIPC").data.own, 10);
+  // Sandbox (giờ UTC, cùng ngày làm mới) thấy 10 USD của máy Windows; máy Windows thấy 4,5 USD + hết tiền của sandbox.
+  const r2 = await get(h, { kind: "all", host: "sandbox", api: api({ own: 4.5, ownExhausted: true, id: "abc123", since: "2026-11-02T07:00:00" }) });
+  assert.equal(r2.jsonBody.apiOthers.usd, 10);
+  assert.ok(db.get("botstatus", "api-sandbox"), "sandbox ghi api-sandbox, không theo tên máy");
+  const r3 = await get(h, { kind: "all", api: api({ own: 11, id: "KHOAMINIPC", exhausted: true }) });
+  assert.deepEqual([r3.jsonBody.apiOthers.usd, r3.jsonBody.apiOthers.exhausted], [4.5, true]);
+  assert.equal(db.get("botstatus", "api-KHOAMINIPC").data.exhausted, false, "exhausted của dòng là của riêng máy");
+  // Kỳ khác hoặc lần sửa tay khác thì không cộng.
+  db.put("botstatus", "api-KayenGram", { own: 50, since: "2026-10-02T00:00:00", fixAt: "" });
+  db.put("botstatus", "api-OLD", { own: 70, since: "2026-11-02T00:00:00", fixAt: "2026-11-10T00:00:00Z" });
+  assert.equal((await get(h, { kind: "all", api: api({ own: 11, id: "KHOAMINIPC" }) })).jsonBody.apiOthers.usd, 4.5);
+});
+
 test("Nhịp tim ghi botstatus/current với updated_at = lastPollAt (mọi chỗ ghi docs đều đổi updated_at)", async () => {
   mock.timers.enable({ apis: ["Date"], now: Date.parse("2026-11-13T05:00:00Z") });
   await get(await fresh("requests.js"), { kind: "all" });
