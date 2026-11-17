@@ -759,8 +759,12 @@ function filePicker(inputId, dropId, listId) {
   return { files, clear() { files.length = 0; render(); } };
 }
 const CAP_RE = /(\d+(?:[.,]\d+)?)\s*(kva|kw|mva|mw)\b/gi;
+// A tolerance ("8.5 ±0.5KVA", "+/- 5 kVA") is not the capacity (IB2600612866 read 0,5 kVA): dropped before reading, as
+// suppliers/config-bot.mjs noTolerance does.
+const noTolerance = (t) => String(t || "").replace(/(?:±|\+\s*\/\s*-)\s*\d+(?:[.,]\d+)?/g, "");
 function capFromText(text) {
   if (!text) return null;
+  text = noTolerance(text);
   const found = [], all = [...String(text).matchAll(CAP_RE)];
   // The genset's figure first, not a transformer's in the same name (web/bidprice.js capPick).
   // Every figure another device's ("Trạm biến áp 630kVA; Máy phát điện dự phòng"): none, so the HSMT's is read instead.
@@ -917,7 +921,6 @@ function capacityOf(t) {
   if (fromName) return { ...fromName, src: "tên gói" };
   const doc = state.hsmt[t._key];
   if (doc?.capacity) { const c = capFromText(doc.capacity); return { text: doc.capacity, n: c?.n ?? null, src: "HSMT" }; }
-  if (capScan.found[t._key]) return { ...capScan.found[t._key], src: "đọc từ tệp HSMT" };
   // The sets the analysis read in figures (generatorSets, 2026-11-06: qty, primeKva, standbyKva), before its free text.
   const gs = (analysisOf(t._key)?.result?.generatorSets || []).filter((g) => g && (g.primeKva > 0 || g.standbyKva > 0 || g.primeKw > 0 || g.standbyKw > 0));
   if (gs.length) {
@@ -927,6 +930,8 @@ function capacityOf(t) {
   }
   const kc = analysisOf(t._key)?.result?.keyInfo?.generatorCapacity;
   if (kc && capFromText(kc)) return { text: kc, n: capFromText(kc).n, src: "phân tích" };
+  // The page's own scan of the HSMT text comes after the analysis, which reads the requirement in context (IB2600612866).
+  if (capScan.found[t._key]) return { ...capScan.found[t._key], src: "đọc từ tệp HSMT" };
   // Past tenders: the powers the bot read from the HSMT (bidhist config).
   const hc = state.bidhist?.[t._key]?.config?.kvas;
   if (hc?.length) { const text = hc.slice(0, 4).map((p) => p.v.toLocaleString("vi-VN") + " " + p.u).join(", "), c = capFromText(text); if (c) return { text, n: c.n, src: "HSMT" }; }
@@ -1529,10 +1534,14 @@ function applyFilter(val) { const k = $("#fpop").dataset.col; state.filters[k] =
 // Capacity from the attached documents, for tenders whose name gives none.
 const capScan = { done: new Set(), pending: new Set(), found: {}, running: false };
 // What earlier visits read, per tender and HSMT version ({ key: [hsmt.updatedAt, found or null] }), so a reload does not
-// read the same HSMT texts again.
-const capSeen = local.get("capScan", {});
+// read the same HSMT texts again. "capScan2" (2026-11-17): what the older reader found may be a tolerance ("±0.5KVA"), so those
+// are read again; its "nothing found" stays, since dropping the tolerance cannot make a figure appear.
+const capSeen = local.get("capScan2", null) || Object.fromEntries(Object.entries(local.get("capScan", {})).filter(([, v]) => v && !v[1]));
+local.set("capScan2", capSeen);
+try { localStorage.removeItem("genbid:capScan"); } catch {}
 for (const [k, [, c]] of Object.entries(capSeen)) if (c) capScan.found[k] = c;
 function capFromDocsText(all) {
+  all = noTolerance(all);
   const counts = new Map();
   const re = /c[ôo]ng\s*su[ấa]t[^\n]{0,80}?(\d+(?:[.,]\d+)?)\s*(kva|kw|mva|mw)\b/gi;
   for (const m of all.matchAll(re)) {
@@ -1553,7 +1562,7 @@ async function scanCapacities() {
   todo.forEach((t) => capScan.pending.add(t._key));
   renderGrid();
   for (const t of todo) {
-    try { const c = capFromDocsText(await loadAttachedText(t._key)); if (c) capScan.found[t._key] = c; capSeen[t._key] = [state.hsmt[t._key]?.updatedAt || "", c || null]; local.set("capScan", capSeen); } catch {}
+    try { const c = capFromDocsText(await loadAttachedText(t._key)); if (c) capScan.found[t._key] = c; capSeen[t._key] = [state.hsmt[t._key]?.updatedAt || "", c || null]; local.set("capScan2", capSeen); } catch {}
     capScan.done.add(t._key); capScan.pending.delete(t._key);
   }
   capScan.running = false;
