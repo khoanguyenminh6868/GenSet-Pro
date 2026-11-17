@@ -115,27 +115,6 @@
    "unverifiedChecks": 0,
    "notMet": [],
    "lossWarn": []
-  },
-  {
-   "rank": 6,
-   "engine": "Perkins 1106A-70TAG3",
-   "alternator": "Stamford UCI274G",
-   "controller": "SmartGen HGM6120N",
-   "named": null,
-   "suppliers": [
-    "tecgen-fujian:117",
-    "jet-power:129",
-    "uleengen:104"
-   ],
-   "checks": {
-    "genset": "5/0/2/5",
-    "engine": "3/0/3/1",
-    "alternator": "3/0/0/1",
-    "controller": "2/0/1/0"
-   },
-   "unverifiedChecks": 0,
-   "notMet": [],
-   "lossWarn": []
   }
  ]
 }

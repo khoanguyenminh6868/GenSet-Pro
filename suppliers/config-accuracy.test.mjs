@@ -903,7 +903,18 @@ test("Deutz is not of G7 / G20 / EU (Khoa, 2026-11-11)", () => {
 
 test("at most 2 configurations per engine make (Khoa, 2026-11-11)", () => {
   const mk = (rank, make, model) => ({ rank, engine: { make, model }, alternator: { model: `A${rank}` }, controller: { model: "DSE7320" }, suppliers: [{ supplierId: `s${rank}` }], checks: [] });
-  const r = { requirements: [], configs: [mk(1, "Perkins", "4006-23TAG2A"), mk(2, "Perkins", "4006-23TAG3A"), mk(3, "Perkins", "4008TAG2"), mk(4, "Baudouin", "6M33G825/5"), mk(5, "Baudouin", "6M31G825/5")] };
+  const r = { requirements: [], configs: [mk(1, "Cummins", "QSK23-G2"), mk(2, "Cummins", "QSK23-G3"), mk(3, "Cummins", "QSK19-G20"), mk(4, "Baudouin", "6M33G825/5"), mk(5, "Baudouin", "6M31G825/5")] };
   rankConfigs(r);
-  assert.deepEqual(r.configs.map((c) => c.engine.model), ["4006-23TAG2A", "4006-23TAG3A", "6M33G825/5", "6M31G825/5"]);
+  assert.deepEqual(r.configs.map((c) => c.engine.model), ["QSK23-G2", "QSK23-G3", "6M33G825/5", "6M31G825/5"]);
+});
+
+test("Perkins and Volvo Penta: one configuration each, the best ranked (Khoa, 2026-11-17); the other makes keep 2", () => {
+  const mk = (rank, make, model) => ({ rank, engine: { make, model }, alternator: { model: `A${rank}` }, controller: { model: "DSE7320" }, suppliers: [{ supplierId: `s${rank}` }], checks: [] });
+  const r = { requirements: [], configs: [mk(1, "Perkins", "4006-23TAG2A"), mk(2, "Perkins", "4006-23TAG3A"), mk(3, "Cummins", "QSK23-G2"), mk(4, "Volvo Penta", "TWD1744GE"), mk(5, "Volvo Penta", "TWD1645GE"), mk(6, "Cummins", "QSK19-G20")] };
+  rankConfigs(r);
+  assert.deepEqual(r.configs.map((c) => c.engine.model), ["4006-23TAG2A", "QSK23-G2", "TWD1744GE", "QSK19-G20"]);
+  // The make as sources write it ("PERKINS", "Volvo Penta / Volvo"): the first name, any case.
+  const r2 = { requirements: [], configs: [mk(1, "PERKINS", "4006-23TAG2A"), mk(2, "Perkins", "4006-23TAG3A"), mk(3, "Volvo Penta / Volvo", "TWD1744GE"), mk(4, "Volvo Penta", "TWD1645GE")] };
+  rankConfigs(r2);
+  assert.deepEqual(r2.configs.map((c) => c.engine.model), ["4006-23TAG2A", "TWD1744GE"]);
 });

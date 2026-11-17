@@ -100,27 +100,6 @@
   },
   {
    "rank": 4,
-   "engine": "Perkins 4006-23TAG3A",
-   "alternator": "Stamford Stamford S5L1D-H4",
-   "controller": "Deep Sea DSE7320",
-   "named": null,
-   "suppliers": [
-    "fdk-energy:103",
-    "uleengen:103",
-    "dingbo:106"
-   ],
-   "checks": {
-    "genset": "4/0/7/10",
-    "engine": "6/0/8/0",
-    "alternator": "2/0/5/3",
-    "controller": "2/0/6/0"
-   },
-   "unverifiedChecks": 0,
-   "notMet": [],
-   "lossWarn": []
-  },
-  {
-   "rank": 5,
    "engine": "Mitsubishi S6R2-PTAA",
    "alternator": "Stamford Stamford S5L1D-H41",
    "controller": "Deep Sea DSE7320",
@@ -141,7 +120,7 @@
    "lossWarn": []
   },
   {
-   "rank": 6,
+   "rank": 5,
    "engine": "Baudouin 6M33G825/5",
    "alternator": "Leroy-Somer LSA49.3 M65",
    "controller": "Deep Sea DSE6120",
