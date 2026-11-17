@@ -11,7 +11,7 @@ metadata:
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Code xếp sẵn 30 dòng ứng viên; mọi số/câu trích phải có nguyên văn trong nguồn, sai → "Đạt" thành "Chưa rõ". ~6–11 phút, ~3 USD/gói. Yêu cầu theo bộ mã cố định `suppliers/reqcodes.mjs` (thêm mã: dòng `R(...)` đúng thứ tự + test; tăng `REQ_VERSION`).
 
 ## Quy tắc Khoa chốt
-**Xếp hạng:** số "không đạt" ở động cơ + BĐK (đếm từng chức năng) → không đạt ở đầu phát + tổ máy → có NCC phù hợp → "chưa rõ" cùng thứ tự → yêu cầu tuỳ chọn (bồn dầu, kích thước, độ ồn) sau cùng. Chưa kiểm = chưa rõ. Tối đa 6 cấu hình, 2 cấu hình mỗi hãng động cơ; riêng Perkins, Volvo Penta và Cummins chỉ 1 cấu hình, cái xếp cao nhất (Khoa 17/11/2026, PR #828 và PR Cummins sau đó; Khoa không nêu lý do). Khoa 17/11 còn muốn "cấu hình nào thiếu đầu phát hoặc bộ điều khiển thì không đưa vào": Khoa bảo TẠM CHƯA LÀM (17/11, sau khi xem số đo trên 16 kết quả ngày 14/11: 39% cấu hình thiếu, 7 kết quả sẽ mất hết cấu hình); đừng tự làm, đừng hỏi lại trừ khi Khoa nhắc. HSMT có yêu cầu BĐK mà cấu hình không có BĐK → không đạt. NCC chào đúng cả động cơ và BĐK lên đầu. Đại lý tại VN KHÔNG là tiêu chí. Hàng từng trúng thầu chỉ là tiêu chí cuối.
+**Xếp hạng:** số "không đạt" ở động cơ + BĐK (đếm từng chức năng) → không đạt ở đầu phát + tổ máy → có NCC phù hợp → "chưa rõ" cùng thứ tự → yêu cầu tuỳ chọn (bồn dầu, kích thước, độ ồn) sau cùng. Chưa kiểm = chưa rõ. Tối đa 8 cấu hình (Khoa 17/11/2026 nâng từ 6), 2 cấu hình mỗi hãng động cơ; riêng Perkins, Volvo Penta, Cummins và Mitsubishi chỉ 1 cấu hình, cái xếp cao nhất (Khoa 17/11/2026, PR #828, PR Cummins và PR Mitsubishi sau đó; Khoa không nêu lý do). Khoa 17/11 còn muốn "cấu hình nào thiếu đầu phát hoặc bộ điều khiển thì không đưa vào": Khoa bảo TẠM CHƯA LÀM (17/11, sau khi xem số đo trên 16 kết quả ngày 14/11: 39% cấu hình thiếu, 7 kết quả sẽ mất hết cấu hình); đừng tự làm, đừng hỏi lại trừ khi Khoa nhắc. HSMT có yêu cầu BĐK mà cấu hình không có BĐK → không đạt. NCC chào đúng cả động cơ và BĐK lên đầu. Đại lý tại VN KHÔNG là tiêu chí. Hàng từng trúng thầu chỉ là tiêu chí cuối.
 
 **Xuất xứ:**
 - Web mặc định "Tất cả"; "Tất cả" và yêu cầu từ Sync thì đọc HSMT: thấy G7/G20 → nhóm đó. Chọn tay trên web giữ nguyên. Nhóm g20 của mình KHÔNG gồm Trung Quốc. HSMT cho phép EU cùng G7/G20 → mở thêm EU (chỉ đọc từ HSMT; web không có lựa chọn EU; HSMT chỉ đòi EU thì không có nhóm).
@@ -51,7 +51,7 @@ metadata:
 
 **Gói nhiều cỡ máy:** mỗi cỡ một agent (tối đa 4), ngưỡng HSMT đọc theo khối của từng cỡ. **Gói dịch vụ** không tự Gợi ý.
 
-**Khoa bảo bỏ, đừng hỏi lại:** đầu phát mã TQ (S5L1D-H41); đưa giao hàng / MAF / giá vốn vào xếp hạng. xin datasheet từ đại lý; bổ sung bảng cho các NCC chưa có dòng bảng; thử Sonnet thay Opus cho Phân tích/xếp gói. Đã đo và bỏ: luật "chỉ loại khi nguồn hãng hoặc ≥2 nguồn"; nới trần 6 cấu hình; ứng viên 30 → 50 dòng.
+**Khoa bảo bỏ, đừng hỏi lại:** đầu phát mã TQ (S5L1D-H41); đưa giao hàng / MAF / giá vốn vào xếp hạng. xin datasheet từ đại lý; bổ sung bảng cho các NCC chưa có dòng bảng; thử Sonnet thay Opus cho Phân tích/xếp gói. Đã đo và bỏ: luật "chỉ loại khi nguồn hãng hoặc ≥2 nguồn"; nới trần 6 cấu hình (lần đo cũ; 17/11 Khoa tự bảo nâng lên 8); ứng viên 30 → 50 dòng.
 **Chưa chốt với Khoa:** đại diện hãng tại VN/MAF, ISO/prototype có tính vào xếp hạng không; hàng trúng có nên đưa lên trên không.
 
 ## Nguồn datasheet hãng

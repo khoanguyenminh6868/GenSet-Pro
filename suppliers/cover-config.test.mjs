@@ -35,9 +35,9 @@ test.afterEach(() => { globalThis.fetch = realFetch; });
 const q = (url) => Object.fromEntries(new URL(url).searchParams);
 
 // ---------- hằng số (khoá hành vi: số do Khoa / điều phối chốt, đổi có chủ ý thì sửa ở đây) ----------
-test("hằng số: tối đa 4 cỡ máy một gói, 6 cấu hình, trần 10 dòng một hãng động cơ (Khoa 12/11), 3 hạng cho kiểm 'mất ở vòng', giữ 2 trang web", () => {
+test("hằng số: tối đa 4 cỡ máy một gói, 8 cấu hình, trần 10 dòng một hãng động cơ (Khoa 12/11), 3 hạng cho kiểm 'mất ở vòng', giữ 2 trang web", () => {
   assert.equal(C.MAX_SIZES, 4);
-  assert.equal(C.MAX_CONFIGS, 6);
+  assert.equal(C.MAX_CONFIGS, 8);
   assert.equal(C.MAKE_CAP, 10);
   assert.equal(C.LOSS_RANKS, 3);
   assert.equal(C.WEB_KEEP, 2);

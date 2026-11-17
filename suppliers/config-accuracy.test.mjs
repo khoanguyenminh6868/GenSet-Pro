@@ -918,16 +918,16 @@ test("Deutz is not of G7 / G20 / EU (Khoa, 2026-11-11)", () => {
 
 test("at most 2 configurations per engine make (Khoa, 2026-11-11)", () => {
   const mk = (rank, make, model) => ({ rank, engine: { make, model }, alternator: { model: `A${rank}` }, controller: { model: "DSE7320" }, suppliers: [{ supplierId: `s${rank}` }], checks: [] });
-  const r = { requirements: [], configs: [mk(1, "Mitsubishi", "S6R2-PTAA"), mk(2, "Mitsubishi", "S6R-PTA-S"), mk(3, "Mitsubishi", "S6R-PTAA"), mk(4, "Baudouin", "6M33G825/5"), mk(5, "Baudouin", "6M31G825/5")] };
+  const r = { requirements: [], configs: [mk(1, "Doosan", "DP222LB"), mk(2, "Doosan", "DP222LC"), mk(3, "Doosan", "DP180LB"), mk(4, "Baudouin", "6M33G825/5"), mk(5, "Baudouin", "6M31G825/5")] };
   rankConfigs(r);
-  assert.deepEqual(r.configs.map((c) => c.engine.model), ["S6R2-PTAA", "S6R-PTA-S", "6M33G825/5", "6M31G825/5"]);
+  assert.deepEqual(r.configs.map((c) => c.engine.model), ["DP222LB", "DP222LC", "6M33G825/5", "6M31G825/5"]);
 });
 
-test("Perkins, Volvo Penta and Cummins: one configuration each, the best ranked (Khoa, 2026-11-17); the other makes keep 2", () => {
+test("Perkins, Volvo Penta, Cummins and Mitsubishi: one configuration each, the best ranked (Khoa, 2026-11-17); the other makes keep 2", () => {
   const mk = (rank, make, model) => ({ rank, engine: { make, model }, alternator: { model: `A${rank}` }, controller: { model: "DSE7320" }, suppliers: [{ supplierId: `s${rank}` }], checks: [] });
-  const r = { requirements: [], configs: [mk(1, "Perkins", "4006-23TAG2A"), mk(2, "Perkins", "4006-23TAG3A"), mk(3, "Cummins", "QSK23-G2"), mk(4, "Volvo Penta", "TWD1744GE"), mk(5, "Volvo Penta", "TWD1645GE"), mk(6, "Cummins", "QSK19-G20"), mk(7, "Baudouin", "6M33G825/5"), mk(8, "Baudouin", "6M31G825/5")] };
+  const r = { requirements: [], configs: [mk(1, "Perkins", "4006-23TAG2A"), mk(2, "Perkins", "4006-23TAG3A"), mk(3, "Cummins", "QSK23-G2"), mk(4, "Volvo Penta", "TWD1744GE"), mk(5, "Volvo Penta", "TWD1645GE"), mk(6, "Cummins", "QSK19-G20"), mk(7, "Baudouin", "6M33G825/5"), mk(8, "Baudouin", "6M31G825/5"), mk(9, "Mitsubishi", "S12R-PTA"), mk(10, "MITSUBISHI", "S12H-PTA")] };
   rankConfigs(r);
-  assert.deepEqual(r.configs.map((c) => c.engine.model), ["4006-23TAG2A", "QSK23-G2", "TWD1744GE", "6M33G825/5", "6M31G825/5"]);
+  assert.deepEqual(r.configs.map((c) => c.engine.model), ["4006-23TAG2A", "QSK23-G2", "TWD1744GE", "6M33G825/5", "6M31G825/5", "S12R-PTA"]);
   // The make as sources write it ("PERKINS", "Volvo Penta / Volvo"): the first name, any case.
   const r2 = { requirements: [], configs: [mk(1, "PERKINS", "4006-23TAG2A"), mk(2, "Perkins", "4006-23TAG3A"), mk(3, "Volvo Penta / Volvo", "TWD1744GE"), mk(4, "Volvo Penta", "TWD1645GE")] };
   rankConfigs(r2);

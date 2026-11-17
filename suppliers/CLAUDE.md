@@ -32,7 +32,7 @@
 - Mỗi lượt là tiến trình node mới (không cần restart bot), nhưng `config-bot.mjs run` đang chạy giữ code cũ tới khi thoát. Khoá `genbid-config.lock` chỉ tính khi PID còn sống.
 - Tệp import `config-bot.mjs` không được bị `config-bot.mjs` import ngược (node thoát 13, kẹt khoá).
 - `check` cắt `MAX_CONFIGS` TRƯỚC `rankConfigs`: cấu hình cần giữ phải đưa lên trước khi cắt. Kết quả lưu không ghi origin → `originOfReq(undefined)` = "cn".
-- Trần cấu hình mỗi hãng động cơ (`rankConfigs`, `perMakeConfigs`): 2, riêng Perkins, Volvo Penta và Cummins 1 (`ONE_CONFIG_MAKES`, Khoa 17/11/2026). Code chỉ BỎ cấu hình thừa, không tự lấp chỗ: `config-prompt.md` phải nói cùng luật để agent đưa hãng khác vào (sửa một nơi thì sửa cả hai).
+- Trần cấu hình mỗi hãng động cơ (`rankConfigs`, `perMakeConfigs`): 2, riêng Perkins, Volvo Penta, Cummins và Mitsubishi 1 (`ONE_CONFIG_MAKES`, Khoa 17/11/2026). Code chỉ BỎ cấu hình thừa, không tự lấp chỗ: `config-prompt.md` phải nói cùng luật để agent đưa hãng khác vào (sửa một nơi thì sửa cả hai).
 - Check hiếm khi mang `code` → khớp theo item của yêu cầu. Từ khoá của mã `alt_vreg` bắt cả dòng tần số, đừng dùng để quét HSMT.
 - Thêm mã yêu cầu (`reqcodes.mjs`): dòng `R(...)` đúng vị trí thứ tự + test, tăng `REQ_VERSION`.
 - Đổi từ khoá của một mã: đo `codeOf` trước/sau trên `technicalSpecs` của `doc-cache\analysis.json` (48.580 dòng). `codeOf` thử tên mục trước, cả câu sau, theo thứ tự danh sách → từ khoá rộng ở tên mục cướp dòng của mã khác ("hệ thống nhiên liệu" kéo dòng bồn dầu khỏi `fuel_tank`).

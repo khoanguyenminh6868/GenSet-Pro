@@ -196,11 +196,11 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    Chinese assembler) fails it, and it ranks with the engine and the controller. Look first for a genset of a maker that
    makes the engine and the alternator or controller itself (Cummins with Stamford / PowerCommand, Caterpillar / Perkins /
    FG Wilson, Kohler / SDMO, MTU, Mitsubishi, Denyo...) with `genset.make` set; when catalog.md has none, do step 4.
-   Keep at most 6 configurations, best first: fewest `not_met` on the engine and the controller, then on the
+   Keep at most 8 configurations, best first: fewest `not_met` on the engine and the controller, then on the
    alternator and the genset, then a supplier that truly fits (step 3), then fewest `unclear` in the same order, then
    the `option` requirements, then power closest above the requirement. The code ranks them again this way. A
    configuration with a `not_met` on power, frequency, a named make or origin is not a suggestion. Give several
-   different engines when the catalog has them, not six rows of one engine.
+   different engines when the catalog has them, not eight rows of one engine.
    A genset the HSMT names (Khoa 2026-11-12; input.md "Tổ máy HSMT nêu đích danh", e.g. "Nhà sản xuất Huyndai", "Mã hiệu
    DHY110K SE"): the configuration of that model (its catalog.md row says "tổ máy đúng model HSMT nêu đích danh") comes first,
    with `genset.model` / `genset.make` as its source writes them; a configuration of another genset make / model is an
@@ -213,11 +213,11 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    chào, cần giấy tờ của nhà sản xuất (CO, CQ, thư uỷ quyền)") and asks the supplier for those papers; never write `met`
    on that check for it yourself.
    Two configurations per engine make (Khoa, 2026-11-11): when the catalog has two different engine models of one make
-   that fit (Baudouin 6M33G825/5 and 6M31G825/5, Mitsubishi S6R2-PTAA and S6R-PTA-S), give both, each as its own
+   that fit (Baudouin 6M33G825/5 and 6M31G825/5), give both, each as its own
    configuration; never more than 2 of one make (the code drops a third). Leave the second out only to make room for
    another make that meets the HSMT better.
-   Perkins, Volvo Penta and Cummins: ONE configuration each, the one that meets the HSMT best (Khoa, 2026-11-17; the code
-   drops a second). Give the place it frees to another make of the catalog, so the list still has up to 6.
+   Perkins, Volvo Penta, Cummins and Mitsubishi: ONE configuration each, the one that meets the HSMT best (Khoa,
+   2026-11-17; the code drops a second). Give the place it frees to another make of the catalog, so the list still has up to 8.
 3. For every configuration, name the suppliers in the system that sell it (`suppliers`, at most 3, best first): only
    `supplierId`s from catalog.md, each with a row of that supplier (`n`, `line` exactly as in catalog.md) that names
    this engine and, best, this alternator at the power required. Under "Đồng bộ thương hiệu", a supplier truly fits only
