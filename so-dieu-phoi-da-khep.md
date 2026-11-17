@@ -180,4 +180,5 @@ Cập nhật 18:25Z 12/11: đăng kết quả check lại của IB2600601812 (co
 - 16/11/2026 · Gộp dòng lặp cùng NCC (cộng dồn hãng + nguồn `also`; 5.250 → 6 dòng lặp; top 30 ứng viên y hệt 1.073/1.093 lượt) + ghi lại mốc `quality` (vượt từ dữ liệu depco-power #806, nguồn mâu thuẫn thật) · #813 (fac5981f) · `nghiem-thu\gop-dong-lap.md`
 - 16/11/2026 · (máy KAYENGRAM) skill `update-bot` (#814, #816); sổ điều phối dùng chung qua nhánh `dieu-phoi` + tác vụ "GenBid DieuPhoi Sync" (#815). 17/11: KHOAMINIPC cài `update-bot`, chạy Sync lần đầu, gộp ghi chú `gop-vao-so-tu-KAYENGRAM.md` vào sổ
 - 16/11/2026 · SQL tay cho `activity_log`: Khoa đã chạy · nhánh `feed-data` và `wt-actions-sync` (thử chạy bot trên GitHub Actions) đã xoá, bỏ hướng này
+- 17/11/2026 · Khoa trả lời: IB2600603983 đã chạy Gợi ý lại; specs tải tối đa 4 tệp không phải QĐ phê duyệt khi không nhận ra YCKT: xác nhận
 - 17/11/2026 · Bộ nhớ gộp hai máy (luật số đông, thương hiệu / nơi sản xuất, việc bỏ 16/11) + KHOAMINIPC kéo bot theo #819, #821 · #826
