@@ -11,7 +11,7 @@ param(
     [string]$List,
     [string[]]$FileId,
     [string]$NotifyNo = 'HSMT',
-    [string]$OutDir = (Join-Path ([Environment]::GetFolderPath('UserProfile')) 'Downloads\GenBid-HSMT'),
+    [string]$OutDir = (Join-Path ([Environment]::GetFolderPath('UserProfile')) 'Downloads/GenBid-HSMT'),
     [switch]$StartOnly,
     # Thời gian chờ mỗi tệp (giây); lệnh specs của genbid-sync.js dùng 180 vì Agent đôi khi treo.
     [int]$TimeoutSec = 600
@@ -43,6 +43,11 @@ function Find-AgentExe {
 
 function Start-Agent {
     if (Test-Agent) { Write-Host 'VNeGP Client Agent đang chạy (cổng 1234).'; return $true }
+    # Linux (sandbox Vercel): Agent là bản Windows chạy dưới Wine, bật bằng start-egp-agent.sh.
+    if ($PSVersionTable.Platform -eq 'Unix') {
+        & bash (Join-Path $PSScriptRoot 'start-egp-agent.sh')
+        return [bool](Test-Agent)
+    }
     $exe = Find-AgentExe
     if (-not $exe) {
         Write-Host 'Máy này chưa cài VNeGP Client Agent.' -ForegroundColor Yellow

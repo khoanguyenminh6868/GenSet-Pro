@@ -26,16 +26,20 @@ param(
 )
 # gh ghi ra stderr cả khi chỉ báo "release not found"; lỗi thật được kiểm tra qua $LASTEXITCODE.
 $ErrorActionPreference = 'Continue'
-if (-not $Src) { $Src = Join-Path ([Environment]::GetFolderPath('UserProfile')) "Downloads\GenBid-HSMT\$Key" }
+if (-not $Src) { $Src = Join-Path ([Environment]::GetFolderPath('UserProfile')) "Downloads/GenBid-HSMT/$Key" }
 $utf8 = New-Object Text.UTF8Encoding $false
+# Linux (sandbox Vercel): pwsh, thư mục tạm của hệ điều hành ($env:TEMP chỉ có trên Windows).
+$PsExe = if ($PSVersionTable.Platform -eq 'Unix') { 'pwsh' } else { 'powershell' }
+$PsPolicy = if ($PsExe -eq 'powershell') { @('-ExecutionPolicy', 'Bypass') } else { @() }
+$TmpDir = [IO.Path]::GetTempPath()
 $tag = "hsmt-$Key"
 
 function Now-Iso { (Get-Date).ToUniversalTime().ToString('yyyy-MM-ddTHH:mm:ss.fffZ') }
 # Tài liệu <coll>/<Key> trên bản web, hoặc $null khi chưa có hay không đọc được.
 function Get-WebDoc([string]$coll) {
-    $f = Join-Path $env:TEMP "genbid-get-$Key-$coll.json"
+    $f = Join-Path $TmpDir "genbid-get-$Key-$coll.json"
     if (Test-Path $f) { Remove-Item $f }
-    & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'Get-GenBidRequests.ps1') -Kind docs -Coll $coll -Id $Key -Out $f | Out-Null
+    & $PsExe -NoProfile @PsPolicy -File (Join-Path $PSScriptRoot 'Get-GenBidRequests.ps1') -Kind docs -Coll $coll -Id $Key -Out $f | Out-Null
     if (-not (Test-Path $f)) { return $null }
     $d = Get-Content $f -Raw -Encoding UTF8 | ConvertFrom-Json
     Remove-Item $f
@@ -49,12 +53,12 @@ function Merge-Doc($base, [hashtable]$add) {
 }
 # Gửi [{coll, id, data}] lên bản web qua Post-GenBidDocs.ps1; trả $true khi gửi được.
 function Send-WebDocs([object[]]$rows) {
-    $post = Join-Path $env:TEMP "genbid-post-$Key-$(Get-Random)"
+    $post = Join-Path $TmpDir "genbid-post-$Key-$(Get-Random)"
     foreach ($r in $rows) {
         New-Item -ItemType Directory -Force "$post\$($r.coll)" | Out-Null
         [IO.File]::WriteAllText("$post\$($r.coll)\$($r.id).json", ($r.data | ConvertTo-Json -Depth 16), $utf8)
     }
-    & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'Post-GenBidDocs.ps1') -Dir $post | Write-Host
+    & $PsExe -NoProfile @PsPolicy -File (Join-Path $PSScriptRoot 'Post-GenBidDocs.ps1') -Dir $post | Write-Host
     $ok = $LASTEXITCODE -eq 0
     Remove-Item -Recurse -Force $post
     $ok
@@ -68,7 +72,7 @@ function Get-FileText($f) {
         switch ($f.Extension.ToLower()) {
             '.pdf' {
                 if (-not $pdftotext) { return '' }
-                $out = Join-Path $env:TEMP "genbid-$Key-$(Get-Random).txt"
+                $out = Join-Path ([IO.Path]::GetTempPath()) "genbid-$Key-$(Get-Random).txt"
                 & $pdftotext -layout -enc UTF-8 $f.FullName $out 2>$null
                 if (-not (Test-Path $out)) { return '' }
                 $t = [IO.File]::ReadAllText($out, [Text.Encoding]::UTF8); Remove-Item $out
@@ -114,7 +118,7 @@ $keep = @($all | Where-Object { $_.Length -le $MaxMB * 1MB })
 $skipped = @($all | Where-Object { $_.Length -gt $MaxMB * 1MB } | ForEach-Object { "Bỏ qua $($_.Name): lớn hơn $MaxMB MB" })
 
 # GitHub đổi tên tệp có dấu, nên tên asset là số thứ tự (01.pdf, ...) và tên gốc nằm ở nhãn.
-$stage = Join-Path $env:TEMP "genbid-$Key"
+$stage = Join-Path $TmpDir "genbid-$Key"
 if (Test-Path $stage) { Remove-Item -Recurse -Force $stage }
 New-Item -ItemType Directory $stage | Out-Null
 $items = @()

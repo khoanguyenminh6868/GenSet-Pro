@@ -11,8 +11,8 @@ param(
     [Parameter(Mandatory)][string]$ExportDir,
     [Parameter(Mandatory)][string]$Versions,
     [switch]$DryRun,
-    [string]$TokenFile = 'C:\Projects\GenSet Pro\.genbid-ingest-token',
-    [string]$StateFile = 'C:\Projects\GenSet Pro\.genbid-ingest-state.json',
+    [string]$TokenFile = (Join-Path $(if ($env:GENBID_ROOT) { $env:GENBID_ROOT } elseif ($PSVersionTable.Platform -eq 'Unix') { Join-Path $HOME 'genset-pro' } else { 'C:\Projects\GenSet Pro' }) '.genbid-ingest-token'),
+    [string]$StateFile = (Join-Path $(if ($env:GENBID_ROOT) { $env:GENBID_ROOT } elseif ($PSVersionTable.Platform -eq 'Unix') { Join-Path $HOME 'genset-pro' } else { 'C:\Projects\GenSet Pro' }) '.genbid-ingest-state.json'),
     [string]$Endpoint = 'https://genset-pro-web.vercel.app/api/ingest'
 )
 

@@ -34,7 +34,8 @@ param(
     [int]$GatherSeconds = 8,
     [int]$RunTimeoutMinutes = 180,
     [int]$LimitPauseMinutes = 30,
-    [string]$Root = 'C:\Projects\GenSet Pro',
+    # Linux (sandbox Vercel, 2026-11-17): GENBID_ROOT hoặc ~/genset-pro; cấu trúc bên trong giống C:\Projects\GenSet Pro.
+    [string]$Root = $(if ($env:GENBID_ROOT) { $env:GENBID_ROOT } elseif ($PSVersionTable.Platform -eq 'Unix') { Join-Path $HOME 'genset-pro' } else { 'C:\Projects\GenSet Pro' }),
     [string]$Endpoint = 'https://genset-pro-web.vercel.app/api/requests?kind=all',
     # Sync theo lịch (thay tác vụ hẹn giờ "hsmt-worker" của app Claude, Khoa 2026-10-26): bot tự chạy genbid-sync.js,
     # không mở phiên Claude. 10:10, 14:10 và 18:10 mỗi ngày, cả thứ Bảy và Chủ nhật (Khoa, 2026-11-04). Máy tắt lúc đó thì chạy một lần
@@ -42,7 +43,7 @@ param(
     [string[]]$ScheduleDays = @('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'),
     [string[]]$ScheduleTimes = @('10:10', '14:10', '18:10'),
     # Gợi ý cấu hình (tab "Cấu hình gợi ý", Khoa 2026-10-28): bản sao repo GenSet-Pro (nhánh main) trên máy này.
-    [string]$RepoDir = 'C:\Projects\GenSet Pro\GenSet-Pro',
+    [string]$RepoDir = (Join-Path $Root 'GenSet-Pro'),
     [switch]$Once,
     # Tiến trình con: chạy một lượt theo tệp này rồi thoát (vòng quét khởi động). -Resume: lượt con trước đã chết, theo dõi tiếp.
     [string]$Job,
@@ -50,6 +51,10 @@ param(
 )
 
 $ErrorActionPreference = 'Stop'
+# Windows PowerShell 5.1 (máy của Khoa) hay pwsh 7 (Linux, sandbox Vercel). $IsWindows chỉ có từ pwsh 6.
+$OnLinux = $PSVersionTable.Platform -eq 'Unix'
+# PowerShell dùng cho tiến trình con và script của bộ công cụ.
+$PsExe = if ($OnLinux) { 'pwsh' } else { 'powershell.exe' }
 # genbid-sync.js in UTF-8: đọc đúng tiếng Việt từ đầu ra của nó.
 try { [Console]::OutputEncoding = [Text.Encoding]::UTF8 } catch {}
 $IngestTokenFile = Join-Path $Root '.genbid-ingest-token'
@@ -95,8 +100,9 @@ function Read-Json([string]$path, $default) {
 
 # Claude Code: `claude` trên PATH, nếu không có thì bản đi kèm app Claude (thư mục đổi theo phiên bản).
 function Find-Claude {
-    $cmd = Get-Command claude.exe -ErrorAction SilentlyContinue
+    $cmd = Get-Command $(if ($OnLinux) { 'claude' } else { 'claude.exe' }) -ErrorAction SilentlyContinue
     if ($cmd) { return $cmd.Source }
+    if ($OnLinux) { return $null }
     $base = Join-Path $env:LOCALAPPDATA 'Claude-Data'
     if (-not (Test-Path $base)) { return $null }
     Get-ChildItem $base -Recurse -Filter claude.exe -ErrorAction SilentlyContinue |
@@ -170,18 +176,25 @@ function Send-Unanswered($handedReqs, [string]$reason) {
         $doc.doneAt = (Get-Date).ToUniversalTime().ToString('yyyy-MM-ddTHH:mm:ss.fffZ')
         $doc.error = $reason
         New-Item -ItemType Directory -Force (Join-Path $dir $r.coll) | Out-Null
-        [IO.File]::WriteAllText((Join-Path $dir "$($r.coll)\$($r.id).json"), ($doc | ConvertTo-Json -Depth 8), $Utf8)
+        [IO.File]::WriteAllText((Join-Path (Join-Path $dir $r.coll) "$($r.id).json"), ($doc | ConvertTo-Json -Depth 8), $Utf8)
         $n++
     }
     if (-not $n) { return }
     Log "Báo lỗi về web cho $n yêu cầu chưa được xử lý: $reason"
-    & powershell -NoProfile -ExecutionPolicy Bypass -File (Join-Path $PSScriptRoot 'Post-GenBidDocs.ps1') -Dir $dir | ForEach-Object { Log "  $_" }
+    # Windows: powershell + -ExecutionPolicy Bypass như trước; Linux: pwsh. Xác định ngay tại đây (hàm được test nạp riêng).
+    $ps = if ($PSVersionTable.Platform -eq 'Unix') { 'pwsh' } else { 'powershell' }
+    $pol = if ($ps -eq 'powershell') { @('-ExecutionPolicy', 'Bypass') } else { @() }
+    & $ps -NoProfile @pol -File (Join-Path $PSScriptRoot 'Post-GenBidDocs.ps1') -Dir $dir | ForEach-Object { Log "  $_" }
     Remove-Item -Recurse -Force $dir -ErrorAction SilentlyContinue
 }
 
 # Đăng nhập /login của máy chỉ dùng khi không có .claude-bot-token: tệp đó là lựa chọn cho bot chạy tự động, còn
 # .credentials.json vẫn nằm đó sau khi phiên hết hạn ("this login reached its time limit", KayenGram 15/11/2026).
-function Test-ClaudeLogin { (Test-Path (Join-Path $env:USERPROFILE '.claude\.credentials.json')) -and -not (Test-Path $ClaudeTokenFile) }
+function Test-ClaudeLogin {
+    # USERPROFILE (Windows) trước, $HOME (Linux) sau: $HOME của PowerShell 5.1 không đổi theo biến môi trường.
+    $h = if ($env:USERPROFILE) { $env:USERPROFILE } else { $HOME }
+    (Test-Path (Join-Path (Join-Path $h '.claude') '.credentials.json')) -and -not (Test-Path $ClaudeTokenFile)
+}
 
 # Khoa 11/11/2026: Phân tích, Gợi ý cấu hình, Giá gợi ý trả tiền theo API key thay vì hạn mức tháng của gói Claude.
 # Có tệp .anthropic-api-key thì đặt ANTHROPIC_API_KEY (claude -p ưu tiên nó hơn đăng nhập /login); không có thì như cũ.
@@ -275,8 +288,9 @@ function Test-WorkerRunning {
 
 $SyncJs = Join-Path $PSScriptRoot 'genbid-sync.js'
 function Find-Node {
-    $cmd = Get-Command node.exe -ErrorAction SilentlyContinue
+    $cmd = Get-Command $(if ($OnLinux) { 'node' } else { 'node.exe' }) -ErrorAction SilentlyContinue
     if ($cmd) { return $cmd.Source }
+    if ($OnLinux) { return $null }
     @("$env:ProgramFiles\nodejs\node.exe", "$env:LOCALAPPDATA\Programs\nodejs\node.exe") | Where-Object { Test-Path $_ } | Select-Object -First 1
 }
 
@@ -286,7 +300,7 @@ function Start-Run([string]$exe, [string[]]$argList, [string]$stdin, [string[]]$
     $sp = @{ FilePath = $exe; WorkingDirectory = $Root; NoNewWindow = $true; PassThru = $true; ArgumentList = $argList; RedirectStandardOutput = $out; RedirectStandardError = "$out.err" }
     if ($stdin) { $sp.RedirectStandardInput = $stdin }
     $p = Start-Process @sp
-    $null = $p.Handle  # giữ handle để đọc được ExitCode khi tiến trình kết thúc
+    try { $null = $p.Handle } catch {}  # giữ handle để đọc được ExitCode khi tiến trình kết thúc (Linux: không có Handle)
     [IO.File]::WriteAllText($RunFile, ([ordered]@{ pid = $p.Id; started = $p.StartTime.ToString('o'); out = $out; sigs = @($sigs) } | ConvertTo-Json), $Utf8)
     try { return Wait-Worker $p $out } finally { Remove-Item $RunFile -Force -ErrorAction SilentlyContinue }
 }
@@ -325,7 +339,7 @@ function Invoke-Worker([string[]]$sigs) {
     if (-not $node) { Log 'Không tìm thấy Node.js (node.exe).'; return 'Máy Windows thiếu Node.js để chuẩn bị dữ liệu.' }
     $stamp = Stamp
     $out = Join-Path $LogDir "run-$stamp.log"
-    $work = Join-Path $Root "genbid-work\ai-$stamp"
+    $work = Join-Path (Join-Path $Root 'genbid-work') "ai-$stamp"
     Log "Chuẩn bị dữ liệu: $($sigs -join ', ')"
     $prep = Invoke-Node prep --sigs ($sigs -join ',') --out $work
     $prep | ForEach-Object { Log "  $_" }
@@ -383,7 +397,7 @@ Chạy không người trông, không ai trả lời câu hỏi. Xong thì trả
     # Bộ công cụ tối thiểu: không MCP, không skill/plugin, không Chrome (giảm phần nền mỗi lượt từ ~55k xuống ~9k token).
     # Chốt đọc (Khoa 12/11/2026): input.md chia phần ≤ mức Read đọc trọn + read-order.json (suppliers\agent-read.mjs prep),
     # agent chạy stream-json (log có từng lần Read) để guard biết mỗi thư mục đã đọc đủ chưa. Không có repo thì chạy như cũ.
-    $readJs = Join-Path $RepoDir 'suppliers\agent-read.mjs'; $node = Find-Node
+    $readJs = Join-Path (Join-Path $RepoDir 'suppliers') 'agent-read.mjs'; $node = Find-Node
     $guard = $node -and (Test-Path $readJs)
     if ($guard) { Invoke-Node-File $node $readJs (@('prep') + $dirs) | ForEach-Object { Log "  đọc: $_" } }
     # stream-json (--verbose) để code đọc được từng lần Read; dòng result cuối có total_cost_usd (sổ chi tiêu API).
@@ -391,7 +405,7 @@ Chạy không người trông, không ai trả lời câu hỏi. Xong thì trả
     $api = [bool]$env:ANTHROPIC_API_KEY; $t0 = Get-Date
     # Sổ chi API theo lượt đang chạy (Khoa 13/11/2026: "cần cập nhật mỗi khi sử dụng"): Wait-Worker đọc log mỗi phút,
     # suppliers\api-budget.mjs meter ghi phần tăng thêm; lượt bị dừng giữa chừng vẫn được tính.
-    $meterJs = Join-Path $RepoDir 'suppliers\api-budget.mjs'
+    $meterJs = Join-Path (Join-Path $RepoDir 'suppliers') 'api-budget.mjs'
     $script:SpendMeter = if ($api -and $node -and (Test-Path $meterJs)) {
         @{ Node = $node; Js = $meterJs; Log = $out; State = "$out.spend"; Start = $t0.ToUniversalTime().ToString('o'); Last = Get-Date }
     } else { $null }
@@ -430,7 +444,7 @@ function Update-Repo {
 # "Gợi ý" ở tab Cấu hình gợi ý: suppliers\config-bot.mjs của repo GenSet-Pro tự đọc yêu cầu, gọi Claude (Opus, có tìm
 # web), kiểm nguồn bằng code và gửi kết quả hoặc lỗi lên web. Bot chỉ cập nhật repo rồi chạy nó.
 function Invoke-Config {
-    $cfgJs = Join-Path $RepoDir 'suppliers\config-bot.mjs'
+    $cfgJs = Join-Path (Join-Path $RepoDir 'suppliers') 'config-bot.mjs'
     if (-not (Test-Path $cfgJs)) { if (-not $script:ConfigWarned) { Log "Chưa có repo GenSet-Pro ở $RepoDir, bỏ qua Gợi ý cấu hình."; $script:ConfigWarned = 1 }; return }
     $claude = Find-Claude; $node = Find-Node
     if (-not $claude -or -not $node) { Log 'Thiếu Claude Code hoặc Node.js cho Gợi ý cấu hình.'; return }
@@ -594,11 +608,12 @@ function Start-Lane([string]$lane, [string[]]$sigs, [hashtable]$extra = @{}, [st
     foreach ($k in $extra.Keys) { $info[$k] = $extra[$k] }
     [IO.File]::WriteAllText($file, ($info | ConvertTo-Json), $Utf8)
     $q = { param($v) '"' + $v + '"' }
-    $argList = @('-NoProfile', '-ExecutionPolicy', 'Bypass', '-WindowStyle', 'Hidden', '-File', (& $q $PSCommandPath), '-Job', (& $q $file),
+    $argList = @('-NoProfile') + $(if (-not $OnLinux) { @('-ExecutionPolicy', 'Bypass', '-WindowStyle', 'Hidden') }) + @('-File', (& $q $PSCommandPath), '-Job', (& $q $file),
         '-Root', (& $q $Root), '-Endpoint', (& $q $Endpoint), '-RepoDir', (& $q $RepoDir), '-LightModel', $LightModel, '-DeepModel', $DeepModel,
         '-PollSeconds', $PollSeconds, '-RunTimeoutMinutes', $RunTimeoutMinutes, '-LimitPauseMinutes', $LimitPauseMinutes) + $(if ($Resume) { '-Resume' })
-    $p = Start-Process powershell.exe -ArgumentList $argList -WorkingDirectory $Root -WindowStyle Hidden -PassThru
-    $null = $p.Handle  # giữ handle để đọc được ExitCode khi tiến trình kết thúc
+    $p = if ($OnLinux) { Start-Process $PsExe -ArgumentList $argList -WorkingDirectory $Root -PassThru }
+         else { Start-Process $PsExe -ArgumentList $argList -WorkingDirectory $Root -WindowStyle Hidden -PassThru }
+    try { $null = $p.Handle } catch {}  # giữ handle để đọc được ExitCode khi tiến trình kết thúc (Linux: không có Handle)
     $info.pid = $p.Id; $info.started = $p.StartTime.ToString('o')
     [IO.File]::WriteAllText($file, ($info | ConvertTo-Json), $Utf8)
     $procs[$file] = $p
