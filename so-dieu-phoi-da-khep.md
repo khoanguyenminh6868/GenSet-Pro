@@ -183,4 +183,6 @@ Cập nhật 18:25Z 12/11: đăng kết quả check lại của IB2600601812 (co
 - 17/11/2026 · Khoa trả lời: IB2600603983 đã chạy Gợi ý lại; specs tải tối đa 4 tệp không phải QĐ phê duyệt khi không nhận ra YCKT: xác nhận
 - 17/11/2026 · `GENBID_NAMED_SELLER` bật mặc định trong code cho mọi máy (Khoa: "bật cho mọi máy"; `=0` mới tắt); dải mặc định đơn vị dung tích: giữ · #830
 - 17/11/2026 · `GENBID_SPEC_NORM` bật mặc định trong code trên mọi máy (KHOAMINIPC đang tắt vì chưa cài lại sau #790); `=0` mới tắt · #833
+- 17/11/2026 · Gợi ý giá: thêm gói 1 nhà thầu vào mẫu, bù prior khi pool < 10 (Khoa xem số rồi chọn merge cả hai: phủ 62,4 → 58,8%, sai mức giữa 5,7 → 4,5, lệch +0,7 → +2,4) · #838
+- 17/11/2026 · Gán hãng động cơ / đầu phát (mức bằng chứng cao nhất, cặp cùng hãng, số đông; 609 / 1.093 lượt đổi ứng viên, soi tay 10 gói) · #839 (38a1bb16) · `nghiem-thu\gan-hang.md`
 - 17/11/2026 · Bộ nhớ gộp hai máy (luật số đông, thương hiệu / nơi sản xuất, việc bỏ 16/11) + KHOAMINIPC kéo bot theo #819, #821 · #826
