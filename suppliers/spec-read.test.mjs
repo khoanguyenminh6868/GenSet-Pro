@@ -195,7 +195,7 @@ test("engine and alternator are not swapped (acepow, cldj-fujian, longkai, tecno
   const of = (r, kind) => CAT.fromSupplier(r).filter((o) => o.kind === kind).map((o) => o.model);
   // acepow-fuan n109: its own alternator BC184E stands before the engine
   const a = rec(["| 3Phases/50Hz/400V/PF=0.8 | | Brand | Engine", "| Generating Sets | Acepow | Model | Prime | Standby"], ["| 18.0 | 22.5 | 19.8 | 24.8 | BC184E | ISUZU | JE493DB-04 | 21 | 23"]);
-  assert.deepEqual([of(a, "engine"), of(a, "alternator")], [["JE493DB-04"], []]); // no alternator title: BC184E is left out, not read as the engine
+  assert.deepEqual([of(a, "engine"), of(a, "alternator")], [["JE493DB-04"], ["BC184E"]]); // no alternator title: BC184E is not the engine; acepow's BC1xx code is read as the alternator (lech-cot-8; other codes before the engine are not)
   // acepow-fuan n114: the titles give the order, "Alternator" before "Engine model"
   const b = rec(["| Genset Model | Frequency | Kw | Kva | Alternator | Engine model | Rated Power", "| Rated | Standby | Rated | Standby | Model"], ["| APYD-9 | 60HZ | 9 | 9.9 | 11.3 | 12.4 | APS164B | YD380D | 12KW/1800rpm"]);
   assert.deepEqual([of(b, "engine"), of(b, "alternator")], [["YD380D"], ["APS164B"]]);
