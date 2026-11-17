@@ -1837,7 +1837,14 @@ function askOnce(prompt, model, task = "") {
       const cut = askCut(j);
       if (cut) return resolve({ error: `câu trả lời bị cắt trước khi JSON đóng (${cut})` });
       const s = text.replace(/^\s*```(?:json)?\s*/, "").replace(/\s*```\s*$/, "");
-      let value = null; try { value = JSON.parse(s.slice(s.indexOf("{"), s.lastIndexOf("}") + 1)); } catch {}
+      let value = null, why = ""; try { value = JSON.parse(s.slice(s.indexOf("{"), s.lastIndexOf("}") + 1)); } catch (e) { why = e.message; }
+      // Không phải JSON (sandbox 17/11: 2/2 lượt Phân tích, máy Windows 0/14): ghi đầu / cuối câu trả lời vào log và cả câu vào
+      // genbid-bot-logs\ask-nonjson-*.txt để tìm nguyên nhân. Chỉ ghi trên máy, không gửi lên web.
+      if (!value) {
+        const flat = (x) => x.replace(/\s+/g, " ").trim();
+        log(`  [ask] không phải JSON (${text.length} ký tự, ${why || "không có { }"}): đầu «${flat(text.slice(0, 300))}» … cuối «${flat(text.slice(-200))}»`);
+        try { fs.writeFileSync(path.join(ROOT, "genbid-bot-logs", `ask-nonjson-${Date.now()}.txt`), text, "utf8"); } catch {}
+      }
       resolve(value ? { value, cost: j.total_cost_usd, secs: Math.round((j.duration_ms || 0) / 1000) } : { error: "câu trả lời không phải JSON hợp lệ" });
     });
     p.stdin.end(prompt);
