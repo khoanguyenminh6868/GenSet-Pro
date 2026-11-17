@@ -14,6 +14,8 @@ const UNITS = new Set(["kVA", "kW", "hp", "PS"]);
 const TIERS = new Set(["A", "B", "C"]);
 const KINDS = new Set(["genset", "engine", "alternator", "controller"]);
 const CONTACTS = new Set(["email", "phone", "whatsapp", "wechat"]);
+const MFG_SCOPES = new Set(["manufacture", "design"]);
+const MFG_KEYS = new Set(["country", "city", "scope", "products", "src", "quote", "khoa", "note"]);
 
 // Keys a record may carry: whatever suppliers/schema.json declares (a missing schema file = no key check).
 let SCHEMA_KEYS = null;
@@ -83,6 +85,27 @@ export function checkRecord(rec, file) {
       if (f && fs.existsSync(f) && !norm(fs.readFileSync(f, "utf8")).includes(norm(c.line))) err(`${where}: không tìm thấy dòng trong nguồn ${s.n}`);
     }
   }
+  // Where it is made (manufacturing[]): an entry with src has its quote word for word in the saved page of each source it
+  // cites; one without src must be a decision of Khoa (khoa: "Khoa chốt dd/mm/yyyy"). Nothing is inferred from the model.
+  if (rec.manufacturing != null && !Array.isArray(rec.manufacturing)) err("manufacturing: phải là mảng");
+  for (const [i, m] of (Array.isArray(rec.manufacturing) ? rec.manufacturing : []).entries()) {
+    const where = `manufacturing[${i}] ${m.country || ""} ${m.city || ""}`.trim();
+    for (const k of Object.keys(m)) if (!MFG_KEYS.has(k)) err(`${where}: khoá ${k} không khai`);
+    if (!/^[A-Z]{2}$/.test(m.country || "")) err(`${where}: country mã 2 chữ`);
+    if (!MFG_SCOPES.has(m.scope)) err(`${where}: scope ${m.scope}`);
+    const hasSrc = m.src != null || m.quote != null;
+    if (m.khoa != null && !/^Khoa chốt \d{2}\/\d{2}\/\d{4}/.test(m.khoa)) err(`${where}: khoa phải bắt đầu "Khoa chốt dd/mm/yyyy"`);
+    if (!hasSrc && m.khoa == null) err(`${where}: cần src + quote, hoặc khoa (quyết định của Khoa)`);
+    if (m.products && !hasSrc) err(`${where}: products chỉ ghi được khi nguồn nói (cần src + quote)`);
+    if (hasSrc) {
+      const quotes = Array.isArray(m.quote) ? m.quote : [];
+      if (!quotes.length || quotes.some((q) => !q || String(q).length < 8)) err(`${where}: cần quote (mảng câu trích nguyên văn)`);
+      // Each quote is found word for word in the saved page of at least one source the entry cites.
+      const pages = srcOk(m.src, where).map((s) => (s.file && fs.existsSync(path.join(ROOT, s.file)) ? norm(fs.readFileSync(path.join(ROOT, s.file), "utf8")) : ""));
+      for (const q of quotes) if (q && !pages.some((t) => t.includes(norm(q)))) err(`${where}: không tìm thấy câu trích "${String(q).slice(0, 70)}" trong nguồn ${(m.src || []).join(", ")}`);
+    }
+  }
+  if (rec.manufacturingNote != null && !String(rec.manufacturingNote).trim()) err("manufacturingNote: rỗng");
   for (const [i, p] of (rec.productLines || []).entries()) {
     const where = `productLines[${i}] ${p.series || ""}`;
     if (!KINDS.has(p.kind)) err(`${where}: kind ${p.kind}`);

@@ -156,6 +156,28 @@
         "DSEGenset"
       ],
       "file": "sources/deep-sea-electronics/1011.md"
+    },
+    {
+      "n": 6001,
+      "url": "https://www.deepseaelectronics.com/about",
+      "accessedAt": "2026-11-17",
+      "tier": "A",
+      "quote": [
+        "We manufacture our products in one place, the United Kingdom."
+      ],
+      "file": "sources/deep-sea-electronics/6001.md",
+      "official": true
+    },
+    {
+      "n": 6002,
+      "url": "https://www.deepseaelectronics.com/news/183/controls-and-automation-business-group-formation",
+      "accessedAt": "2026-11-17",
+      "tier": "A",
+      "quote": [
+        "state-of-the-art head office manufacturing facility in Hunmanby, UK."
+      ],
+      "file": "sources/deep-sea-electronics/6002.md",
+      "official": true
     }
   ],
   "strengths": [],
@@ -2718,6 +2740,22 @@
       "line": "| DSE8680 | Synchronising Generator Bus Tie Control Module | 8680-01",
       "src": [
         1004
+      ]
+    }
+  ],
+  "manufacturing": [
+    {
+      "country": "GB",
+      "city": "Hunmanby, North Yorkshire",
+      "scope": "manufacture",
+      "products": "All products",
+      "src": [
+        6001,
+        6002
+      ],
+      "quote": [
+        "We manufacture our products in one place, the United Kingdom.",
+        "state-of-the-art head office manufacturing facility in Hunmanby, UK."
       ]
     }
   ]

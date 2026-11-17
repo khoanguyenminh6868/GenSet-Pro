@@ -156,6 +156,17 @@
         "InteliGen"
       ],
       "file": "sources/comap/1013.md"
+    },
+    {
+      "n": 6001,
+      "url": "https://na.comap-control.com/about/introduction-to-comap-controllers/",
+      "accessedAt": "2026-11-17",
+      "tier": "A",
+      "quote": [
+        "All our hardware is designed at our headquarters in Prague, Czech Republic"
+      ],
+      "file": "sources/comap/6001.md",
+      "official": true
     }
   ],
   "strengths": [],
@@ -2661,6 +2672,27 @@
       "src": [
         1003
       ]
+    }
+  ],
+  "manufacturing": [
+    {
+      "country": "CZ",
+      "city": "Prague",
+      "scope": "design",
+      "products": null,
+      "src": [
+        6001
+      ],
+      "quote": [
+        "All our hardware is designed at our headquarters in Prague, Czech Republic"
+      ],
+      "note": "Nguồn chỉ nói thiết kế; không nguồn nào nêu nơi sản xuất"
+    },
+    {
+      "country": "CZ",
+      "scope": "manufacture",
+      "khoa": "Khoa chốt 16/11/2026",
+      "note": "ComAp → Séc: Khoa chốt; nguồn hãng chỉ nói thiết kế ở Praha"
     }
   ]
 }

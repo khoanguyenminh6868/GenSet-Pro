@@ -162,6 +162,17 @@
         "| R.P.M. | p.f.0,8 | Kw p.f. 0.8 | Kva p.f. 1 | 2/4 | 3/4 | 4/4"
       ],
       "file": "sources/mecc-alte/1006.md"
+    },
+    {
+      "n": 6001,
+      "url": "https://www.meccalte.com/en/corporate/about-us",
+      "accessedAt": "2026-11-17",
+      "tier": "A",
+      "quote": [
+        "With manufacturing taking place in Italy, the UK, India and China,"
+      ],
+      "file": "sources/mecc-alte/6001.md",
+      "official": true
     }
   ],
   "confidence": "medium",
@@ -466,6 +477,66 @@
         "| ATO | 28/4 | 2L | 1500 | 42 | 28 | 28 | 89 | 90,7 | 90,2 | S1 | <4%",
         "| VL | 1500 | 44,4 | 35,5 | 29,5 | 89,7 | 91,1 | 90,9 | S1 | <4%"
       ]
+    }
+  ],
+  "manufacturing": [
+    {
+      "country": "IT",
+      "city": null,
+      "scope": "manufacture",
+      "products": null,
+      "src": [
+        6001
+      ],
+      "quote": [
+        "With manufacturing taking place in Italy, the UK, India and China,"
+      ],
+      "note": "Trang không nêu thành phố; kVA từng nhà máy chồng nhau, không nêu dòng"
+    },
+    {
+      "country": "GB",
+      "city": null,
+      "scope": "manufacture",
+      "products": null,
+      "src": [
+        6001
+      ],
+      "quote": [
+        "With manufacturing taking place in Italy, the UK, India and China,"
+      ],
+      "note": "Trang không nêu thành phố; kVA từng nhà máy chồng nhau, không nêu dòng"
+    },
+    {
+      "country": "IN",
+      "city": null,
+      "scope": "manufacture",
+      "products": null,
+      "src": [
+        6001
+      ],
+      "quote": [
+        "With manufacturing taking place in Italy, the UK, India and China,"
+      ],
+      "note": "Trang không nêu thành phố; kVA từng nhà máy chồng nhau, không nêu dòng"
+    },
+    {
+      "country": "CN",
+      "city": null,
+      "scope": "manufacture",
+      "products": null,
+      "src": [
+        6001
+      ],
+      "quote": [
+        "With manufacturing taking place in Italy, the UK, India and China,"
+      ],
+      "note": "Trang không nêu thành phố; kVA từng nhà máy chồng nhau, không nêu dòng"
+    },
+    {
+      "country": "IT",
+      "scope": "manufacture",
+      "khoa": "Khoa chốt 16/11/2026",
+      "note": "Mặc định theo hãng khi dòng nguồn không ghi nhà máy (Mecc Alte → Ý); nguồn hãng nêu Ý, Anh, Ấn Độ, Trung Quốc"
     }
   ]
 }
