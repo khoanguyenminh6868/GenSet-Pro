@@ -18,12 +18,13 @@ param(
 )
 $ErrorActionPreference = 'Stop'
 $utf8 = New-Object Text.UTF8Encoding $false
-$tmp = Join-Path $env:TEMP "genbid-targets-$(Get-Random)"
+$PsExe = if (($env:GENBID_OS -eq 'linux' -or (-not $env:GENBID_OS -and $PSVersionTable.Platform -eq 'Unix'))) { 'pwsh' } else { 'powershell' }
+$tmp = Join-Path ([IO.Path]::GetTempPath()) "genbid-targets-$(Get-Random)"
 New-Item -ItemType Directory $tmp | Out-Null
 function Get-Coll([string]$coll, [string]$id) {
     $f = Join-Path $tmp "$coll.json"
-    $a = @('-NoProfile', '-ExecutionPolicy', 'Bypass', '-File', (Join-Path $PSScriptRoot 'Get-GenBidRequests.ps1'), '-Kind', 'docs', '-Coll', $coll, '-Out', $f) + @(if ($id) { '-Id', $id })
-    & powershell @a | Out-Null
+    $a = @('-NoProfile') + @(if ($PsExe -eq 'powershell') { '-ExecutionPolicy', 'Bypass' }) + @('-File', (Join-Path $PSScriptRoot 'Get-GenBidRequests.ps1'), '-Kind', 'docs', '-Coll', $coll, '-Out', $f) + @(if ($id) { '-Id', $id })
+    & $PsExe @a | Out-Null
     if ($LASTEXITCODE -eq 1) { throw "Không đọc được $coll từ bản web." }
     if (-not (Test-Path $f)) { return @() }
     $d = Get-Content $f -Raw -Encoding UTF8 | ConvertFrom-Json

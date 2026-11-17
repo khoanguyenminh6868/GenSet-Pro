@@ -11,7 +11,7 @@ param(
     [string]$List,
     [string[]]$FileId,
     [string]$NotifyNo = 'HSMT',
-    [string]$OutDir = (Join-Path ([Environment]::GetFolderPath('UserProfile')) 'Downloads\GenBid-HSMT'),
+    [string]$OutDir = (Join-Path ([Environment]::GetFolderPath('UserProfile')) 'Downloads/GenBid-HSMT'),
     [switch]$StartOnly,
     # Thời gian chờ mỗi tệp (giây); lệnh specs của genbid-sync.js dùng 180 vì Agent đôi khi treo.
     [int]$TimeoutSec = 600
@@ -43,6 +43,11 @@ function Find-AgentExe {
 
 function Start-Agent {
     if (Test-Agent) { Write-Host 'VNeGP Client Agent đang chạy (cổng 1234).'; return $true }
+    # Linux (sandbox Vercel): Agent là bản Windows chạy dưới Wine, bật bằng start-egp-agent.sh.
+    if (($env:GENBID_OS -eq 'linux' -or (-not $env:GENBID_OS -and $PSVersionTable.Platform -eq 'Unix'))) {
+        & bash (Join-Path $PSScriptRoot 'start-egp-agent.sh') | Out-Host
+        return [bool](Test-Agent)
+    }
     $exe = Find-AgentExe
     if (-not $exe) {
         Write-Host 'Máy này chưa cài VNeGP Client Agent.' -ForegroundColor Yellow
@@ -72,8 +77,9 @@ function Save-File([string]$id, [string]$name, [string]$dir) {
         if ($cd -match 'filename=(.+)$') { $name = [Uri]::UnescapeDataString(($Matches[1].Trim('"') -replace '\+', ' ')) }
         if (-not $name) { $name = "$id.bin" }
     }
-    $size = (Get-Item $tmp).Length
-    if ($size -eq 0) { Remove-Item $tmp; throw 'Agent trả về file rỗng' }
+    # -Force: pwsh trên Linux coi tệp bắt đầu bằng dấu chấm (.<id>.part) là tệp ẩn.
+    $size = (Get-Item -LiteralPath $tmp -Force).Length
+    if ($size -eq 0) { Remove-Item -LiteralPath $tmp -Force; throw 'Agent trả về file rỗng' }
     $dest = Join-Path $dir (Get-SafeName $name)
     Move-Item $tmp $dest -Force
     [pscustomobject]@{ NotifyNo = Split-Path $dir -Leaf; FileId = $id; File = $dest; Bytes = $size; MD5 = (Get-FileHash $dest -Algorithm MD5).Hash }

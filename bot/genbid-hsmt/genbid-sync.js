@@ -24,14 +24,16 @@ const path = require("path");
 const cp = require("child_process");
 const os = require("os");
 
-const ROOT = "C:\\Projects\\GenSet Pro";
+// OS differences (Windows PC / Linux sandbox): platform.js. ROOT on Windows is still C:\Projects\GenSet Pro.
+const PLAT = require("./platform.js");
+const { ROOT, HOME, IS_WIN } = PLAT;
 const KIT = __dirname;
 const API = "https://genset-pro-web.vercel.app/api";
 const LOCK = path.join(ROOT, ".hsmt-worker.lock");
 const SYNC_LAST = path.join(ROOT, ".genbid-sync-last.json");
-const DOWNLOADS = path.join(process.env.USERPROFILE || "C:\\Users\\Khoa", "Downloads", "GenBid-HSMT");
+const DOWNLOADS = path.join(process.env.USERPROFILE || HOME, "Downloads", "GenBid-HSMT");
 // The HSDT files of each Đối chiếu, kept on this PC (Khoa, 2026-11-05): <HSDT_DIR>\\<TBMT>\\<requestedAt>\\<file>. Never in git or GitHub.
-const HSDT_DIR = path.join(process.env.USERPROFILE || "C:\\Users\\Khoa", "Downloads", "GenBid-HSDT");
+const HSDT_DIR = path.join(process.env.USERPROFILE || HOME, "Downloads", "GenBid-HSDT");
 const SEARCH_URL = "https://muasamcong.mof.gov.vn/web/guest/contractor-selection?render=search";
 // New "Máy phát điện" tenders Sync sent to Phân tích on its own, waiting to go on to Gợi ý cấu hình (runFinish).
 const AUTO_FILE = path.join(ROOT, ".genbid-auto.json");
@@ -153,7 +155,7 @@ const dropLock = () => { try { fs.unlinkSync(LOCK); } catch {} };
 function ps(script, psArgs, timeoutMin = 60) {
   const q = (s) => "'" + String(s).replace(/'/g, "''") + "'";
   const line = `[Console]::OutputEncoding=[Text.Encoding]::UTF8; & ${q(path.join(KIT, script))} ${psArgs.map((a) => (/^-[A-Za-z]+$/.test(a) ? a : q(a))).join(" ")}; exit $LASTEXITCODE`;
-  const r = cp.spawnSync("powershell", ["-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", line], { encoding: "utf8", maxBuffer: 64 << 20, timeout: timeoutMin * 60e3 });
+  const r = cp.spawnSync(PLAT.PWSH, PLAT.psArgv(line), { encoding: "utf8", maxBuffer: 64 << 20, timeout: timeoutMin * 60e3 });
   const out = ((r.stdout || "") + (r.stderr || "")).trim();
   if (out) log(out.split(/\r?\n/).map((l) => "    " + l).join("\n"));
   return r.status;
@@ -161,17 +163,8 @@ function ps(script, psArgs, timeoutMin = 60) {
 
 // ---------- browser ----------
 class Captcha extends Error {}
-function chromePath() {
-  if (process.env.GENBID_CHROME) return process.env.GENBID_CHROME;
-  // Install-GenBidBot.ps1 puts Chromium in PLAYWRIGHT_BROWSERS_PATH (outside AppData: on some PCs a chrome.exe under
-  // AppData fails with "side-by-side configuration is incorrect"); older installs still have it in LOCALAPPDATA.
-  for (const base of [process.env.PLAYWRIGHT_BROWSERS_PATH, path.join(process.env.LOCALAPPDATA || "", "ms-playwright")]) {
-    if (!base || !fs.existsSync(base)) continue;
-    const dirs = fs.readdirSync(base).filter((d) => /^chromium-\d+$/.test(d)).sort((a, b) => b.split("-")[1] - a.split("-")[1]);
-    for (const d of dirs) { const f = path.join(base, d, "chrome-win", "chrome.exe"); if (fs.existsSync(f)) return f; }
-  }
-  return null;
-}
+// chromePath() is in platform.js (GENBID_CHROME, Playwright's Chromium on Windows, google-chrome on Linux).
+const chromePath = PLAT.chromePath;
 async function openBrowser() {
   const { chromium } = require(path.join(KIT, "node_modules", "playwright-core"));
   const exe = chromePath();
@@ -179,8 +172,8 @@ async function openBrowser() {
   // use a normal window, kept small and in the corner. Its own profile keeps the site's cookies between rounds.
   // --profile <name>: a separate profile (.genbid-browser-<name>), for a long history round beside the bot's rounds.
   const ctx = await chromium.launchPersistentContext(path.join(ROOT, ".genbid-browser" + (typeof opt("profile") === "string" ? "-" + opt("profile") : "")), {
-    headless: false, ...(exe ? { executablePath: exe } : { channel: "msedge" }),
-    viewport: { width: 1280, height: 900 }, args: ["--window-position=0,0", "--window-size=900,700"],
+    headless: false, ...(exe ? { executablePath: exe } : IS_WIN ? { channel: "msedge" } : {}),
+    viewport: { width: 1280, height: 900 }, args: ["--window-position=0,0", "--window-size=900,700", ...PLAT.chromeArgs()],
   });
   ctx.setDefaultTimeout(45000);
   const page = ctx.pages()[0] || (await ctx.newPage());
@@ -363,7 +356,7 @@ async function fetchFiles(page, req) {
 // /api/bcdg, and bcdg/<TBMT> holds {files, reason, scan}. `reason` is the lines of the report around our name (bcdg-reason.js,
 // no AI), "" when none is found. Files over 50 MB are not uploaded; the reason is written in the metadata.
 const OUR_TAX = require("./bcdg-reason.js").OUR_TAX;
-const BCDG_DIR = process.env.GENBID_BCDG_DIR || path.join(process.env.USERPROFILE || "C:\\Users\\Khoa", "Downloads", "GenBid-BCDG");
+const BCDG_DIR = process.env.GENBID_BCDG_DIR || path.join(process.env.USERPROFILE || HOME, "Downloads", "GenBid-BCDG");
 const BCDG_OCR_PAGES = 60, BCDG_BUDGET_MS = 10 * 60e3;
 const { bcdgStep: bcdgRun, failDoc } = require("./bcdg-step.js");
 const isMine = (b) => (b?.list || []).some((x) => String(x.taxCode || "").replace(/\D/g, "") === OUR_TAX);
@@ -823,7 +816,7 @@ const SPECS_SCAN_MAX_MB = Infinity;
 async function specsArchive(f, tmp, depth = 0) {
   const out = path.join(tmp, "a" + histTmpN++), src = out + "-in" + path.extname(f).toLowerCase();
   fs.mkdirSync(out, { recursive: true }); fs.copyFileSync(f, src);
-  if (path.extname(src) === ".rar" && fs.existsSync(UNRAR)) cp.spawnSync(UNRAR, ["x", "-y", "-inul", src, out + path.sep], { timeout: 300e3 });
+  if (path.extname(src) === ".rar" && UNRAR) cp.spawnSync(UNRAR, ["x", "-y", "-inul", src, out + path.sep], { timeout: 300e3 });
   else cp.spawnSync(TAR, ["-xf", src, "-C", out], { encoding: "utf8", timeout: 300e3 });
   if (path.extname(src) === ".zip" && !fs.readdirSync(out).length) unzipPlain(src, out);
   const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]));
@@ -863,7 +856,7 @@ function psAsync(script, psArgs, timeoutMin = 60) {
   const q = (x) => "'" + String(x).replace(/'/g, "''") + "'";
   const line = `[Console]::OutputEncoding=[Text.Encoding]::UTF8; & ${q(path.join(KIT, script))} ${psArgs.map((a) => (/^-[A-Za-z]+$/.test(a) ? a : q(a))).join(" ")}; exit $LASTEXITCODE`;
   return new Promise((resolve) => {
-    const p = cp.spawn("powershell", ["-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", line], { windowsHide: true });
+    const p = cp.spawn(PLAT.PWSH, PLAT.psArgv(line), { windowsHide: true });
     let out = "";
     const timer = setTimeout(() => p.kill(), timeoutMin * 60e3);
     p.stdout.on("data", (d) => (out += d)); p.stderr.on("data", (d) => (out += d));
@@ -952,7 +945,7 @@ async function specsSource(ctx, page, t, webText, release = () => {}) {
       // 2026-11-03: the Agent went into a state where every download failed (HTTP 400, timeouts) until it was restarted.
       if (!fs.existsSync(path.join(out, key)) || !fs.readdirSync(path.join(out, key)).some((x) => !/^manifest\.csv$|\.part$/.test(x))) {
         log(`    ${key}: tải tệp không được, khởi động lại VNeGP Agent rồi thử lại`);
-        cp.spawnSync("taskkill", ["/F", "/IM", "egp-edoc-agent.exe"], { windowsHide: true });
+        PLAT.killAgent();
         await psAsync("GenBid-HSMT.ps1", ["-StartOnly"], 5);
         await psAsync("GenBid-HSMT.ps1", ["-List", list, "-OutDir", out, "-TimeoutSec", "180"], 30);
       }
@@ -1288,9 +1281,9 @@ async function runFiles() {
 // What prep keeps of the notice and its goods list, and what readNotice keeps of a webform chapter (cut guard 2026-11-12:
 // of 16 notices the longest info was 11,276, goods 9,432, a chapter 15,181).
 
-const pdftotext = () => [path.join(process.env.LOCALAPPDATA || "", "Microsoft", "WinGet", "Links", "pdftotext.exe"), "C:\\Program Files\\Git\\mingw64\\bin\\pdftotext.exe"].find((f) => fs.existsSync(f)) || "pdftotext";
-// Windows' own tar (bsdtar) reads zip; the tar of Git Bash, first on PATH there, does not.
-const TAR = [path.join(process.env.SystemRoot || "C:\\Windows", "System32", "tar.exe")].find((f) => fs.existsSync(f)) || "tar";
+const pdftotext = PLAT.pdftotext;
+// Windows' own tar (bsdtar) reads zip; the tar of Git Bash, first on PATH there, does not. Linux: bsdtar (libarchive-tools).
+const TAR = PLAT.TAR;
 const zipPart = (f, part) => cp.spawnSync(TAR, ["-xOf", f, part], { encoding: "utf8", maxBuffer: 256 << 20 }).stdout || "";
 const unxml = (s) => s.replace(/<[^>]+>/g, "").replace(/&lt;/g, "<").replace(/&gt;/g, ">").replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&amp;/g, "&");
 // Every sheet of an .xlsx, one row per line and cells joined by " | ", numbers included (a supplier's datasheet in
@@ -1351,19 +1344,21 @@ function wordText(f) {
   try {
     const src = path.join(tmp, "in" + path.extname(f).toLowerCase()), out = path.join(tmp, "out.txt");
     fs.copyFileSync(f, src);
+    // Linux sandbox: no Word; antiword / catdoc / LibreOffice (platform.js).
+    if (!IS_WIN) return PLAT.wordTextLinux(src, tmp).replace(/^﻿/, "");
     const q = (s) => "'" + s.replace(/'/g, "''") + "'";
     const script = `$w = New-Object -ComObject Word.Application; $w.Visible = $false; $w.DisplayAlerts = 0
 $w.AutomationSecurity = 3
 try { $d = $w.Documents.Open(${q(src)}, $false, $true); $d.SaveAs2(${q(out)}, 2, $false, '', $false, '', $false, $false, $false, $false, $false, 65001); $d.Close($false) } finally { $w.Quit() }`;
     // Plain text in UTF-8 (format 2, encoding 65001): "Unicode text" (format 7) came out as ANSI with "?" for every
     // Vietnamese letter on some .doc files (IB2400577020), read back as UTF-16 garbage.
-    cp.spawnSync("powershell", ["-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", script], { encoding: "utf8", timeout: 180e3 });
+    cp.spawnSync(PLAT.PWSH, PLAT.psArgv(script), { encoding: "utf8", timeout: 180e3 });
     return fs.existsSync(out) ? fs.readFileSync(out, "utf8").replace(/^﻿/, "") : "";
   } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
 }
 // .zip / .rar / .7z: unpacked with Windows tar.exe (libarchive), the documents inside read one by one (two levels deep).
 const ARCHIVE_EXT = [".zip", ".rar", ".7z"];
-const UNRAR = path.join(process.env.ProgramFiles || "C:\\Program Files", "WinRAR", "UnRAR.exe");
+const UNRAR = PLAT.UNRAR; // WinRAR's UnRAR.exe on Windows, `unrar` on Linux; null when the machine has none
 // A .zip whose entry names are not UTF-8 (IB2500143599 "Chương V - Yêu cầu kỹ thuật.zip", IB2600279956, IB2600035196): tar.exe
 // answers "Archive entry has empty or unreadable filename" and extracts nothing. .NET reads the entries; each is saved as
 // e<n>-<ASCII part of its name><ext>.
@@ -1375,7 +1370,7 @@ try { foreach ($e in $z.Entries) { if (-not $e.Name) { continue }
   $ext = [IO.Path]::GetExtension($e.Name); $b = [IO.Path]::GetFileNameWithoutExtension($e.Name) -replace '[^\\x20-\\x7E]', '' -replace '[\\\\/:*?"<>|]', '_'
   if ($b.Length -gt 50) { $b = $b.Substring(0, 50) }
   [IO.Compression.ZipFileExtensions]::ExtractToFile($e, (Join-Path ${q(out)} ('e{0}-{1}{2}' -f $i, $b.Trim(), $ext)), $true); $i++ } } finally { $z.Dispose() }`;
-  cp.spawnSync("powershell", ["-NoProfile", "-ExecutionPolicy", "Bypass", "-Command", script], { encoding: "utf8", timeout: 300e3 });
+  cp.spawnSync(PLAT.PWSH, PLAT.psArgv(script), { encoding: "utf8", timeout: 300e3 });
 }
 function archiveText(f, depth = 0) {
   if (depth > 1) return "";
@@ -1384,7 +1379,7 @@ function archiveText(f, depth = 0) {
     const src = path.join(tmp, "in" + path.extname(f).toLowerCase()), out = path.join(tmp, "x");
     fs.copyFileSync(f, src); fs.mkdirSync(out);
     // tar.exe skips RAR5 entries with Vietnamese names: .rar goes through WinRAR's UnRAR when the PC has it.
-    if (path.extname(src) === ".rar" && fs.existsSync(UNRAR)) cp.spawnSync(UNRAR, ["x", "-y", "-inul", src, out + path.sep], { timeout: 300e3 });
+    if (path.extname(src) === ".rar" && UNRAR) cp.spawnSync(UNRAR, ["x", "-y", "-inul", src, out + path.sep], { timeout: 300e3 });
     else cp.spawnSync(TAR, ["-xf", src, "-C", out], { encoding: "utf8", timeout: 300e3 });
     if (path.extname(src) === ".zip" && !fs.readdirSync(out).length) unzipPlain(src, out);
     const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]));
@@ -1682,7 +1677,7 @@ async function prepOne(kind, key, requestedAt, dir) {
       // Files a project's owner uploaded on the web (tab Dự án) live only in the web's file store.
       + (hsmt?.source === "tải tay" ? `Tệp tải tay trên web, tải về bằng Invoke-WebRequest:\n${(hsmt.files || []).filter((f) => f.hasText === false && f.url).map((f) => `- ${f.name}: ${API.replace(/\/api$/, "")}${f.url}`).join("\n")}\n` : "")
       + `Tệp nằm ở ${local}. Nếu không có: gh release download hsmt-${key} --repo khoanguyenminh6868/GenSet-Pro --dir "${rel}" (tên gốc trong C:\\Projects\\GenSet Pro\\hsmt-inbox\\inbox\\${key}\\release.json).\n`
-      + `Xem trang: powershell -NoProfile -File "${render}" -Pdf <pdf> -OutDir "${scan}" -First <n> -Last <m>, rồi đọc ảnh PNG, mỗi lần khoảng 10 trang, chỉ các chương cần.\n`;
+      + `Xem trang: ${PLAT.PWSH} -NoProfile -File "${render}" -Pdf <pdf> -OutDir "${scan}" -First <n> -Last <m>, rồi đọc ảnh PNG, mỗi lần khoảng 10 trang, chỉ các chương cần.\n`;
   }
   if (!ownReq && !full && !notice?.info && !scans.length) input += `\nKHÔNG có chữ HSMT nào trên web: kiểm tra ${local}; nếu cũng không có thì ghi error.txt.\n`;
   if (kind === "compare" || kind === "tlkt") {
@@ -1772,14 +1767,7 @@ async function runPrep() {
 // Answer the prepared requests in one model call each (prompt + data in, JSON out, no tools), several at a time.
 // Measured 2026-10-26 on Phân tích IB2600574589 (Opus): same time as the agent (~150 s, writing the JSON is most of it)
 // but 34k instead of 288k input tokens. Folders marked AGENT, or whose answer is not valid JSON, are left for the agent.
-function claudeExe() {
-  if (process.env.GENBID_CLAUDE && fs.existsSync(process.env.GENBID_CLAUDE)) return process.env.GENBID_CLAUDE;
-  const base = path.join(process.env.LOCALAPPDATA || "", "Claude-Data");
-  const found = [];
-  const walk = (d, depth) => { if (depth > 5) return; for (const e of fs.readdirSync(d, { withFileTypes: true })) { const f = path.join(d, e.name); if (e.isDirectory()) walk(f, depth + 1); else if (e.name === "claude.exe" && /[\\/]claude-code[\\/]/.test(f)) found.push(f); } };
-  if (fs.existsSync(base)) walk(base, 0);
-  return found.sort((a, b) => fs.statSync(b).mtimeMs - fs.statSync(a).mtimeMs)[0] || "claude";
-}
+const claudeExe = PLAT.claudeExe; // platform.js: the Claude Code of the Claude app on Windows, `claude` on PATH on Linux
 const LIMIT = /hit your [a-z ]*limit|usage limit|rate limit|session limit|credit balance is too low/i;
 // Khoa 11/11/2026: gọi Claude trả bằng API key (tệp .anthropic-api-key) thay vì hạn mức tháng; cả khi chạy tay (specs,
 // history-config). Bot đã đặt sẵn biến này cho lượt AI; không có tệp thì như cũ (đăng nhập /login).
@@ -1859,10 +1847,10 @@ function askOnce(prompt, model, task = "") {
 // Khoa's Google AI Pro account, so they cost no Claude tokens (Khoa, 2026-10-27). Gemini 3.8 Flash Medium: Low left
 // Vietnamese untranslated; Medium matched Claude on a TLKT result. It runs in an empty folder so the agent sees no files.
 // Any failure (not installed, signed out, out of quota, not JSON) falls back to Claude.
-const AGY = path.join(process.env.LOCALAPPDATA || "", "agy", "bin", "agy.exe");
+const AGY = PLAT.agyExe(); // null on Linux: translations go to Claude
 const GEMINI_MODEL = process.env.GENBID_GEMINI_MODEL || "gemini-3.8-flash-medium";
 function askGemini(prompt) {
-  if (!fs.existsSync(AGY)) return Promise.resolve({ error: "chưa cài Antigravity CLI (agy)" });
+  if (!AGY || !fs.existsSync(AGY)) return Promise.resolve({ error: "chưa cài Antigravity CLI (agy)" });
   const cwd = path.join(require("os").tmpdir(), "genbid-agy-empty");
   fs.mkdirSync(cwd, { recursive: true });
   return new Promise((resolve) => {

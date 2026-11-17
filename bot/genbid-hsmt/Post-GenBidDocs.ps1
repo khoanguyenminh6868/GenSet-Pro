@@ -5,7 +5,7 @@ syncreq/current, translation, compare. Không in token ra màn hình. Thoát mã
 #>
 param(
     [Parameter(Mandatory)][string]$Dir,
-    [string]$TokenFile = 'C:\Projects\GenSet Pro\.genbid-ingest-token',
+    [string]$TokenFile = (Join-Path $(if ($env:GENBID_ROOT) { $env:GENBID_ROOT } elseif (($env:GENBID_OS -eq 'linux' -or (-not $env:GENBID_OS -and $PSVersionTable.Platform -eq 'Unix'))) { Join-Path $HOME 'genset-pro' } else { 'C:\Projects\GenSet Pro' }) '.genbid-ingest-token'),
     [string]$Endpoint = 'https://genset-pro-web.vercel.app/api/ingest'
 )
 $ErrorActionPreference = 'Stop'

@@ -13,10 +13,10 @@ const cp = require("child_process");
 const os = require("os");
 
 const MIN_CHARS = 60; // a page with fewer letters than this is taken for a scan
-const CACHE = "C:\\Projects\\GenSet Pro\\.genbid-ocr";
-const TESSDATA = "C:\\Projects\\GenSet Pro\\.genbid-tessdata-best";
-const NATIVE = ["C:\\Program Files\\Tesseract-OCR\\tesseract.exe", path.join(process.env.LOCALAPPDATA || "", "Programs", "Tesseract-OCR", "tesseract.exe")]
-  .find((f) => fs.existsSync(f) && fs.existsSync(path.join(TESSDATA, "vie.traineddata")));
+const PLAT = require("./platform.js"); // ROOT, Tesseract path: C:\Projects\GenSet Pro on Windows, GENBID_ROOT on Linux
+const CACHE = path.join(PLAT.ROOT, ".genbid-ocr");
+const TESSDATA = path.join(PLAT.ROOT, ".genbid-tessdata-best");
+const NATIVE = fs.existsSync(path.join(TESSDATA, "vie.traineddata")) ? PLAT.tesseractExe() : null;
 const popplerBin = () => {
   const links = path.join(process.env.LOCALAPPDATA || "", "Microsoft", "WinGet", "Links");
   if (fs.existsSync(path.join(links, "pdftoppm.exe"))) return links;
