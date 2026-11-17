@@ -58,6 +58,20 @@ không đọc"). Bot chạy gói nhiều cỡ bằng `hintsOf(text, "", {size, s
 Kết luận: không phải hồi quy, không sửa code (nếu sửa cho main "có số" lại thì là áp số một cỡ cho cỡ kia, như IB2500114642
 từng loại mọi động cơ ≠ 6 xi lanh cho cả máy 8,3 kVA). Lệnh: `scratchpad\persize.mjs <gói...>` (hintsOf main ↔ nhánh, có / không chia cỡ).
 
+### Đọc sai mới theo cỡ: IB2400313681 (điều phối báo 17/11, đã sửa — commit dd9c42c2)
+Cỡ 30 kVA nhánh ra minCyl 6 từ dòng OCR "5 | S6 xy lanh, kiểu b tri > 4 thắng hàng" ("S6" = "Số" hỏng; ngưỡng thật > 4) → sẽ loại nhầm động cơ 4 xi lanh.
+Sửa `inlineCyl`: số dính chữ cái phía trước không là số xi lanh; dòng có "> N / ≥ N thẳng hàng / chữ V" thì không đọc số trơ giữa câu
+(ngưỡng có dấu đã do luật nhãn đọc). Test: ca "S6 xy lanh" + "6 xilanh ... tỷ số nén ≥ 17: 1" vẫn ra 6. Sau sửa: 30 kVA trống (như main), 42 kVA 4 xi lanh.
+
+Quét toàn kho THEO CỠ (`hintsOf` không chia cỡ + từng cỡ của `sizesOf`), mọi minCyl nhánh ra mà dòng nguồn có số dính chữ trước "xy lanh" hoặc
+"N xy lanh" cùng dòng với dấu so sánh và số khác (script `scan-glued.mjs`, scratchpad phiên này):
+| Gói | Cỡ | minCyl | Dấu hiệu | Dòng | Đánh giá |
+|---|---|---|---|---|---|
+| IB2400313681 | 30 kVA | 6 (trước sửa) | số dính chữ + "> 4" | "5 / S6 xy lanh, kiểu b tri > 4 thắng hàng" | **sai → đã sửa (nay trống)** |
+| IB2400285076 | cả gói | 6 (tối thiểu) | "≥ 17" cùng dòng | "Động cơ: 6 xilanh, bố trí thẳng hàng, tỷ số nén ≥ 17: 1" | đúng (17 là tỷ số nén) |
+| IB2300108940 | cả gói, 10 kVA | 2 | "30/10" cùng dòng (dòng webform dài) | "…ĐỘNG CƠ…Loại4 thì, giải nhiệt quạt gióSố xy lanh 2 xi lanhTổng dung tích xy lanh≥ 674 cc…" | đúng |
+Sau sửa còn 2 mục, cả hai đúng. Đo lại: thiếu 274, lệch 9 (không đổi); `node --test suppliers/` 919 pass, 0 fail. Nhánh đã gộp `origin/main` (#851; force-push sau rebase bị chặn nên dùng merge, squash khi merge PR không khác).
+
 ## Soi tay (ngẫu nhiên, nguyên văn HSMT)
 58 mục mới đọc, chọn ngẫu nhiên 3 lượt (26 mọi loại, 14 xi lanh, 18 xi lanh sau sửa). **Sai: 1 trước sửa, 0 sau sửa.**
 Ca sai (đã sửa, có test): IB2300015080 "Số lượng xi lanh của" / "2 ≥ 16 (*)" → code đọc 2 (số thứ tự hàng); nay 16 (tối thiểu).
