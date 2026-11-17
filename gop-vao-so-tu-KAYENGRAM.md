@@ -25,10 +25,10 @@ Phiên điều phối: gộp các dòng dưới vào sổ (mục "Chờ Khoa", "
 
 ## Chờ Khoa (17/11, từ phiên so sánh Opus / Fable trên IB2600603983)
 - ĐÃ LÀM (Khoa duyệt, PR #823): ứng viên xét bố trí xi lanh + động cơ khác tần số; Gợi ý lại không giữ dòng lượt trước.
-- Còn hỏi: HSMT ghi số xi lanh KÈM bố trí ("6 xy lanh thẳng hàng") thì coi 6 là số chính xác (loại máy 12 xi lanh) hay
-  vẫn là tối thiểu? Sau PR #823, QSK23-G2 vẫn ngoài 30 dòng của IB2600603983 vì KTA38-G / -GA / -G1B (12 xi lanh) chưa
-  đủ hai NCC ghi chữ V nên còn giữ chỗ Cummins.
-- IB2600603983: web đang là kết quả Fable chạy TRƯỚC các sửa (#820, #823). Chạy Gợi ý lại (≈3 USD Opus) hay giữ?
+- ĐÃ LÀM (Khoa: "nếu HSMT ghi rõ 6 thì nên loại 12", PR #825): số xi lanh ghi trơ là số chính xác ở bước chọn ứng viên.
+  Còn hỏi: bước chấm đạt / không đạt (`makerSheetChecks`) có theo luật này không? Và khi chạy hints-audit toàn kho thì đếm
+  luôn bao nhiêu gói ghi trơ số xi lanh (`cylExact`).
+- IB2600603983: web đang là kết quả Fable chạy TRƯỚC các sửa (#820, #823, #825). Chạy Gợi ý lại (≈3 USD Opus) hay giữ?
   Bản 12/11 lưu ở `genbid-work\so-sanh-model\IB2600603983\web-truoc\` trên máy KAYENGRAM.
 
 ## Cần kiểm
