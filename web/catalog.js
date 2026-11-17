@@ -1352,22 +1352,14 @@
   // One supplier, one vote per figure (depco-sua, Khoa 17/11/2026; majority rule of 16/11: a value wins with 3 suppliers
   // or more and 3 times as many as each other value). `bySup`: Map supplierId → the values that supplier gives for one
   // model and one key. A supplier giving two different values (two tables of one model) votes for the one that the
-  // others' majority has; with no such majority, or without that value among its own, it gives no vote. `tol`: numbers
-  // within this relative gap are one value (the most supported one stands for them; displacement 2%, so 22.9 and 23).
+  // others' majority has; with no such majority, or without that value among its own, it gives no vote.
   // → { votes: Map value → [supplierId], win: value | null, split: [supplierId] (suppliers giving two values),
   //     dropped: [supplierId] (no vote) }.
-  function tally(bySup, tol = 0) {
+  function tally(bySup) {
     const sups = [...bySup].map(([s, vs]) => [s, [...new Set((vs || []).filter((v) => v != null))]]).filter(([, vs]) => vs.length);
     const support = new Map();
     for (const [, vs] of sups) for (const v of vs) support.set(v, (support.get(v) || 0) + 1);
-    const rep = new Map(), reps = [];
-    const nums = tol > 0 && [...support.keys()].every((v) => typeof v === "number");
-    if (nums) for (const v of [...support.keys()].sort((a, b) => support.get(b) - support.get(a) || a - b)) {
-      const r = reps.find((x) => Math.abs(x - v) <= tol * Math.max(x, v));
-      if (r != null) rep.set(v, r); else { reps.push(v); rep.set(v, v); }
-    }
-    const R = (v) => (rep.has(v) ? rep.get(v) : v);
-    const each = sups.map(([s, vs]) => [s, [...new Set(vs.map(R))]]);
+    const each = sups;
     const winOf = (m) => {
       const e = [...m].sort((a, b) => b[1] - a[1]);
       return e.length && e[0][1] >= 3 && e.slice(1).every(([, c]) => e[0][1] >= 3 * c) ? e[0][0] : null;

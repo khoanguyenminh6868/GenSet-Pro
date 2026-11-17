@@ -43,10 +43,6 @@ test("tally: thắng cần ≥3 NCC và gấp ≥3 lần mỗi giá trị khác"
   assert.equal(C.tally(by({ a: [6], b: [6], c: [6], d: [8], e: [8] })).win, null);
   assert.equal(C.tally(by({ a: [6], b: [6], c: [8] })).win, null);
 });
-test("tally: dung tích trong 2% là một giá trị (22,9 và 23; 3,9 và 4,0 thì không)", () => {
-  assert.equal(C.tally(by({ a: [22.9], b: [23] }), 0.02).votes.size, 1);
-  assert.equal(C.tally(by({ a: [3.9], b: [4] }), 0.02).votes.size, 2);
-});
 
 test("catalog: model động cơ có win theo từng NCC một phiếu (WP10D264E201: 6 xi lanh)", () => {
   const cat = C.build(["depco-power", "weichai-power", "weichai-engine"].filter((id) => fs.existsSync(path.join(ROOT, "cn", `${id}.json`))).map(sup));
@@ -61,7 +57,7 @@ test("quality: mâu thuẫn đủ đơn vị không tăng so với cách đếm 
   const m = measure(sups);
   for (const v of Object.values(m.conflicts)) {
     const s = v.steps;
-    assert.ok(s.self <= s.old && s.one <= s.self && s.tol <= s.one && s.win <= s.tol, JSON.stringify(s));
+    assert.ok(s.self <= s.old && s.one <= s.self && s.win <= s.one, JSON.stringify(s));
     assert.equal(v.strict.conflicts, s.win);
   }
 });

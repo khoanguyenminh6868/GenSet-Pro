@@ -76,9 +76,9 @@ export function measure(suppliers, { keepSamples = 0 } = {}) {
   const conflicts = {};
   // Conflicts between suppliers per model. Steps (cumulative, depco-sua 17/11/2026): self = a row whose cylinders × bore²
   // × stroke disagree with its own displacement by >5% gives no figure (SN.selfCheck); one = one supplier one vote
-  // (C.tally); tol = displacement figures within 2% are one value; win = a value that wins by the majority rule (3
+  // (C.tally); win = a value that wins by the majority rule (3
   // suppliers or more and 3 times as many as each other value) settles the model. `strict` / `loose` = all four on.
-  const FINAL = { self: true, one: true, tol: true, win: true };
+  const FINAL = { self: true, one: true, win: true };
   const selfBad = new Map();
   for (const uses of byModel.values()) for (const u of uses) { const c = SN.selfCheck(u.norm); selfBad.set(u, c?.bad ? c : null); }
   const conflictsOf = (key, get, opts) => {
@@ -100,7 +100,7 @@ export function measure(suppliers, { keepSamples = 0 } = {}) {
         for (const [s, vs] of by) for (const v of vs) { if (!vals.has(v)) vals.set(v, new Set()); vals.get(v).add(s); }
         distinct = vals.size; groups = [...vals].map(([v, ss]) => ({ value: v, suppliers: [...ss].sort() }));
       } else {
-        const t = C.tally(by, opts.tol && key === "disp" ? 0.02 : 0);
+        const t = C.tally(by);
         distinct = t.votes.size; win = opts.win ? t.win : null;
         groups = [...t.votes].map(([v, ss]) => ({ value: v, suppliers: [...ss].sort() }));
         if (t.split.length) split = t.split;
@@ -119,7 +119,7 @@ export function measure(suppliers, { keepSamples = 0 } = {}) {
     res.old = conflictsOf(key, gets.strict, {});
     res.steps = { old: res.old.conflicts, self: conflictsOf(key, gets.strict, { self: true }).conflicts,
       one: conflictsOf(key, gets.strict, { self: true, one: true }).conflicts,
-      tol: conflictsOf(key, gets.strict, { self: true, one: true, tol: true }).conflicts, win: res.strict.conflicts };
+      win: res.strict.conflicts };
     conflicts[key] = res;
   }
   const out = { keys: {}, power: { n: power.n, missingPct: {} }, conflicts };
