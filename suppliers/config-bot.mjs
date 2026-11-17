@@ -64,14 +64,16 @@ const SN = globalThis.GenbidSpecNorm;
 // is ambiguous / unreadable (number, kind, value), or lacks the condition the HSMT's limit is at (the load for fuel, the
 // distance for noise, open / canopy for size and weight, the stroke for bore) is not compared: "Chưa rõ" (a candidate stays,
 // with no points off). One that has them is compared in its own unit (no conversion beyond web/conversions.js: cc, cm, t
-// stay unconverted, so not compared with L, mm, kg). Off (default): every result is the same as before.
+// stay unconverted, so not compared with L, mm, kg). ON by default on every machine (Khoa 2026-11-15 "commit và apply",
+// 2026-11-17: set in code, the installer's user variable missed machines that had not run it again); GENBID_SPEC_NORM=0
+// turns it off (every result as before the layer).
 // By group, for Khoa to turn on one part at a time: GENBID_SPEC_NORM=fuel,disp,other ("1" = all). fuel: fuel consumption
 // (candidates, fuelChecks); disp: displacement and bore × stroke (candidates, makerSheetChecks); other: cylinders,
 // compression, weight, size, noise, engine power. specNormOn() with no group: any group on.
 const NORM_GROUPS = ["fuel", "disp", "other"];
 export const specNormOn = (group) => {
-  const v = String(process.env.GENBID_SPEC_NORM || "").trim();
-  if (!v || v === "0") return false;
+  const v = String(process.env.GENBID_SPEC_NORM ?? "1").trim() || "1";
+  if (v === "0") return false;
   const on = v === "1" ? NORM_GROUPS : v.split(/[,\s]+/);
   return group ? on.includes(group) : on.some((g) => NORM_GROUPS.includes(g));
 };
