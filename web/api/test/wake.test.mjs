@@ -81,7 +81,14 @@ test("Lần đầu: tạo sandbox persistent sin1 phiên 60 phút (Hobby: 45 ph�
   assert.equal(o.image, "vercel/sandbox/ubuntu"); assert.equal(o.runtime, undefined);
   assert.equal(o.snapshotExpiration, 365 * 24 * 3600e3);
   assert.equal(box.created[1].timeout, 45 * 60e3);
-  assert.match(startCmd().args[1], /setup-sandbox\.sh main .*&& touch .*sandbox-setup-done && .*start-bot\.sh/);
+  assert.match(startCmd().args[1], /command -v curl .*apt-get install .*curl .*setup-sandbox\.sh main && touch .*sandbox-setup-done; } > \$HOME\/setup\.log 2>&1 && .*start-bot\.sh/);
+});
+
+test("Đang có lượt cài chạy dở: không chạy thêm lượt thứ hai", async () => {
+  box = fakeBox({ installed: false }); S._setSandbox(box.Sandbox);
+  const run = box.Sandbox.get; box.Sandbox.get = async () => { const sb = await run(); const rc = sb.runCommand; sb.runCommand = async (p) => (p.args[1].includes("[s]etup-sandbox") ? { exitCode: 0, stdout: async () => "BUSY" } : rc(p)); return sb; };
+  assert.equal(await S.up({ env: ENV, log() {} }), "installing");
+  assert.equal(startCmd(), undefined);
 });
 
 test("Bot đã chạy trong sandbox: không chạy thêm; thiếu INGEST_TOKEN hoặc khoá Claude: báo lỗi, không đụng sandbox", async () => {

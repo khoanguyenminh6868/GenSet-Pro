@@ -91,8 +91,11 @@ export async function up({ env = process.env, log = console.log } = {}) {
   // Lệnh đầu tiên nối lại phiên nếu sandbox đang dừng.
   if ((await sh(sb, BOT_UP_CMD)) === "UP") return "running";
   const installed = (await sh(sb, `test -f ${SETUP_MARK} && echo DONE || echo TODO`)) === "DONE";
+  // Một lượt cài đang chạy (lần bật trước, hoặc cài tay): đừng chạy thêm lượt thứ hai (tranh khoá apt).
+  if (!installed && (await sh(sb, "pgrep -f '[s]etup-sandbox.sh' >/dev/null && echo BUSY || echo IDLE")) === "BUSY") return "installing";
+  // Image Ubuntu của Vercel tối giản: không có curl / git (thử thật 17/11). Mọi lỗi cài vào $HOME/setup.log.
   const steps = [
-    installed ? null : `curl -fsSL ${RAW("bot/sandbox/setup-sandbox.sh")} -o /tmp/setup-sandbox.sh && bash /tmp/setup-sandbox.sh main > $HOME/setup.log 2>&1 && touch ${SETUP_MARK}`,
+    installed ? null : `{ { command -v curl >/dev/null || { sudo apt-get update -qq && sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq --no-install-recommends curl ca-certificates git >/dev/null; }; } && curl -fsSL ${RAW("bot/sandbox/setup-sandbox.sh")} -o /tmp/setup-sandbox.sh && bash /tmp/setup-sandbox.sh main && touch ${SETUP_MARK}; } > $HOME/setup.log 2>&1`,
     "mkdir -p $HOME/genset-pro/genbid-bot-logs",
     "exec bash $HOME/genset-pro/GenSet-Pro/bot/sandbox/start-bot.sh >> $HOME/genset-pro/genbid-bot-logs/sandbox.out 2>&1 < /dev/null",
   ].filter(Boolean);
