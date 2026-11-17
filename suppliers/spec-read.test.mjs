@@ -215,3 +215,20 @@ test("engine and alternator are not swapped (acepow, cldj-fujian, longkai, tecno
   const p = rec([], ["| Engine Model: | 404A-22G1 | Alternator Model: | TAL-A40-F"], "Datasheet");
   assert.deepEqual([of(p, "engine"), of(p, "alternator")], [["404A-22G1"], ["TAL-A40-F"]]);
 });
+
+test("saneSpecs: figures the row's own output rules out are left out (rà soát 18/11/2026, mục A5)", () => {
+  const rec = (header, rows) => ({ id: "x", country: "CN", role: "genset_oem", status: "partial", names: { en: "X", brands: [] }, productLines: [], sources: [], specTables: [{ n: 1, title: "Diesel Generator", header, rows }] });
+  const sp = (r) => Object.fromEntries((CAT.fromSupplier(r)[0]?.specs || []).map((s) => [s.key, s.value]));
+  // eastern-lion-fuan n121: "Engine power (kW)" = 19408 on a 10 kW set; mamo-power: a real one stays
+  const H = ["| Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model"];
+  assert.equal(sp(rec(H, ["| GFS-P14 | 10 | 13 | 11 | 14 | 403A-15G1 | 19408 | El 164C"])).engPower, undefined);
+  assert.equal(sp(rec(H, ["| GFS-P14 | 10 | 13 | 11 | 14 | 403A-15G1 | 13.3 | El 164C"])).engPower, "13.3");
+  // taihai-taizhou n105: 62 under "g/kw.h" is no g/kWh
+  const T = ["| 机组型号 | 常用功率 (kVA) | 常用功率 (kW) | 发动机型号 | 缸数 | 燃油消耗量 (g/kw.h) | 重量 (kg)"];
+  const t = sp(rec(T, ["| TH-320GF | 400 | 320 | 2206A-E13TAG3 | 6 | 62 | 3385"]));
+  assert.equal(t.fuel, undefined);
+  assert.equal(t.weight, "3385");
+  assert.equal(sp(rec(T, ["| TH-320GF | 400 | 320 | 2206A-E13TAG3 | 6 | 205 | 3385"])).fuel, "205");
+  // a weight under 2,5 kg per kVA is no weight of the set
+  assert.equal(sp(rec(T, ["| TH-320GF | 400 | 320 | 2206A-E13TAG3 | 6 | 205 | 594"])).weight, undefined);
+});

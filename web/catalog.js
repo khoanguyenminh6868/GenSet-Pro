@@ -784,6 +784,36 @@
   // way must also be likely for its kind and for the genset's power (prime, else standby, kW): a value that is not
   // ends the walk there ("Engine power" over prime and standby put 1207 under "Fuel consumption").
   const nums = (v) => (String(v).replace(/(\d),(\d{3})/g, "$1$2").match(/\d+(?:\.\d+)?/g) || []).map(Number);
+  // Figures of a genset's row that its own output rules out are left out (thà thiếu còn hơn giữ số sai; Khoa duyệt
+  // 17/11/2026, rà soát lệch dòng cột mục A5): an engine power in kW over 3 times or under 0,9 times the set's kW
+  // (eastern-lion "Engine power (kW) = 19408" on a 10 kW set), a consumption written in g/kWh outside 150-300 (taihai
+  // "g/kw.h" = 62, a figure in L/h), a weight in kg under 2,5 kg per kVA (a current or a kW read as the weight).
+  // Only with the unit written in the cell or its title, and only against the row's own output.
+  function saneSpecs(specs, power) {
+    const P = Object.values(power || {}).filter(Boolean), kws = P.map((p) => p.kW ?? (p.kVA != null ? p.kVA * 0.8 : null)).filter((x) => x > 0);
+    if (!kws.length || !specs?.length) return specs;
+    const lo = Math.min(...kws), hi = Math.max(...kws);
+    const dec = (x) => +String(x).replace(",", ".");
+    return specs.filter((s) => {
+      const v = String(s.value).replace(/(\d),(\d{3})(?!\d)/g, "$1$2"), both = v + " " + (s.label || ""); // "1,097 kWm" is 1097
+      if (s.key === "engPower") {
+        if (!/kw/i.test(both) || /hp|ps\b|bhp|cv\b|马力/i.test(both)) return true;
+        const tagged = [...v.matchAll(/(\d+(?:[.,]\d+)?)\s*kw/gi)].map((m) => dec(m[1]));
+        const n = tagged.length ? tagged : /^[≈~]?\s*\d+(?:[.,]\d+)?$/.test(v.trim()) ? [dec(v.replace(/[≈~\s]/g, ""))] : [];
+        return !n.length || !(n.every((x) => x > hi * 3) || n.every((x) => x < lo * 0.9));
+      }
+      if (/^fuel(75|50)?$/.test(s.key)) {
+        if (!/g\s*\/\s*kw/i.test(both)) return true;
+        const m = v.match(/\d+(?:[.,]\d+)?/); if (!m) return true;
+        const x = dec(m[0]); return x >= 150 && x <= 300;
+      }
+      if (s.key === "weight") {
+        const m = v.replace(/(\d),(\d{3})\b/g, "$1$2").trim().match(/^[≈~]?\s*(\d+(?:\.\d+)?)\s*(kg|kgs)?$/i); if (!m) return true;
+        return +m[1] / (hi / 0.8) >= 2.5;
+      }
+      return true;
+    });
+  }
   function likely(key, v, kW) {
     const n = nums(v), x = n[0];
     if (x == null) return /^(gov|asp|emission|engType|excit|controller|cooling|start|insul|ip|phase)$/.test(key);
@@ -903,6 +933,7 @@
         for (const block of blocks) for (const c of fromLabelTable(block, { bareModel: blocks.length > 1, engineModel: s.role === "engine_maker" && !block.some((l) => /^(engine|alternator|发动机|柴油机|发电机)\s*(model|type|ref\.?|型号)|^power\s*model|动力型号|^(diesel\s*)?engine$|^(发动机|柴油机)$|^(generator|alternator)$|power factor|excitation|voltage regulat|发电机/i.test(cellsOf(l)[0] || "")) })) {
           const power = c.prime || c.standby || c.rated ? { ...(c.prime ? { prime: c.prime } : {}), ...(c.standby ? { standby: c.standby } : {}), ...(c.rated ? { rated: c.rated } : {}) } : null;
           const rowText = [c.genset, c.engine, c.alternator].filter(Boolean).join(" ");
+          c.specs = saneSpecs(c.specs, power);
           if (c.engine && isCode(c.engine.replace(/^[a-z]+\s+(?=\S*\d)/i, (m) => (brandIn(m, ENGINE_BRANDS).length ? "" : m))))
             out.push({ ...base, kind: "engine", model: c.engine.replace(/^(cummins|perkins|weichai|yuchai|deutz|volvo|baudouin|mtu|doosan|mitsubishi|sdec|kubota|yanmar|isuzu|ricardo|lovol|fawde)\s+/i, ""), makes: makesFor("engine", c.engine + " " + (c.engineBrand || ""), c.engineBrand), genset: c.genset || null, power, freq: tFreq, other: c.alternator || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows } });
           if (c.alternator && isCode(c.alternator.replace(/^[a-z-]+\s+(?=\S*\d)/i, "")))
@@ -950,7 +981,7 @@
         const stop = ei >= 0 ? ei : ai >= 0 ? ai : cells.length;
         const titled = engineTable ? null : titledPowers((t.header || []).map(cellsOf), cells, { gi, ei, ai }, title);
         const power = engineTable ? null : titled ? titled.power : powersIn(cells.slice(gi >= 0 ? gi + 1 : 0, stop), headerText + " " + title, true);
-        const common = { ...base, row: ri, line, genset: gi >= 0 ? cells[gi] : null, power, freq, header: t.header || [], specs: rowSpecs(t, cells, { ei, ai, gi, power }) };
+        const common = { ...base, row: ri, line, genset: gi >= 0 ? cells[gi] : null, power, freq, header: t.header || [], specs: saneSpecs(rowSpecs(t, cells, { ei, ai, gi, power }), power) };
         if (ei >= 0) out.push({ ...common, kind: "engine", model: tidyModel(cells[ei], ENGINE_BRANDS), makes: makesFor("engine", rowText, null), other: ai >= 0 ? cells[ai] : null, own: engineTable });
         if (ai >= 0) out.push({ ...common, kind: "alternator", model: tidyModel(cells[ai], ALT_BRANDS), makes: makesFor("alternator", rowText, null, cells[ai]), other: ei >= 0 ? cells[ei] : null });
       });
