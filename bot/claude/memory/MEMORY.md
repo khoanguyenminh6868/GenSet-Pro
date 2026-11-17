@@ -1,4 +1,5 @@
 - [Quy tắc theo luồng](quy-tac-luong.md) — quyết định của Khoa về Sync, chuỗi tự động, specs, phân tích; vì sao từng bị loại kỹ thuật
+- [Kiểm chéo toàn bộ](kiem-cheo-toan-bo.md) — sửa mã đọc dữ liệu: so mọi bản ghi, giải thích mọi dòng top 30, không lấy mẫu; script sẵn
 - [Quy trình git](git-workflow.md) — pull main trước, làm trong wt-*, tự merge PR (squash), tự xoá worktree của mình
 - [Vận hành bot](bot-ops.md) — sửa genbid-hsmt xong Backup + PR + restart task; thử ở genbid-test; trả bằng API key
 - [Bot dự phòng Vercel Sandbox](vercel-sandbox.md) — chạy theo nhu cầu khi máy Windows tắt; quyết định của Khoa, Gemini, việc chưa thử
