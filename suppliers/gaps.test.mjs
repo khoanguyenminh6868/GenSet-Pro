@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { gapReport, codesOfText, demandOf, reportText, BANDS } from "./gaps.mjs";
+import { gapReport, codesOfText, demandOf, reportText, BANDS, skipLine } from "./gaps.mjs";
 
 const hsmt = "Động cơ: Dung tích xi lanh ≥ 11 lít\nĐộng cơ: Số xi lanh: 6\nĐầu phát: Cấp cách điện: H\nKhả năng quá tải 10% trong 1 giờ\nTiêu hao nhiên liệu ở 100% tải ≤ 100 L/h";
 const docs = {
@@ -66,6 +66,12 @@ test("gapReport: NCC trong spec-none.json (đã tìm không ra) không vào hàn
   assert.ok(!r.queue.some((q) => q.supplierId === first));
   // Vẫn hiện trong danh sách hãng nên tìm (để biết vì sao thiếu), chỉ không bị gửi lại.
   assert.ok(r.targets.some((t) => t.supplierIds.includes(first)));
+});
+
+test("skipLine: in số hồ sơ thực bị bỏ do loại trừ / xoá mềm, và ghi rõ khi không đọc được danh sách", () => {
+  assert.equal(skipLine({ ids: new Set(["x", "y"]), ok: true }, 10, 8), "Bỏ NCC loại trừ / xoá mềm: 2 hồ sơ (2 id trong supexcl/supdeleted; còn 8/10 hồ sơ)");
+  assert.equal(skipLine({ ids: new Set(), ok: true }, 10, 10), "Bỏ NCC loại trừ / xoá mềm: 0 hồ sơ (0 id trong supexcl/supdeleted; còn 10/10 hồ sơ)");
+  assert.match(skipLine({ ids: new Set(), ok: false }, 10, 10), /không đọc được/);
 });
 
 test("gapReport: hãng thiếu website bị bỏ khỏi hàng chờ, hãng kế tiếp thế chỗ, và báo cáo ghi rõ hãng thiếu website", () => {
