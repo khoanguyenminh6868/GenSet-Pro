@@ -33,7 +33,7 @@
     [/\bavk\b/i, "AvK"], [/\blinz\b/i, "Linz Electric"], [/\bsincro\b/i, "Sincro"], [/\bweg\b/i, "WEG"],
   ];
   // Mã đầu phát của các dòng phổ biến: dùng để biết ô nào là đầu phát khi bảng có cả động cơ lẫn đầu phát.
-  const ALT_CODE = /^(UC[DIM]{0,2}\s?\d{3}|UCI\d|HC[IKM]?\s?\d{3}|PI\s?\d{3}|PE\s?\d{3}|S[0-9][LM]\d|P[0-9]\s?\d{2,}|LV[ISM]?\d{3}|TAL[\s-]?[A-Z]?\d{2}|LSA\s?\d{2}|LL\d{4}|ECP\s?\d{2}|ECO\s?\d{2}|NPE\s?\d{2}|MP[\s-]?\d{2,}|MX[\s-]?\d{3}|EG\s?\d{3}|1FC\d|FD\d[A-Z]|LTP\d{3}|BW(?:C|LV|P)?-?\d)\/?/i; // LTP / BW: landtop, bobig (alternator model right after the engine, no brand in the header)
+  const ALT_CODE = /^(UC[DIM]{0,2}\s?\d{3}|UCI\d|HC[IKM]?\s?\d{3}|PI\s?\d{3}|PE\s?\d{3}|S[0-9][LM]\d|P[0-9]\s?\d{2,}|LV[ISM]?\d{3}|TAL[\s-]?[A-Z]?\d{2}|LSA\s?\d{2}|LL\d{4}|ECP\s?\d{2}|ECO\s?\d{2}|NPE\s?\d{2}|MP[\s-]?\d{2,}|MX[\s-]?\d{3}|EG\s?\d{3}|1FC\d|FD\d[A-Z]|LTP\d{3}|BW(?:C|LV|P)?-?\d|BC[IA]?\s?1[0-9]{2}[A-Z])\/?/i; // LTP / BW: landtop, bobig (alternator model right after the engine, no brand in the header); BC164 / BC184: acepow's alternator stands BEFORE the engine ("| BC184E | ISUZU | JE493DB-04", read as the engine)
   // Series codes of Chinese alternator makers (Nianfeng NFS, Bobig BW, Jet-Power JET, Wintpower WT): such a model is not
   // the Stamford that the column title or page title of the table names ("Stamford UCDI274J" rows above, "with stamford
   // alternator" title): 2026-11-03 regression run showed "NIANFENG NFS5-G (Stamford)", "BW-404B (Stamford)".
@@ -532,12 +532,14 @@
     return out;
   }
   function fromLabelTable(lines0, { bareModel = false, engineModel = false } = {}) {
-    const lines = unpairDetails(lines0);
+    // "| Engine Model: | 404A-22G1 | Alternator Model: | TAL-A40-F" (acepow): two "label: | value" pairs on one line are two
+    // lines; read as one, the second label and its value became more values of the first (TAL-A40-F an engine).
+    const lines = unpairDetails(lines0).flatMap((l) => { const c = cellsOf(l); return l !== undefined && c.length === 4 && /[:：]$/.test(c[0]) && /[:：]$/.test(c[2]) ? [`| ${c[0]} | ${c[1]}`, `| ${c[2]} | ${c[3]}`] : [l]; });
     // A "Details" sheet names its genset in the heading row: a bare "Model" whose part heading the page lost
     // (depco "| Model | 4B3.9-G1 | Fuel | Diesel" with no "Details Engine" above) is the engine or the alternator.
     // The engine comes first on these sheets: the first bare "Model" is the engine, the next the alternator (an
     // alternator-like code is no sign here: Mitsubishi's engine "S4L2" looks like a Stamford frame).
-    const details = lines !== lines0;
+    const details = unpairDetails(lines0) !== lines0;
     if (details) bareModel = true;
     const cols = [];
     // The first line naming a value wins: single-model pages often list related models further down.
@@ -592,6 +594,11 @@
       }
       if (stack === 2 && c.length === 2 && isCode(c[0]) && isCode(c[1])) { put(0, "engine", c[0]); put(0, "alternator", c[1]); stack = 0; continue; }
       stack = 0;
+      // A two-column PDF sets a part heading in front of the other column's line ("| Engine-SDEC | Power factor | 0.8",
+      // longkai): the heading starts the part, the rest is read as a line. Without it the engine's "Model" below was
+      // read under "Alternator" (rà soát 18/11/2026: 136 engines read as alternators).
+      const lead = c.length >= 3 && c[0].match(/^(engine|alternator)\s*[-–]\s*[a-z][a-z ]*$/i);
+      if (lead) { part = lead[1].toLowerCase(); c = c.slice(1); }
       const head = c.length === 1 ? headingOf(c[0]) : undefined;
       if (head !== undefined) { if (head !== "keep") part = head; continue; }
       // "| Noise(LP1m): 100dB(A)": label and value in one cell.
@@ -604,7 +611,12 @@
       const L = label.toLowerCase();
       const bare = L.replace(/[:：\s]+$/, "");
       if (M && !MODEL_ROW.test(bare) && c.slice(1).filter((v) => v && !UNIT_CELL.test(v)).length !== M) continue;
-      if (part && /^(model|model\s*no\.?|type\s*model|型号)$/.test(bare)) { if (isCode(vals[0])) put(0, part === "engine" ? "engine" : "alternator", vals[0]); continue; }
+      if (part && /^(model|model\s*no\.?|type\s*model|型号)$/.test(bare)) {
+        // "| Model | LONGKAI | LK444E": the make, then the model (longkai datasheets).
+        const mv = vals.length === 2 && !/\d/.test(vals[0]) && /^[a-z][a-z .&-]+$/i.test(vals[0]) && isCode(vals[1]) ? vals[1] : vals[0];
+        if (isCode(mv)) put(0, part === "engine" ? "engine" : "alternator", mv);
+        continue;
+      }
       if (bareModel && !part && /^(model|model\s*no\.?|型号)$/.test(bare)) { if (isCode(vals[0])) put(0, (details ? cols[0]?.engine != null : ALT_CODE.test(vals[0])) ? "alternator" : "engine", vals[0]); continue; }
       // A sheet with no part headings (himoinsa, hipower: "Rated Engine Output: …", "Model: 4TNV88BGGEH", "Engine Type:
       // 4-stroke diesel" … "Model: S1L2.J1"): a bare "Model" beside an engine's line is the engine, not the genset;
@@ -902,12 +914,19 @@
       const hasAltCol = ALT_LBL.test(headerText) || hAlt.length > 0;
       // An engine maker's own engine table: the first cell of each row is the engine.
       const engineTable = s.role === "engine_maker" && !GENSET_LBL.test(headerText) && !/genset|generator set|机组/i.test(cellsOf(t.header?.[0] || "")[0] || "");
+      const altFirst = (t.header || []).map(cellsOf).some((h) => {
+        const a = h.map((x, i) => (altTitle(x) && !GENSET_LBL.test(x) ? i : -1)).filter((i) => i >= 0), e = h.map((x, i) => (engTitle(x) ? i : -1)).filter((i) => i >= 0);
+        return a.length === 1 && e.length === 1 && a[0] < e[0] && a[0] > h.findIndex((x) => x);
+      });
       t.rows.forEach((line, ri) => {
         // A note after the code ("1104C-44TAG2 made in china", "4BTA3.9-G2 （ QC58/67E ）") makes the cell
         // fail isCode and the next code (the alternator) would be read as the engine: drop the note.
         const cells = cellsOf(line).map((c) => c.replace(/\s+made in [a-z ]+$|\s*[（][^）]*[）]\s*$/i, "").trim());
         const codes = cells.map((c, i) => (isCode(c) || brandedCode(c, ENGINE_BRANDS) || brandedCode(c, ALT_BRANDS) ? i : -1)).filter((i) => i >= 0);
         if (!codes.length) return;
+        // A set of two engines ("| 1100 | 1000 | … | 2 x TAD1641GE | … | SCP8610", tecnogen): the cell is no code, the
+        // controller was read as the engine. The set's output is not one engine's: the row gives no engine at all.
+        if (cells.some((c) => { const m = c.match(/^[2-4]\s*[x×]\s*(\S+)$/i); return m && isCode(m[1]); })) return;
         const rowText = cells.join(" ");
         const freq = freqIn(rowText) || tFreq;
         let gi = -1, ei = -1, ai = -1;
@@ -919,7 +938,12 @@
           if (hasAltCol && alt.length) ai = alt[0];
           if (hasEngineCol) ei = rest.find((i) => i !== ai && !ALT_CODE.test(cells[i])) ?? -1;
           if (hasAltCol && ai < 0 && ei >= 0) { const after = rest.filter((i) => i > ei); if (after.length === 1) ai = after[0]; }
-          if (!hasAltCol && alt.length && hasEngineCol && ei >= 0) ai = alt.find((i) => i > ei) ?? -1;
+          if (!hasAltCol && alt.length && hasEngineCol && ei >= 0) ai = alt.find((i) => i > ei) ?? -1; // only after the engine: one before it, under no title, may be a Doosan "P158LE" or a Mitsubishi "S4L2" (tried 18/11/2026: 6 suppliers got engines as alternators)
+          // The header names both, the alternator's title before the engine's ("| Alternator | Engine model", acepow;
+          // "发电机型号 | 发动机型号", cldj-fujian), and the row has just these two codes after the genset: they stand in
+          // the order of the titles (rà soát 18/11/2026: "APS164B | YD380D" was read engine, then alternator). A title
+          // of the genset ("发电机组型号", a "Generator Model" in the first column) is not the alternator's.
+          if (altFirst && rest.length === 2 && ei === rest[0] && ai === rest[1]) { ei = rest[1]; ai = rest[0]; }
           // With no genset model in front, a lone code is taken as the engine only in a table about engines.
           if (gi < 0 && ei === codes[0] && !hasEngineCol) ei = -1;
         }

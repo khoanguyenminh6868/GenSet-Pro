@@ -10,79 +10,79 @@
  },
  "keys": {
   "fuel": {
-   "n": 10830,
+   "n": 10886,
    "valuePct": 100,
    "missingPct": {
-    "load": 78.5,
-    "unit": 9,
+    "load": 76.7,
+    "unit": 10.1,
     "number": 0,
     "ambiguous": 0.2
    }
   },
   "fuel75": {
-   "n": 908,
+   "n": 1022,
    "valuePct": 99.8,
    "missingPct": {
-    "unit": 27,
+    "unit": 33.9,
     "value": 0.2
    }
   },
   "fuel50": {
-   "n": 568,
-   "valuePct": 99.6,
+   "n": 683,
+   "valuePct": 99.7,
    "missingPct": {
-    "unit": 42.3,
-    "value": 0.4
+    "unit": 50.1,
+    "value": 0.3
    }
   },
   "noise": {
-   "n": 736,
+   "n": 737,
    "valuePct": 100,
    "missingPct": {
-    "distance": 2.3,
+    "distance": 2.6,
     "ambiguous": 0.4,
     "unit": 0.4
    }
   },
   "dims": {
-   "n": 21632,
+   "n": 21990,
    "valuePct": 100,
    "missingPct": {
-    "order": 56.3,
-    "enclosure": 87.3,
-    "unit": 32.4,
-    "ambiguous": 0.3
+    "order": 55.8,
+    "enclosure": 87.4,
+    "unit": 32.3,
+    "ambiguous": 0.4
    }
   },
   "weight": {
-   "n": 18140,
+   "n": 18300,
    "valuePct": 100,
    "missingPct": {
     "enclosure": 92.1,
-    "basis": 83.4,
-    "unit": 5.4,
+    "basis": 83.5,
+    "unit": 6.1,
     "ambiguous": 0.1
    }
   },
   "disp": {
-   "n": 11475,
+   "n": 11335,
    "valuePct": 99.3,
    "missingPct": {
     "number": 0.7,
-    "unit": 1.7
+    "unit": 1.8
    }
   },
   "bore": {
-   "n": 7850,
+   "n": 7849,
    "valuePct": 100,
    "missingPct": {
-    "unit": 18.5,
-    "ambiguous": 0.1,
-    "stroke": 5.4
+    "stroke": 5.4,
+    "unit": 20.5,
+    "ambiguous": 0.1
    }
   },
   "cyl": {
-   "n": 14651,
+   "n": 14757,
    "valuePct": 100,
    "missingPct": {
     "layout": 69.5,
@@ -90,93 +90,93 @@
    }
   },
   "compr": {
-   "n": 2122,
+   "n": 2216,
    "valuePct": 100,
    "missingPct": {}
   },
   "speed": {
-   "n": 3939,
+   "n": 3920,
    "valuePct": 100,
    "missingPct": {
-    "unit": 11.1,
+    "unit": 15.1,
     "kind": 0
    }
   },
   "voltage": {
-   "n": 4338,
+   "n": 4839,
    "valuePct": 100,
    "missingPct": {
-    "unit": 8
+    "unit": 10.4
    }
   },
   "phase": {
-   "n": 2933,
+   "n": 3593,
    "valuePct": 99.9,
    "missingPct": {
     "value": 0.1
    }
   },
   "pf": {
-   "n": 1175,
+   "n": 1474,
    "valuePct": 100,
    "missingPct": {
-    "ambiguous": 1.8
+    "ambiguous": 1.4
    }
   },
   "tank": {
-   "n": 1572,
-   "valuePct": 96.7,
+   "n": 1719,
+   "valuePct": 97.1,
    "missingPct": {
-    "unit": 16.9,
-    "value": 3.3
+    "unit": 24.5,
+    "value": 2.9
    }
   },
   "engPower": {
-   "n": 5705,
+   "n": 5880,
    "valuePct": 100,
    "missingPct": {
-    "speed": 61.7,
-    "ambiguous": 1.8,
+    "speed": 60.5,
+    "ambiguous": 1.6,
     "unit": 1.3
    }
   },
   "emission": {
-   "n": 2344,
-   "valuePct": 99.7,
+   "n": 2336,
+   "valuePct": 99.9,
    "missingPct": {
-    "scale": 43,
-    "value": 0.3
+    "scale": 43.5,
+    "value": 0.1
    }
   }
  },
  "power": {
-  "n": 46564,
+  "n": 46482,
   "missingPct": {
-   "rating": 13,
+   "rating": 12.7,
    "freq": 72.8,
-   "value": 26
+   "value": 11
   }
  },
  "conflicts": {
   "cyl": {
-   "before": 138,
-   "strict": 24,
-   "loose": 24
+   "before": 143,
+   "strict": 25,
+   "loose": 25
   },
   "disp": {
-   "before": 384,
-   "strict": 197,
-   "loose": 195
+   "before": 386,
+   "strict": 199,
+   "loose": 197
   },
   "bore": {
-   "before": 166,
+   "before": 177,
    "strict": 36,
-   "loose": 45
+   "loose": 51
   },
   "compr": {
-   "before": 55,
-   "strict": 33,
-   "loose": 33
+   "before": 67,
+   "strict": 42,
+   "loose": 42
   }
  }
 }

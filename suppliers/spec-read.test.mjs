@@ -189,3 +189,29 @@ test("label sheet: the kVA of the genset and the kW of its engine, on two lines,
   assert.deepEqual(pw(["| Model | LG250SC", "| Rated prime power | kva | 312.5", "| Engine Model | SC12E420D2", "| Prime power | KW | 280"]).prime, { kVA: 312.5 });
   assert.deepEqual(pw(["| Model | LG250SC", "| Rated prime power | kva | 312.5", "| Engine Model | SC12E420D2", "| Prime power | KW | 250"]).prime, { kW: 250, kVA: 312.5 });
 });
+
+test("engine and alternator are not swapped (acepow, cldj-fujian, longkai, tecnogen; rà soát 18/11/2026)", () => {
+  const rec = (header, rows, title = "Diesel Generator") => ({ id: "x", country: "CN", role: "genset_oem", status: "partial", names: { en: "X", brands: [] }, productLines: [], sources: [], specTables: [{ n: 1, title, header, rows }] });
+  const of = (r, kind) => CAT.fromSupplier(r).filter((o) => o.kind === kind).map((o) => o.model);
+  // acepow-fuan n109: its own alternator BC184E stands before the engine
+  const a = rec(["| 3Phases/50Hz/400V/PF=0.8 | | Brand | Engine", "| Generating Sets | Acepow | Model | Prime | Standby"], ["| 18.0 | 22.5 | 19.8 | 24.8 | BC184E | ISUZU | JE493DB-04 | 21 | 23"]);
+  assert.deepEqual([of(a, "engine"), of(a, "alternator")], [["JE493DB-04"], []]); // no alternator title: BC184E is left out, not read as the engine
+  // acepow-fuan n114: the titles give the order, "Alternator" before "Engine model"
+  const b = rec(["| Genset Model | Frequency | Kw | Kva | Alternator | Engine model | Rated Power", "| Rated | Standby | Rated | Standby | Model"], ["| APYD-9 | 60HZ | 9 | 9.9 | 11.3 | 12.4 | APS164B | YD380D | 12KW/1800rpm"]);
+  assert.deepEqual([of(b, "engine"), of(b, "alternator")], [["YD380D"], ["APS164B"]]);
+  // cldj-fujian n101: 发电机型号 before 发动机型号
+  const c = rec(["| 机组型号 | 输出功率 kw KVA | 电流（A） | 发电机型号 | 发动机型号 | 缸径(mm) *行程(mm) | 缸数"], ["| CLS-80 | 60/80 | 108 | CLG-224F | SC4H95D2 | 105*124 | 4"]);
+  assert.deepEqual([of(c, "engine"), of(c, "alternator")], [["SC4H95D2"], ["CLG-224F"]]);
+  // the genset title is not the alternator title: engine first stays
+  const g = rec(["| 发电机组型号 | 发动机型号 | 发电机型号"], ["| CLS-80 | SC4H95D2 | CLG-224F"]);
+  assert.deepEqual([of(g, "engine"), of(g, "alternator")], [["SC4H95D2"], ["CLG-224F"]]);
+  // tecnogen: a set of two engines gives no engine (the controller SCP8610 was read as one)
+  const t = rec(["| Model | kVA LTP | kVA PRP | Engine | Controller"], ["| VO1100TSX-C20 | 1100 | 1000 | 2 x TAD1641GE | SCP8610"]);
+  assert.deepEqual(of(t, "engine"), []);
+  // longkai datasheet (two-column PDF): "Engine-SDEC" in front of another line starts the engine part
+  const l = rec([], ["| Model | LG250SC", "Alternator", "| Rated prime power | kva | 312.5", "| Model | LONGKAI | LK444E", "| Engine-SDEC | Power factor | 0.8", "| Model | SC12E420D2", "| Prime power | KW | 280"], "Datasheet");
+  assert.deepEqual([of(l, "engine"), of(l, "alternator")], [["SC12E420D2"], ["LK444E"]]);
+  // acepow: two "label: | value" pairs on one line
+  const p = rec([], ["| Engine Model: | 404A-22G1 | Alternator Model: | TAL-A40-F"], "Datasheet");
+  assert.deepEqual([of(p, "engine"), of(p, "alternator")], [["404A-22G1"], ["TAL-A40-F"]]);
+});
