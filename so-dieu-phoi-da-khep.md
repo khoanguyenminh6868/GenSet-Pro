@@ -194,3 +194,4 @@ Cập nhật 18:25Z 12/11: đăng kết quả check lại của IB2600601812 (co
 - 17/11/2026 · Kiểm bằng mắt trên Vercel: Khoa bảo không cần làm nữa
 - 17/11/2026 · Log lượt thật: #605 giữ mức xếp cũ ĐÚNG (IB2600603983), #547 savePages ĐÚNG (IB2600594596), #573 gaps.mjs chạy không báo lỗi lọc (workflow 16/11, không có số NCC bị loại) · `nghiem-thu\log-bot-605-547-573.md`
 - 17/11/2026 · depco-power phân loại: 0 ca code đọc sai; 160 nguồn lệch (47 có số đông thắng), 134 không do depco, 41 làm tròn; 4 đề xuất sửa · `nghiem-thu\depco-phan-loai.md`
+- 17/11/2026 · Soát ngưỡng HSMT đợt 3: code đọc thêm tiêu hao / số xi lanh, thiếu 664 → 274, lệch 9 (đều lỗi Phân tích); gói nhiều cỡ đọc theo từng cỡ (nhánh ≥ main mọi cỡ); sửa 'S6 xy lanh' OCR (IB2400313681). Điều phối kiểm: 22/22 mục mới đúng, so main↔nhánh 1.499 gói. Khoa: không chạy lại Gợi ý / Phân tích gói cũ · #850 (cd8a3221) · `nghiem-thu\soat-nguong-3.md`

@@ -69,7 +69,7 @@ Dòng nguồn ghi rõ nhà máy TQ luôn thắng mặc định (vd. "Stamford (C
 
 ---
 
-## 4. Soát ngưỡng HSMT do code đọc trên toàn bộ kho — XONG #844 (17/11; còn "thiếu" 664 chỉ đếm, `nghiem-thu\soat-nguong-2.md`)
+## 4. Soát ngưỡng HSMT do code đọc trên toàn bộ kho — XONG #844 + #850 (17/11; "thiếu" 664 → 274, `nghiem-thu\soat-nguong-2.md`, `soat-nguong-3.md`)
 
 - Khoa 17/11 (ghi từ KAYENGRAM): `node suppliers\hints-audit.mjs --texts "C:\Projects\GenSet Pro\genbid-work\specs" --out "C:\Projects\GenSet Pro\genbid-work\dieu-phoi\nghiem-thu\soat-nguong.json"`. Không tốn agent, không ghi web. Chạy trên máy có `genbid-work\specs` đầy đủ.
 - Mục "LỆCH": mở dòng HSMT, xem code hay Phân tích sai; code sai thì sửa `powerRead` / `engineMins` + ca test dòng thật. "THIẾU" chỉ đếm.
