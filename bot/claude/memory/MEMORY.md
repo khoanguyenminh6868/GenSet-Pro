@@ -1,6 +1,7 @@
 - [Quy tắc theo luồng](quy-tac-luong.md) — quyết định của Khoa về Sync, chuỗi tự động, specs, phân tích; vì sao từng bị loại kỹ thuật
 - [Quy trình git](git-workflow.md) — pull main trước, làm trong wt-*, tự merge PR (squash), tự xoá worktree của mình
 - [Vận hành bot](bot-ops.md) — sửa genbid-hsmt xong Backup + PR + restart task; thử ở genbid-test; trả bằng API key
+- [Bot dự phòng Vercel Sandbox](vercel-sandbox.md) — chạy theo nhu cầu khi máy Windows tắt; quyết định của Khoa, Gemini, việc chưa thử
 - [Điều phối, giao task theo model](orchestrator-delegate-by-model.md) — phiên chính là kỹ sư trưởng; đầu phiên đọc `genbid-work\dieu-phoi\so-dieu-phoi.md`
 - [Gợi ý cấu hình](config-suggest.md) — quy tắc Khoa chốt về xếp hạng, xuất xứ, nguồn thông số; nguồn datasheet hãng
 - [Giá gợi ý](bidprice-suggest.md) — quy tắc chọn gói tương tự, báo giá/giá vốn, số liệu thị trường, việc chờ quyết
