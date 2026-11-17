@@ -7,7 +7,6 @@ Viết gọn lại 13/11/2026 (sáng, giờ VN). Cập nhật 16/11: #786 (nối
 ## Đang chạy
 | Việc | Session (id để báo về / hỏi) | Model | Chờ gì |
 |---|---|---|---|
-| Việc 3: model rác trong danh mục (`chi-tiet-viec-mo.md`) | `local_6d014eca-cff5-474b-8d53-185cfb0f6e6d` (model-rac, 17/11) | Sonnet | PR draft + `nghiem-thumodel-rac.md`; xong thì mở sửa depco |
 | Ghép đầu phát ghi kèm hãng ở `candidates` | `local_0436fd67-7738-43be-b233-530deb631164` (ghep-dau-phat) | Sonnet | PR draft + `nghiem-thughep-dau-phat.md` |
 | Cho `catalog.js` đọc `manufacturing[]` thay `MADE_DEFAULT` cứng (#862) | Sau model rác + depco (cùng catalog.js) | Sonnet |
 ha-may-hang.md` |
@@ -17,7 +16,7 @@ ha-may-hang.md` |
 | Việc | Ghi chú | Model |
 |---|---|---|
 | Sửa 10 ca `todo` trong `suppliers/domain.test.mjs` (PR #622; bảng ở `nghiem-thu\test-review.md`) | Chờ Khoa duyệt; sửa xong bỏ `todo` | Sonnet |
-| Mâu thuẫn số liệu depco-power: phân loại xong (`nghiem-thu\depco-phan-loai.md`: 0 lỗi đọc). Sửa theo 4 đề xuất: (1) kiểm nội bộ xi lanh × bore × hành trình ↔ dung tích lệch >5% → dòng "tự mâu thuẫn" không đếm; (2) một NCC một phiếu mỗi trường; (3) `quality --check` bỏ ca đã có số đông thắng; (4) dung sai dung tích 2% | Sửa `catalog.js` / `quality.mjs`: SAU việc 1 và 3. Đo quality + top 30 trước / sau | Sonnet |
+| Mâu thuẫn số liệu depco-power: phân loại xong (`nghiem-thu\depco-phan-loai.md`: 0 lỗi đọc). Sửa theo 4 đề xuất: (1) kiểm nội bộ xi lanh × bore × hành trình ↔ dung tích lệch >5% → dòng "tự mâu thuẫn" không đếm; (2) một NCC một phiếu mỗi trường; (3) `quality --check` bỏ ca đã có số đông thắng; (4) dung sai dung tích 2% | Sửa `catalog.js` / `quality.mjs`: việc 1 (#849) và 3 (#871) đã merge → MỞ ĐƯỢC (chưa mở: phiên chưa khởi động được qua Remote Control). Đo quality + top 30 trước / sau | Sonnet |
 
 ## Chờ Khoa
 - Bot dự phòng Vercel Sandbox theo nhu cầu (#835 #852 #857 #858 #859 #860 #863 #864 #865 #867 #868, 17/11): ĐÃ BẬT, CHẠY THẬT được (image Ubuntu, snapshot giữ 1 năm, nối lại < 1 s, tự dừng khi rảnh 20 phút). Đã thử thật: Sync, tải HSMT qua Agent/Wine, đăng tệp, Phân tích, dịch (Claude; Gemini: Khoa đăng nhập agy trong sandbox 17/11, gọi thử OK), OCR, .doc. Đã thử thêm (17/11 tối): Gợi ý cấu hình IB2600612866 (11 phút, 5 cấu hình; tóm tắt ghi "6" — chưa rõ); máy Windows bật lại giữa lúc sandbox làm dở → máy nhường, sandbox làm xong rồi tự dừng sau 44 s. CHƯA thử: Gợi ý giá, Đối chiếu HSDT/TLKT, Tạo HSDT, Tìm thông số NCC (thiếu FIRECRAWL_KEY trên Vercel), nút Lấy tệp bấm trực tiếp (sau #863/#864), một bản dịch thật qua Gemini. Còn: sổ tiền API tách đôi giữa 2 máy; Khoa tự xoá 7 secret GitHub tạo 17/11 + biến Vercel `GEMINI_OAUTH_CREDS` (hệ thống chặn Claude xoá; lệnh trong phiên) và thu hồi token Vercel / PAT. Tác vụ "GenBid Bot" bật bằng Start-ScheduledTask từ phiên Claude bị treo (powershell không chạy dòng nào, 2 lần); bot đang chạy bằng Start-Process (không thuộc tác vụ), lần đăng nhập sau tác vụ tự chạy.

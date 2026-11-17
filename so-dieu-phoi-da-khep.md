@@ -199,3 +199,4 @@ Cập nhật 18:25Z 12/11: đăng kết quả check lại của IB2600601812 (co
 - 17/11/2026 · gaps.mjs in số NCC bị bỏ do loại trừ (kiểm #573 ở lượt thứ Hai 23/11) · #861 · `nghiem-thu\gaps-dem.md`
 - 17/11/2026 · Nơi sản xuất của hãng đầu phát / BĐK vào hồ sơ (`manufacturing[]`, 7 hồ sơ, 10 trang nguồn, verify câu trích) · #862 · `nghiem-thu\nha-may-hang.md`
 - 17/11/2026 · Hồ sơ hãng BĐK Datakom, DEIF, Woodward + `manufacturing[]` (435 → 438 hồ sơ, verify 0 lỗi) · #866 · `nghiem-thu\ho-so-bdk.md`
+- 17/11/2026 · Model rác trong danh mục: động cơ 7.142 → 6.898 (186 ô rác, 70 mã đầu phát LTP/BW chuyển sang đầu phát, 0 loại nhầm); top 30 đổi 681/1.093 lượt chủ yếu do dòng bobig nay có đầu phát BW đúng cột · #871 (947f0d51) · `nghiem-thu\model-rac.md`

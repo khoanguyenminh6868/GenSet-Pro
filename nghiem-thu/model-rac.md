@@ -1,6 +1,6 @@
 # Nghiệm thu: "model" rác trong danh mục (việc 3)
 
-- PR (draft, chưa merge): xem cuối tệp (cập nhật sau khi mở). Nhánh `model-rac`, worktree `wt-model-rac`, đã rebase lên origin/main d1079f05.
+- PR (draft, chưa merge): https://github.com/khoanguyenminh6868/GenSet-Pro/pull/871. Nhánh `model-rac`, worktree `wt-model-rac`, đã rebase lên origin/main d1079f05.
 - Tệp đổi: `web/catalog.js`, `suppliers/spec-read.test.mjs` (+2 test), `web/CLAUDE.md` (+1 bẫy).
 
 ## Sửa gì
