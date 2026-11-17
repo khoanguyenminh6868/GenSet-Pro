@@ -546,8 +546,7 @@
     // kW = kVA. Else the later line is another machine's ("Prime Power: 312.5KVA" of the genset, then "Prime power |
     // KW | 280" of its engine, longkai: 312,5 kVA / 280 kW; rà soát 18/11/2026) and is left out.
     const merge = (j, k, v) => {
-      const c = (cols[j] = cols[j] || {}), cur = c[k] || {}, nx = { ...v, ...cur };
-      const cross = (cur.kVA != null) !== (cur.kW != null) && nx.kVA != null && nx.kW != null;
+      const c = (cols[j] = cols[j] || {}), cur = c[k] || {}, nx = { ...v, ...cur };      const cross = (cur.kVA != null) !== (cur.kW != null) && nx.kVA != null && nx.kW != null;
       if (cross && nx.kW !== nx.kVA && Math.abs(nx.kW - 0.8 * nx.kVA) > Math.max(0.5, 0.02 * nx.kVA)) return;
       c[k] = nx;
     };

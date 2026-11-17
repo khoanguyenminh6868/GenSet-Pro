@@ -174,3 +174,18 @@ test("walkedSpecs: a power title over two cells (kVA | kW) does not shift the ti
   assert.equal(g.speed, undefined);
   assert.equal(g.weight, undefined);
 });
+
+test("label sheet with no part headings (himoinsa, hipower): the Model beside the engine lines is the engine, Starting power is not the output (rà soát 18/11/2026)", () => {
+  const rec = (rows) => ({ id: "x", country: "CN", role: "genset_oem", status: "partial", names: { en: "X", brands: [] }, productLines: [], sources: [], specTables: [{ n: 1, title: "16.3 kVA Generator set Diesel HYW-20 M5 Soundproof", header: [], rows }] });
+  const out = CAT.fromSupplier(rec(["Rated Engine Output: 16,4kW prp ; 18kW standby", "Model: 4TNV88BGGEH", "Engine Type: 4-stroke diesel", "Bore and Stroke: 88 x 90 mm", "Displacement: 2,19 L", "Fuel Consumption 100% PRP: 4,27 l/h", "Model: S1L2.J1", "Cooling Air Flow: 0,8 m3/s", "Starting power: 1,4 kW", "Starting power: 1,9 CV", "Fuel Tank: 100 L", "Weight with liquids in radiator and sump: 818 kg"]));
+  assert.deepEqual(out.map((o) => [o.kind, o.model, o.genset, o.power]), [["engine", "4TNV88BGGEH", null, null], ["alternator", "S1L2.J1", null, null]]);
+  // an engine named with its cycle keeps its model (hosem-power)
+  const h = CAT.fromSupplier({ ...rec(["| Engine Model | Yanmar 4TNV88-GLE 4 Cycle", "| Prime Power | 20kVA 16kW"]), specTables: [{ n: 1, title: "20kVA Yanmar generator", header: [], rows: ["| Engine Model | Yanmar 4TNV88-GLE 4 Cycle", "| Alternator Model | S0L2-P1", "| Prime Power | 20kVA"] }] });
+  assert.ok(h.some((o) => o.other === "Yanmar 4TNV88-GLE 4 Cycle" || /4TNV88-GLE/.test(o.model)));
+});
+test("label sheet: the kVA of the genset and the kW of its engine, on two lines, are not one output (longkai, rà soát 18/11/2026)", () => {
+  const rec = (rows) => ({ id: "x", country: "CN", role: "genset_oem", status: "partial", names: { en: "X", brands: [] }, productLines: [], sources: [], specTables: [{ n: 1, title: "Datasheet", header: [], rows }] });
+  const pw = (rows) => CAT.fromSupplier(rec(rows))[0]?.power;
+  assert.deepEqual(pw(["| Model | LG250SC", "| Rated prime power | kva | 312.5", "| Engine Model | SC12E420D2", "| Prime power | KW | 280"]).prime, { kVA: 312.5 });
+  assert.deepEqual(pw(["| Model | LG250SC", "| Rated prime power | kva | 312.5", "| Engine Model | SC12E420D2", "| Prime power | KW | 250"]).prime, { kW: 250, kVA: 312.5 });
+});
