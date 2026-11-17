@@ -215,7 +215,7 @@ test("engineLists: dung tích xi lanh tối thiểu và số xi lanh tối thi�
 });
 test("engineLists: dung tích tối đa (HSMT viết quanh một động cơ) vào dmax, không vào tối thiểu (Khoa 03/11)", () => {
   const r = C.engineLists("Dung tích xi lanh ≤ 15,2 L");
-  assert.deepEqual(r, { disp: [], dmax: [15.2], cyl: [] });
+  assert.deepEqual(r, { disp: [], dmax: [15.2], cyl: [], cylBare: [] });
 });
 test("engineLists: 'Tổng dung tích làm mát ≥ 55 L' là bình làm mát, không phải dung tích xi lanh (rà soát 12/11)", () => {
   assert.deepEqual(C.engineLists("Tổng dung tích làm mát ≥ 55 L").disp, []);
@@ -236,8 +236,8 @@ test("engineLists: phần dành cho thiết bị khác (xe nâng) bị bỏ, ch�
   assert.deepEqual(C.engineLists(t).cyl, [6]);
 });
 test("engineLists: văn bản rỗng / không có thông số", () => {
-  assert.deepEqual(C.engineLists(""), { disp: [], dmax: [], cyl: [] });
-  assert.deepEqual(C.engineLists(null), { disp: [], dmax: [], cyl: [] });
+  assert.deepEqual(C.engineLists(""), { disp: [], dmax: [], cyl: [], cylBare: [] });
+  assert.deepEqual(C.engineLists(null), { disp: [], dmax: [], cyl: [], cylBare: [] });
 });
 
 // ---------- powerRead ----------
