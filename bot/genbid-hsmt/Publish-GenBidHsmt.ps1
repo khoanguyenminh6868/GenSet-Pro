@@ -14,8 +14,11 @@ param(
     [int]$MaxMB = 200,
     [string]$Reason = 'Không tải được tệp nào từ muasamcong.',
     [string]$Repo = 'khoanguyenminh6868/GenSet-Pro',
-    [string]$Clone = 'C:\Projects\GenSet Pro\hsmt-inbox',
-    [string]$StateFile = 'C:\Projects\GenSet Pro\.hsmt-worker-state.json',
+    # Linux (sandbox Vercel, 2026-11-17): GENBID_ROOT hoặc ~/genset-pro, như GenBid-Bot.ps1 (trước đây ghi cứng ổ C: nên
+    # bot sandbox tải được tệp mà không ghi được danh sách vào hsmt-inbox).
+    # [IO.Path]::Combine chỉ ghép chuỗi (Join-Path trên Linux báo lỗi với ổ C: khi test ép GENBID_OS=windows).
+    [string]$Clone = [IO.Path]::Combine($(if ($env:GENBID_ROOT) { $env:GENBID_ROOT } elseif (($env:GENBID_OS -eq 'linux' -or (-not $env:GENBID_OS -and $PSVersionTable.Platform -eq 'Unix'))) { Join-Path $HOME 'genset-pro' } else { 'C:\Projects\GenSet Pro' }), 'hsmt-inbox'),
+    [string]$StateFile = [IO.Path]::Combine($(if ($env:GENBID_ROOT) { $env:GENBID_ROOT } elseif (($env:GENBID_OS -eq 'linux' -or (-not $env:GENBID_OS -and $PSVersionTable.Platform -eq 'Unix'))) { Join-Path $HOME 'genset-pro' } else { 'C:\Projects\GenSet Pro' }), '.hsmt-worker-state.json'),
     # Chuyển gói cũ sang release: không commit, không ghi state.
     [switch]$NoCommit,
     # Sau khi có tệp: gửi yêu cầu Phân tích (analysisreq) nếu gói chưa có bản phân tích đầy đủ.
