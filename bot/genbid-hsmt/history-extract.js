@@ -37,8 +37,8 @@ await (async () => {
     const opens = kq.lotOpenDetails || [];
     const lots = (kq.lotResultDTO || []).map((lot) => {
       const mine = opens.filter((o) => !o.lotNo || o.lotNo === lot.lotNo);
-      const seen = new Set();
-      const bidders = (lot.contractorList || []).map((c) => {
+      const seen = new Set(), cl = contractorsOf(lot);
+      const bidders = cl.map((c) => {
         const o = mine.find((x) => x.contractorCode === c.orgCode) || {};
         seen.add(c.orgCode);
         const pct = c.discountPercent ?? o.discountPercent;
@@ -50,7 +50,7 @@ await (async () => {
       for (const o of mine) if (!seen.has(o.contractorCode)) bidders.push({ name: o.contractorName || "", taxCode: tax(o.contractorCode), venture: o.ventureName || "",
         bidPrice: num(o.lotPrice), discount: o.discountPercent ? `${o.discountPercent}%` : "", finalPrice: num(o.lotFinalPrice), won: o.succBidderYn === "Y",
         winPrice: num(o.succBidderPrice), reason: o.noSuccBidderRson || o.noPassedRson || "", rank: num(o.ranking) });
-      const winners = (lot.contractorList || []).filter((c) => c.bidResult === 1).map((c) => c.orgCode);
+      const winners = cl.filter((c) => c.bidResult === 1).map((c) => c.orgCode);
       return { lotNo: lot.lotNo || "", lotName: String(lot.lotName || "").replace(/\s+/g, " ").trim(), price: num(lot.lotPrice), estimate: num(lot.lotEstimatePrice),
         status: lot.status ?? null, reason: lot.reason || "", bidders, goods: goodsOf(lot, winners) };
     });

@@ -47,7 +47,7 @@ await (async () => {
       // Hàng hoá nhà thầu trúng chào (hãng, model, xuất xứ): goodsList của phần, đọc bằng goods-read.js (chung với
       // history-extract.js: mẫu cũ formValue.lotContent.Table, mẫu BD.CG.02.0192 dsHhKq[].dsHH, danh sách dùng chung).
       const goodsOf2 = (code) => goodsOf(lot, [code]).slice(0, 4).map((r) => [r.label || r.maker, r.code, r.origin && `(${r.origin})`].filter(Boolean).join(" ")).filter(Boolean).join("; ");
-      for (const c of lot.contractorList || []) {
+      for (const c of contractorsOf(lot)) {
         const o = opens.find((x) => x.contractorCode === c.orgCode && (!x.lotNo || x.lotNo === lot.lotNo)) || {};
         const won = c.bidResult === 1;
         // muasamcong lặp bảng hàng của nhà thầu trúng cho mọi nhà thầu, nên chỉ tin bảng của nhà thầu trúng.

@@ -184,6 +184,9 @@ test("đọc công suất: kVA / kW / MVA, dấu nghìn chấm, thập phân ph�
   assert.deepEqual(P.histPower("2,5 MVA"), [{ v: 2.5, u: "MVA" }]);
   assert.deepEqual(P.histPower("Công suất liên tục (kW/kVA) ≥ 100/125"), [{ v: 125, u: "kVA" }]);
   assert.deepEqual(P.histPower("0 kVA"), []);
+  // Số sau "±" / "+/-" là dung sai (rà soát 17/11/2026, IB2500536474 từng thành 0,5 kVA).
+  assert.deepEqual(P.histPower("Công suất liên tục: 12.5 ±0.5 KVA"), [{ v: 12.5, u: "kVA" }]);
+  assert.deepEqual(P.histPower("Công suất 100 +/- 5 kVA; điện áp 400 V ± 5%"), [{ v: 100, u: "kVA" }]);
   assert.deepEqual(P.histPower(null), []);
 });
 test("gói lịch sử cần đọc HSMT khi không phần nào nêu công suất (tên phần, tên gói, dòng hàng)", () => {
