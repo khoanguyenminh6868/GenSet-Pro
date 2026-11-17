@@ -34,7 +34,16 @@
   ];
   // Mã đầu phát của các dòng phổ biến: dùng để biết ô nào là đầu phát khi bảng có cả động cơ lẫn đầu phát.
   const ALT_CODE = /^(UC[DIM]{0,2}\s?\d{3}|UCI\d|HC[IKM]?\s?\d{3}|PI\s?\d{3}|PE\s?\d{3}|S[0-9][LM]\d|P[0-9]\s?\d{2,}|LV[ISM]?\d{3}|TAL[\s-]?[A-Z]?\d{2}|LSA\s?\d{2}|LL\d{4}|ECP\s?\d{2}|ECO\s?\d{2}|NPE\s?\d{2}|MP[\s-]?\d{2,}|MX[\s-]?\d{3}|EG\s?\d{3}|1FC\d|FD\d[A-Z]|LTP\d{3}|BW(?:C|LV|P)?-?\d|BC[IA]?\s?1[0-9]{2}[A-Z])\/?/i; // LTP / BW: landtop, bobig (alternator model right after the engine, no brand in the header); BC164 / BC184: acepow's alternator stands BEFORE the engine ("| BC184E | ISUZU | JE493DB-04", read as the engine)
-  const OCR_FIG = /^\d[OSBZIl]\d$/;
+  // A cell of figures with a look-alike letter ("3S0", "312.S": OCR of 350, 312.5, vantek) that is the kVA of the kW before it
+  // (kVA = kW / 0.8) or the kW of the kVA before it: a figure, not a model.
+  const OCR_SUB = { O: "0", S: "5", B: "8", Z: "2", I: "1", l: "1" };
+  const ocrFig = (cells, i) => {
+    const c = String(cells[i] || "").trim();
+    if (!/^\d[\dOSBZIl.]*$/.test(c) || !/[OSBZIl]/.test(c)) return false;
+    const v = Number(c.replace(/[OSBZIl]/g, (x) => OCR_SUB[x])), p = Number(String(cells[i - 1] || "").trim());
+    if (!(v > 0) || !(p > 0)) return false;
+    return Math.abs(p / 0.8 - v) <= 0.015 * v || Math.abs(p * 0.8 - v) <= 0.015 * v;
+  };
   const BC_ALT =/^BC[IA]?\s?1\d{2}[A-Z]/i; // acepow's alternator code, specific enough to be read before the engine without a title
   // Series codes of Chinese alternator makers (Nianfeng NFS, Bobig BW, Jet-Power JET, Wintpower WT): such a model is not
   // the Stamford that the column title or page title of the table names ("Stamford UCDI274J" rows above, "with stamford
@@ -969,8 +978,8 @@
         // A note after the code ("1104C-44TAG2 made in china", "4BTA3.9-G2 （ QC58/67E ）") makes the cell
         // fail isCode and the next code (the alternator) would be read as the engine: drop the note.
         const cells = cellsOf(line).map((c) => c.replace(/\s+made in [a-z ]+$|\s*[（][^）]*[）]\s*$/i, "").trim());
-        // Three characters of figures with one look-alike letter ("3S0": OCR of 350, vantek) is a figure, not a model.
-        const codes = cells.map((c, i) => (!OCR_FIG.test(c) && (isCode(c) || brandedCode(c, ENGINE_BRANDS) || brandedCode(c, ALT_BRANDS)) ? i : -1)).filter((i) => i >= 0);
+        // A kVA / kW misread with a look-alike letter ("3S0", "312.S" in vantek) is a figure, not a model (ocrFig).
+        const codes = cells.map((c, i) => (!ocrFig(cells, i) && (isCode(c) || brandedCode(c, ENGINE_BRANDS) || brandedCode(c, ALT_BRANDS)) ? i : -1)).filter((i) => i >= 0);
         if (!codes.length) return;
         // A set of two engines ("| 1100 | 1000 | … | 2 x TAD1641GE | … | SCP8610", tecnogen): the cell is no code, the
         // controller was read as the engine. The set's output is not one engine's: the row gives no engine at all.

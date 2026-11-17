@@ -31,6 +31,12 @@ test("vantek n101: '3S0' (OCR of 350) is a figure, not the engine; the engine is
   const row = out.filter((u) => u.row === 1);
   assert.deepEqual(row.map((u) => [u.kind, u.model]), [["engine", "N855-DM"]]);
   assert.equal(row[0].power, null); // 280 kW alone with no kVA: left unread rather than guessed
+  // "312.S" (OCR of 312.5, the kVA of 250 kW) in n101's other table: same.
+  const r2 = read(header, ["| CCFJ250Y-WTP | 250 | 312.S | NTA855-DM | 284 | 6 | 3020-1100-1750 | 2850"]);
+  assert.deepEqual(r2.map((u) => [u.kind, u.model]), [["engine", "NTA855-DM"]]);
+  // A real code with figures and letters in the same place is kept (the figure must fit the kW before it).
+  const r3 = read(header, ["| X100 | 80 | 4B3.9 | N855-DM | 84 | 6 | 1-1-1 | 2000"]);
+  assert.ok(r3.some((u) => u.kind === "engine" && /4B3\.9/.test(u.model)) || r3.some((u) => u.kind === "alternator"));
 });
 
 test("sr-genset n2001: a kVA under 'Engine | Modle' is not the voltage", () => {
