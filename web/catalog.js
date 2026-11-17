@@ -1170,6 +1170,40 @@
   const groupOf = (e, g) => { const names = (e.makes || []).map((m) => m.name); return !cnMade(names) && engineCountries(names, e.model).some((c) => COUNTRY_GROUP[g].includes(c)); };
   const groupIn = (text, model, g) => engineCountries(brandIn(String(text || ""), ENGINE_BRANDS), model).some((c) => COUNTRY_GROUP[g].includes(c));
 
+  // Thương hiệu and Nơi sản xuất of a catalog entry, apart (Khoa, 2026-11-16: "nên phân biệt rõ thương hiệu và nơi sản
+  // xuất"; filters of Thông số cấu hình 2026-11-17). Brand: the country the make comes from. Place: China when the make
+  // is Chinese or a row names a Chinese plant of a foreign make; for the alternator / controller makes Khoa settled on
+  // 2026-11-16 (makers' pages), their own country; else not known (an engine of a foreign make: the rows mostly do not
+  // say, and the model is not guessed from).
+  const ALT_COUNTRY = { Stamford: "GB", "Leroy-Somer": "FR", "Mecc Alte": "IT", Marathon: "US", Engga: "CN", Faraday: "CN", Siemens: "DE",
+    AvK: "DE", "Linz Electric": "IT", Sincro: "IT", WEG: "BR" };
+  const CTRL_COUNTRY = { "Deep Sea": "GB", SmartGen: "CN", ComAp: "CZ", DEIF: "DK", Datakom: "TR", Woodward: "US", Harsen: "CN",
+    Mebay: "CN", Lixise: "CN", Emko: "TR" };
+  const MADE_DEFAULT = { Stamford: "GB", "Leroy-Somer": "FR", "Mecc Alte": "IT", AvK: "RO", "Deep Sea": "GB", DEIF: "DK", Woodward: "PL",
+    Datakom: "TR", ComAp: "CZ" };
+  const CN_PLANT = {
+    engine: /\bDCEC\b|\bCCEC\b|dongfeng[\s-]*cummins|chongqing[\s-]*cummins|东风康明斯|重庆康明斯|perkins[\s-]*\(?\s*(china|wuxi)|wuxi[\s-]*perkins|无锡珀金斯|shanghai[\s-]*mhi|上海菱重|mtu[\s-]*yuchai|玉柴\s*mtu|weichai[\s-]*baudouin|潍柴博杜安/i,
+    alternator: /stamford[\s-]*\(?\s*(china|wuxi)|wuxi[\s-]*stamford|无锡斯坦福|leroy[\s-]?somer[\s-]*\(?\s*(china|fuzhou)|福州利莱森玛|mecc[\s-]?alte[\s-]*\(?\s*china/i,
+    controller: null,
+  };
+  const entryMakes = (e) => String(e.make || "").split(" / ").filter(Boolean);
+  const makeCountry = (kind, n) => (kind === "engine" ? (FOREIGN_ENGINE.has(n) ? ENGINE_COUNTRY[n] : "CN") : (kind === "alternator" ? ALT_COUNTRY : CTRL_COUNTRY)[n]) || null;
+  // Countries of the brand; [] when no source names the make.
+  const brandOf = (e) => [...new Set(entryMakes(e).map((n) => makeCountry(e.kind, n)).filter(Boolean))];
+  // Places of manufacture over the rows of the entry ("?" for a row that does not tell).
+  function madeOf(e) {
+    const makes = entryMakes(e), plant = CN_PLANT[e.kind], out = new Set();
+    for (const u of e.uses.length ? e.uses : [{}]) {
+      const text = [u.line, u.text, u.title, ...(u.header || [])].filter(Boolean).join(" ");
+      if (!makes.length) { out.add(plant && plant.test(text) ? "CN" : "?"); continue; }
+      for (const n of makes) {
+        const c = makeCountry(e.kind, n);
+        out.add(c === "CN" || (plant && plant.test(text)) ? "CN" : MADE_DEFAULT[n] || "?");
+      }
+    }
+    return [...out];
+  }
+
   // Động cơ, đầu phát, bộ điều khiển named in a won goods row (bidhist goods: "Cấu hình, tính năng kỹ thuật cơ bản",
   // Khoa 2026-11-09): after each label ("Động cơ:", "Đầu phát:", "Bộ điều khiển:", "Engine", "Alternator"...) up to the
   // next label, the make (ENGINE_BRANDS / ALT_BRANDS, or any word after "hãng" / "thương hiệu" / "nhà sản xuất") and the
@@ -1230,7 +1264,7 @@
     return out;
   }
 
-  const api = { build, builder, partsIn, fromSupplier, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS };
+  const api = { build, builder, partsIn, fromSupplier, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);

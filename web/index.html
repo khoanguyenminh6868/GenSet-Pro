@@ -3159,7 +3159,7 @@ const SUP_TIER = { A: "Website / tài liệu chính hãng", B: "Triển lãm, hi
 const SUP_COUNTRY = { CN: "Trung Quốc", US: "Mỹ", GB: "Anh", DE: "Đức", FR: "Pháp", IT: "Ý", JP: "Nhật Bản", CA: "Canada",
   FI: "Phần Lan", TR: "Thổ Nhĩ Kỳ", SE: "Thụy Điển", CZ: "Séc", ID: "Indonesia", ES: "Tây Ban Nha", PT: "Bồ Đào Nha", KR: "Hàn Quốc",
   MX: "Mexico", AT: "Áo", IN: "Ấn Độ", ZA: "Nam Phi", AR: "Argentina", SA: "Ả Rập Xê Út", BR: "Brazil", AU: "Úc", RU: "Nga", NL: "Hà Lan",
-  BE: "Bỉ", CH: "Thụy Sĩ", DK: "Đan Mạch", NO: "Na Uy", PL: "Ba Lan", TW: "Đài Loan", TH: "Thái Lan", MY: "Malaysia", SG: "Singapore", VN: "Việt Nam" };
+  BE: "Bỉ", CH: "Thụy Sĩ", DK: "Đan Mạch", NO: "Na Uy", PL: "Ba Lan", RO: "Romania", TW: "Đài Loan", TH: "Thái Lan", MY: "Malaysia", SG: "Singapore", VN: "Việt Nam" };
 const supCountryName = (s) => SUP_COUNTRY[s.country] || s.country || "";
 // Country filter: the G7 countries are one option, "G7"; "G20" is one more option over its member countries other than China (Khoa, 2026-11-02).
 const { g7: G7, g20: G20 } = window.GenbidCatalog?.COUNTRY_GROUP || { g7: [], g20: [] };
@@ -3759,7 +3759,7 @@ function catalog() {
   }
   return catMemo.cat;
 }
-let catView = { kind: "engine", q: "", make: "", power: "", unit: "kVA", freq: "", spec: "", sort: "sup", limit: 60, open: null };
+let catView = { kind: "engine", q: "", make: "", brand: "", made: "", power: "", unit: "kVA", freq: "", spec: "", sort: "sup", limit: 60, open: null };
 const catRange = (r, u) => (r ? (r[0] === r[1] ? `${fmtNum(r[0])} ${u}` : `${fmtNum(r[0])}–${fmtNum(r[1])} ${u}`) : "");
 const catSrcUrl = (sid, n) => state.supplier?.[sid]?.sources?.find((x) => x.n === n)?.url || "";
 const catPow = (p) => [p.kVA != null ? fmtNum(p.kVA) + " kVA" : "", p.kW != null ? fmtNum(p.kW) + " kW" : ""].filter(Boolean).join(" / ");
@@ -3789,12 +3789,18 @@ function openCatalog(kind, key, from = null, q = null, name = null) {
   catMissing = key && name ? { key, name } : null;
   filtOpen = true; // Thông số cấu hình: filter rows open by default on phone (Khoa, 2026-11-05)
   catFrom = from;
-  catView = { ...catView, kind, open: key || null, limit: 60, ...(kind !== catView.kind ? { make: "", q: "" } : {}), ...(q ? { q, make: "", spec: "", power: "" } : {}) };
+  catView = { ...catView, kind, open: key || null, limit: 60, ...(kind !== catView.kind ? { make: "", brand: "", made: "", q: "" } : {}), ...(q ? { q, make: "", brand: "", made: "", spec: "", power: "" } : {}) };
   modal(mBanner("cat", "Thông số cấu hình", "Rút từ bảng thông số của các nhà cung cấp", "catTitle", "#" + SCREEN_HASH[kind]) + '<div id="catBody"></div>', () => renderCatalog(), "wide pane");
 }
+// Nước của thương hiệu và nơi sản xuất (web/catalog.js brandOf / madeOf; Khoa, 2026-11-17): "?" là nguồn không cho biết.
+const catOrigin = new WeakMap();
+const catOriginOf = (e) => { if (!catOrigin.has(e)) { const b = window.GenbidCatalog.brandOf(e); catOrigin.set(e, { brand: b.length ? b : ["?"], made: window.GenbidCatalog.madeOf(e) }); } return catOrigin.get(e); };
+const catCountry = (c) => SUP_COUNTRY[c] || c;
 function catMatches(e, f = catView) {
   const q = f.q.trim().toLowerCase();
   if (f.make && !(e.make || "").split(" / ").includes(f.make) && !(f.make === "—" && !e.make)) return false;
+  if (f.brand && !catOriginOf(e).brand.includes(f.brand)) return false;
+  if (f.made && !catOriginOf(e).made.includes(f.made)) return false;
   if (f.freq && !e.freq.includes(Number(f.freq))) return false;
   if (f.spec && !catSpec(e, f.spec)) return false;
   if (q && ![e.model, ...e.names, e.make, ...e.uses.map((u) => u.genset), ...e.uses.map((u) => u.other)].some((x) => String(x || "").toLowerCase().includes(q))) return false;
@@ -3823,12 +3829,16 @@ function renderCatalog() {
   const makes = Object.entries(all.reduce((m, e) => { for (const k of (e.make || "—").split(" / ")) m[k] = (m[k] || 0) + 1; return m; }, {})).sort((a, b) => (a[0] === "—") - (b[0] === "—") || b[1] - a[1]);
   const specOpts = Object.entries(all.reduce((m, e) => { for (const g of e.specs || []) m[g.key] = [g.vi, ((m[g.key] || [])[1] || 0) + 1]; return m; }, {})).map(([k, [vi, n]]) => [k, vi, n]).sort((a, b) => b[2] - a[2]);
   if (catView.spec && !specOpts.some(([k]) => k === catView.spec)) catView.spec = "";
+  const originOpts = (k) => Object.entries(all.reduce((m, e) => { for (const c of catOriginOf(e)[k]) m[c] = (m[c] || 0) + 1; return m; }, {})).sort((a, b) => (a[0] === "?") - (b[0] === "?") || (b[0] === "CN") - (a[0] === "CN") || b[1] - a[1]);
+  const brandOpts = originOpts("brand"), madeOpts = originOpts("made");
   const f = catView, opt = (v, l, cur) => h`<option value="${v}" ${String(v) === String(cur) ? "selected" : ""}>${l}</option>`;
   // Thông số cấu hình (Khoa, 2026-11-04): động cơ, bộ điều khiển, đầu phát là 3 tab, không chọn trong dropdown.
   const tabs = h`<div class="seg cattabs" role="tablist">${raw(Object.entries(CAT_KIND).map(([k, x]) => h`<button type="button" role="tab" data-catkind="${k}" aria-selected="${String(k === f.kind)}">${x.tab} <span class="c">${cat[x.list].length}</span></button>`).join(""))}</div>`;
   body.innerHTML = h`${raw(tabs)}${raw(filtToggle("catFilt"))}<div class="row suprow">
       <input type="search" id="catQ" placeholder="Tìm model, hãng, model tổ máy..." value="${f.q}" style="flex:1;min-width:180px;max-width:340px">
       <select id="catMake">${raw(opt("", "Hãng", f.make) + makes.map(([m, n]) => opt(m, m === "—" ? `Nguồn không ghi hãng (${n})` : `${m} (${n})`, f.make)).join(""))}</select>
+      <select id="catBrand" title="Nước của thương hiệu (hãng)">${raw(opt("", "Thương hiệu", f.brand) + brandOpts.map(([c, n]) => opt(c, c === "?" ? `Nguồn không ghi hãng (${n})` : `Thương hiệu ${catCountry(c)} (${n})`, f.brand)).join(""))}</select>
+      <select id="catMade" title="Nơi sản xuất: Trung Quốc khi hãng Trung Quốc hoặc dòng nguồn ghi nhà máy ở Trung Quốc của hãng ngoại (DCEC, CCEC, Stamford Vô Tích...)">${raw(opt("", "Nơi sản xuất", f.made) + madeOpts.map(([c, n]) => opt(c, c === "?" ? `Nguồn không ghi nơi sản xuất (${n})` : `Sản xuất tại ${catCountry(c)} (${n})`, f.made)).join(""))}</select>
       <select id="catFreq">${raw(opt("", "Tần số", f.freq) + opt("50", "50 Hz", f.freq) + opt("60", "60 Hz", f.freq))}</select>
       <select id="catSpec">${raw(opt("", "Thông số", f.spec) + specOpts.map(([k, vi, n]) => opt(k, `Có ${vi.toLowerCase()} (${n})`, f.spec)).join(""))}</select>
     </div>
@@ -3844,11 +3854,13 @@ function renderCatalog() {
   renderCatList();
   bindFilt("catFilt");
   const set = (k, v) => { catView = { ...catView, [k]: v, limit: 60 }; renderCatList(); };
-  body.querySelectorAll("[data-catkind]").forEach((b) => (b.onclick = () => { if (b.dataset.catkind === catView.kind) return; catView = { ...catView, kind: b.dataset.catkind, make: "", q: "", spec: "", limit: 60 }; renderCatalog(); }));
+  body.querySelectorAll("[data-catkind]").forEach((b) => (b.onclick = () => { if (b.dataset.catkind === catView.kind) return; catView = { ...catView, kind: b.dataset.catkind, make: "", brand: "", made: "", q: "", spec: "", limit: 60 }; renderCatalog(); }));
   $("#catSpec").onchange = (e) => set("spec", e.target.value);
   $("#catQ").oninput = (e) => set("q", e.target.value);
   $("#catMake").onchange = (e) => set("make", e.target.value);
   $("#catFreq").onchange = (e) => set("freq", e.target.value);
+  $("#catBrand").onchange = (e) => set("brand", e.target.value);
+  $("#catMade").onchange = (e) => set("made", e.target.value);
   $("#catPower").oninput = (e) => set("power", e.target.value);
   $("#catUnit").onchange = (e) => set("unit", e.target.value);
   $("#catSort").onchange = (e) => set("sort", e.target.value);
@@ -3859,7 +3871,7 @@ function renderCatList() {
   if (catView.sort === "power") list = list.slice().sort((a, b) => ((a.kva || a.kw || [1e9])[0] - (b.kva || b.kw || [1e9])[0]));
   else if (catView.sort === "model") list = list.slice().sort((a, b) => a.model.localeCompare(b.model));
   if ($("#catCount")) $("#catCount").textContent = `${list.length} model`;
-  filtNote("catFilt", [catView.q.trim(), catView.make, catView.freq, catView.spec, Number(catView.power) > 0].filter(Boolean).length, `${list.length} model`);
+  filtNote("catFilt", [catView.q.trim(), catView.make, catView.brand, catView.made, catView.freq, catView.spec, Number(catView.power) > 0].filter(Boolean).length, `${list.length} model`);
   const shown = list.slice(0, catView.limit);
   $("#catList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Model</th><th>Hãng</th><th>Tổ máy dùng model này</th><th>${catView.kind === "controller" ? "Dòng nguồn" : "Thông số"}</th><th>Tần số</th><th>Nhà cung cấp</th></tr></thead><tbody>${raw(shown.map((e) => h`<tr data-catitem="${e.key}">
       <td><b class="hlname">${e.model}</b>${raw(e.names.length > 1 ? h`<div class="muted small">cũng ghi: ${e.names.filter((x) => x !== e.model).slice(0, 3).join(", ")}</div>` : "")}</td>
