@@ -128,3 +128,27 @@ test("horizontal table: a make before the engine model and a * after it are not 
   const e = CAT.fromSupplier(rec).filter((o) => o.kind === "engine").map((o) => o.model);
   assert.deepEqual(e, ["1103A-33G", "QSK19-G4"]);
 });
+
+test("isCode: cells that are a value, not a model (Khoa 2026-11-17)", () => {
+  for (const v of ["≤6S", "≤5S", "6-cylinder/inline", "12-cylinder/V-type", "4-Cylinder Series", "1-PHASE", "3-PHASE", "Self-excited,2-pole,single phase",
+    "100% copper", "800(kW)", "330(KW)", "195(g/kw.h)", "208g /kwh", "300 W", "330+250 W", "250W", "1800k W", "Container 20'", "40GP container",
+    "0,11 m3/s", "speed [1/min]", "50Hz/ 400V", "400V/230V", "700 cSt/50°C", "~14.5 gal/hr", "12 kg/h", "4 In-line", "Loading Qty(20GP/40HQ)"])
+    assert.equal(CAT.isCode(v), false, v);
+  // real models, some with a note or unit-like tail, stay
+  for (const v of ["4045HFG20 (103kW)", "S4L1D-G4(360KW)", "UCI274C(80KW)", "6BT5.9-G2(G75E1)", "4BTA3.9-G2 (QC50/60E)", "LTP224S-52", "BW-274E", "TAD734GE", "12V4000G14F(3B)", "S16R-PTAA2-C /1684KW", "4DW91-29D /21KW", "6135HF475(C)"])
+    assert.equal(CAT.isCode(v), true, v);
+});
+test("table row: a note after the engine code, or an empty engine cell, does not turn the alternator into the engine", () => {
+  const rec = (header, rows) => ({ id: "x", country: "CN", role: "genset_oem", status: "partial", names: { en: "X", brands: [] }, productLines: [], sources: [], specTables: [{ n: 1, title: "Cummins Diesel Generator", header, rows }] });
+  const of = (r, kind) => CAT.fromSupplier(r).filter((o) => o.kind === kind).map((o) => o.model);
+  // bobig-power: "1104C-44TAG2 made in china" has three spaces (fails isCode); the alternator BW-274E must not take its place
+  const b = rec(["| Gensets | Technical Data of Diesel Engine | Alternator | Size", "| Model | Gensets power(KW/KVA) | Engine model | Engine power/kw | BOBIG | Open type (MM) |"],
+    ["| BP110 | 80 | 100 | 88 | 110 | 1104C-44TAG2 made in china | 81 | BW-274E | 1920*750*1250 | 2550*970*1280"]);
+  assert.deepEqual(of(b, "engine"), ["1104C-44TAG2"]);
+  assert.deepEqual(of(b, "alternator"), ["BW-274E"]);
+  // landtop-fuzhou: governor column ("Mechanical") instead of an engine code, then the alternator LTP224S-50
+  const l = rec(["| Genset Model | Genset Standby Power | Genset Prime Power | Governor Type | Engine Model | Alternator Model", "| KVA | KW | KVA | KW"],
+    ["| LTP69KF | 69 | 55 | 63 | 50 | Mechanical | LTP224S-50"]);
+  assert.deepEqual(of(l, "engine"), []);
+  assert.deepEqual(of(l, "alternator"), ["LTP224S-50"]);
+});
