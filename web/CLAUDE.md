@@ -12,6 +12,8 @@ Chỉ bản web Vercel + bot Windows được dùng; không phát triển nhánh
   `navSync` coi bước mới trùng khoá (`navKey`) với bước ngay trước là Back của trang: trường nào phân biệt hai bước khác nhau (vd. độ dài `drawerBack`) phải có trong `navKey`. Trang mở thẳng bằng link (`#goi/…`, `#cdt/…`, `#nha-thau`…) thì `navDirect`: mục lịch sử 1 là màn của link, mục 0 đứng cho trang chủ. Test: `web/test/back-link.spec.mjs`.
 - Luật "gói máy phát" theo tên dùng `GenbidBidprice.isGensetName` (luật chung, xem `suppliers/CLAUDE.md`), không viết `includes("máy phát điện")` riêng.
 - Việc chậm phải có spinner: `busy.js` tự bọc fetch; việc không qua fetch (thư viện, dựng PDF, đọc tệp) bọc `window.genbidBusy(promise)`.
+  Việc ngầm trang tự chạy theo vòng (quét HSMT cho cột Công Suất) phải đọc im lặng: `db.doc(p).get({ quiet: true })` (shim truyền
+  `window.genbidQuietSignal()`); không thì bấm gì trong lúc vòng chạy là spinner bám theo tới hết vòng (Khoa 17/11/2026). Test: `web/test/busy-quiet.spec.mjs`.
   Ngoại lệ: lịch sử thầu (`bidhist`, ~14 MB) tải im lặng, không spinner, không dòng "đang tải lịch sử thầu" (`quiet` của `busy.js`). Danh sách chỉ chờ bidhist khi máy đã có bản lưu (`db.hasCopy`), không có thì hiện danh sách trước (Khoa, 2026-11-14).
 - Chữ trên màn hình: "Chi phí phát sinh" (không dùng "khoản thêm"); "% gói cũ trúng ≥ mức này" (không gọi là xác suất thắng). Danh sách gợi ý tự vẽ, không dùng `<datalist>`.
 

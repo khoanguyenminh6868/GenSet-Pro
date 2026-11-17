@@ -54,12 +54,22 @@
 
   // Past tenders (bidhist, ~14 MB) load silently, even right after a click (Khoa, 2026-11-14).
   const quiet = (u) => /[?&]coll=eq\.bidhist(&|$)/.test(String(u || ""));
+  // Background work the page starts by itself (reading every HSMT text for the Công Suất column) passes a signal from
+  // window.genbidQuietSignal(): it shows nothing, and does not join an action's spinner either. Without this, a click during
+  // such a loop left the spinner on until the loop ended, since each next read started while counted work was still running.
+  const quietSigs = new WeakSet();
+  window.genbidQuietSignal = () => { const s = new AbortController().signal; quietSigs.add(s); return s; };
+  const quietRes = new WeakSet();
   const fetch0 = window.fetch.bind(window);
-  window.fetch = (...a) => { const p = fetch0(...a); return active() && !quiet(a[0]?.url || a[0]) ? track(p) : p; };
+  window.fetch = (...a) => {
+    if (a[1]?.signal && quietSigs.has(a[1].signal)) return fetch0(...a).then((r) => { quietRes.add(r); return r; });
+    const p = fetch0(...a);
+    return active() && !quiet(a[0]?.url || a[0]) ? track(p) : p;
+  };
   // A response's body can take longer than its headers (a large file): reading it counts too.
   for (const m of ["json", "text", "blob", "arrayBuffer", "formData"]) {
     const read = Response.prototype[m];
-    if (read) Response.prototype[m] = function () { const p = read.call(this); return active() && !quiet(this.url) ? track(p) : p; };
+    if (read) Response.prototype[m] = function () { const p = read.call(this); return active() && !quietRes.has(this) && !quiet(this.url) ? track(p) : p; };
   }
   // Other slow work an action waits for, counted like a fetch (loading a library, building a file): window.genbidBusy(promise) returns the promise.
   window.genbidBusy = (p) => (active() ? track(p) : p);
