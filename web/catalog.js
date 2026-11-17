@@ -33,7 +33,7 @@
     [/\bavk\b/i, "AvK"], [/\blinz\b/i, "Linz Electric"], [/\bsincro\b/i, "Sincro"], [/\bweg\b/i, "WEG"],
   ];
   // Mã đầu phát của các dòng phổ biến: dùng để biết ô nào là đầu phát khi bảng có cả động cơ lẫn đầu phát.
-  const ALT_CODE = /^(UC[DIM]{0,2}\s?\d{3}|UCI\d|HC[IKM]?\s?\d{3}|PI\s?\d{3}|PE\s?\d{3}|S[0-9][LM]\d|P[0-9]\s?\d{2,}|LV[ISM]?\d{3}|TAL[\s-]?[A-Z]?\d{2}|LSA\s?\d{2}|LL\d{4}|ECP\s?\d{2}|ECO\s?\d{2}|NPE\s?\d{2}|MP[\s-]?\d{2,}|MX[\s-]?\d{3}|EG\s?\d{3}|1FC\d|FD\d[A-Z])/i;
+  const ALT_CODE = /^(UC[DIM]{0,2}\s?\d{3}|UCI\d|HC[IKM]?\s?\d{3}|PI\s?\d{3}|PE\s?\d{3}|S[0-9][LM]\d|P[0-9]\s?\d{2,}|LV[ISM]?\d{3}|TAL[\s-]?[A-Z]?\d{2}|LSA\s?\d{2}|LL\d{4}|ECP\s?\d{2}|ECO\s?\d{2}|NPE\s?\d{2}|MP[\s-]?\d{2,}|MX[\s-]?\d{3}|EG\s?\d{3}|1FC\d|FD\d[A-Z]|LTP\d{3}|BW(?:C|LV|P)?-?\d)\/?/i; // LTP / BW: landtop, bobig (alternator model right after the engine, no brand in the header)
   // Series codes of Chinese alternator makers (Nianfeng NFS, Bobig BW, Jet-Power JET, Wintpower WT): such a model is not
   // the Stamford that the column title or page title of the table names ("Stamford UCDI274J" rows above, "with stamford
   // alternator" title): 2026-11-03 regression run showed "NIANFENG NFS5-G (Stamford)", "BW-404B (Stamford)".
@@ -202,7 +202,12 @@
     if (/^(ip|class|euro|tier|stage|china|epa|gb|iso|en|iec|bs|ce|non-road|cn|eu)\b/i.test(s) || /^(ip|f|h)\d{1,2}$/i.test(s)) return false;
     if (/^\d{1,2}\s*[lv](\/|$|\s)|^[lv]\s?\d{1,2}$|^\d{1,2}[lv]\/|\/na$|^in-?line/i.test(s)) return false;
     if (/^(n\/a|na|tbd|\d+p)$/i.test(s) || CONTROLLER.test(s)) return false;
-    if (/^\d+\s?(ph|phase|wire)/i.test(s) || /^(1|3)\s?phase/i.test(s)) return false;
+    if (/^\d+[\s-]?(ph|phase|wire)/i.test(s) || /(^|[\s,-])(single|three)[\s-]?phase\b|\bphase\b/i.test(s)) return false;
+    // Cells of a spec table that are a value, not a model (Khoa 2026-11-17): "≤6S", "100% copper", "800(KW)",
+    // "195(g/kw.h)", "208g /kwh", "300 W", "330+250 W", "1800k W", "6-cylinder/inline", "Container 20'", "0,11 m3/s",
+    // "[1/min]", "50Hz/ 400V", "700 cSt/50°C", "~14.5 gal/hr", "12 kg/h".
+    if (/^[≤≥<>~]|%|[\[\]]|cylinder|\bin-?\s?line\b|container|\bm3\/s$|\bno rad\b|\bqty\b|\bcst\b|\bgal\/h/i.test(s)) return false;
+    if (/^\d+(?:[.,]\d+)?\s*(?:[+/]\s*\d+(?:[.,]\d+)?\s*)*\(?\s*(k\s?w|w|g\s?\/\s?k?w\s?\.?h|kg\/h|hz|v)\s*\)?$/i.test(s) || /^\d+(?:[.,]\d+)?\s?(hz|v)\s?\//i.test(s)) return false;
     return true;
   }
   const brandIn = (text, list) => {
@@ -595,7 +600,9 @@
       // An engine maker's own engine table: the first cell of each row is the engine.
       const engineTable = s.role === "engine_maker" && !GENSET_LBL.test(headerText) && !/genset|generator set|机组/i.test(cellsOf(t.header?.[0] || "")[0] || "");
       t.rows.forEach((line, ri) => {
-        const cells = cellsOf(line);
+        // A note after the code ("1104C-44TAG2 made in china", "4BTA3.9-G2 （ QC58/67E ）") makes the cell
+        // fail isCode and the next code (the alternator) would be read as the engine: drop the note.
+        const cells = cellsOf(line).map((c) => c.replace(/\s+made in [a-z ]+$|\s*[（][^）]*[）]\s*$/i, "").trim());
         const codes = cells.map((c, i) => (isCode(c) || brandedCode(c, ENGINE_BRANDS) || brandedCode(c, ALT_BRANDS) ? i : -1)).filter((i) => i >= 0);
         if (!codes.length) return;
         const rowText = cells.join(" ");
