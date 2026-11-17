@@ -425,11 +425,14 @@
       return {
         id,
         onSnapshot(fn, onErr) { return watch(coll, () => fn(snapDoc(id, cache.get(coll).get(id))), onErr); },
-        async get() {
+        // { quiet: true }: background read, no spinner (busy.js genbidQuietSignal).
+        async get({ quiet } = {}) {
           // A collection shown from this device's copy answers once it caught up, so update() never writes over newer data.
           // A light copy is never handed out here, so update() writes the whole document back.
           if (cache.has(coll)) { await syncs.get(coll); await db.full(path); return snapDoc(id, cache.get(coll).get(id)); }
-          const { data, error } = await sb.from("docs").select("data").eq("coll", coll).eq("id", id).maybeSingle();
+          let q = sb.from("docs").select("data").eq("coll", coll).eq("id", id);
+          if (quiet && window.genbidQuietSignal) q = q.abortSignal(window.genbidQuietSignal());
+          const { data, error } = await q.maybeSingle();
           if (error) fail(error);
           return snapDoc(id, data?.data);
         },

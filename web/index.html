@@ -1252,12 +1252,13 @@ async function initDb() {
 
 // ---------- HSMT text ----------
 const isDrawing = (f) => /\.(tif|tiff|twf)$/i.test(f.name) || /^\(WCE\)|^1Q\d/.test(f.name);
-async function loadAttachedText(key) {
+// opts { quiet: true }: background read (the Công Suất scan), no spinner.
+async function loadAttachedText(key, opts) {
   const d = state.hsmt[key];
   if (!d?.textChunks || !state.db) return "";
   const parts = [];
   for (let i = 0; i < d.textChunks; i++) {
-    const snap = await state.db.doc(`hsmttext/${key}_${i}`).get();
+    const snap = await state.db.doc(`hsmttext/${key}_${i}`).get(opts);
     if (snap.exists) parts.push(snap.data().text || "");
   }
   return parts.join("");
@@ -1562,7 +1563,7 @@ async function scanCapacities() {
   todo.forEach((t) => capScan.pending.add(t._key));
   renderGrid();
   for (const t of todo) {
-    try { const c = capFromDocsText(await loadAttachedText(t._key)); if (c) capScan.found[t._key] = c; capSeen[t._key] = [state.hsmt[t._key]?.updatedAt || "", c || null]; local.set("capScan2", capSeen); } catch {}
+    try { const c = capFromDocsText(await loadAttachedText(t._key, { quiet: true })); if (c) capScan.found[t._key] = c; capSeen[t._key] = [state.hsmt[t._key]?.updatedAt || "", c || null]; local.set("capScan2", capSeen); } catch {}
     capScan.done.add(t._key); capScan.pending.delete(t._key);
   }
   capScan.running = false;
