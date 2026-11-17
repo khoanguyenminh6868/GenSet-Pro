@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-13T00:29:03.871Z
+  modified: 2026-11-17T01:07:20.019Z
 ---
 
 **Luồng:** `bidpricereq/<TBMT>` (web, hoặc tự gửi sau mỗi lượt Gợi ý cấu hình) → `suppliers/bidprice-bot.mjs run --key` → `bidprice/<TBMT>`. Code chọn gói cũ từ `bidhist` (`web/bidprice.js`, dùng chung web + bot) → agent Opus xếp mỗi gói giống/gần/khác kèm câu trích nguyên văn → 3 mức giá = phân vị tỷ lệ giá trúng/giá gói, chỉ từ gói ≥2 nhà thầu, cần ≥3 gói. Agent không ghi số tiền và giữ mức đã xếp ở lượt trước (buộc xếp lại: `GENBID_BIDPRICE_RERATE=1`). Lệnh thử và bẫy code: `suppliers/CLAUDE.md`, `web/CLAUDE.md`.
@@ -39,7 +39,8 @@ metadata:
 
 ## Chờ Khoa quyết
 - Thêm gói 1 nhà thầu theo dự báo (giảm sai 5,7 → 4,7 nhưng trái quy tắc "chỉ gói có cạnh tranh").
-- Phân vị nội suy (em nghiêng không làm).
+- Bù gói cạnh tranh cùng cỡ (prior) khi pool < 10 thay vì < 5 (đề xuất bp-low-dao-dong 13/11: pool 7–8 gói, một gói agent lật làm mức thấp nhảy 12% giá gói).
+- KHÔNG LÀM (Khoa 17/11): phân vị nội suy.
 - Gói đòi đồng bộ thương hiệu thường thiếu gói cũ tương tự → không ra giá.
 
 Liên quan [[config-suggest]], [[quy-tac-luong]].

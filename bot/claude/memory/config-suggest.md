@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-17T00:59:08.679Z
+  modified: 2026-11-17T01:07:23.715Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Code xếp sẵn 30 dòng ứng viên; mọi số/câu trích phải có nguyên văn trong nguồn, sai → "Đạt" thành "Chưa rõ". ~6–11 phút, ~3 USD/gói. Yêu cầu theo bộ mã cố định `suppliers/reqcodes.mjs` (thêm mã: dòng `R(...)` đúng thứ tự + test; tăng `REQ_VERSION`).
@@ -41,7 +41,7 @@ metadata:
 
 **Ứng viên (Khoa duyệt 17/11/2026, IB2600603983, PR #823):**
 - HSMT nêu bố trí xi lanh (thẳng hàng / chữ V) → loại dòng ghi kiểu kia. Ngưỡng "ít nhất hai nhà cung cấp ghi mới tính cho cả động cơ" là do em chọn (dữ liệu NCC có ghi sai), Khoa chưa xét riêng điểm này.
-- Số xi lanh HSMT ghi trơ ("6 xy lanh") là số CHÍNH XÁC: loại động cơ 12 xi lanh (Khoa 17/11: "nếu HSMT ghi rõ 6 thì nên loại 12", PR #825); có "≥ / tối thiểu / trở lên" thì vẫn là tối thiểu. Ngoại lệ của "số trần = tối thiểu" bên dưới; mới áp ở bước chọn ứng viên, bước chấm đạt / không đạt chưa đổi.
+- Số xi lanh HSMT ghi trơ ("6 xy lanh") là số CHÍNH XÁC: loại động cơ 12 xi lanh (Khoa 17/11: "nếu HSMT ghi rõ 6 thì nên loại 12", PR #825); có "≥ / tối thiểu / trở lên" thì vẫn là tối thiểu. Ngoại lệ của "số trần = tối thiểu" bên dưới; CHỈ ở bước chọn ứng viên — Khoa 17/11: bước chấm đạt / không đạt (`makerSheetChecks`) KHÔNG theo luật này (vẫn coi là tối thiểu).
 - Động cơ chỉ có dòng tần số kia (Baudouin đuôi "/6" = 60 Hz) → loại khi HSMT đòi tần số còn lại.
 - Gợi ý lại KHÔNG giữ dòng ứng viên của lượt trước (Khoa: "không cần giữ"); Tìm NCC / cấu hình internet vẫn giữ.
 - Khoa muốn bắt lỗi đọc ngưỡng HSMT có hệ thống: `suppliers/hints-audit.mjs` (so code đọc với Phân tích).
