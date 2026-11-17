@@ -5,11 +5,11 @@ dừng chạy trong hàm Vercel (`web/api/_sandbox.js`), xác thực Sandbox b�
 không dùng GitHub Actions (repo private: Actions bị chặn / tính phút).
 
 1. Người dùng bấm nút trên web (Phân tích, Lấy tệp, Sync...) → `web/api/webreq.js` lưu yêu cầu, rồi `web/api/_wake.js`:
-   `botstatus/current` im ≥ 3 phút (trang báo "Agent chưa nhận yêu cầu") → `up()` chạy nền sau khi trả lời
+   `botstatus/current` im ≥ 1 phút (Khoa 17/11, trước là 3 phút; bot ghi tim ~30 giây một lần) (trang báo "Agent chưa nhận yêu cầu") → `up()` chạy nền sau khi trả lời
    (tối đa 1 lần / 5 phút, mốc `botstatus/wake`): nối lại / tạo sandbox `genbid-bot` (sin1, persistent, phiên 60 phút;
    Hobby 45), lần đầu chạy `setup-sandbox.sh`, rồi `start-bot.sh` bằng lệnh detached.
 2. Bot sandbox hỏi việc với `host=sandbox`. Mỗi nhịp tim (~1 phút) `web/api/requests.js` gọi `tick()` (`decide`):
-   - máy Windows có tim < 3 phút và sandbox không làm dở việc → dừng;
+   - máy Windows có tim < 1 phút và sandbox không làm dở việc → dừng;
    - không yêu cầu chờ, rảnh ≥ 20 phút (`botstatus/sandboxbusy`) → dừng;
    - còn lại: phiên còn < 20 phút thì gia hạn 60 phút. Dừng thì giữ snapshot: lần sau nối lại nhanh, không cài lại.
 3. Bot treo không gửi tim: phiên tự hết (≤ 60 phút).
@@ -52,7 +52,7 @@ Sổ tiền API (`.anthropic-api-spend.jsonl`) mỗi máy một sổ, không c�
 - Script PowerShell của bot trên Linux: đường dẫn ghép bằng `"$a\$b"` đưa cho .NET (`[IO.File]`) thì `\` thành ký tự tên tệp
   (tài liệu không gửi lên web mà vẫn báo đã ghi). Dùng `[IO.Path]::Combine`. `Join-Path` với ổ `C:` lỗi trên Linux khi test ép
   `GENBID_OS=windows`. Đừng ghi cứng `C:\Projects\GenSet Pro`: dùng `GENBID_ROOT`.
-- Yêu cầu gửi lúc máy vừa tắt (< 3 phút) thấy "bot còn chạy" nên không bật sandbox → trang tự nhắc (`coll: wake`) mỗi 2 phút khi
+- Yêu cầu gửi lúc máy vừa tắt (< 1 phút) thấy "bot còn chạy" nên không bật sandbox → trang tự nhắc (`coll: wake`) mỗi 30 giây (Khoa 17/11, trước là 2 phút) khi
   cảnh báo máy tắt đang hiện; server chỉ bật khi có yêu cầu chờ.
 - Đừng dừng sandbox (`stop_session`) khi bot đang làm (`running` ở `/api/requests?kind=bots`): việc dở bị cắt.
 - `agy` không đọc `~/.gemini/oauth_creds.json` (của Gemini CLI cũ); trên Windows nó giữ đăng nhập trong Credential Manager. Trên

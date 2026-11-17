@@ -147,7 +147,7 @@ Describe 'GenBid-Bot.ps1: hàm' {
         }
     }
 
-    Context 'nhịp tim: beat=0 trừ khi tới 55 giây hoặc đổi trạng thái' {
+    Context 'nhịp tim: beat=0 trừ khi tới 25 giây (Khoa 17/11: web báo tắt sau 1 phút) hoặc đổi trạng thái' {
         BeforeEach {
             New-Root | Out-Null
             $global:Urls = @()
@@ -164,8 +164,8 @@ Describe 'GenBid-Bot.ps1: hàm' {
             Poll $global:T0 | Out-Null; Poll $global:T0.AddSeconds(10) | Out-Null
             Assert-Eq $global:Urls[1] 'http://fake/api/requests?kind=all&beat=0'
         }
-        It 'biên 55 giây: 54 giây vẫn beat=0, đúng 55 giây là nhịp tim; beat=0 không làm mới mốc' {
-            Poll $global:T0 | Out-Null; Poll $global:T0.AddSeconds(30) | Out-Null; Poll $global:T0.AddSeconds(54) | Out-Null; Poll $global:T0.AddSeconds(55) | Out-Null
+        It 'biên 25 giây: 10 và 24 giây vẫn beat=0, đúng 25 giây là nhịp tim; beat=0 không làm mới mốc' {
+            Poll $global:T0 | Out-Null; Poll $global:T0.AddSeconds(10) | Out-Null; Poll $global:T0.AddSeconds(24) | Out-Null; Poll $global:T0.AddSeconds(25) | Out-Null
             Assert-Match $global:Urls[1] 'beat=0'; Assert-Match $global:Urls[2] 'beat=0'; Assert-NotMatch $global:Urls[3] 'beat=0'
         }
         It 'đổi trạng thái running (rảnh -> bận) thì gửi nhịp tim ngay, kèm running=1' {
@@ -178,9 +178,9 @@ Describe 'GenBid-Bot.ps1: hàm' {
         }
         It '-BeatOnly: chưa tới lúc thì không hỏi gì và trả $null; tới lúc thì hỏi' {
             Poll $global:T0 | Out-Null
-            Assert-Null (Poll $global:T0.AddSeconds(20) -BeatOnly)
+            Assert-Null (Poll $global:T0.AddSeconds(15) -BeatOnly)
             Assert-Eq $global:Urls.Count 1
-            Poll $global:T0.AddSeconds(60) -BeatOnly | Out-Null
+            Poll $global:T0.AddSeconds(30) -BeatOnly | Out-Null
             Assert-Eq $global:Urls.Count 2
         }
     }

@@ -110,14 +110,14 @@ function Find-Claude {
         Sort-Object LastWriteTime -Descending | Select-Object -First 1 -ExpandProperty FullName
 }
 
-# Lần hỏi cũng là nhịp tim cho bản web (botstatus/current), để web biết máy Windows đang bật (web báo tắt sau 3 phút
-# im lặng). Nhịp tim chỉ ghi mỗi ~1 phút hoặc khi đổi running; các lần hỏi khác gửi beat=0 (bớt log Supabase, 2026-11-08).
+# Lần hỏi cũng là nhịp tim cho bản web (botstatus/current), để web biết máy Windows đang bật (web báo tắt sau 1 phút
+# im lặng). Nhịp tim ghi mỗi ~30 giây (Khoa 17/11/2026: web báo tắt sau 1 phút, trước là 3 phút / mỗi ~1 phút) hoặc khi đổi running; các lần hỏi khác gửi beat=0 (bớt log Supabase, 2026-11-08).
 # -BeatOnly: chỉ để gửi nhịp tim; chưa tới lúc thì không hỏi gì.
 $script:LastBeat = [datetime]::MinValue
 $script:LastBeatRunning = $null
 function Get-Pending([switch]$Running, [switch]$BeatOnly) {
     $now = Get-Date
-    $beat = ($now - $script:LastBeat).TotalSeconds -ge 55 -or $script:LastBeatRunning -ne [bool]$Running
+    $beat = ($now - $script:LastBeat).TotalSeconds -ge 25 -or $script:LastBeatRunning -ne [bool]$Running
     if ($BeatOnly -and -not $beat) { return $null }
     $token = (Get-Content $IngestTokenFile -TotalCount 1).Trim()
     $url = $Endpoint + $(if ($Running) { '&running=1' }) + $(if (-not $beat) { '&beat=0' })

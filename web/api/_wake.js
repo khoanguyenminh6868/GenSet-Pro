@@ -1,5 +1,5 @@
 // Wake the sandbox bot (Khoa, 2026-11-17): a request from the web while no bot is on (no heartbeat in botstatus/current
-// for 3 minutes, the page's "Agent chưa nhận yêu cầu") resumes the Vercel Sandbox and starts the bot there
+// for 1 minute, the page's "Agent chưa nhận yêu cầu") resumes the Vercel Sandbox and starts the bot there
 // (api/_sandbox.js up(), after the answer is sent). At most one try every 5 minutes (botstatus/wake). Off until the
 // Vercel variable SANDBOX_WAKE=1. Never fails the request it follows.
 import { SB_URL } from "./_supabase.js";
@@ -7,7 +7,7 @@ import { sandboxOn, up, background } from "./_sandbox.js";
 import { anyPending } from "./requests.js";
 
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
-export const BOT_SILENT_MS = 3 * 60e3;
+export const BOT_SILENT_MS = 60e3; // 1 minute (Khoa, 2026-11-17; was 3): the bot beats about every 30 s
 export const WAKE_EVERY_MS = 5 * 60e3;
 const fresh = (iso, ms, now) => !!iso && now - new Date(iso).getTime() < ms;
 
