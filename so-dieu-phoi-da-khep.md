@@ -198,3 +198,4 @@ Cập nhật 18:25Z 12/11: đăng kết quả check lại của IB2600601812 (co
 - 17/11/2026 · Soát ngưỡng HSMT đợt 3: code đọc thêm tiêu hao / số xi lanh, thiếu 664 → 274, lệch 9 (đều lỗi Phân tích); gói nhiều cỡ đọc theo từng cỡ (nhánh ≥ main mọi cỡ); sửa 'S6 xy lanh' OCR (IB2400313681). Điều phối kiểm: 22/22 mục mới đúng, so main↔nhánh 1.499 gói. Khoa: không chạy lại Gợi ý / Phân tích gói cũ · #850 (cd8a3221) · `nghiem-thu\soat-nguong-3.md`
 - 17/11/2026 · gaps.mjs in số NCC bị bỏ do loại trừ (kiểm #573 ở lượt thứ Hai 23/11) · #861 · `nghiem-thu\gaps-dem.md`
 - 17/11/2026 · Nơi sản xuất của hãng đầu phát / BĐK vào hồ sơ (`manufacturing[]`, 7 hồ sơ, 10 trang nguồn, verify câu trích) · #862 · `nghiem-thu\nha-may-hang.md`
+- 17/11/2026 · Hồ sơ hãng BĐK Datakom, DEIF, Woodward + `manufacturing[]` (435 → 438 hồ sơ, verify 0 lỗi) · #866 · `nghiem-thu\ho-so-bdk.md`

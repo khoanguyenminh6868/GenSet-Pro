@@ -9,7 +9,6 @@ Viết gọn lại 13/11/2026 (sáng, giờ VN). Cập nhật 16/11: #786 (nối
 |---|---|---|---|
 | Việc 3: model rác trong danh mục (`chi-tiet-viec-mo.md`) | `local_6d014eca-cff5-474b-8d53-185cfb0f6e6d` (model-rac, 17/11) | Sonnet | PR draft + `nghiem-thumodel-rac.md`; xong thì mở sửa depco |
 | Ghép đầu phát ghi kèm hãng ở `candidates` | `local_0436fd67-7738-43be-b233-530deb631164` (ghep-dau-phat) | Sonnet | PR draft + `nghiem-thughep-dau-phat.md` |
-| Hồ sơ hãng BĐK Datakom, DEIF, Woodward + `manufacturing[]` (Khoa 17/11 duyệt) | `local_df814791-75b2-45a8-9c28-855f90165336` (ho-so-bdk) | Sonnet | PR draft + `nghiem-thu/ho-so-bdk.md` |
 | Cho `catalog.js` đọc `manufacturing[]` thay `MADE_DEFAULT` cứng (#862) | Sau model rác + depco (cùng catalog.js) | Sonnet |
 ha-may-hang.md` |
 | Phủ test: việc còn mở sau 13/11 (trưa) | — (phiên H1, H2, H3, W1, W2 đã xong, chưa lưu trữ: chờ Khoa) | — | (6) Chưa phủ: nhánh trình duyệt `server/`, tải tệp báo giá / HSMT dự án, Forward sau Back từ link thẳng |
