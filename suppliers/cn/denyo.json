@@ -815,6 +815,26 @@
       "src": [
         2033
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "DCA-15LSX",
+      "fuel": "diesel",
+      "engineModels": [
+        "V2203-K3A"
+      ],
+      "power": {
+        "min": 13,
+        "max": 13,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2034
+        ]
+      },
+      "src": [
+        2034
+      ]
     }
   ],
   "certifications": [],
@@ -1269,10 +1289,24 @@
       ],
       "file": "sources/denyo/2033.md",
       "official": true
+    },
+    {
+      "n": 2034,
+      "url": "https://www.denyo.co.jp/english/products/generator/single-phase/dca-15lsx/",
+      "accessedAt": "2026-11-17",
+      "tier": "A",
+      "quote": [
+        "13.0 / 15.0kVA",
+        "Kubota V2203-K3A",
+        "Single Phase 1.0",
+        "Denyo shares our specialized knowledge and experience as a manufacturer of engine generators,"
+      ],
+      "file": "sources/denyo/2034.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-13",
+  "checkedAt": "2026-11-17",
   "checkedBy": "discover-bot (Claude)",
   "specTables": [
     {
@@ -1735,6 +1769,17 @@
         "(kVA)          Standby                        21                                        26.3                           40.7                              49.5",
         "Maker & Model                                                  Isuzu                                                                Kubota",
         "                                                               BV-4LE2                                                              V3800-DI-T-K3A"
+      ]
+    },
+    {
+      "n": 2034,
+      "title": "DCA-15LSX",
+      "header": [
+        "Engine"
+      ],
+      "rows": [
+        "Kubota V2203-K3A",
+        "13.0 / 15.0kVA"
       ]
     }
   ],
