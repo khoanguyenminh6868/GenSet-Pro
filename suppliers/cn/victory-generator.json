@@ -366,16 +366,6 @@
       "file": "sources/victory-generator/127.md"
     },
     {
-      "n": 128,
-      "url": "https://www.victorygenerator.com/light-tower/4.2kw-22kw-mobile-light-tower-diesel-generator-set.html",
-      "accessedAt": "2026-11-13",
-      "tier": "A",
-      "quote": [
-        "| Model | Frequency (Hz) | Rated Power | Max Power | Speed (rpm) | Engine | Alternator (Single Phase, P.F: 1.0) | Lamps"
-      ],
-      "file": "sources/victory-generator/128.md"
-    },
-    {
       "n": 129,
       "url": "https://www.victorygenerator.com/victory/10kw-11kw-silent-diesel-twin-cylinder-generator.html",
       "accessedAt": "2026-11-13",
@@ -1793,77 +1783,6 @@
         "| V26SU | 24KW/30KVA | 26KW/33KVA | JE493DB-01 | 60Hz | Natural | 93X102 | 2.771 | 18.2:1 | ≤5% | 6.5 | 1750*700*1010 | 660",
         "| V31SU | 28KW/35KVA | 31KW/39KVA | JE493ZDB-03 | 60Hz | Turbocharged | 93X102 | 2.771 | 18.2:1 | ≤5% | 7.8 | 1750*700*1010 | 680",
         "| V44SU | 40KW/50KVA | 44KW/55KVA | JE493ZLDB-01 | 60Hz | Turbocharged | 93X102 | 2.771 | 18.2:1 | ≤5% | 9.4 | 1850*700*1150 | 780"
-      ]
-    },
-    {
-      "n": 128,
-      "title": "4.2KW~22KW Mobile Light Tower Diesel Generator Set",
-      "header": [
-        "| Model | Frequency (Hz) | Rated Power | Max Power | Speed (rpm) | Engine | Alternator (Single Phase, P.F: 1.0) | Lamps",
-        "| KW | KW"
-      ],
-      "rows": [
-        "| TL5000S | 50 | 4.2 | 4.6 | 3000 | LA186FAFG | Brush with AVR | 4X400W, 4X1000W",
-        "| TL5000T | 50 | 4.5 | 5 | 3000"
-      ]
-    },
-    {
-      "n": 128,
-      "title": "4.2KW~22KW Mobile Light Tower Diesel Generator Set",
-      "header": [
-        "| Model | Frequency (Hz) | Prime Power | Standby Power | Speed (rpm) | Engine | Alternator | Lamps",
-        "| kW | KVA | KW | KVA"
-      ],
-      "rows": [
-        "| TL4000 | 50 | 7.2 | 9 | 8 | 10 | 1500 | Perkins 403A-11G1 | Stamford/Victory | 4X1000W Round Type",
-        "| 50 | 7.2 | 9 | 8 | 10 | 1500 | KUBOTA D1105-B2BG | Stamford/Victory",
-        "| 50 | 7.2 | 9 | 8 | 10 | 1500 | Yangdong YD380D | Stamford/Victory",
-        "| TL6000 | 50 | 8 | 10 | 9 | 11 | 1500 | Yangdong YD385D | Stamford/Victory | 4X1500W Round Type",
-        "| 50 | 9 | 11 | 10 | 12.5 | 1500 | KUBOTA V1505-E2BG | Stamford/Victory",
-        "| 50 | 10.4 | 13 | 11 | 14 | 1500 | Perkins 403A-15G1 | Stamford/Victory",
-        "| 50 | 10 | 13 | 11 | 14 | 1500 | Yangdong YD480D | Stamford/Victory",
-        "| TL9000 | 50 | 10 | 13 | 11 | 14 | 1500 | KUBOTA D1703-E2BG | Stamford/Victory | 6X1500W Round Type",
-        "| 50 | 12 | 15 | 13 | 16 | 1500 | Perkins 403A-15G2 | Stamford/Victory",
-        "| 50 | 13 | 16 | 14.3 | 18 | 1500 | Yangdong YND485D | Stamford/Victory",
-        "| TL12000 | 50 | 15 | 19 | 17 | 21 | 1500 | KUBOTA V2203-E2BG | Stamford/Victory | 6X2000W Square Type",
-        "| 50 | 18 | 23 | 20 | 25 | 1500 | KUBOTA V2003-T-E2BG | Stamford/Victory",
-        "| 50 | 16 | 20 | 18 | 22.5 | 1500 | Perkins 404A-22G1 | Stamford/Victory",
-        "| 50 | 16 | 20 | 18 | 22.5 | 1500 | Yangdong YSD490D | Stamford/Victory"
-      ]
-    },
-    {
-      "n": 128,
-      "title": "4.2KW~22KW Mobile Light Tower Diesel Generator Set",
-      "header": [
-        "| Model | Frequency (Hz) | Rated Power | Max Power | Speed (rpm) | Air cooled Engine | Alternator (Single Phase, P.F: 1.0) | Lamps",
-        "| KW | KW"
-      ],
-      "rows": [
-        "| TL5000S | 60 | 4.5 | 5 | 3000 | LA186FAFG | Brush with AVR | 4X400W, 4X1000W",
-        "| TL5000T | 60 | 5 | 5.5 | 3000"
-      ]
-    },
-    {
-      "n": 128,
-      "title": "4.2KW~22KW Mobile Light Tower Diesel Generator Set",
-      "header": [
-        "| Model | Frequency (Hz) | Prime Power | Standby Power | Speed (rpm) | Water cooled Engine | Alternator | Lamps",
-        "| KW | KVA | KW | KVA"
-      ],
-      "rows": [
-        "| TL4000 | 60 | 9 | 11 | 10 | 12.5 | 1800 | Perkins 403D-11G | Stamford/Victory | 4X1000W Round Type",
-        "| 60 | 9 | 11 | 10 | 12.5 | 1800 | KUBOTA D1105-B2BG | Stamford/Victory",
-        "| 60 | 9 | 11 | 10 | 12.5 | 1800 | Yangdong YD380D | Stamford/Victory",
-        "| TL6000 | 60 | 10 | 12.5 | 11 | 14 | 1800 | Yangdong YD385D | Stamford/Victory | 4X1500W Round Type",
-        "| 60 | 12 | 15 | 13 | 16 | 1800 | KUBOTA V1505-E2BG | Stamford/Victory",
-        "| 60 | 12 | 15 | 13 | 16 | 1800 | Perkins 403D-15G | Stamford/Victory",
-        "| 60 | 13 | 16 | 14 | 18 | 1800 | Yangdong YD480D | Stamford/Victory",
-        "| TL9000 | 60 | 13 | 16 | 14 | 18 | 1800 | KUBOTA D1703-E2BG | Stamford/Victory | 6X1500W Round Type",
-        "| 60 | 16 | 20 | 18 | 22.5 | 1800 | Yangdong YND485D | Stamford/Victory",
-        "| TL12000 | 60 | 18 | 23 | 20 | 25 | 1800 | KUBOTA V2203-E2BG | Stamford/Victory | 6X2000W Square Type",
-        "| 60 | 18 | 20 | 20 | 25 | 1800 | Perkins 404D-22G | Stamford/Victory",
-        "| 60 | 20 | 25 | 22 | 27.5 | 1800 | KUBOTA V2003-T-E2BG | Stamford/Victory",
-        "| 60 | 20 | 25 | 22 | 27.5 | 1800 | Yangdong YSD490D | Stamford/Victory"
       ]
     },
     {

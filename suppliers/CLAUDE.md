@@ -23,6 +23,7 @@
 
 ## Bẫy cào / gộp
 - Sau mọi lần `merge-specs` toàn bộ: chạy verify VÀ so số dòng bảng/nguồn từng bản ghi với origin/main.
+- `specs/` / `datasheets/` lệch với `cn/` (17/11/2026): có trang trong `specs/` chưa từng gộp, không có `sources/<id>/<n>.md` → `merge-specs` chết ENOENT giữa chừng, chạy được thì thêm bảng ngoài ý. Xoá bảng thì xoá thẳng trong `cn/` + cùng bảng (theo `n` + `rows`) trong `specs/`/`datasheets/` (thụt 1 dấu cách) + nguồn mồ côi, đừng dựa `merge-specs`. Bảng không phải máy phát bị chặn ở `OTHER` của `merge-specs.mjs`.
 - `crawl-specs.mjs --render` có thể treo hàng giờ → bọc `timeout 1200`. Bản ghi `website: null` không được cào; crawl chỉ cào một host của `website` (thương hiệu có website thứ hai → bản ghi riêng + `relatedIds`).
 - Đẩy tệp workflow lên nhánh `crawl/**` sẽ tự chạy CẢ danh sách hãng → merge main vào nhánh crawl bằng commit có `[skip ci]`, rồi `gh workflow run supplier-crawl.yml --ref <nhánh> -f ids="..." -f plain=false -f render=true`.
 - `pdftotext -table` cho bảng (`-layout` lệch cột); pdftotext của Git Bash cần `-enc UTF-8`. Ngày Accessed theo UTC.
