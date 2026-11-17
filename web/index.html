@@ -3892,7 +3892,7 @@ function catDetailHtml(e) {
     <div><h3 class="hlname" style="margin:4px 0">${e.model}</h3>${raw(e.names.length > 1 ? h`<div class="muted small">Cách ghi khác: ${e.names.filter((x) => x !== e.model).join(", ")}</div>` : "")}</div></div>
     <dl class="kv">
       <dt>Loại</dt><dd>${K.one.replace(/^./, (c) => c.toUpperCase())}</dd>
-      <dt>Hãng</dt><dd>${raw(e.makes.length ? [...new Set(e.makes.map((m) => m.name))].map((nm) => e.makes.filter((m) => m.name === nm).sort((a, b) => (CAT_VIA_RANK[b.via] || 0) - (CAT_VIA_RANK[a.via] || 0))[0]).map((m) => h`${m.name} <span class="muted small">(theo ${m.via}, ${supName(state.supplier?.[m.supplierId]) || m.supplierId} [${m.n}])</span>`).join("<br>") : '<span class="muted">Nguồn không ghi hãng</span>')}</dd>
+      <dt>Hãng</dt><dd>${raw(e.makes.length ? [...new Set(e.makes.map((m) => m.name))].map((nm) => e.makes.filter((m) => m.name === nm).sort((a, b) => (CAT_VIA_RANK[b.via] || 0) - (CAT_VIA_RANK[a.via] || 0))[0]).map((m) => h`${m.name} <span class="muted small">(theo ${m.via}, ${supName(state.supplier?.[m.supplierId]) || m.supplierId} [${m.n}])</span>`).join("<br>") : e.makeConflict ? h`<span class="muted">Chưa rõ hãng: các nguồn ghi khác nhau (${e.makeConflict.map((x) => `${x.name} ${x.suppliers} NCC`).join(", ")})</span>` : '<span class="muted">Nguồn không ghi hãng</span>')}</dd>
       <dt>Tổ máy dùng model này</dt><dd>${[catRange(e.kva, "kVA"), catRange(e.kw, "kW")].filter(Boolean).join(" · ") || "bảng không ghi công suất"}</dd>
       <dt>Tần số</dt><dd>${e.freq.map((x) => x + " Hz").join(", ") || "—"}</dd>
       ${raw(others.length ? h`<dt>${K.other}</dt><dd>${others.map(([m, n]) => `${m}${n > 1 ? ` (${n})` : ""}`).join(", ")}</dd>` : "")}
