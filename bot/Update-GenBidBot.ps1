@@ -103,6 +103,17 @@ foreach ($dst in $map.Keys) {
         }
     }
 }
+# Bản gốc của bộ nhớ cho Backup-GenBidBot.ps1 (gộp ba bản, Khoa 17/11/2026): tệp bộ nhớ nào trên máy đang GIỐNG repo
+# thì bản đó là bản gốc của lần đồng bộ này. Tệp máy có sửa tay (danh sách $local) giữ bản gốc cũ, để Backup gộp được.
+if (-not $Check) {
+    $memRepo = Join-Path $Bot 'claude\memory'; $memLocal = $map['claude\memory']; $memBase = Join-Path $Root 'genbid-work\memory-base'
+    if (Test-Path $memRepo) {
+        New-Item -ItemType Directory -Force $memBase | Out-Null
+        foreach ($f in @(Get-ChildItem $memRepo -File | Where-Object { Keep $_ })) {
+            if (Same $f.FullName (Join-Path $memLocal $f.Name)) { Copy-Item $f.FullName (Join-Path $memBase $f.Name) -Force }
+        }
+    }
+}
 $updated | ForEach-Object { Write-Host "  $(if ($Check) { 'sẽ cập nhật' } else { 'cập nhật' }): $_" }
 if ($local.Count) {
     Write-Warning "Tệp trên máy sửa tay, chưa có trên GitHub (giữ nguyên; chạy Backup-GenBidBot.ps1 + PR, hoặc -Force để ghi đè):"
