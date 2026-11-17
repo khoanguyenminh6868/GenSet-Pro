@@ -176,7 +176,7 @@ a.invlink{color:var(--brand);font-weight:600;text-decoration:underline;text-deco
 .seg.cattabs{margin-bottom:10px;display:grid;grid-auto-flow:column;grid-auto-columns:1fr;width:max-content}.seg.cattabs button{justify-content:center}
 @media (max-width:640px){.seg.cattabs{width:auto;grid-auto-columns:minmax(0,1fr)}.seg.cattabs button{flex-direction:column;gap:2px;padding:6px 4px}}
 /* Catalog search: wider, the Hãng / Thông số lists capped (their options are long). */
-@media (min-width:641px){#catMake,#catSpec{max-width:170px}}
+@media (min-width:641px){#catMake,#catSpec{max-width:170px}#catBrand,#catMade{max-width:130px}}
 
 /* Grid */
 .gridcard{padding:0;overflow:hidden}
@@ -3837,8 +3837,8 @@ function renderCatalog() {
   body.innerHTML = h`${raw(tabs)}${raw(filtToggle("catFilt"))}<div class="row suprow">
       <input type="search" id="catQ" placeholder="Tìm model, hãng, model tổ máy..." value="${f.q}" style="flex:1;min-width:180px;max-width:340px">
       <select id="catMake">${raw(opt("", "Hãng", f.make) + makes.map(([m, n]) => opt(m, m === "—" ? `Nguồn không ghi hãng (${n})` : `${m} (${n})`, f.make)).join(""))}</select>
-      <select id="catBrand" title="Nước của thương hiệu (hãng)">${raw(opt("", "Thương hiệu", f.brand) + brandOpts.map(([c, n]) => opt(c, c === "?" ? `Nguồn không ghi hãng (${n})` : `Thương hiệu ${catCountry(c)} (${n})`, f.brand)).join(""))}</select>
-      <select id="catMade" title="Nơi sản xuất: Trung Quốc khi hãng Trung Quốc hoặc dòng nguồn ghi nhà máy ở Trung Quốc của hãng ngoại (DCEC, CCEC, Stamford Vô Tích...)">${raw(opt("", "Nơi sản xuất", f.made) + madeOpts.map(([c, n]) => opt(c, c === "?" ? `Nguồn không ghi nơi sản xuất (${n})` : `Sản xuất tại ${catCountry(c)} (${n})`, f.made)).join(""))}</select>
+      <select id="catBrand" title="Thương hiệu (TH): nước của hãng">${raw(opt("", "Thương hiệu", f.brand) + brandOpts.map(([c, n]) => opt(c, c === "?" ? `TH: không ghi (${n})` : `TH: ${catCountry(c)} (${n})`, f.brand)).join(""))}</select>
+      <select id="catMade" title="Nơi sản xuất (SX): Trung Quốc khi hãng Trung Quốc hoặc dòng nguồn ghi nhà máy ở Trung Quốc của hãng ngoại (DCEC, CCEC, Stamford Vô Tích...)">${raw(opt("", "Nơi sản xuất", f.made) + madeOpts.map(([c, n]) => opt(c, c === "?" ? `SX: không ghi (${n})` : `SX: ${catCountry(c)} (${n})`, f.made)).join(""))}</select>
       <select id="catFreq">${raw(opt("", "Tần số", f.freq) + opt("50", "50 Hz", f.freq) + opt("60", "60 Hz", f.freq))}</select>
       <select id="catSpec">${raw(opt("", "Thông số", f.spec) + specOpts.map(([k, vi, n]) => opt(k, `Có ${vi.toLowerCase()} (${n})`, f.spec)).join(""))}</select>
     </div>
