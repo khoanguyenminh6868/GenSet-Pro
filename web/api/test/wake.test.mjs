@@ -99,6 +99,18 @@ test("Bot đang mở (tim < 3 phút), huỷ yêu cầu, hoặc chưa đặt SAND
   assert.equal(box.cmds.length, 0);
 });
 
+test("Trang thấy máy tắt (coll=wake): chỉ bật khi có yêu cầu chờ; bỏ qua mốc 'bot-on' của lần gửi yêu cầu lúc máy vừa tắt", async () => {
+  const ping = async () => { const h = await fresh("webreq.js", ENV); const r = (await call(h, mkReq({ method: "POST", body: { coll: "wake" }, token: "tok-user" }))).jsonBody; await S.lastBackground; return r.wake; };
+  db.put("botstatus", "current", { lastPollAt: ago(30) });
+  assert.equal(await ping(), "idle");
+  assert.equal(box.cmds.length, 0);
+  assert.equal(db.get("botstatus", "wake"), undefined, "không có việc thì không ghi mốc");
+  db.put("syncreq", "current", { requestedAt: ago(2) });
+  assert.equal(await ping(), "sent");
+  assert.ok(startCmd());
+  assert.equal(await ping(), "waking");
+});
+
 test("Bật sandbox lỗi: yêu cầu vẫn lưu, trả lời không chờ, không ném lỗi", async () => {
   box.Sandbox.get = async () => { throw new Error("401 OIDC"); };
   const r = await webreq([{ key: "IB1" }]);

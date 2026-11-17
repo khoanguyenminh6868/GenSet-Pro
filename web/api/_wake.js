@@ -4,6 +4,7 @@
 // Vercel variable SANDBOX_WAKE=1. Never fails the request it follows.
 import { SB_URL } from "./_supabase.js";
 import { sandboxOn, up, background } from "./_sandbox.js";
+import { anyPending } from "./requests.js";
 
 const SERVICE = process.env.SUPABASE_SERVICE_ROLE_KEY;
 export const BOT_SILENT_MS = 3 * 60e3;
@@ -17,8 +18,9 @@ export function shouldWake({ current, wake }, now = Date.now()) {
   return "wake";
 }
 
-// Returns "off" | "bot-on" | "waking" | "sent" | "error"; the sandbox itself starts in the background.
-export async function wakeSandbox({ now = Date.now() } = {}) {
+// Returns "off" | "bot-on" | "waking" | "idle" | "sent" | "error"; the sandbox itself starts in the background.
+// needPending: start it only if a request is waiting ("idle" otherwise), for the page's ping.
+export async function wakeSandbox({ now = Date.now(), needPending = false } = {}) {
   if (!sandboxOn()) return "off";
   const sb = { apikey: SERVICE, Authorization: `Bearer ${SERVICE}` };
   try {
@@ -27,6 +29,7 @@ export async function wakeSandbox({ now = Date.now() } = {}) {
     const by = Object.fromEntries((await r.json()).map((d) => [d.id, d.data]));
     const why = shouldWake(by, now);
     if (why !== "wake") return why;
+    if (needPending && !(await anyPending())) return "idle";
     const at = new Date(now).toISOString();
     // Mark first, so two requests in the same second do not both start it.
     await fetch(`${SB_URL}/rest/v1/docs`, {
