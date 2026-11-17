@@ -135,7 +135,7 @@ Ghi nhận thêm: `catalog-pdf.mjs` cố ý chỉ giữ dòng kiểm được b�
 - Kiểm trên dòng thô của 81 gói (`dumpH.cjs` → `checkH.cjs`): lô có Σ số lượng × đơn giá khớp giá trúng ±0,5%: 13 → 47 / 98. Lượt đọc lại thật 84 gói (`dryH.cjs` so từng gói với bản lưu): 38 lô từ sai thành khớp, 0 xấu đi, 17 lô đổi mà chưa khớp (giảm giá / liên danh / nguồn sai), ngoài hàng hoá chỉ đổi ở 5 gói có nhà thầu lặp.
 - Không sửa được vì nguồn sai: IB2500312373 phần 2 (trang ghi giá sau giảm 62,64 tỷ), IB2500304762 phần 2 (nhà thầu gõ thành tiền vào ô đơn giá), IB2200019427 (giá trúng của gói từ danh sách tìm kiếm = 7,39 tỷ).
 - `config.kvas`: 43 gói (không phải 37) có số dung sai, đã soát tay từng gói (`kvaTol.cjs` → `kvaFix.json`) và ghi lên web (`applyKva.mjs --write`). IB2400121273 giữ 85 kVA (chữ bản scan): chờ Khoa.
-- Chưa restart tác vụ "GenBid Bot" (`sync-pure.js` mới chỉ có hiệu lực ở tiến trình mới).
+- Không cần restart tác vụ "GenBid Bot": không sửa `GenBid-Bot.ps1`, mỗi lượt là tiến trình node mới nên đã dùng mã mới.
 
 ### Việc 1: công suất đọc theo tiêu đề — PR #892 (chờ đo top 30 rồi merge)
 242 lớp đổi (10.543 bản ghi) đã soát hết bằng `cmpP.cjs` / `revP.cjs`.
