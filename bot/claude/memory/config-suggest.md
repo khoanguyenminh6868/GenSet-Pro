@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-14T12:02:10.960Z
+  modified: 2026-11-17T00:13:48.517Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Code xếp sẵn 30 dòng ứng viên; mọi số/câu trích phải có nguyên văn trong nguồn, sai → "Đạt" thành "Chưa rõ". ~6–11 phút, ~3 USD/gói. Yêu cầu theo bộ mã cố định `suppliers/reqcodes.mjs` (thêm mã: dòng `R(...)` đúng thứ tự + test; tăng `REQ_VERSION`).
@@ -37,6 +37,12 @@ metadata:
 **Danh mục (`web/catalog.js`), Khoa duyệt 14/11/2026, làm xong phải đo tắt ↔ bật trên toàn bộ gói:**
 - Dòng nguyên văn lặp ở nhiều bảng của cùng NCC → GỘP thành một bản ghi, cộng dồn hãng + nguồn (không xoá thẳng bản sao).
 - Gán hãng động cơ / đầu phát: chỉ tin hãng ghi ở dòng bảng hoặc tiêu đề cột; hãng chỉ đến từ tên trang không dùng khi model đã có hãng mức cao hơn; còn mâu thuẫn → chưa rõ hãng, không đoán (cách siết do em đề xuất, Khoa trả lời "nên làm").
+
+**Ứng viên (Khoa duyệt 17/11/2026, IB2600603983, PR #823):**
+- HSMT nêu bố trí xi lanh (thẳng hàng / chữ V) → loại dòng ghi kiểu kia. Ngưỡng "ít nhất hai nhà cung cấp ghi mới tính cho cả động cơ" là do em chọn (dữ liệu NCC có ghi sai), Khoa chưa xét riêng điểm này.
+- Động cơ chỉ có dòng tần số kia (Baudouin đuôi "/6" = 60 Hz) → loại khi HSMT đòi tần số còn lại.
+- Gợi ý lại KHÔNG giữ dòng ứng viên của lượt trước (Khoa: "không cần giữ"); Tìm NCC / cấu hình internet vẫn giữ.
+- Khoa muốn bắt lỗi đọc ngưỡng HSMT có hệ thống: `suppliers/hints-audit.mjs` (so code đọc với Phân tích).
 
 **Tìm NCC:** CHỈ Claude. NCC mới trùng cấu hình có sẵn → gắn vào; không trùng → cấu hình mới. Không chạy lại cả Gợi ý. Gợi ý lại giữ kết quả Tìm NCC và cấu hình tìm trên internet (trang lưu ở `genbid-work\config-web\`). Nút trên từng cấu hình: Xoá, Tìm nhà cung cấp.
 
