@@ -10,7 +10,7 @@ không dùng GitHub Actions (repo private: Actions bị chặn / tính phút).
    Hobby 45), lần đầu chạy `setup-sandbox.sh`, rồi `start-bot.sh` bằng lệnh detached.
 2. Bot sandbox hỏi việc với `host=sandbox`. Mỗi nhịp tim (~1 phút) `web/api/requests.js` gọi `tick()` (`decide`):
    - máy Windows có tim < 1 phút và sandbox không làm dở việc → dừng;
-   - không yêu cầu chờ, rảnh ≥ 20 phút (`botstatus/sandboxbusy`) → dừng;
+   - không yêu cầu chờ, rảnh ≥ 5 phút (Khoa 17/11, trước 20 phút) (`botstatus/sandboxbusy`) → dừng;
    - còn lại: phiên còn < 20 phút thì gia hạn 60 phút. Dừng thì giữ snapshot: lần sau nối lại nhanh, không cài lại.
 3. Bot treo không gửi tim: phiên tự hết (≤ 60 phút).
 4. Không làm trùng: sandbox còn tim < 2 phút thì máy Windows hỏi việc nhận danh sách rỗng (`yieldTo: "sandbox"`).
@@ -35,7 +35,7 @@ Tệp: `setup-sandbox.sh` (Wine + VNeGP Agent bản Windows, Chrome, pwsh, Claud
 OIDC của project + SDK thật; nối lại từ snapshot < 1 s (snapshot ~2,8 GB); Sync; tải HSMT qua Agent dưới Wine; đăng tệp
 (Release + `hsmt-inbox` + ghi thẳng web, `GITHUB_TOKEN` của Vercel đủ quyền); Phân tích; dịch (Claude; Gemini qua `agy` gọi thử);
 OCR tesseract vie (~3 s/trang); .doc qua antiword; Gợi ý cấu hình (11 phút); máy Windows bật lại giữa lúc sandbox làm dở → máy
-nhường, sandbox làm xong rồi dừng sau 44 s; rảnh 20 phút → dừng; gia hạn phiên khi còn việc.
+nhường, sandbox làm xong rồi dừng sau 44 s; rảnh 20 phút → dừng (nay 5 phút); gia hạn phiên khi còn việc.
 Test: `web/api/test/wake.test.mjs` (sandbox giả).
 
 ## Chưa kiểm
