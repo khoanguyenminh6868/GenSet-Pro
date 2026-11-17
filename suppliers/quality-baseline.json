@@ -160,23 +160,23 @@
  "conflicts": {
   "cyl": {
    "before": 138,
-   "strict": 138,
-   "loose": 138
+   "strict": 24,
+   "loose": 24
   },
   "disp": {
    "before": 384,
-   "strict": 383,
-   "loose": 384
+   "strict": 197,
+   "loose": 195
   },
   "bore": {
    "before": 166,
-   "strict": 136,
-   "loose": 166
+   "strict": 36,
+   "loose": 45
   },
   "compr": {
    "before": 55,
-   "strict": 54,
-   "loose": 54
+   "strict": 33,
+   "loose": 33
   }
  }
 }

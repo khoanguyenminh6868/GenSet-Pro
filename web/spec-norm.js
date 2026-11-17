@@ -589,5 +589,20 @@
   // A normalized value has a figure (or a level for emission).
   const hasValue = (r) => r && (r.num != null || r.range || r.options || r.enum || r.dims || r.bore || r.count != null || r.cond?.exempt);
 
-  root.GenbidSpecNorm = { KEYS, normalize, normalizeRecord, powerFlags, hasValue, headerUnit, numOf, decimalCommaEvidence };
+  // Internal check of ONE engine row (depco-sua, Khoa 17/11/2026): cylinders × π/4 × bore² × stroke against the displacement
+  // the same row gives. Off by more than `tol` (5%): the row contradicts itself, so none of its cylinders / bore / displacement
+  // may count as a figure against other suppliers (a figure of it cannot be told from the others). `norm` = normalizeRecord's
+  // output of one row; displacement only in litres as written, or with no unit (the "loose" reading of quality.mjs).
+  // Null when the row lacks one of the four numbers. Every figure is read, none is guessed.
+  function selfCheck(norm, tol = 0.05) {
+    const get = (k) => (norm || []).find((r) => r.key === k && !r.missing.some((m) => m !== "unit" && m !== "layout"));
+    const z = get("cyl")?.count, b = get("bore")?.bore, d = get("disp");
+    const bb = b?.bore, st = b?.stroke, L = d && d.num != null && (d.unit === "L" || !d.unit) ? d.num : null;
+    if (!(z > 0) || !(bb > 0) || !(st > 0) || !(L > 0)) return null;
+    const calc = Math.PI / 4 * bb * bb * st * z / 1e6;
+    const gap = Math.abs(calc - L) / L;
+    return { cyl: z, bore: bb, stroke: st, disp: L, calc: Math.round(calc * 1000) / 1000, gap: Math.round(gap * 1000) / 1000, bad: gap > tol };
+  }
+
+  root.GenbidSpecNorm = { KEYS, normalize, normalizeRecord, powerFlags, hasValue, headerUnit, numOf, decimalCommaEvidence, selfCheck };
 })(typeof window !== "undefined" ? window : globalThis);
