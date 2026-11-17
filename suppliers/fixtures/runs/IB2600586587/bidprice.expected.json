@@ -14,11 +14,11 @@
  ],
  "stats": {
   "basis": "same+close",
-  "n": 1,
+  "n": 2,
   "same": 0,
-  "close": 1,
+  "close": 2,
   "nPrior": 16,
-  "pool": 17,
+  "pool": 18,
   "enough": true,
   "levels": [
    "low:718137000",
@@ -26,9 +26,9 @@
    "high:884827000"
   ],
   "calib": [
-   "low:624356000",
-   "mid:858253000",
-   "high:899289000"
+   "low:702772000",
+   "mid:871791000",
+   "high:906120000"
   ],
   "perKva": 583712000
  },

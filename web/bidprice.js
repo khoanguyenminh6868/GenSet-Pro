@@ -287,8 +287,9 @@
   // (won goods or the HSMT's lines), so the agent can tell what it was (a lot with nothing about its configuration
   // cannot set the price).
   // t.rating: the rating K is given at (prime / standby / null); t.place: "cn" when the engine to be offered is made in
-  // China (the configuration's supplier is based there). prior: the competed lots of the same size (±15%) and not of the
-  // other group that are not in the list, for suggest to lean on when few lots are alike.
+  // China (the configuration's supplier is based there). prior: the lots of the same size (±15%) and not of the other
+  // group that are not in the list, one-bidder lots included (Khoa 2026-11-17), for suggest to lean on when under 10
+  // lots are alike.
   function candidates(t, docs, K, P) {
     const kind = bidKind(t.bidName), out = [], prior = [], tp = profileOf(`${t.bidName || ""}\n${t.cfgText || ""}`);
     if (t.sync && !tp.tags.includes(SYNC_TAG)) tp.tags.push(SYNC_TAG);
@@ -322,7 +323,7 @@
         // The reading of k that compares with K (k itself when the ratings are known or the same size).
         const kEq = K && k ? nearest(K, rK, k, rk) : k;
         if (K && !powerMatch(K, rK, k, rk, tol)) {
-          if (k && nb >= 2 && !conflict(tGroup, group) && Math.abs(Math.log(kEq / K)) <= Math.log(1 + WIDE_TOL)) prior.push({ key, lotNo: lot.lotNo || "", name: d.bidName || "", k, kEq, ratio, nb, price, wp, group, units });
+          if (k && nb >= 1 && !conflict(tGroup, group) && Math.abs(Math.log(kEq / K)) <= Math.log(1 + WIDE_TOL)) prior.push({ key, lotNo: lot.lotNo || "", name: d.bidName || "", k, kEq, ratio, nb, price, wp, group, units });
           continue;
         }
         if (!k && !goods.length && !d.config?.text) continue;
@@ -378,20 +379,26 @@
   }
   const quantile = (xs, p) => { const a = [...xs].sort((x, y) => x - y); return a.length ? a[Math.min(a.length - 1, Math.floor(p * (a.length - 1)))] : null; };
   const median = (xs) => quantile(xs, 0.5);
-  // Prices from the lots the agent found alike. Only lots with two or more bidders: a lone bidder's price was never
-  // competed against (IB2500514971: one bidder, 99,9% of the lot price). "same" alone when there are 5 of them, else
-  // "same" and "close"; under 3 lots no price is suggested. Each level's chance is the share of those lots whose
-  // winning price was at least that price, over the lot price.
-  // Under 5 alike lots, the competed lots of the same size and group the agent was not asked about (candidates' prior)
-  // back them up, so three or four lots do not set the price alone (2026-11-06 audit: 3 of 9 runs had too few, the rest
-  // 1–9). The winning share falls with the number of bidders (2 bidders: median 98% of the lot price; 6 or more: 79%),
-  // so the lots' bidder counts and the share at 2–3 against 4+ bidders are given too.
+  // Prices from the lots the agent found alike, one-bidder lots included (Khoa 2026-11-17, replacing the rule "only lots
+  // with two or more bidders": a lone bidder's price was never competed against, IB2500514971 99,9% of the lot price, but
+  // it is what such a lot wins at, and the forecast weighting of calibLevels gives that group its share). "same" alone
+  // when there are 5 of them, else "same" and "close"; under 3 lots no price is suggested. Each level's chance is the
+  // share of those lots whose winning price was at least that price, over the lot price.
+  // Under POOL_MIN (10) alike lots, all the lots of the same size (±15%) and group the agent was not asked about
+  // (candidates' prior, ≤ 150) join the pool (Khoa 2026-11-17; before: only under 5), so a small pool is not moved by
+  // one lot the agent flips (bp-low-dao-dong, IB2600601812: 7–8 lots, one lot moved the low level 12% of the lot price).
+  // Backtest 2026-11-17: adding them all moved the low level less when one alike lot is taken out than topping the pool
+  // up to exactly 10 (cases moved ≥ 10 points: 77 against 101 of 654), with as good or better levels.
+  // The winning share falls with the number of bidders (2 bidders: median 98% of the lot price; 6 or more: 79%), so the
+  // lots' bidder counts and the share at 1, 2–3 and 4+ bidders are given too.
+  const POOL_MIN = 10;
   const nbOf = (s) => (Array.isArray(s.bidders) ? s.bidders.length : Number(s.nb) || 0);
   // ---------- Ba mức hiệu chỉnh theo cạnh tranh dự báo (2026-11-10, thử nghiệm, TẮT mặc định) ----------
   // Hậu kiểm (bidprice-backtest.mjs --calib, chỉ dữ liệu trước ngày đóng thầu, 671 phần): khoảng [Cạnh tranh, Cao] =
   // phân vị 25/75 chỉ chứa 36% giá trúng thật, mức giữa lệch theo số nhà thầu (1 NT −4,4 điểm; ≥6 NT +11,3). Cách này cho
-  // mỗi gói cũ trong pool trọng số theo xác suất nhóm số nhà thầu của gói đó ở dự báo nbForecast (bỏ nhóm 1 nhà thầu vì
-  // pool chỉ có gói ≥2 nhà thầu, rồi chia lại), kéo về 1 với CALIB.lam, và lấy phân vị có trọng số CALIB.q / 0,5 / 1−q.
+  // mỗi gói cũ trong pool trọng số theo xác suất nhóm số nhà thầu của gói đó ở dự báo nbForecast (cả nhóm 1 nhà thầu từ
+  // khi pool nhận gói 1 nhà thầu, Khoa 2026-11-17; trước đó bỏ nhóm này rồi chia lại), kéo về 1 với CALIB.lam, và lấy
+  // phân vị có trọng số CALIB.q / 0,5 / 1−q.
   // Hai tham số (lam 0,5; q 0,2), chọn trên cả giai đoạn; nửa sau (đóng sau 13/09/2024, 338 phần): phủ 38,2% → 56,8%, sai
   // số mức giữa 6,5 → 5,3 điểm, khoảng rộng 14,2 → 16,4 điểm. Không sửa được lệch của gói ≥6 nhà thầu (dự báo hiếm khi
   // thấy trước) và lệch nhóm động cơ Trung Quốc. suggest chỉ tính khi được truyền opts.fc; levels giữ nguyên.
@@ -410,20 +417,21 @@
   }
   function calibLevels(pool, P, fc, { lam = CALIB.lam, q = CALIB.q, s: st = CALIB.s } = {}) {
     if (!(pool.length >= 3 && P > 0) || !fc?.p) return [];
-    const p = fc.p.slice(1), sp = p.reduce((a, b) => a + b, 0), share = [0, 0, 0];
-    for (const s of pool) share[Math.max(1, nbBucket(nbOf(s))) - 1]++;
-    const ws = pool.map((s) => { const b = Math.max(1, nbBucket(nbOf(s))) - 1; return 1 - lam + (lam * (p[b] / sp)) / (share[b] / pool.length); });
+    // Every bidder group gets its forecast share, the 1-bidder one too (its lots are in the pool since Khoa 2026-11-17).
+    const p = fc.p, sp = p.reduce((a, b) => a + b, 0), share = [0, 0, 0, 0];
+    for (const s of pool) share[nbBucket(nbOf(s))]++;
+    const ws = pool.map((s) => { const b = nbBucket(nbOf(s)); return 1 - lam + (lam * (p[b] / sp)) / (share[b] / pool.length); });
     const rs = pool.map((s) => s.ratio), round = (v) => Math.round(v / 1000) * 1000;
     const [lo, mid, hi] = [q, 0.5, 1 - q].map((pq) => wQuantile(rs, ws, pq));
     const r3 = [mid - st * (mid - lo), mid, Math.max(mid, Math.min(1, mid + st * (hi - mid)))];
     return [["low", "Cạnh tranh"], ["mid", "Trung vị"], ["high", "Cao"]].map(([id, label], i) => ({ id, label, ratio: r3[i], price: round(P * r3[i]) }));
   }
   function suggest(samples, P, K, prior = [], opts = {}) {
-    const ok = (s) => !s.unverified && nbOf(s) >= 2;
+    const ok = (s) => !s.unverified && nbOf(s) >= 1;
     const same = samples.filter((s) => s.level === "same" && ok(s)), close = samples.filter((s) => s.level === "close" && ok(s));
     const use = same.length >= 5 ? same : [...same, ...close], basis = same.length >= 5 ? "same" : "same+close";
     const have = new Set(use.map((s) => `${s.key}|${s.lotNo}`));
-    const extra = use.length >= 5 ? [] : prior.filter((p) => ok(p) && !have.has(`${p.key}|${p.lotNo}`));
+    const extra = use.length >= POOL_MIN ? [] : prior.filter((p) => ok(p) && !have.has(`${p.key}|${p.lotNo}`));
     const pool = [...use, ...extra];
     const ratios = pool.map((s) => s.ratio), round = (v) => Math.round(v / 1000) * 1000;
     const chance = (r) => (pool.length ? pool.filter((s) => s.ratio >= r - 1e-9).length / pool.length : 0);
@@ -435,7 +443,7 @@
     const perSet = (s) => (s.k ? s.wp / (s.k * (s.units || 1)) : null);
     const withK = pool.filter((s) => perSet(s)), perKva = K && withK.length >= 3 ? median(withK.map(perSet)) : null;
     const nbs = pool.map(nbOf), bidders = pool.length ? { n: pool.length, median: median(nbs), min: Math.min(...nbs), max: Math.max(...nbs) } : null;
-    const byBidders = [["2–3 nhà thầu", (n) => n <= 3], ["từ 4 nhà thầu", (n) => n >= 4]].map(([label, f]) => { const xs = pool.filter((s) => f(nbOf(s))).map((s) => s.ratio); return { label, n: xs.length, ratio: median(xs) }; }).filter((x) => x.n);
+    const byBidders = [["1 nhà thầu", (n) => n <= 1], ["2–3 nhà thầu", (n) => n >= 2 && n <= 3],["từ 4 nhà thầu", (n) => n >= 4]].map(([label, f]) => { const xs = pool.filter((s) => f(nbOf(s))).map((s) => s.ratio); return { label, n: xs.length, ratio: median(xs) }; }).filter((x) => x.n);
     const comp = new Map();
     for (const s of use) for (const b of s.bidders) {
       const id = b.tax || b.name.trim().toUpperCase();
@@ -762,7 +770,7 @@
     const list = cand.list.filter(fits).map((s) => ({ ...s, level: "close" })), prior = cand.prior.filter(fits);
     const stats = suggest(list, P, Kall, prior);
     return { group, basis: "code", stats, n: list.length, nPrior: prior.length,
-      note: stats.levels.length ? "" : `Không đủ gói cũ nhóm ${GROUP[group] || group} có cạnh tranh (cần ít nhất 3, có ${stats.pool}).` };
+      note: stats.levels.length ? "" : `Không đủ gói cũ nhóm ${GROUP[group] || group} (cần ít nhất 3, có ${stats.pool}).` };
   }
 
   // ---------- Khoản chi có thể phát sinh, đọc từ Phân tích (2026-11-10) ----------

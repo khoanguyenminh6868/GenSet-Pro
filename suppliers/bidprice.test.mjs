@@ -68,7 +68,7 @@ test("profileOf: makes decide the group, a mix of both is none", () => {
   assert.deepEqual(BP.profileOf("Tổ máy 1 pha 220V, có chuyển nguồn tự động").tags, ["ATS", "1 pha"]);
 });
 
-test("check: a quote not in the lot's text is not counted; lone-bidder lots do not set the price", () => {
+test("check: a quote not in the lot's text is not counted; lone-bidder lots count (Khoa 2026-11-17)", () => {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), "bp-test-"));
   const { list } = BP.candidates({ notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA" }, { ...docs, F: { bidName: "Mua sắm máy phát điện 420kVA", final: true, lots: [lot(1.5e9, 1.2e9, [], 1)] }, G: { bidName: "Mua sắm máy phát điện 380kVA", final: true, lots: [lot(1e9, 8e8)] } }, 400, 1.2e9);
   fs.writeFileSync(path.join(dir, "samples.json"), JSON.stringify({ basis: { kva: 400, price: 1.2e9 }, total: 5, list }));
@@ -85,8 +85,8 @@ test("check: a quote not in the lot's text is not counted; lone-bidder lots do n
   assert.ok(by("G").unverified);
   assert.ok(!by("F").unverified);
   assert.equal(problems.length, 1);
-  // Only A counts (G is unverified, F has one bidder): under 3 lots, no price.
-  assert.equal(result.stats.n, 1);
+  // A and F count (G is unverified; F has one bidder and counts since Khoa 2026-11-17): under 3 lots, no price.
+  assert.equal(result.stats.n, 2);
   assert.equal(result.stats.levels.length, 0);
 });
 
@@ -185,7 +185,7 @@ test("profileOf / candidates: a foreign make made in China is its own group, com
   assert.deepEqual([r2.group, r2.list.map((s) => s.key).sort()], ["foreign", ["CNM", "US"]]);
 });
 
-test("suggest: under 5 alike lots the same-size prior backs them; bidders counted; per kVA divides by the sets", () => {
+test("suggest: under 10 alike lots the same-size prior backs them; bidders counted; per kVA divides by the sets", () => {
   const s = (ratio, level = "same", units = 1) => ({ key: "K" + ratio, lotNo: "", level, ratio, wp: ratio * 1e9 * units, price: 1e9 * units, k: 400, units, bidders: [{ name: "a", price: 1, won: true }, { name: "b", price: 2 }] });
   const prior = [0.6, 0.7, 0.8].map((r, i) => ({ key: "P" + i, lotNo: "", ratio: r, nb: i + 4, k: 420, wp: r * 1e9, price: 1e9, units: 1 }));
   const st = BP.suggest([s(0.9), s(0.95)], 1e9, 400, prior);
@@ -193,8 +193,39 @@ test("suggest: under 5 alike lots the same-size prior backs them; bidders counte
   assert.deepEqual(st.levels.map((l) => l.ratio), [0.7, 0.8, 0.9]);
   assert.equal(st.bidders.median, 4);
   assert.deepEqual(st.byBidders.map((x) => [x.label, x.n]), [["2–3 nhà thầu", 2], ["từ 4 nhà thầu", 3]]);
-  assert.equal(BP.suggest([s(0.7), s(0.8), s(0.9), s(0.95), s(1)], 1e9, 400, prior).nPrior, 0);
+  // Khoa 2026-11-17: the prior backs a pool under 10 (before: under 5), all of it; from 10 alike lots, none.
+  const five = BP.suggest([s(0.7), s(0.8), s(0.9), s(0.95), s(1)], 1e9, 400, prior);
+  assert.deepEqual([five.n, five.nPrior, five.pool], [5, 3, 8]);
+  const nine = Array.from({ length: 9 }, (_, i) => s(0.8 + i / 100)), many = Array.from({ length: 20 }, (_, i) => ({ ...prior[0], key: "Q" + i }));
+  assert.deepEqual([BP.suggest(nine, 1e9, 400, many).nPrior, BP.suggest(nine, 1e9, 400, many).pool], [20, 29]);
+  assert.equal(BP.suggest([...nine, s(0.99)], 1e9, 400, many).nPrior, 0);
+  // A prior lot that is also alike is not counted twice.
+  assert.equal(BP.suggest([s(0.9), s(0.95)], 1e9, 400, [...prior, { ...prior[0], key: "K0.9" }]).nPrior, 3);
   assert.equal(BP.suggest([s(0.8), s(0.8, "same", 20), s(0.8)], 1e9, 400).perKva.value, 2000000);
+});
+
+test("suggest / candidates: one-bidder lots count, alike and prior (Khoa 2026-11-17)", () => {
+  const s = (ratio, nb) => ({ key: "K" + ratio, lotNo: "", level: "close", ratio, wp: ratio * 1e9, price: 1e9, k: 400, bidders: Array.from({ length: nb }, (_, i) => ({ name: "b" + i, price: 1, won: !i })) });
+  const st = BP.suggest([s(0.99, 1), s(0.98, 1), s(0.8, 3)], 1e9, 400);
+  assert.deepEqual([st.n, st.pool, st.levels.length], [3, 3, 3]);
+  assert.deepEqual(st.byBidders.map((x) => [x.label, x.n]), [["1 nhà thầu", 2], ["2–3 nhà thầu", 1]]);
+  // An unverified lot still does not count.
+  assert.equal(BP.suggest([s(0.99, 1), { ...s(0.98, 1), unverified: "x" }], 1e9, 400).n, 1);
+  const prior = [{ key: "P", lotNo: "", ratio: 0.99, nb: 1, k: 420, wp: 0.99e9, price: 1e9, units: 1 }];
+  assert.equal(BP.suggest([s(0.8, 3)], 1e9, 400, prior).nPrior, 1);
+  // candidates: a one-bidder lot of the wider band is a prior lot.
+  const d = { A: { bidName: "Mua sắm máy phát điện 400kVA", final: true, lots: [lot(1e9, 8e8)] }, ONE: { bidName: "Mua sắm máy phát điện 440kVA", final: true, lots: [lot(1e9, 9.9e8, [], 1)] } };
+  const r = BP.candidates({ notifyNo: "X", bidName: "Mua sắm máy phát điện 400 kVA" }, d, 400, 1e9);
+  assert.deepEqual([r.list.map((x) => x.key), r.prior.map((x) => [x.key, x.nb])], [["A"], [["ONE", 1]]]);
+});
+
+test("calibLevels: the 1-bidder group gets its forecast share (Khoa 2026-11-17)", () => {
+  const s = (ratio, nb) => ({ ratio, bidders: Array.from({ length: nb }, (_, i) => ({ name: "b" + i, price: 1, won: !i })) });
+  const pool = [s(0.99, 1), s(0.995, 1), s(1, 1), s(0.85, 3), s(0.86, 3), s(0.84, 3), s(0.83, 2)];
+  const mid = (p) => BP.calibLevels(pool, 1e9, { p }, { s: 1 })[1].ratio;
+  // Most of the forecast on one bidder: the middle is a one-bidder price; little on it: a competed one.
+  assert.ok(mid([0.8, 0.1, 0.05, 0.05]) >= 0.99);
+  assert.ok(mid([0.05, 0.85, 0.05, 0.05]) <= 0.86);
 });
 
 test("keyText: the first part of an HSMT, then its later lines about make, origin and scope", () => {
