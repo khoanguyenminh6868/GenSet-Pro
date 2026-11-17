@@ -852,8 +852,12 @@
     for (const h of hs) {
       const starts = [], named = h.some((x) => engT(x) || altT(x));
       h.forEach((x, j) => {
-        if (ei >= 0 && engT(x)) starts.push([j, ei, 1], [j, ei, -1]);
-        if (ai >= 0 && altT(x)) starts.push([j, ai, 1], [j, ai, -1]);
+        // "Engine | Modle" (sr-genset): the title is over the brand cell and the model has the next title; the model's cell
+        // is at the next title, so the title and the cell do not line up: no walk from here (thà thiếu còn hơn đọc sai;
+        // a kVA was read as the voltage, rà soát lệch cột 18/11/2026).
+        const apart = /^\s*(model|modle|型号)\s*$/i.test(h[j + 1] || "") && !engT(h[j + 1]) && !altT(h[j + 1]);
+        if (ei >= 0 && engT(x) && !apart) starts.push([j, ei, 1], [j, ei, -1]);
+        if (ai >= 0 && altT(x) && !apart) starts.push([j, ai, 1], [j, ai, -1]);
       });
       if (gi === 0 && /model|型号|机组/i.test(h[0] || "") && !engT(h[0]) && !altT(h[0])) starts.push([0, 0, 1]);
       starts.push([h.length - 1, cells.length - 1, -1, true]);
