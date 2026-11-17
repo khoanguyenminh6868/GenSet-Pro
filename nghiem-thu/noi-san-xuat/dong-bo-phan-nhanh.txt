@@ -1,0 +1,172 @@
+== IB2200004914 g7 parts
+   parts: {"engine":null,"alternator":null,"controller":null}
+   [origin] Tủ chuyển nguồn tự động ATS 250A: Quy cách, xuất xứ: Lắp ráp tại Việt Nam; bộ điều khiển ATS và ATS đồng bộ nhà sản xuất; xuất xứ G7; mới 100%; có cam kết cung cấp hàng hóa của nhà sản xuất chính hãng.
+== IB2200052323 g7eu parts
+   parts: {"engine":{"basis":"brand","quote":"Động cơ: Xuất xứ/Thương hiệu: Nhà thầu đề xuất; thương hiệu các hãng thuộc các nước G7, EU"},"alternator":{"basis":"brand","quote":"Đầu phát: Xuất xứ/Thương hiệu: Nhà thầu đề xuất; thương hiệu các hãng thuộc các nước G7, EU; năm sản xuất 2021 trở lại đây"},"controller":null}
+   [origin] Động cơ: Xuất xứ/Thương hiệu: Nhà thầu đề xuất; thương hiệu các hãng thuộc các nước G7, EU
+   [origin] Đầu phát: Xuất xứ/Thương hiệu: Nhà thầu đề xuất; thương hiệu các hãng thuộc các nước G7, EU; năm sản xuất 2021 trở lại đây
+== IB2300000242 g7eu parts
+   parts: {"engine":null,"alternator":null,"controller":null}
+   [origin] Hãng sản xuất (xuất xứ khu vực): Hãng sản xuất thuộc EU/G7.
+== IB2300018261 g7 parts
+   parts: {"engine":null,"alternator":null,"controller":null}
+   [origin] Động cơ: Xuất xứ: Nhập khẩu trực tiếp chính hãng, không nhập khẩu qua nước thứ 3; sản xuất từ 2023 trở về sau. Nhà thầu tham khảo thông số kỹ thuật các thiết bị có nguồn gốc tại nhóm các nước phát triển G7 và các nước Hà
+   [origin] Đầu phát điện: Xuất xứ: Nhập khẩu trực tiếp chính hãng, không nhập khẩu qua nước thứ 3; sản xuất từ 2023 trở về sau. Nhà thầu tham khảo thông số kỹ thuật các thiết bị có nguồn gốc tại nhóm các nước phát triển G7
+   [origin] Bộ điều khiển: Xuất xứ: Nhập khẩu trực tiếp chính hãng, không nhập khẩu qua nước thứ 3; sản xuất từ 2023 trở về sau. Nhà thầu tham khảo thông số kỹ thuật các thiết bị có nguồn gốc tại nhóm các nước phát triển G7
+== IB2300062472 g7 parts
+   parts: {"engine":{"basis":"brand","quote":"Động cơ: Hãng sản xuất: Thuộc các nước nhóm G7, OECD, NICs (bắt buộc)"},"alternator":{"basis":"brand","quote":"Đầu phát: Hãng sản xuất: Thuộc các nước nhóm G7, OECD, NICs (bắt buộc)"},"controller":{"basis":"origin","quote":"Bộ điều khiển: Hãng sản xuất, xuất xứ: Thuộc các nước nhóm G7, OECD (bắt buộc); xuất xứ/nhãn hiệu do nhà thầu đề xuất"}}
+   [brand] Động cơ: Hãng sản xuất: Thuộc các nước nhóm G7, OECD, NICs (bắt buộc)
+   [brand] Đầu phát: Hãng sản xuất: Thuộc các nước nhóm G7, OECD, NICs (bắt buộc)
+   [origin] Bộ điều khiển: Hãng sản xuất, xuất xứ: Thuộc các nước nhóm G7, OECD (bắt buộc); xuất xứ/nhãn hiệu do nhà thầu đề xuất
+== IB2300094137 g7 parts
+   parts: {"engine":null,"alternator":null,"controller":null}
+   [origin] Động cơ: Xuất xứ: Nhập khẩu trực tiếp chính hãng, không nhập khẩu qua nước thứ 3; sản xuất từ 2023 trở về sau (nhà thầu tham khảo thông số kỹ thuật các thiết bị có nguồn gốc tại nhóm các nước phát triển G7).
+   [origin] Đầu phát: Xuất xứ: Nhập khẩu trực tiếp chính hãng, không nhập khẩu qua nước thứ 3; sản xuất từ 2023 trở về sau (nhà thầu tham khảo thông số kỹ thuật các thiết bị có nguồn gốc tại nhóm các nước phát triển G7).
+   [origin] Bộ điều khiển: Xuất xứ: Nhập khẩu trực tiếp chính hãng, không nhập khẩu qua nước thứ 3; sản xuất từ 2023 trở về sau (nhà thầu tham khảo thông số kỹ thuật các thiết bị có nguồn gốc tại nhóm các nước phát triển G7).
+== IB2300194512 g7eu parts
+   parts: {"engine":null,"alternator":null,"controller":null}
+   [brand] MPĐ 750kVA: Thương hiệu/công nghệ: Thương hiệu nhà sản xuất từ các nước G7, châu Âu; sản xuất theo công nghệ của các nước G7, châu Âu
+== IB2300236743 g7 parts
+   parts: {"engine":{"basis":"brand","quote":"Máy 18KVA: Động cơ - Thương hiệu: G7"},"alternator":{"basis":"brand","quote":"Máy 18KVA: Đầu phát - Thương hiệu: G7"},"controller":{"basis":"brand","quote":"Chung (cả máy 10KVA và 18KVA): Bộ điều khiển - Thương hiệu: G7"}}
+   [brand] Máy 18KVA: Động cơ - Thương hiệu: G7
+   [brand] Máy 18KVA: Đầu phát - Thương hiệu: G7
+   [brand] Máy 10KVA: Động cơ - Thương hiệu: G7
+   [brand] Máy 10KVA: Đầu phát - Thương hiệu: G7
+   [brand] Chung (cả máy 10KVA và 18KVA): Bộ điều khiển - Thương hiệu: G7
+== IB2300390432 g7 parts
+   parts: {"engine":null,"alternator":null,"controller":null}
+   [origin] Máy 50kW/62.5kVA: Công nghệ: Tích hợp công nghệ 4.0 điều khiển giám sát; được thiết kế, sản xuất – lắp ráp và thử nghiệm hoàn toàn trên dây chuyền tự động đáp ứng tiêu chuẩn G7
+== IB2400186078 g7eu parts
+   parts: {"engine":{"basis":"brand","quote":"Phần B - Máy 12 kVA: Động cơ - hãng, thương hiệu, xuất xứ: Hãng sản xuất và xuất xứ do nhà thầu cung cấp; thương hiệu thuộc nhóm nước EU, G7; năm sản xuất 2023 trở lại đây"},"alternator":null,"controller":null}
+   [origin] Phần B - Máy 12 kVA: Năm sản xuất, xuất xứ: Năm sản xuất 2023 trở về sau; xuất xứ thuộc nhóm nước EU, G7 hoặc Việt Nam
+   [origin] Phần B - Máy 12 kVA: Động cơ - hãng, thương hiệu, xuất xứ: Hãng sản xuất và xuất xứ do nhà thầu cung cấp; thương hiệu thuộc nhóm nước EU, G7; năm sản xuất 2023 trở lại đây
+== IB2400265303 g7eu parts
+   parts: {"engine":{"basis":"brand","quote":"Động cơ: Xuất xứ và thương hiệu: Xuất xứ nhà thầu đề xuất; thương hiệu thuộc các nước G7 hoặc EU, có giấy chứng nhận CE"},"alternator":{"basis":"brand","quote":"Đầu phát điện: Xuất xứ, thương hiệu, năm sản xuất: Xuất xứ nhà thầu đề xuất; thương hiệu thuộc các nước G7 hoặc EU, có giấy chứng nhận CE; năm sản xuất 2023 trở lại đây"},"controller":null}
+   [origin] Động cơ: Xuất xứ và thương hiệu: Xuất xứ nhà thầu đề xuất; thương hiệu thuộc các nước G7 hoặc EU, có giấy chứng nhận CE
+   [origin] Đầu phát điện: Xuất xứ, thương hiệu, năm sản xuất: Xuất xứ nhà thầu đề xuất; thương hiệu thuộc các nước G7 hoặc EU, có giấy chứng nhận CE; năm sản xuất 2023 trở lại đây
+== IB2400362458 g7eu parts
+   parts: {"engine":{"basis":"origin","quote":"Động cơ: Xuất xứ: EU – G7"},"alternator":{"basis":"origin","quote":"Đầu phát điện: Xuất xứ: EU – G7"},"controller":{"basis":"origin","quote":"Hệ thống điều khiển: Xuất xứ: EU – G7"}}
+   [origin] Động cơ: Xuất xứ: EU – G7
+   [origin] Đầu phát điện: Xuất xứ: EU – G7
+   [origin] Hệ thống điều khiển: Xuất xứ: EU – G7
+== IB2400427929 g7eu parts
+   parts: {"engine":{"basis":"brand","quote":"Máy 20/22 kVA: Động cơ: Thương hiệu thuộc các nước EU, G7; 4 xilanh, dung tích ≥ 2,3 lít, 1500 vòng/phút; công suất ≥ 21kW và ≥ 23kW; khởi động điện 12VDC, ắc quy ≥ 60Ah kín khí; dầu bôi trơn ≤ 25 lít; nước làm mát ≤ 8.5 lít."},"alternator":null,"controller":null}
+   [brand] Máy 20/22 kVA: Động cơ: Thương hiệu thuộc các nước EU, G7; 4 xilanh, dung tích ≥ 2,3 lít, 1500 vòng/phút; công suất ≥ 21kW và ≥ 23kW; khởi động điện 12VDC, ắc quy ≥ 60Ah kín khí; dầu bôi trơn ≤ 25 lít; nước làm mát ≤ 8.5
+== IB2400470242 g7 parts
+   parts: {"engine":{"basis":"brand","quote":"Động cơ: Thương hiệu: Thương hiệu thuộc các nhóm nước G7"},"alternator":{"basis":"brand","quote":"Đầu phát điện: Thương hiệu: Thương hiệu thuộc các nhóm nước G7"},"controller":{"basis":"brand","quote":"Bộ điều khiển: Thương hiệu: Thương hiệu thuộc các nhóm nước G7"}}
+   [brand] Động cơ: Thương hiệu: Thương hiệu thuộc các nhóm nước G7
+   [brand] Đầu phát điện: Thương hiệu: Thương hiệu thuộc các nhóm nước G7
+   [brand] Bộ điều khiển: Thương hiệu: Thương hiệu thuộc các nhóm nước G7
+== IB2400495407 g7eu parts
+   parts: {"engine":{"basis":"origin","quote":"Động cơ: Xuất xứ: EU – G7"},"alternator":{"basis":"origin","quote":"Đầu phát điện: Xuất xứ: EU – G7"},"controller":{"basis":"origin","quote":"Hệ thống điều khiển: Xuất xứ: EU – G7"}}
+   [origin] Động cơ: Xuất xứ: EU – G7
+   [origin] Đầu phát điện: Xuất xứ: EU – G7
+   [origin] Hệ thống điều khiển: Xuất xứ: EU – G7
+== IB2400508791 g20 parts
+   parts: {"engine":{"basis":"origin","quote":"Máy 11 kVA: Động cơ: Sản xuất bởi quốc gia thuộc nền kinh tế phát triển G20; khởi động đề điện; nhiên liệu dầu Diesel; làm mát bằng nước làm mát."},"alternator":{"basis":"origin","quote":"Máy 11 kVA: Đầu phát - công suất: Sản xuất bởi quốc gia thuộc nền kinh tế phát triển G20; công suất liên tục ≥ 11 kVA (8.8 KW); công suất dự phòng ≥ 12 kVA (9.6KW)."},"controller":null}
+   [origin] Máy 11 kVA: Đầu phát - công suất: Sản xuất bởi quốc gia thuộc nền kinh tế phát triển G20; công suất liên tục ≥ 11 kVA (8.8 KW); công suất dự phòng ≥ 12 kVA (9.6KW).
+   [origin] Máy 7 kVA: Đầu phát - công suất: Sản xuất bởi quốc gia thuộc nền kinh tế phát triển G20; công suất liên tục ≥ 7 kVA (5.6 KW); công suất dự phòng ≥ 7.5 kVA (6 KW).
+   [brand] Cả hai máy: Động cơ (bảng chi tiết): Nhà thầu nêu rõ nước và hãng sản xuất (thuộc nhóm G20); khởi động bằng động cơ điện, đề điện dùng ắc quy một chiều 12 VDC; bộ nạp ắc quy lắp sẵn đồng bộ theo máy; có hệ thống bô giảm 
+   [brand] Cả hai máy: Đầu phát điện (bảng chi tiết): Nhà thầu nêu rõ nước và hãng sản xuất (thuộc nhóm G20); điều chỉnh điện áp tự động (AVR); công suất liên tục (Prime) ≥ 11 KVA đối với máy 11 KVA, ≥ 7 KVA đối với máy 7 KVA; cos 
+   [origin] Máy 11 kVA: Động cơ: Sản xuất bởi quốc gia thuộc nền kinh tế phát triển G20; khởi động đề điện; nhiên liệu dầu Diesel; làm mát bằng nước làm mát.
+   [origin] Máy 7 kVA: Động cơ: Sản xuất bởi quốc gia thuộc nền kinh tế phát triển G20; khởi động đề điện; nhiên liệu dầu Diesel; làm mát bằng nước làm mát (hoặc quạt gió).
+== IB2400509473 g7 parts
+   parts: {"engine":{"basis":"origin","quote":"Máy 200/220KVA: Động cơ - hãng/xuất xứ: Nhà sản xuất chính hãng, nhà thầu đề xuất cụ thể; thương hiệu/hãng sản xuất/xuất xứ: G7"},"alternator":{"basis":"origin","quote":"Máy 200/220KVA: Đầu phát - hãng/xuất xứ: Nhà sản xuất chính hãng, nhà thầu đề xuất cụ thể; thương hiệu/hãng sản xuất/xuất xứ: G7"},"controller":{"basis":"origin","quote":"Máy 200/220KVA: Bảng điều khiển - hãng/loại: Nhà sản xuất chính hãng, nhà thầu đề xuất cụ thể; hãng/xuất xứ EU/G7; bảng điều khiển kỹ thuật số màn hình LCD"}}
+   [origin] Máy 200/220KVA: Động cơ - hãng/xuất xứ: Nhà sản xuất chính hãng, nhà thầu đề xuất cụ thể; thương hiệu/hãng sản xuất/xuất xứ: G7
+   [origin] Máy 200/220KVA: Đầu phát - hãng/xuất xứ: Nhà sản xuất chính hãng, nhà thầu đề xuất cụ thể; thương hiệu/hãng sản xuất/xuất xứ: G7
+   [origin] Máy 200/220KVA: Bảng điều khiển - hãng/loại: Nhà sản xuất chính hãng, nhà thầu đề xuất cụ thể; hãng/xuất xứ EU/G7; bảng điều khiển kỹ thuật số màn hình LCD
+== IB2400513782 g7 parts
+   parts: {"engine":{"basis":"brand","quote":"Máy 12,5 kVA: Động cơ - Hãng sản xuất: Thuộc các nước G7."},"alternator":{"basis":"brand","quote":"Máy 12,5 kVA: Đầu phát - Hãng sản xuất: Thuộc các nước G7."},"controller":null}
+   [brand] Máy 12,5 kVA: Động cơ - Hãng sản xuất: Thuộc các nước G7.
+   [brand] Máy 12,5 kVA: Đầu phát - Hãng sản xuất: Thuộc các nước G7.
+== IB2400592848 g20 parts
+   parts: {"engine":{"basis":"origin","quote":"Phần A - Máy diesel 8,5 kVA: Động cơ - hãng sản xuất, xuất xứ: Hãng sản xuất và xuất xứ thuộc các nước G7"},"alternator":{"basis":"origin","quote":"Phần A - Máy diesel 8,5 kVA: Đầu phát - hãng, xuất xứ: Hãng sản xuất thuộc các nước G7; xuất xứ thuộc các nước G7 hoặc G20"},"controller":null}
+   [origin] Phần A - Máy diesel 8,5 kVA: Động cơ - hãng sản xuất, xuất xứ: Hãng sản xuất và xuất xứ thuộc các nước G7
+   [origin] Phần A - Máy diesel 8,5 kVA: Đầu phát - hãng, xuất xứ: Hãng sản xuất thuộc các nước G7; xuất xứ thuộc các nước G7 hoặc G20
+   [origin] Phần B - Máy xăng 8,5 kVA: Động cơ - hãng, xuất xứ: Hãng sản xuất do nhà thầu cung cấp thông tin; thương hiệu cùng với thương hiệu đầu phát; xuất xứ thuộc các nước G7 hoặc G20
+   [origin] Phần B - Máy xăng 8,5 kVA: Đầu phát - hãng, xuất xứ: Hãng sản xuất do nhà thầu cung cấp thông tin; thương hiệu cùng với thương hiệu tổ máy; xuất xứ thuộc các nước G7 hoặc G20
+== IB2500084609 g7 parts
+   parts: {"engine":{"basis":"brand","quote":"Phần I - Máy 15kVA/16.5kVA 3 pha: Động cơ - hãng, thương hiệu, xuất xứ: Chọn hãng động cơ phù hợp công suất, ưu tiên Kubota, Yanmar, Perkin…; thương hiệu G7; xuất xứ khối các nước ASEAN"},"alternator":{"basis":"brand","quote":"Phần I - Máy 15kVA/16.5kVA 3 pha: Đầu phát - thương hiệu, chủng loại: Thương hiệu G7; tự kích từ, không chổi than, AVR điện tử; nhà thầu cung cấp thông tin đầu phát"},"controller":null}
+   [brand] Phần I - Máy 15kVA/16.5kVA 3 pha: Đầu phát - thương hiệu, chủng loại: Thương hiệu G7; tự kích từ, không chổi than, AVR điện tử; nhà thầu cung cấp thông tin đầu phát
+   [origin] Phần I - Máy 15kVA/16.5kVA 3 pha: Động cơ - hãng, thương hiệu, xuất xứ: Chọn hãng động cơ phù hợp công suất, ưu tiên Kubota, Yanmar, Perkin…; thương hiệu G7; xuất xứ khối các nước ASEAN
+   [brand] Phần II - Máy 15kVA 1 pha: Đầu phát: Thương hiệu G7; tự kích từ, không chổi than, AVR điện tử; điện áp sau đóng tải 30 giây trong định mức ± 1% (yêu cầu nâng cao), tần số ± 5%; một ổ trục; quạt đầu trục thổi trực tiếp; b
+   [origin] Phần II - Máy 15kVA 1 pha: Động cơ - hãng, thương hiệu, xuất xứ: Chọn hãng động cơ phù hợp công suất, ưu tiên Kubota, Yanmar, Perkin…; thương hiệu G7; xuất xứ khối các nước ASEAN
+== IB2500124299 g20 parts
+   parts: {"engine":null,"alternator":null,"controller":null}
+   [origin] Máy phát điện: Xuất xứ: G20 hoặc tương đương
+   [origin] Vỏ cách âm: Nhập đồng bộ theo máy (G20). Không nêu mức ồn
+== IB2500189675 g7eu parts
+   parts: {"engine":null,"alternator":null,"controller":null}
+   [origin] Chung - Nguồn gốc nhà sản xuất: EU/ G7
+   [origin] Ống dầu, van dầu, giá đỡ: Ống thép đúc theo API Schedule 40/ ASTM A53; van nguồn gốc EU/G7, PN16 (van điện từ), PN10 (motor van), PN20 (van còn lại), đồng/inox SUS304, mở tay và mở điện 24VDC; mới 100%, từ 2024; support 
+== IB2500211376 g7 parts
+   parts: {"engine":{"basis":"brand","quote":"Máy 15kVA/16.5kVA 3 pha (mục I): Động cơ - hãng, thương hiệu, xuất xứ: Chọn hãng phù hợp công suất, ưu tiên Kubota, Yanmar, Perkin…; thương hiệu G7; xuất xứ khối các nước ASEAN"},"alternator":{"basis":"brand","quote":"Máy 15kVA/16.5kVA 3 pha (mục I): Đầu phát - thương hiệu, chủng loại: Thương hiệu G7; nhà thầu cung cấp thông tin đầu phát; tự kích từ, không chổi than, tự động điều chỉnh điện áp bằng AVR điện tử"},"controller":null}
+   [brand] Máy 15kVA/16.5kVA 3 pha (mục I): Đầu phát - thương hiệu, chủng loại: Thương hiệu G7; nhà thầu cung cấp thông tin đầu phát; tự kích từ, không chổi than, tự động điều chỉnh điện áp bằng AVR điện tử
+   [origin] Máy 15kVA/16.5kVA 3 pha (mục I): Động cơ - hãng, thương hiệu, xuất xứ: Chọn hãng phù hợp công suất, ưu tiên Kubota, Yanmar, Perkin…; thương hiệu G7; xuất xứ khối các nước ASEAN
+   [brand] Máy 15KVA 1 pha (mục II): Đầu phát - thương hiệu, công suất, chủng loại: Thương hiệu G7; nhà thầu cung cấp thông tin đầu phát; công suất ≥ 20.5 kVA; tự kích từ, không chổi than, AVR điện tử
+   [origin] Máy 15KVA 1 pha (mục II): Động cơ - hãng, thương hiệu, xuất xứ: Chọn hãng phù hợp công suất, ưu tiên Kubota, Yanmar, Perkin…; thương hiệu G7; xuất xứ khối các nước ASEAN
+== IB2500287209 g7 parts
+   parts: {"engine":{"basis":"brand","quote":"Phần 1 - Máy dầu 25KVA: Thương hiệu động cơ, đầu phát: Động cơ và đầu phát phải đáp ứng một trong bốn tổ hợp: cùng thương hiệu với tổ máy; động cơ G7 + đầu phát cùng thương hiệu tổ máy; đầu phát G7 + động cơ cùng thương hiệu tổ máy; cả động cơ và đầu phát thương hiệu G7"},"alternator":{"basis":"brand","quote":"Phần 1 - Máy dầu 25KVA: Thương hiệu động cơ, đầu phát: Động cơ và đầu phát phải đáp ứng một trong bốn tổ hợp: cùng thương hiệu với tổ máy; động cơ G7 + đầu phát cùng thương hiệu tổ máy; đầu phát G7 + động cơ cùng thương hiệu tổ máy; cả động cơ và đầu phát thương hiệu G7"},"controller":null}
+   [brand] Phần 1 - Máy dầu 25KVA: Thương hiệu động cơ, đầu phát: Động cơ và đầu phát phải đáp ứng một trong bốn tổ hợp: cùng thương hiệu với tổ máy; động cơ G7 + đầu phát cùng thương hiệu tổ máy; đầu phát G7 + động cơ cùng thương 
+   [brand] Phần 2 - Máy xăng 10KVA: Thương hiệu động cơ: Động cơ cùng thương hiệu với tổ máy hoặc động cơ thương hiệu các nước G7
+== IB2500342833 g7eu parts
+   parts: {"engine":{"basis":"brand","quote":"Động cơ: Thương hiệu, xuất xứ/model, năm sản xuất: Thương hiệu thuộc các nước EU, G7; xuất xứ/model nhà thầu đề xuất; năm sản xuất 2025 trở về sau"},"alternator":{"basis":"brand","quote":"Đầu phát: Thương hiệu, xuất xứ, năm sản xuất: Thương hiệu thuộc các nước EU, G7; xuất xứ nhà thầu đề xuất; năm sản xuất 2024 trở về sau"},"controller":null}
+   [origin] Động cơ: Thương hiệu, xuất xứ/model, năm sản xuất: Thương hiệu thuộc các nước EU, G7; xuất xứ/model nhà thầu đề xuất; năm sản xuất 2025 trở về sau
+   [origin] Đầu phát: Thương hiệu, xuất xứ, năm sản xuất: Thương hiệu thuộc các nước EU, G7; xuất xứ nhà thầu đề xuất; năm sản xuất 2024 trở về sau
+== IB2500503506 g7 parts
+   parts: {"engine":{"basis":"origin","quote":"Động cơ - Xuất xứ: Xuất xứ nhóm G7."},"alternator":null,"controller":{"basis":"origin","quote":"Bộ điều khiển - Xuất xứ: Xuất xứ nhóm G7."}}
+   [origin] Động cơ - Xuất xứ: Xuất xứ nhóm G7.
+   [origin] Bộ điều khiển - Xuất xứ: Xuất xứ nhóm G7.
+== IB2500533266 g20eu parts
+   parts: {"engine":{"basis":"origin","quote":"Máy 100 kVA: Động cơ - Nước sản xuất: Sản xuất tại chính quốc gia có nhà sản xuất động cơ thuộc khối các nước G20, EU, G7."},"alternator":null,"controller":{"basis":"origin","quote":"Máy 100 kVA: Hệ thống điều khiển - Thương hiệu, xuất xứ: Thương hiệu thuộc các nước G7; sản xuất tại các nước khối G7; nhà sản xuất và model do nhà thầu đề xuất."}}
+   [origin] Máy 100 kVA: Tổ máy - Nước sản xuất, lắp ráp: Sản xuất tại các nước EU, G7, ASEAN.
+   [origin] Máy 100 kVA: Động cơ - Nước sản xuất: Sản xuất tại chính quốc gia có nhà sản xuất động cơ thuộc khối các nước G20, EU, G7.
+   [origin] Máy 100 kVA: Hệ thống điều khiển - Thương hiệu, xuất xứ: Thương hiệu thuộc các nước G7; sản xuất tại các nước khối G7; nhà sản xuất và model do nhà thầu đề xuất.
+   [origin] Máy 100 kVA: Vỏ cách âm - Xuất xứ, hãng: Sản xuất tại các nước EU, G7, ASEAN; cùng hãng sản xuất máy phát điện.
+   [origin] Máy 250 kVA: Tổ máy - Nước sản xuất, lắp ráp: Sản xuất tại các nước EU, G7, ASEAN.
+   [origin] Máy 250 kVA: Động cơ - Nước sản xuất: Sản xuất tại chính quốc gia có nhà sản xuất động cơ thuộc khối các nước G20, EU, G7.
+   [origin] Máy 250 kVA: Hệ thống điều khiển - Thương hiệu, xuất xứ: Thương hiệu thuộc các nước G7; sản xuất tại các nước khối G7; nhà sản xuất và model do nhà thầu đề xuất.
+   [origin] Máy 250 kVA: Vỏ cách âm - Xuất xứ, hãng: Sản xuất tại các nước EU, G7, ASEAN; cùng hãng sản xuất máy phát điện.
+== IB2500541094 g7 parts
+   parts: {"engine":{"basis":"origin","quote":"Động cơ: xuất xứ: G7"},"alternator":null,"controller":{"basis":"origin","quote":"Bộ điều khiển: xuất xứ: G7"}}
+   [origin] Động cơ: xuất xứ: G7
+   [origin] Bộ điều khiển: xuất xứ: G7
+== IB2500611943 g7eu parts
+   parts: {"engine":{"basis":"brand","quote":"Động cơ: Thương hiệu: EU/G7"},"alternator":{"basis":"brand","quote":"Đầu phát điện: Thương hiệu: EU/G7"},"controller":null}
+   [brand] Động cơ: Thương hiệu: EU/G7
+   [brand] Đầu phát điện: Thương hiệu: EU/G7
+== IB2600188772 g7eu parts
+   parts: {"engine":{"basis":"origin","quote":"Động cơ: Xuất xứ, CO/CQ: Từ các nước thuộc EU/G7, có giấy chứng nhận xuất xứ (CO), giấy chứng nhận chất lượng (CQ)"},"alternator":null,"controller":null}
+   [origin] Động cơ: Xuất xứ, CO/CQ: Từ các nước thuộc EU/G7, có giấy chứng nhận xuất xứ (CO), giấy chứng nhận chất lượng (CQ)
+== IB2600219527 g20 parts
+   parts: {"engine":null,"alternator":{"basis":"origin","quote":"Hạng mục 1 - Đầu phát: Thương hiệu, xuất xứ: Thương hiệu thuộc nhóm nước G7; xuất xứ nhóm nước OECD/G20"},"controller":null}
+   [origin] Hạng mục 1 - Đầu phát: Thương hiệu, xuất xứ: Thương hiệu thuộc nhóm nước G7; xuất xứ nhóm nước OECD/G20
+   [origin] Hạng mục 2 - Đầu phát: Tiêu chuẩn, thương hiệu, xuất xứ: IEC 60034-1:2017, IEC 60092 series; thương hiệu nhóm nước G7; xuất xứ nhóm nước OECD/G20
+== IB2600309163 g7eu parts
+   parts: {"engine":{"basis":"brand","quote":"Phần 1 - Động cơ: Thương hiệu: G7"},"alternator":{"basis":"brand","quote":"Phần 1 - Đầu phát: Thương hiệu: EU/G7/ASEAN"},"controller":{"basis":"origin","quote":"Phần 1 - Bộ điều khiển: Model, thương hiệu, xuất xứ: Model do nhà thầu đề xuất; thương hiệu EU/G7; xuất xứ EU/G7"}}
+   [brand] Phần 1 - Động cơ: Thương hiệu: G7
+   [brand] Phần 1 - Đầu phát: Thương hiệu: EU/G7/ASEAN
+   [origin] Phần 1 - Bộ điều khiển: Model, thương hiệu, xuất xứ: Model do nhà thầu đề xuất; thương hiệu EU/G7; xuất xứ EU/G7
+== IB2600337362 g7eu parts
+   parts: {"engine":{"basis":"brand","quote":"Động cơ diesel: Xuất xứ hãng sản xuất: Châu Âu/ G7"},"alternator":{"basis":"brand","quote":"Đầu phát điện: Xuất xứ, năm sản xuất: Hãng sản xuất Châu Âu/ G7; mới 100% và sản xuất từ 2026 trở về sau"},"controller":{"basis":"brand","quote":"Bộ điều khiển máy phát: Hãng, xuất xứ, năm sản xuất: Caterpillar/ Cummins/ MTU/Comap hoặc tương đương; hãng Châu Âu/ G7; mới 100% và sản xuất từ 2026 trở về sau"}}
+   [origin] Động cơ diesel: Xuất xứ hãng sản xuất: Châu Âu/ G7
+   [origin] Đầu phát điện: Xuất xứ, năm sản xuất: Hãng sản xuất Châu Âu/ G7; mới 100% và sản xuất từ 2026 trở về sau
+   [origin] Bộ điều khiển máy phát: Hãng, xuất xứ, năm sản xuất: Caterpillar/ Cummins/ MTU/Comap hoặc tương đương; hãng Châu Âu/ G7; mới 100% và sản xuất từ 2026 trở về sau
+   [origin] Bơm dầu: Thông số điện, xuất xứ: 230VAC - 1 pha - 50Hz; hãng sản xuất Châu Âu/ G7
+   [origin] Tủ điều khiển bơm dầu: Xuất xứ thiết bị đóng cắt, điều khiển: Châu Âu/ G7
+   [origin] Đường ống dầu: Van dầu: Bằng đồng/ inox SS304; số lượng và chủng loại theo bản vẽ nguyên lý; xuất xứ Châu Âu/ G7
+== IB2600350175 g7 parts
+   parts: {"engine":{"basis":"brand","quote":"Động cơ: Hãng, tình trạng, năm sản xuất: Hãng sản xuất thuộc G20/G7 hoặc tương đương; mới 100%; năm sản xuất 2026 trở về sau. Nhà sản xuất và mã hiệu do nhà thầu đề xuất."},"alternator":null,"controller":null}
+   [brand] Động cơ: Hãng, tình trạng, năm sản xuất: Hãng sản xuất thuộc G20/G7 hoặc tương đương; mới 100%; năm sản xuất 2026 trở về sau. Nhà sản xuất và mã hiệu do nhà thầu đề xuất.
+   [brand] Bộ điều khiển: Hãng, tiêu chuẩn, năm sản xuất: Thương hiệu thuộc các nước G7; tuân thủ các tiêu chuẩn test BS EN 61000-6-2, BS EN 61000-6-4, BS EN 60950, BS EN 60068-2-1, BS EN 60068-2-6, BS EN 60068-2-30, S EN 60068-2-7
+== IB2600392438 g7eu parts
+   parts: {"engine":{"basis":"origin","quote":"Máy phát 80kVA - Động cơ: Xuất xứ: Các nước nhóm G7 hoặc EU hoặc Việt Nam; nhà thầu chào cụ thể nhà sản xuất, mã hiệu, xuất xứ"},"alternator":null,"controller":null}
+   [origin] Máy phát 80kVA - Động cơ: Xuất xứ: Các nước nhóm G7 hoặc EU hoặc Việt Nam; nhà thầu chào cụ thể nhà sản xuất, mã hiệu, xuất xứ
+== IB2600465110 g7 parts
+   parts: {"engine":{"basis":"brand","quote":"Máy 12,5 kVA: Động cơ - Xuất xứ: Có thương hiệu xuất xứ thuộc nhóm các nước G7"},"alternator":{"basis":"brand","quote":"Máy 12,5 kVA: Đầu phát - Xuất xứ: Có thương hiệu xuất xứ thuộc nhóm các nước G7"},"controller":null}
+   [origin] Máy 12,5 kVA: Xuất xứ: Xuất xứ thuộc nhóm các nước G7 hoặc Việt Nam
+   [origin] Máy 12,5 kVA: Động cơ - Xuất xứ: Có thương hiệu xuất xứ thuộc nhóm các nước G7
+   [origin] Máy 12,5 kVA: Đầu phát - Xuất xứ: Có thương hiệu xuất xứ thuộc nhóm các nước G7
+== IB2600490077 g7 parts
+   parts: {"engine":null,"alternator":null,"controller":{"basis":"origin","quote":"Hệ thống điều khiển: Thương hiệu, xuất xứ: G7."}}
+   [origin] Hệ thống điều khiển: Thương hiệu, xuất xứ: G7.
