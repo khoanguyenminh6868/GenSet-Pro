@@ -115,6 +115,21 @@ Xếp theo ảnh hưởng tới Gợi ý cấu hình / Gợi ý giá:
 
 Mỗi PR đo trước / sau bằng `cmpk.cjs` (đã có) + `audA.cjs` / `audB.cjs` (mới) + top 30 ứng viên toàn bộ gói.
 
+## D. Kết quả làm (Khoa duyệt làm hết 17/11/2026, kiểm chéo toàn bộ)
+
+### Việc 7: đối chiếu catalog PDF (nguồn 5001+) với ảnh trang gốc — XONG, không có lỗi đọc
+`pdfSus.cjs` lọc lại trên toàn bộ 2.072 bản ghi nguồn catalog PDF (8 NCC) theo quan hệ số (hệ số ≠ 0,8; prime ≥ standby; standby / prime ngoài 1,04–1,26): còn 11 dòng tổ máy (số 25 của mục A5 gồm cả dòng lệch do làm tròn 9,6 → 10, nay đã loại). 188 dòng perkins là bảng ĐỘNG CƠ (kWm, không có công suất tổ máy): đúng. Cả 11 dòng đã mở ảnh trang PDF trong `Datasheets` và so từng ô:
+
+| Dòng đã lưu | Trang PDF | Kết quả |
+|---|---|---|
+| app-power-anpu APP-100GF / 120GF ×2 / 150GF / 180GF / 350GF (玉柴 T2: standby gấp 1,28–1,38 prime) | APPpower.pdf trang 7, bảng "Guangxi Yuchai-T2" | Khớp từng ô. Catalog in như vậy |
+| kaichen-jiangsu KCC-500GF QSZ13-G3: 400 / 500 / 410 / 513 | trang 5 (PAGE 07): Standby 513 / 410, Prime 500 / 400 | Khớp |
+| lees-power LSSC13S3-6: 10 / 12 / 10 / 13 | trang 17: Standby 13 kVA, Prime 12 kVA, Standby 10 kW, Prime 10 kW | Khớp (catalog làm tròn) |
+| mecca-power MC188WC: 145 / 181 / 150 / 188; MC13SD: 10 / 12 / 10 / 13 | trang 16, 18 (lớp chữ của PDF) | Khớp |
+| mecca-power **MC1000D** TCD12.1 G1: LTP 1000 kVA / 800 kW, PRP 325 / 260 | trang 13 (DEUTZ 50 Hz), dòng giữa MC330D và MC413D | Khớp chữ in, nhưng CATALOG IN SAI (dòng này phải cỡ 358 kVA; tên model và LTP bị gõ thành 1000). Đang nằm trong danh mục là standby 1000 kVA. Chưa có luật nào loại: cần Khoa quyết (bỏ dòng, hay thêm chốt chặn standby > 1,5 × prime) |
+
+Ghi nhận thêm: `catalog-pdf.mjs` cố ý chỉ giữ dòng kiểm được bằng code, nên catalog scan thiếu dòng so với PDF (APP trang 7: thiếu APP-300GF ×2 có ô "/", và APP-350GF YC6MJ500-D30 vì OCR đọc thành "YC8MJ500"). Là thiếu, không sai.
+
 ## Chạy lại
 
 ```

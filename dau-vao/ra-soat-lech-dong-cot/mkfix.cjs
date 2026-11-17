@@ -27,6 +27,12 @@ const want = [
   ["huipu-power", "HP-C520", "prime and standby in a unit nobody wrote"],
   ["gordon-power", "GD-DS188", "a pair below power factor 0.7 is left out"],
   ["frs-shenyang", "| FRS-10P |", "264 g/kWh on a 10 kW set"],
+  ["tecnogen", "| CU2500TV |", "LTP 2500 and PRP 2000 kVA under titles of their own are no kVA / kW pair"],
+  ["bruno-generators", "| SL 9506 KL |", "two kVA written with decimals are no pair by rounding"],
+  ["bdadl-shanghai", "| BDA-S60 | 60/70","a/b under a prime/standby title with no unit"],
+  ["sanq-power", "| SQC315 |", "two pairs under titles that name no rating: the larger is standby, as before"],
+  ["cldj-fujian", "| CLS-80 |", "a title naming both units with a space between"],
+  ["starlight-power", "| XG2500S3 |", "standby and prime under one kVA title at exactly 0.8: titles not trusted"],
 ];
 const res = [];
 for (const [sup, needle, why] of want) {
