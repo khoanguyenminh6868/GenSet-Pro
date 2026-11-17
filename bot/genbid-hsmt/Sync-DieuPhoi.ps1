@@ -41,9 +41,15 @@ function Conflicted { @(Get-ChildItem $Dir -Recurse -File -Include *.md, *.txt, 
     Where-Object { $_.FullName -notmatch '\\\.git\\' -and (Select-String -Path $_.FullName -Pattern '^<<<<<<< ' -Quiet) } |
     ForEach-Object { $_.FullName.Substring($Dir.Length + 1) }) }
 
-if ($EnsureTask -and -not (Get-ScheduledTask $TaskName -ErrorAction SilentlyContinue)) {
-    $act = New-ScheduledTaskAction -Execute 'powershell.exe' -WorkingDirectory $Root `
-        -Argument "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$PSCommandPath`" -Quiet"
+# conhost --headless: powershell -WindowStyle Hidden vẫn nháy cửa sổ console mỗi lần chạy (Khoa 17/11/2026 không muốn thấy).
+$act = New-ScheduledTaskAction -Execute 'conhost.exe' -WorkingDirectory $Root `
+    -Argument "--headless powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$PSCommandPath`" -Quiet"
+$old = if ($EnsureTask) { Get-ScheduledTask $TaskName -ErrorAction SilentlyContinue }
+if ($old -and $old.Actions[0].Execute -ne 'conhost.exe') {
+    Set-ScheduledTask -TaskName $TaskName -Action $act | Out-Null
+    Say "Đã sửa tác vụ Windows '$TaskName' chạy ẩn hẳn (conhost --headless)."
+}
+if ($EnsureTask -and -not $old) {
     $t1 = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(1) -RepetitionInterval (New-TimeSpan -Minutes 15)
     $t2 = New-ScheduledTaskTrigger -AtLogOn -User "$env:USERDOMAIN\$env:USERNAME"
     $set = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -StartWhenAvailable `
