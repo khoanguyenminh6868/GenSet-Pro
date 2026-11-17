@@ -24,10 +24,12 @@ Phiên điều phối: gộp các dòng dưới vào sổ (mục "Chờ Khoa", "
   Trên 40 gói mới nhất (máy KAYENGRAM, đọc web): lệch 2 (đã sửa), thiếu 14. Việc Haiku / Sonnet.
 
 ## Chờ Khoa (17/11, từ phiên so sánh Opus / Fable trên IB2600603983)
-- `candidates` có nên loại dòng động cơ chữ V khi HSMT đòi "thẳng hàng", và loại động cơ Baudouin đuôi "/6" (60 Hz) khi
-  HSMT đòi 50 Hz không? (9 chỗ Cummins của gói này là KTA38 12V; 2 trong 3 chỗ giữ cho Baudouin là máy /6.)
-- IB2600603983: web đang là kết quả Fable (không còn Cummins QSK23-G2 của lượt 12/11, bản cũ ở
-  `genbid-work\so-sanh-model\IB2600603983\web-truoc\` trên máy KAYENGRAM). Khôi phục / chạy lại hay giữ?
+- ĐÃ LÀM (Khoa duyệt, PR #823): ứng viên xét bố trí xi lanh + động cơ khác tần số; Gợi ý lại không giữ dòng lượt trước.
+- Còn hỏi: HSMT ghi số xi lanh KÈM bố trí ("6 xy lanh thẳng hàng") thì coi 6 là số chính xác (loại máy 12 xi lanh) hay
+  vẫn là tối thiểu? Sau PR #823, QSK23-G2 vẫn ngoài 30 dòng của IB2600603983 vì KTA38-G / -GA / -G1B (12 xi lanh) chưa
+  đủ hai NCC ghi chữ V nên còn giữ chỗ Cummins.
+- IB2600603983: web đang là kết quả Fable chạy TRƯỚC các sửa (#820, #823). Chạy Gợi ý lại (≈3 USD Opus) hay giữ?
+  Bản 12/11 lưu ở `genbid-work\so-sanh-model\IB2600603983\web-truoc\` trên máy KAYENGRAM.
 
 ## Cần kiểm
 - PR gán hãng (`wt-gan-hang`): lúc 18:11 phiên điều phối báo đang đo nền, nhưng tới 22:30 chưa có nhánh / PR trên GitHub.
