@@ -117,8 +117,9 @@ if (-not (Test-Path (Join-Path $Kit '.firecrawl-key'))) { $missing.Add("$Kit\.fi
 
 if (-not $NoTask) {
     Step "Tác vụ Windows 'GenBid Bot'"
-    $act = New-ScheduledTaskAction -Execute 'powershell.exe' -WorkingDirectory $Root `
-        -Argument "-NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$Kit\GenBid-Bot.ps1`""
+    # conhost --headless: không nháy cửa sổ console như powershell -WindowStyle Hidden.
+    $act = New-ScheduledTaskAction -Execute 'conhost.exe' -WorkingDirectory $Root `
+        -Argument "--headless powershell.exe -NoProfile -ExecutionPolicy Bypass -WindowStyle Hidden -File `"$Kit\GenBid-Bot.ps1`""
     $trg = New-ScheduledTaskTrigger -AtLogOn -User "$env:USERDOMAIN\$env:USERNAME"
     $set = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoingOnBatteries -ExecutionTimeLimit 0 `
         -MultipleInstances IgnoreNew -RestartCount 3 -RestartInterval (New-TimeSpan -Minutes 5)
