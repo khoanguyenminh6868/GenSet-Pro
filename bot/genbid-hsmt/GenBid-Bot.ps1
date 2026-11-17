@@ -279,7 +279,7 @@ function Test-AiPlan([string]$task) {
 
 function Test-WorkerRunning {
     if (-not (Test-Path $LockFile)) { return $false }
-    $age = (Get-Date) - (Get-Item $LockFile).LastWriteTime
+    $age = (Get-Date) - (Get-Item -LiteralPath $LockFile -Force).LastWriteTime  # -Force: Linux coi .hsmt-worker.lock là tệp ẩn
     if ($age.TotalMinutes -lt $RunTimeoutMinutes) { return $true }
     Log "Bỏ tệp khoá cũ ($([int]$age.TotalMinutes) phút)."
     Remove-Item $LockFile -Force -ErrorAction SilentlyContinue
@@ -494,7 +494,7 @@ function Wait-Worker($p, [string]$out) {
     # 3 giờ. Lượt này đã kết thúc nên khoá viết sau lúc nó bắt đầu là của nó: xoá đi.
     # Chỉ lượt Trình duyệt (Lấy tệp, Sync) dùng khoá này; lượt AI hay Cấu hình xong không được xoá khoá của một Sync
     # đang chạy song song.
-    if ($script:Lane -in @('browser', '') -and (Test-Path $LockFile) -and (Get-Item $LockFile).LastWriteTime -ge $p.StartTime.AddSeconds(-5)) {
+    if ($script:Lane -in @('browser', '') -and (Test-Path $LockFile) -and (Get-Item -LiteralPath $LockFile -Force).LastWriteTime -ge $p.StartTime.AddSeconds(-5)) {
         Remove-Item $LockFile -Force -ErrorAction SilentlyContinue
         Log 'Đã xoá tệp khoá mà lượt worker để lại.'
     }
