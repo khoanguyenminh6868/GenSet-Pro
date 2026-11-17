@@ -286,6 +286,21 @@ test("sổ chi: API báo hết tiền (exhausted) thì dùng gói tháng tới k
   assert.equal(P.apiBudgetOf("", book("{hỏng", { t: "2026-11-05T05:00:00", usd: 1 }, ""), at("2026-11-13T12:00:00")).spent, 1);
   assert.deepEqual([P.apiBudgetOf("", "", at("2026-11-13T12:00:00")).spent, P.apiBudgetOf("{hỏng", "", at("2026-11-13T12:00:00")).switchAtUsd], [0, 90]);
 });
+test("sổ chi các máy khác (.genbid-api-others.json, Khoa 17/11/2026): cộng khi cùng kỳ, cùng lần sửa tay", () => {
+  const own = book({ t: "2026-11-05T05:00:00", usd: 50 }), now = at("2026-11-13T12:00:00");
+  const others = (o) => JSON.stringify({ usd: 45, exhausted: false, since: "2026-11-02T00:00:00", fixAt: "", ...o });
+  const b = P.apiBudgetOf("", own, now, "", others());
+  assert.deepEqual([b.spent, b.ok], [95, false]);
+  assert.equal(P.apiBudgetOf("", own, now, "", others({ since: "2026-10-02T00:00:00" })).spent, 50, "kỳ trước: bỏ");
+  assert.equal(P.apiBudgetOf("", own, now, "", others({ usd: 0, exhausted: true })).ok, false, "máy khác báo hết tiền");
+  assert.equal(P.apiBudgetOf("", own, now, "", "{hỏng").spent, 50);
+  // Sửa tay 40 USD lúc 06/11: chỉ cộng phần các máy khác sau lần sửa đó (fixAt giờ UTC tới giây).
+  const fixAt = at("2026-11-06T00:00:00"), settings = JSON.stringify({ spent: { usd: 40, at: fixAt.toISOString() } });
+  const key = fixAt.toISOString().slice(0, 19) + "Z";
+  const late = book({ t: "2026-11-07T05:00:00", usd: 3 });
+  assert.equal(P.apiBudgetOf("", late, now, settings, others({ usd: 2, fixAt: key })).spent, 45);
+  assert.equal(P.apiBudgetOf("", late, now, settings, others({ usd: 2 })).spent, 43, "lần sửa khác: bỏ");
+});
 test("sổ chi: một dòng JSON không phải object ('null') không làm mất các dòng chi sau nó", () => {
   assert.equal(P.apiBudgetOf("", book({ t: "2026-11-05T05:00:00", usd: 1 }, "null", { t: "2026-11-06T05:00:00", usd: 2 }), at("2026-11-13T12:00:00")).spent, 3);
 });

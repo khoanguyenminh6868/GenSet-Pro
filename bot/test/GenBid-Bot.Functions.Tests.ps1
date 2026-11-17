@@ -15,6 +15,7 @@ Describe 'GenBid-Bot.ps1: hàm' {
             $global:Root = $r; $global:Utf8 = $global:Utf8NoBom
             $global:IngestTokenFile = "$r/.genbid-ingest-token"; $global:ClaudeTokenFile = "$r/.claude-bot-token"; $global:ApiKeyFile = "$r/.anthropic-api-key"
             $global:ApiSpendFile = "$r/.anthropic-api-spend.jsonl"; $global:ApiBudgetFile = "$r/.anthropic-api-budget.json"
+            $global:ApiOthersFile = "$r/.genbid-api-others.json"; $global:AiSettingsFile = "$r/.genbid-ai-settings.json"
             $global:WorkerState = "$r/.hsmt-worker-state.json"; $global:LockFile = "$r/hsmt-worker.lock"; $global:PauseFile = "$r/.genbid-bot-pause.json"
             $global:LogDir = "$r/genbid-bot-logs"; New-Item -ItemType Directory -Force $global:LogDir | Out-Null
             $global:Endpoint = 'http://fake/api/requests?kind=all'; $global:PollSeconds = 15; $global:RunTimeoutMinutes = 180; $global:LimitPauseMinutes = 30
@@ -128,6 +129,27 @@ Describe 'GenBid-Bot.ps1: hàm' {
             Write-Spend @((Spend 1 '2026-11-05T05:00:00Z'))
             $b = Use-FakeNow $global:Now0 { Get-ApiBudget }
             Assert-Eq $b.Limit 50; Assert-Eq $b.SwitchAt 90; Assert-Eq $b.Spent 1
+        }
+        It 'sổ các máy khác (.genbid-api-others.json, Khoa 17/11): cộng khi cùng kỳ, cùng lần sửa tay; Own là sổ riêng' {
+            Write-BotText $global:ApiKeyFile 'k'
+            Write-Spend @((Spend 50 '2026-11-05T05:00:00Z'))
+            Write-BotJson $global:ApiOthersFile @{ usd = 45; exhausted = $false; since = '2026-11-02T00:00:00'; fixAt = '' }
+            $b = Use-FakeNow $global:Now0 { Get-ApiBudget }
+            Assert-Eq $b.Spent 95; Assert-Eq $b.Own 50; Assert-Eq $b.FixAt ''
+            Assert-Match (Auth $global:Now0).Text '^plan \(đã dùng 95/100'
+            Write-BotJson $global:ApiOthersFile @{ usd = 45; since = '2026-10-02T00:00:00'; fixAt = '' }
+            Assert-Eq (Use-FakeNow $global:Now0 { Get-ApiBudget }).Spent 50
+            Write-BotJson $global:ApiOthersFile @{ usd = 0; exhausted = $true; since = '2026-11-02T07:00:00'; fixAt = '' }
+            $b = Use-FakeNow $global:Now0 { Get-ApiBudget }
+            Assert-True $b.Exhausted; Assert-Eq $b.OwnExhausted $false
+            # Sửa tay 40 USD lúc 06/11 00:00 UTC: chỉ cộng phần máy khác cùng lần sửa.
+            Write-BotJson $global:AiSettingsFile @{ spent = @{ usd = 40; at = '2026-11-06T00:00:00Z' } }
+            Write-Spend @((Spend 3 '2026-11-07T05:00:00Z'))
+            Write-BotJson $global:ApiOthersFile @{ usd = 2; since = '2026-11-02T00:00:00'; fixAt = '2026-11-06T00:00:00Z' }
+            $b = Use-FakeNow $global:Now0 { Get-ApiBudget }
+            Assert-Eq $b.Spent 45; Assert-Eq $b.Own 3; Assert-Eq $b.FixAt '2026-11-06T00:00:00Z'
+            Write-BotJson $global:ApiOthersFile @{ usd = 2; since = '2026-11-02T00:00:00'; fixAt = '' }
+            Assert-Eq (Use-FakeNow $global:Now0 { Get-ApiBudget }).Spent 43
         }
     }
 

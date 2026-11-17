@@ -1782,7 +1782,8 @@ const API_OUT = /credit balance is too low|reached your specified api usage limi
 const AI_SETTINGS = path.join(ROOT, ".genbid-ai-settings.json");
 const textOf = (f) => { try { return fs.readFileSync(f, "utf8"); } catch { return ""; } };
 function apiBudget() {
-  return apiBudgetOf(textOf(path.join(ROOT, ".anthropic-api-budget.json")), textOf(API_SPEND), new Date(), textOf(AI_SETTINGS));
+  // .genbid-api-others.json: sổ các máy khác cùng API key (GenBid-Bot.ps1 chép từ nhịp tim).
+  return apiBudgetOf(textOf(path.join(ROOT, ".anthropic-api-budget.json")), textOf(API_SPEND), new Date(), textOf(AI_SETTINGS), textOf(path.join(ROOT, ".genbid-api-others.json")));
 }
 // Môi trường của một lần gọi Claude cho việc `task` (analysis, compare...): Cấu hình hệ thống đặt gói tháng thì bỏ API key
 // (và dùng token gói tháng khi máy chưa đăng nhập /login); còn lại như tiến trình này.

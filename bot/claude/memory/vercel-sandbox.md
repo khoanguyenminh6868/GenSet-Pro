@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 002f765c-d667-4ca2-b611-252cd3c8bf93
-  modified: 2026-11-17T14:34:39.876Z
+  modified: 2026-11-17T14:44:15.438Z
 ---
 
 Bot GenBid dự phòng chạy trong Vercel Sandbox `genbid-bot` (project genset-pro-web, sin1, image `vercel/sandbox/ubuntu`, persistent). Chi tiết kỹ thuật và bẫy: `bot/sandbox/README.md`. Mã bật/dừng: `web/api/_sandbox.js`, `_wake.js`.
@@ -25,7 +25,9 @@ Bot GenBid dự phòng chạy trong Vercel Sandbox `genbid-bot` (project genset-
 **How to apply:**
 - Thử sandbox: tạm dừng bot Windows (đừng dừng giữa lượt), chờ > 3 phút rồi Khoa bấm yêu cầu trên web; xem log qua Vercel MCP `run_session_command` (`$HOME/genset-pro/genbid-bot-logs/sandbox.out`). Đừng `stop_session` khi bot sandbox đang làm (kiểm `running` ở `/api/requests?kind=bots`).
 - Sửa `bot/genbid-hsmt/*` thì bot sandbox tự lấy khi khởi động lại (up() kéo main trước khi chạy start-bot.sh); bot đang chạy giữ mã cũ.
-- Đã thử thật đạt (17/11): Sync, tải HSMT qua Agent/Wine, đăng tệp, Phân tích, dịch, OCR, .doc, Gợi ý cấu hình, nhường việc khi máy Windows bật lại, tự dừng. CHƯA thử: Gợi ý giá, Đối chiếu HSDT/TLKT, Tạo HSDT, Tìm thông số NCC (thiếu `FIRECRAWL_KEY` trên Vercel), nút Lấy tệp bấm trực tiếp, một bản dịch thật qua Gemini. Sổ tiền API tách đôi giữa 2 máy (chưa sửa).
+- Đã thử thật đạt (17/11): Sync, tải HSMT qua Agent/Wine, đăng tệp, Phân tích, dịch, OCR, .doc, Gợi ý cấu hình, Gợi ý giá, Đối chiếu HSDT/TLKT, Tạo HSDT, nút Lấy tệp bấm trực tiếp (Khoa báo), nhường việc khi máy Windows bật lại, tự dừng. Dịch qua Gemini (agy) đã đạt 17/11 14:39 (IB2600612866, gemini-3.8-flash-medium, 53 s). Còn Tìm thông số NCC: chờ Khoa đặt `FIRECRAWL_KEY` trên Vercel.
+- Sổ tiền API chung (17/11): mỗi máy vẫn sổ riêng; web cộng qua `botstatus/api-<máy>` và trả `apiOthers` (`.genbid-api-others.json`). Chi tiết `bot/sandbox/README.md`.
+- Không ghi trạng thái tạm (bot máy nào đang bật / tắt) vào sổ điều phối hay bộ nhớ (Khoa 17/11).
 - Claude không được đặt / xoá token: Khoa tự làm. Khoa 17/11 tối: KHÔNG cần xoá 7 secret GitHub / biến `GEMINI_OAUTH_CREDS` hay thu hồi token Vercel / PAT, không cần cập nhật + Repair KayenGram, không bấm lại Gợi ý IB2600612866, giữ mốc nhường 2 phút: đừng nhắc lại.
 
 Liên quan: [[bot-ops]], [[git-workflow]], [[repo-public-khong-hoi]].

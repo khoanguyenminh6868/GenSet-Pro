@@ -104,6 +104,7 @@ function filterDocs(db, q) {
   const id = q.get("id");
   if (id?.startsWith("eq.")) rows = rows.filter((d) => d.id === id.slice(3));
   else if (id?.startsWith("in.(")) { const set = inList(id); rows = rows.filter((d) => set.includes(d.id)); }
+  else if (id?.startsWith("like.")) { const re = new RegExp(`^${id.slice(5).replace(/[.+?^${}()|[\]\\]/g, "\\$&").replace(/\*/g, ".*")}$`); rows = rows.filter((d) => re.test(d.id)); }
   return rows.sort((a, b) => (a.coll === b.coll ? (a.id < b.id ? -1 : a.id > b.id ? 1 : 0) : a.coll < b.coll ? -1 : 1));
 }
 

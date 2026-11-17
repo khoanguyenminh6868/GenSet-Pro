@@ -62,6 +62,8 @@ $ClaudeTokenFile = Join-Path $Root '.claude-bot-token'
 $ApiKeyFile = Join-Path $Root '.anthropic-api-key'
 $ApiSpendFile = Join-Path $Root '.anthropic-api-spend.jsonl'
 $ApiBudgetFile = Join-Path $Root '.anthropic-api-budget.json'
+# Phần các máy khác đã tiêu bằng cùng API key kỳ này (web trả về qua nhịp tim; Khoa 17/11/2026: sổ từng tách đôi).
+$ApiOthersFile = Join-Path $Root '.genbid-api-others.json'
 # Cấu hình hệ thống trên web (settings/ai, chỉ Superadmin; Khoa 13/11/2026): Phân tích, Gợi ý cấu hình, Gợi ý giá,
 # Đối chiếu hồ sơ trả bằng API hay gói tháng; ngưỡng chuyển; số tiền API đã dùng sửa tay. Get-Pending chép về đây.
 $AiSettingsFile = Join-Path $Root '.genbid-ai-settings.json'
@@ -125,13 +127,18 @@ function Get-Pending([switch]$Running, [switch]$BeatOnly) {
     if ($beat -and (Test-Path $ApiKeyFile)) {
         try {
             $bud = Get-ApiBudget
-            $api = [ordered]@{ spent = $bud.Spent; since = $bud.Since.ToString('yyyy-MM-ddTHH:mm:ss'); switchAt = $bud.SwitchAt; exhausted = [bool]$bud.Exhausted } | ConvertTo-Json -Compress
+            # own / fixAt / id: sổ riêng của máy này, để web cộng sổ các máy (apiOthers ở dưới).
+            $api = [ordered]@{ spent = $bud.Spent; since = $bud.Since.ToString('yyyy-MM-ddTHH:mm:ss'); switchAt = $bud.SwitchAt; exhausted = [bool]$bud.Exhausted
+                own = $bud.Own; ownExhausted = [bool]$bud.OwnExhausted; fixAt = $bud.FixAt; id = ([Environment]::MachineName -replace '[^A-Za-z0-9_-]', '') } | ConvertTo-Json -Compress
             $url += '&api=' + [uri]::EscapeDataString($api)
         } catch {}
     }
     $r = Invoke-WebRequest $url -Headers @{ Authorization = "Bearer $token" } -UseBasicParsing -TimeoutSec 60
     if ($beat) { $script:LastBeat = $now; $script:LastBeatRunning = [bool]$Running }
     $p = [Text.Encoding]::UTF8.GetString($r.RawContentStream.ToArray()) | ConvertFrom-Json
+    if ($p.PSObject.Properties.Name -contains 'apiOthers' -and $null -ne $p.apiOthers) {
+        try { [IO.File]::WriteAllText($ApiOthersFile, ($p.apiOthers | ConvertTo-Json -Compress), $Utf8) } catch {}
+    }
     # Cấu hình hệ thống (settings/ai) đến cùng nhịp tim: chép về máy để genbid-sync.js, config-bot, bidprice-bot đọc.
     if ($p.PSObject.Properties.Name -contains 'settings' -and $null -ne $p.settings) {
         try {
@@ -211,13 +218,19 @@ function Get-ApiBudget {
     try {
         $s = Get-Content $AiSettingsFile -Raw -Encoding UTF8 -ErrorAction Stop | ConvertFrom-Json
         if ([double]$s.switchAtUsd -gt 0) { $b.switchAtUsd = [double]$s.switchAtUsd }
-        if ($null -ne $s.spent -and $null -ne $s.spent.usd) { $fixAt = [datetime]::Parse([string]$s.spent.at, [Globalization.CultureInfo]::InvariantCulture); $fixUsd = [double]$s.spent.usd }
+        # pwsh 7 (sandbox) đã đổi chuỗi ngày ISO thành DateTime; [string] của nó mất múi giờ nên dùng thẳng.
+        if ($null -ne $s.spent -and $null -ne $s.spent.usd) {
+            $fixAt = if ($s.spent.at -is [datetime]) { $s.spent.at } else { [datetime]::Parse([string]$s.spent.at, [Globalization.CultureInfo]::InvariantCulture) }
+            $fixUsd = [double]$s.spent.usd
+        }
     } catch { $fixUsd = $null }
     $now = Get-Date
     $since = (Get-Date -Year $now.Year -Month $now.Month -Day 1).Date.AddDays([int]$b.resetDay - 1)
     if ($now -lt $since) { $since = $since.AddMonths(-1) }
     $fix = $null -ne $fixUsd -and $fixUsd -ge 0 -and $fixAt -ge $since -and $fixAt -le $now
-    $spent = if ($fix) { $fixUsd } else { 0.0 }; $exhausted = $false
+    # Khoá của lần sửa tay, giống nhau trên mọi máy (giờ UTC tới giây; như apiBudgetOf).
+    $fixKey = if ($fix) { $fixAt.ToUniversalTime().ToString("yyyy-MM-dd'T'HH:mm:ss'Z'", [Globalization.CultureInfo]::InvariantCulture) } else { '' }
+    $spent = 0.0; $exhausted = $false
     if (Test-Path $ApiSpendFile) {
         foreach ($l in [IO.File]::ReadAllLines($ApiSpendFile)) {
             if (-not $l.Trim()) { continue }
@@ -236,7 +249,18 @@ function Get-ApiBudget {
             if ($e.exhausted) { $exhausted = $true }
         }
     }
-    [pscustomobject]@{ Spent = [math]::Round($spent, 2); Limit = $b.monthlyUsd; SwitchAt = $b.switchAtUsd; Since = $since; Exhausted = $exhausted }
+    # Các máy khác (máy Windows khác, sandbox) dùng chung API key, mỗi máy một sổ: web cộng phần của chúng cùng kỳ, cùng
+    # lần sửa tay, trả về qua nhịp tim (.genbid-api-others.json; apiOthersOf trong web/api/requests.js).
+    $own = $spent; $ownExhausted = $exhausted
+    try {
+        $o = Get-Content $ApiOthersFile -Raw -Encoding UTF8 -ErrorAction Stop | ConvertFrom-Json
+        if ([string]$o.since -and ([string]$o.since).Substring(0, 10) -eq $since.ToString('yyyy-MM-dd') -and [string]$o.fixAt -eq $fixKey) {
+            $spent += [double]$o.usd; if ($o.exhausted -eq $true) { $exhausted = $true }
+        }
+    } catch {}
+    if ($fix) { $spent += $fixUsd }
+    [pscustomobject]@{ Spent = [math]::Round($spent, 2); Limit = $b.monthlyUsd; SwitchAt = $b.switchAtUsd; Since = $since; Exhausted = $exhausted
+        Own = [math]::Round($own, 2); OwnExhausted = $ownExhausted; FixAt = $fixKey }
 }
 # $start: lúc bắt đầu lần gọi (t0), để số tiền sửa tay giữa chừng chỉ cộng phần sau lúc sửa.
 function Add-ApiSpend([double]$usd, [string]$src, [switch]$Exhausted, $start = $null) {
