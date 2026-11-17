@@ -1854,7 +1854,7 @@ function askOnce(prompt, model, task = "") {
 // Khoa's Google AI Pro account, so they cost no Claude tokens (Khoa, 2026-10-27). Gemini 3.8 Flash Medium: Low left
 // Vietnamese untranslated; Medium matched Claude on a TLKT result. It runs in an empty folder so the agent sees no files.
 // Any failure (not installed, signed out, out of quota, not JSON) falls back to Claude.
-const AGY = PLAT.agyExe(); // null on Linux: translations go to Claude
+const AGY = PLAT.agyExe(); // missing (not installed / no Google sign-in): translations go to Claude
 const GEMINI_MODEL = process.env.GENBID_GEMINI_MODEL || "gemini-3.8-flash-medium";
 function askGemini(prompt) {
   if (!AGY || !fs.existsSync(AGY)) return Promise.resolve({ error: "chưa cài Antigravity CLI (agy)" });

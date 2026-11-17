@@ -59,6 +59,8 @@ export function botEnv(env = process.env) {
   const out = {
     GENBID_INGEST_TOKEN: env.INGEST_TOKEN, ANTHROPIC_API_KEY: env.ANTHROPIC_API_KEY, CLAUDE_CODE_OAUTH_TOKEN: env.CLAUDE_CODE_OAUTH_TOKEN,
     GH_TOKEN: env.GH_BOT_TOKEN || env.GITHUB_TOKEN, FIRECRAWL_KEY: env.FIRECRAWL_KEY,
+    // Đăng nhập Google của agy (Gemini cho bản dịch), chép từ ~/.gemini/oauth_creds.json của máy Windows (Khoa 17/11).
+    GEMINI_OAUTH_CREDS: env.GEMINI_OAUTH_CREDS,
   };
   return Object.fromEntries(Object.entries(out).filter(([, v]) => v));
 }
