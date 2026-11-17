@@ -65,7 +65,10 @@ const POWER_RE = /(\d+(?:[.,]\d+)?)\s*(kva|kw|mva)\b/gi;
 // Also "Công suất liên tục (kW/kVA) ≥ 100/125": the unit pair before the value pair.
 const POWER_PAIR_RE = /\(\s*kw\s*\/\s*kva\s*\)[^\d\n]{0,12}(\d+(?:[.,]\d+)?)\s*\/\s*(\d+(?:[.,]\d+)?)/gi;
 const histNum = (x) => Number(x.replace(/\.(?=\d{3}\b)/, "").replace(",", "."));
-const histPower = (s) => [...[...String(s || "").matchAll(POWER_RE)].map((m) => ({ v: histNum(m[1]), u: m[2].toLowerCase() === "mva" ? "MVA" : m[2].toLowerCase() === "kw" ? "kW" : "kVA" })),
+// The figure after "±" / "+/-" is a tolerance, not a power ("12.5 ±0.5 KVA" was read as 0,5 kVA in 37 past tenders;
+// rà soát 17/11/2026): dropped before reading, as noTolerance of suppliers/config-bot.mjs and capacityOf of the web do.
+const noTolerance = (s) => String(s || "").replace(/(?:±|\+\s*\/\s*-)\s*\d+(?:[.,]\d+)?/g, "");
+const histPower = (s0, s = noTolerance(s0)) => [...[...String(s || "").matchAll(POWER_RE)].map((m) => ({ v: histNum(m[1]), u: m[2].toLowerCase() === "mva" ? "MVA" : m[2].toLowerCase() === "kw" ? "kW" : "kVA" })),
   ...[...String(s || "").matchAll(POWER_PAIR_RE)].map((m) => ({ v: histNum(m[2]), u: "kVA" }))].filter((p) => p.v > 0);
 function histNeedsConfig(d) {
   // Read before OCR existed and found only a scan: read again.
