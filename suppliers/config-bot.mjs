@@ -1965,7 +1965,10 @@ export async function prep(key, dir, reqData = {}, given = null, multi = null, i
     : multi ? ["", `## Gói có nhiều cỡ máy: ${multi.sizes.map(sizeText).join("; ")}`,
       `Lượt này CHỈ gợi ý cấu hình cho máy ${sizeText(multi.size)} (code đọc từ: "${multi.size.quote}"); các cỡ khác có lượt riêng. Chỉ ghi các yêu cầu của HSMT áp dụng cho máy này hoặc chung cho mọi máy của gói; bỏ yêu cầu chỉ dành cho máy cỡ khác (công suất, tiêu hao nhiên liệu, dung tích, kích thước... của máy khác).`] : []),
     `Lệnh lưu trang web: node "${SCRIPT}" save --dir . --url "<url>"`,
-    `Lệnh kiểm tra result.json: node "${SCRIPT}" check --dir .`, "",
+    `Lệnh kiểm tra result.json: node "${SCRIPT}" check --dir .`,
+    // newCatalog.json (step 4) checked the way the bot will add it (2026-11-17: a `names` list made Kubota fail verify.mjs
+    // and its J112 configuration was dropped after the summary had counted it).
+    `Lệnh kiểm tra newCatalog.json (khi có): node "${SCRIPT}" find-check --dir .`, "",
     reuse ? "## Yêu cầu đã đọc lần trước: requirements.json (HSMT và Yêu cầu khác không đổi) — dùng nguyên danh sách đó, bỏ qua bước 1." : "", "",
     // The requirement codes (Khoa, 2026-11-06): every requirement names one; the code fixes its item, part and level.
     "## Mã yêu cầu (bắt buộc: mỗi requirement có `code` từ bảng này; code quyết định `item`, `part`, `level`; không có mã nào hợp thì `other` với item tự đặt)", codesMd(), "",
@@ -2642,6 +2645,27 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   if (!result.configs.length && !result.message) result.message = "Không có động cơ và đầu phát nào trong hệ thống hay trên internet đáp ứng đủ yêu cầu của HSMT.";
   return { result, problems, hints };
 }
+// The agent's summary counts the configurations it wrote; the code may drop some after (IB2600612866, 2026-11-17: the
+// summary said 6 with a Kubota J112, the list showed 5). The summary's count follows the list, and a note says which
+// configuration went and why (the code's own "#<rank>: … đã bỏ" lines, else the dedupe / per-make limit of rankConfigs).
+export const cfgKey = (c) => [c.genset?.model, c.engine?.model, c.alternator?.model].map((x) => CAT.keyOf(x || "")).join("|");
+export const cfgName = (c) => [c.genset?.make || c.engine?.make, c.genset?.model || c.engine?.model].filter(Boolean).join(" ") || `#${c.rank}`;
+export function noteDropped(given, result, problems = []) {
+  const left = new Set((result.configs || []).map(cfgKey));
+  const gone = given.filter((g) => !left.has(g.key));
+  if (!gone.length) return;
+  const n = (result.configs || []).length;
+  const why = (g) => {
+    const p = problems.filter((x) => g.rank != null && x.startsWith(`#${g.rank}:`) && /đã bỏ/.test(x)).map((x) => x.replace(/^#\d+:\s*/, ""));
+    return p.length ? p.join("; ") : "trùng cấu hình khác hoặc vượt số cấu hình mỗi hãng động cơ";
+  };
+  if (result.summary) {
+    const re = new RegExp(`\\b${given.length}(\\s+cấu hình)`);
+    if (re.test(result.summary)) result.summary = result.summary.replace(re, `${n}$1`);
+    result.summary += ` (Code đã bỏ ${gone.map((g) => g.name).join(", ")} sau khi agent viết tóm tắt này; danh sách còn ${n} cấu hình.)`;
+  }
+  result.notes = [...(result.notes || []), ...gone.map((g) => `Code đã bỏ cấu hình ${g.name} agent đề xuất: ${why(g)}.`)];
+}
 function checkDir(dir, suppliers, added = [], origin) {
   const meta = fs.existsSync(path.join(dir, "meta.json")) ? JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8")) : {};
   const result = JSON.parse(fs.readFileSync(path.join(dir, "result.json"), "utf8"));
@@ -2652,8 +2676,10 @@ function checkDir(dir, suppliers, added = [], origin) {
   if (added.length) result.catalogAdded = added.map(({ nmap, ...a }) => a);
   const readWeb = (f) => { const p = path.join(dir, f); return p.startsWith(path.join(dir, "web")) && fs.existsSync(p) ? fs.readFileSync(p, "utf8") : null; };
   const hsmtText = fs.readFileSync(path.join(dir, "hsmt.txt"), "utf8");
+  const given = (result.configs || []).map((c) => ({ rank: c.rank, key: cfgKey(c), name: cfgName(c) }));
   const out = check(result, { hsmtText, suppliers, readWeb, origin, basis: meta.basis, sized: !!meta.sized });
   rankConfigs(out.result);
+  noteDropped(given, out.result, out.problems);
   // The analysis' technical lines the requirements may have missed (Khoa, 2026-11-06), for the agent to read again.
   const specs = fs.existsSync(path.join(dir, "specs.json")) ? JSON.parse(fs.readFileSync(path.join(dir, "specs.json"), "utf8")) : [];
   out.uncovered = uncoveredSpecs(specs, out.result.requirements);
@@ -4062,13 +4088,21 @@ export function rankConfigs(result) {
 // catalog: it is left out here with its reason, and what rests on it alone (tables, lines, controllers, strengths) with it.
 // `keepSeller` lets the caller keep them (nothing passes it today).
 export const sellerPage = (s) => s.tier === "C" && !s.official;
+// `names` as schema.json has it ({ en, zh, brands }). An agent wrote a list (["KUBOTA Corporation"], 2026-11-17) or a
+// plain string: a name in Chinese characters is zh, the first other one en.
+export function namesOf(n) {
+  if (n && typeof n === "object" && !Array.isArray(n)) return n;
+  const list = (Array.isArray(n) ? n : [n]).map((x) => String(x ?? "").trim()).filter(Boolean);
+  const zh = list.find((x) => /[一-鿿]/.test(x)), en = list.find((x) => !/[一-鿿]/.test(x));
+  return { ...(en ? { en } : {}), ...(zh ? { zh } : {}) };
+}
 export function catalogRecords(entries, { existing, readWeb, today, keepSeller = false }) {
   const out = [];
   for (const e of Array.isArray(entries) ? entries : []) {
     const id = String(e?.id || "");
     if (!/^[a-z0-9-]+$/.test(id)) { out.push({ id, error: "id không hợp lệ" }); continue; }
     const old = existing.get(id) || null, files = {}, nmap = new Map(), sources = [], skippedSources = [], gone = new Set();
-    const self = old || { id, role: e.role, website: e.website || null, names: e.names || {}, sources: [] };
+    const self = old || { id, role: e.role, website: e.website || null, names: namesOf(e.names), sources: [] };
     const pool = [...existing.values(), ...(old ? [] : [self])];
     // 2001–2999: pages of internet finds; 3001–3999 belong to controllers.mjs --crawl.
     let next = Math.max(2000, ...(old?.sources || []).map((s) => s.n).filter((n) => n < 3000)) + 1, error = "";
@@ -4098,7 +4132,7 @@ export function catalogRecords(entries, { existing, readWeb, today, keepSeller =
     const ctrls = fil(e.controllers, keepRef).map((c) => ({ brand: c.brand, model: c.model || null, text: c.text, line: c.line, src: re(c.src) }));
     const rec = old
       ? { ...old, sources: [...old.sources, ...sources], productLines: [...(old.productLines || []), ...lines], specTables: [...(old.specTables || []), ...tables], ...(ctrls.length ? { controllers: [...(old.controllers || []), ...ctrls] } : {}), checkedAt: today }
-      : { country: e.country, role: e.role, status: "partial", names: e.names || {}, website: e.website || null, hq: e.hq || { province: null, city: null },
+      : { country: e.country, role: e.role, status: "partial", names: namesOf(e.names), website: e.website || null, hq: e.hq || { province: null, city: null },
         founded: null, relatedIds: [], strengths: fil(e.strengths, keepRef).map((x) => ({ ...x, src: re(x.src) })), productLines: lines,
         certifications: fil(e.certifications, keepRef).map((x) => ({ ...x, src: re(x.src) })), exportMarkets: [], missing: e.missing || [],
         sources, confidence: e.confidence, checkedAt: today, checkedBy: "config-bot", specTables: tables, ...(ctrls.length ? { controllers: ctrls } : {}), id };

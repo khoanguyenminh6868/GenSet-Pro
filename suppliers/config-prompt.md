@@ -244,9 +244,11 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    Put that configuration first (`src.kind: "internet"`), with its checks as in step 2, and its supplier in
    `suppliers` (`supplierId` = the id you give it below, `n` and `line` = its specTables entry below).
    Then add what you found to the catalog: write `newCatalog.json`, a list of supplier records in the shape of
-   suppliers/schema.json, from the saved pages only:
+   suppliers/schema.json, from the saved pages only (then run the check of newCatalog.json given in input.md: a supplier
+   it rejects is not added, and a configuration whose only supplier it is will be dropped):
    - `id` (a-z 0-9 -, the company's short name; the same id as in catalog.md for a supplier already in the system, then
-     give only the new `sources`, `productLines`, `specTables`), `country` (2 letters), `role`, `names`, `website`,
+     give only the new `sources`, `productLines`, `specTables`), `country` (2 letters), `role`,
+     `names` (an object by language: `{ "en": "KUBOTA Corporation" }`, `zh` for a Chinese name; not a list), `website`,
      `status` (`partial`), `confidence` (`low` when every source is tier C), `missing` (what the pages do not say).
    - `sources`: `{ "n": 1, "file": "web/1.txt", "tier": "A|B|C", "quote": ["exact words from that page, 8+ characters"] }`
      (A: the maker's own site or datasheet, B: fair or association, C: self-description, dealer, B2B platform).
