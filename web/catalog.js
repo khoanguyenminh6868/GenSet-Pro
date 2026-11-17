@@ -1059,6 +1059,14 @@
       }
       const specList = SPECS.filter(([k]) => specs.has(k)).map(([k]) => {
         const g = specs.get(k);
+        // Engine constants: one vote per supplier, and the value that wins by the majority rule (see `tally`). `values`
+        // keeps every value as written; `votes` is per value (vk), `win` its key or null.
+        if (e.kind === "engine" && VOTE_KEYS.has(k)) {
+          const by = new Map();
+          for (const [vk, v] of g.values) for (const s of v.suppliers) by.set(s, [...(by.get(s) || []), vk]);
+          const t = tally(by);
+          return { ...g, win: t.win, votes: Object.fromEntries([...t.votes].map(([vk, ss]) => [vk, ss.length])), values: [...g.values.values()].map((v) => ({ ...v, suppliers: [...v.suppliers] })).sort((a, b) => b.suppliers.length - a.suppliers.length || b.rows - a.rows) };
+        }
         return { ...g, values: [...g.values.values()].map((v) => ({ ...v, suppliers: [...v.suppliers] })).sort((a, b) => b.suppliers.length - a.suppliers.length || b.rows - a.rows) };
       });
       // `makes`: the makes kept (keptMakes), which make, origin and group are read from; every make a source gave stays in
@@ -1340,7 +1348,43 @@
     return out;
   }
 
-  const api = { build, builder, partsIn, fromSupplier, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, madeAt, madeIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS };
+  const VOTE_KEYS = new Set(["cyl", "disp", "bore", "compr"]);
+  // One supplier, one vote per figure (depco-sua, Khoa 17/11/2026; majority rule of 16/11: a value wins with 3 suppliers
+  // or more and 3 times as many as each other value). `bySup`: Map supplierId → the values that supplier gives for one
+  // model and one key. A supplier giving two different values (two tables of one model) votes for the one that the
+  // others' majority has; with no such majority, or without that value among its own, it gives no vote. `tol`: numbers
+  // within this relative gap are one value (the most supported one stands for them; displacement 2%, so 22.9 and 23).
+  // → { votes: Map value → [supplierId], win: value | null, split: [supplierId] (suppliers giving two values),
+  //     dropped: [supplierId] (no vote) }.
+  function tally(bySup, tol = 0) {
+    const sups = [...bySup].map(([s, vs]) => [s, [...new Set((vs || []).filter((v) => v != null))]]).filter(([, vs]) => vs.length);
+    const support = new Map();
+    for (const [, vs] of sups) for (const v of vs) support.set(v, (support.get(v) || 0) + 1);
+    const rep = new Map(), reps = [];
+    const nums = tol > 0 && [...support.keys()].every((v) => typeof v === "number");
+    if (nums) for (const v of [...support.keys()].sort((a, b) => support.get(b) - support.get(a) || a - b)) {
+      const r = reps.find((x) => Math.abs(x - v) <= tol * Math.max(x, v));
+      if (r != null) rep.set(v, r); else { reps.push(v); rep.set(v, v); }
+    }
+    const R = (v) => (rep.has(v) ? rep.get(v) : v);
+    const each = sups.map(([s, vs]) => [s, [...new Set(vs.map(R))]]);
+    const winOf = (m) => {
+      const e = [...m].sort((a, b) => b[1] - a[1]);
+      return e.length && e[0][1] >= 3 && e.slice(1).every(([, c]) => e[0][1] >= 3 * c) ? e[0][0] : null;
+    };
+    const single = new Map();
+    for (const [, vs] of each) if (vs.length === 1) single.set(vs[0], (single.get(vs[0]) || 0) + 1);
+    const win0 = winOf(single), votes = new Map(), split = [], dropped = [];
+    const vote = (v, s) => votes.set(v, [...(votes.get(v) || []), s]);
+    for (const [s, vs] of each) {
+      if (vs.length === 1) { vote(vs[0], s); continue; }
+      split.push(s);
+      if (win0 != null && vs.includes(win0)) vote(win0, s); else dropped.push(s);
+    }
+    return { votes, win: winOf(new Map([...votes].map(([v, ss]) => [v, ss.length]))), split, dropped };
+  }
+
+  const api = { build, builder, tally, partsIn, fromSupplier, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, madeAt, madeIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);
