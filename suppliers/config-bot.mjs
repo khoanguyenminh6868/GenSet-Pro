@@ -1424,6 +1424,11 @@ export function keepOf(result) {
 }
 // At most 6 configurations (Khoa 2026-11-03: a run checked 49 requirements × 8 configurations in 11 minutes).
 export const MAX_CONFIGS = 6, PER_MAKE_CONFIGS = 2;
+// Perkins and Volvo Penta: one configuration only, the best ranked (Khoa, 2026-11-17, IB2600603983: 4006-23TAG2A and
+// 4006-23TAG3A took ranks 1 and 2, the same set one size apart; the place goes to another make). The other makes keep 2.
+// A configuration kept from Tìm NCC or of the genset the HSMT names is outside the limit, as before.
+export const ONE_CONFIG_MAKES = ["perkins", "volvo penta"];
+export const perMakeConfigs = (make) => (ONE_CONFIG_MAKES.includes(String(make || "").split("/")[0].trim().toLowerCase()) ? 1 : PER_MAKE_CONFIGS);
 // A configuration whose controller (engine, alternator) is that of an earlier one may leave out the checks of that
 // part: the code copies them: a check read from the model's figures (factSrc), one whose quote is also in this
 // configuration's own source of that part, and a controller function no source states. Each copy is then checked
@@ -3783,7 +3788,7 @@ export function rankConfigs(result) {
     // At most 2 per engine make (Khoa, 2026-11-11), so another make gets the place of a third.
     const mk = String(c.engine?.make || "").split("/")[0].trim().toLowerCase();
     // A configuration kept from Tìm NCC (keepFound) is outside that limit: Khoa wants it back, whatever else the run found.
-    if (mk && !c.keptFind && !c.named && (perMake.get(mk) || 0) >= PER_MAKE_CONFIGS) return false;
+    if (mk && !c.keptFind && !c.named && (perMake.get(mk) || 0) >= perMakeConfigs(mk)) return false;
     seen.set(k, [...(seen.get(k) || []), c]);
     perEngine.set(ek, (perEngine.get(ek) || 0) + 1);
     if (perEngine.get(ek) > 3) return false;

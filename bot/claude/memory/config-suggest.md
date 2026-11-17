@@ -5,20 +5,19 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-17T00:59:08.679Z
+  modified: 2026-11-17T01:05:41.738Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Code xếp sẵn 30 dòng ứng viên; mọi số/câu trích phải có nguyên văn trong nguồn, sai → "Đạt" thành "Chưa rõ". ~6–11 phút, ~3 USD/gói. Yêu cầu theo bộ mã cố định `suppliers/reqcodes.mjs` (thêm mã: dòng `R(...)` đúng thứ tự + test; tăng `REQ_VERSION`).
 
 ## Quy tắc Khoa chốt
-**Xếp hạng:** số "không đạt" ở động cơ + BĐK (đếm từng chức năng) → không đạt ở đầu phát + tổ máy → có NCC phù hợp → "chưa rõ" cùng thứ tự → yêu cầu tuỳ chọn (bồn dầu, kích thước, độ ồn) sau cùng. Chưa kiểm = chưa rõ. Tối đa 6 cấu hình, 2 cấu hình mỗi hãng động cơ. HSMT có yêu cầu BĐK mà cấu hình không có BĐK → không đạt. NCC chào đúng cả động cơ và BĐK lên đầu. Đại lý tại VN KHÔNG là tiêu chí. Hàng từng trúng thầu chỉ là tiêu chí cuối.
+**Xếp hạng:** số "không đạt" ở động cơ + BĐK (đếm từng chức năng) → không đạt ở đầu phát + tổ máy → có NCC phù hợp → "chưa rõ" cùng thứ tự → yêu cầu tuỳ chọn (bồn dầu, kích thước, độ ồn) sau cùng. Chưa kiểm = chưa rõ. Tối đa 6 cấu hình, 2 cấu hình mỗi hãng động cơ; riêng Perkins và Volvo Penta chỉ 1 cấu hình, cái xếp cao nhất (Khoa 17/11/2026, PR #826; Khoa không nêu lý do). HSMT có yêu cầu BĐK mà cấu hình không có BĐK → không đạt. NCC chào đúng cả động cơ và BĐK lên đầu. Đại lý tại VN KHÔNG là tiêu chí. Hàng từng trúng thầu chỉ là tiêu chí cuối.
 
 **Xuất xứ:**
 - Web mặc định "Tất cả"; "Tất cả" và yêu cầu từ Sync thì đọc HSMT: thấy G7/G20 → nhóm đó. Chọn tay trên web giữ nguyên. Nhóm g20 của mình KHÔNG gồm Trung Quốc. HSMT cho phép EU cùng G7/G20 → mở thêm EU (chỉ đọc từ HSMT; web không có lựa chọn EU; HSMT chỉ đòi EU thì không có nhóm).
 - HSMT đòi G7/G20 cho **cả tổ máy/hàng hoá** → NCC phải ở nước thuộc nhóm. Chỉ đòi ở **bộ phận** (động cơ/đầu phát/BĐK) → lọc hãng động cơ theo nhóm, NCC ở Trung Quốc. Chỉ nói **hãng/thương hiệu** G7 (không nói xuất xứ/sản xuất tại) → nhận thêm nhà máy chính hãng ngoài nhóm.
 - Không đòi G7/G20 → chỉ NCC ở Trung Quốc; động cơ hãng TQ đáp ứng tốt hơn hoặc ngang điểm thì đứng trước. (Ngoại lệ em tự thêm, chưa hỏi Khoa: HSMT đòi đồng bộ thương hiệu thì giữ NCC mọi nước.)
-- G7/G20 mà HSMT không nêu hãng động cơ → mỗi hãng giữ chỗ trong ứng viên (không để Cummins/Perkins chiếm hết). Baudouin tính G7 (nhà máy ở Pháp). Deutz KHÔNG tính G7/G20/EU. Loại động cơ TQ sản xuất theo giấy phép. **Khoa 16/11/2026: "nên phân biệt rõ thương hiệu và nơi sản xuất"** cho động cơ: danh mục hiện chỉ biết hãng (Cummins = Mỹ), không biết nhà máy, nên Cummins B / C (Dongfeng Cummins), KTA / QSK (Chongqing Cummins), Baudouin M26 (Weichai) đều qua lọc G7 như hàng chính hãng. Khoa chốt cùng ngày: (1) HSMT chỉ đòi G7 / G20 cho bộ phận (37/928 gói) → đọc dòng động cơ ghi THƯƠNG HIỆU hay NƠI SẢN XUẤT, tuỳ đó mà xét; (2) đòi nơi sản xuất: dòng nguồn ghi nhà máy TQ (DCEC, CCEC, SME, Perkins China, 潍柴博杜安, MTU Yuchai) → không đạt; ghi hàng nhập / nhà máy G7 → đạt; không ghi (đa số) → giữ, gắn "cần xác nhận nơi sản xuất động cơ" (không đoán theo model); (3) Xuất xứ Trung Quốc: dòng ghi rõ nhà máy TQ của hãng ngoại tính là SẢN XUẤT TẠI TRUNG QUỐC (thay quyết định 29/10 coi là hàng ngoại). Khoa thêm cùng ngày: áp CẢ cho đầu phát và bộ điều khiển (Stamford / Leroy-Somer / Marathon làm ở TQ…), tra internet nơi sản xuất của các hãng đó rồi cập nhật danh mục. Kết quả tra (nguồn hãng): DSE chỉ SX ở Anh; DEIF chỉ Đan Mạch; Woodward easYgen-1500/2000/3000/3000XT ở Ba Lan; AvK chỉ Romania; Datakom → Thổ Nhĩ Kỳ (Khoa chốt, nguồn chỉ nói nhà máy Istanbul); Stamford / Leroy-Somer / Mecc Alte có nhà máy nhiều nước gồm TQ, NHƯNG Khoa chốt 16/11: "có thể tính xuất xứ là G7" → mặc định nơi SX thuộc G7 (Anh / Pháp / Ý); chỉ dòng nguồn ghi rõ nhà máy TQ ("Stamford (China)", 无锡斯坦福, 福州利莱森玛) mới tính TQ. AvK (Stamford) vẫn là Romania (EU). ComAp → Séc (EU), Khoa chốt 16/11 (nguồn hãng chỉ nói thiết kế ở Praha).
-- Khoa bảo BỎ 16/11 (đừng đề xuất lại): "code điền sẵn check" để giảm token agent Gợi ý cấu hình; tải tay datasheet Perkins / Cummins đuôi -G2; chạy Đối chiếu HSDT một gói thật; chạy lại Gợi ý IB2600601812 và lấy datasheet ComAp AMF9; tài liệu đầy đủ Deep Sea để lập bảng chức năng BĐK.
+- G7/G20 mà HSMT không nêu hãng động cơ → mỗi hãng giữ chỗ trong ứng viên (không để Cummins/Perkins chiếm hết). Baudouin tính G7 (nhà máy ở Pháp). Deutz KHÔNG tính G7/G20/EU. Loại động cơ TQ sản xuất theo giấy phép.
 - Loại NCC Việt Nam và tổ máy hãng/xuất xứ VN.
 
 **Đồng bộ thương hiệu** (~6% HSMT: động cơ/đầu phát/BĐK do chính hãng tổ máy làm): code tự thêm yêu cầu + kiểm theo họ hãng (Stamford/PowerCommand = Cummins, Perkins/FG Wilson = Caterpillar, SDMO = Kohler); xưởng lắp ráp TQ hầu hết không đạt; ứng viên giữ chỗ cho hãng tổ máy thật.
@@ -37,7 +36,7 @@ metadata:
 
 **Danh mục (`web/catalog.js`), Khoa duyệt 14/11/2026, làm xong phải đo tắt ↔ bật trên toàn bộ gói:**
 - Dòng nguyên văn lặp ở nhiều bảng của cùng NCC → GỘP thành một bản ghi, cộng dồn hãng + nguồn (không xoá thẳng bản sao).
-- Gán hãng động cơ / đầu phát: chỉ tin hãng ghi ở dòng bảng hoặc tiêu đề cột; hãng chỉ đến từ tên trang không dùng khi model đã có hãng mức cao hơn; còn mâu thuẫn → chưa rõ hãng, không đoán (cách siết do em đề xuất, Khoa trả lời "nên làm"). Khoa chốt thêm 16/11: cặp cùng hãng giữ cả hai, luật số đông ≥3 NCC và gấp ≥3 lần (chi tiết [[supplier-db]]).
+- Gán hãng động cơ / đầu phát: chỉ tin hãng ghi ở dòng bảng hoặc tiêu đề cột; hãng chỉ đến từ tên trang không dùng khi model đã có hãng mức cao hơn; còn mâu thuẫn → chưa rõ hãng, không đoán (cách siết do em đề xuất, Khoa trả lời "nên làm").
 
 **Ứng viên (Khoa duyệt 17/11/2026, IB2600603983, PR #823):**
 - HSMT nêu bố trí xi lanh (thẳng hàng / chữ V) → loại dòng ghi kiểu kia. Ngưỡng "ít nhất hai nhà cung cấp ghi mới tính cho cả động cơ" là do em chọn (dữ liệu NCC có ghi sai), Khoa chưa xét riêng điểm này.

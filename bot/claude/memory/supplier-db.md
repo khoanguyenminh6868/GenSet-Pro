@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-17T00:50:58.684Z
+  modified: 2026-11-16T14:43:57.259Z
 ---
 
 CSDL ở `suppliers/cn/<id>.json` (cả nước ngoài, `country` ghi nước thật). Mỗi thông tin có nguồn [n] + câu trích nguyên văn trong `sources/<id>/<n>.md`; `verify.mjs` kiểm bằng code; merge vào main thì workflow tự đăng web.
@@ -21,7 +21,6 @@ CSDL ở `suppliers/cn/<id>.json` (cả nước ngoài, `country` ghi nước th
 - OCR được phép, nhưng chỉ giữ dòng code kiểm được (số trong mã = kVA, cặp kW/kVA khớp, động cơ trùng model danh mục).
 - Chuẩn hoá thông số (`web/spec-norm.js`, Khoa 14/11/2026): "T3" / "Tier 3" / "Stage V" không kèm EPA / EU / China → KHÔNG gán thang khí thải; viết tắt "OP" ở ô kích thước → KHÔNG coi là máy trần; số "1,642" (phẩy + 3 chữ số) đọc là 1642; số bắt đầu "0," ("0,667 L") giữ nguyên là thập phân; bảng tự cho thấy phẩy thập phân (Himoinsa: "1,642 L", "3,767 l/h") thì ĐỂ THIẾU, không đọc 1642 cũng không đọc 1,642 (Khoa: "để thiếu như đang làm"). Dung tích xi lanh không ghi đơn vị → mặc định L hoặc cm³ (Khoa 14/11, nguyên văn "displacement nên default đơn vị là L hoặc cm³ (cc)"; em chọn dải: 0,4–100 = L, 400–100.000 = cc, ngoài dải để thiếu); là ngoại lệ duy nhất của luật không đoán theo độ lớn. Lớp này chưa nối vào Gợi ý cấu hình / web; nối là việc riêng, cần Khoa duyệt.
 - Khoa bảo BỎ (14/11/2026), đừng đề xuất lại: lập bảng chuẩn động cơ / đầu phát từ nguồn hãng để phân xử mâu thuẫn giữa các NCC; gộp model chỉ khác O/0, I/1. Nối lớp chuẩn hoá vào Gợi ý cấu hình: Khoa đòi đo trước / sau trên TOÀN BỘ gói rồi mới quyết.
-- **Luật số đông khi nguồn mâu thuẫn (Khoa 16/11/2026, "nên nhớ có luật mới"):** một giá trị được ≥3 NCC ghi VÀ gấp ≥3 lần mỗi giá trị khác thì lấy giá trị đó; ngang ngửa hơn thì "chưa rõ", không đoán. Áp đầu tiên cho hãng động cơ / đầu phát (`keptMakes` trong catalog.js); Khoa nhắc nhớ luật này khi xử lý mâu thuẫn số liệu depco-power (việc để sau). Gán hãng (cùng ngày): chỉ hãng ở mức bằng chứng cao nhất (dòng bảng > tiêu đề cột / hãng tự SX > tên trang); cặp tên cùng một hãng được giữ cả hai: Doosan / Hyundai / Daewoo, Weichai / Deutz, Kofo / Ricardo, Baudouin / Weichai, FAWDE / Xichai. KHÔNG duyệt: Lovol / Perkins, Ricardo / Huachai / Weichai (chỉ số đông mới cứu).
 - Trang bên bán (tier C) không vào danh mục. EPA/vecc.org.cn: đã kiểm, KHÔNG nhập (trùng model quá ít, phải suy ra).
 
 ## Mức công suất prime / standby (16/11/2026, PR #796–#800)

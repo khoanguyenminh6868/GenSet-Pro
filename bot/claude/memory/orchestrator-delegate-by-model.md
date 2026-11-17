@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-17T00:51:07.407Z
+  modified: 2026-11-16T15:15:08.446Z
 ---
 
 Phiên chính đóng vai kỹ sư trưởng + điều phối (business, sales, kỹ thuật): phân rã, viết brief, kiểm kết quả, quyết định. Việc thực thi giao session khác với model theo độ khó.
