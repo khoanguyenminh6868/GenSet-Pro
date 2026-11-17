@@ -7,16 +7,16 @@ Viết gọn lại 13/11/2026 (sáng, giờ VN). Cập nhật 16/11: #786 (nối
 ## Đang chạy
 | Việc | Session (id để báo về / hỏi) | Model | Chờ gì |
 |---|---|---|---|
-| Việc 1 `chi-tiet-viec-mo.md`: thương hiệu ≠ nơi SX trong Gợi ý cấu hình (dùng `madeOf` của #841) | `local_d21240b6-6371-4acb-81aa-0c684b7cb1b5` (noi-san-xuat, KHOAMINIPC, 17/11) | Opus | PR draft + `nghiem-thu\noi-san-xuat.md`; sau đó mở việc 3 rồi 5 (cùng catalog.js) |
+| Việc 3: model rác trong danh mục (`chi-tiet-viec-mo.md`) | `local_6d014eca-cff5-474b-8d53-185cfb0f6e6d` (model-rac, 17/11) | Sonnet | PR draft + `nghiem-thumodel-rac.md`; xong thì mở sửa depco |
 | Phủ test: việc còn mở sau 13/11 (trưa) | — (phiên H1, H2, H3, W1, W2 đã xong, chưa lưu trữ: chờ Khoa) | — | (1) Chưa thử Back / quẹt trên điện thoại thật sau #691 (đổi `navKey`, `navDirect`; quay lui: revert từng commit). (2) Gói đã bấm Gợi ý giá từ web trong 11–13/11 tính dự báo số nhà thầu thiếu tỉnh / lĩnh vực / ngày đóng (#690 đã sửa): Khoa bấm lại gói còn dùng. (4) Khoa bổ sung website cho `xcmg-doosan-engine`, `mtu-yuchai`. (5) Xem lượt Sync / lịch sử / nhà thầu thật đầu tiên bằng bản bot mới. (6) Chưa phủ: nhánh trình duyệt `server/`, tải tệp báo giá / HSMT dự án, Forward sau Back từ link thẳng |
 
 ## Chưa giao
 | Việc | Ghi chú | Model |
 |---|---|---|
 | Sửa 10 ca `todo` trong `suppliers/domain.test.mjs` (PR #622; bảng ở `nghiem-thu\test-review.md`) | Chờ Khoa duyệt; sửa xong bỏ `todo` | Sonnet |
-| "Model" rác trong danh mục (Khoa 16/11: OK, sửa sau khi xong gán hãng + nơi sản xuất): ô không phải mã máy lọt `isCode` / bảng ngang thành bản ghi động cơ: "≤6S", "≤5S", "6-cylinder/inline", "12-cylinder/V-type", "1-PHASE", "100% copper", "800(KW)", "330(KW)", "195(g/kw.h)", "300 W", "330+250 W", "Container 20'"; mã đầu phát "LTP224S-52/60" đọc thành động cơ | Cách sửa: loại dạng có đơn vị trong ngoặc, %, ≤, "-cylinder", PHASE, "W" sau số; đầu phát nhầm cột sửa chỗ chọn cột. Đo trước/sau: số model loại, model thật bị loại nhầm, top 30 ứng viên toàn bộ gói. Cùng tệp catalog.js: làm SAU 2 việc dưới | Sonnet |
 | Mâu thuẫn số liệu depco-power: phân loại xong (`nghiem-thu\depco-phan-loai.md`: 0 lỗi đọc). Sửa theo 4 đề xuất: (1) kiểm nội bộ xi lanh × bore × hành trình ↔ dung tích lệch >5% → dòng "tự mâu thuẫn" không đếm; (2) một NCC một phiếu mỗi trường; (3) `quality --check` bỏ ca đã có số đông thắng; (4) dung sai dung tích 2% | Sửa `catalog.js` / `quality.mjs`: SAU việc 1 và 3. Đo quality + top 30 trước / sau | Sonnet |
 | `gaps.mjs` in số NCC bị loại (`skip.ids.length`) để kiểm được #573 | Nhỏ, khác tệp, làm lúc nào cũng được | Haiku |
+| Ghép đầu phát ở `candidates` khi ô ghi kèm hãng ("Stamford S5L1D-H41" không khớp `keyOf`): lỗi cũ thấy trong #849 | Sửa `config-bot.mjs`, test dòng thật | Sonnet |
 
 ## Chờ Khoa
 - Bot dự phòng Vercel Sandbox theo nhu cầu (#835, #852, #857 merge 17/11): ĐÃ BẬT (`SANDBOX_WAKE=1` trên Vercel). Chạy bằng hàm Vercel (OIDC), không còn GitHub Actions. CHƯA chạy thật lần nào: cần thử tắt tác vụ "GenBid Bot" rồi bấm một yêu cầu trên web (lần đầu sandbox tự cài). Secrets GitHub Khoa đặt 17/11 (VERCEL_TOKEN, GH_BOT_TOKEN...) giờ không dùng. Muốn bot sandbox dùng gói tháng: Khoa thêm `CLAUDE_CODE_OAUTH_TOKEN` trên Vercel.
