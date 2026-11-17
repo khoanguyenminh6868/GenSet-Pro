@@ -9,7 +9,7 @@
 const MIN = 60e3;
 export const NAME = "genbid-bot";
 export const IMAGE = "vercel/sandbox/ubuntu";
-export const SNAPSHOT_MS = 365 * 24 * 60 * MIN;
+export const SNAPSHOT_MS = 5 * 365 * 24 * 60 * MIN; // Khoa 17/11/2026: giữ snapshot 5 năm (trước 1 năm)
 export const PC_SILENT_MS = MIN; // như trang web: im 1 phút = máy tắt (Khoa 17/11/2026, trước là 3 phút)
 export const IDLE_STOP_MS = 5 * MIN; // Khoa 17/11/2026: rảnh 5 phút thì dừng (trước 20 phút)
 export const SESSION_MS = 60 * MIN;
@@ -76,16 +76,21 @@ export async function up({ env = process.env, log = console.log } = {}) {
   try { sb = await Sandbox.get({ name: NAME }); }
   catch (e) {
     if (!isNotFound(e)) throw e;
-    // Ubuntu: setup-sandbox.sh dùng apt-get (image mặc định không có, thử thật 17/11). Snapshot giữ 1 năm (Khoa 17/11).
+    // Ubuntu: setup-sandbox.sh dùng apt-get (image mặc định không có, thử thật 17/11). Snapshot giữ 5 năm (Khoa 17/11).
     const base = { name: NAME, persistent: true, image: IMAGE, region: "sin1", resources: { vcpus: 4 }, snapshotExpiration: SNAPSHOT_MS, keepLastSnapshots: { count: 1, expiration: SNAPSHOT_MS, deleteEvicted: true } };
     try { sb = await Sandbox.create({ ...base, timeout: SESSION_MS }); }
     catch (e2) {
-      // Hobby (phiên tối đa 45 phút) hoặc gói không cho giữ snapshot 1 năm: thử phiên 45 phút, snapshot 30 ngày.
+      // Hobby (phiên tối đa 45 phút) hoặc gói không cho giữ snapshot 5 năm: thử phiên 45 phút, snapshot 30 ngày.
       log(`sandbox: tạo không được (${String(e2.message).slice(0, 160)}), thử phiên 45 phút + snapshot 30 ngày`);
       const d30 = 30 * 24 * 60 * MIN;
       sb = await Sandbox.create({ ...base, timeout: HOBBY_SESSION_MS, snapshotExpiration: d30, keepLastSnapshots: { ...base.keepLastSnapshots, expiration: d30 } });
     }
     log("sandbox: đã tạo");
+  }
+  // Sandbox tạo trước khi đổi SNAPSHOT_MS giữ mốc cũ: cập nhật (không được thì vẫn chạy bot).
+  if (sb.snapshotExpiration !== SNAPSHOT_MS && typeof sb.update === "function") {
+    try { await sb.update({ snapshotExpiration: SNAPSHOT_MS, keepLastSnapshots: { count: 1, expiration: SNAPSHOT_MS, deleteEvicted: true } }); log("sandbox: snapshot giữ 5 năm"); }
+    catch (e) { log(`sandbox: không đổi được hạn snapshot (${String(e.message).slice(0, 160)})`); }
   }
   // Lệnh đầu tiên nối lại phiên nếu sandbox đang dừng.
   if ((await sh(sb, BOT_UP_CMD)) === "UP") return "running";
