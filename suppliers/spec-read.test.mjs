@@ -208,6 +208,9 @@ test("engine and alternator are not swapped (acepow, cldj-fujian, longkai, tecno
   // tecnogen: a set of two engines gives no engine (the controller SCP8610 was read as one)
   const t = rec(["| Model | kVA LTP | kVA PRP | Engine | Controller"], ["| VO1100TSX-C20 | 1100 | 1000 | 2 x TAD1641GE | SCP8610"]);
   assert.deepEqual(of(t, "engine"), []);
+  // the same with a code written with spaces (Scania "DC13 072A 02 14")
+  const t2 = rec(["| Model | kVA LTP | kVA PRP | Engine | Controller"], ["| SA1100TSX-D20 | 1100 | 1000 | 2 x DC13 072A 02 14 | SCP8610"]);
+  assert.deepEqual(of(t2, "engine"), []);
   // longkai datasheet (two-column PDF): "Engine-SDEC" in front of another line starts the engine part
   const l = rec([], ["| Model | LG250SC", "Alternator", "| Rated prime power | kva | 312.5", "| Model | LONGKAI | LK444E", "| Engine-SDEC | Power factor | 0.8", "| Model | SC12E420D2", "| Prime power | KW | 280"], "Datasheet");
   assert.deepEqual([of(l, "engine"), of(l, "alternator")], [["SC12E420D2"], ["LK444E"]]);

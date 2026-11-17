@@ -957,7 +957,8 @@
         if (!codes.length) return;
         // A set of two engines ("| 1100 | 1000 | … | 2 x TAD1641GE | … | SCP8610", tecnogen): the cell is no code, the
         // controller was read as the engine. The set's output is not one engine's: the row gives no engine at all.
-        if (cells.some((c) => { const m = c.match(/^[2-4]\s*[x×]\s*(\S+)$/i); return m && isCode(m[1]); })) return;
+        // The code may be written with spaces ("2 x DC13 072A 02 14", Scania): whole, joined, or its first word.
+        if (cells.some((c) => { const m = c.match(/^[2-4]\s*[x×]\s*(\S.*)$/i); return m && [m[1], m[1].replace(/\s+/g, ""), m[1].split(/\s+/)[0]].some(isCode); })) return;
         const rowText = cells.join(" ");
         const freq = freqIn(rowText) || tFreq;
         let gi = -1, ei = -1, ai = -1;
