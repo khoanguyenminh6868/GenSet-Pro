@@ -1,0 +1,8 @@
+{
+  sets: 680,
+  'vị_trí_dòng_mới_cao_nhất': { '1-10': 207, '11-20': 246, '21-30': 227 },
+  'số_dòng_mới_mỗi_gói': { '1': 430, '2': 173, '3': 60, '4': 15, '5': 2 }
+}
+đổi nhiều (≥5 dòng mới): [{"k":"IB2300116904#0","in":5,"pos":6},{"k":"IB2600549116#0","in":5,"pos":7}] 2
+NCC của dòng mới: [["bobig-power",761],["victory-generator",57],["bruno-generators",31],["sanq-power",19],["jet-power",13],["hosem-power",13],["ettes-power",10],["uleengen",9]]
+NCC của dòng ra: [["bobig-power",193],["eastern-lion-fuan",162],["dingbo",121],["uleengen",62],["victory-generator",60],["rcg-power",49],["sanq-power",41],["longkai-power",36]]
