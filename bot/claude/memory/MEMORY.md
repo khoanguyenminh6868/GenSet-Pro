@@ -8,6 +8,6 @@
 - [Công ty của Khoa](company-thao-nguyen.md) — Thảo Nguyên, MST 4101623015 (vn4101623015 trên muasamcong)
 - [Không dùng bản artifact](no-artifact-version.md) — chỉ web Vercel + bot Windows, bỏ qua nhánh claude.ai
 - [Phân tích: bỏ cảnh báo thủ tục](phan-tich-bo-canh-bao.md) — không cảnh báo đóng thầu, bảo đảm dự thầu, hiệu lực E-HSDT
-- [Repo private + hạn mức CI](repo-public-khong-hoi.md) — private lại từ 17/11/2026, 2.000 phút Actions/tháng, CI chỉ chạy trên PR
+- [Repo public tạm, private lại 01/12](repo-public-khong-hoi.md) — hết phút Actions tháng 11; tác vụ hẹn giờ tự chuyển private; CI chỉ chạy trên PR
 - [Gọi Gemini 4 Argon](argon-delegate.md) — CHỈ khi Khoa bảo; qua OpenRouter, script `genbid-work\argon`, quy trình rẻ, giá, bẫy
 - [Argon qua Gemini web](argon-gemini-web.md) — Edge + extension, tải tệp tự động (Khoa cho phép); LiteLLM đang tắt
