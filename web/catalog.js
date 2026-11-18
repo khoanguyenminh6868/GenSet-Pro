@@ -810,12 +810,14 @@
   // (eastern-lion "Engine power (kW) = 19408" on a 10 kW set), a consumption written in g/kWh outside 150-300 (taihai
   // "g/kw.h" = 62, a figure in L/h), a weight in kg under 2,5 kg per kVA (a current or a kW read as the weight).
   // Only with the unit written in the cell or its title, and only against the row's own output.
-  function saneSpecs(specs, power) {
+  // dropped(s): told of each figure left out (unread notes).
+  function saneSpecs(specs, power, dropped) {
     const P = Object.values(power || {}).filter(Boolean), kws = P.map((p) => p.kW ?? (p.kVA != null ? p.kVA * 0.8 : null)).filter((x) => x > 0);
     if (!kws.length || !specs?.length) return specs;
     const lo = Math.min(...kws), hi = Math.max(...kws);
     const dec = (x) => +String(x).replace(",", ".");
-    return specs.filter((s) => {
+    return specs.filter((s) => { const keep = sane(s); if (!keep && dropped) dropped(s); return keep; });
+    function sane(s) {
       const v = String(s.value).replace(/(\d),(\d{3})(?!\d)/g, "$1$2"), both = v + " " + (s.label || ""); // "1,097 kWm" is 1097
       if (s.key === "engPower") {
         if (!/kw/i.test(both) || /hp|ps\b|bhp|cv\b|马力/i.test(both)) return true;
@@ -833,7 +835,7 @@
         return +m[1] / (hi / 0.8) >= 2.5;
       }
       return true;
-    });
+    }
   }
   function likely(key, v, kW) {
     const n = nums(v), x = n[0];
@@ -926,9 +928,13 @@
 
   // One supplier record → occurrences of engines and alternators. A controller maker's tables are its controllers'
   // datasheets (suppliers/maker-datasheets.mjs), read by the config bot as the controllers' figures, not as gensets.
-  function fromSupplier(s) {
+  // notes (optional array): what this reading left out on purpose, { supplierId, n, table, title, row, reason, detail }
+  // (chat-luong-3, Khoa 18/11/2026: a layout the code does not understand is left out AND listed, "thà thiếu còn hơn
+  // sai"). unread() below adds the tables that gave no record at all.
+  function fromSupplier(s, notes) {
     const out = [];
     if (s.role === "controller_maker") return out;
+    const note = notes ? (t, ti, row, reason, detail) => notes.push({ supplierId: s.id, n: t.n, table: ti, title: String(t.title || ""), row, reason, detail: detail == null ? null : String(detail).slice(0, 200) }) : () => {};
     const ownBrand = (list) => brandIn([s.names?.en, ...(s.names?.brands || [])].join(" "), list);
     (s.specTables || []).forEach((t, ti) => {
       const headerText = (t.header || []).join(" ");
@@ -958,7 +964,7 @@
         for (const block of blocks) for (const c of fromLabelTable(block, { bareModel: blocks.length > 1, engineModel: s.role === "engine_maker" && !block.some((l) => /^(engine|alternator|发动机|柴油机|发电机)\s*(model|type|ref\.?|型号)|^power\s*model|动力型号|^(diesel\s*)?engine$|^(发动机|柴油机)$|^(generator|alternator)$|power factor|excitation|voltage regulat|发电机/i.test(cellsOf(l)[0] || "")) })) {
           const power = c.prime || c.standby || c.rated ? { ...(c.prime ? { prime: c.prime } : {}), ...(c.standby ? { standby: c.standby } : {}), ...(c.rated ? { rated: c.rated } : {}) } : null;
           const rowText = [c.genset, c.engine, c.alternator].filter(Boolean).join(" ");
-          c.specs = saneSpecs(c.specs, power);
+          c.specs = saneSpecs(c.specs, power, (x) => note(t, ti, null, "số vô lý so với công suất", `${x.key}=${x.value}`));
           if (c.engine && isCode(c.engine.replace(/^[a-z]+\s+(?=\S*\d)/i, (m) => (brandIn(m, ENGINE_BRANDS).length ? "" : m))))
             out.push({ ...base, kind: "engine", model: c.engine.replace(/^(cummins|perkins|weichai|yuchai|deutz|volvo|baudouin|mtu|doosan|mitsubishi|sdec|kubota|yanmar|isuzu|ricardo|lovol|fawde)\s+/i, ""), makes: makesFor("engine", c.engine + " " + (c.engineBrand || ""), c.engineBrand), genset: c.genset || null, power, freq: tFreq, other: c.alternator || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows } });
           if (c.alternator && isCode(c.alternator.replace(/^[a-z-]+\s+(?=\S*\d)/i, "")))
@@ -984,7 +990,7 @@
         // A set of two engines ("| 1100 | 1000 | … | 2 x TAD1641GE | … | SCP8610", tecnogen): the cell is no code, the
         // controller was read as the engine. The set's output is not one engine's: the row gives no engine at all.
         // The code may be written with spaces ("2 x DC13 072A 02 14", Scania): whole, joined, or its first word.
-        if (cells.some((c) => { const m = c.match(/^[2-4]\s*[x×]\s*(\S.*)$/i); return m && [m[1], m[1].replace(/\s+/g, ""), m[1].split(/\s+/)[0]].some(isCode); })) return;
+        if (cells.some((c) => { const m = c.match(/^[2-4]\s*[x×]\s*(\S.*)$/i); return m && [m[1], m[1].replace(/\s+/g, ""), m[1].split(/\s+/)[0]].some(isCode); })) { note(t, ti, ri, "tổ máy nhiều động cơ", line); return; }
         const rowText = cells.join(" ");
         const freq = freqIn(rowText) || tFreq;
         let gi = -1, ei = -1, ai = -1;
@@ -1008,7 +1014,7 @@
         const stop = ei >= 0 ? ei : ai >= 0 ? ai : cells.length;
         const titled = engineTable ? null : titledPowers((t.header || []).map(cellsOf), cells, { gi, ei, ai }, title);
         const power = engineTable ? null : titled ? titled.power : powersIn(cells.slice(gi >= 0 ? gi + 1 : 0, stop), headerText + " " + title, true);
-        const common = { ...base, row: ri, line, genset: gi >= 0 ? cells[gi] : null, power, freq, header: t.header || [], specs: saneSpecs(rowSpecs(t, cells, { ei, ai, gi, power }), power) };
+        const common = { ...base, row: ri, line, genset: gi >= 0 ? cells[gi] : null, power, freq, header: t.header || [], specs: saneSpecs(rowSpecs(t, cells, { ei, ai, gi, power }), power, (x) => note(t, ti, ri, "số vô lý so với công suất", `${x.key}=${x.value}`)) };
         if (ei >= 0) out.push({ ...common, kind: "engine", model: tidyModel(cells[ei], ENGINE_BRANDS), makes: makesFor("engine", rowText, null), other: ai >= 0 ? cells[ai] : null, own: engineTable });
         if (ai >= 0) out.push({ ...common, kind: "alternator", model: tidyModel(cells[ai], ALT_BRANDS), makes: makesFor("alternator", rowText, null, cells[ai]), other: ei >= 0 ? cells[ei] : null });
       });
@@ -1387,6 +1393,22 @@
     return rowsMemo.get(s);
   };
   // All suppliers → { engines, alternators, controllers }: one entry per model, with every row that names it.
+  // What the catalog does not read (chat-luong-3, Khoa 18/11/2026): every note of fromSupplier (a row, figure or value
+  // left out by a guard, with its reason) and every table with rows that gave no record at all (a layout not understood,
+  // or a table that is no genset's: accessories, lighting towers). Same suppliers as build(): not "incomplete", not a
+  // controller maker. suppliers/unread-tables.mjs prints and saves it; spec-diff --md counts it before / after.
+  function unread(suppliers) {
+    const notes = [];
+    for (const s of suppliers || []) {
+      if (!s || s.status === "incomplete" || s.role === "controller_maker") continue;
+      const recs = fromSupplier(s, notes), used = new Set();
+      for (const o of recs) { used.add(o.table); for (const a of o.also || []) used.add(a.table); }
+      (s.specTables || []).forEach((t, ti) => {
+        if ((t.rows || []).length && !used.has(ti)) notes.push({ supplierId: s.id, n: t.n, table: ti, title: String(t.title || ""), row: null, reason: "bảng không cho bản ghi nào", detail: String((t.header || [])[0] || t.rows[0] || "").slice(0, 200) });
+      });
+    }
+    return notes;
+  }
   function build(suppliers) {
     const b = builder(suppliers);
     b.step();
@@ -1762,7 +1784,7 @@
     return { votes, win: winOf(new Map([...votes].map(([v, ss]) => [v, ss.length]))), split, dropped };
   }
 
-  const api = { build, builder, tally, partsIn, fromSupplier, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, powersIn, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, madeAt, madeIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS };
+  const api = { build, builder, tally, partsIn, fromSupplier, unread, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, powersIn, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, madeAt, madeIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);
