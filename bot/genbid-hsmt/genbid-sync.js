@@ -409,23 +409,17 @@ function bcdgText(file, timeoutMs, cacheDir) {
     const err = r.stderr || "";
     const n = Number((err.match(/OCR (\d+)\//) || [])[1] || 0), scanPages = Number((err.match(/SCAN (\d+)\//) || [])[1] || 0);
     const timedOut = !!(r.error && /ETIMEDOUT/.test(r.error.code || "")) || /^PARTIAL/m.test(err);
-    // The page cache is kept after a complete read too (a later --reread goes on from it, not from page 1); bcdgSweepCache removes it by age.
+    // The OCR page cache is kept for good (Khoa 2026-11-18: only per-tender files are cleaned): keyed by the file md5, so the same file in another tender is not read again.
     return { text: r.status === 0 ? r.stdout || "" : "", ocr: n, scan: scanPages > 0 || n > 0, timedOut };
   }
   return { text: histFileText(file, path.join(os.tmpdir(), "genbid-bcdg-" + process.pid)), ocr: 0, scan: false, timedOut: false };
-}
-// OCR page caches are kept 14 days (age of the newest page file of a tender's folder), then removed.
-const BCDG_CACHE_DAYS = 14;
-const newestMtime = (p) => { let m = 0; try { const st = fs.statSync(p); m = st.mtimeMs; if (st.isDirectory()) for (const e of fs.readdirSync(p)) m = Math.max(m, newestMtime(path.join(p, e))); } catch {} return m; };
-function bcdgSweepCache() {
-  try { for (const d of fs.readdirSync(BCDG_OCR_CACHE)) { const p = path.join(BCDG_OCR_CACHE, d); if (Date.now() - newestMtime(p) > BCDG_CACHE_DAYS * 864e5) fs.rmSync(p, { recursive: true, force: true }); } } catch {}
 }
 // A PDF the Agent handed back cut short has no %%EOF at its end (IB2500371475 12/11: 450 KB of 759 KB).
 const pdfComplete = (f) => { if (!/\.pdf$/i.test(f)) return true; try { const b = fs.readFileSync(f); return b.subarray(Math.max(0, b.length - 2048)).includes("%%EOF"); } catch { return false; } };
 // Download the given report files (the VNeGP Agent through GenBid-HSMT.ps1), again up to twice when one is cut short, while
 // the deadline allows. Returns the complete ones as [{id, file, bytes, md5}].
 function bcdgDownload(key, todo, deadline) {
-  bcdgSweepCache();
+
   if (!agentStarted) { ps("GenBid-HSMT.ps1", ["-StartOnly"], 5); agentStarted = true; }
   const dir = path.join(BCDG_DIR, key), list = path.join(BCDG_DIR, `files-${key}.txt`);
   fs.mkdirSync(BCDG_DIR, { recursive: true });
@@ -461,7 +455,7 @@ async function bcdgStep(key, b, deadline, { reread = false } = {}) {
   if (!reread && prev?.giveUp) return `${key}: BCĐG đã bỏ sau nhiều lần lỗi`;
   const deps = { now, log, download: (todo) => bcdgDownload(key, todo, deadline), stored: (m) => `${m.id.slice(0, 8)}-${plainName(path.basename(m.file))}`,
     upload: async (file, name) => { if (reread) throw new Error("--reread không tải lên"); return opt("local") ? "(local)" : bcdgUpload(key, file, name); },
-    text: (file, ms, m) => bcdgText(file, ms, path.join(BCDG_OCR_CACHE, key, String(m?.md5 || path.basename(file)).replace(/[^A-Za-z0-9._-]/g, "_"))) };
+    text: (file, ms, m) => bcdgText(file, ms, path.join(BCDG_OCR_CACHE, m?.md5 ? "md5-" + String(m.md5).replace(/[^A-Za-z0-9._-]/g, "_") : path.join(key, path.basename(file).replace(/[^A-Za-z0-9._-]/g, "_")))) };
   try {
     const { line, doc: d } = await bcdgRun({ key, b, prev, deps, deadline, reread });
     if (d) await (opt("local") ? async (rows) => log(`  [local] bcdg/${key}: ${JSON.stringify(rows[0].data).slice(0, 1500)}`) : (rows) => post(rows, { retry: 2 }))([{ coll: "bcdg", id: key, data: d }]);
