@@ -1,0 +1,2249 @@
+{
+ "updated": "2026-11-18",
+ "note": "exclusive:true = nguồn chính hãng cho thấy là tên riêng / nhãn hiệu / tên dòng của hãng; false = từ chung hoặc trang không nói. Mỗi quote nằm nguyên văn trong sources/engine-traits/<n>.md (trait-source.mjs). unconfirmed = chưa xác nhận được, không đoán.",
+ "traits": [
+  {
+   "make": "kubota",
+   "term": "E-TVCS",
+   "aliases": [
+    "TVCS",
+    "Three Vortex Combustion System",
+    "three-jet combustion system"
+   ],
+   "kind": "buồng đốt",
+   "exclusive": true,
+   "src": [
+    102,
+    103,
+    101
+   ],
+   "quote": [
+    "Kubota’s original E-TVCS (Three Vortex Combustion System)",
+    "Kubota's original E-TVCS combustion system (new three-jet combustion system)"
+   ],
+   "note": "Trang hãng gọi là 'Kubota's original' và có tên riêng; xuất hiện trên trang dòng V2403-M (IDI) và D1105-T."
+  },
+  {
+   "make": "kubota",
+   "term": "TVCR",
+   "aliases": [
+    "TVCR combustion"
+   ],
+   "kind": "buồng đốt",
+   "exclusive": true,
+   "src": [
+    101
+   ],
+   "quote": [
+    "The TVCR is Kubota's original combustion system."
+   ],
+   "note": "Nhãn hiệu riêng Kubota, kết hợp E-TVCS với phun điều khiển điện tử (D1105-K)."
+  },
+  {
+   "make": "kubota",
+   "term": "Indirect injection",
+   "aliases": [
+    "IDI",
+    "phun gián tiếp"
+   ],
+   "kind": "phun",
+   "exclusive": false,
+   "src": [
+    102,
+    103
+   ],
+   "quote": [
+    "Combustion System | Indirect injection"
+   ],
+   "note": "Thuật ngữ chung nhiều hãng dùng; trang Kubota chỉ ghi là kiểu buồng đốt của dòng E-TVCS, viết tắt 'IDI' không có trên trang đã lưu."
+  },
+  {
+   "make": "yanmar",
+   "term": "TNV",
+   "aliases": [
+    "4TNV88",
+    "4TNV88-B",
+    "3TNV",
+    "4TNV98",
+    "new TNV engine series"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    203,
+    201
+   ],
+   "quote": [
+    "Yanmar released the new TNV engine series to the market in 2013",
+    "4TNV88(-B)"
+   ],
+   "note": "TNV là tên dòng máy của riêng Yanmar (4TNV88 là kiểu máy trong dòng, trang Yanmar)."
+  },
+  {
+   "make": "yanmar",
+   "term": "TN series (4TN101, 4TN107)",
+   "aliases": [
+    "4TN101",
+    "4TN107"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    202
+   ],
+   "quote": [
+    "HIGH POWER TN SERIES"
+   ],
+   "note": "Tên dòng công suất lớn của Yanmar."
+  },
+  {
+   "make": "yanmar",
+   "term": "Yanmar's original direct-injection combustion chamber",
+   "aliases": [
+    "hole valve",
+    "hole-type nozzle",
+    "buồng đốt phun trực tiếp"
+   ],
+   "kind": "buồng đốt",
+   "exclusive": false,
+   "src": [
+    204
+   ],
+   "quote": [
+    "The use of Yanmar's original direct-injection combustion chamber plus hole valve"
+   ],
+   "note": "Trang ghi 'Yanmar's original' nhưng không có tên riêng/nhãn hiệu; 'direct injection' là thuật ngữ chung."
+  },
+  {
+   "make": "yanmar",
+   "term": "Direct injection (DI) / IDI",
+   "aliases": [
+    "DI",
+    "IDI"
+   ],
+   "kind": "phun",
+   "exclusive": false,
+   "src": [
+    201
+   ],
+   "quote": [
+    "IDI engines: combustion chamber, fuel injection equipment mechanical pump.",
+    "Combustion | Direct injection (DI)"
+   ],
+   "note": "Thuật ngữ chung nhiều hãng dùng; trang Yanmar liệt kê cả IDI và DI."
+  },
+  {
+   "make": "yanmar",
+   "term": "Common Rail (TNV mới)",
+   "aliases": [
+    "common rail"
+   ],
+   "kind": "phun",
+   "exclusive": false,
+   "src": [
+    202,
+    203
+   ],
+   "quote": [
+    "Common Rail Technology",
+    "Yanmar’s advanced combustion technology using a common rail injection system"
+   ],
+   "note": "Thuật ngữ chung nhiều hãng dùng."
+  },
+  {
+   "make": "yanmar",
+   "term": "Total engine management system / ECU",
+   "aliases": [
+    "Yanmar ECU"
+   ],
+   "kind": "điều khiển điện tử",
+   "exclusive": false,
+   "src": [
+    203
+   ],
+   "quote": [
+    "Yanmar's original total engine management system calculates the conditions of engine"
+   ],
+   "note": "Trang ghi 'Yanmar's original' nhưng không phải tên riêng; không dùng để nhận hãng."
+  },
+  {
+   "make": "perkins",
+   "term": "Syncro",
+   "aliases": [
+    "Perkins Syncro",
+    "SYNCRO"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    302
+   ],
+   "quote": [
+    "While the Perkins® Syncro 1.7, 2.2, 2.8 and 3.6 litre industrial engines already meet the needs of a broad range of farm machinery"
+   ],
+   "note": "Nhãn hiệu ® của Perkins; nhưng là dòng công nghiệp/nông nghiệp nhỏ 1.7-3.6 L, không phải dòng phát điện."
+  },
+  {
+   "make": "perkins",
+   "term": "ElectropaK",
+   "aliases": [
+    "Electropak",
+    "ELECTROPAK"
+   ],
+   "kind": "khác",
+   "exclusive": true,
+   "src": [
+    301,
+    306
+   ],
+   "quote": [
+    "The 6 cylinder, 7 litre Perkins 1106 range of ElectropaK engines gives you all the power you need for electric power generation.",
+    "Our ElectropaK is designed to provide ease of integration and service accessibility within customer generating set packaging."
+   ],
+   "note": "Perkins gọi 'Our ElectropaK': tên gói động cơ phát điện của Perkins (không có ký hiệu ™/® trên trang)."
+  },
+  {
+   "make": "perkins",
+   "term": "Electro Unit",
+   "aliases": [
+    "ElectroUnit"
+   ],
+   "kind": "khác",
+   "exclusive": true,
+   "src": [
+    305
+   ],
+   "quote": [
+    "Engines range from 0.7-1.5 litre and come in ElectropaK and Electro Unit options."
+   ],
+   "note": "Tùy chọn gói của dòng 403 do Perkins đặt tên; trang không ghi ™/®, chỉ liệt kê cạnh ElectropaK."
+  },
+  {
+   "make": "perkins",
+   "term": "400 Series",
+   "aliases": [
+    "Perkins 400",
+    "dòng 400"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    305
+   ],
+   "quote": [
+    "The Perkins 400® Series is an extensive family of engines in the 0.5-2.2 litre range."
+   ],
+   "note": "Có ký hiệu ® ngay trên '400'. Số 400 đứng riêng vẫn mơ hồ, nên cần đi với Perkins/Series."
+  },
+  {
+   "make": "perkins",
+   "term": "1100 Series",
+   "aliases": [
+    "Perkins 1100",
+    "dòng 1100",
+    "1106D"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    303
+   ],
+   "quote": [
+    "The Perkins 1100 Series is a versatile and powerful range of 3-, 4-, and 6-cylinder diesel engines, designed for performance, reliability, and low cost of ownership."
+   ],
+   "note": "Tên dòng của Perkins (trang gọi 'Perkins 1100 Series'), không có ™/®; số 1100 trơn không đủ để nhận hãng."
+  },
+  {
+   "make": "perkins",
+   "term": "1200 Series",
+   "aliases": [
+    "Perkins 1200",
+    "dòng 1200",
+    "1206"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    308
+   ],
+   "quote": [
+    "The Perkins 1200 Series is a modern, high-performance range of 4- and 6-cylinder diesel engines designed for industrial, agricultural, and electric power applications."
+   ],
+   "note": "Tên dòng của Perkins, không có ™/®; số 1200 trơn không đủ để nhận hãng."
+  },
+  {
+   "make": "perkins",
+   "term": "4000 Series",
+   "aliases": [
+    "Perkins 4012",
+    "4012",
+    "4016",
+    "dòng 4000"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    307
+   ],
+   "quote": [
+    "The Perkins® 4012 range delivers a powerful performance, with 12 cylinders and 46 litre displacement providing all the power you need and features ElectropaK diesel engines that provide 989-1880 kVA generator output."
+   ],
+   "note": "Trang ghi 'Perkins® 4012'; dòng 4000 12 xi lanh 46 L."
+  },
+  {
+   "make": "perkins",
+   "term": "ECM",
+   "aliases": [
+    "Electronic Control Module"
+   ],
+   "kind": "điều khiển điện tử",
+   "exclusive": false,
+   "src": [
+    304
+   ],
+   "quote": [
+    "Cold start aid, ECM controlled to -15°C (5°F)"
+   ],
+   "note": "ECM là thuật ngữ chung nhiều hãng dùng, trang Perkins chỉ dùng như từ chung."
+  },
+  {
+   "make": "perkins",
+   "term": "common rail",
+   "aliases": [
+    "high pressure common rail",
+    "HPCR"
+   ],
+   "kind": "phun",
+   "exclusive": false,
+   "src": [
+    304,
+    309
+   ],
+   "quote": [
+    "Electronic high pressure common rail fuel system",
+    "Delivering fuel through a high pressure common rail fuel system allows very accurate amounts of fuel to be injected."
+   ],
+   "note": "Thuật ngữ chung của ngành, Perkins dùng như từ chung."
+  },
+  {
+   "make": "cummins",
+   "term": "PowerCommand",
+   "aliases": [
+    "Power Command",
+    "PowerCommand Control",
+    "PCC"
+   ],
+   "kind": "điều khiển điện tử",
+   "exclusive": true,
+   "src": [
+    401,
+    406
+   ],
+   "quote": [
+    "With hundreds of thousands of units in service globally, PowerCommand® generator set paralleling controls have an established and proven record of reliability and dependability.",
+    "The PowerCommand® digital control is standard equipment and provides total genset system integration"
+   ],
+   "note": "Có ký hiệu ® trên trang Cummins: bộ điều khiển tổ máy của Cummins."
+  },
+  {
+   "make": "cummins",
+   "term": "AmpSentry",
+   "aliases": [
+    "Amp Sentry"
+   ],
+   "kind": "điều khiển điện tử",
+   "exclusive": true,
+   "src": [
+    401
+   ],
+   "quote": [
+    "Backed by Cummins AmpSentry™, the controls will always protect themselves and the system before causing any internal damage."
+   ],
+   "note": "Có ™ và ghi 'Cummins AmpSentry': bảo vệ máy phát đi kèm PowerCommand."
+  },
+  {
+   "make": "cummins",
+   "term": "XPI",
+   "aliases": [
+    "Xtra-High Pressure Injection",
+    "XPI Fuel System"
+   ],
+   "kind": "phun",
+   "exclusive": true,
+   "src": [
+    403
+   ],
+   "quote": [
+    "The proven technology of the XPI common-rail fuel system delivers a precise quantity of fuel at ultra-high pressures."
+   ],
+   "note": "Tên hệ phun do Cummins đặt cho QSX15 (đứng đầu mục tính năng); trang không ghi ™."
+  },
+  {
+   "make": "cummins",
+   "term": "MCRS",
+   "aliases": [
+    "Modular Common Rail Fuel System",
+    "Modular Common Rail"
+   ],
+   "kind": "phun",
+   "exclusive": true,
+   "src": [
+    404
+   ],
+   "quote": [
+    "These kits convert the engines to Cummins’ newer Modular Common Rail Fuel System (MCRS)."
+   ],
+   "note": "Tên hệ phun riêng của Cummins ('Cummins’ newer ... (MCRS)') cho QSK60/QSK78."
+  },
+  {
+   "make": "cummins",
+   "term": "HPI",
+   "aliases": [
+    "High Pressure Injection",
+    "Cummins HPI"
+   ],
+   "kind": "phun",
+   "exclusive": true,
+   "src": [
+    404
+   ],
+   "quote": [
+    "Cummins has developed upgrade kits for QSK60 and QSK78 engines with HPI fuel systems."
+   ],
+   "note": "Hệ phun đời trước MCRS của Cummins (tiêu đề bài: 'Cummins HPI to MCRS'); trang không giải thích viết tắt."
+  },
+  {
+   "make": "cummins",
+   "term": "PT fuel system",
+   "aliases": [
+    "Pressure Time",
+    "PT pump"
+   ],
+   "kind": "phun",
+   "exclusive": true,
+   "src": [
+    408
+   ],
+   "quote": [
+    "Dependable Cummins PT fuel system can be operated mechanically or with CENTRY electronics for precise engine fueling."
+   ],
+   "note": "Trang ghi 'Cummins PT fuel system' là hệ nhiên liệu riêng của Cummins; trang không giải thích PT = Pressure-Time."
+  },
+  {
+   "make": "cummins",
+   "term": "CENTRY",
+   "aliases": [
+    "Centry"
+   ],
+   "kind": "điều khiển điện tử",
+   "exclusive": true,
+   "src": [
+    408
+   ],
+   "quote": [
+    "Dependable Cummins PT fuel system can be operated mechanically or with CENTRY electronics for precise engine fueling."
+   ],
+   "note": "Tên điện tử điều khiển nhiên liệu PT của Cummins (viết hoa toàn bộ, không ™)."
+  },
+  {
+   "make": "cummins",
+   "term": "Holset",
+   "aliases": [
+    "Holset VGT",
+    "Cummins Turbo Technologies"
+   ],
+   "kind": "khác",
+   "exclusive": true,
+   "src": [
+    405
+   ],
+   "quote": [
+    "The Holset VGT™ from Cummins Turbo Technologies pioneered Variable Geometry (VG) technology for the commercial vehicle market in 1998."
+   ],
+   "note": "Thương hiệu turbo của Cummins Turbo Technologies, có ™."
+  },
+  {
+   "make": "cummins",
+   "term": "QSX15",
+   "aliases": [
+    "QSX15-G8"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    403
+   ],
+   "quote": [
+    "the QSX15 is engineered to deliver the economical, reliable power and performance that you expect from a Cummins engine."
+   ],
+   "note": "Tên dòng động cơ Cummins."
+  },
+  {
+   "make": "cummins",
+   "term": "QSK60",
+   "aliases": [
+    "QSK78",
+    "QSK50"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    404
+   ],
+   "quote": [
+    "Cummins has developed upgrade kits for QSK60 and QSK78 engines with HPI fuel systems."
+   ],
+   "note": "Tên dòng động cơ Cummins (QSK50 chỉ có trong kết quả tìm, chưa có câu trích trên trang đã lưu)."
+  },
+  {
+   "make": "cummins",
+   "term": "QSB6.7",
+   "aliases": [
+    "QSB",
+    "QSB7"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    407
+   ],
+   "quote": [
+    "The QSB6.7 uses in-cylinder combustion technology to meet emissions standards without external components, and is compatible with high-sulfur fuels for worldwide use."
+   ],
+   "note": "Tên dòng động cơ Cummins."
+  },
+  {
+   "make": "cummins",
+   "term": "KTA50",
+   "aliases": [
+    "KTA19"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    408
+   ],
+   "quote": [
+    "Covered by a comprehensive one year warranty and backed by Cummins global service network"
+   ],
+   "note": "Trang cummins.com/engines/kta50 (tiêu đề 'KTA50 for Marine'); KTA19 chưa có trang lưu."
+  },
+  {
+   "make": "cummins",
+   "term": "HPCR",
+   "aliases": [
+    "High Pressure Common Rail"
+   ],
+   "kind": "phun",
+   "exclusive": false,
+   "src": [
+    407
+   ],
+   "quote": [
+    "It features a High Pressure Common Rail (HPCR) fuel system, and robust electronic controls make for a highly durable, highly fuel-efficient power plant."
+   ],
+   "note": "Thuật ngữ chung của ngành (common rail), Cummins dùng như từ chung."
+  },
+  {
+   "make": "cummins",
+   "term": "VGT",
+   "aliases": [
+    "Variable Geometry Turbocharger"
+   ],
+   "kind": "khác",
+   "exclusive": false,
+   "src": [
+    403
+   ],
+   "quote": [
+    "The Cummins VGT Turbocharger is both simple and precise."
+   ],
+   "note": "VGT là viết tắt chung của turbo biến thiên; chỉ 'Holset VGT™' mới là nhãn hiệu (xem mục Holset)."
+  },
+  {
+   "make": "cummins",
+   "term": "ECM",
+   "aliases": [
+    "Electronic Control Module"
+   ],
+   "kind": "điều khiển điện tử",
+   "exclusive": false,
+   "src": [
+    403
+   ],
+   "quote": [
+    "A single higher-capacity Electronic Control Module (ECM) controls everything from air intake to exhaust aftertreatment, for peak performance and near-zero emissions."
+   ],
+   "note": "Thuật ngữ chung nhiều hãng dùng."
+  },
+  {
+   "make": "mitsubishi",
+   "term": "MHIET",
+   "aliases": [
+    "MHI-ET",
+    "MHIET fuel system",
+    "MHI-ET"
+   ],
+   "kind": "phun",
+   "exclusive": true,
+   "src": [
+    501,
+    502
+   ],
+   "quote": [
+    "The engine uses proprietary MHIET mechanical fuel system and turbocharger technology",
+    "MHI-ET -designed and -manufactured fuel system and turbocharger"
+   ],
+   "note": "Trang hãng ghi 'proprietary MHIET' (hệ phun cơ khí + turbo do chính MHIET thiết kế, chế tạo)."
+  },
+  {
+   "make": "mitsubishi",
+   "term": "S16R-PTA",
+   "aliases": [
+    "S16R2-PTAW",
+    "S16R-PTAA2",
+    "S16R2-PTAWT-CR"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    501,
+    503
+   ],
+   "quote": [
+    "The S16R-PTA engine is designed in Japan and manufactured in France",
+    "S16R2-PTAWT-CR"
+   ],
+   "note": "Mã dòng của MHIET; trang không giải nghĩa PTA nhưng đây là tên model riêng của hãng."
+  },
+  {
+   "make": "mitsubishi",
+   "term": "S12R-PTA",
+   "aliases": [
+    "S12R-PTA2",
+    "S12R-F1PTAW2"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    502
+   ],
+   "quote": [
+    "The S12R-PTA engine is designed in Japan and manufactured in France"
+   ],
+   "note": "Mã dòng của MHIET (12 xy-lanh V60)."
+  },
+  {
+   "make": "mitsubishi",
+   "term": "S16R2-PTAWT-CR",
+   "aliases": [
+    "PTAWT-CR",
+    "CRS"
+   ],
+   "kind": "điều khiển điện tử",
+   "exclusive": false,
+   "src": [
+    503
+   ],
+   "quote": [
+    "we newly developed a common-rail electronically controlled fuel injection system"
+   ],
+   "note": "Hệ common-rail điều khiển điện tử do MHIET tự phát triển, nhưng common rail là công nghệ chung; chỉ mã S16R2-PTAWT-CR là riêng."
+  },
+  {
+   "make": "mitsubishi",
+   "term": "pump-line-nozzle",
+   "aliases": [
+    "bơm cao áp dãy"
+   ],
+   "kind": "phun",
+   "exclusive": false,
+   "src": [
+    501
+   ],
+   "quote": [
+    "pump-line-nozzle (2x in-line pump)"
+   ],
+   "note": "Kiểu phun cơ khí chung nhiều hãng."
+  },
+  {
+   "make": "isuzu",
+   "term": "REDTech",
+   "aliases": [
+    "Isuzu REDTech",
+    "REDTECH"
+   ],
+   "kind": "điều khiển điện tử",
+   "exclusive": true,
+   "src": [
+    607
+   ],
+   "quote": [
+    "The New Isuzu REDTech™"
+   ],
+   "note": "Nhãn hiệu ™ của Isuzu (bộ điều khiển và dòng động cơ công nghiệp)."
+  },
+  {
+   "make": "isuzu",
+   "term": "4JJ1",
+   "aliases": [
+    "4JJ1X",
+    "4JJ1T"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    602
+   ],
+   "quote": [
+    "4JJ1X 2.999L"
+   ],
+   "note": "Mã máy Isuzu trên trang Isuzu Industrial (generator Tier4 Final)."
+  },
+  {
+   "make": "isuzu",
+   "term": "6WG1",
+   "aliases": [
+    "6WG1X",
+    "6W series"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    602,
+    603
+   ],
+   "quote": [
+    "6WG1X 15.681L",
+    "6WG1"
+   ],
+   "note": "Mã máy Isuzu, 15.681 L, generator Tier4 Final."
+  },
+  {
+   "make": "isuzu",
+   "term": "High pressure Common Rail and Direct Injection",
+   "aliases": [
+    "common rail",
+    "phun trực tiếp"
+   ],
+   "kind": "phun",
+   "exclusive": false,
+   "src": [
+    603,
+    604
+   ],
+   "quote": [
+    "High pressure Common Rail and Direct Injection",
+    "Electronic High Pressure Common Rail Fuel Injection System"
+   ],
+   "note": "Thuật ngữ chung nhiều hãng dùng."
+  },
+  {
+   "make": "caterpillar",
+   "term": "ADEM",
+   "aliases": [
+    "ADEM A4",
+    "A4 ECU",
+    "ADEM4"
+   ],
+   "kind": "điều khiển điện tử",
+   "exclusive": true,
+   "src": [
+    701,
+    703
+   ],
+   "quote": [
+    "producing the advanced Cat ADEM™ A4 controllers used in Cat engines today",
+    "ADEM™ A4 Electronic Control Unit (ECU)"
+   ],
+   "note": "Có ™ và ghi 'Cat ADEM': bộ điều khiển điện tử của Caterpillar."
+  },
+  {
+   "make": "caterpillar",
+   "term": "ACERT",
+   "aliases": [
+    "ACERT Technology",
+    "C9 ACERT"
+   ],
+   "kind": "buồng đốt",
+   "exclusive": true,
+   "src": [
+    703
+   ],
+   "quote": [
+    "Cat ACERT™ Technology, a revolutionary diesel engine innovation, enhances overall engine performance while reducing emissions"
+   ],
+   "note": "Có ™ và ghi 'Cat ACERT': công nghệ giảm phát thải trong buồng đốt của Caterpillar."
+  },
+  {
+   "make": "caterpillar",
+   "term": "HEUI",
+   "aliases": [
+    "Hydraulically actuated Electronically controlled Unit Injector"
+   ],
+   "kind": "phun",
+   "exclusive": true,
+   "src": [
+    701,
+    703
+   ],
+   "quote": [
+    "Precision fuel injection using Cat Common Rail, HEUI™, and MEUI™ (Hydraulically and Mechanically actuated, Electronically controlled Unit Injector) fuel systems",
+    "HEUI™ injection"
+   ],
+   "note": "Có ™ trên trang Cat (tên riêng của hệ phun thủy lực của Caterpillar)."
+  },
+  {
+   "make": "caterpillar",
+   "term": "MEUI",
+   "aliases": [
+    "Mechanically actuated Electronically controlled Unit Injector"
+   ],
+   "kind": "phun",
+   "exclusive": true,
+   "src": [
+    702,
+    703
+   ],
+   "quote": [
+    "Precision fuel injection using Cat Common Rail, HEUI™, and MEUI™ (Hydraulically and Mechanically actuated, Electronically controlled Unit Injector) fuel systems",
+    "MEUI injection"
+   ],
+   "note": "Có ™ trên trang Cat."
+  },
+  {
+   "make": "caterpillar",
+   "term": "EMCP",
+   "aliases": [
+    "EMCP 3",
+    "EMCP 4",
+    "EMCP4",
+    "EMCP 4.2",
+    "EMCP 4.4"
+   ],
+   "kind": "điều khiển điện tử",
+   "exclusive": true,
+   "src": [
+    704,
+    706
+   ],
+   "quote": [
+    "EMCP 4 Generator Set Controls | Cat | Caterpillar",
+    "EMCP4 is a scalable control platform designed to ensure reliable generator set operation"
+   ],
+   "note": "Bộ điều khiển tổ máy của Cat (trang 'Cat EMCP Control Panel'); trang không ghi ™."
+  },
+  {
+   "make": "caterpillar",
+   "term": "Cat C9",
+   "aliases": [
+    "C9 ACERT"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    701
+   ],
+   "quote": [
+    "Cat® C9 ACERT™ Industrial Diesel Engine"
+   ],
+   "note": "Tên dòng C-series của Cat (có ® ở 'Cat'). Từ khoá phải kèm \"Cat\" hoặc \"ACERT\": \"C9\" trơ trùng Cursor 9 của FPT."
+  },
+  {
+   "make": "caterpillar",
+   "term": "Cat C15",
+   "aliases": [
+    "C15 ACERT"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    702
+   ],
+   "quote": [
+    "Cat® C15 ACERT™ Industrial Diesel Engine"
+   ],
+   "note": "Tên dòng C-series của Cat. Từ khoá phải kèm \"Cat\" hoặc \"ACERT\": \"C9\" trơ trùng Cursor 9 của FPT."
+  },
+  {
+   "make": "caterpillar",
+   "term": "Cat C32",
+   "aliases": [
+    "C32 ACERT"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    706
+   ],
+   "quote": [
+    "C32 Generator Set",
+    "Cat EMCP Control Panel"
+   ],
+   "note": "Tài liệu emc.cat.com của bộ phát điện C32 (V12 32.1 L) dùng ADEM A4, MEUI. Từ khoá phải kèm \"Cat\" hoặc \"ACERT\": \"C9\" trơ trùng Cursor 9 của FPT."
+  },
+  {
+   "make": "caterpillar",
+   "term": "Cat Common Rail",
+   "aliases": [
+    "common rail"
+   ],
+   "kind": "phun",
+   "exclusive": false,
+   "src": [
+    703
+   ],
+   "quote": [
+    "Precision fuel injection using Cat Common Rail, HEUI™, and MEUI™ (Hydraulically and Mechanically actuated, Electronically controlled Unit Injector) fuel systems"
+   ],
+   "note": "'Common rail' là thuật ngữ chung; trang Cat không gắn ™/® cho Common Rail."
+  },
+  {
+   "make": "kohler",
+   "term": "KDI",
+   "aliases": [
+    "KDI 1903",
+    "KDI 2504",
+    "KDI 3404",
+    "KDI-TCR"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    802
+   ],
+   "quote": [
+    "With the KOHLER KDI diesel engine, we started from scratch to build an entirely new engine experience."
+   ],
+   "note": "Tên dòng động cơ nhỏ (1,9-3,4 L, 3-4 xi lanh, common rail) do Kohler tự gọi 'our KDI'; không phải dòng cho tổ máy lớn."
+  },
+  {
+   "make": "kohler",
+   "term": "KOHLER Flex",
+   "aliases": [
+    "Flex U4",
+    "Flex E5"
+   ],
+   "kind": "khác",
+   "exclusive": true,
+   "src": [
+    802
+   ],
+   "quote": [
+    "KOHLER Flex is the range of solutions for emission control that Kohler has designed to enable each configuration of the engines of the KDI platform to comply with all emissions standards and regulations, worldwide."
+   ],
+   "note": "Tên riêng hệ xử lý khí thải (EGR+DOC+DPF/SCR) do Kohler 'designed'; chỉ gắn với KDI."
+  },
+  {
+   "make": "kohler",
+   "term": "Common rail (2000 bar)",
+   "aliases": [
+    "2000 bar"
+   ],
+   "kind": "phun",
+   "exclusive": false,
+   "src": [
+    801
+   ],
+   "quote": [
+    "Injection Equipment Common rail (2000 bar)"
+   ],
+   "note": "Common rail là công nghệ chung nhiều hãng dùng, không phải tên riêng."
+  },
+  {
+   "make": "kohler",
+   "term": "KD (làm mát khí, nhỏ)",
+   "aliases": [
+    "KD15",
+    "KD425",
+    "KD625",
+    "KD625-2",
+    "KD15-350"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    804
+   ],
+   "quote": [
+    "KD Series (Air-Cooled)"
+   ],
+   "note": "Trang Kohler xếp KD15/KD425/KD625 vào 'KD Series (Air-Cooled)' (1-2 xi lanh, vài kW); khác hẳn KD G-Drive lớn bên dưới, cùng tiền tố KD."
+  },
+  {
+   "make": "kohler",
+   "term": "KD SERIES (G-Drive)",
+   "aliases": [
+    "KD27V12",
+    "KD62V12",
+    "KD1000",
+    "KD2250",
+    "G-Drive"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    806
+   ],
+   "quote": [
+    "KD SERIES™ ENGINES",
+    "Created specifically for generator applications, these engines combine greater power with superior efficiency."
+   ],
+   "note": "Có ™ trên trang Kohler: dòng động cơ máy phát 785-4290 kWm, nhãn 'KOHLER G-Drive'."
+  },
+  {
+   "make": "kohler",
+   "term": "G-Drive",
+   "aliases": [
+    "KOHLER G-Drive"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    806
+   ],
+   "quote": [
+    "KOHLER® G-Drive diesel engines offer outstanding specific power in a clean, modular design."
+   ],
+   "note": "Có ® trên trang Kohler; tên riêng cho động cơ KD lớn dùng cho tổ máy."
+  },
+  {
+   "make": "kohler",
+   "term": "KODIA",
+   "aliases": [],
+   "kind": "điều khiển điện tử",
+   "exclusive": true,
+   "src": [
+    803
+   ],
+   "quote": [
+    "and to communicate with KODIA, our"
+   ],
+   "note": "Phần mềm chẩn đoán động cơ KD G-Drive mà Kohler gọi 'our'."
+  },
+  {
+   "make": "kohler",
+   "term": "Lombardini",
+   "aliases": [
+    "Lombardini Diesel",
+    "LDW"
+   ],
+   "kind": "khác",
+   "exclusive": true,
+   "src": [
+    807
+   ],
+   "quote": [
+    "KOHLER and Lombardini Diesel"
+   ],
+   "note": "Trang Kohler xếp 'Lombardini Diesel' thành dòng bảo hành riêng cạnh 'KOHLER KDI' => nhãn của nhóm Kohler; không có câu ghi quan hệ sở hữu nên chỉ nêu việc dùng chung nhãn."
+  },
+  {
+   "make": "kohler",
+   "term": "KH (mã đầu phát)",
+   "aliases": [
+    "KH06220TO4D",
+    "KH07770TO4D",
+    "KH01221"
+   ],
+   "kind": "khác",
+   "exclusive": false,
+   "src": [
+    805
+   ],
+   "quote": [
+    "Alternator Choices",
+    "KH06220TO4D"
+   ],
+   "note": "Trên phiếu máy phát Kohler, mã KH... nằm dưới 'Alternator Choices' => là đầu phát, KHÔNG phải động cơ; trang không nói đó là nhãn hiệu nên để false."
+  },
+  {
+   "make": "volvo-penta",
+   "term": "EMS 2",
+   "aliases": [
+    "EMS2",
+    "Engine Monitoring System 2"
+   ],
+   "kind": "điều khiển điện tử",
+   "exclusive": true,
+   "src": [
+    901
+   ],
+   "quote": [
+    "Engine Monitoring System 2 (EMS 2), a new electronic control system for diesel engines developed by Volvo Penta"
+   ],
+   "note": "Trang hãng nói rõ do Volvo Penta phát triển."
+  },
+  {
+   "make": "volvo-penta",
+   "term": "EMS",
+   "aliases": [
+    "Engine Management System"
+   ],
+   "kind": "điều khiển điện tử",
+   "exclusive": false,
+   "src": [
+    902
+   ],
+   "quote": [
+    "The D13 power generation engine is equipped with an Engine Management System (EMS), an electronically controlled processing system"
+   ],
+   "note": "Trang D13 chỉ nêu EMS, không có ™/® hay câu 'do hãng phát triển' nên theo luật là false."
+  },
+  {
+   "make": "volvo-penta",
+   "term": "EVC 2.0",
+   "aliases": [],
+   "kind": "điều khiển điện tử",
+   "exclusive": true,
+   "src": [
+    903
+   ],
+   "quote": [
+    "It includes our latest EVC 2.0 technology for smoother and more intuitive operations."
+   ],
+   "note": "Hãng viết 'our latest EVC 2.0'; trang là máy phát biển (marine), không phải máy phát công nghiệp TAD."
+  },
+  {
+   "make": "volvo-penta",
+   "term": "TAD",
+   "aliases": [
+    "TAD940VE",
+    "TAD1341GE",
+    "TAD1346GE"
+   ],
+   "kind": "tên dòng",
+   "exclusive": false,
+   "src": [
+    901,
+    902
+   ],
+   "quote": [
+    "comes in four versions: TAD940VE, TAD941VE, TAD942VE and TAD943VE"
+   ],
+   "note": "Tiền tố model của hãng trên trang hãng; trang không có câu nói đó là nhãn hiệu riêng nên theo luật là false."
+  },
+  {
+   "make": "volvo-penta",
+   "term": "TWD",
+   "aliases": [
+    "TWD1031VE"
+   ],
+   "kind": "tên dòng",
+   "exclusive": false,
+   "src": [
+    901
+   ],
+   "quote": [
+    "Compared to its predecessor, the TWD1031VE, the new 9-liter engine"
+   ],
+   "note": "Tên model đời trước của TAD940VE theo trang hãng; không có nói về nhãn riêng."
+  },
+  {
+   "make": "volvo-penta",
+   "term": "unit injector",
+   "aliases": [
+    "Electronic unit injectors"
+   ],
+   "kind": "phun",
+   "exclusive": false,
+   "src": [
+    902
+   ],
+   "quote": [
+    "Electronic unit injectors"
+   ],
+   "note": "Công nghệ chung nhiều hãng dùng."
+  },
+  {
+   "make": "mtu",
+   "term": "ADEC",
+   "aliases": [
+    "ECU 9",
+    "ADEC/ECU9"
+   ],
+   "kind": "điều khiển điện tử",
+   "exclusive": false,
+   "src": [
+    1001,
+    1002,
+    1004
+   ],
+   "quote": [
+    "Engine control and monitoring system (ADEC); engine interface module - EIM",
+    "Engine governor ADEC (ECU 9)"
+   ],
+   "note": "Trang hãng ghi ADEC (ECU 9) là bộ điều khiển/governor của động cơ, không có ™/® hay 'our' nên theo luật là false."
+  },
+  {
+   "make": "mtu",
+   "term": "Series 4000",
+   "aliases": [
+    "4000",
+    "V4000"
+   ],
+   "kind": "tên dòng",
+   "exclusive": false,
+   "src": [
+    1001,
+    1002,
+    1003
+   ],
+   "quote": [
+    "mtu Series 4000",
+    "mtu 20V4000 DS4000"
+   ],
+   "note": "Tên dòng động cơ trên trang hãng; không có câu nói là nhãn riêng."
+  },
+  {
+   "make": "mtu",
+   "term": "Series 2000",
+   "aliases": [
+    "2000",
+    "V2000"
+   ],
+   "kind": "tên dòng",
+   "exclusive": false,
+   "src": [
+    1004
+   ],
+   "quote": [
+    "mtu 16V2000 DS1250"
+   ],
+   "note": "Tên model genset dòng 2000 trong datasheet hãng."
+  },
+  {
+   "make": "mtu",
+   "term": "common rail",
+   "aliases": [
+    "Common rail fuel injection"
+   ],
+   "kind": "phun",
+   "exclusive": false,
+   "src": [
+    1001,
+    1002
+   ],
+   "quote": [
+    "the first high speed diesel engine with common rail fuel injection",
+    "Common rail fuel injection"
+   ],
+   "note": "Từ chung nhiều hãng dùng; MTU chỉ nói mình đưa ra động cơ cao tốc common rail đầu tiên (1996)."
+  },
+  {
+   "make": "baudouin",
+   "term": "PowerKit",
+   "aliases": [
+    "Powerkit",
+    "POWERKIT",
+    "PowerKit by Baudouin"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    1101
+   ],
+   "quote": [
+    "Baudouin’s full range of PowerKit products spans from 18 – 4125 kVA, the most comprehensive range available on the market today."
+   ],
+   "note": "Tên dòng sản phẩm máy phát/động cơ của Baudouin ('Baudouin's ... PowerKit products'); trang không có ™/®."
+  },
+  {
+   "make": "baudouin",
+   "term": "M26",
+   "aliases": [
+    "12M26"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    1105,
+    1101
+   ],
+   "quote": [
+    "the focus was the new M26 engine. Designed for continuous power it was available from 225 to 900hp at 1800 rpm.",
+    "12M26 Power: kWm: 793 - 1115 kVA: 815 - 1250"
+   ],
+   "note": "Tên model của chính Baudouin (lịch sử + danh mục PowerKit hiện nay)."
+  },
+  {
+   "make": "baudouin",
+   "term": "M33",
+   "aliases": [
+    "6M33",
+    "8M33",
+    "12M33",
+    "16M33",
+    "20M33"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    1102,
+    1101
+   ],
+   "quote": [
+    "6M33 PowerKit diesel",
+    "16M33 Power: kWm: 1000 - 1920 kVA: 1594 - 2250"
+   ],
+   "note": "Tên model của Baudouin trong danh mục PowerKit."
+  },
+  {
+   "make": "baudouin",
+   "term": "M55",
+   "aliases": [
+    "12M55",
+    "16M55"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    1101
+   ],
+   "quote": [
+    "12M55 Power: kWm: 2210 - 3600 kVA: 2280 - 4125"
+   ],
+   "note": "Tên model của Baudouin trong danh mục PowerKit."
+  },
+  {
+   "make": "baudouin",
+   "term": "Dòng xM nhỏ (4M06, 4M10, 4M12, 6M11, 6M12, 6M16, 6M21, 6M31, 8M21)",
+   "aliases": [
+    "4M06",
+    "4M10",
+    "4M12",
+    "6M11",
+    "6M12",
+    "6M16",
+    "6M21",
+    "6M31",
+    "8M21"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    1101
+   ],
+   "quote": [
+    "4M06 Power: kWm: 20 - 63 kVA: 18 - 69",
+    "6M11 Power: kWm: 140 - 200 kVA: 135 - 220"
+   ],
+   "note": "Cùng cách đặt tên số xi lanh + M + dung tích trong danh mục PowerKit của Baudouin."
+  },
+  {
+   "make": "baudouin",
+   "term": "Common Rail 2200 bar",
+   "aliases": [
+    "common rail"
+   ],
+   "kind": "phun",
+   "exclusive": false,
+   "src": [
+    1107
+   ],
+   "quote": [
+    "Most advanced Common Rail technology and high-end injection system (2200 bar), key to achieve strict emissions regulations"
+   ],
+   "note": "Common rail là công nghệ chung; spec 12M26.3 Stage V (động cơ biển), không phải tên riêng."
+  },
+  {
+   "make": "baudouin",
+   "term": "Weichai (chủ sở hữu)",
+   "aliases": [
+    "Weichai Power"
+   ],
+   "kind": "khác",
+   "exclusive": false,
+   "src": [
+    1105
+   ],
+   "quote": [
+    "In January 2009, Baudouin was purchased by Weichai Power, a company specializing in the design, manufacturing, and sale of diesel engines in China."
+   ],
+   "note": "Không phải thuật ngữ kỹ thuật; ghi để biết HSMT có thể nêu Baudouin lẫn Weichai (SAME_MAKER)."
+  },
+  {
+   "make": "john-deere",
+   "term": "PowerTech",
+   "aliases": [
+    "PowerTech ™",
+    "Power Tech"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    1205,
+    1209,
+    1210
+   ],
+   "quote": [
+    "PowerTech ™ PWL",
+    "PowerTech ™ E",
+    "6135HFG75 Diesel Engine"
+   ],
+   "note": "Trang spec sheet Deere ghi PowerTech kèm ™ làm tên dòng động cơ của John Deere Power Systems."
+  },
+  {
+   "make": "john-deere",
+   "term": "PowerTech Plus",
+   "aliases": [
+    "PowerTech+"
+   ],
+   "kind": "khác",
+   "exclusive": true,
+   "src": [
+    1207
+   ],
+   "quote": [
+    "Utilizing the most advanced engine technology, PowerTech Plus engines have a 4-valve cylinder head,",
+    "They pair our proven PowerTech Plus technology"
+   ],
+   "note": "Deere gọi 'our proven PowerTech Plus technology': gói công nghệ riêng (4 van/cyl, điều khiển điện tử, VGT, EGR làm mát)."
+  },
+  {
+   "make": "john-deere",
+   "term": "PowerTech E",
+   "aliases": [
+    "PowerTech E EUI"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    1209
+   ],
+   "quote": [
+    "PowerTech ™ E",
+    "Electronic unit injector (EUI) fuel system provides variable common rail"
+   ],
+   "note": "Tên dòng PowerTech E có ™ trên spec sheet 6135HFG75 (hệ phun EUI)."
+  },
+  {
+   "make": "john-deere",
+   "term": "PowerTech PWL",
+   "aliases": [
+    "PWL"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    1205,
+    1207
+   ],
+   "quote": [
+    "PowerTech ™ PWL",
+    "PWL engines combine advanced combustion technologies, enhanced engine calibration, and simple wastegate turbocharging."
+   ],
+   "note": "Phân dòng 4.5L Final Tier 4 (4045HFG04) mang tên PowerTech PWL của Deere."
+  },
+  {
+   "make": "john-deere",
+   "term": "PowerTech PSL",
+   "aliases": [],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    1207
+   ],
+   "quote": [
+    "PSL engines provide exceptional power in a compact"
+   ],
+   "note": "Phân dòng PSL nằm trong bảng PowerTech của Deere (6.8L)."
+  },
+  {
+   "make": "john-deere",
+   "term": "PowerTech PVS",
+   "aliases": [
+    "PVS"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    1207
+   ],
+   "quote": [
+    "PVS engines deliver excellent power, torque, and"
+   ],
+   "note": "Phân dòng PVS (VGT + PowerTech Plus) của Deere."
+  },
+  {
+   "make": "john-deere",
+   "term": "4045 / 6068 / 6135 (mã model)",
+   "aliases": [
+    "4045HFG04",
+    "6068HFG85",
+    "6135HFG75"
+   ],
+   "kind": "tên dòng",
+   "exclusive": false,
+   "src": [
+    1205,
+    1209
+   ],
+   "quote": [
+    "4045HFG04 Diesel Engine",
+    "6135HFG75 Diesel Engine"
+   ],
+   "note": "Trang chỉ liệt kê mã model, không nói là nhãn hiệu; số trần dễ trùng, nên dùng cùng 'PowerTech' hoặc hậu tố HFG/TFM mới kết luận hãng."
+  },
+  {
+   "make": "john-deere",
+   "term": "HPCR",
+   "aliases": [
+    "High-Pressure Common-Rail"
+   ],
+   "kind": "phun",
+   "exclusive": false,
+   "src": [
+    1205
+   ],
+   "quote": [
+    "High-Pressure Common-Rail (HPCR) and Engine"
+   ],
+   "note": "Common rail là công nghệ chung nhiều hãng; chỉ viết tắt HPCR là cách Deere gọi."
+  },
+  {
+   "make": "john-deere",
+   "term": "EUI",
+   "aliases": [
+    "Electronic unit injector"
+   ],
+   "kind": "phun",
+   "exclusive": false,
+   "src": [
+    1209
+   ],
+   "quote": [
+    "Electronic unit injector (EUI) fuel system provides variable common rail"
+   ],
+   "note": "Kim phun điện tử EUI là thuật ngữ chung, không riêng Deere."
+  },
+  {
+   "make": "fpt",
+   "term": "HI-eSCR",
+   "aliases": [
+    "HI-eSCR2",
+    "Hi-eSCR2"
+   ],
+   "kind": "khác",
+   "exclusive": true,
+   "src": [
+    1301,
+    1303
+   ],
+   "quote": [
+    "FPT Industrial’s patented, DPF-free HI-eSCR technology for Tier 4 Final compliance",
+    "the Brand has developed the patented HI-eSCR2 which enables its engines to meet Tier 4 Final and Stage V standards"
+   ],
+   "note": "FPT tự gọi là công nghệ có bằng sáng chế của FPT Industrial (xử lý khí thải SCR không DPF)."
+  },
+  {
+   "make": "fpt",
+   "term": "NEF",
+   "aliases": [
+    "NEF45",
+    "NEF67",
+    "NEF67TM4"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    1301,
+    1302
+   ],
+   "quote": [
+    "The engines on display include F34 , F36 , NEF45 G Drive , NEF67, C9 and C16 .",
+    "N = NEF"
+   ],
+   "note": "NEF là tên dòng/mã trong bảng ký hiệu của FPT; trang không nêu ™ nhưng là tên của chính FPT (nay đổi thành N45/N67)."
+  },
+  {
+   "make": "fpt",
+   "term": "CURSOR",
+   "aliases": [
+    "Cursor 9",
+    "Cursor 13",
+    "Cursor 16"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    1301,
+    1302
+   ],
+   "quote": [
+    "C = CURSOR",
+    "Cursor 9 offers a very compact Common Rail system with optimized fuel efficiency for power generation applications."
+   ],
+   "note": "Cursor là tên dòng của FPT trong bảng ký hiệu và trang PowerGen (8.7 L / 12.9 L / 15.9 L)."
+  },
+  {
+   "make": "fpt",
+   "term": "N45 / N67",
+   "aliases": [
+    "N45",
+    "N67",
+    "N67TEVP05"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    1303,
+    1302
+   ],
+   "quote": [
+    "from 4.5 liters (N45) to 12.9 liters (CURSOR 13)",
+    "N67TEVP05"
+   ],
+   "note": "Tên dòng mới của FPT thay NEF45/NEF67 trong tài liệu PowerGen 2025."
+  },
+  {
+   "make": "fpt",
+   "term": "exhaust flap điện tử (patented)",
+   "aliases": [
+    "electronically controlled exhaust flap"
+   ],
+   "kind": "điều khiển điện tử",
+   "exclusive": true,
+   "src": [
+    1301
+   ],
+   "quote": [
+    "Our patented electronically controlled exhaust flap maximizes performance at low temperature and low load"
+   ],
+   "note": "FPT gọi là 'our patented' (bằng sáng chế của FPT)."
+  },
+  {
+   "make": "fpt",
+   "term": "MyFPT",
+   "aliases": [
+    "My FPT"
+   ],
+   "kind": "điều khiển điện tử",
+   "exclusive": true,
+   "src": [
+    1301
+   ],
+   "quote": [
+    "featuring the MyFPT app for real-time engine diagnostics"
+   ],
+   "note": "Ứng dụng chẩn đoán động cơ mang tên riêng FPT."
+  },
+  {
+   "make": "fpt",
+   "term": "ATS (patented)",
+   "aliases": [
+    "ATS"
+   ],
+   "kind": "khác",
+   "exclusive": false,
+   "src": [
+    1301
+   ],
+   "quote": [
+    "FPT Industrial’s patented ATS technology"
+   ],
+   "note": "ATS (aftertreatment system) là thuật ngữ chung; chỉ cụm 'FPT Industrial's patented ATS' mới là của FPT."
+  },
+  {
+   "make": "fpt",
+   "term": "Common Rail",
+   "aliases": [
+    "ECR"
+   ],
+   "kind": "phun",
+   "exclusive": false,
+   "src": [
+    1301
+   ],
+   "quote": [
+    "Cursor 9 offers a very compact Common Rail system"
+   ],
+   "note": "Common rail là công nghệ chung nhiều hãng."
+  },
+  {
+   "make": "deutz",
+   "term": "DCR",
+   "aliases": [
+    "DEUTZ Common Rail",
+    "Deutz Common Rail"
+   ],
+   "kind": "phun",
+   "exclusive": true,
+   "src": [
+    1501,
+    1502
+   ],
+   "quote": [
+    "The powerful DEUTZ Common Rail (DCR®) injection system and the electronic engine control (EMR)"
+   ],
+   "note": "Trang hãng viết 'DEUTZ Common Rail (DCR®)' có ® và tên hãng: nhãn hiệu riêng (còn 'common rail' đứng một mình là từ chung)."
+  },
+  {
+   "make": "deutz",
+   "term": "DVERT",
+   "aliases": [],
+   "kind": "khác",
+   "exclusive": true,
+   "src": [
+    1501
+   ],
+   "quote": [
+    "EPA Tier 4 with DVERT®, selective catalytic reduction (SCR) and particulate filter (DPF)"
+   ],
+   "note": "Có ® trên trang hãng; SCR và DPF đi kèm là từ chung."
+  },
+  {
+   "make": "deutz",
+   "term": "EMR",
+   "aliases": [],
+   "kind": "điều khiển điện tử",
+   "exclusive": false,
+   "src": [
+    1501,
+    1502
+   ],
+   "quote": [
+    "the electronic engine control (EMR) with intelligent link to the drive management"
+   ],
+   "note": "Trang chỉ viết 'electronic engine control (EMR)', không có ™/® hay 'our' nên theo luật là false; thực tế là tên bộ điều khiển của Deutz (xem unconfirmed EMR2/3/4)."
+  },
+  {
+   "make": "deutz",
+   "term": "TCD",
+   "aliases": [
+    "TCD 5.2",
+    "TCD 7.8"
+   ],
+   "kind": "tên dòng",
+   "exclusive": false,
+   "src": [
+    1501,
+    1502
+   ],
+   "quote": [
+    "# TCD 5.2",
+    "# TCD 7.8 L6"
+   ],
+   "note": "Tên dòng trên trang Engine Finder của Deutz; trang không có ™/® hay câu nói riêng của hãng nên theo luật là false."
+  },
+  {
+   "make": "deutz",
+   "term": "BF6M1015",
+   "aliases": [
+    "BF8M1015",
+    "BFM 1015"
+   ],
+   "kind": "tên dòng",
+   "exclusive": false,
+   "src": [
+    1503
+   ],
+   "quote": [
+    "BF6M1015C BF6M1015CP BF8M1015C BF8M1015CP"
+   ],
+   "note": "Tên model trong datasheet cũ của Deutz; không có chữ nào nói là nhãn riêng."
+  },
+  {
+   "make": "weichai",
+   "term": "WP13",
+   "aliases": [
+    "WP10",
+    "WP7",
+    "WP4.1",
+    "WP3.2",
+    "潍柴WP"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    1601,
+    1602
+   ],
+   "quote": [
+    "WP13系列产品是潍柴自主研发的高功率密度发动机",
+    "WP10系列发电用发动机",
+    "WP13D385E310"
+   ],
+   "note": "Trang hãng gọi WP3.2/WP7/WP10/WP13 là dòng động cơ phát điện của chính Weichai (tự nghiên cứu); hậu tố D...E310/E460 là mã model."
+  },
+  {
+   "make": "weichai",
+   "term": "M (6M33, 16M55...)",
+   "aliases": [
+    "6M33",
+    "6M31",
+    "12M33",
+    "16M33",
+    "20M33",
+    "16M55",
+    "20M55"
+   ],
+   "kind": "tên dòng",
+   "exclusive": false,
+   "src": [
+    1602,
+    1603
+   ],
+   "quote": [
+    "6M33系列发电用发动机",
+    "The 20M55 series is a new generation of high-end engines independently developed by Weichai"
+   ],
+   "note": "Nền tảng M (M31/M33/M55) là dòng công suất lớn của Weichai trên trang hãng, ghi 'independently developed by Weichai'. Đặt false: dòng M33 / M55 cũng nằm trong trang Baudouin (Baudouin thuộc Weichai), nên không dùng làm dấu hiệu riêng của một hãng; xem mục baudouin M33 / M55 (cặp SAME_MAKER)."
+  },
+  {
+   "make": "weichai",
+   "term": "潍柴牌 / 博杜安牌 (Baudouin)",
+   "aliases": [
+    "Baudouin",
+    "博杜安"
+   ],
+   "kind": "khác",
+   "exclusive": false,
+   "src": [
+    1602,
+    1603
+   ],
+   "quote": [
+    "博杜安牌",
+    "Baudouin Power Generation"
+   ],
+   "note": "Baudouin là nhãn hiệu phát điện riêng nằm cạnh '潍柴牌' trên trang Weichai; không phải tên riêng của dòng Weichai nên exclusive false (HSMT ghi Baudouin cần xử lý như hãng liên quan)."
+  },
+  {
+   "make": "weichai",
+   "term": "电控高压共轨",
+   "aliases": [
+    "electronically controlled common rail"
+   ],
+   "kind": "phun",
+   "exclusive": false,
+   "src": [
+    1601
+   ],
+   "quote": [
+    "电控高压共轨"
+   ],
+   "note": "Công nghệ chung nhiều hãng dùng, trang chỉ ghi là mô tả kỹ thuật, không phải tên riêng."
+  },
+  {
+   "make": "yuchai",
+   "term": "YC6",
+   "aliases": [
+    "YC6MK",
+    "YC6K",
+    "YC6T",
+    "YC6C",
+    "YC6TF",
+    "YC4",
+    "YC6M"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    1702,
+    1703,
+    1704
+   ],
+   "quote": [
+    "主要产品包括YC6MK发电柴油机、YC6K电控发电柴油机、YC6C、YC6T等",
+    "YC6MK"
+   ],
+   "note": "Trang yuchai.com gọi YC6MK/YC6K/YC6C/YC6T là sản phẩm của Yuchai (tiền tố YC = tên dòng riêng của hãng)."
+  },
+  {
+   "make": "yuchai",
+   "term": "ECW (điện tử điều khiển van xả tăng áp)",
+   "aliases": [
+    "电控增压",
+    "Electric control wastegate"
+   ],
+   "kind": "điều khiển điện tử",
+   "exclusive": true,
+   "src": [
+    1703
+   ],
+   "quote": [
+    "ECW（电控增压）",
+    "ECW电控增压技术（Electric control wastegate）"
+   ],
+   "note": "Tên công nghệ riêng của Yuchai nhưng trang nói cho động cơ khí gas, không phải diesel máy phát."
+  },
+  {
+   "make": "yuchai",
+   "term": "稀薄燃烧 (đốt nghèo)",
+   "aliases": [
+    "lean burn"
+   ],
+   "kind": "buồng đốt",
+   "exclusive": false,
+   "src": [
+    1703
+   ],
+   "quote": [
+    "稀薄燃烧是玉柴气体机为客户创造燃气经济性的重要手段"
+   ],
+   "note": "Từ chung (lean burn) nhiều hãng khí dùng; chỉ liên quan động cơ gas."
+  },
+  {
+   "make": "yuchai",
+   "term": "四气门技术 / 玉柴专有活塞环密封技术",
+   "aliases": [],
+   "kind": "khác",
+   "exclusive": false,
+   "src": [
+    1704,
+    1705
+   ],
+   "quote": [
+    "采用玉柴专有活塞环密封技术和气门油封技术",
+    "四气门技术，雾化更均匀，燃烧更充分，经济省油"
+   ],
+   "note": "Trang ghi 'Yuchai-proprietary' nhưng không đặt tên riêng; 4 van là chung nhiều hãng."
+  },
+  {
+   "make": "sdec",
+   "term": "SC12E460D2",
+   "aliases": [
+    "SC13G",
+    "SC15G",
+    "SC25G",
+    "SC27G",
+    "SC9DF",
+    "SD-SC"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    1801,
+    1806
+   ],
+   "quote": [
+    "SC13G / SC15G Diesel Engine for Genset",
+    "Engine Model SC12E460D2",
+    "Genset model SD-SC63 - SD-SC188"
+   ],
+   "note": "Trang SDEC (sdeciepower.com, mail sdecie.com, Shanghai New Power Automotive Technology) dùng SC... làm mã model động cơ và SD-SC... làm mã tổ máy của chính hãng."
+  },
+  {
+   "make": "sdec",
+   "term": "6135",
+   "aliases": [
+    "12V135",
+    "6114",
+    "G128",
+    "D114"
+   ],
+   "kind": "tên dòng",
+   "exclusive": true,
+   "src": [
+    1802
+   ],
+   "quote": [
+    "Our products are spread out across 7 series: G128/135, C(121), D(114), E, R, H, and W."
+   ],
+   "note": "Trang hãng ghi dòng G128/135 và D(114) là dòng riêng của SDEC; tiền tố '6' (6135, 6114) trên trang này không xuất hiện nên chỉ xác nhận phần số."
+  },
+  {
+   "make": "sdec",
+   "term": "Dòng chữ cái Z/H/D/E/K/W/VK (series cho máy phát)",
+   "aliases": [
+    "E series",
+    "W series",
+    "K series",
+    "VK series"
+   ],
+   "kind": "tên dòng",
+   "exclusive": false,
+   "src": [
+    1801
+   ],
+   "quote": [
+    "E Series Diesel Engine for Genset",
+    "VK Series Diesel Engine for Genset"
+   ],
+   "note": "Tên dòng một chữ cái là cách gọi của SDEC nhưng chữ đơn quá chung (nhiều hãng dùng) nên không dùng riêng một mình."
+  },
+  {
+   "make": "sdec",
+   "term": "AVL (hợp tác phát triển dòng E)",
+   "aliases": [],
+   "kind": "khác",
+   "exclusive": false,
+   "src": [
+    1804
+   ],
+   "quote": [
+    "we unite AVL company in Austria to create and develop the E series truck diesel engine in the new platform"
+   ],
+   "note": "AVL là hãng tư vấn bên ngoài, không phải tên riêng của SDEC; chỉ là dấu hiệu bổ trợ."
+  },
+  {
+   "make": "sdec",
+   "term": "electronically controlled common rail",
+   "aliases": [
+    "电控共轨"
+   ],
+   "kind": "phun",
+   "exclusive": false,
+   "src": [
+    1804
+   ],
+   "quote": [
+    "In-line, four valves, electronically controlled common rail, TCI, water cooling wet cylinder liner, rear gear housing"
+   ],
+   "note": "Công nghệ chung, không phải tên riêng."
+  }
+ ],
+ "unconfirmed": [
+  {
+   "make": "kubota",
+   "term": "Swirl Chamber / xoáy lốc",
+   "why": "không thấy trang chính hãng Kubota dùng cụm này; không có câu trích"
+  },
+  {
+   "make": "kubota",
+   "term": "IDI (viết tắt)",
+   "why": "trang hãng chỉ ghi 'Indirect injection', không có câu trích tính chất chung của chữ IDI"
+  },
+  {
+   "make": "yanmar",
+   "term": "buồng đốt Yanmar tên riêng (ví dụ swirl/TVCR-kiểu)",
+   "why": "không thấy tên riêng/nhãn hiệu buồng đốt nào trên trang chính hãng; chỉ có 'original direct-injection combustion chamber'"
+  },
+  {
+   "make": "yanmar",
+   "term": "Swirl chamber",
+   "why": "trang chính hãng Yanmar đã lưu không dùng cụm này cho dòng TNV; không có câu trích"
+  },
+  {
+   "make": "perkins",
+   "term": "ADEM",
+   "why": "WebSearch giới hạn perkins.com không ra trang nào có chữ ADEM; 6 trang Perkins đã lưu (301-306) đếm 0 lần ADEM. Không có bằng chứng từ trang hãng."
+  },
+  {
+   "make": "perkins",
+   "term": "ElectroPAC",
+   "why": "Không thấy trên perkins.com; trang hãng viết 'ElectropaK' (đã nhận mục ElectropaK). ElectroPAC có thể là cách viết sai trong HSMT."
+  },
+  {
+   "make": "perkins",
+   "term": "1106D-E70TAG4 (hậu tố TAG4/E70)",
+   "why": "Trang 301 chỉ có 1106D-E70TAG (không có TAG4); chưa có câu trích giải thích hậu tố."
+  },
+  {
+   "make": "perkins",
+   "term": "4000 (dòng 4012/4016/4008) tên công nghệ riêng",
+   "why": "Chưa lưu trang riêng; chỉ xác nhận tên dòng."
+  },
+  {
+   "make": "cummins",
+   "term": "QSZ",
+   "why": "Chưa lưu trang cummins.com nào có dòng QSZ; không có câu trích."
+  },
+  {
+   "make": "cummins",
+   "term": "6BT",
+   "why": "Chưa tìm được trang cummins.com chính hãng nói về 6BT; không có câu trích."
+  },
+  {
+   "make": "cummins",
+   "term": "QSK50 / KTA19 (như tên riêng)",
+   "why": "Chỉ thấy tiêu đề trong kết quả tìm kiếm; trang đã lưu chỉ nêu QSK60/QSK78 và KTA50."
+  },
+  {
+   "make": "mitsubishi",
+   "term": "PTA (giải nghĩa viết tắt)",
+   "why": "Trang hãng không giải nghĩa chữ PTA; chỉ dùng như hậu tố trong tên model."
+  },
+  {
+   "make": "isuzu",
+   "term": "công nghệ buồng đốt tên riêng của Isuzu",
+   "why": "không thấy tên riêng nào trên trang chính hãng đã lưu (chỉ 'Type of Injection Direct', common rail)"
+  },
+  {
+   "make": "caterpillar",
+   "term": "C18",
+   "why": "Trang Cat C18 lưu thất bại (HTTP 404 hai URL); chỉ thấy trong kết quả tìm kiếm."
+  },
+  {
+   "make": "caterpillar",
+   "term": "ADEM 3",
+   "why": "Các trang đã lưu chỉ nêu ADEM A4; không có câu trích về ADEM 3."
+  },
+  {
+   "make": "caterpillar",
+   "term": "EUI (chung)",
+   "why": "Trang Cat chỉ dùng HEUI/MEUI có ™; không có câu trích 'EUI' như thuật ngữ chung."
+  },
+  {
+   "make": "caterpillar",
+   "term": "EMCP 4.4 như dòng riêng",
+   "why": "Trang 704 chỉ dùng 'EMCP 4'; mã 4.4 chỉ nằm trong danh sách tài liệu."
+  },
+  {
+   "make": "kohler",
+   "term": "KD (HSMT viết 'KD' không số)",
+   "why": "Hai họ cùng tiền tố KD (làm mát khí nhỏ và G-Drive lớn); phải xem kèm số (KD15/KD625 so với KD27V12/KD62V12)."
+  },
+  {
+   "make": "kohler",
+   "term": "Lombardini là công ty thuộc Kohler",
+   "why": "Kết quả tìm có câu 'Lombardini s.r.l. is a part of Kohler Group' nhưng không tìm thấy trong tệp đã lưu (807, 808) nên không trích."
+  },
+  {
+   "make": "kohler",
+   "term": "KH (động cơ)",
+   "why": "Không tìm thấy dòng động cơ KH trên trang Kohler; chỉ thấy KH là mã đầu phát."
+  },
+  {
+   "make": "volvo-penta",
+   "term": "V-ACT",
+   "why": "Tìm trên volvopenta.com không ra trang nào nhắc V-ACT."
+  },
+  {
+   "make": "volvo-penta",
+   "term": "EGR / SCR đặt tên riêng",
+   "why": "Các trang đã lưu không có tên riêng cho EGR hay SCR."
+  },
+  {
+   "make": "volvo-penta",
+   "term": "EVC (máy công nghiệp)",
+   "why": "EVC chỉ thấy ở trang máy phát biển (903); chưa có trang nói EVC dùng cho TAD công nghiệp."
+  },
+  {
+   "make": "mtu",
+   "term": "Blue Line",
+   "why": "Hai lượt tìm trên mtu-solutions.com / rolls-royce.com không ra trang nào dùng tên Blue Line."
+  },
+  {
+   "make": "mtu",
+   "term": "ECU 7 / ECU 8",
+   "why": "Các datasheet đã lưu chỉ ghi ECU 9; không tìm thấy trang hãng nhắc ECU 7 hay ECU 8."
+  },
+  {
+   "make": "mtu",
+   "term": "Series 396",
+   "why": "Không có trang hãng trong kết quả tìm; chưa lưu."
+  },
+  {
+   "make": "baudouin",
+   "term": "'6M' như tiền tố chung",
+   "why": "Trang không giải thích quy ước đặt tên 4M/6M/12M (chỉ liệt kê model), nên '6M' riêng lẻ không đủ chứng cứ; xét theo cả mã (6M16, 6M33...)."
+  },
+  {
+   "make": "baudouin",
+   "term": "DCP (Data Centre Power rating)",
+   "why": "Trang Baudouin có cột Rating 'DCP' và 'Data Centre Engine Power' nhưng không có câu nói đó là tên riêng của hãng."
+  },
+  {
+   "make": "baudouin",
+   "term": "HHP",
+   "why": "Chỉ thấy trong kết quả tìm kiếm tóm tắt (tin M33/M55 'HHP'), chưa lưu trang nên không trích."
+  },
+  {
+   "make": "john-deere",
+   "term": "6081",
+   "why": "Không trang deere.com nào đã lưu có động cơ 6081 (spec sheet 4045/6068/6135 và selection guide đều không nhắc); WebSearch cũng không thấy."
+  },
+  {
+   "make": "john-deere",
+   "term": "PowerTech tên riêng 6068 trong genset",
+   "why": "Trang deere.com/en/generator-drive-engines/... (1201-1204) khi tải chỉ ra trang danh sách chung (Firecrawl), không có nội dung từng model; không dùng làm nguồn."
+  },
+  {
+   "make": "fpt",
+   "term": "Vector",
+   "why": "WebSearch giới hạn fptindustrial.com không thấy động cơ/công nghệ tên Vector; các tệp 1301-1303 đã lưu cũng không có từ này."
+  },
+  {
+   "make": "doosan-hyundai",
+   "term": "DP (DP086LA, DP158LC, DP222LC...)",
+   "why": "Chưa lưu được trang chính hãng: doosanengine.com trả 403 (cả Firecrawl 403, cả công cụ firecrawl_scrape); doosaninfracore.com không phân giải DNS. Kết quả tìm kiếm chỉ cho thấy các trang này gọi DP/P là dòng động cơ máy phát, chưa có câu trích từ tệp đã lưu."
+  },
+  {
+   "make": "doosan-hyundai",
+   "term": "P-series (P086TI, P126TI, P158LE)",
+   "why": "Như trên: chỉ thấy qua kết quả tìm kiếm trên doosanengine.com, không lưu được."
+  },
+  {
+   "make": "doosan-hyundai",
+   "term": "DL",
+   "why": "Không tìm thấy dòng nào tên DL trên trang chính hãng (tìm kiếm không trả kết quả)."
+  },
+  {
+   "make": "doosan-hyundai",
+   "term": "HY (HY4H...)",
+   "why": "Không tìm thấy trang chính hãng nào nêu mã HY."
+  },
+  {
+   "make": "doosan-hyundai",
+   "term": "D4 (Hyundai)",
+   "why": "Không tìm thấy D4 trên trang chính hãng; chỉ thấy D18/D24/D34 (Tier 4 Final/Stage V) và DM03HP/DM02HP của HD Hyundai Infracore qua tìm kiếm, chưa lưu."
+  },
+  {
+   "make": "deutz",
+   "term": "EMR2 / EMR3",
+   "why": "Không tìm thấy trang hãng nào dùng tên EMR2 hay EMR3 (chỉ thấy 'EMR 4' qua tóm tắt tìm kiếm, trang chưa lưu)."
+  },
+  {
+   "make": "deutz",
+   "term": "EMR 4",
+   "why": "Tóm tắt tìm kiếm nói trang TCD 3.6 L4 (Agri) ghi EMR 4; chưa lưu trang nên chưa có câu trích."
+  },
+  {
+   "make": "deutz",
+   "term": "BF4L / BF6L 914",
+   "why": "Datasheet bfl_914c_genset_en.pdf đã lưu (1504) chỉ có tên model 'BF4L 914' trong bảng, không có câu nói về tên riêng."
+  },
+  {
+   "make": "deutz",
+   "term": "TCD 2012 / TCD 914",
+   "why": "Không có trang hãng dùng tên này trong kết quả tìm."
+  },
+  {
+   "make": "deutz",
+   "term": "Anubis",
+   "why": "Máy chủ deutz.com trả trang chặn bot (Anubis) cho cách tải trực tiếp; lệnh trait-source.mjs không chuyển sang Firecrawl nên tệp 1501-1502 được lưu tay từ kết quả firecrawl_scrape (tệp ghi Via: firecrawl)."
+  },
+  {
+   "make": "weichai",
+   "term": "WD (WD10, WD12...)",
+   "why": "Tìm trên weichaipower.com / weichai.com không ra trang nào ghi WD; tìm kiếm trả rỗng."
+  },
+  {
+   "make": "weichai",
+   "term": "TBD (TBD226B...)",
+   "why": "Không có trang chính hãng nào trong kết quả tìm kiếm ghi TBD; chưa có câu trích."
+  },
+  {
+   "make": "weichai",
+   "term": "Buồng đốt / hệ phun mang tên riêng",
+   "why": "Trang đã lưu chỉ ghi 'common rail' chung và 'mechanical injection pump' (WP10 dump truck, chưa lưu); không thấy tên riêng."
+  },
+  {
+   "make": "yuchai",
+   "term": "YCD",
+   "why": "Không trang chính hãng nào trong kết quả tìm kiếm (yuchai.com, yuchaiie.com, en.yuchaidiesel.com) ghi YCD; chưa có câu trích."
+  },
+  {
+   "make": "yuchai",
+   "term": "Tên riêng buồng đốt/hệ phun diesel phát điện",
+   "why": "yuchai.com/product/engine.htm chỉ nêu '10大平台' phát điện, không nêu tên; trang chi tiết phát điện chưa tìm thấy qua tìm kiếm."
+  },
+  {
+   "make": "sdec",
+   "term": "6126",
+   "why": "Không trang chính hãng nào đã lưu ghi 6126."
+  },
+  {
+   "make": "sdec",
+   "term": "6135 / 6114 dạng đầy đủ có tiền tố 6",
+   "why": "Chỉ có 'G128/135' và 'D(114)'; chưa có câu trích 6135 / 6114 nguyên dạng."
+  },
+  {
+   "make": "sdec",
+   "term": "Tên miền chính hãng sdec.com.cn",
+   "why": "sdec.com.cn không phân giải DNS qua Firecrawl; dùng sdeciepower.com (chính hãng, liên hệ Shanghai New Power Automotive Technology, địa chỉ 2636 Jungong Road). Cần Khoa xác nhận đây là trang chính thức của SDEC."
+  }
+ ]
+}
