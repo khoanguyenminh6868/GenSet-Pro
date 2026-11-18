@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-18T03:41:48.782Z
+  modified: 2026-11-18T11:25:00.526Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Code xếp sẵn 30 dòng ứng viên; mọi số/câu trích phải có nguyên văn trong nguồn, sai → "Đạt" thành "Chưa rõ". ~6–11 phút, ~3 USD/gói. Yêu cầu theo bộ mã cố định `suppliers/reqcodes.mjs` (thêm mã: dòng `R(...)` đúng thứ tự + test; tăng `REQ_VERSION`).
@@ -53,6 +53,7 @@ metadata:
 - Cấu hình tìm trên internet cũng phải nằm trong dải công suất 100–140% (120% trên 30 kVA) như ứng viên danh mục (Khoa: "có"; Denyo 13 kVA từng vào gói 8,5 kVA).
 - Biến thể cùng động cơ (D1105 / D1105-BG / D1105-E2BG / -CHN / -CHN-1): "nếu giống nhau về mặt thông số thì chọn 1 trong nhiều, nếu khác thì chỉ chọn cái có thông số phù hợp". (Em hiểu: không gộp bản ghi trong danh mục; ở bước chọn cấu hình, các biến thể thông số như nhau chỉ chiếm một cấu hình, khác nhau thì chỉ giữ biến thể đạt HSMT.)
 - Đồng bộ thương hiệu: "nếu yêu cầu không ghi đòi động cơ thì không đòi" — chỉ bộ phận HSMT nêu trong câu đồng bộ mới phải cùng hãng tổ máy ("đầu phát và vỏ chống ồn đồng bộ cùng một nhãn hiệu" không đòi động cơ).
+- Khoa quyết thêm 18/11/2026 (sau khi xem bảng 112 mục; chặng 2 đang code, phiên con `Đặc thù hãng động cơ, chặng 2`): chỉ mục `part: engine` + `exclusive` mới lọc hãng động cơ, và BỎ khỏi nhóm lọc Holset, Lombardini, KOHLER Flex (`filter: false`; còn 16 mục); ADEM giữ ở nhóm bộ điều khiển. Câu đồng bộ sau khi bỏ động cơ chỉ còn MỘT bộ phận → không đòi gì ("b"). HSMT nêu đích danh bộ điều khiển mà cấu hình không có → tính không đạt, xếp sau, vẫn hiện, không bỏ ("a"). "E-TVCS hoặc tương đương" → không lọc hãng, chỉ cộng điểm ("ok"). Biến thể cùng động cơ chỉ gom hậu tố PHIÊN BẢN (BG, E2BG, CHN…), không gom hậu tố công suất (G3 / G4, TAG2A / TAG3A) ("b").
 
 **Tìm NCC:** CHỈ Claude. NCC mới trùng cấu hình có sẵn → gắn vào; không trùng → cấu hình mới. Không chạy lại cả Gợi ý. Gợi ý lại giữ kết quả Tìm NCC và cấu hình tìm trên internet (trang lưu ở `genbid-work\config-web\`). Nút trên từng cấu hình: Xoá, Tìm nhà cung cấp.
 
