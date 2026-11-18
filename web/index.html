@@ -414,8 +414,8 @@ table.bdmain td.num,table.bdrows td.num,table.bprows td.num{text-align:right;whi
 @media (max-width:640px){.filttg{display:flex;gap:6px;align-items:center;align-self:stretch}.filttg .small{margin-left:auto}.filtrows:not(.open){display:none}
 /* Phone: the two filter rows flow as one; each dropdown is as wide as its chosen text (fitSel), so the text shows in full and as many as fit share a line (Khoa, 2026-11-02). */
 .filtrows{flex-direction:row;flex-wrap:wrap;gap:8px 6px;align-items:center}.filtrows>.suprow{display:contents}.filtrows input[type=search]{flex:1 1 100%!important}
-.filtrows select{flex:1 0 auto;max-width:100%;padding:6px 2px 6px 6px;font-size:13px}.filtrows input[type=number]{flex:1 0 110px;width:0!important;font-size:13px;align-self:stretch}.filtrows :is(input[type=number],#supUnit,#catUnit){order:2}.filtrows :is(#supModelF,#supWonF){order:1}.filtrows .spacer,.filtrows label,.filtrows :is(#supCount,#catCount){display:none}}
-/* Desktop: Hãng narrower so "Có model" shares the first filter row; phone: "Có model" sits right after Yêu thích (order above) (Khoa, 2026-11-18). */
+.filtrows select{flex:1 0 auto;max-width:100%;padding:6px 2px 6px 6px;font-size:13px}.filtrows input[type=number]{flex:1 0 110px;width:0!important;font-size:13px;align-self:stretch}.filtrows :is(input[type=number],#supUnit,#catUnit){order:2}.filtrows :is(#supModel,#supWonF){order:1}.filtrows .spacer,.filtrows label,.filtrows :is(#supCount,#catCount){display:none}}
+/* Desktop: Hãng narrower so the Model dropdown shares the first filter row; phone: "Có model" sits right after Yêu thích (order above) (Khoa, 2026-11-18). */
 @media (min-width:641px){#supMake{width:130px}}
 .supcard{padding:12px;display:flex;flex-direction:column;gap:6px;margin:8px 0}.suprow select,.suprow input{min-width:0}
 .tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
@@ -3309,7 +3309,7 @@ function supLinesBrief(s, lines) {
   }).join("");
 }
 const supRefs = (src) => (src || []).map((n) => h`<a class="supref" href="#sup-src-${n}" data-supsrc="${n}">[${n}]</a>`).join("");
-let supFilter = { excl: false, fav: false, won: false, model: false, q: "", role: "", conf: "", make: "", country: "", year: "", fuel: "", power: "", unit: "kVA" };
+let supFilter = { excl: false, fav: false, won: false, model: "", q: "", role: "", conf: "", make: "", country: "", year: "", fuel: "", power: "", unit: "kVA" };
 // Sort by founding year or country (Khoa, 2026-11-04): click a header for ▲, again for ▼, a third time back to A–Z; a supplier with no value goes last.
 let supSort = { k: "", dir: 0 };
 const SUP_SORT = { year: (s) => s.founded || null, country: (s) => supCountryName(s) || null };
@@ -3452,7 +3452,7 @@ function supMatches(s) {
   const f = supFilter, q = f.q.trim().toLowerCase();
   if (f.excl ? !supExcl(s.id) : false) return false;
   if (f.fav && !supFav(s.id)) return false;
-  if (f.model && !supModelN(s)) return false;
+  if (f.model && (f.model === "yes") !== supModelN(s) > 0) return false;
   if (f.won && !supWonN(s.id)) return false;
   if (f.role && s.role !== f.role) return false;
   if (f.conf && s.confidence !== f.conf) return false;
@@ -3513,7 +3513,7 @@ function renderSuppliers() {
       <select id="supConf">${raw(opt("", "Độ tin cậy", f.conf) + [["high", "Tin cậy cao"], ["medium", "Trung bình"], ["low", "Chưa xác minh"]].map(([k, l]) => opt(k, l, f.conf)).join(""))}</select>
       <select id="supMake">${raw(opt("", "Hãng", f.make) + makeGroups.filter((g) => g[2].length || g[0] === "engine").map(([k, l, ms]) => h`<optgroup label="${l}">${raw((k === "engine" ? opt(`engine:${SUP_NONE}`, "Không có", f.make) : "") + ms.map((m) => opt(`${k}:${m}`, m, f.make)).join(""))}</optgroup>`).join(""))}</select>
       <select id="supFuel">${raw(opt("", "Nhiên liệu", f.fuel) + [["diesel", "Diesel"], ["gas", "Khí gas"], ["dual", "Hai nhiên liệu"], ["hfo", "Dầu nặng HFO"]].map(([k, l]) => opt(k, l, f.fuel)).join(""))}</select>
-      <button type="button" class="btn sm" id="supModelF" aria-pressed="${String(f.model)}" title="Chỉ xem nhà cung cấp có bảng model (số model ở cột Vai trò)" style="${f.model ? "border-color:var(--violet);color:var(--violet)" : ""}">${f.model ? "☑" : "☐"} Có model</button>
+      <select id="supModel" title="Nhà cung cấp có / không có bảng model (số model ở cột Vai trò)">${raw(opt("", "Model", f.model) + [["yes", "Có model"], ["no", "Không có model"]].map(([k, l]) => opt(k, l, f.model)).join(""))}</select>
     </div>
     <div class="row suprow">
       <select id="supCountry">${raw(opt("", "Quốc gia", f.country) + countries.map((k) => opt(k, SUP_CGROUP_LABEL[k] || k, f.country)).join(""))}</select>
@@ -3541,7 +3541,7 @@ function renderSuppliers() {
   $("#supUnit").onchange = (e) => set("unit", e.target.value);
   $("#supExclF").onclick = () => { supFilter = { ...supFilter, excl: !supFilter.excl }; renderSuppliers(); };
   $("#supFavF").onclick = () => { supFilter = { ...supFilter, fav: !supFilter.fav }; renderSuppliers(); };
-  $("#supModelF").onclick = () => { supFilter = { ...supFilter, model: !supFilter.model }; renderSuppliers(); };
+  $("#supModel").onchange = (e) => set("model", e.target.value);
   $("#supWonF").onclick = () => {
     supFilter = { ...supFilter, won: !supFilter.won };
     renderSuppliers();
