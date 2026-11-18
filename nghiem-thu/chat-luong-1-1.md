@@ -1,5 +1,20 @@
 # Nghiệm thu: Chất lượng 1, chặng 1 (cổng kiểm theo dòng — chỉ phát hiện)
 
+## Cập nhật 18/11/2026 — sửa theo quyết định của Khoa (commit 7bea37c0057889c6415f55c4d10a791c19c68ea3, PR #923)
+Khoa quyết (qua điều phối): (1) BỎ "bảng đọc được ít dòng"; (2) số xi lanh lệch số đông: CHỈ HIỆN CỜ; (3) số vô lý: LOẠI khỏi gợi ý, Khoa bấm "cho dùng" khi cần; (4) đảo vai: KHÔNG dùng; (5) NCC quá nửa bảng nghi: điều phối chạy lệnh mỗi lần rà sổ.
+- `row-flags.mjs`: xoá hẳn mã `lowRead` và `swap` (không để mã chết; bỏ cả tuỳ chọn `--skip` chỉ dùng cho chúng); thêm `LEVEL = { absurd: "drop", cylMaj: "show" }` và `dropped(f)` (dòng bị loại khi có ít nhất một lý do mức drop); tóm tắt in số bị loại; `--json` ghi thêm `drop`.
+- Test: bỏ ca lowRead, thêm ca mức (`absurd` → drop, `cylMaj` → không drop, chỉ hai lý do). `node --test suppliers/row-flags.test.mjs` → `# pass 6  # fail 0`.
+- `suppliers/CLAUDE.md`: mục cổng kiểm ghi mức và hai dấu hiệu Khoa bỏ (vì sao, đừng thêm lại).
+- Số mới, chạy lại toàn bộ cn (`node suppliers/row-flags.mjs`, gốc 140caccd):
+```
+bản ghi 58963 (khoá khác nhau 58394), bị gắn cờ 193, trong đó bị loại (mức drop) 51
+    51  absurd (drop)  số vô lý so với công suất của dòng
+   143  cylMaj (show)  số xi lanh lệch số đông NCC khác
+NCC quá nửa số bảng bị nghi:
+  huipu-power: 4/6
+```
+(193 = 51 + 143 − 1 dòng có cả hai: mingbang TAD1642GE.) Soát từng dòng của 51 / 143 như ở dưới, không đổi. Các mục "lowRead", "swap" bên dưới là số của vòng đầu, giữ để biết vì sao Khoa bỏ.
+
 - PR (draft, KHÔNG tự merge): https://github.com/khoanguyenminh6868/GenSet-Pro/pull/923 — nhánh `chat-luong-1`, gốc `origin/main` 140caccd (đã gồm #910).
 - Tệp đổi: `suppliers/row-flags.mjs` (mới), `suppliers/row-flags.test.mjs` (mới), `suppliers/CLAUDE.md` (thêm một mục: cổng kiểm + bẫy).
 - KHÔNG đụng `suppliers/config-bot.mjs`, `web/catalog.js`, `web/index.html`; không ghi web; không đo top 30; không sửa dữ liệu NCC.
