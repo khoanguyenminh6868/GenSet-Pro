@@ -26,7 +26,10 @@ for (const k of Object.keys(A)) {
   for (const [rk, x, y] of changed) {
     const g = cylWin.get(y?.eng || x?.eng);
     const cylNew = (y?.ruled || []).includes("cyl") && !(x?.ruled || []).includes("cyl");
-    const c = cylNew && g ? "đổi: thêm luật [cyl] theo số đông" : "đổi: KHÁC";
+    // Khoá gopRow là NCC | dòng: hai dòng cùng chữ khác động cơ (cooltech-shanghai "PRIME POWER 80KW/100KVA": TAD531GE và
+    // 6BT59G2) chung một khoá, bản ghi sau đè bản trước; ở nhánh dòng TAD531GE bị loại [cyl] nên khoá hiện dòng kia.
+    const collide = x && y && x.eng !== y.eng;
+    const c = cylNew && g ? "đổi: thêm luật [cyl] theo số đông" : collide ? "đổi: khoá NCC | dòng trùng hai động cơ (hiện dòng khác)" : "đổi: KHÁC";
     add(c);
     if (c.includes("KHÁC") || !ta.includes(rk)) console.log(`  ${c} ${k} ${rk.slice(0, 90)}  ${x?.st}${x?.ti ?? ""} ${x?.score} [${x?.ruled || ""}] → ${y?.st}${y?.ti ?? ""} ${y?.score} [${y?.ruled || ""}]${c.includes("KHÁC") ? " " + gdesc(g) : ""}`);
   }
@@ -39,9 +42,17 @@ for (const k of Object.keys(A)) {
   for (const r of outs) {
     const x = a.rows[r], y = b.rows[r], g = cylWin.get(x.eng);
     const ok = y?.st === "dropped" && (y.ruled || []).includes("cyl") && !(x?.ruled || []).includes("cyl") && g;
-    const c = ok ? "ra: loại [cyl] theo số đông" : "ra: KHÁC";
+    // Không bị loại, điểm không đổi: bị đẩy vì giới hạn chọn của candidates (PER_ENGINE 3, PER_SUPPLIER 4, MAKE_CAP 10): một dòng
+    // VÀO cùng động cơ / NCC / hãng, điểm ≥, chiếm suất (NCC / hãng của nó vừa được nhả chỗ do dòng bị loại [cyl]).
+    const sup = (rk) => rk.split("|")[0], mk = (m) => (m || "?").split(" / ")[0];
+    const pusher = !ok && y && y.st !== "dropped" && y.score === x.score && ins.map((q) => [q, b.rows[q]]).find(([q, z]) => z.score >= x.score && (z.eng === x.eng || sup(q) === sup(r) || mk(z.make) === mk(x.make)));
+    const why = pusher ? (pusher[1].eng === x.eng ? "cùng động cơ (PER_ENGINE 3)" : sup(pusher[0]) === sup(r) ? "cùng NCC (PER_SUPPLIER 4)" : "cùng hãng (MAKE_CAP 10)") : "";
+    // NCC đã đủ PER_SUPPLIER (4) dòng ở nhánh: suất CN_ROWS (12 dòng hãng TQ chọn trước) lấp chỗ dòng TQ bị loại [cyl] bằng
+    // dòng TQ điểm thấp hơn của chính NCC này (IB2200065274: fdk-energy SDEC 225/217/213/205 → ba dòng Cummins 284 hết suất).
+    const full = !ok && !pusher && y && y.st !== "dropped" && y.score === x.score && tb.filter((q) => sup(q) === sup(r)).length >= 4;
+    const c = ok ? "ra: loại [cyl] theo số đông" : pusher ? `ra: bị đẩy, giới hạn ${why}` : full ? "ra: bị đẩy, NCC đủ 4 dòng (PER_SUPPLIER) qua suất CN_ROWS" : "ra: KHÁC";
     add(c);
-    console.log(`  RA  ${r.slice(0, 100)}\n      main top#${x.ti} điểm ${x.score} → nhánh ${y?.st} [${y?.ruled || ""}]; ${x.make} ${x.eng}; ${gdesc(g)}`);
+    console.log(`  RA  ${r.slice(0, 100)}\n      main top#${x.ti} điểm ${x.score} → nhánh ${y?.st} [${y?.ruled || ""}]; ${x.make} ${x.eng}; ${pusher ? `bị đẩy bởi ${pusher[0].slice(0, 70)} (${pusher[1].eng}, điểm ${pusher[1].score})` : gdesc(g)}`);
   }
   for (const r of ins) {
     const x = a.rows[r], y = b.rows[r];

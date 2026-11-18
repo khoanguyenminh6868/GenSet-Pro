@@ -1,0 +1,1729 @@
+4:== IB2200004566#0 (ra 1, vào 1)
+5:  RA  rise-power||RDL28|28/35|308/385|D226B3D|LSA432S1|1650×760×1350|2500×1000×1500|720|1450
+6:      main top#24 điểm 253 → nhánh dropped [cyl]; Deutz / Weichai D226B3D; số đông xi lanh 3 {"3":9,"4":1}; nguồn khác: aoke-yangzhou «4»
+7:  VÀO rcg-power||RDC35D6S|35KVA/28KW|39KVA/31KW|4B39G12|S0L2P1|PDF
+8:      main all hạng 74 điểm 233 → nhánh top#29 điểm 233
+12:== IB2200004916#0 (ra 1, vào 1)
+13:  RA  rise-power||RDL28|28/35|308/385|D226B3D|LSA432S1|1650×760×1350|2500×1000×1500|720|1450
+14:      main top#24 điểm 253 → nhánh dropped [cyl]; Deutz / Weichai D226B3D; số đông xi lanh 3 {"3":9,"4":1}; nguồn khác: aoke-yangzhou «4»
+15:  VÀO rcg-power||RDC35D6S|35KVA/28KW|39KVA/31KW|4B39G12|S0L2P1|PDF
+16:      main all hạng 74 điểm 233 → nhánh top#29 điểm 233
+64:== IB2200008211#0 (ra 4, vào 4)
+65:  RA  fdk-energy||CD103V1/H1CONTACT|103KVA/82KW|94KVA/75KW|4BTA39G13|CUMMINS(CHINADONGFENG)|STAMFORDUCI274
+66:      main top#6 điểm 284 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+67:  RA  fdk-energy||CD110V2/H1CONTACT|110KVA/88KW|100KVA/80KW|4BTAA39G3|CUMMINS(CHINADONGFENG)|STAMFORDUCI27
+68:      main top#7 điểm 284 → nhánh dropped [cyl]; Cummins 4BTAA39G3; số đông xi lanh 4 {"4":4,"6":1}; nguồn khác: bdadl-shanghai «6»
+69:  RA  longkai-power||POWERYOURFUTURE|4BTA39G13|CUMMINSGENERATOR|PRIMEPOWER:75KW/9375KVAGENERATORWILLBEREAD
+70:      main top#9 điểm 278 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+71:  RA  dingbo||XG80GF|80/100|88/110|TAD531GE|LSA443S5|2200X720X1380|1200
+72:      main top#17 điểm 260 → nhánh dropped [cyl]; Volvo Penta TAD531GE; số đông xi lanh 4 {"4":16}; nguồn khác: aoke-yangzhou «6»
+73:  VÀO fdk-energy||CD110EV3/H1CONTACT|110KVA/88KW|100KVA/80KW|QSB59G2|CUMMINS(CHINADONGFENG)|STAMFORDUCI274
+74:      main all hạng 18 điểm 276 → nhánh top#7 điểm 276
+75:  VÀO fdk-energy||CD125/H1CONTACT|125KVA/100KW|113KVA/90KW|6BTA59G2|CUMMINS(CHINADONGFENG)|STAMFORDUCI274D
+76:      main all hạng 19 điểm 273 → nhánh top#8 điểm 273
+77:  VÀO sanq-power||SQC125|100/125|91/114|6BTA59G2|UCI274D|255|1297|2130|2200×830×1325|3200×1133×1766
+78:      main all hạng 24 điểm 272 → nhánh top#10 điểm 272
+79:  VÀO eastern-lion-fuan||GF/GFSYC92|92|115|102|128|YC6B155LD21|103|EL274D|96|SMARTGEN6120|DETAIL
+80:      main all hạng 82 điểm 232 → nhánh top#29 điểm 232
+192:== IB2200015404#0 (ra 4, vào 4)
+193:  RA  fdk-energy||P16/H1CONTACT|16KVA/13KW|15KVA/12KW|403A15G2|PERKINSCHINA|STAMFORDS0L1P1|CLICKHERE|DOWNL
+194:      main top#0 điểm 281 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+195:  RA  jet-power||P17|17|14|15|12|403A15G2|3L|84X90|1496|5|PI044G|1350*660*1050|498|1950*860*1060|698
+196:      main top#1 điểm 281 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+197:  RA  sanq-power||SQP16|13/16|12/15|403A15G2|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304
+198:      main top#2 điểm 281 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+199:  RA  sanq-power||SQP176|14/18|13/16|403D15G|PI044F|WUXI|510|1010|1500X650X1225|2200X1033X1306|
+200:      main top#6 điểm 274 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+201:  VÀO fdk-energy||Y23V2H1CONTACT|23KVA/18KW|20KVA/16KW|YCDV254FHZ25|YUCHAI(CHINA)|NIANFENGNF184D|CLICKHERE
+202:      main all hạng 46 điểm 240 → nhánh top#22 điểm 240
+203:  VÀO sanq-power||SQP22|18/22|16/20|404D22G|PI144D|WUXI|610|1070|1500×650×1225|2200×1033×1304
+204:      main all hạng 55 điểm 236 → nhánh top#27 điểm 236
+205:  VÀO bobig-power||BP22|16|20|18|22|404A22G1MADEINCHINA|16|BW184E|1300*650*1000|1900*850*1050
+206:      main all hạng 57 điểm 236 → nhánh top#28 điểm 236
+207:  VÀO bobig-power||BC22|16|20|18|22|4B39G11|20|BW184ES|1450*620*1125|1950*850*1050
+208:      main all hạng 64 điểm 236 → nhánh top#29 điểm 236
+670:== IB2200020589#0 (ra 3, vào 3)
+671:  RA  gb-power|STANDARDFEATURES|MODEL|GBP15|STANDBYPOWER(50HZ)|11KW/14KVA|PRIMEPOWER(50HZ)|10KW/125KVA|ENG
+672:      main top#0 điểm 281 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+673:  RA  sanq-power||SQP15|12/145|105/131|403D15G|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304
+674:      main top#1 điểm 276 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+675:  RA  wintpower||WTP15|145/116|13/104|37|403D15G|3L|15|12|135|MECH|1480*750*1300|469
+676:      main top#3 điểm 225 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+677:  VÀO voltgent||VSC135S4|13|11|125|10|SDEC|3ZT11G42|[EN][RU][ES][PT]
+678:      main all hạng 83 điểm 165 → nhánh top#24 điểm 165
+679:  VÀO comappower||COM15K|15KVA|119KW|135KVA|108KW|V1505E2BG|4|COM15K
+680:      main all hạng 84 điểm 165 → nhánh top#25 điểm 165
+681:  VÀO jet-power||RATEDFREQUENCY(HZ)|5060|5060|5060|5060|RATEDOUTPUT(KVA)|910|1112|1314|16|MAXOUTPUT(KVA)|1
+682:      main all hạng 237 điểm 77 → nhánh top#29 điểm 77
+812:== IB2200029921#0 (ra 4, vào 4)
+813:  RA  fdk-energy||P10/H1CONTACT|10KVA/8KW|9KVA/7KW|403A11G1|PERKINSCHINA|STAMFORDS0L1H1|CLICKHERE|DOWNLOAD
+814:      main top#0 điểm 275 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+815:  RA  jet-power||P10|10|8|9|7|403A11G1|3L|77X81|1131|3|PI044E|1200*650*950|352|1950*860*1060|552
+816:      main top#1 điểm 272 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+817:  RA  sanq-power||SQP10|8/10|7/9|403A11G1|PI044E|WUXI|450|896|1260X630X730|2200X1033X1304
+818:      main top#2 điểm 272 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+819:  RA  elitech-power||EPS11PA3|PERKINS|11KVA|12KVA|403D15G|50HZ|3PHASE|DOWNLOADPDF|EPS11PA3PERKINS11KVADIES
+820:      main top#4 điểm 200 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+821:  VÀO rise-power||RXL8|8/10|9/11|3N17D|SLW88|1400×550×900|580
+822:      main all hạng 68 điểm 127 → nhánh top#19 điểm 127
+823:  VÀO mecca-power||MC10D|10|74|9|68|SP103NE|KOREA|24|3L|10|E|1090*500*1000|353
+824:      main all hạng 72 điểm 119 → nhánh top#21 điểm 119
+825:  VÀO mecca-power||MC10D|10|74|9|68|SP103NH|KOREA|24|3L|10|E|1090*500*1000|353
+826:      main all hạng 73 điểm 119 → nhánh top#22 điểm 119
+827:  VÀO long-gen||LGKS11|8|10|88|11|D1105E2BGCHN1|95|S0L1H1|10|AMF20|DOWNLOAD
+828:      main all hạng 80 điểm 109 → nhánh top#25 điểm 109
+840:== IB2200029975#0 (ra 1, vào 1)
+841:  RA  sanq-power||SQP206|16/20|14/18|403A15G2|PI044F|WUXI|620|1140|1500×650×1225|2200×1033×1306|
+842:      main top#26 điểm 281 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+843:  VÀO gb-power||MODEL|GBP25|STANDBYPOWER(50HZ)|22KW/275KVA|PRIMEPOWER(50HZ)|20KW/25KVA|ENGINE|PERKINS404D2
+844:      main all hạng 54 điểm 278 → nhánh top#29 điểm 278
+884:== IB2200030282#0 (ra 4, vào 4)
+885:  RA  fdk-energy||SC138V1H1CONTACT|138KVA/110KW|125KVA/100KW|4HTAA43G36|SHANGCHAI(CHINA)|NIANFENGNF274E|CL
+886:      main top#2 điểm 267 → nhánh dropped [cyl]; SDEC 4HTAA43G36; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: hanyang-weifang «6»
+887:  RA  fdk-energy||SC138V1H1CONTACT|138KVA/110KW|125KVA/100KW|4HTAA43G36|SHANGCHAI(CHINA)|NIANFENGNFS274D|C
+888:      main top#5 điểm 255 → nhánh dropped [cyl]; SDEC 4HTAA43G36; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: hanyang-weifang «6»
+889:  RA  bobig-power||BC1375S|100|125|110|138|4BTAA39G3|106|BW274D|2120*850*1400|2850*1040*1430
+890:      main top#9 điểm 255 → nhánh dropped [cyl]; Cummins 4BTAA39G3; số đông xi lanh 4 {"4":4,"6":1}; nguồn khác: bdadl-shanghai «6»
+891:  RA  rcg-power||RSC125D5S|125KVA/100KW|138KVA/110KW|4HTAA43G36|WR274DL|PDF
+892:      main top#24 điểm 215 → nhánh dropped [cyl]; SDEC 4HTAA43G36; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: hanyang-weifang «6»
+893:  VÀO powerzoo|FREQUENCY:60HZMODEL:F119P6PRIMEPOWER(KW/KVA):95/1188STANDBYPOWER(KW/KVA):1045/1306ENGINE:CA
+894:      main all hạng 59 điểm 205 → nhánh top#26 điểm 205
+895:  VÀO koten-power||KF120D6|96|120|106|132|CA6DF2D16D|
+896:      main all hạng 60 điểm 204 → nhánh top#27 điểm 204
+897:  VÀO minsun-motor||GFF120|120|96|CA6DF2D16D|SYA274C
+898:      main all hạng 61 điểm 204 → nhánh top#28 điểm 204
+899:  VÀO comappower||COM143V|143KVA|114KW|130KVA|104KW|TAD750GE|6|COM143V
+900:      main all hạng 62 điểm 203 → nhánh top#29 điểm 203
+948:== IB2200031154#0 (ra 4, vào 4)
+949:  RA  fdk-energy||CD103V1/H1CONTACT|103KVA/82KW|94KVA/75KW|4BTA39G13|CUMMINS(CHINADONGFENG)|STAMFORDUCI274
+950:      main top#6 điểm 284 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+951:  RA  fdk-energy||CD110V2/H1CONTACT|110KVA/88KW|100KVA/80KW|4BTAA39G3|CUMMINS(CHINADONGFENG)|STAMFORDUCI27
+952:      main top#7 điểm 284 → nhánh dropped [cyl]; Cummins 4BTAA39G3; số đông xi lanh 4 {"4":4,"6":1}; nguồn khác: bdadl-shanghai «6»
+953:  RA  longkai-power||POWERYOURFUTURE|4BTA39G13|CUMMINSGENERATOR|PRIMEPOWER:75KW/9375KVAGENERATORWILLBEREAD
+954:      main top#9 điểm 278 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+955:  RA  dingbo||XG80GF|80/100|88/110|TAD531GE|LSA443S5|2200X720X1380|1200
+956:      main top#17 điểm 260 → nhánh dropped [cyl]; Volvo Penta TAD531GE; số đông xi lanh 4 {"4":16}; nguồn khác: aoke-yangzhou «6»
+957:  VÀO fdk-energy||CD110EV3/H1CONTACT|110KVA/88KW|100KVA/80KW|QSB59G2|CUMMINS(CHINADONGFENG)|STAMFORDUCI274
+958:      main all hạng 18 điểm 276 → nhánh top#7 điểm 276
+959:  VÀO fdk-energy||CD125/H1CONTACT|125KVA/100KW|113KVA/90KW|6BTA59G2|CUMMINS(CHINADONGFENG)|STAMFORDUCI274D
+960:      main all hạng 19 điểm 273 → nhánh top#8 điểm 273
+961:  VÀO sanq-power||SQC125|100/125|91/114|6BTA59G2|UCI274D|255|1297|2130|2200×830×1325|3200×1133×1766
+962:      main all hạng 24 điểm 272 → nhánh top#10 điểm 272
+963:  VÀO eastern-lion-fuan||GF/GFSYC92|92|115|102|128|YC6B155LD21|103|EL274D|96|SMARTGEN6120|DETAIL
+964:      main all hạng 82 điểm 232 → nhánh top#29 điểm 232
+1228:== IB2200038691#0 (ra 2, vào 2)
+1229:  RA  sanq-power||SQD550|440/550|400/500|DP158LD|HCI544C|97|3720|5700|3300X1280X1950|4800X1683X2200
+1230:      main top#5 điểm 287 → nhánh dropped [cyl]; Doosan / Hyundai DP158LD; số đông xi lanh 8 {"6":1,"8":13}; nguồn khác: hosem-power «6 Cylinder In Line»
+1231:  RA  uleengen||UP500GF|400|500|2506CE15TAG2|PERKINS|435|6L|137×171|152|935|S5L1DC41|3310X1180X1950|3940
+1232:      main top#20 điểm 281 → nhánh all []; Perkins 2506CE15TAG2; bị đẩy bởi sanq-power||SQP550|440/550|400/500|2506CE15TAG2|HCI544D|USA|3551|5166| (2506CE15TAG2, điểm 284)
+1233:  VÀO sanq-power||SQP550|440/550|400/500|2506CE15TAG2|HCI544D|USA|3551|5166|3500×1540×1850|4700×1583×2200
+1234:      main all hạng 19 điểm 284 → nhánh top#11 điểm 284
+1235:  VÀO uleengen||UC500GF|400|500|KTA19G3|CUMMINS|463|6|159*159|189|103|HCI444F|3250X1280X2100|3800
+1236:      main all hạng 56 điểm 278 → nhánh top#22 điểm 278
+1439:== IB2200043097#0 (ra 10, vào 10)
+1440:  RA  gb-power|STANDARDFEATURES|MODEL|GBP15|STANDBYPOWER(50HZ)|11KW/14KVA|PRIMEPOWER(50HZ)|10KW/125KVA|ENG
+1441:      main top#0 điểm 281 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+1442:  RA  fdk-energy||P14/H1CONTACT|14KVA/11KW|13KVA/10KW|403A15G1|PERKINSCHINA|STAMFORDS0L1L1|CLICKHERE|DOWNL
+1443:      main top#1 điểm 273 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+1444:  RA  jet-power||P14|14|11|13|10|403A15G1|3L|84X90|1496|37|PI044F|1200*650*950|426|1950*860*1060|626
+1445:      main top#2 điểm 273 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+1446:  RA  uleengen||UP13GF|10|13|403A15G1|PERKINS|12|3L|84×90|1496|24|S0L1L1|1580X810X930|520
+1447:      main top#3 điểm 273 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+1448:  RA  sanq-power||SQP15|12/145|105/131|403D15G|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304
+1449:      main top#4 điểm 272 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+1450:  RA  eastern-lion-fuan||GFSP14|104|13|12|14|403D15G|20362|EL164C|108|SMARTGEN6120|DETAIL
+1451:      main top#6 điểm 261 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+1452:  RA  fdk-energy||P16/H1CONTACT|16KVA/13KW|15KVA/12KW|403A15G2|PERKINSCHINA|STAMFORDS0L1P1|CLICKHERE|DOWNL
+1453:      main top#7 điểm 256 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+1454:  RA  jet-power||P17|17|14|15|12|403A15G2|3L|84X90|1496|5|PI044G|1350*660*1050|498|1950*860*1060|698
+1455:      main top#8 điểm 256 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+1456:  RA  sanq-power||SQP16|13/16|12/15|403A15G2|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304
+1457:      main top#9 điểm 256 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+1458:  RA  longkai-power||LG9P|12|10|11|9|403A11G1|OP1500*750*1050|AT1808*850*1130|
+1459:      main top#20 điểm 229 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+1460:  VÀO elitech-power|MODEL:EPS125PKA3S|13KVA|1PHASE,3PHASE|50HZ,60HZ|POWER(KVA)|13|ENGINEMODEL|404D22G|PHAS
+1461:      main all hạng 56 điểm 221 → nhánh top#15 điểm 221
+1462:  VÀO jet-power||GF14|14|11|13|10|K2105D|L2|MECHANICAL|2026|105×117|JET164C
+1463:      main all hạng 92 điểm 213 → nhánh top#20 điểm 213
+1464:  VÀO jet-power||YD17|165|132|15|12|YD485D/17KW|L4|MECHANICAL|2043|85×90|JET164D/128KW|1650*800*1000|580|2
+1465:      main all hạng 96 điểm 212 → nhánh top#21 điểm 212
+1466:  VÀO sanq-power||SQY165|132/165|12/15|3TNV84TGGE|PI044G|367|496|956|1500X650X1225|2200X1033X1304
+1467:      main all hạng 100 điểm 208 → nhánh top#23 điểm 208
+1468:  VÀO yongcai-elecmama||YCM10QC50|14|11|13|10|QUANCHAI|QC480D|12514|ELECMAMA164C|108KW
+1469:      main all hạng 101 điểm 205 → nhánh top#24 điểm 205
+1470:  VÀO comappower||COM17|17KVA|132KW|15KVA|12KW|YND485D|4|COM17
+1471:      main all hạng 117 điểm 204 → nhánh top#25 điểm 204
+1472:  VÀO koten-power||MODEL|KS15D5|FREQUENCY|50HZ|PHASE|3PH|VOLTAGE|230/400V|PRIMEPOWER|12KW/15KVA|STANDBYPOW
+1473:      main all hạng 127 điểm 204 → nhánh top#26 điểm 204
+1474:  VÀO minsun-motor||GFS15|15|12|4Z23G11|SYA164D
+1475:      main all hạng 128 điểm 204 → nhánh top#27 điểm 204
+1476:  VÀO hosem-power||AAY16M|15|12|50HZ/400V|4TNV88GGE|1100|570|910
+1477:      main all hạng 131 điểm 204 → nhánh top#28 điểm 204
+1478:  VÀO elitech-power||EPS15YCA3|YUCHAI|15KVA|165KVA|YC4V35D20|50HZ|3PHASE|DOWNLOADPDF|EPS15YCA3YUCHAI15KVAD
+1479:      main all hạng 132 điểm 204 → nhánh top#29 điểm 204
+1486:== IB2200043601#0 (ra 1, vào 1)
+1487:  RA  rise-power||RDL40|40/50|44/55|TD226B3D|LSA432S35|1650×760×1350|2500×1000×1500|740|1450
+1488:      main top#27 điểm 253 → nhánh dropped [cyl]; Deutz / Weichai TD226B3D; số đông xi lanh 3 {"3":8,"4":1}; nguồn khác: aoke-yangzhou «4»
+1489:  VÀO longkai-power||POWERYOURFUTURE|QSB39G2|CUMMINSGENERATOR|PRIMEPOWER:48KW/60KVAGENERATORWILLBEREADYTOR
+1490:      main all hạng 72 điểm 250 → nhánh top#29 điểm 250
+1494:== IB2200044785#0 (ra 1, vào 1)
+1495:  RA  rise-power||RDL28|28/35|308/385|D226B3D|LSA432S1|1650×760×1350|2500×1000×1500|720|1450
+1496:      main top#24 điểm 253 → nhánh dropped [cyl]; Deutz / Weichai D226B3D; số đông xi lanh 3 {"3":9,"4":1}; nguồn khác: aoke-yangzhou «4»
+1497:  VÀO rcg-power||RDC35D6S|35KVA/28KW|39KVA/31KW|4B39G12|S0L2P1|PDF
+1498:      main all hạng 74 điểm 233 → nhánh top#29 điểm 233
+1682:== IB2200060818#0 (ra 4, vào 4)
+1683:  RA  fdk-energy||CD103V1/H1CONTACT|103KVA/82KW|94KVA/75KW|4BTA39G13|CUMMINS(CHINADONGFENG)|STAMFORDUCI274
+1684:      main top#6 điểm 284 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+1685:  RA  fdk-energy||CD110V2/H1CONTACT|110KVA/88KW|100KVA/80KW|4BTAA39G3|CUMMINS(CHINADONGFENG)|STAMFORDUCI27
+1686:      main top#7 điểm 284 → nhánh dropped [cyl]; Cummins 4BTAA39G3; số đông xi lanh 4 {"4":4,"6":1}; nguồn khác: bdadl-shanghai «6»
+1687:  RA  longkai-power||POWERYOURFUTURE|4BTA39G13|CUMMINSGENERATOR|PRIMEPOWER:75KW/9375KVAGENERATORWILLBEREAD
+1688:      main top#9 điểm 278 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+1689:  RA  dingbo||XG80GF|80/100|88/110|TAD531GE|LSA443S5|2200X720X1380|1200
+1690:      main top#17 điểm 260 → nhánh dropped [cyl]; Volvo Penta TAD531GE; số đông xi lanh 4 {"4":16}; nguồn khác: aoke-yangzhou «6»
+1691:  VÀO fdk-energy||CD110EV3/H1CONTACT|110KVA/88KW|100KVA/80KW|QSB59G2|CUMMINS(CHINADONGFENG)|STAMFORDUCI274
+1692:      main all hạng 18 điểm 276 → nhánh top#7 điểm 276
+1693:  VÀO fdk-energy||CD125/H1CONTACT|125KVA/100KW|113KVA/90KW|6BTA59G2|CUMMINS(CHINADONGFENG)|STAMFORDUCI274D
+1694:      main all hạng 19 điểm 273 → nhánh top#8 điểm 273
+1695:  VÀO sanq-power||SQC125|100/125|91/114|6BTA59G2|UCI274D|255|1297|2130|2200×830×1325|3200×1133×1766
+1696:      main all hạng 24 điểm 272 → nhánh top#10 điểm 272
+1697:  VÀO eastern-lion-fuan||GF/GFSYC92|92|115|102|128|YC6B155LD21|103|EL274D|96|SMARTGEN6120|DETAIL
+1698:      main all hạng 82 điểm 232 → nhánh top#29 điểm 232
+1777:== IB2200065274#0 (ra 11, vào 11)
+1778:  RA  fdk-energy|CUMMINSMODEL:KTA38G2GENERALFEATURES:|FDKDIESELGENERATORSET|DATA|GENSETMODEL|FDKCC825/H1|E
+1779:      main top#0 điểm 284 → nhánh all []; Cummins KTA38G2; số đông xi lanh 12 {"12":27}; nguồn khác: bdadl-shanghai «6», xinhengxin-fujian «6»
+1780:  RA  fdk-energy|CUMMINSMODEL:KTA38G2BGENERALFEATURES:|FDKDIESELGENERATORSET|DATA|GENSETMODEL|FDKCC900/H1|
+1781:      main top#1 điểm 284 → nhánh all []; Cummins KTA38G2B; số đông xi lanh 12 {"12":26}; nguồn khác: bdadl-shanghai «6», xinhengxin-fujian «6»
+1782:  RA  fdk-energy|CUMMINSMODEL:KT38GAGENERALFEATURES:|FDKDIESELGENERATORSET|DATA|GENSETMODEL|FDKCC800/H1|EN
+1783:      main top#3 điểm 284 → nhánh all []; Cummins KT38GA; số đông xi lanh 12 {"6":1,"12":9}; nguồn khác: bdadl-shanghai «6»
+1784:  RA  longkai-power||POWERYOURFUTURE|SC33W990D2|SDECGENERATOR|PRIMEPOWER:600KW/750KVAGENERATORWILLBEREADYT
+1785:      main top#6 điểm 278 → nhánh dropped [cyl]; SDEC SC33W990D2; số đông xi lanh 6 {"6":24,"12":3}; nguồn khác: aoke-yangzhou «12», taihai-taizhou «12», victory-generator «12V»
+1786:  RA  dingbo||XG600GF|600/750|660/825|SC33W990D2|1FC24514|4550X1750X2189|5860
+1787:      main top#11 điểm 269 → nhánh dropped [cyl]; SDEC SC33W990D2; số đông xi lanh 6 {"6":24,"12":3}; nguồn khác: aoke-yangzhou «12», taihai-taizhou «12», victory-generator «12V»
+1788:  RA  jet-power||SD825|825|660|750|600|SC33W990D2|L6|ELECTRIC|328|180X215|JET634B
+1789:      main top#12 điểm 269 → nhánh dropped [cyl]; SDEC SC33W990D2; số đông xi lanh 6 {"6":24,"12":3}; nguồn khác: aoke-yangzhou «12», taihai-taizhou «12», victory-generator «12V»
+1790:  RA  bobig-power||BSD990|720|900|792|990|SC33W1150D2|782|BW404D|4360*1600*3375|5600*2200*2550
+1791:      main top#17 điểm 256 → nhánh dropped [cyl]; SDEC SC33W1150D2; số đông xi lanh 6 {"6":21,"12":2}; nguồn khác: aoke-yangzhou «12», victory-generator «12V»
+1792:  RA  eastern-lion-fuan||GF/GFSYC640|640|800|711|889|YC6C1070LD20|715|EL404C|640|SMARTGEN6120|DETAIL
+1793:      main top#21 điểm 245 → nhánh dropped [cyl]; Yuchai YC6C1070LD20; số đông xi lanh 6 {"6":10,"12":1}; nguồn khác: fukangsi-yangzhou «12», pengpai-yangzhou «12»
+1794:  RA  acepow-fuan||APW600|600|750|660|825|LV634B|600|660|12M26D748E200|680
+1795:      main top#23 điểm 245 → nhánh all []; Baudouin / Weichai 12M26D748E200; bị đẩy bởi longkai-power||LG720BD|792|990|720|900|12M26G1000/5|LK634D|LSA493L9|OP (12M26G1000/5, điểm 268)
+1796:  RA  longkai-power||LG700SC|963|770|875|700|SC33W1150D2|OP4400*2140*2280|20FT|DOWNLOAD
+1797:      main top#28 điểm 220 → nhánh dropped [cyl]; SDEC SC33W1150D2; số đông xi lanh 6 {"6":21,"12":2}; nguồn khác: aoke-yangzhou «12», victory-generator «12V»
+1798:  RA  rise-power||RSM700|875|700|962|770|SC33W1150D2|6L|328|<1954|≦06|75|56|4433*1775*2378|8000
+1799:      main top#29 điểm 220 → nhánh dropped [cyl]; SDEC SC33W1150D2; số đông xi lanh 6 {"6":21,"12":2}; nguồn khác: aoke-yangzhou «12», victory-generator «12V»
+1800:  VÀO dingbo||XG600GF|600/750|660/825|KTA38G2|LVI634B1|4200X1820X2250|7600
+1801:      main all hạng 14 điểm 269 → nhánh top#8 điểm 269
+1802:  VÀO dingbo||XG640GF|640/800|704/7744|KTA38G2B|LVI634C1|4200X1820X2250|7700
+1803:      main all hạng 18 điểm 269 → nhánh top#9 điểm 269
+1804:  VÀO eastern-lion-fuan||GF/GFSC582|582|728|647|809|KT38GA|647|EL354H|600KW|SMARTGEN6120|DETAIL
+1805:      main all hạng 30 điểm 269 → nhánh top#13 điểm 269
+1806:  VÀO longkai-power||LG720BD|792|990|720|900|12M26G1000/5|LK634D|LSA493L9|OP4100*2000*2250|20FT|
+1807:      main all hạng 38 điểm 268 → nhánh top#14 điểm 268
+1808:  VÀO fdk-energy||SC825V2H1CONTACT|825KVA/660KW|750KVA/600KW|6KTAA25G37|SHANGCHAI(CHINA)|NIANFENGNF354H|CL
+1809:      main all hạng 234 điểm 217 → nhánh top#23 điểm 217
+1810:  VÀO fdk-energy||SC825V3H1CONTACT|825KVA/660KW|750KVA/600KW|SC25K990D2|SHANGCHAI(CHINA)|NIANFENGNFS5H|CLI
+1811:      main all hạng 292 điểm 213 → nhánh top#24 điểm 213
+1812:  VÀO byc-power||BYYC825|600|750|660|825|YCTD201000G30|1500|668|634B|600
+1813:      main all hạng 293 điểm 213 → nhánh top#25 điểm 213
+1814:  VÀO byc-power||BYYC900|650|813|720|900|YCTH281070G31|1500|715|634C|640
+1815:      main all hạng 300 điểm 211 → nhánh top#26 điểm 211
+1816:  VÀO jet-power||GF1000|1000|800|910|728|K33G1500D|12V|ELECTRIC|3115|138×168|JET634D
+1817:      main all hạng 302 điểm 207 → nhánh top#27 điểm 207
+1818:  VÀO fdk-energy||SC825V2H1CONTACT|825KVA/660KW|750KVA/600KW|6KTAA25G37|SHANGCHAI(CHINA)|NIANFENGNFS5H|CLI
+1819:      main all hạng 316 điểm 205 → nhánh top#28 điểm 205
+1820:  VÀO byc-power||BYYC1000|720|900|800|1000|YCTH281220G31|1500|815|634D|730
+1821:      main all hạng 332 điểm 200 → nhánh top#29 điểm 200
+1866:== IB2200069368#0 (ra 6, vào 6)
+1867:  RA  jet-power||V138|138|110|125|100|TAD750GE|4/INLINE|108×130MM|476|ELECTRONIC|180:1|UCI274E
+1868:      main top#3 điểm 270 → nhánh dropped [cyl]; Volvo Penta TAD750GE; số đông xi lanh 6 {"4":1,"6":9}; nguồn khác: liangzi-yangzhou «4»
+1869:  RA  wintpower||WTYC150|100/125|120/150|YC6B180LD20|WT274E|2350X900X1330|2950X1100X1470
+1870:      main top#14 điểm 259 → nhánh dropped [cyl]; Yuchai YC6B180LD20; số đông xi lanh 6 {"4":1,"6":18}; nguồn khác: yunding-jiangsu «4»
+1871:  RA  dingbo||XG100GF|100/125|110/1375|YC6B180LD20|TFW21004A|2400X950X1400|1300
+1872:      main top#19 điểm 247 → nhánh dropped [cyl]; Yuchai YC6B180LD20; số đông xi lanh 6 {"4":1,"6":18}; nguồn khác: yunding-jiangsu «4»
+1873:  RA  penlucky||PLW1375/B9|1375|125|WP6D132E201|TALA44E|2475*860*1451|3230*1170*1800|VIEW
+1874:      main top#22 điểm 235 → nhánh dropped [cyl]; Weichai WP6D132E201; số đông xi lanh 6 {"4":1,"6":7}; nguồn khác: depco-power «4»
+1875:  RA  eastern-lion-fuan||GF/GFSYC112|112|140|124|156|YC6B180LD20|120|EL274E|112|SMARTGEN6120|DETAIL
+1876:      main top#25 điểm 234 → nhánh dropped [cyl]; Yuchai YC6B180LD20; số đông xi lanh 6 {"4":1,"6":18}; nguồn khác: yunding-jiangsu «4»
+1877:  RA  wintpower||WTL151|110/138|121/151|1006TAG|UCI274E|TALA44H|WT274E|3000X1100X1500|2400X900X1370
+1878:      main top#29 điểm 227 → nhánh dropped [cyl]; Perkins 1006TAG; số đông xi lanh 6 {"4":1,"6":3}; nguồn khác: mingbang-mbkl «4»
+1879:  VÀO comappower||COM138DZ|138KVA|110KW|125KVA|100KW|BF4M1013FC|4|COM138DZ
+1880:      main all hạng 54 điểm 223 → nhánh top#24 điểm 223
+1881:  VÀO koten-power||KF125D5|100|125|110|138|CA6DF217D|
+1882:      main all hạng 63 điểm 223 → nhánh top#25 điểm 223
+1883:  VÀO rcg-power||RWB125D5S(STAGE3)|125KVA/100KW|138KVA/110KW|4M12G2D3/5|UCI274ES|PDF
+1884:      main all hạng 68 điểm 223 → nhánh top#26 điểm 223
+1885:  VÀO rcg-power||RWB125D5S(STAGE3)|125KVA/100KW|138KVA/110KW|4M12G2D3/5|WR274DL|PDF
+1886:      main all hạng 69 điểm 223 → nhánh top#27 điểm 223
+1887:  VÀO voltgent||VDE1406|140|112|125|100|DEUTZ|BF4M1013ECG2|[EN][RU][ES][PT]
+1888:      main all hạng 77 điểm 215 → nhánh top#28 điểm 215
+1889:  VÀO sanq-power||SQFP138|110/138|100/125|NEF67SM1S500|UCI274E|6L|67
+1890:      main all hạng 78 điểm 214 → nhánh top#29 điểm 214
+2000:== IB2200071778#0 (ra 3, vào 3)
+2001:  RA  sanq-power||SQP176|14/18|13/16|403D15G|PI044F|WUXI|510|1010|1500X650X1225|2200X1033X1306|
+2002:      main top#0 điểm 274 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+2003:  RA  genlitec||NGENERATOR|SPECIFICATIONPERFORMANCEDATA|POWER(KVA)|15|165|MODEL|GPP15S6|GPP15D6|POWER(KW)|
+2004:      main top#12 điểm 235 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+2005:  RA  elitech-power||EPS15PA3|PERKINS|15KVA|17KVA|403D15G|50HZ|3PHASE|DOWNLOADPDF|EPS15PA3PERKINS15KVADIES
+2006:      main top#16 điểm 229 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+2007:  VÀO jet-power||IS22|22|176|20|16|JE493DB04/21KW|L4|MECHANICAL|2771|93×102|JET184D/16KW
+2008:      main all hạng 54 điểm 204 → nhánh top#27 điểm 204
+2009:  VÀO voltgent||VSC1655S4|165|132|15|12|SDEC|4Z29G43|[EN][RU][ES][PT]
+2010:      main all hạng 55 điểm 197 → nhánh top#28 điểm 197
+2011:  VÀO hosem-power||AC222|20|16|22|18|4B39G2|1550×735×1420|765
+2012:      main all hạng 56 điểm 196 → nhánh top#29 điểm 196
+2138:== IB2200083057#0 (ra 2, vào 2)
+2139:  RA  sanq-power||SQD550|440/550|400/500|DP158LD|HCI544C|97|3720|5700|3300X1280X1950|4800X1683X2200
+2140:      main top#10 điểm 287 → nhánh dropped [cyl]; Doosan / Hyundai DP158LD; số đông xi lanh 8 {"6":1,"8":13}; nguồn khác: hosem-power «6 Cylinder In Line»
+2141:  RA  stone-power||SC500E5|440|400|550|500|QSZ13G3|HCI544D|MP4004A|WHI5D
+2142:      main top#14 điểm 284 → nhánh all []; Cummins QSZ13G3; bị đẩy bởi sanq-power||SQC550|440/550|400/500|KTA19G3A|HCI544D|946|3940|6630|3350 (KTA19G3A, điểm 284)
+2143:  VÀO sanq-power||SQC550|440/550|400/500|KTA19G3A|HCI544D|946|3940|6630|3350×1280×1934|4800×1683×2200
+2144:      main all hạng 22 điểm 284 → nhánh top#12 điểm 284
+2145:  VÀO dingbo||XG380GF|380/475|418/5226|TAD1650GE|LSA472M7|3200X1160X2022|3000
+2146:      main all hạng 78 điểm 278 → nhánh top#24 điểm 278
+2409:== IB2200101576#0 (ra 2, vào 2)
+2410:  RA  sanq-power||SQD550|440/550|400/500|DP158LD|HCI544C|97|3720|5700|3300X1280X1950|4800X1683X2200
+2411:      main top#10 điểm 287 → nhánh dropped [cyl]; Doosan / Hyundai DP158LD; số đông xi lanh 8 {"6":1,"8":13}; nguồn khác: hosem-power «6 Cylinder In Line»
+2412:  RA  stone-power||SC500E5#|440|400|550|500|KTA19G4|HCI544D|MP4004A|WHI5D
+2413:      main top#16 điểm 284 → nhánh all []; Cummins KTA19G4; bị đẩy bởi sanq-power||SQC550|440/550|400/500|KTA19G3A|HCI544D|946|3940|6630|3350 (KTA19G3A, điểm 284)
+2414:  VÀO sanq-power||SQC550|440/550|400/500|KTA19G3A|HCI544D|946|3940|6630|3350×1280×1934|4800×1683×2200
+2415:      main all hạng 22 điểm 284 → nhánh top#13 điểm 284
+2416:  VÀO dingbo||XG380GF|380/475|418/5226|TAD1650GE|LSA472M7|3200X1160X2022|3000
+2417:      main all hạng 77 điểm 278 → nhánh top#23 điểm 278
+2460:== IB2200106999#0 (ra 1, vào 1)
+2461:  RA  fdk-energy||CD110V2/H1CONTACT|110KVA/88KW|100KVA/80KW|4BTAA39G3|CUMMINS(CHINADONGFENG)|STAMFORDUCI27
+2462:      main top#29 điểm 284 → nhánh dropped [cyl]; Cummins 4BTAA39G3; số đông xi lanh 4 {"4":4,"6":1}; nguồn khác: bdadl-shanghai «6»
+2463:  VÀO fdk-energy||CD125/H1CONTACT|125KVA/100KW|113KVA/90KW|6BTA59G2|CUMMINS(CHINADONGFENG)|STAMFORDUCI274D
+2464:      main all hạng 82 điểm 281 → nhánh top#29 điểm 281
+2528:== IB2300005377#0 (ra 2, vào 2)
+2529:  RA  longkai-power||LG820BD|8976|1122|816|1020|8M33G1100/5|LK634E|LSA493L10|OP4400*2000*2250|20FT|
+2530:      main top#6 điểm 271 → nhánh dropped [cyl]; Baudouin 8M33G1100/5; số đông xi lanh 8 {"8":3,"12":1}; nguồn khác: waeta-fujian «12 V»
+2531:  RA  bobig-power||BC1320S|960|1200|1056|1320|QSK38G5|1063|BW404F|5200*2150*2550|6100*2250*3050
+2532:      main top#24 điểm 249 → nhánh all []; Cummins QSK38G5; bị đẩy bởi longkai-power||POWERYOURFUTURE|QSK38G1|CUMMINSGENERATOR|PRIMEPOWER:800 (QSK38G1, điểm 262)
+2533:  VÀO longkai-power||POWERYOURFUTURE|QSK38G1|CUMMINSGENERATOR|PRIMEPOWER:800KW/1000KVAGENERATORWILLBEREADY
+2534:      main all hạng 43 điểm 262 → nhánh top#15 điểm 262
+2535:  VÀO acepow-fuan||APW800|800|1000|900|1125|LV634E|800|880|12M33D968E310|880
+2536:      main all hạng 67 điểm 245 → nhánh top#24 điểm 245
+2704:== IB2300022940#0 (ra 6, vào 6)
+2705:  RA  longkai-power||POWERYOURFUTURE|6M33D633E200|WEICHAIGENERATOR|PRIMEPOWER:520KW/650KVAGENERATORWILLBER
+2706:      main top#4 điểm 274 → nhánh dropped [cyl]; Weichai 6M33D633E200; số đông xi lanh 6 {"6":11,"12":1}; nguồn khác: longkai-power «V 12»
+2707:  RA  acepow-fuan||APW520|520|650|580|725|HC534FS|536|590|6M33D633E200|575
+2708:      main top#9 điểm 265 → nhánh dropped [cyl]; Weichai 6M33D633E200; số đông xi lanh 6 {"6":11,"12":1}; nguồn khác: longkai-power «V 12»
+2709:  RA  bobig-power||BWC715|520|650|572|715|6M33D633E200|575|BW354F|4500*1800*2745|5600*2200*2550
+2710:      main top#10 điểm 265 → nhánh dropped [cyl]; Weichai 6M33D633E200; số đông xi lanh 6 {"6":11,"12":1}; nguồn khác: longkai-power «V 12»
+2711:  RA  longkai-power||POWERYOURFUTURE|SC33W990D2|SDECGENERATOR|PRIMEPOWER:600KW/750KVAGENERATORWILLBEREADYT
+2712:      main top#18 điểm 258 → nhánh dropped [cyl]; SDEC SC33W990D2; số đông xi lanh 6 {"6":24,"12":3}; nguồn khác: aoke-yangzhou «12», taihai-taizhou «12», victory-generator «12V»
+2713:  RA  dingbo||XG580GF|580/725|638/7975|KTA38GA|LVI634B1|4200X1820X2250|7600
+2714:      main top#23 điểm 253 → nhánh all []; Cummins KTA38GA; bị đẩy bởi longkai-power||POWERYOURFUTURE|KT38G|CUMMINSGENERATOR|PRIMEPOWER:500KW (KT38G, điểm 270)
+2715:  RA  bobig-power||BC825|600|750|660|825|KTA38G2|664|BW404B|4500*1800*2745|5600*2200*2550
+2716:      main top#24 điểm 249 → nhánh all []; Cummins KTA38G2; bị đẩy bởi longkai-power||POWERYOURFUTURE|KT38G|CUMMINSGENERATOR|PRIMEPOWER:500KW (KT38G, điểm 270)
+2717:  VÀO longkai-power||POWERYOURFUTURE|KT38G|CUMMINSGENERATOR|PRIMEPOWER:500KW/625KVAGENERATORWILLBEREADYTOR
+2718:      main all hạng 8 điểm 270 → nhánh top#4 điểm 270
+2719:  VÀO longkai-power||POWERYOURFUTURE|KTA38G1|CUMMINSGENERATOR|PRIMEPOWER:570KW/713KVAGENERATORWILLBEREADYT
+2720:      main all hạng 31 điểm 264 → nhánh top#10 điểm 264
+2721:  VÀO rcg-power||RHD688D5S|688KVA/550KW|750KVA/600KW|DP222LB|TALA49B|PDF
+2722:      main all hạng 80 điểm 231 → nhánh top#26 điểm 231
+2723:  VÀO sr-genset||7711|6985|701|635|DP222LC|ELEC|TALA473F|SA354648|S5L1DF4|3960*1600*2250|5060*1912*2500
+2724:      main all hạng 93 điểm 229 → nhánh top#27 điểm 229
+2725:  VÀO rcg-power||RM650D5S|650KVA/520KW|715KVA/572KW|12V2000G25|TALA473F|PDF
+2726:      main all hạng 97 điểm 229 → nhánh top#28 điểm 229
+2727:  VÀO rcg-power||RM650D5S|650KVA/520KW|715KVA/572KW|12V2000G25|S5L1DF4|PDF
+2728:      main all hạng 98 điểm 229 → nhánh top#29 điểm 229
+2742:== IB2300026252#0 (ra 3, vào 3)
+2743:  RA  tecgen-fujian||TG15YD|15|12|14|11|YD480D|TG164S11
+2744:      main top#4 điểm 269 → nhánh dropped [cyl]; Yangdong YD480D; số đông xi lanh 4 {"3":1,"4":9}; nguồn khác: victory-generator «3»
+2745:  RA  elitech-power||EPS13YDA3B|YANGDONG|13KVA|15KVA|YD480D|50HZ|3PHASE|DOWNLOADPDF|EPS13YDA3BYANGDONG13KV
+2746:      main top#9 điểm 229 → nhánh dropped [cyl]; Yangdong YD480D; số đông xi lanh 4 {"3":1,"4":9}; nguồn khác: victory-generator «3»
+2747:  RA  gordon-power||GDYD17|12|15|132|165|YD480D|1800|17|44|4L80×90|1809|130×80×110|200×84×116
+2748:      main top#10 điểm 229 → nhánh dropped [cyl]; Yangdong YD480D; số đông xi lanh 4 {"3":1,"4":9}; nguồn khác: victory-generator «3»
+2749:  VÀO victory-generator||V12YD|50|11|1375|12|15|YD480D|3|NATURAL|DIRECTINJECTION|1532|85*90|≤5|≤262|2100*7
+2750:      main all hạng 43 điểm 229 → nhánh top#8 điểm 229
+2751:  VÀO sunny-weifang||DB15GF|15/19|ZS1115/2100D|STC15|1300*750*1110|620
+2752:      main all hạng 111 điểm 178 → nhánh top#28 điểm 178
+2753:  VÀO elitech-power|MODEL:EPS15QCA3S|15KVA|3PHASE|50HZ|POWER(KVA)|15|ENGINEMODEL|QC385D|PHASE|3PHASE|FREQU
+2754:      main all hạng 112 điểm 173 → nhánh top#29 điểm 173
+2881:== IB2300031444#0 (ra 2, vào 2)
+2882:  RA  sanq-power||SQD550|440/550|400/500|DP158LD|HCI544C|97|3720|5700|3300X1280X1950|4800X1683X2200
+2883:      main top#5 điểm 287 → nhánh dropped [cyl]; Doosan / Hyundai DP158LD; số đông xi lanh 8 {"6":1,"8":13}; nguồn khác: hosem-power «6 Cylinder In Line»
+2884:  RA  uleengen||UP500GF|400|500|2506CE15TAG2|PERKINS|435|6L|137×171|152|935|S5L1DC41|3310X1180X1950|3940
+2885:      main top#19 điểm 281 → nhánh all []; Perkins 2506CE15TAG2; bị đẩy bởi sanq-power||SQP550|440/550|400/500|2506CE15TAG2|HCI544D|USA|3551|5166| (2506CE15TAG2, điểm 284)
+2886:  VÀO sanq-power||SQP550|440/550|400/500|2506CE15TAG2|HCI544D|USA|3551|5166|3500×1540×1850|4700×1583×2200
+2887:      main all hạng 19 điểm 284 → nhánh top#11 điểm 284
+2888:  VÀO jet-power||V550T3|550|440|500|400|TAD1651GE|L6|EMS|1612|144*165|102|STAGEIIIA/TIER3|ECO403S4C
+2889:      main all hạng 78 điểm 269 → nhánh top#26 điểm 269
+3086:== IB2300032777#2 (ra 2, vào 2)
+3087:  RA  sanq-power||SQP176|14/18|13/16|403D15G|PI044F|WUXI|510|1010|1500X650X1225|2200X1033X1306|
+3088:      main top#25 điểm 281 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+3089:  RA  sanq-power||SQP206|16/20|14/18|403A15G2|PI044F|WUXI|620|1140|1500×650×1225|2200×1033×1306|
+3090:      main top#28 điểm 273 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+3091:  VÀO acepow-fuan||APYD13|50HZ|13|143|163|179|BC164E|YND485D|17KW/1500RPM
+3092:      main all hạng 58 điểm 269 → nhánh top#28 điểm 269
+3093:  VÀO tecgen-fujian||TG18YD|18|14|16|13|YND485D|TG164S13
+3094:      main all hạng 60 điểm 269 → nhánh top#29 điểm 269
+3112:== IB2300046353#1 (ra 1, vào 1)
+3113:  RA  sanq-power||SQP206|16/20|14/18|403A15G2|PI044F|WUXI|620|1140|1500×650×1225|2200×1033×1306|
+3114:      main top#6 điểm 281 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+3115:  VÀO acepow-fuan||HPDD16|16|200|176|220|BC184E|BFM3G1
+3116:      main all hạng 53 điểm 261 → nhánh top#29 điểm 261
+3323:== IB2300048778#0 (ra 11, vào 11)
+3324:  RA  gb-power|STANDARDFEATURES|MODEL|GBP15|STANDBYPOWER(50HZ)|11KW/14KVA|PRIMEPOWER(50HZ)|10KW/125KVA|ENG
+3325:      main top#0 điểm 281 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+3326:  RA  uleengen||UP10GF|8|10|403A11G1|PERKINS|9|3L|77×81|1131|19|S0L1H1|1580X810X930|500
+3327:      main top#1 điểm 281 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+3328:  RA  gb-power|STANDARDFEATURES|MODEL|GBP10|STANDBYPOWER(50HZ)|88KW/11KVA|PRIMEPOWER(50HZ)|8KW/10KVA|ENGIN
+3329:      main top#2 điểm 278 → nhánh dropped [cyl]; Perkins 403D11G; số đông xi lanh 3 {"3":16,"4":1}; nguồn khác: depco-power «4»
+3330:  RA  hosem-power||MODEL|AP12H|STANDBYPOWER|KVA|12|PRIMEPOWER|KVA|11|FREQUENCY|HZ|60|OUTPUTVOLTAGE|V|240|D
+3331:      main top#3 điểm 268 → nhánh dropped [cyl]; Perkins 403D11G; số đông xi lanh 3 {"3":16,"4":1}; nguồn khác: depco-power «4»
+3332:  RA  sanq-power||SQP126|10/12|88/11|403D11G|PI044E|WUXI|436|946|1500×650×1225|2200×1033×1306|
+3333:      main top#4 điểm 268 → nhánh dropped [cyl]; Perkins 403D11G; số đông xi lanh 3 {"3":16,"4":1}; nguồn khác: depco-power «4»
+3334:  RA  fdk-energy||P14/H1CONTACT|14KVA/11KW|13KVA/10KW|403A15G1|PERKINSCHINA|STAMFORDS0L1L1|CLICKHERE|DOWNL
+3335:      main top#6 điểm 251 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+3336:  RA  jet-power||P14|14|11|13|10|403A15G1|3L|84X90|1496|37|PI044F|1200*650*950|426|1950*860*1060|626
+3337:      main top#7 điểm 251 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+3338:  RA  uleengen||UP13GF|10|13|403A15G1|PERKINS|12|3L|84×90|1496|24|S0L1L1|1580X810X930|520
+3339:      main top#8 điểm 251 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+3340:  RA  sanq-power||SQP15|12/145|105/131|403D15G|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304
+3341:      main top#9 điểm 250 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+3342:  RA  sr-genset||11|88|10|8|403A11G1|MECH|S0L1H1|TALA40C|SA1648|1400*690*1000|1860*810*1152
+3343:      main top#11 điểm 241 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+3344:  RA  elitech-power||EPS10IA3|ISUZU|10KVA|11KVA|JE493DB04|50HZ|3PHASE|DOWNLOADPDF|EPS10IA3ISUZU10KVADIESEL
+3345:      main top#29 điểm 181 → nhánh all []; Isuzu JE493DB04; bị đẩy bởi elitech-power|MODEL:EPS125PKA3S|13KVA|1PHASE,3PHASE|50HZ,60HZ|POWER(KV (404D22G, điểm 199)
+3346:  VÀO jet-power||YN11|11|88|10|8|3TNV82AGGE/99KW|3|MECHANICAL|1331|82X84|PI044E/10KVA|1200X600X950|430|170
+3347:      main all hạng 36 điểm 221 → nhánh top#4 điểm 221
+3348:  VÀO elitech-power|MODEL:EPS125PKA3S|13KVA|1PHASE,3PHASE|50HZ,60HZ|POWER(KVA)|13|ENGINEMODEL|404D22G|PHAS
+3349:      main all hạng 64 điểm 199 → nhánh top#11 điểm 199
+3350:  VÀO victory-generator||VD12F|50|10|125|12|15|F2L912D|238|MECHANICAL|NATURALLY|100*120|188
+3351:      main all hạng 110 điểm 180 → nhánh top#21 điểm 180
+3352:  VÀO sunny-weifang||DB10GF|10/125|ZS1100|STC10|1140*780*995|480
+3353:      main all hạng 112 điểm 180 → nhánh top#22 điểm 180
+3354:  VÀO superwatt-power||SK11|8/10|88/11|D1105BG|1460X730X1170|1715X900X1235
+3355:      main all hạng 115 điểm 173 → nhánh top#23 điểm 173
+3356:  VÀO sr-genset||121|99|11|9|403D11GCOMMODITY|MECH|S0L1H1|TALA40C|SA164106|1400*690*1000|1860*810*1152
+3357:      main all hạng 117 điểm 167 → nhánh top#24 điểm 167
+3358:  VÀO voltgent||VSC115S4|11|88|10|8|SDEC|3ZT11G42|[EN][RU][ES][PT]
+3359:      main all hạng 120 điểm 165 → nhánh top#25 điểm 165
+3360:  VÀO xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480
+3361:      main all hạng 121 điểm 165 → nhánh top#26 điểm 165
+3362:  VÀO uleengen||UY10GFS|8|10|380码|10|3|80*90|1357|19|164B|1860X850X1200|700
+3363:      main all hạng 122 điểm 165 → nhánh top#27 điểm 165
+3364:  VÀO victory-generator||GENERATOR|MODEL:|VT11000S|VT11000S3|FREQUENCY(HZ)|50|50|RATEDACOUTPUT(KVA)|85|106
+3365:      main all hạng 127 điểm 163 → nhánh top#28 điểm 163
+3366:  VÀO victory-generator||GENERATOR|MODEL:|VDG12S|VDG12S3|FREQUENCY(HZ)|50|50|RATEDACOUTPUT(KVA)|100|125|MA
+3367:      main all hạng 197 điểm 136 → nhánh top#29 điểm 136
+3450:== IB2300054067#0 (ra 7, vào 6)
+3451:  RA  gb-power|STANDARDFEATURES|MODEL|GBP10|STANDBYPOWER(50HZ)|88KW/11KVA|PRIMEPOWER(50HZ)|8KW/10KVA|ENGIN
+3452:      main top#0 điểm 278 → nhánh dropped [cyl]; Perkins 403D11G; số đông xi lanh 3 {"3":16,"4":1}; nguồn khác: depco-power «4»
+3453:  RA  fdk-energy||P10/H1CONTACT|10KVA/8KW|9KVA/7KW|403D11G|PERKINSCHINA|STAMFORDS0L1H1|CLICKHERE|DOWNLOAD
+3454:      main top#1 điểm 268 → nhánh dropped [cyl]; Perkins 403D11G; số đông xi lanh 3 {"3":16,"4":1}; nguồn khác: depco-power «4»
+3455:  RA  fdk-energy||P10/H1CONTACT|10KVA/8KW|9KVA/7KW|403A11G1|PERKINSCHINA|STAMFORDS0L1H1|CLICKHERE|DOWNLOAD
+3456:      main top#2 điểm 268 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+3457:  RA  sanq-power||SQP10|8/10|7/9|403D11G|PI044E|WUXI|450|896|1500X650X1225|2200X1033X1304
+3458:      main top#3 điểm 265 → nhánh dropped [cyl]; Perkins 403D11G; số đông xi lanh 3 {"3":16,"4":1}; nguồn khác: depco-power «4»
+3459:  RA  sanq-power||SQP10|8/10|7/9|403A11G1|PI044E|WUXI|450|896|1260X630X730|2200X1033X1304
+3460:      main top#4 điểm 265 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+3461:  RA  bobig-power||BP10|7|9|8|10|403A11G1MADEINCHINA|7|BW164B|1100*650*1000|1700*850*1000
+3462:      main top#5 điểm 256 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+3463:  RA  elitech-power||EPS11PA3|PERKINS|11KVA|12KVA|403D15G|50HZ|3PHASE|DOWNLOADPDF|EPS11PA3PERKINS11KVADIES
+3464:      main top#10 điểm 191 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+3465:  VÀO victory-generator||V8P|50|72|9|8|10|403A11G1/403D11G|3|3|77|81|49|52|1480*750*1270|390
+3466:      main all hạng 67 điểm 152 → nhánh top#12 điểm 152
+3467:  VÀO westinpower||TP10|10|8|9|7|403A11G1/403D11G|11|26|1402*715*1155|1856*826*1415
+3468:      main all hạng 68 điểm 152 → nhánh top#13 điểm 152
+3469:  VÀO superwatt-power||SK11|8/10|88/11|D1105BG|1460X730X1170|1715X900X1235
+3470:      main all hạng 72 điểm 148 → nhánh top#15 điểm 148
+3471:  VÀO sr-genset||121|99|11|9|403D11GCOMMODITY|MECH|S0L1H1|TALA40C|SA164106|1400*690*1000|1860*810*1152
+3472:      main all hạng 76 điểm 139 → nhánh top#19 điểm 139
+3473:  VÀO victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY(HZ)|50|50|50|RATEDACOUTPUT(KV
+3474:      main all hạng 77 điểm 139 → nhánh top#20 điểm 139
+3475:  VÀO rise-power||RXL8|8/10|9/11|3N17D|SLW88|1400×550×900|580
+3476:      main all hạng 103 điểm 120 → nhánh top#23 điểm 120
+3593:== IB2300062472#0 (ra 5, vào 0)
+3594:  RA  fdk-energy||P10/H1CONTACT|10KVA/8KW|9KVA/7KW|403A11G1|PERKINSCHINA|STAMFORDS0L1H1|CLICKHERE|DOWNLOAD
+3595:      main top#0 điểm 275 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+3596:  RA  jet-power||P10|10|8|9|7|403A11G1|3L|77X81|1131|3|PI044E|1200*650*950|352|1950*860*1060|552
+3597:      main top#1 điểm 272 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+3598:  RA  sanq-power||SQP10|8/10|7/9|403A11G1|PI044E|WUXI|450|896|1260X630X730|2200X1033X1304
+3599:      main top#2 điểm 272 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+3600:  RA  elitech-power||EPS11PA3|PERKINS|11KVA|12KVA|403D15G|50HZ|3PHASE|DOWNLOADPDF|EPS11PA3PERKINS11KVADIES
+3601:      main top#4 điểm 200 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+3602:  RA  agg-fuzhou||P11D51P|11/11|10/10|403A15G1
+3603:      main top#15 điểm 121 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+3658:== IB2300073418#0 (ra 3, vào 3)
+3659:  RA  fdk-energy||CD110H2(60HZ)CONTACT|110KVA/88KW|100KVA/80KW|4BTA39G13|CUMMINS(CHINADONGFENG)|STAMFORDUC
+3660:      main top#5 điểm 284 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+3661:  RA  fdk-energy||CD110V2/H1CONTACT|110KVA/88KW|100KVA/80KW|4BTAA39G3|CUMMINS(CHINADONGFENG)|STAMFORDUCI27
+3662:      main top#6 điểm 284 → nhánh dropped [cyl]; Cummins 4BTAA39G3; số đông xi lanh 4 {"4":4,"6":1}; nguồn khác: bdadl-shanghai «6»
+3663:  RA  dingbo||XG80GF|80/100|88/110|TAD531GE|LSA443S5|2200X720X1380|1200
+3664:      main top#17 điểm 260 → nhánh dropped [cyl]; Volvo Penta TAD531GE; số đông xi lanh 4 {"4":16}; nguồn khác: aoke-yangzhou «6»
+3665:  VÀO fdk-energy||CD125/H1CONTACT|125KVA/100KW|113KVA/90KW|6BTA59G2|CUMMINS(CHINADONGFENG)|STAMFORDUCI274D
+3666:      main all hạng 28 điểm 271 → nhánh top#8 điểm 271
+3667:  VÀO fdk-energy||CD125N/H1CONTACT|125KVA/100KW|113KVA/90KW|QSB59G30|CUMMINS(CHINADONGFENG)|STAMFORDUCI274
+3668:      main all hạng 32 điểm 271 → nhánh top#10 điểm 271
+3669:  VÀO dingbo||XG90GF|90/1125|99/12375|YC6B155LD20|TFW2904A|2350X950X1400|1200
+3670:      main all hạng 96 điểm 232 → nhánh top#29 điểm 232
+3798:== IB2300074496#0 (ra 3, vào 3)
+3799:  RA  longkai-power||POWERYOURFUTURE|QSK19G4|CUMMINSGENERATOR|PRIMEPOWER:520KW/650KVAGENERATORWILLBEREADYT
+3800:      main top#4 điểm 270 → nhánh dropped [cyl]; Cummins QSK19G4; số đông xi lanh 6 {"6":15,"12":1}; nguồn khác: longkai-power «V 12»
+3801:  RA  longkai-power||POWERYOURFUTURE|6M33D633E200|WEICHAIGENERATOR|PRIMEPOWER:520KW/650KVAGENERATORWILLBER
+3802:      main top#5 điểm 270 → nhánh dropped [cyl]; Weichai 6M33D633E200; số đông xi lanh 6 {"6":11,"12":1}; nguồn khác: longkai-power «V 12»
+3803:  RA  sr-genset||700|560|625|500|KT38G|ELEC|S5L1DF4|TALA473F|SAC5500|4550*2100*2320|5060*1912*2500
+3804:      main top#22 điểm 229 → nhánh all []; Cummins KT38G; bị đẩy bởi longkai-power||POWERYOURFUTURE|KT38G|CUMMINSGENERATOR|PRIMEPOWER:500KW (KT38G, điểm 266)
+3805:  VÀO longkai-power||POWERYOURFUTURE|KT38G|CUMMINSGENERATOR|PRIMEPOWER:500KW/625KVAGENERATORWILLBEREADYTOR
+3806:      main all hạng 9 điểm 266 → nhánh top#4 điểm 266
+3807:  VÀO longkai-power||POWERYOURFUTURE|KTA38G1|CUMMINSGENERATOR|PRIMEPOWER:570KW/713KVAGENERATORWILLBEREADYT
+3808:      main all hạng 23 điểm 259 → nhánh top#9 điểm 259
+3809:  VÀO sunkings||SCF700|500|625|560|700|KTA38G|≤206|12|378|159*159
+3810:      main all hạng 72 điểm 225 → nhánh top#28 điểm 225
+3911:== IB2300089882#0 (ra 1, vào 1)
+3912:  RA  rise-power||RDL40|40/50|44/55|TD226B3D|LSA432S35|1650×760×1350|2500×1000×1500|740|1450
+3913:      main top#26 điểm 253 → nhánh dropped [cyl]; Deutz / Weichai TD226B3D; số đông xi lanh 3 {"3":8,"4":1}; nguồn khác: aoke-yangzhou «4»
+3914:  VÀO hosem-power||MODEL|ADE66|STANDBYPOWER|KVA|66|PRIMEPOWER|KVA|60|FREQUENCY|HZ|50|OUTPUTVOLTAGE|V|400/2
+3915:      main all hạng 62 điểm 252 → nhánh top#26 điểm 252
+4041:== IB2300092659#0 (ra 2, vào 2)
+4042:  RA  sanq-power||SQD550|440/550|400/500|DP158LD|HCI544C|97|3720|5700|3300X1280X1950|4800X1683X2200
+4043:      main top#5 điểm 287 → nhánh dropped [cyl]; Doosan / Hyundai DP158LD; số đông xi lanh 8 {"6":1,"8":13}; nguồn khác: hosem-power «6 Cylinder In Line»
+4044:  RA  uleengen||UP500GF|400|500|2506CE15TAG2|PERKINS|435|6L|137×171|152|935|S5L1DC41|3310X1180X1950|3940
+4045:      main top#19 điểm 281 → nhánh all []; Perkins 2506CE15TAG2; bị đẩy bởi sanq-power||SQP550|440/550|400/500|2506CE15TAG2|HCI544D|USA|3551|5166| (2506CE15TAG2, điểm 284)
+4046:  VÀO sanq-power||SQP550|440/550|400/500|2506CE15TAG2|HCI544D|USA|3551|5166|3500×1540×1850|4700×1583×2200
+4047:      main all hạng 19 điểm 284 → nhánh top#11 điểm 284
+4048:  VÀO jet-power||V550T3|550|440|500|400|TAD1651GE|L6|EMS|1612|144*165|102|STAGEIIIA/TIER3|ECO403S4C
+4049:      main all hạng 77 điểm 269 → nhánh top#26 điểm 269
+4126:== IB2300096122#0 (ra 1, vào 1)
+4127:  RA  victory-generator||V780SC|50|710|8875|780|975|SC33W1150D2|12V|328|4400*1720*2170|7359
+4128:      main top#19 điểm 225 → nhánh dropped [cyl]; SDEC SC33W1150D2; số đông xi lanh 6 {"6":21,"12":2}; nguồn khác: aoke-yangzhou «12», victory-generator «12V»
+4129:  VÀO xingguang-jiangsu||XG700GF|700/875|Z12V190B|TZHW或TFW|5775×2040×2679|13500
+4130:      main all hạng 359 điểm 154 → nhánh top#29 điểm 154
+4183:== IB2300098387#0 (ra 6, vào 6)
+4184:  RA  fdk-energy||CD110H2(60HZ)CONTACT|110KVA/88KW|100KVA/80KW|4BTA39G13|CUMMINS(CHINADONGFENG)|STAMFORDUC
+4185:      main top#5 điểm 284 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+4186:  RA  fdk-energy||CD110V2/H1CONTACT|110KVA/88KW|100KVA/80KW|4BTAA39G3|CUMMINS(CHINADONGFENG)|STAMFORDUCI27
+4187:      main top#6 điểm 284 → nhánh dropped [cyl]; Cummins 4BTAA39G3; số đông xi lanh 4 {"4":4,"6":1}; nguồn khác: bdadl-shanghai «6»
+4188:  RA  bobig-power||BC110S|80|100|88|110|4BTA39G13|97|BW224G|2120*850*1400|2850*1040*1430
+4189:      main top#14 điểm 269 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+4190:  RA  dingbo||XG80GF|80/100|88/110|TAD531GE|LSA443S5|2200X720X1380|1200
+4191:      main top#21 điểm 260 → nhánh dropped [cyl]; Volvo Penta TAD531GE; số đông xi lanh 4 {"4":16}; nguồn khác: aoke-yangzhou «6»
+4192:  RA  dingbo||XG90GF|90/1125|99/12375|6BTA59G2|UCI274D14|2150X830X1400|1200
+4193:      main top#24 điểm 256 → nhánh all []; Cummins 6BTA59G2; bị đẩy bởi fdk-energy||CD125/H1CONTACT|125KVA/100KW|113KVA/90KW|6BTA59G2|CUMMINS( (6BTA59G2, điểm 271)
+4194:  RA  bobig-power||BC12375S|90|113|99|124|4BTA39G13|97|BW274C|2120*850*1400|2850*1040*1430
+4195:      main top#25 điểm 256 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+4196:  VÀO fdk-energy||CD125/H1CONTACT|125KVA/100KW|113KVA/90KW|6BTA59G2|CUMMINS(CHINADONGFENG)|STAMFORDUCI274D
+4197:      main all hạng 28 điểm 271 → nhánh top#9 điểm 271
+4198:  VÀO fdk-energy||CD125N/H1CONTACT|125KVA/100KW|113KVA/90KW|QSB59G30|CUMMINS(CHINADONGFENG)|STAMFORDUCI274
+4199:      main all hạng 32 điểm 271 → nhánh top#11 điểm 271
+4200:  VÀO uleengen||UH100GF|80|100|R6105ZD|274C
+4201:      main all hạng 68 điểm 254 → nhánh top#26 điểm 254
+4202:  VÀO uleengen||UD100GF|80|100|BF6L913|88|6|102*125|6128|196|274C|2500×800×1350|1450
+4203:      main all hạng 69 điểm 254 → nhánh top#27 điểm 254
+4204:  VÀO eastern-lion-fuan||GF/GFSYC80|80|100|89|111|YC6B135ZD20|90|EL274C|80|SMARTGEN6120|DETAIL
+4205:      main all hạng 71 điểm 253 → nhánh top#28 điểm 253
+4206:  VÀO eastern-lion-fuan||GFSC96II|96|120|107|133|QSB59G3|120KW|EL274D|96KW|SMARTGEN6120|DETAIL
+4207:      main all hạng 75 điểm 249 → nhánh top#29 điểm 249
+4258:== IB2300130792#0 (ra 5, vào 5)
+4259:  RA  fdk-energy||CD103V1/H1CONTACT|103KVA/82KW|94KVA/75KW|4BTA39G13|CUMMINS(CHINADONGFENG)|STAMFORDUCI274
+4260:      main top#13 điểm 284 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+4261:  RA  fdk-energy||CD110V2/H1CONTACT|110KVA/88KW|100KVA/80KW|4BTAA39G3|CUMMINS(CHINADONGFENG)|STAMFORDUCI27
+4262:      main top#14 điểm 284 → nhánh dropped [cyl]; Cummins 4BTAA39G3; số đông xi lanh 4 {"4":4,"6":1}; nguồn khác: bdadl-shanghai «6»
+4263:  RA  longkai-power||POWERYOURFUTURE|4BTA39G13|CUMMINSGENERATOR|PRIMEPOWER:75KW/9375KVAGENERATORWILLBEREAD
+4264:      main top#15 điểm 278 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+4265:  RA  bobig-power||BC110S|80|100|88|110|4BTA39G13|97|BW224G|2120*850*1400|2850*1040*1430
+4266:      main top#20 điểm 269 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+4267:  RA  dingbo||XG80GF|80/100|88/110|TAD531GE|LSA443S5|2200X720X1380|1200
+4268:      main top#28 điểm 260 → nhánh dropped [cyl]; Volvo Penta TAD531GE; số đông xi lanh 4 {"4":16}; nguồn khác: aoke-yangzhou «6»
+4269:  VÀO fdk-energy||CD110EV3/H1CONTACT|110KVA/88KW|100KVA/80KW|QSB59G2|CUMMINS(CHINADONGFENG)|STAMFORDUCI274
+4270:      main all hạng 69 điểm 276 → nhánh top#15 điểm 276
+4271:  VÀO fdk-energy||CD125/H1CONTACT|125KVA/100KW|113KVA/90KW|6BTA59G2|CUMMINS(CHINADONGFENG)|STAMFORDUCI274D
+4272:      main all hạng 71 điểm 271 → nhánh top#16 điểm 271
+4273:  VÀO longkai-power||POWERYOURFUTURE|6BT59G296KW|CUMMINSGENERATOR|PRIMEPOWER:84KW/105KVAGENERATORWILLBEREA
+4274:      main all hạng 100 điểm 257 → nhánh top#27 điểm 257
+4275:  VÀO jet-power||GF125|125|100|113|90|R6105AZLD|L6|MECHANICAL|67|105×130|JET274D
+4276:      main all hạng 105 điểm 256 → nhánh top#28 điểm 256
+4277:  VÀO yihua-fujian||GENERATORSETMODEL|YH100C|PRIMEOUTPUT(KVA/KW)|100KVA/80KW|STANDBYPOWER(KVA/KW)|110KVA/8
+4278:      main all hạng 106 điểm 256 → nhánh top#29 điểm 256
+4300:== IB2300139646#0 (ra 1, vào 1)
+4301:  RA  sanq-power||SQP206|16/20|14/18|403A15G2|PI044F|WUXI|620|1140|1500×650×1225|2200×1033×1306|
+4302:      main top#5 điểm 281 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+4303:  VÀO wintpower||WTFA28|20/25|22/28|4DW9235D|PI144E|TALA40G|WT184G22
+4304:      main all hạng 73 điểm 253 → nhánh top#29 điểm 253
+4416:== IB2300163186#0 (ra 3, vào 3)
+4417:  RA  sanq-power||SQP176|14/18|13/16|403D15G|PI044F|WUXI|510|1010|1500X650X1225|2200X1033X1306|
+4418:      main top#2 điểm 274 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+4419:  RA  genlitec||NGENERATOR|SPECIFICATIONPERFORMANCEDATA|POWER(KVA)|15|165|MODEL|GPP15S6|GPP15D6|POWER(KW)|
+4420:      main top#20 điểm 235 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+4421:  RA  elitech-power||EPS15PA3|PERKINS|15KVA|17KVA|403D15G|50HZ|3PHASE|DOWNLOADPDF|EPS15PA3PERKINS15KVADIES
+4422:      main top#24 điểm 229 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+4423:  VÀO acepow-fuan||HPDD16|16|200|176|220|BC184E|BFM3G1
+4424:      main all hạng 50 điểm 228 → nhánh top#27 điểm 228
+4425:  VÀO elitech-power||EPS15RKA3|RICARDO|15KVA|165KVA|K4100D|50HZ|3PHASE|DOWNLOADPDF|EPS15RKA3RICARDO15KVADI
+4426:      main all hạng 55 điểm 221 → nhánh top#28 điểm 221
+4427:  VÀO acepow-fuan||APW12|3|50|12|13|15|17|BC164D|128|14|Y480BD
+4428:      main all hạng 56 điểm 221 → nhánh top#29 điểm 221
+4647:== IB2300192935#0 (ra 3, vào 3)
+4648:  RA  bobig-power||BC1375|1000|1250|1100|1375|KTA50G3|1097|BW404H|4650*2065*2500|6100*2250*3050
+4649:      main top#25 điểm 269 → nhánh dropped [cyl]; Cummins KTA50G3; số đông xi lanh 16 {"12":3,"16":29}; nguồn khác: bdadl-shanghai «10», comappower «12», huipu-power «12», mingbang-mbkl «12», suneco-linyi «12», xinhengxin-fujian «12», xinzhengfa «12», yingtai-jiangsu «12»
+4650:  RA  dingbo||XG1000GF|1000/1250|1100/1375|KTA50G3|LVI634G1|4870X2100X2350|10000
+4651:      main top#26 điểm 269 → nhánh dropped [cyl]; Cummins KTA50G3; số đông xi lanh 16 {"12":3,"16":29}; nguồn khác: bdadl-shanghai «10», comappower «12», huipu-power «12», mingbang-mbkl «12», suneco-linyi «12», xinhengxin-fujian «12», xinzhengfa «12», yingtai-jiangsu «12»
+4652:  RA  eastern-lion-fuan||GF/GFSC1000|1000|1250|1111|1389|KTA50G3|1097|EL404G|1000KW|SMARTGEN6120|DETAIL
+4653:      main top#27 điểm 269 → nhánh dropped [cyl]; Cummins KTA50G3; số đông xi lanh 16 {"12":3,"16":29}; nguồn khác: bdadl-shanghai «10», comappower «12», huipu-power «12», mingbang-mbkl «12», suneco-linyi «12», xinhengxin-fujian «12», xinzhengfa «12», yingtai-jiangsu «12»
+4654:  VÀO dingbo||XG1200GF|1200/1500|1320/1650|401246TAG2A|MX12404|5000X2200X2550|10200
+4655:      main all hạng 229 điểm 249 → nhánh top#27 điểm 249
+4656:  VÀO dingbo||XG1200GF|1200/1500|1320/1650|YC12VC2070D31|TFW212004A|5400X2350X2700|16200
+4657:      main all hạng 239 điểm 249 → nhánh top#28 điểm 249
+4658:  VÀO uleengen||UM1250GF|1000|1250|12V4000G23RF|1205|12|170*210|572|231|LSA502M6|6150X2150X2400|12000
+4659:      main all hạng 240 điểm 249 → nhánh top#29 điểm 249
+4916:== IB2300212042#0 (ra 11, vào 11)
+4917:  RA  uleengen||UW75GF|60|75|WP41D80E200|72|4L|105×118|409|142|UCI224F|1900X750X1400|900
+4918:      main top#1 điểm 269 → nhánh dropped [cyl]; Weichai WP41D80E200; số đông xi lanh 4 {"4":14,"6":1}; nguồn khác: bdadl-shanghai «6»
+4919:  RA  acepow-fuan||APC52|52|65|56|70|4BTA39G2|58|64|UC224F
+4920:      main top#2 điểm 269 → nhánh dropped [cyl]; Cummins 4BTA39G2; số đông xi lanh 4 {"4":22}; nguồn khác: bdadl-shanghai «6»
+4921:  RA  bobig-power||BWC83|60|75|66|83|WP41D80E200|72|BW224F|1900*700*1200|2500*970*1200
+4922:      main top#3 điểm 254 → nhánh dropped [cyl]; Weichai WP41D80E200; số đông xi lanh 4 {"4":14,"6":1}; nguồn khác: bdadl-shanghai «6»
+4923:  RA  jet-power||WP83|83|66|75|60|WP41D80E200|4L|MECHANICAL|105×130|45|145|JET224G
+4924:      main top#4 điểm 254 → nhánh dropped [cyl]; Weichai WP41D80E200; số đông xi lanh 4 {"4":14,"6":1}; nguồn khác: bdadl-shanghai «6»
+4925:  RA  eastern-lion-fuan||GFSC58|58|73|64|81|QSB39G2|63KW|EL224F|58KW|SMARTGEN6120|DETAIL
+4926:      main top#5 điểm 249 → nhánh dropped [cyl]; Cummins QSB39G2; số đông xi lanh 4 {"4":8,"6":1}; nguồn khác: yanan-power «6»
+4927:  RA  penlucky||PLC7060|70|65|4BTA39G2|S1L2Y1|1760*760*1380|2440*1060*1680|VIEW
+4928:      main top#6 điểm 244 → nhánh dropped [cyl]; Cummins 4BTA39G2; số đông xi lanh 4 {"4":22}; nguồn khác: bdadl-shanghai «6»
+4929:  RA  wintpower||WTYC80|58/73|64/80|YC4A100ZD20|WT224F|1950X850X1270|2400X930X1350
+4930:      main top#7 điểm 233 → nhánh dropped [cyl]; Yuchai YC4A100ZD20; số đông xi lanh 4 {"4":14,"6":1}; nguồn khác: haifeng-taizhou «6L»
+4931:  RA  uleengen||UY75GF|60|75|YC4A100ZD20|YUCHAI|70|4L|108×132|484|≤200|224F|1800X700X1200|1000
+4932:      main top#9 điểm 230 → nhánh dropped [cyl]; Yuchai YC4A100ZD20; số đông xi lanh 4 {"4":14,"6":1}; nguồn khác: haifeng-taizhou «6L»
+4933:  RA  aosif||AC70|65/52|70/56|4BTA39G2|149|4L|39|
+4934:      main top#10 điểm 229 → nhánh dropped [cyl]; Cummins 4BTA39G2; số đông xi lanh 4 {"4":22}; nguồn khác: bdadl-shanghai «6»
+4935:  RA  victory-generator||V64F|50|58|73|64|80|WP4D100E200|227|6|105|120|625|1025|168|24V|1950X1000X1450|120
+4936:      main top#14 điểm 209 → nhánh dropped [cyl]; Deutz / Weichai WP4D100E200; số đông xi lanh 4 {"4":12,"6":1}; nguồn khác: victory-generator «6»
+4937:  RA  kaichen-jiangsu||KCY70GF|55|69|60|75|YC4A100ZD20|
+4938:      main top#22 điểm 199 → nhánh dropped [cyl]; Yuchai YC4A100ZD20; số đông xi lanh 4 {"4":14,"6":1}; nguồn khác: haifeng-taizhou «6L»
+4939:  VÀO victory-generator||VD65F|50|58|725|65|81|BF6L913D|228|ELECTRONIC|TURBOCHARGED|102*125|6128
+4940:      main all hạng 68 điểm 177 → nhánh top#19 điểm 177
+4941:  VÀO longkai-power||LG60KF|83|66|75|60|N4105ZLD|OP1900*800*1150|AT2538*1000*1450|
+4942:      main all hạng 71 điểm 174 → nhánh top#20 điểm 174
+4943:  VÀO longkai-power||LG52X|72|57|65|52|4DX2382DYFD10W|OP1850*800*1150|AT2388*1000*1450|
+4944:      main all hạng 72 điểm 173 → nhánh top#21 điểm 173
+4945:  VÀO longkai-power||POWERYOURFUTURE|4BTA39G258KW|CUMMINSGENERATOR|PRIMEPOWER:52KW/65KVAGENERATORWILLBEREA
+4946:      main all hạng 73 điểm 170 → nhánh top#22 điểm 170
+4947:  VÀO longkai-power||LG55X|76|61|69|55|4110/125Z09DYFD10W|OP1900*800*1250|AT2688*1080*1450|
+4948:      main all hạng 74 điểm 167 → nhánh top#23 điểm 167
+4949:  VÀO victory-generator||CCFJ55KW|60|55|69|65|81|90|440|6BT59GM|100|1800|6
+4950:      main all hạng 75 điểm 167 → nhánh top#24 điểm 167
+4951:  VÀO westinpower||4|RN75N|60|75|E0834LE312|4/L|108*125|39|2905*960*1100
+4952:      main all hạng 76 điểm 166 → nhánh top#25 điểm 166
+4953:  VÀO sr-genset||85|68|75|60|4BTA39G2(QC58/67E)|ELEC|S1L2Y1|TALA42H|SA22460|1900*940*1450|2460*1006*1255
+4954:      main all hạng 78 điểm 165 → nhánh top#26 điểm 165
+4955:  VÀO wintpower||WTYTO72|57/72|52/65|LR4B3Z15|LR4B3ZD91FU2|WT224G58
+4956:      main all hạng 79 điểm 165 → nhánh top#27 điểm 165
+4957:  VÀO voltgent||VFP685|68|55|65|50|FPT|R38MSNS0166A01|[EN][RU][ES][PT]
+4958:      main all hạng 80 điểm 165 → nhánh top#28 điểm 165
+4959:  VÀO ettes-power||EP72|52|65|58|72|1104A44TG1★|TBA|4L|TBA|1760*760*1380|900|
+4960:      main all hạng 81 điểm 165 → nhánh top#29 điểm 165
+5167:== IB2300213223#0 (ra 11, vào 11)
+5168:  RA  gb-power|STANDARDFEATURES|MODEL|GBP15|STANDBYPOWER(50HZ)|11KW/14KVA|PRIMEPOWER(50HZ)|10KW/125KVA|ENG
+5169:      main top#0 điểm 281 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+5170:  RA  uleengen||UP10GF|8|10|403A11G1|PERKINS|9|3L|77×81|1131|19|S0L1H1|1580X810X930|500
+5171:      main top#1 điểm 281 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+5172:  RA  gb-power|STANDARDFEATURES|MODEL|GBP10|STANDBYPOWER(50HZ)|88KW/11KVA|PRIMEPOWER(50HZ)|8KW/10KVA|ENGIN
+5173:      main top#2 điểm 278 → nhánh dropped [cyl]; Perkins 403D11G; số đông xi lanh 3 {"3":16,"4":1}; nguồn khác: depco-power «4»
+5174:  RA  hosem-power||MODEL|AP12H|STANDBYPOWER|KVA|12|PRIMEPOWER|KVA|11|FREQUENCY|HZ|60|OUTPUTVOLTAGE|V|240|D
+5175:      main top#3 điểm 268 → nhánh dropped [cyl]; Perkins 403D11G; số đông xi lanh 3 {"3":16,"4":1}; nguồn khác: depco-power «4»
+5176:  RA  sanq-power||SQP126|10/12|88/11|403D11G|PI044E|WUXI|436|946|1500×650×1225|2200×1033×1306|
+5177:      main top#4 điểm 268 → nhánh dropped [cyl]; Perkins 403D11G; số đông xi lanh 3 {"3":16,"4":1}; nguồn khác: depco-power «4»
+5178:  RA  fdk-energy||P14/H1CONTACT|14KVA/11KW|13KVA/10KW|403A15G1|PERKINSCHINA|STAMFORDS0L1L1|CLICKHERE|DOWNL
+5179:      main top#6 điểm 251 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+5180:  RA  jet-power||P14|14|11|13|10|403A15G1|3L|84X90|1496|37|PI044F|1200*650*950|426|1950*860*1060|626
+5181:      main top#7 điểm 251 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+5182:  RA  uleengen||UP13GF|10|13|403A15G1|PERKINS|12|3L|84×90|1496|24|S0L1L1|1580X810X930|520
+5183:      main top#8 điểm 251 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+5184:  RA  sanq-power||SQP15|12/145|105/131|403D15G|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304
+5185:      main top#9 điểm 250 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+5186:  RA  sr-genset||11|88|10|8|403A11G1|MECH|S0L1H1|TALA40C|SA1648|1400*690*1000|1860*810*1152
+5187:      main top#11 điểm 241 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+5188:  RA  elitech-power||EPS10IA3|ISUZU|10KVA|11KVA|JE493DB04|50HZ|3PHASE|DOWNLOADPDF|EPS10IA3ISUZU10KVADIESEL
+5189:      main top#29 điểm 181 → nhánh all []; Isuzu JE493DB04; bị đẩy bởi elitech-power|MODEL:EPS125PKA3S|13KVA|1PHASE,3PHASE|50HZ,60HZ|POWER(KV (404D22G, điểm 199)
+5190:  VÀO jet-power||YN11|11|88|10|8|3TNV82AGGE/99KW|3|MECHANICAL|1331|82X84|PI044E/10KVA|1200X600X950|430|170
+5191:      main all hạng 36 điểm 221 → nhánh top#4 điểm 221
+5192:  VÀO elitech-power|MODEL:EPS125PKA3S|13KVA|1PHASE,3PHASE|50HZ,60HZ|POWER(KVA)|13|ENGINEMODEL|404D22G|PHAS
+5193:      main all hạng 64 điểm 199 → nhánh top#11 điểm 199
+5194:  VÀO victory-generator||VD12F|50|10|125|12|15|F2L912D|238|MECHANICAL|NATURALLY|100*120|188
+5195:      main all hạng 110 điểm 180 → nhánh top#21 điểm 180
+5196:  VÀO sunny-weifang||DB10GF|10/125|ZS1100|STC10|1140*780*995|480
+5197:      main all hạng 112 điểm 180 → nhánh top#22 điểm 180
+5198:  VÀO superwatt-power||SK11|8/10|88/11|D1105BG|1460X730X1170|1715X900X1235
+5199:      main all hạng 115 điểm 173 → nhánh top#23 điểm 173
+5200:  VÀO sr-genset||121|99|11|9|403D11GCOMMODITY|MECH|S0L1H1|TALA40C|SA164106|1400*690*1000|1860*810*1152
+5201:      main all hạng 117 điểm 167 → nhánh top#24 điểm 167
+5202:  VÀO voltgent||VSC115S4|11|88|10|8|SDEC|3ZT11G42|[EN][RU][ES][PT]
+5203:      main all hạng 120 điểm 165 → nhánh top#25 điểm 165
+5204:  VÀO xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480
+5205:      main all hạng 121 điểm 165 → nhánh top#26 điểm 165
+5206:  VÀO uleengen||UY10GFS|8|10|380码|10|3|80*90|1357|19|164B|1860X850X1200|700
+5207:      main all hạng 122 điểm 165 → nhánh top#27 điểm 165
+5208:  VÀO victory-generator||GENERATOR|MODEL:|VT11000S|VT11000S3|FREQUENCY(HZ)|50|50|RATEDACOUTPUT(KVA)|85|106
+5209:      main all hạng 127 điểm 163 → nhánh top#28 điểm 163
+5210:  VÀO victory-generator||GENERATOR|MODEL:|VDG12S|VDG12S3|FREQUENCY(HZ)|50|50|RATEDACOUTPUT(KVA)|100|125|MA
+5211:      main all hạng 197 điểm 136 → nhánh top#29 điểm 136
+5350:== IB2300217401#0 (ra 7, vào 7)
+5351:  RA  gb-power|STANDARDFEATURES|MODEL|GBP15|STANDBYPOWER(50HZ)|11KW/14KVA|PRIMEPOWER(50HZ)|10KW/125KVA|ENG
+5352:      main top#0 điểm 281 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+5353:  RA  fdk-energy||P14/H1CONTACT|14KVA/11KW|13KVA/10KW|403A15G1|PERKINSCHINA|STAMFORDS0L1L1|CLICKHERE|DOWNL
+5354:      main top#1 điểm 257 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+5355:  RA  jet-power||P14|14|11|13|10|403A15G1|3L|84X90|1496|37|PI044F|1200*650*950|426|1950*860*1060|626
+5356:      main top#2 điểm 257 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+5357:  RA  uleengen||UP13GF|10|13|403A15G1|PERKINS|12|3L|84×90|1496|24|S0L1L1|1580X810X930|520
+5358:      main top#3 điểm 257 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+5359:  RA  sanq-power||SQP15|12/145|105/131|403D15G|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304
+5360:      main top#4 điểm 256 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+5361:  RA  eastern-lion-fuan||GFSP14|104|13|12|14|403D15G|20362|EL164C|108|SMARTGEN6120|DETAIL
+5362:      main top#5 điểm 245 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+5363:  RA  longkai-power||LG9P|12|10|11|9|403A11G1|OP1500*750*1050|AT1808*850*1130|
+5364:      main top#6 điểm 224 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+5365:  VÀO powerzoo||Y12P6|96/12|106/132|3TNV82ABGGE|VIEWDETAIL»
+5366:      main all hạng 100 điểm 151 → nhánh top#23 điểm 151
+5367:  VÀO voltgent||VYM145S5|14|11|12|10|YANMAR|3TNV88FUGGE|[EN][RU][ES][PT]
+5368:      main all hạng 102 điểm 151 → nhánh top#24 điểm 151
+5369:  VÀO voltgent||VSC135S4|13|11|125|10|SDEC|3ZT11G42|[EN][RU][ES][PT]
+5370:      main all hạng 104 điểm 146 → nhánh top#25 điểm 146
+5371:  VÀO xingguang-jiangsu||XG10GF|10/125|ZS1100|STC10|1140×780×995|480
+5372:      main all hạng 105 điểm 146 → nhánh top#26 điểm 146
+5373:  VÀO uleengen||UY12GFS|10|125|码385D|11|3|85*90|1532|23|164C|1860X850X1200|700
+5374:      main all hạng 106 điểm 146 → nhánh top#27 điểm 146
+5375:  VÀO minsun-motor||GFP125|125|10|403A15G|SYA164C
+5376:      main all hạng 107 điểm 146 → nhánh top#28 điểm 146
+5377:  VÀO victory-generator||GENERATOR|MODEL:|VDG12S|VDG12S3|FREQUENCY(HZ)|50|50|RATEDACOUTPUT(KVA)|100|125|MA
+5378:      main all hạng 109 điểm 142 → nhánh top#29 điểm 142
+5386:== IB2300220876#0 (ra 2, vào 2)
+5387:  RA  koten-power||KY16D6|13|16|14|18|YD480D|
+5388:      main top#5 điểm 229 → nhánh dropped [cyl]; Yangdong YD480D; số đông xi lanh 4 {"3":1,"4":9}; nguồn khác: victory-generator «3»
+5389:  RA  longkai-power||LG13YD|18|14|16|13|YD480D|OP1500*750*1050|AT2008*900*1130|
+5390:      main top#6 điểm 229 → nhánh dropped [cyl]; Yangdong YD480D; số đông xi lanh 4 {"3":1,"4":9}; nguồn khác: victory-generator «3»
+5391:  VÀO longkai-power||LG12X|17|13|15|12|4DW8123DYFD10W|OP1500*750*1030|AT2008*900*1130|
+5392:      main all hạng 66 điểm 173 → nhánh top#28 điểm 173
+5393:  VÀO eastern-lion-fuan||GF/GFSKF12|12|15|13|17|K4100DS|301|EL164D|128KW|RUIFEN6120|DETAIL
+5394:      main all hạng 71 điểm 165 → nhánh top#29 điểm 165
+5482:== IB2300222010#0 (ra 3, vào 3)
+5483:  RA  sanq-power||SQP176|14/18|13/16|403D15G|PI044F|WUXI|510|1010|1500X650X1225|2200X1033X1306|
+5484:      main top#0 điểm 274 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+5485:  RA  elitech-power||EPS13PA3|PERKINS|13KVA|15KVA|403D15G|50HZ|3PHASE|DOWNLOADPDF|EPS13PA3PERKINS13KVADIES
+5486:      main top#20 điểm 229 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+5487:  RA  gordon-power||GDP17|12|15|132|165|403D15G|1800|147|427|3L84×90|1496|115×74×99|180×84×110
+5488:      main top#21 điểm 229 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+5489:  VÀO rcg-power||RWB18D5S(STAGE3)|18KVA/14KW|20KVA/16KW|4M08G2D3/5|S0L2F1|PDF
+5490:      main all hạng 51 điểm 209 → nhánh top#27 điểm 209
+5491:  VÀO rcg-power||RWB18D5S(STAGE3)|18KVA/14KW|20KVA/16KW|4M08G2D3/5|WR184ES|PDF
+5492:      main all hạng 52 điểm 209 → nhánh top#28 điểm 209
+5493:  VÀO rcg-power||RDC20D5S|20KVA/16KW|22KVA/18KW|4B39G1|S0L2G1|PDF
+5494:      main all hạng 55 điểm 208 → nhánh top#29 điểm 208
+5606:== IB2300243355#0 (ra 4, vào 4)
+5607:  RA  fdk-energy||CD103V1/H1CONTACT|103KVA/82KW|94KVA/75KW|4BTA39G13|CUMMINS(CHINADONGFENG)|STAMFORDUCI274
+5608:      main top#6 điểm 284 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+5609:  RA  fdk-energy||CD110V2/H1CONTACT|110KVA/88KW|100KVA/80KW|4BTAA39G3|CUMMINS(CHINADONGFENG)|STAMFORDUCI27
+5610:      main top#7 điểm 284 → nhánh dropped [cyl]; Cummins 4BTAA39G3; số đông xi lanh 4 {"4":4,"6":1}; nguồn khác: bdadl-shanghai «6»
+5611:  RA  longkai-power||POWERYOURFUTURE|4BTA39G13|CUMMINSGENERATOR|PRIMEPOWER:75KW/9375KVAGENERATORWILLBEREAD
+5612:      main top#10 điểm 278 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+5613:  RA  dingbo||XG80GF|80/100|88/110|TAD531GE|LSA443S5|2200X720X1380|1200
+5614:      main top#18 điểm 260 → nhánh dropped [cyl]; Volvo Penta TAD531GE; số đông xi lanh 4 {"4":16}; nguồn khác: aoke-yangzhou «6»
+5615:  VÀO fdk-energy||CD110EV3/H1CONTACT|110KVA/88KW|100KVA/80KW|QSB59G2|CUMMINS(CHINADONGFENG)|STAMFORDUCI274
+5616:      main all hạng 24 điểm 276 → nhánh top#8 điểm 276
+5617:  VÀO fdk-energy||CD125/H1CONTACT|125KVA/100KW|113KVA/90KW|6BTA59G2|CUMMINS(CHINADONGFENG)|STAMFORDUCI274D
+5618:      main all hạng 26 điểm 271 → nhánh top#9 điểm 271
+5619:  VÀO sanq-power||SQC125|100/125|91/114|6BTA59G2|UCI274D|255|1297|2130|2200×830×1325|3200×1133×1766
+5620:      main all hạng 31 điểm 270 → nhánh top#11 điểm 270
+5621:  VÀO wintpower||WTYC124|90/113|/|YC6B155LD21|WT274D|2250X900X1300|2750X1100X1470
+5622:      main all hạng 89 điểm 232 → nhánh top#29 điểm 232
+5726:== IB2300254479#0 (ra 2, vào 2)
+5727:  RA  longkai-power||POWERYOURFUTURE|QSK19G11|CUMMINSGENERATOR|PRIMEPOWER:600KW/750KVAGENERATORWILLBEREADY
+5728:      main top#9 điểm 254 → nhánh dropped [cyl]; Cummins QSK19G11; số đông xi lanh 6 {"6":8,"12":1}; nguồn khác: longkai-power «V 12»
+5729:  RA  victory-generator||V780SC|50|710|8875|780|975|SC33W1150D2|12V|328|4400*1720*2170|7359
+5730:      main top#19 điểm 221 → nhánh dropped [cyl]; SDEC SC33W1150D2; số đông xi lanh 6 {"6":21,"12":2}; nguồn khác: aoke-yangzhou «12», victory-generator «12V»
+5731:  VÀO kaihua-genset||KH620GF|8525|682|775|620|DP222LB|3600X1420X1700|4160
+5732:      main all hạng 73 điểm 229 → nhánh top#17 điểm 229
+5733:  VÀO penlucky||PLY1000|1000|9125|YC61220D31|TALA49D|4937*2260*2279|ISO20’FTHQ|VIEW
+5734:      main all hạng 222 điểm 166 → nhánh top#29 điểm 166
+5873:== IB2300255495#0 (ra 7, vào 7)
+5874:  RA  gb-power|STANDARDFEATURES|MODEL|GBP15|STANDBYPOWER(50HZ)|11KW/14KVA|PRIMEPOWER(50HZ)|10KW/125KVA|ENG
+5875:      main top#0 điểm 281 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+5876:  RA  fdk-energy||P14/H1CONTACT|14KVA/11KW|13KVA/10KW|403A15G1|PERKINSCHINA|STAMFORDS0L1L1|CLICKHERE|DOWNL
+5877:      main top#1 điểm 257 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+5878:  RA  jet-power||P14|14|11|13|10|403A15G1|3L|84X90|1496|37|PI044F|1200*650*950|426|1950*860*1060|626
+5879:      main top#2 điểm 257 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+5880:  RA  uleengen||UP13GF|10|13|403A15G1|PERKINS|12|3L|84×90|1496|24|S0L1L1|1580X810X930|520
+5881:      main top#3 điểm 257 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+5882:  RA  sanq-power||SQP15|12/145|105/131|403D15G|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304
+5883:      main top#4 điểm 256 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+5884:  RA  eastern-lion-fuan||GFSP14|104|13|12|14|403D15G|20362|EL164C|108|SMARTGEN6120|DETAIL
+5885:      main top#5 điểm 245 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+5886:  RA  longkai-power||LG9P|12|10|11|9|403A11G1|OP1500*750*1050|AT1808*850*1130|
+5887:      main top#6 điểm 224 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+5888:  VÀO powerzoo||Y12P6|96/12|106/132|3TNV82ABGGE|VIEWDETAIL»
+5889:      main all hạng 100 điểm 151 → nhánh top#23 điểm 151
+5890:  VÀO voltgent||VYM145S5|14|11|12|10|YANMAR|3TNV88FUGGE|[EN][RU][ES][PT]
+5891:      main all hạng 102 điểm 151 → nhánh top#24 điểm 151
+5892:  VÀO voltgent||VSC135S4|13|11|125|10|SDEC|3ZT11G42|[EN][RU][ES][PT]
+5893:      main all hạng 104 điểm 146 → nhánh top#25 điểm 146
+5894:  VÀO xingguang-jiangsu||XG10GF|10/125|ZS1100|STC10|1140×780×995|480
+5895:      main all hạng 105 điểm 146 → nhánh top#26 điểm 146
+5896:  VÀO uleengen||UY12GFS|10|125|码385D|11|3|85*90|1532|23|164C|1860X850X1200|700
+5897:      main all hạng 106 điểm 146 → nhánh top#27 điểm 146
+5898:  VÀO minsun-motor||GFP125|125|10|403A15G|SYA164C
+5899:      main all hạng 107 điểm 146 → nhánh top#28 điểm 146
+5900:  VÀO victory-generator||GENERATOR|MODEL:|VDG12S|VDG12S3|FREQUENCY(HZ)|50|50|RATEDACOUTPUT(KVA)|100|125|MA
+5901:      main all hạng 109 điểm 142 → nhánh top#29 điểm 142
+6110:== IB2300268389#0 (ra 5, vào 5)
+6111:  RA  stone-power||SC775E6|682|620|853|775|KT38G|HCI544FS|MX5604|WHI5F
+6112:      main top#9 điểm 273 → nhánh dropped [cyl]; Cummins KT38G; số đông xi lanh 12 {"6":2,"12":15}; nguồn khác: mingbang-mbkl «6», xinhengxin-fujian «6»
+6113:  RA  bobig-power||BC825|600|750|660|825|KTA38G2|664|BW404B|4500*1800*2745|5600*2200*2550
+6114:      main top#17 điểm 269 → nhánh dropped [cyl]; Cummins KTA38G2; số đông xi lanh 12 {"12":27}; nguồn khác: bdadl-shanghai «6», xinhengxin-fujian «6»
+6115:  RA  dingbo||XG600GF|600/750|660/825|KTA38G2|LVI634B1|4200X1820X2250|7600
+6116:      main top#18 điểm 269 → nhánh dropped [cyl]; Cummins KTA38G2; số đông xi lanh 12 {"12":27}; nguồn khác: bdadl-shanghai «6», xinhengxin-fujian «6»
+6117:  RA  eastern-lion-fuan||GF/GFSC600|600|750|667|833|KTA38G2|664|EL354H|600KW|SMARTGEN6120|DETAIL
+6118:      main top#19 điểm 269 → nhánh dropped [cyl]; Cummins KTA38G2; số đông xi lanh 12 {"12":27}; nguồn khác: bdadl-shanghai «6», xinhengxin-fujian «6»
+6119:  RA  eastern-lion-fuan||GF/GFSC640|640|800|711|889|KTA38G2B|711|EL404C|640KW|SMARTGEN6120|DETAIL
+6120:      main top#29 điểm 262 → nhánh dropped [cyl]; Cummins KTA38G2B; số đông xi lanh 12 {"12":26}; nguồn khác: bdadl-shanghai «6», xinhengxin-fujian «6»
+6121:  VÀO jet-power||SD880|880|704|800|640|6KTAA25G321|6L|170×185|252|192|JET634C
+6122:      main all hạng 77 điểm 262 → nhánh top#25 điểm 262
+6123:  VÀO stone-power||SM750E5|660|600|825|750|S6R2PTAA|LVI634B|MX6004|WHI6B
+6124:      main all hạng 85 điểm 261 → nhánh top#26 điểm 261
+6125:  VÀO voltgent||P8501|770|616|850|680|2806AE18TTAG5|LL7224L|FG100
+6126:      main all hạng 93 điểm 250 → nhánh top#27 điểm 250
+6127:  VÀO sanq-power||SQIC900|720/900|648/810|QSK23G3|INDIA|LVI634D|1717|6680|10632|4266×1879×2052|6058×2438×2
+6128:      main all hạng 99 điểm 245 → nhánh top#28 điểm 245
+6129:  VÀO longkai-power||LG600BD|660|825|600|750|6M33G825/5|LK634B|LSA493M65|OP3800*1600*2200|AT5680*2100*2500
+6130:      main all hạng 101 điểm 245 → nhánh top#29 điểm 245
+6213:== IB2300269124#0 (ra 1, vào 1)
+6214:  RA  victory-generator||V780SC|50|710|8875|780|975|SC33W1150D2|12V|328|4400*1720*2170|7359
+6215:      main top#20 điểm 218 → nhánh dropped [cyl]; SDEC SC33W1150D2; số đông xi lanh 6 {"6":21,"12":2}; nguồn khác: aoke-yangzhou «12», victory-generator «12V»
+6216:  VÀO agestar||GS880(S)|880|704|800|640|SC27G990D2|1764|ELECTRICAL|ASG634G|6000*2400*2500|5500
+6217:      main all hạng 570 điểm 115 → nhánh top#29 điểm 115
+6224:== IB2300281362#0 (ra 2, vào 2)
+6225:  RA  koten-power||KY16D6|13|16|14|18|YD480D|
+6226:      main top#5 điểm 229 → nhánh dropped [cyl]; Yangdong YD480D; số đông xi lanh 4 {"3":1,"4":9}; nguồn khác: victory-generator «3»
+6227:  RA  longkai-power||LG13YD|18|14|16|13|YD480D|OP1500*750*1050|AT2008*900*1130|
+6228:      main top#6 điểm 229 → nhánh dropped [cyl]; Yangdong YD480D; số đông xi lanh 4 {"3":1,"4":9}; nguồn khác: victory-generator «3»
+6229:  VÀO longkai-power||LG12X|17|13|15|12|4DW8123DYFD10W|OP1500*750*1030|AT2008*900*1130|
+6230:      main all hạng 66 điểm 173 → nhánh top#28 điểm 173
+6231:  VÀO eastern-lion-fuan||GF/GFSKF12|12|15|13|17|K4100DS|301|EL164D|128KW|RUIFEN6120|DETAIL
+6232:      main all hạng 71 điểm 165 → nhánh top#29 điểm 165
+6236:== IB2300284871#0 (ra 1, vào 1)
+6237:  RA  rise-power||RDL28|28/35|308/385|D226B3D|LSA432S1|1650×760×1350|2500×1000×1500|720|1450
+6238:      main top#24 điểm 253 → nhánh dropped [cyl]; Deutz / Weichai D226B3D; số đông xi lanh 3 {"3":9,"4":1}; nguồn khác: aoke-yangzhou «4»
+6239:  VÀO rcg-power||RDC35D6S|35KVA/28KW|39KVA/31KW|4B39G12|S0L2P1|PDF
+6240:      main all hạng 74 điểm 233 → nhánh top#29 điểm 233
+6328:== IB2300305099#0 (ra 7, vào 7)
+6329:  RA  dingbo||XG200GF|200/250|220/275|TAD734GE|LSA463S5|2650X1070X1650|1650
+6330:      main top#0 điểm 257 → nhánh dropped [cyl]; Volvo Penta TAD734GE; số đông xi lanh 6 {"4":1,"6":16}; nguồn khác: mingbang-mbkl «4»
+6331:  RA  penlucky||PLW250/B8|250|/|WP10D238E201|TALA44M|2980*1170*1780|3590*1310*2050|VIEW
+6332:      main top#2 điểm 233 → nhánh dropped [cyl]; Weichai WP10D238E201; số đông xi lanh 6 {"4":1,"6":6}; nguồn khác: depco-power «4»
+6333:  RA  penlucky||PLW275/B8|275|250|WP10D264E201|TALA44M|2980*1170*1780|3890*1460*2150|VIEW
+6334:      main top#3 điểm 233 → nhánh dropped [cyl]; Weichai WP10D264E201; số đông xi lanh 6 {"4":1,"6":5}; nguồn khác: depco-power «4»
+6335:  RA  sr-genset||275|220|250|200|TAD734GE|ELEC|UCDI274K|TALA46D|SA274200|2900*1300*1670|3910*1332*2050
+6336:      main top#6 điểm 223 → nhánh dropped [cyl]; Volvo Penta TAD734GE; số đông xi lanh 6 {"4":1,"6":16}; nguồn khác: mingbang-mbkl «4»
+6337:  RA  gordon-power||GDWP275|200|250|220|275|WP10D264E201|1800|240|516|L6126×130|9726|291×105×185|395×130×2
+6338:      main top#10 điểm 221 → nhánh dropped [cyl]; Weichai WP10D264E201; số đông xi lanh 6 {"4":1,"6":5}; nguồn khác: depco-power «4»
+6339:  RA  kaihua-genset||KH200GF|275|250|WP10D264E201|2860*1170*1800|1930
+6340:      main top#11 điểm 221 → nhánh dropped [cyl]; Weichai WP10D264E201; số đông xi lanh 6 {"4":1,"6":5}; nguồn khác: depco-power «4»
+6341:  RA  sr-genset||275|220|250|200|TAD734GE|ELEC|UCI274H|TALA44M|SA274200|2900*1300*1670|3910*1332*2050
+6342:      main top#12 điểm 220 → nhánh dropped [cyl]; Volvo Penta TAD734GE; số đông xi lanh 6 {"4":1,"6":16}; nguồn khác: mingbang-mbkl «4»
+6343:  VÀO mingbang-mbkl||7|MBV200|250|200|275|220|TAD734GE|4|33|105*127|485|3300×1400×1940
+6344:      main all hạng 38 điểm 165 → nhánh top#19 điểm 165
+6345:  VÀO penlucky||PLC275D|275|250|6CTAA89G2|UCDI274K1|2500*960*1850|3590*1150*2050|VIEW
+6346:      main all hạng 47 điểm 165 → nhánh top#24 điểm 165
+6347:  VÀO gordon-power||GDDS275|200|250|220|275|P126TI|1500|241|412|L6123×155|111|298×118×160|430×148×203
+6348:      main all hạng 48 điểm 165 → nhánh top#25 điểm 165
+6349:  VÀO eastern-lion-fuan||GF/GFSHC278|200|250|222|278|6126ZLD2|265|EL274K|200|RUIFEN6120|DETAIL
+6350:      main all hạng 49 điểm 165 → nhánh top#26 điểm 165
+6351:  VÀO rcg-power||R200N5|250KVA/200KW|275KVA/220KW|RDC10N2|RC274K|PDF
+6352:      main all hạng 51 điểm 165 → nhánh top#27 điểm 165
+6353:  VÀO rcg-power||R200N6|250KVA/200KW|275KVA/220KW|RDC10N2|RC274J|PDF
+6354:      main all hạng 52 điểm 165 → nhánh top#28 điểm 165
+6355:  VÀO minsun-motor||GFR250|250|200|6126ZLD|SYA274K
+6356:      main all hạng 53 điểm 165 → nhánh top#29 điểm 165
+6415:== IB2300307974#0 (ra 4, vào 4)
+6416:  RA  fdk-energy||SC138V1H1CONTACT|138KVA/110KW|125KVA/100KW|4HTAA43G36|SHANGCHAI(CHINA)|NIANFENGNF274E|CL
+6417:      main top#9 điểm 277 → nhánh dropped [cyl]; SDEC 4HTAA43G36; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: hanyang-weifang «6»
+6418:  RA  sanq-power||SQP150|120/150|110/135|1106A70TG1|UCI274E|WUXI|1760|2864|2900×900×1536|3600×1333×2040
+6419:      main top#15 điểm 271 → nhánh all []; Perkins 1106A70TG1; bị đẩy bởi fdk-energy||P150/H1CONTACT|150KVA/120KW|135KVA/108KW|1106A70TG1|PERKIN (1106A70TG1, điểm 271)
+6420:  RA  bobig-power||BC12375S|90|113|99|124|4BTA39G13|97|BW274C|2120*850*1400|2850*1040*1430
+6421:      main top#19 điểm 269 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+6422:  RA  fdk-energy||SC138V1H1CONTACT|138KVA/110KW|125KVA/100KW|4HTAA43G36|SHANGCHAI(CHINA)|NIANFENGNFS274D|C
+6423:      main top#21 điểm 265 → nhánh dropped [cyl]; SDEC 4HTAA43G36; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: hanyang-weifang «6»
+6424:  VÀO fdk-energy||CD125N/H1CONTACT|125KVA/100KW|113KVA/90KW|QSB59G30|CUMMINS(CHINADONGFENG)|STAMFORDUCI274
+6425:      main all hạng 8 điểm 284 → nhánh top#5 điểm 284
+6426:  VÀO fdk-energy||P150/H1CONTACT|150KVA/120KW|135KVA/108KW|1106A70TG1|PERKINSCHINA|STAMFORDUCI274E|CLICKHE
+6427:      main all hạng 19 điểm 271 → nhánh top#14 điểm 271
+6428:  VÀO rise-power||RDL9460|944/118|104/130|TD226B6D|LSA442VS45|2200×800×1500|2900×1080×1650|1250|1850
+6429:      main all hạng 74 điểm 261 → nhánh top#25 điểm 261
+6430:  VÀO dingbo||XG100GF|100/125|110/1375|YC6B180LD20|TFW21004A|2400X950X1400|1300
+6431:      main all hạng 90 điểm 249 → nhánh top#26 điểm 249
+6499:== IB2300315082#0 (ra 2, vào 2)
+6500:  RA  victory-generator||V660SC|50|600|750|660|825|SC33W990D2|12V|328|4360*1620*2160|6820
+6501:      main top#19 điểm 229 → nhánh dropped [cyl]; SDEC SC33W990D2; số đông xi lanh 6 {"6":24,"12":3}; nguồn khác: aoke-yangzhou «12», taihai-taizhou «12», victory-generator «12V»
+6502:  RA  victory-generator||V780SC|50|710|8875|780|975|SC33W1150D2|12V|328|4400*1720*2170|7359
+6503:      main top#27 điểm 211 → nhánh dropped [cyl]; SDEC SC33W1150D2; số đông xi lanh 6 {"6":21,"12":2}; nguồn khác: aoke-yangzhou «12», victory-generator «12V»
+6504:  VÀO uleengen||CCFJ600Y|600|750|YC6CL960LC20|706|6|200*210|3958|145:1|198|1000|MPH6004|4180*1320*2100|660
+6505:      main all hạng 241 điểm 205 → nhánh top#28 điểm 205
+6506:  VÀO byc-power||BYYC900|650|813|720|900|YCTH281070G31|1500|715|634C|640
+6507:      main all hạng 242 điểm 205 → nhánh top#29 điểm 205
+6590:== IB2300325153#0 (ra 7, vào 6)
+6591:  RA  gb-power|STANDARDFEATURES|MODEL|GBP10|STANDBYPOWER(50HZ)|88KW/11KVA|PRIMEPOWER(50HZ)|8KW/10KVA|ENGIN
+6592:      main top#0 điểm 278 → nhánh dropped [cyl]; Perkins 403D11G; số đông xi lanh 3 {"3":16,"4":1}; nguồn khác: depco-power «4»
+6593:  RA  fdk-energy||P10/H1CONTACT|10KVA/8KW|9KVA/7KW|403D11G|PERKINSCHINA|STAMFORDS0L1H1|CLICKHERE|DOWNLOAD
+6594:      main top#1 điểm 268 → nhánh dropped [cyl]; Perkins 403D11G; số đông xi lanh 3 {"3":16,"4":1}; nguồn khác: depco-power «4»
+6595:  RA  fdk-energy||P10/H1CONTACT|10KVA/8KW|9KVA/7KW|403A11G1|PERKINSCHINA|STAMFORDS0L1H1|CLICKHERE|DOWNLOAD
+6596:      main top#2 điểm 268 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+6597:  RA  sanq-power||SQP10|8/10|7/9|403D11G|PI044E|WUXI|450|896|1500X650X1225|2200X1033X1304
+6598:      main top#3 điểm 265 → nhánh dropped [cyl]; Perkins 403D11G; số đông xi lanh 3 {"3":16,"4":1}; nguồn khác: depco-power «4»
+6599:  RA  sanq-power||SQP10|8/10|7/9|403A11G1|PI044E|WUXI|450|896|1260X630X730|2200X1033X1304
+6600:      main top#4 điểm 265 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+6601:  RA  bobig-power||BP10|7|9|8|10|403A11G1MADEINCHINA|7|BW164B|1100*650*1000|1700*850*1000
+6602:      main top#5 điểm 256 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+6603:  RA  elitech-power||EPS11PA3|PERKINS|11KVA|12KVA|403D15G|50HZ|3PHASE|DOWNLOADPDF|EPS11PA3PERKINS11KVADIES
+6604:      main top#10 điểm 191 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+6605:  VÀO victory-generator||V8P|50|72|9|8|10|403A11G1/403D11G|3|3|77|81|49|52|1480*750*1270|390
+6606:      main all hạng 67 điểm 152 → nhánh top#12 điểm 152
+6607:  VÀO westinpower||TP10|10|8|9|7|403A11G1/403D11G|11|26|1402*715*1155|1856*826*1415
+6608:      main all hạng 68 điểm 152 → nhánh top#13 điểm 152
+6609:  VÀO superwatt-power||SK11|8/10|88/11|D1105BG|1460X730X1170|1715X900X1235
+6610:      main all hạng 72 điểm 148 → nhánh top#15 điểm 148
+6611:  VÀO sr-genset||121|99|11|9|403D11GCOMMODITY|MECH|S0L1H1|TALA40C|SA164106|1400*690*1000|1860*810*1152
+6612:      main all hạng 76 điểm 139 → nhánh top#19 điểm 139
+6613:  VÀO victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY(HZ)|50|50|50|RATEDACOUTPUT(KV
+6614:      main all hạng 77 điểm 139 → nhánh top#20 điểm 139
+6615:  VÀO rise-power||RXL8|8/10|9/11|3N17D|SLW88|1400×550×900|580
+6616:      main all hạng 103 điểm 120 → nhánh top#23 điểm 120
+6810:== IB2300340114#0 (ra 9, vào 9)
+6811:  RA  fdk-energy|CUMMINSMODEL:4BTA39G2(QC58/67E)GENERALFEATURES:|FDKDIESELGENERATORSET|DATA|GENSETMODEL|FD
+6812:      main top#1 điểm 483 → nhánh dropped [cyl]; Cummins 4BTA39G2; số đông xi lanh 4 {"4":22}; nguồn khác: bdadl-shanghai «6»
+6813:  RA  fdk-energy||CD69EV2/H1CONTACT|69KVA/55KW|63KVA/50KW|QSB39G2|CUMMINS(CHINADONGFENG)|STAMFORDS1L2Y1|CL
+6814:      main top#2 điểm 475 → nhánh dropped [cyl]; Cummins QSB39G2; số đông xi lanh 4 {"4":8,"6":1}; nguồn khác: yanan-power «6»
+6815:  RA  dingbo||XG50GF|50/625|55/6875|4BTA39G2|UCI224E14|1860X760X1300|900
+6816:      main top#3 điểm 469 → nhánh dropped [cyl]; Cummins 4BTA39G2; số đông xi lanh 4 {"4":22}; nguồn khác: bdadl-shanghai «6»
+6817:  RA  bobig-power||BC6875S|50|63|55|69|4BTA39G2|60|BW224D|1750*770*1370|2450*970*1250
+6818:      main top#4 điểm 468 → nhánh dropped [cyl]; Cummins 4BTA39G2; số đông xi lanh 4 {"4":22}; nguồn khác: bdadl-shanghai «6»
+6819:  RA  bobig-power||BWC83|60|75|66|83|WP41D80E200|72|BW224F|1900*700*1200|2500*970*1200
+6820:      main top#6 điểm 449 → nhánh dropped [cyl]; Weichai WP41D80E200; số đông xi lanh 4 {"4":14,"6":1}; nguồn khác: bdadl-shanghai «6»
+6821:  RA  penlucky||PLC70Q|70|625|QSB39G2|S1L2Y1|1760*760*1380|2290*1060*1680|VIEW
+6822:      main top#9 điểm 436 → nhánh dropped [cyl]; Cummins QSB39G2; số đông xi lanh 4 {"4":8,"6":1}; nguồn khác: yanan-power «6»
+6823:  RA  wintpower||WTYC80|58/73|64/80|YC4A100ZD20|WT224F|1950X850X1270|2400X930X1350
+6824:      main top#11 điểm 428 → nhánh dropped [cyl]; Yuchai YC4A100ZD20; số đông xi lanh 4 {"4":14,"6":1}; nguồn khác: haifeng-taizhou «6L»
+6825:  RA  longkai-power||LG60WP|83|66|75|60|WP41D80E200|OP1900*870*1180|AT2688*1080*1450|DOWNLOAD
+6826:      main top#19 điểm 409 → nhánh dropped [cyl]; Weichai WP41D80E200; số đông xi lanh 4 {"4":14,"6":1}; nguồn khác: bdadl-shanghai «6»
+6827:  RA  victory-generator||V64F|50|58|73|64|80|WP4D100E200|227|6|105|120|625|1025|168|24V|1950X1000X1450|120
+6828:      main top#24 điểm 404 → nhánh dropped [cyl]; Deutz / Weichai WP4D100E200; số đông xi lanh 4 {"4":12,"6":1}; nguồn khác: victory-generator «6»
+6829:  VÀO fengmao-weifang||58GF|58/73|64/80|6BT59G1|92|UI224F|58/73|2150×830×1496|1215
+6830:      main all hạng 53 điểm 397 → nhánh top#21 điểm 397
+6831:  VÀO ettes-power||EC50M5|50|625|6BT59GM83|83/111|6L|59|1900X900X1300|1000|
+6832:      main all hạng 54 điểm 397 → nhánh top#22 điểm 397
+6833:  VÀO victory-generator||V60DE|60|54|68|60|75|DB58|14|6L|2180*1050*1350|1317
+6834:      main all hạng 55 điểm 396 → nhánh top#23 điểm 396
+6835:  VÀO kaihua-genset||CCFJ50JW|63|50|6BT59GM83|1980X895X1300|1000
+6836:      main all hạng 56 điểm 396 → nhánh top#24 điểm 396
+6837:  VÀO byc-power||BYYC80|60|75|64|80|YCA48T100G20|1500|70|224F|58
+6838:      main all hạng 58 điểm 393 → nhánh top#25 điểm 393
+6839:  VÀO gordon-power||GDW69|50|625|55|6875|N4105ZLD|1500|63|17|4105×120|415|186×90×121|240×102×130
+6840:      main all hạng 59 điểm 389 → nhánh top#26 điểm 389
+6841:  VÀO longkai-power||LG50KF|69|55|63|50|N4105ZLD|OP1900*800*1150|AT2538*1000*1450|
+6842:      main all hạng 63 điểm 388 → nhánh top#27 điểm 388
+6843:  VÀO mingbang-mbkl||9|MBC50|63|50|69|55|6BT59G2|6|59|102*120|215
+6844:      main all hạng 61 điểm 388 → nhánh top#28 điểm 388
+6845:  VÀO elitech-power||EPS63BNA3|BEINEIDEUTZ|63KVA|70KVA|F6L912T|50HZ|3PHASE|DOWNLOADPDF|EPS63BNA3BEINEI63KV
+6846:      main all hạng 62 điểm 388 → nhánh top#29 điểm 388
+6969:== IB2300356137#0 (ra 1, vào 1)
+6970:  RA  kaihua-genset||KH75GF|1031|825|9375|75|TAD531GE|2080X720X1450|1150
+6971:      main top#16 điểm 188 → nhánh dropped [cyl]; Volvo Penta TAD531GE; số đông xi lanh 4 {"4":16}; nguồn khác: aoke-yangzhou «6»
+6972:  VÀO eastern-lion-fuan||GF/GFSKF68|68|85|76|94|R6105ZDS|84|EL224G|68KW|RUIFEN6120|DETAIL
+6973:      main all hạng 41 điểm 167 → nhánh top#29 điểm 167
+6980:== IB2300360864#0 (ra 1, vào 1)
+6981:  RA  rise-power||RDL40|40/50|44/55|TD226B3D|LSA432S35|1650×760×1350|2500×1000×1500|740|1450
+6982:      main top#26 điểm 253 → nhánh dropped [cyl]; Deutz / Weichai TD226B3D; số đông xi lanh 3 {"3":8,"4":1}; nguồn khác: aoke-yangzhou «4»
+6983:  VÀO longkai-power||POWERYOURFUTURE|4HT43G21|SDECGENERATOR|PRIMEPOWER:45KW/5625KVAGENERATORWILLBEREADYTOR
+6984:      main all hạng 77 điểm 241 → nhánh top#29 điểm 241
+7039:== IB2300368256#0 (ra 2, vào 2)
+7040:  RA  fdk-energy||CD110V2/H1CONTACT|110KVA/88KW|100KVA/80KW|4BTAA39G3|CUMMINS(CHINADONGFENG)|STAMFORDUCI27
+7041:      main top#5 điểm 284 → nhánh dropped [cyl]; Cummins 4BTAA39G3; số đông xi lanh 4 {"4":4,"6":1}; nguồn khác: bdadl-shanghai «6»
+7042:  RA  dingbo||XG80GF|80/100|88/110|TAD531GE|LSA443S5|2200X720X1380|1200
+7043:      main top#17 điểm 260 → nhánh dropped [cyl]; Volvo Penta TAD531GE; số đông xi lanh 4 {"4":16}; nguồn khác: aoke-yangzhou «6»
+7044:  VÀO fdk-energy||CD125N/H1CONTACT|125KVA/100KW|113KVA/90KW|QSB59G30|CUMMINS(CHINADONGFENG)|STAMFORDUCI274
+7045:      main all hạng 25 điểm 271 → nhánh top#10 điểm 271
+7046:  VÀO uleengen||CCFJ90W|90|113|WP6CD132E200|120|6|105*130|675|1500|化学品船|MPH904|2250*1035*1400|1450
+7047:      main all hạng 80 điểm 232 → nhánh top#29 điểm 232
+7071:== IB2300371456#0 (ra 3, vào 3)
+7072:  RA  acepow-fuan||APYD10|50HZ|10|11|125|138|BC164C|YD480D|14KW/1500RPM
+7073:      main top#17 điểm 244 → nhánh dropped [cyl]; Yangdong YD480D; số đông xi lanh 4 {"3":1,"4":9}; nguồn khác: victory-generator «3»
+7074:  RA  tecgen-fujian||TG15YD|15|12|14|11|YD480D|TG164S11
+7075:      main top#23 điểm 229 → nhánh dropped [cyl]; Yangdong YD480D; số đông xi lanh 4 {"3":1,"4":9}; nguồn khác: victory-generator «3»
+7076:  RA  gordon-power||GDYD14|10|125|11|1375|YD480D|1500|14|41|4L80×90|1809|130×80×110|200×84×116
+7077:      main top#28 điểm 204 → nhánh dropped [cyl]; Yangdong YD480D; số đông xi lanh 4 {"3":1,"4":9}; nguồn khác: victory-generator «3»
+7078:  VÀO elitech-power||EPS10QCA3|QUANCHAI|10KVA|11KVA|QC380D|50HZ|3PHASE|DOWNLOADPDF|EPS10QCA3QUANCHAI10KVAD
+7079:      main all hạng 125 điểm 197 → nhánh top#27 điểm 197
+7080:  VÀO kaihua-genset||KH8GF|11|10|3Z11G42|1350*600*1100|550
+7081:      main all hạng 126 điểm 197 → nhánh top#28 điểm 197
+7082:  VÀO victory-generator||V12YD|50|11|1375|12|15|YD480D|3|NATURAL|DIRECTINJECTION|1532|85*90|≤5|≤262|2100*7
+7083:      main all hạng 133 điểm 191 → nhánh top#29 điểm 191
+7095:== IB2300372629#0 (ra 1, vào 1)
+7096:  RA  sanq-power||SQP206|16/20|14/18|403A15G2|PI044F|WUXI|620|1140|1500×650×1225|2200×1033×1306|
+7097:      main top#5 điểm 281 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+7098:  VÀO uleengen||UC25GF|20|25|4B39G2|CUMMINS|24|4L|102×120|39|46|S0L2M1|1800X700X1200|700
+7099:      main all hạng 56 điểm 256 → nhánh top#29 điểm 256
+7214:== IB2300374375#0 (ra 7, vào 6)
+7215:  RA  gb-power|STANDARDFEATURES|MODEL|GBP10|STANDBYPOWER(50HZ)|88KW/11KVA|PRIMEPOWER(50HZ)|8KW/10KVA|ENGIN
+7216:      main top#0 điểm 278 → nhánh dropped [cyl]; Perkins 403D11G; số đông xi lanh 3 {"3":16,"4":1}; nguồn khác: depco-power «4»
+7217:  RA  fdk-energy||P10/H1CONTACT|10KVA/8KW|9KVA/7KW|403D11G|PERKINSCHINA|STAMFORDS0L1H1|CLICKHERE|DOWNLOAD
+7218:      main top#1 điểm 275 → nhánh dropped [cyl]; Perkins 403D11G; số đông xi lanh 3 {"3":16,"4":1}; nguồn khác: depco-power «4»
+7219:  RA  fdk-energy||P10/H1CONTACT|10KVA/8KW|9KVA/7KW|403A11G1|PERKINSCHINA|STAMFORDS0L1H1|CLICKHERE|DOWNLOAD
+7220:      main top#2 điểm 275 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+7221:  RA  sanq-power||SQP10|8/10|7/9|403D11G|PI044E|WUXI|450|896|1500X650X1225|2200X1033X1304
+7222:      main top#3 điểm 272 → nhánh dropped [cyl]; Perkins 403D11G; số đông xi lanh 3 {"3":16,"4":1}; nguồn khác: depco-power «4»
+7223:  RA  jet-power||P10|10|8|9|7|403A11G1|3L|77X81|1131|3|PI044E|1200*650*950|352|1950*860*1060|552
+7224:      main top#4 điểm 272 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+7225:  RA  sanq-power||SQP10|8/10|7/9|403A11G1|PI044E|WUXI|450|896|1260X630X730|2200X1033X1304
+7226:      main top#5 điểm 272 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+7227:  RA  elitech-power||EPS11PA3|PERKINS|11KVA|12KVA|403D15G|50HZ|3PHASE|DOWNLOADPDF|EPS11PA3PERKINS11KVADIES
+7228:      main top#10 điểm 200 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+7229:  VÀO jet-power||YN11|11|88|10|8|3TNV82AGGE/99KW|3|MECHANICAL|1331|82X84|PI044E/10KVA|1200X600X950|430|170
+7230:      main all hạng 48 điểm 203 → nhánh top#4 điểm 203
+7231:  VÀO ettes-power||EP10|7|9|8|10|403A11G1★|TBA|3L|TBA|1150*500*1100|280|
+7232:      main all hạng 89 điểm 159 → nhánh top#13 điểm 159
+7233:  VÀO sr-genset||121|99|11|9|403D11GCOMMODITY|MECH|S0L1H1|TALA40C|SA164106|1400*690*1000|1860*810*1152
+7234:      main all hạng 93 điểm 148 → nhánh top#16 điểm 148
+7235:  VÀO victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY(HZ)|50|50|50|RATEDACOUTPUT(KV
+7236:      main all hạng 97 điểm 145 → nhánh top#20 điểm 145
+7237:  VÀO comappower||COM12K|12KVA|99KW|113KVA|9KW|V1505E2BG|4|COM12K
+7238:      main all hạng 103 điểm 140 → nhánh top#22 điểm 140
+7239:  VÀO ettes-power||EP12|9|11|10|12|403D11G★|TBA|3L|TBA|1300*690*1320|280|
+7240:      main all hạng 107 điểm 136 → nhánh top#23 điểm 136
+7582:== IB2400054276#0 (ra 3, vào 3)
+7583:  RA  sanq-power||SQP176|14/18|13/16|403D15G|PI044F|WUXI|510|1010|1500X650X1225|2200X1033X1306|
+7584:      main top#1 điểm 474 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+7585:  RA  elitech-power||EPS15PA3|PERKINS|15KVA|17KVA|403D15G|50HZ|3PHASE|DOWNLOADPDF|EPS15PA3PERKINS15KVADIES
+7586:      main top#23 điểm 429 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+7587:  RA  gordon-power||GDP17|12|15|132|165|403D15G|1800|147|427|3L84×90|1496|115×74×99|180×84×110
+7588:      main top#24 điểm 429 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+7589:  VÀO voltgent||VSC1655E|165|132|15|12|SDEC|4Z23G21|[EN][RU][ES][PT]
+7590:      main all hạng 51 điểm 429 → nhánh top#27 điểm 429
+7591:  VÀO longkai-power||LG15BD|165|20625|15|1875|4M06G20/5|LK184E|LSA40M7|OP1500*750*1050|AT2188*900*1280|
+7592:      main all hạng 52 điểm 428 → nhánh top#28 điểm 428
+7593:  VÀO acepow-fuan||HPDD16|16|200|176|220|BC184E|BFM3G1
+7594:      main all hạng 53 điểm 428 → nhánh top#29 điểm 428
+7970:== IB2400085846#0 (ra 8, vào 8)
+7971:  RA  bobig-power||BC15125S|1100|1375|1210|1513|KTA50G3|1220|BW404G|5200*2150*2550|6100*2250*3050
+7972:      main top#11 điểm 269 → nhánh dropped [cyl]; Cummins KTA50G3; số đông xi lanh 16 {"12":3,"16":29}; nguồn khác: bdadl-shanghai «10», comappower «12», huipu-power «12», mingbang-mbkl «12», suneco-linyi «12», xinhengxin-fujian «12», xinzhengfa «12», yingtai-jiangsu «12»
+7973:  RA  stone-power||SC1375E6|1210|1100|1513|1375|KTA50G3|LVI634G|MX10304|WHI6G
+7974:      main top#12 điểm 269 → nhánh dropped [cyl]; Cummins KTA50G3; số đông xi lanh 16 {"12":3,"16":29}; nguồn khác: bdadl-shanghai «10», comappower «12», huipu-power «12», mingbang-mbkl «12», suneco-linyi «12», xinhengxin-fujian «12», xinzhengfa «12», yingtai-jiangsu «12»
+7975:  RA  bobig-power||BC1513|1100|1375|1210|1513|KTA50G8|1200|BW404J|4650*2065*2500|6100*2250*3050
+7976:      main top#13 điểm 269 → nhánh dropped [cyl]; Cummins KTA50G8; số đông xi lanh 16 {"12":2,"16":28}; nguồn khác: bdadl-shanghai «10», mingbang-mbkl «12», xinzhengfa «12», yingtai-jiangsu «12»
+7977:  RA  dingbo||XG1100GF|1100/1375|1210/15125|KTA50G8|PI734B1|5620X2280X2350|11000
+7978:      main top#14 điểm 269 → nhánh dropped [cyl]; Cummins KTA50G8; số đông xi lanh 16 {"12":2,"16":28}; nguồn khác: bdadl-shanghai «10», mingbang-mbkl «12», xinzhengfa «12», yingtai-jiangsu «12»
+7979:  RA  eastern-lion-fuan||GF/GFSC1100|1100|1375|1222|1528|KTA50G8|1200|EL404H|1120KW|SMARTGEN6120|DETAIL
+7980:      main top#15 điểm 269 → nhánh dropped [cyl]; Cummins KTA50G8; số đông xi lanh 16 {"12":2,"16":28}; nguồn khác: bdadl-shanghai «10», mingbang-mbkl «12», xinzhengfa «12», yingtai-jiangsu «12»
+7981:  RA  bobig-power||BC1650|1200|1500|1320|1650|KTA50GS8|1287|BW454C|4650*2065*2500|6100*2250*3050
+7982:      main top#16 điểm 269 → nhánh dropped [cyl]; Cummins KTA50GS8; số đông xi lanh 16 {"12":1,"16":28}; nguồn khác: mingbang-mbkl «12»
+7983:  RA  dingbo||XG1200GF|1200/1500|1320/1650|KTA50GS8|PI734C1|5620X2280X2350|11000
+7984:      main top#17 điểm 269 → nhánh dropped [cyl]; Cummins KTA50GS8; số đông xi lanh 16 {"12":1,"16":28}; nguồn khác: mingbang-mbkl «12»
+7985:  RA  eastern-lion-fuan||GF/GFSC1120|1180|1475|1311|1639|KTA50GS8|1287|EL404I|1240KW|SMARTGEN6120|DETAIL
+7986:      main top#18 điểm 269 → nhánh dropped [cyl]; Cummins KTA50GS8; số đông xi lanh 16 {"12":1,"16":28}; nguồn khác: mingbang-mbkl «12»
+7987:  VÀO dingbo||XG1100GF|1100/1375|1210/15125|401246TWG3A|MX10304|5000X2100X2550|10100
+7988:      main all hạng 51 điểm 269 → nhánh top#13 điểm 269
+7989:  VÀO sanq-power||SQM1650|1650/1320|1500/1200|S12RPTAA2C|PI734C|308|12317|18500|4920X2192X2810|12192X2438X
+7990:      main all hạng 57 điểm 269 → nhánh top#16 điểm 269
+7991:  VÀO sanq-power||SQM1500|1500/1200|1375/1100|S12RPTA2C|PI734B|281|10500|18300|4650X2100X2630|12192X2438X2
+7992:      main all hạng 59 điểm 269 → nhánh top#17 điểm 269
+7993:  VÀO stone-power||SM1375E5|1200|1100|1500|1375|S12RPTA2|PI734B|MX12404|WHI7B
+7994:      main all hạng 62 điểm 269 → nhánh top#18 điểm 269
+7995:  VÀO stone-power||SM1500E5|1320|1200|1650|1500|S12RPTAA2|PI734C|MX12404|WHI7C
+7996:      main all hạng 64 điểm 269 → nhánh top#19 điểm 269
+7997:  VÀO longkai-power||LG1100BD|1210|15125|1100|1375|12M33G1500/5|LK734B|LSA502L8|OP4700*2200*2400|40HQ|
+7998:      main all hạng 72 điểm 265 → nhánh top#22 điểm 265
+7999:  VÀO uleengen||UW1500GF|1200|1500|12M33D1500E310|1350|12V|150×185|392|280|S7L1DC41|4600×1900×2400|8300
+8000:      main all hạng 74 điểm 265 → nhánh top#23 điểm 265
+8001:  VÀO acepow-fuan||APW1090|||1200|1500|PI734C|1120|1232|12M33D1320E200|
+8002:      main all hạng 78 điểm 261 → nhánh top#24 điểm 261
+8090:== IB2400090868#0 (ra 3, vào 3)
+8091:  RA  sanq-power||SQP176|14/18|13/16|403D15G|PI044F|WUXI|510|1010|1500X650X1225|2200X1033X1306|
+8092:      main top#1 điểm 474 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+8093:  RA  elitech-power||EPS15PA3|PERKINS|15KVA|17KVA|403D15G|50HZ|3PHASE|DOWNLOADPDF|EPS15PA3PERKINS15KVADIES
+8094:      main top#23 điểm 429 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+8095:  RA  gordon-power||GDP17|12|15|132|165|403D15G|1800|147|427|3L84×90|1496|115×74×99|180×84×110
+8096:      main top#24 điểm 429 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+8097:  VÀO voltgent||VSC1655E|165|132|15|12|SDEC|4Z23G21|[EN][RU][ES][PT]
+8098:      main all hạng 51 điểm 429 → nhánh top#27 điểm 429
+8099:  VÀO longkai-power||LG15BD|165|20625|15|1875|4M06G20/5|LK184E|LSA40M7|OP1500*750*1050|AT2188*900*1280|
+8100:      main all hạng 52 điểm 428 → nhánh top#28 điểm 428
+8101:  VÀO acepow-fuan||HPDD16|16|200|176|220|BC184E|BFM3G1
+8102:      main all hạng 53 điểm 428 → nhánh top#29 điểm 428
+8332:== IB2400122841#0 (ra 3, vào 3)
+8333:  RA  bobig-power||BC1375|1000|1250|1100|1375|KTA50G3|1097|BW404H|4650*2065*2500|6100*2250*3050
+8334:      main top#13 điểm 269 → nhánh dropped [cyl]; Cummins KTA50G3; số đông xi lanh 16 {"12":3,"16":29}; nguồn khác: bdadl-shanghai «10», comappower «12», huipu-power «12», mingbang-mbkl «12», suneco-linyi «12», xinhengxin-fujian «12», xinzhengfa «12», yingtai-jiangsu «12»
+8335:  RA  dingbo||XG1000GF|1000/1250|1100/1375|KTA50G3|LVI634G1|4870X2100X2350|10000
+8336:      main top#14 điểm 269 → nhánh dropped [cyl]; Cummins KTA50G3; số đông xi lanh 16 {"12":3,"16":29}; nguồn khác: bdadl-shanghai «10», comappower «12», huipu-power «12», mingbang-mbkl «12», suneco-linyi «12», xinhengxin-fujian «12», xinzhengfa «12», yingtai-jiangsu «12»
+8337:  RA  eastern-lion-fuan||GF/GFSC1000|1000|1250|1111|1389|KTA50G3|1097|EL404G|1000KW|SMARTGEN6120|DETAIL
+8338:      main top#15 điểm 269 → nhánh dropped [cyl]; Cummins KTA50G3; số đông xi lanh 16 {"12":3,"16":29}; nguồn khác: bdadl-shanghai «10», comappower «12», huipu-power «12», mingbang-mbkl «12», suneco-linyi «12», xinhengxin-fujian «12», xinzhengfa «12», yingtai-jiangsu «12»
+8339:  VÀO stone-power||SM1250E5|1100|1000|1375|1250|S12RPTA|LVI634G|MX10304|WHI6G
+8340:      main all hạng 67 điểm 269 → nhánh top#18 điểm 269
+8341:  VÀO eastern-lion-fuan||GFSP1500|1080|1350|1200|1500|401246TWG3A|8007249727|EL404G|1000|SMARTGEN6120|DETA
+8342:      main all hạng 80 điểm 261 → nhánh top#20 điểm 261
+8343:  VÀO voltgent||P15001|1350|1080|1500|1200|401246TWG3A|LL8224L|DSE7420
+8344:      main all hạng 82 điểm 261 → nhánh top#21 điểm 261
+8548:== IB2400124734#0 (ra 9, vào 9)
+8549:  RA  gb-power|STANDARDFEATURES|MODEL|GBP15|STANDBYPOWER(50HZ)|11KW/14KVA|PRIMEPOWER(50HZ)|10KW/125KVA|ENG
+8550:      main top#0 điểm 281 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+8551:  RA  fdk-energy||P14/H1CONTACT|14KVA/11KW|13KVA/10KW|403A15G1|PERKINSCHINA|STAMFORDS0L1L1|CLICKHERE|DOWNL
+8552:      main top#1 điểm 273 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+8553:  RA  jet-power||P14|14|11|13|10|403A15G1|3L|84X90|1496|37|PI044F|1200*650*950|426|1950*860*1060|626
+8554:      main top#2 điểm 273 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+8555:  RA  uleengen||UP13GF|10|13|403A15G1|PERKINS|12|3L|84×90|1496|24|S0L1L1|1580X810X930|520
+8556:      main top#3 điểm 273 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+8557:  RA  sanq-power||SQP15|12/145|105/131|403D15G|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304
+8558:      main top#4 điểm 272 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+8559:  RA  eastern-lion-fuan||GFSP14|104|13|12|14|403D15G|20362|EL164C|108|SMARTGEN6120|DETAIL
+8560:      main top#5 điểm 261 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+8561:  RA  fdk-energy||P16/H1CONTACT|16KVA/13KW|15KVA/12KW|403A15G2|PERKINSCHINA|STAMFORDS0L1P1|CLICKHERE|DOWNL
+8562:      main top#6 điểm 256 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+8563:  RA  jet-power||P17|17|14|15|12|403A15G2|3L|84X90|1496|5|PI044G|1350*660*1050|498|1950*860*1060|698
+8564:      main top#7 điểm 256 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+8565:  RA  sanq-power||SQP16|13/16|12/15|403A15G2|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304
+8566:      main top#8 điểm 256 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+8567:  VÀO kaihua-genset||KH12GF|17|15|4Z23G21|1350*600*1100|610
+8568:      main all hạng 105 điểm 204 → nhánh top#21 điểm 204
+8569:  VÀO sunny-weifang||DB10GF|10/125|ZS1100|STC10|1140*780*995|480
+8570:      main all hạng 107 điểm 201 → nhánh top#22 điểm 201
+8571:  VÀO victory-generator||V14XC|60|12|15|14|175|4DW8128D|4|NATURAL|DIRECTINJECTION|1809|80*90|≤5|≤249|1700*
+8572:      main all hạng 112 điểm 196 → nhánh top#23 điểm 196
+8573:  VÀO acepow-fuan||APW12|3|50|12|13|15|17|BC164D|128|14|Y480BD
+8574:      main all hạng 113 điểm 196 → nhánh top#24 điểm 196
+8575:  VÀO jet-power||XC17|17|132|15|12|4DW8123D/17KW|L4|MECH|227|85×100|164D/128KW|1450*650*1050|580|2000*950*
+8576:      main all hạng 114 điểm 196 → nhánh top#25 điểm 196
+8577:  VÀO yongcai-elecmama||YCM12QC50|17|13|15|12|QUANCHAI|N485D|15517|ELECMAMA164D|128KW
+8578:      main all hạng 117 điểm 188 → nhánh top#26 điểm 188
+8579:  VÀO bobig-power||BFA17|12|15|13|17|4DW8123DYFD10W|17|BW164D|1400*610*1130|1900*850*1000
+8580:      main all hạng 119 điểm 188 → nhánh top#27 điểm 188
+8581:  VÀO penlucky||PLW165/B1|165|15|WP23D25E201|TALA40C|1458*723*1058|2290*1060*1680|VIEW
+8582:      main all hạng 125 điểm 184 → nhánh top#28 điểm 184
+8583:  VÀO rise-power||DE18E3|165|132|18|144|CATC22|LC1114H|4|22|<48|106|65|1500*620*1115|441
+8584:      main all hạng 129 điểm 183 → nhánh top#29 điểm 183
+8772:== IB2400125924#1 (ra 12, vào 12)
+8773:  RA  gb-power|STANDARDFEATURES|MODEL|GBP15|STANDBYPOWER(50HZ)|11KW/14KVA|PRIMEPOWER(50HZ)|10KW/125KVA|ENG
+8774:      main top#1 điểm 281 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+8775:  RA  fdk-energy||P14/H1CONTACT|14KVA/11KW|13KVA/10KW|403A15G1|PERKINSCHINA|STAMFORDS0L1L1|CLICKHERE|DOWNL
+8776:      main top#2 điểm 277 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+8777:  RA  jet-power||P14|14|11|13|10|403A15G1|3L|84X90|1496|37|PI044F|1200*650*950|426|1950*860*1060|626
+8778:      main top#3 điểm 277 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+8779:  RA  uleengen||UP13GF|10|13|403A15G1|PERKINS|12|3L|84×90|1496|24|S0L1L1|1580X810X930|520
+8780:      main top#4 điểm 277 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+8781:  RA  sanq-power||SQP15|12/145|105/131|403D15G|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304
+8782:      main top#5 điểm 276 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+8783:  RA  eastern-lion-fuan||GFSP14|104|13|12|14|403D15G|20362|EL164C|108|SMARTGEN6120|DETAIL
+8784:      main top#7 điểm 265 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+8785:  RA  fdk-energy||P16/H1CONTACT|16KVA/13KW|15KVA/12KW|403A15G2|PERKINSCHINA|STAMFORDS0L1P1|CLICKHERE|DOWNL
+8786:      main top#8 điểm 261 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+8787:  RA  jet-power||P17|17|14|15|12|403A15G2|3L|84X90|1496|5|PI044G|1350*660*1050|498|1950*860*1060|698
+8788:      main top#9 điểm 261 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+8789:  RA  sanq-power||SQP16|13/16|12/15|403A15G2|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304
+8790:      main top#10 điểm 261 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+8791:  RA  gordon-power||GDP13|9|1125|10|125|403D11G|1800|107|3|3L77×81|1131|115×74×99|180×84×110
+8792:      main top#24 điểm 229 → nhánh dropped [cyl]; Perkins 403D11G; số đông xi lanh 3 {"3":16,"4":1}; nguồn khác: depco-power «4»
+8793:  RA  hosem-power||AP13H|13|10|11|9|403D11G|1950×800×1115|560|DOWNLOAD
+8794:      main top#25 điểm 229 → nhánh dropped [cyl]; Perkins 403D11G; số đông xi lanh 3 {"3":16,"4":1}; nguồn khác: depco-power «4»
+8795:  RA  victory-generator||V10P|60|9|11|10|125|403D11G|3|3|77|81|49|52|1480*750*1270|390
+8796:      main top#26 điểm 229 → nhánh dropped [cyl]; Perkins 403D11G; số đông xi lanh 3 {"3":16,"4":1}; nguồn khác: depco-power «4»
+8797:  VÀO jet-power||YD15|15|12|138|11|YD480D/14KW|L4|MECHANICAL|1809|80×90|JET164C/108KW|1650*800*1000|530|21
+8798:      main all hạng 62 điểm 227 → nhánh top#18 điểm 227
+8799:  VÀO elitech-power|MODEL:EPS125PKA3S|13KVA|1PHASE,3PHASE|50HZ,60HZ|POWER(KVA)|13|ENGINEMODEL|404D22G|PHAS
+8800:      main all hạng 63 điểm 225 → nhánh top#19 điểm 225
+8801:  VÀO penlucky||PLW165/B1|165|15|WP23D25E200|TALA40D|1458*723*1058|2290*1060*1680|VIEW
+8802:      main all hạng 91 điểm 221 → nhánh top#20 điểm 221
+8803:  VÀO minsun-motor||GFF125|125|10|4DW8128D|SYA164B
+8804:      main all hạng 93 điểm 221 → nhánh top#21 điểm 221
+8805:  VÀO rise-power||DE135E3|125|10|135|108|CATC15|LC1114D|3|15|<4|6|6|1400*620*1054|377
+8806:      main all hạng 94 điểm 221 → nhánh top#22 điểm 221
+8807:  VÀO jet-power||YN14|138|11|125|10|3TNV88GGE/122KW|3|MECHANICAL|1642|88X90|PI044F/125KVA|1200X600X950|460
+8808:      main all hạng 95 điểm 221 → nhánh top#23 điểm 221
+8809:  VÀO jet-power||K14|14|11|125|10|D1703E2BGCHN1/128KW|3|NATURALLYASPIRATED|1647|87X924|JET164C/108KW|1600*
+8810:      main all hạng 96 điểm 221 → nhánh top#24 điểm 221
+8811:  VÀO elitech-power||EPS13RKA3|RICARDO|13KVA|15KVA|K4100D|50HZ|3PHASE|DOWNLOADPDF|EPS13RKA3RICARDO13KVADIE
+8812:      main all hạng 100 điểm 217 → nhánh top#25 điểm 217
+8813:  VÀO elitech-power||EPS125BDA3|BAUDOUIN|125KVA|15KVA|4M06G20/5|50HZ|3PHASE|DOWNLOADPDF|EPS125BDA3BAUDOUIN
+8814:      main all hạng 108 điểm 213 → nhánh top#26 điểm 213
+8815:  VÀO sanq-power||SQY165|132/165|12/15|3TNV84TGGE|PI044G|367|496|956|1500X650X1225|2200X1033X1304
+8816:      main all hạng 110 điểm 213 → nhánh top#27 điểm 213
+8817:  VÀO comappower||COM17|17KVA|132KW|15KVA|12KW|YND485D|4|COM17
+8818:      main all hạng 129 điểm 209 → nhánh top#28 điểm 209
+8819:  VÀO koten-power||MODEL|KS15D5|FREQUENCY|50HZ|PHASE|3PH|VOLTAGE|230/400V|PRIMEPOWER|12KW/15KVA|STANDBYPOW
+8820:      main all hạng 140 điểm 209 → nhánh top#29 điểm 209
+8925:== IB2400156683#0 (ra 6, vào 6)
+8926:  RA  fdk-energy||W88H1CONTACT|88KVA/70KW|80KVA/64KW|WP41D80E200|WEICHAI(CHINA)|NIANFENGNF224G|CLICKHERE|D
+8927:      main top#0 điểm 481 → nhánh dropped [cyl]; Weichai WP41D80E200; số đông xi lanh 4 {"4":14,"6":1}; nguồn khác: bdadl-shanghai «6»
+8928:  RA  longkai-power||POWERYOURFUTURE|WP41D80E200|WEICHAIGENERATOR|PRIMEPOWER:64KW/80KVAGENERATORWILLBEREAD
+8929:      main top#4 điểm 478 → nhánh dropped [cyl]; Weichai WP41D80E200; số đông xi lanh 4 {"4":14,"6":1}; nguồn khác: bdadl-shanghai «6»
+8930:  RA  longkai-power||POWERYOURFUTURE|4BTA39G13|CUMMINSGENERATOR|PRIMEPOWER:68KW/85KVAGENERATORWILLBEREADYT
+8931:      main top#5 điểm 472 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+8932:  RA  longkai-power||POWERYOURFUTURE|QSB39G3|CUMMINSGENERATOR|PRIMEPOWER:64KW/80KVAGENERATORWILLBEREADYTOR
+8933:      main top#6 điểm 470 → nhánh dropped [cyl]; Cummins QSB39G3; số đông xi lanh 4 {"4":9,"6":2}; nguồn khác: haifeng-taizhou «6L», liangzi-yangzhou «6», yanan-power «6»
+8934:  RA  fdk-energy||W88H1CONTACT|88KVA/70KW|80KVA/64KW|WP41D80E200|WEICHAI(CHINA)|NIANFENGNFS224GS|CLICKHERE
+8935:      main top#7 điểm 469 → nhánh dropped [cyl]; Weichai WP41D80E200; số đông xi lanh 4 {"4":14,"6":1}; nguồn khác: bdadl-shanghai «6»
+8936:  RA  sr-genset||105|84|95|76|4BTA39G13|ELEC|UCI274C|TALA44D|SA27480|2250*990*1450|2960*1100*1650
+8937:      main top#23 điểm 425 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+8938:  VÀO longkai-power||LG66DS|91|73|83|66|D1146|OP1900*800*1250|AT2688*1080*1450|
+8939:      main all hạng 39 điểm 425 → nhánh top#18 điểm 425
+8940:  VÀO sanq-power||SQV95|75/95|68/85|TAD550GE(530GE)|GERMANY|UCI224G|217|1290|1850|2080×940×1550|2810×1140×
+8941:      main all hạng 51 điểm 417 → nhánh top#20 điểm 417
+8942:  VÀO kaihua-genset||KH75GF|1031|825|937|75|D1146T|2300X790X1500|1500
+8943:      main all hạng 61 điểm 412 → nhánh top#23 điểm 412
+8944:  VÀO wintpower||WTQ96|70/88|77/96|QC4112ZD|WT224G58
+8945:      main all hạng 85 điểm 395 → nhánh top#27 điểm 395
+8946:  VÀO acepow-fuan||APF72|72|90|792|99|UC274C|80|88|CA4F212DYFD10W
+8947:      main all hạng 86 điểm 392 → nhánh top#28 điểm 392
+8948:  VÀO bobig-power||BFA99|72|90|79|99|CA4F212DYFD10W|84|BW274C|2200*900*1500|2800*1040*1280
+8949:      main all hạng 87 điểm 392 → nhánh top#29 điểm 392
+9070:== IB2400159665#0 (ra 1, vào 0)
+9071:  RA  elitech-power||EPS11PA3|PERKINS|11KVA|12KVA|403D15G|50HZ|3PHASE|DOWNLOADPDF|EPS11PA3PERKINS11KVADIES
+9072:      main top#1 điểm 200 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+9278:== IB2400180911#0 (ra 9, vào 9)
+9279:  RA  gb-power|STANDARDFEATURES|MODEL|GBP15|STANDBYPOWER(50HZ)|11KW/14KVA|PRIMEPOWER(50HZ)|10KW/125KVA|ENG
+9280:      main top#0 điểm 281 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+9281:  RA  fdk-energy||P14/H1CONTACT|14KVA/11KW|13KVA/10KW|403A15G1|PERKINSCHINA|STAMFORDS0L1L1|CLICKHERE|DOWNL
+9282:      main top#1 điểm 273 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+9283:  RA  jet-power||P14|14|11|13|10|403A15G1|3L|84X90|1496|37|PI044F|1200*650*950|426|1950*860*1060|626
+9284:      main top#2 điểm 273 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+9285:  RA  uleengen||UP13GF|10|13|403A15G1|PERKINS|12|3L|84×90|1496|24|S0L1L1|1580X810X930|520
+9286:      main top#3 điểm 273 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+9287:  RA  sanq-power||SQP15|12/145|105/131|403D15G|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304
+9288:      main top#4 điểm 272 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+9289:  RA  eastern-lion-fuan||GFSP14|104|13|12|14|403D15G|20362|EL164C|108|SMARTGEN6120|DETAIL
+9290:      main top#6 điểm 261 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+9291:  RA  fdk-energy||P16/H1CONTACT|16KVA/13KW|15KVA/12KW|403A15G2|PERKINSCHINA|STAMFORDS0L1P1|CLICKHERE|DOWNL
+9292:      main top#7 điểm 256 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+9293:  RA  jet-power||P17|17|14|15|12|403A15G2|3L|84X90|1496|5|PI044G|1350*660*1050|498|1950*860*1060|698
+9294:      main top#8 điểm 256 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+9295:  RA  sanq-power||SQP16|13/16|12/15|403A15G2|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304
+9296:      main top#9 điểm 256 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+9297:  VÀO jet-power||GF14|14|11|13|10|K2105D|L2|MECHANICAL|2026|105×117|JET164C
+9298:      main all hạng 91 điểm 213 → nhánh top#20 điểm 213
+9299:  VÀO jet-power||YD17|165|132|15|12|YD485D/17KW|L4|MECHANICAL|2043|85×90|JET164D/128KW|1650*800*1000|580|2
+9300:      main all hạng 95 điểm 212 → nhánh top#21 điểm 212
+9301:  VÀO sanq-power||SQY165|132/165|12/15|3TNV84TGGE|PI044G|367|496|956|1500X650X1225|2200X1033X1304
+9302:      main all hạng 99 điểm 208 → nhánh top#23 điểm 208
+9303:  VÀO yongcai-elecmama||YCM10QC50|14|11|13|10|QUANCHAI|QC480D|12514|ELECMAMA164C|108KW
+9304:      main all hạng 100 điểm 205 → nhánh top#24 điểm 205
+9305:  VÀO comappower||COM17|17KVA|132KW|15KVA|12KW|YND485D|4|COM17
+9306:      main all hạng 117 điểm 204 → nhánh top#25 điểm 204
+9307:  VÀO koten-power||MODEL|KS15D5|FREQUENCY|50HZ|PHASE|3PH|VOLTAGE|230/400V|PRIMEPOWER|12KW/15KVA|STANDBYPOW
+9308:      main all hạng 128 điểm 204 → nhánh top#26 điểm 204
+9309:  VÀO minsun-motor||GFS15|15|12|4Z23G11|SYA164D
+9310:      main all hạng 129 điểm 204 → nhánh top#27 điểm 204
+9311:  VÀO hosem-power||AAY16M|15|12|50HZ/400V|4TNV88GGE|1100|570|910
+9312:      main all hạng 132 điểm 204 → nhánh top#28 điểm 204
+9313:  VÀO elitech-power||EPS15YCA3|YUCHAI|15KVA|165KVA|YC4V35D20|50HZ|3PHASE|DOWNLOADPDF|EPS15YCA3YUCHAI15KVAD
+9314:      main all hạng 133 điểm 204 → nhánh top#29 điểm 204
+9511:== IB2400182235#0 (ra 3, vào 3)
+9512:  RA  gb-power|STANDARDFEATURES|MODEL|GBP15|STANDBYPOWER(50HZ)|11KW/14KVA|PRIMEPOWER(50HZ)|10KW/125KVA|ENG
+9513:      main top#1 điểm 281 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+9514:  RA  sanq-power||SQP15|12/145|105/131|403D15G|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304
+9515:      main top#2 điểm 276 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+9516:  RA  eastern-lion-fuan||GFSP14|104|13|12|14|403D15G|20362|EL164C|108|SMARTGEN6120|DETAIL
+9517:      main top#3 điểm 265 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+9518:  VÀO superwatt-power||SK14|10/125|11/1375|V1505BG|1550X730X1170|1915X900X1235
+9519:      main all hạng 85 điểm 173 → nhánh top#27 điểm 173
+9520:  VÀO wintpower||WTR17|17/13|15/12|≤247|4YT2320D|4|85|90|204|MECHINICAL|2000*950*1450|680
+9521:      main all hạng 90 điểm 169 → nhánh top#28 điểm 169
+9522:  VÀO voltgent||VSC135S4|13|11|125|10|SDEC|3ZT11G42|[EN][RU][ES][PT]
+9523:      main all hạng 91 điểm 165 → nhánh top#29 điểm 165
+9901:== IB2400238472#0 (ra 4, vào 4)
+9902:  RA  fdk-energy||CD103V1/H1CONTACT|103KVA/82KW|94KVA/75KW|4BTA39G13|CUMMINS(CHINADONGFENG)|STAMFORDUCI274
+9903:      main top#6 điểm 284 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+9904:  RA  fdk-energy||CD110V2/H1CONTACT|110KVA/88KW|100KVA/80KW|4BTAA39G3|CUMMINS(CHINADONGFENG)|STAMFORDUCI27
+9905:      main top#7 điểm 284 → nhánh dropped [cyl]; Cummins 4BTAA39G3; số đông xi lanh 4 {"4":4,"6":1}; nguồn khác: bdadl-shanghai «6»
+9906:  RA  longkai-power||POWERYOURFUTURE|4BTA39G13|CUMMINSGENERATOR|PRIMEPOWER:75KW/9375KVAGENERATORWILLBEREAD
+9907:      main top#10 điểm 278 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+9908:  RA  dingbo||XG80GF|80/100|88/110|TAD531GE|LSA443S5|2200X720X1380|1200
+9909:      main top#19 điểm 260 → nhánh dropped [cyl]; Volvo Penta TAD531GE; số đông xi lanh 4 {"4":16}; nguồn khác: aoke-yangzhou «6»
+9910:  VÀO fdk-energy||CD110EV3/H1CONTACT|110KVA/88KW|100KVA/80KW|QSB59G2|CUMMINS(CHINADONGFENG)|STAMFORDUCI274
+9911:      main all hạng 30 điểm 276 → nhánh top#8 điểm 276
+9912:  VÀO fdk-energy||CD125/H1CONTACT|125KVA/100KW|113KVA/90KW|6BTA59G2|CUMMINS(CHINADONGFENG)|STAMFORDUCI274D
+9913:      main all hạng 33 điểm 271 → nhánh top#10 điểm 271
+9914:  VÀO sanq-power||SQC125|100/125|91/114|6BTA59G2|UCI274D|255|1297|2130|2200×830×1325|3200×1133×1766
+9915:      main all hạng 38 điểm 270 → nhánh top#12 điểm 270
+9916:  VÀO jet-power||XC110|110|88|100|80|CA6DF2D14D/96KW|L6|ELECTRONIC|655|110×115|JET274C/80KW|2550*1000*1550
+9917:      main all hạng 101 điểm 237 → nhánh top#29 điểm 237
+9928:== IB2400257256#0 (ra 9, vào 1)
+9929:  RA  genmac|DUPLEXG13POE31413403D15G1500DIESEL3149610036QFIAG450014006601360424
+9930:      main top#2 điểm 221 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+9931:  RA  genmac|DUPLEXG13PO1413403A15G11500DIESEL3149610035QFIAG450014006601360423
+9932:      main top#3 điểm 221 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+9933:  RA  genmac|DUPLEXG15PO1715403A15G21500DIESEL3149610032QFIAG450014006601360423
+9934:      main top#5 điểm 204 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+9935:  RA  aj-power||AJ14|50HZ|THREEPHASE|1500|130|143||403D15G|MA1114C2|AJ14EMISSIONSOPTIMISEDTHREEPHASE50HZ
+9936:      main top#6 điểm 171 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+9937:  RA  tecnogen||PK15MSX**|14,3|13|17|15,5|403D15G|M|3|1496|12|14,4|2,6|3,0|N|AUS731017|ACP7320|65|75|150|8
+9938:      main top#10 điểm 131 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+9939:  RA  agg-power|13/10
+9940:      main top#11 điểm 131 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+9941:  RA  tecnogen||PK14MSX|14,3|13|||403A15G1|M|3|1496|12||2,6||N|AUS731017|ACP7320|65|75|150|80|125|580
+9942:      main top#12 điểm 131 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+9943:  RA  cgm-italia||15P||15|12|165|132|403A15G2|M|0|3|174/13|31|55|B20|430|1400X700X1400|C20|520|1580X735X11
+9944:      main top#15 điểm 114 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+9945:  RA  tecnogen||PK17MSX|16,5|15|20|18|403A15G2|M|3|1496|13|16|2,9|3,5|N|AUS731017|ACP7320|65|75|150|80|125
+9946:      main top#16 điểm 114 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+9947:  VÀO aj-power||AJ22|50HZ|SINGLEPHASE|1500|151|166||404A22G1DERATE|MA1114F|AJ22SINGLEPHASE50HZ
+9948:      main all hạng 27 điểm 29 → nhánh top#12 điểm 29
+9951:== IB2400267274#0 (ra 1, vào 1)
+9952:  RA  rise-power||RDL3260|32/40|352/44|D226B3D|LSA432S1|1650×760×1350|2500×1000×1500|720|1450
+9953:      main top#27 điểm 253 → nhánh dropped [cyl]; Deutz / Weichai D226B3D; số đông xi lanh 3 {"3":9,"4":1}; nguồn khác: aoke-yangzhou «4»
+9954:  VÀO wintpower||WTKU47|34/425|37/47|V3300T|PI144J|TALA42F|WT184H|2150X930X1150|1650X800X1080
+9955:      main all hạng 80 điểm 247 → nhánh top#29 điểm 247
+10194:== IB2400339967#0 (ra 9, vào 9)
+10195:  RA  gb-power|STANDARDFEATURES|MODEL|GBP15|STANDBYPOWER(50HZ)|11KW/14KVA|PRIMEPOWER(50HZ)|10KW/125KVA|ENG
+10196:      main top#0 điểm 281 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+10197:  RA  uleengen||UP10GF|8|10|403A11G1|PERKINS|9|3L|77×81|1131|19|S0L1H1|1580X810X930|500
+10198:      main top#1 điểm 281 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+10199:  RA  fdk-energy||P14/H1CONTACT|14KVA/11KW|13KVA/10KW|403A15G1|PERKINSCHINA|STAMFORDS0L1L1|CLICKHERE|DOWNL
+10200:      main top#2 điểm 251 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+10201:  RA  jet-power||P14|14|11|13|10|403A15G1|3L|84X90|1496|37|PI044F|1200*650*950|426|1950*860*1060|626
+10202:      main top#3 điểm 251 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+10203:  RA  sanq-power||SQP15|12/145|105/131|403D15G|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304
+10204:      main top#4 điểm 250 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+10205:  RA  sr-genset||11|88|10|8|403A11G1|MECH|S0L1H1|TALA40C|SA1648|1400*690*1000|1860*810*1152
+10206:      main top#5 điểm 241 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+10207:  RA  bobig-power||BP14|10|13|11|14|403A15G1MADEINCHINA|10|BW164C|1150*650*1000|1750*850*1000
+10208:      main top#6 điểm 239 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+10209:  RA  eastern-lion-fuan||GFSP14|104|13|12|14|403D15G|20362|EL164C|108|SMARTGEN6120|DETAIL
+10210:      main top#7 điểm 239 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+10211:  RA  elitech-power|MODEL:EPS10PKA3S|10KVA|1PHASE,3PHASE|50HZ,60HZ|POWER(KVA)|10|ENGINEMODEL|403A11G1|PHAS
+10212:      main top#8 điểm 229 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+10213:  VÀO elitech-power||EPS10IA3|ISUZU|10KVA|11KVA|JE493DB04|50HZ|3PHASE|DOWNLOADPDF|EPS10IA3ISUZU10KVADIESEL
+10214:      main all hạng 70 điểm 181 → nhánh top#14 điểm 181
+10215:  VÀO sr-genset||121|99|11|9|403D11GCOMMODITY|MECH|S0L1H1|TALA40C|SA164106|1400*690*1000|1860*810*1152
+10216:      main all hạng 75 điểm 167 → nhánh top#17 điểm 167
+10217:  VÀO xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480
+10218:      main all hạng 79 điểm 165 → nhánh top#19 điểm 165
+10219:  VÀO uleengen||UY10GFS|8|10|380码|10|3|80*90|1357|19|164B|1860X850X1200|700
+10220:      main all hạng 80 điểm 165 → nhánh top#20 điểm 165
+10221:  VÀO victory-generator||GENERATOR|MODEL:|VT11000S|VT11000S3|FREQUENCY(HZ)|50|50|RATEDACOUTPUT(KVA)|85|106
+10222:      main all hạng 84 điểm 163 → nhánh top#21 điểm 163
+10223:  VÀO victory-generator||GENERATOR|MODEL:|VDG12S|VDG12S3|FREQUENCY(HZ)|50|50|RATEDACOUTPUT(KVA)|100|125|MA
+10224:      main all hạng 140 điểm 136 → nhánh top#22 điểm 136
+10225:  VÀO victory-generator||GENERATOR|MODEL:|VDG12|VDG123|FREQUENCY(HZ)|50|50|RATEDACOUTPUT(KVA)|100|125|MAXA
+10226:      main all hạng 142 điểm 136 → nhánh top#23 điểm 136
+10227:  VÀO comappower||COM12K|12KVA|99KW|113KVA|9KW|V1505E2BG|4|COM12K
+10228:      main all hạng 93 điểm 160 → nhánh top#24 điểm 160
+10229:  VÀO mecca-power||MC14F|14|11|13|10|4DW8123D|CN|28|4|2270|M/E|1680*650*1030|508
+10230:      main all hạng 101 điểm 159 → nhánh top#25 điểm 159
+10304:== IB2400356423#0 (ra 3, vào 3)
+10305:  RA  sanq-power||SQP176|14/18|13/16|403D15G|PI044F|WUXI|510|1010|1500X650X1225|2200X1033X1306|
+10306:      main top#0 điểm 281 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+10307:  RA  elitech-power||EPS15PA3|PERKINS|15KVA|17KVA|403D15G|50HZ|3PHASE|DOWNLOADPDF|EPS15PA3PERKINS15KVADIES
+10308:      main top#23 điểm 229 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+10309:  RA  gordon-power||GDP17|12|15|132|165|403D15G|1800|147|427|3L84×90|1496|115×74×99|180×84×110
+10310:      main top#24 điểm 229 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+10311:  VÀO voltgent||VSC1655E|165|132|15|12|SDEC|4Z23G21|[EN][RU][ES][PT]
+10312:      main all hạng 48 điểm 229 → nhánh top#27 điểm 229
+10313:  VÀO rcg-power||RWB18D5S(STAGE3)|18KVA/14KW|20KVA/16KW|4M08G2D3/5|TALA40E|PDF
+10314:      main all hạng 49 điểm 228 → nhánh top#28 điểm 228
+10315:  VÀO elitech-power||EPS15RKA3|RICARDO|15KVA|165KVA|K4100D|50HZ|3PHASE|DOWNLOADPDF|EPS15RKA3RICARDO15KVADI
+10316:      main all hạng 50 điểm 221 → nhánh top#29 điểm 221
+10335:== IB2400378609#0 (ra 2, vào 2)
+10336:  RA  koten-power||KY16D6|13|16|14|18|YD480D|
+10337:      main top#5 điểm 229 → nhánh dropped [cyl]; Yangdong YD480D; số đông xi lanh 4 {"3":1,"4":9}; nguồn khác: victory-generator «3»
+10338:  RA  longkai-power||LG13YD|18|14|16|13|YD480D|OP1500*750*1050|AT2008*900*1130|
+10339:      main top#6 điểm 229 → nhánh dropped [cyl]; Yangdong YD480D; số đông xi lanh 4 {"3":1,"4":9}; nguồn khác: victory-generator «3»
+10340:  VÀO longkai-power||LG12X|17|13|15|12|4DW8123DYFD10W|OP1500*750*1030|AT2008*900*1130|
+10341:      main all hạng 66 điểm 173 → nhánh top#28 điểm 173
+10342:  VÀO eastern-lion-fuan||GF/GFSKF12|12|15|13|17|K4100DS|301|EL164D|128KW|RUIFEN6120|DETAIL
+10343:      main all hạng 71 điểm 165 → nhánh top#29 điểm 165
+10396:== IB2400389856#0 (ra 3, vào 3)
+10397:  RA  rcg-power||RDC100D5S|100KVA/80KW|110KVA/88KW|4BTA39G13|TALA44D|PDF
+10398:      main top#10 điểm 821 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+10399:  RA  bobig-power||BC110S|80|100|88|110|4BTA39G13|97|BW224G|2120*850*1400|2850*1040*1430
+10400:      main top#19 điểm 769 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+10401:  RA  bobig-power||BC12375S|90|113|99|124|4BTA39G13|97|BW274C|2120*850*1400|2850*1040*1430
+10402:      main top#21 điểm 756 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+10403:  VÀO kaihua-genset||CCFJ90JW|113|90|6CT83GM115|2140X810X1360|1300
+10404:      main all hạng 221 điểm 676 → nhánh top#27 điểm 676
+10405:  VÀO victory-generator||CCFJ80KW|60|80|100|92|115|131|440|6BT59GM|100|1800|6
+10406:      main all hạng 227 điểm 673 → nhánh top#28 điểm 673
+10407:  VÀO victory-generator||CCFJ90KW|50|90|113|100|125|162|400|6BTA59GM|100|1500|6
+10408:      main all hạng 231 điểm 660 → nhánh top#29 điểm 660
+10526:== IB2400410218#0 (ra 4, vào 4)
+10527:  RA  fdk-energy||P10/H1CONTACT|10KVA/8KW|9KVA/7KW|403A11G1|PERKINSCHINA|STAMFORDS0L1H1|CLICKHERE|DOWNLOAD
+10528:      main top#0 điểm 275 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+10529:  RA  jet-power||P10|10|8|9|7|403A11G1|3L|77X81|1131|3|PI044E|1200*650*950|352|1950*860*1060|552
+10530:      main top#1 điểm 272 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+10531:  RA  sanq-power||SQP10|8/10|7/9|403A11G1|PI044E|WUXI|450|896|1260X630X730|2200X1033X1304
+10532:      main top#2 điểm 272 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+10533:  RA  elitech-power||EPS11PA3|PERKINS|11KVA|12KVA|403D15G|50HZ|3PHASE|DOWNLOADPDF|EPS11PA3PERKINS11KVADIES
+10534:      main top#4 điểm 200 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+10535:  VÀO rise-power||RXL8|8/10|9/11|3N17D|SLW88|1400×550×900|580
+10536:      main all hạng 68 điểm 127 → nhánh top#19 điểm 127
+10537:  VÀO mecca-power||MC10D|10|74|9|68|SP103NE|KOREA|24|3L|10|E|1090*500*1000|353
+10538:      main all hạng 72 điểm 119 → nhánh top#21 điểm 119
+10539:  VÀO mecca-power||MC10D|10|74|9|68|SP103NH|KOREA|24|3L|10|E|1090*500*1000|353
+10540:      main all hạng 73 điểm 119 → nhánh top#22 điểm 119
+10541:  VÀO long-gen||LGKS11|8|10|88|11|D1105E2BGCHN1|95|S0L1H1|10|AMF20|DOWNLOAD
+10542:      main all hạng 80 điểm 109 → nhánh top#25 điểm 109
+10580:== IB2400453053#0 (ra 3, vào 3)
+10581:  RA  genmac|EXPERTG500DSO550500DP158LD1500DIESEL81461890011QTVA73203110141021103500
+10582:      main top#2 điểm 229 → nhánh dropped [cyl]; Doosan / Hyundai DP158LD; số đông xi lanh 8 {"6":1,"8":13}; nguồn khác: hosem-power «6 Cylinder In Line»
+10583:  RA  ade-power||STANDBYPOWER(ESP)RATING|550KVA/440KW|PRIMEPOWER(PRP)RATING|500KVA/400KW|ENGINE|DOOSANDP15
+10584:      main top#6 điểm 214 → nhánh dropped [cyl]; Doosan / Hyundai DP158LD; số đông xi lanh 8 {"6":1,"8":13}; nguồn khác: hosem-power «6 Cylinder In Line»
+10585:  RA  tecnogen||PK660TSX|660|600|687|625|2806AE18TAG1A|E|6|18100|522|543|84,3|89,1|T|AUS7310|ACP7320|69|10
+10586:      main top#21 điểm 119 → nhánh all []; Perkins 2806AE18TAG1A; bị đẩy bởi genmac|EXPERTG500PO5205002506AE15TAG21500DIESEL61500090012QTVA73203550 (2506AE15TAG2, điểm 197)
+10587:  VÀO ade-power||STANDBYPOWER(ESP)RATING|550KVA/440KW|PRIMEPOWER(PRP)RATING|500KVA/400KW|ENGINE|CUMMINSQSZ
+10588:      main all hạng 7 điểm 214 → nhánh top#5 điểm 214
+10589:  VÀO genmac|EXPERTG500PO5205002506AE15TAG21500DIESEL61500090012QTVA73203550126022004050
+10590:      main all hạng 18 điểm 197 → nhánh top#12 điểm 197
+10591:  VÀO tecnogen||CU650TSX|||618|562|QSX15G9|E|6|15000||476||80,5|T|AUS7310|ACP7320|69|1000|485|200|230|5970
+10592:      main all hạng 46 điểm 79 → nhánh top#24 điểm 79
+10594:== IB2400475109#0 (ra 1, vào 0)
+10595:  RA  energy-gruppi|EY1000B
+10596:      main top#1 điểm 221 → nhánh dropped [cyl]; Baudouin 8M33G1100/5; số đông xi lanh 8 {"8":3,"12":1}; nguồn khác: waeta-fujian «12 V»
+10616:== IB2400517601#0 (ra 2, vào 0)
+10617:  RA  agg-power|650/520
+10618:      main top#6 điểm 136 → nhánh dropped [cyl]; Cummins QSK19G4; số đông xi lanh 6 {"6":15,"12":1}; nguồn khác: longkai-power «V 12»
+10619:  RA  tecnogen||CU715TSX*|715|650|688|625|QSK19G4|E|6|19000|555|526|101,1|95,3|T|AUS7310|ACP7320|69|1300|5
+10620:      main top#7 điểm 136 → nhánh dropped [cyl]; Cummins QSK19G4; số đông xi lanh 6 {"6":15,"12":1}; nguồn khác: longkai-power «V 12»
+10634:== IB2400531851#0 (ra 3, vào 1)
+10635:  RA  genmac|DUPLEXG13POE31413403D15G1500DIESEL3149610036QFIAG450014006601360424
+10636:      main top#2 điểm 225 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+10637:  RA  aj-power||AJ14|50HZ|THREEPHASE|1500|130|143||403D15G|MA1114C2|AJ14EMISSIONSOPTIMISEDTHREEPHASE50HZ
+10638:      main top#3 điểm 175 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+10639:  RA  tecnogen||PK15MSX**|14,3|13|17|15,5|403D15G|M|3|1496|12|14,4|2,6|3,0|N|AUS731017|ACP7320|65|75|150|8
+10640:      main top#7 điểm 135 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+10641:  VÀO aj-power||AJ22|50HZ|SINGLEPHASE|1500|151|166||404A22G1DERATE|MA1114F|AJ22SINGLEPHASE50HZ
+10642:      main all hạng 13 điểm 34 → nhánh top#9 điểm 34
+10753:== IB2400533611#0 (ra 1, vào 1)
+10754:  RA  victory-generator||V660SC|50|600|750|660|825|SC33W990D2|12V|328|4360*1620*2160|6820
+10755:      main top#29 điểm 210 → nhánh dropped [cyl]; SDEC SC33W990D2; số đông xi lanh 6 {"6":24,"12":3}; nguồn khác: aoke-yangzhou «12», taihai-taizhou «12», victory-generator «12V»
+10756:  VÀO sanq-power||SQV633|506/633|460/575|TAD1652GE(1642GE)|SWEDEN|HCI544E|198|3880|5590|3300×1275×2030|463
+10757:      main all hạng 125 điểm 208 → nhánh top#29 điểm 208
+10942:== IB2400573523#0 (ra 10, vào 10)
+10943:  RA  longkai-power||POWERYOURFUTURE|WP13D440E310|WEICHAIGENERATOR|PRIMEPOWER:350KW/438KVAGENERATORWILLBER
+10944:      main top#3 điểm 269 → nhánh dropped [cyl]; Weichai WP13D440E310; số đông xi lanh 6 {"6":7,"9":1}; nguồn khác: yunding-jiangsu «9»
+10945:  RA  fdk-energy||W500H1CONTACT|500KVA/400KW|450KVA/360KW|WP13D440E310|WEICHAI(CHINA)|NIANFENGNF314J|CLICK
+10946:      main top#5 điểm 268 → nhánh dropped [cyl]; Weichai WP13D440E310; số đông xi lanh 6 {"6":7,"9":1}; nguồn khác: yunding-jiangsu «9»
+10947:  RA  uleengen||UW450GF|360|450|WP13D440E310|392|6L|127×165|1254|841|S4L1DG41|3500×1500×1800|4000
+10948:      main top#6 điểm 268 → nhánh dropped [cyl]; Weichai WP13D440E310; số đông xi lanh 6 {"6":7,"9":1}; nguồn khác: yunding-jiangsu «9»
+10949:  RA  wintpower||WTYC438|320/400|350/438|YC6T550LD21|WT544C|3500X1300X1900|4600X1750X2100
+10950:      main top#8 điểm 257 → nhánh dropped [cyl]; Yuchai YC6T550LD21; số đông xi lanh 6 {"6":13,"12":1}; nguồn khác: mingbang-mbkl «12»
+10951:  RA  wintpower||WTYC481|350/438|385/481|YC6T600LD22|WT544C|3600X1300X1900|4600X1750X2100
+10952:      main top#10 điểm 256 → nhánh dropped [cyl]; Yuchai YC6T600LD22; số đông xi lanh 6 {"6":18,"12":1}; nguồn khác: mingbang-mbkl «12»
+10953:  RA  dingbo||XG320GF|320/400|352/440|YC6T550LD21|TFW23204A|3500X1300X1800|3200
+10954:      main top#12 điểm 245 → nhánh dropped [cyl]; Yuchai YC6T550LD21; số đông xi lanh 6 {"6":13,"12":1}; nguồn khác: mingbang-mbkl «12»
+10955:  RA  dingbo||XG350GF|350/4375|385/48125|YC6T600LD22|TFW23504A|3800X1350X2070|4200
+10956:      main top#13 điểm 244 → nhánh dropped [cyl]; Yuchai YC6T600LD22; số đông xi lanh 6 {"6":18,"12":1}; nguồn khác: mingbang-mbkl «12»
+10957:  RA  eastern-lion-fuan||GF/GFSYC360|360|450|400|500|YC6T600LD22|401|EL354C|360|SMARTGEN6120|DETAIL
+10958:      main top#15 điểm 240 → nhánh dropped [cyl]; Yuchai YC6T600LD22; số đông xi lanh 6 {"6":18,"12":1}; nguồn khác: mingbang-mbkl «12»
+10959:  RA  comappower||COM440DS|440KVA|352KW|401KVA|321KW|DP126LB|8|COM440DS
+10960:      main top#18 điểm 229 → nhánh dropped [cyl]; Doosan / Hyundai DP126LB; số đông xi lanh 6 {"6":5,"8":1}; nguồn khác: comappower «8»
+10961:  RA  kaihua-genset||KH320GF|440|352|400|320|DP126LB|2960X1030X1500|2795
+10962:      main top#19 điểm 229 → nhánh dropped [cyl]; Doosan / Hyundai DP126LB; số đông xi lanh 6 {"6":5,"8":1}; nguồn khác: comappower «8»
+10963:  VÀO wintpower||WTW522E|500|418KW|470|380KW|WD269TAD41|LSA472M7|HCI544D|WT354S400N
+10964:      main all hạng 35 điểm 236 → nhánh top#10 điểm 236
+10965:  VÀO aosif|GENERALPERFORMANCEDATA|PRIMEPOWER|408KVA/326KW|BRAND|DOOSANENGINE|STANDBYPOWER|448KVA/358KW|MO
+10966:      main all hạng 61 điểm 219 → nhánh top#19 điểm 219
+10967:  VÀO hosem-power||FREQUENCY|50HZ|VOLTAGE|230V/400V|STANDBYOUTPUT|500KVA|PRIMEOUTPUT|450KVA|STANDBYPOWER|5
+10968:      main all hạng 73 điểm 216 → nhánh top#20 điểm 216
+10969:  VÀO byc-power||BYYC450|320|400|360|450|YCMJ12TAA500G20|1500|365|444F|320
+10970:      main all hạng 92 điểm 213 → nhánh top#21 điểm 213
+10971:  VÀO ettes-power||ET440|320|400|352|440|8V1600G20F|394|8V|TBA|3050*1630*1960|3850|
+10972:      main all hạng 91 điểm 213 → nhánh top#22 điểm 213
+10973:  VÀO comappower||COM525DZ|525KVA|420KW|475KVA|380KW|BF8M1015CPLAG1A|8|COM525DZ
+10974:      main all hạng 93 điểm 210 → nhánh top#23 điểm 210
+10975:  VÀO kaihua-genset||KH380GF|523|418|475|380|BF8M1015CPLAG1A|3208X1815X1978|3190
+10976:      main all hạng 94 điểm 210 → nhánh top#24 điểm 210
+10977:  VÀO longkai-power||LG380D|523|418|475|380|BF8M1015CPLAG1A|OP3300*1350*1850|AT4588*1600*2500|
+10978:      main all hạng 96 điểm 210 → nhánh top#25 điểm 210
+10979:  VÀO jet-power||GF500|500|400|450|360|K25G829D|12V|ELECTRIC|266|135×155|JET544C
+10980:      main all hạng 113 điểm 208 → nhánh top#26 điểm 208
+10981:  VÀO wintpower||WTMT440|440/352|400/320|90|8V1600G80F|8V|14|24|394|ECM|2990*1325*2020|3270
+10982:      main all hạng 145 điểm 189 → nhánh top#27 điểm 189
+10995:== IB2400577658#0 (ra 1, vào 1)
+10996:  RA  fdk-energy||SC138V1H1CONTACT|138KVA/110KW|125KVA/100KW|4HTAA43G36|SHANGCHAI(CHINA)|NIANFENGNF274E|CL
+10997:      main top#10 điểm 281 → nhánh dropped [cyl]; SDEC 4HTAA43G36; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: hanyang-weifang «6»
+10998:  VÀO fdk-energy||Y165V1H1CONTACT|165KVA/132KW|150KVA/120KW|YC6A205D30|YUCHAI(CHINA)|NIANFENGNF274FS|CLICK
+10999:      main all hạng 50 điểm 272 → nhánh top#22 điểm 272
+11006:== IB2400587900#0 (ra 1, vào 1)
+11007:  RA  rise-power||RDL40|40/50|44/55|TD226B3D|LSA432S35|1650×760×1350|2500×1000×1500|740|1450
+11008:      main top#27 điểm 253 → nhánh dropped [cyl]; Deutz / Weichai TD226B3D; số đông xi lanh 3 {"3":8,"4":1}; nguồn khác: aoke-yangzhou «4»
+11009:  VÀO longkai-power||POWERYOURFUTURE|QSB39G2|CUMMINSGENERATOR|PRIMEPOWER:48KW/60KVAGENERATORWILLBEREADYTOR
+11010:      main all hạng 72 điểm 250 → nhánh top#29 điểm 250
+11242:== IB2400596787#0 (ra 1, vào 1)
+11243:  RA  victory-generator||V660SC|50|600|750|660|825|SC33W990D2|12V|328|4360*1620*2160|6820
+11244:      main top#29 điểm 210 → nhánh dropped [cyl]; SDEC SC33W990D2; số đông xi lanh 6 {"6":24,"12":3}; nguồn khác: aoke-yangzhou «12», taihai-taizhou «12», victory-generator «12V»
+11245:  VÀO sanq-power||SQV633|506/633|460/575|TAD1652GE(1642GE)|SWEDEN|HCI544E|198|3880|5590|3300×1275×2030|463
+11246:      main all hạng 125 điểm 208 → nhánh top#29 điểm 208
+11253:== IB2400617546#0 (ra 2, vào 0)
+11254:  RA  agg-power|650/520
+11255:      main top#6 điểm 136 → nhánh dropped [cyl]; Cummins QSK19G4; số đông xi lanh 6 {"6":15,"12":1}; nguồn khác: longkai-power «V 12»
+11256:  RA  tecnogen||CU715TSX*|715|650|688|625|QSK19G4|E|6|19000|555|526|101,1|95,3|T|AUS7310|ACP7320|69|1300|5
+11257:      main top#7 điểm 136 → nhánh dropped [cyl]; Cummins QSK19G4; số đông xi lanh 6 {"6":15,"12":1}; nguồn khác: longkai-power «V 12»
+11448:== IB2500057816#0 (ra 1, vào 1)
+11449:  RA  dingbo||XG80GF|80/100|88/110|TAD531GE|LSA443S5|2200X720X1380|1200
+11450:      main top#17 điểm 260 → nhánh dropped [cyl]; Volvo Penta TAD531GE; số đông xi lanh 4 {"4":16}; nguồn khác: aoke-yangzhou «6»
+11451:  VÀO victory-generator||V88DE|60|80|100|88|110|D1146|19|6L|2250*1050*1450|1687
+11452:      main all hạng 105 điểm 229 → nhánh top#29 điểm 229
+11557:== IB2500084609#0 (ra 7, vào 7)
+11558:  RA  sr-genset||50|400|12|15|132|165|PERKINS|403A15G2|NIDEC|TALA40D
+11559:      main top#17 điểm 241 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+11560:  RA  genlitec||NGENERATOR|SPECIFICATIONPERFORMANCEDATA|POWER(KVA)|15|165|MODEL|GPP15S6|GPP15D6|POWER(KW)|
+11561:      main top#18 điểm 235 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+11562:  RA  minsun-motor||GFP12|12|15|403D15G|SYA164C
+11563:      main top#19 điểm 229 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+11564:  RA  minsun-motor||GFP15|15|12|403A15G2|SYA164D
+11565:      main top#20 điểm 229 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+11566:  RA  plus-power|UKPERKINS403A15G1/403D15G50HZ13KVA15KVAPOWERUKPERKINSGENERATORCATALOGUE
+11567:      main top#21 điểm 229 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+11568:  RA  jianghao-genset||JHP12GF|15|12|403D15G|3|84*90|15|6|247|1250*700*1100|350
+11569:      main top#22 điểm 189 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+11570:  RA  huadong-yangzhou||HDP13|13/10|15/11|18|36|403A15G1|13|1150×700×1090|539
+11571:      main top#24 điểm 139 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+11572:  VÀO kaihua-genset||KH16GF|22|176|20|16|403D22G|1350X530X1000|456
+11573:      main all hạng 39 điểm 132 → nhánh top#23 điểm 132
+11574:  VÀO ettes-power||EP22|16|20|18|22|404A22G1★|TBA|4L|TBA|1370*880*1450|430|
+11575:      main all hạng 40 điểm 132 → nhánh top#24 điểm 132
+11576:  VÀO depco-power|ITEMNO:DPKDM22FREQUENCY(HZ):50PHASE:3VOLTAGE(V):380ENGINE:MITSUBISHIENGINEMODEL:S4Q2PRP(
+11577:      main all hạng 41 điểm 90 → nhánh top#25 điểm 90
+11578:  VÀO voltgent||VR205S5|20|16|20|16|RAYWIN|3M18TG7/5|[EN][RU][ES][PT]
+11579:      main all hạng 42 điểm 72 → nhánh top#26 điểm 72
+11580:  VÀO voltgent||VYM226|22|18|20|16|RAYWIN|4TNV88GGECC|
+11581:      main all hạng 43 điểm 72 → nhánh top#27 điểm 72
+11582:  VÀO weiman-fujian||WTM19|16|20|149|19|S4Q265SAG|206|224|260|630|4×88×103|2505|22:1|N/A|MOREDATA
+11583:      main all hạng 44 điểm 42 → nhánh top#28 điểm 42
+11584:  VÀO world-power-fuzhou||WDPGP20|16|20|18|22|404D22G1|4|M|
+11585:      main all hạng 45 điểm 40 → nhánh top#29 điểm 40
+11793:== IB2500118115#0 (ra 9, vào 9)
+11794:  RA  gb-power|STANDARDFEATURES|MODEL|GBP15|STANDBYPOWER(50HZ)|11KW/14KVA|PRIMEPOWER(50HZ)|10KW/125KVA|ENG
+11795:      main top#0 điểm 281 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+11796:  RA  uleengen||UP10GF|8|10|403A11G1|PERKINS|9|3L|77×81|1131|19|S0L1H1|1580X810X930|500
+11797:      main top#1 điểm 281 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+11798:  RA  fdk-energy||P14/H1CONTACT|14KVA/11KW|13KVA/10KW|403A15G1|PERKINSCHINA|STAMFORDS0L1L1|CLICKHERE|DOWNL
+11799:      main top#2 điểm 251 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+11800:  RA  jet-power||P14|14|11|13|10|403A15G1|3L|84X90|1496|37|PI044F|1200*650*950|426|1950*860*1060|626
+11801:      main top#3 điểm 251 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+11802:  RA  uleengen||UP13GF|10|13|403A15G1|PERKINS|12|3L|84×90|1496|24|S0L1L1|1580X810X930|520
+11803:      main top#4 điểm 251 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+11804:  RA  sanq-power||SQP15|12/145|105/131|403D15G|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304
+11805:      main top#5 điểm 250 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+11806:  RA  sr-genset||11|88|10|8|403A11G1|MECH|S0L1H1|TALA40C|SA1648|1400*690*1000|1860*810*1152
+11807:      main top#6 điểm 241 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+11808:  RA  eastern-lion-fuan||GFSP14|104|13|12|14|403D15G|20362|EL164C|108|SMARTGEN6120|DETAIL
+11809:      main top#7 điểm 239 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+11810:  RA  elitech-power|MODEL:EPS10PKA3S|10KVA|1PHASE,3PHASE|50HZ,60HZ|POWER(KVA)|10|ENGINEMODEL|403A11G1|PHAS
+11811:      main top#8 điểm 229 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+11812:  VÀO elitech-power||EPS10IA3|ISUZU|10KVA|11KVA|JE493DB04|50HZ|3PHASE|DOWNLOADPDF|EPS10IA3ISUZU10KVADIESEL
+11813:      main all hạng 67 điểm 181 → nhánh top#14 điểm 181
+11814:  VÀO sr-genset||121|99|11|9|403D11GCOMMODITY|MECH|S0L1H1|TALA40C|SA164106|1400*690*1000|1860*810*1152
+11815:      main all hạng 72 điểm 167 → nhánh top#17 điểm 167
+11816:  VÀO victory-generator||GENERATOR|MODEL:|VDG12|VDG123|FREQUENCY(HZ)|50|50|RATEDACOUTPUT(KVA)|100|125|MAXA
+11817:      main all hạng 136 điểm 136 → nhánh top#23 điểm 136
+11818:  VÀO comappower||COM12K|12KVA|99KW|113KVA|9KW|V1505E2BG|4|COM12K
+11819:      main all hạng 90 điểm 160 → nhánh top#24 điểm 160
+11820:  VÀO mecca-power||MC14F|14|11|13|10|4DW8123D|CN|28|4|2270|M/E|1680*650*1030|508
+11821:      main all hạng 98 điểm 159 → nhánh top#25 điểm 159
+11822:  VÀO ettes-power||EP12|9|11|10|12|403D11G★|TBA|3L|TBA|1300*690*1320|280|
+11823:      main all hạng 106 điểm 155 → nhánh top#26 điểm 155
+11824:  VÀO xingguang-jiangsu||XG15S|15|136|STARLIGHT|YND485D|PDF
+11825:      main all hạng 107 điểm 153 → nhánh top#27 điểm 153
+11826:  VÀO jet-power||UK12Y|12|96|11|88|YD490D17|L4|MECHANICAL|255|90×100|JET164B
+11827:      main all hạng 111 điểm 151 → nhánh top#28 điểm 151
+11828:  VÀO superwatt-power||SK14|10/125|11/1375|V1505BG|1550X730X1170|1915X900X1235
+11829:      main all hạng 118 điểm 148 → nhánh top#29 điểm 148
+11940:== IB2500211376#0 (ra 1, vào 1)
+11941:  RA  fdk-energy||P16/H1CONTACT|16KVA/13KW|15KVA/12KW|403A15G2|PERKINSCHINA|STAMFORDS0L1P1|CLICKHERE|DOWNL
+11942:      main top#29 điểm 281 → nhánh dropped [cyl]; Perkins 403A15G2; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+11943:  VÀO longkai-power||LG12I|17|13|15|12|4JA1D1|OP1500*750*1050|AT2008*900*1130|
+11944:      main all hạng 121 điểm 165 → nhánh top#29 điểm 165
+11987:== IB2500261097#0 (ra 1, vào 1)
+11988:  RA  longkai-power||POWERYOURFUTURE|QSK19G6|CUMMINSGENERATOR|PRIMEPOWER:470KW/5875KVAGENERATORWILLBEREADY
+11989:      main top#12 điểm 244 → nhánh dropped [cyl]; Cummins QSK19G6; số đông xi lanh 6 {"6":5,"12":1}; nguồn khác: longkai-power «V 12»
+11990:  VÀO jet-power||DS625|625|500|563|450|DP180LA/502KW|V10|ELECTRIC|183|128×142|JET544E/480KW|3600*1400*1920
+11991:      main all hạng 74 điểm 208 → nhánh top#29 điểm 208
+12155:== IB2500281552#0 (ra 4, vào 4)
+12156:  RA  stone-power||SC1500E5|1320|1200|1650|1500|KTA50G8|PI734C|MX12404|WHI7C
+12157:      main top#9 điểm 269 → nhánh dropped [cyl]; Cummins KTA50G8; số đông xi lanh 16 {"12":2,"16":28}; nguồn khác: bdadl-shanghai «10», mingbang-mbkl «12», xinzhengfa «12», yingtai-jiangsu «12»
+12158:  RA  bobig-power||BC1650|1200|1500|1320|1650|KTA50GS8|1287|BW454C|4650*2065*2500|6100*2250*3050
+12159:      main top#10 điểm 269 → nhánh dropped [cyl]; Cummins KTA50GS8; số đông xi lanh 16 {"12":1,"16":28}; nguồn khác: mingbang-mbkl «12»
+12160:  RA  dingbo||XG1200GF|1200/1500|1320/1650|KTA50GS8|PI734C1|5620X2280X2350|11000
+12161:      main top#11 điểm 269 → nhánh dropped [cyl]; Cummins KTA50GS8; số đông xi lanh 16 {"12":1,"16":28}; nguồn khác: mingbang-mbkl «12»
+12162:  RA  sanq-power||SQIC1675|1340/1675|1200/1500|KTA50GS8|INDIA|PI734C|318|10324|18500|5690×2033×2330|12192×
+12163:      main top#12 điểm 269 → nhánh dropped [cyl]; Cummins KTA50GS8; số đông xi lanh 16 {"12":1,"16":28}; nguồn khác: mingbang-mbkl «12»
+12164:  VÀO longkai-power||POWERYOURFUTURE|12M33D1450E310|WEICHAIGENERATOR|PRIMEPOWER:1200W/1500KVAGENERATORWILL
+12165:      main all hạng 65 điểm 246 → nhánh top#22 điểm 246
+12166:  VÀO stone-power||SC1625E6|1430|1300|1788|1625|KTA50G9|PI734B|MX12404|WHI7B
+12167:      main all hạng 66 điểm 245 → nhánh top#23 điểm 245
+12168:  VÀO dingbo||XG1400GF|1400/1750|1540/1925|12V4000G23|TFW214004|6150X2400X2800|13000
+12169:      main all hạng 67 điểm 244 → nhánh top#24 điểm 244
+12170:  VÀO rcg-power||RSM1500D5S|1500KVA/1200KW|1650KVA/1320KW|S12RPTAA2C|LSA502L8|PDF
+12171:      main all hạng 77 điểm 241 → nhánh top#25 điểm 241
+12361:== IB2500320544#0 (ra 1, vào 1)
+12362:  RA  longkai-power||LG820BD|8976|1122|816|1020|8M33G1100/5|LK634E|LSA493L10|OP4400*2000*2250|20FT|
+12363:      main top#10 điểm 271 → nhánh dropped [cyl]; Baudouin 8M33G1100/5; số đông xi lanh 8 {"8":3,"12":1}; nguồn khác: waeta-fujian «12 V»
+12364:  VÀO longkai-power||POWERYOURFUTURE|12M33D1108E200|WEICHAIGENERATOR|PRIMEPOWER:900W/1125KVAGENERATORWILLB
+12365:      main all hạng 54 điểm 265 → nhánh top#19 điểm 265
+12457:== IB2500327119#1 (ra 3, vào 3)
+12458:  RA  fdk-energy||CD110V2/H1CONTACT|110KVA/88KW|100KVA/80KW|4BTAA39G3|CUMMINS(CHINADONGFENG)|STAMFORDUCI27
+12459:      main top#4 điểm 284 → nhánh dropped [cyl]; Cummins 4BTAA39G3; số đông xi lanh 4 {"4":4,"6":1}; nguồn khác: bdadl-shanghai «6»
+12460:  RA  bobig-power||BC110S|80|100|88|110|4BTA39G13|97|BW224G|2120*850*1400|2850*1040*1430
+12461:      main top#14 điểm 269 → nhánh dropped [cyl]; Cummins 4BTA39G13; số đông xi lanh 4 {"4":6,"6":1}; nguồn khác: victory-generator «6L»
+12462:  RA  dingbo||XG80GF|80/100|88/110|TAD531GE|LSA443S5|2200X720X1380|1200
+12463:      main top#20 điểm 260 → nhánh dropped [cyl]; Volvo Penta TAD531GE; số đông xi lanh 4 {"4":16}; nguồn khác: aoke-yangzhou «6»
+12464:  VÀO fdk-energy||CD125N/H1CONTACT|125KVA/100KW|113KVA/90KW|QSB59G30|CUMMINS(CHINADONGFENG)|STAMFORDUCI274
+12465:      main all hạng 25 điểm 271 → nhánh top#10 điểm 271
+12466:  VÀO rise-power||RDL9460|944/118|104/130|TD226B6D|LSA442VS45|2200×800×1500|2900×1080×1650|1250|1850
+12467:      main all hạng 70 điểm 243 → nhánh top#26 điểm 243
+12468:  VÀO jet-power||XC110|110|88|100|80|CA6DF2D14D/96KW|L6|ELECTRONIC|655|110×115|JET274C/80KW|2550*1000*1550
+12469:      main all hạng 74 điểm 237 → nhánh top#27 điểm 237
+12670:== IB2500344346#0 (ra 3, vào 3)
+12671:  RA  bobig-power||BC1375|1000|1250|1100|1375|KTA50G3|1097|BW404H|4650*2065*2500|6100*2250*3050
+12672:      main top#12 điểm 269 → nhánh dropped [cyl]; Cummins KTA50G3; số đông xi lanh 16 {"12":3,"16":29}; nguồn khác: bdadl-shanghai «10», comappower «12», huipu-power «12», mingbang-mbkl «12», suneco-linyi «12», xinhengxin-fujian «12», xinzhengfa «12», yingtai-jiangsu «12»
+12673:  RA  dingbo||XG1000GF|1000/1250|1100/1375|KTA50G3|LVI634G1|4870X2100X2350|10000
+12674:      main top#13 điểm 269 → nhánh dropped [cyl]; Cummins KTA50G3; số đông xi lanh 16 {"12":3,"16":29}; nguồn khác: bdadl-shanghai «10», comappower «12», huipu-power «12», mingbang-mbkl «12», suneco-linyi «12», xinhengxin-fujian «12», xinzhengfa «12», yingtai-jiangsu «12»
+12675:  RA  eastern-lion-fuan||GF/GFSC1000|1000|1250|1111|1389|KTA50G3|1097|EL404G|1000KW|SMARTGEN6120|DETAIL
+12676:      main top#14 điểm 269 → nhánh dropped [cyl]; Cummins KTA50G3; số đông xi lanh 16 {"12":3,"16":29}; nguồn khác: bdadl-shanghai «10», comappower «12», huipu-power «12», mingbang-mbkl «12», suneco-linyi «12», xinhengxin-fujian «12», xinzhengfa «12», yingtai-jiangsu «12»
+12677:  VÀO stone-power||SM1250E5|1100|1000|1375|1250|S12RPTA|LVI634G|MX10304|WHI6G
+12678:      main all hạng 54 điểm 269 → nhánh top#18 điểm 269
+12679:  VÀO uleengen||UW1375GF|1100|1375|12M33D1320E200|1200|12V|150×185|392|257|S6L1DG41|4600×1900×2235|8000
+12680:      main all hạng 59 điểm 263 → nhánh top#19 điểm 263
+12681:  VÀO eastern-lion-fuan||GFSP1500|1080|1350|1200|1500|401246TWG3A|8007249727|EL404G|1000|SMARTGEN6120|DETA
+12682:      main all hạng 65 điểm 261 → nhánh top#21 điểm 261
+12919:== IB2500385135#0 (ra 7, vào 7)
+12920:  RA  gb-power|STANDARDFEATURES|MODEL|GBP15|STANDBYPOWER(50HZ)|11KW/14KVA|PRIMEPOWER(50HZ)|10KW/125KVA|ENG
+12921:      main top#0 điểm 281 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+12922:  RA  fdk-energy||P14/H1CONTACT|14KVA/11KW|13KVA/10KW|403A15G1|PERKINSCHINA|STAMFORDS0L1L1|CLICKHERE|DOWNL
+12923:      main top#1 điểm 257 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+12924:  RA  sanq-power||SQP15|12/145|105/131|403D15G|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304
+12925:      main top#2 điểm 256 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+12926:  RA  sanq-power||SQP15|12/145|105/131|403A15G1|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304
+12927:      main top#3 điểm 256 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+12928:  RA  eastern-lion-fuan||GFSP14|104|13|12|14|403D15G|20362|EL164C|108|SMARTGEN6120|DETAIL
+12929:      main top#4 điểm 245 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+12930:  RA  bobig-power||BP14|10|13|11|14|403A15G1MADEINCHINA|10|BW164C|1150*650*1000|1750*850*1000
+12931:      main top#5 điểm 245 → nhánh dropped [cyl]; Perkins 403A15G1; số đông xi lanh 3 {"3":13,"4":2}; nguồn khác: depco-power «4», huipu-power «4»
+12932:  RA  longkai-power||LG9P|12|10|11|9|403A11G1|OP1500*750*1050|AT1808*850*1130|
+12933:      main top#6 điểm 224 → nhánh dropped [cyl]; Perkins 403A11G1; số đông xi lanh 3 {"3":11,"4":1}; nguồn khác: huipu-power «4»
+12934:  VÀO xingguang-jiangsu||XG10GF|10/125|ZS1100|STC10|1140×780×995|480
+12935:      main all hạng 85 điểm 146 → nhánh top#23 điểm 146
+12936:  VÀO uleengen||UY12GFS|10|125|码385D|11|3|85*90|1532|23|164C|1860X850X1200|700
+12937:      main all hạng 86 điểm 146 → nhánh top#24 điểm 146
+12938:  VÀO minsun-motor||GFP125|125|10|403A15G|SYA164C
+12939:      main all hạng 87 điểm 146 → nhánh top#25 điểm 146
+12940:  VÀO victory-generator||GENERATOR|MODEL:|VDG12S|VDG12S3|FREQUENCY(HZ)|50|50|RATEDACOUTPUT(KVA)|100|125|MA
+12941:      main all hạng 89 điểm 142 → nhánh top#26 điểm 142
+12942:  VÀO kaihua-genset||KH10GF|14|13|3ZT11G42|1350*600*1100|600
+12943:      main all hạng 93 điểm 141 → nhánh top#27 điểm 141
+12944:  VÀO eastern-lion-fuan||GF/GFSKF10|10|13|11|14|K4100DS|301|EL164C|108KW|RUIFEN6120|DETAIL
+12945:      main all hạng 94 điểm 141 → nhánh top#28 điểm 141
+12946:  VÀO acepow-fuan||APYN10|10|11|125|14|BC164C|YN25GB|18|198
+12947:      main all hạng 97 điểm 140 → nhánh top#29 điểm 140
+13062:== IB2500394492#0 (ra 3, vào 3)
+13063:  RA  longkai-power||POWERYOURFUTURE|SC33W990D2|SDECGENERATOR|PRIMEPOWER:600KW/750KVAGENERATORWILLBEREADYT
+13064:      main top#3 điểm 278 → nhánh dropped [cyl]; SDEC SC33W990D2; số đông xi lanh 6 {"6":24,"12":3}; nguồn khác: aoke-yangzhou «12», taihai-taizhou «12», victory-generator «12V»
+13065:  RA  jet-power||SD825|825|660|750|600|SC33W990D2|L6|ELECTRIC|328|180X215|JET634B
+13066:      main top#11 điểm 269 → nhánh dropped [cyl]; SDEC SC33W990D2; số đông xi lanh 6 {"6":24,"12":3}; nguồn khác: aoke-yangzhou «12», taihai-taizhou «12», victory-generator «12V»
+13067:  RA  dingbo||XG600GF|600/750|660/825|SC33W990D2|1FC24514|4550X1750X2189|5860
+13068:      main top#13 điểm 269 → nhánh dropped [cyl]; SDEC SC33W990D2; số đông xi lanh 6 {"6":24,"12":3}; nguồn khác: aoke-yangzhou «12», taihai-taizhou «12», victory-generator «12V»
+13069:  VÀO longkai-power||LG720BD|792|990|720|900|12M26G1000/5|LK634D|LSA493L9|OP4100*2000*2250|20FT|
+13070:      main all hạng 40 điểm 261 → nhánh top#16 điểm 261
+13071:  VÀO yongcai-elecmama||YCM720CC|990|792|900|720|CCEC|KTA38G2A|813895|12|ELECTRONIC|LVI634D|728KW
+13072:      main all hạng 52 điểm 249 → nhánh top#25 điểm 249
+13073:  VÀO acepow-fuan||APW720|720|900|792|990|LV634D|728|801|12M26D902E200|820
+13074:      main all hạng 54 điểm 249 → nhánh top#26 điểm 249
+13182:== IB2500410768#1 (ra 1, vào 1)
+13183:  RA  dingbo||XG80GF|80/100|88/110|TAD531GE|LSA443S5|2200X720X1380|1200
+13184:      main top#17 điểm 260 → nhánh dropped [cyl]; Volvo Penta TAD531GE; số đông xi lanh 4 {"4":16}; nguồn khác: aoke-yangzhou «6»
+13185:  VÀO uleengen||CCFJ90W|90|113|WP6CD132E200|120|6|105*130|675|1500|化学品船|MPH904|2250*1035*1400|1450
+13186:      main all hạng 78 điểm 232 → nhánh top#29 điểm 232
+13250:== IB2500432527#0 (ra 1, vào 1)
+13251:  RA  longkai-power||LG820BD|8976|1122|816|1020|8M33G1100/5|LK634E|LSA493L10|OP4400*2000*2250|20FT|
+13252:      main top#10 điểm 271 → nhánh dropped [cyl]; Baudouin 8M33G1100/5; số đông xi lanh 8 {"8":3,"12":1}; nguồn khác: waeta-fujian «12 V»
+13253:  VÀO longkai-power||POWERYOURFUTURE|12M33D1108E200|WEICHAIGENERATOR|PRIMEPOWER:900W/1125KVAGENERATORWILLB
+13254:      main all hạng 52 điểm 265 → nhánh top#19 điểm 265
+13272:== IB2500460613#2 (ra 3, vào 1)
+13273:  RA  genmac|DUPLEXG13POE31413403D15G1500DIESEL3149610036QFIAG450014006601360424
+13274:      main top#0 điểm 225 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+13275:  RA  aj-power||AJ14|50HZ|THREEPHASE|1500|130|143||403D15G|MA1114C2|AJ14EMISSIONSOPTIMISEDTHREEPHASE50HZ
+13276:      main top#1 điểm 175 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+13277:  RA  tecnogen||PK15MSX**|14,3|13|17|15,5|403D15G|M|3|1496|12|14,4|2,6|3,0|N|AUS731017|ACP7320|65|75|150|8
+13278:      main top#5 điểm 135 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+13279:  VÀO aj-power||AJ22|50HZ|SINGLEPHASE|1500|151|166||404A22G1DERATE|MA1114F|AJ22SINGLEPHASE50HZ
+13280:      main all hạng 14 điểm 34 → nhánh top#9 điểm 34
+13393:== IB2500473200#0 (ra 1, vào 1)
+13394:  RA  victory-generator||V660SC|50|600|750|660|825|SC33W990D2|12V|328|4360*1620*2160|6820
+13395:      main top#29 điểm 210 → nhánh dropped [cyl]; SDEC SC33W990D2; số đông xi lanh 6 {"6":24,"12":3}; nguồn khác: aoke-yangzhou «12», taihai-taizhou «12», victory-generator «12V»
+13396:  VÀO sanq-power||SQV633|506/633|460/575|TAD1652GE(1642GE)|SWEDEN|HCI544E|198|3880|5590|3300×1275×2030|463
+13397:      main all hạng 127 điểm 208 → nhánh top#29 điểm 208
+13523:== IB2500474803#0 (ra 2, vào 2)
+13524:  RA  sanq-power||SQD550|440/550|400/500|DP158LD|HCI544C|97|3720|5700|3300X1280X1950|4800X1683X2200
+13525:      main top#10 điểm 287 → nhánh dropped [cyl]; Doosan / Hyundai DP158LD; số đông xi lanh 8 {"6":1,"8":13}; nguồn khác: hosem-power «6 Cylinder In Line»
+13526:  RA  stone-power||SC500E5|440|400|550|500|QSZ13G3|HCI544D|MP4004A|WHI5D
+13527:      main top#14 điểm 284 → nhánh all []; Cummins QSZ13G3; bị đẩy bởi sanq-power||SQC550|440/550|400/500|KTA19G3A|HCI544D|946|3940|6630|3350 (KTA19G3A, điểm 284)
+13528:  VÀO sanq-power||SQC550|440/550|400/500|KTA19G3A|HCI544D|946|3940|6630|3350×1280×1934|4800×1683×2200
+13529:      main all hạng 22 điểm 284 → nhánh top#12 điểm 284
+13530:  VÀO dingbo||XG400GF|400/500|440/550|TAD1651GE|LSA472M7|3200X1160X2022|3100
+13531:      main all hạng 64 điểm 278 → nhánh top#20 điểm 278
+13570:== IB2600217137#0 (ra 7, vào 7)
+13571:  RA  dingbo||XG400GF|400/500|440/550|TAD1641GE|LSA472M7|3200X1160X2022|3100
+13572:      main top#0 điểm 462 → nhánh dropped [cyl]; Volvo Penta TAD1641GE; số đông xi lanh 6 {"4":1,"6":12}; nguồn khác: mingbang-mbkl «4»
+13573:  RA  kaihua-genset||KH400GF|550|500|WP13D510E311|3200*950*1900|3340
+13574:      main top#1 điểm 429 → nhánh dropped [cyl]; Weichai WP13D510E311; số đông xi lanh 6 {"4":1,"6":6}; nguồn khác: depco-power «4»
+13575:  RA  minsun-motor||GFW500|500|400|WP13D510E311|SYA354D
+13576:      main top#2 điểm 429 → nhánh dropped [cyl]; Weichai WP13D510E311; số đông xi lanh 6 {"4":1,"6":6}; nguồn khác: depco-power «4»
+13577:  RA  kaihua-genset||KH400GF|5500|440|500|400|TAD1641GE|3300X1160X2000|3800
+13578:      main top#6 điểm 413 → nhánh dropped [cyl]; Volvo Penta TAD1641GE; số đông xi lanh 6 {"4":1,"6":12}; nguồn khác: mingbang-mbkl «4»
+13579:  RA  kaichen-jiangsu||KCV550GF|400|500|440|550|TAD1345GE|
+13580:      main top#7 điểm 413 → nhánh dropped [cyl]; Volvo Penta TAD1345GE; số đông xi lanh 6 {"4":1,"6":13}; nguồn khác: mingbang-mbkl «4»
+13581:  RA  kaichen-jiangsu||KCV630GF|450|563|500|625|TAD1641GE|
+13582:      main top#12 điểm 400 → nhánh dropped [cyl]; Volvo Penta TAD1641GE; số đông xi lanh 6 {"4":1,"6":12}; nguồn khác: mingbang-mbkl «4»
+13583:  RA  kaihua-genset||KH450GF|6188|495|5625|450|TAD1642GE|3300X1160X2000|3810
+13584:      main top#13 điểm 400 → nhánh dropped [cyl]; Volvo Penta TAD1642GE; số đông xi lanh 6 {"4":1,"6":13}; nguồn khác: mingbang-mbkl «4»
+13585:  VÀO mingbang-mbkl||13|MBV400|500|400|550|440|TAD1641GE|4|44|105*127|919|4500×2100×2600
+13586:      main all hạng 17 điểm 373 → nhánh top#10 điểm 373
+13587:  VÀO eastern-lion-fuan||GF/GFSWX400|400|500|444|555|WD269TAD4810/1800|482530|EL354D|400|SMARTGEN6120|DETA
+13588:      main all hạng 38 điểm 345 → nhánh top#24 điểm 345
+13589:  VÀO victory-generator||V530P|50|480|600|530|663|2806A/CE18TAG1A|123|6|145|183|62|61|3750*1550*2080|4382
+13590:      main all hạng 42 điểm 345 → nhánh top#25 điểm 345
+13591:  VÀO dingbo||XG400GF|400/500|440/550|KTA19G4/G3A|HCI544C1|3400X1360X2070|4200
+13592:      main all hạng 43 điểm 345 → nhánh top#26 điểm 345
+13593:  VÀO mecca-power||MC550S|400|500|440|550|DC13|
+13594:      main all hạng 48 điểm 325 → nhánh top#27 điểm 325
+13595:  VÀO xingguang-jiangsu||XG400GF|400/500|Z8V190B|TFW|4950×1750×2800|9500
+13596:      main all hạng 54 điểm 325 → nhánh top#28 điểm 325
+13597:  VÀO mecca-power||MC550D|550|440|500|400|BF8M1015CLAG2B|CN|11870|8V/TCA|15875|E|3100*1850*2240|3380
+13598:      main all hạng 55 điểm 325 → nhánh top#29 điểm 325
+13799:== IB2600229874#0 (ra 3, vào 3)
+13800:  RA  bobig-power||BC1375|1000|1250|1100|1375|KTA50G3|1097|BW404H|4650*2065*2500|6100*2250*3050
+13801:      main top#11 điểm 469 → nhánh dropped [cyl]; Cummins KTA50G3; số đông xi lanh 16 {"12":3,"16":29}; nguồn khác: bdadl-shanghai «10», comappower «12», huipu-power «12», mingbang-mbkl «12», suneco-linyi «12», xinhengxin-fujian «12», xinzhengfa «12», yingtai-jiangsu «12»
+13802:  RA  dingbo||XG1000GF|1000/1250|1100/1375|KTA50G3|LVI634G1|4870X2100X2350|10000
+13803:      main top#12 điểm 469 → nhánh dropped [cyl]; Cummins KTA50G3; số đông xi lanh 16 {"12":3,"16":29}; nguồn khác: bdadl-shanghai «10», comappower «12», huipu-power «12», mingbang-mbkl «12», suneco-linyi «12», xinhengxin-fujian «12», xinzhengfa «12», yingtai-jiangsu «12»
+13804:  RA  stone-power||SC1250E5|1100|1000|1375|1250|KTA50G3|LV634G|MX10304|WHI6G
+13805:      main top#13 điểm 469 → nhánh dropped [cyl]; Cummins KTA50G3; số đông xi lanh 16 {"12":3,"16":29}; nguồn khác: bdadl-shanghai «10», comappower «12», huipu-power «12», mingbang-mbkl «12», suneco-linyi «12», xinhengxin-fujian «12», xinzhengfa «12», yingtai-jiangsu «12»
+13806:  VÀO voltgent||P15001|1350|1080|1500|1200|401246TWG3A|LL8224L|DSE7420
+13807:      main all hạng 59 điểm 461 → nhánh top#19 điểm 461
+13808:  VÀO acepow-fuan||APW1000|1000|1250|1100|1375|LV634G|1000|1100|12M33D1210E200|1100
+13809:      main all hạng 62 điểm 461 → nhánh top#20 điểm 461
+13810:  VÀO dingbo||XG1100GF|1100/1375|1210/15125|401246TWG3A|MX10304|5000X2100X2550|10100
+13811:      main all hạng 80 điểm 459 → nhánh top#21 điểm 459
+13902:== IB2600252022#0 (ra 3, vào 3)
+13903:  RA  dingbo||XG80GF|80/100|88/110|TAD531GE|LSA443S5|2200X720X1380|1200
+13904:      main top#5 điểm 260 → nhánh dropped [cyl]; Volvo Penta TAD531GE; số đông xi lanh 4 {"4":16}; nguồn khác: aoke-yangzhou «6»
+13905:  RA  comappower||COM110V|110KVA|88KW|100KVA|80KW|TAD531GE|4|COM110V
+13906:      main top#24 điểm 205 → nhánh dropped [cyl]; Volvo Penta TAD531GE; số đông xi lanh 4 {"4":16}; nguồn khác: aoke-yangzhou «6»
+13907:  RA  kaihua-genset||KH80GF|1100|88|100|80|TAD531GE|2080X720X1450|1150
+13908:      main top#25 điểm 205 → nhánh dropped [cyl]; Volvo Penta TAD531GE; số đông xi lanh 4 {"4":16}; nguồn khác: aoke-yangzhou «6»
+13909:  VÀO minsun-motor||GFF120|120|96|CA6DF2D16D|SYA274C
+13910:      main all hạng 62 điểm 193 → nhánh top#27 điểm 193
+13911:  VÀO sunny-weifang||DB90GF|90/1125|6105ZLD|TFW904|2400*780*1240|1600
+13912:      main all hạng 63 điểm 192 → nhánh top#28 điểm 192
+13913:  VÀO sr-genset||110|88|100|80|1104DE44TAG2EU|PERKINS|UCI274C|TALA44D|/
+13914:      main all hạng 65 điểm 180 → nhánh top#29 điểm 180
+13977:== IB2600418114#0 (ra 1, vào 1)
+13978:  RA  longkai-power||LG820BD|8976|1122|816|1020|8M33G1100/5|LK634E|LSA493L10|OP4400*2000*2250|20FT|
+13979:      main top#10 điểm 271 → nhánh dropped [cyl]; Baudouin 8M33G1100/5; số đông xi lanh 8 {"8":3,"12":1}; nguồn khác: waeta-fujian «12 V»
+13980:  VÀO longkai-power||POWERYOURFUTURE|12M33D1108E200|WEICHAIGENERATOR|PRIMEPOWER:900W/1125KVAGENERATORWILLB
+13981:      main all hạng 54 điểm 265 → nhánh top#19 điểm 265
+14017:== IB2600588204#0 (ra 3, vào 2)
+14018:  RA  genmac|DUPLEXG13POE31413403D15G1500DIESEL3149610036QFIAG450014006601360424
+14019:      main top#2 điểm 221 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+14020:  RA  ade-power||STANDBYPOWER(ESP)RATING|14KVA/11KW|PRIMEPOWER(PRP)RATING|13KVA/10KW|ENGINE|PERKINS403D15G
+14021:      main top#3 điểm 206 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+14022:  RA  aj-power||AJ14|50HZ|THREEPHASE|1500|130|143||403D15G|MA1114C2|AJ14EMISSIONSOPTIMISEDTHREEPHASE50HZ
+14023:      main top#7 điểm 171 → nhánh dropped [cyl]; Perkins 403D15G; số đông xi lanh 3 {"3":18,"4":1}; nguồn khác: depco-power «4»
+14024:  VÀO ade-power||STANDBYPOWER(ESP)RATING|14KVA/11KW|PRIMEPOWER(PRP)RATING|13KVA/10KW|ENGINE|BAUDOUIN4M06G2
+14025:      main all hạng 11 điểm 150 → nhánh top#8 điểm 150
+14026:  VÀO aj-power||AJ22|50HZ|SINGLEPHASE|1500|151|166||404A22G1DERATE|MA1114F|AJ22SINGLEPHASE50HZ
+14027:      main all hạng 23 điểm 29 → nhánh top#16 điểm 29
