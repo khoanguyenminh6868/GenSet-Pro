@@ -34,6 +34,17 @@
   ];
   // Mã đầu phát của các dòng phổ biến: dùng để biết ô nào là đầu phát khi bảng có cả động cơ lẫn đầu phát.
   const ALT_CODE = /^(UC[DIM]{0,2}\s?\d{3}|UCI\d|HC[IKM]?\s?\d{3}|PI\s?\d{3}|PE\s?\d{3}|S[0-9][LM]\d|P[0-9]\s?\d{2,}|LV[ISM]?\d{3}|TAL[\s-]?[A-Z]?\d{2}|LSA\s?\d{2}|LL\d{4}|ECP\s?\d{2}|ECO\s?\d{2}|NPE\s?\d{2}|MP[\s-]?\d{2,}|MX[\s-]?\d{3}|EG\s?\d{3}|1FC\d|FD\d[A-Z]|LTP\d{3}|BW(?:C|LV|P)?-?\d|BC[IA]?\s?1[0-9]{2}[A-Z])\/?/i; // LTP / BW: landtop, bobig (alternator model right after the engine, no brand in the header); BC164 / BC184: acepow's alternator stands BEFORE the engine ("| BC184E | ISUZU | JE493DB-04", read as the engine)
+  // A cell of figures with a look-alike letter ("3S0", "312.S": OCR of 350, 312.5, vantek) that is the kVA of the kW before it
+  // (kVA = kW / 0.8) or the kW of the kVA before it: a figure, not a model.
+  const OCR_SUB = { O: "0", S: "5", B: "8", Z: "2", I: "1", l: "1" };
+  const ocrFig = (cells, i) => {
+    const c = String(cells[i] || "").trim();
+    if (!/^\d[\dOSBZIl.]*$/.test(c) || !/[OSBZIl]/.test(c)) return false;
+    const v = Number(c.replace(/[OSBZIl]/g, (x) => OCR_SUB[x])), p = Number(String(cells[i - 1] || "").trim());
+    if (!(v > 0) || !(p > 0)) return false;
+    return Math.abs(p / 0.8 - v) <= 0.015 * v || Math.abs(p * 0.8 - v) <= 0.015 * v;
+  };
+  const BC_ALT =/^BC[IA]?\s?1\d{2}[A-Z]/i; // acepow's alternator code, specific enough to be read before the engine without a title
   // Series codes of Chinese alternator makers (Nianfeng NFS, Bobig BW, Jet-Power JET, Wintpower WT): such a model is not
   // the Stamford that the column title or page title of the table names ("Stamford UCDI274J" rows above, "with stamford
   // alternator" title): 2026-11-03 regression run showed "NIANFENG NFS5-G (Stamford)", "BW-404B (Stamford)".
@@ -689,6 +700,16 @@
       } else if (engineModel && /^(model|model\s*series|models?|型号)$/.test(bare)) vals.forEach((v, j) => isCode(v) && !badCol.has(j) && put(j, "engine", v));
       else if (/^(genset\s*)?model|机组型号|型号$/i.test(L) && !ENGINE_LBL.test(L) && !ALT_LBL.test(L)) vals.forEach((v, j) => isCode(v) && put(j, "genset", v));
     }
+    // A page that lists several products takes the first line of each label, so a rating can come from another product
+    // (hosem "Buy 500kva diesel generator": "Prime Power 500kVA" with "Standby Power 22kW"). When the kVA of one rating and
+    // the kW of the other do not fit one set (kW / kVA ≈ 0.8) neither is trusted: both ratings are left out.
+    for (const c of cols) {
+      const p = c?.prime, s = c?.standby;
+      if (!p || !s) continue;
+      const only = (r, u) => r[u] != null && r[u === "kVA" ? "kW" : "kVA"] == null;
+      const ratio = only(p, "kVA") && only(s, "kW") ? s.kW / p.kVA : only(p, "kW") && only(s, "kVA") ? p.kW / s.kVA : null;
+      if (ratio != null && (ratio < 0.5 || ratio > 1.2)) { delete c.prime; delete c.standby; }
+    }
     return cols.filter(Boolean);
   }
   const isLabelTable = (t) => {
@@ -850,8 +871,12 @@
     for (const h of hs) {
       const starts = [], named = h.some((x) => engT(x) || altT(x));
       h.forEach((x, j) => {
-        if (ei >= 0 && engT(x)) starts.push([j, ei, 1], [j, ei, -1]);
-        if (ai >= 0 && altT(x)) starts.push([j, ai, 1], [j, ai, -1]);
+        // "Engine | Modle" (sr-genset): the title is over the brand cell and the model has the next title; the model's cell
+        // is at the next title, so the title and the cell do not line up: no walk from here (thà thiếu còn hơn đọc sai;
+        // a kVA was read as the voltage, rà soát lệch cột 18/11/2026).
+        const apart = /^\s*(model|modle|型号)\s*$/i.test(h[j + 1] || "") && !engT(h[j + 1]) && !altT(h[j + 1]);
+        if (ei >= 0 && engT(x) && !apart) starts.push([j, ei, 1], [j, ei, -1]);
+        if (ai >= 0 && altT(x) && !apart) starts.push([j, ai, 1], [j, ai, -1]);
       });
       if (gi === 0 && /model|型号|机组/i.test(h[0] || "") && !engT(h[0]) && !altT(h[0])) starts.push([0, 0, 1]);
       starts.push([h.length - 1, cells.length - 1, -1, true]);
@@ -953,7 +978,8 @@
         // A note after the code ("1104C-44TAG2 made in china", "4BTA3.9-G2 （ QC58/67E ）") makes the cell
         // fail isCode and the next code (the alternator) would be read as the engine: drop the note.
         const cells = cellsOf(line).map((c) => c.replace(/\s+made in [a-z ]+$|\s*[（][^）]*[）]\s*$/i, "").trim());
-        const codes = cells.map((c, i) => (isCode(c) || brandedCode(c, ENGINE_BRANDS) || brandedCode(c, ALT_BRANDS) ? i : -1)).filter((i) => i >= 0);
+        // A kVA / kW misread with a look-alike letter ("3S0", "312.S" in vantek) is a figure, not a model (ocrFig).
+        const codes = cells.map((c, i) => (!ocrFig(cells, i) && (isCode(c) || brandedCode(c, ENGINE_BRANDS) || brandedCode(c, ALT_BRANDS)) ? i : -1)).filter((i) => i >= 0);
         if (!codes.length) return;
         // A set of two engines ("| 1100 | 1000 | … | 2 x TAD1641GE | … | SCP8610", tecnogen): the cell is no code, the
         // controller was read as the engine. The set's output is not one engine's: the row gives no engine at all.
@@ -970,7 +996,7 @@
           if (hasAltCol && alt.length) ai = alt[0];
           if (hasEngineCol) ei = rest.find((i) => i !== ai && !ALT_CODE.test(cells[i])) ?? -1;
           if (hasAltCol && ai < 0 && ei >= 0) { const after = rest.filter((i) => i > ei); if (after.length === 1) ai = after[0]; }
-          if (!hasAltCol && alt.length && hasEngineCol && ei >= 0) ai = alt.find((i) => i > ei) ?? -1; // only after the engine: one before it, under no title, may be a Doosan "P158LE" or a Mitsubishi "S4L2" (tried 18/11/2026: 6 suppliers got engines as alternators)
+          if (!hasAltCol && alt.length && hasEngineCol && ei >= 0) ai = alt.find((i) => i > ei) ?? alt.find((i) => i < ei && BC_ALT.test(cells[i].trim())) ?? -1; // (acepow "| APW-10.5 | … | BC164C | 10.8 | 12 | Y480BD": no title for the alternator, its BC1xx code stands before the engine; lech-cot-8) only after the engine: one before it, under no title, may be a Doosan "P158LE" or a Mitsubishi "S4L2" (tried 18/11/2026: 6 suppliers got engines as alternators)
           // The header names both, the alternator's title before the engine's ("| Alternator | Engine model", acepow;
           // "发电机型号 | 发动机型号", cldj-fujian), and the row has just these two codes after the genset: they stand in
           // the order of the titles (rà soát 18/11/2026: "APS164B | YD380D" was read engine, then alternator). A title
