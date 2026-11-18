@@ -71,12 +71,13 @@ const zhCore = (s) => (String(s || "").match(/[一-鿿]+/g) || []).join("").repl
 function index() {
   return loadAll().filter((x) => x.rec).map(({ rec }) => ({
     id: rec.id, role: rec.role, website: rec.website, host: host(rec.website || ""), label: host(rec.website || "").split(".")[0],
+    hosts: [rec.website, ...(rec.otherWebsites || [])].map((u) => host(u || "")).filter(Boolean),
     words: new Set([rec.names?.en, ...(rec.names?.brands || []), rec.id.replace(/-/g, " ")].flatMap(words)),
     zh: [rec.names?.zh, ...(rec.names?.brands || [])].map(zhCore).filter((z) => z.length >= 2),
   }));
 }
 function matches(q, idx) {
-  if (/^https?:\/\//.test(q)) { const h = host(q); return idx.filter((r) => r.host && (r.host === h || h.endsWith("." + r.host) || r.host.endsWith("." + h))).map((r) => ({ ...r, how: "cùng website" })); }
+  if (/^https?:\/\//.test(q)) { const h = host(q); return idx.filter((r) => r.hosts.some((x) => x === h || h.endsWith("." + x) || x.endsWith("." + h))).map((r) => ({ ...r, how: "cùng website" })); }
   const w = words(q), z = zhCore(q), compact = norm(q).replace(/[^a-z0-9]/g, "");
   return idx.flatMap((r) => {
     const shared = w.filter((x) => x.length >= 3 && r.words.has(x));

@@ -114,14 +114,15 @@ async function crawl(id) {
   if (!fs.existsSync(specFile) || !fs.existsSync(recFile)) return { id, pages: 0, sheets: 0, rows: 0 };
   const rec = JSON.parse(fs.readFileSync(recFile, "utf8"));
   if (!rec.website) return { id, pages: 0, sheets: 0, rows: 0 };
-  const host = new URL(rec.website).hostname.replace(/^www\.|^m\./, "");
+  // Links are followed on the site of the page they are on (a record with otherWebsites has pages on two sites).
+  const hostOf = (u) => new URL(u).hostname.replace(/^www\.|^m\./, "");
   const pages = [...new Set(JSON.parse(fs.readFileSync(specFile, "utf8")).map((t) => t.url))];
   const seen = new Set(), found = [], saved = [];
   let n = FIRST, read = 0, tried = 0;
   for (const page of pages) {
     if (tried >= MAX) break;
     let html; try { ({ html } = await get(page)); read++; } catch { continue; }
-    for (const link of datasheetLinks(html, page, host)) {
+    for (const link of datasheetLinks(html, page, hostOf(page))) {
       if (seen.has(link.url) || tried >= MAX || n > 9999) continue;
       seen.add(link.url); tried++;
       let d; try { d = await download(link.url); } catch (e) { if (process.env.DEBUG) console.log("  x", link.url, e.message); continue; }

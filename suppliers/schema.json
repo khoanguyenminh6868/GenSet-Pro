@@ -10,6 +10,7 @@
     "status": { "enum": ["verified", "partial", "incomplete"] },
     "names": { "type": "object", "properties": { "en": { "type": ["string", "null"] }, "zh": { "type": ["string", "null"] }, "brands": { "type": "array", "items": { "type": "string" } } } },
     "website": { "type": ["string", "null"] },
+    "otherWebsites": { "type": "array", "items": { "type": "string" }, "description": "Website khác của cùng công ty (kaihua-genset: hichaipower.com); crawl-specs / crawl-datasheets / controllers cào cả các site này" },
     "hq": { "type": "object", "properties": { "province": { "type": ["string", "null"] }, "city": { "type": ["string", "null"] } } },
     "founded": { "type": ["integer", "null"] },
     "foundedSrc": { "$ref": "#/$defs/src" },

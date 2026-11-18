@@ -130,6 +130,14 @@ export function checkRecord(rec, file) {
   }
   if (rec.status === "verified") {
     if (!rec.website) err("verified: thiếu website");
+  }
+  if (rec.otherWebsites != null) {
+    if (!Array.isArray(rec.otherWebsites)) err("otherWebsites: phải là danh sách");
+    else for (const u of rec.otherWebsites) if (!/^https?:\/\/[^/\s]+/i.test(String(u))) err(`otherWebsites: "${u}" không phải địa chỉ http(s)`);
+      else if (!rec.website) err("otherWebsites: có website khác mà không có website chính");
+      else if (u === rec.website) err(`otherWebsites: "${u}" trùng website chính`);
+  }
+  if (rec.status === "verified") {
     if (!(rec.productLines || []).some((p) => p.power)) err("verified: cần ít nhất 1 dòng máy có dải công suất");
   }
   const tiers = [...sources.values()].map((s) => s.tier);

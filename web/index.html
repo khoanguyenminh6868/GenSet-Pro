@@ -3600,7 +3600,7 @@ function supDetailHtml(s) {
     <dl class="kv kvw">
       <dt>Vai trò</dt><dd>${SUP_ROLE[s.role] || s.role}</dd>
       <dt>Thương hiệu</dt><dd>${(s.names?.brands || []).join(", ") || "—"}</dd>
-      <dt>Website</dt><dd>${raw(s.website ? h`<a href="${safeUrl(s.website)}" target="_blank" rel="noopener">${s.website}</a>` : "—")}</dd>
+      <dt>Website</dt><dd>${raw([s.website, ...(s.otherWebsites || [])].filter(Boolean).map((w) => h`<a href="${safeUrl(w)}" target="_blank" rel="noopener">${w}</a>`).join("<br>") || "—")}</dd>
       <dt>Trụ sở</dt><dd>${[s.hq?.city, s.hq?.province, SUP_COUNTRY[s.country] || s.country].filter(Boolean).join(", ") || "—"}</dd>
       <dt>Năm thành lập</dt><dd>${raw(s.founded ? h`${s.founded} ${raw(supRefs(s.foundedSrc))}` : "—")}</dd>
       ${raw(s.contacts?.length ? h`<dt>Liên hệ</dt><dd>${raw(supContactsHtml(s.contacts))}</dd>` : "")}
