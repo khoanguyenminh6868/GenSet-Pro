@@ -1,6 +1,14 @@
 # Lệch cột 9 — chặng 1: `candidates` loại theo giá trị thắng số đông
 
-PR (DRAFT, chưa merge): https://github.com/khoanguyenminh6868/GenSet-Pro/pull/902 — nhánh `lech-cot-9`, commit 91256c91, từ origin/main 0ebd4c55.
+PR (DRAFT, chưa merge): https://github.com/khoanguyenminh6868/GenSet-Pro/pull/902 — nhánh `lech-cot-9`, đầu nhánh d4906d75, rebase lên origin/main 7d632e30.
+
+## CẬP NHẬT 18/11 — Khoa chọn (d)
+Khoa (nguyên văn): "làm (d) trước. (c) để đo và làm sau".
+- Commit d4906d75: luật số đông CHỈ áp cho số xi lanh (`MAJ_KEYS = {cyl}`): xi lanh tối thiểu (`below`) và nhánh số xi lanh ghi trơ theo động cơ. Dung tích tối thiểu và tối đa: code y như main (`git diff origin/main` không còn dòng nào đổi ở hai chỗ đó). Lý do của dòng dung tích không ghi số phiếu.
+- Test: 2 test dung tích đổi thành "số đông KHÔNG dùng → không loại ai, như trước" (min: 18,9 × 3 : 30 × 1; max: 30 × 3 : 18,9 × 1), thêm ca mọi nguồn dưới ngưỡng vẫn loại. `node --test suppliers` → `# tests 1012 # pass 1012 # fail 0`; `node --test web/test/*.test.mjs` → `# tests 161 # pass 161 # fail 0`.
+- `gopRow.mjs` lại cho 2 gói (main 7d632e30 ↔ nhánh), kết quả giống lượt trước: IB2400517601#0 và IB2400617546#0, mỗi gói agg-power `650/520` (top#6 điểm 136) và tecnogen `CU715TSX*` (top#7 điểm 136) → LOẠI [cyl]; không dòng nào khác đổi.
+- `suppliers/CLAUDE.md`: ghi rõ chỉ số xi lanh + quyết định của Khoa.
+- Phần bên dưới là bản ghi lượt đầu (cả dung tích). Danh sách 191 nhóm dung tích giữ lại làm đầu vào cho việc (c). Với (d), chỗ luật mới có thể đổi kết quả là 108 nhóm số xi lanh, giá trị thắng đúng cả 108.
 
 ## Tệp đã đổi
 - `suppliers/config-bot.mjs`: `majorityOf(figs)` (export) + `BLOCK` (export, để script kiểm dùng); trong `candidates`: `below` (dung tích / xi lanh tối thiểu), trần dung tích (`maxDisp`), số xi lanh ghi trơ (`cylExact`, nhánh dòng không tự ghi số). Lý do của dòng HSMT nêu đích danh có thêm "(số đông nhà cung cấp: 6 × 4, 12 × 1)"; `dropped[].src[key]` có `win`, `votes`.
