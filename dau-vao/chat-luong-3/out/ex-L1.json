@@ -1,0 +1,1504 @@
+{
+ "vai engine | xác nhận": [
+  {
+   "sup": "depco-power",
+   "n": 166,
+   "table": 0,
+   "kind": "engine",
+   "model": "4B3.9-G1",
+   "val": "4B3.9-G1",
+   "change": "MẤT bản ghi: engine 4B3.9-G1",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DC-30 | Type | Silent"
+   ],
+   "line": "| Model | 4B3.9-G1 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 167,
+   "table": 1,
+   "kind": "engine",
+   "model": "4BTA3.9-G2",
+   "val": "4BTA3.9-G2",
+   "change": "MẤT bản ghi: engine 4BTA3.9-G2",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DC-70 | Type | Silent"
+   ],
+   "line": "| Model | 4BTA3.9-G2 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 168,
+   "table": 2,
+   "kind": "engine",
+   "model": "4HT4.3-G22",
+   "val": "4HT4.3-G22",
+   "change": "MẤT bản ghi: engine 4HT4.3-G22",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DSE-75 | Type | Silent"
+   ],
+   "line": "| Model | 4HT4.3-G22 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 169,
+   "table": 3,
+   "kind": "engine",
+   "model": "4BTA3.9-G2",
+   "val": "4BTA3.9-G2",
+   "change": "MẤT bản ghi: engine 4BTA3.9-G2",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DC-62 | Type | Silent"
+   ],
+   "line": "| Model | 4BTA3.9-G2 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 170,
+   "table": 4,
+   "kind": "engine",
+   "model": "2206C-E13TAG2",
+   "val": "2206C-E13TAG2",
+   "change": "MẤT bản ghi: engine 2206C-E13TAG2",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DP-385 | Type | Silent"
+   ],
+   "line": "| Model | 2206C-E13TAG2 | Fuel | Diesel"
+  },
+  {
+   "sup": "kena-chongqing",
+   "n": 101,
+   "table": 0,
+   "kind": "engine",
+   "model": "618ZLD",
+   "val": "618ZLD",
+   "change": "MẤT bản ghi: engine 618ZLD",
+   "header": [
+    "| Details Genset | Model | ZSY-300 | Type | silent optional open"
+   ],
+   "line": "| Model | 618ZLD | Fuel | Diesel"
+  },
+  {
+   "sup": "kena-chongqing",
+   "n": 103,
+   "table": 1,
+   "kind": "engine",
+   "model": "PHF4056ZD1",
+   "val": "PHF4056ZD1",
+   "change": "MẤT bản ghi: engine PHF4056ZD1",
+   "header": [
+    "| Details Genset | Model | ZSY-50 | Type | silent optional open"
+   ],
+   "line": "| Model | PHF4056ZD1 | Fuel | Diesel"
+  },
+  {
+   "sup": "sunkings",
+   "n": 117,
+   "table": 16,
+   "kind": "engine",
+   "model": "QSZ13-G3",
+   "val": "QSZ13-G3",
+   "change": "MẤT bản ghi: engine QSZ13-G3",
+   "header": [
+    "| Details Genset | GenSet Model | SCF-550 | Type | silent(optional open)"
+   ],
+   "line": "| Model | QSZ13-G3 | Fuel | Diesel"
+  },
+  {
+   "sup": "supermaly",
+   "n": 101,
+   "table": 0,
+   "kind": "engine",
+   "model": "KTAA19-G6A",
+   "val": "KTAA19-G6A",
+   "change": "MẤT bản ghi: engine KTAA19-G6A",
+   "header": [],
+   "line": "| Model: KTAA19-G6A"
+  },
+  {
+   "sup": "supermaly",
+   "n": 101,
+   "table": 0,
+   "kind": "engine",
+   "model": "4BTA3.9-G11",
+   "val": "4BTA3.9-G11",
+   "change": "MẤT bản ghi: engine 4BTA3.9-G11",
+   "header": [],
+   "line": "| Model: 4BTA3.9-G11"
+  },
+  {
+   "sup": "supermaly",
+   "n": 101,
+   "table": 0,
+   "kind": "engine",
+   "model": "KTA38-G2A",
+   "val": "KTA38-G2A",
+   "change": "MẤT bản ghi: engine KTA38-G2A",
+   "header": [],
+   "line": "| Model: KTA38-G2A"
+  },
+  {
+   "sup": "supermaly",
+   "n": 102,
+   "table": 1,
+   "kind": "engine",
+   "model": "WP10D238E200",
+   "val": "WP10D238E200",
+   "change": "MẤT bản ghi: engine WP10D238E200",
+   "header": [],
+   "line": "| Model: WP10D238E200"
+  },
+  {
+   "sup": "supermaly",
+   "n": 102,
+   "table": 1,
+   "kind": "engine",
+   "model": "WP13D385E200",
+   "val": "WP13D385E200",
+   "change": "MẤT bản ghi: engine WP13D385E200",
+   "header": [],
+   "line": "| Model: WP13D385E200"
+  },
+  {
+   "sup": "supermaly",
+   "n": 102,
+   "table": 1,
+   "kind": "engine",
+   "model": "WP13D490E310",
+   "val": "WP13D490E310",
+   "change": "MẤT bản ghi: engine WP13D490E310",
+   "header": [],
+   "line": "| Model: WP13D490E310"
+  },
+  {
+   "sup": "supermaly",
+   "n": 102,
+   "table": 1,
+   "kind": "engine",
+   "model": "12M26D792E200",
+   "val": "12M26D792E200",
+   "change": "MẤT bản ghi: engine 12M26D792E200",
+   "header": [],
+   "line": "| Model: 12M26D792E200"
+  },
+  {
+   "sup": "supermaly",
+   "n": 103,
+   "table": 2,
+   "kind": "engine",
+   "model": "SC13G420D2",
+   "val": "SC13G420D2",
+   "change": "MẤT bản ghi: engine SC13G420D2",
+   "header": [],
+   "line": "| Model: SC13G420D2"
+  },
+  {
+   "sup": "supermaly",
+   "n": 103,
+   "table": 2,
+   "kind": "engine",
+   "model": "WP13D385E200",
+   "val": "WP13D385E200",
+   "change": "MẤT bản ghi: engine WP13D385E200",
+   "header": [],
+   "line": "| Model: WP13D385E200"
+  },
+  {
+   "sup": "supermaly",
+   "n": 103,
+   "table": 2,
+   "kind": "engine",
+   "model": "WP13D490E310",
+   "val": "WP13D490E310",
+   "change": "MẤT bản ghi: engine WP13D490E310",
+   "header": [],
+   "line": "| Model: WP13D490E310"
+  },
+  {
+   "sup": "supermaly",
+   "n": 103,
+   "table": 2,
+   "kind": "engine",
+   "model": "12M26D792E200",
+   "val": "12M26D792E200",
+   "change": "MẤT bản ghi: engine 12M26D792E200",
+   "header": [],
+   "line": "| Model: 12M26D792E200"
+  },
+  {
+   "sup": "supermaly",
+   "n": 104,
+   "table": 3,
+   "kind": "engine",
+   "model": "DP126LB",
+   "val": "DP126LB",
+   "change": "MẤT bản ghi: engine DP126LB",
+   "header": [],
+   "line": "| Model: DP126LB"
+  },
+  {
+   "sup": "supermaly",
+   "n": 104,
+   "table": 3,
+   "kind": "engine",
+   "model": "WP13D385E200",
+   "val": "WP13D385E200",
+   "change": "MẤT bản ghi: engine WP13D385E200",
+   "header": [],
+   "line": "| Model: WP13D385E200"
+  },
+  {
+   "sup": "supermaly",
+   "n": 104,
+   "table": 3,
+   "kind": "engine",
+   "model": "WP13D490E310",
+   "val": "WP13D490E310",
+   "change": "MẤT bản ghi: engine WP13D490E310",
+   "header": [],
+   "line": "| Model: WP13D490E310"
+  },
+  {
+   "sup": "supermaly",
+   "n": 104,
+   "table": 3,
+   "kind": "engine",
+   "model": "12M26D792E200",
+   "val": "12M26D792E200",
+   "change": "MẤT bản ghi: engine 12M26D792E200",
+   "header": [],
+   "line": "| Model: 12M26D792E200"
+  },
+  {
+   "sup": "supermaly",
+   "n": 105,
+   "table": 4,
+   "kind": "engine",
+   "model": "YC6MJ600-D30",
+   "val": "YC6MJ600-D30",
+   "change": "MẤT bản ghi: engine YC6MJ600-D30",
+   "header": [],
+   "line": "| Model: YC6MJ600-D30"
+  },
+  {
+   "sup": "supermaly",
+   "n": 105,
+   "table": 4,
+   "kind": "engine",
+   "model": "YC6TD840-D31",
+   "val": "YC6TD840-D31",
+   "change": "MẤT bản ghi: engine YC6TD840-D31",
+   "header": [],
+   "line": "| Model: YC6TD840-D31"
+  },
+  {
+   "sup": "supermaly",
+   "n": 105,
+   "table": 4,
+   "kind": "engine",
+   "model": "YC6A275-D30",
+   "val": "YC6A275-D30",
+   "change": "MẤT bản ghi: engine YC6A275-D30",
+   "header": [],
+   "line": "| Model: YC6A275-D30"
+  },
+  {
+   "sup": "supermaly",
+   "n": 106,
+   "table": 5,
+   "kind": "engine",
+   "model": "WP13D405E200",
+   "val": "WP13D405E200",
+   "change": "MẤT bản ghi: engine WP13D405E200",
+   "header": [],
+   "line": "| Model: WP13D405E200"
+  },
+  {
+   "sup": "supermaly",
+   "n": 106,
+   "table": 5,
+   "kind": "engine",
+   "model": "WP13D385E200",
+   "val": "WP13D385E200",
+   "change": "MẤT bản ghi: engine WP13D385E200",
+   "header": [],
+   "line": "| Model: WP13D385E200"
+  },
+  {
+   "sup": "supermaly",
+   "n": 106,
+   "table": 5,
+   "kind": "engine",
+   "model": "WP13D490E310",
+   "val": "WP13D490E310",
+   "change": "MẤT bản ghi: engine WP13D490E310",
+   "header": [],
+   "line": "| Model: WP13D490E310"
+  },
+  {
+   "sup": "supermaly",
+   "n": 106,
+   "table": 5,
+   "kind": "engine",
+   "model": "12M26D792E200",
+   "val": "12M26D792E200",
+   "change": "MẤT bản ghi: engine 12M26D792E200",
+   "header": [],
+   "line": "| Model: 12M26D792E200"
+  }
+ ],
+ "công suất (theo bản ghi mất) | xác nhận": [
+  {
+   "sup": "depco-power",
+   "n": 166,
+   "table": 0,
+   "kind": "engine",
+   "model": "4B3.9-G1",
+   "val": "prime 28 kVA",
+   "change": "MẤT bản ghi: engine 4B3.9-G1",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DC-30 | Type | Silent"
+   ],
+   "line": "| Model | 4B3.9-G1 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 166,
+   "table": 0,
+   "kind": "engine",
+   "model": "4B3.9-G1",
+   "val": "prime 22 kW",
+   "change": "MẤT bản ghi: engine 4B3.9-G1",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DC-30 | Type | Silent"
+   ],
+   "line": "| Model | 4B3.9-G1 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 166,
+   "table": 0,
+   "kind": "engine",
+   "model": "4B3.9-G1",
+   "val": "standby 30 kVA",
+   "change": "MẤT bản ghi: engine 4B3.9-G1",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DC-30 | Type | Silent"
+   ],
+   "line": "| Model | 4B3.9-G1 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 166,
+   "table": 0,
+   "kind": "engine",
+   "model": "4B3.9-G1",
+   "val": "standby 24 kW",
+   "change": "MẤT bản ghi: engine 4B3.9-G1",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DC-30 | Type | Silent"
+   ],
+   "line": "| Model | 4B3.9-G1 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 167,
+   "table": 1,
+   "kind": "engine",
+   "model": "4BTA3.9-G2",
+   "val": "prime 63 kVA",
+   "change": "MẤT bản ghi: engine 4BTA3.9-G2",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DC-70 | Type | Silent"
+   ],
+   "line": "| Model | 4BTA3.9-G2 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 167,
+   "table": 1,
+   "kind": "engine",
+   "model": "4BTA3.9-G2",
+   "val": "prime 50 kW",
+   "change": "MẤT bản ghi: engine 4BTA3.9-G2",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DC-70 | Type | Silent"
+   ],
+   "line": "| Model | 4BTA3.9-G2 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 167,
+   "table": 1,
+   "kind": "engine",
+   "model": "4BTA3.9-G2",
+   "val": "standby 69 kVA",
+   "change": "MẤT bản ghi: engine 4BTA3.9-G2",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DC-70 | Type | Silent"
+   ],
+   "line": "| Model | 4BTA3.9-G2 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 167,
+   "table": 1,
+   "kind": "engine",
+   "model": "4BTA3.9-G2",
+   "val": "standby 55 kW",
+   "change": "MẤT bản ghi: engine 4BTA3.9-G2",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DC-70 | Type | Silent"
+   ],
+   "line": "| Model | 4BTA3.9-G2 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 168,
+   "table": 2,
+   "kind": "engine",
+   "model": "4HT4.3-G22",
+   "val": "prime 69 kVA",
+   "change": "MẤT bản ghi: engine 4HT4.3-G22",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DSE-75 | Type | Silent"
+   ],
+   "line": "| Model | 4HT4.3-G22 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 168,
+   "table": 2,
+   "kind": "engine",
+   "model": "4HT4.3-G22",
+   "val": "prime 55 kW",
+   "change": "MẤT bản ghi: engine 4HT4.3-G22",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DSE-75 | Type | Silent"
+   ],
+   "line": "| Model | 4HT4.3-G22 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 168,
+   "table": 2,
+   "kind": "engine",
+   "model": "4HT4.3-G22",
+   "val": "standby 76 kVA",
+   "change": "MẤT bản ghi: engine 4HT4.3-G22",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DSE-75 | Type | Silent"
+   ],
+   "line": "| Model | 4HT4.3-G22 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 168,
+   "table": 2,
+   "kind": "engine",
+   "model": "4HT4.3-G22",
+   "val": "standby 61 kW",
+   "change": "MẤT bản ghi: engine 4HT4.3-G22",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DSE-75 | Type | Silent"
+   ],
+   "line": "| Model | 4HT4.3-G22 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 169,
+   "table": 3,
+   "kind": "engine",
+   "model": "4BTA3.9-G2",
+   "val": "prime 56 kVA",
+   "change": "MẤT bản ghi: engine 4BTA3.9-G2",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DC-62 | Type | Silent"
+   ],
+   "line": "| Model | 4BTA3.9-G2 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 169,
+   "table": 3,
+   "kind": "engine",
+   "model": "4BTA3.9-G2",
+   "val": "prime 45 kW",
+   "change": "MẤT bản ghi: engine 4BTA3.9-G2",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DC-62 | Type | Silent"
+   ],
+   "line": "| Model | 4BTA3.9-G2 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 169,
+   "table": 3,
+   "kind": "engine",
+   "model": "4BTA3.9-G2",
+   "val": "standby 62 kVA",
+   "change": "MẤT bản ghi: engine 4BTA3.9-G2",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DC-62 | Type | Silent"
+   ],
+   "line": "| Model | 4BTA3.9-G2 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 169,
+   "table": 3,
+   "kind": "engine",
+   "model": "4BTA3.9-G2",
+   "val": "standby 50 kW",
+   "change": "MẤT bản ghi: engine 4BTA3.9-G2",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DC-62 | Type | Silent"
+   ],
+   "line": "| Model | 4BTA3.9-G2 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 170,
+   "table": 4,
+   "kind": "engine",
+   "model": "2206C-E13TAG2",
+   "val": "prime 350 kVA",
+   "change": "MẤT bản ghi: engine 2206C-E13TAG2",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DP-385 | Type | Silent"
+   ],
+   "line": "| Model | 2206C-E13TAG2 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 170,
+   "table": 4,
+   "kind": "engine",
+   "model": "2206C-E13TAG2",
+   "val": "prime 280 kW",
+   "change": "MẤT bản ghi: engine 2206C-E13TAG2",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DP-385 | Type | Silent"
+   ],
+   "line": "| Model | 2206C-E13TAG2 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 170,
+   "table": 4,
+   "kind": "engine",
+   "model": "2206C-E13TAG2",
+   "val": "standby 385 kVA",
+   "change": "MẤT bản ghi: engine 2206C-E13TAG2",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DP-385 | Type | Silent"
+   ],
+   "line": "| Model | 2206C-E13TAG2 | Fuel | Diesel"
+  },
+  {
+   "sup": "depco-power",
+   "n": 170,
+   "table": 4,
+   "kind": "engine",
+   "model": "2206C-E13TAG2",
+   "val": "standby 308 kW",
+   "change": "MẤT bản ghi: engine 2206C-E13TAG2",
+   "header": [
+    "| Details Generator Set | GenSet Model | DPK-DP-385 | Type | Silent"
+   ],
+   "line": "| Model | 2206C-E13TAG2 | Fuel | Diesel"
+  },
+  {
+   "sup": "kena-chongqing",
+   "n": 103,
+   "table": 1,
+   "kind": "engine",
+   "model": "PHF4056ZD1",
+   "val": "standby 55 kW",
+   "change": "MẤT bản ghi: engine PHF4056ZD1",
+   "header": [
+    "| Details Genset | Model | ZSY-50 | Type | silent optional open"
+   ],
+   "line": "| Model | PHF4056ZD1 | Fuel | Diesel"
+  },
+  {
+   "sup": "sunkings",
+   "n": 117,
+   "table": 16,
+   "kind": "engine",
+   "model": "QSZ13-G3",
+   "val": "standby 500 kVA",
+   "change": "MẤT bản ghi: engine QSZ13-G3",
+   "header": [
+    "| Details Genset | GenSet Model | SCF-550 | Type | silent(optional open)"
+   ],
+   "line": "| Model | QSZ13-G3 | Fuel | Diesel"
+  },
+  {
+   "sup": "sunkings",
+   "n": 117,
+   "table": 16,
+   "kind": "engine",
+   "model": "QSZ13-G3",
+   "val": "standby 400 kW",
+   "change": "MẤT bản ghi: engine QSZ13-G3",
+   "header": [
+    "| Details Genset | GenSet Model | SCF-550 | Type | silent(optional open)"
+   ],
+   "line": "| Model | QSZ13-G3 | Fuel | Diesel"
+  },
+  {
+   "sup": "sunkings",
+   "n": 117,
+   "table": 16,
+   "kind": "engine",
+   "model": "QSZ13-G3",
+   "val": "rated 550 kVA",
+   "change": "MẤT bản ghi: engine QSZ13-G3",
+   "header": [
+    "| Details Genset | GenSet Model | SCF-550 | Type | silent(optional open)"
+   ],
+   "line": "| Model | QSZ13-G3 | Fuel | Diesel"
+  },
+  {
+   "sup": "sunkings",
+   "n": 117,
+   "table": 16,
+   "kind": "engine",
+   "model": "QSZ13-G3",
+   "val": "rated 400 kW",
+   "change": "MẤT bản ghi: engine QSZ13-G3",
+   "header": [
+    "| Details Genset | GenSet Model | SCF-550 | Type | silent(optional open)"
+   ],
+   "line": "| Model | QSZ13-G3 | Fuel | Diesel"
+  },
+  {
+   "sup": "supermaly",
+   "n": 101,
+   "table": 0,
+   "kind": "engine",
+   "model": "KTAA19-G6A",
+   "val": "rated 625 kVA",
+   "change": "MẤT bản ghi: engine KTAA19-G6A",
+   "header": [],
+   "line": "| Model: KTAA19-G6A"
+  },
+  {
+   "sup": "supermaly",
+   "n": 101,
+   "table": 0,
+   "kind": "engine",
+   "model": "4BTA3.9-G11",
+   "val": "rated 75 kVA",
+   "change": "MẤT bản ghi: engine 4BTA3.9-G11",
+   "header": [],
+   "line": "| Model: 4BTA3.9-G11"
+  },
+  {
+   "sup": "supermaly",
+   "n": 101,
+   "table": 0,
+   "kind": "engine",
+   "model": "KTA38-G2A",
+   "val": "rated 900 kVA",
+   "change": "MẤT bản ghi: engine KTA38-G2A",
+   "header": [],
+   "line": "| Model: KTA38-G2A"
+  },
+  {
+   "sup": "supermaly",
+   "n": 102,
+   "table": 1,
+   "kind": "engine",
+   "model": "WP10D238E200",
+   "val": "rated 250 kVA",
+   "change": "MẤT bản ghi: engine WP10D238E200",
+   "header": [],
+   "line": "| Model: WP10D238E200"
+  },
+  {
+   "sup": "supermaly",
+   "n": 102,
+   "table": 1,
+   "kind": "engine",
+   "model": "WP13D385E200",
+   "val": "rated 400 kVA",
+   "change": "MẤT bản ghi: engine WP13D385E200",
+   "header": [],
+   "line": "| Model: WP13D385E200"
+  },
+  {
+   "sup": "supermaly",
+   "n": 102,
+   "table": 1,
+   "kind": "engine",
+   "model": "WP13D490E310",
+   "val": "rated 500 kVA",
+   "change": "MẤT bản ghi: engine WP13D490E310",
+   "header": [],
+   "line": "| Model: WP13D490E310"
+  },
+  {
+   "sup": "supermaly",
+   "n": 102,
+   "table": 1,
+   "kind": "engine",
+   "model": "12M26D792E200",
+   "val": "rated 800 kVA",
+   "change": "MẤT bản ghi: engine 12M26D792E200",
+   "header": [],
+   "line": "| Model: 12M26D792E200"
+  },
+  {
+   "sup": "supermaly",
+   "n": 103,
+   "table": 2,
+   "kind": "engine",
+   "model": "SC13G420D2",
+   "val": "rated 312.5 kVA",
+   "change": "MẤT bản ghi: engine SC13G420D2",
+   "header": [],
+   "line": "| Model: SC13G420D2"
+  },
+  {
+   "sup": "supermaly",
+   "n": 103,
+   "table": 2,
+   "kind": "engine",
+   "model": "WP13D385E200",
+   "val": "rated 400 kVA",
+   "change": "MẤT bản ghi: engine WP13D385E200",
+   "header": [],
+   "line": "| Model: WP13D385E200"
+  },
+  {
+   "sup": "supermaly",
+   "n": 103,
+   "table": 2,
+   "kind": "engine",
+   "model": "WP13D490E310",
+   "val": "rated 500 kVA",
+   "change": "MẤT bản ghi: engine WP13D490E310",
+   "header": [],
+   "line": "| Model: WP13D490E310"
+  },
+  {
+   "sup": "supermaly",
+   "n": 103,
+   "table": 2,
+   "kind": "engine",
+   "model": "12M26D792E200",
+   "val": "rated 800 kVA",
+   "change": "MẤT bản ghi: engine 12M26D792E200",
+   "header": [],
+   "line": "| Model: 12M26D792E200"
+  },
+  {
+   "sup": "supermaly",
+   "n": 104,
+   "table": 3,
+   "kind": "engine",
+   "model": "WP13D385E200",
+   "val": "rated 400 kVA",
+   "change": "MẤT bản ghi: engine WP13D385E200",
+   "header": [],
+   "line": "| Model: WP13D385E200"
+  },
+  {
+   "sup": "supermaly",
+   "n": 104,
+   "table": 3,
+   "kind": "engine",
+   "model": "WP13D490E310",
+   "val": "rated 500 kVA",
+   "change": "MẤT bản ghi: engine WP13D490E310",
+   "header": [],
+   "line": "| Model: WP13D490E310"
+  },
+  {
+   "sup": "supermaly",
+   "n": 104,
+   "table": 3,
+   "kind": "engine",
+   "model": "12M26D792E200",
+   "val": "rated 800 kVA",
+   "change": "MẤT bản ghi: engine 12M26D792E200",
+   "header": [],
+   "line": "| Model: 12M26D792E200"
+  },
+  {
+   "sup": "supermaly",
+   "n": 105,
+   "table": 4,
+   "kind": "engine",
+   "model": "YC6MJ600-D30",
+   "val": "rated 450 kVA",
+   "change": "MẤT bản ghi: engine YC6MJ600-D30",
+   "header": [],
+   "line": "| Model: YC6MJ600-D30"
+  },
+  {
+   "sup": "supermaly",
+   "n": 105,
+   "table": 4,
+   "kind": "engine",
+   "model": "YC6TD840-D31",
+   "val": "rated 625 kVA",
+   "change": "MẤT bản ghi: engine YC6TD840-D31",
+   "header": [],
+   "line": "| Model: YC6TD840-D31"
+  },
+  {
+   "sup": "supermaly",
+   "n": 105,
+   "table": 4,
+   "kind": "engine",
+   "model": "YC6A275-D30",
+   "val": "rated 200 kVA",
+   "change": "MẤT bản ghi: engine YC6A275-D30",
+   "header": [],
+   "line": "| Model: YC6A275-D30"
+  },
+  {
+   "sup": "supermaly",
+   "n": 106,
+   "table": 5,
+   "kind": "engine",
+   "model": "WP13D385E200",
+   "val": "rated 400 kVA",
+   "change": "MẤT bản ghi: engine WP13D385E200",
+   "header": [],
+   "line": "| Model: WP13D385E200"
+  },
+  {
+   "sup": "supermaly",
+   "n": 106,
+   "table": 5,
+   "kind": "engine",
+   "model": "WP13D490E310",
+   "val": "rated 500 kVA",
+   "change": "MẤT bản ghi: engine WP13D490E310",
+   "header": [],
+   "line": "| Model: WP13D490E310"
+  },
+  {
+   "sup": "supermaly",
+   "n": 106,
+   "table": 5,
+   "kind": "engine",
+   "model": "12M26D792E200",
+   "val": "rated 800 kVA",
+   "change": "MẤT bản ghi: engine 12M26D792E200",
+   "header": [],
+   "line": "| Model: 12M26D792E200"
+  },
+  {
+   "sup": "supermaly",
+   "n": 101,
+   "table": 0,
+   "kind": "alternator",
+   "model": "UC224F",
+   "val": "rated 75 kVA",
+   "change": "MẤT bản ghi: alternator UC224F",
+   "header": [],
+   "line": "| Model: UC224F"
+  },
+  {
+   "sup": "supermaly",
+   "n": 102,
+   "table": 1,
+   "kind": "alternator",
+   "model": "UC274K",
+   "val": "rated 250 kVA",
+   "change": "MẤT bản ghi: alternator UC274K",
+   "header": [],
+   "line": "| Model: UC274K"
+  },
+  {
+   "sup": "supermaly",
+   "n": 102,
+   "table": 1,
+   "kind": "alternator",
+   "model": "HC434F",
+   "val": "rated 400 kVA",
+   "change": "MẤT bản ghi: alternator HC434F",
+   "header": [],
+   "line": "| Model: HC434F"
+  },
+  {
+   "sup": "supermaly",
+   "n": 102,
+   "table": 1,
+   "kind": "alternator",
+   "model": "HC534D",
+   "val": "rated 500 kVA",
+   "change": "MẤT bản ghi: alternator HC534D",
+   "header": [],
+   "line": "| Model: HC534D"
+  },
+  {
+   "sup": "supermaly",
+   "n": 103,
+   "table": 2,
+   "kind": "alternator",
+   "model": "HC434F",
+   "val": "rated 400 kVA",
+   "change": "MẤT bản ghi: alternator HC434F",
+   "header": [],
+   "line": "| Model: HC434F"
+  },
+  {
+   "sup": "supermaly",
+   "n": 103,
+   "table": 2,
+   "kind": "alternator",
+   "model": "HC534D",
+   "val": "rated 500 kVA",
+   "change": "MẤT bản ghi: alternator HC534D",
+   "header": [],
+   "line": "| Model: HC534D"
+  },
+  {
+   "sup": "supermaly",
+   "n": 104,
+   "table": 3,
+   "kind": "alternator",
+   "model": "HC434F",
+   "val": "rated 400 kVA",
+   "change": "MẤT bản ghi: alternator HC434F",
+   "header": [],
+   "line": "| Model: HC434FS ¦ | Model: HC434F"
+  },
+  {
+   "sup": "supermaly",
+   "n": 104,
+   "table": 3,
+   "kind": "alternator",
+   "model": "HC534D",
+   "val": "rated 500 kVA",
+   "change": "MẤT bản ghi: alternator HC534D",
+   "header": [],
+   "line": "| Model: HC534D"
+  },
+  {
+   "sup": "supermaly",
+   "n": 105,
+   "table": 4,
+   "kind": "alternator",
+   "model": "HC534C",
+   "val": "rated 450 kVA",
+   "change": "MẤT bản ghi: alternator HC534C",
+   "header": [],
+   "line": "| Model: HC534C"
+  },
+  {
+   "sup": "supermaly",
+   "n": 105,
+   "table": 4,
+   "kind": "alternator",
+   "model": "UC274H",
+   "val": "rated 200 kVA",
+   "change": "MẤT bản ghi: alternator UC274H",
+   "header": [],
+   "line": "| Model: UC274H"
+  },
+  {
+   "sup": "supermaly",
+   "n": 106,
+   "table": 5,
+   "kind": "alternator",
+   "model": "HC534C",
+   "val": "rated 450 kVA",
+   "change": "MẤT bản ghi: alternator HC534C",
+   "header": [],
+   "line": "| Model: HC534C"
+  },
+  {
+   "sup": "supermaly",
+   "n": 106,
+   "table": 5,
+   "kind": "alternator",
+   "model": "HC434F",
+   "val": "rated 400 kVA",
+   "change": "MẤT bản ghi: alternator HC434F",
+   "header": [],
+   "line": "| Model: HC434F"
+  },
+  {
+   "sup": "supermaly",
+   "n": 106,
+   "table": 5,
+   "kind": "alternator",
+   "model": "HC534D",
+   "val": "rated 500 kVA",
+   "change": "MẤT bản ghi: alternator HC534D",
+   "header": [],
+   "line": "| Model: HC534D"
+  }
+ ],
+ "công suất (theo bản ghi mất) | mâu thuẫn": [
+  {
+   "sup": "kena-chongqing",
+   "n": 101,
+   "table": 0,
+   "kind": "engine",
+   "model": "618ZLD",
+   "val": "standby 413 kVA",
+   "change": "MẤT bản ghi: engine 618ZLD",
+   "header": [
+    "| Details Genset | Model | ZSY-300 | Type | silent optional open"
+   ],
+   "line": "| Model | 618ZLD | Fuel | Diesel"
+  },
+  {
+   "sup": "kena-chongqing",
+   "n": 101,
+   "table": 0,
+   "kind": "engine",
+   "model": "618ZLD",
+   "val": "standby 330 kW",
+   "change": "MẤT bản ghi: engine 618ZLD",
+   "header": [
+    "| Details Genset | Model | ZSY-300 | Type | silent optional open"
+   ],
+   "line": "| Model | 618ZLD | Fuel | Diesel"
+  }
+ ],
+ "công suất (theo bản ghi mất) | chưa rõ": [
+  {
+   "sup": "kena-chongqing",
+   "n": 101,
+   "table": 0,
+   "kind": "engine",
+   "model": "618ZLD",
+   "val": "rated 375 kVA",
+   "change": "MẤT bản ghi: engine 618ZLD",
+   "header": [
+    "| Details Genset | Model | ZSY-300 | Type | silent optional open"
+   ],
+   "line": "| Model | 618ZLD | Fuel | Diesel"
+  },
+  {
+   "sup": "kena-chongqing",
+   "n": 101,
+   "table": 0,
+   "kind": "engine",
+   "model": "618ZLD",
+   "val": "rated 300 kW",
+   "change": "MẤT bản ghi: engine 618ZLD",
+   "header": [
+    "| Details Genset | Model | ZSY-300 | Type | silent optional open"
+   ],
+   "line": "| Model | 618ZLD | Fuel | Diesel"
+  },
+  {
+   "sup": "supermaly",
+   "n": 104,
+   "table": 3,
+   "kind": "engine",
+   "model": "DP126LB",
+   "val": "rated 315 kVA",
+   "change": "MẤT bản ghi: engine DP126LB",
+   "header": [],
+   "line": "| Model: DP126LB"
+  },
+  {
+   "sup": "supermaly",
+   "n": 106,
+   "table": 5,
+   "kind": "engine",
+   "model": "WP13D405E200",
+   "val": "rated 450 kVA",
+   "change": "MẤT bản ghi: engine WP13D405E200",
+   "header": [],
+   "line": "| Model: WP13D405E200"
+  },
+  {
+   "sup": "supermaly",
+   "n": 104,
+   "table": 3,
+   "kind": "alternator",
+   "model": "HC434FS",
+   "val": "rated 315 kVA",
+   "change": "MẤT bản ghi: alternator HC434FS",
+   "header": [],
+   "line": "| Model: HC434FS"
+  }
+ ],
+ "công suất (theo bản ghi mất) | không đối chiếu": [
+  {
+   "sup": "kena-chongqing",
+   "n": 103,
+   "table": 1,
+   "kind": "engine",
+   "model": "PHF4056ZD1",
+   "val": "standby 69 kVA",
+   "change": "MẤT bản ghi: engine PHF4056ZD1",
+   "header": [
+    "| Details Genset | Model | ZSY-50 | Type | silent optional open"
+   ],
+   "line": "| Model | PHF4056ZD1 | Fuel | Diesel"
+  },
+  {
+   "sup": "kena-chongqing",
+   "n": 103,
+   "table": 1,
+   "kind": "engine",
+   "model": "PHF4056ZD1",
+   "val": "rated 62.5 kVA",
+   "change": "MẤT bản ghi: engine PHF4056ZD1",
+   "header": [
+    "| Details Genset | Model | ZSY-50 | Type | silent optional open"
+   ],
+   "line": "| Model | PHF4056ZD1 | Fuel | Diesel"
+  },
+  {
+   "sup": "kena-chongqing",
+   "n": 103,
+   "table": 1,
+   "kind": "engine",
+   "model": "PHF4056ZD1",
+   "val": "rated 50 kW",
+   "change": "MẤT bản ghi: engine PHF4056ZD1",
+   "header": [
+    "| Details Genset | Model | ZSY-50 | Type | silent optional open"
+   ],
+   "line": "| Model | PHF4056ZD1 | Fuel | Diesel"
+  },
+  {
+   "sup": "supermaly",
+   "n": 101,
+   "table": 0,
+   "kind": "alternator",
+   "model": "HC534FS",
+   "val": "rated 625 kVA",
+   "change": "MẤT bản ghi: alternator HC534FS",
+   "header": [],
+   "line": "| Model: HC534FS"
+  },
+  {
+   "sup": "supermaly",
+   "n": 101,
+   "table": 0,
+   "kind": "alternator",
+   "model": "HC634D",
+   "val": "rated 900 kVA",
+   "change": "MẤT bản ghi: alternator HC634D",
+   "header": [],
+   "line": "| Model: HC634D"
+  },
+  {
+   "sup": "supermaly",
+   "n": 102,
+   "table": 1,
+   "kind": "alternator",
+   "model": "HC634C",
+   "val": "rated 800 kVA",
+   "change": "MẤT bản ghi: alternator HC634C",
+   "header": [],
+   "line": "| Model: HC634C"
+  },
+  {
+   "sup": "supermaly",
+   "n": 103,
+   "table": 2,
+   "kind": "alternator",
+   "model": "HC434DH",
+   "val": "rated 312.5 kVA",
+   "change": "MẤT bản ghi: alternator HC434DH",
+   "header": [],
+   "line": "| Model: HC434DH"
+  },
+  {
+   "sup": "supermaly",
+   "n": 103,
+   "table": 2,
+   "kind": "alternator",
+   "model": "HC634C",
+   "val": "rated 800 kVA",
+   "change": "MẤT bản ghi: alternator HC634C",
+   "header": [],
+   "line": "| Model: HC634C"
+  },
+  {
+   "sup": "supermaly",
+   "n": 104,
+   "table": 3,
+   "kind": "alternator",
+   "model": "HC634C",
+   "val": "rated 800 kVA",
+   "change": "MẤT bản ghi: alternator HC634C",
+   "header": [],
+   "line": "| Model: HC634C"
+  },
+  {
+   "sup": "supermaly",
+   "n": 105,
+   "table": 4,
+   "kind": "alternator",
+   "model": "HC534FS",
+   "val": "rated 625 kVA",
+   "change": "MẤT bản ghi: alternator HC534FS",
+   "header": [],
+   "line": "| Model: HC534FS"
+  },
+  {
+   "sup": "supermaly",
+   "n": 106,
+   "table": 5,
+   "kind": "alternator",
+   "model": "HC634C",
+   "val": "rated 800 kVA",
+   "change": "MẤT bản ghi: alternator HC634C",
+   "header": [],
+   "line": "| Model: HC634C"
+  }
+ ],
+ "vai alternator | xác nhận": [
+  {
+   "sup": "supermaly",
+   "n": 101,
+   "table": 0,
+   "kind": "alternator",
+   "model": "HC534FS",
+   "val": "HC534FS",
+   "change": "MẤT bản ghi: alternator HC534FS",
+   "header": [],
+   "line": "| Model: HC534FS"
+  },
+  {
+   "sup": "supermaly",
+   "n": 101,
+   "table": 0,
+   "kind": "alternator",
+   "model": "UC224F",
+   "val": "UC224F",
+   "change": "MẤT bản ghi: alternator UC224F",
+   "header": [],
+   "line": "| Model: UC224F"
+  },
+  {
+   "sup": "supermaly",
+   "n": 102,
+   "table": 1,
+   "kind": "alternator",
+   "model": "UC274K",
+   "val": "UC274K",
+   "change": "MẤT bản ghi: alternator UC274K",
+   "header": [],
+   "line": "| Model: UC274K"
+  },
+  {
+   "sup": "supermaly",
+   "n": 102,
+   "table": 1,
+   "kind": "alternator",
+   "model": "HC434F",
+   "val": "HC434F",
+   "change": "MẤT bản ghi: alternator HC434F",
+   "header": [],
+   "line": "| Model: HC434F"
+  },
+  {
+   "sup": "supermaly",
+   "n": 102,
+   "table": 1,
+   "kind": "alternator",
+   "model": "HC534D",
+   "val": "HC534D",
+   "change": "MẤT bản ghi: alternator HC534D",
+   "header": [],
+   "line": "| Model: HC534D"
+  },
+  {
+   "sup": "supermaly",
+   "n": 103,
+   "table": 2,
+   "kind": "alternator",
+   "model": "HC434F",
+   "val": "HC434F",
+   "change": "MẤT bản ghi: alternator HC434F",
+   "header": [],
+   "line": "| Model: HC434F"
+  },
+  {
+   "sup": "supermaly",
+   "n": 103,
+   "table": 2,
+   "kind": "alternator",
+   "model": "HC534D",
+   "val": "HC534D",
+   "change": "MẤT bản ghi: alternator HC534D",
+   "header": [],
+   "line": "| Model: HC534D"
+  },
+  {
+   "sup": "supermaly",
+   "n": 104,
+   "table": 3,
+   "kind": "alternator",
+   "model": "HC434FS",
+   "val": "HC434FS",
+   "change": "MẤT bản ghi: alternator HC434FS",
+   "header": [],
+   "line": "| Model: HC434FS"
+  },
+  {
+   "sup": "supermaly",
+   "n": 104,
+   "table": 3,
+   "kind": "alternator",
+   "model": "HC434F",
+   "val": "HC434F",
+   "change": "MẤT bản ghi: alternator HC434F",
+   "header": [],
+   "line": "| Model: HC434FS ¦ | Model: HC434F"
+  },
+  {
+   "sup": "supermaly",
+   "n": 104,
+   "table": 3,
+   "kind": "alternator",
+   "model": "HC534D",
+   "val": "HC534D",
+   "change": "MẤT bản ghi: alternator HC534D",
+   "header": [],
+   "line": "| Model: HC534D"
+  },
+  {
+   "sup": "supermaly",
+   "n": 105,
+   "table": 4,
+   "kind": "alternator",
+   "model": "HC534C",
+   "val": "HC534C",
+   "change": "MẤT bản ghi: alternator HC534C",
+   "header": [],
+   "line": "| Model: HC534C"
+  },
+  {
+   "sup": "supermaly",
+   "n": 105,
+   "table": 4,
+   "kind": "alternator",
+   "model": "HC534FS",
+   "val": "HC534FS",
+   "change": "MẤT bản ghi: alternator HC534FS",
+   "header": [],
+   "line": "| Model: HC534FS"
+  },
+  {
+   "sup": "supermaly",
+   "n": 105,
+   "table": 4,
+   "kind": "alternator",
+   "model": "UC274H",
+   "val": "UC274H",
+   "change": "MẤT bản ghi: alternator UC274H",
+   "header": [],
+   "line": "| Model: UC274H"
+  },
+  {
+   "sup": "supermaly",
+   "n": 106,
+   "table": 5,
+   "kind": "alternator",
+   "model": "HC534C",
+   "val": "HC534C",
+   "change": "MẤT bản ghi: alternator HC534C",
+   "header": [],
+   "line": "| Model: HC534C"
+  },
+  {
+   "sup": "supermaly",
+   "n": 106,
+   "table": 5,
+   "kind": "alternator",
+   "model": "HC434F",
+   "val": "HC434F",
+   "change": "MẤT bản ghi: alternator HC434F",
+   "header": [],
+   "line": "| Model: HC434F"
+  },
+  {
+   "sup": "supermaly",
+   "n": 106,
+   "table": 5,
+   "kind": "alternator",
+   "model": "HC534D",
+   "val": "HC534D",
+   "change": "MẤT bản ghi: alternator HC534D",
+   "header": [],
+   "line": "| Model: HC534D"
+  }
+ ],
+ "vai alternator | không đối chiếu": [
+  {
+   "sup": "supermaly",
+   "n": 101,
+   "table": 0,
+   "kind": "alternator",
+   "model": "HC634D",
+   "val": "HC634D",
+   "change": "MẤT bản ghi: alternator HC634D",
+   "header": [],
+   "line": "| Model: HC634D"
+  },
+  {
+   "sup": "supermaly",
+   "n": 102,
+   "table": 1,
+   "kind": "alternator",
+   "model": "HC634C",
+   "val": "HC634C",
+   "change": "MẤT bản ghi: alternator HC634C",
+   "header": [],
+   "line": "| Model: HC634C"
+  },
+  {
+   "sup": "supermaly",
+   "n": 103,
+   "table": 2,
+   "kind": "alternator",
+   "model": "HC434DH",
+   "val": "HC434DH",
+   "change": "MẤT bản ghi: alternator HC434DH",
+   "header": [],
+   "line": "| Model: HC434DH"
+  },
+  {
+   "sup": "supermaly",
+   "n": 103,
+   "table": 2,
+   "kind": "alternator",
+   "model": "HC634C",
+   "val": "HC634C",
+   "change": "MẤT bản ghi: alternator HC634C",
+   "header": [],
+   "line": "| Model: HC634C"
+  },
+  {
+   "sup": "supermaly",
+   "n": 104,
+   "table": 3,
+   "kind": "alternator",
+   "model": "HC634C",
+   "val": "HC634C",
+   "change": "MẤT bản ghi: alternator HC634C",
+   "header": [],
+   "line": "| Model: HC634C"
+  },
+  {
+   "sup": "supermaly",
+   "n": 106,
+   "table": 5,
+   "kind": "alternator",
+   "model": "HC634C",
+   "val": "HC634C",
+   "change": "MẤT bản ghi: alternator HC634C",
+   "header": [],
+   "line": "| Model: HC634C"
+  }
+ ]
+}

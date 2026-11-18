@@ -10,6 +10,7 @@ for (const [P, r] of Object.entries(R.paths)) {
   lines.push(`đi qua: ${r.through.records} bản ghi (${r.through.specs} thông số theo vị trí), ${r.through.tables} bảng, ${r.through.sups} NCC; nhiều nhất ${r.through.topSups.slice(0, 8).map(([s, n]) => `${s} ${n}`).join(", ")}`);
   lines.push(`tắt: bản ghi đổi ${r.diff.changed}, mất ${r.diff.onlyA}, thêm ${r.diff.onlyB}; ${r.diff.tables} bảng, ${r.diff.sups} NCC; đảo vai còn ${r.swaps}`);
   lines.push(`dạng: ${JSON.stringify(r.diff.kinds)}`);
+  lines.push(`hiệu chuẩn (số lệch 10% cũng "xác nhận"): ${Object.entries(r.cal || {}).map(([k, c]) => `${k} ${c.chance}/${c.n}`).join("; ")}`);
   const v = Object.entries(r.verdict).sort();
   for (const [k, n] of v) lines.push(`   ${String(n).padStart(6)}  ${k}`);
   lines.push(`NCC: ${r.bySup.slice(0, 10).map(([s, x]) => `${s} ${Object.values(x).reduce((a, b) => a + b, 0)}`).join(", ")}`);

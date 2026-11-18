@@ -84,7 +84,19 @@ for (const o of A.values()) {
   for (const [r, p] of Object.entries(o.power || {})) for (const u of ["kVA", "kW"]) if (p?.[u] > 0) add(powerRef, `${o.kind}|${k}|${r}|${u}`, o.supplierId, p[u]);
   if (o.kind === "engine") for (const s of o.specs || []) if (ENG_KEYS.has(s.key)) { const x = specNum(s.key, s.value); if (x != null) add(specRef, `${k}|${s.key}`, o.supplierId, x); }
 }
-function judgeNum(map, k, sup, v, tol = 0.02) {
+// Calibration: of the values "xác nhận", how many would ALSO be confirmed if they were 10% off (a chance match among the many
+// gensets one engine model drives): the weakness of the check, per reference (power / engine spec).
+let CAL = {};
+function judgeNum(map, k, sup, v, tol = 0.02, cal = true) {
+  const r = judgeNum0(map, k, sup, v, tol);
+  if (cal && r === "xác nhận") {
+    const c = (CAL[map === powerRef ? "công suất" : "thông số động cơ"] ||= { n: 0, chance: 0 });
+    c.n++;
+    if (judgeNum(map, k, sup, v * 1.1, tol, false) === "xác nhận" || judgeNum(map, k, sup, v / 1.1, tol, false) === "xác nhận") c.chance++;
+  }
+  return r;
+}
+function judgeNum0(map, k, sup, v, tol) {
   const m = map.get(k); if (!m) return "không đối chiếu";
   const others = [...m].filter(([s]) => s !== sup); if (!others.length) return "không đối chiếu";
   const near = (x, t) => Math.abs(x - v) <= t * Math.max(Math.abs(v), 1e-9);
@@ -143,9 +155,14 @@ const only = process.argv[4] ? process.argv[4].split(",") : Object.keys(PATHS);
 for (const P of only) {
   const t0 = Date.now();
   const B = SD.records(side(WT, P));
+  CAL = {};
   const d = SD.diff(A, B);
-  const verdict = {}, bySup = new Map(), ex = {}, perRec = new Map();
-  for (const ch of d.changes) {
+  const verdict = {}, bySup = new Map(), ex = {}, perRec = new Map(), seenRow = new Set();
+  // Engine records first: a row's specs and power sit on its engine and alternator records alike; count them once.
+  const changes = [...d.changes].sort((x, y) => (x.o.kind === "engine" ? 0 : 1) - (y.o.kind === "engine" ? 0 : 1));
+  for (const ch of changes) {
+    const rowShared = /^\w+ (bỏ|đổi|thêm)$/.test(ch.kind) || ch.kind === "genset";
+    if (rowShared) { const rk = `${ch.o.supplierId}|${ch.o.n}|${ch.o.table}|${ch.o.row}|${ch.kind}|${ch.txt}`; if (seenRow.has(rk)) continue; seenRow.add(rk); }
     for (const [what, v, val] of judgeChange(ch, B)) {
       const k = `${what} | ${v}`;
       verdict[k] = (verdict[k] || 0) + 1;
@@ -159,7 +176,7 @@ for (const P of only) {
   report.paths[P] = {
     desc: PATHS[P], through: { records: ts.rec, specs: ts.specs, tables: ts.tables.size, sups: ts.sups.size, topSups: [...ts.sups].sort((a, b) => b[1] - a[1]).slice(0, 12) },
     diff: { changed: d.changed, onlyA: d.onlyA, onlyB: d.onlyB, kinds: d.kinds, recordsTouched: perRec.size, tables: d.tabs.size, sups: d.bySup.size },
-    swaps: sw.n, verdict, bySup: [...bySup].map(([s, v]) => [s, v]).sort((a, b) => Object.values(b[1]).reduce((x, y) => x + y, 0) - Object.values(a[1]).reduce((x, y) => x + y, 0)),
+    swaps: sw.n, verdict, cal: CAL, bySup: [...bySup].map(([s, v]) => [s, v]).sort((a, b) => Object.values(b[1]).reduce((x, y) => x + y, 0) - Object.values(a[1]).reduce((x, y) => x + y, 0)),
   };
   fs.writeFileSync(path.join(OUT, `ex-${P}.json`), JSON.stringify(ex, null, 1));
   fs.writeFileSync(path.join(OUT, `full-${P}.txt`), SD.fullText(d));

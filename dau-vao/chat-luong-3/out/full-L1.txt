@@ -1,0 +1,142 @@
+bản ghi cũ 59222, mới 59170 | khác 0 | chỉ cũ 52, chỉ mới 0 | bảng có đổi 14
+{}
+
+[depco-power n166 bảng 0] ×1
+  H: | Details Generator Set | GenSet Model | DPK-DC-30 | Type | Silent
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine 4B3.9-G1
+
+[depco-power n167 bảng 1] ×1
+  H: | Details Generator Set | GenSet Model | DPK-DC-70 | Type | Silent
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine 4BTA3.9-G2
+
+[depco-power n168 bảng 2] ×1
+  H: | Details Generator Set | GenSet Model | DPK-DSE-75 | Type | Silent
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine 4HT4.3-G22
+
+[depco-power n169 bảng 3] ×1
+  H: | Details Generator Set | GenSet Model | DPK-DC-62 | Type | Silent
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine 4BTA3.9-G2
+
+[depco-power n170 bảng 4] ×1
+  H: | Details Generator Set | GenSet Model | DPK-DP-385 | Type | Silent
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine 2206C-E13TAG2
+
+[kena-chongqing n101 bảng 0] ×1
+  H: | Details Genset | Model | ZSY-300 | Type | silent optional open
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine 618ZLD
+
+[kena-chongqing n103 bảng 1] ×1
+  H: | Details Genset | Model | ZSY-50 | Type | silent optional open
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine PHF4056ZD1
+
+[sunkings n117 bảng 16] ×1
+  H: | Details Genset | GenSet Model | SCF-550 | Type | silent(optional open)
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine QSZ13-G3
+
+[supermaly n101 bảng 0] ×6
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine KTAA19-G6A
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator HC534FS
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine 4BTA3.9-G11
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator UC224F
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine KTA38-G2A
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator HC634D
+
+[supermaly n102 bảng 1] ×8
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine WP10D238E200
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator UC274K
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine WP13D385E200
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator HC434F
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine WP13D490E310
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator HC534D
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine 12M26D792E200
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator HC634C
+
+[supermaly n103 bảng 2] ×8
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine SC13G420D2
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator HC434DH
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine WP13D385E200
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator HC434F
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine WP13D490E310
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator HC534D
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine 12M26D792E200
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator HC634C
+
+[supermaly n104 bảng 3] ×8
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine DP126LB
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator HC434FS
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine WP13D385E200
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator HC434F
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine WP13D490E310
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator HC534D
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine 12M26D792E200
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator HC634C
+
+[supermaly n105 bảng 4] ×6
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine YC6MJ600-D30
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator HC534C
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine YC6TD840-D31
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator HC534FS
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine YC6A275-D30
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator UC274H
+
+[supermaly n106 bảng 5] ×8
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine WP13D405E200
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator HC534C
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine WP13D385E200
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator HC434F
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine WP13D490E310
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator HC534D
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine 12M26D792E200
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator HC634C

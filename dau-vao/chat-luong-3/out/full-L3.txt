@@ -1,0 +1,1755 @@
+bản ghi cũ 59222, mới 59222 | khác 475 | chỉ cũ 0, chỉ mới 0 | bảng có đổi 400
+{"power":475,"engPower thêm":1,"fuel thêm":2}
+
+[acepow-fuan n112 bảng 17] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 25/20 S 27.5/22 → P ·/25
+
+[acepow-fuan n119 bảng 26] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 150/120 S 165/132 R ·/146 → R ·/146
+
+[acepow-fuan n122 bảng 29] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 43/34 S 47.3/37.4 R ·/38 → R ·/38
+
+[acepow-fuan n134 bảng 41] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 20/16 → ∅
+  undefined (bảng nhãn)
+        ⇒ power: P 20/16 → ∅
+
+[acepow-fuan n146 bảng 54] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 → ∅
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 → ∅
+
+[acepow-fuan n149 bảng 58] ×8
+  undefined (bảng nhãn)
+        ⇒ power: P 15/12 S 16.5/13.2 R ·/18 → R ·/18
+  undefined (bảng nhãn)
+        ⇒ power: P 15/12 S 16.5/13.2 R ·/18 → R ·/18
+  undefined (bảng nhãn)
+        ⇒ power: P 50/40 S 55/44 R ·/53 → R ·/53
+  undefined (bảng nhãn)
+        ⇒ power: P 50/40 S 55/44 R ·/53 → R ·/53
+  undefined (bảng nhãn)
+        ⇒ power: P 60/48 S 66/53 R ·/65 → R ·/65
+  undefined (bảng nhãn)
+        ⇒ power: P 60/48 S 66/53 R ·/65 → R ·/65
+  undefined (bảng nhãn)
+        ⇒ power: P 85/68 S 93/75 R ·/75 → R ·/75
+  undefined (bảng nhãn)
+        ⇒ power: P 85/68 S 93/75 R ·/75 → R ·/75
+
+[endress-stromerzeuger n1012 bảng 63] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 15/12 R 15/12 → ∅
+
+[endress-stromerzeuger n1013 bảng 64] ×1
+  undefined (bảng nhãn)
+        ⇒ power: R 25/20 → ∅
+
+[endress-stromerzeuger n1014 bảng 65] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 25/20 R 25/20 → ∅
+
+[endress-stromerzeuger n1015 bảng 66] ×1
+  undefined (bảng nhãn)
+        ⇒ power: R 25/20 → ∅
+
+[endress-stromerzeuger n1016 bảng 67] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 35/28 R 25/20 → ∅
+
+[endress-stromerzeuger n1017 bảng 68] ×1
+  undefined (bảng nhãn)
+        ⇒ power: R 25/20 → ∅
+
+[endress-stromerzeuger n1021 bảng 72] ×1
+  undefined (bảng nhãn)
+        ⇒ power: R 60.3/48.2 → ∅
+
+[endress-stromerzeuger n109 bảng 6] ×1
+  undefined (bảng nhãn)
+        ⇒ power: R 25/20 → ∅
+
+[endress-stromerzeuger n110 bảng 7] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 35/28 R 25/20 → ∅
+
+[endress-stromerzeuger n112 bảng 9] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 25/20 R 25/20 → ∅
+
+[endress-stromerzeuger n113 bảng 10] ×1
+  undefined (bảng nhãn)
+        ⇒ power: R 25/20 → ∅
+
+[endress-stromerzeuger n117 bảng 14] ×1
+  undefined (bảng nhãn)
+        ⇒ power: R 60.3/48.2 → ∅
+
+[endress-stromerzeuger n120 bảng 17] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 15/12 R 15/12 → ∅
+
+[endress-stromerzeuger n124 bảng 21] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 37.5/30 R 20/16 → ∅
+
+[endress-stromerzeuger n133 bảng 30] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 20/16 R 20/16 → ∅
+
+[endress-stromerzeuger n136 bảng 33] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 37.5/30 R 20/16 → ∅
+
+[endress-stromerzeuger n140 bảng 37] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 20/16 R 20/16 → ∅
+
+[endress-stromerzeuger n141 bảng 38] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 15/12 R 15/12 → ∅
+
+[endress-stromerzeuger n144 bảng 41] ×1
+  undefined (bảng nhãn)
+        ⇒ power: R 35.1/28.1 → ∅; engPower: ∅ → 17,3
+
+[endress-stromerzeuger n147 bảng 44] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 17.9/14.3 R 17.9/14.3 → ∅
+
+[endress-stromerzeuger n148 bảng 45] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 18.35/14.68 R 18.35/14.68 → ∅
+
+[endress-stromerzeuger n149 bảng 46] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 25/20 R 25/20 → ∅
+
+[endress-stromerzeuger n150 bảng 47] ×1
+  undefined (bảng nhãn)
+        ⇒ power: R 25/20 → ∅
+
+[endress-stromerzeuger n151 bảng 48] ×1
+  undefined (bảng nhãn)
+        ⇒ power: R 25/20 → ∅
+
+[gb-power n1001 bảng 16] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 10/8 S 11/8.8 R 4/3 → P 10/8 S 11/8.8
+  undefined (bảng nhãn)
+        ⇒ power: P 10/8 S 11/8.8 R 4/3 → P 10/8 S 11/8.8
+
+[gb-power n1002 bảng 17] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 12.5/10 S 14/11 R 4/3 → P 12.5/10 S 14/11
+  undefined (bảng nhãn)
+        ⇒ power: P 12.5/10 S 14/11 R 4/3 → P 12.5/10 S 14/11
+
+[gb-power n1003 bảng 18] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 20/16 S 22/17.6 R 4/3 → P 20/16 S 22/17.6
+  undefined (bảng nhãn)
+        ⇒ power: P 20/16 S 22/17.6 R 4/3 → P 20/16 S 22/17.6
+
+[gb-power n1004 bảng 19] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 25/20 S 27.5/22 R 4/3 → P 25/20 S 27.5/22
+  undefined (bảng nhãn)
+        ⇒ power: P 25/20 S 27.5/22 R 4/3 → P 25/20 S 27.5/22
+
+[gb-power n1005 bảng 20] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 30/24 S 33/26.4 R 4/3 → P 30/24 S 33/26.4
+  undefined (bảng nhãn)
+        ⇒ power: P 30/24 S 33/26.4 R 4/3 → P 30/24 S 33/26.4
+
+[gb-power n1006 bảng 21] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 40/32 S 44/35.2 R 4/3 → P 40/32 S 44/35.2
+  undefined (bảng nhãn)
+        ⇒ power: P 40/32 S 44/35.2 R 4/3 → P 40/32 S 44/35.2
+
+[gb-power n1007 bảng 22] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 45/36 S 50/40 R 4/3 → P 45/36 S 50/40
+  undefined (bảng nhãn)
+        ⇒ power: P 45/36 S 50/40 R 4/3 → P 45/36 S 50/40
+
+[gb-power n1008 bảng 23] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 50/40 S 55/44 R 4/3 → P 50/40 S 55/44
+  undefined (bảng nhãn)
+        ⇒ power: P 50/40 S 55/44 R 4/3 → P 50/40 S 55/44
+
+[gb-power n1009 bảng 24] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 60/48 S 66/53 R 4/3 → P 60/48 S 66/53
+  undefined (bảng nhãn)
+        ⇒ power: P 60/48 S 66/53 R 4/3 → P 60/48 S 66/53
+
+[gb-power n1010 bảng 25] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 65/52 S 71.5/57 R 4/3 → P 65/52 S 71.5/57
+
+[gb-power n1011 bảng 26] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 80/64 S 88/70.4 R 4/3 → P 80/64 S 88/70.4
+  undefined (bảng nhãn)
+        ⇒ power: P 80/64 S 88/70.4 R 4/3 → P 80/64 S 88/70.4
+
+[gb-power n1012 bảng 27] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 90/72 S 100/80 R 4/3 → P 90/72 S 100/80
+  undefined (bảng nhãn)
+        ⇒ power: P 90/72 S 100/80 R 4/3 → P 90/72 S 100/80
+
+[gb-power n1013 bảng 28] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 100/80 S 110/88 R 4/3 → P 100/80 S 110/88
+  undefined (bảng nhãn)
+        ⇒ power: P 100/80 S 110/88 R 4/3 → P 100/80 S 110/88
+
+[gb-power n1014 bảng 29] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 130/104 S 143/114 R 4/3 → P 130/104 S 143/114
+  undefined (bảng nhãn)
+        ⇒ power: P 130/104 S 143/114 R 4/3 → P 130/104 S 143/114
+
+[gb-power n1015 bảng 30] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 150/120 S 165/132 R 4/3 → P 150/120 S 165/132
+  undefined (bảng nhãn)
+        ⇒ power: P 150/120 S 165/132 R 4/3 → P 150/120 S 165/132
+
+[gb-power n1016 bảng 31] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 180/144 S 198/158.4 R 4/3 → P 180/144 S 198/158.4
+  undefined (bảng nhãn)
+        ⇒ power: P 180/144 S 198/158.4 R 4/3 → P 180/144 S 198/158.4
+
+[gb-power n1017 bảng 32] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 200/160 S 220/176 R 4/3 → P 200/160 S 220/176
+
+[gb-power n1018 bảng 33] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 230/184 S 253/202 R 4/3 → P 230/184 S 253/202
+  undefined (bảng nhãn)
+        ⇒ power: P 230/184 S 253/202 R 4/3 → P 230/184 S 253/202
+
+[gb-power n1019 bảng 34] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 250/200 S 275/220 R 4/3 → P 250/200 S 275/220
+  undefined (bảng nhãn)
+        ⇒ power: P 250/200 S 275/220 R 4/3 → P 250/200 S 275/220
+
+[gb-power n1020 bảng 35] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 300/240 S 330/264 R 4/3 → P 300/240 S 330/264
+
+[gb-power n1021 bảng 36] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 350/280 S 385/308 R 4/3 → P 350/280 S 385/308
+  undefined (bảng nhãn)
+        ⇒ power: P 350/280 S 385/308 R 4/3 → P 350/280 S 385/308
+
+[gb-power n1022 bảng 37] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 375/300 S 412/330 R 4/3 → P 375/300 S 412/330
+  undefined (bảng nhãn)
+        ⇒ power: P 375/300 S 412/330 R 4/3 → P 375/300 S 412/330
+
+[gb-power n1023 bảng 38] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 500/400 S 550/440 R 4/3 → P 500/400 S 550/440
+  undefined (bảng nhãn)
+        ⇒ power: P 500/400 S 550/440 R 4/3 → P 500/400 S 550/440
+
+[gb-power n1024 bảng 39] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 500/400 S 550/440 R 4/3 → P 500/400 S 550/440
+  undefined (bảng nhãn)
+        ⇒ power: P 500/400 S 550/440 R 4/3 → P 500/400 S 550/440
+
+[gb-power n1025 bảng 40] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 625/500 S 688/550 R 4/3 → P 625/500 S 688/550
+  undefined (bảng nhãn)
+        ⇒ power: P 625/500 S 688/550 R 4/3 → P 625/500 S 688/550
+
+[gb-power n1026 bảng 41] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 625/500 S 687.5/550 R 4/3 → P 625/500 S 687.5/550
+  undefined (bảng nhãn)
+        ⇒ power: P 625/500 S 687.5/550 R 4/3 → P 625/500 S 687.5/550
+
+[gb-power n1027 bảng 42] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 700/560 S 770/616 R 4/3 → P 700/560 S 770/616
+  undefined (bảng nhãn)
+        ⇒ power: P 700/560 S 770/616 R 4/3 → P 700/560 S 770/616
+
+[gb-power n1028 bảng 43] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 800/640 S 880/704 R 4/3 → P 800/640 S 880/704
+  undefined (bảng nhãn)
+        ⇒ power: P 800/640 S 880/704 R 4/3 → P 800/640 S 880/704
+
+[gb-power n1029 bảng 44] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 S 1100/880 R 4/3 → P 1000/800 S 1100/880
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 S 1100/880 R 4/3 → P 1000/800 S 1100/880
+
+[gb-power n1030 bảng 45] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 1250/1000 S 1375/1100 R 4/3 → P 1250/1000 S 1375/1100
+  undefined (bảng nhãn)
+        ⇒ power: P 1250/1000 S 1375/1100 R 4/3 → P 1250/1000 S 1375/1100
+
+[gb-power n1031 bảng 46] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 1500/1200 S 1650/1320 R 4/3 → P 1500/1200 S 1650/1320
+  undefined (bảng nhãn)
+        ⇒ power: P 1500/1200 S 1650/1320 R 4/3 → P 1500/1200 S 1650/1320
+
+[gb-power n1032 bảng 47] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 1650/1320 S 1815/1452 R 4/3 → P 1650/1320 S 1815/1452
+  undefined (bảng nhãn)
+        ⇒ power: P 1650/1320 S 1815/1452 R 4/3 → P 1650/1320 S 1815/1452
+
+[gb-power n1033 bảng 48] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 1850/1480 S 2035/1628 R 4/3 → P 1850/1480 S 2035/1628
+  undefined (bảng nhãn)
+        ⇒ power: P 1850/1480 S 2035/1628 R 4/3 → P 1850/1480 S 2035/1628
+
+[gb-power n1034 bảng 49] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 2200/1760 S 2420/1936 R 4/3 → P 2200/1760 S 2420/1936
+  undefined (bảng nhãn)
+        ⇒ power: P 2200/1760 S 2420/1936 R 4/3 → P 2200/1760 S 2420/1936
+
+[jichai-huanneng n105 bảng 5] ×1
+  undefined (bảng nhãn)
+        ⇒ power: R 1250/1000 → R ·/1320
+
+[kanpor-fuan n101 bảng 0] ×4
+  undefined (bảng nhãn)
+        ⇒ power: S 1375/1100 R 1250/1000 → R ·/1227
+  undefined (bảng nhãn)
+        ⇒ power: S 1500/1200 R 1375/1100 → R ·/1429
+  undefined (bảng nhãn)
+        ⇒ power: S 1650/1320 R 1500/1200 → R ·/1429
+  undefined (bảng nhãn)
+        ⇒ power: S 1718/1375 R 1560/1250 → R ·/1656
+
+[kanpor-fuan n102 bảng 1] ×5
+  undefined (bảng nhãn)
+        ⇒ power: S 250/200 R 225/180 → R ·/242
+  undefined (bảng nhãn)
+        ⇒ power: S 275/220 R 250/200 → R ·/250
+  undefined (bảng nhãn)
+        ⇒ power: S 275/220 R 250/200 → R ·/254
+  undefined (bảng nhãn)
+        ⇒ power: S 330/264 R 300/240 → R ·/291
+  undefined (bảng nhãn)
+        ⇒ power: S 350/280 R 325/260 → R ·/310
+
+[kanpor-fuan n103 bảng 2] ×5
+  undefined (bảng nhãn)
+        ⇒ power: S 132/105.6 R 120/96 → R ·/116
+  undefined (bảng nhãn)
+        ⇒ power: S 150/120 R 135/108 → R ·/130
+  undefined (bảng nhãn)
+        ⇒ power: S 176/140 R 160/128 → R ·/155
+  undefined (bảng nhãn)
+        ⇒ power: S 200/160 R 180/144 → R ·/180
+  undefined (bảng nhãn)
+        ⇒ power: S 220/176 R 200/160 → R ·/203
+
+[kanpor-fuan n104 bảng 3] ×5
+  undefined (bảng nhãn)
+        ⇒ power: S 25/20 R 23/18 → R ·/27
+  undefined (bảng nhãn)
+        ⇒ power: S 27.5/22 R 25/20 → R ·/27
+  undefined (bảng nhãn)
+        ⇒ power: S 30/24 R 27.5/22 → R ·/27
+  undefined (bảng nhãn)
+        ⇒ power: S 33/27 R 30/24 → R ·/40
+  undefined (bảng nhãn)
+        ⇒ power: S 40/32 R 38/30 → R ·/40
+
+[kanpor-fuan n106 bảng 4] ×5
+  undefined (bảng nhãn)
+        ⇒ power: S 825/660 R 750/600 → R ·/711
+  undefined (bảng nhãn)
+        ⇒ power: S 880/704 R 800/640 → R ·/789
+  undefined (bảng nhãn)
+        ⇒ power: S 1000/800 R 910/728 → R ·/895
+  undefined (bảng nhãn)
+        ⇒ power: S 1100/880 R 1000/800 → R ·/970
+  undefined (bảng nhãn)
+        ⇒ power: S 1250/1000 R 1125/900 → R ·/1089
+
+[kanpor-fuan n114 bảng 5] ×5
+  undefined (bảng nhãn)
+        ⇒ power: S 550/440 R 500/400 → R ·/504
+  undefined (bảng nhãn)
+        ⇒ power: S 625/500 R 563/450 → R ·/555
+  undefined (bảng nhãn)
+        ⇒ power: S 660/528 R 600/480 → R ·/610
+  undefined (bảng nhãn)
+        ⇒ power: S 687/550 R 625/500 → R ·/610
+  undefined (bảng nhãn)
+        ⇒ power: S 725/580 R 670/536 → R ·/634
+
+[kanpor-fuan n120 bảng 9] ×4
+  undefined (bảng nhãn)
+        ⇒ power: S 180/144 R 160/128 → R ·/153
+  undefined (bảng nhãn)
+        ⇒ power: S 220/176 R 200/160 → R ·/183
+  undefined (bảng nhãn)
+        ⇒ power: S 250/200 R 225/180 → R ·/201
+  undefined (bảng nhãn)
+        ⇒ power: S 275/220 R 250/200 → R ·/231
+
+[kanpor-fuan n121 bảng 10] ×4
+  undefined (bảng nhãn)
+        ⇒ power: S 66/52.8 R 60/48 → R ·/60
+  undefined (bảng nhãn)
+        ⇒ power: S 88/70 R 80/64 → R ·/75
+  undefined (bảng nhãn)
+        ⇒ power: S 110/88 R 100/80 → R ·/102
+  undefined (bảng nhãn)
+        ⇒ power: S 150/128 R 135/108 → R ·/129
+
+[kanpor-fuan n122 bảng 11] ×4
+  undefined (bảng nhãn)
+        ⇒ power: S 250/200 R 225/180 → R ·/201
+  undefined (bảng nhãn)
+        ⇒ power: S 275/220 R 250/200 → R ·/231
+  undefined (bảng nhãn)
+        ⇒ power: S 300/240 R 275/220 → R ·/250
+  undefined (bảng nhãn)
+        ⇒ power: S 330/264 R 300/240 → R ·/285
+
+[keypower n101 bảng 0] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1125/900 S 1250/1000 → ∅
+
+[keypower n102 bảng 1] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 40/32 S 44/35.2 → ∅
+
+[keypower n103 bảng 2] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 37.5/30 S 41/33 → ∅
+
+[keypower n104 bảng 3] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 50/40 S 55/44 → ∅
+
+[keypower n105 bảng 4] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 37.5/30 S 41/33 → ∅
+
+[keypower n106 bảng 5] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 30/24 S 33/26.4 → ∅
+
+[keypower n107 bảng 6] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 25/20 S 27.5/22 → ∅
+
+[keypower n108 bảng 7] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 20/16 S 22/17.6 → ∅
+
+[keypower n109 bảng 8] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 30/24 S 33/26.4 → ∅
+
+[keypower n110 bảng 9] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 22/17.6 S 24/19.2 → ∅
+
+[keypower n111 bảng 10] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2125/1700 S 2250/1800 → ∅
+
+[keypower n112 bảng 11] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2200/1760 S 2420/1936 → ∅
+
+[keypower n113 bảng 12] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2250/1800 S 2500/2000 → ∅
+
+[keypower n114 bảng 13] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2500/2000 S 2750/2200 → ∅
+
+[keypower n115 bảng 14] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2750/2200 S 3000/2400 → ∅
+
+[keypower n116 bảng 15] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 3000/2400 S 3300/2640 → ∅
+
+[keypower n117 bảng 16] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 375/300 S 412.5/330 → ∅
+
+[keypower n118 bảng 17] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 400/320 S 440/352 → ∅
+
+[keypower n119 bảng 18] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 400/320 S 440/352 → ∅
+
+[keypower n120 bảng 19] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 450/360 S 500/400 → ∅
+
+[keypower n121 bảng 20] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 450/360 S 500/400 → ∅
+
+[keypower n122 bảng 21] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 450/360 S 500/400 → ∅
+
+[keypower n123 bảng 22] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 500/400 S 550/440 → ∅
+
+[keypower n124 bảng 23] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 500/400 S 550/440 → ∅
+
+[keypower n125 bảng 24] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 500/400 S 550/440 → ∅
+
+[keypower n126 bảng 25] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 562.5/450 S 625/500 → ∅
+
+[keypower n127 bảng 26] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 625/500 S 687.5/550 → ∅
+
+[keypower n128 bảng 27] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 687.5/550 S 750/600 → ∅
+
+[keypower n129 bảng 28] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 750/600 S 812.5/650 → ∅
+
+[keypower n130 bảng 29] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 812.5/650 S 887.5/710 → ∅
+
+[keypower n131 bảng 30] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 900/720 S 1000/800 → ∅
+
+[keypower n132 bảng 31] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 S 1100/880 → ∅
+
+[keypower n133 bảng 32] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 S 1100/880 → ∅
+
+[keypower n134 bảng 33] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 100/80 S 110/88 → ∅
+
+[keypower n135 bảng 34] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 69/55 S 75/60 → ∅
+
+[keypower n136 bảng 35] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 112.5/90 S 125/100 → ∅
+
+[keypower n137 bảng 36] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 94/75 S 100/80 → ∅
+
+[keypower n138 bảng 37] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 55/44 S 60/48 → ∅
+
+[keypower n139 bảng 38] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 37.5/30 S 41/33 → ∅
+
+[keypower n140 bảng 39] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 22/17.6 S 24/19.2 → ∅
+
+[keypower n141 bảng 40] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 45/36 S 50/40 → ∅
+
+[keypower n142 bảng 41] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 30/24 S 33/26.4 → ∅
+
+[keypower n143 bảng 42] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1650/1320 S 1800/1440 → ∅
+
+[keypower n144 bảng 43] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1875/1500 S 2000/1600 → ∅
+
+[keypower n145 bảng 44] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1875/1500 S 2000/1600 → ∅
+
+[keypower n146 bảng 45] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2125/1700 S 2250/1800 → ∅
+
+[keypower n147 bảng 46] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2125/1700 S 2250/1800 → ∅
+
+[keypower n148 bảng 47] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1875/1500 S 2000/1600 → ∅
+
+[keypower n149 bảng 48] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1687.5/1350 S 1875/1500 → ∅
+
+[keypower n150 bảng 49] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1500/1200 S 1650/1320 → ∅
+
+[keypower n151 bảng 50] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1375/1100 S 1500/1200 → ∅
+
+[keypower n152 bảng 51] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1250/1000 S 1375/1100 → ∅
+
+[keypower n153 bảng 52] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1125/900 S 1250/1000 → ∅
+
+[keypower n154 bảng 53] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1250/1000 S 1375/1100 → ∅
+
+[keypower n155 bảng 54] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1375/1100 S 1500/1200 → ∅
+
+[keypower n156 bảng 55] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1500/1200 S 1650/1320 → ∅
+
+[keypower n157 bảng 56] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1500/1200 S 1650/1320 → ∅
+
+[keypower n158 bảng 57] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1650/1320 S 1800/1440 → ∅
+
+[keypower n159 bảng 58] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1250/1000 S 1375/1100 → ∅
+
+[keypower n160 bảng 59] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 900/720 S 1000/800 → ∅
+
+[keypower n161 bảng 60] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 812.5/650 S 887.5/710 → ∅
+
+[keypower n162 bảng 61] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 750/600 S 825/660 → ∅
+
+[keypower n163 bảng 62] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 687.5/550 S 750/600 → ∅
+
+[keypower n164 bảng 63] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 625/500 S 687.5/550 → ∅
+
+[keypower n165 bảng 64] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 562.5/450 S 625/500 → ∅
+
+[keypower n166 bảng 65] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 500/400 S 550/440 → ∅
+
+[keypower n167 bảng 66] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 375/300 S 412.5/330 → ∅
+
+[keypower n168 bảng 67] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 375/300 S 412.5/330 → ∅
+
+[keypower n169 bảng 68] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 312.5/250 S 344/275 → ∅
+
+[keypower n170 bảng 69] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 312.5/250 S 344/275 → ∅
+
+[keypower n171 bảng 70] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 250/200 S 275/220 → ∅
+
+[keypower n172 bảng 71] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 250/200 S 275/220 → ∅
+
+[keypower n173 bảng 72] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 220/176 S 240/192 → ∅
+
+[keypower n174 bảng 73] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 200/160 S 220/176 → ∅
+
+[keypower n175 bảng 74] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 187.5/150 S 200/160 → ∅
+
+[keypower n176 bảng 75] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 187.5/150 S 200/160 → ∅
+
+[keypower n177 bảng 76] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 150/120 S 165/132 → ∅
+
+[keypower n178 bảng 77] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 150/120 S 165/132 → ∅
+
+[keypower n179 bảng 78] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 125/100 S 137.5/110 → ∅
+
+[keypower n180 bảng 79] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 112.5/90 S 125/100 → ∅
+
+[keypower n181 bảng 80] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 112.5/90 S 125/100 → ∅
+
+[keypower n182 bảng 81] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 125/100 S 137.5/110 → ∅
+
+[keypower n183 bảng 82] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 125/100 S 137.5/110 → ∅
+
+[keypower n184 bảng 83] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 137.5/110 S 150/120 → ∅
+
+[keypower n185 bảng 84] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 150/120 S 165/132 → ∅
+
+[keypower n186 bảng 85] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 150/120 S 165/132 → ∅
+
+[keypower n187 bảng 86] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 150/120 S 165/132 → ∅
+
+[keypower n188 bảng 87] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 175/140 S 187.5/150 → ∅
+
+[keypower n189 bảng 88] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 187.5/150 S 200/160 → ∅
+
+[keypower n190 bảng 89] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 187.5/150 S 200/160 → ∅
+
+[keypower n191 bảng 90] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 200/160 S 220/176 → ∅
+
+[keypower n192 bảng 91] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 200/160 S 220/176 → ∅
+
+[keypower n193 bảng 92] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 250/200 S 275/220 → ∅
+
+[keypower n194 bảng 93] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 250/200 S 275/220 → ∅
+
+[keypower n195 bảng 94] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 312.5/250 S 344/275 → ∅
+
+[keypower n196 bảng 95] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 312.5/250 S 344/275 → ∅
+
+[keypower n197 bảng 96] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 350/280 S 375/300 → ∅
+
+[keypower n198 bảng 97] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 375/300 S 412.5/330 → ∅
+
+[keypower n199 bảng 98] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 375/300 S 412.5/330 → ∅
+
+[keypower n200 bảng 99] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 375/300 S 412.5/330 → ∅
+
+[kingway-power n118 bảng 13] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 625/500 S 628/500 → P 625/500 S 688/550
+
+[kingway-power n119 bảng 14] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2500/2000 S 628/500 → P 2500/2000 S 2750/2200
+
+[powerzoo n101 bảng 0] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 3750/3000 S 4375/3500 → ∅
+
+[powerzoo n102 bảng 1] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 900/720 S 958/766 → ∅
+
+[powerzoo n103 bảng 2] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2000/1600 S 2200/1760 → ∅
+
+[powerzoo n104 bảng 3] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 S 1100/880 → ∅
+
+[powerzoo n105 bảng 4] ×1
+  undefined (bảng nhãn)
+        ⇒ power: S 1250/1000 → ∅
+
+[powerzoo n106 bảng 5] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 712/570 S 787/630 → ∅
+
+[powerzoo n107 bảng 6] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 525/420 S 600/480 → ∅
+
+[powerzoo n108 bảng 7] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 400/320 S 437.5/350 → ∅
+
+[powerzoo n109 bảng 8] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 250/200 S 275/220 → ∅
+
+[powerzoo n110 bảng 9] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 425/340 S 475/380 → ∅
+
+[powerzoo n111 bảng 10] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 250/200 S 262/210 → ∅
+
+[powerzoo n112 bảng 11] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 150/120 S 165/132 → ∅
+
+[powerzoo n113 bảng 12] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 40/32 S 44/35 → ∅
+
+[powerzoo n114 bảng 13] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 30/24 S 33/26.4 → ∅
+
+[powerzoo n115 bảng 14] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 40/32 S 44/35 → ∅
+
+[powerzoo n116 bảng 15] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 65/52 S 70/56 → ∅
+
+[powerzoo n117 bảng 16] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 56/45 S 62/50 → ∅
+
+[powerzoo n118 bảng 17] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 100/80 S 110/88 → ∅
+
+[powerzoo n119 bảng 18] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 16/12.8 S 17.5/14 → ∅
+
+[powerzoo n120 bảng 19] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 24/19 S 27/21 → ∅
+
+[powerzoo n121 bảng 20] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 25/20 S 27.5/22 → ∅
+
+[powerzoo n122 bảng 21] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 400/320 S 440/352 → ∅
+
+[powerzoo n123 bảng 22] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 560/448 S 625/500 → ∅
+
+[powerzoo n124 bảng 23] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 625/500 S 687/550 → ∅
+
+[powerzoo n125 bảng 24] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 30/24 S 32.5/26 → ∅
+
+[powerzoo n126 bảng 25] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 27.5/22 S 30.3/24 → ∅
+
+[powerzoo n127 bảng 26] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 31/25 S 34/27.5 → ∅
+
+[powerzoo n128 bảng 27] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 37.5/30 S 40/32 → ∅
+
+[powerzoo n129 bảng 28] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 40/32 S 44/35 → ∅
+
+[powerzoo n130 bảng 29] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 45/36 S 50/40 → ∅
+
+[powerzoo n131 bảng 30] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 53/43 S 59/47 → ∅
+
+[powerzoo n132 bảng 31] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 63/50 S 69/55 → ∅
+
+[powerzoo n133 bảng 32] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 70/56 S 75/60 → ∅
+
+[powerzoo n134 bảng 33] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 85/68 S 94/75 → ∅
+
+[powerzoo n135 bảng 34] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 100/80 S 110/88 → ∅
+
+[powerzoo n136 bảng 35] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 118.8/95 S 130.6/104.5 → ∅
+
+[powerzoo n137 bảng 36] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 137.5/110 S 150/120 → ∅
+
+[powerzoo n138 bảng 37] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 150/120 S 160/128 → ∅
+
+[powerzoo n139 bảng 38] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 167.5/134 S 180/144 → ∅
+
+[powerzoo n140 bảng 39] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 214/171 S 235/188 → ∅
+
+[powerzoo n141 bảng 40] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 245/196 S 269/215 → ∅
+
+[powerzoo n142 bảng 41] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 313/250 S 343/275 → ∅
+
+[powerzoo n143 bảng 42] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 25/20 S 27.5/22 → ∅
+
+[powerzoo n144 bảng 43] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 938/750 S 1038/830 → ∅
+
+[powerzoo n145 bảng 44] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1650/1320 S 1825/1460 → ∅
+
+[powerzoo n146 bảng 45] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1375/1100 S 1600/1280 → ∅
+
+[powerzoo n147 bảng 46] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 500/400 S 550/440 → ∅
+
+[powerzoo n148 bảng 47] ×1
+  undefined (bảng nhãn)
+        ⇒ power: S 450/360 → ∅
+
+[powerzoo n149 bảng 48] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 275/220 S 313/250 → ∅
+
+[powerzoo n150 bảng 49] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 388/310 S 425/340 → ∅
+
+[powerzoo n151 bảng 50] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1475/1180 S 1600/1280 → ∅
+
+[powerzoo n152 bảng 51] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 3363/2690 S 3763/3010 → ∅
+
+[powerzoo n153 bảng 52] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1875/1500 S 2000/1600 → ∅
+
+[powerzoo n154 bảng 53] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 910/728 S 1000/800 → ∅
+
+[powerzoo n155 bảng 54] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1250/1000 S 1375/1100 → ∅
+
+[powerzoo n156 bảng 55] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 800/640 S 880/704 → ∅
+
+[powerzoo n157 bảng 56] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 S 1045/836 → ∅
+
+[powerzoo n158 bảng 57] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1125/900 S 1195/956 → ∅
+
+[powerzoo n159 bảng 58] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1250/1000 S 1329/1063 → ∅
+
+[powerzoo n160 bảng 59] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1375/1100 S 1500/1200 → ∅
+
+[powerzoo n161 bảng 60] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1575/1260 S 1875/1500 → ∅
+
+[powerzoo n162 bảng 61] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 450/360 S 500/400 → ∅
+
+[powerzoo n163 bảng 62] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 681/545 S 750/600 → ∅
+
+[powerzoo n164 bảng 63] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 910/728 S 1000/800 → ∅
+
+[powerzoo n165 bảng 64] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1025/820 S 1125/900 → ∅
+
+[powerzoo n166 bảng 65] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1138/910 S 1250/1000 → ∅
+
+[powerzoo n167 bảng 66] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 27.5/22 S 30/24 → ∅
+
+[powerzoo n170 bảng 70] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 25.5/20.4 S 28.5/22.8 → ∅
+
+[powerzoo n171 bảng 71] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 25.5/20.4 S 28.5/22.8 → ∅
+
+[powerzoo n172 bảng 72] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 20.5/16.4 S 22.5/18 → ∅
+
+[powerzoo n173 bảng 73] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 20.5/16.4 S 22.5/18 → ∅
+
+[powerzoo n174 bảng 74] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 15/12 S 16.5/13.2 → ∅
+
+[powerzoo n175 bảng 75] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 15/12 S 16.5/13.2 → ∅
+
+[powerzoo n176 bảng 76] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 12/9.6 S 13.2/10.6 → ∅
+
+[powerzoo n177 bảng 77] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 12/9.6 S 13.2/10.6 → ∅
+
+[powerzoo n178 bảng 78] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 9/7.2 S 10/8 → ∅
+
+[tecgen-fujian n131 bảng 31] ×4
+  H: | Genset Model | TG10YD | TG10YDSS | TG11YD | TG11YDS
+  H: | Open | Silent | Open | Silent
+  H: | Frequency | 50Hz
+  undefined (bảng nhãn)
+        ⇒ power: P 9/7 S 10/8 → ∅
+  undefined (bảng nhãn)
+        ⇒ power: P 9/7 S 10/8 → ∅
+  undefined (bảng nhãn)
+        ⇒ power: P 10/8 S 11/9 → ∅
+  undefined (bảng nhãn)
+        ⇒ power: P 10/8 S 11/9 → ∅
+
+[westinpower n1001 bảng 29] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2250/1800 S 2500/2000 → S ·/2183
+
+[westinpower n1002 bảng 30] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2250/1800 S 2500/2000 → S ·/2183
+
+[westinpower n1003 bảng 31] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2500/2000 S 2750/2200 → S ·/2420
+
+[westinpower n1004 bảng 32] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2500/2000 S 2750/2200 → S ·/2420
+
+[westinpower n1005 bảng 33] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2790/2232 S 3070/2456 → S ·/2662
+
+[westinpower n1006 bảng 34] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2750/2200 S 3025/2420 → S ·/2662
+
+[westinpower n1007 bảng 35] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 3000/2400 S 3300/2640 → S ·/2849
+
+[westinpower n1008 bảng 36] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 3000/2400 S 3300/2640 → S ·/2849
+
+[westinpower n1009 bảng 37] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2250/1800 S 2500/2000 → S ·/2210
+
+[westinpower n1010 bảng 38] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2250/1800 S 2500/2000 → S ·/2210
+
+[westinpower n1011 bảng 39] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2313/1850 S 2544/2035 → S ·/2222
+
+[westinpower n1012 bảng 40] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2313/1850 S 2544/2035 → S ·/2222
+
+[westinpower n1013 bảng 41] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1250/1000 S 1375/1100 → S ·/1217
+
+[westinpower n1014 bảng 42] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1250/1000 S 1345/1076 → S ·/1217
+
+[westinpower n1015 bảng 43] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1250/1000 S 1350/1080 → S ·/1217
+
+[westinpower n1016 bảng 44] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1500/1200 S 1650/1320 → S ·/1459
+
+[westinpower n1017 bảng 45] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1500/1200 S 1650/1320 → S ·/1459
+
+[westinpower n1018 bảng 46] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1500/1200 S 1650/1320 → S ·/1459
+
+[westinpower n1019 bảng 47] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2000/1600 S 2250/1800 → S ·/1937
+
+[westinpower n1020 bảng 48] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2000/1600 S 2200/1760 → S ·/1937
+
+[westinpower n1021 bảng 49] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2000/1600 S 2250/1800 → S ·/1937
+
+[westinpower n1022 bảng 50] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1250/1000 S 1350/1080 → S ·/1221
+
+[westinpower n1023 bảng 51] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1500/1200 S 1670/1336 → S ·/1520
+
+[westinpower n1024 bảng 52] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1500/1200 S 1650/1320 → S ·/1404
+
+[westinpower n1025 bảng 53] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1500/1200 S 1650/1320 → S ·/1404
+
+[westinpower n1026 bảng 54] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1500/1200 S 1650/1320 → S ·/1404
+
+[westinpower n1027 bảng 55] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1710/1370 S 1873/1498 → S ·/1590
+
+[westinpower n1028 bảng 56] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1710/1370 S 1875/1500 → S ·/1590
+
+[westinpower n1029 bảng 57] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1710/1370 S 1875/1520 → S ·/1590
+
+[westinpower n1030 bảng 58] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1875/1500 S 2000/1600 → S ·/1760
+
+[westinpower n1031 bảng 59] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1860/1488 S 2000/1600 → S ·/1760
+
+[westinpower n1032 bảng 60] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1875/1500 S 2000/1600 → S ·/1760
+
+[westinpower n1033 bảng 61] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2000/1600 S 2250/1800 → S ·/1895
+
+[westinpower n1034 bảng 62] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2000/1600 S 2200/1760 → S ·/1895
+
+[westinpower n1035 bảng 63] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2000/1600 S 2250/1800 → S ·/1895
+
+[westinpower n1036 bảng 64] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2273/1818 S 2500/2000 → S ·/2176
+
+[westinpower n1037 bảng 65] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2273/1818 S 2500/2000 → S ·/2176
+
+[westinpower n1038 bảng 66] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1250/1000 S 1375/1100 → S ·/1212
+
+[westinpower n1039 bảng 67] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1250/1000 S 1345/1076 → S ·/1212
+
+[westinpower n1040 bảng 68] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1250/1000 S 1350/1080 → S ·/1212
+
+[westinpower n1041 bảng 69] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1365/1092 S 1500/1200 → S ·/1325
+
+[westinpower n1042 bảng 70] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1350/1080 S 1485/1188 → S ·/1325
+
+[westinpower n1043 bảng 71] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1365/1092 S 1502/1201 → S ·/1325
+
+[westinpower n1044 bảng 72] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1800/1440 S 1980/1584 → S ·/1733
+
+[westinpower n1045 bảng 73] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1800/1440 S 1980/1584 → S ·/1733
+
+[westinpower n1046 bảng 74] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1800/1440 S 1980/1584 → S ·/1733
+
+[westinpower n1047 bảng 75] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2080/1664 S 2250/1800 → S ·/1978
+
+[westinpower n1048 bảng 76] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2100/1680 S 2310/1848 → S ·/1978
+
+[westinpower n1049 bảng 77] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 2100/1680 S 2260/1808 → S ·/1978
+
+[westinpower n1050 bảng 78] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1500/1200 S 1650/1320 → S ·/1450
+
+[westinpower n1051 bảng 79] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1500/1200 S 1650/1320 → S ·/1450
+
+[westinpower n1052 bảng 80] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1250/1000 S 1375/1100 → S ·/1217
+
+[westinpower n1053 bảng 81] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1250/1000 S 1375/1100 → S ·/1217
+
+[westinpower n1054 bảng 82] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1500/1200 S 1675/1330 → S ·/1459
+
+[westinpower n1055 bảng 83] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1250/1000 S 1350/1080 → S ·/1217
+
+[westinpower n1056 bảng 84] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1250/1000 S 1375/1100 → S ·/1217
+
+[westinpower n1057 bảng 85] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1500/1200 S 1670/1330 → S ·/1459
+
+[westinpower n1058 bảng 86] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1485/1188 S 1630/1304 → S ·/1459
+
+[westinpower n1059 bảng 87] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1375/1100 S 1513/1210 → S ·/1310
+
+[westinpower n1060 bảng 88] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1038/830 S 1142/913 → S ·/1007
+
+[westinpower n1061 bảng 89] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1375/1100 S 1500/1200 → S ·/1310
+
+[westinpower n1062 bảng 90] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1375/1100 S 1510/1208 → S ·/1310
+
+[westinpower n1063 bảng 91] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 800/640 S 880/704 → S ·/786
+
+[westinpower n1064 bảng 92] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 800/641 S 900/718 → S ·/786
+
+[westinpower n1065 bảng 93] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 800/641 S 900/718 → S ·/786
+
+[westinpower n1066 bảng 94] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 S 1100/880 → S ·/985
+
+[westinpower n1067 bảng 95] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 S 1100/880 → S ·/985
+
+[westinpower n1068 bảng 96] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 S 1100/880 → S ·/985
+
+[westinpower n1069 bảng 97] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 910/728 S 1001/801 → S ·/891
+
+[westinpower n1070 bảng 98] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 910/728 S 1001/801 → S ·/891
+
+[westinpower n1071 bảng 99] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 910/728 S 1001/801 → S ·/891
+
+[westinpower n1072 bảng 100] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 S 1100/880 → S ·/979
+
+[westinpower n1073 bảng 101] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 S 1100/880 → S ·/979
+
+[westinpower n1074 bảng 102] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 S 1100/880 → S ·/979
+
+[westinpower n1075 bảng 103] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 900/720 S 1000/800 → S ·/902
+
+[westinpower n1076 bảng 104] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 900/720 S 1000/800 → S ·/902
+
+[westinpower n1077 bảng 105] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1020/816 S 1120/898 → S ·/973
+
+[westinpower n1078 bảng 106] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 S 1100/880 → S ·/973
+
+[westinpower n1079 bảng 107] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 S 1125/900 → S ·/990
+
+[westinpower n1080 bảng 108] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 S 1100/875 → S ·/1004
+
+[westinpower n1081 bảng 109] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 S 1100/875 → S ·/1004
+
+[westinpower n1082 bảng 110] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 S 1090/872 → S ·/1004
+
+[westinpower n1083 bảng 111] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 S 1080/864 → S ·/1004
+
+[westinpower n1084 bảng 112] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 990/792 S 1089/871 → S ·/1004
+
+[westinpower n1085 bảng 113] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 450/360 S 500/400 → S ·/451
+
+[westinpower n1086 bảng 114] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 455/364 S 500/400 → S ·/451
+
+[westinpower n1087 bảng 115] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 455/364 S 500/400 → S ·/451
+
+[westinpower n1088 bảng 116] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 500/400 S 550/440 → S ·/495
+
+[westinpower n1089 bảng 117] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 500/400 S 550/440 → S ·/495
+
+[westinpower n1090 bảng 118] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 500/400 S 550/440 → S ·/495
+
+[westinpower n1091 bảng 119] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 591/473 S 650/520 → S ·/583.8
+
+[westinpower n1092 bảng 120] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 591/473 S 650/520 → S ·/583.8
+
+[westinpower n1093 bảng 121] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 591/473 S 650/520 → S ·/583.8
+
+[westinpower n1094 bảng 122] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 650/520 S 700/560 → S ·/628
+
+[westinpower n1095 bảng 123] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 650/520 S 700/560 → S ·/628
+
+[westinpower n1096 bảng 124] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 650/520 S 700/560 → S ·/628
+
+[westinpower n1097 bảng 125] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 750/600 S 825/660 → S ·/748
+
+[westinpower n1098 bảng 126] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 500/400 S 550/440 → S ·/490
+
+[westinpower n1099 bảng 127] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 500/400 S 550/440 → S ·/490
+
+[westinpower n1100 bảng 128] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 250/200 S 275/220 → S ·/248.6
+
+[westinpower n1101 bảng 129] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 250/200 S 275/220 → S ·/248.6
+
+[westinpower n1102 bảng 130] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 250/200 S 275/220 → S ·/248.6
+
+[westinpower n1103 bảng 131] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 348/278 S 384/307 → S ·/342.5
+
+[westinpower n1104 bảng 132] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 348/278 S 384/307 → S ·/342.5
+
+[westinpower n1105 bảng 133] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 348/278 S 384/307 → S ·/342.5
+
+[westinpower n1106 bảng 134] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 250/200 S 275/220 → S ·/259
+
+[westinpower n1107 bảng 135] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 250/200 S 275/220 → S ·/264
+
+[westinpower n1108 bảng 136] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 250/200 S 275/220 → S ·/264
+
+[westinpower n1109 bảng 137] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 350/280 S 390/310 → S ·/358
+
+[westinpower n1110 bảng 138] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 350/280 S 390/310 → S ·/358
+
+[westinpower n1111 bảng 139] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 350/280 S 390/310 → S ·/358
+
+[westinpower n1112 bảng 140] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 350/280 S 385/308 → S ·/358
+
+[westinpower n1113 bảng 141] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 345/276 S 380/304 → S ·/358
+
+[westinpower n1114 bảng 142] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 150/120 S 165/132 → S ·/149.1
+
+[westinpower n1115 bảng 143] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 150/120 S 165/132 → S ·/149.1
+
+[westinpower n1116 bảng 144] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 150/120 S 161/129 → S ·/149.1
+
+[westinpower n1118 bảng 146] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 197/158 S 219/175 → S ·/199.7
+
+[westinpower n1120 bảng 148] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 197/158 S 219/175 → S ·/199.7
+
+[westinpower n1122 bảng 150] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 197/158 S 219/175 → S ·/199.7
+
+[westinpower n1123 bảng 151] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 100/80 S 110/88 → S ·/100
+
+[westinpower n1124 bảng 152] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 100/80 S 110/88 → S ·/100
+
+[westinpower n1125 bảng 153] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 197/158 S 219/175 → S ·/199.7
+
+[westinpower n1126 bảng 154] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 197/158 S 219/175 → S ·/199.7
+
+[westinpower n1128 bảng 155] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 197/158 S 212.5/170 → S ·/199.7
+
+[westinpower n1130 bảng 156] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 150/120 S 165/132 → S ·/150
+
+[westinpower n1131 bảng 157] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 150/120 S 165/132 → S ·/150
+
+[westinpower n1132 bảng 158] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 20/16 S 22/18 → S ·/20.6
+
+[westinpower n1133 bảng 159] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 20/16 S 22/18 → S ·/20.6
+
+[westinpower n1134 bảng 160] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 20/16 S 22/18 → S ·/20.6
+
+[westinpower n1135 bảng 161] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 20/16 S 22/18 → S ·/20.6
+
+[westinpower n1136 bảng 162] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 20/16 S 22/18 → S ·/20.6
+
+[westinpower n1137 bảng 163] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 20/16 S 22/18 → S ·/20.6
+
+[westinpower n1138 bảng 164] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 30/24 S 33/26 → S ·/31
+
+[westinpower n1139 bảng 165] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 30/24 S 33/26 → S ·/31
+
+[westinpower n1140 bảng 166] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 30/24 S 33/26 → S ·/31
+
+[westinpower n1141 bảng 167] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 45/36 S 49.5/40 → S ·/46.5
+
+[westinpower n1142 bảng 168] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 45/36 S 50/40 → S ·/46.5
+
+[westinpower n1143 bảng 169] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 45/36 S 50/40 → S ·/46.5
+
+[westinpower n1144 bảng 170] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 60/48 S 66/53 → S ·/60.5
+
+[westinpower n1145 bảng 171] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 60/48 S 66/53 → S ·/60.5
+
+[westinpower n1146 bảng 172] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 60/48 S 66/53 → S ·/60.5
+
+[westinpower n1147 bảng 173] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 100/80 S 110/88 → S ·/103
+
+[westinpower n1148 bảng 174] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 100/80 S 110/88 → S ·/103
+
+[westinpower n1149 bảng 175] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 100/80 S 112/90 → S ·/103
+
+[westinpower n1150 bảng 176] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 40/32 S 44/35 → S ·/41
+
+[xinshengan-shandong n101 bảng 0] ×1
+  undefined (bảng nhãn)
+        ⇒ power: R 375/300 → ∅; fuel: ∅ → ≤0.85
+
+[xinshengan-shandong n102 bảng 1] ×1
+  undefined (bảng nhãn)
+        ⇒ power: R 250/200 → ∅; fuel: ∅ → ≤0.85
