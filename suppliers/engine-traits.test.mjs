@@ -17,7 +17,9 @@ export const KINDS = ["buồng đốt", "phun", "điều khiển điện tử", 
 const squash = (s) => String(s).replace(/[\s ]+/g, " ").trim().toLowerCase();
 // part: which component the term belongs to ("" = not sure, never used to filter). Khoa 18/11/2026: only part "engine" tells the engine maker.
 export const PARTS = ["engine", "controller", "alternator", ""];
-const KEYS = ["make", "term", "aliases", "kind", "part", "exclusive", "src", "quote", "note"];
+// filter / filterWhy (Khoa 18/11/2026): an exclusive engine term Khoa keeps out of the engine filter (Holset: a turbo on
+// many makes; Lombardini, KOHLER Flex: not reviewed). Only `filter: false` is written, always with filterWhy saying so.
+const KEYS = ["make", "term", "aliases", "kind", "part", "exclusive", "src", "quote", "note", "filter", "filterWhy"];
 
 export function load() { return JSON.parse(fs.readFileSync(path.join(DIR, "engine-traits.json"), "utf8")); }
 export function page(n) {
@@ -36,6 +38,8 @@ export function checkTrait(t, read = page) {
   if (!PARTS.includes(t.part)) e.push(`part ${t.part}`);
   if (t.kind === "tên dòng" && t.exclusive) e.push("tên dòng máy không là đặc thù (Khoa 18/11/2026): exclusive phải false");
   if (t.part && t.part !== "engine" && t.exclusive && t.kind === "buồng đốt") e.push("buồng đốt phải thuộc part engine");
+  if ("filter" in t && t.filter !== false) e.push("filter chỉ ghi false (mặc định là lọc theo luật chung)");
+  if ((t.filter === false) !== (typeof t.filterWhy === "string" && /Khoa \d{1,2}\/\d{1,2}\/\d{4}/.test(t.filterWhy))) e.push("filter: false phải kèm filterWhy có ngày Khoa quyết, và ngược lại");
   if (!Array.isArray(t.src) || !t.src.length) e.push("cần src");
   if (!Array.isArray(t.quote) || !t.quote.length) e.push("cần quote");
   if (e.length) return e;
@@ -72,6 +76,12 @@ test("keys, kind, exclusive and make are checked", () => {
   assert.ok(checkTrait({ ...good, kind: "khác ra" }, fake).some((x) => /kind/.test(x)));
   assert.ok(checkTrait({ ...good, exclusive: "yes" }, fake).some((x) => /exclusive/.test(x)));
   assert.ok(checkTrait({ ...good, make: "nobody" }, fake).some((x) => /MAKE_BLOCK/.test(x)));
+});
+test("filter: false needs filterWhy with Khoa's date; only false is written", () => {
+  assert.deepEqual(checkTrait({ ...good, filter: false, filterWhy: "Khoa 18/11/2026: chưa soát" }, fake), []);
+  assert.ok(checkTrait({ ...good, filter: false }, fake).some((x) => /filterWhy/.test(x)));
+  assert.ok(checkTrait({ ...good, filterWhy: "Khoa 18/11/2026: x" }, fake).some((x) => /filterWhy/.test(x)));
+  assert.ok(checkTrait({ ...good, filter: true, filterWhy: "Khoa 18/11/2026: x" }, fake).some((x) => /filter chỉ ghi false/.test(x)));
 });
 test("part and tên dòng rules (Khoa 18/11/2026)", () => {
   assert.ok(checkTrait({ ...good, part: "motor" }, fake).some((x) => /part/.test(x)));
