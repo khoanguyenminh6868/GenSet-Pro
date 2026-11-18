@@ -1,10 +1,10 @@
 <!-- spec-diff -->
-## Kiểm chéo danh mục (spec-diff): git:b9d4f06d ↔ .
+## Kiểm chéo danh mục (spec-diff): git:1133dc1c ↔ .
 
-- Bản ghi: 59.076 → 59.127; **196** đổi, 25 mất, 76 thêm, ở 109 bảng của 12 NCC
+- Bản ghi: 58.912 → 58.963; **196** đổi, 25 mất, 76 thêm, ở 109 bảng của 12 NCC
 - Đảo vai động cơ ↔ đầu phát (mã mà ≥ 3 NCC khác đọc ở vai kia): 1 → **1** ✅
 - Tự kiểm số với công suất của dòng: 230 giá trị đổi / thêm không tự xác nhận được (soát tay)
-- Chưa đọc được (`node suppliers/unread-tables.mjs`, để thiếu thay vì đoán): bảng không cho bản ghi nào: — → 3.177; dòng điện / điện áp theo vị trí không khớp công suất: — → 230; số vô lý so với công suất: — → 213; dòng là cặp nhãn | giá trị: — → 164; mã đầu phát trùng model tổ máy: — → 37; cặp a/b dưới nhãn không ghi mức / đơn vị: — → 34; tổ máy nhiều động cơ: — → 6; một ô ghi hai mã: — → 1
+- Chưa đọc được (`node suppliers/unread-tables.mjs`, để thiếu thay vì đoán): bảng không cho bản ghi nào: — → 3.177; dòng điện / điện áp theo vị trí không khớp công suất: — → 230; số vô lý so với công suất: — → 212; dòng là cặp nhãn | giá trị: — → 164; mã đầu phát trùng model tổ máy: — → 37; cặp a/b dưới nhãn không ghi mức / đơn vị: — → 34; tổ máy nhiều động cơ: — → 6; một ô ghi hai mã: — → 1
 - Thay đổi là chủ ý thì không chặn; vẫn phải soát MỌI dạng và đo top 30 ứng viên bằng tay (bộ nhớ kiem-cheo-toan-bo). Bản đầy đủ: artifact `spec-diff` của lượt chạy.
 
 ### Theo NCC
