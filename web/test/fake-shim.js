@@ -79,7 +79,7 @@
   };
   window.genbidWeb = true;
   window.genbidEmail = "test@example.invalid";
-  window.genbidRole = "superadmin";
+  window.genbidRole = patch.role || "superadmin"; // ca thử quyền đặt patch.role (vd. "member")
   window.genbidApi = async (path, body) => {
     gb.api.push({ path, body: clone(body) });
     if (path === "/api/webreq") {

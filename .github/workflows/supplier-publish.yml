@@ -6,7 +6,8 @@ on:
   workflow_dispatch:
   push:
     branches: [main]
-    paths: ['suppliers/cn/**']
+    # The row flags (rowflags/current, step "Row flags") also change when the code that reads the tables changes.
+    paths: ['suppliers/cn/**', 'suppliers/row-flags.mjs', 'suppliers/spec-diff.mjs', 'web/catalog.js', 'web/spec-norm.js', 'web/conversions.js']
 
 concurrency:
   group: supplier-publish
@@ -38,3 +39,13 @@ jobs:
           else
             node suppliers/upload.mjs
           fi
+      # Row flags (Chất lượng 1): the suspect rows of every supplier as ONE doc rowflags/current, listed in the Nhà cung
+      # cấp screen. Computed on the whole of suppliers/cn (the cylinder flag depends on all suppliers); written only when
+      # the rows differ from the copy on the web. A code-only push skips Publish above ("No supplier record ...").
+      - name: Row flags
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        run: |
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_SERVICE_ROLE_KEY" ]; then echo "Supabase secrets not set; skipping."; exit 0; fi
+          node suppliers/row-flags.mjs --post

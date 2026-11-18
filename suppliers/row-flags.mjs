@@ -15,6 +15,7 @@
 //   node suppliers/row-flags.mjs                     tóm tắt: theo lý do, theo NCC, NCC quá nửa bảng nghi
 //   node suppliers/row-flags.mjs --list <lý do> [--id <NCC>]   liệt kê từng dòng bị gắn cờ (để soát hết, không lấy mẫu)
 //   node suppliers/row-flags.mjs --json <tệp>        ghi toàn bộ danh sách
+//   node suppliers/row-flags.mjs --post [--dry] [--out <tệp>]   đưa cờ lên web (rowflags/current), xem post() bên dưới
 import fs from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
@@ -154,13 +155,39 @@ export function flagRows(S) {
 // NCC quá nửa số bảng (có bản ghi) bị nghi → sửa mã đọc, không phải lỗi dữ liệu lẻ.
 export const overHalf = (bySup) => [...bySup].filter(([, s]) => s.flagged.size * 2 > s.tables.size).map(([id, s]) => ({ id, flagged: s.flagged.size, tables: s.tables.size }));
 
+// Chặng 2: cờ lên web là MỘT doc rowflags/current (cờ số xi lanh dựa số đông mọi NCC: một NCC đổi có thể đổi cờ NCC
+// khác; một doc thì không phải dọn doc của NCC hết cờ). `text` = chữ nguyên văn của dòng (bảng nhãn: tên tổ máy + các
+// dòng), chỉ màn "dòng nghi sai" hiện nó (ngoại lệ SHOW_SRC, điều phối 18/11/2026); link nguồn web lấy từ sources của NCC.
+export const webRows = (all) => all.map(([key, f]) => ({ key, supplierId: f.o.supplierId, n: f.o.n, table: f.o.table, row: f.o.row ?? null, kind: f.o.kind, model: f.o.model, text: rowText(f.o), drop: dropped(f), reasons: f.reasons }))
+  .sort((a, b) => a.supplierId.localeCompare(b.supplierId) || a.n - b.n || a.table - b.table || (a.row ?? -1) - (b.row ?? -1) || a.key.localeCompare(b.key));
+export const webDoc = (all) => ({ at: new Date().toISOString(), commit: process.env.GITHUB_SHA || "", rows: webRows(all) });
+// node suppliers/row-flags.mjs --post [--dry] [--out <tệp>]: workflow supplier-publish.yml (SUPABASE_URL +
+// SUPABASE_SERVICE_ROLE_KEY) ghi rowflags/current CHỈ khi danh sách dòng khác bản trên web (đổi updated_at làm mọi trang
+// đang mở tải lại doc). --dry: không ghi; --out: ghi doc ra tệp để xem / thử màn hình.
+export async function post(doc, dry, out) {
+  if (out) fs.writeFileSync(out, JSON.stringify(doc, null, 1) + "\n", "utf8");
+  console.log(`rowflags/current: ${doc.rows.length} dòng (${doc.rows.filter((r) => r.drop).length} bị loại), ${JSON.stringify(doc).length} byte${out ? `, đã ghi ${out}` : ""}`);
+  const SB = process.env.SUPABASE_URL, KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (dry) return;
+  if (!SB || !KEY) { console.log("Chưa đặt SUPABASE_URL / SUPABASE_SERVICE_ROLE_KEY: không ghi."); return; }
+  const H = { apikey: KEY, Authorization: `Bearer ${KEY}`, "Content-Type": "application/json" };
+  const r0 = await fetch(`${SB}/rest/v1/docs?coll=eq.rowflags&id=eq.current&select=data`, { headers: H });
+  if (!r0.ok) { console.error(`Đọc rowflags/current: HTTP ${r0.status}: ${(await r0.text()).slice(0, 300)}`); process.exit(1); }
+  const cur = (await r0.json())[0]?.data;
+  if (cur && JSON.stringify(cur.rows) === JSON.stringify(doc.rows)) { console.log("Không đổi so với bản trên web: không ghi."); return; }
+  const r = await fetch(`${SB}/rest/v1/docs`, { method: "POST", headers: { ...H, Prefer: "resolution=merge-duplicates,return=minimal" }, body: JSON.stringify([{ coll: "rowflags", id: "current", data: doc, updated_at: doc.at }]) });
+  if (!r.ok) { console.error(`HTTP ${r.status}: ${(await r.text()).slice(0, 300)}`); process.exit(1); }
+  console.log("đã ghi rowflags/current");
+}
+
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   const dir = path.join(ROOT, "cn");
   const S = fs.readdirSync(dir).filter((f) => f.endsWith(".json")).sort().map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")));
   const { recs, flags, bySup } = flagRows(S);
   const argv = process.argv.slice(2), opt = (f) => { const i = argv.indexOf(f); return i >= 0 ? argv[i + 1] : null; };
   const all = [...flags.entries()];
-  if (opt("--json")) {
+  if (argv.includes("--post")) await post(webDoc(all), argv.includes("--dry"), opt("--out"));
+  else if (opt("--json")) {
     fs.writeFileSync(opt("--json"), JSON.stringify(all.map(([k, f]) => ({ key: k, supplierId: f.o.supplierId, n: f.o.n, table: f.o.table, row: f.o.row ?? null, kind: f.o.kind, model: f.o.model, line: f.o.line ?? null, drop: dropped(f), reasons: f.reasons })), null, 1) + "\n", "utf8");
     console.log(`đã ghi ${opt("--json")}: ${all.length} dòng`);
   } else if (opt("--list")) {

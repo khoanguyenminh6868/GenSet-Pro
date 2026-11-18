@@ -2,7 +2,7 @@
 // Dòng bảng lấy nguyên văn từ suppliers/cn (18/11/2026), ghi nguồn ở từng ca.
 import test from "node:test";
 import assert from "node:assert/strict";
-import { flagRows, absurdOf, rowKey, overHalf, dropped, LEVEL, REASONS } from "./row-flags.mjs";
+import { flagRows, absurdOf, rowKey, overHalf, dropped, LEVEL, REASONS, webDoc, post } from "./row-flags.mjs";
 
 const C = globalThis.GenbidCatalog;
 const sup = (id, tables) => ({ id, country: "CN", confidence: "high", specTables: tables.map(([n, title, header, rows]) => ({ n, title, header, rows })) });
@@ -68,4 +68,31 @@ test("rowKey: bền qua đánh số lại nguồn / bảng; đổi khi chữ c�
 test("overHalf: NCC có quá nửa số bảng bị nghi", () => {
   const bySup = new Map([["p", { tables: new Set([0, 1, 2]), flagged: new Set([0, 1]) }], ["q", { tables: new Set([0, 1]), flagged: new Set([0]) }]]);
   assert.deepEqual(overHalf(bySup).map((x) => x.id), ["p"]);
+});
+
+test("--post: doc rowflags/current mang chữ nguyên văn của dòng; chỉ ghi khi danh sách dòng khác bản trên web", async () => {
+  const doc = webDoc([...flagRows([YT]).flags.entries()]);
+  const r = doc.rows.find((x) => x.model === "KTA50-G3");
+  assert.equal(r.text, YT.specTables[0].rows[0]);
+  assert.deepEqual([r.supplierId, r.n, r.table, r.row, r.kind, r.drop], ["yingtai-jiangsu", 113, 0, 0, "engine", true]);
+  const calls = [], old = globalThis.fetch, env = { ...process.env }, log = console.log;
+  let web = { at: "cũ", rows: doc.rows };
+  globalThis.fetch = async (url, o = {}) => {
+    calls.push({ url: String(url), method: o.method || "GET", body: o.body });
+    return { ok: true, json: async () => (web ? [{ data: web }] : []), text: async () => "" };
+  };
+  process.env.SUPABASE_URL = "http://sb.invalid"; process.env.SUPABASE_SERVICE_ROLE_KEY = "k";
+  console.log = () => {};
+  try {
+    await post(doc, false);
+    assert.deepEqual(calls.map((c) => c.method), ["GET"], "giống bản trên web: không ghi");
+    web = { at: "cũ", rows: [] };
+    await post(doc, false);
+    assert.deepEqual(calls.map((c) => c.method), ["GET", "GET", "POST"]);
+    const [row] = JSON.parse(calls[2].body);
+    assert.deepEqual([row.coll, row.id, row.updated_at], ["rowflags", "current", doc.at]);
+    web = null; calls.length = 0;
+    await post(doc, true);
+    assert.equal(calls.length, 0, "--dry: không gọi web");
+  } finally { globalThis.fetch = old; process.env = env; console.log = log; }
 });
