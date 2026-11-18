@@ -1,0 +1,1162 @@
+{
+ "paths": {
+  "E2": {
+   "desc": "Động cơ: tiêu đề có cột động cơ nhưng không dòng tiêu đề nào đặt nó đúng ô (tiêu đề nhiều tầng / khác độ rộng): chọn mã đầu tiên không dạng đầu phát",
+   "through": {
+    "records": 23671,
+    "specs": 0,
+    "tables": 1103,
+    "sups": 109,
+    "topSups": [
+     [
+      "mecca-power",
+      1643
+     ],
+     [
+      "uleengen",
+      1079
+     ],
+     [
+      "walter-yangzhou",
+      781
+     ],
+     [
+      "yanan-power",
+      760
+     ],
+     [
+      "wintpower",
+      758
+     ],
+     [
+      "landtop-fuzhou",
+      738
+     ],
+     [
+      "waeta-fujian",
+      707
+     ],
+     [
+      "legapower",
+      634
+     ],
+     [
+      "aosif",
+      621
+     ],
+     [
+      "excel-power-ningde",
+      558
+     ],
+     [
+      "victory-generator",
+      544
+     ],
+     [
+      "zhengchi-power",
+      522
+     ]
+    ]
+   },
+   "diff": {
+    "changed": 6024,
+    "onlyA": 23671,
+    "onlyB": 37,
+    "kinds": {
+     "other": 6024
+    },
+    "recordsTouched": 29732,
+    "tables": 1107,
+    "sups": 109
+   },
+   "swaps": 1,
+   "verdict": {
+    "vai engine | xác nhận": 20877,
+    "công suất (theo bản ghi mất) | xác nhận": 57835,
+    "vai engine (ô kia) | xác nhận": 5364,
+    "công suất (theo bản ghi mất) | chưa rõ": 5996,
+    "vai engine | không đối chiếu": 2821,
+    "công suất (theo bản ghi mất) | không đối chiếu": 9430,
+    "vai engine (ô kia) | không đối chiếu": 658,
+    "công suất (theo bản ghi mất) | mâu thuẫn": 557,
+    "vai engine | mâu thuẫn": 10,
+    "vai engine (ô kia) | mâu thuẫn": 2
+   },
+   "bySup": [
+    [
+     "mecca-power",
+     {
+      "vai engine | xác nhận": 1537,
+      "công suất (theo bản ghi mất) | xác nhận": 5279,
+      "công suất (theo bản ghi mất) | chưa rõ": 488,
+      "vai engine | không đối chiếu": 106,
+      "công suất (theo bản ghi mất) | không đối chiếu": 736,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 39
+     }
+    ],
+    [
+     "landtop-fuzhou",
+     {
+      "vai engine | xác nhận": 681,
+      "công suất (theo bản ghi mất) | xác nhận": 2384,
+      "vai engine (ô kia) | xác nhận": 648,
+      "công suất (theo bản ghi mất) | chưa rõ": 324,
+      "vai engine | không đối chiếu": 57,
+      "công suất (theo bản ghi mất) | không đối chiếu": 244,
+      "vai engine (ô kia) | không đối chiếu": 57
+     }
+    ],
+    [
+     "uleengen",
+     {
+      "vai engine | xác nhận": 1030,
+      "công suất (theo bản ghi mất) | xác nhận": 1498,
+      "vai engine (ô kia) | xác nhận": 796,
+      "công suất (theo bản ghi mất) | chưa rõ": 404,
+      "công suất (theo bản ghi mất) | không đối chiếu": 250,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 18,
+      "vai engine | không đối chiếu": 39,
+      "vai engine (ô kia) | không đối chiếu": 35,
+      "vai engine | mâu thuẫn": 10,
+      "vai engine (ô kia) | mâu thuẫn": 2
+     }
+    ],
+    [
+     "wintpower",
+     {
+      "vai engine | xác nhận": 674,
+      "công suất (theo bản ghi mất) | xác nhận": 2145,
+      "vai engine | không đối chiếu": 84,
+      "công suất (theo bản ghi mất) | không đối chiếu": 301,
+      "công suất (theo bản ghi mất) | chưa rõ": 375,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 13,
+      "vai engine (ô kia) | xác nhận": 193,
+      "vai engine (ô kia) | không đối chiếu": 57
+     }
+    ],
+    [
+     "yanan-power",
+     {
+      "vai engine | xác nhận": 733,
+      "công suất (theo bản ghi mất) | xác nhận": 2858,
+      "vai engine | không đối chiếu": 27,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 1,
+      "công suất (theo bản ghi mất) | chưa rõ": 33,
+      "công suất (theo bản ghi mất) | không đối chiếu": 80
+     }
+    ],
+    [
+     "waeta-fujian",
+     {
+      "vai engine | xác nhận": 702,
+      "công suất (theo bản ghi mất) | xác nhận": 2603,
+      "công suất (theo bản ghi mất) | chưa rõ": 174,
+      "công suất (theo bản ghi mất) | không đối chiếu": 22,
+      "vai engine | không đối chiếu": 5,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 5
+     }
+    ],
+    [
+     "walter-yangzhou",
+     {
+      "vai engine | xác nhận": 763,
+      "công suất (theo bản ghi mất) | xác nhận": 2109,
+      "công suất (theo bản ghi mất) | chưa rõ": 134,
+      "vai engine | không đối chiếu": 19,
+      "công suất (theo bản ghi mất) | không đối chiếu": 70,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 11
+     }
+    ],
+    [
+     "aosif",
+     {
+      "vai engine | xác nhận": 524,
+      "công suất (theo bản ghi mất) | xác nhận": 1914,
+      "công suất (theo bản ghi mất) | chưa rõ": 74,
+      "vai engine | không đối chiếu": 97,
+      "công suất (theo bản ghi mất) | không đối chiếu": 318,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 4
+     }
+    ],
+    [
+     "jet-power",
+     {
+      "vai engine | xác nhận": 360,
+      "công suất (theo bản ghi mất) | chưa rõ": 93,
+      "vai engine (ô kia) | xác nhận": 360,
+      "công suất (theo bản ghi mất) | xác nhận": 1321,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 8,
+      "vai engine | không đối chiếu": 109,
+      "công suất (theo bản ghi mất) | không đối chiếu": 434,
+      "vai engine (ô kia) | không đối chiếu": 109
+     }
+    ],
+    [
+     "victory-generator",
+     {
+      "vai engine | xác nhận": 506,
+      "công suất (theo bản ghi mất) | chưa rõ": 262,
+      "công suất (theo bản ghi mất) | xác nhận": 1638,
+      "vai engine | không đối chiếu": 38,
+      "công suất (theo bản ghi mất) | không đối chiếu": 250,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 10
+     }
+    ],
+    [
+     "excel-power-ningde",
+     {
+      "vai engine | xác nhận": 509,
+      "công suất (theo bản ghi mất) | xác nhận": 1526,
+      "công suất (theo bản ghi mất) | chưa rõ": 382,
+      "vai engine | không đối chiếu": 49,
+      "công suất (theo bản ghi mất) | không đối chiếu": 172,
+      "vai engine (ô kia) | xác nhận": 13,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 20
+     }
+    ],
+    [
+     "kachai-hangzhou",
+     {
+      "vai engine | xác nhận": 408,
+      "công suất (theo bản ghi mất) | xác nhận": 1475,
+      "vai engine (ô kia) | xác nhận": 391,
+      "công suất (theo bản ghi mất) | chưa rõ": 152,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 5,
+      "vai engine | không đối chiếu": 17,
+      "công suất (theo bản ghi mất) | không đối chiếu": 68,
+      "vai engine (ô kia) | không đối chiếu": 17
+     }
+    ],
+    [
+     "long-gen",
+     {
+      "vai engine | xác nhận": 344,
+      "công suất (theo bản ghi mất) | xác nhận": 1231,
+      "vai engine (ô kia) | xác nhận": 337,
+      "vai engine | không đối chiếu": 30,
+      "công suất (theo bản ghi mất) | không đối chiếu": 130,
+      "vai engine (ô kia) | không đối chiếu": 30,
+      "công suất (theo bản ghi mất) | chưa rõ": 88,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 5
+     }
+    ],
+    [
+     "acepow-fuan",
+     {
+      "vai engine | xác nhận": 473,
+      "công suất (theo bản ghi mất) | xác nhận": 968,
+      "vai engine (ô kia) | xác nhận": 341,
+      "công suất (theo bản ghi mất) | chưa rõ": 249,
+      "vai engine | không đối chiếu": 8,
+      "công suất (theo bản ghi mất) | không đối chiếu": 90,
+      "vai engine (ô kia) | không đối chiếu": 8,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 7
+     }
+    ],
+    [
+     "rise-power",
+     {
+      "vai engine | không đối chiếu": 96,
+      "công suất (theo bản ghi mất) | không đối chiếu": 443,
+      "vai engine | xác nhận": 307,
+      "vai engine (ô kia) | xác nhận": 48,
+      "vai engine (ô kia) | không đối chiếu": 76,
+      "công suất (theo bản ghi mất) | xác nhận": 979,
+      "công suất (theo bản ghi mất) | chưa rõ": 105,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 9
+     }
+    ],
+    [
+     "weiman-fujian",
+     {
+      "vai engine | không đối chiếu": 130,
+      "công suất (theo bản ghi mất) | không đối chiếu": 512,
+      "vai engine | xác nhận": 266,
+      "công suất (theo bản ghi mất) | chưa rõ": 68,
+      "công suất (theo bản ghi mất) | xác nhận": 952,
+      "vai engine (ô kia) | xác nhận": 9,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 4,
+      "vai engine (ô kia) | không đối chiếu": 11
+     }
+    ],
+    [
+     "koten-power",
+     {
+      "vai engine | xác nhận": 385,
+      "công suất (theo bản ghi mất) | xác nhận": 1441,
+      "công suất (theo bản ghi mất) | chưa rõ": 95,
+      "công suất (theo bản ghi mất) | không đối chiếu": 4
+     }
+    ],
+    [
+     "legapower",
+     {
+      "vai engine | xác nhận": 590,
+      "công suất (theo bản ghi mất) | xác nhận": 1115,
+      "công suất (theo bản ghi mất) | chưa rõ": 46,
+      "vai engine | không đối chiếu": 45,
+      "công suất (theo bản ghi mất) | không đối chiếu": 99,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 1
+     }
+    ],
+    [
+     "sr-genset",
+     {
+      "vai engine | không đối chiếu": 135,
+      "công suất (theo bản ghi mất) | không đối chiếu": 291,
+      "vai engine (ô kia) | không đối chiếu": 36,
+      "vai engine | xác nhận": 230,
+      "công suất (theo bản ghi mất) | chưa rõ": 134,
+      "công suất (theo bản ghi mất) | xác nhận": 723,
+      "vai engine (ô kia) | xác nhận": 204
+     }
+    ],
+    [
+     "ettes-power",
+     {
+      "vai engine | xác nhận": 383,
+      "công suất (theo bản ghi mất) | chưa rõ": 156,
+      "công suất (theo bản ghi mất) | xác nhận": 825,
+      "vai engine | không đối chiếu": 75,
+      "công suất (theo bản ghi mất) | không đối chiếu": 292,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 12
+     }
+    ],
+    [
+     "app-power-anpu",
+     {
+      "vai engine | xác nhận": 348,
+      "công suất (theo bản ghi mất) | xác nhận": 1304,
+      "công suất (theo bản ghi mất) | chưa rõ": 60,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 1,
+      "công suất (theo bản ghi mất) | không đối chiếu": 27
+     }
+    ],
+    [
+     "gordon-power",
+     {
+      "vai engine | xác nhận": 283,
+      "công suất (theo bản ghi mất) | xác nhận": 940,
+      "công suất (theo bản ghi mất) | không đối chiếu": 206,
+      "vai engine | không đối chiếu": 42,
+      "công suất (theo bản ghi mất) | chưa rõ": 141,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 7
+     }
+    ],
+    [
+     "westinpower",
+     {
+      "vai engine | xác nhận": 333,
+      "công suất (theo bản ghi mất) | xác nhận": 1074,
+      "công suất (theo bản ghi mất) | chưa rõ": 97,
+      "công suất (theo bản ghi mất) | không đối chiếu": 75,
+      "vai engine | không đối chiếu": 14,
+      "vai engine (ô kia) | xác nhận": 21,
+      "vai engine (ô kia) | không đối chiếu": 3
+     }
+    ],
+    [
+     "xinhengxin-fujian",
+     {
+      "vai engine | xác nhận": 308,
+      "công suất (theo bản ghi mất) | xác nhận": 1099,
+      "công suất (theo bản ghi mất) | chưa rõ": 96,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 6,
+      "vai engine | không đối chiếu": 14,
+      "công suất (theo bản ghi mất) | không đối chiếu": 63
+     }
+    ],
+    [
+     "kaihua-genset",
+     {
+      "vai engine | xác nhận": 297,
+      "công suất (theo bản ghi mất) | xác nhận": 1054,
+      "công suất (theo bản ghi mất) | chưa rõ": 60,
+      "vai engine | không đối chiếu": 28,
+      "công suất (theo bản ghi mất) | không đối chiếu": 128,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 2
+     }
+    ],
+    [
+     "zhengchi-power",
+     {
+      "vai engine | không đối chiếu": 522,
+      "công suất (theo bản ghi mất) | không đối chiếu": 1044,
+      "vai engine (ô kia) | không đối chiếu": 3
+     }
+    ],
+    [
+     "cgm-italia",
+     {
+      "vai engine | xác nhận": 202,
+      "công suất (theo bản ghi mất) | chưa rõ": 93,
+      "công suất (theo bản ghi mất) | xác nhận": 649,
+      "công suất (theo bản ghi mất) | không đối chiếu": 480,
+      "vai engine | không đối chiếu": 136
+     }
+    ],
+    [
+     "minsun-motor",
+     {
+      "vai engine | xác nhận": 353,
+      "công suất (theo bản ghi mất) | xác nhận": 433,
+      "vai engine (ô kia) | xác nhận": 353,
+      "công suất (theo bản ghi mất) | chưa rõ": 164,
+      "công suất (theo bản ghi mất) | không đối chiếu": 93,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 24,
+      "vai engine | không đối chiếu": 5,
+      "vai engine (ô kia) | không đối chiếu": 5
+     }
+    ],
+    [
+     "kaichen-jiangsu",
+     {
+      "vai engine | xác nhận": 285,
+      "công suất (theo bản ghi mất) | xác nhận": 1074,
+      "công suất (theo bản ghi mất) | chưa rõ": 60,
+      "công suất (theo bản ghi mất) | không đối chiếu": 6
+     }
+    ],
+    [
+     "bobig-power",
+     {
+      "vai engine | xác nhận": 214,
+      "công suất (theo bản ghi mất) | chưa rõ": 26,
+      "công suất (theo bản ghi mất) | xác nhận": 826,
+      "vai engine (ô kia) | xác nhận": 213,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 4,
+      "vai engine | không đối chiếu": 1,
+      "công suất (theo bản ghi mất) | không đối chiếu": 4,
+      "vai engine (ô kia) | không đối chiếu": 1
+     }
+    ],
+    [
+     "hichai-power",
+     {
+      "vai engine | xác nhận": 270,
+      "công suất (theo bản ghi mất) | xác nhận": 932,
+      "vai engine | không đối chiếu": 1,
+      "vai engine (ô kia) | không đối chiếu": 1,
+      "vai engine (ô kia) | xác nhận": 35
+     }
+    ],
+    [
+     "yunding-jiangsu",
+     {
+      "vai engine | xác nhận": 385,
+      "công suất (theo bản ghi mất) | xác nhận": 426,
+      "công suất (theo bản ghi mất) | chưa rõ": 168,
+      "công suất (theo bản ghi mất) | không đối chiếu": 190,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 2,
+      "vai engine | không đối chiếu": 8
+     }
+    ],
+    [
+     "suneco-linyi",
+     {
+      "vai engine | xác nhận": 200,
+      "công suất (theo bản ghi mất) | xác nhận": 752,
+      "vai engine (ô kia) | xác nhận": 197,
+      "công suất (theo bản ghi mất) | không đối chiếu": 2,
+      "công suất (theo bản ghi mất) | chưa rõ": 22
+     }
+    ],
+    [
+     "gb-power",
+     {
+      "vai engine | xác nhận": 225,
+      "công suất (theo bản ghi mất) | xác nhận": 751,
+      "công suất (theo bản ghi mất) | chưa rõ": 121,
+      "vai engine | không đối chiếu": 10,
+      "công suất (theo bản ghi mất) | không đối chiếu": 46,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 14
+     }
+    ],
+    [
+     "fdk-energy",
+     {
+      "vai engine | xác nhận": 185,
+      "công suất (theo bản ghi mất) | xác nhận": 675,
+      "vai engine (ô kia) | xác nhận": 184,
+      "công suất (theo bản ghi mất) | chưa rõ": 53,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 8,
+      "vai engine | không đối chiếu": 3,
+      "công suất (theo bản ghi mất) | không đối chiếu": 16,
+      "vai engine (ô kia) | không đối chiếu": 3
+     }
+    ],
+    [
+     "sanq-power",
+     {
+      "vai engine | xác nhận": 201,
+      "công suất (theo bản ghi mất) | xác nhận": 482,
+      "vai engine (ô kia) | xác nhận": 148,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 4,
+      "công suất (theo bản ghi mất) | chưa rõ": 20,
+      "vai engine | không đối chiếu": 32,
+      "công suất (theo bản ghi mất) | không đối chiếu": 128,
+      "vai engine (ô kia) | không đối chiếu": 32
+     }
+    ],
+    [
+     "starlight-power",
+     {
+      "vai engine | xác nhận": 338,
+      "công suất (theo bản ghi mất) | xác nhận": 602,
+      "vai engine | không đối chiếu": 10,
+      "công suất (theo bản ghi mất) | không đối chiếu": 21,
+      "công suất (theo bản ghi mất) | chưa rõ": 63,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 4
+     }
+    ],
+    [
+     "vantek-jiangsu",
+     {
+      "vai engine | xác nhận": 205,
+      "công suất (theo bản ghi mất) | chưa rõ": 101,
+      "công suất (theo bản ghi mất) | xác nhận": 644,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 2,
+      "vai engine | không đối chiếu": 13,
+      "công suất (theo bản ghi mất) | không đối chiếu": 73
+     }
+    ],
+    [
+     "world-power-fuzhou",
+     {
+      "vai engine | không đối chiếu": 8,
+      "công suất (theo bản ghi mất) | không đối chiếu": 40,
+      "vai engine | xác nhận": 185,
+      "công suất (theo bản ghi mất) | xác nhận": 706,
+      "công suất (theo bản ghi mất) | chưa rõ": 17,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 1
+     }
+    ],
+    [
+     "wiseke-taizhou",
+     {
+      "vai engine | xác nhận": 192,
+      "công suất (theo bản ghi mất) | xác nhận": 745,
+      "công suất (theo bản ghi mất) | chưa rõ": 7,
+      "vai engine | không đối chiếu": 1,
+      "công suất (theo bản ghi mất) | không đối chiếu": 2
+     }
+    ],
+    [
+     "welland-power",
+     {
+      "vai engine | xác nhận": 254,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 239,
+      "vai engine (ô kia) | xác nhận": 254,
+      "công suất (theo bản ghi mất) | chưa rõ": 15,
+      "vai engine | không đối chiếu": 43,
+      "công suất (theo bản ghi mất) | không đối chiếu": 43,
+      "vai engine (ô kia) | không đối chiếu": 43
+     }
+    ],
+    [
+     "haifeng-taizhou",
+     {
+      "vai engine | xác nhận": 263,
+      "công suất (theo bản ghi mất) | chưa rõ": 41,
+      "công suất (theo bản ghi mất) | xác nhận": 465,
+      "vai engine | không đối chiếu": 4,
+      "công suất (theo bản ghi mất) | không đối chiếu": 22,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 6
+     }
+    ],
+    [
+     "baifa-power",
+     {
+      "vai engine | xác nhận": 162,
+      "công suất (theo bản ghi mất) | không đối chiếu": 171,
+      "vai engine (ô kia) | xác nhận": 79,
+      "công suất (theo bản ghi mất) | xác nhận": 230,
+      "vai engine | không đối chiếu": 62,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 3,
+      "công suất (theo bản ghi mất) | chưa rõ": 44,
+      "vai engine (ô kia) | không đối chiếu": 36
+     }
+    ],
+    [
+     "taihai-taizhou",
+     {
+      "vai engine | xác nhận": 230,
+      "công suất (theo bản ghi mất) | xác nhận": 358,
+      "công suất (theo bản ghi mất) | không đối chiếu": 130,
+      "công suất (theo bản ghi mất) | chưa rõ": 27,
+      "vai engine | không đối chiếu": 34
+     }
+    ],
+    [
+     "mingbang-mbkl",
+     {
+      "vai engine | xác nhận": 147,
+      "công suất (theo bản ghi mất) | không đối chiếu": 34,
+      "công suất (theo bản ghi mất) | chưa rõ": 117,
+      "công suất (theo bản ghi mất) | xác nhận": 430,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 23,
+      "vai engine | không đối chiếu": 4
+     }
+    ],
+    [
+     "kangwo-guangdong",
+     {
+      "vai engine | xác nhận": 206,
+      "công suất (theo bản ghi mất) | xác nhận": 291,
+      "vai engine | không đối chiếu": 33,
+      "công suất (theo bản ghi mất) | không đối chiếu": 126,
+      "công suất (theo bản ghi mất) | chưa rõ": 57,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 2
+     }
+    ],
+    [
+     "stone-power",
+     {
+      "vai engine | không đối chiếu": 62,
+      "vai engine | xác nhận": 104,
+      "công suất (theo bản ghi mất) | xác nhận": 411,
+      "vai engine (ô kia) | xác nhận": 104,
+      "công suất (theo bản ghi mất) | không đối chiếu": 4,
+      "vai engine (ô kia) | không đối chiếu": 1,
+      "công suất (theo bản ghi mất) | chưa rõ": 5
+     }
+    ],
+    [
+     "hosem-power",
+     {
+      "vai engine | xác nhận": 140,
+      "công suất (theo bản ghi mất) | chưa rõ": 9,
+      "công suất (theo bản ghi mất) | xác nhận": 531,
+      "công suất (theo bản ghi mất) | không đối chiếu": 4
+     }
+    ],
+    [
+     "huadong-yangzhou",
+     {
+      "vai engine | xác nhận": 122,
+      "công suất (theo bản ghi mất) | xác nhận": 376,
+      "công suất (theo bản ghi mất) | chưa rõ": 61,
+      "công suất (theo bản ghi mất) | không đối chiếu": 48,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 1
+     }
+    ],
+    [
+     "mamo-power",
+     {
+      "vai engine | xác nhận": 123,
+      "công suất (theo bản ghi mất) | xác nhận": 483,
+      "công suất (theo bản ghi mất) | chưa rõ": 1
+     }
+    ],
+    [
+     "keliang-fuan",
+     {
+      "vai engine | xác nhận": 98,
+      "công suất (theo bản ghi mất) | xác nhận": 392,
+      "vai engine (ô kia) | xác nhận": 82
+     }
+    ],
+    [
+     "runda-fujian",
+     {
+      "vai engine | xác nhận": 113,
+      "công suất (theo bản ghi mất) | xác nhận": 430,
+      "công suất (theo bản ghi mất) | chưa rõ": 18,
+      "công suất (theo bản ghi mất) | không đối chiếu": 2,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 2
+     }
+    ],
+    [
+     "frs-shenyang",
+     {
+      "vai engine | xác nhận": 185,
+      "công suất (theo bản ghi mất) | xác nhận": 323,
+      "công suất (theo bản ghi mất) | chưa rõ": 37,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 5,
+      "công suất (theo bản ghi mất) | không đối chiếu": 9,
+      "vai engine | không đối chiếu": 2
+     }
+    ],
+    [
+     "jianghao-genset",
+     {
+      "vai engine | xác nhận": 153,
+      "công suất (theo bản ghi mất) | xác nhận": 261,
+      "công suất (theo bản ghi mất) | chưa rõ": 19,
+      "công suất (theo bản ghi mất) | không đối chiếu": 82,
+      "vai engine | không đối chiếu": 29
+     }
+    ],
+    [
+     "honny-dongguan",
+     {
+      "vai engine | không đối chiếu": 65,
+      "công suất (theo bản ghi mất) | không đối chiếu": 298,
+      "vai engine (ô kia) | không đối chiếu": 65,
+      "vai engine | xác nhận": 19,
+      "công suất (theo bản ghi mất) | xác nhận": 37,
+      "vai engine (ô kia) | xác nhận": 19,
+      "công suất (theo bản ghi mất) | chưa rõ": 1
+     }
+    ],
+    [
+     "meao-jiangsu",
+     {
+      "vai engine | xác nhận": 79,
+      "công suất (theo bản ghi mất) | xác nhận": 295,
+      "vai engine (ô kia) | xác nhận": 79,
+      "công suất (theo bản ghi mất) | chưa rõ": 11
+     }
+    ],
+    [
+     "power-hf",
+     {
+      "vai engine | xác nhận": 132,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 4,
+      "công suất (theo bản ghi mất) | chưa rõ": 36,
+      "vai engine | không đối chiếu": 18,
+      "công suất (theo bản ghi mất) | không đối chiếu": 44,
+      "công suất (theo bản ghi mất) | xác nhận": 216
+     }
+    ],
+    [
+     "kente-power",
+     {
+      "vai engine | xác nhận": 94,
+      "công suất (theo bản ghi mất) | xác nhận": 184,
+      "vai engine (ô kia) | xác nhận": 50,
+      "công suất (theo bản ghi mất) | chưa rõ": 16,
+      "công suất (theo bản ghi mất) | không đối chiếu": 80,
+      "vai engine | không đối chiếu": 2,
+      "vai engine (ô kia) | không đối chiếu": 2
+     }
+    ],
+    [
+     "simpson-power",
+     {
+      "vai engine | xác nhận": 121,
+      "công suất (theo bản ghi mất) | xác nhận": 182,
+      "công suất (theo bản ghi mất) | chưa rõ": 30,
+      "công suất (theo bản ghi mất) | không đối chiếu": 44,
+      "vai engine | không đối chiếu": 18
+     }
+    ],
+    [
+     "jinlongteng-fujian",
+     {
+      "vai engine | xác nhận": 63,
+      "công suất (theo bản ghi mất) | xác nhận": 244,
+      "vai engine (ô kia) | xác nhận": 63,
+      "vai engine | không đối chiếu": 1,
+      "công suất (theo bản ghi mất) | không đối chiếu": 4,
+      "vai engine (ô kia) | không đối chiếu": 1
+     }
+    ],
+    [
+     "xinzhengfa",
+     {
+      "vai engine | xác nhận": 60,
+      "công suất (theo bản ghi mất) | xác nhận": 24,
+      "vai engine | không đối chiếu": 51,
+      "công suất (theo bản ghi mất) | không đối chiếu": 138,
+      "công suất (theo bản ghi mất) | chưa rõ": 26
+     }
+    ],
+    [
+     "eastern-lion-fuan",
+     {
+      "vai engine | xác nhận": 11,
+      "vai engine (ô kia) | xác nhận": 7,
+      "vai engine | không đối chiếu": 54,
+      "vai engine (ô kia) | không đối chiếu": 9,
+      "công suất (theo bản ghi mất) | không đối chiếu": 208
+     }
+    ],
+    [
+     "agestar",
+     {
+      "vai engine | xác nhận": 44,
+      "công suất (theo bản ghi mất) | xác nhận": 175,
+      "vai engine (ô kia) | xác nhận": 44,
+      "vai engine | không đối chiếu": 2,
+      "công suất (theo bản ghi mất) | không đối chiếu": 8,
+      "vai engine (ô kia) | không đối chiếu": 2,
+      "công suất (theo bản ghi mất) | chưa rõ": 1
+     }
+    ],
+    [
+     "fengmao-weifang",
+     {
+      "vai engine | xác nhận": 50,
+      "công suất (theo bản ghi mất) | xác nhận": 154,
+      "vai engine | không đối chiếu": 5,
+      "công suất (theo bản ghi mất) | không đối chiếu": 16,
+      "vai engine (ô kia) | xác nhận": 31,
+      "công suất (theo bản ghi mất) | chưa rõ": 8,
+      "vai engine (ô kia) | không đối chiếu": 3
+     }
+    ],
+    [
+     "eastpower-genset",
+     {
+      "vai engine | xác nhận": 51,
+      "công suất (theo bản ghi mất) | xác nhận": 197,
+      "công suất (theo bản ghi mất) | chưa rõ": 5
+     }
+    ],
+    [
+     "green-power-generators",
+     {
+      "vai engine | xác nhận": 204,
+      "vai engine | không đối chiếu": 39
+     }
+    ],
+    [
+     "yongcai-elecmama",
+     {
+      "vai engine | xác nhận": 36,
+      "công suất (theo bản ghi mất) | xác nhận": 126,
+      "vai engine (ô kia) | xác nhận": 36,
+      "công suất (theo bản ghi mất) | không đối chiếu": 2,
+      "công suất (theo bản ghi mất) | chưa rõ": 16
+     }
+    ],
+    [
+     "hanyang-weifang",
+     {
+      "vai engine | xác nhận": 184,
+      "vai engine | không đối chiếu": 6
+     }
+    ],
+    [
+     "lees-power",
+     {
+      "vai engine | xác nhận": 36,
+      "công suất (theo bản ghi mất) | xác nhận": 135,
+      "công suất (theo bản ghi mất) | chưa rõ": 9
+     }
+    ],
+    [
+     "sunkings",
+     {
+      "vai engine | không đối chiếu": 1,
+      "vai engine | xác nhận": 34,
+      "công suất (theo bản ghi mất) | xác nhận": 101,
+      "công suất (theo bản ghi mất) | chưa rõ": 31,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 4
+     }
+    ],
+    [
+     "senci-jiangsu",
+     {
+      "vai engine | xác nhận": 103,
+      "công suất (theo bản ghi mất) | xác nhận": 66
+     }
+    ],
+    [
+     "senci",
+     {
+      "vai engine | xác nhận": 103,
+      "công suất (theo bản ghi mất) | xác nhận": 66
+     }
+    ],
+    [
+     "sunny-weifang",
+     {
+      "vai engine | xác nhận": 32,
+      "công suất (theo bản ghi mất) | chưa rõ": 54,
+      "công suất (theo bản ghi mất) | xác nhận": 74,
+      "vai engine | không đối chiếu": 1,
+      "công suất (theo bản ghi mất) | không đối chiếu": 4
+     }
+    ],
+    [
+     "huayuan-weifang",
+     {
+      "vai engine | không đối chiếu": 28,
+      "công suất (theo bản ghi mất) | không đối chiếu": 57,
+      "vai engine | xác nhận": 49,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 9,
+      "công suất (theo bản ghi mất) | chưa rõ": 12,
+      "công suất (theo bản ghi mất) | xác nhận": 5
+     }
+    ],
+    [
+     "huipu-power",
+     {
+      "vai engine | không đối chiếu": 36,
+      "công suất (theo bản ghi mất) | không đối chiếu": 4,
+      "vai engine | xác nhận": 113,
+      "công suất (theo bản ghi mất) | chưa rõ": 1,
+      "công suất (theo bản ghi mất) | xác nhận": 1
+     }
+    ],
+    [
+     "biao-xiamen",
+     {
+      "vai engine | không đối chiếu": 28,
+      "công suất (theo bản ghi mất) | không đối chiếu": 112
+     }
+    ],
+    [
+     "fengfa-taizhou",
+     {
+      "vai engine | xác nhận": 42,
+      "công suất (theo bản ghi mất) | xác nhận": 82,
+      "vai engine | không đối chiếu": 1,
+      "công suất (theo bản ghi mất) | không đối chiếu": 2,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 2
+     }
+    ],
+    [
+     "tellhow-power",
+     {
+      "vai engine | xác nhận": 116,
+      "vai engine | không đối chiếu": 9
+     }
+    ],
+    [
+     "voltgent",
+     {
+      "vai engine | xác nhận": 14,
+      "công suất (theo bản ghi mất) | xác nhận": 39,
+      "công suất (theo bản ghi mất) | chưa rõ": 15,
+      "công suất (theo bản ghi mất) | không đối chiếu": 38,
+      "vai engine | không đối chiếu": 9
+     }
+    ],
+    [
+     "nenjo-generator",
+     {
+      "vai engine | xác nhận": 110
+     }
+    ],
+    [
+     "sutong-fujian",
+     {
+      "vai engine | xác nhận": 22,
+      "công suất (theo bản ghi mất) | xác nhận": 84,
+      "công suất (theo bản ghi mất) | chưa rõ": 4
+     }
+    ],
+    [
+     "aj-power",
+     {
+      "vai engine | không đối chiếu": 32,
+      "công suất (theo bản ghi mất) | không đối chiếu": 64
+     }
+    ],
+    [
+     "tecgen-fujian",
+     {
+      "vai engine | xác nhận": 15,
+      "công suất (theo bản ghi mất) | xác nhận": 60,
+      "vai engine (ô kia) | xác nhận": 15
+     }
+    ],
+    [
+     "tecnogen",
+     {
+      "vai engine | không đối chiếu": 27,
+      "công suất (theo bản ghi mất) | không đối chiếu": 58
+     }
+    ],
+    [
+     "kingway-power",
+     {
+      "vai engine | xác nhận": 15,
+      "công suất (theo bản ghi mất) | chưa rõ": 20,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 4,
+      "công suất (theo bản ghi mất) | xác nhận": 28,
+      "vai engine | không đối chiếu": 1,
+      "công suất (theo bản ghi mất) | không đối chiếu": 12
+     }
+    ],
+    [
+     "mhiet",
+     {
+      "vai engine | không đối chiếu": 50,
+      "vai engine | xác nhận": 29
+     }
+    ],
+    [
+     "shunfeng-changzhou",
+     {
+      "vai engine | xác nhận": 68,
+      "vai engine | không đối chiếu": 5
+     }
+    ],
+    [
+     "xingguang-jiangsu",
+     {
+      "vai engine | xác nhận": 29,
+      "công suất (theo bản ghi mất) | không đối chiếu": 10,
+      "công suất (theo bản ghi mất) | xác nhận": 13,
+      "công suất (theo bản ghi mất) | chưa rõ": 21
+     }
+    ],
+    [
+     "fukangsi-yangzhou",
+     {
+      "vai engine | xác nhận": 31,
+      "công suất (theo bản ghi mất) | xác nhận": 16,
+      "công suất (theo bản ghi mất) | chưa rõ": 16,
+      "công suất (theo bản ghi mất) | không đối chiếu": 4
+     }
+    ],
+    [
+     "googol",
+     {
+      "vai engine | xác nhận": 9,
+      "công suất (theo bản ghi mất) | xác nhận": 18,
+      "công suất (theo bản ghi mất) | không đối chiếu": 26,
+      "vai engine (ô kia) | xác nhận": 9,
+      "vai engine | không đối chiếu": 2,
+      "vai engine (ô kia) | không đối chiếu": 2
+     }
+    ],
+    [
+     "beidou-yangzhou",
+     {
+      "vai engine | xác nhận": 17,
+      "công suất (theo bản ghi mất) | chưa rõ": 3,
+      "công suất (theo bản ghi mất) | xác nhận": 29,
+      "công suất (theo bản ghi mất) | mâu thuẫn": 2
+     }
+    ],
+    [
+     "weichai-heavy-machinery",
+     {
+      "vai engine | xác nhận": 4,
+      "công suất (theo bản ghi mất) | xác nhận": 14,
+      "vai engine | không đối chiếu": 6,
+      "công suất (theo bản ghi mất) | không đối chiếu": 12,
+      "vai engine (ô kia) | không đối chiếu": 6
+     }
+    ],
+    [
+     "comappower",
+     {
+      "vai engine | không đối chiếu": 8,
+      "công suất (theo bản ghi mất) | không đối chiếu": 32
+     }
+    ],
+    [
+     "bdadl-shanghai",
+     {
+      "vai engine | xác nhận": 7,
+      "công suất (theo bản ghi mất) | xác nhận": 14
+     }
+    ],
+    [
+     "superwatt-swt",
+     {
+      "vai engine | xác nhận": 6,
+      "công suất (theo bản ghi mất) | chưa rõ": 2,
+      "công suất (theo bản ghi mất) | xác nhận": 10
+     }
+    ],
+    [
+     "zhengdian-zhengzhou",
+     {
+      "vai engine | không đối chiếu": 6,
+      "công suất (theo bản ghi mất) | không đối chiếu": 10
+     }
+    ],
+    [
+     "bruno-generators",
+     {
+      "vai engine | không đối chiếu": 5,
+      "công suất (theo bản ghi mất) | không đối chiếu": 8
+     }
+    ],
+    [
+     "rcg-power",
+     {
+      "vai engine | không đối chiếu": 2,
+      "công suất (theo bản ghi mất) | không đối chiếu": 8
+     }
+    ],
+    [
+     "yingtai-jiangsu",
+     {
+      "vai engine | xác nhận": 4,
+      "công suất (theo bản ghi mất) | xác nhận": 6
+     }
+    ],
+    [
+     "penlucky",
+     {
+      "vai engine | không đối chiếu": 4,
+      "vai engine (ô kia) | không đối chiếu": 4
+     }
+    ],
+    [
+     "elitech-power",
+     {
+      "vai engine | không đối chiếu": 7
+     }
+    ],
+    [
+     "yihua-fujian",
+     {
+      "vai engine | xác nhận": 1,
+      "công suất (theo bản ghi mất) | xác nhận": 4,
+      "vai engine (ô kia) | xác nhận": 1
+     }
+    ],
+    [
+     "yingtai-group",
+     {
+      "vai engine | xác nhận": 4,
+      "công suất (theo bản ghi mất) | xác nhận": 2
+     }
+    ],
+    [
+     "jlmech-wuhan",
+     {
+      "vai engine | không đối chiếu": 1,
+      "công suất (theo bản ghi mất) | không đối chiếu": 2
+     }
+    ],
+    [
+     "liangzi-yangzhou",
+     {
+      "vai engine | xác nhận": 1,
+      "công suất (theo bản ghi mất) | chưa rõ": 2
+     }
+    ],
+    [
+     "gdf-guangzhou",
+     {
+      "vai engine | không đối chiếu": 2
+     }
+    ],
+    [
+     "huatai-yangzhou",
+     {
+      "vai engine | xác nhận": 1,
+      "công suất (theo bản ghi mất) | xác nhận": 1
+     }
+    ],
+    [
+     "repower-gas",
+     {
+      "vai engine | không đối chiếu": 1
+     }
+    ],
+    [
+     "winco",
+     {
+      "vai engine | không đối chiếu": 1
+     }
+    ]
+   ]
+  }
+ },
+ "totals": {
+  "records": 59222,
+  "tables": 6521,
+  "sups": 267
+ }
+}

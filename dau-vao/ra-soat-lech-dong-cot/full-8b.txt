@@ -1,0 +1,236 @@
+bản ghi cũ 59222, mới 59237 | khác 65 | chỉ cũ 3, chỉ mới 18 | bảng có đổi 7
+{"other":20,"power":16,"genset":15,"model":8,"voltage bỏ":29}
+
+[acepow-fuan n155 bảng 64] ×36
+  H: | Model | P | Hz | KW | kva | Model | Output | Engine
+  H: | Rated | Standby | Rated | Standby | Rated(KW) | Standy(kw) | Model
+    0 | APW-10.5 | 3 | 50 | 10.5 | 12 | 13 | 14 | BC164C | 10.8 | 12 | Y480BD
+        ⇒ other: null → BC164C
+    0 | APW-10.5 | 3 | 50 | 10.5 | 12 | 13 | 14 | BC164C | 10.8 | 12 | Y480BD
+        ⇒ THÊM bản ghi alternator BC164C
+    1 | APW-12 | 3 | 50 | 12 | 13 | 15 | 17 | BC164D | 12.8 | 14 | Y480BD
+        ⇒ other: null → BC164D
+    1 | APW-12 | 3 | 50 | 12 | 13 | 15 | 17 | BC164D | 12.8 | 14 | Y480BD
+        ⇒ THÊM bản ghi alternator BC164D
+    2 | APW-15 | 3 | 50 | 15 | 17 | 19 | 21 | BC164E | 15 | 17 | Y485BD
+        ⇒ other: null → BC164E
+    2 | APW-15 | 3 | 50 | 15 | 17 | 19 | 21 | BC164E | 15 | 17 | Y485BD
+        ⇒ THÊM bản ghi alternator BC164E
+    3 | APW-18 | 3 | 50 | 18 | 20 | 23 | 25 | BC184E | 18 | 20 | Y485BZD
+        ⇒ other: null → BC184E
+    3 | APW-18 | 3 | 50 | 18 | 20 | 23 | 25 | BC184E | 18 | 20 | Y485BZD
+        ⇒ THÊM bản ghi alternator BC184E
+    4 | APW-20 | 3 | 50 | 20 | 22 | 25 | 28 | BC184ES | 20 | 22 | Y485BZLD
+        ⇒ other: null → BC184ES
+    4 | APW-20 | 3 | 50 | 20 | 22 | 25 | 28 | BC184ES | 20 | 22 | Y485BZLD
+        ⇒ THÊM bản ghi alternator BC184ES
+    5 | APW-22 | 3 | 50 | 22 | 24 | 28 | 30 | BC184F | 22 | 24 | Y485BZLD
+        ⇒ other: null → BC184F
+    5 | APW-22 | 3 | 50 | 22 | 24 | 28 | 30 | BC184F | 22 | 24 | Y485BZLD
+        ⇒ THÊM bản ghi alternator BC184F
+    6 | APW-18 | 3 | 50 | 18 | 20 | 23 | 25 | BC184E | 18 | 20 | N4100DS-26
+        ⇒ other: null → BC184E
+    6 | APW-18 | 3 | 50 | 18 | 20 | 23 | 25 | BC184E | 18 | 20 | N4100DS-26
+        ⇒ THÊM bản ghi alternator BC184E
+    7 | APW-20 | 3 | 50 | 20 | 22 | 25 | 28 | BC184ES | 20 | 22 | N4100DS-26
+        ⇒ other: null → BC184ES
+    7 | APW-20 | 3 | 50 | 20 | 22 | 25 | 28 | BC184ES | 20 | 22 | N4100DS-26
+        ⇒ THÊM bản ghi alternator BC184ES
+    8 | APW-22 | 3 | 50 | 22 | 24 | 28 | 30 | BC184F | 22 | 24 | N4100DS-26
+        ⇒ other: null → BC184F
+    8 | APW-22 | 3 | 50 | 22 | 24 | 28 | 30 | BC184F | 22 | 24 | N4100DS-26
+        ⇒ THÊM bản ghi alternator BC184F
+    9 | APW-15 | 3 | 50 | 15 | 17 | 19 | 21 | BC164E | 15 | 17 | K4100DS
+        ⇒ other: null → BC164E
+    9 | APW-15 | 3 | 50 | 15 | 17 | 19 | 21 | BC164E | 15 | 17 | K4100DS
+        ⇒ THÊM bản ghi alternator BC164E
+   10 | APW-16 | 3 | 50 | 16 | 18 | 20 | 22 | BC184E | 18 | 20 | K4100DS
+        ⇒ other: null → BC184E
+   10 | APW-16 | 3 | 50 | 16 | 18 | 20 | 22 | BC184E | 18 | 20 | K4100DS
+        ⇒ THÊM bản ghi alternator BC184E
+   11 | APW-20 | 3 | 50 | 20 | 22 | 25 | 28 | BC184ES | 20 | 22 | K4100DS
+        ⇒ other: null → BC184ES
+   11 | APW-20 | 3 | 50 | 20 | 22 | 25 | 28 | BC184ES | 20 | 22 | K4100DS
+        ⇒ THÊM bản ghi alternator BC184ES
+   12 | APW-25 | 3 | 50 | 25 | 28 | 31 | 34 | BC184G | 25 | 28 | K4100DS
+        ⇒ other: null → BC184G
+   12 | APW-25 | 3 | 50 | 25 | 28 | 31 | 34 | BC184G | 25 | 28 | K4100DS
+        ⇒ THÊM bản ghi alternator BC184G
+   13 | APW-15 | 3 | 50 | 15 | 17 | 19 | 21 | BC164E | 15 | 17 | N4100DS-30
+        ⇒ other: null → BC164E
+   13 | APW-15 | 3 | 50 | 15 | 17 | 19 | 21 | BC164E | 15 | 17 | N4100DS-30
+        ⇒ THÊM bản ghi alternator BC164E
+   14 | APW-20 | 3 | 50 | 20 | 22 | 25 | 28 | BC184ES | 20 | 22 | N4100DS-30
+        ⇒ other: null → BC184ES
+   14 | APW-20 | 3 | 50 | 20 | 22 | 25 | 28 | BC184ES | 20 | 22 | N4100DS-30
+        ⇒ THÊM bản ghi alternator BC184ES
+   15 | APW-25 | 3 | 50 | 25 | 28 | 31 | 34 | BC184G | 25 | 28 | N4100DS-30
+        ⇒ other: null → BC184G
+   15 | APW-25 | 3 | 50 | 25 | 28 | 31 | 34 | BC184G | 25 | 28 | N4100DS-30
+        ⇒ THÊM bản ghi alternator BC184G
+   16 | APW-15 | 3 | 50 | 15 | 17 | 19 | 21 | BC164E | 15 | 17 | K4102DS
+        ⇒ other: null → BC164E
+   16 | APW-15 | 3 | 50 | 15 | 17 | 19 | 21 | BC164E | 15 | 17 | K4102DS
+        ⇒ THÊM bản ghi alternator BC164E
+   17 | APW-20 | 3 | 50 | 20 | 22 | 25 | 28 | BC184ES | 20 | 22 | K4102DS
+        ⇒ other: null → BC184ES
+   17 | APW-20 | 3 | 50 | 20 | 22 | 25 | 28 | BC184ES | 20 | 22 | K4102DS
+        ⇒ THÊM bản ghi alternator BC184ES
+
+[hosem-power n136 bảng 34] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 500/· S ·/22 → ∅
+
+[mecca-power n5001 bảng 41] ×16
+  H: | Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator
+   11 | MC1000D | 260 | 325 | 800 | 1000 | TCD12.1 |
+        ⇒ genset: MC1000D → MC413D; power: P 325/260 S 1000/800 → P 375/300 S 413/330
+   12 | MC413D | 300 | 375 | 330 | 413 | TCD12.1 |
+        ⇒ model: TCD12.1 → TCD13.0; genset: MC413D → MC495D; power: P 375/300 S 413/330 → P 450/360 S 495/396
+   13 | MC495D | 360 | 450 | 396 | 495 | TCD13.0 |
+        ⇒ genset: MC495D → MC550D; power: P 450/360 S 495/396 → P 500/400 S 550/440
+   14 | MC550D | 400 | 500 | 440 | 550 | TCD13.0 |
+        ⇒ model: TCD13.0 → BF6M1015-LA; genset: MC550D → MC248D; power: P 500/400 S 550/440 → P 225/180 S 248/198
+   15 | MC248D | 180 | 225 | 198 | 248 | BF6M1015-LA |
+        ⇒ model: BF6M1015-LA → BF6M1015C-LA; genset: MC248D → MC275D; power: P 225/180 S 248/198 → P 250/200 S 275/220
+   16 | MC275D | 200 | 250 | 220 | 275 | BF6M1015C-LA |
+        ⇒ genset: MC275D → MC303D; power: P 250/200 S 275/220 → P 275/220 S 303/242
+   17 | MC303D | 220 | 275 | 242 | 303 | BF6M1015C-LA |
+        ⇒ genset: MC303D → MC344D; power: P 275/220 S 303/242 → P 313/250 S 344/275
+   18 | MC344D | 250 | 313 | 275 | 344 | BF6M1015C-LA |
+        ⇒ genset: MC344D → MC385D; power: P 313/250 S 344/275 → P 350/280 S 385/308
+   19 | MC385D | 280 | 350 | 308 | 385 | BF6M1015C-LA |
+        ⇒ model: BF6M1015C-LA → BF6M1015CP-LA; genset: MC385D → MC413D; power: P 350/280 S 385/308 → P 375/300 S 413/330
+   20 | MC413D | 300 | 375 | 330 | 413 | BF6M1015CP-LA |
+        ⇒ model: BF6M1015CP-LA → BF8M1015C-LA; genset: MC413D → MC481D; power: P 375/300 S 413/330 → P 438/350 S 481/385
+   21 | MC481D | 350 | 438 | 385 | 481 | BF8M1015C-LA |
+        ⇒ genset: MC481D → MC495D; power: P 438/350 S 481/385 → P 450/360 S 495/396
+   22 | MC495D | 360 | 450 | 396 | 495 | BF8M1015C-LA |
+        ⇒ model: BF8M1015C-LA → BF8M1015CP-LA; genset: MC495D → MC523D; power: P 450/360 S 495/396 → P 475/380 S 523/418
+   23 | MC523D | 380 | 475 | 418 | 523 | BF8M1015CP-LA |
+        ⇒ genset: MC523D → MC550D; power: P 475/380 S 523/418 → P 500/400 S 550/440
+   24 | MC550D | 400 | 500 | 440 | 550 | BF8M1015CP-LA |
+        ⇒ genset: MC550D → MC605D; power: P 500/400 S 550/440 → P 550/440 S 605/484
+   25 | MC605D | 440 | 550 | 484 | 605 | BF8M1015CP-LA |
+        ⇒ genset: MC605D → MC619D; power: P 550/440 S 605/484 → P 563/450 S 619/495
+   26 | MC619D | 450 | 563 | 495 | 619 | BF8M1015CP-LA |
+        ⇒ MẤT bản ghi engine BF8M1015CP-LA
+
+[sr-genset n2001 bảng 0] ×2
+  H: | Frequency | Voltage | Rated power | Standby Power | Engine | Modle | Alternator | Modle | Specifications
+  H: | kW | kVA | kW | kVA
+   11 | 50 | 400 | 95 | 118.75 | 104.5 | 130.625 | SRGENSET | 4FWZL1 | SRGENSET | SAL274C2 | PDF
+        ⇒ voltage: 104.5 → ∅
+   11 | 50 | 400 | 95 | 118.75 | 104.5 | 130.625 | SRGENSET | 4FWZL1 | SRGENSET | SAL274C2 | PDF
+        ⇒ voltage: 104.5 → ∅
+
+[sr-genset n2004 bảng 6] ×27
+  H: | Frequency | Voltage | Standy Power | Backup Power | Engine | Model | Motor | Model
+  H: | kW | kVA | kW | kVA
+   14 | 50 | 400 | 108 | 135 | 119 | 149 | Perkins | 1106A-70TG1 | Nidec | TAL-A44-H
+        ⇒ voltage: 119 → ∅
+   14 | 50 | 400 | 108 | 135 | 119 | 149 | Perkins | 1106A-70TG1 | Nidec | TAL-A44-H
+        ⇒ voltage: 119 → ∅
+   15 | 50 | 400 | 108 | 135 | 119 | 149 | Perkins | 1106A-70TG1 | SRGENSET | SAL274D3
+        ⇒ voltage: 119 → ∅
+   16 | 50 | 400 | 120 | 150 | 144 | 165 | Perkins | 1106A-70TAG2 | Nidec | TAL-A44-J
+        ⇒ voltage: 144 → ∅
+   16 | 50 | 400 | 120 | 150 | 144 | 165 | Perkins | 1106A-70TAG2 | Nidec | TAL-A44-J
+        ⇒ voltage: 144 → ∅
+   17 | 50 | 400 | 120 | 150 | 144 | 165 | Perkins | 1106A-70TAG2 | SRGENSET | SAL274E3
+        ⇒ voltage: 144 → ∅
+   18 | 50 | 400 | 160 | 200 | 176 | 220 | Perkins | 1106A-70TAG4 | Nidec | TAL-A44-M
+        ⇒ voltage: 176 → ∅
+   18 | 50 | 400 | 160 | 200 | 176 | 220 | Perkins | 1106A-70TAG4 | Nidec | TAL-A44-M
+        ⇒ voltage: 176 → ∅
+   19 | 50 | 400 | 160 | 200 | 176 | 220 | Perkins | 1106A-70TAG4 | SRGENSET | SAL274K5
+        ⇒ voltage: 176 → ∅
+   20 | 50 | 400 | 200 | 250 | 220 | 275 | Perkins | 1206A-E70TTAG3 | Nidec | TAL-A46-D
+        ⇒ voltage: 220 → ∅
+   20 | 50 | 400 | 200 | 250 | 220 | 275 | Perkins | 1206A-E70TTAG3 | Nidec | TAL-A46-D
+        ⇒ voltage: 220 → ∅
+   21 | 50 | 400 | 200 | 250 | 220 | 275 | Perkins | 1206A-E70TTAG3 | SRGENSET | SAL274M7
+        ⇒ voltage: 220 → ∅
+   22 | 50 | 400 | 240 | 300 | 264 | 330 | Perkins | 1706A-E93TAG1 L | Nidec | TAL-A46-F
+        ⇒ voltage: 264 → ∅
+   22 | 50 | 400 | 240 | 300 | 264 | 330 | Perkins | 1706A-E93TAG1 L | Nidec | TAL-A46-F
+        ⇒ voltage: 264 → ∅
+   23 | 50 | 400 | 240 | 300 | 264 | 330 | Perkins | 1706A-E93TAG1 L | SRGENSET | SAL314C2
+        ⇒ voltage: 264 → ∅
+   24 | 50 | 400 | 280 | 350 | 308 | 385 | Perkins | 2206C-E13TAG2 L | Nidec | TAL-A46-H
+        ⇒ voltage: 308 → ∅
+   24 | 50 | 400 | 280 | 350 | 308 | 385 | Perkins | 2206C-E13TAG2 L | Nidec | TAL-A46-H
+        ⇒ voltage: 308 → ∅
+   25 | 50 | 400 | 280 | 350 | 308 | 385 | Perkins | 2206C-E13TAG2 L | SRGENSET | SAL314F3
+        ⇒ voltage: 308 → ∅
+   26 | 50 | 400 | 320 | 400 | 352 | 440 | Perkins | 2206D-E13TAG3 L | Nidec | TAL-A473-A
+        ⇒ voltage: 352 → ∅
+   26 | 50 | 400 | 320 | 400 | 352 | 440 | Perkins | 2206D-E13TAG3 L | Nidec | TAL-A473-A
+        ⇒ voltage: 352 → ∅
+   27 | 50 | 400 | 320 | 400 | 352 | 440 | Perkins | 2206D-E13TAG3 L | SRGENSET | SAL314H4
+        ⇒ voltage: 352 → ∅
+   28 | 50 | 400 | 400 | 500 | 440 | 550 | Perkins | 2506C-E15TAG2 L | Nidec | TAL-A473-C
+        ⇒ voltage: 440 → ∅
+   28 | 50 | 400 | 400 | 500 | 440 | 550 | Perkins | 2506C-E15TAG2 L | Nidec | TAL-A473-C
+        ⇒ voltage: 440 → ∅
+   29 | 50 | 400 | 400 | 500 | 440 | 550 | Perkins | 2506C-E15TAG2 L | SRGENSET | SAL354B1
+        ⇒ voltage: 440 → ∅
+   30 | 50 | 400 | 520 | 650 | 572 | 715 | Perkins | 2806A-E18TAG2 L | Nidec | TAL-A473-F
+        ⇒ voltage: 572 → ∅
+   30 | 50 | 400 | 520 | 650 | 572 | 715 | Perkins | 2806A-E18TAG2 L | Nidec | TAL-A473-F
+        ⇒ voltage: 572 → ∅
+   31 | 50 | 400 | 520 | 650 | 572 | 715 | Perkins | 2806A-E18TAG2 L | SRGENSET | SAL354F4
+        ⇒ voltage: 572 → ∅
+
+[vantek-jiangsu n101 bảng 0] ×2
+  H: | 发电机组规格 | 柴油机规格 | 机组外形
+  H: | 型号 | 额定功率 | 型号 | 功率 | 汽缸数 | 外形 尺寸 | 重量
+  H: | kw | kva | kw | L-W-H(mm) | (kg)
+   11 | CCFJ280J-WTP | 280 | 3S0 | N855-DM | 317 | 6 | 2998-1000-1790 | 2950
+        ⇒ model: 3S0 → N855-DM; other: N855-DM → null
+   11 | CCFJ280J-WTP | 280 | 3S0 | N855-DM | 317 | 6 | 2998-1000-1790 | 2950
+        ⇒ MẤT bản ghi alternator N855-DM
+
+[vantek-jiangsu n101 bảng 1] ×2
+  H: | 发电机组规格 | 柴油机规格 | 机组外形
+  H: | 型号 | 额定功率 | 型号 | 功率 | 汽缸数 | 外形 尺寸 | 重量
+  H: | kw | kva | kw | L-W-H(mm) | (kg)
+    7 | CCFJ250Y-WTP | 250 | 312.S | NTA855-DM | 284 | 6 | 3020-1100-1750 | 2850
+        ⇒ model: 312.S → NTA855-DM; other: NTA855-DM → null
+    7 | CCFJ250Y-WTP | 250 | 312.S | NTA855-DM | 284 | 6 | 3020-1100-1750 | 2850
+        ⇒ MẤT bản ghi alternator NTA855-DM
+
+==== tự kiểm số (verSpec) ====
+(!) [sr-genset n2001 bảng 0 voltage] dòng 11: 104.5 → ∅ (nhãn "Voltage") | {"rated":{"kW":95,"kVA":118.75},"standby":{"kW":104.5,"kVA":130.625}} | | 50 | 400 | 95 | 118.75 | 104.5 | 130.625 | SRGENSET | 4FWZL1 | SRGENSET | SAL274C2 | PDF
+(!) [sr-genset n2001 bảng 0 voltage] dòng 11: 104.5 → ∅ (nhãn "Voltage") | {"rated":{"kW":95,"kVA":118.75},"standby":{"kW":104.5,"kVA":130.625}} | | 50 | 400 | 95 | 118.75 | 104.5 | 130.625 | SRGENSET | 4FWZL1 | SRGENSET | SAL274C2 | PDF
+(!) [sr-genset n2004 bảng 6 voltage] dòng 14: 119 → ∅ (nhãn "Voltage") | {"rated":{"kW":108,"kVA":135},"standby":{"kW":119,"kVA":149}} | | 50 | 400 | 108 | 135 | 119 | 149 | Perkins | 1106A-70TG1 | Nidec | TAL-A44-H
+(!) [sr-genset n2004 bảng 6 voltage] dòng 14: 119 → ∅ (nhãn "Voltage") | {"rated":{"kW":108,"kVA":135},"standby":{"kW":119,"kVA":149}} | | 50 | 400 | 108 | 135 | 119 | 149 | Perkins | 1106A-70TG1 | Nidec | TAL-A44-H
+(!) [sr-genset n2004 bảng 6 voltage] dòng 15: 119 → ∅ (nhãn "Voltage") | {"rated":{"kW":108,"kVA":135},"standby":{"kW":119,"kVA":149}} | | 50 | 400 | 108 | 135 | 119 | 149 | Perkins | 1106A-70TG1 | SRGENSET | SAL274D3
+(!) [sr-genset n2004 bảng 6 voltage] dòng 16: 144 → ∅ (nhãn "Voltage") | {"rated":{"kW":120,"kVA":150},"standby":{"kW":144,"kVA":165}} | | 50 | 400 | 120 | 150 | 144 | 165 | Perkins | 1106A-70TAG2 | Nidec | TAL-A44-J
+(!) [sr-genset n2004 bảng 6 voltage] dòng 16: 144 → ∅ (nhãn "Voltage") | {"rated":{"kW":120,"kVA":150},"standby":{"kW":144,"kVA":165}} | | 50 | 400 | 120 | 150 | 144 | 165 | Perkins | 1106A-70TAG2 | Nidec | TAL-A44-J
+(!) [sr-genset n2004 bảng 6 voltage] dòng 17: 144 → ∅ (nhãn "Voltage") | {"rated":{"kW":120,"kVA":150},"standby":{"kW":144,"kVA":165}} | | 50 | 400 | 120 | 150 | 144 | 165 | Perkins | 1106A-70TAG2 | SRGENSET | SAL274E3
+(!) [sr-genset n2004 bảng 6 voltage] dòng 18: 176 → ∅ (nhãn "Voltage") | {"rated":{"kW":160,"kVA":200},"standby":{"kW":176,"kVA":220}} | | 50 | 400 | 160 | 200 | 176 | 220 | Perkins | 1106A-70TAG4 | Nidec | TAL-A44-M
+(!) [sr-genset n2004 bảng 6 voltage] dòng 18: 176 → ∅ (nhãn "Voltage") | {"rated":{"kW":160,"kVA":200},"standby":{"kW":176,"kVA":220}} | | 50 | 400 | 160 | 200 | 176 | 220 | Perkins | 1106A-70TAG4 | Nidec | TAL-A44-M
+(!) [sr-genset n2004 bảng 6 voltage] dòng 19: 176 → ∅ (nhãn "Voltage") | {"rated":{"kW":160,"kVA":200},"standby":{"kW":176,"kVA":220}} | | 50 | 400 | 160 | 200 | 176 | 220 | Perkins | 1106A-70TAG4 | SRGENSET | SAL274K5
+(!) [sr-genset n2004 bảng 6 voltage] dòng 20: 220 → ∅ (nhãn "Voltage") | {"rated":{"kW":200,"kVA":250},"standby":{"kW":220,"kVA":275}} | | 50 | 400 | 200 | 250 | 220 | 275 | Perkins | 1206A-E70TTAG3 | Nidec | TAL-A46-D
+(!) [sr-genset n2004 bảng 6 voltage] dòng 20: 220 → ∅ (nhãn "Voltage") | {"rated":{"kW":200,"kVA":250},"standby":{"kW":220,"kVA":275}} | | 50 | 400 | 200 | 250 | 220 | 275 | Perkins | 1206A-E70TTAG3 | Nidec | TAL-A46-D
+(!) [sr-genset n2004 bảng 6 voltage] dòng 21: 220 → ∅ (nhãn "Voltage") | {"rated":{"kW":200,"kVA":250},"standby":{"kW":220,"kVA":275}} | | 50 | 400 | 200 | 250 | 220 | 275 | Perkins | 1206A-E70TTAG3 | SRGENSET | SAL274M7
+(!) [sr-genset n2004 bảng 6 voltage] dòng 22: 264 → ∅ (nhãn "Voltage") | {"rated":{"kW":240,"kVA":300},"standby":{"kW":264,"kVA":330}} | | 50 | 400 | 240 | 300 | 264 | 330 | Perkins | 1706A-E93TAG1 L | Nidec | TAL-A46-F
+(!) [sr-genset n2004 bảng 6 voltage] dòng 22: 264 → ∅ (nhãn "Voltage") | {"rated":{"kW":240,"kVA":300},"standby":{"kW":264,"kVA":330}} | | 50 | 400 | 240 | 300 | 264 | 330 | Perkins | 1706A-E93TAG1 L | Nidec | TAL-A46-F
+(!) [sr-genset n2004 bảng 6 voltage] dòng 23: 264 → ∅ (nhãn "Voltage") | {"rated":{"kW":240,"kVA":300},"standby":{"kW":264,"kVA":330}} | | 50 | 400 | 240 | 300 | 264 | 330 | Perkins | 1706A-E93TAG1 L | SRGENSET | SAL314C2
+(!) [sr-genset n2004 bảng 6 voltage] dòng 24: 308 → ∅ (nhãn "Voltage") | {"rated":{"kW":280,"kVA":350},"standby":{"kW":308,"kVA":385}} | | 50 | 400 | 280 | 350 | 308 | 385 | Perkins | 2206C-E13TAG2 L | Nidec | TAL-A46-H
+(!) [sr-genset n2004 bảng 6 voltage] dòng 24: 308 → ∅ (nhãn "Voltage") | {"rated":{"kW":280,"kVA":350},"standby":{"kW":308,"kVA":385}} | | 50 | 400 | 280 | 350 | 308 | 385 | Perkins | 2206C-E13TAG2 L | Nidec | TAL-A46-H
+(!) [sr-genset n2004 bảng 6 voltage] dòng 25: 308 → ∅ (nhãn "Voltage") | {"rated":{"kW":280,"kVA":350},"standby":{"kW":308,"kVA":385}} | | 50 | 400 | 280 | 350 | 308 | 385 | Perkins | 2206C-E13TAG2 L | SRGENSET | SAL314F3
+(!) [sr-genset n2004 bảng 6 voltage] dòng 26: 352 → ∅ (nhãn "Voltage") | {"rated":{"kW":320,"kVA":400},"standby":{"kW":352,"kVA":440}} | | 50 | 400 | 320 | 400 | 352 | 440 | Perkins | 2206D-E13TAG3 L | Nidec | TAL-A473-A
+(!) [sr-genset n2004 bảng 6 voltage] dòng 26: 352 → ∅ (nhãn "Voltage") | {"rated":{"kW":320,"kVA":400},"standby":{"kW":352,"kVA":440}} | | 50 | 400 | 320 | 400 | 352 | 440 | Perkins | 2206D-E13TAG3 L | Nidec | TAL-A473-A
+(!) [sr-genset n2004 bảng 6 voltage] dòng 27: 352 → ∅ (nhãn "Voltage") | {"rated":{"kW":320,"kVA":400},"standby":{"kW":352,"kVA":440}} | | 50 | 400 | 320 | 400 | 352 | 440 | Perkins | 2206D-E13TAG3 L | SRGENSET | SAL314H4
+(!) [sr-genset n2004 bảng 6 voltage] dòng 28: 440 → ∅ (nhãn "Voltage") | {"rated":{"kW":400,"kVA":500},"standby":{"kW":440,"kVA":550}} | | 50 | 400 | 400 | 500 | 440 | 550 | Perkins | 2506C-E15TAG2 L | Nidec | TAL-A473-C
+(!) [sr-genset n2004 bảng 6 voltage] dòng 28: 440 → ∅ (nhãn "Voltage") | {"rated":{"kW":400,"kVA":500},"standby":{"kW":440,"kVA":550}} | | 50 | 400 | 400 | 500 | 440 | 550 | Perkins | 2506C-E15TAG2 L | Nidec | TAL-A473-C
+(!) [sr-genset n2004 bảng 6 voltage] dòng 29: 440 → ∅ (nhãn "Voltage") | {"rated":{"kW":400,"kVA":500},"standby":{"kW":440,"kVA":550}} | | 50 | 400 | 400 | 500 | 440 | 550 | Perkins | 2506C-E15TAG2 L | SRGENSET | SAL354B1
+(!) [sr-genset n2004 bảng 6 voltage] dòng 30: 572 → ∅ (nhãn "Voltage") | {"rated":{"kW":520,"kVA":650},"standby":{"kW":572,"kVA":715}} | | 50 | 400 | 520 | 650 | 572 | 715 | Perkins | 2806A-E18TAG2 L | Nidec | TAL-A473-F
+(!) [sr-genset n2004 bảng 6 voltage] dòng 30: 572 → ∅ (nhãn "Voltage") | {"rated":{"kW":520,"kVA":650},"standby":{"kW":572,"kVA":715}} | | 50 | 400 | 520 | 650 | 572 | 715 | Perkins | 2806A-E18TAG2 L | Nidec | TAL-A473-F
+(!) [sr-genset n2004 bảng 6 voltage] dòng 31: 572 → ∅ (nhãn "Voltage") | {"rated":{"kW":520,"kVA":650},"standby":{"kW":572,"kVA":715}} | | 50 | 400 | 520 | 650 | 572 | 715 | Perkins | 2806A-E18TAG2 L | SRGENSET | SAL354F4
+
+29  voltage bỏ: mới không kiểm được
+
+cần soát tay: 29
