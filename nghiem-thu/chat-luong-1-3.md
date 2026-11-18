@@ -36,7 +36,7 @@ PR NHÁP https://github.com/khoanguyenminh6868/GenSet-Pro/pull/929 (commit 6fa19
   - `config-bot.mjs` trên main KHÔNG đổi từ fc94789f tới d220b145 (git diff rỗng) nên số đo áp cho PR đã rebase.
 - Kết quả, đối chiếu với kỳ vọng của điều phối:
   - `blocked`: 48 dòng (51 bản ghi mức loại; 3 dòng có cờ cả động cơ lẫn đầu phát).
-  - Biến khỏi `all`: 544 lần xuất hiện của 32 dòng khác nhau. Cả 544 đều nằm trong danh sách bị chặn của lượt đó (`goneNotBlocked` = 0). 16 dòng còn lại không nằm trong dải công suất của gói nào.
+  - Biến khỏi `all`: 544 lần xuất hiện của 32 dòng khác nhau. Cả 544 đều nằm trong danh sách bị chặn của lượt đó (`goneNotBlocked` = 0). 16 dòng bị chặn còn lại không vào `all` của lượt nào ở cả main; em CHƯA soát từng dòng vì sao (ngoài dải công suất, lọc xuất xứ / tần số, hay không phải dòng tổ máy).
   - Dòng MỚI trong `all`: 0. Dòng đổi điểm: 0.
   - Top 30 đổi ở 18 lượt, không lượt nào chỉ đổi thứ tự:
     - RA 23 dòng: 21 vì bị chặn, 2 bị đẩy dây chuyền.
