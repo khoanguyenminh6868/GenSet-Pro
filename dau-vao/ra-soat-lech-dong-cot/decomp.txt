@@ -1,0 +1,1083 @@
+
+== IB2200005266#0  (gop: all 109 → 109, dropped 487 → 487)
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: landtop-fuzhou||LTP14R|14|11|13|10|MECHANICAL|ZH490D|LTP164S10 top#29 điểm 93
+  DỮ LIỆU vào: KHÁC (cũ all điểm 90 → 140): xingguang-jiangsu||XG10GF|10/125|ZS1100|STC10|1140×780×995|480 → top#21 điểm 140 (hạng cũ 62)
+
+== IB2200006257#1  (gop: all 53 → 53, dropped 0 → 0)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #10 longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133 ↔ xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 140
+    #11 tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121 ↔ longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133
+    #12 victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95 ↔ tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121
+    #13 agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99 ↔ victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95
+    #14 mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93 ↔ agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99
+    #15 xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 90 ↔ mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93
+
+== IB2200012797#0  (gop: all 53 → 53, dropped 0 → 0)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #9 longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133 ↔ xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 140
+    #10 tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121 ↔ longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133
+    #11 victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95 ↔ tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121
+    #12 victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 85 ↔ victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95
+    #13 agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99 ↔ victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 85
+    #14 mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93 ↔ agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99
+    #15 xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 90 ↔ mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93
+
+== IB2200016199#0  (gop: all 53 → 53, dropped 0 → 0)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #11 longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133 ↔ xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 140
+    #12 tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121 ↔ longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133
+    #13 victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95 ↔ tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121
+    #14 agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99 ↔ victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95
+    #15 mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93 ↔ agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99
+    #16 xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 90 ↔ mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93
+
+== IB2200029921#0  (gop: all 116 → 71, dropped 229 → 274)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #15 uleengen||UY10GFS|8|10|380码|10|3|80*90|1357|19|164B|1860X850X1200|700 147 ↔ xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 147
+    #16 victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY 145 ↔ uleengen||UY10GFS|8|10|380码|10|3|80*90|1357|19|164B|1860X850X1200|700 147
+    #17 victory-generator||GENERATOR|MODEL:|VT11000S|VT11000S3|FREQUENCY(HZ)|5 144 ↔ victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY 145
+    #18 comappower||COM12K|12KVA|99KW|113KVA|9KW|V1505E2BG|4|COM12K 140 ↔ victory-generator||GENERATOR|MODEL:|VT11000S|VT11000S3|FREQUENCY(HZ)|5 144
+    #19 ettes-power||EP12|9|11|10|12|403D11G★|TBA|3L|TBA|1300*690*1320|280| 136 ↔ comappower||COM12K|12KVA|99KW|113KVA|9KW|V1505E2BG|4|COM12K 140
+    #20 jet-power||UK12Y|12|96|11|88|YD490D17|L4|MECHANICAL|255|90×100|JET164B 132 ↔ ettes-power||EP12|9|11|10|12|403D11G★|TBA|3L|TBA|1300*690*1320|280| 136
+    #21 mecca-power||MC10YD|10|8|9|7|YD380D/10KW|CN|22|3L/NA|1357|M|1550*760*1 119 ↔ jet-power||UK12Y|12|96|11|88|YD490D17|L4|MECHANICAL|255|90×100|JET164B 132
+    #22 acepow-fuan||APYN10|10|11|125|14|BC164C|YN25GB|18|198 116 ↔ mecca-power||MC10YD|10|8|9|7|YD380D/10KW|CN|22|3L/NA|1357|M|1550*760*1 119
+    #23 agestar||GR11|11|9|10|8|Y480BD|181|MECHANICAL|ASG164B|1550*810*930|359 113 ↔ acepow-fuan||APYN10|10|11|125|14|BC164C|YN25GB|18|198 116
+    #24 xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 97 ↔ agestar||GR11|11|9|10|8|Y480BD|181|MECHANICAL|ASG164B|1550*810*930|359 113
+  LUẬT ra: loại [cyl] theo số đông: fdk-energy||P10/H1CONTACT|10KVA/8KW|9KVA/7KW|403A11G1|PERKINSCHINA|STAMFORDS0L1H1|CLICKHER top#0 điểm 275 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: jet-power||P10|10|8|9|7|403A11G1|3L|77X81|1131|3|PI044E|1200*650*950|352|1950*860*1060|552 top#1 điểm 272 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: sanq-power||SQP10|8/10|7/9|403A11G1|PI044E|WUXI|450|896|1260X630X730|2200X1033X1304 top#2 điểm 272 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: elitech-power||EPS11PA3|PERKINS|11KVA|12KVA|403D15G|50HZ|3PHASE|DOWNLOADPDF|EPS11PA3PERKIN top#4 điểm 200 · Perkins 403D15G · số đông 3 xi lanh {"3":18,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4
+  LUẬT vào: lấp chỗ, điểm không đổi: rise-power||RXL8|8/10|9/11|3N17D|SLW88|1400×550×900|580 → top#19 điểm 127 (hạng cũ 68)
+  LUẬT vào: lấp chỗ, điểm không đổi: mecca-power||MC10D|10|74|9|68|SP103NE|KOREA|24|3L|10|E|1090*500*1000|353 → top#21 điểm 119 (hạng cũ 72)
+  LUẬT vào: lấp chỗ, điểm không đổi: mecca-power||MC10D|10|74|9|68|SP103NH|KOREA|24|3L|10|E|1090*500*1000|353 → top#22 điểm 119 (hạng cũ 73)
+  LUẬT vào: lấp chỗ, điểm không đổi: long-gen||LGKS11|8|10|88|11|D1105E2BGCHN1|95|S0L1H1|10|AMF20|DOWNLOAD → top#25 điểm 109 (hạng cũ 80)
+
+== IB2200029952#0  (gop: all 136 → 136, dropped 209 → 209)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #18 uleengen||UY10GFS|8|10|380码|10|3|80*90|1357|19|164B|1860X850X1200|700 147 ↔ xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 147
+    #19 victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY 145 ↔ uleengen||UY10GFS|8|10|380码|10|3|80*90|1357|19|164B|1860X850X1200|700 147
+    #20 elitech-power||EPS11QCA3|QUANCHAI|11KVA|12KVA|QC385D|50HZ|3PHASE|DOWNL 144 ↔ victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY 145
+    #21 victory-generator||GENERATOR|MODEL:|VT11000S|VT11000S3|FREQUENCY(HZ)|5 144 ↔ elitech-power||EPS11QCA3|QUANCHAI|11KVA|12KVA|QC385D|50HZ|3PHASE|DOWNL 144
+    #22 jet-power||UK12Y|12|96|11|88|YD490D17|L4|MECHANICAL|255|90×100|JET164B 132 ↔ victory-generator||GENERATOR|MODEL:|VT11000S|VT11000S3|FREQUENCY(HZ)|5 144
+    #23 mecca-power||MC10YD|10|8|9|7|YD380D/10KW|CN|22|3L/NA|1357|M|1550*760*1 119 ↔ jet-power||UK12Y|12|96|11|88|YD490D17|L4|MECHANICAL|255|90×100|JET164B 132
+    #24 acepow-fuan||APYN10|10|11|125|14|BC164C|YN25GB|18|198 116 ↔ mecca-power||MC10YD|10|8|9|7|YD380D/10KW|CN|22|3L/NA|1357|M|1550*760*1 119
+    #25 agestar||GR11|11|9|10|8|Y480BD|181|MECHANICAL|ASG164B|1550*810*930|359 113 ↔ acepow-fuan||APYN10|10|11|125|14|BC164C|YN25GB|18|198 116
+    #26 landtop-fuzhou||LTP11Q|11|9|10|8|QC385D|LTP164S8 105 ↔ agestar||GR11|11|9|10|8|Y480BD|181|MECHANICAL|ASG164B|1550*810*930|359 113
+    #27 xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 97 ↔ landtop-fuzhou||LTP11Q|11|9|10|8|QC385D|LTP164S8 105
+
+== IB2200029975#0  (gop: all 1362 → 1344, dropped 131 → 142)
+  all theo NCC (dữ liệu): starlight-power 15→0, xingguang-jiangsu 2→17, yingtai-group 7→0
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+  LUẬT ra: loại [cyl] theo số đông: sanq-power||SQP206|16/20|14/18|403A15G2|PI044F|WUXI|620|1140|1500×650×1225|2200×1033×1306| top#26 điểm 281 · Perkins 403A15G2 · số đông 3 xi lanh {"3":13,"4":2}, nguồn khác depco-power «4», huipu-power «4» · HSMT minCyl 4 (ghi trơ)
+  LUẬT vào: lấp chỗ, điểm không đổi: gb-power||MODEL|GBP25|STANDBYPOWER(50HZ)|22KW/275KVA|PRIMEPOWER(50HZ)|20KW/25KVA|ENGINE|PE → top#29 điểm 278 (hạng cũ 54)
+
+== IB2200035219#0  (gop: all 33 → 33, dropped 45 → 45)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #7 ade-power||STANDBYPOWER(ESP)RATING|8KVA/64KW|PRIMEPOWER(PRP)RATING|7KV 141 ↔ xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 161
+    #8 powerzoo||Y8P6|64/8|72/9|3TNM74FNGGE|VIEWDETAIL» 132 ↔ ade-power||STANDBYPOWER(ESP)RATING|8KVA/64KW|PRIMEPOWER(PRP)RATING|7KV 141
+    #9 elitech-power|MODEL:EPS8KBA3S|8KVA|1PHASE,3PHASE|50HZ,60HZ|POWER(KVA)| 132 ↔ powerzoo||Y8P6|64/8|72/9|3TNM74FNGGE|VIEWDETAIL» 132
+    #10 xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 111 ↔ elitech-power|MODEL:EPS8KBA3S|8KVA|1PHASE,3PHASE|50HZ,60HZ|POWER(KVA)| 132
+
+== IB2200039869#0  (gop: all 325 → 325, dropped 20 → 20)
+  all theo NCC (dữ liệu): starlight-power 8→0, xingguang-jiangsu 1→9
+
+== IB2200049404#0  (gop: all 2709 → 2689, dropped 76 → 76)
+  all theo NCC (dữ liệu): starlight-power 33→0, yingtai-group 20→0, xingguang-jiangsu 5→38
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: eastern-lion-fuan||GF/GFSYC320|320|400|356|444|YC6K520D30|356|EL314G|320|SMARTGEN6120|DETA top#29 điểm 269
+  DỮ LIỆU vào: lấp chỗ, điểm không đổi: bobig-power||BWC413|300|375|330|413|WP13D405E200|368|BW314F|3100*1050*2150|4200*1600*2250 → top#29 điểm 269 (hạng cũ 135)
+
+== IB2200052056#0  (gop: all 63 → 63, dropped 0 → 0)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #13 longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133 ↔ xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 140
+    #14 tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121 ↔ longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133
+    #15 ade-power||STANDBYPOWER(ESP)RATING|8KVA/64KW|PRIMEPOWER(PRP)RATING|7KV 118 ↔ tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121
+    #16 victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95 ↔ ade-power||STANDBYPOWER(ESP)RATING|8KVA/64KW|PRIMEPOWER(PRP)RATING|7KV 118
+    #17 victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 85 ↔ victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95
+    #18 agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99 ↔ victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 85
+    #19 mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93 ↔ agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99
+    #20 xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 90 ↔ mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93
+
+== IB2200062524#0  (gop: all 36 → 36, dropped 148 → 148)
+
+== IB2200066148#1  (gop: all 53 → 53, dropped 0 → 0)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #10 longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133 ↔ xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 140
+    #11 tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121 ↔ longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133
+    #12 victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95 ↔ tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121
+    #13 agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99 ↔ victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95
+    #14 mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93 ↔ agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99
+    #15 xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 90 ↔ mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93
+
+== IB2200083564#0  (gop: all 187 → 187, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 5→0, xingguang-jiangsu 2→7
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG10S|95|86|STARLIGHT|YD385D|PDF top#22 điểm 166
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG10S|95|86|STARLIGHT|YD385D|PDF → top#22 điểm 166
+
+== IB2200086314#0  (gop: all 215 → 215, dropped 139 → 139)
+  all theo NCC (dữ liệu): starlight-power 6→0, xingguang-jiangsu 1→7
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG12S|123|112|STARLIGHT|YD480D|PDF top#28 điểm 149
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG12S|123|112|STARLIGHT|YD480D|PDF → top#28 điểm 149
+
+== IB2200087789#2  (gop: all 1954 → 1940, dropped 831 → 825)
+  all theo NCC (dữ liệu): starlight-power 24→0, yingtai-group 14→0, xingguang-jiangsu 4→28
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2200094981#0  (gop: all 3139 → 3123, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 35→0, yingtai-group 16→0, xingguang-jiangsu 12→47
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2200098082#0  (gop: all 2290 → 2276, dropped 827 → 821)
+  all theo NCC (dữ liệu): starlight-power 25→0, yingtai-group 14→0, xingguang-jiangsu 4→29
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2300025731#0  (gop: all 1601 → 1590, dropped 1249 → 1241)
+  all theo NCC (dữ liệu): starlight-power 15→0, yingtai-group 11→0, xingguang-jiangsu 4→19
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG455S36|455|415|VOLVO|TAD1354GE|PDF top#24 điểm 488
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG455S36|455|415|VOLVO|TAD1343GE|PDF top#25 điểm 472
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG455S36|455|415|VOLVO|TAD1354GE|PDF → top#24 điểm 488
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG455S36|455|415|VOLVO|TAD1343GE|PDF → top#25 điểm 472
+
+== IB2300046166#1  (gop: all 2709 → 2689, dropped 76 → 76)
+  all theo NCC (dữ liệu): starlight-power 33→0, yingtai-group 20→0, xingguang-jiangsu 5→38
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: eastern-lion-fuan||GF/GFSYC320|320|400|356|444|YC6K520D30|356|EL314G|320|SMARTGEN6120|DETA top#29 điểm 269
+  DỮ LIỆU vào: lấp chỗ, điểm không đổi: bobig-power||BWC413|300|375|330|413|WP13D405E200|368|BW314F|3100*1050*2150|4200*1600*2250 → top#29 điểm 269 (hạng cũ 135)
+
+== IB2300046166#3  (gop: all 2792 → 2777, dropped 55 → 54)
+  all theo NCC (dữ liệu): starlight-power 34→0, yingtai-group 15→0, xingguang-jiangsu 12→46
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2300046353#1  (gop: all 1352 → 1332, dropped 141 → 154)
+  all theo NCC (dữ liệu): starlight-power 16→0, xingguang-jiangsu 2→18, yingtai-group 7→0
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+  LUẬT ra: loại [cyl] theo số đông: sanq-power||SQP206|16/20|14/18|403A15G2|PI044F|WUXI|620|1140|1500×650×1225|2200×1033×1306| top#6 điểm 281 · Perkins 403A15G2 · số đông 3 xi lanh {"3":13,"4":2}, nguồn khác depco-power «4», huipu-power «4» · HSMT minCyl 4
+  LUẬT vào: lấp chỗ, điểm không đổi: acepow-fuan||HPDD16|16|200|176|220|BC184E|BFM3G1 → top#29 điểm 261 (hạng cũ 53)
+
+== IB2300054067#0  (gop: all 158 → 73, dropped 196 → 281)
+  all theo NCC (dữ liệu): starlight-power 3→0, xingguang-jiangsu 1→4
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG12S|123|112|STARLIGHT|YD480D|PDF top#19 điểm 149
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG12S|123|112|STARLIGHT|YD480D|PDF → top#19 điểm 149
+  LUẬT ra: loại [cyl] theo số đông: gb-power|STANDARDFEATURES|MODEL|GBP10|STANDBYPOWER(50HZ)|88KW/11KVA|PRIMEPOWER(50HZ)|8KW/1 top#0 điểm 278 · Perkins 403D11G · số đông 3 xi lanh {"3":16,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: fdk-energy||P10/H1CONTACT|10KVA/8KW|9KVA/7KW|403D11G|PERKINSCHINA|STAMFORDS0L1H1|CLICKHERE top#1 điểm 268 · Perkins 403D11G · số đông 3 xi lanh {"3":16,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: fdk-energy||P10/H1CONTACT|10KVA/8KW|9KVA/7KW|403A11G1|PERKINSCHINA|STAMFORDS0L1H1|CLICKHER top#2 điểm 268 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: sanq-power||SQP10|8/10|7/9|403D11G|PI044E|WUXI|450|896|1500X650X1225|2200X1033X1304 top#3 điểm 265 · Perkins 403D11G · số đông 3 xi lanh {"3":16,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: sanq-power||SQP10|8/10|7/9|403A11G1|PI044E|WUXI|450|896|1260X630X730|2200X1033X1304 top#4 điểm 265 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: bobig-power||BP10|7|9|8|10|403A11G1MADEINCHINA|7|BW164B|1100*650*1000|1700*850*1000 top#5 điểm 256 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: elitech-power||EPS11PA3|PERKINS|11KVA|12KVA|403D15G|50HZ|3PHASE|DOWNLOADPDF|EPS11PA3PERKIN top#10 điểm 191 · Perkins 403D15G · số đông 3 xi lanh {"3":18,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4 (ghi trơ)
+  LUẬT vào: lấp chỗ, điểm không đổi: victory-generator||V8P|50|72|9|8|10|403A11G1/403D11G|3|3|77|81|49|52|1480*750*1270|390 → top#12 điểm 152 (hạng cũ 67)
+  LUẬT vào: lấp chỗ, điểm không đổi: westinpower||TP10|10|8|9|7|403A11G1/403D11G|11|26|1402*715*1155|1856*826*1415 → top#13 điểm 152 (hạng cũ 68)
+  LUẬT vào: lấp chỗ, điểm không đổi: superwatt-power||SK11|8/10|88/11|D1105BG|1460X730X1170|1715X900X1235 → top#15 điểm 148 (hạng cũ 72)
+  LUẬT vào: lấp chỗ, điểm không đổi: sr-genset||121|99|11|9|403D11GCOMMODITY|MECH|S0L1H1|TALA40C|SA164106|1400*690*1000|1860*81 → top#19 điểm 139 (hạng cũ 76)
+  LUẬT vào: lấp chỗ, điểm không đổi: victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY(HZ)|50|50|50|RATEDA → top#20 điểm 139 (hạng cũ 77)
+  LUẬT vào: lấp chỗ, điểm không đổi: rise-power||RXL8|8/10|9/11|3N17D|SLW88|1400×550×900|580 → top#23 điểm 120 (hạng cũ 103)
+
+== IB2300054246#0  (gop: all 3117 → 3097, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 34→0, yingtai-group 20→0, xingguang-jiangsu 5→39
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: eastern-lion-fuan||GF/GFSYC320|320|400|356|444|YC6K520D30|356|EL314G|320|SMARTGEN6120|DETA top#29 điểm 269
+  DỮ LIỆU vào: lấp chỗ, điểm không đổi: bobig-power||BWC413|300|375|330|413|WP13D405E200|368|BW314F|3100*1050*2150|4200*1600*2250 → top#29 điểm 269 (hạng cũ 164)
+
+== IB2300057123#0  (gop: all 1157 → 1150, dropped 688 → 685)
+  all theo NCC (dữ liệu): starlight-power 9→0, yingtai-group 7→0, xingguang-jiangsu 3→12
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2300065474#0  (gop: all 137 → 137, dropped 208 → 208)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #19 uleengen||UY10GFS|8|10|380码|10|3|80*90|1357|19|164B|1860X850X1200|700 147 ↔ xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 147
+    #20 victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY 145 ↔ uleengen||UY10GFS|8|10|380码|10|3|80*90|1357|19|164B|1860X850X1200|700 147
+    #21 elitech-power||EPS11QCA3|QUANCHAI|11KVA|12KVA|QC385D|50HZ|3PHASE|DOWNL 144 ↔ victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY 145
+    #22 victory-generator||GENERATOR|MODEL:|VT11000S|VT11000S3|FREQUENCY(HZ)|5 144 ↔ elitech-power||EPS11QCA3|QUANCHAI|11KVA|12KVA|QC385D|50HZ|3PHASE|DOWNL 144
+    #23 jet-power||UK12Y|12|96|11|88|YD490D17|L4|MECHANICAL|255|90×100|JET164B 132 ↔ victory-generator||GENERATOR|MODEL:|VT11000S|VT11000S3|FREQUENCY(HZ)|5 144
+    #24 mecca-power||MC10YD|10|8|9|7|YD380D/10KW|CN|22|3L/NA|1357|M|1550*760*1 119 ↔ jet-power||UK12Y|12|96|11|88|YD490D17|L4|MECHANICAL|255|90×100|JET164B 132
+    #25 acepow-fuan||APYN10|10|11|125|14|BC164C|YN25GB|18|198 116 ↔ mecca-power||MC10YD|10|8|9|7|YD380D/10KW|CN|22|3L/NA|1357|M|1550*760*1 119
+    #26 agestar||GR11|11|9|10|8|Y480BD|181|MECHANICAL|ASG164B|1550*810*930|359 113 ↔ acepow-fuan||APYN10|10|11|125|14|BC164C|YN25GB|18|198 116
+    #27 landtop-fuzhou||LTP11Q|11|9|10|8|QC385D|LTP164S8 105 ↔ agestar||GR11|11|9|10|8|Y480BD|181|MECHANICAL|ASG164B|1550*810*930|359 113
+    #28 xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 97 ↔ landtop-fuzhou||LTP11Q|11|9|10|8|QC385D|LTP164S8 105
+
+== IB2300087393#0  (gop: all 2085 → 2073, dropped 700 → 692)
+  all theo NCC (dữ liệu): starlight-power 30→0, yingtai-group 12→0, xingguang-jiangsu 1→31
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: eastern-lion-fuan||GF/GFSYC320|320|400|356|444|YC6K520D30|356|EL314G|320|SMARTGEN6120|DETA top#28 điểm 269
+  DỮ LIỆU vào: lấp chỗ, điểm không đổi: bobig-power||BWC413|300|375|330|413|WP13D405E200|368|BW314F|3100*1050*2150|4200*1600*2250 → top#28 điểm 269 (hạng cũ 118)
+
+== IB2300102941#1  (gop: all 1476 → 1469, dropped 17 → 17)
+  all theo NCC (dữ liệu): starlight-power 16→0, xingguang-jiangsu 2→18, yingtai-group 7→0
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2300111427#1  (gop: all 270 → 270, dropped 0 → 0)
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: landtop-fuzhou||LTP10Q|10|8|9|7|QC380D|LTP164S7 top#29 điểm 126
+  DỮ LIỆU vào: KHÁC (cũ all điểm 77 → 127): xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 → top#28 điểm 127 (hạng cũ 221)
+
+== IB2300119452#0  (gop: all 461 → 458, dropped 370 → 370)
+  all theo NCC (dữ liệu): starlight-power 9→0, yingtai-group 3→0, xingguang-jiangsu 0→9
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG2500S36|2500|2281|CUMMINS|QSK60G7|PDF top#11 điểm 457
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG2500S36|2500|2281|CUMMINS|QSK60G7|PDF → top#11 điểm 457
+
+== IB2300130364#0  (gop: all 53 → 53, dropped 0 → 0)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #9 longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133 ↔ xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 140
+    #10 tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121 ↔ longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133
+    #11 victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95 ↔ tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121
+    #12 victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 85 ↔ victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95
+    #13 agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99 ↔ victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 85
+    #14 mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93 ↔ agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99
+    #15 xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 90 ↔ mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93
+
+== IB2300131371#0  (gop: all 965 → 960, dropped 1019 → 1015)
+  all theo NCC (dữ liệu): starlight-power 10→0, xingguang-jiangsu 4→14, yingtai-group 5→0
+
+== IB2300133361#0  (gop: all 63 → 63, dropped 0 → 0)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #14 longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133 ↔ xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 140
+    #15 tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121 ↔ longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133
+    #16 ade-power||STANDBYPOWER(ESP)RATING|8KVA/64KW|PRIMEPOWER(PRP)RATING|7KV 118 ↔ tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121
+    #17 victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95 ↔ ade-power||STANDBYPOWER(ESP)RATING|8KVA/64KW|PRIMEPOWER(PRP)RATING|7KV 118
+    #18 agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99 ↔ victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95
+    #19 mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93 ↔ agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99
+    #20 xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 90 ↔ mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93
+
+== IB2300139646#0  (gop: all 1355 → 1337, dropped 138 → 149)
+  all theo NCC (dữ liệu): starlight-power 15→0, xingguang-jiangsu 2→17, yingtai-group 7→0
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+  LUẬT ra: loại [cyl] theo số đông: sanq-power||SQP206|16/20|14/18|403A15G2|PI044F|WUXI|620|1140|1500×650×1225|2200×1033×1306| top#5 điểm 281 · Perkins 403A15G2 · số đông 3 xi lanh {"3":13,"4":2}, nguồn khác depco-power «4», huipu-power «4» · HSMT minCyl 4 (ghi trơ)
+  LUẬT vào: lấp chỗ, điểm không đổi: wintpower||WTFA28|20/25|22/28|4DW9235D|PI144E|TALA40G|WT184G22 → top#29 điểm 253 (hạng cũ 73)
+
+== IB2300158312#1  (gop: all 1955 → 1943, dropped 36 → 36)
+  all theo NCC (dữ liệu): starlight-power 21→0, yingtai-group 12→0, xingguang-jiangsu 3→24
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2300163844#0  (gop: all 333 → 333, dropped 21 → 21)
+  all theo NCC (dữ liệu): starlight-power 8→0, xingguang-jiangsu 3→11
+
+== IB2300178837#0  (gop: all 101 → 101, dropped 253 → 253)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #20 uleengen||UY10GFS|8|10|380码|10|3|80*90|1357|19|164B|1860X850X1200|700 140 ↔ xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 140
+    #21 sr-genset||121|99|11|9|403D11GCOMMODITY|MECH|S0L1H1|TALA40C|SA164106|1 139 ↔ uleengen||UY10GFS|8|10|380码|10|3|80*90|1357|19|164B|1860X850X1200|700 140
+    #22 victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY 139 ↔ sr-genset||121|99|11|9|403D11GCOMMODITY|MECH|S0L1H1|TALA40C|SA164106|1 139
+    #23 elitech-power||EPS11QCA3|QUANCHAI|11KVA|12KVA|QC385D|50HZ|3PHASE|DOWNL 135 ↔ victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY 139
+    #24 jet-power||UK12Y|12|96|11|88|YD490D17|L4|MECHANICAL|255|90×100|JET164B 123 ↔ elitech-power||EPS11QCA3|QUANCHAI|11KVA|12KVA|QC385D|50HZ|3PHASE|DOWNL 135
+    #25 mecca-power||MC10YD|10|8|9|7|YD380D/10KW|CN|22|3L/NA|1357|M|1550*760*1 112 ↔ jet-power||UK12Y|12|96|11|88|YD490D17|L4|MECHANICAL|255|90×100|JET164B 123
+    #26 acepow-fuan||APYN10|10|11|125|14|BC164C|YN25GB|18|198 107 ↔ mecca-power||MC10YD|10|8|9|7|YD380D/10KW|CN|22|3L/NA|1357|M|1550*760*1 112
+    #27 agestar||GR11|11|9|10|8|Y480BD|181|MECHANICAL|ASG164B|1550*810*930|359 106 ↔ acepow-fuan||APYN10|10|11|125|14|BC164C|YN25GB|18|198 107
+    #28 landtop-fuzhou||LTP11Q|11|9|10|8|QC385D|LTP164S8 98 ↔ agestar||GR11|11|9|10|8|Y480BD|181|MECHANICAL|ASG164B|1550*810*930|359 106
+    #29 xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 90 ↔ landtop-fuzhou||LTP11Q|11|9|10|8|QC385D|LTP164S8 98
+
+== IB2300204696#0  (gop: all 22 → 22, dropped 1476 → 1465)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #8 sr-genset||50|400|95|11875|1045|130625|SRGENSET|4FWZL1|SRGENSET|SAL274 105 ↔ xingguang-jiangsu||XG100GF|100/125|6105AZLD|TFW21004|2500×780×1240|170 121
+    #9 vantek-jiangsu||TPD100|100|125|6135AD|6|135/140|199|2400×850×1500|2100 103 ↔ sr-genset||50|400|95|11875|1045|130625|SRGENSET|4FWZL1|SRGENSET|SAL274 105
+    #10 naipute-weifang||RATEDPOWER(KW/KVA)|100/125 101 ↔ vantek-jiangsu||TPD100|100|125|6135AD|6|135/140|199|2400×850×1500|2100 103
+    #11 kangwo-guangdong||CCFJ100JW|100|125|50/400|6CT83GM115|115/1500|6|83|21 95 ↔ naipute-weifang||RATEDPOWER(KW/KVA)|100/125 101
+    #12 taihai-taizhou||TH100GF|100|125|180|6135AD3|6|135*150|86|28|226|2600*9 95 ↔ kangwo-guangdong||CCFJ100JW|100|125|50/400|6CT83GM115|115/1500|6|83|21 95
+    #13 jlmech-wuhan||JL100GF|100|125|180|YC68155LD21|6|108*125|6B7|20|196|250 95 ↔ taihai-taizhou||TH100GF|100|125|180|6135AD3|6|135*150|86|28|226|2600*9 95
+    #14 simpson-power||SP0110DY|110/138|YC6A190D30|2433×900×1718|SP0110DYPDF 84 ↔ jlmech-wuhan||JL100GF|100|125|180|YC68155LD21|6|108*125|6B7|20|196|250 95
+    #15 vantek-jiangsu||TPD138Y5|138|110|150|120|YC6A190D30|2440×960×1380|1360 84 ↔ simpson-power||SP0110DY|110/138|YC6A190D30|2433×900×1718|SP0110DYPDF 84
+    #16 xingguang-jiangsu||XG100GF|100/125|6105AZLD|TFW21004|2500×780×1240|170 71 ↔ vantek-jiangsu||TPD138Y5|138|110|150|120|YC6A190D30|2440×960×1380|1360 84
+
+== IB2300205363#0  (gop: all 2740 → 2723, dropped 62 → 62)
+  all theo NCC (dữ liệu): starlight-power 36→0, yingtai-group 17→0, xingguang-jiangsu 7→43
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2300212821#0  (gop: all 53 → 53, dropped 0 → 0)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #9 longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133 ↔ xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 140
+    #10 tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121 ↔ longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133
+    #11 victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95 ↔ tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121
+    #12 victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 85 ↔ victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95
+    #13 agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99 ↔ victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 85
+    #14 mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93 ↔ agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99
+    #15 xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 90 ↔ mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93
+
+== IB2300217401#0  (gop: all 225 → 117, dropped 240 → 348)
+  all theo NCC (dữ liệu): starlight-power 3→0, xingguang-jiangsu 1→4
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG15S|15|136|STARLIGHT|YND485D|PDF top#27 điểm 159
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG15S|15|136|STARLIGHT|YND485D|PDF → top#27 điểm 159
+  LUẬT ra: loại [cyl] theo số đông: gb-power|STANDARDFEATURES|MODEL|GBP15|STANDBYPOWER(50HZ)|11KW/14KVA|PRIMEPOWER(50HZ)|10KW/ top#0 điểm 281 · Perkins 403D15G · số đông 3 xi lanh {"3":18,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: fdk-energy||P14/H1CONTACT|14KVA/11KW|13KVA/10KW|403A15G1|PERKINSCHINA|STAMFORDS0L1L1|CLICK top#1 điểm 257 · Perkins 403A15G1 · số đông 3 xi lanh {"3":13,"4":2}, nguồn khác depco-power «4», huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: jet-power||P14|14|11|13|10|403A15G1|3L|84X90|1496|37|PI044F|1200*650*950|426|1950*860*1060 top#2 điểm 257 · Perkins 403A15G1 · số đông 3 xi lanh {"3":13,"4":2}, nguồn khác depco-power «4», huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: uleengen||UP13GF|10|13|403A15G1|PERKINS|12|3L|84×90|1496|24|S0L1L1|1580X810X930|520 top#3 điểm 257 · Perkins 403A15G1 · số đông 3 xi lanh {"3":13,"4":2}, nguồn khác depco-power «4», huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: sanq-power||SQP15|12/145|105/131|403D15G|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304 top#4 điểm 256 · Perkins 403D15G · số đông 3 xi lanh {"3":18,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: eastern-lion-fuan||GFSP14|104|13|12|14|403D15G|20362|EL164C|108|SMARTGEN6120|DETAIL top#5 điểm 245 · Perkins 403D15G · số đông 3 xi lanh {"3":18,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: longkai-power||LG9P|12|10|11|9|403A11G1|OP1500*750*1050|AT1808*850*1130| top#6 điểm 224 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4
+  LUẬT vào: lấp chỗ, điểm không đổi: powerzoo||Y12P6|96/12|106/132|3TNV82ABGGE|VIEWDETAIL» → top#23 điểm 151 (hạng cũ 100)
+  LUẬT vào: lấp chỗ, điểm không đổi: voltgent||VYM145S5|14|11|12|10|YANMAR|3TNV88FUGGE|[EN][RU][ES][PT] → top#24 điểm 151 (hạng cũ 102)
+  LUẬT vào: lấp chỗ, điểm không đổi: voltgent||VSC135S4|13|11|125|10|SDEC|3ZT11G42|[EN][RU][ES][PT] → top#25 điểm 146 (hạng cũ 104)
+  LUẬT vào: lấp chỗ, điểm không đổi: xingguang-jiangsu||XG10GF|10/125|ZS1100|STC10|1140×780×995|480 → top#26 điểm 146 (hạng cũ 105)
+  LUẬT vào: lấp chỗ, điểm không đổi: uleengen||UY12GFS|10|125|码385D|11|3|85*90|1532|23|164C|1860X850X1200|700 → top#27 điểm 146 (hạng cũ 106)
+  LUẬT vào: lấp chỗ, điểm không đổi: minsun-motor||GFP125|125|10|403A15G|SYA164C → top#28 điểm 146 (hạng cũ 107)
+  LUẬT vào: lấp chỗ, điểm không đổi: victory-generator||GENERATOR|MODEL:|VDG12S|VDG12S3|FREQUENCY(HZ)|50|50|RATEDACOUTPUT(KVA)| → top#29 điểm 142 (hạng cũ 109)
+
+== IB2300231276#0  (gop: all 1464 → 1457, dropped 289 → 287)
+  all theo NCC (dữ liệu): starlight-power 17→0, yingtai-group 7→0, xingguang-jiangsu 3→20
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2300233670#0  (gop: all 78 → 78, dropped 1156 → 1153)
+  all theo NCC (dữ liệu): starlight-power 1→0, xingguang-jiangsu 0→1
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG2550S36|2550|2315|MTU|16V4000G14S|PDF top#18 điểm 141
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG2550S36|2550|2315|MTU|16V4000G14S|PDF → top#18 điểm 141
+
+== IB2300234954#0  (gop: all 1209 → 1202, dropped 636 → 633)
+  all theo NCC (dữ liệu): starlight-power 9→0, yingtai-group 7→0, xingguang-jiangsu 3→12
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2300237033#0  (gop: all 2000 → 1986, dropped 785 → 779)
+  all theo NCC (dữ liệu): starlight-power 24→0, yingtai-group 14→0, xingguang-jiangsu 4→28
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2300244692#0  (gop: all 1645 → 1638, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 16→0, xingguang-jiangsu 2→18, yingtai-group 7→0
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2300248981#0  (gop: all 1744 → 1734, dropped 17 → 17)
+  all theo NCC (dữ liệu): yingtai-group 10→0
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2300249535#0  (gop: all 53 → 53, dropped 0 → 0)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #9 longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133 ↔ xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 140
+    #10 tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121 ↔ longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133
+    #11 victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95 ↔ tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121
+    #12 victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 85 ↔ victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95
+    #13 agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99 ↔ victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 85
+    #14 mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93 ↔ agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99
+    #15 xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 90 ↔ mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93
+
+== IB2300252125#0  (gop: all 294 → 290, dropped 2491 → 2475)
+  all theo NCC (dữ liệu): starlight-power 2→0, yingtai-group 4→0, xingguang-jiangsu 2→4
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: wintpower||WTYTO438|350/438|320/400|YM6S9L15|YM6S9LFD119AEFU2|WT314G320 top#29 điểm 365
+  DỮ LIỆU vào: KHÁC (cũ all điểm 122 → 372): xingguang-jiangsu||XG385GF|350/438|385/481|BF8M1015CG1A|8|28|200|国II|3200×1690×1950|3500 → top#28 điểm 372 (hạng cũ 199)
+
+== IB2300255495#0  (gop: all 225 → 117, dropped 240 → 348)
+  all theo NCC (dữ liệu): starlight-power 3→0, xingguang-jiangsu 1→4
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG15S|15|136|STARLIGHT|YND485D|PDF top#27 điểm 159
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG15S|15|136|STARLIGHT|YND485D|PDF → top#27 điểm 159
+  LUẬT ra: loại [cyl] theo số đông: gb-power|STANDARDFEATURES|MODEL|GBP15|STANDBYPOWER(50HZ)|11KW/14KVA|PRIMEPOWER(50HZ)|10KW/ top#0 điểm 281 · Perkins 403D15G · số đông 3 xi lanh {"3":18,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: fdk-energy||P14/H1CONTACT|14KVA/11KW|13KVA/10KW|403A15G1|PERKINSCHINA|STAMFORDS0L1L1|CLICK top#1 điểm 257 · Perkins 403A15G1 · số đông 3 xi lanh {"3":13,"4":2}, nguồn khác depco-power «4», huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: jet-power||P14|14|11|13|10|403A15G1|3L|84X90|1496|37|PI044F|1200*650*950|426|1950*860*1060 top#2 điểm 257 · Perkins 403A15G1 · số đông 3 xi lanh {"3":13,"4":2}, nguồn khác depco-power «4», huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: uleengen||UP13GF|10|13|403A15G1|PERKINS|12|3L|84×90|1496|24|S0L1L1|1580X810X930|520 top#3 điểm 257 · Perkins 403A15G1 · số đông 3 xi lanh {"3":13,"4":2}, nguồn khác depco-power «4», huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: sanq-power||SQP15|12/145|105/131|403D15G|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304 top#4 điểm 256 · Perkins 403D15G · số đông 3 xi lanh {"3":18,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: eastern-lion-fuan||GFSP14|104|13|12|14|403D15G|20362|EL164C|108|SMARTGEN6120|DETAIL top#5 điểm 245 · Perkins 403D15G · số đông 3 xi lanh {"3":18,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: longkai-power||LG9P|12|10|11|9|403A11G1|OP1500*750*1050|AT1808*850*1130| top#6 điểm 224 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4
+  LUẬT vào: lấp chỗ, điểm không đổi: powerzoo||Y12P6|96/12|106/132|3TNV82ABGGE|VIEWDETAIL» → top#23 điểm 151 (hạng cũ 100)
+  LUẬT vào: lấp chỗ, điểm không đổi: voltgent||VYM145S5|14|11|12|10|YANMAR|3TNV88FUGGE|[EN][RU][ES][PT] → top#24 điểm 151 (hạng cũ 102)
+  LUẬT vào: lấp chỗ, điểm không đổi: voltgent||VSC135S4|13|11|125|10|SDEC|3ZT11G42|[EN][RU][ES][PT] → top#25 điểm 146 (hạng cũ 104)
+  LUẬT vào: lấp chỗ, điểm không đổi: xingguang-jiangsu||XG10GF|10/125|ZS1100|STC10|1140×780×995|480 → top#26 điểm 146 (hạng cũ 105)
+  LUẬT vào: lấp chỗ, điểm không đổi: uleengen||UY12GFS|10|125|码385D|11|3|85*90|1532|23|164C|1860X850X1200|700 → top#27 điểm 146 (hạng cũ 106)
+  LUẬT vào: lấp chỗ, điểm không đổi: minsun-motor||GFP125|125|10|403A15G|SYA164C → top#28 điểm 146 (hạng cũ 107)
+  LUẬT vào: lấp chỗ, điểm không đổi: victory-generator||GENERATOR|MODEL:|VDG12S|VDG12S3|FREQUENCY(HZ)|50|50|RATEDACOUTPUT(KVA)| → top#29 điểm 142 (hạng cũ 109)
+
+== IB2300263757#0  (gop: all 1476 → 1469, dropped 17 → 17)
+  all theo NCC (dữ liệu): starlight-power 16→0, xingguang-jiangsu 2→18, yingtai-group 7→0
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2300269124#0  (gop: all 750 → 747, dropped 1366 → 1359)
+  all theo NCC (dữ liệu): starlight-power 11→0, xingguang-jiangsu 4→15, yingtai-group 2→0
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: agestar||GS880(S)|880|704|800|640|SC27G990D2|1764|ELECTRICAL|ASG634G|6000*2400*2500|5500 top#29 điểm 115
+  DỮ LIỆU vào: KHÁC (cũ all điểm 98 → 148): xingguang-jiangsu||XG700GF|700/875|Z12V190B|TZHW或TFW|5775×2040×2679|13500 → top#29 điểm 148 (hạng cũ 627)
+  LUẬT ra: loại [cyl] theo số đông: victory-generator||V780SC|50|710|8875|780|975|SC33W1150D2|12V|328|4400*1720*2170|7359 top#20 điểm 218 · SDEC SC33W1150D2 · số đông 6 xi lanh {"6":21,"12":2}, nguồn khác aoke-yangzhou «12», victory-generator «12V» · HSMT minCyl 12
+  LUẬT vào: lấp chỗ, điểm không đổi: agestar||GS880(S)|880|704|800|640|SC27G990D2|1764|ELECTRICAL|ASG634G|6000*2400*2500|5500 → top#29 điểm 115 (hạng cũ 570)
+
+== IB2300273061#1  (gop: all 1209 → 1202, dropped 636 → 633)
+  all theo NCC (dữ liệu): starlight-power 9→0, yingtai-group 7→0, xingguang-jiangsu 3→12
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2300274793#1  (gop: all 1954 → 1940, dropped 831 → 825)
+  all theo NCC (dữ liệu): starlight-power 24→0, yingtai-group 14→0, xingguang-jiangsu 4→28
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2300288169#0  (gop: all 813 → 808, dropped 1972 → 1957)
+  all theo NCC (dữ liệu): starlight-power 9→0, yingtai-group 5→0, xingguang-jiangsu 0→9
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2300290906#0  (gop: all 174 → 174, dropped 1015 → 1012)
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: fukangsi-yangzhou||FKS64GF|64|80|1152|D1146|6|111*139|8071|222|2200×800×1500|1100 top#6 điểm 429
+  DỮ LIỆU vào: KHÁC (cũ all điểm 429 → 479): xingguang-jiangsu||XG70GF|64/80|D1146|70/88|6|175|200|国II|2500×850×1450|980 → top#1 điểm 479 (hạng cũ 10)
+
+== IB2300293341#0  (gop: all 1964 → 1955, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 20→0, yingtai-group 9→0, xingguang-jiangsu 3→23
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG200S3E|200|180|PERKINS|1106DE70TAG4|PDF top#5 điểm 1473
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG200S3E|200|180|PERKINS|1106DE70TAG4|PDF → top#6 điểm 1473
+
+== IB2300305484#0  (gop: all 2400 → 2335, dropped 385 → 430)
+  all theo NCC (dữ liệu): starlight-power 31→0, yingtai-group 17→0, xingguang-jiangsu 1→32
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: eastern-lion-fuan||GF/GFSYC320|320|400|356|444|YC6K520D30|356|EL314G|320|SMARTGEN6120|DETA top#29 điểm 269
+  DỮ LIỆU vào: lấp chỗ, điểm không đổi: bobig-power||BWC413|300|375|330|413|WP13D405E200|368|BW314F|3100*1050*2150|4200*1600*2250 → top#29 điểm 269 (hạng cũ 126)
+
+== IB2300305914#0  (gop: all 61 → 61, dropped 231 → 231)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #16 uleengen||UY10GFS|8|10|380码|10|3|80*90|1357|19|164B|1860X850X1200|700 126 ↔ xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 126
+    #17 agestar||GK8|8|7|75|6|D905|16|MECHANICAL|ASG164A|1700*520*900|430 111 ↔ uleengen||UY10GFS|8|10|380码|10|3|80*90|1357|19|164B|1860X850X1200|700 126
+    #18 mecca-power||MC10YD|10|8|9|7|YD380D/10KW|CN|22|3L/NA|1357|M|1550*760*1 100 ↔ agestar||GK8|8|7|75|6|D905|16|MECHANICAL|ASG164A|1700*520*900|430 111
+    #19 mecca-power||MC10D|10|74|9|68|SP103NE|KOREA|24|3L|10|E|1090*500*1000|3 100 ↔ mecca-power||MC10YD|10|8|9|7|YD380D/10KW|CN|22|3L/NA|1357|M|1550*760*1 100
+    #20 mecca-power||MC10D|10|74|9|68|SP103NH|KOREA|24|3L|10|E|1090*500*1000|3 100 ↔ mecca-power||MC10D|10|74|9|68|SP103NE|KOREA|24|3L|10|E|1090*500*1000|3 100
+    #21 zc-power|||SPECIFICATION|ZC5S|ZC65S|ZC10S|RATEDPOWER|50KW/625KVA|65KW/ 77 ↔ mecca-power||MC10D|10|74|9|68|SP103NH|KOREA|24|3L|10|E|1090*500*1000|3 100
+    #22 xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 76 ↔ zc-power|||SPECIFICATION|ZC5S|ZC65S|ZC10S|RATEDPOWER|50KW/625KVA|65KW/ 77
+
+== IB2300320688#0  (gop: all 50 → 50, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 1→0, xingguang-jiangsu 1→2
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG8S|79|72|STARLIGHT|YD380D|PDF top#6 điểm 158
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG8S|79|72|STARLIGHT|YD380D|PDF → top#6 điểm 158
+
+== IB2300320688#1  (gop: all 184 → 184, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 5→0, xingguang-jiangsu 2→7
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG10S|95|86|STARLIGHT|YD385D|PDF top#22 điểm 157
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG10S|95|86|STARLIGHT|YD385D|PDF → top#22 điểm 157
+
+== IB2300325153#0  (gop: all 158 → 73, dropped 196 → 281)
+  all theo NCC (dữ liệu): starlight-power 3→0, xingguang-jiangsu 1→4
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG12S|123|112|STARLIGHT|YD480D|PDF top#19 điểm 149
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG12S|123|112|STARLIGHT|YD480D|PDF → top#19 điểm 149
+  LUẬT ra: loại [cyl] theo số đông: gb-power|STANDARDFEATURES|MODEL|GBP10|STANDBYPOWER(50HZ)|88KW/11KVA|PRIMEPOWER(50HZ)|8KW/1 top#0 điểm 278 · Perkins 403D11G · số đông 3 xi lanh {"3":16,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: fdk-energy||P10/H1CONTACT|10KVA/8KW|9KVA/7KW|403D11G|PERKINSCHINA|STAMFORDS0L1H1|CLICKHERE top#1 điểm 268 · Perkins 403D11G · số đông 3 xi lanh {"3":16,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: fdk-energy||P10/H1CONTACT|10KVA/8KW|9KVA/7KW|403A11G1|PERKINSCHINA|STAMFORDS0L1H1|CLICKHER top#2 điểm 268 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: sanq-power||SQP10|8/10|7/9|403D11G|PI044E|WUXI|450|896|1500X650X1225|2200X1033X1304 top#3 điểm 265 · Perkins 403D11G · số đông 3 xi lanh {"3":16,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: sanq-power||SQP10|8/10|7/9|403A11G1|PI044E|WUXI|450|896|1260X630X730|2200X1033X1304 top#4 điểm 265 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: bobig-power||BP10|7|9|8|10|403A11G1MADEINCHINA|7|BW164B|1100*650*1000|1700*850*1000 top#5 điểm 256 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: elitech-power||EPS11PA3|PERKINS|11KVA|12KVA|403D15G|50HZ|3PHASE|DOWNLOADPDF|EPS11PA3PERKIN top#10 điểm 191 · Perkins 403D15G · số đông 3 xi lanh {"3":18,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4 (ghi trơ)
+  LUẬT vào: lấp chỗ, điểm không đổi: victory-generator||V8P|50|72|9|8|10|403A11G1/403D11G|3|3|77|81|49|52|1480*750*1270|390 → top#12 điểm 152 (hạng cũ 67)
+  LUẬT vào: lấp chỗ, điểm không đổi: westinpower||TP10|10|8|9|7|403A11G1/403D11G|11|26|1402*715*1155|1856*826*1415 → top#13 điểm 152 (hạng cũ 68)
+  LUẬT vào: lấp chỗ, điểm không đổi: superwatt-power||SK11|8/10|88/11|D1105BG|1460X730X1170|1715X900X1235 → top#15 điểm 148 (hạng cũ 72)
+  LUẬT vào: lấp chỗ, điểm không đổi: sr-genset||121|99|11|9|403D11GCOMMODITY|MECH|S0L1H1|TALA40C|SA164106|1400*690*1000|1860*81 → top#19 điểm 139 (hạng cũ 76)
+  LUẬT vào: lấp chỗ, điểm không đổi: victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY(HZ)|50|50|50|RATEDA → top#20 điểm 139 (hạng cũ 77)
+  LUẬT vào: lấp chỗ, điểm không đổi: rise-power||RXL8|8/10|9/11|3N17D|SLW88|1400×550×900|580 → top#23 điểm 120 (hạng cũ 103)
+
+== IB2300329776#0  (gop: all 159 → 161, dropped 220 → 220)
+  all theo NCC (dữ liệu): starlight-power 1→0, denyo 1→2, xingguang-jiangsu 1→2, yanmar 0→1
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG12S|123|112|STARLIGHT|YD480D|PDF top#19 điểm 157
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: elitech-power||EPS11QCA3|QUANCHAI|11KVA|12KVA|QC385D|50HZ|3PHASE|DOWNLOADPDF|EPS11QCA3QUAN top#27 điểm 144
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG12S|123|112|STARLIGHT|YD480D|PDF → top#19 điểm 157
+  DỮ LIỆU vào: KHÁC (cũ all điểm 97 → 147): xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 → top#25 điểm 147 (hạng cũ 106)
+
+== IB2300335322#0  (gop: all 1805 → 1745, dropped 980 → 1020)
+  all theo NCC (dữ liệu): starlight-power 22→0, yingtai-group 12→0, xingguang-jiangsu 0→22
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2300337008#0  (gop: all 44 → 44, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 1→0, xingguang-jiangsu 1→2
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG8S|79|72|STARLIGHT|YD380D|PDF top#6 điểm 160
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG8S|79|72|STARLIGHT|YD380D|PDF → top#6 điểm 160
+
+== IB2300337008#1  (gop: all 192 → 192, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 5→0, xingguang-jiangsu 2→7
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG10S|95|86|STARLIGHT|YD385D|PDF top#28 điểm 157
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG10S|95|86|STARLIGHT|YD385D|PDF → top#28 điểm 157
+
+== IB2300340070#0  (gop: all 897 → 892, dropped 1087 → 1083)
+  all theo NCC (dữ liệu): starlight-power 8→0, yingtai-group 5→0, xingguang-jiangsu 2→10
+
+== IB2300340114#0  (gop: all 338 → 236, dropped 1228 → 1321)
+  all theo NCC (dữ liệu): starlight-power 1→0, xingguang-jiangsu 1→2, yingtai-group 1→0
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: elitech-power||EPS70YCA3|YUCHAI|70KVA|80KVA|YC4A100ZD20|50HZ|3PHASE|DOWNLOADPDF|EPS70YCA3Y top#29 điểm 393
+  DỮ LIỆU vào: KHÁC (cũ all điểm 195 → 445): xingguang-jiangsu||XG50GF|50/625|4105ZD|STC50|1800×700×1500|1000 → top#7 điểm 445 (hạng cũ 154)
+  LUẬT ra: loại [cyl] theo số đông: fdk-energy|CUMMINSMODEL:4BTA39G2(QC58/67E)GENERALFEATURES:|FDKDIESELGENERATORSET|DATA|GENS top#1 điểm 483 · Cummins 4BTA39G2 · số đông 4 xi lanh {"4":22}, nguồn khác bdadl-shanghai «6» · HSMT minCyl 6 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: fdk-energy||CD69EV2/H1CONTACT|69KVA/55KW|63KVA/50KW|QSB39G2|CUMMINS(CHINADONGFENG)|STAMFOR top#2 điểm 475 · Cummins QSB39G2 · số đông 4 xi lanh {"4":8,"6":1}, nguồn khác yanan-power «6» · HSMT minCyl 6 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: dingbo||XG50GF|50/625|55/6875|4BTA39G2|UCI224E14|1860X760X1300|900 top#3 điểm 469 · Cummins 4BTA39G2 · số đông 4 xi lanh {"4":22}, nguồn khác bdadl-shanghai «6» · HSMT minCyl 6 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: bobig-power||BC6875S|50|63|55|69|4BTA39G2|60|BW224D|1750*770*1370|2450*970*1250 top#4 điểm 468 · Cummins 4BTA39G2 · số đông 4 xi lanh {"4":22}, nguồn khác bdadl-shanghai «6» · HSMT minCyl 6 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: bobig-power||BWC83|60|75|66|83|WP41D80E200|72|BW224F|1900*700*1200|2500*970*1200 top#6 điểm 449 · Weichai WP41D80E200 · số đông 4 xi lanh {"4":14,"6":1}, nguồn khác bdadl-shanghai «6» · HSMT minCyl 6 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: penlucky||PLC70Q|70|625|QSB39G2|S1L2Y1|1760*760*1380|2290*1060*1680|VIEW top#9 điểm 436 · Cummins QSB39G2 · số đông 4 xi lanh {"4":8,"6":1}, nguồn khác yanan-power «6» · HSMT minCyl 6 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: wintpower||WTYC80|58/73|64/80|YC4A100ZD20|WT224F|1950X850X1270|2400X930X1350 top#11 điểm 428 · Yuchai YC4A100ZD20 · số đông 4 xi lanh {"4":14,"6":1}, nguồn khác haifeng-taizhou «6L» · HSMT minCyl 6 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: longkai-power||LG60WP|83|66|75|60|WP41D80E200|OP1900*870*1180|AT2688*1080*1450|DOWNLOAD top#19 điểm 409 · Weichai WP41D80E200 · số đông 4 xi lanh {"4":14,"6":1}, nguồn khác bdadl-shanghai «6» · HSMT minCyl 6 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: victory-generator||V64F|50|58|73|64|80|WP4D100E200|227|6|105|120|625|1025|168|24V|1950X100 top#24 điểm 404 · Deutz / Weichai WP4D100E200 · số đông 4 xi lanh {"4":12,"6":1}, nguồn khác victory-generator «6» · HSMT minCyl 6 (ghi trơ)
+  LUẬT vào: lấp chỗ, điểm không đổi: fengmao-weifang||58GF|58/73|64/80|6BT59G1|92|UI224F|58/73|2150×830×1496|1215 → top#21 điểm 397 (hạng cũ 53)
+  LUẬT vào: lấp chỗ, điểm không đổi: ettes-power||EC50M5|50|625|6BT59GM83|83/111|6L|59|1900X900X1300|1000| → top#22 điểm 397 (hạng cũ 54)
+  LUẬT vào: lấp chỗ, điểm không đổi: victory-generator||V60DE|60|54|68|60|75|DB58|14|6L|2180*1050*1350|1317 → top#23 điểm 396 (hạng cũ 55)
+  LUẬT vào: lấp chỗ, điểm không đổi: kaihua-genset||CCFJ50JW|63|50|6BT59GM83|1980X895X1300|1000 → top#24 điểm 396 (hạng cũ 56)
+  LUẬT vào: lấp chỗ, điểm không đổi: byc-power||BYYC80|60|75|64|80|YCA48T100G20|1500|70|224F|58 → top#25 điểm 393 (hạng cũ 58)
+  LUẬT vào: lấp chỗ, điểm không đổi: gordon-power||GDW69|50|625|55|6875|N4105ZLD|1500|63|17|4105×120|415|186×90×121|240×102×130 → top#26 điểm 389 (hạng cũ 59)
+  LUẬT vào: lấp chỗ, điểm không đổi: longkai-power||LG50KF|69|55|63|50|N4105ZLD|OP1900*800*1150|AT2538*1000*1450| → top#27 điểm 388 (hạng cũ 63)
+  LUẬT vào: lấp chỗ, điểm không đổi: mingbang-mbkl||9|MBC50|63|50|69|55|6BT59G2|6|59|102*120|215 → top#28 điểm 388 (hạng cũ 61)
+  LUẬT vào: lấp chỗ, điểm không đổi: elitech-power||EPS63BNA3|BEINEIDEUTZ|63KVA|70KVA|F6L912T|50HZ|3PHASE|DOWNLOADPDF|EPS63BNA3 → top#29 điểm 388 (hạng cũ 62)
+
+== IB2300363623#0  (gop: all 172 → 172, dropped 3 → 3)
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: comappower||COM9K|9KVA|74KW|84KVA|67KW|D1105E2BG|3|COM9K top#29 điểm 139
+  DỮ LIỆU vào: KHÁC (cũ all điểm 115 → 165): xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 → top#27 điểm 165 (hạng cũ 81)
+
+== IB2300370623#0  (gop: all 1350 → 1340, dropped 634 → 635)
+  all theo NCC (dữ liệu): starlight-power 11→0, xingguang-jiangsu 5→16, yingtai-group 5→0
+
+== IB2300372629#0  (gop: all 1415 → 1397, dropped 78 → 89)
+  all theo NCC (dữ liệu): starlight-power 16→0, xingguang-jiangsu 2→18, yingtai-group 7→0
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+  LUẬT ra: loại [cyl] theo số đông: sanq-power||SQP206|16/20|14/18|403A15G2|PI044F|WUXI|620|1140|1500×650×1225|2200×1033×1306| top#5 điểm 281 · Perkins 403A15G2 · số đông 3 xi lanh {"3":13,"4":2}, nguồn khác depco-power «4», huipu-power «4» · HSMT minCyl 4 (ghi trơ)
+  LUẬT vào: lấp chỗ, điểm không đổi: uleengen||UC25GF|20|25|4B39G2|CUMMINS|24|4L|102×120|39|46|S0L2M1|1800X700X1200|700 → top#29 điểm 256 (hạng cũ 56)
+
+== IB2300374375#0  (gop: all 197 → 79, dropped 148 → 266)
+  all theo NCC (dữ liệu): starlight-power 3→0, xingguang-jiangsu 1→4
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG12S|123|112|STARLIGHT|YD480D|PDF top#19 điểm 157
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG12S|123|112|STARLIGHT|YD480D|PDF → top#19 điểm 157
+  LUẬT ra: loại [cyl] theo số đông: gb-power|STANDARDFEATURES|MODEL|GBP10|STANDBYPOWER(50HZ)|88KW/11KVA|PRIMEPOWER(50HZ)|8KW/1 top#0 điểm 278 · Perkins 403D11G · số đông 3 xi lanh {"3":16,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: fdk-energy||P10/H1CONTACT|10KVA/8KW|9KVA/7KW|403D11G|PERKINSCHINA|STAMFORDS0L1H1|CLICKHERE top#1 điểm 275 · Perkins 403D11G · số đông 3 xi lanh {"3":16,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: fdk-energy||P10/H1CONTACT|10KVA/8KW|9KVA/7KW|403A11G1|PERKINSCHINA|STAMFORDS0L1H1|CLICKHER top#2 điểm 275 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: sanq-power||SQP10|8/10|7/9|403D11G|PI044E|WUXI|450|896|1500X650X1225|2200X1033X1304 top#3 điểm 272 · Perkins 403D11G · số đông 3 xi lanh {"3":16,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: jet-power||P10|10|8|9|7|403A11G1|3L|77X81|1131|3|PI044E|1200*650*950|352|1950*860*1060|552 top#4 điểm 272 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: sanq-power||SQP10|8/10|7/9|403A11G1|PI044E|WUXI|450|896|1260X630X730|2200X1033X1304 top#5 điểm 272 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: elitech-power||EPS11PA3|PERKINS|11KVA|12KVA|403D15G|50HZ|3PHASE|DOWNLOADPDF|EPS11PA3PERKIN top#10 điểm 200 · Perkins 403D15G · số đông 3 xi lanh {"3":18,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4
+  LUẬT vào: lấp chỗ, điểm không đổi: jet-power||YN11|11|88|10|8|3TNV82AGGE/99KW|3|MECHANICAL|1331|82X84|PI044E/10KVA|1200X600X9 → top#4 điểm 203 (hạng cũ 48)
+  LUẬT vào: lấp chỗ, điểm không đổi: ettes-power||EP10|7|9|8|10|403A11G1★|TBA|3L|TBA|1150*500*1100|280| → top#13 điểm 159 (hạng cũ 89)
+  LUẬT vào: lấp chỗ, điểm không đổi: sr-genset||121|99|11|9|403D11GCOMMODITY|MECH|S0L1H1|TALA40C|SA164106|1400*690*1000|1860*81 → top#16 điểm 148 (hạng cũ 93)
+  LUẬT vào: lấp chỗ, điểm không đổi: victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY(HZ)|50|50|50|RATEDA → top#20 điểm 145 (hạng cũ 97)
+  LUẬT vào: lấp chỗ, điểm không đổi: comappower||COM12K|12KVA|99KW|113KVA|9KW|V1505E2BG|4|COM12K → top#22 điểm 140 (hạng cũ 103)
+  LUẬT vào: lấp chỗ, điểm không đổi: ettes-power||EP12|9|11|10|12|403D11G★|TBA|3L|TBA|1300*690*1320|280| → top#23 điểm 136 (hạng cũ 107)
+
+== IB2300386535#0  (gop: all 52 → 52, dropped 17 → 17)
+  all theo NCC (dữ liệu): starlight-power 1→0, xingguang-jiangsu 3→4
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG8S|79|72|STARLIGHT|YD380D|PDF top#8 điểm 169
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG8S|79|72|STARLIGHT|YD380D|PDF → top#8 điểm 169
+
+== IB2400011202#0  (gop: all 1057 → 1048, dropped 240 → 246)
+  all theo NCC (dữ liệu): starlight-power 10→0, yingtai-group 3→0, xingguang-jiangsu 1→11
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG66S3|66|60|CUMMINS|4BTA39G2(M)|PDF top#25 điểm 605
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG66S3|66|60|CUMMINS|4BTA39G2(M)|PDF → top#25 điểm 605
+
+== IB2400023840#0  (gop: all 1645 → 1638, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 16→0, xingguang-jiangsu 2→18, yingtai-group 7→0
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2400026437#0  (gop: all 2051 → 2040, dropped 751 → 745)
+  all theo NCC (dữ liệu): starlight-power 27→0, yingtai-group 11→0, xingguang-jiangsu 7→34
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: fdk-energy||Y413V1H1CONTACT|413KVA/330KW|375KVA/300KW|YC6K500D31|YUCHAI(CHINA)|NIANFENGNF3 top#17 điểm 274
+  DỮ LIỆU vào: lấp chỗ, điểm không đổi: fdk-energy||Y413V3H1CONTACT|413KVA/330KW|375KVA/300KW|YC6MJ500LD21|YUCHAI(CHINA)|NIANFENGN → top#17 điểm 274 (hạng cũ 40)
+
+== IB2400040566#0  (gop: all 146 → 146, dropped 563 → 562)
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: minsun-motor||GFY15|15|12|YD485D|SYA164D top#29 điểm 129
+  DỮ LIỆU vào: KHÁC (cũ all điểm 101 → 151): xingguang-jiangsu||XG10GF|10/125|ZS1100|STC10|1140×780×995|480 → top#21 điểm 151 (hạng cũ 86)
+
+== IB2400041536#0  (gop: all 896 → 889, dropped 1644 → 1632)
+  all theo NCC (dữ liệu): starlight-power 7→0, yingtai-group 7→0, xingguang-jiangsu 0→7
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2400063033#0  (gop: all 349 → 351, dropped 39 → 39)
+  all theo NCC (dữ liệu): starlight-power 8→0, xingguang-jiangsu 3→11, denyo 1→2, yanmar 0→1
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: denyo|(KVA)STANDBY1113713816522275222752227522275 top#28 điểm 127
+  DỮ LIỆU vào: dòng mới của dữ liệu (denyo): denyo|88/110KVA → top#28 điểm 155
+
+== IB2400064139#0  (gop: all 1404 → 1397, dropped 89 → 89)
+  all theo NCC (dữ liệu): starlight-power 16→0, xingguang-jiangsu 2→18, yingtai-group 7→0
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2400085846#0  (gop: all 1108 → 940, dropped 460 → 626)
+  all theo NCC (dữ liệu): starlight-power 14→0, xingguang-jiangsu 4→18, yingtai-group 2→0
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+  LUẬT ra: loại [cyl] theo số đông: bobig-power||BC15125S|1100|1375|1210|1513|KTA50G3|1220|BW404G|5200*2150*2550|6100*2250*305 top#11 điểm 269 · Cummins KTA50G3 · số đông 16 xi lanh {"12":3,"16":29}, nguồn khác bdadl-shanghai «10», comappower «12», huipu-power «12», mingbang-mbkl «12», suneco-linyi «12», xinhengxin-fujian «12», xinzhengfa «12», yingtai-jiangsu «12» · HSMT minCyl 12 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: stone-power||SC1375E6|1210|1100|1513|1375|KTA50G3|LVI634G|MX10304|WHI6G top#12 điểm 269 · Cummins KTA50G3 · số đông 16 xi lanh {"12":3,"16":29}, nguồn khác bdadl-shanghai «10», comappower «12», huipu-power «12», mingbang-mbkl «12», suneco-linyi «12», xinhengxin-fujian «12», xinzhengfa «12», yingtai-jiangsu «12» · HSMT minCyl 12 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: bobig-power||BC1513|1100|1375|1210|1513|KTA50G8|1200|BW404J|4650*2065*2500|6100*2250*3050 top#13 điểm 269 · Cummins KTA50G8 · số đông 16 xi lanh {"12":2,"16":28}, nguồn khác bdadl-shanghai «10», mingbang-mbkl «12», xinzhengfa «12», yingtai-jiangsu «12» · HSMT minCyl 12 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: dingbo||XG1100GF|1100/1375|1210/15125|KTA50G8|PI734B1|5620X2280X2350|11000 top#14 điểm 269 · Cummins KTA50G8 · số đông 16 xi lanh {"12":2,"16":28}, nguồn khác bdadl-shanghai «10», mingbang-mbkl «12», xinzhengfa «12», yingtai-jiangsu «12» · HSMT minCyl 12 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: eastern-lion-fuan||GF/GFSC1100|1100|1375|1222|1528|KTA50G8|1200|EL404H|1120KW|SMARTGEN6120 top#15 điểm 269 · Cummins KTA50G8 · số đông 16 xi lanh {"12":2,"16":28}, nguồn khác bdadl-shanghai «10», mingbang-mbkl «12», xinzhengfa «12», yingtai-jiangsu «12» · HSMT minCyl 12 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: bobig-power||BC1650|1200|1500|1320|1650|KTA50GS8|1287|BW454C|4650*2065*2500|6100*2250*3050 top#16 điểm 269 · Cummins KTA50GS8 · số đông 16 xi lanh {"12":1,"16":28}, nguồn khác mingbang-mbkl «12» · HSMT minCyl 12 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: dingbo||XG1200GF|1200/1500|1320/1650|KTA50GS8|PI734C1|5620X2280X2350|11000 top#17 điểm 269 · Cummins KTA50GS8 · số đông 16 xi lanh {"12":1,"16":28}, nguồn khác mingbang-mbkl «12» · HSMT minCyl 12 (ghi trơ)
+  LUẬT ra: loại [cyl] theo số đông: eastern-lion-fuan||GF/GFSC1120|1180|1475|1311|1639|KTA50GS8|1287|EL404I|1240KW|SMARTGEN612 top#18 điểm 269 · Cummins KTA50GS8 · số đông 16 xi lanh {"12":1,"16":28}, nguồn khác mingbang-mbkl «12» · HSMT minCyl 12 (ghi trơ)
+  LUẬT vào: lấp chỗ, điểm không đổi: dingbo||XG1100GF|1100/1375|1210/15125|401246TWG3A|MX10304|5000X2100X2550|10100 → top#13 điểm 269 (hạng cũ 51)
+  LUẬT vào: lấp chỗ, điểm không đổi: sanq-power||SQM1650|1650/1320|1500/1200|S12RPTAA2C|PI734C|308|12317|18500|4920X2192X2810|1 → top#16 điểm 269 (hạng cũ 57)
+  LUẬT vào: lấp chỗ, điểm không đổi: sanq-power||SQM1500|1500/1200|1375/1100|S12RPTA2C|PI734B|281|10500|18300|4650X2100X2630|12 → top#17 điểm 269 (hạng cũ 59)
+  LUẬT vào: lấp chỗ, điểm không đổi: stone-power||SM1375E5|1200|1100|1500|1375|S12RPTA2|PI734B|MX12404|WHI7B → top#18 điểm 269 (hạng cũ 62)
+  LUẬT vào: lấp chỗ, điểm không đổi: stone-power||SM1500E5|1320|1200|1650|1500|S12RPTAA2|PI734C|MX12404|WHI7C → top#19 điểm 269 (hạng cũ 64)
+  LUẬT vào: lấp chỗ, điểm không đổi: longkai-power||LG1100BD|1210|15125|1100|1375|12M33G1500/5|LK734B|LSA502L8|OP4700*2200*2400 → top#22 điểm 265 (hạng cũ 72)
+  LUẬT vào: lấp chỗ, điểm không đổi: uleengen||UW1500GF|1200|1500|12M33D1500E310|1350|12V|150×185|392|280|S7L1DC41|4600×1900×24 → top#23 điểm 265 (hạng cũ 74)
+  LUẬT vào: lấp chỗ, điểm không đổi: acepow-fuan||APW1090|||1200|1500|PI734C|1120|1232|12M33D1320E200| → top#24 điểm 261 (hạng cũ 78)
+
+== IB2400099464#0  (gop: all 184 → 184, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 5→0, xingguang-jiangsu 2→7
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG10S|95|86|STARLIGHT|YD385D|PDF top#22 điểm 157
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG10S|95|86|STARLIGHT|YD385D|PDF → top#22 điểm 157
+
+== IB2400100405#0  (gop: all 109 → 109, dropped 722 → 719)
+  all theo NCC (dữ liệu): starlight-power 4→0, xingguang-jiangsu 0→4
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG2500S3|2500|2000|CUMMINS|QSK60G8|PDF top#3 điểm 881
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG2500S3|2500|2000|CUMMINS|QSK60G8|PDF → top#3 điểm 881
+
+== IB2400127023#0  (gop: all 28 → 29, dropped 0 → 0)
+  all theo NCC (dữ liệu): denyo 1→2
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: denyo|(KVA)STANDBY1113713816522275222752227522275 top#9 điểm 136
+  DỮ LIỆU vào: dòng mới của dữ liệu (denyo): denyo|88/110KVA → top#8 điểm 161
+
+== IB2400133990#0  (gop: all 1037 → 1032, dropped 200 → 204)
+  all theo NCC (dữ liệu): starlight-power 8→0, xingguang-jiangsu 1→9, yingtai-group 1→0
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG49S36|487|443|STARLIGHT|Y4105D|PDF top#5 điểm 1188
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG49S36|487|443|STARLIGHT|Y4105D|PDF → top#5 điểm 1188
+
+== IB2400145438#0  (gop: all 187 → 187, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 5→0, xingguang-jiangsu 2→7
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG10S|95|86|STARLIGHT|YD385D|PDF top#22 điểm 166
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG10S|95|86|STARLIGHT|YD385D|PDF → top#22 điểm 166
+
+== IB2400152304#0  (gop: all 1476 → 1469, dropped 17 → 17)
+  all theo NCC (dữ liệu): starlight-power 16→0, xingguang-jiangsu 2→18, yingtai-group 7→0
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2400153322#0  (gop: all 349 → 351, dropped 39 → 39)
+  all theo NCC (dữ liệu): starlight-power 8→0, xingguang-jiangsu 3→11, denyo 1→2, yanmar 0→1
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: denyo|(KVA)STANDBY1113713816522275222752227522275 top#28 điểm 127
+  DỮ LIỆU vào: dòng mới của dữ liệu (denyo): denyo|88/110KVA → top#28 điểm 155
+
+== IB2400159665#0  (gop: all 40 → 39, dropped 305 → 306)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #3 uleengen||UY10GFS|8|10|380码|10|3|80*90|1357|19|164B|1860X850X1200|700 147 ↔ xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 147
+    #4 victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY 145 ↔ uleengen||UY10GFS|8|10|380码|10|3|80*90|1357|19|164B|1860X850X1200|700 147
+    #5 victory-generator||GENERATOR|MODEL:|VT11000S|VT11000S3|FREQUENCY(HZ)|5 144 ↔ victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY 145
+    #6 victory-generator||GENERATOR|MODEL:|VDG12S|VDG12S3|FREQUENCY(HZ)|50|50 143 ↔ victory-generator||GENERATOR|MODEL:|VT11000S|VT11000S3|FREQUENCY(HZ)|5 144
+    #7 comappower||COM12K|12KVA|99KW|113KVA|9KW|V1505E2BG|4|COM12K 140 ↔ victory-generator||GENERATOR|MODEL:|VDG12S|VDG12S3|FREQUENCY(HZ)|50|50 143
+    #8 ettes-power||EP12|9|11|10|12|403D11G★|TBA|3L|TBA|1300*690*1320|280| 136 ↔ comappower||COM12K|12KVA|99KW|113KVA|9KW|V1505E2BG|4|COM12K 140
+    #9 acepow-fuan||APYN10|10|11|125|14|BC164C|YN25GB|18|198 116 ↔ ettes-power||EP12|9|11|10|12|403D11G★|TBA|3L|TBA|1300*690*1320|280| 136
+    #10 xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 97 ↔ acepow-fuan||APYN10|10|11|125|14|BC164C|YN25GB|18|198 116
+  LUẬT ra: loại [cyl] theo số đông: elitech-power||EPS11PA3|PERKINS|11KVA|12KVA|403D15G|50HZ|3PHASE|DOWNLOADPDF|EPS11PA3PERKIN top#1 điểm 200 · Perkins 403D15G · số đông 3 xi lanh {"3":18,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4
+
+== IB2400183966#0  (gop: all 46 → 46, dropped 0 → 0)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #8 victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY 137 ↔ xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 142
+    #9 longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 136 ↔ victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY 137
+    #10 tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 123 ↔ longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 136
+    #11 agg-fuzhou||P8D51P|8/8|7/7|403A11G1 102 ↔ tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 123
+    #12 victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 87 ↔ agg-fuzhou||P8D51P|8/8|7/7|403A11G1 102
+    #13 mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 96 ↔ victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 87
+    #14 xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 92 ↔ mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 96
+
+== IB2400185291#0  (gop: all 2400 → 2335, dropped 385 → 430)
+  all theo NCC (dữ liệu): starlight-power 31→0, yingtai-group 17→0, xingguang-jiangsu 1→32
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: eastern-lion-fuan||GF/GFSYC320|320|400|356|444|YC6K520D30|356|EL314G|320|SMARTGEN6120|DETA top#29 điểm 269
+  DỮ LIỆU vào: lấp chỗ, điểm không đổi: bobig-power||BWC413|300|375|330|413|WP13D405E200|368|BW314F|3100*1050*2150|4200*1600*2250 → top#29 điểm 269 (hạng cũ 126)
+
+== IB2400186078#0  (gop: all 52 → 52, dropped 0 → 0)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #16 elitech-power||EPS8IA3|ISUZU|8KVA|88KVA|JE493DB04|50HZ|3PHASE|DOWNLOAD 148 ↔ xingguang-jiangsu||XG8GF|7/8|403D11G|10/11|3|50|≤245|国II|1100×550×890| 156
+    #17 ade-power||STANDBYPOWER(ESP)RATING|8KVA/64KW|PRIMEPOWER(PRP)RATING|7KV 141 ↔ elitech-power||EPS8IA3|ISUZU|8KVA|88KVA|JE493DB04|50HZ|3PHASE|DOWNLOAD 148
+    #18 comappower||COM9K|9KVA|74KW|84KVA|67KW|D1105E2BG|3|COM9K 133 ↔ ade-power||STANDBYPOWER(ESP)RATING|8KVA/64KW|PRIMEPOWER(PRP)RATING|7KV 141
+    #19 powerzoo||Y8P6|64/8|72/9|3TNM74FNGGE|VIEWDETAIL» 132 ↔ comappower||COM9K|9KVA|74KW|84KVA|67KW|D1105E2BG|3|COM9K 133
+    #20 tesla-fujian||BSYM8|656|82|118|3TNV76GGE|PI044E 127 ↔ powerzoo||Y8P6|64/8|72/9|3TNM74FNGGE|VIEWDETAIL» 132
+    #21 xingguang-jiangsu||XG8GF|7/8|403D11G|10/11|3|50|≤245|国II|1100×550×890| 106 ↔ tesla-fujian||BSYM8|656|82|118|3TNV76GGE|PI044E 127
+
+== IB2400210643#0  (gop: all 3117 → 3097, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 34→0, yingtai-group 20→0, xingguang-jiangsu 5→39
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: eastern-lion-fuan||GF/GFSYC320|320|400|356|444|YC6K520D30|356|EL314G|320|SMARTGEN6120|DETA top#29 điểm 269
+  DỮ LIỆU vào: lấp chỗ, điểm không đổi: bobig-power||BWC413|300|375|330|413|WP13D405E200|368|BW314F|3100*1050*2150|4200*1600*2250 → top#29 điểm 269 (hạng cũ 164)
+
+== IB2400215103#0  (gop: all 53 → 53, dropped 0 → 0)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #10 longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133 ↔ xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 140
+    #11 tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121 ↔ longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133
+    #12 victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95 ↔ tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121
+    #13 agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99 ↔ victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95
+    #14 mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93 ↔ agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99
+    #15 xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 90 ↔ mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93
+
+== IB2400237184#1  (gop: all 1265 → 1257, dropped 1280 → 1268)
+  all theo NCC (dữ liệu): starlight-power 14→0, yingtai-group 8→0, xingguang-jiangsu 4→18
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2400257900#0  (gop: all 1489 → 1482, dropped 337 → 335)
+  all theo NCC (dữ liệu): starlight-power 17→0, yingtai-group 7→0, xingguang-jiangsu 3→20
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2400258097#0  (gop: all 1899 → 1885, dropped 886 → 880)
+  all theo NCC (dữ liệu): starlight-power 24→0, yingtai-group 14→0, xingguang-jiangsu 4→28
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2400267274#0  (gop: all 641 → 640, dropped 522 → 517)
+  all theo NCC (dữ liệu): starlight-power 6→0, xingguang-jiangsu 0→6
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG49S36|487|443|STARLIGHT|Y4105D|PDF top#4 điểm 1178
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG49S36|487|443|STARLIGHT|Y4105D|PDF → top#4 điểm 1178
+  LUẬT ra: loại [cyl] theo số đông: rise-power||RDL3260|32/40|352/44|D226B3D|LSA432S1|1650×760×1350|2500×1000×1500|720|1450 top#27 điểm 253 · Deutz / Weichai D226B3D · số đông 3 xi lanh {"3":9,"4":1}, nguồn khác aoke-yangzhou «4» · HSMT minCyl 4 (ghi trơ)
+  LUẬT vào: lấp chỗ, điểm không đổi: wintpower||WTKU47|34/425|37/47|V3300T|PI144J|TALA42F|WT184H|2150X930X1150|1650X800X1080 → top#29 điểm 247 (hạng cũ 80)
+
+== IB2400282042#0  (gop: all 89 → 89, dropped 256 → 256)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #14 uleengen||UY10GFS|8|10|380码|10|3|80*90|1357|19|164B|1860X850X1200|700 147 ↔ xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 147
+    #15 victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY 145 ↔ uleengen||UY10GFS|8|10|380码|10|3|80*90|1357|19|164B|1860X850X1200|700 147
+    #16 elitech-power||EPS11QCA3|QUANCHAI|11KVA|12KVA|QC385D|50HZ|3PHASE|DOWNL 144 ↔ victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY 145
+    #17 victory-generator||GENERATOR|MODEL:|VT11000S|VT11000S3|FREQUENCY(HZ)|5 144 ↔ elitech-power||EPS11QCA3|QUANCHAI|11KVA|12KVA|QC385D|50HZ|3PHASE|DOWNL 144
+    #18 comappower||COM12K|12KVA|99KW|113KVA|9KW|V1505E2BG|4|COM12K 140 ↔ victory-generator||GENERATOR|MODEL:|VT11000S|VT11000S3|FREQUENCY(HZ)|5 144
+    #19 world-power-fuzhou||WDPGDS8|64|8|7|9|SP103NA|3|E| 133 ↔ comappower||COM12K|12KVA|99KW|113KVA|9KW|V1505E2BG|4|COM12K 140
+    #20 jet-power||UK12Y|12|96|11|88|YD490D17|L4|MECHANICAL|255|90×100|JET164B 132 ↔ world-power-fuzhou||WDPGDS8|64|8|7|9|SP103NA|3|E| 133
+    #21 rise-power||RXL8|8/10|9/11|3N17D|SLW88|1400×550×900|580 127 ↔ jet-power||UK12Y|12|96|11|88|YD490D17|L4|MECHANICAL|255|90×100|JET164B 132
+    #22 mecca-power||MC10YD|10|8|9|7|YD380D/10KW|CN|22|3L/NA|1357|M|1550*760*1 119 ↔ rise-power||RXL8|8/10|9/11|3N17D|SLW88|1400×550×900|580 127
+    #23 mecca-power||MC10D|10|74|9|68|SP103NE|KOREA|24|3L|10|E|1090*500*1000|3 119 ↔ mecca-power||MC10YD|10|8|9|7|YD380D/10KW|CN|22|3L/NA|1357|M|1550*760*1 119
+    #24 mecca-power||MC10D|10|74|9|68|SP103NH|KOREA|24|3L|10|E|1090*500*1000|3 119 ↔ mecca-power||MC10D|10|74|9|68|SP103NE|KOREA|24|3L|10|E|1090*500*1000|3 119
+    #25 acepow-fuan||APYN10|10|11|125|14|BC164C|YN25GB|18|198 116 ↔ mecca-power||MC10D|10|74|9|68|SP103NH|KOREA|24|3L|10|E|1090*500*1000|3 119
+    #26 agestar||GR11|11|9|10|8|Y480BD|181|MECHANICAL|ASG164B|1550*810*930|359 113 ↔ acepow-fuan||APYN10|10|11|125|14|BC164C|YN25GB|18|198 116
+    #27 landtop-fuzhou||LTP11Q|11|9|10|8|QC385D|LTP164S8 105 ↔ agestar||GR11|11|9|10|8|Y480BD|181|MECHANICAL|ASG164B|1550*810*930|359 113
+    #28 xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 97 ↔ landtop-fuzhou||LTP11Q|11|9|10|8|QC385D|LTP164S8 105
+
+== IB2400315025#0  (gop: all 187 → 187, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 5→0, xingguang-jiangsu 2→7
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG10S|95|86|STARLIGHT|YD385D|PDF top#22 điểm 166
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG10S|95|86|STARLIGHT|YD385D|PDF → top#22 điểm 166
+
+== IB2400317224#0  (gop: all 19 → 20, dropped 8 → 8)
+  all theo NCC (dữ liệu): denyo 1→2
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: denyo|(KVA)STANDBY1113713816522275222752227522275 top#6 điểm 127
+  DỮ LIỆU vào: dòng mới của dữ liệu (denyo): denyo|88/110KVA → top#4 điểm 155
+
+== IB2400333932#0  (gop: all 530 → 527, dropped 373 → 373)
+  all theo NCC (dữ liệu): starlight-power 11→0, yingtai-group 3→0, xingguang-jiangsu 0→11
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG2500S36|2500|2281|CUMMINS|QSK60G7|PDF top#14 điểm 457
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG2500S36|2500|2281|CUMMINS|QSK60G7|PDF → top#14 điểm 457
+
+== IB2400339967#0  (gop: all 297 → 167, dropped 350 → 481)
+  all theo NCC (dữ liệu): starlight-power 2→0, xingguang-jiangsu 2→4, yanmar 0→1
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: sr-genset||121|99|11|9|403D11GCOMMODITY|MECH|S0L1H1|TALA40C|SA164106|1400*690*1000|1860*81 top#25 điểm 167
+  DỮ LIỆU vào: dòng mới của dữ liệu (yanmar): yanmar||GENERATORSET|CAPACITY|[KVA]|5|65|10|65|9|125|15 → top#29 điểm 15
+  LUẬT ra: loại [cyl] theo số đông: gb-power|STANDARDFEATURES|MODEL|GBP15|STANDBYPOWER(50HZ)|11KW/14KVA|PRIMEPOWER(50HZ)|10KW/ top#0 điểm 281 · Perkins 403D15G · số đông 3 xi lanh {"3":18,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: uleengen||UP10GF|8|10|403A11G1|PERKINS|9|3L|77×81|1131|19|S0L1H1|1580X810X930|500 top#1 điểm 281 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: fdk-energy||P14/H1CONTACT|14KVA/11KW|13KVA/10KW|403A15G1|PERKINSCHINA|STAMFORDS0L1L1|CLICK top#2 điểm 251 · Perkins 403A15G1 · số đông 3 xi lanh {"3":13,"4":2}, nguồn khác depco-power «4», huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: jet-power||P14|14|11|13|10|403A15G1|3L|84X90|1496|37|PI044F|1200*650*950|426|1950*860*1060 top#3 điểm 251 · Perkins 403A15G1 · số đông 3 xi lanh {"3":13,"4":2}, nguồn khác depco-power «4», huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: sanq-power||SQP15|12/145|105/131|403D15G|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304 top#4 điểm 250 · Perkins 403D15G · số đông 3 xi lanh {"3":18,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: sr-genset||11|88|10|8|403A11G1|MECH|S0L1H1|TALA40C|SA1648|1400*690*1000|1860*810*1152 top#5 điểm 241 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: bobig-power||BP14|10|13|11|14|403A15G1MADEINCHINA|10|BW164C|1150*650*1000|1750*850*1000 top#6 điểm 239 · Perkins 403A15G1 · số đông 3 xi lanh {"3":13,"4":2}, nguồn khác depco-power «4», huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: eastern-lion-fuan||GFSP14|104|13|12|14|403D15G|20362|EL164C|108|SMARTGEN6120|DETAIL top#7 điểm 239 · Perkins 403D15G · số đông 3 xi lanh {"3":18,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: elitech-power|MODEL:EPS10PKA3S|10KVA|1PHASE,3PHASE|50HZ,60HZ|POWER(KVA)|10|ENGINEMODEL|403 top#8 điểm 229 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4
+  LUẬT vào: lấp chỗ, điểm không đổi: elitech-power||EPS10IA3|ISUZU|10KVA|11KVA|JE493DB04|50HZ|3PHASE|DOWNLOADPDF|EPS10IA3ISUZU1 → top#14 điểm 181 (hạng cũ 70)
+  LUẬT vào: lấp chỗ, điểm không đổi: sr-genset||121|99|11|9|403D11GCOMMODITY|MECH|S0L1H1|TALA40C|SA164106|1400*690*1000|1860*81 → top#17 điểm 167 (hạng cũ 75)
+  LUẬT vào: lấp chỗ, điểm không đổi: xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 → top#19 điểm 165 (hạng cũ 79)
+  LUẬT vào: lấp chỗ, điểm không đổi: uleengen||UY10GFS|8|10|380码|10|3|80*90|1357|19|164B|1860X850X1200|700 → top#20 điểm 165 (hạng cũ 80)
+  LUẬT vào: lấp chỗ, điểm không đổi: victory-generator||GENERATOR|MODEL:|VT11000S|VT11000S3|FREQUENCY(HZ)|50|50|RATEDACOUTPUT(K → top#21 điểm 163 (hạng cũ 84)
+  LUẬT vào: lấp chỗ, điểm không đổi: victory-generator||GENERATOR|MODEL:|VDG12S|VDG12S3|FREQUENCY(HZ)|50|50|RATEDACOUTPUT(KVA)| → top#22 điểm 136 (hạng cũ 140)
+  LUẬT vào: lấp chỗ, điểm không đổi: victory-generator||GENERATOR|MODEL:|VDG12|VDG123|FREQUENCY(HZ)|50|50|RATEDACOUTPUT(KVA)|10 → top#23 điểm 136 (hạng cũ 142)
+  LUẬT vào: lấp chỗ, điểm không đổi: comappower||COM12K|12KVA|99KW|113KVA|9KW|V1505E2BG|4|COM12K → top#24 điểm 160 (hạng cũ 93)
+  LUẬT vào: lấp chỗ, điểm không đổi: mecca-power||MC14F|14|11|13|10|4DW8123D|CN|28|4|2270|M/E|1680*650*1030|508 → top#25 điểm 159 (hạng cũ 101)
+
+== IB2400355977#0  (gop: all 210 → 211, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 5→0, xingguang-jiangsu 2→7, denyo 0→1
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG10S|95|86|STARLIGHT|YD385D|PDF top#26 điểm 166
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: voltgent||VYM85S5|8|6|6|5|YANMAR|3TNM74FNGGE|[EN][RU][ES][PT] top#27 điểm 165
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG10S|95|86|STARLIGHT|YD385D|PDF → top#26 điểm 166
+  DỮ LIỆU vào: dòng mới của dữ liệu (denyo): denyo|88/110KVA → top#27 điểm 139
+
+== IB2400365165#0  (gop: all 20 → 21, dropped 2 → 2)
+  all theo NCC (dữ liệu): denyo 0→1
+  DỮ LIỆU vào: dòng mới của dữ liệu (denyo): denyo|88/110KVA → top#6 điểm 143
+
+== IB2400375383#0  (gop: all 2125 → 2116, dropped 1 → 1)
+  all theo NCC (dữ liệu): starlight-power 18→0, yingtai-group 9→0, xingguang-jiangsu 3→21
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2400377239#0  (gop: all 2306 → 2292, dropped 811 → 805)
+  all theo NCC (dữ liệu): starlight-power 25→0, yingtai-group 14→0, xingguang-jiangsu 4→29
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2400384429#0  (gop: all 32 → 32, dropped 20 → 20)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #6 victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY 145 ↔ xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 151
+    #7 tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 131 ↔ victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY 145
+    #8 victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 105 ↔ tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 131
+    #9 xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 101 ↔ victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 105
+
+== IB2400391446#0  (gop: all 82 → 82, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 2→0, xingguang-jiangsu 0→2
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG4000S36|4000|3465|MTU|20V4000G83LS|PDF top#21 điểm 141
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG4000S36|4000|3465|MTU|20V4000G83LS|PDF → top#21 điểm 141
+
+== IB2400410218#0  (gop: all 116 → 71, dropped 229 → 274)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #15 uleengen||UY10GFS|8|10|380码|10|3|80*90|1357|19|164B|1860X850X1200|700 147 ↔ xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 147
+    #16 victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY 145 ↔ uleengen||UY10GFS|8|10|380码|10|3|80*90|1357|19|164B|1860X850X1200|700 147
+    #17 victory-generator||GENERATOR|MODEL:|VT11000S|VT11000S3|FREQUENCY(HZ)|5 144 ↔ victory-generator||GENERATOR|MODEL:|LPG2500|LPG6500|LPG11000|FREQUENCY 145
+    #18 comappower||COM12K|12KVA|99KW|113KVA|9KW|V1505E2BG|4|COM12K 140 ↔ victory-generator||GENERATOR|MODEL:|VT11000S|VT11000S3|FREQUENCY(HZ)|5 144
+    #19 ettes-power||EP12|9|11|10|12|403D11G★|TBA|3L|TBA|1300*690*1320|280| 136 ↔ comappower||COM12K|12KVA|99KW|113KVA|9KW|V1505E2BG|4|COM12K 140
+    #20 jet-power||UK12Y|12|96|11|88|YD490D17|L4|MECHANICAL|255|90×100|JET164B 132 ↔ ettes-power||EP12|9|11|10|12|403D11G★|TBA|3L|TBA|1300*690*1320|280| 136
+    #21 mecca-power||MC10YD|10|8|9|7|YD380D/10KW|CN|22|3L/NA|1357|M|1550*760*1 119 ↔ jet-power||UK12Y|12|96|11|88|YD490D17|L4|MECHANICAL|255|90×100|JET164B 132
+    #22 acepow-fuan||APYN10|10|11|125|14|BC164C|YN25GB|18|198 116 ↔ mecca-power||MC10YD|10|8|9|7|YD380D/10KW|CN|22|3L/NA|1357|M|1550*760*1 119
+    #23 agestar||GR11|11|9|10|8|Y480BD|181|MECHANICAL|ASG164B|1550*810*930|359 113 ↔ acepow-fuan||APYN10|10|11|125|14|BC164C|YN25GB|18|198 116
+    #24 xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 97 ↔ agestar||GR11|11|9|10|8|Y480BD|181|MECHANICAL|ASG164B|1550*810*930|359 113
+  LUẬT ra: loại [cyl] theo số đông: fdk-energy||P10/H1CONTACT|10KVA/8KW|9KVA/7KW|403A11G1|PERKINSCHINA|STAMFORDS0L1H1|CLICKHER top#0 điểm 275 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: jet-power||P10|10|8|9|7|403A11G1|3L|77X81|1131|3|PI044E|1200*650*950|352|1950*860*1060|552 top#1 điểm 272 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: sanq-power||SQP10|8/10|7/9|403A11G1|PI044E|WUXI|450|896|1260X630X730|2200X1033X1304 top#2 điểm 272 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: elitech-power||EPS11PA3|PERKINS|11KVA|12KVA|403D15G|50HZ|3PHASE|DOWNLOADPDF|EPS11PA3PERKIN top#4 điểm 200 · Perkins 403D15G · số đông 3 xi lanh {"3":18,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4
+  LUẬT vào: lấp chỗ, điểm không đổi: rise-power||RXL8|8/10|9/11|3N17D|SLW88|1400×550×900|580 → top#19 điểm 127 (hạng cũ 68)
+  LUẬT vào: lấp chỗ, điểm không đổi: mecca-power||MC10D|10|74|9|68|SP103NE|KOREA|24|3L|10|E|1090*500*1000|353 → top#21 điểm 119 (hạng cũ 72)
+  LUẬT vào: lấp chỗ, điểm không đổi: mecca-power||MC10D|10|74|9|68|SP103NH|KOREA|24|3L|10|E|1090*500*1000|353 → top#22 điểm 119 (hạng cũ 73)
+  LUẬT vào: lấp chỗ, điểm không đổi: long-gen||LGKS11|8|10|88|11|D1105E2BGCHN1|95|S0L1H1|10|AMF20|DOWNLOAD → top#25 điểm 109 (hạng cũ 80)
+
+== IB2400425513#0  (gop: all 1494 → 1480, dropped 490 → 495)
+  all theo NCC (dữ liệu): starlight-power 11→0, xingguang-jiangsu 5→16, yingtai-group 9→0
+
+== IB2400426562#0  (gop: all 195 → 196, dropped 9 → 9)
+  all theo NCC (dữ liệu): starlight-power 5→0, xingguang-jiangsu 2→7, denyo 0→1
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG10S|95|86|STARLIGHT|YD385D|PDF top#26 điểm 157
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: ade-power||STANDBYPOWER(ESP)RATING|8KVA/64KW|PRIMEPOWER(PRP)RATING|7KVA/56KW|ENGINE|BAUDOU top#27 điểm 150
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG10S|95|86|STARLIGHT|YD385D|PDF → top#26 điểm 157
+  DỮ LIỆU vào: dòng mới của dữ liệu (denyo): denyo|88/110KVA → top#27 điểm 130
+
+== IB2400427929#1  (gop: all 713 → 711, dropped 6 → 6)
+  all theo NCC (dữ liệu): starlight-power 7→0, yingtai-group 2→0, xingguang-jiangsu 0→7
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2400429380#0  (gop: all 2628 → 2608, dropped 157 → 157)
+  all theo NCC (dữ liệu): starlight-power 33→0, yingtai-group 20→0, xingguang-jiangsu 5→38
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: eastern-lion-fuan||GF/GFSYC320|320|400|356|444|YC6K520D30|356|EL314G|320|SMARTGEN6120|DETA top#29 điểm 269
+  DỮ LIỆU vào: lấp chỗ, điểm không đổi: bobig-power||BWC413|300|375|330|413|WP13D405E200|368|BW314F|3100*1050*2150|4200*1600*2250 → top#29 điểm 269 (hạng cũ 132)
+
+== IB2400433961#1  (gop: all 1436 → 1434, dropped 132 → 132)
+  all theo NCC (dữ liệu): starlight-power 16→0, xingguang-jiangsu 4→20, yingtai-group 2→0
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2400440704#0  (gop: all 53 → 53, dropped 0 → 0)
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #9 longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133 ↔ xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 140
+    #10 tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121 ↔ longkai-power||LG5DS|8|6|7|5|SP103NA|OP1500*750*1030|AT1808*850*1130| 133
+    #11 victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95 ↔ tesla-fujian||BSYM55|44|55|79|3TNM68GGE|PI044D 121
+    #12 victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 85 ↔ victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 95
+    #13 agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99 ↔ victory-generator||MODEL:|VDG3600S|VDG5000S|VDG6000S|VDG6500S|VDG7500S 85
+    #14 mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93 ↔ agg-fuzhou||P8D51P|8/8|7/7|403A11G1 99
+    #15 xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480 90 ↔ mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 93
+
+== IB2400442989#0  (gop: all 1476 → 1462, dropped 508 → 513)
+  all theo NCC (dữ liệu): starlight-power 11→0, xingguang-jiangsu 5→16, yingtai-group 9→0
+
+== IB2400448320#0  (gop: all 2125 → 2116, dropped 1 → 1)
+  all theo NCC (dữ liệu): starlight-power 18→0, yingtai-group 9→0, xingguang-jiangsu 3→21
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2400453417#0  (gop: all 80 → 80, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 3→0, xingguang-jiangsu 2→5
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG10S|95|86|STARLIGHT|YD385D|PDF top#22 điểm 152
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG10S|95|86|STARLIGHT|YD385D|PDF → top#22 điểm 152
+
+== IB2400475109#0  (gop: all 17 → 16, dropped 18 → 19)
+  LUẬT ra: loại [cyl] theo số đông: energy-gruppi|EY1000B top#1 điểm 221 · Baudouin 8M33G1100/5 · số đông 8 xi lanh {"8":3,"12":1}, nguồn khác waeta-fujian «12 V» · HSMT minCyl 12 (ghi trơ)
+
+== IB2400475145#0  (gop: all 340 → 340, dropped 5 → 5)
+  all theo NCC (dữ liệu): starlight-power 8→0, xingguang-jiangsu 1→9
+
+== IB2400481610#0  (gop: all 138 → 138, dropped 207 → 207)
+  all theo NCC (dữ liệu): starlight-power 1→0, xingguang-jiangsu 1→2
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG12S|123|112|STARLIGHT|YD480D|PDF top#17 điểm 157
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: landtop-fuzhou||LTP11Q|11|9|10|8|QC385D|LTP164S8 top#29 điểm 105
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG12S|123|112|STARLIGHT|YD480D|PDF → top#17 điểm 157
+  DỮ LIỆU vào: KHÁC (cũ all điểm 97 → 147): xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 → top#21 điểm 147 (hạng cũ 96)
+
+== IB2400487645#0  (gop: all 370 → 372, dropped 18 → 18)
+  all theo NCC (dữ liệu): starlight-power 8→0, xingguang-jiangsu 3→11, denyo 1→2, yanmar 0→1
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: denyo|(KVA)STANDBY1113713816522275222752227522275 top#28 điểm 127
+  DỮ LIỆU vào: dòng mới của dữ liệu (denyo): denyo|88/110KVA → top#28 điểm 155
+
+== IB2400494037#0  (gop: all 48 → 48, dropped 3 → 3)
+
+== IB2400495696#0  (gop: all 1540 → 1520, dropped 444 → 455)
+  all theo NCC (dữ liệu): starlight-power 12→0, xingguang-jiangsu 7→19, yingtai-group 5→0
+
+== IB2400497000#1  (gop: all 1476 → 1469, dropped 17 → 17)
+  all theo NCC (dữ liệu): starlight-power 16→0, xingguang-jiangsu 2→18, yingtai-group 7→0
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2400514548#0  (gop: all 69 → 69, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 1→0, xingguang-jiangsu 3→4
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG8S|79|72|STARLIGHT|YD380D|PDF top#10 điểm 169
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 top#21 điểm 116
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG8S|79|72|STARLIGHT|YD380D|PDF → top#10 điểm 169
+  DỮ LIỆU vào: KHÁC (cũ all điểm 106 → 156): xingguang-jiangsu||XG8GF|7/8|403D11G|10/11|3|50|≤245|国II|1100×550×890|360 → top#17 điểm 156 (hạng cũ 30)
+
+== IB2400514548#1  (gop: all 187 → 187, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 5→0, xingguang-jiangsu 2→7
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG10S|95|86|STARLIGHT|YD385D|PDF top#22 điểm 166
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG10S|95|86|STARLIGHT|YD385D|PDF → top#22 điểm 166
+
+== IB2400517601#0  (gop: all 32 → 30, dropped 60 → 62)
+  LUẬT ra: loại [cyl] theo số đông: agg-power|650/520 top#6 điểm 136 · Cummins QSK19G4 · số đông 6 xi lanh {"6":15,"12":1}, nguồn khác longkai-power «V 12» · HSMT minCyl 12
+  LUẬT ra: loại [cyl] theo số đông: tecnogen||CU715TSX*|715|650|688|625|QSK19G4|E|6|19000|555|526|101,1|95,3|T|AUS7310|ACP7320 top#7 điểm 136 · Cummins QSK19G4 · số đông 6 xi lanh {"6":15,"12":1}, nguồn khác longkai-power «V 12» · HSMT minCyl 12
+
+== IB2400589278#1  (gop: all 2000 → 1986, dropped 785 → 779)
+  all theo NCC (dữ liệu): starlight-power 24→0, yingtai-group 14→0, xingguang-jiangsu 4→28
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2400607862#0  (gop: all 1494 → 1480, dropped 490 → 495)
+  all theo NCC (dữ liệu): starlight-power 11→0, xingguang-jiangsu 5→16, yingtai-group 9→0
+
+== IB2400617546#0  (gop: all 32 → 30, dropped 60 → 62)
+  LUẬT ra: loại [cyl] theo số đông: agg-power|650/520 top#6 điểm 136 · Cummins QSK19G4 · số đông 6 xi lanh {"6":15,"12":1}, nguồn khác longkai-power «V 12» · HSMT minCyl 12
+  LUẬT ra: loại [cyl] theo số đông: tecnogen||CU715TSX*|715|650|688|625|QSK19G4|E|6|19000|555|526|101,1|95,3|T|AUS7310|ACP7320 top#7 điểm 136 · Cummins QSK19G4 · số đông 6 xi lanh {"6":15,"12":1}, nguồn khác longkai-power «V 12» · HSMT minCyl 12
+
+== IB2500067556#0  (gop: all 69 → 69, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 1→0, xingguang-jiangsu 3→4
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG8S|79|72|STARLIGHT|YD380D|PDF top#10 điểm 169
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353 top#21 điểm 116
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG8S|79|72|STARLIGHT|YD380D|PDF → top#10 điểm 169
+  DỮ LIỆU vào: KHÁC (cũ all điểm 106 → 156): xingguang-jiangsu||XG8GF|7/8|403D11G|10/11|3|50|≤245|国II|1100×550×890|360 → top#17 điểm 156 (hạng cũ 30)
+
+== IB2500068327#0  (gop: all 1539 → 1537, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 20→0, yingtai-group 2→0, xingguang-jiangsu 2→22
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2500092506#0  (gop: all 22 → 22, dropped 7 → 7)
+
+== IB2500102600#0  (gop: all 889 → 886, dropped 14 → 14)
+  all theo NCC (dữ liệu): starlight-power 20→0, yingtai-group 3→0, xingguang-jiangsu 2→22
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG2500S36|2500|2281|CUMMINS|QSK60G7|PDF top#15 điểm 457
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG3000S3|3000|2750|CUMMINS|QSK78G9|PDF top#17 điểm 455
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG3125S36|3125|2920|CUMMINS|QSK78G8|PDF top#21 điểm 424
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG2500S36|2500|2281|CUMMINS|QSK60G7|PDF → top#15 điểm 457
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG3000S3|3000|2750|CUMMINS|QSK78G9|PDF → top#17 điểm 455
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG3125S36|3125|2920|CUMMINS|QSK78G8|PDF → top#21 điểm 424
+
+== IB2500118115#0  (gop: all 267 → 147, dropped 329 → 449)
+  all theo NCC (dữ liệu): starlight-power 3→0, xingguang-jiangsu 2→5
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: elitech-power||EPS125KFA3|KOFO|125KVA|14KVA|4YT2320D|50HZ|3PHASE|DOWNLOADPDF|EPS125KFA3KOF top#26 điểm 164
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: victory-generator||GENERATOR|MODEL:|VDG12|VDG123|FREQUENCY(HZ)|50|50|RATEDACOUTPUT(KVA)|10 top#29 điểm 136
+  DỮ LIỆU vào: lấp chỗ, điểm không đổi: elitech-power||EPS125BDA3|BAUDOUIN|125KVA|15KVA|4M06G20/5|50HZ|3PHASE|DOWNLOADPDF|EPS125BD → top#20 điểm 188 (hạng cũ 65)
+  DỮ LIỆU vào: KHÁC (cũ all điểm 115 → 165): xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 → top#26 điểm 165 (hạng cũ 155)
+  LUẬT ra: loại [cyl] theo số đông: gb-power|STANDARDFEATURES|MODEL|GBP15|STANDBYPOWER(50HZ)|11KW/14KVA|PRIMEPOWER(50HZ)|10KW/ top#0 điểm 281 · Perkins 403D15G · số đông 3 xi lanh {"3":18,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: uleengen||UP10GF|8|10|403A11G1|PERKINS|9|3L|77×81|1131|19|S0L1H1|1580X810X930|500 top#1 điểm 281 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: fdk-energy||P14/H1CONTACT|14KVA/11KW|13KVA/10KW|403A15G1|PERKINSCHINA|STAMFORDS0L1L1|CLICK top#2 điểm 251 · Perkins 403A15G1 · số đông 3 xi lanh {"3":13,"4":2}, nguồn khác depco-power «4», huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: jet-power||P14|14|11|13|10|403A15G1|3L|84X90|1496|37|PI044F|1200*650*950|426|1950*860*1060 top#3 điểm 251 · Perkins 403A15G1 · số đông 3 xi lanh {"3":13,"4":2}, nguồn khác depco-power «4», huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: uleengen||UP13GF|10|13|403A15G1|PERKINS|12|3L|84×90|1496|24|S0L1L1|1580X810X930|520 top#4 điểm 251 · Perkins 403A15G1 · số đông 3 xi lanh {"3":13,"4":2}, nguồn khác depco-power «4», huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: sanq-power||SQP15|12/145|105/131|403D15G|PI044F|WUXI|496|956|1500×650×1225|2200×1033×1304 top#5 điểm 250 · Perkins 403D15G · số đông 3 xi lanh {"3":18,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: sr-genset||11|88|10|8|403A11G1|MECH|S0L1H1|TALA40C|SA1648|1400*690*1000|1860*810*1152 top#6 điểm 241 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: eastern-lion-fuan||GFSP14|104|13|12|14|403D15G|20362|EL164C|108|SMARTGEN6120|DETAIL top#7 điểm 239 · Perkins 403D15G · số đông 3 xi lanh {"3":18,"4":1}, nguồn khác depco-power «4» · HSMT minCyl 4
+  LUẬT ra: loại [cyl] theo số đông: elitech-power|MODEL:EPS10PKA3S|10KVA|1PHASE,3PHASE|50HZ,60HZ|POWER(KVA)|10|ENGINEMODEL|403 top#8 điểm 229 · Perkins 403A11G1 · số đông 3 xi lanh {"3":11,"4":1}, nguồn khác huipu-power «4» · HSMT minCyl 4
+  LUẬT vào: lấp chỗ, điểm không đổi: elitech-power||EPS10IA3|ISUZU|10KVA|11KVA|JE493DB04|50HZ|3PHASE|DOWNLOADPDF|EPS10IA3ISUZU1 → top#14 điểm 181 (hạng cũ 67)
+  LUẬT vào: lấp chỗ, điểm không đổi: sr-genset||121|99|11|9|403D11GCOMMODITY|MECH|S0L1H1|TALA40C|SA164106|1400*690*1000|1860*81 → top#17 điểm 167 (hạng cũ 72)
+  LUẬT vào: lấp chỗ, điểm không đổi: victory-generator||GENERATOR|MODEL:|VDG12|VDG123|FREQUENCY(HZ)|50|50|RATEDACOUTPUT(KVA)|10 → top#23 điểm 136 (hạng cũ 136)
+  LUẬT vào: lấp chỗ, điểm không đổi: comappower||COM12K|12KVA|99KW|113KVA|9KW|V1505E2BG|4|COM12K → top#24 điểm 160 (hạng cũ 90)
+  LUẬT vào: lấp chỗ, điểm không đổi: mecca-power||MC14F|14|11|13|10|4DW8123D|CN|28|4|2270|M/E|1680*650*1030|508 → top#25 điểm 159 (hạng cũ 98)
+  LUẬT vào: lấp chỗ, điểm không đổi: ettes-power||EP12|9|11|10|12|403D11G★|TBA|3L|TBA|1300*690*1320|280| → top#26 điểm 155 (hạng cũ 106)
+  LUẬT vào: lấp chỗ, điểm không đổi: xingguang-jiangsu||XG15S|15|136|STARLIGHT|YND485D|PDF → top#27 điểm 153 (hạng cũ 107)
+  LUẬT vào: lấp chỗ, điểm không đổi: jet-power||UK12Y|12|96|11|88|YD490D17|L4|MECHANICAL|255|90×100|JET164B → top#28 điểm 151 (hạng cũ 111)
+  LUẬT vào: lấp chỗ, điểm không đổi: superwatt-power||SK14|10/125|11/1375|V1505BG|1550X730X1170|1915X900X1235 → top#29 điểm 148 (hạng cũ 118)
+
+== IB2500144659#0  (gop: all 41 → 41, dropped 151 → 151)
+
+== IB2500152724#1  (gop: all 270 → 270, dropped 0 → 0)
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: landtop-fuzhou||LTP10Q|10|8|9|7|QC380D|LTP164S7 top#29 điểm 126
+  DỮ LIỆU vào: KHÁC (cũ all điểm 77 → 127): xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480 → top#28 điểm 127 (hạng cũ 221)
+
+== IB2500268545#0  (gop: all 165 → 165, dropped 2431 → 2419)
+  all theo NCC (dữ liệu): starlight-power 3→0, xingguang-jiangsu 1→4
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG700S36|700|630|DOOSAN|DP180LA|PDF top#21 điểm 189
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG700S36|700|630|DOOSAN|DP180LA|PDF → top#21 điểm 189
+
+== IB2500312373#0  (gop: all 1645 → 1638, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 16→0, xingguang-jiangsu 2→18, yingtai-group 7→0
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2500314001#0  (gop: all 18 → 19, dropped 8 → 8)
+  all theo NCC (dữ liệu): denyo 1→2
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: denyo|(KVA)STANDBY1113713816522275222752227522275 top#4 điểm 136
+  DỮ LIỆU vào: dòng mới của dữ liệu (denyo): denyo|88/110KVA → top#2 điểm 161
+
+== IB2500360231#0  (gop: all 26 → 26, dropped 3 → 3)
+
+== IB2500360458#0  (gop: all 76 → 76, dropped 1 → 1)
+
+== IB2500376934#0  (gop: all 28 → 29, dropped 0 → 0)
+  all theo NCC (dữ liệu): denyo 1→2
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: denyo|(KVA)STANDBY1113713816522275222752227522275 top#9 điểm 136
+  DỮ LIỆU vào: dòng mới của dữ liệu (denyo): denyo|88/110KVA → top#8 điểm 161
+
+== IB2500380933#0  (gop: all 2519 → 2508, dropped 77 → 76)
+  all theo NCC (dữ liệu): starlight-power 34→0, yingtai-group 11→0, xingguang-jiangsu 7→41
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG632S3|632|573|DOOSAN|DP180LA|PDF top#5 điểm 1689
+  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top: starlight-power||XG650S36|650|590|DOOSAN|DP158LD|PDF top#21 điểm 689
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG632S3|632|573|DOOSAN|DP180LA|PDF → top#5 điểm 1689
+  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu (gộp từ starlight-power): xingguang-jiangsu||XG650S36|650|590|DOOSAN|DP158LD|PDF → top#21 điểm 689
+
+== IB2500386288#1  (gop: all 1910 → 1898, dropped 34 → 34)
+  all theo NCC (dữ liệu): yingtai-group 12→0
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2500403535#0  (gop: all 340 → 340, dropped 5 → 5)
+  all theo NCC (dữ liệu): starlight-power 8→0, xingguang-jiangsu 1→9
+
+== IB2500410768#0  (gop: all 1135 → 1128, dropped 849 → 847)
+  all theo NCC (dữ liệu): starlight-power 10→0, xingguang-jiangsu 6→16, yingtai-group 5→0
+
+== IB2500447006#0  (gop: all 38 → 38, dropped 0 → 0)
+
+== IB2500448140#0  (gop: all 1241 → 1233, dropped 1393 → 1382)
+  all theo NCC (dữ liệu): starlight-power 14→0, yingtai-group 8→0, xingguang-jiangsu 4→18
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2500460613#0  (gop: all 24 → 25, dropped 4 → 4)
+  all theo NCC (dữ liệu): denyo 1→2
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2500480924#0  (gop: all 24 → 25, dropped 4 → 4)
+  all theo NCC (dữ liệu): denyo 1→2
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: denyo|(KVA)STANDBY1113713816522275222752227522275 top#8 điểm 136
+  DỮ LIỆU vào: dòng mới của dữ liệu (denyo): denyo|88/110KVA → top#7 điểm 161
+
+== IB2500500319#0  (gop: all 18 → 19, dropped 8 → 8)
+  all theo NCC (dữ liệu): denyo 1→2
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: denyo|(KVA)STANDBY1113713816522275222752227522275 top#4 điểm 136
+  DỮ LIỆU vào: dòng mới của dữ liệu (denyo): denyo|88/110KVA → top#2 điểm 161
+
+== IB2500508341#0  (gop: all 2709 → 2689, dropped 76 → 76)
+  all theo NCC (dữ liệu): starlight-power 33→0, yingtai-group 20→0, xingguang-jiangsu 5→38
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: eastern-lion-fuan||GF/GFSYC320|320|400|356|444|YC6K520D30|356|EL314G|320|SMARTGEN6120|DETA top#29 điểm 269
+  DỮ LIỆU vào: lấp chỗ, điểm không đổi: bobig-power||BWC413|300|375|330|413|WP13D405E200|368|BW314F|3100*1050*2150|4200*1600*2250 → top#29 điểm 269 (hạng cũ 135)
+
+== IB2500514971#0  (gop: all 38 → 38, dropped 0 → 0)
+
+== IB2600064877#0  (gop: all 1645 → 1638, dropped 0 → 0)
+  all theo NCC (dữ liệu): starlight-power 16→0, xingguang-jiangsu 2→18, yingtai-group 7→0
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2600098464#0  (gop: all 2740 → 2723, dropped 62 → 62)
+  all theo NCC (dữ liệu): starlight-power 36→0, yingtai-group 17→0, xingguang-jiangsu 7→43
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2600107089#0  (gop: all 1331 → 1329, dropped 85 → 85)
+  all theo NCC (dữ liệu): starlight-power 16→0, yingtai-group 2→0, xingguang-jiangsu 2→18
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2600219527#1  (gop: all 958 → 954, dropped 19 → 19)
+  all theo NCC (dữ liệu): yingtai-group 4→0
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+    #25 mecca-power||MC248D|180|225|198|248|DP086CB| 157 ↔ xingguang-jiangsu||XG220GF|200/250|220/275|6R1600G10F|6|46|199|国II|280 162
+    #26 voltgent||VFP2755|275|220|250|200|FPT|C87TE3|[EN][RU][ES][PT] 154 ↔ mecca-power||MC248D|180|225|198|248|DP086CB| 157
+    #27 rcg-power||R200N5|250KVA/200KW|275KVA/220KW|RDC10N2|RC274K|PDF 154 ↔ voltgent||VFP2755|275|220|250|200|FPT|C87TE3|[EN][RU][ES][PT] 154
+    #28 depco-power|ITEMNO:DPKDFPT275FREQUENCY(HZ):50PHASE:3VOLTAGE(V):380ENGI 112 ↔ rcg-power||R200N5|250KVA/200KW|275KVA/220KW|RDC10N2|RC274K|PDF 154
+    #29 xingguang-jiangsu||XG220GF|200/250|220/275|6R1600G10F|6|46|199|国II|280 112 ↔ depco-power|ITEMNO:DPKDFPT275FREQUENCY(HZ):50PHASE:3VOLTAGE(V):380ENGI 112
+
+== IB2600278676#0  (gop: all 30 → 30, dropped 2 → 2)
+
+== IB2600280799#0  (gop: all 28 → 29, dropped 0 → 0)
+  all theo NCC (dữ liệu): denyo 1→2
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: denyo|(KVA)STANDBY1113713816522275222752227522275 top#9 điểm 136
+  DỮ LIỆU vào: dòng mới của dữ liệu (denyo): denyo|88/110KVA → top#8 điểm 161
+
+== IB2600307179#0  (gop: all 30 → 31, dropped 5 → 5)
+  all theo NCC (dữ liệu): denyo 1→2
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: denyo|(KVA)STANDBY1113713816522275222752227522275 top#8 điểm 136
+  DỮ LIỆU vào: dòng mới của dữ liệu (denyo): denyo|88/110KVA → top#7 điểm 161
+
+== IB2600313010#0  (gop: all 1855 → 1846, dropped 136 → 133)
+  all theo NCC (dữ liệu): starlight-power 20→0, yingtai-group 9→0, xingguang-jiangsu 3→23
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2600350338#0  (gop: all 37 → 37, dropped 3 → 3)
+
+== IB2600365013#0  (gop: all 1457 → 1450, dropped 296 → 294)
+  all theo NCC (dữ liệu): starlight-power 17→0, yingtai-group 7→0, xingguang-jiangsu 3→20
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2600374560#0  (gop: all 1385 → 1374, dropped 1160 → 1151)
+  all theo NCC (dữ liệu): starlight-power 14→0, yingtai-group 11→0, xingguang-jiangsu 4→18
+  DỮ LIỆU ra: bị đẩy, điểm không đổi: dingbo||XG380GF|380/475|418/5226|TAD1650GE|LSA472M7|3200X1160X2022|3000 top#29 điểm 261
+  DỮ LIỆU vào: lấp chỗ, điểm không đổi: bobig-power||BSD481|350|438|385|481|6ETAA128G31|400|BW354C|3440*1350*2460|4500*1810*2360 → top#29 điểm 261 (hạng cũ 76)
+
+== IB2600472762#0  (gop: all 14 → 14, dropped 31 → 31)
+
+== IB2600478079#0  (gop: all 1904 → 1890, dropped 881 → 875)
+  all theo NCC (dữ liệu): starlight-power 24→0, yingtai-group 14→0, xingguang-jiangsu 4→28
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2600511162#0  (gop: all 1490 → 1488, dropped 78 → 78)
+  all theo NCC (dữ liệu): starlight-power 16→0, xingguang-jiangsu 4→20, yingtai-group 2→0
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2600549116#0  (gop: all 1192 → 1185, dropped 653 → 650)
+  all theo NCC (dữ liệu): starlight-power 9→0, yingtai-group 7→0, xingguang-jiangsu 3→12
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+== IB2600552343#0  (gop: all 2000 → 1986, dropped 785 → 779)
+  all theo NCC (dữ liệu): starlight-power 24→0, yingtai-group 14→0, xingguang-jiangsu 4→28
+  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+
+Lượt: 172; lỗi khớp: 0
+   40  DỮ LIỆU ra: bị đẩy, điểm không đổi
+   40  DỮ LIỆU ra: starlight-power gộp vào xingguang-jiangsu, cùng dòng cùng điểm vẫn trong top
+   14  DỮ LIỆU vào: KHÁC
+   40  DỮ LIỆU vào: cùng dòng mang id xingguang-jiangsu
+   15  DỮ LIỆU vào: dòng mới của dữ liệu
+   12  DỮ LIỆU vào: lấp chỗ, điểm không đổi
+   25  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm KHÁC
+   51  DỮ LIỆU: chỉ đổi thứ tự, dãy điểm giữ nguyên (đổi chỗ trong nhóm cùng điểm)
+ 2237  LUẬT mọi dòng đổi: thêm [cyl] số đông
+   90  LUẬT ra: loại [cyl] theo số đông
+   81  LUẬT vào: lấp chỗ, điểm không đổi
+   68  lượt có khoá NCC | dòng trùng trong top (chỉ so tập)

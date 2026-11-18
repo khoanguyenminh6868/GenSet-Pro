@@ -29,8 +29,13 @@ for (const k of keys) {
   // gopRow gộp dòng trùng khoá NCC | dòng (hai dòng cùng chữ, khác động cơ / đầu phát): so với top gop đã bỏ khoá trùng.
   const uq = (l) => l.filter((r, i) => l.indexOf(r) === i);
   const g8 = uq(G8[k].top.map(lineKey)), g9 = uq(G9[k].top.map(lineKey));
-  if (JSON.stringify(to) !== JSON.stringify(g8)) { P(`KHÔNG KHỚP gốc 8 ${k}`); bad++; }
-  if (JSON.stringify(tn) !== JSON.stringify(g9)) { P(`KHÔNG KHỚP gop 9 ${k}`); bad++; }
+  // Lượt có khoá trùng trong top: vị trí (ti) của dòng ghi sau đè dòng ghi trước, chỉ so được tập.
+  const dupe = (l) => l.length !== new Set(l).size;
+  const same = (t, g, raw) => (dupe(raw) ? t.length === g.length && t.every((r) => g.includes(r)) : JSON.stringify(t) === JSON.stringify(g));
+  const d8 = dupe(G8[k].top.map(lineKey)), d9 = dupe(G9[k].top.map(lineKey));
+  if (d8 || d9) add("lượt có khoá NCC | dòng trùng trong top (chỉ so tập)");
+  if (!same(to, g8, G8[k].top.map(lineKey))) { P(`KHÔNG KHỚP gốc 8 ${k}`); bad++; }
+  if (!same(tn, g9, G9[k].top.map(lineKey))) { P(`KHÔNG KHỚP gop 9 ${k}`); bad++; }
   // Số all / dropped lấy từ gop (gopRow gộp dòng trùng khoá NCC | dòng nên đếm thiếu).
   P(`\n== ${k}  (gop: all ${G8[k].all} → ${G9[k].all}, dropped ${G8[k].dropped} → ${G9[k].dropped})`);
   // all theo NCC đổi ở bước dữ liệu.
