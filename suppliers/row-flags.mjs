@@ -1,26 +1,25 @@
 // Cổng kiểm chất lượng theo DÒNG (việc "Chất lượng 1", Khoa chốt 18/11/2026). Chặng 1: CHỈ PHÁT HIỆN, chạy trên toàn bộ
 // suppliers/cn và báo cáo; chưa nối vào Gợi ý cấu hình (candidates), chưa có màn hình, chưa lưu quyết định nào.
-// Mỗi bản ghi `fromSupplier` (một động cơ / đầu phát đọc từ một dòng bảng) bị gắn cờ khi có ít nhất một dấu hiệu:
-//   absurd    số vô lý so với công suất của chính dòng (checkSpec của spec-diff.mjs: dòng điện, khối lượng, công suất động
-//             cơ, số xi lanh, dung tích, điện áp, tốc độ, kích thước, kiểu điều tốc)
-//   swap      mã đảo vai động cơ ↔ đầu phát (swaps của spec-diff.mjs: ≥ 3 NCC khác đọc mã ở vai kia, không NCC khác nào
-//             đọc ở vai này)
-//   cylMaj    số xi lanh của dòng khác giá trị thắng số đông các NCC cho cùng động cơ (majorityOf của config-bot.mjs:
-//             ≥ 3 NCC, gấp ≥ 3 lần; một NCC một phiếu). CHỈ số xi lanh: NCC TQ chép chung bảng mẫu nên "số đông" dung
-//             tích không độc lập (bdadl-shanghai, fukangsi-yangzhou, pengpai-yangzhou, huatai-yangzhou, liangzi-yangzhou)
-//   lowRead   bảng có nhiều dòng mang mã model mà ít dòng cho bản ghi (tỉ lệ đọc < LOW_READ): mọi bản ghi của bảng
-// Cờ KHÔNG sửa dữ liệu (nguồn tự nghi sai mà đọc đúng ô: Khoa giữ nguyên theo nguồn); chỉ để chặng 2 loại dòng khỏi gợi ý.
+// Mỗi bản ghi `fromSupplier` (một động cơ / đầu phát đọc từ một dòng bảng) bị gắn cờ khi có ít nhất một dấu hiệu; mỗi
+// dấu hiệu có MỨC (`LEVEL`, Khoa quyết 18/11/2026 sau khi xem số chặng 1):
+//   absurd    "drop": số vô lý so với công suất của chính dòng (checkSpec của spec-diff.mjs + các nới ở absurdOf) — loại
+//             khỏi Gợi ý cấu hình, Khoa bấm "cho dùng" khi cần
+//   cylMaj    "show": số xi lanh của dòng khác giá trị thắng số đông các NCC cho cùng động cơ (majorityOf của config-bot.mjs:
+//             ≥ 3 NCC, gấp ≥ 3 lần; một NCC một phiếu) — chỉ hiện cờ, KHÔNG loại (gần hết là nguồn tự ghi sai; candidates
+//             đã xét số xi lanh theo số đông). CHỈ số xi lanh: NCC TQ chép chung bảng mẫu nên "số đông" dung tích không độc lập
+// Khoa 18/11/2026 bỏ hai dấu hiệu của thiết kế đầu: "bảng đọc được ít dòng" (soát hết 807 dòng: ~98% đọc đúng — dòng trùng
+// giữa bảng, tờ một tổ máy; bảng bỏ dòng đã có ở unread-tables.mjs) và "đảo vai động cơ ↔ đầu phát" (1/1 nhầm: P158LE).
+// Cờ KHÔNG sửa dữ liệu (nguồn tự nghi sai mà đọc đúng ô: Khoa giữ nguyên theo nguồn).
 // Khoá dòng (`rowKey`) bền qua lần đọc lại: NCC | vai | model | băm chữ của dòng (không dùng số nguồn n / số bảng, vì
 // cào lại đánh số lại). Chữ dòng đổi (nguồn cập nhật) thì khoá đổi, quyết định cũ của Khoa không áp nữa (đúng ý: dòng mới).
 //   node suppliers/row-flags.mjs                     tóm tắt: theo lý do, theo NCC, NCC quá nửa bảng nghi
 //   node suppliers/row-flags.mjs --list <lý do> [--id <NCC>]   liệt kê từng dòng bị gắn cờ (để soát hết, không lấy mẫu)
 //   node suppliers/row-flags.mjs --json <tệp>        ghi toàn bộ danh sách
-//   thêm --skip lowRead[,...]                        bỏ một (vài) lý do
 import fs from "node:fs";
 import path from "node:path";
 import { createHash } from "node:crypto";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { checkSpec, swaps } from "./spec-diff.mjs";
+import { checkSpec } from "./spec-diff.mjs";
 import { majorityOf, BLOCK, normFig, useNormCtx } from "./config-bot.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
@@ -28,12 +27,12 @@ const C = globalThis.GenbidCatalog; // nạp bởi config-bot.mjs
 
 export const REASONS = {
   absurd: "số vô lý so với công suất của dòng",
-  swap: "mã đảo vai động cơ ↔ đầu phát",
   cylMaj: "số xi lanh lệch số đông NCC khác",
-  lowRead: "bảng có tỉ lệ dòng đọc được thấp",
 };
-// Bảng: ít nhất LOW_READ_MIN dòng mang mã model, và dưới LOW_READ số đó cho bản ghi.
-export const LOW_READ = 0.5, LOW_READ_MIN = 4;
+// "drop": dòng bị loại khỏi Gợi ý cấu hình (trừ khi Khoa cho dùng); "show": chỉ hiện cờ.
+export const LEVEL = { absurd: "drop", cylMaj: "show" };
+// Dòng bị loại khi có ít nhất một lý do mức "drop".
+export const dropped = (f) => f.reasons.some((r) => LEVEL[r.code] === "drop");
 
 const roleKey = (m) => String(m || "").toUpperCase().replace(/[\s._/-]+/g, "");
 const rowText = (o) => (o.line != null ? String(o.line) : [o.genset || "", ...(o.lines?.rows || [])].join("\n"));
@@ -109,14 +108,13 @@ export function absurdOf(s, o, ctx) {
   return false;
 }
 
-// S: mọi hồ sơ NCC; skip: mã lý do không xét (vd. ["lowRead"]). → { recs, flags: Map rowKey → { o, reasons: [{ code, detail }] }, tables, bySup }
-export function flagRows(S, { skip = [] } = {}) {
+// S: mọi hồ sơ NCC. → { recs, flags: Map rowKey → { o, reasons: [{ code, detail }] }, bySup }
+export function flagRows(S) {
   const recs = recordsOf(S);
   const rowsMap = new Map();
   for (const s of S) (s.specTables || []).forEach((t, i) => rowsMap.set(`${s.id}|${i}`, t.rows || []));
   const flags = new Map();
   const add = (o, code, detail) => {
-    if (skip.includes(code)) return;
     const k = rowKey(o);
     if (!flags.has(k)) flags.set(k, { o, reasons: [] });
     const f = flags.get(k);
@@ -127,9 +125,7 @@ export function flagRows(S, { skip = [] } = {}) {
   for (const o of recs) for (const s of o.specs || []) {
     if (absurdOf(s, o, useNormCtx(o, rowsMap)) === false) add(o, "absurd", `${s.key} "${s.value}" (nhãn "${s.label}")`);
   }
-  // 2. đảo vai
-  for (const { o, other, oth } of swaps(recs).list) add(o, "swap", `đọc là ${o.kind}, ${oth} NCC khác đọc là ${other}`);
-  // 3. số xi lanh lệch số đông
+  // 2. số xi lanh lệch số đông
   const byEng = new Map();
   for (const o of recs) if (o.kind === "engine") {
     const k = C.keyOf(o.model);
@@ -142,31 +138,17 @@ export function flagRows(S, { skip = [] } = {}) {
     for (const { o, s, x } of list) if (x != null && x !== BLOCK && x !== mj.win)
       add(o, "cylMaj", `"${s.value}" = ${x}, số đông ${Object.entries(mj.votes).map(([v, c]) => `${v} × ${c}`).join(", ")}`);
   }
-  // 4. bảng đọc được ít dòng
-  const tables = new Map();
-  for (const s of S) if (s.status !== "incomplete" && s.role !== "controller_maker") (s.specTables || []).forEach((t, ti) => {
-    tables.set(`${s.id}|${ti}`, { supplierId: s.id, n: t.n, table: ti, title: t.title || "", rows: t.rows || [], recs: [], label: false });
-  });
-  for (const o of recs) { const t = tables.get(`${o.supplierId}|${o.table}`); if (t) { t.recs.push(o); if (o.row == null) t.label = true; } }
-  for (const t of tables.values()) {
-    if (t.label || !t.recs.length) continue;
-    const coded = t.rows.map((r, i) => (C.cellsOf(r).some((c) => C.isCode(c)) ? i : -1)).filter((i) => i >= 0);
-    const read = new Set(t.recs.map((o) => o.row));
-    const hit = coded.filter((i) => read.has(i)).length;
-    t.coded = coded.length; t.read = hit;
-    if (coded.length >= LOW_READ_MIN && hit / coded.length < LOW_READ)
-      for (const o of t.recs) add(o, "lowRead", `bảng n${t.n} b${t.table}: ${hit}/${coded.length} dòng có mã được đọc`);
-  }
-  // Theo NCC: bảng có bản ghi, bảng có ≥ 1 dòng bị cờ.
+  // Theo NCC: bảng có bản ghi, bảng có ≥ 1 dòng bị cờ; drop = dòng bị loại (mức "drop").
   const bySup = new Map();
-  const sup = (id) => { if (!bySup.has(id)) bySup.set(id, { tables: new Set(), flagged: new Set(), recs: 0, rows: 0, by: {} }); return bySup.get(id); };
+  const sup = (id) => { if (!bySup.has(id)) bySup.set(id, { tables: new Set(), flagged: new Set(), recs: 0, rows: 0, drop: 0, by: {} }); return bySup.get(id); };
   for (const o of recs) { const s = sup(o.supplierId); s.tables.add(o.table); s.recs++; }
-  for (const { o, reasons } of flags.values()) {
-    const s = sup(o.supplierId);
-    s.flagged.add(o.table); s.rows++;
-    for (const r of new Set(reasons.map((r) => r.code))) s.by[r] = (s.by[r] || 0) + 1;
+  for (const f of flags.values()) {
+    const s = sup(f.o.supplierId);
+    s.flagged.add(f.o.table); s.rows++;
+    if (dropped(f)) s.drop++;
+    for (const r of new Set(f.reasons.map((r) => r.code))) s.by[r] = (s.by[r] || 0) + 1;
   }
-  return { recs, flags, tables, bySup };
+  return { recs, flags, bySup };
 }
 
 // NCC quá nửa số bảng (có bản ghi) bị nghi → sửa mã đọc, không phải lỗi dữ liệu lẻ.
@@ -175,12 +157,11 @@ export const overHalf = (bySup) => [...bySup].filter(([, s]) => s.flagged.size *
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
   const dir = path.join(ROOT, "cn");
   const S = fs.readdirSync(dir).filter((f) => f.endsWith(".json")).sort().map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")));
-  const argv0 = process.argv.slice(2), sk = argv0.indexOf("--skip");
-  const { recs, flags, bySup } = flagRows(S, { skip: sk >= 0 ? argv0[sk + 1].split(",") : [] });
+  const { recs, flags, bySup } = flagRows(S);
   const argv = process.argv.slice(2), opt = (f) => { const i = argv.indexOf(f); return i >= 0 ? argv[i + 1] : null; };
   const all = [...flags.entries()];
   if (opt("--json")) {
-    fs.writeFileSync(opt("--json"), JSON.stringify(all.map(([k, { o, reasons }]) => ({ key: k, supplierId: o.supplierId, n: o.n, table: o.table, row: o.row ?? null, kind: o.kind, model: o.model, line: o.line ?? null, reasons })), null, 1) + "\n", "utf8");
+    fs.writeFileSync(opt("--json"), JSON.stringify(all.map(([k, f]) => ({ key: k, supplierId: f.o.supplierId, n: f.o.n, table: f.o.table, row: f.o.row ?? null, kind: f.o.kind, model: f.o.model, line: f.o.line ?? null, drop: dropped(f), reasons: f.reasons })), null, 1) + "\n", "utf8");
     console.log(`đã ghi ${opt("--json")}: ${all.length} dòng`);
   } else if (opt("--list")) {
     const code = opt("--list"), id = opt("--id");
@@ -188,13 +169,13 @@ if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.ar
       console.log(`${o.supplierId} n${o.n} b${o.table} dòng ${o.row ?? "L"} ${o.kind} ${o.model} | ${r.detail} | P ${JSON.stringify(o.power)} | ${String(o.line ?? "(bảng nhãn)").slice(0, 220)}`);
   } else {
     const keys = new Set(recs.map(rowKey));
-    console.log(`bản ghi ${recs.length} (khoá khác nhau ${keys.size}), bị gắn cờ ${flags.size}`);
+    console.log(`bản ghi ${recs.length} (khoá khác nhau ${keys.size}), bị gắn cờ ${flags.size}, trong đó bị loại (mức drop) ${all.filter(([, f]) => dropped(f)).length}`);
     const cnt = {};
     for (const [, { reasons }] of all) for (const c of new Set(reasons.map((r) => r.code))) cnt[c] = (cnt[c] || 0) + 1;
-    for (const [c, n] of Object.entries(cnt)) console.log(`${String(n).padStart(6)}  ${c}  ${REASONS[c]}`);
-    console.log("\nTheo NCC (dòng bị cờ / bản ghi; bảng nghi / bảng):");
+    for (const [c, n] of Object.entries(cnt)) console.log(`${String(n).padStart(6)}  ${c} (${LEVEL[c]})  ${REASONS[c]}`);
+    console.log("\nTheo NCC (dòng bị cờ / bản ghi; bị loại; bảng nghi / bảng):");
     for (const [id, s] of [...bySup].filter(([, s]) => s.rows).sort((a, b) => b[1].rows - a[1].rows))
-      console.log(`  ${id}: ${s.rows}/${s.recs}; ${s.flagged.size}/${s.tables.size} bảng; ${JSON.stringify(s.by)}`);
+      console.log(`  ${id}: ${s.rows}/${s.recs}; loại ${s.drop}; ${s.flagged.size}/${s.tables.size} bảng; ${JSON.stringify(s.by)}`);
     console.log("\nNCC quá nửa số bảng bị nghi:");
     for (const x of overHalf(bySup)) console.log(`  ${x.id}: ${x.flagged}/${x.tables}`);
   }

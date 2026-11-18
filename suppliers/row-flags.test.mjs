@@ -1,8 +1,8 @@
-// node --test suppliers/row-flags.test.mjs — cổng kiểm chất lượng theo dòng (Chất lượng 1, chặng 1: chỉ phát hiện).
+// node --test suppliers/row-flags.test.mjs — cổng kiểm chất lượng theo dòng (Chất lượng 1: phát hiện, mức drop / show).
 // Dòng bảng lấy nguyên văn từ suppliers/cn (18/11/2026), ghi nguồn ở từng ca.
 import test from "node:test";
 import assert from "node:assert/strict";
-import { flagRows, absurdOf, rowKey, overHalf } from "./row-flags.mjs";
+import { flagRows, absurdOf, rowKey, overHalf, dropped, LEVEL, REASONS } from "./row-flags.mjs";
 
 const C = globalThis.GenbidCatalog;
 const sup = (id, tables) => ({ id, country: "CN", confidence: "high", specTables: tables.map(([n, title, header, rows]) => ({ n, title, header, rows })) });
@@ -19,6 +19,12 @@ test("absurd: ô lệch cột (điện áp = công suất dự phòng) bị gắ
   const f = [...r.flags.values()].find((x) => x.o.model === "KTA50-G3");
   assert.ok(f, "dòng KTA50-G3 phải bị gắn cờ");
   assert.ok(f.reasons.some((x) => x.code === "absurd" && /voltage "1100"/.test(x.detail)), JSON.stringify(f.reasons));
+  assert.equal(dropped(f), true, "số vô lý: mức drop (Khoa 18/11/2026)");
+});
+
+test("chỉ hai lý do, mỗi lý do một mức (Khoa 18/11/2026: bỏ lowRead, swap; cylMaj chỉ hiện)", () => {
+  assert.deepEqual(Object.keys(REASONS).sort(), ["absurd", "cylMaj"]);
+  assert.deepEqual(LEVEL, { absurd: "drop", cylMaj: "show" });
 });
 
 test("absurd: số đúng mà checkSpec chặn thì được nới (cao thế 10,5 kV, 220 V, dòng chỉ ghi kVA, động cơ lớn)", () => {
@@ -44,27 +50,10 @@ test("cylMaj: số xi lanh lệch giá trị thắng số đông (≥ 3 NCC, g�
   const S = [mk("a-one", 16), mk("b-two", 16), mk("c-three", 16), mk("comappower", 12)];
   const r = flagRows(S);
   assert.deepEqual(codesOf(r, "comappower"), ["cylMaj"]);
+  assert.equal(dropped([...r.flags.values()].find((f) => f.o.supplierId === "comappower")), false, "cylMaj: chỉ hiện, không loại");
   for (const id of ["a-one", "b-two", "c-three"]) assert.deepEqual(codesOf(r, id), []);
   // Hai NCC chưa đủ số đông: không gắn cờ.
   assert.deepEqual(codesOf(flagRows([mk("a-one", 16), mk("b-two", 16), mk("comappower", 12)]), "comappower"), []);
-});
-
-test("lowRead: bảng ≥ 4 dòng có mã mà dưới nửa cho bản ghi → mọi bản ghi của bảng; skip bỏ lý do", () => {
-  // aoke-yangzhou n115 (850KW): ba dòng sau cũng nằm nguyên văn ở bảng khác của cùng NCC, fromSupplier chỉ giữ lần đầu
-  // (khoá vai | model | chữ dòng), nên bảng này chỉ "đọc" được 1/4 dòng có mã — dạng cờ nhầm hay gặp nhất của lowRead.
-  const H = ["| 机组型号 | 主用功率(KW) | 备用功率(KW) | 发动机品牌 | 柴油机型号 | 缸数 | 排量(L) | 机油容量(L) | 燃油消(g/kw/h) | 外形尺寸 (L×W×H mm×mm×mm) | 机组重量(KG) | 技术咨询 | 详细参数"];
-  const rows = [
-    "| AOKE-M880 | 800KW | 880KW | 奔驰 | 16V2000G65 | 12 | 31.48 | 110 | 200 | 4220*1580*2250 | 6590 | | 详细参数",
-    "| AOKE-P880 | 800KW | 880KW | 珀金斯 | 4008TAG2A | 8 | 30.561 | 153 | 200 | 4940*2040*2450 | 6920 | | 详细参数",
-    "| AOKE-X880 | 800KW | 880KW | 无锡动力 | WD327TAD88 | 12 | 32.7 | 90 | 217 | 2472*1800*2135 | 5120 | | 详细参数",
-  ];
-  const S = [sup("x-low", [[114, "800KW", H, rows], [115, "850KW - 奥克发电", H, [
-    "| AOKE-C880 | 800KW | 880KW | 重庆康明斯 | KTA38-G5 | 12 | 37.8 | 135 | 210 | 4450*1700*2360 | 7100 | | 详细参数", ...rows]]])];
-  const r = flagRows(S);
-  const t = r.tables.get("x-low|1");
-  assert.ok(t.coded >= 4 && t.read / t.coded < 0.5, JSON.stringify({ coded: t.coded, read: t.read }));
-  assert.ok(codesOf(r, "x-low").includes("lowRead"));
-  assert.deepEqual(codesOf(flagRows(S, { skip: ["lowRead"] }), "x-low"), []);
 });
 
 test("rowKey: bền qua đánh số lại nguồn / bảng; đổi khi chữ của dòng đổi", () => {
