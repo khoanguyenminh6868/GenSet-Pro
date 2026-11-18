@@ -1,60 +1,9 @@
 gói có chữ: 1545
   giống: 85
-  không đồng bộ cả hai: 1433
-  1 bộ phận (chỉ khi Khoa chọn đòi): 25
+  không đồng bộ cả hai: 1458
   main có, nháp KHÔNG: 2
 
-IB2200016199 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [engine]
-  câu: Xuất xứ/Nhãn hiệu Nhà thầu đề xuất/Cùng nhãn hiệu tổ máy Năm sản xuất 2022 trở lại đây 1 Loại động cơ Diesel 4 kỳ làm mát bằng nước 2 Tốc độ vòng quay 1.500 vòng/phút
-IB2200021336 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [engine]
-  câu: 20 Tiêu hao nhiên liệu Tại 100% tải < 26.5 lít/h Cùng thương hiệu với hãng sản xuất tổ II Động cơ máy 1 Kiểu động cơ 4 kỳ, làm mát bằng nước, kết hợp quạt gió
-IB2200069368 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [alternator]
-  câu: C Yêu cầu đối với đầu phát điện Đầu phát của máy phát điện đồng bộ thương hiệu với thương 1
-IB2300131371 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [alternator]
-  câu: - Thương hiệu: Có cùng thương hiệu với tổ máy phát điện - Công suất liên tục: ≥30KVA - Loại đầu phát: Không chổi than, tự kích từ
-IB2300188511 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [controller]
-  câu: nhiệt độ vào độ ẩm, bộ giám sát điều khiển 1 2 3 4 5 SMD đồng bộ cùng nhà sản xuất Tủ đầu ra: Tủ điện trung thế trọn bộ: Hệ thống thanh cái 630A, máy cắt chân không 630A -25kA/3s 6 5005 tủ
-IB2400099464 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [engine]
-  câu: 1 Hãng sản xuất /Model cùng thương hiệu với hãng sản xuất tổ máy 2 Dung tích xilanh ≥ 459cc 3 Dung tích dầu bôi trơn ≥ 1.1L Động cơ 4 thì, kiểu OHV giải nhiệt cưỡng bức bằng
-IB2400120387 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [engine]
-  câu: - Máy phát điện và động cơ được sản xuất đồng bộ cùng một hãng sản xuất/thương hiệu
-IB2400164837 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [engine]
-  câu: 20 Độ ồn 62Dba @ khoảng cách 1m Mới 100% , cùng thương hiệu với hãng II Động cơ sản xuất tổ máy 1 Thương hiệu / Hãng sản xuất EU/G7 hoặc tương đương
-IB2400186078 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [engine]
-  câu: 2 Tình trạng động cơ Mới 100%, sản xuất năm 2023 trở về sau Đạt Không đạt Thương hiệu động Có cùng thương hiệu với thương hiệu tổ 3 Đạt Không đạt cơ máy phát điện Động cơ Diesel 4 thì, nhiên liệu sử dụng
-IB2400339967 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [controller]
-  câu: 1 Kiểu máy phát điện: bảng điều khiển, khung chân đế, thùng nhiên liệu và vỏ chống ồn nhập khẩu đồng bộ cùng nhãn hiệu
-IB2400355977 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [alternator]
-  câu: . Hãng đầu phát có cùng thương hiệu với hãng sản xuất tổ máy để đảm bảo việc đồng bộ
-IB2400440257 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [engine]
-  câu: Động cơ Mới 100% , cùng thương hiệu với hãng sản xuất tổ máy 1 Xuất xứ EU/G7 hoặc tương đương
-IB2400489270 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [engine]
-  câu: 20 Độ ồn < 62Dba @ khoảng cách 1m Mới 100% , cùng thương hiệu với II Động cơ hãng sản xuất tổ máy 1 Thương hiệu / Hãng sản xuất/Xuất xứ EU/G7 hoặc tương đương
-IB2500039578 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [engine]
-  câu: bộ lọc gió vào động cơ, … được thiết kế, sản xuất và lắp ráp đồng bộ từ một nhà sản xuất
-IB2500102600 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [controller]
-  câu: . Tính đồng bộ: tủ trung thế, máy cắt, relay bảo vệ, đồng hồ cùng hãng sản xuất * Có thể ghép nối với hệ thống tủ trung thế máy phát hiện có: 4 tủ Simens 7,2kV-630A đấu 4 máy phát điện 1500kVA, 2x2500kVA, 3000kVA; 1 tủ Simens 7,2kV tổng; nâng cấp hệ thống điều khiển, bảo vệ cho phù hợp 3 Tủ phân phố
-IB2500249901 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [engine]
-  câu: . Đồng bộ cùng hãng sản xuất và thương hiệu tổ máy phát 2.2 Chất lượng động cơ: Mới 100%, năm sản xuất: 2025 trở về sau.
-IB2500364714 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [engine]
-  câu: Kiểu loại động cơ Động cơ Diesel 4 chu kỳ, 6 xi lanh thẳng hàng, có Tuabin tăng áp, làm mát khí nạp; Động cơ phải đồng bộ do cùng nhà sản xuất máy phát điện sản xuất
-IB2500372309 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [controller]
-  câu: Nhãn hiệu Đồng bộ cùng hãng sản xuất máy phát điện Bộ điều khiển điện áp AVR
-IB2500405459 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [controller]
-  câu: Thương hiệu thuộc nhóm các nước G7, 1 Nhà sản xuất đồng bộ, cùng thương hiệu nhà sản xuất máy phát điện 2 Xuất xứ Thuộc nhóm các nước G7 Bảng điều khiển kỹ thuật số - Giao
-IB2500416364 [text] main có, nháp KHÔNG: main 2/2 [engine, alternator] → nháp không; nếu đòi 1 bộ phận: 1/1 [alternator]
+IB2500416364 [text] main có, nháp KHÔNG: main 2/2 [engine, alternator] → nháp không
   câu: đồng bộ động cơ thương hiệu G7, đầu phát và vỏ chống ồn đồng bộ cùng một nhãn hiệu, thông tin này có trên website của hãng sản xuất tổ máy
-IB2500459891 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [alternator]
-  câu: Thương hiệu đầu phát điện Cùng thương hiệu với hãng sản xuất lắp ráp tổ máy phát điện 2 Điện áp ra định mức 220/380VAC hoặc 230/400VAC
-IB2500473200 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [alternator]
-  câu: Thông số đầu phát điện Đầu phát hiệu Đồng bộ cùng hãng sản xuất máy phát điện Model Đồng bộ cùng hãng sản xuất máy phát điện
-IB2600126365 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [alternator]
-  câu: ● 15 điểm: Hãng sản xuất đầu phát cùng hãng với tổ máy phát điện ● 3 điểm: Hãng sản
-IB2600194231 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [engine]
-  câu: . Động cơ được sản xuât bởi cùng nhà sản xuất 1 | Yêu cầu chung: tô máy phát điện
-IB2600304011 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [alternator]
-  câu: ● 15 điểm: Hãng sản xuất đầu phát cùng hãng với tổ máy phát điện ● 3 điểm: Hãng sản
-IB2600327799 [text] 1 bộ phận (chỉ khi Khoa chọn đòi): main không → nháp không; nếu đòi 1 bộ phận: 1/1 [engine]
-  câu: Tính đồng bộ một thương hiệu, cùng một hãng sản xuất Xuất xứ G7 2 Động cơ
-IB2600612866 [analysis] main có, nháp KHÔNG: main 2/2 [engine, alternator] → nháp không; nếu đòi 1 bộ phận: 1/1 [alternator]
+IB2600612866 [analysis] main có, nháp KHÔNG: main 2/2 [engine, alternator] → nháp không
   câu: - đồng bộ nhãn hiệu | Máy phát điện chạy dầu diesel bao gồm đồng bộ động cơ thương hiệu G7, đầu phát và vỏ chống ồn đồng bộ cùng một nhãn hiệu, thông tin này có trên website của hãng sản xuất tổ máy

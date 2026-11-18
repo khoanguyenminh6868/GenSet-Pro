@@ -64,7 +64,7 @@ Nguyên tắc chung: một lần đọc ở `hintsOf` → `hints.trait = ET.filt
 - Chưa đo top 30 / regress (chờ PR 2 và điều phối cho phép). Chưa chạy `check` / Gợi ý IB2600612866.
 
 ## 9. Lượt 2 (sau khi #925 merge `270b4eb4`): đo điều (4) và chuẩn bị điều (3)
-Nhánh `dac-thu-dong-co-2b` (từ `270b4eb4`, đã đẩy, CHƯA mở PR). `web/bidprice.js` chỉ là bản nháp trong worktree `wt-dac-thu-2`, KHÔNG commit (diff lưu ở `dau-vao\dac-thu-dong-co-2\bidprice-nhap.diff`).
+Nhánh `dac-thu-dong-co-2b` (từ `270b4eb4`, đã đẩy, CHƯA mở PR). `web/bidprice.js` chỉ là bản nháp trong worktree `wt-dac-thu-2`, lúc đó chưa commit (sau thành PR 2a, mục 10; tệp diff nháp đã xoá).
 
 ### 9a. `brandSyncOf` main ↔ bản nháp, 1.545 gói (đo, mọi gói)
 Script `dau-vao\dac-thu-dong-co-2\sync-ab.mjs`, đầu ra đủ `sync-ab.txt`. Chữ: `text.txt` (1.499), không có thì dòng Phân tích `item | quote` (46).
@@ -90,6 +90,18 @@ Hàm thuần, tham số `scope` ∈ {"all", "version"} để chọn theo câu 4 
 | version (chỉ bỏ BG, E2BG, CHN, EU, hậu tố 1 chữ số, công suất sau "/") | 177 | 455 | một nhóm | hai | hai | hai |
 
 Thêm bằng chứng cho câu 4: "all" còn gộp V2003-T (turbo) với V2003 (không turbo). Hậu tố 2 chữ số là công suất (ZCDL-15 / -18, N4105DS-38 / -46) nên "version" không bỏ. Em đề xuất "version".
+
+## 10. Khoa quyết 18/11/2026 (4 câu mục 5) và PR 2a
+**Quyết định (điều phối chuyển):** (1) câu chỉ còn một bộ phận: (b) KHÔNG đòi gì (giữ ngưỡng ≥ 2 bộ phận; sửa `brandSyncOf` chỉ để bỏ động cơ khi HSMT không ghi động cơ). (2) HSMT nêu đích danh bộ điều khiển mà cấu hình không có: (a) KHÔNG ĐẠT ở bộ điều khiển, xếp sau, vẫn hiện, không bỏ cấu hình. (3) "E-TVCS hoặc tương đương": KHÔNG lọc hãng, chỉ cộng điểm như HSMT nêu hãng. (4) biến thể: (b) chỉ gom hậu tố PHIÊN BẢN (scope "version"), KHÔNG gom hậu tố công suất (G3 / G4, TAG2A / TAG3A).
+
+**PR 2a DRAFT:** https://github.com/khoanguyenminh6868/GenSet-Pro/pull/928 (nhánh `dac-thu-dong-co-2a` từ `270b4eb4`). Tệp: `web/bidprice.js` (`brandSyncOf` + `syncListParts`), `suppliers/bidprice.test.mjs`, `suppliers/engine-traits-config.test.mjs` (bỏ todo điều 4, giờ đòi `null`), `suppliers/CLAUDE.md`. Không đụng config-bot.
+- Sau mục 9a còn một chỉnh: đo trên lô lịch sử cho thấy chữ "Xuất xứ" trơ là NHÃN MỤC ("Động cơ: Xuất xứ, nhãn hiệu, năm sản xuất: Nhà thầu đề xuất; cùng nhãn hiệu với đầu phát điện", bidhist IB2400153322) → lần đó động cơ bị bỏ sai. Đã thu hẹp: chỉ NHÓM nước (G7 / G20 / EU / châu Âu / nước công nghiệp phát triển) mới tính.
+- Đo cuối (đo, mọi gói): 1.545 HSMT: đồng bộ ở main 87 → đổi 2 (IB2500416364, IB2600612866: hết yêu cầu), giữ 85, gói khác 0 (`dau-vao\dac-thu-dong-co-2\sync-ab.txt`). Lô lịch sử (`doc-cache\bidhist.json` chụp 18/11, 1.556 gói / 1.627 lô; chữ ghép như `candidates` của bidprice: tên lô / gói + `config.text` + hàng trúng): 127 lô có nhãn "đồng bộ thương hiệu" → đổi 1 (IB2500189935, cùng câu G7 như hai gói trên) (`sync-hist.txt`, script `sync-hist.mjs`).
+- Ảnh hưởng Gợi ý giá (`SYNC_TAG`): gói đang tính không còn nhãn → so công suất ±5% (`POWER_TOL`) thay ±10% (`SYNC_POWER_TOL`) và bỏ phạt 0,6 cho lô không đồng bộ; lô lịch sử mất nhãn → khi tính một gói CÓ đồng bộ, lô đó bị phạt 0,6 (xếp xa hơn). Chỉ có hiệu lực khi Gợi ý giá chạy lại; kết quả đã lưu không đổi.
+- Kiểm: `node --test suppliers/*.test.mjs` 1070 tests, pass 1063, todo 7, fail 0; `node --test web/test/*.test.mjs` 161 / 161.
+- Quay lui: revert PR (một hàm + test).
+
+**Nhánh `dac-thu-dong-co-2b`** (đã đẩy, chưa PR): `suppliers/engine-variant.mjs` (`variantFamily`, scope "version" theo Khoa) + test; PR 2b sẽ rebase lên main sau #928 và nối config-bot khi điều phối nhắn "config-bot rảnh".
 
 ## Cần ghi nhớ
 - Bí danh "PCC" không dùng để nhận PowerCommand (bẫy đã ghi `suppliers/CLAUDE.md`).
