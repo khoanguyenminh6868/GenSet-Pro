@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-17T16:34:58.162Z
+  modified: 2026-11-18T09:13:29.545Z
 ---
 
 - **Sửa cách đọc dữ liệu thì kiểm chéo TOÀN BỘ** (Khoa 17/11/2026, khi duyệt 7 đề xuất rà soát lệch dòng / cột: "cần cross check toàn bộ chứ không phải chỉ làm vài mẫu. Làm kỹ coi chừng sai"): so từng bản ghi trước / sau trên cả `suppliers/cn`, soát mọi lớp thay đổi, không lấy mẫu. Cách làm (diễn giải của em): `cmpP.cjs` / `revP.cjs` ở `genbid-work\dieu-phoi\dau-vao\ra-soat-lech-dong-cot\`.
@@ -33,6 +33,7 @@ CSDL ở `suppliers/cn/<id>.json` (cả nước ngoài, `country` ghi nước th
 - Dòng máy một model có hai mức: 533 → 863 (PR #799, bảng nhãn + bảng Cat) → 897 (PR #800, Khoa bảo "làm cho airman, sửa cho powerco, nới cho cps AP450S").
 - Cố ý vẫn bỏ (đã giải thích, Khoa không bảo làm): krauter (dòng "Motoren" 14 ô / 13 model, ghép cột dễ lệch); denyo (mức thứ hai là Continuous, không phải Prime → chỉ hiện được "continuous · standby"); powerco PCS400P/PCS500P (prime trùng ở 50 và 60 Hz) và bảng 2500 series (không có dòng tần số trên cột); deman (cột Prime ghi "/" — nguồn để trống, KHÔNG phải lệch đơn vị); số đứng trước chữ mức khi có ≥2 số ("1100KW/1375KVA Prime"); powerlink VR200XS (nguồn gõ nhầm "9176kW").
 - ~1.200 dòng nguồn chỉ có một mức: không có gì để đọc, muốn thêm phải tìm datasheet mới.
+- Nguồn NCC tự nó nghi sai (đọc đúng ô, nhưng số trái thông số hãng hoặc tự mâu thuẫn trong bảng): Khoa 18/11/2026 "giữ nguyên" → danh mục chép đúng nguồn, không sửa, không bỏ ô; chỉ ghi nhận trong nghiệm thu. Ca hỏi: chenxing-weifang KTA19-G3A bore 140/152, 6BTAA5.9-G2 bore 114/135, YC4FA55Z-D20 dung tích 2,982 L, 900GF động cơ 880 kW (PR #910). Khác với đọc LỆCH ô (lỗi của mã đọc): cái đó thì để thiếu.
 
 ## Cách làm
 Lệnh, số nguồn, cách đọc catalog PDF/OCR và bẫy cào: `suppliers/CLAUDE.md` trong repo.
