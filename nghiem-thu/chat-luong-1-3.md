@@ -48,6 +48,21 @@ PR NHÁP https://github.com/khoanguyenminh6868/GenSet-Pro/pull/929 (commit 6fa19
     - IB2600107089#0: kaichen-jiangsu KTA50-G15X (521) ra. Dòng chặn là aosif KTA50-G16B, fdk-energy QSK50-G7 và hosem. Vào: fdk-energy QSK60-G7, aosif KTA50-G15X (521) và sunkings QSK60-G3.
 - Tệp đo: `gop-base.json`, `gop-branch.json` (mỗi tệp khoảng 165 MB), `cmp-rf.txt` trong scratchpad của phiên. Không chép vào sổ vì quá lớn.
 
+## Soát các dòng bị chặn không vào `all` của lượt nào (điều phối yêu cầu sau merge #929)
+Đúng là **15 dòng**, không phải 16. Lý do: hai dòng bảng nhãn của xinhengxin-fujian n101 (tổ D9000 và D9500, cùng động cơ 1103FE) có chung một khoá do-gop (NCC | động cơ | chữ dòng, KHÔNG có tên tổ máy). Vì vậy 33 dòng bị chặn từng vào `all` chỉ ra 32 khoá; 48 − 33 = 15.
+Soát bằng `scratchpad\soat16.mjs`, `soat16c.mjs`, `why3.mjs` (mã main, cùng `facts` như do-gop). Từng dòng:
+
+| # | Dòng (NCC, nguồn, bảng/dòng) | Cờ (absurd) | Vì sao không vào `all` |
+|---|---|---|---|
+| 1 | cgm-italia n1001 b13 d15, 1103A-33TG1 (tổ 45P) | weight "39,6" (nhãn "kg"; cột "kg" của cgm là kW, đã ghi ở chặng 1) | Lọt dải công suất 29 lượt: 25 lượt bị lọc xuất xứ / nhóm NCC (24 origin all có nhóm NCC theo Đồng bộ, 1 g7eu); 4 lượt bị luật HSMT loại (3 `cyl`, 1 `disp,cyl`) |
+| 2 | huipu-power n105 b4 d30, 4012-46TAG2A | disp "458" (nhãn "Swept volume(L)") | dòng không có công suất (`power` null) → không qua lọc dải công suất |
+| 3 | huipu-power n106 b5 d7, TAD1341GE | disp "1278" | không có công suất |
+| 4 | huipu-power n106 b5 d11, TAD1345GE | disp "1278" | không có công suất |
+| 5 | mwm n1028 b71 (bảng nhãn), TCG 2032 | weight "43,100" | công suất đọc thành 3,333 kW (misread "3,333", đã ghi ở chặng 1): lọt dải 1 lượt (gói máy nhỏ) và bị lọc xuất xứ / nhóm NCC ở lượt đó |
+| 6–15 | xinhengxin-fujian n101 b0 (186FAE, 188FAE, 192FE, 195FE, 1100FE) và n102 b1 (170FE, 178FE, 186FA, 188FA, 192F), bảng nhãn | dims "…" (nhãn "Motor Size", đọc nhầm thành kích thước, đã ghi ở chặng 1) | không có công suất (bảng nhãn ghi "Rated Output Power(kw)" dạng cặp 50/60 Hz, không đọc ra) |
+
+Không dòng nào vắng mặt vì lọc tần số, và không có dòng nào không phải dòng tổ máy (cả 15 đều có bản ghi động cơ trong catalog).
+
 ## Test
 - `suppliers/*.test.mjs`: 1.069 pass, 0 fail. 7 ca `# TODO PR 2` là của "Đặc thù hãng" trên main, không phải của PR này.
 - `row-flags.test.mjs`: 13/13, trong đó 6 ca mới:
@@ -63,6 +78,12 @@ PR NHÁP https://github.com/khoanguyenminh6868/GenSet-Pro/pull/929 (commit 6fa19
 - `rowflags/current` trên web thật: log workflow Supplier publish run 44283890469 (fc94789f), bước Row flags ghi "rowflags/current: 193 dòng (51 bị loại), 130538 byte", rồi "đã ghi rowflags/current". Khớp `row-flags.mjs` trên main (193 / 51).
 - **CHƯA xem được màn Nhà cung cấp thật.** Browser pane mở https://genset-pro-web.vercel.app/#nha-cung-cap nhưng chưa đăng nhập (`state.db` = false, không có dữ liệu). Cần Khoa (hoặc phiên có đăng nhập) mở một NCC có cờ (ví dụ aoke-yangzhou, yingtai-jiangsu) xem nhãn và mục. Chỉ xem, không bấm nút.
 - Sau khi #929 lên main: mục "Dòng nghi sai" gộp theo dòng nên số trên nhãn sẽ nhỏ hơn số bản ghi (đúng ý: đếm dòng bảng).
+
+## Kiểm sau triển khai #929 (3c0a49ff, Vercel success)
+Chỉ đọc, bằng hàm của config-bot trên máy này (`scratchpad\readweb.mjs`):
+- `rowFlagsOf(doc)` qua `/api/requests?kind=docs&coll=rowflags&id=current`: 193 dòng, 51 mức loại. Không có CẢNH BÁO, nghĩa là không rơi về tự tính.
+- `rowOkOf` qua `/api/requests?kind=docs&coll=rowok`: đọc được, hiện rỗng `{}` vì chưa ai bấm nút.
+- `blockedRows(nhà cung cấp trên web, rowok, doc web)` = 48, khớp số đo.
 
 ## Lỗi của em trong lúc làm (đã sửa, chỉ trên nhánh của em)
 - Lần commit đầu em `git reset --soft origin/main` sau khi main đã tiến lên (#927/#928). Commit 5e68fc3f đẩy lên `chat-luong-1c` vì thế đảo ngược thay đổi của người khác (engine-traits, bidprice).
