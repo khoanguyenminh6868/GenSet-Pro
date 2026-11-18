@@ -116,7 +116,26 @@ export function normFig(s, ctx, want = {}) {
   if (want.enclosure && r.missing.includes("enclosure") && !why.includes("enclosure")) why.push("enclosure");
   return { r, ok: !why.length, why };
 }
-const BLOCK = Symbol("chưa so được");
+export const BLOCK = Symbol("chưa so được");
+// The value of one engine constant the suppliers agree on by the majority rule (Khoa 16/11/2026: 3 suppliers or more and 3
+// times as many as each other value; one supplier one vote, CAT.tally), counted on the figures as read (6 and "6L" are one
+// value; catalog.js's `win` counts the text as written, so "6" / "6L" / "V 12" of QSK19-G4 split and give none). `figs`:
+// [supplierId, figure | BLOCK | null]. A supplier whose figures could not be compared (BLOCK) and that gives no other is
+// counted against the winner (added to the next value): the winner must still win. → { win, votes, blocked } or null.
+export function majorityOf(figs) {
+  const by = new Map(), blocked = new Set();
+  for (const [s, x] of figs) {
+    if (x === BLOCK) { blocked.add(s ?? ""); continue; }
+    if (x == null || !Number.isFinite(x)) continue;
+    by.set(s ?? "", [...(by.get(s ?? "") || []), x]);
+  }
+  const t = CAT.tally(by);
+  if (t.win == null) return null;
+  const extra = [...blocked].filter((s) => !by.has(s)).length, won = t.votes.get(t.win).length;
+  const next = Math.max(0, ...[...t.votes].filter(([v]) => v !== t.win).map(([, ss]) => ss.length)) + extra;
+  if (won < 3 * next) return null;
+  return { win: t.win, votes: Object.fromEntries([...t.votes].map(([v, ss]) => [v, ss.length])), blocked: extra };
+}
 const normWhyVi = (why) => [...new Set(why.map((w) => NORM_VI[w] || w))].join(", ");
 export const ORIGIN = { cn: "Trung Quốc", g7: "G7 (Mỹ, Anh, Đức, Pháp, Ý, Nhật, Canada)", g20: "G20 (các nước thành viên trừ Trung Quốc)", other: "Khác (không phải Trung Quốc)", all: "Tất cả",
   // Only read from the HSMT ("G7, EU"), never chosen on the web (Khoa, 2026-11-10).
@@ -1412,7 +1431,13 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // GENBID_SPEC_NORM=1: a figure is read through the normalization layer (normFig); one it cannot compare gives null.
       const ctxOf = (f) => NORM_CTX.get(f) || ((u.specs || []).includes(f) ? useNormCtx(u, rowsMap) : undefined);
       const nfig = (f, want) => { const x = normFig(f, ctxOf(f), want); if (!x.ok) normSkip.push({ key: f.key, label: f.label, value: f.value, why: x.why, supplierId: f.supplierId ?? u.supplierId, line: f.line ?? u.line }); return x.ok ? x.r : null; };
+      // A value the suppliers agree on by the majority rule (majorityOf, lech-cot-9 18/11/2026) settles the figure: the row is
+      // judged by it alone (longkai's "No. cylinders | V 12" for the 6-cylinder QSK19-G4 no longer keeps it for "≥ 12 xi
+      // lanh"). No such value: as before.
+      const majOf = (all) => majorityOf(all.map(([f, x]) => [f.supplierId ?? u.supplierId, x]));
       const below = (key, min, read) => { const all = [...ef, ...(u.specs || [])].filter((f) => f.key === key).map((f) => [f, read(f.value, f)]), fs = all.filter(([, x]) => x != null && x !== BLOCK), v = fs.map(([, x]) => x);
+        const mj = min ? majOf(all) : null;
+        if (mj) { if (mj.win < min) srcOf[key] = { n: v.length, win: mj.win, votes: mj.votes }; return mj.win < min ? mj.win : null; }
         // Normalized: a source giving a figure the layer cannot compare (no unit, cc...) is "Chưa rõ": the row is not left out.
         const hit = min && v.length && !all.some(([, x]) => x === BLOCK) && v.every((x) => x < min); if (hit) srcOf[key] = { n: v.length, sources: new Set(fs.map(([f]) => `${f.supplierId ?? ""}#${f.n ?? ""}`)).size, ofRow: fs.filter(([f]) => (u.specs || []).includes(f)).length };
         return hit ? v[0] : null; };
@@ -1431,18 +1456,25 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // unless the HSMT names its engine model (`named`): then its sources disagree with the HSMT's own choice, and it
       // stays with 600 points off and the reason, for the agent to see.
       const ruled = madeOut ? ["made"] : [];
-      if (dl != null) { score -= 600; ruled.push("disp"); why.push(`dung tích ${dl} L < ${hints.minDisp} L HSMT yêu cầu`); }
-      const dh0 = hints.maxDisp ? given.filter((f) => f.key === "disp").map((f) => dispOf(f.value, f)) : [], dh = dh0.filter((x) => x != null && x !== BLOCK);
-      if (dh.length && !dh0.includes(BLOCK) && dh.every((x) => x > hints.maxDisp * 1.005)) { score -= 600; ruled.push("maxDisp"); why.push(`dung tích ${dh[0]} L > ${hints.maxDisp} L HSMT cho phép`); }
-      if (cl != null) { score -= 600; ruled.push("cyl"); why.push(`${cl} xi lanh < ${hints.minCyl} HSMT yêu cầu`); }
+      const byMaj = (k) => (srcOf[k]?.win != null ? ` (số đông nhà cung cấp: ${Object.entries(srcOf[k].votes).map(([v, c]) => `${v} × ${c}`).join(", ")})` : "");
+      if (dl != null) { score -= 600; ruled.push("disp"); why.push(`dung tích ${dl} L < ${hints.minDisp} L HSMT yêu cầu${byMaj("disp")}`); }
+      const dhAll = hints.maxDisp ? given.filter((f) => f.key === "disp").map((f) => [f, dispOf(f.value, f)]) : [], dh0 = dhAll.map(([, x]) => x), dh = dh0.filter((x) => x != null && x !== BLOCK);
+      const dhMaj = dhAll.length ? majOf(dhAll) : null;
+      if (dhMaj ? dhMaj.win > hints.maxDisp * 1.005 : dh.length && !dh0.includes(BLOCK) && dh.every((x) => x > hints.maxDisp * 1.005)) {
+        if (dhMaj) srcOf.maxDisp = { win: dhMaj.win, votes: dhMaj.votes };
+        score -= 600; ruled.push("maxDisp"); why.push(`dung tích ${dhMaj ? dhMaj.win : dh[0]} L > ${hints.maxDisp} L HSMT cho phép${byMaj("maxDisp")}`);
+      }
+      if (cl != null) { score -= 600; ruled.push("cyl"); why.push(`${cl} xi lanh < ${hints.minCyl} HSMT yêu cầu${byMaj("cyl")}`); }
       // The HSMT gives the bare count (cylExact, Khoa 2026-11-17): another count by every source that gives one, the
       // row's own cell first ("12V", "12.V"), is left out too (a 12-cylinder engine for "6 xy lanh"). Sources that
       // disagree on the count: not judged, as for the minimums.
       else if (hints.minCyl && hints.cylExact) {
         const cnt = (v) => { const m = String(v ?? "").match(/\d{1,2}/); return m ? Number(m[0]) : null; };
         const ownC = [...(u.specs || []).filter((f) => f.key === "cyl").map((f) => cnt(f.value)), ...(u.line ? CAT.cellsOf(u.line).filter((c) => /^\s*(?:\d{1,2}\s*[.\-]\s*[VL]|[VL]\s*-?\s*\d{1,2})\s*$/i.test(c)).map(cnt) : [])].filter((x) => x != null);
-        const cs = ownC.length ? ownC : ef.filter((f) => f.key === "cyl").map((f) => cnt(f.value)).filter((x) => x != null);
-        if (cs.length && cs.every((x) => x !== hints.minCyl)) { score -= 600; ruled.push("cyl"); why.push(`${cs[0]} xi lanh, HSMT ghi ${hints.minCyl} xi lanh`); }
+        // No cell of its own: the engine's count the suppliers agree on by the majority rule, when there is one.
+        const eMaj = ownC.length ? null : majOf(ef.filter((f) => f.key === "cyl").map((f) => [f, cylOf(f.value, f)]));
+        const cs = ownC.length ? ownC : eMaj ? [eMaj.win] : ef.filter((f) => f.key === "cyl").map((f) => cnt(f.value)).filter((x) => x != null);
+        if (cs.length && cs.every((x) => x !== hints.minCyl)) { if (eMaj) srcOf.cyl = { win: eMaj.win, votes: eMaj.votes }; score -= 600; ruled.push("cyl"); why.push(`${cs[0]} xi lanh, HSMT ghi ${hints.minCyl} xi lanh${byMaj("cyl")}`); }
       }
       // The row's prime output (catalog.js reads it from the column titles) below the prime the HSMT asks for.
       const pr = u.power?.prime, mp = hints.minPrime;
