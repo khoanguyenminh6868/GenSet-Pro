@@ -683,6 +683,9 @@ const DEFAULT_SORT = { col: "no", dir: -1 };
 // Trích nguồn (Khoa, 2026-11-10): mỗi kết quả agent vẫn ghi nguyên văn nguồn và code vẫn kiểm (config-check, verify),
 // nhưng web không in câu trích / dòng nguồn / đường dẫn nguồn ra màn hình. SHOW_SRC = true để hiện lại.
 const SHOW_SRC = false;
+// Thông báo kết quả Tìm NCC ở tab Cấu hình gợi ý (Khoa, 2026-11-18: tạm thời không cần hiện). Dòng "Đang chờ Agent tìm..."
+// và lỗi Tìm NCC vẫn hiện. SHOW_FIND_NOTE = true để hiện lại.
+const SHOW_FIND_NOTE = false;
 const state = {
   db: null,
   feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, supdeleted: {}, supfav: {}, supalias: {}, supexcl: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, specmatch: {}, specreq: {}, bidprice: {}, bidpricereq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, bcdg: {}, deleted: {}, sel: new Set(), limit: pageSize(),
@@ -3981,7 +3984,7 @@ function configTabHtml(t) {
       const info = `lúc ${fmtDate(prev.at)}${prev.result.extra ? ` · yêu cầu khác: ${prev.result.extra}` : ""}`;
       return actBar("Đã gợi ý", info, btns, "", "ok", "actrow cfgact");
     })()
-    + (fprev?.result && !fwait && local.get("findDismiss", {})[key] !== fprev.at ? findResultHtml(fprev, key) : "")
+    + (SHOW_FIND_NOTE && fprev?.result && !fwait && local.get("findDismiss", {})[key] !== fprev.at ? findResultHtml(fprev, key) : "")
     + (prev?.result && !wait ? cfgClarifyHtml(prev.result, key) + (prev.result.sizes ? cfgSizesHtml(prev.result, key, busy) : cfgResultHtml(prev.result, { key, busy })) : "");
 }
 // Câu hỏi làm rõ HSMT (config-bot.mjs clarifyOf, điều phối 2026-11-11): điểm HSMT ghi hai giá trị khác nhau, giá trị thiết
