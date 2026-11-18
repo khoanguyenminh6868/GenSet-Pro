@@ -729,12 +729,13 @@
   const SEC_GENSET = /机组|gen-?set|generator[\s-]*set/i;
   const SEC_HEAD = { genset: "| Generator set", engine: "| Engine", alternator: "| Alternator" };
   function sectionSheet(t) {
-    if ((t.header || []).length !== 1) return null;
+    if (!(t.header || []).length) return null;
     const h = cellsOf(t.header[0]), k = h.length;
     if (k < 2 || k > 4) return null;
     const parts = h.map((x) => (SEC_GENSET.test(x) ? "genset" : ENGINE_LBL.test(x) ? "engine" : ALT_LBL.test(x) ? "alternator" : null));
     if (parts.some((p) => !p) || parts.filter((p) => p === "engine").length !== 1 || new Set(parts).size !== k) return null;
-    const rows = t.rows.map(cellsOf);
+    // The crawl sometimes keeps the first pairs line in the header ("| Model | 40GF | Model | F4L912TD | Model | UCI224D", huachai n118).
+    const rows = [...t.header.slice(1), ...t.rows].map(cellsOf);
     if (!rows.length || rows.filter((c) => c.length === 2 * k).length < rows.length * 0.8 || !/^(model|型号|机组型号|genset\s*model)$/i.test(rows[0][0] || "")) return null;
     const lines = [];
     parts.forEach((p, j) => {
@@ -776,7 +777,13 @@
     if (!(v > 0)) return true;
     const P = Object.values(power || {}).filter(Boolean), kvas = P.map((p) => p.kVA).filter(Boolean), kws = P.map((p) => p.kW).filter(Boolean);
     // One of the row's own outputs is no voltage ("| PHF-100RX | 100 | 110 |": the standby 110 kW, a standard voltage too).
-    if (key === "voltage") return STD_VOLT.includes(v) && ![...kvas, ...kws].includes(v);
+    // Not a 380-480 V mains voltage, nor two voltages ("230/400"), which a kW figure may equal by chance (chuangyuan
+    // "400 kW | 400 V", zhengchi "230KW … 230/400").
+    if (key === "voltage") {
+      const two = String(value).match(/^\s*(\d+)\s*[\/／]\s*(\d+)\s*v?\s*$/i);
+      if (two) return STD_VOLT.includes(+two[1]) && STD_VOLT.includes(+two[2]);
+      return STD_VOLT.includes(v) && (v >= 380 || ![...kvas, ...kws].includes(v));
+    }
     if (!kvas.length && !kws.length) return true;
     const named = String(gname || "").match(/^(?:[a-z]{0,6}[-\s]?)?(\d+(?:\.\d+)?)\s*gf/i);
     if (named) kws.push(+named[1]);
@@ -1031,6 +1038,8 @@
           const rowText = [c.genset, c.engine, c.alternator].filter(Boolean).join(" ");
           // The alternator's "Model" of a section sheet repeating the genset's ("型号 | 30GF" under 发电机参数, chenxing): no alternator.
           if (sec && c.alternator && c.genset && keyOf(c.alternator) === keyOf(c.genset)) { note(t, ti, null, "mã đầu phát trùng model tổ máy", c.alternator); c.alternator = null; }
+          // Two codes offered in one cell ("XN184H,XN184F", huachai n117): which one the set has is not known.
+          for (const k of sec ? ["engine", "alternator"] : []) if (c[k] && /[,，、]/.test(c[k])) { note(t, ti, null, "một ô ghi hai mã", c[k]); c[k] = null; }
           c.specs = saneSpecs(c.specs, power, (x) => note(t, ti, null, "số vô lý so với công suất", `${x.key}=${x.value}`));
           if (c.engine && isCode(c.engine.replace(/^[a-z]+\s+(?=\S*\d)/i, (m) => (brandIn(m, ENGINE_BRANDS).length ? "" : m))))
             out.push({ ...base, kind: "engine", model: c.engine.replace(/^(cummins|perkins|weichai|yuchai|deutz|volvo|baudouin|mtu|doosan|mitsubishi|sdec|kubota|yanmar|isuzu|ricardo|lovol|fawde)\s+/i, ""), makes: makesFor("engine", c.engine + " " + (c.engineBrand || ""), c.engineBrand), genset: c.genset || null, power, freq: tFreq, other: c.alternator || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows } });

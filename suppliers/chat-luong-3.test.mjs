@@ -75,6 +75,27 @@ test("section sheet huachai n116: engine F4L912D, alternator PI144J, the set's p
   assert.deepEqual(out[0].power, { prime: { kW: 30 }, standby: { kW: 33 } });
 });
 
+test("section sheet huachai n118: the crawl kept the first pairs line in the header; still read, no 'IP23/H' engine", () => {
+  const { out } = read(["| Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)", "| Model | 40GF | Model | F4L912TD | Model | UCI224D"],
+    ["| Rated prime power | 40KW | Prime power | 41KW | Rated power | 40KW", "| Standby power | 44KW | Stand power | | Rated voltage | 400/230V",
+      "| Steady state frequency | ≤2.5 | Fuel consumption | 232g /kwh | Protection/ insulation | IP23/H"]);
+  assert.deepEqual(out.map((u) => [u.kind, u.model, u.genset]), [["engine", "F4L912TD", "40GF"], ["alternator", "UCI224D", "40GF"]]);
+  assert.deepEqual(out[0].power, { prime: { kW: 40 }, standby: { kW: 44 } });
+});
+
+test("section sheet huachai: an alternator cell with two codes 'XN184H,XN184F' gives no alternator, and is listed", () => {
+  const { out, notes } = read(["| Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)"], ["| Model | 20GF | Model | F3L912D | Model | XN184H,XN184F",
+    "| Rated prime power | 20KW | Prime power | 22KW | Rated power | 20KW"]);
+  assert.deepEqual(out.map((u) => [u.kind, u.model]), [["engine", "F3L912D"]]);
+  assert.ok(notes.some((x) => x.reason === "một ô ghi hai mã"));
+});
+
+test("WCHK zhengchi n102: '230/400' V on a 2400 kW row is two standard voltages, kept", () => {
+  const { out } = read(["| 功率 | 备用功率 | 品牌 | 整机编号 | 柴油机型号 | 频率 | 电压(V) | 高压(KV) | 燃油率 | 输出 | 缸数 | 排量(L) | 机组长宽高(mm) | 重量KG | 参数"],
+    ["| 2400KW | 2670KW | 玉柴 | ZCDL-Y2670G | YC16VC4000-D31 | 50Hz | 230/400 | 6.3/10.5 | 213g/kw.h | 三相四线 | 20 | 95.42 | 6100×2600×3100 | 13500 | 更多"]);
+  assert.equal(spec(out.find((u) => u.kind === "engine"), "voltage"), "230/400");
+});
+
 test("LROW: a row of a table that is itself label | value pairs gives no record, and is listed", () => {
   const { out, notes } = read(["| Item | Spec"], ["| Model | CK7000S | CK7500S | CK8500S"]);
   assert.deepEqual(out, []);
