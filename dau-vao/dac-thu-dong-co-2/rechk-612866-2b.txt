@@ -1,0 +1,29 @@
+configmatch/IB2600612866 lưu lúc 2026-11-17T13:19:52.446Z; chữ HSMT 69559 ký tự; code wt-dac-thu-2
+
+## Kết quả đã lưu: 5 cấu hình
+#1 động cơ CAT C1.1 [Caterpillar] (catalog) | tổ máy DE9.5E3 [Caterpillar] (catalog) | NCC rise-power
+#2 động cơ D1105 [Kubota] (catalog) | tổ máy WT-KU11 [] (catalog) | NCC wintpower, agestar
+#3 động cơ V2203-K3A [Kubota] (internet) | tổ máy DCA-15LSX [Denyo] (internet: «Denyo shares our specialized knowledge and experience as a manufacturer of engin») | NCC denyo
+#4 động cơ 403A-11G1 [Perkins] (catalog) | tổ máy P-10 [] (catalog) | NCC jet-power, fdk-energy, uleengen
+#5 động cơ 3TNV76-GGE [Yanmar] (catalog) | tổ máy WT-YM11 [] (catalog) | NCC wintpower, voltgent, mecca-power
+
+## Sau check + rankConfigs: 1 cấu hình; engineTrait {"make":"Kubota","terms":["E-TVCS"],"quote":"Xoáy ba hướng (E-TVCS) giúp hòa trộn nhiên liệu với không khí"}
+#1 động cơ D1105 [Kubota] (catalog) | tổ máy WT-KU11 [] (catalog) | NCC wintpower, agestar
+
+## problems
+#3: nhà cung cấp denyo đặt tại JP, ngoài nhóm Trung Quốc, đã bỏ
+#3: không còn nhà cung cấp nào đặt tại nước Trung Quốc, đã bỏ cấu hình
+#1: HSMT ghi E-TVCS ở yêu cầu động cơ (đặc thù động cơ Kubota), động cơ CAT C1.1 hãng caterpillar, đã bỏ
+#4: HSMT ghi E-TVCS ở yêu cầu động cơ (đặc thù động cơ Kubota), động cơ 403A-11G1 hãng perkins, đã bỏ
+#5: HSMT ghi E-TVCS ở yêu cầu động cơ (đặc thù động cơ Kubota), động cơ 3TNV76-GGE hãng yanmar, đã bỏ
+
+## notes
+Denyo DCA-10LSX (động cơ Kubota D1403-K3A, 1 pha, cos φ = 1) chỉ đạt 8,8 kVA dự phòng, dưới 9,35 kVA nên không đưa vào gợi ý; nếu bên mời thầu chấp nhận dung sai công suất thì đây là model sát nhất.
+Yêu cầu buồng đốt xoáy ba hướng E-TVCS là tên công nghệ riêng của Kubota; chỉ động cơ Kubota có thể đáp ứng đúng chữ.
+Các tổ máy lắp ráp ở Trung Quốc chào bản 3 pha 400 V; bản 1 pha 220 V, cos φ = 1 cần hỏi nhà cung cấp.
+Kubota GL-9000 và Denyo DCA-10LSX (1 pha) có công suất dự phòng dưới 9,35 kVA; Kubota J112 là loại 2 cực (không chạy 1500 v/p) nên không đưa vào gợi ý.
+Code đã bỏ cấu hình Kubota SQ-1120 agent đề xuất: trùng cấu hình khác hoặc vượt số cấu hình mỗi hãng động cơ.
+Code đã bỏ cấu hình Kubota K-13 agent đề xuất: trùng cấu hình khác hoặc vượt số cấu hình mỗi hãng động cơ.
+HSMT chỉ đòi động cơ / đầu phát / bộ điều khiển hãng G7, không đòi cả tổ máy xuất xứ G7: gợi ý nhà cung cấp đặt tại Trung Quốc chào các bộ phận hãng G7 (Khoa, 2026-11-10).
+HSMT ghi E-TVCS ở yêu cầu động cơ, là công nghệ riêng của Kubota: chỉ gợi ý động cơ Kubota (Khoa, 18/11/2026).
+Kiểm tra bằng code: 6 điểm chưa khớp nguồn, đã đánh dấu ⚠.

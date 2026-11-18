@@ -113,6 +113,17 @@ Thêm bằng chứng cho câu 4: "all" còn gộp V2003-T (turbo) với V2003 (k
 - **Chưa làm (chờ điều phối cấp lượt đo):** do-gop / top 30 toàn bộ gói (gốc = main lúc đo, cùng `suppliers/cn`, truyền `blocked`); kỳ vọng: đổi ở 3 gói E-TVCS, ≤ 16 gói có từ bộ điều khiển (chỉ điểm +200, không loại dòng), 0 gói khác. Gợi ý thật IB2600612866 (ghi web, tốn agent): chờ hỏi.
 - Quay lui: revert PR #930.
 
+### 11a. Đo trước cho 19 gói có từ đặc thù (điều phối cho phép, một tiến trình, 18/11)
+Script `dau-vao\dac-thu-dong-co-2\do-19.mjs` (như `lech-cot-11\do-gop-rf.mjs`: blocked = `blockedRows(sups, {})`, GENBID_SPEC_NORM=1, cn của `wt-lc11-base` = 3c0a49ff), hai chữ mỗi gói: "hist" = Chương V lô lịch sử (chữ do-gop dùng), "hsmt" = chữ HSMT cả bộ (`genbid-work\specs`), không có thì dòng Phân tích. Gốc `wt-lc11-base` (3c0a49ff) ↔ nhánh `wt-dac-thu-2`. So: `cmp-19.mjs` → `cmp-19.txt` (mọi dòng vào / ra / đổi điểm). 49 lượt: 35 không đổi, 6 lượt hai bên cùng không đọc được công suất (IB2400166974, IB2500197652, IB2600362632, IB2600570346: gói bảo trì / vật tư), 8 lượt đổi:
+- **E-TVCS (3 gói, đúng luật 1):** IB2500189935 hist và IB2600612866 (cùng chữ, 8,5 kVA): top 24 → 1, 34 dòng loại `trait` (Perkins 8, Kohler 4, Mitsubishi 2, Lister Petter 4, Caterpillar 1, không rõ hãng 4…); còn denyo D1403K3A (Kubota), điểm 136 → 461 (+300 hãng HSMT nêu… ). Catalog chỉ có 2 dòng Kubota trong dải cho chữ này (cũng 36 dòng tất cả ở gốc) → agent phải tìm internet chỉ Kubota. IB2500189935 hsmt: top 30 → 20, toàn Kubota (D1105 / V1505 / D905 các biến thể, wintpower, comappower, mecca-power, long-gen, genlitec, depco, suneco, yanan…), 190 dòng loại `trait`. IB2500416364: hist không có từ (Chương V bị cắt), hsmt có Kubota nhưng không đọc được công suất cả hai bên (top 0) → không đổi.
+- **EMCP (IB2300114016, IB2400216498, IB2500340280, cỡ 320 kVA, cùng danh mục):** mỗi lượt 1 dòng vào / 1 dòng ra: jiuan-power 2206CE13TAG2 (220 → 420: dòng của chính nó ghi "Controller | DSE7320 / EMCP4.4") vào #3, uleengen 2206CE13TAG2 (275, #30) bị chen ra. Đây là luật (5) +200, đúng. Gói này là bảo trì máy CAT hiện có; không loại dòng nào.
+- AmpSentry / PowerCommand / ADEM: không đổi (không dòng nào trong dải ghi từ đó).
+- Không lượt nào ngoài 19 gói được đo ở đây (đợi do-gop toàn bộ).
+
+### 11b. `check` lại configmatch/IB2600612866 đã lưu (chỉ đọc web), nhánh 2b
+Script `rechk-612866.mjs` → `rechk-612866-2b.txt`. Lưu 17/11: 5 cấu hình (CAT C1.1, Kubota D1105, Denyo DCA-15LSX/V2203 internet, Perkins 403A-11G1, Yanmar 3TNV76). Sau check + rankConfigs (byCode gỡ trước, cap 8,5 kVA): còn 1 — Kubota D1105 (wintpower, agestar). Bỏ: CAT / Perkins / Yanmar vì E-TVCS (luật 1); Denyo vì NCC đặt tại JP ngoài nhóm Trung Quốc (luật xuất xứ cũ, câu trích của nó không có số công suất nên dải không xét được). Kubota SQ-1120 / K-13 lượt đó bị trần mỗi hãng bỏ — lượt mới không còn trần cho Kubota. Ra V1505 cần Gợi ý thật (agent): chờ PR merge + bot kéo main (điều phối nhắn).
+- Câu 2 (a) "BĐK cùng hãng, nguồn không ghi từ → chưa rõ": điều phối đồng ý 18/11, đã ghi chú thích mã (commit `138ea814`).
+
 ## Cần ghi nhớ
 - Bí danh "PCC" không dùng để nhận PowerCommand trong chữ HSMT (bẫy đã ghi `suppliers/CLAUDE.md`); trong chữ chào hàng thì dùng.
 - Unclear thay vì not_met cho "bộ điều khiển cùng hãng, nguồn không ghi từ đó" là cách em hiểu câu 2 (a) — nếu Khoa muốn not_met cứng thì đổi một dòng trong `check`.
