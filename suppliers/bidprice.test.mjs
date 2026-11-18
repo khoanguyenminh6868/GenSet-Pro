@@ -122,6 +122,30 @@ test("brandSyncOf: đồng bộ 02 trong 03, cùng một nhà sản xuất; not 
     "động cơ, đầu phát, bộ điều khiển phải được đồng bộ theo tiêu chuẩn của nhà sản xuất"]) assert.equal(BP.brandSyncOf(t), null, t);
 });
 
+// Khoa 2026-11-18 (Đặc thù hãng động cơ, chặng 2, điều 4): "nếu yêu cầu không ghi đòi động cơ thì không đòi"; câu 1 (b):
+// fewer than 2 parts left asks nothing. Sentences of real HSMT (genbid-work\specs\<TBMT>\text.txt or the analysis quote).
+test("brandSyncOf: a part tied to a group of countries is not asked of the genset's maker (IB2600612866, IB2500416364)", () => {
+  // thật: IB2600612866 (Phân tích, Chương V 1.2.1 A.I.1) and IB2500416364 (text.txt): engine of a G7 brand, alternator + canopy one brand
+  assert.equal(BP.brandSyncOf("Máy phát điện chạy dầu diesel bao gồm đồng bộ động cơ thương hiệu G7, đầu phát và vỏ chống ồn đồng bộ cùng một nhãn hiệu, thông tin này có trên website của hãng sản xuất tổ máy."), null);
+  // the same sentence with the engine in the list of one brand still asks it
+  assert.deepEqual(BP.brandSyncOf("Máy phát điện chạy dầu diesel bao gồm đồng bộ động cơ, đầu phát và vỏ chống ồn đồng bộ cùng một nhãn hiệu").parts, ["engine", "alternator"]);
+});
+test("brandSyncOf: clauses that ask the engine stay as they were (measure of 1.545 HSMT: 85 alike)", () => {
+  const cases = [
+    // thật: IB2200018828 — verbs between the parts and "cùng"
+    ["Tính đồng bộ: Động cơ, đầu phát, bảng điều khiển được thiết kế, sản xuất, lắp ráp và kiểm tra bởi cùng một nhà sản xuất duy nhất để đảm bảo tính đồng bộ", ["engine", "alternator", "controller"]],
+    // thật: IB2300194512 — "Xuất xứ" of the cell before is no requirement on the engine
+    ["2 Xuất xứ Tính đồng bộ: Động cơ, đầu phát điện, bộ phận điều khiển, lọc phải được thiết kế và sản xuất bởi cùng một hãng sản xuất duy nhất", ["engine", "alternator"]],
+    // thật: IB2400491226 — ", điều khiển" after a comma is the controller
+    ["Tổ máy phát điện chạy dầu Diesel bao gồm: Động cơ, đầu phát, điều khiển, vỏ chống ồn sản xuất đồng bộ từ nhà sản xuất", ["engine", "alternator", "controller"]],
+    // thật: IB2500462306 — "Cùng thương hiệu với đầu phát" on the engine's row
+    ["2 ĐỘNG CƠ ĐIỆN Cùng thương hiệu với đầu phát", ["engine", "alternator"]],
+    // thật: bidhist IB2400153322 (HSMT summary) — "Xuất xứ, nhãn hiệu" is a label, not a group of countries
+    ["Động cơ: Xuất xứ, nhãn hiệu, năm sản xuất: Nhà thầu đề xuất; cùng nhãn hiệu với đầu phát điện; model, số serial", ["engine", "alternator"]],
+  ];
+  for (const [t, parts] of cases) assert.deepEqual(BP.brandSyncOf(t)?.parts, parts, t);
+});
+
 test("candidates: a tender asking for đồng bộ thương hiệu prefers lots that asked for it too", () => {
   const g = [{ name: "Máy phát điện 400kVA", maker: "Cummins", origin: "Mỹ" }];
   const d = { A: { bidName: "Mua sắm máy phát điện 400kVA", final: true, config: { text: "Động cơ Cummins" }, lots: [lot(1e9, 8e8, g)] },

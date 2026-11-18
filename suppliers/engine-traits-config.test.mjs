@@ -64,9 +64,9 @@ test("(3) same figures → one configuration; different → only the one that me
   assert.deepEqual(CB.rankConfigs(diff).configs.map((c) => c.engine.model), ["D1105-BG"]);
 });
 
-test("(4) Đồng bộ thương hiệu asks only the parts the HSMT names (IB2600612866, thật: analysis quote)", TODO, () => {
+test("(4) Đồng bộ thương hiệu asks only the parts the HSMT names (IB2600612866, thật: analysis quote; Khoa 18/11 câu 1 (b): còn 1 bộ phận thì không đòi)", () => {
   const s = BP.brandSyncOf("Máy phát điện chạy dầu diesel bao gồm đồng bộ động cơ thương hiệu G7, đầu phát và vỏ chống ồn đồng bộ cùng một nhãn hiệu, thông tin này có trên website của hãng sản xuất tổ máy.");
-  assert.ok(!s || !s.parts.includes("engine"), JSON.stringify(s));
+  assert.equal(s, null, JSON.stringify(s));
 });
 
 test("(4) a clause that names the engine still asks it (IB2600594596 kind)", () => {
