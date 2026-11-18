@@ -75,6 +75,26 @@ node suppliers/unread-tables.mjs [--json]
 2. huachai n116: tiêu đề `| Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)` đặt trên dòng `| Model | 30GF | Model | F4L912D | Model | PI144J`. Nay đọc ra động cơ F4L912D và đầu phát PI144J, công suất 30/33 kW (prime / standby) của tổ máy, không lấy 32 kW của động cơ.
 3. gb-power n1001: `| GB POWER | 3/4` (chân trang số trang). Nay không còn đọc thành kVA/kW; vẫn giữ `| Prime Power(50Hz) | 8KW/10KVA`.
 
+## Bổ sung 18/11: rebase lên main 1133dc1c + kiểm chéo toàn bộ 76 bản ghi thêm
+- Đã rebase lên 1133dc1c, gồm #911 (gộp hichai-power vào kaihua-genset). Tạo lại `unread-tables.json`.
+- Spec-diff 1133dc1c ↔ nhánh:
+  - Số bản ghi: 58.912 → 58.963.
+  - Đổi / mất / thêm: vẫn 196 / 25 / 76. Đảo vai 1 → 1.
+  - "Chưa đọc được" thêm lý do mới "dòng điện tổ máy không khớp công suất": 5 mục.
+  - "số vô lý": 213 → 212.
+- **Kiểm chéo:** đã in MỌI trường của cả 76 bản ghi cạnh bảng nguồn và đối chiếu từng giá trị. Chi tiết trong `dau-vao\chat-luong-3\c2\kiem-cheo-76.md` (bảng nguồn ở `them-76-nguon.txt`).
+  - **44 bản ghi khớp hết.**
+  - **32 bản ghi có trường sai, đã sửa mã (commit mới).**
+    - Dòng điện trước đây lấy của đầu phát chứ không phải của tổ máy. Ví dụ huachai n121 "600GF": 902 A → 1082 A. Lỗi do phần tổ máy ghi nhãn "Rated currency".
+    - 5 dòng điện tổ máy không khớp công suất nay để thiếu: n111 "50Hz", n105 812 A, n117 "52A 、 36A", chenxing n117 540 A, chenxing n118 630 A.
+    - Khối lượng của đầu phát (huachai n117) bị lấy làm khối lượng tổ máy. Đã bỏ.
+  - 4 bảng nguồn nghi sai (bore KTA19 / 6BTAA5.9, YC4FA55Z, 900GF trên động cơ 880 kW): danh mục chép đúng nguồn, không sửa.
+  - Mã "BF8M1015CP-LA G3" / "BF6M1015C-LA G1A" giữ nguyên. Đó là đuôi biến thể công suất của Deutz, và `keyOf` bỏ dấu cách khi so mã.
+- Test:
+  - Thêm 2 test (huachai n121; n111 / n117).
+  - `node --test suppliers/*.test.mjs`: 1029 pass / 0 fail. `web/test`: 161 pass / 0 fail.
+  - `quality.mjs --check`: không chỉ số nào xấu đi.
+
 ## Rủi ro / chưa kiểm
 - Chưa đo top 30 ứng viên (đang chờ). Đổi danh mục có thể đổi hạng ứng viên ở các gói có động cơ của chenxing / huachai, vì 76 bản ghi mới.
 - 230 giá trị đổi hoặc thêm không tự kiểm được bằng công suất của dòng. Phần lớn là thông số của các bản ghi chenxing / huachai mới (bảng nhãn). Đã xem theo dạng, chưa xem từng giá trị một.
