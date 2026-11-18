@@ -13,6 +13,12 @@ Kết quả lưu có 5 cấu hình: (1) CAT C1.1 rise-power, (2) Kubota D1105 wi
 4. Cấu hình tìm trên internet không qua dải công suất 100–140% (`bandOf`) của ứng viên danh mục: Denyo DCA-15LSX 13 kVA = 153% của 8,5 kVA vẫn vào.
 5. (Phụ) Code đọc "đầu phát và vỏ chống ồn đồng bộ cùng một nhãn hiệu" thành "động cơ + đầu phát do chính hãng tổ máy làm (2/2)"; vì vậy agent đi tìm Denyo / Kubota trên internet và mọi tổ máy lắp ráp TQ bị "không đạt" Đồng bộ thương hiệu.
 
-## Thiết kế phiên điều phối đề xuất (chưa qua Khoa ở phần luật)
+## Khoa chốt 18/11/2026 (nguyên văn)
+1. "Trong trường hợp có đặc thù, chỉ gợi ý hãng đó và bỏ trần 2 cấu hình cho hãng đó"
+2. Cấu hình internet phải trong dải 100–140% như ứng viên danh mục: "có"
+3. Biến thể cùng động cơ: "nếu giống nhau về mặt thông số thì chọn 1 trong nhiều, nếu khác thì chỉ chọn cái có thông số phù hợp"
+4. Đồng bộ thương hiệu: "nếu yêu cầu không ghi đòi động cơ thì không đòi"
+
+## Thiết kế phiên điều phối đề xuất
 - Tệp dữ liệu mới (đề xuất `suppliers/engine-traits.json` + test): mỗi mục `{ make, term, aliases[], kind (buồng đốt / phun / điều khiển điện tử / tên dòng / khác), exclusive: true|false, src[], quote[], note }`. `exclusive: true` chỉ khi nguồn CHÍNH HÃNG cho thấy đó là tên riêng / nhãn hiệu của hãng (E-TVCS: Kubota). Từ chung (IDI, common rail, turbo, 4 kỳ) KHÔNG phải đặc thù. Mỗi `quote` nằm nguyên văn trong trang đã lưu (mẫu `manufacturing[]`, `fetch-source.mjs`, test `manufacturing.test.mjs`).
 - Dùng (chặng sau, đụng `config-bot.mjs`): HSMT có từ `exclusive` → coi như HSMT nêu hãng động cơ đó (`hints.engineMakes`: ứng viên theo hãng, bỏ trần mỗi hãng), hãng khác "không đạt" ở yêu cầu đó.
