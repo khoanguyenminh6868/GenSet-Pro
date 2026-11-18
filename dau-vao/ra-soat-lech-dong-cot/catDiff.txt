@@ -1,0 +1,10 @@
+dòng (động cơ | dòng) cũ 46537, mới 46376, chênh -161
+denyo: 32 → 33 (mất 0, thêm 1)
+kubota: 1 → 0 (mất 1, thêm 0)
+starlight-power: 348 → 0 (mất 348, thêm 0)
+xingguang-jiangsu: 351 → 699 (mất 0, thêm 348)
+yanmar: 0 → 1 (mất 0, thêm 1)
+yingtai-group: 162 → 0 (mất 162, thêm 0)
+starlight-power → xingguang-jiangsu: 348 dòng cũ; 348 có ở xingguang-jiangsu mới; 0 đã trùng với xingguang-jiangsu từ trước
+yingtai-group → yingtai-jiangsu: 162 dòng cũ; 162 có ở yingtai-jiangsu mới; 162 đã trùng với yingtai-jiangsu từ trước
+kubota → kubota-japan: 1 dòng cũ; 0 có ở kubota-japan mới; 0 đã trùng với kubota-japan từ trước

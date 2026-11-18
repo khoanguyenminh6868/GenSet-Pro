@@ -1,6 +1,7 @@
 [
  {
   "model": "1006TAG",
+  "ekey": "1006TAG",
   "key": "cyl",
   "make": "Perkins",
   "win": 6,
@@ -42,6 +43,7 @@
  },
  {
   "model": "12M26D902E200",
+  "ekey": "12M26D902E200",
   "key": "cyl",
   "make": "Weichai",
   "win": 12,
@@ -93,6 +95,7 @@
  },
  {
   "model": "12M26D968E200",
+  "ekey": "12M26D968E200",
   "key": "cyl",
   "make": "Weichai",
   "win": 12,
@@ -146,6 +149,7 @@
  },
  {
   "model": "12M33D1108E200",
+  "ekey": "12M33D1108E200",
   "key": "cyl",
   "make": "Weichai",
   "win": 12,
@@ -199,6 +203,7 @@
  },
  {
   "model": "12M33D1108E310",
+  "ekey": "12M33D1108E310",
   "key": "cyl",
   "make": "Weichai",
   "win": 12,
@@ -242,6 +247,7 @@
  },
  {
   "model": "12M33D1210E200",
+  "ekey": "12M33D1210E200",
   "key": "cyl",
   "make": "Weichai",
   "win": 12,
@@ -293,6 +299,7 @@
  },
  {
   "model": "12M33D1320E200",
+  "ekey": "12M33D1320E200",
   "key": "cyl",
   "make": "Weichai",
   "win": 12,
@@ -343,6 +350,7 @@
  },
  {
   "model": "12M33G1320/6",
+  "ekey": "12M33G1320/6",
   "key": "cyl",
   "make": "Baudouin",
   "win": 12,
@@ -384,6 +392,7 @@
  },
  {
   "model": "12M33G1650/5",
+  "ekey": "12M33G1650/5",
   "key": "cyl",
   "make": "Baudouin",
   "win": 12,
@@ -427,6 +436,7 @@
  },
  {
   "model": "16M33D1680E310",
+  "ekey": "16M33D1680E310",
   "key": "cyl",
   "make": "Weichai",
   "win": 16,
@@ -477,6 +487,7 @@
  },
  {
   "model": "16M33D1800E310",
+  "ekey": "16M33D1800E310",
   "key": "cyl",
   "make": "Weichai",
   "win": 16,
@@ -524,6 +535,7 @@
  },
  {
   "model": "16M33D1980E310",
+  "ekey": "16M33D1980E310",
   "key": "cyl",
   "make": "Weichai",
   "win": 16,
@@ -567,6 +579,7 @@
  },
  {
   "model": "16M55D2900E310",
+  "ekey": "16M55D2900E310",
   "key": "cyl",
   "make": "Weichai",
   "win": 16,
@@ -610,6 +623,7 @@
  },
  {
   "model": "16V2000G25",
+  "ekey": "16V2000G25",
   "key": "cyl",
   "make": "MTU",
   "win": 16,
@@ -640,7 +654,7 @@
     "yunding-jiangsu"
    ]
   },
-  "rows": 46,
+  "rows": 45,
   "odd": [
    {
     "sid": "aoke-yangzhou",
@@ -662,6 +676,7 @@
  },
  {
   "model": "16V2000G65",
+  "ekey": "16V2000G65",
   "key": "cyl",
   "make": "MTU",
   "win": 16,
@@ -692,7 +707,7 @@
     "yunding-jiangsu"
    ]
   },
-  "rows": 49,
+  "rows": 48,
   "odd": [
    {
     "sid": "aoke-yangzhou",
@@ -714,6 +729,7 @@
  },
  {
   "model": "4006-23TAG3A",
+  "ekey": "400623TAG3A",
   "key": "cyl",
   "make": "Perkins",
   "win": 6,
@@ -777,6 +793,7 @@
  },
  {
   "model": "4016-61TRG3",
+  "ekey": "401661TRG3",
   "key": "cyl",
   "make": "Perkins",
   "win": 16,
@@ -836,6 +853,7 @@
  },
  {
   "model": "4016TAG1A",
+  "ekey": "4016TAG1A",
   "key": "cyl",
   "make": "Perkins",
   "win": 16,
@@ -898,6 +916,7 @@
  },
  {
   "model": "4016TAG2A",
+  "ekey": "4016TAG2A",
   "key": "cyl",
   "make": "Perkins",
   "win": 16,
@@ -960,6 +979,7 @@
  },
  {
   "model": "403A-11G1",
+  "ekey": "403A11G1",
   "key": "cyl",
   "make": "Perkins",
   "win": 3,
@@ -1009,6 +1029,7 @@
  },
  {
   "model": "403A-15G1",
+  "ekey": "403A15G1",
   "key": "cyl",
   "make": "Perkins",
   "win": 3,
@@ -1077,6 +1098,7 @@
  },
  {
   "model": "403A-15G2",
+  "ekey": "403A15G2",
   "key": "cyl",
   "make": "Perkins",
   "win": 3,
@@ -1145,6 +1167,7 @@
  },
  {
   "model": "403D-11G",
+  "ekey": "403D11G",
   "key": "cyl",
   "make": "Perkins",
   "win": 3,
@@ -1199,6 +1222,7 @@
  },
  {
   "model": "403D-15G",
+  "ekey": "403D15G",
   "key": "cyl",
   "make": "Perkins",
   "win": 3,
@@ -1255,6 +1279,7 @@
  },
  {
   "model": "4BTA3.9-G13",
+  "ekey": "4BTA39G13",
   "key": "cyl",
   "make": "Cummins",
   "win": 4,
@@ -1299,6 +1324,7 @@
  },
  {
   "model": "4BTA3.9-G2",
+  "ekey": "4BTA39G2",
   "key": "cyl",
   "make": "Cummins",
   "win": 4,
@@ -1336,7 +1362,7 @@
     "bdadl-shanghai"
    ]
   },
-  "rows": 291,
+  "rows": 289,
   "odd": [
    {
     "sid": "bdadl-shanghai",
@@ -1358,6 +1384,7 @@
  },
  {
   "model": "4BTAA3.9-G3",
+  "ekey": "4BTAA39G3",
   "key": "cyl",
   "make": "Cummins",
   "win": 4,
@@ -1400,6 +1427,7 @@
  },
  {
   "model": "4HTAA4.3-G36",
+  "ekey": "4HTAA43G36",
   "key": "cyl",
   "make": "SDEC",
   "win": 4,
@@ -1444,6 +1472,7 @@
  },
  {
   "model": "6M33D633E200",
+  "ekey": "6M33D633E200",
   "key": "cyl",
   "make": "Weichai",
   "win": 6,
@@ -1493,6 +1522,7 @@
  },
  {
   "model": "6M33G660/6",
+  "ekey": "6M33G660/6",
   "key": "cyl",
   "make": "Baudouin",
   "win": 6,
@@ -1536,6 +1566,7 @@
  },
  {
   "model": "6M33G825/5",
+  "ekey": "6M33G825/5",
   "key": "cyl",
   "make": "Baudouin",
   "win": 6,
@@ -1578,6 +1609,7 @@
  },
  {
   "model": "8M33G1100/5",
+  "ekey": "8M33G1100/5",
   "key": "cyl",
   "make": "Baudouin",
   "win": 8,
@@ -1619,6 +1651,7 @@
  },
  {
   "model": "BF8M1015C-LA G1A",
+  "ekey": "BF8M1015CLAG1A",
   "key": "cyl",
   "make": "Deutz",
   "win": 8,
@@ -1645,7 +1678,7 @@
     "yanan-power"
    ]
   },
-  "rows": 33,
+  "rows": 32,
   "odd": [
    {
     "sid": "depco-power",
@@ -1667,6 +1700,7 @@
  },
  {
   "model": "BF8M1015C-LA G2",
+  "ekey": "BF8M1015CLAG2",
   "key": "cyl",
   "make": "Deutz",
   "win": 8,
@@ -1692,7 +1726,7 @@
     "yanan-power"
    ]
   },
-  "rows": 32,
+  "rows": 31,
   "odd": [
    {
     "sid": "depco-power",
@@ -1714,6 +1748,7 @@
  },
  {
   "model": "BF8M1015CP-LA G1A",
+  "ekey": "BF8M1015CPLAG1A",
   "key": "cyl",
   "make": "Deutz",
   "win": 8,
@@ -1739,7 +1774,7 @@
     "yanan-power"
    ]
   },
-  "rows": 26,
+  "rows": 25,
   "odd": [
    {
     "sid": "depco-power",
@@ -1761,6 +1796,104 @@
  },
  {
   "model": "BF8M1015CP-LA G2",
+  "ekey": "BF8M1015CPLAG2",
+  "key": "cyl",
+  "make": "Deutz",
+  "win": 8,
+  "votes": {
+   "6": 1,
+   "8": 10
+  },
+  "blocked": 0,
+  "noTrio": 8,
+  "who": {
+   "6": [
+    "depco-power"
+   ],
+   "8": [
+    "comappower",
+    "haifeng-taizhou",
+    "huatai-yangzhou",
+    "legapower",
+    "liangzi-yangzhou",
+    "victory-generator",
+    "wintpower",
+    "world-power-fuzhou",
+    "xinhengxin-fujian",
+    "yanan-power"
+   ]
+  },
+  "rows": 31,
+  "odd": [
+   {
+    "sid": "depco-power",
+    "n": 2357,
+    "label": "Cylinder",
+    "value": "6",
+    "read": 6,
+    "line": "| Cylinder | 6 | Cooling system | Water"
+   },
+   {
+    "sid": "depco-power",
+    "n": null,
+    "label": "Cylinder",
+    "value": "6",
+    "read": 6,
+    "line": ""
+   }
+  ]
+ },
+ {
+  "model": "BF8M1015CP-LA G3",
+  "ekey": "BF8M1015CPLAG3",
+  "key": "cyl",
+  "make": "Deutz",
+  "win": 8,
+  "votes": {
+   "6": 1,
+   "8": 9
+  },
+  "blocked": 0,
+  "noTrio": 8,
+  "who": {
+   "6": [
+    "depco-power"
+   ],
+   "8": [
+    "comappower",
+    "haifeng-taizhou",
+    "huatai-yangzhou",
+    "legapower",
+    "liangzi-yangzhou",
+    "victory-generator",
+    "wintpower",
+    "world-power-fuzhou",
+    "yanan-power"
+   ]
+  },
+  "rows": 25,
+  "odd": [
+   {
+    "sid": "depco-power",
+    "n": 2356,
+    "label": "Cylinder",
+    "value": "6",
+    "read": 6,
+    "line": "| Cylinder | 6 | Cooling system | Water"
+   },
+   {
+    "sid": "depco-power",
+    "n": null,
+    "label": "Cylinder",
+    "value": "6",
+    "read": 6,
+    "line": ""
+   }
+  ]
+ },
+ {
+  "model": "BF8M1015CP-LA G4",
+  "ekey": "BF8M1015CPLAG4",
   "key": "cyl",
   "make": "Deutz",
   "win": 8,
@@ -1791,101 +1924,6 @@
   "odd": [
    {
     "sid": "depco-power",
-    "n": 2357,
-    "label": "Cylinder",
-    "value": "6",
-    "read": 6,
-    "line": "| Cylinder | 6 | Cooling system | Water"
-   },
-   {
-    "sid": "depco-power",
-    "n": null,
-    "label": "Cylinder",
-    "value": "6",
-    "read": 6,
-    "line": ""
-   }
-  ]
- },
- {
-  "model": "BF8M1015CP-LA G3",
-  "key": "cyl",
-  "make": "Deutz",
-  "win": 8,
-  "votes": {
-   "6": 1,
-   "8": 9
-  },
-  "blocked": 0,
-  "noTrio": 8,
-  "who": {
-   "6": [
-    "depco-power"
-   ],
-   "8": [
-    "comappower",
-    "haifeng-taizhou",
-    "huatai-yangzhou",
-    "legapower",
-    "liangzi-yangzhou",
-    "victory-generator",
-    "wintpower",
-    "world-power-fuzhou",
-    "yanan-power"
-   ]
-  },
-  "rows": 26,
-  "odd": [
-   {
-    "sid": "depco-power",
-    "n": 2356,
-    "label": "Cylinder",
-    "value": "6",
-    "read": 6,
-    "line": "| Cylinder | 6 | Cooling system | Water"
-   },
-   {
-    "sid": "depco-power",
-    "n": null,
-    "label": "Cylinder",
-    "value": "6",
-    "read": 6,
-    "line": ""
-   }
-  ]
- },
- {
-  "model": "BF8M1015CP-LA G4",
-  "key": "cyl",
-  "make": "Deutz",
-  "win": 8,
-  "votes": {
-   "6": 1,
-   "8": 10
-  },
-  "blocked": 0,
-  "noTrio": 8,
-  "who": {
-   "6": [
-    "depco-power"
-   ],
-   "8": [
-    "comappower",
-    "haifeng-taizhou",
-    "huatai-yangzhou",
-    "legapower",
-    "liangzi-yangzhou",
-    "victory-generator",
-    "wintpower",
-    "world-power-fuzhou",
-    "xinhengxin-fujian",
-    "yanan-power"
-   ]
-  },
-  "rows": 33,
-  "odd": [
-   {
-    "sid": "depco-power",
     "n": 2355,
     "label": "Cylinder",
     "value": "6",
@@ -1904,6 +1942,7 @@
  },
  {
   "model": "BF8M1015CP-LA G5",
+  "ekey": "BF8M1015CPLAG5",
   "key": "cyl",
   "make": "Deutz",
   "win": 8,
@@ -1931,7 +1970,7 @@
     "yanan-power"
    ]
   },
-  "rows": 35,
+  "rows": 34,
   "odd": [
    {
     "sid": "depco-power",
@@ -1953,6 +1992,7 @@
  },
  {
   "model": "D226B-3D",
+  "ekey": "D226B3D",
   "key": "cyl",
   "make": "Deutz / Weichai",
   "win": 3,
@@ -2008,6 +2048,7 @@
  },
  {
   "model": "DB58",
+  "ekey": "DB58",
   "key": "cyl",
   "make": "Doosan",
   "win": 6,
@@ -2054,6 +2095,7 @@
  },
  {
   "model": "DP126LB",
+  "ekey": "DP126LB",
   "key": "cyl",
   "make": "Doosan / Hyundai",
   "win": 6,
@@ -2097,6 +2139,7 @@
  },
  {
   "model": "DP158LD",
+  "ekey": "DP158LD",
   "key": "cyl",
   "make": "Doosan / Hyundai",
   "win": 8,
@@ -2148,6 +2191,7 @@
  },
  {
   "model": "H16V190ZL",
+  "ekey": "H16V190ZL",
   "key": "cyl",
   "make": "Jichai",
   "win": 16,
@@ -2190,6 +2234,7 @@
  },
  {
   "model": "KT38-G",
+  "ekey": "KT38G",
   "key": "cyl",
   "make": "Cummins",
   "win": 12,
@@ -2260,6 +2305,7 @@
  },
  {
   "model": "KT38-GA",
+  "ekey": "KT38GA",
   "key": "cyl",
   "make": "Cummins",
   "win": 12,
@@ -2307,6 +2353,7 @@
  },
  {
   "model": "KTA19-G9A",
+  "ekey": "KTA19G9A",
   "key": "cyl",
   "make": "Cummins",
   "win": 6,
@@ -2349,6 +2396,7 @@
  },
  {
   "model": "KTA38-G1",
+  "ekey": "KTA38G1",
   "key": "cyl",
   "make": "Cummins",
   "win": 12,
@@ -2396,6 +2444,7 @@
  },
  {
   "model": "KTA38-G2",
+  "ekey": "KTA38G2",
   "key": "cyl",
   "make": "Cummins",
   "win": 12,
@@ -2477,6 +2526,7 @@
  },
  {
   "model": "KTA38-G2A",
+  "ekey": "KTA38G2A",
   "key": "cyl",
   "make": "Cummins",
   "win": 12,
@@ -2541,6 +2591,7 @@
  },
  {
   "model": "KTA38-G2B",
+  "ekey": "KTA38G2B",
   "key": "cyl",
   "make": "Cummins",
   "win": 12,
@@ -2621,6 +2672,7 @@
  },
  {
   "model": "KTA38-G9E",
+  "ekey": "KTA38G9E",
   "key": "cyl",
   "make": "Cummins",
   "win": 12,
@@ -2663,6 +2715,7 @@
  },
  {
   "model": "KTA50-G15A",
+  "ekey": "KTA50G15A",
   "key": "cyl",
   "make": "Cummins",
   "win": 16,
@@ -2704,6 +2757,7 @@
  },
  {
   "model": "KTA50-G15X",
+  "ekey": "KTA50G15X",
   "key": "cyl",
   "make": "Cummins",
   "win": 16,
@@ -2746,6 +2800,7 @@
  },
  {
   "model": "KTA50-G16A",
+  "ekey": "KTA50G16A",
   "key": "cyl",
   "make": "Cummins",
   "win": 16,
@@ -2788,12 +2843,13 @@
  },
  {
   "model": "KTA50-G3",
+  "ekey": "KTA50G3",
   "key": "cyl",
   "make": "Cummins",
   "win": 16,
   "votes": {
    "12": 3,
-   "16": 30
+   "16": 29
   },
   "blocked": 0,
   "noTrio": 16,
@@ -2837,13 +2893,12 @@
     "xingguang-jiangsu",
     "xinhengxin-fujian",
     "yanan-power",
-    "yingtai-group",
     "yingtai-jiangsu",
     "yongcai-elecmama",
     "yunding-jiangsu"
    ]
   },
-  "rows": 201,
+  "rows": 199,
   "odd": [
    {
     "sid": "bdadl-shanghai",
@@ -2977,6 +3032,7 @@
  },
  {
   "model": "KTA50-G7E",
+  "ekey": "KTA50G7E",
   "key": "cyl",
   "make": "Cummins",
   "win": 16,
@@ -3019,12 +3075,13 @@
  },
  {
   "model": "KTA50-G8",
+  "ekey": "KTA50G8",
   "key": "cyl",
   "make": "Cummins",
   "win": 16,
   "votes": {
    "12": 2,
-   "16": 29
+   "16": 28
   },
   "blocked": 0,
   "noTrio": 16,
@@ -3063,13 +3120,12 @@
     "xingguang-jiangsu",
     "xinhengxin-fujian",
     "yanan-power",
-    "yingtai-group",
     "yingtai-jiangsu",
     "yongcai-elecmama",
     "yunding-jiangsu"
    ]
   },
-  "rows": 118,
+  "rows": 116,
   "odd": [
    {
     "sid": "bdadl-shanghai",
@@ -3139,12 +3195,13 @@
  },
  {
   "model": "KTA50-GS8",
+  "ekey": "KTA50GS8",
   "key": "cyl",
   "make": "Cummins",
   "win": 16,
   "votes": {
    "12": 1,
-   "16": 29
+   "16": 28
   },
   "blocked": 0,
   "noTrio": 16,
@@ -3178,13 +3235,12 @@
     "xingguang-jiangsu",
     "xinhengxin-fujian",
     "yanan-power",
-    "yingtai-group",
     "yingtai-jiangsu",
     "yongcai-elecmama",
     "yunding-jiangsu"
    ]
   },
-  "rows": 116,
+  "rows": 115,
   "odd": [
    {
     "sid": "mingbang-mbkl",
@@ -3206,6 +3262,7 @@
  },
  {
   "model": "QSB3.9-G2",
+  "ekey": "QSB39G2",
   "key": "cyl",
   "make": "Cummins",
   "win": 4,
@@ -3252,6 +3309,7 @@
  },
  {
   "model": "QSB3.9-G3",
+  "ekey": "QSB39G3",
   "key": "cyl",
   "make": "Cummins",
   "win": 4,
@@ -3279,7 +3337,7 @@
     "yanan-power"
    ]
   },
-  "rows": 35,
+  "rows": 34,
   "odd": [
    {
     "sid": "haifeng-taizhou",
@@ -3333,6 +3391,7 @@
  },
  {
   "model": "QSK19-G11",
+  "ekey": "QSK19G11",
   "key": "cyl",
   "make": "Cummins",
   "win": 6,
@@ -3379,6 +3438,7 @@
  },
  {
   "model": "QSK19-G3",
+  "ekey": "QSK19G3",
   "key": "cyl",
   "make": "Cummins",
   "win": 6,
@@ -3421,6 +3481,7 @@
  },
  {
   "model": "QSK19-G4",
+  "ekey": "QSK19G4",
   "key": "cyl",
   "make": "Cummins",
   "win": 6,
@@ -3474,6 +3535,7 @@
  },
  {
   "model": "QSK19-G6",
+  "ekey": "QSK19G6",
   "key": "cyl",
   "make": "Cummins",
   "win": 6,
@@ -3517,6 +3579,7 @@
  },
  {
   "model": "QSK38-G5",
+  "ekey": "QSK38G5",
   "key": "cyl",
   "make": "Cummins",
   "win": 12,
@@ -3621,6 +3684,7 @@
  },
  {
   "model": "QSK60-G21",
+  "ekey": "QSK60G21",
   "key": "cyl",
   "make": "Cummins",
   "win": 16,
@@ -3662,6 +3726,7 @@
  },
  {
   "model": "QTA4320G7",
+  "ekey": "QTA4320G7",
   "key": "cyl",
   "make": "Googol",
   "win": 16,
@@ -3703,6 +3768,7 @@
  },
  {
   "model": "SC15G500D2",
+  "ekey": "SC15G500D2",
   "key": "cyl",
   "make": "SDEC",
   "win": 6,
@@ -3774,6 +3840,7 @@
  },
  {
   "model": "SC33W1150D2",
+  "ekey": "SC33W1150D2",
   "key": "cyl",
   "make": "SDEC",
   "win": 6,
@@ -3850,6 +3917,7 @@
  },
  {
   "model": "SC33W990D2",
+  "ekey": "SC33W990D2",
   "key": "cyl",
   "make": "SDEC",
   "win": 6,
@@ -3946,6 +4014,7 @@
  },
  {
   "model": "TAD1341GE",
+  "ekey": "TAD1341GE",
   "key": "cyl",
   "make": "Volvo Penta",
   "win": 6,
@@ -3996,6 +4065,7 @@
  },
  {
   "model": "TAD1342GE",
+  "ekey": "TAD1342GE",
   "key": "cyl",
   "make": "Volvo Penta",
   "win": 6,
@@ -4045,6 +4115,7 @@
  },
  {
   "model": "TAD1343GE",
+  "ekey": "TAD1343GE",
   "key": "cyl",
   "make": "Volvo Penta",
   "win": 6,
@@ -4096,6 +4167,7 @@
  },
  {
   "model": "TAD1344GE",
+  "ekey": "TAD1344GE",
   "key": "cyl",
   "make": "Volvo Penta",
   "win": 6,
@@ -4147,6 +4219,7 @@
  },
  {
   "model": "TAD1345GE",
+  "ekey": "TAD1345GE",
   "key": "cyl",
   "make": "Volvo Penta",
   "win": 6,
@@ -4198,6 +4271,7 @@
  },
  {
   "model": "TAD1641GE",
+  "ekey": "TAD1641GE",
   "key": "cyl",
   "make": "Volvo Penta",
   "win": 6,
@@ -4248,6 +4322,7 @@
  },
  {
   "model": "TAD1642GE",
+  "ekey": "TAD1642GE",
   "key": "cyl",
   "make": "Volvo Penta",
   "win": 6,
@@ -4299,6 +4374,7 @@
  },
  {
   "model": "TAD531GE",
+  "ekey": "TAD531GE",
   "key": "cyl",
   "make": "Volvo Penta",
   "win": 4,
@@ -4352,6 +4428,7 @@
  },
  {
   "model": "TAD731GE",
+  "ekey": "TAD731GE",
   "key": "cyl",
   "make": "Volvo Penta",
   "win": 6,
@@ -4405,6 +4482,7 @@
  },
  {
   "model": "TAD733GE",
+  "ekey": "TAD733GE",
   "key": "cyl",
   "make": "Volvo Penta",
   "win": 6,
@@ -4459,6 +4537,7 @@
  },
  {
   "model": "TAD734GE",
+  "ekey": "TAD734GE",
   "key": "cyl",
   "make": "Volvo Penta",
   "win": 6,
@@ -4513,6 +4592,7 @@
  },
  {
   "model": "TAD750GE",
+  "ekey": "TAD750GE",
   "key": "cyl",
   "make": "Volvo Penta",
   "win": 6,
@@ -4560,6 +4640,7 @@
  },
  {
   "model": "TD226B-3D",
+  "ekey": "TD226B3D",
   "key": "cyl",
   "make": "Deutz / Weichai",
   "win": 3,
@@ -4614,6 +4695,7 @@
  },
  {
   "model": "TWD1643GE",
+  "ekey": "TWD1643GE",
   "key": "cyl",
   "make": "Volvo Penta",
   "win": 6,
@@ -4663,6 +4745,7 @@
  },
  {
   "model": "WP10D200E201",
+  "ekey": "WP10D200E201",
   "key": "cyl",
   "make": "Weichai",
   "win": 6,
@@ -4705,6 +4788,7 @@
  },
  {
   "model": "WP10D238E201",
+  "ekey": "WP10D238E201",
   "key": "cyl",
   "make": "Weichai",
   "win": 6,
@@ -4749,6 +4833,7 @@
  },
  {
   "model": "WP10D264E201",
+  "ekey": "WP10D264E201",
   "key": "cyl",
   "make": "Weichai",
   "win": 6,
@@ -4792,6 +4877,7 @@
  },
  {
   "model": "WP10D288E201",
+  "ekey": "WP10D288E201",
   "key": "cyl",
   "make": "Weichai",
   "win": 6,
@@ -4833,6 +4919,7 @@
  },
  {
   "model": "WP13D385E201",
+  "ekey": "WP13D385E201",
   "key": "cyl",
   "make": "Weichai",
   "win": 6,
@@ -4877,6 +4964,7 @@
  },
  {
   "model": "WP13D440E310",
+  "ekey": "WP13D440E310",
   "key": "cyl",
   "make": "Weichai",
   "win": 6,
@@ -4922,6 +5010,7 @@
  },
  {
   "model": "WP13D490E310",
+  "ekey": "WP13D490E310",
   "key": "cyl",
   "make": "Weichai",
   "win": 6,
@@ -4968,6 +5057,7 @@
  },
  {
   "model": "WP13D510E311",
+  "ekey": "WP13D510E311",
   "key": "cyl",
   "make": "Weichai",
   "win": 6,
@@ -5012,6 +5102,7 @@
  },
  {
   "model": "WP4.1D66E310",
+  "ekey": "WP41D66E310",
   "key": "cyl",
   "make": "Weichai",
   "win": 4,
@@ -5054,6 +5145,7 @@
  },
  {
   "model": "WP4.1D80E200",
+  "ekey": "WP41D80E200",
   "key": "cyl",
   "make": "Weichai",
   "win": 4,
@@ -5084,7 +5176,7 @@
     "bdadl-shanghai"
    ]
   },
-  "rows": 41,
+  "rows": 40,
   "odd": [
    {
     "sid": "bdadl-shanghai",
@@ -5106,6 +5198,7 @@
  },
  {
   "model": "WP4.6ND138E310",
+  "ekey": "WP46ND138E310",
   "key": "cyl",
   "make": "Weichai",
   "win": 4,
@@ -5148,6 +5241,7 @@
  },
  {
   "model": "WP4D100E200",
+  "ekey": "WP4D100E200",
   "key": "cyl",
   "make": "Deutz / Weichai",
   "win": 4,
@@ -5198,6 +5292,7 @@
  },
  {
   "model": "WP4D108E200",
+  "ekey": "WP4D108E200",
   "key": "cyl",
   "make": "Weichai",
   "win": 4,
@@ -5242,6 +5337,7 @@
  },
  {
   "model": "WP6D132E201",
+  "ekey": "WP6D132E201",
   "key": "cyl",
   "make": "Weichai",
   "win": 6,
@@ -5287,6 +5383,7 @@
  },
  {
   "model": "WP6D158E201",
+  "ekey": "WP6D158E201",
   "key": "cyl",
   "make": "Weichai",
   "win": 6,
@@ -5332,6 +5429,7 @@
  },
  {
   "model": "WP6D180E201",
+  "ekey": "WP6D180E201",
   "key": "cyl",
   "make": "Weichai",
   "win": 6,
@@ -5376,6 +5474,7 @@
  },
  {
   "model": "YC12VC2700-D31",
+  "ekey": "YC12VC2700D31",
   "key": "cyl",
   "make": "Yuchai",
   "win": 12,
@@ -5402,7 +5501,7 @@
     "xingguang-jiangsu"
    ]
   },
-  "rows": 35,
+  "rows": 34,
   "odd": [
    {
     "sid": "xingguang-jiangsu",
@@ -5424,6 +5523,7 @@
  },
  {
   "model": "YC4A100Z-D20",
+  "ekey": "YC4A100ZD20",
   "key": "cyl",
   "make": "Yuchai",
   "win": 4,
@@ -5476,6 +5576,7 @@
  },
  {
   "model": "YC6B180L-D20",
+  "ekey": "YC6B180LD20",
   "key": "cyl",
   "make": "Yuchai",
   "win": 6,
@@ -5510,7 +5611,7 @@
     "xinhengxin-fujian"
    ]
   },
-  "rows": 52,
+  "rows": 51,
   "odd": [
    {
     "sid": "yunding-jiangsu",
@@ -5532,6 +5633,7 @@
  },
  {
   "model": "YC6C1070L-D20",
+  "ekey": "YC6C1070LD20",
   "key": "cyl",
   "make": "Yuchai",
   "win": 6,
@@ -5559,7 +5661,7 @@
     "pengpai-yangzhou"
    ]
   },
-  "rows": 21,
+  "rows": 20,
   "odd": [
    {
     "sid": "fukangsi-yangzhou",
@@ -5597,6 +5699,7 @@
  },
  {
   "model": "YC6T550L-D21",
+  "ekey": "YC6T550LD21",
   "key": "cyl",
   "make": "Yuchai",
   "win": 6,
@@ -5626,7 +5729,7 @@
     "mingbang-mbkl"
    ]
   },
-  "rows": 29,
+  "rows": 28,
   "odd": [
    {
     "sid": "mingbang-mbkl",
@@ -5648,6 +5751,7 @@
  },
  {
   "model": "YC6T600L-D22",
+  "ekey": "YC6T600LD22",
   "key": "cyl",
   "make": "Yuchai",
   "win": 6,
@@ -5682,7 +5786,7 @@
     "mingbang-mbkl"
    ]
   },
-  "rows": 56,
+  "rows": 55,
   "odd": [
    {
     "sid": "mingbang-mbkl",
@@ -5704,6 +5808,7 @@
  },
  {
   "model": "YD480D",
+  "ekey": "YD480D",
   "key": "cyl",
   "make": "Yangdong",
   "win": 4,
@@ -5751,6 +5856,7 @@
  },
  {
   "model": "10V1600G70F",
+  "ekey": "10V1600G70F",
   "key": "disp",
   "make": "MTU",
   "win": 13.5,
@@ -5792,6 +5898,7 @@
  },
  {
   "model": "1103A-33G",
+  "ekey": "1103A33G",
   "key": "disp",
   "make": "Perkins",
   "win": 3.3,
@@ -5849,6 +5956,7 @@
  },
  {
   "model": "1104C-44TAG1",
+  "ekey": "1104C44TAG1",
   "key": "disp",
   "make": "Perkins",
   "win": 4.4,
@@ -5893,6 +6001,7 @@
  },
  {
   "model": "1104C-44TAG2",
+  "ekey": "1104C44TAG2",
   "key": "disp",
   "make": "Perkins",
   "win": 4.4,
@@ -6044,6 +6153,7 @@
  },
  {
   "model": "1104D-E44TAG1",
+  "ekey": "1104DE44TAG1",
   "key": "disp",
   "make": "Perkins",
   "win": 4.4,
@@ -6085,6 +6195,7 @@
  },
  {
   "model": "1104D-E44TAG2",
+  "ekey": "1104DE44TAG2",
   "key": "disp",
   "make": "Perkins",
   "win": 4.4,
@@ -6147,6 +6258,7 @@
  },
  {
   "model": "12KTA58-G31",
+  "ekey": "12KTA58G31",
   "key": "disp",
   "make": "SDEC",
   "win": 57.2,
@@ -6187,6 +6299,7 @@
  },
  {
   "model": "12KTA58-G32",
+  "ekey": "12KTA58G32",
   "key": "disp",
   "make": "SDEC",
   "win": 57.2,
@@ -6227,6 +6340,7 @@
  },
  {
   "model": "12KTA58-G33",
+  "ekey": "12KTA58G33",
   "key": "disp",
   "make": "SDEC",
   "win": 57.2,
@@ -6267,6 +6381,7 @@
  },
  {
   "model": "12KTA58-G34",
+  "ekey": "12KTA58G34",
   "key": "disp",
   "make": "SDEC",
   "win": 57.2,
@@ -6307,6 +6422,7 @@
  },
  {
   "model": "12KTA58-G35",
+  "ekey": "12KTA58G35",
   "key": "disp",
   "make": "SDEC",
   "win": 57.2,
@@ -6347,6 +6463,7 @@
  },
  {
   "model": "12KTA58-G36",
+  "ekey": "12KTA58G36",
   "key": "disp",
   "make": "SDEC",
   "win": 57.2,
@@ -6387,6 +6504,7 @@
  },
  {
   "model": "12M33D1108E200",
+  "ekey": "12M33D1108E200",
   "key": "disp",
   "make": "Weichai",
   "win": 39.2,
@@ -6451,6 +6569,7 @@
  },
  {
   "model": "12M33D1210E200",
+  "ekey": "12M33D1210E200",
   "key": "disp",
   "make": "Weichai",
   "win": 39.2,
@@ -6514,6 +6633,7 @@
  },
  {
   "model": "12M33D1500E310",
+  "ekey": "12M33D1500E310",
   "key": "disp",
   "make": "Weichai",
   "win": 39.2,
@@ -6556,6 +6676,7 @@
  },
  {
   "model": "12M55D2210E310",
+  "ekey": "12M55D2210E310",
   "key": "disp",
   "make": "Weichai",
   "win": 65.65,
@@ -6600,6 +6721,7 @@
  },
  {
   "model": "12M55D2450E310",
+  "ekey": "12M55D2450E310",
   "key": "disp",
   "make": "Weichai",
   "win": 65.65,
@@ -6643,6 +6765,7 @@
  },
  {
   "model": "12M55D2700E310",
+  "ekey": "12M55D2700E310",
   "key": "disp",
   "make": "Weichai",
   "win": 65.65,
@@ -6684,6 +6807,7 @@
  },
  {
   "model": "12V1600G80F",
+  "ekey": "12V1600G80F",
   "key": "disp",
   "make": "MTU",
   "win": 23.88,
@@ -6725,6 +6849,7 @@
  },
  {
   "model": "1506A-E88TAG2",
+  "ekey": "1506AE88TAG2",
   "key": "disp",
   "make": "Perkins",
   "win": 8.8,
@@ -6770,6 +6895,7 @@
  },
  {
   "model": "1506A-E88TAG3",
+  "ekey": "1506AE88TAG3",
   "key": "disp",
   "make": "Perkins",
   "win": 8.8,
@@ -6818,6 +6944,7 @@
  },
  {
   "model": "1506A-E88TAG4",
+  "ekey": "1506AE88TAG4",
   "key": "disp",
   "make": "Perkins",
   "win": 8.8,
@@ -6859,6 +6986,7 @@
  },
  {
   "model": "1506A-E88TAG5",
+  "ekey": "1506AE88TAG5",
   "key": "disp",
   "make": "Perkins",
   "win": 8.8,
@@ -6911,6 +7039,7 @@
  },
  {
   "model": "16V2000G65",
+  "ekey": "16V2000G65",
   "key": "disp",
   "make": "MTU",
   "win": 31.84,
@@ -6936,7 +7065,7 @@
     "yunding-jiangsu"
    ]
   },
-  "rows": 49,
+  "rows": 48,
   "odd": [
    {
     "sid": "aoke-yangzhou",
@@ -6958,6 +7087,7 @@
  },
  {
   "model": "1706A-E93TAG2",
+  "ekey": "1706AE93TAG2",
   "key": "disp",
   "make": "Perkins",
   "win": 9.29,
@@ -6999,6 +7129,7 @@
  },
  {
   "model": "2206C-E13TAG2",
+  "ekey": "2206CE13TAG2",
   "key": "disp",
   "make": "Perkins",
   "win": 12.5,
@@ -7072,6 +7203,7 @@
  },
  {
   "model": "2206C-E13TAG3",
+  "ekey": "2206CE13TAG3",
   "key": "disp",
   "make": "Perkins",
   "win": 12.5,
@@ -7124,6 +7256,7 @@
  },
  {
   "model": "2806A-E18TAG1A",
+  "ekey": "2806AE18TAG1A",
   "key": "disp",
   "make": "Perkins",
   "win": 18.1,
@@ -7167,6 +7300,7 @@
  },
  {
   "model": "2806A-E18TAG2",
+  "ekey": "2806AE18TAG2",
   "key": "disp",
   "make": "Perkins",
   "win": 18.1,
@@ -7306,6 +7440,7 @@
  },
  {
   "model": "403A-11G1",
+  "ekey": "403A11G1",
   "key": "disp",
   "make": "Perkins",
   "win": 1.131,
@@ -7388,6 +7523,7 @@
  },
  {
   "model": "403A-15G2",
+  "ekey": "403A15G2",
   "key": "disp",
   "make": "Perkins",
   "win": 1.496,
@@ -7492,6 +7628,7 @@
  },
  {
   "model": "404A-22G1",
+  "ekey": "404A22G1",
   "key": "disp",
   "make": "Perkins",
   "win": 2.216,
@@ -7581,6 +7718,7 @@
  },
  {
   "model": "4B3.9-G11",
+  "ekey": "4B39G11",
   "key": "disp",
   "make": "Cummins",
   "win": 3.9,
@@ -7627,6 +7765,7 @@
  },
  {
   "model": "4B3.9-G2",
+  "ekey": "4B39G2",
   "key": "disp",
   "make": "Cummins",
   "win": 3.9,
@@ -7662,7 +7801,7 @@
     "pengpai-yangzhou"
    ]
   },
-  "rows": 169,
+  "rows": 168,
   "odd": [
    {
     "sid": "bdadl-shanghai",
@@ -7756,6 +7895,7 @@
  },
  {
   "model": "4BTA3.9-G13",
+  "ekey": "4BTA39G13",
   "key": "disp",
   "make": "Cummins",
   "win": 3.9,
@@ -7797,6 +7937,7 @@
  },
  {
   "model": "4BTA3.9-G2",
+  "ekey": "4BTA39G2",
   "key": "disp",
   "make": "Cummins",
   "win": 3.9,
@@ -7831,7 +7972,7 @@
     "pengpai-yangzhou"
    ]
   },
-  "rows": 291,
+  "rows": 289,
   "odd": [
    {
     "sid": "bdadl-shanghai",
@@ -7925,6 +8066,7 @@
  },
  {
   "model": "4BTAA3.9-G3",
+  "ekey": "4BTAA39G3",
   "key": "disp",
   "make": "Cummins",
   "win": 3.9,
@@ -7966,6 +8108,7 @@
  },
  {
   "model": "4D24G6",
+  "ekey": "4D24G6",
   "key": "disp",
   "make": "Yuchai",
   "win": 2.45,
@@ -7985,7 +8128,7 @@
     "yunding-jiangsu"
    ]
   },
-  "rows": 13,
+  "rows": 12,
   "odd": [
    {
     "sid": "yunding-jiangsu",
@@ -8007,6 +8150,7 @@
  },
  {
   "model": "4D24G7",
+  "ekey": "4D24G7",
   "key": "disp",
   "make": "Yuchai",
   "win": 2.45,
@@ -8030,7 +8174,7 @@
     "yunding-jiangsu"
    ]
   },
-  "rows": 14,
+  "rows": 13,
   "odd": [
    {
     "sid": "bdadl-shanghai",
@@ -8068,47 +8212,7 @@
  },
  {
   "model": "4D24TG0",
-  "key": "disp",
-  "make": "Yuchai",
-  "win": 2.45,
-  "votes": {
-   "2.45": 3,
-   "2.449": 1
-  },
-  "blocked": 0,
-  "noTrio": null,
-  "who": {
-   "2.45": [
-    "frs-shenyang",
-    "fukangsi-yangzhou",
-    "pengpai-yangzhou"
-   ],
-   "2.449": [
-    "yunding-jiangsu"
-   ]
-  },
-  "rows": 14,
-  "odd": [
-   {
-    "sid": "yunding-jiangsu",
-    "n": 2006,
-    "label": "排 气 量 L Displacement",
-    "value": "2.449",
-    "read": 2.449,
-    "line": "| YDY-32GF | 32 | 40 | 57.6 | 4D24TG0 | 4 | 87*103 | 2.449 | 10 | 230 | 1800*750*1100 | 750"
-   },
-   {
-    "sid": "yunding-jiangsu",
-    "n": null,
-    "label": "排 气 量 L Displacement",
-    "value": "2.449",
-    "read": 2.449,
-    "line": "| YDY-32GF | 32 | 40 | 57.6 | 4D24TG0 | 4 | 87*103 | 2.449 | 10 | 230 | 1800*750*1100 | 750"
-   }
-  ]
- },
- {
-  "model": "4D24TG2",
+  "ekey": "4D24TG0",
   "key": "disp",
   "make": "Yuchai",
   "win": 2.45,
@@ -8136,6 +8240,48 @@
     "label": "排 气 量 L Displacement",
     "value": "2.449",
     "read": 2.449,
+    "line": "| YDY-32GF | 32 | 40 | 57.6 | 4D24TG0 | 4 | 87*103 | 2.449 | 10 | 230 | 1800*750*1100 | 750"
+   },
+   {
+    "sid": "yunding-jiangsu",
+    "n": null,
+    "label": "排 气 量 L Displacement",
+    "value": "2.449",
+    "read": 2.449,
+    "line": "| YDY-32GF | 32 | 40 | 57.6 | 4D24TG0 | 4 | 87*103 | 2.449 | 10 | 230 | 1800*750*1100 | 750"
+   }
+  ]
+ },
+ {
+  "model": "4D24TG2",
+  "ekey": "4D24TG2",
+  "key": "disp",
+  "make": "Yuchai",
+  "win": 2.45,
+  "votes": {
+   "2.45": 3,
+   "2.449": 1
+  },
+  "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "2.45": [
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "2.449": [
+    "yunding-jiangsu"
+   ]
+  },
+  "rows": 12,
+  "odd": [
+   {
+    "sid": "yunding-jiangsu",
+    "n": 2006,
+    "label": "排 气 量 L Displacement",
+    "value": "2.449",
+    "read": 2.449,
     "line": "| YDY-24GF | 24 | 30 | 43.2 | 4D24TG2 | 4 | 87*103 | 2.449 | 10 | 232 | 1700*700*1000 | 650"
    },
    {
@@ -8150,6 +8296,7 @@
  },
  {
   "model": "4DW81-23D",
+  "ekey": "4DW8123D",
   "key": "disp",
   "make": "FAWDE",
   "win": 2.27,
@@ -8193,6 +8340,7 @@
  },
  {
   "model": "4DW91-29D",
+  "ekey": "4DW9129D",
   "key": "disp",
   "make": "FAWDE",
   "win": 2.54,
@@ -8226,6 +8374,7 @@
  },
  {
   "model": "4HTAA4.3-G34",
+  "ekey": "4HTAA43G34",
   "key": "disp",
   "make": "SDEC",
   "win": 4.3,
@@ -8269,6 +8418,7 @@
  },
  {
   "model": "6BTA5.9-G2",
+  "ekey": "6BTA59G2",
   "key": "disp",
   "make": "Cummins",
   "win": 5.9,
@@ -8308,7 +8458,7 @@
     "pengpai-yangzhou"
    ]
   },
-  "rows": 170,
+  "rows": 169,
   "odd": [
    {
     "sid": "agestar",
@@ -8434,6 +8584,7 @@
  },
  {
   "model": "6BTAA5.9-G12",
+  "ekey": "6BTAA59G12",
   "key": "disp",
   "make": "Cummins",
   "win": 5.9,
@@ -8473,7 +8624,7 @@
     "pengpai-yangzhou"
    ]
   },
-  "rows": 154,
+  "rows": 153,
   "odd": [
    {
     "sid": "agestar",
@@ -8559,6 +8710,7 @@
  },
  {
   "model": "6BTAA5.9-G2",
+  "ekey": "6BTAA59G2",
   "key": "disp",
   "make": "Cummins",
   "win": 5.9,
@@ -8596,7 +8748,7 @@
     "pengpai-yangzhou"
    ]
   },
-  "rows": 194,
+  "rows": 192,
   "odd": [
    {
     "sid": "agestar",
@@ -8714,6 +8866,7 @@
  },
  {
   "model": "6CTA8.3-G2",
+  "ekey": "6CTA83G2",
   "key": "disp",
   "make": "Cummins",
   "win": 8.3,
@@ -8756,7 +8909,7 @@
     "jianghao-genset"
    ]
   },
-  "rows": 222,
+  "rows": 221,
   "odd": [
    {
     "sid": "agestar",
@@ -8826,6 +8979,7 @@
  },
  {
   "model": "6CTAA8.3-G2",
+  "ekey": "6CTAA83G2",
   "key": "disp",
   "make": "Cummins",
   "win": 8.3,
@@ -8863,7 +9017,7 @@
     "yunding-jiangsu"
    ]
   },
-  "rows": 172,
+  "rows": 171,
   "odd": [
    {
     "sid": "agestar",
@@ -8917,6 +9071,7 @@
  },
  {
   "model": "6CTAA8.3-G9",
+  "ekey": "6CTAA83G9",
   "key": "disp",
   "make": "Cummins",
   "win": 8.3,
@@ -8959,6 +9114,7 @@
  },
  {
   "model": "6DTAA8.9-G31",
+  "ekey": "6DTAA89G31",
   "key": "disp",
   "make": "SDEC",
   "win": 8.9,
@@ -9020,6 +9176,7 @@
  },
  {
   "model": "6ETAA11.8-G31",
+  "ekey": "6ETAA118G31",
   "key": "disp",
   "make": "SDEC",
   "win": 11.8,
@@ -9084,6 +9241,7 @@
  },
  {
   "model": "6ETAA11.8-G32",
+  "ekey": "6ETAA118G32",
   "key": "disp",
   "make": "SDEC",
   "win": 11.8,
@@ -9127,6 +9285,7 @@
  },
  {
   "model": "6ETAA11.8-G33",
+  "ekey": "6ETAA118G33",
   "key": "disp",
   "make": "SDEC",
   "win": 11.8,
@@ -9170,6 +9329,7 @@
  },
  {
   "model": "6ETAA12.8-G31",
+  "ekey": "6ETAA128G31",
   "key": "disp",
   "make": "SDEC",
   "win": 12.8,
@@ -9215,6 +9375,7 @@
  },
  {
   "model": "6ETAA12.8-G32",
+  "ekey": "6ETAA128G32",
   "key": "disp",
   "make": "SDEC",
   "win": 12.8,
@@ -9261,6 +9422,7 @@
  },
  {
   "model": "6HTAA6.5-G32",
+  "ekey": "6HTAA65G32",
   "key": "disp",
   "make": "SDEC",
   "win": 6.5,
@@ -9304,6 +9466,7 @@
  },
  {
   "model": "6HTAA6.5-G33",
+  "ekey": "6HTAA65G33",
   "key": "disp",
   "make": "SDEC",
   "win": 6.5,
@@ -9345,6 +9508,7 @@
  },
  {
   "model": "6KTAA25-G321",
+  "ekey": "6KTAA25G321",
   "key": "disp",
   "make": "SDEC",
   "win": 25.2,
@@ -9386,6 +9550,7 @@
  },
  {
   "model": "6LTAA8.9-G2",
+  "ekey": "6LTAA89G2",
   "key": "disp",
   "make": "Cummins",
   "win": 8.9,
@@ -9427,7 +9592,7 @@
     "wintpower"
    ]
   },
-  "rows": 192,
+  "rows": 191,
   "odd": [
    {
     "sid": "agestar",
@@ -9505,6 +9670,7 @@
  },
  {
   "model": "6LTAA8.9-G3",
+  "ekey": "6LTAA89G3",
   "key": "disp",
   "make": "Cummins",
   "win": 8.9,
@@ -9536,7 +9702,7 @@
     "bdadl-shanghai"
    ]
   },
-  "rows": 114,
+  "rows": 113,
   "odd": [
    {
     "sid": "bdadl-shanghai",
@@ -9558,6 +9724,7 @@
  },
  {
   "model": "6LTAA9.5-G3",
+  "ekey": "6LTAA95G3",
   "key": "disp",
   "make": "Cummins",
   "win": 9.5,
@@ -9588,7 +9755,7 @@
     "mingbang-mbkl"
    ]
   },
-  "rows": 95,
+  "rows": 94,
   "odd": [
    {
     "sid": "depco-power",
@@ -9626,6 +9793,7 @@
  },
  {
   "model": "6M33D506E310",
+  "ekey": "6M33D506E310",
   "key": "disp",
   "make": "Baudouin / Weichai",
   "win": 19.6,
@@ -9667,6 +9835,7 @@
  },
  {
   "model": "6M33D572E200",
+  "ekey": "6M33D572E200",
   "key": "disp",
   "make": "Weichai",
   "win": 19.6,
@@ -9715,6 +9884,7 @@
  },
  {
   "model": "6R1600G70F",
+  "ekey": "6R1600G70F",
   "key": "disp",
   "make": "MTU",
   "win": 8.2,
@@ -9756,6 +9926,7 @@
  },
  {
   "model": "6R1600G80F",
+  "ekey": "6R1600G80F",
   "key": "disp",
   "make": "MTU",
   "win": 8.2,
@@ -9797,6 +9968,7 @@
  },
  {
   "model": "6WTAA35-G311",
+  "ekey": "6WTAA35G311",
   "key": "disp",
   "make": "SDEC",
   "win": 35.1,
@@ -9839,6 +10011,7 @@
  },
  {
   "model": "6ZTAA13-G2",
+  "ekey": "6ZTAA13G2",
   "key": "disp",
   "make": "Cummins",
   "win": 13,
@@ -9870,7 +10043,7 @@
     "agestar"
    ]
   },
-  "rows": 110,
+  "rows": 109,
   "odd": [
    {
     "sid": "agestar",
@@ -9900,6 +10073,7 @@
  },
  {
   "model": "6ZTAA13-G4",
+  "ekey": "6ZTAA13G4",
   "key": "disp",
   "make": "Cummins",
   "win": 13,
@@ -9936,7 +10110,7 @@
     "mingbang-mbkl"
    ]
   },
-  "rows": 88,
+  "rows": 87,
   "odd": [
    {
     "sid": "agestar",
@@ -9998,6 +10172,7 @@
  },
  {
   "model": "8V1600G70F",
+  "ekey": "8V1600G70F",
   "key": "disp",
   "make": "MTU",
   "win": 11.6,
@@ -10039,6 +10214,7 @@
  },
  {
   "model": "8V1600G80F",
+  "ekey": "8V1600G80F",
   "key": "disp",
   "make": "MTU",
   "win": 11.6,
@@ -10080,6 +10256,7 @@
  },
  {
   "model": "D226B-3D",
+  "ekey": "D226B3D",
   "key": "disp",
   "make": "Deutz / Weichai",
   "win": 3.12,
@@ -10131,6 +10308,7 @@
  },
  {
   "model": "DP222CB",
+  "ekey": "DP222CB",
   "key": "disp",
   "make": "Doosan / Hyundai",
   "win": 21.9,
@@ -10190,6 +10368,7 @@
  },
  {
   "model": "KT38-GA",
+  "ekey": "KT38GA",
   "key": "disp",
   "make": "Cummins",
   "win": 38,
@@ -10251,6 +10430,7 @@
  },
  {
   "model": "KTA38-G9A",
+  "ekey": "KTA38G9A",
   "key": "disp",
   "make": "Cummins",
   "win": 38,
@@ -10292,6 +10472,7 @@
  },
  {
   "model": "KTA38-G9E",
+  "ekey": "KTA38G9E",
   "key": "disp",
   "make": "Cummins",
   "win": 38,
@@ -10334,6 +10515,7 @@
  },
  {
   "model": "KTA50-G15A",
+  "ekey": "KTA50G15A",
   "key": "disp",
   "make": "Cummins",
   "win": 50,
@@ -10391,6 +10573,7 @@
  },
  {
   "model": "MTA11-G2",
+  "ekey": "MTA11G2",
   "key": "disp",
   "make": "Cummins",
   "win": 10.8,
@@ -10433,6 +10616,7 @@
  },
  {
   "model": "MTA11-G2A",
+  "ekey": "MTA11G2A",
   "key": "disp",
   "make": "Cummins",
   "win": 10.8,
@@ -10476,6 +10660,7 @@
  },
  {
   "model": "NT855-GA",
+  "ekey": "NT855GA",
   "key": "disp",
   "make": "Cummins",
   "win": 14,
@@ -10528,6 +10713,7 @@
  },
  {
   "model": "NTA855-G1",
+  "ekey": "NTA855G1",
   "key": "disp",
   "make": "Cummins",
   "win": 14,
@@ -10582,6 +10768,7 @@
  },
  {
   "model": "NTA855-G1A",
+  "ekey": "NTA855G1A",
   "key": "disp",
   "make": "Cummins",
   "win": 14,
@@ -10662,6 +10849,7 @@
  },
  {
   "model": "NTA855-G1B",
+  "ekey": "NTA855G1B",
   "key": "disp",
   "make": "Cummins",
   "win": 14,
@@ -10744,6 +10932,7 @@
  },
  {
   "model": "NTA855-G2A",
+  "ekey": "NTA855G2A",
   "key": "disp",
   "make": "Cummins",
   "win": 14,
@@ -10808,6 +10997,7 @@
  },
  {
   "model": "NTA855-G3",
+  "ekey": "NTA855G3",
   "key": "disp",
   "make": "Cummins",
   "win": 14,
@@ -10861,6 +11051,7 @@
  },
  {
   "model": "NTA855-G4",
+  "ekey": "NTA855G4",
   "key": "disp",
   "make": "Cummins",
   "win": 14,
@@ -10921,6 +11112,7 @@
  },
  {
   "model": "NTA855-GA",
+  "ekey": "NTA855GA",
   "key": "disp",
   "make": "Cummins",
   "win": 14,
@@ -10954,6 +11146,7 @@
  },
  {
   "model": "NTAA855-G7",
+  "ekey": "NTAA855G7",
   "key": "disp",
   "make": "Cummins",
   "win": 14,
@@ -11017,6 +11210,7 @@
  },
  {
   "model": "NTAA855-G7A",
+  "ekey": "NTAA855G7A",
   "key": "disp",
   "make": "Cummins",
   "win": 14,
@@ -11109,6 +11303,7 @@
  },
  {
   "model": "QSB3.9-G3",
+  "ekey": "QSB39G3",
   "key": "disp",
   "make": "Cummins",
   "win": 3.9,
@@ -11131,7 +11326,7 @@
     "liangzi-yangzhou"
    ]
   },
-  "rows": 35,
+  "rows": 34,
   "odd": [
    {
     "sid": "liangzi-yangzhou",
@@ -11153,6 +11348,7 @@
  },
  {
   "model": "QSB5.9-G2",
+  "ekey": "QSB59G2",
   "key": "disp",
   "make": "Cummins",
   "win": 5.9,
@@ -11197,6 +11393,7 @@
  },
  {
   "model": "QSB5.9-G3",
+  "ekey": "QSB59G3",
   "key": "disp",
   "make": "Cummins",
   "win": 5.9,
@@ -11221,7 +11418,7 @@
     "yunding-jiangsu"
    ]
   },
-  "rows": 37,
+  "rows": 36,
   "odd": [
    {
     "sid": "bdadl-shanghai",
@@ -11275,6 +11472,7 @@
  },
  {
   "model": "QSNT-G3",
+  "ekey": "QSNTG3",
   "key": "disp",
   "make": "Cummins",
   "win": 14,
@@ -11320,6 +11518,7 @@
  },
  {
   "model": "QSNT-G4X",
+  "ekey": "QSNTG4X",
   "key": "disp",
   "make": "Cummins",
   "win": 14,
@@ -11381,6 +11580,7 @@
  },
  {
   "model": "QSZ13-G3",
+  "ekey": "QSZ13G3",
   "key": "disp",
   "make": "Cummins",
   "win": 13,
@@ -11417,7 +11617,7 @@
     "sunkings"
    ]
   },
-  "rows": 131,
+  "rows": 130,
   "odd": [
    {
     "sid": "rise-power",
@@ -11455,6 +11655,7 @@
  },
  {
   "model": "SC12E460D2",
+  "ekey": "SC12E460D2",
   "key": "disp",
   "make": "SDEC",
   "win": 11.8,
@@ -11560,6 +11761,7 @@
  },
  {
   "model": "SC13G355D2",
+  "ekey": "SC13G355D2",
   "key": "disp",
   "make": "SDEC",
   "win": 12.88,
@@ -11624,6 +11826,7 @@
  },
  {
   "model": "SC13G420D2",
+  "ekey": "SC13G420D2",
   "key": "disp",
   "make": "SDEC",
   "win": 12.88,
@@ -11714,6 +11917,7 @@
  },
  {
   "model": "SC15G500D2",
+  "ekey": "SC15G500D2",
   "key": "disp",
   "make": "SDEC",
   "win": 14.16,
@@ -11818,6 +12022,7 @@
  },
  {
   "model": "SC25G610D2",
+  "ekey": "SC25G610D2",
   "key": "disp",
   "make": "SDEC",
   "win": 25.8,
@@ -11872,6 +12077,7 @@
  },
  {
   "model": "SC25G690D2",
+  "ekey": "SC25G690D2",
   "key": "disp",
   "make": "SDEC",
   "win": 25.8,
@@ -11945,6 +12151,7 @@
  },
  {
   "model": "SC27G755D2",
+  "ekey": "SC27G755D2",
   "key": "disp",
   "make": "SDEC",
   "win": 26.6,
@@ -12067,6 +12274,7 @@
  },
  {
   "model": "SC27G830D2",
+  "ekey": "SC27G830D2",
   "key": "disp",
   "make": "SDEC",
   "win": 26.6,
@@ -12156,6 +12364,7 @@
  },
  {
   "model": "SC27G900D2",
+  "ekey": "SC27G900D2",
   "key": "disp",
   "make": "SDEC",
   "win": 26.6,
@@ -12225,6 +12434,7 @@
  },
  {
   "model": "SC33W1150D2",
+  "ekey": "SC33W1150D2",
   "key": "disp",
   "make": "SDEC",
   "win": 32.8,
@@ -12277,6 +12487,7 @@
  },
  {
   "model": "SC4H115D2",
+  "ekey": "SC4H115D2",
   "key": "disp",
   "make": "SDEC",
   "win": 4.3,
@@ -12332,6 +12543,7 @@
  },
  {
   "model": "SC4H160D2",
+  "ekey": "SC4H160D2",
   "key": "disp",
   "make": "SDEC",
   "win": 4.3,
@@ -12385,6 +12597,7 @@
  },
  {
   "model": "SC4H180D2",
+  "ekey": "SC4H180D2",
   "key": "disp",
   "make": "SDEC",
   "win": 4.3,
@@ -12440,6 +12653,7 @@
  },
  {
   "model": "SC4H95D2",
+  "ekey": "SC4H95D2",
   "key": "disp",
   "make": "SDEC",
   "win": 4.3,
@@ -12495,6 +12709,7 @@
  },
  {
   "model": "SC7H230D2",
+  "ekey": "SC7H230D2",
   "key": "disp",
   "make": "SDEC",
   "win": 6.5,
@@ -12566,6 +12781,7 @@
  },
  {
   "model": "SC7H250D2",
+  "ekey": "SC7H250D2",
   "key": "disp",
   "make": "SDEC",
   "win": 6.5,
@@ -12639,6 +12855,7 @@
  },
  {
   "model": "SC8D220D2",
+  "ekey": "SC8D220D2",
   "key": "disp",
   "make": "SDEC",
   "win": 8.27,
@@ -12680,6 +12897,7 @@
  },
  {
   "model": "SC8D280D2",
+  "ekey": "SC8D280D2",
   "key": "disp",
   "make": "SDEC",
   "win": 8.27,
@@ -12840,6 +13058,7 @@
  },
  {
   "model": "SC9D310D2",
+  "ekey": "SC9D310D2",
   "key": "disp",
   "make": "SDEC",
   "win": 8.82,
@@ -12981,6 +13200,7 @@
  },
  {
   "model": "SC9D340D2",
+  "ekey": "SC9D340D2",
   "key": "disp",
   "make": "SDEC",
   "win": 8.82,
@@ -13104,6 +13324,7 @@
  },
  {
   "model": "TAD1341GE",
+  "ekey": "TAD1341GE",
   "key": "disp",
   "make": "Volvo Penta",
   "win": 9.36,
@@ -13187,6 +13408,7 @@
  },
  {
   "model": "TAD1351GE",
+  "ekey": "TAD1351GE",
   "key": "disp",
   "make": "Volvo Penta",
   "win": 12.78,
@@ -13234,6 +13456,7 @@
  },
  {
   "model": "TAD1641GE",
+  "ekey": "TAD1641GE",
   "key": "disp",
   "make": "Volvo Penta",
   "win": 16.12,
@@ -13279,6 +13502,7 @@
  },
  {
   "model": "TAD1642GE",
+  "ekey": "TAD1642GE",
   "key": "disp",
   "make": "Volvo Penta",
   "win": 16.12,
@@ -13325,6 +13549,7 @@
  },
  {
   "model": "TAD1650GE",
+  "ekey": "TAD1650GE",
   "key": "disp",
   "make": "Volvo Penta",
   "win": 16.12,
@@ -13387,6 +13612,7 @@
  },
  {
   "model": "TAD1651GE",
+  "ekey": "TAD1651GE",
   "key": "disp",
   "make": "Volvo Penta",
   "win": 16.12,
@@ -13434,6 +13660,7 @@
  },
  {
   "model": "TAD530GE",
+  "ekey": "TAD530GE",
   "key": "disp",
   "make": "Volvo Penta",
   "win": 4.76,
@@ -13477,6 +13704,7 @@
  },
  {
   "model": "TAD531GE",
+  "ekey": "TAD531GE",
   "key": "disp",
   "make": "Volvo Penta",
   "win": 4.76,
@@ -13559,6 +13787,7 @@
  },
  {
   "model": "TAD532GE",
+  "ekey": "TAD532GE",
   "key": "disp",
   "make": "Volvo Penta",
   "win": 4.76,
@@ -13603,6 +13832,7 @@
  },
  {
   "model": "TAD731GE",
+  "ekey": "TAD731GE",
   "key": "disp",
   "make": "Volvo Penta",
   "win": 7.15,
@@ -13647,6 +13877,7 @@
  },
  {
   "model": "TAD733GE",
+  "ekey": "TAD733GE",
   "key": "disp",
   "make": "Volvo Penta",
   "win": 7.15,
@@ -13711,6 +13942,7 @@
  },
  {
   "model": "TAD734GE",
+  "ekey": "TAD734GE",
   "key": "disp",
   "make": "Volvo Penta",
   "win": 7.15,
@@ -13775,6 +14007,7 @@
  },
  {
   "model": "TD226B-3D",
+  "ekey": "TD226B3D",
   "key": "disp",
   "make": "Deutz / Weichai",
   "win": 3.12,
@@ -13845,6 +14078,7 @@
  },
  {
   "model": "TWD1643GE",
+  "ekey": "TWD1643GE",
   "key": "disp",
   "make": "Volvo Penta",
   "win": 16.12,
@@ -13889,6 +14123,7 @@
  },
  {
   "model": "TWD1652GE",
+  "ekey": "TWD1652GE",
   "key": "disp",
   "make": "Volvo Penta",
   "win": 16.12,
@@ -13934,6 +14169,7 @@
  },
  {
   "model": "WP10D200E200",
+  "ekey": "WP10D200E200",
   "key": "disp",
   "make": "Weichai",
   "win": 9.726,
@@ -14110,6 +14346,7 @@
  },
  {
   "model": "WP10D238E200",
+  "ekey": "WP10D238E200",
   "key": "disp",
   "make": "Weichai",
   "win": 9.726,
@@ -14234,6 +14471,7 @@
  },
  {
   "model": "WP10D264E200",
+  "ekey": "WP10D264E200",
   "key": "disp",
   "make": "Weichai",
   "win": 9.726,
@@ -14357,6 +14595,7 @@
  },
  {
   "model": "WP12D317E200",
+  "ekey": "WP12D317E200",
   "key": "disp",
   "make": "Weichai",
   "win": 11.596,
@@ -14459,6 +14698,7 @@
  },
  {
   "model": "WP13D385E200",
+  "ekey": "WP13D385E200",
   "key": "disp",
   "make": "Weichai",
   "win": 12.54,
@@ -14562,6 +14802,7 @@
  },
  {
   "model": "WP13D385E201",
+  "ekey": "WP13D385E201",
   "key": "disp",
   "make": "Weichai",
   "win": 12.54,
@@ -14603,6 +14844,7 @@
  },
  {
   "model": "WP13D405E200",
+  "ekey": "WP13D405E200",
   "key": "disp",
   "make": "Weichai",
   "win": 12.54,
@@ -14646,6 +14888,7 @@
  },
  {
   "model": "WP13D490E310",
+  "ekey": "WP13D490E310",
   "key": "disp",
   "make": "Weichai",
   "win": 12.54,
@@ -14688,6 +14931,7 @@
  },
  {
   "model": "WP13D510E311",
+  "ekey": "WP13D510E311",
   "key": "disp",
   "make": "Weichai",
   "win": 12.54,
@@ -14729,6 +14973,7 @@
  },
  {
   "model": "WP2.3D40E200",
+  "ekey": "WP23D40E200",
   "key": "disp",
   "make": "Weichai",
   "win": 2.3,
@@ -14758,7 +15003,7 @@
     "yunding-jiangsu"
    ]
   },
-  "rows": 40,
+  "rows": 39,
   "odd": [
    {
     "sid": "jet-power",
@@ -14812,6 +15057,7 @@
  },
  {
   "model": "WP2.3D58E201",
+  "ekey": "WP23D58E201",
   "key": "disp",
   "make": "Weichai",
   "win": 2.3,
@@ -14853,6 +15099,7 @@
  },
  {
   "model": "WP4.1D66E200",
+  "ekey": "WP41D66E200",
   "key": "disp",
   "make": "Weichai",
   "win": 4.087,
@@ -14886,7 +15133,7 @@
     "waeta-fujian"
    ]
   },
-  "rows": 49,
+  "rows": 48,
   "odd": [
    {
     "sid": "aosif",
@@ -14956,6 +15203,7 @@
  },
  {
   "model": "WP4.1D80E200",
+  "ekey": "WP41D80E200",
   "key": "disp",
   "make": "Weichai",
   "win": 4.087,
@@ -14992,7 +15240,7 @@
     "waeta-fujian"
    ]
   },
-  "rows": 41,
+  "rows": 40,
   "odd": [
    {
     "sid": "aosif",
@@ -15078,6 +15326,7 @@
  },
  {
   "model": "WP4D100E200",
+  "ekey": "WP4D100E200",
   "key": "disp",
   "make": "Deutz / Weichai",
   "win": 4.5,
@@ -15124,6 +15373,7 @@
  },
  {
   "model": "WP4D66E200",
+  "ekey": "WP4D66E200",
   "key": "disp",
   "make": "Deutz / Weichai",
   "win": 4.5,
@@ -15168,6 +15418,7 @@
  },
  {
   "model": "WP6D132E200",
+  "ekey": "WP6D132E200",
   "key": "disp",
   "make": "Weichai",
   "win": 6.75,
@@ -15254,6 +15505,7 @@
  },
  {
   "model": "WP6D132E201",
+  "ekey": "WP6D132E201",
   "key": "disp",
   "make": "Weichai",
   "win": 6.75,
@@ -15315,6 +15567,7 @@
  },
  {
   "model": "WP6D152E200",
+  "ekey": "WP6D152E200",
   "key": "disp",
   "make": "Weichai",
   "win": 6.75,
@@ -15383,6 +15636,7 @@
  },
  {
   "model": "WP6D158E201",
+  "ekey": "WP6D158E201",
   "key": "disp",
   "make": "Weichai",
   "win": 6.75,
@@ -15444,6 +15698,7 @@
  },
  {
   "model": "WP6D167E200",
+  "ekey": "WP6D167E200",
   "key": "disp",
   "make": "Weichai",
   "win": 6.75,
@@ -15486,6 +15741,7 @@
  },
  {
   "model": "Y4100D",
+  "ekey": "Y4100D",
   "key": "disp",
   "make": "Yangdong",
   "win": 3.707,
@@ -15531,6 +15787,7 @@
  },
  {
   "model": "Y4105D",
+  "ekey": "Y4105D",
   "key": "disp",
   "make": "Yangdong",
   "win": 4.1,
@@ -15564,6 +15821,7 @@
  },
  {
   "model": "Y4105ZLD",
+  "ekey": "Y4105ZLD",
   "key": "disp",
   "make": "Yangdong",
   "win": 4.1,
@@ -15609,6 +15867,7 @@
  },
  {
   "model": "YC12VC1680-D31",
+  "ekey": "YC12VC1680D31",
   "key": "disp",
   "make": "Yuchai",
   "win": 79.17,
@@ -15627,7 +15886,7 @@
     "jlmech-wuhan"
    ]
   },
-  "rows": 20,
+  "rows": 19,
   "odd": [
    {
     "sid": "jlmech-wuhan",
@@ -15649,6 +15908,7 @@
  },
  {
   "model": "YC12VC1680L-D20",
+  "ekey": "YC12VC1680LD20",
   "key": "disp",
   "make": "Yuchai",
   "win": 79.17,
@@ -15690,6 +15950,7 @@
  },
  {
   "model": "YC12VC2070-D31",
+  "ekey": "YC12VC2070D31",
   "key": "disp",
   "make": "Yuchai",
   "win": 79.17,
@@ -15735,6 +15996,7 @@
  },
  {
   "model": "YC12VC2070L-D20",
+  "ekey": "YC12VC2070LD20",
   "key": "disp",
   "make": "Yuchai",
   "win": 79.17,
@@ -15776,6 +16038,7 @@
  },
  {
   "model": "YC12VC2270-D31",
+  "ekey": "YC12VC2270D31",
   "key": "disp",
   "make": "Yuchai",
   "win": 79.17,
@@ -15798,7 +16061,7 @@
     "jlmech-wuhan"
    ]
   },
-  "rows": 29,
+  "rows": 28,
   "odd": [
    {
     "sid": "jlmech-wuhan",
@@ -15820,6 +16083,7 @@
  },
  {
   "model": "YC12VC2700-D31",
+  "ekey": "YC12VC2700D31",
   "key": "disp",
   "make": "Yuchai",
   "win": 79.17,
@@ -15843,7 +16107,7 @@
     "jlmech-wuhan"
    ]
   },
-  "rows": 35,
+  "rows": 34,
   "odd": [
    {
     "sid": "jlmech-wuhan",
@@ -15865,6 +16129,7 @@
  },
  {
   "model": "YC16VC3000-D31",
+  "ekey": "YC16VC3000D31",
   "key": "disp",
   "make": "Yuchai",
   "win": 105.56,
@@ -15884,7 +16149,7 @@
     "jlmech-wuhan"
    ]
   },
-  "rows": 34,
+  "rows": 33,
   "odd": [
    {
     "sid": "jlmech-wuhan",
@@ -15906,47 +16171,7 @@
  },
  {
   "model": "YC16VC3300-D31",
-  "key": "disp",
-  "make": "Yuchai",
-  "win": 105.56,
-  "votes": {
-   "105.56": 4
-  },
-  "blocked": 1,
-  "noTrio": null,
-  "who": {
-   "105.56": [
-    "fdk-energy",
-    "fukangsi-yangzhou",
-    "liangzi-yangzhou",
-    "pengpai-yangzhou"
-   ],
-   "X": [
-    "jlmech-wuhan"
-   ]
-  },
-  "rows": 42,
-  "odd": [
-   {
-    "sid": "jlmech-wuhan",
-    "n": 104,
-    "label": "Displacement (mm)",
-    "value": "105.6",
-    "read": "KHÔNG SO ĐƯỢC",
-    "line": "| JL-2200GF | 2200 | 2750 | 3960 | YC16VC3300-D31 | 16 | 200*210 | 105.6 | 430 | 196 | 7350*2670*2950 | 17580"
-   },
-   {
-    "sid": "jlmech-wuhan",
-    "n": null,
-    "label": "Displacement (mm)",
-    "value": "105.6",
-    "read": "KHÔNG SO ĐƯỢC",
-    "line": "| JL-2200GF | 2200 | 2750 | 3960 | YC16VC3300-D31 | 16 | 200*210 | 105.6 | 430 | 196 | 7350*2670*2950 | 17580"
-   }
-  ]
- },
- {
-  "model": "YC16VC3600-D31",
+  "ekey": "YC16VC3300D31",
   "key": "disp",
   "make": "Yuchai",
   "win": 105.56,
@@ -15974,6 +16199,48 @@
     "label": "Displacement (mm)",
     "value": "105.6",
     "read": "KHÔNG SO ĐƯỢC",
+    "line": "| JL-2200GF | 2200 | 2750 | 3960 | YC16VC3300-D31 | 16 | 200*210 | 105.6 | 430 | 196 | 7350*2670*2950 | 17580"
+   },
+   {
+    "sid": "jlmech-wuhan",
+    "n": null,
+    "label": "Displacement (mm)",
+    "value": "105.6",
+    "read": "KHÔNG SO ĐƯỢC",
+    "line": "| JL-2200GF | 2200 | 2750 | 3960 | YC16VC3300-D31 | 16 | 200*210 | 105.6 | 430 | 196 | 7350*2670*2950 | 17580"
+   }
+  ]
+ },
+ {
+  "model": "YC16VC3600-D31",
+  "ekey": "YC16VC3600D31",
+  "key": "disp",
+  "make": "Yuchai",
+  "win": 105.56,
+  "votes": {
+   "105.56": 4
+  },
+  "blocked": 1,
+  "noTrio": null,
+  "who": {
+   "105.56": [
+    "fdk-energy",
+    "fukangsi-yangzhou",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
+  "rows": 40,
+  "odd": [
+   {
+    "sid": "jlmech-wuhan",
+    "n": 104,
+    "label": "Displacement (mm)",
+    "value": "105.6",
+    "read": "KHÔNG SO ĐƯỢC",
     "line": "| JL-2400GF | 2400 | 3000 | 4320 | YC16VC3600-D31 | 16 | 200*210 | 105.6 | 430 | 196 | 7400*3100*3300 | 19200"
    },
    {
@@ -15988,6 +16255,7 @@
  },
  {
   "model": "YC2115D",
+  "ekey": "YC2115D",
   "key": "disp",
   "make": "Yuchai",
   "win": 2.49,
@@ -16028,6 +16296,7 @@
  },
  {
   "model": "YC4D155-D31",
+  "ekey": "YC4D155D31",
   "key": "disp",
   "make": "Yuchai",
   "win": 4.21,
@@ -16071,6 +16340,7 @@
  },
  {
   "model": "YC4D60-D21",
+  "ekey": "YC4D60D21",
   "key": "disp",
   "make": "Yuchai",
   "win": 4.214,
@@ -16098,7 +16368,7 @@
     "waeta-fujian"
    ]
   },
-  "rows": 50,
+  "rows": 49,
   "odd": [
    {
     "sid": "mingbang-mbkl",
@@ -16152,6 +16422,7 @@
  },
  {
   "model": "YC4D85Z-D20",
+  "ekey": "YC4D85ZD20",
   "key": "disp",
   "make": "Yuchai",
   "win": 4.214,
@@ -16177,7 +16448,7 @@
     "sanq-power"
    ]
   },
-  "rows": 22,
+  "rows": 21,
   "odd": [
    {
     "sid": "mingbang-mbkl",
@@ -16215,6 +16486,7 @@
  },
  {
   "model": "YC4D90Z-D21",
+  "ekey": "YC4D90ZD21",
   "key": "disp",
   "make": "Yuchai",
   "win": 4.214,
@@ -16242,7 +16514,7 @@
     "waeta-fujian"
    ]
   },
-  "rows": 30,
+  "rows": 29,
   "odd": [
    {
     "sid": "aoke-yangzhou",
@@ -16296,6 +16568,7 @@
  },
  {
   "model": "YC6A205-D30",
+  "ekey": "YC6A205D30",
   "key": "disp",
   "make": "Yuchai",
   "win": 7.25,
@@ -16319,7 +16592,7 @@
     "waeta-fujian"
    ]
   },
-  "rows": 37,
+  "rows": 36,
   "odd": [
    {
     "sid": "fdk-energy",
@@ -16357,6 +16630,7 @@
  },
  {
   "model": "YC6A230-D30",
+  "ekey": "YC6A230D30",
   "key": "disp",
   "make": "Yuchai",
   "win": 7.25,
@@ -16379,7 +16653,7 @@
     "tellhow-power"
    ]
   },
-  "rows": 33,
+  "rows": 32,
   "odd": [
    {
     "sid": "tellhow-power",
@@ -16401,6 +16675,7 @@
  },
  {
   "model": "YC6B155L-D20",
+  "ekey": "YC6B155LD20",
   "key": "disp",
   "make": "Yuchai",
   "win": 6.87,
@@ -16442,6 +16717,7 @@
  },
  {
   "model": "YC6C1020L-D20",
+  "ekey": "YC6C1020LD20",
   "key": "disp",
   "make": "Yuchai",
   "win": 39.58,
@@ -16471,7 +16747,7 @@
     "mingbang-mbkl"
    ]
   },
-  "rows": 24,
+  "rows": 23,
   "odd": [
    {
     "sid": "aoke-yangzhou",
@@ -16541,6 +16817,7 @@
  },
  {
   "model": "YC6C1070-D31",
+  "ekey": "YC6C1070D31",
   "key": "disp",
   "make": "Yuchai",
   "win": 39.58,
@@ -16564,7 +16841,7 @@
     "liangzi-yangzhou"
    ]
   },
-  "rows": 32,
+  "rows": 31,
   "odd": [
    {
     "sid": "jlmech-wuhan",
@@ -16602,6 +16879,7 @@
  },
  {
   "model": "YC6C1070L-D20",
+  "ekey": "YC6C1070LD20",
   "key": "disp",
   "make": "Yuchai",
   "win": 39.58,
@@ -16627,7 +16905,7 @@
     "mingbang-mbkl"
    ]
   },
-  "rows": 21,
+  "rows": 20,
   "odd": [
    {
     "sid": "bdadl-shanghai",
@@ -16681,6 +16959,7 @@
  },
  {
   "model": "YC6C1220-D31",
+  "ekey": "YC6C1220D31",
   "key": "disp",
   "make": "Yuchai",
   "win": 39.58,
@@ -16700,7 +16979,7 @@
     "jlmech-wuhan"
    ]
   },
-  "rows": 30,
+  "rows": 29,
   "odd": [
    {
     "sid": "jlmech-wuhan",
@@ -16722,6 +17001,7 @@
  },
  {
   "model": "YC6C1520-D31",
+  "ekey": "YC6C1520D31",
   "key": "disp",
   "make": "Yuchai",
   "win": 39.58,
@@ -16746,7 +17026,7 @@
     "jlmech-wuhan"
    ]
   },
-  "rows": 46,
+  "rows": 45,
   "odd": [
    {
     "sid": "jlmech-wuhan",
@@ -16768,6 +17048,7 @@
  },
  {
   "model": "YC6K520-D30",
+  "ekey": "YC6K520D30",
   "key": "disp",
   "make": "Yuchai",
   "win": 12.16,
@@ -16791,7 +17072,7 @@
     "jlmech-wuhan"
    ]
   },
-  "rows": 34,
+  "rows": 33,
   "odd": [
    {
     "sid": "jlmech-wuhan",
@@ -16813,6 +17094,7 @@
  },
  {
   "model": "YC6MJ500L-D21",
+  "ekey": "YC6MJ500LD21",
   "key": "disp",
   "make": "Yuchai",
   "win": 11.73,
@@ -16894,6 +17176,7 @@
  },
  {
   "model": "YC6MK350-D30",
+  "ekey": "YC6MK350D30",
   "key": "disp",
   "make": "Yuchai",
   "win": 10.34,
@@ -16918,7 +17201,7 @@
     "liangzi-yangzhou"
    ]
   },
-  "rows": 36,
+  "rows": 35,
   "odd": [
    {
     "sid": "liangzi-yangzhou",
@@ -16940,6 +17223,7 @@
  },
  {
   "model": "YC6MK420-D30",
+  "ekey": "YC6MK420D30",
   "key": "disp",
   "make": "Yuchai",
   "win": 10.34,
@@ -16964,7 +17248,7 @@
     "liangzi-yangzhou"
    ]
   },
-  "rows": 40,
+  "rows": 39,
   "odd": [
    {
     "sid": "liangzi-yangzhou",
@@ -16986,6 +17270,7 @@
  },
  {
   "model": "YC6T550L-D21",
+  "ekey": "YC6T550LD21",
   "key": "disp",
   "make": "Yuchai",
   "win": 16.35,
@@ -17012,7 +17297,7 @@
     "mingbang-mbkl"
    ]
   },
-  "rows": 29,
+  "rows": 28,
   "odd": [
    {
     "sid": "bdadl-shanghai",
@@ -17066,6 +17351,7 @@
  },
  {
   "model": "YC6T600L-D22",
+  "ekey": "YC6T600LD22",
   "key": "disp",
   "make": "Yuchai",
   "win": 16.35,
@@ -17094,7 +17380,7 @@
     "mingbang-mbkl"
    ]
   },
-  "rows": 56,
+  "rows": 55,
   "odd": [
    {
     "sid": "jlmech-wuhan",
@@ -17132,6 +17418,7 @@
  },
  {
   "model": "YC6T660L-D20",
+  "ekey": "YC6T660LD20",
   "key": "disp",
   "make": "Yuchai",
   "win": 16.35,
@@ -17161,7 +17448,7 @@
     "mingbang-mbkl"
    ]
   },
-  "rows": 60,
+  "rows": 59,
   "odd": [
    {
     "sid": "jlmech-wuhan",
@@ -17199,6 +17486,7 @@
  },
  {
   "model": "YC6TD780-D31",
+  "ekey": "YC6TD780D31",
   "key": "disp",
   "make": "Yuchai",
   "win": 19.6,
@@ -17223,7 +17511,7 @@
     "waeta-fujian"
    ]
   },
-  "rows": 45,
+  "rows": 44,
   "odd": [
    {
     "sid": "liangzi-yangzhou",
@@ -17261,6 +17549,7 @@
  },
  {
   "model": "YC6TD840-D31",
+  "ekey": "YC6TD840D31",
   "key": "disp",
   "make": "Yuchai",
   "win": 19.6,
@@ -17286,7 +17575,7 @@
     "liangzi-yangzhou"
    ]
   },
-  "rows": 54,
+  "rows": 53,
   "odd": [
    {
     "sid": "liangzi-yangzhou",
@@ -17316,6 +17605,7 @@
  },
  {
   "model": "YC6TD900-D31",
+  "ekey": "YC6TD900D31",
   "key": "disp",
   "make": "Yuchai",
   "win": 19.6,
@@ -17340,7 +17630,7 @@
     "liangzi-yangzhou"
    ]
   },
-  "rows": 50,
+  "rows": 49,
   "odd": [
    {
     "sid": "liangzi-yangzhou",
@@ -17362,6 +17652,7 @@
  },
  {
   "model": "YD380D",
+  "ekey": "YD380D",
   "key": "disp",
   "make": "Yangdong",
   "win": 1.357,
@@ -17407,6 +17698,7 @@
  },
  {
   "model": "YD385D",
+  "ekey": "YD385D",
   "key": "disp",
   "make": "Yangdong",
   "win": 1.532,
@@ -17448,6 +17740,7 @@
  },
  {
   "model": "YD480D",
+  "ekey": "YD480D",
   "key": "disp",
   "make": "Yangdong",
   "win": 1.809,
@@ -17493,6 +17786,7 @@
  },
  {
   "model": "YD4EZLD",
+  "ekey": "YD4EZLD",
   "key": "disp",
   "make": "Yangdong",
   "win": 4.1,
@@ -17538,6 +17832,7 @@
  },
  {
   "model": "YND485D",
+  "ekey": "YND485D",
   "key": "disp",
   "make": "Yangdong",
   "win": 2.156,
@@ -17579,6 +17874,7 @@
  },
  {
   "model": "YSD490D",
+  "ekey": "YSD490D",
   "key": "disp",
   "make": "Yangdong",
   "win": 2.54,

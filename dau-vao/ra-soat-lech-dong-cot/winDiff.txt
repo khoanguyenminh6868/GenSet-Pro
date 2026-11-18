@@ -1,4 +1,4 @@
-Động cơ: 6869; có giá trị thắng (disp/cyl, ít nhất một dòng): 1051; model + thông số có nguồn ghi khác: 299
+Động cơ: 6868; có giá trị thắng (disp/cyl, ít nhất một dòng): 1050; model + thông số có nguồn ghi khác: 299
 
 ## Perkins 1006TAG · cyl · thắng 6 · phiếu {"4":1,"6":3} · 35 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 6
    NCC theo giá trị: {"4":["mingbang-mbkl"],"6":["suneco-linyi","taihai-taizhou","xinhengxin-fujian"]}
@@ -65,12 +65,12 @@
    - bdadl-shanghai [128] «缸数 | 12» → 12   | BDA-W2400 | 2400/2650 | 潍柴博杜安 | 16M55D2900E310 | 12 | 87.5 | 280 | ≤195 | 6500*2600*2300 | 12500
    - bdadl-shanghai [null] «缸数 | 12» → 12   | BDA-W2400 | 2400/2650 | 潍柴博杜安 | 16M55D2900E310 | 12 | 87.5 | 280 | ≤195 | 6500*2600*2300 | 12500
 
-## MTU 16V2000G25 · cyl · thắng 16 · phiếu {"12":1,"16":14} · 46 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 16
+## MTU 16V2000G25 · cyl · thắng 16 · phiếu {"12":1,"16":14} · 45 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 16
    NCC theo giá trị: {"12":["aoke-yangzhou"],"16":["bdadl-shanghai","comappower","fukangsi-yangzhou","haifeng-taizhou","kangwo-guangdong","legapower","pengpai-yangzhou","taihai-taizhou","victory-generator","wintpower","world-power-fuzhou","xingguang-jiangsu","yanan-power","yunding-jiangsu"]}
    - aoke-yangzhou [116] «缸数 | 12» → 12   | AOKE-M800 | 728KW | 800KW | 奔驰 | 16V2000G25 | 12 | 31.84 | 102 | 200 | 4380*1580*2250 | 6190 | | 详细参数
    - aoke-yangzhou [null] «缸数 | 12» → 12   | AOKE-M800 | 728KW | 800KW | 奔驰 | 16V2000G25 | 12 | 31.84 | 102 | 200 | 4380*1580*2250 | 6190 | | 详细参数
 
-## MTU 16V2000G65 · cyl · thắng 16 · phiếu {"12":1,"16":14} · 49 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 16
+## MTU 16V2000G65 · cyl · thắng 16 · phiếu {"12":1,"16":14} · 48 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 16
    NCC theo giá trị: {"12":["aoke-yangzhou"],"16":["bdadl-shanghai","comappower","fukangsi-yangzhou","haifeng-taizhou","kangwo-guangdong","legapower","pengpai-yangzhou","taihai-taizhou","victory-generator","wintpower","world-power-fuzhou","xingguang-jiangsu","yanan-power","yunding-jiangsu"]}
    - aoke-yangzhou [114] «缸数 | 12» → 12   | AOKE-M880 | 800KW | 880KW | 奔驰 | 16V2000G65 | 12 | 31.48 | 110 | 200 | 4220*1580*2250 | 6590 | | 详细参数
    - aoke-yangzhou [null] «缸数 | 12» → 12   | AOKE-M880 | 800KW | 880KW | 奔驰 | 16V2000G65 | 12 | 31.48 | 110 | 200 | 4220*1580*2250 | 6590 | | 详细参数
@@ -129,7 +129,7 @@
    - victory-generator [110] «Cylinders & arrangement | 6L» → 6   | V75C | 50 | 68 | 85 | 75 | 94 | 4BTA3.9-G13 | 16 | 5.9 | 6L | electronic | 2140*950*1530 | 1270 | 2900*1030*2000 | 1740
    - victory-generator [null] «Cylinders & arrangement | 6L» → 6   | V75C | 50 | 68 | 85 | 75 | 94 | 4BTA3.9-G13 | 16 | 5.9 | 6L | electronic | 2140*950*1530 | 1270 | 2900*1030*2000 | 1740
 
-## Cummins 4BTA3.9-G2 · cyl · thắng 4 · phiếu {"4":22} · 291 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 4
+## Cummins 4BTA3.9-G2 · cyl · thắng 4 · phiếu {"4":22} · 289 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 4
    NCC theo giá trị: {"4":["aoke-yangzhou","aosif","bdadl-shanghai","depco-power","fdk-energy","fukangsi-yangzhou","haifeng-taizhou","hanyang-weifang","legapower","liangzi-yangzhou","mingbang-mbkl","pengpai-yangzhou","rise-power","senci","senci-jiangsu","victory-generator","wintpower","wiseke-taizhou","world-power-fuzhou","xinhengxin-fujian","xinzhengfa","yunding-jiangsu"],"6":["bdadl-shanghai"]}
    - bdadl-shanghai [131] «缸数 | 6» → 6   | BDA-C52 | 52/56 | 东风康明斯 | 4BTA3.9-G2 | 6 | 3.92 | 16 | ≤210 | 1900*850*1200 | 560
    - bdadl-shanghai [null] «缸数 | 6» → 6   | BDA-C52 | 52/56 | 东风康明斯 | 4BTA3.9-G2 | 6 | 3.92 | 16 | ≤210 | 1900*850*1200 | 560
@@ -164,37 +164,37 @@
    - waeta-fujian [103] «No. of Cylinder | 12 V» → 12   | WTA-B1100 | 1100 | 880 | 1000 | 800 | 8M33G1100/5 | 12 V | 26.14 | Baudouin Series.xlsx
    - waeta-fujian [null] «No. of Cylinder | 12 V» → 12   | WTA-B1100 | 1100 | 880 | 1000 | 800 | 8M33G1100/5 | 12 V | 26.14 | Baudouin Series.xlsx
 
-## Deutz BF8M1015C-LA G1A · cyl · thắng 8 · phiếu {"6":1,"8":10} · 33 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8
+## Deutz BF8M1015C-LA G1A · cyl · thắng 8 · phiếu {"6":1,"8":10} · 32 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8
    NCC theo giá trị: {"6":["depco-power"],"8":["comappower","haifeng-taizhou","huatai-yangzhou","legapower","liangzi-yangzhou","victory-generator","wintpower","world-power-fuzhou","xinhengxin-fujian","yanan-power"]}
    - depco-power [2360] «Cylinder | 6» → 6   | Cylinder | 6 | Cooling system | Water
    - depco-power [null] «Cylinder | 6» → 6   
 
-## Deutz BF8M1015C-LA G2 · cyl · thắng 8 · phiếu {"6":1,"8":9} · 32 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8
+## Deutz BF8M1015C-LA G2 · cyl · thắng 8 · phiếu {"6":1,"8":9} · 31 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8
    NCC theo giá trị: {"6":["depco-power"],"8":["comappower","haifeng-taizhou","huatai-yangzhou","legapower","sanq-power","victory-generator","wintpower","world-power-fuzhou","yanan-power"]}
    - depco-power [2359] «Cylinder | 6» → 6   | Cylinder | 6 | Cooling system | Water
    - depco-power [null] «Cylinder | 6» → 6   
 
-## Deutz BF8M1015CP-LA G1A · cyl · thắng 8 · phiếu {"8":10} · 26 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8
+## Deutz BF8M1015CP-LA G1A · cyl · thắng 8 · phiếu {"8":10} · 25 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8
    NCC theo giá trị: {"6":["depco-power"],"8":["comappower","depco-power","huatai-yangzhou","legapower","liangzi-yangzhou","victory-generator","wintpower","world-power-fuzhou","xinhengxin-fujian","yanan-power"]}
    - depco-power [2358] «Cylinder | 6» → 6   | Cylinder | 6 | Cooling system | Water
    - depco-power [null] «Cylinder | 6» → 6   
 
-## Deutz BF8M1015CP-LA G2 · cyl · thắng 8 · phiếu {"6":1,"8":10} · 32 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8
+## Deutz BF8M1015CP-LA G2 · cyl · thắng 8 · phiếu {"6":1,"8":10} · 31 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8
    NCC theo giá trị: {"6":["depco-power"],"8":["comappower","haifeng-taizhou","huatai-yangzhou","legapower","liangzi-yangzhou","victory-generator","wintpower","world-power-fuzhou","xinhengxin-fujian","yanan-power"]}
    - depco-power [2357] «Cylinder | 6» → 6   | Cylinder | 6 | Cooling system | Water
    - depco-power [null] «Cylinder | 6» → 6   
 
-## Deutz BF8M1015CP-LA G3 · cyl · thắng 8 · phiếu {"6":1,"8":9} · 26 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8
+## Deutz BF8M1015CP-LA G3 · cyl · thắng 8 · phiếu {"6":1,"8":9} · 25 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8
    NCC theo giá trị: {"6":["depco-power"],"8":["comappower","haifeng-taizhou","huatai-yangzhou","legapower","liangzi-yangzhou","victory-generator","wintpower","world-power-fuzhou","yanan-power"]}
    - depco-power [2356] «Cylinder | 6» → 6   | Cylinder | 6 | Cooling system | Water
    - depco-power [null] «Cylinder | 6» → 6   
 
-## Deutz BF8M1015CP-LA G4 · cyl · thắng 8 · phiếu {"6":1,"8":10} · 33 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8
+## Deutz BF8M1015CP-LA G4 · cyl · thắng 8 · phiếu {"6":1,"8":10} · 32 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8
    NCC theo giá trị: {"6":["depco-power"],"8":["comappower","haifeng-taizhou","huatai-yangzhou","legapower","liangzi-yangzhou","victory-generator","wintpower","world-power-fuzhou","xinhengxin-fujian","yanan-power"]}
    - depco-power [2355] «Cylinder | 6» → 6   | Cylinder | 6 | Cooling system | Water
    - depco-power [null] «Cylinder | 6» → 6   
 
-## Deutz BF8M1015CP-LA G5 · cyl · thắng 8 · phiếu {"6":1,"8":11} · 35 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8
+## Deutz BF8M1015CP-LA G5 · cyl · thắng 8 · phiếu {"6":1,"8":11} · 34 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8
    NCC theo giá trị: {"6":["depco-power"],"8":["aoke-yangzhou","comappower","haifeng-taizhou","huatai-yangzhou","legapower","liangzi-yangzhou","victory-generator","wintpower","world-power-fuzhou","xinhengxin-fujian","yanan-power"]}
    - depco-power [2354] «Cylinder | 6» → 6   | Cylinder | 6 | Cooling system | Water
    - depco-power [null] «Cylinder | 6» → 6   
@@ -286,8 +286,8 @@
    - bdadl-shanghai [130] «缸数 | 12» → 12   | BDA-C1500 | 1500/1600 | 重庆康明斯 | KTA50-G16A | 12 | 50 | 204 | ≤203 | 6200*2250*2500 | 12000
    - bdadl-shanghai [null] «缸数 | 12» → 12   | BDA-C1500 | 1500/1600 | 重庆康明斯 | KTA50-G16A | 12 | 50 | 204 | ≤203 | 6200*2250*2500 | 12000
 
-## Cummins KTA50-G3 · cyl · thắng 16 · phiếu {"12":3,"16":30} · 201 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 16
-   NCC theo giá trị: {"10":["bdadl-shanghai"],"12":["comappower","huipu-power","mingbang-mbkl","suneco-linyi","xinhengxin-fujian","xinzhengfa","yingtai-jiangsu"],"16":["aoke-yangzhou","aosif","bdadl-shanghai","comappower","depco-power","fdk-energy","fukangsi-yangzhou","haifeng-taizhou","huali-shandong","legapower","liangzi-yangzhou","longkai-power","pengpai-yangzhou","rise-power","shanhua","suneco-linyi","sunkings","taihai-taizhou","victory-generator","waeta-fujian","wintpower","wiseke-taizhou","world-power-fuzhou","xingguang-jiangsu","xinhengxin-fujian","yanan-power","yingtai-group","yingtai-jiangsu","yongcai-elecmama","yunding-jiangsu"]}
+## Cummins KTA50-G3 · cyl · thắng 16 · phiếu {"12":3,"16":29} · 199 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 16
+   NCC theo giá trị: {"10":["bdadl-shanghai"],"12":["comappower","huipu-power","mingbang-mbkl","suneco-linyi","xinhengxin-fujian","xinzhengfa","yingtai-jiangsu"],"16":["aoke-yangzhou","aosif","bdadl-shanghai","comappower","depco-power","fdk-energy","fukangsi-yangzhou","haifeng-taizhou","huali-shandong","legapower","liangzi-yangzhou","longkai-power","pengpai-yangzhou","rise-power","shanhua","suneco-linyi","sunkings","taihai-taizhou","victory-generator","waeta-fujian","wintpower","wiseke-taizhou","world-power-fuzhou","xingguang-jiangsu","xinhengxin-fujian","yanan-power","yingtai-jiangsu","yongcai-elecmama","yunding-jiangsu"]}
    - bdadl-shanghai [130] «缸数 | 10» → 10   | BDA-C1000 | 1000/1100 | 重庆康明斯 | KTA50-G3 | 10 | 50 | 177 | ≤203 | 5000*2000*2550 | 10100
    - comappower [102] «NO. of Cylinder | 12» → 12   | COM1575C | 1575kVA | 1260kW | 1375kVA | 1100kW | KTA50-G3 | 12 | COM1575C
    - huipu-power [103] «Cylinder number(mm) | 12» → 12   | HP-C1100 | 1000 | 1100 | KTA50-G3 | 12 | 159*159 | 50 | 261 | 424 | 177 | 5105*2120*2260 | 9099
@@ -310,8 +310,8 @@
    - bdadl-shanghai [130] «缸数 | 12» → 12   | BDA-C1100 | 1100/1320 | 重庆康明斯 | KTA50-G7E | 12 | 50 | 204 | ≤203 | 5300*2100*2550 | 10000
    - bdadl-shanghai [null] «缸数 | 12» → 12   | BDA-C1100 | 1100/1320 | 重庆康明斯 | KTA50-G7E | 12 | 50 | 204 | ≤203 | 5300*2100*2550 | 10000
 
-## Cummins KTA50-G8 · cyl · thắng 16 · phiếu {"12":2,"16":29} · 118 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 16
-   NCC theo giá trị: {"10":["bdadl-shanghai"],"12":["mingbang-mbkl","xinzhengfa","yingtai-jiangsu"],"16":["aoke-yangzhou","aosif","bdadl-shanghai","comappower","depco-power","fdk-energy","fukangsi-yangzhou","haifeng-taizhou","huipu-power","legapower","liangzi-yangzhou","longkai-power","pengpai-yangzhou","rise-power","suneco-linyi","sunkings","taihai-taizhou","victory-generator","waeta-fujian","wintpower","wiseke-taizhou","world-power-fuzhou","xingguang-jiangsu","xinhengxin-fujian","yanan-power","yingtai-group","yingtai-jiangsu","yongcai-elecmama","yunding-jiangsu"]}
+## Cummins KTA50-G8 · cyl · thắng 16 · phiếu {"12":2,"16":28} · 116 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 16
+   NCC theo giá trị: {"10":["bdadl-shanghai"],"12":["mingbang-mbkl","xinzhengfa","yingtai-jiangsu"],"16":["aoke-yangzhou","aosif","bdadl-shanghai","comappower","depco-power","fdk-energy","fukangsi-yangzhou","haifeng-taizhou","huipu-power","legapower","liangzi-yangzhou","longkai-power","pengpai-yangzhou","rise-power","suneco-linyi","sunkings","taihai-taizhou","victory-generator","waeta-fujian","wintpower","wiseke-taizhou","world-power-fuzhou","xingguang-jiangsu","xinhengxin-fujian","yanan-power","yingtai-jiangsu","yongcai-elecmama","yunding-jiangsu"]}
    - bdadl-shanghai [130] «缸数 | 10» → 10   | BDA-C1100 | 1100/1320 | 重庆康明斯 | KTA50-G8 | 10 | 50 | 204 | ≤203 | 5100*2200*2650 | 12000
    - mingbang-mbkl [122] «Cylinder | 12» → 12   | 50 | MB-C1100 | 1375 | 1100 | 1513 | 1210 | KTA50-G8 | 12 | 37.8 | 159*159 | 213
    - xinzhengfa [105] «缸数 | 12» → 12   | ZF-1200 | 1429/1200 | KTA50-G8 | 1397 | 12 | 159 | 159 | 161 | 215.9 | 5600*2000*2450 | 10700
@@ -321,8 +321,8 @@
    - xinzhengfa [null] «缸数 | 12» → 12   | ZF-1200 | 1429/1200 | KTA50-G8 | 1397 | 12 | 159 | 159 | 161 | 215.9 | 5600*2000*2450 | 10700
    - yingtai-jiangsu [null] «缸数 Number of | 12» → 12   | 500GF-A | 500 | 625 | 550 | 600 | 900 | 4200 | 2.15*0.9*1.45 | KTA50-G8 | 12
 
-## Cummins KTA50-GS8 · cyl · thắng 16 · phiếu {"12":1,"16":29} · 116 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 16
-   NCC theo giá trị: {"12":["mingbang-mbkl"],"16":["aoke-yangzhou","aosif","bdadl-shanghai","comappower","depco-power","fdk-energy","fukangsi-yangzhou","huipu-power","legapower","liangzi-yangzhou","longkai-power","pengpai-yangzhou","rise-power","shanhua","suneco-linyi","sunkings","taihai-taizhou","victory-generator","waeta-fujian","wintpower","wiseke-taizhou","world-power-fuzhou","xingguang-jiangsu","xinhengxin-fujian","yanan-power","yingtai-group","yingtai-jiangsu","yongcai-elecmama","yunding-jiangsu"]}
+## Cummins KTA50-GS8 · cyl · thắng 16 · phiếu {"12":1,"16":28} · 115 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 16
+   NCC theo giá trị: {"12":["mingbang-mbkl"],"16":["aoke-yangzhou","aosif","bdadl-shanghai","comappower","depco-power","fdk-energy","fukangsi-yangzhou","huipu-power","legapower","liangzi-yangzhou","longkai-power","pengpai-yangzhou","rise-power","shanhua","suneco-linyi","sunkings","taihai-taizhou","victory-generator","waeta-fujian","wintpower","wiseke-taizhou","world-power-fuzhou","xingguang-jiangsu","xinhengxin-fujian","yanan-power","yingtai-jiangsu","yongcai-elecmama","yunding-jiangsu"]}
    - mingbang-mbkl [122] «Cylinder | 12» → 12   | 51 | MB-C1200 | 1500 | 1200 | 1650 | 1320 | KTA50-GS8 | 12 | 37.8 | 159*159 | 213
    - mingbang-mbkl [null] «Cylinder | 12» → 12   | 51 | MB-C1200 | 1500 | 1200 | 1650 | 1320 | KTA50-GS8 | 12 | 37.8 | 159*159 | 213
 
@@ -331,7 +331,7 @@
    - yanan-power [101] «NO. of Cylinder | 6» → 6   | YN66C | 66kVA | 53kW | 60kVA | 48kW | QSB3.9-G2 | 6 | YN66C
    - yanan-power [null] «NO. of Cylinder | 6» → 6   | YN66C | 66kVA | 53kW | 60kVA | 48kW | QSB3.9-G2 | 6 | YN66C
 
-## Cummins QSB3.9-G3 · cyl · thắng 4 · phiếu {"4":9,"6":2} · 35 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
+## Cummins QSB3.9-G3 · cyl · thắng 4 · phiếu {"4":9,"6":2} · 34 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
    NCC theo giá trị: {"4":["bdadl-shanghai","fukangsi-yangzhou","haifeng-taizhou","hanyang-weifang","pengpai-yangzhou","senci","senci-jiangsu","victory-generator","yunding-jiangsu"],"6":["haifeng-taizhou","liangzi-yangzhou","yanan-power"]}
    - haifeng-taizhou [2001] «缸数 | 6L» → 6   | HF-70GF | 87.5 | 70 | QSB3.9-G3 | 6L | 102/120 | 206 | 2200*800*1300 | 1180
    - liangzi-yangzhou [123] «缸数 | 6» → 6   | LZ-C75 | 75/93.75 | 东风康明斯 | QSB3.9-G3 | 6 | 3.92 | 11 | ≤192 | 1800*800*1300 | 800 | 详细参数
@@ -519,7 +519,7 @@
    - bdadl-shanghai [128] «缸数 | 6» → 6   | BDA-W50 | 50/55 | 潍柴动力 | WP4.1D66E310 | 6 | 4.8 | 10 | ≤195 | 2200*750*1600 | 1050
    - bdadl-shanghai [null] «缸数 | 6» → 6   | BDA-W50 | 50/55 | 潍柴动力 | WP4.1D66E310 | 6 | 4.8 | 10 | ≤195 | 2200*750*1600 | 1050
 
-## Weichai WP4.1D80E200 · cyl · thắng 4 · phiếu {"4":14,"6":1} · 41 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 4
+## Weichai WP4.1D80E200 · cyl · thắng 4 · phiếu {"4":14,"6":1} · 40 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 4
    NCC theo giá trị: {"4":["aosif","depco-power","hanyang-weifang","jet-power","jiuan-power","jlmech-wuhan","kangwo-guangdong","senci","senci-jiangsu","waeta-fujian","weichai-heavy-machinery","weichai-power","wiseke-taizhou","yunding-jiangsu"],"6":["bdadl-shanghai"]}
    - bdadl-shanghai [128] «缸数 | 6» → 6   | BDA-W64 | 64/70 | 潍柴动力 | WP4.1D80E200 | 6 | 4.8 | 10 | ≤215 | 2300*700*1200 | 1150
    - bdadl-shanghai [null] «缸数 | 6» → 6   | BDA-W64 | 64/70 | 潍柴动力 | WP4.1D80E200 | 6 | 4.8 | 10 | ≤215 | 2300*700*1200 | 1150
@@ -554,7 +554,7 @@
    - depco-power [2025] «Cylinder | 4» → 4   | Cylinder | 4 | Cooling system | Water
    - depco-power [null] «Cylinder | 4» → 4   
 
-## Yuchai YC12VC2700-D31 · cyl · thắng 12 · phiếu {"12":10,"16":1} · 35 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 12
+## Yuchai YC12VC2700-D31 · cyl · thắng 12 · phiếu {"12":10,"16":1} · 34 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 12
    NCC theo giá trị: {"12":["comappower","fdk-energy","fukangsi-yangzhou","hanyang-weifang","jlmech-wuhan","liangzi-yangzhou","pengpai-yangzhou","xinhengxin-fujian","yanan-power","yunding-jiangsu"],"16":["xingguang-jiangsu"]}
    - xingguang-jiangsu [113] «缸数 | 16» → 16   | XG-1870GF | 1700/1870 | YC12VC2700-D31 | 1805/1985 | 16 | 370 | ≤ 196 | 国 III | 5900 × 2650 × 2950 | 18000
    - xingguang-jiangsu [null] «缸数 | 16» → 16   | XG-1870GF | 1700/1870 | YC12VC2700-D31 | 1805/1985 | 16 | 370 | ≤ 196 | 国 III | 5900 × 2650 × 2950 | 18000
@@ -564,24 +564,24 @@
    - haifeng-taizhou [2008] «缸数 | 6L» → 6   | HF-64GF | 80 | 64 | YC4A100Z-D20 | 6L | 108/125 | 6.871 | 205 | 2250×780×1380 | 1250
    - haifeng-taizhou [null] «缸数 | 6L» → 6   | HF-64GF | 80 | 64 | YC4A100Z-D20 | 6L | 108/125 | 6.871 | 205 | 2250×780×1380 | 1250
 
-## Yuchai YC6B180L-D20 · cyl · thắng 6 · phiếu {"4":1,"6":18} · 52 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 6
+## Yuchai YC6B180L-D20 · cyl · thắng 6 · phiếu {"4":1,"6":18} · 51 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 6
    NCC theo giá trị: {"4":["yunding-jiangsu"],"6":["aoke-yangzhou","bdadl-shanghai","fukangsi-yangzhou","haifeng-taizhou","hanyang-weifang","huatai-yangzhou","jianghao-genset","kangwo-guangdong","liangzi-yangzhou","mingbang-mbkl","pengpai-yangzhou","sanq-power","senci","senci-jiangsu","taihai-taizhou","waeta-fujian","xingguang-jiangsu","xinhengxin-fujian"]}
    - yunding-jiangsu [2006] «缸数 Cylinder | 4» → 4   | YDY-120GF | 120 | 150 | 216 | YC6B180L-D20 | 4 | 108*125 | 6.87 | 21 | 198 | 2350*950*1420 | 1450
    - yunding-jiangsu [null] «缸数 Cylinder | 4» → 4   | YDY-120GF | 120 | 150 | 216 | YC6B180L-D20 | 4 | 108*125 | 6.87 | 21 | 198 | 2350*950*1420 | 1450
 
-## Yuchai YC6C1070L-D20 · cyl · thắng 6 · phiếu {"6":10,"12":1} · 21 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 6
+## Yuchai YC6C1070L-D20 · cyl · thắng 6 · phiếu {"6":10,"12":1} · 20 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 6
    NCC theo giá trị: {"6":["bdadl-shanghai","haifeng-taizhou","huatai-yangzhou","jianghao-genset","kangwo-guangdong","mingbang-mbkl","pengpai-yangzhou","sanq-power","xingguang-jiangsu","xinhengxin-fujian"],"12":["fukangsi-yangzhou","pengpai-yangzhou"]}
    - fukangsi-yangzhou [2002] «缸数 | 12» → 12   | FKS-Y700 | 700/875 | 广西玉柴股份 | YC6C1070L-D20 | 12 | 39.58 | 180 | 200*210 | 4700*1800*2100 | 7200
    - pengpai-yangzhou [129] «缸数 | 12» → 12   | PPDL-Y700 | 700/875 | 广西玉柴股份 | YC6C1070L-D20 | 12 | 39.58 | 180 | 200*210 | 4700*1800*2100 | 7200
    - fukangsi-yangzhou [null] «缸数 | 12» → 12   | FKS-Y700 | 700/875 | 广西玉柴股份 | YC6C1070L-D20 | 12 | 39.58 | 180 | 200*210 | 4700*1800*2100 | 7200
    - pengpai-yangzhou [null] «缸数 | 12» → 12   | PPDL-Y700 | 700/875 | 广西玉柴股份 | YC6C1070L-D20 | 12 | 39.58 | 180 | 200*210 | 4700*1800*2100 | 7200
 
-## Yuchai YC6T550L-D21 · cyl · thắng 6 · phiếu {"6":13,"12":1} · 29 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 6
+## Yuchai YC6T550L-D21 · cyl · thắng 6 · phiếu {"6":13,"12":1} · 28 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 6
    NCC theo giá trị: {"6":["bdadl-shanghai","comappower","fukangsi-yangzhou","haifeng-taizhou","jianghao-genset","kangwo-guangdong","liangzi-yangzhou","pengpai-yangzhou","sanq-power","taihai-taizhou","xingguang-jiangsu","xinhengxin-fujian","yanan-power"],"12":["mingbang-mbkl"]}
    - mingbang-mbkl [123] «Cylinder | 12» → 12   | 18 | MB-Y350 | 437.5 | 350 | 481.25 | 385 | YC6T550L-D21 | 12 | 16.3 | 145*165 | 195 | 4300×2100×2500
    - mingbang-mbkl [null] «Cylinder | 12» → 12   | 18 | MB-Y350 | 437.5 | 350 | 481.25 | 385 | YC6T550L-D21 | 12 | 16.3 | 145*165 | 195 | 4300×2100×2500
 
-## Yuchai YC6T600L-D22 · cyl · thắng 6 · phiếu {"6":18,"12":1} · 56 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 6
+## Yuchai YC6T600L-D22 · cyl · thắng 6 · phiếu {"6":18,"12":1} · 55 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 6
    NCC theo giá trị: {"6":["bdadl-shanghai","comappower","fukangsi-yangzhou","haifeng-taizhou","hanyang-weifang","jianghao-genset","jlmech-wuhan","liangzi-yangzhou","pengpai-yangzhou","sanq-power","senci","senci-jiangsu","taihai-taizhou","waeta-fujian","xingguang-jiangsu","xinhengxin-fujian","yanan-power","yunding-jiangsu"],"12":["mingbang-mbkl"]}
    - mingbang-mbkl [123] «Cylinder | 12» → 12   | 19 | MB-Y400 | 500 | 400 | 550 | 440 | YC6T600L-D22 | 12 | 16.3 | 145*165 | 195 | 4500×2100×2600
    - mingbang-mbkl [null] «Cylinder | 12» → 12   | 19 | MB-Y400 | 500 | 400 | 550 | 440 | YC6T600L-D22 | 12 | 16.3 | 145*165 | 195 | 4500×2100×2600
@@ -723,7 +723,7 @@
    - huipu-power [105] «Swept volume(L) | 7.01» → 7.01   | HP-P261 | 240 | 261 | 1506A-E88TAG5 | 6 | 105*135 | 7.01 | 68.5 | 108 | 16 | 2600*825*1565 | 1850
    - huipu-power [null] «Swept volume(L) | 7.01» → 7.01   | HP-P261 | 240 | 261 | 1506A-E88TAG5 | 6 | 105*135 | 7.01 | 68.5 | 108 | 16 | 2600*825*1565 | 1850
 
-## MTU 16V2000G65 · disp · thắng 31.84 · phiếu {"31.48":1,"31.84":9} · 49 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 31.84
+## MTU 16V2000G65 · disp · thắng 31.84 · phiếu {"31.48":1,"31.84":9} · 48 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 31.84
    NCC theo giá trị: {"31.48":["aoke-yangzhou"],"31.84":["bdadl-shanghai","frs-shenyang","fukangsi-yangzhou","mecca-power","pengpai-yangzhou","tellhow-power","westinpower","wintpower","yunding-jiangsu"]}
    - aoke-yangzhou [114] «排量(L) | 31.48» → 31.48   | AOKE-M880 | 800KW | 880KW | 奔驰 | 16V2000G65 | 12 | 31.48 | 110 | 200 | 4220*1580*2250 | 6590 | | 详细参数
    - aoke-yangzhou [null] «排量(L) | 31.48» → 31.48   | AOKE-M880 | 800KW | 880KW | 奔驰 | 16V2000G65 | 12 | 31.48 | 110 | 200 | 4220*1580*2250 | 6590 | | 详细参数
@@ -800,7 +800,7 @@
    - mingbang-mbkl [132] «Displacement | 3.92L» → 3.92   | Displacement | 3.92L
    - mingbang-mbkl [null] «Displacement | 3.92L» → 3.92   
 
-## Cummins 4B3.9-G2 · disp · thắng 3.9 · phiếu {"3.9":12,"4.5":1,"3.92":4} · 169 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 3.9
+## Cummins 4B3.9-G2 · disp · thắng 3.9 · phiếu {"3.9":12,"4.5":1,"3.92":4} · 168 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 3.9
    NCC theo giá trị: {"3.9":["aosif","depco-power","genlitec","hanyang-weifang","jianghao-genset","jinlongteng-fujian","legapower","rise-power","waeta-fujian","weiman-fujian","wintpower","yunding-jiangsu"],"4.5":["bdadl-shanghai"],"3.92":["fukangsi-yangzhou","liangzi-yangzhou","mingbang-mbkl","pengpai-yangzhou"]}
    - bdadl-shanghai [126] «排量 (L) | 4.5» → 4.5   | BDA-C22 | 20 | 东风康明斯国二 | 4B3.9-G2 | 4 | 4.5 | 7.25 | ≤218 | 1650*750*1553 | 710
    - fukangsi-yangzhou [2001] «排量 (L) | 3.92» → 3.92   | FKS-C20 | 20/25 | 东风康明斯 | 4B3.9-G2 | 4 | 3.92 | 9 | ≤210 | 1600*700*1150 | 600
@@ -819,7 +819,7 @@
    - victory-generator [110] «Displacement (L) | 5.9» → 5.9   | V75C | 50 | 68 | 85 | 75 | 94 | 4BTA3.9-G13 | 16 | 5.9 | 6L | electronic | 2140*950*1530 | 1270 | 2900*1030*2000 | 1740
    - victory-generator [null] «Displacement (L) | 5.9» → 5.9   | V75C | 50 | 68 | 85 | 75 | 94 | 4BTA3.9-G13 | 16 | 5.9 | 6L | electronic | 2140*950*1530 | 1270 | 2900*1030*2000 | 1740
 
-## Cummins 4BTA3.9-G2 · disp · thắng 3.9 · phiếu {"3.9":14,"3.92":4} · 291 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 3.9
+## Cummins 4BTA3.9-G2 · disp · thắng 3.9 · phiếu {"3.9":14,"3.92":4} · 289 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 3.9
    NCC theo giá trị: {"3.9":["aoke-yangzhou","aosif","depco-power","fdk-energy","hanyang-weifang","jianghao-genset","jinlongteng-fujian","legapower","mingbang-mbkl","rise-power","victory-generator","weiman-fujian","wintpower","yunding-jiangsu"],"3.92":["bdadl-shanghai","fukangsi-yangzhou","liangzi-yangzhou","mingbang-mbkl","pengpai-yangzhou"]}
    - bdadl-shanghai [125] «排量 (L) | 3.92» → 3.92   | BDA-C50 | 50/62.5 | 东风康明斯 | 4BTA3.9-G2 | 4 | 3.92 | 11 | ≤210 | 1800*800*1300 | 700
    - bdadl-shanghai [131] «排量 (L) | 3.92» → 3.92   | BDA-C45 | 45/50 | 东风康明斯 | 4BTA3.9-G2 | 4 | 3.92 | 11 | ≤210 | 1900*850*1200 | 985
@@ -838,24 +838,24 @@
    - bdadl-shanghai [131] «排量 (L) | 3.92» → 3.92   | BDA-C80 | 80/88 | 东风康明斯 | 4BTAA3.9-G3 | 6 | 3.92 | 16 | ≤210 | 2100*850*1450 | 950
    - bdadl-shanghai [null] «排量 (L) | 3.92» → 3.92   | BDA-C80 | 80/88 | 东风康明斯 | 4BTAA3.9-G3 | 6 | 3.92 | 16 | ≤210 | 2100*850*1450 | 950
 
-## Yuchai 4D24G6 · disp · thắng 2.45 · phiếu {"2.45":3,"2.449":1} · 13 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
+## Yuchai 4D24G6 · disp · thắng 2.45 · phiếu {"2.45":3,"2.449":1} · 12 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
    NCC theo giá trị: {"2.45":["frs-shenyang","fukangsi-yangzhou","pengpai-yangzhou"],"2.449":["yunding-jiangsu"]}
    - yunding-jiangsu [2006] «排 气 量 L Displacement | 2.449» → 2.449   | YDY-16GF | 16 | 20 | 28.8 | 4D24G6 | 4 | 87*103 | 2.449 | 10 | 232 | 1700*700*1000 | 580
    - yunding-jiangsu [null] «排 气 量 L Displacement | 2.449» → 2.449   | YDY-16GF | 16 | 20 | 28.8 | 4D24G6 | 4 | 87*103 | 2.449 | 10 | 232 | 1700*700*1000 | 580
 
-## Yuchai 4D24G7 · disp · thắng 2.45 · phiếu {"4.214":1,"2.45":3,"2.449":1} · 14 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
+## Yuchai 4D24G7 · disp · thắng 2.45 · phiếu {"4.214":1,"2.45":3,"2.449":1} · 13 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
    NCC theo giá trị: {"4.214":["bdadl-shanghai"],"2.45":["frs-shenyang","fukangsi-yangzhou","pengpai-yangzhou"],"2.449":["yunding-jiangsu"]}
    - bdadl-shanghai [126] «排量 (L) | 4.214» → 4.214   | BDA-Y22A | 20 | 玉柴国二 | 4D24G7 | 4 | 4.214 | 13 | ≤198 | 1600*650*1140 | 580
    - yunding-jiangsu [2006] «排 气 量 L Displacement | 2.449» → 2.449   | YDY-20GF | 20 | 25 | 36 | 4D24G7 | 4 | 87*103 | 2.449 | 10 | 232 | 1700*700*1000 | 650
    - bdadl-shanghai [null] «排量 (L) | 4.214» → 4.214   | BDA-Y22A | 20 | 玉柴国二 | 4D24G7 | 4 | 4.214 | 13 | ≤198 | 1600*650*1140 | 580
    - yunding-jiangsu [null] «排 气 量 L Displacement | 2.449» → 2.449   | YDY-20GF | 20 | 25 | 36 | 4D24G7 | 4 | 87*103 | 2.449 | 10 | 232 | 1700*700*1000 | 650
 
-## Yuchai 4D24TG0 · disp · thắng 2.45 · phiếu {"2.45":3,"2.449":1} · 14 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
+## Yuchai 4D24TG0 · disp · thắng 2.45 · phiếu {"2.45":3,"2.449":1} · 13 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
    NCC theo giá trị: {"2.45":["frs-shenyang","fukangsi-yangzhou","pengpai-yangzhou"],"2.449":["yunding-jiangsu"]}
    - yunding-jiangsu [2006] «排 气 量 L Displacement | 2.449» → 2.449   | YDY-32GF | 32 | 40 | 57.6 | 4D24TG0 | 4 | 87*103 | 2.449 | 10 | 230 | 1800*750*1100 | 750
    - yunding-jiangsu [null] «排 气 量 L Displacement | 2.449» → 2.449   | YDY-32GF | 32 | 40 | 57.6 | 4D24TG0 | 4 | 87*103 | 2.449 | 10 | 230 | 1800*750*1100 | 750
 
-## Yuchai 4D24TG2 · disp · thắng 2.45 · phiếu {"2.45":3,"2.449":1} · 13 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
+## Yuchai 4D24TG2 · disp · thắng 2.45 · phiếu {"2.45":3,"2.449":1} · 12 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
    NCC theo giá trị: {"2.45":["frs-shenyang","fukangsi-yangzhou","pengpai-yangzhou"],"2.449":["yunding-jiangsu"]}
    - yunding-jiangsu [2006] «排 气 量 L Displacement | 2.449» → 2.449   | YDY-24GF | 24 | 30 | 43.2 | 4D24TG2 | 4 | 87*103 | 2.449 | 10 | 232 | 1700*700*1000 | 650
    - yunding-jiangsu [null] «排 气 量 L Displacement | 2.449» → 2.449   | YDY-24GF | 24 | 30 | 43.2 | 4D24TG2 | 4 | 87*103 | 2.449 | 10 | 232 | 1700*700*1000 | 650
@@ -874,7 +874,7 @@
    - bdadl-shanghai [127] «排量 (L) | 4.6» → 4.6   | BDA-S80 | 80/90 | 上柴动力 | 4HTAA4.3-G34 | 4 | 4.6 | 13 | ≤192 | 2100*960*1450 | 1150
    - bdadl-shanghai [null] «排量 (L) | 4.6» → 4.6   | BDA-S80 | 80/90 | 上柴动力 | 4HTAA4.3-G34 | 4 | 4.6 | 13 | ≤192 | 2100*960*1450 | 1150
 
-## Cummins 6BTA5.9-G2 · disp · thắng 5.9 · phiếu {"5.9":16,"5.88":4} · 170 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 5.9
+## Cummins 6BTA5.9-G2 · disp · thắng 5.9 · phiếu {"5.9":16,"5.88":4} · 169 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 5.9
    NCC theo giá trị: {"5.9":["agestar","aoke-yangzhou","aosif","depco-power","hanyang-weifang","jianghao-genset","jinlongteng-fujian","legapower","mingbang-mbkl","rise-power","tecgen-fujian","victory-generator","waeta-fujian","weiman-fujian","wintpower","yunding-jiangsu"],"8.3":["agestar"],"5.88":["bdadl-shanghai","fukangsi-yangzhou","liangzi-yangzhou","mingbang-mbkl","pengpai-yangzhou"]}
    - agestar [104] «Displacement | 8.3» → 8.3   | GC138(S) | 138 | 110 | 125 | 100 | 6BTA5.9-G2 | 21 | Electrical | 8.3 | ASG274E | 3200*1130*1600 | 2000
    - agestar [118] «Displacement | 8.3» → 8.3   | GC138(S) | 138 | 110 | 125 | 100 | 6BTA5.9-G2 | 21 | Electrical | 8.3 | ASG274E | 3200*1130*1600 | 1900
@@ -892,7 +892,7 @@
    - mingbang-mbkl [null] «Displacement | 5.88L» → 5.88   
    - pengpai-yangzhou [null] «排量 (L) | 5.88» → 5.88   | PPDL-C100 | 100/125 | 东风康明斯 | 6BTA5.9-G2 | 6 | 5.88 | 16 | ≤206 | 2300*850*1400 | 1100
 
-## Cummins 6BTAA5.9-G12 · disp · thắng 5.9 · phiếu {"8.3":1,"5.9":15,"5.88":2} · 154 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 5.9
+## Cummins 6BTAA5.9-G12 · disp · thắng 5.9 · phiếu {"8.3":1,"5.9":15,"5.88":2} · 153 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 5.9
    NCC theo giá trị: {"8.3":["agestar"],"6.7":["aosif"],"5.9":["aosif","depco-power","genlitec","hanyang-weifang","jianghao-genset","jinlongteng-fujian","legapower","mingbang-mbkl","rise-power","tecgen-fujian","victory-generator","waeta-fujian","weiman-fujian","wintpower","yunding-jiangsu"],"5.88":["bdadl-shanghai","pengpai-yangzhou"]}
    - agestar [104] «Displacement (L) | 8.3» → 8.3   | GC-175(S) | 175 | 140 | 160 | 128 | 6BTAA5.9-G12 | 30 | Electrical | 8.3 | ASG274E | 3200*1130*1600 | 2000
    - agestar [118] «Displacement(L) | 8.3» → 8.3   | GC-175 | 175 | 140 | 160 | 128 | 6BTAA5.9-G 12 | 30 | Electrical | 8.3 | ASG274E | 3200*1130*1600 | 1900
@@ -905,7 +905,7 @@
    - bdadl-shanghai [null] «排量 (L) | 5.88» → 5.88   | BDA-C120 | 120/150 | 东风康明斯 | 6BTAA5.9-G12 | 6 | 5.88 | 16 | ≤206 | 2300*850*1450 | 1100
    - pengpai-yangzhou [null] «排量 (L) | 5.88» → 5.88   | PPDL-C120 | 120/150 | 东风康明斯 | 6BTAA5.9-G12 | 6 | 5.88 | 16 | ≤206 | 2300*850*1450 | 1100
 
-## Cummins 6BTAA5.9-G2 · disp · thắng 5.9 · phiếu {"5.9":14,"5.88":4} · 194 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 5.9
+## Cummins 6BTAA5.9-G2 · disp · thắng 5.9 · phiếu {"5.9":14,"5.88":4} · 192 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 5.9
    NCC theo giá trị: {"5.9":["agestar","aoke-yangzhou","aosif","depco-power","hanyang-weifang","jianghao-genset","jinlongteng-fujian","legapower","mingbang-mbkl","rise-power","victory-generator","waeta-fujian","weiman-fujian","wintpower"],"8.3":["agestar"],"5.88":["bdadl-shanghai","fukangsi-yangzhou","liangzi-yangzhou","mingbang-mbkl","pengpai-yangzhou"]}
    - agestar [104] «Displacement | 8.3» → 8.3   | GC151(S) | 151 | 121 | 138 | 110 | 6BT AA5.9-G2 | 24 | Electrical | 8.3 | ASG274F | 3250*1130*1600 | 2150
    - agestar [118] «Displacement | 8.3» → 8.3   | GC151(S) | 151 | 121 | 138 | 110 | 6BT AA5.9-G2 | 24 | Electrical | 8.3 | ASG274F | 3250*1130*1600 | 2000
@@ -922,7 +922,7 @@
    - mingbang-mbkl [null] «Displacement | 5.88L» → 5.88   
    - pengpai-yangzhou [null] «排量 (L) | 5.88» → 5.88   | PPDL-C110 | 110/137 | 东风康明斯 | 6BTAA5.9-G2 | 6 | 5.88 | 16 | ≤208 | 2300*850*1400 | 1200
 
-## Cummins 6CTA8.3-G2 · disp · thắng 8.3 · phiếu {"8.3":20,"5.9":1} · 222 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8.3
+## Cummins 6CTA8.3-G2 · disp · thắng 8.3 · phiếu {"8.3":20,"5.9":1} · 221 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8.3
    NCC theo giá trị: {"13":["agestar"],"8.3":["agestar","aoke-yangzhou","aosif","bdadl-shanghai","depco-power","fukangsi-yangzhou","hanyang-weifang","hosem-power","jinlongteng-fujian","legapower","liangzi-yangzhou","mingbang-mbkl","pengpai-yangzhou","rise-power","sunkings","victory-generator","waeta-fujian","weiman-fujian","wintpower","yunding-jiangsu"],"8.9":["agestar"],"5.9":["jianghao-genset"]}
    - agestar [104] «Displacement | 8.9» → 8.9   | GC186(S) | 186 | 149 | 169 | 135 | 6CTA8.3-G2 | 32 | Electrical | 8.9 | ASG274G | 3300*1150*1650 | 2350
    - agestar [104] «Displacement | 13» → 13   | GC220(S) | 220 | 176 | 200 | 160 | 6CTA8.3-G2 | 40 | Electrical | 13 | ASG274J | 3700*1300*1900 | 2690
@@ -933,7 +933,7 @@
    - agestar [null] «Displacement | 13» → 13   | GC220(S) | 220 | 176 | 200 | 160 | 6CTA8.3-G2 | 40 | Electrical | 13 | ASG274J | 3700*1300*1900 | 2690
    - jianghao-genset [null] «displace - ment (L) | 5.9» → 5.9   | JHK-170GF | 210 | 170 | 6CTA8.3-G2 | 6/L | 102*120 | 5.9 | 16 | 208 | 2390*950*1561 | 2060
 
-## Cummins 6CTAA8.3-G2 · disp · thắng 8.3 · phiếu {"8.3":19} · 172 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8.3
+## Cummins 6CTAA8.3-G2 · disp · thắng 8.3 · phiếu {"8.3":19} · 171 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8.3
    NCC theo giá trị: {"14":["agestar"],"8.9":["agestar"],"8.3":["aoke-yangzhou","aosif","bdadl-shanghai","depco-power","fukangsi-yangzhou","hanyang-weifang","jianghao-genset","jinlongteng-fujian","legapower","liangzi-yangzhou","mingbang-mbkl","pengpai-yangzhou","rise-power","sunkings","victory-generator","waeta-fujian","weiman-fujian","wintpower","yunding-jiangsu"]}
    - agestar [104] «Displacement (L) | 8.9» → 8.9   | GC-215(S) | 215 | 172 | 200 | 160 | 6CT AA8.3-G2 | 45 | Electrical | 8.9 | ASG274G | 3300*1150*1650 | 2350
    - agestar [104] «Displacement | 14» → 14   | GC248(S) | 248 | 198 | 225 | 180 | 6CTAA8.3-G2 | 45 | Electrical | 14 | ASG274K | 3800*1300*1950 | 3000
@@ -996,7 +996,7 @@
    - depco-power [2138] «Displacement(L) | 25.18» → 25.18   | Governor | Electrical | Displacement(L) | 25.18
    - depco-power [null] «Displacement(L) | 25.18» → 25.18   
 
-## Cummins 6LTAA8.9-G2 · disp · thắng 8.9 · phiếu {"8.9":20,"8.3":1} · 192 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8.9
+## Cummins 6LTAA8.9-G2 · disp · thắng 8.9 · phiếu {"8.9":20,"8.3":1} · 191 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8.9
    NCC theo giá trị: {"14":["agestar"],"8.9":["agestar","aosif","bdadl-shanghai","depco-power","fukangsi-yangzhou","hanyang-weifang","hosem-power","jianghao-genset","jinlongteng-fujian","jiuan-power","legapower","liangzi-yangzhou","mingbang-mbkl","pengpai-yangzhou","rise-power","victory-generator","waeta-fujian","weiman-fujian","wintpower","yunding-jiangsu"],"8.3":["depco-power","sunkings","wintpower"]}
    - agestar [104] «Displacement | 14» → 14   | GC309(S) | 309 | 248 | 281 | 225 | 6LT AA8.9-G2 | 62 | Electrical | 14 | ASG274K | 4300*1430*2160 | 3000
    - agestar [118] «Displacement | 14» → 14   | GC309(S) | 309 | 248 | 281 | 225 | 6LT AA8.9-G2 | 62 | Electrical | 14 | ASG274K | 4300*1430*2160 | 2860
@@ -1008,12 +1008,12 @@
    - sunkings [null] «Displacement | 8.3» → 8.3   | SCF-275 | 200 | 250 | 220 | 275 | 6LTAA8.9-G2 | ≤210 | 6 | 8.3 | 114*135
    - wintpower [null] «Displacement ( L ) | 8.3» → 8.3   | WT-C275 | 275/220 | 250/200 | 53 | 6LTAA8.9G2 | 6L | Elec. | 8.3 | 3700*1090*2080 | 2980 | 2580*1020*1670 | 2030
 
-## Cummins 6LTAA8.9-G3 · disp · thắng 8.9 · phiếu {"8.9":16} · 114 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8.9
+## Cummins 6LTAA8.9-G3 · disp · thắng 8.9 · phiếu {"8.9":16} · 113 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 8.9
    NCC theo giá trị: {"8.9":["aosif","bdadl-shanghai","depco-power","fukangsi-yangzhou","hanyang-weifang","jianghao-genset","jinlongteng-fujian","legapower","mingbang-mbkl","pengpai-yangzhou","rise-power","victory-generator","waeta-fujian","weiman-fujian","wintpower","yunding-jiangsu"],"9.9":["bdadl-shanghai"]}
    - bdadl-shanghai [131] «排量 (L) | 9.9» → 9.9   | BDA-C200 | 200/220 | 东风康明斯 | 6LTAA8.9-G3 | 6 | 9.9 | 28 | ≤205 | 2600*1100*1700 | 1800
    - bdadl-shanghai [null] «排量 (L) | 9.9» → 9.9   | BDA-C200 | 200/220 | 东风康明斯 | 6LTAA8.9-G3 | 6 | 9.9 | 28 | ≤205 | 2600*1100*1700 | 1800
 
-## Cummins 6LTAA9.5-G3 · disp · thắng 9.5 · phiếu {"14":1,"9.5":10,"8.9":1} · 95 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 9.5
+## Cummins 6LTAA9.5-G3 · disp · thắng 9.5 · phiếu {"14":1,"9.5":10,"8.9":1} · 94 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 9.5
    NCC theo giá trị: {"14":["depco-power"],"9.5":["aosif","bdadl-shanghai","fukangsi-yangzhou","hanyang-weifang","jinlongteng-fujian","liangzi-yangzhou","pengpai-yangzhou","victory-generator","waeta-fujian","yunding-jiangsu"],"8.9":["mingbang-mbkl"]}
    - depco-power [2512] «Displacement(L) | 14» → 14   | Governor | Mechanical | Displacement(L) | 14
    - mingbang-mbkl [148] «Displacement | 8.90L» → 8.9   | Displacement | 8.90L
@@ -1045,13 +1045,13 @@
    - jlmech-wuhan [102] «Displacement (mm) | 35.1» → KHÔNG SO ĐƯỢC   | JL-1000GF | 1000 | 1250 | 1800 | 6WTAA35-G311 | 6 | 186*215 | 35.1 | 75 | 195 | 4650*2100*2600 | 9100
    - jlmech-wuhan [null] «Displacement (mm) | 35.1» → KHÔNG SO ĐƯỢC   | JL-1000GF | 1000 | 1250 | 1800 | 6WTAA35-G311 | 6 | 186*215 | 35.1 | 75 | 195 | 4650*2100*2600 | 9100
 
-## Cummins 6ZTAA13-G2 · disp · thắng 13 · phiếu {"13":15,"14":1} · 110 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 13
+## Cummins 6ZTAA13-G2 · disp · thắng 13 · phiếu {"13":15,"14":1} · 109 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 13
    NCC theo giá trị: {"13":["aosif","bdadl-shanghai","depco-power","fukangsi-yangzhou","hanyang-weifang","jinlongteng-fujian","jiuan-power","legapower","liangzi-yangzhou","pengpai-yangzhou","victory-generator","waeta-fujian","weiman-fujian","wintpower","yunding-jiangsu"],"14":["agestar"]}
    - agestar [104] «Displacement (L) | 14» → 14   | GC-480(S) | 480 | 385 | 437 | 350 | 6ZTAA13-G2 | 98 | Electrical | 14 | ASG274K | 3800*1300*1950 | 3000
    - agestar [118] «Displacement(L) | 14» → 14   | GC-480 | 480 | 385 | 437 | 350 | 6ZTAA13-G2 | 98 | Electrical | 14 | ASG274K | 3800*1300*1950 | 2860
    - agestar [null] «Displacement (L) | 14» → 14   | GC-480(S) | 480 | 385 | 437 | 350 | 6ZTAA13-G2 | 98 | Electrical | 14 | ASG274K | 3800*1300*1950 | 3000
 
-## Cummins 6ZTAA13-G4 · disp · thắng 13 · phiếu {"13":12,"14":1,"19":1,"8.3":1} · 88 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 13
+## Cummins 6ZTAA13-G4 · disp · thắng 13 · phiếu {"13":12,"14":1,"19":1,"8.3":1} · 87 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 13
    NCC theo giá trị: {"13":["aosif","bdadl-shanghai","fukangsi-yangzhou","hanyang-weifang","jianghao-genset","jinlongteng-fujian","legapower","pengpai-yangzhou","victory-generator","waeta-fujian","wintpower","yunding-jiangsu"],"14":["agestar"],"19":["sunkings"],"8.3":["mingbang-mbkl"]}
    - agestar [104] «Displacement (L) | 14» → 14   | GC-495(S) | 495 | 396 | 450 | 360 | 6ZTAA13-G4 | 100 | Electrical | 14 | ASG274K | 4300*1430*2160 | 3000
    - agestar [118] «Displacement(L) | 14» → 14   | GC-495 | 495 | 396 | 450 | 360 | 6ZTAA13-G4 | 100 | Electrical | 14 | ASG274K | 4300*1430*2160 | 2860
@@ -1182,7 +1182,7 @@
    - aosif [null] «Displacement | 18.9» → 18.9   | AC450 | 412/330 | 450/360 | NTAA855-G7A | 98 | 6L | 18.9 |
    - mingbang-mbkl [null] «Displacement | 18.9» → 18.9   | 34 | MB-C336 | 420 | 336 | 462 | 370 | NTAA855-G7A | 6 | 18.9 | 159*159 | 200.7
 
-## Cummins QSB3.9-G3 · disp · thắng 3.9 · phiếu {"3.9":6,"3.92":1} · 35 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 3.9
+## Cummins QSB3.9-G3 · disp · thắng 3.9 · phiếu {"3.9":6,"3.92":1} · 34 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 3.9
    NCC theo giá trị: {"3.9":["bdadl-shanghai","fukangsi-yangzhou","hanyang-weifang","pengpai-yangzhou","victory-generator","yunding-jiangsu"],"3.92":["liangzi-yangzhou"]}
    - liangzi-yangzhou [123] «排量(L) | 3.92» → 3.92   | LZ-C75 | 75/93.75 | 东风康明斯 | QSB3.9-G3 | 6 | 3.92 | 11 | ≤192 | 1800*800*1300 | 800 | 详细参数
    - liangzi-yangzhou [null] «排量(L) | 3.92» → 3.92   | LZ-C75 | 75/93.75 | 东风康明斯 | QSB3.9-G3 | 6 | 3.92 | 11 | ≤192 | 1800*800*1300 | 800 | 详细参数
@@ -1192,7 +1192,7 @@
    - liangzi-yangzhou [122] «排量(L) | 5.88» → 5.88   | LZ-C90 | 90/112.5 | 东风康明斯 | QSB59-G2 | 6 | 5.88 | 16 | ≤195 | 2100*850*1450 | 950 | 详细参数
    - liangzi-yangzhou [null] «排量(L) | 5.88» → 5.88   | LZ-C90 | 90/112.5 | 东风康明斯 | QSB59-G2 | 6 | 5.88 | 16 | ≤195 | 2100*850*1450 | 950 | 详细参数
 
-## Cummins QSB5.9-G3 · disp · thắng 5.9 · phiếu {"5.9":6,"5.88":1} · 37 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 5.9
+## Cummins QSB5.9-G3 · disp · thắng 5.9 · phiếu {"5.9":6,"5.88":1} · 36 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 5.9
    NCC theo giá trị: {"5.88":["bdadl-shanghai","liangzi-yangzhou","pengpai-yangzhou"],"5.9":["bdadl-shanghai","fukangsi-yangzhou","hanyang-weifang","pengpai-yangzhou","victory-generator","yunding-jiangsu"]}
    - bdadl-shanghai [123] «排量 (L) | 5.88» → 5.88   | BDA-C100 | 100/125 | 东风康明斯 | QSB5.9-G3（国三） | 6 | 5.88 | 16 | ≤206 | 2300*850*1400 | 1100
    - liangzi-yangzhou [121] «排量(L) | 5.88» → 5.88   | LZ-C110 | 110/137.5 | 东风康明斯 | QSB5.9-G3 | 6 | 5.88 | 16 | ≤195 | 2300*850*1450 | 1100 | 详细参数
@@ -1213,7 +1213,7 @@
    - aosif [null] «Displacement | 18.9» → 18.9   | AC500-I | 450/360 | 500/400 | QSNT-G4X | 80 | 6L | 18.9 |
    - liangzi-yangzhou [null] «排量(L) | 19» → 19   | LZ-C400 | 400/500 | 重庆康明斯 | QSNT-G4X | 6 | 19 | 39 | ≤195 | 3400*1250*1950 | 3500 | 详细参数
 
-## Cummins QSZ13-G3 · disp · thắng 13 · phiếu {"13":16,"14":1,"19.6":1} · 131 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 13
+## Cummins QSZ13-G3 · disp · thắng 13 · phiếu {"13":16,"14":1,"19.6":1} · 130 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 13
    NCC theo giá trị: {"13":["aosif","bdadl-shanghai","depco-power","fukangsi-yangzhou","hanyang-weifang","jianghao-genset","jinlongteng-fujian","liangzi-yangzhou","mecca-power","mingbang-mbkl","pengpai-yangzhou","victory-generator","waeta-fujian","weiman-fujian","wintpower","yunding-jiangsu"],"14":["rise-power"],"19.6":["sunkings"]}
    - rise-power [113] «Displacement (L) | 14» → 14   | RCM400-1 | 500 | 400 | 550 | 440 | QSZ13-G3 | 6L | 14 | < 96.5 | 45 | 3250*1350*2100 | 3750 | 5000*1980*2370 | 6510
    - sunkings [117] «Displacement(L) | 19.6» → 19.6   | Starter | electric | Displacement(L) | 19.6
@@ -1567,7 +1567,7 @@
    - aosif [123] «Displacement | 15.9» → 15.9   | AW575 | 500/400 | 575/460 | WP13D510E311 | 126.1 | 6L | 15.9 |
    - aosif [null] «Displacement | 15.9» → 15.9   | AW575 | 500/400 | 575/460 | WP13D510E311 | 126.1 | 6L | 15.9 |
 
-## Weichai WP2.3D40E200 · disp · thắng 2.3 · phiếu {"2.3":5,"2.5":1,"2.29":1,"2.289":1} · 40 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 2.3
+## Weichai WP2.3D40E200 · disp · thắng 2.3 · phiếu {"2.3":5,"2.5":1,"2.29":1,"2.289":1} · 39 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 2.3
    NCC theo giá trị: {"2.3":["aosif","bdadl-shanghai","depco-power","hanyang-weifang","liangzi-yangzhou"],"2.5":["jet-power"],"2.29":["waeta-fujian"],"2.289":["yunding-jiangsu"]}
    - jet-power [135] «Displacement | 2.5» → 2.5   | WP-41 | 41 | 33 | 37.5 | 30 | WP2.3D40E200 | 4L | Mechanical | 105×125 | 2.5 | 7.5 | JET184H
    - waeta-fujian [107] «Displacement(L) | 2.29» → 2.29   | WTA-W41 | 41 | 33 | 38 | 30 | WP2.3D40E200 | 4 L | 2.29 | Wechai Series.xlsx
@@ -1581,7 +1581,7 @@
    - waeta-fujian [107] «Displacement(L) | 2.29» → 2.29   | WTA-W62 | 62 | 50 | 56 | 45 | WP2.3D58E201 | 4 L | 2.29 | Wechai Series.xlsx
    - waeta-fujian [null] «Displacement(L) | 2.29» → 2.29   | WTA-W62 | 62 | 50 | 56 | 45 | WP2.3D58E201 | 4 L | 2.29 | Wechai Series.xlsx
 
-## Weichai WP4.1D66E200 · disp · thắng 4.087 · phiếu {"4.1":1,"4.8":1,"4.087":5,"4.5":1,"4.08":1} · 49 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 4.087
+## Weichai WP4.1D66E200 · disp · thắng 4.087 · phiếu {"4.1":1,"4.8":1,"4.087":5,"4.5":1,"4.08":1} · 48 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 4.087
    NCC theo giá trị: {"4.1":["aosif"],"4.8":["bdadl-shanghai"],"4.087":["depco-power","hanyang-weifang","huali-shandong","jlmech-wuhan","yunding-jiangsu"],"4.5":["jet-power"],"4.08":["waeta-fujian"]}
    - aosif [124] «Displacement | 4.1» → 4.1   | AW69 | 63/50 | 69/55 | WP4.1D66E200 | 15.2 | 4L | 4.1 |
    - bdadl-shanghai [128] «排量 (L) | 4.8» → 4.8   | BDA-W50 | 50/55 | 潍柴动力 | WP4.1D66E200 | 4 | 4.8 | 7.25 | ≤218 | 1900*700*1250 | 800
@@ -1592,7 +1592,7 @@
    - jet-power [null] «Displacement | 4.5» → 4.5   | WP-55 | 55 | 44 | 50 | 40 | WP4.1D66E200 | 4L | Mechanical | 105×130 | 4.5 | 10 | JET224D
    - waeta-fujian [null] «Displacement(L) | 4.08» → 4.08   | WTA-W69 | 69 | 55 | 63 | 50 | WP4.1D66E200 | 4 L | 4.08 | Wechai Series.xlsx
 
-## Weichai WP4.1D80E200 · disp · thắng 4.087 · phiếu {"4.1":1,"4.8":1,"4.087":4,"4.5":1,"4.088":1,"4.08":1} · 41 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 4.087
+## Weichai WP4.1D80E200 · disp · thắng 4.087 · phiếu {"4.1":1,"4.8":1,"4.087":4,"4.5":1,"4.088":1,"4.08":1} · 40 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 4.087
    NCC theo giá trị: {"4.1":["aosif"],"4.8":["bdadl-shanghai"],"4.087":["depco-power","hanyang-weifang","jlmech-wuhan","yunding-jiangsu"],"4.5":["jet-power"],"4.088":["jiuan-power"],"4.08":["waeta-fujian"]}
    - aosif [124] «Displacement | 4.1» → 4.1   | AW88 | 80/64 | 88/70 | WP4.1D80E200 | 18.4 | 4L | 4.1 |
    - bdadl-shanghai [128] «排量 (L) | 4.8» → 4.8   | BDA-W64 | 64/70 | 潍柴动力 | WP4.1D80E200 | 6 | 4.8 | 10 | ≤215 | 2300*700*1200 | 1150
@@ -1664,7 +1664,7 @@
    - victory-generator [103] «Displacement (L) | 3.857» → 3.857   | V45YD | 50 | 40 | 50 | 45 | 56.25 | Y4105ZLD | 4 | Natural | Direct injection | 3.857 | 102*118 | ≤5 | ≤240 | 2250*850*1280
    - waeta-fujian [109] «Displacement(L) | 4.08» → 4.08   | WTA-YD55 | 55 | 44 | 50 | 40 | Y4105ZLD | 4 L | 4.08 | Yangdong Series.xlsx
 
-## Yuchai YC12VC1680-D31 · disp · thắng 79.17 · phiếu {"79.17":3} · 1 NCC không so được · 20 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
+## Yuchai YC12VC1680-D31 · disp · thắng 79.17 · phiếu {"79.17":3} · 1 NCC không so được · 19 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
    NCC theo giá trị: {"79.17":["fukangsi-yangzhou","liangzi-yangzhou","pengpai-yangzhou"],"X":["jlmech-wuhan"]}
    - jlmech-wuhan [104] «Displacement (mm) | 79.17» → KHÔNG SO ĐƯỢC   | JL-1100GF | 1100 | 1375 | 1980 | YC12VC1680-D31 | 12 | 200*210 | 79.17 | 280 | 210 | 5400*2150*2600 | 9900
    - jlmech-wuhan [null] «Displacement (mm) | 79.17» → KHÔNG SO ĐƯỢC   | JL-1100GF | 1100 | 1375 | 1980 | YC12VC1680-D31 | 12 | 200*210 | 79.17 | 280 | 210 | 5400*2150*2600 | 9900
@@ -1684,27 +1684,27 @@
    - mingbang-mbkl [123] «Displacement | 79.2» → 79.2   | 29 | MB-Y1200 | 1500 | 1200 | 1650 | 1320 | YC12VC2070L-D20 | 12 | 79.2 | 200*210 | 195 | /
    - mingbang-mbkl [null] «Displacement | 79.2» → 79.2   | 29 | MB-Y1200 | 1500 | 1200 | 1650 | 1320 | YC12VC2070L-D20 | 12 | 79.2 | 200*210 | 195 | /
 
-## Yuchai YC12VC2270-D31 · disp · thắng 79.17 · phiếu {"79.17":7} · 1 NCC không so được · 29 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 79.17
+## Yuchai YC12VC2270-D31 · disp · thắng 79.17 · phiếu {"79.17":7} · 1 NCC không so được · 28 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 79.17
    NCC theo giá trị: {"79.17":["fdk-energy","frs-shenyang","fukangsi-yangzhou","hanyang-weifang","liangzi-yangzhou","pengpai-yangzhou","yunding-jiangsu"],"X":["jlmech-wuhan"]}
    - jlmech-wuhan [104] «Displacement (mm) | 79.17» → KHÔNG SO ĐƯỢC   | JL-1500GF | 1500 | 1875 | 2700 | YC12VC2270-D31 | 12 | 200*210 | 79.17 | 280 | 210 | 5600*2300*2600 | 12000
    - jlmech-wuhan [null] «Displacement (mm) | 79.17» → KHÔNG SO ĐƯỢC   | JL-1500GF | 1500 | 1875 | 2700 | YC12VC2270-D31 | 12 | 200*210 | 79.17 | 280 | 210 | 5600*2300*2600 | 12000
 
-## Yuchai YC12VC2700-D31 · disp · thắng 79.17 · phiếu {"79.17":8} · 1 NCC không so được · 35 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 79.17
+## Yuchai YC12VC2700-D31 · disp · thắng 79.17 · phiếu {"79.17":8} · 1 NCC không so được · 34 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 79.17
    NCC theo giá trị: {"79.17":["fdk-energy","frs-shenyang","fukangsi-yangzhou","hanyang-weifang","liangzi-yangzhou","pengpai-yangzhou","tellhow-power","yunding-jiangsu"],"X":["jlmech-wuhan"]}
    - jlmech-wuhan [104] «Displacement (mm) | 79.17» → KHÔNG SO ĐƯỢC   | JL-1800GF | 1800 | 2250 | 3240 | YC12VC2700-D31 | 12 | 200*210 | 79.17 | 280 | 210 | 5650*2350*2600 | 13200
    - jlmech-wuhan [null] «Displacement (mm) | 79.17» → KHÔNG SO ĐƯỢC   | JL-1800GF | 1800 | 2250 | 3240 | YC12VC2700-D31 | 12 | 200*210 | 79.17 | 280 | 210 | 5650*2350*2600 | 13200
 
-## Yuchai YC16VC3000-D31 · disp · thắng 105.56 · phiếu {"105.56":4} · 1 NCC không so được · 34 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
+## Yuchai YC16VC3000-D31 · disp · thắng 105.56 · phiếu {"105.56":4} · 1 NCC không so được · 33 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
    NCC theo giá trị: {"105.56":["fdk-energy","fukangsi-yangzhou","liangzi-yangzhou","pengpai-yangzhou"],"X":["jlmech-wuhan"]}
    - jlmech-wuhan [104] «Displacement (mm) | 105.6» → KHÔNG SO ĐƯỢC   | JL-2000GF | 2000 | 2500 | 3600 | YC16VC3000-D31 | 16 | 200*210 | 105.6 | 430 | 196 | 7350*2670*2950 | 17500
    - jlmech-wuhan [null] «Displacement (mm) | 105.6» → KHÔNG SO ĐƯỢC   | JL-2000GF | 2000 | 2500 | 3600 | YC16VC3000-D31 | 16 | 200*210 | 105.6 | 430 | 196 | 7350*2670*2950 | 17500
 
-## Yuchai YC16VC3300-D31 · disp · thắng 105.56 · phiếu {"105.56":4} · 1 NCC không so được · 42 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
+## Yuchai YC16VC3300-D31 · disp · thắng 105.56 · phiếu {"105.56":4} · 1 NCC không so được · 41 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
    NCC theo giá trị: {"105.56":["fdk-energy","fukangsi-yangzhou","liangzi-yangzhou","pengpai-yangzhou"],"X":["jlmech-wuhan"]}
    - jlmech-wuhan [104] «Displacement (mm) | 105.6» → KHÔNG SO ĐƯỢC   | JL-2200GF | 2200 | 2750 | 3960 | YC16VC3300-D31 | 16 | 200*210 | 105.6 | 430 | 196 | 7350*2670*2950 | 17580
    - jlmech-wuhan [null] «Displacement (mm) | 105.6» → KHÔNG SO ĐƯỢC   | JL-2200GF | 2200 | 2750 | 3960 | YC16VC3300-D31 | 16 | 200*210 | 105.6 | 430 | 196 | 7350*2670*2950 | 17580
 
-## Yuchai YC16VC3600-D31 · disp · thắng 105.56 · phiếu {"105.56":4} · 1 NCC không so được · 41 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
+## Yuchai YC16VC3600-D31 · disp · thắng 105.56 · phiếu {"105.56":4} · 1 NCC không so được · 40 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
    NCC theo giá trị: {"105.56":["fdk-energy","fukangsi-yangzhou","liangzi-yangzhou","pengpai-yangzhou"],"X":["jlmech-wuhan"]}
    - jlmech-wuhan [104] «Displacement (mm) | 105.6» → KHÔNG SO ĐƯỢC   | JL-2400GF | 2400 | 3000 | 4320 | YC16VC3600-D31 | 16 | 200*210 | 105.6 | 430 | 196 | 7400*3100*3300 | 19200
    - jlmech-wuhan [null] «Displacement (mm) | 105.6» → KHÔNG SO ĐƯỢC   | JL-2400GF | 2400 | 3000 | 4320 | YC16VC3600-D31 | 16 | 200*210 | 105.6 | 430 | 196 | 7400*3100*3300 | 19200
@@ -1719,7 +1719,7 @@
    - hanyang-weifang [107] «Displacement (L) | 4.84» → 4.84   | HY-100 | YC4D155-D31 | 103 | 113 | 4 | 108*115 | 4.84 | 210 | 2300*850*1500 | 1150 | T3
    - hanyang-weifang [null] «Displacement (L) | 4.84» → 4.84   | HY-100 | YC4D155-D31 | 103 | 113 | 4 | 108*115 | 4.84 | 210 | 2300*850*1500 | 1150 | T3
 
-## Yuchai YC4D60-D21 · disp · thắng 4.214 · phiếu {"4.214":6,"4.2":1,"4.21":2} · 50 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
+## Yuchai YC4D60-D21 · disp · thắng 4.214 · phiếu {"4.214":6,"4.2":1,"4.21":2} · 49 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
    NCC theo giá trị: {"4.214":["aoke-yangzhou","frs-shenyang","fukangsi-yangzhou","huatai-yangzhou","liangzi-yangzhou","pengpai-yangzhou"],"4.2":["mingbang-mbkl"],"4.21":["sanq-power","waeta-fujian"]}
    - mingbang-mbkl [123] «Displacement | 4.2» → 4.2   | 4 | MB-Y40 | 50 | 40 | 55 | 44 | YC4D60-D21 | 4 | 4.2 | 108*115 | 215 | 2400×1000×1530
    - sanq-power [122] «排量 | 4.21» → 4.21   | SQY50 | 45/50 | 36/40 | 72 | YC4D60-D21 | LTG-40 | 4 | 108 | 115 | 4.21 | ≤205 | 920 | 1800*750*1200
@@ -1728,14 +1728,14 @@
    - sanq-power [null] «排量 | 4.21» → 4.21   | SQY50 | 45/50 | 36/40 | 72 | YC4D60-D21 | LTG-40 | 4 | 108 | 115 | 4.21 | ≤205 | 920 | 1800*750*1200
    - waeta-fujian [null] «Displacement(L) | 4.21» → 4.21   | WTA-YC41 | 41 | 33 | 38 | 30 | YC4D60-D21 | 4 L | 4.21 | Yuchai Series.xlsx
 
-## Yuchai YC4D85Z-D20 · disp · thắng 4.214 · phiếu {"4.214":5,"4.2":1,"4.21":1} · 22 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 4.214
+## Yuchai YC4D85Z-D20 · disp · thắng 4.214 · phiếu {"4.214":5,"4.2":1,"4.21":1} · 21 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 4.214
    NCC theo giá trị: {"4.214":["aoke-yangzhou","fukangsi-yangzhou","huatai-yangzhou","liangzi-yangzhou","pengpai-yangzhou"],"4.2":["mingbang-mbkl"],"4.21":["sanq-power"]}
    - mingbang-mbkl [123] «Displacement | 4.2» → 4.2   | 5 | MB-Y50 | 62.5 | 50 | 68.75 | 55 | YC4D85Z-D20 | 4 | 4.2 | 108*115 | 215 | 2400×1000×1530
    - sanq-power [122] «排量 | 4.21» → 4.21   | SQY62 | 56/62.5 | 45/50 | 90 | YC4D85Z-D20 | LTG-50 | 4 | 108 | 115 | 4.21 | ≤200 | 950 | 1800*750*1200
    - mingbang-mbkl [null] «Displacement | 4.2» → 4.2   | 5 | MB-Y50 | 62.5 | 50 | 68.75 | 55 | YC4D85Z-D20 | 4 | 4.2 | 108*115 | 215 | 2400×1000×1530
    - sanq-power [null] «排量 | 4.21» → 4.21   | SQY62 | 56/62.5 | 45/50 | 90 | YC4D85Z-D20 | LTG-50 | 4 | 108 | 115 | 4.21 | ≤200 | 950 | 1800*750*1200
 
-## Yuchai YC4D90Z-D21 · disp · thắng 4.214 · phiếu {"4.214":4,"4.2":1,"4.21":1} · 30 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
+## Yuchai YC4D90Z-D21 · disp · thắng 4.214 · phiếu {"4.214":4,"4.2":1,"4.21":1} · 29 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
    NCC theo giá trị: {"4.215":["aoke-yangzhou"],"4.214":["aoke-yangzhou","frs-shenyang","fukangsi-yangzhou","pengpai-yangzhou"],"4.2":["mingbang-mbkl"],"4.21":["waeta-fujian"]}
    - aoke-yangzhou [146] «排量(L) | 4.215» → 4.215   | AOKE-Y55 | 50KW | 55KW | 玉柴 | YC4D90Z-D21 | 4 | 4.215 | 9-11 | 220 | 1850*650*1400 | 1000 | | 详细参数
    - mingbang-mbkl [123] «Displacement | 4.2» → 4.2   | 6 | MB-Y60 | 75 | 60 | 82.5 | 66 | YC4D90Z-D21 | 4 | 4.2 | 108*115 | 215 | 3000×1200×1740
@@ -1744,14 +1744,14 @@
    - mingbang-mbkl [null] «Displacement | 4.2» → 4.2   | 6 | MB-Y60 | 75 | 60 | 82.5 | 66 | YC4D90Z-D21 | 4 | 4.2 | 108*115 | 215 | 3000×1200×1740
    - waeta-fujian [null] «Displacement(L) | 4.21» → 4.21   | WTA-YC69 | 69 | 55 | 63 | 50 | YC4D90Z-D21 | 4 L | 4.21 | Yuchai Series.xlsx
 
-## Yuchai YC6A205-D30 · disp · thắng 7.25 · phiếu {"7.255":2,"7.25":6} · 37 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
+## Yuchai YC6A205-D30 · disp · thắng 7.25 · phiếu {"7.255":2,"7.25":6} · 36 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
    NCC theo giá trị: {"7.255":["fdk-energy","tellhow-power"],"7.25":["frs-shenyang","fukangsi-yangzhou","hanyang-weifang","liangzi-yangzhou","pengpai-yangzhou","waeta-fujian"]}
    - fdk-energy [1143] «Displacement | 7.255L» → 7.255   | Displacement | 7.255L
    - tellhow-power [130] «Displacement | 7.255» → 7.255   | THLY120 | 120 | 132 | 2488×1025×1505 | 1425 | YC6A205-D30 | 6/L | 7.255 | 214 | 24 | 63
    - fdk-energy [null] «Displacement | 7.255L» → 7.255   
    - tellhow-power [null] «Displacement | 7.255» → 7.255   | THLY120 | 120 | 132 | 2488×1025×1505 | 1425 | YC6A205-D30 | 6/L | 7.255 | 214 | 24 | 63
 
-## Yuchai YC6A230-D30 · disp · thắng 7.25 · phiếu {"7.25":6,"7.255":1} · 33 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 7.25
+## Yuchai YC6A230-D30 · disp · thắng 7.25 · phiếu {"7.25":6,"7.255":1} · 32 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 7.25
    NCC theo giá trị: {"7.25":["bdadl-shanghai","frs-shenyang","hanyang-weifang","liangzi-yangzhou","pengpai-yangzhou","waeta-fujian"],"7.255":["tellhow-power"]}
    - tellhow-power [130] «Displacement | 7.255» → 7.255   | THLY140 | 140 | 150 | 2437×970×1514 | 1550 | YC6A230-D30 | 6/L | 7.255 | 214 | 24 | 68
    - tellhow-power [null] «Displacement | 7.255» → 7.255   | THLY140 | 140 | 150 | 2437×970×1514 | 1550 | YC6A230-D30 | 6/L | 7.255 | 214 | 24 | 68
@@ -1761,7 +1761,7 @@
    - liangzi-yangzhou [121] «排量(L) | 6.871» → 6.871   | LZ- Y100 | 100/125 | 广西玉柴 | YC6B155L-D20 | 6 | 6.871 | 17 | ≤198 | 2400*850*1500 | 1300 | 详细参数
    - liangzi-yangzhou [null] «排量(L) | 6.871» → 6.871   | LZ- Y100 | 100/125 | 广西玉柴 | YC6B155L-D20 | 6 | 6.871 | 17 | ≤198 | 2400*850*1500 | 1300 | 详细参数
 
-## Yuchai YC6C1020L-D20 · disp · thắng 39.58 · phiếu {"39.584":1,"39.85":1,"39.58":4,"39.6":1} · 24 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
+## Yuchai YC6C1020L-D20 · disp · thắng 39.58 · phiếu {"39.584":1,"39.85":1,"39.58":4,"39.6":1} · 23 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
    NCC theo giá trị: {"39.584":["aoke-yangzhou"],"39.85":["bdadl-shanghai","pengpai-yangzhou"],"39.58":["fukangsi-yangzhou","huatai-yangzhou","pengpai-yangzhou","sanq-power"],"39.6":["mingbang-mbkl"]}
    - aoke-yangzhou [118] «排量(L) | 39.584» → 39.584   | AOKE-Y700 | 600KW | 700KW | 玉柴 | YC6C1020L-D20 | 6 | 39.584 | 150-180 | 220 | 4700*1500*2050 | 7500 | | 详细参数
    - bdadl-shanghai [110] «排量 (L) | 39.85» → 39.85   | BDA-Y650 | 650/812.5 | 玉柴机器股份 | YC6C1020L-D20 | 6 | 39.85 | 180 | ≤205 | 4700*1800*2100 | 5500
@@ -1772,14 +1772,14 @@
    - mingbang-mbkl [null] «Displacement | 39.6» → 39.6   | 23 | MB-Y650 | 812.5 | 650 | 893.75 | 715 | YC6C1020L-D20 | 6 | 39.6 | 200*210 | 195 | 6000×2300×2930
    - pengpai-yangzhou [null] «排量 (L) | 39.85» → 39.85   | PPDL-Y650 | 650/812.5 | 玉柴机器股份 | YC6C1020L-D20 | 6 | 39.85 | 180 | ≤205 | 4700*1800*2100 | 5500
 
-## Yuchai YC6C1070-D31 · disp · thắng 39.58 · phiếu {"39.58":5} · 1 NCC không so được · 32 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
+## Yuchai YC6C1070-D31 · disp · thắng 39.58 · phiếu {"39.58":5} · 1 NCC không so được · 31 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
    NCC theo giá trị: {"39.58":["frs-shenyang","fukangsi-yangzhou","hanyang-weifang","liangzi-yangzhou","pengpai-yangzhou"],"X":["jlmech-wuhan"],"39.584":["liangzi-yangzhou"]}
    - jlmech-wuhan [104] «Displacement (mm) | 39.58» → KHÔNG SO ĐƯỢC   | JL-700GF | 700 | 875 | 1260 | YC6C1070-D31 | 6 | 200*210 | 39.58 | 180 | 220 | 4200*1650*2100 | 5800
    - liangzi-yangzhou [108] «排量(L) | 39.584» → 39.584   | LZ- Y700 | 700/875 | 广西玉柴 | YC6C1070-D31 | 6 | 39.584 | 180 | ≤195 | 4700*1800*2100 | 7200 | 详细参数
    - jlmech-wuhan [null] «Displacement (mm) | 39.58» → KHÔNG SO ĐƯỢC   | JL-700GF | 700 | 875 | 1260 | YC6C1070-D31 | 6 | 200*210 | 39.58 | 180 | 220 | 4200*1650*2100 | 5800
    - liangzi-yangzhou [null] «排量(L) | 39.584» → 39.584   | LZ- Y700 | 700/875 | 广西玉柴 | YC6C1070-D31 | 6 | 39.584 | 180 | ≤195 | 4700*1800*2100 | 7200 | 详细参数
 
-## Yuchai YC6C1070L-D20 · disp · thắng 39.58 · phiếu {"39.85":1,"39.58":4,"39.6":1} · 21 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
+## Yuchai YC6C1070L-D20 · disp · thắng 39.58 · phiếu {"39.85":1,"39.58":4,"39.6":1} · 20 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
    NCC theo giá trị: {"39.85":["bdadl-shanghai","pengpai-yangzhou"],"39.58":["fukangsi-yangzhou","huatai-yangzhou","pengpai-yangzhou","sanq-power"],"39.6":["mingbang-mbkl"]}
    - bdadl-shanghai [109] «排量 (L) | 39.85» → 39.85   | BDA-Y700 | 700/875 | 玉柴机器股份 | YC6C1070L-D20 | 6 | 39.85 | 180 | ≤205 | 4700*1800*2100 | 5500
    - mingbang-mbkl [123] «Displacement | 39.6» → 39.6   | 24 | MB-Y700 | 875 | 700 | 962.5 | 770 | YC6C1070L-D20 | 6 | 39.6 | 200*210 | 195 | 6000×2300×2930
@@ -1788,17 +1788,17 @@
    - mingbang-mbkl [null] «Displacement | 39.6» → 39.6   | 24 | MB-Y700 | 875 | 700 | 962.5 | 770 | YC6C1070L-D20 | 6 | 39.6 | 200*210 | 195 | 6000×2300×2930
    - pengpai-yangzhou [null] «排量 (L) | 39.85» → 39.85   | PPDL-Y700 | 700/875 | 玉柴机器股份 | YC6C1070L-D20 | 6 | 39.85 | 180 | ≤205 | 4700*1800*2100 | 5500
 
-## Yuchai YC6C1220-D31 · disp · thắng 39.58 · phiếu {"39.58":4} · 1 NCC không so được · 30 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
+## Yuchai YC6C1220-D31 · disp · thắng 39.58 · phiếu {"39.58":4} · 1 NCC không so được · 29 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
    NCC theo giá trị: {"39.58":["frs-shenyang","fukangsi-yangzhou","hanyang-weifang","pengpai-yangzhou"],"X":["jlmech-wuhan"]}
    - jlmech-wuhan [104] «Displacement (mm) | 39.58» → KHÔNG SO ĐƯỢC   | JL-800GF | 800 | 1000 | 1440 | YC6C1220-D31 | 6 | 200*210 | 39.58 | 180 | 220 | 4600*1800*2600 | 8000
    - jlmech-wuhan [null] «Displacement (mm) | 39.58» → KHÔNG SO ĐƯỢC   | JL-800GF | 800 | 1000 | 1440 | YC6C1220-D31 | 6 | 200*210 | 39.58 | 180 | 220 | 4600*1800*2600 | 8000
 
-## Yuchai YC6C1520-D31 · disp · thắng 39.58 · phiếu {"39.58":9} · 1 NCC không so được · 46 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 39.58
+## Yuchai YC6C1520-D31 · disp · thắng 39.58 · phiếu {"39.58":9} · 1 NCC không so được · 45 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 39.58
    NCC theo giá trị: {"39.58":["fdk-energy","frs-shenyang","fukangsi-yangzhou","hanyang-weifang","liangzi-yangzhou","pengpai-yangzhou","tellhow-power","waeta-fujian","yunding-jiangsu"],"X":["jlmech-wuhan"]}
    - jlmech-wuhan [104] «Displacement (mm) | 39.58» → KHÔNG SO ĐƯỢC   | JL-1000GF | 1000 | 1250 | 1800 | YC6C1520-D31 | 6 | 200*210 | 39.58 | 180 | 220 | 5200*2150*2600 | 9800
    - jlmech-wuhan [null] «Displacement (mm) | 39.58» → KHÔNG SO ĐƯỢC   | JL-1000GF | 1000 | 1250 | 1800 | YC6C1520-D31 | 6 | 200*210 | 39.58 | 180 | 220 | 5200*2150*2600 | 9800
 
-## Yuchai YC6K520-D30 · disp · thắng 12.16 · phiếu {"12.16":8} · 1 NCC không so được · 34 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 12.16
+## Yuchai YC6K520-D30 · disp · thắng 12.16 · phiếu {"12.16":8} · 1 NCC không so được · 33 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 12.16
    NCC theo giá trị: {"12.16":["fdk-energy","frs-shenyang","fukangsi-yangzhou","hanyang-weifang","liangzi-yangzhou","pengpai-yangzhou","waeta-fujian","yunding-jiangsu"],"X":["jlmech-wuhan"]}
    - jlmech-wuhan [104] «Displacement (mm) | 12.15» → KHÔNG SO ĐƯỢC   | JL-350GF | 350.0 | 437.5 | 630 | YC6K520-D30 | 6 | 129*155 | 12.15 | 32 | 205 | 3300*1250*1850 | 3500
    - jlmech-wuhan [null] «Displacement (mm) | 12.15» → KHÔNG SO ĐƯỢC   | JL-350GF | 350.0 | 437.5 | 630 | YC6K520-D30 | 6 | 129*155 | 12.15 | 32 | 205 | 3300*1250*1850 | 3500
@@ -1812,17 +1812,17 @@
    - hanyang-weifang [null] «Displacement (L) | 11.726» → 11.726   | HY-300 | YC6MJ500L-D21 | 334 | 367 | 6 | 131*145 | 11.726 | 205 | 3100*1250*1800 | 3300 | T2
    - liangzi-yangzhou [null] «排量(L) | 12.151» → 12.151   | LZ- Y320 | 320/400 | 广西玉柴 | YC6MJ500L-D21 | 6 | 12.151 | 33 | ≤205 | 3100*1200*1850 | 2950 | 详细参数
 
-## Yuchai YC6MK350-D30 · disp · thắng 10.34 · phiếu {"10.34":8,"10.338":1} · 36 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 10.34
+## Yuchai YC6MK350-D30 · disp · thắng 10.34 · phiếu {"10.34":8,"10.338":1} · 35 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 10.34
    NCC theo giá trị: {"10.34":["fdk-energy","frs-shenyang","fukangsi-yangzhou","hanyang-weifang","pengpai-yangzhou","waeta-fujian","westinpower","yunding-jiangsu"],"10.338":["liangzi-yangzhou"]}
    - liangzi-yangzhou [117] «排量(L) | 10.338» → 10.338   | LZ-Y200 | 200/250 | 广西玉柴 | YC6MK350-D30 | 6 | 10.338 | 28 | ≤195 | 2800*1100*1700 | 2300 | 详细参数
    - liangzi-yangzhou [null] «排量(L) | 10.338» → 10.338   | LZ-Y200 | 200/250 | 广西玉柴 | YC6MK350-D30 | 6 | 10.338 | 28 | ≤195 | 2800*1100*1700 | 2300 | 详细参数
 
-## Yuchai YC6MK420-D30 · disp · thắng 10.34 · phiếu {"10.34":8,"10.388":1} · 40 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 10.34
+## Yuchai YC6MK420-D30 · disp · thắng 10.34 · phiếu {"10.34":8,"10.388":1} · 39 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 10.34
    NCC theo giá trị: {"10.34":["fdk-energy","frs-shenyang","fukangsi-yangzhou","hanyang-weifang","pengpai-yangzhou","tellhow-power","waeta-fujian","yunding-jiangsu"],"10.388":["liangzi-yangzhou"]}
    - liangzi-yangzhou [116] «排量(L) | 10.388» → 10.388   | LZ-Y250 | 250/312.5 | 广西玉柴 | YC6MK420-D30 | 6 | 10.388 | 28 | ≤195 | 3000*1100*1800 | 2700 | 详细参数
    - liangzi-yangzhou [null] «排量(L) | 10.388» → 10.388   | LZ-Y250 | 250/312.5 | 广西玉柴 | YC6MK420-D30 | 6 | 10.388 | 28 | ≤195 | 3000*1100*1800 | 2700 | 详细参数
 
-## Yuchai YC6T550L-D21 · disp · thắng 16.35 · phiếu {"11.76":1,"16.35":5,"16.3":1} · 29 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 16.35
+## Yuchai YC6T550L-D21 · disp · thắng 16.35 · phiếu {"11.76":1,"16.35":5,"16.3":1} · 28 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 16.35
    NCC theo giá trị: {"11.76":["bdadl-shanghai","pengpai-yangzhou"],"16.35":["frs-shenyang","fukangsi-yangzhou","liangzi-yangzhou","pengpai-yangzhou","sanq-power"],"16.3":["mingbang-mbkl"]}
    - bdadl-shanghai [116] «排量 (L) | 11.76» → 11.76   | BDA-Y350 | 350/437.5 | 玉柴机器股份 | YC6T550L-D21 | 6 | 11.76 | 28 | ≤205 | 3600*1100*1950 | 2900
    - mingbang-mbkl [123] «Displacement | 16.3» → 16.3   | 18 | MB-Y350 | 437.5 | 350 | 481.25 | 385 | YC6T550L-D21 | 12 | 16.3 | 145*165 | 195 | 4300×2100×2500
@@ -1831,34 +1831,34 @@
    - mingbang-mbkl [null] «Displacement | 16.3» → 16.3   | 18 | MB-Y350 | 437.5 | 350 | 481.25 | 385 | YC6T550L-D21 | 12 | 16.3 | 145*165 | 195 | 4300×2100×2500
    - pengpai-yangzhou [null] «排量 (L) | 11.76» → 11.76   | PPDL-Y350 | 350/437.5 | 玉柴机器股份 | YC6T550L-D21 | 6 | 11.76 | 28 | ≤205 | 3600*1100*1950 | 2900
 
-## Yuchai YC6T600L-D22 · disp · thắng 16.35 · phiếu {"16.35":9,"16.3":1} · 1 NCC không so được · 56 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 16.35
+## Yuchai YC6T600L-D22 · disp · thắng 16.35 · phiếu {"16.35":9,"16.3":1} · 1 NCC không so được · 55 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 16.35
    NCC theo giá trị: {"16.35":["bdadl-shanghai","frs-shenyang","fukangsi-yangzhou","hanyang-weifang","liangzi-yangzhou","pengpai-yangzhou","sanq-power","waeta-fujian","yunding-jiangsu"],"X":["jlmech-wuhan"],"16.3":["mingbang-mbkl"]}
    - jlmech-wuhan [104] «Displacement (mm) | 16.35» → KHÔNG SO ĐƯỢC   | JL-400GF | 400 | 500 | 720 | YC6T600L-D22 | 6 | 145*165 | 16.35 | 52 | 195 | 3500*1350*1780 | 3900
    - mingbang-mbkl [123] «Displacement | 16.3» → 16.3   | 19 | MB-Y400 | 500 | 400 | 550 | 440 | YC6T600L-D22 | 12 | 16.3 | 145*165 | 195 | 4500×2100×2600
    - jlmech-wuhan [null] «Displacement (mm) | 16.35» → KHÔNG SO ĐƯỢC   | JL-400GF | 400 | 500 | 720 | YC6T600L-D22 | 6 | 145*165 | 16.35 | 52 | 195 | 3500*1350*1780 | 3900
    - mingbang-mbkl [null] «Displacement | 16.3» → 16.3   | 19 | MB-Y400 | 500 | 400 | 550 | 440 | YC6T600L-D22 | 12 | 16.3 | 145*165 | 195 | 4500×2100×2600
 
-## Yuchai YC6T660L-D20 · disp · thắng 16.35 · phiếu {"16.35":10,"16.3":1} · 1 NCC không so được · 60 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 16.35
+## Yuchai YC6T660L-D20 · disp · thắng 16.35 · phiếu {"16.35":10,"16.3":1} · 1 NCC không so được · 59 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 16.35
    NCC theo giá trị: {"16.35":["bdadl-shanghai","frs-shenyang","fukangsi-yangzhou","hanyang-weifang","huatai-yangzhou","liangzi-yangzhou","pengpai-yangzhou","sanq-power","waeta-fujian","yunding-jiangsu"],"X":["jlmech-wuhan"],"16.3":["mingbang-mbkl"]}
    - jlmech-wuhan [104] «Displacement (mm) | 16.35» → KHÔNG SO ĐƯỢC   | JL-440GF | 440 | 550 | 792 | YC6T660L-D20 | 6 | 145*165 | 16.35 | 52 | 195 | 3500*1500*1970 | 4000
    - mingbang-mbkl [123] «Displacement | 16.3» → 16.3   | 20 | MB-Y450 | 562.5 | 450 | 618.75 | 495 | YC6T660L-D20 | 6 | 16.3 | 145*165 | 195 | 4500×2100×2600
    - jlmech-wuhan [null] «Displacement (mm) | 16.35» → KHÔNG SO ĐƯỢC   | JL-440GF | 440 | 550 | 792 | YC6T660L-D20 | 6 | 145*165 | 16.35 | 52 | 195 | 3500*1500*1970 | 4000
    - mingbang-mbkl [null] «Displacement | 16.3» → 16.3   | 20 | MB-Y450 | 562.5 | 450 | 618.75 | 495 | YC6T660L-D20 | 6 | 16.3 | 145*165 | 195 | 4500×2100×2600
 
-## Yuchai YC6TD780-D31 · disp · thắng 19.6 · phiếu {"19.6":7,"16.35":2} · 45 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
+## Yuchai YC6TD780-D31 · disp · thắng 19.6 · phiếu {"19.6":7,"16.35":2} · 44 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: KHÔNG CÒN THẮNG
    NCC theo giá trị: {"19.6":["fdk-energy","frs-shenyang","fukangsi-yangzhou","hanyang-weifang","pengpai-yangzhou","tellhow-power","yunding-jiangsu"],"16.35":["liangzi-yangzhou","waeta-fujian"]}
    - liangzi-yangzhou [111] «排量(L) | 16.35» → 16.35   | LZ- Y500 | 500/625 | 广西玉柴 | YC6TD780-D31 | 6 | 16.35 | 52 | ≤205 | 4050*1050*2050 | 4300 | 详细参数
    - waeta-fujian [108] «Displacement(L) | 16.35» → 16.35   | WTA-YC625 | 625 | 500 | 563 | 450 | YC6TD780-D31 | 6 L | 16.35 | Yuchai Series.xlsx
    - liangzi-yangzhou [null] «排量(L) | 16.35» → 16.35   | LZ- Y500 | 500/625 | 广西玉柴 | YC6TD780-D31 | 6 | 16.35 | 52 | ≤205 | 4050*1050*2050 | 4300 | 详细参数
    - waeta-fujian [null] «Displacement(L) | 16.35» → 16.35   | WTA-YC625 | 625 | 500 | 563 | 450 | YC6TD780-D31 | 6 L | 16.35 | Yuchai Series.xlsx
 
-## Yuchai YC6TD840-D31 · disp · thắng 19.6 · phiếu {"19.6":9,"19.598":1} · 54 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 19.6
+## Yuchai YC6TD840-D31 · disp · thắng 19.6 · phiếu {"19.6":9,"19.598":1} · 53 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 19.6
    NCC theo giá trị: {"19.6":["fdk-energy","frs-shenyang","fukangsi-yangzhou","hanyang-weifang","pengpai-yangzhou","superwatt-swt","tellhow-power","waeta-fujian","yunding-jiangsu"],"19.598":["liangzi-yangzhou"]}
    - liangzi-yangzhou [110] «排量(L) | 19.598» → 19.598   | LZ- Y550 | 550/687.5 | 广西玉柴 | YC6TD840-D31 | 6 | 19.598 | 52 | ≤195 | 4700*1500*2050 | 4300 | 详细参数
    - liangzi-yangzhou [111] «排量(L) | 19.598» → 19.598   | LZ- Y550 | 550/687.5 | 广西玉柴 | YC6TD840-D31 | 6 | 19.598 | 52 | ≤205 | 4700*1500*2050 | 4300 | 详细参数
    - liangzi-yangzhou [null] «排量(L) | 19.598» → 19.598   | LZ- Y550 | 550/687.5 | 广西玉柴 | YC6TD840-D31 | 6 | 19.598 | 52 | ≤195 | 4700*1500*2050 | 4300 | 详细参数
 
-## Yuchai YC6TD900-D31 · disp · thắng 19.6 · phiếu {"19.6":8,"19.598":1} · 50 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 19.6
+## Yuchai YC6TD900-D31 · disp · thắng 19.6 · phiếu {"19.6":8,"19.598":1} · 49 dòng · bỏ bộ ba bdadl/fukangsi/pengpai: 19.6
    NCC theo giá trị: {"19.6":["fdk-energy","frs-shenyang","fukangsi-yangzhou","hanyang-weifang","pengpai-yangzhou","tellhow-power","waeta-fujian","yunding-jiangsu"],"19.598":["liangzi-yangzhou"]}
    - liangzi-yangzhou [110] «排量(L) | 19.598» → 19.598   | LZ-Y600 | 600/750 | 广西玉柴 | YC6TD900-D31 | 6 | 19.598 | 52 | ≤195 | 4700*1500*2050 | 4300 | 详细参数
    - liangzi-yangzhou [null] «排量(L) | 19.598» → 19.598   | LZ-Y600 | 600/750 | 广西玉柴 | YC6TD900-D31 | 6 | 19.598 | 52 | ≤195 | 4700*1500*2050 | 4300 | 详细参数
