@@ -17,6 +17,11 @@ Gốc: `origin/main` fd82387d (đã có #923). Worktree `wt-chat-luong-1b`, nhá
 3. **Bot (chặng B(iii)) KHÔNG đọc `rowflags/current`**: tự tính `flagRows` trên danh sách NCC nó đã nạp (như thiết kế chặng 1). Lệch có thể có: checkout của bot chưa kéo main mới thì mã đọc khác bản workflow vừa tính → web và gợi ý lệch nhau tới lượt bot kéo main kế tiếp (bot tự `merge --ff-only origin/main` mỗi vòng).
 4. **Màn hình (B(ii))**: danh sách NCC hiện nhãn "n dòng nghi sai" (đếm dòng của NCC trong `rowflags/current`, trừ dòng Khoa đã "cho dùng"); màn chi tiết NCC thêm mục liệt kê dòng (model, vai, lý do, mức: "bị loại khỏi gợi ý" / "chỉ cảnh báo", chữ nguyên văn + link nguồn tuỳ câu 1) và hai nút. Nút chỉ đổi `rowok`, không đổi dữ liệu NCC.
 
-### Cần Khoa quyết
+### Điều phối trả lời (18/11/2026)
+- Câu 1: làm (a): mục "dòng nghi sai" hiện chữ nguyên văn + link nguồn, CHỈ ở mục này; không bật `SHOW_SRC` chỗ khác; ghi ngoại lệ trong `web/CLAUDE.md`.
+- Câu 2: đang hỏi Khoa; trong lúc chờ: quyền bấm là MỘT chỗ kiểm duy nhất, mặc định chỉ Superadmin, đổi sang mọi thành viên chỉ một dòng.
+- Hướng `rowflags/current` + `rowok/<supplierId>` + bước mới trong `supplier-publish.yml`: đồng ý; không ghi web thật khi thử; bước workflow mới phải có trong PR để điều phối xem trước khi merge.
+
+### Câu đã hỏi (đã trả lời ở trên)
 1. **Hiện chữ nguyên văn + link nguồn?** Web đang tắt mọi trích nguồn trên màn hình (`SHOW_SRC = false`, quyết định của anh 10/11/2026). Mục "dòng nghi sai" mới: (a) hiện chữ nguyên văn của dòng + link trang nguồn chỉ ở mục này (ngoại lệ, vì không có chúng thì khó biết dòng đúng hay sai), hay (b) theo `SHOW_SRC`: chỉ hiện model, lý do và con số bị nghi?
 2. **Ai được bấm "Dòng này đúng, cho dùng" / "Bỏ hẳn"?** (a) chỉ Superadmin (như Tìm thông số NCC), hay (b) mọi thành viên (như Loại trừ NCC)?
