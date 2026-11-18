@@ -4015,8 +4015,7 @@ function cfgClarifyText(list, key) {
 function cfgClarifyHtml(r, key) {
   const list = cfgClarifyOf(r);
   if (!list.length) return "";
-  return h`<details class="note cfgclarify" open><summary class="small"><b>Câu hỏi làm rõ HSMT (${list.length})</b> <span class="muted">gửi chủ đầu tư, không phải nhà cung cấp</span></summary>
-    <div class="row" style="margin:4px 0"><span class="spacer"></span><button class="btn sm" data-cfgclar="${key}" title="Chép thành văn bản đề nghị làm rõ HSMT gửi chủ đầu tư">Chép văn bản gửi chủ đầu tư</button></div>
+  return h`<details class="note cfgclarify" open><summary class="small" style="display:flex;align-items:center;gap:6px;flex-wrap:wrap"><span><b>Câu hỏi làm rõ HSMT (${list.length})</b> <span class="muted">gửi chủ đầu tư, không phải nhà cung cấp</span></span><span class="spacer" style="flex:1"></span><button class="btn sm" data-cfgclar="${key}" title="Chép thành văn bản đề nghị làm rõ HSMT gửi chủ đầu tư">Chép văn bản gửi chủ đầu tư</button></summary>
     <ol class="suplist">${raw(list.map((x) => h`<li class="small"><b>${x.item}</b>${x.why ? ` — ${x.why}` : ""}${raw(SHOW_SRC ? h`<div class="muted">HSMT: <q>${cfgSquish(x.quoteA)}</q>${raw(x.quoteB ? h` · <q>${cfgSquish(x.quoteB)}</q>` : "")}</div>` : "")}</li>`).join(""))}</ol></details>`;
 }
 document.addEventListener("click", async (e) => {
