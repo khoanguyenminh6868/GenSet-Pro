@@ -31,7 +31,7 @@
 | Cặp PR #894: bản ghi | 58.999 → 59.222 (đo, giống script gốc) |
 | Cặp PR #894: đảo vai | 211 → 3 (đo, giống `swap.cjs`) |
 | Cặp PR #894: tự kiểm cần soát tay | 416 (đo, giống `verSpec.cjs`; báo cáo cũ ghi 29 là riêng việc 2) |
-| Thời gian một lượt (máy này) | 70–105 giây (đo) |
+| Thời gian một lượt | 70–105 giây máy này; 24–31 giây cả job trên CI (đo) |
 
 ## 3 mẫu đối chiếu (dòng nguồn trong `suppliers/cn`, bảng tóm tắt của cặp PR #894)
 - fukangsi-yangzhou n2008 bảng 16: dòng `| FKS-50GF | 50 | 62.5 | 90 | DB58 | ...` → `current thêm ∅ → 90` (90 A ≈ 1,44 × 62,5 kVA, tự xác nhận).
@@ -39,7 +39,11 @@
 - tecnogen n2004 bảng 3 dòng 14: `| SA1100TSX-D20 1 | ... | 2 x DC13 072A 02 14 | ... | SCP8610 |` → MẤT bản ghi engine SCP8610 (tủ điều khiển bị đọc làm động cơ, đúng như báo cáo PR #894).
 
 ## Kết quả CI
-(điền sau khi chạy)
+- #899 (chính PR này, mã đọc không đổi): `spec-diff` pass 24 giây (https://github.com/khoanguyenminh6868/GenSet-Pro/actions/runs/44203656346), `suppliers` pass (có chạy test mới), `server` pass. Bình luận: "main (bb82a3c3) ↔ PR #899 (e3d5efa6) … 59.222 → 59.222; 0 đổi … 3 → 3 ✅ … Không có bản ghi nào đổi."
+- #900 (PR thử, base = nhánh #899, bỏ BC164/BC184 khỏi `ALT_CODE`): `spec-diff` FAIL 31 giây (https://github.com/khoanguyenminh6868/GenSet-Pro/actions/runs/44203810329) đúng như mong: bình luận "59.222 → 59.214; 104 đổi, 8 mất … 3 → 36 ❌ TĂNG (chặn)", bảng NCC acepow-fuan 112, dạng `model` 104 / `other` 86 / `MẤT bản ghi` 8 kèm dòng nguồn, bảng đảo vai (acepow alternator←engine 0 → 33) và 8 ca mới. Khớp lượt chạy tại máy. `suppliers` cũng đỏ (test catalog, đúng).
+- Đẩy commit rỗng lần hai lên #900: vẫn MỘT bình luận của github-actions[bot], tiêu đề đổi sang commit mới (5be96737) → sửa lại đúng, không tạo bình luận mới.
+- #900 đã đóng, xoá nhánh `chat-luong-2-thu` và worktree thử.
+- Thời gian trên CI: 24–31 giây cả job (nhanh hơn máy này).
 
 ## Rủi ro còn lại + quay lui
 - Thời gian CI ~1,5–2 phút / PR sửa mã đọc (chỉ PR đổi 3 tệp web đó). Quay lui: xoá `.github/workflows/spec-diff.yml` (công cụ vẫn dùng tay được).
