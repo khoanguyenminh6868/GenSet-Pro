@@ -15,7 +15,9 @@ export const MAKE_BLOCK = {
 };
 export const KINDS = ["buồng đốt", "phun", "điều khiển điện tử", "tên dòng", "khác"];
 const squash = (s) => String(s).replace(/[\s ]+/g, " ").trim().toLowerCase();
-const KEYS = ["make", "term", "aliases", "kind", "exclusive", "src", "quote", "note"];
+// part: which component the term belongs to ("" = not sure, never used to filter). Khoa 18/11/2026: only part "engine" tells the engine maker.
+export const PARTS = ["engine", "controller", "alternator", ""];
+const KEYS = ["make", "term", "aliases", "kind", "part", "exclusive", "src", "quote", "note"];
 
 export function load() { return JSON.parse(fs.readFileSync(path.join(DIR, "engine-traits.json"), "utf8")); }
 export function page(n) {
@@ -31,6 +33,9 @@ export function checkTrait(t, read = page) {
   if (!Array.isArray(t.aliases)) e.push("aliases phải là mảng");
   if (!KINDS.includes(t.kind)) e.push(`kind ${t.kind}`);
   if (typeof t.exclusive !== "boolean") e.push("exclusive phải là true/false");
+  if (!PARTS.includes(t.part)) e.push(`part ${t.part}`);
+  if (t.kind === "tên dòng" && t.exclusive) e.push("tên dòng máy không là đặc thù (Khoa 18/11/2026): exclusive phải false");
+  if (t.part && t.part !== "engine" && t.exclusive && t.kind === "buồng đốt") e.push("buồng đốt phải thuộc part engine");
   if (!Array.isArray(t.src) || !t.src.length) e.push("cần src");
   if (!Array.isArray(t.quote) || !t.quote.length) e.push("cần quote");
   if (e.length) return e;
@@ -51,7 +56,7 @@ export function checkTrait(t, read = page) {
   return e;
 }
 
-const good = { make: "kubota", term: "E-TVCS", aliases: ["TVCS"], kind: "buồng đốt", exclusive: true, src: [101], quote: ["Three Vortex Combustion System"], note: "x" };
+const good = { make: "kubota", term: "E-TVCS", aliases: ["TVCS"], kind: "buồng đốt", part: "engine", exclusive: true, src: [101], quote: ["Three Vortex Combustion System"], note: "x" };
 const fake = (n) => (n === 101 ? "URL: https://www.kubota.com/x\nAccessed: 2026-11-18\n\nKubota's E-TVCS (Three  Vortex\nCombustion System) is ..." : null);
 
 test("an entry whose quote is in the saved page passes (spacing, line breaks and case ignored)", () => {
@@ -67,6 +72,22 @@ test("keys, kind, exclusive and make are checked", () => {
   assert.ok(checkTrait({ ...good, kind: "khác ra" }, fake).some((x) => /kind/.test(x)));
   assert.ok(checkTrait({ ...good, exclusive: "yes" }, fake).some((x) => /exclusive/.test(x)));
   assert.ok(checkTrait({ ...good, make: "nobody" }, fake).some((x) => /MAKE_BLOCK/.test(x)));
+});
+test("part and tên dòng rules (Khoa 18/11/2026)", () => {
+  assert.ok(checkTrait({ ...good, part: "motor" }, fake).some((x) => /part/.test(x)));
+  assert.ok(checkTrait({ ...good, kind: "tên dòng" }, fake).some((x) => /tên dòng máy không là đặc thù/.test(x)));
+  assert.deepEqual(checkTrait({ ...good, kind: "tên dòng", exclusive: false }, fake), []);
+  const j = load();
+  assert.ok(!j.traits.some((t) => t.kind === "tên dòng" && t.exclusive));
+  for (const term of ["PowerCommand", "AmpSentry", "EMCP", "ADEM", "KODIA", "EVC 2.0"]) {
+    const t = j.traits.find((x) => x.term === term);
+    assert.equal(t && t.part, "controller", term);
+  }
+  // the engine filter chặng 2 uses: exclusive + part engine; E-TVCS is in it, controller words are not
+  const eng = j.traits.filter((t) => t.exclusive && t.part === "engine");
+  assert.ok(eng.some((t) => t.make === "kubota" && t.term === "E-TVCS"));
+  assert.ok(!eng.some((t) => /PowerCommand|EMCP|AmpSentry|ADEM/.test(t.term)));
+  assert.ok(!/cần Khoa xác nhận/i.test(JSON.stringify(j)), "SDEC / Yuchai: Khoa đã nhận 18/11/2026");
 });
 test("engine-traits.json: every entry passes, make + term are unique, E-TVCS belongs to Kubota only", () => {
   const j = load();

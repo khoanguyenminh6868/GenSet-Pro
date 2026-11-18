@@ -1,6 +1,6 @@
 {
  "updated": "2026-11-18",
- "note": "exclusive:true = nguồn chính hãng cho thấy là tên riêng / nhãn hiệu / tên dòng của hãng; false = từ chung hoặc trang không nói. Mỗi quote nằm nguyên văn trong sources/engine-traits/<n>.md (trait-source.mjs). unconfirmed = chưa xác nhận được, không đoán.",
+ "note": "exclusive:true = nguồn chính hãng cho thấy là tên riêng / nhãn hiệu của hãng; false = từ chung hoặc trang không nói. Khoa 18/11/2026: (1) tên dòng máy (kind \"tên dòng\") KHÔNG là đặc thù, nên mọi mục đó exclusive:false; (2) từ ở khối bộ điều khiển (part \"controller\": PowerCommand, AmpSentry, EMCP, ADEM, KODIA, EVC...) không liên quan hãng động cơ, chỉ dùng để đề xuất đúng bộ điều khiển đó; chặng 2 chỉ lọc hãng động cơ bằng mục part \"engine\" + exclusive true; part \"\" = em chưa chắc thuộc bộ phận nào (ECU / ECM / gói sản phẩm), không dùng để lọc; (3) Khoa nhận 18/11/2026 sdeciepower.com (SDEC) và cn.yuchaiie.com (Yuchai) là nguồn chính hãng. Mỗi quote nằm nguyên văn trong sources/engine-traits/<n>.md (trait-source.mjs). unconfirmed = chưa xác nhận được, không đoán.",
  "traits": [
   {
    "make": "kubota",
@@ -11,6 +11,7 @@
     "three-jet combustion system"
    ],
    "kind": "buồng đốt",
+   "part": "engine",
    "exclusive": true,
    "src": [
     102,
@@ -30,6 +31,7 @@
     "TVCR combustion"
    ],
    "kind": "buồng đốt",
+   "part": "engine",
    "exclusive": true,
    "src": [
     101
@@ -47,6 +49,7 @@
     "phun gián tiếp"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": false,
    "src": [
     102,
@@ -68,7 +71,8 @@
     "new TNV engine series"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     203,
     201
@@ -87,7 +91,8 @@
     "4TN107"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     202
    ],
@@ -105,6 +110,7 @@
     "buồng đốt phun trực tiếp"
    ],
    "kind": "buồng đốt",
+   "part": "engine",
    "exclusive": false,
    "src": [
     204
@@ -122,6 +128,7 @@
     "IDI"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": false,
    "src": [
     201
@@ -139,6 +146,7 @@
     "common rail"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": false,
    "src": [
     202,
@@ -157,6 +165,7 @@
     "Yanmar ECU"
    ],
    "kind": "điều khiển điện tử",
+   "part": "",
    "exclusive": false,
    "src": [
     203
@@ -174,7 +183,8 @@
     "SYNCRO"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     302
    ],
@@ -191,6 +201,7 @@
     "ELECTROPAK"
    ],
    "kind": "khác",
+   "part": "",
    "exclusive": true,
    "src": [
     301,
@@ -209,6 +220,7 @@
     "ElectroUnit"
    ],
    "kind": "khác",
+   "part": "",
    "exclusive": true,
    "src": [
     305
@@ -226,7 +238,8 @@
     "dòng 400"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     305
    ],
@@ -244,7 +257,8 @@
     "1106D"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     303
    ],
@@ -262,7 +276,8 @@
     "1206"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     308
    ],
@@ -281,7 +296,8 @@
     "dòng 4000"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     307
    ],
@@ -297,6 +313,7 @@
     "Electronic Control Module"
    ],
    "kind": "điều khiển điện tử",
+   "part": "",
    "exclusive": false,
    "src": [
     304
@@ -314,6 +331,7 @@
     "HPCR"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": false,
    "src": [
     304,
@@ -334,6 +352,7 @@
     "PCC"
    ],
    "kind": "điều khiển điện tử",
+   "part": "controller",
    "exclusive": true,
    "src": [
     401,
@@ -352,6 +371,7 @@
     "Amp Sentry"
    ],
    "kind": "điều khiển điện tử",
+   "part": "controller",
    "exclusive": true,
    "src": [
     401
@@ -369,6 +389,7 @@
     "XPI Fuel System"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": true,
    "src": [
     403
@@ -386,6 +407,7 @@
     "Modular Common Rail"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": true,
    "src": [
     404
@@ -403,6 +425,7 @@
     "Cummins HPI"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": true,
    "src": [
     404
@@ -420,6 +443,7 @@
     "PT pump"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": true,
    "src": [
     408
@@ -436,6 +460,7 @@
     "Centry"
    ],
    "kind": "điều khiển điện tử",
+   "part": "",
    "exclusive": true,
    "src": [
     408
@@ -453,6 +478,7 @@
     "Cummins Turbo Technologies"
    ],
    "kind": "khác",
+   "part": "engine",
    "exclusive": true,
    "src": [
     405
@@ -469,7 +495,8 @@
     "QSX15-G8"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     403
    ],
@@ -486,7 +513,8 @@
     "QSK50"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     404
    ],
@@ -503,7 +531,8 @@
     "QSB7"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     407
    ],
@@ -519,7 +548,8 @@
     "KTA19"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     408
    ],
@@ -535,6 +565,7 @@
     "High Pressure Common Rail"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": false,
    "src": [
     407
@@ -551,6 +582,7 @@
     "Variable Geometry Turbocharger"
    ],
    "kind": "khác",
+   "part": "engine",
    "exclusive": false,
    "src": [
     403
@@ -567,6 +599,7 @@
     "Electronic Control Module"
    ],
    "kind": "điều khiển điện tử",
+   "part": "",
    "exclusive": false,
    "src": [
     403
@@ -585,6 +618,7 @@
     "MHI-ET"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": true,
    "src": [
     501,
@@ -605,7 +639,8 @@
     "S16R2-PTAWT-CR"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     501,
     503
@@ -624,7 +659,8 @@
     "S12R-F1PTAW2"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     502
    ],
@@ -641,6 +677,7 @@
     "CRS"
    ],
    "kind": "điều khiển điện tử",
+   "part": "engine",
    "exclusive": false,
    "src": [
     503
@@ -657,6 +694,7 @@
     "bơm cao áp dãy"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": false,
    "src": [
     501
@@ -674,6 +712,7 @@
     "REDTECH"
    ],
    "kind": "điều khiển điện tử",
+   "part": "",
    "exclusive": true,
    "src": [
     607
@@ -691,7 +730,8 @@
     "4JJ1T"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     602
    ],
@@ -708,7 +748,8 @@
     "6W series"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     602,
     603
@@ -727,6 +768,7 @@
     "phun trực tiếp"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": false,
    "src": [
     603,
@@ -747,6 +789,7 @@
     "ADEM4"
    ],
    "kind": "điều khiển điện tử",
+   "part": "controller",
    "exclusive": true,
    "src": [
     701,
@@ -766,6 +809,7 @@
     "C9 ACERT"
    ],
    "kind": "buồng đốt",
+   "part": "engine",
    "exclusive": true,
    "src": [
     703
@@ -782,6 +826,7 @@
     "Hydraulically actuated Electronically controlled Unit Injector"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": true,
    "src": [
     701,
@@ -800,6 +845,7 @@
     "Mechanically actuated Electronically controlled Unit Injector"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": true,
    "src": [
     702,
@@ -822,6 +868,7 @@
     "EMCP 4.4"
    ],
    "kind": "điều khiển điện tử",
+   "part": "controller",
    "exclusive": true,
    "src": [
     704,
@@ -840,7 +887,8 @@
     "C9 ACERT"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     701
    ],
@@ -856,7 +904,8 @@
     "C15 ACERT"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     702
    ],
@@ -872,7 +921,8 @@
     "C32 ACERT"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     706
    ],
@@ -889,6 +939,7 @@
     "common rail"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": false,
    "src": [
     703
@@ -908,7 +959,8 @@
     "KDI-TCR"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     802
    ],
@@ -925,6 +977,7 @@
     "Flex E5"
    ],
    "kind": "khác",
+   "part": "engine",
    "exclusive": true,
    "src": [
     802
@@ -941,6 +994,7 @@
     "2000 bar"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": false,
    "src": [
     801
@@ -961,7 +1015,8 @@
     "KD15-350"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     804
    ],
@@ -981,7 +1036,8 @@
     "G-Drive"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     806
    ],
@@ -998,7 +1054,8 @@
     "KOHLER G-Drive"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     806
    ],
@@ -1012,6 +1069,7 @@
    "term": "KODIA",
    "aliases": [],
    "kind": "điều khiển điện tử",
+   "part": "controller",
    "exclusive": true,
    "src": [
     803
@@ -1029,6 +1087,7 @@
     "LDW"
    ],
    "kind": "khác",
+   "part": "engine",
    "exclusive": true,
    "src": [
     807
@@ -1047,6 +1106,7 @@
     "KH01221"
    ],
    "kind": "khác",
+   "part": "alternator",
    "exclusive": false,
    "src": [
     805
@@ -1065,6 +1125,7 @@
     "Engine Monitoring System 2"
    ],
    "kind": "điều khiển điện tử",
+   "part": "",
    "exclusive": true,
    "src": [
     901
@@ -1081,6 +1142,7 @@
     "Engine Management System"
    ],
    "kind": "điều khiển điện tử",
+   "part": "",
    "exclusive": false,
    "src": [
     902
@@ -1095,6 +1157,7 @@
    "term": "EVC 2.0",
    "aliases": [],
    "kind": "điều khiển điện tử",
+   "part": "controller",
    "exclusive": true,
    "src": [
     903
@@ -1113,6 +1176,7 @@
     "TAD1346GE"
    ],
    "kind": "tên dòng",
+   "part": "engine",
    "exclusive": false,
    "src": [
     901,
@@ -1130,6 +1194,7 @@
     "TWD1031VE"
    ],
    "kind": "tên dòng",
+   "part": "engine",
    "exclusive": false,
    "src": [
     901
@@ -1146,6 +1211,7 @@
     "Electronic unit injectors"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": false,
    "src": [
     902
@@ -1163,6 +1229,7 @@
     "ADEC/ECU9"
    ],
    "kind": "điều khiển điện tử",
+   "part": "",
    "exclusive": false,
    "src": [
     1001,
@@ -1183,6 +1250,7 @@
     "V4000"
    ],
    "kind": "tên dòng",
+   "part": "engine",
    "exclusive": false,
    "src": [
     1001,
@@ -1203,6 +1271,7 @@
     "V2000"
    ],
    "kind": "tên dòng",
+   "part": "engine",
    "exclusive": false,
    "src": [
     1004
@@ -1219,6 +1288,7 @@
     "Common rail fuel injection"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": false,
    "src": [
     1001,
@@ -1239,7 +1309,8 @@
     "PowerKit by Baudouin"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     1101
    ],
@@ -1255,7 +1326,8 @@
     "12M26"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     1105,
     1101
@@ -1277,7 +1349,8 @@
     "20M33"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     1102,
     1101
@@ -1296,7 +1369,8 @@
     "16M55"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     1101
    ],
@@ -1320,7 +1394,8 @@
     "8M21"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     1101
    ],
@@ -1337,6 +1412,7 @@
     "common rail"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": false,
    "src": [
     1107
@@ -1353,6 +1429,7 @@
     "Weichai Power"
    ],
    "kind": "khác",
+   "part": "engine",
    "exclusive": false,
    "src": [
     1105
@@ -1370,7 +1447,8 @@
     "Power Tech"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     1205,
     1209,
@@ -1390,6 +1468,7 @@
     "PowerTech+"
    ],
    "kind": "khác",
+   "part": "engine",
    "exclusive": true,
    "src": [
     1207
@@ -1407,7 +1486,8 @@
     "PowerTech E EUI"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     1209
    ],
@@ -1424,7 +1504,8 @@
     "PWL"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     1205,
     1207
@@ -1440,7 +1521,8 @@
    "term": "PowerTech PSL",
    "aliases": [],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     1207
    ],
@@ -1456,7 +1538,8 @@
     "PVS"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     1207
    ],
@@ -1474,6 +1557,7 @@
     "6135HFG75"
    ],
    "kind": "tên dòng",
+   "part": "engine",
    "exclusive": false,
    "src": [
     1205,
@@ -1492,6 +1576,7 @@
     "High-Pressure Common-Rail"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": false,
    "src": [
     1205
@@ -1508,6 +1593,7 @@
     "Electronic unit injector"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": false,
    "src": [
     1209
@@ -1525,6 +1611,7 @@
     "Hi-eSCR2"
    ],
    "kind": "khác",
+   "part": "engine",
    "exclusive": true,
    "src": [
     1301,
@@ -1545,7 +1632,8 @@
     "NEF67TM4"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     1301,
     1302
@@ -1565,7 +1653,8 @@
     "Cursor 16"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     1301,
     1302
@@ -1585,7 +1674,8 @@
     "N67TEVP05"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     1303,
     1302
@@ -1603,6 +1693,7 @@
     "electronically controlled exhaust flap"
    ],
    "kind": "điều khiển điện tử",
+   "part": "engine",
    "exclusive": true,
    "src": [
     1301
@@ -1619,6 +1710,7 @@
     "My FPT"
    ],
    "kind": "điều khiển điện tử",
+   "part": "",
    "exclusive": true,
    "src": [
     1301
@@ -1635,6 +1727,7 @@
     "ATS"
    ],
    "kind": "khác",
+   "part": "engine",
    "exclusive": false,
    "src": [
     1301
@@ -1651,6 +1744,7 @@
     "ECR"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": false,
    "src": [
     1301
@@ -1668,6 +1762,7 @@
     "Deutz Common Rail"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": true,
    "src": [
     1501,
@@ -1683,6 +1778,7 @@
    "term": "DVERT",
    "aliases": [],
    "kind": "khác",
+   "part": "engine",
    "exclusive": true,
    "src": [
     1501
@@ -1697,6 +1793,7 @@
    "term": "EMR",
    "aliases": [],
    "kind": "điều khiển điện tử",
+   "part": "",
    "exclusive": false,
    "src": [
     1501,
@@ -1715,6 +1812,7 @@
     "TCD 7.8"
    ],
    "kind": "tên dòng",
+   "part": "engine",
    "exclusive": false,
    "src": [
     1501,
@@ -1734,6 +1832,7 @@
     "BFM 1015"
    ],
    "kind": "tên dòng",
+   "part": "engine",
    "exclusive": false,
    "src": [
     1503
@@ -1754,7 +1853,8 @@
     "潍柴WP"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     1601,
     1602
@@ -1779,6 +1879,7 @@
     "20M55"
    ],
    "kind": "tên dòng",
+   "part": "engine",
    "exclusive": false,
    "src": [
     1602,
@@ -1798,6 +1899,7 @@
     "博杜安"
    ],
    "kind": "khác",
+   "part": "engine",
    "exclusive": false,
    "src": [
     1602,
@@ -1816,6 +1918,7 @@
     "electronically controlled common rail"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": false,
    "src": [
     1601
@@ -1838,7 +1941,8 @@
     "YC6M"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     1702,
     1703,
@@ -1858,6 +1962,7 @@
     "Electric control wastegate"
    ],
    "kind": "điều khiển điện tử",
+   "part": "engine",
    "exclusive": true,
    "src": [
     1703
@@ -1875,6 +1980,7 @@
     "lean burn"
    ],
    "kind": "buồng đốt",
+   "part": "engine",
    "exclusive": false,
    "src": [
     1703
@@ -1889,6 +1995,7 @@
    "term": "四气门技术 / 玉柴专有活塞环密封技术",
    "aliases": [],
    "kind": "khác",
+   "part": "engine",
    "exclusive": false,
    "src": [
     1704,
@@ -1912,7 +2019,8 @@
     "SD-SC"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     1801,
     1806
@@ -1934,7 +2042,8 @@
     "D114"
    ],
    "kind": "tên dòng",
-   "exclusive": true,
+   "part": "engine",
+   "exclusive": false,
    "src": [
     1802
    ],
@@ -1953,6 +2062,7 @@
     "VK series"
    ],
    "kind": "tên dòng",
+   "part": "engine",
    "exclusive": false,
    "src": [
     1801
@@ -1968,6 +2078,7 @@
    "term": "AVL (hợp tác phát triển dòng E)",
    "aliases": [],
    "kind": "khác",
+   "part": "engine",
    "exclusive": false,
    "src": [
     1804
@@ -1984,6 +2095,7 @@
     "电控共轨"
    ],
    "kind": "phun",
+   "part": "engine",
    "exclusive": false,
    "src": [
     1804
@@ -2243,7 +2355,7 @@
   {
    "make": "sdec",
    "term": "Tên miền chính hãng sdec.com.cn",
-   "why": "sdec.com.cn không phân giải DNS qua Firecrawl; dùng sdeciepower.com (chính hãng, liên hệ Shanghai New Power Automotive Technology, địa chỉ 2636 Jungong Road). Cần Khoa xác nhận đây là trang chính thức của SDEC."
+   "why": "sdec.com.cn không phân giải DNS qua Firecrawl; dùng sdeciepower.com (chính hãng, liên hệ Shanghai New Power Automotive Technology, địa chỉ 2636 Jungong Road). Khoa nhận sdeciepower.com là nguồn chính hãng 18/11/2026."
   }
  ]
 }
