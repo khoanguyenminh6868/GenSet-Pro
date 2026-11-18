@@ -1,6 +1,6 @@
 {
  "updated": "2026-11-18",
- "note": "exclusive:true = nguồn chính hãng cho thấy là tên riêng / nhãn hiệu của hãng; false = từ chung hoặc trang không nói. Khoa 18/11/2026: (1) tên dòng máy (kind \"tên dòng\") KHÔNG là đặc thù, nên mọi mục đó exclusive:false; (2) từ ở khối bộ điều khiển (part \"controller\": PowerCommand, AmpSentry, EMCP, ADEM, KODIA, EVC...) không liên quan hãng động cơ, chỉ dùng để đề xuất đúng bộ điều khiển đó; chặng 2 chỉ lọc hãng động cơ bằng mục part \"engine\" + exclusive true; part \"\" = em chưa chắc thuộc bộ phận nào (ECU / ECM / gói sản phẩm), không dùng để lọc; (3) Khoa nhận 18/11/2026 sdeciepower.com (SDEC) và cn.yuchaiie.com (Yuchai) là nguồn chính hãng. Mỗi quote nằm nguyên văn trong sources/engine-traits/<n>.md (trait-source.mjs). unconfirmed = chưa xác nhận được, không đoán.",
+ "note": "exclusive:true = nguồn chính hãng cho thấy là tên riêng / nhãn hiệu của hãng; false = từ chung hoặc trang không nói. Khoa 18/11/2026: (1) tên dòng máy (kind \"tên dòng\") KHÔNG là đặc thù, nên mọi mục đó exclusive:false; (2) từ ở khối bộ điều khiển (part \"controller\": PowerCommand, AmpSentry, EMCP, ADEM, KODIA, EVC...) không liên quan hãng động cơ, chỉ dùng để đề xuất đúng bộ điều khiển đó; chặng 2 chỉ lọc hãng động cơ bằng mục part \"engine\" + exclusive true; filter:false + filterWhy = Khoa bỏ khỏi nhóm lọc (18/11/2026: Holset, Lombardini, KOHLER Flex), exclusive vẫn ghi đúng sự thật; part \"\" = em chưa chắc thuộc bộ phận nào (ECU / ECM / gói sản phẩm), không dùng để lọc; (3) Khoa nhận 18/11/2026 sdeciepower.com (SDEC) và cn.yuchaiie.com (Yuchai) là nguồn chính hãng. Mỗi quote nằm nguyên văn trong sources/engine-traits/<n>.md (trait-source.mjs). unconfirmed = chưa xác nhận được, không đoán.",
  "traits": [
   {
    "make": "kubota",
@@ -486,7 +486,9 @@
    "quote": [
     "The Holset VGT™ from Cummins Turbo Technologies pioneered Variable Geometry (VG) technology for the commercial vehicle market in 1998."
    ],
-   "note": "Thương hiệu turbo của Cummins Turbo Technologies, có ™."
+   "note": "Thương hiệu turbo của Cummins Turbo Technologies, có ™.",
+   "filter": false,
+   "filterWhy": "Khoa 18/11/2026: không lọc hãng động cơ theo Holset — turbo Holset lắp trên động cơ của nhiều hãng khác Cummins."
   },
   {
    "make": "cummins",
@@ -985,7 +987,9 @@
    "quote": [
     "KOHLER Flex is the range of solutions for emission control that Kohler has designed to enable each configuration of the engines of the KDI platform to comply with all emissions standards and regulations, worldwide."
    ],
-   "note": "Tên riêng hệ xử lý khí thải (EGR+DOC+DPF/SCR) do Kohler 'designed'; chỉ gắn với KDI."
+   "note": "Tên riêng hệ xử lý khí thải (EGR+DOC+DPF/SCR) do Kohler 'designed'; chỉ gắn với KDI.",
+   "filter": false,
+   "filterWhy": "Khoa 18/11/2026: chưa soát, không dùng để lọc hãng động cơ."
   },
   {
    "make": "kohler",
@@ -1095,7 +1099,9 @@
    "quote": [
     "KOHLER and Lombardini Diesel"
    ],
-   "note": "Trang Kohler xếp 'Lombardini Diesel' thành dòng bảo hành riêng cạnh 'KOHLER KDI' => nhãn của nhóm Kohler; không có câu ghi quan hệ sở hữu nên chỉ nêu việc dùng chung nhãn."
+   "note": "Trang Kohler xếp 'Lombardini Diesel' thành dòng bảo hành riêng cạnh 'KOHLER KDI' => nhãn của nhóm Kohler; không có câu ghi quan hệ sở hữu nên chỉ nêu việc dùng chung nhãn.",
+   "filter": false,
+   "filterWhy": "Khoa 18/11/2026: chưa soát, không dùng để lọc hãng động cơ."
   },
   {
    "make": "kohler",
