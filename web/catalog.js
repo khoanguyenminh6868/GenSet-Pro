@@ -720,6 +720,33 @@
     }
     return cols.filter(Boolean);
   }
+  // A sheet in sections side by side (chat-luong-3, Khoa 18/11/2026: "giữ lại số đúng" of LROW): a one-line header of
+  // 2-4 part titles, every row label | value per part ("| 发电机组参数 | 柴油机参数 | 发电机参数" over "| 机组型号 | 30GF | 型号 |
+  // 4BT3.9-G2 | 型号 | 30GF", chenxing; "| Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)" over "| Model | 30GF |
+  // Model | F4L912D | Model | PI144J", huachai). Read as a label sheet, each part under its heading; ratings written in
+  // the engine's or the alternator's part are theirs, not the set's, and are not read as its output. Read as a row table,
+  // the genset model became the engine or the alternator. Returns the label lines, or null.
+  const SEC_GENSET = /机组|gen-?set|generator[\s-]*set/i;
+  const SEC_HEAD = { genset: "| Generator set", engine: "| Engine", alternator: "| Alternator" };
+  function sectionSheet(t) {
+    if ((t.header || []).length !== 1) return null;
+    const h = cellsOf(t.header[0]), k = h.length;
+    if (k < 2 || k > 4) return null;
+    const parts = h.map((x) => (SEC_GENSET.test(x) ? "genset" : ENGINE_LBL.test(x) ? "engine" : ALT_LBL.test(x) ? "alternator" : null));
+    if (parts.some((p) => !p) || parts.filter((p) => p === "engine").length !== 1 || new Set(parts).size !== k) return null;
+    const rows = t.rows.map(cellsOf);
+    if (!rows.length || rows.filter((c) => c.length === 2 * k).length < rows.length * 0.8 || !/^(model|型号|机组型号|genset\s*model)$/i.test(rows[0][0] || "")) return null;
+    const lines = [];
+    parts.forEach((p, j) => {
+      lines.push(SEC_HEAD[p]);
+      for (const c of rows) {
+        const lb = c[2 * j], v = c[2 * j + 1];
+        if (!lb || !v || (p !== "genset" && /power|output|功率|capacity/i.test(lb))) continue;
+        lines.push(`| ${lb} | ${v}`);
+      }
+    });
+    return lines;
+  }
   const isLabelTable = (t) => {
     if (!t.header?.length) return true;
     const h = cellsOf(t.header[0]);
@@ -993,14 +1020,17 @@
         else if (s.role === (kind === "engine" ? "engine_maker" : "alternator_maker")) { const o = ownBrand(list); if (o.length === 1) addMake(makes, o[0], "hãng sản xuất"); }
         return makes;
       };
-      if (isLabelTable(t)) {
+      const sec = isLabelTable(t) ? null : sectionSheet(t);
+      if (sec || isLabelTable(t)) {
         // A page that lists several gensets one after the other ("Genset Model：SC700GFK" ... "Genset Model：SC85GFK",
         // supermaly): each "Genset Model" line starts a genset of its own.
         const starts = t.header?.length ? [] : t.rows.map((r, i) => (/^\|?\s*genset\s*model\s*[:：]/i.test(r) ? i : -1)).filter((i) => i >= 0);
-        const blocks = starts.length >= 2 ? starts.map((i, k) => t.rows.slice(i, starts[k + 1] ?? t.rows.length)) : [[...(t.header || []), ...t.rows]];
-        for (const block of blocks) for (const c of fromLabelTable(block, { note: (reason, detail) => note(t, ti, null, reason, detail), bareModel: blocks.length > 1, engineModel: s.role === "engine_maker" && !block.some((l) => /^(engine|alternator|发动机|柴油机|发电机)\s*(model|type|ref\.?|型号)|^power\s*model|动力型号|^(diesel\s*)?engine$|^(发动机|柴油机)$|^(generator|alternator)$|power factor|excitation|voltage regulat|发电机/i.test(cellsOf(l)[0] || "")) })) {
+        const blocks = sec ? [sec] : starts.length >= 2 ? starts.map((i, k) => t.rows.slice(i, starts[k + 1] ?? t.rows.length)) : [[...(t.header || []), ...t.rows]];
+        for (const block of blocks) for (const c of fromLabelTable(block, { note: (reason, detail) => note(t, ti, null, reason, detail), bareModel: blocks.length > 1, engineModel: !sec && s.role === "engine_maker" && !block.some((l) => /^(engine|alternator|发动机|柴油机|发电机)\s*(model|type|ref\.?|型号)|^power\s*model|动力型号|^(diesel\s*)?engine$|^(发动机|柴油机)$|^(generator|alternator)$|power factor|excitation|voltage regulat|发电机/i.test(cellsOf(l)[0] || "")) })) {
           const power = c.prime || c.standby || c.rated ? { ...(c.prime ? { prime: c.prime } : {}), ...(c.standby ? { standby: c.standby } : {}), ...(c.rated ? { rated: c.rated } : {}) } : null;
           const rowText = [c.genset, c.engine, c.alternator].filter(Boolean).join(" ");
+          // The alternator's "Model" of a section sheet repeating the genset's ("型号 | 30GF" under 发电机参数, chenxing): no alternator.
+          if (sec && c.alternator && c.genset && keyOf(c.alternator) === keyOf(c.genset)) { note(t, ti, null, "mã đầu phát trùng model tổ máy", c.alternator); c.alternator = null; }
           c.specs = saneSpecs(c.specs, power, (x) => note(t, ti, null, "số vô lý so với công suất", `${x.key}=${x.value}`));
           if (c.engine && isCode(c.engine.replace(/^[a-z]+\s+(?=\S*\d)/i, (m) => (brandIn(m, ENGINE_BRANDS).length ? "" : m))))
             out.push({ ...base, kind: "engine", model: c.engine.replace(/^(cummins|perkins|weichai|yuchai|deutz|volvo|baudouin|mtu|doosan|mitsubishi|sdec|kubota|yanmar|isuzu|ricardo|lovol|fawde)\s+/i, ""), makes: makesFor("engine", c.engine + " " + (c.engineBrand || ""), c.engineBrand), genset: c.genset || null, power, freq: tFreq, other: c.alternator || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows } });
@@ -1028,6 +1058,9 @@
         // controller was read as the engine. The set's output is not one engine's: the row gives no engine at all.
         // The code may be written with spaces ("2 x DC13 072A 02 14", Scania): whole, joined, or its first word.
         if (cells.some((c) => { const m = c.match(/^[2-4]\s*[x×]\s*(\S.*)$/i); return m && [m[1], m[1].replace(/\s+/g, ""), m[1].split(/\s+/)[0]].some(isCode); })) { note(t, ti, ri, "tổ máy nhiều động cơ", line); return; }
+        // A row that is itself label | value pairs ("| Model | CK7000S | CK7500S …" of a sheet the reader did not take as
+        // one, "| Model | 1 5 GF | Model | F3L912D |"): which code is which part is not known from a row (chat-luong-3 LROW).
+        if (cells.some((c) => /^(型号|model|机组型号|type)$/i.test(c))) { note(t, ti, ri, "dòng là cặp nhãn | giá trị", line); return; }
         const rowText = cells.join(" ");
         const freq = freqIn(rowText) || tFreq;
         let gi = -1, ei = -1, ai = -1;

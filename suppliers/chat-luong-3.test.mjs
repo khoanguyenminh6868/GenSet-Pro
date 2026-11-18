@@ -58,3 +58,31 @@ test("WCHK huatai n111: 1267 A fits the 700 kW of '700GF' though the output colu
     ["| 700GF | 140/165 | 1267 | WD305TAD68 | 750 | 12缸V型 | 196 | 55 | 3800×1800×2100 | 4550"]);
   assert.equal(spec(out.find((u) => u.kind === "engine"), "current"), "1267");
 });
+
+test("section sheet chenxing n108: '机组型号 | 30GF | 型号 | 4BT3.9-G2 | 型号 | 30GF' under '发电机组参数 | 柴油机参数 | 发电机参数'", () => {
+  const { out, notes } = read(["| 发电机组参数 | 柴油机参数 | 发电机参数"], ["| 机组型号 | 30GF | 型号 | 4BT3.9-G2 | 型号 | 30GF", "| 输出功率 | 30kw | 吸气方式 | 涡轮增压 | 额定功率 | 30kw",
+    "| 功率因数 | COS&Phi;=0.8（滞后） | 气缸数 | 4/L | 输出因数（滞后） | COS&Phi;=0.8", "| 输出电压 | 400V/230V | 缸径×行程 (mm) | 102/120 | 额定电压 | 400V/230V"]);
+  assert.deepEqual(out.map((u) => [u.kind, u.model, u.genset]), [["engine", "4BT3.9-G2", "30GF"]]);
+  assert.deepEqual(out[0].power, { rated: { kW: 30 } }); // the alternator's "额定功率 30kw" is not the set's output
+  assert.equal(spec(out[0], "bore"), "102/120");
+  assert.ok(notes.some((x) => x.reason === "mã đầu phát trùng model tổ máy"));
+});
+
+test("section sheet huachai n116: engine F4L912D, alternator PI144J, the set's prime / standby, not the engine's 32 kW", () => {
+  const { out } = read(["| Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)"], ["| Model | 30GF | Model | F4L912D | Model | PI144J",
+    "| Rated prime power | 30KW | Prime power | 32KW | Rated power | 32KW", "| Standby power | 33KW | Stand power | | Rated voltage | 400/230V", "| Rated voltage | 400/230V | Rated speed | 1500rpm | Efficiency | 87.60%"]);
+  assert.deepEqual(out.map((u) => [u.kind, u.model]), [["engine", "F4L912D"], ["alternator", "PI144J"]]);
+  assert.deepEqual(out[0].power, { prime: { kW: 30 }, standby: { kW: 33 } });
+});
+
+test("LROW: a row of a table that is itself label | value pairs gives no record, and is listed", () => {
+  const { out, notes } = read(["| Item | Spec"], ["| Model | CK7000S | CK7500S | CK8500S"]);
+  assert.deepEqual(out, []);
+  assert.ok(notes.some((x) => x.reason === "dòng là cặp nhãn | giá trị"));
+});
+
+test("unread(): a table with rows that gives no record is listed with its first header line", () => {
+  const s = sup(["| Accessory | Price"], ["| Battery charger | 120"]);
+  const u = C.unread([s]);
+  assert.deepEqual(u.map((x) => [x.reason, x.n, x.table]), [["bảng không cho bản ghi nào", 101, 0]]);
+});
