@@ -1,6 +1,6 @@
 // Dòng nghi sai (Chất lượng 1 chặng 2, 18/11/2026): rowflags/current do suppliers/row-flags.mjs --post ghi; màn Nhà cung
 // cấp hiện nhãn "n dòng nghi sai", mục liệt kê dòng (chữ nguyên văn + link nguồn: ngoại lệ duy nhất của SHOW_SRC) và hai
-// nút ghi rowok/<NCC>. Quyền bấm: một chỗ kiểm (rowOkCan), mặc định chỉ Superadmin.
+// nút ghi rowok/<NCC>. Quyền bấm: một chỗ kiểm (rowOkCan), chỉ Superadmin (Khoa 18/11/2026).
 import { test, expect, SEED, openApp, writesOf } from "./fixtures.mjs";
 
 const SID = "hosem-power";
@@ -10,6 +10,8 @@ const row = (i, key, drop, code, detail) => ({ key, supplierId: SID, n: tab.n, t
 const ROWS = [
   row(0, `${SID}|engine|BF4M2012|aaaaaaaaaaaa`, true, "absurd", 'disp "108" (nhãn "排量(L)")'),
   row(1, `${SID}|engine|BF4M2012|bbbbbbbbbbbb`, false, "cylMaj", "4 ≠ 6 (số đông 3 NCC)"),
+  // Cùng dòng với ROWS[0] (thông số đọc theo dòng: số vô lý gắn cờ cả đầu phát của dòng): gộp vào một mục.
+  { ...row(0, `${SID}|alternator|STAMFORD|aaaaaaaaaaaa`, true, "absurd", 'disp "108" (nhãn "排量(L)")'), kind: "alternator", model: "UCI274C" },
 ];
 const colls = { rowflags: { current: { at: "2026-11-18T00:00:00Z", commit: "test", rows: ROWS } } };
 
@@ -38,11 +40,12 @@ test.describe("Superadmin", () => {
     await expect(items.nth(0).locator("pre")).toContainText(tab.rows[0]);
     await expect(items.nth(0).locator("a")).toHaveAttribute("href", URL1);
     await expect(items.nth(0)).toContainText("số vô lý so với công suất của dòng");
-    await expect(items.nth(0)).toContainText("Mức loại");
+    await expect(items.nth(0)).toContainText("Bị loại khỏi gợi ý");
+    await expect(items.nth(0)).toContainText("UCI274C");
+    await expect(items.nth(0)).toContainText("đầu phát");
     await expect(items.nth(1)).toContainText("Chỉ cảnh báo");
-    // Chặng B(iii) chưa làm: không được nói đã loại khỏi gợi ý.
-    await expect(box).toContainText("Gợi ý cấu hình chưa dùng các quyết định này.");
-    await expect(box).not.toContainText("Bị loại khỏi gợi ý");
+    // B(iii): config-bot đã loại dòng theo cờ / rowok (blockedRows), màn hình nói rõ khi nào áp.
+    await expect(box).toContainText("Quyết định áp cho các lượt Gợi ý cấu hình chạy sau đó.");
 
     await items.nth(0).locator('[data-rowok="ok"]').click();
     await expect.poll(() => writesOf(page, `rowok/${SID}`)).toHaveLength(1);

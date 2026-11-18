@@ -38,6 +38,7 @@ import * as RG from "./read-guard.mjs";
 import * as NG from "./named-genset.mjs";
 import { skippedOf, dropSkipped, UNFILTERED_WARNING } from "./sup-skip.mjs";
 import { specSkip } from "./spec-skip.mjs";
+import { useBot as rowFlagsUse, blockedRows, lineKey } from "./row-flags-lib.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SCRIPT = fileURLToPath(import.meta.url);
@@ -125,6 +126,8 @@ export const BLOCK = Symbol("chưa so được");
 // candidates() uses it for these keys only (Khoa 18/11/2026: "làm (d) trước. (c) để đo và làm sau"; (c) = suppliers giving
 // the same figures for a model count as one vote, for the displacement).
 const MAJ_KEYS = new Set(["cyl"]);
+// row-flags-lib.mjs dùng các hàm này (nó không import ngược config-bot: vòng import + top-level await làm node thoát 13).
+rowFlagsUse({ majorityOf, BLOCK, normFig, useNormCtx });
 export function majorityOf(figs) {
   const by = new Map(), blocked = new Set();
   for (const [s, x] of figs) {
@@ -1366,7 +1369,7 @@ export function altOf(alts, cell) {
   }
   return null;
 }
-export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30, sync = null, keep = null, makeCap = MAKE_CAP, patches = true } = {}) {
+export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30, sync = null, keep = null, makeCap = MAKE_CAP, patches = true, blocked = null } = {}) {
   const hints = plausible(hints0, cap), sup = new Map(suppliers.map((s) => [s.id, s])), alts = new Map((cat.alternators || []).map((a) => [a.key, a])), rowsMap = normRowsOf(suppliers);
   const band = bandOf(cap);
   const near = (u) => !cap || Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * band.low && p[cap.unit] <= cap.value * band.high + 1e-9);
@@ -1381,6 +1384,10 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // power reads (Hyundai's DHY110KSE table gives the engine's 100 kW only, no kVA) and goes first.
       const gNamed = !!hints.named?.models?.length && !!(u.line || u.lines) && hints.named.models.some((m) => NG.namesModel([u.title, u.genset, u.line, ...(u.lines?.rows || [])].filter(Boolean).join("\n"), m));
       if (!(gNamed && hints.named.strict) && ((!u.line && !u.lines) || !near(u) || (hints.freq && u.freq && u.freq !== hints.freq) || (viaCn && !cn.has(u.supplierId)))) continue;
+      // Dòng nghi sai (Chất lượng 1, Khoa 18/11/2026; row-flags-lib.mjs blockedRows): số vô lý chưa được "cho dùng", hoặc
+      // "bỏ hẳn" trên màn Nhà cung cấp → cả dòng ra khỏi ứng viên, kể cả model HSMT nêu (dữ liệu dòng sai, không phải
+      // động cơ sai). Thông số của dòng vẫn ở `facts` như trước (số đông, chấm đạt), chỉ dòng không được chọn làm cấu hình.
+      if (blocked?.size && blocked.has(lineKey(u))) { dropped.push({ e, u, ruled: ["rowflag"], src: {} }); continue; }
       const a = u.other ? altOf(alts, u.other) : null, af = a ? facts.get(`alternator:${a.key}`) || [] : [];
       const s = sup.get(u.supplierId), rowCtrl = CAT.controllersIn(u.line || (u.lines?.rows || []).join(" "));
       const offers = [...rowCtrl, ...(s?.controllers || [])];
@@ -1937,6 +1944,23 @@ export function recordSearched(result, { logText = "", listed = [], root = WEB_M
 
 // io (tests; every default is what the bot uses): doc / allDocs read the web, supDir is the supplier DB of this checkout
 // (cn/*.json) read when `local`, memoDir the web memo, today the day its entries are weighed on.
+// Quyết định "cho dùng" / "bỏ hẳn" dòng nghi sai trên web (rowok/<NCC>, Chất lượng 1). Không đọc được thì như chưa ai
+// quyết: dòng số vô lý vẫn bị loại (thà thiếu còn hơn sai), chỉ dòng đã "cho dùng" tạm thời cũng bị loại.
+export async function rowOkOf(readAll) {
+  try {
+    const list = await readAll("rowok");
+    if (!Array.isArray(list)) throw new Error("không phải danh sách");
+    return Object.fromEntries(list.map((d) => [d.id, d.data || {}]));
+  } catch (e) { console.error(`CẢNH BÁO: không đọc được rowok (${e?.message || e}): dòng "cho dùng" vẫn bị loại lượt này`); return {}; }
+}
+// Cờ dòng do workflow tính (rowflags/current, cùng dữ liệu NCC bot đọc từ web). Không đọc được: null → blockedRows tự tính.
+export async function rowFlagsOf(read) {
+  try {
+    const rows = (await read("rowflags", "current"))?.rows;
+    if (Array.isArray(rows)) return rows;
+    throw new Error("chưa có doc");
+  } catch (e) { console.error(`CẢNH BÁO: không đọc được rowflags/current (${e?.message || e}): tự tính cờ dòng`); return null; }
+}
 export async function prep(key, dir, reqData = {}, given = null, multi = null, io = {}) {
   const { doc: read = doc, allDocs: readAll = allDocs, supDir = path.join(ROOT, "cn"), local = !!process.env.GENBID_LOCAL_SUPPLIERS, memoDir = WEB_MEMO_DIR, today = new Date().toISOString().slice(0, 10) } = io;
   fs.mkdirSync(path.join(dir, "web"), { recursive: true });
@@ -1969,7 +1993,8 @@ export async function prep(key, dir, reqData = {}, given = null, multi = null, i
   // the same engine in a Chinese table); only the rows offered as configurations are those of the group's suppliers.
   const facts = grp ? modelFacts({ ...full, engines: byOrigin(full.engines, origin, cn) }, all) : undefined;
   const offGroup = grp ? new Set(byOrigin(full.engines, origin, cn).flatMap((e) => (e.uses || []).map((u) => u.supplierId)).filter((id) => !grp.has(id))).size : 0;
-  const { md, ctlMd, shown, top, ctlLookup } = catalogMd(cat, cap, hints, { suppliers: all, origin, cn, focus: reqData.focus || null, sync, hsmtText: text, ...(facts ? { facts } : {}) });
+  const blocked = blockedRows(all, await rowOkOf(readAll), local ? null : await rowFlagsOf(read));
+  const { md, ctlMd, shown, top, ctlLookup } = catalogMd(cat, cap, hints, { suppliers: all, origin, cn, focus: reqData.focus || null, sync, hsmtText: text, blocked, ...(facts ? { facts } : {}) });
   // What earlier runs searched on the internet and did not find, for the models of this run (web-memo.mjs, Khoa 2026-11-12).
   const runList = runModels(top), negMd = MEMO.negativesMd(MEMO.loadNeg(memoDir), runList, today, { origin, hsmtText: text });
   // catalog.md whole for the code and grep; parts under the Read limit for the agent (writeForRead, read-order.json).

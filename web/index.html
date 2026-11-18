@@ -3442,13 +3442,28 @@ async function toggleExcl(id) {
 // { at, commit, rows: [{ key, supplierId, n, table, row, kind, model, text, drop, reasons: [{code, detail}] }] }. Quyết định
 // của người duyệt: rowok/<supplierId> { [key]: { d: "ok" | "drop", by, at } } (key đổi khi chữ của dòng đổi: dòng mới duyệt
 // lại). Nút chỉ đổi rowok, không đổi dữ liệu NCC (Khoa giữ nguyên theo nguồn).
-// MỘT chỗ kiểm quyền bấm (điều phối 18/11/2026, đang hỏi Khoa): mặc định chỉ Superadmin; cho mọi thành viên thì bỏ isSuperadmin().
+// MỘT chỗ kiểm quyền bấm. Khoa 18/11/2026: chỉ Superadmin.
 const rowOkCan = () => isSuperadmin() && !state.readOnly && !!state.db;
-// Gợi ý cấu hình CHƯA đọc rowflags / rowok (chặng B(iii) chưa làm): đổi thành true khi config-bot đã loại dòng theo cờ.
-const ROWFLAGS_IN_CONFIG = false;
 const ROWFLAG_REASON = { absurd: "số vô lý so với công suất của dòng", cylMaj: "số xi lanh lệch số đông nhà cung cấp khác" };
-const rowOkOf = (sid, key) => state.rowok?.[sid]?.[key]?.d || "";
-const rowFlagsOf = (sid) => (state.rowflags?.current?.rows || []).filter((r) => r.supplierId === sid);
+// Thông số đọc theo dòng nên một số vô lý gắn cờ cả động cơ lẫn đầu phát của dòng: mỗi DÒNG bảng (NCC | băm chữ dòng,
+// phần đầu và cuối của key) là một mục, quyết định áp cho cả dòng, như blockedRows của suppliers/row-flags-lib.mjs.
+const rowLineOf = (k) => { const p = String(k).split("|"); return `${p[0]}|${p[p.length - 1]}`; };
+const rowOkOf = (sid, key) => {
+  const l = rowLineOf(key), ds = Object.entries(state.rowok?.[sid] || {}).filter(([k, v]) => rowLineOf(k) === l && ["ok", "drop"].includes(v?.d)).map(([, v]) => v.d);
+  return ds.includes("drop") ? "drop" : ds[0] || "";
+};
+const rowFlagsOf = (sid) => {
+  const by = new Map();
+  for (const r of state.rowflags?.current?.rows || []) {
+    if (r.supplierId !== sid) continue;
+    const l = rowLineOf(r.key), g = by.get(l);
+    if (!g) { by.set(l, { ...r, parts: [{ kind: r.kind, model: r.model }], reasons: [...r.reasons] }); continue; }
+    g.drop = g.drop || r.drop;
+    if (!g.parts.some((p) => p.kind === r.kind && p.model === r.model)) g.parts.push({ kind: r.kind, model: r.model });
+    for (const x of r.reasons) if (!g.reasons.some((y) => y.code === x.code && y.detail === x.detail)) g.reasons.push(x);
+  }
+  return [...by.values()];
+};
 // Số dòng còn nghi: trừ dòng đã "cho dùng" (dòng "bỏ hẳn" vẫn là dòng sai, vẫn đếm).
 const rowFlagCount = (sid) => rowFlagsOf(sid).filter((r) => rowOkOf(sid, r.key) !== "ok").length;
 const rowFlagChip = (s) => { const n = rowFlagCount(s.id); return n ? h` <span class="chip warn" title="Dòng bảng thông số bị nghi đọc sai hoặc nguồn ghi sai">${n} dòng nghi sai</span>` : ""; };
@@ -3460,12 +3475,13 @@ function rowFlagsHtml(s) {
     const d = rowOkOf(s.id, r.key);
     if (d === "ok") return '<span class="chip ok">Đã cho dùng</span>';
     if (d === "drop") return '<span class="chip bad">Đã bỏ hẳn</span>';
-    return r.drop ? (ROWFLAGS_IN_CONFIG ? '<span class="chip bad">Bị loại khỏi gợi ý</span>' : '<span class="chip bad">Mức loại</span>') : '<span class="chip mut">Chỉ cảnh báo</span>';
+    return r.drop ? '<span class="chip bad">Bị loại khỏi gợi ý</span>' : '<span class="chip mut">Chỉ cảnh báo</span>';
   };
   const btn = (r, d, label) => h`<button class="btn sm ${rowOkOf(s.id, r.key) === d ? "on" : ""}" data-rowok="${d}" data-sid="${s.id}" data-key="${r.key}" title="${rowOkOf(s.id, r.key) === d ? "Bấm lại để bỏ quyết định này" : ""}">${label}</button>`;
   const item = (r) => {
     const t = s.specTables?.[r.table], u = url(r.n);
-    return h`<li class="rowflag"><div><b>${r.model}</b> <span class="muted small">${r.kind === "engine" ? "động cơ" : r.kind === "alternator" ? "đầu phát" : r.kind}</span> ${raw(state1(r))}</div>
+    const part = (p) => h`<b>${p.model}</b> <span class="muted small">${p.kind === "engine" ? "động cơ" : p.kind === "alternator" ? "đầu phát" : p.kind}</span>`;
+    return h`<li class="rowflag"><div>${raw(r.parts.map(part).join(" · "))} ${raw(state1(r))}</div>
       <div class="small">${r.reasons.map((x) => `${ROWFLAG_REASON[x.code] || x.code}: ${x.detail}`).join("; ")}</div>
       <div class="small muted">${t?.title || ""} · nguồn [${r.n}]${r.row == null ? "" : `, dòng ${r.row + 1}`}${raw(u ? h` · <a href="${safeUrl(u)}" target="_blank" rel="noopener">mở trang nguồn</a>` : "")}</div>
       <pre class="rowflagtext small">${[...(r.row == null ? [] : t?.header || []), r.text].join("\n")}</pre>
@@ -3475,14 +3491,14 @@ function rowFlagsHtml(s) {
   // Ngoại lệ DUY NHẤT của SHOW_SRC (điều phối 18/11/2026): mục này hiện chữ nguyên văn của dòng + link nguồn, vì không có
   // chúng thì không biết dòng đúng hay sai. Chỗ khác vẫn theo SHOW_SRC.
   return h`<details class="supsec" id="supRowFlags" ${n ? "open" : ""}><summary>Dòng nghi sai (${n}${n === rows.length ? "" : ` / ${rows.length}`})</summary>
-    <div class="muted small">Dòng bảng thông số có số bất thường. Dữ liệu giữ nguyên theo nguồn; nút chỉ quyết định có dùng dòng đó hay không.${ROWFLAGS_IN_CONFIG ? "" : " Gợi ý cấu hình chưa dùng các quyết định này."}</div>
+    <div class="muted small">Dòng bảng thông số có số bất thường. Dữ liệu giữ nguyên theo nguồn; nút chỉ quyết định có dùng dòng đó hay không. Dòng "Bị loại khỏi gợi ý" không vào danh sách ứng viên của Gợi ý cấu hình cho tới khi bấm "Dòng này đúng, cho dùng"; "Bỏ hẳn" loại cả dòng chỉ cảnh báo. Quyết định áp cho các lượt Gợi ý cấu hình chạy sau đó.</div>
     <ul class="suplist rowflags">${raw(rows.map(item).join(""))}</ul></details>`;
 }
 async function setRowOk(sid, key, d) {
   if (!rowOkCan()) { toast("Bạn không có quyền duyệt dòng nghi sai."); return; }
-  const cur = { ...(state.rowok?.[sid] || {}) };
-  if (cur[key]?.d === d) delete cur[key]; // bấm lại nút đang chọn: bỏ quyết định
-  else cur[key] = { d, by: window.genbidEmail || "", at: new Date().toISOString() };
+  const was = rowOkOf(sid, key), cur = { ...(state.rowok?.[sid] || {}) };
+  for (const k of Object.keys(cur)) if (rowLineOf(k) === rowLineOf(key)) delete cur[k]; // một quyết định cho cả dòng
+  if (was !== d) cur[key] = { d, by: window.genbidEmail || "", at: new Date().toISOString() }; // bấm lại nút đang chọn: bỏ quyết định
   state.rowok = { ...state.rowok, [sid]: cur };
   if ($("#supBody")) { if (supOpenId) renderSuppliers(); else renderSupList(); }
   if (!(await dbSet("rowok/" + sid, cur))) toast("Không lưu được quyết định cho dòng nghi sai.");
