@@ -1,0 +1,73 @@
+gói: 1548 (chữ HSMT 1499, chỉ Phân tích 46); có từ: 19
+
+IB2300023194 [text] lọc hãng: -; BĐK: ADEM
+  controller/controller ADEM «ADEM» L235: ADEM 4-E2
+
+IB2300114016 [text] lọc hãng: -; BĐK: EMCP
+  controller/engine EMCP «EMCP» L44: - Nhân công thực hiện kiểm tra, thử nghiệm và hiệu chỉnh  cấp độ 1 năm các chức năng hoạt động của máy phát CAT 3512B-1275kVA, 1600kVA bằng 
+  controller/engine EMCP «EMCP» L49: - Nhân công thực hiện kiểm tra, thử nghiệm và hiệu chỉnh  cấp độ 1 năm các chức năng hoạt động của máy phát CAT 3512B-1600kVA bằng thiết bị 
+  controller/engine EMCP «EMCP» L53: - Nhân công thực hiện kiểm tra, thử nghiệm và hiệu chỉnh  cấp độ 1 năm các chức năng hoạt động của máy phát CAT 3406-320kVA bằng thiết bị và
+
+IB2300230061 [text] lọc hãng: -; BĐK: PowerCommand
+  controller/controller PowerCommand «Power Command» L343: thuật số "Power Command ". Hệ thống điều
+  controller/controller PowerCommand «Power Command» L438: Bộ điều khiển Power Command dựa trên công
+
+IB2400073077 [text] lọc hãng: -; BĐK: EMCP
+  controller/controller EMCP «EMCP» L204: Màn hình điều khiển EMCP 4.2B
+
+IB2400100405 [text] lọc hãng: -; BĐK: AmpSentry
+  controller/controller AmpSentry «AmpSentry» L105: + Tích hợp phần mềm AmpSentry bảo vệ đầu phát (không chấp nhận sử dụng máy cắt đầu cực để bảo vệ).
+  controller/controller AmpSentry «AmpSentry» L327: + Tích hợp phần mềm AmpSentry bảo vệ đầu phát (không chấp nhận sử dụng máy cắt đầu cực để bảo vệ).
+
+IB2400166974 [text] lọc hãng: -; BĐK: PowerCommand
+  controller/genset PowerCommand «PowerCommand» L100: Bộ powercommand 2.2
+
+IB2400216498 [text] lọc hãng: -; BĐK: EMCP
+  controller/genset EMCP «EMCP» L95: bộ EMCP; Kiểm tra mối nối biến áp, biến dòng giáng đến bộ điều áp: độ xiết chặt,
+  controller/genset EMCP «EMCP» L96: đúng cực tính; Kiểm tra các chân giắc cắm của bộ AVR, bộ EMCP; Kiểm tra tổng
+  controller/genset EMCP «EMCP» L131: EMCP; Kiểm tra mối nối biến áp, biến dòng giáng đến bộ điều áp: độ xiết chặt,
+  controller/genset EMCP «EMCP» L132: đúng cực tính; Kiểm tra các chân giắc cắm của bộ AVR, bộ EMCP; Kiểm tra tổng
+  controller/genset EMCP «EMCP» L166: tra biến áp, biến dòng nối đến bộ EMCP; Kiểm tra mối nối biến áp, biến dòng
+  controller/genset EMCP «EMCP» L168: bộ AVR, bộ EMCP; Kiểm tra tổng thể thanh cái và đầu nối cáp động lực; Kiểm
+
+IB2400216847 [text] lọc hãng: -; BĐK: AmpSentry
+  controller/controller AmpSentry «AmpSentry» L203: + Tích hợp phần mềm AmpSentry bảo vệ đầu phát (không chấp nhận sử dụng máy cắt đầu cực để bảo vệ)
+
+IB2400285076 [text] lọc hãng: -; BĐK: AmpSentry
+  controller/controller AmpSentry «AmpSentry» L78: AmpSentry.
+
+IB2400333932 [text] lọc hãng: -; BĐK: AmpSentry
+  controller/controller AmpSentry «AmpSentry» L101: + Tích hợp phần mềm AmpSentry bảo vệ đầu phát (không chấp nhận sử dụng máy cắt đầu cực để bảo vệ).
+
+IB2500039578 [text] lọc hãng: -; BĐK: AmpSentry
+  controller/alternator AmpSentry «AmpSentry» L214: + Tích hợp phần mềm AmpSentry bảo vệ đầu phát
+
+IB2500102600 [text] lọc hãng: -; BĐK: AmpSentry
+  controller/controller AmpSentry «AmpSentry» L99: + Tích hợp phần mềm AmpSentry bảo vệ đầu phát (không chấp nhận sử dụng máy cắt đầu cực để bảo vệ).
+
+IB2500189935 [text] lọc hãng: Kubota; BĐK: -
+  engine/engine E-TVCS «E-TVCS» L325: X áy b h ớng (E-TVCS) g úp hò
+
+IB2500197652 [text] lọc hãng: -; BĐK: PowerCommand
+  controller/genset PowerCommand «PowerCommand» L181: Bộ powercommand 2.2
+
+IB2500340280 [text] lọc hãng: -; BĐK: EMCP
+  controller/genset EMCP «EMCP» L160: dòng nối đến bộ EMCP; Kiểm tra mối nối biến áp, biến dòng giáng đến bộ điều áp:
+  controller/genset EMCP «EMCP» L161: độ xiết chặt, đúng cực tính; Kiểm tra các chân giắc cắm của bộ AVR, bộ EMCP;
+  controller/genset EMCP «EMCP» L193: EMCP; Kiểm tra mối nối biến áp, biến dòng giáng đến bộ điều áp: độ xiết chặt, đúng
+  controller/genset EMCP «EMCP» L194: cực tính; Kiểm tra các chân giắc cắm của bộ AVR, bộ EMCP; Kiểm tra tổng thể
+  controller/alternator EMCP «EMCP» L231: biến dòng nối đến bộ EMCP; Kiểm tra mối nối biến áp, biến dòng giáng đến bộ điều
+  controller/alternator EMCP «EMCP» L232: áp: độ xiết chặt, đúng cực tính; Kiểm tra các chân giắc cắm của bộ AVR, bộ EMCP;
+
+IB2500416364 [text] lọc hãng: Kubota; BĐK: -
+  engine/engine E-TVCS «E-TVCS» L339: Xoáy ba hướng (E-TVCS) giúp hòa trộn
+
+IB2600362632 [text] lọc hãng: -; BĐK: PowerCommand
+  controller/genset PowerCommand «PowerCommand» L177: Bộ powercommand 2.2
+
+IB2600570346 [analysis] lọc hãng: -; BĐK: EMCP
+  controller/engine/tđ EMCP «EMCP» L21: Kiểm tra, thử nghiệm, hiệu chỉnh bằng thiết bị và phần mềm chuyên dụng (tất cả các máy) | Kiểm tra các cảm biến; các chức năng áp lực dầu th
+  controller/controller/tđ EMCP «EMCP» L22: Phần mềm và thiết bị chẩn đoán | Phần mềm chuyên dụng của hãng sản xuất (CAT Electronic Technician) hoặc phần mềm/thiết bị chẩn đoán chuyên 
+
+IB2600612866 [analysis] lọc hãng: Kubota; BĐK: -
+  engine/engine E-TVCS «E-TVCS» L47: Động cơ - kiểu buồng đốt | Xoáy ba hướng (E-TVCS) giúp hòa trộn nhiên liệu với không khí tốt hơn, cải thiện hiệu suất đốt cháy.
