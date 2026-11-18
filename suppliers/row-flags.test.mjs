@@ -10,17 +10,17 @@ const C = globalThis.GenbidCatalog;
 const sup = (id, tables) => ({ id, country: "CN", confidence: "high", specTables: tables.map(([n, title, header, rows]) => ({ n, title, header, rows })) });
 const codesOf = (r, id) => [...r.flags.values()].filter((f) => f.o.supplierId === id).flatMap((f) => f.reasons.map((x) => x.code));
 
-// yingtai-jiangsu n113 (高压发电机组): hàng thiếu ô điện áp, nên "1100" (công suất dự phòng) rơi vào cột 额定电压.
+// Fixture dạng bảng 高压发电机组 của yingtai-jiangsu n113, ô điện áp ghi "1150" (số vô lý). Dòng thật của n113 thiếu ô điện áp
+// và nay catalog.js đọc đúng (lech-cot-11.test.mjs), nên fixture có đủ ô để cổng vẫn bị thử.
 const YT = sup("yingtai-jiangsu", [[113, "高压发电机组", [
-  "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式",
-  "| 主用 | 备用 | V | A | （kg) | L×W×H(m) | 主用 | 备用 | （L) | (g/kW.h)",
-], ["| 1000GF | 1000 | 1100 | 114.3 | 11330 | 6.40×2.04×2.64 | KTA50-G3 | 1097 | 1227 | 16 | 50.3 | ≤209 | 电子"]]]);
+  "| 机组型号 | 主用功率 (KW) | 备用功率 (KW) | 额定电压 (V) | 发动机型号 | 缸数",
+], ["| 1000GF | 1000 | 1100 | 1150 | KTA50-G3 | 16"]]]);
 
-test("absurd: ô lệch cột (điện áp = công suất dự phòng) bị gắn cờ", () => {
+test("absurd: ô điện áp vô lý (1150 V) bị gắn cờ", () => {
   const r = flagRows([YT]);
   const f = [...r.flags.values()].find((x) => x.o.model === "KTA50-G3");
   assert.ok(f, "dòng KTA50-G3 phải bị gắn cờ");
-  assert.ok(f.reasons.some((x) => x.code === "absurd" && /voltage "1100"/.test(x.detail)), JSON.stringify(f.reasons));
+  assert.ok(f.reasons.some((x) => x.code === "absurd" && /voltage "1150"/.test(x.detail)), JSON.stringify(f.reasons));
   assert.equal(dropped(f), true, "số vô lý: mức drop (Khoa 18/11/2026)");
 });
 
