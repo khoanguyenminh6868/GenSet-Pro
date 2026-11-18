@@ -63,6 +63,34 @@ Nguyên tắc chung: một lần đọc ở `hintsOf` → `hints.trait = ET.filt
 - Chữ HSMT đầy đủ của IB2600612866 (chỉ có Phân tích trong máy; `text.txt` không có, thư mục lượt Gợi ý 17/11 đã bị dọn): test dùng câu trích của Phân tích.
 - Chưa đo top 30 / regress (chờ PR 2 và điều phối cho phép). Chưa chạy `check` / Gợi ý IB2600612866.
 
+## 9. Lượt 2 (sau khi #925 merge `270b4eb4`): đo điều (4) và chuẩn bị điều (3)
+Nhánh `dac-thu-dong-co-2b` (từ `270b4eb4`, đã đẩy, CHƯA mở PR). `web/bidprice.js` chỉ là bản nháp trong worktree `wt-dac-thu-2`, KHÔNG commit (diff lưu ở `dau-vao\dac-thu-dong-co-2\bidprice-nhap.diff`).
+
+### 9a. `brandSyncOf` main ↔ bản nháp, 1.545 gói (đo, mọi gói)
+Script `dau-vao\dac-thu-dong-co-2\sync-ab.mjs`, đầu ra đủ `sync-ab.txt`. Chữ: `text.txt` (1.499), không có thì dòng Phân tích `item | quote` (46).
+- Bản nháp 1 (đi lùi từng mảnh từ chữ "cùng…"): làm mất 29 câu đồng bộ ĐÚNG ("được thiết kế, sản xuất, lắp ráp bởi cùng…", "ắc quy và vỏ…", "Cùng thương hiệu với đầu phát") → bỏ.
+- Bản nháp 2 (đang để trong worktree): cắt câu ở "," ";", một bộ phận KHÔNG tính khi mọi mảnh có nó đều gắn vị ngữ xuất xứ khác ĐỨNG SAU nó (G7 / G20 / EU, xuất xứ, nước sản xuất, châu Âu) và không chứa chữ "cùng…". Kết quả:
+
+| Loại | Số gói |
+|---|---|
+| Không có đồng bộ ở cả hai | 1.433 |
+| Có đồng bộ, giống hệt main | 85 |
+| main có, nháp KHÔNG (động cơ bị bỏ, còn 1 bộ phận < 2 nên không còn yêu cầu) | **2: IB2500416364, IB2600612866** (cùng câu "đồng bộ động cơ thương hiệu G7, đầu phát và vỏ chống ồn đồng bộ cùng một nhãn hiệu") |
+| Đổi bộ phận khác | 0 |
+
+- Câu 1 của Khoa (đòi đầu phát 1/1 hay bỏ hẳn): MAIN HIỆN ĐÃ bỏ mọi câu chỉ nêu một bộ phận (cần ≥ 2). Nếu Khoa chọn (a) "đòi 1 bộ phận", ngoài 2 gói trên còn **25 gói** hôm nay không có yêu cầu đồng bộ sẽ có (danh sách + câu trong `sync-ab.txt`, nhóm "1 bộ phận"), trong đó ít nhất 4 là câu KHÔNG phải yêu cầu tổ máy: IB2300188511 và IB2500102600 (tủ trung thế / SMD), IB2600126365 và IB2600304011 (thang điểm "15 điểm: hãng đầu phát cùng hãng tổ máy"). Tức là (a) cần thêm luật lọc câu, không chỉ đổi ngưỡng. Đề xuất cho điều phối chuyển Khoa: chọn (b) cho lần này (2 gói thành "không đòi đồng bộ"), còn "đòi 1 bộ phận" là việc riêng nếu Khoa muốn.
+- Test sau bản nháp: `node --test suppliers/*.test.mjs` 1068 tests, pass 1060, todo 8, fail 0; `node --test web/test/*.test.mjs` 161 / 161.
+
+### 9b. `variantFamily` (`suppliers/engine-variant.mjs` + `engine-variant.test.mjs`, 6 / 6 pass)
+Hàm thuần, tham số `scope` ∈ {"all", "version"} để chọn theo câu 4 của Khoa; luôn bỏ công suất ghi dính sau "/" ("D1105-E2BG-CHN-1/8.4KW"). Đo trên danh mục (`CAT.build` của `suppliers/cn`, 6.860 động cơ; danh sách đủ `dau-vao\dac-thu-dong-co-2\nhom-bien-the.txt`):
+
+| Phạm vi | Nhóm ≥ 2 model | Model trong nhóm | D1105 / V1505 | QSK60-G3 / G4 | 4006-23TAG2A / 3A | 403A-11G1 / 403A-15G1 |
+|---|---|---|---|---|---|---|
+| all (phần trước "-" / "/") | 702 | 2.827 | một nhóm (6 model mỗi cái) | một nhóm (24 model) | một nhóm (15) | MỘT nhóm (1,1 L và 1,5 L là hai động cơ khác) |
+| version (chỉ bỏ BG, E2BG, CHN, EU, hậu tố 1 chữ số, công suất sau "/") | 177 | 455 | một nhóm | hai | hai | hai |
+
+Thêm bằng chứng cho câu 4: "all" còn gộp V2003-T (turbo) với V2003 (không turbo). Hậu tố 2 chữ số là công suất (ZCDL-15 / -18, N4105DS-38 / -46) nên "version" không bỏ. Em đề xuất "version".
+
 ## Cần ghi nhớ
 - Bí danh "PCC" không dùng để nhận PowerCommand (bẫy đã ghi `suppliers/CLAUDE.md`).
 - Bốn câu hỏi mục 5 chờ Khoa; câu 1 và 2 cần trước khi viết PR 2 phần (4) và (5).

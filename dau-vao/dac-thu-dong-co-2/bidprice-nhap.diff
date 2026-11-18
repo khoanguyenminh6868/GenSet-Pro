@@ -1,0 +1,39 @@
+diff --git a/web/bidprice.js b/web/bidprice.js
+index 669bb78a..af6d445c 100644
+--- a/web/bidprice.js
++++ b/web/bidprice.js
+@@ -160,7 +160,23 @@
+   const SYNC_COUNT = /(^|[^\d])(0?2|hai)\s*(trong|\/|trên)\s*(0?3|ba)\s*(bộ\s*ph|thành\s*ph|\()/i;
+   const SYNC_NOT = /chịu\s*trách\s*nhiệm|h[oò][àa]\s*đồng\s*bộ|\bATS\b|đấu\s*nối|vật\s*liệu|bộ\s*sạc|sạc\s*ắc|bồn|téc|phụ\s*tùng|hiện\s*hữu/i;
+   const NUM = { hai: 2, ba: 3 };
+-  function brandSyncOf(text) {
++  // Only the parts the clause of "cùng một nhãn hiệu / hãng…" itself lists (Khoa, 2026-11-18: "nếu yêu cầu không ghi
++  // đòi động cơ thì không đòi"; IB2600612866 "đồng bộ động cơ thương hiệu G7, đầu phát và vỏ chống ồn đồng bộ cùng một
++  // nhãn hiệu" asks the engine to be of a G7 brand, not of the genset's own make). The sentence is cut at "," and ";":
++  // a part counts when one piece that names it holds the trigger, or holds no other requirement of origin (G7 / G20 /
++  // EU, xuất xứ, nước sản xuất). A first draft that walked the list back from the trigger lost 29 true clauses ("được
++  // thiết kế, sản xuất, lắp ráp bởi cùng…", "ắc quy và vỏ…", "cùng thương hiệu với đầu phát"): only this narrow cut.
++  const SYNC_OTHER = /(?<![\p{L}\p{N}])(?:G\s?-?(?:7|20)|EU)(?![\p{L}\p{N}])|xuất\s*xứ|nước\s*sản\s*xuất|châu\s*âu/iu;
++  function syncListParts(seg, pos, len) {
++    const pieces = [];
++    let at = 0;
++    // Each piece keeps the comma before it (", điều khiển" is a controller only after a comma) and is judged from the
++    // part on: an origin word before the part is another cell ("2 Xuất xứ Tính đồng bộ: Động cơ, …", IB2300194512).
++    for (const p of seg.split(/(?<=[,;])/)) { pieces.push({ p: (at ? seg[at - 1] : "") + p, trig: at < pos + len && at + p.length > pos }); at += p.length; }
++    const hit = (r, { p, trig }) => { const m = p.match(r); return !!m && (trig || !SYNC_OTHER.test(p.slice(m.index))); };
++    return SYNC_PARTS.filter(([, r]) => pieces.some((x) => hit(r, x))).map(([k]) => k);
++  }
++  function brandSyncOf(text, { minParts = 2 } = {}) {
+     const lines = String(text || "").normalize("NFC").split(/\n/), flat = (a, b) => lines.slice(Math.max(0, a), b).join(" ").replace(/\s+/g, " ");
+     for (let i = 0; i < lines.length; i++) {
+       // A clause may run over the next line (two-column tables of the HSMT): the trigger must start on this one.
+@@ -181,7 +197,8 @@
+           parts = named.length >= need ? named : ["engine", "alternator", "controller"];
+           if (need < 2) continue;
+         } else {
+-          if (parts.length < 2) continue;
++          parts = syncListParts(seg, at - from, m[0].length);
++          if (parts.length < minParts) continue;
+           need = SYNC_COUNT.test(seg) ? 2 : parts.length;
+         }
+         const quote = lines[i].trim();
