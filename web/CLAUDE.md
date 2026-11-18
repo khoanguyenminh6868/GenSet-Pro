@@ -46,3 +46,4 @@ Chỉ bản web Vercel + bot Windows được dùng; không phát triển nhánh
 - Đổi phiên bản thư viện trong `LIBS` thì đổi cả devDependencies của `web/test/package.json` và bảng `LOCAL` của `web/test/fixtures.mjs` (test phục vụ thư viện cục bộ thay CDN, SRI vẫn kiểm).
 - Thử bằng UI thật, không chép code ra console. Đổi hash không tải lại trang → reload thật. Mở gói bằng `#goi/<TBMT>` rồi bấm tab. Xoá localStorage `genbid:capScan2` sau khi đổi dữ liệu thử.
 - Preview Vercel của PR bị "Ignored Build Step"; chỉ `main` được deploy.
+- Thêm / đổi biến môi trường Vercel: bấm Redeploy cùng commit bị `ignoreCommand` huỷ (CANCELED, `web/` không đổi) nên biến chưa có hiệu lực; phải có commit mới đổi tệp trong `web/` (18/11/2026, `CRON_SECRET`).

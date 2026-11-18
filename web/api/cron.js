@@ -3,6 +3,7 @@
 // tự Sync theo lịch của nó (GenBid-Bot.ps1). Không máy nào bật thì đánh thức bot trong Vercel Sandbox (api/_wake.js); bot đó
 // chạy cùng vòng lịch, tính giờ Việt Nam, Sync mốc vừa tới rồi tự dừng khi rảnh 5 phút (api/_sandbox.js decide).
 // Chỉ nhận lời gọi của Vercel Cron: Authorization: Bearer <CRON_SECRET> (biến Vercel, Khoa đặt). Chưa đặt thì không làm gì.
+// Đặt / đổi biến xong phải có bản deploy MỚI: Redeploy cùng commit bị ignoreCommand của vercel.json huỷ (web/ không đổi).
 import { wakeSandbox } from "./_wake.js";
 
 export const VN_OFFSET_MS = 7 * 3600e3;
