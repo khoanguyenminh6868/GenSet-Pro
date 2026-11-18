@@ -48,4 +48,7 @@ test("familiesOf keeps only families of two models or more, and checks the scope
   assert.deepEqual([...f.keys()], ["D1105"]);
   assert.equal(f.get("D1105").length, 6);
   assert.throws(() => variantFamily("D1105", "rating"));
+  // Khoa 18/11/2026, câu 4 (b): the default is "version" (rating suffixes are other engines)
+  assert.notEqual(variantFamily("QSK60-G3"), variantFamily("QSK60-G4"));
+  assert.equal(variantFamily("D1105-E2BG-CHN-1/8.4KW"), "D1105");
 });

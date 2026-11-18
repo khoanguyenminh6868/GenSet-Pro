@@ -3,7 +3,8 @@
 // so it must never import config-bot.mjs.
 //
 // variantFamily(model, scope) → the key shared by the variants of one engine, compared like web/catalog.js keyOf.
-// Two scopes, because Khoa has still to choose (nghiem-thu dac-thu-dong-co-2.md, mục 5 câu 4):
+// Two scopes; Khoa chose "version" (18/11/2026, câu 4 (b): gom hậu tố phiên bản, KHÔNG gom hậu tố công suất), the default.
+// "all" stays for the measure that showed why (403A-11G1 with 403A-15G1, V2003-T turbo with V2003):
 // - "all": the code before the first "-" or "/" — D1105-E2BG-CHN-1, QSK60-G3 / QSK60-G4, 4006-23TAG2A / 4006-23TAG3A
 //   are each one family (a rating suffix too).
 // - "version": only suffixes of a version, a market or an emission stage are taken off (BG, E2BG, CHN, EU, a bare
@@ -17,7 +18,7 @@ export const keyOf = (m) => String(m ?? "").normalize("NFKC").toUpperCase().repl
 const VERSION_SEG = /^(?:E\d{0,2}B?G\d{0,2}|BG\d{0,2}|CHN|EU|E\d{1,2}|\d)$/i;
 // A power written into the model cell ("D1105-E2BG-CHN-1/8.4KW", jet-power): never part of the model.
 const POWER_TAIL = /\s*\/\s*\d+(?:[.,]\d+)?\s*(?:k\s*w|k\s*va|hp|ps)\b.*$/i;
-export function variantFamily(model, scope = "all") {
+export function variantFamily(model, scope = "version") {
   if (!SCOPES.includes(scope)) throw new Error(`scope ${scope}: chỉ ${SCOPES.join(" / ")}`);
   const s = String(model ?? "").normalize("NFKC").trim().replace(POWER_TAIL, "");
   if (scope === "all") {
@@ -30,7 +31,7 @@ export function variantFamily(model, scope = "all") {
   return keyOf(segs.join("-"));
 }
 // Families with two or more of the given models (scope as above): Map family → [model…], in the order given.
-export function familiesOf(models, scope = "all") {
+export function familiesOf(models, scope = "version") {
   const out = new Map();
   for (const m of models) { const f = variantFamily(m, scope); out.set(f, [...(out.get(f) || []), m]); }
   for (const [f, list] of out) if (new Set(list.map(keyOf)).size < 2) out.delete(f);
