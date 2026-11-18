@@ -371,6 +371,7 @@ blockquote{margin:0;padding:5px 10px;border-left:2px solid var(--line);color:var
 .suptable tr.rowhit td{background:color-mix(in srgb,var(--amber) 22%,transparent)}.suptable{width:100%;border-collapse:collapse;font-size:13px}.suptable th,.suptable td{padding:7px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}.suptable tbody tr:is([data-supopen],[data-catitem]){cursor:pointer}.suptable tbody tr:is([data-supopen],[data-catitem]):hover{background:var(--panel2)}
 .suplink{background:none;border:0;padding:0;font:inherit;font-weight:inherit;color:inherit;text-align:left;cursor:pointer;text-decoration:underline;text-decoration-color:var(--dim);text-underline-offset:2px}.suplink:hover{color:var(--blue);text-decoration-color:currentColor}
 .supcontact{margin-top:3px;overflow-wrap:anywhere}.supref{border:0;background:none;padding:0 1px;color:var(--blue);font-size:11.5px;cursor:pointer;text-decoration:none;vertical-align:super}.suplist{margin:4px 0;padding-left:20px;display:flex;flex-direction:column;gap:4px}.supsrc{padding-left:22px;display:flex;flex-direction:column;gap:8px;font-size:13px;overflow-wrap:anywhere}.supsrc ul{padding-left:16px;margin:4px 0}.supspec{margin:4px 0}.supspec summary{cursor:pointer;font-size:13px;padding:4px 0}.supspec .suptable th,.supspec .suptable td{padding:4px 6px;font-size:12px;white-space:nowrap}
+.rowflags{list-style:none;padding-left:0;gap:12px}.rowflag{border-top:1px solid var(--line);padding-top:8px}.rowflagtext{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--panel2);border-radius:6px;padding:6px 8px;margin:6px 0;font-size:12px}.btn.on{border-color:var(--violet);background:var(--violet-soft)}
 /* Phone: supplier tables become one card per row; td[data-l] shows its column name. */
 @media (max-width:640px){table.supcards thead{display:none}table.supcards,table.supcards tbody,table.supcards tr,table.supcards td{display:block;width:auto}table.supcards tr{padding:10px 12px;border-bottom:1px solid var(--line)}table.supcards td{border:0;padding:2px 0}table.supcards td[data-l]::before{content:attr(data-l) ": ";color:var(--dim);font-size:11.5px}}
 /* Chip "Trúng N gói" ở lưới nhà cung cấp: desktop ở ô Vai trò, mobile dưới tên (Khoa, 2026-11-12). */
@@ -690,7 +691,7 @@ const SHOW_SRC = false;
 const SHOW_FIND_NOTE = false;
 const state = {
   db: null,
-  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, supdeleted: {}, supfav: {}, supalias: {}, supexcl: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, specmatch: {}, specreq: {}, bidprice: {}, bidpricereq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, bcdg: {}, deleted: {}, sel: new Set(), limit: pageSize(),
+  feed: null, manual: {}, tracked: {}, hsmt: {}, analysis: {}, compare: {}, hsdt: {}, tlkt: {}, quote: {}, supplier: {}, supdeleted: {}, supfav: {}, supalias: {}, supexcl: {}, rowflags: {}, rowok: {}, suppliermatch: {}, supplierreq: {}, configmatch: {}, configreq: {}, findmatch: {}, findreq: {}, specmatch: {}, specreq: {}, bidprice: {}, bidpricereq: {}, hsmtreq: {}, analysisreq: {}, translationreq: {}, comparereq: {}, hsdtreq: {}, tlktreq: {}, bidders: {}, portalids: {}, bcdg: {}, deleted: {}, sel: new Set(), limit: pageSize(),
   loaded: { feed: false, tracked: false, hsmt: false, analysis: false, seen: false, deleted: false, hist: false, supplier: false }, seen: {}, list: null,
   stage: local.get("stage", "all"),
   // Every status tab opens on newest posting date first (Khoa 2026-11-07); a header click resorts only until the tab changes.
@@ -3342,6 +3343,8 @@ function needSup() {
   subscribe("supalias", "supalias", () => setTimeout(supChanged, 0));
   subscribe("supexcl", "supexcl", () => setTimeout(supChanged, 0));
   subscribe("gaps", "gaps", () => setTimeout(supGapsRedraw, 0));
+  subscribe("rowflags", "rowflags", () => setTimeout(supChanged, 0));
+  subscribe("rowok", "rowok", () => setTimeout(supChanged, 0));
   // Tìm Thông Số (superadmin only): its request and result redraw only their own block of the open supplier.
   if (isSuperadmin()) for (const c of ["specreq", "specmatch"]) subscribe(c, c, () => setTimeout(supSpecRedraw, 0));
 }
@@ -3433,6 +3436,56 @@ async function toggleExcl(id) {
   if ($("#supBody")) { if (supOpenId) renderSuppliers(); else renderSupList(); }
   if (state.open) renderDrawer(false);
   if (!(await dbSet("supexcl/" + id, rec))) toast("Không lưu được việc loại trừ nhà cung cấp.");
+}
+// ---------- Dòng nghi sai (Chất lượng 1, Khoa 18/11/2026) ----------
+// suppliers/row-flags.mjs (workflow supplier-publish.yml) gắn cờ từng dòng bảng thông số và ghi MỘT doc rowflags/current
+// { at, commit, rows: [{ key, supplierId, n, table, row, kind, model, text, drop, reasons: [{code, detail}] }] }. Quyết định
+// của người duyệt: rowok/<supplierId> { [key]: { d: "ok" | "drop", by, at } } (key đổi khi chữ của dòng đổi: dòng mới duyệt
+// lại). Nút chỉ đổi rowok, không đổi dữ liệu NCC (Khoa giữ nguyên theo nguồn).
+// MỘT chỗ kiểm quyền bấm (điều phối 18/11/2026, đang hỏi Khoa): mặc định chỉ Superadmin; cho mọi thành viên thì bỏ isSuperadmin().
+const rowOkCan = () => isSuperadmin() && !state.readOnly && !!state.db;
+// Gợi ý cấu hình CHƯA đọc rowflags / rowok (chặng B(iii) chưa làm): đổi thành true khi config-bot đã loại dòng theo cờ.
+const ROWFLAGS_IN_CONFIG = false;
+const ROWFLAG_REASON = { absurd: "số vô lý so với công suất của dòng", cylMaj: "số xi lanh lệch số đông nhà cung cấp khác" };
+const rowOkOf = (sid, key) => state.rowok?.[sid]?.[key]?.d || "";
+const rowFlagsOf = (sid) => (state.rowflags?.current?.rows || []).filter((r) => r.supplierId === sid);
+// Số dòng còn nghi: trừ dòng đã "cho dùng" (dòng "bỏ hẳn" vẫn là dòng sai, vẫn đếm).
+const rowFlagCount = (sid) => rowFlagsOf(sid).filter((r) => rowOkOf(sid, r.key) !== "ok").length;
+const rowFlagChip = (s) => { const n = rowFlagCount(s.id); return n ? h` <span class="chip warn" title="Dòng bảng thông số bị nghi đọc sai hoặc nguồn ghi sai">${n} dòng nghi sai</span>` : ""; };
+function rowFlagsHtml(s) {
+  const rows = rowFlagsOf(s.id);
+  if (!rows.length) return "";
+  const can = rowOkCan(), url = (n) => (s.sources || []).find((x) => x.n === n)?.url;
+  const state1 = (r) => {
+    const d = rowOkOf(s.id, r.key);
+    if (d === "ok") return '<span class="chip ok">Đã cho dùng</span>';
+    if (d === "drop") return '<span class="chip bad">Đã bỏ hẳn</span>';
+    return r.drop ? (ROWFLAGS_IN_CONFIG ? '<span class="chip bad">Bị loại khỏi gợi ý</span>' : '<span class="chip bad">Mức loại</span>') : '<span class="chip mut">Chỉ cảnh báo</span>';
+  };
+  const btn = (r, d, label) => h`<button class="btn sm ${rowOkOf(s.id, r.key) === d ? "on" : ""}" data-rowok="${d}" data-sid="${s.id}" data-key="${r.key}" title="${rowOkOf(s.id, r.key) === d ? "Bấm lại để bỏ quyết định này" : ""}">${label}</button>`;
+  const item = (r) => {
+    const t = s.specTables?.[r.table], u = url(r.n);
+    return h`<li class="rowflag"><div><b>${r.model}</b> <span class="muted small">${r.kind === "engine" ? "động cơ" : r.kind === "alternator" ? "đầu phát" : r.kind}</span> ${raw(state1(r))}</div>
+      <div class="small">${r.reasons.map((x) => `${ROWFLAG_REASON[x.code] || x.code}: ${x.detail}`).join("; ")}</div>
+      <div class="small muted">${t?.title || ""} · nguồn [${r.n}]${r.row == null ? "" : `, dòng ${r.row + 1}`}${raw(u ? h` · <a href="${safeUrl(u)}" target="_blank" rel="noopener">mở trang nguồn</a>` : "")}</div>
+      <pre class="rowflagtext small">${[...(r.row == null ? [] : t?.header || []), r.text].join("\n")}</pre>
+      ${raw(can ? h`<div class="row">${raw(btn(r, "ok", "Dòng này đúng, cho dùng"))}${raw(btn(r, "drop", "Bỏ hẳn"))}</div>` : "")}</li>`;
+  };
+  const n = rowFlagCount(s.id);
+  // Ngoại lệ DUY NHẤT của SHOW_SRC (điều phối 18/11/2026): mục này hiện chữ nguyên văn của dòng + link nguồn, vì không có
+  // chúng thì không biết dòng đúng hay sai. Chỗ khác vẫn theo SHOW_SRC.
+  return h`<details class="supsec" id="supRowFlags" ${n ? "open" : ""}><summary>Dòng nghi sai (${n}${n === rows.length ? "" : ` / ${rows.length}`})</summary>
+    <div class="muted small">Dòng bảng thông số có số bất thường. Dữ liệu giữ nguyên theo nguồn; nút chỉ quyết định có dùng dòng đó hay không.${ROWFLAGS_IN_CONFIG ? "" : " Gợi ý cấu hình chưa dùng các quyết định này."}</div>
+    <ul class="suplist rowflags">${raw(rows.map(item).join(""))}</ul></details>`;
+}
+async function setRowOk(sid, key, d) {
+  if (!rowOkCan()) { toast("Bạn không có quyền duyệt dòng nghi sai."); return; }
+  const cur = { ...(state.rowok?.[sid] || {}) };
+  if (cur[key]?.d === d) delete cur[key]; // bấm lại nút đang chọn: bỏ quyết định
+  else cur[key] = { d, by: window.genbidEmail || "", at: new Date().toISOString() };
+  state.rowok = { ...state.rowok, [sid]: cur };
+  if ($("#supBody")) { if (supOpenId) renderSuppliers(); else renderSupList(); }
+  if (!(await dbSet("rowok/" + sid, cur))) toast("Không lưu được quyết định cho dòng nghi sai.");
 }
 const supWait = () => (state.db && !state.loaded.supplier ? h`<div class="mscroll loading">${raw(progress("Đang tải nhà cung cấp..."))}</div>` : "");
 const supChanged = () => { renderSuppliers(); if ($("#catBody")) renderCatalog(); partsFill(); };
@@ -3560,7 +3613,7 @@ function renderSupList() {
   $("#supList").innerHTML = list.length ? h`<div class="tablewrap"><table class="suptable supcards supmain"><thead><tr><th>Nhà cung cấp</th><th>Vai trò</th>${raw(supSortTh("country", "Quốc gia", "Quốc gia"))}${raw(supSortTh("year", "Năm TL", "Năm thành lập"))}<th>Dòng máy</th><th>Động cơ</th><th>Độ tin cậy</th></tr></thead><tbody>${raw(list.map((s) => {
     const lines = filtered ? supLinesFor(s) : s.productLines || [];
     const conf = SUP_CONF[s.confidence] || ["", "mut"];
-    return h`<tr data-supopen="${s.id}" class="${supExcl(s.id) ? "supexcl" : ""}"><td>${raw(favStar(s))}<b class="hlname">${supName(s)}</b>${raw(supExcl(s.id) ? ' <span class="chip bad">Đã loại trừ</span>' : "")}${raw(s.names?.zh ? h`<div class="muted small">${s.names.zh}</div>` : "")}${raw([s.hq?.city, s.hq?.province].some(Boolean) ? h`<div class="muted small">${[s.hq?.city, s.hq?.province].filter(Boolean).join(", ")}</div>` : "")}${raw(supContactsBrief(s.contacts))}${raw(supWonChip(s, "wonm"))}</td>
+    return h`<tr data-supopen="${s.id}" class="${supExcl(s.id) ? "supexcl" : ""}"><td>${raw(favStar(s))}<b class="hlname">${supName(s)}</b>${raw(supExcl(s.id) ? ' <span class="chip bad">Đã loại trừ</span>' : "")}${raw(rowFlagChip(s))}${raw(s.names?.zh ? h`<div class="muted small">${s.names.zh}</div>` : "")}${raw([s.hq?.city, s.hq?.province].some(Boolean) ? h`<div class="muted small">${[s.hq?.city, s.hq?.province].filter(Boolean).join(", ")}</div>` : "")}${raw(supContactsBrief(s.contacts))}${raw(supWonChip(s, "wonm"))}</td>
       <td data-l="Vai trò">${SUP_ROLE[s.role] || s.role}${raw(s.specTables?.length ? h`<div class="muted small">${s.specTables.reduce((a, x) => a + x.rows.length, 0)} model</div>` : "")}${raw(s.status === "partial" ? '<div><span class="chip mut">Thiếu dữ liệu</span></div>' : "")}${raw(supWonChip(s, "wond"))}${raw(supQuoteChip(s))}</td>
       <td data-l="Quốc gia">${supCountryName(s) || "—"}</td>
       <td data-l="Năm thành lập">${s.founded || "—"}</td>
@@ -3621,6 +3674,7 @@ function supDetailHtml(s) {
       <td class="small" data-l="Đầu phát">${(p.alternatorMakes || []).join(", ") || "—"}</td>
       <td class="small" data-l="Khác">${[p.fuel && p.kind !== "alternator" ? p.fuel : "", ...(p.frequency || []), ...(p.types || []), ...(p.emission || []), ...(p.standards || [])].filter(Boolean).join(" · ")}</td></tr>`).join(""))}</tbody></table></div></details>` : '<h4>Dòng máy phân phối</h4><div class="muted small">Chưa có dữ liệu.</div>')}
     ${raw(supModelsHtml(s))}
+    ${raw(rowFlagsHtml(s))}
     ${raw(supSpecHtml(s))}
     ${raw(supWonHtml(s))}
     <h4>Chứng chỉ</h4>${raw(list(s.certifications, (c) => h`<li>${c.name} ${raw(supRefs(c.src))}</li>`))}
@@ -5113,6 +5167,8 @@ document.addEventListener("click", async (e) => {
   if (pen) { aliasEditOpen(pen.dataset.id); return; }
   if (e.target.closest("[data-aliascancel]")) { aliasEditClose(); return; }
   if (e.target.id === "supExcl") { toggleExcl(e.target.dataset.id); return; }
+  const rok = e.target.closest("[data-rowok]");
+  if (rok) { setRowOk(rok.dataset.sid, rok.dataset.key, rok.dataset.rowok); return; }
   if (e.target.id === "supDel") { delSupplier(e.target.dataset.id); return; }
   if (e.target.id === "supSpecRun" && !e.target.disabled) { supSpecRequest(e.target.dataset.id); return; }
   if (e.target.id === "supSpecHide") { try { localStorage.setItem("genbid:specHide:" + e.target.dataset.id, e.target.dataset.at); } catch {} supSpecRedraw(); return; }
