@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-17T06:51:34.233Z
+  modified: 2026-11-18T03:41:48.782Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Code xếp sẵn 30 dòng ứng viên; mọi số/câu trích phải có nguyên văn trong nguồn, sai → "Đạt" thành "Chưa rõ". ~6–11 phút, ~3 USD/gói. Yêu cầu theo bộ mã cố định `suppliers/reqcodes.mjs` (thêm mã: dòng `R(...)` đúng thứ tự + test; tăng `REQ_VERSION`).
@@ -46,6 +46,13 @@ metadata:
 - Động cơ chỉ có dòng tần số kia (Baudouin đuôi "/6" = 60 Hz) → loại khi HSMT đòi tần số còn lại.
 - Gợi ý lại KHÔNG giữ dòng ứng viên của lượt trước (Khoa: "không cần giữ"); Tìm NCC / cấu hình internet vẫn giữ.
 - Khoa muốn bắt lỗi đọc ngưỡng HSMT có hệ thống: `suppliers/hints-audit.mjs` (so code đọc với Phân tích).
+
+**Đặc thù hãng động cơ (Khoa chốt 18/11/2026, IB2600612866: HSMT ghi buồng đốt E-TVCS của Kubota mà kết quả có CAT / Perkins / Yanmar; CHƯA code, chặng 2 chờ bảng `suppliers/engine-traits.json`):**
+- HSMT có từ đặc thù của một hãng động cơ → "chỉ gợi ý hãng đó và bỏ trần 2 cấu hình cho hãng đó".
+- Bảng từ đặc thù: `suppliers/engine-traits.json` (PR #914). Khoa 18/11: tên dòng máy (TNV, QSK60, NEF…) KHÔNG là đặc thù ("không"); từ đặc thù ở yêu cầu bộ điều khiển (PowerCommand, EMCP…) "thì chỉ đề xuất bộ điều khiển đó, không liên quan động cơ"; nhận sdeciepower.com (SDEC) và cn.yuchaiie.com (Yuchai) là nguồn chính hãng ("ok"). Đo 1.548 gói: trong yêu cầu động cơ chỉ có E-TVCS (3 gói).
+- Cấu hình tìm trên internet cũng phải nằm trong dải công suất 100–140% (120% trên 30 kVA) như ứng viên danh mục (Khoa: "có"; Denyo 13 kVA từng vào gói 8,5 kVA).
+- Biến thể cùng động cơ (D1105 / D1105-BG / D1105-E2BG / -CHN / -CHN-1): "nếu giống nhau về mặt thông số thì chọn 1 trong nhiều, nếu khác thì chỉ chọn cái có thông số phù hợp". (Em hiểu: không gộp bản ghi trong danh mục; ở bước chọn cấu hình, các biến thể thông số như nhau chỉ chiếm một cấu hình, khác nhau thì chỉ giữ biến thể đạt HSMT.)
+- Đồng bộ thương hiệu: "nếu yêu cầu không ghi đòi động cơ thì không đòi" — chỉ bộ phận HSMT nêu trong câu đồng bộ mới phải cùng hãng tổ máy ("đầu phát và vỏ chống ồn đồng bộ cùng một nhãn hiệu" không đòi động cơ).
 
 **Tìm NCC:** CHỈ Claude. NCC mới trùng cấu hình có sẵn → gắn vào; không trùng → cấu hình mới. Không chạy lại cả Gợi ý. Gợi ý lại giữ kết quả Tìm NCC và cấu hình tìm trên internet (trang lưu ở `genbid-work\config-web\`). Nút trên từng cấu hình: Xoá, Tìm nhà cung cấp.
 
