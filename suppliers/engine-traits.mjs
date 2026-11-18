@@ -12,7 +12,12 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 
 const DIR = path.dirname(fileURLToPath(import.meta.url));
-export function load(file = path.join(DIR, "engine-traits.json")) { return JSON.parse(fs.readFileSync(file, "utf8")); }
+// The table is read once per process (hintsOf and check call this for every run of a measure).
+let TABLE = null;
+export function load(file = null) {
+  if (!file) return TABLE || (TABLE = JSON.parse(fs.readFileSync(path.join(DIR, "engine-traits.json"), "utf8")));
+  return JSON.parse(fs.readFileSync(file, "utf8"));
+}
 
 // The engine make of engine-traits.json (its slug) as web/catalog.js names it (ENGINE_BRANDS), for hints.engineMakes.
 export const MAKE_NAME = {
@@ -119,4 +124,12 @@ export function filterOf(text, traits = load().traits) {
     // Engine terms seen but not used (outside the engine requirements, or "tương đương"): for the audit / the note.
     unused: hits.filter((h) => h.group === "engine" && !eng.includes(h)).map((h) => ({ term: h.term, makeName: h.makeName, at: h.at, equivalent: h.equivalent, line: h.line })),
   };
+}
+// Does a text of an offer (a controller's model / line, a supplier's row, a saved page) name the term (one of its words)?
+// Here the aliases NOT_MATCHED in an HSMT count: in a controller's model "PCC 3.3" is PowerCommand.
+export function termHit(term, text, traits = load().traits) {
+  const t = traits.find((x) => x.term === term), s = String(text || "").normalize("NFC");
+  if (!t) return false;
+  const words = [...wordsOf(t), ...(t.aliases || []).filter((a) => NOT_MATCHED.has(a))];
+  return words.some((w) => regexOf(w).test(s));
 }

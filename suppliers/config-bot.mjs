@@ -39,6 +39,8 @@ import * as NG from "./named-genset.mjs";
 import { skippedOf, dropSkipped, UNFILTERED_WARNING } from "./sup-skip.mjs";
 import { specSkip } from "./spec-skip.mjs";
 import { useBot as rowFlagsUse, blockedRows, lineKey } from "./row-flags-lib.mjs";
+import * as ET from "./engine-traits.mjs";
+import { variantFamily } from "./engine-variant.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SCRIPT = fileURLToPath(import.meta.url);
@@ -876,7 +878,14 @@ export function hintsOf(text, extra = "", sizing = null) {
   for (const c of CAT.controllersIn(t)) if (!ctrl.includes(c.brand)) ctrl.push(c.brand);
   const f50 = /\b50\s?hz\b/i.test(t), f60 = /\b60\s?hz\b/i.test(t);
   const sized = sizing?.sizes?.length > 1 ? minsForSize(technicalPart(text), sizing.size, sizing.sizes, extra) : null;
-  return { engineMakes: names(CAT.ENGINE_BRANDS), altMakes: names(CAT.ALT_BRANDS), ctrlMakes: ctrl, ctrlModels: CAT.controllersIn(t).filter((c) => c.model).map((c) => CAT.keyOf(c.model)),
+  // Đặc thù hãng động cơ (Khoa 18/11/2026, engine-traits.mjs): a term of one engine make in the HSMT's engine requirements
+  // (E-TVCS → Kubota) → only that make (rule 1, candidates / check / rankConfigs); written with "hoặc tương đương" → that
+  // make counts as named (points, no filter: Khoa câu 3); a controller term (PowerCommand, EMCP…) → that controller,
+  // the engine make untouched (rule 5).
+  const trait = ET.filterOf(t);
+  const engineMakes = names(CAT.ENGINE_BRANDS);
+  for (const m of [trait.engineMake, ...trait.unused.filter((u) => u.equivalent && u.at === "engine").map((u) => u.makeName)]) if (m && !engineMakes.includes(m)) engineMakes.push(m);
+  return { engineMakes, trait, altMakes: names(CAT.ALT_BRANDS), ctrlMakes: ctrl, ctrlModels: CAT.controllersIn(t).filter((c) => c.model).map((c) => CAT.keyOf(c.model)),
     freq: f50 && !f60 ? 50 : f60 && !f50 ? 60 : null, cylLayout: cylLayoutOf(t), madeRule: partOriginOfHsmt(text), text: squashOf(t), ...engineMins(t), ...(sized ? sized.mins : {}), ...(sized?.note ? { sizeNote: sized.note } : {}) };
 }
 // The engine minimums the HSMT states ("Dung tích xy lanh ≥ 11,05 L", "Tối thiểu 06 xi lanh"), one value each: a tender
@@ -1403,6 +1412,10 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       const makeNamed = (e.make || "").split(" / ").find((m) => hints.engineMakes.includes(m));
       if (makeNamed) { score += 300; why.push(`hãng động cơ ${makeNamed} HSMT nêu`); }
       if (ctrlNamed) { score += 200; why.push("có bộ điều khiển hãng HSMT nêu"); }
+      // The controller the HSMT names by its own word (rule 5, Khoa 18/11/2026: PowerCommand, AmpSentry, EMCP…): the same
+      // 200 points; a row without it stays (the configuration is "không đạt" at the controller, Khoa câu 2 (a)).
+      const ctlTerm = (hints.trait?.controllers || []).find((x) => [u.line, ...(u.lines?.rows || []), ...offers.map((c) => `${c.brand || ""} ${c.model || ""} ${c.line || c.text || ""}`)].some((l) => ET.termHit(x.term, l)));
+      if (ctlTerm) { score += 200; why.push(`có bộ điều khiển ${ctlTerm.term} HSMT nêu`); }
       if (e.make) score += 60;
       // Xuất xứ Trung Quốc (Khoa, 2026-11-03): an engine of a Chinese make before a foreign one a supplier in China
       // offers. Those had more datasheet figures and filled 20 of the 30 rows; the make the HSMT names (300) still wins.
@@ -1467,6 +1480,10 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // unless the HSMT names its engine model (`named`): then its sources disagree with the HSMT's own choice, and it
       // stays with 600 points off and the reason, for the agent to see.
       const ruled = madeOut ? ["made"] : [];
+      // Đặc thù hãng động cơ (rule 1, Khoa 18/11/2026: "chỉ gợi ý hãng đó"): an engine of another make, or of no make the
+      // sources agree on, is left out (the engine model the HSMT names stays, as for every rule here).
+      const traitMake = hints.trait?.engineMake;
+      if (traitMake && !(e.make || "").split(" / ").includes(traitMake)) { ruled.push("trait"); why.push(`HSMT ghi ${hints.trait.engineTerms.map((x) => x.term).join(", ")} (đặc thù động cơ ${traitMake}), động cơ ${e.make ? `hãng ${e.make}` : "chưa rõ hãng"}`); }
       const byMaj = (k) => (srcOf[k]?.win != null ? ` (số đông nhà cung cấp: ${Object.entries(srcOf[k].votes).map(([v, c]) => `${v} × ${c}`).join(", ")})` : "");
       if (dl != null) { score -= 600; ruled.push("disp"); why.push(`dung tích ${dl} L < ${hints.minDisp} L HSMT yêu cầu`); }
       const dh0 = hints.maxDisp ? given.filter((f) => f.key === "disp").map((f) => dispOf(f.value, f)) : [], dh = dh0.filter((x) => x != null && x !== BLOCK);
@@ -2006,7 +2023,8 @@ export async function prep(key, dir, reqData = {}, given = null, multi = null, i
   fs.writeFileSync(path.join(dir, "suppliers.json"), JSON.stringify(all), "utf8");
   // What of the HSMT text may be missing (hsmtGaps): a section of input.md and, after the run, the result's notes.
   const gaps = hsmtGaps({ hsmt, parts, notice, text });
-  fs.writeFileSync(path.join(dir, "meta.json"), JSON.stringify({ origin, ...(auto && GROUP_ORIGIN.has(origin) ? { basis: brand ? "brand" : "origin" } : {}), ...(multi ? { sized: true } : {}), ...(gaps.length ? { hsmtGaps: gaps.map((g) => g.why) } : {}) }), "utf8");
+  // cap: the size of this run, for check to hold an internet configuration to the power band (Khoa 18/11/2026, điều 2).
+  fs.writeFileSync(path.join(dir, "meta.json"), JSON.stringify({ origin, ...(cap ? { cap } : {}), ...(auto && GROUP_ORIGIN.has(origin) ? { basis: brand ? "brand" : "origin" } : {}), ...(multi ? { sized: true } : {}), ...(gaps.length ? { hsmtGaps: gaps.map((g) => g.why) } : {}) }), "utf8");
   // The analysis' technical lines, for check to list the ones no requirement covers (uncoveredSpecs).
   fs.writeFileSync(path.join(dir, "specs.json"), JSON.stringify((a?.technicalSpecs || []).map(({ item, requirement }) => ({ item, requirement }))), "utf8");
   // The requirements read last time, when the HSMT and Yêu cầu khác are the same (Khoa, 2026-11-02): Gợi ý lại only
@@ -2051,6 +2069,14 @@ HSMT đòi THƯƠNG HIỆU ${GROUP_NAME[origin]}, không nói nơi sản xuất 
       NG.sellerAllowed() ? `- Không có trang hãng / đơn vị cấp phép: được dùng tạm trang bên bán cho riêng model này (\`src.tier\` "C"); code gắn "chưa xác minh", mọi mục tối đa chưa rõ, không đưa vào danh mục.`
         : `- Trang bên bán (đại lý, sàn) KHÔNG được dùng làm nguồn cho model này; không có trang hãng thì khai \`searched\` (\`what: "source"\`) và để code ghi "chưa có nguồn thông số".`,
       `- Cấu hình hãng / model khác vẫn gợi ý như thường (hàng tương đương; code gắn nhãn và cảnh báo khi HSMT không cho tương đương). Không trả \`configs: []\` chỉ vì không tìm được hãng / model HSMT nêu.`, ""] : []),
+    // Đặc thù hãng động cơ (Khoa 18/11/2026, engine-traits.mjs): read by code, the same rules check applies.
+    ...(hints.trait?.engineMake ? [`## Đặc thù hãng động cơ: HSMT ghi ${[...new Set(hints.trait.engineTerms.map((x) => x.term))].join(", ")} ở yêu cầu động cơ, là công nghệ riêng của ${hints.trait.engineMake}`,
+      `HSMT ghi: "${hints.trait.engineTerms[0].line}"`,
+      `- CHỈ gợi ý động cơ hãng ${hints.trait.engineMake} (ghi "make" của động cơ đúng như nguồn ghi). Cấu hình động cơ hãng khác hoặc chưa rõ hãng bị code bỏ. Được gợi ý quá 2 cấu hình của hãng ${hints.trait.engineMake} (code không áp trần mỗi hãng cho hãng này).`,
+      `- catalog.md không đủ cấu hình hãng ${hints.trait.engineMake}: làm bước 4, chỉ tìm tổ máy động cơ ${hints.trait.engineMake}.`, ""] : []),
+    ...(hints.trait?.controllers?.length ? [`## Bộ điều khiển HSMT nêu đích danh: ${hints.trait.controllers.map((x) => `${x.term} (${x.makeName})`).join(", ")}`,
+      ...hints.trait.controllers.map((x) => `HSMT ghi: "${x.line}"`),
+      `- Ưu tiên cấu hình có đúng bộ điều khiển đó (dòng catalog.md có lý do "có bộ điều khiển … HSMT nêu"). Code tự ghi yêu cầu "Bộ điều khiển … (HSMT nêu đích danh)" và tự kiểm tra cho từng cấu hình (đừng tự viết check này): bộ điều khiển khác là KHÔNG ĐẠT ở bộ điều khiển (vẫn hiện, xếp sau). Từ này KHÔNG giới hạn hãng động cơ.`, ""] : []),
     // Yêu cầu khác (Khoa, 2026-11-01): typed on the web next to Gợi ý / Tìm NCC, checked like the HSMT's requirements.
     ...(extraOf(reqData) ? ["## Yêu cầu khác (người dùng nhập trên web, bắt buộc kiểm tra như yêu cầu của HSMT)", extraOf(reqData), ""] : []),
     "## Thông số kỹ thuật theo phân tích (chỉ để định hướng, trích dẫn phải lấy từ hsmt.txt)",
@@ -2259,7 +2285,34 @@ export const plainWhy = (s) => String(s || "")
   .replace(/[;,]?\s*độ tin cậy:?\s*(?:high|medium|low|cao|trung bình|thấp)\b/gi, "")
   .replace(/\s*[;,]\s*(?=[;,]|$)/g, "").replace(/^\s*[;,]\s*/, "").replace(/\s{2,}/g, " ").trim();
 // sourcesDir: where sourceRatings reads sources/<id>/<n>.md (default the repo's; the regression fixtures pass their frozen copy).
-export function check(result, { hsmtText, suppliers, readWeb, origin, basis, sized = false, sourcesDir }) {
+// The power of a configuration found on the internet (Đặc thù hãng động cơ, Khoa 18/11/2026, điều 2: "cấu hình tìm từ
+// internet phải trong dải 100–140% công suất"): read like a tender's size (BP.kvaRated) from the genset's quote, else from
+// the source quote of a power check, each only when it is in the saved page. { kVA, rating: "prime" | "standby" | null,
+// quote } or null when no quote gives one.
+export function webPowerOf(c, readWeb = () => null) {
+  const src = c?.genset?.src;
+  if (src?.kind !== "internet") return null;
+  const page = norm((src.file && readWeb(src.file)) || "");
+  if (!page) return null;
+  const quotes = [src.quote, ...(c.checks || []).filter((x) => /c[ôo]ng\s*su[ấa]t|power/i.test(x.item || "") && x.part !== "engine").map((x) => x.sourceQuote)];
+  for (const q of quotes) {
+    if (!q || !page.includes(norm(q))) continue;
+    const r = BP.kvaRated(q);
+    if (r?.kva > 0) return { kVA: Math.round(r.kva * 100) / 100, rating: r.rating || null, quote: q };
+  }
+  return null;
+}
+// Whether that power is in the band of the run's size: a standby figure is compared as prime (÷ 1.1, BP.STANDBY_FACTOR),
+// one of no rating stays when either reading is in the band.
+export function webInBand(p, cap) {
+  if (!p || !(cap?.value > 0)) return true;
+  const b = bandOf(cap), f = BP.STANDBY_FACTOR || 1.1, unit = (k) => (cap.unit === "kW" ? k * 0.8 : k);
+  const reads = p.rating === "prime" ? [p.kVA] : p.rating === "standby" ? [p.kVA / f] : [p.kVA, p.kVA / f];
+  return reads.some((k) => unit(k) >= cap.value * b.low && unit(k) <= cap.value * b.high + 1e-9);
+}
+const TRAIT_CTL_ITEM = (term) => `Bộ điều khiển ${term} (HSMT nêu đích danh)`;
+const isTraitCtlItem = (x) => !!x?.trait || /\(HSMT nêu đích danh\)\s*$/.test(String(x?.item || "").normalize("NFC"));
+export function check(result, { hsmtText, suppliers, readWeb, origin, basis, sized = false, sourcesDir, cap = null }) {
   const problems = [], H = norm(hsmtText);
   const sup = new Map(suppliers.map((s) => [s.id, s]));
   const inHsmt = (q) => !!q && H.includes(norm(q));
@@ -2323,6 +2376,18 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     result.requirements.unshift({ item: SYNC_ITEM, requirement: syncText(sync), quote: sync.quote, part: "genset", level: "core", byCode: true, sync: { need: sync.need, parts: sync.parts } });
     result.brandSync = { need: sync.need, parts: sync.parts, quote: sync.quote, text: sync.text };
   } else delete result.brandSync;
+  // Đặc thù hãng động cơ (Khoa 18/11/2026, engine-traits.mjs), read by code from the HSMT's technical part as hintsOf does:
+  // (1) a term of one engine make in the engine requirements → only engines of that make (below, before the cut to
+  // MAX_CONFIGS; rankConfigs lifts the ceiling per make for it); "… hoặc tương đương" filters nothing (câu 3: the make only
+  // scores in candidates). (5) a controller term → one requirement of the code's own per term, checked per configuration
+  // (câu 2 (a): a configuration without it is "không đạt" at the controller, ranked after, still shown); the engine make is
+  // not filtered.
+  const trait = ET.filterOf(technicalPart(hsmtText || ""));
+  // The code's own, of an earlier check or copied by the agent from it (its byCode taken away), go before they are written again.
+  result.requirements = (result.requirements || []).filter((r) => !isTraitCtlItem(r));
+  for (const t of trait.controllers) result.requirements.push({ item: TRAIT_CTL_ITEM(t.term), requirement: `Bộ điều khiển có ${t.term} (của ${t.makeName}) như HSMT nêu`, quote: t.line, part: "controller", level: "core", byCode: true, trait: t.term });
+  if (trait.engineMake) result.engineTrait = { make: trait.engineMake, terms: [...new Set(trait.engineTerms.map((x) => x.term))], quote: trait.engineTerms[0]?.line || "" };
+  else delete result.engineTrait;
   // Requirement codes (Khoa, 2026-11-06, reqcodes.mjs): each requirement gets its code (the agent's, else read from its
   // item), and with it the list's item name, part and level; two requirements of one code become one (texts joined, the
   // first quote kept); every check and part written under the old item name is renamed to the code's.
@@ -2476,6 +2541,36 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
       });
       if (had && !c.suppliers.length) { problems.push(`#${c.rank}: không còn nhà cung cấp nào ngoài Việt Nam, đã bỏ cấu hình`); return false; }
       return true;
+    });
+  }
+  // (1) Đặc thù hãng động cơ: only engines of the make of the term (Khoa 18/11/2026: "chỉ gợi ý hãng đó"). The make as
+  // the catalog reads the model (keptMakes), else the make the configuration writes when its source shows it; an engine
+  // of no known make goes too. The genset the HSMT names stays (named-genset.mjs), as everywhere.
+  if (result.engineTrait) {
+    const want = norm(result.engineTrait.make), terms = result.engineTrait.terms.join(", ");
+    const recMake = (m) => (built.engines || []).find((x) => x.key === CAT.keyOf(m || ""))?.make || "";
+    result.configs = (result.configs || []).filter((c) => {
+      if (namedHere && NG.namedHit(c, namedHere, namedCtx)) return true;
+      const e = c.engine || {}, own = e.make && (recMake(e.model) ? sourcedMake("engine", e) : (sourceText(e.src, e.model) || "").includes(norm(e.make)));
+      const makes = [...recMake(e.model).split(" / "), ...(own ? [e.make] : [])].map((m) => norm(m.trim())).filter(Boolean);
+      if (makes.includes(want)) return true;
+      problems.push(`#${c.rank}: HSMT ghi ${terms} ở yêu cầu động cơ (đặc thù động cơ ${result.engineTrait.make}), động cơ ${e.model || "?"} ${makes.length ? `hãng ${[...new Set(makes)].join(" / ")}` : "chưa rõ hãng"}, đã bỏ`);
+      return false;
+    });
+    const note = `HSMT ghi ${terms} ở yêu cầu động cơ, là công nghệ riêng của ${result.engineTrait.make}: chỉ gợi ý động cơ ${result.engineTrait.make} (Khoa, 18/11/2026).`;
+    result.notes = [...(result.notes || []).filter((n) => !/^HSMT ghi .* ở yêu cầu động cơ, là công nghệ riêng của /.test(n)), note];
+  } else result.notes = (result.notes || []).filter((n) => !/^HSMT ghi .* ở yêu cầu động cơ, là công nghệ riêng của /.test(n));
+  // (2) A genset found on the internet stays in the power band of the run's size (bandOf: 100–120%, to 30 kVA 100–140%), as
+  // the candidates of the catalog do (Khoa 18/11/2026; IB2600612866: Denyo 13 kVA for 8.5 kVA). Only when the saved page
+  // gives its power (webPowerOf); the genset the HSMT names stays.
+  if (cap?.value > 0) {
+    const b = bandOf(cap);
+    result.configs = (result.configs || []).filter((c) => {
+      if (namedHere && NG.namedHit(c, namedHere, namedCtx)) return true;
+      const p = webPowerOf(c, readWeb);
+      if (webInBand(p, cap)) return true;
+      problems.push(`#${c.rank}: tổ máy ${c.genset?.model || "?"} tìm trên internet ${p.kVA} kVA${p.rating ? ` ${p.rating}` : ""}, ngoài dải ${b.text} của ${cap.value} ${cap.unit}, đã bỏ`);
+      return false;
     });
   }
   // The genset the HSMT names is never the one cut by the limit: it goes before the equivalents (stable order otherwise).
@@ -2683,6 +2778,23 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
         ...(c.suppliers || []).filter((s) => !s.unverified).map((s) => sup.get(s.supplierId)).filter((r) => r && r.role !== "distributor").map((r) => ({ name: r.names?.en || r.id, fam: gensetMakerOf(r) }))];
       c.checks.unshift(syncCheck(sync, fam, makers, { engine: c.engine?.model, alternator: c.alternator?.model, controller: c.controller?.model }));
     }
+    // (5) The controller term the HSMT names (Khoa 18/11/2026): met when the configuration's controller or a source of it
+    // names the term (raw texts: a short acronym is matched case-sensitively); a controller of the term's make whose sources
+    // do not say it is unclear (the supplier confirms: AmpSentry is a function of a PowerCommand); else not met (câu 2 (a)).
+    c.checks = (c.checks || []).filter((x) => !isTraitCtlItem(x));
+    if (trait.controllers.length) {
+      const k = c.controller || {}, page = k.src?.kind === "internet" && k.src.file ? readWeb(k.src.file) || "" : "";
+      const raws = [k.model, k.make, k.src?.line, k.src?.quote, page, ...factsOf(c, "controller").map((f) => f.line)].filter(Boolean);
+      const brands = [k.make, ...CAT.controllersIn(k.model || "").map((x) => x.brand)].filter(Boolean).map(norm);
+      const named = k.model ? `${k.make ? `${k.make} ` : ""}${k.model}` : "";
+      const out = trait.controllers.map((t) => {
+        const base = { item: TRAIT_CTL_ITEM(t.term), requirement: `Bộ điều khiển có ${t.term} (của ${t.makeName}) như HSMT nêu`, hsmtQuote: t.line, offered: named || "Không có bộ điều khiển có nguồn", part: "controller", level: "core", byCode: true, trait: t.term };
+        if (k.model && raws.some((s) => ET.termHit(t.term, s))) return { ...base, status: "met", note: `Code ghi: bộ điều khiển ${named} là / có ${t.term}.` };
+        if (k.model && brands.some((b) => b.includes(norm(t.makeName)))) return { ...base, status: "unclear", note: `Code ghi: bộ điều khiển ${named} của ${t.makeName} nhưng nguồn không ghi ${t.term}: cần nhà cung cấp xác nhận.` };
+        return { ...base, status: "not_met", note: `Code ghi: HSMT nêu đích danh ${t.term} (${t.makeName}); ${named ? `bộ điều khiển ${named} không phải ${t.term}` : "cấu hình không có bộ điều khiển"}.` };
+      });
+      c.checks = [...out, ...c.checks];
+    }
     confirmChecks(c, result.requirements || []);
     vregChecks(c, result.requirements || [], factsOf(c, "alternator"));
     altAttrChecks(c, result.requirements || [], altAttrs, factsOf(c, "alternator"));
@@ -2734,7 +2846,7 @@ function checkDir(dir, suppliers, added = [], origin) {
   const readWeb = (f) => { const p = path.join(dir, f); return p.startsWith(path.join(dir, "web")) && fs.existsSync(p) ? fs.readFileSync(p, "utf8") : null; };
   const hsmtText = fs.readFileSync(path.join(dir, "hsmt.txt"), "utf8");
   const given = (result.configs || []).map((c) => ({ rank: c.rank, key: cfgKey(c), name: cfgName(c) }));
-  const out = check(result, { hsmtText, suppliers, readWeb, origin, basis: meta.basis, sized: !!meta.sized });
+  const out = check(result, { hsmtText, suppliers, readWeb, origin, basis: meta.basis, sized: !!meta.sized, cap: meta.cap || null });
   rankConfigs(out.result);
   noteDropped(given, out.result, out.problems);
   // The analysis' technical lines the requirements may have missed (Khoa, 2026-11-06), for the agent to read again.
@@ -4083,6 +4195,39 @@ export function lossWarnOf(c, reqs = []) {
   }
   return out;
 }
+export { variantFamily };
+// Biến thể cùng động cơ (Khoa 18/11/2026, IB2600612866: D1105 / D1105-BG / D1105-E2BG / -CHN / -CHN-1): "nếu giống nhau
+// về mặt thông số thì chọn 1 trong nhiều, nếu khác thì chỉ chọn cái có thông số phù hợp". A family is variantFamily with
+// scope "version" (Khoa, câu 4 (b): only version suffixes BG / E2BG / CHN…, never rating suffixes G3 / G4, TAG2A / TAG3A).
+// "Thông số" is what the checks of the engine say against the HSMT (the figures the sources give of two variants differ
+// by which suppliers list them, not by the engine): in a family, a variant with an engine check not met goes when another
+// one has none; two variants whose engine checks read the same (item and status) and with the same alternator are one
+// configuration: the better ranked stays and takes the other's suppliers. Two variants failing different points both
+// stay. A configuration kept from Tìm NCC or of the genset the HSMT names never goes. `list` is sorted best first.
+function variantRule(list) {
+  const famOf = (c) => (c.engine?.model ? variantFamily(c.engine.model) : "");
+  const engChecks = (c) => (c.checks || []).filter((x) => x.part === "engine");
+  const bad = (c) => engChecks(c).some((x) => x.status === "not_met");
+  const sig = (c) => engChecks(c).map((x) => `${norm(x.item)}=${x.status}`).sort().join("|");
+  const keep = (c) => c.keptFind || c.named;
+  const ek = (c) => CAT.keyOf(c.engine?.model || ""), ak = (c) => CAT.keyOf(c.alternator?.model || "");
+  const goneFor = new Map();
+  for (const { c } of list) {
+    const f = famOf(c);
+    if (!f || keep(c)) continue;
+    const others = list.map((x) => x.c).filter((o) => o !== c && famOf(o) === f && ek(o) !== ek(c) && !goneFor.has(o));
+    if (!others.length) continue;
+    if (bad(c) && others.some((o) => !bad(o))) { goneFor.set(c, null); continue; }
+    const first = others.find((o) => list.findIndex((x) => x.c === o) < list.findIndex((x) => x.c === c) && ak(o) === ak(c) && sig(o) === sig(c));
+    if (first) goneFor.set(c, first);
+  }
+  for (const [c, to] of goneFor) {
+    if (!to) continue;
+    const ids = new Set((to.suppliers || []).map((s) => s.supplierId));
+    for (const s of c.suppliers || []) if (!ids.has(s.supplierId) && (to.suppliers || []).length < 3) { to.suppliers = [...(to.suppliers || []), s]; ids.add(s.supplierId); }
+  }
+  return list.filter(({ c }) => !goneFor.has(c));
+}
 export function rankConfigs(result) {
   const reqs = result.requirements || [];
   for (const c of result.configs || []) noController(c, reqs);
@@ -4097,9 +4242,11 @@ export function rankConfigs(result) {
   // for a tender that names none (no result.named).
   const nr = (c) => (result.named ? NG.namedRank(c) : 0);
   list.sort((x, y) => nr(x.c) - nr(y.c) || cmp(x.s, y.s) || cnOf(x.c) - cnOf(y.c) || wonOf(y.c) - wonOf(x.c) || (x.c.rank ?? x.i) - (y.c.rank ?? y.i) || x.i - y.i);
+  list = variantRule(list);
   // One configuration per engine + alternator + controller (2026-11-06 audit: a run gave five rows of one 6BTAA5.9-G12,
   // one supplier each): a later row of the same models (or with no controller of its own) hands its suppliers to the
   // first and goes; and at most 3 rows per engine, so several engines are shown.
+  const traitMk = String(result.engineTrait?.make || "").trim().toLowerCase();
   const seen = new Map(), perEngine = new Map(), perMake = new Map(), ctlKey = (c) => (c.controller?.model ? CAT.keyOf(ctlModelOf(c.controller) || c.controller.model) : "");
   list = list.filter(({ c }) => {
     const ek = CAT.keyOf(c.engine?.model || ""), k = `${ek}|${CAT.keyOf(c.alternator?.model || "")}`;
@@ -4114,7 +4261,9 @@ export function rankConfigs(result) {
     // At most 2 per engine make (Khoa, 2026-11-11), so another make gets the place of a third.
     const mk = String(c.engine?.make || "").split("/")[0].trim().toLowerCase();
     // A configuration kept from Tìm NCC (keepFound) is outside that limit: Khoa wants it back, whatever else the run found.
-    if (mk && !c.keptFind && !c.named && (perMake.get(mk) || 0) >= perMakeConfigs(mk)) return false;
+    // So is the make of an engine term the HSMT gives (Đặc thù hãng động cơ, Khoa 18/11/2026: "chỉ gợi ý hãng đó và bỏ
+    // trần 2 cấu hình cho hãng đó"; check has already left only that make).
+    if (mk && mk !== traitMk && !c.keptFind && !c.named && (perMake.get(mk) || 0) >= perMakeConfigs(mk)) return false;
     seen.set(k, [...(seen.get(k) || []), c]);
     perEngine.set(ek, (perEngine.get(ek) || 0) + 1);
     if (perEngine.get(ek) > 3) return false;
@@ -4388,7 +4537,7 @@ ${r.stderr || ""}`, "utf8");
         // What Tìm NCC added to the last result of this size comes back (Khoa, 2026-11-12), with no agent.
         try {
           const meta = fs.existsSync(path.join(dir, "meta.json")) ? JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8")) : {};
-          const kept = keepFound(result, prevResult, { suppliers: all, origin: info.origin, hsmtText: fs.readFileSync(path.join(dir, "hsmt.txt"), "utf8"), basis: meta.basis, sized: !!meta.sized, readWeb: savedReader(),
+          const kept = keepFound(result, prevResult, { suppliers: all, origin: info.origin, hsmtText: fs.readFileSync(path.join(dir, "hsmt.txt"), "utf8"), basis: meta.basis, sized: !!meta.sized, cap: meta.cap || null, readWeb: savedReader(),
             reqHash: (result.requirements || []).some((x) => x.unverified) ? "" : info.reqHash });
           if (kept.configs || kept.suppliers || kept.web) console.log(`${key}${size ? ` máy ${size.label}` : ""}: giữ lại từ Tìm NCC ${kept.configs} cấu hình, ${kept.suppliers} nhà cung cấp; từ internet ${kept.web || 0} cấu hình`);
         } catch (e) { console.log(`${key}: chưa giữ lại được kết quả Tìm NCC trước (${e.message})`); }
@@ -4781,7 +4930,7 @@ export function mergeChecked(result, got, { hsmtText, suppliers, origin }) {
 // marked keptFind and is outside the 2-per-make limit of rankConfigs. When the requirements differ from the last run's,
 // the kept configuration says its checks are of the last reading of the HSMT; none is made "met" for it. A second run
 // adds nothing twice. Returns { configs, suppliers, dropped } and changes `result` only when something comes back.
-export function keepFound(result, prevResult, { suppliers = [], origin, hsmtText = "", readWeb = () => null, basis, sized = false, reqHash = "" } = {}) {
+export function keepFound(result, prevResult, { suppliers = [], origin, hsmtText = "", readWeb = () => null, basis, sized = false, cap = null, reqHash = "" } = {}) {
   const out = { configs: 0, suppliers: 0, dropped: [] };
   const oldCfgs = (prevResult?.configs || []).filter((c) => c && c.engine?.model);
   if (!oldCfgs.some((c) => c.fromFind || isWebCfg(c) || (c.suppliers || []).some((s) => s.fromFind))) return out;
@@ -4870,7 +5019,7 @@ export function keepFound(result, prevResult, { suppliers = [], origin, hsmtText
   if (keep.length || webKeep.length) {
     const all = [...keep, ...webKeep], web = new Set(webKeep.map((x) => x.rank));
     const sub = { requirements: JSON.parse(JSON.stringify(result.requirements || [])), configs: all };
-    const { result: done } = check(sub, { hsmtText, suppliers, readWeb, origin, basis, sized });
+    const { result: done } = check(sub, { hsmtText, suppliers, readWeb, origin, basis, sized, cap });
     for (const k of all) if (!done.configs.some((c) => c.rank === k.rank)) out.dropped.push(`cấu hình ${k.engine.model}: bị bỏ khi kiểm lại theo luật của lượt này`);
     for (const c of done.configs) {
       if (web.has(c.rank)) {

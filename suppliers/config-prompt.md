@@ -218,6 +218,18 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    another make that meets the HSMT better.
    Perkins, Volvo Penta, Cummins and Mitsubishi: ONE configuration each, the one that meets the HSMT best (Khoa,
    2026-11-17; the code drops a second). Give the place it frees to another make of the catalog, so the list still has up to 8.
+   Đặc thù hãng động cơ (Khoa, 2026-11-18; input.md has a section "Đặc thù hãng động cơ" when it applies): the HSMT's
+   engine requirements name a technology of one engine make (E-TVCS of Kubota, XPI of Cummins, ACERT of Caterpillar…).
+   Then suggest ONLY engines of that make (the code drops any other make, and one of no known make), and the ceiling of 2
+   (or 1) per make does not hold for it: give every model of that make that fits. "… hoặc tương đương" next to the term
+   does not limit the make. Versions of one engine (D1105 / D1105-BG / D1105-E2BG / -CHN / -CHN-1: the same code with a
+   version suffix; not G3 / G4 or TAG2A / TAG3A, which are other ratings) are one choice: when their checks read the same
+   the code keeps the best ranked only, and when they differ it keeps only the version that meets the HSMT; give the other
+   places to other models.
+   Bộ điều khiển HSMT nêu đích danh (Khoa, 2026-11-18; section "Bộ điều khiển HSMT nêu đích danh" in input.md): the HSMT
+   names a controller of one make (PowerCommand, AmpSentry, EMCP, ADEM, KODIA, EVC 2.0). Prefer configurations with that
+   controller; the code writes the requirement and its check itself (do not write them): another controller is `not_met`
+   at the controller (shown, ranked after). It does not limit the engine make.
 3. For every configuration, name the suppliers in the system that sell it (`suppliers`, at most 3, best first): only
    `supplierId`s from catalog.md, each with a row of that supplier (`n`, `line` exactly as in catalog.md) that names
    this engine and, best, this alternator at the power required. Under "Đồng bộ thương hiệu", a supplier truly fits only
@@ -238,7 +250,10 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    Then, only when no configuration of step 2 has a supplier that truly fits: search the internet (WebSearch) for the ONE
    best configuration and the supplier that sells it. Under G7 / G20 that supplier is a genset maker based in a country
    of the group (its `country` in newCatalog.json), never an assembler in China. Official pages first: a genset maker's page or datasheet that
-   lists a genset with its engine and alternator, then the engine and alternator makers' datasheets. Save every page
+   lists a genset with its engine and alternator, then the engine and alternator makers' datasheets. The genset found
+   must be in the same power band as the catalog's candidates (the title of catalog.md gives it: 100% to 120% of the size, to
+   30 kVA 100% to 140%; standby counts as prime ÷ 1.1), with its power in `genset.src.quote` (Khoa, 2026-11-18: the code
+   drops one outside the band, as a 13 kVA set for an 8.5 kVA tender). Save every page
    you rely on with `node "<script>" save --dir . --url "<url>"` (the command is in input.md); it prints the saved
    file. Quotes for internet sources must be copied from those saved files. Never use a page you did not save.
    Put that configuration first (`src.kind: "internet"`), with its checks as in step 2, and its supplier in
