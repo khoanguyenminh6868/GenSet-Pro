@@ -1,0 +1,180 @@
+{
+ "vai engine | không đối chiếu": [
+  {
+   "sup": "cameo-power",
+   "n": 112,
+   "table": 11,
+   "row": 0,
+   "kind": "engine",
+   "model": "CK7000S",
+   "val": "CK7000S",
+   "change": "MẤT bản ghi: engine CK7000S",
+   "header": [
+    "| Image | ​ | ​"
+   ],
+   "line": "| Model | CK7000S | CK7500S | CK8500S | CK9500S | CK12000S | CK15000S | CK18000S"
+  },
+  {
+   "sup": "huachai-deutz",
+   "n": 108,
+   "table": 6,
+   "row": 0,
+   "kind": "engine",
+   "model": "10GF",
+   "val": "10GF",
+   "change": "MẤT bản ghi: engine 10GF",
+   "header": [
+    "| Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)"
+   ],
+   "line": "| Model | 10GF | Model | F2L912D | Model | PI044F"
+  },
+  {
+   "sup": "zichai",
+   "n": 119,
+   "table": 11,
+   "row": 0,
+   "kind": "engine",
+   "model": "6300D/M",
+   "val": "6300D/M",
+   "change": "MẤT bản ghi: engine 6300D/M",
+   "header": [
+    "| Engine | Item | Technical specifications"
+   ],
+   "line": "| | Model | 6300D/M | 6300D/M-1 | 6300D/M-2 | 8300D/M-1 | 8300D/M-2 | 8300D/M-3"
+  },
+  {
+   "sup": "zichai",
+   "n": 119,
+   "table": 11,
+   "row": 4,
+   "kind": "engine",
+   "model": "300GFM",
+   "val": "300GFM",
+   "change": "MẤT bản ghi: engine 300GFM",
+   "header": [
+    "| Engine | Item | Technical specifications"
+   ],
+   "line": "| Generator set | Model | 300GFM | 400GFM | 500GFM | 450GFM | 500GFM | 600GFM"
+  }
+ ],
+ "vai engine | xác nhận": [
+  {
+   "sup": "chenxing-weifang",
+   "n": 101,
+   "table": 0,
+   "row": 0,
+   "kind": "engine",
+   "model": "NT855-GA",
+   "val": "NT855-GA",
+   "change": "MẤT bản ghi: engine NT855-GA",
+   "header": [
+    "| 发电机组参数 | 柴油机参数 | 发电机参数"
+   ],
+   "line": "| 机组型号 | 200GF | 型号 | NT855-GA | 型号 | 200GF"
+  },
+  {
+   "sup": "chenxing-weifang",
+   "n": 108,
+   "table": 5,
+   "row": 0,
+   "kind": "engine",
+   "model": "4BT3.9-G2",
+   "val": "4BT3.9-G2",
+   "change": "MẤT bản ghi: engine 4BT3.9-G2",
+   "header": [
+    "| 发电机组参数 | 柴油机参数 | 发电机参数"
+   ],
+   "line": "| 机组型号 | 30GF | 型号 | 4BT3.9-G2 | 型号 | 30GF"
+  },
+  {
+   "sup": "huachai-deutz",
+   "n": 112,
+   "table": 9,
+   "row": 0,
+   "kind": "engine",
+   "model": "F3L912D",
+   "val": "F3L912D",
+   "change": "MẤT bản ghi: engine F3L912D",
+   "header": [
+    "| Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)"
+   ],
+   "line": "| Model | 1 5 GF | Model | F3L912D | Model | PI144D"
+  },
+  {
+   "sup": "kubota",
+   "n": 2001,
+   "table": 0,
+   "row": 0,
+   "kind": "engine",
+   "model": "D1703",
+   "val": "D1703",
+   "change": "MẤT bản ghi: engine D1703",
+   "header": [
+    "URL: https://generator.kubota.com/products/50hz/sq_1120.html"
+   ],
+   "line": "| Model | - | D1703"
+  },
+  {
+   "sup": "kubota",
+   "n": 2001,
+   "table": 0,
+   "row": 1,
+   "kind": "engine",
+   "model": "D1703",
+   "val": "D1703",
+   "change": "THÊM bản ghi: engine D1703",
+   "header": [
+    "URL: https://generator.kubota.com/products/50hz/sq_1120.html"
+   ],
+   "line": "| Prime Output | kVA (kW) | 11.2 (11.2)"
+  }
+ ],
+ "vai engine | mâu thuẫn": [
+  {
+   "sup": "huachai-deutz",
+   "n": 116,
+   "table": 12,
+   "row": 0,
+   "kind": "engine",
+   "model": "30GF",
+   "val": "30GF",
+   "change": "MẤT bản ghi: engine 30GF",
+   "header": [
+    "| Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)"
+   ],
+   "line": "| Model | 30GF | Model | F4L912D | Model | PI144J"
+  }
+ ],
+ "vai alternator | không đối chiếu": [
+  {
+   "sup": "chenxing-weifang",
+   "n": 101,
+   "table": 0,
+   "row": 0,
+   "kind": "alternator",
+   "model": "200GF",
+   "val": "200GF",
+   "change": "MẤT bản ghi: alternator 200GF",
+   "header": [
+    "| 发电机组参数 | 柴油机参数 | 发电机参数"
+   ],
+   "line": "| 机组型号 | 200GF | 型号 | NT855-GA | 型号 | 200GF"
+  }
+ ],
+ "vai alternator | mâu thuẫn": [
+  {
+   "sup": "chenxing-weifang",
+   "n": 108,
+   "table": 5,
+   "row": 0,
+   "kind": "alternator",
+   "model": "30GF",
+   "val": "30GF",
+   "change": "MẤT bản ghi: alternator 30GF",
+   "header": [
+    "| 发电机组参数 | 柴油机参数 | 发电机参数"
+   ],
+   "line": "| 机组型号 | 30GF | 型号 | 4BT3.9-G2 | 型号 | 30GF"
+  }
+ ]
+}

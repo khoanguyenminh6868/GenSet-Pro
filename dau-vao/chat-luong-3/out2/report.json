@@ -1,0 +1,1618 @@
+{
+ "paths": {
+  "S2": {
+   "desc": "Thông số: dòng dài hơn tiêu đề 1 ô, ô đầu là mã → lệch 1 ô",
+   "through": {
+    "records": 944,
+    "specs": 3606,
+    "tables": 38,
+    "sups": 3,
+    "topSups": [
+     [
+      "aosif",
+      614
+     ],
+     [
+      "jianghao-genset",
+      182
+     ],
+     [
+      "huipu-power",
+      148
+     ]
+    ]
+   },
+   "diff": {
+    "changed": 944,
+    "onlyA": 0,
+    "onlyB": 0,
+    "kinds": {
+     "fuel bỏ": 762,
+     "cyl bỏ": 944,
+     "disp bỏ": 762,
+     "bore bỏ": 330,
+     "coolant bỏ": 148,
+     "dims bỏ": 330,
+     "weight bỏ": 330
+    },
+    "recordsTouched": 944,
+    "tables": 38,
+    "sups": 3
+   },
+   "swaps": 3,
+   "verdict": {
+    "thông số tổ máy fuel (tự kiểm) | không kiểm được": 762,
+    "thông số động cơ cyl | xác nhận": 628,
+    "thông số động cơ disp | xác nhận": 380,
+    "thông số động cơ cyl | không đối chiếu": 312,
+    "thông số động cơ disp | không đối chiếu": 349,
+    "thông số động cơ disp | chưa rõ": 21,
+    "thông số động cơ disp | mâu thuẫn": 12,
+    "thông số động cơ cyl | mâu thuẫn": 3,
+    "thông số động cơ cyl | chưa rõ": 1,
+    "thông số động cơ bore | không đối chiếu": 106,
+    "thông số tổ máy coolant (tự kiểm) | không kiểm được": 148,
+    "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 330,
+    "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 184,
+    "thông số tổ máy weight (tự kiểm) | không kiểm được": 146,
+    "thông số động cơ bore | xác nhận": 219,
+    "thông số động cơ bore | chưa rõ": 5
+   },
+   "cal": {
+    "thông số động cơ": {
+     "n": 1227,
+     "chance": 29
+    }
+   },
+   "bySup": [
+    [
+     "aosif",
+     {
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 614,
+      "thông số động cơ cyl | xác nhận": 369,
+      "thông số động cơ disp | xác nhận": 307,
+      "thông số động cơ cyl | không đối chiếu": 243,
+      "thông số động cơ disp | không đối chiếu": 282,
+      "thông số động cơ disp | chưa rõ": 21,
+      "thông số động cơ disp | mâu thuẫn": 4,
+      "thông số động cơ cyl | mâu thuẫn": 1,
+      "thông số động cơ cyl | chưa rõ": 1
+     }
+    ],
+    [
+     "huipu-power",
+     {
+      "thông số động cơ cyl | không đối chiếu": 39,
+      "thông số động cơ bore | không đối chiếu": 42,
+      "thông số động cơ disp | không đối chiếu": 67,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 148,
+      "thông số tổ máy coolant (tự kiểm) | không kiểm được": 148,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 148,
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 3,
+      "thông số tổ máy weight (tự kiểm) | không kiểm được": 145,
+      "thông số động cơ cyl | xác nhận": 107,
+      "thông số động cơ bore | xác nhận": 101,
+      "thông số động cơ disp | xác nhận": 73,
+      "thông số động cơ cyl | mâu thuẫn": 2,
+      "thông số động cơ bore | chưa rõ": 5,
+      "thông số động cơ disp | mâu thuẫn": 8
+     }
+    ],
+    [
+     "jianghao-genset",
+     {
+      "thông số động cơ cyl | xác nhận": 152,
+      "thông số động cơ bore | xác nhận": 118,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 182,
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 181,
+      "thông số động cơ cyl | không đối chiếu": 30,
+      "thông số động cơ bore | không đối chiếu": 64,
+      "thông số tổ máy weight (tự kiểm) | không kiểm được": 1
+     }
+    ]
+   ]
+  },
+  "WE": {
+   "desc": "Thông số: đi từng ô từ ô động cơ / đầu phát (tiêu đề khác độ rộng)",
+   "through": {
+    "records": 18512,
+    "specs": 39490,
+    "tables": 651,
+    "sups": 86,
+    "topSups": [
+     [
+      "uleengen",
+      1689
+     ],
+     [
+      "agestar",
+      1442
+     ],
+     [
+      "yanan-power",
+      748
+     ],
+     [
+      "walter-yangzhou",
+      722
+     ],
+     [
+      "waeta-fujian",
+      687
+     ],
+     [
+      "legapower",
+      632
+     ],
+     [
+      "welland-power",
+      594
+     ],
+     [
+      "excel-power-ningde",
+      571
+     ],
+     [
+      "victory-generator",
+      533
+     ],
+     [
+      "landtop-fuzhou",
+      505
+     ],
+     [
+      "rise-power",
+      489
+     ],
+     [
+      "wintpower",
+      475
+     ]
+    ]
+   },
+   "diff": {
+    "changed": 5812,
+    "onlyA": 0,
+    "onlyB": 0,
+    "kinds": {
+     "speed bỏ": 295,
+     "fuel bỏ": 1532,
+     "gov bỏ": 495,
+     "disp bỏ": 1082,
+     "emission bỏ": 358,
+     "engPower bỏ": 1984,
+     "dims bỏ": 1060,
+     "voltage bỏ": 292,
+     "weight bỏ": 627,
+     "pf bỏ": 223,
+     "controller bỏ": 66,
+     "cyl bỏ": 1988,
+     "current bỏ": 229,
+     "bore bỏ": 389,
+     "compr bỏ": 144,
+     "phase bỏ": 595
+    },
+    "recordsTouched": 4534,
+    "tables": 230,
+    "sups": 54
+   },
+   "swaps": 3,
+   "verdict": {
+    "thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)": 294,
+    "thông số tổ máy fuel (tự kiểm) | không kiểm được": 1312,
+    "thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)": 331,
+    "thông số động cơ disp | xác nhận": 564,
+    "thông số động cơ disp | mâu thuẫn": 34,
+    "thông số động cơ disp | chưa rõ": 40,
+    "thông số động cơ disp | không đối chiếu": 111,
+    "thông số tổ máy emission (tự kiểm) | không kiểm được": 285,
+    "thông số động cơ engPower | chưa rõ": 201,
+    "thông số động cơ engPower | xác nhận": 798,
+    "thông số động cơ engPower | không đối chiếu": 435,
+    "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 736,
+    "thông số động cơ engPower | mâu thuẫn": 9,
+    "thông số tổ máy voltage (tự kiểm) | hợp lý (tự kiểm)": 236,
+    "thông số tổ máy voltage (tự kiểm) | vô lý (tự kiểm)": 46,
+    "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 593,
+    "thông số tổ máy pf (tự kiểm) | không kiểm được": 223,
+    "thông số tổ máy weight (tự kiểm) | không kiểm được": 10,
+    "thông số tổ máy controller (tự kiểm) | không kiểm được": 58,
+    "thông số động cơ cyl | xác nhận": 1613,
+    "thông số động cơ cyl | không đối chiếu": 221,
+    "thông số tổ máy current (tự kiểm) | hợp lý (tự kiểm)": 72,
+    "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": 72,
+    "thông số động cơ bore | không đối chiếu": 13,
+    "thông số động cơ compr | không đối chiếu": 16,
+    "thông số tổ máy speed (tự kiểm) | vô lý (tự kiểm)": 1,
+    "thông số động cơ compr | xác nhận": 53,
+    "thông số động cơ compr | chưa rõ": 3,
+    "thông số động cơ bore | xác nhận": 366,
+    "thông số động cơ cyl | mâu thuẫn": 3,
+    "thông số tổ máy phase (tự kiểm) | không kiểm được": 298,
+    "thông số động cơ bore | chưa rõ": 1,
+    "thông số tổ máy current (tự kiểm) | không kiểm được": 1
+   },
+   "cal": {
+    "thông số động cơ": {
+     "n": 3394,
+     "chance": 673
+    }
+   },
+   "bySup": [
+    [
+     "chuangyuan-zhongshan",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 219,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 223,
+      "thông số tổ máy pf (tự kiểm) | không kiểm được": 223,
+      "thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)": 223,
+      "thông số tổ máy voltage (tự kiểm) | hợp lý (tự kiểm)": 223,
+      "thông số tổ máy weight (tự kiểm) | không kiểm được": 4
+     }
+    ],
+    [
+     "wintpower",
+     {
+      "thông số động cơ cyl | xác nhận": 425,
+      "thông số động cơ disp | xác nhận": 209,
+      "thông số động cơ cyl | không đối chiếu": 34,
+      "thông số động cơ disp | không đối chiếu": 6,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 172,
+      "thông số động cơ disp | chưa rõ": 3,
+      "thông số động cơ disp | mâu thuẫn": 7,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 3,
+      "thông số tổ máy phase (tự kiểm) | không kiểm được": 1
+     }
+    ],
+    [
+     "legapower",
+     {
+      "thông số động cơ cyl | xác nhận": 376,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 87,
+      "thông số động cơ cyl | không đối chiếu": 49,
+      "thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)": 156,
+      "thông số động cơ disp | xác nhận": 156
+     }
+    ],
+    [
+     "weiman-fujian",
+     {
+      "thông số động cơ engPower | không đối chiếu": 211,
+      "thông số động cơ engPower | xác nhận": 299,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 39,
+      "thông số động cơ engPower | chưa rõ": 114,
+      "thông số động cơ engPower | mâu thuẫn": 4,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 57,
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 38
+     }
+    ],
+    [
+     "taihai-taizhou",
+     {
+      "thông số động cơ cyl | xác nhận": 116,
+      "thông số động cơ bore | xác nhận": 116,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 104,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 116,
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 110,
+      "thông số tổ máy weight (tự kiểm) | không kiểm được": 6
+     }
+    ],
+    [
+     "senci-jiangsu",
+     {
+      "thông số động cơ bore | xác nhận": 104,
+      "thông số động cơ cyl | xác nhận": 102,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 102,
+      "thông số tổ máy emission (tự kiểm) | không kiểm được": 103
+     }
+    ],
+    [
+     "senci",
+     {
+      "thông số động cơ bore | xác nhận": 104,
+      "thông số động cơ cyl | xác nhận": 102,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 102,
+      "thông số tổ máy emission (tự kiểm) | không kiểm được": 103
+     }
+    ],
+    [
+     "bobig-power",
+     {
+      "thông số động cơ engPower | chưa rõ": 38,
+      "thông số động cơ engPower | xác nhận": 108,
+      "thông số động cơ engPower | không đối chiếu": 63,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 171,
+      "thông số động cơ engPower | mâu thuẫn": 5
+     }
+    ],
+    [
+     "xinhengxin-fujian",
+     {
+      "thông số động cơ engPower | chưa rõ": 8,
+      "thông số động cơ cyl | xác nhận": 279,
+      "thông số động cơ engPower | xác nhận": 33,
+      "thông số động cơ cyl | mâu thuẫn": 2,
+      "thông số động cơ cyl | không đối chiếu": 35
+     }
+    ],
+    [
+     "agestar",
+     {
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 116,
+      "thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)": 46,
+      "thông số động cơ disp | xác nhận": 118,
+      "thông số động cơ disp | mâu thuẫn": 26,
+      "thông số động cơ disp | chưa rõ": 37,
+      "thông số động cơ disp | không đối chiếu": 10
+     }
+    ],
+    [
+     "gordon-power",
+     {
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 306,
+      "thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)": 10
+     }
+    ],
+    [
+     "welland-power",
+     {
+      "thông số tổ máy phase (tự kiểm) | không kiểm được": 297,
+      "thông số tổ máy emission (tự kiểm) | không kiểm được": 11
+     }
+    ],
+    [
+     "jinlongteng-fujian",
+     {
+      "thông số động cơ engPower | xác nhận": 93,
+      "thông số động cơ compr | xác nhận": 53,
+      "thông số động cơ disp | xác nhận": 62,
+      "thông số động cơ engPower | chưa rõ": 6,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 8,
+      "thông số động cơ compr | chưa rõ": 3,
+      "thông số động cơ compr | không đối chiếu": 7,
+      "thông số động cơ disp | không đối chiếu": 1,
+      "thông số động cơ engPower | không đối chiếu": 17
+     }
+    ],
+    [
+     "honny-dongguan",
+     {
+      "thông số động cơ cyl | không đối chiếu": 65,
+      "thông số tổ máy current (tự kiểm) | hợp lý (tự kiểm)": 45,
+      "thông số động cơ disp | không đối chiếu": 66,
+      "thông số động cơ cyl | xác nhận": 19,
+      "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": 39
+     }
+    ],
+    [
+     "keliang-fuan",
+     {
+      "thông số động cơ engPower | xác nhận": 187,
+      "thông số động cơ engPower | không đối chiếu": 8,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 16
+     }
+    ],
+    [
+     "baifa-power",
+     {
+      "thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)": 95,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 39,
+      "thông số tổ máy emission (tự kiểm) | không kiểm được": 68
+     }
+    ],
+    [
+     "frs-shenyang",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 187
+     }
+    ],
+    [
+     "huadong-yangzhou",
+     {
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 111,
+      "thông số tổ máy current (tự kiểm) | hợp lý (tự kiểm)": 1
+     }
+    ],
+    [
+     "ettes-power",
+     {
+      "thông số động cơ engPower | xác nhận": 40,
+      "thông số động cơ engPower | không đối chiếu": 48,
+      "thông số động cơ engPower | chưa rõ": 10
+     }
+    ],
+    [
+     "previa-ningde",
+     {
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 86
+     }
+    ],
+    [
+     "zhengchi-power",
+     {
+      "thông số động cơ cyl | xác nhận": 24,
+      "thông số động cơ bore | xác nhận": 22,
+      "thông số tổ máy current (tự kiểm) | hợp lý (tự kiểm)": 26,
+      "thông số động cơ bore | không đối chiếu": 3,
+      "thông số động cơ cyl | không đối chiếu": 2,
+      "thông số động cơ bore | chưa rõ": 1
+     }
+    ],
+    [
+     "kangwo-guangdong",
+     {
+      "thông số động cơ cyl | xác nhận": 14,
+      "thông số động cơ bore | xác nhận": 14,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 15,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 15,
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 15,
+      "thông số động cơ cyl | không đối chiếu": 1,
+      "thông số động cơ bore | không đối chiếu": 1
+     }
+    ],
+    [
+     "mecca-power",
+     {
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 25,
+      "thông số động cơ cyl | xác nhận": 10,
+      "thông số động cơ disp | xác nhận": 10,
+      "thông số động cơ cyl | không đối chiếu": 15,
+      "thông số động cơ disp | không đối chiếu": 15
+     }
+    ],
+    [
+     "sdec",
+     {
+      "thông số động cơ engPower | xác nhận": 34,
+      "thông số động cơ engPower | chưa rõ": 22,
+      "thông số động cơ engPower | không đối chiếu": 8
+     }
+    ],
+    [
+     "eastern-lion-fuan",
+     {
+      "thông số tổ máy controller (tự kiểm) | không kiểm được": 8,
+      "thông số động cơ engPower | không đối chiếu": 52
+     }
+    ],
+    [
+     "power-hf",
+     {
+      "thông số tổ máy voltage (tự kiểm) | vô lý (tự kiểm)": 28,
+      "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": 28
+     }
+    ],
+    [
+     "sr-genset",
+     {
+      "thông số tổ máy voltage (tự kiểm) | vô lý (tự kiểm)": 15,
+      "thông số tổ máy voltage (tự kiểm) | hợp lý (tự kiểm)": 4,
+      "thông số động cơ engPower | không đối chiếu": 28,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 8
+     }
+    ],
+    [
+     "jet-power",
+     {
+      "thông số động cơ cyl | không đối chiếu": 9,
+      "thông số động cơ bore | không đối chiếu": 9,
+      "thông số động cơ disp | không đối chiếu": 9,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 9,
+      "thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)": 9,
+      "thông số động cơ compr | không đối chiếu": 9
+     }
+    ],
+    [
+     "rise-power",
+     {
+      "thông số động cơ cyl | không đối chiếu": 4,
+      "thông số động cơ disp | không đối chiếu": 4,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 12,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 15,
+      "thông số động cơ cyl | xác nhận": 8,
+      "thông số động cơ disp | xác nhận": 8
+     }
+    ],
+    [
+     "gti-power",
+     {
+      "thông số tổ máy controller (tự kiểm) | không kiểm được": 50
+     }
+    ],
+    [
+     "kente-power",
+     {
+      "thông số động cơ cyl | xác nhận": 44
+     }
+    ],
+    [
+     "sanq-power",
+     {
+      "thông số động cơ cyl | xác nhận": 21,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 22,
+      "thông số động cơ cyl | mâu thuẫn": 1
+     }
+    ],
+    [
+     "yongcai-elecmama",
+     {
+      "thông số động cơ cyl | xác nhận": 20,
+      "thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)": 20
+     }
+    ],
+    [
+     "acepow-fuan",
+     {
+      "thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)": 38
+     }
+    ],
+    [
+     "excel-power-ningde",
+     {
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 15,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 13
+     }
+    ],
+    [
+     "kachai-hangzhou",
+     {
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 12,
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 12
+     }
+    ],
+    [
+     "long-gen",
+     {
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 12,
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 12
+     }
+    ],
+    [
+     "bruno-generators",
+     {
+      "thông số tổ máy voltage (tự kiểm) | hợp lý (tự kiểm)": 9,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 9,
+      "thông số tổ máy voltage (tự kiểm) | vô lý (tự kiểm)": 3
+     }
+    ],
+    [
+     "xinzhengfa",
+     {
+      "thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)": 17
+     }
+    ],
+    [
+     "weichai-power",
+     {
+      "thông số động cơ cyl | xác nhận": 5,
+      "thông số động cơ bore | xác nhận": 4,
+      "thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)": 3,
+      "thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)": 3
+     }
+    ],
+    [
+     "fukangsi-yangzhou",
+     {
+      "thông số động cơ cyl | xác nhận": 13
+     }
+    ],
+    [
+     "huayuan-weifang",
+     {
+      "thông số động cơ cyl | xác nhận": 12,
+      "thông số động cơ cyl | không đối chiếu": 1
+     }
+    ],
+    [
+     "suneco-linyi",
+     {
+      "thông số động cơ cyl | xác nhận": 12
+     }
+    ],
+    [
+     "weichai-heavy-machinery",
+     {
+      "thông số động cơ cyl | xác nhận": 3,
+      "thông số động cơ bore | xác nhận": 2,
+      "thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)": 3,
+      "thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)": 1
+     }
+    ],
+    [
+     "victory-generator",
+     {
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 3,
+      "thông số động cơ cyl | xác nhận": 3,
+      "thông số động cơ disp | xác nhận": 1,
+      "thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)": 1
+     }
+    ],
+    [
+     "hanyang-weifang",
+     {
+      "thông số động cơ engPower | xác nhận": 4,
+      "thông số động cơ engPower | chưa rõ": 3
+     }
+    ],
+    [
+     "waeta-fujian",
+     {
+      "thông số động cơ cyl | xác nhận": 4,
+      "thông số động cơ cyl | không đối chiếu": 3
+     }
+    ],
+    [
+     "zhengdian-zhengzhou",
+     {
+      "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": 5,
+      "thông số tổ máy current (tự kiểm) | không kiểm được": 1
+     }
+    ],
+    [
+     "jichai",
+     {
+      "thông số tổ máy speed (tự kiểm) | vô lý (tự kiểm)": 1,
+      "thông số động cơ cyl | không đối chiếu": 2
+     }
+    ],
+    [
+     "mingbang-mbkl",
+     {
+      "thông số động cơ cyl | xác nhận": 1,
+      "thông số động cơ disp | mâu thuẫn": 1
+     }
+    ],
+    [
+     "yingtai-group",
+     {
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 2
+     }
+    ],
+    [
+     "yingtai-jiangsu",
+     {
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 2
+     }
+    ],
+    [
+     "hichai-power",
+     {
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 1
+     }
+    ],
+    [
+     "huipu-power",
+     {
+      "thông số động cơ cyl | không đối chiếu": 1
+     }
+    ]
+   ]
+  },
+  "WG": {
+   "desc": "Thông số: đi từng ô từ model tổ máy ở ô 0",
+   "through": {
+    "records": 7489,
+    "specs": 17361,
+    "tables": 290,
+    "sups": 46,
+    "topSups": [
+     [
+      "yanan-power",
+      736
+     ],
+     [
+      "landtop-fuzhou",
+      707
+     ],
+     [
+      "victory-generator",
+      530
+     ],
+     [
+      "yunding-jiangsu",
+      393
+     ],
+     [
+      "walter-yangzhou",
+      382
+     ],
+     [
+      "suneco-linyi",
+      373
+     ],
+     [
+      "kaihua-genset",
+      322
+     ],
+     [
+      "tellhow-power",
+      313
+     ],
+     [
+      "kangwo-guangdong",
+      288
+     ],
+     [
+      "rise-power",
+      287
+     ],
+     [
+      "hichai-power",
+      276
+     ],
+     [
+      "ettes-power",
+      272
+     ]
+    ]
+   },
+   "diff": {
+    "changed": 1000,
+    "onlyA": 0,
+    "onlyB": 0,
+    "kinds": {
+     "phase bỏ": 76,
+     "dims bỏ": 461,
+     "current bỏ": 99,
+     "engPower bỏ": 73,
+     "cyl bỏ": 138,
+     "disp bỏ": 73,
+     "gov bỏ": 220,
+     "fuel bỏ": 46,
+     "voltage bỏ": 9,
+     "weight bỏ": 278,
+     "bore bỏ": 39,
+     "compr bỏ": 37
+    },
+    "recordsTouched": 872,
+    "tables": 39,
+    "sups": 11
+   },
+   "swaps": 3,
+   "verdict": {
+    "thông số tổ máy phase (tự kiểm) | không kiểm được": 38,
+    "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 461,
+    "thông số tổ máy current (tự kiểm) | không kiểm được": 16,
+    "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": 7,
+    "thông số động cơ engPower | xác nhận": 24,
+    "thông số động cơ cyl | xác nhận": 53,
+    "thông số động cơ disp | xác nhận": 50,
+    "thông số động cơ engPower | chưa rõ": 1,
+    "thông số động cơ engPower | không đối chiếu": 48,
+    "thông số động cơ cyl | không đối chiếu": 85,
+    "thông số động cơ disp | không đối chiếu": 20,
+    "thông số động cơ disp | chưa rõ": 2,
+    "thông số động cơ disp | mâu thuẫn": 1,
+    "thông số tổ máy current (tự kiểm) | hợp lý (tự kiểm)": 76,
+    "thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)": 130,
+    "thông số tổ máy fuel (tự kiểm) | không kiểm được": 46,
+    "thông số tổ máy voltage (tự kiểm) | hợp lý (tự kiểm)": 9,
+    "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 273,
+    "thông số tổ máy weight (tự kiểm) | không kiểm được": 5,
+    "thông số động cơ bore | không đối chiếu": 39,
+    "thông số động cơ compr | không đối chiếu": 37
+   },
+   "cal": {
+    "thông số động cơ": {
+     "n": 127,
+     "chance": 6
+    }
+   },
+   "bySup": [
+    [
+     "yingtai-jiangsu",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 143,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 144,
+      "thông số động cơ cyl | không đối chiếu": 38,
+      "thông số động cơ bore | không đối chiếu": 39,
+      "thông số động cơ compr | không đối chiếu": 37,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 37,
+      "thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)": 18,
+      "thông số tổ máy weight (tự kiểm) | không kiểm được": 4,
+      "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": 2
+     }
+    ],
+    [
+     "yingtai-group",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 130,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 130,
+      "thông số tổ máy weight (tự kiểm) | không kiểm được": 1,
+      "thông số tổ máy current (tự kiểm) | không kiểm được": 2
+     }
+    ],
+    [
+     "kangwo-guangdong",
+     {
+      "thông số động cơ engPower | xác nhận": 24,
+      "thông số động cơ cyl | xác nhận": 53,
+      "thông số động cơ disp | xác nhận": 50,
+      "thông số động cơ engPower | chưa rõ": 1,
+      "thông số động cơ engPower | không đối chiếu": 48,
+      "thông số động cơ cyl | không đối chiếu": 20,
+      "thông số động cơ disp | không đối chiếu": 20,
+      "thông số động cơ disp | chưa rõ": 2,
+      "thông số động cơ disp | mâu thuẫn": 1,
+      "thông số tổ máy current (tự kiểm) | hợp lý (tự kiểm)": 9
+     }
+    ],
+    [
+     "frs-shenyang",
+     {
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 187
+     }
+    ],
+    [
+     "landtop-fuzhou",
+     {
+      "thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)": 112
+     }
+    ],
+    [
+     "xinzhengfa",
+     {
+      "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": 2,
+      "thông số tổ máy current (tự kiểm) | hợp lý (tự kiểm)": 67
+     }
+    ],
+    [
+     "acepow-fuan",
+     {
+      "thông số tổ máy phase (tự kiểm) | không kiểm được": 38
+     }
+    ],
+    [
+     "tecnogen",
+     {
+      "thông số động cơ cyl | không đối chiếu": 27
+     }
+    ],
+    [
+     "huatai-yangzhou",
+     {
+      "thông số tổ máy current (tự kiểm) | không kiểm được": 14,
+      "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": 3
+     }
+    ],
+    [
+     "legapower",
+     {
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 9
+     }
+    ],
+    [
+     "superwatt-swt",
+     {
+      "thông số tổ máy voltage (tự kiểm) | hợp lý (tự kiểm)": 9
+     }
+    ]
+   ]
+  },
+  "WR": {
+   "desc": "Thông số: đi từng ô từ ô cuối (không ô nào biết vị trí)",
+   "through": {
+    "records": 17503,
+    "specs": 44473,
+    "tables": 689,
+    "sups": 85,
+    "topSups": [
+     [
+      "uleengen",
+      1877
+     ],
+     [
+      "agestar",
+      1517
+     ],
+     [
+      "jet-power",
+      794
+     ],
+     [
+      "walter-yangzhou",
+      780
+     ],
+     [
+      "yanan-power",
+      748
+     ],
+     [
+      "waeta-fujian",
+      700
+     ],
+     [
+      "mecca-power",
+      590
+     ],
+     [
+      "excel-power-ningde",
+      556
+     ],
+     [
+      "zhengchi-power",
+      549
+     ],
+     [
+      "landtop-fuzhou",
+      474
+     ],
+     [
+      "rise-power",
+      472
+     ],
+     [
+      "victory-generator",
+      469
+     ]
+    ]
+   },
+   "diff": {
+    "changed": 6747,
+    "onlyA": 0,
+    "onlyB": 0,
+    "kinds": {
+     "gov bỏ": 363,
+     "emission bỏ": 427,
+     "speed bỏ": 313,
+     "disp bỏ": 2248,
+     "asp bỏ": 107,
+     "bore bỏ": 1232,
+     "engPower bỏ": 246,
+     "weight bỏ": 4993,
+     "dims bỏ": 4347,
+     "fuel bỏ": 1642,
+     "cyl bỏ": 1389,
+     "noise bỏ": 3,
+     "pf bỏ": 229,
+     "current bỏ": 277,
+     "voltage bỏ": 803,
+     "oil bỏ": 303,
+     "coolant bỏ": 1,
+     "tank bỏ": 22,
+     "controller bỏ": 12,
+     "phase bỏ": 21,
+     "cooling bỏ": 18,
+     "start bỏ": 26,
+     "compr bỏ": 149,
+     "eff bỏ": 48
+    },
+    "recordsTouched": 5749,
+    "tables": 353,
+    "sups": 60
+   },
+   "swaps": 3,
+   "verdict": {
+    "thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)": 211,
+    "thông số tổ máy emission (tự kiểm) | không kiểm được": 367,
+    "thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)": 282,
+    "thông số động cơ disp | xác nhận": 1034,
+    "thông số tổ máy asp (tự kiểm) | không kiểm được": 107,
+    "thông số động cơ bore | xác nhận": 694,
+    "thông số động cơ engPower | không đối chiếu": 239,
+    "thông số động cơ disp | chưa rõ": 94,
+    "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 3750,
+    "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 3830,
+    "thông số tổ máy fuel (tự kiểm) | không kiểm được": 1515,
+    "thông số động cơ disp | không đối chiếu": 846,
+    "thông số động cơ cyl | không đối chiếu": 660,
+    "thông số động cơ cyl | xác nhận": 596,
+    "thông số tổ máy weight (tự kiểm) | vô lý (tự kiểm)": 5,
+    "thông số tổ máy weight (tự kiểm) | không kiểm được": 671,
+    "thông số tổ máy noise (tự kiểm) | không kiểm được": 3,
+    "thông số tổ máy pf (tự kiểm) | không kiểm được": 229,
+    "thông số tổ máy current (tự kiểm) | không kiểm được": 229,
+    "thông số tổ máy voltage (tự kiểm) | hợp lý (tự kiểm)": 798,
+    "thông số tổ máy oil (tự kiểm) | không kiểm được": 303,
+    "thông số động cơ bore | không đối chiếu": 274,
+    "thông số động cơ bore | chưa rõ": 9,
+    "thông số động cơ cyl | mâu thuẫn": 1,
+    "thông số tổ máy coolant (tự kiểm) | không kiểm được": 1,
+    "thông số động cơ bore | mâu thuẫn": 2,
+    "thông số động cơ disp | mâu thuẫn": 18,
+    "thông số tổ máy speed (tự kiểm) | vô lý (tự kiểm)": 3,
+    "thông số tổ máy tank (tự kiểm) | không kiểm được": 22,
+    "thông số tổ máy controller (tự kiểm) | không kiểm được": 12,
+    "thông số tổ máy phase (tự kiểm) | không kiểm được": 21,
+    "thông số tổ máy cooling (tự kiểm) | không kiểm được": 18,
+    "thông số tổ máy start (tự kiểm) | không kiểm được": 26,
+    "thông số động cơ compr | không đối chiếu": 41,
+    "thông số động cơ compr | chưa rõ": 3,
+    "thông số động cơ compr | xác nhận": 105,
+    "thông số tổ máy current (tự kiểm) | hợp lý (tự kiểm)": 24,
+    "thông số tổ máy eff (tự kiểm) | không kiểm được": 24,
+    "thông số động cơ engPower | xác nhận": 7
+   },
+   "cal": {
+    "thông số động cơ": {
+     "n": 2436,
+     "chance": 38
+    }
+   },
+   "bySup": [
+    [
+     "zhengchi-power",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 546,
+      "thông số động cơ disp | không đối chiếu": 520,
+      "thông số động cơ cyl | không đối chiếu": 520,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 520,
+      "thông số tổ máy voltage (tự kiểm) | hợp lý (tự kiểm)": 546,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 25
+     }
+    ],
+    [
+     "mecca-power",
+     {
+      "thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)": 14,
+      "thông số động cơ disp | xác nhận": 80,
+      "thông số động cơ cyl | xác nhận": 58,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 74,
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 580,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 580,
+      "thông số tổ máy emission (tự kiểm) | không kiểm được": 3,
+      "thông số động cơ disp | không đối chiếu": 6,
+      "thông số động cơ cyl | không đối chiếu": 8
+     }
+    ],
+    [
+     "comler-power",
+     {
+      "thông số tổ máy weight (tự kiểm) | không kiểm được": 229,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 229,
+      "thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)": 229,
+      "thông số tổ máy pf (tự kiểm) | không kiểm được": 229,
+      "thông số tổ máy current (tự kiểm) | không kiểm được": 229,
+      "thông số tổ máy voltage (tự kiểm) | hợp lý (tự kiểm)": 229,
+      "thông số tổ máy emission (tự kiểm) | không kiểm được": 16
+     }
+    ],
+    [
+     "hanyang-weifang",
+     {
+      "thông số tổ máy emission (tự kiểm) | không kiểm được": 190,
+      "thông số tổ máy weight (tự kiểm) | không kiểm được": 190,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 190,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 190,
+      "thông số động cơ disp | xác nhận": 170,
+      "thông số động cơ bore | xác nhận": 165,
+      "thông số động cơ cyl | xác nhận": 171,
+      "thông số động cơ disp | chưa rõ": 4,
+      "thông số động cơ bore | không đối chiếu": 20,
+      "thông số động cơ disp | không đối chiếu": 12,
+      "thông số động cơ cyl | không đối chiếu": 12,
+      "thông số động cơ bore | chưa rõ": 1,
+      "thông số động cơ cyl | mâu thuẫn": 1
+     }
+    ],
+    [
+     "wintpower",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 459,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 459,
+      "thông số động cơ disp | xác nhận": 104,
+      "thông số động cơ disp | không đối chiếu": 17,
+      "thông số động cơ disp | mâu thuẫn": 1,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 13,
+      "thông số động cơ disp | chưa rõ": 3
+     }
+    ],
+    [
+     "jet-power",
+     {
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 94,
+      "thông số động cơ disp | xác nhận": 117,
+      "thông số động cơ bore | xác nhận": 116,
+      "thông số động cơ cyl | xác nhận": 92,
+      "thông số động cơ bore | không đối chiếu": 105,
+      "thông số động cơ disp | không đối chiếu": 97,
+      "thông số động cơ disp | chưa rõ": 15,
+      "thông số động cơ bore | chưa rõ": 6,
+      "thông số động cơ cyl | không đối chiếu": 37,
+      "thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)": 64,
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 41,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 81,
+      "thông số động cơ bore | mâu thuẫn": 2
+     }
+    ],
+    [
+     "wiseke-taizhou",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 192,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 192,
+      "thông số động cơ bore | xác nhận": 157,
+      "thông số động cơ cyl | xác nhận": 192,
+      "thông số động cơ bore | không đối chiếu": 35,
+      "thông số động cơ engPower | xác nhận": 7,
+      "thông số động cơ engPower | không đối chiếu": 1
+     }
+    ],
+    [
+     "victory-generator",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 290,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 290,
+      "thông số tổ máy cooling (tự kiểm) | không kiểm được": 18,
+      "thông số tổ máy asp (tự kiểm) | không kiểm được": 18,
+      "thông số động cơ cyl | không đối chiếu": 11,
+      "thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)": 2,
+      "thông số tổ máy start (tự kiểm) | không kiểm được": 26,
+      "thông số động cơ disp | xác nhận": 7,
+      "thông số động cơ disp | chưa rõ": 11,
+      "thông số động cơ disp | mâu thuẫn": 7,
+      "thông số động cơ disp | không đối chiếu": 10,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 18,
+      "thông số động cơ engPower | không đối chiếu": 9,
+      "thông số động cơ compr | không đối chiếu": 9,
+      "thông số động cơ bore | không đối chiếu": 9
+     }
+    ],
+    [
+     "frs-shenyang",
+     {
+      "thông số tổ máy oil (tự kiểm) | không kiểm được": 187,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 187,
+      "thông số động cơ disp | xác nhận": 177,
+      "thông số động cơ bore | xác nhận": 109,
+      "thông số động cơ disp | chưa rõ": 1,
+      "thông số động cơ disp | không đối chiếu": 6,
+      "thông số động cơ bore | không đối chiếu": 8,
+      "thông số động cơ bore | chưa rõ": 2
+     }
+    ],
+    [
+     "acepow-fuan",
+     {
+      "thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)": 70,
+      "thông số tổ máy emission (tự kiểm) | không kiểm được": 60,
+      "thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)": 28,
+      "thông số động cơ disp | xác nhận": 52,
+      "thông số tổ máy asp (tự kiểm) | không kiểm được": 76,
+      "thông số động cơ bore | xác nhận": 76,
+      "thông số động cơ engPower | không đối chiếu": 225,
+      "thông số động cơ disp | chưa rõ": 24
+     }
+    ],
+    [
+     "agestar",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 243,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 243,
+      "thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)": 56,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 30
+     }
+    ],
+    [
+     "rise-power",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 284,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 220
+     }
+    ],
+    [
+     "uleengen",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 188,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 188
+     }
+    ],
+    [
+     "tellhow-power",
+     {
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 174,
+      "thông số động cơ disp | xác nhận": 106,
+      "thông số động cơ disp | không đối chiếu": 52,
+      "thông số động cơ disp | chưa rõ": 15,
+      "thông số động cơ disp | mâu thuẫn": 1
+     }
+    ],
+    [
+     "weiman-fujian",
+     {
+      "thông số động cơ compr | không đối chiếu": 32,
+      "thông số động cơ disp | không đối chiếu": 20,
+      "thông số động cơ compr | chưa rõ": 3,
+      "thông số động cơ disp | xác nhận": 120,
+      "thông số động cơ compr | xác nhận": 105
+     }
+    ],
+    [
+     "westinpower",
+     {
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 62,
+      "thông số động cơ disp | không đối chiếu": 54,
+      "thông số động cơ bore | không đối chiếu": 62,
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 24,
+      "thông số tổ máy current (tự kiểm) | hợp lý (tự kiểm)": 24,
+      "thông số tổ máy eff (tự kiểm) | không kiểm được": 24,
+      "thông số động cơ disp | xác nhận": 8
+     }
+    ],
+    [
+     "jianghao-genset",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 48,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 48,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 48,
+      "thông số động cơ disp | không đối chiếu": 9,
+      "thông số động cơ bore | không đối chiếu": 11,
+      "thông số động cơ disp | xác nhận": 38,
+      "thông số động cơ bore | xác nhận": 37,
+      "thông số động cơ disp | mâu thuẫn": 1
+     }
+    ],
+    [
+     "walter-yangzhou",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 58,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 58,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 58,
+      "thông số tổ máy oil (tự kiểm) | không kiểm được": 58
+     }
+    ],
+    [
+     "senci-jiangsu",
+     {
+      "thông số tổ máy weight (tự kiểm) | không kiểm được": 70,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 103,
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 33
+     }
+    ],
+    [
+     "senci",
+     {
+      "thông số tổ máy weight (tự kiểm) | không kiểm được": 70,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 103,
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 33
+     }
+    ],
+    [
+     "kangwo-guangdong",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 92,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 92,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 1,
+      "thông số động cơ bore | không đối chiếu": 16,
+      "thông số động cơ bore | xác nhận": 1
+     }
+    ],
+    [
+     "gtl-power",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 99,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 99
+     }
+    ],
+    [
+     "sanq-power",
+     {
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 139,
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 34,
+      "thông số tổ máy weight (tự kiểm) | không kiểm được": 25
+     }
+    ],
+    [
+     "huadong-yangzhou",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 85,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 85
+     }
+    ],
+    [
+     "kaichen-jiangsu",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 65,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 65,
+      "thông số tổ máy tank (tự kiểm) | không kiểm được": 22,
+      "thông số tổ máy controller (tự kiểm) | không kiểm được": 12
+     }
+    ],
+    [
+     "taihai-taizhou",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 35,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 35,
+      "thông số động cơ disp | xác nhận": 32,
+      "thông số động cơ bore | xác nhận": 29,
+      "thông số động cơ disp | không đối chiếu": 3,
+      "thông số động cơ bore | không đối chiếu": 6
+     }
+    ],
+    [
+     "xingguang-jiangsu",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 22,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 22,
+      "thông số tổ máy emission (tự kiểm) | không kiểm được": 22,
+      "thông số tổ máy oil (tự kiểm) | không kiểm được": 22,
+      "thông số động cơ cyl | xác nhận": 22
+     }
+    ],
+    [
+     "yingtai-jiangsu",
+     {
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 31,
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 29,
+      "thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)": 2,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 2,
+      "thông số động cơ cyl | xác nhận": 6,
+      "thông số động cơ cyl | không đối chiếu": 26,
+      "thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)": 3
+     }
+    ],
+    [
+     "keliang-fuan",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 81,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 2,
+      "thông số tổ máy voltage (tự kiểm) | hợp lý (tự kiểm)": 2
+     }
+    ],
+    [
+     "fukangsi-yangzhou",
+     {
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 24,
+      "thông số tổ máy weight (tự kiểm) | không kiểm được": 13,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 24,
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 11
+     }
+    ],
+    [
+     "sdec",
+     {
+      "thông số tổ máy emission (tự kiểm) | không kiểm được": 36,
+      "thông số động cơ cyl | xác nhận": 35,
+      "thông số động cơ cyl | không đối chiếu": 1
+     }
+    ],
+    [
+     "jinlongteng-fujian",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 63,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 7
+     }
+    ],
+    [
+     "fengmao-weifang",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 34,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 34
+     }
+    ],
+    [
+     "kente-power",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 24,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 44
+     }
+    ],
+    [
+     "zhengdian-zhengzhou",
+     {
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 28,
+      "thông số tổ máy oil (tự kiểm) | không kiểm được": 28,
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 5,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 6,
+      "thông số tổ máy weight (tự kiểm) | không kiểm được": 1
+     }
+    ],
+    [
+     "green-power-generators",
+     {
+      "thông số tổ máy weight (tự kiểm) | không kiểm được": 18,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 18,
+      "thông số tổ máy emission (tự kiểm) | không kiểm được": 8,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 8,
+      "thông số động cơ cyl | không đối chiếu": 8
+     }
+    ],
+    [
+     "sr-genset",
+     {
+      "thông số tổ máy emission (tự kiểm) | không kiểm được": 29,
+      "thông số động cơ cyl | không đối chiếu": 29
+     }
+    ],
+    [
+     "superwatt-swt",
+     {
+      "thông số tổ máy asp (tự kiểm) | không kiểm được": 8,
+      "thông số tổ máy voltage (tự kiểm) | hợp lý (tự kiểm)": 21,
+      "thông số tổ máy phase (tự kiểm) | không kiểm được": 21
+     }
+    ],
+    [
+     "jichai",
+     {
+      "thông số tổ máy weight (tự kiểm) | không kiểm được": 15,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 15,
+      "thông số động cơ disp | không đối chiếu": 7,
+      "thông số tổ máy speed (tự kiểm) | vô lý (tự kiểm)": 3,
+      "thông số động cơ engPower | không đối chiếu": 4,
+      "thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)": 1
+     }
+    ],
+    [
+     "waeta-fujian",
+     {
+      "thông số động cơ disp | không đối chiếu": 14,
+      "thông số động cơ cyl | xác nhận": 17,
+      "thông số động cơ disp | chưa rõ": 1,
+      "thông số động cơ cyl | không đối chiếu": 3,
+      "thông số động cơ disp | xác nhận": 5
+     }
+    ],
+    [
+     "huayuan-weifang",
+     {
+      "thông số tổ máy weight (tự kiểm) | không kiểm được": 13,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 13,
+      "thông số động cơ disp | xác nhận": 12,
+      "thông số động cơ disp | không đối chiếu": 1
+     }
+    ],
+    [
+     "yanfa-yancheng",
+     {
+      "thông số động cơ disp | không đối chiếu": 8,
+      "thông số động cơ disp | chưa rõ": 20,
+      "thông số động cơ disp | mâu thuẫn": 8
+     }
+    ],
+    [
+     "huatai-yangzhou",
+     {
+      "thông số tổ máy weight (tự kiểm) | không kiểm được": 14,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 17,
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 3
+     }
+    ],
+    [
+     "kachai-hangzhou",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 13,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 13
+     }
+    ],
+    [
+     "yunding-jiangsu",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 6,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 6,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 6,
+      "thông số tổ máy oil (tự kiểm) | không kiểm được": 6,
+      "thông số động cơ disp | xác nhận": 1
+     }
+    ],
+    [
+     "googol",
+     {
+      "thông số tổ máy weight (tự kiểm) | không kiểm được": 10,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 10
+     }
+    ],
+    [
+     "yto",
+     {
+      "thông số tổ máy asp (tự kiểm) | không kiểm được": 4,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 4,
+      "thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)": 4,
+      "thông số động cơ disp | xác nhận": 4,
+      "thông số động cơ bore | xác nhận": 4
+     }
+    ],
+    [
+     "shengfeng-fuan",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 19
+     }
+    ],
+    [
+     "gordon-power",
+     {
+      "thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)": 14
+     }
+    ],
+    [
+     "jlmech-wuhan",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 2,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 2,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 2,
+      "thông số tổ máy oil (tự kiểm) | không kiểm được": 2,
+      "thông số động cơ disp | không đối chiếu": 1,
+      "thông số động cơ bore | không đối chiếu": 1,
+      "thông số động cơ cyl | không đối chiếu": 1
+     }
+    ],
+    [
+     "aosif",
+     {
+      "thông số động cơ disp | không đối chiếu": 4,
+      "thông số động cơ cyl | không đối chiếu": 4,
+      "thông số động cơ disp | xác nhận": 1,
+      "thông số động cơ cyl | xác nhận": 1
+     }
+    ],
+    [
+     "biao-xiamen",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 3,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 3,
+      "thông số động cơ disp | không đối chiếu": 3
+     }
+    ],
+    [
+     "haifeng-taizhou",
+     {
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 4,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 4
+     }
+    ],
+    [
+     "yingtai-group",
+     {
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 1,
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 1,
+      "thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)": 2,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 2,
+      "thông số động cơ cyl | xác nhận": 2
+     }
+    ],
+    [
+     "cgm-italia",
+     {
+      "thông số tổ máy weight (tự kiểm) | vô lý (tự kiểm)": 3,
+      "thông số tổ máy noise (tự kiểm) | không kiểm được": 3
+     }
+    ],
+    [
+     "nenjo-generator",
+     {
+      "thông số tổ máy emission (tự kiểm) | không kiểm được": 3,
+      "thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)": 3
+     }
+    ],
+    [
+     "bruno-generators",
+     {
+      "thông số tổ máy weight (tự kiểm) | vô lý (tự kiểm)": 2,
+      "thông số tổ máy weight (tự kiểm) | không kiểm được": 2,
+      "thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)": 1
+     }
+    ],
+    [
+     "huipu-power",
+     {
+      "thông số tổ máy weight (tự kiểm) | không kiểm được": 1,
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 1,
+      "thông số tổ máy coolant (tự kiểm) | không kiểm được": 1,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 1,
+      "thông số động cơ disp | không đối chiếu": 1
+     }
+    ],
+    [
+     "quanchai",
+     {
+      "thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)": 1,
+      "thông số tổ máy asp (tự kiểm) | không kiểm được": 1,
+      "thông số động cơ disp | không đối chiếu": 1,
+      "thông số động cơ bore | không đối chiếu": 1
+     }
+    ],
+    [
+     "mingbang-mbkl",
+     {
+      "thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)": 1,
+      "thông số tổ máy fuel (tự kiểm) | không kiểm được": 1
+     }
+    ]
+   ]
+  }
+ },
+ "totals": {
+  "records": 59222,
+  "tables": 6521,
+  "sups": 267
+ }
+}

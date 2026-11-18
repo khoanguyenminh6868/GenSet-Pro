@@ -1,0 +1,50 @@
+bản ghi cũ 59222, mới 59212 | khác 0 | chỉ cũ 11, chỉ mới 1 | bảng có đổi 8
+{}
+
+[cameo-power n112 bảng 11] ×1
+  H: | Image | ​ | ​
+    0 | Model | CK7000S | CK7500S | CK8500S | CK9500S | CK12000S | CK15000S | CK18000S
+        ⇒ MẤT bản ghi engine CK7000S
+
+[chenxing-weifang n101 bảng 0] ×2
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+    0 | 机组型号 | 200GF | 型号 | NT855-GA | 型号 | 200GF
+        ⇒ MẤT bản ghi engine NT855-GA
+    0 | 机组型号 | 200GF | 型号 | NT855-GA | 型号 | 200GF
+        ⇒ MẤT bản ghi alternator 200GF
+
+[chenxing-weifang n108 bảng 5] ×2
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+    0 | 机组型号 | 30GF | 型号 | 4BT3.9-G2 | 型号 | 30GF
+        ⇒ MẤT bản ghi engine 4BT3.9-G2
+    0 | 机组型号 | 30GF | 型号 | 4BT3.9-G2 | 型号 | 30GF
+        ⇒ MẤT bản ghi alternator 30GF
+
+[huachai-deutz n108 bảng 6] ×1
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+    0 | Model | 10GF | Model | F2L912D | Model | PI044F
+        ⇒ MẤT bản ghi engine 10GF
+
+[huachai-deutz n112 bảng 9] ×1
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+    0 | Model | 1 5 GF | Model | F3L912D | Model | PI144D
+        ⇒ MẤT bản ghi engine F3L912D
+
+[huachai-deutz n116 bảng 12] ×1
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+    0 | Model | 30GF | Model | F4L912D | Model | PI144J
+        ⇒ MẤT bản ghi engine 30GF
+
+[kubota n2001 bảng 0] ×2
+  H: URL: https://generator.kubota.com/products/50hz/sq_1120.html
+    0 | Model | - | D1703
+        ⇒ MẤT bản ghi engine D1703
+    1 | Prime Output | kVA (kW) | 11.2 (11.2)
+        ⇒ THÊM bản ghi engine D1703
+
+[zichai n119 bảng 11] ×2
+  H: | Engine | Item | Technical specifications
+    0 | | Model | 6300D/M | 6300D/M-1 | 6300D/M-2 | 8300D/M-1 | 8300D/M-2 | 8300D/M-3
+        ⇒ MẤT bản ghi engine 6300D/M
+    4 | Generator set | Model | 300GFM | 400GFM | 500GFM | 450GFM | 500GFM | 600GFM
+        ⇒ MẤT bản ghi engine 300GFM

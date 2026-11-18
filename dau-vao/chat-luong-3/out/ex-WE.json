@@ -93658,7 +93658,7 @@
    "line": "| 33 | 1340 | 400 | 1500 | 0.8 | 50 | 5300*2100*2700 | 12000 | KTA50-G15X | 16/159/159 | 50"
   }
  ],
- "thông số tổ máy weight (tự kiểm) | vô lý (tự kiểm)": [
+ "thông số tổ máy weight (tự kiểm) | không kiểm được": [
   {
    "sup": "chuangyuan-zhongshan",
    "n": 104,
@@ -124237,21 +124237,6 @@
     "| KW / KVA(A) | Current(A) | L × B × H (mm) | （Kg）"
    ],
    "line": "| CCFJ15-xx | 15/18.75 | 27 | 395 | STC-15-4 | 1500×600×1500 | 780"
-  },
-  {
-   "sup": "zhengdian-zhengzhou",
-   "n": 107,
-   "table": 6,
-   "row": 7,
-   "kind": "engine",
-   "model": "STC-30-4",
-   "val": "current=4100",
-   "change": "current bỏ: 4100 → ∅",
-   "header": [
-    "| | 机组型号 | 输出功率 | 额定电流 | 柴油机型号 | 发电机型号 | 机组外包装尺寸 | 机组重量",
-    "| KW / KVA(A) | Current(A) | L × B × H (mm) | （Kg）"
-   ],
-   "line": "| CCFJ30-xx | 30/30.5 | 54 | 4100 | STC-30-4 | 2100×780×1450 | 1600"
   }
  ],
  "thông số động cơ bore | không đối chiếu": [
@@ -135276,6 +135261,23 @@
     "| 主用 | 备用"
    ],
    "line": "| ZCDL-W1320 | 1200 | 1320 | 2376A | 12M33D1450E310 | 12 | 159*159 | 50L | g/kw.h | 5900*2270*2500 | 12000kg | 220/380 | 50Hz | 三相四线 | 详细参数"
+  }
+ ],
+ "thông số tổ máy current (tự kiểm) | không kiểm được": [
+  {
+   "sup": "zhengdian-zhengzhou",
+   "n": 107,
+   "table": 6,
+   "row": 7,
+   "kind": "engine",
+   "model": "STC-30-4",
+   "val": "current=4100",
+   "change": "current bỏ: 4100 → ∅",
+   "header": [
+    "| | 机组型号 | 输出功率 | 额定电流 | 柴油机型号 | 发电机型号 | 机组外包装尺寸 | 机组重量",
+    "| KW / KVA(A) | Current(A) | L × B × H (mm) | （Kg）"
+   ],
+   "line": "| CCFJ30-xx | 30/30.5 | 54 | 4100 | STC-30-4 | 2100×780×1450 | 1600"
   }
  ]
 }

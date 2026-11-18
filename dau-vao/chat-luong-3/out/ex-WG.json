@@ -7358,7 +7358,7 @@
    "line": "| 30GF | 30 | 37.5 | 56 | 45 | 54 | 100.8 | 700 | 2.45*1.1*1.65 | 6BTAA5.9-G12 | 45"
   }
  ],
- "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": [
+ "thông số tổ máy current (tự kiểm) | không kiểm được": [
   {
    "sup": "huatai-yangzhou",
    "n": 111,
@@ -7543,6 +7543,66 @@
    "sup": "huatai-yangzhou",
    "n": 111,
    "table": 10,
+   "row": 15,
+   "kind": "engine",
+   "model": "WD327TAD88",
+   "val": "current=1629",
+   "change": "current bỏ: 1629 → ∅",
+   "header": [
+    "| 组型号Type of set | 输出功率 Power of output (KW/KVA) | 额定电流Rated current (A) | 柴油机参数 Parameters of set | 机组尺寸及重量 Size and weight of machine set",
+    "| 型号 Type | 额定功率 power (KW) | 缸数及类型Numbers& Type of cylinder | 燃油消耗 (g/kw.h)Consumption of fuel(g/kw.h) | 机油容量 Oil capacity (L) | 长×宽×高 Length Width Height (MM) | 净重 Net Weight (kg)"
+   ],
+   "line": "| 900GF | 145/165 | 1629 | WD327TAD88 | 970 | 12缸V型 | 196 | 65 | 4000×2000×2200 | 5500"
+  },
+  {
+   "sup": "huatai-yangzhou",
+   "n": 111,
+   "table": 10,
+   "row": 16,
+   "kind": "engine",
+   "model": "WD327TAD92",
+   "val": "current=1810",
+   "change": "current bỏ: 1810 → ∅",
+   "header": [
+    "| 组型号Type of set | 输出功率 Power of output (KW/KVA) | 额定电流Rated current (A) | 柴油机参数 Parameters of set | 机组尺寸及重量 Size and weight of machine set",
+    "| 型号 Type | 额定功率 power (KW) | 缸数及类型Numbers& Type of cylinder | 燃油消耗 (g/kw.h)Consumption of fuel(g/kw.h) | 机油容量 Oil capacity (L) | 长×宽×高 Length Width Height (MM) | 净重 Net Weight (kg)"
+   ],
+   "line": "| 1000GF | 145/165 | 1810 | WD327TAD92 | 1012 | 12缸V型 | 196 | 65 | 4500×2100×2300 | 6000"
+  },
+  {
+   "sup": "yingtai-group",
+   "n": 2011,
+   "table": 10,
+   "row": 0,
+   "kind": "engine",
+   "model": "KTA38-G9",
+   "val": "current=6300",
+   "change": "current bỏ: 6300 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式"
+   ],
+   "line": "| 1000GF1 | | 1000 | 6300 | / | 9620 | 5.60×1.85×2.60 | KTA38-G9 | 重庆康明斯 | | 1089 | 12 | 37.8 | ≤208 | 电子"
+  },
+  {
+   "sup": "yingtai-group",
+   "n": 2011,
+   "table": 10,
+   "row": 10,
+   "kind": "engine",
+   "model": "KTA38-G9",
+   "val": "current=10500",
+   "change": "current bỏ: 10500 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式"
+   ],
+   "line": "| 1000GF1 | | 1000 | 10500 | | 9840 | 5.62×1.85×2.60 | KTA38-G9 | 重庆康明斯 | | 1089 | 12 | 37.8 | ≤208 | 电子"
+  }
+ ],
+ "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": [
+  {
+   "sup": "huatai-yangzhou",
+   "n": 111,
+   "table": 10,
    "row": 12,
    "kind": "engine",
    "model": "WD305TAD68",
@@ -7585,36 +7645,6 @@
    "line": "| 850GF | 140/165 | 1538.5 | WD327TAD82 | 902 | 12缸V型 | 196 | 60 | 3900×1850×2100 | 5000"
   },
   {
-   "sup": "huatai-yangzhou",
-   "n": 111,
-   "table": 10,
-   "row": 15,
-   "kind": "engine",
-   "model": "WD327TAD88",
-   "val": "current=1629",
-   "change": "current bỏ: 1629 → ∅",
-   "header": [
-    "| 组型号Type of set | 输出功率 Power of output (KW/KVA) | 额定电流Rated current (A) | 柴油机参数 Parameters of set | 机组尺寸及重量 Size and weight of machine set",
-    "| 型号 Type | 额定功率 power (KW) | 缸数及类型Numbers& Type of cylinder | 燃油消耗 (g/kw.h)Consumption of fuel(g/kw.h) | 机油容量 Oil capacity (L) | 长×宽×高 Length Width Height (MM) | 净重 Net Weight (kg)"
-   ],
-   "line": "| 900GF | 145/165 | 1629 | WD327TAD88 | 970 | 12缸V型 | 196 | 65 | 4000×2000×2200 | 5500"
-  },
-  {
-   "sup": "huatai-yangzhou",
-   "n": 111,
-   "table": 10,
-   "row": 16,
-   "kind": "engine",
-   "model": "WD327TAD92",
-   "val": "current=1810",
-   "change": "current bỏ: 1810 → ∅",
-   "header": [
-    "| 组型号Type of set | 输出功率 Power of output (KW/KVA) | 额定电流Rated current (A) | 柴油机参数 Parameters of set | 机组尺寸及重量 Size and weight of machine set",
-    "| 型号 Type | 额定功率 power (KW) | 缸数及类型Numbers& Type of cylinder | 燃油消耗 (g/kw.h)Consumption of fuel(g/kw.h) | 机油容量 Oil capacity (L) | 长×宽×高 Length Width Height (MM) | 净重 Net Weight (kg)"
-   ],
-   "line": "| 1000GF | 145/165 | 1810 | WD327TAD92 | 1012 | 12缸V型 | 196 | 65 | 4500×2100×2300 | 6000"
-  },
-  {
    "sup": "xinzhengfa",
    "n": 101,
    "table": 0,
@@ -7643,34 +7673,6 @@
     "| KVA | KW"
    ],
    "line": "| ZF24GF | 30 | 24 | 33.2 | 50/1500 | K4100D | 1800 × 750 × 1100 | 810"
-  },
-  {
-   "sup": "yingtai-group",
-   "n": 2011,
-   "table": 10,
-   "row": 0,
-   "kind": "engine",
-   "model": "KTA38-G9",
-   "val": "current=6300",
-   "change": "current bỏ: 6300 → ∅",
-   "header": [
-    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式"
-   ],
-   "line": "| 1000GF1 | | 1000 | 6300 | / | 9620 | 5.60×1.85×2.60 | KTA38-G9 | 重庆康明斯 | | 1089 | 12 | 37.8 | ≤208 | 电子"
-  },
-  {
-   "sup": "yingtai-group",
-   "n": 2011,
-   "table": 10,
-   "row": 10,
-   "kind": "engine",
-   "model": "KTA38-G9",
-   "val": "current=10500",
-   "change": "current bỏ: 10500 → ∅",
-   "header": [
-    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式"
-   ],
-   "line": "| 1000GF1 | | 1000 | 10500 | | 9840 | 5.62×1.85×2.60 | KTA38-G9 | 重庆康明斯 | | 1089 | 12 | 37.8 | ≤208 | 电子"
   },
   {
    "sup": "yingtai-jiangsu",
@@ -19769,7 +19771,7 @@
    "line": "| 30GF | 30 | 37.5 | 56 | 45 | 54 | 100.8 | 700 | 2.45*1.1*1.65 | 6BTAA5.9-G12 | 45"
   }
  ],
- "thông số tổ máy weight (tự kiểm) | vô lý (tự kiểm)": [
+ "thông số tổ máy weight (tự kiểm) | không kiểm được": [
   {
    "sup": "yingtai-group",
    "n": 2005,

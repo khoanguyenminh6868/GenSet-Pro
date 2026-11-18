@@ -210385,36 +210385,6 @@
    "line": "| SB 9508 KL | 8 | 250 W | 2000 W | AC | 230 V | 5.3 | 4.5 | 6.5 | 6 | KOHLER KDW 702 | 686 | 5 | 5.9 | 0.8 | 0.7 | N | 140 | 245 | 130 | 230 | 245 | 280 | 920 | 1120 | MCP 120-80"
   },
   {
-   "sup": "bruno-generators",
-   "n": 103,
-   "table": 1,
-   "row": 0,
-   "kind": "engine",
-   "model": "Q401 AUS-80",
-   "val": "weight=1060",
-   "change": "weight bỏ: 1060 → ∅",
-   "header": [
-    "| | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 HZ | | 60 HZ | | | | | | | | | TANK l | DIMENSIONS cm | | | MAXIMUM SIZE cm | | | WEIGHT kg | STANDARD PANEL",
-    "| MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 Hz | | 60 Hz | | Engine | cm3 | kWm | kWm | fuel consumption (l/h) | fuel consumption (l/h) | Aspiration | TANK (l) | DIMENSIONS (cm) | | | MAXI"
-   ],
-   "line": "| MB 9504 KL | 4 | 250 W | 1000 W | DC | 48 V | - | - | - | - | KOHLER LDW 702 | 686 | - | 5,9 | - | 0,35 | N | 110 | 235 | 148 | 225 | 235 | 202 | 883 | 1060 | Q401 AUS-80"
-  },
-  {
-   "sup": "bruno-generators",
-   "n": 103,
-   "table": 1,
-   "row": 1,
-   "kind": "engine",
-   "model": "Q401 AUS-80",
-   "val": "weight=1065",
-   "change": "weight bỏ: 1065 → ∅",
-   "header": [
-    "| | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 HZ | | 60 HZ | | | | | | | | | TANK l | DIMENSIONS cm | | | MAXIMUM SIZE cm | | | WEIGHT kg | STANDARD PANEL",
-    "| MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 Hz | | 60 Hz | | Engine | cm3 | kWm | kWm | fuel consumption (l/h) | fuel consumption (l/h) | Aspiration | TANK (l) | DIMENSIONS (cm) | | | MAXI"
-   ],
-   "line": "| MB 9504 KL | 4 | 300 W | 1200 W | DC | 48 V | - | - | - | - | KOHLER LDW 702 | 686 | - | 5,9 | - | 0,46 | N | 110 | 235 | 148 | 225 | 235 | 202 | 883 | 1065 | Q401 AUS-80"
-  },
-  {
    "sup": "cgm-italia",
    "n": 1001,
    "table": 13,
@@ -210458,6 +210428,38 @@
     "| OPEN BASE FRAME | SOUNDPROOF CANOPY | dB(A) at 7 mt"
    ],
    "line": "| STAGE IIIA | e365VO | 365 | 292 | 401,5 | 321,2 | TAD 1352GE"
+  }
+ ],
+ "thông số tổ máy weight (tự kiểm) | không kiểm được": [
+  {
+   "sup": "bruno-generators",
+   "n": 103,
+   "table": 1,
+   "row": 0,
+   "kind": "engine",
+   "model": "Q401 AUS-80",
+   "val": "weight=1060",
+   "change": "weight bỏ: 1060 → ∅",
+   "header": [
+    "| | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 HZ | | 60 HZ | | | | | | | | | TANK l | DIMENSIONS cm | | | MAXIMUM SIZE cm | | | WEIGHT kg | STANDARD PANEL",
+    "| MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 Hz | | 60 Hz | | Engine | cm3 | kWm | kWm | fuel consumption (l/h) | fuel consumption (l/h) | Aspiration | TANK (l) | DIMENSIONS (cm) | | | MAXI"
+   ],
+   "line": "| MB 9504 KL | 4 | 250 W | 1000 W | DC | 48 V | - | - | - | - | KOHLER LDW 702 | 686 | - | 5,9 | - | 0,35 | N | 110 | 235 | 148 | 225 | 235 | 202 | 883 | 1060 | Q401 AUS-80"
+  },
+  {
+   "sup": "bruno-generators",
+   "n": 103,
+   "table": 1,
+   "row": 1,
+   "kind": "engine",
+   "model": "Q401 AUS-80",
+   "val": "weight=1065",
+   "change": "weight bỏ: 1065 → ∅",
+   "header": [
+    "| | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 HZ | | 60 HZ | | | | | | | | | TANK l | DIMENSIONS cm | | | MAXIMUM SIZE cm | | | WEIGHT kg | STANDARD PANEL",
+    "| MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 Hz | | 60 Hz | | Engine | cm3 | kWm | kWm | fuel consumption (l/h) | fuel consumption (l/h) | Aspiration | TANK (l) | DIMENSIONS (cm) | | | MAXI"
+   ],
+   "line": "| MB 9504 KL | 4 | 300 W | 1200 W | DC | 48 V | - | - | - | - | KOHLER LDW 702 | 686 | - | 5,9 | - | 0,46 | N | 110 | 235 | 148 | 225 | 235 | 202 | 883 | 1065 | Q401 AUS-80"
   },
   {
    "sup": "comler-power",
@@ -223493,7 +223495,7 @@
    "line": "| COMLER3000KW | 康姆勒 | YC16VC4900-D30 | 3280 | 高压共轨 | 玉柴 | 400/230 | 5412.8 | 0.8 | 50 | 1500 | 7800*2620*3100 | 31500"
   }
  ],
- "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": [
+ "thông số tổ máy current (tự kiểm) | không kiểm được": [
   {
    "sup": "comler-power",
    "n": 101,

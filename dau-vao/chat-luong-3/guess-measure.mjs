@@ -27,7 +27,7 @@ function side(dir, off) {
   const S = fs.readdirSync(cn).filter((f) => f.endsWith(".json")).sort().map((f) => JSON.parse(fs.readFileSync(path.join(cn, f), "utf8")));
   return { C: win.GenbidCatalog, S };
 }
-const mainDir = SD.checkoutRef("origin/main", WT);
+const mainDir = SD.checkoutRef(process.env.BASE || "7d632e30", WT);
 const A = SD.records(side(mainDir));
 const T0 = SD.records(side(WT, ""));
 
@@ -49,6 +49,12 @@ const PATHS = {
   L2: "Bảng nhãn: \"Model\" kề dòng động cơ là động cơ (himoinsa, hipower)",
   L3: "Bảng nhãn: ô \"a/b\" không đơn vị ghép theo tỉ số 1,15–1,35",
   FL: "Dòng máy Tìm NCC: số còn lại của dòng ghép với số của dòng máy theo tỉ số (rowPowerOf)",
+};
+const GUARDS = {
+  L3B: "Chốt: ô \"a/b\" chỉ ghép khi nhãn ghi mức / đơn vị / output (không chỉ chữ power trong tên hãng)",
+  ONE: "Chốt: tiêu đề có cả cột động cơ và đầu phát mà dòng chỉ có 1 mã ngoài model tổ máy → để thiếu cả hai",
+  LROW: "Chốt: dòng bảng tự là cặp nhãn | giá trị (ô \"型号\" / \"Model\" giữa dòng) → để thiếu",
+  WCHK: "Chốt: dòng điện / điện áp đọc theo vị trí phải khớp công suất của dòng",
 };
 const tagStat = Object.fromEntries(Object.keys(PATHS).map((k) => [k, { rec: 0, tables: new Set(), sups: new Map(), specs: 0 }]));
 const tabKey = (o) => `${o.supplierId}|${o.n}|${o.table}`;
@@ -141,7 +147,8 @@ function judgeChange(ch, B) {
     const key = m[1];
     const val = m[2] === "thêm" ? to : from, tagNew = m[2] === "thêm" ? " (giá trị MỚI)" : "";
     if (ENG_KEYS.has(key) && o.kind === "engine") { const x = specNum(key, val); res.push([`thông số động cơ ${key}${tagNew}`, x == null ? "không đối chiếu" : judgeNum(specRef, `${RK(o.model)}|${key}`, sup, x, key === "engPower" ? 0.03 : 0.02), `${key}=${val}`]); }
-    else { const ok = SD.checkSpec(key, { value: val }, o); res.push([`thông số tổ máy ${key}${tagNew} (tự kiểm)`, ok === true ? "hợp lý (tự kiểm)" : ok === false ? "vô lý (tự kiểm)" : "không kiểm được", `${key}=${val}`]); }
+    // checkSpec answers false for current / weight / engPower when the row has no power at all: that is no check.
+    else { const noPw = /^(current|weight|engPower)$/.test(key) && !Object.values(o.power || {}).some((p) => p && (p.kVA || p.kW)); const ok = noPw ? null : SD.checkSpec(key, { value: val }, o); res.push([`thông số tổ máy ${key}${tagNew} (tự kiểm)`, ok === true ? "hợp lý (tự kiểm)" : ok === false ? "vô lý (tự kiểm)" : "không kiểm được", `${key}=${val}`]); }
     return res;
   }
   if (kind === "genset") return [["model tổ máy", "không đối chiếu", from]];
@@ -154,7 +161,7 @@ const report = { paths: {}, totals: { records: T0.size, tables: allTables.size, 
 const only = process.argv[4] ? process.argv[4].split(",") : Object.keys(PATHS);
 for (const P of only) {
   const t0 = Date.now();
-  const B = SD.records(side(WT, P));
+  const B = SD.records(side(WT, P.replace(/\+/g, ",")));
   CAL = {};
   const d = SD.diff(A, B);
   const verdict = {}, bySup = new Map(), ex = {}, perRec = new Map(), seenRow = new Set();
@@ -172,9 +179,9 @@ for (const P of only) {
     const rk = `${ch.o.supplierId}|${ch.o.n}|${ch.o.table}|${ch.o.row}|${ch.o.kind}|${ch.o.model}`; perRec.set(rk, true);
   }
   const sw = SD.swaps(B.values());
-  const ts = tagStat[P];
+  const ts = tagStat[P] || { rec: 0, specs: 0, tables: new Set(), sups: new Map() };
   report.paths[P] = {
-    desc: PATHS[P], through: { records: ts.rec, specs: ts.specs, tables: ts.tables.size, sups: ts.sups.size, topSups: [...ts.sups].sort((a, b) => b[1] - a[1]).slice(0, 12) },
+    desc: PATHS[P] || GUARDS[P] || P, through: { records: ts.rec, specs: ts.specs, tables: ts.tables.size, sups: ts.sups.size, topSups: [...ts.sups].sort((a, b) => b[1] - a[1]).slice(0, 12) },
     diff: { changed: d.changed, onlyA: d.onlyA, onlyB: d.onlyB, kinds: d.kinds, recordsTouched: perRec.size, tables: d.tabs.size, sups: d.bySup.size },
     swaps: sw.n, verdict, cal: CAL, bySup: [...bySup].map(([s, v]) => [s, v]).sort((a, b) => Object.values(b[1]).reduce((x, y) => x + y, 0) - Object.values(a[1]).reduce((x, y) => x + y, 0)),
   };

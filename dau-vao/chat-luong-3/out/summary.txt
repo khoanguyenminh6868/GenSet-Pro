@@ -1,0 +1,933 @@
+Tổng: 59222 bản ghi, 6521 bảng, 267 NCC
+
+## E2: Động cơ: tiêu đề có cột động cơ nhưng không dòng tiêu đề nào đặt nó đúng ô (tiêu đề nhiều tầng / khác độ rộng): chọn mã đầu tiên không dạng đầu phát
+đi qua: 23671 bản ghi (0 thông số theo vị trí), 1103 bảng, 109 NCC; nhiều nhất mecca-power 1643, uleengen 1079, walter-yangzhou 781, yanan-power 760, wintpower 758, landtop-fuzhou 738, waeta-fujian 707, legapower 634
+tắt: bản ghi đổi 6024, mất 23671, thêm 37; 1107 bảng, 109 NCC; đảo vai còn 1
+dạng: {"other":6024}
+hiệu chuẩn (số lệch 10% cũng "xác nhận"): công suất 29718/57835
+     5996  công suất (theo bản ghi mất) | chưa rõ
+     9430  công suất (theo bản ghi mất) | không đối chiếu
+      557  công suất (theo bản ghi mất) | mâu thuẫn
+    57835  công suất (theo bản ghi mất) | xác nhận
+      658  vai engine (ô kia) | không đối chiếu
+        2  vai engine (ô kia) | mâu thuẫn
+     5364  vai engine (ô kia) | xác nhận
+     2821  vai engine | không đối chiếu
+       10  vai engine | mâu thuẫn
+    20877  vai engine | xác nhận
+NCC: mecca-power 8185, landtop-fuzhou 4395, uleengen 4082, wintpower 3842, yanan-power 3732, waeta-fujian 3511, walter-yangzhou 3106, aosif 2931, jet-power 2794, victory-generator 2704
+   [vai engine | xác nhận] acepow-fuan n104 b7 dòng 0 engine WP2.3D25E200 | WP2.3D25E200 | MẤT bản ghi: engine WP2.3D25E200
+        H: | Model | 50Hz | | Engine | Engine | Connector | Emission | Governor
+        R: | APW-18 | 18 | 20 | BC184E | WP2.3D25E200 | 23 | 29 | 4#7.5-104 | T2 | Mechanically
+   [vai engine | xác nhận] agestar n104 b4 dòng 0 engine 4B3.9-G 1 | 4B3.9-G 1 | MẤT bản ghi: engine 4B3.9-G 1
+        H: | Model | Specification 50HZ 400-230V | General specifications | Displacement (L) | Alternator | Silent type
+        R: | GC-30(S) | 30 | 24 | 27 | 22 | 4B3.9-G 1 | 6.5 | Mechanical | 3.9 | ASG184G | 2150*1000*1250 | 1000
+   [vai engine | xác nhận] aosif n101 b0 dòng 0 engine 4B3.9-G11 | 4B3.9-G11 | MẤT bản ghi: engine 4B3.9-G11
+        H: | Prime Power | Standby Power | Engine Model | Fuel Consumption | Cylinder | Displacement
+        R: | AC24 | 20/17 | 24/19 | 4B3.9-G11 | 5.7 | 4L | 3.9 |
+   [công suất (theo bản ghi mất) | xác nhận] acepow-fuan n104 b7 dòng 0 engine WP2.3D25E200 | prime 18 kW | MẤT bản ghi: engine WP2.3D25E200
+        H: | Model | 50Hz | | Engine | Engine | Connector | Emission | Governor
+        R: | APW-18 | 18 | 20 | BC184E | WP2.3D25E200 | 23 | 29 | 4#7.5-104 | T2 | Mechanically
+   [công suất (theo bản ghi mất) | xác nhận] agestar n104 b4 dòng 0 engine 4B3.9-G 1 | standby 30 kVA | MẤT bản ghi: engine 4B3.9-G 1
+        H: | Model | Specification 50HZ 400-230V | General specifications | Displacement (L) | Alternator | Silent type
+        R: | GC-30(S) | 30 | 24 | 27 | 22 | 4B3.9-G 1 | 6.5 | Mechanical | 3.9 | ASG184G | 2150*1000*1250 | 1000
+   [công suất (theo bản ghi mất) | xác nhận] aosif n101 b0 dòng 0 engine 4B3.9-G11 | prime 20 kVA | MẤT bản ghi: engine 4B3.9-G11
+        H: | Prime Power | Standby Power | Engine Model | Fuel Consumption | Cylinder | Displacement
+        R: | AC24 | 20/17 | 24/19 | 4B3.9-G11 | 5.7 | 4L | 3.9 |
+   [công suất (theo bản ghi mất) | mâu thuẫn] acepow-fuan n141 b48 dòng 0 engine YN25GB | prime 11 kVA | MẤT bản ghi: engine YN25GB
+        H: | Model | 50Hz,1500rpm | | Engine |
+        R: | APYN-10 | 10 | 11 | 12.5 | 14 | BC164C | YN25GB | 18 | 19.8
+   [công suất (theo bản ghi mất) | mâu thuẫn] aosif n124 b22 dòng 17 engine WP13D385E200 | prime 500 kVA | MẤT bản ghi: engine WP13D385E200
+        H: | Prime Power | Standby Power | Engine Model | Fuel Consumption | Cylinder | Displacement
+        R: | AW550 | 500/400 | 550/440 | WP13D385E200 | 110. | 6L | 12.5 |
+   [công suất (theo bản ghi mất) | mâu thuẫn] app-power-anpu n5001 b2 dòng 4 engine YC4A180L-D20 | standby 132 kW | MẤT bản ghi: engine YC4A180L-D20
+        H: | Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator
+        R: | APP-120GF | 100 | 125 | 132 | 165 | YC4A180L-D20 |
+   [vai engine | mâu thuẫn] uleengen n115 b27 dòng 20 engine MX-H-630-4 | MX-H-630-4 | MẤT bản ghi: engine MX-H-630-4
+        H: | 发电机组型号 | 50HZ，400/230V | 柴油发动机 | 交流发电机 | 外形尺寸（mm） | 毛重（kg）
+        R: | CCFJ600W | 600 | 750 | 12平方米33cd748e200 | 680 | 12 | 150*185 | 39.2 | 1500 | 化学品船 | MX-H-630-4 | 3596*1521*1927 | 6410
+   [vai engine (ô kia) | xác nhận] acepow-fuan n104 b7 dòng 0 alternator BC184E | WP2.3D25E200 | other: WP2.3D25E200 → null
+        H: | Model | 50Hz | | Engine | Engine | Connector | Emission | Governor
+        R: | APW-18 | 18 | 20 | BC184E | WP2.3D25E200 | 23 | 29 | 4#7.5-104 | T2 | Mechanically
+   [vai engine (ô kia) | xác nhận] agestar n104 b4 dòng 0 alternator ASG184G | 4B3.9-G 1 | other: 4B3.9-G 1 → null
+        H: | Model | Specification 50HZ 400-230V | General specifications | Displacement (L) | Alternator | Silent type
+        R: | GC-30(S) | 30 | 24 | 27 | 22 | 4B3.9-G 1 | 6.5 | Mechanical | 3.9 | ASG184G | 2150*1000*1250 | 1000
+   [vai engine (ô kia) | xác nhận] baifa-power n101 b0 dòng 0 alternator S1L2-J | 1103D-33G2 | other: 1103D-33G2 → null
+        H: | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY
+        R: | BF-P35-T3 | 35 | 32 | PERKINS | 1103D-33G2 | | S1L2-J | STAGE 3A | UK
+   [vai engine (ô kia) | mâu thuẫn] uleengen n5001 b69 dòng 1 alternator P086TI | 274G | other: 274G → null
+        H: | Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator
+        R: | UD150GF | 150 | 188 | 170 | 213 | P086TI | 274G
+
+## E3: Động cơ: không có ô tiêu đề động cơ (chỉ hãng động cơ trong tiêu đề): chọn mã đầu tiên không dạng đầu phát
+đi qua: 4008 bản ghi (0 thông số theo vị trí), 169 bảng, 32 NCC; nhiều nhất agestar 718, previa-ningde 718, longkai-power 708, yanfa-yancheng 272, cgm-italia 264, yingtai-jiangsu 243, sanq-power 229, gtl-power 190
+tắt: bản ghi đổi 1204, mất 4008, thêm 1; 169 bảng, 32 NCC; đảo vai còn 3
+dạng: {"other":1204}
+hiệu chuẩn (số lệch 10% cũng "xác nhận"): công suất 6389/11891
+      714  công suất (theo bản ghi mất) | chưa rõ
+     1300  công suất (theo bản ghi mất) | không đối chiếu
+       99  công suất (theo bản ghi mất) | mâu thuẫn
+    11891  công suất (theo bản ghi mất) | xác nhận
+      152  vai engine (ô kia) | không đối chiếu
+     1052  vai engine (ô kia) | xác nhận
+      559  vai engine | không đối chiếu
+        2  vai engine | mâu thuẫn
+     3448  vai engine | xác nhận
+NCC: agestar 4299, previa-ningde 3658, longkai-power 3608, sanq-power 1373, yanfa-yancheng 1248, yingtai-jiangsu 1046, gtl-power 940, yingtai-group 700, cgm-italia 620, gb-power 271
+   [vai engine | xác nhận] agestar n101 b0 dòng 0 engine 4DW81-23D | 4DW81-23D | MẤT bản ghi: engine 4DW81-23D
+        H: | Model | Specification 50HZ 400-230V | General specifications | Alternator | Dimensions | Weight
+        R: | GF16.5(S) | 16.5 | 13.2 | 15 | 12 | 4DW81-23D | 5.5 | Mechanical | ASG164D | 1900*800*1050 | 630
+   [vai engine | xác nhận] baifa-power n102 b4 dòng 0 engine TAD851GE | TAD851GE | MẤT bản ghi: engine TAD851GE
+        H: | | POWERED BY VOLVO | 1800RPM TIER 3
+        R: | BF-V220T3-60 | 285 | 259 | VOLVO PENTA | TAD851GE | EMS2 / ECU | UCI 274H1
+   [vai engine | xác nhận] camda-generator n156 b51 dòng 0 engine 12V2000G25 | 12V2000G25 | MẤT bản ghi: engine 12V2000G25
+        H: | Genset model | MTU model | Engine frequency | Genset prime/standby power（KW） | Leroy Somer alternator
+        R: | KDGM560S | 12V2000G25 | S2000/50HZ | 512/560 | LSA49.3S4/528KW
+   [công suất (theo bản ghi mất) | xác nhận] agestar n101 b0 dòng 0 engine 4DW81-23D | standby 16.5 kVA | MẤT bản ghi: engine 4DW81-23D
+        H: | Model | Specification 50HZ 400-230V | General specifications | Alternator | Dimensions | Weight
+        R: | GF16.5(S) | 16.5 | 13.2 | 15 | 12 | 4DW81-23D | 5.5 | Mechanical | ASG164D | 1900*800*1050 | 630
+   [công suất (theo bản ghi mất) | xác nhận] baifa-power n102 b4 dòng 1 engine TAD852GE | standby 316 kVA | MẤT bản ghi: engine TAD852GE
+        H: | | POWERED BY VOLVO | 1800RPM TIER 3
+        R: | BF-V320T3-60 | 316 | 287 | TAD852GE | EMS2 / ECU | S4L1D-D41
+   [công suất (theo bản ghi mất) | xác nhận] cgm-italia n1001 b13 dòng 0 engine 403A-11G1 | standby 11 kVA | MẤT bản ghi: engine 403A-11G1
+        H: | M/E Engine governor | EU Emission standard | consumo ¾ caricoconsumption 3/4 loadconsommation 3/4 charge
+        R: | 10P | 10 | 8 | 11 | 8,8 | 403A-11G1
+   [công suất (theo bản ghi mất) | mâu thuẫn] agestar n103 b2 dòng 22 engine WP2.1D18E2 | prime 19 kVA | MẤT bản ghi: engine WP2.1D18E2
+        H: | Model | Specification 50HZ 400-230V | General specifications | Alternator | Dimensions | Weight (kg)
+        R: | GW21(S) | 21 | 17 | 19 | 15 | WP2.1D18E2 | 7.1 | Electrical | ASG164C | 1900*720*1100 | 700
+   [công suất (theo bản ghi mất) | mâu thuẫn] gtl-power n104 b3 dòng 11 engine QSB3.9-G3 | prime 225 kVA | MẤT bản ghi: engine QSB3.9-G3
+        H: | Model | 1500 rmp/400v 3P 4W/50HZ/0.8PF | Engine Type | Dimensions(LxWxH)&Weight
+        R: | DCW-225T5 | 225 | 180 | 247.5 | 198 | QSB3.9-G3 | 2670*1100*1700 | 2200 | 3600*1380*2000 | 2700
+   [công suất (theo bản ghi mất) | mâu thuẫn] huatai-yangzhou n111 b10 dòng 12 engine WD305TAD68 | rated 165 kVA | MẤT bản ghi: engine WD305TAD68
+        H: | 组型号Type of set | 输出功率 Power of output (KW/KVA) | 额定电流Rated current (A) | 柴油机参数 Parameters of set | 机组尺寸及重量 Size and weight of machine set
+        R: | 700GF | 140/165 | 1267 | WD305TAD68 | 750 | 12缸V型 | 196 | 55 | 3800×1800×2100 | 4550
+   [vai engine | mâu thuẫn] xingguang-jiangsu n108 b7 dòng 3 engine STC-12 | STC-12 | MẤT bản ghi: engine STC-12
+        H: | 机组 型号 | 输出功率Rate utput(KW/KVA) | 柴油机型号Motor Type | 发电机型号Gen Type | 外形尺寸Overall SizeL×W×H(mm) | 机组重量Weight(kg)
+        R: | XG- 12GF | 12/15 | ZS1110或295D | STC-12 | 1300×750×1110 | 590
+   [vai engine (ô kia) | xác nhận] agestar n101 b0 dòng 0 alternator ASG164D | 4DW81-23D | other: 4DW81-23D → null
+        H: | Model | Specification 50HZ 400-230V | General specifications | Alternator | Dimensions | Weight
+        R: | GF16.5(S) | 16.5 | 13.2 | 15 | 12 | 4DW81-23D | 5.5 | Mechanical | ASG164D | 1900*800*1050 | 630
+   [vai engine (ô kia) | xác nhận] baifa-power n102 b4 dòng 0 alternator UCI 274H1 | TAD851GE | other: TAD851GE → null
+        H: | | POWERED BY VOLVO | 1800RPM TIER 3
+        R: | BF-V220T3-60 | 285 | 259 | VOLVO PENTA | TAD851GE | EMS2 / ECU | UCI 274H1
+   [vai engine (ô kia) | xác nhận] camda-generator n156 b51 dòng 0 alternator LSA49.3S4/528KW | 12V2000G25 | other: 12V2000G25 → null
+        H: | Genset model | MTU model | Engine frequency | Genset prime/standby power（KW） | Leroy Somer alternator
+        R: | KDGM560S | 12V2000G25 | S2000/50HZ | 512/560 | LSA49.3S4/528KW
+
+## E4: Động cơ: bảng của hãng động cơ (engine_maker), mã đầu tiên của dòng
+đi qua: 733 bản ghi (0 thông số theo vị trí), 121 bảng, 20 NCC; nhiều nhất perkins 188, wudong-wuxi 122, jichai 83, zichai 82, sdec 36, man-engines 29, baudouin 24, quanchai 22
+tắt: bản ghi đổi 0, mất 733, thêm 0; 121 bảng, 20 NCC; đảo vai còn 3
+dạng: {}
+hiệu chuẩn (số lệch 10% cũng "xác nhận"): 
+      423  vai engine | không đối chiếu
+        1  vai engine | mâu thuẫn
+      309  vai engine | xác nhận
+NCC: perkins 188, wudong-wuxi 122, jichai 83, zichai 82, sdec 36, man-engines 29, baudouin 24, quanchai 22, googol 21, hd-hyundai-heavy 20
+   [vai engine | xác nhận] baudouin n103 b1 dòng 0 engine 20M55G 4500/5 | 20M55G 4500/5 | MẤT bản ghi: engine 20M55G 4500/5
+        H: | | | Gross Engine Output
+        R: | 20M55G 4500/5 | 4500 | 3600 | 4125 | 3300
+   [vai engine | xác nhận] dcec n2001 b0 dòng 0 engine QSB6.7-G3 | QSB6.7-G3 | MẤT bản ghi: engine QSB6.7-G3
+        H: | 机型 | 额定功率/转速(kW/rpm) | 备用功率/转速(kW/rpm)
+        R: | QSB6.7-G3 | 151/1500 | 166/1500
+   [vai engine | xác nhận] hnd-henan n101 b0 dòng 1 engine TBD234V6 | TBD234V6 | MẤT bản ghi: engine TBD234V6
+        H: | 用途 | 连续工况 | 间歇工况 | 燃油消耗率/ 平均有效压力*
+        R: | TBD234V6 | 功率kW | 186 | 222 | 242 | 302 | 332 | 302 | 332 | 347 | 198/1.38 | 201/1.37 | 206/1.28
+   [vai engine | mâu thuẫn] huachai-deutz n116 b12 dòng 0 engine 30GF | 30GF | MẤT bản ghi: engine 30GF
+        H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+        R: | Model | 30GF | Model | F4L912D | Model | PI144J
+
+## A2: Đầu phát: tiêu đề có cột đầu phát nhưng không đặt đúng ô: chọn theo dạng mã (ALT_CODE) hoặc mã duy nhất sau động cơ
+đi qua: 6377 bản ghi (0 thông số theo vị trí), 345 bảng, 42 NCC; nhiều nhất uleengen 895, landtop-fuzhou 757, agestar 755, jet-power 489, kachai-hangzhou 408, acepow-fuan 374, minsun-motor 358, sanq-power 332
+tắt: bản ghi đổi 6038, mất 6377, thêm 39; 346 bảng, 42 NCC; đảo vai còn 4
+dạng: {"other":6038}
+hiệu chuẩn (số lệch 10% cũng "xác nhận"): công suất 2806/5347
+     1839  công suất (theo bản ghi mất) | chưa rõ
+    14108  công suất (theo bản ghi mất) | không đối chiếu
+      172  công suất (theo bản ghi mất) | mâu thuẫn
+     5347  công suất (theo bản ghi mất) | xác nhận
+       25  vai alternator (ô kia) | chưa rõ
+     3584  vai alternator (ô kia) | không đối chiếu
+        3  vai alternator (ô kia) | mâu thuẫn
+     2426  vai alternator (ô kia) | xác nhận
+       64  vai alternator | chưa rõ
+     3729  vai alternator | không đối chiếu
+        3  vai alternator | mâu thuẫn
+     2620  vai alternator | xác nhận
+NCC: agestar 4530, landtop-fuzhou 4490, uleengen 3528, jet-power 2910, kachai-hangzhou 2448, acepow-fuan 1913, sanq-power 1900, minsun-motor 1430, sr-genset 1218, wintpower 1202
+   [vai alternator (ô kia) | xác nhận] acepow-fuan n104 b7 dòng 23 engine WP10D200E200 | UC274H | other: UC274H → null
+        H: | Model | 50Hz | | Engine | Engine | Connector | Emission | Governor
+        R: | APW-150 | 150 | 165 | UC274H | WP10D200E200 | 182 | 228 | 1#11.5/14-136 | T2 | Mechanically
+   [vai alternator (ô kia) | xác nhận] baifa-power n101 b0 dòng 1 engine 1104D-44TG2 | S1L2-Y | other: S1L2-Y → null
+        H: | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY
+        R: | BF-P66-T3 | 66 | 60 | 1104D-44TG2 | | S1L2-Y | STAGE 3A | CHINA
+   [vai alternator (ô kia) | xác nhận] fengmao-weifang n102 b1 dòng 0 engine 4B3.9-G1 | PI144D | other: PI144D → null
+        H: | Model | Diesel Generator | Diesel Engine | Alternator | Size (mm) | Weight(KG)
+        R: | 16GF | 16/20 | 18/22 | 4B3.9-G1 | 24 | PI144D | 16/20 | 1800 ×760×1430 | 780
+   [vai alternator (ô kia) | mâu thuẫn] chenxing-weifang n108 b5 dòng 0 engine 4BT3.9-G2 | 30GF | other: 30GF → null
+        H: | 发电机组参数 | 柴油机参数 | 发电机参数
+        R: | 机组型号 | 30GF | 型号 | 4BT3.9-G2 | 型号 | 30GF
+   [vai alternator (ô kia) | mâu thuẫn] vantek-jiangsu n101 b0 dòng 11 engine 3S0 | N855-DM | other: N855-DM → null
+        H: | 发电机组规格 | 柴油机规格 | 机组外形
+        R: | CCFJ280J-WTP | 280 | 3S0 | N855-DM | 317 | 6 | 2998-1000-1790 | 2950
+   [vai alternator | xác nhận] acepow-fuan n104 b7 dòng 23 alternator UC274H | UC274H | MẤT bản ghi: alternator UC274H
+        H: | Model | 50Hz | | Engine | Engine | Connector | Emission | Governor
+        R: | APW-150 | 150 | 165 | UC274H | WP10D200E200 | 182 | 228 | 1#11.5/14-136 | T2 | Mechanically
+   [vai alternator | xác nhận] baifa-power n101 b0 dòng 1 alternator S1L2-Y | S1L2-Y | MẤT bản ghi: alternator S1L2-Y
+        H: | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY
+        R: | BF-P66-T3 | 66 | 60 | 1104D-44TG2 | | S1L2-Y | STAGE 3A | CHINA
+   [vai alternator | xác nhận] fdk-energy n102 b1 dòng 0 alternator S0L2-G1 | S0L2-G1 | MẤT bản ghi: alternator S0L2-G1
+        H: | | Genset Model | Standby Power | Prime Power | Engine Model | Engine Original | Alternator Model | Details | Download PDF
+        R: | CD23/H1 CONTACT | 23KVA/ 18KW | 20KVA/ 16KW | 4B3.9-G11 | Cummins (China Dongfeng) | Stamford S0L2-G1 | Click Here |
+   [công suất (theo bản ghi mất) | xác nhận] acepow-fuan n114 b19 dòng 15 alternator UC224F | rated 75 kVA | MẤT bản ghi: alternator UC224F
+        H: | Genset Model | Frequency | Kw | Kva | Alternator | Engine model | Rated Power
+        R: | APYD-60 | 50HZ | 60 | 66 | 75 | 83 | UC224F | Y4110ZLD | 80KW/1500rpm
+   [công suất (theo bản ghi mất) | xác nhận] agg-fuzhou n102 b1 dòng 42 alternator P158LE | standby 450 kVA | MẤT bản ghi: alternator P158LE
+        H: | | 发电机型号 | ESP (kVA/kW) | PRP (kVA/kW) | 发动机型号 | 品牌
+        R: | H450D5 | 450/360 | 400/320 | P158LE | Hyundai
+   [công suất (theo bản ghi mất) | xác nhận] baifa-power n101 b0 dòng 14 alternator UCI 274H1 | standby 220 kVA | MẤT bản ghi: alternator UCI 274H1
+        H: | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY
+        R: | BF-V220-T3 | 220 | 200 | VOLVO | TAD851GE | EMS2 / ECU | UCI 274H1 | STAGE IIIA/ TIER 3 | INDIA
+   [vai alternator | mâu thuẫn] chenxing-weifang n108 b5 dòng 0 alternator 30GF | 30GF | MẤT bản ghi: alternator 30GF
+        H: | 发电机组参数 | 柴油机参数 | 发电机参数
+        R: | 机组型号 | 30GF | 型号 | 4BT3.9-G2 | 型号 | 30GF
+   [vai alternator | mâu thuẫn] vantek-jiangsu n101 b0 dòng 11 alternator N855-DM | N855-DM | MẤT bản ghi: alternator N855-DM
+        H: | 发电机组规格 | 柴油机规格 | 机组外形
+        R: | CCFJ280J-WTP | 280 | 3S0 | N855-DM | 317 | 6 | 2998-1000-1790 | 2950
+   [công suất (theo bản ghi mất) | mâu thuẫn] jet-power n104 b3 dòng 1 alternator TAL-A42-H | standby 53 kVA | MẤT bản ghi: alternator TAL-A42-H
+        H: | Model | 400V / 50Hz / 1500rpm | HYUNDAI Diesel Engine | Emission | Alternator
+        R: | HD-53V | 53 | 42 | 50 | 40 | DM02VP | L4 | 2.4 | 90 x 94 | 8.4 | EU Stage V | TAL-A42-H
+   [công suất (theo bản ghi mất) | mâu thuẫn] keliang-fuan n116 b5 dòng 49 alternator WT-274C | prime 125 kVA | MẤT bản ghi: alternator WT-274C
+        H: | Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Alternator | Size & Weight
+        R: | WT-C140 | 100 | 125 | 110 | 138 | 6BTA5.9-G2 | 120 | 132 | 211 | 31 | 6×102×120 | 5.9 | 17.3:1 | TC | WT-274C | 2230×830×1490 | 1170 | 2900*1100*1600 | 2270
+   [công suất (theo bản ghi mất) | mâu thuẫn] long-gen n109 b14 dòng 7 alternator LSA44.3 S2 | prime 65 kVA | MẤT bản ghi: alternator LSA44.3 S2
+        H: | Model | Prime Power | Standby Power | Engine | Alternator | Dimension& Weight
+        R: | LGPL-72 | 52 | 65 | 57.2 | 71.5 | 1104A-44TG1 | LSA44.3 S2 | WHI224E | 1900*800*1250 | 980 | 2500*950*1510 | 1300 | download
+
+## A3: Đầu phát: không có ô tiêu đề đầu phát: mã dạng đầu phát sau động cơ
+đi qua: 811 bản ghi (0 thông số theo vị trí), 31 bảng, 10 NCC; nhiều nhất welland-power 297, suneco-linyi 197, tesla-fujian 103, sanq-power 89, bobig-power 43, hichai-power 35, wintpower 19, sr-genset 16
+tắt: bản ghi đổi 781, mất 811, thêm 21; 32 bảng, 10 NCC; đảo vai còn 3
+dạng: {"other":781}
+hiệu chuẩn (số lệch 10% cũng "xác nhận"): công suất 242/404
+      119  công suất (theo bản ghi mất) | chưa rõ
+     1244  công suất (theo bản ghi mất) | không đối chiếu
+      188  công suất (theo bản ghi mất) | mâu thuẫn
+      404  công suất (theo bản ghi mất) | xác nhận
+       13  vai alternator (ô kia) | chưa rõ
+      365  vai alternator (ô kia) | không đối chiếu
+      403  vai alternator (ô kia) | xác nhận
+       17  vai alternator | chưa rõ
+      367  vai alternator | không đối chiếu
+      448  vai alternator | xác nhận
+NCC: suneco-linyi 1158, welland-power 891, sanq-power 525, tesla-fujian 412, bobig-power 258, wintpower 110, sr-genset 96, hichai-power 70, xingguang-jiangsu 36, zhengchi-power 12
+   [vai alternator (ô kia) | xác nhận] hichai-power n108 b12 dòng 17 engine TAD532GE | UCI 274D1 | other: UCI 274D1 → null
+        H: | Genset Model | Standby Power | Prime power | Engine model | Dimension | Weight (KG) | Detail Data
+        R: | HC-142GF2 | 145 | 131 | TAD532GE | UCI 274D1 | 2150*900*1550 | 2810*1140*1830 | Download
+   [vai alternator (ô kia) | xác nhận] sanq-power n101 b0 dòng 0 engine 403A-11G1 | PI044E | other: PI044E → null
+        H: | kW/kVa | kW/kVa | 珀金斯 | 斯坦福 | 开放式 | 静音式 | 开放式 | 静音式
+        R: | SQP10 | 8/10 | 7/9 | 403A-11G1 | PI044E | Wuxi | 450 | 896 | 1260x630x730 | 2200x1033x1304
+   [vai alternator (ô kia) | xác nhận] sr-genset n2004 b6 dòng 0 engine 403A-15G2 | TAL-A40-D | other: TAL-A40-D → null
+        H: | Frequency | Voltage | Standy Power | Backup Power | Engine | Model | Motor | Model
+        R: | 50 | 400 | 12 | 15 | 13.2 | 16.5 | Perkins | 403A-15G2 | Nidec | TAL-A40-D
+   [vai alternator | xác nhận] hichai-power n108 b12 dòng 17 alternator UCI 274D1 | UCI 274D1 | MẤT bản ghi: alternator UCI 274D1
+        H: | Genset Model | Standby Power | Prime power | Engine model | Dimension | Weight (KG) | Detail Data
+        R: | HC-142GF2 | 145 | 131 | TAD532GE | UCI 274D1 | 2150*900*1550 | 2810*1140*1830 | Download
+   [vai alternator | xác nhận] sanq-power n101 b0 dòng 0 alternator PI044E | PI044E | MẤT bản ghi: alternator PI044E
+        H: | kW/kVa | kW/kVa | 珀金斯 | 斯坦福 | 开放式 | 静音式 | 开放式 | 静音式
+        R: | SQP10 | 8/10 | 7/9 | 403A-11G1 | PI044E | Wuxi | 450 | 896 | 1260x630x730 | 2200x1033x1304
+   [vai alternator | xác nhận] sr-genset n2004 b6 dòng 0 alternator TAL-A40-D | TAL-A40-D | MẤT bản ghi: alternator TAL-A40-D
+        H: | Frequency | Voltage | Standy Power | Backup Power | Engine | Model | Motor | Model
+        R: | 50 | 400 | 12 | 15 | 13.2 | 16.5 | Perkins | 403A-15G2 | Nidec | TAL-A40-D
+   [công suất (theo bản ghi mất) | xác nhận] sanq-power n101 b0 dòng 0 alternator PI044E | standby 10 kVA | MẤT bản ghi: alternator PI044E
+        H: | kW/kVa | kW/kVa | 珀金斯 | 斯坦福 | 开放式 | 静音式 | 开放式 | 静音式
+        R: | SQP10 | 8/10 | 7/9 | 403A-11G1 | PI044E | Wuxi | 450 | 896 | 1260x630x730 | 2200x1033x1304
+   [công suất (theo bản ghi mất) | xác nhận] sr-genset n2004 b6 dòng 0 alternator TAL-A40-D | standby 16.5 kVA | MẤT bản ghi: alternator TAL-A40-D
+        H: | Frequency | Voltage | Standy Power | Backup Power | Engine | Model | Motor | Model
+        R: | 50 | 400 | 12 | 15 | 13.2 | 16.5 | Perkins | 403A-15G2 | Nidec | TAL-A40-D
+   [công suất (theo bản ghi mất) | xác nhận] tesla-fujian n101 b1 dòng 0 alternator 164B | rated 10 kW | MẤT bản ghi: alternator 164B
+        H: | Model | Power(KW) | Capacity(KVA) | Rated current(A) | Engine Model | Copy Stamford Type
+        R: | BS- Q 13 | 10 | 13 | 18 | QC385D | 164B
+   [công suất (theo bản ghi mất) | mâu thuẫn] sanq-power n101 b0 dòng 4 alternator PI044F | prime 12 kW | MẤT bản ghi: alternator PI044F
+        H: | kW/kVa | kW/kVa | 珀金斯 | 斯坦福 | 开放式 | 静音式 | 开放式 | 静音式
+        R: | SQP16 | 13/16 | 12/15 | 403A-15G2 | PI044F | Wuxi | 496 | 956 | 1500×650×1225 | 2200×1033×1304
+   [công suất (theo bản ghi mất) | mâu thuẫn] welland-power n101 b0 dòng 0 alternator S1L2-J1 | standby 1 kVA | MẤT bản ghi: alternator S1L2-J1
+        H: | | GenName | ESP kVA | Phases | Freq | Engine Brand | Engine Model | EU Emissions Level | Radtype | Alternator Brand | Alt. Model |
+        R: | 51WB0020A00 | 19 | 1 | 50 | Baudouin | 4M06G2D0/S | None | TROP | Stamford | S1L2-J1 | View
+
+## G2: Model tổ máy: ô 0 / 1 là mã, không có tiêu đề model trên nó
+đi qua: 34017 bản ghi (0 thông số theo vị trí), 1152 bảng, 110 NCC; nhiều nhất uleengen 1710, mecca-power 1643, agestar 1519, landtop-fuzhou 1360, wintpower 1008, agg-fuzhou 1002, jet-power 974, sanq-power 834
+tắt: bản ghi đổi 34017, mất 0, thêm 0; 1152 bảng, 110 NCC; đảo vai còn 3
+dạng: {"genset":34017}
+hiệu chuẩn (số lệch 10% cũng "xác nhận"): 
+    27363  model tổ máy | không đối chiếu
+NCC: mecca-power 1643, agg-fuzhou 1002, uleengen 978, walter-yangzhou 781, agestar 764, yanan-power 760, wintpower 758, landtop-fuzhou 721, previa-ningde 718, longkai-power 708
+
+## PW: Công suất: tiêu đề không khớp dòng → ghép hai ô kề nhau đúng hệ số 0,8 (powersIn strict)
+đi qua: 3103 bản ghi (0 thông số theo vị trí), 173 bảng, 58 NCC; nhiều nhất yanan-power 749, sanq-power 462, suneco-linyi 397, uleengen 260, fdk-energy 228, cgm-italia 141, yingtai-group 141, comappower 76
+tắt: bản ghi đổi 3087, mất 0, thêm 0; 172 bảng, 57 NCC; đảo vai còn 3
+dạng: {"power":3087}
+hiệu chuẩn (số lệch 10% cũng "xác nhận"): công suất 4237/8346
+      816  công suất | chưa rõ
+     1822  công suất | không đối chiếu
+       62  công suất | mâu thuẫn
+     8346  công suất | xác nhận
+NCC: yanan-power 2972, sanq-power 1848, suneco-linyi 1540, fdk-energy 912, yingtai-group 558, cgm-italia 526, uleengen 520, sr-genset 284, comappower 282, yongcai-elecmama 160
+   [công suất | xác nhận] agg-fuzhou n116 b15 dòng 0 engine K19N-G2 | prime 375 kVA | power: P 375/300 → ∅
+        H: | | 发电机型号 | COP (kVA/kW) | 发动机型号 | 品牌
+        R: | CU375G6-NG | 375/300 | K19N-G2 | Cummins
+   [công suất | xác nhận] aosif n123 b21 dòng 2 engine WP2.3D58E201 | prime 50 kVA | power: P 50/40 S 63/50 → ∅
+        H: | Prime Power | Standby Power | Engine Model | Fuel Consumption | Cylinder | Displacement
+        R: | AW63 | 50/40 | 63/50 | WP2.3D58E201 | 13.1 | 4L | 2.3 |
+   [công suất | xác nhận] bdadl-shanghai n133 b36 dòng 0 engine DB58 | rated 62.5 kVA | power: R 62.5/50 → ∅
+        H: | 机组型号 | 输出功率(kw) | 柴油机品牌 | 柴油机型号 | 缸数 | 缸径*行 程（mm） | 排气量 (L) | 燃油消耗率 g/kw.h | 机组尺寸mm L×W×H | 机组重量 kg
+        R: | BDA-50GF | 50 | 62.5 | 韩国斗山 | DB58 | 6 | 102*118 | 5.785 | 215 | 2000×730×1150 | 900
+   [công suất | mâu thuẫn] comappower n103 b6 dòng 29 engine 2806C-E18TAG1A | prime 275 kVA | power: P 275/220 S 600/480 → ∅
+        H: | | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data
+        R: | COM660PE | 275kVA | 220kW | 600kVA | 480kW | 2806C-E18TAG1A | 6 | COM660PE
+   [công suất | mâu thuẫn] kingway-power n126 b18 dòng 0 engine F2M2011 | prime 16 kVA | power: P 16/12.8 S 18/14 → ∅
+        H: | KVA | KWKVA | KW | | | |
+        R: | KGZS16 | 18 | 14 | 16 | 12.8 | 3.3 | 1300x600x1400 | 1900x850x1136 | F2M2011
+   [công suất | mâu thuẫn] long-gen n109 b15 dòng 20 engine 1106D-E70TAG3 | rated 191 kVA | power: R 191/153 → ∅
+        H: | Model | Prime Power | Standby Power | Engine | Alternator | Dimension& Weight
+        R: | LGPL-191 | N/A | N/A | 153 | 191 | 1106D-E70TAG3 | LSA44.3 L12 | WHI274F | 2500*900*1600 | 1500 | 3100*1200*1610 | 1950 | download
+
+## PWC: Công suất: tiêu đề cột không ghi mức, mức lấy từ phần còn lại của tiêu đề / tên bảng
+đi qua: 113 bản ghi (0 thông số theo vị trí), 4 bảng, 4 NCC; nhiều nhất tesla-fujian 66, honto-power 44, wintpower 2, huadong-yangzhou 1
+tắt: bản ghi đổi 113, mất 0, thêm 0; 4 bảng, 4 NCC; đảo vai còn 3
+dạng: {"power":113}
+hiệu chuẩn (số lệch 10% cũng "xác nhận"): công suất 164/260
+       33  công suất (giá trị MỚI) | chưa rõ
+       48  công suất (giá trị MỚI) | không đối chiếu
+        2  công suất (giá trị MỚI) | mâu thuẫn
+      143  công suất (giá trị MỚI) | xác nhận
+       75  công suất | chưa rõ
+       34  công suất | không đối chiếu
+      117  công suất | xác nhận
+NCC: tesla-fujian 264, honto-power 176, wintpower 8, huadong-yangzhou 4
+   [công suất | xác nhận] honto-power n101 b0 dòng 0 engine 403A-11G1 | prime 7 kW | power: P 8.75/7 → R 8.75/7
+        H: | | Model | Output Power | Current (A) | Engine Model | Cyl. | Bore×Stroke (mm) | Displ. (L) | Fuel Cons. (g/kW·h) | Dimensions L×W×H (mm) | Weight (kg)
+        R: | BC-7GF | 7 | 8.75 | 12.6 | 403A-11G1 | 3 | 77×87 | 0.99 | 248 | 1200×700×1100 | 500
+   [công suất | xác nhận] huadong-yangzhou n105 b4 dòng 5 engine 12V4000G23R | standby 1375 kVA | power: S 1375/1100 → R 1375/1100
+        H: | 机组型号 | 输出功率（KVA/KW） | 额定电流 (A) | 100% 负载 燃油耗 （L/h） | 发动机 | 外形尺寸（mm） L ×W×H | 净重量 （Kg） |
+        R: | HDM1375 | 1375/1100 | - | 1991 | 245 | 12V4000G23R | 1205 | 5780×2550×2680 | 11660 | 下载参数
+   [công suất | xác nhận] tesla-fujian n143 b4 dòng 1 engine YC4D60-D21 | standby 45 kVA | power: S 45/36 → R 45/36
+        H: | Model | Power(KW) | Capacity(KVA) | Rated current(A) | Engine Model | Stamford Type
+        R: | BS-YC45 | 36 | 45 | 65.0 | YC4D60-D21 | BS224C
+   [công suất (giá trị MỚI) | xác nhận] honto-power n101 b0 dòng 0 engine 403A-11G1 | rated 8.75 kVA | power: P 8.75/7 → R 8.75/7
+        H: | | Model | Output Power | Current (A) | Engine Model | Cyl. | Bore×Stroke (mm) | Displ. (L) | Fuel Cons. (g/kW·h) | Dimensions L×W×H (mm) | Weight (kg)
+        R: | BC-7GF | 7 | 8.75 | 12.6 | 403A-11G1 | 3 | 77×87 | 0.99 | 248 | 1200×700×1100 | 500
+   [công suất (giá trị MỚI) | xác nhận] huadong-yangzhou n105 b4 dòng 5 engine 12V4000G23R | rated 1375 kVA | power: S 1375/1100 → R 1375/1100
+        H: | 机组型号 | 输出功率（KVA/KW） | 额定电流 (A) | 100% 负载 燃油耗 （L/h） | 发动机 | 外形尺寸（mm） L ×W×H | 净重量 （Kg） |
+        R: | HDM1375 | 1375/1100 | - | 1991 | 245 | 12V4000G23R | 1205 | 5780×2550×2680 | 11660 | 下载参数
+   [công suất (giá trị MỚI) | xác nhận] tesla-fujian n143 b4 dòng 0 engine YC4D60-D21 | rated 38 kVA | power: S 38/30 → R 38/30
+        H: | Model | Power(KW) | Capacity(KVA) | Rated current(A) | Engine Model | Stamford Type
+        R: | BS-YC38 | 30 | 38 | 54.1 | YC4D60-D21 | BS184H
+   [công suất (giá trị MỚI) | mâu thuẫn] wintpower n144 b35 dòng 3 alternator PI 044F | rated 13 kVA | power: S 13/10 → R 13/10
+        H: | GENSET MODEL | RATED POWER | STANDBY POWER | ENGINE | STAMFORD ALTERNATOR | LEROY SOMER ALTERNATOR | WINT ALTERNATOR | DIMENSION
+        R: | WT-YM14 | 10/13.0 | 13/14.0 | 3TNV88-GGE | PI 044F | TAL-A40-C | WT164C | 1700x850x1050 | 1300x750x1000
+
+## S2: Thông số: dòng dài hơn tiêu đề 1 ô, ô đầu là mã → lệch 1 ô
+đi qua: 944 bản ghi (3606 thông số theo vị trí), 38 bảng, 3 NCC; nhiều nhất aosif 614, jianghao-genset 182, huipu-power 148
+tắt: bản ghi đổi 944, mất 0, thêm 0; 38 bảng, 3 NCC; đảo vai còn 3
+dạng: {"fuel bỏ":762,"cyl bỏ":944,"disp bỏ":762,"bore bỏ":330,"coolant bỏ":148,"dims bỏ":330,"weight bỏ":330}
+hiệu chuẩn (số lệch 10% cũng "xác nhận"): thông số động cơ 29/1227
+      148  thông số tổ máy coolant (tự kiểm) | không kiểm được
+      330  thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)
+      762  thông số tổ máy fuel (tự kiểm) | không kiểm được
+      184  thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)
+      146  thông số tổ máy weight (tự kiểm) | không kiểm được
+        5  thông số động cơ bore | chưa rõ
+      106  thông số động cơ bore | không đối chiếu
+      219  thông số động cơ bore | xác nhận
+        1  thông số động cơ cyl | chưa rõ
+      312  thông số động cơ cyl | không đối chiếu
+        3  thông số động cơ cyl | mâu thuẫn
+      628  thông số động cơ cyl | xác nhận
+       21  thông số động cơ disp | chưa rõ
+      349  thông số động cơ disp | không đối chiếu
+       12  thông số động cơ disp | mâu thuẫn
+      380  thông số động cơ disp | xác nhận
+NCC: aosif 1842, huipu-power 1036, jianghao-genset 728
+   [thông số động cơ cyl | xác nhận] aosif n101 b0 dòng 0 engine 4B3.9-G11 | cyl=4L | cyl bỏ: 4L → ∅
+        H: | Prime Power | Standby Power | Engine Model | Fuel Consumption | Cylinder | Displacement
+        R: | AC24 | 20/17 | 24/19 | 4B3.9-G11 | 5.7 | 4L | 3.9 |
+   [thông số động cơ cyl | xác nhận] huipu-power n102 b1 dòng 0 engine PTA780G3 | cyl=6 | cyl bỏ: 6 → ∅
+        H: | Type | Set power | Diesel engine model | Cylinder number(mm) | Bore*stroke | Swept volume(L) | Fuel consumption rate(L/h) | Set coolant | Engine oil ststem ca
+        R: | HP-K310 | 280 | 310 | PTA780G3 | 6 | 128*166 | 12.8 | 78.49 | 18 | 40 | 3000*1110*1555 | 2563
+   [thông số động cơ cyl | xác nhận] jianghao-genset n101 b0 dòng 0 engine 403A-11G1 | cyl=3 | cyl bỏ: 3 → ∅
+        H: | Type | Output Power | Current (A) | Engine model | Cylinder | Bore*Stroke (mm) | FuelCon. (L) | Dis. g/kw.h | Dimension(mm ) L*W*H | Weight (kg) | Detail
+        R: | JHP-7GF | 7 | 8.75 | 12.6 | 403A-11G1 | 3 | 77*87 | 0.99 | 248 | 1200*700*1100 | 500 | Click
+   [thông số động cơ disp | xác nhận] aosif n101 b0 dòng 0 engine 4B3.9-G11 | disp=3.9 | disp bỏ: 3.9 → ∅
+        H: | Prime Power | Standby Power | Engine Model | Fuel Consumption | Cylinder | Displacement
+        R: | AC24 | 20/17 | 24/19 | 4B3.9-G11 | 5.7 | 4L | 3.9 |
+   [thông số động cơ disp | xác nhận] huipu-power n103 b2 dòng 0 engine NT855-GA | disp=14 | disp bỏ: 14 → ∅
+        H: | Type | Set power | Diesel engine model | Cylinder number(mm) | Bore*stroke | Swept volume(L) | Fuel consumption rate(L/h) | Set coolant | Engine oil ststem ca
+        R: | HP-C220 | 200 | 220 | NT855-GA | 6 | 140*152 | 14 | 55 | 66 | 37 | 3293*1100*1994 | 3150
+   [thông số động cơ disp | mâu thuẫn] aosif n102 b1 dòng 0 engine NT855-GA | disp=10.8 | disp bỏ: 10.8 → ∅
+        H: | Prime Power | Standby Power | Engine Model | Fuel Consumption | Cylinder | Displacement
+        R: | AC275-IV | 250/200 | 275/220 | NT855-GA | 53 | 6L | 10.8 |
+   [thông số động cơ disp | mâu thuẫn] huipu-power n105 b4 dòng 0 engine 403A-11G1 | disp=2.2 | disp bỏ: 2.2 → ∅
+        H: | Type | Set power | Diesel engine model | Cylinder number(mm) | Bore*stroke | Swept volume(L) | Fuel consumption rate(L/h) | Set coolant | Engine oil ststem ca
+        R: | HP-P8 | 7 | 8 | 403A-11G1 | 4 | 84*100 | 2.2 | 5.3 | 40 | 9.8 | 1335*600*1095 | 420
+   [thông số động cơ cyl | mâu thuẫn] aosif n102 b1 dòng 49 engine KTA19-G9A | cyl=12V | cyl bỏ: 12V → ∅
+        H: | Prime Power | Standby Power | Engine Model | Fuel Consumption | Cylinder | Displacement
+        R: | AC750-III | 681/545 | 750/600 | KTA19-G9A | 147 | 12V | 18.9 |
+   [thông số động cơ cyl | mâu thuẫn] huipu-power n104 b3 dòng 7 engine WP4D108E200 | cyl=6 | cyl bỏ: 6 → ∅
+        H: | Type | Set power | Diesel engine model | Cylinder number(mm) | Bore*stroke | Swept volume(L) | Fuel consumption rate(L/h) | Set coolant | Engine oil ststem ca
+        R: | HP-W90 | 80 | 90 | WP4D108E200 | 6 | 105*130 | 4.5 | 18.75 | 120 | 12 | 2100*920*1500 | 1195
+   [thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)] huipu-power n101 b0 dòng 0 engine HP4100D | dims=1600*590*1250 | dims bỏ: 1600*590*1250 → ∅
+        H: | Type | Set power | Diesel engine model | Cylinder number(mm) | Bore*stroke | Swept volume(L) | FuelConsumption rate(L/h) | Set coolant | Engine oil system cap
+        R: | HP-Z30 | 25 | 30 | HP4100D | 4 | 100*115 | 3.61 | 6.00 | 18 | 13 | 1600*590*1250 | 720
+   [thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)] jianghao-genset n101 b0 dòng 0 engine 403A-11G1 | dims=1200*700*1100 | dims bỏ: 1200*700*1100 → ∅
+        H: | Type | Output Power | Current (A) | Engine model | Cylinder | Bore*Stroke (mm) | FuelCon. (L) | Dis. g/kw.h | Dimension(mm ) L*W*H | Weight (kg) | Detail
+        R: | JHP-7GF | 7 | 8.75 | 12.6 | 403A-11G1 | 3 | 77*87 | 0.99 | 248 | 1200*700*1100 | 500 | Click
+   [thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)] huipu-power n101 b0 dòng 0 engine HP4100D | weight=720 | weight bỏ: 720 → ∅
+        H: | Type | Set power | Diesel engine model | Cylinder number(mm) | Bore*stroke | Swept volume(L) | FuelConsumption rate(L/h) | Set coolant | Engine oil system cap
+        R: | HP-Z30 | 25 | 30 | HP4100D | 4 | 100*115 | 3.61 | 6.00 | 18 | 13 | 1600*590*1250 | 720
+   [thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)] jianghao-genset n101 b0 dòng 0 engine 403A-11G1 | weight=500 | weight bỏ: 500 → ∅
+        H: | Type | Output Power | Current (A) | Engine model | Cylinder | Bore*Stroke (mm) | FuelCon. (L) | Dis. g/kw.h | Dimension(mm ) L*W*H | Weight (kg) | Detail
+        R: | JHP-7GF | 7 | 8.75 | 12.6 | 403A-11G1 | 3 | 77*87 | 0.99 | 248 | 1200*700*1100 | 500 | Click
+   [thông số động cơ bore | xác nhận] huipu-power n102 b1 dòng 0 engine PTA780G3 | bore=128*166 | bore bỏ: 128*166 → ∅
+        H: | Type | Set power | Diesel engine model | Cylinder number(mm) | Bore*stroke | Swept volume(L) | Fuel consumption rate(L/h) | Set coolant | Engine oil ststem ca
+        R: | HP-K310 | 280 | 310 | PTA780G3 | 6 | 128*166 | 12.8 | 78.49 | 18 | 40 | 3000*1110*1555 | 2563
+   [thông số động cơ bore | xác nhận] jianghao-genset n101 b0 dòng 0 engine 403A-11G1 | bore=77*87 | bore bỏ: 77*87 → ∅
+        H: | Type | Output Power | Current (A) | Engine model | Cylinder | Bore*Stroke (mm) | FuelCon. (L) | Dis. g/kw.h | Dimension(mm ) L*W*H | Weight (kg) | Detail
+        R: | JHP-7GF | 7 | 8.75 | 12.6 | 403A-11G1 | 3 | 77*87 | 0.99 | 248 | 1200*700*1100 | 500 | Click
+
+## WE: Thông số: đi từng ô từ ô động cơ / đầu phát (tiêu đề khác độ rộng)
+đi qua: 18512 bản ghi (39490 thông số theo vị trí), 651 bảng, 86 NCC; nhiều nhất uleengen 1689, agestar 1442, yanan-power 748, walter-yangzhou 722, waeta-fujian 687, legapower 632, welland-power 594, excel-power-ningde 571
+tắt: bản ghi đổi 5812, mất 0, thêm 0; 230 bảng, 54 NCC; đảo vai còn 3
+dạng: {"speed bỏ":295,"fuel bỏ":1532,"gov bỏ":495,"disp bỏ":1082,"emission bỏ":358,"engPower bỏ":1984,"dims bỏ":1060,"voltage bỏ":292,"weight bỏ":627,"pf bỏ":223,"controller bỏ":66,"cyl bỏ":1988,"current bỏ":229,"bore bỏ":389,"compr bỏ":144,"phase bỏ":595}
+hiệu chuẩn (số lệch 10% cũng "xác nhận"): thông số động cơ 673/3394
+       58  thông số tổ máy controller (tự kiểm) | không kiểm được
+       72  thông số tổ máy current (tự kiểm) | hợp lý (tự kiểm)
+        1  thông số tổ máy current (tự kiểm) | không kiểm được
+       72  thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)
+      736  thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)
+      285  thông số tổ máy emission (tự kiểm) | không kiểm được
+     1312  thông số tổ máy fuel (tự kiểm) | không kiểm được
+      331  thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)
+      223  thông số tổ máy pf (tự kiểm) | không kiểm được
+      298  thông số tổ máy phase (tự kiểm) | không kiểm được
+      294  thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)
+        1  thông số tổ máy speed (tự kiểm) | vô lý (tự kiểm)
+      236  thông số tổ máy voltage (tự kiểm) | hợp lý (tự kiểm)
+       46  thông số tổ máy voltage (tự kiểm) | vô lý (tự kiểm)
+      593  thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)
+       10  thông số tổ máy weight (tự kiểm) | không kiểm được
+        1  thông số động cơ bore | chưa rõ
+       13  thông số động cơ bore | không đối chiếu
+      366  thông số động cơ bore | xác nhận
+        3  thông số động cơ compr | chưa rõ
+       16  thông số động cơ compr | không đối chiếu
+       53  thông số động cơ compr | xác nhận
+      221  thông số động cơ cyl | không đối chiếu
+        3  thông số động cơ cyl | mâu thuẫn
+     1613  thông số động cơ cyl | xác nhận
+       40  thông số động cơ disp | chưa rõ
+      111  thông số động cơ disp | không đối chiếu
+       34  thông số động cơ disp | mâu thuẫn
+      564  thông số động cơ disp | xác nhận
+      201  thông số động cơ engPower | chưa rõ
+      435  thông số động cơ engPower | không đối chiếu
+        9  thông số động cơ engPower | mâu thuẫn
+      798  thông số động cơ engPower | xác nhận
+NCC: chuangyuan-zhongshan 1115, wintpower 860, legapower 824, weiman-fujian 762, taihai-taizhou 568, senci-jiangsu 411, senci 411, bobig-power 385, xinhengxin-fujian 357, agestar 353
+   [thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)] acepow-fuan n133 b40 dòng 0 engine YT3B2-D | speed=1500 | speed bỏ: 1500 → ∅
+        H: | Frequency | Speed | Engine Model
+        R: | 50 | 1500 | YT3B2-D | 30 | 33 | Natural | 3.3
+   [thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)] chuangyuan-zhongshan n101 b0 dòng 0 engine S6R2-PTA-C | speed=1500 | speed bỏ: 1500 → ∅
+        H: | | 菱重系列机组参数 | 发动机技术参数
+        R: | 1 | 500 | 400 | 1500 | 0.8 | 50 | 3650*1850*2200 | 5650 | S6R2-PTA-C | 6/170/220 | 29.96
+   [thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)] gordon-power n108 b8 dòng 29 engine 4012-46TWG2A | speed=1500 | speed bỏ: 1500 → ∅
+        H: | Genset Perfomance | Engine Performance | Dimension(L×W×H)
+        R: | GD-P1375 | 1000 | 1250 | 1100 | 1375 | 4012-46TWG2A | 1500 | 1113 | 259 | 12V-160×190 | 45.842 | 485×205×252 |
+   [thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)] agestar n104 b4 dòng 0 engine 4B3.9-G 1 | gov=Mechanical | gov bỏ: Mechanical → ∅
+        H: | Model | Specification 50HZ 400-230V | General specifications | Displacement (L) | Alternator | Silent type
+        R: | GC-30(S) | 30 | 24 | 27 | 22 | 4B3.9-G 1 | 6.5 | Mechanical | 3.9 | ASG184G | 2150*1000*1250 | 1000
+   [thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)] baifa-power n101 b0 dòng 14 engine TAD851GE | gov=EMS2 / ECU | gov bỏ: EMS2 / ECU → ∅
+        H: | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY
+        R: | BF-V220-T3 | 220 | 200 | VOLVO | TAD851GE | EMS2 / ECU | UCI 274H1 | STAGE IIIA/ TIER 3 | INDIA
+   [thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)] jet-power n127 b23 dòng 0 engine S6R2-PTA-C/575KW | gov=Electronic | gov bỏ: Electronic → ∅
+        H: | Model | 400V / 50Hz / 1500rpm | MITSUBISHI DIESEL ENGINE |
+        R: | M-715 | 715 | 572 | 650 | 520 | S6R2-PTA-C/575KW | 6L | 170×120 | 29.96 | 124L/h | Electronic | 14.1 | HCI544F/570KVA | 3650*1600*1900 | 5620 | 4600*2000*2250 | 6620
+   [thông số động cơ disp | xác nhận] agestar n104 b4 dòng 10 engine 6BTA5.9-G2 | disp=5.9 | disp bỏ: 5.9 → ∅
+        H: | Model | Specification 50HZ 400-230V | General specifications | Displacement (L) | Alternator | Silent type
+        R: | GC-125(S) | 125 | 100 | 113 | 90 | 6BTA5.9-G2 | 21 | Electrical | 5.9 | ASG274C | 2750*1020*1550 | 1860
+   [thông số động cơ disp | xác nhận] jinlongteng-fujian n101 b0 dòng 1 engine 4B3.9-G1 | disp=3.9 | disp bỏ: 3.9 → ∅
+        H: | Gensets | Technical Data of Diesel Engine (50hz/1500rpm) | | | Alternator (50hz/1500rpm) | Size & Weight
+        R: | JDC30 | 22 | 28 | 24 | 30 | 4B3.9-G1 | 24 | 27 | 245 | 7.1 | 4×102×120 | 3.9 | 18:1 | 10.9 | 19 | JLT184F(22KW) | S0L2-J1(24KW) | 2150*980*1210 | 900 | 1650*750*1300 | 690
+   [thông số động cơ disp | xác nhận] legapower n105 b8 dòng 1 engine 4B3.9G2 | disp=3.9 | disp bỏ: 3.9 → ∅
+        H: | Genset Specification 400/230V 50HZ | Engine Soecification | Datasheet
+        R: | LG27.5C | 27.5 | 25 | 6.7 | 4B3.9G2 | 4L | Electronic | 3.9 | LG27.5C 4B3.9-G2 PI144E.pdf
+   [thông số động cơ disp | mâu thuẫn] agestar n104 b4 dòng 13 engine 6BTAA5.9-G12 | disp=8.3 | disp bỏ: 8.3 → ∅
+        H: | Model | Specification 50HZ 400-230V | General specifications | Displacement (L) | Alternator | Silent type
+        R: | GC-175(S) | 175 | 140 | 160 | 128 | 6BTAA5.9-G12 | 30 | Electrical | 8.3 | ASG274E | 3200*1130*1600 | 2000
+   [thông số động cơ disp | mâu thuẫn] mingbang-mbkl n124 b4 dòng 0 engine S6R2-PTA | disp=14.6 | disp bỏ: 14.6 → ∅
+        H: | No. | GENSET Model | Prime Power | Standby Power | Engine Model | Cylinder | Displacement | Bore*Stroke | Fuel Consumption | Dimension
+        R: | 1 | MB-M540 | 675 | 540 | 750 | 600 | S6R2-PTA | 6 | 14.6 | 17×220 | 205 | 6000×2300×2930
+   [thông số động cơ disp | mâu thuẫn] wintpower n109 b13 dòng 12 engine 1106A-70TAG2 | disp=6 | disp bỏ: 6 → ∅
+        H: | Genset Model | 50HZ PF=0.8 400/230V 3Phase 4Wire | Engine Model | cyl | displacement | Battery Vol. | Max power | Governor | Open Type Dimension
+        R: | WT-P165 | 165/132 | 150/120 | 45.8 | 1106A-70TAG2 | 6L | 6 | 12 | 153.6 | Elec. | 2800*790*1650 | 1699
+   [thông số động cơ engPower | xác nhận] bobig-power n101 b0 dòng 1 engine 4B3.9-G2 | engPower=30 | engPower bỏ: 30 → ∅
+        H: | l | Gensets power(KW/KVA) | Engine model | Engine power/kw | BOBIG | Open type (MM) | sounproof type (MM)
+        R: | BC33S | 24 | 30 | 26 | 33 | 4B3.9-G2 | 30 | BW-184F | 1600*720*1300 | 2100*930*1200
+   [thông số động cơ engPower | xác nhận] ettes-power n143 b44 dòng 14 engine 18V2000G26F | engPower=1212 | engPower bỏ: 1212 → ∅
+        H: | Model | Prime Power | Standby Power | Engine Model | Max Power (kW/Hp) | Cyls.& Type | Dspl. (L) | Overall Dimmension (mm) | Weight (kg) | PDF D/L
+        R: | ET-1250P | 1000 | 1250 | / | / | 18V2000G26F | 1212 | 18.V | TBA | 4750*2100*2380 | 9000 |
+   [thông số động cơ engPower | xác nhận] hanyang-weifang n107 b6 dòng 55 engine YC16VC3000-D31 | engPower=2005 | engPower bỏ: 2005 → ∅
+        H: | Crew Type | Engine model | Engine power | Number of cylinders | Bore-to-stroke ratio (mm) | Displacement (L) | Fuel consumption (g/kWh) | External dimensions 
+        R: | HY-1800 | YC16VC3000-D31 | 2005 | 2206 | 16 | 200*210 | 105.56 | 195 | 6700*2750*3300 | 21000 | T3
+   [thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)] bobig-power n111 b1 dòng 0 engine 4B3.9-G11 | dims=1450*620*1125 | dims bỏ: 1450*620*1125 → ∅
+        H: | Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Alternator(50hz/1500rpm) | Size
+        R: | BC22 | 16 | 20 | 18 | 22 | 4B3.9-G11 | 20 | BW-184ES | 1450*620*1125 | 1950*850*1050
+   [thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)] chuangyuan-zhongshan n101 b0 dòng 0 engine S6R2-PTA-C | dims=3650*1850*2200 | dims bỏ: 3650*1850*2200 → ∅
+        H: | | 菱重系列机组参数 | 发动机技术参数
+        R: | 1 | 500 | 400 | 1500 | 0.8 | 50 | 3650*1850*2200 | 5650 | S6R2-PTA-C | 6/170/220 | 29.96
+   [thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)] excel-power-ningde n112 b11 dòng 29 engine 4012-46TWG2A | dims=4850*2050*2520 | dims bỏ: 4850*2050*2520 → ∅
+        H: | Genset Model | 50Hz,400/230V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dimension | Download
+        R: | EP-PE1500 | 1200 | 1500 | 1320 | 1650 | 4012-46TWG2A | 285.91 | 4850*2050*2520
+   [thông số động cơ engPower | mâu thuẫn] bobig-power n125 b12 dòng 1 engine 403A-15G1 | engPower=10 | engPower bỏ: 10 → ∅
+        H: | Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Alternator (50hz/1500rpm) | Size
+        R: | BP14 | 10 | 13 | 11 | 14 | 403A-15G1 made in china | 10 | BW-164C | 1150*650*1000 | 1750*850*1000
+   [thông số động cơ engPower | mâu thuẫn] weiman-fujian n111 b12 dòng 1 engine 403D-11G | engPower=8 | engPower bỏ: 8 → ∅
+        H: | Gensets | Technical Data of Diesel Engine(50hz/1500rpm) |
+        R: | 7 | 8 | 7.7 | 9.6 | 403D-11G | 8 | 9 | 248 | 2.6 | 3×77×81 | 1.131 | 23:1 | N/A | More data
+   [thông số tổ máy voltage (tự kiểm) | hợp lý (tự kiểm)] bruno-generators n101 b0 dòng 0 engine MCP 120-80 | voltage=230 | voltage bỏ: 230 → ∅
+        H: | | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 HZ | | 60 HZ | | | | | | | | | TANK l | DIMENSIONS cm | | | MAXIMUM SIZE cm | | | 
+        R: | SL 9506 KL | 6 | 250 W | 1500 W | AC | 230 V | 5.3 | 4.5 | 6.5 | 6 | KOHLER KDW 702 | 686 | 5 | 5.9 | 0.8 | 0.7 | N | 140 | 245 | 130 | 230 | 245 | 280 | 920 | 1050 | MCP 120-80
+   [thông số tổ máy voltage (tự kiểm) | hợp lý (tự kiểm)] chuangyuan-zhongshan n101 b0 dòng 0 engine S6R2-PTA-C | voltage=400 | voltage bỏ: 400 → ∅
+        H: | | 菱重系列机组参数 | 发动机技术参数
+        R: | 1 | 500 | 400 | 1500 | 0.8 | 50 | 3650*1850*2200 | 5650 | S6R2-PTA-C | 6/170/220 | 29.96
+   [thông số tổ máy voltage (tự kiểm) | hợp lý (tự kiểm)] sr-genset n2004 b6 dòng 20 engine 1206A-E70TTAG3 | voltage=220 | voltage bỏ: 220 → ∅
+        H: | Frequency | Voltage | Standy Power | Backup Power | Engine | Model | Motor | Model
+        R: | 50 | 400 | 200 | 250 | 220 | 275 | Perkins | 1206A-E70TTAG3 | Nidec | TAL-A46-D
+   [thông số tổ máy voltage (tự kiểm) | vô lý (tự kiểm)] bruno-generators n103 b1 dòng 0 engine Q401 AUS-80 | voltage=225 | voltage bỏ: 225 → ∅
+        H: | | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 HZ | | 60 HZ | | | | | | | | | TANK l | DIMENSIONS cm | | | MAXIMUM SIZE cm | | | 
+        R: | MB 9504 KL | 4 | 250 W | 1000 W | DC | 48 V | - | - | - | - | KOHLER LDW 702 | 686 | - | 5,9 | - | 0,35 | N | 110 | 235 | 148 | 225 | 235 | 202 | 883 | 1060 | Q401 AUS-80
+   [thông số tổ máy voltage (tự kiểm) | vô lý (tự kiểm)] power-hf n112 b14 dòng 19 engine 12M26D748E200 | voltage=660 | voltage bỏ: 660 → ∅
+        H: | 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型
+        R: | 20 | PHF-600WX | 600 | 660 | 1080 | 12M26D748E200 | ● | ● |
+   [thông số tổ máy voltage (tự kiểm) | vô lý (tự kiểm)] sr-genset n2001 b0 dòng 11 engine 4FWZL1 | voltage=104.5 | voltage bỏ: 104.5 → ∅
+        H: | Frequency | Voltage | Rated power | Standby Power | Engine | Modle | Alternator | Modle | Specifications
+        R: | 50 | 400 | 95 | 118.75 | 104.5 | 130.625 | SRGENSET | 4FWZL1 | SRGENSET | SAL274C2 | PDF
+   [thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)] chuangyuan-zhongshan n101 b0 dòng 0 engine S6R2-PTA-C | weight=5650 | weight bỏ: 5650 → ∅
+        H: | | 菱重系列机组参数 | 发动机技术参数
+        R: | 1 | 500 | 400 | 1500 | 0.8 | 50 | 3650*1850*2200 | 5650 | S6R2-PTA-C | 6/170/220 | 29.96
+   [thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)] frs-shenyang n101 b0 dòng 0 engine 403A-11G1 | weight=727 | weight bỏ: 727 → ∅
+        H: | 产品详情 | 控制系统可选品牌 | 英国深海、郑州众智、捷克科迈 | 绝缘等级 | H级
+        R: | FRS-7P | 7 | 8 | 1100*670*1313 | 2000*920*1252 | 550 | 727 | 403A-11G1 | 3/L | 77 | 81 | 1.131 | 252 | 4.9 | 5.2
+   [thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)] kachai-hangzhou n2005 b19 dòng 21 engine 4008TAG2 | weight=8200 | weight bỏ: 8200 → ∅
+        H: | Diesel Generator Model | Generator Specification | Engine Specifcation | Alternator Specifcation | Open Type | Silent Type
+        R: | SPI/U800D | 1000 | 1100 | 800 | 880 | 4008TAG2 | E | K404D | S6L1D-E4 | 4680x2050x2400 | 8200 | 20HQ | 12500
+   [thông số động cơ cyl | xác nhận] fukangsi-yangzhou n2010 b19 dòng 0 engine PTAA780G1 | cyl=6 | cyl bỏ: 6 → ∅
+        H: | 机组型号 | 功率(KW) 机组 / 柴油机 (1/h) | 输出电流(A) | 发动机型号 | 缸数 (L) | 缸径 (mm) | 行程 (mm) | 排气量 (L) | 燃油消耗率(lir/hr) | 机组重量(KG) | 机组尺寸 长*宽*高(mm)
+        R: | FKS-350 | 350 | 408 | 630 | PTAA780G1 | 6 | 128 | 166 | 12.8 | 88 | 2645 | 3100*1110*1555
+   [thông số động cơ cyl | xác nhận] honny-dongguan n101 b0 dòng 19 engine QTA10V-EG1670 D | cyl=V10 | cyl bỏ: V10 → ∅
+        H: | | 机组技术参数 | 发动机技术参数 | 机组尺寸与重量
+        R: | HGM1875 E | 1875 | 1688 | 1500 | 1350 | 344 | 2435 | QTA10V-EG1670 D | 1670 | 1520 | V10 | 185 | 200 | 54 | 15：1 | GP1688-4P | 5050 | 2200 | 2800 | 10750
+   [thông số động cơ cyl | xác nhận] huayuan-weifang n113 b12 dòng 0 engine D226B-3D | cyl=3 | cyl bỏ: 3 → ∅
+        H: | 型号 | 功能 | 发动机型号 | 缸数 L | 缸径mm | 行程mm | 排量 L | 燃油消耗率g/kw.h | 机组重量 Kg | 长×宽×高 mm×mm×mm
+        R: | HY22GF | 20 | 22 | D226B-3D | 3 | 105 | 120 | 3.12 | 215 | 800 | 1800×740×1000
+   [thông số tổ máy current (tự kiểm) | hợp lý (tự kiểm)] honny-dongguan n101 b0 dòng 0 engine PTAA6L-EG490 | current=722 | current bỏ: 722 → ∅
+        H: | | 机组技术参数 | 发动机技术参数 | 机组尺寸与重量
+        R: | HGM550E | 550 | 500 | 440 | 400 | 109 | 722 | PTAA6L-EG490 | 490 | 445 | L6 | 135 | 166 | 14 | 15.5:1 | GP500-4P | 3400 | 1300 | 1650 | 3400
+   [thông số tổ máy current (tự kiểm) | hợp lý (tự kiểm)] huadong-yangzhou n105 b4 dòng 5 engine 12V4000G23R | current=1991 | current bỏ: 1991 → ∅
+        H: | 机组型号 | 输出功率（KVA/KW） | 额定电流 (A) | 100% 负载 燃油耗 （L/h） | 发动机 | 外形尺寸（mm） L ×W×H | 净重量 （Kg） |
+        R: | HDM1375 | 1375/1100 | - | 1991 | 245 | 12V4000G23R | 1205 | 5780×2550×2680 | 11660 | 下载参数
+   [thông số tổ máy current (tự kiểm) | hợp lý (tự kiểm)] zhengchi-power n162 b61 dòng 0 engine WP2.1D18E2 | current=18A | current bỏ: 18A → ∅
+        H: | | 机组型号 | 输出功率(KW) | 电流 | 柴油机型号 | 缸数 | 缸径×行程 | 排气量 | 燃油消耗率 | 机组尺寸mm | 机组重量 | 电压(V) | 频率 | 输出 | 详细参数
+        R: | ZCDL-W11 | 10 | 11 | 18A | WP2.1D18E2 | 4 | 85*92 | L | g/kw.h | 1950*960*1300 | 601kg | 220/380 | 50Hz | 三相四线 | 详细参数
+   [thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)] honny-dongguan n102 b1 dòng 0 engine PTAA16V-EG980 | current=55.0 | current bỏ: 55.0 → ∅
+        H: | | 机组技术参数 | 发动机技术参数 | 机组尺寸与重量
+        R: | HGM1100EHV10.5 | 1100 | 1000 | 880 | 800 | 212 | 55.0 | PTAA16V-EG980 | 980 | 893 | V16 | 135 | 145 | 33 | 15.5:1 | GPH-1000-4P | 4400 | 2200 | 2400 | 7650
+   [thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)] power-hf n112 b14 dòng 19 engine 12M26D748E200 | current=600 | current bỏ: 600 → ∅
+        H: | 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型
+        R: | 20 | PHF-600WX | 600 | 660 | 1080 | 12M26D748E200 | ● | ● |
+   [thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)] zhengdian-zhengzhou n107 b6 dòng 0 engine STC-5-4 | current=195 | current bỏ: 195 → ∅
+        H: | | 机组型号 | 输出功率 | 额定电流 | 柴油机型号 | 发电机型号 | 机组外包装尺寸 | 机组重量
+        R: | CCFJ5-xx | 5/6.25 | 9.1 | 195 | STC-5-4 | 1100×480×1000 | 305
+   [thông số tổ máy speed (tự kiểm) | vô lý (tự kiểm)] jichai n109 b7 dòng 2 engine 12V175PZL-1/0 | speed=1200 | speed bỏ: 1200 → ∅
+        H: | Description | Engine model | Injection system | Speed adjustment mode | Cylinders & Arrangement | Cylinders Bore,mm | Piston Stroke,mm
+        R: | Hydraulic transmission coupling set | 12V175PZL-1/0 | 1097 | 1200 | 12V175PZL-1 | YOZJ750 | 930
+   [thông số động cơ compr | xác nhận] jinlongteng-fujian n101 b0 dòng 1 engine 4B3.9-G1 | compr=18:1 | compr bỏ: 18:1 → ∅
+        H: | Gensets | Technical Data of Diesel Engine (50hz/1500rpm) | | | Alternator (50hz/1500rpm) | Size & Weight
+        R: | JDC30 | 22 | 28 | 24 | 30 | 4B3.9-G1 | 24 | 27 | 245 | 7.1 | 4×102×120 | 3.9 | 18:1 | 10.9 | 19 | JLT184F(22KW) | S0L2-J1(24KW) | 2150*980*1210 | 900 | 1650*750*1300 | 690
+   [thông số động cơ bore | xác nhận] kangwo-guangdong n103 b2 dòng 22 engine 6M26D484E200 | bore=150*150 | bore bỏ: 150*150 → ∅
+        H: | 机组型号 | 功率 | 电流 A | 发动机型号 | 缸数 | 缸径 *行程 （ mm) | 排气量（ L） | 燃油消耗率 g/kw.h | 机组尺寸 mm L*W*H | 机组 重量 kg | 详细参数
+        R: | GKW-440GF | 440 | 550 | 792 | 6M26D484E200 | 6 | 150*150 | 15.9 | 210 | 3500*1500*1800 | 4100 |
+   [thông số động cơ bore | xác nhận] senci-jiangsu n103 b2 dòng 0 engine YCD4V12D-35 | bore=115X120 | bore bỏ: 115X120 → ∅
+        H: | 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径X行程（mm） Bore-stroke ratio | 缸数 Number of vat | 机油容量（L）Machine oil c
+        R: | | | YCD4V12D-35 | 20/22 | 115X120 | 4 | 12 | 225 | 国Ⅱ | 1700*700*1000 | 650
+   [thông số động cơ bore | xác nhận] senci n2002 b12 dòng 0 engine WP2.3D33E200 | bore=89X92 | bore bỏ: 89X92 → ∅
+        H: | 潍柴系列 WEICHAI SERIES (国Ⅱ排放 STAGEⅡ EMISSION )
+        R: | | | WP2.3D33E200 | 30/33 | 89X92 | 4 | 8 | ≤212 | 国Ⅱ | 1600X760X1200 | 620
+   [thông số động cơ cyl | mâu thuẫn] sanq-power n115 b20 dòng 14 engine SC15G500D2 | cyl=12 | cyl bỏ: 12 → ∅
+        H: | Standby Power | Prime power | Electric current | Engine Model | Alternator Model | Cyli-nders | Exhaust | Fuel Consumption
+        R: | SQS440 | 400/440 | 320/350 | 630 | SC15G500D2 | LTG-360 | 12 | 14.16 | 200 | 3500 | 3200*1350*1950
+   [thông số động cơ cyl | mâu thuẫn] xinhengxin-fujian n105 b4 dòng 34 engine KTA38-G1 | cyl=6 | cyl bỏ: 6 → ∅
+        H: | Generator Set Performance | Generator Set Performance | Dimension/Weight | Tech Data
+        R: | GF-C770 | 700/875 | 770/963 | 60 | KTA38-G1 | 847 | 6 | 3400x1400x2150/4100 | 4300x1700x2200/5250 | GF-C770
+
+## WG: Thông số: đi từng ô từ model tổ máy ở ô 0
+đi qua: 7489 bản ghi (17361 thông số theo vị trí), 290 bảng, 46 NCC; nhiều nhất yanan-power 736, landtop-fuzhou 707, victory-generator 530, yunding-jiangsu 393, walter-yangzhou 382, suneco-linyi 373, kaihua-genset 322, tellhow-power 313
+tắt: bản ghi đổi 1000, mất 0, thêm 0; 39 bảng, 11 NCC; đảo vai còn 3
+dạng: {"phase bỏ":76,"dims bỏ":461,"current bỏ":99,"engPower bỏ":73,"cyl bỏ":138,"disp bỏ":73,"gov bỏ":220,"fuel bỏ":46,"voltage bỏ":9,"weight bỏ":278,"bore bỏ":39,"compr bỏ":37}
+hiệu chuẩn (số lệch 10% cũng "xác nhận"): thông số động cơ 6/127
+       76  thông số tổ máy current (tự kiểm) | hợp lý (tự kiểm)
+       16  thông số tổ máy current (tự kiểm) | không kiểm được
+        7  thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)
+      461  thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)
+       46  thông số tổ máy fuel (tự kiểm) | không kiểm được
+      130  thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)
+       38  thông số tổ máy phase (tự kiểm) | không kiểm được
+        9  thông số tổ máy voltage (tự kiểm) | hợp lý (tự kiểm)
+      273  thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)
+        5  thông số tổ máy weight (tự kiểm) | không kiểm được
+       39  thông số động cơ bore | không đối chiếu
+       37  thông số động cơ compr | không đối chiếu
+       85  thông số động cơ cyl | không đối chiếu
+       53  thông số động cơ cyl | xác nhận
+        2  thông số động cơ disp | chưa rõ
+       20  thông số động cơ disp | không đối chiếu
+        1  thông số động cơ disp | mâu thuẫn
+       50  thông số động cơ disp | xác nhận
+        1  thông số động cơ engPower | chưa rõ
+       48  thông số động cơ engPower | không đối chiếu
+       24  thông số động cơ engPower | xác nhận
+NCC: yingtai-jiangsu 462, yingtai-group 263, kangwo-guangdong 228, frs-shenyang 187, landtop-fuzhou 112, xinzhengfa 69, acepow-fuan 38, tecnogen 27, huatai-yangzhou 17, legapower 9
+   [thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)] frs-shenyang n101 b0 dòng 0 engine 403A-11G1 | dims=1100*670*1313 | dims bỏ: 1100*670*1313 → ∅
+        H: | 产品详情 | 控制系统可选品牌 | 英国深海、郑州众智、捷克科迈 | 绝缘等级 | H级
+        R: | FRS-7P | 7 | 8 | 1100*670*1313 | 2000*920*1252 | 550 | 727 | 403A-11G1 | 3/L | 77 | 81 | 1.131 | 252 | 4.9 | 5.2
+   [thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)] yingtai-group n2002 b1 dòng 1 engine 4B3.9-G2 | dims=1.7*0.9*1.4 | dims bỏ: 1.7*0.9*1.4 → ∅
+        H: | 机组型号 Genset Model | 主用功率（主用） | 备用功率（备用） | 电流（主用）Power(A) | 电流（备用）Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimensions L*W*H(m) | 品牌 Brand | 发 动 机型号 Engine 
+        R: | 20GF | 20 | 25 | 22 | 27.5 | 36 | 39.6 | 710 | 1.7*0.9*1.4 | 4B3.9-G2
+   [thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)] yingtai-jiangsu n103 b5 dòng 1 engine 4B3.9-G2 | dims=1.7*0.9*1.4 | dims bỏ: 1.7*0.9*1.4 → ∅
+        H: | 机组型号 Genset Model | 主用功率（主用） | 备用功率（备用） | 电流（主用）Power(A) | 电流（备用）Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimensions L*W*H(m) | 品牌 Brand | 发 动 机型号 Engine 
+        R: | 20GF | 20 | 25 | 22 | 27.5 | 36 | 39.6 | 710 | 1.7*0.9*1.4 | 4B3.9-G2
+   [thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)] huatai-yangzhou n111 b10 dòng 12 engine WD305TAD68 | current=1267 | current bỏ: 1267 → ∅
+        H: | 组型号Type of set | 输出功率 Power of output (KW/KVA) | 额定电流Rated current (A) | 柴油机参数 Parameters of set | 机组尺寸及重量 Size and weight of machine set
+        R: | 700GF | 140/165 | 1267 | WD305TAD68 | 750 | 12缸V型 | 196 | 55 | 3800×1800×2100 | 4550
+   [thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)] xinzhengfa n101 b0 dòng 0 engine S175M | current=12.2 | current bỏ: 12.2 → ∅
+        H: | 机组型号 | 输出功率 | 额定 电流A | 频率/转速 Hz/RPM | 柴油机型号 | 机组外型尺寸(L × B × H)mm | 机组重量Kg
+        R: | ZF3GF | 3.75 | 3 | 12.2 | 50/3000 | S175M | 630 × 480 × 510 | 65
+   [thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)] yingtai-jiangsu n113 b24 dòng 0 engine KTA38-G9 | current=6300 | current bỏ: 6300 → ∅
+        H: | 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式
+        R: | 1000GF1 | | 1000 | 6300 | / | 9620 | 5.60×1.85×2.60 | KTA38-G9 | 重庆康明斯 | | 1089 | 12 | 37.8 | ≤208 | 电子
+   [thông số động cơ engPower | xác nhận] kangwo-guangdong n108 b8 dòng 0 engine 4BTA3.9-GM47 | engPower=47/1500 | engPower bỏ: 47/1500 → ∅
+        H: | Genset Specification 发电机组规格 | Engine Specification 柴油机规格 | Dimension L*W*H (mm) 外形尺寸 | Weight (kgs) 重量
+        R: | CCFJ30JW | 30 | 37.5 | 50/400 | 4BTA3.9-GM47 | 47/1500 | 4 | 3.9 | 1650*850*1270 | 760
+   [thông số động cơ cyl | xác nhận] kangwo-guangdong n108 b8 dòng 0 engine 4BTA3.9-GM47 | cyl=4 | cyl bỏ: 4 → ∅
+        H: | Genset Specification 发电机组规格 | Engine Specification 柴油机规格 | Dimension L*W*H (mm) 外形尺寸 | Weight (kgs) 重量
+        R: | CCFJ30JW | 30 | 37.5 | 50/400 | 4BTA3.9-GM47 | 47/1500 | 4 | 3.9 | 1650*850*1270 | 760
+   [thông số động cơ disp | xác nhận] kangwo-guangdong n108 b8 dòng 0 engine 4BTA3.9-GM47 | disp=3.9 | disp bỏ: 3.9 → ∅
+        H: | Genset Specification 发电机组规格 | Engine Specification 柴油机规格 | Dimension L*W*H (mm) 外形尺寸 | Weight (kgs) 重量
+        R: | CCFJ30JW | 30 | 37.5 | 50/400 | 4BTA3.9-GM47 | 47/1500 | 4 | 3.9 | 1650*850*1270 | 760
+   [thông số động cơ disp | mâu thuẫn] kangwo-guangdong n109 b10 dòng 20 engine K50-DM | disp=50 | disp bỏ: 50 → ∅
+        H: | Genset Specification 发电机组规格 | Engine Specification 柴油机规格 | Dimension L*W*H (mm) 外形尺寸 | Weight (kgs) 重量
+        R: | CCFJ1150JW | 1150 | 1438 | 60/440 | K50-DM | 1291/1800 | 12 | 50 | 4250*1500*2500 | 7500
+   [thông số tổ máy current (tự kiểm) | hợp lý (tự kiểm)] kangwo-guangdong n110 b13 dòng 0 engine 170F | current=2.7 | current bỏ: 2.7 → ∅
+        H: | 机组型号 | 输出功率（ KW ） | 电流（ A ） | 柴油机型号 | 缸数 | 缸径 * 行程（ mm ） | 机组尺寸 mmL*W*H | 机组重量 Kg
+        R: | GKW-1.5GF | 1.5 | 1.875 | 2.7 | 单缸 | 170F | 78*62 | 660*480*530 | 63
+   [thông số tổ máy current (tự kiểm) | hợp lý (tự kiểm)] xinzhengfa n101 b0 dòng 1 engine S180F | current=18.3 | current bỏ: 18.3 → ∅
+        H: | 机组型号 | 输出功率 | 额定 电流A | 频率/转速 Hz/RPM | 柴油机型号 | 机组外型尺寸(L × B × H)mm | 机组重量Kg
+        R: | ZF5GF | 5.25 | 4.2 | 18.3 | 50/3000 | S180F | 910 × 520 × 740 | 160
+   [thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)] landtop-fuzhou n121 b16 dòng 0 engine 4Z2.3-G11 | gov=Mechanical | gov bỏ: Mechanical → ∅
+        H: | Genset Model | Genset Standby Power | Genset Prime Power | Governor Type | Emission Standard | Engine Model | Alternator Model
+        R: | LTP17SD | 17 | 13 | 15 | 12 | Mechanical | G2 | 4Z2.3-G11 | LTP164S-12
+   [thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)] yingtai-jiangsu n107 b14 dòng 31 engine Tire 2 | gov=电子 | gov bỏ: 电子 → ∅
+        H: | 发动机 型号 Engine Type | 功率 (主用) Power (KW) | 功率 (备用) Power (KW) | 缸数 No Of Cylin ders | 缸径* 行程Bore/ Strokse (MM) | 排气量 Exhaust Cspacity (L) | 压缩比 Compression Rat
+        R: | D11A2 | 240 | 264 | 6 | 128×142 | 10.964 | 14.6:1 | 25 | 198 | 57.05 | 电子 | 82 | Tire 2
+   [thông số tổ máy voltage (tự kiểm) | hợp lý (tự kiểm)] superwatt-swt n128 b28 dòng 0 engine 4B3.9-G2 | voltage=220/127V | voltage bỏ: 220/127V → ∅
+        H: | Model | Frequency | Prime Power | Standby Power | Voltage | Speed | Engine Match
+        R: | SCM30X | 60Hz | 22kW / 28kVA | 24kW / 30kVA | 220/127V | 1800r/min | 4B3.9-G2
+   [thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)] yingtai-group n2002 b1 dòng 1 engine 4B3.9-G2 | weight=710 | weight bỏ: 710 → ∅
+        H: | 机组型号 Genset Model | 主用功率（主用） | 备用功率（备用） | 电流（主用）Power(A) | 电流（备用）Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimensions L*W*H(m) | 品牌 Brand | 发 动 机型号 Engine 
+        R: | 20GF | 20 | 25 | 22 | 27.5 | 36 | 39.6 | 710 | 1.7*0.9*1.4 | 4B3.9-G2
+   [thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)] yingtai-jiangsu n103 b5 dòng 1 engine 4B3.9-G2 | weight=710 | weight bỏ: 710 → ∅
+        H: | 机组型号 Genset Model | 主用功率（主用） | 备用功率（备用） | 电流（主用）Power(A) | 电流（备用）Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimensions L*W*H(m) | 品牌 Brand | 发 动 机型号 Engine 
+        R: | 20GF | 20 | 25 | 22 | 27.5 | 36 | 39.6 | 710 | 1.7*0.9*1.4 | 4B3.9-G2
+
+## WR: Thông số: đi từng ô từ ô cuối (không ô nào biết vị trí)
+đi qua: 17503 bản ghi (44473 thông số theo vị trí), 689 bảng, 85 NCC; nhiều nhất uleengen 1877, agestar 1517, jet-power 794, walter-yangzhou 780, yanan-power 748, waeta-fujian 700, mecca-power 590, excel-power-ningde 556
+tắt: bản ghi đổi 6747, mất 0, thêm 0; 353 bảng, 60 NCC; đảo vai còn 3
+dạng: {"gov bỏ":363,"emission bỏ":427,"speed bỏ":313,"disp bỏ":2248,"asp bỏ":107,"bore bỏ":1232,"engPower bỏ":246,"weight bỏ":4993,"dims bỏ":4347,"fuel bỏ":1642,"cyl bỏ":1389,"noise bỏ":3,"pf bỏ":229,"current bỏ":277,"voltage bỏ":803,"oil bỏ":303,"coolant bỏ":1,"tank bỏ":22,"controller bỏ":12,"phase bỏ":21,"cooling bỏ":18,"start bỏ":26,"compr bỏ":149,"eff bỏ":48}
+hiệu chuẩn (số lệch 10% cũng "xác nhận"): thông số động cơ 38/2436
+      107  thông số tổ máy asp (tự kiểm) | không kiểm được
+       12  thông số tổ máy controller (tự kiểm) | không kiểm được
+        1  thông số tổ máy coolant (tự kiểm) | không kiểm được
+       18  thông số tổ máy cooling (tự kiểm) | không kiểm được
+       24  thông số tổ máy current (tự kiểm) | hợp lý (tự kiểm)
+      229  thông số tổ máy current (tự kiểm) | không kiểm được
+     3830  thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)
+       24  thông số tổ máy eff (tự kiểm) | không kiểm được
+      367  thông số tổ máy emission (tự kiểm) | không kiểm được
+     1515  thông số tổ máy fuel (tự kiểm) | không kiểm được
+      211  thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)
+        3  thông số tổ máy noise (tự kiểm) | không kiểm được
+      303  thông số tổ máy oil (tự kiểm) | không kiểm được
+      229  thông số tổ máy pf (tự kiểm) | không kiểm được
+       21  thông số tổ máy phase (tự kiểm) | không kiểm được
+      282  thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)
+        3  thông số tổ máy speed (tự kiểm) | vô lý (tự kiểm)
+       26  thông số tổ máy start (tự kiểm) | không kiểm được
+       22  thông số tổ máy tank (tự kiểm) | không kiểm được
+      798  thông số tổ máy voltage (tự kiểm) | hợp lý (tự kiểm)
+     3750  thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)
+      671  thông số tổ máy weight (tự kiểm) | không kiểm được
+        5  thông số tổ máy weight (tự kiểm) | vô lý (tự kiểm)
+        9  thông số động cơ bore | chưa rõ
+      274  thông số động cơ bore | không đối chiếu
+        2  thông số động cơ bore | mâu thuẫn
+      694  thông số động cơ bore | xác nhận
+        3  thông số động cơ compr | chưa rõ
+       41  thông số động cơ compr | không đối chiếu
+      105  thông số động cơ compr | xác nhận
+      660  thông số động cơ cyl | không đối chiếu
+        1  thông số động cơ cyl | mâu thuẫn
+      596  thông số động cơ cyl | xác nhận
+       94  thông số động cơ disp | chưa rõ
+      846  thông số động cơ disp | không đối chiếu
+       18  thông số động cơ disp | mâu thuẫn
+     1034  thông số động cơ disp | xác nhận
+      239  thông số động cơ engPower | không đối chiếu
+        7  thông số động cơ engPower | xác nhận
+NCC: zhengchi-power 2677, mecca-power 1403, comler-power 1390, hanyang-weifang 1316, wintpower 1056, jet-power 867, wiseke-taizhou 776, victory-generator 735, frs-shenyang 677, acepow-fuan 611
+   [thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)] acepow-fuan n104 b7 dòng 0 engine WP2.3D25E200 | gov=Mechanically | gov bỏ: Mechanically → ∅
+        H: | Model | 50Hz | | Engine | Engine | Connector | Emission | Governor
+        R: | APW-18 | 18 | 20 | BC184E | WP2.3D25E200 | 23 | 29 | 4#7.5-104 | T2 | Mechanically
+   [thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)] agestar n108 b11 dòng 0 engine YC2108D | gov=Mechanical | gov bỏ: Mechanical → ∅
+        H: | Model | Specification 50HZ 400-230V | General specifications | Alternator | Dimensions | Weight
+        R: | GYC17.5(S) | 17.5 | 14 | 15 | 12 | YC2108D | 6 | Mechanical | ASG184E | 2150*1000*1250 | 900
+   [thông số tổ máy gov (tự kiểm) | hợp lý (tự kiểm)] jet-power n115 b14 dòng 0 engine JE493DB-03/24KW | gov=Mechanical | gov bỏ: Mechanical → ∅
+        H: | Model | 416V / 60Hz / 1800RPM | ISUZU Diesel Engine | Alternator
+        R: | IS-28 | 27.5 | 22 | 25 | 20 | JE493DB-03/24KW | L4 | Mechanical | 2.771 | 93×102 | JET184FS/20KW
+   [thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)] acepow-fuan n118 b25 dòng 0 engine WP13D385E200 | speed=1500 | speed bỏ: 1500 → ∅
+        H: | 50Hz | | Engine | Engine | Speed(rpm) | Emission
+        R: | 300 | 375 | HC434F | WP13D385E200 | 350 | 385 | 1500 | T2
+   [thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)] comler-power n101 b0 dòng 0 engine COMLER4G401 | speed=1500 | speed bỏ: 1500 → ∅
+        H: | 机组型号 | 机组品牌 | 油机型号 | 油机常用功率(KW) | 调速方式 | 油机品牌 | 额定电压（V） | 额定电流（A) | 功率因数 | 频率 (HZ) | 转速 (r/min) | 外形尺寸 (mm) | 重量 (KG)
+        R: | COMLER10KW | 康姆勒 | COMLER4G401 | 16 | 高压共轨 | 康姆勒 | 400/230 | 18 | 0.8 | 50 | 1500 | 1400*600*1005 | 470
+   [thông số tổ máy speed (tự kiểm) | hợp lý (tự kiểm)] gordon-power n114 b11 dòng 1 engine L6-111×139 | speed=1500 | speed bỏ: 1500 → ∅
+        H: | Genset Perfomance | Engine Performance | Dimension(L×W×H)
+        R: | GD-DS188 | 135 | 168 | 150 | 1187.5 | P086TI-1 | 1500 | 149 | 26.7 | L6-111×139 | 8.1 | 258×105×160 | 350×130×180
+   [thông số động cơ disp | xác nhận] acepow-fuan n128 b35 dòng 0 engine YT3B2-D | disp=3.3 | disp bỏ: 3.3 → ∅
+        H: | | Engine Model | | |
+        R: | 50 | 3 | YT3B2-D | 30 | 33 | 108x120 | Natural | 3.3
+   [thông số động cơ disp | xác nhận] aosif n105 b4 dòng 8 engine S16R-PTA2-C | disp=65.4 | disp bỏ: 65.4 → ∅
+        H: | Prime Power | Standby Power | Engine Model | Fuel Consumption | Cylinder | Displacement
+        R: | ASM2000 | 1875/1500 | 2000/1600 | S16R-PTA2-C | N/A | 16V | 65.4 |
+   [thông số động cơ disp | xác nhận] frs-shenyang n101 b0 dòng 0 engine 403A-11G1 | disp=1.131 | disp bỏ: 1.131 → ∅
+        H: | 产品详情 | 控制系统可选品牌 | 英国深海、郑州众智、捷克科迈 | 绝缘等级 | H级
+        R: | FRS-7P | 7 | 8 | 1100*670*1313 | 2000*920*1252 | 550 | 727 | 403A-11G1 | 3/L | 77 | 81 | 1.131 | 252 | 4.9 | 5.2
+   [thông số động cơ bore | xác nhận] acepow-fuan n128 b35 dòng 0 engine YT3B2-D | bore=108x120 | bore bỏ: 108x120 → ∅
+        H: | | Engine Model | | |
+        R: | 50 | 3 | YT3B2-D | 30 | 33 | 108x120 | Natural | 3.3
+   [thông số động cơ bore | xác nhận] frs-shenyang n103 b2 dòng 0 engine YC4D60-D21 | bore=108*115 | bore bỏ: 108*115 → ∅
+        H: | 产品详情 | 控制系统可选品牌 | 英国深海、郑州众智、捷克科迈 | 绝缘等级 | H级
+        R: | FRS-30Y | 30 | 35 | 1850*750*1120 | 2400*1100*1450 | 850 | 1280 | YC4D60-D21 | 4/L | 108*115 | 4.214 | 218 | 13 | 22
+   [thông số động cơ bore | xác nhận] hanyang-weifang n102 b3 dòng 0 engine QSB3.9-G2 | bore=102*120 | bore bỏ: 102*120 → ∅
+        H: | Crew Type | Engine model | Engine power | Number of cylinders | Bore-to-stroke ratio (mm) | Displacement (L) | Fuel consumption (g/kWh) | External dimensions 
+        R: | HY-50 | QSB3.9-G2 | 63 | 70 | 4 | 102*120 | 3.9 | 230 | 1800*750*1200 | 950 | T3
+   [thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)] agestar n101 b0 dòng 6 engine ASG184H | weight=810 | weight bỏ: 810 → ∅
+        H: | Model | Specification 50HZ 400-230V | General specifications | Alternator | Dimensions | Weight
+        R: | GF42(S) | 42 | 34 | 38 | 31 | 4DX2 l -53D-HMS20W | 11.2 | Electronic | ASG184H | 2200*1000*1200 | 810
+   [thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)] biao-xiamen n106 b6 dòng 4 engine UK333-G5 | weight=2130 | weight bỏ: 2130 → ∅
+        H: | Genset Model | Prime Power | Standby Power | Engine Model | Fuel Consumption | Displacement | Genset Dimension | Weight
+        R: | BA110 | 80 | 100 | 88 | 110 | UK333-G5 | 37.9 | 8.3 | 2400×860×1606 | 2130
+   [thông số tổ máy weight (tự kiểm) | hợp lý (tự kiểm)] bruno-generators n104 b2 dòng 1 engine MCP 120-80 | weight=2000 | weight bỏ: 2000 → ∅
+        H: | | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 HZ | | 60 HZ | | | | | | | | | TANK l | DIMENSIONS cm | | | MAXIMUM SIZE cm | | | 
+        R: | MT 9810 KL** | 8+2 | 330+250 W | 3140 W | AC | 230 V | 8,6 | 7,6 | 9,5 | 9 | KOHLER KDW 1003 | 1028 | 7,6 | 9,1 | 1,4 | 1,3 | N | 250 | 244 | 190 | 225 | 419 | 237 | 920 | 2000 | MCP 120-80
+   [thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)] agestar n101 b0 dòng 6 engine ASG184H | dims=2200*1000*1200 | dims bỏ: 2200*1000*1200 → ∅
+        H: | Model | Specification 50HZ 400-230V | General specifications | Alternator | Dimensions | Weight
+        R: | GF42(S) | 42 | 34 | 38 | 31 | 4DX2 l -53D-HMS20W | 11.2 | Electronic | ASG184H | 2200*1000*1200 | 810
+   [thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)] biao-xiamen n106 b6 dòng 4 engine UK333-G5 | dims=2400×860×1606 | dims bỏ: 2400×860×1606 → ∅
+        H: | Genset Model | Prime Power | Standby Power | Engine Model | Fuel Consumption | Displacement | Genset Dimension | Weight
+        R: | BA110 | 80 | 100 | 88 | 110 | UK333-G5 | 37.9 | 8.3 | 2400×860×1606 | 2130
+   [thông số tổ máy dims (tự kiểm) | hợp lý (tự kiểm)] comler-power n101 b0 dòng 0 engine COMLER4G401 | dims=1400*600*1005 | dims bỏ: 1400*600*1005 → ∅
+        H: | 机组型号 | 机组品牌 | 油机型号 | 油机常用功率(KW) | 调速方式 | 油机品牌 | 额定电压（V） | 额定电流（A) | 功率因数 | 频率 (HZ) | 转速 (r/min) | 外形尺寸 (mm) | 重量 (KG)
+        R: | COMLER10KW | 康姆勒 | COMLER4G401 | 16 | 高压共轨 | 康姆勒 | 400/230 | 18 | 0.8 | 50 | 1500 | 1400*600*1005 | 470
+   [thông số động cơ cyl | xác nhận] aosif n105 b4 dòng 8 engine S16R-PTA2-C | cyl=16V | cyl bỏ: 16V → ∅
+        H: | Prime Power | Standby Power | Engine Model | Fuel Consumption | Cylinder | Displacement
+        R: | ASM2000 | 1875/1500 | 2000/1600 | S16R-PTA2-C | N/A | 16V | 65.4 |
+   [thông số động cơ cyl | xác nhận] hanyang-weifang n102 b3 dòng 0 engine QSB3.9-G2 | cyl=4 | cyl bỏ: 4 → ∅
+        H: | Crew Type | Engine model | Engine power | Number of cylinders | Bore-to-stroke ratio (mm) | Displacement (L) | Fuel consumption (g/kWh) | External dimensions 
+        R: | HY-50 | QSB3.9-G2 | 63 | 70 | 4 | 102*120 | 3.9 | 230 | 1800*750*1200 | 950 | T3
+   [thông số động cơ cyl | xác nhận] jet-power n101 b0 dòng 0 engine 4Z2.3-G21 | cyl=4L | cyl bỏ: 4L → ∅
+        H: | Model | 400V / 50Hz / 1500RPM | SDEC Diesel Engine | Alternator
+        R: | SD-18 | 18 | 14 | 16 | 12.8 | 4Z2.3-G21 | 4L | 85×100 | 2.3 | 210 | JET164D
+   [thông số tổ máy weight (tự kiểm) | vô lý (tự kiểm)] bruno-generators n101 b0 dòng 0 engine MCP 120-80 | weight=1050 | weight bỏ: 1050 → ∅
+        H: | | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 HZ | | 60 HZ | | | | | | | | | TANK l | DIMENSIONS cm | | | MAXIMUM SIZE cm | | | 
+        R: | SL 9506 KL | 6 | 250 W | 1500 W | AC | 230 V | 5.3 | 4.5 | 6.5 | 6 | KOHLER KDW 702 | 686 | 5 | 5.9 | 0.8 | 0.7 | N | 140 | 245 | 130 | 230 | 245 | 280 | 920 | 1050 | MCP 120-80
+   [thông số tổ máy weight (tự kiểm) | vô lý (tự kiểm)] cgm-italia n1001 b13 dòng 15 engine 1103A-33TG1 | weight=39,6 | weight bỏ: 39,6 → ∅
+        H: | M/E Engine governor | EU Emission standard | consumo ¾ caricoconsumption 3/4 loadconsommation 3/4 charge
+        R: | 45P | 45 | 36 | 49,5 | 39,6 | 1103A-33TG1
+   [thông số tổ máy voltage (tự kiểm) | hợp lý (tự kiểm)] comler-power n101 b0 dòng 0 engine COMLER4G401 | voltage=400/230 | voltage bỏ: 400/230 → ∅
+        H: | 机组型号 | 机组品牌 | 油机型号 | 油机常用功率(KW) | 调速方式 | 油机品牌 | 额定电压（V） | 额定电流（A) | 功率因数 | 频率 (HZ) | 转速 (r/min) | 外形尺寸 (mm) | 重量 (KG)
+        R: | COMLER10KW | 康姆勒 | COMLER4G401 | 16 | 高压共轨 | 康姆勒 | 400/230 | 18 | 0.8 | 50 | 1500 | 1400*600*1005 | 470
+   [thông số tổ máy voltage (tự kiểm) | hợp lý (tự kiểm)] keliang-fuan n107 b3 dòng 0 engine 4DW81-23D | voltage=380, 400, 415, 440, 200, 208, 220, etc. | voltage bỏ: 380, 400, 415, 440, 200, 208, 220, etc. → ∅
+        H: | Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Alternator | Size & Weight
+        R: | WT-FW17 | 12 | 15 | 13.2 | 17 | 4DW81-23D | 17 | 19 | 240 | 4.8 | 4x85x100 | 2.27 | 17:1 | N/A | WT-164D | 380, 400, 415, 440, 200, 208, 220, etc. | 1520x530x1020 | 390 | 2000x900x1250 | 780
+   [thông số tổ máy voltage (tự kiểm) | hợp lý (tự kiểm)] superwatt-swt n122 b22 dòng 0 engine D1105-BG | voltage=230V | voltage bỏ: 230V → ∅
+        H: | Model | Engine | Freq. | Speed | Phase | Voltage | Prime Power | Standby Power | Aspiration | Configuration
+        R: | SK8.3-1P | D1105-BG | 50Hz | 1500r/min | 1-phase | 230V | 6kW / 7.5kVA | 6.6kW / 8.3kVA | Naturally aspirated | Open / Silent / Super Silent
+   [thông số động cơ cyl | mâu thuẫn] hanyang-weifang n125 b11 dòng 5 engine 4HTAA4.3-G36 | cyl=6 | cyl bỏ: 6 → ∅
+        H: | Crew Type | Engine model | Engine power | Number of cylinders | Bore-to-stroke ratio (mm) | Displacement (L) | Fuel consumption (g/kWh) | External dimensions 
+        R: | HY-120 | 4HTAA4.3-G36 | 125 | 140 | 6 | 105*124 | 4.3 | 192 | 1800*600*1200 | 1100 | T3
+   [thông số động cơ bore | mâu thuẫn] jet-power n135 b30 dòng 3 engine WP2.3D40E200 | bore=105×125 | bore bỏ: 105×125 → ∅
+        H: | Model | 400V / 50Hz / 1500RPM | WEICHAI Diesel Engine | Alternator
+        R: | WP-41 | 41 | 33 | 37.5 | 30 | WP2.3D40E200 | 4L | Mechanical | 105×125 | 2.5 | 7.5 | JET184H
+   [thông số động cơ disp | mâu thuẫn] jianghao-genset n111 b14 dòng 8 engine 6CTA8.3-G2 | disp=5.9 | disp bỏ: 5.9 → ∅
+        H: | Model | Output KVA | Power KW | Engine model | Cylinder NO. | Bore*Stroke mm | displace - ment (L) | Lubricating Capacity (L) | Fuel Consumption g/kw.h | Dime
+        R: | JHK-170GF | 210 | 170 | 6CTA8.3-G2 | 6/L | 102*120 | 5.9 | 16 | 208 | 2390*950*1561 | 2060
+   [thông số động cơ disp | mâu thuẫn] tellhow-power n115 b8 dòng 3 engine TAD1350GE | disp=7.7 | disp bỏ: 7.7 → ∅
+        H: | Model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Engine model | Number of cylinders/arrangement | Displacement | 
+        R: | THLV227 | 227 | 250 | 3060×1275×1900 | 1930 | TAD1350GE | 6/L | 7.7 | 200 | 36 | 20
+   [thông số động cơ disp | mâu thuẫn] victory-generator n114 b20 dòng 5 engine WP4D100E200 | disp=6.25 | disp bỏ: 6.25 → ∅
+        H: | Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine model | Fuel consumption (g/kw.h ) | No. of cylinder | Bore (mm) | Stroke (mm) | Displace
+        R: | V64F | 50 | 58 | 73 | 64 | 80 | WP4D100E200 | 227 | 6 | 105 | 120 | 6.25 | 10.25 | 16.8 | 24 V | 1950 x 1000 x 1450 | 1200
+   [thông số tổ máy speed (tự kiểm) | vô lý (tự kiểm)] jichai n101 b0 dòng 20 engine S6190ZLC-1 | speed=1200 | speed bỏ: 1200 → ∅
+        H: | Model | Type | Cylinders & Arrangement | Cylinders bore,mm | Piston stroke,mm | Rated power,kw/hp | RPM,r/min | Total piston displacement,L | Fuel oil consump
+        R: | S6190ZLC-1 | 6 cylinders, in-line | 275 | 900/1225 | 1200 | 46.78 | ≤ 195 | ≤ 1.0 | 3144×1571×2246 | 7200
+   [thông số động cơ compr | xác nhận] weiman-fujian n110 b10 dòng 0 engine 4B3.9-G1 | compr=17.3:1 | compr bỏ: 17.3:1 → ∅
+        H: | Gensets | Technical Data of Diesel Engine(50hz/1500rpm) |
+        R: | WT-C28 | 20 | 25 | 22 | 28 | 4B3.9-G1 | 24 | 27 | 245 | 7.1 | 4×102×120 | 3.9 | 17.3:1 | N/A | More data
+   [thông số tổ máy current (tự kiểm) | hợp lý (tự kiểm)] westinpower n112 b16 dòng 0 engine E0834 E312 | current=76 | current bỏ: 76 → ∅
+        H: | Genset Model | Rated Power | Engine Model | Generator Model | Cylinder | Bore*Stroke (mm) | Displacement (L) | Mechanical Efficiency (%) | Thermal Efficiency 
+        R: | RN50NT | 40 | 50 | E0834 E312 | UCI224D | 4/L | 108*125 | 4.6 | 31.9 | 46.8 | 76 | 100AH/24V | S203-C80 | 1875*740*940 | 652
+   [thông số động cơ engPower | xác nhận] wiseke-taizhou n101 b0 dòng 21 engine KTA19-G8 | engPower=575 | engPower bỏ: 575 → ∅
+        H: | | Genset Model | Genset Power (kVA / kW) | Engine Model | Engine Power (kW) | Cyl. | Bore x Stroke (mm) | Dimension (mm) | Weight (kg)
+        R: | WDL-520C1 | — | 650 / 520 | KTA19-G8 | — | 575 | 6 | 159*159 | 3650*1500*2000 | 4800
+
+## L1: Bảng nhãn: "Model" trơ, vai theo thứ tự (Details) hoặc dạng mã
+đi qua: 52 bản ghi (0 thông số theo vị trí), 14 bảng, 4 NCC; nhiều nhất supermaly 44, depco-power 5, kena-chongqing 2, sunkings 1
+tắt: bản ghi đổi 0, mất 52, thêm 0; 14 bảng, 4 NCC; đảo vai còn 3
+dạng: {}
+hiệu chuẩn (số lệch 10% cũng "xác nhận"): công suất 46/58
+        5  công suất (theo bản ghi mất) | chưa rõ
+       11  công suất (theo bản ghi mất) | không đối chiếu
+        2  công suất (theo bản ghi mất) | mâu thuẫn
+       58  công suất (theo bản ghi mất) | xác nhận
+        6  vai alternator | không đối chiếu
+       16  vai alternator | xác nhận
+       30  vai engine | xác nhận
+NCC: supermaly 88, depco-power 25, kena-chongqing 10, sunkings 5
+   [vai engine | xác nhận] depco-power n166 b0 dòng L engine 4B3.9-G1 | 4B3.9-G1 | MẤT bản ghi: engine 4B3.9-G1
+        H: | Details Generator Set | GenSet Model | DPK-DC-30 | Type | Silent
+        R: | Model | 4B3.9-G1 | Fuel | Diesel
+   [vai engine | xác nhận] kena-chongqing n101 b0 dòng L engine 618ZLD | 618ZLD | MẤT bản ghi: engine 618ZLD
+        H: | Details Genset | Model | ZSY-300 | Type | silent optional open
+        R: | Model | 618ZLD | Fuel | Diesel
+   [vai engine | xác nhận] sunkings n117 b16 dòng L engine QSZ13-G3 | QSZ13-G3 | MẤT bản ghi: engine QSZ13-G3
+        H: | Details Genset | GenSet Model | SCF-550 | Type | silent(optional open)
+        R: | Model | QSZ13-G3 | Fuel | Diesel
+   [công suất (theo bản ghi mất) | xác nhận] depco-power n166 b0 dòng L engine 4B3.9-G1 | prime 28 kVA | MẤT bản ghi: engine 4B3.9-G1
+        H: | Details Generator Set | GenSet Model | DPK-DC-30 | Type | Silent
+        R: | Model | 4B3.9-G1 | Fuel | Diesel
+   [công suất (theo bản ghi mất) | xác nhận] kena-chongqing n103 b1 dòng L engine PHF4056ZD1 | standby 55 kW | MẤT bản ghi: engine PHF4056ZD1
+        H: | Details Genset | Model | ZSY-50 | Type | silent optional open
+        R: | Model | PHF4056ZD1 | Fuel | Diesel
+   [công suất (theo bản ghi mất) | xác nhận] sunkings n117 b16 dòng L engine QSZ13-G3 | standby 500 kVA | MẤT bản ghi: engine QSZ13-G3
+        H: | Details Genset | GenSet Model | SCF-550 | Type | silent(optional open)
+        R: | Model | QSZ13-G3 | Fuel | Diesel
+   [công suất (theo bản ghi mất) | mâu thuẫn] kena-chongqing n101 b0 dòng L engine 618ZLD | standby 413 kVA | MẤT bản ghi: engine 618ZLD
+        H: | Details Genset | Model | ZSY-300 | Type | silent optional open
+        R: | Model | 618ZLD | Fuel | Diesel
+   [vai alternator | xác nhận] supermaly n101 b0 dòng L alternator HC534FS | HC534FS | MẤT bản ghi: alternator HC534FS
+        H: 
+        R: | Model: HC534FS
+
+## L2: Bảng nhãn: "Model" kề dòng động cơ là động cơ (himoinsa, hipower)
+đi qua: 167 bản ghi (0 thông số theo vị trí), 86 bảng, 3 NCC; nhiều nhất himoinsa 68, himoinsa-china 61, hipower 38
+tắt: bản ghi đổi 19, mất 148, thêm 0; 86 bảng, 3 NCC; đảo vai còn 3
+dạng: {"model":19,"other":19}
+hiệu chuẩn (số lệch 10% cũng "xác nhận"): 
+        7  vai alternator | không đối chiếu
+       74  vai alternator | xác nhận
+       19  vai engine (ô kia) | xác nhận
+       15  vai engine | không đối chiếu
+       71  vai engine | xác nhận
+NCC: himoinsa 68, himoinsa-china 61, hipower 57
+   [vai engine | xác nhận] himoinsa-china n101 b0 dòng L engine 4TNV88BGGEH | 4TNV88BGGEH | MẤT bản ghi: engine 4TNV88BGGEH
+        H: 
+        R: Model: 4TNV88BGGEH
+   [vai engine | xác nhận] himoinsa n101 b0 dòng L engine 4TNV88BGGEH | 4TNV88BGGEH | MẤT bản ghi: engine 4TNV88BGGEH
+        H: 
+        R: Model: 4TNV88BGGEH
+   [vai engine | xác nhận] hipower n102 b1 dòng L engine TWD1683GE | TWD1683GE | MẤT bản ghi: engine TWD1683GE
+        H: 
+        R: Model: TWD1683GE
+   [vai alternator | xác nhận] himoinsa-china n101 b0 dòng L alternator S0L2.F1 | S0L2.F1 | MẤT bản ghi: alternator S0L2.F1
+        H: 
+        R: Model: S0L2.F1
+   [vai alternator | xác nhận] himoinsa n101 b0 dòng L alternator S1L2.J1 | S1L2.J1 | MẤT bản ghi: alternator S1L2.J1
+        H: 
+        R: Model: S1L2.J1
+   [vai alternator | xác nhận] hipower n102 b1 dòng L alternator S5L1D.F4 | S5L1D.F4 | model: S5L1D.F4 → 2,839 scfm
+        H: 
+        R: Model: S5L1D.F4
+   [vai engine (ô kia) | xác nhận] hipower n102 b1 dòng L alternator S5L1D.F4 | TWD1683GE | other: TWD1683GE → null
+        H: 
+        R: Model: S5L1D.F4
+
+## L3: Bảng nhãn: ô "a/b" không đơn vị ghép theo tỉ số 1,15–1,35
+đi qua: 497 bản ghi (0 thông số theo vị trí), 411 bảng, 12 NCC; nhiều nhất westinpower 145, keypower 100, powerzoo 76, gb-power 65, kanpor-fuan 41, endress-stromerzeuger 24, genlitec 22, acepow-fuan 15
+tắt: bản ghi đổi 475, mất 0, thêm 0; 400 bảng, 11 NCC; đảo vai còn 3
+dạng: {"power":475,"engPower thêm":1,"fuel thêm":2}
+hiệu chuẩn (số lệch 10% cũng "xác nhận"): công suất 624/1396
+      142  công suất (giá trị MỚI) | chưa rõ
+        7  công suất (giá trị MỚI) | không đối chiếu
+        4  công suất (giá trị MỚI) | mâu thuẫn
+       39  công suất (giá trị MỚI) | xác nhận
+      140  công suất | chưa rõ
+      155  công suất | không đối chiếu
+       76  công suất | mâu thuẫn
+     1357  công suất | xác nhận
+        1  thông số tổ máy engPower (giá trị MỚI) (tự kiểm) | vô lý (tự kiểm)
+        2  thông số tổ máy fuel (giá trị MỚI) (tự kiểm) | không kiểm được
+NCC: westinpower 725, keypower 400, powerzoo 300, kanpor-fuan 205, gb-power 130, endress-stromerzeuger 77, acepow-fuan 53, tecgen-fujian 16, kingway-power 8, xinshengan-shandong 6
+   [công suất | xác nhận] acepow-fuan n119 b26 dòng L engine BF6M1013EC | prime 150 kVA | power: P 150/120 S 165/132 R ·/146 → R ·/146
+        H: 
+        R: | Engine Model: | BF6M1013EC | Alternator Type: | Brushless, Self-Exciting ¦ | Model | BF6M1013EC
+   [công suất | xác nhận] jichai-huanneng n105 b5 dòng L engine H16V190ZLZ-2 | rated 1250 kVA | power: R 1250/1000 → R ·/1320
+        H: 
+        R: | Model of engine | H16V190ZLZ-2
+   [công suất | xác nhận] kanpor-fuan n101 b0 dòng L engine KTA50-G3 | standby 1375 kVA | power: S 1375/1100 R 1250/1000 → R ·/1227
+        H: 
+        R: | 动力型号 | | KTA50-G3 | KTA50-G8 | KTA50-GS8 | KTA50-G9
+   [công suất | mâu thuẫn] gb-power n1001 b16 dòng L engine 403D-11G | rated 4 kVA | power: P 10/8 S 11/8.8 R 4/3 → P 10/8 S 11/8.8
+        H: 
+        R: | Engine | PERKINS 403D-11G ¦ | Engine Model | 403D-11G
+   [công suất (giá trị MỚI) | xác nhận] kanpor-fuan n102 b1 dòng L engine 6LTAA8.9-G3 | rated 250 kW | power: S 275/220 R 250/200 → R ·/250
+        H: 
+        R: | 动力型号 | | 6LTAA8.9-G2 | 6LTAA8.9-G3 | NTA855-GA | NTA855-G1A | MTAA11-G3
+   [công suất (giá trị MỚI) | xác nhận] westinpower n1085 b113 dòng L engine 2506C-E15TAG1 | standby 451 kW | power: P 450/360 S 500/400 → S ·/451
+        H: 
+        R: | Diesel Engine: PERKINS , 2506C-E15TAG1 | charge), plastic fan blades (when the engine and water tank do not bring). ¦ | Model | 2506C-E15TAG1
+   [công suất (giá trị MỚI) | mâu thuẫn] kanpor-fuan n120 b9 dòng L engine BF6M1013FCG2 | rated 183 kW | power: S 220/176 R 200/160 → R ·/183
+        H: 
+        R: | 动力型号 | | BF6M1013EC | BF6M1013FCG2 | BF6M1013FCG3 | BF6M1015-GA
+   [công suất (giá trị MỚI) | mâu thuẫn] westinpower n1107 b135 dòng L engine 6M16G275/5 | standby 264 kW | power: P 250/200 S 275/220 → S ·/264
+        H: 
+        R: | Diesel Engine: BAUDOUIN , 6M16G275/5 | tank), shock absorber, air inlet system, control box (including mains floating ¦ | Model | 6M16G275/5
+   [thông số tổ máy engPower (giá trị MỚI) (tự kiểm) | vô lý (tự kiểm)] endress-stromerzeuger n144 b41 dòng L alternator ECP28 M4 C | engPower=17,3 | engPower thêm: ∅ → 17,3
+        H: 
+        R: | Alternator type | ECP28 M4 C
+
+## FL: Dòng máy Tìm NCC: số còn lại của dòng ghép với số của dòng máy theo tỉ số (rowPowerOf)
+đi qua: 507 bản ghi (0 thông số theo vị trí), 507 bảng, 6 NCC; nhiều nhất deman-power 414, agg-power 66, naipute-weifang 14, interpower-international 11, cummins-china-investment 1, tide-power 1
+tắt: bản ghi đổi 507, mất 0, thêm 0; 507 bảng, 6 NCC; đảo vai còn 3
+dạng: {"power":507}
+hiệu chuẩn (số lệch 10% cũng "xác nhận"): công suất 610/1438
+       12  công suất | chưa rõ
+       17  công suất | không đối chiếu
+     1438  công suất | xác nhận
+NCC: deman-power 1216, agg-power 198, interpower-international 33, naipute-weifang 14, cummins-china-investment 3, tide-power 3
+   [công suất | xác nhận] agg-power n2001 b0 dòng 2 engine KTA38G9 | prime 900 kW | power: P 1125/900 S 1250/1000 → P 1125/·
+        H: Generator Model
+        R: 1125/900
+   [công suất | xác nhận] deman-power n2002 b1 dòng 0 engine QSB3.9-G33 | prime 30 kW | power: P 38/30 S 41/33 → P 38/·
+        H: Genset Model  Standby Power  Prime Power          Engine Model       No. of     Details
+        R: DM41C         41kVA   33kW   38kVA   30kW         QSB3.9-G33         4          Contact  us
+   [công suất | xác nhận] interpower-international n2003 b2 dòng 2 engine 6M16G6D0/S | prime 200 kW | power: P 250/200 S 275/220 → P 250/·
+        H: (V)                     kWe                kVA          kWe                    kVA                 (A)                  L/h
+        R: 400/230                 200                250          220                    275                 361                  56.9

@@ -5,7 +5,7 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 const WT = process.argv[2];
 const SD = await import(pathToFileURL(path.join(WT, "suppliers", "spec-diff.mjs")).href);
-const side = SD.loadSide(SD.checkoutRef("origin/main", WT));
+const side = SD.loadSide(SD.checkoutRef(process.env.BASE || "7d632e30", WT));
 const recs = SD.records(side);
 const used = new Set([...recs.values()].map((o) => `${o.supplierId}|${o.n}|${o.table}`));
 let tables = 0, rows = 0, unread = 0, unreadRows = 0;
