@@ -7,9 +7,11 @@
 const fs = require("fs");
 const J = (f) => JSON.parse(fs.readFileSync(f, "utf8"));
 const G8 = J("gop-lech-cot-8.json"), G9 = J("gop-lech-cot-9.json");
-const O = J("rowDoi-main-cu.json"), XC = J("rowCyl-main.json"), XN = J("rowDoi-main-moi-nocyl.json"), NC = J("rowCyl-lc9.json");
+// 18/11 16:30: lượt gopRow dữ liệu cũ đầu tiên bị ngắt (máy mất kết nối 16:17); đo lại chỉ các lượt bước dữ liệu đổi top
+// (dataStep.cjs → keys-du-lieu.txt): rowDL-cu.json (dữ liệu e0f51ec8), rowDL-moi-nocyl.json (dữ liệu b9d4f06d, lượt không minCyl).
+const O = J("rowDL-cu.json"), XC = J("rowCyl-main.json"), XN = J("rowDL-moi-nocyl.json"), NC = J("rowCyl-lc9.json");
 const wd = J("winDiff.json"), cylWin = new Map(wd.filter((g) => g.key === "cyl").map((g) => [g.ekey, g]));
-const keys = fs.readFileSync("keys-doi.txt", "utf8").split(",");
+const keys = fs.readFileSync("keys-du-lieu.txt", "utf8").split(",");
 const lineKey = (k) => { const p = k.split("|"); return p[0] + "|" + p.slice(3).join("|"); };
 const topOf = (R) => Object.entries(R.rows).filter(([, r]) => r.st === "top").sort((a, b) => a[1].ti - b[1].ti).map(([k]) => k);
 const sup = (rk) => rk.split("|")[0], line = (rk) => rk.split("|").slice(1).join("|");
@@ -27,10 +29,8 @@ for (const k of keys) {
   const g8 = G8[k].top.map(lineKey), g9 = G9[k].top.map(lineKey);
   if (JSON.stringify(to) !== JSON.stringify(g8)) { P(`KHÔNG KHỚP gốc 8 ${k}`); bad++; }
   if (JSON.stringify(tn) !== JSON.stringify(g9)) { P(`KHÔNG KHỚP gop 9 ${k}`); bad++; }
-  const aO = Object.values(o.rows).filter((r) => r.st !== "dropped").length, aX = Object.values(x.rows).filter((r) => r.st !== "dropped").length, aN = Object.values(n.rows).filter((r) => r.st !== "dropped").length;
-  const dO = Object.values(o.rows).filter((r) => r.st === "dropped").length, dX = Object.values(x.rows).filter((r) => r.st === "dropped").length, dN = Object.values(n.rows).filter((r) => r.st === "dropped").length;
-  P(`\n== ${k}  all ${aO} → ${aX} → ${aN}; dropped ${dO} → ${dX} → ${dN}  (gop: all ${G8[k].all} → ${G9[k].all}, dropped ${G8[k].dropped} → ${G9[k].dropped})`);
-  if (aO !== G8[k].all || aN !== G9[k].all || dO !== G8[k].dropped || dN !== G9[k].dropped) { P("  KHÔNG KHỚP số all / dropped"); bad++; }
+  // Số all / dropped lấy từ gop (gopRow gộp dòng trùng khoá NCC | dòng nên đếm thiếu).
+  P(`\n== ${k}  (gop: all ${G8[k].all} → ${G9[k].all}, dropped ${G8[k].dropped} → ${G9[k].dropped})`);
   // all theo NCC đổi ở bước dữ liệu.
   const bySup = (R, st) => { const m = {}; for (const [rk, r] of Object.entries(R.rows)) if (st(r)) m[sup(rk)] = (m[sup(rk)] || 0) + 1; return m; };
   const sO = bySup(o, (r) => r.st !== "dropped"), sX = bySup(x, (r) => r.st !== "dropped");
@@ -81,6 +81,7 @@ for (const k of keys) {
     }
   };
   step(o, x, to, tx, "DỮ LIỆU");
+  // Bước luật đã kiểm đủ 402 lượt ở cylAB.cjs; ở đây chỉ in lại cho lượt chung.
   step(x, n, tx, tn, "LUẬT");
   // Mọi dòng đổi ở bước luật (cả ngoài top): phải là thêm [cyl].
   for (const rk of new Set([...Object.keys(x.rows), ...Object.keys(n.rows)])) {

@@ -44,6 +44,11 @@ for (const k of Object.keys(G8)) {
     add(c); lines.push(`  ${c}: ${r.slice(0, 100)}`);
   }
 }
+// Khoá lượt mà bước dữ liệu đổi top (tập hoặc thứ tự): đo lại từng dòng bằng gopRow (mã main, dữ liệu cũ và mới).
+const changedKeys = Object.keys(G8).filter((k) => lines.some((l) => l.startsWith(`\n== ${k} `)) || orderRuns.some((l) => l.startsWith(`${k}:`)));
+const cylSet = new Set(Object.keys(XC));
+fs.writeFileSync("keys-du-lieu.txt", changedKeys.join(","));
+fs.writeFileSync("keys-du-lieu-nocyl.txt", changedKeys.filter((k) => !cylSet.has(k)).join(","));
 console.log(`Bước dữ liệu O → X, 1.093 lượt: top giống hệt ${same}; chỉ đổi thứ tự ${order}; đổi tập ${setc} (ra ${nOut}, vào ${nIn})`);
 console.log(`all: giảm ${allD.down}, tăng ${allD.up}, giữ ${allD.same} lượt; phân bố chênh: ${JSON.stringify(allD.hist)}`);
 for (const [c, v] of Object.entries(T).sort()) console.log(`${String(v).padStart(5)}  ${c}`);
