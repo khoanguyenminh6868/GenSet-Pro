@@ -59,7 +59,7 @@ for (const k of keys) {
     for (const [r, a, b] of moved) L.push(`   hạng ${a + 1} → ${b + 1}: ${r.slice(0, 140)}`);
   }
   // Bản ghi đổi của các dòng trong top (cả hai bên): nguyên nhân đổi thứ tự / số all / dropped.
-  const changedTop = [...new Set([...x.top, ...y.top])].map((r) => [r, recState(r)]).filter(([, s]) => s.c !== "bản ghi KHÔNG đổi" && !ins.includes(r) && !outs.includes(r));
+  const changedTop = [...new Set([...x.top, ...y.top])].map((r) => [r, recState(r)]).filter(([r, s]) => s.c !== "bản ghi KHÔNG đổi" && !ins.includes(r) && !outs.includes(r));
   for (const [r, s] of changedTop) L.push(`   (trong top cả hai) ${r.slice(0, 120)} → ${s.c}\n            ${s.d.slice(0, 600)}`);
 }
 const head = `gói (lượt): ${keys.length}; không đổi gì: ${same}\n${JSON.stringify(kinds)}\n${JSON.stringify(cls, null, 1)}`;
