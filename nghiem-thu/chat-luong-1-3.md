@@ -92,3 +92,4 @@ Chỉ đọc, bằng hàm của config-bot trên máy này (`scratchpad\readweb.
 ## Dọn dẹp (18/11/2026)
 - Đã xoá worktree `wt-cl1-base`, `wt-chat-luong-1`, `wt-chat-luong-1b`, `wt-chat-luong-1c` và nhánh cục bộ `chat-luong-1`, `chat-luong-1b`, `chat-luong-1c`. Nhánh trên GitHub thì để GitHub / người merge xử lý.
 - `gop-base.json`, `gop-branch.json` (mỗi tệp khoảng 165 MB, ở scratchpad của phiên `C:\Users\Khoa\AppData\Local\Temp\claude\d4c88f0a2fd88962\a0e007ba-670e-4a63-8ae0-4b884b9daaf4\scratchpad\`) giữ tới hết 18/11 cho Lệch cột 11 / Đặc thù hãng đối chiếu. Đã hẹn xoá lúc 23:30 (tác vụ hẹn giờ trig_01KBgL38oto6XwPpSDFQESUE gửi vào phiên này).
+- 18/11/2026 23:34: đã xoá gop-base.json, gop-branch.json và log của chúng (sổ không có phiên nào xin giữ lâu hơn).
