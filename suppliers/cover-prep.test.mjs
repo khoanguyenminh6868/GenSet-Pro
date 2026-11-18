@@ -207,7 +207,7 @@ test("prep: ghi hsmt.txt đúng chữ HSMT, specs.json từ phân tích, read-or
   assert.deepEqual(readJ(dir, "read-order.json"), ["input.md", "catalog.md"]);
   assert.ok(read(dir, "prompt.md").startsWith(fs.readFileSync(path.join(HERE, "config-prompt.md"), "utf8")));
   assert.equal(info.origin, "cn"); // Trung Quốc chọn trên web thì giữ (Khoa 04/11)
-  assert.deepEqual(readJ(dir, "meta.json"), { origin: "cn" });
+  assert.deepEqual(readJ(dir, "meta.json"), { origin: "cn", cap: { value: 400, unit: "kVA" } });
   assert.equal(info.reused, false);
   assert.match(read(dir, "input.md"), /## Xuất xứ động cơ: Trung Quốc/);
 });
