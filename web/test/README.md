@@ -27,6 +27,11 @@ $env:PW_CHANNEL="msedge"; npx playwright test   # dùng Edge có sẵn (máy nà
 $env:PW_PORT="4391"            # cổng khác khi 4317 đang bận (worktree khác đang chạy server thử)
 ```
 
+## Chạy trên Claude Code cloud
+`npm ci` rồi `npx playwright test`, KHÔNG chạy `npx playwright install` (không tải được). Máy cloud có sẵn Chromium ở
+`/opt/pw-browsers` nhưng là bản của Playwright khác (vd. 1243, dự án 1.64.1 cần 1248): `playwright.config.mjs` tự tìm tệp chạy
+ở đó và dùng qua `executablePath`. Muốn dùng tệp khác: `PW_CHROMIUM=/đường/dẫn/chrome`.
+
 ## Dữ liệu
 - `fixtures/seed.json` do `fixtures/make-seed.mjs` dựng từ `genbid-work\doc-cache` (analysis, configmatch, bidhist), 5 NCC
   của `suppliers/cn` và lượt hồi quy T4 `suppliers/fixtures/runs/IB2600586587` (Giá gợi ý). Dựng lại:
