@@ -1,0 +1,197 @@
+{
+ "paths": {
+  "L3B": {
+   "desc": "Chốt: ô \"a/b\" chỉ ghép khi nhãn ghi mức / đơn vị / output (không chỉ chữ power trong tên hãng)",
+   "through": {
+    "records": 0,
+    "specs": 0,
+    "tables": 0,
+    "sups": 0,
+    "topSups": []
+   },
+   "diff": {
+    "changed": 65,
+    "onlyA": 0,
+    "onlyB": 0,
+    "kinds": {
+     "power": 65
+    },
+    "recordsTouched": 65,
+    "tables": 34,
+    "sups": 1
+   },
+   "swaps": 3,
+   "verdict": {
+    "công suất | mâu thuẫn": 76,
+    "công suất | chưa rõ": 17,
+    "công suất | không đối chiếu": 37
+   },
+   "cal": {},
+   "bySup": [
+    [
+     "gb-power",
+     {
+      "công suất | mâu thuẫn": 76,
+      "công suất | chưa rõ": 17,
+      "công suất | không đối chiếu": 37
+     }
+    ]
+   ]
+  },
+  "L3B+LROW+WCHK": {
+   "desc": "L3B+LROW+WCHK",
+   "through": {
+    "records": 0,
+    "specs": 0,
+    "tables": 0,
+    "sups": 0,
+    "topSups": []
+   },
+   "diff": {
+    "changed": 312,
+    "onlyA": 11,
+    "onlyB": 1,
+    "kinds": {
+     "voltage bỏ": 135,
+     "power": 65,
+     "current bỏ": 221
+    },
+    "recordsTouched": 277,
+    "tables": 63,
+    "sups": 17
+   },
+   "swaps": 3,
+   "verdict": {
+    "thông số tổ máy voltage (tự kiểm) | vô lý (tự kiểm)": 127,
+    "vai engine | không đối chiếu": 4,
+    "vai engine | xác nhận": 5,
+    "công suất | mâu thuẫn": 76,
+    "công suất | chưa rõ": 17,
+    "công suất | không đối chiếu": 37,
+    "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": 182,
+    "vai engine | mâu thuẫn": 1,
+    "vai alternator | không đối chiếu": 1,
+    "vai alternator | mâu thuẫn": 1
+   },
+   "cal": {},
+   "bySup": [
+    [
+     "power-hf",
+     {
+      "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": 105,
+      "thông số tổ máy voltage (tự kiểm) | vô lý (tự kiểm)": 85
+     }
+    ],
+    [
+     "gb-power",
+     {
+      "công suất | mâu thuẫn": 76,
+      "công suất | chưa rõ": 17,
+      "công suất | không đối chiếu": 37
+     }
+    ],
+    [
+     "honny-dongguan",
+     {
+      "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": 39
+     }
+    ],
+    [
+     "yingtai-jiangsu",
+     {
+      "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": 14,
+      "thông số tổ máy voltage (tự kiểm) | vô lý (tự kiểm)": 12
+     }
+    ],
+    [
+     "yingtai-group",
+     {
+      "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": 12,
+      "thông số tổ máy voltage (tự kiểm) | vô lý (tự kiểm)": 12
+     }
+    ],
+    [
+     "sr-genset",
+     {
+      "thông số tổ máy voltage (tự kiểm) | vô lý (tự kiểm)": 15
+     }
+    ],
+    [
+     "zhengdian-zhengzhou",
+     {
+      "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": 5
+     }
+    ],
+    [
+     "chenxing-weifang",
+     {
+      "vai engine | xác nhận": 2,
+      "vai alternator | không đối chiếu": 1,
+      "vai alternator | mâu thuẫn": 1
+     }
+    ],
+    [
+     "bruno-generators",
+     {
+      "thông số tổ máy voltage (tự kiểm) | vô lý (tự kiểm)": 3
+     }
+    ],
+    [
+     "huachai-deutz",
+     {
+      "vai engine | không đối chiếu": 1,
+      "vai engine | xác nhận": 1,
+      "vai engine | mâu thuẫn": 1
+     }
+    ],
+    [
+     "huatai-yangzhou",
+     {
+      "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": 3
+     }
+    ],
+    [
+     "kubota",
+     {
+      "vai engine | xác nhận": 2
+     }
+    ],
+    [
+     "xinzhengfa",
+     {
+      "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": 2
+     }
+    ],
+    [
+     "zichai",
+     {
+      "vai engine | không đối chiếu": 2
+     }
+    ],
+    [
+     "cameo-power",
+     {
+      "vai engine | không đối chiếu": 1
+     }
+    ],
+    [
+     "kangwo-guangdong",
+     {
+      "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": 1
+     }
+    ],
+    [
+     "yunding-jiangsu",
+     {
+      "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": 1
+     }
+    ]
+   ]
+  }
+ },
+ "totals": {
+  "records": 59222,
+  "tables": 6521,
+  "sups": 267
+ }
+}

@@ -1,0 +1,216 @@
+diff --git a/web/catalog.js b/web/catalog.js
+index 390c5159..0e07ef94 100644
+--- a/web/catalog.js
++++ b/web/catalog.js
+@@ -10,6 +10,9 @@
+ // Dùng chung cho trang web (window.GenbidCatalog) và Node (suppliers/catalog-stats.mjs).
+ (function (root) {
+   "use strict";
++  // chat-luong-3 (bản ĐO, không merge): mỗi bản ghi mang `guess` = các đường đọc đoán đã đi qua; GENBID_GUESS_OFF=E2,PW
++  // tắt từng đường (để thiếu thay vì đoán). Rỗng: kết quả y như main.
++  const GUESS_OFF = new Set(String((root && root.GENBID_GUESS_OFF) || (typeof process !== "undefined" && process.env && process.env.GENBID_GUESS_OFF) || "").split(",").filter(Boolean));
+ 
+   const ENGINE_BRANDS = [
+     [/\bcummins\b|康明斯/i, "Cummins"], [/\bperkins\b|珀金斯/i, "Perkins"], [/\bbaudouin\b|博杜安/i, "Baudouin"],
+@@ -420,12 +423,14 @@
+       if (!n && ordered) return { n: 0, got: null, end: pos };
+       if (!n) return lone && bare.size === 2 && !(pos < stop && (FIG_CELL.test(flat(cells[pos])) || PAIR_CELL.test(flat(cells[pos])))) ? { n: 0, got: null, end: pos } : null;
+       // One figure set with no rating word on its title: the rating the rest of the header names.
+-      let power = got;
++      let power = got, byCtx = false;
+       if (got.rated && !got.prime && !got.standby) {
+         const p = RATE_PR.test(undot(ctx)), s = RATE_SB.test(undot(ctx));
+         if (p && !s) power = { prime: got.rated }; else if (s && !p) power = { standby: got.rated };
++        byCtx = power !== got;
++        if (byCtx && GUESS_OFF.has("PWC")) power = got;
+       }
+-      return { n: n * 4 + (got.prime ? 1 : 0) + (got.standby ? 1 : 0), got: power, end: pos };
++      return { n: n * 4 + (got.prime ? 1 : 0) + (got.standby ? 1 : 0), got: power, end: pos, byCtx };
+     };
+     // Every line that has output titles is tried, with each line of sub-titles and with none; the reading that places the
+     // most figures is kept (the line "Prime Power (kW) | Prime Power (kVA) | …" under "… | Prime | Standby", acepow).
+@@ -491,7 +496,7 @@
+       const both = Object.values(alt).filter((p) => p.kVA && p.kW).length === 2;
+       if (!figs.some(([, , i]) => i < best.start) && (figs.some(([, , i]) => i >= best.end) || (both && figs.some(([u, v]) => mine.has(v) && mine.get(v) !== u)))) return undefined;
+     }
+-    return { power: best.got };
++    return { power: best.got, byCtx: best.byCtx };
+   }
+   // Label tables ("Engine model: X", "| Prime power | 300kVA |"): one model per value column.
+   // A heading line of a datasheet: "engine" / "alternator" for the part the lines below are about, null for a genset
+@@ -544,6 +549,8 @@
+     const cols = [];
+     // The first line naming a value wins: single-model pages often list related models further down.
+     const put = (j, k, v) => { const c = (cols[j] = cols[j] || {}); if (c[k] == null) c[k] = v; };
++    // chat-luong-3: L1 a bare "Model" given a part by order / code shape, L2 a "Model" beside an engine's line, L3 "a/b" paired by ratio.
++    const gtag = (j, k, g) => { const c = (cols[j] = cols[j] || {}); (c.guess = c.guess || {})[k] = g; };
+     // A second line adds the other unit of a rating only when the two are one output: kW = 0,8 × kVA (rounded) or
+     // kW = kVA. Else the later line is another machine's ("Prime Power: 312.5KVA" of the genset, then "Prime power |
+     // KW | 280" of its engine, longkai: 312,5 kVA / 280 kW; rà soát 18/11/2026) and is left out.
+@@ -617,7 +624,7 @@
+         if (isCode(mv)) put(0, part === "engine" ? "engine" : "alternator", mv);
+         continue;
+       }
+-      if (bareModel && !part && /^(model|model\s*no\.?|型号)$/.test(bare)) { if (isCode(vals[0])) put(0, (details ? cols[0]?.engine != null : ALT_CODE.test(vals[0])) ? "alternator" : "engine", vals[0]); continue; }
++      if (bareModel && !part && /^(model|model\s*no\.?|型号)$/.test(bare)) { if (isCode(vals[0])) { const k = (details ? cols[0]?.engine != null : ALT_CODE.test(vals[0])) ? "alternator" : "engine"; if (cols[0]?.[k] == null && !GUESS_OFF.has("L1")) { put(0, k, vals[0]); gtag(0, k, "L1"); } } continue; }
+       // A sheet with no part headings (himoinsa, hipower: "Rated Engine Output: …", "Model: 4TNV88BGGEH", "Engine Type:
+       // 4-stroke diesel" … "Model: S1L2.J1"): a bare "Model" beside an engine's line is the engine, not the genset;
+       // a later one written as an alternator's code is the alternator (rà soát 18/11/2026: the engine was read as the
+@@ -626,8 +633,8 @@
+       if (plainSheet && !part && !bareModel && bare === "model" && c.length === 2) {
+         const eng = cols[0]?.sheetEngine, code = isCode(vals[0]) && !/\s/.test(vals[0]);
+         if (!eng && !code) continue;
+-        if (!eng && [lines[li - 1], lines[li + 1]].some((x) => ENGINE_LBL.test(labelOf(x)))) { put(0, "engine", vals[0]); cols[0].sheetEngine = true; continue; }
+-        if (eng && code && cols[0].alternator == null && ALT_CODE.test(vals[0])) { put(0, "alternator", vals[0]); continue; }
++        if (!eng && [lines[li - 1], lines[li + 1]].some((x) => ENGINE_LBL.test(labelOf(x)))) { if (!GUESS_OFF.has("L2") && cols[0]?.engine == null) { put(0, "engine", vals[0]); gtag(0, "engine", "L2"); } (cols[0] = cols[0] || {}).sheetEngine = true; continue; }
++        if (eng && code && cols[0].alternator == null && ALT_CODE.test(vals[0])) { if (!GUESS_OFF.has("L2")) { put(0, "alternator", vals[0]); gtag(0, "alternator", "L2"); } continue; }
+         // A third one (a second alternator offered, a controller) is not the genset's model.
+         if (eng) continue;
+       }
+@@ -684,7 +691,8 @@
+             merge(j, order[1], { [u]: +pair[1] }); merge(j, order[2], { [u]: +pair[2] });
+             return;
+           }
+-          if (pair) { const p = pairOf(+pair[1], +pair[2]); if (p) merge(j, kind, p); }
++          // L3B (guard, measured): the label must name a rating, unit or output, not only "power" ("GB POWER | 3/4", a page footer).
++          if (pair) { const p = pairOf(+pair[1], +pair[2]); if (p && !GUESS_OFF.has("L3") && !(GUESS_OFF.has("L3B") && !/prime|standby|rated|output|kva|\bkw|capacity|rating|功率|主用|备用|常用|额定|continuous|max/i.test(L) && !PRIME.test(L) && !STANDBY.test(L) && !c.slice(1).some((x) => /^(kva|kw)/i.test(x)))) { const had = cols[j]?.[kind]; merge(j, kind, p); if (cols[j]?.[kind] !== had) gtag(j, "power", "L3"); } }
+         });
+       } else if (engineModel && /^(model|model\s*series|models?|型号)$/.test(bare)) vals.forEach((v, j) => isCode(v) && !badCol.has(j) && put(j, "engine", v));
+       else if (/^(genset\s*)?model|机组型号|型号$/i.test(L) && !ENGINE_LBL.test(L) && !ALT_LBL.test(L)) vals.forEach((v, j) => isCode(v) && put(j, "genset", v));
+@@ -705,6 +713,22 @@
+   // Figures of a table row, by the title of their column. Only when the header lines up with the row: the same
+   // number of cells, or one fewer with the genset model in front left untitled. A second header line made only of
+   // units ("| KVA/KW | L/h") is added to the title.
++  const viaOf = (list, v, power) => list.map((x) => ({ ...x, via: v })).filter((x) => !GUESS_OFF.has(v) && !(GUESS_OFF.has("WCHK") && !relOk(x.key, x.value, power)));
++  // WCHK (guard, measured): a current or a voltage laid over its cell by position must fit the row's own power (the
++  // relations of suppliers/spec-diff.mjs checkSpec); no power read: kept.
++  function relOk(key, value, power) {
++    if (key !== "current" && key !== "voltage") return true;
++    const v = +((String(value).replace(/(\d),(\d{3})\b/g, "$1$2").match(/\d+(?:\.\d+)?/) || [])[0]);
++    if (!(v > 0)) return true;
++    if (key === "voltage") return [110, 115, 120, 127, 208, 220, 230, 240, 380, 400, 415, 440, 480, 690, 3300, 6000, 6300, 6600, 10000, 10500, 11000].includes(v);
++    const P = Object.values(power || {}).filter(Boolean), kvas = P.map((p) => p.kVA).filter(Boolean), kws = P.map((p) => p.kW).filter(Boolean);
++    if (!kvas.length && !kws.length) return true;
++    const near = (x, y, t) => Math.abs(x / y - 1) <= t;
++    return kvas.some((k) => [1.443, 1.519, 1.39, 1.312, 1.203].some((f) => near(v, k * f, 0.04))) || kws.some((k) => [1.8, 1.9, 1.804].some((f) => near(v, k * f, 0.04)))
++      || kvas.some((k) => near(v, k * 4.35, 0.05)) || kws.some((k) => near(v, k * 4.35, 0.05) || near(v, k * 4.55, 0.05))
++      // high-voltage sets (HGM1100EHV10.5: 55 A at 10.5 kV; yingtai 1120GF: 128 A at 6.3 kV)
++      || [3300, 6000, 6300, 6600, 10000, 10500, 11000].some((V) => kvas.some((k) => near(v, (k * 1000) / (1.732 * V), 0.04)) || kws.some((k) => near(v, (k * 1000) / (1.732 * V * 0.8), 0.04)));
++  }
+   function rowSpecs(t, cells, at = {}) {
+     const hs = (t.header || []).map(cellsOf);
+     if (!hs.length) return [];
+@@ -732,7 +756,7 @@
+     let shift = null;
+     if (titles.length === cells.length) shift = 0;
+     else if (titles.length === cells.length - 1 && isCode(cells[0]) && !/model|型号/i.test(titles[0])) shift = 1;
+-    if (shift != null) { const r = lined(titles, units, shift); if (r?.length) return engRatings(hs, cells, at, r); }
++    if (shift != null) { const r = lined(titles, units, shift); if (r?.length) return engRatings(hs, cells, at, shift ? viaOf(r, "S2", at.power) : r); }
+     // A header of several lines whose second line names every column ("| | KW | kVA | KW | kVA | Cummins | ...").
+     for (const h of hs.slice(1)) if (h.length === cells.length && h.some((x) => specKey(x))) { const r = lined(h, [], 0, kWOf(at.power)); if (r?.length) return engRatings(hs, cells, at, r); }
+     return engRatings(hs, cells, at, walkedSpecs(hs, cells, at));
+@@ -856,7 +880,7 @@
+       if (gi === 0 && /model|型号|机组/i.test(h[0] || "") && !engT(h[0]) && !altT(h[0])) starts.push([0, 0, 1]);
+       starts.push([h.length - 1, cells.length - 1, -1, true]);
+       for (const [j0, c0, d, edge] of starts) {
+-        const mine = [];
++        const mine = [], via = edge ? "WR" : c0 === 0 && j0 === 0 && d === 1 && gi === 0 ? "WG" : "WE";
+         let anchored = !edge, skips = 0, keep = 0, miss = false;
+         for (let j = j0, c = c0; j >= 0 && j < h.length && c >= 0 && c < cells.length; j += d, c += d) {
+           const x = h[j];
+@@ -877,8 +901,8 @@
+           if (!specFits(key, val) || !likely(key, val, kW)) break;
+           // Two columns of one kind (open and silent size, weight): the one further left.
+           const same = mine.findIndex((m) => m.key === key);
+-          if (same >= 0) { if (c < mine[same].c) mine[same] = { key, label: x, value: val, c }; }
+-          else mine.push({ key, label: x, value: val, c });
++          if (same >= 0) { if (c < mine[same].c) mine[same] = { key, label: x, value: val, c, via }; }
++          else mine.push({ key, label: x, value: val, c, via });
+         }
+         // Every power title of the line must cover such a pair: a row where one was not read (yingtai-jiangsu
+         // "64 | 75 | 88 | 88", "330 | 375 | 380 | 475") is still a cell off after it, so nothing past the first pair
+@@ -886,7 +910,7 @@
+         if (skips && miss) mine.length = keep;
+         // From the last cell alone, with no known cell on the way: only when two figures or more fit.
+         if (!anchored && mine.length < 2) continue;
+-        for (const m of mine) { const g = got.get(m.key); if (g && g.c !== m.c) bad.add(m.key); else if (!g) got.set(m.key, m); }
++        for (const m of mine) { const g = got.get(m.key); if (g && g.c !== m.c) bad.add(m.key); else if (!g) got.set(m.key, { ...m, vias: new Set([m.via]) }); else g.vias.add(m.via); }
+       }
+     }
+     // One cell read under two titles by two walks (a row with a cell left out: yingtai-jiangsu "… | 115.2 | 1200 |
+@@ -894,7 +918,8 @@
+     // A title already read at two places says nothing about the cell.
+     const at = new Map();
+     for (const m of [...got.values()].filter((m) => !bad.has(m.key))) { const k = at.get(m.c); if (k && k !== m.key) { bad.add(k); bad.add(m.key); } else at.set(m.c, m.key); }
+-    return [...got.values()].filter((m) => !bad.has(m.key)).map(({ key, label, value }) => ({ key, label, value }));
++    // via: the walks that read it ("WE" from the engine / alternator cell, "WG" from the genset model at the left, "WR" from the last cell).
++    return [...got.values()].filter((m) => !bad.has(m.key) && ![...m.vias].every((v) => GUESS_OFF.has(v)) && !(GUESS_OFF.has("WCHK") && !relOk(m.key, m.value, power))).map(({ key, label, value, vias }) => ({ key, label, value, via: [...vias].sort().join("+") }));
+   }
+ 
+   function addMake(list, name, via) { if (name && !list.some((m) => m.name === name)) list.push({ name, via }); }
+@@ -935,9 +960,9 @@
+           const rowText = [c.genset, c.engine, c.alternator].filter(Boolean).join(" ");
+           c.specs = saneSpecs(c.specs, power);
+           if (c.engine && isCode(c.engine.replace(/^[a-z]+\s+(?=\S*\d)/i, (m) => (brandIn(m, ENGINE_BRANDS).length ? "" : m))))
+-            out.push({ ...base, kind: "engine", model: c.engine.replace(/^(cummins|perkins|weichai|yuchai|deutz|volvo|baudouin|mtu|doosan|mitsubishi|sdec|kubota|yanmar|isuzu|ricardo|lovol|fawde)\s+/i, ""), makes: makesFor("engine", c.engine + " " + (c.engineBrand || ""), c.engineBrand), genset: c.genset || null, power, freq: tFreq, other: c.alternator || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows } });
++            out.push({ ...base, kind: "engine", model: c.engine.replace(/^(cummins|perkins|weichai|yuchai|deutz|volvo|baudouin|mtu|doosan|mitsubishi|sdec|kubota|yanmar|isuzu|ricardo|lovol|fawde)\s+/i, ""), makes: makesFor("engine", c.engine + " " + (c.engineBrand || ""), c.engineBrand), genset: c.genset || null, power, freq: tFreq, other: c.alternator || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows }, guess: [c.guess?.engine, c.guess?.power].filter(Boolean) });
+           if (c.alternator && isCode(c.alternator.replace(/^[a-z-]+\s+(?=\S*\d)/i, "")))
+-            out.push({ ...base, kind: "alternator", model: c.alternator.replace(/^(stamford|leroy[\s-]?somer|mecc\s?alte|marathon|engga)\s+/i, ""), makes: makesFor("alternator", c.alternator + " " + (c.altBrand || ""), c.altBrand, c.alternator), genset: c.genset || null, power, freq: tFreq, other: c.engine || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows } });
++            out.push({ ...base, kind: "alternator", model: c.alternator.replace(/^(stamford|leroy[\s-]?somer|mecc\s?alte|marathon|engga)\s+/i, ""), makes: makesFor("alternator", c.alternator + " " + (c.altBrand || ""), c.altBrand, c.alternator), genset: c.genset || null, power, freq: tFreq, other: c.engine || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows }, guess: [c.guess?.alternator, c.guess?.power].filter(Boolean) });
+         }
+         return;
+       }
+@@ -981,10 +1006,34 @@
+         }
+         const stop = ei >= 0 ? ei : ai >= 0 ? ai : cells.length;
+         const titled = engineTable ? null : titledPowers((t.header || []).map(cellsOf), cells, { gi, ei, ai }, title);
+-        const power = engineTable ? null : titled ? titled.power : powersIn(cells.slice(gi >= 0 ? gi + 1 : 0, stop), headerText + " " + title, true);
+-        const common = { ...base, row: ri, line, genset: gi >= 0 ? cells[gi] : null, power, freq, header: t.header || [], specs: saneSpecs(rowSpecs(t, cells, { ei, ai, gi, power }), power) };
+-        if (ei >= 0) out.push({ ...common, kind: "engine", model: tidyModel(cells[ei], ENGINE_BRANDS), makes: makesFor("engine", rowText, null), other: ai >= 0 ? cells[ai] : null, own: engineTable });
+-        if (ai >= 0) out.push({ ...common, kind: "alternator", model: tidyModel(cells[ai], ALT_BRANDS), makes: makesFor("alternator", rowText, null, cells[ai]), other: ei >= 0 ? cells[ei] : null });
++        let power = engineTable ? null : titled ? titled.power : powersIn(cells.slice(gi >= 0 ? gi + 1 : 0, stop), headerText + " " + title, true);
++        // chat-luong-3: which guessing paths this row went through.
++        //   E2 / A2  engine (alternator) model: the header has its title, but on no line at the cell's index (multi-level
++        //            header, other width): the cell is chosen by order / code shape. E3 / A3: no title for it at all
++        //            (engine brand in the header, ALT_CODE shape after the engine). E4: an engine maker's table (first code).
++        //   G2       genset model: first or second cell a code, no model title over it.
++        //   PW       power paired by ratio 0.8 (powersIn strict), the titles did not fit. PWC: rating taken from the rest of the header.
++        const hs0 = (t.header || []).map(cellsOf);
++        const titledAt = (i, test) => hs0.some((h) => (h.length === cells.length && test(h[i] || "")) || (!h[0] && h.length === cells.length + 1 && test(h[i + 1] || "")));
++        const roleTag = (i, test, has) => (titledAt(i, test) ? null : hs0.some((h) => h.some((x) => test(x))) ? "2" : has ? "3" : "3");
++        const eTag = ei < 0 ? null : engineTable ? "E4" : ((x) => x && "E" + x)(roleTag(ei, engTitle));
++        const aTag = ai < 0 ? null : ((x) => x && "A" + x)(roleTag(ai, altTitle));
++        const gTag = gi >= 0 && !titledAt(gi, (x) => /model|型号|机组|type/i.test(x) && !engTitle(x) && !altTitle(x)) ? "G2" : null;
++        const pTag = !engineTable && !titled && power ? "PW" : titled && titled.byCtx ? "PWC" : null;
++        const read = power;
++        if (pTag === "PW" && GUESS_OFF.has("PW")) power = null;
++        const guess = [gTag, pTag].filter(Boolean);
++        // Guards (measured, off unless named): ONE = the header titles an engine AND an alternator column but the row has one
++        // code beside the genset's (the other cell is no code: "ZS1110或295D", garbled text): which part it is is not known.
++        // LROW = a row that is itself label | value pairs ("| 机组型号 | 30GF | 型号 | 4BT3.9-G2 | 型号 | 30GF").
++        const restCodes = codes.filter((i) => i !== gi);
++        const oneCode = !engineTable && restCodes.length === 1 && hs0.some((h) => h.some(engTitle)) && hs0.some((h) => h.some(altTitle));
++        const labelRow = cells.some((c) => /^(型号|model|机组型号|type)$/i.test(c));
++        if ((oneCode && GUESS_OFF.has("ONE")) || (labelRow && GUESS_OFF.has("LROW"))) return;
++        // The specs are read with the power as on main (turning PW off only leaves the power out).
++        const common = { ...base, row: ri, line, genset: gi >= 0 && !(gTag && GUESS_OFF.has(gTag)) ? cells[gi] : null, power, freq, header: t.header || [], specs: saneSpecs(rowSpecs(t, cells, { ei, ai, gi, power: read }), read) };
++        if (ei >= 0 && !GUESS_OFF.has(eTag)) out.push({ ...common, kind: "engine", model: tidyModel(cells[ei], ENGINE_BRANDS), makes: makesFor("engine", rowText, null), other: ai >= 0 && !GUESS_OFF.has(aTag) ? cells[ai] : null, own: engineTable, guess: [eTag, ...guess].filter(Boolean) });
++        if (ai >= 0 && !GUESS_OFF.has(aTag)) out.push({ ...common, kind: "alternator", model: tidyModel(cells[ai], ALT_BRANDS), makes: makesFor("alternator", rowText, null, cells[ai]), other: ei >= 0 && !GUESS_OFF.has(eTag) ? cells[ei] : null, guess: [aTag, ...guess].filter(Boolean) });
+       });
+     });
+     // A one-model datasheet whose table gives the power but not the engine (Rehlko D440: a two-column PDF puts "Engine
+@@ -1003,9 +1052,12 @@
+         for (const m of p.engineMakes || []) for (const b of brandIn(m, ENGINE_BRANDS)) addMake(makes, b, "tên trang");
+         // Every rating the row gives (AGG CU1250D5 "1250/1000" ESP and "1125/900" PRP), else the line's one figure.
+         const ms = [p.series, ...(p.engineModels || [])], row = rowPowerOf(t, line, pw, ms);
+-        const both = row && Object.keys(row).length > 1 ? row : colPowerOf(t, line, pw, ms) || sheetPowerOf(t, pw, ms) || acrossPowerOf(t, pw, ms) || namedRowsPowerOf(t, pw, ms) || row;
++        let both = row && Object.keys(row).length > 1 ? row : colPowerOf(t, line, pw, ms) || sheetPowerOf(t, pw, ms) || acrossPowerOf(t, pw, ms) || namedRowsPowerOf(t, pw, ms) || row;
++        // chat-luong-3: FL = the row's other figures paired with the line's own by ratio (rowPowerOf: powersIn, 1.15-1.35).
++        const fl = both && both === row;
++        if (fl && GUESS_OFF.has("FL")) both = null;
+         out.push({ supplierId: s.id, n, table: ti, title: String(t.title || ""), row: t.rows.indexOf(line), line, genset: isCode(p.series) ? p.series : null, power: both || { [kind]: { [pw.unit]: pw.min } },
+-          freq: freqIn((p.frequency || []).join(" ")) || freqIn(`${(t.header || []).join(" ")} ${t.title || ""}`), header: t.header || [], specs: [], kind: "engine", model: tidyModel(model, ENGINE_BRANDS), makes, other: null, fromLine: true });
++          freq: freqIn((p.frequency || []).join(" ")) || freqIn(`${(t.header || []).join(" ")} ${t.title || ""}`), header: t.header || [], specs: [], kind: "engine", model: tidyModel(model, ENGINE_BRANDS), makes, other: null, fromLine: true, guess: fl ? ["FL"] : [] });
+         break;
+       }
+     }

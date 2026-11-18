@@ -1,0 +1,5108 @@
+{
+ "thông số tổ máy voltage (tự kiểm) | vô lý (tự kiểm)": [
+  {
+   "sup": "bruno-generators",
+   "n": 103,
+   "table": 1,
+   "row": 0,
+   "kind": "engine",
+   "model": "Q401 AUS-80",
+   "val": "voltage=225",
+   "change": "voltage bỏ: 225 → ∅",
+   "header": [
+    "| | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 HZ | | 60 HZ | | | | | | | | | TANK l | DIMENSIONS cm | | | MAXIMUM SIZE cm | | | WEIGHT kg | STANDARD PANEL",
+    "| MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 Hz | | 60 Hz | | Engine | cm3 | kWm | kWm | fuel consumption (l/h) | fuel consumption (l/h) | Aspiration | TANK (l) | DIMENSIONS (cm) | | | MAXI"
+   ],
+   "line": "| MB 9504 KL | 4 | 250 W | 1000 W | DC | 48 V | - | - | - | - | KOHLER LDW 702 | 686 | - | 5,9 | - | 0,35 | N | 110 | 235 | 148 | 225 | 235 | 202 | 883 | 1060 | Q401 AUS-80"
+  },
+  {
+   "sup": "bruno-generators",
+   "n": 103,
+   "table": 1,
+   "row": 1,
+   "kind": "engine",
+   "model": "Q401 AUS-80",
+   "val": "voltage=225",
+   "change": "voltage bỏ: 225 → ∅",
+   "header": [
+    "| | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 HZ | | 60 HZ | | | | | | | | | TANK l | DIMENSIONS cm | | | MAXIMUM SIZE cm | | | WEIGHT kg | STANDARD PANEL",
+    "| MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 Hz | | 60 Hz | | Engine | cm3 | kWm | kWm | fuel consumption (l/h) | fuel consumption (l/h) | Aspiration | TANK (l) | DIMENSIONS (cm) | | | MAXI"
+   ],
+   "line": "| MB 9504 KL | 4 | 300 W | 1200 W | DC | 48 V | - | - | - | - | KOHLER LDW 702 | 686 | - | 5,9 | - | 0,46 | N | 110 | 235 | 148 | 225 | 235 | 202 | 883 | 1065 | Q401 AUS-80"
+  },
+  {
+   "sup": "bruno-generators",
+   "n": 104,
+   "table": 2,
+   "row": 1,
+   "kind": "engine",
+   "model": "MCP 120-80",
+   "val": "voltage=225",
+   "change": "voltage bỏ: 225 → ∅",
+   "header": [
+    "| | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 HZ | | 60 HZ | | | | | | | | | TANK l | DIMENSIONS cm | | | MAXIMUM SIZE cm | | | WEIGHT kg | STANDARD PANEL",
+    "| MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 Hz | | 60 Hz | | Engine | cm3 | kWm | kWm | fuel consumption (l/h) | fuel consumption (l/h) | Aspiration | TANK (l) | DIMENSIONS (cm) | | | MAXI"
+   ],
+   "line": "| MT 9810 KL** | 8+2 | 330+250 W | 3140 W | AC | 230 V | 8,6 | 7,6 | 9,5 | 9 | KOHLER KDW 1003 | 1028 | 7,6 | 9,1 | 1,4 | 1,3 | N | 250 | 244 | 190 | 225 | 419 | 237 | 920 | 2000 | MCP 120-80"
+  },
+  {
+   "sup": "power-hf",
+   "n": 109,
+   "table": 10,
+   "row": 13,
+   "kind": "engine",
+   "model": "PHF6132ZLD1(R4J01)",
+   "val": "voltage=132",
+   "change": "voltage bỏ: 132 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 14 | PHF-120RX | 120 | 132 | 216 | PHF6132ZLD1(R4J01) | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 109,
+   "table": 10,
+   "row": 14,
+   "kind": "engine",
+   "model": "PHF14L400",
+   "val": "voltage=330",
+   "change": "voltage bỏ: 330 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 15 | PHF-300HX | 300 | 330 | 540 | PHF14L400 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 109,
+   "table": 10,
+   "row": 15,
+   "kind": "engine",
+   "model": "PHF15L440",
+   "val": "voltage=385",
+   "change": "voltage bỏ: 385 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 16 | PHF-350HX | 350 | 385 | 630 | PHF15L440 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 111,
+   "table": 13,
+   "row": 7,
+   "kind": "engine",
+   "model": "PHF6260ZL1Q1",
+   "val": "voltage=264",
+   "change": "voltage bỏ: 264 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 发动机型号 | 敞开型 | 静音型"
+   ],
+   "line": "| 8 | PHF-240RX-Q | 240 | 264 | 432 | PHF6260ZL1Q1 | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 10,
+   "kind": "engine",
+   "model": "WP6D152E200",
+   "val": "voltage=132",
+   "change": "voltage bỏ: 132 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 11 | PHF-120WX | 120 | 132 | 216 | WP6D152E200 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 11,
+   "kind": "engine",
+   "model": "WP10D200E200",
+   "val": "voltage=165",
+   "change": "voltage bỏ: 165 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 12 | PHF-150WX | 150 | 165 | 270 | WP10D200E200 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 12,
+   "kind": "engine",
+   "model": "WP10D238E200",
+   "val": "voltage=198",
+   "change": "voltage bỏ: 198 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 13 | PHF-180WX | 180 | 198 | 324 | WP10D238E200 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 14,
+   "kind": "engine",
+   "model": "WP12D317E200",
+   "val": "voltage=275",
+   "change": "voltage bỏ: 275 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 15 | PHF-250WX | 250 | 275 | 450 | WP12D317E200 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 15,
+   "kind": "engine",
+   "model": "WP13D385E200",
+   "val": "voltage=330",
+   "change": "voltage bỏ: 330 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 16 | PHF-300WX | 300 | 330 | 540 | WP13D385E200 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 16,
+   "kind": "engine",
+   "model": "6M26D447E200",
+   "val": "voltage=396",
+   "change": "voltage bỏ: 396 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 17 | PHF-360WX | 360 | 396 | 648 | 6M26D447E200 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 18,
+   "kind": "engine",
+   "model": "6M33D605E200",
+   "val": "voltage=550",
+   "change": "voltage bỏ: 550 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 19 | PHF-500WX | 500 | 550 | 900 | 6M33D605E200 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 19,
+   "kind": "engine",
+   "model": "12M26D748E200",
+   "val": "voltage=660",
+   "change": "voltage bỏ: 660 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 20 | PHF-600WX | 600 | 660 | 1080 | 12M26D748E200 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 20,
+   "kind": "engine",
+   "model": "12M26D792E200",
+   "val": "voltage=715",
+   "change": "voltage bỏ: 715 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 21 | PHF-650WX | 650 | 715 | 1170 | 12M26D792E200 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 21,
+   "kind": "engine",
+   "model": "12M26D902E200",
+   "val": "voltage=825",
+   "change": "voltage bỏ: 825 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 22 | PHF-750WX | 750 | 825 | 1350 | 12M26D902E200 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 22,
+   "kind": "engine",
+   "model": "12M26D968E200",
+   "val": "voltage=880",
+   "change": "voltage bỏ: 880 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 23 | PHF-800WX | 800 | 880 | 1440 | 12M26D968E200 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 23,
+   "kind": "engine",
+   "model": "12M33D1108E200",
+   "val": "voltage=990",
+   "change": "voltage bỏ: 990 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 24 | PHF-900WX | 900 | 990 | 1620 | 12M33D1108E200 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 24,
+   "kind": "engine",
+   "model": "12M33D1210E200",
+   "val": "voltage=1100",
+   "change": "voltage bỏ: 1100 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 25 | PHF-1000WX | 1000 | 1100 | 1800 | 12M33D1210E200 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 8,
+   "kind": "engine",
+   "model": "YC6A200L-D20",
+   "val": "voltage=132",
+   "change": "voltage bỏ: 132 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 9 | PHF-120YX | 120 | 132 | 216 | YC6A200L-D20 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 9,
+   "kind": "engine",
+   "model": "YC6A230L-D20",
+   "val": "voltage=143",
+   "change": "voltage bỏ: 143 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 10 | PHF-130YX | 130 | 143 | 234 | YC6A230L-D20 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 10,
+   "kind": "engine",
+   "model": "YC6G245L-D20",
+   "val": "voltage=165",
+   "change": "voltage bỏ: 165 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 11 | PHF-150YX | 150 | 165 | 270 | YC6G245L-D20 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 12,
+   "kind": "engine",
+   "model": "YC6MK420L-D20",
+   "val": "voltage=275",
+   "change": "voltage bỏ: 275 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 13 | PHF-250YX | 250 | 275 | 450 | YC6MK420L-D20 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 13,
+   "kind": "engine",
+   "model": "YC6T550L-D21",
+   "val": "voltage=330",
+   "change": "voltage bỏ: 330 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 15 | PHF-300YX | 300 | 330 | 540 | YC6T550L-D21 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 14,
+   "kind": "engine",
+   "model": "YC6T600L-D22",
+   "val": "voltage=385",
+   "change": "voltage bỏ: 385 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 16 | PHF-350YX | 350 | 385 | 630 | YC6T600L-D22 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 16,
+   "kind": "engine",
+   "model": "YC6TD780L-D20",
+   "val": "voltage=528",
+   "change": "voltage bỏ: 528 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 18 | PHF-480YX | 480 | 528 | 864 | YC6TD780L-D20 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 17,
+   "kind": "engine",
+   "model": "YC6TD840L-D20",
+   "val": "voltage=550",
+   "change": "voltage bỏ: 550 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 19 | PHF-500YX | 500 | 550 | 900 | YC6TD840L-D20 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 18,
+   "kind": "engine",
+   "model": "YC6C1020L-D20",
+   "val": "voltage=660",
+   "change": "voltage bỏ: 660 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 20 | PHF-600YX | 600 | 660 | 1080 | YC6C1020L-D20 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 19,
+   "kind": "engine",
+   "model": "YC6C1070L-D20",
+   "val": "voltage=715",
+   "change": "voltage bỏ: 715 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 21 | PHF-650YX | 650 | 715 | 1170 | YC6C1070L-D20 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 20,
+   "kind": "engine",
+   "model": "YC6C1220L-D20",
+   "val": "voltage=825",
+   "change": "voltage bỏ: 825 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 22 | PHF-750YX | 750 | 825 | 1350 | YC6C1220L-D20 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 21,
+   "kind": "engine",
+   "model": "YC6C1320L-D20",
+   "val": "voltage=880",
+   "change": "voltage bỏ: 880 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 23 | PHF-800YX | 800 | 880 | 1440 | YC6C1320L-D20 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 22,
+   "kind": "engine",
+   "model": "YC12VC1680L-D20",
+   "val": "voltage=1100",
+   "change": "voltage bỏ: 1100 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 24 | PHF-1000YX | 1000 | 1100 | 1800 | YC12VC1680L-D20 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 23,
+   "kind": "engine",
+   "model": "YC12VC2070L-D20",
+   "val": "voltage=1320",
+   "change": "voltage bỏ: 1320 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 25 | PHF-1200YX | 1200 | 1320 | 2160 | YC12VC2070L-D20 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 24,
+   "kind": "engine",
+   "model": "YC12VC2270L-D20",
+   "val": "voltage=1430",
+   "change": "voltage bỏ: 1430 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 26 | PHF-1300YX | 1300 | 1430 | 2340 | YC12VC2270L-D20 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 25,
+   "kind": "engine",
+   "model": "YC12VC2510L-D20",
+   "val": "voltage=1650",
+   "change": "voltage bỏ: 1650 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 27 | PHF-1500YX | 1500 | 1650 | 2700 | YC12VC2510L-D20 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 6,
+   "kind": "engine",
+   "model": "6CTA8.3-G2",
+   "val": "voltage=165",
+   "change": "voltage bỏ: 165 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 7 | PHF-150CX | 150 | 165 | 270 | 6CTA8.3-G2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 7,
+   "kind": "engine",
+   "model": "6CTAA8.3-G2",
+   "val": "voltage=176",
+   "change": "voltage bỏ: 176 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 8 | PHF-160CX | 160 | 176 | 288 | 6CTAA8.3-G2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 10,
+   "kind": "engine",
+   "model": "NTA855-G1B",
+   "val": "voltage=275",
+   "change": "voltage bỏ: 275 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 11 | PHF-250CX | 250 | 275 | 450 | NTA855-G1B | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 11,
+   "kind": "engine",
+   "model": "NTA855-G4",
+   "val": "voltage=308",
+   "change": "voltage bỏ: 308 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 12 | PHF-280CX | 280 | 308 | 504 | NTA855-G4 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 12,
+   "kind": "engine",
+   "model": "NTAA855-G7",
+   "val": "voltage=330",
+   "change": "voltage bỏ: 330 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 13 | PHF-300CX | 300 | 330 | 540 | NTAA855-G7 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 13,
+   "kind": "engine",
+   "model": "KTA19-G3",
+   "val": "voltage=396",
+   "change": "voltage bỏ: 396 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 14 | PHF-360CX | 360 | 396 | 648 | KTA19-G3 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 15,
+   "kind": "engine",
+   "model": "KTAA19-G6",
+   "val": "voltage=506",
+   "change": "voltage bỏ: 506 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 16 | PHF-460CX | 460 | 506 | 828 | KTAA19-G6 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 16,
+   "kind": "engine",
+   "model": "KTA38-G",
+   "val": "voltage=550",
+   "change": "voltage bỏ: 550 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 17 | PHF-500CX | 500 | 550 | 900 | KTA38-G | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 17,
+   "kind": "engine",
+   "model": "KTA38-G2",
+   "val": "voltage=660",
+   "change": "voltage bỏ: 660 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 18 | PHF-600CX | 600 | 660 | 1080 | KTA38-G2 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 18,
+   "kind": "engine",
+   "model": "KTA38-G2A",
+   "val": "voltage=770",
+   "change": "voltage bỏ: 770 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 19 | PHF-700CX | 700 | 770 | 1260 | KTA38-G2A | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 19,
+   "kind": "engine",
+   "model": "KTA38-G5",
+   "val": "voltage=880",
+   "change": "voltage bỏ: 880 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 20 | PHF-800CX | 800 | 880 | 1440 | KTA38-G5 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 20,
+   "kind": "engine",
+   "model": "KTA50-G3",
+   "val": "voltage=1100",
+   "change": "voltage bỏ: 1100 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 21 | PHF-1000CX | 1000 | 1100 | 1800 | KTA50-G3 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 11,
+   "kind": "engine",
+   "model": "1106A-70TAG2",
+   "val": "voltage=121",
+   "change": "voltage bỏ: 121 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 12 | PHF-110PX | 110 | 121 | 198 | 1106A-70TAG2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 12,
+   "kind": "engine",
+   "model": "1106A-70TAG3",
+   "val": "voltage=154",
+   "change": "voltage bỏ: 154 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 13 | PHF-140PX | 140 | 154 | 252 | 1106A-70TAG3 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 13,
+   "kind": "engine",
+   "model": "1106A-70TAG4",
+   "val": "voltage=176",
+   "change": "voltage bỏ: 176 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 14 | PHF-160PX | 160 | 176 | 288 | 1106A-70TAG4 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 14,
+   "kind": "engine",
+   "model": "1506A-E88TAG2",
+   "val": "voltage=198",
+   "change": "voltage bỏ: 198 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 15 | PHF-180PX | 180 | 198 | 324 | 1506A-E88TAG2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 16,
+   "kind": "engine",
+   "model": "1506A-E88TAG4",
+   "val": "voltage=242",
+   "change": "voltage bỏ: 242 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 17 | PHF-220PX | 220 | 242 | 396 | 1506A-E88TAG4 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 17,
+   "kind": "engine",
+   "model": "1506A-E88TAG5",
+   "val": "voltage=275",
+   "change": "voltage bỏ: 275 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 18 | PHF-250PX | 250 | 275 | 450 | 1506A-E88TAG5 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 18,
+   "kind": "engine",
+   "model": "2206C-E13TAG2",
+   "val": "voltage=308",
+   "change": "voltage bỏ: 308 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 19 | PHF-280PX | 280 | 308 | 504 | 2206C-E13TAG2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 19,
+   "kind": "engine",
+   "model": "2206C-E13TAG3",
+   "val": "voltage=352",
+   "change": "voltage bỏ: 352 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 20 | PHF-320PX | 320 | 352 | 576 | 2206C-E13TAG3 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 20,
+   "kind": "engine",
+   "model": "2506C-E15TAG1",
+   "val": "voltage=396",
+   "change": "voltage bỏ: 396 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 21 | PHF-360PX | 360 | 396 | 648 | 2506C-E15TAG1 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 22,
+   "kind": "engine",
+   "model": "2806C-E18TAG1A",
+   "val": "voltage=528",
+   "change": "voltage bỏ: 528 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 23 | PHF-480PX | 480 | 528 | 864 | 2806C-E18TAG1A | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 23,
+   "kind": "engine",
+   "model": "2806C-E18TAG2",
+   "val": "voltage=572",
+   "change": "voltage bỏ: 572 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 24 | PHF-520PX | 520 | 572 | 936 | 2806C-E18TAG2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 24,
+   "kind": "engine",
+   "model": "4006-23TAG2A",
+   "val": "voltage=660",
+   "change": "voltage bỏ: 660 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 25 | PHF-600PX | 600 | 660 | 1080 | 4006-23TAG2A | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 25,
+   "kind": "engine",
+   "model": "4006-23TAG3A",
+   "val": "voltage=715",
+   "change": "voltage bỏ: 715 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 26 | PHF-650PX | 650 | 715 | 1170 | 4006-23TAG3A | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 26,
+   "kind": "engine",
+   "model": "4008TAG1A",
+   "val": "voltage=770",
+   "change": "voltage bỏ: 770 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 27 | PHF-700PX | 700 | 770 | 1260 | 4008TAG1A | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 27,
+   "kind": "engine",
+   "model": "4008TAG2A",
+   "val": "voltage=880",
+   "change": "voltage bỏ: 880 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 28 | PHF-800PX | 800 | 880 | 1440 | 4008TAG2A | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 28,
+   "kind": "engine",
+   "model": "4012-46TWG2A",
+   "val": "voltage=1100",
+   "change": "voltage bỏ: 1100 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 29 | PHF-1000PX | 1000 | 1100 | 1800 | 4012-46TWG2A | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 29,
+   "kind": "engine",
+   "model": "4012-46TAG2A",
+   "val": "voltage=1320",
+   "change": "voltage bỏ: 1320 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 30 | PHF-1200PX | 1200 | 1320 | 2160 | 4012-46TAG2A | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 30,
+   "kind": "engine",
+   "model": "4012-46TAG3A",
+   "val": "voltage=1485",
+   "change": "voltage bỏ: 1485 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 31 | PHF-1350PX | 1350 | 1485 | 2430 | 4012-46TAG3A | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 31,
+   "kind": "engine",
+   "model": "4016-61TRG1",
+   "val": "voltage=1650",
+   "change": "voltage bỏ: 1650 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 32 | PHF-1500PX | 1500 | 1650 | 2700 | 4016-61TRG1 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 32,
+   "kind": "engine",
+   "model": "4016-61TRG2",
+   "val": "voltage=1760",
+   "change": "voltage bỏ: 1760 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 33 | PHF-1600PX | 1600 | 1760 | 2880 | 4016-61TRG2 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 33,
+   "kind": "engine",
+   "model": "4016-61TRG3",
+   "val": "voltage=1980",
+   "change": "voltage bỏ: 1980 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 34 | PHF-1800PX | 1800 | 1980 | 3240 | 4016-61TRG3 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 2,
+   "kind": "engine",
+   "model": "SC8D220D2",
+   "val": "voltage=121",
+   "change": "voltage bỏ: 121 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 3 | PHF-110SX | 110 | 121 | 198 | SC8D220D2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 3,
+   "kind": "engine",
+   "model": "SC7H230D2",
+   "val": "voltage=132",
+   "change": "voltage bỏ: 132 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 4 | PHF-120SX | 120 | 132 | 216 | SC7H230D2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 4,
+   "kind": "engine",
+   "model": "SC7H250D2",
+   "val": "voltage=143",
+   "change": "voltage bỏ: 143 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 5 | PHF-130SX | 130 | 143 | 234 | SC7H250D2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 5,
+   "kind": "engine",
+   "model": "G128ZLD",
+   "val": "voltage=176",
+   "change": "voltage bỏ: 176 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 6 | PHF-160SX | 160 | 176 | 288 | G128ZLD | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 6,
+   "kind": "engine",
+   "model": "G128ZLD2",
+   "val": "voltage=198",
+   "change": "voltage bỏ: 198 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 7 | PHF-180SX | 180 | 198 | 324 | G128ZLD2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 8,
+   "kind": "engine",
+   "model": "G128ZLD11",
+   "val": "voltage=275",
+   "change": "voltage bỏ: 275 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 9 | PHF-250SX | 250 | 275 | 450 | G128ZLD11 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 9,
+   "kind": "engine",
+   "model": "SC15G500D2",
+   "val": "voltage=308",
+   "change": "voltage bỏ: 308 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 10 | PHF-280SX | 280 | 308 | 504 | SC15G500D2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 10,
+   "kind": "engine",
+   "model": "12V135AZLD",
+   "val": "voltage=330",
+   "change": "voltage bỏ: 330 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 11 | PHF-300SX | 300 | 330 | 540 | 12V135AZLD | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 11,
+   "kind": "engine",
+   "model": "12V135BZLD",
+   "val": "voltage=396",
+   "change": "voltage bỏ: 396 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 12 | PHF-360SX | 360 | 396 | 648 | 12V135BZLD | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 13,
+   "kind": "engine",
+   "model": "12V135BZLD1",
+   "val": "voltage=495",
+   "change": "voltage bỏ: 495 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 14 | PHF-450SX | 450 | 495 | 810 | 12V135BZLD1 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 117,
+   "table": 19,
+   "row": 3,
+   "kind": "engine",
+   "model": "TAD731GE",
+   "val": "voltage=132",
+   "change": "voltage bỏ: 132 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 4 | PHF-120VX | 120 | 132 | 216 | TAD731GE | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 117,
+   "table": 19,
+   "row": 4,
+   "kind": "engine",
+   "model": "TAD732GE",
+   "val": "voltage=165",
+   "change": "voltage bỏ: 165 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 5 | PHF-150VX | 150 | 165 | 270 | TAD732GE | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 117,
+   "table": 19,
+   "row": 5,
+   "kind": "engine",
+   "model": "TAD733GE",
+   "val": "voltage=176",
+   "change": "voltage bỏ: 176 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 6 | PHF-160VX | 160 | 176 | 288 | TAD733GE | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 117,
+   "table": 19,
+   "row": 7,
+   "kind": "engine",
+   "model": "TAD1341GE",
+   "val": "voltage=275",
+   "change": "voltage bỏ: 275 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 8 | PHF-250VX | 250 | 275 | 450 | TAD1341GE | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 117,
+   "table": 19,
+   "row": 8,
+   "kind": "engine",
+   "model": "TAD1342GE",
+   "val": "voltage=308",
+   "change": "voltage bỏ: 308 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 9 | PHF-280VX | 280 | 308 | 504 | TAD1342GE | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 117,
+   "table": 19,
+   "row": 9,
+   "kind": "engine",
+   "model": "TAD1343GE",
+   "val": "voltage=330",
+   "change": "voltage bỏ: 330 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 10 | PHF-300VX | 300 | 330 | 540 | TAD1343GE | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 117,
+   "table": 19,
+   "row": 10,
+   "kind": "engine",
+   "model": "TAD1344GE",
+   "val": "voltage=363",
+   "change": "voltage bỏ: 363 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 11 | PHF-330VX | 330 | 363 | 594 | TAD1344GE | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 117,
+   "table": 19,
+   "row": 12,
+   "kind": "engine",
+   "model": "TAD1642GE",
+   "val": "voltage=517",
+   "change": "voltage bỏ: 517 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 13 | PHF-470VX | 470 | 517 | 846 | TAD1642GE | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 117,
+   "table": 19,
+   "row": 13,
+   "kind": "engine",
+   "model": "TWD1643GE",
+   "val": "voltage=550",
+   "change": "voltage bỏ: 550 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 14 | PHF-500VX | 500 | 550 | 900 | TWD1643GE | ● | ● | ●"
+  },
+  {
+   "sup": "sr-genset",
+   "n": 2001,
+   "table": 0,
+   "row": 11,
+   "kind": "engine",
+   "model": "4FWZL1",
+   "val": "voltage=104.5",
+   "change": "voltage bỏ: 104.5 → ∅",
+   "header": [
+    "| Frequency | Voltage | Rated power | Standby Power | Engine | Modle | Alternator | Modle | Specifications",
+    "| kW | kVA | kW | kVA"
+   ],
+   "line": "| 50 | 400 | 95 | 118.75 | 104.5 | 130.625 | SRGENSET | 4FWZL1 | SRGENSET | SAL274C2 | PDF"
+  },
+  {
+   "sup": "sr-genset",
+   "n": 2004,
+   "table": 6,
+   "row": 14,
+   "kind": "engine",
+   "model": "1106A-70TG1",
+   "val": "voltage=119",
+   "change": "voltage bỏ: 119 → ∅",
+   "header": [
+    "| Frequency | Voltage | Standy Power | Backup Power | Engine | Model | Motor | Model",
+    "| kW | kVA | kW | kVA"
+   ],
+   "line": "| 50 | 400 | 108 | 135 | 119 | 149 | Perkins | 1106A-70TG1 | Nidec | TAL-A44-H"
+  },
+  {
+   "sup": "sr-genset",
+   "n": 2004,
+   "table": 6,
+   "row": 15,
+   "kind": "engine",
+   "model": "1106A-70TG1",
+   "val": "voltage=119",
+   "change": "voltage bỏ: 119 → ∅",
+   "header": [
+    "| Frequency | Voltage | Standy Power | Backup Power | Engine | Model | Motor | Model",
+    "| kW | kVA | kW | kVA"
+   ],
+   "line": "| 50 | 400 | 108 | 135 | 119 | 149 | Perkins | 1106A-70TG1 | SRGENSET | SAL274D3"
+  },
+  {
+   "sup": "sr-genset",
+   "n": 2004,
+   "table": 6,
+   "row": 16,
+   "kind": "engine",
+   "model": "1106A-70TAG2",
+   "val": "voltage=144",
+   "change": "voltage bỏ: 144 → ∅",
+   "header": [
+    "| Frequency | Voltage | Standy Power | Backup Power | Engine | Model | Motor | Model",
+    "| kW | kVA | kW | kVA"
+   ],
+   "line": "| 50 | 400 | 120 | 150 | 144 | 165 | Perkins | 1106A-70TAG2 | Nidec | TAL-A44-J"
+  },
+  {
+   "sup": "sr-genset",
+   "n": 2004,
+   "table": 6,
+   "row": 17,
+   "kind": "engine",
+   "model": "1106A-70TAG2",
+   "val": "voltage=144",
+   "change": "voltage bỏ: 144 → ∅",
+   "header": [
+    "| Frequency | Voltage | Standy Power | Backup Power | Engine | Model | Motor | Model",
+    "| kW | kVA | kW | kVA"
+   ],
+   "line": "| 50 | 400 | 120 | 150 | 144 | 165 | Perkins | 1106A-70TAG2 | SRGENSET | SAL274E3"
+  },
+  {
+   "sup": "sr-genset",
+   "n": 2004,
+   "table": 6,
+   "row": 18,
+   "kind": "engine",
+   "model": "1106A-70TAG4",
+   "val": "voltage=176",
+   "change": "voltage bỏ: 176 → ∅",
+   "header": [
+    "| Frequency | Voltage | Standy Power | Backup Power | Engine | Model | Motor | Model",
+    "| kW | kVA | kW | kVA"
+   ],
+   "line": "| 50 | 400 | 160 | 200 | 176 | 220 | Perkins | 1106A-70TAG4 | Nidec | TAL-A44-M"
+  },
+  {
+   "sup": "sr-genset",
+   "n": 2004,
+   "table": 6,
+   "row": 19,
+   "kind": "engine",
+   "model": "1106A-70TAG4",
+   "val": "voltage=176",
+   "change": "voltage bỏ: 176 → ∅",
+   "header": [
+    "| Frequency | Voltage | Standy Power | Backup Power | Engine | Model | Motor | Model",
+    "| kW | kVA | kW | kVA"
+   ],
+   "line": "| 50 | 400 | 160 | 200 | 176 | 220 | Perkins | 1106A-70TAG4 | SRGENSET | SAL274K5"
+  },
+  {
+   "sup": "sr-genset",
+   "n": 2004,
+   "table": 6,
+   "row": 22,
+   "kind": "engine",
+   "model": "1706A-E93TAG1 L",
+   "val": "voltage=264",
+   "change": "voltage bỏ: 264 → ∅",
+   "header": [
+    "| Frequency | Voltage | Standy Power | Backup Power | Engine | Model | Motor | Model",
+    "| kW | kVA | kW | kVA"
+   ],
+   "line": "| 50 | 400 | 240 | 300 | 264 | 330 | Perkins | 1706A-E93TAG1 L | Nidec | TAL-A46-F"
+  },
+  {
+   "sup": "sr-genset",
+   "n": 2004,
+   "table": 6,
+   "row": 23,
+   "kind": "engine",
+   "model": "1706A-E93TAG1 L",
+   "val": "voltage=264",
+   "change": "voltage bỏ: 264 → ∅",
+   "header": [
+    "| Frequency | Voltage | Standy Power | Backup Power | Engine | Model | Motor | Model",
+    "| kW | kVA | kW | kVA"
+   ],
+   "line": "| 50 | 400 | 240 | 300 | 264 | 330 | Perkins | 1706A-E93TAG1 L | SRGENSET | SAL314C2"
+  },
+  {
+   "sup": "sr-genset",
+   "n": 2004,
+   "table": 6,
+   "row": 24,
+   "kind": "engine",
+   "model": "2206C-E13TAG2 L",
+   "val": "voltage=308",
+   "change": "voltage bỏ: 308 → ∅",
+   "header": [
+    "| Frequency | Voltage | Standy Power | Backup Power | Engine | Model | Motor | Model",
+    "| kW | kVA | kW | kVA"
+   ],
+   "line": "| 50 | 400 | 280 | 350 | 308 | 385 | Perkins | 2206C-E13TAG2 L | Nidec | TAL-A46-H"
+  },
+  {
+   "sup": "sr-genset",
+   "n": 2004,
+   "table": 6,
+   "row": 25,
+   "kind": "engine",
+   "model": "2206C-E13TAG2 L",
+   "val": "voltage=308",
+   "change": "voltage bỏ: 308 → ∅",
+   "header": [
+    "| Frequency | Voltage | Standy Power | Backup Power | Engine | Model | Motor | Model",
+    "| kW | kVA | kW | kVA"
+   ],
+   "line": "| 50 | 400 | 280 | 350 | 308 | 385 | Perkins | 2206C-E13TAG2 L | SRGENSET | SAL314F3"
+  },
+  {
+   "sup": "sr-genset",
+   "n": 2004,
+   "table": 6,
+   "row": 26,
+   "kind": "engine",
+   "model": "2206D-E13TAG3 L",
+   "val": "voltage=352",
+   "change": "voltage bỏ: 352 → ∅",
+   "header": [
+    "| Frequency | Voltage | Standy Power | Backup Power | Engine | Model | Motor | Model",
+    "| kW | kVA | kW | kVA"
+   ],
+   "line": "| 50 | 400 | 320 | 400 | 352 | 440 | Perkins | 2206D-E13TAG3 L | Nidec | TAL-A473-A"
+  },
+  {
+   "sup": "sr-genset",
+   "n": 2004,
+   "table": 6,
+   "row": 27,
+   "kind": "engine",
+   "model": "2206D-E13TAG3 L",
+   "val": "voltage=352",
+   "change": "voltage bỏ: 352 → ∅",
+   "header": [
+    "| Frequency | Voltage | Standy Power | Backup Power | Engine | Model | Motor | Model",
+    "| kW | kVA | kW | kVA"
+   ],
+   "line": "| 50 | 400 | 320 | 400 | 352 | 440 | Perkins | 2206D-E13TAG3 L | SRGENSET | SAL314H4"
+  },
+  {
+   "sup": "sr-genset",
+   "n": 2004,
+   "table": 6,
+   "row": 30,
+   "kind": "engine",
+   "model": "2806A-E18TAG2 L",
+   "val": "voltage=572",
+   "change": "voltage bỏ: 572 → ∅",
+   "header": [
+    "| Frequency | Voltage | Standy Power | Backup Power | Engine | Model | Motor | Model",
+    "| kW | kVA | kW | kVA"
+   ],
+   "line": "| 50 | 400 | 520 | 650 | 572 | 715 | Perkins | 2806A-E18TAG2 L | Nidec | TAL-A473-F"
+  },
+  {
+   "sup": "sr-genset",
+   "n": 2004,
+   "table": 6,
+   "row": 31,
+   "kind": "engine",
+   "model": "2806A-E18TAG2 L",
+   "val": "voltage=572",
+   "change": "voltage bỏ: 572 → ∅",
+   "header": [
+    "| Frequency | Voltage | Standy Power | Backup Power | Engine | Model | Motor | Model",
+    "| kW | kVA | kW | kVA"
+   ],
+   "line": "| 50 | 400 | 520 | 650 | 572 | 715 | Perkins | 2806A-E18TAG2 L | SRGENSET | SAL354F4"
+  },
+  {
+   "sup": "yingtai-group",
+   "n": 2011,
+   "table": 10,
+   "row": 4,
+   "kind": "engine",
+   "model": "QSK50-G3",
+   "val": "voltage=1230",
+   "change": "voltage bỏ: 1230 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式"
+   ],
+   "line": "| 1120GF | 1120 | 1230 | 128 | 11830 | 6.40×2.04×2.64 | QSK50-G3 | 进口康明斯 | 1210 | 1401 | 16 | 50.3 | ≤197 | 电喷"
+  },
+  {
+   "sup": "yingtai-group",
+   "n": 2011,
+   "table": 10,
+   "row": 5,
+   "kind": "engine",
+   "model": "QSK50-G4",
+   "val": "voltage=1360",
+   "change": "voltage bỏ: 1360 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式"
+   ],
+   "line": "| 1232GF | 1232 | 1360 | 140.8 | 12360 | 6.20×2.04×2.70 | QSK50-G4 | 1328 | 1477 | 16 | 50.3 | ≤198 | 电喷"
+  },
+  {
+   "sup": "yingtai-group",
+   "n": 2011,
+   "table": 10,
+   "row": 6,
+   "kind": "engine",
+   "model": "QSK50-G7",
+   "val": "voltage=1470",
+   "change": "voltage bỏ: 1470 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式"
+   ],
+   "line": "| 1331GF | 1331 | 1470 | 152.1 | 12360 | 6.20×2.04×2.70 | QSK50-G7 | 1420 | 1581 | 16 | 50.3 | ≤197 | 电喷"
+  },
+  {
+   "sup": "yingtai-group",
+   "n": 2011,
+   "table": 10,
+   "row": 7,
+   "kind": "engine",
+   "model": "QSK60-G3",
+   "val": "voltage=1600",
+   "change": "voltage bỏ: 1600 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式"
+   ],
+   "line": "| 1500GF | 1500 | 1600 | 171.4 | 17920 | 7.40×2.50×2.65 | QSK60-G3 | 1615 | 1790 | 16 | 60.2 | ≤194 | 电喷"
+  },
+  {
+   "sup": "yingtai-group",
+   "n": 2011,
+   "table": 10,
+   "row": 8,
+   "kind": "engine",
+   "model": "QSK60-G4",
+   "val": "voltage=1800",
+   "change": "voltage bỏ: 1800 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式"
+   ],
+   "line": "| 1600GF | 1600 | 1800 | 182.9 | 18200 | 7.40×2.50×2.65 | QSK60-G4 | 1730 | 1915 | 16 | 60.2 | ≤197 | 电喷"
+  },
+  {
+   "sup": "yingtai-group",
+   "n": 2011,
+   "table": 10,
+   "row": 9,
+   "kind": "engine",
+   "model": "QSK60-G13",
+   "val": "voltage=2000",
+   "change": "voltage bỏ: 2000 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式"
+   ],
+   "line": "| 1600GF | 1600 | 2000 | 182.9 | 20000 | 7.50×2.70×3.25 | QSK60-G13 | 1727 | 2145 | 16 | 60.2 | ≤197 | 电喷"
+  },
+  {
+   "sup": "yingtai-group",
+   "n": 2011,
+   "table": 10,
+   "row": 14,
+   "kind": "engine",
+   "model": "QSK50-G3",
+   "val": "voltage=1230",
+   "change": "voltage bỏ: 1230 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式"
+   ],
+   "line": "| 1120GF | 1120 | 1230 | 76.8 | 12230 | 6.60×2.04×2.64 | QSK50-G3 | 进口康明斯 | 1210 | 1401 | 16 | 50.3 | ≤197 | 电喷"
+  },
+  {
+   "sup": "yingtai-group",
+   "n": 2011,
+   "table": 10,
+   "row": 15,
+   "kind": "engine",
+   "model": "QSK50-G4",
+   "val": "voltage=1360",
+   "change": "voltage bỏ: 1360 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式"
+   ],
+   "line": "| 1232GF | 1232 | 1360 | 84.5 | 12730 | 6.40×2.04×2.70 | QSK50-G4 | 1328 | 1477 | 16 | 50.3 | ≤198 | 电喷"
+  },
+  {
+   "sup": "yingtai-group",
+   "n": 2011,
+   "table": 10,
+   "row": 16,
+   "kind": "engine",
+   "model": "QSK50-G7",
+   "val": "voltage=1470",
+   "change": "voltage bỏ: 1470 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式"
+   ],
+   "line": "| 1331GF | 1331 | 1470 | 91.3 | 12730 | 6.40×2.04×2.70 | QSK50-G7 | 1421 | 1581 | 16 | 50.3 | ≤197 | 电喷"
+  },
+  {
+   "sup": "yingtai-group",
+   "n": 2011,
+   "table": 10,
+   "row": 17,
+   "kind": "engine",
+   "model": "QSK60-G3",
+   "val": "voltage=1600",
+   "change": "voltage bỏ: 1600 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式"
+   ],
+   "line": "| 1500GF | 1500 | 1600 | 103 | 18380 | 7.60×2.50×2.65 | QSK60-G3 | 1615 | 1790 | 16 | 60.2 | ≤194 | 电喷"
+  },
+  {
+   "sup": "yingtai-group",
+   "n": 2011,
+   "table": 10,
+   "row": 18,
+   "kind": "engine",
+   "model": "QSK60-G4",
+   "val": "voltage=1800",
+   "change": "voltage bỏ: 1800 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式"
+   ],
+   "line": "| 1600GF | 1600 | 1800 | 109.7 | 18680 | 7.60×2.50×2.65 | QSK60-G4 | 1730 | 1915 | 16 | 60.2 | ≤197 | 电喷"
+  },
+  {
+   "sup": "yingtai-group",
+   "n": 2011,
+   "table": 10,
+   "row": 19,
+   "kind": "engine",
+   "model": "QSK60-G13",
+   "val": "voltage=2000",
+   "change": "voltage bỏ: 2000 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式"
+   ],
+   "line": "| 1600GF | 1600 | 2000 | 109.7 | 20480 | 7.70×2.70×3.25 | QSK60-G13 | 1727 | 2145 | 16 | 60.2 | ≤197 | 电喷"
+  },
+  {
+   "sup": "yingtai-jiangsu",
+   "n": 113,
+   "table": 24,
+   "row": 4,
+   "kind": "engine",
+   "model": "QSK50-G3",
+   "val": "voltage=1230",
+   "change": "voltage bỏ: 1230 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式",
+    "| 主用 | 备用 | V | A | （kg) | L×W×H(m) | 主用 | 备用 | （L) | (g/kW.h)"
+   ],
+   "line": "| 1120GF | 1120 | 1230 | 128 | 11830 | 6.40×2.04×2.64 | QSK50-G3 | 进口康明斯 | 1210 | 1401 | 16 | 50.3 | ≤197 | 电喷"
+  },
+  {
+   "sup": "yingtai-jiangsu",
+   "n": 113,
+   "table": 24,
+   "row": 5,
+   "kind": "engine",
+   "model": "QSK50-G4",
+   "val": "voltage=1360",
+   "change": "voltage bỏ: 1360 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式",
+    "| 主用 | 备用 | V | A | （kg) | L×W×H(m) | 主用 | 备用 | （L) | (g/kW.h)"
+   ],
+   "line": "| 1232GF | 1232 | 1360 | 140.8 | 12360 | 6.20×2.04×2.70 | QSK50-G4 | 1328 | 1477 | 16 | 50.3 | ≤198 | 电喷"
+  },
+  {
+   "sup": "yingtai-jiangsu",
+   "n": 113,
+   "table": 24,
+   "row": 6,
+   "kind": "engine",
+   "model": "QSK50-G7",
+   "val": "voltage=1470",
+   "change": "voltage bỏ: 1470 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式",
+    "| 主用 | 备用 | V | A | （kg) | L×W×H(m) | 主用 | 备用 | （L) | (g/kW.h)"
+   ],
+   "line": "| 1331GF | 1331 | 1470 | 152.1 | 12360 | 6.20×2.04×2.70 | QSK50-G7 | 1420 | 1581 | 16 | 50.3 | ≤197 | 电喷"
+  },
+  {
+   "sup": "yingtai-jiangsu",
+   "n": 113,
+   "table": 24,
+   "row": 7,
+   "kind": "engine",
+   "model": "QSK60-G3",
+   "val": "voltage=1600",
+   "change": "voltage bỏ: 1600 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式",
+    "| 主用 | 备用 | V | A | （kg) | L×W×H(m) | 主用 | 备用 | （L) | (g/kW.h)"
+   ],
+   "line": "| 1500GF | 1500 | 1600 | 171.4 | 17920 | 7.40×2.50×2.65 | QSK60-G3 | 1615 | 1790 | 16 | 60.2 | ≤194 | 电喷"
+  },
+  {
+   "sup": "yingtai-jiangsu",
+   "n": 113,
+   "table": 24,
+   "row": 8,
+   "kind": "engine",
+   "model": "QSK60-G4",
+   "val": "voltage=1800",
+   "change": "voltage bỏ: 1800 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式",
+    "| 主用 | 备用 | V | A | （kg) | L×W×H(m) | 主用 | 备用 | （L) | (g/kW.h)"
+   ],
+   "line": "| 1600GF | 1600 | 1800 | 182.9 | 18200 | 7.40×2.50×2.65 | QSK60-G4 | 1730 | 1915 | 16 | 60.2 | ≤197 | 电喷"
+  },
+  {
+   "sup": "yingtai-jiangsu",
+   "n": 113,
+   "table": 24,
+   "row": 9,
+   "kind": "engine",
+   "model": "QSK60-G13",
+   "val": "voltage=2000",
+   "change": "voltage bỏ: 2000 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式",
+    "| 主用 | 备用 | V | A | （kg) | L×W×H(m) | 主用 | 备用 | （L) | (g/kW.h)"
+   ],
+   "line": "| 1600GF | 1600 | 2000 | 182.9 | 20000 | 7.50×2.70×3.25 | QSK60-G13 | 1727 | 2145 | 16 | 60.2 | ≤197 | 电喷"
+  },
+  {
+   "sup": "yingtai-jiangsu",
+   "n": 113,
+   "table": 24,
+   "row": 14,
+   "kind": "engine",
+   "model": "QSK50-G3",
+   "val": "voltage=1230",
+   "change": "voltage bỏ: 1230 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式",
+    "| 主用 | 备用 | V | A | （kg) | L×W×H(m) | 主用 | 备用 | （L) | (g/kW.h)"
+   ],
+   "line": "| 1120GF | 1120 | 1230 | 76.8 | 12230 | 6.60×2.04×2.64 | QSK50-G3 | 进口康明斯 | 1210 | 1401 | 16 | 50.3 | ≤197 | 电喷"
+  },
+  {
+   "sup": "yingtai-jiangsu",
+   "n": 113,
+   "table": 24,
+   "row": 15,
+   "kind": "engine",
+   "model": "QSK50-G4",
+   "val": "voltage=1360",
+   "change": "voltage bỏ: 1360 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式",
+    "| 主用 | 备用 | V | A | （kg) | L×W×H(m) | 主用 | 备用 | （L) | (g/kW.h)"
+   ],
+   "line": "| 1232GF | 1232 | 1360 | 84.5 | 12730 | 6.40×2.04×2.70 | QSK50-G4 | 1328 | 1477 | 16 | 50.3 | ≤198 | 电喷"
+  },
+  {
+   "sup": "yingtai-jiangsu",
+   "n": 113,
+   "table": 24,
+   "row": 16,
+   "kind": "engine",
+   "model": "QSK50-G7",
+   "val": "voltage=1470",
+   "change": "voltage bỏ: 1470 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式",
+    "| 主用 | 备用 | V | A | （kg) | L×W×H(m) | 主用 | 备用 | （L) | (g/kW.h)"
+   ],
+   "line": "| 1331GF | 1331 | 1470 | 91.3 | 12730 | 6.40×2.04×2.70 | QSK50-G7 | 1421 | 1581 | 16 | 50.3 | ≤197 | 电喷"
+  },
+  {
+   "sup": "yingtai-jiangsu",
+   "n": 113,
+   "table": 24,
+   "row": 17,
+   "kind": "engine",
+   "model": "QSK60-G3",
+   "val": "voltage=1600",
+   "change": "voltage bỏ: 1600 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式",
+    "| 主用 | 备用 | V | A | （kg) | L×W×H(m) | 主用 | 备用 | （L) | (g/kW.h)"
+   ],
+   "line": "| 1500GF | 1500 | 1600 | 103 | 18380 | 7.60×2.50×2.65 | QSK60-G3 | 1615 | 1790 | 16 | 60.2 | ≤194 | 电喷"
+  },
+  {
+   "sup": "yingtai-jiangsu",
+   "n": 113,
+   "table": 24,
+   "row": 18,
+   "kind": "engine",
+   "model": "QSK60-G4",
+   "val": "voltage=1800",
+   "change": "voltage bỏ: 1800 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式",
+    "| 主用 | 备用 | V | A | （kg) | L×W×H(m) | 主用 | 备用 | （L) | (g/kW.h)"
+   ],
+   "line": "| 1600GF | 1600 | 1800 | 109.7 | 18680 | 7.60×2.50×2.65 | QSK60-G4 | 1730 | 1915 | 16 | 60.2 | ≤197 | 电喷"
+  },
+  {
+   "sup": "yingtai-jiangsu",
+   "n": 113,
+   "table": 24,
+   "row": 19,
+   "kind": "engine",
+   "model": "QSK60-G13",
+   "val": "voltage=2000",
+   "change": "voltage bỏ: 2000 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式",
+    "| 主用 | 备用 | V | A | （kg) | L×W×H(m) | 主用 | 备用 | （L) | (g/kW.h)"
+   ],
+   "line": "| 1600GF | 1600 | 2000 | 109.7 | 20480 | 7.70×2.70×3.25 | QSK60-G13 | 1727 | 2145 | 16 | 60.2 | ≤197 | 电喷"
+  }
+ ],
+ "vai engine | không đối chiếu": [
+  {
+   "sup": "cameo-power",
+   "n": 112,
+   "table": 11,
+   "row": 0,
+   "kind": "engine",
+   "model": "CK7000S",
+   "val": "CK7000S",
+   "change": "MẤT bản ghi: engine CK7000S",
+   "header": [
+    "| Image | ​ | ​"
+   ],
+   "line": "| Model | CK7000S | CK7500S | CK8500S | CK9500S | CK12000S | CK15000S | CK18000S"
+  },
+  {
+   "sup": "huachai-deutz",
+   "n": 108,
+   "table": 6,
+   "row": 0,
+   "kind": "engine",
+   "model": "10GF",
+   "val": "10GF",
+   "change": "MẤT bản ghi: engine 10GF",
+   "header": [
+    "| Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)"
+   ],
+   "line": "| Model | 10GF | Model | F2L912D | Model | PI044F"
+  },
+  {
+   "sup": "zichai",
+   "n": 119,
+   "table": 11,
+   "row": 0,
+   "kind": "engine",
+   "model": "6300D/M",
+   "val": "6300D/M",
+   "change": "MẤT bản ghi: engine 6300D/M",
+   "header": [
+    "| Engine | Item | Technical specifications"
+   ],
+   "line": "| | Model | 6300D/M | 6300D/M-1 | 6300D/M-2 | 8300D/M-1 | 8300D/M-2 | 8300D/M-3"
+  },
+  {
+   "sup": "zichai",
+   "n": 119,
+   "table": 11,
+   "row": 4,
+   "kind": "engine",
+   "model": "300GFM",
+   "val": "300GFM",
+   "change": "MẤT bản ghi: engine 300GFM",
+   "header": [
+    "| Engine | Item | Technical specifications"
+   ],
+   "line": "| Generator set | Model | 300GFM | 400GFM | 500GFM | 450GFM | 500GFM | 600GFM"
+  }
+ ],
+ "vai engine | xác nhận": [
+  {
+   "sup": "chenxing-weifang",
+   "n": 101,
+   "table": 0,
+   "row": 0,
+   "kind": "engine",
+   "model": "NT855-GA",
+   "val": "NT855-GA",
+   "change": "MẤT bản ghi: engine NT855-GA",
+   "header": [
+    "| 发电机组参数 | 柴油机参数 | 发电机参数"
+   ],
+   "line": "| 机组型号 | 200GF | 型号 | NT855-GA | 型号 | 200GF"
+  },
+  {
+   "sup": "chenxing-weifang",
+   "n": 108,
+   "table": 5,
+   "row": 0,
+   "kind": "engine",
+   "model": "4BT3.9-G2",
+   "val": "4BT3.9-G2",
+   "change": "MẤT bản ghi: engine 4BT3.9-G2",
+   "header": [
+    "| 发电机组参数 | 柴油机参数 | 发电机参数"
+   ],
+   "line": "| 机组型号 | 30GF | 型号 | 4BT3.9-G2 | 型号 | 30GF"
+  },
+  {
+   "sup": "huachai-deutz",
+   "n": 112,
+   "table": 9,
+   "row": 0,
+   "kind": "engine",
+   "model": "F3L912D",
+   "val": "F3L912D",
+   "change": "MẤT bản ghi: engine F3L912D",
+   "header": [
+    "| Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)"
+   ],
+   "line": "| Model | 1 5 GF | Model | F3L912D | Model | PI144D"
+  },
+  {
+   "sup": "kubota",
+   "n": 2001,
+   "table": 0,
+   "row": 0,
+   "kind": "engine",
+   "model": "D1703",
+   "val": "D1703",
+   "change": "MẤT bản ghi: engine D1703",
+   "header": [
+    "URL: https://generator.kubota.com/products/50hz/sq_1120.html"
+   ],
+   "line": "| Model | - | D1703"
+  },
+  {
+   "sup": "kubota",
+   "n": 2001,
+   "table": 0,
+   "row": 1,
+   "kind": "engine",
+   "model": "D1703",
+   "val": "D1703",
+   "change": "THÊM bản ghi: engine D1703",
+   "header": [
+    "URL: https://generator.kubota.com/products/50hz/sq_1120.html"
+   ],
+   "line": "| Prime Output | kVA (kW) | 11.2 (11.2)"
+  }
+ ],
+ "công suất | mâu thuẫn": [
+  {
+   "sup": "gb-power",
+   "n": 1001,
+   "table": 16,
+   "kind": "engine",
+   "model": "403D-11G",
+   "val": "rated 4 kVA",
+   "change": "power: P 10/8 S 11/8.8 R 4/3 → P 10/8 S 11/8.8",
+   "header": [],
+   "line": "| Engine | PERKINS 403D-11G ¦ | Engine Model | 403D-11G"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1001,
+   "table": 16,
+   "kind": "engine",
+   "model": "403D-11G",
+   "val": "rated 3 kW",
+   "change": "power: P 10/8 S 11/8.8 R 4/3 → P 10/8 S 11/8.8",
+   "header": [],
+   "line": "| Engine | PERKINS 403D-11G ¦ | Engine Model | 403D-11G"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1002,
+   "table": 17,
+   "kind": "engine",
+   "model": "403D-15G",
+   "val": "rated 4 kVA",
+   "change": "power: P 12.5/10 S 14/11 R 4/3 → P 12.5/10 S 14/11",
+   "header": [],
+   "line": "| Engine | PERKINS 403D-15G ¦ | Engine Model | 403D-15G"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1002,
+   "table": 17,
+   "kind": "engine",
+   "model": "403D-15G",
+   "val": "rated 3 kW",
+   "change": "power: P 12.5/10 S 14/11 R 4/3 → P 12.5/10 S 14/11",
+   "header": [],
+   "line": "| Engine | PERKINS 403D-15G ¦ | Engine Model | 403D-15G"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1004,
+   "table": 19,
+   "kind": "engine",
+   "model": "404D-22TG",
+   "val": "rated 4 kVA",
+   "change": "power: P 25/20 S 27.5/22 R 4/3 → P 25/20 S 27.5/22",
+   "header": [],
+   "line": "| Engine | PERKINS 404D-22TG ¦ | Engine Model | 404D-22TG"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1004,
+   "table": 19,
+   "kind": "engine",
+   "model": "404D-22TG",
+   "val": "rated 3 kW",
+   "change": "power: P 25/20 S 27.5/22 R 4/3 → P 25/20 S 27.5/22",
+   "header": [],
+   "line": "| Engine | PERKINS 404D-22TG ¦ | Engine Model | 404D-22TG"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1005,
+   "table": 20,
+   "kind": "engine",
+   "model": "1103A-33G",
+   "val": "rated 4 kVA",
+   "change": "power: P 30/24 S 33/26.4 R 4/3 → P 30/24 S 33/26.4",
+   "header": [],
+   "line": "| Engine | PERKINS 1103A-33G ¦ | Engine Model | 1103A-33G"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1005,
+   "table": 20,
+   "kind": "engine",
+   "model": "1103A-33G",
+   "val": "rated 3 kW",
+   "change": "power: P 30/24 S 33/26.4 R 4/3 → P 30/24 S 33/26.4",
+   "header": [],
+   "line": "| Engine | PERKINS 1103A-33G ¦ | Engine Model | 1103A-33G"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1006,
+   "table": 21,
+   "kind": "engine",
+   "model": "1103A-33TG1",
+   "val": "rated 4 kVA",
+   "change": "power: P 40/32 S 44/35.2 R 4/3 → P 40/32 S 44/35.2",
+   "header": [],
+   "line": "| Engine | PERKINS 1103A-33TG1 ¦ | Engine Model | 1103A-33TG1"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1006,
+   "table": 21,
+   "kind": "engine",
+   "model": "1103A-33TG1",
+   "val": "rated 3 kW",
+   "change": "power: P 40/32 S 44/35.2 R 4/3 → P 40/32 S 44/35.2",
+   "header": [],
+   "line": "| Engine | PERKINS 1103A-33TG1 ¦ | Engine Model | 1103A-33TG1"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1007,
+   "table": 22,
+   "kind": "engine",
+   "model": "1103A-33TG1",
+   "val": "rated 4 kVA",
+   "change": "power: P 45/36 S 50/40 R 4/3 → P 45/36 S 50/40",
+   "header": [],
+   "line": "| Engine | PERKINS 1103A-33TG1 ¦ | Engine Model | 1103A-33TG1"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1007,
+   "table": 22,
+   "kind": "engine",
+   "model": "1103A-33TG1",
+   "val": "rated 3 kW",
+   "change": "power: P 45/36 S 50/40 R 4/3 → P 45/36 S 50/40",
+   "header": [],
+   "line": "| Engine | PERKINS 1103A-33TG1 ¦ | Engine Model | 1103A-33TG1"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1008,
+   "table": 23,
+   "kind": "engine",
+   "model": "1103A-33TG1",
+   "val": "rated 4 kVA",
+   "change": "power: P 50/40 S 55/44 R 4/3 → P 50/40 S 55/44",
+   "header": [],
+   "line": "| Engine | PERKINS 1103A-33TG1 ¦ | Engine Model | 1103A-33TG1"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1008,
+   "table": 23,
+   "kind": "engine",
+   "model": "1103A-33TG1",
+   "val": "rated 3 kW",
+   "change": "power: P 50/40 S 55/44 R 4/3 → P 50/40 S 55/44",
+   "header": [],
+   "line": "| Engine | PERKINS 1103A-33TG1 ¦ | Engine Model | 1103A-33TG1"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1009,
+   "table": 24,
+   "kind": "engine",
+   "model": "1103A-33TG2",
+   "val": "rated 4 kVA",
+   "change": "power: P 60/48 S 66/53 R 4/3 → P 60/48 S 66/53",
+   "header": [],
+   "line": "| Engine | PERKINS 1103A-33TG2 ¦ | Engine Model | 1103A-33TG2"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1009,
+   "table": 24,
+   "kind": "engine",
+   "model": "1103A-33TG2",
+   "val": "rated 3 kW",
+   "change": "power: P 60/48 S 66/53 R 4/3 → P 60/48 S 66/53",
+   "header": [],
+   "line": "| Engine | PERKINS 1103A-33TG2 ¦ | Engine Model | 1103A-33TG2"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1010,
+   "table": 25,
+   "kind": "engine",
+   "model": "1104A-44TG1",
+   "val": "rated 4 kVA",
+   "change": "power: P 65/52 S 71.5/57 R 4/3 → P 65/52 S 71.5/57",
+   "header": [],
+   "line": "| Engine | PERKINS 1104A-44TG1 ¦ | Engine Model | 1104A-44TG1"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1010,
+   "table": 25,
+   "kind": "engine",
+   "model": "1104A-44TG1",
+   "val": "rated 3 kW",
+   "change": "power: P 65/52 S 71.5/57 R 4/3 → P 65/52 S 71.5/57",
+   "header": [],
+   "line": "| Engine | PERKINS 1104A-44TG1 ¦ | Engine Model | 1104A-44TG1"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1012,
+   "table": 27,
+   "kind": "engine",
+   "model": "1006TG1A",
+   "val": "rated 4 kVA",
+   "change": "power: P 90/72 S 100/80 R 4/3 → P 90/72 S 100/80",
+   "header": [],
+   "line": "| Engine | PERKINS 1006TG1A ¦ | Engine Model | 1006TG1A"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1012,
+   "table": 27,
+   "kind": "engine",
+   "model": "1006TG1A",
+   "val": "rated 3 kW",
+   "change": "power: P 90/72 S 100/80 R 4/3 → P 90/72 S 100/80",
+   "header": [],
+   "line": "| Engine | PERKINS 1006TG1A ¦ | Engine Model | 1006TG1A"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1014,
+   "table": 29,
+   "kind": "engine",
+   "model": "1106A-70TG1",
+   "val": "rated 4 kVA",
+   "change": "power: P 130/104 S 143/114 R 4/3 → P 130/104 S 143/114",
+   "header": [],
+   "line": "| Engine | PERKINS 1106A-70TG1 ¦ | Engine Model | 1106A-70TG1"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1014,
+   "table": 29,
+   "kind": "engine",
+   "model": "1106A-70TG1",
+   "val": "rated 3 kW",
+   "change": "power: P 130/104 S 143/114 R 4/3 → P 130/104 S 143/114",
+   "header": [],
+   "line": "| Engine | PERKINS 1106A-70TG1 ¦ | Engine Model | 1106A-70TG1"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1018,
+   "table": 33,
+   "kind": "engine",
+   "model": "1306C-E87TAG4",
+   "val": "rated 3 kW",
+   "change": "power: P 230/184 S 253/202 R 4/3 → P 230/184 S 253/202",
+   "header": [],
+   "line": "| Engine | PERKINS 1306C-E87TAG4 ¦ | Engine Model | 1306C-E87TAG4"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1020,
+   "table": 35,
+   "kind": "engine",
+   "model": "1606A-E93TAG5",
+   "val": "rated 4 kVA",
+   "change": "power: P 300/240 S 330/264 R 4/3 → P 300/240 S 330/264",
+   "header": [],
+   "line": "| Engine | PERKINS 1606A-E93TAG5 ¦ | Engine Model | 1606A-E93TAG5"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1020,
+   "table": 35,
+   "kind": "engine",
+   "model": "1606A-E93TAG5",
+   "val": "rated 3 kW",
+   "change": "power: P 300/240 S 330/264 R 4/3 → P 300/240 S 330/264",
+   "header": [],
+   "line": "| Engine | PERKINS 1606A-E93TAG5 ¦ | Engine Model | 1606A-E93TAG5"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1021,
+   "table": 36,
+   "kind": "engine",
+   "model": "2206A-E13TAG2",
+   "val": "rated 4 kVA",
+   "change": "power: P 350/280 S 385/308 R 4/3 → P 350/280 S 385/308",
+   "header": [],
+   "line": "| Engine | PERKINS 2206A-E13TAG2 ¦ | Engine Model | 2206A-E13TAG2"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1021,
+   "table": 36,
+   "kind": "engine",
+   "model": "2206A-E13TAG2",
+   "val": "rated 3 kW",
+   "change": "power: P 350/280 S 385/308 R 4/3 → P 350/280 S 385/308",
+   "header": [],
+   "line": "| Engine | PERKINS 2206A-E13TAG2 ¦ | Engine Model | 2206A-E13TAG2"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1022,
+   "table": 37,
+   "kind": "engine",
+   "model": "2206A-E13TAG3",
+   "val": "rated 3 kW",
+   "change": "power: P 375/300 S 412/330 R 4/3 → P 375/300 S 412/330",
+   "header": [],
+   "line": "| Engine | PERKINS 2206A-E13TAG3 ¦ | Engine Model | 2206A-E13TAG3"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1023,
+   "table": 38,
+   "kind": "engine",
+   "model": "2506C-E15TAG1",
+   "val": "rated 4 kVA",
+   "change": "power: P 500/400 S 550/440 R 4/3 → P 500/400 S 550/440",
+   "header": [],
+   "line": "| Engine | PERKINS 2506C-E15TAG1 ¦ | Engine Model | 2506C-E15TAG1"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1023,
+   "table": 38,
+   "kind": "engine",
+   "model": "2506C-E15TAG1",
+   "val": "rated 3 kW",
+   "change": "power: P 500/400 S 550/440 R 4/3 → P 500/400 S 550/440",
+   "header": [],
+   "line": "| Engine | PERKINS 2506C-E15TAG1 ¦ | Engine Model | 2506C-E15TAG1"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1024,
+   "table": 39,
+   "kind": "engine",
+   "model": "2506C-E15TAG2",
+   "val": "rated 4 kVA",
+   "change": "power: P 500/400 S 550/440 R 4/3 → P 500/400 S 550/440",
+   "header": [],
+   "line": "| Engine | PERKINS 2506C-E15TAG2 ¦ | Engine Model | 2506C-E15TAG2"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1024,
+   "table": 39,
+   "kind": "engine",
+   "model": "2506C-E15TAG2",
+   "val": "rated 3 kW",
+   "change": "power: P 500/400 S 550/440 R 4/3 → P 500/400 S 550/440",
+   "header": [],
+   "line": "| Engine | PERKINS 2506C-E15TAG2 ¦ | Engine Model | 2506C-E15TAG2"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1025,
+   "table": 40,
+   "kind": "engine",
+   "model": "2806A-E18TAG1A",
+   "val": "rated 4 kVA",
+   "change": "power: P 625/500 S 688/550 R 4/3 → P 625/500 S 688/550",
+   "header": [],
+   "line": "| Engine | PERKINS 2806A-E18TAG1A ¦ | Engine Model | 2806A-E18TAG1A"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1025,
+   "table": 40,
+   "kind": "engine",
+   "model": "2806A-E18TAG1A",
+   "val": "rated 3 kW",
+   "change": "power: P 625/500 S 688/550 R 4/3 → P 625/500 S 688/550",
+   "header": [],
+   "line": "| Engine | PERKINS 2806A-E18TAG1A ¦ | Engine Model | 2806A-E18TAG1A"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1026,
+   "table": 41,
+   "kind": "engine",
+   "model": "2806A-E18TAG2",
+   "val": "rated 4 kVA",
+   "change": "power: P 625/500 S 687.5/550 R 4/3 → P 625/500 S 687.5/550",
+   "header": [],
+   "line": "| Engine | PERKINS 2806A-E18TAG2 ¦ | Engine Model | 2806A-E18TAG2"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1026,
+   "table": 41,
+   "kind": "engine",
+   "model": "2806A-E18TAG2",
+   "val": "rated 3 kW",
+   "change": "power: P 625/500 S 687.5/550 R 4/3 → P 625/500 S 687.5/550",
+   "header": [],
+   "line": "| Engine | PERKINS 2806A-E18TAG2 ¦ | Engine Model | 2806A-E18TAG2"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1027,
+   "table": 42,
+   "kind": "engine",
+   "model": "4006-23TAG2A",
+   "val": "rated 4 kVA",
+   "change": "power: P 700/560 S 770/616 R 4/3 → P 700/560 S 770/616",
+   "header": [],
+   "line": "| Engine | PERKINS 4006-23TAG2A ¦ | Engine Model | 4006-23TAG2A"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1027,
+   "table": 42,
+   "kind": "engine",
+   "model": "4006-23TAG2A",
+   "val": "rated 3 kW",
+   "change": "power: P 700/560 S 770/616 R 4/3 → P 700/560 S 770/616",
+   "header": [],
+   "line": "| Engine | PERKINS 4006-23TAG2A ¦ | Engine Model | 4006-23TAG2A"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1028,
+   "table": 43,
+   "kind": "engine",
+   "model": "4008TAG",
+   "val": "rated 4 kVA",
+   "change": "power: P 800/640 S 880/704 R 4/3 → P 800/640 S 880/704",
+   "header": [],
+   "line": "| Engine | PERKINS 4008TAG"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1028,
+   "table": 43,
+   "kind": "engine",
+   "model": "4008TAG",
+   "val": "rated 3 kW",
+   "change": "power: P 800/640 S 880/704 R 4/3 → P 800/640 S 880/704",
+   "header": [],
+   "line": "| Engine | PERKINS 4008TAG"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1029,
+   "table": 44,
+   "kind": "engine",
+   "model": "4008TAG2A",
+   "val": "rated 4 kVA",
+   "change": "power: P 1000/800 S 1100/880 R 4/3 → P 1000/800 S 1100/880",
+   "header": [],
+   "line": "| Engine | PERKINS 4008TAG2A ¦ | Engine Model | 4008TAG2A"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1029,
+   "table": 44,
+   "kind": "engine",
+   "model": "4008TAG2A",
+   "val": "rated 3 kW",
+   "change": "power: P 1000/800 S 1100/880 R 4/3 → P 1000/800 S 1100/880",
+   "header": [],
+   "line": "| Engine | PERKINS 4008TAG2A ¦ | Engine Model | 4008TAG2A"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1030,
+   "table": 45,
+   "kind": "engine",
+   "model": "4012-46TWG2A",
+   "val": "rated 4 kVA",
+   "change": "power: P 1250/1000 S 1375/1100 R 4/3 → P 1250/1000 S 1375/1100",
+   "header": [],
+   "line": "| Engine | PERKINS 4012-46TWG2A"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1030,
+   "table": 45,
+   "kind": "engine",
+   "model": "4012-46TWG2A",
+   "val": "rated 3 kW",
+   "change": "power: P 1250/1000 S 1375/1100 R 4/3 → P 1250/1000 S 1375/1100",
+   "header": [],
+   "line": "| Engine | PERKINS 4012-46TWG2A"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1031,
+   "table": 46,
+   "kind": "engine",
+   "model": "4012-46TAG2A",
+   "val": "rated 4 kVA",
+   "change": "power: P 1500/1200 S 1650/1320 R 4/3 → P 1500/1200 S 1650/1320",
+   "header": [],
+   "line": "| Engine | PERKINS 4012-46TAG2A ¦ | Engine Model | 4012-46TAG2A"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1031,
+   "table": 46,
+   "kind": "engine",
+   "model": "4012-46TAG2A",
+   "val": "rated 3 kW",
+   "change": "power: P 1500/1200 S 1650/1320 R 4/3 → P 1500/1200 S 1650/1320",
+   "header": [],
+   "line": "| Engine | PERKINS 4012-46TAG2A ¦ | Engine Model | 4012-46TAG2A"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1032,
+   "table": 47,
+   "kind": "engine",
+   "model": "4012-46TAG3A",
+   "val": "rated 4 kVA",
+   "change": "power: P 1650/1320 S 1815/1452 R 4/3 → P 1650/1320 S 1815/1452",
+   "header": [],
+   "line": "| Engine | PERKINS 4012-46TAG3A ¦ | Engine Model | 4012-46TAG3A"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1032,
+   "table": 47,
+   "kind": "engine",
+   "model": "4012-46TAG3A",
+   "val": "rated 3 kW",
+   "change": "power: P 1650/1320 S 1815/1452 R 4/3 → P 1650/1320 S 1815/1452",
+   "header": [],
+   "line": "| Engine | PERKINS 4012-46TAG3A ¦ | Engine Model | 4012-46TAG3A"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1033,
+   "table": 48,
+   "kind": "engine",
+   "model": "4016-TAG1A",
+   "val": "rated 4 kVA",
+   "change": "power: P 1850/1480 S 2035/1628 R 4/3 → P 1850/1480 S 2035/1628",
+   "header": [],
+   "line": "| Engine | PERKINS 4016-TAG1A"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1033,
+   "table": 48,
+   "kind": "engine",
+   "model": "4016-TAG1A",
+   "val": "rated 3 kW",
+   "change": "power: P 1850/1480 S 2035/1628 R 4/3 → P 1850/1480 S 2035/1628",
+   "header": [],
+   "line": "| Engine | PERKINS 4016-TAG1A"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1034,
+   "table": 49,
+   "kind": "engine",
+   "model": "4016-61TRG3",
+   "val": "rated 4 kVA",
+   "change": "power: P 2200/1760 S 2420/1936 R 4/3 → P 2200/1760 S 2420/1936",
+   "header": [],
+   "line": "| Engine | PERKINS 4016-61TRG3 ¦ | Engine Model | 4016-61TRG3"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1034,
+   "table": 49,
+   "kind": "engine",
+   "model": "4016-61TRG3",
+   "val": "rated 3 kW",
+   "change": "power: P 2200/1760 S 2420/1936 R 4/3 → P 2200/1760 S 2420/1936",
+   "header": [],
+   "line": "| Engine | PERKINS 4016-61TRG3 ¦ | Engine Model | 4016-61TRG3"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1001,
+   "table": 16,
+   "kind": "alternator",
+   "model": "PI044E",
+   "val": "rated 4 kVA",
+   "change": "power: P 10/8 S 11/8.8 R 4/3 → P 10/8 S 11/8.8",
+   "header": [],
+   "line": "| Alternator | STAMFORD PI044E ¦ | Alternator Model | PI044E"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1001,
+   "table": 16,
+   "kind": "alternator",
+   "model": "PI044E",
+   "val": "rated 3 kW",
+   "change": "power: P 10/8 S 11/8.8 R 4/3 → P 10/8 S 11/8.8",
+   "header": [],
+   "line": "| Alternator | STAMFORD PI044E ¦ | Alternator Model | PI044E"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1002,
+   "table": 17,
+   "kind": "alternator",
+   "model": "PI044F",
+   "val": "rated 4 kVA",
+   "change": "power: P 12.5/10 S 14/11 R 4/3 → P 12.5/10 S 14/11",
+   "header": [],
+   "line": "| Alternator | STAMFORD PI044F ¦ | Alternator Model | PI044F"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1002,
+   "table": 17,
+   "kind": "alternator",
+   "model": "PI044F",
+   "val": "rated 3 kW",
+   "change": "power: P 12.5/10 S 14/11 R 4/3 → P 12.5/10 S 14/11",
+   "header": [],
+   "line": "| Alternator | STAMFORD PI044F ¦ | Alternator Model | PI044F"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1005,
+   "table": 20,
+   "kind": "alternator",
+   "model": "PI144G",
+   "val": "rated 4 kVA",
+   "change": "power: P 30/24 S 33/26.4 R 4/3 → P 30/24 S 33/26.4",
+   "header": [],
+   "line": "| Alternator | STAMFORD PI144G ¦ | Alternator Model | PI144G"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1005,
+   "table": 20,
+   "kind": "alternator",
+   "model": "PI144G",
+   "val": "rated 3 kW",
+   "change": "power: P 30/24 S 33/26.4 R 4/3 → P 30/24 S 33/26.4",
+   "header": [],
+   "line": "| Alternator | STAMFORD PI144G ¦ | Alternator Model | PI144G"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1011,
+   "table": 26,
+   "kind": "alternator",
+   "model": "UCI224G",
+   "val": "rated 4 kVA",
+   "change": "power: P 80/64 S 88/70.4 R 4/3 → P 80/64 S 88/70.4",
+   "header": [],
+   "line": "| Alternator | STAMFORD UCI224G ¦ | Alternator Model | UCI224G"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1011,
+   "table": 26,
+   "kind": "alternator",
+   "model": "UCI224G",
+   "val": "rated 3 kW",
+   "change": "power: P 80/64 S 88/70.4 R 4/3 → P 80/64 S 88/70.4",
+   "header": [],
+   "line": "| Alternator | STAMFORD UCI224G ¦ | Alternator Model | UCI224G"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1012,
+   "table": 27,
+   "kind": "alternator",
+   "model": "UCI274C",
+   "val": "rated 4 kVA",
+   "change": "power: P 90/72 S 100/80 R 4/3 → P 90/72 S 100/80",
+   "header": [],
+   "line": "| Alternator | STAMFORD UCI274C ¦ | Alternator Model | UCI274C"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1012,
+   "table": 27,
+   "kind": "alternator",
+   "model": "UCI274C",
+   "val": "rated 3 kW",
+   "change": "power: P 90/72 S 100/80 R 4/3 → P 90/72 S 100/80",
+   "header": [],
+   "line": "| Alternator | STAMFORD UCI274C ¦ | Alternator Model | UCI274C"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1013,
+   "table": 28,
+   "kind": "alternator",
+   "model": "UCI274C",
+   "val": "rated 4 kVA",
+   "change": "power: P 100/80 S 110/88 R 4/3 → P 100/80 S 110/88",
+   "header": [],
+   "line": "| Alternator | STAMFORD UCI274C ¦ | Alternator Model | UCI274C"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1013,
+   "table": 28,
+   "kind": "alternator",
+   "model": "UCI274C",
+   "val": "rated 3 kW",
+   "change": "power: P 100/80 S 110/88 R 4/3 → P 100/80 S 110/88",
+   "header": [],
+   "line": "| Alternator | STAMFORD UCI274C ¦ | Alternator Model | UCI274C"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1014,
+   "table": 29,
+   "kind": "alternator",
+   "model": "UCI274E",
+   "val": "rated 4 kVA",
+   "change": "power: P 130/104 S 143/114 R 4/3 → P 130/104 S 143/114",
+   "header": [],
+   "line": "| Alternator | STAMFORD UCI274E ¦ | Alternator Model | UCI274E"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1014,
+   "table": 29,
+   "kind": "alternator",
+   "model": "UCI274E",
+   "val": "rated 3 kW",
+   "change": "power: P 130/104 S 143/114 R 4/3 → P 130/104 S 143/114",
+   "header": [],
+   "line": "| Alternator | STAMFORD UCI274E ¦ | Alternator Model | UCI274E"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1015,
+   "table": 30,
+   "kind": "alternator",
+   "model": "UCI274F",
+   "val": "rated 4 kVA",
+   "change": "power: P 150/120 S 165/132 R 4/3 → P 150/120 S 165/132",
+   "header": [],
+   "line": "| Alternator | STAMFORD UCI274F ¦ | Alternator Model | UCI274F"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1015,
+   "table": 30,
+   "kind": "alternator",
+   "model": "UCI274F",
+   "val": "rated 3 kW",
+   "change": "power: P 150/120 S 165/132 R 4/3 → P 150/120 S 165/132",
+   "header": [],
+   "line": "| Alternator | STAMFORD UCI274F ¦ | Alternator Model | UCI274F"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1016,
+   "table": 31,
+   "kind": "alternator",
+   "model": "UCI274G",
+   "val": "rated 4 kVA",
+   "change": "power: P 180/144 S 198/158.4 R 4/3 → P 180/144 S 198/158.4",
+   "header": [],
+   "line": "| Alternator | STAMFORD UCI274G"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1016,
+   "table": 31,
+   "kind": "alternator",
+   "model": "UCI274G",
+   "val": "rated 3 kW",
+   "change": "power: P 180/144 S 198/158.4 R 4/3 → P 180/144 S 198/158.4",
+   "header": [],
+   "line": "| Alternator | STAMFORD UCI274G"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1023,
+   "table": 38,
+   "kind": "alternator",
+   "model": "HCI544C",
+   "val": "rated 4 kVA",
+   "change": "power: P 500/400 S 550/440 R 4/3 → P 500/400 S 550/440",
+   "header": [],
+   "line": "| Alternator | STAMFORD HCI544C ¦ | Alternator Model | STAMFORD HCI544C"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1023,
+   "table": 38,
+   "kind": "alternator",
+   "model": "HCI544C",
+   "val": "rated 3 kW",
+   "change": "power: P 500/400 S 550/440 R 4/3 → P 500/400 S 550/440",
+   "header": [],
+   "line": "| Alternator | STAMFORD HCI544C ¦ | Alternator Model | STAMFORD HCI544C"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1024,
+   "table": 39,
+   "kind": "alternator",
+   "model": "HCI544C",
+   "val": "rated 4 kVA",
+   "change": "power: P 500/400 S 550/440 R 4/3 → P 500/400 S 550/440",
+   "header": [],
+   "line": "| Alternator | STAMFORD HCI544C ¦ | Alternator Model | STAFMORD HCI544C"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1024,
+   "table": 39,
+   "kind": "alternator",
+   "model": "HCI544C",
+   "val": "rated 3 kW",
+   "change": "power: P 500/400 S 550/440 R 4/3 → P 500/400 S 550/440",
+   "header": [],
+   "line": "| Alternator | STAMFORD HCI544C ¦ | Alternator Model | STAFMORD HCI544C"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1025,
+   "table": 40,
+   "kind": "alternator",
+   "model": "HCI544FS",
+   "val": "rated 3 kW",
+   "change": "power: P 625/500 S 688/550 R 4/3 → P 625/500 S 688/550",
+   "header": [],
+   "line": "| Alternator | STAMFORD HCI544FS ¦ | Alternator Model | STAMFORD HCI544FS"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1026,
+   "table": 41,
+   "kind": "alternator",
+   "model": "HCI544FS",
+   "val": "rated 3 kW",
+   "change": "power: P 625/500 S 687.5/550 R 4/3 → P 625/500 S 687.5/550",
+   "header": [],
+   "line": "| Alternator | STAMFORD HCI544FS ¦ | Alternator Model | HCI544FS"
+  }
+ ],
+ "công suất | chưa rõ": [
+  {
+   "sup": "gb-power",
+   "n": 1003,
+   "table": 18,
+   "kind": "engine",
+   "model": "404A-22G",
+   "val": "rated 4 kVA",
+   "change": "power: P 20/16 S 22/17.6 R 4/3 → P 20/16 S 22/17.6",
+   "header": [],
+   "line": "| Engine | PERKINS 404A-22G ¦ | Engine Model | 404A-22G"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1003,
+   "table": 18,
+   "kind": "engine",
+   "model": "404A-22G",
+   "val": "rated 3 kW",
+   "change": "power: P 20/16 S 22/17.6 R 4/3 → P 20/16 S 22/17.6",
+   "header": [],
+   "line": "| Engine | PERKINS 404A-22G ¦ | Engine Model | 404A-22G"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1016,
+   "table": 31,
+   "kind": "engine",
+   "model": "1106C-E66TAG4",
+   "val": "rated 3 kW",
+   "change": "power: P 180/144 S 198/158.4 R 4/3 → P 180/144 S 198/158.4",
+   "header": [],
+   "line": "| Engine | PERKINS 1106C-E66TAG4 ¦ | Engine Model | 1106C-E66TAG4"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1018,
+   "table": 33,
+   "kind": "engine",
+   "model": "1306C-E87TAG4",
+   "val": "rated 4 kVA",
+   "change": "power: P 230/184 S 253/202 R 4/3 → P 230/184 S 253/202",
+   "header": [],
+   "line": "| Engine | PERKINS 1306C-E87TAG4 ¦ | Engine Model | 1306C-E87TAG4"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1019,
+   "table": 34,
+   "kind": "engine",
+   "model": "1306A-E87TAG6",
+   "val": "rated 4 kVA",
+   "change": "power: P 250/200 S 275/220 R 4/3 → P 250/200 S 275/220",
+   "header": [],
+   "line": "| Engine | PERKINS 1306A-E87TAG6 ¦ | Engine Model | 1306A-E87TAG6"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1019,
+   "table": 34,
+   "kind": "engine",
+   "model": "1306A-E87TAG6",
+   "val": "rated 3 kW",
+   "change": "power: P 250/200 S 275/220 R 4/3 → P 250/200 S 275/220",
+   "header": [],
+   "line": "| Engine | PERKINS 1306A-E87TAG6 ¦ | Engine Model | 1306A-E87TAG6"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1022,
+   "table": 37,
+   "kind": "engine",
+   "model": "2206A-E13TAG3",
+   "val": "rated 4 kVA",
+   "change": "power: P 375/300 S 412/330 R 4/3 → P 375/300 S 412/330",
+   "header": [],
+   "line": "| Engine | PERKINS 2206A-E13TAG3 ¦ | Engine Model | 2206A-E13TAG3"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1004,
+   "table": 19,
+   "kind": "alternator",
+   "model": "PI144E",
+   "val": "rated 4 kVA",
+   "change": "power: P 25/20 S 27.5/22 R 4/3 → P 25/20 S 27.5/22",
+   "header": [],
+   "line": "| Alternator | STAMFORD PI144E"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1004,
+   "table": 19,
+   "kind": "alternator",
+   "model": "PI144E",
+   "val": "rated 3 kW",
+   "change": "power: P 25/20 S 27.5/22 R 4/3 → P 25/20 S 27.5/22",
+   "header": [],
+   "line": "| Alternator | STAMFORD PI144E"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1019,
+   "table": 34,
+   "kind": "alternator",
+   "model": "UCD274K",
+   "val": "rated 4 kVA",
+   "change": "power: P 250/200 S 275/220 R 4/3 → P 250/200 S 275/220",
+   "header": [],
+   "line": "| Alternator | STAMFORD UCD274K ¦ | Alternator Model | UCD274K"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1019,
+   "table": 34,
+   "kind": "alternator",
+   "model": "UCD274K",
+   "val": "rated 3 kW",
+   "change": "power: P 250/200 S 275/220 R 4/3 → P 250/200 S 275/220",
+   "header": [],
+   "line": "| Alternator | STAMFORD UCD274K ¦ | Alternator Model | UCD274K"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1021,
+   "table": 36,
+   "kind": "alternator",
+   "model": "HCI444E",
+   "val": "rated 4 kVA",
+   "change": "power: P 350/280 S 385/308 R 4/3 → P 350/280 S 385/308",
+   "header": [],
+   "line": "| Alternator | STAMFORD HCI444E ¦ | Alternator Model | HCI444E"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1021,
+   "table": 36,
+   "kind": "alternator",
+   "model": "HCI444E",
+   "val": "rated 3 kW",
+   "change": "power: P 350/280 S 385/308 R 4/3 → P 350/280 S 385/308",
+   "header": [],
+   "line": "| Alternator | STAMFORD HCI444E ¦ | Alternator Model | HCI444E"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1022,
+   "table": 37,
+   "kind": "alternator",
+   "model": "HCI444F",
+   "val": "rated 4 kVA",
+   "change": "power: P 375/300 S 412/330 R 4/3 → P 375/300 S 412/330",
+   "header": [],
+   "line": "| Alternator | STAMFORD HCI444F ¦ | Alternator Model | HCI444F"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1022,
+   "table": 37,
+   "kind": "alternator",
+   "model": "HCI444F",
+   "val": "rated 3 kW",
+   "change": "power: P 375/300 S 412/330 R 4/3 → P 375/300 S 412/330",
+   "header": [],
+   "line": "| Alternator | STAMFORD HCI444F ¦ | Alternator Model | HCI444F"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1025,
+   "table": 40,
+   "kind": "alternator",
+   "model": "HCI544FS",
+   "val": "rated 4 kVA",
+   "change": "power: P 625/500 S 688/550 R 4/3 → P 625/500 S 688/550",
+   "header": [],
+   "line": "| Alternator | STAMFORD HCI544FS ¦ | Alternator Model | STAMFORD HCI544FS"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1026,
+   "table": 41,
+   "kind": "alternator",
+   "model": "HCI544FS",
+   "val": "rated 4 kVA",
+   "change": "power: P 625/500 S 687.5/550 R 4/3 → P 625/500 S 687.5/550",
+   "header": [],
+   "line": "| Alternator | STAMFORD HCI544FS ¦ | Alternator Model | HCI544FS"
+  }
+ ],
+ "công suất | không đối chiếu": [
+  {
+   "sup": "gb-power",
+   "n": 1011,
+   "table": 26,
+   "kind": "engine",
+   "model": "1104C-E44TAG1",
+   "val": "rated 4 kVA",
+   "change": "power: P 80/64 S 88/70.4 R 4/3 → P 80/64 S 88/70.4",
+   "header": [],
+   "line": "| Engine | PERKINS 1104C-E44TAG1"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1011,
+   "table": 26,
+   "kind": "engine",
+   "model": "1104C-E44TAG1",
+   "val": "rated 3 kW",
+   "change": "power: P 80/64 S 88/70.4 R 4/3 → P 80/64 S 88/70.4",
+   "header": [],
+   "line": "| Engine | PERKINS 1104C-E44TAG1"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1013,
+   "table": 28,
+   "kind": "engine",
+   "model": "1004C-44TAG2",
+   "val": "rated 4 kVA",
+   "change": "power: P 100/80 S 110/88 R 4/3 → P 100/80 S 110/88",
+   "header": [],
+   "line": "| Engine | PERKINS 1004C-44TAG2 ¦ | Engine Model | 1004C-44TAG2"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1013,
+   "table": 28,
+   "kind": "engine",
+   "model": "1004C-44TAG2",
+   "val": "rated 3 kW",
+   "change": "power: P 100/80 S 110/88 R 4/3 → P 100/80 S 110/88",
+   "header": [],
+   "line": "| Engine | PERKINS 1004C-44TAG2 ¦ | Engine Model | 1004C-44TAG2"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1015,
+   "table": 30,
+   "kind": "engine",
+   "model": "1006A-70TAG2",
+   "val": "rated 4 kVA",
+   "change": "power: P 150/120 S 165/132 R 4/3 → P 150/120 S 165/132",
+   "header": [],
+   "line": "| Engine | PERKINS 1006A-70TAG2 ¦ | Engine Model | 1006A-70TAG2"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1015,
+   "table": 30,
+   "kind": "engine",
+   "model": "1006A-70TAG2",
+   "val": "rated 3 kW",
+   "change": "power: P 150/120 S 165/132 R 4/3 → P 150/120 S 165/132",
+   "header": [],
+   "line": "| Engine | PERKINS 1006A-70TAG2 ¦ | Engine Model | 1006A-70TAG2"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1016,
+   "table": 31,
+   "kind": "engine",
+   "model": "1106C-E66TAG4",
+   "val": "rated 4 kVA",
+   "change": "power: P 180/144 S 198/158.4 R 4/3 → P 180/144 S 198/158.4",
+   "header": [],
+   "line": "| Engine | PERKINS 1106C-E66TAG4 ¦ | Engine Model | 1106C-E66TAG4"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1017,
+   "table": 32,
+   "kind": "engine",
+   "model": "1306C-E87TAG3",
+   "val": "rated 4 kVA",
+   "change": "power: P 200/160 S 220/176 R 4/3 → P 200/160 S 220/176",
+   "header": [],
+   "line": "| Engine | PERKINS 1306C-E87TAG3 ¦ | Engine Model | 1306C-E87TAG3"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1017,
+   "table": 32,
+   "kind": "engine",
+   "model": "1306C-E87TAG3",
+   "val": "rated 3 kW",
+   "change": "power: P 200/160 S 220/176 R 4/3 → P 200/160 S 220/176",
+   "header": [],
+   "line": "| Engine | PERKINS 1306C-E87TAG3 ¦ | Engine Model | 1306C-E87TAG3"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1003,
+   "table": 18,
+   "kind": "alternator",
+   "model": "STAFMORD PI144D",
+   "val": "rated 4 kVA",
+   "change": "power: P 20/16 S 22/17.6 R 4/3 → P 20/16 S 22/17.6",
+   "header": [],
+   "line": "| Alternator | STAFMORD PI144D"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1003,
+   "table": 18,
+   "kind": "alternator",
+   "model": "STAFMORD PI144D",
+   "val": "rated 3 kW",
+   "change": "power: P 20/16 S 22/17.6 R 4/3 → P 20/16 S 22/17.6",
+   "header": [],
+   "line": "| Alternator | STAFMORD PI144D"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1006,
+   "table": 21,
+   "kind": "alternator",
+   "model": "STAFMORD PI144K",
+   "val": "rated 4 kVA",
+   "change": "power: P 40/32 S 44/35.2 R 4/3 → P 40/32 S 44/35.2",
+   "header": [],
+   "line": "| Alternator | STAFMORD PI144K"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1006,
+   "table": 21,
+   "kind": "alternator",
+   "model": "STAFMORD PI144K",
+   "val": "rated 3 kW",
+   "change": "power: P 40/32 S 44/35.2 R 4/3 → P 40/32 S 44/35.2",
+   "header": [],
+   "line": "| Alternator | STAFMORD PI144K"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1007,
+   "table": 22,
+   "kind": "alternator",
+   "model": "STAFMORD PI144K",
+   "val": "rated 4 kVA",
+   "change": "power: P 45/36 S 50/40 R 4/3 → P 45/36 S 50/40",
+   "header": [],
+   "line": "| Alternator | STAFMORD PI144K"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1007,
+   "table": 22,
+   "kind": "alternator",
+   "model": "STAFMORD PI144K",
+   "val": "rated 3 kW",
+   "change": "power: P 45/36 S 50/40 R 4/3 → P 45/36 S 50/40",
+   "header": [],
+   "line": "| Alternator | STAFMORD PI144K"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1008,
+   "table": 23,
+   "kind": "alternator",
+   "model": "STAFMORD UCI224D",
+   "val": "rated 4 kVA",
+   "change": "power: P 50/40 S 55/44 R 4/3 → P 50/40 S 55/44",
+   "header": [],
+   "line": "| Alternator | STAFMORD UCI224D"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1008,
+   "table": 23,
+   "kind": "alternator",
+   "model": "STAFMORD UCI224D",
+   "val": "rated 3 kW",
+   "change": "power: P 50/40 S 55/44 R 4/3 → P 50/40 S 55/44",
+   "header": [],
+   "line": "| Alternator | STAFMORD UCI224D"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1009,
+   "table": 24,
+   "kind": "alternator",
+   "model": "STAFMORD 224E",
+   "val": "rated 4 kVA",
+   "change": "power: P 60/48 S 66/53 R 4/3 → P 60/48 S 66/53",
+   "header": [],
+   "line": "| Alternator | STAFMORD 224E"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1009,
+   "table": 24,
+   "kind": "alternator",
+   "model": "STAFMORD 224E",
+   "val": "rated 3 kW",
+   "change": "power: P 60/48 S 66/53 R 4/3 → P 60/48 S 66/53",
+   "header": [],
+   "line": "| Alternator | STAFMORD 224E"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1018,
+   "table": 33,
+   "kind": "alternator",
+   "model": "UCI274J",
+   "val": "rated 4 kVA",
+   "change": "power: P 230/184 S 253/202 R 4/3 → P 230/184 S 253/202",
+   "header": [],
+   "line": "| Alternator | STAMFORD UCI274J ¦ | Alternator Model | UCI274J"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1018,
+   "table": 33,
+   "kind": "alternator",
+   "model": "UCI274J",
+   "val": "rated 3 kW",
+   "change": "power: P 230/184 S 253/202 R 4/3 → P 230/184 S 253/202",
+   "header": [],
+   "line": "| Alternator | STAMFORD UCI274J ¦ | Alternator Model | UCI274J"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1027,
+   "table": 42,
+   "kind": "alternator",
+   "model": "LVI634B",
+   "val": "rated 4 kVA",
+   "change": "power: P 700/560 S 770/616 R 4/3 → P 700/560 S 770/616",
+   "header": [],
+   "line": "| Alternator | STAMFORD LVI634B ¦ | Alternator Model | LVI634B"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1027,
+   "table": 42,
+   "kind": "alternator",
+   "model": "LVI634B",
+   "val": "rated 3 kW",
+   "change": "power: P 700/560 S 770/616 R 4/3 → P 700/560 S 770/616",
+   "header": [],
+   "line": "| Alternator | STAMFORD LVI634B ¦ | Alternator Model | LVI634B"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1028,
+   "table": 43,
+   "kind": "alternator",
+   "model": "LVI634C",
+   "val": "rated 4 kVA",
+   "change": "power: P 800/640 S 880/704 R 4/3 → P 800/640 S 880/704",
+   "header": [],
+   "line": "| Alternator | STAMFORD LVI634C ¦ | Alternator Model | LVI634C"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1028,
+   "table": 43,
+   "kind": "alternator",
+   "model": "LVI634C",
+   "val": "rated 3 kW",
+   "change": "power: P 800/640 S 880/704 R 4/3 → P 800/640 S 880/704",
+   "header": [],
+   "line": "| Alternator | STAMFORD LVI634C ¦ | Alternator Model | LVI634C"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1029,
+   "table": 44,
+   "kind": "alternator",
+   "model": "STAFMORD LVI634E",
+   "val": "rated 4 kVA",
+   "change": "power: P 1000/800 S 1100/880 R 4/3 → P 1000/800 S 1100/880",
+   "header": [],
+   "line": "| Alternator | STAFMORD LVI634E"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1029,
+   "table": 44,
+   "kind": "alternator",
+   "model": "STAFMORD LVI634E",
+   "val": "rated 3 kW",
+   "change": "power: P 1000/800 S 1100/880 R 4/3 → P 1000/800 S 1100/880",
+   "header": [],
+   "line": "| Alternator | STAFMORD LVI634E"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1030,
+   "table": 45,
+   "kind": "alternator",
+   "model": "STAFMORD LVI634G/1250KVA",
+   "val": "rated 4 kVA",
+   "change": "power: P 1250/1000 S 1375/1100 R 4/3 → P 1250/1000 S 1375/1100",
+   "header": [],
+   "line": "| Alternator | STAFMORD LVI634G/1250KVA"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1030,
+   "table": 45,
+   "kind": "alternator",
+   "model": "STAFMORD LVI634G/1250KVA",
+   "val": "rated 3 kW",
+   "change": "power: P 1250/1000 S 1375/1100 R 4/3 → P 1250/1000 S 1375/1100",
+   "header": [],
+   "line": "| Alternator | STAFMORD LVI634G/1250KVA"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1031,
+   "table": 46,
+   "kind": "alternator",
+   "model": "PI734D/1650KVA",
+   "val": "rated 4 kVA",
+   "change": "power: P 1500/1200 S 1650/1320 R 4/3 → P 1500/1200 S 1650/1320",
+   "header": [],
+   "line": "| Alternator | STAMFORD PI734D/1650KVA"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1031,
+   "table": 46,
+   "kind": "alternator",
+   "model": "PI734D/1650KVA",
+   "val": "rated 3 kW",
+   "change": "power: P 1500/1200 S 1650/1320 R 4/3 → P 1500/1200 S 1650/1320",
+   "header": [],
+   "line": "| Alternator | STAMFORD PI734D/1650KVA"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1032,
+   "table": 47,
+   "kind": "alternator",
+   "model": "PI734D/1650KVA",
+   "val": "rated 4 kVA",
+   "change": "power: P 1650/1320 S 1815/1452 R 4/3 → P 1650/1320 S 1815/1452",
+   "header": [],
+   "line": "| Alternator | STAMFORD PI734D/1650KVA"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1032,
+   "table": 47,
+   "kind": "alternator",
+   "model": "PI734D/1650KVA",
+   "val": "rated 3 kW",
+   "change": "power: P 1650/1320 S 1815/1452 R 4/3 → P 1650/1320 S 1815/1452",
+   "header": [],
+   "line": "| Alternator | STAMFORD PI734D/1650KVA"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1033,
+   "table": 48,
+   "kind": "alternator",
+   "model": "PI734E/1850KVA",
+   "val": "rated 4 kVA",
+   "change": "power: P 1850/1480 S 2035/1628 R 4/3 → P 1850/1480 S 2035/1628",
+   "header": [],
+   "line": "| Alternator | STAMFORD PI734E/1850KVA"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1033,
+   "table": 48,
+   "kind": "alternator",
+   "model": "PI734E/1850KVA",
+   "val": "rated 3 kW",
+   "change": "power: P 1850/1480 S 2035/1628 R 4/3 → P 1850/1480 S 2035/1628",
+   "header": [],
+   "line": "| Alternator | STAMFORD PI734E/1850KVA"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1034,
+   "table": 49,
+   "kind": "alternator",
+   "model": "PI734G/2250KVA",
+   "val": "rated 4 kVA",
+   "change": "power: P 2200/1760 S 2420/1936 R 4/3 → P 2200/1760 S 2420/1936",
+   "header": [],
+   "line": "| Alternator | STAMFORD PI734G/2250KVA"
+  },
+  {
+   "sup": "gb-power",
+   "n": 1034,
+   "table": 49,
+   "kind": "alternator",
+   "model": "PI734G/2250KVA",
+   "val": "rated 3 kW",
+   "change": "power: P 2200/1760 S 2420/1936 R 4/3 → P 2200/1760 S 2420/1936",
+   "header": [],
+   "line": "| Alternator | STAMFORD PI734G/2250KVA"
+  }
+ ],
+ "vai engine | mâu thuẫn": [
+  {
+   "sup": "huachai-deutz",
+   "n": 116,
+   "table": 12,
+   "row": 0,
+   "kind": "engine",
+   "model": "30GF",
+   "val": "30GF",
+   "change": "MẤT bản ghi: engine 30GF",
+   "header": [
+    "| Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)"
+   ],
+   "line": "| Model | 30GF | Model | F4L912D | Model | PI144J"
+  }
+ ],
+ "thông số tổ máy current (tự kiểm) | vô lý (tự kiểm)": [
+  {
+   "sup": "huatai-yangzhou",
+   "n": 111,
+   "table": 10,
+   "row": 12,
+   "kind": "engine",
+   "model": "WD305TAD68",
+   "val": "current=1267",
+   "change": "current bỏ: 1267 → ∅",
+   "header": [
+    "| 组型号Type of set | 输出功率 Power of output (KW/KVA) | 额定电流Rated current (A) | 柴油机参数 Parameters of set | 机组尺寸及重量 Size and weight of machine set",
+    "| 型号 Type | 额定功率 power (KW) | 缸数及类型Numbers& Type of cylinder | 燃油消耗 (g/kw.h)Consumption of fuel(g/kw.h) | 机油容量 Oil capacity (L) | 长×宽×高 Length Width Height (MM) | 净重 Net Weight (kg)"
+   ],
+   "line": "| 700GF | 140/165 | 1267 | WD305TAD68 | 750 | 12缸V型 | 196 | 55 | 3800×1800×2100 | 4550"
+  },
+  {
+   "sup": "huatai-yangzhou",
+   "n": 111,
+   "table": 10,
+   "row": 13,
+   "kind": "engine",
+   "model": "WD327TAD78",
+   "val": "current=1448",
+   "change": "current bỏ: 1448 → ∅",
+   "header": [
+    "| 组型号Type of set | 输出功率 Power of output (KW/KVA) | 额定电流Rated current (A) | 柴油机参数 Parameters of set | 机组尺寸及重量 Size and weight of machine set",
+    "| 型号 Type | 额定功率 power (KW) | 缸数及类型Numbers& Type of cylinder | 燃油消耗 (g/kw.h)Consumption of fuel(g/kw.h) | 机油容量 Oil capacity (L) | 长×宽×高 Length Width Height (MM) | 净重 Net Weight (kg)"
+   ],
+   "line": "| 800GF | 140/165 | 1448 | WD327TAD78 | 858 | 12缸V型 | 196 | 60 | 3900×1850×2100 | 5000"
+  },
+  {
+   "sup": "huatai-yangzhou",
+   "n": 111,
+   "table": 10,
+   "row": 14,
+   "kind": "engine",
+   "model": "WD327TAD82",
+   "val": "current=1538.5",
+   "change": "current bỏ: 1538.5 → ∅",
+   "header": [
+    "| 组型号Type of set | 输出功率 Power of output (KW/KVA) | 额定电流Rated current (A) | 柴油机参数 Parameters of set | 机组尺寸及重量 Size and weight of machine set",
+    "| 型号 Type | 额定功率 power (KW) | 缸数及类型Numbers& Type of cylinder | 燃油消耗 (g/kw.h)Consumption of fuel(g/kw.h) | 机油容量 Oil capacity (L) | 长×宽×高 Length Width Height (MM) | 净重 Net Weight (kg)"
+   ],
+   "line": "| 850GF | 140/165 | 1538.5 | WD327TAD82 | 902 | 12缸V型 | 196 | 60 | 3900×1850×2100 | 5000"
+  },
+  {
+   "sup": "kangwo-guangdong",
+   "n": 110,
+   "table": 12,
+   "row": 5,
+   "kind": "engine",
+   "model": "L28M",
+   "val": "current=36",
+   "change": "current bỏ: 36 → ∅",
+   "header": [
+    "| 机组型号 | 输出功率（ KW ） | 电流（ A ） | 柴油机型号 | 缸数 | 缸径 * 行程（ mm ） | 排气量（ L) | 燃油消耗率 g/kw.h | 机组尺寸 mmL*W*H | 机组重量 Kg",
+    "| kw | KVA"
+   ],
+   "line": "| GKW-15GF | 15 | 20 | 36 | L28M | 1 | 128/115 | 1.6 | 265.2 | 1300*700*900 | 460"
+  },
+  {
+   "sup": "power-hf",
+   "n": 109,
+   "table": 10,
+   "row": 12,
+   "kind": "engine",
+   "model": "PHF6110ZLD1(R2J01)",
+   "val": "current=100",
+   "change": "current bỏ: 100 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 13 | PHF-100RX | 100 | 110 | 180 | PHF6110ZLD1(R2J01) | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 109,
+   "table": 10,
+   "row": 13,
+   "kind": "engine",
+   "model": "PHF6132ZLD1(R4J01)",
+   "val": "current=120",
+   "change": "current bỏ: 120 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 14 | PHF-120RX | 120 | 132 | 216 | PHF6132ZLD1(R4J01) | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 109,
+   "table": 10,
+   "row": 14,
+   "kind": "engine",
+   "model": "PHF14L400",
+   "val": "current=300",
+   "change": "current bỏ: 300 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 15 | PHF-300HX | 300 | 330 | 540 | PHF14L400 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 109,
+   "table": 10,
+   "row": 15,
+   "kind": "engine",
+   "model": "PHF15L440",
+   "val": "current=350",
+   "change": "current bỏ: 350 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 16 | PHF-350HX | 350 | 385 | 630 | PHF15L440 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 111,
+   "table": 13,
+   "row": 6,
+   "kind": "engine",
+   "model": "PHF6230ZL1Q1",
+   "val": "current=200",
+   "change": "current bỏ: 200 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 发动机型号 | 敞开型 | 静音型"
+   ],
+   "line": "| 7 | PHF-200RX-Q | 200 | 220 | 360 | PHF6230ZL1Q1 | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 111,
+   "table": 13,
+   "row": 7,
+   "kind": "engine",
+   "model": "PHF6260ZL1Q1",
+   "val": "current=240",
+   "change": "current bỏ: 240 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 发动机型号 | 敞开型 | 静音型"
+   ],
+   "line": "| 8 | PHF-240RX-Q | 240 | 264 | 432 | PHF6260ZL1Q1 | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 9,
+   "kind": "engine",
+   "model": "WP6D132E200",
+   "val": "current=100",
+   "change": "current bỏ: 100 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 10 | PHF-100WX | 100 | 110 | 180 | WP6D132E200 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 10,
+   "kind": "engine",
+   "model": "WP6D152E200",
+   "val": "current=120",
+   "change": "current bỏ: 120 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 11 | PHF-120WX | 120 | 132 | 216 | WP6D152E200 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 11,
+   "kind": "engine",
+   "model": "WP10D200E200",
+   "val": "current=150",
+   "change": "current bỏ: 150 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 12 | PHF-150WX | 150 | 165 | 270 | WP10D200E200 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 12,
+   "kind": "engine",
+   "model": "WP10D238E200",
+   "val": "current=180",
+   "change": "current bỏ: 180 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 13 | PHF-180WX | 180 | 198 | 324 | WP10D238E200 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 13,
+   "kind": "engine",
+   "model": "WP10D264E200",
+   "val": "current=200",
+   "change": "current bỏ: 200 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 14 | PHF-200WX | 200 | 220 | 360 | WP10D264E200 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 14,
+   "kind": "engine",
+   "model": "WP12D317E200",
+   "val": "current=250",
+   "change": "current bỏ: 250 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 15 | PHF-250WX | 250 | 275 | 450 | WP12D317E200 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 15,
+   "kind": "engine",
+   "model": "WP13D385E200",
+   "val": "current=300",
+   "change": "current bỏ: 300 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 16 | PHF-300WX | 300 | 330 | 540 | WP13D385E200 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 16,
+   "kind": "engine",
+   "model": "6M26D447E200",
+   "val": "current=360",
+   "change": "current bỏ: 360 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 17 | PHF-360WX | 360 | 396 | 648 | 6M26D447E200 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 17,
+   "kind": "engine",
+   "model": "6M26D484E200",
+   "val": "current=400",
+   "change": "current bỏ: 400 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 18 | PHF-400WX | 400 | 440 | 720 | 6M26D484E200 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 18,
+   "kind": "engine",
+   "model": "6M33D605E200",
+   "val": "current=500",
+   "change": "current bỏ: 500 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 19 | PHF-500WX | 500 | 550 | 900 | 6M33D605E200 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 19,
+   "kind": "engine",
+   "model": "12M26D748E200",
+   "val": "current=600",
+   "change": "current bỏ: 600 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 20 | PHF-600WX | 600 | 660 | 1080 | 12M26D748E200 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 20,
+   "kind": "engine",
+   "model": "12M26D792E200",
+   "val": "current=650",
+   "change": "current bỏ: 650 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 21 | PHF-650WX | 650 | 715 | 1170 | 12M26D792E200 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 21,
+   "kind": "engine",
+   "model": "12M26D902E200",
+   "val": "current=750",
+   "change": "current bỏ: 750 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 22 | PHF-750WX | 750 | 825 | 1350 | 12M26D902E200 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 22,
+   "kind": "engine",
+   "model": "12M26D968E200",
+   "val": "current=800",
+   "change": "current bỏ: 800 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 23 | PHF-800WX | 800 | 880 | 1440 | 12M26D968E200 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 23,
+   "kind": "engine",
+   "model": "12M33D1108E200",
+   "val": "current=900",
+   "change": "current bỏ: 900 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 24 | PHF-900WX | 900 | 990 | 1620 | 12M33D1108E200 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 112,
+   "table": 14,
+   "row": 24,
+   "kind": "engine",
+   "model": "12M33D1210E200",
+   "val": "current=1000",
+   "change": "current bỏ: 1000 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 25 | PHF-1000WX | 1000 | 1100 | 1800 | 12M33D1210E200 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 7,
+   "kind": "engine",
+   "model": "YC6B180L-D20",
+   "val": "current=100",
+   "change": "current bỏ: 100 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 8 | PHF-100YX | 100 | 110 | 180 | YC6B180L-D20 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 8,
+   "kind": "engine",
+   "model": "YC6A200L-D20",
+   "val": "current=120",
+   "change": "current bỏ: 120 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 9 | PHF-120YX | 120 | 132 | 216 | YC6A200L-D20 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 9,
+   "kind": "engine",
+   "model": "YC6A230L-D20",
+   "val": "current=130",
+   "change": "current bỏ: 130 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 10 | PHF-130YX | 130 | 143 | 234 | YC6A230L-D20 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 10,
+   "kind": "engine",
+   "model": "YC6G245L-D20",
+   "val": "current=150",
+   "change": "current bỏ: 150 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 11 | PHF-150YX | 150 | 165 | 270 | YC6G245L-D20 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 11,
+   "kind": "engine",
+   "model": "YC6MK350L-D20",
+   "val": "current=200",
+   "change": "current bỏ: 200 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 12 | PHF-200YX | 200 | 220 | 360 | YC6MK350L-D20 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 12,
+   "kind": "engine",
+   "model": "YC6MK420L-D20",
+   "val": "current=250",
+   "change": "current bỏ: 250 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 13 | PHF-250YX | 250 | 275 | 450 | YC6MK420L-D20 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 13,
+   "kind": "engine",
+   "model": "YC6T550L-D21",
+   "val": "current=300",
+   "change": "current bỏ: 300 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 15 | PHF-300YX | 300 | 330 | 540 | YC6T550L-D21 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 14,
+   "kind": "engine",
+   "model": "YC6T600L-D22",
+   "val": "current=350",
+   "change": "current bỏ: 350 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 16 | PHF-350YX | 350 | 385 | 630 | YC6T600L-D22 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 15,
+   "kind": "engine",
+   "model": "YC6T660L-D20",
+   "val": "current=400",
+   "change": "current bỏ: 400 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 17 | PHF-400YX | 400 | 440 | 720 | YC6T660L-D20 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 16,
+   "kind": "engine",
+   "model": "YC6TD780L-D20",
+   "val": "current=480",
+   "change": "current bỏ: 480 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 18 | PHF-480YX | 480 | 528 | 864 | YC6TD780L-D20 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 17,
+   "kind": "engine",
+   "model": "YC6TD840L-D20",
+   "val": "current=500",
+   "change": "current bỏ: 500 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 19 | PHF-500YX | 500 | 550 | 900 | YC6TD840L-D20 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 18,
+   "kind": "engine",
+   "model": "YC6C1020L-D20",
+   "val": "current=600",
+   "change": "current bỏ: 600 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 20 | PHF-600YX | 600 | 660 | 1080 | YC6C1020L-D20 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 19,
+   "kind": "engine",
+   "model": "YC6C1070L-D20",
+   "val": "current=650",
+   "change": "current bỏ: 650 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 21 | PHF-650YX | 650 | 715 | 1170 | YC6C1070L-D20 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 20,
+   "kind": "engine",
+   "model": "YC6C1220L-D20",
+   "val": "current=750",
+   "change": "current bỏ: 750 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 22 | PHF-750YX | 750 | 825 | 1350 | YC6C1220L-D20 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 21,
+   "kind": "engine",
+   "model": "YC6C1320L-D20",
+   "val": "current=800",
+   "change": "current bỏ: 800 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 23 | PHF-800YX | 800 | 880 | 1440 | YC6C1320L-D20 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 22,
+   "kind": "engine",
+   "model": "YC12VC1680L-D20",
+   "val": "current=1000",
+   "change": "current bỏ: 1000 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 24 | PHF-1000YX | 1000 | 1100 | 1800 | YC12VC1680L-D20 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 23,
+   "kind": "engine",
+   "model": "YC12VC2070L-D20",
+   "val": "current=1200",
+   "change": "current bỏ: 1200 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 25 | PHF-1200YX | 1200 | 1320 | 2160 | YC12VC2070L-D20 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 24,
+   "kind": "engine",
+   "model": "YC12VC2270L-D20",
+   "val": "current=1300",
+   "change": "current bỏ: 1300 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 26 | PHF-1300YX | 1300 | 1430 | 2340 | YC12VC2270L-D20 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 113,
+   "table": 15,
+   "row": 25,
+   "kind": "engine",
+   "model": "YC12VC2510L-D20",
+   "val": "current=1500",
+   "change": "current bỏ: 1500 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 27 | PHF-1500YX | 1500 | 1650 | 2700 | YC12VC2510L-D20 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 5,
+   "kind": "engine",
+   "model": "6BTAA5.9-G2",
+   "val": "current=100",
+   "change": "current bỏ: 100 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 6 | PHF-100CX | 100 | 110 | 180 | 6BTAA5.9-G2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 6,
+   "kind": "engine",
+   "model": "6CTA8.3-G2",
+   "val": "current=150",
+   "change": "current bỏ: 150 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 7 | PHF-150CX | 150 | 165 | 270 | 6CTA8.3-G2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 7,
+   "kind": "engine",
+   "model": "6CTAA8.3-G2",
+   "val": "current=160",
+   "change": "current bỏ: 160 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 8 | PHF-160CX | 160 | 176 | 288 | 6CTAA8.3-G2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 8,
+   "kind": "engine",
+   "model": "6LTAA8.9-G2",
+   "val": "current=200",
+   "change": "current bỏ: 200 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 9 | PHF-200CX | 200 | 220 | 360 | 6LTAA8.9-G2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 9,
+   "kind": "engine",
+   "model": "NT855-GA",
+   "val": "current=200",
+   "change": "current bỏ: 200 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 10 | PHF-200CX | 200 | 220 | 360 | NT855-GA | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 10,
+   "kind": "engine",
+   "model": "NTA855-G1B",
+   "val": "current=250",
+   "change": "current bỏ: 250 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 11 | PHF-250CX | 250 | 275 | 450 | NTA855-G1B | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 11,
+   "kind": "engine",
+   "model": "NTA855-G4",
+   "val": "current=280",
+   "change": "current bỏ: 280 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 12 | PHF-280CX | 280 | 308 | 504 | NTA855-G4 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 12,
+   "kind": "engine",
+   "model": "NTAA855-G7",
+   "val": "current=300",
+   "change": "current bỏ: 300 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 13 | PHF-300CX | 300 | 330 | 540 | NTAA855-G7 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 13,
+   "kind": "engine",
+   "model": "KTA19-G3",
+   "val": "current=360",
+   "change": "current bỏ: 360 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 14 | PHF-360CX | 360 | 396 | 648 | KTA19-G3 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 14,
+   "kind": "engine",
+   "model": "KTA19-G3A",
+   "val": "current=400",
+   "change": "current bỏ: 400 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 15 | PHF-400CX | 400 | 440 | 720 | KTA19-G3A | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 15,
+   "kind": "engine",
+   "model": "KTAA19-G6",
+   "val": "current=460",
+   "change": "current bỏ: 460 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 16 | PHF-460CX | 460 | 506 | 828 | KTAA19-G6 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 16,
+   "kind": "engine",
+   "model": "KTA38-G",
+   "val": "current=500",
+   "change": "current bỏ: 500 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 17 | PHF-500CX | 500 | 550 | 900 | KTA38-G | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 17,
+   "kind": "engine",
+   "model": "KTA38-G2",
+   "val": "current=600",
+   "change": "current bỏ: 600 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 18 | PHF-600CX | 600 | 660 | 1080 | KTA38-G2 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 18,
+   "kind": "engine",
+   "model": "KTA38-G2A",
+   "val": "current=700",
+   "change": "current bỏ: 700 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 19 | PHF-700CX | 700 | 770 | 1260 | KTA38-G2A | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 19,
+   "kind": "engine",
+   "model": "KTA38-G5",
+   "val": "current=800",
+   "change": "current bỏ: 800 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 20 | PHF-800CX | 800 | 880 | 1440 | KTA38-G5 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 114,
+   "table": 16,
+   "row": 20,
+   "kind": "engine",
+   "model": "KTA50-G3",
+   "val": "current=1000",
+   "change": "current bỏ: 1000 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 21 | PHF-1000CX | 1000 | 1100 | 1800 | KTA50-G3 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 10,
+   "kind": "engine",
+   "model": "1106A-70TG1",
+   "val": "current=100",
+   "change": "current bỏ: 100 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 11 | PHF-100PX | 100 | 110 | 180 | 1106A-70TG1 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 11,
+   "kind": "engine",
+   "model": "1106A-70TAG2",
+   "val": "current=110",
+   "change": "current bỏ: 110 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 12 | PHF-110PX | 110 | 121 | 198 | 1106A-70TAG2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 12,
+   "kind": "engine",
+   "model": "1106A-70TAG3",
+   "val": "current=140",
+   "change": "current bỏ: 140 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 13 | PHF-140PX | 140 | 154 | 252 | 1106A-70TAG3 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 13,
+   "kind": "engine",
+   "model": "1106A-70TAG4",
+   "val": "current=160",
+   "change": "current bỏ: 160 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 14 | PHF-160PX | 160 | 176 | 288 | 1106A-70TAG4 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 14,
+   "kind": "engine",
+   "model": "1506A-E88TAG2",
+   "val": "current=180",
+   "change": "current bỏ: 180 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 15 | PHF-180PX | 180 | 198 | 324 | 1506A-E88TAG2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 15,
+   "kind": "engine",
+   "model": "1506A-E88TAG3",
+   "val": "current=200",
+   "change": "current bỏ: 200 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 16 | PHF-200PX | 200 | 220 | 360 | 1506A-E88TAG3 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 16,
+   "kind": "engine",
+   "model": "1506A-E88TAG4",
+   "val": "current=220",
+   "change": "current bỏ: 220 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 17 | PHF-220PX | 220 | 242 | 396 | 1506A-E88TAG4 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 17,
+   "kind": "engine",
+   "model": "1506A-E88TAG5",
+   "val": "current=250",
+   "change": "current bỏ: 250 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 18 | PHF-250PX | 250 | 275 | 450 | 1506A-E88TAG5 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 18,
+   "kind": "engine",
+   "model": "2206C-E13TAG2",
+   "val": "current=280",
+   "change": "current bỏ: 280 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 19 | PHF-280PX | 280 | 308 | 504 | 2206C-E13TAG2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 19,
+   "kind": "engine",
+   "model": "2206C-E13TAG3",
+   "val": "current=320",
+   "change": "current bỏ: 320 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 20 | PHF-320PX | 320 | 352 | 576 | 2206C-E13TAG3 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 20,
+   "kind": "engine",
+   "model": "2506C-E15TAG1",
+   "val": "current=360",
+   "change": "current bỏ: 360 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 21 | PHF-360PX | 360 | 396 | 648 | 2506C-E15TAG1 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 21,
+   "kind": "engine",
+   "model": "2506C-E15TAG2",
+   "val": "current=400",
+   "change": "current bỏ: 400 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 22 | PHF-400PX | 400 | 440 | 720 | 2506C-E15TAG2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 22,
+   "kind": "engine",
+   "model": "2806C-E18TAG1A",
+   "val": "current=480",
+   "change": "current bỏ: 480 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 23 | PHF-480PX | 480 | 528 | 864 | 2806C-E18TAG1A | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 23,
+   "kind": "engine",
+   "model": "2806C-E18TAG2",
+   "val": "current=520",
+   "change": "current bỏ: 520 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 24 | PHF-520PX | 520 | 572 | 936 | 2806C-E18TAG2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 24,
+   "kind": "engine",
+   "model": "4006-23TAG2A",
+   "val": "current=600",
+   "change": "current bỏ: 600 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 25 | PHF-600PX | 600 | 660 | 1080 | 4006-23TAG2A | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 25,
+   "kind": "engine",
+   "model": "4006-23TAG3A",
+   "val": "current=650",
+   "change": "current bỏ: 650 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 26 | PHF-650PX | 650 | 715 | 1170 | 4006-23TAG3A | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 26,
+   "kind": "engine",
+   "model": "4008TAG1A",
+   "val": "current=700",
+   "change": "current bỏ: 700 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 27 | PHF-700PX | 700 | 770 | 1260 | 4008TAG1A | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 27,
+   "kind": "engine",
+   "model": "4008TAG2A",
+   "val": "current=800",
+   "change": "current bỏ: 800 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 28 | PHF-800PX | 800 | 880 | 1440 | 4008TAG2A | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 28,
+   "kind": "engine",
+   "model": "4012-46TWG2A",
+   "val": "current=1000",
+   "change": "current bỏ: 1000 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 29 | PHF-1000PX | 1000 | 1100 | 1800 | 4012-46TWG2A | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 29,
+   "kind": "engine",
+   "model": "4012-46TAG2A",
+   "val": "current=1200",
+   "change": "current bỏ: 1200 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 30 | PHF-1200PX | 1200 | 1320 | 2160 | 4012-46TAG2A | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 30,
+   "kind": "engine",
+   "model": "4012-46TAG3A",
+   "val": "current=1350",
+   "change": "current bỏ: 1350 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 31 | PHF-1350PX | 1350 | 1485 | 2430 | 4012-46TAG3A | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 31,
+   "kind": "engine",
+   "model": "4016-61TRG1",
+   "val": "current=1500",
+   "change": "current bỏ: 1500 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 32 | PHF-1500PX | 1500 | 1650 | 2700 | 4016-61TRG1 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 32,
+   "kind": "engine",
+   "model": "4016-61TRG2",
+   "val": "current=1600",
+   "change": "current bỏ: 1600 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 33 | PHF-1600PX | 1600 | 1760 | 2880 | 4016-61TRG2 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 115,
+   "table": 17,
+   "row": 33,
+   "kind": "engine",
+   "model": "4016-61TRG3",
+   "val": "current=1800",
+   "change": "current bỏ: 1800 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 34 | PHF-1800PX | 1800 | 1980 | 3240 | 4016-61TRG3 | ● | ● |"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 2,
+   "kind": "engine",
+   "model": "SC8D220D2",
+   "val": "current=110",
+   "change": "current bỏ: 110 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 3 | PHF-110SX | 110 | 121 | 198 | SC8D220D2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 3,
+   "kind": "engine",
+   "model": "SC7H230D2",
+   "val": "current=120",
+   "change": "current bỏ: 120 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 4 | PHF-120SX | 120 | 132 | 216 | SC7H230D2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 4,
+   "kind": "engine",
+   "model": "SC7H250D2",
+   "val": "current=130",
+   "change": "current bỏ: 130 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 5 | PHF-130SX | 130 | 143 | 234 | SC7H250D2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 5,
+   "kind": "engine",
+   "model": "G128ZLD",
+   "val": "current=160",
+   "change": "current bỏ: 160 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 6 | PHF-160SX | 160 | 176 | 288 | G128ZLD | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 6,
+   "kind": "engine",
+   "model": "G128ZLD2",
+   "val": "current=180",
+   "change": "current bỏ: 180 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 7 | PHF-180SX | 180 | 198 | 324 | G128ZLD2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 7,
+   "kind": "engine",
+   "model": "G128ZLD1",
+   "val": "current=200",
+   "change": "current bỏ: 200 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 8 | PHF-200SX | 200 | 220 | 360 | G128ZLD1 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 8,
+   "kind": "engine",
+   "model": "G128ZLD11",
+   "val": "current=250",
+   "change": "current bỏ: 250 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 9 | PHF-250SX | 250 | 275 | 450 | G128ZLD11 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 9,
+   "kind": "engine",
+   "model": "SC15G500D2",
+   "val": "current=280",
+   "change": "current bỏ: 280 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 10 | PHF-280SX | 280 | 308 | 504 | SC15G500D2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 10,
+   "kind": "engine",
+   "model": "12V135AZLD",
+   "val": "current=300",
+   "change": "current bỏ: 300 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 11 | PHF-300SX | 300 | 330 | 540 | 12V135AZLD | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 11,
+   "kind": "engine",
+   "model": "12V135BZLD",
+   "val": "current=360",
+   "change": "current bỏ: 360 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 12 | PHF-360SX | 360 | 396 | 648 | 12V135BZLD | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 12,
+   "kind": "engine",
+   "model": "12V135BZLD2",
+   "val": "current=400",
+   "change": "current bỏ: 400 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 13 | PHF-400SX | 400 | 440 | 720 | 12V135BZLD2 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 116,
+   "table": 18,
+   "row": 13,
+   "kind": "engine",
+   "model": "12V135BZLD1",
+   "val": "current=450",
+   "change": "current bỏ: 450 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 14 | PHF-450SX | 450 | 495 | 810 | 12V135BZLD1 | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 117,
+   "table": 19,
+   "row": 2,
+   "kind": "engine",
+   "model": "TAD532GE",
+   "val": "current=100",
+   "change": "current bỏ: 100 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 3 | PHF-100VX | 100 | 110 | 180 | TAD532GE | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 117,
+   "table": 19,
+   "row": 3,
+   "kind": "engine",
+   "model": "TAD731GE",
+   "val": "current=120",
+   "change": "current bỏ: 120 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 4 | PHF-120VX | 120 | 132 | 216 | TAD731GE | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 117,
+   "table": 19,
+   "row": 4,
+   "kind": "engine",
+   "model": "TAD732GE",
+   "val": "current=150",
+   "change": "current bỏ: 150 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 5 | PHF-150VX | 150 | 165 | 270 | TAD732GE | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 117,
+   "table": 19,
+   "row": 5,
+   "kind": "engine",
+   "model": "TAD733GE",
+   "val": "current=160",
+   "change": "current bỏ: 160 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 6 | PHF-160VX | 160 | 176 | 288 | TAD733GE | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 117,
+   "table": 19,
+   "row": 6,
+   "kind": "engine",
+   "model": "TAD734GE",
+   "val": "current=200",
+   "change": "current bỏ: 200 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 7 | PHF-200VX | 200 | 220 | 360 | TAD734GE | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 117,
+   "table": 19,
+   "row": 7,
+   "kind": "engine",
+   "model": "TAD1341GE",
+   "val": "current=250",
+   "change": "current bỏ: 250 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 8 | PHF-250VX | 250 | 275 | 450 | TAD1341GE | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 117,
+   "table": 19,
+   "row": 8,
+   "kind": "engine",
+   "model": "TAD1342GE",
+   "val": "current=280",
+   "change": "current bỏ: 280 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 9 | PHF-280VX | 280 | 308 | 504 | TAD1342GE | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 117,
+   "table": 19,
+   "row": 9,
+   "kind": "engine",
+   "model": "TAD1343GE",
+   "val": "current=300",
+   "change": "current bỏ: 300 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 10 | PHF-300VX | 300 | 330 | 540 | TAD1343GE | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 117,
+   "table": 19,
+   "row": 10,
+   "kind": "engine",
+   "model": "TAD1344GE",
+   "val": "current=330",
+   "change": "current bỏ: 330 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 11 | PHF-330VX | 330 | 363 | 594 | TAD1344GE | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 117,
+   "table": 19,
+   "row": 11,
+   "kind": "engine",
+   "model": "TAD1641GE",
+   "val": "current=400",
+   "change": "current bỏ: 400 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 12 | PHF-400VX | 400 | 440 | 720 | TAD1641GE | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 117,
+   "table": 19,
+   "row": 12,
+   "kind": "engine",
+   "model": "TAD1642GE",
+   "val": "current=470",
+   "change": "current bỏ: 470 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 13 | PHF-470VX | 470 | 517 | 846 | TAD1642GE | ● | ● | ●"
+  },
+  {
+   "sup": "power-hf",
+   "n": 117,
+   "table": 19,
+   "row": 13,
+   "kind": "engine",
+   "model": "TWD1643GE",
+   "val": "current=500",
+   "change": "current bỏ: 500 → ∅",
+   "header": [
+    "| 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型"
+   ],
+   "line": "| 14 | PHF-500VX | 500 | 550 | 900 | TWD1643GE | ● | ● | ●"
+  },
+  {
+   "sup": "xinzhengfa",
+   "n": 101,
+   "table": 0,
+   "row": 0,
+   "kind": "engine",
+   "model": "S175M",
+   "val": "current=12.2",
+   "change": "current bỏ: 12.2 → ∅",
+   "header": [
+    "| 机组型号 | 输出功率 | 额定 电流A | 频率/转速 Hz/RPM | 柴油机型号 | 机组外型尺寸(L × B × H)mm | 机组重量Kg",
+    "| KVA | KW"
+   ],
+   "line": "| ZF3GF | 3.75 | 3 | 12.2 | 50/3000 | S175M | 630 × 480 × 510 | 65"
+  },
+  {
+   "sup": "xinzhengfa",
+   "n": 101,
+   "table": 0,
+   "row": 7,
+   "kind": "engine",
+   "model": "K4100D",
+   "val": "current=33.2",
+   "change": "current bỏ: 33.2 → ∅",
+   "header": [
+    "| 机组型号 | 输出功率 | 额定 电流A | 频率/转速 Hz/RPM | 柴油机型号 | 机组外型尺寸(L × B × H)mm | 机组重量Kg",
+    "| KVA | KW"
+   ],
+   "line": "| ZF24GF | 30 | 24 | 33.2 | 50/1500 | K4100D | 1800 × 750 × 1100 | 810"
+  },
+  {
+   "sup": "yingtai-jiangsu",
+   "n": 113,
+   "table": 24,
+   "row": 0,
+   "kind": "engine",
+   "model": "KTA38-G9",
+   "val": "current=6300",
+   "change": "current bỏ: 6300 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式",
+    "| 主用 | 备用 | V | A | （kg) | L×W×H(m) | 主用 | 备用 | （L) | (g/kW.h)"
+   ],
+   "line": "| 1000GF1 | | 1000 | 6300 | / | 9620 | 5.60×1.85×2.60 | KTA38-G9 | 重庆康明斯 | | 1089 | 12 | 37.8 | ≤208 | 电子"
+  },
+  {
+   "sup": "yingtai-jiangsu",
+   "n": 113,
+   "table": 24,
+   "row": 10,
+   "kind": "engine",
+   "model": "KTA38-G9",
+   "val": "current=10500",
+   "change": "current bỏ: 10500 → ∅",
+   "header": [
+    "| 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式",
+    "| 主用 | 备用 | V | A | （kg) | L×W×H(m) | 主用 | 备用 | （L) | (g/kW.h)"
+   ],
+   "line": "| 1000GF1 | | 1000 | 10500 | | 9840 | 5.62×1.85×2.60 | KTA38-G9 | 重庆康明斯 | | 1089 | 12 | 37.8 | ≤208 | 电子"
+  },
+  {
+   "sup": "yunding-jiangsu",
+   "n": 2006,
+   "table": 9,
+   "row": 22,
+   "kind": "engine",
+   "model": "YC6T660-D31",
+   "val": "current=792",
+   "change": "current bỏ: 792 → ∅",
+   "header": [
+    "| 机组型号 Model | 功率Power | 电流A Current | 发动机型号 Engine model | 缸数 Cylinder | 缸 径 * 行 程 Bore*Stroke | 排 气 量 L Displacement | 机油容量L Lube oil | 油耗g/kw.h Consumption | 尺寸mm Size | 重量Kg Weight",
+    "| KW | KVA"
+   ],
+   "line": "| YDY-400GF | 400 | 500 | 792 | YC6T660-D31 | 6 | 145*165 | 16.35 | 56 | 216 | 3500*1500*1970 | 4000"
+  },
+  {
+   "sup": "zhengdian-zhengzhou",
+   "n": 107,
+   "table": 6,
+   "row": 0,
+   "kind": "engine",
+   "model": "STC-5-4",
+   "val": "current=195",
+   "change": "current bỏ: 195 → ∅",
+   "header": [
+    "| | 机组型号 | 输出功率 | 额定电流 | 柴油机型号 | 发电机型号 | 机组外包装尺寸 | 机组重量",
+    "| KW / KVA(A) | Current(A) | L × B × H (mm) | （Kg）"
+   ],
+   "line": "| CCFJ5-xx | 5/6.25 | 9.1 | 195 | STC-5-4 | 1100×480×1000 | 305"
+  },
+  {
+   "sup": "zhengdian-zhengzhou",
+   "n": 107,
+   "table": 6,
+   "row": 1,
+   "kind": "engine",
+   "model": "STC-8-4",
+   "val": "current=1100",
+   "change": "current bỏ: 1100 → ∅",
+   "header": [
+    "| | 机组型号 | 输出功率 | 额定电流 | 柴油机型号 | 发电机型号 | 机组外包装尺寸 | 机组重量",
+    "| KW / KVA(A) | Current(A) | L × B × H (mm) | （Kg）"
+   ],
+   "line": "| CCFJ8-xx | 8/10 | 14.4 | 1100 | STC-8-4 | 1100×480×1000 | 325"
+  },
+  {
+   "sup": "zhengdian-zhengzhou",
+   "n": 107,
+   "table": 6,
+   "row": 2,
+   "kind": "engine",
+   "model": "STC-10-4",
+   "val": "current=1110",
+   "change": "current bỏ: 1110 → ∅",
+   "header": [
+    "| | 机组型号 | 输出功率 | 额定电流 | 柴油机型号 | 发电机型号 | 机组外包装尺寸 | 机组重量",
+    "| KW / KVA(A) | Current(A) | L × B × H (mm) | （Kg）"
+   ],
+   "line": "| CCFJ10-xx | 10/12.5 | 18.1 | 1110 | STC-10-4 | 1100×480×1000 | 345"
+  },
+  {
+   "sup": "zhengdian-zhengzhou",
+   "n": 107,
+   "table": 6,
+   "row": 3,
+   "kind": "engine",
+   "model": "STC-12-4",
+   "val": "current=2100",
+   "change": "current bỏ: 2100 → ∅",
+   "header": [
+    "| | 机组型号 | 输出功率 | 额定电流 | 柴油机型号 | 发电机型号 | 机组外包装尺寸 | 机组重量",
+    "| KW / KVA(A) | Current(A) | L × B × H (mm) | （Kg）"
+   ],
+   "line": "| CCFJ12-xx | 12/15 | 21.6 | 2100 | STC-12-4 | 1050×500×1000 | 650"
+  },
+  {
+   "sup": "zhengdian-zhengzhou",
+   "n": 107,
+   "table": 6,
+   "row": 4,
+   "kind": "engine",
+   "model": "STC-15-4",
+   "val": "current=395",
+   "change": "current bỏ: 395 → ∅",
+   "header": [
+    "| | 机组型号 | 输出功率 | 额定电流 | 柴油机型号 | 发电机型号 | 机组外包装尺寸 | 机组重量",
+    "| KW / KVA(A) | Current(A) | L × B × H (mm) | （Kg）"
+   ],
+   "line": "| CCFJ15-xx | 15/18.75 | 27 | 395 | STC-15-4 | 1500×600×1500 | 780"
+  }
+ ],
+ "vai alternator | không đối chiếu": [
+  {
+   "sup": "chenxing-weifang",
+   "n": 101,
+   "table": 0,
+   "row": 0,
+   "kind": "alternator",
+   "model": "200GF",
+   "val": "200GF",
+   "change": "MẤT bản ghi: alternator 200GF",
+   "header": [
+    "| 发电机组参数 | 柴油机参数 | 发电机参数"
+   ],
+   "line": "| 机组型号 | 200GF | 型号 | NT855-GA | 型号 | 200GF"
+  }
+ ],
+ "vai alternator | mâu thuẫn": [
+  {
+   "sup": "chenxing-weifang",
+   "n": 108,
+   "table": 5,
+   "row": 0,
+   "kind": "alternator",
+   "model": "30GF",
+   "val": "30GF",
+   "change": "MẤT bản ghi: alternator 30GF",
+   "header": [
+    "| 发电机组参数 | 柴油机参数 | 发电机参数"
+   ],
+   "line": "| 机组型号 | 30GF | 型号 | 4BT3.9-G2 | 型号 | 30GF"
+  }
+ ]
+}
