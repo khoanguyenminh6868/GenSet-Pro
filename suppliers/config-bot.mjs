@@ -2780,7 +2780,8 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     }
     // (5) The controller term the HSMT names (Khoa 18/11/2026): met when the configuration's controller or a source of it
     // names the term (raw texts: a short acronym is matched case-sensitively); a controller of the term's make whose sources
-    // do not say it is unclear (the supplier confirms: AmpSentry is a function of a PowerCommand); else not met (câu 2 (a)).
+    // do not say it is unclear (the supplier confirms: AmpSentry is a function of a PowerCommand; nothing is inferred, the
+    // coordinator agreed 18/11/2026 and told Khoa); any other controller, or none, is not met (câu 2 (a)).
     c.checks = (c.checks || []).filter((x) => !isTraitCtlItem(x));
     if (trait.controllers.length) {
       const k = c.controller || {}, page = k.src?.kind === "internet" && k.src.file ? readWeb(k.src.file) || "" : "";
