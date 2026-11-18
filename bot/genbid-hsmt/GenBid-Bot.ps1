@@ -38,10 +38,13 @@ param(
     [string]$Root = $(if ($env:GENBID_ROOT) { $env:GENBID_ROOT } elseif (($env:GENBID_OS -eq 'linux' -or (-not $env:GENBID_OS -and $PSVersionTable.Platform -eq 'Unix'))) { Join-Path $HOME 'genset-pro' } else { 'C:\Projects\GenSet Pro' }),
     [string]$Endpoint = 'https://genset-pro-web.vercel.app/api/requests?kind=all',
     # Sync theo lịch (thay tác vụ hẹn giờ "hsmt-worker" của app Claude, Khoa 2026-10-26): bot tự chạy genbid-sync.js,
-    # không mở phiên Claude. 10:10, 14:10 và 18:10 mỗi ngày, cả thứ Bảy và Chủ nhật (Khoa, 2026-11-04). Máy tắt lúc đó thì chạy một lần
-    # khi bật lại (bù cho mốc gần nhất đã qua trong ngày).
-    [string[]]$ScheduleDays = @('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'),
+    # không mở phiên Claude. 10:10, 14:10 và 18:10 thứ Hai đến thứ Sáu; thứ Bảy, Chủ nhật không Sync theo lịch (Khoa, 2026-11-18;
+    # trước đó chạy cả tuần). Máy tắt lúc đó thì chạy một lần khi bật lại (bù cho mốc gần nhất đã qua trong ngày), trừ khi máy
+    # khác / sandbox đã Sync mốc đó (web trả schedule.last). Máy Windows đều tắt: Vercel Cron đánh thức sandbox (web/api/cron.js).
+    [string[]]$ScheduleDays = @('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'),
     [string[]]$ScheduleTimes = @('10:10', '14:10', '18:10'),
+    # Mốc lịch theo giờ Việt Nam (UTC+7, không đổi giờ mùa hè), kể cả khi máy chạy giờ khác (sandbox Vercel chạy UTC).
+    [double]$ScheduleUtcOffset = 7,
     # Gợi ý cấu hình (tab "Cấu hình gợi ý", Khoa 2026-10-28): bản sao repo GenSet-Pro (nhánh main) trên máy này.
     [string]$RepoDir = (Join-Path $Root 'GenSet-Pro'),
     [switch]$Once,
@@ -117,6 +120,7 @@ function Find-Claude {
 # -BeatOnly: chỉ để gửi nhịp tim; chưa tới lúc thì không hỏi gì.
 $script:LastBeat = [datetime]::MinValue
 $script:LastBeatRunning = $null
+$script:WebLastSlot = ''
 function Get-Pending([switch]$Running, [switch]$BeatOnly) {
     $now = Get-Date
     $beat = ($now - $script:LastBeat).TotalSeconds -ge 25 -or $script:LastBeatRunning -ne [bool]$Running
@@ -147,7 +151,15 @@ function Get-Pending([switch]$Running, [switch]$BeatOnly) {
             if ($json -ne $old) { [IO.File]::WriteAllText($AiSettingsFile, $json, $Utf8); Log "Cấu hình hệ thống mới: $json" }
         } catch {}
     }
+    # Mốc Sync theo lịch gần nhất đã chạy ở bất kỳ máy nào (synclog/current.slot, đến cùng nhịp tim): máy này khỏi chạy bù.
+    if ($p.PSObject.Properties.Name -contains 'schedule' -and $null -ne $p.schedule -and $p.schedule.last) { $script:WebLastSlot = [string]$p.schedule.last }
     $p
+}
+
+# Giờ Việt Nam cho lịch Sync: đổi giờ máy sang UTC+$ScheduleUtcOffset (máy Windows ở VN: không đổi; sandbox UTC: +7).
+function Get-ScheduleNow {
+    $n = Get-Date
+    $n.AddHours($ScheduleUtcOffset - [TimeZoneInfo]::Local.GetUtcOffset($n).TotalHours)
 }
 
 # Các yêu cầu đang chờ, theo chữ ký -> tài liệu sẽ gửi lại web nếu lượt worker không trả lời được.
@@ -744,12 +756,15 @@ try {
                     elseif ($sync.Count) { & $hand $sync; Start-Lane 'browser' $sync }
                     elseif (-not @($sigs -like 'files:*').Count -and -not @($sigs -like 'sync:*').Count) {
                         # Tới lịch thì Sync. Mỗi mốc chạy một lần (mốc gần nhất đã qua trong ngày), nhớ qua các lần khởi động lại bot.
-                        $today = $now.ToString('yyyy-MM-dd')
-                        $slot = $ScheduleTimes | Where-Object { $now -ge [datetime]"$today $_" } | Sort-Object { [datetime]"$today $_" } | Select-Object -Last 1
+                        # Giờ Việt Nam (Get-ScheduleNow); máy khác / sandbox đã Sync mốc này (web) thì chỉ ghi nhớ, không Sync lại.
+                        $vn = Get-ScheduleNow
+                        $today = $vn.ToString('yyyy-MM-dd')
+                        $slot = $ScheduleTimes | Where-Object { $vn -ge [datetime]"$today $_" } | Sort-Object { [datetime]"$today $_" } | Select-Object -Last 1
                         $slotKey = "$today $slot"
-                        if ($slot -and $ScheduleDays -contains $now.DayOfWeek.ToString() -and (Read-Json $ScheduleFile ([pscustomobject]@{ last = '' })).last -ne $slotKey) {
+                        if ($slot -and $ScheduleDays -contains $vn.DayOfWeek.ToString() -and (Read-Json $ScheduleFile ([pscustomobject]@{ last = '' })).last -ne $slotKey) {
                             [IO.File]::WriteAllText($ScheduleFile, (@{ last = $slotKey } | ConvertTo-Json), $Utf8)
-                            Start-Lane 'browser' @("schedule:$slotKey") @{ slot = $slotKey }
+                            if ($script:WebLastSlot -and [string]::CompareOrdinal($script:WebLastSlot, $slotKey) -ge 0) { Log "Sync theo lịch $slotKey đã chạy ở máy khác, bỏ qua." }
+                            else { Start-Lane 'browser' @("schedule:$slotKey") @{ slot = $slotKey } }
                         }
                     }
                 }

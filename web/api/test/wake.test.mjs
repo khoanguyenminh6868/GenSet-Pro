@@ -221,3 +221,52 @@ test("botEnv: GH_BOT_TOKEN ưu tiên hơn GITHUB_TOKEN; không mang biến Supab
   assert.deepEqual(S.botEnv({ INGEST_TOKEN: "i", GITHUB_TOKEN: "g", GH_BOT_TOKEN: "b", SUPABASE_SERVICE_ROLE_KEY: "s", VERCEL_OIDC_TOKEN: "o", CLAUDE_CODE_OAUTH_TOKEN: "c" }),
     { GENBID_INGEST_TOKEN: "i", CLAUDE_CODE_OAUTH_TOKEN: "c", GH_TOKEN: "b" });
 });
+
+// Sync theo lịch khi mọi máy Windows tắt (Khoa 18/11/2026): Vercel Cron 10:10 / 14:10 / 18:10 giờ VN, thứ Hai–thứ Sáu.
+const cron = async (env, bearer) => { const r = await call(await fresh("cron.js", env), mkReq({ bearer })); await S.lastBackground; return r; };
+const CENV = { ...ENV, CRON_SECRET: "cs" };
+
+test("cron: chưa đặt CRON_SECRET thì 503; sai khoá thì 401; không đánh thức gì", async () => {
+  db.put("botstatus", "current", { lastPollAt: ago(30) });
+  assert.equal((await cron({ ...ENV, CRON_SECRET: undefined }, "x")).statusCode, 503);
+  assert.equal((await cron(CENV, "sai")).statusCode, 401);
+  assert.equal((await cron(CENV)).statusCode, 401);
+  assert.equal(startCmd(), undefined);
+  delete process.env.CRON_SECRET;
+});
+
+test("cron ngày thường, mọi máy tắt: bật sandbox (bot sandbox tự Sync mốc vừa tới); có máy bật thì thôi", async () => {
+  box = fakeBox({ status: "stopped" }); S._setSandbox(box.Sandbox);
+  db.put("botstatus", "current", { lastPollAt: ago(0.5) });
+  assert.equal((await cron(CENV, "cs")).jsonBody.wake, "bot-on");
+  assert.equal(startCmd(), undefined);
+  db.put("botstatus", "current", { lastPollAt: ago(30) });
+  assert.equal((await cron(CENV, "cs")).jsonBody.wake, "sent");
+  assert.ok(startCmd(), "đã chạy start-bot.sh");
+  delete process.env.CRON_SECRET;
+});
+
+test("cron thứ Bảy, Chủ nhật (giờ VN) không Sync, kể cả khi mọi máy tắt; 03:10 UTC thứ Hai là thứ Hai ở VN", async () => {
+  const { isWorkday } = await import("../cron.js");
+  assert.equal(isWorkday(Date.parse("2026-11-21T03:10:00Z")), false, "thứ Bảy");
+  assert.equal(isWorkday(Date.parse("2026-11-22T11:10:00Z")), false, "Chủ nhật 18:10");
+  assert.equal(isWorkday(Date.parse("2026-11-23T03:10:00Z")), true, "thứ Hai 10:10");
+  assert.equal(isWorkday(Date.parse("2026-11-28T11:10:00Z")), false, "thứ Bảy 18:10");
+  assert.equal(isWorkday(Date.parse("2026-11-27T11:10:00Z")), true, "thứ Sáu 18:10");
+  mock.timers.setTime(Date.parse("2026-11-21T03:10:00Z"));
+  db.put("botstatus", "current", { lastPollAt: ago(60 * 24 * 5) });
+  assert.equal((await cron(CENV, "cs")).jsonBody.wake, "weekend");
+  assert.equal(startCmd(), undefined);
+  delete process.env.CRON_SECRET;
+});
+
+test("nhịp tim trả schedule.last = mốc Sync theo lịch gần nhất (synclog/current.slot), cả khi máy phải nhường sandbox", async () => {
+  assert.equal((await poll({ kind: "all" })).schedule, undefined, "chưa có synclog");
+  db.put("synclog", "current", { slot: "2026-11-17 10:10", doneAt: ago(100), ok: true });
+  assert.deepEqual((await poll({ kind: "all" })).schedule, { last: "2026-11-17 10:10" });
+  assert.equal((await poll({ kind: "all", beat: "0" })).schedule, undefined, "không phải nhịp tim thì không đọc thêm");
+  db.put("botstatus", "sandbox", { lastPollAt: ago(0.5) });
+  const r = await poll({ kind: "all" });
+  assert.equal(r.yieldTo, "sandbox");
+  assert.deepEqual(r.schedule, { last: "2026-11-17 10:10" });
+});
