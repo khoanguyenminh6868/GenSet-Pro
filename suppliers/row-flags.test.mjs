@@ -3,6 +3,8 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { flagRows, absurdOf, rowKey, overHalf, dropped, LEVEL, REASONS, webDoc, post } from "./row-flags.mjs";
+import { blockedRows, lineKey } from "./row-flags-lib.mjs";
+import { candidates, hintsOf, rowOkOf, rowFlagsOf } from "./config-bot.mjs";
 
 const C = globalThis.GenbidCatalog;
 const sup = (id, tables) => ({ id, country: "CN", confidence: "high", specTables: tables.map(([n, title, header, rows]) => ({ n, title, header, rows })) });
@@ -95,4 +97,74 @@ test("--post: doc rowflags/current mang chữ nguyên văn của dòng; chỉ gh
     await post(doc, true);
     assert.equal(calls.length, 0, "--dry: không gọi web");
   } finally { globalThis.fetch = old; process.env = env; console.log = log; }
+});
+
+// B(iii): dòng nghi sai ra khỏi candidates (config-bot.mjs) theo blockedRows + quyết định rowok trên web.
+const HB = "| Model | Prime kVA | Prime kW | Engine | Alternator | Displacement (L) |";
+const supB = (id, row) => sup(id, [[101, "Gensets", [HB], [row]]]);
+const B3 = [
+  supB("good-a", "| A-700 | 700 | 560 | KTA38-G2 | S5L1D-H41 | 38 |"),
+  supB("bad-b", "| B-700 | 700 | 560 | KTA38-G2 | S5L1D-H41 | 3800 |"), // dung tích 3800 L: số vô lý
+  supB("good-c", "| C-700 | 700 | 560 | QSK23-G2 | S5L1D-H41 | 23 |"),
+];
+const keyOfSup = (S, id) => [...flagRows(S).flags].find(([, f]) => f.o.supplierId === id)?.[0];
+const free = () => ({ ...hintsOf("Chương V. Yêu cầu kỹ thuật\n50 Hz"), engineMakes: [], altMakes: [], ctrlMakes: [], ctrlModels: [] });
+const cand = (S, blocked) => candidates(C.build(S), { value: 700, unit: "kVA" }, free(), { suppliers: S, blocked });
+const ids = (r) => r.all.map((x) => x.u.supplierId).sort();
+
+test("blockedRows: dòng số vô lý bị loại; rowok 'ok' đúng khoá giữ lại; rowok 'drop' loại dòng không cờ", () => {
+  const k = keyOfSup(B3, "bad-b");
+  assert.ok(k, "dòng 3800 L phải bị cờ absurd");
+  const C0 = C.fromSupplier(B3[1])[0];
+  assert.deepEqual([...blockedRows(B3)], [lineKey(C0)]);
+  assert.equal(blockedRows(B3, { "bad-b": { [k]: { d: "ok" } } }).size, 0, "đã cho dùng");
+  const kc = rowKey(C.fromSupplier(B3[2])[0]);
+  assert.deepEqual([...blockedRows(B3, { "good-c": { [kc]: { d: "drop" } } })].sort(), [lineKey(C0), lineKey(C.fromSupplier(B3[2])[0])].sort());
+  // Khoá của NCC khác ghi nhầm vào doc của NCC này: không áp.
+  assert.equal(blockedRows(B3, { "good-a": { [k]: { d: "ok" } } }).size, 1);
+});
+
+test("blockedRows: chữ dòng đổi (nguồn cập nhật) thì quyết định cũ thôi áp", () => {
+  const k = keyOfSup(B3, "bad-b");
+  const B4 = [B3[0], supB("bad-b", "| B-700 | 700 | 560 | KTA38-G2 | S5L1D-H41 | 3800 L |"), B3[2]];
+  assert.notEqual(keyOfSup(B4, "bad-b"), k);
+  assert.equal(blockedRows(B4, { "bad-b": { [k]: { d: "ok" } } }).size, 1, "\"cho dùng\" của dòng cũ không áp cho dòng mới");
+});
+
+test("candidates: dòng bị chặn ra khỏi all kèm lý do rowflag; không chặn thì như cũ; điểm dòng khác không đổi", () => {
+  const before = cand(B3, null), after = cand(B3, blockedRows(B3));
+  assert.deepEqual(ids(before), ["bad-b", "good-a", "good-c"]);
+  assert.deepEqual(ids(after), ["good-a", "good-c"]);
+  assert.deepEqual(after.dropped.filter((d) => d.ruled.includes("rowflag")).map((d) => d.u.supplierId), ["bad-b"]);
+  const score = (r) => Object.fromEntries(r.all.map((x) => [x.u.supplierId, x.score]));
+  const s0 = score(before), s1 = score(after);
+  for (const id of ["good-a", "good-c"]) assert.equal(s1[id], s0[id], id);
+  assert.deepEqual(ids(cand(B3, new Set())), ids(before));
+});
+
+test("rowOkOf: đọc rowok/<NCC> thành bảng; đọc lỗi thì rỗng (dòng số vô lý vẫn bị loại)", async () => {
+  assert.deepEqual(await rowOkOf(async () => [{ id: "x", data: { k: { d: "ok" } } }]), { x: { k: { d: "ok" } } });
+  const err = console.error; console.error = () => {};
+  try { assert.deepEqual(await rowOkOf(async () => { throw new Error("mạng"); }), {}); } finally { console.error = err; }
+});
+
+test("blockedRows: quyết định áp cho cả DÒNG (số vô lý gắn cờ cả động cơ lẫn đầu phát của dòng)", () => {
+  const keys = [...flagRows(B3).flags.keys()].filter((k) => k.startsWith("bad-b|"));
+  assert.deepEqual(keys.map((k) => k.split("|")[1]).sort(), ["alternator", "engine"]);
+  const alt = keys.find((k) => k.includes("|alternator|")), eng = keys.find((k) => k.includes("|engine|"));
+  assert.equal(blockedRows(B3, { "bad-b": { [alt]: { d: "ok" } } }).size, 0, "cho dùng bản ghi đầu phát: cả dòng");
+  assert.equal(blockedRows(B3, { "bad-b": { [alt]: { d: "ok" }, [eng]: { d: "drop" } } }).size, 1, "hai quyết định khác nhau: bỏ hẳn thắng");
+});
+
+test("blockedRows từ rows của rowflags/current (workflow tính) = tự tính; rowFlagsOf đọc lỗi thì null (tự tính)", async () => {
+  const doc = webDoc([...flagRows(B3).flags.entries()]);
+  assert.deepEqual([...blockedRows([], {}, doc.rows)], [...blockedRows(B3)]);
+  const k = keyOfSup(B3, "bad-b");
+  assert.equal(blockedRows([], { "bad-b": { [k]: { d: "ok" } } }, doc.rows).size, 0);
+  assert.deepEqual(await rowFlagsOf(async (c, id) => (c === "rowflags" && id === "current" ? doc : null)), doc.rows);
+  const err = console.error; console.error = () => {};
+  try {
+    assert.equal(await rowFlagsOf(async () => { throw new Error("403"); }), null);
+    assert.equal(await rowFlagsOf(async () => undefined), null);
+  } finally { console.error = err; }
 });
