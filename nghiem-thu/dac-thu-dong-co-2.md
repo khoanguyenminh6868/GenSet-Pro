@@ -101,8 +101,18 @@ Thêm bằng chứng cho câu 4: "all" còn gộp V2003-T (turbo) với V2003 (k
 - Kiểm: `node --test suppliers/*.test.mjs` 1070 tests, pass 1063, todo 7, fail 0; `node --test web/test/*.test.mjs` 161 / 161.
 - Quay lui: revert PR (một hàm + test).
 
-**Nhánh `dac-thu-dong-co-2b`** (đã đẩy, chưa PR): `suppliers/engine-variant.mjs` (`variantFamily`, scope "version" theo Khoa) + test; PR 2b sẽ rebase lên main sau #928 và nối config-bot khi điều phối nhắn "config-bot rảnh".
+**Nhánh `dac-thu-dong-co-2b`**: xem mục 11.
+
+## 11. PR 2b (nối config-bot) — code + test xong, CHƯA đo
+**PR DRAFT:** https://github.com/khoanguyenminh6868/GenSet-Pro/pull/930 (nhánh `dac-thu-dong-co-2b` trên `3c0a49ff`, 3 commit: `variantFamily` + nối config-bot `270fb443`). Tệp: `suppliers/config-bot.mjs`, `engine-traits.mjs` (`load` nhớ bảng, `termHit`), `engine-variant.mjs` (+ test), `engine-traits-config.test.mjs`, `cover-prep.test.mjs` (meta.json có `cap`), `config-prompt.md`, `suppliers/CLAUDE.md`.
+- (1) `hintsOf().trait`; `candidates` `ruled: "trait"` (trừ model HSMT nêu); `check` bỏ cấu hình động cơ hãng khác / chưa rõ hãng TRƯỚC `slice(MAX_CONFIGS)` (hãng = `keptMakes` của model, không có thì `make` agent ghi khi nguồn ghi; tổ máy HSMT nêu giữ), `result.engineTrait {make, terms, quote}` + ghi chú; `rankConfigs` không áp trần mỗi hãng cho hãng đó. Tương đương → không lọc (câu 3).
+- (2) `webPowerOf` / `webInBand`: chỉ `genset.src.kind === "internet"`, số đọc từ `src.quote` hoặc `sourceQuote` của check công suất, câu phải có trong trang đã lưu; không đọc được số thì GIỮ. `cap` từ `meta.json` (prep ghi; lượt cũ không có `cap` thì không lọc).
+- (3) `variantRule` trong `rankConfigs` (sau khi xếp): cùng `variantFamily` (version) mà khác model — bỏ bản có check động cơ `not_met` khi có bản không; check động cơ giống hệt (item + status) + cùng đầu phát → giữ bản xếp cao, chuyển NCC. So bằng check, KHÔNG bằng số liệu (số liệu biến thể lệch theo NCC nào ghi). Miễn keptFind / named.
+- (5) Yêu cầu + check "Bộ điều khiển X (HSMT nêu đích danh)" do code ghi (`trait`), met / unclear (cùng hãng, nguồn không ghi: AmpSentry với PowerCommand) / not_met (câu 2 (a)). `termHit` trên chữ chào hàng tính cả "PCC".
+- Kiểm: `node --test suppliers/*.test.mjs web/test/*.test.mjs` 1.246 / 1.246, todo 0; fixture `regress-*` không đổi.
+- **Chưa làm (chờ điều phối cấp lượt đo):** do-gop / top 30 toàn bộ gói (gốc = main lúc đo, cùng `suppliers/cn`, truyền `blocked`); kỳ vọng: đổi ở 3 gói E-TVCS, ≤ 16 gói có từ bộ điều khiển (chỉ điểm +200, không loại dòng), 0 gói khác. Gợi ý thật IB2600612866 (ghi web, tốn agent): chờ hỏi.
+- Quay lui: revert PR #930.
 
 ## Cần ghi nhớ
-- Bí danh "PCC" không dùng để nhận PowerCommand (bẫy đã ghi `suppliers/CLAUDE.md`).
-- Bốn câu hỏi mục 5 chờ Khoa; câu 1 và 2 cần trước khi viết PR 2 phần (4) và (5).
+- Bí danh "PCC" không dùng để nhận PowerCommand trong chữ HSMT (bẫy đã ghi `suppliers/CLAUDE.md`); trong chữ chào hàng thì dùng.
+- Unclear thay vì not_met cho "bộ điều khiển cùng hãng, nguồn không ghi từ đó" là cách em hiểu câu 2 (a) — nếu Khoa muốn not_met cứng thì đổi một dòng trong `check`.
