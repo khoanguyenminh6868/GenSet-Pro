@@ -1,0 +1,1225 @@
+bản ghi cũ 59076, mới 59127 | khác 196 | chỉ cũ 25, chỉ mới 76 | bảng có đổi 109
+{"voltage bỏ":114,"power":65,"current bỏ":116}
+
+[bruno-generators n103 bảng 1] ×2
+  H: | | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 HZ | | 60 HZ | | | | | | | | | TANK l | DIMENSIONS cm | | | MAXIMUM SIZE cm | | | WEIGHT kg | STANDARD PANEL
+  H: | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 Hz | | 60 Hz | | Engine | cm3 | kWm | kWm | fuel consumption (l/h) | fuel consumption (l/h) | Aspiration | TANK (l) | DIMENSIONS (cm) | | | MAXIMUM SIZE (cm) | | | WEIGHT | STANDARD PANEL
+  H: | | | | | | | kVA LTP | kVA PRP | kVA LTP | kVA PRP | | | 1500 rpm | 1800 rpm | 1500 rpm* | 1800 rpm* | | | L | W | H | L | W | H | |
+    0 | MB 9504 KL | 4 | 250 W | 1000 W | DC | 48 V | - | - | - | - | KOHLER LDW 702 | 686 | - | 5,9 | - | 0,35 | N | 110 | 235 | 148 | 225 | 235 | 202 | 883 | 1060 | Q401 AUS-80
+        ⇒ voltage: 225 → ∅
+    1 | MB 9504 KL | 4 | 300 W | 1200 W | DC | 48 V | - | - | - | - | KOHLER LDW 702 | 686 | - | 5,9 | - | 0,46 | N | 110 | 235 | 148 | 225 | 235 | 202 | 883 | 1065 | Q401 AUS-80
+        ⇒ voltage: 225 → ∅
+
+[bruno-generators n104 bảng 2] ×1
+  H: | | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 HZ | | 60 HZ | | | | | | | | | TANK l | DIMENSIONS cm | | | MAXIMUM SIZE cm | | | WEIGHT kg | STANDARD PANEL
+  H: | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 Hz | | 60 Hz | | Engine | cm3 | kWm | kWm | fuel consumption (l/h) | fuel consumption (l/h) | Aspiration | TANK (l) | DIMENSIONS (cm) | | | MAXIMUM SIZE (cm) | | | WEIGHT | STANDARD PANEL
+  H: | | | | | | | kVA LTP | kVA PRP | kVA LTP | kVA PRP | | | 1500 rpm | 1800 rpm | 1500 rpm* | 1800 rpm* | | | L | W | H | L | W | H | |
+    1 | MT 9810 KL** | 8+2 | 330+250 W | 3140 W | AC | 230 V | 8,6 | 7,6 | 9,5 | 9 | KOHLER KDW 1003 | 1028 | 7,6 | 9,1 | 1,4 | 1,3 | N | 250 | 244 | 190 | 225 | 419 | 237 | 920 | 2000 | MCP 120-8
+        ⇒ voltage: 225 → ∅
+
+[cameo-power n112 bảng 11] ×1
+  H: | Image | ​ | ​
+    0 | Model | CK7000S | CK7500S | CK8500S | CK9500S | CK12000S | CK15000S | CK18000S
+        ⇒ MẤT bản ghi engine CK7000S
+
+[chenxing-weifang n101 bảng 0] ×4
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+    0 | 机组型号 | 200GF | 型号 | NT855-GA | 型号 | 200GF
+        ⇒ MẤT bản ghi engine NT855-GA
+    0 | 机组型号 | 200GF | 型号 | NT855-GA | 型号 | 200GF
+        ⇒ MẤT bản ghi alternator 200GF
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine NT855-GA
+    2 | 功率因数 | COS&Phi;=0.8（滞后） | 气缸数 | 6/L | 输出因数（滞后） | COS&Phi;=0.8
+        ⇒ MẤT bản ghi engine COS&Phi;=0.8
+
+[chenxing-weifang n102 bảng 1] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 150GF | 型号 | 6CTA8.3-G2 | 型号 | 150GF
+  H: | 输出功率 | 150kw | 吸气方式 | 涡轮增压 | 额定功率 | 150kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine 6CTA8.3-G2
+
+[chenxing-weifang n103 bảng 2] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 120GF | 型号 | 6BTAA5.9-G2 | 型号 | 120GF
+  H: | 输出功率 | 120kw | 吸气方式 | 涡轮增压 | 额定功率 | 120kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine 6BTAA5.9-G2
+
+[chenxing-weifang n104 bảng 3] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 100GF | 型号 | 6BTA5.9-G2 | 型号 | 100GF
+  H: | 输出功率 | 100kw | 吸气方式 | 涡轮增压 | 额定功率 | 100kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine 6BTA5.9-G2
+
+[chenxing-weifang n107 bảng 4] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 50GF | 型号 | 4BTA3.9-G2 | 型号 | 50GF
+  H: | 输出功率 | 50kw | 吸气方式 | 涡轮增压 | 额定功率 | 50kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine 4BTA3.9-G2
+
+[chenxing-weifang n108 bảng 5] ×4
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+    0 | 机组型号 | 30GF | 型号 | 4BT3.9-G2 | 型号 | 30GF
+        ⇒ MẤT bản ghi engine 4BT3.9-G2
+    0 | 机组型号 | 30GF | 型号 | 4BT3.9-G2 | 型号 | 30GF
+        ⇒ MẤT bản ghi alternator 30GF
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine 4BT3.9-G2
+    2 | 功率因数 | COS&Phi;=0.8（滞后） | 气缸数 | 4/L | 输出因数（滞后） | COS&Phi;=0.8
+        ⇒ MẤT bản ghi engine COS&Phi;=0.8
+
+[chenxing-weifang n109 bảng 6] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 300GF | 型号 | NTA855-G2A | 型号 | 300GF
+  H: | 输出功率 | 300kw | 吸气方式 | 涡轮增压 | 额定功率 | 300kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine NTA855-G2A
+
+[chenxing-weifang n110 bảng 7] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 400GF | 型号 | KTA19-G3A | 型号 | 400GF
+  H: | 输出功率 | 400kw | 吸气方式 | 涡轮增压 | 额定功率 | 400kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine KTA19-G3A
+
+[chenxing-weifang n111 bảng 8] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 200GF | 型号 | WP10D200E200 | 型号 | 200GF
+  H: | 输出功率 | 200kw | 吸气方式 | 涡轮增压 | 额定功率 | 200kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine WP10D200E200
+
+[chenxing-weifang n112 bảng 9] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 150GF | 型号 | WP6D152E200 | 型号 | 150GF
+  H: | 输出功率 | 150kw | 吸气方式 | 涡轮增压 | 额定功率 | 150kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine WP6D152E200
+
+[chenxing-weifang n113 bảng 10] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 120GF | 型号 | WP6D132E200 | 型号 | 120GF
+  H: | 输出功率 | 120kw | 吸气方式 | 涡轮增压 | 额定功率 | 120kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine WP6D132E200
+
+[chenxing-weifang n114 bảng 11] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 100GF | 型号 | WP4D108E200 | 型号 | 100GF
+  H: | 输出功率 | 100kw | 吸气方式 | 涡轮增压 | 额定功率 | 100kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine WP4D108E200
+
+[chenxing-weifang n115 bảng 12] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 75GF | 型号 | WP4D99E200 | 型号 | 75GF
+  H: | 输出功率 | 75kw | 吸气方式 | 涡轮增压 | 额定功率 | 75kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine WP4D99E200
+
+[chenxing-weifang n116 bảng 13] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 50GF | 型号 | WP4D66E200 | 型号 | 50GF
+  H: | 输出功率 | 50kw | 吸气方式 | 涡轮增压 | 额定功率 | 50kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine WP4D66E200
+
+[chenxing-weifang n117 bảng 14] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 250GF | 型号 | WP12D317E200 | 型号 | 250GF
+  H: | 输出功率 | 250kw | 吸气方式 | 涡轮增压 | 额定功率 | 250kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine WP12D317E200
+
+[chenxing-weifang n118 bảng 15] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 300GF | 型号 | WP13D385E200 | 型号 | 300GF
+  H: | 输出功率 | 300kw | 吸气方式 | 涡轮增压 | 额定功率 | 300kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine WP13D385E200
+
+[chenxing-weifang n119 bảng 16] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 40GF | 型号 | YC4D60-D21 | 型号 | 40GF
+  H: | 输出功率 | 40kw | 吸气方式 | 自然吸气 | 额定功率 | 40kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YC4D60-D21
+
+[chenxing-weifang n120 bảng 17] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 30GF | 型号 | YC4FA55Z-D20 | 型号 | 30GF
+  H: | 输出功率 | 30kw | 吸气方式 | 增压 | 额定功率 | 30kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YC4FA55Z-D20
+
+[chenxing-weifang n121 bảng 18] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 50GF | 型号 | YC4D85Z-D20 | 型号 | 50GF
+  H: | 输出功率 | 50kw | 吸气方式 | 增压 | 额定功率 | 50kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YC4D85Z-D20
+
+[chenxing-weifang n122 bảng 19] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 100GF | 型号 | YC6B155L-D21 | 型号 | 100GF
+  H: | 输出功率 | 100kw | 吸气方式 | 增压中冷 | 额定功率 | 100kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YC6B155L-D21
+
+[chenxing-weifang n123 bảng 20] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 120GF | 型号 | YC6B180L-D20 | 型号 | 120GF
+  H: | 输出功率 | 120kw | 吸气方式 | 增压中冷 | 额定功率 | 120kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YC6B180L-D20
+
+[chenxing-weifang n124 bảng 21] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 150GF | 型号 | YC6A230L-D20 | 型号 | 150GF
+  H: | 输出功率 | 150kw | 吸气方式 | 增压中冷 | 额定功率 | 150kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YC6A230L-D20
+
+[chenxing-weifang n126 bảng 22] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 200GF | 型号 | YC6MK350L-D20 | 型号 | 200GF
+  H: | 输出功率 | 200kw | 吸气方式 | 增压中冷 | 额定功率 | 200kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YC6MK350L-D20
+
+[chenxing-weifang n127 bảng 23] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 250GF | 型号 | YC6MK420L-D20 | 型号 | 250GF
+  H: | 输出功率 | 250kw | 吸气方式 | 增压中冷 | 额定功率 | 250kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YC6MK420L-D20
+
+[chenxing-weifang n128 bảng 24] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 300GF | 型号 | YC6MJ480L-D20 | 型号 | 300GF
+  H: | 输出功率 | 300kw | 吸气方式 | 增压中冷 | 额定功率 | 300kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YC6MJ480L-D20
+
+[chenxing-weifang n129 bảng 25] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 400GF | 型号 | YC6T600L-D22 | 型号 | 400GF
+  H: | 输出功率 | 400kw | 吸气方式 | 增压中冷 | 额定功率 | 400kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YC6T600L-D22
+
+[chenxing-weifang n130 bảng 26] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 500GF | 型号 | YC6TD840L-D20 | 型号 | 500GF
+  H: | 输出功率 | 500kw | 吸气方式 | 增压中冷 | 额定功率 | 500kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YC6TD840L-D20
+
+[chenxing-weifang n131 bảng 27] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 600GF | 型号 | YC6C1020L-D20 | 型号 | 600GF
+  H: | 输出功率 | 600kw | 吸气方式 | 增压中冷 | 额定功率 | 600kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YC6C1020L-D20
+
+[chenxing-weifang n132 bảng 28] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 700GF | 型号 | YC6C1220L-D20 | 型号 | 700GF
+  H: | 输出功率 | 700kw | 吸气方式 | 增压中冷 | 额定功率 | 700kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YC6C1220L-D20
+
+[chenxing-weifang n133 bảng 29] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 800GF | 型号 | YC6C1320L-D20 | 型号 | 800GF
+  H: | 输出功率 | 800kw | 吸气方式 | 增压中冷 | 额定功率 | 800kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YC6C1320L-D20
+
+[chenxing-weifang n134 bảng 30] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 900GF | 型号 | YC6C1320L-D20 | 型号 | 900GF
+  H: | 输出功率 | 900kw | 吸气方式 | 增压中冷 | 额定功率 | 900kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YC6C1320L-D20
+
+[chenxing-weifang n135 bảng 31] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 600GF | 型号 | SC27G900D2 | 型号 | 600GF
+  H: | 输出功率 | 600kw | 吸气方式 | 涡轮增压 | 额定功率 | 600kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine SC27G900D2
+
+[chenxing-weifang n136 bảng 32] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 500GF | 型号 | SC27G755D2 | 型号 | 500GF
+  H: | 输出功率 | 500kw | 吸气方式 | 涡轮增压 | 额定功率 | 500kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine SC27G755D2
+
+[chenxing-weifang n137 bảng 33] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 400GF | 型号 | SC25G610D2 | 型号 | 400GF
+  H: | 输出功率 | 400kw | 吸气方式 | 涡轮增压 | 额定功率 | 400kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine SC25G610D2
+
+[chenxing-weifang n138 bảng 34] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 300GF | 型号 | SC12E460D2 | 型号 | 300GF
+  H: | 输出功率 | 300kw | 吸气方式 | 涡轮增压 | 额定功率 | 300kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine SC12E460D2
+
+[chenxing-weifang n139 bảng 35] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 200GF | 型号 | SC9D310D2 | 型号 | 200GF
+  H: | 输出功率 | 200kw | 吸气方式 | 涡轮增压 | 额定功率 | 200kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine SC9D310D2
+
+[chenxing-weifang n140 bảng 36] ×1
+  H: | 发电机组参数 | 柴油机参数 | 发电机参数
+  H: | 机组型号 | 150GF | 型号 | SC7H230D2 | 型号 | 150GF
+  H: | 输出功率 | 150kw | 吸气方式 | 涡轮增压 | 额定功率 | 150kw
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine SC7H230D2
+
+[gb-power n1001 bảng 16] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 10/8 S 11/8.8 R 4/3 → P 10/8 S 11/8.8
+  undefined (bảng nhãn)
+        ⇒ power: P 10/8 S 11/8.8 R 4/3 → P 10/8 S 11/8.8
+
+[gb-power n1002 bảng 17] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 12.5/10 S 14/11 R 4/3 → P 12.5/10 S 14/11
+  undefined (bảng nhãn)
+        ⇒ power: P 12.5/10 S 14/11 R 4/3 → P 12.5/10 S 14/11
+
+[gb-power n1003 bảng 18] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 20/16 S 22/17.6 R 4/3 → P 20/16 S 22/17.6
+  undefined (bảng nhãn)
+        ⇒ power: P 20/16 S 22/17.6 R 4/3 → P 20/16 S 22/17.6
+
+[gb-power n1004 bảng 19] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 25/20 S 27.5/22 R 4/3 → P 25/20 S 27.5/22
+  undefined (bảng nhãn)
+        ⇒ power: P 25/20 S 27.5/22 R 4/3 → P 25/20 S 27.5/22
+
+[gb-power n1005 bảng 20] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 30/24 S 33/26.4 R 4/3 → P 30/24 S 33/26.4
+  undefined (bảng nhãn)
+        ⇒ power: P 30/24 S 33/26.4 R 4/3 → P 30/24 S 33/26.4
+
+[gb-power n1006 bảng 21] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 40/32 S 44/35.2 R 4/3 → P 40/32 S 44/35.2
+  undefined (bảng nhãn)
+        ⇒ power: P 40/32 S 44/35.2 R 4/3 → P 40/32 S 44/35.2
+
+[gb-power n1007 bảng 22] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 45/36 S 50/40 R 4/3 → P 45/36 S 50/40
+  undefined (bảng nhãn)
+        ⇒ power: P 45/36 S 50/40 R 4/3 → P 45/36 S 50/40
+
+[gb-power n1008 bảng 23] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 50/40 S 55/44 R 4/3 → P 50/40 S 55/44
+  undefined (bảng nhãn)
+        ⇒ power: P 50/40 S 55/44 R 4/3 → P 50/40 S 55/44
+
+[gb-power n1009 bảng 24] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 60/48 S 66/53 R 4/3 → P 60/48 S 66/53
+  undefined (bảng nhãn)
+        ⇒ power: P 60/48 S 66/53 R 4/3 → P 60/48 S 66/53
+
+[gb-power n1010 bảng 25] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 65/52 S 71.5/57 R 4/3 → P 65/52 S 71.5/57
+
+[gb-power n1011 bảng 26] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 80/64 S 88/70.4 R 4/3 → P 80/64 S 88/70.4
+  undefined (bảng nhãn)
+        ⇒ power: P 80/64 S 88/70.4 R 4/3 → P 80/64 S 88/70.4
+
+[gb-power n1012 bảng 27] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 90/72 S 100/80 R 4/3 → P 90/72 S 100/80
+  undefined (bảng nhãn)
+        ⇒ power: P 90/72 S 100/80 R 4/3 → P 90/72 S 100/80
+
+[gb-power n1013 bảng 28] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 100/80 S 110/88 R 4/3 → P 100/80 S 110/88
+  undefined (bảng nhãn)
+        ⇒ power: P 100/80 S 110/88 R 4/3 → P 100/80 S 110/88
+
+[gb-power n1014 bảng 29] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 130/104 S 143/114 R 4/3 → P 130/104 S 143/114
+  undefined (bảng nhãn)
+        ⇒ power: P 130/104 S 143/114 R 4/3 → P 130/104 S 143/114
+
+[gb-power n1015 bảng 30] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 150/120 S 165/132 R 4/3 → P 150/120 S 165/132
+  undefined (bảng nhãn)
+        ⇒ power: P 150/120 S 165/132 R 4/3 → P 150/120 S 165/132
+
+[gb-power n1016 bảng 31] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 180/144 S 198/158.4 R 4/3 → P 180/144 S 198/158.4
+  undefined (bảng nhãn)
+        ⇒ power: P 180/144 S 198/158.4 R 4/3 → P 180/144 S 198/158.4
+
+[gb-power n1017 bảng 32] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 200/160 S 220/176 R 4/3 → P 200/160 S 220/176
+
+[gb-power n1018 bảng 33] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 230/184 S 253/202 R 4/3 → P 230/184 S 253/202
+  undefined (bảng nhãn)
+        ⇒ power: P 230/184 S 253/202 R 4/3 → P 230/184 S 253/202
+
+[gb-power n1019 bảng 34] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 250/200 S 275/220 R 4/3 → P 250/200 S 275/220
+  undefined (bảng nhãn)
+        ⇒ power: P 250/200 S 275/220 R 4/3 → P 250/200 S 275/220
+
+[gb-power n1020 bảng 35] ×1
+  undefined (bảng nhãn)
+        ⇒ power: P 300/240 S 330/264 R 4/3 → P 300/240 S 330/264
+
+[gb-power n1021 bảng 36] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 350/280 S 385/308 R 4/3 → P 350/280 S 385/308
+  undefined (bảng nhãn)
+        ⇒ power: P 350/280 S 385/308 R 4/3 → P 350/280 S 385/308
+
+[gb-power n1022 bảng 37] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 375/300 S 412/330 R 4/3 → P 375/300 S 412/330
+  undefined (bảng nhãn)
+        ⇒ power: P 375/300 S 412/330 R 4/3 → P 375/300 S 412/330
+
+[gb-power n1023 bảng 38] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 500/400 S 550/440 R 4/3 → P 500/400 S 550/440
+  undefined (bảng nhãn)
+        ⇒ power: P 500/400 S 550/440 R 4/3 → P 500/400 S 550/440
+
+[gb-power n1024 bảng 39] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 500/400 S 550/440 R 4/3 → P 500/400 S 550/440
+  undefined (bảng nhãn)
+        ⇒ power: P 500/400 S 550/440 R 4/3 → P 500/400 S 550/440
+
+[gb-power n1025 bảng 40] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 625/500 S 688/550 R 4/3 → P 625/500 S 688/550
+  undefined (bảng nhãn)
+        ⇒ power: P 625/500 S 688/550 R 4/3 → P 625/500 S 688/550
+
+[gb-power n1026 bảng 41] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 625/500 S 687.5/550 R 4/3 → P 625/500 S 687.5/550
+  undefined (bảng nhãn)
+        ⇒ power: P 625/500 S 687.5/550 R 4/3 → P 625/500 S 687.5/550
+
+[gb-power n1027 bảng 42] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 700/560 S 770/616 R 4/3 → P 700/560 S 770/616
+  undefined (bảng nhãn)
+        ⇒ power: P 700/560 S 770/616 R 4/3 → P 700/560 S 770/616
+
+[gb-power n1028 bảng 43] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 800/640 S 880/704 R 4/3 → P 800/640 S 880/704
+  undefined (bảng nhãn)
+        ⇒ power: P 800/640 S 880/704 R 4/3 → P 800/640 S 880/704
+
+[gb-power n1029 bảng 44] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 S 1100/880 R 4/3 → P 1000/800 S 1100/880
+  undefined (bảng nhãn)
+        ⇒ power: P 1000/800 S 1100/880 R 4/3 → P 1000/800 S 1100/880
+
+[gb-power n1030 bảng 45] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 1250/1000 S 1375/1100 R 4/3 → P 1250/1000 S 1375/1100
+  undefined (bảng nhãn)
+        ⇒ power: P 1250/1000 S 1375/1100 R 4/3 → P 1250/1000 S 1375/1100
+
+[gb-power n1031 bảng 46] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 1500/1200 S 1650/1320 R 4/3 → P 1500/1200 S 1650/1320
+  undefined (bảng nhãn)
+        ⇒ power: P 1500/1200 S 1650/1320 R 4/3 → P 1500/1200 S 1650/1320
+
+[gb-power n1032 bảng 47] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 1650/1320 S 1815/1452 R 4/3 → P 1650/1320 S 1815/1452
+  undefined (bảng nhãn)
+        ⇒ power: P 1650/1320 S 1815/1452 R 4/3 → P 1650/1320 S 1815/1452
+
+[gb-power n1033 bảng 48] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 1850/1480 S 2035/1628 R 4/3 → P 1850/1480 S 2035/1628
+  undefined (bảng nhãn)
+        ⇒ power: P 1850/1480 S 2035/1628 R 4/3 → P 1850/1480 S 2035/1628
+
+[gb-power n1034 bảng 49] ×2
+  undefined (bảng nhãn)
+        ⇒ power: P 2200/1760 S 2420/1936 R 4/3 → P 2200/1760 S 2420/1936
+  undefined (bảng nhãn)
+        ⇒ power: P 2200/1760 S 2420/1936 R 4/3 → P 2200/1760 S 2420/1936
+
+[huachai-deutz n102 bảng 1] ×3
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+  H: | Model | 300GF | Model | BF6M1015CP-LA | Model | HCI4FS
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine BF6M1015CP-LA
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator HCI4FS
+    6 | Steady state volt deviation | ≤±1% | Fuel consumption | 208g /kwh | Protection/ insulation | IP23/H
+        ⇒ MẤT bản ghi engine IP23/H
+
+[huachai-deutz n103 bảng 2] ×3
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+  H: | Model | 180GF | Model | BF6M1015 | Model | UCDI274J
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine BF6M1015
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator UCDI274J
+    6 | Steady state volt deviation | ≤±1% | Fuel consumption | 205g /kwh | Protection/ insulation | IP23/H
+        ⇒ MẤT bản ghi engine IP23/H
+
+[huachai-deutz n105 bảng 4] ×2
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+  H: | Model | 400GF | Model | BF8M1015CP-LA G3 | Model | HCI5C
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine BF8M1015CP-LA G3
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator HCI5C
+
+[huachai-deutz n106 bảng 5] ×3
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+  H: | Model | 200GF | Model | BF6M1015C-LA G1A | Model | UCDI274K
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine BF6M1015C-LA G1A
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator UCDI274K
+    6 | Steady state volt deviation | ≤±1% | Fuel consumption | 203g /kwh | Protection/ insulation | IP23/H
+        ⇒ MẤT bản ghi engine IP23/H
+
+[huachai-deutz n108 bảng 6] ×4
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+    0 | Model | 10GF | Model | F2L912D | Model | PI044F
+        ⇒ MẤT bản ghi engine 10GF
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine F2L912D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator PI044F
+    7 | Steady state volt deviation | ≤±5% | Fuel consumption | 238g /kwh | Protection/ insulation | IP23/H
+        ⇒ MẤT bản ghi engine IP23/H
+
+[huachai-deutz n110 bảng 7] ×2
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+  H: | Model | 450GF | Model | BF 8M 1015CP-LA G4 | Model | HCI5E
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator HCI5E
+    6 | Steady state volt deviation | ≤±%1 | Fuel consumption | 208g /kwh | Protection/ insulation | IP23/H
+        ⇒ MẤT bản ghi engine IP23/H
+
+[huachai-deutz n111 bảng 8] ×2
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+  H: | Model | 230GF | Model | BF6M1015C-LA G2A | Model | HCI4D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine BF6M1015C-LA G2A
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator HCI4D
+
+[huachai-deutz n112 bảng 9] ×3
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+    0 | Model | 1 5 GF | Model | F3L912D | Model | PI144D
+        ⇒ MẤT bản ghi engine F3L912D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine F3L912D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator PI144D
+
+[huachai-deutz n114 bảng 10] ×1
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+  H: | Model | 500GF | Model | BF8M 1015CP-LA G5 | Model | HCI5FS
+  H: | Rated prime power | | Prime power | | Rated power | 500KW
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator HCI5FS
+
+[huachai-deutz n115 bảng 11] ×2
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+  H: | Model | 250GF | Model | BF6M1015C-LA G3A | Model | HCI4ES
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine BF6M1015C-LA G3A
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator HCI4ES
+
+[huachai-deutz n116 bảng 12] ×4
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+    0 | Model | 30GF | Model | F4L912D | Model | PI144J
+        ⇒ MẤT bản ghi engine 30GF
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine F4L912D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator PI144J
+    7 | Steady state frequency | ≤2.5 | Fuel consumption | 228g /KWh | Protection/ insulation | IP23/H
+        ⇒ MẤT bản ghi engine IP23/H
+
+[huachai-deutz n117 bảng 13] ×4
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+  H: | Model | 20GF | Model | F3L912D | Model | XN184H,XN184F
+    0 | Rated prime power | 20KW | Prime power | 24KW | Rated power | 12KW,10.8KW
+        ⇒ MẤT bản ghi engine 12KW,10.8KW
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine F3L912D
+    1 | Standby power | 22KW | Stand power | | Rated voltage | 220V,400/230V
+        ⇒ MẤT bản ghi engine 220V,400/230V
+    6 | Steady state frequency | ≤2.5 | Fuel consumption | 232g /kwh | Protection/ insulation | IP23/H
+        ⇒ MẤT bản ghi engine IP23/H
+
+[huachai-deutz n118 bảng 14] ×2
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+  H: | Model | 40GF | Model | F4L912TD | Model | UCI224D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine F4L912TD
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator UCI224D
+
+[huachai-deutz n119 bảng 15] ×2
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+  H: | Model | 55GF | Model | F6L912TD | Model | UCI224F
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine F6L912TD
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator UCI224F
+
+[huachai-deutz n120 bảng 16] ×2
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+  H: | Model | 280GF | Model | BF6M1015C-LA G4 | Model | HCI4E
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine BF6M1015C-LA G4
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator HCI4E
+
+[huachai-deutz n121 bảng 17] ×3
+  H: | Generator-set | Diesel Engine | Alternator (Meccalte)
+  H: | Model | 600GF | Model | HC12V132ZL-LA G2A | Model | ECO43-1SN/4
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine HC12V132ZL-LA G2A
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator ECO43-1SN/4
+    6 | Steady state volt deviation | ≤±1% | Fuel consumption | ＜ 200g /kwh | Protection / insulation | IP23/H
+        ⇒ MẤT bản ghi engine IP23/H
+
+[huachai-deutz n122 bảng 18] ×3
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+  H: | Model | 75GF | Model | BF6L913CD | Model | UCI274C
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine BF6L913CD
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator UCI274C
+    6 | Steady state volt deviation | ≤±5% | Fuel consumption | 242g /kwh | Protection/ insulation | IP23/H
+        ⇒ MẤT bản ghi engine IP23/H
+
+[huachai-deutz n123 bảng 19] ×3
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+  H: | Model | 90GF | Model | F8L413F | Model | UCI274D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine F8L413F
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator UCI274D
+    6 | Steady state volt deviation | ≤±5% | Fuel consumption | 217g /kwh | Protection/ insulation | IP23/H
+        ⇒ MẤT bản ghi engine IP23/H
+
+[huachai-deutz n124 bảng 20] ×2
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+  H: | Model | 100GF | Model | F8L413F | Model | UCI274E
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine F8L413F
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator UCI274E
+
+[huachai-deutz n125 bảng 21] ×3
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+  H: | Model | 120GF | Model | BF8L513 | Model | UCI274G
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine BF8L513
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator UCI274G
+    6 | Steady state volt deviation | ≤±1% | Fuel consumption | 215g /kwh | Protection/ insulation | IP23/H
+        ⇒ MẤT bản ghi engine IP23/H
+
+[huachai-deutz n126 bảng 22] ×2
+  H: | Generator-set | Diesel Engine (DEUTZ) | Alternator (Stamford)
+  H: | Model | 150GF | Model | BF8L513C | Model | UCI274H
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine BF8L513C
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator UCI274H
+
+[kangwo-guangdong n110 bảng 12] ×1
+  H: | 机组型号 | 输出功率（ KW ） | 电流（ A ） | 柴油机型号 | 缸数 | 缸径 * 行程（ mm ） | 排气量（ L) | 燃油消耗率 g/kw.h | 机组尺寸 mmL*W*H | 机组重量 Kg
+  H: | kw | KVA
+    5 | GKW-15GF | 15 | 20 | 36 | L28M | 1 | 128/115 | 1.6 | 265.2 | 1300*700*900 | 460
+        ⇒ current: 36 → ∅
+
+[power-hf n109 bảng 10] ×4
+  H: | 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型
+   12 | 13 | PHF-100RX | 100 | 110 | 180 | PHF6110ZLD1(R2J01) | ● | ● | ●
+        ⇒ voltage: 110 → ∅; current: 100 → ∅
+   13 | 14 | PHF-120RX | 120 | 132 | 216 | PHF6132ZLD1(R4J01) | ● | ● | ●
+        ⇒ voltage: 132 → ∅; current: 120 → ∅
+   14 | 15 | PHF-300HX | 300 | 330 | 540 | PHF14L400 | ● | ● | ●
+        ⇒ voltage: 330 → ∅; current: 300 → ∅
+   15 | 16 | PHF-350HX | 350 | 385 | 630 | PHF15L440 | ● | ● | ●
+        ⇒ voltage: 385 → ∅; current: 350 → ∅
+
+[power-hf n111 bảng 13] ×2
+  H: | 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 发动机型号 | 敞开型 | 静音型
+    6 | 7 | PHF-200RX-Q | 200 | 220 | 360 | PHF6230ZL1Q1 | ● | ●
+        ⇒ voltage: 220 → ∅; current: 200 → ∅
+    7 | 8 | PHF-240RX-Q | 240 | 264 | 432 | PHF6260ZL1Q1 | ● | ●
+        ⇒ voltage: 264 → ∅; current: 240 → ∅
+
+[power-hf n112 bảng 14] ×16
+  H: | 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型
+    9 | 10 | PHF-100WX | 100 | 110 | 180 | WP6D132E200 | ● | ● | ●
+        ⇒ voltage: 110 → ∅; current: 100 → ∅
+   10 | 11 | PHF-120WX | 120 | 132 | 216 | WP6D152E200 | ● | ● | ●
+        ⇒ voltage: 132 → ∅; current: 120 → ∅
+   11 | 12 | PHF-150WX | 150 | 165 | 270 | WP10D200E200 | ● | ● | ●
+        ⇒ voltage: 165 → ∅; current: 150 → ∅
+   12 | 13 | PHF-180WX | 180 | 198 | 324 | WP10D238E200 | ● | ● | ●
+        ⇒ voltage: 198 → ∅; current: 180 → ∅
+   13 | 14 | PHF-200WX | 200 | 220 | 360 | WP10D264E200 | ● | ● | ●
+        ⇒ voltage: 220 → ∅; current: 200 → ∅
+   14 | 15 | PHF-250WX | 250 | 275 | 450 | WP12D317E200 | ● | ● | ●
+        ⇒ voltage: 275 → ∅; current: 250 → ∅
+   15 | 16 | PHF-300WX | 300 | 330 | 540 | WP13D385E200 | ● | ● | ●
+        ⇒ voltage: 330 → ∅; current: 300 → ∅
+   16 | 17 | PHF-360WX | 360 | 396 | 648 | 6M26D447E200 | ● | ● | ●
+        ⇒ voltage: 396 → ∅; current: 360 → ∅
+   17 | 18 | PHF-400WX | 400 | 440 | 720 | 6M26D484E200 | ● | ● | ●
+        ⇒ current: 400 → ∅
+   18 | 19 | PHF-500WX | 500 | 550 | 900 | 6M33D605E200 | ● | ● | ●
+        ⇒ voltage: 550 → ∅; current: 500 → ∅
+   19 | 20 | PHF-600WX | 600 | 660 | 1080 | 12M26D748E200 | ● | ● |
+        ⇒ voltage: 660 → ∅; current: 600 → ∅
+   20 | 21 | PHF-650WX | 650 | 715 | 1170 | 12M26D792E200 | ● | ● |
+        ⇒ voltage: 715 → ∅; current: 650 → ∅
+   21 | 22 | PHF-750WX | 750 | 825 | 1350 | 12M26D902E200 | ● | ● |
+        ⇒ voltage: 825 → ∅; current: 750 → ∅
+   22 | 23 | PHF-800WX | 800 | 880 | 1440 | 12M26D968E200 | ● | ● |
+        ⇒ voltage: 880 → ∅; current: 800 → ∅
+   23 | 24 | PHF-900WX | 900 | 990 | 1620 | 12M33D1108E200 | ● | ● |
+        ⇒ voltage: 990 → ∅; current: 900 → ∅
+   24 | 25 | PHF-1000WX | 1000 | 1100 | 1800 | 12M33D1210E200 | ● | ● |
+        ⇒ voltage: 1100 → ∅; current: 1000 → ∅
+
+[power-hf n113 bảng 15] ×19
+  H: | 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型
+    7 | 8 | PHF-100YX | 100 | 110 | 180 | YC6B180L-D20 | ● | ● | ●
+        ⇒ voltage: 110 → ∅; current: 100 → ∅
+    8 | 9 | PHF-120YX | 120 | 132 | 216 | YC6A200L-D20 | ● | ● | ●
+        ⇒ voltage: 132 → ∅; current: 120 → ∅
+    9 | 10 | PHF-130YX | 130 | 143 | 234 | YC6A230L-D20 | ● | ● | ●
+        ⇒ voltage: 143 → ∅; current: 130 → ∅
+   10 | 11 | PHF-150YX | 150 | 165 | 270 | YC6G245L-D20 | ● | ● | ●
+        ⇒ voltage: 165 → ∅; current: 150 → ∅
+   11 | 12 | PHF-200YX | 200 | 220 | 360 | YC6MK350L-D20 | ● | ● | ●
+        ⇒ voltage: 220 → ∅; current: 200 → ∅
+   12 | 13 | PHF-250YX | 250 | 275 | 450 | YC6MK420L-D20 | ● | ● | ●
+        ⇒ voltage: 275 → ∅; current: 250 → ∅
+   13 | 15 | PHF-300YX | 300 | 330 | 540 | YC6T550L-D21 | ● | ● | ●
+        ⇒ voltage: 330 → ∅; current: 300 → ∅
+   14 | 16 | PHF-350YX | 350 | 385 | 630 | YC6T600L-D22 | ● | ● | ●
+        ⇒ voltage: 385 → ∅; current: 350 → ∅
+   15 | 17 | PHF-400YX | 400 | 440 | 720 | YC6T660L-D20 | ● | ● | ●
+        ⇒ current: 400 → ∅
+   16 | 18 | PHF-480YX | 480 | 528 | 864 | YC6TD780L-D20 | ● | ● | ●
+        ⇒ voltage: 528 → ∅; current: 480 → ∅
+   17 | 19 | PHF-500YX | 500 | 550 | 900 | YC6TD840L-D20 | ● | ● | ●
+        ⇒ voltage: 550 → ∅; current: 500 → ∅
+   18 | 20 | PHF-600YX | 600 | 660 | 1080 | YC6C1020L-D20 | ● | ● |
+        ⇒ voltage: 660 → ∅; current: 600 → ∅
+   19 | 21 | PHF-650YX | 650 | 715 | 1170 | YC6C1070L-D20 | ● | ● |
+        ⇒ voltage: 715 → ∅; current: 650 → ∅
+   20 | 22 | PHF-750YX | 750 | 825 | 1350 | YC6C1220L-D20 | ● | ● |
+        ⇒ voltage: 825 → ∅; current: 750 → ∅
+   21 | 23 | PHF-800YX | 800 | 880 | 1440 | YC6C1320L-D20 | ● | ● |
+        ⇒ voltage: 880 → ∅; current: 800 → ∅
+   22 | 24 | PHF-1000YX | 1000 | 1100 | 1800 | YC12VC1680L-D20 | ● | ● |
+        ⇒ voltage: 1100 → ∅; current: 1000 → ∅
+   23 | 25 | PHF-1200YX | 1200 | 1320 | 2160 | YC12VC2070L-D20 | ● | ● |
+        ⇒ voltage: 1320 → ∅; current: 1200 → ∅
+   24 | 26 | PHF-1300YX | 1300 | 1430 | 2340 | YC12VC2270L-D20 | ● | ● |
+        ⇒ voltage: 1430 → ∅; current: 1300 → ∅
+   25 | 27 | PHF-1500YX | 1500 | 1650 | 2700 | YC12VC2510L-D20 | ● | ● |
+        ⇒ voltage: 1650 → ∅; current: 1500 → ∅
+
+[power-hf n114 bảng 16] ×16
+  H: | 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型
+    5 | 6 | PHF-100CX | 100 | 110 | 180 | 6BTAA5.9-G2 | ● | ● | ●
+        ⇒ voltage: 110 → ∅; current: 100 → ∅
+    6 | 7 | PHF-150CX | 150 | 165 | 270 | 6CTA8.3-G2 | ● | ● | ●
+        ⇒ voltage: 165 → ∅; current: 150 → ∅
+    7 | 8 | PHF-160CX | 160 | 176 | 288 | 6CTAA8.3-G2 | ● | ● | ●
+        ⇒ voltage: 176 → ∅; current: 160 → ∅
+    8 | 9 | PHF-200CX | 200 | 220 | 360 | 6LTAA8.9-G2 | ● | ● | ●
+        ⇒ voltage: 220 → ∅; current: 200 → ∅
+    9 | 10 | PHF-200CX | 200 | 220 | 360 | NT855-GA | ● | ● | ●
+        ⇒ voltage: 220 → ∅; current: 200 → ∅
+   10 | 11 | PHF-250CX | 250 | 275 | 450 | NTA855-G1B | ● | ● | ●
+        ⇒ voltage: 275 → ∅; current: 250 → ∅
+   11 | 12 | PHF-280CX | 280 | 308 | 504 | NTA855-G4 | ● | ● | ●
+        ⇒ voltage: 308 → ∅; current: 280 → ∅
+   12 | 13 | PHF-300CX | 300 | 330 | 540 | NTAA855-G7 | ● | ● | ●
+        ⇒ voltage: 330 → ∅; current: 300 → ∅
+   13 | 14 | PHF-360CX | 360 | 396 | 648 | KTA19-G3 | ● | ● | ●
+        ⇒ voltage: 396 → ∅; current: 360 → ∅
+   14 | 15 | PHF-400CX | 400 | 440 | 720 | KTA19-G3A | ● | ● | ●
+        ⇒ current: 400 → ∅
+   15 | 16 | PHF-460CX | 460 | 506 | 828 | KTAA19-G6 | ● | ● | ●
+        ⇒ voltage: 506 → ∅; current: 460 → ∅
+   16 | 17 | PHF-500CX | 500 | 550 | 900 | KTA38-G | ● | ● | ●
+        ⇒ voltage: 550 → ∅; current: 500 → ∅
+   17 | 18 | PHF-600CX | 600 | 660 | 1080 | KTA38-G2 | ● | ● |
+        ⇒ voltage: 660 → ∅; current: 600 → ∅
+   18 | 19 | PHF-700CX | 700 | 770 | 1260 | KTA38-G2A | ● | ● |
+        ⇒ voltage: 770 → ∅; current: 700 → ∅
+   19 | 20 | PHF-800CX | 800 | 880 | 1440 | KTA38-G5 | ● | ● |
+        ⇒ voltage: 880 → ∅; current: 800 → ∅
+   20 | 21 | PHF-1000CX | 1000 | 1100 | 1800 | KTA50-G3 | ● | ● |
+        ⇒ voltage: 1100 → ∅; current: 1000 → ∅
+
+[power-hf n115 bảng 17] ×24
+  H: | 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型
+   10 | 11 | PHF-100PX | 100 | 110 | 180 | 1106A-70TG1 | ● | ● | ●
+        ⇒ voltage: 110 → ∅; current: 100 → ∅
+   11 | 12 | PHF-110PX | 110 | 121 | 198 | 1106A-70TAG2 | ● | ● | ●
+        ⇒ voltage: 121 → ∅; current: 110 → ∅
+   12 | 13 | PHF-140PX | 140 | 154 | 252 | 1106A-70TAG3 | ● | ● | ●
+        ⇒ voltage: 154 → ∅; current: 140 → ∅
+   13 | 14 | PHF-160PX | 160 | 176 | 288 | 1106A-70TAG4 | ● | ● | ●
+        ⇒ voltage: 176 → ∅; current: 160 → ∅
+   14 | 15 | PHF-180PX | 180 | 198 | 324 | 1506A-E88TAG2 | ● | ● | ●
+        ⇒ voltage: 198 → ∅; current: 180 → ∅
+   15 | 16 | PHF-200PX | 200 | 220 | 360 | 1506A-E88TAG3 | ● | ● | ●
+        ⇒ voltage: 220 → ∅; current: 200 → ∅
+   16 | 17 | PHF-220PX | 220 | 242 | 396 | 1506A-E88TAG4 | ● | ● | ●
+        ⇒ voltage: 242 → ∅; current: 220 → ∅
+   17 | 18 | PHF-250PX | 250 | 275 | 450 | 1506A-E88TAG5 | ● | ● | ●
+        ⇒ voltage: 275 → ∅; current: 250 → ∅
+   18 | 19 | PHF-280PX | 280 | 308 | 504 | 2206C-E13TAG2 | ● | ● | ●
+        ⇒ voltage: 308 → ∅; current: 280 → ∅
+   19 | 20 | PHF-320PX | 320 | 352 | 576 | 2206C-E13TAG3 | ● | ● | ●
+        ⇒ voltage: 352 → ∅; current: 320 → ∅
+   20 | 21 | PHF-360PX | 360 | 396 | 648 | 2506C-E15TAG1 | ● | ● | ●
+        ⇒ voltage: 396 → ∅; current: 360 → ∅
+   21 | 22 | PHF-400PX | 400 | 440 | 720 | 2506C-E15TAG2 | ● | ● | ●
+        ⇒ current: 400 → ∅
+   22 | 23 | PHF-480PX | 480 | 528 | 864 | 2806C-E18TAG1A | ● | ● | ●
+        ⇒ voltage: 528 → ∅; current: 480 → ∅
+   23 | 24 | PHF-520PX | 520 | 572 | 936 | 2806C-E18TAG2 | ● | ● | ●
+        ⇒ voltage: 572 → ∅; current: 520 → ∅
+   24 | 25 | PHF-600PX | 600 | 660 | 1080 | 4006-23TAG2A | ● | ● |
+        ⇒ voltage: 660 → ∅; current: 600 → ∅
+   25 | 26 | PHF-650PX | 650 | 715 | 1170 | 4006-23TAG3A | ● | ● |
+        ⇒ voltage: 715 → ∅; current: 650 → ∅
+   26 | 27 | PHF-700PX | 700 | 770 | 1260 | 4008TAG1A | ● | ● |
+        ⇒ voltage: 770 → ∅; current: 700 → ∅
+   27 | 28 | PHF-800PX | 800 | 880 | 1440 | 4008TAG2A | ● | ● |
+        ⇒ voltage: 880 → ∅; current: 800 → ∅
+   28 | 29 | PHF-1000PX | 1000 | 1100 | 1800 | 4012-46TWG2A | ● | ● |
+        ⇒ voltage: 1100 → ∅; current: 1000 → ∅
+   29 | 30 | PHF-1200PX | 1200 | 1320 | 2160 | 4012-46TAG2A | ● | ● |
+        ⇒ voltage: 1320 → ∅; current: 1200 → ∅
+   30 | 31 | PHF-1350PX | 1350 | 1485 | 2430 | 4012-46TAG3A | ● | ● |
+        ⇒ voltage: 1485 → ∅; current: 1350 → ∅
+   31 | 32 | PHF-1500PX | 1500 | 1650 | 2700 | 4016-61TRG1 | ● | ● |
+        ⇒ voltage: 1650 → ∅; current: 1500 → ∅
+   32 | 33 | PHF-1600PX | 1600 | 1760 | 2880 | 4016-61TRG2 | ● | ● |
+        ⇒ voltage: 1760 → ∅; current: 1600 → ∅
+   33 | 34 | PHF-1800PX | 1800 | 1980 | 3240 | 4016-61TRG3 | ● | ● |
+        ⇒ voltage: 1980 → ∅; current: 1800 → ∅
+
+[power-hf n116 bảng 18] ×12
+  H: | 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型
+    2 | 3 | PHF-110SX | 110 | 121 | 198 | SC8D220D2 | ● | ● | ●
+        ⇒ voltage: 121 → ∅; current: 110 → ∅
+    3 | 4 | PHF-120SX | 120 | 132 | 216 | SC7H230D2 | ● | ● | ●
+        ⇒ voltage: 132 → ∅; current: 120 → ∅
+    4 | 5 | PHF-130SX | 130 | 143 | 234 | SC7H250D2 | ● | ● | ●
+        ⇒ voltage: 143 → ∅; current: 130 → ∅
+    5 | 6 | PHF-160SX | 160 | 176 | 288 | G128ZLD | ● | ● | ●
+        ⇒ voltage: 176 → ∅; current: 160 → ∅
+    6 | 7 | PHF-180SX | 180 | 198 | 324 | G128ZLD2 | ● | ● | ●
+        ⇒ voltage: 198 → ∅; current: 180 → ∅
+    7 | 8 | PHF-200SX | 200 | 220 | 360 | G128ZLD1 | ● | ● | ●
+        ⇒ voltage: 220 → ∅; current: 200 → ∅
+    8 | 9 | PHF-250SX | 250 | 275 | 450 | G128ZLD11 | ● | ● | ●
+        ⇒ voltage: 275 → ∅; current: 250 → ∅
+    9 | 10 | PHF-280SX | 280 | 308 | 504 | SC15G500D2 | ● | ● | ●
+        ⇒ voltage: 308 → ∅; current: 280 → ∅
+   10 | 11 | PHF-300SX | 300 | 330 | 540 | 12V135AZLD | ● | ● | ●
+        ⇒ voltage: 330 → ∅; current: 300 → ∅
+   11 | 12 | PHF-360SX | 360 | 396 | 648 | 12V135BZLD | ● | ● | ●
+        ⇒ voltage: 396 → ∅; current: 360 → ∅
+   12 | 13 | PHF-400SX | 400 | 440 | 720 | 12V135BZLD2 | ● | ● | ●
+        ⇒ current: 400 → ∅
+   13 | 14 | PHF-450SX | 450 | 495 | 810 | 12V135BZLD1 | ● | ● | ●
+        ⇒ voltage: 495 → ∅; current: 450 → ∅
+
+[power-hf n117 bảng 19] ×12
+  H: | 序号 | 机组型号 | 常用功率（kW） | 备用功率（kW） | 额定电流（A） | 额定电压 （V） | 额定频率 （Hz） | 柴油机型号 | 敞开型 | 静音型 | 拖车型
+    2 | 3 | PHF-100VX | 100 | 110 | 180 | TAD532GE | ● | ● | ●
+        ⇒ voltage: 110 → ∅; current: 100 → ∅
+    3 | 4 | PHF-120VX | 120 | 132 | 216 | TAD731GE | ● | ● | ●
+        ⇒ voltage: 132 → ∅; current: 120 → ∅
+    4 | 5 | PHF-150VX | 150 | 165 | 270 | TAD732GE | ● | ● | ●
+        ⇒ voltage: 165 → ∅; current: 150 → ∅
+    5 | 6 | PHF-160VX | 160 | 176 | 288 | TAD733GE | ● | ● | ●
+        ⇒ voltage: 176 → ∅; current: 160 → ∅
+    6 | 7 | PHF-200VX | 200 | 220 | 360 | TAD734GE | ● | ● | ●
+        ⇒ voltage: 220 → ∅; current: 200 → ∅
+    7 | 8 | PHF-250VX | 250 | 275 | 450 | TAD1341GE | ● | ● | ●
+        ⇒ voltage: 275 → ∅; current: 250 → ∅
+    8 | 9 | PHF-280VX | 280 | 308 | 504 | TAD1342GE | ● | ● | ●
+        ⇒ voltage: 308 → ∅; current: 280 → ∅
+    9 | 10 | PHF-300VX | 300 | 330 | 540 | TAD1343GE | ● | ● | ●
+        ⇒ voltage: 330 → ∅; current: 300 → ∅
+   10 | 11 | PHF-330VX | 330 | 363 | 594 | TAD1344GE | ● | ● | ●
+        ⇒ voltage: 363 → ∅; current: 330 → ∅
+   11 | 12 | PHF-400VX | 400 | 440 | 720 | TAD1641GE | ● | ● | ●
+        ⇒ current: 400 → ∅
+   12 | 13 | PHF-470VX | 470 | 517 | 846 | TAD1642GE | ● | ● | ●
+        ⇒ voltage: 517 → ∅; current: 470 → ∅
+   13 | 14 | PHF-500VX | 500 | 550 | 900 | TWD1643GE | ● | ● | ●
+        ⇒ voltage: 550 → ∅; current: 500 → ∅
+
+[xinzhengfa n101 bảng 0] ×2
+  H: | 机组型号 | 输出功率 | 额定 电流A | 频率/转速 Hz/RPM | 柴油机型号 | 机组外型尺寸(L × B × H)mm | 机组重量Kg
+  H: | KVA | KW
+    0 | ZF3GF | 3.75 | 3 | 12.2 | 50/3000 | S175M | 630 × 480 × 510 | 65
+        ⇒ current: 12.2 → ∅
+    7 | ZF24GF | 30 | 24 | 33.2 | 50/1500 | K4100D | 1800 × 750 × 1100 | 810
+        ⇒ current: 33.2 → ∅
+
+[yingtai-jiangsu n113 bảng 24] ×14
+  H: | 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式
+  H: | 主用 | 备用 | V | A | （kg) | L×W×H(m) | 主用 | 备用 | （L) | (g/kW.h)
+    0 | 1000GF1 | | 1000 | 6300 | / | 9620 | 5.60×1.85×2.60 | KTA38-G9 | 重庆康明斯 | | 1089 | 12 | 37.8 | ≤208 | 电子
+        ⇒ current: 6300 → ∅
+    4 | 1120GF | 1120 | 1230 | 128 | 11830 | 6.40×2.04×2.64 | QSK50-G3 | 进口康明斯 | 1210 | 1401 | 16 | 50.3 | ≤197 | 电喷
+        ⇒ voltage: 1230 → ∅
+    5 | 1232GF | 1232 | 1360 | 140.8 | 12360 | 6.20×2.04×2.70 | QSK50-G4 | 1328 | 1477 | 16 | 50.3 | ≤198 | 电喷
+        ⇒ voltage: 1360 → ∅
+    6 | 1331GF | 1331 | 1470 | 152.1 | 12360 | 6.20×2.04×2.70 | QSK50-G7 | 1420 | 1581 | 16 | 50.3 | ≤197 | 电喷
+        ⇒ voltage: 1470 → ∅
+    7 | 1500GF | 1500 | 1600 | 171.4 | 17920 | 7.40×2.50×2.65 | QSK60-G3 | 1615 | 1790 | 16 | 60.2 | ≤194 | 电喷
+        ⇒ voltage: 1600 → ∅
+    8 | 1600GF | 1600 | 1800 | 182.9 | 18200 | 7.40×2.50×2.65 | QSK60-G4 | 1730 | 1915 | 16 | 60.2 | ≤197 | 电喷
+        ⇒ voltage: 1800 → ∅
+    9 | 1600GF | 1600 | 2000 | 182.9 | 20000 | 7.50×2.70×3.25 | QSK60-G13 | 1727 | 2145 | 16 | 60.2 | ≤197 | 电喷
+        ⇒ voltage: 2000 → ∅
+   10 | 1000GF1 | | 1000 | 10500 | | 9840 | 5.62×1.85×2.60 | KTA38-G9 | 重庆康明斯 | | 1089 | 12 | 37.8 | ≤208 | 电子
+        ⇒ current: 10500 → ∅
+   14 | 1120GF | 1120 | 1230 | 76.8 | 12230 | 6.60×2.04×2.64 | QSK50-G3 | 进口康明斯 | 1210 | 1401 | 16 | 50.3 | ≤197 | 电喷
+        ⇒ voltage: 1230 → ∅
+   15 | 1232GF | 1232 | 1360 | 84.5 | 12730 | 6.40×2.04×2.70 | QSK50-G4 | 1328 | 1477 | 16 | 50.3 | ≤198 | 电喷
+        ⇒ voltage: 1360 → ∅
+   16 | 1331GF | 1331 | 1470 | 91.3 | 12730 | 6.40×2.04×2.70 | QSK50-G7 | 1421 | 1581 | 16 | 50.3 | ≤197 | 电喷
+        ⇒ voltage: 1470 → ∅
+   17 | 1500GF | 1500 | 1600 | 103 | 18380 | 7.60×2.50×2.65 | QSK60-G3 | 1615 | 1790 | 16 | 60.2 | ≤194 | 电喷
+        ⇒ voltage: 1600 → ∅
+   18 | 1600GF | 1600 | 1800 | 109.7 | 18680 | 7.60×2.50×2.65 | QSK60-G4 | 1730 | 1915 | 16 | 60.2 | ≤197 | 电喷
+        ⇒ voltage: 1800 → ∅
+   19 | 1600GF | 1600 | 2000 | 109.7 | 20480 | 7.70×2.70×3.25 | QSK60-G13 | 1727 | 2145 | 16 | 60.2 | ≤197 | 电喷
+        ⇒ voltage: 2000 → ∅
+
+[yunding-jiangsu n2006 bảng 9] ×1
+  H: | 机组型号 Model | 功率Power | 电流A Current | 发动机型号 Engine model | 缸数 Cylinder | 缸 径 * 行 程 Bore*Stroke | 排 气 量 L Displacement | 机油容量L Lube oil | 油耗g/kw.h Consumption | 尺寸mm Size | 重量Kg Weight
+  H: | KW | KVA
+  H: | 玉柴( 国三 )系列
+   22 | YDY-400GF | 400 | 500 | 792 | YC6T660-D31 | 6 | 145*165 | 16.35 | 56 | 216 | 3500*1500*1970 | 4000
+        ⇒ current: 792 → ∅
+
+[zhengdian-zhengzhou n107 bảng 6] ×5
+  H: | | 机组型号 | 输出功率 | 额定电流 | 柴油机型号 | 发电机型号 | 机组外包装尺寸 | 机组重量
+  H: | KW / KVA(A) | Current(A) | L × B × H (mm) | （Kg）
+    0 | CCFJ5-xx | 5/6.25 | 9.1 | 195 | STC-5-4 | 1100×480×1000 | 305
+        ⇒ current: 195 → ∅
+    1 | CCFJ8-xx | 8/10 | 14.4 | 1100 | STC-8-4 | 1100×480×1000 | 325
+        ⇒ current: 1100 → ∅
+    2 | CCFJ10-xx | 10/12.5 | 18.1 | 1110 | STC-10-4 | 1100×480×1000 | 345
+        ⇒ current: 1110 → ∅
+    3 | CCFJ12-xx | 12/15 | 21.6 | 2100 | STC-12-4 | 1050×500×1000 | 650
+        ⇒ current: 2100 → ∅
+    4 | CCFJ15-xx | 15/18.75 | 27 | 395 | STC-15-4 | 1500×600×1500 | 780
+        ⇒ current: 395 → ∅
+
+[zichai n119 bảng 11] ×2
+  H: | Engine | Item | Technical specifications
+    0 | | Model | 6300D/M | 6300D/M-1 | 6300D/M-2 | 8300D/M-1 | 8300D/M-2 | 8300D/M-3
+        ⇒ MẤT bản ghi engine 6300D/M
+    4 | Generator set | Model | 300GFM | 400GFM | 500GFM | 450GFM | 500GFM | 600GFM
+        ⇒ MẤT bản ghi engine 300GFM
+
+==== tự kiểm số (verSpec) ====
+(!) [bruno-generators n103 bảng 1 voltage] dòng 0: 225 → ∅ (nhãn "VOLTAGE V") | null | | MB 9504 KL | 4 | 250 W | 1000 W | DC | 48 V | - | - | - | - | KOHLER LDW 702 | 686 | - | 5,9 | - | 0,35 | N | 110 | 235 | 148 | 225 | 235 | 202 | 88
+(!) [bruno-generators n103 bảng 1 voltage] dòng 1: 225 → ∅ (nhãn "VOLTAGE V") | null | | MB 9504 KL | 4 | 300 W | 1200 W | DC | 48 V | - | - | - | - | KOHLER LDW 702 | 686 | - | 5,9 | - | 0,46 | N | 110 | 235 | 148 | 225 | 235 | 202 | 88
+(!) [bruno-generators n104 bảng 2 voltage] dòng 1: 225 → ∅ (nhãn "VOLTAGE V") | {"standby":{"kVA":244,"kW":190},"prime":{"kVA":9.5,"kW":7.6}} | | MT 9810 KL** | 8+2 | 330+250 W | 3140 W | AC | 230 V | 8,6 | 7,6 | 9,5 | 9 | KOHLER KDW 1003 | 1028 | 7,6 | 9,1 | 1,4 | 1,3 | N | 250 | 244 | 190 | 
+(!) [kangwo-guangdong n110 bảng 12 current] dòng 5: 36 → ∅ (nhãn "电流（ A ）") | {"rated":{"kW":15,"kVA":20}} | | GKW-15GF | 15 | 20 | 36 | L28M | 1 | 128/115 | 1.6 | 265.2 | 1300*700*900 | 460
+(!) [power-hf n109 bảng 10 voltage] dòng 12: 110 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":100},"standby":{"kW":110}} | | 13 | PHF-100RX | 100 | 110 | 180 | PHF6110ZLD1(R2J01) | ● | ● | ●
+(!) [power-hf n109 bảng 10 current] dòng 12: 100 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":100},"standby":{"kW":110}} | | 13 | PHF-100RX | 100 | 110 | 180 | PHF6110ZLD1(R2J01) | ● | ● | ●
+(!) [power-hf n109 bảng 10 voltage] dòng 13: 132 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":120},"standby":{"kW":132}} | | 14 | PHF-120RX | 120 | 132 | 216 | PHF6132ZLD1(R4J01) | ● | ● | ●
+(!) [power-hf n109 bảng 10 current] dòng 13: 120 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":120},"standby":{"kW":132}} | | 14 | PHF-120RX | 120 | 132 | 216 | PHF6132ZLD1(R4J01) | ● | ● | ●
+(!) [power-hf n109 bảng 10 voltage] dòng 14: 330 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":300},"standby":{"kW":330}} | | 15 | PHF-300HX | 300 | 330 | 540 | PHF14L400 | ● | ● | ●
+(!) [power-hf n109 bảng 10 current] dòng 14: 300 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":300},"standby":{"kW":330}} | | 15 | PHF-300HX | 300 | 330 | 540 | PHF14L400 | ● | ● | ●
+(!) [power-hf n109 bảng 10 voltage] dòng 15: 385 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":350},"standby":{"kW":385}} | | 16 | PHF-350HX | 350 | 385 | 630 | PHF15L440 | ● | ● | ●
+(!) [power-hf n109 bảng 10 current] dòng 15: 350 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":350},"standby":{"kW":385}} | | 16 | PHF-350HX | 350 | 385 | 630 | PHF15L440 | ● | ● | ●
+(!) [power-hf n111 bảng 13 voltage] dòng 6: 220 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":200},"standby":{"kW":220}} | | 7 | PHF-200RX-Q | 200 | 220 | 360 | PHF6230ZL1Q1 | ● | ●
+(!) [power-hf n111 bảng 13 current] dòng 6: 200 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":200},"standby":{"kW":220}} | | 7 | PHF-200RX-Q | 200 | 220 | 360 | PHF6230ZL1Q1 | ● | ●
+(!) [power-hf n111 bảng 13 voltage] dòng 7: 264 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":240},"standby":{"kW":264}} | | 8 | PHF-240RX-Q | 240 | 264 | 432 | PHF6260ZL1Q1 | ● | ●
+(!) [power-hf n111 bảng 13 current] dòng 7: 240 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":240},"standby":{"kW":264}} | | 8 | PHF-240RX-Q | 240 | 264 | 432 | PHF6260ZL1Q1 | ● | ●
+(!) [power-hf n112 bảng 14 voltage] dòng 9: 110 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":100},"standby":{"kW":110}} | | 10 | PHF-100WX | 100 | 110 | 180 | WP6D132E200 | ● | ● | ●
+(!) [power-hf n112 bảng 14 current] dòng 9: 100 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":100},"standby":{"kW":110}} | | 10 | PHF-100WX | 100 | 110 | 180 | WP6D132E200 | ● | ● | ●
+(!) [power-hf n112 bảng 14 voltage] dòng 10: 132 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":120},"standby":{"kW":132}} | | 11 | PHF-120WX | 120 | 132 | 216 | WP6D152E200 | ● | ● | ●
+(!) [power-hf n112 bảng 14 current] dòng 10: 120 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":120},"standby":{"kW":132}} | | 11 | PHF-120WX | 120 | 132 | 216 | WP6D152E200 | ● | ● | ●
+(!) [power-hf n112 bảng 14 voltage] dòng 11: 165 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":150},"standby":{"kW":165}} | | 12 | PHF-150WX | 150 | 165 | 270 | WP10D200E200 | ● | ● | ●
+(!) [power-hf n112 bảng 14 current] dòng 11: 150 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":150},"standby":{"kW":165}} | | 12 | PHF-150WX | 150 | 165 | 270 | WP10D200E200 | ● | ● | ●
+(!) [power-hf n112 bảng 14 voltage] dòng 12: 198 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":180},"standby":{"kW":198}} | | 13 | PHF-180WX | 180 | 198 | 324 | WP10D238E200 | ● | ● | ●
+(!) [power-hf n112 bảng 14 current] dòng 12: 180 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":180},"standby":{"kW":198}} | | 13 | PHF-180WX | 180 | 198 | 324 | WP10D238E200 | ● | ● | ●
+(!) [power-hf n112 bảng 14 voltage] dòng 13: 220 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":200},"standby":{"kW":220}} | | 14 | PHF-200WX | 200 | 220 | 360 | WP10D264E200 | ● | ● | ●
+(!) [power-hf n112 bảng 14 current] dòng 13: 200 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":200},"standby":{"kW":220}} | | 14 | PHF-200WX | 200 | 220 | 360 | WP10D264E200 | ● | ● | ●
+(!) [power-hf n112 bảng 14 voltage] dòng 14: 275 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":250},"standby":{"kW":275}} | | 15 | PHF-250WX | 250 | 275 | 450 | WP12D317E200 | ● | ● | ●
+(!) [power-hf n112 bảng 14 current] dòng 14: 250 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":250},"standby":{"kW":275}} | | 15 | PHF-250WX | 250 | 275 | 450 | WP12D317E200 | ● | ● | ●
+(!) [power-hf n112 bảng 14 voltage] dòng 15: 330 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":300},"standby":{"kW":330}} | | 16 | PHF-300WX | 300 | 330 | 540 | WP13D385E200 | ● | ● | ●
+(!) [power-hf n112 bảng 14 current] dòng 15: 300 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":300},"standby":{"kW":330}} | | 16 | PHF-300WX | 300 | 330 | 540 | WP13D385E200 | ● | ● | ●
+(!) [power-hf n112 bảng 14 voltage] dòng 16: 396 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":360},"standby":{"kW":396}} | | 17 | PHF-360WX | 360 | 396 | 648 | 6M26D447E200 | ● | ● | ●
+(!) [power-hf n112 bảng 14 current] dòng 16: 360 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":360},"standby":{"kW":396}} | | 17 | PHF-360WX | 360 | 396 | 648 | 6M26D447E200 | ● | ● | ●
+(!) [power-hf n112 bảng 14 current] dòng 17: 400 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":400},"standby":{"kW":440}} | | 18 | PHF-400WX | 400 | 440 | 720 | 6M26D484E200 | ● | ● | ●
+(!) [power-hf n112 bảng 14 voltage] dòng 18: 550 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":500},"standby":{"kW":550}} | | 19 | PHF-500WX | 500 | 550 | 900 | 6M33D605E200 | ● | ● | ●
+(!) [power-hf n112 bảng 14 current] dòng 18: 500 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":500},"standby":{"kW":550}} | | 19 | PHF-500WX | 500 | 550 | 900 | 6M33D605E200 | ● | ● | ●
+(!) [power-hf n112 bảng 14 voltage] dòng 19: 660 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":600},"standby":{"kW":660}} | | 20 | PHF-600WX | 600 | 660 | 1080 | 12M26D748E200 | ● | ● |
+(!) [power-hf n112 bảng 14 current] dòng 19: 600 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":600},"standby":{"kW":660}} | | 20 | PHF-600WX | 600 | 660 | 1080 | 12M26D748E200 | ● | ● |
+(!) [power-hf n112 bảng 14 voltage] dòng 20: 715 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":650},"standby":{"kW":715}} | | 21 | PHF-650WX | 650 | 715 | 1170 | 12M26D792E200 | ● | ● |
+(!) [power-hf n112 bảng 14 current] dòng 20: 650 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":650},"standby":{"kW":715}} | | 21 | PHF-650WX | 650 | 715 | 1170 | 12M26D792E200 | ● | ● |
+(!) [power-hf n112 bảng 14 voltage] dòng 21: 825 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":750},"standby":{"kW":825}} | | 22 | PHF-750WX | 750 | 825 | 1350 | 12M26D902E200 | ● | ● |
+(!) [power-hf n112 bảng 14 current] dòng 21: 750 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":750},"standby":{"kW":825}} | | 22 | PHF-750WX | 750 | 825 | 1350 | 12M26D902E200 | ● | ● |
+(!) [power-hf n112 bảng 14 voltage] dòng 22: 880 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":800},"standby":{"kW":880}} | | 23 | PHF-800WX | 800 | 880 | 1440 | 12M26D968E200 | ● | ● |
+(!) [power-hf n112 bảng 14 current] dòng 22: 800 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":800},"standby":{"kW":880}} | | 23 | PHF-800WX | 800 | 880 | 1440 | 12M26D968E200 | ● | ● |
+(!) [power-hf n112 bảng 14 voltage] dòng 23: 990 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":900},"standby":{"kW":990}} | | 24 | PHF-900WX | 900 | 990 | 1620 | 12M33D1108E200 | ● | ● |
+(!) [power-hf n112 bảng 14 current] dòng 23: 900 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":900},"standby":{"kW":990}} | | 24 | PHF-900WX | 900 | 990 | 1620 | 12M33D1108E200 | ● | ● |
+(!) [power-hf n112 bảng 14 voltage] dòng 24: 1100 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":1000},"standby":{"kW":1100}} | | 25 | PHF-1000WX | 1000 | 1100 | 1800 | 12M33D1210E200 | ● | ● |
+(!) [power-hf n112 bảng 14 current] dòng 24: 1000 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":1000},"standby":{"kW":1100}} | | 25 | PHF-1000WX | 1000 | 1100 | 1800 | 12M33D1210E200 | ● | ● |
+(!) [power-hf n113 bảng 15 voltage] dòng 7: 110 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":100},"standby":{"kW":110}} | | 8 | PHF-100YX | 100 | 110 | 180 | YC6B180L-D20 | ● | ● | ●
+(!) [power-hf n113 bảng 15 current] dòng 7: 100 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":100},"standby":{"kW":110}} | | 8 | PHF-100YX | 100 | 110 | 180 | YC6B180L-D20 | ● | ● | ●
+(!) [power-hf n113 bảng 15 voltage] dòng 8: 132 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":120},"standby":{"kW":132}} | | 9 | PHF-120YX | 120 | 132 | 216 | YC6A200L-D20 | ● | ● | ●
+(!) [power-hf n113 bảng 15 current] dòng 8: 120 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":120},"standby":{"kW":132}} | | 9 | PHF-120YX | 120 | 132 | 216 | YC6A200L-D20 | ● | ● | ●
+(!) [power-hf n113 bảng 15 voltage] dòng 9: 143 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":130},"standby":{"kW":143}} | | 10 | PHF-130YX | 130 | 143 | 234 | YC6A230L-D20 | ● | ● | ●
+(!) [power-hf n113 bảng 15 current] dòng 9: 130 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":130},"standby":{"kW":143}} | | 10 | PHF-130YX | 130 | 143 | 234 | YC6A230L-D20 | ● | ● | ●
+(!) [power-hf n113 bảng 15 voltage] dòng 10: 165 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":150},"standby":{"kW":165}} | | 11 | PHF-150YX | 150 | 165 | 270 | YC6G245L-D20 | ● | ● | ●
+(!) [power-hf n113 bảng 15 current] dòng 10: 150 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":150},"standby":{"kW":165}} | | 11 | PHF-150YX | 150 | 165 | 270 | YC6G245L-D20 | ● | ● | ●
+(!) [power-hf n113 bảng 15 voltage] dòng 11: 220 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":200},"standby":{"kW":220}} | | 12 | PHF-200YX | 200 | 220 | 360 | YC6MK350L-D20 | ● | ● | ●
+(!) [power-hf n113 bảng 15 current] dòng 11: 200 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":200},"standby":{"kW":220}} | | 12 | PHF-200YX | 200 | 220 | 360 | YC6MK350L-D20 | ● | ● | ●
+(!) [power-hf n113 bảng 15 voltage] dòng 12: 275 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":250},"standby":{"kW":275}} | | 13 | PHF-250YX | 250 | 275 | 450 | YC6MK420L-D20 | ● | ● | ●
+(!) [power-hf n113 bảng 15 current] dòng 12: 250 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":250},"standby":{"kW":275}} | | 13 | PHF-250YX | 250 | 275 | 450 | YC6MK420L-D20 | ● | ● | ●
+(!) [power-hf n113 bảng 15 voltage] dòng 13: 330 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":300},"standby":{"kW":330}} | | 15 | PHF-300YX | 300 | 330 | 540 | YC6T550L-D21 | ● | ● | ●
+(!) [power-hf n113 bảng 15 current] dòng 13: 300 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":300},"standby":{"kW":330}} | | 15 | PHF-300YX | 300 | 330 | 540 | YC6T550L-D21 | ● | ● | ●
+(!) [power-hf n113 bảng 15 voltage] dòng 14: 385 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":350},"standby":{"kW":385}} | | 16 | PHF-350YX | 350 | 385 | 630 | YC6T600L-D22 | ● | ● | ●
+(!) [power-hf n113 bảng 15 current] dòng 14: 350 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":350},"standby":{"kW":385}} | | 16 | PHF-350YX | 350 | 385 | 630 | YC6T600L-D22 | ● | ● | ●
+(!) [power-hf n113 bảng 15 current] dòng 15: 400 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":400},"standby":{"kW":440}} | | 17 | PHF-400YX | 400 | 440 | 720 | YC6T660L-D20 | ● | ● | ●
+(!) [power-hf n113 bảng 15 voltage] dòng 16: 528 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":480},"standby":{"kW":528}} | | 18 | PHF-480YX | 480 | 528 | 864 | YC6TD780L-D20 | ● | ● | ●
+(!) [power-hf n113 bảng 15 current] dòng 16: 480 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":480},"standby":{"kW":528}} | | 18 | PHF-480YX | 480 | 528 | 864 | YC6TD780L-D20 | ● | ● | ●
+(!) [power-hf n113 bảng 15 voltage] dòng 17: 550 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":500},"standby":{"kW":550}} | | 19 | PHF-500YX | 500 | 550 | 900 | YC6TD840L-D20 | ● | ● | ●
+(!) [power-hf n113 bảng 15 current] dòng 17: 500 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":500},"standby":{"kW":550}} | | 19 | PHF-500YX | 500 | 550 | 900 | YC6TD840L-D20 | ● | ● | ●
+(!) [power-hf n113 bảng 15 voltage] dòng 18: 660 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":600},"standby":{"kW":660}} | | 20 | PHF-600YX | 600 | 660 | 1080 | YC6C1020L-D20 | ● | ● |
+(!) [power-hf n113 bảng 15 current] dòng 18: 600 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":600},"standby":{"kW":660}} | | 20 | PHF-600YX | 600 | 660 | 1080 | YC6C1020L-D20 | ● | ● |
+(!) [power-hf n113 bảng 15 voltage] dòng 19: 715 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":650},"standby":{"kW":715}} | | 21 | PHF-650YX | 650 | 715 | 1170 | YC6C1070L-D20 | ● | ● |
+(!) [power-hf n113 bảng 15 current] dòng 19: 650 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":650},"standby":{"kW":715}} | | 21 | PHF-650YX | 650 | 715 | 1170 | YC6C1070L-D20 | ● | ● |
+(!) [power-hf n113 bảng 15 voltage] dòng 20: 825 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":750},"standby":{"kW":825}} | | 22 | PHF-750YX | 750 | 825 | 1350 | YC6C1220L-D20 | ● | ● |
+(!) [power-hf n113 bảng 15 current] dòng 20: 750 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":750},"standby":{"kW":825}} | | 22 | PHF-750YX | 750 | 825 | 1350 | YC6C1220L-D20 | ● | ● |
+(!) [power-hf n113 bảng 15 voltage] dòng 21: 880 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":800},"standby":{"kW":880}} | | 23 | PHF-800YX | 800 | 880 | 1440 | YC6C1320L-D20 | ● | ● |
+(!) [power-hf n113 bảng 15 current] dòng 21: 800 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":800},"standby":{"kW":880}} | | 23 | PHF-800YX | 800 | 880 | 1440 | YC6C1320L-D20 | ● | ● |
+(!) [power-hf n113 bảng 15 voltage] dòng 22: 1100 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":1000},"standby":{"kW":1100}} | | 24 | PHF-1000YX | 1000 | 1100 | 1800 | YC12VC1680L-D20 | ● | ● |
+(!) [power-hf n113 bảng 15 current] dòng 22: 1000 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":1000},"standby":{"kW":1100}} | | 24 | PHF-1000YX | 1000 | 1100 | 1800 | YC12VC1680L-D20 | ● | ● |
+(!) [power-hf n113 bảng 15 voltage] dòng 23: 1320 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":1200},"standby":{"kW":1320}} | | 25 | PHF-1200YX | 1200 | 1320 | 2160 | YC12VC2070L-D20 | ● | ● |
+(!) [power-hf n113 bảng 15 current] dòng 23: 1200 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":1200},"standby":{"kW":1320}} | | 25 | PHF-1200YX | 1200 | 1320 | 2160 | YC12VC2070L-D20 | ● | ● |
+(!) [power-hf n113 bảng 15 voltage] dòng 24: 1430 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":1300},"standby":{"kW":1430}} | | 26 | PHF-1300YX | 1300 | 1430 | 2340 | YC12VC2270L-D20 | ● | ● |
+(!) [power-hf n113 bảng 15 current] dòng 24: 1300 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":1300},"standby":{"kW":1430}} | | 26 | PHF-1300YX | 1300 | 1430 | 2340 | YC12VC2270L-D20 | ● | ● |
+(!) [power-hf n113 bảng 15 voltage] dòng 25: 1650 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":1500},"standby":{"kW":1650}} | | 27 | PHF-1500YX | 1500 | 1650 | 2700 | YC12VC2510L-D20 | ● | ● |
+(!) [power-hf n113 bảng 15 current] dòng 25: 1500 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":1500},"standby":{"kW":1650}} | | 27 | PHF-1500YX | 1500 | 1650 | 2700 | YC12VC2510L-D20 | ● | ● |
+(!) [power-hf n114 bảng 16 voltage] dòng 5: 110 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":100},"standby":{"kW":110}} | | 6 | PHF-100CX | 100 | 110 | 180 | 6BTAA5.9-G2 | ● | ● | ●
+(!) [power-hf n114 bảng 16 current] dòng 5: 100 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":100},"standby":{"kW":110}} | | 6 | PHF-100CX | 100 | 110 | 180 | 6BTAA5.9-G2 | ● | ● | ●
+(!) [power-hf n114 bảng 16 voltage] dòng 6: 165 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":150},"standby":{"kW":165}} | | 7 | PHF-150CX | 150 | 165 | 270 | 6CTA8.3-G2 | ● | ● | ●
+(!) [power-hf n114 bảng 16 current] dòng 6: 150 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":150},"standby":{"kW":165}} | | 7 | PHF-150CX | 150 | 165 | 270 | 6CTA8.3-G2 | ● | ● | ●
+(!) [power-hf n114 bảng 16 voltage] dòng 7: 176 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":160},"standby":{"kW":176}} | | 8 | PHF-160CX | 160 | 176 | 288 | 6CTAA8.3-G2 | ● | ● | ●
+(!) [power-hf n114 bảng 16 current] dòng 7: 160 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":160},"standby":{"kW":176}} | | 8 | PHF-160CX | 160 | 176 | 288 | 6CTAA8.3-G2 | ● | ● | ●
+(!) [power-hf n114 bảng 16 voltage] dòng 8: 220 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":200},"standby":{"kW":220}} | | 9 | PHF-200CX | 200 | 220 | 360 | 6LTAA8.9-G2 | ● | ● | ●
+(!) [power-hf n114 bảng 16 current] dòng 8: 200 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":200},"standby":{"kW":220}} | | 9 | PHF-200CX | 200 | 220 | 360 | 6LTAA8.9-G2 | ● | ● | ●
+(!) [power-hf n114 bảng 16 voltage] dòng 9: 220 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":200},"standby":{"kW":220}} | | 10 | PHF-200CX | 200 | 220 | 360 | NT855-GA | ● | ● | ●
+(!) [power-hf n114 bảng 16 current] dòng 9: 200 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":200},"standby":{"kW":220}} | | 10 | PHF-200CX | 200 | 220 | 360 | NT855-GA | ● | ● | ●
+(!) [power-hf n114 bảng 16 voltage] dòng 10: 275 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":250},"standby":{"kW":275}} | | 11 | PHF-250CX | 250 | 275 | 450 | NTA855-G1B | ● | ● | ●
+(!) [power-hf n114 bảng 16 current] dòng 10: 250 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":250},"standby":{"kW":275}} | | 11 | PHF-250CX | 250 | 275 | 450 | NTA855-G1B | ● | ● | ●
+(!) [power-hf n114 bảng 16 voltage] dòng 11: 308 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":280},"standby":{"kW":308}} | | 12 | PHF-280CX | 280 | 308 | 504 | NTA855-G4 | ● | ● | ●
+(!) [power-hf n114 bảng 16 current] dòng 11: 280 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":280},"standby":{"kW":308}} | | 12 | PHF-280CX | 280 | 308 | 504 | NTA855-G4 | ● | ● | ●
+(!) [power-hf n114 bảng 16 voltage] dòng 12: 330 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":300},"standby":{"kW":330}} | | 13 | PHF-300CX | 300 | 330 | 540 | NTAA855-G7 | ● | ● | ●
+(!) [power-hf n114 bảng 16 current] dòng 12: 300 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":300},"standby":{"kW":330}} | | 13 | PHF-300CX | 300 | 330 | 540 | NTAA855-G7 | ● | ● | ●
+(!) [power-hf n114 bảng 16 voltage] dòng 13: 396 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":360},"standby":{"kW":396}} | | 14 | PHF-360CX | 360 | 396 | 648 | KTA19-G3 | ● | ● | ●
+(!) [power-hf n114 bảng 16 current] dòng 13: 360 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":360},"standby":{"kW":396}} | | 14 | PHF-360CX | 360 | 396 | 648 | KTA19-G3 | ● | ● | ●
+(!) [power-hf n114 bảng 16 current] dòng 14: 400 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":400},"standby":{"kW":440}} | | 15 | PHF-400CX | 400 | 440 | 720 | KTA19-G3A | ● | ● | ●
+(!) [power-hf n114 bảng 16 voltage] dòng 15: 506 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":460},"standby":{"kW":506}} | | 16 | PHF-460CX | 460 | 506 | 828 | KTAA19-G6 | ● | ● | ●
+(!) [power-hf n114 bảng 16 current] dòng 15: 460 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":460},"standby":{"kW":506}} | | 16 | PHF-460CX | 460 | 506 | 828 | KTAA19-G6 | ● | ● | ●
+(!) [power-hf n114 bảng 16 voltage] dòng 16: 550 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":500},"standby":{"kW":550}} | | 17 | PHF-500CX | 500 | 550 | 900 | KTA38-G | ● | ● | ●
+(!) [power-hf n114 bảng 16 current] dòng 16: 500 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":500},"standby":{"kW":550}} | | 17 | PHF-500CX | 500 | 550 | 900 | KTA38-G | ● | ● | ●
+(!) [power-hf n114 bảng 16 voltage] dòng 17: 660 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":600},"standby":{"kW":660}} | | 18 | PHF-600CX | 600 | 660 | 1080 | KTA38-G2 | ● | ● |
+(!) [power-hf n114 bảng 16 current] dòng 17: 600 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":600},"standby":{"kW":660}} | | 18 | PHF-600CX | 600 | 660 | 1080 | KTA38-G2 | ● | ● |
+(!) [power-hf n114 bảng 16 voltage] dòng 18: 770 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":700},"standby":{"kW":770}} | | 19 | PHF-700CX | 700 | 770 | 1260 | KTA38-G2A | ● | ● |
+(!) [power-hf n114 bảng 16 current] dòng 18: 700 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":700},"standby":{"kW":770}} | | 19 | PHF-700CX | 700 | 770 | 1260 | KTA38-G2A | ● | ● |
+(!) [power-hf n114 bảng 16 voltage] dòng 19: 880 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":800},"standby":{"kW":880}} | | 20 | PHF-800CX | 800 | 880 | 1440 | KTA38-G5 | ● | ● |
+(!) [power-hf n114 bảng 16 current] dòng 19: 800 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":800},"standby":{"kW":880}} | | 20 | PHF-800CX | 800 | 880 | 1440 | KTA38-G5 | ● | ● |
+(!) [power-hf n114 bảng 16 voltage] dòng 20: 1100 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":1000},"standby":{"kW":1100}} | | 21 | PHF-1000CX | 1000 | 1100 | 1800 | KTA50-G3 | ● | ● |
+(!) [power-hf n114 bảng 16 current] dòng 20: 1000 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":1000},"standby":{"kW":1100}} | | 21 | PHF-1000CX | 1000 | 1100 | 1800 | KTA50-G3 | ● | ● |
+(!) [power-hf n115 bảng 17 voltage] dòng 10: 110 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":100},"standby":{"kW":110}} | | 11 | PHF-100PX | 100 | 110 | 180 | 1106A-70TG1 | ● | ● | ●
+(!) [power-hf n115 bảng 17 current] dòng 10: 100 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":100},"standby":{"kW":110}} | | 11 | PHF-100PX | 100 | 110 | 180 | 1106A-70TG1 | ● | ● | ●
+(!) [power-hf n115 bảng 17 voltage] dòng 11: 121 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":110},"standby":{"kW":121}} | | 12 | PHF-110PX | 110 | 121 | 198 | 1106A-70TAG2 | ● | ● | ●
+(!) [power-hf n115 bảng 17 current] dòng 11: 110 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":110},"standby":{"kW":121}} | | 12 | PHF-110PX | 110 | 121 | 198 | 1106A-70TAG2 | ● | ● | ●
+(!) [power-hf n115 bảng 17 voltage] dòng 12: 154 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":140},"standby":{"kW":154}} | | 13 | PHF-140PX | 140 | 154 | 252 | 1106A-70TAG3 | ● | ● | ●
+(!) [power-hf n115 bảng 17 current] dòng 12: 140 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":140},"standby":{"kW":154}} | | 13 | PHF-140PX | 140 | 154 | 252 | 1106A-70TAG3 | ● | ● | ●
+(!) [power-hf n115 bảng 17 voltage] dòng 13: 176 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":160},"standby":{"kW":176}} | | 14 | PHF-160PX | 160 | 176 | 288 | 1106A-70TAG4 | ● | ● | ●
+(!) [power-hf n115 bảng 17 current] dòng 13: 160 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":160},"standby":{"kW":176}} | | 14 | PHF-160PX | 160 | 176 | 288 | 1106A-70TAG4 | ● | ● | ●
+(!) [power-hf n115 bảng 17 voltage] dòng 14: 198 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":180},"standby":{"kW":198}} | | 15 | PHF-180PX | 180 | 198 | 324 | 1506A-E88TAG2 | ● | ● | ●
+(!) [power-hf n115 bảng 17 current] dòng 14: 180 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":180},"standby":{"kW":198}} | | 15 | PHF-180PX | 180 | 198 | 324 | 1506A-E88TAG2 | ● | ● | ●
+(!) [power-hf n115 bảng 17 voltage] dòng 15: 220 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":200},"standby":{"kW":220}} | | 16 | PHF-200PX | 200 | 220 | 360 | 1506A-E88TAG3 | ● | ● | ●
+(!) [power-hf n115 bảng 17 current] dòng 15: 200 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":200},"standby":{"kW":220}} | | 16 | PHF-200PX | 200 | 220 | 360 | 1506A-E88TAG3 | ● | ● | ●
+(!) [power-hf n115 bảng 17 voltage] dòng 16: 242 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":220},"standby":{"kW":242}} | | 17 | PHF-220PX | 220 | 242 | 396 | 1506A-E88TAG4 | ● | ● | ●
+(!) [power-hf n115 bảng 17 current] dòng 16: 220 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":220},"standby":{"kW":242}} | | 17 | PHF-220PX | 220 | 242 | 396 | 1506A-E88TAG4 | ● | ● | ●
+(!) [power-hf n115 bảng 17 voltage] dòng 17: 275 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":250},"standby":{"kW":275}} | | 18 | PHF-250PX | 250 | 275 | 450 | 1506A-E88TAG5 | ● | ● | ●
+(!) [power-hf n115 bảng 17 current] dòng 17: 250 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":250},"standby":{"kW":275}} | | 18 | PHF-250PX | 250 | 275 | 450 | 1506A-E88TAG5 | ● | ● | ●
+(!) [power-hf n115 bảng 17 voltage] dòng 18: 308 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":280},"standby":{"kW":308}} | | 19 | PHF-280PX | 280 | 308 | 504 | 2206C-E13TAG2 | ● | ● | ●
+(!) [power-hf n115 bảng 17 current] dòng 18: 280 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":280},"standby":{"kW":308}} | | 19 | PHF-280PX | 280 | 308 | 504 | 2206C-E13TAG2 | ● | ● | ●
+(!) [power-hf n115 bảng 17 voltage] dòng 19: 352 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":320},"standby":{"kW":352}} | | 20 | PHF-320PX | 320 | 352 | 576 | 2206C-E13TAG3 | ● | ● | ●
+(!) [power-hf n115 bảng 17 current] dòng 19: 320 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":320},"standby":{"kW":352}} | | 20 | PHF-320PX | 320 | 352 | 576 | 2206C-E13TAG3 | ● | ● | ●
+(!) [power-hf n115 bảng 17 voltage] dòng 20: 396 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":360},"standby":{"kW":396}} | | 21 | PHF-360PX | 360 | 396 | 648 | 2506C-E15TAG1 | ● | ● | ●
+(!) [power-hf n115 bảng 17 current] dòng 20: 360 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":360},"standby":{"kW":396}} | | 21 | PHF-360PX | 360 | 396 | 648 | 2506C-E15TAG1 | ● | ● | ●
+(!) [power-hf n115 bảng 17 current] dòng 21: 400 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":400},"standby":{"kW":440}} | | 22 | PHF-400PX | 400 | 440 | 720 | 2506C-E15TAG2 | ● | ● | ●
+(!) [power-hf n115 bảng 17 voltage] dòng 22: 528 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":480},"standby":{"kW":528}} | | 23 | PHF-480PX | 480 | 528 | 864 | 2806C-E18TAG1A | ● | ● | ●
+(!) [power-hf n115 bảng 17 current] dòng 22: 480 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":480},"standby":{"kW":528}} | | 23 | PHF-480PX | 480 | 528 | 864 | 2806C-E18TAG1A | ● | ● | ●
+(!) [power-hf n115 bảng 17 voltage] dòng 23: 572 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":520},"standby":{"kW":572}} | | 24 | PHF-520PX | 520 | 572 | 936 | 2806C-E18TAG2 | ● | ● | ●
+(!) [power-hf n115 bảng 17 current] dòng 23: 520 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":520},"standby":{"kW":572}} | | 24 | PHF-520PX | 520 | 572 | 936 | 2806C-E18TAG2 | ● | ● | ●
+(!) [power-hf n115 bảng 17 voltage] dòng 24: 660 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":600},"standby":{"kW":660}} | | 25 | PHF-600PX | 600 | 660 | 1080 | 4006-23TAG2A | ● | ● |
+(!) [power-hf n115 bảng 17 current] dòng 24: 600 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":600},"standby":{"kW":660}} | | 25 | PHF-600PX | 600 | 660 | 1080 | 4006-23TAG2A | ● | ● |
+(!) [power-hf n115 bảng 17 voltage] dòng 25: 715 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":650},"standby":{"kW":715}} | | 26 | PHF-650PX | 650 | 715 | 1170 | 4006-23TAG3A | ● | ● |
+(!) [power-hf n115 bảng 17 current] dòng 25: 650 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":650},"standby":{"kW":715}} | | 26 | PHF-650PX | 650 | 715 | 1170 | 4006-23TAG3A | ● | ● |
+(!) [power-hf n115 bảng 17 voltage] dòng 26: 770 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":700},"standby":{"kW":770}} | | 27 | PHF-700PX | 700 | 770 | 1260 | 4008TAG1A | ● | ● |
+(!) [power-hf n115 bảng 17 current] dòng 26: 700 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":700},"standby":{"kW":770}} | | 27 | PHF-700PX | 700 | 770 | 1260 | 4008TAG1A | ● | ● |
+(!) [power-hf n115 bảng 17 voltage] dòng 27: 880 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":800},"standby":{"kW":880}} | | 28 | PHF-800PX | 800 | 880 | 1440 | 4008TAG2A | ● | ● |
+(!) [power-hf n115 bảng 17 current] dòng 27: 800 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":800},"standby":{"kW":880}} | | 28 | PHF-800PX | 800 | 880 | 1440 | 4008TAG2A | ● | ● |
+(!) [power-hf n115 bảng 17 voltage] dòng 28: 1100 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":1000},"standby":{"kW":1100}} | | 29 | PHF-1000PX | 1000 | 1100 | 1800 | 4012-46TWG2A | ● | ● |
+(!) [power-hf n115 bảng 17 current] dòng 28: 1000 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":1000},"standby":{"kW":1100}} | | 29 | PHF-1000PX | 1000 | 1100 | 1800 | 4012-46TWG2A | ● | ● |
+(!) [power-hf n115 bảng 17 voltage] dòng 29: 1320 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":1200},"standby":{"kW":1320}} | | 30 | PHF-1200PX | 1200 | 1320 | 2160 | 4012-46TAG2A | ● | ● |
+(!) [power-hf n115 bảng 17 current] dòng 29: 1200 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":1200},"standby":{"kW":1320}} | | 30 | PHF-1200PX | 1200 | 1320 | 2160 | 4012-46TAG2A | ● | ● |
+(!) [power-hf n115 bảng 17 voltage] dòng 30: 1485 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":1350},"standby":{"kW":1485}} | | 31 | PHF-1350PX | 1350 | 1485 | 2430 | 4012-46TAG3A | ● | ● |
+(!) [power-hf n115 bảng 17 current] dòng 30: 1350 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":1350},"standby":{"kW":1485}} | | 31 | PHF-1350PX | 1350 | 1485 | 2430 | 4012-46TAG3A | ● | ● |
+(!) [power-hf n115 bảng 17 voltage] dòng 31: 1650 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":1500},"standby":{"kW":1650}} | | 32 | PHF-1500PX | 1500 | 1650 | 2700 | 4016-61TRG1 | ● | ● |
+(!) [power-hf n115 bảng 17 current] dòng 31: 1500 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":1500},"standby":{"kW":1650}} | | 32 | PHF-1500PX | 1500 | 1650 | 2700 | 4016-61TRG1 | ● | ● |
+(!) [power-hf n115 bảng 17 voltage] dòng 32: 1760 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":1600},"standby":{"kW":1760}} | | 33 | PHF-1600PX | 1600 | 1760 | 2880 | 4016-61TRG2 | ● | ● |
+(!) [power-hf n115 bảng 17 current] dòng 32: 1600 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":1600},"standby":{"kW":1760}} | | 33 | PHF-1600PX | 1600 | 1760 | 2880 | 4016-61TRG2 | ● | ● |
+(!) [power-hf n115 bảng 17 voltage] dòng 33: 1980 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":1800},"standby":{"kW":1980}} | | 34 | PHF-1800PX | 1800 | 1980 | 3240 | 4016-61TRG3 | ● | ● |
+(!) [power-hf n115 bảng 17 current] dòng 33: 1800 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":1800},"standby":{"kW":1980}} | | 34 | PHF-1800PX | 1800 | 1980 | 3240 | 4016-61TRG3 | ● | ● |
+(!) [power-hf n116 bảng 18 voltage] dòng 2: 121 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":110},"standby":{"kW":121}} | | 3 | PHF-110SX | 110 | 121 | 198 | SC8D220D2 | ● | ● | ●
+(!) [power-hf n116 bảng 18 current] dòng 2: 110 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":110},"standby":{"kW":121}} | | 3 | PHF-110SX | 110 | 121 | 198 | SC8D220D2 | ● | ● | ●
+(!) [power-hf n116 bảng 18 voltage] dòng 3: 132 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":120},"standby":{"kW":132}} | | 4 | PHF-120SX | 120 | 132 | 216 | SC7H230D2 | ● | ● | ●
+(!) [power-hf n116 bảng 18 current] dòng 3: 120 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":120},"standby":{"kW":132}} | | 4 | PHF-120SX | 120 | 132 | 216 | SC7H230D2 | ● | ● | ●
+(!) [power-hf n116 bảng 18 voltage] dòng 4: 143 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":130},"standby":{"kW":143}} | | 5 | PHF-130SX | 130 | 143 | 234 | SC7H250D2 | ● | ● | ●
+(!) [power-hf n116 bảng 18 current] dòng 4: 130 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":130},"standby":{"kW":143}} | | 5 | PHF-130SX | 130 | 143 | 234 | SC7H250D2 | ● | ● | ●
+(!) [power-hf n116 bảng 18 voltage] dòng 5: 176 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":160},"standby":{"kW":176}} | | 6 | PHF-160SX | 160 | 176 | 288 | G128ZLD | ● | ● | ●
+(!) [power-hf n116 bảng 18 current] dòng 5: 160 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":160},"standby":{"kW":176}} | | 6 | PHF-160SX | 160 | 176 | 288 | G128ZLD | ● | ● | ●
+(!) [power-hf n116 bảng 18 voltage] dòng 6: 198 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":180},"standby":{"kW":198}} | | 7 | PHF-180SX | 180 | 198 | 324 | G128ZLD2 | ● | ● | ●
+(!) [power-hf n116 bảng 18 current] dòng 6: 180 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":180},"standby":{"kW":198}} | | 7 | PHF-180SX | 180 | 198 | 324 | G128ZLD2 | ● | ● | ●
+(!) [power-hf n116 bảng 18 voltage] dòng 7: 220 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":200},"standby":{"kW":220}} | | 8 | PHF-200SX | 200 | 220 | 360 | G128ZLD1 | ● | ● | ●
+(!) [power-hf n116 bảng 18 current] dòng 7: 200 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":200},"standby":{"kW":220}} | | 8 | PHF-200SX | 200 | 220 | 360 | G128ZLD1 | ● | ● | ●
+(!) [power-hf n116 bảng 18 voltage] dòng 8: 275 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":250},"standby":{"kW":275}} | | 9 | PHF-250SX | 250 | 275 | 450 | G128ZLD11 | ● | ● | ●
+(!) [power-hf n116 bảng 18 current] dòng 8: 250 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":250},"standby":{"kW":275}} | | 9 | PHF-250SX | 250 | 275 | 450 | G128ZLD11 | ● | ● | ●
+(!) [power-hf n116 bảng 18 voltage] dòng 9: 308 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":280},"standby":{"kW":308}} | | 10 | PHF-280SX | 280 | 308 | 504 | SC15G500D2 | ● | ● | ●
+(!) [power-hf n116 bảng 18 current] dòng 9: 280 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":280},"standby":{"kW":308}} | | 10 | PHF-280SX | 280 | 308 | 504 | SC15G500D2 | ● | ● | ●
+(!) [power-hf n116 bảng 18 voltage] dòng 10: 330 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":300},"standby":{"kW":330}} | | 11 | PHF-300SX | 300 | 330 | 540 | 12V135AZLD | ● | ● | ●
+(!) [power-hf n116 bảng 18 current] dòng 10: 300 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":300},"standby":{"kW":330}} | | 11 | PHF-300SX | 300 | 330 | 540 | 12V135AZLD | ● | ● | ●
+(!) [power-hf n116 bảng 18 voltage] dòng 11: 396 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":360},"standby":{"kW":396}} | | 12 | PHF-360SX | 360 | 396 | 648 | 12V135BZLD | ● | ● | ●
+(!) [power-hf n116 bảng 18 current] dòng 11: 360 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":360},"standby":{"kW":396}} | | 12 | PHF-360SX | 360 | 396 | 648 | 12V135BZLD | ● | ● | ●
+(!) [power-hf n116 bảng 18 current] dòng 12: 400 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":400},"standby":{"kW":440}} | | 13 | PHF-400SX | 400 | 440 | 720 | 12V135BZLD2 | ● | ● | ●
+(!) [power-hf n116 bảng 18 voltage] dòng 13: 495 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":450},"standby":{"kW":495}} | | 14 | PHF-450SX | 450 | 495 | 810 | 12V135BZLD1 | ● | ● | ●
+(!) [power-hf n116 bảng 18 current] dòng 13: 450 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":450},"standby":{"kW":495}} | | 14 | PHF-450SX | 450 | 495 | 810 | 12V135BZLD1 | ● | ● | ●
+(!) [power-hf n117 bảng 19 voltage] dòng 2: 110 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":100},"standby":{"kW":110}} | | 3 | PHF-100VX | 100 | 110 | 180 | TAD532GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 current] dòng 2: 100 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":100},"standby":{"kW":110}} | | 3 | PHF-100VX | 100 | 110 | 180 | TAD532GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 voltage] dòng 3: 132 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":120},"standby":{"kW":132}} | | 4 | PHF-120VX | 120 | 132 | 216 | TAD731GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 current] dòng 3: 120 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":120},"standby":{"kW":132}} | | 4 | PHF-120VX | 120 | 132 | 216 | TAD731GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 voltage] dòng 4: 165 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":150},"standby":{"kW":165}} | | 5 | PHF-150VX | 150 | 165 | 270 | TAD732GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 current] dòng 4: 150 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":150},"standby":{"kW":165}} | | 5 | PHF-150VX | 150 | 165 | 270 | TAD732GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 voltage] dòng 5: 176 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":160},"standby":{"kW":176}} | | 6 | PHF-160VX | 160 | 176 | 288 | TAD733GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 current] dòng 5: 160 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":160},"standby":{"kW":176}} | | 6 | PHF-160VX | 160 | 176 | 288 | TAD733GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 voltage] dòng 6: 220 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":200},"standby":{"kW":220}} | | 7 | PHF-200VX | 200 | 220 | 360 | TAD734GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 current] dòng 6: 200 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":200},"standby":{"kW":220}} | | 7 | PHF-200VX | 200 | 220 | 360 | TAD734GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 voltage] dòng 7: 275 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":250},"standby":{"kW":275}} | | 8 | PHF-250VX | 250 | 275 | 450 | TAD1341GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 current] dòng 7: 250 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":250},"standby":{"kW":275}} | | 8 | PHF-250VX | 250 | 275 | 450 | TAD1341GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 voltage] dòng 8: 308 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":280},"standby":{"kW":308}} | | 9 | PHF-280VX | 280 | 308 | 504 | TAD1342GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 current] dòng 8: 280 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":280},"standby":{"kW":308}} | | 9 | PHF-280VX | 280 | 308 | 504 | TAD1342GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 voltage] dòng 9: 330 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":300},"standby":{"kW":330}} | | 10 | PHF-300VX | 300 | 330 | 540 | TAD1343GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 current] dòng 9: 300 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":300},"standby":{"kW":330}} | | 10 | PHF-300VX | 300 | 330 | 540 | TAD1343GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 voltage] dòng 10: 363 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":330},"standby":{"kW":363}} | | 11 | PHF-330VX | 330 | 363 | 594 | TAD1344GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 current] dòng 10: 330 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":330},"standby":{"kW":363}} | | 11 | PHF-330VX | 330 | 363 | 594 | TAD1344GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 current] dòng 11: 400 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":400},"standby":{"kW":440}} | | 12 | PHF-400VX | 400 | 440 | 720 | TAD1641GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 voltage] dòng 12: 517 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":470},"standby":{"kW":517}} | | 13 | PHF-470VX | 470 | 517 | 846 | TAD1642GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 current] dòng 12: 470 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":470},"standby":{"kW":517}} | | 13 | PHF-470VX | 470 | 517 | 846 | TAD1642GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 voltage] dòng 13: 550 → ∅ (nhãn "额定电压 （V）") | {"prime":{"kW":500},"standby":{"kW":550}} | | 14 | PHF-500VX | 500 | 550 | 900 | TWD1643GE | ● | ● | ●
+(!) [power-hf n117 bảng 19 current] dòng 13: 500 → ∅ (nhãn "额定电流（A）") | {"prime":{"kW":500},"standby":{"kW":550}} | | 14 | PHF-500VX | 500 | 550 | 900 | TWD1643GE | ● | ● | ●
+(!) [xinzhengfa n101 bảng 0 current] dòng 0: 12.2 → ∅ (nhãn "额定 电流A") | {"rated":{"kVA":3.75,"kW":3}} | | ZF3GF | 3.75 | 3 | 12.2 | 50/3000 | S175M | 630 × 480 × 510 | 65
+(!) [xinzhengfa n101 bảng 0 current] dòng 7: 33.2 → ∅ (nhãn "额定 电流A") | {"rated":{"kVA":30,"kW":24}} | | ZF24GF | 30 | 24 | 33.2 | 50/1500 | K4100D | 1800 × 750 × 1100 | 810
+(!) [yingtai-jiangsu n113 bảng 24 current] dòng 0: 6300 → ∅ (nhãn "电流") | {"standby":{"kW":1000}} | | 1000GF1 | | 1000 | 6300 | / | 9620 | 5.60×1.85×2.60 | KTA38-G9 | 重庆康明斯 | | 1089 | 12 | 37.8 | ≤208 | 电子
+(!) [yingtai-jiangsu n113 bảng 24 voltage] dòng 4: 1230 → ∅ (nhãn "额定电压") | {"prime":{"kW":1120},"standby":{"kW":1230}} | | 1120GF | 1120 | 1230 | 128 | 11830 | 6.40×2.04×2.64 | QSK50-G3 | 进口康明斯 | 1210 | 1401 | 16 | 50.3 | ≤197 | 电喷
+(!) [yingtai-jiangsu n113 bảng 24 voltage] dòng 5: 1360 → ∅ (nhãn "额定电压") | {"prime":{"kW":1232},"standby":{"kW":1360}} | | 1232GF | 1232 | 1360 | 140.8 | 12360 | 6.20×2.04×2.70 | QSK50-G4 | 1328 | 1477 | 16 | 50.3 | ≤198 | 电喷
+(!) [yingtai-jiangsu n113 bảng 24 voltage] dòng 6: 1470 → ∅ (nhãn "额定电压") | {"prime":{"kW":1331},"standby":{"kW":1470}} | | 1331GF | 1331 | 1470 | 152.1 | 12360 | 6.20×2.04×2.70 | QSK50-G7 | 1420 | 1581 | 16 | 50.3 | ≤197 | 电喷
+(!) [yingtai-jiangsu n113 bảng 24 voltage] dòng 7: 1600 → ∅ (nhãn "额定电压") | {"prime":{"kW":1500},"standby":{"kW":1600}} | | 1500GF | 1500 | 1600 | 171.4 | 17920 | 7.40×2.50×2.65 | QSK60-G3 | 1615 | 1790 | 16 | 60.2 | ≤194 | 电喷
+(!) [yingtai-jiangsu n113 bảng 24 voltage] dòng 8: 1800 → ∅ (nhãn "额定电压") | {"prime":{"kW":1600},"standby":{"kW":1800}} | | 1600GF | 1600 | 1800 | 182.9 | 18200 | 7.40×2.50×2.65 | QSK60-G4 | 1730 | 1915 | 16 | 60.2 | ≤197 | 电喷
+(!) [yingtai-jiangsu n113 bảng 24 voltage] dòng 9: 2000 → ∅ (nhãn "额定电压") | {"rated":{"kVA":2000,"kW":1600}} | | 1600GF | 1600 | 2000 | 182.9 | 20000 | 7.50×2.70×3.25 | QSK60-G13 | 1727 | 2145 | 16 | 60.2 | ≤197 | 电喷
+(!) [yingtai-jiangsu n113 bảng 24 current] dòng 10: 10500 → ∅ (nhãn "电流") | {"standby":{"kW":1000}} | | 1000GF1 | | 1000 | 10500 | | 9840 | 5.62×1.85×2.60 | KTA38-G9 | 重庆康明斯 | | 1089 | 12 | 37.8 | ≤208 | 电子
+(!) [yingtai-jiangsu n113 bảng 24 voltage] dòng 14: 1230 → ∅ (nhãn "额定电压") | {"prime":{"kW":1120},"standby":{"kW":1230}} | | 1120GF | 1120 | 1230 | 76.8 | 12230 | 6.60×2.04×2.64 | QSK50-G3 | 进口康明斯 | 1210 | 1401 | 16 | 50.3 | ≤197 | 电喷
+(!) [yingtai-jiangsu n113 bảng 24 voltage] dòng 15: 1360 → ∅ (nhãn "额定电压") | {"prime":{"kW":1232},"standby":{"kW":1360}} | | 1232GF | 1232 | 1360 | 84.5 | 12730 | 6.40×2.04×2.70 | QSK50-G4 | 1328 | 1477 | 16 | 50.3 | ≤198 | 电喷
+(!) [yingtai-jiangsu n113 bảng 24 voltage] dòng 16: 1470 → ∅ (nhãn "额定电压") | {"prime":{"kW":1331},"standby":{"kW":1470}} | | 1331GF | 1331 | 1470 | 91.3 | 12730 | 6.40×2.04×2.70 | QSK50-G7 | 1421 | 1581 | 16 | 50.3 | ≤197 | 电喷
+(!) [yingtai-jiangsu n113 bảng 24 voltage] dòng 17: 1600 → ∅ (nhãn "额定电压") | {"prime":{"kW":1500},"standby":{"kW":1600}} | | 1500GF | 1500 | 1600 | 103 | 18380 | 7.60×2.50×2.65 | QSK60-G3 | 1615 | 1790 | 16 | 60.2 | ≤194 | 电喷
+(!) [yingtai-jiangsu n113 bảng 24 voltage] dòng 18: 1800 → ∅ (nhãn "额定电压") | {"prime":{"kW":1600},"standby":{"kW":1800}} | | 1600GF | 1600 | 1800 | 109.7 | 18680 | 7.60×2.50×2.65 | QSK60-G4 | 1730 | 1915 | 16 | 60.2 | ≤197 | 电喷
+(!) [yingtai-jiangsu n113 bảng 24 voltage] dòng 19: 2000 → ∅ (nhãn "额定电压") | {"rated":{"kVA":2000,"kW":1600}} | | 1600GF | 1600 | 2000 | 109.7 | 20480 | 7.70×2.70×3.25 | QSK60-G13 | 1727 | 2145 | 16 | 60.2 | ≤197 | 电喷
+(!) [yunding-jiangsu n2006 bảng 9 current] dòng 22: 792 → ∅ (nhãn "电流A Current") | {"rated":{"kW":400,"kVA":500}} | | YDY-400GF | 400 | 500 | 792 | YC6T660-D31 | 6 | 145*165 | 16.35 | 56 | 216 | 3500*1500*1970 | 4000
+(!) [zhengdian-zhengzhou n107 bảng 6 current] dòng 0: 195 → ∅ (nhãn "额定电流") | {"rated":{"kVA":6.25,"kW":5}} | | CCFJ5-xx | 5/6.25 | 9.1 | 195 | STC-5-4 | 1100×480×1000 | 305
+(!) [zhengdian-zhengzhou n107 bảng 6 current] dòng 1: 1100 → ∅ (nhãn "额定电流") | {"rated":{"kVA":10,"kW":8}} | | CCFJ8-xx | 8/10 | 14.4 | 1100 | STC-8-4 | 1100×480×1000 | 325
+(!) [zhengdian-zhengzhou n107 bảng 6 current] dòng 2: 1110 → ∅ (nhãn "额定电流") | {"rated":{"kVA":12.5,"kW":10}} | | CCFJ10-xx | 10/12.5 | 18.1 | 1110 | STC-10-4 | 1100×480×1000 | 345
+(!) [zhengdian-zhengzhou n107 bảng 6 current] dòng 3: 2100 → ∅ (nhãn "额定电流") | {"rated":{"kVA":15,"kW":12}} | | CCFJ12-xx | 12/15 | 21.6 | 2100 | STC-12-4 | 1050×500×1000 | 650
+(!) [zhengdian-zhengzhou n107 bảng 6 current] dòng 4: 395 → ∅ (nhãn "额定电流") | {"rated":{"kVA":18.75,"kW":15}} | | CCFJ15-xx | 15/18.75 | 27 | 395 | STC-15-4 | 1500×600×1500 | 780
+
+116  current bỏ: mới không kiểm được
+114  voltage bỏ: mới không kiểm được
+
+cần soát tay: 230

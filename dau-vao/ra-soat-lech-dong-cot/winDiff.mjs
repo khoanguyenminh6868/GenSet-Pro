@@ -36,7 +36,7 @@ for (const e of cat.engines) {
       const TRIO = new Set(["bdadl-shanghai", "fukangsi-yangzhou", "pengpai-yangzhou"]);
       const noTrio = B.majorityOf(figs.filter((g) => !TRIO.has(g.sid)).map((g) => [g.sid, g.x]))?.win ?? null;
       const bySid = {}; for (const g of figs) if (g.x != null) (bySid[g.x === B.BLOCK ? "X" : g.x] ||= new Set()).add(g.sid);
-      const g = groups.get(gk) || { model: e.model, key, make: e.make || "", win: mj.win, votes: mj.votes, blocked: mj.blocked, noTrio, who: Object.fromEntries(Object.entries(bySid).map(([v, s]) => [v, [...s].sort()])), rows: 0, odd: new Map() };
+      const g = groups.get(gk) || { model: e.model, ekey: e.key, key, make: e.make || "", win: mj.win, votes: mj.votes, blocked: mj.blocked, noTrio, who: Object.fromEntries(Object.entries(bySid).map(([v, s]) => [v, [...s].sort()])), rows: 0, odd: new Map() };
       g.rows++;
       for (const o of odd) {
         const ok = `${o.sid}|${o.f.n ?? ""}|${o.f.value}`;
