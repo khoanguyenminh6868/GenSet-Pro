@@ -9,6 +9,17 @@
    "6": 3
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "mingbang-mbkl"
+   ],
+   "6": [
+    "suneco-linyi",
+    "taihai-taizhou",
+    "xinhengxin-fujian"
+   ]
+  },
   "rows": 35,
   "odd": [
    {
@@ -38,6 +49,28 @@
    "12": 14
   },
   "blocked": 0,
+  "noTrio": 12,
+  "who": {
+   "8": [
+    "bdadl-shanghai"
+   ],
+   "12": [
+    "aosif",
+    "bdadl-shanghai",
+    "depco-power",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "hanyang-weifang",
+    "jet-power",
+    "kangwo-guangdong",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "sunny-weifang",
+    "waeta-fujian",
+    "wiseke-taizhou",
+    "zhengchi-power"
+   ]
+  },
   "rows": 40,
   "odd": [
    {
@@ -67,6 +100,30 @@
    "12": 16
   },
   "blocked": 0,
+  "noTrio": 12,
+  "who": {
+   "8": [
+    "bdadl-shanghai"
+   ],
+   "12": [
+    "aosif",
+    "bdadl-shanghai",
+    "depco-power",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "jet-power",
+    "jiuan-power",
+    "kangwo-guangdong",
+    "liangzi-yangzhou",
+    "longkai-power",
+    "pengpai-yangzhou",
+    "sunny-weifang",
+    "waeta-fujian",
+    "wiseke-taizhou",
+    "yunding-jiangsu",
+    "zhengchi-power"
+   ]
+  },
   "rows": 38,
   "odd": [
    {
@@ -96,6 +153,30 @@
    "12": 16
   },
   "blocked": 0,
+  "noTrio": 12,
+  "who": {
+   "8": [
+    "bdadl-shanghai"
+   ],
+   "12": [
+    "aosif",
+    "bdadl-shanghai",
+    "depco-power",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "jet-power",
+    "jlmech-wuhan",
+    "kangwo-guangdong",
+    "liangzi-yangzhou",
+    "longkai-power",
+    "pengpai-yangzhou",
+    "sunny-weifang",
+    "waeta-fujian",
+    "wiseke-taizhou",
+    "yunding-jiangsu",
+    "zhengchi-power"
+   ]
+  },
   "rows": 46,
   "odd": [
    {
@@ -125,6 +206,20 @@
    "12": 6
   },
   "blocked": 0,
+  "noTrio": 12,
+  "who": {
+   "10": [
+    "bdadl-shanghai"
+   ],
+   "12": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "kangwo-guangdong",
+    "liangzi-yangzhou",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 12,
   "odd": [
    {
@@ -154,6 +249,28 @@
    "12": 14
   },
   "blocked": 0,
+  "noTrio": 12,
+  "who": {
+   "10": [
+    "bdadl-shanghai"
+   ],
+   "12": [
+    "aosif",
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "jet-power",
+    "kangwo-guangdong",
+    "liangzi-yangzhou",
+    "longkai-power",
+    "pengpai-yangzhou",
+    "sunny-weifang",
+    "waeta-fujian",
+    "wiseke-taizhou",
+    "yunding-jiangsu",
+    "zhengchi-power"
+   ]
+  },
   "rows": 44,
   "odd": [
    {
@@ -183,6 +300,27 @@
    "12": 13
   },
   "blocked": 0,
+  "noTrio": 12,
+  "who": {
+   "10": [
+    "bdadl-shanghai"
+   ],
+   "12": [
+    "aosif",
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "kangwo-guangdong",
+    "liangzi-yangzhou",
+    "longkai-power",
+    "pengpai-yangzhou",
+    "sunny-weifang",
+    "waeta-fujian",
+    "wiseke-taizhou",
+    "yunding-jiangsu",
+    "zhengchi-power"
+   ]
+  },
   "rows": 34,
   "odd": [
    {
@@ -213,6 +351,17 @@
    "16": 1
   },
   "blocked": 0,
+  "noTrio": 12,
+  "who": {
+   "12": [
+    "comappower",
+    "depco-power",
+    "yanan-power"
+   ],
+   "16": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 8,
   "odd": [
    {
@@ -243,6 +392,19 @@
    "16": 1
   },
   "blocked": 0,
+  "noTrio": 12,
+  "who": {
+   "12": [
+    "comappower",
+    "depco-power",
+    "weichai-heavy-machinery",
+    "weichai-power",
+    "yanan-power"
+   ],
+   "16": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 29,
   "odd": [
    {
@@ -273,6 +435,26 @@
    "16": 12
   },
   "blocked": 0,
+  "noTrio": 16,
+  "who": {
+   "12": [
+    "bdadl-shanghai"
+   ],
+   "16": [
+    "aosif",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "hanyang-weifang",
+    "jlmech-wuhan",
+    "kangwo-guangdong",
+    "liangzi-yangzhou",
+    "longkai-power",
+    "sunny-weifang",
+    "waeta-fujian",
+    "yunding-jiangsu",
+    "zhengchi-power"
+   ]
+  },
   "rows": 27,
   "odd": [
    {
@@ -303,6 +485,23 @@
    "16": 9
   },
   "blocked": 0,
+  "noTrio": 16,
+  "who": {
+   "12": [
+    "bdadl-shanghai"
+   ],
+   "16": [
+    "aosif",
+    "hanyang-weifang",
+    "kangwo-guangdong",
+    "liangzi-yangzhou",
+    "longkai-power",
+    "sunny-weifang",
+    "waeta-fujian",
+    "yunding-jiangsu",
+    "zhengchi-power"
+   ]
+  },
   "rows": 24,
   "odd": [
    {
@@ -333,6 +532,19 @@
    "16": 5
   },
   "blocked": 0,
+  "noTrio": 16,
+  "who": {
+   "12": [
+    "bdadl-shanghai"
+   ],
+   "16": [
+    "aosif",
+    "hanyang-weifang",
+    "longkai-power",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 17,
   "odd": [
    {
@@ -363,6 +575,19 @@
    "16": 5
   },
   "blocked": 0,
+  "noTrio": 16,
+  "who": {
+   "12": [
+    "bdadl-shanghai"
+   ],
+   "16": [
+    "aosif",
+    "hanyang-weifang",
+    "longkai-power",
+    "yunding-jiangsu",
+    "zhengchi-power"
+   ]
+  },
   "rows": 12,
   "odd": [
    {
@@ -393,6 +618,28 @@
    "16": 14
   },
   "blocked": 0,
+  "noTrio": 16,
+  "who": {
+   "12": [
+    "aoke-yangzhou"
+   ],
+   "16": [
+    "bdadl-shanghai",
+    "comappower",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "kangwo-guangdong",
+    "legapower",
+    "pengpai-yangzhou",
+    "taihai-taizhou",
+    "victory-generator",
+    "wintpower",
+    "world-power-fuzhou",
+    "xingguang-jiangsu",
+    "yanan-power",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 46,
   "odd": [
    {
@@ -423,6 +670,28 @@
    "16": 14
   },
   "blocked": 0,
+  "noTrio": 16,
+  "who": {
+   "12": [
+    "aoke-yangzhou"
+   ],
+   "16": [
+    "bdadl-shanghai",
+    "comappower",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "kangwo-guangdong",
+    "legapower",
+    "pengpai-yangzhou",
+    "taihai-taizhou",
+    "victory-generator",
+    "wintpower",
+    "world-power-fuzhou",
+    "xingguang-jiangsu",
+    "yanan-power",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 49,
   "odd": [
    {
@@ -452,6 +721,40 @@
    "6": 26
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "6": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "comappower",
+    "depco-power",
+    "fdk-energy",
+    "fukangsi-yangzhou",
+    "genlitec",
+    "haifeng-taizhou",
+    "honto-power",
+    "huipu-power",
+    "jianghao-genset",
+    "jiuan-power",
+    "kangwo-guangdong",
+    "legapower",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "rise-power",
+    "taihai-taizhou",
+    "waeta-fujian",
+    "wintpower",
+    "world-power-fuzhou",
+    "xingguang-jiangsu",
+    "xinhengxin-fujian",
+    "yanan-power",
+    "yunding-jiangsu"
+   ],
+   "8": [
+    "depco-power"
+   ]
+  },
   "rows": 157,
   "odd": [
    {
@@ -482,6 +785,35 @@
    "16": 21
   },
   "blocked": 0,
+  "noTrio": 16,
+  "who": {
+   "12": [
+    "aoke-yangzhou"
+   ],
+   "16": [
+    "bdadl-shanghai",
+    "comappower",
+    "fdk-energy",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "honto-power",
+    "huipu-power",
+    "jianghao-genset",
+    "kangwo-guangdong",
+    "legapower",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "taihai-taizhou",
+    "waeta-fujian",
+    "wintpower",
+    "world-power-fuzhou",
+    "xingguang-jiangsu",
+    "xinhengxin-fujian",
+    "yanan-power",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 102,
   "odd": [
    {
@@ -512,6 +844,38 @@
    "16": 24
   },
   "blocked": 0,
+  "noTrio": 16,
+  "who": {
+   "12": [
+    "aoke-yangzhou"
+   ],
+   "16": [
+    "bdadl-shanghai",
+    "comappower",
+    "depco-power",
+    "fdk-energy",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "honto-power",
+    "hosem-power",
+    "huipu-power",
+    "jianghao-genset",
+    "kangwo-guangdong",
+    "legapower",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "rise-power",
+    "taihai-taizhou",
+    "waeta-fujian",
+    "wintpower",
+    "world-power-fuzhou",
+    "xingguang-jiangsu",
+    "xinhengxin-fujian",
+    "yanan-power",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 82,
   "odd": [
    {
@@ -542,6 +906,38 @@
    "16": 24
   },
   "blocked": 0,
+  "noTrio": 16,
+  "who": {
+   "12": [
+    "aoke-yangzhou"
+   ],
+   "16": [
+    "bdadl-shanghai",
+    "comappower",
+    "depco-power",
+    "fdk-energy",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "honto-power",
+    "huali-shandong",
+    "huipu-power",
+    "jianghao-genset",
+    "kangwo-guangdong",
+    "legapower",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "rise-power",
+    "taihai-taizhou",
+    "waeta-fujian",
+    "wintpower",
+    "world-power-fuzhou",
+    "xingguang-jiangsu",
+    "xinhengxin-fujian",
+    "yanan-power",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 89,
   "odd": [
    {
@@ -572,6 +968,25 @@
    "4": 1
   },
   "blocked": 0,
+  "noTrio": 3,
+  "who": {
+   "3": [
+    "aoke-yangzhou",
+    "comappower",
+    "fdk-energy",
+    "genlitec",
+    "honto-power",
+    "jet-power",
+    "jianghao-genset",
+    "kangwo-guangdong",
+    "legapower",
+    "rise-power",
+    "xinhengxin-fujian"
+   ],
+   "4": [
+    "huipu-power"
+   ]
+  },
   "rows": 65,
   "odd": [
    {
@@ -602,6 +1017,28 @@
    "4": 2
   },
   "blocked": 0,
+  "noTrio": 3,
+  "who": {
+   "3": [
+    "aoke-yangzhou",
+    "comappower",
+    "fdk-energy",
+    "genlitec",
+    "honto-power",
+    "jet-power",
+    "jianghao-genset",
+    "legapower",
+    "rise-power",
+    "waeta-fujian",
+    "xingguang-jiangsu",
+    "xinhengxin-fujian",
+    "yanan-power"
+   ],
+   "4": [
+    "depco-power",
+    "huipu-power"
+   ]
+  },
   "rows": 79,
   "odd": [
    {
@@ -648,6 +1085,28 @@
    "4": 2
   },
   "blocked": 0,
+  "noTrio": 3,
+  "who": {
+   "3": [
+    "comappower",
+    "fdk-energy",
+    "genlitec",
+    "honto-power",
+    "jet-power",
+    "jianghao-genset",
+    "kangwo-guangdong",
+    "legapower",
+    "waeta-fujian",
+    "xingguang-jiangsu",
+    "xinhengxin-fujian",
+    "yanan-power",
+    "yunding-jiangsu"
+   ],
+   "4": [
+    "depco-power",
+    "huipu-power"
+   ]
+  },
   "rows": 103,
   "odd": [
    {
@@ -694,6 +1153,30 @@
    "4": 1
   },
   "blocked": 0,
+  "noTrio": 3,
+  "who": {
+   "3": [
+    "comappower",
+    "genlitec",
+    "haifeng-taizhou",
+    "honto-power",
+    "jianghao-genset",
+    "kangwo-guangdong",
+    "legapower",
+    "mingbang-mbkl",
+    "rise-power",
+    "taihai-taizhou",
+    "waeta-fujian",
+    "wintpower",
+    "world-power-fuzhou",
+    "xingguang-jiangsu",
+    "xinhengxin-fujian",
+    "yanan-power"
+   ],
+   "4": [
+    "depco-power"
+   ]
+  },
   "rows": 116,
   "odd": [
    {
@@ -724,6 +1207,32 @@
    "4": 1
   },
   "blocked": 0,
+  "noTrio": 3,
+  "who": {
+   "3": [
+    "aoke-yangzhou",
+    "comappower",
+    "genlitec",
+    "haifeng-taizhou",
+    "honto-power",
+    "jianghao-genset",
+    "jlmech-wuhan",
+    "kangwo-guangdong",
+    "legapower",
+    "mingbang-mbkl",
+    "rise-power",
+    "taihai-taizhou",
+    "waeta-fujian",
+    "wintpower",
+    "world-power-fuzhou",
+    "xingguang-jiangsu",
+    "xinhengxin-fujian",
+    "yanan-power"
+   ],
+   "4": [
+    "depco-power"
+   ]
+  },
   "rows": 121,
   "odd": [
    {
@@ -754,6 +1263,20 @@
    "6": 1
   },
   "blocked": 0,
+  "noTrio": 4,
+  "who": {
+   "4": [
+    "aosif",
+    "comappower",
+    "suneco-linyi",
+    "wiseke-taizhou",
+    "yanan-power",
+    "yunding-jiangsu"
+   ],
+   "6": [
+    "victory-generator"
+   ]
+  },
   "rows": 47,
   "odd": [
    {
@@ -783,6 +1306,36 @@
    "4": 22
   },
   "blocked": 0,
+  "noTrio": 4,
+  "who": {
+   "4": [
+    "aoke-yangzhou",
+    "aosif",
+    "bdadl-shanghai",
+    "depco-power",
+    "fdk-energy",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "hanyang-weifang",
+    "legapower",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "rise-power",
+    "senci",
+    "senci-jiangsu",
+    "victory-generator",
+    "wintpower",
+    "wiseke-taizhou",
+    "world-power-fuzhou",
+    "xinhengxin-fujian",
+    "xinzhengfa",
+    "yunding-jiangsu"
+   ],
+   "6": [
+    "bdadl-shanghai"
+   ]
+  },
   "rows": 291,
   "odd": [
    {
@@ -813,6 +1366,18 @@
    "6": 1
   },
   "blocked": 0,
+  "noTrio": 4,
+  "who": {
+   "4": [
+    "aosif",
+    "wiseke-taizhou",
+    "yanan-power",
+    "yunding-jiangsu"
+   ],
+   "6": [
+    "bdadl-shanghai"
+   ]
+  },
   "rows": 19,
   "odd": [
    {
@@ -843,6 +1408,20 @@
    "6": 1
   },
   "blocked": 0,
+  "noTrio": 4,
+  "who": {
+   "4": [
+    "bdadl-shanghai",
+    "fdk-energy",
+    "fukangsi-yangzhou",
+    "pengpai-yangzhou",
+    "xingguang-jiangsu",
+    "yunding-jiangsu"
+   ],
+   "6": [
+    "hanyang-weifang"
+   ]
+  },
   "rows": 20,
   "odd": [
    {
@@ -873,6 +1452,25 @@
    "12": 1
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "6": [
+    "aosif",
+    "bdadl-shanghai",
+    "depco-power",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "kangwo-guangdong",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "waeta-fujian",
+    "wiseke-taizhou",
+    "yunding-jiangsu"
+   ],
+   "12": [
+    "longkai-power"
+   ]
+  },
   "rows": 40,
   "odd": [
    {
@@ -903,6 +1501,19 @@
    "12": 1
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "6": [
+    "comappower",
+    "waeta-fujian",
+    "weichai-heavy-machinery",
+    "weichai-power",
+    "yanan-power"
+   ],
+   "12": [
+    "depco-power"
+   ]
+  },
   "rows": 15,
   "odd": [
    {
@@ -933,6 +1544,18 @@
    "8": 1
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "6": [
+    "comappower",
+    "weichai-heavy-machinery",
+    "weichai-power",
+    "yanan-power"
+   ],
+   "8": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 22,
   "odd": [
    {
@@ -963,6 +1586,17 @@
    "12": 1
   },
   "blocked": 0,
+  "noTrio": 8,
+  "who": {
+   "8": [
+    "gfe-power",
+    "weichai-heavy-machinery",
+    "weichai-power"
+   ],
+   "12": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 13,
   "odd": [
    {
@@ -993,6 +1627,24 @@
    "8": 10
   },
   "blocked": 0,
+  "noTrio": 8,
+  "who": {
+   "6": [
+    "depco-power"
+   ],
+   "8": [
+    "comappower",
+    "haifeng-taizhou",
+    "huatai-yangzhou",
+    "legapower",
+    "liangzi-yangzhou",
+    "victory-generator",
+    "wintpower",
+    "world-power-fuzhou",
+    "xinhengxin-fujian",
+    "yanan-power"
+   ]
+  },
   "rows": 33,
   "odd": [
    {
@@ -1023,6 +1675,23 @@
    "8": 9
   },
   "blocked": 0,
+  "noTrio": 8,
+  "who": {
+   "6": [
+    "depco-power"
+   ],
+   "8": [
+    "comappower",
+    "haifeng-taizhou",
+    "huatai-yangzhou",
+    "legapower",
+    "sanq-power",
+    "victory-generator",
+    "wintpower",
+    "world-power-fuzhou",
+    "yanan-power"
+   ]
+  },
   "rows": 32,
   "odd": [
    {
@@ -1052,6 +1721,24 @@
    "8": 10
   },
   "blocked": 0,
+  "noTrio": 8,
+  "who": {
+   "6": [
+    "depco-power"
+   ],
+   "8": [
+    "comappower",
+    "depco-power",
+    "huatai-yangzhou",
+    "legapower",
+    "liangzi-yangzhou",
+    "victory-generator",
+    "wintpower",
+    "world-power-fuzhou",
+    "xinhengxin-fujian",
+    "yanan-power"
+   ]
+  },
   "rows": 26,
   "odd": [
    {
@@ -1082,6 +1769,24 @@
    "8": 10
   },
   "blocked": 0,
+  "noTrio": 8,
+  "who": {
+   "6": [
+    "depco-power"
+   ],
+   "8": [
+    "comappower",
+    "haifeng-taizhou",
+    "huatai-yangzhou",
+    "legapower",
+    "liangzi-yangzhou",
+    "victory-generator",
+    "wintpower",
+    "world-power-fuzhou",
+    "xinhengxin-fujian",
+    "yanan-power"
+   ]
+  },
   "rows": 32,
   "odd": [
    {
@@ -1112,6 +1817,23 @@
    "8": 9
   },
   "blocked": 0,
+  "noTrio": 8,
+  "who": {
+   "6": [
+    "depco-power"
+   ],
+   "8": [
+    "comappower",
+    "haifeng-taizhou",
+    "huatai-yangzhou",
+    "legapower",
+    "liangzi-yangzhou",
+    "victory-generator",
+    "wintpower",
+    "world-power-fuzhou",
+    "yanan-power"
+   ]
+  },
   "rows": 26,
   "odd": [
    {
@@ -1142,6 +1864,24 @@
    "8": 10
   },
   "blocked": 0,
+  "noTrio": 8,
+  "who": {
+   "6": [
+    "depco-power"
+   ],
+   "8": [
+    "comappower",
+    "haifeng-taizhou",
+    "huatai-yangzhou",
+    "legapower",
+    "liangzi-yangzhou",
+    "victory-generator",
+    "wintpower",
+    "world-power-fuzhou",
+    "xinhengxin-fujian",
+    "yanan-power"
+   ]
+  },
   "rows": 33,
   "odd": [
    {
@@ -1172,6 +1912,25 @@
    "8": 11
   },
   "blocked": 0,
+  "noTrio": 8,
+  "who": {
+   "6": [
+    "depco-power"
+   ],
+   "8": [
+    "aoke-yangzhou",
+    "comappower",
+    "haifeng-taizhou",
+    "huatai-yangzhou",
+    "legapower",
+    "liangzi-yangzhou",
+    "victory-generator",
+    "wintpower",
+    "world-power-fuzhou",
+    "xinhengxin-fujian",
+    "yanan-power"
+   ]
+  },
   "rows": 35,
   "odd": [
    {
@@ -1202,6 +1961,23 @@
    "4": 1
   },
   "blocked": 0,
+  "noTrio": 3,
+  "who": {
+   "3": [
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "huatai-yangzhou",
+    "huayuan-weifang",
+    "liangzi-yangzhou",
+    "victory-generator",
+    "xingguang-jiangsu",
+    "zhengchi-power",
+    "zhengdian-zhengzhou"
+   ],
+   "4": [
+    "aoke-yangzhou"
+   ]
+  },
   "rows": 27,
   "odd": [
    {
@@ -1240,6 +2016,22 @@
    "6": 8
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "aoke-yangzhou"
+   ],
+   "6": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "jianghao-genset",
+    "taihai-taizhou",
+    "wintpower",
+    "xingguang-jiangsu",
+    "zhengdian-zhengzhou"
+   ]
+  },
   "rows": 17,
   "odd": [
    {
@@ -1270,6 +2062,19 @@
    "8": 1
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "6": [
+    "aosif",
+    "depco-power",
+    "hd-hyundai-infracore",
+    "jianghao-genset",
+    "waeta-fujian"
+   ],
+   "8": [
+    "comappower"
+   ]
+  },
   "rows": 54,
   "odd": [
    {
@@ -1300,6 +2105,27 @@
    "8": 13
   },
   "blocked": 0,
+  "noTrio": 8,
+  "who": {
+   "6": [
+    "hosem-power"
+   ],
+   "8": [
+    "aoke-yangzhou",
+    "aosif",
+    "comappower",
+    "depco-power",
+    "haifeng-taizhou",
+    "hd-hyundai-infracore",
+    "jianghao-genset",
+    "legapower",
+    "taihai-taizhou",
+    "waeta-fujian",
+    "wintpower",
+    "world-power-fuzhou",
+    "xinhengxin-fujian"
+   ]
+  },
   "rows": 82,
   "odd": [
    {
@@ -1330,6 +2156,18 @@
    "16": 4
   },
   "blocked": 0,
+  "noTrio": 16,
+  "who": {
+   "12": [
+    "huatai-yangzhou"
+   ],
+   "16": [
+    "haifeng-taizhou",
+    "liangzi-yangzhou",
+    "taihai-taizhou",
+    "vantek-jiangsu"
+   ]
+  },
   "rows": 21,
   "odd": [
    {
@@ -1360,6 +2198,30 @@
    "12": 15
   },
   "blocked": 0,
+  "noTrio": 12,
+  "who": {
+   "6": [
+    "mingbang-mbkl",
+    "xinhengxin-fujian"
+   ],
+   "12": [
+    "aosif",
+    "comappower",
+    "depco-power",
+    "haifeng-taizhou",
+    "legapower",
+    "longkai-power",
+    "rise-power",
+    "suneco-linyi",
+    "victory-generator",
+    "waeta-fujian",
+    "wintpower",
+    "wiseke-taizhou",
+    "world-power-fuzhou",
+    "xinzhengfa",
+    "yanan-power"
+   ]
+  },
   "rows": 83,
   "odd": [
    {
@@ -1406,6 +2268,23 @@
    "12": 9
   },
   "blocked": 0,
+  "noTrio": 12,
+  "who": {
+   "6": [
+    "bdadl-shanghai"
+   ],
+   "12": [
+    "aosif",
+    "depco-power",
+    "fdk-energy",
+    "longkai-power",
+    "victory-generator",
+    "wintpower",
+    "wiseke-taizhou",
+    "xinhengxin-fujian",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 39,
   "odd": [
    {
@@ -1435,6 +2314,19 @@
    "6": 5
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "6": [
+    "aosif",
+    "bdadl-shanghai",
+    "voltgent",
+    "yanan-power",
+    "yunding-jiangsu"
+   ],
+   "12": [
+    "aosif"
+   ]
+  },
   "rows": 18,
   "odd": [
    {
@@ -1465,6 +2357,23 @@
    "12": 9
   },
   "blocked": 0,
+  "noTrio": 12,
+  "who": {
+   "6": [
+    "xinhengxin-fujian"
+   ],
+   "12": [
+    "aosif",
+    "comappower",
+    "depco-power",
+    "legapower",
+    "suneco-linyi",
+    "victory-generator",
+    "waeta-fujian",
+    "wiseke-taizhou",
+    "yanan-power"
+   ]
+  },
   "rows": 67,
   "odd": [
    {
@@ -1494,6 +2403,42 @@
    "12": 27
   },
   "blocked": 0,
+  "noTrio": 12,
+  "who": {
+   "6": [
+    "bdadl-shanghai",
+    "xinhengxin-fujian"
+   ],
+   "12": [
+    "aoke-yangzhou",
+    "aosif",
+    "bdadl-shanghai",
+    "comappower",
+    "depco-power",
+    "fdk-energy",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "huipu-power",
+    "legapower",
+    "liangzi-yangzhou",
+    "longkai-power",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "rise-power",
+    "suneco-linyi",
+    "sunkings",
+    "victory-generator",
+    "wintpower",
+    "wiseke-taizhou",
+    "world-power-fuzhou",
+    "xingguang-jiangsu",
+    "xinhengxin-fujian",
+    "xinzhengfa",
+    "yanan-power",
+    "yongcai-elecmama",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 166,
   "odd": [
    {
@@ -1539,6 +2484,41 @@
    "12": 27
   },
   "blocked": 0,
+  "noTrio": 12,
+  "who": {
+   "6": [
+    "xinhengxin-fujian"
+   ],
+   "12": [
+    "aoke-yangzhou",
+    "aosif",
+    "bdadl-shanghai",
+    "comappower",
+    "depco-power",
+    "fdk-energy",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "huipu-power",
+    "legapower",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "rise-power",
+    "suneco-linyi",
+    "sunkings",
+    "victory-generator",
+    "waeta-fujian",
+    "wintpower",
+    "wiseke-taizhou",
+    "world-power-fuzhou",
+    "xingguang-jiangsu",
+    "xinhengxin-fujian",
+    "xinzhengfa",
+    "yanan-power",
+    "yongcai-elecmama",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 167,
   "odd": [
    {
@@ -1568,6 +2548,41 @@
    "12": 26
   },
   "blocked": 0,
+  "noTrio": 12,
+  "who": {
+   "6": [
+    "bdadl-shanghai",
+    "xinhengxin-fujian"
+   ],
+   "12": [
+    "aoke-yangzhou",
+    "aosif",
+    "bdadl-shanghai",
+    "comappower",
+    "depco-power",
+    "fdk-energy",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "huipu-power",
+    "legapower",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "rise-power",
+    "suneco-linyi",
+    "sunkings",
+    "victory-generator",
+    "wintpower",
+    "wiseke-taizhou",
+    "world-power-fuzhou",
+    "xingguang-jiangsu",
+    "xinhengxin-fujian",
+    "xinzhengfa",
+    "yanan-power",
+    "yongcai-elecmama",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 137,
   "odd": [
    {
@@ -1614,6 +2629,18 @@
    "12": 4
   },
   "blocked": 0,
+  "noTrio": 12,
+  "who": {
+   "8": [
+    "bdadl-shanghai"
+   ],
+   "12": [
+    "aosif",
+    "voltgent",
+    "yanan-power",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 17,
   "odd": [
    {
@@ -1644,6 +2671,17 @@
    "16": 3
   },
   "blocked": 0,
+  "noTrio": 16,
+  "who": {
+   "12": [
+    "bdadl-shanghai"
+   ],
+   "16": [
+    "aosif",
+    "voltgent",
+    "yanan-power"
+   ]
+  },
   "rows": 20,
   "odd": [
    {
@@ -1674,6 +2712,18 @@
    "16": 4
   },
   "blocked": 0,
+  "noTrio": 16,
+  "who": {
+   "10": [
+    "bdadl-shanghai"
+   ],
+   "16": [
+    "aosif",
+    "wiseke-taizhou",
+    "yanan-power",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 28,
   "odd": [
    {
@@ -1704,6 +2754,18 @@
    "16": 4
   },
   "blocked": 0,
+  "noTrio": 16,
+  "who": {
+   "12": [
+    "bdadl-shanghai"
+   ],
+   "16": [
+    "aosif",
+    "gfe-power",
+    "voltgent",
+    "yanan-power"
+   ]
+  },
   "rows": 24,
   "odd": [
    {
@@ -1734,6 +2796,53 @@
    "16": 30
   },
   "blocked": 0,
+  "noTrio": 16,
+  "who": {
+   "10": [
+    "bdadl-shanghai"
+   ],
+   "12": [
+    "comappower",
+    "huipu-power",
+    "mingbang-mbkl",
+    "suneco-linyi",
+    "xinhengxin-fujian",
+    "xinzhengfa",
+    "yingtai-jiangsu"
+   ],
+   "16": [
+    "aoke-yangzhou",
+    "aosif",
+    "bdadl-shanghai",
+    "comappower",
+    "depco-power",
+    "fdk-energy",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "huali-shandong",
+    "legapower",
+    "liangzi-yangzhou",
+    "longkai-power",
+    "pengpai-yangzhou",
+    "rise-power",
+    "shanhua",
+    "suneco-linyi",
+    "sunkings",
+    "taihai-taizhou",
+    "victory-generator",
+    "waeta-fujian",
+    "wintpower",
+    "wiseke-taizhou",
+    "world-power-fuzhou",
+    "xingguang-jiangsu",
+    "xinhengxin-fujian",
+    "yanan-power",
+    "yingtai-group",
+    "yingtai-jiangsu",
+    "yongcai-elecmama",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 201,
   "odd": [
    {
@@ -1876,6 +2985,18 @@
    "16": 4
   },
   "blocked": 0,
+  "noTrio": 16,
+  "who": {
+   "12": [
+    "bdadl-shanghai"
+   ],
+   "16": [
+    "aosif",
+    "voltgent",
+    "yanan-power",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 17,
   "odd": [
    {
@@ -1906,6 +3027,48 @@
    "16": 29
   },
   "blocked": 0,
+  "noTrio": 16,
+  "who": {
+   "10": [
+    "bdadl-shanghai"
+   ],
+   "12": [
+    "mingbang-mbkl",
+    "xinzhengfa",
+    "yingtai-jiangsu"
+   ],
+   "16": [
+    "aoke-yangzhou",
+    "aosif",
+    "bdadl-shanghai",
+    "comappower",
+    "depco-power",
+    "fdk-energy",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "huipu-power",
+    "legapower",
+    "liangzi-yangzhou",
+    "longkai-power",
+    "pengpai-yangzhou",
+    "rise-power",
+    "suneco-linyi",
+    "sunkings",
+    "taihai-taizhou",
+    "victory-generator",
+    "waeta-fujian",
+    "wintpower",
+    "wiseke-taizhou",
+    "world-power-fuzhou",
+    "xingguang-jiangsu",
+    "xinhengxin-fujian",
+    "yanan-power",
+    "yingtai-group",
+    "yingtai-jiangsu",
+    "yongcai-elecmama",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 118,
   "odd": [
    {
@@ -1984,6 +3147,43 @@
    "16": 29
   },
   "blocked": 0,
+  "noTrio": 16,
+  "who": {
+   "12": [
+    "mingbang-mbkl"
+   ],
+   "16": [
+    "aoke-yangzhou",
+    "aosif",
+    "bdadl-shanghai",
+    "comappower",
+    "depco-power",
+    "fdk-energy",
+    "fukangsi-yangzhou",
+    "huipu-power",
+    "legapower",
+    "liangzi-yangzhou",
+    "longkai-power",
+    "pengpai-yangzhou",
+    "rise-power",
+    "shanhua",
+    "suneco-linyi",
+    "sunkings",
+    "taihai-taizhou",
+    "victory-generator",
+    "waeta-fujian",
+    "wintpower",
+    "wiseke-taizhou",
+    "world-power-fuzhou",
+    "xingguang-jiangsu",
+    "xinhengxin-fujian",
+    "yanan-power",
+    "yingtai-group",
+    "yingtai-jiangsu",
+    "yongcai-elecmama",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 116,
   "odd": [
    {
@@ -2014,6 +3214,22 @@
    "6": 1
   },
   "blocked": 0,
+  "noTrio": 4,
+  "who": {
+   "4": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "pengpai-yangzhou",
+    "senci",
+    "senci-jiangsu",
+    "victory-generator",
+    "yunding-jiangsu"
+   ],
+   "6": [
+    "yanan-power"
+   ]
+  },
   "rows": 25,
   "odd": [
    {
@@ -2044,6 +3260,25 @@
    "6": 2
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "4": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "hanyang-weifang",
+    "pengpai-yangzhou",
+    "senci",
+    "senci-jiangsu",
+    "victory-generator",
+    "yunding-jiangsu"
+   ],
+   "6": [
+    "haifeng-taizhou",
+    "liangzi-yangzhou",
+    "yanan-power"
+   ]
+  },
   "rows": 35,
   "odd": [
    {
@@ -2106,6 +3341,22 @@
    "12": 1
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "6": [
+    "aosif",
+    "bdadl-shanghai",
+    "comappower",
+    "fukangsi-yangzhou",
+    "pengpai-yangzhou",
+    "suneco-linyi",
+    "waeta-fujian",
+    "yanan-power"
+   ],
+   "12": [
+    "longkai-power"
+   ]
+  },
   "rows": 22,
   "odd": [
    {
@@ -2136,6 +3387,18 @@
    "12": 1
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "6": [
+    "shanhua",
+    "sunkings",
+    "wintpower",
+    "xinzhengfa"
+   ],
+   "12": [
+    "world-power-fuzhou"
+   ]
+  },
   "rows": 7,
   "odd": [
    {
@@ -2166,6 +3429,29 @@
    "12": 1
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "6": [
+    "aosif",
+    "comappower",
+    "depco-power",
+    "fdk-energy",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "legapower",
+    "pengpai-yangzhou",
+    "suneco-linyi",
+    "victory-generator",
+    "waeta-fujian",
+    "world-power-fuzhou",
+    "xingguang-jiangsu",
+    "yanan-power",
+    "yunding-jiangsu"
+   ],
+   "12": [
+    "longkai-power"
+   ]
+  },
   "rows": 87,
   "odd": [
    {
@@ -2196,6 +3482,19 @@
    "12": 1
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "6": [
+    "aosif",
+    "comappower",
+    "gfe-power",
+    "suneco-linyi",
+    "yanan-power"
+   ],
+   "12": [
+    "longkai-power"
+   ]
+  },
   "rows": 16,
   "odd": [
    {
@@ -2226,6 +3525,32 @@
    "16": 2
   },
   "blocked": 0,
+  "noTrio": 12,
+  "who": {
+   "6": [
+    "comappower",
+    "suneco-linyi"
+   ],
+   "12": [
+    "aosif",
+    "bdadl-shanghai",
+    "comappower",
+    "fukangsi-yangzhou",
+    "legapower",
+    "pengpai-yangzhou",
+    "suneco-linyi",
+    "victory-generator",
+    "wintpower",
+    "world-power-fuzhou",
+    "xingguang-jiangsu",
+    "yanan-power",
+    "yunding-jiangsu"
+   ],
+   "16": [
+    "fdk-energy",
+    "longkai-power"
+   ]
+  },
   "rows": 85,
   "odd": [
    {
@@ -2304,6 +3629,17 @@
    "16": 3
   },
   "blocked": 0,
+  "noTrio": 16,
+  "who": {
+   "12": [
+    "bdadl-shanghai"
+   ],
+   "16": [
+    "fdk-energy",
+    "legapower",
+    "rise-power"
+   ]
+  },
   "rows": 11,
   "odd": [
    {
@@ -2334,6 +3670,17 @@
    "20": 1
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "16": [
+    "fukangsi-yangzhou",
+    "huipu-power",
+    "kangwo-guangdong"
+   ],
+   "20": [
+    "taihai-taizhou"
+   ]
+  },
   "rows": 4,
   "odd": [
    {
@@ -2363,6 +3710,40 @@
    "6": 26
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "6": [
+    "bdadl-shanghai",
+    "cldj-fujian",
+    "depco-power",
+    "fengmao-weifang",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "hanyang-weifang",
+    "huatai-yangzhou",
+    "jianghao-genset",
+    "jlmech-wuhan",
+    "kangwo-guangdong",
+    "kente-power",
+    "legapower",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "sanq-power",
+    "senci",
+    "senci-jiangsu",
+    "taihai-taizhou",
+    "vantek-jiangsu",
+    "victory-generator",
+    "wintpower",
+    "xingguang-jiangsu",
+    "yunding-jiangsu",
+    "zhengchi-power"
+   ],
+   "12": [
+    "sanq-power"
+   ]
+  },
   "rows": 68,
   "odd": [
    {
@@ -2401,6 +3782,36 @@
    "12": 2
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "6": [
+    "bdadl-shanghai",
+    "depco-power",
+    "fengmao-weifang",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "hanyang-weifang",
+    "huatai-yangzhou",
+    "jlmech-wuhan",
+    "kente-power",
+    "legapower",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "sanq-power",
+    "sdec",
+    "senci",
+    "senci-jiangsu",
+    "wintpower",
+    "xingguang-jiangsu",
+    "yunding-jiangsu",
+    "zhengchi-power"
+   ],
+   "12": [
+    "aoke-yangzhou",
+    "victory-generator"
+   ]
+  },
   "rows": 47,
   "odd": [
    {
@@ -2447,6 +3858,40 @@
    "12": 3
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "6": [
+    "bdadl-shanghai",
+    "cldj-fujian",
+    "depco-power",
+    "fengmao-weifang",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "hanyang-weifang",
+    "huatai-yangzhou",
+    "jianghao-genset",
+    "kangwo-guangdong",
+    "kente-power",
+    "legapower",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "sanq-power",
+    "sdec",
+    "senci",
+    "senci-jiangsu",
+    "vantek-jiangsu",
+    "wintpower",
+    "xingguang-jiangsu",
+    "yunding-jiangsu",
+    "zhengchi-power"
+   ],
+   "12": [
+    "aoke-yangzhou",
+    "taihai-taizhou",
+    "victory-generator"
+   ]
+  },
   "rows": 54,
   "odd": [
    {
@@ -2509,6 +3954,26 @@
    "6": 12
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "mingbang-mbkl"
+   ],
+   "6": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "huatai-yangzhou",
+    "huipu-power",
+    "jianghao-genset",
+    "lees-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "taihai-taizhou",
+    "world-power-fuzhou",
+    "xingguang-jiangsu"
+   ]
+  },
   "rows": 30,
   "odd": [
    {
@@ -2539,6 +4004,25 @@
    "6": 11
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "mingbang-mbkl"
+   ],
+   "6": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "huipu-power",
+    "jianghao-genset",
+    "lees-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "taihai-taizhou",
+    "world-power-fuzhou"
+   ]
+  },
   "rows": 30,
   "odd": [
    {
@@ -2569,6 +4053,27 @@
    "6": 13
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "mingbang-mbkl"
+   ],
+   "6": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "huatai-yangzhou",
+    "huipu-power",
+    "jianghao-genset",
+    "lees-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "taihai-taizhou",
+    "world-power-fuzhou",
+    "xingguang-jiangsu"
+   ]
+  },
   "rows": 35,
   "odd": [
    {
@@ -2599,6 +4104,27 @@
    "6": 13
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "mingbang-mbkl"
+   ],
+   "6": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "huatai-yangzhou",
+    "huipu-power",
+    "jianghao-genset",
+    "lees-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "taihai-taizhou",
+    "world-power-fuzhou",
+    "xingguang-jiangsu"
+   ]
+  },
   "rows": 33,
   "odd": [
    {
@@ -2629,6 +4155,27 @@
    "6": 13
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "mingbang-mbkl"
+   ],
+   "6": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "huatai-yangzhou",
+    "huipu-power",
+    "jianghao-genset",
+    "lees-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "taihai-taizhou",
+    "world-power-fuzhou",
+    "xingguang-jiangsu"
+   ]
+  },
   "rows": 28,
   "odd": [
    {
@@ -2659,6 +4206,26 @@
    "6": 12
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "mingbang-mbkl"
+   ],
+   "6": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "huatai-yangzhou",
+    "huipu-power",
+    "jianghao-genset",
+    "lees-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "taihai-taizhou",
+    "world-power-fuzhou",
+    "xingguang-jiangsu"
+   ]
+  },
   "rows": 33,
   "odd": [
    {
@@ -2689,6 +4256,27 @@
    "6": 13
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "mingbang-mbkl"
+   ],
+   "6": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "huatai-yangzhou",
+    "huipu-power",
+    "jianghao-genset",
+    "lees-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "taihai-taizhou",
+    "world-power-fuzhou",
+    "xingguang-jiangsu"
+   ]
+  },
   "rows": 31,
   "odd": [
    {
@@ -2718,6 +4306,30 @@
    "4": 16
   },
   "blocked": 0,
+  "noTrio": 4,
+  "who": {
+   "4": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "comappower",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "huatai-yangzhou",
+    "huipu-power",
+    "jianghao-genset",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "senci",
+    "senci-jiangsu",
+    "taihai-taizhou",
+    "world-power-fuzhou",
+    "xingguang-jiangsu"
+   ],
+   "6": [
+    "aoke-yangzhou"
+   ]
+  },
   "rows": 43,
   "odd": [
    {
@@ -2748,6 +4360,29 @@
    "6": 15
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "mingbang-mbkl"
+   ],
+   "6": [
+    "bdadl-shanghai",
+    "comappower",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "huatai-yangzhou",
+    "huipu-power",
+    "jianghao-genset",
+    "kangwo-guangdong",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "senci",
+    "senci-jiangsu",
+    "taihai-taizhou",
+    "world-power-fuzhou",
+    "xingguang-jiangsu"
+   ]
+  },
   "rows": 36,
   "odd": [
    {
@@ -2778,6 +4413,30 @@
    "6": 16
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "mingbang-mbkl"
+   ],
+   "6": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "comappower",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "huatai-yangzhou",
+    "huipu-power",
+    "jianghao-genset",
+    "kangwo-guangdong",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "senci",
+    "senci-jiangsu",
+    "taihai-taizhou",
+    "world-power-fuzhou",
+    "xingguang-jiangsu"
+   ]
+  },
   "rows": 41,
   "odd": [
    {
@@ -2808,6 +4467,30 @@
    "6": 16
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "mingbang-mbkl"
+   ],
+   "6": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "comappower",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "huatai-yangzhou",
+    "huipu-power",
+    "jianghao-genset",
+    "kangwo-guangdong",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "senci",
+    "senci-jiangsu",
+    "taihai-taizhou",
+    "world-power-fuzhou",
+    "xingguang-jiangsu"
+   ]
+  },
   "rows": 42,
   "odd": [
    {
@@ -2838,6 +4521,23 @@
    "6": 9
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "liangzi-yangzhou"
+   ],
+   "6": [
+    "bdadl-shanghai",
+    "comappower",
+    "fukangsi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "senci",
+    "senci-jiangsu",
+    "xingguang-jiangsu",
+    "zhengchi-power"
+   ]
+  },
   "rows": 19,
   "odd": [
    {
@@ -2868,6 +4568,22 @@
    "4": 1
   },
   "blocked": 0,
+  "noTrio": 3,
+  "who": {
+   "3": [
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "huatai-yangzhou",
+    "huayuan-weifang",
+    "liangzi-yangzhou",
+    "victory-generator",
+    "xingguang-jiangsu",
+    "zhengdian-zhengzhou"
+   ],
+   "4": [
+    "aoke-yangzhou"
+   ]
+  },
   "rows": 21,
   "odd": [
    {
@@ -2906,6 +4622,25 @@
    "6": 11
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "mingbang-mbkl"
+   ],
+   "6": [
+    "bdadl-shanghai",
+    "comappower",
+    "fukangsi-yangzhou",
+    "huatai-yangzhou",
+    "huipu-power",
+    "jianghao-genset",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "taihai-taizhou",
+    "world-power-fuzhou",
+    "xingguang-jiangsu"
+   ]
+  },
   "rows": 25,
   "odd": [
    {
@@ -2936,6 +4671,18 @@
    "6": 4
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "depco-power"
+   ],
+   "6": [
+    "aosif",
+    "jianghao-genset",
+    "waeta-fujian",
+    "wiseke-taizhou"
+   ]
+  },
   "rows": 21,
   "odd": [
    {
@@ -2966,6 +4713,20 @@
    "6": 6
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "depco-power"
+   ],
+   "6": [
+    "aosif",
+    "jianghao-genset",
+    "waeta-fujian",
+    "weichai-heavy-machinery",
+    "weichai-power",
+    "wiseke-taizhou"
+   ]
+  },
   "rows": 20,
   "odd": [
    {
@@ -2996,6 +4757,19 @@
    "6": 5
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "depco-power"
+   ],
+   "6": [
+    "jianghao-genset",
+    "waeta-fujian",
+    "weichai-heavy-machinery",
+    "weichai-power",
+    "wiseke-taizhou"
+   ]
+  },
   "rows": 23,
   "odd": [
    {
@@ -3026,6 +4800,17 @@
    "6": 3
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "depco-power"
+   ],
+   "6": [
+    "jianghao-genset",
+    "weichai-heavy-machinery",
+    "weichai-power"
+   ]
+  },
   "rows": 5,
   "odd": [
    {
@@ -3056,6 +4841,20 @@
    "6": 6
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "depco-power"
+   ],
+   "6": [
+    "aosif",
+    "jianghao-genset",
+    "waeta-fujian",
+    "weichai-heavy-machinery",
+    "weichai-power",
+    "wiseke-taizhou"
+   ]
+  },
   "rows": 27,
   "odd": [
    {
@@ -3086,6 +4885,21 @@
    "9": 1
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "6": [
+    "bdadl-shanghai",
+    "depco-power",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "senci",
+    "senci-jiangsu",
+    "waeta-fujian"
+   ],
+   "9": [
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 34,
   "odd": [
    {
@@ -3116,6 +4930,22 @@
    "9": 1
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "6": [
+    "bdadl-shanghai",
+    "depco-power",
+    "jiuan-power",
+    "senci",
+    "senci-jiangsu",
+    "waeta-fujian",
+    "weichai-heavy-machinery",
+    "weichai-power"
+   ],
+   "9": [
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 33,
   "odd": [
    {
@@ -3146,6 +4976,20 @@
    "6": 6
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "depco-power"
+   ],
+   "6": [
+    "aosif",
+    "jiuan-power",
+    "waeta-fujian",
+    "weichai-heavy-machinery",
+    "weichai-power",
+    "wiseke-taizhou"
+   ]
+  },
   "rows": 22,
   "odd": [
    {
@@ -3176,6 +5020,18 @@
    "6": 1
   },
   "blocked": 0,
+  "noTrio": 4,
+  "who": {
+   "4": [
+    "hanyang-weifang",
+    "senci",
+    "senci-jiangsu",
+    "yunding-jiangsu"
+   ],
+   "6": [
+    "bdadl-shanghai"
+   ]
+  },
   "rows": 7,
   "odd": [
    {
@@ -3206,6 +5062,28 @@
    "6": 1
   },
   "blocked": 0,
+  "noTrio": 4,
+  "who": {
+   "4": [
+    "aosif",
+    "depco-power",
+    "hanyang-weifang",
+    "jet-power",
+    "jiuan-power",
+    "jlmech-wuhan",
+    "kangwo-guangdong",
+    "senci",
+    "senci-jiangsu",
+    "waeta-fujian",
+    "weichai-heavy-machinery",
+    "weichai-power",
+    "wiseke-taizhou",
+    "yunding-jiangsu"
+   ],
+   "6": [
+    "bdadl-shanghai"
+   ]
+  },
   "rows": 41,
   "odd": [
    {
@@ -3236,6 +5114,18 @@
    "6": 1
   },
   "blocked": 0,
+  "noTrio": 4,
+  "who": {
+   "4": [
+    "hanyang-weifang",
+    "senci",
+    "senci-jiangsu",
+    "yunding-jiangsu"
+   ],
+   "6": [
+    "bdadl-shanghai"
+   ]
+  },
   "rows": 7,
   "odd": [
    {
@@ -3266,6 +5156,26 @@
    "6": 1
   },
   "blocked": 0,
+  "noTrio": 4,
+  "who": {
+   "4": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "huipu-power",
+    "jlmech-wuhan",
+    "kangwo-guangdong",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "xingguang-jiangsu",
+    "yunding-jiangsu",
+    "zhengchi-power"
+   ],
+   "6": [
+    "victory-generator"
+   ]
+  },
   "rows": 24,
   "odd": [
    {
@@ -3296,6 +5206,20 @@
    "6": 1
   },
   "blocked": 0,
+  "noTrio": 4,
+  "who": {
+   "4": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "kangwo-guangdong",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "6": [
+    "huipu-power"
+   ]
+  },
   "rows": 9,
   "odd": [
    {
@@ -3326,6 +5250,21 @@
    "6": 7
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "depco-power"
+   ],
+   "6": [
+    "aosif",
+    "jianghao-genset",
+    "victory-generator",
+    "waeta-fujian",
+    "weichai-heavy-machinery",
+    "weichai-power",
+    "wiseke-taizhou"
+   ]
+  },
   "rows": 26,
   "odd": [
    {
@@ -3356,6 +5295,21 @@
    "6": 7
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "depco-power"
+   ],
+   "6": [
+    "aosif",
+    "jianghao-genset",
+    "victory-generator",
+    "waeta-fujian",
+    "weichai-heavy-machinery",
+    "weichai-power",
+    "wiseke-taizhou"
+   ]
+  },
   "rows": 23,
   "odd": [
    {
@@ -3386,6 +5340,20 @@
    "6": 6
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "depco-power"
+   ],
+   "6": [
+    "aosif",
+    "jianghao-genset",
+    "victory-generator",
+    "weichai-heavy-machinery",
+    "weichai-power",
+    "wiseke-taizhou"
+   ]
+  },
   "rows": 16,
   "odd": [
    {
@@ -3416,6 +5384,24 @@
    "16": 1
   },
   "blocked": 0,
+  "noTrio": 12,
+  "who": {
+   "12": [
+    "comappower",
+    "fdk-energy",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "jlmech-wuhan",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "xinhengxin-fujian",
+    "yanan-power",
+    "yunding-jiangsu"
+   ],
+   "16": [
+    "xingguang-jiangsu"
+   ]
+  },
   "rows": 35,
   "odd": [
    {
@@ -3446,6 +5432,28 @@
    "6": 1
   },
   "blocked": 0,
+  "noTrio": 4,
+  "who": {
+   "4": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "comappower",
+    "fukangsi-yangzhou",
+    "jianghao-genset",
+    "kangwo-guangdong",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "sanq-power",
+    "waeta-fujian",
+    "xingguang-jiangsu",
+    "xinhengxin-fujian",
+    "yanan-power"
+   ],
+   "6": [
+    "haifeng-taizhou"
+   ]
+  },
   "rows": 40,
   "odd": [
    {
@@ -3476,6 +5484,32 @@
    "6": 18
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "4": [
+    "yunding-jiangsu"
+   ],
+   "6": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "hanyang-weifang",
+    "huatai-yangzhou",
+    "jianghao-genset",
+    "kangwo-guangdong",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "sanq-power",
+    "senci",
+    "senci-jiangsu",
+    "taihai-taizhou",
+    "waeta-fujian",
+    "xingguang-jiangsu",
+    "xinhengxin-fujian"
+   ]
+  },
   "rows": 52,
   "odd": [
    {
@@ -3506,6 +5540,25 @@
    "12": 1
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "6": [
+    "bdadl-shanghai",
+    "haifeng-taizhou",
+    "huatai-yangzhou",
+    "jianghao-genset",
+    "kangwo-guangdong",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "sanq-power",
+    "xingguang-jiangsu",
+    "xinhengxin-fujian"
+   ],
+   "12": [
+    "fukangsi-yangzhou",
+    "pengpai-yangzhou"
+   ]
+  },
   "rows": 21,
   "odd": [
    {
@@ -3552,6 +5605,27 @@
    "12": 1
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "6": [
+    "bdadl-shanghai",
+    "comappower",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "jianghao-genset",
+    "kangwo-guangdong",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "sanq-power",
+    "taihai-taizhou",
+    "xingguang-jiangsu",
+    "xinhengxin-fujian",
+    "yanan-power"
+   ],
+   "12": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 29,
   "odd": [
    {
@@ -3582,6 +5656,32 @@
    "12": 1
   },
   "blocked": 0,
+  "noTrio": 6,
+  "who": {
+   "6": [
+    "bdadl-shanghai",
+    "comappower",
+    "fukangsi-yangzhou",
+    "haifeng-taizhou",
+    "hanyang-weifang",
+    "jianghao-genset",
+    "jlmech-wuhan",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "sanq-power",
+    "senci",
+    "senci-jiangsu",
+    "taihai-taizhou",
+    "waeta-fujian",
+    "xingguang-jiangsu",
+    "xinhengxin-fujian",
+    "yanan-power",
+    "yunding-jiangsu"
+   ],
+   "12": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 56,
   "odd": [
    {
@@ -3612,6 +5712,23 @@
    "4": 9
   },
   "blocked": 0,
+  "noTrio": 4,
+  "who": {
+   "3": [
+    "victory-generator"
+   ],
+   "4": [
+    "comappower",
+    "depco-power",
+    "legapower",
+    "senci-jiangsu",
+    "waeta-fujian",
+    "wintpower",
+    "world-power-fuzhou",
+    "xinhengxin-fujian",
+    "yanan-power"
+   ]
+  },
   "rows": 54,
   "odd": [
    {
@@ -3642,6 +5759,17 @@
    "17.5": 1
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "13.5": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "17.5": [
+    "wintpower"
+   ]
+  },
   "rows": 7,
   "odd": [
    {
@@ -3671,6 +5799,34 @@
    "3.3": 20
   },
   "blocked": 0,
+  "noTrio": 3.3,
+  "who": {
+   "3.3": [
+    "agestar",
+    "aoke-yangzhou",
+    "depco-power",
+    "fdk-energy",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "gb-power",
+    "hanyang-weifang",
+    "huipu-power",
+    "jet-power",
+    "jlmech-wuhan",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "rise-power",
+    "waeta-fujian",
+    "weiman-fujian",
+    "westinpower",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "2.216": [
+    "depco-power"
+   ]
+  },
   "rows": 174,
   "odd": [
    {
@@ -3701,6 +5857,20 @@
    "4.41": 1
   },
   "blocked": 0,
+  "noTrio": 4.4,
+  "who": {
+   "4.4": [
+    "aoke-yangzhou",
+    "depco-power",
+    "hanyang-weifang",
+    "legapower",
+    "mingbang-mbkl",
+    "wintpower"
+   ],
+   "4.41": [
+    "weiman-fujian"
+   ]
+  },
   "rows": 49,
   "odd": [
    {
@@ -3732,6 +5902,38 @@
    "12.6": 1
   },
   "blocked": 0,
+  "noTrio": 4.4,
+  "who": {
+   "4.41": [
+    "agestar",
+    "legapower",
+    "tecgen-fujian",
+    "weiman-fujian",
+    "yunding-jiangsu"
+   ],
+   "4.4": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "depco-power",
+    "fdk-energy",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "genlitec",
+    "hanyang-weifang",
+    "huipu-power",
+    "jet-power",
+    "legapower",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "rise-power",
+    "waeta-fujian",
+    "westinpower",
+    "wintpower"
+   ],
+   "12.6": [
+    "liangzi-yangzhou"
+   ]
+  },
   "rows": 155,
   "odd": [
    {
@@ -3850,6 +6052,17 @@
    "4.41": 1
   },
   "blocked": 0,
+  "noTrio": 4.4,
+  "who": {
+   "4.4": [
+    "hanyang-weifang",
+    "jianghao-genset",
+    "rise-power"
+   ],
+   "4.41": [
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 22,
   "odd": [
    {
@@ -3881,6 +6094,21 @@
    "4.41": 1
   },
   "blocked": 0,
+  "noTrio": 4.4,
+  "who": {
+   "4.4": [
+    "hanyang-weifang",
+    "jianghao-genset",
+    "jlmech-wuhan",
+    "rise-power"
+   ],
+   "4.399": [
+    "legapower"
+   ],
+   "4.41": [
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 29,
   "odd": [
    {
@@ -3926,6 +6154,17 @@
    "57.2": 3
   },
   "blocked": 1,
+  "noTrio": 57.2,
+  "who": {
+   "57.2": [
+    "hanyang-weifang",
+    "jet-power",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 17,
   "odd": [
    {
@@ -3955,6 +6194,17 @@
    "57.2": 3
   },
   "blocked": 1,
+  "noTrio": 57.2,
+  "who": {
+   "57.2": [
+    "hanyang-weifang",
+    "jet-power",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 17,
   "odd": [
    {
@@ -3984,6 +6234,17 @@
    "57.2": 3
   },
   "blocked": 1,
+  "noTrio": 57.2,
+  "who": {
+   "57.2": [
+    "hanyang-weifang",
+    "jet-power",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 17,
   "odd": [
    {
@@ -4013,6 +6274,17 @@
    "57.2": 3
   },
   "blocked": 1,
+  "noTrio": 57.2,
+  "who": {
+   "57.2": [
+    "hanyang-weifang",
+    "jet-power",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 18,
   "odd": [
    {
@@ -4042,6 +6314,17 @@
    "57.2": 3
   },
   "blocked": 1,
+  "noTrio": 57.2,
+  "who": {
+   "57.2": [
+    "hanyang-weifang",
+    "jet-power",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 20,
   "odd": [
    {
@@ -4071,6 +6354,17 @@
    "57.2": 3
   },
   "blocked": 1,
+  "noTrio": 57.2,
+  "who": {
+   "57.2": [
+    "hanyang-weifang",
+    "jet-power",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 16,
   "odd": [
    {
@@ -4101,6 +6395,24 @@
    "31.8": 1
   },
   "blocked": 0,
+  "noTrio": 39.2,
+  "who": {
+   "39.2": [
+    "aosif",
+    "bdadl-shanghai",
+    "depco-power",
+    "fukangsi-yangzhou",
+    "jet-power",
+    "jlmech-wuhan",
+    "liangzi-yangzhou",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ],
+   "31.8": [
+    "bdadl-shanghai",
+    "pengpai-yangzhou"
+   ]
+  },
   "rows": 46,
   "odd": [
    {
@@ -4147,6 +6459,23 @@
    "31.8": 1
   },
   "blocked": 0,
+  "noTrio": 39.2,
+  "who": {
+   "39.2": [
+    "aosif",
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "jet-power",
+    "liangzi-yangzhou",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ],
+   "31.8": [
+    "bdadl-shanghai",
+    "pengpai-yangzhou"
+   ]
+  },
   "rows": 44,
   "odd": [
    {
@@ -4193,6 +6522,18 @@
    "52.3": 1
   },
   "blocked": 0,
+  "noTrio": 39.2,
+  "who": {
+   "39.2": [
+    "aosif",
+    "hanyang-weifang",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ],
+   "52.3": [
+    "bdadl-shanghai"
+   ]
+  },
   "rows": 18,
   "odd": [
    {
@@ -4223,6 +6564,20 @@
    "65.65": 6
   },
   "blocked": 0,
+  "noTrio": 65.65,
+  "who": {
+   "65.7": [
+    "aosif"
+   ],
+   "65.65": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "jlmech-wuhan",
+    "liangzi-yangzhou",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 17,
   "odd": [
    {
@@ -4253,6 +6608,19 @@
    "65.65": 5
   },
   "blocked": 0,
+  "noTrio": 65.65,
+  "who": {
+   "65.7": [
+    "aosif"
+   ],
+   "65.65": [
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "jlmech-wuhan",
+    "liangzi-yangzhou",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 17,
   "odd": [
    {
@@ -4283,6 +6651,17 @@
    "65.65": 3
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "65.7": [
+    "aosif"
+   ],
+   "65.65": [
+    "bdadl-shanghai",
+    "hanyang-weifang",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 10,
   "odd": [
    {
@@ -4313,6 +6692,17 @@
    "23.88": 3
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "21": [
+    "wintpower"
+   ],
+   "23.88": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "pengpai-yangzhou"
+   ]
+  },
   "rows": 6,
   "odd": [
    {
@@ -4343,6 +6733,21 @@
    "8.7": 1
   },
   "blocked": 0,
+  "noTrio": 8.8,
+  "who": {
+   "8.8": [
+    "depco-power",
+    "fdk-energy",
+    "genlitec",
+    "legapower",
+    "rise-power",
+    "weiman-fujian",
+    "wintpower"
+   ],
+   "8.7": [
+    "huipu-power"
+   ]
+  },
   "rows": 55,
   "odd": [
    {
@@ -4373,6 +6778,24 @@
    "8.7": 1
   },
   "blocked": 0,
+  "noTrio": 8.8,
+  "who": {
+   "8.8": [
+    "depco-power",
+    "fdk-energy",
+    "genlitec",
+    "jianghao-genset",
+    "jlmech-wuhan",
+    "legapower",
+    "rise-power",
+    "waeta-fujian",
+    "weiman-fujian",
+    "wintpower"
+   ],
+   "8.7": [
+    "huipu-power"
+   ]
+  },
   "rows": 73,
   "odd": [
    {
@@ -4403,6 +6826,17 @@
    "8.8": 3
   },
   "blocked": 0,
+  "noTrio": 8.8,
+  "who": {
+   "7.01": [
+    "huipu-power"
+   ],
+   "8.8": [
+    "legapower",
+    "rise-power",
+    "wintpower"
+   ]
+  },
   "rows": 31,
   "odd": [
    {
@@ -4433,6 +6867,28 @@
    "7.01": 1
   },
   "blocked": 0,
+  "noTrio": 8.8,
+  "who": {
+   "8.8": [
+    "aoke-yangzhou",
+    "depco-power",
+    "fdk-energy",
+    "fukangsi-yangzhou",
+    "genlitec",
+    "jianghao-genset",
+    "jlmech-wuhan",
+    "legapower",
+    "pengpai-yangzhou",
+    "rise-power",
+    "waeta-fujian",
+    "weiman-fujian",
+    "westinpower",
+    "wintpower"
+   ],
+   "7.01": [
+    "huipu-power"
+   ]
+  },
   "rows": 107,
   "odd": [
    {
@@ -4463,6 +6919,23 @@
    "31.84": 9
   },
   "blocked": 0,
+  "noTrio": 31.84,
+  "who": {
+   "31.48": [
+    "aoke-yangzhou"
+   ],
+   "31.84": [
+    "bdadl-shanghai",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "mecca-power",
+    "pengpai-yangzhou",
+    "tellhow-power",
+    "westinpower",
+    "wintpower",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 49,
   "odd": [
    {
@@ -4493,6 +6966,17 @@
    "9.3": 1
   },
   "blocked": 0,
+  "noTrio": 9.29,
+  "who": {
+   "9.29": [
+    "depco-power",
+    "jiuan-power",
+    "westinpower"
+   ],
+   "9.3": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 24,
   "odd": [
    {
@@ -4524,6 +7008,32 @@
    "51.4": 1
   },
   "blocked": 0,
+  "noTrio": 12.5,
+  "who": {
+   "13": [
+    "rise-power"
+   ],
+   "12.5": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "depco-power",
+    "fdk-energy",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "huipu-power",
+    "jiuan-power",
+    "lees-power",
+    "legapower",
+    "pengpai-yangzhou",
+    "waeta-fujian",
+    "weiman-fujian",
+    "wintpower"
+   ],
+   "51.4": [
+    "liangzi-yangzhou"
+   ]
+  },
   "rows": 97,
   "odd": [
    {
@@ -4570,6 +7080,28 @@
    "12.5": 14
   },
   "blocked": 0,
+  "noTrio": 12.5,
+  "who": {
+   "13": [
+    "rise-power"
+   ],
+   "12.5": [
+    "bdadl-shanghai",
+    "depco-power",
+    "fdk-energy",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "huipu-power",
+    "jlmech-wuhan",
+    "legapower",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "waeta-fujian",
+    "weiman-fujian",
+    "wintpower"
+   ]
+  },
   "rows": 88,
   "odd": [
    {
@@ -4599,6 +7131,20 @@
    "18.1": 6
   },
   "blocked": 0,
+  "noTrio": 18.1,
+  "who": {
+   "18.1": [
+    "agestar",
+    "gb-power",
+    "legapower",
+    "mingbang-mbkl",
+    "rise-power",
+    "wintpower"
+   ],
+   "18.13": [
+    "legapower"
+   ]
+  },
   "rows": 37,
   "odd": [
    {
@@ -4630,6 +7176,34 @@
    "18.13": 3
   },
   "blocked": 0,
+  "noTrio": 18.1,
+  "who": {
+   "18": [
+    "bdadl-shanghai",
+    "pengpai-yangzhou",
+    "rise-power"
+   ],
+   "18.1": [
+    "agestar",
+    "fukangsi-yangzhou",
+    "genlitec",
+    "hanyang-weifang",
+    "huipu-power",
+    "jlmech-wuhan",
+    "legapower",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "waeta-fujian",
+    "weiman-fujian",
+    "wintpower"
+   ],
+   "18.13": [
+    "fdk-energy",
+    "frs-shenyang",
+    "westinpower"
+   ]
+  },
   "rows": 105,
   "odd": [
    {
@@ -4741,6 +7315,25 @@
    "2.2": 1
   },
   "blocked": 0,
+  "noTrio": 1.131,
+  "who": {
+   "1.131": [
+    "agestar",
+    "fdk-energy",
+    "frs-shenyang",
+    "genlitec",
+    "hanyang-weifang",
+    "jet-power",
+    "weiman-fujian"
+   ],
+   "1.1": [
+    "aoke-yangzhou",
+    "rise-power"
+   ],
+   "2.2": [
+    "huipu-power"
+   ]
+  },
   "rows": 65,
   "odd": [
    {
@@ -4806,6 +7399,29 @@
    "1.49": 1
   },
   "blocked": 0,
+  "noTrio": 1.496,
+  "who": {
+   "1.496": [
+    "agestar",
+    "depco-power",
+    "fdk-energy",
+    "genlitec",
+    "jet-power",
+    "weiman-fujian"
+   ],
+   "1.131": [
+    "hanyang-weifang"
+   ],
+   "2.2": [
+    "huipu-power"
+   ],
+   "1.5": [
+    "waeta-fujian"
+   ],
+   "1.49": [
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 103,
   "odd": [
    {
@@ -4884,6 +7500,25 @@
    "2.2": 3
   },
   "blocked": 0,
+  "noTrio": 2.216,
+  "who": {
+   "2.216": [
+    "agestar",
+    "depco-power",
+    "fdk-energy",
+    "frs-shenyang",
+    "genlitec",
+    "hanyang-weifang",
+    "jet-power",
+    "weiman-fujian",
+    "westinpower"
+   ],
+   "2.2": [
+    "aoke-yangzhou",
+    "rise-power",
+    "waeta-fujian"
+   ]
+  },
   "rows": 82,
   "odd": [
    {
@@ -4954,6 +7589,22 @@
    "3.92": 1
   },
   "blocked": 0,
+  "noTrio": 3.9,
+  "who": {
+   "3.9": [
+    "aosif",
+    "genlitec",
+    "hanyang-weifang",
+    "jinlongteng-fujian",
+    "liangzi-yangzhou",
+    "tecgen-fujian",
+    "victory-generator",
+    "waeta-fujian"
+   ],
+   "3.92": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 86,
   "odd": [
    {
@@ -4985,6 +7636,32 @@
    "3.92": 4
   },
   "blocked": 0,
+  "noTrio": 3.9,
+  "who": {
+   "3.9": [
+    "aosif",
+    "depco-power",
+    "genlitec",
+    "hanyang-weifang",
+    "jianghao-genset",
+    "jinlongteng-fujian",
+    "legapower",
+    "rise-power",
+    "waeta-fujian",
+    "weiman-fujian",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "4.5": [
+    "bdadl-shanghai"
+   ],
+   "3.92": [
+    "fukangsi-yangzhou",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou"
+   ]
+  },
   "rows": 169,
   "odd": [
    {
@@ -5087,6 +7764,17 @@
    "5.9": 1
   },
   "blocked": 0,
+  "noTrio": 3.9,
+  "who": {
+   "3.9": [
+    "aosif",
+    "jinlongteng-fujian",
+    "yunding-jiangsu"
+   ],
+   "5.9": [
+    "victory-generator"
+   ]
+  },
   "rows": 47,
   "odd": [
    {
@@ -5117,6 +7805,32 @@
    "3.92": 4
   },
   "blocked": 0,
+  "noTrio": 3.9,
+  "who": {
+   "3.9": [
+    "aoke-yangzhou",
+    "aosif",
+    "depco-power",
+    "fdk-energy",
+    "hanyang-weifang",
+    "jianghao-genset",
+    "jinlongteng-fujian",
+    "legapower",
+    "mingbang-mbkl",
+    "rise-power",
+    "victory-generator",
+    "weiman-fujian",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "3.92": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou"
+   ]
+  },
   "rows": 291,
   "odd": [
    {
@@ -5219,6 +7933,17 @@
    "3.92": 1
   },
   "blocked": 0,
+  "noTrio": 3.9,
+  "who": {
+   "3.9": [
+    "aosif",
+    "jinlongteng-fujian",
+    "yunding-jiangsu"
+   ],
+   "3.92": [
+    "bdadl-shanghai"
+   ]
+  },
   "rows": 19,
   "odd": [
    {
@@ -5249,6 +7974,17 @@
    "2.449": 1
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "2.45": [
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "2.449": [
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 13,
   "odd": [
    {
@@ -5280,6 +8016,20 @@
    "2.449": 1
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "4.214": [
+    "bdadl-shanghai"
+   ],
+   "2.45": [
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "2.449": [
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 14,
   "odd": [
    {
@@ -5326,6 +8076,17 @@
    "2.449": 1
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "2.45": [
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "2.449": [
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 14,
   "odd": [
    {
@@ -5356,6 +8117,17 @@
    "2.449": 1
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "2.45": [
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "2.449": [
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 13,
   "odd": [
    {
@@ -5385,6 +8157,20 @@
    "2.27": 3
   },
   "blocked": 0,
+  "noTrio": 2.27,
+  "who": {
+   "2.27": [
+    "acepow-fuan",
+    "depco-power",
+    "waeta-fujian"
+   ],
+   "1.532": [
+    "victory-generator"
+   ],
+   "1.809": [
+    "victory-generator"
+   ]
+  },
   "rows": 2,
   "odd": [
    {
@@ -5415,6 +8201,17 @@
    "2.545": 1
   },
   "blocked": 0,
+  "noTrio": 2.54,
+  "who": {
+   "2.54": [
+    "depco-power",
+    "waeta-fujian",
+    "yongcai-elecmama"
+   ],
+   "2.545": [
+    "victory-generator"
+   ]
+  },
   "rows": 1,
   "odd": [
    {
@@ -5437,6 +8234,19 @@
    "4.3": 5
   },
   "blocked": 0,
+  "noTrio": 4.3,
+  "who": {
+   "4.6": [
+    "bdadl-shanghai"
+   ],
+   "4.3": [
+    "fdk-energy",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "pengpai-yangzhou",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 19,
   "odd": [
    {
@@ -5467,6 +8277,37 @@
    "5.88": 4
   },
   "blocked": 0,
+  "noTrio": 5.9,
+  "who": {
+   "5.9": [
+    "agestar",
+    "aoke-yangzhou",
+    "aosif",
+    "depco-power",
+    "hanyang-weifang",
+    "jianghao-genset",
+    "jinlongteng-fujian",
+    "legapower",
+    "mingbang-mbkl",
+    "rise-power",
+    "tecgen-fujian",
+    "victory-generator",
+    "waeta-fujian",
+    "weiman-fujian",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "8.3": [
+    "agestar"
+   ],
+   "5.88": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou"
+   ]
+  },
   "rows": 170,
   "odd": [
    {
@@ -5602,6 +8443,36 @@
    "5.88": 2
   },
   "blocked": 0,
+  "noTrio": 5.9,
+  "who": {
+   "8.3": [
+    "agestar"
+   ],
+   "6.7": [
+    "aosif"
+   ],
+   "5.9": [
+    "aosif",
+    "depco-power",
+    "genlitec",
+    "hanyang-weifang",
+    "jianghao-genset",
+    "jinlongteng-fujian",
+    "legapower",
+    "mingbang-mbkl",
+    "rise-power",
+    "tecgen-fujian",
+    "victory-generator",
+    "waeta-fujian",
+    "weiman-fujian",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "5.88": [
+    "bdadl-shanghai",
+    "pengpai-yangzhou"
+   ]
+  },
   "rows": 154,
   "odd": [
    {
@@ -5696,6 +8567,35 @@
    "5.88": 4
   },
   "blocked": 0,
+  "noTrio": 5.9,
+  "who": {
+   "5.9": [
+    "agestar",
+    "aoke-yangzhou",
+    "aosif",
+    "depco-power",
+    "hanyang-weifang",
+    "jianghao-genset",
+    "jinlongteng-fujian",
+    "legapower",
+    "mingbang-mbkl",
+    "rise-power",
+    "victory-generator",
+    "waeta-fujian",
+    "weiman-fujian",
+    "wintpower"
+   ],
+   "8.3": [
+    "agestar"
+   ],
+   "5.88": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou"
+   ]
+  },
   "rows": 194,
   "odd": [
    {
@@ -5822,6 +8722,40 @@
    "5.9": 1
   },
   "blocked": 0,
+  "noTrio": 8.3,
+  "who": {
+   "13": [
+    "agestar"
+   ],
+   "8.3": [
+    "agestar",
+    "aoke-yangzhou",
+    "aosif",
+    "bdadl-shanghai",
+    "depco-power",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "hosem-power",
+    "jinlongteng-fujian",
+    "legapower",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "rise-power",
+    "sunkings",
+    "victory-generator",
+    "waeta-fujian",
+    "weiman-fujian",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "8.9": [
+    "agestar"
+   ],
+   "5.9": [
+    "jianghao-genset"
+   ]
+  },
   "rows": 222,
   "odd": [
    {
@@ -5899,6 +8833,36 @@
    "8.3": 19
   },
   "blocked": 0,
+  "noTrio": 8.3,
+  "who": {
+   "14": [
+    "agestar"
+   ],
+   "8.9": [
+    "agestar"
+   ],
+   "8.3": [
+    "aoke-yangzhou",
+    "aosif",
+    "bdadl-shanghai",
+    "depco-power",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "jianghao-genset",
+    "jinlongteng-fujian",
+    "legapower",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "rise-power",
+    "sunkings",
+    "victory-generator",
+    "waeta-fujian",
+    "weiman-fujian",
+    "wintpower",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 172,
   "odd": [
    {
@@ -5961,6 +8925,18 @@
    "8.9": 1
   },
   "blocked": 0,
+  "noTrio": 8.3,
+  "who": {
+   "8.3": [
+    "aosif",
+    "bdadl-shanghai",
+    "jinlongteng-fujian",
+    "victory-generator"
+   ],
+   "8.9": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 35,
   "odd": [
    {
@@ -5992,6 +8968,20 @@
    "8.82": 1
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "8.8": [
+    "bdadl-shanghai"
+   ],
+   "8.9": [
+    "fukangsi-yangzhou",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "8.82": [
+    "hanyang-weifang"
+   ]
+  },
   "rows": 13,
   "odd": [
    {
@@ -6038,6 +9028,24 @@
    "11.82": 1
   },
   "blocked": 0,
+  "noTrio": 11.8,
+  "who": {
+   "11.8": [
+    "bdadl-shanghai",
+    "depco-power",
+    "fukangsi-yangzhou",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "superwatt-swt",
+    "yunding-jiangsu"
+   ],
+   "14.16": [
+    "depco-power"
+   ],
+   "11.82": [
+    "hanyang-weifang"
+   ]
+  },
   "rows": 36,
   "odd": [
    {
@@ -6084,6 +9092,19 @@
    "11.82": 1
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "11.8": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "yunding-jiangsu"
+   ],
+   "11.82": [
+    "hanyang-weifang"
+   ]
+  },
   "rows": 21,
   "odd": [
    {
@@ -6114,6 +9135,19 @@
    "11.82": 1
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "11.8": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "yunding-jiangsu"
+   ],
+   "11.82": [
+    "hanyang-weifang"
+   ]
+  },
   "rows": 23,
   "odd": [
    {
@@ -6144,6 +9178,21 @@
    "12.82": 1
   },
   "blocked": 0,
+  "noTrio": 12.8,
+  "who": {
+   "12.8": [
+    "depco-power",
+    "fukangsi-yangzhou",
+    "jet-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ],
+   "12.82": [
+    "hanyang-weifang"
+   ]
+  },
   "rows": 35,
   "odd": [
    {
@@ -6174,6 +9223,22 @@
    "12.82": 1
   },
   "blocked": 0,
+  "noTrio": 12.8,
+  "who": {
+   "12.8": [
+    "bdadl-shanghai",
+    "depco-power",
+    "fukangsi-yangzhou",
+    "jet-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ],
+   "12.82": [
+    "hanyang-weifang"
+   ]
+  },
   "rows": 36,
   "odd": [
    {
@@ -6204,6 +9269,19 @@
    "6.5": 5
   },
   "blocked": 0,
+  "noTrio": 6.5,
+  "who": {
+   "4.3": [
+    "bdadl-shanghai"
+   ],
+   "6.5": [
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 17,
   "odd": [
    {
@@ -6234,6 +9312,17 @@
    "6.5": 3
   },
   "blocked": 0,
+  "noTrio": 6.5,
+  "who": {
+   "4.3": [
+    "bdadl-shanghai"
+   ],
+   "6.5": [
+    "hanyang-weifang",
+    "liangzi-yangzhou",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 15,
   "odd": [
    {
@@ -6264,6 +9353,17 @@
    "25.2": 3
   },
   "blocked": 0,
+  "noTrio": 25.2,
+  "who": {
+   "25.18": [
+    "depco-power"
+   ],
+   "25.2": [
+    "jet-power",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 29,
   "odd": [
    {
@@ -6294,6 +9394,39 @@
    "8.3": 1
   },
   "blocked": 0,
+  "noTrio": 8.9,
+  "who": {
+   "14": [
+    "agestar"
+   ],
+   "8.9": [
+    "agestar",
+    "aosif",
+    "bdadl-shanghai",
+    "depco-power",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "hosem-power",
+    "jianghao-genset",
+    "jinlongteng-fujian",
+    "jiuan-power",
+    "legapower",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "rise-power",
+    "victory-generator",
+    "waeta-fujian",
+    "weiman-fujian",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "8.3": [
+    "depco-power",
+    "sunkings",
+    "wintpower"
+   ]
+  },
   "rows": 192,
   "odd": [
    {
@@ -6379,6 +9512,30 @@
    "8.9": 16
   },
   "blocked": 0,
+  "noTrio": 8.9,
+  "who": {
+   "8.9": [
+    "aosif",
+    "bdadl-shanghai",
+    "depco-power",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "jianghao-genset",
+    "jinlongteng-fujian",
+    "legapower",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "rise-power",
+    "victory-generator",
+    "waeta-fujian",
+    "weiman-fujian",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "9.9": [
+    "bdadl-shanghai"
+   ]
+  },
   "rows": 114,
   "odd": [
    {
@@ -6410,6 +9567,27 @@
    "8.9": 1
   },
   "blocked": 0,
+  "noTrio": 9.5,
+  "who": {
+   "14": [
+    "depco-power"
+   ],
+   "9.5": [
+    "aosif",
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "jinlongteng-fujian",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "victory-generator",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ],
+   "8.9": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 95,
   "odd": [
    {
@@ -6455,6 +9633,18 @@
    "19.6": 4
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "19.6": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "12.5": [
+    "bdadl-shanghai"
+   ]
+  },
   "rows": 8,
   "odd": [
    {
@@ -6485,6 +9675,24 @@
    "15.9": 1
   },
   "blocked": 0,
+  "noTrio": 19.6,
+  "who": {
+   "19.6": [
+    "aosif",
+    "bdadl-shanghai",
+    "depco-power",
+    "hanyang-weifang",
+    "jet-power",
+    "jlmech-wuhan",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ],
+   "15.9": [
+    "fukangsi-yangzhou"
+   ]
+  },
   "rows": 39,
   "odd": [
    {
@@ -6515,6 +9723,17 @@
    "10.5": 1
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "8.2": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "10.5": [
+    "wintpower"
+   ]
+  },
   "rows": 6,
   "odd": [
    {
@@ -6545,6 +9764,17 @@
    "10.5": 1
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "8.2": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "10.5": [
+    "wintpower"
+   ]
+  },
   "rows": 6,
   "odd": [
    {
@@ -6574,6 +9804,19 @@
    "35.1": 5
   },
   "blocked": 1,
+  "noTrio": 35.1,
+  "who": {
+   "35.1": [
+    "bdadl-shanghai",
+    "hanyang-weifang",
+    "jet-power",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 29,
   "odd": [
    {
@@ -6604,6 +9847,29 @@
    "14": 1
   },
   "blocked": 0,
+  "noTrio": 13,
+  "who": {
+   "13": [
+    "aosif",
+    "bdadl-shanghai",
+    "depco-power",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "jinlongteng-fujian",
+    "jiuan-power",
+    "legapower",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "victory-generator",
+    "waeta-fujian",
+    "weiman-fujian",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "14": [
+    "agestar"
+   ]
+  },
   "rows": 110,
   "odd": [
    {
@@ -6644,6 +9910,32 @@
    "8.3": 1
   },
   "blocked": 0,
+  "noTrio": 13,
+  "who": {
+   "13": [
+    "aosif",
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "jianghao-genset",
+    "jinlongteng-fujian",
+    "legapower",
+    "pengpai-yangzhou",
+    "victory-generator",
+    "waeta-fujian",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "14": [
+    "agestar"
+   ],
+   "19": [
+    "sunkings"
+   ],
+   "8.3": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 88,
   "odd": [
    {
@@ -6714,6 +10006,17 @@
    "11.6": 3
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "14": [
+    "wintpower"
+   ],
+   "11.6": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "pengpai-yangzhou"
+   ]
+  },
   "rows": 6,
   "odd": [
    {
@@ -6744,6 +10047,17 @@
    "11.6": 3
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "14": [
+    "wintpower"
+   ],
+   "11.6": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "pengpai-yangzhou"
+   ]
+  },
   "rows": 6,
   "odd": [
    {
@@ -6774,6 +10088,19 @@
    "3.12": 5
   },
   "blocked": 0,
+  "noTrio": 3.12,
+  "who": {
+   "3.114": [
+    "aoke-yangzhou"
+   ],
+   "3.12": [
+    "fukangsi-yangzhou",
+    "huatai-yangzhou",
+    "huayuan-weifang",
+    "liangzi-yangzhou",
+    "victory-generator"
+   ]
+  },
   "rows": 27,
   "odd": [
    {
@@ -6812,6 +10139,19 @@
    "21.927": 1
   },
   "blocked": 0,
+  "noTrio": 21.9,
+  "who": {
+   "21.9": [
+    "aosif",
+    "lees-power",
+    "mecca-power",
+    "waeta-fujian"
+   ],
+   "21.927": [
+    "depco-power",
+    "lees-power"
+   ]
+  },
   "rows": 40,
   "odd": [
    {
@@ -6859,6 +10199,20 @@
    "37.8": 1
   },
   "blocked": 0,
+  "noTrio": 38,
+  "who": {
+   "19": [
+    "bdadl-shanghai"
+   ],
+   "38": [
+    "aosif",
+    "depco-power",
+    "victory-generator"
+   ],
+   "37.8": [
+    "wintpower"
+   ]
+  },
   "rows": 39,
   "odd": [
    {
@@ -6905,6 +10259,17 @@
    "37.8": 1
   },
   "blocked": 0,
+  "noTrio": 38,
+  "who": {
+   "38": [
+    "aosif",
+    "tellhow-power",
+    "voltgent"
+   ],
+   "37.8": [
+    "jinlongteng-fujian"
+   ]
+  },
   "rows": 11,
   "odd": [
    {
@@ -6935,6 +10300,18 @@
    "37.8": 1
   },
   "blocked": 0,
+  "noTrio": 38,
+  "who": {
+   "38": [
+    "aosif",
+    "bdadl-shanghai",
+    "tellhow-power",
+    "voltgent"
+   ],
+   "37.8": [
+    "jinlongteng-fujian"
+   ]
+  },
   "rows": 17,
   "odd": [
    {
@@ -6965,6 +10342,17 @@
    "50.3": 1
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "50": [
+    "bdadl-shanghai",
+    "tellhow-power",
+    "voltgent"
+   ],
+   "50.3": [
+    "aosif"
+   ]
+  },
   "rows": 20,
   "odd": [
    {
@@ -7011,6 +10399,18 @@
    "10.8": 4
   },
   "blocked": 0,
+  "noTrio": 10.8,
+  "who": {
+   "13": [
+    "mingbang-mbkl"
+   ],
+   "10.8": [
+    "depco-power",
+    "huipu-power",
+    "legapower",
+    "victory-generator"
+   ]
+  },
   "rows": 38,
   "odd": [
    {
@@ -7041,6 +10441,19 @@
    "10.8": 5
   },
   "blocked": 0,
+  "noTrio": 10.8,
+  "who": {
+   "14": [
+    "aoke-yangzhou"
+   ],
+   "10.8": [
+    "legapower",
+    "mingbang-mbkl",
+    "victory-generator",
+    "weiman-fujian",
+    "wintpower"
+   ]
+  },
   "rows": 25,
   "odd": [
    {
@@ -7070,6 +10483,29 @@
    "14": 15
   },
   "blocked": 0,
+  "noTrio": 14,
+  "who": {
+   "14": [
+    "aosif",
+    "bdadl-shanghai",
+    "depco-power",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "huipu-power",
+    "jianghao-genset",
+    "jinlongteng-fujian",
+    "legapower",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "rise-power",
+    "weiman-fujian",
+    "wintpower"
+   ],
+   "10.8": [
+    "aosif"
+   ]
+  },
   "rows": 106,
   "odd": [
    {
@@ -7100,6 +10536,22 @@
    "14": 8
   },
   "blocked": 0,
+  "noTrio": 14,
+  "who": {
+   "13": [
+    "agestar"
+   ],
+   "14": [
+    "aosif",
+    "depco-power",
+    "jianghao-genset",
+    "jinlongteng-fujian",
+    "legapower",
+    "rise-power",
+    "victory-generator",
+    "wintpower"
+   ]
+  },
   "rows": 79,
   "odd": [
    {
@@ -7139,6 +10591,31 @@
    "10.8": 1
   },
   "blocked": 0,
+  "noTrio": 14,
+  "who": {
+   "13": [
+    "agestar"
+   ],
+   "14": [
+    "aosif",
+    "bdadl-shanghai",
+    "depco-power",
+    "fukangsi-yangzhou",
+    "huipu-power",
+    "jinlongteng-fujian",
+    "legapower",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "sunkings",
+    "victory-generator",
+    "weiman-fujian",
+    "wintpower"
+   ],
+   "10.8": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 84,
   "odd": [
    {
@@ -7193,6 +10670,34 @@
    "14": 17
   },
   "blocked": 0,
+  "noTrio": 14,
+  "who": {
+   "13": [
+    "agestar"
+   ],
+   "14": [
+    "aoke-yangzhou",
+    "aosif",
+    "depco-power",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "huipu-power",
+    "jianghao-genset",
+    "jinlongteng-fujian",
+    "legapower",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "rise-power",
+    "victory-generator",
+    "waeta-fujian",
+    "weiman-fujian",
+    "wintpower"
+   ],
+   "10.8": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 131,
   "odd": [
    {
@@ -7247,6 +10752,32 @@
    "14": 18
   },
   "blocked": 0,
+  "noTrio": 14,
+  "who": {
+   "13": [
+    "agestar"
+   ],
+   "14": [
+    "aoke-yangzhou",
+    "aosif",
+    "bdadl-shanghai",
+    "depco-power",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "huipu-power",
+    "jinlongteng-fujian",
+    "legapower",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "rise-power",
+    "tecgen-fujian",
+    "victory-generator",
+    "waeta-fujian",
+    "weiman-fujian",
+    "wintpower"
+   ]
+  },
   "rows": 92,
   "odd": [
    {
@@ -7285,6 +10816,21 @@
    "14": 7
   },
   "blocked": 0,
+  "noTrio": 14,
+  "who": {
+   "13": [
+    "agestar"
+   ],
+   "14": [
+    "aosif",
+    "depco-power",
+    "jianghao-genset",
+    "legapower",
+    "rise-power",
+    "victory-generator",
+    "waeta-fujian"
+   ]
+  },
   "rows": 56,
   "odd": [
    {
@@ -7323,6 +10869,28 @@
    "14": 14
   },
   "blocked": 0,
+  "noTrio": 14,
+  "who": {
+   "13": [
+    "agestar"
+   ],
+   "14": [
+    "aosif",
+    "bdadl-shanghai",
+    "depco-power",
+    "fukangsi-yangzhou",
+    "jinlongteng-fujian",
+    "legapower",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "sunkings",
+    "victory-generator",
+    "waeta-fujian",
+    "weiman-fujian",
+    "wintpower"
+   ]
+  },
   "rows": 68,
   "odd": [
    {
@@ -7361,6 +10929,17 @@
    "10.8": 1
   },
   "blocked": 0,
+  "noTrio": 14,
+  "who": {
+   "14": [
+    "kanpor-fuan",
+    "victory-generator",
+    "waeta-fujian"
+   ],
+   "10.8": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 1,
   "odd": [
    {
@@ -7383,6 +10962,31 @@
    "14": 17
   },
   "blocked": 0,
+  "noTrio": 14,
+  "who": {
+   "13": [
+    "agestar"
+   ],
+   "14": [
+    "aoke-yangzhou",
+    "aosif",
+    "bdadl-shanghai",
+    "depco-power",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "jinlongteng-fujian",
+    "kaichen-jiangsu",
+    "legapower",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "rise-power",
+    "sunkings",
+    "victory-generator",
+    "waeta-fujian",
+    "wintpower"
+   ]
+  },
   "rows": 82,
   "odd": [
    {
@@ -7422,6 +11026,35 @@
    "18.9": 1
   },
   "blocked": 0,
+  "noTrio": 14,
+  "who": {
+   "13": [
+    "agestar"
+   ],
+   "14": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "depco-power",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "huipu-power",
+    "jinlongteng-fujian",
+    "legapower",
+    "liangzi-yangzhou",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "rise-power",
+    "sunkings",
+    "victory-generator",
+    "waeta-fujian",
+    "weiman-fujian",
+    "wintpower"
+   ],
+   "18.9": [
+    "aosif",
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 80,
   "odd": [
    {
@@ -7484,6 +11117,20 @@
    "3.92": 1
   },
   "blocked": 0,
+  "noTrio": 3.9,
+  "who": {
+   "3.9": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "pengpai-yangzhou",
+    "victory-generator",
+    "yunding-jiangsu"
+   ],
+   "3.92": [
+    "liangzi-yangzhou"
+   ]
+  },
   "rows": 35,
   "odd": [
    {
@@ -7514,6 +11161,20 @@
    "5.88": 1
   },
   "blocked": 0,
+  "noTrio": 5.9,
+  "who": {
+   "5.9": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "pengpai-yangzhou",
+    "victory-generator",
+    "yunding-jiangsu"
+   ],
+   "5.88": [
+    "liangzi-yangzhou"
+   ]
+  },
   "rows": 26,
   "odd": [
    {
@@ -7544,6 +11205,22 @@
    "5.88": 1
   },
   "blocked": 0,
+  "noTrio": 5.9,
+  "who": {
+   "5.88": [
+    "bdadl-shanghai",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "5.9": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "pengpai-yangzhou",
+    "victory-generator",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 37,
   "odd": [
    {
@@ -7605,6 +11282,22 @@
    "14": 8
   },
   "blocked": 0,
+  "noTrio": 14,
+  "who": {
+   "14": [
+    "aosif",
+    "bdadl-shanghai",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "huipu-power",
+    "pengpai-yangzhou",
+    "victory-generator",
+    "voltgent"
+   ],
+   "18.9": [
+    "aosif"
+   ]
+  },
   "rows": 73,
   "odd": [
    {
@@ -7636,6 +11329,20 @@
    "18.9": 1
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "14": [
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "19": [
+    "liangzi-yangzhou"
+   ],
+   "18.9": [
+    "aosif"
+   ]
+  },
   "rows": 24,
   "odd": [
    {
@@ -7683,6 +11390,33 @@
    "19.6": 1
   },
   "blocked": 0,
+  "noTrio": 13,
+  "who": {
+   "13": [
+    "aosif",
+    "bdadl-shanghai",
+    "depco-power",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "jianghao-genset",
+    "jinlongteng-fujian",
+    "liangzi-yangzhou",
+    "mecca-power",
+    "mingbang-mbkl",
+    "pengpai-yangzhou",
+    "victory-generator",
+    "waeta-fujian",
+    "weiman-fujian",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "14": [
+    "rise-power"
+   ],
+   "19.6": [
+    "sunkings"
+   ]
+  },
   "rows": 131,
   "odd": [
    {
@@ -7729,6 +11463,33 @@
    "12.88": 1
   },
   "blocked": 1,
+  "noTrio": 11.8,
+  "who": {
+   "12.88": [
+    "bdadl-shanghai",
+    "pengpai-yangzhou",
+    "victory-generator"
+   ],
+   "11.8": [
+    "bdadl-shanghai",
+    "depco-power",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "huatai-yangzhou",
+    "jet-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "sanq-power",
+    "waeta-fujian",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 59,
   "odd": [
    {
@@ -7807,6 +11568,24 @@
    "12.9": 1
   },
   "blocked": 1,
+  "noTrio": null,
+  "who": {
+   "12.88": [
+    "bdadl-shanghai",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "huatai-yangzhou",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ],
+   "12.9": [
+    "sanq-power"
+   ]
+  },
   "rows": 22,
   "odd": [
    {
@@ -7854,6 +11633,33 @@
    "12.9": 1
   },
   "blocked": 1,
+  "noTrio": 12.88,
+  "who": {
+   "12.88": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "depco-power",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "huatai-yangzhou",
+    "legapower",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "victory-generator",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "12.8": [
+    "hanyang-weifang"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ],
+   "12.9": [
+    "sanq-power"
+   ]
+  },
   "rows": 64,
   "odd": [
    {
@@ -7916,6 +11722,32 @@
    "14.2": 2
   },
   "blocked": 1,
+  "noTrio": 14.16,
+  "who": {
+   "14.16": [
+    "bdadl-shanghai",
+    "depco-power",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "huatai-yangzhou",
+    "jet-power",
+    "legapower",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "victory-generator",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "14.2": [
+    "bdadl-shanghai",
+    "hanyang-weifang",
+    "sanq-power"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 68,
   "odd": [
    {
@@ -7993,6 +11825,31 @@
    "25.8": 17
   },
   "blocked": 1,
+  "noTrio": 25.8,
+  "who": {
+   "25.8": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "depco-power",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "huatai-yangzhou",
+    "jet-power",
+    "legapower",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "sanq-power",
+    "victory-generator",
+    "waeta-fujian",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 62,
   "odd": [
    {
@@ -8023,6 +11880,33 @@
    "16.8": 1
   },
   "blocked": 1,
+  "noTrio": 25.8,
+  "who": {
+   "25.8": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "depco-power",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "huatai-yangzhou",
+    "jet-power",
+    "legapower",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "victory-generator",
+    "waeta-fujian",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ],
+   "16.8": [
+    "sanq-power"
+   ]
+  },
   "rows": 63,
   "odd": [
    {
@@ -8069,6 +11953,34 @@
    "25.8": 2
   },
   "blocked": 1,
+  "noTrio": 26.6,
+  "who": {
+   "25.8": [
+    "bdadl-shanghai",
+    "pengpai-yangzhou",
+    "rise-power",
+    "waeta-fujian"
+   ],
+   "26.6": [
+    "bdadl-shanghai",
+    "depco-power",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "huatai-yangzhou",
+    "jet-power",
+    "legapower",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "sanq-power",
+    "victory-generator",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 69,
   "odd": [
    {
@@ -8163,6 +12075,33 @@
    "25.8": 2
   },
   "blocked": 1,
+  "noTrio": 26.6,
+  "who": {
+   "26.6": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "depco-power",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "huatai-yangzhou",
+    "jet-power",
+    "legapower",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "sanq-power",
+    "victory-generator",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ],
+   "25.8": [
+    "rise-power",
+    "waeta-fujian"
+   ]
+  },
   "rows": 68,
   "odd": [
    {
@@ -8225,6 +12164,29 @@
    "25.8": 1
   },
   "blocked": 1,
+  "noTrio": 26.6,
+  "who": {
+   "26.6": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "huatai-yangzhou",
+    "jet-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "sanq-power",
+    "victory-generator",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ],
+   "25.8": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 48,
   "odd": [
    {
@@ -8270,6 +12232,29 @@
    "32.8": 15
   },
   "blocked": 1,
+  "noTrio": 32.8,
+  "who": {
+   "32.8": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "depco-power",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "huatai-yangzhou",
+    "legapower",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "sanq-power",
+    "victory-generator",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 47,
   "odd": [
    {
@@ -8299,6 +12284,32 @@
    "4.3": 18
   },
   "blocked": 1,
+  "noTrio": 4.3,
+  "who": {
+   "4.3": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "depco-power",
+    "fdk-energy",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "huatai-yangzhou",
+    "jet-power",
+    "legapower",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "sanq-power",
+    "victory-generator",
+    "waeta-fujian",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 58,
   "odd": [
    {
@@ -8328,6 +12339,30 @@
    "4.3": 16
   },
   "blocked": 1,
+  "noTrio": 4.3,
+  "who": {
+   "4.3": [
+    "bdadl-shanghai",
+    "depco-power",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "huatai-yangzhou",
+    "jet-power",
+    "legapower",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "sanq-power",
+    "victory-generator",
+    "waeta-fujian",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 67,
   "odd": [
    {
@@ -8357,6 +12392,32 @@
    "4.3": 18
   },
   "blocked": 1,
+  "noTrio": 4.3,
+  "who": {
+   "4.3": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "depco-power",
+    "fdk-energy",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "huatai-yangzhou",
+    "jet-power",
+    "legapower",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "sanq-power",
+    "victory-generator",
+    "waeta-fujian",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 72,
   "odd": [
    {
@@ -8386,6 +12447,32 @@
    "4.3": 18
   },
   "blocked": 1,
+  "noTrio": 4.3,
+  "who": {
+   "4.3": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "depco-power",
+    "fdk-energy",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "huatai-yangzhou",
+    "jet-power",
+    "legapower",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "sanq-power",
+    "victory-generator",
+    "waeta-fujian",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 65,
   "odd": [
    {
@@ -8416,6 +12503,31 @@
    "6.44": 1
   },
   "blocked": 1,
+  "noTrio": 6.5,
+  "who": {
+   "6.5": [
+    "bdadl-shanghai",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "huatai-yangzhou",
+    "jet-power",
+    "legapower",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "sanq-power",
+    "victory-generator",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "6.44": [
+    "depco-power"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 62,
   "odd": [
    {
@@ -8462,6 +12574,33 @@
    "6.44": 1
   },
   "blocked": 1,
+  "noTrio": 6.5,
+  "who": {
+   "6.5": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "huatai-yangzhou",
+    "jet-power",
+    "legapower",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "sanq-power",
+    "victory-generator",
+    "waeta-fujian",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "6.44": [
+    "depco-power"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 66,
   "odd": [
    {
@@ -8508,6 +12647,17 @@
    "8.3": 1
   },
   "blocked": 0,
+  "noTrio": 8.27,
+  "who": {
+   "8.27": [
+    "aoke-yangzhou",
+    "rise-power",
+    "wintpower"
+   ],
+   "8.3": [
+    "legapower"
+   ]
+  },
   "rows": 15,
   "odd": [
    {
@@ -8540,6 +12690,38 @@
    "8.3": 2
   },
   "blocked": 1,
+  "noTrio": 8.27,
+  "who": {
+   "8.27": [
+    "bdadl-shanghai",
+    "frs-shenyang",
+    "huatai-yangzhou",
+    "jet-power",
+    "jiuan-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "sanq-power",
+    "victory-generator",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "8.8": [
+    "bdadl-shanghai",
+    "hanyang-weifang"
+   ],
+   "6.5": [
+    "fukangsi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ],
+   "8.3": [
+    "legapower",
+    "waeta-fujian"
+   ]
+  },
   "rows": 59,
   "odd": [
    {
@@ -8667,6 +12849,36 @@
    "8.9": 2
   },
   "blocked": 1,
+  "noTrio": 8.82,
+  "who": {
+   "8.8": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "hanyang-weifang"
+   ],
+   "8.82": [
+    "bdadl-shanghai",
+    "depco-power",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "huatai-yangzhou",
+    "jet-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "sanq-power",
+    "victory-generator",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ],
+   "8.9": [
+    "legapower",
+    "waeta-fujian"
+   ]
+  },
   "rows": 59,
   "odd": [
    {
@@ -8778,6 +12990,34 @@
    "8.9": 2
   },
   "blocked": 1,
+  "noTrio": 8.82,
+  "who": {
+   "8.82": [
+    "bdadl-shanghai",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "huatai-yangzhou",
+    "jet-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "sanq-power",
+    "victory-generator",
+    "wintpower",
+    "yunding-jiangsu"
+   ],
+   "8.8": [
+    "bdadl-shanghai",
+    "hanyang-weifang"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ],
+   "8.9": [
+    "legapower",
+    "waeta-fujian"
+   ]
+  },
   "rows": 64,
   "odd": [
    {
@@ -8874,6 +13114,25 @@
    "3.3": 1
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "1278": [
+    "huipu-power"
+   ],
+   "9.36": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "huatai-yangzhou",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "12.78": [
+    "lees-power"
+   ],
+   "3.3": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 30,
   "odd": [
    {
@@ -8936,6 +13195,23 @@
    "9.36": 1
   },
   "blocked": 0,
+  "noTrio": 12.78,
+  "who": {
+   "12.78": [
+    "bdadl-shanghai",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "jet-power",
+    "lees-power",
+    "pengpai-yangzhou",
+    "rise-power",
+    "victory-generator",
+    "volvo-penta"
+   ],
+   "9.36": [
+    "liangzi-yangzhou"
+   ]
+  },
   "rows": 40,
   "odd": [
    {
@@ -8966,6 +13242,21 @@
    "4.4": 1
   },
   "blocked": 0,
+  "noTrio": 16.12,
+  "who": {
+   "16.12": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "huatai-yangzhou",
+    "huipu-power",
+    "lees-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "4.4": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 33,
   "odd": [
    {
@@ -8996,6 +13287,22 @@
    "4.4": 1
   },
   "blocked": 0,
+  "noTrio": 16.12,
+  "who": {
+   "16.12": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "huatai-yangzhou",
+    "huipu-power",
+    "lees-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "4.4": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 31,
   "odd": [
    {
@@ -9026,6 +13333,22 @@
    "12.78": 2
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "16.12": [
+    "bdadl-shanghai",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "lees-power",
+    "pengpai-yangzhou",
+    "victory-generator",
+    "volvo-penta"
+   ],
+   "12.78": [
+    "jet-power",
+    "rise-power"
+   ]
+  },
   "rows": 38,
   "odd": [
    {
@@ -9072,6 +13395,23 @@
    "16.2": 1
   },
   "blocked": 0,
+  "noTrio": 16.12,
+  "who": {
+   "16.12": [
+    "bdadl-shanghai",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "lees-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "victory-generator",
+    "volvo-penta"
+   ],
+   "16.2": [
+    "jet-power"
+   ]
+  },
   "rows": 39,
   "odd": [
    {
@@ -9102,6 +13442,19 @@
    "1.1": 1
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "4.76": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "1.1": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 33,
   "odd": [
    {
@@ -9132,6 +13485,26 @@
    "1.5": 1
   },
   "blocked": 0,
+  "noTrio": 4.76,
+  "who": {
+   "7.15": [
+    "aoke-yangzhou"
+   ],
+   "4.46": [
+    "aoke-yangzhou"
+   ],
+   "4.76": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "huatai-yangzhou",
+    "huipu-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "1.5": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 43,
   "odd": [
    {
@@ -9194,6 +13567,20 @@
    "2.2": 1
   },
   "blocked": 0,
+  "noTrio": 4.76,
+  "who": {
+   "4.76": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "huatai-yangzhou",
+    "huipu-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "2.2": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 38,
   "odd": [
    {
@@ -9224,6 +13611,20 @@
    "2.2": 1
   },
   "blocked": 0,
+  "noTrio": 7.15,
+  "who": {
+   "7.15": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "huatai-yangzhou",
+    "huipu-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "2.2": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 36,
   "odd": [
    {
@@ -9254,6 +13655,24 @@
    "3.3": 1
   },
   "blocked": 0,
+  "noTrio": 7.15,
+  "who": {
+   "7.15": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "huatai-yangzhou",
+    "huipu-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "12.1": [
+    "bdadl-shanghai"
+   ],
+   "3.3": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 41,
   "odd": [
    {
@@ -9300,6 +13719,24 @@
    "3.3": 1
   },
   "blocked": 0,
+  "noTrio": 7.15,
+  "who": {
+   "7.15": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "huatai-yangzhou",
+    "huipu-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "12.1": [
+    "bdadl-shanghai"
+   ],
+   "3.3": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 42,
   "odd": [
    {
@@ -9347,6 +13784,21 @@
    "4.16": 1
   },
   "blocked": 0,
+  "noTrio": 3.12,
+  "who": {
+   "3.114": [
+    "aoke-yangzhou"
+   ],
+   "3.12": [
+    "fukangsi-yangzhou",
+    "huayuan-weifang",
+    "liangzi-yangzhou",
+    "victory-generator"
+   ],
+   "4.16": [
+    "huatai-yangzhou"
+   ]
+  },
   "rows": 21,
   "odd": [
    {
@@ -9401,6 +13853,20 @@
    "16.12": 6
   },
   "blocked": 0,
+  "noTrio": 16.12,
+  "who": {
+   "6": [
+    "mingbang-mbkl"
+   ],
+   "16.12": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "huatai-yangzhou",
+    "huipu-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ]
+  },
   "rows": 25,
   "odd": [
    {
@@ -9431,6 +13897,21 @@
    "16.2": 1
   },
   "blocked": 0,
+  "noTrio": 16.12,
+  "who": {
+   "16.12": [
+    "bdadl-shanghai",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "rise-power",
+    "victory-generator"
+   ],
+   "16.2": [
+    "jet-power"
+   ]
+  },
   "rows": 29,
   "odd": [
    {
@@ -9465,6 +13946,36 @@
    "9.73": 1
   },
   "blocked": 0,
+  "noTrio": 9.726,
+  "who": {
+   "9.7": [
+    "aosif",
+    "bdadl-shanghai"
+   ],
+   "9.72": [
+    "bdadl-shanghai",
+    "huipu-power",
+    "pengpai-yangzhou"
+   ],
+   "9.726": [
+    "depco-power",
+    "hanyang-weifang",
+    "jet-power",
+    "jiuan-power",
+    "jlmech-wuhan",
+    "liangzi-yangzhou",
+    "yunding-jiangsu"
+   ],
+   "6.75": [
+    "fukangsi-yangzhou"
+   ],
+   "6.25": [
+    "victory-generator"
+   ],
+   "9.73": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 53,
   "odd": [
    {
@@ -9610,6 +14121,33 @@
    "9.73": 1
   },
   "blocked": 0,
+  "noTrio": 9.726,
+  "who": {
+   "9.7": [
+    "aosif",
+    "fukangsi-yangzhou"
+   ],
+   "9.726": [
+    "bdadl-shanghai",
+    "depco-power",
+    "hanyang-weifang",
+    "jet-power",
+    "jiuan-power",
+    "jlmech-wuhan",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "yunding-jiangsu"
+   ],
+   "9.72": [
+    "huipu-power"
+   ],
+   "6.25": [
+    "victory-generator"
+   ],
+   "9.73": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 56,
   "odd": [
    {
@@ -9707,6 +14245,32 @@
    "9.73": 1
   },
   "blocked": 0,
+  "noTrio": 9.726,
+  "who": {
+   "9.726": [
+    "bdadl-shanghai",
+    "depco-power",
+    "hanyang-weifang",
+    "jet-power",
+    "jiuan-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "yunding-jiangsu"
+   ],
+   "9.7": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou"
+   ],
+   "9.72": [
+    "huipu-power"
+   ],
+   "6.25": [
+    "victory-generator"
+   ],
+   "9.73": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 55,
   "odd": [
    {
@@ -9804,6 +14368,27 @@
    "6.25": 1
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "11.596": [
+    "bdadl-shanghai",
+    "jet-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "9.726": [
+    "depco-power"
+   ],
+   "11.6": [
+    "fukangsi-yangzhou"
+   ],
+   "11.59": [
+    "huipu-power"
+   ],
+   "6.25": [
+    "victory-generator"
+   ]
+  },
   "rows": 25,
   "odd": [
    {
@@ -9883,6 +14468,30 @@
    "6.25": 1
   },
   "blocked": 0,
+  "noTrio": 12.54,
+  "who": {
+   "12.5": [
+    "aosif",
+    "bdadl-shanghai",
+    "fukangsi-yangzhou"
+   ],
+   "12.54": [
+    "bdadl-shanghai",
+    "depco-power",
+    "hanyang-weifang",
+    "huali-shandong",
+    "huipu-power",
+    "jet-power",
+    "jlmech-wuhan",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ],
+   "6.25": [
+    "victory-generator"
+   ]
+  },
   "rows": 57,
   "odd": [
    {
@@ -9961,6 +14570,17 @@
    "12.54": 3
   },
   "blocked": 0,
+  "noTrio": 12.54,
+  "who": {
+   "12.5": [
+    "aosif"
+   ],
+   "12.54": [
+    "depco-power",
+    "jianghao-genset",
+    "waeta-fujian"
+   ]
+  },
   "rows": 27,
   "odd": [
    {
@@ -9991,6 +14611,19 @@
    "12.5": 1
   },
   "blocked": 0,
+  "noTrio": 12.54,
+  "who": {
+   "12.54": [
+    "depco-power",
+    "hanyang-weifang",
+    "jlmech-wuhan",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ],
+   "12.5": [
+    "fukangsi-yangzhou"
+   ]
+  },
   "rows": 33,
   "odd": [
    {
@@ -10021,6 +14654,18 @@
    "12.54": 4
   },
   "blocked": 0,
+  "noTrio": 12.54,
+  "who": {
+   "12.5": [
+    "bdadl-shanghai"
+   ],
+   "12.54": [
+    "depco-power",
+    "jiuan-power",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 33,
   "odd": [
    {
@@ -10051,6 +14696,17 @@
    "12.54": 3
   },
   "blocked": 0,
+  "noTrio": 12.54,
+  "who": {
+   "15.9": [
+    "aosif"
+   ],
+   "12.54": [
+    "depco-power",
+    "jiuan-power",
+    "waeta-fujian"
+   ]
+  },
   "rows": 22,
   "odd": [
    {
@@ -10083,6 +14739,25 @@
    "2.289": 1
   },
   "blocked": 0,
+  "noTrio": 2.3,
+  "who": {
+   "2.3": [
+    "aosif",
+    "bdadl-shanghai",
+    "depco-power",
+    "hanyang-weifang",
+    "liangzi-yangzhou"
+   ],
+   "2.5": [
+    "jet-power"
+   ],
+   "2.29": [
+    "waeta-fujian"
+   ],
+   "2.289": [
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 40,
   "odd": [
    {
@@ -10145,6 +14820,17 @@
    "2.29": 1
   },
   "blocked": 0,
+  "noTrio": 2.3,
+  "who": {
+   "2.3": [
+    "aosif",
+    "depco-power",
+    "jianghao-genset"
+   ],
+   "2.29": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 20,
   "odd": [
    {
@@ -10178,6 +14864,28 @@
    "4.08": 1
   },
   "blocked": 0,
+  "noTrio": 4.087,
+  "who": {
+   "4.1": [
+    "aosif"
+   ],
+   "4.8": [
+    "bdadl-shanghai"
+   ],
+   "4.087": [
+    "depco-power",
+    "hanyang-weifang",
+    "huali-shandong",
+    "jlmech-wuhan",
+    "yunding-jiangsu"
+   ],
+   "4.5": [
+    "jet-power"
+   ],
+   "4.08": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 49,
   "odd": [
    {
@@ -10260,6 +14968,30 @@
    "4.08": 1
   },
   "blocked": 0,
+  "noTrio": 4.087,
+  "who": {
+   "4.1": [
+    "aosif"
+   ],
+   "4.8": [
+    "bdadl-shanghai"
+   ],
+   "4.087": [
+    "depco-power",
+    "hanyang-weifang",
+    "jlmech-wuhan",
+    "yunding-jiangsu"
+   ],
+   "4.5": [
+    "jet-power"
+   ],
+   "4.088": [
+    "jiuan-power"
+   ],
+   "4.08": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 41,
   "odd": [
    {
@@ -10354,6 +15086,22 @@
    "6.25": 1
   },
   "blocked": 0,
+  "noTrio": 4.5,
+  "who": {
+   "4.5": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "huipu-power",
+    "jlmech-wuhan",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "yunding-jiangsu"
+   ],
+   "6.25": [
+    "victory-generator"
+   ]
+  },
   "rows": 24,
   "odd": [
    {
@@ -10384,6 +15132,20 @@
    "4.16": 1
   },
   "blocked": 0,
+  "noTrio": 4.5,
+  "who": {
+   "4.5": [
+    "aoke-yangzhou",
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "yunding-jiangsu"
+   ],
+   "4.16": [
+    "victory-generator"
+   ]
+  },
   "rows": 17,
   "odd": [
    {
@@ -10415,6 +15177,29 @@
    "6.25": 1
   },
   "blocked": 0,
+  "noTrio": 6.75,
+  "who": {
+   "6.8": [
+    "aosif"
+   ],
+   "6.75": [
+    "bdadl-shanghai",
+    "depco-power",
+    "fukangsi-yangzhou",
+    "huipu-power",
+    "jet-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ],
+   "4.5": [
+    "bdadl-shanghai"
+   ],
+   "6.25": [
+    "victory-generator"
+   ]
+  },
   "rows": 51,
   "odd": [
    {
@@ -10478,6 +15263,20 @@
    "6.25": 1
   },
   "blocked": 0,
+  "noTrio": 6.75,
+  "who": {
+   "6.8": [
+    "aosif"
+   ],
+   "6.75": [
+    "depco-power",
+    "jianghao-genset",
+    "waeta-fujian"
+   ],
+   "6.25": [
+    "victory-generator"
+   ]
+  },
   "rows": 26,
   "odd": [
    {
@@ -10525,6 +15324,27 @@
    "6.25": 1
   },
   "blocked": 0,
+  "noTrio": 6.75,
+  "who": {
+   "6.8": [
+    "aosif"
+   ],
+   "6.75": [
+    "bdadl-shanghai",
+    "depco-power",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "huipu-power",
+    "jet-power",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ],
+   "6.25": [
+    "victory-generator"
+   ]
+  },
   "rows": 56,
   "odd": [
    {
@@ -10572,6 +15392,20 @@
    "6.25": 1
   },
   "blocked": 0,
+  "noTrio": 6.75,
+  "who": {
+   "6.8": [
+    "aosif"
+   ],
+   "6.75": [
+    "depco-power",
+    "jianghao-genset",
+    "waeta-fujian"
+   ],
+   "6.25": [
+    "victory-generator"
+   ]
+  },
   "rows": 23,
   "odd": [
    {
@@ -10618,6 +15452,18 @@
    "6.75": 4
   },
   "blocked": 0,
+  "noTrio": 6.75,
+  "who": {
+   "6.8": [
+    "aosif"
+   ],
+   "6.75": [
+    "depco-power",
+    "hanyang-weifang",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ]
+  },
   "rows": 27,
   "odd": [
    {
@@ -10649,6 +15495,20 @@
    "3.7": 1
   },
   "blocked": 0,
+  "noTrio": 3.707,
+  "who": {
+   "3.707": [
+    "depco-power",
+    "wintpower",
+    "yangdong"
+   ],
+   "2.545": [
+    "victory-generator"
+   ],
+   "3.7": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 4,
   "odd": [
    {
@@ -10679,6 +15539,17 @@
    "4.08": 1
   },
   "blocked": 0,
+  "noTrio": 4.1,
+  "who": {
+   "4.1": [
+    "depco-power",
+    "tecgen-fujian",
+    "wintpower"
+   ],
+   "4.08": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 5,
   "odd": [
    {
@@ -10702,6 +15573,20 @@
    "4.08": 1
   },
   "blocked": 0,
+  "noTrio": 4.1,
+  "who": {
+   "4.1": [
+    "depco-power",
+    "wintpower",
+    "yangdong"
+   ],
+   "3.857": [
+    "victory-generator"
+   ],
+   "4.08": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 4,
   "odd": [
    {
@@ -10731,6 +15616,17 @@
    "79.17": 3
   },
   "blocked": 1,
+  "noTrio": null,
+  "who": {
+   "79.17": [
+    "fukangsi-yangzhou",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 20,
   "odd": [
    {
@@ -10761,6 +15657,17 @@
    "79.2": 1
   },
   "blocked": 0,
+  "noTrio": 79.17,
+  "who": {
+   "79.17": [
+    "aoke-yangzhou",
+    "huatai-yangzhou",
+    "sanq-power"
+   ],
+   "79.2": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 14,
   "odd": [
    {
@@ -10790,6 +15697,22 @@
    "79.17": 8
   },
   "blocked": 1,
+  "noTrio": 79.17,
+  "who": {
+   "79.17": [
+    "fdk-energy",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "westinpower",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 32,
   "odd": [
    {
@@ -10820,6 +15743,17 @@
    "79.2": 1
   },
   "blocked": 0,
+  "noTrio": 79.17,
+  "who": {
+   "79.17": [
+    "aoke-yangzhou",
+    "huatai-yangzhou",
+    "sanq-power"
+   ],
+   "79.2": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 17,
   "odd": [
    {
@@ -10849,6 +15783,21 @@
    "79.17": 7
   },
   "blocked": 1,
+  "noTrio": 79.17,
+  "who": {
+   "79.17": [
+    "fdk-energy",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 29,
   "odd": [
    {
@@ -10878,6 +15827,22 @@
    "79.17": 8
   },
   "blocked": 1,
+  "noTrio": 79.17,
+  "who": {
+   "79.17": [
+    "fdk-energy",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "tellhow-power",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 35,
   "odd": [
    {
@@ -10907,6 +15872,18 @@
    "105.56": 4
   },
   "blocked": 1,
+  "noTrio": null,
+  "who": {
+   "105.56": [
+    "fdk-energy",
+    "fukangsi-yangzhou",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 34,
   "odd": [
    {
@@ -10936,6 +15913,18 @@
    "105.56": 4
   },
   "blocked": 1,
+  "noTrio": null,
+  "who": {
+   "105.56": [
+    "fdk-energy",
+    "fukangsi-yangzhou",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 42,
   "odd": [
    {
@@ -10965,6 +15954,18 @@
    "105.56": 4
   },
   "blocked": 1,
+  "noTrio": null,
+  "who": {
+   "105.56": [
+    "fdk-energy",
+    "fukangsi-yangzhou",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 41,
   "odd": [
    {
@@ -10994,6 +15995,17 @@
    "2.49": 3
   },
   "blocked": 1,
+  "noTrio": null,
+  "who": {
+   "2.49": [
+    "fukangsi-yangzhou",
+    "pengpai-yangzhou",
+    "sanq-power"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 13,
   "odd": [
    {
@@ -11024,6 +16036,19 @@
    "4.84": 1
   },
   "blocked": 0,
+  "noTrio": 4.21,
+  "who": {
+   "4.21": [
+    "fdk-energy",
+    "frs-shenyang",
+    "liangzi-yangzhou",
+    "tellhow-power",
+    "waeta-fujian"
+   ],
+   "4.84": [
+    "hanyang-weifang"
+   ]
+  },
   "rows": 24,
   "odd": [
    {
@@ -11055,6 +16080,24 @@
    "4.21": 2
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "4.214": [
+    "aoke-yangzhou",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "huatai-yangzhou",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "4.2": [
+    "mingbang-mbkl"
+   ],
+   "4.21": [
+    "sanq-power",
+    "waeta-fujian"
+   ]
+  },
   "rows": 50,
   "odd": [
    {
@@ -11118,6 +16161,22 @@
    "4.21": 1
   },
   "blocked": 0,
+  "noTrio": 4.214,
+  "who": {
+   "4.214": [
+    "aoke-yangzhou",
+    "fukangsi-yangzhou",
+    "huatai-yangzhou",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "4.2": [
+    "mingbang-mbkl"
+   ],
+   "4.21": [
+    "sanq-power"
+   ]
+  },
   "rows": 22,
   "odd": [
    {
@@ -11165,6 +16224,24 @@
    "4.21": 1
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "4.215": [
+    "aoke-yangzhou"
+   ],
+   "4.214": [
+    "aoke-yangzhou",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "4.2": [
+    "mingbang-mbkl"
+   ],
+   "4.21": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 30,
   "odd": [
    {
@@ -11227,6 +16304,21 @@
    "7.25": 6
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "7.255": [
+    "fdk-energy",
+    "tellhow-power"
+   ],
+   "7.25": [
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "waeta-fujian"
+   ]
+  },
   "rows": 37,
   "odd": [
    {
@@ -11273,6 +16365,20 @@
    "7.255": 1
   },
   "blocked": 0,
+  "noTrio": 7.25,
+  "who": {
+   "7.25": [
+    "bdadl-shanghai",
+    "frs-shenyang",
+    "hanyang-weifang",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "waeta-fujian"
+   ],
+   "7.255": [
+    "tellhow-power"
+   ]
+  },
   "rows": 33,
   "odd": [
    {
@@ -11303,6 +16409,17 @@
    "6.871": 1
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "6.87": [
+    "bdadl-shanghai",
+    "fukangsi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "6.871": [
+    "liangzi-yangzhou"
+   ]
+  },
   "rows": 10,
   "odd": [
    {
@@ -11335,6 +16452,25 @@
    "39.6": 1
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "39.584": [
+    "aoke-yangzhou"
+   ],
+   "39.85": [
+    "bdadl-shanghai",
+    "pengpai-yangzhou"
+   ],
+   "39.58": [
+    "fukangsi-yangzhou",
+    "huatai-yangzhou",
+    "pengpai-yangzhou",
+    "sanq-power"
+   ],
+   "39.6": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 24,
   "odd": [
    {
@@ -11412,6 +16548,22 @@
    "39.58": 5
   },
   "blocked": 1,
+  "noTrio": null,
+  "who": {
+   "39.58": [
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ],
+   "39.584": [
+    "liangzi-yangzhou"
+   ]
+  },
   "rows": 32,
   "odd": [
    {
@@ -11459,6 +16611,22 @@
    "39.6": 1
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "39.85": [
+    "bdadl-shanghai",
+    "pengpai-yangzhou"
+   ],
+   "39.58": [
+    "fukangsi-yangzhou",
+    "huatai-yangzhou",
+    "pengpai-yangzhou",
+    "sanq-power"
+   ],
+   "39.6": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 21,
   "odd": [
    {
@@ -11520,6 +16688,18 @@
    "39.58": 4
   },
   "blocked": 1,
+  "noTrio": null,
+  "who": {
+   "39.58": [
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "pengpai-yangzhou"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 30,
   "odd": [
    {
@@ -11549,6 +16729,23 @@
    "39.58": 9
   },
   "blocked": 1,
+  "noTrio": 39.58,
+  "who": {
+   "39.58": [
+    "fdk-energy",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "tellhow-power",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 46,
   "odd": [
    {
@@ -11578,6 +16775,22 @@
    "12.16": 8
   },
   "blocked": 1,
+  "noTrio": 12.16,
+  "who": {
+   "12.16": [
+    "fdk-energy",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ]
+  },
   "rows": 34,
   "odd": [
    {
@@ -11610,6 +16823,23 @@
    "12.151": 1
   },
   "blocked": 0,
+  "noTrio": 11.73,
+  "who": {
+   "11.73": [
+    "fdk-energy",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ],
+   "11.76": [
+    "frs-shenyang"
+   ],
+   "11.726": [
+    "hanyang-weifang"
+   ],
+   "12.151": [
+    "liangzi-yangzhou"
+   ]
+  },
   "rows": 33,
   "odd": [
    {
@@ -11672,6 +16902,22 @@
    "10.338": 1
   },
   "blocked": 0,
+  "noTrio": 10.34,
+  "who": {
+   "10.34": [
+    "fdk-energy",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "pengpai-yangzhou",
+    "waeta-fujian",
+    "westinpower",
+    "yunding-jiangsu"
+   ],
+   "10.338": [
+    "liangzi-yangzhou"
+   ]
+  },
   "rows": 36,
   "odd": [
    {
@@ -11702,6 +16948,22 @@
    "10.388": 1
   },
   "blocked": 0,
+  "noTrio": 10.34,
+  "who": {
+   "10.34": [
+    "fdk-energy",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "pengpai-yangzhou",
+    "tellhow-power",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ],
+   "10.388": [
+    "liangzi-yangzhou"
+   ]
+  },
   "rows": 40,
   "odd": [
    {
@@ -11733,6 +16995,23 @@
    "16.3": 1
   },
   "blocked": 0,
+  "noTrio": 16.35,
+  "who": {
+   "11.76": [
+    "bdadl-shanghai",
+    "pengpai-yangzhou"
+   ],
+   "16.35": [
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "sanq-power"
+   ],
+   "16.3": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 29,
   "odd": [
    {
@@ -11795,6 +17074,26 @@
    "16.3": 1
   },
   "blocked": 1,
+  "noTrio": 16.35,
+  "who": {
+   "16.35": [
+    "bdadl-shanghai",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "sanq-power",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ],
+   "16.3": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 56,
   "odd": [
    {
@@ -11841,6 +17140,27 @@
    "16.3": 1
   },
   "blocked": 1,
+  "noTrio": 16.35,
+  "who": {
+   "16.35": [
+    "bdadl-shanghai",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "huatai-yangzhou",
+    "liangzi-yangzhou",
+    "pengpai-yangzhou",
+    "sanq-power",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ],
+   "X": [
+    "jlmech-wuhan"
+   ],
+   "16.3": [
+    "mingbang-mbkl"
+   ]
+  },
   "rows": 60,
   "odd": [
    {
@@ -11887,6 +17207,22 @@
    "16.35": 2
   },
   "blocked": 0,
+  "noTrio": null,
+  "who": {
+   "19.6": [
+    "fdk-energy",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "pengpai-yangzhou",
+    "tellhow-power",
+    "yunding-jiangsu"
+   ],
+   "16.35": [
+    "liangzi-yangzhou",
+    "waeta-fujian"
+   ]
+  },
   "rows": 45,
   "odd": [
    {
@@ -11933,6 +17269,23 @@
    "19.598": 1
   },
   "blocked": 0,
+  "noTrio": 19.6,
+  "who": {
+   "19.6": [
+    "fdk-energy",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "pengpai-yangzhou",
+    "superwatt-swt",
+    "tellhow-power",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ],
+   "19.598": [
+    "liangzi-yangzhou"
+   ]
+  },
   "rows": 54,
   "odd": [
    {
@@ -11971,6 +17324,22 @@
    "19.598": 1
   },
   "blocked": 0,
+  "noTrio": 19.6,
+  "who": {
+   "19.6": [
+    "fdk-energy",
+    "frs-shenyang",
+    "fukangsi-yangzhou",
+    "hanyang-weifang",
+    "pengpai-yangzhou",
+    "tellhow-power",
+    "waeta-fujian",
+    "yunding-jiangsu"
+   ],
+   "19.598": [
+    "liangzi-yangzhou"
+   ]
+  },
   "rows": 50,
   "odd": [
    {
@@ -12002,6 +17371,20 @@
    "1.35": 1
   },
   "blocked": 0,
+  "noTrio": 1.357,
+  "who": {
+   "1.357": [
+    "depco-power",
+    "tecgen-fujian",
+    "wintpower"
+   ],
+   "1.532": [
+    "victory-generator"
+   ],
+   "1.35": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 5,
   "odd": [
    {
@@ -12032,6 +17415,17 @@
    "1.53": 1
   },
   "blocked": 0,
+  "noTrio": 1.532,
+  "who": {
+   "1.532": [
+    "depco-power",
+    "victory-generator",
+    "wintpower"
+   ],
+   "1.53": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 57,
   "odd": [
    {
@@ -12062,6 +17456,21 @@
    "1.8": 1
   },
   "blocked": 0,
+  "noTrio": 1.809,
+  "who": {
+   "1.809": [
+    "depco-power",
+    "victory-generator",
+    "wintpower",
+    "yangdong"
+   ],
+   "1.532": [
+    "victory-generator"
+   ],
+   "1.8": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 4,
   "odd": [
    {
@@ -12093,6 +17502,20 @@
    "4.08": 1
   },
   "blocked": 0,
+  "noTrio": 4.1,
+  "who": {
+   "4.1": [
+    "depco-power",
+    "wintpower",
+    "yangdong"
+   ],
+   "3.857": [
+    "victory-generator"
+   ],
+   "4.08": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 4,
   "odd": [
    {
@@ -12123,6 +17546,17 @@
    "2.16": 1
   },
   "blocked": 0,
+  "noTrio": 2.156,
+  "who": {
+   "2.156": [
+    "depco-power",
+    "victory-generator",
+    "wintpower"
+   ],
+   "2.16": [
+    "waeta-fujian"
+   ]
+  },
   "rows": 53,
   "odd": [
    {
@@ -12153,6 +17587,17 @@
    "2.545": 1
   },
   "blocked": 0,
+  "noTrio": 2.54,
+  "who": {
+   "2.54": [
+    "depco-power",
+    "waeta-fujian",
+    "wintpower"
+   ],
+   "2.545": [
+    "victory-generator"
+   ]
+  },
   "rows": 53,
   "odd": [
    {
