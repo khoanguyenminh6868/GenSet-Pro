@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 002f765c-d667-4ca2-b611-252cd3c8bf93
-  modified: 2026-11-17T15:06:08.579Z
+  modified: 2026-11-18T04:47:37.302Z
 ---
 
 Bot GenBid dự phòng chạy trong Vercel Sandbox `genbid-bot` (project genset-pro-web, sin1, image `vercel/sandbox/ubuntu`, persistent). Chi tiết kỹ thuật và bẫy: `bot/sandbox/README.md`. Mã bật/dừng: `web/api/_sandbox.js`, `_wake.js`.
@@ -17,6 +17,7 @@ Bot GenBid dự phòng chạy trong Vercel Sandbox `genbid-bot` (project genset-
 - Mọi máy Windows ghi chung `botstatus/pc` (KHOAMINIPC, KayenGram): một máy còn bật là sandbox không thức. Máy bản bot cũ ghi tim ~1 phút → web có thể tưởng tắt và bật sandbox thừa: cập nhật bằng `/update-bot`. Sandbox rảnh 5 phút tính từ việc CUỐI (`sandboxbusy`), không từ lúc bật. Máy Windows chỉ nhận việc khi tim sandbox im 2 phút.
 - KHÔNG dùng GitHub Actions cho sandbox (repo private lại từ 01/12, 2.000 phút/tháng; 17/11 Actions còn bị chặn vì thanh toán). Đã bỏ workflow `sandbox-ensure.yml`.
 - Snapshot giữ 5 năm (Khoa 17/11 tối, trước 1 năm; nối lại < 1 giây; mọi thứ đã cài + đăng nhập còn nguyên). Cache OCR đối chiếu HSDT (`Downloads/GenBid-HSDT/.ocr-cache`) không bao giờ xoá, mọi máy (Khoa 17/11). Pro: snapshot $0.08/GB-tháng, không có phần miễn phí; đĩa sandbox 64 GB.
+- Sync theo lịch khi mọi máy Windows tắt (Khoa 18/11/2026): Vercel Cron (KHÔNG dùng Actions) gọi `web/api/cron.js` lúc 10:10 / 14:10 / 18:10 giờ VN, thứ Hai–thứ Sáu, đánh thức sandbox; cần biến Vercel `CRON_SECRET` do Khoa đặt. Chi tiết `bot/sandbox/README.md`.
 - Bot sandbox trả bằng gói tháng: biến Vercel `CLAUDE_CODE_OAUTH_TOKEN` (Khoa đặt).
 - Gemini cho bản dịch: cách 2 = đăng nhập Google như máy Windows, KHÔNG dùng API key. Chép `~/.gemini/oauth_creds.json` không được (agy Windows giữ đăng nhập trong Credential Manager); Khoa đăng nhập agy MỘT LẦN trong sandbox (`vercel sandbox connect genbid-bot --project genset-pro-web --scope khoanguyenminh6868-3812`, chạy `~/.local/bin/agy`). Snapshot hết hạn / xoá sandbox thì phải đăng nhập lại.
 

@@ -9,7 +9,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { get, htmlToText, linksOf, closeBrowser } from "./crawl-specs.mjs";
+import { get, htmlToText, linksOf, closeBrowser, websitesOf } from "./crawl-specs.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 await import(pathToFileURL(path.join(ROOT, "..", "web", "catalog.js")).href);
@@ -53,11 +53,17 @@ export function controllersOf(pages) {
 // Same-site pages that name a controller model, saved as sources/<id>/3001.md… (kept from an earlier crawl when this one
 // finds none, so a site that is down never wipes them).
 const LINKY = /(product|generator|genset|diesel|series|kva|kw|detail|silent|open|container|power|产品|机组)/i;
+// A record with otherWebsites: each site in turn, each with its own page budget.
 async function crawl(rec) {
-  const host = hostOf(rec.website || "");
+  const pages = [];
+  for (const site of websitesOf(rec)) pages.push(...(await crawlSite(rec, site)).filter((p) => !pages.some((x) => x.url === p.url)));
+  return pages;
+}
+async function crawlSite(rec, site) {
+  const host = hostOf(site);
   if (!host) return [];
   const own = (rec.sources || []).filter((s) => hostOf(s.url) === host);
-  const queue = [...new Set([rec.website, ...own.filter((s) => s.n >= 101 && s.n < 1000).map((s) => s.url)])], seen = new Set(), pages = [];
+  const queue = [...new Set([site, ...own.filter((s) => s.n >= 101 && s.n < 1000).map((s) => s.url)])], seen = new Set(), pages = [];
   let fetched = 0;
   while (queue.length && fetched < MAX && pages.length < 6) {
     const u = queue.shift().replace(/\/$/, "");
@@ -79,14 +85,14 @@ async function one(file) {
   if (CRAWL && rec.website) {
     const found = await crawl(rec);
     if (found.length && !DRY) {
-      const tier = (rec.sources || []).find((s) => hostOf(s.url) === hostOf(rec.website))?.tier || "C";
+      const tierOf = (u) => (rec.sources || []).find((s) => hostOf(s.url) === hostOf(u))?.tier || "C";
       rec.sources = (rec.sources || []).filter((s) => !(s.n >= 3001 && s.n < 4000));
       for (const f of fs.existsSync(dir) ? fs.readdirSync(dir) : []) if (/^3\d{3}\.md$/.test(f)) fs.rmSync(path.join(dir, f));
       fs.mkdirSync(dir, { recursive: true });
       found.forEach((p, i) => {
         const n = 3001 + i, rel = `sources/${rec.id}/${n}.md`;
         fs.writeFileSync(path.join(ROOT, rel), p.body, "utf8");
-        rec.sources.push({ n, url: p.url, accessedAt: new Date().toISOString().slice(0, 10), tier, quote: [], file: rel });
+        rec.sources.push({ n, url: p.url, accessedAt: new Date().toISOString().slice(0, 10), tier: tierOf(p.url), quote: [], file: rel });
       });
       added = found.length;
     }

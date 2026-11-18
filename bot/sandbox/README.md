@@ -43,7 +43,17 @@ Khoa thử thêm (17/11): Gợi ý giá, Đối chiếu HSDT / TLKT, Tạo HSDT 
 ## Chưa kiểm
 Tìm thông số NCC (cần biến `FIRECRAWL_KEY` trên Vercel: Settings → Environment Variables, Production, rồi redeploy; sandbox
 đang chạy lấy biến mới ở lần bật sau); reCAPTCHA khi tần suất cao; Wine không được Bộ Tài chính hỗ trợ.
-Việc theo lịch của máy Windows (Sync định kỳ...) không chạy khi máy tắt: sandbox chỉ lo yêu cầu từ web.
+
+## Sync theo lịch (Khoa 18/11/2026)
+10:10, 14:10, 18:10 giờ Việt Nam, thứ Hai đến thứ Sáu; thứ Bảy, Chủ nhật không Sync theo lịch (cả máy Windows).
+- Vercel Cron (`web/vercel.json`, `10 3,7,11 * * 1-5` theo UTC) gọi `web/api/cron.js`: còn máy Windows có tim < 1 phút thì
+  thôi (máy đó tự Sync); không thì `wakeSandbox()`. Bot sandbox chạy cùng vòng lịch của `GenBid-Bot.ps1`, tính giờ VN
+  (`-ScheduleUtcOffset 7`; sandbox chạy UTC), Sync mốc vừa tới rồi chạy chuỗi tự động, rảnh 5 phút thì dừng.
+- Cần biến Vercel `CRON_SECRET` (Khoa đặt; Vercel tự gửi `Authorization: Bearer <CRON_SECRET>`). Chưa đặt: hàm trả 503,
+  không đánh thức gì. Cron theo phút cần gói Pro.
+- Không Sync trùng: nhịp tim trả `schedule.last` = `synclog/current.slot` (mốc Sync theo lịch gần nhất của bất kỳ máy nào);
+  máy bật lại sau đó không chạy bù mốc đó.
+- Sandbox thức vì yêu cầu web trong ngày thường mà mốc gần nhất chưa ai Sync thì cũng chạy bù mốc đó, như máy Windows.
 
 ## Sổ tiền API chung
 Mỗi máy (máy Windows, sandbox) vẫn ghi sổ riêng `.anthropic-api-spend.jsonl`. Nhịp tim gửi phần riêng (`own`, tên máy, lần sửa

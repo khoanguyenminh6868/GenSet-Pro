@@ -158,6 +158,19 @@ test("an internet find with a new id and the website of a supplier already in th
   // The agent's own id that already exists stays itself; no website, nothing to match.
   assert.equal(catalogRecords([{ ...entry, id: "perkins" }], opts)[0].from, undefined);
   assert.equal(catalogRecords([{ ...entry, website: null }], opts)[0].id, "kubota");
+  // A company's second site (otherWebsites, kaihua-genset + hichaipower.com, Khoa 2026-11-18) matches too.
+  const kaihua = { id: "kaihua-genset", country: "CN", website: "https://www.kaihuagenset.com/", otherWebsites: ["https://www.hichaipower.com/"], sources: [], specTables: [], productLines: [] };
+  const cnOpts = { ...opts, existing: new Map([...opts.existing, ["kaihua-genset", kaihua]]) };
+  const hichai = catalogRecords([{ ...entry, id: "hichai-power", country: "CN", website: "https://hichaipower.com/about-us/" }], cnOpts)[0];
+  assert.equal(hichai.id, "kaihua-genset");
+  assert.equal(hichai.from, "hichai-power");
+});
+
+test("websitesOf lists website then otherWebsites, without blanks or repeats", async () => {
+  const { websitesOf } = await import("./crawl-specs.mjs");
+  assert.deepEqual(websitesOf({ website: "https://a.com/", otherWebsites: ["https://b.com/", "https://a.com/", " "] }), ["https://a.com/", "https://b.com/"]);
+  assert.deepEqual(websitesOf({ website: "https://a.com/" }), ["https://a.com/"]);
+  assert.deepEqual(websitesOf({ website: null }), []);
 });
 
 test("Xuất xứ Trung Quốc drops a foreign engine, Khác keeps only foreign ones", () => {

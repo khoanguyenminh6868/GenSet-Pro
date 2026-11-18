@@ -4130,13 +4130,13 @@ export function namesOf(n) {
 }
 // The supplier already in the system that an entry with a new id is (Khoa 2026-11-18: Gợi ý cấu hình IB2600612866 added
 // "kubota" next to "kubota-japan", same generator.kubota.com): the one record of the same country whose website has the
-// same host (www. aside). Same host in another country is another company (perkins GB / perkins-wuxi CN); same name and
-// another website is a second brand kept apart with relatedIds (hichai-power / kaihua-genset), so names are not matched.
+// same host (www. aside), `website` or one of `otherWebsites`. Same host in another country is another company (perkins
+// GB / perkins-wuxi CN). Names are not matched: a company with two sites is one record with otherWebsites (kaihua-genset).
 const hostOf = (u) => { try { return new URL(/^https?:\/\//i.test(u) ? u : `https://${u}`).hostname.toLowerCase().replace(/^www\./, ""); } catch { return ""; } };
 export function sameSupplier(e, existing) {
   const h = hostOf(String(e?.website || "").trim());
   if (!h || !e?.country) return null;
-  const hits = [...existing.values()].filter((s) => s?.id && s.country === e.country && s.website && hostOf(s.website) === h);
+  const hits = [...existing.values()].filter((s) => s?.id && s.country === e.country && [s.website, ...(s.otherWebsites || [])].some((w) => w && hostOf(w) === h));
   return hits.length === 1 ? hits[0] : null;
 }
 export function catalogRecords(entries, { existing, readWeb, today, keepSeller = false }) {
