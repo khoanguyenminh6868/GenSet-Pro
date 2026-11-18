@@ -17,6 +17,7 @@ import os from "node:os";
 import path from "node:path";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath, pathToFileURL } from "node:url";
+import { summary as unreadSummary } from "./unread-tables.mjs";
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -248,13 +249,22 @@ function exampleBlock(groups, maxKinds) {
   if (groups.length > maxKinds) out.push(`… còn ${groups.length - maxKinds} dạng nữa (xem bản đầy đủ).`);
   return out;
 }
-export function markdown({ d, swA, swB, ver, norm, labels = ["cũ", "mới"], maxSup = 40, maxKinds = 30 }) {
+// "Chưa đọc được" (chat-luong-3): lý do: cũ → mới. Bên chưa có `unread()` (catalog.js trước chat-luong-3) ghi "—".
+export function unreadLine(un) {
+  if (!un || (!un.a && !un.b)) return null;
+  const keys = [...new Set([...Object.keys(un.a || {}), ...Object.keys(un.b || {})])].sort((x, y) => (un.b?.[y]?.items || 0) - (un.b?.[x]?.items || 0));
+  const n = (s, k) => (s ? (s[k]?.items || 0).toLocaleString("vi-VN") : "—");
+  return `- Chưa đọc được (\`node suppliers/unread-tables.mjs\`, để thiếu thay vì đoán): ${keys.map((k) => `${k}: ${n(un.a, k)} → ${n(un.b, k)}`).join("; ") || "không có"}`;
+}
+export function markdown({ d, swA, swB, ver, norm, un, labels = ["cũ", "mới"], maxSup = 40, maxKinds = 30 }) {
   const out = ["<!-- spec-diff -->", `## Kiểm chéo danh mục (spec-diff): ${labels[0]} ↔ ${labels[1]}`, ""];
   const swapUp = swB.n > swA.n;
+  const ul = unreadLine(un);
   out.push(`- Bản ghi: ${d.nA.toLocaleString("vi-VN")} → ${d.nB.toLocaleString("vi-VN")}; **${d.changed}** đổi, ${d.onlyA} mất, ${d.onlyB} thêm, ở ${d.tabs.size} bảng của ${d.bySup.size} NCC`);
   out.push(`- Đảo vai động cơ ↔ đầu phát (mã mà ≥ 3 NCC khác đọc ở vai kia): ${swA.n} → **${swB.n}**${swapUp ? " ❌ TĂNG (chặn)" : " ✅"}`);
   out.push(`- Tự kiểm số với công suất của dòng: ${ver.fails.length} giá trị đổi / thêm không tự xác nhận được (soát tay)`);
   if (!norm.skipped) out.push(`- Lớp chuẩn hoá (spec-norm): ${norm.changes.length} thông số đổi kết quả`);
+  if (ul) out.push(ul);
   out.push("- Thay đổi là chủ ý thì không chặn; vẫn phải soát MỌI dạng và đo top 30 ứng viên bằng tay (bộ nhớ kiem-cheo-toan-bo). Bản đầy đủ: artifact `spec-diff` của lượt chạy.", "");
   if (!d.changes.length && !norm.changes.length && swA.n === swB.n) { out.push("Không có bản ghi nào đổi."); return out.join("\n"); }
   if (d.bySup.size) {
@@ -295,7 +305,8 @@ export function run(sa, sb) {
   const swA = swaps(a.values()), swB = swaps(b.values());
   const ver = verify(a, b);
   const norm = sa.normText === sb.normText ? { kinds: {}, changes: [], skipped: true } : normDiff(sa, sb, a, b);
-  return { a, b, d, swA, swB, ver, norm };
+  const un = { a: sa.C.unread ? unreadSummary(sa.C.unread(sa.S)) : null, b: sb.C.unread ? unreadSummary(sb.C.unread(sb.S)) : null };
+  return { a, b, d, swA, swB, ver, norm, un };
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
@@ -309,6 +320,7 @@ if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.ar
   const head = fullText(r.d).split("\n").slice(0, 2);
   console.log(head.join("\n"));
   console.log(`đảo vai: ${r.swA.n} → ${r.swB.n} | tự kiểm: cần soát tay ${r.ver.fails.length}${r.norm.skipped ? "" : ` | chuẩn hoá: ${r.norm.changes.length} thông số đổi`}`);
+  if (unreadLine(r.un)) console.log(unreadLine(r.un).slice(2));
   if (out) fs.writeFileSync(out, fullText(r.d) + "\n\n==== tự kiểm số (verSpec) ====\n" + r.ver.text + (r.norm.skipped ? "" : "\n\n==== chuẩn hoá ====\n" + r.norm.changes.map((c) => `${c.kind} | ${where(c.o)} ${c.o.model}: ${c.txt}`).join("\n")), "utf8");
   if (swapList) fs.writeFileSync(swapList, r.swB.text, "utf8");
   if (md) fs.writeFileSync(md, markdown({ ...r, labels: [labels[0] || A, labels[1] || B] }), "utf8");

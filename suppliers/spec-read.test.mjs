@@ -167,7 +167,9 @@ test("walkedSpecs: a power title over two cells (kVA | kW) does not shift the ti
     assert.ok([kg, undefined].includes(sp(rec(H, [row]))[0]?.weight), row);
   // xinzhengfa n101: "输出功率" over KVA | KW, the kW was read as the current
   const [x] = sp(rec(["| 机组型号 | 输出功率 | 额定 电流A | 频率/转速 Hz/RPM | 柴油机型号 | 机组外型尺寸(L × B × H)mm | 机组重量Kg", "| KVA | KW"], ["| ZF24GF | 30 | 24 | 33.2 | 50/1500 | K4100D | 1800 × 750 × 1100 | 810"]));
-  assert.equal(x.current, "33.2");
+  // chat-luong-3 (WCHK): 33.2 A fits neither 30 kVA nor 24 kW at a 400 V set (43 A), so the read by position is left
+  // out; never the kW (24) as before.
+  assert.ok(["33.2", undefined].includes(x.current), x.current);
   assert.equal(x.weight, "810");
   // yingtai-jiangsu n114: a row with the speed cell left out, 1200 is the speed from the left and the weight from the right: neither
   const [g] = sp(rec(["| 机组型号 Genset Model | 输出功率（主用） | 备用功率（备用） | 电流Power(A) | 额定转速 | 净重 Net Weight (kg) | 外形尺寸 Overall Dimensions L*W*H(m) | 发动 机型号 Engine Type | 缸数 Number of", "| KW | KVA | KW | KVA"], ["| 64GF-A | 64 | 80 | 75 | 83 | 115.2 | 1200 | 2.35*1.0*1.5 | YC6G180N-D30 | 4"]));
