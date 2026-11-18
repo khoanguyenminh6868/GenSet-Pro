@@ -12,9 +12,9 @@
    "sups": 206
   },
   "số vô lý so với công suất": {
-   "items": 213,
-   "tables": 44,
-   "sups": 22
+   "items": 212,
+   "tables": 43,
+   "sups": 21
   },
   "dòng điện / điện áp theo vị trí không khớp công suất": {
    "items": 230,
@@ -25,6 +25,11 @@
    "items": 37,
    "tables": 37,
    "sups": 1
+  },
+  "dòng điện tổ máy không khớp công suất": {
+   "items": 5,
+   "tables": 5,
+   "sups": 2
   },
   "cặp a/b dưới nhãn không ghi mức / đơn vị": {
    "items": 34,
@@ -5711,11 +5716,13 @@
    "table": 14,
    "title": "250KW发电机组-潍柴动力发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商",
    "reasons": {
-    "mã đầu phát trùng model tổ máy": 1
+    "mã đầu phát trùng model tổ máy": 1,
+    "dòng điện tổ máy không khớp công suất": 1
    },
    "rows": {},
    "sample": {
-    "mã đầu phát trùng model tổ máy": "250GF"
+    "mã đầu phát trùng model tổ máy": "250GF",
+    "dòng điện tổ máy không khớp công suất": "250GF: 540A"
    }
   },
   {
@@ -5724,11 +5731,13 @@
    "table": 15,
    "title": "300KW发电机组-潍柴动力发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商",
    "reasons": {
-    "mã đầu phát trùng model tổ máy": 1
+    "mã đầu phát trùng model tổ máy": 1,
+    "dòng điện tổ máy không khớp công suất": 1
    },
    "rows": {},
    "sample": {
-    "mã đầu phát trùng model tổ máy": "300GF"
+    "mã đầu phát trùng model tổ máy": "300GF",
+    "dòng điện tổ máy không khớp công suất": "300GF: 630A"
    }
   },
   {
@@ -17112,28 +17121,43 @@
   },
   {
    "supplierId": "huachai-deutz",
-   "n": 117,
-   "table": 13,
-   "title": "20kW Deutz Diesel Generator Sets | Air-Cooled Generators | Huachai",
+   "n": 105,
+   "table": 4,
+   "title": "400kW Deutz Diesel Generator Sets | Power Supplies | Huachai",
    "reasons": {
-    "một ô ghi hai mã": 1
+    "dòng điện tổ máy không khớp công suất": 1
    },
    "rows": {},
    "sample": {
-    "một ô ghi hai mã": "XN184H,XN184F"
+    "dòng điện tổ máy không khớp công suất": "400GF: 812A"
    }
   },
   {
    "supplierId": "huachai-deutz",
-   "n": 119,
-   "table": 15,
-   "title": "55kW Deutz Diesel Generator Sets | Air-Cooled Generators | Huachai",
+   "n": 111,
+   "table": 8,
+   "title": "230kW Deutz Diesel Generator Sets | Power Supplies | Huachai",
    "reasons": {
-    "số vô lý so với công suất": 1
+    "dòng điện tổ máy không khớp công suất": 1
    },
    "rows": {},
    "sample": {
-    "số vô lý so với công suất": "weight=89kg"
+    "dòng điện tổ máy không khớp công suất": "230GF: 50Hz"
+   }
+  },
+  {
+   "supplierId": "huachai-deutz",
+   "n": 117,
+   "table": 13,
+   "title": "20kW Deutz Diesel Generator Sets | Air-Cooled Generators | Huachai",
+   "reasons": {
+    "một ô ghi hai mã": 1,
+    "dòng điện tổ máy không khớp công suất": 1
+   },
+   "rows": {},
+   "sample": {
+    "một ô ghi hai mã": "XN184H,XN184F",
+    "dòng điện tổ máy không khớp công suất": "20GF: 52A 、 36A"
    }
   },
   {

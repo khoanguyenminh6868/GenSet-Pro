@@ -742,8 +742,11 @@
       lines.push(SEC_HEAD[p]);
       for (const c of rows) {
         const lb = c[2 * j], v = c[2 * j + 1];
-        if (!lb || !v || (p !== "genset" && /power|output|功率|capacity/i.test(lb))) continue;
-        lines.push(`| ${lb} | ${v}`);
+        // A part's weight or size is not the set's: huachai n117 gives no set weight, only the alternator's "130kg 、 150kg".
+        // Nor the alternator's current, at its own larger rating (huachai n121 "600GF": set "Rated currency | 1082A",
+        // alternator ECO43 "Rated current | 902A"); the set's part spells it "currency".
+        if (!lb || !v || (p !== "genset" && /power|output|功率|capacity|weight|重量|dimension|尺寸|current|电流/i.test(lb))) continue;
+        lines.push(`| ${p === "genset" ? lb.replace(/^(rated\s+)?currency$/i, "$1current") : lb} | ${v}`);
       }
     });
     return lines;
@@ -1041,6 +1044,14 @@
           // Two codes offered in one cell ("XN184H,XN184F", huachai n117): which one the set has is not known.
           for (const k of sec ? ["engine", "alternator"] : []) if (c[k] && /[,，、]/.test(c[k])) { note(t, ti, null, "một ô ghi hai mã", c[k]); c[k] = null; }
           c.specs = saneSpecs(c.specs, power, (x) => note(t, ti, null, "số vô lý so với công suất", `${x.key}=${x.value}`));
+          // A section sheet's set current must fit the set's power, as one read by position (posFits): its rows are
+          // hand-typed and slip ("| Rated frequency | 415A" over "| Rated currency | 50Hz", huachai n111; 812 A for
+          // "400GF", n105, whose alternator says 721 A; 540 A for "250GF", chenxing n117).
+          if (sec && c.specs) c.specs = c.specs.filter((x) => {
+            if (x.key !== "current" || (!/hz/i.test(x.value) && posFits("current", x.value, power, c.genset))) return true;
+            note(t, ti, null, "dòng điện tổ máy không khớp công suất", `${c.genset}: ${x.value}`);
+            return false;
+          });
           if (c.engine && isCode(c.engine.replace(/^[a-z]+\s+(?=\S*\d)/i, (m) => (brandIn(m, ENGINE_BRANDS).length ? "" : m))))
             out.push({ ...base, kind: "engine", model: c.engine.replace(/^(cummins|perkins|weichai|yuchai|deutz|volvo|baudouin|mtu|doosan|mitsubishi|sdec|kubota|yanmar|isuzu|ricardo|lovol|fawde)\s+/i, ""), makes: makesFor("engine", c.engine + " " + (c.engineBrand || ""), c.engineBrand), genset: c.genset || null, power, freq: tFreq, other: c.alternator || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows } });
           if (c.alternator && isCode(c.alternator.replace(/^[a-z-]+\s+(?=\S*\d)/i, "")))

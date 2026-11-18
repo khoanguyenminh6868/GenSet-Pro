@@ -90,6 +90,25 @@ test("section sheet huachai: an alternator cell with two codes 'XN184H,XN184F' g
   assert.ok(notes.some((x) => x.reason === "một ô ghi hai mã"));
 });
 
+const HUACHAI = ["| Generator-set | Diesel Engine | Alternator (Meccalte)"];
+test("section sheet huachai n121: the set's current is its own 'Rated currency 1082A', not the alternator's 902 A", () => {
+  const { out } = read(HUACHAI, ["| Model | 600GF | Model | HC12V132ZL-LA G2A | Model | ECO43-1SN/4", "| Rated prime power | 600KW | Prime power | 660KW | Rated power | 640KW",
+    "| Rated frequency | 50Hz | No. of Cylinder | 12 | Rated current | 902A", "| Rated currency | 1082A | Bore/stroke | 132/145 | Power factor | 0.8",
+    "| Frequency drop scope | ≤5% | Governor | electronic | Weight | 1870kg", "| Weight | 4120kg | Weight | 1660kg"]);
+  assert.equal(spec(out[0], "current"), "1082A");
+  assert.equal(spec(out[0], "weight"), "4120kg");
+});
+
+test("section sheet huachai n111 / n117: a set current that does not fit ('50Hz' under currency) and a part's weight are left out", () => {
+  const n111 = read(HUACHAI, ["| Model | 230GF | Model | BF6M1015C-LA G2A | Model | HCI4D", "| Rated prime power | 230KW | Prime power | 256KW | Rated power | 240KW",
+    "| Rated frequency | 415A | No. of Cylinder | 6 | Rated current | 433A", "| Rated currency | 50Hz | Bore/stroke | 132/145 | Power factor | 0.8"]);
+  assert.equal(spec(n111.out[0], "current"), undefined);
+  assert.ok(n111.notes.some((x) => x.reason === "dòng điện tổ máy không khớp công suất"));
+  const n117 = read(HUACHAI, ["| Model | 20GF | Model | F3L912D | Model | PI144D", "| Rated prime power | 20KW | Prime power | 24KW | Rated power | 12KW",
+    "| Phase | One/three phase | Governor | mechanical | Weight | 130kg 、 150kg"]);
+  assert.equal(spec(n117.out[0], "weight"), undefined);
+});
+
 test("WCHK zhengchi n102: '230/400' V on a 2400 kW row is two standard voltages, kept", () => {
   const { out } = read(["| 功率 | 备用功率 | 品牌 | 整机编号 | 柴油机型号 | 频率 | 电压(V) | 高压(KV) | 燃油率 | 输出 | 缸数 | 排量(L) | 机组长宽高(mm) | 重量KG | 参数"],
     ["| 2400KW | 2670KW | 玉柴 | ZCDL-Y2670G | YC16VC4000-D31 | 50Hz | 230/400 | 6.3/10.5 | 213g/kw.h | 三相四线 | 20 | 95.42 | 6100×2600×3100 | 13500 | 更多"]);
