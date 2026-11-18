@@ -7,19 +7,24 @@
    "sups": 17
   },
   "bảng không cho bản ghi nào": {
-   "items": 3177,
-   "tables": 3177,
+   "items": 3191,
+   "tables": 3191,
    "sups": 206
   },
   "số vô lý so với công suất": {
-   "items": 212,
-   "tables": 43,
-   "sups": 21
+   "items": 139,
+   "tables": 36,
+   "sups": 18
   },
   "dòng điện / điện áp theo vị trí không khớp công suất": {
    "items": 230,
    "tables": 15,
    "sups": 7
+  },
+  "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": {
+   "items": 78,
+   "tables": 10,
+   "sups": 4
   },
   "mã đầu phát trùng model tổ máy": {
    "items": 37,
@@ -31,6 +36,11 @@
    "tables": 5,
    "sups": 2
   },
+  "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": {
+   "items": 90,
+   "tables": 14,
+   "sups": 1
+  },
   "cặp a/b dưới nhãn không ghi mức / đơn vị": {
    "items": 34,
    "tables": 34,
@@ -41,7 +51,27 @@
    "tables": 4,
    "sups": 2
   },
+  "trang có hai động cơ: số liệu kích cỡ động cơ không rõ của động cơ nào": {
+   "items": 2,
+   "tables": 2,
+   "sups": 1
+  },
   "một ô ghi hai mã": {
+   "items": 1,
+   "tables": 1,
+   "sups": 1
+  },
+  "số có dấu phẩy nghìn / thập phân không rõ": {
+   "items": 2,
+   "tables": 2,
+   "sups": 1
+  },
+  "điện áp trùng công suất của dòng": {
+   "items": 6,
+   "tables": 1,
+   "sups": 1
+  },
+  "ô dòng điện không đọc được thành số": {
    "items": 1,
    "tables": 1,
    "sups": 1
@@ -5352,6 +5382,23 @@
   },
   {
    "supplierId": "cgm-italia",
+   "n": 101,
+   "table": 4,
+   "title": "Industrial CGM Generators | Silent, Robust, and Reliable",
+   "reasons": {
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": 1
+   },
+   "rows": {
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": [
+     41
+    ]
+   },
+   "sample": {
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": "noise=69"
+   }
+  },
+  {
+   "supplierId": "cgm-italia",
    "n": 102,
    "table": 11,
    "title": "Eco Power | The Energy Revolution powered by CGM",
@@ -5382,43 +5429,22 @@
    "table": 13,
    "title": "Datasheet: DOWNLOAD PDF",
    "reasons": {
-    "số vô lý so với công suất": 29
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": 10
    },
    "rows": {
-    "số vô lý so với công suất": [
-     27,
-     30,
-     33,
-     36,
-     39,
-     42,
-     45,
-     48,
-     51,
-     54,
-     56,
-     59,
-     62,
-     65,
-     67,
-     69,
-     72,
-     75,
-     78,
-     81,
-     84,
-     86,
-     90,
-     94,
-     98,
-     102,
-     106,
-     108,
-     110
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": [
+     18,
+     21,
+     24,
+     88,
+     92,
+     96,
+     100,
+     104
     ]
    },
    "sample": {
-    "số vô lý so với công suất": "weight=149"
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": "noise=52,8"
    }
   },
   {
@@ -5427,10 +5453,10 @@
    "table": 14,
    "title": "Datasheet: DOWNLOAD PDF",
    "reasons": {
-    "số vô lý so với công suất": 29
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": 30
    },
    "rows": {
-    "số vô lý so với công suất": [
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": [
      0,
      3,
      6,
@@ -5445,6 +5471,7 @@
      36,
      39,
      42,
+     45,
      47,
      50,
      53,
@@ -5463,7 +5490,7 @@
     ]
    },
    "sample": {
-    "số vô lý so với công suất": "weight=250"
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": "weight=250"
    }
   },
   {
@@ -5472,16 +5499,35 @@
    "table": 15,
    "title": "Datasheet: DOWNLOAD PDF",
    "reasons": {
-    "số vô lý so với công suất": 2
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": 21
    },
    "rows": {
-    "số vô lý so với công suất": [
-     19,
-     64
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": [
+     3,
+     12,
+     22,
+     25,
+     28,
+     31,
+     34,
+     37,
+     40,
+     44,
+     46,
+     48,
+     52,
+     54,
+     56,
+     58,
+     60,
+     62,
+     66,
+     68,
+     70
     ]
    },
    "sample": {
-    "số vô lý so với công suất": "weight=408"
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": "weight=230"
    }
   },
   {
@@ -5490,16 +5536,19 @@
    "table": 16,
    "title": "Datasheet: DOWNLOAD PDF",
    "reasons": {
-    "số vô lý so với công suất": 2
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": 6
    },
    "rows": {
-    "số vô lý so với công suất": [
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": [
      12,
-     15
+     15,
+     18,
+     21,
+     24
     ]
    },
    "sample": {
-    "số vô lý so với công suất": "weight=30"
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": "weight=30"
    }
   },
   {
@@ -8485,6 +8534,200 @@
   },
   {
    "supplierId": "eastern-lion-fuan",
+   "n": 108,
+   "table": 8,
+   "title": "Engine By Cummins | EASTERNLION",
+   "reasons": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": 7,
+    "bảng không cho bản ghi nào": 1
+   },
+   "rows": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": [
+     0,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   },
+   "sample": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": "| Engine By Cummins 2 | 200 – 1311 kW | 34 | MTA11-G2A | EL 314E | Smartgen 6120 | View details →",
+    "bảng không cho bản ghi nào": "| | | Power range | models | Engine | Alternator | Controller |"
+   }
+  },
+  {
+   "supplierId": "eastern-lion-fuan",
+   "n": 109,
+   "table": 10,
+   "title": "Engine By Wuxi Series | EASTERNLION",
+   "reasons": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": 8,
+    "bảng không cho bản ghi nào": 1
+   },
+   "rows": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   },
+   "sample": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": "| Engine By Cummins 2 | 200 – 1311 kW | 34 | MTA11-G2A | EL 314E | Smartgen 6120 | View details →",
+    "bảng không cho bản ghi nào": "| | | Power range | models | Engine | Alternator | Controller |"
+   }
+  },
+  {
+   "supplierId": "eastern-lion-fuan",
+   "n": 111,
+   "table": 13,
+   "title": "Engine By Perkins Series | EASTERNLION",
+   "reasons": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": 8,
+    "bảng không cho bản ghi nào": 1
+   },
+   "rows": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   },
+   "sample": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": "| Engine By Cummins 2 | 200 – 1311 kW | 34 | MTA11-G2A | EL 314E | Smartgen 6120 | View details →",
+    "bảng không cho bản ghi nào": "| | | Power range | models | Engine | Alternator | Controller |"
+   }
+  },
+  {
+   "supplierId": "eastern-lion-fuan",
+   "n": 112,
+   "table": 15,
+   "title": "Engine By Cummins 2 | EASTERNLION",
+   "reasons": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": 6,
+    "bảng không cho bản ghi nào": 1
+   },
+   "rows": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": [
+     0,
+     2,
+     3,
+     4,
+     5,
+     6
+    ]
+   },
+   "sample": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": "| Engine By Cummins | 22 – 444 kW | 40 | 4BTA3.9-G2 | EL 274K | Smartgen 6120 | View details →",
+    "bảng không cho bản ghi nào": "| | | Power range | models | Engine | Alternator | Controller |"
+   }
+  },
+  {
+   "supplierId": "eastern-lion-fuan",
+   "n": 113,
+   "table": 17,
+   "title": "60HZ Engine By Cummins Series | EASTERNLION",
+   "reasons": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": 1,
+    "bảng không cho bản ghi nào": 1
+   },
+   "rows": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": [
+     0
+    ]
+   },
+   "sample": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": "| 60 HZ Engine By Cummins Series 2 | 200 – 1222 kW | 22 | NT855-GA | ELS 314E | Smartgen 6120 | View details →",
+    "bảng không cho bản ghi nào": "| | | Power range | models | Engine | Alternator | Controller |"
+   }
+  },
+  {
+   "supplierId": "eastern-lion-fuan",
+   "n": 114,
+   "table": 19,
+   "title": "Engine By Huachai Series | EASTERNLION",
+   "reasons": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": 8,
+    "bảng không cho bản ghi nào": 1
+   },
+   "rows": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   },
+   "sample": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": "| Engine By Cummins 2 | 200 – 1311 kW | 34 | MTA11-G2A | EL 314E | Smartgen 6120 | View details →",
+    "bảng không cho bản ghi nào": "| | | Power range | models | Engine | Alternator | Controller |"
+   }
+  },
+  {
+   "supplierId": "eastern-lion-fuan",
+   "n": 116,
+   "table": 22,
+   "title": "Engine By Kofo Series | EASTERNLION",
+   "reasons": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": 8,
+    "bảng không cho bản ghi nào": 1
+   },
+   "rows": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   },
+   "sample": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": "| Engine By Cummins 2 | 200 – 1311 kW | 34 | MTA11-G2A | EL 314E | Smartgen 6120 | View details →",
+    "bảng không cho bản ghi nào": "| | | Power range | models | Engine | Alternator | Controller |"
+   }
+  },
+  {
+   "supplierId": "eastern-lion-fuan",
+   "n": 117,
+   "table": 24,
+   "title": "60HZ Engine By Yuxing Series | EASTERNLION",
+   "reasons": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": 4,
+    "bảng không cho bản ghi nào": 1
+   },
+   "rows": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": [
+     0,
+     1,
+     2,
+     3
+    ]
+   },
+   "sample": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": "| 60 HZ Engine By Cummins Series 2 | 200 – 1222 kW | 22 | NT855-GA | ELS 314E | Smartgen 6120 | View details →",
+    "bảng không cho bản ghi nào": "| | | Power range | models | Engine | Alternator | Controller |"
+   }
+  },
+  {
+   "supplierId": "eastern-lion-fuan",
    "n": 121,
    "table": 27,
    "title": "Engine By Perkins Series — Generator set specification sheet | Fuan EASTERNLION Electric Machines Co., Ltd",
@@ -8547,6 +8790,154 @@
    },
    "sample": {
     "số vô lý so với công suất": "engPower=19408"
+   }
+  },
+  {
+   "supplierId": "eastern-lion-fuan",
+   "n": 122,
+   "table": 29,
+   "title": "60HZ Engine By Yangdong Series | EASTERNLION",
+   "reasons": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": 1,
+    "bảng không cho bản ghi nào": 1
+   },
+   "rows": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": [
+     0
+    ]
+   },
+   "sample": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": "| 60HZ Engine By Lovol Series | 27 – 178 kW | 13 | 1003G | ELS 274C | Smartgen 6120 | View details →",
+    "bảng không cho bản ghi nào": "| | | Power range | models | Engine | Alternator | Controller |"
+   }
+  },
+  {
+   "supplierId": "eastern-lion-fuan",
+   "n": 129,
+   "table": 36,
+   "title": "Engine By Yunnei Series | EASTERNLION",
+   "reasons": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": 8,
+    "bảng không cho bản ghi nào": 1
+   },
+   "rows": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   },
+   "sample": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": "| Engine By Cummins | 22 – 444 kW | 40 | 4BTA3.9-G2 | EL 274K | Smartgen 6120 | View details →",
+    "bảng không cho bản ghi nào": "| | | Power range | models | Engine | Alternator | Controller |"
+   }
+  },
+  {
+   "supplierId": "eastern-lion-fuan",
+   "n": 141,
+   "table": 43,
+   "title": "Engine By Yangdong Series | EASTERNLION",
+   "reasons": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": 7,
+    "bảng không cho bản ghi nào": 1
+   },
+   "rows": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6
+    ]
+   },
+   "sample": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": "| Engine By Cummins | 22 – 444 kW | 40 | 4BTA3.9-G2 | EL 274K | Smartgen 6120 | View details →",
+    "bảng không cho bản ghi nào": "| | | Power range | models | Engine | Alternator | Controller |"
+   }
+  },
+  {
+   "supplierId": "eastern-lion-fuan",
+   "n": 142,
+   "table": 45,
+   "title": "Engine By Woling Series | EASTERNLION",
+   "reasons": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": 8,
+    "bảng không cho bản ghi nào": 1
+   },
+   "rows": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   },
+   "sample": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": "| Engine By Cummins 2 | 200 – 1311 kW | 34 | MTA11-G2A | EL 314E | Smartgen 6120 | View details →",
+    "bảng không cho bản ghi nào": "| | | Power range | models | Engine | Alternator | Controller |"
+   }
+  },
+  {
+   "supplierId": "eastern-lion-fuan",
+   "n": 143,
+   "table": 47,
+   "title": "Engine By Lovol Series | EASTERNLION",
+   "reasons": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": 8,
+    "bảng không cho bản ghi nào": 1
+   },
+   "rows": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   },
+   "sample": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": "| Engine By Cummins | 22 – 444 kW | 40 | 4BTA3.9-G2 | EL 274K | Smartgen 6120 | View details →",
+    "bảng không cho bản ghi nào": "| | | Power range | models | Engine | Alternator | Controller |"
+   }
+  },
+  {
+   "supplierId": "eastern-lion-fuan",
+   "n": 144,
+   "table": 49,
+   "title": "Engine By Longxin Series | EASTERNLION",
+   "reasons": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": 8,
+    "bảng không cho bản ghi nào": 1
+   },
+   "rows": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7
+    ]
+   },
+   "sample": {
+    "dòng tổng quan dòng máy: một dải công suất, không là một tổ máy": "| Engine By Cummins 2 | 200 – 1311 kW | 34 | MTA11-G2A | EL 314E | Smartgen 6120 | View details →",
+    "bảng không cho bản ghi nào": "| | | Power range | models | Engine | Alternator | Controller |"
    }
   },
   {
@@ -14122,17 +14513,21 @@
    "table": 0,
    "title": "LNG CNG PNG Natural Methane Gas Generator Set",
    "reasons": {
-    "số vô lý so với công suất": 2,
+    "số vô lý so với công suất": 1,
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": 1,
     "bảng không cho bản ghi nào": 1
    },
    "rows": {
     "số vô lý so với công suất": [
-     2,
+     2
+    ],
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": [
      4
     ]
    },
    "sample": {
     "số vô lý so với công suất": "weight=97.53",
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": "weight=2000",
     "bảng không cho bản ghi nào": "| Weight | KW | KVA | mm | L | mm | kg"
    }
   },
@@ -17017,6 +17412,19 @@
   },
   {
    "supplierId": "hosem-power",
+   "n": 109,
+   "table": 7,
+   "title": "Buy 500kva electric start diesel generator, Good quality 500kva electric start diesel generator manufacturer",
+   "reasons": {
+    "trang có hai động cơ: số liệu kích cỡ động cơ không rõ của động cơ nào": 1
+   },
+   "rows": {},
+   "sample": {
+    "trang có hai động cơ: số liệu kích cỡ động cơ không rõ của động cơ nào": "cyl=6 Cylinder In Line"
+   }
+  },
+  {
+   "supplierId": "hosem-power",
    "n": 114,
    "table": 12,
    "title": "Buy 125kva silent diesel generator, Good quality 125kva silent diesel generator manufacturer",
@@ -17078,6 +17486,19 @@
    "rows": {},
    "sample": {
     "bảng không cho bản ghi nào": "| Frequency | 50Hz"
+   }
+  },
+  {
+   "supplierId": "hosem-power",
+   "n": 134,
+   "table": 32,
+   "title": "Buy 500kva diesel generator, Good quality 500kva diesel generator manufacturer",
+   "reasons": {
+    "trang có hai động cơ: số liệu kích cỡ động cơ không rõ của động cơ nào": 1
+   },
+   "rows": {},
+   "sample": {
+    "trang có hai động cơ: số liệu kích cỡ động cơ không rõ của động cơ nào": "cyl=6 Cylinder In Line"
    }
   },
   {
@@ -29165,11 +29586,26 @@
    "table": 24,
    "title": "Datasheet: CN",
    "reasons": {
+    "số có dấu phẩy nghìn / thập phân không rõ": 1,
     "bảng không cho bản ghi nào": 1
    },
    "rows": {},
    "sample": {
+    "số có dấu phẩy nghìn / thập phân không rõ": "1,000",
     "bảng không cho bản ghi nào": "| 电功率 3) | kW | 1,000"
+   }
+  },
+  {
+   "supplierId": "mwm",
+   "n": 1008,
+   "table": 25,
+   "title": "Datasheet: CN",
+   "reasons": {
+    "số có dấu phẩy nghìn / thập phân không rõ": 1
+   },
+   "rows": {},
+   "sample": {
+    "số có dấu phẩy nghìn / thập phân không rõ": "1,000"
    }
   },
   {
@@ -41565,11 +42001,11 @@
    "table": 0,
    "title": "40kw / 50kva 1800rpm Self-excited Three Phase AC Generator IP23 For Generator Set",
    "reasons": {
-    "số vô lý so với công suất": 5,
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": 5,
     "bảng không cho bản ghi nào": 1
    },
    "rows": {
-    "số vô lý so với công suất": [
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": [
      0,
      3,
      6,
@@ -41578,7 +42014,7 @@
     ]
    },
    "sample": {
-    "số vô lý so với công suất": "weight=8.2",
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": "weight=8.2",
     "bảng không cho bản ghi nào": "| KVA | KW | mm | kgs"
    }
   },
@@ -42807,16 +43243,20 @@
    "table": 11,
    "title": "玉柴发电机组, 玉柴发电机组 供应 - 英泰集团有限公司",
    "reasons": {
-    "số vô lý so với công suất": 2
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": 1,
+    "số vô lý so với công suất": 1
    },
    "rows": {
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": [
+     27
+    ],
     "số vô lý so với công suất": [
-     27,
      60
     ]
    },
    "sample": {
-    "số vô lý so với công suất": "weight=72"
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": "weight=72",
+    "số vô lý so với công suất": "weight=14500"
    }
   },
   {
@@ -42890,13 +43330,16 @@
    "table": 20,
    "title": "潍柴柴油发电机组, 潍柴柴油发电机组 供应 - 英泰集团有限公司",
    "reasons": {
-    "số vô lý so với công suất": 8
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": 2,
+    "số vô lý so với công suất": 6
    },
    "rows": {
-    "số vô lý so với công suất": [
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": [
      16,
+     19
+    ],
+    "số vô lý so với công suất": [
      17,
-     19,
      24,
      25,
      27,
@@ -42905,7 +43348,8 @@
     ]
    },
    "sample": {
-    "số vô lý so với công suất": "weight=90"
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": "weight=90",
+    "số vô lý so với công suất": "weight=135"
    }
   },
   {
@@ -42953,7 +43397,8 @@
    "table": 24,
    "title": "高压发电机组, 高压发电机组 供应 - 英泰集团有限公司",
    "reasons": {
-    "dòng điện / điện áp theo vị trí không khớp công suất": 14
+    "dòng điện / điện áp theo vị trí không khớp công suất": 14,
+    "điện áp trùng công suất của dòng": 6
    },
    "rows": {
     "dòng điện / điện áp theo vị trí không khớp công suất": [
@@ -42971,10 +43416,19 @@
      17,
      18,
      19
+    ],
+    "điện áp trùng công suất của dòng": [
+     1,
+     2,
+     3,
+     11,
+     12,
+     13
     ]
    },
    "sample": {
-    "dòng điện / điện áp theo vị trí không khớp công suất": "current=6300 | 1000GF1 |  | 1000 | 6300 | / | 9620 | 5.60×1.85×2.60 | KTA38-G9 | 重庆康明斯 |  | 1089 | 12 | 37.8 | ≤208 | 电子"
+    "dòng điện / điện áp theo vị trí không khớp công suất": "current=6300 | 1000GF1 |  | 1000 | 6300 | / | 9620 | 5.60×1.85×2.60 | KTA38-G9 | 重庆康明斯 |  | 1089 | 12 | 37.8 | ≤208 | 电子",
+    "điện áp trùng công suất của dòng": "voltage=1100"
    }
   },
   {
@@ -43104,15 +43558,15 @@
    "table": 35,
    "title": "Yingtai / Yuchai",
    "reasons": {
-    "số vô lý so với công suất": 1
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": 1
    },
    "rows": {
-    "số vô lý so với công suất": [
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": [
      27
     ]
    },
    "sample": {
-    "số vô lý so với công suất": "weight=72"
+    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": "weight=72"
    }
   },
   {
@@ -43360,19 +43814,6 @@
    "rows": {},
    "sample": {
     "bảng không cho bản ghi nào": "| Dry weight of base(kg) | 220 | 220 | 240 | 240"
-   }
-  },
-  {
-   "supplierId": "yongcai-elecmama",
-   "n": 170,
-   "table": 58,
-   "title": "Chinese Diesel Engines | Yangzhou Yongcai Machinery Co., Ltd.",
-   "reasons": {
-    "số vô lý so với công suất": 1
-   },
-   "rows": {},
-   "sample": {
-    "số vô lý so với công suất": "engPower=40 kW / 2650 rpm"
    }
   },
   {
@@ -44339,6 +44780,23 @@
    "rows": {},
    "sample": {
     "bảng không cho bản ghi nào": "| | Factor | MTU | Perkins | Cummins | Yuchai | Weichai"
+   }
+  },
+  {
+   "supplierId": "zhengdian-zhengzhou",
+   "n": 101,
+   "table": 0,
+   "title": "康明斯发电机组|康明斯柴油发电机组|康明斯发电机|康明斯柴油发电机---郑州郑电发电机有限公司专业生产柴油发电机组",
+   "reasons": {
+    "ô dòng điện không đọc được thành số": 1
+   },
+   "rows": {
+    "ô dòng điện không đọc được thành số": [
+     2
+    ]
+   },
+   "sample": {
+    "ô dòng điện không đọc được thành số": "current=5 9/54"
    }
   },
   {
