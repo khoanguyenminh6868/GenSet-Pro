@@ -95,7 +95,7 @@ for (const f of files) {
     const b = block(lines, rec, s.url);
     // A page on another company's site (cummins.com location page): its own address in the footer is not this company's.
     const host = (u) => (u || "").replace(/^https?:\/\/(www\.)?/i, "").split(/[/:]/)[0].toLowerCase();
-    const own = rec.website && host(rec.website) === host(s.url);
+    const own = [rec.website, ...(rec.otherWebsites || [])].some((w) => w && host(w) === host(s.url));
     for (const c of extract(b.lines, b.list, b.list || own ? null : host(s.url))) {
       const key = c.type + ":" + (c.type === "email" ? c.value.toLowerCase() : phoneKey(c.value) || c.value);
       if (seen.has(key)) { const x = seen.get(key); if (!x.src.includes(s.n)) { x.src.push(s.n); addQuote(s, c.quote); } continue; }

@@ -19,6 +19,8 @@ const LINK = /(product|engine|generator|genset|gen-set|diesel|series|cummins|per
 // (hichaipower.com 2026-11-13: 150 pages read, 2 with tables).
 const SKIP = /(\/(ar|ru|es|fr|pt|de|it|ne|hi|th|vi|id|tr|ja|ko|pl|nl|fa|ur|bn|ms|uk|he|ro|cs|hu|el|sv|fi|da|no|tl|my|km|lo|si|kk|uz|az|am|sw|ha|yo|ig|zh-c[nt]|zh-tw|ga|eu|ca|eo|sq|hy|be|bs|bg|ceb|ny|co|hr|et|fy|gl|ka|gu|ht|haw|iw|hmn|is|jw|kn|ku|ky|la|lv|lt|lb|mk|mg|ml|mt|mi|mr|mn|pa|ps|sr|st|sk|sl|so|sm|gd|sn|sd|su|tg|ta|te|xh|yi|zu|rw|tt|or|tk|ug|af|cy)(\/|$)|(^|[/_.?=-])(news|blog|article|contact|about|faq|video|case|project|service|login|cart|tags?|privacy|sitemap)s?([/_.?=-]|$)|\.(jpg|jpeg|png|gif|webp|pdf|zip|doc|xls)(\?|$))/i;
 const POWER = /\b(k\s?va|kw|kwe|prime|standby|备用|常用|功率)\b/i;
+// Every website of a record: `website` first, then `otherWebsites` (a company with two sites, 2026-11-18).
+export const websitesOf = (rec) => [...new Set([rec?.website, ...(rec?.otherWebsites || [])].map((u) => String(u || "").trim()).filter(Boolean))];
 
 const entities = { amp: "&", lt: "<", gt: ">", quot: '"', apos: "'", nbsp: " ", middot: "·", deg: "°", times: "×", plusmn: "±", ldquo: "“", rdquo: "”", lsquo: "‘", rsquo: "’", ndash: "–", mdash: "—", reg: "®", trade: "™", copy: "©", emsp: " ", ensp: " ", le: "≤", ge: "≥", asymp: "≈", sup2: "²", sup3: "³", micro: "µ", divide: "÷", hellip: "…", bull: "•" };
 // "&amp;le;" (an entity written twice, as some site editors save it) reads as "≤".
@@ -129,18 +131,22 @@ export function tablesOf(text) {
 async function crawl(id) {
   const rec = JSON.parse(fs.readFileSync(path.join(ROOT, "cn", `${id}.json`), "utf8"));
   if (!rec.website) return { id, pages: 0, rows: 0 };
-  const host = new URL(rec.website).hostname.replace(/^www\.|^m\./, "");
-  const seen = new Set(), queue = [...rec.sources.filter((s) => s.n < 101).map((s) => s.url).filter((u) => { try { return new URL(u).hostname.replace(/^www\.|^m\./, "") === host; } catch { return false; } }), rec.website];
   // Pages are kept in memory and written only at the end, and only when this crawl found at least as many table
   // lines as the last one (a site that is down or blocks the crawler never wipes what was found before).
-  const found = [], pages = []; let fetched = 0, n = 101, lang = null;
-  while (queue.length && fetched < MAX) {
+  // A company with a second website (otherWebsites: hichaipower.com of kaihua-genset) has each site crawled in turn,
+  // each with its own page budget.
+  const seen = new Set(), found = [], pages = []; let fetched = 0, n = 101;
+  for (const site of websitesOf(rec)) {
+  const host = new URL(site).hostname.replace(/^www\.|^m\./, "");
+  const queue = [...rec.sources.filter((s) => s.n < 101).map((s) => s.url).filter((u) => { try { return new URL(u).hostname.replace(/^www\.|^m\./, "") === host; } catch { return false; } }), site];
+  let lang = null, read = 0;
+  while (queue.length && read < MAX) {
     const u = queue.shift().replace(/\/$/, "");
     if (seen.has(u)) continue; seen.add(u);
-    let page; try { page = await get(u); fetched++; } catch (e) { if (process.env.DEBUG) console.log("  x", u, e.message); continue; }
+    let page; try { page = await get(u); fetched++; read++; } catch (e) { if (process.env.DEBUG) console.log("  x", u, e.message); continue; }
     if (process.env.DEBUG) console.log("  +", u);
     // The home page answered in another language (/vi/ for a visit from Vietnam): that language is followed too.
-    if (u === rec.website.replace(/\/$/, "")) lang = (new URL(page.url).pathname.match(/^\/([a-z]{2})(\/|$)/) || [])[1] || null;
+    if (u === site.replace(/\/$/, "")) lang = (new URL(page.url).pathname.match(/^\/([a-z]{2})(\/|$)/) || [])[1] || null;
     const text = htmlToText(page.html);
     const tables = tablesOf(text);
     if (tables.length && tables.reduce((a, t) => a + t.rows.length, 0) >= 2 && n <= 999) {
@@ -150,6 +156,7 @@ async function crawl(id) {
       n++;
     }
     for (const l of linksOf(page.html, page.url, host, lang)) if (!seen.has(l.replace(/\/$/, ""))) (STRONG.test(l) ? queue.unshift(l) : MODELISH.test(l) ? queue.splice(Math.min(queue.length, 20), 0, l) : queue.push(l));
+  }
   }
   const rows = found.reduce((a, t) => a + t.rows.length, 0);
   const specFile = path.join(ROOT, "specs", `${id}.json`);

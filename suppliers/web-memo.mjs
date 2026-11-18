@@ -50,7 +50,7 @@ export function officialDomains(rec, suppliers = []) {
   if (rec && !recs.includes(rec)) recs.push(rec);
   const out = new Set();
   for (const r of recs) {
-    if (r.website) out.add(domainOf(r.website));
+    for (const w of [r.website, ...(r.otherWebsites || [])]) if (w) out.add(domainOf(w));
     if (MAKER_ROLES.has(r.role)) for (const s of r.sources || []) if (s.tier === "A" && s.url && domainOf(s.url) === domainOf(r.website || "")) out.add(domainOf(s.url));
   }
   out.delete("");
