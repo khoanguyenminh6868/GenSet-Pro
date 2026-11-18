@@ -1,0 +1,285 @@
+﻿
+== IB2200020589#0 cap {"value":12.5,"unit":"kVA"} origin all
+   dòng: 712 → 712
+   victory-generator||V12T|50|10|125|11|1375|Y480BD|<=257|<=204|1350*670*1030|630|1700*900*1150|800
+      top#20 hạng 66 điểm 181 Ricardo Y480BD
+      all hạng 68 điểm 181 Ricardo Y480BD
+   acepow-fuan||APW105|3|50|105|12|13|14|BC164C|108|12|Y480BD
+      top#22 hạng 71 điểm 177 Ricardo Y480BD
+      top#8 hạng 27 điểm 217 Ricardo Y480BD
+   acepow-fuan||APW12|3|50|12|13|15|17|BC164D|128|14|Y480BD
+      all hạng 94 điểm 161 Ricardo Y480BD
+      top#14 hạng 47 điểm 201 Ricardo Y480BD
+
+== IB2200071778#0 cap {"value":15,"unit":"kVA"} origin all
+   dòng: 1036 → 1036
+   acepow-fuan||HPDD16|16|200|176|220|BC184E|BFM3G1
+      top#17 hạng 31 điểm 228 Deutz BFM3G1
+      all hạng 31 điểm 228 Deutz BFM3G1
+   acepow-fuan||APW12|3|50|12|13|15|17|BC164D|128|14|Y480BD
+      all hạng 105 điểm 181 Ricardo Y480BD
+      top#18 hạng 36 điểm 221 Ricardo Y480BD
+
+== IB2300020482#0 cap {"value":10,"unit":"kVA"} origin all
+   dòng: 587 → 587
+   sunny-weifang||DB10GF|10/125|ZS1100|STC10|1140*780*995|480
+      top#29 hạng 90 điểm 180 Weichai ZS1100
+      all hạng 91 điểm 180 Weichai ZS1100
+   acepow-fuan||APW105|3|50|105|12|13|14|BC164C|108|12|Y480BD
+      all hạng 140 điểm 151 Ricardo Y480BD
+      top#24 hạng 80 điểm 191 Ricardo Y480BD
+
+== IB2300026252#0 cap {"value":15,"unit":"kVA"} origin all
+   dòng: 1036 → 1036
+   sunny-weifang||DB15GF|15/19|ZS1115/2100D|STC15|1300*750*1110|620
+      top#28 hạng 109 điểm 178 Weichai ZS1115/2100D
+      all hạng 111 điểm 178 Weichai ZS1115/2100D
+   elitech-power|MODEL:EPS15QCA3S|15KVA|3PHASE|50HZ|POWER(KVA)|15|ENGINEMODEL|QC385D|PHASE|3PHASE|FREQU
+      top#29 hạng 110 điểm 173 Quanchai QC385D
+      all hạng 112 điểm 173 Quanchai QC385D
+   acepow-fuan||APW15|3|50|15|17|19|21|BC164E|15|17|K4100DS
+      all hạng 190 điểm 138 Kofo K4100DS
+      top#28 hạng 109 điểm 178 Kofo K4100DS
+   acepow-fuan||APW15|3|50|15|17|19|21|BC164E|15|17|K4102DS
+      all hạng 191 điểm 138 Kofo K4102DS
+      top#29 hạng 110 điểm 178 Kofo K4102DS
+
+== IB2300048778#0 cap {"value":10,"unit":"kVA"} origin all
+   dòng: 587 → 587
+   sunny-weifang||DB10GF|10/125|ZS1100|STC10|1140*780*995|480
+      top#29 hạng 111 điểm 180 Weichai ZS1100
+      all hạng 112 điểm 180 Weichai ZS1100
+   acepow-fuan||APW105|3|50|105|12|13|14|BC164C|108|12|Y480BD
+      all hạng 160 điểm 151 Ricardo Y480BD
+      top#24 hạng 98 điểm 191 Ricardo Y480BD
+
+== IB2300080302#0 cap {"value":1000,"unit":"kVA"} origin g7eu
+   dòng: 34 → 34
+
+== IB2300088930#0 cap {"value":20,"unit":"kVA"} origin all
+   dòng: 1486 → 1486
+   acepow-fuan||APF16|16|20|176|22|BC184E|18|198|4DW9129DYFD10W
+      top#28 hạng 95 điểm 213 FAWDE 4DW9129DYFD10W
+      all hạng 97 điểm 213 FAWDE 4DW9129DYFD10W
+   acepow-fuan||APW15|3|50|15|17|19|21|BC164E|15|17|Y485BD
+      all hạng 198 điểm 181 Ricardo Y485BD
+      top#26 hạng 80 điểm 221 Ricardo Y485BD
+
+== IB2300108940#1 cap {"value":20,"unit":"kVA"} origin all
+   dòng: 1629 → 1629
+   acepow-fuan||APF20|20|25|22|275|BC184F|22|242|4DW9235DYFD10W
+      top#10 hạng 15 điểm 188 FAWDE 4DW9235DYFD10W
+      all hạng 19 điểm 188 FAWDE 4DW9235DYFD10W
+   acepow-fuan||APW15|3|50|15|17|19|21|BC164E|15|17|K4100DS
+      top#17 hạng 26 điểm 165 Kofo K4100DS
+      top#7 hạng 11 điểm 205 Kofo K4100DS
+   acepow-fuan||APW16|3|50|16|18|20|22|BC184E|18|20|K4100DS
+      all hạng 27 điểm 165 Kofo K4100DS
+      top#8 hạng 12 điểm 205 Kofo K4100DS
+   acepow-fuan||APW15|3|50|15|17|19|21|BC164E|15|17|K4102DS
+      top#18 hạng 31 điểm 165 Kofo K4102DS
+      top#9 hạng 15 điểm 205 Kofo K4102DS
+
+== IB2300213223#0 cap {"value":10,"unit":"kVA"} origin all
+   dòng: 587 → 587
+   sunny-weifang||DB10GF|10/125|ZS1100|STC10|1140*780*995|480
+      top#29 hạng 111 điểm 180 Weichai ZS1100
+      all hạng 112 điểm 180 Weichai ZS1100
+   acepow-fuan||APW105|3|50|105|12|13|14|BC164C|108|12|Y480BD
+      all hạng 160 điểm 151 Ricardo Y480BD
+      top#24 hạng 98 điểm 191 Ricardo Y480BD
+
+== IB2300217401#0 cap {"value":10.5,"unit":"kVA"} origin all
+   dòng: 464 → 464
+   acepow-fuan||APW105|3|50|105|12|13|14|BC164C|108|12|Y480BD
+      top#27 hạng 90 điểm 157 Ricardo Y480BD
+      top#15 hạng 54 điểm 197 Ricardo Y480BD
+
+== IB2300220876#0 cap {"value":17,"unit":"kVA"} origin all
+   dòng: 972 → 972
+   longkai-power||LG12X|17|13|15|12|4DW8123DYFD10W|OP1500*750*1030|AT2008*900*1130|
+      top#27 hạng 63 điểm 173 FAWDE 4DW8123DYFD10W
+      all hạng 66 điểm 173 FAWDE 4DW8123DYFD10W
+   eastern-lion-fuan||GF/GFSKF12|12|15|13|17|K4100DS|301|EL164D|128KW|RUIFEN6120|DETAIL
+      top#28 hạng 67 điểm 165 Kofo K4100DS
+      all hạng 71 điểm 165 Kofo K4100DS
+   eastern-lion-fuan||GF/GFSYD12|12KW|15KVA|13KW|17KVA|(YD4KD)YD485D|15KW|EL164D|128KW|RUIFEN6120|DETAI
+      top#29 hạng 70 điểm 165 Yangdong (YD4KD)YD485D
+      all hạng 74 điểm 165 Yangdong (YD4KD)YD485D
+   acepow-fuan||APW15|3|50|15|17|19|21|BC164E|15|17|K4100DS
+      all hạng 82 điểm 153 Kofo K4100DS
+      top#25 hạng 46 điểm 193 Kofo K4100DS
+   acepow-fuan||APW15|3|50|15|17|19|21|BC164E|15|17|K4102DS
+      all hạng 83 điểm 153 Kofo K4102DS
+      top#26 hạng 47 điểm 193 Kofo K4102DS
+   acepow-fuan||APW16|3|50|16|18|20|22|BC184E|18|20|K4100DS
+      all hạng 84 điểm 147 Kofo K4100DS
+      top#29 hạng 55 điểm 187 Kofo K4100DS
+
+== IB2300222010#0 cap {"value":15,"unit":"kVA"} origin all
+   dòng: 1036 → 1036
+   acepow-fuan||APF12|12|15|132|165|BC164D|128|1408|4DW8123DYFD10W
+      top#27 hạng 47 điểm 213 FAWDE 4DW8123DYFD10W
+      all hạng 48 điểm 213 FAWDE 4DW8123DYFD10W
+   acepow-fuan||APW12|3|50|12|13|15|17|BC164D|128|14|Y480BD
+      all hạng 124 điểm 181 Ricardo Y480BD
+      top#25 hạng 45 điểm 221 Ricardo Y480BD
+
+== IB2300254910#0 cap {"value":12.5,"unit":"kVA"} origin all
+   dòng: 732 → 732
+   acepow-fuan||APF12|12|15|132|165|BC164D|128|1408|4DW8123DYFD10W
+      top#28 hạng 78 điểm 193 FAWDE 4DW8123DYFD10W
+      all hạng 80 điểm 193 FAWDE 4DW8123DYFD10W
+   bobig-power||BFA17|12|15|13|17|4DW8123DYFD10W|17|BW164D|1400*610*1130|1900*850*1000
+      top#29 hạng 79 điểm 193 FAWDE 4DW8123DYFD10W
+      all hạng 81 điểm 193 FAWDE 4DW8123DYFD10W
+   acepow-fuan||APW105|3|50|105|12|13|14|BC164C|108|12|Y480BD
+      all hạng 103 điểm 177 Ricardo Y480BD
+      top#16 hạng 39 điểm 217 Ricardo Y480BD
+   acepow-fuan||APW12|3|50|12|13|15|17|BC164D|128|14|Y480BD
+      all hạng 132 điểm 161 Ricardo Y480BD
+      top#27 hạng 75 điểm 201 Ricardo Y480BD
+
+== IB2300255495#0 cap {"value":10.5,"unit":"kVA"} origin all
+   dòng: 464 → 464
+   acepow-fuan||APW105|3|50|105|12|13|14|BC164C|108|12|Y480BD
+      top#27 hạng 90 điểm 157 Ricardo Y480BD
+      top#15 hạng 54 điểm 197 Ricardo Y480BD
+
+== IB2300281362#0 cap {"value":17,"unit":"kVA"} origin all
+   dòng: 972 → 972
+   longkai-power||LG12X|17|13|15|12|4DW8123DYFD10W|OP1500*750*1030|AT2008*900*1130|
+      top#27 hạng 63 điểm 173 FAWDE 4DW8123DYFD10W
+      all hạng 66 điểm 173 FAWDE 4DW8123DYFD10W
+   eastern-lion-fuan||GF/GFSKF12|12|15|13|17|K4100DS|301|EL164D|128KW|RUIFEN6120|DETAIL
+      top#28 hạng 67 điểm 165 Kofo K4100DS
+      all hạng 71 điểm 165 Kofo K4100DS
+   eastern-lion-fuan||GF/GFSYD12|12KW|15KVA|13KW|17KVA|(YD4KD)YD485D|15KW|EL164D|128KW|RUIFEN6120|DETAI
+      top#29 hạng 70 điểm 165 Yangdong (YD4KD)YD485D
+      all hạng 74 điểm 165 Yangdong (YD4KD)YD485D
+   acepow-fuan||APW15|3|50|15|17|19|21|BC164E|15|17|K4100DS
+      all hạng 82 điểm 153 Kofo K4100DS
+      top#25 hạng 46 điểm 193 Kofo K4100DS
+   acepow-fuan||APW15|3|50|15|17|19|21|BC164E|15|17|K4102DS
+      all hạng 83 điểm 153 Kofo K4102DS
+      top#26 hạng 47 điểm 193 Kofo K4102DS
+   acepow-fuan||APW16|3|50|16|18|20|22|BC184E|18|20|K4100DS
+      all hạng 84 điểm 147 Kofo K4100DS
+      top#29 hạng 55 điểm 187 Kofo K4100DS
+
+== IB2400111737#0 cap {"value":12,"unit":"kVA"} origin all
+   dòng: 705 → 705
+   acepow-fuan||API10|10|125|11|1375|BC164C|108|1188|3TNV88GGE
+      top#24 hạng 89 điểm 217 Yanmar 3TNV88GGE
+      all hạng 89 điểm 217 Yanmar 3TNV88GGE
+   powerzoo||Y12P6|96/12|106/132|3TNV82AGGE|VIEWDETAIL»
+      all hạng 103 điểm 205 Yanmar 3TNV82AGGE
+      top#29 hạng 104 điểm 205 Yanmar 3TNV82AGGE
+   yongcai-elecmama||YCM10QC50|14|11|13|10|QUANCHAI|QC480D|12514|ELECMAMA164C|108KW
+      top#29 hạng 105 điểm 205 Quanchai QC480D
+      all hạng 106 điểm 205 Quanchai QC480D
+   acepow-fuan||APW105|3|50|105|12|13|14|BC164C|108|12|Y480BD
+      all hạng 196 điểm 173 Ricardo Y480BD
+      top#27 hạng 100 điểm 213 Ricardo Y480BD
+
+== IB2400124734#0 cap {"value":12,"unit":"kVA"} origin all
+   dòng: 705 → 705
+   kaihua-genset||KH12GF|17|15|4Z23G21|1350*600*1100|610
+      top#29 hạng 104 điểm 204 SDEC 4Z23G21
+      all hạng 105 điểm 204 SDEC 4Z23G21
+   acepow-fuan||APW105|3|50|105|12|13|14|BC164C|108|12|Y480BD
+      all hạng 149 điểm 173 Ricardo Y480BD
+      top#23 hạng 72 điểm 213 Ricardo Y480BD
+
+== IB2400182235#0 cap {"value":12.5,"unit":"kVA"} origin all
+   dòng: 667 → 667
+   victory-generator||V12T|50|10|125|11|1375|Y480BD|<=257|<=204|1350*670*1030|630|1700*900*1150|800
+      top#27 hạng 74 điểm 181 Ricardo Y480BD
+      all hạng 76 điểm 181 Ricardo Y480BD
+   acepow-fuan||APW105|3|50|105|12|13|14|BC164C|108|12|Y480BD
+      top#28 hạng 79 điểm 177 Ricardo Y480BD
+      top#13 hạng 30 điểm 217 Ricardo Y480BD
+   acepow-fuan||APW12|3|50|12|13|15|17|BC164D|128|14|Y480BD
+      all hạng 99 điểm 161 Ricardo Y480BD
+      top#22 hạng 56 điểm 201 Ricardo Y480BD
+
+== IB2400311120#0 cap {"value":12,"unit":"kVA"} origin all
+   dòng: 705 → 705
+   acepow-fuan||API10|10|125|11|1375|BC164C|108|1188|3TNV88GGE
+      top#24 hạng 89 điểm 217 Yanmar 3TNV88GGE
+      all hạng 89 điểm 217 Yanmar 3TNV88GGE
+   powerzoo||Y12P6|96/12|106/132|3TNV82AGGE|VIEWDETAIL»
+      all hạng 103 điểm 205 Yanmar 3TNV82AGGE
+      top#29 hạng 104 điểm 205 Yanmar 3TNV82AGGE
+   yongcai-elecmama||YCM10QC50|14|11|13|10|QUANCHAI|QC480D|12514|ELECMAMA164C|108KW
+      top#29 hạng 105 điểm 205 Quanchai QC480D
+      all hạng 106 điểm 205 Quanchai QC480D
+   acepow-fuan||APW105|3|50|105|12|13|14|BC164C|108|12|Y480BD
+      all hạng 196 điểm 173 Ricardo Y480BD
+      top#27 hạng 100 điểm 213 Ricardo Y480BD
+
+== IB2400339967#0 cap {"value":10,"unit":"kVA"} origin all
+   dòng: 637 → 637
+   uleengen||UY10GFS|8|10|380码|10|3|80*90|1357|19|164B|1860X850X1200|700
+      top#26 hạng 78 điểm 165 YTO 164B
+      all hạng 79 điểm 165 YTO 164B
+   acepow-fuan||APW105|3|50|105|12|13|14|BC164C|108|12|Y480BD
+      all hạng 112 điểm 151 Ricardo Y480BD
+      top#18 hạng 64 điểm 191 Ricardo Y480BD
+
+== IB2400378609#0 cap {"value":17,"unit":"kVA"} origin all
+   dòng: 972 → 972
+   longkai-power||LG12X|17|13|15|12|4DW8123DYFD10W|OP1500*750*1030|AT2008*900*1130|
+      top#27 hạng 63 điểm 173 FAWDE 4DW8123DYFD10W
+      all hạng 66 điểm 173 FAWDE 4DW8123DYFD10W
+   eastern-lion-fuan||GF/GFSKF12|12|15|13|17|K4100DS|301|EL164D|128KW|RUIFEN6120|DETAIL
+      top#28 hạng 67 điểm 165 Kofo K4100DS
+      all hạng 71 điểm 165 Kofo K4100DS
+   eastern-lion-fuan||GF/GFSYD12|12KW|15KVA|13KW|17KVA|(YD4KD)YD485D|15KW|EL164D|128KW|RUIFEN6120|DETAI
+      top#29 hạng 70 điểm 165 Yangdong (YD4KD)YD485D
+      all hạng 74 điểm 165 Yangdong (YD4KD)YD485D
+   acepow-fuan||APW15|3|50|15|17|19|21|BC164E|15|17|K4100DS
+      all hạng 82 điểm 153 Kofo K4100DS
+      top#25 hạng 46 điểm 193 Kofo K4100DS
+   acepow-fuan||APW15|3|50|15|17|19|21|BC164E|15|17|K4102DS
+      all hạng 83 điểm 153 Kofo K4102DS
+      top#26 hạng 47 điểm 193 Kofo K4102DS
+   acepow-fuan||APW16|3|50|16|18|20|22|BC184E|18|20|K4100DS
+      all hạng 84 điểm 147 Kofo K4100DS
+      top#29 hạng 55 điểm 187 Kofo K4100DS
+
+== IB2400474549#0 cap {"value":18,"unit":"kW"} origin all
+   dòng: 1924 → 1923
+   acepow-fuan||API20|20|25|22|275|BC184ES|20|22|4TNV88GTE
+      top#13 hạng 20 điểm 194 Yanmar 4TNV88GTE
+      all hạng 26 điểm 194 Yanmar 4TNV88GTE
+   acepow-fuan||APF24|24|30|264|33|BC184G|25|275|4DW9239DHMS20W
+      top#18 hạng 26 điểm 180 FAWDE 4DW9239DHMS20W
+      all hạng 34 điểm 180 FAWDE 4DW9239DHMS20W
+   acepow-fuan||APF24|24|30|264|33|BC184G|25|275|4DW9342DYFD10W
+      top#20 hạng 28 điểm 180 FAWDE 4DW9342DYFD10W
+      all hạng 36 điểm 180 FAWDE 4DW9342DYFD10W
+   acepow-fuan||APW16|3|50|16|18|20|22|BC184E|18|20|K4100DS
+      all hạng 44 điểm 165 Kofo K4100DS
+      top#9 hạng 13 điểm 205 Kofo K4100DS
+   acepow-fuan||APW18|3|50|18|20|23|25|BC184E|18|20|N4100DS26
+      all hạng 48 điểm 165 Ricardo N4100DS26
+      top#11 hạng 16 điểm 205 Ricardo N4100DS26
+   acepow-fuan||APW20|3|50|20|22|25|28|BC184ES|20|22|K4100DS
+      all hạng 60 điểm 154 Kofo K4100DS
+      top#15 hạng 20 điểm 194 Kofo K4100DS
+
+== IB2500118115#0 cap {"value":10,"unit":"kVA"} origin all
+   dòng: 587 → 587
+   mecca-power||MC14F|14|11|13|10|4DW8123D|CN|28|4|2270|M/E|1680*650*1030|508
+      top#29 hạng 96 điểm 159 FAWDE 4DW8123D
+      all hạng 97 điểm 159 FAWDE 4DW8123D
+   acepow-fuan||APW105|3|50|105|12|13|14|BC164C|108|12|Y480BD
+      all hạng 109 điểm 151 Ricardo Y480BD
+      top#18 hạng 62 điểm 191 Ricardo Y480BD
+
+== IB2500385135#0 cap {"value":10.5,"unit":"kVA"} origin all
+   dòng: 464 → 464
+   acepow-fuan||APW105|3|50|105|12|13|14|BC164C|108|12|Y480BD
+      top#23 hạng 70 điểm 157 Ricardo Y480BD
+      top#14 hạng 40 điểm 197 Ricardo Y480BD
