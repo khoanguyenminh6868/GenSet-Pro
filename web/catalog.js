@@ -542,7 +542,7 @@
     }
     return out;
   }
-  function fromLabelTable(lines0, { bareModel = false, engineModel = false } = {}) {
+  function fromLabelTable(lines0, { bareModel = false, engineModel = false, note = () => {} } = {}) {
     // "| Engine Model: | 404A-22G1 | Alternator Model: | TAL-A40-F" (acepow): two "label: | value" pairs on one line are two
     // lines; read as one, the second label and its value became more values of the first (TAL-A40-F an engine).
     const lines = unpairDetails(lines0).flatMap((l) => { const c = cellsOf(l); return l !== undefined && c.length === 4 && /[:：]$/.test(c[0]) && /[:：]$/.test(c[2]) ? [`| ${c[0]} | ${c[1]}`, `| ${c[2]} | ${c[3]}`] : [l]; });
@@ -695,7 +695,15 @@
             merge(j, order[1], { [u]: +pair[1] }); merge(j, order[2], { [u]: +pair[2] });
             return;
           }
-          if (pair) { const p = pairOf(+pair[1], +pair[2]); if (p) merge(j, kind, p); }
+          // "a/b" with no unit is a kVA / kW pair only under a label that names a rating, a unit or an output: a label
+          // that only has "power" may be a company's name on a page footer ("| GB POWER | 3/4", page 3 of 4, read as
+          // 4 kVA / 3 kW on 65 gb-power records; chat-luong-3, Khoa 18/11/2026). The unit may stand in its own cell
+          // ("| Power(ESP) | kVA/kw | 2500/2000", westinpower).
+          if (pair) {
+            const p = pairOf(+pair[1], +pair[2]);
+            if (p && !/prime|standby|rated|output|kva|\bkw|capacity|rating|功率|主用|备用|常用|额定|continuous|max/i.test(L) && !PRIME.test(L) && !STANDBY.test(L) && !c.slice(1).some((x) => /^(kva|kw)/i.test(x))) { note("cặp a/b dưới nhãn không ghi mức / đơn vị", l); return; }
+            if (p) merge(j, kind, p);
+          }
         });
       } else if (engineModel && /^(model|model\s*series|models?|型号)$/.test(bare)) vals.forEach((v, j) => isCode(v) && !badCol.has(j) && put(j, "engine", v));
       else if (/^(genset\s*)?model|机组型号|型号$/i.test(L) && !ENGINE_LBL.test(L) && !ALT_LBL.test(L)) vals.forEach((v, j) => isCode(v) && put(j, "genset", v));
@@ -961,7 +969,7 @@
         // supermaly): each "Genset Model" line starts a genset of its own.
         const starts = t.header?.length ? [] : t.rows.map((r, i) => (/^\|?\s*genset\s*model\s*[:：]/i.test(r) ? i : -1)).filter((i) => i >= 0);
         const blocks = starts.length >= 2 ? starts.map((i, k) => t.rows.slice(i, starts[k + 1] ?? t.rows.length)) : [[...(t.header || []), ...t.rows]];
-        for (const block of blocks) for (const c of fromLabelTable(block, { bareModel: blocks.length > 1, engineModel: s.role === "engine_maker" && !block.some((l) => /^(engine|alternator|发动机|柴油机|发电机)\s*(model|type|ref\.?|型号)|^power\s*model|动力型号|^(diesel\s*)?engine$|^(发动机|柴油机)$|^(generator|alternator)$|power factor|excitation|voltage regulat|发电机/i.test(cellsOf(l)[0] || "")) })) {
+        for (const block of blocks) for (const c of fromLabelTable(block, { note: (reason, detail) => note(t, ti, null, reason, detail), bareModel: blocks.length > 1, engineModel: s.role === "engine_maker" && !block.some((l) => /^(engine|alternator|发动机|柴油机|发电机)\s*(model|type|ref\.?|型号)|^power\s*model|动力型号|^(diesel\s*)?engine$|^(发动机|柴油机)$|^(generator|alternator)$|power factor|excitation|voltage regulat|发电机/i.test(cellsOf(l)[0] || "")) })) {
           const power = c.prime || c.standby || c.rated ? { ...(c.prime ? { prime: c.prime } : {}), ...(c.standby ? { standby: c.standby } : {}), ...(c.rated ? { rated: c.rated } : {}) } : null;
           const rowText = [c.genset, c.engine, c.alternator].filter(Boolean).join(" ");
           c.specs = saneSpecs(c.specs, power, (x) => note(t, ti, null, "số vô lý so với công suất", `${x.key}=${x.value}`));
