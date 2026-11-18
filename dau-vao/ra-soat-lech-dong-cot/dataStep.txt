@@ -1,0 +1,416 @@
+Bước dữ liệu O → X, 1.093 lượt: top giống hệt 921; chỉ đổi thứ tự 102; đổi tập 70 (ra 80, vào 81)
+all: giảm 804, tăng 21, giữ 268 lượt; phân bố chênh: {"0":268,"1":12,"2":9,"-5":47,"-10":51,"-11":40,"-1":99,"-8":52,"-15":22,"-9":102,"-2":52,"-7":64,"-3":79,"-6":33,"-14":27,"-4":31,"-16":7,"-26":2,"-12":14,"-24":1,"-19":19,"-21":10,"-22":2,"-13":13,"-20":6,"-25":2,"-18":6,"-27":1,"-23":10,"-17":12}
+   40  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu)
+   40  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id)
+   72  thứ tự: KHÔNG có dòng NCC đổi dữ liệu
+   30  thứ tự: có dòng của NCC đổi dữ liệu trong nhóm đổi chỗ
+   12  vào: dòng NCC khác (lấp chỗ)
+   14  vào: dòng của NCC đổi dữ liệu (denyo)
+   14  vào: dòng của NCC đổi dữ liệu (xingguang-jiangsu)
+    1  vào: dòng của NCC đổi dữ liệu (yanmar)
+   40  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id)
+
+Đổi thứ tự:
+IB2200006257#1: 10 vị trí; NCC đổi chỗ: longkai-power, tesla-fujian, victory-generator, agg-fuzhou, mecca-power, xingguang-jiangsu, cameo-power, xinzhengfa, kangwo-guangdong
+IB2200012797#0: 7 vị trí; NCC đổi chỗ: longkai-power, tesla-fujian, victory-generator, agg-fuzhou, mecca-power, xingguang-jiangsu
+IB2200016199#0: 6 vị trí; NCC đổi chỗ: longkai-power, tesla-fujian, victory-generator, agg-fuzhou, mecca-power, xingguang-jiangsu
+IB2200029921#0: 16 vị trí; NCC đổi chỗ: victory-generator, gordon-power, elitech-power, voltgent, westinpower, ettes-power, superwatt-power, sr-genset, xingguang-jiangsu, mecca-power, xinhengxin-fujian, long-gen, cameo-power
+IB2200029952#0: 10 vị trí; NCC đổi chỗ: uleengen, victory-generator, elitech-power, jet-power, mecca-power, acepow-fuan, agestar, landtop-fuzhou, xingguang-jiangsu
+IB2200029975#0: 4 vị trí; NCC đổi chỗ: sanq-power, acepow-fuan, fdk-energy, uleengen
+IB2200035219#0: 14 vị trí; NCC đổi chỗ: ade-power, powerzoo, elitech-power, xingguang-jiangsu, zc-power, cgm-italia, aj-power, kangwo-guangdong, xinzhengfa, zhengdian-zhengzhou, cameo-power, lees-power
+IB2200039869#0: 22 vị trí; NCC đổi chỗ: tecgen-fujian, wintpower, sanq-power, acepow-fuan, rise-power, jet-power, yongcai-elecmama, elitech-power, comappower, victory-generator, kaihua-genset
+IB2200052056#0: 8 vị trí; NCC đổi chỗ: longkai-power, tesla-fujian, ade-power, victory-generator, agg-fuzhou, mecca-power, xingguang-jiangsu
+IB2200062524#0: 4 vị trí; NCC đổi chỗ: cameo-power, lees-power
+IB2200066148#1: 6 vị trí; NCC đổi chỗ: longkai-power, tesla-fujian, victory-generator, agg-fuzhou, mecca-power, xingguang-jiangsu
+IB2200087789#2: 2 vị trí; NCC đổi chỗ: eastern-lion-fuan, jet-power
+IB2200094981#0: 2 vị trí; NCC đổi chỗ: jet-power, gb-power
+IB2200098082#0: 2 vị trí; NCC đổi chỗ: eastern-lion-fuan, jet-power
+IB2300046166#3: 2 vị trí; NCC đổi chỗ: jet-power, gb-power
+IB2300046353#1: 4 vị trí; NCC đổi chỗ: sanq-power, acepow-fuan, fdk-energy, uleengen
+IB2300057123#0: 2 vị trí; NCC đổi chỗ: fdk-energy, jet-power
+IB2300065474#0: 12 vị trí; NCC đổi chỗ: victory-generator, powerzoo, gordon-power, voltgent, westinpower, ettes-power, superwatt-power, sr-genset, xingguang-jiangsu
+IB2300102941#1: 4 vị trí; NCC đổi chỗ: sanq-power, acepow-fuan, fdk-energy, uleengen
+IB2300130364#0: 7 vị trí; NCC đổi chỗ: longkai-power, tesla-fujian, victory-generator, agg-fuzhou, mecca-power, xingguang-jiangsu
+IB2300131371#0: 20 vị trí; NCC đổi chỗ: tecgen-fujian, longkai-power, jet-power, uleengen, fdk-energy, sanq-power, wintpower, acepow-fuan, huaquan-power, eastern-lion-fuan, yongcai-elecmama
+IB2300133361#0: 7 vị trí; NCC đổi chỗ: longkai-power, tesla-fujian, ade-power, victory-generator, agg-fuzhou, mecca-power, xingguang-jiangsu
+IB2300139646#0: 4 vị trí; NCC đổi chỗ: sanq-power, acepow-fuan, fdk-energy, uleengen
+IB2300158312#1: 2 vị trí; NCC đổi chỗ: fdk-energy, longkai-power
+IB2300163844#0: 21 vị trí; NCC đổi chỗ: tecgen-fujian, sanq-power, wintpower, rise-power, jet-power, elitech-power, yongcai-elecmama, comappower, victory-generator, kaihua-genset
+IB2300178837#0: 10 vị trí; NCC đổi chỗ: uleengen, sr-genset, victory-generator, elitech-power, jet-power, mecca-power, acepow-fuan, agestar, landtop-fuzhou, xingguang-jiangsu
+IB2300204696#0: 9 vị trí; NCC đổi chỗ: sr-genset, vantek-jiangsu, naipute-weifang, kangwo-guangdong, taihai-taizhou, jlmech-wuhan, simpson-power, xingguang-jiangsu
+IB2300205363#0: 2 vị trí; NCC đổi chỗ: sanq-power, stone-power
+IB2300212821#0: 7 vị trí; NCC đổi chỗ: longkai-power, tesla-fujian, victory-generator, agg-fuzhou, mecca-power, xingguang-jiangsu
+IB2300231276#0: 2 vị trí; NCC đổi chỗ: fdk-energy, longkai-power
+IB2300234954#0: 2 vị trí; NCC đổi chỗ: fdk-energy, jet-power
+IB2300237033#0: 2 vị trí; NCC đổi chỗ: eastern-lion-fuan, jet-power
+IB2300244692#0: 4 vị trí; NCC đổi chỗ: sanq-power, acepow-fuan, fdk-energy, uleengen
+IB2300248981#0: 2 vị trí; NCC đổi chỗ: dingbo, stone-power
+IB2300249535#0: 7 vị trí; NCC đổi chỗ: longkai-power, tesla-fujian, victory-generator, agg-fuzhou, mecca-power, xingguang-jiangsu
+IB2300263757#0: 4 vị trí; NCC đổi chỗ: sanq-power, acepow-fuan, fdk-energy, uleengen
+IB2300273061#1: 2 vị trí; NCC đổi chỗ: fdk-energy, jet-power
+IB2300274793#1: 2 vị trí; NCC đổi chỗ: eastern-lion-fuan, jet-power
+IB2300288169#0: 2 vị trí; NCC đổi chỗ: eastern-lion-fuan, jet-power
+IB2300305914#0: 7 vị trí; NCC đổi chỗ: uleengen, agestar, mecca-power, zc-power, xingguang-jiangsu
+IB2300335322#0: 2 vị trí; NCC đổi chỗ: eastern-lion-fuan, jet-power
+IB2300340070#0: 21 vị trí; NCC đổi chỗ: tecgen-fujian, acepow-fuan, sanq-power, fdk-energy, wintpower, penlucky, huaquan-power, jet-power, elitech-power, gordon-power, yongcai-elecmama
+IB2300370623#0: 20 vị trí; NCC đổi chỗ: tecgen-fujian, wintpower, jet-power, uleengen, acepow-fuan, fdk-energy, stone-power, huaquan-power, sunny-weifang
+IB2300372629#0: 4 vị trí; NCC đổi chỗ: sanq-power, acepow-fuan, fdk-energy, uleengen
+IB2400023840#0: 4 vị trí; NCC đổi chỗ: sanq-power, acepow-fuan, fdk-energy, uleengen
+IB2400041536#0: 2 vị trí; NCC đổi chỗ: sanq-power, stone-power
+IB2400064139#0: 4 vị trí; NCC đổi chỗ: sanq-power, acepow-fuan, fdk-energy, uleengen
+IB2400085846#0: 4 vị trí; NCC đổi chỗ: bobig-power, dingbo, eastern-lion-fuan
+IB2400152304#0: 4 vị trí; NCC đổi chỗ: sanq-power, acepow-fuan, fdk-energy, uleengen
+IB2400159665#0: 17 vị trí; NCC đổi chỗ: victory-generator, sr-genset, xingguang-jiangsu, mecca-power, suneco-linyi, excel-power-ningde, yanan-power, cameo-power, kangwo-guangdong, kigerpower, zhengdian-zhengzhou, lees-power
+IB2400183966#0: 7 vị trí; NCC đổi chỗ: victory-generator, longkai-power, tesla-fujian, agg-fuzhou, mecca-power, xingguang-jiangsu
+IB2400186078#0: 6 vị trí; NCC đổi chỗ: elitech-power, ade-power, comappower, powerzoo, tesla-fujian, xingguang-jiangsu
+IB2400215103#0: 6 vị trí; NCC đổi chỗ: longkai-power, tesla-fujian, victory-generator, agg-fuzhou, mecca-power, xingguang-jiangsu
+IB2400237184#1: 2 vị trí; NCC đổi chỗ: dingbo, jet-power
+IB2400257900#0: 2 vị trí; NCC đổi chỗ: fdk-energy, longkai-power
+IB2400258097#0: 2 vị trí; NCC đổi chỗ: acepow-fuan, bobig-power
+IB2400282042#0: 11 vị trí; NCC đổi chỗ: victory-generator, powerzoo, gordon-power, voltgent, westinpower, superwatt-power, sr-genset, xingguang-jiangsu
+IB2400375383#0: 2 vị trí; NCC đổi chỗ: jet-power, uleengen
+IB2400377239#0: 2 vị trí; NCC đổi chỗ: eastern-lion-fuan, jet-power
+IB2400384429#0: 9 vị trí; NCC đổi chỗ: victory-generator, tesla-fujian, xingguang-jiangsu, cameo-power, zhengdian-zhengzhou, lees-power
+IB2400410218#0: 16 vị trí; NCC đổi chỗ: victory-generator, gordon-power, elitech-power, voltgent, westinpower, ettes-power, superwatt-power, sr-genset, xingguang-jiangsu, mecca-power, xinhengxin-fujian, long-gen, cameo-power
+IB2400425513#0: 10 vị trí; NCC đổi chỗ: tecgen-fujian, wintpower, acepow-fuan, jet-power, uleengen, longkai-power
+IB2400427929#1: 3 vị trí; NCC đổi chỗ: sanq-power, fdk-energy, uleengen
+IB2400433961#1: 2 vị trí; NCC đổi chỗ: bobig-power
+IB2400440704#0: 7 vị trí; NCC đổi chỗ: longkai-power, tesla-fujian, victory-generator, agg-fuzhou, mecca-power, xingguang-jiangsu
+IB2400442989#0: 11 vị trí; NCC đổi chỗ: tecgen-fujian, longkai-power, wintpower, acepow-fuan, jet-power, uleengen
+IB2400448320#0: 2 vị trí; NCC đổi chỗ: jet-power, uleengen
+IB2400475109#0: 13 vị trí; NCC đổi chỗ: agg-power, tecnogen, cgm-italia, lepron, aj-power
+IB2400475145#0: 22 vị trí; NCC đổi chỗ: tecgen-fujian, wintpower, sanq-power, acepow-fuan, rise-power, jet-power, yongcai-elecmama, elitech-power, victory-generator, comappower, kaihua-genset
+IB2400494037#0: 13 vị trí; NCC đổi chỗ: denyo, genmac, jcb-power, tecnogen, sanyu-kogyo, cgm-italia, mase-generators, aj-power
+IB2400495696#0: 11 vị trí; NCC đổi chỗ: tecgen-fujian, wintpower, jet-power, uleengen, sr-genset, rcg-power
+IB2400497000#1: 4 vị trí; NCC đổi chỗ: sanq-power, acepow-fuan, fdk-energy, uleengen
+IB2400517601#0: 8 vị trí; NCC đổi chỗ: agg-power, cgm-italia, john-deere-power, saudi-diesel, aj-power
+IB2400589278#1: 2 vị trí; NCC đổi chỗ: eastern-lion-fuan, jet-power
+IB2400607862#0: 10 vị trí; NCC đổi chỗ: tecgen-fujian, wintpower, acepow-fuan, jet-power, uleengen, longkai-power
+IB2400617546#0: 8 vị trí; NCC đổi chỗ: agg-power, cgm-italia, john-deere-power, saudi-diesel, aj-power
+IB2500068327#0: 2 vị trí; NCC đổi chỗ: fdk-energy, dingbo
+IB2500092506#0: 15 vị trí; NCC đổi chỗ: agg-power, tecnogen, cgm-italia, fg-wilson, aj-power
+IB2500144659#0: 4 vị trí; NCC đổi chỗ: cameo-power, lees-power
+IB2500312373#0: 4 vị trí; NCC đổi chỗ: sanq-power, acepow-fuan, fdk-energy, uleengen
+IB2500360231#0: 17 vị trí; NCC đổi chỗ: agg-power, tecnogen, cgm-italia, aj-power, fg-wilson
+IB2500360458#0: 12 vị trí; NCC đổi chỗ: agg-power, tecnogen, genmac, cgm-italia, elcos, saudi-diesel
+IB2500386288#1: 2 vị trí; NCC đổi chỗ: fdk-energy, longkai-power
+IB2500403535#0: 22 vị trí; NCC đổi chỗ: tecgen-fujian, wintpower, sanq-power, acepow-fuan, rise-power, jet-power, yongcai-elecmama, elitech-power, victory-generator, comappower, kaihua-genset
+IB2500410768#0: 18 vị trí; NCC đổi chỗ: tecgen-fujian, longkai-power, wintpower, jet-power, uleengen, fdk-energy, acepow-fuan, huaquan-power, sunny-weifang
+IB2500447006#0: 16 vị trí; NCC đổi chỗ: denyo, tecnogen, cgm-italia, coelmo, sanyu-kogyo, lister-petter, mase-generators, aj-power
+IB2500448140#0: 2 vị trí; NCC đổi chỗ: sanq-power, stone-power
+IB2500460613#0: 2 vị trí; NCC đổi chỗ: genmac, denyo
+IB2500514971#0: 16 vị trí; NCC đổi chỗ: denyo, tecnogen, cgm-italia, coelmo, sanyu-kogyo, lister-petter, mase-generators, aj-power
+IB2600064877#0: 4 vị trí; NCC đổi chỗ: sanq-power, acepow-fuan, fdk-energy, uleengen
+IB2600098464#0: 2 vị trí; NCC đổi chỗ: sanq-power, stone-power
+IB2600107089#0: 2 vị trí; NCC đổi chỗ: fdk-energy, dingbo
+IB2600219527#1: 5 vị trí; NCC đổi chỗ: mecca-power, voltgent, rcg-power, depco-power, xingguang-jiangsu
+IB2600278676#0: 9 vị trí; NCC đổi chỗ: agg-power, cgm-italia, tecnogen, john-deere-power
+IB2600313010#0: 2 vị trí; NCC đổi chỗ: fdk-energy, longkai-power
+IB2600350338#0: 16 vị trí; NCC đổi chỗ: denyo, genmac, jcb-power, tecnogen, cgm-italia, genesal-energy, mase-generators, aj-power
+IB2600365013#0: 2 vị trí; NCC đổi chỗ: fdk-energy, longkai-power
+IB2600472762#0: 8 vị trí; NCC đổi chỗ: agg-power, coelmo, aj-power, cgm-italia
+IB2600478079#0: 2 vị trí; NCC đổi chỗ: eastern-lion-fuan, jet-power
+IB2600511162#0: 2 vị trí; NCC đổi chỗ: bobig-power
+IB2600549116#0: 2 vị trí; NCC đổi chỗ: fdk-energy, jet-power
+IB2600552343#0: 2 vị trí; NCC đổi chỗ: eastern-lion-fuan, jet-power
+
+== IB2200005266#0 (ra 1, vào 1; all 109 → 101)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): landtop-fuzhou||LTP14R|14|11|13|10|MECHANICAL|ZH490D|LTP164S10
+  vào: dòng của NCC đổi dữ liệu (xingguang-jiangsu): xingguang-jiangsu||XG10GF|10/125|ZS1100|STC10|1140×780×995|480
+
+== IB2200049404#0 (ra 1, vào 1; all 2709 → 2683)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): eastern-lion-fuan||GF/GFSYC320|320|400|356|444|YC6K520D30|356|EL314G|320|SMARTGEN6120|DETAIL
+  vào: dòng NCC khác (lấp chỗ): bobig-power||BWC413|300|375|330|413|WP13D405E200|368|BW314F|3100*1050*2150|4200*1600*2250
+
+== IB2200083564#0 (ra 1, vào 1; all 187 → 187)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG10S|95|86|STARLIGHT|YD385D|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG10S|95|86|STARLIGHT|YD385D|PDF
+
+== IB2200086314#0 (ra 1, vào 1; all 215 → 208)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG12S|123|112|STARLIGHT|YD480D|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG12S|123|112|STARLIGHT|YD480D|PDF
+
+== IB2300025731#0 (ra 2, vào 2; all 1601 → 1590)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG455S36|455|415|VOLVO|TAD1354GE|PDF
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG455S36|455|415|VOLVO|TAD1343GE|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG455S36|455|415|VOLVO|TAD1354GE|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG455S36|455|415|VOLVO|TAD1343GE|PDF
+
+== IB2300046166#1 (ra 1, vào 1; all 2709 → 2689)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): eastern-lion-fuan||GF/GFSYC320|320|400|356|444|YC6K520D30|356|EL314G|320|SMARTGEN6120|DETAIL
+  vào: dòng NCC khác (lấp chỗ): bobig-power||BWC413|300|375|330|413|WP13D405E200|368|BW314F|3100*1050*2150|4200*1600*2250
+
+== IB2300054067#0 (ra 1, vào 1; all 158 → 152)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG12S|123|112|STARLIGHT|YD480D|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG12S|123|112|STARLIGHT|YD480D|PDF
+
+== IB2300054246#0 (ra 1, vào 1; all 3117 → 3097)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): eastern-lion-fuan||GF/GFSYC320|320|400|356|444|YC6K520D30|356|EL314G|320|SMARTGEN6120|DETAIL
+  vào: dòng NCC khác (lấp chỗ): bobig-power||BWC413|300|375|330|413|WP13D405E200|368|BW314F|3100*1050*2150|4200*1600*2250
+
+== IB2300087393#0 (ra 1, vào 1; all 2085 → 2067)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): eastern-lion-fuan||GF/GFSYC320|320|400|356|444|YC6K520D30|356|EL314G|320|SMARTGEN6120|DETAIL
+  vào: dòng NCC khác (lấp chỗ): bobig-power||BWC413|300|375|330|413|WP13D405E200|368|BW314F|3100*1050*2150|4200*1600*2250
+
+== IB2300111427#1 (ra 1, vào 1; all 270 → 270)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): landtop-fuzhou||LTP10Q|10|8|9|7|QC380D|LTP164S7
+  vào: dòng của NCC đổi dữ liệu (xingguang-jiangsu): xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480
+
+== IB2300119452#0 (ra 1, vào 1; all 461 → 457)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG2500S36|2500|2281|CUMMINS|QSK60G7|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG2500S36|2500|2281|CUMMINS|QSK60G7|PDF
+
+== IB2300217401#0 (ra 1, vào 1; all 225 → 224)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG15S|15|136|STARLIGHT|YND485D|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG15S|15|136|STARLIGHT|YND485D|PDF
+
+== IB2300233670#0 (ra 1, vào 1; all 78 → 78)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG2550S36|2550|2315|MTU|16V4000G14S|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG2550S36|2550|2315|MTU|16V4000G14S|PDF
+
+== IB2300252125#0 (ra 1, vào 1; all 294 → 290)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): wintpower||WTYTO438|350/438|320/400|YM6S9L15|YM6S9LFD119AEFU2|WT314G320
+  vào: dòng của NCC đổi dữ liệu (xingguang-jiangsu): xingguang-jiangsu||XG385GF|350/438|385/481|BF8M1015CG1A|8|28|200|国II|3200×1690×1950|3500
+
+== IB2300255495#0 (ra 1, vào 1; all 225 → 224)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG15S|15|136|STARLIGHT|YND485D|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG15S|15|136|STARLIGHT|YND485D|PDF
+
+== IB2300269124#0 (ra 1, vào 1; all 750 → 746)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): agestar||GS880(S)|880|704|800|640|SC27G990D2|1764|ELECTRICAL|ASG634G|6000*2400*2500|5500
+  vào: dòng của NCC đổi dữ liệu (xingguang-jiangsu): xingguang-jiangsu||XG700GF|700/875|Z12V190B|TZHW或TFW|5775×2040×2679|13500
+
+== IB2300290906#0 (ra 1, vào 1; all 174 → 174)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): fukangsi-yangzhou||FKS64GF|64|80|1152|D1146|6|111*139|8071|222|2200×800×1500|1100
+  vào: dòng của NCC đổi dữ liệu (xingguang-jiangsu): xingguang-jiangsu||XG70GF|64/80|D1146|70/88|6|175|200|国II|2500×850×1450|980
+
+== IB2300293341#0 (ra 1, vào 1; all 1964 → 1955)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG200S3E|200|180|PERKINS|1106DE70TAG4|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG200S3E|200|180|PERKINS|1106DE70TAG4|PDF
+
+== IB2300305484#0 (ra 1, vào 1; all 2400 → 2377)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): eastern-lion-fuan||GF/GFSYC320|320|400|356|444|YC6K520D30|356|EL314G|320|SMARTGEN6120|DETAIL
+  vào: dòng NCC khác (lấp chỗ): bobig-power||BWC413|300|375|330|413|WP13D405E200|368|BW314F|3100*1050*2150|4200*1600*2250
+
+== IB2300320688#0 (ra 1, vào 1; all 50 → 50)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG8S|79|72|STARLIGHT|YD380D|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG8S|79|72|STARLIGHT|YD380D|PDF
+
+== IB2300320688#1 (ra 1, vào 1; all 184 → 184)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG10S|95|86|STARLIGHT|YD385D|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG10S|95|86|STARLIGHT|YD385D|PDF
+
+== IB2300325153#0 (ra 1, vào 1; all 158 → 152)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG12S|123|112|STARLIGHT|YD480D|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG12S|123|112|STARLIGHT|YD480D|PDF
+
+== IB2300329776#0 (ra 2, vào 2; all 159 → 161)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG12S|123|112|STARLIGHT|YD480D|PDF
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): elitech-power||EPS11QCA3|QUANCHAI|11KVA|12KVA|QC385D|50HZ|3PHASE|DOWNLOADPDF|EPS11QCA3QUANCHAI11KVAD
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG12S|123|112|STARLIGHT|YD480D|PDF
+  vào: dòng của NCC đổi dữ liệu (xingguang-jiangsu): xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480
+
+== IB2300337008#0 (ra 1, vào 1; all 44 → 44)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG8S|79|72|STARLIGHT|YD380D|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG8S|79|72|STARLIGHT|YD380D|PDF
+
+== IB2300337008#1 (ra 1, vào 1; all 192 → 192)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG10S|95|86|STARLIGHT|YD385D|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG10S|95|86|STARLIGHT|YD385D|PDF
+
+== IB2300340114#0 (ra 1, vào 1; all 338 → 337)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): elitech-power||EPS70YCA3|YUCHAI|70KVA|80KVA|YC4A100ZD20|50HZ|3PHASE|DOWNLOADPDF|EPS70YCA3YUCHAI70KVA
+  vào: dòng của NCC đổi dữ liệu (xingguang-jiangsu): xingguang-jiangsu||XG50GF|50/625|4105ZD|STC50|1800×700×1500|1000
+
+== IB2300363623#0 (ra 1, vào 1; all 172 → 172)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): comappower||COM9K|9KVA|74KW|84KVA|67KW|D1105E2BG|3|COM9K
+  vào: dòng của NCC đổi dữ liệu (xingguang-jiangsu): xingguang-jiangsu||XG5GF|5/625|ZS195|STC5|1140×780×995|480
+
+== IB2300374375#0 (ra 1, vào 1; all 197 → 190)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG12S|123|112|STARLIGHT|YD480D|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG12S|123|112|STARLIGHT|YD480D|PDF
+
+== IB2300386535#0 (ra 1, vào 1; all 52 → 52)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG8S|79|72|STARLIGHT|YD380D|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG8S|79|72|STARLIGHT|YD380D|PDF
+
+== IB2400011202#0 (ra 1, vào 1; all 1057 → 1052)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG66S3|66|60|CUMMINS|4BTA39G2(M)|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG66S3|66|60|CUMMINS|4BTA39G2(M)|PDF
+
+== IB2400026437#0 (ra 1, vào 1; all 2051 → 2036)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): fdk-energy||Y413V1H1CONTACT|413KVA/330KW|375KVA/300KW|YC6K500D31|YUCHAI(CHINA)|NIANFENGNF314G|CLICKH
+  vào: dòng NCC khác (lấp chỗ): fdk-energy||Y413V3H1CONTACT|413KVA/330KW|375KVA/300KW|YC6MJ500LD21|YUCHAI(CHINA)|NIANFENGNF314G|CLIC
+
+== IB2400040566#0 (ra 1, vào 1; all 146 → 145)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): minsun-motor||GFY15|15|12|YD485D|SYA164D
+  vào: dòng của NCC đổi dữ liệu (xingguang-jiangsu): xingguang-jiangsu||XG10GF|10/125|ZS1100|STC10|1140×780×995|480
+
+== IB2400063033#0 (ra 1, vào 1; all 349 → 351)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): denyo|(KVA)STANDBY1113713816522275222752227522275
+  vào: dòng của NCC đổi dữ liệu (denyo): denyo|88/110KVA
+
+== IB2400099464#0 (ra 1, vào 1; all 184 → 181)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG10S|95|86|STARLIGHT|YD385D|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG10S|95|86|STARLIGHT|YD385D|PDF
+
+== IB2400100405#0 (ra 1, vào 1; all 109 → 109)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG2500S3|2500|2000|CUMMINS|QSK60G8|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG2500S3|2500|2000|CUMMINS|QSK60G8|PDF
+
+== IB2400127023#0 (ra 1, vào 1; all 28 → 29)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): denyo|(KVA)STANDBY1113713816522275222752227522275
+  vào: dòng của NCC đổi dữ liệu (denyo): denyo|88/110KVA
+
+== IB2400133990#0 (ra 1, vào 1; all 1037 → 1034)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG49S36|487|443|STARLIGHT|Y4105D|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG49S36|487|443|STARLIGHT|Y4105D|PDF
+
+== IB2400145438#0 (ra 1, vào 1; all 187 → 187)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG10S|95|86|STARLIGHT|YD385D|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG10S|95|86|STARLIGHT|YD385D|PDF
+
+== IB2400153322#0 (ra 1, vào 1; all 349 → 351)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): denyo|(KVA)STANDBY1113713816522275222752227522275
+  vào: dòng của NCC đổi dữ liệu (denyo): denyo|88/110KVA
+
+== IB2400185291#0 (ra 1, vào 1; all 2400 → 2377)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): eastern-lion-fuan||GF/GFSYC320|320|400|356|444|YC6K520D30|356|EL314G|320|SMARTGEN6120|DETAIL
+  vào: dòng NCC khác (lấp chỗ): bobig-power||BWC413|300|375|330|413|WP13D405E200|368|BW314F|3100*1050*2150|4200*1600*2250
+
+== IB2400210643#0 (ra 1, vào 1; all 3117 → 3097)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): eastern-lion-fuan||GF/GFSYC320|320|400|356|444|YC6K520D30|356|EL314G|320|SMARTGEN6120|DETAIL
+  vào: dòng NCC khác (lấp chỗ): bobig-power||BWC413|300|375|330|413|WP13D405E200|368|BW314F|3100*1050*2150|4200*1600*2250
+
+== IB2400267274#0 (ra 1, vào 1; all 641 → 639)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG49S36|487|443|STARLIGHT|Y4105D|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG49S36|487|443|STARLIGHT|Y4105D|PDF
+
+== IB2400315025#0 (ra 1, vào 1; all 187 → 187)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG10S|95|86|STARLIGHT|YD385D|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG10S|95|86|STARLIGHT|YD385D|PDF
+
+== IB2400317224#0 (ra 1, vào 1; all 19 → 20)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): denyo|(KVA)STANDBY1113713816522275222752227522275
+  vào: dòng của NCC đổi dữ liệu (denyo): denyo|88/110KVA
+
+== IB2400333932#0 (ra 1, vào 1; all 530 → 526)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG2500S36|2500|2281|CUMMINS|QSK60G7|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG2500S36|2500|2281|CUMMINS|QSK60G7|PDF
+
+== IB2400339967#0 (ra 1, vào 1; all 297 → 289)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): sr-genset||121|99|11|9|403D11GCOMMODITY|MECH|S0L1H1|TALA40C|SA164106|1400*690*1000|1860*810*1152
+  vào: dòng của NCC đổi dữ liệu (yanmar): yanmar||GENERATORSET|CAPACITY|[KVA]|5|65|10|65|9|125|15
+
+== IB2400355977#0 (ra 2, vào 2; all 210 → 208)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG10S|95|86|STARLIGHT|YD385D|PDF
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): voltgent||VYM85S5|8|6|6|5|YANMAR|3TNM74FNGGE|[EN][RU][ES][PT]
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG10S|95|86|STARLIGHT|YD385D|PDF
+  vào: dòng của NCC đổi dữ liệu (denyo): denyo|88/110KVA
+
+== IB2400365165#0 (ra 0, vào 1; all 20 → 21)
+  vào: dòng của NCC đổi dữ liệu (denyo): denyo|88/110KVA
+
+== IB2400391446#0 (ra 1, vào 1; all 82 → 82)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG4000S36|4000|3465|MTU|20V4000G83LS|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG4000S36|4000|3465|MTU|20V4000G83LS|PDF
+
+== IB2400426562#0 (ra 2, vào 2; all 195 → 193)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG10S|95|86|STARLIGHT|YD385D|PDF
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): ade-power||STANDBYPOWER(ESP)RATING|8KVA/64KW|PRIMEPOWER(PRP)RATING|7KVA/56KW|ENGINE|BAUDOUIN4M06G2D0
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG10S|95|86|STARLIGHT|YD385D|PDF
+  vào: dòng của NCC đổi dữ liệu (denyo): denyo|88/110KVA
+
+== IB2400429380#0 (ra 1, vào 1; all 2628 → 2608)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): eastern-lion-fuan||GF/GFSYC320|320|400|356|444|YC6K520D30|356|EL314G|320|SMARTGEN6120|DETAIL
+  vào: dòng NCC khác (lấp chỗ): bobig-power||BWC413|300|375|330|413|WP13D405E200|368|BW314F|3100*1050*2150|4200*1600*2250
+
+== IB2400453417#0 (ra 1, vào 1; all 80 → 80)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG10S|95|86|STARLIGHT|YD385D|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG10S|95|86|STARLIGHT|YD385D|PDF
+
+== IB2400481610#0 (ra 2, vào 2; all 138 → 131)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG12S|123|112|STARLIGHT|YD480D|PDF
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): landtop-fuzhou||LTP11Q|11|9|10|8|QC385D|LTP164S8
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG12S|123|112|STARLIGHT|YD480D|PDF
+  vào: dòng của NCC đổi dữ liệu (xingguang-jiangsu): xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480
+
+== IB2400487645#0 (ra 1, vào 1; all 370 → 372)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): denyo|(KVA)STANDBY1113713816522275222752227522275
+  vào: dòng của NCC đổi dữ liệu (denyo): denyo|88/110KVA
+
+== IB2400514548#0 (ra 2, vào 2; all 69 → 69)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG8S|79|72|STARLIGHT|YD380D|PDF
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG8S|79|72|STARLIGHT|YD380D|PDF
+  vào: dòng của NCC đổi dữ liệu (xingguang-jiangsu): xingguang-jiangsu||XG8GF|7/8|403D11G|10/11|3|50|≤245|国II|1100×550×890|360
+
+== IB2400514548#1 (ra 1, vào 1; all 187 → 187)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG10S|95|86|STARLIGHT|YD385D|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG10S|95|86|STARLIGHT|YD385D|PDF
+
+== IB2500067556#0 (ra 2, vào 2; all 69 → 69)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG8S|79|72|STARLIGHT|YD380D|PDF
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): mecca-power||MC8D|8|6|7|54|SP103NA|KOREA|240|3L|10|E|1090*500*1000|353
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG8S|79|72|STARLIGHT|YD380D|PDF
+  vào: dòng của NCC đổi dữ liệu (xingguang-jiangsu): xingguang-jiangsu||XG8GF|7/8|403D11G|10/11|3|50|≤245|国II|1100×550×890|360
+
+== IB2500102600#0 (ra 3, vào 3; all 889 → 886)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG2500S36|2500|2281|CUMMINS|QSK60G7|PDF
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG3000S3|3000|2750|CUMMINS|QSK78G9|PDF
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG3125S36|3125|2920|CUMMINS|QSK78G8|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG2500S36|2500|2281|CUMMINS|QSK60G7|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG3000S3|3000|2750|CUMMINS|QSK78G9|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG3125S36|3125|2920|CUMMINS|QSK78G8|PDF
+
+== IB2500118115#0 (ra 2, vào 2; all 267 → 259)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): elitech-power||EPS125KFA3|KOFO|125KVA|14KVA|4YT2320D|50HZ|3PHASE|DOWNLOADPDF|EPS125KFA3KOFO125KVADIE
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): victory-generator||GENERATOR|MODEL:|VDG12|VDG123|FREQUENCY(HZ)|50|50|RATEDACOUTPUT(KVA)|100|125|MAXA
+  vào: dòng NCC khác (lấp chỗ): elitech-power||EPS125BDA3|BAUDOUIN|125KVA|15KVA|4M06G20/5|50HZ|3PHASE|DOWNLOADPDF|EPS125BDA3BAUDOUIN
+  vào: dòng của NCC đổi dữ liệu (xingguang-jiangsu): xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480
+
+== IB2500152724#1 (ra 1, vào 1; all 270 → 270)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): landtop-fuzhou||LTP10Q|10|8|9|7|QC380D|LTP164S7
+  vào: dòng của NCC đổi dữ liệu (xingguang-jiangsu): xingguang-jiangsu||XG8GF|8/10|ZS195|STC8|1140×780×995|480
+
+== IB2500268545#0 (ra 1, vào 1; all 165 → 165)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG700S36|700|630|DOOSAN|DP180LA|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG700S36|700|630|DOOSAN|DP180LA|PDF
+
+== IB2500314001#0 (ra 1, vào 1; all 18 → 19)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): denyo|(KVA)STANDBY1113713816522275222752227522275
+  vào: dòng của NCC đổi dữ liệu (denyo): denyo|88/110KVA
+
+== IB2500376934#0 (ra 1, vào 1; all 28 → 29)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): denyo|(KVA)STANDBY1113713816522275222752227522275
+  vào: dòng của NCC đổi dữ liệu (denyo): denyo|88/110KVA
+
+== IB2500380933#0 (ra 2, vào 2; all 2519 → 2508)
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG632S3|632|573|DOOSAN|DP180LA|PDF
+  ra: starlight-power → xingguang-jiangsu, cùng dòng vẫn trong top (đổi id): starlight-power||XG650S36|650|590|DOOSAN|DP158LD|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG632S3|632|573|DOOSAN|DP180LA|PDF
+  vào: xingguang-jiangsu (gộp từ starlight-power), cùng dòng (đổi id): xingguang-jiangsu||XG650S36|650|590|DOOSAN|DP158LD|PDF
+
+== IB2500480924#0 (ra 1, vào 1; all 24 → 25)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): denyo|(KVA)STANDBY1113713816522275222752227522275
+  vào: dòng của NCC đổi dữ liệu (denyo): denyo|88/110KVA
+
+== IB2500500319#0 (ra 1, vào 1; all 18 → 19)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): denyo|(KVA)STANDBY1113713816522275222752227522275
+  vào: dòng của NCC đổi dữ liệu (denyo): denyo|88/110KVA
+
+== IB2500508341#0 (ra 1, vào 1; all 2709 → 2689)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): eastern-lion-fuan||GF/GFSYC320|320|400|356|444|YC6K520D30|356|EL314G|320|SMARTGEN6120|DETAIL
+  vào: dòng NCC khác (lấp chỗ): bobig-power||BWC413|300|375|330|413|WP13D405E200|368|BW314F|3100*1050*2150|4200*1600*2250
+
+== IB2600280799#0 (ra 1, vào 1; all 28 → 29)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): denyo|(KVA)STANDBY1113713816522275222752227522275
+  vào: dòng của NCC đổi dữ liệu (denyo): denyo|88/110KVA
+
+== IB2600307179#0 (ra 1, vào 1; all 30 → 31)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): denyo|(KVA)STANDBY1113713816522275222752227522275
+  vào: dòng của NCC đổi dữ liệu (denyo): denyo|88/110KVA
+
+== IB2600374560#0 (ra 1, vào 1; all 1385 → 1373)
+  ra: dòng NCC khác (bị đẩy hoặc đổi xếp hạng do dữ liệu): dingbo||XG380GF|380/475|418/5226|TAD1650GE|LSA472M7|3200X1160X2022|3000
+  vào: dòng NCC khác (lấp chỗ): bobig-power||BSD481|350|438|385|481|6ETAA128G31|400|BW354C|3440*1350*2460|4500*1810*2360
