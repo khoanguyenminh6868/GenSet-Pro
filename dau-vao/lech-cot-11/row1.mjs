@@ -24,4 +24,4 @@ const R = B.candidates(cat, rn.cap, hints0, { suppliers: sups, origin, cn, sync,
 const rowKey = (r) => `${r.u.supplierId}|${r.e.key}|${r.a?.key || ""}|${CAT.keyOf(r.u.line || (r.u.lines?.rows || []).join(" "))}`;
 const rx = new RegExp(RX);
 for (const r of R.all) if (rx.test(rowKey(r))) { console.log("ALL", r.score, JSON.stringify(r.ruled), JSON.stringify(r.why).slice(0,200)); break; }
-for (const x of R.dropped) if (rx.test(`${x.u.supplierId}|${x.e.key}|${x.a?.key || ""}|${CAT.keyOf(x.u.line || (x.u.lines?.rows || []).join(" "))}`)) { console.log("DROPPED ruled", JSON.stringify(x.ruled), JSON.stringify(x.why || "").slice(0,200)); break; }
+for (const x of R.dropped) if (rx.test(`${x.u.supplierId}|${x.e.key}|${x.a?.key || ""}|${CAT.keyOf(x.u.line || (x.u.lines?.rows || []).join(" "))}`)) { console.log("DROPPED ruled", JSON.stringify(x.ruled), JSON.stringify(x.why || "").slice(0,200)); console.log("uses freq:", x.e.uses.map((u) => u.supplierId + ":" + (u.freq || "∅")).join(" ")); console.log("u.freq of row:", x.u.freq); break; }
