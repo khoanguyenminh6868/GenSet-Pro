@@ -65,3 +65,15 @@ Thay đổi theo kiểu (đã xem từng kiểu):
 - Đã ghi vào `web/CLAUDE.md` mục "Lệch cột 11": (1) walk cạnh phải trên dòng tiêu đề thấp, và tiêu đề chỉ có đơn vị trên ô động cơ đã thử rồi bỏ vì xoá hàng trăm khối lượng đúng, (2) `onePair` không còn đòi `x !== y`, (3) tách theo "Engine model" cần ≥ 3 mô hình khác nhau, khoá qua `tidyModel/keyOf`, trần 4 dòng mỗi khối, (4) Doosan `P086TI/P126TI/P158LE` là động cơ.
 - Fixture `row-flags.test.mjs` không còn dùng dòng thật yingtai n113 (đã đọc đúng); ví dụ "lệch cột" thật còn lại là nhóm B.
 - `spec-diff` so với `origin/main` đang trôi: cố định `git:<sha>` khi đo.
+
+---
+## Vòng 2 (phản biện điều phối 18/11/2026) — commit eaff24a8
+
+Số liệu mới (spec-diff `git:270b4eb4` ↔ nhánh, cùng dữ liệu, đo lại): bản ghi 58.963 → 59.016; **279 đổi** (trước 120; chênh +159 là khối lượng sanq, xem dưới), 43 mất, 96 thêm, 46 bảng / 18 NCC; đảo vai 1 → 0; 76 giá trị "soát tay". Tệp đầy đủ: `lech-cot-11-spec-diff-full.txt`.
+
+1. **Kiểm chéo toàn bộ THÊM / MẤT**: `lech-cot-11-kiem-cheo-them-mat.md` (kết luận theo nhóm + đầu ra nguyên văn từng bản ghi cạnh dòng nguồn). Yongcai n170–n173 đối chiếu từng động cơ với `yongcai-elecmama.json`: khớp hết; n170 "70" là dòng công suất chung của trang, n172 "18.8 kW / 2350 rpm" thuộc QC385BT (không phải QC380D). Doosan / uleengen / kaichen / rcg / agg / jet / rise: mã ở đúng cột động cơ.
+2. **Ba chỗ mất giá trị đúng**: đã sửa cả ba (cgm n101 e63B noise 69 giữ; rise n120 RDL560-60 dims 3420×1390×1840 giữ; sanq n110 SQD385 khối lượng 3120 / 72 L/h). Luật mới: (a) khối lượng / độ ồn bằng công suất chỉ bỏ khi số không còn ở ô nào bên phải ô động cơ / đầu phát; (b) một tiêu đề đọc ở hai ô: ≥ 2 lượt đi từ ô đã biết cùng chọn một ô thì lượt mép phải thua. Hệ quả của (b): thêm khối lượng cho 80 dòng sanq (161 giá trị, mỗi dòng nhân đôi vì bản ghi động cơ + đầu phát); đã kiểm bằng script cả 80 dòng: đều là ô "Open type" đầu của cặp (mở < kín).
+3. **Luật phẩy nghìn / `onePair`**: gắn móc đếm trên toàn bộ cn: chỉ mwm đi qua `fnum` với d,ddd (130 lần), không NCC nào khác; `onePair` x = y chỉ đổi yingtai n111 (baifa, kachai, rise RCM140, yanan không đổi bản ghi nào). Chi tiết trong tệp kiểm chéo.
+4. **Đo top 30**: chưa chạy, chờ điều phối báo máy rảnh.
+
+Lệnh chạy lại sau vòng 2 (thật): `node --test suppliers/*.test.mjs` → tests 1095, pass 1087, fail 0, todo 8; `node --test web/test/*.test.mjs` → 161 pass; `node suppliers/quality.mjs --check` → "không chỉ số nào xấu đi quá ngưỡng"; `lech-cot-11.test.mjs` 27 ca (thêm 4: cgm e63B, rise RDL560-60, sanq SQD385, ba lượt đi đồng ý).

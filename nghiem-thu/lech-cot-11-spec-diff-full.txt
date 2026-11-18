@@ -1,0 +1,1093 @@
+bản ghi cũ 58963, mới 59016 | khác 279 | chỉ cũ 43, chỉ mới 96 | bảng có đổi 46
+{"speed bỏ":3,"weight bỏ":7,"noise bỏ":3,"cyl bỏ":2,"current bỏ":3,"model":36,"other":36,"power":10,"dims thêm":20,"dims đổi":1,"weight thêm":161,"weight đổi":2,"fuel thêm":1,"dims bỏ":12,"disp bỏ":36,"voltage bỏ":6,"engPower thêm":1}
+
+[agg-fuzhou n102 bảng 1] ×4
+  H: | | 发电机型号 | ESP (kVA/kW) | PRP (kVA/kW) | 发动机型号 | 品牌
+   42 | H450D5 | 450/360 | 400/320 | P158LE | Hyundai
+        ⇒ MẤT bản ghi alternator P158LE
+   42 | H450D5 | 450/360 | 400/320 | P158LE | Hyundai
+        ⇒ THÊM bản ghi engine P158LE
+   57 | H500D6 | 500/400 | 450/360 | P158LE | Hyundai
+        ⇒ MẤT bản ghi alternator P158LE
+   57 | H500D6 | 500/400 | 450/360 | P158LE | Hyundai
+        ⇒ THÊM bản ghi engine P158LE
+
+[agg-fuzhou n111 bảng 10] ×4
+  H: | | 发电机型号 | ESP (kVA/kW) | PRP (kVA/kW) | 发动机型号
+   14 | H450D5 | 450/360 | 400/320 | P158LE
+        ⇒ MẤT bản ghi alternator P158LE
+   14 | H450D5 | 450/360 | 400/320 | P158LE
+        ⇒ THÊM bản ghi engine P158LE
+   40 | H500D6 | 500/400 | 450/360 | P158LE
+        ⇒ MẤT bản ghi alternator P158LE
+   40 | H500D6 | 500/400 | 450/360 | P158LE
+        ⇒ THÊM bản ghi engine P158LE
+
+[aosif n1065 bảng 149] ×2
+  undefined (bảng nhãn)
+        ⇒ speed: 2250 RPM → ∅
+  undefined (bảng nhãn)
+        ⇒ speed: 2250 RPM → ∅
+
+[cgm-italia n1001 bảng 13] ×3
+  H: | M/E Engine governor | EU Emission standard | consumo ¾ caricoconsumption 3/4 loadconsommation 3/4 charge
+  H: | OPEN BASE FRAME | SOUNDPROOF CANOPY | dB(A) at 7 mt
+  H: | quadro manualemanual panelpanneau manuel | quadro automaticoAMF panelpanneau automatique
+   15 | 45P | 45 | 36 | 49,5 | 39,6 | 1103A-33TG1
+        ⇒ weight: 39,6 → ∅
+   88 | v60F | 60 | 48 | 60 | 48 | F34TEVP01.00
+        ⇒ noise: 48 → ∅
+   96 | v100F | 100 | 80 | 100 | 80 | F36ETVP03.A94
+        ⇒ noise: 80 → ∅
+
+[cgm-italia n1001 bảng 15] ×2
+  H: | M/E Engine governor | EU Emission standard | consumo ¾ caricoconsumption 3/4 loadconsommation 3/4 charge
+  H: | OPEN BASE FRAME | SOUNDPROOF CANOPY | dB(A) at 7 mt
+  H: | quadro manualemanual panelpanneau manuel | quadro automaticoAMF panelpanneau automatique
+   17 | STAGE II | 380VO | 380 | 304 | 418 | 334,4 | TAD 1343GE-B
+        ⇒ weight: 334,4 → ∅
+   50 | STAGE IIIA | e365VO | 365 | 292 | 401,5 | 321,2 | TAD 1352GE
+        ⇒ weight: 321,2 → ∅
+
+[cgm-italia n1001 bảng 16] ×1
+  H: | M/E Engine governor | EU Emission standard | consumo ¾ caricoconsumption 3/4 loadconsommation 3/4 charge
+  H: | OPEN BASE FRAME | SOUNDPROOF CANOPY | dB(A) at 7 mt
+  H: | quadro manualemanual panelpanneau manuel | quadro automaticoAMF panelpanneau automatique
+   24 | 60DZa | 60 | 48 | 66 | 52,8 | F6L 912
+        ⇒ noise: 52,8 → ∅
+
+[eastern-lion-fuan n108 bảng 8] ×11
+  H: | | | Power range | models | Engine | Alternator | Controller |
+    0 | Engine By Cummins 2 | 200 – 1311 kW | 34 | MTA11-G2A | EL 314E | Smartgen 6120 | View details →
+        ⇒ MẤT bản ghi engine MTA11-G2A
+    0 | Engine By Cummins 2 | 200 – 1311 kW | 34 | MTA11-G2A | EL 314E | Smartgen 6120 | View details →
+        ⇒ MẤT bản ghi alternator EL 314E
+    2 | Engine By Kofo Series | 10 – 338 kW | 24 | K4100DS | EL 184G | RUIFEN6120 | View details →
+        ⇒ MẤT bản ghi engine K4100DS
+    3 | Engine By Longxin Series | 24 – 289 kW | 19 | R6105IZLD | EL 224E | RUIFEN6120 | View details →
+        ⇒ MẤT bản ghi engine R6105IZLD
+    4 | Engine By Lovol Series | 25 – 158 kW | 13 | 1003G | EL 274C | Smartgen 6120 | View details →
+        ⇒ MẤT bản ghi engine 1003G
+    4 | Engine By Lovol Series | 25 – 158 kW | 13 | 1003G | EL 274C | Smartgen 6120 | View details →
+        ⇒ MẤT bản ghi alternator EL 274C
+    5 | Engine By Perkins Series | 7.2 – 2000 kW | 54 | 403A-15G1 | EL 224G | Smartgen 6120 | View details →
+        ⇒ MẤT bản ghi engine 403A-15G1
+    5 | Engine By Perkins Series | 7.2 – 2000 kW | 54 | 403A-15G1 | EL 224G | Smartgen 6120 | View details →
+        ⇒ MẤT bản ghi alternator EL 224G
+    6 | Engine By Woling Series | 128 – 889 kW | 22 | D114系列WLD171 | EL 404D | Smartgen 6120 | View details →
+        ⇒ MẤT bản ghi engine EL 404D
+    7 | Engine By Wuxi Series | 48 – 1111 kW | 52 | WD129TAD23/1500 | EL 354C | Smartgen 6120 | View details →
+        ⇒ MẤT bản ghi engine WD129TAD23/1500
+    7 | Engine By Wuxi Series | 48 – 1111 kW | 52 | WD129TAD23/1500 | EL 354C | Smartgen 6120 | View details →
+        ⇒ MẤT bản ghi alternator EL 354C
+
+[eastern-lion-fuan n109 bảng 10] ×3
+  H: | | | Power range | models | Engine | Alternator | Controller |
+    1 | Engine By Cummins | 22 – 444 kW | 40 | 4BTA3.9-G2 | EL 274K | Smartgen 6120 | View details →
+        ⇒ MẤT bản ghi engine 4BTA3.9-G2
+    1 | Engine By Cummins | 22 – 444 kW | 40 | 4BTA3.9-G2 | EL 274K | Smartgen 6120 | View details →
+        ⇒ MẤT bản ghi alternator EL 274K
+    2 | Engine By Huachai Series | 13 – 289 kW | 27 | 2105D | EL 224C | RUIFEN6120 | View details →
+        ⇒ MẤT bản ghi engine 2105D
+
+[eastern-lion-fuan n113 bảng 17] ×2
+  H: | | | Power range | models | Engine | Alternator | Controller |
+    0 | 60 HZ Engine By Cummins Series 2 | 200 – 1222 kW | 22 | NT855-GA | ELS 314E | Smartgen 6120 | View details →
+        ⇒ MẤT bản ghi engine NT855-GA
+    0 | 60 HZ Engine By Cummins Series 2 | 200 – 1222 kW | 22 | NT855-GA | ELS 314E | Smartgen 6120 | View details →
+        ⇒ MẤT bản ghi alternator ELS 314E
+
+[eastern-lion-fuan n117 bảng 24] ×5
+  H: | | | Power range | models | Engine | Alternator | Controller |
+    1 | 60HZ Engine By Cummins Series | 20 – 444 kW | 26 | 4BTA3.9-G2 | ELS 314G | Smartgen 6120 | View details →
+        ⇒ MẤT bản ghi engine 4BTA3.9-G2
+    1 | 60HZ Engine By Cummins Series | 20 – 444 kW | 26 | 4BTA3.9-G2 | ELS 314G | Smartgen 6120 | View details →
+        ⇒ MẤT bản ghi alternator ELS 314G
+    2 | 60HZ Engine By Lovol Series | 27 – 178 kW | 13 | 1003G | ELS 274C | Smartgen 6120 | View details →
+        ⇒ MẤT bản ghi engine 1003G
+    2 | 60HZ Engine By Lovol Series | 27 – 178 kW | 13 | 1003G | ELS 274C | Smartgen 6120 | View details →
+        ⇒ MẤT bản ghi alternator ELS 274C
+    3 | 60HZ Engine By Yangdong Series | 10 – 59 kW | 15 | YD380D | ELS 164C | RUIFEN6120 | View details →
+        ⇒ MẤT bản ghi engine YD380D
+
+[eastern-lion-fuan n129 bảng 36] ×1
+  H: | | | Power range | models | Engine | Alternator | Controller |
+    7 | Engine By Yangdong Series | 8 – 56 kW | 15 | YD380D | EL 164C | RUIFEN6120 | View details →
+        ⇒ MẤT bản ghi engine YD380D
+
+[green-power-generators n108 bảng 9] ×6
+  H: | | MODELLO MODEL | TIPO TYPE | POTENZA POWER | MOTORE ENGINE | SERBATOIO TANK | DIMENSIONI DIMENSIONS | PESO WEIGHT | DOWNLOAD
+  H: | kVA - 50 Hz | MODELLO MODEL | REG | CIL. | CONSUMO AL 75% PRP CONSUMPTION AT 75% PRP | Lu | La | A | LEROY SOMER | LINZ | MECC ALTE | STAMFORD
+  H: | PRP | ESP | N. | L/h | L | mm | mm | mm | kg
+    0 | GP220 A/H | O | 200 | 210 | P086TI | E | 6 | 31.7 | 140 | 2850 | 1000 | 1400 | 1650 | | | |
+        ⇒ MẤT bản ghi alternator P086TI
+    0 | GP220 A/H | O | 200 | 210 | P086TI | E | 6 | 31.7 | 140 | 2850 | 1000 | 1400 | 1650 | | | |
+        ⇒ THÊM bản ghi engine P086TI
+    8 | GP330 A/H | O | 300 | 330 | P126TI II | E | 6 | 45.7 | 210 | 3000 | 1100 | 1650 | 1750 | | | |
+        ⇒ MẤT bản ghi alternator P126TI II
+    8 | GP330 A/H | O | 300 | 330 | P126TI II | E | 6 | 45.7 | 210 | 3000 | 1100 | 1650 | 1750 | | | |
+        ⇒ THÊM bản ghi engine P126TI II
+   14 | GP440 A/H | O | 400 | 440 | P158LE | E | 8 | 65.1 | 290 | 3200 | 1300 | 1900 | 2340 | | | |
+        ⇒ MẤT bản ghi alternator P158LE
+   14 | GP440 A/H | O | 400 | 440 | P158LE | E | 8 | 65.1 | 290 | 3200 | 1300 | 1900 | 2340 | | | |
+        ⇒ THÊM bản ghi engine P158LE
+
+[hosem-power n1001 bảng 35] ×2
+  undefined (bảng nhãn)
+        ⇒ current: 3200 → ∅
+  undefined (bảng nhãn)
+        ⇒ current: 3200 → ∅
+
+[hosem-power n109 bảng 7] ×1
+  undefined (bảng nhãn)
+        ⇒ cyl: 6 Cylinder In Line → ∅
+
+[hosem-power n134 bảng 32] ×1
+  undefined (bảng nhãn)
+        ⇒ cyl: 6 Cylinder In Line → ∅
+
+[jet-power n107 bảng 6] ×2
+  H: | Model | 440V / 60Hz / 1800rpm | HYUNDAI Diesel Engine | Emission | Alternator
+  H: | Standby output | Prime Output | Model | No. of Cylinder | Displacement | Bore×Stroke | Fuel cons. | Leroy Somer
+  H: | KVA | KW | KVA | KW | (L) | (MM) | （ L/h ） | level
+   10 | HD-510 | 510 | 408 | 444 | 355 | P158LE | 8V | 14.6 | 128 x 142 | 102.5 | N/A | TAL-A473-A
+        ⇒ model: P158LE → TAL-A473-A; other: null → P158LE
+   10 | HD-510 | 510 | 408 | 444 | 355 | P158LE | 8V | 14.6 | 128 x 142 | 102.5 | N/A | TAL-A473-A
+        ⇒ THÊM bản ghi engine P158LE
+
+[kaichen-jiangsu n5001 bảng 13] ×4
+  H: | Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator
+    5 | KCD-190GF | 135 | 169 | 149 | 186 | P086TI-1 |
+        ⇒ MẤT bản ghi alternator P086TI-1
+    5 | KCD-190GF | 135 | 169 | 149 | 186 | P086TI-1 |
+        ⇒ THÊM bản ghi engine P086TI-1
+    8 | KCD-300GF | 220 | 275 | 242 | 303 | P126TI |
+        ⇒ MẤT bản ghi alternator P126TI
+    8 | KCD-300GF | 220 | 275 | 242 | 303 | P126TI |
+        ⇒ THÊM bản ghi engine P126TI
+
+[kaichen-jiangsu n5001 bảng 14] ×2
+  H: | Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator
+   10 | KCD-500GF | 360 | 450 | 400 | 500 | P158LE |
+        ⇒ MẤT bản ghi alternator P158LE
+   10 | KCD-500GF | 360 | 450 | 400 | 500 | P158LE |
+        ⇒ THÊM bản ghi engine P158LE
+
+[mwm n1028 bảng 71] ×1
+  undefined (bảng nhãn)
+        ⇒ power: R ·/3.333 → R ·/3333
+
+[mwm n1028 bảng 72] ×1
+  undefined (bảng nhãn)
+        ⇒ power: R ·/3.77 → R ·/3770
+
+[mwm n1040 bảng 85] ×4
+  undefined (bảng nhãn)
+        ⇒ power: R ·/1 → R ·/1000
+  undefined (bảng nhãn)
+        ⇒ power: R ·/1.125 → R ·/1125
+  undefined (bảng nhãn)
+        ⇒ power: R ·/1.2 → R ·/1200
+  undefined (bảng nhãn)
+        ⇒ power: R ·/1.56 → R ·/1560
+
+[mwm n1040 bảng 87] ×2
+  undefined (bảng nhãn)
+        ⇒ power: R ·/1 → R ·/1000
+  undefined (bảng nhãn)
+        ⇒ power: R ·/1.56 → R ·/1560
+
+[rcg-power n113 bảng 16] ×20
+  H: | | Model | Prime Power | Standby Power | Engine | Alternator | Download
+    0 | R-HD160D5-S | 160 kVA / 128 kW | 185 kVA / 148 kW | P086TI-1 | TAL-A44-K | PDF
+        ⇒ model: P086TI-1 → TAL-A44-K; other: null → P086TI-1
+    0 | R-HD160D5-S | 160 kVA / 128 kW | 185 kVA / 148 kW | P086TI-1 | TAL-A44-K | PDF
+        ⇒ THÊM bản ghi engine P086TI-1
+    1 | R-HD200D5-S | 200 kVA / 160 kW | 220 kVA / 176 kW | P086TI | TAL-A44-M | PDF
+        ⇒ model: P086TI → TAL-A44-M; other: null → P086TI
+    1 | R-HD200D5-S | 200 kVA / 160 kW | 220 kVA / 176 kW | P086TI | TAL-A44-M | PDF
+        ⇒ THÊM bản ghi engine P086TI
+    3 | R-HD250D5-S | 250 kVA / 200 kW | 275 kVA / 220 kW | P126TI | TAL-A46-D | PDF
+        ⇒ model: P126TI → TAL-A46-D; other: null → P126TI
+    3 | R-HD250D5-S | 250 kVA / 200 kW | 275 kVA / 220 kW | P126TI | TAL-A46-D | PDF
+        ⇒ THÊM bản ghi engine P126TI
+    4 | R-HD300D5-S | 300kVA / 240kW | 330kVA / 264kW | P126TI-II | TAL-A46-F | PDF
+        ⇒ model: P126TI-II → TAL-A46-F; other: null → P126TI-II
+    4 | R-HD300D5-S | 300kVA / 240kW | 330kVA / 264kW | P126TI-II | TAL-A46-F | PDF
+        ⇒ THÊM bản ghi engine P126TI-II
+    6 | R-HD400D5-S | 400 kVA / 320 kW | 440 kVA / 352 kW | P158LE | TAL-A473-A | PDF
+        ⇒ model: P158LE → TAL-A473-A; other: null → P158LE
+    6 | R-HD400D5-S | 400 kVA / 320 kW | 440 kVA / 352 kW | P158LE | TAL-A473-A | PDF
+        ⇒ THÊM bản ghi engine P158LE
+   16 | R-HD160D5-S | 160 kVA / 128 kW | 185 kVA / 148 kW | P086TI-1 | UCI274F | PDF
+        ⇒ model: P086TI-1 → UCI274F; other: null → P086TI-1
+   16 | R-HD160D5-S | 160 kVA / 128 kW | 185 kVA / 148 kW | P086TI-1 | UCI274F | PDF
+        ⇒ THÊM bản ghi engine P086TI-1
+   17 | R-HD200D5-S | 200 kVA / 160 kW | 220 kVA / 176 kW | P086TI | UCI274H | PDF
+        ⇒ model: P086TI → UCI274H; other: null → P086TI
+   17 | R-HD200D5-S | 200 kVA / 160 kW | 220 kVA / 176 kW | P086TI | UCI274H | PDF
+        ⇒ THÊM bản ghi engine P086TI
+   19 | R-HD250D5-S | 250 kVA / 200 kW | 275 kVA / 220 kW | P126TI | UCDI274K | PDF
+        ⇒ model: P126TI → UCDI274K; other: null → P126TI
+   19 | R-HD250D5-S | 250 kVA / 200 kW | 275 kVA / 220 kW | P126TI | UCDI274K | PDF
+        ⇒ THÊM bản ghi engine P126TI
+   20 | R-HD300D5-S | 300 kVA / 240 kW | 330 kVA / 264 kW | P126TI-II | S4L1D-D4 | PDF
+        ⇒ model: P126TI-II → S4L1D-D4; other: null → P126TI-II
+   20 | R-HD300D5-S | 300 kVA / 240 kW | 330 kVA / 264 kW | P126TI-II | S4L1D-D4 | PDF
+        ⇒ THÊM bản ghi engine P126TI-II
+   23 | R-HD400D5-S | 400 kVA / 320 kW | 440 kVA / 352 kW | P158LE | S4L1D-F4 | PDF
+        ⇒ model: P158LE → S4L1D-F4; other: null → P158LE
+   23 | R-HD400D5-S | 400 kVA / 320 kW | 440 kVA / 352 kW | P158LE | S4L1D-F4 | PDF
+        ⇒ THÊM bản ghi engine P158LE
+
+[rise-power n120 bảng 25] ×20
+  H: | Model | Power (kw/kVA) | Engine Model | Alternator Model | Dimension | Weight
+  H: | Prime | Standby | Open Type | Sound Proof | Open Type | Sound Proof
+    3 | RDL160 | 160/200 | 176/220 | P086TI | LSA46.2M5 | 2600×950×1520 | 3500×1120×1700 | 1650 | 3550
+        ⇒ model: P086TI → LSA46.2M5; other: null → P086TI; dims: ∅ → 2600×950×1520
+    3 | RDL160 | 160/200 | 176/220 | P086TI | LSA46.2M5 | 2600×950×1520 | 3500×1120×1700 | 1650 | 3550
+        ⇒ THÊM bản ghi engine P086TI
+    4 | RDL220 | 220/275 | 242/303 | P126TI | LSA46.2L9 | 2900×1050×1550 | 3900×1300×1850 | 2200 | 4200
+        ⇒ model: P126TI → LSA46.2L9; other: null → P126TI; dims: ∅ → 2900×1050×1550
+    4 | RDL220 | 220/275 | 242/303 | P126TI | LSA46.2L9 | 2900×1050×1550 | 3900×1300×1850 | 2200 | 4200
+        ⇒ THÊM bản ghi engine P126TI
+    5 | RDL240 | 240/300 | 264/330 | P126TI-II | LSA46.2VL12 | 3000×1050×1550 | 3900×1300×1850 | 2400 | 4250
+        ⇒ model: P126TI-II → LSA46.2VL12; other: null → P126TI-II; dims: ∅ → 3000×1050×1550
+    5 | RDL240 | 240/300 | 264/330 | P126TI-II | LSA46.2VL12 | 3000×1050×1550 | 3900×1300×1850 | 2400 | 4250
+        ⇒ THÊM bản ghi engine P126TI-II
+    6 | RDL300 | 300/375 | 330/413 | P158LE-1 | LSA47.2VS2 | 2800×1400×1850 | 3900×1600×2150 | 2800 | 4800
+        ⇒ model: P158LE-1 → LSA47.2VS2; other: null → P158LE-1; dims: ∅ → 2800×1400×1850
+    6 | RDL300 | 300/375 | 330/413 | P158LE-1 | LSA47.2VS2 | 2800×1400×1850 | 3900×1600×2150 | 2800 | 4800
+        ⇒ THÊM bản ghi engine P158LE-1
+    7 | RDL340 | 340/425 | 374/467 | P158LE | LSA47.2S5 | 2850×1400×1850 | 3900×1600×2150 | 2900 | 4800
+        ⇒ model: P158LE → LSA47.2S5; other: null → P158LE; dims: ∅ → 2850×1400×1850
+    7 | RDL340 | 340/425 | 374/467 | P158LE | LSA47.2S5 | 2850×1400×1850 | 3900×1600×2150 | 2900 | 4800
+        ⇒ THÊM bản ghi engine P158LE
+    8 | RDL360 | 360/450 | 396/495 | P180LE | LSA47.2S5 | 3050×1400×1850 | 4100×1800×2250 | 3100 | 5000
+        ⇒ model: P180LE → LSA47.2S5; other: null → P180LE; dims: ∅ → 3050×1400×1850
+    8 | RDL360 | 360/450 | 396/495 | P180LE | LSA47.2S5 | 3050×1400×1850 | 4100×1800×2250 | 3100 | 5000
+        ⇒ THÊM bản ghi engine P180LE
+    9 | RDL400 | 400/500 | 440/550 | P180LE | LSA47.2M7 | 3150×1400×1850 | 4200×1800×2250 | 3250 | 5200
+        ⇒ model: P180LE → LSA47.2M7; other: null → P180LE; dims: ∅ → 3150×1400×1850
+    9 | RDL400 | 400/500 | 440/550 | P180LE | LSA47.2M7 | 3150×1400×1850 | 4200×1800×2250 | 3250 | 5200
+        ⇒ THÊM bản ghi engine P180LE
+   10 | RDL500 | 500/625 | 550/688 | P222LE | LSA49.1S4 | 3400×1400×2000 | 4800×1900×2250 | 4200 | 5800
+        ⇒ model: P222LE → LSA49.1S4; other: null → P222LE; dims: ∅ → 3400×1400×2000
+   10 | RDL500 | 500/625 | 550/688 | P222LE | LSA49.1S4 | 3400×1400×2000 | 4800×1900×2250 | 4200 | 5800
+        ⇒ THÊM bản ghi engine P222LE
+   11 | RDL530 | 530/663 | 583/729 | P222LE-S | LSA49.1S4 | 3400×1400×2000 | 4800×1900×2250 | 4200 | 5800
+        ⇒ model: P222LE-S → LSA49.1S4; other: null → P222LE-S; dims: ∅ → 3400×1400×2000
+   11 | RDL530 | 530/663 | 583/729 | P222LE-S | LSA49.1S4 | 3400×1400×2000 | 4800×1900×2250 | 4200 | 5800
+        ⇒ THÊM bản ghi engine P222LE-S
+   12 | RDL550 | NA | 550/688 | P222LE-II | LSA49.1M6 | 3400×1400×2000 | 4800×1900×2250 | 4200 | 5800
+        ⇒ model: P222LE-II → LSA49.1M6; other: null → P222LE-II; dims: ∅ → 3400×1400×2000
+   12 | RDL550 | NA | 550/688 | P222LE-II | LSA49.1M6 | 3400×1400×2000 | 4800×1900×2250 | 4200 | 5800
+        ⇒ THÊM bản ghi engine P222LE-II
+
+[rise-power n120 bảng 26] ×18
+  H: | Model | Power (kw/kVA) | Engine Model | Alternator Model | Dimension | Weight
+  H: | Prime | Standby | Open Type | Sound Proof | Open Type | Sound Proof
+    2 | RDL157-60 | 157/196 | 172/216 | P086TI-1 | LSA46.2M3 | 2600×950×1520 | 3500×1120×1700 | 1600 | 3500
+        ⇒ model: P086TI-1 → LSA46.2M3; other: null → P086TI-1; dims: ∅ → 2600×950×1520
+    2 | RDL157-60 | 157/196 | 172/216 | P086TI-1 | LSA46.2M3 | 2600×950×1520 | 3500×1120×1700 | 1600 | 3500
+        ⇒ THÊM bản ghi engine P086TI-1
+    3 | RDL184-60 | 184/230 | 202/253 | P086TI | LSA46.2M5 | 2600×950×1520 | 3500×1120×1700 | 1650 | 3550
+        ⇒ model: P086TI → LSA46.2M5; other: null → P086TI; dims: ∅ → 2600×950×1520
+    3 | RDL184-60 | 184/230 | 202/253 | P086TI | LSA46.2M5 | 2600×950×1520 | 3500×1120×1700 | 1650 | 3550
+        ⇒ THÊM bản ghi engine P086TI
+    4 | RDL250-60 | 250/313 | 275/344 | P126TI | LSA46.2L9 | 2900×1050×1550 | 3900×1300×1850 | 2200 | 4200
+        ⇒ model: P126TI → LSA46.2L9; other: null → P126TI; dims: ∅ → 2900×1050×1550
+    4 | RDL250-60 | 250/313 | 275/344 | P126TI | LSA46.2L9 | 2900×1050×1550 | 3900×1300×1850 | 2200 | 4200
+        ⇒ THÊM bản ghi engine P126TI
+    5 | RDL276-60 | 276/345 | 304/380 | P126TI-II | LSA46.2VL12 | 3000×1050×1550 | 3900×1300×1850 | 2400 | 4250
+        ⇒ model: P126TI-II → LSA46.2VL12; other: null → P126TI-II; dims: ∅ → 3000×1050×1550
+    5 | RDL276-60 | 276/345 | 304/380 | P126TI-II | LSA46.2VL12 | 3000×1050×1550 | 3900×1300×1850 | 2400 | 4250
+        ⇒ THÊM bản ghi engine P126TI-II
+    6 | RDL323-60 | 323/412 | 363/453 | P158LE-1 | LSA47.2VS2 | 2800×1400×1850 | 3900×1600×2150 | 2800 | 4800
+        ⇒ model: P158LE-1 → LSA47.2VS2; other: null → P158LE-1; dims: ∅ → 2800×1400×1850
+    6 | RDL323-60 | 323/412 | 363/453 | P158LE-1 | LSA47.2VS2 | 2800×1400×1850 | 3900×1600×2150 | 2800 | 4800
+        ⇒ THÊM bản ghi engine P158LE-1
+    7 | RDL360-60 | 360/450 | 396/495 | P158LE | LSA47.2VS2 | 2850×1400×1850 | 3900×1600×2150 | 2900 | 4800
+        ⇒ model: P158LE → LSA47.2VS2; other: null → P158LE; dims: ∅ → 2850×1400×1850
+    7 | RDL360-60 | 360/450 | 396/495 | P158LE | LSA47.2VS2 | 2850×1400×1850 | 3900×1600×2150 | 2900 | 4800
+        ⇒ THÊM bản ghi engine P158LE
+    8 | RDL448-60 | 448/560 | 493/616 | P180LE | LSA47.2S5 | 3050×1400×1850 | 4100×1800×2250 | 3100 | 5000
+        ⇒ model: P180LE → LSA47.2S5; other: null → P180LE; dims: ∅ → 3050×1400×1850
+    8 | RDL448-60 | 448/560 | 493/616 | P180LE | LSA47.2S5 | 3050×1400×1850 | 4100×1800×2250 | 3100 | 5000
+        ⇒ THÊM bản ghi engine P180LE
+    9 | RDL532-60 | 532/665 | 585/732 | P222LE | LSA49.1S4 | 3400×1400×2000 | 4800×1900×2250 | 4200 | 5800
+        ⇒ model: P222LE → LSA49.1S4; other: null → P222LE; dims: ∅ → 3400×1400×2000
+    9 | RDL532-60 | 532/665 | 585/732 | P222LE | LSA49.1S4 | 3400×1400×2000 | 4800×1900×2250 | 4200 | 5800
+        ⇒ THÊM bản ghi engine P222LE
+   10 | RDL560-60 | 560/700 | 616/770 | P222LE-S | LSA49.1S4 | 3420×1390×1840 | 4500×1900×1900 | 4200 |
+        ⇒ model: P222LE-S → LSA49.1S4; other: null → P222LE-S; dims: 4500×1900×1900 → 3420×1390×1840
+   10 | RDL560-60 | 560/700 | 616/770 | P222LE-S | LSA49.1S4 | 3420×1390×1840 | 4500×1900×1900 | 4200 |
+        ⇒ THÊM bản ghi engine P222LE-S
+
+[sanq-power n105 bảng 5] ×2
+  H: | 机组型号 | 备用功率 | 常用功率 | 发动机型号 | 电机型号 | 耗油量 | 机组重量 (Kg) | 机组尺寸 (MM)
+  H: | kW/kVa | kW/kVa | 斗山
+  H: | 斯坦福 | L/H | 开放式 | 静音式 | 开放式 | 静音式
+    6 | SQD385 | 308/385 | 280/350 | P158LE-1 | HCI444E | 72 | 3120 | 4495 | 3050x1160x1645 | 4300x1483x2145
+        ⇒ model: P158LE-1 → HCI444E; other: null → P158LE-1
+    6 | SQD385 | 308/385 | 280/350 | P158LE-1 | HCI444E | 72 | 3120 | 4495 | 3050x1160x1645 | 4300x1483x2145
+        ⇒ THÊM bản ghi engine P158LE-1
+
+[sanq-power n106 bảng 6] ×88
+  H: | Genset Model | Standby Power | Prime Power | Engine Model | Alternator Model | C/O of engine | Genset Weight (Kg) | Genset overall LxWxH (MM) | Click for Detail Data
+  H: | kW/kVa | kW/kVa | Perkins | Stamford | Open type | Silent type | Open Type | Silent type
+    0 | SQP10 | 8/10 | 7/9 | 403A-11G1 | PI044E | Wuxi | 450 | 896 | 1260x630x730 | 2200x1033x1304 |
+        ⇒ weight: ∅ → 450
+    0 | SQP10 | 8/10 | 7/9 | 403A-11G1 | PI044E | Wuxi | 450 | 896 | 1260x630x730 | 2200x1033x1304 |
+        ⇒ weight: ∅ → 450
+    1 | SQP10 | 8/10 | 7/9 | 403D-11G | PI044E | Wuxi | 450 | 896 | 1500x650x1225 | 2200x1033x1304 |
+        ⇒ weight: ∅ → 450
+    1 | SQP10 | 8/10 | 7/9 | 403D-11G | PI044E | Wuxi | 450 | 896 | 1500x650x1225 | 2200x1033x1304 |
+        ⇒ weight: ∅ → 450
+    2 | SQP15 | 12/14.5 | 10.5/13.1 | 403D-15G | PI044F | Wuxi | 496 | 956 | 1500×650×1225 | 2200×1033×1304 |
+        ⇒ weight: ∅ → 496
+    2 | SQP15 | 12/14.5 | 10.5/13.1 | 403D-15G | PI044F | Wuxi | 496 | 956 | 1500×650×1225 | 2200×1033×1304 |
+        ⇒ weight: ∅ → 496
+    3 | SQP15 | 12/14.5 | 10.5/13.1 | 403A-15G1 | PI044F | Wuxi | 496 | 956 | 1500×650×1225 | 2200×1033×1304 |
+        ⇒ weight: ∅ → 496
+    3 | SQP15 | 12/14.5 | 10.5/13.1 | 403A-15G1 | PI044F | Wuxi | 496 | 956 | 1500×650×1225 | 2200×1033×1304 |
+        ⇒ weight: ∅ → 496
+    4 | SQP16 | 13/16 | 12/15 | 403A-15G2 | PI044F | Wuxi | 496 | 956 | 1500×650×1225 | 2200×1033×1304 |
+        ⇒ weight: ∅ → 496
+    4 | SQP16 | 13/16 | 12/15 | 403A-15G2 | PI044F | Wuxi | 496 | 956 | 1500×650×1225 | 2200×1033×1304 |
+        ⇒ weight: ∅ → 496
+    5 | SQP22 | 18/22 | 16/20 | 404D-22G | PI144D | Wuxi | 610 | 1070 | 1500×650×1225 | 2200×1033×1304 |
+        ⇒ weight: ∅ → 610
+    5 | SQP22 | 18/22 | 16/20 | 404D-22G | PI144D | Wuxi | 610 | 1070 | 1500×650×1225 | 2200×1033×1304 |
+        ⇒ weight: ∅ → 610
+    6 | SQP22 | 18/22 | 16/20 | 404A-22G1 | PI144D | Wuxi | 610 | 1070 | 1500×650×1225 | 2200×1033×1304 |
+        ⇒ weight: ∅ → 610
+    6 | SQP22 | 18/22 | 16/20 | 404A-22G1 | PI144D | Wuxi | 610 | 1070 | 1500×650×1225 | 2200×1033×1304 |
+        ⇒ weight: ∅ → 610
+    7 | SQP30 | 24/30 | 22/27 | 404D-22TG | PI144E | Wuxi | 660 | 1087 | 1500×650×1225 | 2200×1033×1304 |
+        ⇒ weight: ∅ → 660
+    7 | SQP30 | 24/30 | 22/27 | 404D-22TG | PI144E | Wuxi | 660 | 1087 | 1500×650×1225 | 2200×1033×1304 |
+        ⇒ weight: ∅ → 660
+    8 | SQP33 | 26/33 | 24/30 | 1103A-33G | PI144G | UK/INDIA | 780 | 1270 | 1650×750×1280 | 2300×1133×1376 |
+        ⇒ weight: ∅ → 780
+    8 | SQP33 | 26/33 | 24/30 | 1103A-33G | PI144G | UK/INDIA | 780 | 1270 | 1650×750×1280 | 2300×1133×1376 |
+        ⇒ weight: ∅ → 780
+    9 | SQP50 | 40/50 | 36/45 | 1103A-33TG1 | UCI224D | UK/INDIA | 887 | 1407 | 1650×750×1280 | 2300×1133×1376 |
+        ⇒ weight: ∅ → 887
+    9 | SQP50 | 40/50 | 36/45 | 1103A-33TG1 | UCI224D | UK/INDIA | 887 | 1407 | 1650×750×1280 | 2300×1133×1376 |
+        ⇒ weight: ∅ → 887
+   10 | SQP65 | 52/65 | 48/60 | 1103A-33TG2 | UCI224F | UK/INDIA | 908 | 1434 | 1650×750×1280 | 2300×1133×1376 |
+        ⇒ weight: ∅ → 908
+   10 | SQP65 | 52/65 | 48/60 | 1103A-33TG2 | UCI224F | UK/INDIA | 908 | 1434 | 1650×750×1280 | 2300×1133×1376 |
+        ⇒ weight: ∅ → 908
+   11 | SQP73 | 58/73 | 52/65 | 1104A-44TG1 | UCI224F | Wuxi | 923 | 1547 | 1750×850×1300 | 2300×1133×1376 |
+        ⇒ weight: ∅ → 923
+   11 | SQP73 | 58/73 | 52/65 | 1104A-44TG1 | UCI224F | Wuxi | 923 | 1547 | 1750×850×1300 | 2300×1133×1376 |
+        ⇒ weight: ∅ → 923
+   12 | SQP88 | 70/88 | 64/80 | 1104A-44TG2 | UCI224G | Wuxi | 1037 | 1560 | 1750×850×1300 | 2300×1133×1376 |
+        ⇒ weight: ∅ → 1037
+   12 | SQP88 | 70/88 | 64/80 | 1104A-44TG2 | UCI224G | Wuxi | 1037 | 1560 | 1750×850×1300 | 2300×1133×1376 |
+        ⇒ weight: ∅ → 1037
+   13 | SQP88 | 70/88 | 64/80 | 1104C-44TAG1 | UCI274C | Wuxi | 1175 | 1735 | 1750×850×1300 | 2300×1133×1376 |
+        ⇒ weight: ∅ → 1175
+   13 | SQP88 | 70/88 | 64/80 | 1104C-44TAG1 | UCI274C | Wuxi | 1175 | 1735 | 1750×850×1300 | 2300×1133×1376 |
+        ⇒ weight: ∅ → 1175
+   14 | SQP110 | 88/110 | 80/100 | 1104C-44TAG2 | UCI274C | Wuxi | 1190 | 1750 | 2240×850×1320 | 2700×1133×1666 |
+        ⇒ weight: ∅ → 1190
+   14 | SQP110 | 88/110 | 80/100 | 1104C-44TAG2 | UCI274C | Wuxi | 1190 | 1750 | 2240×850×1320 | 2700×1133×1666 |
+        ⇒ weight: ∅ → 1190
+   15 | SQP150 | 120/150 | 110/135 | 1106A-70TG1 | UCI274E | Wuxi | 1760 | 2864 | 2900×900×1536 | 3600×1333×2040 |
+        ⇒ weight: ∅ → 1760
+   15 | SQP150 | 120/150 | 110/135 | 1106A-70TG1 | UCI274E | Wuxi | 1760 | 2864 | 2900×900×1536 | 3600×1333×2040 |
+        ⇒ weight: ∅ → 1760
+   16 | SQP160 | 132/165 | 120/150 | 1106A-70TAG2 | UCI274F | Wuxi | 1760 | 2864 | 2900×900×1536 | 3600×1333×2040 |
+        ⇒ weight: ∅ → 1760
+   16 | SQP160 | 132/165 | 120/150 | 1106A-70TAG2 | UCI274F | Wuxi | 1760 | 2864 | 2900×900×1536 | 3600×1333×2040 |
+        ⇒ weight: ∅ → 1760
+   17 | SQP200 | 160/200 | 144/180 | 1106A-70TAG3 | UCI274G | Wuxi | 1796 | 2904 | 2900×900×1536 | 3600×1333×2040 |
+        ⇒ weight: ∅ → 1796
+   17 | SQP200 | 160/200 | 144/180 | 1106A-70TAG3 | UCI274G | Wuxi | 1796 | 2904 | 2900×900×1536 | 3600×1333×2040 |
+        ⇒ weight: ∅ → 1796
+   18 | SQP220 | 176/220 | 160/200 | 1106A-70TAG4 | UCI274H | Wuxi | 1830 | 2959 | 2900×900×1536 | 3600×1333×2040 |
+        ⇒ weight: ∅ → 1830
+   18 | SQP220 | 176/220 | 160/200 | 1106A-70TAG4 | UCI274H | Wuxi | 1830 | 2959 | 2900×900×1536 | 3600×1333×2040 |
+        ⇒ weight: ∅ → 1830
+   19 | SQP220 | 176/220 | 160/200 | 1506A-E88TAG1 | UCI274H | USA | 1830 | 2959 | 2900×900×1536 | 3600×1333×2040 |
+        ⇒ weight: ∅ → 1830
+   19 | SQP220 | 176/220 | 160/200 | 1506A-E88TAG1 | UCI274H | USA | 1830 | 2959 | 2900×900×1536 | 3600×1333×2040 |
+        ⇒ weight: ∅ → 1830
+   20 | SQP250 | 200/250 | 180/225 | 1506A-E88TAG2 | UCDI274J | USA | 2760 | 4500 | 3000×1200×2000 | 4100×1490×2000 |
+        ⇒ weight: ∅ → 2760
+   20 | SQP250 | 200/250 | 180/225 | 1506A-E88TAG2 | UCDI274J | USA | 2760 | 4500 | 3000×1200×2000 | 4100×1490×2000 |
+        ⇒ weight: ∅ → 2760
+   21 | SQP275 | 220/275 | 200/250 | 1506A-E88TAG3 | UCDI274K | USA | 2760 | 4500 | 3000×1200×2000 | 4100×1490×2000 |
+        ⇒ weight: ∅ → 2760
+   21 | SQP275 | 220/275 | 200/250 | 1506A-E88TAG3 | UCDI274K | USA | 2760 | 4500 | 3000×1200×2000 | 4100×1490×2000 |
+        ⇒ weight: ∅ → 2760
+   22 | SQP300 | 240/300 | 220/275 | 1506A-E88TAG4 | HCI444D | USA | 2860 | 4600 | 3000×1200×2000 | 4100×1490×2000 |
+        ⇒ weight: ∅ → 2860
+   22 | SQP300 | 240/300 | 220/275 | 1506A-E88TAG4 | HCI444D | USA | 2860 | 4600 | 3000×1200×2000 | 4100×1490×2000 |
+        ⇒ weight: ∅ → 2860
+   23 | SQP330 | 264/330 | 240/300 | 1506A-E88TAG5 | HCI444D | USA | 2860 | 4600 | 3000×1200×2000 | 4100×1490×2000 |
+        ⇒ weight: ∅ → 2860
+   23 | SQP330 | 264/330 | 240/300 | 1506A-E88TAG5 | HCI444D | USA | 2860 | 4600 | 3000×1200×2000 | 4100×1490×2000 |
+        ⇒ weight: ∅ → 2860
+   24 | SQP400 | 320/400 | 280/350 | 2206C-E13TAG2 | HCI444E | USA | 2932 | 4724 | 3200×1206×1980 | 4500×1583×2200 |
+        ⇒ weight: ∅ → 2932
+   24 | SQP400 | 320/400 | 280/350 | 2206C-E13TAG2 | HCI444E | USA | 2932 | 4724 | 3200×1206×1980 | 4500×1583×2200 |
+        ⇒ weight: ∅ → 2932
+   25 | SQP450 | 360/450 | 320/400 | 2206C-E13TAG3 | HCI444E | USA | 3069 | 4860 | 3200×1206×1980 | 4500×1583×2200 |
+        ⇒ weight: ∅ → 3069
+   25 | SQP450 | 360/450 | 320/400 | 2206C-E13TAG3 | HCI444E | USA | 3069 | 4860 | 3200×1206×1980 | 4500×1583×2200 |
+        ⇒ weight: ∅ → 3069
+   26 | SQP500 | 400/500 | 360/450 | 2506C-E15TAG1 | HCI544C | USA | 3400 | 5039 | 3500×1540×1850 | 4700×1583×2200 |
+        ⇒ weight: ∅ → 3400
+   26 | SQP500 | 400/500 | 360/450 | 2506C-E15TAG1 | HCI544C | USA | 3400 | 5039 | 3500×1540×1850 | 4700×1583×2200 |
+        ⇒ weight: ∅ → 3400
+   27 | SQP550 | 440/550 | 400/500 | 2506C-E15TAG2 | HCI544D | USA | 3551 | 5166 | 3500×1540×1850 | 4700×1583×2200 |
+        ⇒ weight: ∅ → 3551
+   27 | SQP550 | 440/550 | 400/500 | 2506C-E15TAG2 | HCI544D | USA | 3551 | 5166 | 3500×1540×1850 | 4700×1583×2200 |
+        ⇒ weight: ∅ → 3551
+   28 | SQP660 | 528/660 | 480/600 | 2806C-E18TAG1A | HCI544E | USA | 3925 | 6041 | 3500×1540×2050 | 4700×1983×2200 |
+        ⇒ weight: ∅ → 3925
+   28 | SQP660 | 528/660 | 480/600 | 2806C-E18TAG1A | HCI544E | USA | 3925 | 6041 | 3500×1540×2050 | 4700×1983×2200 |
+        ⇒ weight: ∅ → 3925
+   29 | SQP700 | 560/700 | 520/650 | 2806A-E18TAG2 | HCI544F | USA | 3925 | 6041 | 3500×1540×2050 | 4700×1983×2200 |
+        ⇒ weight: ∅ → 3925
+   29 | SQP700 | 560/700 | 520/650 | 2806A-E18TAG2 | HCI544F | USA | 3925 | 6041 | 3500×1540×2050 | 4700×1983×2200 |
+        ⇒ weight: ∅ → 3925
+   30 | SQP820 | 660/825 | 600/750 | 4006-23TAG2A | HCI634G | UK/INDIA | 5525 | 10370 | 4350×1750×2270 | 6058×2438×2591 |
+        ⇒ weight: ∅ → 5525
+   30 | SQP820 | 660/825 | 600/750 | 4006-23TAG2A | HCI634G | UK/INDIA | 5525 | 10370 | 4350×1750×2270 | 6058×2438×2591 |
+        ⇒ weight: ∅ → 5525
+   31 | SQP900 | 720/900 | 648/810 | 4006-23TAG3A | HCI634G | UK/INDIA | 5570 | 10400 | 4350×1750×2270 | 6058×2438×2591 |
+        ⇒ weight: ∅ → 5570
+   31 | SQP900 | 720/900 | 648/810 | 4006-23TAG3A | HCI634G | UK/INDIA | 5570 | 10400 | 4350×1750×2270 | 6058×2438×2591 |
+        ⇒ weight: ∅ → 5570
+   32 | SQP1000 | 800/1000 | 720/900 | 4008TAG1A | HCI634H | UK/INDIA | 6667 | 11667 | 4350×1750×2270 | 6058×2438×2591 |
+        ⇒ weight: ∅ → 6667
+   32 | SQP1000 | 800/1000 | 720/900 | 4008TAG1A | HCI634H | UK/INDIA | 6667 | 11667 | 4350×1750×2270 | 6058×2438×2591 |
+        ⇒ weight: ∅ → 6667
+   33 | SQP1100 | 880/1100 | 800/990 | 4008TAG2A | HCI634J | UK/INDIA | 6792 | 12030 | 4350×1750×2270 | 6058×2438×2591 |
+        ⇒ weight: ∅ → 6792
+   33 | SQP1100 | 880/1100 | 800/990 | 4008TAG2A | HCI634J | UK/INDIA | 6792 | 12030 | 4350×1750×2270 | 6058×2438×2591 |
+        ⇒ weight: ∅ → 6792
+   34 | SQP1250 | 1000/1250 | 900/1125 | 4008-30TAG3 | HCI634K | UK | 6792 | 12030 | 4800×2200×2477 | 12192×2438×2896 |
+        ⇒ weight: ∅ → 6792
+   34 | SQP1250 | 1000/1250 | 900/1125 | 4008-30TAG3 | HCI634K | UK | 6792 | 12030 | 4800×2200×2477 | 12192×2438×2896 |
+        ⇒ weight: ∅ → 6792
+   35 | SQP1375 | 1100/1375 | 1000/1250 | 4012-46TWG2A | LVI634G | UK/INDIA | 9950 | 17950 | 4800×2200×2477 | 12192×2438×2896 |
+        ⇒ weight: ∅ → 9950
+   35 | SQP1375 | 1100/1375 | 1000/1250 | 4012-46TWG2A | LVI634G | UK/INDIA | 9950 | 17950 | 4800×2200×2477 | 12192×2438×2896 |
+        ⇒ weight: ∅ → 9950
+   36 | SQP1500 | 1200/1500 | 1100/1375 | 4012-46TWG3A | PI734B | UK | 10205 | 18205 | 4800×2200×2477 | 12192×2438×2896 |
+        ⇒ weight: ∅ → 10205
+   36 | SQP1500 | 1200/1500 | 1100/1375 | 4012-46TWG3A | PI734B | UK | 10205 | 18205 | 4800×2200×2477 | 12192×2438×2896 |
+        ⇒ weight: ∅ → 10205
+   37 | SQP1650 | 1320/1650 | 1200/1500 | 4012-46TAG2A | PI734C | UK/INDIA | 10435 | 18435 | 4800×2200×2477 | 12192×2438×2896 |
+        ⇒ weight: ∅ → 10435
+   37 | SQP1650 | 1320/1650 | 1200/1500 | 4012-46TAG2A | PI734C | UK/INDIA | 10435 | 18435 | 4800×2200×2477 | 12192×2438×2896 |
+        ⇒ weight: ∅ → 10435
+   38 | SQP1875 | 1500/1875 | 1360/1700 | 4012-46TAG3A | PI734E | UK/INDIA | 11200 | 19200 | 4800×2200×2477 | 12192×2438×2896 |
+        ⇒ weight: ∅ → 11200
+   38 | SQP1875 | 1500/1875 | 1360/1700 | 4012-46TAG3A | PI734E | UK/INDIA | 11200 | 19200 | 4800×2200×2477 | 12192×2438×2896 |
+        ⇒ weight: ∅ → 11200
+   39 | SQP2000 | 1600/2000 | 1440/1800 | 4016TAG1A | PI734E | UK | 13780 | 21780 | 4800×2200×2477 | 12192×2438×2896 |
+        ⇒ weight: ∅ → 13780
+   39 | SQP2000 | 1600/2000 | 1440/1800 | 4016TAG1A | PI734E | UK | 13780 | 21780 | 4800×2200×2477 | 12192×2438×2896 |
+        ⇒ weight: ∅ → 13780
+   40 | SQP2000 | 1600/2000 | 1440/1800 | 4016-61TRG1 | PI734E | UK/INDIA | 13780 | 21780 | 4800×2200×2477 | 12192×2438×2896 |
+        ⇒ weight: ∅ → 13780
+   40 | SQP2000 | 1600/2000 | 1440/1800 | 4016-61TRG1 | PI734E | UK/INDIA | 13780 | 21780 | 4800×2200×2477 | 12192×2438×2896 |
+        ⇒ weight: ∅ → 13780
+   41 | SQP2250 | 1800/2250 | 1600/2000 | 4016TAG2A | PI734F | UK | 13875 | 21875 | 4800×2200×2477 | 12192×2438×2896 |
+        ⇒ weight: ∅ → 13875
+   41 | SQP2250 | 1800/2250 | 1600/2000 | 4016TAG2A | PI734F | UK | 13875 | 21875 | 4800×2200×2477 | 12192×2438×2896 |
+        ⇒ weight: ∅ → 13875
+   42 | SQP2250 | 1800/2250 | 1600/2000 | 4016-61TRG2 | PI734F | UK/INDIA | 13875 | 21875 | 4800×2200×2477 | 12192×2438×2896 |
+        ⇒ weight: ∅ → 13875
+   42 | SQP2250 | 1800/2250 | 1600/2000 | 4016-61TRG2 | PI734F | UK/INDIA | 13875 | 21875 | 4800×2200×2477 | 12192×2438×2896 |
+        ⇒ weight: ∅ → 13875
+   43 | SQP2500 | 2000/2500 | 1800/2250 | 4016-61TRG3 | PI734G | UK/INDIA | 14900 | 22900 | 4800×2200×2477 | 12192×2438×2896 |
+        ⇒ weight: ∅ → 14900
+   43 | SQP2500 | 2000/2500 | 1800/2250 | 4016-61TRG3 | PI734G | UK/INDIA | 14900 | 22900 | 4800×2200×2477 | 12192×2438×2896 |
+        ⇒ weight: ∅ → 14900
+
+[sanq-power n109 bảng 14] ×16
+  H: | Genset Model | Standby Power | Prime Power | Engine Model | Alternator Model | Fuel Consumption | Genset Weight (Kg) | Genset overall LxWxH (MM) | Click for Detail Data
+  H: | kVa/kW | kVa/kW | Mitsubishi | Stamford | L/H | Open type | Silent type | Open Type | Silent type
+    0 | SQM750 | 750/600 | 650/520 | S6R2--PTA-C | HCI544F | 139 | 4750 | 6500 | 3750x1410x2200 | 5030x1860x2550 |
+        ⇒ weight: ∅ → 4750
+    0 | SQM750 | 750/600 | 650/520 | S6R2--PTA-C | HCI544F | 139 | 4750 | 6500 | 3750x1410x2200 | 5030x1860x2550 |
+        ⇒ weight: ∅ → 4750
+    1 | SQM825 | 825/660 | 750/600 | S6R2-PTAA-C | HCI634G | 170 | 5600 | 12200 | 3950x1600x2000 | 6050x2438x2896 |
+        ⇒ weight: ∅ → 5600
+    1 | SQM825 | 825/660 | 750/600 | S6R2-PTAA-C | HCI634G | 170 | 5600 | 12200 | 3950x1600x2000 | 6050x2438x2896 |
+        ⇒ weight: ∅ → 5600
+    2 | SQM1375 | 1375/1100 | 1250/1000 | S12R-PTA-C | LVI634G | 266 | 9320 | 16850 | 4570x2100x2460 | 6058x2438x2896 |
+        ⇒ weight: ∅ → 9320
+    2 | SQM1375 | 1375/1100 | 1250/1000 | S12R-PTA-C | LVI634G | 266 | 9320 | 16850 | 4570x2100x2460 | 6058x2438x2896 |
+        ⇒ weight: ∅ → 9320
+    3 | SQM1500 | 1500/1200 | 1375/1100 | S12R-PTA2-C | PI734B | 281 | 10500 | 18300 | 4650x2100x2630 | 12192x2438x2896 |
+        ⇒ weight: ∅ → 10500
+    3 | SQM1500 | 1500/1200 | 1375/1100 | S12R-PTA2-C | PI734B | 281 | 10500 | 18300 | 4650x2100x2630 | 12192x2438x2896 |
+        ⇒ weight: ∅ → 10500
+    4 | SQM1650 | 1650/1320 | 1500/1200 | S12R-PTAA2-C | PI734C | 308 | 12317 | 18500 | 4920x2192x2810 | 12192x2438x2896 |
+        ⇒ weight: ∅ → 12317
+    4 | SQM1650 | 1650/1320 | 1500/1200 | S12R-PTAA2-C | PI734C | 308 | 12317 | 18500 | 4920x2192x2810 | 12192x2438x2896 |
+        ⇒ weight: ∅ → 12317
+    5 | SQM1815 | 1813/1450 | 1650/1320 | S16R-PTA-C | PI734D | 310 | 14150 | 19200 | 5470x2200x2810 | 12192x2438x2896 |
+        ⇒ weight: ∅ → 14150
+    5 | SQM1815 | 1813/1450 | 1650/1320 | S16R-PTA-C | PI734D | 310 | 14150 | 19200 | 5470x2200x2810 | 12192x2438x2896 |
+        ⇒ weight: ∅ → 14150
+    6 | SQM2000 | 2000/1600 | 1875/1500 | S16R-PTA2-C | PI734E | 418 | 14545 | 21780 | 5450x2600x3100 | 12192x2438x2896 |
+        ⇒ weight: ∅ → 14545
+    6 | SQM2000 | 2000/1600 | 1875/1500 | S16R-PTA2-C | PI734E | 418 | 14545 | 21780 | 5450x2600x3100 | 12192x2438x2896 |
+        ⇒ weight: ∅ → 14545
+    7 | SQM2250 | 2250/1800 | 2000/1600 | S16R-PTAA2-C | PI734F | 432 | 14900 | 21875 | 5850x2450x3430 | 12192x2438x2896 |
+        ⇒ weight: ∅ → 14900
+    7 | SQM2250 | 2250/1800 | 2000/1600 | S16R-PTAA2-C | PI734F | 432 | 14900 | 21875 | 5850x2450x3430 | 12192x2438x2896 |
+        ⇒ weight: ∅ → 14900
+
+[sanq-power n110 bảng 15] ×28
+  H: | Genset Model | Standby Power | Prime Power | Engine Model | Alternator Model | Fuel Consumption | Genset Weight (Kg) | Genset overall LxWxH (MM) | Click for Detail Data
+  H: | kW/kVa | kW/kVa | Doosan | Stamford | L/H | Open type | Silent type | Open Type | Silent type
+    0 | SQD165 | 132/165 | 120/150 | DP086TA | UCI274F | 34.8 | 1420 | 2430 | 2360x830x1334 | 3200x1133x1766 |
+        ⇒ weight: ∅ → 1420
+    0 | SQD165 | 132/165 | 120/150 | DP086TA | UCI274F | 34.8 | 1420 | 2430 | 2360x830x1334 | 3200x1133x1766 |
+        ⇒ weight: ∅ → 1420
+    1 | SQD220 | 176/220 | 160/200 | DP086LA | UCI274H | 43.1 | 2000 | 2500 | 2795x968x1632 | 3750x1080x2070 |
+        ⇒ weight: ∅ → 2000
+    1 | SQD220 | 176/220 | 160/200 | DP086LA | UCI274H | 43.1 | 2000 | 2500 | 2795x968x1632 | 3750x1080x2070 |
+        ⇒ weight: ∅ → 2000
+    2 | SQD250 | 200/250 | 180/225 | DP086LA | UCDI274J | 46.8 | 2000 | 3380 | 2650x960x1632 | 3600x1333x2040 |
+        ⇒ weight: ∅ → 2000
+    2 | SQD250 | 200/250 | 180/225 | DP086LA | UCDI274J | 46.8 | 2000 | 3380 | 2650x960x1632 | 3600x1333x2040 |
+        ⇒ weight: ∅ → 2000
+    6 | SQD385 | 308/385 | 280/350 | P158LE-1 | HCI444E | 72 | 3120 | 4495 | 3050x1160x1645 | 4300x1483x2145 |
+        ⇒ model: P158LE-1 → HCI444E; other: null → P158LE-1; weight: 4495 → 3120; fuel: ∅ → 72
+    6 | SQD385 | 308/385 | 280/350 | P158LE-1 | HCI444E | 72 | 3120 | 4495 | 3050x1160x1645 | 4300x1483x2145 |
+        ⇒ THÊM bản ghi engine P158LE-1
+    7 | SQD415 | 332/415 | 300/375 | DP158LC | HCI444FS | 85 | 3050 | 5327 | 3100x1150x1700 | 4300x1483x2145 |
+        ⇒ weight: ∅ → 3050
+    7 | SQD415 | 332/415 | 300/375 | DP158LC | HCI444FS | 85 | 3050 | 5327 | 3100x1150x1700 | 4300x1483x2145 |
+        ⇒ weight: ∅ → 3050
+    8 | SQD440 | 352/440 | 320/400 | DP158LC | HCI444F | 87 | 3050 | 5360 | 3150x1090x1750 | 4300x1483x2145 |
+        ⇒ weight: ∅ → 3050
+    8 | SQD440 | 352/440 | 320/400 | DP158LC | HCI444F | 87 | 3050 | 5360 | 3150x1090x1750 | 4300x1483x2145 |
+        ⇒ weight: ∅ → 3050
+    9 | SQD500 | 400/500 | 360/450 | DP158LC | HCI544C | 99.6 | 3000 | 4500 | 3120x1390x1690 | 4650x1800x2220 |
+        ⇒ weight: ∅ → 3000
+    9 | SQD500 | 400/500 | 360/450 | DP158LC | HCI544C | 99.6 | 3000 | 4500 | 3120x1390x1690 | 4650x1800x2220 |
+        ⇒ weight: ∅ → 3000
+   10 | SQD550 | 440/550 | 400/500 | DP158LD | HCI544C | 97 | 3720 | 5700 | 3300x1280x1950 | 4800x1683x2200 |
+        ⇒ weight: ∅ → 3720
+   10 | SQD550 | 440/550 | 400/500 | DP158LD | HCI544C | 97 | 3720 | 5700 | 3300x1280x1950 | 4800x1683x2200 |
+        ⇒ weight: ∅ → 3720
+   11 | SQD575 | 460/575 | 420/525 | DP158LD | HCI544D | 106 | 3720 | 6200 | 3300x1280x1950 | 4800x1683x2200 |
+        ⇒ weight: ∅ → 3720
+   11 | SQD575 | 460/575 | 420/525 | DP158LD | HCI544D | 106 | 3720 | 6200 | 3300x1280x1950 | 4800x1683x2200 |
+        ⇒ weight: ∅ → 3720
+   12 | SQD605 | 484/605 | 440/550 | DP180LA | HCI544D | 113 | 3860 | 6650 | 3250x1280x1950 | 4800x1683x2200 |
+        ⇒ weight: ∅ → 3860
+   12 | SQD605 | 484/605 | 440/550 | DP180LA | HCI544D | 113 | 3860 | 6650 | 3250x1280x1950 | 4800x1683x2200 |
+        ⇒ weight: ∅ → 3860
+   13 | SQD625 | 500/625 | 452/565 | DP180LA | HCI544E | 127.7 | 4820 | 6500 | 3700x1570x2080 | 5030x1860x2550 |
+        ⇒ weight: ∅ → 4820
+   13 | SQD625 | 500/625 | 452/565 | DP180LA | HCI544E | 127.7 | 4820 | 6500 | 3700x1570x2080 | 5030x1860x2550 |
+        ⇒ weight: ∅ → 4820
+   14 | SQD688 | 550/688 | 500/625 | DP180LB | HCI544FS | 128 | 4400 | 6700 | 3400x1550x2120 | 4800x1683x2200 |
+        ⇒ weight: ∅ → 4400
+   14 | SQD688 | 550/688 | 500/625 | DP180LB | HCI544FS | 128 | 4400 | 6700 | 3400x1550x2120 | 4800x1683x2200 |
+        ⇒ weight: ∅ → 4400
+   15 | SQD738 | 590/738 | 536/670 | DP222LB | HCI544F | 145 | 4650 | 9000 | 3600x1400x2000 | 5000x1983x2371 |
+        ⇒ weight: ∅ → 4650
+   15 | SQD738 | 590/738 | 536/670 | DP222LB | HCI544F | 145 | 4650 | 9000 | 3600x1400x2000 | 5000x1983x2371 |
+        ⇒ weight: ∅ → 4650
+   16 | SQD813 | 650/813 | 590/738 | DP222LC | LVI634C | 225 | 7950 | 11985 | 3700x1820x2300 | 6058x2438x2896 |
+        ⇒ weight: ∅ → 7950
+   16 | SQD813 | 650/813 | 590/738 | DP222LC | LVI634C | 225 | 7950 | 11985 | 3700x1820x2300 | 6058x2438x2896 |
+        ⇒ weight: ∅ → 7950
+
+[sanq-power n111 bảng 16] ×30
+  H: | Genset Model | Standby Power | Prime Power | Engine Model | C/O Of Engine | Alternator Model | Fuel Cons-umption | Genset Weight (KG) | Genset Overall L×W×H(MM) | Click for detail data
+  H: | Kw/Kva | Kw/Kva | Volvo | Stamford | g/Kwh | Open Type | Silent Type | Open Type | Silent Type
+    0 | SQV95 | 75/95 | 68/85 | TAD550GE(530GE) | Germany | UCI224G | 217 | 1290 | 1850 | 2080×940×1550 | 2810×1140×1830 |
+        ⇒ weight: ∅ → 1290
+    0 | SQV95 | 75/95 | 68/85 | TAD550GE(530GE) | Germany | UCI224G | 217 | 1290 | 1850 | 2080×940×1550 | 2810×1140×1830 |
+        ⇒ weight: ∅ → 1290
+    1 | SQV110 | 88/110 | 80/100 | TAD551GE(531GE) | Germany | UCI274C | 218 | 1350 | 1900 | 2080×920×1550 | 2810×1140×1830 |
+        ⇒ weight: ∅ → 1350
+    1 | SQV110 | 88/110 | 80/100 | TAD551GE(531GE) | Germany | UCI274C | 218 | 1350 | 1900 | 2080×920×1550 | 2810×1140×1830 |
+        ⇒ weight: ∅ → 1350
+    2 | SQV145 | 114/145 | 105/130 | TAD750GE(532GE) | Germany | UCI274E | 214 | 1400 | 2000 | 2080×920×1550 | 2810×1140×1830 |
+        ⇒ weight: ∅ → 1400
+    2 | SQV145 | 114/145 | 105/130 | TAD750GE(532GE) | Germany | UCI274E | 214 | 1400 | 2000 | 2080×920×1550 | 2810×1140×1830 |
+        ⇒ weight: ∅ → 1400
+    3 | SQV165 | 132/165 | 120/150 | TAD751GE(731GE) | Germany | UCI274F | 215 | 1760 | 2400 | 2400×920×1550 | 3250×1170×1800 |
+        ⇒ weight: ∅ → 1760
+    3 | SQV165 | 132/165 | 120/150 | TAD751GE(731GE) | Germany | UCI274F | 215 | 1760 | 2400 | 2400×920×1550 | 3250×1170×1800 |
+        ⇒ weight: ∅ → 1760
+    4 | SQV200 | 160/200 | 145/180 | TAD752GE(732GE) | Germany | UCI274G | 213 | 1820 | 2700 | 2600×1050×1770 | 3590×1250×2050 |
+        ⇒ weight: ∅ → 1820
+    4 | SQV200 | 160/200 | 145/180 | TAD752GE(732GE) | Germany | UCI274G | 213 | 1820 | 2700 | 2600×1050×1770 | 3590×1250×2050 |
+        ⇒ weight: ∅ → 1820
+    5 | SQV220 | 176/220 | 160/200 | TAD753GE(733GE) | Germany | UCI274H | 216 | 1820 | 2700 | 2600×1050×1770 | 3590×1250×2050 |
+        ⇒ weight: ∅ → 1820
+    5 | SQV220 | 176/220 | 160/200 | TAD753GE(733GE) | Germany | UCI274H | 216 | 1820 | 2700 | 2600×1050×1770 | 3590×1250×2050 |
+        ⇒ weight: ∅ → 1820
+    6 | SQV275 | 220/275 | 200/250 | TAD754GE(734GE) | Germany | UCDI274K | 204 | 2000 | 2870 | 2650×1120×1670 | 3590×1250×2050 |
+        ⇒ weight: ∅ → 2000
+    6 | SQV275 | 220/275 | 200/250 | TAD754GE(734GE) | Germany | UCDI274K | 204 | 2000 | 2870 | 2650×1120×1670 | 3590×1250×2050 |
+        ⇒ weight: ∅ → 2000
+    7 | SQV345 | 276/345 | 250/313 | TAD1351GE(1341GE) | Germany | HCI444ES | 191 | 2500 | 3920 | 2950×1120×1770 | 3890×1460×2150 |
+        ⇒ weight: ∅ → 2500
+    7 | SQV345 | 276/345 | 250/313 | TAD1351GE(1341GE) | Germany | HCI444ES | 191 | 2500 | 3920 | 2950×1120×1770 | 3890×1460×2150 |
+        ⇒ weight: ∅ → 2500
+    8 | SQV385 | 308/385 | 280/350 | TAD1352GE(1342GE) | Sweden | HCI444E | 191 | 2500 | 3920 | 2950×1120×1770 | 3890×1460×2150 |
+        ⇒ weight: ∅ → 2500
+    8 | SQV385 | 308/385 | 280/350 | TAD1352GE(1342GE) | Sweden | HCI444E | 191 | 2500 | 3920 | 2950×1120×1770 | 3890×1460×2150 |
+        ⇒ weight: ∅ → 2500
+    9 | SQV415 | 330/415 | 300/375 | TAD1354GE(1343GE) | Sweden | HCI444FS | 192 | 3000 | 4300 | 3130×1115×1850 | 4230×1460×2150 |
+        ⇒ weight: ∅ → 3000
+    9 | SQV415 | 330/415 | 300/375 | TAD1354GE(1343GE) | Sweden | HCI444FS | 192 | 3000 | 4300 | 3130×1115×1850 | 4230×1460×2150 |
+        ⇒ weight: ∅ → 3000
+   10 | SQV440 | 352/440 | 320/400 | TAD1355GE(1344GE) | Sweden | HCI444F | 194 | 3100 | 4400 | 3130×1115×1850 | 4230×1460×2150 |
+        ⇒ weight: ∅ → 3100
+   10 | SQV440 | 352/440 | 320/400 | TAD1355GE(1344GE) | Sweden | HCI444F | 194 | 3100 | 4400 | 3130×1115×1850 | 4230×1460×2150 |
+        ⇒ weight: ∅ → 3100
+   11 | SQV500 | 400/500 | 360/450 | TAD1650GE(1345GE) | Sweden | HCI544C | 196 | 3300 | 4405 | 3205×1115×1850 | 4230×1460×2150 |
+        ⇒ weight: ∅ → 3300
+   11 | SQV500 | 400/500 | 360/450 | TAD1650GE(1345GE) | Sweden | HCI544C | 196 | 3300 | 4405 | 3205×1115×1850 | 4230×1460×2150 |
+        ⇒ weight: ∅ → 3300
+   12 | SQV550 | 440/550 | 400/500 | TAD1651GE(1641GE) | Sweden | HCI544C | 199 | 3700 | 5140 | 3300×1275×2030 | 4630×1660×2250 |
+        ⇒ weight: ∅ → 3700
+   12 | SQV550 | 440/550 | 400/500 | TAD1651GE(1641GE) | Sweden | HCI544C | 199 | 3700 | 5140 | 3300×1275×2030 | 4630×1660×2250 |
+        ⇒ weight: ∅ → 3700
+   13 | SQV633 | 506/633 | 460/575 | TAD1652GE(1642GE) | Sweden | HCI544E | 198 | 3880 | 5590 | 3300×1275×2030 | 4630×1660×2250 |
+        ⇒ weight: ∅ → 3880
+   13 | SQV633 | 506/633 | 460/575 | TAD1652GE(1642GE) | Sweden | HCI544E | 198 | 3880 | 5590 | 3300×1275×2030 | 4630×1660×2250 |
+        ⇒ weight: ∅ → 3880
+   14 | SQV688 | 550/688 | 500/625 | TWD1653GE(1643GE) | Sweden | HCI544FS | 199 | 4350 | 6060 | 3405×1397×2100 | 5030×1660×2550 |
+        ⇒ weight: ∅ → 4350
+   14 | SQV688 | 550/688 | 500/625 | TWD1653GE(1643GE) | Sweden | HCI544FS | 199 | 4350 | 6060 | 3405×1397×2100 | 5030×1660×2550 |
+        ⇒ weight: ∅ → 4350
+
+[uleengen n132 bảng 54] ×2
+  H: | 发电机组型号 | 50HZ | 柴油发动机 | 交流发电机 | 外形尺寸（mm） | 毛重 （kg）
+  H: | 功率（kW） | 功率（kVA） | 模型 | 额定功率 （kW） | 气缸数量 | 孔径x行程（mm） | 位移 L | 额定燃油消耗量 （L/h） | 模型
+    6 | UD60GF | 48 | 60 | f6l912吨 | 61 | 6 | 100*120 | 5.655 | 11.8 | 224E | 2250×800×1350 | 1200
+        ⇒ MẤT bản ghi engine 224E
+    6 | UD60GF | 48 | 60 | f6l912吨 | 61 | 6 | 100*120 | 5.655 | 11.8 | 224E | 2250×800×1350 | 1200
+        ⇒ THÊM bản ghi alternator 224E
+
+[uleengen n136 bảng 61] ×8
+  H: | 发电机组型号 | 50HZ | 柴油发动机 | 交流发电机 | 整体尺寸静音型（mm） | 毛重（kg）
+  H: | 功率（kW） | 功率（kVA） | 模型 | 额定功率（kW） | 气缸数量 | 孔径x行程（mm） | 排量（L） | 额定燃油消耗量（L/h） | 模型
+    0 | UY10GFS | 8 | 10 | 380码 | 10 | 3 | 80*90 | 1.357 | 1.9 | 164B | 1860x850x1200 | 700
+        ⇒ MẤT bản ghi engine 164B
+    0 | UY10GFS | 8 | 10 | 380码 | 10 | 3 | 80*90 | 1.357 | 1.9 | 164B | 1860x850x1200 | 700
+        ⇒ THÊM bản ghi alternator 164B
+    1 | UY12GFS | 10 | 12.5 | 码385d | 11 | 3 | 85*90 | 1.532 | 2.3 | 164C | 1860x850x1200 | 700
+        ⇒ MẤT bản ghi engine 164C
+    1 | UY12GFS | 10 | 12.5 | 码385d | 11 | 3 | 85*90 | 1.532 | 2.3 | 164C | 1860x850x1200 | 700
+        ⇒ THÊM bản ghi alternator 164C
+    2 | UY15GFS | 12 | 15 | 480码 | 14 | 4 | 80*90 | 1.809 | 2.8 | 164D | 1950x900x1300 | 720
+        ⇒ MẤT bản ghi engine 164D
+    2 | UY15GFS | 12 | 15 | 480码 | 14 | 4 | 80*90 | 1.809 | 2.8 | 164D | 1950x900x1300 | 720
+        ⇒ THÊM bản ghi alternator 164D
+    4 | UY25GFS | 20 | 25 | 490天 | 24 | 4 | 90*105 | 2.67 | 4.7 | 184EF | 2200x950x1200 | 800
+        ⇒ MẤT bản ghi engine 184EF
+    4 | UY25GFS | 20 | 25 | 490天 | 24 | 4 | 90*105 | 2.67 | 4.7 | 184EF | 2200x950x1200 | 800
+        ⇒ THÊM bản ghi alternator 184EF
+
+[uleengen n136 bảng 62] ×6
+  H: | 发电机组型号 | 60HZ | 柴油发动机 | 交流发电机 | 整体尺寸静音型（mm） | 毛重（kg）
+  H: | 功率（kW） | 功率（kVA） | 模型 | 额定功率（kW） | 气缸数量 | 孔径x行程（mm） | 排量（L） | 额定燃油消耗量（L/h） | 模型
+    1 | UY12GFS | 10 | 12.5 | 380码 | 12 | 3 | 80*90 | 1.357 | 1.9 | 164B | 1860x850x1200 | 700
+        ⇒ MẤT bản ghi engine 164B
+    1 | UY12GFS | 10 | 12.5 | 380码 | 12 | 3 | 80*90 | 1.357 | 1.9 | 164B | 1860x850x1200 | 700
+        ⇒ THÊM bản ghi alternator 164B
+    2 | UY15GFS | 12 | 15 | 480码 | 16 | 4 | 80*90 | 1.809 | 2.8 | 164C | 1950x900x1300 | 720
+        ⇒ MẤT bản ghi engine 164C
+    2 | UY15GFS | 12 | 15 | 480码 | 16 | 4 | 80*90 | 1.809 | 2.8 | 164C | 1950x900x1300 | 720
+        ⇒ THÊM bản ghi alternator 164C
+    5 | 30gfs | 24 | 30 | 490天 | 28 | 4 | 90*105 | 2.64 | 5.6 | 184E | 2200x950x1250 | 850
+        ⇒ MẤT bản ghi engine 184E
+    5 | 30gfs | 24 | 30 | 490天 | 28 | 4 | 90*105 | 2.64 | 5.6 | 184E | 2200x950x1250 | 850
+        ⇒ THÊM bản ghi alternator 184E
+
+[uleengen n5001 bảng 69] ×10
+  H: | Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator
+    1 | UD150GF | 150 | 188 | 170 | 213 | P086TI | 274G
+        ⇒ model: 274G → P086TI; other: P086TI → 274G
+    1 | UD150GF | 150 | 188 | 170 | 213 | P086TI | 274G
+        ⇒ model: P086TI → 274G; other: 274G → P086TI
+    2 | UD160GF | 160 | 200 | 176 | 220 | P086TI |
+        ⇒ MẤT bản ghi alternator P086TI
+    2 | UD160GF | 160 | 200 | 176 | 220 | P086TI |
+        ⇒ THÊM bản ghi engine P086TI
+    3 | UD200GF | 200 | 250 | 220 | 275 | P126TI | 274K
+        ⇒ model: 274K → P126TI; other: P126TI → 274K
+    3 | UD200GF | 200 | 250 | 220 | 275 | P126TI | 274K
+        ⇒ model: P126TI → 274K; other: 274K → P126TI
+    4 | UD250GF | 250 | 313 | 275 | 344 | P126TI-II |
+        ⇒ MẤT bản ghi alternator P126TI-II
+    4 | UD250GF | 250 | 313 | 275 | 344 | P126TI-II |
+        ⇒ THÊM bản ghi engine P126TI-II
+    5 | UD300GF | 300 | 375 | 330 | 413 | P158LE-1 |
+        ⇒ MẤT bản ghi alternator P158LE-1
+    5 | UD300GF | 300 | 375 | 330 | 413 | P158LE-1 |
+        ⇒ THÊM bản ghi engine P158LE-1
+
+[xinhengxin-fujian n101 bảng 0] ×7
+  undefined (bảng nhãn)
+        ⇒ dims: 190*130 → ∅
+  undefined (bảng nhãn)
+        ⇒ dims: 190*140 → ∅
+  undefined (bảng nhãn)
+        ⇒ dims: 190*158 → ∅
+  undefined (bảng nhãn)
+        ⇒ dims: 204*140 → ∅
+  undefined (bảng nhãn)
+        ⇒ dims: 204*160 → ∅
+  undefined (bảng nhãn)
+        ⇒ dims: 210*160 → ∅
+  undefined (bảng nhãn)
+        ⇒ dims: 245*140 → ∅
+
+[xinhengxin-fujian n102 bảng 1] ×5
+  undefined (bảng nhãn)
+        ⇒ dims: 160*85 → ∅
+  undefined (bảng nhãn)
+        ⇒ dims: 190*85 → ∅
+  undefined (bảng nhãn)
+        ⇒ dims: 190*130 → ∅
+  undefined (bảng nhãn)
+        ⇒ dims: 190*140 → ∅
+  undefined (bảng nhãn)
+        ⇒ dims: 190*158 → ∅
+
+[yanfa-yancheng n107 bảng 6] ×18
+  H: | 发电机组型号 Generator Model | 备用功率 Reserve Power | 常用功率 Normal power | 发动机型谱 Engine Spectrum | 燃油消耗 Fuel Consumption L/h | 外形尺寸(mm) Dimensions | 净重(kg) Net Weight
+  H: | KW | KVA | KW | KVA | 型号 Model | 排量 NDisplaement(L) | 最大功率 Max. power(kw) | L | W | H
+    0 | YC-8.8GF | 8.8 | 11 | 8 | 10 | X1.3-G2 | 1.3 | 11.5 | 2.5 | 1345 | 650 | 1050 | 495
+        ⇒ disp: 2.5 → ∅
+    1 | YC-22GF | 22 | 27.5 | 20 | 25 | X2.5-G2 | 2.5 | 27 | 5.5 | 1385 | 720 | 1153 | 586
+        ⇒ disp: 5.5 → ∅
+    2 | YC-30GF | 30 | 38 | 28 | 35 | X3.3-G1 | 3.3 | 36 | 8 | 1405 | 750 | 1155 | 648
+        ⇒ disp: 8 → ∅
+    3 | YC-35GF | 35 | 44 | 32 | 40 | S3.8-G4 | 3.8 | 41 | 9 | 1653 | 830 | 1225 | 1040
+        ⇒ disp: 9 → ∅
+    4 | YC-44GF | 44 | 55 | 40 | 50 | S3.8-G6 | 3.8 | 51 | 11 | 1653 | 830 | 1225 | 1060
+        ⇒ disp: 11 → ∅
+    5 | YC-53GF | 53 | 66 | 48 | 60 | S3.8-G7 | 3.8 | 61 | 13 | 1740 | 830 | 1311 | 1180
+        ⇒ disp: 13 → ∅
+    6 | YC-72GF | 72 | 90 | 66 | 82 | QSB5-G3 | 5 | 94 | 18.8 | 2140 | 946 | 1488 | 1450
+        ⇒ disp: 18.8 → ∅
+    7 | YC-80GF | 80 | 100 | 73 | 91 | QSB5-G4 | 5 | 103 | 21.4 | 2140 | 946 | 1525 | 1500
+        ⇒ disp: 21.4 → ∅
+    8 | YC-88GF | 88 | 110 | 109 | 100 | QSB5-G5 | 5 | 113 | 23 | 2140 | 946 | 1525 | 1500
+        ⇒ disp: 23 → ∅
+    9 | YC-120GF | 120 | 150 | 108 | 136 | QSB5-G6 | 5 | 144 | 28.8 | 2140 | 946 | 1525 | 1550
+        ⇒ disp: 28.8 → ∅
+   10 | YC-140GF | 140 | 175 | 120 | 150 | QSB7-G3 | 7 | 174 | 34.5 | 2224 | 1081 | 1560 | 1820
+        ⇒ disp: 34.5 → ∅
+   11 | YC-160GF | 160 | 200 | 144 | 180 | QSB7-G4 | 7 | 196 | 40.8 | 2224 | 1081 | 1560 | 1880
+        ⇒ disp: 40.8 → ∅
+   12 | YC-176GF | 176 | 220 | 160 | 200 | QSB7-G5 | 7 | 213 | 46 | 2224 | 1081 | 1560 | 1920
+        ⇒ disp: 46 → ∅
+   13 | YC-200GF | 200 | 250 | 180 | 225 | QSL9-G2 | 9 | 231 | 58.8 | 2730 | 1160 | 1680 | 3150
+        ⇒ disp: 58.8 → ∅
+   14 | YC-220GF | 220 | 275 | 200 | 250 | QSL9-G3 | 9 | 257 | 58.8 | 2730 | 1160 | 1680 | 3190
+        ⇒ disp: 58.8 → ∅
+   15 | YC-264GF | 264 | 330 | 240 | 300 | QSL9-G5 | 9 | 310 | 70.3 | 2730 | 1160 | 1680 | 3250
+        ⇒ disp: 70.3 → ∅
+   16 | YC-400GF | 400 | 500 | 364 | 455 | QSX15-G6 | 15 | 459 | 92 | 3510 | 1475 | 1950 | 4320
+        ⇒ disp: 92 → ∅
+   17 | YC-440GF | 440 | 550 | 400 | 500 | QSX15-G8 | 15 | 500 | 92 | 3510 | 1475 | 1950 | 4410
+        ⇒ disp: 92 → ∅
+
+[yanfa-yancheng n108 bảng 7] ×13
+  H: | 发电机组型号 Generator Model | 备用功率 Reserve Power | 常用功率 Normal power | 发动机型谱 Engine Spectrum | 燃油消耗 Fuel Consumption L/h | 外形尺寸(mm) Dimensions | 净重(kg) Net Weight
+  H: | KW | KVA | KW | KVA | 型号 Model | 排量 NDisplaement(L) | 最大功率 Max. power(kw) | L | W | H
+    0 | YC-50GF | 50 | 63 | 45 | 56 | 4BT3.3-G3 | 3.3 | 61 | 11.5 | 1753 | 930 | 1256 | 1100
+        ⇒ disp: 11.5 → ∅
+    1 | YC-80GF | 80 | 100 | 72 | 90 | QSB5-G3 | 5 | 108 | 18.8 | 3500 | 1570 | 2080 | 5300
+        ⇒ disp: 18.8 → ∅
+    2 | YC-90GF | 90 | 113 | 82 | 103 | QSB5-G4 | 5 | 119 | 21.4 | 4593 | 1502 | 2086 | 6400
+        ⇒ disp: 21.4 → ∅
+    3 | YC-100GF | 100 | 125 | 90 | 113 | QSB5-G5 | 5 | 131 | 23 | 4593 | 1502 | 2086 | 6500
+        ⇒ disp: 23 → ∅
+    4 | YC-125GF | 125 | 156 | 113 | 141 | QSB5-G6 | 5 | 155 | 28.8 | 4593 | 1502 | 2086 | 6700
+        ⇒ disp: 28.8 → ∅
+    5 | YC-150GF | 150 | 188 | 135 | 169 | QSB7-G3 | 7 | 186 | 34.5 | 2656 | 1100 | 1658 | 1572
+        ⇒ disp: 34.5 → ∅
+    6 | YC-175GF | 175 | 219 | 160 | 200 | QSB7-G4 | 7 | 215 | 40.8 | 2656 | 1100 | 1658 | 1670
+        ⇒ disp: 40.8 → ∅
+    7 | YC-200GF | 200 | 250 | 180 | 225 | QSB7-G5 | 7 | 241 | 46 | 2656 | 1100 | 1658 | 1670
+        ⇒ disp: 46 → ∅
+    8 | YC-250GF | 250 | 313 | 227 | 284 | QSL9-G2 | 9 | 297 | 58.8 | 3135 | 1100 | 1928 | 2171
+        ⇒ disp: 58.8 → ∅
+    9 | YC-250GF | 250 | 313 | 227 | 284 | QSL9-G3 | 9 | 297 | 58.8 | 3135 | 1100 | 1928 | 2394
+        ⇒ disp: 58.8 → ∅
+   10 | YC-300GF | 300 | 375 | 275 | 344 | QSL9-G5 | 9 | 355 | 70.3 | 3135 | 1100 | 1928 | 2394
+        ⇒ disp: 70.3 → ∅
+   11 | YC-400GF | 400 | 500 | 360 | 450 | QSX15-G6 | 15 | 455 | 92 | 3427 | 1500 | 2066 | 4121
+        ⇒ disp: 92 → ∅
+   12 | YC-400GF | 400 | 500 | 360 | 450 | QSX15-G8 | 15 | 455 | 92 | 3427 | 1500 | 2066 | 4121
+        ⇒ disp: 92 → ∅
+
+[yanfa-yancheng n110 bảng 10] ×5
+  H: | 发电机组型号 Generator Model | 备用功率 Reserve Power | 常用功率 Normal power | 发动机型谱 Engine Spectrum | 燃油消耗 Fuel Consumption L/h | 外形尺寸(mm) Dimensions | 净重(kg) Net Weight
+  H: | KW | KVA | KW | KVA | 型号 Model | 排量 NDisplaement(L) | 最大功率 Max. power(kw) | L | W | H
+    0 | YCG-450GF | 450 | 563 | 400 | 500 | KTA19-G3 | 19 | 511 | 87 | 4494 | 1650 | 2050 | 7035
+        ⇒ disp: 87 → ∅
+    2 | YCG-500GF | 500 | 625 | 450 | 563 | KTA19-G3A | 19 | 563 | 89 | 4494 | 1650 | 2050 | 7100
+        ⇒ disp: 89 → ∅
+    4 | YCG-550GF | 550 | 688 | 480 | 600 | KTAA19-G5 | 19 | 605 | 74 | 4584 | 1650 | 2050 | 7490
+        ⇒ disp: 74 → ∅
+    5 | YCG-550GF | 550 | 688 | 500 | 625 | KTAA19-G6A | 19 | 664 | 74 | 4584 | 1650 | 2050 | 7490
+        ⇒ disp: 74 → ∅
+    6 | YCG-600GF | 600 | 750 | 550 | 688 | KTA19-G3?NR2 | 19 | 669 | 87 | 4584 | 1650 | 2050 | 7500
+        ⇒ disp: 87 → ∅
+
+[yingtai-jiangsu n111 bảng 20] ×6
+  H: | 机组型号 Genset Model | 主用功率（主用） | 备用功率（备用） | 电流（主用）Power(A) | 电流（备用）Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimensions L*W*H(m) | 品牌 Brand | 发 动 机型号 Engine Type | 主要功 率 power()KW
+  H: | KW | KVA | KW | KVA
+    6 | 64GF | 64 | 75 | 88 | 88 | 115.2 | 126.7 | 1180 | 1.9*0.9*1.4 | WP4.1D80E200 | 72
+        ⇒ weight: 115.2 → 1180; dims: ∅ → 1.9*0.9*1.4
+   12 | 40GF | 40 | 50 | 55 | 55 | 72 | 79.2 | 960 | 2.35*1.0*1.5 | 6BTAA5.9-G2 | 50
+        ⇒ weight: ∅ → 960; dims: ∅ → 2.35*1.0*1.5
+   18 | 75GF | 75 | 62.5 | 110 | 112.5 | 135 | 198 | 1400 | 2.4*1.0*1.6 | QSB6.7-G4 | 95
+        ⇒ weight: 135 → ∅
+   20 | 120GF | 120 | 37.5 | 180 | 165 | 324 | 324 | 1700 | 3.3*1.3*1.8 | WP2.1D18E2 | 138
+        ⇒ weight: 324 → ∅
+   21 | 160GF | 160 | 62.5 | 200 | 225 | 360 | 360 | 1780 | 3.3*1.3*1.8 | WP2.1D18E2 | 182
+        ⇒ weight: 360 → ∅
+   23 | 200GF | 200 | 93.75 | 280 | 275 | 450 | 630 | 1900 | 3.3*1.3*1.8 | WP2.1D18E2 | 240
+        ⇒ weight: 450 → ∅
+
+[yingtai-jiangsu n113 bảng 24] ×6
+  H: | 机组型号 | 功率（KW） | 额定电压 | 电流 | 净重 | 机组外形尺寸 | 发动机型号 | 品牌 | 功率（KW） | 缸数 | 排气量 | 燃油耗 | 调速方式
+  H: | 主用 | 备用 | V | A | （kg) | L×W×H(m) | 主用 | 备用 | （L) | (g/kW.h)
+    1 | 1000GF | 1000 | 1100 | 114.3 | 11330 | 6.40×2.04×2.64 | KTA50-G3 | 1097 | 1227 | 16 | 50.3 | ≤209 | 电子
+        ⇒ voltage: 1100 → ∅
+    2 | 1100GF | 1100 | 1300 | 125.7 | 11350 | 6.40×2.04×2.70 | KTA50-G8 | 1200 | 1429 | 16 | 50.3 | ≤206 | 电子
+        ⇒ voltage: 1300 → ∅
+    3 | 1160GF | 1160 | 1300 | 132.6 | 11880 | 6.20×2.04×2.70 | KTA50-GS8 | 1287 | 1429 | 16 | 50.3 | ≤206 | 电子
+        ⇒ voltage: 1300 → ∅
+   11 | 1000GF | 1000 | 1100 | 68.6 | 11550 | 6.60×2.04×2.64 | KTA50-G3 | 1097 | 1227 | 16 | 50.3 | ≤209 | 电子
+        ⇒ voltage: 1100 → ∅
+   12 | 1100GF | 1100 | 1300 | 75.4 | 11750 | 6.60×2.04×2.70 | KTA50-G8 | 1200 | 1429 | 16 | 50.3 | ≤206 | 电子
+        ⇒ voltage: 1300 → ∅
+   13 | 1160GF | 1160 | 1300 | 79.5 | 12250 | 6.40×2.04×2.70 | KTA50-GSB | 1287 | 1429 | 16 | 50.3 | ≤206 | 电子
+        ⇒ voltage: 1300 → ∅
+
+[yongcai-elecmama n170 bảng 58] ×13
+  undefined (bảng nhãn)
+        ⇒ power: R ·/70 → ∅; engPower: ∅ → 40 kW / 2650 rpm
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine A495BPG
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine A498BPG
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine NC485BPG
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine LR4B5-15
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine CZ380Q
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine ZN385Q
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine CZ480Q
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine ZN485Q
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine ZN490B
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine 4L68
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine 4L88
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine 4G33
+
+[yongcai-elecmama n171 bảng 59] ×21
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YD385D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YD480D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YD4KD
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YND485D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YSD490D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine Y490D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine Y495D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine Y4100D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine Y4102D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine Y4105D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine Y4102ZLD
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine Y4105ZLD
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YD4EZLD
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine Y4110ZLD
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YD480DE
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YND485DE
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YND490DE
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine Y380T
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine Y385T
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YD480T
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine YD480Q
+
+[yongcai-elecmama n172 bảng 60] ×8
+  undefined (bảng nhãn)
+        ⇒ power: R ·/18.8 → ∅; speed: 2350 rpm → ∅
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine QC385D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine QC480D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine N485D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine QC490D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine QC4102D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine QC4105D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine QC385BT
+
+[yongcai-elecmama n173 bảng 61] ×3
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine A495BPG
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine A498BPG
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine NC485BPG
+
+[zhengdian-zhengzhou n101 bảng 0] ×1
+  H: | | 机组型号 | 机组功率（ kw ） | 电流A | 柴油机型号 | 柴油机功 率 KW | 缸 数 | 缸径 mm | 行程 mm | 排气量 L | 压缩比 | 机油 容量 L | 燃油消耗率 g/KW.h | 机组重量 kg | 机组外型尺寸 mm×mm×mm
+  H: | 备用 | 额定
+    2 | 3 0GF | 33 | 30 | 5 9/54 | 4BT3.9-G1 | 40 /36 | 4 | 102 | 120 | 3.9 | 16.5:1 | 11 | 214 | 900 | 18 00×780×1230
+        ⇒ current: 5 9/54 → ∅
+
+==== tự kiểm số (verSpec) ====
+(!) [aosif n1065 bảng 149 speed] dòng undefined: 2250 RPM → ∅ (nhãn "Maximum Over Speed") | {"prime":{"kVA":2000,"kW":1600},"standby":{"kVA":2200,"kW":1760}} | undefined
+(!) [aosif n1065 bảng 149 speed] dòng undefined: 2250 RPM → ∅ (nhãn "Maximum Over Speed") | {"prime":{"kVA":2000,"kW":1600},"standby":{"kVA":2200,"kW":1760}} | undefined
+(!) [cgm-italia n1001 bảng 13 weight] dòng 15: 39,6 → ∅ (nhãn "kg") | {"standby":{"kVA":49.5,"kW":39.6},"prime":{"kVA":45,"kW":36}} | | 45P | 45 | 36 | 49,5 | 39,6 | 1103A-33TG1
+(!) [cgm-italia n1001 bảng 13 noise] dòng 88: 48 → ∅ (nhãn "dB(A)") | {"rated":{"kVA":60,"kW":48}} | | v60F | 60 | 48 | 60 | 48 | F34TEVP01.00
+(!) [cgm-italia n1001 bảng 13 noise] dòng 96: 80 → ∅ (nhãn "dB(A)") | {"rated":{"kVA":100,"kW":80}} | | v100F | 100 | 80 | 100 | 80 | F36ETVP03.A94
+(!) [cgm-italia n1001 bảng 15 weight] dòng 17: 334,4 → ∅ (nhãn "kg") | {"standby":{"kVA":418,"kW":334.4},"prime":{"kVA":380,"kW":304}} | | STAGE II | 380VO | 380 | 304 | 418 | 334,4 | TAD 1343GE-B
+(!) [cgm-italia n1001 bảng 15 weight] dòng 50: 321,2 → ∅ (nhãn "kg") | {"standby":{"kVA":401.5,"kW":321.2},"prime":{"kVA":365,"kW":292}} | | STAGE IIIA | e365VO | 365 | 292 | 401,5 | 321,2 | TAD 1352GE
+(!) [cgm-italia n1001 bảng 16 noise] dòng 24: 52,8 → ∅ (nhãn "dB(A)") | {"standby":{"kVA":66,"kW":52.8},"prime":{"kVA":60,"kW":48}} | | 60DZa | 60 | 48 | 66 | 52,8 | F6L 912
+(!) [hosem-power n109 bảng 7 cyl] dòng undefined: 6 Cylinder In Line → ∅ (nhãn "Cylinders") | {"prime":{"kVA":450},"standby":{"kVA":500}} | undefined
+(!) [hosem-power n134 bảng 32 cyl] dòng undefined: 6 Cylinder In Line → ∅ (nhãn "Cylinders") | {"prime":{"kVA":450},"standby":{"kVA":500}} | undefined
+(!) [hosem-power n1001 bảng 35 current] dòng undefined: 3200 → ∅ (nhãn "Circuit Breaker Rated Current (A)") | {"prime":{"kVA":1818},"standby":{"kVA":2000},"rated":{"kVA":2000}} | undefined
+(!) [hosem-power n1001 bảng 35 current] dòng undefined: 3200 → ∅ (nhãn "Circuit Breaker Rated Current (A)") | {"prime":{"kVA":1818},"standby":{"kVA":2000},"rated":{"kVA":2000}} | undefined
+    [rise-power n120 bảng 25 dims] dòng 3: ∅ → 2600×950×1520 (nhãn "Dimension") | | RDL160 | 160/200 | 176/220 | P086TI | LSA46.2M5 | 2600×950×1520 | 3500×1120×1700 | 1650 | 3550
+    [rise-power n120 bảng 26 dims] dòng 2: ∅ → 2600×950×1520 (nhãn "Dimension") | | RDL157-60 | 157/196 | 172/216 | P086TI-1 | LSA46.2M3 | 2600×950×1520 | 3500×1120×1700 | 1600 | 3500
+(!) [rise-power n120 bảng 26 dims] dòng 10: 4500×1900×1900 → 3420×1390×1840 (nhãn "Dimension") | {"prime":{"kVA":700,"kW":560},"standby":{"kVA":770,"kW":616}} | | RDL560-60 | 560/700 | 616/770 | P222LE-S | LSA49.1S4 | 3420×1390×1840 | 4500×1900×1900 | 4200 |
+    [sanq-power n106 bảng 6 weight] dòng 0: ∅ → 450 (nhãn "Genset Weight (Kg)") | | SQP10 | 8/10 | 7/9 | 403A-11G1 | PI044E | Wuxi | 450 | 896 | 1260x630x730 | 2200x1033x1304 |
+    [sanq-power n109 bảng 14 weight] dòng 0: ∅ → 4750 (nhãn "Genset Weight (Kg)") | | SQM750 | 750/600 | 650/520 | S6R2--PTA-C | HCI544F | 139 | 4750 | 6500 | 3750x1410x2200 | 5030x1860x2550 |
+    [sanq-power n110 bảng 15 weight] dòng 0: ∅ → 1420 (nhãn "Genset Weight (Kg)") | | SQD165 | 132/165 | 120/150 | DP086TA | UCI274F | 34.8 | 1420 | 2430 | 2360x830x1334 | 3200x1133x1766 |
+(!) [sanq-power n110 bảng 15 weight] dòng 6: 4495 → 3120 (nhãn "Genset Weight (Kg)") | {"standby":{"kVA":385,"kW":308},"prime":{"kVA":350,"kW":280}} | | SQD385 | 308/385 | 280/350 | P158LE-1 | HCI444E | 72 | 3120 | 4495 | 3050x1160x1645 | 4300x1483x2145 |
+(!) [sanq-power n110 bảng 15 fuel] dòng 6: ∅ → 72 (nhãn "Fuel Consumption") | {"standby":{"kVA":385,"kW":308},"prime":{"kVA":350,"kW":280}} | | SQD385 | 308/385 | 280/350 | P158LE-1 | HCI444E | 72 | 3120 | 4495 | 3050x1160x1645 | 4300x1483x2145 |
+    [sanq-power n111 bảng 16 weight] dòng 0: ∅ → 1290 (nhãn "Genset Weight (KG)") | | SQV95 | 75/95 | 68/85 | TAD550GE(530GE) | Germany | UCI224G | 217 | 1290 | 1850 | 2080×940×1550 | 2810×1140×1830 |
+(!) [xinhengxin-fujian n101 bảng 0 dims] dòng undefined: 190*130 → ∅ (nhãn "Motor Size") | null | undefined
+(!) [xinhengxin-fujian n101 bảng 0 dims] dòng undefined: 190*140 → ∅ (nhãn "Motor Size") | null | undefined
+(!) [xinhengxin-fujian n101 bảng 0 dims] dòng undefined: 190*158 → ∅ (nhãn "Motor Size") | null | undefined
+(!) [xinhengxin-fujian n101 bảng 0 dims] dòng undefined: 204*140 → ∅ (nhãn "Motor Size") | null | undefined
+(!) [xinhengxin-fujian n101 bảng 0 dims] dòng undefined: 204*160 → ∅ (nhãn "Motor Size") | null | undefined
+(!) [xinhengxin-fujian n101 bảng 0 dims] dòng undefined: 210*160 → ∅ (nhãn "Motor Size") | {"rated":{"kW":9}} | undefined
+(!) [xinhengxin-fujian n101 bảng 0 dims] dòng undefined: 245*140 → ∅ (nhãn "Motor Size") | {"rated":{"kW":9}} | undefined
+(!) [xinhengxin-fujian n102 bảng 1 dims] dòng undefined: 160*85 → ∅ (nhãn "Motor Size") | null | undefined
+(!) [xinhengxin-fujian n102 bảng 1 dims] dòng undefined: 190*85 → ∅ (nhãn "Motor Size") | null | undefined
+(!) [xinhengxin-fujian n102 bảng 1 dims] dòng undefined: 190*130 → ∅ (nhãn "Motor Size") | null | undefined
+(!) [xinhengxin-fujian n102 bảng 1 dims] dòng undefined: 190*140 → ∅ (nhãn "Motor Size") | null | undefined
+(!) [xinhengxin-fujian n102 bảng 1 dims] dòng undefined: 190*158 → ∅ (nhãn "Motor Size") | null | undefined
+(!) [yanfa-yancheng n107 bảng 6 disp] dòng 0: 2.5 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":8.8,"kVA":11},"prime":{"kW":8,"kVA":10}} | | YC-8.8GF | 8.8 | 11 | 8 | 10 | X1.3-G2 | 1.3 | 11.5 | 2.5 | 1345 | 650 | 1050 | 495
+(!) [yanfa-yancheng n107 bảng 6 disp] dòng 1: 5.5 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":22,"kVA":27.5},"prime":{"kW":20,"kVA":25}} | | YC-22GF | 22 | 27.5 | 20 | 25 | X2.5-G2 | 2.5 | 27 | 5.5 | 1385 | 720 | 1153 | 586
+(!) [yanfa-yancheng n107 bảng 6 disp] dòng 2: 8 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":30,"kVA":38},"prime":{"kW":28,"kVA":35}} | | YC-30GF | 30 | 38 | 28 | 35 | X3.3-G1 | 3.3 | 36 | 8 | 1405 | 750 | 1155 | 648
+(!) [yanfa-yancheng n107 bảng 6 disp] dòng 3: 9 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":35,"kVA":44},"prime":{"kW":32,"kVA":40}} | | YC-35GF | 35 | 44 | 32 | 40 | S3.8-G4 | 3.8 | 41 | 9 | 1653 | 830 | 1225 | 1040
+(!) [yanfa-yancheng n107 bảng 6 disp] dòng 4: 11 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":44,"kVA":55},"prime":{"kW":40,"kVA":50}} | | YC-44GF | 44 | 55 | 40 | 50 | S3.8-G6 | 3.8 | 51 | 11 | 1653 | 830 | 1225 | 1060
+(!) [yanfa-yancheng n107 bảng 6 disp] dòng 5: 13 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":53,"kVA":66},"prime":{"kW":48,"kVA":60}} | | YC-53GF | 53 | 66 | 48 | 60 | S3.8-G7 | 3.8 | 61 | 13 | 1740 | 830 | 1311 | 1180
+(!) [yanfa-yancheng n107 bảng 6 disp] dòng 6: 18.8 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":72,"kVA":90},"prime":{"kW":66,"kVA":82}} | | YC-72GF | 72 | 90 | 66 | 82 | QSB5-G3 | 5 | 94 | 18.8 | 2140 | 946 | 1488 | 1450
+(!) [yanfa-yancheng n107 bảng 6 disp] dòng 7: 21.4 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":80,"kVA":100},"prime":{"kW":73,"kVA":91}} | | YC-80GF | 80 | 100 | 73 | 91 | QSB5-G4 | 5 | 103 | 21.4 | 2140 | 946 | 1525 | 1500
+(!) [yanfa-yancheng n107 bảng 6 disp] dòng 8: 23 → ∅ (nhãn "排量 NDisplaement(L)") | {"rated":{"kVA":110,"kW":88}} | | YC-88GF | 88 | 110 | 109 | 100 | QSB5-G5 | 5 | 113 | 23 | 2140 | 946 | 1525 | 1500
+(!) [yanfa-yancheng n107 bảng 6 disp] dòng 9: 28.8 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":120,"kVA":150},"prime":{"kW":108,"kVA":136}} | | YC-120GF | 120 | 150 | 108 | 136 | QSB5-G6 | 5 | 144 | 28.8 | 2140 | 946 | 1525 | 1550
+(!) [yanfa-yancheng n107 bảng 6 disp] dòng 10: 34.5 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":140,"kVA":175},"prime":{"kW":120,"kVA":150}} | | YC-140GF | 140 | 175 | 120 | 150 | QSB7-G3 | 7 | 174 | 34.5 | 2224 | 1081 | 1560 | 1820
+(!) [yanfa-yancheng n107 bảng 6 disp] dòng 11: 40.8 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":160,"kVA":200},"prime":{"kW":144,"kVA":180}} | | YC-160GF | 160 | 200 | 144 | 180 | QSB7-G4 | 7 | 196 | 40.8 | 2224 | 1081 | 1560 | 1880
+(!) [yanfa-yancheng n107 bảng 6 disp] dòng 12: 46 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":176,"kVA":220},"prime":{"kW":160,"kVA":200}} | | YC-176GF | 176 | 220 | 160 | 200 | QSB7-G5 | 7 | 213 | 46 | 2224 | 1081 | 1560 | 1920
+(!) [yanfa-yancheng n107 bảng 6 disp] dòng 13: 58.8 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":200,"kVA":250},"prime":{"kW":180,"kVA":225}} | | YC-200GF | 200 | 250 | 180 | 225 | QSL9-G2 | 9 | 231 | 58.8 | 2730 | 1160 | 1680 | 3150
+(!) [yanfa-yancheng n107 bảng 6 disp] dòng 14: 58.8 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":220,"kVA":275},"prime":{"kW":200,"kVA":250}} | | YC-220GF | 220 | 275 | 200 | 250 | QSL9-G3 | 9 | 257 | 58.8 | 2730 | 1160 | 1680 | 3190
+(!) [yanfa-yancheng n107 bảng 6 disp] dòng 15: 70.3 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":264,"kVA":330},"prime":{"kW":240,"kVA":300}} | | YC-264GF | 264 | 330 | 240 | 300 | QSL9-G5 | 9 | 310 | 70.3 | 2730 | 1160 | 1680 | 3250
+(!) [yanfa-yancheng n107 bảng 6 disp] dòng 16: 92 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":400,"kVA":500},"prime":{"kW":364,"kVA":455}} | | YC-400GF | 400 | 500 | 364 | 455 | QSX15-G6 | 15 | 459 | 92 | 3510 | 1475 | 1950 | 4320
+(!) [yanfa-yancheng n107 bảng 6 disp] dòng 17: 92 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":440,"kVA":550},"prime":{"kW":400,"kVA":500}} | | YC-440GF | 440 | 550 | 400 | 500 | QSX15-G8 | 15 | 500 | 92 | 3510 | 1475 | 1950 | 4410
+(!) [yanfa-yancheng n108 bảng 7 disp] dòng 0: 11.5 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":50,"kVA":63},"prime":{"kW":45,"kVA":56}} | | YC-50GF | 50 | 63 | 45 | 56 | 4BT3.3-G3 | 3.3 | 61 | 11.5 | 1753 | 930 | 1256 | 1100
+(!) [yanfa-yancheng n108 bảng 7 disp] dòng 1: 18.8 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":80,"kVA":100},"prime":{"kW":72,"kVA":90}} | | YC-80GF | 80 | 100 | 72 | 90 | QSB5-G3 | 5 | 108 | 18.8 | 3500 | 1570 | 2080 | 5300
+(!) [yanfa-yancheng n108 bảng 7 disp] dòng 2: 21.4 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":90,"kVA":113},"prime":{"kW":82,"kVA":103}} | | YC-90GF | 90 | 113 | 82 | 103 | QSB5-G4 | 5 | 119 | 21.4 | 4593 | 1502 | 2086 | 6400
+(!) [yanfa-yancheng n108 bảng 7 disp] dòng 3: 23 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":100,"kVA":125},"prime":{"kW":90,"kVA":113}} | | YC-100GF | 100 | 125 | 90 | 113 | QSB5-G5 | 5 | 131 | 23 | 4593 | 1502 | 2086 | 6500
+(!) [yanfa-yancheng n108 bảng 7 disp] dòng 4: 28.8 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":125,"kVA":156},"prime":{"kW":113,"kVA":141}} | | YC-125GF | 125 | 156 | 113 | 141 | QSB5-G6 | 5 | 155 | 28.8 | 4593 | 1502 | 2086 | 6700
+(!) [yanfa-yancheng n108 bảng 7 disp] dòng 5: 34.5 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":150,"kVA":188},"prime":{"kW":135,"kVA":169}} | | YC-150GF | 150 | 188 | 135 | 169 | QSB7-G3 | 7 | 186 | 34.5 | 2656 | 1100 | 1658 | 1572
+(!) [yanfa-yancheng n108 bảng 7 disp] dòng 6: 40.8 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":175,"kVA":219},"prime":{"kW":160,"kVA":200}} | | YC-175GF | 175 | 219 | 160 | 200 | QSB7-G4 | 7 | 215 | 40.8 | 2656 | 1100 | 1658 | 1670
+(!) [yanfa-yancheng n108 bảng 7 disp] dòng 7: 46 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":200,"kVA":250},"prime":{"kW":180,"kVA":225}} | | YC-200GF | 200 | 250 | 180 | 225 | QSB7-G5 | 7 | 241 | 46 | 2656 | 1100 | 1658 | 1670
+(!) [yanfa-yancheng n108 bảng 7 disp] dòng 8: 58.8 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":250,"kVA":313},"prime":{"kW":227,"kVA":284}} | | YC-250GF | 250 | 313 | 227 | 284 | QSL9-G2 | 9 | 297 | 58.8 | 3135 | 1100 | 1928 | 2171
+(!) [yanfa-yancheng n108 bảng 7 disp] dòng 9: 58.8 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":250,"kVA":313},"prime":{"kW":227,"kVA":284}} | | YC-250GF | 250 | 313 | 227 | 284 | QSL9-G3 | 9 | 297 | 58.8 | 3135 | 1100 | 1928 | 2394
+(!) [yanfa-yancheng n108 bảng 7 disp] dòng 10: 70.3 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":300,"kVA":375},"prime":{"kW":275,"kVA":344}} | | YC-300GF | 300 | 375 | 275 | 344 | QSL9-G5 | 9 | 355 | 70.3 | 3135 | 1100 | 1928 | 2394
+(!) [yanfa-yancheng n108 bảng 7 disp] dòng 11: 92 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":400,"kVA":500},"prime":{"kW":360,"kVA":450}} | | YC-400GF | 400 | 500 | 360 | 450 | QSX15-G6 | 15 | 455 | 92 | 3427 | 1500 | 2066 | 4121
+(!) [yanfa-yancheng n108 bảng 7 disp] dòng 12: 92 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":400,"kVA":500},"prime":{"kW":360,"kVA":450}} | | YC-400GF | 400 | 500 | 360 | 450 | QSX15-G8 | 15 | 455 | 92 | 3427 | 1500 | 2066 | 4121
+(!) [yanfa-yancheng n110 bảng 10 disp] dòng 0: 87 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":450,"kVA":563},"prime":{"kW":400,"kVA":500}} | | YCG-450GF | 450 | 563 | 400 | 500 | KTA19-G3 | 19 | 511 | 87 | 4494 | 1650 | 2050 | 7035
+(!) [yanfa-yancheng n110 bảng 10 disp] dòng 2: 89 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":500,"kVA":625},"prime":{"kW":450,"kVA":563}} | | YCG-500GF | 500 | 625 | 450 | 563 | KTA19-G3A | 19 | 563 | 89 | 4494 | 1650 | 2050 | 7100
+(!) [yanfa-yancheng n110 bảng 10 disp] dòng 4: 74 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":550,"kVA":688},"prime":{"kW":480,"kVA":600}} | | YCG-550GF | 550 | 688 | 480 | 600 | KTAA19-G5 | 19 | 605 | 74 | 4584 | 1650 | 2050 | 7490
+(!) [yanfa-yancheng n110 bảng 10 disp] dòng 5: 74 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":550,"kVA":688},"prime":{"kW":500,"kVA":625}} | | YCG-550GF | 550 | 688 | 500 | 625 | KTAA19-G6A | 19 | 664 | 74 | 4584 | 1650 | 2050 | 7490
+(!) [yanfa-yancheng n110 bảng 10 disp] dòng 6: 87 → ∅ (nhãn "排量 NDisplaement(L)") | {"standby":{"kW":600,"kVA":750},"prime":{"kW":550,"kVA":688}} | | YCG-600GF | 600 | 750 | 550 | 688 | KTA19-G3?NR2 | 19 | 669 | 87 | 4584 | 1650 | 2050 | 7500
+    [yingtai-jiangsu n111 bảng 20 weight] dòng 6: 115.2 → 1180 (nhãn "净重 Net Weight (kg)") | | 64GF | 64 | 75 | 88 | 88 | 115.2 | 126.7 | 1180 | 1.9*0.9*1.4 | WP4.1D80E200 | 72
+    [yingtai-jiangsu n111 bảng 20 dims] dòng 6: ∅ → 1.9*0.9*1.4 (nhãn "外形尺寸 Overall Dimensions L*W*H(m)") | | 64GF | 64 | 75 | 88 | 88 | 115.2 | 126.7 | 1180 | 1.9*0.9*1.4 | WP4.1D80E200 | 72
+(!) [yingtai-jiangsu n111 bảng 20 weight] dòng 18: 135 → ∅ (nhãn "净重 Net Weight (kg)") | null | | 75GF | 75 | 62.5 | 110 | 112.5 | 135 | 198 | 1400 | 2.4*1.0*1.6 | QSB6.7-G4 | 95
+(!) [yingtai-jiangsu n111 bảng 20 weight] dòng 20: 324 → ∅ (nhãn "净重 Net Weight (kg)") | null | | 120GF | 120 | 37.5 | 180 | 165 | 324 | 324 | 1700 | 3.3*1.3*1.8 | WP2.1D18E2 | 138
+(!) [yingtai-jiangsu n111 bảng 20 weight] dòng 21: 360 → ∅ (nhãn "净重 Net Weight (kg)") | null | | 160GF | 160 | 62.5 | 200 | 225 | 360 | 360 | 1780 | 3.3*1.3*1.8 | WP2.1D18E2 | 182
+(!) [yingtai-jiangsu n111 bảng 20 weight] dòng 23: 450 → ∅ (nhãn "净重 Net Weight (kg)") | null | | 200GF | 200 | 93.75 | 280 | 275 | 450 | 630 | 1900 | 3.3*1.3*1.8 | WP2.1D18E2 | 240
+(!) [yingtai-jiangsu n113 bảng 24 voltage] dòng 1: 1100 → ∅ (nhãn "额定电压") | {"prime":{"kW":1000},"standby":{"kW":1100}} | | 1000GF | 1000 | 1100 | 114.3 | 11330 | 6.40×2.04×2.64 | KTA50-G3 | 1097 | 1227 | 16 | 50.3 | ≤209 | 电子
+(!) [yingtai-jiangsu n113 bảng 24 voltage] dòng 2: 1300 → ∅ (nhãn "额定电压") | {"prime":{"kW":1100},"standby":{"kW":1300}} | | 1100GF | 1100 | 1300 | 125.7 | 11350 | 6.40×2.04×2.70 | KTA50-G8 | 1200 | 1429 | 16 | 50.3 | ≤206 | 电子
+(!) [yingtai-jiangsu n113 bảng 24 voltage] dòng 3: 1300 → ∅ (nhãn "额定电压") | {"prime":{"kW":1160},"standby":{"kW":1300}} | | 1160GF | 1160 | 1300 | 132.6 | 11880 | 6.20×2.04×2.70 | KTA50-GS8 | 1287 | 1429 | 16 | 50.3 | ≤206 | 电子
+(!) [yingtai-jiangsu n113 bảng 24 voltage] dòng 11: 1100 → ∅ (nhãn "额定电压") | {"prime":{"kW":1000},"standby":{"kW":1100}} | | 1000GF | 1000 | 1100 | 68.6 | 11550 | 6.60×2.04×2.64 | KTA50-G3 | 1097 | 1227 | 16 | 50.3 | ≤209 | 电子
+(!) [yingtai-jiangsu n113 bảng 24 voltage] dòng 12: 1300 → ∅ (nhãn "额定电压") | {"prime":{"kW":1100},"standby":{"kW":1300}} | | 1100GF | 1100 | 1300 | 75.4 | 11750 | 6.60×2.04×2.70 | KTA50-G8 | 1200 | 1429 | 16 | 50.3 | ≤206 | 电子
+(!) [yingtai-jiangsu n113 bảng 24 voltage] dòng 13: 1300 → ∅ (nhãn "额定电压") | {"prime":{"kW":1160},"standby":{"kW":1300}} | | 1160GF | 1160 | 1300 | 79.5 | 12250 | 6.40×2.04×2.70 | KTA50-GSB | 1287 | 1429 | 16 | 50.3 | ≤206 | 电子
+(!) [yongcai-elecmama n170 bảng 58 engPower] dòng undefined: ∅ → 40 kW / 2650 rpm (nhãn "Rated power ( KW/rpm )") | null | undefined
+(!) [yongcai-elecmama n172 bảng 60 speed] dòng undefined: 2350 rpm → ∅ (nhãn "Engine speed") | null | undefined
+(!) [zhengdian-zhengzhou n101 bảng 0 current] dòng 2: 5 9/54 → ∅ (nhãn "电流A") | {"standby":{"kW":33},"rated":{"kW":30}} | | 3 0GF | 33 | 30 | 5 9/54 | 4BT3.9-G1 | 40 /36 | 4 | 102 | 120 | 3.9 | 16.5:1 | 11 | 214 | 900 | 18 00×780×1230
+
+3  current bỏ: mới không kiểm được
+2  cyl bỏ: mới không kiểm được
+12  dims bỏ: mới không kiểm được
+20  dims thêm: mới tự xác nhận
+1  dims đổi: mới tự xác nhận, cũ cũng hợp lệ
+36  disp bỏ: mới không kiểm được
+1  engPower thêm: mới KHÔNG xác nhận
+1  fuel thêm: mới không kiểm được
+3  noise bỏ: mới không kiểm được
+3  speed bỏ: mới không kiểm được
+6  voltage bỏ: mới không kiểm được
+7  weight bỏ: mới không kiểm được
+161  weight thêm: mới tự xác nhận
+1  weight đổi: mới tự xác nhận, cũ cũng hợp lệ
+1  weight đổi: mới tự xác nhận, cũ sai
+
+cần soát tay: 76
