@@ -79,6 +79,10 @@ test("markdown: bảng theo NCC, ví dụ mỗi dạng, đảo vai tăng thì gh
   assert.match(ok, /1 → \*\*1\*\* ✅/);
   assert.match(markdown({ d, swA: sw(0), swB: sw(1), ver, norm }), /0 → \*\*1\*\* ❌ TĂNG \(chặn\)/);
   assert.match(markdown({ d: diff(A, A), swA: sw(0), swB: sw(0), ver: verify(A, A), norm }), /Không có bản ghi nào đổi\./);
+  // chat-luong-3: dòng "Chưa đọc được" theo lý do; bên cũ chưa có unread() ghi "—".
+  const un = { a: null, b: { "bảng không cho bản ghi nào": { items: 3, tables: 3, sups: 1 }, "số vô lý so với công suất": { items: 2, tables: 1, sups: 1 } } };
+  assert.match(markdown({ d, swA: sw(0), swB: sw(0), ver, norm, un }), /Chưa đọc được .*: bảng không cho bản ghi nào: — → 3; số vô lý so với công suất: — → 2/);
+  assert.doesNotMatch(markdown({ d, swA: sw(0), swB: sw(0), ver, norm }), /Chưa đọc được/);
 });
 
 // Bên thật: catalog.js / spec-norm.js của repo trên một NCC; bản spec-norm sửa (đơn vị trống) phải hiện ở phần chuẩn hoá.
@@ -99,6 +103,7 @@ test("run: hai bản spec-norm.js trong cùng tiến trình, đổi kết quả 
   assert.ok(same.a.size > 100);
   assert.equal(same.d.changed, 0);
   assert.equal(same.norm.skipped, true);
+  assert.deepEqual(same.un.a, same.un.b);
   const r = run(loadSide(a), loadSide(b));
   assert.equal(r.d.changed, 0);
   assert.equal(r.norm.skipped, false);
