@@ -65,7 +65,8 @@ test("HSMT nêu đích danh QSK19-G4: dòng ở lại, trừ 600 điểm, lý do
   assert.ok(row.why.includes("6 xi lanh < 12 HSMT yêu cầu (số đông nhà cung cấp: 6 × 4, 12 × 1)"), row.why.join("; "));
 });
 
-// Dung tích: 3 NCC ghi 18.9 L, 1 ghi 30 (in sai) → HSMT ≥ 20 L loại; trần dung tích ≤ 25 L thì dòng tự ghi 30 vẫn ở lại.
+// Dung tích: luật số đông KHÔNG áp (Khoa 18/11/2026 chọn (d): chỉ số xi lanh; NCC TQ chép chung bảng mẫu làm "số đông" dung
+// tích sai ở MTU 1600, TAD1341GE). 3 NCC ghi 18.9 L, 1 ghi 30: nguồn mâu thuẫn → không loại, như trước.
 const disp = [
   sup("p", ["| p-1 | 650 | 520 | QSK19-G4 | X | 18.9 |"], HD),
   sup("q", ["| q-1 | 650 | 520 | QSK19-G4 | X | 18.9 |"], HD),
@@ -73,20 +74,16 @@ const disp = [
   sup("bad", ["| b-1 | 650 | 520 | QSK19-G4 | X | 30 |"], HD),
   sup("bare", ["| n-1 | 650 | 520 | QSK19-G4 | X |"], HN),
 ];
-test("dung tích tối thiểu theo số đông: 18,9 L × 3 NCC thắng 30 L × 1 → loại cả dòng không ghi số", () => {
-  const r = run(disp, free("Dung tích xi lanh: ≥ 20 lít\n50 Hz"));
+test("dung tích tối thiểu: số đông 18,9 L × 3 : 30 L × 1 KHÔNG dùng → không loại ai (như trước)", () => {
+  assert.deepEqual(ids(run(disp, free("Dung tích xi lanh: ≥ 20 lít\n50 Hz"))), ["bad", "bare", "p", "q", "r"]);
+  // Mọi nguồn dưới ngưỡng: vẫn loại như trước.
+  const low = disp.filter((s) => s.id !== "bad"), r = run(low, free("Dung tích xi lanh: ≥ 20 lít\n50 Hz"));
   assert.deepEqual(ids(r), []);
   assert.deepEqual(ruledOf(r, "bare"), ["disp"]);
-  assert.deepEqual(ruledOf(r, "bad"), ["disp"]);
-  // Bớt một NCC: 2 : 1, không có giá trị thắng → như cũ, không loại ai.
-  assert.deepEqual(ids(run(disp.filter((s) => s.id !== "r"), free("Dung tích xi lanh: ≥ 20 lít\n50 Hz"))), ["bad", "bare", "p", "q"]);
 });
-test("dung tích tối đa theo số đông: 18,9 L thắng → không dòng nào vượt 25 L; số đông 30 L thì loại", () => {
-  assert.equal(run(disp, free("Dung tích xi lanh: ≤ 25 lít\n50 Hz")).dropped.length, 0);
+test("dung tích tối đa: số đông 30 L × 3 : 18,9 L × 1 KHÔNG dùng → không loại ai (như trước)", () => {
   const big = disp.map((s) => (["p", "q", "r"].includes(s.id) ? sup(s.id, [s.specTables[0].rows[0].replace("18.9", "30")], HD) : s.id === "bad" ? sup("bad", ["| b-1 | 650 | 520 | QSK19-G4 | X | 18.9 |"], HD) : s));
-  const r = run(big, free("Dung tích xi lanh: ≤ 25 lít\n50 Hz"));
-  assert.deepEqual(ids(r), []);
-  assert.deepEqual(ruledOf(r, "bad"), ["maxDisp"]);
+  assert.equal(run(big, free("Dung tích xi lanh: ≤ 25 lít\n50 Hz")).dropped.length, 0);
 });
 
 test("HSMT ghi trơ 6 xi lanh: dòng không ghi số theo số đông của động cơ (12 × 3 thắng 6 × 1 → loại); dòng tự ghi số vẫn theo ô của nó", () => {

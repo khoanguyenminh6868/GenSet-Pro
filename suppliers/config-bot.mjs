@@ -122,6 +122,9 @@ export const BLOCK = Symbol("chưa so được");
 // value; catalog.js's `win` counts the text as written, so "6" / "6L" / "V 12" of QSK19-G4 split and give none). `figs`:
 // [supplierId, figure | BLOCK | null]. A supplier whose figures could not be compared (BLOCK) and that gives no other is
 // counted against the winner (added to the next value): the winner must still win. → { win, votes, blocked } or null.
+// candidates() uses it for these keys only (Khoa 18/11/2026: "làm (d) trước. (c) để đo và làm sau"; (c) = suppliers giving
+// the same figures for a model count as one vote, for the displacement).
+const MAJ_KEYS = new Set(["cyl"]);
 export function majorityOf(figs) {
   const by = new Map(), blocked = new Set();
   for (const [s, x] of figs) {
@@ -1431,12 +1434,13 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // GENBID_SPEC_NORM=1: a figure is read through the normalization layer (normFig); one it cannot compare gives null.
       const ctxOf = (f) => NORM_CTX.get(f) || ((u.specs || []).includes(f) ? useNormCtx(u, rowsMap) : undefined);
       const nfig = (f, want) => { const x = normFig(f, ctxOf(f), want); if (!x.ok) normSkip.push({ key: f.key, label: f.label, value: f.value, why: x.why, supplierId: f.supplierId ?? u.supplierId, line: f.line ?? u.line }); return x.ok ? x.r : null; };
-      // A value the suppliers agree on by the majority rule (majorityOf, lech-cot-9 18/11/2026) settles the figure: the row is
+      // The cylinder count the suppliers agree on by the majority rule (majorityOf, lech-cot-9 18/11/2026) settles it: the row is
       // judged by it alone (longkai's "No. cylinders | V 12" for the 6-cylinder QSK19-G4 no longer keeps it for "≥ 12 xi
-      // lanh"). No such value: as before.
+      // lanh"). No such value: as before. Only the count (MAJ_KEYS, Khoa 18/11/2026 "làm (d) trước"): Chinese suppliers copy
+      // one template table, so a displacement "majority" can be a copied error (MTU 1600 ×6, TAD1341GE: 7 of 191 wrong).
       const majOf = (all) => majorityOf(all.map(([f, x]) => [f.supplierId ?? u.supplierId, x]));
       const below = (key, min, read) => { const all = [...ef, ...(u.specs || [])].filter((f) => f.key === key).map((f) => [f, read(f.value, f)]), fs = all.filter(([, x]) => x != null && x !== BLOCK), v = fs.map(([, x]) => x);
-        const mj = min ? majOf(all) : null;
+        const mj = min && MAJ_KEYS.has(key) ? majOf(all) : null;
         if (mj) { if (mj.win < min) srcOf[key] = { n: v.length, win: mj.win, votes: mj.votes }; return mj.win < min ? mj.win : null; }
         // Normalized: a source giving a figure the layer cannot compare (no unit, cc...) is "Chưa rõ": the row is not left out.
         const hit = min && v.length && !all.some(([, x]) => x === BLOCK) && v.every((x) => x < min); if (hit) srcOf[key] = { n: v.length, sources: new Set(fs.map(([f]) => `${f.supplierId ?? ""}#${f.n ?? ""}`)).size, ofRow: fs.filter(([f]) => (u.specs || []).includes(f)).length };
@@ -1457,13 +1461,9 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // stays with 600 points off and the reason, for the agent to see.
       const ruled = madeOut ? ["made"] : [];
       const byMaj = (k) => (srcOf[k]?.win != null ? ` (số đông nhà cung cấp: ${Object.entries(srcOf[k].votes).map(([v, c]) => `${v} × ${c}`).join(", ")})` : "");
-      if (dl != null) { score -= 600; ruled.push("disp"); why.push(`dung tích ${dl} L < ${hints.minDisp} L HSMT yêu cầu${byMaj("disp")}`); }
-      const dhAll = hints.maxDisp ? given.filter((f) => f.key === "disp").map((f) => [f, dispOf(f.value, f)]) : [], dh0 = dhAll.map(([, x]) => x), dh = dh0.filter((x) => x != null && x !== BLOCK);
-      const dhMaj = dhAll.length ? majOf(dhAll) : null;
-      if (dhMaj ? dhMaj.win > hints.maxDisp * 1.005 : dh.length && !dh0.includes(BLOCK) && dh.every((x) => x > hints.maxDisp * 1.005)) {
-        if (dhMaj) srcOf.maxDisp = { win: dhMaj.win, votes: dhMaj.votes };
-        score -= 600; ruled.push("maxDisp"); why.push(`dung tích ${dhMaj ? dhMaj.win : dh[0]} L > ${hints.maxDisp} L HSMT cho phép${byMaj("maxDisp")}`);
-      }
+      if (dl != null) { score -= 600; ruled.push("disp"); why.push(`dung tích ${dl} L < ${hints.minDisp} L HSMT yêu cầu`); }
+      const dh0 = hints.maxDisp ? given.filter((f) => f.key === "disp").map((f) => dispOf(f.value, f)) : [], dh = dh0.filter((x) => x != null && x !== BLOCK);
+      if (dh.length && !dh0.includes(BLOCK) && dh.every((x) => x > hints.maxDisp * 1.005)) { score -= 600; ruled.push("maxDisp"); why.push(`dung tích ${dh[0]} L > ${hints.maxDisp} L HSMT cho phép`); }
       if (cl != null) { score -= 600; ruled.push("cyl"); why.push(`${cl} xi lanh < ${hints.minCyl} HSMT yêu cầu${byMaj("cyl")}`); }
       // The HSMT gives the bare count (cylExact, Khoa 2026-11-17): another count by every source that gives one, the
       // row's own cell first ("12V", "12.V"), is left out too (a 12-cylinder engine for "6 xy lanh"). Sources that
