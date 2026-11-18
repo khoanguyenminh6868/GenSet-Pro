@@ -160,6 +160,26 @@
   const SYNC_COUNT = /(^|[^\d])(0?2|hai)\s*(trong|\/|trên)\s*(0?3|ba)\s*(bộ\s*ph|thành\s*ph|\()/i;
   const SYNC_NOT = /chịu\s*trách\s*nhiệm|h[oò][àa]\s*đồng\s*bộ|\bATS\b|đấu\s*nối|vật\s*liệu|bộ\s*sạc|sạc\s*ắc|bồn|téc|phụ\s*tùng|hiện\s*hữu/i;
   const NUM = { hai: 2, ba: 3 };
+  // Only the parts the clause of "cùng một nhãn hiệu / hãng…" itself lists (Khoa, 2026-11-18: "nếu yêu cầu không ghi
+  // đòi động cơ thì không đòi"; IB2600612866 "đồng bộ động cơ thương hiệu G7, đầu phát và vỏ chống ồn đồng bộ cùng một
+  // nhãn hiệu" asks the engine to be of a G7 brand, not of the genset's own make). The sentence is cut at "," and ";":
+  // a part counts when one piece that names it holds the trigger, or names no group of countries after the part (G7 /
+  // G20 / EU, châu Âu, nước phát triển). A first draft that walked the list back from the trigger lost 29 true clauses ("được
+  // thiết kế, sản xuất, lắp ráp bởi cùng…", "ắc quy và vỏ…", "cùng thương hiệu với đầu phát"): only this narrow cut.
+  // Fewer than 2 parts left: no requirement, as before (Khoa, 2026-11-18, câu 1 (b): "đầu phát và vỏ cùng nhãn hiệu"
+  // alone asks nothing). Measured on 1.545 HSMT: 2 change (IB2500416364, IB2600612866: no requirement), 85 stay alike.
+  // A group of countries only: a bare "Xuất xứ, nhãn hiệu: Nhà thầu đề xuất; cùng nhãn hiệu với đầu phát" (IB2400153322,
+  // a past lot's HSMT summary) is a label, and its engine is asked.
+  const SYNC_OTHER = /(?<![\p{L}\p{N}])(?:G\s?-?(?:7|20)|EU)(?![\p{L}\p{N}])|châu\s*âu|(?:các\s*)?nước\s*(?:công\s*nghiệp\s*)?phát\s*triển/iu;
+  function syncListParts(seg, pos, len) {
+    const pieces = [];
+    let at = 0;
+    // Each piece keeps the comma before it (", điều khiển" is a controller only after a comma) and is judged from the
+    // part on: an origin word before the part is another cell ("2 Xuất xứ Tính đồng bộ: Động cơ, …", IB2300194512).
+    for (const p of seg.split(/(?<=[,;])/)) { pieces.push({ p: (at ? seg[at - 1] : "") + p, trig: at < pos + len && at + p.length > pos }); at += p.length; }
+    const hit = (r, { p, trig }) => { const m = p.match(r); return !!m && (trig || !SYNC_OTHER.test(p.slice(m.index))); };
+    return SYNC_PARTS.filter(([, r]) => pieces.some((x) => hit(r, x))).map(([k]) => k);
+  }
   function brandSyncOf(text) {
     const lines = String(text || "").normalize("NFC").split(/\n/), flat = (a, b) => lines.slice(Math.max(0, a), b).join(" ").replace(/\s+/g, " ");
     for (let i = 0; i < lines.length; i++) {
@@ -181,6 +201,7 @@
           parts = named.length >= need ? named : ["engine", "alternator", "controller"];
           if (need < 2) continue;
         } else {
+          parts = syncListParts(seg, at - from, m[0].length);
           if (parts.length < 2) continue;
           need = SYNC_COUNT.test(seg) ? 2 : parts.length;
         }
