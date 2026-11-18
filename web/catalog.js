@@ -734,6 +734,35 @@
   // Figures of a table row, by the title of their column. Only when the header lines up with the row: the same
   // number of cells, or one fewer with the genset model in front left untitled. A second header line made only of
   // units ("| KVA/KW | L/h") is added to the title.
+  // A current or a voltage laid over its cell by position (a header of another width, a row one cell longer) must fit
+  // the row's own power (chat-luong-3, Khoa 18/11/2026; same relations as suppliers/spec-diff.mjs checkSpec): a row
+  // missing a cell put "100" (kW) under the current and "110" under the voltage (power-hf "| 13 | PHF-100RX | 100 |
+  // 110 | 180 | … | ● |"), a standby kW under the voltage (yingtai "| 1120GF | 1120 | 1230 | 128 |"), a kVA (sr-genset).
+  // A current fits 400 / 380 / 415 / 440 / 480 V three phase, 230 V single phase, or a high-voltage set (3,3-11 kV:
+  // honny "HGM1100EHV10.5" 55 A, yingtai 128 A at 6,3 kV). Its kW may also be the one in the genset's model name ("700GF":
+  // huatai, whose output column holds other figures, "| 700GF | 140/165 | 1267 |"): only to keep a current, never as the
+  // set's power. No power read: kept as it was. A voltage must be a standard one.
+  const STD_VOLT = [110, 115, 120, 127, 208, 220, 230, 240, 380, 400, 415, 440, 480, 690, 3300, 6000, 6300, 6600, 10000, 10500, 11000];
+  function posFits(key, value, power, gname) {
+    if (key !== "current" && key !== "voltage") return true;
+    const v = +((String(value).replace(/(\d),(\d{3})\b/g, "$1$2").match(/\d+(?:\.\d+)?/) || [])[0]);
+    if (!(v > 0)) return true;
+    const P = Object.values(power || {}).filter(Boolean), kvas = P.map((p) => p.kVA).filter(Boolean), kws = P.map((p) => p.kW).filter(Boolean);
+    // One of the row's own outputs is no voltage ("| PHF-100RX | 100 | 110 |": the standby 110 kW, a standard voltage too).
+    if (key === "voltage") return STD_VOLT.includes(v) && ![...kvas, ...kws].includes(v);
+    if (!kvas.length && !kws.length) return true;
+    const named = String(gname || "").match(/^(?:[a-z]{0,6}[-\s]?)?(\d+(?:\.\d+)?)\s*gf/i);
+    if (named) kws.push(+named[1]);
+    const near = (x, y, t) => Math.abs(x / y - 1) <= t;
+    return kvas.some((k) => [1.443, 1.519, 1.39, 1.312, 1.203].some((f) => near(v, k * f, 0.04))) || kws.some((k) => [1.8, 1.9, 1.804].some((f) => near(v, k * f, 0.04)))
+      || kvas.some((k) => near(v, k * 4.35, 0.05)) || kws.some((k) => near(v, k * 4.35, 0.05) || near(v, k * 4.55, 0.05))
+      || [3300, 6000, 6300, 6600, 10000, 10500, 11000].some((V) => kvas.some((k) => near(v, (k * 1000) / (1.732 * V), 0.04)) || kws.some((k) => near(v, (k * 1000) / (1.732 * V * 0.8), 0.04)));
+  }
+  const fitRow = (specs, at, cells) => specs.filter((x) => {
+    const ok = posFits(x.key, x.value, at.power, at.gi >= 0 ? cells[at.gi] : null);
+    if (!ok && at.note) at.note("dòng điện / điện áp theo vị trí không khớp công suất", `${x.key}=${x.value} | ${cells.join(" | ")}`);
+    return ok;
+  });
   function rowSpecs(t, cells, at = {}) {
     const hs = (t.header || []).map(cellsOf);
     if (!hs.length) return [];
@@ -761,10 +790,10 @@
     let shift = null;
     if (titles.length === cells.length) shift = 0;
     else if (titles.length === cells.length - 1 && isCode(cells[0]) && !/model|型号/i.test(titles[0])) shift = 1;
-    if (shift != null) { const r = lined(titles, units, shift); if (r?.length) return engRatings(hs, cells, at, r); }
+    if (shift != null) { const r = lined(titles, units, shift); if (r?.length) return engRatings(hs, cells, at, shift ? fitRow(r, at, cells) : r); }
     // A header of several lines whose second line names every column ("| | KW | kVA | KW | kVA | Cummins | ...").
     for (const h of hs.slice(1)) if (h.length === cells.length && h.some((x) => specKey(x))) { const r = lined(h, [], 0, kWOf(at.power)); if (r?.length) return engRatings(hs, cells, at, r); }
-    return engRatings(hs, cells, at, walkedSpecs(hs, cells, at));
+    return engRatings(hs, cells, at, fitRow(walkedSpecs(hs, cells, at), at, cells));
   }
   // The engine's power over two cells, its ratings on a line below (keliang "Engine power(kw)" over "Prime | Standby",
   // hanyang "Engine power" over "Rated Power (kW) | Standby Power (kW)", acepow "Rated | Standby"): one title gives one
@@ -1022,7 +1051,7 @@
         const stop = ei >= 0 ? ei : ai >= 0 ? ai : cells.length;
         const titled = engineTable ? null : titledPowers((t.header || []).map(cellsOf), cells, { gi, ei, ai }, title);
         const power = engineTable ? null : titled ? titled.power : powersIn(cells.slice(gi >= 0 ? gi + 1 : 0, stop), headerText + " " + title, true);
-        const common = { ...base, row: ri, line, genset: gi >= 0 ? cells[gi] : null, power, freq, header: t.header || [], specs: saneSpecs(rowSpecs(t, cells, { ei, ai, gi, power }), power, (x) => note(t, ti, ri, "số vô lý so với công suất", `${x.key}=${x.value}`)) };
+        const common = { ...base, row: ri, line, genset: gi >= 0 ? cells[gi] : null, power, freq, header: t.header || [], specs: saneSpecs(rowSpecs(t, cells, { ei, ai, gi, power, note: (reason, detail) => note(t, ti, ri, reason, detail) }), power, (x) => note(t, ti, ri, "số vô lý so với công suất", `${x.key}=${x.value}`)) };
         if (ei >= 0) out.push({ ...common, kind: "engine", model: tidyModel(cells[ei], ENGINE_BRANDS), makes: makesFor("engine", rowText, null), other: ai >= 0 ? cells[ai] : null, own: engineTable });
         if (ai >= 0) out.push({ ...common, kind: "alternator", model: tidyModel(cells[ai], ALT_BRANDS), makes: makesFor("alternator", rowText, null, cells[ai]), other: ei >= 0 ? cells[ei] : null });
       });
