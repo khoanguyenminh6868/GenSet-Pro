@@ -36,10 +36,14 @@ Describe 'GenBid-Bot.ps1: vòng quét' {
             Write-BotText "$r/.genbid-ingest-token" 'tok'; Write-BotText "$r/.claude-bot-token" 'ct'
             $r
         }
-        # Chạy một vòng. $Now: giờ giả; $Extra: tham số thêm (hashtable) cho script. Trả tình trạng sau vòng.
+        # Chạy một vòng. $Now: giờ giả; $Extra: tham số thêm (hashtable) cho script, giá trị $null = bỏ tham số đó (dùng mặc định
+        # của script). Mặc định ở đây: lịch mọi ngày (đa số ca dùng thứ Bảy 14/11) và giờ giả đọc như giờ VN (ScheduleUtcOffset =
+        # múi giờ của máy chạy test). Trả tình trạng sau vòng.
         function global:Run-Loop([string]$Root, [datetime]$Now, [hashtable]$Extra = @{}) {
             $global:Urls = @(); $global:Spawned = @(); $global:Posted = @{}
-            $p = @{ Root = $Root; Endpoint = 'http://fake/api/requests?kind=all'; RepoDir = "$Root/repo"; Once = $true; GatherSeconds = 0; PollSeconds = 1 } + $Extra
+            $p = @{ Root = $Root; Endpoint = 'http://fake/api/requests?kind=all'; RepoDir = "$Root/repo"; Once = $true; GatherSeconds = 0; PollSeconds = 1
+                ScheduleDays = @('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'); ScheduleUtcOffset = [TimeZoneInfo]::Local.GetUtcOffset($Now).TotalHours }
+            foreach ($k in @($Extra.Keys)) { if ($null -eq $Extra[$k]) { $p.Remove($k) } else { $p[$k] = $Extra[$k] } }
             Use-Env @{ USERPROFILE = $Root } { Use-FakeNow $Now { & $global:BotCopy @p 6>&1 | Out-Null } }
             Get-LoopState $Root
         }
@@ -66,10 +70,11 @@ Describe 'GenBid-Bot.ps1: vòng quét' {
     AfterAll { foreach ($f in 'Invoke-WebRequest', 'Start-Process', 'powershell') { Remove-Item "Function:\$f" -Force -ErrorAction SilentlyContinue } }
 
     Context 'tham số mặc định của lịch' {
-        It 'Sync 10:10, 14:10, 18:10 mọi ngày trong tuần kể cả thứ Bảy và Chủ nhật (Khoa 04/11)' {
+        It 'Sync 10:10, 14:10, 18:10 giờ VN, thứ Hai đến thứ Sáu; thứ Bảy, Chủ nhật không (Khoa 18/11)' {
             $d = Get-BotParamDefaults 'GenBid-Bot.ps1'
             Assert-Eq @($d.ScheduleTimes) @('10:10', '14:10', '18:10')
-            Assert-Eq @($d.ScheduleDays) @('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday')
+            Assert-Eq @($d.ScheduleDays) @('Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday')
+            Assert-Eq $d.ScheduleUtcOffset 7
         }
         It 'quét mỗi 15 giây, lượt chạy tối đa 180 phút, tạm dừng 30 phút khi không rõ giờ làm mới; hỏi hàng chờ ở /api/requests?kind=all' {
             $d = Get-BotParamDefaults 'GenBid-Bot.ps1'
@@ -115,9 +120,29 @@ Describe 'GenBid-Bot.ps1: vòng quét' {
         It 'khuya (23:00): mốc 18:10 chưa chạy thì chạy bù' {
             Assert-Eq (Run-Loop (New-BotRoot) (At '23:00')).Jobs[0].slot '2026-11-14 18:10'
         }
-        It 'Chủ nhật cũng chạy (Khoa 04/11)' {
-            $s = Run-Loop (New-BotRoot) (At '10:15' '2026-11-15')
-            Assert-Eq $s.Jobs[0].slot '2026-11-15 10:10'
+        It 'lịch mặc định: thứ Bảy, Chủ nhật không Sync; thứ Sáu, thứ Hai có (Khoa 18/11)' {
+            Assert-Eq @((Run-Loop (New-BotRoot) (At '10:15') @{ ScheduleDays = $null }).Jobs).Count 0
+            Assert-Eq @((Run-Loop (New-BotRoot) (At '23:00' '2026-11-15') @{ ScheduleDays = $null }).Jobs).Count 0
+            Assert-Eq (Run-Loop (New-BotRoot) (At '18:20' '2026-11-13') @{ ScheduleDays = $null }).Jobs[0].slot '2026-11-13 18:10'
+            Assert-Eq (Run-Loop (New-BotRoot) (At '10:15' '2026-11-16') @{ ScheduleDays = $null }).Jobs[0].slot '2026-11-16 10:10'
+        }
+        It 'máy chạy giờ khác (sandbox UTC): mốc tính theo giờ VN, 03:15 UTC = 10:15 VN' {
+            $off = [TimeZoneInfo]::Local.GetUtcOffset((At '03:15' '2026-11-16')).TotalHours
+            $s = Run-Loop (New-BotRoot) (At '03:15' '2026-11-16') @{ ScheduleUtcOffset = $off + 7 }
+            Assert-Eq $s.Jobs[0].slot '2026-11-16 10:10'
+            # 02:00 UTC = 09:00 VN: chưa tới mốc (giờ máy 02:00 không bù mốc 18:10 hôm trước).
+            Assert-Eq @((Run-Loop (New-BotRoot) (At '02:00' '2026-11-16') @{ ScheduleUtcOffset = $off + 7 }).Jobs).Count 0
+            # 17:30 UTC thứ Sáu = 00:30 thứ Bảy ở VN: không Sync (lịch mặc định).
+            Assert-Eq @((Run-Loop (New-BotRoot) (At '17:30' '2026-11-13') @{ ScheduleUtcOffset = $off + 7; ScheduleDays = $null }).Jobs).Count 0
+        }
+        It 'máy khác / sandbox đã Sync mốc này (web trả schedule.last): không Sync lại, nhớ mốc; mốc cũ hơn thì vẫn Sync' {
+            $global:Pend.schedule = @{ last = '2026-11-14 14:10' }
+            $r = New-BotRoot; $s = Run-Loop $r (At '17:00')
+            Assert-Eq @($s.Jobs).Count 0
+            Assert-Eq $s.Schedule '2026-11-14 14:10'
+            Assert-Match $s.Log 'đã chạy ở máy khác'
+            $global:Pend.schedule = @{ last = '2026-11-14 10:10' }
+            Assert-Eq (Run-Loop (New-BotRoot) (At '17:00')).Jobs[0].slot '2026-11-14 14:10'
         }
         It '-ScheduleDays giới hạn ngày: thứ Bảy không nằm trong danh sách thì không Sync' {
             $s = Run-Loop (New-BotRoot) (At '11:00') @{ ScheduleDays = @('Monday') }

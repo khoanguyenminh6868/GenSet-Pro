@@ -63,11 +63,13 @@ export default async function handler(req, res) {
       // A PC that comes back while the sandbox bot is still on gets nothing, so the two never take the same request:
       // the sandbox finishes and api/_sandbox.js tick() stops it once it is idle. Read only when the sandbox is set up.
       const on = sandboxOn();
-      const [marks, settings, sbx] = await Promise.all([pendingMarks(), beat ? aiSettings() : undefined, !sandbox && on ? botDoc("sandbox") : null]);
+      // schedule.last: the last scheduled Sync of any machine (synclog/current.slot, "yyyy-MM-dd HH:mm" in Vietnam time), so a
+      // machine that comes back on does not run that slot again (GenBid-Bot.ps1; Khoa 2026-11-18: the sandbox Syncs on schedule too).
+      const [marks, settings, sbx, synclog] = await Promise.all([pendingMarks(), beat ? aiSettings() : undefined, !sandbox && on ? botDoc("sandbox") : null, beat ? botDoc("current", "synclog") : null]);
       const pending = hasPending(marks);
       // apiOthers: what the other machines spent on the shared API key (Windows PCs, sandbox), for the bot's budget.
       const apiOthers = beat ? await heartbeat(req.query.running, req.query.api, sandbox ? "sandbox" : "pc", pending) : null;
-      const extra = { ...(settings !== undefined ? { settings } : {}), ...(apiOthers ? { apiOthers } : {}) };
+      const extra = { ...(settings !== undefined ? { settings } : {}), ...(apiOthers ? { apiOthers } : {}), ...(synclog?.slot ? { schedule: { last: String(synclog.slot) } } : {}) };
       // Each heartbeat of the sandbox bot decides whether the sandbox stops (idle, or a PC is back) or gets more time.
       if (beat && sandbox && on) await background(sandboxTick(req.query.running === "1", pending));
       if (sbx && fresh(sbx.lastPollAt, 2 * 60e3)) return res.json({ files: [], analysis: [], sync: { pending: false, requestedAt: null, mode: "" }, translation: [], compare: [], hsdt: [], tlkt: [], supplier: [], config: [], find: [], bidprice: [], spec: [], yieldTo: "sandbox", ...extra });
@@ -148,10 +150,10 @@ export function apiOthersOf(list, me, a) {
   }
   return { usd: Math.round(usd * 100) / 100, exhausted, since: a.since, fixAt: a.fixAt };
 }
-// botstatus/<id>.data, or null (missing or unreadable: never stops a poll).
-async function botDoc(id) {
+// botstatus/<id>.data (or <coll>/<id>), or null (missing or unreadable: never stops a poll).
+async function botDoc(id, coll = "botstatus") {
   try {
-    const r = await fetch(`${SB_URL}/rest/v1/docs?coll=eq.botstatus&id=eq.${id}&select=data`, { headers: { apikey: SERVICE, Authorization: `Bearer ${SERVICE}` } });
+    const r = await fetch(`${SB_URL}/rest/v1/docs?coll=eq.${coll}&id=eq.${id}&select=data`, { headers: { apikey: SERVICE, Authorization: `Bearer ${SERVICE}` } });
     return r.ok ? ((await r.json())[0]?.data ?? null) : null;
   } catch { return null; }
 }
