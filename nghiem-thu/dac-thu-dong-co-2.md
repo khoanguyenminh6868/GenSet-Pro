@@ -134,6 +134,12 @@ Script `rechk-612866.mjs` → `rechk-612866-2b.txt`. Lưu 17/11: 5 cấu hình (
   - E-TVCS: IB2500189935 đổi (trên). IB2600612866 không có trong bidhist (gói mới; đo riêng ở 11a / 11b: cùng chữ, cùng kết quả). IB2500416364 có trong tập nhưng Chương V lô lịch sử không có chữ E-TVCS (từ chỉ ở HSMT cả bộ, mà gói này hai bên đều không đọc được công suất) → không đổi.
   - Bộ điều khiển: 7 gói trong tập (IB2300230061 PowerCommand; IB2400100405, IB2400216847, IB2400285076, IB2400333932, IB2500039578, IB2500102600 AmpSentry) đều KHÔNG đổi: không dòng nào trong dải công suất của chúng ghi từ đó, nên +200 không cộng cho dòng nào. 3 gói EMCP (bảo trì máy CAT, có đổi 1 vào / 1 ra ở 11a) và ADEM không thuộc tập do-gop (không phải gói mua sắm).
   - 0 gói khác: đúng (1.083 gói không có từ đặc thù, không đổi một điểm nào; luật 3 biến thể và luật 2 dải internet nằm ở `rankConfigs` / `check`, không đo bằng do-gop).
+- Điều phối tự so lại (đa tập, top + all kèm điểm + dropped): khớp, phần đo của #930 ĐẠT (18/11 tối).
+- **Hai dòng denyo D1403K3A còn lại ở IB2500189935** (tra `suppliers/cn/denyo.json` + `CAT.build`, không đo):
+  - "88/110KVA" là khoá `keyOf` của dòng nguồn `8.8 / 11.0kVA` (bảng n 2035 "DCA-10LSX — Specification (Denyo product page)", sau dòng "Rated output" và "8.0 / 10.0kVA"): công suất TỔ MÁY DCA-10LSX (1 pha), cặp 50 / 60 Hz; catalog đọc `power.standby = 8,8 kVA` (fromLine, động cơ = dòng "Kubota D1403-K3A" của cùng bảng). Không phải điện áp, không phải lỗi đọc (agent lượt 17/11 cũng ghi "DCA-10LSX … 8,8 kVA dự phòng").
+  - "(KVA)STANDBY11137…" là khoá của dòng `(kVA) Standby 11 13.7 13.8 16.5 22 27.5 …` (bảng n 2001 "DCA Series 10.5–25 kVA 3-Phase", các model chạy ngang, DCA-13LSK cột đầu): catalog đọc `power.standby = 11 kVA` cho DCA-13LSK (50 Hz; 13,7 là 60 Hz). Nhãn trông "rác" chỉ vì khoá là cả dòng công suất của bảng nhiều model, số đọc đúng.
+  - Dòng thứ hai không vào top: `pick` bỏ dòng có cùng `choiceKey` (NCC + động cơ + đầu phát = denyo | D1403K3A | không đầu phát) với dòng đã chọn — một lựa chọn NCC / động cơ / đầu phát chỉ một dòng, như ở main. Nó vẫn ở `all` (điểm 436).
+  - Không có việc để lại từ hai dòng này. (Ghi chú bên lề, không thuộc PR: DCA-10LSX là máy 1 pha; HSMT 8,5 kVA đòi 1 pha / 3 pha thế nào thì check lo, không phải candidates.)
 - PR #926 (Lệch cột 11, `web/catalog.js`) merge trước thì em rebase + chạy lại test; số đo này vẫn dùng được vì diff của 2b không đụng `catalog.js` (đổi do catalog.js là phần của Lệch cột 11, đo riêng ở gốc của nó).
 
 ## Cần ghi nhớ
