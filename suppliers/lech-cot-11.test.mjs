@@ -210,3 +210,22 @@ test("walks from the engine, the alternator and the genset model that agree on t
   const { out } = read(H, ["| G100 | 6BTA5.9-G2 | UCI274C | 900 | 1800 | 2200x900x1200"]);
   assert.equal(spec(eng(out), "weight"), "900");
 });
+
+// Điều phối 18/11/2026: dòng depco P158LE ghi "Frequency(Hz): 50" mà `freqIn` không đọc nên bị luật tần số của `candidates` loại.
+test("depco-power n2182 (bảng nhãn xếp dọc 'Frequency(Hz):' / '50'): bản ghi mang tần số 50; n2101 (tiêu đề 60Hz) vẫn 60", () => {
+  const { out } = readReal("depco-power", 2182, "DPK-DD-440");
+  assert.equal(eng(out, "P158LE")?.freq, 50);
+  const o = readReal("depco-power", 2101, "P158LE").out;
+  assert.equal(eng(o, "P158LE")?.freq, 60);
+});
+
+test("a frequency label next to one figure gives the frequency; 50 / 60 together, a figure far from the label or a % gives none", () => {
+  const L = (rows) => { const { out } = read([], ["| Standby Power (ESP) | kVA | 100", "| Engine Model | P158LE", ...rows], { title: "Datasheet: Download" }); return eng(out)?.freq ?? null; };
+  assert.equal(L(["Frequency(Hz): 50"]), 50);
+  assert.equal(L(["| Frequency (Hz) | 60 | Speed ( rpm ) | 1800"]), 60);
+  assert.equal(L(["频率(Hz) | 50"]), 50);
+  assert.equal(L(["Frequency | 50Hz/60Hz"]), null);
+  assert.equal(L(["Frequency | 50 | 60"]), null);
+  assert.equal(L(["Frequency regulation | 0.5 % | Voltage | 50"]), null);
+  assert.equal(L(["Frequency | 50 Hz or 60 Hz"]), null);
+});

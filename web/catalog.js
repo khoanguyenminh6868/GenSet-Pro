@@ -232,8 +232,11 @@
     for (const [re, name] of list) if (re.test(text) && !hit.includes(name)) hit.push(name);
     return hit;
   };
-  const freqIn = (text) => {
-    const f50 = /50\s?hz|1500\s?(rpm|r\/min)/i.test(text), f60 = /60\s?hz|1800\s?(rpm|r\/min)/i.test(text);
+  const freqIn = (text, labelOnly = false) => {
+    // Also a frequency LABEL right before the figure ("FREQUENCY(HZ):50" depco, "Frequency (Hz) | 50", "频率(Hz) 50", "Tần số: 50"):
+    // only the figure the label stands next to (a unit in brackets or "Hz" may come between), never one further on.
+    const lab = (n) => new RegExp(`(?:frequency|freq\\.?|tần\\s*số|频\\s*率)\\s*(?:[(（\\[]\\s*hz\\s*[)）\\]]|\\bhz\\b)?\\s*[:：=|]?\\s*${n}(?![\\d.,%]|\\s*(?:%|v\\b|kw|kva)|\\s*(?:hz)?\\s*(?:[|/,~–-]\\s*|(?:or|and|hoặc|và|或|和)\\s*|\\s)(?:50|60)(?!\\d))`, "i");
+    const f50 = (!labelOnly && /50\s?hz|1500\s?(rpm|r\/min)/i.test(text)) || lab(50).test(text), f60 = (!labelOnly && /60\s?hz|1800\s?(rpm|r\/min)/i.test(text)) || lab(60).test(text);
     return f50 && !f60 ? 50 : f60 && !f50 ? 60 : null;
   };
   // Genset outputs in a list of cells: pairs "a/b" in one cell, or two neighbouring numbers.
@@ -1128,9 +1131,9 @@
             return false;
           });
           if (c.engine && isCode(c.engine.replace(/^[a-z]+\s+(?=\S*\d)/i, (m) => (brandIn(m, ENGINE_BRANDS).length ? "" : m))))
-            out.push({ ...base, kind: "engine", model: c.engine.replace(/^(cummins|perkins|weichai|yuchai|deutz|volvo|baudouin|mtu|doosan|mitsubishi|sdec|kubota|yanmar|isuzu|ricardo|lovol|fawde)\s+/i, ""), makes: makesFor("engine", c.engine + " " + (c.engineBrand || ""), c.engineBrand), genset: c.genset || null, power, freq: tFreq, other: c.alternator || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows } });
+            out.push({ ...base, kind: "engine", model: c.engine.replace(/^(cummins|perkins|weichai|yuchai|deutz|volvo|baudouin|mtu|doosan|mitsubishi|sdec|kubota|yanmar|isuzu|ricardo|lovol|fawde)\s+/i, ""), makes: makesFor("engine", c.engine + " " + (c.engineBrand || ""), c.engineBrand), genset: c.genset || null, power, freq: tFreq || freqIn(block.join(" "), true), other: c.alternator || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows } });
           if (c.alternator && isCode(c.alternator.replace(/^[a-z-]+\s+(?=\S*\d)/i, "")))
-            out.push({ ...base, kind: "alternator", model: c.alternator.replace(/^(stamford|leroy[\s-]?somer|mecc\s?alte|marathon|engga)\s+/i, ""), makes: makesFor("alternator", c.alternator + " " + (c.altBrand || ""), c.altBrand, c.alternator), genset: c.genset || null, power, freq: tFreq, other: c.engine || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows } });
+            out.push({ ...base, kind: "alternator", model: c.alternator.replace(/^(stamford|leroy[\s-]?somer|mecc\s?alte|marathon|engga)\s+/i, ""), makes: makesFor("alternator", c.alternator + " " + (c.altBrand || ""), c.altBrand, c.alternator), genset: c.genset || null, power, freq: tFreq || freqIn(block.join(" "), true), other: c.engine || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows } });
         }
         return;
       }
