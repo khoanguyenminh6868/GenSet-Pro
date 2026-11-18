@@ -2672,7 +2672,7 @@ function checkDir(dir, suppliers, added = [], origin) {
   // result.json is the agent's own answer: `byCode` is the code's flag, never the agent's (see check()).
   stripAgentCodeFlags(result.requirements); for (const c of result.configs || []) stripAgentCodeFlags(c.checks);
   // A supplier added from the internet: its rows were numbered in newCatalog.json, renumbered when added.
-  for (const a of added) if (a.nmap) for (const c of result.configs || []) for (const s of c.suppliers || []) if (s.supplierId === a.supplierId && a.nmap[s.n] != null) s.n = a.nmap[s.n];
+  for (const a of added) if (a.nmap) for (const c of result.configs || []) for (const s of c.suppliers || []) { if (a.from && s.supplierId === a.from) s.supplierId = a.supplierId; if (s.supplierId === a.supplierId && a.nmap[s.n] != null) s.n = a.nmap[s.n]; }
   if (added.length) result.catalogAdded = added.map(({ nmap, ...a }) => a);
   const readWeb = (f) => { const p = path.join(dir, f); return p.startsWith(path.join(dir, "web")) && fs.existsSync(p) ? fs.readFileSync(p, "utf8") : null; };
   const hsmtText = fs.readFileSync(path.join(dir, "hsmt.txt"), "utf8");
@@ -4096,11 +4096,24 @@ export function namesOf(n) {
   const zh = list.find((x) => /[一-鿿]/.test(x)), en = list.find((x) => !/[一-鿿]/.test(x));
   return { ...(en ? { en } : {}), ...(zh ? { zh } : {}) };
 }
+// The supplier already in the system that an entry with a new id is (Khoa 2026-11-18: Gợi ý cấu hình IB2600612866 added
+// "kubota" next to "kubota-japan", same generator.kubota.com): the one record of the same country whose website has the
+// same host (www. aside). Same host in another country is another company (perkins GB / perkins-wuxi CN); same name and
+// another website is a second brand kept apart with relatedIds (hichai-power / kaihua-genset), so names are not matched.
+const hostOf = (u) => { try { return new URL(/^https?:\/\//i.test(u) ? u : `https://${u}`).hostname.toLowerCase().replace(/^www\./, ""); } catch { return ""; } };
+export function sameSupplier(e, existing) {
+  const h = hostOf(String(e?.website || "").trim());
+  if (!h || !e?.country) return null;
+  const hits = [...existing.values()].filter((s) => s?.id && s.country === e.country && s.website && hostOf(s.website) === h);
+  return hits.length === 1 ? hits[0] : null;
+}
 export function catalogRecords(entries, { existing, readWeb, today, keepSeller = false }) {
   const out = [];
   for (const e of Array.isArray(entries) ? entries : []) {
-    const id = String(e?.id || "");
-    if (!/^[a-z0-9-]+$/.test(id)) { out.push({ id, error: "id không hợp lệ" }); continue; }
+    const asked = String(e?.id || "");
+    if (!/^[a-z0-9-]+$/.test(asked)) { out.push({ id: asked, error: "id không hợp lệ" }); continue; }
+    // `from`: the id the agent wrote, when the entry went into the record it duplicates (result.json still names it).
+    const same = existing.has(asked) ? null : sameSupplier(e, existing), id = same ? same.id : asked, from = same ? { from: asked } : {};
     const old = existing.get(id) || null, files = {}, nmap = new Map(), sources = [], skippedSources = [], gone = new Set();
     const self = old || { id, role: e.role, website: e.website || null, names: namesOf(e.names), sources: [] };
     const pool = [...existing.values(), ...(old ? [] : [self])];
@@ -4119,8 +4132,8 @@ export function catalogRecords(entries, { existing, readWeb, today, keepSeller =
     // `official` (Khoa 2026-11-12): the page is on the domain of this record's make (web-memo.mjs), computed by code,
     // never the agent's; written for the record, not yet used to weigh the source.
     if (!error) for (const s of sources) s.official = MEMO.isOfficial(s.url, self, pool);
-    if (error) { out.push({ id, error }); continue; }
-    if (skippedSources.length && !sources.length) { out.push({ id, error: `không đưa vào danh mục: mọi nguồn là trang bên bán / không chính hãng (tier C): ${skippedSources.map((x) => x.url).join(", ")}`, skippedSources }); continue; }
+    if (error) { out.push({ id, ...from, error }); continue; }
+    if (skippedSources.length && !sources.length) { out.push({ id, ...from, error: `không đưa vào danh mục: mọi nguồn là trang bên bán / không chính hãng (tier C): ${skippedSources.map((x) => x.url).join(", ")}`, skippedSources }); continue; }
     // What rests only on a page left out goes with it; a reference to a page that was never saved stays -1 for verify.mjs.
     const onlyGone = (src) => { const l = Array.isArray(src) ? src : src == null ? [] : [src]; return l.length > 0 && l.every((n) => gone.has(Number(n))); };
     const re = (src) => (Array.isArray(src) ? src.filter((n) => !gone.has(Number(n))).map((n) => nmap.get(Number(n)) ?? -1) : src);
@@ -4136,7 +4149,7 @@ export function catalogRecords(entries, { existing, readWeb, today, keepSeller =
         founded: null, relatedIds: [], strengths: fil(e.strengths, keepRef).map((x) => ({ ...x, src: re(x.src) })), productLines: lines,
         certifications: fil(e.certifications, keepRef).map((x) => ({ ...x, src: re(x.src) })), exportMarkets: [], missing: e.missing || [],
         sources, confidence: e.confidence, checkedAt: today, checkedBy: "config-bot", specTables: tables, ...(ctrls.length ? { controllers: ctrls } : {}), id };
-    out.push({ id, rec, files, nmap, isNew: !old, tables: tables.length, ...(skippedSources.length ? { skippedSources, droppedParts } : {}) });
+    out.push({ id, ...from, rec, files, nmap, isNew: !old, tables: tables.length, ...(skippedSources.length ? { skippedSources, droppedParts } : {}) });
   }
   return out;
 }
@@ -4190,7 +4203,7 @@ export async function addToCatalog(dir, key, suppliers, opts = {}) {
       }
       fs.writeFileSync(recFile, JSON.stringify(x.rec, null, 2) + "\n", "utf8");
       records.push(x.rec);
-      added.push({ supplierId: x.id, name: x.rec.names?.en || x.rec.names?.zh || x.id, isNew: x.isNew, tables: x.tables, nmap: Object.fromEntries(x.nmap), ...(x.skippedSources ? { skippedSources: x.skippedSources, droppedParts: x.droppedParts } : {}) });
+      added.push({ supplierId: x.id, ...(x.from ? { from: x.from } : {}), name: x.rec.names?.en || x.rec.names?.zh || x.id, isNew: x.isNew, tables: x.tables, nmap: Object.fromEntries(x.nmap), ...(x.skippedSources ? { skippedSources: x.skippedSources, droppedParts: x.droppedParts } : {}) });
     }
     // GENBID_CATALOG_DRY=1: check only, nothing is posted or pushed.
     if (records.length && !process.env.GENBID_CATALOG_DRY) {
@@ -4530,13 +4543,13 @@ export async function findCheck(dir, suppliers, cap) {
   const readWeb = (f) => { const p = path.join(dir, f); return fs.existsSync(p) ? fs.readFileSync(p, "utf8") : null; };
   const existing = new Map(suppliers.map((s) => [s.id, s]));
   for (const x of catalogRecords(entries, { existing, readWeb, today: new Date().toISOString().slice(0, 10) })) {
-    if (x.error) { out.push({ id: x.id, errors: [x.error] }); continue; }
+    if (x.error) { out.push({ id: x.id, from: x.from, errors: [x.error] }); continue; }
     for (const [f, txt] of Object.entries(x.files)) { fs.mkdirSync(path.dirname(path.join(chk, f)), { recursive: true }); fs.writeFileSync(path.join(chk, f), txt, "utf8"); }
     const own = new Set(x.nmap.values()), isOwn = (src) => Array.isArray(src) && src.length && src.every((n) => own.has(n));
     // status partial: "verified" asks for things of the whole record (website, a power line), checked again by addToCatalog.
     const rec = x.isNew ? x.rec : { ...x.rec, status: "partial", sources: x.rec.sources.filter((s) => own.has(s.n)), productLines: (x.rec.productLines || []).filter((p) => isOwn(p.src)),
       specTables: (x.rec.specTables || []).filter((t) => own.has(t.n)), controllers: (x.rec.controllers || []).filter((c) => isOwn(c.src)), strengths: [], certifications: [], contacts: [], vietnam: undefined, founded: null };
-    out.push({ id: x.id, isNew: x.isNew, errors: checkRecord(rec, path.join(chk, "cn", `${x.id}.json`)).errors, fits: fitsCap(rec, cap), rows: engineRows(rec, cap), rec });
+    out.push({ id: x.id, from: x.from, isNew: x.isNew, errors: checkRecord(rec, path.join(chk, "cn", `${x.id}.json`)).errors, fits: fitsCap(rec, cap), rows: engineRows(rec, cap), rec });
   }
   return out;
 }
@@ -4938,7 +4951,7 @@ async function find(req, suppliers) {
         const dropped = checked.filter((c) => !fit.includes(c)).map((c) => ({ supplierId: c.id, error: c.errors.length ? `verify.mjs: ${c.errors.slice(0, 3).join("; ")}` : `không có dòng sản phẩm đúng công suất ${capStr(cap)}` }));
         if (!fit.length) { tried.push({ engine: ENGINE[engine], error: info.summary || "không tìm được nhà cung cấp nào qua được kiểm tra", dropped }); continue; }
         // Only the suppliers that passed and fit go to the catalog.
-        const ids = new Set(fit.map((c) => c.id));
+        const ids = new Set(fit.map((c) => c.from || c.id));
         fs.writeFileSync(path.join(dir, "newCatalog.json"), JSON.stringify(JSON.parse(fs.readFileSync(path.join(dir, "newCatalog.json"), "utf8")).filter((e) => ids.has(e?.id)), null, 1), "utf8");
         const { added, records } = await addToCatalog(dir, key, suppliers, { branch: `ncc/${key.toLowerCase()}-${engine}`, title: `Nhà cung cấp: Tìm NCC gói ${key} (${ENGINE[engine]})`,
           body: `Nút Tìm NCC ở tab Cấu hình gợi ý gói ${key}: ${ENGINE[engine]} tìm trên internet nhà cung cấp phù hợp yêu cầu kỹ thuật${cap ? ` (${capStr(cap)})` : ""}. Bản ghi đã qua verify.mjs và đã đăng lên web.` });
@@ -5149,7 +5162,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === SCRIPT) {
     // Offline in a folder made for Tìm NCC (suppliers.json, meta.json).
     const dir = arg("dir", "."), meta = JSON.parse(fs.readFileSync(path.join(dir, "meta.json"), "utf8"));
     const res = await findCheck(dir, JSON.parse(fs.readFileSync(path.join(dir, "suppliers.json"), "utf8")), meta.cap);
-    for (const c of res) console.log(`${c.id || "?"}: ${c.errors.length ? `KHÔNG QUA — ${c.errors.join("; ")}` : "qua verify.mjs"}${c.errors.length ? "" : c.fits ? ", phù hợp công suất" : `, CHƯA có dòng sản phẩm phù hợp công suất ${capStr(meta.cap)}`}${c.errors.length ? "" : c.rows?.length ? `; dòng động cơ đúng công suất: ${[...new Set(c.rows)].join(", ")}` : `; CHƯA có dòng bảng nào cho ra động cơ đúng công suất (specTables cần dòng ghi cả model động cơ và công suất, hoặc productLines tổ máy một model có engineModels một động cơ và power min = max, với một dòng specTables cùng nguồn có số công suất đó), nên không vào được cấu hình gợi ý`}`);
+    for (const c of res) console.log(`${c.from ? `${c.from} → ${c.id} (cùng website và quốc gia với nhà cung cấp đã có, sẽ gộp vào đó)` : c.id || "?"}: ${c.errors.length ? `KHÔNG QUA — ${c.errors.join("; ")}` : "qua verify.mjs"}${c.errors.length ? "" : c.fits ? ", phù hợp công suất" : `, CHƯA có dòng sản phẩm phù hợp công suất ${capStr(meta.cap)}`}${c.errors.length ? "" : c.rows?.length ? `; dòng động cơ đúng công suất: ${[...new Set(c.rows)].join(", ")}` : `; CHƯA có dòng bảng nào cho ra động cơ đúng công suất (specTables cần dòng ghi cả model động cơ và công suất, hoặc productLines tổ máy một model có engineModels một động cơ và power min = max, với một dòng specTables cùng nguồn có số công suất đó), nên không vào được cấu hình gợi ý`}`);
     if (!res.length) console.log("newCatalog.json rỗng.");
   } else if (cmd === "post") {
     const dir = arg("dir", "."), { result } = checkDir(dir, (await allDocs("supplier")).map((d) => d.data));

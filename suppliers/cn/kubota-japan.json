@@ -135,6 +135,26 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "SQ-1120",
+      "fuel": "diesel",
+      "engineModels": [
+        "D1703"
+      ],
+      "power": {
+        "min": 11.2,
+        "max": 11.2,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001
+      ]
     }
   ],
   "certifications": [],
@@ -460,6 +480,20 @@
         "| MODEL | Unit | KJ-S150VX"
       ],
       "file": "sources/kubota-japan/133.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://generator.kubota.com/products/50hz/sq_1120.html",
+      "accessedAt": "2026-11-17",
+      "tier": "A",
+      "quote": [
+        "Kubota Generators SQ-1120",
+        "| Prime Output | kVA (kW) | 11.2 (11.2)",
+        "| Model | - | D1703",
+        "URL: https://generator.kubota.com/products/50hz/sq_1120.html"
+      ],
+      "file": "sources/kubota-japan/2001.md",
+      "official": true
     }
   ],
   "confidence": "medium",
