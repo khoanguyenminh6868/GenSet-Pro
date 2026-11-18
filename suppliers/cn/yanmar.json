@@ -54,6 +54,44 @@
       "src": [
         1
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "YTG10S",
+      "fuel": "diesel",
+      "engineModels": [
+        "TF160M"
+      ],
+      "power": {
+        "min": 10,
+        "max": 10,
+        "unit": "kVA",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "src": [
+        2001,
+        2002
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "YTG Series",
+      "fuel": "diesel",
+      "power": {
+        "min": 5,
+        "max": 15,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
     }
   ],
   "certifications": [],
@@ -162,10 +200,41 @@
         "| | Engine Model | 6EY26DF | 8EY26DF"
       ],
       "file": "sources/yanmar/108.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.yanmar.com/eu/industrial/product/generators/ytg10s-e1/",
+      "accessedAt": "2026-11-18",
+      "tier": "A",
+      "quote": [
+        "Yanmar YTG10S-E1 | Single-Phase Diesel Generator | 10 kVA",
+        "Prime Power Rating (50 Hz)",
+        "Single Phase",
+        "Voltage (50 Hz)"
+      ],
+      "file": "sources/yanmar/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://www.yanmar.com/global/powerproducts/products/diesel_generators/ytgseries/",
+      "accessedAt": "2026-11-18",
+      "tier": "A",
+      "quote": [
+        "A robust and durable diesel generator available in capacity range from 5kW to 12kW models (Single Phase /3 Phase).",
+        "| | Model | YTG5.0S | YTG6.5S | YTG10S | YTG6.5T | YTG9.0T | YTG12.5T | YTG15T",
+        "| Engine | YANMAR | TF90M | TF120M | TF160M | TF90M | TF120M | TF160M | TF190R",
+        "| Generator set | Capacity | [kVA] | 5 | 6.5 | 10 | 6.5 | 9 | 12.5 | 15",
+        "| Voltage (Standard) | [V] | 220 | 220/380",
+        "| Power factor | 1 | 0.8",
+        "| Frequency | [Hz] | Available in either 50Hz or 60Hz"
+      ],
+      "file": "sources/yanmar/2002.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-01",
+  "checkedAt": "2026-11-18",
   "checkedBy": "discover-bot (Claude)",
   "specTables": [
     {
@@ -316,6 +385,25 @@
         "| Engine speed (min -1 ) | 900 | 720/750",
         "| Output [Shaft] (kW) | 1100 | 1470 | 1960",
         "| Mean effective pressure (Mpa) | 2.01 | 1.92/2.00"
+      ]
+    },
+    {
+      "n": 2002,
+      "title": "YTG Series specifications (Single Phase / 3 Phase)",
+      "header": [
+        "| | | Single Phase (2Wire) | 3 Phase (4Wire)",
+        "| | Model | YTG5.0S | YTG6.5S | YTG10S | YTG6.5T | YTG9.0T | YTG12.5T | YTG15T"
+      ],
+      "rows": [
+        "| Alternator | Alternator Model | S16F-180/B | S20FS-160/A | S20FS-200/A | ECO3-1S | ECO3-2S | CO3-3S | ECO3-1L",
+        "| Engine | YANMAR | TF90M | TF120M | TF160M | TF90M | TF120M | TF160M | TF190R",
+        "| Generator set | Capacity | [kVA] | 5 | 6.5 | 10 | 6.5 | 9 | 12.5 | 15",
+        "| [kW] | 5 | 6.5 | 10 | 5.2 | 7.2 | 10 | 12",
+        "| Revolutions | [min -1 (rpm)] | 3000 for 50Hz /3600 for 60Hz",
+        "| No. of phase | Single Phase (2 Wire) | 3 Phase (4 Wire)",
+        "| Power factor | 1 | 0.8",
+        "| Voltage (Standard) | [V] | 220 | 220/380",
+        "| Combustion system | Direct injection"
       ]
     }
   ]
