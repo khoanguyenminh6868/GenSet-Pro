@@ -22,8 +22,8 @@
    "sups": 7
   },
   "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": {
-   "items": 78,
-   "tables": 10,
+   "items": 77,
+   "tables": 9,
    "sups": 4
   },
   "mã đầu phát trùng model tổ máy": {
@@ -5378,23 +5378,6 @@
    "rows": {},
    "sample": {
     "bảng không cho bản ghi nào": "MYI6"
-   }
-  },
-  {
-   "supplierId": "cgm-italia",
-   "n": 101,
-   "table": 4,
-   "title": "Industrial CGM Generators | Silent, Robust, and Reliable",
-   "reasons": {
-    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": 1
-   },
-   "rows": {
-    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": [
-     41
-    ]
-   },
-   "sample": {
-    "số bằng đúng công suất của dòng, không là khối lượng / độ ồn": "noise=69"
    }
   },
   {

@@ -811,7 +811,7 @@
   });
   // A voltage that is one of the row's own outputs in kW / kVA and no mains voltage (yingtai n113 at 6,3 kV: the row has no
   // voltage cell, the title "额定电压" lay over the standby 1100 / 1300 kW; 400 kW | 400 V stays). Left out and noted.
-  function notOutput(specs, at) {
+  function notOutput(specs, at, cells = []) {
     const P = Object.values(at.power || {}).filter(Boolean), outs = P.flatMap((p) => [p.kW, p.kVA]).filter(Boolean);
     return specs.filter((x) => {
       // A current of digits split by a space ("5 9/54", an OCR of 59.54, zhengdian n101): no number to trust, left out.
@@ -820,7 +820,11 @@
       // "dB(A)" 52,8 the same cell under another title of a pile of header lines): the cell is the output, left out.
       if (x.key === "weight" || x.key === "noise") {
         const w = +String(x.value).trim().replace(",", ".").replace(/\s*(kg|db\(a\)|db)$/i, "");
-        if (w > 0 && outs.includes(w)) { if (at.note) at.note("số bằng đúng công suất của dòng, không là khối lượng / độ ồn", `${x.key}=${x.value}`); return false; }
+        // The same figure in a cell right of the engine / alternator (cgm-italia e63B: noise 69 at the far end, standby kVA 69 on
+        // the left) is the cell of its own title, not the output laid under it: kept.
+        const right = Math.max(at.ei ?? -1, at.ai ?? -1);
+        const again = right >= 0 && cells.some((c, i) => i > right && +String(c).trim().replace(",", ".").replace(/\s*(kg|db\(a\)|db)$/i, "") === w);
+        if (w > 0 && outs.includes(w) && !again) { if (at.note) at.note("số bằng đúng công suất của dòng, không là khối lượng / độ ồn", `${x.key}=${x.value}`); return false; }
         return true;
       }
       if (x.key !== "voltage") return true;
@@ -830,7 +834,7 @@
       return false;
     });
   }
-  const rowSpecs = (t, cells, at = {}) => notOutput(rowSpecs0(t, cells, at), at);
+  const rowSpecs = (t, cells, at = {}) => notOutput(rowSpecs0(t, cells, at), at, cells);
   function rowSpecs0(t, cells, at = {}) {
     const hs = (t.header || []).map(cellsOf);
     if (!hs.length) return [];
@@ -974,7 +978,7 @@
     const figOf = (v) => { const t = String(v ?? "").replace(/\s+/g, "").replace(/(kva|kwe?)$/i, "").replace(",", "."); return /^\d+(\.\d+)?$/.test(t) ? +t : null; };
     const onePair = (a, b) => { const x = figOf(a), y = figOf(b); return x != null && y != null && Object.values(power || {}).some((p) => p && ((p.kVA === x && p.kW === y) || (p.kVA === y && p.kW === x))); };
     const engT = engTitle, altT = altTitle;
-    const got = new Map(), bad = new Set();
+    const got = new Map(), bad = new Set(), reads = [];
     for (const h of hs) {
       const starts = [], named = h.some((x) => engT(x) || altT(x));
       h.forEach((x, j) => {
@@ -1025,12 +1029,19 @@
         if (miss) mine.length = Math.min(mine.length, cut ?? Infinity, skips ? keep : Infinity);
         // From the last cell alone, with no known cell on the way: only when two figures or more fit.
         if (!anchored && mine.length < 2) continue;
-        for (const m of mine) { const g = got.get(m.key); if (g && g.c !== m.c) bad.add(m.key); else if (!g) got.set(m.key, m); }
+        for (const m of mine) { reads.push({ ...m, edge: !!edge }); const g = got.get(m.key); if (g && g.c !== m.c) bad.add(m.key); else if (!g) got.set(m.key, m); }
       }
     }
     // One cell read under two titles by two walks (a row with a cell left out: yingtai-jiangsu "… | 115.2 | 1200 |
     // 2.35*1.0*1.5", 1200 kg read as the speed from the left and the weight from the right): neither is known.
     // A title already read at two places says nothing about the cell.
+    // A title read at two cells: when two walks that start from a known cell (engine, alternator, genset model) agree on one
+    // cell and only the walk from the right edge says another, the edge walk is the one a row wider than the header throws
+    // off by a cell (sanq-power n110 "Genset Weight": 3120 from three walks, 4495 from the edge): the agreed cell stands.
+    for (const k of [...bad]) {
+      const rs = reads.filter((r) => r.key === k), anchored = rs.filter((r) => !r.edge), cs = new Set(anchored.map((r) => r.c));
+      if (anchored.length >= 2 && cs.size === 1) { got.set(k, anchored[0]); bad.delete(k); }
+    }
     const at = new Map();
     for (const m of [...got.values()].filter((m) => !bad.has(m.key))) { const k = at.get(m.c); if (k && k !== m.key) { bad.add(k); bad.add(m.key); } else at.set(m.c, m.key); }
     return [...got.values()].filter((m) => !bad.has(m.key)).map(({ key, label, value }) => ({ key, label, value }));

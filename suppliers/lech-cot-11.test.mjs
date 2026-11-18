@@ -66,12 +66,12 @@ test("cgm-italia n1001: the 'kg' / 'dB(A)' of a pile of header lines over the en
   for (const m of ["1103A-33TG1", "1103A-33TG2"]) { assert.equal(spec(eng(out, m), "weight"), undefined); assert.equal(spec(eng(out, m), "noise"), undefined); }
 });
 
-test("a weight or a noise level exactly equal to one of the row's own outputs is left out and noted; a real weight stays", () => {
+test("a weight or a noise level equal to one of the row's own outputs: kept in its own column right of the engine", () => {
   const H = ["| Model | Standby kW | Standby kVA | Engine Model | Weight (kg) | Noise dB(A)"];
+  // 80 again in a column of its own (right of the engine): that is the cell of the title (cgm-italia e63B noise 69).
   const a = read(H, ["| G100 | 80 | 100 | 6BTA5.9-G2 | 80 | 80"]);
-  assert.equal(spec(eng(a.out), "weight"), undefined);
-  assert.equal(spec(eng(a.out), "noise"), undefined);
-  assert.ok(a.notes.some((x) => /đúng công suất/.test(x.reason)));
+  assert.equal(spec(eng(a.out), "noise"), "80");
+  // The figure only among the power cells (cgm n1001 "kg" 39,6 = standby kW) is covered by the real-row test above.
   const b = read(H, ["| G100 | 80 | 100 | 6BTA5.9-G2 | 1450 | 75"]);
   assert.equal(spec(eng(b.out), "weight"), "1450");
 });
@@ -178,4 +178,35 @@ test("engine codes of the same shape as an alternator frame but not frame number
   const { out } = read(["| Model | kW | kVA | Engine | Alternator"], ["| UY20GFS | 16 | 20 | 490D | 164D"]);
   assert.equal(eng(out)?.model, "490D");
   assert.equal(alt(out)?.model, "164D");
+});
+
+// Phản biện của điều phối (PR #926): ba giá trị ĐÚNG đã bị bỏ nhầm.
+test("cgm-italia n101 e63B: the noise 69 dB(A) sits in its own column right of the engine, so it stays although 69 is also the standby kVA; n1001 (the figure only among the power cells) is still left out", () => {
+  const { out } = readReal("cgm-italia", 101, "| e63B |");
+  assert.equal(spec(eng(out, "4M10G2D3/5"), "noise"), "69");
+  const o = readReal("cgm-italia", 1001, "| 60DZa |").out;
+  assert.equal(spec(eng(o, "F6L 912"), "noise"), undefined);
+  assert.equal(spec(eng(o, "F6L 912"), "weight"), undefined);
+});
+
+test("rise-power n120 RDL560-60: a row one cell short at the end keeps the open-type size 3420×1390×1840 like its neighbours (it was the sound-proof size read once, or nothing)", () => {
+  const { out } = readReal("rise-power", 120, "| RDL560-60 |");
+  const e = out.find((u) => u.kind === "engine" && u.genset === "RDL560-60"), a = out.find((u) => u.kind === "alternator" && u.genset === "RDL560-60");
+  assert.equal(spec(e, "dims"), "3420×1390×1840");
+  assert.equal(spec(e, "weight"), "4200");
+  assert.equal(spec(a, "dims"), "3420×1390×1840");
+});
+
+test("sanq-power n110 SQD385: three walks from known cells agree on the open-type weight 3120; the walk from the right edge (one cell off in a row wider than the header) does not overrule them", () => {
+  const { out } = readReal("sanq-power", 110, "| SQD385 |");
+  assert.equal(spec(eng(out, "P158LE-1"), "weight"), "3120");
+  assert.equal(spec(eng(out, "P158LE-1"), "fuel"), "72");
+  const first = readReal("sanq-power", 110, "| SQD165 |").out;
+  assert.equal(spec(eng(first, "DP086TA"), "weight"), "1420");
+});
+
+test("walks from the engine, the alternator and the genset model that agree on the weight cell: kept; no walk from a known cell: still left out", () => {
+  const H = ["| Model | Engine | Alternator | Weight | Dimension"];
+  const { out } = read(H, ["| G100 | 6BTA5.9-G2 | UCI274C | 900 | 1800 | 2200x900x1200"]);
+  assert.equal(spec(eng(out), "weight"), "900");
 });
