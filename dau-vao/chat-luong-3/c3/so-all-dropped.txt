@@ -1,0 +1,216 @@
+{
+ "all → dropped: dữ kiện động cơ đổi": 44,
+ "∅ → all: dòng mới có": 27
+}
+
+== IB2200069368#0 cap {"value":118,"unit":"kVA"}
+   all → dropped victory-generator||VD110F|50|100|125|110|138|BF6L913CD|221|ELECTRONIC|TURBOCHARGED|102*125|6128 [Deutz BF6L913CD] ruled [] → ["cyl"]
+      dữ kiện động cơ BF6L913CD đổi: +[voltage=400/230V, current=135A, pf=0.8, dims=2100×850×1250, weight=1150kg, cyl=6, bore=102/125, start=24V electrical, gov=mechanical, disp=6.128L, eff=90.30%, excit=brushless self-exciting] −[]
+   all → dropped victory-generator||VD110F|60|100|125|110|138|BF6L913CD|221|ELECTRONIC|TURBOCHARGED|102*125|6128 [Deutz BF6L913CD] ruled [] → ["cyl"]
+      dữ kiện động cơ BF6L913CD đổi: +[voltage=400/230V, current=135A, pf=0.8, dims=2100×850×1250, weight=1150kg, cyl=6, bore=102/125, start=24V electrical, gov=mechanical, disp=6.128L, eff=90.30%, excit=brushless self-exciting] −[]
+
+== IB2300003199#2 cap {"value":80,"unit":"kW"}
+   ∅ → all huachai-deutz||RATEDPRIMEPOWER|75KW|PRIMEPOWER|84KW|RATEDPOWER|80KW|STANDBYPOWER|82KW|STANDPOWER|90KW|RATEDVOL [Deutz BF6L913CD] ruled [] → []
+      dòng mới có
+   ∅ → all huachai-deutz||RATEDPRIMEPOWER|90KW|PRIMEPOWER|117KW|RATEDPOWER|96KW|STANDBYPOWER|99KW|STANDPOWER||RATEDVOLTAG [Deutz F8L413F] ruled [] → []
+      dòng mới có
+
+== IB2300032777#0 cap {"value":10,"unit":"kW"}
+   ∅ → all huachai-deutz||MODEL|10GF|MODEL|F2L912D|MODEL|PI044F|RATEDPRIMEPOWER|10KW|PRIMEPOWER|14KW|RATEDPOWER|10KW|STAN [Deutz F2L912D] ruled [] → []
+      dòng mới có
+
+== IB2300057123#0 cap {"value":160,"unit":"kVA"}
+   all → dropped weiman-fujian||WTD176F|128|160|141|176|BF8L513|147|160|215|3718|8×125×130|12763|158:1|TC|MOREDATA [Deutz BF8L513] ruled [] → ["cyl"]
+      dữ kiện động cơ BF8L513 đổi: +[voltage=400/230V, current=217A, pf=0.8, dims=2250×1200×1460, weight=1850kg, cyl=8, bore=125/130, start=24V electrical, gov=electronic, disp=12.763L, eff=92.50%, excit=brushless self-exciting] −[]
+
+== IB2300087393#0 cap {"value":400,"unit":"kVA"}
+   all → dropped mecca-power||MC413D|300|375|330|413|BF6M1015CPLA| [Deutz BF6M1015CPLA] ruled [] → ["disp"]
+      dữ kiện động cơ BF6M1015CPLA đổi: +[voltage=400/230V, current=541A, pf=0.8, dims=2850×1450×1950, weight=3200kg, cyl=6, bore=132/145, start=24V electrical, gov=electronic, disp=11.906L, eff=93.70%, excit=brushless self-exciting] −[]
+
+== IB2300127113#0 cap {"value":350,"unit":"kVA"}
+   all → dropped uleengen||UD375GF|300|375|BF6M1015CPLA| [Deutz BF6M1015CPLA] ruled [] → ["disp"]
+      dữ kiện động cơ BF6M1015CPLA đổi: +[voltage=400/230V, current=541A, pf=0.8, dims=2850×1450×1950, weight=3200kg, cyl=6, bore=132/145, start=24V electrical, gov=electronic, disp=11.906L, eff=93.70%, excit=brushless self-exciting] −[]
+   all → dropped mecca-power||MC413D|300|375|330|413|BF6M1015CPLA| [Deutz BF6M1015CPLA] ruled [] → ["disp"]
+      dữ kiện động cơ BF6M1015CPLA đổi: +[voltage=400/230V, current=541A, pf=0.8, dims=2850×1450×1950, weight=3200kg, cyl=6, bore=132/145, start=24V electrical, gov=electronic, disp=11.906L, eff=93.70%, excit=brushless self-exciting] −[]
+
+== IB2300135189#0 cap {"value":30,"unit":"kVA"}
+   all → dropped victory-generator||VD24F|50|20|25|24|30|F3L912D|232|MECHANICAL|NATURALLY|100*120|2828 [Deutz F3L912D] ruled [] → ["cyl"]
+      dữ kiện động cơ F3L912D đổi: +[voltage=400/230V, current=29A, pf=0.8, dims=1350×770×1100, weight=580kg, cyl=3, bore=100/120, start=24V electrical, gov=mechanical, disp=2.282L, eff=85.10%, excit=brushless self-exciting, voltage=220V 、 400/230V, pf=1.0 、 0.8, phase=One/three phase, start=12V electrical, eff=82.9% 、 85.7%] −[]
+   all → dropped victory-generator||VD24F|60|20|25|24|30|F3L912D|232|MECHANICAL|NATURALLY|100*120|2828 [Deutz F3L912D] ruled [] → ["cyl"]
+      dữ kiện động cơ F3L912D đổi: +[voltage=400/230V, current=29A, pf=0.8, dims=1350×770×1100, weight=580kg, cyl=3, bore=100/120, start=24V electrical, gov=mechanical, disp=2.282L, eff=85.10%, excit=brushless self-exciting, voltage=220V 、 400/230V, pf=1.0 、 0.8, phase=One/three phase, start=12V electrical, eff=82.9% 、 85.7%] −[]
+   all → dropped victory-generator||VD26F|60|24|30|26|33|F3L912D|232|MECHANICAL|NATURALLY|100*120|2828 [Deutz F3L912D] ruled [] → ["cyl"]
+      dữ kiện động cơ F3L912D đổi: +[voltage=400/230V, current=29A, pf=0.8, dims=1350×770×1100, weight=580kg, cyl=3, bore=100/120, start=24V electrical, gov=mechanical, disp=2.282L, eff=85.10%, excit=brushless self-exciting, voltage=220V 、 400/230V, pf=1.0 、 0.8, phase=One/three phase, start=12V electrical, eff=82.9% 、 85.7%] −[]
+
+== IB2300163186#1 cap {"value":30,"unit":"kVA"}
+   all → dropped victory-generator||VD24F|50|20|25|24|30|F3L912D|232|MECHANICAL|NATURALLY|100*120|2828 [Deutz F3L912D] ruled [] → ["cyl"]
+      dữ kiện động cơ F3L912D đổi: +[voltage=400/230V, current=29A, pf=0.8, dims=1350×770×1100, weight=580kg, cyl=3, bore=100/120, start=24V electrical, gov=mechanical, disp=2.282L, eff=85.10%, excit=brushless self-exciting, voltage=220V 、 400/230V, pf=1.0 、 0.8, phase=One/three phase, start=12V electrical, eff=82.9% 、 85.7%] −[]
+   all → dropped victory-generator||VD24F|60|20|25|24|30|F3L912D|232|MECHANICAL|NATURALLY|100*120|2828 [Deutz F3L912D] ruled [] → ["cyl"]
+      dữ kiện động cơ F3L912D đổi: +[voltage=400/230V, current=29A, pf=0.8, dims=1350×770×1100, weight=580kg, cyl=3, bore=100/120, start=24V electrical, gov=mechanical, disp=2.282L, eff=85.10%, excit=brushless self-exciting, voltage=220V 、 400/230V, pf=1.0 、 0.8, phase=One/three phase, start=12V electrical, eff=82.9% 、 85.7%] −[]
+   all → dropped victory-generator||VD26F|60|24|30|26|33|F3L912D|232|MECHANICAL|NATURALLY|100*120|2828 [Deutz F3L912D] ruled [] → ["cyl"]
+      dữ kiện động cơ F3L912D đổi: +[voltage=400/230V, current=29A, pf=0.8, dims=1350×770×1100, weight=580kg, cyl=3, bore=100/120, start=24V electrical, gov=mechanical, disp=2.282L, eff=85.10%, excit=brushless self-exciting, voltage=220V 、 400/230V, pf=1.0 、 0.8, phase=One/three phase, start=12V electrical, eff=82.9% 、 85.7%] −[]
+
+== IB2300215868#0 cap {"value":250,"unit":"kVA"}
+   all → dropped xinzhengfa||ZF202GF|253|202|3636|50/1500|BF6M1015|2500×1000×1420|2290 [Deutz BF6M1015] ruled [] → ["maxDisp"]
+      dữ kiện động cơ BF6M1015 đổi: +[voltage=400/230V, current=325A, pf=0.8, dims=2700×1450×1950, weight=2730kg, cyl=6, bore=132/145, start=24V electrical, gov=electronic, disp=11.906L, eff=92.60%, excit=brushless self-exciting] −[]
+
+== IB2300225452#0 cap {"value":25,"unit":"kVA"}
+   all → dropped victory-generator||VD24F|50|20|25|24|30|F3L912D|232|MECHANICAL|NATURALLY|100*120|2828 [Deutz F3L912D] ruled [] → ["cyl"]
+      dữ kiện động cơ F3L912D đổi: +[voltage=400/230V, current=29A, pf=0.8, dims=1350×770×1100, weight=580kg, cyl=3, bore=100/120, start=24V electrical, gov=mechanical, disp=2.282L, eff=85.10%, excit=brushless self-exciting, voltage=220V 、 400/230V, pf=1.0 、 0.8, phase=One/three phase, start=12V electrical, eff=82.9% 、 85.7%] −[]
+   all → dropped victory-generator||VD24F|60|20|25|24|30|F3L912D|232|MECHANICAL|NATURALLY|100*120|2828 [Deutz F3L912D] ruled [] → ["cyl"]
+      dữ kiện động cơ F3L912D đổi: +[voltage=400/230V, current=29A, pf=0.8, dims=1350×770×1100, weight=580kg, cyl=3, bore=100/120, start=24V electrical, gov=mechanical, disp=2.282L, eff=85.10%, excit=brushless self-exciting, voltage=220V 、 400/230V, pf=1.0 、 0.8, phase=One/three phase, start=12V electrical, eff=82.9% 、 85.7%] −[]
+   all → dropped victory-generator||VD26F|60|24|30|26|33|F3L912D|232|MECHANICAL|NATURALLY|100*120|2828 [Deutz F3L912D] ruled [] → ["cyl"]
+      dữ kiện động cơ F3L912D đổi: +[voltage=400/230V, current=29A, pf=0.8, dims=1350×770×1100, weight=580kg, cyl=3, bore=100/120, start=24V electrical, gov=mechanical, disp=2.282L, eff=85.10%, excit=brushless self-exciting, voltage=220V 、 400/230V, pf=1.0 、 0.8, phase=One/three phase, start=12V electrical, eff=82.9% 、 85.7%] −[]
+   all → dropped weiman-fujian||WTD28F|20|25|22|28|F3L912D|24|28|232|655|3×100×120|2828|17:1|N/A|MOREDATA [Deutz F3L912D] ruled [] → ["cyl"]
+      dữ kiện động cơ F3L912D đổi: +[voltage=400/230V, current=29A, pf=0.8, dims=1350×770×1100, weight=580kg, cyl=3, bore=100/120, start=24V electrical, gov=mechanical, disp=2.282L, eff=85.10%, excit=brushless self-exciting, voltage=220V 、 400/230V, pf=1.0 、 0.8, phase=One/three phase, start=12V electrical, eff=82.9% 、 85.7%] −[]
+
+== IB2300232850#1 cap {"value":27,"unit":"kVA"}
+   all → dropped victory-generator||VD26F|60|24|30|26|33|F3L912D|232|MECHANICAL|NATURALLY|100*120|2828 [Deutz F3L912D] ruled [] → ["cyl"]
+      dữ kiện động cơ F3L912D đổi: +[voltage=400/230V, current=29A, pf=0.8, dims=1350×770×1100, weight=580kg, cyl=3, bore=100/120, start=24V electrical, gov=mechanical, disp=2.282L, eff=85.10%, excit=brushless self-exciting, voltage=220V 、 400/230V, pf=1.0 、 0.8, phase=One/three phase, start=12V electrical, eff=82.9% 、 85.7%] −[]
+
+== IB2300253227#1 cap {"value":150,"unit":"kVA"}
+   all → dropped gb-power||GBDA150|165/132|150/120|BF8L513|268*100*160|300*120*180| [Deutz BF8L513] ruled [] → ["cyl"]
+      dữ kiện động cơ BF8L513 đổi: +[voltage=400/230V, current=217A, pf=0.8, dims=2250×1200×1460, weight=1850kg, cyl=8, bore=125/130, start=24V electrical, gov=electronic, disp=12.763L, eff=92.50%, excit=brushless self-exciting] −[]
+   all → dropped weiman-fujian||WTD176F|128|160|141|176|BF8L513|147|160|215|3718|8×125×130|12763|158:1|TC|MOREDATA [Deutz BF8L513] ruled [] → ["cyl"]
+      dữ kiện động cơ BF8L513 đổi: +[voltage=400/230V, current=217A, pf=0.8, dims=2250×1200×1460, weight=1850kg, cyl=8, bore=125/130, start=24V electrical, gov=electronic, disp=12.763L, eff=92.50%, excit=brushless self-exciting] −[]
+
+== IB2300262532#0 cap {"value":160,"unit":"kVA"}
+   all → dropped gb-power||GBDA150|165/132|150/120|BF8L513|268*100*160|300*120*180| [Deutz BF8L513] ruled [] → ["cyl"]
+      dữ kiện động cơ BF8L513 đổi: +[voltage=400/230V, current=217A, pf=0.8, dims=2250×1200×1460, weight=1850kg, cyl=8, bore=125/130, start=24V electrical, gov=electronic, disp=12.763L, eff=92.50%, excit=brushless self-exciting] −[]
+   all → dropped weiman-fujian||WTD176F|128|160|141|176|BF8L513|147|160|215|3718|8×125×130|12763|158:1|TC|MOREDATA [Deutz BF8L513] ruled [] → ["cyl"]
+      dữ kiện động cơ BF8L513 đổi: +[voltage=400/230V, current=217A, pf=0.8, dims=2250×1200×1460, weight=1850kg, cyl=8, bore=125/130, start=24V electrical, gov=electronic, disp=12.763L, eff=92.50%, excit=brushless self-exciting] −[]
+
+== IB2300268623#0 cap {"value":28.6,"unit":"kVA"}
+   all → dropped victory-generator||VD26F|60|24|30|26|33|F3L912D|232|MECHANICAL|NATURALLY|100*120|2828 [Deutz F3L912D] ruled [] → ["cyl"]
+      dữ kiện động cơ F3L912D đổi: +[voltage=400/230V, current=29A, pf=0.8, dims=1350×770×1100, weight=580kg, cyl=3, bore=100/120, start=24V electrical, gov=mechanical, disp=2.282L, eff=85.10%, excit=brushless self-exciting, voltage=220V 、 400/230V, pf=1.0 、 0.8, phase=One/three phase, start=12V electrical, eff=82.9% 、 85.7%] −[]
+
+== IB2300305099#0 cap {"value":250,"unit":"kVA"}
+   all → dropped xinzhengfa||ZF202GF|253|202|3636|50/1500|BF6M1015|2500×1000×1420|2290 [Deutz BF6M1015] ruled [] → ["maxDisp","cyl"]
+      dữ kiện động cơ BF6M1015 đổi: +[voltage=400/230V, current=325A, pf=0.8, dims=2700×1450×1950, weight=2730kg, cyl=6, bore=132/145, start=24V electrical, gov=electronic, disp=11.906L, eff=92.60%, excit=brushless self-exciting] −[]
+
+== IB2300359120#0 cap {"value":165,"unit":"kVA"}
+   all → dropped gb-power||GBDA150|165/132|150/120|BF8L513|268*100*160|300*120*180| [Deutz BF8L513] ruled [] → ["cyl"]
+      dữ kiện động cơ BF8L513 đổi: +[voltage=400/230V, current=217A, pf=0.8, dims=2250×1200×1460, weight=1850kg, cyl=8, bore=125/130, start=24V electrical, gov=electronic, disp=12.763L, eff=92.50%, excit=brushless self-exciting] −[]
+   all → dropped weiman-fujian||WTD176F|128|160|141|176|BF8L513|147|160|215|3718|8×125×130|12763|158:1|TC|MOREDATA [Deutz BF8L513] ruled [] → ["cyl"]
+      dữ kiện động cơ BF8L513 đổi: +[voltage=400/230V, current=217A, pf=0.8, dims=2250×1200×1460, weight=1850kg, cyl=8, bore=125/130, start=24V electrical, gov=electronic, disp=12.763L, eff=92.50%, excit=brushless self-exciting] −[]
+
+== IB2300390432#0 cap {"value":50,"unit":"kW"}
+   ∅ → all chenxing-weifang||输出电压|400V/230V|缸径×行程(MM)|102/120|额定电压|400V/230V|输出电流|90A|压缩比|165:1|输出电流|90A|额定频率|50HZ|标定功率/转 [Cummins 4BTA39G2] ruled [] → []
+      dòng mới có
+
+== IB2400104884#0 cap {"value":500,"unit":"kW"}
+   ∅ → all huachai-deutz||RATEDPRIMEPOWER|600KW|PRIMEPOWER|660KW|RATEDPOWER|640KW|STANDBYPOWER|660KW|STANDPOWER|743KW|STA [Deutz HC12V132ZLLAG2A] ruled [] → []
+      dòng mới có
+   ∅ → all chenxing-weifang||输出电压|400V/230V|缸径×行程(MM)|135/150|额定电压|400V/230V|输出电流|900A|压缩比|164:1|输出电流|900A|额定频率|50HZ|标定功率 [SDEC SC27G755D2] ruled [] → []
+      dòng mới có
+   ∅ → all chenxing-weifang||输出电压|400V/230V|缸径×行程(MM)|152×180|额定电压|400V/230V|输出电流|900A|单缸气门数|4|输出电流|900A|额定频率|50HZ|总排量L|1 [Yuchai YC6TD840LD20] ruled [] → []
+      dòng mới có
+   ∅ → all chenxing-weifang||输出电压|400V/230V|缸径×行程(MM)|135/155|额定电压|400V/230V|输出电流|1080A|压缩比|164:1|输出电流|1080A|额定频率|50HZ|标定 [SDEC SC27G900D2] ruled [] → []
+      dòng mới có
+   ∅ → all chenxing-weifang||输出电压|400V/230V|缸径×行程(MM)|200×210|额定电压|400V/230V|输出电流|1080A|单缸气门数|4|输出电流|1080A|额定频率|50HZ|总排量L [Yuchai YC6C1020LD20] ruled [] → []
+      dòng mới có
+
+== IB2400111485#0 cap {"value":250,"unit":"kVA"}
+   all → dropped xinzhengfa||ZF202GF|253|202|3636|50/1500|BF6M1015|2500×1000×1420|2290 [Deutz BF6M1015] ruled [] → ["cyl"]
+      dữ kiện động cơ BF6M1015 đổi: +[voltage=400/230V, current=325A, pf=0.8, dims=2700×1450×1950, weight=2730kg, cyl=6, bore=132/145, start=24V electrical, gov=electronic, disp=11.906L, eff=92.60%, excit=brushless self-exciting] −[]
+
+== IB2400134652#0 cap {"value":68,"unit":"kVA"}
+   all → dropped victory-generator||VD55F|50|50|63|55|69|F6L912TD|228|MECHANICAL|TURBOCHARGED|100*120|5655 [Deutz F6L912TD] ruled [] → ["cyl"]
+      dữ kiện động cơ F6L912TD đổi: +[voltage=400/230V, current=99A, pf=0.8, phase=Three phase, cyl=6, start=12V electrical, gov=mechanical, eff=89.90%, excit=brushless self-exciting] −[]
+   all → dropped victory-generator||VD72F|60|64|80|72|90|F6L912TD|228|MECHANICAL|TURBOCHARGED|100*120|5655 [Deutz F6L912TD] ruled [] → ["cyl"]
+      dữ kiện động cơ F6L912TD đổi: +[voltage=400/230V, current=99A, pf=0.8, phase=Three phase, cyl=6, start=12V electrical, gov=mechanical, eff=89.90%, excit=brushless self-exciting] −[]
+   all → dropped weiman-fujian||WTD70F|50|63|55|69|F6L912TD|61|72|228|1636|6×100×120|5655|17:1|TC|MOREDATA [Deutz F6L912TD] ruled [] → ["cyl"]
+      dữ kiện động cơ F6L912TD đổi: +[voltage=400/230V, current=99A, pf=0.8, phase=Three phase, cyl=6, start=12V electrical, gov=mechanical, eff=89.90%, excit=brushless self-exciting] −[]
+
+== IB2400238834#0 cap {"value":125,"unit":"kVA"}
+   all → dropped gb-power||GBDA150|165/132|150/120|BF8L513|268*100*160|300*120*180| [Deutz BF8L513] ruled [] → ["maxDisp"]
+      dữ kiện động cơ BF8L513 đổi: +[voltage=400/230V, current=217A, pf=0.8, dims=2250×1200×1460, weight=1850kg, cyl=8, bore=125/130, start=24V electrical, gov=electronic, disp=12.763L, eff=92.50%, excit=brushless self-exciting] −[]
+
+== IB2400303471#0 cap {"value":150,"unit":"kVA"}
+   all → dropped gb-power||GBDA150|165/132|150/120|BF8L513|268*100*160|300*120*180| [Deutz BF8L513] ruled [] → ["cyl"]
+      dữ kiện động cơ BF8L513 đổi: +[voltage=400/230V, current=217A, pf=0.8, dims=2250×1200×1460, weight=1850kg, cyl=8, bore=125/130, start=24V electrical, gov=electronic, disp=12.763L, eff=92.50%, excit=brushless self-exciting] −[]
+   all → dropped weiman-fujian||WTD176F|128|160|141|176|BF8L513|147|160|215|3718|8×125×130|12763|158:1|TC|MOREDATA [Deutz BF8L513] ruled [] → ["cyl"]
+      dữ kiện động cơ BF8L513 đổi: +[voltage=400/230V, current=217A, pf=0.8, dims=2250×1200×1460, weight=1850kg, cyl=8, bore=125/130, start=24V electrical, gov=electronic, disp=12.763L, eff=92.50%, excit=brushless self-exciting] −[]
+
+== IB2400425513#0 cap {"value":30,"unit":"kVA"}
+   all → dropped victory-generator||VD26F|60|24|30|26|33|F3L912D|232|MECHANICAL|NATURALLY|100*120|2828 [Deutz F3L912D] ruled [] → ["cyl"]
+      dữ kiện động cơ F3L912D đổi: +[voltage=400/230V, current=29A, pf=0.8, dims=1350×770×1100, weight=580kg, cyl=3, bore=100/120, start=24V electrical, gov=mechanical, disp=2.282L, eff=85.10%, excit=brushless self-exciting, voltage=220V 、 400/230V, pf=1.0 、 0.8, phase=One/three phase, start=12V electrical, eff=82.9% 、 85.7%] −[]
+
+== IB2400442989#0 cap {"value":30,"unit":"kVA"}
+   all → dropped victory-generator||VD26F|60|24|30|26|33|F3L912D|232|MECHANICAL|NATURALLY|100*120|2828 [Deutz F3L912D] ruled [] → ["cyl"]
+      dữ kiện động cơ F3L912D đổi: +[voltage=400/230V, current=29A, pf=0.8, dims=1350×770×1100, weight=580kg, cyl=3, bore=100/120, start=24V electrical, gov=mechanical, disp=2.282L, eff=85.10%, excit=brushless self-exciting, voltage=220V 、 400/230V, pf=1.0 、 0.8, phase=One/three phase, start=12V electrical, eff=82.9% 、 85.7%] −[]
+
+== IB2400459339#1 cap {"value":75,"unit":"kW"}
+   ∅ → all huachai-deutz||RATEDPRIMEPOWER|75KW|PRIMEPOWER|84KW|RATEDPOWER|80KW|STANDBYPOWER|82KW|STANDPOWER|90KW|RATEDVOL [Deutz BF6L913CD] ruled [] → []
+      dòng mới có
+   ∅ → all huachai-deutz||RATEDPRIMEPOWER|90KW|PRIMEPOWER|117KW|RATEDPOWER|96KW|STANDBYPOWER|99KW|STANDPOWER||RATEDVOLTAG [Deutz F8L413F] ruled [] → []
+      dòng mới có
+   ∅ → all chenxing-weifang||输出电压|400V/230V|缸径×行程(MM)|105/130|额定电压|400V/230V|输出电流|135A|压缩比|18:1|输出电流|135A|额定频率|50HZ|标定功率/ [Weichai WP4D99E200] ruled [] → []
+      dòng mới có
+
+== IB2400481114#0 cap {"value":250,"unit":"kVA"}
+   all → dropped xinzhengfa||ZF202GF|253|202|3636|50/1500|BF6M1015|2500×1000×1420|2290 [Deutz BF6M1015] ruled [] → ["maxDisp"]
+      dữ kiện động cơ BF6M1015 đổi: +[voltage=400/230V, current=325A, pf=0.8, dims=2700×1450×1950, weight=2730kg, cyl=6, bore=132/145, start=24V electrical, gov=electronic, disp=11.906L, eff=92.60%, excit=brushless self-exciting] −[]
+
+== IB2400558775#0 cap {"value":150,"unit":"kVA"}
+   all → dropped gb-power||GBDA150|165/132|150/120|BF8L513|268*100*160|300*120*180| [Deutz BF8L513] ruled [] → ["cyl"]
+      dữ kiện động cơ BF8L513 đổi: +[voltage=400/230V, current=217A, pf=0.8, dims=2250×1200×1460, weight=1850kg, cyl=8, bore=125/130, start=24V electrical, gov=electronic, disp=12.763L, eff=92.50%, excit=brushless self-exciting] −[]
+   all → dropped weiman-fujian||WTD176F|128|160|141|176|BF8L513|147|160|215|3718|8×125×130|12763|158:1|TC|MOREDATA [Deutz BF8L513] ruled [] → ["cyl"]
+      dữ kiện động cơ BF8L513 đổi: +[voltage=400/230V, current=217A, pf=0.8, dims=2250×1200×1460, weight=1850kg, cyl=8, bore=125/130, start=24V electrical, gov=electronic, disp=12.763L, eff=92.50%, excit=brushless self-exciting] −[]
+
+== IB2400607862#0 cap {"value":30,"unit":"kVA"}
+   all → dropped victory-generator||VD26F|60|24|30|26|33|F3L912D|232|MECHANICAL|NATURALLY|100*120|2828 [Deutz F3L912D] ruled [] → ["cyl"]
+      dữ kiện động cơ F3L912D đổi: +[voltage=400/230V, current=29A, pf=0.8, dims=1350×770×1100, weight=580kg, cyl=3, bore=100/120, start=24V electrical, gov=mechanical, disp=2.282L, eff=85.10%, excit=brushless self-exciting, voltage=220V 、 400/230V, pf=1.0 、 0.8, phase=One/three phase, start=12V electrical, eff=82.9% 、 85.7%] −[]
+
+== IB2500314401#0 cap {"value":350,"unit":"kVA"}
+   all → dropped uleengen||UD375GF|300|375|BF6M1015CPLA| [Deutz BF6M1015CPLA] ruled [] → ["maxDisp"]
+      dữ kiện động cơ BF6M1015CPLA đổi: +[voltage=400/230V, current=541A, pf=0.8, dims=2850×1450×1950, weight=3200kg, cyl=6, bore=132/145, start=24V electrical, gov=electronic, disp=11.906L, eff=93.70%, excit=brushless self-exciting] −[]
+   all → dropped mecca-power||MC413D|300|375|330|413|BF6M1015CPLA| [Deutz BF6M1015CPLA] ruled [] → ["maxDisp"]
+      dữ kiện động cơ BF6M1015CPLA đổi: +[voltage=400/230V, current=541A, pf=0.8, dims=2850×1450×1950, weight=3200kg, cyl=6, bore=132/145, start=24V electrical, gov=electronic, disp=11.906L, eff=93.70%, excit=brushless self-exciting] −[]
+
+== IB2500386288#0 cap {"value":65,"unit":"kW"}
+   ∅ → all huachai-deutz||RATEDPRIMEPOWER|75KW|PRIMEPOWER|84KW|RATEDPOWER|80KW|STANDBYPOWER|82KW|STANDPOWER|90KW|RATEDVOL [Deutz BF6L913CD] ruled [] → []
+      dòng mới có
+   ∅ → all chenxing-weifang||输出电压|400V/230V|缸径×行程(MM)|105/130|额定电压|400V/230V|输出电流|135A|压缩比|18:1|输出电流|135A|额定频率|50HZ|标定功率/ [Weichai WP4D99E200] ruled [] → []
+      dòng mới có
+
+== IB2500386288#1 cap {"value":136,"unit":"kW"}
+   ∅ → all huachai-deutz||RATEDPRIMEPOWER|150KW|PRIMEPOWER||RATEDPOWER|160KW|STANDBYPOWER|165|STANDPOWER|174KW|STANDPOWER [Deutz BF8L513C] ruled [] → []
+      dòng mới có
+   ∅ → all chenxing-weifang||输出电压|400V/230V|缸径×行程(MM)|114/135|额定电压|400V/230V|输出电流|270A|压缩比|173:1|输出电流|270A|额定频率|50HZ|标定功率 [Cummins 6CTA83G2] ruled [] → []
+      dòng mới có
+   ∅ → all chenxing-weifang||输出电压|400V/230V|缸径×行程(MM)|105/124|额定电压|400V/230V|输出电流|270A|压缩比|16:1|输出电流|270A|额定频率|50HZ|标定功率/ [SDEC SC7H230D2] ruled [] → []
+      dòng mới có
+   ∅ → all chenxing-weifang||输出电压|400V/230V|缸径×行程(MM)|126/130|额定电压|400V/230V|输出电流|270A|压缩比|17:1|输出电流|270A|额定频率|50HZ|标定功率/ [Weichai WP6D152E200] ruled [] → []
+      dòng mới có
+   ∅ → all chenxing-weifang||输出电压|400V/230V|缸径×行程(MM)|108×132|额定电压|400V/230V|输出电流|270A|总排量L|7252|输出电流|270A|额定频率|50HZ|压缩比| [Yuchai YC6A230LD20] ruled [] → []
+      dòng mới có
+
+== IB2600219527#1 cap {"value":180,"unit":"kW"}
+   ∅ → all chenxing-weifang||机组型号|200GF|型号|NT855GA|型号|200GF|输出功率|200KW|吸气方式|涡轮增压|额定功率|200KW|功率因数|COS&PHI;=08(滞后)|气缸数|6/L| [Cummins NT855GA] ruled [] → []
+      dòng mới có
+
+== IB2600315904#0 cap {"value":354,"unit":"kVA"}
+   all → dropped uleengen||UD375GF|300|375|BF6M1015CPLA| [Deutz BF6M1015CPLA] ruled [] → ["disp"]
+      dữ kiện động cơ BF6M1015CPLA đổi: +[voltage=400/230V, current=541A, pf=0.8, dims=2850×1450×1950, weight=3200kg, cyl=6, bore=132/145, start=24V electrical, gov=electronic, disp=11.906L, eff=93.70%, excit=brushless self-exciting] −[]
+   all → dropped mecca-power||MC413D|300|375|330|413|BF6M1015CPLA| [Deutz BF6M1015CPLA] ruled [] → ["disp"]
+      dữ kiện động cơ BF6M1015CPLA đổi: +[voltage=400/230V, current=541A, pf=0.8, dims=2850×1450×1950, weight=3200kg, cyl=6, bore=132/145, start=24V electrical, gov=electronic, disp=11.906L, eff=93.70%, excit=brushless self-exciting] −[]
+
+== IB2600549116#0 cap {"value":160,"unit":"kVA"}
+   all → dropped weiman-fujian||WTD176F|128|160|141|176|BF8L513|147|160|215|3718|8×125×130|12763|158:1|TC|MOREDATA [Deutz BF8L513] ruled [] → ["cyl"]
+      dữ kiện động cơ BF8L513 đổi: +[voltage=400/230V, current=217A, pf=0.8, dims=2250×1200×1460, weight=1850kg, cyl=8, bore=125/130, start=24V electrical, gov=electronic, disp=12.763L, eff=92.50%, excit=brushless self-exciting] −[]
+
+== IB2600553280#0 cap {"value":275,"unit":"kW"}
+   ∅ → all huachai-deutz||RATEDPRIMEPOWER|250KW|PRIMEPOWER|282KW|RATEDPOWER|260KW|STANDBYPOWER|275KW|STANDPOWER|314KW|STA [Deutz BF6M1015CLAG3A] ruled [] → []
+      dòng mới có
+   ∅ → all huachai-deutz||RATEDPRIMEPOWER|280KW|PRIMEPOWER|310KW|RATEDPOWER|280KW|STANDBYPOWER|308KW|STANDPOWER|345KW|STA [Deutz BF6M1015CLAG4] ruled [] → []
+      dòng mới có
+   ∅ → all huachai-deutz||RATEDPRIMEPOWER|300KW|PRIMEPOWER|330KW|RATEDPOWER|304KW|STANDBYPOWER|330KW|STANDPOWER|365KW|STA [Deutz BF6M1015CPLA] ruled [] → []
+      dòng mới có
+   ∅ → all chenxing-weifang||输出电压|400V/230V|缸径×行程(MM)|140/152|额定电压|400V/230V|输出电流|540A|压缩比|14:1|输出电流|540A|额定频率|50HZ|标定功率/ [Cummins NTA855G2A] ruled [] → []
+      dòng mới có
+   ∅ → all chenxing-weifang||输出电压|400V/230V|缸径×行程(MM)|128/153|额定电压|400V/230V|输出电流|540A|压缩比|16:1|输出电流|540A|额定频率|50HZ|标定功率/ [SDEC SC12E460D2] ruled [] → []
+      dòng mới có
+   ∅ → all chenxing-weifang||输出电压|400V/230V|缸径×行程(MM)|127/165|额定电压|400V/230V|输出电流|630A|压缩比|17:1|输出电流|630A|额定频率|50HZ|标定功率/ [Weichai WP13D385E200] ruled [] → []
+      dòng mới có
+   ∅ → all chenxing-weifang||输出电压|400V/230V|缸径×行程(MM)|131×145|额定电压|400V/230V|输出电流|540A|单缸气门数|4|输出电流|540A|额定频率|50HZ|总排量L|1 [Yuchai YC6MJ480LD20] ruled [] → []
+      dòng mới có
