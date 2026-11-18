@@ -138,6 +138,28 @@ test("internet finds become supplier records with renumbered, saved sources", ()
   assert.match(c.error, /không có trang đã lưu/);
 });
 
+test("an internet find with a new id and the website of a supplier already in the system goes into that one (Khoa 2026-11-18, kubota / kubota-japan)", () => {
+  const page = "URL: https://generator.kubota.com/sq\nAccessed: 2026-11-17\n\n| Model | Prime kVA\n| SQ-3300 | 30";
+  const entry = { id: "kubota", country: "JP", role: "genset_oem", names: ["KUBOTA Corporation"], website: "https://generator.kubota.com/", confidence: "medium",
+    sources: [{ n: 1, file: "web/1.txt", tier: "A", quote: ["| SQ-3300 | 30"] }], productLines: [], specTables: [{ n: 1, title: "SQ", header: ["| Model | Prime kVA"], rows: ["| SQ-3300 | 30"] }] };
+  const japan = { id: "kubota-japan", country: "JP", website: "https://generator.kubota.com/", names: { en: "KUBOTA Corporation" }, sources: [{ n: 1 }, { n: 133 }], specTables: [], productLines: [] };
+  const perkins = { id: "perkins", country: "GB", website: "https://www.perkins.com/", sources: [], specTables: [], productLines: [] };
+  const opts = { existing: new Map([["kubota-japan", japan], ["perkins", perkins]]), readWeb: () => page, today: "2026-11-18" };
+  const [a] = catalogRecords([entry], opts);
+  assert.equal(a.id, "kubota-japan");
+  assert.equal(a.from, "kubota");
+  assert.ok(!a.isNew);
+  assert.equal(a.rec.id, "kubota-japan");
+  assert.deepEqual(a.rec.sources.map((s) => s.n), [1, 133, 2001]);
+  assert.ok(a.files["sources/kubota-japan/2001.md"]);
+  // www. aside, the host decides; another country is another company (perkins GB / perkins-wuxi CN).
+  assert.equal(catalogRecords([{ ...entry, id: "kubota-x", website: "www.generator.kubota.com/en" }], opts)[0].id, "kubota-japan");
+  assert.equal(catalogRecords([{ ...entry, id: "perkins-wuxi", country: "CN", website: "https://www.perkins.com/" }], opts)[0].id, "perkins-wuxi");
+  // The agent's own id that already exists stays itself; no website, nothing to match.
+  assert.equal(catalogRecords([{ ...entry, id: "perkins" }], opts)[0].from, undefined);
+  assert.equal(catalogRecords([{ ...entry, website: null }], opts)[0].id, "kubota");
+});
+
 test("Xuất xứ Trung Quốc drops a foreign engine, Khác keeps only foreign ones", () => {
   // 2506C-E15TAG1 is a Perkins code and the table title names Perkins.
   const cn = check(base(), { hsmtText: hsmt, suppliers: sup, readWeb, origin: "cn" });

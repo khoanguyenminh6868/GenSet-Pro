@@ -835,6 +835,47 @@
       "src": [
         2034
       ]
+    },
+    {
+      "kind": "genset",
+      "series": "DCA-10LSX",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Kubota"
+      ],
+      "engineModels": [
+        "D1403-K3A"
+      ],
+      "power": {
+        "min": 8.8,
+        "max": 8.8,
+        "unit": "kVA",
+        "rating": "standby",
+        "src": [
+          2035
+        ]
+      },
+      "src": [
+        2035,
+        2036
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "DCA-10LSX (Continuous / Stand by)",
+      "fuel": "diesel",
+      "power": {
+        "min": 8,
+        "max": 8.8,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2035
+        ]
+      },
+      "src": [
+        2035
+      ]
     }
   ],
   "certifications": [],
@@ -1303,10 +1344,45 @@
       ],
       "file": "sources/denyo/2034.md",
       "official": true
+    },
+    {
+      "n": 2035,
+      "url": "https://www.denyo.co.jp/english/products/generator/single-phase/dca-10lsx/",
+      "accessedAt": "2026-11-18",
+      "tier": "A",
+      "quote": [
+        "DCA-10LSX | Products | Denyo Co., Ltd.",
+        "8.0 / 10.0kVA",
+        "8.8 / 11.0kVA",
+        "Single Phase 1.0",
+        "Kubota D1403-K3A",
+        "1,390×650×900mm",
+        "●Automatic start and stop device for ATS connection."
+      ],
+      "file": "sources/denyo/2035.md",
+      "official": true
+    },
+    {
+      "n": 2036,
+      "url": "https://www.denyo.co.jp/english/wp/wp-content/uploads/2020/08/global-dca-single.pdf",
+      "accessedAt": "2026-11-18",
+      "tier": "A",
+      "quote": [
+        "SINGLE PHASE TYPE",
+        "Voltage Regulation Within ±1.0%",
+        "                        Output                           kVA    5.0           6.0       8.0         10          13          15                24         30     33            40",
+        "Generator               Rotating  Speed                  rpm    1500          1800      1500        1800        1500        1800          1500          1800    1500          1800",
+        "                        Model                                   KUBOTA                  KUBOTA                  KUBOTA                            ISUZU                ISUZU",
+        "                                                                D905-K3A                D1403-K3A               V2203-K3A                     BB-4JG1T                 BB-4BG1T",
+        "Type                                                        Inlined,Swirl Chambered                                       Inlined,Direct Injected",
+        "                                                 kW/min-1       6.4/1500      7.7/1800  10.2/1500  12.4/1800  17.0/1500     19.9/1800  34.2/1500  41.2/1800   47.9/1500    57.1/1800"
+      ],
+      "file": "sources/denyo/2036.md",
+      "official": true
     }
   ],
   "confidence": "medium",
-  "checkedAt": "2026-11-17",
+  "checkedAt": "2026-11-18",
   "checkedBy": "discover-bot (Claude)",
   "specTables": [
     {
@@ -1780,6 +1856,45 @@
       "rows": [
         "Kubota V2203-K3A",
         "13.0 / 15.0kVA"
+      ]
+    },
+    {
+      "n": 2036,
+      "title": "DCA-10LSX — Denyo DCA-LSX/ESX Single Phase Type (5.0-40kVA)",
+      "header": [
+        "Item                                                            DCA-6LSX                DCA-10LSX               DCA-15LSX                     DCA-30ESX         DCA-40ESX"
+      ],
+      "rows": [
+        "                        Frequency                          Hz   50            60        50          60          50          60                50         60     50            60",
+        "                        Output                           kVA    5.0           6.0       8.0         10          13          15                24         30     33            40",
+        "Generator               Rotating  Speed                  rpm    1500          1800      1500        1800        1500        1800          1500          1800    1500          1800",
+        "                        Model                                   KUBOTA                  KUBOTA                  KUBOTA                            ISUZU                ISUZU",
+        "                                                                D905-K3A                D1403-K3A               V2203-K3A                     BB-4JG1T                 BB-4BG1T",
+        "                        Type                                                        Inlined,Swirl Chambered                                       Inlined,Direct Injected",
+        "                        No. of Cylinders Bore,Stroke     mm     3-72×73.6               3-80×92.4               4-87×92.4                     4-95.4×107        4-105×125",
+        "Diesel Engine           Piston Displacement                L         0.898                   1.393                   2.197                        3.059                4.329",
+        "                        Rated Output             PS/rpm         8.7/1500  10.5/1800     13.9/1500  16.9/1800  23.0/1500     27.1/1800  46.5/1500  56/1800     65.1/1500    77.6/1800",
+        "                                                 kW/min-1       6.4/1500      7.7/1800  10.2/1500  12.4/1800  17.0/1500     19.9/1800  34.2/1500  41.2/1800   47.9/1500    57.1/1800"
+      ]
+    },
+    {
+      "n": 2035,
+      "title": "DCA-10LSX — Specification (Denyo product page)",
+      "header": [
+        "Specification"
+      ],
+      "rows": [
+        "Model",
+        "DCA-10LSX",
+        "Rated output",
+        "Continuous",
+        "8.0 / 10.0kVA",
+        "Stand by",
+        "8.8 / 11.0kVA",
+        "Power Factor",
+        "Single Phase 1.0",
+        "Engine",
+        "Kubota D1403-K3A"
       ]
     }
   ],
