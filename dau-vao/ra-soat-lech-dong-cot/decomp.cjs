@@ -26,7 +26,9 @@ for (const k of keys) {
   const o = O[k], x = XC[k] || XN[k], n = NC[k] || x;
   if (!o || !x) { P(`THIẾU gopRow ${k}`); bad++; continue; }
   const to = topOf(o), tx = topOf(x), tn = topOf(n);
-  const g8 = G8[k].top.map(lineKey), g9 = G9[k].top.map(lineKey);
+  // gopRow gộp dòng trùng khoá NCC | dòng (hai dòng cùng chữ, khác động cơ / đầu phát): so với top gop đã bỏ khoá trùng.
+  const uq = (l) => l.filter((r, i) => l.indexOf(r) === i);
+  const g8 = uq(G8[k].top.map(lineKey)), g9 = uq(G9[k].top.map(lineKey));
   if (JSON.stringify(to) !== JSON.stringify(g8)) { P(`KHÔNG KHỚP gốc 8 ${k}`); bad++; }
   if (JSON.stringify(tn) !== JSON.stringify(g9)) { P(`KHÔNG KHỚP gop 9 ${k}`); bad++; }
   // Số all / dropped lấy từ gop (gopRow gộp dòng trùng khoá NCC | dòng nên đếm thiếu).
