@@ -1,6 +1,21 @@
 # Nghiệm thu: Chất lượng 1, chặng 2 (đang làm)
 
-Gốc: `origin/main` fd82387d (đã có #923). Worktree `wt-chat-luong-1b`, nhánh `chat-luong-1b`. Chưa có PR.
+Gốc: `origin/main` fd82387d (đã có #923). Worktree `wt-chat-luong-1b`, nhánh `chat-luong-1b`. PR NHÁP https://github.com/khoanguyenminh6868/GenSet-Pro/pull/924 (commit 52326046), chưa merge.
+
+## B(ii) — đã làm (PR #924), chờ điều phối duyệt
+Làm theo đề xuất B(i) và câu trả lời của điều phối bên dưới. Chi tiết từng tệp ở mô tả PR.
+- **Workflow (cần xem trước khi merge)**: `supplier-publish.yml` thêm bước "Row flags" (`node suppliers/row-flags.mjs --post`) sau Publish; thêm `paths`: `suppliers/row-flags.mjs`, `suppliers/spec-diff.mjs`, `web/catalog.js`, `web/spec-norm.js`, `web/conversions.js`. Không cần npm (row-flags chỉ import tệp trong repo). Chưa chạy thật: lần đầu sau merge sẽ ghi `rowflags/current` (193 dòng, ~130 KB, một dòng `activity_log`).
+- **Màn hình**: nhãn "n dòng nghi sai" ở danh sách; mục "Dòng nghi sai" ở chi tiết NCC (mở sẵn khi còn dòng chưa cho dùng). Ảnh trên server thử, dữ liệu giả lấy dòng thật của hosem-power: `chat-luong-1-2-danh-sach.png`, `chat-luong-1-2-chi-tiet.png` (cạnh tệp này).
+- **Quyền**: `rowOkCan()` = `isSuperadmin() && !state.readOnly && !!state.db`. Để cho mọi thành viên thì bỏ `isSuperadmin() &&`.
+- **Không viết ẩu**: `ROWFLAGS_IN_CONFIG = false` (B(iii) chưa làm). Dòng mức loại hiện "Mức loại" (không phải "Bị loại khỏi gợi ý"), mục ghi "Gợi ý cấu hình chưa dùng các quyết định này." B(iii) đổi hằng này thành true.
+- **Test**: `row-flags.test.mjs` 7/7. Playwright toàn bộ 86/86 (Edge), trong đó `web/test/row-flags.spec.mjs` mới có 3 ca. Chưa ghi web thật.
+
+### Chỗ khác thiết kế chặng 1
+1. Cờ là MỘT doc `rowflags/current`, không phải mỗi NCC một doc (lý do ở B(i) đề xuất 1).
+2. Bot (B(iii)) tự tính cờ, không đọc `rowflags/current` (B(i) đề xuất 3).
+3. Trường `line` đổi thành `text`: chữ nguyên văn của dòng; bảng nhãn thì là tên tổ máy + các dòng. Link nguồn KHÔNG nằm trong doc: web lấy từ `sources` của hồ sơ NCC theo `n`, vì hồ sơ đã có trên web.
+4. Thêm: bấm lại nút đang chọn thì bỏ quyết định (xoá khoá khỏi `rowok/<NCC>`). Dòng "Bỏ hẳn" vẫn được đếm trong nhãn "n dòng nghi sai"; chỉ dòng "cho dùng" không đếm.
+5. `rowok/<NCC>` được ghi đè cả doc. Hai người bấm cùng lúc trên cùng NCC thì người sau đè người trước, giống cách `supexcl` đang làm. Quyền mặc định chỉ Superadmin nên ít khi gặp.
 
 ## B(i) — đã kiểm, đề xuất đưa cờ lên web
 
