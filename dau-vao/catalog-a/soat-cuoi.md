@@ -1,6 +1,6 @@
 # Soát bản ghi gốc ↔ nhánh (mọi bản ghi, không lấy mẫu)
 
-Mới 388, mất 18 (18 gộp vào bản ghi khác qua `also`), đổi 2940 (thêm 2106 bản ghi chỉ đổi chữ tiêu đề lưu kèm); bản ghi mới / đổi có cờ ⚠: 712. Model tổ máy trong bản ghi mới: 223 khoá, trong đó 209 khoá CHƯA có ở bản gốc.
+Mới 374, mất 64 (18 gộp vào bản ghi khác qua `also`), đổi 4040 (thêm 1256 bản ghi chỉ đổi chữ tiêu đề lưu kèm); bản ghi mới / đổi có cờ ⚠: 723. Model tổ máy trong bản ghi mới: 216 khoá, trong đó 211 khoá CHƯA có ở bản gốc.
 
 ## agg-fuzhou (mới 10, mất 0, đổi 0)
 
@@ -25,7 +25,7 @@ Mới 388, mất 18 (18 gộp vào bản ghi khác qua `also`), đổi 2940 (th�
 - **MỚI** n116 b15 dòng 19 engine `K19N-G3S` | tổ máy `CU438G6-NG` | prime 437.5 kVA / 350 kW | khác: ∅ | hãng: Cummins | 
   - nguồn: `| CU438G6-NG | 437.5/350 | K19N-G3S | Cummins`
 
-## baifa-power (mới 60, mất 0, đổi 58)
+## baifa-power (mới 46, mất 46, đổi 58)
 
 - **MỚI** n101 b3 dòng 64 engine `QSB3.9-G31` | tổ máy `BF-C28Q-3` | prime 25 kVA / - kW; standby 28 kVA / - kW | khác: S0L2-M1 | hãng: Cummins | emission=Stage IIIA / CHINA STAGE3
   - nguồn: `| BF-C28Q-3 | 28 | 25 | CUMMINS (CHINA) | QSB3.9-G31 | ECM | S0L2-M1 | Stage IIIA / CHINA STAGE3 | CHINA`
@@ -39,65 +39,65 @@ Mới 388, mất 18 (18 gộp vào bản ghi khác qua `also`), đổi 2940 (th�
   - nguồn: `| BF-C70Q-3 | 70 | 64 | QSB3.9-G35 | ECM | S1L2-Y1 | Stage IIIA / CHINA STAGE3 | CHINA`
 - **MỚI** n101 b3 dòng 66 alternator `S1L2-Y1` | tổ máy `BF-C70Q-3` | prime 64 kVA / - kW; standby 70 kVA / - kW | khác: QSB3.9-G35 | hãng: Stamford | emission=Stage IIIA / CHINA STAGE3
   - nguồn: `| BF-C70Q-3 | 70 | 64 | QSB3.9-G35 | ECM | S1L2-Y1 | Stage IIIA / CHINA STAGE3 | CHINA`
-- **MỚI** n101 b3 dòng 67 engine `QSB3.9-G37` | tổ máy `BF-C95Q-3` | prime 85 kVA / - kW; standby 94 kVA / - kW | khác: UCI 224G1 | hãng: ∅ | emission=Stage IIIA / CHINA STAGE4
+- **MỚI** n101 b3 dòng 67 engine `QSB3.9-G37` | tổ máy `BF-C95Q-3` | prime 85 kVA / - kW; standby 94 kVA / - kW | khác: UCI 224G1 | hãng: ∅ | 
   - nguồn: `| BF-C95Q-3 | 94 | 85 | QSB3.9-G37 | ECM | UCI 224G1 | Stage IIIA / CHINA STAGE4 | CHINA`
-- **MỚI** n101 b3 dòng 67 alternator `UCI 224G1` | tổ máy `BF-C95Q-3` | prime 85 kVA / - kW; standby 94 kVA / - kW | khác: QSB3.9-G37 | hãng: Stamford | emission=Stage IIIA / CHINA STAGE4
+- **MỚI** n101 b3 dòng 67 alternator `UCI 224G1` | tổ máy `BF-C95Q-3` | prime 85 kVA / - kW; standby 94 kVA / - kW | khác: QSB3.9-G37 | hãng: Stamford | 
   - nguồn: `| BF-C95Q-3 | 94 | 85 | QSB3.9-G37 | ECM | UCI 224G1 | Stage IIIA / CHINA STAGE4 | CHINA`
-- **MỚI** n101 b3 dòng 68 engine `QSB3.9-G39` | tổ máy `BF-C110Q-3` | prime 100 kVA / - kW; standby 110 kVA / - kW | khác: UCI 274C1 | hãng: ∅ | emission=Stage IIIA / CHINA STAGE5
+- **MỚI** n101 b3 dòng 68 engine `QSB3.9-G39` | tổ máy `BF-C110Q-3` | prime 100 kVA / - kW; standby 110 kVA / - kW | khác: UCI 274C1 | hãng: ∅ | 
   - nguồn: `| BF-C110Q-3 | 110 | 100 | QSB3.9-G39 | ECM | UCI 274C1 | Stage IIIA / CHINA STAGE5 | CHINA`
-- **MỚI** n101 b3 dòng 68 alternator `UCI 274C1` | tổ máy `BF-C110Q-3` | prime 100 kVA / - kW; standby 110 kVA / - kW | khác: QSB3.9-G39 | hãng: Stamford | emission=Stage IIIA / CHINA STAGE5
+- **MỚI** n101 b3 dòng 68 alternator `UCI 274C1` | tổ máy `BF-C110Q-3` | prime 100 kVA / - kW; standby 110 kVA / - kW | khác: QSB3.9-G39 | hãng: Stamford | 
   - nguồn: `| BF-C110Q-3 | 110 | 100 | QSB3.9-G39 | ECM | UCI 274C1 | Stage IIIA / CHINA STAGE5 | CHINA`
-- **MỚI** n101 b3 dòng 69 engine `QSB5.9-G30` | tổ máy `BF-C125Q-3` | prime 115 kVA / - kW; standby 125 kVA / - kW | khác: UCI 274D1 | hãng: ∅ | emission=Stage IIIA / CHINA STAGE6
+- **MỚI** n101 b3 dòng 69 engine `QSB5.9-G30` | tổ máy `BF-C125Q-3` | prime 115 kVA / - kW; standby 125 kVA / - kW | khác: UCI 274D1 | hãng: ∅ | 
   - nguồn: `| BF-C125Q-3 | 125 | 115 | QSB5.9-G30 | ECM | UCI 274D1 | Stage IIIA / CHINA STAGE6 | CHINA`
-- **MỚI** n101 b3 dòng 69 alternator `UCI 274D1` | tổ máy `BF-C125Q-3` | prime 115 kVA / - kW; standby 125 kVA / - kW | khác: QSB5.9-G30 | hãng: Stamford | emission=Stage IIIA / CHINA STAGE6
+- **MỚI** n101 b3 dòng 69 alternator `UCI 274D1` | tổ máy `BF-C125Q-3` | prime 115 kVA / - kW; standby 125 kVA / - kW | khác: QSB5.9-G30 | hãng: Stamford | 
   - nguồn: `| BF-C125Q-3 | 125 | 115 | QSB5.9-G30 | ECM | UCI 274D1 | Stage IIIA / CHINA STAGE6 | CHINA`
-- **MỚI** n101 b3 dòng 70 engine `QSB5.9-G31` | tổ máy `BF-C140Q-3` | prime 125 kVA / - kW; standby 138 kVA / - kW | khác: UCI 274ES1 | hãng: ∅ | emission=Stage IIIA / CHINA STAGE7
+- **MỚI** n101 b3 dòng 70 engine `QSB5.9-G31` | tổ máy `BF-C140Q-3` | prime 125 kVA / - kW; standby 138 kVA / - kW | khác: UCI 274ES1 | hãng: ∅ | 
   - nguồn: `| BF-C140Q-3 | 138 | 125 | QSB5.9-G31 | ECM | UCI 274ES1 | Stage IIIA / CHINA STAGE7 | CHINA`
-- **MỚI** n101 b3 dòng 70 alternator `UCI 274ES1` | tổ máy `BF-C140Q-3` | prime 125 kVA / - kW; standby 138 kVA / - kW | khác: QSB5.9-G31 | hãng: Stamford | emission=Stage IIIA / CHINA STAGE7
+- **MỚI** n101 b3 dòng 70 alternator `UCI 274ES1` | tổ máy `BF-C140Q-3` | prime 125 kVA / - kW; standby 138 kVA / - kW | khác: QSB5.9-G31 | hãng: Stamford | 
   - nguồn: `| BF-C140Q-3 | 138 | 125 | QSB5.9-G31 | ECM | UCI 274ES1 | Stage IIIA / CHINA STAGE7 | CHINA`
-- **MỚI** n101 b3 dòng 71 engine `QSB5.9-G33` | tổ máy `BF-C165Q-3` | prime 150 kVA / - kW; standby 165 kVA / - kW | khác: UCI 274F1 | hãng: ∅ | emission=Stage IIIA / CHINA STAGE8
+- **MỚI** n101 b3 dòng 71 engine `QSB5.9-G33` | tổ máy `BF-C165Q-3` | prime 150 kVA / - kW; standby 165 kVA / - kW | khác: UCI 274F1 | hãng: ∅ | 
   - nguồn: `| BF-C165Q-3 | 165 | 150 | QSB5.9-G33 | ECM | UCI 274F1 | Stage IIIA / CHINA STAGE8 | CHINA`
-- **MỚI** n101 b3 dòng 71 alternator `UCI 274F1` | tổ máy `BF-C165Q-3` | prime 150 kVA / - kW; standby 165 kVA / - kW | khác: QSB5.9-G33 | hãng: Stamford | emission=Stage IIIA / CHINA STAGE8
+- **MỚI** n101 b3 dòng 71 alternator `UCI 274F1` | tổ máy `BF-C165Q-3` | prime 150 kVA / - kW; standby 165 kVA / - kW | khác: QSB5.9-G33 | hãng: Stamford | 
   - nguồn: `| BF-C165Q-3 | 165 | 150 | QSB5.9-G33 | ECM | UCI 274F1 | Stage IIIA / CHINA STAGE8 | CHINA`
-- **MỚI** n101 b3 dòng 72 engine `QSB6.7-G32` | tổ máy `BF-C200Q-3` | prime 182 kVA / - kW; standby 200 kVA / - kW | khác: UCI 274G1 | hãng: ∅ | emission=Stage IIIA / CHINA STAGE9
+- **MỚI** n101 b3 dòng 72 engine `QSB6.7-G32` | tổ máy `BF-C200Q-3` | prime 182 kVA / - kW; standby 200 kVA / - kW | khác: UCI 274G1 | hãng: ∅ | 
   - nguồn: `| BF-C200Q-3 | 200 | 182 | QSB6.7-G32 | ECM | UCI 274G1 | Stage IIIA / CHINA STAGE9 | CHINA`
-- **MỚI** n101 b3 dòng 72 alternator `UCI 274G1` | tổ máy `BF-C200Q-3` | prime 182 kVA / - kW; standby 200 kVA / - kW | khác: QSB6.7-G32 | hãng: Stamford | emission=Stage IIIA / CHINA STAGE9
+- **MỚI** n101 b3 dòng 72 alternator `UCI 274G1` | tổ máy `BF-C200Q-3` | prime 182 kVA / - kW; standby 200 kVA / - kW | khác: QSB6.7-G32 | hãng: Stamford | 
   - nguồn: `| BF-C200Q-3 | 200 | 182 | QSB6.7-G32 | ECM | UCI 274G1 | Stage IIIA / CHINA STAGE9 | CHINA`
-- **MỚI** n101 b3 dòng 73 engine `QSB6.7-G32` | tổ máy `BF-C206Q-3` | prime 188 kVA / - kW; standby 206 kVA / - kW | khác: UCI 274H1 | hãng: ∅ | emission=Stage IIIA / CHINA STAGE10
+- **MỚI** n101 b3 dòng 73 engine `QSB6.7-G32` | tổ máy `BF-C206Q-3` | prime 188 kVA / - kW; standby 206 kVA / - kW | khác: UCI 274H1 | hãng: ∅ | 
   - nguồn: `| BF-C206Q-3 | 206 | 188 | QSB6.7-G32 | ECM | UCI 274H1 | Stage IIIA / CHINA STAGE10 | CHINA`
-- **MỚI** n101 b3 dòng 73 alternator `UCI 274H1` | tổ máy `BF-C206Q-3` | prime 188 kVA / - kW; standby 206 kVA / - kW | khác: QSB6.7-G32 | hãng: Stamford | emission=Stage IIIA / CHINA STAGE10
+- **MỚI** n101 b3 dòng 73 alternator `UCI 274H1` | tổ máy `BF-C206Q-3` | prime 188 kVA / - kW; standby 206 kVA / - kW | khác: QSB6.7-G32 | hãng: Stamford | 
   - nguồn: `| BF-C206Q-3 | 206 | 188 | QSB6.7-G32 | ECM | UCI 274H1 | Stage IIIA / CHINA STAGE10 | CHINA`
-- **MỚI** n101 b3 dòng 74 engine `QSB6.7-G31` | tổ máy `BF-C220Q-3` | prime 200 kVA / - kW; standby 220 kVA / - kW | khác: UCDI 274H1 | hãng: ∅ | emission=Stage IIIA / CHINA STAGE11
+- **MỚI** n101 b3 dòng 74 engine `QSB6.7-G31` | tổ máy `BF-C220Q-3` | prime 200 kVA / - kW; standby 220 kVA / - kW | khác: UCDI 274H1 | hãng: ∅ | 
   - nguồn: `| BF-C220Q-3 | 220 | 200 | QSB6.7-G31 | ECM | UCDI 274H1 | Stage IIIA / CHINA STAGE11 | CHINA`
-- **MỚI** n101 b3 dòng 74 alternator `UCDI 274H1` | tổ máy `BF-C220Q-3` | prime 200 kVA / - kW; standby 220 kVA / - kW | khác: QSB6.7-G31 | hãng: Stamford | emission=Stage IIIA / CHINA STAGE11
+- **MỚI** n101 b3 dòng 74 alternator `UCDI 274H1` | tổ máy `BF-C220Q-3` | prime 200 kVA / - kW; standby 220 kVA / - kW | khác: QSB6.7-G31 | hãng: Stamford | 
   - nguồn: `| BF-C220Q-3 | 220 | 200 | QSB6.7-G31 | ECM | UCDI 274H1 | Stage IIIA / CHINA STAGE11 | CHINA`
-- **MỚI** n101 b3 dòng 75 engine `QSB6.7-G31` | tổ máy `BF-C250Q-3` | prime 230 kVA / - kW; standby 250 kVA / - kW | khác: UCDI 274J1 | hãng: ∅ | emission=Stage IIIA / CHINA STAGE12
+- **MỚI** n101 b3 dòng 75 engine `QSB6.7-G31` | tổ máy `BF-C250Q-3` | prime 230 kVA / - kW; standby 250 kVA / - kW | khác: UCDI 274J1 | hãng: ∅ | 
   - nguồn: `| BF-C250Q-3 | 250 | 230 | QSB6.7-G31 | ECM | UCDI 274J1 | Stage IIIA / CHINA STAGE12 | CHINA`
-- **MỚI** n101 b3 dòng 75 alternator `UCDI 274J1` | tổ máy `BF-C250Q-3` | prime 230 kVA / - kW; standby 250 kVA / - kW | khác: QSB6.7-G31 | hãng: Stamford | emission=Stage IIIA / CHINA STAGE12
+- **MỚI** n101 b3 dòng 75 alternator `UCDI 274J1` | tổ máy `BF-C250Q-3` | prime 230 kVA / - kW; standby 250 kVA / - kW | khác: QSB6.7-G31 | hãng: Stamford | 
   - nguồn: `| BF-C250Q-3 | 250 | 230 | QSB6.7-G31 | ECM | UCDI 274J1 | Stage IIIA / CHINA STAGE12 | CHINA`
-- **MỚI** n101 b3 dòng 76 engine `QSL8.9-G4` | tổ máy `BF-C275Q-3` | prime 250 kVA / - kW; standby 275 kVA / - kW | khác: UCDI 274K1 | hãng: ∅ | emission=Stage IIIA / CHINA STAGE13
+- **MỚI** n101 b3 dòng 76 engine `QSL8.9-G4` | tổ máy `BF-C275Q-3` | prime 250 kVA / - kW; standby 275 kVA / - kW | khác: UCDI 274K1 | hãng: ∅ | 
   - nguồn: `| BF-C275Q-3 | 275 | 250 | QSL8.9-G4 | ECM | UCDI 274K1 | Stage IIIA / CHINA STAGE13 | CHINA`
-- **MỚI** n101 b3 dòng 76 alternator `UCDI 274K1` | tổ máy `BF-C275Q-3` | prime 250 kVA / - kW; standby 275 kVA / - kW | khác: QSL8.9-G4 | hãng: Stamford | emission=Stage IIIA / CHINA STAGE13
+- **MỚI** n101 b3 dòng 76 alternator `UCDI 274K1` | tổ máy `BF-C275Q-3` | prime 250 kVA / - kW; standby 275 kVA / - kW | khác: QSL8.9-G4 | hãng: Stamford | 
   - nguồn: `| BF-C275Q-3 | 275 | 250 | QSL8.9-G4 | ECM | UCDI 274K1 | Stage IIIA / CHINA STAGE13 | CHINA`
-- **MỚI** n101 b3 dòng 77 engine `QSL8.9-G33` | tổ máy `BF-C315DQ-3` | prime 290 kVA / - kW; standby 315 kVA / - kW | khác: S4L1S-D41 | hãng: ∅ | emission=Stage IIIA / CHINA STAGE14
+- **MỚI** n101 b3 dòng 77 engine `QSL8.9-G33` | tổ máy `BF-C315DQ-3` | prime 290 kVA / - kW; standby 315 kVA / - kW | khác: S4L1S-D41 | hãng: ∅ | 
   - nguồn: `| BF-C315DQ-3 | 315 | 290 | QSL8.9-G33 | ECM | S4L1S-D41 | Stage IIIA / CHINA STAGE14 | CHINA`
-- **MỚI** n101 b3 dòng 77 alternator `S4L1S-D41` | tổ máy `BF-C315DQ-3` | prime 290 kVA / - kW; standby 315 kVA / - kW | khác: QSL8.9-G33 | hãng: Stamford | emission=Stage IIIA / CHINA STAGE14
+- **MỚI** n101 b3 dòng 77 alternator `S4L1S-D41` | tổ máy `BF-C315DQ-3` | prime 290 kVA / - kW; standby 315 kVA / - kW | khác: QSL8.9-G33 | hãng: Stamford | 
   - nguồn: `| BF-C315DQ-3 | 315 | 290 | QSL8.9-G33 | ECM | S4L1S-D41 | Stage IIIA / CHINA STAGE14 | CHINA`
-- **MỚI** n101 b3 dòng 78 engine `QSL8.9-G30` | tổ máy `BF-C350DQ-3` | prime 310 kVA / - kW; standby 340 kVA / - kW | khác: S4L1S-D41 | hãng: ∅ | emission=Stage IIIA / CHINA STAGE15
+- **MỚI** n101 b3 dòng 78 engine `QSL8.9-G30` | tổ máy `BF-C350DQ-3` | prime 310 kVA / - kW; standby 340 kVA / - kW | khác: S4L1S-D41 | hãng: ∅ | 
   - nguồn: `| BF-C350DQ-3 | 340 | 310 | QSL8.9-G30 | ECM | S4L1S-D41 | Stage IIIA / CHINA STAGE15 | CHINA`
-- **MỚI** n101 b3 dòng 78 alternator `S4L1S-D41` | tổ máy `BF-C350DQ-3` | prime 310 kVA / - kW; standby 340 kVA / - kW | khác: QSL8.9-G30 | hãng: Stamford | emission=Stage IIIA / CHINA STAGE15
+- **MỚI** n101 b3 dòng 78 alternator `S4L1S-D41` | tổ máy `BF-C350DQ-3` | prime 310 kVA / - kW; standby 340 kVA / - kW | khác: QSL8.9-G30 | hãng: Stamford | 
   - nguồn: `| BF-C350DQ-3 | 340 | 310 | QSL8.9-G30 | ECM | S4L1S-D41 | Stage IIIA / CHINA STAGE15 | CHINA`
-- **MỚI** n101 b3 dòng 79 engine `QSL8.9-G30` | tổ máy `BF-C360DQ-3` | prime 320 kVA / - kW; standby 350 kVA / - kW | khác: S4L1S-E41 | hãng: ∅ | emission=Stage IIIA / CHINA STAGE16
+- **MỚI** n101 b3 dòng 79 engine `QSL8.9-G30` | tổ máy `BF-C360DQ-3` | prime 320 kVA / - kW; standby 350 kVA / - kW | khác: S4L1S-E41 | hãng: ∅ | 
   - nguồn: `| BF-C360DQ-3 | 350 | 320 | QSL8.9-G30 | ECM | S4L1S-E41 | Stage IIIA / CHINA STAGE16 | CHINA`
-- **MỚI** n101 b3 dòng 79 alternator `S4L1S-E41` | tổ máy `BF-C360DQ-3` | prime 320 kVA / - kW; standby 350 kVA / - kW | khác: QSL8.9-G30 | hãng: Stamford | emission=Stage IIIA / CHINA STAGE16
+- **MỚI** n101 b3 dòng 79 alternator `S4L1S-E41` | tổ máy `BF-C360DQ-3` | prime 320 kVA / - kW; standby 350 kVA / - kW | khác: QSL8.9-G30 | hãng: Stamford | 
   - nguồn: `| BF-C360DQ-3 | 350 | 320 | QSL8.9-G30 | ECM | S4L1S-E41 | Stage IIIA / CHINA STAGE16 | CHINA`
-- **MỚI** n101 b3 dòng 80 engine `QSZ13-G6` | tổ máy `BF-C400Q-3` | prime 360 kVA / - kW; standby 400 kVA / - kW | khác: S4L1D-E41 | hãng: ∅ | emission=Stage IIIA / CHINA STAGE17
+- **MỚI** n101 b3 dòng 80 engine `QSZ13-G6` | tổ máy `BF-C400Q-3` | prime 360 kVA / - kW; standby 400 kVA / - kW | khác: S4L1D-E41 | hãng: ∅ | 
   - nguồn: `| BF-C400Q-3 | 400 | 360 | QSZ13-G6 | ECM | S4L1D-E41 | Stage IIIA / CHINA STAGE17 | CHINA`
-- **MỚI** n101 b3 dòng 80 alternator `S4L1D-E41` | tổ máy `BF-C400Q-3` | prime 360 kVA / - kW; standby 400 kVA / - kW | khác: QSZ13-G6 | hãng: Stamford | emission=Stage IIIA / CHINA STAGE17
+- **MỚI** n101 b3 dòng 80 alternator `S4L1D-E41` | tổ máy `BF-C400Q-3` | prime 360 kVA / - kW; standby 400 kVA / - kW | khác: QSZ13-G6 | hãng: Stamford | 
   - nguồn: `| BF-C400Q-3 | 400 | 360 | QSZ13-G6 | ECM | S4L1D-E41 | Stage IIIA / CHINA STAGE17 | CHINA`
-- **MỚI** n101 b3 dòng 81 engine `QSZ13-G7` | tổ máy `BF-C450Q-3` | prime 400 kVA / - kW; standby 450 kVA / - kW | khác: S4L1D-F41 | hãng: ∅ | emission=Stage IIIA / CHINA STAGE18
+- **MỚI** n101 b3 dòng 81 engine `QSZ13-G7` | tổ máy `BF-C450Q-3` | prime 400 kVA / - kW; standby 450 kVA / - kW | khác: S4L1D-F41 | hãng: ∅ | 
   - nguồn: `| BF-C450Q-3 | 450 | 400 | QSZ13-G7 | ECM | S4L1D-F41 | Stage IIIA / CHINA STAGE18 | CHINA`
-- **MỚI** n101 b3 dòng 81 alternator `S4L1D-F41` | tổ máy `BF-C450Q-3` | prime 400 kVA / - kW; standby 450 kVA / - kW | khác: QSZ13-G7 | hãng: Stamford | emission=Stage IIIA / CHINA STAGE18
+- **MỚI** n101 b3 dòng 81 alternator `S4L1D-F41` | tổ máy `BF-C450Q-3` | prime 400 kVA / - kW; standby 450 kVA / - kW | khác: QSZ13-G7 | hãng: Stamford | 
   - nguồn: `| BF-C450Q-3 | 450 | 400 | QSZ13-G7 | ECM | S4L1D-F41 | Stage IIIA / CHINA STAGE18 | CHINA`
 - **MỚI** n101 b3 dòng 82 engine `QSNT-G3` | tổ máy `BF-C440Q-3` | prime 400 kVA / - kW; standby 438 kVA / - kW | khác: ∅ | hãng: Cummins | 
   - nguồn: `| BF-C440Q-3 | 438 | 400 | CUMMINS (CHINA) | QSNT-G3 | | VARIOUS | CHINA STAGE3 | CHINA`
@@ -119,34 +119,98 @@ Mới 388, mất 18 (18 gộp vào bản ghi khác qua `also`), đổi 2940 (th�
   - nguồn: `| BF-C500Q-3 | 500 | 455 | QSK19-G15 | | CHINA STAGE3 | CHINA`
 - **MỚI** n101 b3 dòng 92 engine `QSK19-G16` | tổ máy `BF-C550Q-3` | prime 500 kVA / - kW; standby 550 kVA / - kW | khác: ∅ | hãng: ∅ | 
   - nguồn: `| BF-C550Q-3 | 550 | 500 | QSK19-G16 | | CHINA STAGE3 | CHINA`
-- **MỚI** n106 b8 dòng 15 engine `2*TAD1344GE` | tổ máy `BF-V900TWIN-T2` | prime 820 kVA / - kW; standby 900 kVA / - kW | khác: 2*S4L1D-F41 | hãng: Volvo Penta | gov=EMS2 / ECU
-  - nguồn: `| BF-V900TWIN-T2 | 900 | 820 | VOLVO PENTA | 2*TAD1344GE | EMS2 / ECU | 2*S4L1D-F41 | ISO 20'ft HC`
-- **MỚI** n106 b8 dòng 15 alternator `2*S4L1D-F41` | tổ máy `BF-V900TWIN-T2` | prime 820 kVA / - kW; standby 900 kVA / - kW | khác: 2*TAD1344GE | hãng: Stamford | gov=EMS2 / ECU
-  - nguồn: `| BF-V900TWIN-T2 | 900 | 820 | VOLVO PENTA | 2*TAD1344GE | EMS2 / ECU | 2*S4L1D-F41 | ISO 20'ft HC`
-- **MỚI** n106 b8 dòng 16 engine `2*TAD1345GE` | tổ máy `BF-V1000TWIN-T2` | prime 900 kVA / - kW; standby 1000 kVA / - kW | khác: 2*S4L1D-G41 | hãng: Volvo Penta | gov=EMS2 / ECU
-  - nguồn: `| BF-V1000TWIN-T2 | 1000 | 900 | 2*TAD1345GE | EMS2 / ECU | 2*S4L1D-G41 | ISO 20'ft HC`
-- **MỚI** n106 b8 dòng 16 alternator `2*S4L1D-G41` | tổ máy `BF-V1000TWIN-T2` | prime 900 kVA / - kW; standby 1000 kVA / - kW | khác: 2*TAD1345GE | hãng: Stamford | gov=EMS2 / ECU
-  - nguồn: `| BF-V1000TWIN-T2 | 1000 | 900 | 2*TAD1345GE | EMS2 / ECU | 2*S4L1D-G41 | ISO 20'ft HC`
-- **MỚI** n106 b8 dòng 17 engine `2*TAD1346GE` | tổ máy `BF-V1100TWIN-T2` | prime 1000 kVA / - kW; standby 1100 kVA / - kW | khác: 2*S5L1D-C41 | hãng: Volvo Penta | gov=EMS2 / ECU
-  - nguồn: `| BF-V1100TWIN-T2 | 1100 | 1000 | 2*TAD1346GE | EMS2 / ECU | 2*S5L1D-C41 | ISO 20'ft HC`
-- **MỚI** n106 b8 dòng 17 alternator `2*S5L1D-C41` | tổ máy `BF-V1100TWIN-T2` | prime 1000 kVA / - kW; standby 1100 kVA / - kW | khác: 2*TAD1346GE | hãng: Stamford | gov=EMS2 / ECU
-  - nguồn: `| BF-V1100TWIN-T2 | 1100 | 1000 | 2*TAD1346GE | EMS2 / ECU | 2*S5L1D-C41 | ISO 20'ft HC`
-- **MỚI** n106 b8 dòng 18 engine `2*TAD1642GE` | tổ máy `BF-V1320TWIN-T2` | prime 1200 kVA / - kW; standby 1320 kVA / - kW | khác: 2*S5L1D-E41 | hãng: Volvo Penta | gov=EMS2 / ECU
-  - nguồn: `| BF-V1320TWIN-T2 | 1320 | 1200 | 2*TAD1642GE | EMS2 / ECU | 2*S5L1D-E41 | ISO 20'ft HC`
-- **MỚI** n106 b8 dòng 18 alternator `2*S5L1D-E41` | tổ máy `BF-V1320TWIN-T2` | prime 1200 kVA / - kW; standby 1320 kVA / - kW | khác: 2*TAD1642GE | hãng: Stamford | gov=EMS2 / ECU
-  - nguồn: `| BF-V1320TWIN-T2 | 1320 | 1200 | 2*TAD1642GE | EMS2 / ECU | 2*S5L1D-E41 | ISO 20'ft HC`
-- **MỚI** n106 b8 dòng 19 engine `2*TWD1644GE` | tổ máy `BF-V1375TWIN-T2` | prime 1250 kVA / - kW; standby 1376 kVA / - kW | khác: 2*S5L1D-E41 | hãng: Volvo Penta | gov=EMS2 / ECU
-  - nguồn: `| BF-V1375TWIN-T2 | 1376 | 1250 | 2*TWD1644GE | EMS2 / ECU | 2*S5L1D-E41 | ISO 20'ft HC`
-- **MỚI** n106 b8 dòng 19 alternator `2*S5L1D-E41` | tổ máy `BF-V1375TWIN-T2` | prime 1250 kVA / - kW; standby 1376 kVA / - kW | khác: 2*TWD1644GE | hãng: Stamford | gov=EMS2 / ECU
-  - nguồn: `| BF-V1375TWIN-T2 | 1376 | 1250 | 2*TWD1644GE | EMS2 / ECU | 2*S5L1D-E41 | ISO 20'ft HC`
-- **MỚI** n106 b8 dòng 20 engine `2*TWD1644GE` | tổ máy `BF-V1440TWIN-T2` | prime 1300 kVA / - kW; standby 1440 kVA / - kW | khác: 2*S5L1D-F41 | hãng: Volvo Penta | gov=EMS2 / ECU
-  - nguồn: `| BF-V1440TWIN-T2 | 1440 | 1300 | 2*TWD1644GE | EMS2 / ECU | 2*S5L1D-F41 | ISO 20'ft HC`
-- **MỚI** n106 b8 dòng 20 alternator `2*S5L1D-F41` | tổ máy `BF-V1440TWIN-T2` | prime 1300 kVA / - kW; standby 1440 kVA / - kW | khác: 2*TWD1644GE | hãng: Stamford | gov=EMS2 / ECU
-  - nguồn: `| BF-V1440TWIN-T2 | 1440 | 1300 | 2*TWD1644GE | EMS2 / ECU | 2*S5L1D-F41 | ISO 20'ft HC`
-- **MỚI** n106 b8 dòng 21 engine `2*TWD1645GE` | tổ máy `BF-V1540TWIN-T2` | prime 1400 kVA / - kW; standby 1540 kVA / - kW | khác: 2*S5L1D-G4 | hãng: Volvo Penta | gov=EMS2 / ECU
-  - nguồn: `| BF-V1540TWIN-T2 | 1540 | 1400 | 2*TWD1645GE | EMS2 / ECU | 2*S5L1D-G4 | ISO 20'ft HC`
-- **MỚI** n106 b8 dòng 21 alternator `2*S5L1D-G4` | tổ máy `BF-V1540TWIN-T2` | prime 1400 kVA / - kW; standby 1540 kVA / - kW | khác: 2*TWD1645GE | hãng: Stamford | gov=EMS2 / ECU
-  - nguồn: `| BF-V1540TWIN-T2 | 1540 | 1400 | 2*TWD1645GE | EMS2 / ECU | 2*S5L1D-G4 | ISO 20'ft HC`
+- **MẤT** n101 b0 dòng 30 engine `2*TAD1355GE` | tổ máy `BF-V900TWIN-T3` | prime 820 kVA / - kW; standby 900 kVA / - kW | khác: 2*S4L1D-F41 | hãng: Volvo Penta | emission=STAGE IIIA/ TIER 3; gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V900TWIN-T3 | 900 | 820 | VOLVO PENTA | 2*TAD1355GE | EMS2 / ECU | 2*S4L1D-F41 | STAGE IIIA/ TIER 3 | SWEDEN`
+- **MẤT** n101 b0 dòng 30 alternator `2*S4L1D-F41` | tổ máy `BF-V900TWIN-T3` | prime 820 kVA / - kW; standby 900 kVA / - kW | khác: 2*TAD1355GE | hãng: Stamford | emission=STAGE IIIA/ TIER 3; gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V900TWIN-T3 | 900 | 820 | VOLVO PENTA | 2*TAD1355GE | EMS2 / ECU | 2*S4L1D-F41 | STAGE IIIA/ TIER 3 | SWEDEN`
+- **MẤT** n104 b6 dòng 40 engine `2*TAD1382GE` | tổ máy `BF-V880TWIN-V` | prime 800 kVA / - kW; standby 880 kVA / - kW | khác: ∅ | hãng: Volvo Penta |  | ⚠ MẤT HẲN
+  - nguồn: `| BF-V880TWIN-V | 880 | 800 | VOLVO PENTA | 2*TAD1382GE | ECU | 2*S4L1D-F41 | 110.9 | STAGE V | SWEDEN | 4-5 MONTHS |`
+- **MẤT** n104 b6 dòng 41 engine `2*S4L1D-G41` | tổ máy `BF-SC900TWIN-V` | prime 900 kVA / - kW; standby 990 kVA / - kW | khác: 4 months | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| BF-SC900TWIN-V | 990 | 900 | SCANIA | 2*DC13 320A 02-63 | ECU | 2*S4L1D-G41 | 59 | STAGE V | SWEDEN | 4 months | ●`
+- **MẤT** n104 b6 dòng 41 alternator `4 months` | tổ máy `BF-SC900TWIN-V` | prime 900 kVA / - kW; standby 990 kVA / - kW | khác: 2*S4L1D-G41 | hãng: Stamford |  | ⚠ MẤT HẲN
+  - nguồn: `| BF-SC900TWIN-V | 990 | 900 | SCANIA | 2*DC13 320A 02-63 | ECU | 2*S4L1D-G41 | 59 | STAGE V | SWEDEN | 4 months | ●`
+- **MẤT** n104 b6 dòng 42 engine `2*S5L1D-C41` | tổ máy `BF-SC1100TWIN-V` | prime 1000 kVA / - kW; standby 1100 kVA / - kW | khác: 4 months | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| BF-SC1100TWIN-V | 1100 | 1000 | SCANIA | 2*DC13 320A 02-63 | ECU | 2*S5L1D-C41 | 67.7 | STAGE V | SWEDEN | 4 months | ●`
+- **MẤT** n104 b6 dòng 42 alternator `4 months` | tổ máy `BF-SC1100TWIN-V` | prime 1000 kVA / - kW; standby 1100 kVA / - kW | khác: 2*S5L1D-C41 | hãng: Stamford |  | ⚠ MẤT HẲN
+  - nguồn: `| BF-SC1100TWIN-V | 1100 | 1000 | SCANIA | 2*DC13 320A 02-63 | ECU | 2*S5L1D-C41 | 67.7 | STAGE V | SWEDEN | 4 months | ●`
+- **MẤT** n104 b6 dòng 43 engine `2*S5L1D-D41` | tổ máy `BF-SC1000TWIN-V` | prime 1100 kVA / - kW; standby 1210 kVA / - kW | khác: 4 months | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| BF-SC1000TWIN-V | 1210 | 1100 | SCANIA | 2*DC163 320A 02-63 | ECU | 2*S5L1D-D41 | 131.2 | STAGE V | SWEDEN | 4 months | ●`
+- **MẤT** n104 b6 dòng 43 alternator `4 months` | tổ máy `BF-SC1000TWIN-V` | prime 1100 kVA / - kW; standby 1210 kVA / - kW | khác: 2*S5L1D-D41 | hãng: Stamford |  | ⚠ MẤT HẲN
+  - nguồn: `| BF-SC1000TWIN-V | 1210 | 1100 | SCANIA | 2*DC163 320A 02-63 | ECU | 2*S5L1D-D41 | 131.2 | STAGE V | SWEDEN | 4 months | ●`
+- **MẤT** n104 b6 dòng 44 engine `2*TWD1683GE` | tổ máy `BF-V1475TWIN-V` | prime 1340 kVA / - kW; standby 1474 kVA / - kW | khác: ∅ | hãng: Volvo Penta |  | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1475TWIN-V | 1474 | 1340 | VOLVO PENTA | 2*TWD1683GE | ECU | 2*S5L1D-F41 | 180.66 | STAGE V | SWEDEN | 4-5 MONTHS | ●`
+- **MẤT** n105 b7 dòng 27 engine `2*S4L1D-F41` | tổ máy `BF-SC880TWIN-60T4F` | prime 80 kVA / - kW; standby 880 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| BF-SC880TWIN-60T4F | 880 | 80 | SCANIA | 2*DC13 320A 02-62 | ECU | 2*S4L1D-F41 | | PA TIER 4 FINAL | SWEDEN | | ●`
+- **MẤT** n105 b7 dòng 28 engine `2*S4L1D-G41` | tổ máy `BF-SC990TWIN-60T4F 13L` | prime 900 kVA / - kW; standby 990 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| BF-SC990TWIN-60T4F 13L | 990 | 900 | SCANIA | 2*DC13 320A 02-63 | ECU | 2*S4L1D-G41 | | PA TIER 4 FINAL | SWEDEN | | ●`
+- **MẤT** n105 b7 dòng 29 engine `2*S5L1D-C41` | tổ máy `BF-SC1100TWIN-60T4F` | prime 1000 kVA / - kW; standby 1100 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| BF-SC1100TWIN-60T4F | 1100 | 1000 | SCANIA | 2*DC13 320A 02-63 | ECU | 2*S5L1D-C41 | | PA TIER 4 FINAL | SWEDEN | | ●`
+- **MẤT** n105 b7 dòng 30 engine `2*S5L1D-D41` | tổ máy `BF-SC1210TWIN-60T4F` | prime 1100 kVA / - kW; standby 1210 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| BF-SC1210TWIN-60T4F | 1210 | 1100 | SCANIA | 2*DC16 320A 02-63 | ECU | 2*S5L1D-D41 | | PA TIER 4 FINAL | SWEDEN | | ●`
+- **MẤT** n105 b7 dòng 31 engine `2*TWD1682GE` | tổ máy `BF-V1400TWIN-60T4F` | prime 1270 kVA / - kW; standby 1396 kVA / - kW | khác: 2*S5L1D-E41 | hãng: Volvo Penta | emission=PA TIER 4 FINAL; gov=ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1400TWIN-60T4F | 1396 | 1270 | VOLVO PENTA | 2*TWD1682GE | ECU | 2*S5L1D-E41 | | PA TIER 4 FINAL | SWEDEN | | ●`
+- **MẤT** n105 b7 dòng 31 alternator `2*S5L1D-E41` | tổ máy `BF-V1400TWIN-60T4F` | prime 1270 kVA / - kW; standby 1396 kVA / - kW | khác: 2*TWD1682GE | hãng: Stamford | emission=PA TIER 4 FINAL; gov=ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1400TWIN-60T4F | 1396 | 1270 | VOLVO PENTA | 2*TWD1682GE | ECU | 2*S5L1D-E41 | | PA TIER 4 FINAL | SWEDEN | | ●`
+- **MẤT** n105 b7 dòng 32 engine `2*TWD1683GE` | tổ máy `BF-V1540TWIN-60T4F` | prime 1400 kVA / - kW; standby 1540 kVA / - kW | khác: 2*S5L1D-F41 | hãng: Volvo Penta | emission=PA TIER 4 FINAL; gov=ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1540TWIN-60T4F | 1540 | 1400 | VOLVO PENTA | 2*TWD1683GE | ECU | 2*S5L1D-F41 | | PA TIER 4 FINAL | SWEDEN | | ●`
+- **MẤT** n105 b7 dòng 32 alternator `2*S5L1D-F41` | tổ máy `BF-V1540TWIN-60T4F` | prime 1400 kVA / - kW; standby 1540 kVA / - kW | khác: 2*TWD1683GE | hãng: Stamford | emission=PA TIER 4 FINAL; gov=ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1540TWIN-60T4F | 1540 | 1400 | VOLVO PENTA | 2*TWD1683GE | ECU | 2*S5L1D-F41 | | PA TIER 4 FINAL | SWEDEN | | ●`
+- **MẤT** n106 b8 dòng 0 engine `2*TWD1744GE` | tổ máy `BF-V1670TWIN-T2` | prime 1520 kVA / - kW; standby 1672 kVA / - kW | khác: ∅ | hãng: Volvo Penta |  | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1670TWIN-T2 | 1672 | 1520 | 2*TWD1744GE | ECM4 | 2*S5L1D-H41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 1 engine `2*TAD1346GE` | tổ máy `BF-V1100TWIN-60` | prime 1024 kVA / - kW; standby 1128 kVA / - kW | khác: 2*S5L1D-C41 | hãng: Volvo Penta | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1100TWIN-60 | 1128 | 1024 | 2*TAD1346GE | EMS2 / ECU | 2*S5L1D-C41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 1 alternator `2*S5L1D-C41` | tổ máy `BF-V1100TWIN-60` | prime 1024 kVA / - kW; standby 1128 kVA / - kW | khác: 2*TAD1346GE | hãng: Stamford | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1100TWIN-60 | 1128 | 1024 | 2*TAD1346GE | EMS2 / ECU | 2*S5L1D-C41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 2 engine `2*TAD1642GE` | tổ máy `BF-V1320TWIN-60` | prime 1250 kVA / - kW; standby 1376 kVA / - kW | khác: 2*S5L1D-E41 | hãng: Volvo Penta | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1320TWIN-60 | 1376 | 1250 | 2*TAD1642GE | EMS2 / ECU | 2*S5L1D-E41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 2 alternator `2*S5L1D-E41` | tổ máy `BF-V1320TWIN-60` | prime 1250 kVA / - kW; standby 1376 kVA / - kW | khác: 2*TAD1642GE | hãng: Stamford | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1320TWIN-60 | 1376 | 1250 | 2*TAD1642GE | EMS2 / ECU | 2*S5L1D-E41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 3 engine `2*TWD1644GE` | tổ máy `BF-V1375TWIN-60` | prime 1368 kVA / - kW; standby 1504 kVA / - kW | khác: 2*S5L1D-E41 | hãng: Volvo Penta | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1375TWIN-60 | 1504 | 1368 | 2*TWD1644GE | EMS2 / ECU | 2*S5L1D-E41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 3 alternator `2*S5L1D-E41` | tổ máy `BF-V1375TWIN-60` | prime 1368 kVA / - kW; standby 1504 kVA / - kW | khác: 2*TWD1644GE | hãng: Stamford | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1375TWIN-60 | 1504 | 1368 | 2*TWD1644GE | EMS2 / ECU | 2*S5L1D-E41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 4 engine `2*TWD1645GE` | tổ máy `BF-V1540TWIN-60` | prime 1450 kVA / - kW; standby 1600 kVA / - kW | khác: 2*S5L1D-F41 | hãng: Volvo Penta | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1540TWIN-60 | 1600 | 1450 | 2*TWD1645GE | EMS2 / ECU | 2*S5L1D-F41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 4 alternator `2*S5L1D-F41` | tổ máy `BF-V1540TWIN-60` | prime 1450 kVA / - kW; standby 1600 kVA / - kW | khác: 2*TWD1645GE | hãng: Stamford | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1540TWIN-60 | 1600 | 1450 | 2*TWD1645GE | EMS2 / ECU | 2*S5L1D-F41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 5 engine `2*TWD1744GE` | tổ máy `BF-V1670TWIN-60` | prime 1600 kVA / - kW; standby 1760 kVA / - kW | khác: ∅ | hãng: Volvo Penta |  | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1670TWIN-60 | 1760 | 1600 | 2*TWD1744GE | ECM4 | 2*S5L1D-G41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 6 engine `2*TAD1650GE` | tổ máy `BF-V1000TWIN-T3` | prime 900 kVA / - kW; standby 1000 kVA / - kW | khác: 2*S4L1D-G41 | hãng: Volvo Penta | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1000TWIN-T3 | 1000 | 900 | 2*TAD1650GE | EMS2 / ECU | 2*S4L1D-G41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 6 alternator `2*S4L1D-G41` | tổ máy `BF-V1000TWIN-T3` | prime 900 kVA / - kW; standby 1000 kVA / - kW | khác: 2*TAD1650GE | hãng: Stamford | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1000TWIN-T3 | 1000 | 900 | 2*TAD1650GE | EMS2 / ECU | 2*S4L1D-G41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 7 engine `2*TAD1651GE` | tổ máy `BF-V1100TWIN-T3` | prime 1000 kVA / - kW; standby 1100 kVA / - kW | khác: 2*S5L1D-C4 | hãng: Volvo Penta | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1100TWIN-T3 | 1100 | 1000 | 2*TAD1651GE | EMS2 / ECU | 2*S5L1D-C4 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 7 alternator `2*S5L1D-C4` | tổ máy `BF-V1100TWIN-T3` | prime 1000 kVA / - kW; standby 1100 kVA / - kW | khác: 2*TAD1651GE | hãng: Stamford | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1100TWIN-T3 | 1100 | 1000 | 2*TAD1651GE | EMS2 / ECU | 2*S5L1D-C4 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 8 engine `2*TWD1652GE` | tổ máy `BF-V1300TWIN-T3` | prime 1200 kVA / - kW; standby 1320 kVA / - kW | khác: 2*S5L1D-E41 | hãng: Volvo Penta | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1300TWIN-T3 | 1320 | 1200 | 2*TWD1652GE | EMS2 / ECU | 2*S5L1D-E41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 8 alternator `2*S5L1D-E41` | tổ máy `BF-V1300TWIN-T3` | prime 1200 kVA / - kW; standby 1320 kVA / - kW | khác: 2*TWD1652GE | hãng: Stamford | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1300TWIN-T3 | 1320 | 1200 | 2*TWD1652GE | EMS2 / ECU | 2*S5L1D-E41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 9 engine `2*TWD1653GE` | tổ máy `BF-V1400TWIN-T3` | prime 1250 kVA / - kW; standby 1376 kVA / - kW | khác: 2*S5L1D-E41 | hãng: Volvo Penta | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1400TWIN-T3 | 1376 | 1250 | 2*TWD1653GE | EMS2 / ECU | 2*S5L1D-E41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 9 alternator `2*S5L1D-E41` | tổ máy `BF-V1400TWIN-T3` | prime 1250 kVA / - kW; standby 1376 kVA / - kW | khác: 2*TWD1653GE | hãng: Stamford | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1400TWIN-T3 | 1376 | 1250 | 2*TWD1653GE | EMS2 / ECU | 2*S5L1D-E41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 10 engine `2*TWD1653GE` | tổ máy `BF-V1440TWIN-T3` | prime 1300 kVA / - kW; standby 1440 kVA / - kW | khác: 2*S5L1D-F41 | hãng: Volvo Penta | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1440TWIN-T3 | 1440 | 1300 | 2*TWD1653GE | EMS2 / ECU | 2*S5L1D-F41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 10 alternator `2*S5L1D-F41` | tổ máy `BF-V1440TWIN-T3` | prime 1300 kVA / - kW; standby 1440 kVA / - kW | khác: 2*TWD1653GE | hãng: Stamford | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1440TWIN-T3 | 1440 | 1300 | 2*TWD1653GE | EMS2 / ECU | 2*S5L1D-F41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 11 engine `2*TAD1352GE` | tổ máy `BF-V870WIN-60` | prime 800 kVA / - kW; standby 874 kVA / - kW | khác: 2*S4L1D-E41 | hãng: Volvo Penta | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V870WIN-60 | 874 | 800 | 2*TAD1352GE | EMS2 / ECU | 2*S4L1D-E41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 11 alternator `2*S4L1D-E41` | tổ máy `BF-V870WIN-60` | prime 800 kVA / - kW; standby 874 kVA / - kW | khác: 2*TAD1352GE | hãng: Stamford | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V870WIN-60 | 874 | 800 | 2*TAD1352GE | EMS2 / ECU | 2*S4L1D-E41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 12 engine `2*TAD1353GE` | tổ máy `BF-V1000TWIN-60` | prime 908 kVA / - kW; standby 1000 kVA / - kW | khác: 2*S4L1D-F41 | hãng: Volvo Penta | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1000TWIN-60 | 1000 | 908 | 2*TAD1353GE | EMS2 / ECU | 2*S4L1D-F41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 12 alternator `2*S4L1D-F41` | tổ máy `BF-V1000TWIN-60` | prime 908 kVA / - kW; standby 1000 kVA / - kW | khác: 2*TAD1353GE | hãng: Stamford | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1000TWIN-60 | 1000 | 908 | 2*TAD1353GE | EMS2 / ECU | 2*S4L1D-F41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 13 engine `2*TAD1650GE` | tổ máy `BF-V1100TWIN-60` | prime 1032 kVA / - kW; standby 1136 kVA / - kW | khác: 2*S5L1D-C41 | hãng: Volvo Penta | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1100TWIN-60 | 1136 | 1032 | 2*TAD1650GE | EMS2 / ECU | 2*S5L1D-C41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 13 alternator `2*S5L1D-C41` | tổ máy `BF-V1100TWIN-60` | prime 1032 kVA / - kW; standby 1136 kVA / - kW | khác: 2*TAD1650GE | hãng: Stamford | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1100TWIN-60 | 1136 | 1032 | 2*TAD1650GE | EMS2 / ECU | 2*S5L1D-C41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 14 engine `2*TAD1651GE` | tổ máy `BF-V1300TWIN-60` | prime 1160 kVA / - kW; standby 1282 kVA / - kW | khác: 2*S4L1D-F41 | hãng: Volvo Penta | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1300TWIN-60 | 1282 | 1160 | 2*TAD1651GE | EMS2 / ECU | 2*S4L1D-F41 | ISO 20'ft HC`
+- **MẤT** n106 b8 dòng 14 alternator `2*S4L1D-F41` | tổ máy `BF-V1300TWIN-60` | prime 1160 kVA / - kW; standby 1282 kVA / - kW | khác: 2*TAD1651GE | hãng: Stamford | gov=EMS2 / ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-V1300TWIN-60 | 1282 | 1160 | 2*TAD1651GE | EMS2 / ECU | 2*S4L1D-F41 | ISO 20'ft HC`
 - **ĐỔI** n101 b3 dòng 0 engine `QSK19-G17` | tổ máy `BF-C625-3` | prime 569 kVA / - kW; standby 625 kVA / - kW | khác: ∅ | hãng: ∅ | 
   - đổi: makes: [{"name":"Cummins","via":"tiêu đề cột"}] → []
   - nguồn: `| BF-C625-3 | 625 | 569 | QSK19-G17 | | CHINA STAGE3 | CHINA`
@@ -1633,375 +1697,375 @@ Mới 388, mất 18 (18 gộp vào bản ghi khác qua `also`), đổi 2940 (th�
 - **MỚI** n1001 b83 dòng 62 engine `WP13D490E200` | tổ máy `EPS560WCA-3` | prime 560 kVA / - kW; standby 619 kVA / - kW | khác: ∅ | hãng: Weichai | phase=3-Phase
   - nguồn: `| EPS560WCA-3 | WEICHAI POWER | 560kVA | 619kVA | WP13D490E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps560wca-3-weichai-560kva-diesel-generator-specs`
 
-## fdk-energy (mới 184, mất 18, đổi 1)
+## fdk-energy (mới 184, mất 18, đổi 1101)
 
-- **MỚI** n103 b2 dòng 412 engine `QSL9-G2` | tổ máy `CG250-H1 CONTACT` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: Stamford UCDI274J | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 412 engine `QSL9-G2` | tổ máy `CG250-H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: Stamford UCDI274J | hãng: Cummins | 
   - nguồn: `| CG250-H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | QSL9-G2 | Cummins (USA) | Stamford UCDI274J | Click Here | Download`
-- **MỚI** n103 b2 dòng 412 alternator `UCDI274J` | tổ máy `CG250-H1 CONTACT` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: QSL9-G2 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 412 alternator `UCDI274J` | tổ máy `CG250-H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: QSL9-G2 | hãng: Stamford | 
   - nguồn: `| CG250-H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | QSL9-G2 | Cummins (USA) | Stamford UCDI274J | Click Here | Download`
-- **MỚI** n103 b2 dòng 413 engine `QSL9-G3` | tổ máy `CG275-H1 CONTACT` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: Stamford UCDI274K | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 413 engine `QSL9-G3` | tổ máy `CG275-H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: Stamford UCDI274K | hãng: Cummins | 
   - nguồn: `| CG275-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | QSL9-G3 | Cummins (USA) | Stamford UCDI274K | Click Here | Download`
-- **MỚI** n103 b2 dòng 413 alternator `UCDI274K` | tổ máy `CG275-H1 CONTACT` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: QSL9-G3 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 413 alternator `UCDI274K` | tổ máy `CG275-H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: QSL9-G3 | hãng: Stamford | 
   - nguồn: `| CG275-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | QSL9-G3 | Cummins (USA) | Stamford UCDI274K | Click Here | Download`
-- **MỚI** n103 b2 dòng 414 engine `QSL9-G5` | tổ máy `CG330-H1 CONTACT` | prime 300 kVA / 240 kW; standby 330 kVA / 264 kW | khác: Stamford S4L1D-D41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 414 engine `QSL9-G5` | tổ máy `CG330-H1` | prime 300 kVA / 240 kW; standby 330 kVA / 264 kW | khác: Stamford S4L1D-D41 | hãng: Cummins | 
   - nguồn: `| CG330-H1 CONTACT | 330KVA/ 264KW | 300KVA/ 240KW | QSL9-G5 | Cummins (USA) | Stamford S4L1D-D41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 414 alternator `S4L1D-D41` | tổ máy `CG330-H1 CONTACT` | prime 300 kVA / 240 kW; standby 330 kVA / 264 kW | khác: QSL9-G5 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 414 alternator `S4L1D-D41` | tổ máy `CG330-H1` | prime 300 kVA / 240 kW; standby 330 kVA / 264 kW | khác: QSL9-G5 | hãng: Stamford | 
   - nguồn: `| CG330-H1 CONTACT | 330KVA/ 264KW | 300KVA/ 240KW | QSL9-G5 | Cummins (USA) | Stamford S4L1D-D41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 415 engine `QSX15-G6` | tổ máy `CG500E-H1 CONTACT` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: Stamford S4L1D-G41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 415 engine `QSX15-G6` | tổ máy `CG500E-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: Stamford S4L1D-G41 | hãng: Cummins | 
   - nguồn: `| CG500E-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | QSX15-G6 | Cummins (USA) | Stamford S4L1D-G41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 415 alternator `S4L1D-G41` | tổ máy `CG500E-H1 CONTACT` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: QSX15-G6 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 415 alternator `S4L1D-G41` | tổ máy `CG500E-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: QSX15-G6 | hãng: Stamford | 
   - nguồn: `| CG500E-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | QSX15-G6 | Cummins (USA) | Stamford S4L1D-G41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 416 engine `KTA19-G4` | tổ máy `CG550-H1 CONTACT` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: Stamford S5L1D-C41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 416 engine `KTA19-G4` | tổ máy `CG550-H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: Stamford S5L1D-C41 | hãng: Cummins | 
   - nguồn: `| CG550-H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | KTA19-G4 | Cummins (India) | Stamford S5L1D-C41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 416 alternator `S5L1D-C41` | tổ máy `CG550-H1 CONTACT` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: KTA19-G4 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 416 alternator `S5L1D-C41` | tổ máy `CG550-H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: KTA19-G4 | hãng: Stamford | 
   - nguồn: `| CG550-H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | KTA19-G4 | Cummins (India) | Stamford S5L1D-C41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 417 engine `QSX15-G8` | tổ máy `CG550E-H1 CONTACT` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: Stamford S5L1D-C41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 417 engine `QSX15-G8` | tổ máy `CG550E-H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: Stamford S5L1D-C41 | hãng: Cummins | 
   - nguồn: `| CG550E-H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | QSX15-G8 | Cummins (USA) | Stamford S5L1D-C41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 417 alternator `S5L1D-C41` | tổ máy `CG550E-H1 CONTACT` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: QSX15-G8 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 417 alternator `S5L1D-C41` | tổ máy `CG550E-H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: QSX15-G8 | hãng: Stamford | 
   - nguồn: `| CG550E-H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | QSX15-G8 | Cummins (USA) | Stamford S5L1D-C41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 418 engine `VTA28-G5` | tổ máy `CG688-H1 CONTACT` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: Stamford S5L1D-F41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 418 engine `VTA28-G5` | tổ máy `CG688-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: Stamford S5L1D-F41 | hãng: Cummins | 
   - nguồn: `| CG688-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | VTA28-G5 | Cummins (India) | Stamford S5L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 418 alternator `S5L1D-F41` | tổ máy `CG688-H1 CONTACT` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: VTA28-G5 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 418 alternator `S5L1D-F41` | tổ máy `CG688-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: VTA28-G5 | hãng: Stamford | 
   - nguồn: `| CG688-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | VTA28-G5 | Cummins (India) | Stamford S5L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 419 engine `VTA28-G6` | tổ máy `CG825-H1 CONTACT` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: Stamford S5L1D-H41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 419 engine `VTA28-G6` | tổ máy `CG825-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: Stamford S5L1D-H41 | hãng: Cummins | 
   - nguồn: `| CG825-H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | VTA28-G6 | Cummins (India) | Stamford S5L1D-H41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 419 alternator `S5L1D-H41` | tổ máy `CG825-H1 CONTACT` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: VTA28-G6 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 419 alternator `S5L1D-H41` | tổ máy `CG825-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: VTA28-G6 | hãng: Stamford | 
   - nguồn: `| CG825-H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | VTA28-G6 | Cummins (India) | Stamford S5L1D-H41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 420 engine `QSK23-G2` | tổ máy `CG825E/H1 CONTACT` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: Stamford S5L1D-H41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 420 engine `QSK23-G2` | tổ máy `CG825E/H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: Stamford S5L1D-H41 | hãng: Cummins | 
   - nguồn: `| CG825E/H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | QSK23-G2 | Cummins (India) | Stamford S5L1D-H41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 420 alternator `S5L1D-H41` | tổ máy `CG825E/H1 CONTACT` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: QSK23-G2 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 420 alternator `S5L1D-H41` | tổ máy `CG825E/H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: QSK23-G2 | hãng: Stamford | 
   - nguồn: `| CG825E/H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | QSK23-G2 | Cummins (India) | Stamford S5L1D-H41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 421 engine `QSK23-G3` | tổ máy `CG880E-H1 CONTACT` | prime 800 kVA / 640 kW; standby 880 kVA / 704 kW | khác: Stamford S6L1D-C41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 421 engine `QSK23-G3` | tổ máy `CG880E-H1` | prime 800 kVA / 640 kW; standby 880 kVA / 704 kW | khác: Stamford S6L1D-C41 | hãng: Cummins | 
   - nguồn: `| CG880E-H1 CONTACT | 880KVA/ 704KW | 800KVA/ 640KW | QSK23-G3 | Cummins (India) | Stamford S6L1D-C41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 421 alternator `S6L1D-C41` | tổ máy `CG880E-H1 CONTACT` | prime 800 kVA / 640 kW; standby 880 kVA / 704 kW | khác: QSK23-G3 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 421 alternator `S6L1D-C41` | tổ máy `CG880E-H1` | prime 800 kVA / 640 kW; standby 880 kVA / 704 kW | khác: QSK23-G3 | hãng: Stamford | 
   - nguồn: `| CG880E-H1 CONTACT | 880KVA/ 704KW | 800KVA/ 640KW | QSK23-G3 | Cummins (India) | Stamford S6L1D-C41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 422 engine `QST30-G3` | tổ máy `CG1000E-H1 CONTACT` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: Stamford S6L1D-D41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 422 engine `QST30-G3` | tổ máy `CG1000E-H1` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: Stamford S6L1D-D41 | hãng: Cummins | 
   - nguồn: `| CG1000E-H1 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | QST30-G3 | Cummins (USA) | Stamford S6L1D-D41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 422 alternator `S6L1D-D41` | tổ máy `CG1000E-H1 CONTACT` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: QST30-G3 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 422 alternator `S6L1D-D41` | tổ máy `CG1000E-H1` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: QST30-G3 | hãng: Stamford | 
   - nguồn: `| CG1000E-H1 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | QST30-G3 | Cummins (USA) | Stamford S6L1D-D41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 423 engine `KTA38-G5` | tổ máy `CG1100-H1 CONTACT` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: Stamford S6L1D-E41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 423 engine `KTA38-G5` | tổ máy `CG1100-H1` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: Stamford S6L1D-E41 | hãng: Cummins | 
   - nguồn: `| CG1100-H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | KTA38-G5 | Cummins (India) | Stamford S6L1D-E41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 423 alternator `S6L1D-E41` | tổ máy `CG1100-H1 CONTACT` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: KTA38-G5 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 423 alternator `S6L1D-E41` | tổ máy `CG1100-H1` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: KTA38-G5 | hãng: Stamford | 
   - nguồn: `| CG1100-H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | KTA38-G5 | Cummins (India) | Stamford S6L1D-E41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 424 engine `QST30-G4` | tổ máy `CG1100E-H1 CONTACT` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: Stamford S6L1D-E41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 424 engine `QST30-G4` | tổ máy `CG1100E-H1` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: Stamford S6L1D-E41 | hãng: Cummins | 
   - nguồn: `| CG1100E-H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | QST30-G4 | Cummins (USA) | Stamford S6L1D-E41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 424 alternator `S6L1D-E41` | tổ máy `CG1100E-H1 CONTACT` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: QST30-G4 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 424 alternator `S6L1D-E41` | tổ máy `CG1100E-H1` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: QST30-G4 | hãng: Stamford | 
   - nguồn: `| CG1100E-H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | QST30-G4 | Cummins (USA) | Stamford S6L1D-E41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 425 engine `KTA38-G9` | tổ máy `CG1250-H1 CONTACT` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: Stamford S6L1D-F41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 425 engine `KTA38-G9` | tổ máy `CG1250-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: Stamford S6L1D-F41 | hãng: Cummins | 
   - nguồn: `| CG1250-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | KTA38-G9 | Cummins (India) | Stamford S6L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 425 alternator `S6L1D-F41` | tổ máy `CG1250-H1 CONTACT` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: KTA38-G9 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 425 alternator `S6L1D-F41` | tổ máy `CG1250-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: KTA38-G9 | hãng: Stamford | 
   - nguồn: `| CG1250-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | KTA38-G9 | Cummins (India) | Stamford S6L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 426 engine `QSK38-G2` | tổ máy `CG1250E-H1 CONTACT` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: Stamford S6L1D-F41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 426 engine `QSK38-G2` | tổ máy `CG1250E-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: Stamford S6L1D-F41 | hãng: Cummins | 
   - nguồn: `| CG1250E-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | QSK38-G2 | Cummins (UK) | Stamford S6L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 426 alternator `S6L1D-F41` | tổ máy `CG1250E-H1 CONTACT` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: QSK38-G2 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 426 alternator `S6L1D-F41` | tổ máy `CG1250E-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: QSK38-G2 | hãng: Stamford | 
   - nguồn: `| CG1250E-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | QSK38-G2 | Cummins (UK) | Stamford S6L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 427 engine `KTA50-G3` | tổ máy `CG1375-H1 CONTACT` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: Stamford S6L1D-G41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 427 engine `KTA50-G3` | tổ máy `CG1375-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: Stamford S6L1D-G41 | hãng: Cummins | 
   - nguồn: `| CG1375-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | KTA50-G3 | Cummins (India) | Stamford S6L1D-G41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 427 alternator `S6L1D-G41` | tổ máy `CG1375-H1 CONTACT` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: KTA50-G3 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 427 alternator `S6L1D-G41` | tổ máy `CG1375-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: KTA50-G3 | hãng: Stamford | 
   - nguồn: `| CG1375-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | KTA50-G3 | Cummins (India) | Stamford S6L1D-G41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 428 engine `QSK38-G3` | tổ máy `CG1375E-H1 CONTACT` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: Stamford S6L1D-G41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 428 engine `QSK38-G3` | tổ máy `CG1375E-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: Stamford S6L1D-G41 | hãng: Cummins | 
   - nguồn: `| CG1375E-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | QSK38-G3 | Cummins (UK) | Stamford S6L1D-G41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 428 alternator `S6L1D-G41` | tổ máy `CG1375E-H1 CONTACT` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: QSK38-G3 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 428 alternator `S6L1D-G41` | tổ máy `CG1375E-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: QSK38-G3 | hãng: Stamford | 
   - nguồn: `| CG1375E-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | QSK38-G3 | Cummins (UK) | Stamford S6L1D-G41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 429 engine `KTA50-G8` | tổ máy `CG1500-H1 CONTACT` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: Stamford S6L1D-H41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 429 engine `KTA50-G8` | tổ máy `CG1500-H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: Stamford S6L1D-H41 | hãng: Cummins | 
   - nguồn: `| CG1500-H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | KTA50-G8 | Cummins (India) | Stamford S6L1D-H41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 429 alternator `S6L1D-H41` | tổ máy `CG1500-H1 CONTACT` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: KTA50-G8 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 429 alternator `S6L1D-H41` | tổ máy `CG1500-H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: KTA50-G8 | hãng: Stamford | 
   - nguồn: `| CG1500-H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | KTA50-G8 | Cummins (India) | Stamford S6L1D-H41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 430 engine `QSK50-G3` | tổ máy `CG1500N-H1 CONTACT` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: Stamford S6L1D-H41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 430 engine `QSK50-G3` | tổ máy `CG1500N-H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: Stamford S6L1D-H41 | hãng: Cummins | 
   - nguồn: `| CG1500N-H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | QSK50-G3 | Cummins (India) | Stamford S6L1D-H41 | Click Here |`
-- **MỚI** n103 b2 dòng 430 alternator `S6L1D-H41` | tổ máy `CG1500N-H1 CONTACT` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: QSK50-G3 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 430 alternator `S6L1D-H41` | tổ máy `CG1500N-H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: QSK50-G3 | hãng: Stamford | 
   - nguồn: `| CG1500N-H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | QSK50-G3 | Cummins (India) | Stamford S6L1D-H41 | Click Here |`
-- **MỚI** n103 b2 dòng 431 engine `KTA50-GS8` | tổ máy `CG1650-H1 CONTACT` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: Stamford S7L1D-C41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 431 engine `KTA50-GS8` | tổ máy `CG1650-H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: Stamford S7L1D-C41 | hãng: Cummins | 
   - nguồn: `| CG1650-H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | KTA50-GS8 | Cummins (India) | Stamford S7L1D-C41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 431 alternator `S7L1D-C41` | tổ máy `CG1650-H1 CONTACT` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: KTA50-GS8 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 431 alternator `S7L1D-C41` | tổ máy `CG1650-H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: KTA50-GS8 | hãng: Stamford | 
   - nguồn: `| CG1650-H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | KTA50-GS8 | Cummins (India) | Stamford S7L1D-C41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 432 engine `QSK50-G4` | tổ máy `CG1700E-H1 CONTACT` | prime 1540 kVA / 1232 kW; standby 1700 kVA / 1360 kW | khác: Stamford S7L1D-C41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 432 engine `QSK50-G4` | tổ máy `CG1700E-H1` | prime 1540 kVA / 1232 kW; standby 1700 kVA / 1360 kW | khác: Stamford S7L1D-C41 | hãng: Cummins | 
   - nguồn: `| CG1700E-H1 CONTACT | 1700KVA/ 1360KW | 1540KVA/ 1232KW | QSK50-G4 | Cummins (India) | Stamford S7L1D-C41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 432 alternator `S7L1D-C41` | tổ máy `CG1700E-H1 CONTACT` | prime 1540 kVA / 1232 kW; standby 1700 kVA / 1360 kW | khác: QSK50-G4 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 432 alternator `S7L1D-C41` | tổ máy `CG1700E-H1` | prime 1540 kVA / 1232 kW; standby 1700 kVA / 1360 kW | khác: QSK50-G4 | hãng: Stamford | 
   - nguồn: `| CG1700E-H1 CONTACT | 1700KVA/ 1360KW | 1540KVA/ 1232KW | QSK50-G4 | Cummins (India) | Stamford S7L1D-C41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 433 engine `QSK50-G7` | tổ máy `CG1825E-H1 CONTACT` | prime 1650 kVA / 1320 kW; standby 1825 kVA / 1460 kW | khác: Stamford S7L1D-D41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 433 engine `QSK50-G7` | tổ máy `CG1825E-H1` | prime 1650 kVA / 1320 kW; standby 1825 kVA / 1460 kW | khác: Stamford S7L1D-D41 | hãng: Cummins | 
   - nguồn: `| CG1825E-H1 CONTACT | 1825KVA/ 1460KW | 1650KVA/ 1320KW | QSK50-G7 | Cummins (India) | Stamford S7L1D-D41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 433 alternator `S7L1D-D41` | tổ máy `CG1825E-H1 CONTACT` | prime 1650 kVA / 1320 kW; standby 1825 kVA / 1460 kW | khác: QSK50-G7 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 433 alternator `S7L1D-D41` | tổ máy `CG1825E-H1` | prime 1650 kVA / 1320 kW; standby 1825 kVA / 1460 kW | khác: QSK50-G7 | hãng: Stamford | 
   - nguồn: `| CG1825E-H1 CONTACT | 1825KVA/ 1460KW | 1650KVA/ 1320KW | QSK50-G7 | Cummins (India) | Stamford S7L1D-D41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 434 engine `QSK60-G3` | tổ máy `CG2063EV1-H1 CONTACT` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: Stamford S7L1D-F41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 434 engine `QSK60-G3` | tổ máy `CG2063EV1-H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: Stamford S7L1D-F41 | hãng: Cummins | 
   - nguồn: `| CG2063EV1-H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | QSK60-G3 | Cummins (UK) | Stamford S7L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 434 alternator `S7L1D-F41` | tổ máy `CG2063EV1-H1 CONTACT` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: QSK60-G3 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 434 alternator `S7L1D-F41` | tổ máy `CG2063EV1-H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: QSK60-G3 | hãng: Stamford | 
   - nguồn: `| CG2063EV1-H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | QSK60-G3 | Cummins (UK) | Stamford S7L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 435 engine `QSK60-G7` | tổ máy `CG2063V2E/H1 CONTACT` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: Stamford S7L1D-F41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 435 engine `QSK60-G7` | tổ máy `CG2063V2E/H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: Stamford S7L1D-F41 | hãng: Cummins | 
   - nguồn: `| CG2063V2E/H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | QSK60-G7 | Cummins (UK) | Stamford S7L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 435 alternator `S7L1D-F41` | tổ máy `CG2063V2E/H1 CONTACT` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: QSK60-G7 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 435 alternator `S7L1D-F41` | tổ máy `CG2063V2E/H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: QSK60-G7 | hãng: Stamford | 
   - nguồn: `| CG2063V2E/H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | QSK60-G7 | Cummins (UK) | Stamford S7L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 436 engine `QSK60-G4` | tổ máy `CG2200E-H1 CONTACT` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: Stamford S7L1D-G41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 436 engine `QSK60-G4` | tổ máy `CG2200E-H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: Stamford S7L1D-G41 | hãng: Cummins | 
   - nguồn: `| CG2200E-H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | QSK60-G4 | Cummins (UK) | Stamford S7L1D-G41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 436 alternator `S7L1D-G41` | tổ máy `CG2200E-H1 CONTACT` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: QSK60-G4 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 436 alternator `S7L1D-G41` | tổ máy `CG2200E-H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: QSK60-G4 | hãng: Stamford | 
   - nguồn: `| CG2200E-H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | QSK60-G4 | Cummins (UK) | Stamford S7L1D-G41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 437 engine `QSK60-G8` | tổ máy `CG2500EV1-H1 CONTACT` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: Stamford S7L1D-H41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 437 engine `QSK60-G8` | tổ máy `CG2500EV1-H1` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: Stamford S7L1D-H41 | hãng: Cummins | 
   - nguồn: `| CG2500EV1-H1 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | QSK60-G8 | Cummins (UK) | Stamford S7L1D-H41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 437 alternator `S7L1D-H41` | tổ máy `CG2500EV1-H1 CONTACT` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: QSK60-G8 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 437 alternator `S7L1D-H41` | tổ máy `CG2500EV1-H1` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: QSK60-G8 | hãng: Stamford | 
   - nguồn: `| CG2500EV1-H1 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | QSK60-G8 | Cummins (UK) | Stamford S7L1D-H41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 438 engine `QSK60-G21` | tổ máy `CG2500EV2-H1 CONTACT` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: Stamford S7L1D-H41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 438 engine `QSK60-G21` | tổ máy `CG2500EV2-H1` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: Stamford S7L1D-H41 | hãng: Cummins | 
   - nguồn: `| CG2500EV2-H1 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | QSK60-G21 | Cummins (UK) | Stamford S7L1D-H41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 438 alternator `S7L1D-H41` | tổ máy `CG2500EV2-H1 CONTACT` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: QSK60-G21 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 438 alternator `S7L1D-H41` | tổ máy `CG2500EV2-H1` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: QSK60-G21 | hãng: Stamford | 
   - nguồn: `| CG2500EV2-H1 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | QSK60-G21 | Cummins (UK) | Stamford S7L1D-H41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 439 engine `QSK60-G23` | tổ máy `CG2750EV1-H1 CONTACT` | prime 2500 kVA / 2000 kW; standby 2750 kVA / 2200 kW | khác: Stamford S7L1D-J41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 439 engine `QSK60-G23` | tổ máy `CG2750EV1-H1` | prime 2500 kVA / 2000 kW; standby 2750 kVA / 2200 kW | khác: Stamford S7L1D-J41 | hãng: Cummins | 
   - nguồn: `| CG2750EV1-H1 CONTACT | 2750KVA/ 2200KW | 2500KVA/ 2000KW | QSK60-G23 | Cummins (UK) | Stamford S7L1D-J41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 439 alternator `S7L1D-J41` | tổ máy `CG2750EV1-H1 CONTACT` | prime 2500 kVA / 2000 kW; standby 2750 kVA / 2200 kW | khác: QSK60-G23 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 439 alternator `S7L1D-J41` | tổ máy `CG2750EV1-H1` | prime 2500 kVA / 2000 kW; standby 2750 kVA / 2200 kW | khác: QSK60-G23 | hãng: Stamford | 
   - nguồn: `| CG2750EV1-H1 CONTACT | 2750KVA/ 2200KW | 2500KVA/ 2000KW | QSK60-G23 | Cummins (UK) | Stamford S7L1D-J41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 440 engine `QSK78-G18` | tổ máy `CG2750EV2-H1 CONTACT` | prime 2500 kVA / 2000 kW; standby 2750 kVA / 2200 kW | khác: Stamford S7L1D-J41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 440 engine `QSK78-G18` | tổ máy `CG2750EV2-H1` | prime 2500 kVA / 2000 kW; standby 2750 kVA / 2200 kW | khác: Stamford S7L1D-J41 | hãng: Cummins | 
   - nguồn: `| CG2750EV2-H1 CONTACT | 2750KVA/ 2200KW | 2500KVA/ 2000KW | QSK78-G18 | Cummins (UK) | Stamford S7L1D-J41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 440 alternator `S7L1D-J41` | tổ máy `CG2750EV2-H1 CONTACT` | prime 2500 kVA / 2000 kW; standby 2750 kVA / 2200 kW | khác: QSK78-G18 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 440 alternator `S7L1D-J41` | tổ máy `CG2750EV2-H1` | prime 2500 kVA / 2000 kW; standby 2750 kVA / 2200 kW | khác: QSK78-G18 | hãng: Stamford | 
   - nguồn: `| CG2750EV2-H1 CONTACT | 2750KVA/ 2200KW | 2500KVA/ 2000KW | QSK78-G18 | Cummins (UK) | Stamford S7L1D-J41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 441 engine `QSK78-G9` | tổ máy `CG3000E-H1 CONTACT` | prime 2750 kVA / 2200 kW; standby 3000 kVA / 2400 kW | khác: Stamford S7L1D-K41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 441 engine `QSK78-G9` | tổ máy `CG3000E-H1` | prime 2750 kVA / 2200 kW; standby 3000 kVA / 2400 kW | khác: Stamford S7L1D-K41 | hãng: Cummins | 
   - nguồn: `| CG3000E-H1 CONTACT | 3000KVA/ 2400KW | 2750KVA/ 2200KW | QSK78-G9 | Cummins (UK) | Stamford S7L1D-K41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 441 alternator `S7L1D-K41` | tổ máy `CG3000E-H1 CONTACT` | prime 2750 kVA / 2200 kW; standby 3000 kVA / 2400 kW | khác: QSK78-G9 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 441 alternator `S7L1D-K41` | tổ máy `CG3000E-H1` | prime 2750 kVA / 2200 kW; standby 3000 kVA / 2400 kW | khác: QSK78-G9 | hãng: Stamford | 
   - nguồn: `| CG3000E-H1 CONTACT | 3000KVA/ 2400KW | 2750KVA/ 2200KW | QSK78-G9 | Cummins (UK) | Stamford S7L1D-K41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 442 engine `NTA855-GA` | tổ máy `CC250/H1 CONTACT` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: Stamford UCDI274J | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 442 engine `NTA855-GA` | tổ máy `CC250/H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: Stamford UCDI274J | hãng: Cummins | 
   - nguồn: `| CC250/H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | NTA855-GA | Cummins (CCEC CHINA) | Stamford UCDI274J | Click Here | Download`
-- **MỚI** n103 b2 dòng 442 alternator `UCDI274J` | tổ máy `CC250/H1 CONTACT` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: NTA855-GA | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 442 alternator `UCDI274J` | tổ máy `CC250/H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: NTA855-GA | hãng: Stamford | 
   - nguồn: `| CC250/H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | NTA855-GA | Cummins (CCEC CHINA) | Stamford UCDI274J | Click Here | Download`
-- **MỚI** n103 b2 dòng 443 engine `NTA855-GA` | tổ máy `CC275/H1 CONTACT` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: Stamford UCDI274K | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 443 engine `NTA855-GA` | tổ máy `CC275/H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: Stamford UCDI274K | hãng: Cummins | 
   - nguồn: `| CC275/H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | NTA855-GA | Cummins (CCEC CHINA) | Stamford UCDI274K | Click Here | Download`
-- **MỚI** n103 b2 dòng 443 alternator `UCDI274K` | tổ máy `CC275/H1 CONTACT` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: NTA855-GA | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 443 alternator `UCDI274K` | tổ máy `CC275/H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: NTA855-GA | hãng: Stamford | 
   - nguồn: `| CC275/H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | NTA855-GA | Cummins (CCEC CHINA) | Stamford UCDI274K | Click Here | Download`
-- **MỚI** n103 b2 dòng 444 engine `NTA855-G1A` | tổ máy `CC315/H1 CONTACT` | prime 275 kVA / 220 kW; standby 313 kVA / 250 kW | khác: Stamford S4L1D-D41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 444 engine `NTA855-G1A` | tổ máy `CC315/H1` | prime 275 kVA / 220 kW; standby 313 kVA / 250 kW | khác: Stamford S4L1D-D41 | hãng: Cummins | 
   - nguồn: `| CC315/H1 CONTACT | 313KVA/ 250KW | 275KVA/ 220KW | NTA855-G1A | Cummins (CCEC CHINA) | Stamford S4L1D-D41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 444 alternator `S4L1D-D41` | tổ máy `CC315/H1 CONTACT` | prime 275 kVA / 220 kW; standby 313 kVA / 250 kW | khác: NTA855-G1A | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 444 alternator `S4L1D-D41` | tổ máy `CC315/H1` | prime 275 kVA / 220 kW; standby 313 kVA / 250 kW | khác: NTA855-G1A | hãng: Stamford | 
   - nguồn: `| CC315/H1 CONTACT | 313KVA/ 250KW | 275KVA/ 220KW | NTA855-G1A | Cummins (CCEC CHINA) | Stamford S4L1D-D41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 445 engine `NTA855-G1B` | tổ máy `CC350/H1 CONTACT` | prime 312 kVA / 250 kW; standby 344 kVA / 275 kW | khác: Stamford S4L1D-E41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 445 engine `NTA855-G1B` | tổ máy `CC350/H1` | prime 312 kVA / 250 kW; standby 344 kVA / 275 kW | khác: Stamford S4L1D-E41 | hãng: Cummins | 
   - nguồn: `| CC350/H1 CONTACT | 344KVA/ 275KW | 312KVA/ 250KW | NTA855-G1B | Cummins (CCEC CHINA) | Stamford S4L1D-E41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 445 alternator `S4L1D-E41` | tổ máy `CC350/H1 CONTACT` | prime 312 kVA / 250 kW; standby 344 kVA / 275 kW | khác: NTA855-G1B | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 445 alternator `S4L1D-E41` | tổ máy `CC350/H1` | prime 312 kVA / 250 kW; standby 344 kVA / 275 kW | khác: NTA855-G1B | hãng: Stamford | 
   - nguồn: `| CC350/H1 CONTACT | 344KVA/ 275KW | 312KVA/ 250KW | NTA855-G1B | Cummins (CCEC CHINA) | Stamford S4L1D-E41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 446 engine `NTA855-G2A` | tổ máy `CC388V1/H1 CONTACT` | prime 350 kVA / 280 kW; standby 388 kVA / 310 kW | khác: Stamford S4L1D-E41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 446 engine `NTA855-G2A` | tổ máy `CC388V1/H1` | prime 350 kVA / 280 kW; standby 388 kVA / 310 kW | khác: Stamford S4L1D-E41 | hãng: Cummins | 
   - nguồn: `| CC388V1/H1 CONTACT | 388KVA/ 310KW | 350KVA/ 280KW | NTA855-G2A | Cummins (CCEC CHINA) | Stamford S4L1D-E41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 446 alternator `S4L1D-E41` | tổ máy `CC388V1/H1 CONTACT` | prime 350 kVA / 280 kW; standby 388 kVA / 310 kW | khác: NTA855-G2A | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 446 alternator `S4L1D-E41` | tổ máy `CC388V1/H1` | prime 350 kVA / 280 kW; standby 388 kVA / 310 kW | khác: NTA855-G2A | hãng: Stamford | 
   - nguồn: `| CC388V1/H1 CONTACT | 388KVA/ 310KW | 350KVA/ 280KW | NTA855-G2A | Cummins (CCEC CHINA) | Stamford S4L1D-E41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 447 engine `NTA855-G4` | tổ máy `CC388V2/H1 CONTACT` | prime 350 kVA / 280 kW; standby 388 kVA / 310 kW | khác: Stamford S4L1D-E41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 447 engine `NTA855-G4` | tổ máy `CC388V2/H1` | prime 350 kVA / 280 kW; standby 388 kVA / 310 kW | khác: Stamford S4L1D-E41 | hãng: Cummins | 
   - nguồn: `| CC388V2/H1 CONTACT | 388KVA/ 310KW | 350KVA/ 280KW | NTA855-G4 | Cummins (CCEC CHINA) | Stamford S4L1D-E41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 447 alternator `S4L1D-E41` | tổ máy `CC388V2/H1 CONTACT` | prime 350 kVA / 280 kW; standby 388 kVA / 310 kW | khác: NTA855-G4 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 447 alternator `S4L1D-E41` | tổ máy `CC388V2/H1` | prime 350 kVA / 280 kW; standby 388 kVA / 310 kW | khác: NTA855-G4 | hãng: Stamford | 
   - nguồn: `| CC388V2/H1 CONTACT | 388KVA/ 310KW | 350KVA/ 280KW | NTA855-G4 | Cummins (CCEC CHINA) | Stamford S4L1D-E41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 448 engine `NTAA855-G7` | tổ máy `CC415V1/H1 CONTACT` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: Stamford S4L1D-F41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 448 engine `NTAA855-G7` | tổ máy `CC415V1/H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: Stamford S4L1D-F41 | hãng: Cummins | 
   - nguồn: `| CC415V1/H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | NTAA855-G7 | Cummins (CCEC CHINA) | Stamford S4L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 448 alternator `S4L1D-F41` | tổ máy `CC415V1/H1 CONTACT` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: NTAA855-G7 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 448 alternator `S4L1D-F41` | tổ máy `CC415V1/H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: NTAA855-G7 | hãng: Stamford | 
   - nguồn: `| CC415V1/H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | NTAA855-G7 | Cummins (CCEC CHINA) | Stamford S4L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 449 engine `QSNT-G3` | tổ máy `CC415V2/H1 CONTACT` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: Stamford S4L1D-F41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 449 engine `QSNT-G3` | tổ máy `CC415V2/H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: Stamford S4L1D-F41 | hãng: Cummins | 
   - nguồn: `| CC415V2/H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | QSNT-G3 | Cummins (CCEC CHINA) | Stamford S4L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 449 alternator `S4L1D-F41` | tổ máy `CC415V2/H1 CONTACT` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: QSNT-G3 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 449 alternator `S4L1D-F41` | tổ máy `CC415V2/H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: QSNT-G3 | hãng: Stamford | 
   - nguồn: `| CC415V2/H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | QSNT-G3 | Cummins (CCEC CHINA) | Stamford S4L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 450 engine `KTA19-G2` | tổ máy `CC415V3/H1 CONTACT` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: Stamford S4L1D-F41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 450 engine `KTA19-G2` | tổ máy `CC415V3/H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: Stamford S4L1D-F41 | hãng: Cummins | 
   - nguồn: `| CC415V3/H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | KTA19-G2 | Cummins (CCEC CHINA) | Stamford S4L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 450 alternator `S4L1D-F41` | tổ máy `CC415V3/H1 CONTACT` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: KTA19-G2 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 450 alternator `S4L1D-F41` | tổ máy `CC415V3/H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: KTA19-G2 | hãng: Stamford | 
   - nguồn: `| CC415V3/H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | KTA19-G2 | Cummins (CCEC CHINA) | Stamford S4L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 451 engine `QSNT-G3` | tổ máy `CC450/H1 CONTACT` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: Stamford S4L1D-F41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 451 engine `QSNT-G3` | tổ máy `CC450/H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: Stamford S4L1D-F41 | hãng: Cummins | 
   - nguồn: `| CC450/H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | QSNT-G3 | Cummins (CCEC CHINA) | Stamford S4L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 451 alternator `S4L1D-F41` | tổ máy `CC450/H1 CONTACT` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: QSNT-G3 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 451 alternator `S4L1D-F41` | tổ máy `CC450/H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: QSNT-G3 | hãng: Stamford | 
   - nguồn: `| CC450/H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | QSNT-G3 | Cummins (CCEC CHINA) | Stamford S4L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 452 engine `KTA19-G3` | tổ máy `CC500/H1 CONTACT` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: Stamford S4L1D-G41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 452 engine `KTA19-G3` | tổ máy `CC500/H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: Stamford S4L1D-G41 | hãng: Cummins | 
   - nguồn: `| CC500/H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | KTA19-G3 | Cummins (CCEC CHINA) | Stamford S4L1D-G41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 452 alternator `S4L1D-G41` | tổ máy `CC500/H1 CONTACT` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: KTA19-G3 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 452 alternator `S4L1D-G41` | tổ máy `CC500/H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: KTA19-G3 | hãng: Stamford | 
   - nguồn: `| CC500/H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | KTA19-G3 | Cummins (CCEC CHINA) | Stamford S4L1D-G41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 453 engine `QSNT-G4X` | tổ máy `CC500N/H1 CONTACT` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: Stamford S4L1D-G41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 453 engine `QSNT-G4X` | tổ máy `CC500N/H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: Stamford S4L1D-G41 | hãng: Cummins | 
   - nguồn: `| CC500N/H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | QSNT-G4X | Cummins (CCEC CHINA) | Stamford S4L1D-G41 | Click Here |`
-- **MỚI** n103 b2 dòng 453 alternator `S4L1D-G41` | tổ máy `CC500N/H1 CONTACT` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: QSNT-G4X | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 453 alternator `S4L1D-G41` | tổ máy `CC500N/H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: QSNT-G4X | hãng: Stamford | 
   - nguồn: `| CC500N/H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | QSNT-G4X | Cummins (CCEC CHINA) | Stamford S4L1D-G41 | Click Here |`
-- **MỚI** n103 b2 dòng 454 engine `KTA19-G3A` | tổ máy `CC550V1/H1 CONTACT` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: Stamford S5L1D-C41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 454 engine `KTA19-G3A` | tổ máy `CC550V1/H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: Stamford S5L1D-C41 | hãng: Cummins | 
   - nguồn: `| CC550V1/H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | KTA19-G3A | Cummins (CCEC CHINA) | Stamford S5L1D-C41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 454 alternator `S5L1D-C41` | tổ máy `CC550V1/H1 CONTACT` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: KTA19-G3A | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 454 alternator `S5L1D-C41` | tổ máy `CC550V1/H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: KTA19-G3A | hãng: Stamford | 
   - nguồn: `| CC550V1/H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | KTA19-G3A | Cummins (CCEC CHINA) | Stamford S5L1D-C41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 455 engine `KTA19-G4` | tổ máy `CC550V2/H1 CONTACT` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: Stamford S5L1D-C41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 455 engine `KTA19-G4` | tổ máy `CC550V2/H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: Stamford S5L1D-C41 | hãng: Cummins | 
   - nguồn: `| CC550V2/H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | KTA19-G4 | Cummins (CCEC CHINA) | Stamford S5L1D-C41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 455 alternator `S5L1D-C41` | tổ máy `CC550V2/H1 CONTACT` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: KTA19-G4 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 455 alternator `S5L1D-C41` | tổ máy `CC550V2/H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: KTA19-G4 | hãng: Stamford | 
   - nguồn: `| CC550V2/H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | KTA19-G4 | Cummins (CCEC CHINA) | Stamford S5L1D-C41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 456 engine `KTA19-G8` | tổ máy `CC630V1/H1 CONTACT` | prime 563 kVA / 450 kW; standby 631 kVA / 505 kW | khác: Stamford S5L1D-E41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 456 engine `KTA19-G8` | tổ máy `CC630V1/H1` | prime 563 kVA / 450 kW; standby 631 kVA / 505 kW | khác: Stamford S5L1D-E41 | hãng: Cummins | 
   - nguồn: `| CC630V1/H1 CONTACT | 631KVA/ 505KW | 563KVA/ 450KW | KTA19-G8 | Cummins (CCEC CHINA) | Stamford S5L1D-E41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 456 alternator `S5L1D-E41` | tổ máy `CC630V1/H1 CONTACT` | prime 563 kVA / 450 kW; standby 631 kVA / 505 kW | khác: KTA19-G8 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 456 alternator `S5L1D-E41` | tổ máy `CC630V1/H1` | prime 563 kVA / 450 kW; standby 631 kVA / 505 kW | khác: KTA19-G8 | hãng: Stamford | 
   - nguồn: `| CC630V1/H1 CONTACT | 631KVA/ 505KW | 563KVA/ 450KW | KTA19-G8 | Cummins (CCEC CHINA) | Stamford S5L1D-E41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 457 engine `KTAA19-G6` | tổ máy `CC630V2/H1 CONTACT` | prime 563 kVA / 450 kW; standby 631 kVA / 505 kW | khác: Stamford S5L1D-E41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 457 engine `KTAA19-G6` | tổ máy `CC630V2/H1` | prime 563 kVA / 450 kW; standby 631 kVA / 505 kW | khác: Stamford S5L1D-E41 | hãng: Cummins | 
   - nguồn: `| CC630V2/H1 CONTACT | 631KVA/ 505KW | 563KVA/ 450KW | KTAA19-G6 | Cummins (CCEC CHINA) | Stamford S5L1D-E41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 457 alternator `S5L1D-E41` | tổ máy `CC630V2/H1 CONTACT` | prime 563 kVA / 450 kW; standby 631 kVA / 505 kW | khác: KTAA19-G6 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 457 alternator `S5L1D-E41` | tổ máy `CC630V2/H1` | prime 563 kVA / 450 kW; standby 631 kVA / 505 kW | khác: KTAA19-G6 | hãng: Stamford | 
   - nguồn: `| CC630V2/H1 CONTACT | 631KVA/ 505KW | 563KVA/ 450KW | KTAA19-G6 | Cummins (CCEC CHINA) | Stamford S5L1D-E41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 458 engine `KTA19-G8A` | tổ máy `CC688V1/H1 CONTACT` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: Stamford S5L1D-F41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 458 engine `KTA19-G8A` | tổ máy `CC688V1/H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: Stamford S5L1D-F41 | hãng: Cummins | 
   - nguồn: `| CC688V1/H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | KTA19-G8A | Cummins (CCEC CHINA) | Stamford S5L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 458 alternator `S5L1D-F41` | tổ máy `CC688V1/H1 CONTACT` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: KTA19-G8A | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 458 alternator `S5L1D-F41` | tổ máy `CC688V1/H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: KTA19-G8A | hãng: Stamford | 
   - nguồn: `| CC688V1/H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | KTA19-G8A | Cummins (CCEC CHINA) | Stamford S5L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 459 engine `KTAA19-G6A` | tổ máy `CC688V2/H1 CONTACT` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: Stamford S5L1D-F41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 459 engine `KTAA19-G6A` | tổ máy `CC688V2/H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: Stamford S5L1D-F41 | hãng: Cummins | 
   - nguồn: `| CC688V2/H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | KTAA19-G6A | Cummins (CCEC CHINA) | Stamford S5L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 459 alternator `S5L1D-F41` | tổ máy `CC688V2/H1 CONTACT` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: KTAA19-G6A | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 459 alternator `S5L1D-F41` | tổ máy `CC688V2/H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: KTAA19-G6A | hãng: Stamford | 
   - nguồn: `| CC688V2/H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | KTAA19-G6A | Cummins (CCEC CHINA) | Stamford S5L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 460 engine `QSK19-G4` | tổ máy `CC725/H1 CONTACT` | prime 650 kVA / 520 kW; standby 725 kVA / 580 kW | khác: Stamford S5L1D-F41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 460 engine `QSK19-G4` | tổ máy `CC725/H1` | prime 650 kVA / 520 kW; standby 725 kVA / 580 kW | khác: Stamford S5L1D-F41 | hãng: Cummins | 
   - nguồn: `| CC725/H1 CONTACT | 725KVA/ 580KW | 650KVA/ 520KW | QSK19-G4 | Cummins (CCEC CHINA) | Stamford S5L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 460 alternator `S5L1D-F41` | tổ máy `CC725/H1 CONTACT` | prime 650 kVA / 520 kW; standby 725 kVA / 580 kW | khác: QSK19-G4 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 460 alternator `S5L1D-F41` | tổ máy `CC725/H1` | prime 650 kVA / 520 kW; standby 725 kVA / 580 kW | khác: QSK19-G4 | hãng: Stamford | 
   - nguồn: `| CC725/H1 CONTACT | 725KVA/ 580KW | 650KVA/ 520KW | QSK19-G4 | Cummins (CCEC CHINA) | Stamford S5L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 461 engine `KTA19-G9A` | tổ máy `CC750/H1 CONTACT` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: Stamford S5L1D-G41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 461 engine `KTA19-G9A` | tổ máy `CC750/H1` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: Stamford S5L1D-G41 | hãng: Cummins | 
   - nguồn: `| CC750/H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | KTA19-G9A | Cummins (CCEC CHINA) | Stamford S5L1D-G41 | Click Here |`
-- **MỚI** n103 b2 dòng 461 alternator `S5L1D-G41` | tổ máy `CC750/H1 CONTACT` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: KTA19-G9A | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 461 alternator `S5L1D-G41` | tổ máy `CC750/H1` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: KTA19-G9A | hãng: Stamford | 
   - nguồn: `| CC750/H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | KTA19-G9A | Cummins (CCEC CHINA) | Stamford S5L1D-G41 | Click Here |`
-- **MỚI** n103 b2 dòng 462 engine `QSK19-G11` | tổ máy `CC750N/H1 CONTACT` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: Stamford S5L1D-G41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 462 engine `QSK19-G11` | tổ máy `CC750N/H1` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: Stamford S5L1D-G41 | hãng: Cummins | 
   - nguồn: `| CC750N/H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | QSK19-G11 | Cummins (CCEC CHINA) | Stamford S5L1D-G41 | Click Here |`
-- **MỚI** n103 b2 dòng 462 alternator `S5L1D-G41` | tổ máy `CC750N/H1 CONTACT` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: QSK19-G11 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 462 alternator `S5L1D-G41` | tổ máy `CC750N/H1` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: QSK19-G11 | hãng: Stamford | 
   - nguồn: `| CC750N/H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | QSK19-G11 | Cummins (CCEC CHINA) | Stamford S5L1D-G41 | Click Here |`
-- **MỚI** n103 b2 dòng 463 engine `KT38-GA` | tổ máy `CC800/H1 CONTACT` | prime 725 kVA / 580 kW; standby 800 kVA / 640 kW | khác: Stamford S5L1D-H41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 463 engine `KT38-GA` | tổ máy `CC800/H1` | prime 725 kVA / 580 kW; standby 800 kVA / 640 kW | khác: Stamford S5L1D-H41 | hãng: Cummins | 
   - nguồn: `| CC800/H1 CONTACT | 800KVA/ 640KW | 725KVA/ 580KW | KT38-GA | Cummins (CCEC CHINA) | Stamford S5L1D-H41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 463 alternator `S5L1D-H41` | tổ máy `CC800/H1 CONTACT` | prime 725 kVA / 580 kW; standby 800 kVA / 640 kW | khác: KT38-GA | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 463 alternator `S5L1D-H41` | tổ máy `CC800/H1` | prime 725 kVA / 580 kW; standby 800 kVA / 640 kW | khác: KT38-GA | hãng: Stamford | 
   - nguồn: `| CC800/H1 CONTACT | 800KVA/ 640KW | 725KVA/ 580KW | KT38-GA | Cummins (CCEC CHINA) | Stamford S5L1D-H41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 464 engine `KTA38-G2` | tổ máy `CC825/H1 CONTACT` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: Stamford S5L1D-H41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 464 engine `KTA38-G2` | tổ máy `CC825/H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: Stamford S5L1D-H41 | hãng: Cummins | 
   - nguồn: `| CC825/H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | KTA38-G2 | Cummins (CCEC CHINA) | Stamford S5L1D-H41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 464 alternator `S5L1D-H41` | tổ máy `CC825/H1 CONTACT` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: KTA38-G2 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 464 alternator `S5L1D-H41` | tổ máy `CC825/H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: KTA38-G2 | hãng: Stamford | 
   - nguồn: `| CC825/H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | KTA38-G2 | Cummins (CCEC CHINA) | Stamford S5L1D-H41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 465 engine `KTA38-G2B` | tổ máy `CC900/H1 CONTACT` | prime 800 kVA / 640 kW; standby 900 kVA / 720 kW | khác: Stamford S6L1D-C41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 465 engine `KTA38-G2B` | tổ máy `CC900/H1` | prime 800 kVA / 640 kW; standby 900 kVA / 720 kW | khác: Stamford S6L1D-C41 | hãng: Cummins | 
   - nguồn: `| CC900/H1 CONTACT | 900KVA/ 720KW | 800KVA/ 640KW | KTA38-G2B | Cummins (CCEC CHINA) | Stamford S6L1D-C41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 465 alternator `S6L1D-C41` | tổ máy `CC900/H1 CONTACT` | prime 800 kVA / 640 kW; standby 900 kVA / 720 kW | khác: KTA38-G2B | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 465 alternator `S6L1D-C41` | tổ máy `CC900/H1` | prime 800 kVA / 640 kW; standby 900 kVA / 720 kW | khác: KTA38-G2B | hãng: Stamford | 
   - nguồn: `| CC900/H1 CONTACT | 900KVA/ 720KW | 800KVA/ 640KW | KTA38-G2B | Cummins (CCEC CHINA) | Stamford S6L1D-C41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 466 engine `KTA38-G2A` | tổ máy `CC1000/H1 CONTACT` | prime 910 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: Stamford S6L1D-D41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 466 engine `KTA38-G2A` | tổ máy `CC1000/H1` | prime 910 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: Stamford S6L1D-D41 | hãng: Cummins | 
   - nguồn: `| CC1000/H1 CONTACT | 1000KVA/ 800KW | 910KVA/ 720KW | KTA38-G2A | Cummins (CCEC CHINA) | Stamford S6L1D-D41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 466 alternator `S6L1D-D41` | tổ máy `CC1000/H1 CONTACT` | prime 910 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: KTA38-G2A | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 466 alternator `S6L1D-D41` | tổ máy `CC1000/H1` | prime 910 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: KTA38-G2A | hãng: Stamford | 
   - nguồn: `| CC1000/H1 CONTACT | 1000KVA/ 800KW | 910KVA/ 720KW | KTA38-G2A | Cummins (CCEC CHINA) | Stamford S6L1D-D41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 467 engine `KTA38-G5` | tổ máy `CC1100/H1 CONTACT` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: Stamford S6L1D-E41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 467 engine `KTA38-G5` | tổ máy `CC1100/H1` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: Stamford S6L1D-E41 | hãng: Cummins | 
   - nguồn: `| CC1100/H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | KTA38-G5 | Cummins (CCEC CHINA) | Stamford S6L1D-E41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 467 alternator `S6L1D-E41` | tổ máy `CC1100/H1 CONTACT` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: KTA38-G5 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 467 alternator `S6L1D-E41` | tổ máy `CC1100/H1` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: KTA38-G5 | hãng: Stamford | 
   - nguồn: `| CC1100/H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | KTA38-G5 | Cummins (CCEC CHINA) | Stamford S6L1D-E41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 468 engine `KTA38-G9` | tổ máy `CC1250/H1 CONTACT` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: Stamford S6L1D-F41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 468 engine `KTA38-G9` | tổ máy `CC1250/H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: Stamford S6L1D-F41 | hãng: Cummins | 
   - nguồn: `| CC1250/H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | KTA38-G9 | Cummins (CCEC CHINA) | Stamford S6L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 468 alternator `S6L1D-F41` | tổ máy `CC1250/H1 CONTACT` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: KTA38-G9 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 468 alternator `S6L1D-F41` | tổ máy `CC1250/H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: KTA38-G9 | hãng: Stamford | 
   - nguồn: `| CC1250/H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | KTA38-G9 | Cummins (CCEC CHINA) | Stamford S6L1D-F41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 469 engine `KTA50-G3` | tổ máy `CC1375/H1 CONTACT` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: Stamford S6L1D-G41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 469 engine `KTA50-G3` | tổ máy `CC1375/H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: Stamford S6L1D-G41 | hãng: Cummins | 
   - nguồn: `| CC1375/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | KTA50-G3 | Cummins (CCEC CHINA) | Stamford S6L1D-G41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 469 alternator `S6L1D-G41` | tổ máy `CC1375/H1 CONTACT` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: KTA50-G3 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 469 alternator `S6L1D-G41` | tổ máy `CC1375/H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: KTA50-G3 | hãng: Stamford | 
   - nguồn: `| CC1375/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | KTA50-G3 | Cummins (CCEC CHINA) | Stamford S6L1D-G41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 470 engine `QSK38-G5` | tổ máy `CC1375E/H1 CONTACT` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: Stamford S6L1D-G41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 470 engine `QSK38-G5` | tổ máy `CC1375E/H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: Stamford S6L1D-G41 | hãng: Cummins | 
   - nguồn: `| CC1375E/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | QSK38-G5 | Cummins (CCEC CHINA) | Stamford S6L1D-G41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 470 alternator `S6L1D-G41` | tổ máy `CC1375E/H1 CONTACT` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: QSK38-G5 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 470 alternator `S6L1D-G41` | tổ máy `CC1375E/H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: QSK38-G5 | hãng: Stamford | 
   - nguồn: `| CC1375E/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | QSK38-G5 | Cummins (CCEC CHINA) | Stamford S6L1D-G41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 471 engine `KTA38-G9A` | tổ máy `CC1375N/H1 CONTACT` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: Stamford S6L1D-G41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 471 engine `KTA38-G9A` | tổ máy `CC1375N/H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: Stamford S6L1D-G41 | hãng: Cummins | 
   - nguồn: `| CC1375N/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | KTA38-G9A | Cummins (CCEC CHINA) | Stamford S6L1D-G41 | Click Here |`
-- **MỚI** n103 b2 dòng 471 alternator `S6L1D-G41` | tổ máy `CC1375N/H1 CONTACT` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: KTA38-G9A | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 471 alternator `S6L1D-G41` | tổ máy `CC1375N/H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: KTA38-G9A | hãng: Stamford | 
   - nguồn: `| CC1375N/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | KTA38-G9A | Cummins (CCEC CHINA) | Stamford S6L1D-G41 | Click Here |`
-- **MỚI** n103 b2 dòng 472 engine `QSK38-G29` | tổ máy `CC1375N2/H1 CONTACT` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: Stamford S6L1D-G41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 472 engine `QSK38-G29` | tổ máy `CC1375N2/H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: Stamford S6L1D-G41 | hãng: Cummins | 
   - nguồn: `| CC1375N2/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | QSK38-G29 | Cummins (CCEC CHINA) | Stamford S6L1D-G41 | Click Here |`
-- **MỚI** n103 b2 dòng 472 alternator `S6L1D-G41` | tổ máy `CC1375N2/H1 CONTACT` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: QSK38-G29 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 472 alternator `S6L1D-G41` | tổ máy `CC1375N2/H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: QSK38-G29 | hãng: Stamford | 
   - nguồn: `| CC1375N2/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | QSK38-G29 | Cummins (CCEC CHINA) | Stamford S6L1D-G41 | Click Here |`
-- **MỚI** n103 b2 dòng 473 engine `KTA50-G8` | tổ máy `CC1500/H1 CONTACT` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: Stamford S6L1D-H41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 473 engine `KTA50-G8` | tổ máy `CC1500/H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: Stamford S6L1D-H41 | hãng: Cummins | 
   - nguồn: `| CC1500/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | KTA50-G8 | Cummins (CCEC CHINA) | Stamford S6L1D-H41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 473 alternator `S6L1D-H41` | tổ máy `CC1500/H1 CONTACT` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: KTA50-G8 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 473 alternator `S6L1D-H41` | tổ máy `CC1500/H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: KTA50-G8 | hãng: Stamford | 
   - nguồn: `| CC1500/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | KTA50-G8 | Cummins (CCEC CHINA) | Stamford S6L1D-H41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 474 engine `KTA50-G7E` | tổ máy `CC1500N/H1 CONTACT` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: Stamford S6L1D-H41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 474 engine `KTA50-G7E` | tổ máy `CC1500N/H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: Stamford S6L1D-H41 | hãng: Cummins | 
   - nguồn: `| CC1500N/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | KTA50-G7E | Cummins (CCEC CHINA) | Stamford S6L1D-H41 | Click Here |`
-- **MỚI** n103 b2 dòng 474 alternator `S6L1D-H41` | tổ máy `CC1500N/H1 CONTACT` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: KTA50-G7E | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 474 alternator `S6L1D-H41` | tổ máy `CC1500N/H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: KTA50-G7E | hãng: Stamford | 
   - nguồn: `| CC1500N/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | KTA50-G7E | Cummins (CCEC CHINA) | Stamford S6L1D-H41 | Click Here |`
-- **MỚI** n103 b2 dòng 475 engine `QSK38-G30` | tổ máy `CC1500N1/H1 CONTACT` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: Stamford S6L1D-H41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 475 engine `QSK38-G30` | tổ máy `CC1500N1/H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: Stamford S6L1D-H41 | hãng: Cummins | 
   - nguồn: `| CC1500N1/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | QSK38-G30 | Cummins (CCEC CHINA) | Stamford S6L1D-H41 | Click Here |`
-- **MỚI** n103 b2 dòng 475 alternator `S6L1D-H41` | tổ máy `CC1500N1/H1 CONTACT` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: QSK38-G30 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 475 alternator `S6L1D-H41` | tổ máy `CC1500N1/H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: QSK38-G30 | hãng: Stamford | 
   - nguồn: `| CC1500N1/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | QSK38-G30 | Cummins (CCEC CHINA) | Stamford S6L1D-H41 | Click Here |`
-- **MỚI** n103 b2 dòng 476 engine `KTA50-GS8` | tổ máy `CC1650/H1 CONTACT` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: Stamford S7L1D-C41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 476 engine `KTA50-GS8` | tổ máy `CC1650/H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: Stamford S7L1D-C41 | hãng: Cummins | 
   - nguồn: `| CC1650/H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | KTA50-GS8 | Cummins (CCEC CHINA) | Stamford S7L1D-C41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 476 alternator `S7L1D-C41` | tổ máy `CC1650/H1 CONTACT` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: KTA50-GS8 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 476 alternator `S7L1D-C41` | tổ máy `CC1650/H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: KTA50-GS8 | hãng: Stamford | 
   - nguồn: `| CC1650/H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | KTA50-GS8 | Cummins (CCEC CHINA) | Stamford S7L1D-C41 | Click Here | Download`
-- **MỚI** n103 b2 dòng 477 engine `KTA50-G8E` | tổ máy `CC1650N/H1 CONTACT` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: Stamford S7L1D-C41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 477 engine `KTA50-G8E` | tổ máy `CC1650N/H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: Stamford S7L1D-C41 | hãng: Cummins | 
   - nguồn: `| CC1650N/H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | KTA50-G8E | Cummins (CCEC CHINA) | Stamford S7L1D-C41 | Click Here |`
-- **MỚI** n103 b2 dòng 477 alternator `S7L1D-C41` | tổ máy `CC1650N/H1 CONTACT` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: KTA50-G8E | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 477 alternator `S7L1D-C41` | tổ máy `CC1650N/H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: KTA50-G8E | hãng: Stamford | 
   - nguồn: `| CC1650N/H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | KTA50-G8E | Cummins (CCEC CHINA) | Stamford S7L1D-C41 | Click Here |`
-- **MỚI** n103 b2 dòng 478 engine `QSK38-G31` | tổ máy `CC1650N1/H1 CONTACT` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: Stamford S7L1D-C41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 478 engine `QSK38-G31` | tổ máy `CC1650N1/H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: Stamford S7L1D-C41 | hãng: Cummins | 
   - nguồn: `| CC1650N1/H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | QSK38-G31 | Cummins (CCEC CHINA) | Stamford S7L1D-C41 | Click Here |`
-- **MỚI** n103 b2 dòng 478 alternator `S7L1D-C41` | tổ máy `CC1650N1/H1 CONTACT` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: QSK38-G31 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 478 alternator `S7L1D-C41` | tổ máy `CC1650N1/H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: QSK38-G31 | hãng: Stamford | 
   - nguồn: `| CC1650N1/H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | QSK38-G31 | Cummins (CCEC CHINA) | Stamford S7L1D-C41 | Click Here |`
-- **MỚI** n103 b2 dòng 479 engine `QSK50-G4` | tổ máy `CC1700/H1 CONTACT` | prime 1540 kVA / 1232 kW; standby 1700 kVA / 1360 kW | khác: Stamford S7L1D-C41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 479 engine `QSK50-G4` | tổ máy `CC1700/H1` | prime 1540 kVA / 1232 kW; standby 1700 kVA / 1360 kW | khác: Stamford S7L1D-C41 | hãng: Cummins | 
   - nguồn: `| CC1700/H1 CONTACT | 1700KVA/ 1360KW | 1540KVA/ 1232KW | QSK50-G4 | Cummins (CCEC CHINA) | Stamford S7L1D-C41 | Click Here |`
-- **MỚI** n103 b2 dòng 479 alternator `S7L1D-C41` | tổ máy `CC1700/H1 CONTACT` | prime 1540 kVA / 1232 kW; standby 1700 kVA / 1360 kW | khác: QSK50-G4 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 479 alternator `S7L1D-C41` | tổ máy `CC1700/H1` | prime 1540 kVA / 1232 kW; standby 1700 kVA / 1360 kW | khác: QSK50-G4 | hãng: Stamford | 
   - nguồn: `| CC1700/H1 CONTACT | 1700KVA/ 1360KW | 1540KVA/ 1232KW | QSK50-G4 | Cummins (CCEC CHINA) | Stamford S7L1D-C41 | Click Here |`
-- **MỚI** n103 b2 dòng 480 engine `QSK50-G7` | tổ máy `CC1825/H1 CONTACT` | prime 1650 kVA / 1320 kW; standby 1825 kVA / 1460 kW | khác: Stamford S7L1D-D41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 480 engine `QSK50-G7` | tổ máy `CC1825/H1` | prime 1650 kVA / 1320 kW; standby 1825 kVA / 1460 kW | khác: Stamford S7L1D-D41 | hãng: Cummins | 
   - nguồn: `| CC1825/H1 CONTACT | 1825KVA/ 1460KW | 1650KVA/ 1320KW | QSK50-G7 | Cummins (CCEC CHINA) | Stamford S7L1D-D41 | Click Here |`
-- **MỚI** n103 b2 dòng 480 alternator `S7L1D-D41` | tổ máy `CC1825/H1 CONTACT` | prime 1650 kVA / 1320 kW; standby 1825 kVA / 1460 kW | khác: QSK50-G7 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 480 alternator `S7L1D-D41` | tổ máy `CC1825/H1` | prime 1650 kVA / 1320 kW; standby 1825 kVA / 1460 kW | khác: QSK50-G7 | hãng: Stamford | 
   - nguồn: `| CC1825/H1 CONTACT | 1825KVA/ 1460KW | 1650KVA/ 1320KW | QSK50-G7 | Cummins (CCEC CHINA) | Stamford S7L1D-D41 | Click Here |`
-- **MỚI** n103 b2 dòng 481 engine `QSK38-G32` | tổ máy `CC1825N/H1 CONTACT` | prime 1650 kVA / 1320 kW; standby 1825 kVA / 1460 kW | khác: Stamford S7L1D-D41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 481 engine `QSK38-G32` | tổ máy `CC1825N/H1` | prime 1650 kVA / 1320 kW; standby 1825 kVA / 1460 kW | khác: Stamford S7L1D-D41 | hãng: Cummins | 
   - nguồn: `| CC1825N/H1 CONTACT | 1825KVA/ 1460KW | 1650KVA/ 1320KW | QSK38-G32 | Cummins (CCEC CHINA) | Stamford S7L1D-D41 | Click Here |`
-- **MỚI** n103 b2 dòng 481 alternator `S7L1D-D41` | tổ máy `CC1825N/H1 CONTACT` | prime 1650 kVA / 1320 kW; standby 1825 kVA / 1460 kW | khác: QSK38-G32 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 481 alternator `S7L1D-D41` | tổ máy `CC1825N/H1` | prime 1650 kVA / 1320 kW; standby 1825 kVA / 1460 kW | khác: QSK38-G32 | hãng: Stamford | 
   - nguồn: `| CC1825N/H1 CONTACT | 1825KVA/ 1460KW | 1650KVA/ 1320KW | QSK38-G32 | Cummins (CCEC CHINA) | Stamford S7L1D-D41 | Click Here |`
-- **MỚI** n103 b2 dòng 482 engine `KTA50-G15A` | tổ máy `CC1875/H1 CONTACT` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: Stamford S7L1D-E41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 482 engine `KTA50-G15A` | tổ máy `CC1875/H1` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: Stamford S7L1D-E41 | hãng: Cummins | 
   - nguồn: `| CC1875/H1 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | KTA50-G15A | Cummins (CCEC CHINA) | Stamford S7L1D-E41 | Click Here |`
-- **MỚI** n103 b2 dòng 482 alternator `S7L1D-E41` | tổ máy `CC1875/H1 CONTACT` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: KTA50-G15A | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 482 alternator `S7L1D-E41` | tổ máy `CC1875/H1` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: KTA50-G15A | hãng: Stamford | 
   - nguồn: `| CC1875/H1 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | KTA50-G15A | Cummins (CCEC CHINA) | Stamford S7L1D-E41 | Click Here |`
-- **MỚI** n103 b2 dòng 483 engine `KTA50-G15X` | tổ máy `CC1875N/H1 CONTACT` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: Stamford S7L1D-E41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 483 engine `KTA50-G15X` | tổ máy `CC1875N/H1` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: Stamford S7L1D-E41 | hãng: Cummins | 
   - nguồn: `| CC1875N/H1 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | KTA50-G15X | Cummins (CCEC CHINA) | Stamford S7L1D-E41 | Click Here |`
-- **MỚI** n103 b2 dòng 483 alternator `S7L1D-E41` | tổ máy `CC1875N/H1 CONTACT` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: KTA50-G15X | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 483 alternator `S7L1D-E41` | tổ máy `CC1875N/H1` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: KTA50-G15X | hãng: Stamford | 
   - nguồn: `| CC1875N/H1 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | KTA50-G15X | Cummins (CCEC CHINA) | Stamford S7L1D-E41 | Click Here |`
-- **MỚI** n103 b2 dòng 484 engine `QSK50-G13` | tổ máy `CC1875N1/H1 CONTACT` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: Stamford S7L1D-E41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 484 engine `QSK50-G13` | tổ máy `CC1875N1/H1` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: Stamford S7L1D-E41 | hãng: Cummins | 
   - nguồn: `| CC1875N1/H1 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | QSK50-G13 | Cummins (CCEC CHINA) | Stamford S7L1D-E41 | Click Here |`
-- **MỚI** n103 b2 dòng 484 alternator `S7L1D-E41` | tổ máy `CC1875N1/H1 CONTACT` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: QSK50-G13 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 484 alternator `S7L1D-E41` | tổ máy `CC1875N1/H1` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: QSK50-G13 | hãng: Stamford | 
   - nguồn: `| CC1875N1/H1 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | QSK50-G13 | Cummins (CCEC CHINA) | Stamford S7L1D-E41 | Click Here |`
-- **MỚI** n103 b2 dòng 485 engine `KTA50-G16A` | tổ máy `CC2063/H1 CONTACT` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: Stamford S7L1D-F41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 485 engine `KTA50-G16A` | tổ máy `CC2063/H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: Stamford S7L1D-F41 | hãng: Cummins | 
   - nguồn: `| CC2063/H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | KTA50-G16A | Cummins (CCEC CHINA) | Stamford S7L1D-F41 | Click Here |`
-- **MỚI** n103 b2 dòng 485 alternator `S7L1D-F41` | tổ máy `CC2063/H1 CONTACT` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: KTA50-G16A | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 485 alternator `S7L1D-F41` | tổ máy `CC2063/H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: KTA50-G16A | hãng: Stamford | 
   - nguồn: `| CC2063/H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | KTA50-G16A | Cummins (CCEC CHINA) | Stamford S7L1D-F41 | Click Here |`
-- **MỚI** n103 b2 dòng 486 engine `QSK50-G16` | tổ máy `CC2063N/H1 CONTACT` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: Stamford S7L1D-F41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 486 engine `QSK50-G16` | tổ máy `CC2063N/H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: Stamford S7L1D-F41 | hãng: Cummins | 
   - nguồn: `| CC2063N/H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | QSK50-G16 | Cummins (CCEC CHINA) | Stamford S7L1D-F41 | Click Here |`
-- **MỚI** n103 b2 dòng 486 alternator `S7L1D-F41` | tổ máy `CC2063N/H1 CONTACT` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: QSK50-G16 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 486 alternator `S7L1D-F41` | tổ máy `CC2063N/H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: QSK50-G16 | hãng: Stamford | 
   - nguồn: `| CC2063N/H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | QSK50-G16 | Cummins (CCEC CHINA) | Stamford S7L1D-F41 | Click Here |`
-- **MỚI** n103 b2 dòng 487 engine `KTA50-G16B` | tổ máy `CC2200/H1 CONTACT` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: Stamford S7L1D-G41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 487 engine `KTA50-G16B` | tổ máy `CC2200/H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: Stamford S7L1D-G41 | hãng: Cummins | 
   - nguồn: `| CC2200/H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | KTA50-G16B | Cummins (CCEC CHINA) | Stamford S7L1D-G41 | Click Here |`
-- **MỚI** n103 b2 dòng 487 alternator `S7L1D-G41` | tổ máy `CC2200/H1 CONTACT` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: KTA50-G16B | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 487 alternator `S7L1D-G41` | tổ máy `CC2200/H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: KTA50-G16B | hãng: Stamford | 
   - nguồn: `| CC2200/H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | KTA50-G16B | Cummins (CCEC CHINA) | Stamford S7L1D-G41 | Click Here |`
-- **MỚI** n103 b2 dòng 488 engine `QSK50-G17` | tổ máy `CC2200N/H1 CONTACT` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: Stamford S7L1D-G41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 488 engine `QSK50-G17` | tổ máy `CC2200N/H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: Stamford S7L1D-G41 | hãng: Cummins | 
   - nguồn: `| CC2200N/H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | QSK50-G17 | Cummins (CCEC CHINA) | Stamford S7L1D-G41 | Click Here |`
-- **MỚI** n103 b2 dòng 488 alternator `S7L1D-G41` | tổ máy `CC2200N/H1 CONTACT` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: QSK50-G17 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 488 alternator `S7L1D-G41` | tổ máy `CC2200N/H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: QSK50-G17 | hãng: Stamford | 
   - nguồn: `| CC2200N/H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | QSK50-G17 | Cummins (CCEC CHINA) | Stamford S7L1D-G41 | Click Here |`
-- **MỚI** n103 b2 dòng 489 engine `QSK50-G17` | tổ máy `CC2750/H1 CONTACT` | prime 2500 kVA / 2000 kW; standby 2750 kVA / 2200 kW | khác: Stamford S7L1D-J41 | hãng: Cummins | 
+- **MỚI** n103 b2 dòng 489 engine `QSK50-G17` | tổ máy `CC2750/H1` | prime 2500 kVA / 2000 kW; standby 2750 kVA / 2200 kW | khác: Stamford S7L1D-J41 | hãng: Cummins | 
   - nguồn: `| CC2750/H1 CONTACT | 2750KVA/ 2200KW | 2500KVA/ 2000KW | QSK50-G17 | Cummins (CCEC CHINA) | Stamford S7L1D-J41 | Click Here |`
-- **MỚI** n103 b2 dòng 489 alternator `S7L1D-J41` | tổ máy `CC2750/H1 CONTACT` | prime 2500 kVA / 2000 kW; standby 2750 kVA / 2200 kW | khác: QSK50-G17 | hãng: Stamford | 
+- **MỚI** n103 b2 dòng 489 alternator `S7L1D-J41` | tổ máy `CC2750/H1` | prime 2500 kVA / 2000 kW; standby 2750 kVA / 2200 kW | khác: QSK50-G17 | hãng: Stamford | 
   - nguồn: `| CC2750/H1 CONTACT | 2750KVA/ 2200KW | 2500KVA/ 2000KW | QSK50-G17 | Cummins (CCEC CHINA) | Stamford S7L1D-J41 | Click Here |`
-- **MỚI** n105 b4 dòng 9 engine `NTA855-G1` | tổ máy `CC340-H2 CONTACT` | prime 312 kVA / 250 kW; standby 344 kVA / 275 kW | khác: Stamford S4L1D-D41 | hãng: Cummins | 
+- **MỚI** n105 b4 dòng 9 engine `NTA855-G1` | tổ máy `CC340-H2` | prime 312 kVA / 250 kW; standby 344 kVA / 275 kW | khác: Stamford S4L1D-D41 | hãng: Cummins | 
   - nguồn: `| CC340-H2 CONTACT | 344KVA/ 275KW | 312KVA/ 250KW | NTA855-G1 | Cummins (CCEC CHINA) | Stamford S4L1D-D41 | Click Here`
-- **MỚI** n105 b4 dòng 9 alternator `S4L1D-D41` | tổ máy `CC340-H2 CONTACT` | prime 312 kVA / 250 kW; standby 344 kVA / 275 kW | khác: NTA855-G1 | hãng: Stamford | 
+- **MỚI** n105 b4 dòng 9 alternator `S4L1D-D41` | tổ máy `CC340-H2` | prime 312 kVA / 250 kW; standby 344 kVA / 275 kW | khác: NTA855-G1 | hãng: Stamford | 
   - nguồn: `| CC340-H2 CONTACT | 344KVA/ 275KW | 312KVA/ 250KW | NTA855-G1 | Cummins (CCEC CHINA) | Stamford S4L1D-D41 | Click Here`
-- **MỚI** n105 b4 dòng 10 engine `NTA855-G1B` | tổ máy `CC395-H2 CONTACT` | prime 350 kVA / 280 kW; standby 388 kVA / 310 kW | khác: Stamford S4L1D-D41 | hãng: Cummins | 
+- **MỚI** n105 b4 dòng 10 engine `NTA855-G1B` | tổ máy `CC395-H2` | prime 350 kVA / 280 kW; standby 388 kVA / 310 kW | khác: Stamford S4L1D-D41 | hãng: Cummins | 
   - nguồn: `| CC395-H2 CONTACT | 388KVA/ 310KW | 350KVA/ 280KW | NTA855-G1B | Cummins (CCEC CHINA) | Stamford S4L1D-D41 | Click Here`
-- **MỚI** n105 b4 dòng 10 alternator `S4L1D-D41` | tổ máy `CC395-H2 CONTACT` | prime 350 kVA / 280 kW; standby 388 kVA / 310 kW | khác: NTA855-G1B | hãng: Stamford | 
+- **MỚI** n105 b4 dòng 10 alternator `S4L1D-D41` | tổ máy `CC395-H2` | prime 350 kVA / 280 kW; standby 388 kVA / 310 kW | khác: NTA855-G1B | hãng: Stamford | 
   - nguồn: `| CC395-H2 CONTACT | 388KVA/ 310KW | 350KVA/ 280KW | NTA855-G1B | Cummins (CCEC CHINA) | Stamford S4L1D-D41 | Click Here`
-- **MỚI** n105 b4 dòng 11 engine `NTA855-G3` | tổ máy `CC412-H2 CONTACT` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: Stamford S4L1D-E41 | hãng: Cummins | 
+- **MỚI** n105 b4 dòng 11 engine `NTA855-G3` | tổ máy `CC412-H2` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: Stamford S4L1D-E41 | hãng: Cummins | 
   - nguồn: `| CC412-H2 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | NTA855-G3 | Cummins (CCEC CHINA) | Stamford S4L1D-E41 | Click Here`
-- **MỚI** n105 b4 dòng 11 alternator `S4L1D-E41` | tổ máy `CC412-H2 CONTACT` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: NTA855-G3 | hãng: Stamford | 
+- **MỚI** n105 b4 dòng 11 alternator `S4L1D-E41` | tổ máy `CC412-H2` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: NTA855-G3 | hãng: Stamford | 
   - nguồn: `| CC412-H2 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | NTA855-G3 | Cummins (CCEC CHINA) | Stamford S4L1D-E41 | Click Here`
-- **MỚI** n105 b4 dòng 12 engine `NTA855-G3` | tổ máy `CC450-H2 CONTACT` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: Stamford S4L1D-E41 | hãng: Cummins | 
+- **MỚI** n105 b4 dòng 12 engine `NTA855-G3` | tổ máy `CC450-H2` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: Stamford S4L1D-E41 | hãng: Cummins | 
   - nguồn: `| CC450-H2 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | NTA855-G3 | Cummins (CCEC CHINA) | Stamford S4L1D-E41 | Click Here`
-- **MỚI** n105 b4 dòng 12 alternator `S4L1D-E41` | tổ máy `CC450-H2 CONTACT` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: NTA855-G3 | hãng: Stamford | 
+- **MỚI** n105 b4 dòng 12 alternator `S4L1D-E41` | tổ máy `CC450-H2` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: NTA855-G3 | hãng: Stamford | 
   - nguồn: `| CC450-H2 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | NTA855-G3 | Cummins (CCEC CHINA) | Stamford S4L1D-E41 | Click Here`
-- **MỚI** n105 b4 dòng 13 engine `KTA19-G2` | tổ máy `CC500-H2 CONTACT` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: Stamford S4L1D-F41 | hãng: Cummins | 
+- **MỚI** n105 b4 dòng 13 engine `KTA19-G2` | tổ máy `CC500-H2` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: Stamford S4L1D-F41 | hãng: Cummins | 
   - nguồn: `| CC500-H2 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | KTA19-G2 | Cummins (CCEC CHINA) | Stamford S4L1D-F41 | Click Here`
-- **MỚI** n105 b4 dòng 13 alternator `S4L1D-F41` | tổ máy `CC500-H2 CONTACT` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: KTA19-G2 | hãng: Stamford | 
+- **MỚI** n105 b4 dòng 13 alternator `S4L1D-F41` | tổ máy `CC500-H2` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: KTA19-G2 | hãng: Stamford | 
   - nguồn: `| CC500-H2 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | KTA19-G2 | Cummins (CCEC CHINA) | Stamford S4L1D-F41 | Click Here`
-- **MỚI** n105 b4 dòng 14 engine `KTA19-G3` | tổ máy `CC560-H2 CONTACT` | prime 500 kVA / 400 kW; standby 563 kVA / 450 kW | khác: Stamford S4L1D-G41 | hãng: Cummins | 
+- **MỚI** n105 b4 dòng 14 engine `KTA19-G3` | tổ máy `CC560-H2` | prime 500 kVA / 400 kW; standby 563 kVA / 450 kW | khác: Stamford S4L1D-G41 | hãng: Cummins | 
   - nguồn: `| CC560-H2 CONTACT | 563KVA/ 450KW | 500KVA/ 400KW | KTA19-G3 | Cummins (CCEC CHINA) | Stamford S4L1D-G41 | Click Here`
-- **MỚI** n105 b4 dòng 14 alternator `S4L1D-G41` | tổ máy `CC560-H2 CONTACT` | prime 500 kVA / 400 kW; standby 563 kVA / 450 kW | khác: KTA19-G3 | hãng: Stamford | 
+- **MỚI** n105 b4 dòng 14 alternator `S4L1D-G41` | tổ máy `CC560-H2` | prime 500 kVA / 400 kW; standby 563 kVA / 450 kW | khác: KTA19-G3 | hãng: Stamford | 
   - nguồn: `| CC560-H2 CONTACT | 563KVA/ 450KW | 500KVA/ 400KW | KTA19-G3 | Cummins (CCEC CHINA) | Stamford S4L1D-G41 | Click Here`
-- **MỚI** n105 b4 dòng 15 engine `KTA19-G3A` | tổ máy `CC630-H2 CONTACT` | prime 563 kVA / 450 kW; standby 631 kVA / 505 kW | khác: Stamford S5L1D-D41 | hãng: Cummins | 
+- **MỚI** n105 b4 dòng 15 engine `KTA19-G3A` | tổ máy `CC630-H2` | prime 563 kVA / 450 kW; standby 631 kVA / 505 kW | khác: Stamford S5L1D-D41 | hãng: Cummins | 
   - nguồn: `| CC630-H2 CONTACT | 631KVA/ 505KW | 563KVA/ 450KW | KTA19-G3A | Cummins (CCEC CHINA) | Stamford S5L1D-D41 | Click Here`
-- **MỚI** n105 b4 dòng 15 alternator `S5L1D-D41` | tổ máy `CC630-H2 CONTACT` | prime 563 kVA / 450 kW; standby 631 kVA / 505 kW | khác: KTA19-G3A | hãng: Stamford | 
+- **MỚI** n105 b4 dòng 15 alternator `S5L1D-D41` | tổ máy `CC630-H2` | prime 563 kVA / 450 kW; standby 631 kVA / 505 kW | khác: KTA19-G3A | hãng: Stamford | 
   - nguồn: `| CC630-H2 CONTACT | 631KVA/ 505KW | 563KVA/ 450KW | KTA19-G3A | Cummins (CCEC CHINA) | Stamford S5L1D-D41 | Click Here`
-- **MỚI** n105 b4 dòng 16 engine `QSK19-G4` | tổ máy `CC688-H2 CONTACT` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: Stamford S5L1D-E41 | hãng: Cummins | 
+- **MỚI** n105 b4 dòng 16 engine `QSK19-G4` | tổ máy `CC688-H2` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: Stamford S5L1D-E41 | hãng: Cummins | 
   - nguồn: `| CC688-H2 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | QSK19-G4 | Cummins (CCEC CHINA) | Stamford S5L1D-E41 | Click Here`
-- **MỚI** n105 b4 dòng 16 alternator `S5L1D-E41` | tổ máy `CC688-H2 CONTACT` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: QSK19-G4 | hãng: Stamford | 
+- **MỚI** n105 b4 dòng 16 alternator `S5L1D-E41` | tổ máy `CC688-H2` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: QSK19-G4 | hãng: Stamford | 
   - nguồn: `| CC688-H2 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | QSK19-G4 | Cummins (CCEC CHINA) | Stamford S5L1D-E41 | Click Here`
-- **MỚI** n105 b4 dòng 17 engine `QSK19-G8` | tổ máy `CC750-H2 CONTACT` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: Stamford S5L1D-E41 | hãng: Cummins | 
+- **MỚI** n105 b4 dòng 17 engine `QSK19-G8` | tổ máy `CC750-H2` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: Stamford S5L1D-E41 | hãng: Cummins | 
   - nguồn: `| CC750-H2 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | QSK19-G8 | Cummins (CCEC CHINA) | Stamford S5L1D-E41 | Click Here`
-- **MỚI** n105 b4 dòng 17 alternator `S5L1D-E41` | tổ máy `CC750-H2 CONTACT` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: QSK19-G8 | hãng: Stamford | 
+- **MỚI** n105 b4 dòng 17 alternator `S5L1D-E41` | tổ máy `CC750-H2` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: QSK19-G8 | hãng: Stamford | 
   - nguồn: `| CC750-H2 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | QSK19-G8 | Cummins (CCEC CHINA) | Stamford S5L1D-E41 | Click Here`
-- **MỚI** n107 b6 dòng 22 engine `QSX15-G7` | tổ máy `CG560-H2 CONTACT` | prime 500 kVA / 400 kW; standby 560 kVA / 450 kW | khác: Stamford S4L1D-G41 | hãng: Cummins | 
+- **MỚI** n107 b6 dòng 22 engine `QSX15-G7` | tổ máy `CG560-H2` | prime 500 kVA / 400 kW; standby 560 kVA / 450 kW | khác: Stamford S4L1D-G41 | hãng: Cummins | 
   - nguồn: `| CG560-H2 CONTACT | 560KVA/ 450KW | 500KVA/ 400KW | QSX15-G7 | Cummins (USA) | Stamford S4L1D-G41 | Click Here`
-- **MỚI** n107 b6 dòng 22 alternator `S4L1D-G41` | tổ máy `CG560-H2 CONTACT` | prime 500 kVA / 400 kW; standby 560 kVA / 450 kW | khác: QSX15-G7 | hãng: Stamford | 
+- **MỚI** n107 b6 dòng 22 alternator `S4L1D-G41` | tổ máy `CG560-H2` | prime 500 kVA / 400 kW; standby 560 kVA / 450 kW | khác: QSX15-G7 | hãng: Stamford | 
   - nguồn: `| CG560-H2 CONTACT | 560KVA/ 450KW | 500KVA/ 400KW | QSX15-G7 | Cummins (USA) | Stamford S4L1D-G41 | Click Here`
-- **MỚI** n107 b6 dòng 23 engine `QSX15-G9` | tổ máy `CG625V1-H2 CONTACT` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: Stamford S5L1D-D41 | hãng: Cummins | 
+- **MỚI** n107 b6 dòng 23 engine `QSX15-G9` | tổ máy `CG625V1-H2` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: Stamford S5L1D-D41 | hãng: Cummins | 
   - nguồn: `| CG625V1-H2 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | QSX15-G9 | Cummins (USA) | Stamford S5L1D-D41 | Click Here`
-- **MỚI** n107 b6 dòng 23 alternator `S5L1D-D41` | tổ máy `CG625V1-H2 CONTACT` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: QSX15-G9 | hãng: Stamford | 
+- **MỚI** n107 b6 dòng 23 alternator `S5L1D-D41` | tổ máy `CG625V1-H2` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: QSX15-G9 | hãng: Stamford | 
   - nguồn: `| CG625V1-H2 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | QSX15-G9 | Cummins (USA) | Stamford S5L1D-D41 | Click Here`
-- **MỚI** n107 b6 dòng 24 engine `KTA19-G4` | tổ máy `CG625V2-H2 CONTACT` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: Stamford S5L1D-D41 | hãng: Cummins | 
+- **MỚI** n107 b6 dòng 24 engine `KTA19-G4` | tổ máy `CG625V2-H2` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: Stamford S5L1D-D41 | hãng: Cummins | 
   - nguồn: `| CG625V2-H2 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | KTA19-G4 | Cummins (USA) | Stamford S5L1D-D41 | Click Here`
-- **MỚI** n107 b6 dòng 24 alternator `S5L1D-D41` | tổ máy `CG625V2-H2 CONTACT` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: KTA19-G4 | hãng: Stamford | 
+- **MỚI** n107 b6 dòng 24 alternator `S5L1D-D41` | tổ máy `CG625V2-H2` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: KTA19-G4 | hãng: Stamford | 
   - nguồn: `| CG625V2-H2 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | KTA19-G4 | Cummins (USA) | Stamford S5L1D-D41 | Click Here`
-- **MỚI** n107 b6 dòng 25 engine `QSK19-G4` | tổ máy `CG680-H2 CONTACT` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: Stamford S5L1D-E41 | hãng: Cummins | 
+- **MỚI** n107 b6 dòng 25 engine `QSK19-G4` | tổ máy `CG680-H2` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: Stamford S5L1D-E41 | hãng: Cummins | 
   - nguồn: `| CG680-H2 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | QSK19-G4 | Cummins (USA) | Stamford S5L1D-E41 | Click Here`
-- **MỚI** n107 b6 dòng 25 alternator `S5L1D-E41` | tổ máy `CG680-H2 CONTACT` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: QSK19-G4 | hãng: Stamford | 
+- **MỚI** n107 b6 dòng 25 alternator `S5L1D-E41` | tổ máy `CG680-H2` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: QSK19-G4 | hãng: Stamford | 
   - nguồn: `| CG680-H2 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | QSK19-G4 | Cummins (USA) | Stamford S5L1D-E41 | Click Here`
-- **MỚI** n107 b6 dòng 26 engine `QSK19-G5` | tổ máy `CG750V1-H2 CONTACT` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: Stamford S5L1D-F41 | hãng: Cummins | 
+- **MỚI** n107 b6 dòng 26 engine `QSK19-G5` | tổ máy `CG750V1-H2` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: Stamford S5L1D-F41 | hãng: Cummins | 
   - nguồn: `| CG750V1-H2 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | QSK19-G5 | Cummins (India) | Stamford S5L1D-F41 | Click Here`
-- **MỚI** n107 b6 dòng 26 alternator `S5L1D-F41` | tổ máy `CG750V1-H2 CONTACT` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: QSK19-G5 | hãng: Stamford | 
+- **MỚI** n107 b6 dòng 26 alternator `S5L1D-F41` | tổ máy `CG750V1-H2` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: QSK19-G5 | hãng: Stamford | 
   - nguồn: `| CG750V1-H2 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | QSK19-G5 | Cummins (India) | Stamford S5L1D-F41 | Click Here`
 - **MẤT** n109 b8 dòng 48 engine `NTA855-G1` | tổ máy `CC340-H2 CONTACT` | prime 312 kVA / 250 kW; standby 344 kVA / 275 kW | khác: Stamford S4L1D-D41 | hãng: Cummins |  | ⚠ gộp vào n105 b4 dòng 9
   - nguồn: `| CC340-H2 CONTACT | 344KVA/ 275KW | 312KVA/ 250KW | NTA855-G1 | Cummins (CCEC CHINA) | Stamford S4L1D-D41 | Click Here`
@@ -2039,9 +2103,3309 @@ Mới 388, mất 18 (18 gộp vào bản ghi khác qua `also`), đổi 2940 (th�
   - nguồn: `| CC750-H2 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | QSK19-G8 | Cummins (CCEC CHINA) | Stamford S5L1D-E41 | Click Here`
 - **MẤT** n109 b8 dòng 56 alternator `S5L1D-E41` | tổ máy `CC750-H2 CONTACT` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: QSK19-G8 | hãng: Stamford |  | ⚠ gộp vào n105 b4 dòng 17
   - nguồn: `| CC750-H2 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | QSK19-G8 | Cummins (CCEC CHINA) | Stamford S5L1D-E41 | Click Here`
-- **ĐỔI** n103 b2 dòng 262 engine `16KTA76-G31` | tổ máy `SC3250-H1 CONTACT` | prime 3000 kVA / 2400 kW; standby 3250 kVA / 2600 kW | khác: ∅ | hãng: ∅ | 
-  - đổi: makes: [{"name":"Cummins","via":"tiêu đề cột"}] → []
+- **ĐỔI** n101 b0 dòng 0 engine `M4M045D` | tổ máy `O38-H1` | prime 35 kVA / 28 kW; standby 38 kVA / 30 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O38-H1 CONTACT" → "O38-H1"
+  - nguồn: `| O38-H1 CONTACT | 38KVA/ 30KW | 35KVA/ 28KW | M4M045D | OMDL-30-4 | OMD4800 | Click Here`
+- **ĐỔI** n101 b0 dòng 1 engine `M4M075D` | tổ máy `O63-H1` | prime 56 kVA / 45 kW; standby 63 kVA / 50 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O63-H1 CONTACT" → "O63-H1"
+  - nguồn: `| O63-H1 CONTACT | 63KVA/ 50KW | 56KVA/ 45KW | M4M075D | OMDL-50-4 | OMD4800 | Click Here`
+- **ĐỔI** n101 b0 dòng 2 engine `M6M132D` | tổ máy `O94-H1` | prime 88 kVA / 70 kW; standby 94 kVA / 75 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O94-H1 CONTACT" → "O94-H1"
+  - nguồn: `| O94-H1 CONTACT | 94KVA/ 75KW | 88KVA/ 70KW | M6M132D | OMDL-75-4 | OMD4800 | Click Here`
+- **ĐỔI** n101 b0 dòng 3 engine `M6M165D` | tổ máy `O125-H1` | prime 113 kVA / 90 kW; standby 125 kVA / 100 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O125-H1 CONTACT" → "O125-H1"
+  - nguồn: `| O125-H1 CONTACT | 125KVA/ 100KW | 113KVA/ 90KW | M6M165D | OMDL-100-4 | OMD4800 | Click Here`
+- **ĐỔI** n101 b0 dòng 4 engine `M6M198D` | tổ máy `O150-H1` | prime 138 kVA / 110 kW; standby 150 kVA / 120 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O150-H1 CONTACT" → "O150-H1"
+  - nguồn: `| O150-H1 CONTACT | 150KVA/ 120KW | 138KVA/ 110KW | M6M198D | OMDL-120-4 | OMD4800 | Click Here`
+- **ĐỔI** n101 b0 dòng 5 engine `M6M231D` | tổ máy `O188-H1` | prime 170 kVA / 136 kW; standby 188 kVA / 150 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O188-H1 CONTACT" → "O188-H1"
+  - nguồn: `| O188-H1 CONTACT | 188KVA/ 150KW | 170KVA/ 136KW | M6M231D | OMDL-150-4 | OMD4800 | Click Here`
+- **ĐỔI** n101 b0 dòng 6 engine `M6M312D` | tổ máy `O250-H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O250-H1 CONTACT" → "O250-H1"
+  - nguồn: `| O250-H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | M6M312D | OMDL-200-4 | OMD7800 | Click Here`
+- **ĐỔI** n101 b0 dòng 7 engine `M6M408D` | tổ máy `O275-H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O275-H1 CONTACT" → "O275-H1"
+  - nguồn: `| O275-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | M6M408D | OMDL-250-4 | OMD7800 | Click Here`
+- **ĐỔI** n101 b0 dòng 8 engine `M6M448D` | tổ máy `O350-H1` | prime 313 kVA / 250 kW; standby 350 kVA / 280 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O350-H1 CONTACT" → "O350-H1"
+  - nguồn: `| O350-H1 CONTACT | 350KVA/ 280KW | 313KVA/ 250KW | M6M448D | OMDL-300-4 | OMD7800 | Click Here`
+- **ĐỔI** n101 b0 dòng 9 engine `M6M544D` | tổ máy `O388-H1` | prime 350 kVA / 280 kW; standby 388 kVA / 310 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O388-H1 CONTACT" → "O388-H1"
+  - nguồn: `| O388-H1 CONTACT | 388KVA/ 310KW | 350KVA/ 280KW | M6M544D | OMDL-350-4 | OMD7800 | Click Here`
+- **ĐỔI** n101 b0 dòng 10 engine `M6M571D` | tổ máy `O450-H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O450-H1 CONTACT" → "O450-H1"
+  - nguồn: `| O450-H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | M6M571D | OMDL-400-4 | OMD6110 | Click Here`
+- **ĐỔI** n101 b0 dòng 11 engine `M16G700D` | tổ máy `O500-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O500-H1 CONTACT" → "O500-H1"
+  - nguồn: `| O500-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | M16G700D | OMDT-500-4 | OMD6110 | Click Here`
+- **ĐỔI** n101 b0 dòng 12 engine `M25G700D` | tổ máy `O563-H1` | prime 500 kVA / 400 kW; standby 563 kVA / 450 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O563-H1 CONTACT" → "O563-H1"
+  - nguồn: `| O563-H1 CONTACT | 563KVA/ 450KW | 500KVA/ 400KW | M25G700D | OMDT-500-4 | OMD6110 | Click Here`
+- **ĐỔI** n101 b0 dòng 13 engine `M25G748D` | tổ máy `O625-H1` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O625-H1 CONTACT" → "O625-H1"
+  - nguồn: `| O625-H1 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | M25G748D | OMDT-550-4 | OMD6110 | Click Here`
+- **ĐỔI** n101 b0 dòng 14 engine `M27G830D` | tổ máy `O688-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O688-H1 CONTACT" → "O688-H1"
+  - nguồn: `| O688-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | M27G830D | OMDT-600-4 | OMD6110 | Click Here`
+- **ĐỔI** n101 b0 dòng 15 engine `M27G900D` | tổ máy `O750-H1` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O750-H1 CONTACT" → "O750-H1"
+  - nguồn: `| O750-H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | M27G900D | OMDT-650-4 | OMD6110 | Click Here`
+- **ĐỔI** n101 b0 dòng 16 engine `M27G990D` | tổ máy `O800-H1` | prime 725 kVA / 580 kW; standby 800 kVA / 640 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O800-H1 CONTACT" → "O800-H1"
+  - nguồn: `| O800-H1 CONTACT | 800KVA/ 640KW | 725KVA/ 580KW | M27G990D | OMDT-700-4 | OMD6110 | Click Here`
+- **ĐỔI** n101 b0 dòng 17 engine `M27G1060D` | tổ máy `O825-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O825-H1 CONTACT" → "O825-H1"
+  - nguồn: `| O825-H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | M27G1060D | OMDT-750-4 | OMD6110 | Click Here`
+- **ĐỔI** n101 b0 dòng 18 engine `M28G1120D` | tổ máy `O880-H1` | prime 800 kVA / 640 kW; standby 880 kVA / 704 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O880-H1 CONTACT" → "O880-H1"
+  - nguồn: `| O880-H1 CONTACT | 880KVA/ 704KW | 800KVA/ 640KW | M28G1120D | OMDT-800-4 | OMD6110 | Click Here`
+- **ĐỔI** n101 b0 dòng 19 engine `M30G1210D` | tổ máy `O1025-H1` | prime 938 kVA / 750 kW; standby 1025 kVA / 820 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O1025-H1 CONTACT" → "O1025-H1"
+  - nguồn: `| O1025-H1 CONTACT | 1025KVA/ 820KW | 938KVA/ 750KW | M30G1210D | OMDT-850-4 | OMD6110 | Click Here`
+- **ĐỔI** n101 b0 dòng 20 engine `M30G1310D` | tổ máy `O1100-H1` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O1100-H1 CONTACT" → "O1100-H1"
+  - nguồn: `| O1100-H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | M30G1310D | OMDT-900-4 | OMD6110 | Click Here`
+- **ĐỔI** n101 b0 dòng 21 engine `M30G1500D` | tổ máy `O1125-H1` | prime 1025 kVA / 820 kW; standby 1125 kVA / 900 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O1125-H1 CONTACT" → "O1125-H1"
+  - nguồn: `| O1125-H1 CONTACT | 1125KVA/ 900KW | 1025KVA/ 820KW | M30G1500D | OMDT-1000-4 | OMD6110 | Click Here`
+- **ĐỔI** n101 b0 dòng 22 engine `M30G1600D` | tổ máy `O1188-H1` | prime 1125 kVA / 900 kW; standby 1188 kVA / 950 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O1188-H1 CONTACT" → "O1188-H1"
+  - nguồn: `| O1188-H1 CONTACT | 1188KVA/ 950KW | 1125KVA/ 900KW | M30G1600D | OMDT-1100-4 | OMD6110 | Click Here`
+- **ĐỔI** n101 b0 dòng 23 engine `M30G1650D` | tổ máy `O1250-H1` | prime 1150 kVA / 920 kW; standby 1250 kVA / 1000 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "O1250-H1 CONTACT" → "O1250-H1"
+  - nguồn: `| O1250-H1 CONTACT | 1250KVA/ 1000KW | 1150KVA/ 920KW | M30G1650D | OMDT-1200-4 | OMD6110 | Click Here`
+- **ĐỔI** n102 b1 dòng 0 engine `4B3.9-G11` | tổ máy `CD23/H1` | prime 20 kVA / 16 kW; standby 23 kVA / 18 kW | khác: Stamford S0L2-G1 | hãng: Cummins | 
+  - đổi: genset: "CD23/H1 CONTACT" → "CD23/H1"
+  - nguồn: `| CD23/H1 CONTACT | 23KVA/ 18KW | 20KVA/ 16KW | 4B3.9-G11 | Cummins (China Dongfeng) | Stamford S0L2-G1 | Click Here |`
+- **ĐỔI** n102 b1 dòng 0 alternator `S0L2-G1` | tổ máy `CD23/H1` | prime 20 kVA / 16 kW; standby 23 kVA / 18 kW | khác: 4B3.9-G11 | hãng: Stamford | 
+  - đổi: genset: "CD23/H1 CONTACT" → "CD23/H1"
+  - nguồn: `| CD23/H1 CONTACT | 23KVA/ 18KW | 20KVA/ 16KW | 4B3.9-G11 | Cummins (China Dongfeng) | Stamford S0L2-G1 | Click Here |`
+- **ĐỔI** n102 b1 dòng 1 engine `4B3.9-G1` | tổ máy `CD28V1/H1` | prime 25 kVA / 20 kW; standby 28 kVA / 22 kW | khác: Stamford S0L2-P1 | hãng: Cummins | 
+  - đổi: genset: "CD28V1/H1 CONTACT" → "CD28V1/H1"
+  - nguồn: `| CD28V1/H1 CONTACT | 28KVA/ 22KW | 25KVA/ 20KW | 4B3.9-G1 | Cummins (China Dongfeng) | Stamford S0L2-P1 | Click Here |`
+- **ĐỔI** n102 b1 dòng 1 alternator `S0L2-P1` | tổ máy `CD28V1/H1` | prime 25 kVA / 20 kW; standby 28 kVA / 22 kW | khác: 4B3.9-G1 | hãng: Stamford | 
+  - đổi: genset: "CD28V1/H1 CONTACT" → "CD28V1/H1"
+  - nguồn: `| CD28V1/H1 CONTACT | 28KVA/ 22KW | 25KVA/ 20KW | 4B3.9-G1 | Cummins (China Dongfeng) | Stamford S0L2-P1 | Click Here |`
+- **ĐỔI** n102 b1 dòng 2 engine `4B3.9-G2` | tổ máy `CD28V2/H1` | prime 25 kVA / 20 kW; standby 28 kVA / 22 kW | khác: Stamford S0L2-P1 | hãng: Cummins | 
+  - đổi: genset: "CD28V2/H1 CONTACT" → "CD28V2/H1"
+  - nguồn: `| CD28V2/H1 CONTACT | 28KVA/ 22KW | 25KVA/ 20KW | 4B3.9-G2 | Cummins (China Dongfeng) | Stamford S0L2-P1 | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 2 alternator `S0L2-P1` | tổ máy `CD28V2/H1` | prime 25 kVA / 20 kW; standby 28 kVA / 22 kW | khác: 4B3.9-G2 | hãng: Stamford | 
+  - đổi: genset: "CD28V2/H1 CONTACT" → "CD28V2/H1"
+  - nguồn: `| CD28V2/H1 CONTACT | 28KVA/ 22KW | 25KVA/ 20KW | 4B3.9-G2 | Cummins (China Dongfeng) | Stamford S0L2-P1 | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 3 engine `QSB3.9-G31` | tổ máy `CD28N/H1` | prime 25 kVA / 20 kW; standby 28 kVA / 22 kW | khác: Stamford S0L2-P1 | hãng: Cummins | 
+  - đổi: genset: "CD28N/H1 CONTACT" → "CD28N/H1"
+  - nguồn: `| CD28N/H1 CONTACT | 28KVA/ 22KW | 25KVA/ 20KW | QSB3.9-G31 | Cummins (China Dongfeng) | Stamford S0L2-P1 | Click Here |`
+- **ĐỔI** n102 b1 dòng 3 alternator `S0L2-P1` | tổ máy `CD28N/H1` | prime 25 kVA / 20 kW; standby 28 kVA / 22 kW | khác: QSB3.9-G31 | hãng: Stamford | 
+  - đổi: genset: "CD28N/H1 CONTACT" → "CD28N/H1"
+  - nguồn: `| CD28N/H1 CONTACT | 28KVA/ 22KW | 25KVA/ 20KW | QSB3.9-G31 | Cummins (China Dongfeng) | Stamford S0L2-P1 | Click Here |`
+- **ĐỔI** n102 b1 dòng 4 engine `4B3.9-G12` | tổ máy `CD33/H1` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: Stamford S1L2-J1 | hãng: Cummins | 
+  - đổi: genset: "CD33/H1 CONTACT" → "CD33/H1"
+  - nguồn: `| CD33/H1 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | 4B3.9-G12 | Cummins (China Dongfeng) | Stamford S1L2-J1 | Click Here |`
+- **ĐỔI** n102 b1 dòng 4 alternator `S1L2-J1` | tổ máy `CD33/H1` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: 4B3.9-G12 | hãng: Stamford | 
+  - đổi: genset: "CD33/H1 CONTACT" → "CD33/H1"
+  - nguồn: `| CD33/H1 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | 4B3.9-G12 | Cummins (China Dongfeng) | Stamford S1L2-J1 | Click Here |`
+- **ĐỔI** n102 b1 dòng 5 engine `4BT3.9-G1` | tổ máy `CD41V1/H1` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: Stamford S1L2-K1 | hãng: Cummins | 
+  - đổi: genset: "CD41V1/H1 CONTACT" → "CD41V1/H1"
+  - nguồn: `| CD41V1/H1 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | 4BT3.9-G1 | Cummins (China Dongfeng) | Stamford S1L2-K1 | Click Here |`
+- **ĐỔI** n102 b1 dòng 5 alternator `S1L2-K1` | tổ máy `CD41V1/H1` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: 4BT3.9-G1 | hãng: Stamford | 
+  - đổi: genset: "CD41V1/H1 CONTACT" → "CD41V1/H1"
+  - nguồn: `| CD41V1/H1 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | 4BT3.9-G1 | Cummins (China Dongfeng) | Stamford S1L2-K1 | Click Here |`
+- **ĐỔI** n102 b1 dòng 6 engine `4BT3.9-G2` | tổ máy `CD41V2/H1` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: Stamford S1L2-K1 | hãng: Cummins | 
+  - đổi: genset: "CD41V2/H1 CONTACT" → "CD41V2/H1"
+  - nguồn: `| CD41V2/H1 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | 4BT3.9-G2 | Cummins (China Dongfeng) | Stamford S1L2-K1 | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 6 alternator `S1L2-K1` | tổ máy `CD41V2/H1` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: 4BT3.9-G2 | hãng: Stamford | 
+  - đổi: genset: "CD41V2/H1 CONTACT" → "CD41V2/H1"
+  - nguồn: `| CD41V2/H1 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | 4BT3.9-G2 | Cummins (China Dongfeng) | Stamford S1L2-K1 | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 7 engine `QSB3.9-G33` | tổ máy `CD41N/H1` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: Stamford S1L2-K1 | hãng: Cummins | 
+  - đổi: genset: "CD41N/H1 CONTACT" → "CD41N/H1"
+  - nguồn: `| CD41N/H1 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | QSB3.9-G33 | Cummins (China Dongfeng) | Stamford S1L2-K1 | Click Here |`
+- **ĐỔI** n102 b1 dòng 7 alternator `S1L2-K1` | tổ máy `CD41N/H1` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: QSB3.9-G33 | hãng: Stamford | 
+  - đổi: genset: "CD41N/H1 CONTACT" → "CD41N/H1"
+  - nguồn: `| CD41N/H1 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | QSB3.9-G33 | Cummins (China Dongfeng) | Stamford S1L2-K1 | Click Here |`
+- **ĐỔI** n102 b1 dòng 8 engine `4BTA3.9-G2` | tổ máy `CD50/H1` | prime 45 kVA / 36 kW; standby 50 kVA / 40 kW | khác: Stamford S1L2-N1 | hãng: Cummins | 
+  - đổi: genset: "CD50/H1 CONTACT" → "CD50/H1"
+  - nguồn: `| CD50/H1 CONTACT | 50KVA/ 40KW | 45KVA/ 36KW | 4BTA3.9-G2 | Cummins (China Dongfeng) | Stamford S1L2-N1 | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 8 alternator `S1L2-N1` | tổ máy `CD50/H1` | prime 45 kVA / 36 kW; standby 50 kVA / 40 kW | khác: 4BTA3.9-G2 | hãng: Stamford | 
+  - đổi: genset: "CD50/H1 CONTACT" → "CD50/H1"
+  - nguồn: `| CD50/H1 CONTACT | 50KVA/ 40KW | 45KVA/ 36KW | 4BTA3.9-G2 | Cummins (China Dongfeng) | Stamford S1L2-N1 | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 9 engine `4BTA3.9-G2 (QC50/60E)` | tổ máy `CD56/H1` | prime 50 kVA / 40 kW; standby 56 kVA / 45 kW | khác: Stamford S1L2-R1 | hãng: Cummins |  | ⚠ model có ngoặc / gạch chéo
+  - đổi: genset: "CD56/H1 CONTACT" → "CD56/H1"
+  - nguồn: `| CD56/H1 CONTACT | 56KVA/ 45KW | 50KVA/ 40KW | 4BTA3.9-G2 (QC50/60E) | Cummins (China Dongfeng) | Stamford S1L2-R1 | Click Here |`
+- **ĐỔI** n102 b1 dòng 9 alternator `S1L2-R1` | tổ máy `CD56/H1` | prime 50 kVA / 40 kW; standby 56 kVA / 45 kW | khác: 4BTA3.9-G2 (QC50/60E) | hãng: Stamford | 
+  - đổi: genset: "CD56/H1 CONTACT" → "CD56/H1"
+  - nguồn: `| CD56/H1 CONTACT | 56KVA/ 45KW | 50KVA/ 40KW | 4BTA3.9-G2 (QC50/60E) | Cummins (China Dongfeng) | Stamford S1L2-R1 | Click Here |`
+- **ĐỔI** n102 b1 dòng 10 engine `4BTA3.9-G2` | tổ máy `CD65/H1` | prime 56 kVA / 45 kW; standby 63 kVA / 50 kW | khác: Stamford S1L2-Y1 | hãng: Cummins | 
+  - đổi: genset: "CD65/H1 CONTACT" → "CD65/H1"
+  - nguồn: `| CD65/H1 CONTACT | 63KVA/ 50KW | 56KVA/ 45KW | 4BTA3.9-G2 | Cummins (China Dongfeng) | Stamford S1L2-Y1 | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 10 alternator `S1L2-Y1` | tổ máy `CD65/H1` | prime 56 kVA / 45 kW; standby 63 kVA / 50 kW | khác: 4BTA3.9-G2 | hãng: Stamford | 
+  - đổi: genset: "CD65/H1 CONTACT" → "CD65/H1"
+  - nguồn: `| CD65/H1 CONTACT | 63KVA/ 50KW | 56KVA/ 45KW | 4BTA3.9-G2 | Cummins (China Dongfeng) | Stamford S1L2-Y1 | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 11 engine `4BTA3.9-G2 (QC58/67E)` | tổ máy `CD69V1/H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: Stamford S1L2-Y1 | hãng: Cummins |  | ⚠ model có ngoặc / gạch chéo
+  - đổi: genset: "CD69V1/H1 CONTACT" → "CD69V1/H1"
+  - nguồn: `| CD69V1/H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | 4BTA3.9-G2 (QC58/67E) | Cummins (China Dongfeng) | Stamford S1L2-Y1 | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 11 alternator `S1L2-Y1` | tổ máy `CD69V1/H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: 4BTA3.9-G2 (QC58/67E) | hãng: Stamford | 
+  - đổi: genset: "CD69V1/H1 CONTACT" → "CD69V1/H1"
+  - nguồn: `| CD69V1/H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | 4BTA3.9-G2 (QC58/67E) | Cummins (China Dongfeng) | Stamford S1L2-Y1 | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 12 engine `QSB3.9-G2` | tổ máy `CD69EV2/H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: Stamford S1L2-Y1 | hãng: Cummins | 
+  - đổi: genset: "CD69EV2/H1 CONTACT" → "CD69EV2/H1"
+  - nguồn: `| CD69EV2/H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | QSB3.9-G2 | Cummins (China Dongfeng) | Stamford S1L2-Y1 | Click Here |`
+- **ĐỔI** n102 b1 dòng 12 alternator `S1L2-Y1` | tổ máy `CD69EV2/H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: QSB3.9-G2 | hãng: Stamford | 
+  - đổi: genset: "CD69EV2/H1 CONTACT" → "CD69EV2/H1"
+  - nguồn: `| CD69EV2/H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | QSB3.9-G2 | Cummins (China Dongfeng) | Stamford S1L2-Y1 | Click Here |`
+- **ĐỔI** n102 b1 dòng 13 engine `QSB3.9-G35` | tổ máy `CD69N/H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: Stamford S1L2-Y1 | hãng: Cummins | 
+  - đổi: genset: "CD69N/H1 CONTACT" → "CD69N/H1"
+  - nguồn: `| CD69N/H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | QSB3.9-G35 | Cummins (China Dongfeng) | Stamford S1L2-Y1 | Click Here |`
+- **ĐỔI** n102 b1 dòng 13 alternator `S1L2-Y1` | tổ máy `CD69N/H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: QSB3.9-G35 | hãng: Stamford | 
+  - đổi: genset: "CD69N/H1 CONTACT" → "CD69N/H1"
+  - nguồn: `| CD69N/H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | QSB3.9-G35 | Cummins (China Dongfeng) | Stamford S1L2-Y1 | Click Here |`
+- **ĐỔI** n102 b1 dòng 14 engine `6BT5.9-G2` | tổ máy `CD85/H1` | prime 75 kVA / 60 kW; standby 83 kVA / 66 kW | khác: Stamford UCI224G | hãng: Cummins | 
+  - đổi: genset: "CD85/H1 CONTACT" → "CD85/H1"
+  - nguồn: `| CD85/H1 CONTACT | 83KVA/ 66KW | 75KVA/ 60KW | 6BT5.9-G2 | Cummins (China Dongfeng) | Stamford UCI224G | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 14 alternator `UCI224G` | tổ máy `CD85/H1` | prime 75 kVA / 60 kW; standby 83 kVA / 66 kW | khác: 6BT5.9-G2 | hãng: Stamford | 
+  - đổi: genset: "CD85/H1 CONTACT" → "CD85/H1"
+  - nguồn: `| CD85/H1 CONTACT | 83KVA/ 66KW | 75KVA/ 60KW | 6BT5.9-G2 | Cummins (China Dongfeng) | Stamford UCI224G | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 15 engine `4BTA3.9-G11` | tổ máy `CD90V1/H1` | prime 80 kVA / 64 kW; standby 90 kVA / 72 kW | khác: Stamford UCI224G | hãng: Cummins | 
+  - đổi: genset: "CD90V1/H1 CONTACT" → "CD90V1/H1"
+  - nguồn: `| CD90V1/H1 CONTACT | 90KVA/ 72KW | 80KVA/ 64KW | 4BTA3.9-G11 | Cummins (China Dongfeng) | Stamford UCI224G | Click Here |`
+- **ĐỔI** n102 b1 dòng 15 alternator `UCI224G` | tổ máy `CD90V1/H1` | prime 80 kVA / 64 kW; standby 90 kVA / 72 kW | khác: 4BTA3.9-G11 | hãng: Stamford | 
+  - đổi: genset: "CD90V1/H1 CONTACT" → "CD90V1/H1"
+  - nguồn: `| CD90V1/H1 CONTACT | 90KVA/ 72KW | 80KVA/ 64KW | 4BTA3.9-G11 | Cummins (China Dongfeng) | Stamford UCI224G | Click Here |`
+- **ĐỔI** n102 b1 dòng 16 engine `QSB3.9-G37` | tổ máy `CD90EV2/H1` | prime 80 kVA / 64 kW; standby 90 kVA / 72 kW | khác: Stamford UCI224G | hãng: Cummins | 
+  - đổi: genset: "CD90EV2/H1 CONTACT" → "CD90EV2/H1"
+  - nguồn: `| CD90EV2/H1 CONTACT | 90KVA/ 72KW | 80KVA/ 64KW | QSB3.9-G37 | Cummins (China Dongfeng) | Stamford UCI224G | Click Here |`
+- **ĐỔI** n102 b1 dòng 16 alternator `UCI224G` | tổ máy `CD90EV2/H1` | prime 80 kVA / 64 kW; standby 90 kVA / 72 kW | khác: QSB3.9-G37 | hãng: Stamford | 
+  - đổi: genset: "CD90EV2/H1 CONTACT" → "CD90EV2/H1"
+  - nguồn: `| CD90EV2/H1 CONTACT | 90KVA/ 72KW | 80KVA/ 64KW | QSB3.9-G37 | Cummins (China Dongfeng) | Stamford UCI224G | Click Here |`
+- **ĐỔI** n102 b1 dòng 17 engine `4BTA3.9-G13` | tổ máy `CD103V1/H1` | prime 94 kVA / 75 kW; standby 103 kVA / 82 kW | khác: Stamford UCI274C | hãng: Cummins | 
+  - đổi: genset: "CD103V1/H1 CONTACT" → "CD103V1/H1"
+  - nguồn: `| CD103V1/H1 CONTACT | 103KVA/ 82KW | 94KVA/ 75KW | 4BTA3.9-G13 | Cummins (China Dongfeng) | Stamford UCI274C | Click Here |`
+- **ĐỔI** n102 b1 dòng 17 alternator `UCI274C` | tổ máy `CD103V1/H1` | prime 94 kVA / 75 kW; standby 103 kVA / 82 kW | khác: 4BTA3.9-G13 | hãng: Stamford | 
+  - đổi: genset: "CD103V1/H1 CONTACT" → "CD103V1/H1"
+  - nguồn: `| CD103V1/H1 CONTACT | 103KVA/ 82KW | 94KVA/ 75KW | 4BTA3.9-G13 | Cummins (China Dongfeng) | Stamford UCI274C | Click Here |`
+- **ĐỔI** n102 b1 dòng 18 engine `6BT5.9-G1` | tổ máy `CD103V2/H1` | prime 94 kVA / 75 kW; standby 103 kVA / 82 kW | khác: Stamford UCI274C | hãng: Cummins | 
+  - đổi: genset: "CD103V2/H1 CONTACT" → "CD103V2/H1"
+  - nguồn: `| CD103V2/H1 CONTACT | 103KVA/ 82KW | 94KVA/ 75KW | 6BT5.9-G1 | Cummins (China Dongfeng) | Stamford UCI274C | Click Here |`
+- **ĐỔI** n102 b1 dòng 18 alternator `UCI274C` | tổ máy `CD103V2/H1` | prime 94 kVA / 75 kW; standby 103 kVA / 82 kW | khác: 6BT5.9-G1 | hãng: Stamford | 
+  - đổi: genset: "CD103V2/H1 CONTACT" → "CD103V2/H1"
+  - nguồn: `| CD103V2/H1 CONTACT | 103KVA/ 82KW | 94KVA/ 75KW | 6BT5.9-G1 | Cummins (China Dongfeng) | Stamford UCI274C | Click Here |`
+- **ĐỔI** n102 b1 dòng 19 engine `6BT5.9-G2 (QC86/100E)` | tổ máy `CD103V3/H1` | prime 94 kVA / 75 kW; standby 103 kVA / 82 kW | khác: Stamford UCI274C | hãng: Cummins |  | ⚠ model có ngoặc / gạch chéo
+  - đổi: genset: "CD103V3/H1 CONTACT" → "CD103V3/H1"
+  - nguồn: `| CD103V3/H1 CONTACT | 103KVA/ 82KW | 94KVA/ 75KW | 6BT5.9-G2 (QC86/100E) | Cummins (China Dongfeng) | Stamford UCI274C | Click Here |`
+- **ĐỔI** n102 b1 dòng 19 alternator `UCI274C` | tổ máy `CD103V3/H1` | prime 94 kVA / 75 kW; standby 103 kVA / 82 kW | khác: 6BT5.9-G2 (QC86/100E) | hãng: Stamford | 
+  - đổi: genset: "CD103V3/H1 CONTACT" → "CD103V3/H1"
+  - nguồn: `| CD103V3/H1 CONTACT | 103KVA/ 82KW | 94KVA/ 75KW | 6BT5.9-G2 (QC86/100E) | Cummins (China Dongfeng) | Stamford UCI274C | Click Here |`
+- **ĐỔI** n102 b1 dòng 20 engine `6BT5.9-G2 (QC96/115E)` | tổ máy `CD110V1/H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: Stamford UCI274C | hãng: Cummins |  | ⚠ model có ngoặc / gạch chéo
+  - đổi: genset: "CD110V1/H1 CONTACT" → "CD110V1/H1"
+  - nguồn: `| CD110V1/H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | 6BT5.9-G2 (QC96/115E) | Cummins (China Dongfeng) | Stamford UCI274C | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 20 alternator `UCI274C` | tổ máy `CD110V1/H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: 6BT5.9-G2 (QC96/115E) | hãng: Stamford | 
+  - đổi: genset: "CD110V1/H1 CONTACT" → "CD110V1/H1"
+  - nguồn: `| CD110V1/H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | 6BT5.9-G2 (QC96/115E) | Cummins (China Dongfeng) | Stamford UCI274C | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 21 engine `4BTAA3.9-G3` | tổ máy `CD110V2/H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: Stamford UCI274C | hãng: Cummins | 
+  - đổi: genset: "CD110V2/H1 CONTACT" → "CD110V2/H1"
+  - nguồn: `| CD110V2/H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | 4BTAA3.9-G3 | Cummins (China Dongfeng) | Stamford UCI274C | Click Here |`
+- **ĐỔI** n102 b1 dòng 21 alternator `UCI274C` | tổ máy `CD110V2/H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: 4BTAA3.9-G3 | hãng: Stamford | 
+  - đổi: genset: "CD110V2/H1 CONTACT" → "CD110V2/H1"
+  - nguồn: `| CD110V2/H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | 4BTAA3.9-G3 | Cummins (China Dongfeng) | Stamford UCI274C | Click Here |`
+- **ĐỔI** n102 b1 dòng 22 engine `QSB5.9-G2` | tổ máy `CD110EV3/H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: Stamford UCI274C | hãng: Cummins | 
+  - đổi: genset: "CD110EV3/H1 CONTACT" → "CD110EV3/H1"
+  - nguồn: `| CD110EV3/H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | QSB5.9-G2 | Cummins (China Dongfeng) | Stamford UCI274C | Click Here |`
+- **ĐỔI** n102 b1 dòng 22 alternator `UCI274C` | tổ máy `CD110EV3/H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: QSB5.9-G2 | hãng: Stamford | 
+  - đổi: genset: "CD110EV3/H1 CONTACT" → "CD110EV3/H1"
+  - nguồn: `| CD110EV3/H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | QSB5.9-G2 | Cummins (China Dongfeng) | Stamford UCI274C | Click Here |`
+- **ĐỔI** n102 b1 dòng 23 engine `6BTA5.9-G2` | tổ máy `CD125/H1` | prime 113 kVA / 90 kW; standby 125 kVA / 100 kW | khác: Stamford UCI274D | hãng: Cummins | 
+  - đổi: genset: "CD125/H1 CONTACT" → "CD125/H1"
+  - nguồn: `| CD125/H1 CONTACT | 125KVA/ 100KW | 113KVA/ 90KW | 6BTA5.9-G2 | Cummins (China Dongfeng) | Stamford UCI274D | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 23 alternator `UCI274D` | tổ máy `CD125/H1` | prime 113 kVA / 90 kW; standby 125 kVA / 100 kW | khác: 6BTA5.9-G2 | hãng: Stamford | 
+  - đổi: genset: "CD125/H1 CONTACT" → "CD125/H1"
+  - nguồn: `| CD125/H1 CONTACT | 125KVA/ 100KW | 113KVA/ 90KW | 6BTA5.9-G2 | Cummins (China Dongfeng) | Stamford UCI274D | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 24 engine `QSB5.9-G30` | tổ máy `CD125N/H1` | prime 113 kVA / 90 kW; standby 125 kVA / 100 kW | khác: Stamford UCI274D | hãng: Cummins | 
+  - đổi: genset: "CD125N/H1 CONTACT" → "CD125N/H1"
+  - nguồn: `| CD125N/H1 CONTACT | 125KVA/ 100KW | 113KVA/ 90KW | QSB5.9-G30 | Cummins (China Dongfeng) | Stamford UCI274D | Click Here |`
+- **ĐỔI** n102 b1 dòng 24 alternator `UCI274D` | tổ máy `CD125N/H1` | prime 113 kVA / 90 kW; standby 125 kVA / 100 kW | khác: QSB5.9-G30 | hãng: Stamford | 
+  - đổi: genset: "CD125N/H1 CONTACT" → "CD125N/H1"
+  - nguồn: `| CD125N/H1 CONTACT | 125KVA/ 100KW | 113KVA/ 90KW | QSB5.9-G30 | Cummins (China Dongfeng) | Stamford UCI274D | Click Here |`
+- **ĐỔI** n102 b1 dòng 25 engine `QSB5.9-G33` | tổ máy `CD138E/H1` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: Stamford UCI274ES | hãng: Cummins | 
+  - đổi: genset: "CD138E/H1 CONTACT" → "CD138E/H1"
+  - nguồn: `| CD138E/H1 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | QSB5.9-G33 | Cummins (China Dongfeng) | Stamford UCI274ES | Click Here |`
+- **ĐỔI** n102 b1 dòng 25 alternator `UCI274ES` | tổ máy `CD138E/H1` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: QSB5.9-G33 | hãng: Stamford | 
+  - đổi: genset: "CD138E/H1 CONTACT" → "CD138E/H1"
+  - nguồn: `| CD138E/H1 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | QSB5.9-G33 | Cummins (China Dongfeng) | Stamford UCI274ES | Click Here |`
+- **ĐỔI** n102 b1 dòng 26 engine `6BTAA5.9-G2` | tổ máy `CD138/H1` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: Stamford UCI274ES | hãng: Cummins | 
+  - đổi: genset: "CD138/H1 CONTACT" → "CD138/H1"
+  - nguồn: `| CD138/H1 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | 6BTAA5.9-G2 | Cummins (China Dongfeng) | Stamford UCI274ES | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 26 alternator `UCI274ES` | tổ máy `CD138/H1` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: 6BTAA5.9-G2 | hãng: Stamford | 
+  - đổi: genset: "CD138/H1 CONTACT" → "CD138/H1"
+  - nguồn: `| CD138/H1 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | 6BTAA5.9-G2 | Cummins (China Dongfeng) | Stamford UCI274ES | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 27 engine `6CTA8.3-G2` | tổ máy `CD165/H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: Stamford UCI274F | hãng: Cummins | 
+  - đổi: genset: "CD165/H1 CONTACT" → "CD165/H1"
+  - nguồn: `| CD165/H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | 6CTA8.3-G2 | Cummins (China Dongfeng) | Stamford UCI274F | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 27 alternator `UCI274F` | tổ máy `CD165/H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: 6CTA8.3-G2 | hãng: Stamford | 
+  - đổi: genset: "CD165/H1 CONTACT" → "CD165/H1"
+  - nguồn: `| CD165/H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | 6CTA8.3-G2 | Cummins (China Dongfeng) | Stamford UCI274F | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 28 engine `6BTAA5.9-G12` | tổ máy `CD165V1/H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: Stamford UCI274F | hãng: Cummins | 
+  - đổi: genset: "CD165V1/H1 CONTACT" → "CD165V1/H1"
+  - nguồn: `| CD165V1/H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | 6BTAA5.9-G12 | Cummins (China Dongfeng) | Stamford UCI274F | Click Here |`
+- **ĐỔI** n102 b1 dòng 28 alternator `UCI274F` | tổ máy `CD165V1/H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: 6BTAA5.9-G12 | hãng: Stamford | 
+  - đổi: genset: "CD165V1/H1 CONTACT" → "CD165V1/H1"
+  - nguồn: `| CD165V1/H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | 6BTAA5.9-G12 | Cummins (China Dongfeng) | Stamford UCI274F | Click Here |`
+- **ĐỔI** n102 b1 dòng 29 engine `QSB6.7-G3` | tổ máy `CD165EV2/H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: Stamford UCI274F | hãng: Cummins | 
+  - đổi: genset: "CD165EV2/H1 CONTACT" → "CD165EV2/H1"
+  - nguồn: `| CD165EV2/H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | QSB6.7-G3 | Cummins (China Dongfeng) | Stamford UCI274F | Click Here |`
+- **ĐỔI** n102 b1 dòng 29 alternator `UCI274F` | tổ máy `CD165EV2/H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: QSB6.7-G3 | hãng: Stamford | 
+  - đổi: genset: "CD165EV2/H1 CONTACT" → "CD165EV2/H1"
+  - nguồn: `| CD165EV2/H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | QSB6.7-G3 | Cummins (China Dongfeng) | Stamford UCI274F | Click Here |`
+- **ĐỔI** n102 b1 dòng 30 engine `6CTA8.3-G1` | tổ máy `CD206V1/H1` | prime 188 kVA / 150 kW; standby 206 kVA / 165 kW | khác: Stamford UCI274H | hãng: Cummins | 
+  - đổi: genset: "CD206V1/H1 CONTACT" → "CD206V1/H1"
+  - nguồn: `| CD206V1/H1 CONTACT | 206KVA/ 165KW | 188KVA/ 150KW | 6CTA8.3-G1 | Cummins (China Dongfeng) | Stamford UCI274H | Click Here |`
+- **ĐỔI** n102 b1 dòng 30 alternator `UCI274H` | tổ máy `CD206V1/H1` | prime 188 kVA / 150 kW; standby 206 kVA / 165 kW | khác: 6CTA8.3-G1 | hãng: Stamford | 
+  - đổi: genset: "CD206V1/H1 CONTACT" → "CD206V1/H1"
+  - nguồn: `| CD206V1/H1 CONTACT | 206KVA/ 165KW | 188KVA/ 150KW | 6CTA8.3-G1 | Cummins (China Dongfeng) | Stamford UCI274H | Click Here |`
+- **ĐỔI** n102 b1 dòng 31 engine `6CTA8.3-G2` | tổ máy `CD206V2/H1` | prime 188 kVA / 150 kW; standby 206 kVA / 165 kW | khác: Stamford UCI274H | hãng: Cummins | 
+  - đổi: genset: "CD206V2/H1 CONTACT" → "CD206V2/H1"
+  - nguồn: `| CD206V2/H1 CONTACT | 206KVA/ 165KW | 188KVA/ 150KW | 6CTA8.3-G2 | Cummins (China Dongfeng) | Stamford UCI274H | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 31 alternator `UCI274H` | tổ máy `CD206V2/H1` | prime 188 kVA / 150 kW; standby 206 kVA / 165 kW | khác: 6CTA8.3-G2 | hãng: Stamford | 
+  - đổi: genset: "CD206V2/H1 CONTACT" → "CD206V2/H1"
+  - nguồn: `| CD206V2/H1 CONTACT | 206KVA/ 165KW | 188KVA/ 150KW | 6CTA8.3-G2 | Cummins (China Dongfeng) | Stamford UCI274H | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 32 engine `QSB6.7-G4` | tổ máy `CD206EV3/H1` | prime 188 kVA / 150 kW; standby 206 kVA / 165 kW | khác: Stamford UCI274H | hãng: Cummins | 
+  - đổi: genset: "CD206EV3/H1 CONTACT" → "CD206EV3/H1"
+  - nguồn: `| CD206EV3/H1 CONTACT | 206KVA/ 165KW | 188KVA/ 150KW | QSB6.7-G4 | Cummins (China Dongfeng) | Stamford UCI274H | Click Here |`
+- **ĐỔI** n102 b1 dòng 32 alternator `UCI274H` | tổ máy `CD206EV3/H1` | prime 188 kVA / 150 kW; standby 206 kVA / 165 kW | khác: QSB6.7-G4 | hãng: Stamford | 
+  - đổi: genset: "CD206EV3/H1 CONTACT" → "CD206EV3/H1"
+  - nguồn: `| CD206EV3/H1 CONTACT | 206KVA/ 165KW | 188KVA/ 150KW | QSB6.7-G4 | Cummins (China Dongfeng) | Stamford UCI274H | Click Here |`
+- **ĐỔI** n102 b1 dòng 33 engine `QSB5.9-30` | tổ máy `CD206N/H1` | prime 188 kVA / 150 kW; standby 206 kVA / 165 kW | khác: Stamford UCI274H | hãng: Cummins | 
+  - đổi: genset: "CD206N/H1 CONTACT" → "CD206N/H1"
+  - nguồn: `| CD206N/H1 CONTACT | 206KVA/ 165KW | 188KVA/ 150KW | QSB5.9-30 | Cummins (China Dongfeng) | Stamford UCI274H | Click Here |`
+- **ĐỔI** n102 b1 dòng 33 alternator `UCI274H` | tổ máy `CD206N/H1` | prime 188 kVA / 150 kW; standby 206 kVA / 165 kW | khác: QSB5.9-30 | hãng: Stamford | 
+  - đổi: genset: "CD206N/H1 CONTACT" → "CD206N/H1"
+  - nguồn: `| CD206N/H1 CONTACT | 206KVA/ 165KW | 188KVA/ 150KW | QSB5.9-30 | Cummins (China Dongfeng) | Stamford UCI274H | Click Here |`
+- **ĐỔI** n102 b1 dòng 34 engine `6CTAA8.3-G2` | tổ máy `CD220V1/H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: Stamford UCI274H | hãng: Cummins | 
+  - đổi: genset: "CD220V1/H1 CONTACT" → "CD220V1/H1"
+  - nguồn: `| CD220V1/H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | 6CTAA8.3-G2 | Cummins (China Dongfeng) | Stamford UCI274H | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 34 alternator `UCI274H` | tổ máy `CD220V1/H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: 6CTAA8.3-G2 | hãng: Stamford | 
+  - đổi: genset: "CD220V1/H1 CONTACT" → "CD220V1/H1"
+  - nguồn: `| CD220V1/H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | 6CTAA8.3-G2 | Cummins (China Dongfeng) | Stamford UCI274H | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 35 engine `QSL8.9-G2` | tổ máy `CD220EV2/H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: Stamford UCI274H | hãng: Cummins | 
+  - đổi: genset: "CD220EV2/H1 CONTACT" → "CD220EV2/H1"
+  - nguồn: `| CD220EV2/H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | QSL8.9-G2 | Cummins (China Dongfeng) | Stamford UCI274H | Click Here |`
+- **ĐỔI** n102 b1 dòng 35 alternator `UCI274H` | tổ máy `CD220EV2/H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: QSL8.9-G2 | hãng: Stamford | 
+  - đổi: genset: "CD220EV2/H1 CONTACT" → "CD220EV2/H1"
+  - nguồn: `| CD220EV2/H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | QSL8.9-G2 | Cummins (China Dongfeng) | Stamford UCI274H | Click Here |`
+- **ĐỔI** n102 b1 dòng 36 engine `6LTAA8.9-G2` | tổ máy `CD250/H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: Stamford UCDI274J | hãng: Cummins | 
+  - đổi: genset: "CD250/H1 CONTACT" → "CD250/H1"
+  - nguồn: `| CD250/H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | 6LTAA8.9-G2 | Cummins (China Dongfeng) | Stamford UCDI274J | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 36 alternator `UCDI274J` | tổ máy `CD250/H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: 6LTAA8.9-G2 | hãng: Stamford | 
+  - đổi: genset: "CD250/H1 CONTACT" → "CD250/H1"
+  - nguồn: `| CD250/H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | 6LTAA8.9-G2 | Cummins (China Dongfeng) | Stamford UCDI274J | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 37 engine `6CTAA8.3-G9` | tổ máy `CD250V1/H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: Stamford UCDI274J | hãng: Cummins | 
+  - đổi: genset: "CD250V1/H1 CONTACT" → "CD250V1/H1"
+  - nguồn: `| CD250V1/H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | 6CTAA8.3-G9 | Cummins (China Dongfeng) | Stamford UCDI274J | Click Here |`
+- **ĐỔI** n102 b1 dòng 37 alternator `UCDI274J` | tổ máy `CD250V1/H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: 6CTAA8.3-G9 | hãng: Stamford | 
+  - đổi: genset: "CD250V1/H1 CONTACT" → "CD250V1/H1"
+  - nguồn: `| CD250V1/H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | 6CTAA8.3-G9 | Cummins (China Dongfeng) | Stamford UCDI274J | Click Here |`
+- **ĐỔI** n102 b1 dòng 38 engine `QSL8.9-G3` | tổ máy `CD250EV2/H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: Stamford UCDI274J | hãng: Cummins | 
+  - đổi: genset: "CD250EV2/H1 CONTACT" → "CD250EV2/H1"
+  - nguồn: `| CD250EV2/H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | QSL8.9-G3 | Cummins (China Dongfeng) | Stamford UCDI274J | Click Here |`
+- **ĐỔI** n102 b1 dòng 38 alternator `UCDI274J` | tổ máy `CD250EV2/H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: QSL8.9-G3 | hãng: Stamford | 
+  - đổi: genset: "CD250EV2/H1 CONTACT" → "CD250EV2/H1"
+  - nguồn: `| CD250EV2/H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | QSL8.9-G3 | Cummins (China Dongfeng) | Stamford UCDI274J | Click Here |`
+- **ĐỔI** n102 b1 dòng 39 engine `QSL6.79-G31` | tổ máy `CD250N/H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: Stamford UCDI274J | hãng: Cummins | 
+  - đổi: genset: "CD250N/H1 CONTACT" → "CD250N/H1"
+  - nguồn: `| CD250N/H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | QSL6.79-G31 | Cummins (China Dongfeng) | Stamford UCDI274J | Click Here |`
+- **ĐỔI** n102 b1 dòng 39 alternator `UCDI274J` | tổ máy `CD250N/H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: QSL6.79-G31 | hãng: Stamford | 
+  - đổi: genset: "CD250N/H1 CONTACT" → "CD250N/H1"
+  - nguồn: `| CD250N/H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | QSL6.79-G31 | Cummins (China Dongfeng) | Stamford UCDI274J | Click Here |`
+- **ĐỔI** n102 b1 dòng 40 engine `6LTAA8.9-G2` | tổ máy `CD275V1/H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: Stamford UCDI274K | hãng: Cummins | 
+  - đổi: genset: "CD275V1/H1 CONTACT" → "CD275V1/H1"
+  - nguồn: `| CD275V1/H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | 6LTAA8.9-G2 | Cummins (China Dongfeng) | Stamford UCDI274K | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 40 alternator `UCDI274K` | tổ máy `CD275V1/H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: 6LTAA8.9-G2 | hãng: Stamford | 
+  - đổi: genset: "CD275V1/H1 CONTACT" → "CD275V1/H1"
+  - nguồn: `| CD275V1/H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | 6LTAA8.9-G2 | Cummins (China Dongfeng) | Stamford UCDI274K | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 41 engine `6LTAA8.9-G3` | tổ máy `CD275V2/H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: Stamford UCDI274K | hãng: Cummins | 
+  - đổi: genset: "CD275V2/H1 CONTACT" → "CD275V2/H1"
+  - nguồn: `| CD275V2/H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | 6LTAA8.9-G3 | Cummins (China Dongfeng) | Stamford UCDI274K | Click Here |`
+- **ĐỔI** n102 b1 dòng 41 alternator `UCDI274K` | tổ máy `CD275V2/H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: 6LTAA8.9-G3 | hãng: Stamford | 
+  - đổi: genset: "CD275V2/H1 CONTACT" → "CD275V2/H1"
+  - nguồn: `| CD275V2/H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | 6LTAA8.9-G3 | Cummins (China Dongfeng) | Stamford UCDI274K | Click Here |`
+- **ĐỔI** n102 b1 dòng 42 engine `QSL8.9-G4` | tổ máy `CD275EV3/H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: Stamford UCDI274K | hãng: Cummins | 
+  - đổi: genset: "CD275EV3/H1 CONTACT" → "CD275EV3/H1"
+  - nguồn: `| CD275EV3/H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | QSL8.9-G4 | Cummins (China Dongfeng) | Stamford UCDI274K | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 42 alternator `UCDI274K` | tổ máy `CD275EV3/H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: QSL8.9-G4 | hãng: Stamford | 
+  - đổi: genset: "CD275EV3/H1 CONTACT" → "CD275EV3/H1"
+  - nguồn: `| CD275EV3/H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | QSL8.9-G4 | Cummins (China Dongfeng) | Stamford UCDI274K | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 43 engine `QSL8.9-G34` | tổ máy `CD275N/H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: Stamford UCDI274K | hãng: Cummins | 
+  - đổi: genset: "CD275N/H1 CONTACT" → "CD275N/H1"
+  - nguồn: `| CD275N/H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | QSL8.9-G34 | Cummins (China Dongfeng) | Stamford UCDI274K | Click Here |`
+- **ĐỔI** n102 b1 dòng 43 alternator `UCDI274K` | tổ máy `CD275N/H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: QSL8.9-G34 | hãng: Stamford | 
+  - đổi: genset: "CD275N/H1 CONTACT" → "CD275N/H1"
+  - nguồn: `| CD275N/H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | QSL8.9-G34 | Cummins (China Dongfeng) | Stamford UCDI274K | Click Here |`
+- **ĐỔI** n102 b1 dòng 44 engine `6LTAA9.5-G3` | tổ máy `CD313/H1` | prime 275 kVA / 220 kW; standby 313 kVA / 250 kW | khác: Stamford S4L1D-D41 | hãng: Cummins | 
+  - đổi: genset: "CD313/H1 CONTACT" → "CD313/H1"
+  - nguồn: `| CD313/H1 CONTACT | 313KVA/ 250KW | 275KVA/ 220KW | 6LTAA9.5-G3 | Cummins (China Dongfeng) | Stamford S4L1D-D41 | Click Here |`
+- **ĐỔI** n102 b1 dòng 44 alternator `S4L1D-D41` | tổ máy `CD313/H1` | prime 275 kVA / 220 kW; standby 313 kVA / 250 kW | khác: 6LTAA9.5-G3 | hãng: Stamford | 
+  - đổi: genset: "CD313/H1 CONTACT" → "CD313/H1"
+  - nguồn: `| CD313/H1 CONTACT | 313KVA/ 250KW | 275KVA/ 220KW | 6LTAA9.5-G3 | Cummins (China Dongfeng) | Stamford S4L1D-D41 | Click Here |`
+- **ĐỔI** n102 b1 dòng 45 engine `QSL8.9-G33` | tổ máy `CD313N/H1` | prime 275 kVA / 220 kW; standby 313 kVA / 250 kW | khác: Stamford S4L1D-D41 | hãng: Cummins | 
+  - đổi: genset: "CD313N/H1 CONTACT" → "CD313N/H1"
+  - nguồn: `| CD313N/H1 CONTACT | 313KVA/ 250KW | 275KVA/ 220KW | QSL8.9-G33 | Cummins (China Dongfeng) | Stamford S4L1D-D41 | Click Here |`
+- **ĐỔI** n102 b1 dòng 45 alternator `S4L1D-D41` | tổ máy `CD313N/H1` | prime 275 kVA / 220 kW; standby 313 kVA / 250 kW | khác: QSL8.9-G33 | hãng: Stamford | 
+  - đổi: genset: "CD313N/H1 CONTACT" → "CD313N/H1"
+  - nguồn: `| CD313N/H1 CONTACT | 313KVA/ 250KW | 275KVA/ 220KW | QSL8.9-G33 | Cummins (China Dongfeng) | Stamford S4L1D-D41 | Click Here |`
+- **ĐỔI** n102 b1 dòng 46 engine `6LTAA9.5-G1` | tổ máy `CD344/H1` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: Stamford S4L1D-E41 | hãng: Cummins | 
+  - đổi: genset: "CD344/H1 CONTACT" → "CD344/H1"
+  - nguồn: `| CD344/H1 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | 6LTAA9.5-G1 | Cummins (China Dongfeng) | Stamford S4L1D-E41 | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 46 alternator `S4L1D-E41` | tổ máy `CD344/H1` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: 6LTAA9.5-G1 | hãng: Stamford | 
+  - đổi: genset: "CD344/H1 CONTACT" → "CD344/H1"
+  - nguồn: `| CD344/H1 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | 6LTAA9.5-G1 | Cummins (China Dongfeng) | Stamford S4L1D-E41 | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 47 engine `QSL8.9-G30` | tổ máy `CD344N/H1` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: Stamford S4L1D-E41 | hãng: Cummins | 
+  - đổi: genset: "CD344N/H1 CONTACT" → "CD344N/H1"
+  - nguồn: `| CD344N/H1 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | QSL8.9-G30 | Cummins (China Dongfeng) | Stamford S4L1D-E41 | Click Here |`
+- **ĐỔI** n102 b1 dòng 47 alternator `S4L1D-E41` | tổ máy `CD344N/H1` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: QSL8.9-G30 | hãng: Stamford | 
+  - đổi: genset: "CD344N/H1 CONTACT" → "CD344N/H1"
+  - nguồn: `| CD344N/H1 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | QSL8.9-G30 | Cummins (China Dongfeng) | Stamford S4L1D-E41 | Click Here |`
+- **ĐỔI** n102 b1 dòng 48 engine `QSZ13-G6` | tổ máy `CD400E/H1` | prime 350 kVA / 280 kW; standby 400 kVA / 320 kW | khác: Stamford S4L1D-E41 | hãng: Cummins | 
+  - đổi: genset: "CD400E/H1 CONTACT" → "CD400E/H1"
+  - nguồn: `| CD400E/H1 CONTACT | 400KVA/ 320KW | 350KVA/ 280KW | QSZ13-G6 | Cummins (China Dongfeng) | Stamford S4L1D-E41 | Click Here |`
+- **ĐỔI** n102 b1 dòng 48 alternator `S4L1D-E41` | tổ máy `CD400E/H1` | prime 350 kVA / 280 kW; standby 400 kVA / 320 kW | khác: QSZ13-G6 | hãng: Stamford | 
+  - đổi: genset: "CD400E/H1 CONTACT" → "CD400E/H1"
+  - nguồn: `| CD400E/H1 CONTACT | 400KVA/ 320KW | 350KVA/ 280KW | QSZ13-G6 | Cummins (China Dongfeng) | Stamford S4L1D-E41 | Click Here |`
+- **ĐỔI** n102 b1 dòng 49 engine `6ZTAA13-G3` | tổ máy `CD413/H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: Stamford S4L1D-F41 | hãng: Cummins | 
+  - đổi: genset: "CD413/H1 CONTACT" → "CD413/H1"
+  - nguồn: `| CD413/H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | 6ZTAA13-G3 | Cummins (China Dongfeng) | Stamford S4L1D-F41 | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 49 alternator `S4L1D-F41` | tổ máy `CD413/H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: 6ZTAA13-G3 | hãng: Stamford | 
+  - đổi: genset: "CD413/H1 CONTACT" → "CD413/H1"
+  - nguồn: `| CD413/H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | 6ZTAA13-G3 | Cummins (China Dongfeng) | Stamford S4L1D-F41 | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 50 engine `QSZ13-G7` | tổ máy `CD450E/H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: Stamford S4L1D-F41 | hãng: Cummins | 
+  - đổi: genset: "CD450E/H1 CONTACT" → "CD450E/H1"
+  - nguồn: `| CD450E/H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | QSZ13-G7 | Cummins (China Dongfeng) | Stamford S4L1D-F41 | Click Here |`
+- **ĐỔI** n102 b1 dòng 50 alternator `S4L1D-F41` | tổ máy `CD450E/H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: QSZ13-G7 | hãng: Stamford | 
+  - đổi: genset: "CD450E/H1 CONTACT" → "CD450E/H1"
+  - nguồn: `| CD450E/H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | QSZ13-G7 | Cummins (China Dongfeng) | Stamford S4L1D-F41 | Click Here |`
+- **ĐỔI** n102 b1 dòng 51 engine `6ZTAA13-G2` | tổ máy `CD475V1/H1` | prime 438 kVA / 350 kW; standby 475 kVA / 380 kW | khác: Stamford S4L1D-G41 | hãng: Cummins | 
+  - đổi: genset: "CD475V1/H1 CONTACT" → "CD475V1/H1"
+  - nguồn: `| CD475V1/H1 CONTACT | 475KVA/ 380KW | 438KVA/ 350KW | 6ZTAA13-G2 | Cummins (China Dongfeng) | Stamford S4L1D-G41 | Click Here |`
+- **ĐỔI** n102 b1 dòng 51 alternator `S4L1D-G41` | tổ máy `CD475V1/H1` | prime 438 kVA / 350 kW; standby 475 kVA / 380 kW | khác: 6ZTAA13-G2 | hãng: Stamford | 
+  - đổi: genset: "CD475V1/H1 CONTACT" → "CD475V1/H1"
+  - nguồn: `| CD475V1/H1 CONTACT | 475KVA/ 380KW | 438KVA/ 350KW | 6ZTAA13-G2 | Cummins (China Dongfeng) | Stamford S4L1D-G41 | Click Here |`
+- **ĐỔI** n102 b1 dòng 52 engine `6ZTAA13-G4` | tổ máy `CD475V2/H1` | prime 438 kVA / 350 kW; standby 475 kVA / 380 kW | khác: Stamford S4L1D-G41 | hãng: Cummins | 
+  - đổi: genset: "CD475V2/H1 CONTACT" → "CD475V2/H1"
+  - nguồn: `| CD475V2/H1 CONTACT | 475KVA/ 380KW | 438KVA/ 350KW | 6ZTAA13-G4 | Cummins (China Dongfeng) | Stamford S4L1D-G41 | Click Here |`
+- **ĐỔI** n102 b1 dòng 52 alternator `S4L1D-G41` | tổ máy `CD475V2/H1` | prime 438 kVA / 350 kW; standby 475 kVA / 380 kW | khác: 6ZTAA13-G4 | hãng: Stamford | 
+  - đổi: genset: "CD475V2/H1 CONTACT" → "CD475V2/H1"
+  - nguồn: `| CD475V2/H1 CONTACT | 475KVA/ 380KW | 438KVA/ 350KW | 6ZTAA13-G4 | Cummins (China Dongfeng) | Stamford S4L1D-G41 | Click Here |`
+- **ĐỔI** n102 b1 dòng 53 engine `QSZ13-G2` | tổ máy `CD475V3/H1` | prime 438 kVA / 350 kW; standby 475 kVA / 380 kW | khác: Stamford S4L1D-G41 | hãng: Cummins | 
+  - đổi: genset: "CD475V3/H1 CONTACT" → "CD475V3/H1"
+  - nguồn: `| CD475V3/H1 CONTACT | 475KVA/ 380KW | 438KVA/ 350KW | QSZ13-G2 | Cummins (China Dongfeng) | Stamford S4L1D-G41 | Click Here |`
+- **ĐỔI** n102 b1 dòng 53 alternator `S4L1D-G41` | tổ máy `CD475V3/H1` | prime 438 kVA / 350 kW; standby 475 kVA / 380 kW | khác: QSZ13-G2 | hãng: Stamford | 
+  - đổi: genset: "CD475V3/H1 CONTACT" → "CD475V3/H1"
+  - nguồn: `| CD475V3/H1 CONTACT | 475KVA/ 380KW | 438KVA/ 350KW | QSZ13-G2 | Cummins (China Dongfeng) | Stamford S4L1D-G41 | Click Here |`
+- **ĐỔI** n102 b1 dòng 54 engine `QSZ13-G2` | tổ máy `CD500E/H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: Stamford S4L1D-G41 | hãng: Cummins | 
+  - đổi: genset: "CD500E/H1 CONTACT" → "CD500E/H1"
+  - nguồn: `| CD500E/H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | QSZ13-G2 | Cummins (China Dongfeng) | Stamford S4L1D-G41 | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 54 alternator `S4L1D-G41` | tổ máy `CD500E/H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: QSZ13-G2 | hãng: Stamford | 
+  - đổi: genset: "CD500E/H1 CONTACT" → "CD500E/H1"
+  - nguồn: `| CD500E/H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | QSZ13-G2 | Cummins (China Dongfeng) | Stamford S4L1D-G41 | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 55 engine `QSZ13-G3` | tổ máy `CD550EV1/H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: Stamford S5L1D-C41 | hãng: Cummins | 
+  - đổi: genset: "CD550EV1/H1 CONTACT" → "CD550EV1/H1"
+  - nguồn: `| CD550EV1/H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | QSZ13-G3 | Cummins (China Dongfeng) | Stamford S5L1D-C41 | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 55 alternator `S5L1D-C41` | tổ máy `CD550EV1/H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: QSZ13-G3 | hãng: Stamford | 
+  - đổi: genset: "CD550EV1/H1 CONTACT" → "CD550EV1/H1"
+  - nguồn: `| CD550EV1/H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | QSZ13-G3 | Cummins (China Dongfeng) | Stamford S5L1D-C41 | Click Here | Download`
+- **ĐỔI** n102 b1 dòng 56 engine `QSZ13-G10` | tổ máy `CD550EV2/H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: Stamford S5L1D-C41 | hãng: Cummins | 
+  - đổi: genset: "CD550EV2/H1 CONTACT" → "CD550EV2/H1"
+  - nguồn: `| CD550EV2/H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | QSZ13-G10 | Cummins (China Dongfeng) | Stamford S5L1D-C41 | Click Here |`
+- **ĐỔI** n102 b1 dòng 56 alternator `S5L1D-C41` | tổ máy `CD550EV2/H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: QSZ13-G10 | hãng: Stamford | 
+  - đổi: genset: "CD550EV2/H1 CONTACT" → "CD550EV2/H1"
+  - nguồn: `| CD550EV2/H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | QSZ13-G10 | Cummins (China Dongfeng) | Stamford S5L1D-C41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 57 engine `403D-11G` | tổ máy `P10/H1` | prime 9 kVA / 7 kW; standby 10 kVA / 8 kW | khác: Stamford S0L1-H1 | hãng: Perkins | 
+  - đổi: genset: "P10/H1 CONTACT" → "P10/H1"
+  - nguồn: `| P10/H1 CONTACT | 10KVA/ 8KW | 9KVA/ 7KW | 403D-11G | Perkins China | Stamford S0L1-H1 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 57 alternator `S0L1-H1` | tổ máy `P10/H1` | prime 9 kVA / 7 kW; standby 10 kVA / 8 kW | khác: 403D-11G | hãng: Stamford | 
+  - đổi: genset: "P10/H1 CONTACT" → "P10/H1"
+  - nguồn: `| P10/H1 CONTACT | 10KVA/ 8KW | 9KVA/ 7KW | 403D-11G | Perkins China | Stamford S0L1-H1 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 58 engine `403A-15G1` | tổ máy `P14/H1` | prime 13 kVA / 10 kW; standby 14 kVA / 11 kW | khác: Stamford S0L1-L1 | hãng: Perkins | 
+  - đổi: genset: "P14/H1 CONTACT" → "P14/H1"
+  - nguồn: `| P14/H1 CONTACT | 14KVA/ 11KW | 13KVA/ 10KW | 403A-15G1 | Perkins China | Stamford S0L1-L1 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 58 alternator `S0L1-L1` | tổ máy `P14/H1` | prime 13 kVA / 10 kW; standby 14 kVA / 11 kW | khác: 403A-15G1 | hãng: Stamford | 
+  - đổi: genset: "P14/H1 CONTACT" → "P14/H1"
+  - nguồn: `| P14/H1 CONTACT | 14KVA/ 11KW | 13KVA/ 10KW | 403A-15G1 | Perkins China | Stamford S0L1-L1 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 59 engine `403A-15G2` | tổ máy `P16/H1` | prime 15 kVA / 12 kW; standby 16 kVA / 13 kW | khác: Stamford S0L1-P1 | hãng: Perkins | 
+  - đổi: genset: "P16/H1 CONTACT" → "P16/H1"
+  - nguồn: `| P16/H1 CONTACT | 16KVA/ 13KW | 15KVA/ 12KW | 403A-15G2 | Perkins China | Stamford S0L1-P1 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 59 alternator `S0L1-P1` | tổ máy `P16/H1` | prime 15 kVA / 12 kW; standby 16 kVA / 13 kW | khác: 403A-15G2 | hãng: Stamford | 
+  - đổi: genset: "P16/H1 CONTACT" → "P16/H1"
+  - nguồn: `| P16/H1 CONTACT | 16KVA/ 13KW | 15KVA/ 12KW | 403A-15G2 | Perkins China | Stamford S0L1-P1 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 60 engine `404A-22G1` | tổ máy `P23/H1` | prime 20 kVA / 16 kW; standby 23 kVA / 18 kW | khác: Stamford S0L2-G1 | hãng: Perkins | 
+  - đổi: genset: "P23/H1 CONTACT" → "P23/H1"
+  - nguồn: `| P23/H1 CONTACT | 23KVA/ 18KW | 20KVA/ 16KW | 404A-22G1 | Perkins China | Stamford S0L2-G1 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 60 alternator `S0L2-G1` | tổ máy `P23/H1` | prime 20 kVA / 16 kW; standby 23 kVA / 18 kW | khác: 404A-22G1 | hãng: Stamford | 
+  - đổi: genset: "P23/H1 CONTACT" → "P23/H1"
+  - nguồn: `| P23/H1 CONTACT | 23KVA/ 18KW | 20KVA/ 16KW | 404A-22G1 | Perkins China | Stamford S0L2-G1 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 61 engine `1103A-33G` | tổ máy `P33/H1` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: Stamford S0L2-P1 | hãng: Perkins | 
+  - đổi: genset: "P33/H1 CONTACT" → "P33/H1"
+  - nguồn: `| P33/H1 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | 1103A-33G | Perkins China | Stamford S0L2-P1 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 61 alternator `S0L2-P1` | tổ máy `P33/H1` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: 1103A-33G | hãng: Stamford | 
+  - đổi: genset: "P33/H1 CONTACT" → "P33/H1"
+  - nguồn: `| P33/H1 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | 1103A-33G | Perkins China | Stamford S0L2-P1 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 62 engine `1103A-33TG1` | tổ máy `P50/H1` | prime 45 kVA / 36 kW; standby 50 kVA / 40 kW | khác: Stamford S1L2-N1 | hãng: Perkins | 
+  - đổi: genset: "P50/H1 CONTACT" → "P50/H1"
+  - nguồn: `| P50/H1 CONTACT | 50KVA/ 40KW | 45KVA/ 36KW | 1103A-33TG1 | Perkins China | Stamford S1L2-N1 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 62 alternator `S1L2-N1` | tổ máy `P50/H1` | prime 45 kVA / 36 kW; standby 50 kVA / 40 kW | khác: 1103A-33TG1 | hãng: Stamford | 
+  - đổi: genset: "P50/H1 CONTACT" → "P50/H1"
+  - nguồn: `| P50/H1 CONTACT | 50KVA/ 40KW | 45KVA/ 36KW | 1103A-33TG1 | Perkins China | Stamford S1L2-N1 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 63 engine `1103A-33TG2` | tổ máy `P65/H1` | prime 60 kVA / 48 kW; standby 65 kVA / 52 kW | khác: Stamford S1L2-Y1 | hãng: Perkins | 
+  - đổi: genset: "P65/H1 CONTACT" → "P65/H1"
+  - nguồn: `| P65/H1 CONTACT | 65KVA/ 52KW | 60KVA/ 48KW | 1103A-33TG2 | Perkins China | Stamford S1L2-Y1 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 63 alternator `S1L2-Y1` | tổ máy `P65/H1` | prime 60 kVA / 48 kW; standby 65 kVA / 52 kW | khác: 1103A-33TG2 | hãng: Stamford | 
+  - đổi: genset: "P65/H1 CONTACT" → "P65/H1"
+  - nguồn: `| P65/H1 CONTACT | 65KVA/ 52KW | 60KVA/ 48KW | 1103A-33TG2 | Perkins China | Stamford S1L2-Y1 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 64 engine `1104A-44TG1` | tổ máy `P73/H1` | prime 65 kVA / 52 kW; standby 73 kVA / 58 kW | khác: Stamford UCI224F | hãng: Perkins | 
+  - đổi: genset: "P73/H1 CONTACT" → "P73/H1"
+  - nguồn: `| P73/H1 CONTACT | 73KVA/ 58KW | 65KVA/ 52KW | 1104A-44TG1 | Perkins China | Stamford UCI224F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 64 alternator `UCI224F` | tổ máy `P73/H1` | prime 65 kVA / 52 kW; standby 73 kVA / 58 kW | khác: 1104A-44TG1 | hãng: Stamford | 
+  - đổi: genset: "P73/H1 CONTACT" → "P73/H1"
+  - nguồn: `| P73/H1 CONTACT | 73KVA/ 58KW | 65KVA/ 52KW | 1104A-44TG1 | Perkins China | Stamford UCI224F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 65 engine `1104A-44TG2` | tổ máy `P88/H1` | prime 80 kVA / 64 kW; standby 88 kVA / 70 kW | khác: Stamford UCI224G | hãng: Perkins | 
+  - đổi: genset: "P88/H1 CONTACT" → "P88/H1"
+  - nguồn: `| P88/H1 CONTACT | 88KVA/ 70KW | 80KVA/ 64KW | 1104A-44TG2 | Perkins China | Stamford UCI224G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 65 alternator `UCI224G` | tổ máy `P88/H1` | prime 80 kVA / 64 kW; standby 88 kVA / 70 kW | khác: 1104A-44TG2 | hãng: Stamford | 
+  - đổi: genset: "P88/H1 CONTACT" → "P88/H1"
+  - nguồn: `| P88/H1 CONTACT | 88KVA/ 70KW | 80KVA/ 64KW | 1104A-44TG2 | Perkins China | Stamford UCI224G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 66 engine `1104C-44TAG2` | tổ máy `P110/H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: Stamford UCI274C | hãng: Perkins | 
+  - đổi: genset: "P110/H1 CONTACT" → "P110/H1"
+  - nguồn: `| P110/H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | 1104C-44TAG2 | Perkins China | Stamford UCI274C | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 66 alternator `UCI274C` | tổ máy `P110/H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: 1104C-44TAG2 | hãng: Stamford | 
+  - đổi: genset: "P110/H1 CONTACT" → "P110/H1"
+  - nguồn: `| P110/H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | 1104C-44TAG2 | Perkins China | Stamford UCI274C | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 67 engine `1106A-70TG1` | tổ máy `P150/H1` | prime 135 kVA / 108 kW; standby 150 kVA / 120 kW | khác: Stamford UCI274E | hãng: Perkins | 
+  - đổi: genset: "P150/H1 CONTACT" → "P150/H1"
+  - nguồn: `| P150/H1 CONTACT | 150KVA/ 120KW | 135KVA/ 108KW | 1106A-70TG1 | Perkins China | Stamford UCI274E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 67 alternator `UCI274E` | tổ máy `P150/H1` | prime 135 kVA / 108 kW; standby 150 kVA / 120 kW | khác: 1106A-70TG1 | hãng: Stamford | 
+  - đổi: genset: "P150/H1 CONTACT" → "P150/H1"
+  - nguồn: `| P150/H1 CONTACT | 150KVA/ 120KW | 135KVA/ 108KW | 1106A-70TG1 | Perkins China | Stamford UCI274E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 68 engine `1106A-70TAG2` | tổ máy `P165/H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: Stamford UCI274F | hãng: Perkins | 
+  - đổi: genset: "P165/H1 CONTACT" → "P165/H1"
+  - nguồn: `| P165/H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | 1106A-70TAG2 | Perkins China | Stamford UCI274F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 68 alternator `UCI274F` | tổ máy `P165/H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: 1106A-70TAG2 | hãng: Stamford | 
+  - đổi: genset: "P165/H1 CONTACT" → "P165/H1"
+  - nguồn: `| P165/H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | 1106A-70TAG2 | Perkins China | Stamford UCI274F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 69 engine `1106A-70TAG3` | tổ máy `P198/H1` | prime 180 kVA / 144 kW; standby 198 kVA / 158 kW | khác: Stamford UCI274G | hãng: Perkins | 
+  - đổi: genset: "P198/H1 CONTACT" → "P198/H1"
+  - nguồn: `| P198/H1 CONTACT | 198KVA/ 158KW | 180KVA/ 144KW | 1106A-70TAG3 | Perkins China | Stamford UCI274G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 69 alternator `UCI274G` | tổ máy `P198/H1` | prime 180 kVA / 144 kW; standby 198 kVA / 158 kW | khác: 1106A-70TAG3 | hãng: Stamford | 
+  - đổi: genset: "P198/H1 CONTACT" → "P198/H1"
+  - nguồn: `| P198/H1 CONTACT | 198KVA/ 158KW | 180KVA/ 144KW | 1106A-70TAG3 | Perkins China | Stamford UCI274G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 70 engine `1106A-70TAG4` | tổ máy `P220/H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: Stamford UCI274H | hãng: Perkins | 
+  - đổi: genset: "P220/H1 CONTACT" → "P220/H1"
+  - nguồn: `| P220/H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | 1106A-70TAG4 | Perkins China | Stamford UCI274H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 70 alternator `UCI274H` | tổ máy `P220/H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: 1106A-70TAG4 | hãng: Stamford | 
+  - đổi: genset: "P220/H1 CONTACT" → "P220/H1"
+  - nguồn: `| P220/H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | 1106A-70TAG4 | Perkins China | Stamford UCI274H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 71 engine `1506A-E88TAG2` | tổ máy `P250E/H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: Stamford UCI274J | hãng: Perkins | 
+  - đổi: genset: "P250E/H1 CONTACT" → "P250E/H1"
+  - nguồn: `| P250E/H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | 1506A-E88TAG2 | Perkins China | Stamford UCI274J | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 71 alternator `UCI274J` | tổ máy `P250E/H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: 1506A-E88TAG2 | hãng: Stamford | 
+  - đổi: genset: "P250E/H1 CONTACT" → "P250E/H1"
+  - nguồn: `| P250E/H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | 1506A-E88TAG2 | Perkins China | Stamford UCI274J | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 72 engine `1506A-E88TAG3` | tổ máy `P275E/H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: Stamford UCI274K | hãng: Perkins | 
+  - đổi: genset: "P275E/H1 CONTACT" → "P275E/H1"
+  - nguồn: `| P275E/H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | 1506A-E88TAG3 | Perkins China | Stamford UCI274K | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 72 alternator `UCI274K` | tổ máy `P275E/H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: 1506A-E88TAG3 | hãng: Stamford | 
+  - đổi: genset: "P275E/H1 CONTACT" → "P275E/H1"
+  - nguồn: `| P275E/H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | 1506A-E88TAG3 | Perkins China | Stamford UCI274K | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 73 engine `1506A-E88TAG5` | tổ máy `P300E/H1` | prime 275 kVA / 220 kW; standby 300 kVA / 240 kW | khác: Stamford S4L1S-D4 | hãng: Perkins | 
+  - đổi: genset: "P300E/H1 CONTACT" → "P300E/H1"
+  - nguồn: `| P300E/H1 CONTACT | 300KVA/ 240KW | 275KVA/ 220KW | 1506A-E88TAG5 | Perkins China | Stamford S4L1S-D4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 73 alternator `S4L1S-D4` | tổ máy `P300E/H1` | prime 275 kVA / 220 kW; standby 300 kVA / 240 kW | khác: 1506A-E88TAG5 | hãng: Stamford | 
+  - đổi: genset: "P300E/H1 CONTACT" → "P300E/H1"
+  - nguồn: `| P300E/H1 CONTACT | 300KVA/ 240KW | 275KVA/ 220KW | 1506A-E88TAG5 | Perkins China | Stamford S4L1S-D4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 74 engine `1506A-E88TAG5` | tổ máy `P331E/H1` | prime 300 kVA / 240 kW; standby 331 kVA / 265 kW | khác: Stamford S4L1S-D4 | hãng: Perkins | 
+  - đổi: genset: "P331E/H1 CONTACT" → "P331E/H1"
+  - nguồn: `| P331E/H1 CONTACT | 331KVA/ 265KW | 300KVA/ 240KW | 1506A-E88TAG5 | Perkins China | Stamford S4L1S-D4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 74 alternator `S4L1S-D4` | tổ máy `P331E/H1` | prime 300 kVA / 240 kW; standby 331 kVA / 265 kW | khác: 1506A-E88TAG5 | hãng: Stamford | 
+  - đổi: genset: "P331E/H1 CONTACT" → "P331E/H1"
+  - nguồn: `| P331E/H1 CONTACT | 331KVA/ 265KW | 300KVA/ 240KW | 1506A-E88TAG5 | Perkins China | Stamford S4L1S-D4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 75 engine `2206C-E13TAG2` | tổ máy `P344E/H1` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: Stamford S4L1S-E4 | hãng: Perkins | 
+  - đổi: genset: "P344E/H1 CONTACT" → "P344E/H1"
+  - nguồn: `| P344E/H1 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | 2206C-E13TAG2 | Perkins China | Stamford S4L1S-E4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 75 alternator `S4L1S-E4` | tổ máy `P344E/H1` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: 2206C-E13TAG2 | hãng: Stamford | 
+  - đổi: genset: "P344E/H1 CONTACT" → "P344E/H1"
+  - nguồn: `| P344E/H1 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | 2206C-E13TAG2 | Perkins China | Stamford S4L1S-E4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 76 engine `2206C-E13TAG2` | tổ máy `P388E/H1` | prime 350 kVA / 280 kW; standby 388 kVA / 310 kW | khác: Stamford S4L1S-E4 | hãng: Perkins | 
+  - đổi: genset: "P388E/H1 CONTACT" → "P388E/H1"
+  - nguồn: `| P388E/H1 CONTACT | 388KVA/ 310KW | 350KVA/ 280KW | 2206C-E13TAG2 | Perkins China | Stamford S4L1S-E4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 76 alternator `S4L1S-E4` | tổ máy `P388E/H1` | prime 350 kVA / 280 kW; standby 388 kVA / 310 kW | khác: 2206C-E13TAG2 | hãng: Stamford | 
+  - đổi: genset: "P388E/H1 CONTACT" → "P388E/H1"
+  - nguồn: `| P388E/H1 CONTACT | 388KVA/ 310KW | 350KVA/ 280KW | 2206C-E13TAG2 | Perkins China | Stamford S4L1S-E4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 77 engine `2206C-E13TAG3` | tổ máy `P450E/H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: Stamford S4L1S-F4 | hãng: Perkins | 
+  - đổi: genset: "P450E/H1 CONTACT" → "P450E/H1"
+  - nguồn: `| P450E/H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | 2206C-E13TAG3 | Perkins China | Stamford S4L1S-F4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 77 alternator `S4L1S-F4` | tổ máy `P450E/H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: 2206C-E13TAG3 | hãng: Stamford | 
+  - đổi: genset: "P450E/H1 CONTACT" → "P450E/H1"
+  - nguồn: `| P450E/H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | 2206C-E13TAG3 | Perkins China | Stamford S4L1S-F4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 78 engine `2506C-E15TAG1` | tổ máy `P500E/H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: Stamford S4L1D-G4 | hãng: Perkins | 
+  - đổi: genset: "P500E/H1 CONTACT" → "P500E/H1"
+  - nguồn: `| P500E/H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | 2506C-E15TAG1 | Perkins China | Stamford S4L1D-G4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 78 alternator `S4L1D-G4` | tổ máy `P500E/H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: 2506C-E15TAG1 | hãng: Stamford | 
+  - đổi: genset: "P500E/H1 CONTACT" → "P500E/H1"
+  - nguồn: `| P500E/H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | 2506C-E15TAG1 | Perkins China | Stamford S4L1D-G4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 79 engine `2506C-E15TAG2` | tổ máy `P550E/H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: Stamford S5L1D-C4 | hãng: Perkins | 
+  - đổi: genset: "P550E/H1 CONTACT" → "P550E/H1"
+  - nguồn: `| P550E/H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | 2506C-E15TAG2 | Perkins China | Stamford S5L1D-C4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 79 alternator `S5L1D-C4` | tổ máy `P550E/H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: 2506C-E15TAG2 | hãng: Stamford | 
+  - đổi: genset: "P550E/H1 CONTACT" → "P550E/H1"
+  - nguồn: `| P550E/H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | 2506C-E15TAG2 | Perkins China | Stamford S5L1D-C4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 80 engine `2806C-E18TAG1A` | tổ máy `P660E/H1` | prime 600 kVA / 480 kW; standby 660 kVA / 528 kW | khác: Stamford S5L1D-E4 | hãng: Perkins | 
+  - đổi: genset: "P660E/H1 CONTACT" → "P660E/H1"
+  - nguồn: `| P660E/H1 CONTACT | 660KVA/ 528KW | 600KVA/ 480KW | 2806C-E18TAG1A | Perkins China | Stamford S5L1D-E4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 80 alternator `S5L1D-E4` | tổ máy `P660E/H1` | prime 600 kVA / 480 kW; standby 660 kVA / 528 kW | khác: 2806C-E18TAG1A | hãng: Stamford | 
+  - đổi: genset: "P660E/H1 CONTACT" → "P660E/H1"
+  - nguồn: `| P660E/H1 CONTACT | 660KVA/ 528KW | 600KVA/ 480KW | 2806C-E18TAG1A | Perkins China | Stamford S5L1D-E4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 81 engine `2806A-E18TAG2` | tổ máy `P688E/H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: Stamford HCI544FS | hãng: Perkins | 
+  - đổi: genset: "P688E/H1 CONTACT" → "P688E/H1"
+  - nguồn: `| P688E/H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | 2806A-E18TAG2 | Perkins China | Stamford HCI544FS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 81 alternator `HCI544FS` | tổ máy `P688E/H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: 2806A-E18TAG2 | hãng: Stamford | 
+  - đổi: genset: "P688E/H1 CONTACT" → "P688E/H1"
+  - nguồn: `| P688E/H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | 2806A-E18TAG2 | Perkins China | Stamford HCI544FS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 82 engine `2806A-E18TAG2` | tổ máy `P725E/H1` | prime 650 kVA / 520 kW; standby 725 kVA / 580 kW | khác: Stamford S5L1D-F4 | hãng: Perkins | 
+  - đổi: genset: "P725E/H1 CONTACT" → "P725E/H1"
+  - nguồn: `| P725E/H1 CONTACT | 725KVA/ 580KW | 650KVA/ 520KW | 2806A-E18TAG2 | Perkins China | Stamford S5L1D-F4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 82 alternator `S5L1D-F4` | tổ máy `P725E/H1` | prime 650 kVA / 520 kW; standby 725 kVA / 580 kW | khác: 2806A-E18TAG2 | hãng: Stamford | 
+  - đổi: genset: "P725E/H1 CONTACT" → "P725E/H1"
+  - nguồn: `| P725E/H1 CONTACT | 725KVA/ 580KW | 650KVA/ 520KW | 2806A-E18TAG2 | Perkins China | Stamford S5L1D-F4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 83 engine `4006-23TAG3A` | tổ máy `P825/H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: Stamford S5L1D-H4 | hãng: Perkins | 
+  - đổi: genset: "P825/H1 CONTACT" → "P825/H1"
+  - nguồn: `| P825/H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | 4006-23TAG3A | Perkins China | Stamford S5L1D-H4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 83 alternator `S5L1D-H4` | tổ máy `P825/H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: 4006-23TAG3A | hãng: Stamford | 
+  - đổi: genset: "P825/H1 CONTACT" → "P825/H1"
+  - nguồn: `| P825/H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | 4006-23TAG3A | Perkins China | Stamford S5L1D-H4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 84 engine `4006-23TAG3A` | tổ máy `P900/H1` | prime 800 kVA / 640 kW; standby 900 kVA / 720 kW | khác: Stamford S6L1D-C4 | hãng: Perkins | 
+  - đổi: genset: "P900/H1 CONTACT" → "P900/H1"
+  - nguồn: `| P900/H1 CONTACT | 900KVA/ 720KW | 800KVA/ 640KW | 4006-23TAG3A | Perkins China | Stamford S6L1D-C4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 84 alternator `S6L1D-C4` | tổ máy `P900/H1` | prime 800 kVA / 640 kW; standby 900 kVA / 720 kW | khác: 4006-23TAG3A | hãng: Stamford | 
+  - đổi: genset: "P900/H1 CONTACT" → "P900/H1"
+  - nguồn: `| P900/H1 CONTACT | 900KVA/ 720KW | 800KVA/ 640KW | 4006-23TAG3A | Perkins China | Stamford S6L1D-C4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 85 engine `4008-TAG2` | tổ máy `P1000/H1` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: Stamford S6L1D-D4 | hãng: Perkins | 
+  - đổi: genset: "P1000/H1 CONTACT" → "P1000/H1"
+  - nguồn: `| P1000/H1 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | 4008-TAG2 | Perkins China | Stamford S6L1D-D4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 85 alternator `S6L1D-D4` | tổ máy `P1000/H1` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: 4008-TAG2 | hãng: Stamford | 
+  - đổi: genset: "P1000/H1 CONTACT" → "P1000/H1"
+  - nguồn: `| P1000/H1 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | 4008-TAG2 | Perkins China | Stamford S6L1D-D4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 86 engine `4008-TAG2` | tổ máy `P1100/H1` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: Stamford S6L1D-E4 | hãng: Perkins | 
+  - đổi: genset: "P1100/H1 CONTACT" → "P1100/H1"
+  - nguồn: `| P1100/H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | 4008-TAG2 | Perkins China | Stamford S6L1D-E4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 86 alternator `S6L1D-E4` | tổ máy `P1100/H1` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: 4008-TAG2 | hãng: Stamford | 
+  - đổi: genset: "P1100/H1 CONTACT" → "P1100/H1"
+  - nguồn: `| P1100/H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | 4008-TAG2 | Perkins China | Stamford S6L1D-E4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 87 engine `4008-30TAG3` | tổ máy `P1250/H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: Stamford S6L1D-F4 | hãng: Perkins | 
+  - đổi: genset: "P1250/H1 CONTACT" → "P1250/H1"
+  - nguồn: `| P1250/H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | 4008-30TAG3 | Perkins China | Stamford S6L1D-F4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 87 alternator `S6L1D-F4` | tổ máy `P1250/H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: 4008-30TAG3 | hãng: Stamford | 
+  - đổi: genset: "P1250/H1 CONTACT" → "P1250/H1"
+  - nguồn: `| P1250/H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | 4008-30TAG3 | Perkins China | Stamford S6L1D-F4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 88 engine `4012-46TAG2A` | tổ máy `P1375/H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: Stamford S6L1D-G4 | hãng: Perkins | 
+  - đổi: genset: "P1375/H1 CONTACT" → "P1375/H1"
+  - nguồn: `| P1375/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | 4012-46TAG2A | Perkins China | Stamford S6L1D-G4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 88 alternator `S6L1D-G4` | tổ máy `P1375/H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: 4012-46TAG2A | hãng: Stamford | 
+  - đổi: genset: "P1375/H1 CONTACT" → "P1375/H1"
+  - nguồn: `| P1375/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | 4012-46TAG2A | Perkins China | Stamford S6L1D-G4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 89 engine `4012-46TWG3A` | tổ máy `P1500/H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: Stamford S6L1D-H4 | hãng: Perkins | 
+  - đổi: genset: "P1500/H1 CONTACT" → "P1500/H1"
+  - nguồn: `| P1500/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | 4012-46TWG3A | Perkins China | Stamford S6L1D-H4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 89 alternator `S6L1D-H4` | tổ máy `P1500/H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: 4012-46TWG3A | hãng: Stamford | 
+  - đổi: genset: "P1500/H1 CONTACT" → "P1500/H1"
+  - nguồn: `| P1500/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | 4012-46TWG3A | Perkins China | Stamford S6L1D-H4 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 90 engine `4012-46TAG2A` | tổ máy `P1650/H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: Stamford S7L1D-C41 | hãng: Perkins | 
+  - đổi: genset: "P1650/H1 CONTACT" → "P1650/H1"
+  - nguồn: `| P1650/H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | 4012-46TAG2A | Perkins China | Stamford S7L1D-C41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 90 alternator `S7L1D-C41` | tổ máy `P1650/H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: 4012-46TAG2A | hãng: Stamford | 
+  - đổi: genset: "P1650/H1 CONTACT" → "P1650/H1"
+  - nguồn: `| P1650/H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | 4012-46TAG2A | Perkins China | Stamford S7L1D-C41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 91 engine `4012-46TAG3A` | tổ máy `P1875/H1` | prime 1700 kVA / 1360 kW; standby 1875 kVA / 1500 kW | khác: Stamford S7L1D-E41 | hãng: Perkins | 
+  - đổi: genset: "P1875/H1 CONTACT" → "P1875/H1"
+  - nguồn: `| P1875/H1 CONTACT | 1875KVA/ 1500KW | 1700KVA/ 1360KW | 4012-46TAG3A | Perkins China | Stamford S7L1D-E41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 91 alternator `S7L1D-E41` | tổ máy `P1875/H1` | prime 1700 kVA / 1360 kW; standby 1875 kVA / 1500 kW | khác: 4012-46TAG3A | hãng: Stamford | 
+  - đổi: genset: "P1875/H1 CONTACT" → "P1875/H1"
+  - nguồn: `| P1875/H1 CONTACT | 1875KVA/ 1500KW | 1700KVA/ 1360KW | 4012-46TAG3A | Perkins China | Stamford S7L1D-E41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 92 engine `4016TAG1A` | tổ máy `P2063/H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: Stamford S7L1D-F41 | hãng: Perkins | 
+  - đổi: genset: "P2063/H1 CONTACT" → "P2063/H1"
+  - nguồn: `| P2063/H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | 4016TAG1A | Perkins China | Stamford S7L1D-F41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 92 alternator `S7L1D-F41` | tổ máy `P2063/H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: 4016TAG1A | hãng: Stamford | 
+  - đổi: genset: "P2063/H1 CONTACT" → "P2063/H1"
+  - nguồn: `| P2063/H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | 4016TAG1A | Perkins China | Stamford S7L1D-F41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 93 engine `4016TAG2A` | tổ máy `P2200/H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: Stamford S7L1D-G41 | hãng: Perkins | 
+  - đổi: genset: "P2200/H1 CONTACT" → "P2200/H1"
+  - nguồn: `| P2200/H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | 4016TAG2A | Perkins China | Stamford S7L1D-G41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 93 alternator `S7L1D-G41` | tổ máy `P2200/H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: 4016TAG2A | hãng: Stamford | 
+  - đổi: genset: "P2200/H1 CONTACT" → "P2200/H1"
+  - nguồn: `| P2200/H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | 4016TAG2A | Perkins China | Stamford S7L1D-G41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 94 engine `4016-61TRG3` | tổ máy `P2500/H1` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: Stamford S7L1D-H41 | hãng: Perkins | 
+  - đổi: genset: "P2500/H1 CONTACT" → "P2500/H1"
+  - nguồn: `| P2500/H1 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | 4016-61TRG3 | Perkins China | Stamford S7L1D-H41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 94 alternator `S7L1D-H41` | tổ máy `P2500/H1` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: 4016-61TRG3 | hãng: Stamford | 
+  - đổi: genset: "P2500/H1 CONTACT" → "P2500/H1"
+  - nguồn: `| P2500/H1 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | 4016-61TRG3 | Perkins China | Stamford S7L1D-H41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 95 engine `S6R2-PTA-C` | tổ máy `M688/H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: Stamford S5L1D-F41 | hãng: Mitsubishi | 
+  - đổi: genset: "M688/H1 CONTACT" → "M688/H1"
+  - nguồn: `| M688/H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | S6R2-PTA-C | Mitsubishi (SME Shanghai) | Stamford S5L1D-F41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 95 alternator `S5L1D-F41` | tổ máy `M688/H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: S6R2-PTA-C | hãng: Stamford | 
+  - đổi: genset: "M688/H1 CONTACT" → "M688/H1"
+  - nguồn: `| M688/H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | S6R2-PTA-C | Mitsubishi (SME Shanghai) | Stamford S5L1D-F41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 96 engine `S6R2-PTA` | tổ máy `M688N/H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: Stamford S5L1D-F41 | hãng: Mitsubishi | 
+  - đổi: genset: "M688N/H1 CONTACT" → "M688N/H1"
+  - nguồn: `| M688N/H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | S6R2-PTA | Mitsubishi (SME Shanghai) | Stamford S5L1D-F41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 96 alternator `S5L1D-F41` | tổ máy `M688N/H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: S6R2-PTA | hãng: Stamford | 
+  - đổi: genset: "M688N/H1 CONTACT" → "M688N/H1"
+  - nguồn: `| M688N/H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | S6R2-PTA | Mitsubishi (SME Shanghai) | Stamford S5L1D-F41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 97 engine `S6R2-PTA-C` | tổ máy `M750/H1` | prime 675 kVA / 540 kW; standby 750 kVA / 600 kW | khác: Stamford S5L1D-G41 | hãng: Mitsubishi | 
+  - đổi: genset: "M750/H1 CONTACT" → "M750/H1"
+  - nguồn: `| M750/H1 CONTACT | 750KVA/ 600KW | 675KVA/ 540KW | S6R2-PTA-C | Mitsubishi (SME Shanghai) | Stamford S5L1D-G41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 97 alternator `S5L1D-G41` | tổ máy `M750/H1` | prime 675 kVA / 540 kW; standby 750 kVA / 600 kW | khác: S6R2-PTA-C | hãng: Stamford | 
+  - đổi: genset: "M750/H1 CONTACT" → "M750/H1"
+  - nguồn: `| M750/H1 CONTACT | 750KVA/ 600KW | 675KVA/ 540KW | S6R2-PTA-C | Mitsubishi (SME Shanghai) | Stamford S5L1D-G41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 98 engine `S6R2-PTA` | tổ máy `M750N/H1` | prime 675 kVA / 540 kW; standby 750 kVA / 600 kW | khác: Stamford S5L1D-G41 | hãng: Mitsubishi | 
+  - đổi: genset: "M750N/H1 CONTACT" → "M750N/H1"
+  - nguồn: `| M750N/H1 CONTACT | 750KVA/ 600KW | 675KVA/ 540KW | S6R2-PTA | Mitsubishi (SME Shanghai) | Stamford S5L1D-G41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 98 alternator `S5L1D-G41` | tổ máy `M750N/H1` | prime 675 kVA / 540 kW; standby 750 kVA / 600 kW | khác: S6R2-PTA | hãng: Stamford | 
+  - đổi: genset: "M750N/H1 CONTACT" → "M750N/H1"
+  - nguồn: `| M750N/H1 CONTACT | 750KVA/ 600KW | 675KVA/ 540KW | S6R2-PTA | Mitsubishi (SME Shanghai) | Stamford S5L1D-G41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 99 engine `S6R2-PTAA-C` | tổ máy `M825/H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: Stamford S5L1D-H41 | hãng: Mitsubishi | 
+  - đổi: genset: "M825/H1 CONTACT" → "M825/H1"
+  - nguồn: `| M825/H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | S6R2-PTAA-C | Mitsubishi (SME Shanghai) | Stamford S5L1D-H41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 99 alternator `S5L1D-H41` | tổ máy `M825/H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: S6R2-PTAA-C | hãng: Stamford | 
+  - đổi: genset: "M825/H1 CONTACT" → "M825/H1"
+  - nguồn: `| M825/H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | S6R2-PTAA-C | Mitsubishi (SME Shanghai) | Stamford S5L1D-H41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 100 engine `S6R2-PTAA` | tổ máy `M825N/H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: Stamford S5L1D-H41 | hãng: Mitsubishi | 
+  - đổi: genset: "M825N/H1 CONTACT" → "M825N/H1"
+  - nguồn: `| M825N/H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | S6R2-PTAA | Mitsubishi (SME Shanghai) | Stamford S5L1D-H41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 100 alternator `S5L1D-H41` | tổ máy `M825N/H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: S6R2-PTAA | hãng: Stamford | 
+  - đổi: genset: "M825N/H1 CONTACT" → "M825N/H1"
+  - nguồn: `| M825N/H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | S6R2-PTAA | Mitsubishi (SME Shanghai) | Stamford S5L1D-H41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 101 engine `S12R-PTA-C` | tổ máy `M1375/H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: Stamford S6L1D-G41 | hãng: Mitsubishi | 
+  - đổi: genset: "M1375/H1 CONTACT" → "M1375/H1"
+  - nguồn: `| M1375/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | S12R-PTA-C | Mitsubishi (SME Shanghai) | Stamford S6L1D-G41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 101 alternator `S6L1D-G41` | tổ máy `M1375/H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: S12R-PTA-C | hãng: Stamford | 
+  - đổi: genset: "M1375/H1 CONTACT" → "M1375/H1"
+  - nguồn: `| M1375/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | S12R-PTA-C | Mitsubishi (SME Shanghai) | Stamford S6L1D-G41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 102 engine `S12R-PTA` | tổ máy `M1375N/H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: Stamford S6L1D-G41 | hãng: Mitsubishi | 
+  - đổi: genset: "M1375N/H1 CONTACT" → "M1375N/H1"
+  - nguồn: `| M1375N/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | S12R-PTA | Mitsubishi (SME Shanghai) | Stamford S6L1D-G41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 102 alternator `S6L1D-G41` | tổ máy `M1375N/H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: S12R-PTA | hãng: Stamford | 
+  - đổi: genset: "M1375N/H1 CONTACT" → "M1375N/H1"
+  - nguồn: `| M1375N/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | S12R-PTA | Mitsubishi (SME Shanghai) | Stamford S6L1D-G41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 103 engine `S12R-PTA2-C` | tổ máy `M1500/H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: Stamford S6L1D-H41 | hãng: Mitsubishi | 
+  - đổi: genset: "M1500/H1 CONTACT" → "M1500/H1"
+  - nguồn: `| M1500/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | S12R-PTA2-C | Mitsubishi (SME Shanghai) | Stamford S6L1D-H41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 103 alternator `S6L1D-H41` | tổ máy `M1500/H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: S12R-PTA2-C | hãng: Stamford | 
+  - đổi: genset: "M1500/H1 CONTACT" → "M1500/H1"
+  - nguồn: `| M1500/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | S12R-PTA2-C | Mitsubishi (SME Shanghai) | Stamford S6L1D-H41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 104 engine `S12R-PTA2` | tổ máy `M1500N/H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: Stamford S6L1D-H41 | hãng: Mitsubishi | 
+  - đổi: genset: "M1500N/H1 CONTACT" → "M1500N/H1"
+  - nguồn: `| M1500N/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | S12R-PTA2 | Mitsubishi (SME Shanghai) | Stamford S6L1D-H41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 104 alternator `S6L1D-H41` | tổ máy `M1500N/H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: S12R-PTA2 | hãng: Stamford | 
+  - đổi: genset: "M1500N/H1 CONTACT" → "M1500N/H1"
+  - nguồn: `| M1500N/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | S12R-PTA2 | Mitsubishi (SME Shanghai) | Stamford S6L1D-H41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 105 engine `S12R-PTAA2-C` | tổ máy `M1650/H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: Stamford S7L1D-C41 | hãng: Mitsubishi | 
+  - đổi: genset: "M1650/H1 CONTACT" → "M1650/H1"
+  - nguồn: `| M1650/H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | S12R-PTAA2-C | Mitsubishi (SME Shanghai) | Stamford S7L1D-C41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 105 alternator `S7L1D-C41` | tổ máy `M1650/H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: S12R-PTAA2-C | hãng: Stamford | 
+  - đổi: genset: "M1650/H1 CONTACT" → "M1650/H1"
+  - nguồn: `| M1650/H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | S12R-PTAA2-C | Mitsubishi (SME Shanghai) | Stamford S7L1D-C41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 106 engine `S12R-PTAA2` | tổ máy `M1650N/H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: Stamford S7L1D-C41 | hãng: Mitsubishi | 
+  - đổi: genset: "M1650N/H1 CONTACT" → "M1650N/H1"
+  - nguồn: `| M1650N/H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | S12R-PTAA2 | Mitsubishi (SME Shanghai) | Stamford S7L1D-C41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 106 alternator `S7L1D-C41` | tổ máy `M1650N/H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: S12R-PTAA2 | hãng: Stamford | 
+  - đổi: genset: "M1650N/H1 CONTACT" → "M1650N/H1"
+  - nguồn: `| M1650N/H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | S12R-PTAA2 | Mitsubishi (SME Shanghai) | Stamford S7L1D-C41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 107 engine `S16R-PTA-C` | tổ máy `M1925/H1` | prime 1750 kVA / 1400 kW; standby 1925 kVA / 1540 kW | khác: Stamford S7L1D-E41 | hãng: Mitsubishi | 
+  - đổi: genset: "M1925/H1 CONTACT" → "M1925/H1"
+  - nguồn: `| M1925/H1 CONTACT | 1925KVA/ 1540KW | 1750KVA/ 1400KW | S16R-PTA-C | Mitsubishi (SME Shanghai) | Stamford S7L1D-E41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 107 alternator `S7L1D-E41` | tổ máy `M1925/H1` | prime 1750 kVA / 1400 kW; standby 1925 kVA / 1540 kW | khác: S16R-PTA-C | hãng: Stamford | 
+  - đổi: genset: "M1925/H1 CONTACT" → "M1925/H1"
+  - nguồn: `| M1925/H1 CONTACT | 1925KVA/ 1540KW | 1750KVA/ 1400KW | S16R-PTA-C | Mitsubishi (SME Shanghai) | Stamford S7L1D-E41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 108 engine `S16R-PTA` | tổ máy `M1925N/H1` | prime 1750 kVA / 1400 kW; standby 1925 kVA / 1540 kW | khác: Stamford S7L1D-E41 | hãng: Mitsubishi | 
+  - đổi: genset: "M1925N/H1 CONTACT" → "M1925N/H1"
+  - nguồn: `| M1925N/H1 CONTACT | 1925KVA/ 1540KW | 1750KVA/ 1400KW | S16R-PTA | Mitsubishi (SME Shanghai) | Stamford S7L1D-E41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 108 alternator `S7L1D-E41` | tổ máy `M1925N/H1` | prime 1750 kVA / 1400 kW; standby 1925 kVA / 1540 kW | khác: S16R-PTA | hãng: Stamford | 
+  - đổi: genset: "M1925N/H1 CONTACT" → "M1925N/H1"
+  - nguồn: `| M1925N/H1 CONTACT | 1925KVA/ 1540KW | 1750KVA/ 1400KW | S16R-PTA | Mitsubishi (SME Shanghai) | Stamford S7L1D-E41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 109 engine `S16R-PTA2-C` | tổ máy `M2000/H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: Stamford S7L1D-F41 | hãng: Mitsubishi | 
+  - đổi: genset: "M2000/H1 CONTACT" → "M2000/H1"
+  - nguồn: `| M2000/H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | S16R-PTA2-C | Mitsubishi (SME Shanghai) | Stamford S7L1D-F41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 109 alternator `S7L1D-F41` | tổ máy `M2000/H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: S16R-PTA2-C | hãng: Stamford | 
+  - đổi: genset: "M2000/H1 CONTACT" → "M2000/H1"
+  - nguồn: `| M2000/H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | S16R-PTA2-C | Mitsubishi (SME Shanghai) | Stamford S7L1D-F41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 110 engine `S16R-PTA2` | tổ máy `M2000N/H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: Stamford S7L1D-F41 | hãng: Mitsubishi | 
+  - đổi: genset: "M2000N/H1 CONTACT" → "M2000N/H1"
+  - nguồn: `| M2000N/H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | S16R-PTA2 | Mitsubishi (SME Shanghai) | Stamford S7L1D-F41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 110 alternator `S7L1D-F41` | tổ máy `M2000N/H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: S16R-PTA2 | hãng: Stamford | 
+  - đổi: genset: "M2000N/H1 CONTACT" → "M2000N/H1"
+  - nguồn: `| M2000N/H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | S16R-PTA2 | Mitsubishi (SME Shanghai) | Stamford S7L1D-F41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 111 engine `S16R-PTAA2-C` | tổ máy `M2200/H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: Stamford S7L1D-G41 | hãng: Mitsubishi | 
+  - đổi: genset: "M2200/H1 CONTACT" → "M2200/H1"
+  - nguồn: `| M2200/H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | S16R-PTAA2-C | Mitsubishi (SME Shanghai) | Stamford S7L1D-G41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 111 alternator `S7L1D-G41` | tổ máy `M2200/H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: S16R-PTAA2-C | hãng: Stamford | 
+  - đổi: genset: "M2200/H1 CONTACT" → "M2200/H1"
+  - nguồn: `| M2200/H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | S16R-PTAA2-C | Mitsubishi (SME Shanghai) | Stamford S7L1D-G41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 112 engine `S16R-PTAA2` | tổ máy `M2200N/H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: Stamford S7L1D-G41 | hãng: Mitsubishi | 
+  - đổi: genset: "M2200N/H1 CONTACT" → "M2200N/H1"
+  - nguồn: `| M2200N/H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | S16R-PTAA2 | Mitsubishi (SME Shanghai) | Stamford S7L1D-G41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 112 alternator `S7L1D-G41` | tổ máy `M2200N/H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: S16R-PTAA2 | hãng: Stamford | 
+  - đổi: genset: "M2200N/H1 CONTACT" → "M2200N/H1"
+  - nguồn: `| M2200N/H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | S16R-PTAA2 | Mitsubishi (SME Shanghai) | Stamford S7L1D-G41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 113 engine `S16R2-PTAW-C` | tổ máy `M2500/H1` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: Stamford S7L1D-H41 | hãng: Mitsubishi | 
+  - đổi: genset: "M2500/H1 CONTACT" → "M2500/H1"
+  - nguồn: `| M2500/H1 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | S16R2-PTAW-C | Mitsubishi (SME Shanghai) | Stamford S7L1D-H41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 113 alternator `S7L1D-H41` | tổ máy `M2500/H1` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: S16R2-PTAW-C | hãng: Stamford | 
+  - đổi: genset: "M2500/H1 CONTACT" → "M2500/H1"
+  - nguồn: `| M2500/H1 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | S16R2-PTAW-C | Mitsubishi (SME Shanghai) | Stamford S7L1D-H41 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 114 engine `S16R2-A2PTAW-C` | tổ máy `M2500N/H1` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: Stamford S7L1D-H41 | hãng: Mitsubishi | 
+  - đổi: genset: "M2500N/H1 CONTACT" → "M2500N/H1"
+  - nguồn: `| M2500N/H1 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | S16R2-A2PTAW-C | Mitsubishi (SME Shanghai) | Stamford S7L1D-H41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 114 alternator `S7L1D-H41` | tổ máy `M2500N/H1` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: S16R2-A2PTAW-C | hãng: Stamford | 
+  - đổi: genset: "M2500N/H1 CONTACT" → "M2500N/H1"
+  - nguồn: `| M2500N/H1 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | S16R2-A2PTAW-C | Mitsubishi (SME Shanghai) | Stamford S7L1D-H41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 115 engine `S16R2-PTAW` | tổ máy `M2500N1/H1` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: Stamford S7L1D-H41 | hãng: Mitsubishi | 
+  - đổi: genset: "M2500N1/H1 CONTACT" → "M2500N1/H1"
+  - nguồn: `| M2500N1/H1 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | S16R2-PTAW | Mitsubishi (SME Shanghai) | Stamford S7L1D-H41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 115 alternator `S7L1D-H41` | tổ máy `M2500N1/H1` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: S16R2-PTAW | hãng: Stamford | 
+  - đổi: genset: "M2500N1/H1 CONTACT" → "M2500N1/H1"
+  - nguồn: `| M2500N1/H1 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | S16R2-PTAW | Mitsubishi (SME Shanghai) | Stamford S7L1D-H41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 116 engine `S16R2-PTAW2-E` | tổ máy `M2750/H1` | prime 2500 kVA / 2000 kW; standby 2750 kVA / 2200 kW | khác: Stamford S7L1D-J41 | hãng: Mitsubishi | 
+  - đổi: genset: "M2750/H1 CONTACT" → "M2750/H1"
+  - nguồn: `| M2750/H1 CONTACT | 2750KVA/ 2200KW | 2500KVA/ 2000KW | S16R2-PTAW2-E | Mitsubishi (SME Shanghai) | Stamford S7L1D-J41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 116 alternator `S7L1D-J41` | tổ máy `M2750/H1` | prime 2500 kVA / 2000 kW; standby 2750 kVA / 2200 kW | khác: S16R2-PTAW2-E | hãng: Stamford | 
+  - đổi: genset: "M2750/H1 CONTACT" → "M2750/H1"
+  - nguồn: `| M2750/H1 CONTACT | 2750KVA/ 2200KW | 2500KVA/ 2000KW | S16R2-PTAW2-E | Mitsubishi (SME Shanghai) | Stamford S7L1D-J41 | Click Here |`
+- **ĐỔI** n103 b2 dòng 117 engine `YC4V35-D20` | tổ máy `Y23V1-H1` | prime 20 kVA / 16 kW; standby 23 kVA / 18 kW | khác: NIANFENG NFS184-D | hãng: Yuchai | 
+  - đổi: genset: "Y23V1-H1 CONTACT" → "Y23V1-H1"
+  - nguồn: `| Y23V1-H1 CONTACT | 23KVA/ 18KW | 20KVA/ 16KW | YC4V35-D20 | Yuchai (China) | NIANFENG NFS184-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 117 alternator `NIANFENG NFS184-D` | tổ máy `Y23V1-H1` | prime 20 kVA / 16 kW; standby 23 kVA / 18 kW | khác: YC4V35-D20 | hãng: ∅ | 
+  - đổi: genset: "Y23V1-H1 CONTACT" → "Y23V1-H1"
+  - nguồn: `| Y23V1-H1 CONTACT | 23KVA/ 18KW | 20KVA/ 16KW | YC4V35-D20 | Yuchai (China) | NIANFENG NFS184-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 118 engine `YCDV254FHZ-25` | tổ máy `Y23V2-H1` | prime 20 kVA / 16 kW; standby 23 kVA / 18 kW | khác: NIANFENG NFS184-D | hãng: Yuchai | 
+  - đổi: genset: "Y23V2-H1 CONTACT" → "Y23V2-H1"
+  - nguồn: `| Y23V2-H1 CONTACT | 23KVA/ 18KW | 20KVA/ 16KW | YCDV254FHZ-25 | Yuchai (China) | NIANFENG NFS184-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 118 alternator `NIANFENG NFS184-D` | tổ máy `Y23V2-H1` | prime 20 kVA / 16 kW; standby 23 kVA / 18 kW | khác: YCDV254FHZ-25 | hãng: ∅ | 
+  - đổi: genset: "Y23V2-H1 CONTACT" → "Y23V2-H1"
+  - nguồn: `| Y23V2-H1 CONTACT | 23KVA/ 18KW | 20KVA/ 16KW | YCDV254FHZ-25 | Yuchai (China) | NIANFENG NFS184-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 119 engine `YCDV254FHZ-35` | tổ máy `Y28-H1` | prime 25 kVA / 20 kW; standby 28 kVA / 22 kW | khác: NIANFENG NFS184-F | hãng: Yuchai | 
+  - đổi: genset: "Y28-H1 CONTACT" → "Y28-H1"
+  - nguồn: `| Y28-H1 CONTACT | 28KVA/ 22KW | 25KVA/ 20KW | YCDV254FHZ-35 | Yuchai (China) | NIANFENG NFS184-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 119 alternator `NIANFENG NFS184-F` | tổ máy `Y28-H1` | prime 25 kVA / 20 kW; standby 28 kVA / 22 kW | khác: YCDV254FHZ-35 | hãng: ∅ | 
+  - đổi: genset: "Y28-H1 CONTACT" → "Y28-H1"
+  - nguồn: `| Y28-H1 CONTACT | 28KVA/ 22KW | 25KVA/ 20KW | YCDV254FHZ-35 | Yuchai (China) | NIANFENG NFS184-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 120 engine `YC4V45Z-D20` | tổ máy `Y33V1-H1` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: NIANFENG NFS184-GS | hãng: Yuchai | 
+  - đổi: genset: "Y33V1-H1 CONTACT" → "Y33V1-H1"
+  - nguồn: `| Y33V1-H1 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | YC4V45Z-D20 | Yuchai (China) | NIANFENG NFS184-GS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 120 alternator `NIANFENG NFS184-GS` | tổ máy `Y33V1-H1` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: YC4V45Z-D20 | hãng: ∅ | 
+  - đổi: genset: "Y33V1-H1 CONTACT" → "Y33V1-H1"
+  - nguồn: `| Y33V1-H1 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | YC4V45Z-D20 | Yuchai (China) | NIANFENG NFS184-GS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 121 engine `YCDV254FHZ-40` | tổ máy `Y33V2-H1` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: NIANFENG NFS184-GS | hãng: Yuchai | 
+  - đổi: genset: "Y33V2-H1 CONTACT" → "Y33V2-H1"
+  - nguồn: `| Y33V2-H1 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | YCDV254FHZ-40 | Yuchai (China) | NIANFENG NFS184-GS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 121 alternator `NIANFENG NFS184-GS` | tổ máy `Y33V2-H1` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: YCDV254FHZ-40 | hãng: ∅ | 
+  - đổi: genset: "Y33V2-H1 CONTACT" → "Y33V2-H1"
+  - nguồn: `| Y33V2-H1 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | YCDV254FHZ-40 | Yuchai (China) | NIANFENG NFS184-GS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 122 engine `YC4V55Z-D20` | tổ máy `Y41V1-H1` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: NIANFENG NFS184-H | hãng: Yuchai | 
+  - đổi: genset: "Y41V1-H1 CONTACT" → "Y41V1-H1"
+  - nguồn: `| Y41V1-H1 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | YC4V55Z-D20 | Yuchai (China) | NIANFENG NFS184-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 122 alternator `NIANFENG NFS184-H` | tổ máy `Y41V1-H1` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: YC4V55Z-D20 | hãng: ∅ | 
+  - đổi: genset: "Y41V1-H1 CONTACT" → "Y41V1-H1"
+  - nguồn: `| Y41V1-H1 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | YC4V55Z-D20 | Yuchai (China) | NIANFENG NFS184-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 123 engine `YCDV254FHZ-50` | tổ máy `Y41V2-H1` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: NIANFENG NFS184-H | hãng: Yuchai | 
+  - đổi: genset: "Y41V2-H1 CONTACT" → "Y41V2-H1"
+  - nguồn: `| Y41V2-H1 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | YCDV254FHZ-50 | Yuchai (China) | NIANFENG NFS184-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 123 alternator `NIANFENG NFS184-H` | tổ máy `Y41V2-H1` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: YCDV254FHZ-50 | hãng: ∅ | 
+  - đổi: genset: "Y41V2-H1 CONTACT" → "Y41V2-H1"
+  - nguồn: `| Y41V2-H1 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | YCDV254FHZ-50 | Yuchai (China) | NIANFENG NFS184-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 124 engine `YC4D80-D34` | tổ máy `Y56V1-H1` | prime 50 kVA / 40 kW; standby 56 kVA / 45 kW | khác: NIANFENG NFS224-D | hãng: Yuchai | 
+  - đổi: genset: "Y56V1-H1 CONTACT" → "Y56V1-H1"
+  - nguồn: `| Y56V1-H1 CONTACT | 56KVA/ 45KW | 50KVA/ 40KW | YC4D80-D34 | Yuchai (China) | NIANFENG NFS224-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 124 alternator `NIANFENG NFS224-D` | tổ máy `Y56V1-H1` | prime 50 kVA / 40 kW; standby 56 kVA / 45 kW | khác: YC4D80-D34 | hãng: ∅ | 
+  - đổi: genset: "Y56V1-H1 CONTACT" → "Y56V1-H1"
+  - nguồn: `| Y56V1-H1 CONTACT | 56KVA/ 45KW | 50KVA/ 40KW | YC4D80-D34 | Yuchai (China) | NIANFENG NFS224-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 125 engine `YCD4V33H6-75` | tổ máy `Y56V2-H1` | prime 50 kVA / 40 kW; standby 56 kVA / 45 kW | khác: NIANFENG NFS224-D | hãng: Yuchai | 
+  - đổi: genset: "Y56V2-H1 CONTACT" → "Y56V2-H1"
+  - nguồn: `| Y56V2-H1 CONTACT | 56KVA/ 45KW | 50KVA/ 40KW | YCD4V33H6-75 | Yuchai (China) | NIANFENG NFS224-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 125 alternator `NIANFENG NFS224-D` | tổ máy `Y56V2-H1` | prime 50 kVA / 40 kW; standby 56 kVA / 45 kW | khác: YCD4V33H6-75 | hãng: ∅ | 
+  - đổi: genset: "Y56V2-H1 CONTACT" → "Y56V2-H1"
+  - nguồn: `| Y56V2-H1 CONTACT | 56KVA/ 45KW | 50KVA/ 40KW | YCD4V33H6-75 | Yuchai (China) | NIANFENG NFS224-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 126 engine `YC4D90-D34` | tổ máy `Y69V1-H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: NIANFENG NFS224-E | hãng: Yuchai | 
+  - đổi: genset: "Y69V1-H1 CONTACT" → "Y69V1-H1"
+  - nguồn: `| Y69V1-H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | YC4D90-D34 | Yuchai (China) | NIANFENG NFS224-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 126 alternator `NIANFENG NFS224-E` | tổ máy `Y69V1-H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: YC4D90-D34 | hãng: ∅ | 
+  - đổi: genset: "Y69V1-H1 CONTACT" → "Y69V1-H1"
+  - nguồn: `| Y69V1-H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | YC4D90-D34 | Yuchai (China) | NIANFENG NFS224-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 127 engine `YC4D90Z-D25` | tổ máy `Y69V2-H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: NIANFENG NFS224-E | hãng: Yuchai | 
+  - đổi: genset: "Y69V2-H1 CONTACT" → "Y69V2-H1"
+  - nguồn: `| Y69V2-H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | YC4D90Z-D25 | Yuchai (China) | NIANFENG NFS224-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 127 alternator `NIANFENG NFS224-E` | tổ máy `Y69V2-H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: YC4D90Z-D25 | hãng: ∅ | 
+  - đổi: genset: "Y69V2-H1 CONTACT" → "Y69V2-H1"
+  - nguồn: `| Y69V2-H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | YC4D90Z-D25 | Yuchai (China) | NIANFENG NFS224-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 128 engine `YC4A100Z-D25` | tổ máy `Y83V1-H1` | prime 75 kVA / 60 kW; standby 83 kVA / 66 kW | khác: NIANFENG NFS224-F | hãng: Yuchai | 
+  - đổi: genset: "Y83V1-H1 CONTACT" → "Y83V1-H1"
+  - nguồn: `| Y83V1-H1 CONTACT | 83KVA/ 66KW | 75KVA/ 60KW | YC4A100Z-D25 | Yuchai (China) | NIANFENG NFS224-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 128 alternator `NIANFENG NFS224-F` | tổ máy `Y83V1-H1` | prime 75 kVA / 60 kW; standby 83 kVA / 66 kW | khác: YC4A100Z-D25 | hãng: ∅ | 
+  - đổi: genset: "Y83V1-H1 CONTACT" → "Y83V1-H1"
+  - nguồn: `| Y83V1-H1 CONTACT | 83KVA/ 66KW | 75KVA/ 60KW | YC4A100Z-D25 | Yuchai (China) | NIANFENG NFS224-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 129 engine `YC4D105-D34` | tổ máy `Y83V2-H1` | prime 75 kVA / 60 kW; standby 83 kVA / 66 kW | khác: NIANFENG NFS224-F | hãng: Yuchai | 
+  - đổi: genset: "Y83V2-H1 CONTACT" → "Y83V2-H1"
+  - nguồn: `| Y83V2-H1 CONTACT | 83KVA/ 66KW | 75KVA/ 60KW | YC4D105-D34 | Yuchai (China) | NIANFENG NFS224-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 129 alternator `NIANFENG NFS224-F` | tổ máy `Y83V2-H1` | prime 75 kVA / 60 kW; standby 83 kVA / 66 kW | khác: YC4D105-D34 | hãng: ∅ | 
+  - đổi: genset: "Y83V2-H1 CONTACT" → "Y83V2-H1"
+  - nguồn: `| Y83V2-H1 CONTACT | 83KVA/ 66KW | 75KVA/ 60KW | YC4D105-D34 | Yuchai (China) | NIANFENG NFS224-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 130 engine `YC4A140L-D25` | tổ máy `Y113V1-H1` | prime 100 kVA / 80 kW; standby 113 kVA / 90 kW | khác: NIANFENG NFS224-H | hãng: Yuchai | 
+  - đổi: genset: "Y113V1-H1 CONTACT" → "Y113V1-H1"
+  - nguồn: `| Y113V1-H1 CONTACT | 113KVA/ 90KW | 100KVA/ 80KW | YC4A140L-D25 | Yuchai (China) | NIANFENG NFS224-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 130 alternator `NIANFENG NFS224-H` | tổ máy `Y113V1-H1` | prime 100 kVA / 80 kW; standby 113 kVA / 90 kW | khác: YC4A140L-D25 | hãng: ∅ | 
+  - đổi: genset: "Y113V1-H1 CONTACT" → "Y113V1-H1"
+  - nguồn: `| Y113V1-H1 CONTACT | 113KVA/ 90KW | 100KVA/ 80KW | YC4A140L-D25 | Yuchai (China) | NIANFENG NFS224-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 131 engine `YC4D140-D31` | tổ máy `Y113V2-H1` | prime 100 kVA / 80 kW; standby 113 kVA / 90 kW | khác: NIANFENG NFS224-H | hãng: Yuchai | 
+  - đổi: genset: "Y113V2-H1 CONTACT" → "Y113V2-H1"
+  - nguồn: `| Y113V2-H1 CONTACT | 113KVA/ 90KW | 100KVA/ 80KW | YC4D140-D31 | Yuchai (China) | NIANFENG NFS224-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 131 alternator `NIANFENG NFS224-H` | tổ máy `Y113V2-H1` | prime 100 kVA / 80 kW; standby 113 kVA / 90 kW | khác: YC4D140-D31 | hãng: ∅ | 
+  - đổi: genset: "Y113V2-H1 CONTACT" → "Y113V2-H1"
+  - nguồn: `| Y113V2-H1 CONTACT | 113KVA/ 90KW | 100KVA/ 80KW | YC4D140-D31 | Yuchai (China) | NIANFENG NFS224-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 132 engine `YC4A140-D30` | tổ máy `Y113N/H1` | prime 100 kVA / 80 kW; standby 113 kVA / 90 kW | khác: NIANFENG NFS224-H | hãng: Yuchai | 
+  - đổi: genset: "Y113N/H1 CONTACT" → "Y113N/H1"
+  - nguồn: `| Y113N/H1 CONTACT | 113KVA/ 90KW | 100KVA/ 80KW | YC4A140-D30 | Yuchai (China) | NIANFENG NFS224-H | Click Here |`
+- **ĐỔI** n103 b2 dòng 132 alternator `NIANFENG NFS224-H` | tổ máy `Y113N/H1` | prime 100 kVA / 80 kW; standby 113 kVA / 90 kW | khác: YC4A140-D30 | hãng: ∅ | 
+  - đổi: genset: "Y113N/H1 CONTACT" → "Y113N/H1"
+  - nguồn: `| Y113N/H1 CONTACT | 113KVA/ 90KW | 100KVA/ 80KW | YC4A140-D30 | Yuchai (China) | NIANFENG NFS224-H | Click Here |`
+- **ĐỔI** n103 b2 dòng 133 engine `YC4D155-D31` | tổ máy `Y125-H1` | prime 113 kVA / 90 kW; standby 125 kVA / 100 kW | khác: NIANFENG NFS274-DS | hãng: Yuchai | 
+  - đổi: genset: "Y125-H1 CONTACT" → "Y125-H1"
+  - nguồn: `| Y125-H1 CONTACT | 125KVA/ 100KW | 113KVA/ 90KW | YC4D155-D31 | Yuchai (China) | NIANFENG NFS274-DS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 133 alternator `NIANFENG NFS274-DS` | tổ máy `Y125-H1` | prime 113 kVA / 90 kW; standby 125 kVA / 100 kW | khác: YC4D155-D31 | hãng: ∅ | 
+  - đổi: genset: "Y125-H1 CONTACT" → "Y125-H1"
+  - nguồn: `| Y125-H1 CONTACT | 125KVA/ 100KW | 113KVA/ 90KW | YC4D155-D31 | Yuchai (China) | NIANFENG NFS274-DS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 134 engine `YC4A155-D30` | tổ máy `Y125N/H1` | prime 113 kVA / 90 kW; standby 125 kVA / 100 kW | khác: NIANFENG NFS274-DS | hãng: Yuchai | 
+  - đổi: genset: "Y125N/H1 CONTACT" → "Y125N/H1"
+  - nguồn: `| Y125N/H1 CONTACT | 125KVA/ 100KW | 113KVA/ 90KW | YC4A155-D30 | Yuchai (China) | NIANFENG NFS274-DS | Click Here |`
+- **ĐỔI** n103 b2 dòng 134 alternator `NIANFENG NFS274-DS` | tổ máy `Y125N/H1` | prime 113 kVA / 90 kW; standby 125 kVA / 100 kW | khác: YC4A155-D30 | hãng: ∅ | 
+  - đổi: genset: "Y125N/H1 CONTACT" → "Y125N/H1"
+  - nguồn: `| Y125N/H1 CONTACT | 125KVA/ 100KW | 113KVA/ 90KW | YC4A155-D30 | Yuchai (China) | NIANFENG NFS274-DS | Click Here |`
+- **ĐỔI** n103 b2 dòng 135 engine `YC4A180L-D20` | tổ máy `Y138-H1` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: NIANFENG NFS274-DS | hãng: Yuchai | 
+  - đổi: genset: "Y138-H1 CONTACT" → "Y138-H1"
+  - nguồn: `| Y138-H1 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | YC4A180L-D20 | Yuchai (China) | NIANFENG NFS274-DS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 135 alternator `NIANFENG NFS274-DS` | tổ máy `Y138-H1` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: YC4A180L-D20 | hãng: ∅ | 
+  - đổi: genset: "Y138-H1 CONTACT" → "Y138-H1"
+  - nguồn: `| Y138-H1 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | YC4A180L-D20 | Yuchai (China) | NIANFENG NFS274-DS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 136 engine `YC4A190-D30` | tổ máy `Y150-H1` | prime 138 kVA / 110 kW; standby 150 kVA / 120 kW | khác: NIANFENG NFS274-E | hãng: Yuchai | 
+  - đổi: genset: "Y150-H1 CONTACT" → "Y150-H1"
+  - nguồn: `| Y150-H1 CONTACT | 150KVA/ 120KW | 138KVA/ 110KW | YC4A190-D30 | Yuchai (China) | NIANFENG NFS274-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 136 alternator `NIANFENG NFS274-E` | tổ máy `Y150-H1` | prime 138 kVA / 110 kW; standby 150 kVA / 120 kW | khác: YC4A190-D30 | hãng: ∅ | 
+  - đổi: genset: "Y150-H1 CONTACT" → "Y150-H1"
+  - nguồn: `| Y150-H1 CONTACT | 150KVA/ 120KW | 138KVA/ 110KW | YC4A190-D30 | Yuchai (China) | NIANFENG NFS274-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 137 engine `YC6A205-D30` | tổ máy `Y165V1-H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: NIANFENG NFS274-FS | hãng: Yuchai | 
+  - đổi: genset: "Y165V1-H1 CONTACT" → "Y165V1-H1"
+  - nguồn: `| Y165V1-H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | YC6A205-D30 | Yuchai (China) | NIANFENG NFS274-FS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 137 alternator `NIANFENG NFS274-FS` | tổ máy `Y165V1-H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: YC6A205-D30 | hãng: ∅ | 
+  - đổi: genset: "Y165V1-H1 CONTACT" → "Y165V1-H1"
+  - nguồn: `| Y165V1-H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | YC6A205-D30 | Yuchai (China) | NIANFENG NFS274-FS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 138 engine `YC6B205L-D20` | tổ máy `Y165V2-H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: NIANFENG NFS274-FS | hãng: Yuchai | 
+  - đổi: genset: "Y165V2-H1 CONTACT" → "Y165V2-H1"
+  - nguồn: `| Y165V2-H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | YC6B205L-D20 | Yuchai (China) | NIANFENG NFS274-FS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 138 alternator `NIANFENG NFS274-FS` | tổ máy `Y165V2-H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: YC6B205L-D20 | hãng: ∅ | 
+  - đổi: genset: "Y165V2-H1 CONTACT" → "Y165V2-H1"
+  - nguồn: `| Y165V2-H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | YC6B205L-D20 | Yuchai (China) | NIANFENG NFS274-FS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 139 engine `YCD6Q23H8-210` | tổ máy `Y165N/H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: NIANFENG NFS274-FS | hãng: Yuchai | 
+  - đổi: genset: "Y165N/H1 CONTACT" → "Y165N/H1"
+  - nguồn: `| Y165N/H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | YCD6Q23H8-210 | Yuchai (China) | NIANFENG NFS274-FS | Click Here |`
+- **ĐỔI** n103 b2 dòng 139 alternator `NIANFENG NFS274-FS` | tổ máy `Y165N/H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: YCD6Q23H8-210 | hãng: ∅ | 
+  - đổi: genset: "Y165N/H1 CONTACT" → "Y165N/H1"
+  - nguồn: `| Y165N/H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | YCD6Q23H8-210 | Yuchai (China) | NIANFENG NFS274-FS | Click Here |`
+- **ĐỔI** n103 b2 dòng 140 engine `YC6A245-D30` | tổ máy `Y200V1-H1` | prime 188 kVA / 150 kW; standby 200 kVA / 160 kW | khác: NIANFENG NFS274-G | hãng: Yuchai | 
+  - đổi: genset: "Y200V1-H1 CONTACT" → "Y200V1-H1"
+  - nguồn: `| Y200V1-H1 CONTACT | 200KVA/ 160KW | 188KVA/ 150KW | YC6A245-D30 | Yuchai (China) | NIANFENG NFS274-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 140 alternator `NIANFENG NFS274-G` | tổ máy `Y200V1-H1` | prime 188 kVA / 150 kW; standby 200 kVA / 160 kW | khác: YC6A245-D30 | hãng: ∅ | 
+  - đổi: genset: "Y200V1-H1 CONTACT" → "Y200V1-H1"
+  - nguồn: `| Y200V1-H1 CONTACT | 200KVA/ 160KW | 188KVA/ 150KW | YC6A245-D30 | Yuchai (China) | NIANFENG NFS274-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 141 engine `YC6A245L-D21` | tổ máy `Y200V2-H1` | prime 188 kVA / 150 kW; standby 200 kVA / 160 kW | khác: NIANFENG NFS274-G | hãng: Yuchai | 
+  - đổi: genset: "Y200V2-H1 CONTACT" → "Y200V2-H1"
+  - nguồn: `| Y200V2-H1 CONTACT | 200KVA/ 160KW | 188KVA/ 150KW | YC6A245L-D21 | Yuchai (China) | NIANFENG NFS274-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 141 alternator `NIANFENG NFS274-G` | tổ máy `Y200V2-H1` | prime 188 kVA / 150 kW; standby 200 kVA / 160 kW | khác: YC6A245L-D21 | hãng: ∅ | 
+  - đổi: genset: "Y200V2-H1 CONTACT" → "Y200V2-H1"
+  - nguồn: `| Y200V2-H1 CONTACT | 200KVA/ 160KW | 188KVA/ 150KW | YC6A245L-D21 | Yuchai (China) | NIANFENG NFS274-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 142 engine `YC6A275-D30` | tổ máy `Y220V1-H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: NIANFENG NFS274-H | hãng: Yuchai | 
+  - đổi: genset: "Y220V1-H1 CONTACT" → "Y220V1-H1"
+  - nguồn: `| Y220V1-H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | YC6A275-D30 | Yuchai (China) | NIANFENG NFS274-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 142 alternator `NIANFENG NFS274-H` | tổ máy `Y220V1-H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: YC6A275-D30 | hãng: ∅ | 
+  - đổi: genset: "Y220V1-H1 CONTACT" → "Y220V1-H1"
+  - nguồn: `| Y220V1-H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | YC6A275-D30 | Yuchai (China) | NIANFENG NFS274-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 143 engine `YCD6Q33H6-260` | tổ máy `Y220V2-H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: NIANFENG NFS274-H | hãng: Yuchai | 
+  - đổi: genset: "Y220V2-H1 CONTACT" → "Y220V2-H1"
+  - nguồn: `| Y220V2-H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | YCD6Q33H6-260 | Yuchai (China) | NIANFENG NFS274-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 143 alternator `NIANFENG NFS274-H` | tổ máy `Y220V2-H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: YCD6Q33H6-260 | hãng: ∅ | 
+  - đổi: genset: "Y220V2-H1 CONTACT" → "Y220V2-H1"
+  - nguồn: `| Y220V2-H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | YCD6Q33H6-260 | Yuchai (China) | NIANFENG NFS274-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 144 engine `YC6MK350-D30` | tổ máy `Y275V1-H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: NIANFENG NFS274-K | hãng: Yuchai | 
+  - đổi: genset: "Y275V1-H1 CONTACT" → "Y275V1-H1"
+  - nguồn: `| Y275V1-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | YC6MK350-D30 | Yuchai (China) | NIANFENG NFS274-K | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 144 alternator `NIANFENG NFS274-K` | tổ máy `Y275V1-H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: YC6MK350-D30 | hãng: ∅ | 
+  - đổi: genset: "Y275V1-H1 CONTACT" → "Y275V1-H1"
+  - nguồn: `| Y275V1-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | YC6MK350-D30 | Yuchai (China) | NIANFENG NFS274-K | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 145 engine `YC6MK350L-D20` | tổ máy `Y275V2-H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: NIANFENG NFS274-K | hãng: Yuchai | 
+  - đổi: genset: "Y275V2-H1 CONTACT" → "Y275V2-H1"
+  - nguồn: `| Y275V2-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | YC6MK350L-D20 | Yuchai (China) | NIANFENG NFS274-K | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 145 alternator `NIANFENG NFS274-K` | tổ máy `Y275V2-H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: YC6MK350L-D20 | hãng: ∅ | 
+  - đổi: genset: "Y275V2-H1 CONTACT" → "Y275V2-H1"
+  - nguồn: `| Y275V2-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | YC6MK350L-D20 | Yuchai (China) | NIANFENG NFS274-K | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 146 engine `YCA08350-D30` | tổ máy `Y275N/H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: NIANFENG NFS274-K | hãng: Yuchai | 
+  - đổi: genset: "Y275N/H1 CONTACT" → "Y275N/H1"
+  - nguồn: `| Y275N/H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | YCA08350-D30 | Yuchai (China) | NIANFENG NFS274-K | Click Here |`
+- **ĐỔI** n103 b2 dòng 146 alternator `NIANFENG NFS274-K` | tổ máy `Y275N/H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: YCA08350-D30 | hãng: ∅ | 
+  - đổi: genset: "Y275N/H1 CONTACT" → "Y275N/H1"
+  - nguồn: `| Y275N/H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | YCA08350-D30 | Yuchai (China) | NIANFENG NFS274-K | Click Here |`
+- **ĐỔI** n103 b2 dòng 147 engine `YC6MK420-D30` | tổ máy `Y344V1-H1` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: NIANFENG NFS4-ES | hãng: Yuchai | 
+  - đổi: genset: "Y344V1-H1 CONTACT" → "Y344V1-H1"
+  - nguồn: `| Y344V1-H1 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | YC6MK420-D30 | Yuchai (China) | NIANFENG NFS4-ES | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 147 alternator `NIANFENG NFS4-ES` | tổ máy `Y344V1-H1` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: YC6MK420-D30 | hãng: ∅ | 
+  - đổi: genset: "Y344V1-H1 CONTACT" → "Y344V1-H1"
+  - nguồn: `| Y344V1-H1 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | YC6MK420-D30 | Yuchai (China) | NIANFENG NFS4-ES | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 148 engine `YC6MK420L-D20` | tổ máy `Y344V2-H1` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: NIANFENG NFS4-ES | hãng: Yuchai | 
+  - đổi: genset: "Y344V2-H1 CONTACT" → "Y344V2-H1"
+  - nguồn: `| Y344V2-H1 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | YC6MK420L-D20 | Yuchai (China) | NIANFENG NFS4-ES | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 148 alternator `NIANFENG NFS4-ES` | tổ máy `Y344V2-H1` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: YC6MK420L-D20 | hãng: ∅ | 
+  - đổi: genset: "Y344V2-H1 CONTACT" → "Y344V2-H1"
+  - nguồn: `| Y344V2-H1 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | YC6MK420L-D20 | Yuchai (China) | NIANFENG NFS4-ES | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 149 engine `YC6MK450-D30` | tổ máy `Y375-H1` | prime 350 kVA / 280 kW; standby 375 kVA / 300 kW | khác: NIANFENG NFS4-F | hãng: Yuchai | 
+  - đổi: genset: "Y375-H1 CONTACT" → "Y375-H1"
+  - nguồn: `| Y375-H1 CONTACT | 375KVA/ 300KW | 350KVA/ 280KW | YC6MK450-D30 | Yuchai (China) | NIANFENG NFS4-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 149 alternator `NIANFENG NFS4-F` | tổ máy `Y375-H1` | prime 350 kVA / 280 kW; standby 375 kVA / 300 kW | khác: YC6MK450-D30 | hãng: ∅ | 
+  - đổi: genset: "Y375-H1 CONTACT" → "Y375-H1"
+  - nguồn: `| Y375-H1 CONTACT | 375KVA/ 300KW | 350KVA/ 280KW | YC6MK450-D30 | Yuchai (China) | NIANFENG NFS4-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 150 engine `YC6K500-D31` | tổ máy `Y413V1-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: NIANFENG NFS4-G | hãng: Yuchai | 
+  - đổi: genset: "Y413V1-H1 CONTACT" → "Y413V1-H1"
+  - nguồn: `| Y413V1-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | YC6K500-D31 | Yuchai (China) | NIANFENG NFS4-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 150 alternator `NIANFENG NFS4-G` | tổ máy `Y413V1-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: YC6K500-D31 | hãng: ∅ | 
+  - đổi: genset: "Y413V1-H1 CONTACT" → "Y413V1-H1"
+  - nguồn: `| Y413V1-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | YC6K500-D31 | Yuchai (China) | NIANFENG NFS4-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 151 engine `YC6MJ500-D30` | tổ máy `Y413V2-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: NIANFENG NFS4-G | hãng: Yuchai | 
+  - đổi: genset: "Y413V2-H1 CONTACT" → "Y413V2-H1"
+  - nguồn: `| Y413V2-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | YC6MJ500-D30 | Yuchai (China) | NIANFENG NFS4-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 151 alternator `NIANFENG NFS4-G` | tổ máy `Y413V2-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: YC6MJ500-D30 | hãng: ∅ | 
+  - đổi: genset: "Y413V2-H1 CONTACT" → "Y413V2-H1"
+  - nguồn: `| Y413V2-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | YC6MJ500-D30 | Yuchai (China) | NIANFENG NFS4-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 152 engine `YC6MJ500L-D21` | tổ máy `Y413V3-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: NIANFENG NFS4-G | hãng: Yuchai | 
+  - đổi: genset: "Y413V3-H1 CONTACT" → "Y413V3-H1"
+  - nguồn: `| Y413V3-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | YC6MJ500L-D21 | Yuchai (China) | NIANFENG NFS4-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 152 alternator `NIANFENG NFS4-G` | tổ máy `Y413V3-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: YC6MJ500L-D21 | hãng: ∅ | 
+  - đổi: genset: "Y413V3-H1 CONTACT" → "Y413V3-H1"
+  - nguồn: `| Y413V3-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | YC6MJ500L-D21 | Yuchai (China) | NIANFENG NFS4-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 153 engine `YC6K500-D30` | tổ máy `Y413N/H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: NIANFENG NFS4-G | hãng: Yuchai | 
+  - đổi: genset: "Y413N/H1 CONTACT" → "Y413N/H1"
+  - nguồn: `| Y413N/H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | YC6K500-D30 | Yuchai (China) | NIANFENG NFS4-G | Click Here |`
+- **ĐỔI** n103 b2 dòng 153 alternator `NIANFENG NFS4-G` | tổ máy `Y413N/H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: YC6K500-D30 | hãng: ∅ | 
+  - đổi: genset: "Y413N/H1 CONTACT" → "Y413N/H1"
+  - nguồn: `| Y413N/H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | YC6K500-D30 | Yuchai (China) | NIANFENG NFS4-G | Click Here |`
+- **ĐỔI** n103 b2 dòng 154 engine `YC6K520-D30` | tổ máy `Y450V1-H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: NIANFENG NFS4-H | hãng: Yuchai | 
+  - đổi: genset: "Y450V1-H1 CONTACT" → "Y450V1-H1"
+  - nguồn: `| Y450V1-H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | YC6K520-D30 | Yuchai (China) | NIANFENG NFS4-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 154 alternator `NIANFENG NFS4-H` | tổ máy `Y450V1-H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: YC6K520-D30 | hãng: ∅ | 
+  - đổi: genset: "Y450V1-H1 CONTACT" → "Y450V1-H1"
+  - nguồn: `| Y450V1-H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | YC6K520-D30 | Yuchai (China) | NIANFENG NFS4-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 155 engine `YC6MJ540-D30` | tổ máy `Y450V2-H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: NIANFENG NFS4-H | hãng: Yuchai | 
+  - đổi: genset: "Y450V2-H1 CONTACT" → "Y450V2-H1"
+  - nguồn: `| Y450V2-H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | YC6MJ540-D30 | Yuchai (China) | NIANFENG NFS4-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 155 alternator `NIANFENG NFS4-H` | tổ máy `Y450V2-H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: YC6MJ540-D30 | hãng: ∅ | 
+  - đổi: genset: "Y450V2-H1 CONTACT" → "Y450V2-H1"
+  - nguồn: `| Y450V2-H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | YC6MJ540-D30 | Yuchai (China) | NIANFENG NFS4-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 156 engine `YC6K600-D30` | tổ máy `Y500V1-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: NIANFENG NFS4-J | hãng: Yuchai | 
+  - đổi: genset: "Y500V1-H1 CONTACT" → "Y500V1-H1"
+  - nguồn: `| Y500V1-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | YC6K600-D30 | Yuchai (China) | NIANFENG NFS4-J | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 156 alternator `NIANFENG NFS4-J` | tổ máy `Y500V1-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: YC6K600-D30 | hãng: ∅ | 
+  - đổi: genset: "Y500V1-H1 CONTACT" → "Y500V1-H1"
+  - nguồn: `| Y500V1-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | YC6K600-D30 | Yuchai (China) | NIANFENG NFS4-J | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 157 engine `YC6MJ600-D30` | tổ máy `Y500V2-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: NIANFENG NFS4-J | hãng: Yuchai | 
+  - đổi: genset: "Y500V2-H1 CONTACT" → "Y500V2-H1"
+  - nguồn: `| Y500V2-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | YC6MJ600-D30 | Yuchai (China) | NIANFENG NFS4-J | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 157 alternator `NIANFENG NFS4-J` | tổ máy `Y500V2-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: YC6MJ600-D30 | hãng: ∅ | 
+  - đổi: genset: "Y500V2-H1 CONTACT" → "Y500V2-H1"
+  - nguồn: `| Y500V2-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | YC6MJ600-D30 | Yuchai (China) | NIANFENG NFS4-J | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 158 engine `YC6T600L-D22` | tổ máy `Y500N/H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: NIANFENG NFS4-J | hãng: Yuchai | 
+  - đổi: genset: "Y500N/H1 CONTACT" → "Y500N/H1"
+  - nguồn: `| Y500N/H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | YC6T600L-D22 | Yuchai (China) | NIANFENG NFS4-J | Click Here |`
+- **ĐỔI** n103 b2 dòng 158 alternator `NIANFENG NFS4-J` | tổ máy `Y500N/H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: YC6T600L-D22 | hãng: ∅ | 
+  - đổi: genset: "Y500N/H1 CONTACT" → "Y500N/H1"
+  - nguồn: `| Y500N/H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | YC6T600L-D22 | Yuchai (China) | NIANFENG NFS4-J | Click Here |`
+- **ĐỔI** n103 b2 dòng 159 engine `YC6K660-D30` | tổ máy `Y550V1-H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: NIANFENG NFS5-D | hãng: Yuchai | 
+  - đổi: genset: "Y550V1-H1 CONTACT" → "Y550V1-H1"
+  - nguồn: `| Y550V1-H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | YC6K660-D30 | Yuchai (China) | NIANFENG NFS5-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 159 alternator `NIANFENG NFS5-D` | tổ máy `Y550V1-H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: YC6K660-D30 | hãng: ∅ | 
+  - đổi: genset: "Y550V1-H1 CONTACT" → "Y550V1-H1"
+  - nguồn: `| Y550V1-H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | YC6K660-D30 | Yuchai (China) | NIANFENG NFS5-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 160 engine `YC6T660-D31` | tổ máy `Y550V2-H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: NIANFENG NFS5-D | hãng: Yuchai | 
+  - đổi: genset: "Y550V2-H1 CONTACT" → "Y550V2-H1"
+  - nguồn: `| Y550V2-H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | YC6T660-D31 | Yuchai (China) | NIANFENG NFS5-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 160 alternator `NIANFENG NFS5-D` | tổ máy `Y550V2-H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: YC6T660-D31 | hãng: ∅ | 
+  - đổi: genset: "Y550V2-H1 CONTACT" → "Y550V2-H1"
+  - nguồn: `| Y550V2-H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | YC6T660-D31 | Yuchai (China) | NIANFENG NFS5-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 161 engine `YC6T660L-D20` | tổ máy `Y550N/H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: NIANFENG NFS5-D | hãng: Yuchai | 
+  - đổi: genset: "Y550N/H1 CONTACT" → "Y550N/H1"
+  - nguồn: `| Y550N/H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | YC6T660L-D20 | Yuchai (China) | NIANFENG NFS5-D | Click Here |`
+- **ĐỔI** n103 b2 dòng 161 alternator `NIANFENG NFS5-D` | tổ máy `Y550N/H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: YC6T660L-D20 | hãng: ∅ | 
+  - đổi: genset: "Y550N/H1 CONTACT" → "Y550N/H1"
+  - nguồn: `| Y550N/H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | YC6T660L-D20 | Yuchai (China) | NIANFENG NFS5-D | Click Here |`
+- **ĐỔI** n103 b2 dòng 162 engine `YC6TD780-D31` | tổ máy `Y625-H1` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: NIANFENG NFS5-E | hãng: Yuchai | 
+  - đổi: genset: "Y625-H1 CONTACT" → "Y625-H1"
+  - nguồn: `| Y625-H1 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | YC6TD780-D31 | Yuchai (China) | NIANFENG NFS5-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 162 alternator `NIANFENG NFS5-E` | tổ máy `Y625-H1` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: YC6TD780-D31 | hãng: ∅ | 
+  - đổi: genset: "Y625-H1 CONTACT" → "Y625-H1"
+  - nguồn: `| Y625-H1 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | YC6TD780-D31 | Yuchai (China) | NIANFENG NFS5-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 163 engine `YC6TD780-D30` | tổ máy `Y625N/H1` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: NIANFENG NFS5-E | hãng: Yuchai | 
+  - đổi: genset: "Y625N/H1 CONTACT" → "Y625N/H1"
+  - nguồn: `| Y625N/H1 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | YC6TD780-D30 | Yuchai (China) | NIANFENG NFS5-E | Click Here |`
+- **ĐỔI** n103 b2 dòng 163 alternator `NIANFENG NFS5-E` | tổ máy `Y625N/H1` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: YC6TD780-D30 | hãng: ∅ | 
+  - đổi: genset: "Y625N/H1 CONTACT" → "Y625N/H1"
+  - nguồn: `| Y625N/H1 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | YC6TD780-D30 | Yuchai (China) | NIANFENG NFS5-E | Click Here |`
+- **ĐỔI** n103 b2 dòng 164 engine `YC6TC840-D31` | tổ máy `Y688V1-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: NIANFENG NFS5-F | hãng: Yuchai | 
+  - đổi: genset: "Y688V1-H1 CONTACT" → "Y688V1-H1"
+  - nguồn: `| Y688V1-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | YC6TC840-D31 | Yuchai (China) | NIANFENG NFS5-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 164 alternator `NIANFENG NFS5-F` | tổ máy `Y688V1-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: YC6TC840-D31 | hãng: ∅ | 
+  - đổi: genset: "Y688V1-H1 CONTACT" → "Y688V1-H1"
+  - nguồn: `| Y688V1-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | YC6TC840-D31 | Yuchai (China) | NIANFENG NFS5-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 165 engine `YC6TD840-D31` | tổ máy `Y688V2-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: NIANFENG NFS5-F | hãng: Yuchai | 
+  - đổi: genset: "Y688V2-H1 CONTACT" → "Y688V2-H1"
+  - nguồn: `| Y688V2-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | YC6TD840-D31 | Yuchai (China) | NIANFENG NFS5-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 165 alternator `NIANFENG NFS5-F` | tổ máy `Y688V2-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: YC6TD840-D31 | hãng: ∅ | 
+  - đổi: genset: "Y688V2-H1 CONTACT" → "Y688V2-H1"
+  - nguồn: `| Y688V2-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | YC6TD840-D31 | Yuchai (China) | NIANFENG NFS5-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 166 engine `YC6TD840-D30` | tổ máy `Y688N/H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: NIANFENG NFS5-F | hãng: Yuchai | 
+  - đổi: genset: "Y688N/H1 CONTACT" → "Y688N/H1"
+  - nguồn: `| Y688N/H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | YC6TD840-D30 | Yuchai (China) | NIANFENG NFS5-F | Click Here |`
+- **ĐỔI** n103 b2 dòng 166 alternator `NIANFENG NFS5-F` | tổ máy `Y688N/H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: YC6TD840-D30 | hãng: ∅ | 
+  - đổi: genset: "Y688N/H1 CONTACT" → "Y688N/H1"
+  - nguồn: `| Y688N/H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | YC6TD840-D30 | Yuchai (China) | NIANFENG NFS5-F | Click Here |`
+- **ĐỔI** n103 b2 dòng 167 engine `YC6TC900-D31` | tổ máy `Y756V1-H1` | prime 688 kVA / 550 kW; standby 756 kVA / 605 kW | khác: NIANFENG NFS5-G | hãng: Yuchai | 
+  - đổi: genset: "Y756V1-H1 CONTACT" → "Y756V1-H1"
+  - nguồn: `| Y756V1-H1 CONTACT | 756KVA/ 605KW | 688KVA/ 550KW | YC6TC900-D31 | Yuchai (China) | NIANFENG NFS5-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 167 alternator `NIANFENG NFS5-G` | tổ máy `Y756V1-H1` | prime 688 kVA / 550 kW; standby 756 kVA / 605 kW | khác: YC6TC900-D31 | hãng: ∅ | 
+  - đổi: genset: "Y756V1-H1 CONTACT" → "Y756V1-H1"
+  - nguồn: `| Y756V1-H1 CONTACT | 756KVA/ 605KW | 688KVA/ 550KW | YC6TC900-D31 | Yuchai (China) | NIANFENG NFS5-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 168 engine `YC6TD900-D31` | tổ máy `Y756V2-H1` | prime 688 kVA / 550 kW; standby 756 kVA / 605 kW | khác: NIANFENG NFS5-G | hãng: Yuchai | 
+  - đổi: genset: "Y756V2-H1 CONTACT" → "Y756V2-H1"
+  - nguồn: `| Y756V2-H1 CONTACT | 756KVA/ 605KW | 688KVA/ 550KW | YC6TD900-D31 | Yuchai (China) | NIANFENG NFS5-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 168 alternator `NIANFENG NFS5-G` | tổ máy `Y756V2-H1` | prime 688 kVA / 550 kW; standby 756 kVA / 605 kW | khác: YC6TD900-D31 | hãng: ∅ | 
+  - đổi: genset: "Y756V2-H1 CONTACT" → "Y756V2-H1"
+  - nguồn: `| Y756V2-H1 CONTACT | 756KVA/ 605KW | 688KVA/ 550KW | YC6TD900-D31 | Yuchai (China) | NIANFENG NFS5-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 169 engine `YC6TD900-D30` | tổ máy `Y756N/H1` | prime 688 kVA / 550 kW; standby 756 kVA / 605 kW | khác: NIANFENG NFS5-G | hãng: Yuchai | 
+  - đổi: genset: "Y756N/H1 CONTACT" → "Y756N/H1"
+  - nguồn: `| Y756N/H1 CONTACT | 756KVA/ 605KW | 688KVA/ 550KW | YC6TD900-D30 | Yuchai (China) | NIANFENG NFS5-G | Click Here |`
+- **ĐỔI** n103 b2 dòng 169 alternator `NIANFENG NFS5-G` | tổ máy `Y756N/H1` | prime 688 kVA / 550 kW; standby 756 kVA / 605 kW | khác: YC6TD900-D30 | hãng: ∅ | 
+  - đổi: genset: "Y756N/H1 CONTACT" → "Y756N/H1"
+  - nguồn: `| Y756N/H1 CONTACT | 756KVA/ 605KW | 688KVA/ 550KW | YC6TD900-D30 | Yuchai (China) | NIANFENG NFS5-G | Click Here |`
+- **ĐỔI** n103 b2 dòng 170 engine `YC6TD1000-D30` | tổ máy `Y825-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: NIANFENG NFS5-H | hãng: Yuchai | 
+  - đổi: genset: "Y825-H1 CONTACT" → "Y825-H1"
+  - nguồn: `| Y825-H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | YC6TD1000-D30 | Yuchai (China) | NIANFENG NFS5-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 170 alternator `NIANFENG NFS5-H` | tổ máy `Y825-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: YC6TD1000-D30 | hãng: ∅ | 
+  - đổi: genset: "Y825-H1 CONTACT" → "Y825-H1"
+  - nguồn: `| Y825-H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | YC6TD1000-D30 | Yuchai (China) | NIANFENG NFS5-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 171 engine `YC6C1020-D31` | tổ máy `Y825N/H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: NIANFENG NFS5-H | hãng: Yuchai | 
+  - đổi: genset: "Y825N/H1 CONTACT" → "Y825N/H1"
+  - nguồn: `| Y825N/H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | YC6C1020-D31 | Yuchai (China) | NIANFENG NFS5-H | Click Here |`
+- **ĐỔI** n103 b2 dòng 171 alternator `NIANFENG NFS5-H` | tổ máy `Y825N/H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: YC6C1020-D31 | hãng: ∅ | 
+  - đổi: genset: "Y825N/H1 CONTACT" → "Y825N/H1"
+  - nguồn: `| Y825N/H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | YC6C1020-D31 | Yuchai (China) | NIANFENG NFS5-H | Click Here |`
+- **ĐỔI** n103 b2 dòng 172 engine `YC6TD1100-D30` | tổ máy `Y888V1-H1` | prime 813 kVA / 650 kW; standby 888 kVA / 710 kW | khác: NIANFENG NFS6-C | hãng: Yuchai | 
+  - đổi: genset: "Y888V1-H1 CONTACT" → "Y888V1-H1"
+  - nguồn: `| Y888V1-H1 CONTACT | 888KVA/ 710KW | 813KVA/ 650KW | YC6TD1100-D30 | Yuchai (China) | NIANFENG NFS6-C | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 172 alternator `NIANFENG NFS6-C` | tổ máy `Y888V1-H1` | prime 813 kVA / 650 kW; standby 888 kVA / 710 kW | khác: YC6TD1100-D30 | hãng: ∅ | 
+  - đổi: genset: "Y888V1-H1 CONTACT" → "Y888V1-H1"
+  - nguồn: `| Y888V1-H1 CONTACT | 888KVA/ 710KW | 813KVA/ 650KW | YC6TD1100-D30 | Yuchai (China) | NIANFENG NFS6-C | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 173 engine `YC6TH1070-D31` | tổ máy `Y888V2-H1` | prime 813 kVA / 650 kW; standby 888 kVA / 710 kW | khác: NIANFENG NFS6-C | hãng: Yuchai | 
+  - đổi: genset: "Y888V2-H1 CONTACT" → "Y888V2-H1"
+  - nguồn: `| Y888V2-H1 CONTACT | 888KVA/ 710KW | 813KVA/ 650KW | YC6TH1070-D31 | Yuchai (China) | NIANFENG NFS6-C | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 173 alternator `NIANFENG NFS6-C` | tổ máy `Y888V2-H1` | prime 813 kVA / 650 kW; standby 888 kVA / 710 kW | khác: YC6TH1070-D31 | hãng: ∅ | 
+  - đổi: genset: "Y888V2-H1 CONTACT" → "Y888V2-H1"
+  - nguồn: `| Y888V2-H1 CONTACT | 888KVA/ 710KW | 813KVA/ 650KW | YC6TH1070-D31 | Yuchai (China) | NIANFENG NFS6-C | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 174 engine `YC6C1070-D31` | tổ máy `Y888N/H1` | prime 813 kVA / 650 kW; standby 888 kVA / 710 kW | khác: NIANFENG NFS6-C | hãng: Yuchai | 
+  - đổi: genset: "Y888N/H1 CONTACT" → "Y888N/H1"
+  - nguồn: `| Y888N/H1 CONTACT | 888KVA/ 710KW | 813KVA/ 650KW | YC6C1070-D31 | Yuchai (China) | NIANFENG NFS6-C | Click Here |`
+- **ĐỔI** n103 b2 dòng 174 alternator `NIANFENG NFS6-C` | tổ máy `Y888N/H1` | prime 813 kVA / 650 kW; standby 888 kVA / 710 kW | khác: YC6C1070-D31 | hãng: ∅ | 
+  - đổi: genset: "Y888N/H1 CONTACT" → "Y888N/H1"
+  - nguồn: `| Y888N/H1 CONTACT | 888KVA/ 710KW | 813KVA/ 650KW | YC6C1070-D31 | Yuchai (China) | NIANFENG NFS6-C | Click Here |`
+- **ĐỔI** n103 b2 dòng 175 engine `YC6TH1220-D31` | tổ máy `Y1000-H1` | prime 913 kVA / 730 kW; standby 1000 kVA / 800 kW | khác: NIANFENG NFS6-D | hãng: Yuchai | 
+  - đổi: genset: "Y1000-H1 CONTACT" → "Y1000-H1"
+  - nguồn: `| Y1000-H1 CONTACT | 1000KVA/ 800KW | 913KVA/ 730KW | YC6TH1220-D31 | Yuchai (China) | NIANFENG NFS6-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 175 alternator `NIANFENG NFS6-D` | tổ máy `Y1000-H1` | prime 913 kVA / 730 kW; standby 1000 kVA / 800 kW | khác: YC6TH1220-D31 | hãng: ∅ | 
+  - đổi: genset: "Y1000-H1 CONTACT" → "Y1000-H1"
+  - nguồn: `| Y1000-H1 CONTACT | 1000KVA/ 800KW | 913KVA/ 730KW | YC6TH1220-D31 | Yuchai (China) | NIANFENG NFS6-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 176 engine `YC6C1220-D31` | tổ máy `Y1000N/H1` | prime 913 kVA / 730 kW; standby 1000 kVA / 800 kW | khác: NIANFENG NFS6-D | hãng: Yuchai | 
+  - đổi: genset: "Y1000N/H1 CONTACT" → "Y1000N/H1"
+  - nguồn: `| Y1000N/H1 CONTACT | 1000KVA/ 800KW | 913KVA/ 730KW | YC6C1220-D31 | Yuchai (China) | NIANFENG NFS6-D | Click Here |`
+- **ĐỔI** n103 b2 dòng 176 alternator `NIANFENG NFS6-D` | tổ máy `Y1000N/H1` | prime 913 kVA / 730 kW; standby 1000 kVA / 800 kW | khác: YC6C1220-D31 | hãng: ∅ | 
+  - đổi: genset: "Y1000N/H1 CONTACT" → "Y1000N/H1"
+  - nguồn: `| Y1000N/H1 CONTACT | 1000KVA/ 800KW | 913KVA/ 730KW | YC6C1220-D31 | Yuchai (China) | NIANFENG NFS6-D | Click Here |`
+- **ĐỔI** n103 b2 dòng 177 engine `YC6TH1320-D31` | tổ máy `Y1100V1-H1` | prime 1100 kVA / 880 kW; standby 1100 kVA / 880 kW | khác: NIANFENG NFS6-E | hãng: Yuchai | 
+  - đổi: genset: "Y1100V1-H1 CONTACT" → "Y1100V1-H1"
+  - nguồn: `| Y1100V1-H1 CONTACT | 1100KVA/ 880KW | 1100KVA/ 880KW | YC6TH1320-D31 | Yuchai (China) | NIANFENG NFS6-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 177 alternator `NIANFENG NFS6-E` | tổ máy `Y1100V1-H1` | prime 1100 kVA / 880 kW; standby 1100 kVA / 880 kW | khác: YC6TH1320-D31 | hãng: ∅ | 
+  - đổi: genset: "Y1100V1-H1 CONTACT" → "Y1100V1-H1"
+  - nguồn: `| Y1100V1-H1 CONTACT | 1100KVA/ 880KW | 1100KVA/ 880KW | YC6TH1320-D31 | Yuchai (China) | NIANFENG NFS6-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 178 engine `YC12VTD1350-D30` | tổ máy `Y1100V2-H1` | prime 1100 kVA / 880 kW; standby 1100 kVA / 880 kW | khác: NIANFENG NFS6-E | hãng: Yuchai | 
+  - đổi: genset: "Y1100V2-H1 CONTACT" → "Y1100V2-H1"
+  - nguồn: `| Y1100V2-H1 CONTACT | 1100KVA/ 880KW | 1100KVA/ 880KW | YC12VTD1350-D30 | Yuchai (China) | NIANFENG NFS6-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 178 alternator `NIANFENG NFS6-E` | tổ máy `Y1100V2-H1` | prime 1100 kVA / 880 kW; standby 1100 kVA / 880 kW | khác: YC12VTD1350-D30 | hãng: ∅ | 
+  - đổi: genset: "Y1100V2-H1 CONTACT" → "Y1100V2-H1"
+  - nguồn: `| Y1100V2-H1 CONTACT | 1100KVA/ 880KW | 1100KVA/ 880KW | YC12VTD1350-D30 | Yuchai (China) | NIANFENG NFS6-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 179 engine `YC6C1320-D31` | tổ máy `Y1100N/H1` | prime 1100 kVA / 880 kW; standby 1100 kVA / 880 kW | khác: NIANFENG NFS6-E | hãng: Yuchai | 
+  - đổi: genset: "Y1100N/H1 CONTACT" → "Y1100N/H1"
+  - nguồn: `| Y1100N/H1 CONTACT | 1100KVA/ 880KW | 1100KVA/ 880KW | YC6C1320-D31 | Yuchai (China) | NIANFENG NFS6-E | Click Here |`
+- **ĐỔI** n103 b2 dòng 179 alternator `NIANFENG NFS6-E` | tổ máy `Y1100N/H1` | prime 1100 kVA / 880 kW; standby 1100 kVA / 880 kW | khác: YC6C1320-D31 | hãng: ∅ | 
+  - đổi: genset: "Y1100N/H1 CONTACT" → "Y1100N/H1"
+  - nguồn: `| Y1100N/H1 CONTACT | 1100KVA/ 880KW | 1100KVA/ 880KW | YC6C1320-D31 | Yuchai (China) | NIANFENG NFS6-E | Click Here |`
+- **ĐỔI** n103 b2 dòng 180 engine `YC6C1520-D31` | tổ máy `Y1250V1-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: NIANFENG NFS6-F | hãng: Yuchai | 
+  - đổi: genset: "Y1250V1-H1 CONTACT" → "Y1250V1-H1"
+  - nguồn: `| Y1250V1-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | YC6C1520-D31 | Yuchai (China) | NIANFENG NFS6-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 180 alternator `NIANFENG NFS6-F` | tổ máy `Y1250V1-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: YC6C1520-D31 | hãng: ∅ | 
+  - đổi: genset: "Y1250V1-H1 CONTACT" → "Y1250V1-H1"
+  - nguồn: `| Y1250V1-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | YC6C1520-D31 | Yuchai (China) | NIANFENG NFS6-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 181 engine `YC12VTD1500-D30` | tổ máy `Y1250V2-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: NIANFENG NFS6-F | hãng: Yuchai | 
+  - đổi: genset: "Y1250V2-H1 CONTACT" → "Y1250V2-H1"
+  - nguồn: `| Y1250V2-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | YC12VTD1500-D30 | Yuchai (China) | NIANFENG NFS6-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 181 alternator `NIANFENG NFS6-F` | tổ máy `Y1250V2-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: YC12VTD1500-D30 | hãng: ∅ | 
+  - đổi: genset: "Y1250V2-H1 CONTACT" → "Y1250V2-H1"
+  - nguồn: `| Y1250V2-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | YC12VTD1500-D30 | Yuchai (China) | NIANFENG NFS6-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 182 engine `YC6C1660-D30` | tổ máy `Y1375V1-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: NIANFENG NFS6-G | hãng: Yuchai | 
+  - đổi: genset: "Y1375V1-H1 CONTACT" → "Y1375V1-H1"
+  - nguồn: `| Y1375V1-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | YC6C1660-D30 | Yuchai (China) | NIANFENG NFS6-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 182 alternator `NIANFENG NFS6-G` | tổ máy `Y1375V1-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: YC6C1660-D30 | hãng: ∅ | 
+  - đổi: genset: "Y1375V1-H1 CONTACT" → "Y1375V1-H1"
+  - nguồn: `| Y1375V1-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | YC6C1660-D30 | Yuchai (China) | NIANFENG NFS6-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 183 engine `YC6C1660-D31` | tổ máy `Y1375V2-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: NIANFENG NFS6-G | hãng: Yuchai | 
+  - đổi: genset: "Y1375V2-H1 CONTACT" → "Y1375V2-H1"
+  - nguồn: `| Y1375V2-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | YC6C1660-D31 | Yuchai (China) | NIANFENG NFS6-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 183 alternator `NIANFENG NFS6-G` | tổ máy `Y1375V2-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: YC6C1660-D31 | hãng: ∅ | 
+  - đổi: genset: "Y1375V2-H1 CONTACT" → "Y1375V2-H1"
+  - nguồn: `| Y1375V2-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | YC6C1660-D31 | Yuchai (China) | NIANFENG NFS6-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 184 engine `YC12VTD1680-D30` | tổ máy `Y1375V3-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: NIANFENG NFS6-G | hãng: Yuchai | 
+  - đổi: genset: "Y1375V3-H1 CONTACT" → "Y1375V3-H1"
+  - nguồn: `| Y1375V3-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | YC12VTD1680-D30 | Yuchai (China) | NIANFENG NFS6-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 184 alternator `NIANFENG NFS6-G` | tổ máy `Y1375V3-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: YC12VTD1680-D30 | hãng: ∅ | 
+  - đổi: genset: "Y1375V3-H1 CONTACT" → "Y1375V3-H1"
+  - nguồn: `| Y1375V3-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | YC12VTD1680-D30 | Yuchai (China) | NIANFENG NFS6-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 185 engine `YC12VTD1830-D30` | tổ máy `Y1500-H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: NIANFENG NF404H | hãng: Yuchai | 
+  - đổi: genset: "Y1500-H1 CONTACT" → "Y1500-H1"
+  - nguồn: `| Y1500-H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | YC12VTD1830-D30 | Yuchai (China) | NIANFENG NF404H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 185 alternator `NIANFENG NF404H` | tổ máy `Y1500-H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: YC12VTD1830-D30 | hãng: ∅ | 
+  - đổi: genset: "Y1500-H1 CONTACT" → "Y1500-H1"
+  - nguồn: `| Y1500-H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | YC12VTD1830-D30 | Yuchai (China) | NIANFENG NF404H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 186 engine `YC12VC2070-D31` | tổ máy `Y1650V1-H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: NIANFENG NF454C | hãng: Yuchai | 
+  - đổi: genset: "Y1650V1-H1 CONTACT" → "Y1650V1-H1"
+  - nguồn: `| Y1650V1-H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | YC12VC2070-D31 | Yuchai (China) | NIANFENG NF454C | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 186 alternator `NIANFENG NF454C` | tổ máy `Y1650V1-H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: YC12VC2070-D31 | hãng: ∅ | 
+  - đổi: genset: "Y1650V1-H1 CONTACT" → "Y1650V1-H1"
+  - nguồn: `| Y1650V1-H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | YC12VC2070-D31 | Yuchai (China) | NIANFENG NF454C | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 187 engine `YC12VTD2000-D30` | tổ máy `Y1650V2-H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: NIANFENG NF454C | hãng: Yuchai | 
+  - đổi: genset: "Y1650V2-H1 CONTACT" → "Y1650V2-H1"
+  - nguồn: `| Y1650V2-H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | YC12VTD2000-D30 | Yuchai (China) | NIANFENG NF454C | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 187 alternator `NIANFENG NF454C` | tổ máy `Y1650V2-H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: YC12VTD2000-D30 | hãng: ∅ | 
+  - đổi: genset: "Y1650V2-H1 CONTACT" → "Y1650V2-H1"
+  - nguồn: `| Y1650V2-H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | YC12VTD2000-D30 | Yuchai (China) | NIANFENG NF454C | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 188 engine `YC12VC2270-D31` | tổ máy `Y1875V1-H1` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: NIANFENG NF454E | hãng: Yuchai | 
+  - đổi: genset: "Y1875V1-H1 CONTACT" → "Y1875V1-H1"
+  - nguồn: `| Y1875V1-H1 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | YC12VC2270-D31 | Yuchai (China) | NIANFENG NF454E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 188 alternator `NIANFENG NF454E` | tổ máy `Y1875V1-H1` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: YC12VC2270-D31 | hãng: ∅ | 
+  - đổi: genset: "Y1875V1-H1 CONTACT" → "Y1875V1-H1"
+  - nguồn: `| Y1875V1-H1 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | YC12VC2270-D31 | Yuchai (China) | NIANFENG NF454E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 189 engine `YC16VTD2270-D30` | tổ máy `Y1875V2-H1` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: NIANFENG NF454E | hãng: Yuchai | 
+  - đổi: genset: "Y1875V2-H1 CONTACT" → "Y1875V2-H1"
+  - nguồn: `| Y1875V2-H1 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | YC16VTD2270-D30 | Yuchai (China) | NIANFENG NF454E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 189 alternator `NIANFENG NF454E` | tổ máy `Y1875V2-H1` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: YC16VTD2270-D30 | hãng: ∅ | 
+  - đổi: genset: "Y1875V2-H1 CONTACT" → "Y1875V2-H1"
+  - nguồn: `| Y1875V2-H1 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | YC16VTD2270-D30 | Yuchai (China) | NIANFENG NF454E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 190 engine `YC12VC2510-D31` | tổ máy `Y2063V1-H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: NIANFENG NF454E | hãng: Yuchai | 
+  - đổi: genset: "Y2063V1-H1 CONTACT" → "Y2063V1-H1"
+  - nguồn: `| Y2063V1-H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | YC12VC2510-D31 | Yuchai (China) | NIANFENG NF454E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 190 alternator `NIANFENG NF454E` | tổ máy `Y2063V1-H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: YC12VC2510-D31 | hãng: ∅ | 
+  - đổi: genset: "Y2063V1-H1 CONTACT" → "Y2063V1-H1"
+  - nguồn: `| Y2063V1-H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | YC12VC2510-D31 | Yuchai (China) | NIANFENG NF454E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 191 engine `YC16VTD2510-D30` | tổ máy `Y2063V2-H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: NIANFENG NF454E | hãng: Yuchai | 
+  - đổi: genset: "Y2063V2-H1 CONTACT" → "Y2063V2-H1"
+  - nguồn: `| Y2063V2-H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | YC16VTD2510-D30 | Yuchai (China) | NIANFENG NF454E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 191 alternator `NIANFENG NF454E` | tổ máy `Y2063V2-H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: YC16VTD2510-D30 | hãng: ∅ | 
+  - đổi: genset: "Y2063V2-H1 CONTACT" → "Y2063V2-H1"
+  - nguồn: `| Y2063V2-H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | YC16VTD2510-D30 | Yuchai (China) | NIANFENG NF454E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 192 engine `YC12VC2700-D31` | tổ máy `Y2200V1-H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: NIANFENG NF454F | hãng: Yuchai | 
+  - đổi: genset: "Y2200V1-H1 CONTACT" → "Y2200V1-H1"
+  - nguồn: `| Y2200V1-H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | YC12VC2700-D31 | Yuchai (China) | NIANFENG NF454F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 192 alternator `NIANFENG NF454F` | tổ máy `Y2200V1-H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: YC12VC2700-D31 | hãng: ∅ | 
+  - đổi: genset: "Y2200V1-H1 CONTACT" → "Y2200V1-H1"
+  - nguồn: `| Y2200V1-H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | YC12VC2700-D31 | Yuchai (China) | NIANFENG NF454F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 193 engine `YC16VTD2700-D30` | tổ máy `Y2200V2-H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: NIANFENG NF454F | hãng: Yuchai | 
+  - đổi: genset: "Y2200V2-H1 CONTACT" → "Y2200V2-H1"
+  - nguồn: `| Y2200V2-H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | YC16VTD2700-D30 | Yuchai (China) | NIANFENG NF454F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 193 alternator `NIANFENG NF454F` | tổ máy `Y2200V2-H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: YC16VTD2700-D30 | hãng: ∅ | 
+  - đổi: genset: "Y2200V2-H1 CONTACT" → "Y2200V2-H1"
+  - nguồn: `| Y2200V2-H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | YC16VTD2700-D30 | Yuchai (China) | NIANFENG NF454F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 194 engine `YC12VC3000-D30` | tổ máy `Y2500V1-H1` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2100 kW | khác: NIANFENG NF454H | hãng: Yuchai | 
+  - đổi: genset: "Y2500V1-H1 CONTACT" → "Y2500V1-H1"
+  - nguồn: `| Y2500V1-H1 CONTACT | 2500KVA/ 2100KW | 2250KVA/ 1800KW | YC12VC3000-D30 | Yuchai (China) | NIANFENG NF454H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 194 alternator `NIANFENG NF454H` | tổ máy `Y2500V1-H1` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2100 kW | khác: YC12VC3000-D30 | hãng: ∅ | 
+  - đổi: genset: "Y2500V1-H1 CONTACT" → "Y2500V1-H1"
+  - nguồn: `| Y2500V1-H1 CONTACT | 2500KVA/ 2100KW | 2250KVA/ 1800KW | YC12VC3000-D30 | Yuchai (China) | NIANFENG NF454H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 195 engine `YC16VC3000-D31` | tổ máy `Y2500V2-H1` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2100 kW | khác: NIANFENG NF454H | hãng: Yuchai | 
+  - đổi: genset: "Y2500V2-H1 CONTACT" → "Y2500V2-H1"
+  - nguồn: `| Y2500V2-H1 CONTACT | 2500KVA/ 2100KW | 2250KVA/ 1800KW | YC16VC3000-D31 | Yuchai (China) | NIANFENG NF454H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 195 alternator `NIANFENG NF454H` | tổ máy `Y2500V2-H1` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2100 kW | khác: YC16VC3000-D31 | hãng: ∅ | 
+  - đổi: genset: "Y2500V2-H1 CONTACT" → "Y2500V2-H1"
+  - nguồn: `| Y2500V2-H1 CONTACT | 2500KVA/ 2100KW | 2250KVA/ 1800KW | YC16VC3000-D31 | Yuchai (China) | NIANFENG NF454H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 196 engine `YC16VC3300-D31` | tổ máy `Y2750-H1` | prime 2500 kVA / 2000 kW; standby 2750 kVA / 2200 kW | khác: NIANFENG NF4541 | hãng: Yuchai | 
+  - đổi: genset: "Y2750-H1 CONTACT" → "Y2750-H1"
+  - nguồn: `| Y2750-H1 CONTACT | 2750KVA/ 2200KW | 2500KVA/ 2000KW | YC16VC3300-D31 | Yuchai (China) | NIANFENG NF4541 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 196 alternator `NIANFENG NF4541` | tổ máy `Y2750-H1` | prime 2500 kVA / 2000 kW; standby 2750 kVA / 2200 kW | khác: YC16VC3300-D31 | hãng: ∅ | 
+  - đổi: genset: "Y2750-H1 CONTACT" → "Y2750-H1"
+  - nguồn: `| Y2750-H1 CONTACT | 2750KVA/ 2200KW | 2500KVA/ 2000KW | YC16VC3300-D31 | Yuchai (China) | NIANFENG NF4541 | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 197 engine `YC16VC3600-D31` | tổ máy `Y3000-H1` | prime 2750 kVA / 2200 kW; standby 3000 kVA / 2400 kW | khác: NIANFENG NF564D | hãng: Yuchai | 
+  - đổi: genset: "Y3000-H1 CONTACT" → "Y3000-H1"
+  - nguồn: `| Y3000-H1 CONTACT | 3000KVA/ 2400KW | 2750KVA/ 2200KW | YC16VC3600-D31 | Yuchai (China) | NIANFENG NF564D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 197 alternator `NIANFENG NF564D` | tổ máy `Y3000-H1` | prime 2750 kVA / 2200 kW; standby 3000 kVA / 2400 kW | khác: YC16VC3600-D31 | hãng: ∅ | 
+  - đổi: genset: "Y3000-H1 CONTACT" → "Y3000-H1"
+  - nguồn: `| Y3000-H1 CONTACT | 3000KVA/ 2400KW | 2750KVA/ 2200KW | YC16VC3600-D31 | Yuchai (China) | NIANFENG NF564D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 198 engine `YC16VC4000-D31` | tổ máy `Y3250-H1` | prime 3000 kVA / 2400 kW; standby 3250 kVA / 2600 kW | khác: NIANFENG NF564E | hãng: Yuchai | 
+  - đổi: genset: "Y3250-H1 CONTACT" → "Y3250-H1"
+  - nguồn: `| Y3250-H1 CONTACT | 3250KVA/ 2600KW | 3000KVA/ 2400KW | YC16VC4000-D31 | Yuchai (China) | NIANFENG NF564E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 198 alternator `NIANFENG NF564E` | tổ máy `Y3250-H1` | prime 3000 kVA / 2400 kW; standby 3250 kVA / 2600 kW | khác: YC16VC4000-D31 | hãng: ∅ | 
+  - đổi: genset: "Y3250-H1 CONTACT" → "Y3250-H1"
+  - nguồn: `| Y3250-H1 CONTACT | 3250KVA/ 2600KW | 3000KVA/ 2400KW | YC16VC4000-D31 | Yuchai (China) | NIANFENG NF564E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 199 engine `4HTAA4.3-G32` | tổ máy `SC69V1-H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: NIANFENG NF224F | hãng: SDEC | 
+  - đổi: genset: "SC69V1-H1 CONTACT" → "SC69V1-H1"
+  - nguồn: `| SC69V1-H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | 4HTAA4.3-G32 | SHANGCHAI (China) | NIANFENG NF224F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 199 alternator `NIANFENG NF224F` | tổ máy `SC69V1-H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: 4HTAA4.3-G32 | hãng: ∅ | 
+  - đổi: genset: "SC69V1-H1 CONTACT" → "SC69V1-H1"
+  - nguồn: `| SC69V1-H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | 4HTAA4.3-G32 | SHANGCHAI (China) | NIANFENG NF224F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 200 engine `SC4H95D2` | tổ máy `SC69V2-H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: NIANFENG NF224F | hãng: SDEC | 
+  - đổi: genset: "SC69V2-H1 CONTACT" → "SC69V2-H1"
+  - nguồn: `| SC69V2-H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | SC4H95D2 | SHANGCHAI (China) | NIANFENG NF224F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 200 alternator `NIANFENG NF224F` | tổ máy `SC69V2-H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: SC4H95D2 | hãng: ∅ | 
+  - đổi: genset: "SC69V2-H1 CONTACT" → "SC69V2-H1"
+  - nguồn: `| SC69V2-H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | SC4H95D2 | SHANGCHAI (China) | NIANFENG NF224F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 201 engine `4HTAA4.3-G33` | tổ máy `SC94V1-H1` | prime 85 kVA / 68 kW; standby 94 kVA / 75 kW | khác: NIANFENG NF224G | hãng: SDEC | 
+  - đổi: genset: "SC94V1-H1 CONTACT" → "SC94V1-H1"
+  - nguồn: `| SC94V1-H1 CONTACT | 94KVA/ 75KW | 85KVA/ 68KW | 4HTAA4.3-G33 | SHANGCHAI (China) | NIANFENG NF224G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 201 alternator `NIANFENG NF224G` | tổ máy `SC94V1-H1` | prime 85 kVA / 68 kW; standby 94 kVA / 75 kW | khác: 4HTAA4.3-G33 | hãng: ∅ | 
+  - đổi: genset: "SC94V1-H1 CONTACT" → "SC94V1-H1"
+  - nguồn: `| SC94V1-H1 CONTACT | 94KVA/ 75KW | 85KVA/ 68KW | 4HTAA4.3-G33 | SHANGCHAI (China) | NIANFENG NF224G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 202 engine `SC4H115D2` | tổ máy `SC94V2-H1` | prime 85 kVA / 68 kW; standby 94 kVA / 75 kW | khác: NIANFENG NF224G | hãng: SDEC | 
+  - đổi: genset: "SC94V2-H1 CONTACT" → "SC94V2-H1"
+  - nguồn: `| SC94V2-H1 CONTACT | 94KVA/ 75KW | 85KVA/ 68KW | SC4H115D2 | SHANGCHAI (China) | NIANFENG NF224G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 202 alternator `NIANFENG NF224G` | tổ máy `SC94V2-H1` | prime 85 kVA / 68 kW; standby 94 kVA / 75 kW | khác: SC4H115D2 | hãng: ∅ | 
+  - đổi: genset: "SC94V2-H1 CONTACT" → "SC94V2-H1"
+  - nguồn: `| SC94V2-H1 CONTACT | 94KVA/ 75KW | 85KVA/ 68KW | SC4H115D2 | SHANGCHAI (China) | NIANFENG NF224G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 203 engine `4HTAA4.3-G34` | tổ máy `SC110V1-H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: NIANFENG NFS224-H | hãng: SDEC | 
+  - đổi: genset: "SC110V1-H1 CONTACT" → "SC110V1-H1"
+  - nguồn: `| SC110V1-H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | 4HTAA4.3-G34 | SHANGCHAI (China) | NIANFENG NFS224-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 203 alternator `NIANFENG NFS224-H` | tổ máy `SC110V1-H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: 4HTAA4.3-G34 | hãng: ∅ | 
+  - đổi: genset: "SC110V1-H1 CONTACT" → "SC110V1-H1"
+  - nguồn: `| SC110V1-H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | 4HTAA4.3-G34 | SHANGCHAI (China) | NIANFENG NFS224-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 204 engine `SC4H140D2` | tổ máy `SC110V2-H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: NIANFENG NFS224-H | hãng: SDEC | 
+  - đổi: genset: "SC110V2-H1 CONTACT" → "SC110V2-H1"
+  - nguồn: `| SC110V2-H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | SC4H140D2 | SHANGCHAI (China) | NIANFENG NFS224-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 204 alternator `NIANFENG NFS224-H` | tổ máy `SC110V2-H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: SC4H140D2 | hãng: ∅ | 
+  - đổi: genset: "SC110V2-H1 CONTACT" → "SC110V2-H1"
+  - nguồn: `| SC110V2-H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | SC4H140D2 | SHANGCHAI (China) | NIANFENG NFS224-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 205 engine `4HTAA4.3-G36` | tổ máy `SC138V1-H1` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: NIANFENG NFS274-D | hãng: SDEC | 
+  - đổi: genset: "SC138V1-H1 CONTACT" → "SC138V1-H1"
+  - nguồn: `| SC138V1-H1 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | 4HTAA4.3-G36 | SHANGCHAI (China) | NIANFENG NFS274-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 205 alternator `NIANFENG NFS274-D` | tổ máy `SC138V1-H1` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: 4HTAA4.3-G36 | hãng: ∅ | 
+  - đổi: genset: "SC138V1-H1 CONTACT" → "SC138V1-H1"
+  - nguồn: `| SC138V1-H1 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | 4HTAA4.3-G36 | SHANGCHAI (China) | NIANFENG NFS274-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 206 engine `SC4H180D2` | tổ máy `SC138V2-H1` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: NIANFENG NFS274-D | hãng: SDEC | 
+  - đổi: genset: "SC138V2-H1 CONTACT" → "SC138V2-H1"
+  - nguồn: `| SC138V2-H1 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | SC4H180D2 | SHANGCHAI (China) | NIANFENG NFS274-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 206 alternator `NIANFENG NFS274-D` | tổ máy `SC138V2-H1` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: SC4H180D2 | hãng: ∅ | 
+  - đổi: genset: "SC138V2-H1 CONTACT" → "SC138V2-H1"
+  - nguồn: `| SC138V2-H1 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | SC4H180D2 | SHANGCHAI (China) | NIANFENG NFS274-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 207 engine `6HTAA6.5-G32` | tổ máy `SC165V1-H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: NIANFENG NF274FS | hãng: SDEC | 
+  - đổi: genset: "SC165V1-H1 CONTACT" → "SC165V1-H1"
+  - nguồn: `| SC165V1-H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | 6HTAA6.5-G32 | SHANGCHAI (China) | NIANFENG NF274FS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 207 alternator `NIANFENG NF274FS` | tổ máy `SC165V1-H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: 6HTAA6.5-G32 | hãng: ∅ | 
+  - đổi: genset: "SC165V1-H1 CONTACT" → "SC165V1-H1"
+  - nguồn: `| SC165V1-H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | 6HTAA6.5-G32 | SHANGCHAI (China) | NIANFENG NF274FS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 208 engine `SC7H205D2` | tổ máy `SC165V2-H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: NIANFENG NF274FS | hãng: SDEC | 
+  - đổi: genset: "SC165V2-H1 CONTACT" → "SC165V2-H1"
+  - nguồn: `| SC165V2-H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | SC7H205D2 | SHANGCHAI (China) | NIANFENG NF274FS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 208 alternator `NIANFENG NF274FS` | tổ máy `SC165V2-H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: SC7H205D2 | hãng: ∅ | 
+  - đổi: genset: "SC165V2-H1 CONTACT" → "SC165V2-H1"
+  - nguồn: `| SC165V2-H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | SC7H205D2 | SHANGCHAI (China) | NIANFENG NF274FS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 209 engine `6HTAA6.5-G33` | tổ máy `SC206V1-H1` | prime 188 kVA / 150 kW; standby 206 kVA / 165 kW | khác: NIANFENG NFS274-G | hãng: SDEC | 
+  - đổi: genset: "SC206V1-H1 CONTACT" → "SC206V1-H1"
+  - nguồn: `| SC206V1-H1 CONTACT | 206KVA/ 165KW | 188KVA/ 150KW | 6HTAA6.5-G33 | SHANGCHAI (China) | NIANFENG NFS274-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 209 alternator `NIANFENG NFS274-G` | tổ máy `SC206V1-H1` | prime 188 kVA / 150 kW; standby 206 kVA / 165 kW | khác: 6HTAA6.5-G33 | hãng: ∅ | 
+  - đổi: genset: "SC206V1-H1 CONTACT" → "SC206V1-H1"
+  - nguồn: `| SC206V1-H1 CONTACT | 206KVA/ 165KW | 188KVA/ 150KW | 6HTAA6.5-G33 | SHANGCHAI (China) | NIANFENG NFS274-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 210 engine `SC7H250D2` | tổ máy `SC206V2-H1` | prime 188 kVA / 150 kW; standby 206 kVA / 165 kW | khác: NIANFENG NFS274-G | hãng: SDEC | 
+  - đổi: genset: "SC206V2-H1 CONTACT" → "SC206V2-H1"
+  - nguồn: `| SC206V2-H1 CONTACT | 206KVA/ 165KW | 188KVA/ 150KW | SC7H250D2 | SHANGCHAI (China) | NIANFENG NFS274-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 210 alternator `NIANFENG NFS274-G` | tổ máy `SC206V2-H1` | prime 188 kVA / 150 kW; standby 206 kVA / 165 kW | khác: SC7H250D2 | hãng: ∅ | 
+  - đổi: genset: "SC206V2-H1 CONTACT" → "SC206V2-H1"
+  - nguồn: `| SC206V2-H1 CONTACT | 206KVA/ 165KW | 188KVA/ 150KW | SC7H250D2 | SHANGCHAI (China) | NIANFENG NFS274-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 211 engine `6HTAA6.5-G34` | tổ máy `SC220V1-H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: NIANFENG NF274H | hãng: SDEC | 
+  - đổi: genset: "SC220V1-H1 CONTACT" → "SC220V1-H1"
+  - nguồn: `| SC220V1-H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | 6HTAA6.5-G34 | SHANGCHAI (China) | NIANFENG NF274H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 211 alternator `NIANFENG NF274H` | tổ máy `SC220V1-H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: 6HTAA6.5-G34 | hãng: ∅ | 
+  - đổi: genset: "SC220V1-H1 CONTACT" → "SC220V1-H1"
+  - nguồn: `| SC220V1-H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | 6HTAA6.5-G34 | SHANGCHAI (China) | NIANFENG NF274H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 212 engine `SC8D280D2` | tổ máy `SC220V2-H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: NIANFENG NF274H | hãng: SDEC | 
+  - đổi: genset: "SC220V2-H1 CONTACT" → "SC220V2-H1"
+  - nguồn: `| SC220V2-H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | SC8D280D2 | SHANGCHAI (China) | NIANFENG NF274H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 212 alternator `NIANFENG NF274H` | tổ máy `SC220V2-H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: SC8D280D2 | hãng: ∅ | 
+  - đổi: genset: "SC220V2-H1 CONTACT" → "SC220V2-H1"
+  - nguồn: `| SC220V2-H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | SC8D280D2 | SHANGCHAI (China) | NIANFENG NF274H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 213 engine `6DTAA8.9-G32` | tổ máy `SC250V1-H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: NIANFENG NF274J | hãng: SDEC | 
+  - đổi: genset: "SC250V1-H1 CONTACT" → "SC250V1-H1"
+  - nguồn: `| SC250V1-H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | 6DTAA8.9-G32 | SHANGCHAI (China) | NIANFENG NF274J | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 213 alternator `NIANFENG NF274J` | tổ máy `SC250V1-H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: 6DTAA8.9-G32 | hãng: ∅ | 
+  - đổi: genset: "SC250V1-H1 CONTACT" → "SC250V1-H1"
+  - nguồn: `| SC250V1-H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | 6DTAA8.9-G32 | SHANGCHAI (China) | NIANFENG NF274J | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 214 engine `SC9D310D2` | tổ máy `SC250V2-H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: NIANFENG NF274J | hãng: SDEC | 
+  - đổi: genset: "SC250V2-H1 CONTACT" → "SC250V2-H1"
+  - nguồn: `| SC250V2-H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | SC9D310D2 | SHANGCHAI (China) | NIANFENG NF274J | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 214 alternator `NIANFENG NF274J` | tổ máy `SC250V2-H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: SC9D310D2 | hãng: ∅ | 
+  - đổi: genset: "SC250V2-H1 CONTACT" → "SC250V2-H1"
+  - nguồn: `| SC250V2-H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | SC9D310D2 | SHANGCHAI (China) | NIANFENG NF274J | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 215 engine `6DTAA8.9-G33` | tổ máy `SC275V1-H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: NIANFENG NF274K | hãng: SDEC | 
+  - đổi: genset: "SC275V1-H1 CONTACT" → "SC275V1-H1"
+  - nguồn: `| SC275V1-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | 6DTAA8.9-G33 | SHANGCHAI (China) | NIANFENG NF274K | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 215 alternator `NIANFENG NF274K` | tổ máy `SC275V1-H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: 6DTAA8.9-G33 | hãng: ∅ | 
+  - đổi: genset: "SC275V1-H1 CONTACT" → "SC275V1-H1"
+  - nguồn: `| SC275V1-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | 6DTAA8.9-G33 | SHANGCHAI (China) | NIANFENG NF274K | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 216 engine `SC9D340D2` | tổ máy `SC275V2-H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: NIANFENG NF274K | hãng: SDEC | 
+  - đổi: genset: "SC275V2-H1 CONTACT" → "SC275V2-H1"
+  - nguồn: `| SC275V2-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | SC9D340D2 | SHANGCHAI (China) | NIANFENG NF274K | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 216 alternator `NIANFENG NF274K` | tổ máy `SC275V2-H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: SC9D340D2 | hãng: ∅ | 
+  - đổi: genset: "SC275V2-H1 CONTACT" → "SC275V2-H1"
+  - nguồn: `| SC275V2-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | SC9D340D2 | SHANGCHAI (China) | NIANFENG NF274K | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 217 engine `6ETAA11.8-G32` | tổ máy `SC344V1-H1` | prime 344 kVA / 275 kW; standby 344 kVA / 275 kW | khác: NIANFENG NFS4-ES | hãng: SDEC | 
+  - đổi: genset: "SC344V1-H1 CONTACT" → "SC344V1-H1"
+  - nguồn: `| SC344V1-H1 CONTACT | 344KVA/ 275KW | 344KVA/ 275KW | 6ETAA11.8-G32 | SHANGCHAI (China) | NIANFENG NFS4-ES | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 217 alternator `NIANFENG NFS4-ES` | tổ máy `SC344V1-H1` | prime 344 kVA / 275 kW; standby 344 kVA / 275 kW | khác: 6ETAA11.8-G32 | hãng: ∅ | 
+  - đổi: genset: "SC344V1-H1 CONTACT" → "SC344V1-H1"
+  - nguồn: `| SC344V1-H1 CONTACT | 344KVA/ 275KW | 344KVA/ 275KW | 6ETAA11.8-G32 | SHANGCHAI (China) | NIANFENG NFS4-ES | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 218 engine `SC13G420D2` | tổ máy `SC344V2-H1` | prime 344 kVA / 275 kW; standby 344 kVA / 275 kW | khác: NIANFENG NFS4-ES | hãng: SDEC | 
+  - đổi: genset: "SC344V2-H1 CONTACT" → "SC344V2-H1"
+  - nguồn: `| SC344V2-H1 CONTACT | 344KVA/ 275KW | 344KVA/ 275KW | SC13G420D2 | SHANGCHAI (China) | NIANFENG NFS4-ES | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 218 alternator `NIANFENG NFS4-ES` | tổ máy `SC344V2-H1` | prime 344 kVA / 275 kW; standby 344 kVA / 275 kW | khác: SC13G420D2 | hãng: ∅ | 
+  - đổi: genset: "SC344V2-H1 CONTACT" → "SC344V2-H1"
+  - nguồn: `| SC344V2-H1 CONTACT | 344KVA/ 275KW | 344KVA/ 275KW | SC13G420D2 | SHANGCHAI (China) | NIANFENG NFS4-ES | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 219 engine `6ETAA11.8-G33` | tổ máy `SC385V1-H1` | prime 350 kVA / 280 kW; standby 385 kVA / 308 kW | khác: NIANFENG NFS4-F | hãng: SDEC | 
+  - đổi: genset: "SC385V1-H1 CONTACT" → "SC385V1-H1"
+  - nguồn: `| SC385V1-H1 CONTACT | 385KVA/ 308KW | 350KVA/ 280KW | 6ETAA11.8-G33 | SHANGCHAI (China) | NIANFENG NFS4-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 219 alternator `NIANFENG NFS4-F` | tổ máy `SC385V1-H1` | prime 350 kVA / 280 kW; standby 385 kVA / 308 kW | khác: 6ETAA11.8-G33 | hãng: ∅ | 
+  - đổi: genset: "SC385V1-H1 CONTACT" → "SC385V1-H1"
+  - nguồn: `| SC385V1-H1 CONTACT | 385KVA/ 308KW | 350KVA/ 280KW | 6ETAA11.8-G33 | SHANGCHAI (China) | NIANFENG NFS4-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 220 engine `SC12E460D2` | tổ máy `SC385V2-H1` | prime 350 kVA / 280 kW; standby 385 kVA / 308 kW | khác: NIANFENG NFS4-F | hãng: SDEC | 
+  - đổi: genset: "SC385V2-H1 CONTACT" → "SC385V2-H1"
+  - nguồn: `| SC385V2-H1 CONTACT | 385KVA/ 308KW | 350KVA/ 280KW | SC12E460D2 | SHANGCHAI (China) | NIANFENG NFS4-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 220 alternator `NIANFENG NFS4-F` | tổ máy `SC385V2-H1` | prime 350 kVA / 280 kW; standby 385 kVA / 308 kW | khác: SC12E460D2 | hãng: ∅ | 
+  - đổi: genset: "SC385V2-H1 CONTACT" → "SC385V2-H1"
+  - nguồn: `| SC385V2-H1 CONTACT | 385KVA/ 308KW | 350KVA/ 280KW | SC12E460D2 | SHANGCHAI (China) | NIANFENG NFS4-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 221 engine `6ETAA11.8-G31` | tổ máy `SC413V1-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: NIANFENG NFS4-G | hãng: SDEC | 
+  - đổi: genset: "SC413V1-H1 CONTACT" → "SC413V1-H1"
+  - nguồn: `| SC413V1-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | 6ETAA11.8-G31 | SHANGCHAI (China) | NIANFENG NFS4-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 221 alternator `NIANFENG NFS4-G` | tổ máy `SC413V1-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: 6ETAA11.8-G31 | hãng: ∅ | 
+  - đổi: genset: "SC413V1-H1 CONTACT" → "SC413V1-H1"
+  - nguồn: `| SC413V1-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | 6ETAA11.8-G31 | SHANGCHAI (China) | NIANFENG NFS4-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 222 engine `SC15G500D2` | tổ máy `SC413V2-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: NIANFENG NFS4-G | hãng: SDEC | 
+  - đổi: genset: "SC413V2-H1 CONTACT" → "SC413V2-H1"
+  - nguồn: `| SC413V2-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | SC15G500D2 | SHANGCHAI (China) | NIANFENG NFS4-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 222 alternator `NIANFENG NFS4-G` | tổ máy `SC413V2-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: SC15G500D2 | hãng: ∅ | 
+  - đổi: genset: "SC413V2-H1 CONTACT" → "SC413V2-H1"
+  - nguồn: `| SC413V2-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | SC15G500D2 | SHANGCHAI (China) | NIANFENG NFS4-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 223 engine `6ETAA12.8-G32` | tổ máy `SC450V1-H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: NIANFENG NFS4-H | hãng: SDEC | 
+  - đổi: genset: "SC450V1-H1 CONTACT" → "SC450V1-H1"
+  - nguồn: `| SC450V1-H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | 6ETAA12.8-G32 | SHANGCHAI (China) | NIANFENG NFS4-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 223 alternator `NIANFENG NFS4-H` | tổ máy `SC450V1-H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: 6ETAA12.8-G32 | hãng: ∅ | 
+  - đổi: genset: "SC450V1-H1 CONTACT" → "SC450V1-H1"
+  - nguồn: `| SC450V1-H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | 6ETAA12.8-G32 | SHANGCHAI (China) | NIANFENG NFS4-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 224 engine `SC13E550D2` | tổ máy `SC450V2-H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: NIANFENG NFS4-H | hãng: SDEC | 
+  - đổi: genset: "SC450V2-H1 CONTACT" → "SC450V2-H1"
+  - nguồn: `| SC450V2-H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | SC13E550D2 | SHANGCHAI (China) | NIANFENG NFS4-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 224 alternator `NIANFENG NFS4-H` | tổ máy `SC450V2-H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: SC13E550D2 | hãng: ∅ | 
+  - đổi: genset: "SC450V2-H1 CONTACT" → "SC450V2-H1"
+  - nguồn: `| SC450V2-H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | SC13E550D2 | SHANGCHAI (China) | NIANFENG NFS4-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 225 engine `6ETAA12.8-G31` | tổ máy `SC500V1-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: NIANFENG NFS4-J | hãng: SDEC | 
+  - đổi: genset: "SC500V1-H1 CONTACT" → "SC500V1-H1"
+  - nguồn: `| SC500V1-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | 6ETAA12.8-G31 | SHANGCHAI (China) | NIANFENG NFS4-J | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 225 alternator `NIANFENG NFS4-J` | tổ máy `SC500V1-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: 6ETAA12.8-G31 | hãng: ∅ | 
+  - đổi: genset: "SC500V1-H1 CONTACT" → "SC500V1-H1"
+  - nguồn: `| SC500V1-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | 6ETAA12.8-G31 | SHANGCHAI (China) | NIANFENG NFS4-J | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 226 engine `SC25G610D2` | tổ máy `SC500V2-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: NIANFENG NFS4-J | hãng: SDEC | 
+  - đổi: genset: "SC500V2-H1 CONTACT" → "SC500V2-H1"
+  - nguồn: `| SC500V2-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | SC25G610D2 | SHANGCHAI (China) | NIANFENG NFS4-J | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 226 alternator `NIANFENG NFS4-J` | tổ máy `SC500V2-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: SC25G610D2 | hãng: ∅ | 
+  - đổi: genset: "SC500V2-H1 CONTACT" → "SC500V2-H1"
+  - nguồn: `| SC500V2-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | SC25G610D2 | SHANGCHAI (China) | NIANFENG NFS4-J | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 227 engine `6ETAA12.8-G310` | tổ máy `SC563V1-H1` | prime 500 kVA / 400 kW; standby 563 kVA / 450 kW | khác: NIANFENG NFS5-D | hãng: SDEC | 
+  - đổi: genset: "SC563V1-H1 CONTACT" → "SC563V1-H1"
+  - nguồn: `| SC563V1-H1 CONTACT | 563KVA/ 450KW | 500KVA/ 400KW | 6ETAA12.8-G310 | SHANGCHAI (China) | NIANFENG NFS5-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 227 alternator `NIANFENG NFS5-D` | tổ máy `SC563V1-H1` | prime 500 kVA / 400 kW; standby 563 kVA / 450 kW | khác: 6ETAA12.8-G310 | hãng: ∅ | 
+  - đổi: genset: "SC563V1-H1 CONTACT" → "SC563V1-H1"
+  - nguồn: `| SC563V1-H1 CONTACT | 563KVA/ 450KW | 500KVA/ 400KW | 6ETAA12.8-G310 | SHANGCHAI (China) | NIANFENG NFS5-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 228 engine `6KTAA25-G311` | tổ máy `SC563V2-H1` | prime 500 kVA / 400 kW; standby 563 kVA / 450 kW | khác: NIANFENG NFS5-D | hãng: SDEC | 
+  - đổi: genset: "SC563V2-H1 CONTACT" → "SC563V2-H1"
+  - nguồn: `| SC563V2-H1 CONTACT | 563KVA/ 450KW | 500KVA/ 400KW | 6KTAA25-G311 | SHANGCHAI (China) | NIANFENG NFS5-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 228 alternator `NIANFENG NFS5-D` | tổ máy `SC563V2-H1` | prime 500 kVA / 400 kW; standby 563 kVA / 450 kW | khác: 6KTAA25-G311 | hãng: ∅ | 
+  - đổi: genset: "SC563V2-H1 CONTACT" → "SC563V2-H1"
+  - nguồn: `| SC563V2-H1 CONTACT | 563KVA/ 450KW | 500KVA/ 400KW | 6KTAA25-G311 | SHANGCHAI (China) | NIANFENG NFS5-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 229 engine `12GTAA27-G34` | tổ máy `SC563V3-H1` | prime 500 kVA / 400 kW; standby 563 kVA / 450 kW | khác: NIANFENG NFS5-D | hãng: SDEC | 
+  - đổi: genset: "SC563V3-H1 CONTACT" → "SC563V3-H1"
+  - nguồn: `| SC563V3-H1 CONTACT | 563KVA/ 450KW | 500KVA/ 400KW | 12GTAA27-G34 | SHANGCHAI (China) | NIANFENG NFS5-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 229 alternator `NIANFENG NFS5-D` | tổ máy `SC563V3-H1` | prime 500 kVA / 400 kW; standby 563 kVA / 450 kW | khác: 12GTAA27-G34 | hãng: ∅ | 
+  - đổi: genset: "SC563V3-H1 CONTACT" → "SC563V3-H1"
+  - nguồn: `| SC563V3-H1 CONTACT | 563KVA/ 450KW | 500KVA/ 400KW | 12GTAA27-G34 | SHANGCHAI (China) | NIANFENG NFS5-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 230 engine `SC25G690D2` | tổ máy `SC563V4-H1` | prime 500 kVA / 400 kW; standby 563 kVA / 450 kW | khác: NIANFENG NFS5-D | hãng: SDEC | 
+  - đổi: genset: "SC563V4-H1 CONTACT" → "SC563V4-H1"
+  - nguồn: `| SC563V4-H1 CONTACT | 563KVA/ 450KW | 500KVA/ 400KW | SC25G690D2 | SHANGCHAI (China) | NIANFENG NFS5-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 230 alternator `NIANFENG NFS5-D` | tổ máy `SC563V4-H1` | prime 500 kVA / 400 kW; standby 563 kVA / 450 kW | khác: SC25G690D2 | hãng: ∅ | 
+  - đổi: genset: "SC563V4-H1 CONTACT" → "SC563V4-H1"
+  - nguồn: `| SC563V4-H1 CONTACT | 563KVA/ 450KW | 500KVA/ 400KW | SC25G690D2 | SHANGCHAI (China) | NIANFENG NFS5-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 231 engine `6KTAA25-G310` | tổ máy `SC625V1-H1` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: NIANFENG NFS5-E | hãng: SDEC | 
+  - đổi: genset: "SC625V1-H1 CONTACT" → "SC625V1-H1"
+  - nguồn: `| SC625V1-H1 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | 6KTAA25-G310 | SHANGCHAI (China) | NIANFENG NFS5-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 231 alternator `NIANFENG NFS5-E` | tổ máy `SC625V1-H1` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: 6KTAA25-G310 | hãng: ∅ | 
+  - đổi: genset: "SC625V1-H1 CONTACT" → "SC625V1-H1"
+  - nguồn: `| SC625V1-H1 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | 6KTAA25-G310 | SHANGCHAI (China) | NIANFENG NFS5-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 232 engine `12GTAA27-G33` | tổ máy `SC625V2-H1` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: NIANFENG NFS5-E | hãng: SDEC | 
+  - đổi: genset: "SC625V2-H1 CONTACT" → "SC625V2-H1"
+  - nguồn: `| SC625V2-H1 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | 12GTAA27-G33 | SHANGCHAI (China) | NIANFENG NFS5-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 232 alternator `NIANFENG NFS5-E` | tổ máy `SC625V2-H1` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: 12GTAA27-G33 | hãng: ∅ | 
+  - đổi: genset: "SC625V2-H1 CONTACT" → "SC625V2-H1"
+  - nguồn: `| SC625V2-H1 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | 12GTAA27-G33 | SHANGCHAI (China) | NIANFENG NFS5-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 233 engine `SC27G755D2` | tổ máy `SC625V3-H1` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: NIANFENG NFS5-E | hãng: SDEC | 
+  - đổi: genset: "SC625V3-H1 CONTACT" → "SC625V3-H1"
+  - nguồn: `| SC625V3-H1 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | SC27G755D2 | SHANGCHAI (China) | NIANFENG NFS5-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 233 alternator `NIANFENG NFS5-E` | tổ máy `SC625V3-H1` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: SC27G755D2 | hãng: ∅ | 
+  - đổi: genset: "SC625V3-H1 CONTACT" → "SC625V3-H1"
+  - nguồn: `| SC625V3-H1 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | SC27G755D2 | SHANGCHAI (China) | NIANFENG NFS5-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 234 engine `6KTAA25-G39` | tổ máy `SC688V1-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: NIANFENG NFS5-F | hãng: SDEC | 
+  - đổi: genset: "SC688V1-H1 CONTACT" → "SC688V1-H1"
+  - nguồn: `| SC688V1-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | 6KTAA25-G39 | SHANGCHAI (China) | NIANFENG NFS5-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 234 alternator `NIANFENG NFS5-F` | tổ máy `SC688V1-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: 6KTAA25-G39 | hãng: ∅ | 
+  - đổi: genset: "SC688V1-H1 CONTACT" → "SC688V1-H1"
+  - nguồn: `| SC688V1-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | 6KTAA25-G39 | SHANGCHAI (China) | NIANFENG NFS5-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 235 engine `12GTAA27-G32` | tổ máy `SC688V2-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: NIANFENG NFS5-F | hãng: SDEC | 
+  - đổi: genset: "SC688V2-H1 CONTACT" → "SC688V2-H1"
+  - nguồn: `| SC688V2-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | 12GTAA27-G32 | SHANGCHAI (China) | NIANFENG NFS5-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 235 alternator `NIANFENG NFS5-F` | tổ máy `SC688V2-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: 12GTAA27-G32 | hãng: ∅ | 
+  - đổi: genset: "SC688V2-H1 CONTACT" → "SC688V2-H1"
+  - nguồn: `| SC688V2-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | 12GTAA27-G32 | SHANGCHAI (China) | NIANFENG NFS5-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 236 engine `SC27G830D2` | tổ máy `SC688V3-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: NIANFENG NFS5-F | hãng: SDEC | 
+  - đổi: genset: "SC688V3-H1 CONTACT" → "SC688V3-H1"
+  - nguồn: `| SC688V3-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | SC27G830D2 | SHANGCHAI (China) | NIANFENG NFS5-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 236 alternator `NIANFENG NFS5-F` | tổ máy `SC688V3-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: SC27G830D2 | hãng: ∅ | 
+  - đổi: genset: "SC688V3-H1 CONTACT" → "SC688V3-H1"
+  - nguồn: `| SC688V3-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | SC27G830D2 | SHANGCHAI (China) | NIANFENG NFS5-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 237 engine `6KTAA25-G38` | tổ máy `SC750V1-H1` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: NIANFENG NFS5-G | hãng: SDEC | 
+  - đổi: genset: "SC750V1-H1 CONTACT" → "SC750V1-H1"
+  - nguồn: `| SC750V1-H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | 6KTAA25-G38 | SHANGCHAI (China) | NIANFENG NFS5-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 237 alternator `NIANFENG NFS5-G` | tổ máy `SC750V1-H1` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: 6KTAA25-G38 | hãng: ∅ | 
+  - đổi: genset: "SC750V1-H1 CONTACT" → "SC750V1-H1"
+  - nguồn: `| SC750V1-H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | 6KTAA25-G38 | SHANGCHAI (China) | NIANFENG NFS5-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 238 engine `12GTAA27-G31` | tổ máy `SC750V2-H1` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: NIANFENG NFS5-G | hãng: SDEC | 
+  - đổi: genset: "SC750V2-H1 CONTACT" → "SC750V2-H1"
+  - nguồn: `| SC750V2-H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | 12GTAA27-G31 | SHANGCHAI (China) | NIANFENG NFS5-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 238 alternator `NIANFENG NFS5-G` | tổ máy `SC750V2-H1` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: 12GTAA27-G31 | hãng: ∅ | 
+  - đổi: genset: "SC750V2-H1 CONTACT" → "SC750V2-H1"
+  - nguồn: `| SC750V2-H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | 12GTAA27-G31 | SHANGCHAI (China) | NIANFENG NFS5-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 239 engine `SC27G900D2` | tổ máy `SC750V3-H1` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: NIANFENG NFS5-G | hãng: SDEC | 
+  - đổi: genset: "SC750V3-H1 CONTACT" → "SC750V3-H1"
+  - nguồn: `| SC750V3-H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | SC27G900D2 | SHANGCHAI (China) | NIANFENG NFS5-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 239 alternator `NIANFENG NFS5-G` | tổ máy `SC750V3-H1` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: SC27G900D2 | hãng: ∅ | 
+  - đổi: genset: "SC750V3-H1 CONTACT" → "SC750V3-H1"
+  - nguồn: `| SC750V3-H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | SC27G900D2 | SHANGCHAI (China) | NIANFENG NFS5-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 240 engine `6KTAA25-G32` | tổ máy `SC825V1-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: NIANFENG NFS5-H | hãng: SDEC | 
+  - đổi: genset: "SC825V1-H1 CONTACT" → "SC825V1-H1"
+  - nguồn: `| SC825V1-H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | 6KTAA25-G32 | SHANGCHAI (China) | NIANFENG NFS5-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 240 alternator `NIANFENG NFS5-H` | tổ máy `SC825V1-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: 6KTAA25-G32 | hãng: ∅ | 
+  - đổi: genset: "SC825V1-H1 CONTACT" → "SC825V1-H1"
+  - nguồn: `| SC825V1-H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | 6KTAA25-G32 | SHANGCHAI (China) | NIANFENG NFS5-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 241 engine `6KTAA25-G37` | tổ máy `SC825V2-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: NIANFENG NFS5-H | hãng: SDEC | 
+  - đổi: genset: "SC825V2-H1 CONTACT" → "SC825V2-H1"
+  - nguồn: `| SC825V2-H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | 6KTAA25-G37 | SHANGCHAI (China) | NIANFENG NFS5-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 241 alternator `NIANFENG NFS5-H` | tổ máy `SC825V2-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: 6KTAA25-G37 | hãng: ∅ | 
+  - đổi: genset: "SC825V2-H1 CONTACT" → "SC825V2-H1"
+  - nguồn: `| SC825V2-H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | 6KTAA25-G37 | SHANGCHAI (China) | NIANFENG NFS5-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 242 engine `SC25K990D2` | tổ máy `SC825V3-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: NIANFENG NFS5-H | hãng: SDEC | 
+  - đổi: genset: "SC825V3-H1 CONTACT" → "SC825V3-H1"
+  - nguồn: `| SC825V3-H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | SC25K990D2 | SHANGCHAI (China) | NIANFENG NFS5-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 242 alternator `NIANFENG NFS5-H` | tổ máy `SC825V3-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: SC25K990D2 | hãng: ∅ | 
+  - đổi: genset: "SC825V3-H1 CONTACT" → "SC825V3-H1"
+  - nguồn: `| SC825V3-H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | SC25K990D2 | SHANGCHAI (China) | NIANFENG NFS5-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 243 engine `6KTAA25-G31` | tổ máy `SC900-H1` | prime 800 kVA / 640 kW; standby 900 kVA / 720 kW | khác: NIANFENG NFS6-C | hãng: SDEC | 
+  - đổi: genset: "SC900-H1 CONTACT" → "SC900-H1"
+  - nguồn: `| SC900-H1 CONTACT | 900KVA/ 720KW | 800KVA/ 640KW | 6KTAA25-G31 | SHANGCHAI (China) | NIANFENG NFS6-C | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 243 alternator `NIANFENG NFS6-C` | tổ máy `SC900-H1` | prime 800 kVA / 640 kW; standby 900 kVA / 720 kW | khác: 6KTAA25-G31 | hãng: ∅ | 
+  - đổi: genset: "SC900-H1 CONTACT" → "SC900-H1"
+  - nguồn: `| SC900-H1 CONTACT | 900KVA/ 720KW | 800KVA/ 640KW | 6KTAA25-G31 | SHANGCHAI (China) | NIANFENG NFS6-C | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 244 engine `6KTAA25-G320` | tổ máy `SC1000V1-H1` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: NIANFENG NFS6-D | hãng: SDEC | 
+  - đổi: genset: "SC1000V1-H1 CONTACT" → "SC1000V1-H1"
+  - nguồn: `| SC1000V1-H1 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | 6KTAA25-G320 | SHANGCHAI (China) | NIANFENG NFS6-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 244 alternator `NIANFENG NFS6-D` | tổ máy `SC1000V1-H1` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: 6KTAA25-G320 | hãng: ∅ | 
+  - đổi: genset: "SC1000V1-H1 CONTACT" → "SC1000V1-H1"
+  - nguồn: `| SC1000V1-H1 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | 6KTAA25-G320 | SHANGCHAI (China) | NIANFENG NFS6-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 245 engine `6WTAA35-G32` | tổ máy `SC1000V2-H1` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: NIANFENG NFS6-D | hãng: SDEC | 
+  - đổi: genset: "SC1000V2-H1 CONTACT" → "SC1000V2-H1"
+  - nguồn: `| SC1000V2-H1 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | 6WTAA35-G32 | SHANGCHAI (China) | NIANFENG NFS6-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 245 alternator `NIANFENG NFS6-D` | tổ máy `SC1000V2-H1` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: 6WTAA35-G32 | hãng: ∅ | 
+  - đổi: genset: "SC1000V2-H1 CONTACT" → "SC1000V2-H1"
+  - nguồn: `| SC1000V2-H1 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | 6WTAA35-G32 | SHANGCHAI (China) | NIANFENG NFS6-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 246 engine `6KTAA25-G321` | tổ máy `SC1100V1-H1` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: NIANFENG NFS6-E | hãng: SDEC | 
+  - đổi: genset: "SC1100V1-H1 CONTACT" → "SC1100V1-H1"
+  - nguồn: `| SC1100V1-H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | 6KTAA25-G321 | SHANGCHAI (China) | NIANFENG NFS6-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 246 alternator `NIANFENG NFS6-E` | tổ máy `SC1100V1-H1` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: 6KTAA25-G321 | hãng: ∅ | 
+  - đổi: genset: "SC1100V1-H1 CONTACT" → "SC1100V1-H1"
+  - nguồn: `| SC1100V1-H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | 6KTAA25-G321 | SHANGCHAI (China) | NIANFENG NFS6-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 247 engine `6WTAA35-G31` | tổ máy `SC1100V2-H1` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: NIANFENG NFS6-E | hãng: SDEC | 
+  - đổi: genset: "SC1100V2-H1 CONTACT" → "SC1100V2-H1"
+  - nguồn: `| SC1100V2-H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | 6WTAA35-G31 | SHANGCHAI (China) | NIANFENG NFS6-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 247 alternator `NIANFENG NFS6-E` | tổ máy `SC1100V2-H1` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: 6WTAA35-G31 | hãng: ∅ | 
+  - đổi: genset: "SC1100V2-H1 CONTACT" → "SC1100V2-H1"
+  - nguồn: `| SC1100V2-H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | 6WTAA35-G31 | SHANGCHAI (China) | NIANFENG NFS6-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 248 engine `6WTAA35-G310` | tổ máy `SC1250-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: NIANFENG NFS6-F | hãng: SDEC | 
+  - đổi: genset: "SC1250-H1 CONTACT" → "SC1250-H1"
+  - nguồn: `| SC1250-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | 6WTAA35-G310 | SHANGCHAI (China) | NIANFENG NFS6-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 248 alternator `NIANFENG NFS6-F` | tổ máy `SC1250-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: 6WTAA35-G310 | hãng: ∅ | 
+  - đổi: genset: "SC1250-H1 CONTACT" → "SC1250-H1"
+  - nguồn: `| SC1250-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | 6WTAA35-G310 | SHANGCHAI (China) | NIANFENG NFS6-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 249 engine `16XTAA38-G34` | tổ máy `SC1250N-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: NIANFENG NFS6-F | hãng: SDEC | 
+  - đổi: genset: "SC1250N-H1 CONTACT" → "SC1250N-H1"
+  - nguồn: `| SC1250N-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | 16XTAA38-G34 | SHANGCHAI (China) | NIANFENG NFS6-F | Click Here |`
+- **ĐỔI** n103 b2 dòng 249 alternator `NIANFENG NFS6-F` | tổ máy `SC1250N-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: 16XTAA38-G34 | hãng: ∅ | 
+  - đổi: genset: "SC1250N-H1 CONTACT" → "SC1250N-H1"
+  - nguồn: `| SC1250N-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | 16XTAA38-G34 | SHANGCHAI (China) | NIANFENG NFS6-F | Click Here |`
+- **ĐỔI** n103 b2 dòng 250 engine `6WTAA35-G311` | tổ máy `SC1375-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: NIANFENG NFS6-G | hãng: SDEC | 
+  - đổi: genset: "SC1375-H1 CONTACT" → "SC1375-H1"
+  - nguồn: `| SC1375-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | 6WTAA35-G311 | SHANGCHAI (China) | NIANFENG NFS6-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 250 alternator `NIANFENG NFS6-G` | tổ máy `SC1375-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: 6WTAA35-G311 | hãng: ∅ | 
+  - đổi: genset: "SC1375-H1 CONTACT" → "SC1375-H1"
+  - nguồn: `| SC1375-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | 6WTAA35-G311 | SHANGCHAI (China) | NIANFENG NFS6-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 251 engine `6WTAA35-G311` | tổ máy `SC1375N/H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: NIANFENG NFS6-G | hãng: SDEC | 
+  - đổi: genset: "SC1375N/H1 CONTACT" → "SC1375N/H1"
+  - nguồn: `| SC1375N/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | 6WTAA35-G311 | SHANGCHAI (China) | NIANFENG NFS6-G | Click Here |`
+- **ĐỔI** n103 b2 dòng 251 alternator `NIANFENG NFS6-G` | tổ máy `SC1375N/H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: 6WTAA35-G311 | hãng: ∅ | 
+  - đổi: genset: "SC1375N/H1 CONTACT" → "SC1375N/H1"
+  - nguồn: `| SC1375N/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | 6WTAA35-G311 | SHANGCHAI (China) | NIANFENG NFS6-G | Click Here |`
+- **ĐỔI** n103 b2 dòng 252 engine `12KTA58-G36` | tổ máy `SC1500-H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: NIANFENG NFS6-H | hãng: SDEC | 
+  - đổi: genset: "SC1500-H1 CONTACT" → "SC1500-H1"
+  - nguồn: `| SC1500-H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | 12KTA58-G36 | SHANGCHAI (China) | NIANFENG NFS6-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 252 alternator `NIANFENG NFS6-H` | tổ máy `SC1500-H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: 12KTA58-G36 | hãng: ∅ | 
+  - đổi: genset: "SC1500-H1 CONTACT" → "SC1500-H1"
+  - nguồn: `| SC1500-H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | 12KTA58-G36 | SHANGCHAI (China) | NIANFENG NFS6-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 253 engine `16XTAA38-G32` | tổ máy `SC1500V1/H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: NIANFENG NFS6-H | hãng: SDEC | 
+  - đổi: genset: "SC1500V1/H1 CONTACT" → "SC1500V1/H1"
+  - nguồn: `| SC1500V1/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | 16XTAA38-G32 | SHANGCHAI (China) | NIANFENG NFS6-H | Click Here |`
+- **ĐỔI** n103 b2 dòng 253 alternator `NIANFENG NFS6-H` | tổ máy `SC1500V1/H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: 16XTAA38-G32 | hãng: ∅ | 
+  - đổi: genset: "SC1500V1/H1 CONTACT" → "SC1500V1/H1"
+  - nguồn: `| SC1500V1/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | 16XTAA38-G32 | SHANGCHAI (China) | NIANFENG NFS6-H | Click Here |`
+- **ĐỔI** n103 b2 dòng 254 engine `YC4A155-D30` | tổ máy `SC1650/H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: NIANFENG NFS7-C | hãng: SDEC | 
+  - đổi: genset: "SC1650/H1 CONTACT" → "SC1650/H1"
+  - nguồn: `| SC1650/H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | YC4A155-D30 | SHANGCHAI (China) | NIANFENG NFS7-C | Click Here |`
+- **ĐỔI** n103 b2 dòng 254 alternator `NIANFENG NFS7-C` | tổ máy `SC1650/H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: YC4A155-D30 | hãng: ∅ | 
+  - đổi: genset: "SC1650/H1 CONTACT" → "SC1650/H1"
+  - nguồn: `| SC1650/H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | YC4A155-D30 | SHANGCHAI (China) | NIANFENG NFS7-C | Click Here |`
+- **ĐỔI** n103 b2 dòng 255 engine `12KTA58-G35` | tổ máy `SC1688-H1` | prime 1653 kVA / 1250 kW; standby 1688 kVA / 1350 kW | khác: NIANFENG NFS7-C | hãng: SDEC | 
+  - đổi: genset: "SC1688-H1 CONTACT" → "SC1688-H1"
+  - nguồn: `| SC1688-H1 CONTACT | 1688KVA/ 1350KW | 1653KVA/ 1250KW | 12KTA58-G35 | SHANGCHAI (China) | NIANFENG NFS7-C | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 255 alternator `NIANFENG NFS7-C` | tổ máy `SC1688-H1` | prime 1653 kVA / 1250 kW; standby 1688 kVA / 1350 kW | khác: 12KTA58-G35 | hãng: ∅ | 
+  - đổi: genset: "SC1688-H1 CONTACT" → "SC1688-H1"
+  - nguồn: `| SC1688-H1 CONTACT | 1688KVA/ 1350KW | 1653KVA/ 1250KW | 12KTA58-G35 | SHANGCHAI (China) | NIANFENG NFS7-C | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 256 engine `12KTA58-G34` | tổ máy `SC1875-H1` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: NIANFENG NFS7-ES | hãng: SDEC | 
+  - đổi: genset: "SC1875-H1 CONTACT" → "SC1875-H1"
+  - nguồn: `| SC1875-H1 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | 12KTA58-G34 | SHANGCHAI (China) | NIANFENG NFS7-ES | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 256 alternator `NIANFENG NFS7-ES` | tổ máy `SC1875-H1` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: 12KTA58-G34 | hãng: ∅ | 
+  - đổi: genset: "SC1875-H1 CONTACT" → "SC1875-H1"
+  - nguồn: `| SC1875-H1 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | 12KTA58-G34 | SHANGCHAI (China) | NIANFENG NFS7-ES | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 257 engine `12KTA58-G33` | tổ máy `SC2063-H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: NIANFENG NFS7-E | hãng: SDEC | 
+  - đổi: genset: "SC2063-H1 CONTACT" → "SC2063-H1"
+  - nguồn: `| SC2063-H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | 12KTA58-G33 | SHANGCHAI (China) | NIANFENG NFS7-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 257 alternator `NIANFENG NFS7-E` | tổ máy `SC2063-H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: 12KTA58-G33 | hãng: ∅ | 
+  - đổi: genset: "SC2063-H1 CONTACT" → "SC2063-H1"
+  - nguồn: `| SC2063-H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | 12KTA58-G33 | SHANGCHAI (China) | NIANFENG NFS7-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 258 engine `12KTA58-G32` | tổ máy `SC2200-H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: NIANFENG NF454F | hãng: SDEC | 
+  - đổi: genset: "SC2200-H1 CONTACT" → "SC2200-H1"
+  - nguồn: `| SC2200-H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | 12KTA58-G32 | SHANGCHAI (China) | NIANFENG NF454F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 258 alternator `NIANFENG NF454F` | tổ máy `SC2200-H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: 12KTA58-G32 | hãng: ∅ | 
+  - đổi: genset: "SC2200-H1 CONTACT" → "SC2200-H1"
+  - nguồn: `| SC2200-H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | 12KTA58-G32 | SHANGCHAI (China) | NIANFENG NF454F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 259 engine `12KTA58-G31` | tổ máy `SC2500-H1` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: NIANFENG NF454H | hãng: SDEC | 
+  - đổi: genset: "SC2500-H1 CONTACT" → "SC2500-H1"
+  - nguồn: `| SC2500-H1 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | 12KTA58-G31 | SHANGCHAI (China) | NIANFENG NF454H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 259 alternator `NIANFENG NF454H` | tổ máy `SC2500-H1` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: 12KTA58-G31 | hãng: ∅ | 
+  - đổi: genset: "SC2500-H1 CONTACT" → "SC2500-H1"
+  - nguồn: `| SC2500-H1 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | 12KTA58-G31 | SHANGCHAI (China) | NIANFENG NF454H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 260 engine `16KTA76-G33` | tổ máy `SC2750-H1` | prime 2500 kVA / 2000 kW; standby 2750 kVA / 2200 kW | khác: NIANFENG NFS7-H | hãng: SDEC | 
+  - đổi: genset: "SC2750-H1 CONTACT" → "SC2750-H1"
+  - nguồn: `| SC2750-H1 CONTACT | 2750KVA/ 2200KW | 2500KVA/ 2000KW | 16KTA76-G33 | SHANGCHAI (China) | NIANFENG NFS7-H | Click Here |`
+- **ĐỔI** n103 b2 dòng 260 alternator `NIANFENG NFS7-H` | tổ máy `SC2750-H1` | prime 2500 kVA / 2000 kW; standby 2750 kVA / 2200 kW | khác: 16KTA76-G33 | hãng: ∅ | 
+  - đổi: genset: "SC2750-H1 CONTACT" → "SC2750-H1"
+  - nguồn: `| SC2750-H1 CONTACT | 2750KVA/ 2200KW | 2500KVA/ 2000KW | 16KTA76-G33 | SHANGCHAI (China) | NIANFENG NFS7-H | Click Here |`
+- **ĐỔI** n103 b2 dòng 261 engine `16KTA76-G32` | tổ máy `SC3000-H1` | prime 2750 kVA / 2200 kW; standby 3000 kVA / 2400 kW | khác: NIANFENG FD7H-4 | hãng: SDEC | 
+  - đổi: genset: "SC3000-H1 CONTACT" → "SC3000-H1"
+  - nguồn: `| SC3000-H1 CONTACT | 3000KVA/ 2400KW | 2750KVA/ 2200KW | 16KTA76-G32 | SHANGCHAI (China) | NIANFENG FD7H-4 | Click Here |`
+- **ĐỔI** n103 b2 dòng 261 alternator `NIANFENG FD7H-4` | tổ máy `SC3000-H1` | prime 2750 kVA / 2200 kW; standby 3000 kVA / 2400 kW | khác: 16KTA76-G32 | hãng: ∅ | 
+  - đổi: genset: "SC3000-H1 CONTACT" → "SC3000-H1"
+  - nguồn: `| SC3000-H1 CONTACT | 3000KVA/ 2400KW | 2750KVA/ 2200KW | 16KTA76-G32 | SHANGCHAI (China) | NIANFENG FD7H-4 | Click Here |`
+- **ĐỔI** n103 b2 dòng 262 engine `16KTA76-G31` | tổ máy `SC3250-H1` | prime 3000 kVA / 2400 kW; standby 3250 kVA / 2600 kW | khác: ∅ | hãng: ∅ | 
+  - đổi: genset: "SC3250-H1 CONTACT" → "SC3250-H1"; makes: [{"name":"Cummins","via":"tiêu đề cột"}] → []
   - nguồn: `| SC3250-H1 CONTACT | 3250KVA/ 2600KW | 3000KVA/ 2400KW | 16KTA76-G31 | NIANFENG FD8B-4 | NIANFENG FD8B-4 | Click Here |`
+- **ĐỔI** n103 b2 dòng 263 engine `WP2.3D25E200` | tổ máy `W25-H1` | prime 23 kVA / 18 kW; standby 25 kVA / 20 kW | khác: NIANFENG NFS184-E | hãng: Weichai | 
+  - đổi: genset: "W25-H1 CONTACT" → "W25-H1"
+  - nguồn: `| W25-H1 CONTACT | 25KVA/ 20KW | 23KVA/ 18KW | WP2.3D25E200 | WEICHAI (China) | NIANFENG NFS184-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 263 alternator `NIANFENG NFS184-E` | tổ máy `W25-H1` | prime 23 kVA / 18 kW; standby 25 kVA / 20 kW | khác: WP2.3D25E200 | hãng: ∅ | 
+  - đổi: genset: "W25-H1 CONTACT" → "W25-H1"
+  - nguồn: `| W25-H1 CONTACT | 25KVA/ 20KW | 23KVA/ 18KW | WP2.3D25E200 | WEICHAI (China) | NIANFENG NFS184-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 264 engine `WP2.3D33E200` | tổ máy `W33-H1` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: NIANFENG NFS184-GS | hãng: Weichai | 
+  - đổi: genset: "W33-H1 CONTACT" → "W33-H1"
+  - nguồn: `| W33-H1 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | WP2.3D33E200 | WEICHAI (China) | NIANFENG NFS184-GS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 264 alternator `NIANFENG NFS184-GS` | tổ máy `W33-H1` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: WP2.3D33E200 | hãng: ∅ | 
+  - đổi: genset: "W33-H1 CONTACT" → "W33-H1"
+  - nguồn: `| W33-H1 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | WP2.3D33E200 | WEICHAI (China) | NIANFENG NFS184-GS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 265 engine `WP2.3D40E200` | tổ máy `W41-H1` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: NIANFENG NFS184-H | hãng: Weichai | 
+  - đổi: genset: "W41-H1 CONTACT" → "W41-H1"
+  - nguồn: `| W41-H1 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | WP2.3D40E200 | WEICHAI (China) | NIANFENG NFS184-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 265 alternator `NIANFENG NFS184-H` | tổ máy `W41-H1` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: WP2.3D40E200 | hãng: ∅ | 
+  - đổi: genset: "W41-H1 CONTACT" → "W41-H1"
+  - nguồn: `| W41-H1 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | WP2.3D40E200 | WEICHAI (China) | NIANFENG NFS184-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 266 engine `WP2.3D48E200` | tổ máy `W50-H1` | prime 45 kVA / 36 kW; standby 50 kVA / 40 kW | khác: NIANFENG NFS224-DS | hãng: Weichai | 
+  - đổi: genset: "W50-H1 CONTACT" → "W50-H1"
+  - nguồn: `| W50-H1 CONTACT | 50KVA/ 40KW | 45KVA/ 36KW | WP2.3D48E200 | WEICHAI (China) | NIANFENG NFS224-DS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 266 alternator `NIANFENG NFS224-DS` | tổ máy `W50-H1` | prime 45 kVA / 36 kW; standby 50 kVA / 40 kW | khác: WP2.3D48E200 | hãng: ∅ | 
+  - đổi: genset: "W50-H1 CONTACT" → "W50-H1"
+  - nguồn: `| W50-H1 CONTACT | 50KVA/ 40KW | 45KVA/ 36KW | WP2.3D48E200 | WEICHAI (China) | NIANFENG NFS224-DS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 267 engine `WP4.1D66E200` | tổ máy `W69-H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: NIANFENG NFS224-E | hãng: Weichai | 
+  - đổi: genset: "W69-H1 CONTACT" → "W69-H1"
+  - nguồn: `| W69-H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | WP4.1D66E200 | WEICHAI (China) | NIANFENG NFS224-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 267 alternator `NIANFENG NFS224-E` | tổ máy `W69-H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: WP4.1D66E200 | hãng: ∅ | 
+  - đổi: genset: "W69-H1 CONTACT" → "W69-H1"
+  - nguồn: `| W69-H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | WP4.1D66E200 | WEICHAI (China) | NIANFENG NFS224-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 268 engine `WP4.1D80E200` | tổ máy `W88-H1` | prime 80 kVA / 64 kW; standby 88 kVA / 70 kW | khác: NIANFENG NFS224-GS | hãng: Weichai | 
+  - đổi: genset: "W88-H1 CONTACT" → "W88-H1"
+  - nguồn: `| W88-H1 CONTACT | 88KVA/ 70KW | 80KVA/ 64KW | WP4.1D80E200 | WEICHAI (China) | NIANFENG NFS224-GS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 268 alternator `NIANFENG NFS224-GS` | tổ máy `W88-H1` | prime 80 kVA / 64 kW; standby 88 kVA / 70 kW | khác: WP4.1D80E200 | hãng: ∅ | 
+  - đổi: genset: "W88-H1 CONTACT" → "W88-H1"
+  - nguồn: `| W88-H1 CONTACT | 88KVA/ 70KW | 80KVA/ 64KW | WP4.1D80E200 | WEICHAI (China) | NIANFENG NFS224-GS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 269 engine `WP4.1D100E200` | tổ máy `W110-H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: NIANFENG NFS224-H | hãng: Weichai | 
+  - đổi: genset: "W110-H1 CONTACT" → "W110-H1"
+  - nguồn: `| W110-H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | WP4.1D100E200 | WEICHAI (China) | NIANFENG NFS224-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 269 alternator `NIANFENG NFS224-H` | tổ máy `W110-H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: WP4.1D100E200 | hãng: ∅ | 
+  - đổi: genset: "W110-H1 CONTACT" → "W110-H1"
+  - nguồn: `| W110-H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | WP4.1D100E200 | WEICHAI (China) | NIANFENG NFS224-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 270 engine `WP4.1D113E200` | tổ máy `W110V1/H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: NIANFENG NFS224-H | hãng: Weichai | 
+  - đổi: genset: "W110V1/H1 CONTACT" → "W110V1/H1"
+  - nguồn: `| W110V1/H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | WP4.1D113E200 | WEICHAI (China) | NIANFENG NFS224-H | Click Here |`
+- **ĐỔI** n103 b2 dòng 270 alternator `NIANFENG NFS224-H` | tổ máy `W110V1/H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: WP4.1D113E200 | hãng: ∅ | 
+  - đổi: genset: "W110V1/H1 CONTACT" → "W110V1/H1"
+  - nguồn: `| W110V1/H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | WP4.1D113E200 | WEICHAI (China) | NIANFENG NFS224-H | Click Here |`
+- **ĐỔI** n103 b2 dòng 271 engine `WP6D132E200` | tổ máy `W138-H1` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: NIANFENG NFS274-D | hãng: Weichai | 
+  - đổi: genset: "W138-H1 CONTACT" → "W138-H1"
+  - nguồn: `| W138-H1 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | WP6D132E200 | WEICHAI (China) | NIANFENG NFS274-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 271 alternator `NIANFENG NFS274-D` | tổ máy `W138-H1` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: WP6D132E200 | hãng: ∅ | 
+  - đổi: genset: "W138-H1 CONTACT" → "W138-H1"
+  - nguồn: `| W138-H1 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | WP6D132E200 | WEICHAI (China) | NIANFENG NFS274-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 272 engine `WP6D152E200` | tổ máy `W165-H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: NIANFENG NFS274-FS | hãng: Weichai | 
+  - đổi: genset: "W165-H1 CONTACT" → "W165-H1"
+  - nguồn: `| W165-H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | WP6D152E200 | WEICHAI (China) | NIANFENG NFS274-FS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 272 alternator `NIANFENG NFS274-FS` | tổ máy `W165-H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: WP6D152E200 | hãng: ∅ | 
+  - đổi: genset: "W165-H1 CONTACT" → "W165-H1"
+  - nguồn: `| W165-H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | WP6D152E200 | WEICHAI (China) | NIANFENG NFS274-FS | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 273 engine `WP10D200E200` | tổ máy `W220-H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: NIANFENG NFS274-H | hãng: Weichai | 
+  - đổi: genset: "W220-H1 CONTACT" → "W220-H1"
+  - nguồn: `| W220-H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | WP10D200E200 | WEICHAI (China) | NIANFENG NFS274-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 273 alternator `NIANFENG NFS274-H` | tổ máy `W220-H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: WP10D200E200 | hãng: ∅ | 
+  - đổi: genset: "W220-H1 CONTACT" → "W220-H1"
+  - nguồn: `| W220-H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | WP10D200E200 | WEICHAI (China) | NIANFENG NFS274-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 274 engine `WP10D238E200` | tổ máy `W250-H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: NIANFENG NFS274-J | hãng: Weichai | 
+  - đổi: genset: "W250-H1 CONTACT" → "W250-H1"
+  - nguồn: `| W250-H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | WP10D238E200 | WEICHAI (China) | NIANFENG NFS274-J | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 274 alternator `NIANFENG NFS274-J` | tổ máy `W250-H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: WP10D238E200 | hãng: ∅ | 
+  - đổi: genset: "W250-H1 CONTACT" → "W250-H1"
+  - nguồn: `| W250-H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | WP10D238E200 | WEICHAI (China) | NIANFENG NFS274-J | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 275 engine `WP10D264E200` | tổ máy `W275-H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: NIANFENG NFS274-K | hãng: Weichai | 
+  - đổi: genset: "W275-H1 CONTACT" → "W275-H1"
+  - nguồn: `| W275-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | WP10D264E200 | WEICHAI (China) | NIANFENG NFS274-K | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 275 alternator `NIANFENG NFS274-K` | tổ máy `W275-H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: WP10D264E200 | hãng: ∅ | 
+  - đổi: genset: "W275-H1 CONTACT" → "W275-H1"
+  - nguồn: `| W275-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | WP10D264E200 | WEICHAI (China) | NIANFENG NFS274-K | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 276 engine `WP10D320E200` | tổ máy `W344-H1` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: NIANFENG NFS4-ES | hãng: Weichai | 
+  - đổi: genset: "W344-H1 CONTACT" → "W344-H1"
+  - nguồn: `| W344-H1 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | WP10D320E200 | WEICHAI (China) | NIANFENG NFS4-ES | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 276 alternator `NIANFENG NFS4-ES` | tổ máy `W344-H1` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: WP10D320E200 | hãng: ∅ | 
+  - đổi: genset: "W344-H1 CONTACT" → "W344-H1"
+  - nguồn: `| W344-H1 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | WP10D320E200 | WEICHAI (China) | NIANFENG NFS4-ES | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 277 engine `WP12D353E200` | tổ máy `W413-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: NIANFENG NFS4-G | hãng: Weichai | 
+  - đổi: genset: "W413-H1 CONTACT" → "W413-H1"
+  - nguồn: `| W413-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | WP12D353E200 | WEICHAI (China) | NIANFENG NFS4-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 277 alternator `NIANFENG NFS4-G` | tổ máy `W413-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: WP12D353E200 | hãng: ∅ | 
+  - đổi: genset: "W413-H1 CONTACT" → "W413-H1"
+  - nguồn: `| W413-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | WP12D353E200 | WEICHAI (China) | NIANFENG NFS4-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 278 engine `WP13D385E200` | tổ máy `W438-H1` | prime 400 kVA / 320 kW; standby 438 kVA / 350 kW | khác: NIANFENG NFS4-H | hãng: Weichai | 
+  - đổi: genset: "W438-H1 CONTACT" → "W438-H1"
+  - nguồn: `| W438-H1 CONTACT | 438KVA/ 350KW | 400KVA/ 320KW | WP13D385E200 | WEICHAI (China) | NIANFENG NFS4-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 278 alternator `NIANFENG NFS4-H` | tổ máy `W438-H1` | prime 400 kVA / 320 kW; standby 438 kVA / 350 kW | khác: WP13D385E200 | hãng: ∅ | 
+  - đổi: genset: "W438-H1 CONTACT" → "W438-H1"
+  - nguồn: `| W438-H1 CONTACT | 438KVA/ 350KW | 400KVA/ 320KW | WP13D385E200 | WEICHAI (China) | NIANFENG NFS4-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 279 engine `WP13D440E310` | tổ máy `W500-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: NIANFENG NFS4-J | hãng: Weichai | 
+  - đổi: genset: "W500-H1 CONTACT" → "W500-H1"
+  - nguồn: `| W500-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | WP13D440E310 | WEICHAI (China) | NIANFENG NFS4-J | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 279 alternator `NIANFENG NFS4-J` | tổ máy `W500-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: WP13D440E310 | hãng: ∅ | 
+  - đổi: genset: "W500-H1 CONTACT" → "W500-H1"
+  - nguồn: `| W500-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | WP13D440E310 | WEICHAI (China) | NIANFENG NFS4-J | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 280 engine `WP13D490E310` | tổ máy `W550-H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: NIANFENG NFS5-D | hãng: Weichai | 
+  - đổi: genset: "W550-H1 CONTACT" → "W550-H1"
+  - nguồn: `| W550-H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | WP13D490E310 | WEICHAI (China) | NIANFENG NFS5-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 280 alternator `NIANFENG NFS5-D` | tổ máy `W550-H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: WP13D490E310 | hãng: ∅ | 
+  - đổi: genset: "W550-H1 CONTACT" → "W550-H1"
+  - nguồn: `| W550-H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | WP13D490E310 | WEICHAI (China) | NIANFENG NFS5-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 281 engine `6M33D633E200` | tổ máy `W688-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: NIANFENG NFS5-F | hãng: Weichai | 
+  - đổi: genset: "W688-H1 CONTACT" → "W688-H1"
+  - nguồn: `| W688-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | 6M33D633E200 | WEICHAI (China) | NIANFENG NFS5-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 281 alternator `NIANFENG NFS5-F` | tổ máy `W688-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: 6M33D633E200 | hãng: ∅ | 
+  - đổi: genset: "W688-H1 CONTACT" → "W688-H1"
+  - nguồn: `| W688-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | 6M33D633E200 | WEICHAI (China) | NIANFENG NFS5-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 282 engine `6M33D670E200` | tổ máy `W750-H1` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: NIANFENG NFS5-G | hãng: Weichai | 
+  - đổi: genset: "W750-H1 CONTACT" → "W750-H1"
+  - nguồn: `| W750-H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | 6M33D670E200 | WEICHAI (China) | NIANFENG NFS5-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 282 alternator `NIANFENG NFS5-G` | tổ máy `W750-H1` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: 6M33D670E200 | hãng: ∅ | 
+  - đổi: genset: "W750-H1 CONTACT" → "W750-H1"
+  - nguồn: `| W750-H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | 6M33D670E200 | WEICHAI (China) | NIANFENG NFS5-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 283 engine `6M33D725E310` | tổ máy `W825-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 600 kW | khác: NIANFENG NFS5-H | hãng: Weichai |  | ⚠ standby kW/kVA=0.73
+  - đổi: genset: "W825-H1 CONTACT" → "W825-H1"
+  - nguồn: `| W825-H1 CONTACT | 825KVA/ 600KW | 750KVA/ 600KW | 6M33D725E310 | WEICHAI (China) | NIANFENG NFS5-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 283 alternator `NIANFENG NFS5-H` | tổ máy `W825-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 600 kW | khác: 6M33D725E310 | hãng: ∅ |  | ⚠ standby kW/kVA=0.73
+  - đổi: genset: "W825-H1 CONTACT" → "W825-H1"
+  - nguồn: `| W825-H1 CONTACT | 825KVA/ 600KW | 750KVA/ 600KW | 6M33D725E310 | WEICHAI (China) | NIANFENG NFS5-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 284 engine `8M33D800E200` | tổ máy `W888-H1` | prime 800 kVA / 640 kW; standby 888 kVA / 710 kW | khác: NIANFENG NFS6-C | hãng: Weichai | 
+  - đổi: genset: "W888-H1 CONTACT" → "W888-H1"
+  - nguồn: `| W888-H1 CONTACT | 888KVA/ 710KW | 800KVA/ 640KW | 8M33D800E200 | WEICHAI (China) | NIANFENG NFS6-C | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 284 alternator `NIANFENG NFS6-C` | tổ máy `W888-H1` | prime 800 kVA / 640 kW; standby 888 kVA / 710 kW | khác: 8M33D800E200 | hãng: ∅ | 
+  - đổi: genset: "W888-H1 CONTACT" → "W888-H1"
+  - nguồn: `| W888-H1 CONTACT | 888KVA/ 710KW | 800KVA/ 640KW | 8M33D800E200 | WEICHAI (China) | NIANFENG NFS6-C | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 285 engine `8M33D890E200` | tổ máy `W1000-H1` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: NIANFENG NFS6-D | hãng: Weichai | 
+  - đổi: genset: "W1000-H1 CONTACT" → "W1000-H1"
+  - nguồn: `| W1000-H1 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | 8M33D890E200 | WEICHAI (China) | NIANFENG NFS6-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 285 alternator `NIANFENG NFS6-D` | tổ máy `W1000-H1` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: 8M33D890E200 | hãng: ∅ | 
+  - đổi: genset: "W1000-H1 CONTACT" → "W1000-H1"
+  - nguồn: `| W1000-H1 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | 8M33D890E200 | WEICHAI (China) | NIANFENG NFS6-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 286 engine `8M33D975E310` | tổ máy `W1100-H1` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: NIANFENG NFS6-E | hãng: Weichai | 
+  - đổi: genset: "W1100-H1 CONTACT" → "W1100-H1"
+  - nguồn: `| W1100-H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | 8M33D975E310 | WEICHAI (China) | NIANFENG NFS6-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 286 alternator `NIANFENG NFS6-E` | tổ máy `W1100-H1` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: 8M33D975E310 | hãng: ∅ | 
+  - đổi: genset: "W1100-H1 CONTACT" → "W1100-H1"
+  - nguồn: `| W1100-H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | 8M33D975E310 | WEICHAI (China) | NIANFENG NFS6-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 287 engine `12M33D1108E200` | tổ máy `W1250-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: NIANFENG NFS6-F | hãng: Weichai | 
+  - đổi: genset: "W1250-H1 CONTACT" → "W1250-H1"
+  - nguồn: `| W1250-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | 12M33D1108E200 | WEICHAI (China) | NIANFENG NFS6-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 287 alternator `NIANFENG NFS6-F` | tổ máy `W1250-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: 12M33D1108E200 | hãng: ∅ | 
+  - đổi: genset: "W1250-H1 CONTACT" → "W1250-H1"
+  - nguồn: `| W1250-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | 12M33D1108E200 | WEICHAI (China) | NIANFENG NFS6-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 288 engine `12M33D1210E200` | tổ máy `W1375V1-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: NIANFENG NFS6-G | hãng: Weichai | 
+  - đổi: genset: "W1375V1-H1 CONTACT" → "W1375V1-H1"
+  - nguồn: `| W1375V1-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | 12M33D1210E200 | WEICHAI (China) | NIANFENG NFS6-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 288 alternator `NIANFENG NFS6-G` | tổ máy `W1375V1-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: 12M33D1210E200 | hãng: ∅ | 
+  - đổi: genset: "W1375V1-H1 CONTACT" → "W1375V1-H1"
+  - nguồn: `| W1375V1-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | 12M33D1210E200 | WEICHAI (China) | NIANFENG NFS6-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 289 engine `12M33D1240E310` | tổ máy `W1375V2-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: NIANFENG NFS6-G | hãng: Weichai | 
+  - đổi: genset: "W1375V2-H1 CONTACT" → "W1375V2-H1"
+  - nguồn: `| W1375V2-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | 12M33D1240E310 | WEICHAI (China) | NIANFENG NFS6-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 289 alternator `NIANFENG NFS6-G` | tổ máy `W1375V2-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: 12M33D1240E310 | hãng: ∅ | 
+  - đổi: genset: "W1375V2-H1 CONTACT" → "W1375V2-H1"
+  - nguồn: `| W1375V2-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | 12M33D1240E310 | WEICHAI (China) | NIANFENG NFS6-G | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 290 engine `12M33D1320E200` | tổ máy `W1500V1-H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: NIANFENG NFS6-H | hãng: Weichai | 
+  - đổi: genset: "W1500V1-H1 CONTACT" → "W1500V1-H1"
+  - nguồn: `| W1500V1-H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | 12M33D1320E200 | WEICHAI (China) | NIANFENG NFS6-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 290 alternator `NIANFENG NFS6-H` | tổ máy `W1500V1-H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: 12M33D1320E200 | hãng: ∅ | 
+  - đổi: genset: "W1500V1-H1 CONTACT" → "W1500V1-H1"
+  - nguồn: `| W1500V1-H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | 12M33D1320E200 | WEICHAI (China) | NIANFENG NFS6-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 291 engine `12M33D1320E310` | tổ máy `W1500V2-H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: NIANFENG NFS6-H | hãng: Weichai | 
+  - đổi: genset: "W1500V2-H1 CONTACT" → "W1500V2-H1"
+  - nguồn: `| W1500V2-H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | 12M33D1320E310 | WEICHAI (China) | NIANFENG NFS6-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 291 alternator `NIANFENG NFS6-H` | tổ máy `W1500V2-H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: 12M33D1320E310 | hãng: ∅ | 
+  - đổi: genset: "W1500V2-H1 CONTACT" → "W1500V2-H1"
+  - nguồn: `| W1500V2-H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | 12M33D1320E310 | WEICHAI (China) | NIANFENG NFS6-H | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 292 engine `12M33D1500E310` | tổ máy `W1650-H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: NIANFENG NFS7-C | hãng: Weichai | 
+  - đổi: genset: "W1650-H1 CONTACT" → "W1650-H1"
+  - nguồn: `| W1650-H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | 12M33D1500E310 | WEICHAI (China) | NIANFENG NFS7-C | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 292 alternator `NIANFENG NFS7-C` | tổ máy `W1650-H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: 12M33D1500E310 | hãng: ∅ | 
+  - đổi: genset: "W1650-H1 CONTACT" → "W1650-H1"
+  - nguồn: `| W1650-H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | 12M33D1500E310 | WEICHAI (China) | NIANFENG NFS7-C | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 293 engine `16M33D1580E310` | tổ máy `W1825-H1` | prime 1650 kVA / 1320 kW; standby 1825 kVA / 1460 kW | khác: NIANFENG NFS7-D | hãng: Weichai | 
+  - đổi: genset: "W1825-H1 CONTACT" → "W1825-H1"
+  - nguồn: `| W1825-H1 CONTACT | 1825KVA/ 1460KW | 1650KVA/ 1320KW | 16M33D1580E310 | WEICHAI (China) | NIANFENG NFS7-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 293 alternator `NIANFENG NFS7-D` | tổ máy `W1825-H1` | prime 1650 kVA / 1320 kW; standby 1825 kVA / 1460 kW | khác: 16M33D1580E310 | hãng: ∅ | 
+  - đổi: genset: "W1825-H1 CONTACT" → "W1825-H1"
+  - nguồn: `| W1825-H1 CONTACT | 1825KVA/ 1460KW | 1650KVA/ 1320KW | 16M33D1580E310 | WEICHAI (China) | NIANFENG NFS7-D | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 294 engine `16M33D1680E310` | tổ máy `W1900-H1` | prime 1750 kVA / 1400 kW; standby 1900 kVA / 1520 kW | khác: NIANFENG NFS7-ES | hãng: Weichai | 
+  - đổi: genset: "W1900-H1 CONTACT" → "W1900-H1"
+  - nguồn: `| W1900-H1 CONTACT | 1900KVA/ 1520KW | 1750KVA/ 1400KW | 16M33D1680E310 | WEICHAI (China) | NIANFENG NFS7-ES | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 294 alternator `NIANFENG NFS7-ES` | tổ máy `W1900-H1` | prime 1750 kVA / 1400 kW; standby 1900 kVA / 1520 kW | khác: 16M33D1680E310 | hãng: ∅ | 
+  - đổi: genset: "W1900-H1 CONTACT" → "W1900-H1"
+  - nguồn: `| W1900-H1 CONTACT | 1900KVA/ 1520KW | 1750KVA/ 1400KW | 16M33D1680E310 | WEICHAI (China) | NIANFENG NFS7-ES | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 295 engine `16M33D1800E310` | tổ máy `W2063-H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: NIANFENG NFS7-E | hãng: Weichai | 
+  - đổi: genset: "W2063-H1 CONTACT" → "W2063-H1"
+  - nguồn: `| W2063-H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | 16M33D1800E310 | WEICHAI (China) | NIANFENG NFS7-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 295 alternator `NIANFENG NFS7-E` | tổ máy `W2063-H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: 16M33D1800E310 | hãng: ∅ | 
+  - đổi: genset: "W2063-H1 CONTACT" → "W2063-H1"
+  - nguồn: `| W2063-H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | 16M33D1800E310 | WEICHAI (China) | NIANFENG NFS7-E | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 296 engine `16M33D1980E310` | tổ máy `W2200-H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: NIANFENG NFS7-F | hãng: Weichai | 
+  - đổi: genset: "W2200-H1 CONTACT" → "W2200-H1"
+  - nguồn: `| W2200-H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | 16M33D1980E310 | WEICHAI (China) | NIANFENG NFS7-F | Click Here | Download`
+- **ĐỔI** n103 b2 dòng 296 alternator `NIANFENG NFS7-F` | tổ máy `W2200-H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: 16M33D1980E310 | hãng: ∅ | 
+  - đổi: genset: "W2200-H1 CONTACT" → "W2200-H1"
+  - nguồn: `| W2200-H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | 16M33D1980E310 | WEICHAI (China) | NIANFENG NFS7-F | Click Here | Download`
+- **ĐỔI** n104 b3 dòng 0 engine `YC4V35-D21` | tổ máy `Y22-H2` | prime 20 kVA / 16 kW; standby 23 kVA / 18 kW | khác: NIANFENG NFL184-D | hãng: Yuchai | 
+  - đổi: genset: "Y22-H2 CONTACT" → "Y22-H2"
+  - nguồn: `| Y22-H2 CONTACT | 23KVA/ 18KW | 20KVA/ 16KW | YC4V35-D21 | Yuchai (China) | NIANFENG NFL184-D | Click Here`
+- **ĐỔI** n104 b3 dòng 0 alternator `NIANFENG NFL184-D` | tổ máy `Y22-H2` | prime 20 kVA / 16 kW; standby 23 kVA / 18 kW | khác: YC4V35-D21 | hãng: ∅ | 
+  - đổi: genset: "Y22-H2 CONTACT" → "Y22-H2"
+  - nguồn: `| Y22-H2 CONTACT | 23KVA/ 18KW | 20KVA/ 16KW | YC4V35-D21 | Yuchai (China) | NIANFENG NFL184-D | Click Here`
+- **ĐỔI** n104 b3 dòng 1 engine `YC4V45Z-D21` | tổ máy `Y32-H2` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: NIANFENG NFS184-FS | hãng: Yuchai | 
+  - đổi: genset: "Y32-H2 CONTACT" → "Y32-H2"
+  - nguồn: `| Y32-H2 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | YC4V45Z-D21 | Yuchai (China) | NIANFENG NFS184-FS | Click Here`
+- **ĐỔI** n104 b3 dòng 1 alternator `NIANFENG NFS184-FS` | tổ máy `Y32-H2` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: YC4V45Z-D21 | hãng: ∅ | 
+  - đổi: genset: "Y32-H2 CONTACT" → "Y32-H2"
+  - nguồn: `| Y32-H2 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | YC4V45Z-D21 | Yuchai (China) | NIANFENG NFS184-FS | Click Here`
+- **ĐỔI** n104 b3 dòng 2 engine `YC4V55Z-D21` | tổ máy `Y41-H2` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: NIANFENG NFS184-G | hãng: Yuchai | 
+  - đổi: genset: "Y41-H2 CONTACT" → "Y41-H2"
+  - nguồn: `| Y41-H2 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | YC4V55Z-D21 | Yuchai (China) | NIANFENG NFS184-G | Click Here`
+- **ĐỔI** n104 b3 dòng 2 alternator `NIANFENG NFS184-G` | tổ máy `Y41-H2` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: YC4V55Z-D21 | hãng: ∅ | 
+  - đổi: genset: "Y41-H2 CONTACT" → "Y41-H2"
+  - nguồn: `| Y41-H2 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | YC4V55Z-D21 | Yuchai (China) | NIANFENG NFS184-G | Click Here`
+- **ĐỔI** n104 b3 dòng 3 engine `YC4D65-D20` | tổ máy `Y47-H2` | prime 44 kVA / 35 kW; standby 48 kVA / 38 kW | khác: NIANFENG NFL184-H | hãng: Yuchai | 
+  - đổi: genset: "Y47-H2 CONTACT" → "Y47-H2"
+  - nguồn: `| Y47-H2 CONTACT | 48KVA/ 38KW | 44KVA/ 35KW | YC4D65-D20 | Yuchai (China) | NIANFENG NFL184-H | Click Here`
+- **ĐỔI** n104 b3 dòng 3 alternator `NIANFENG NFL184-H` | tổ máy `Y47-H2` | prime 44 kVA / 35 kW; standby 48 kVA / 38 kW | khác: YC4D65-D20 | hãng: ∅ | 
+  - đổi: genset: "Y47-H2 CONTACT" → "Y47-H2"
+  - nguồn: `| Y47-H2 CONTACT | 48KVA/ 38KW | 44KVA/ 35KW | YC4D65-D20 | Yuchai (China) | NIANFENG NFL184-H | Click Here`
+- **ĐỔI** n104 b3 dòng 4 engine `YC4D80Z-D20` | tổ máy `Y56-H2` | prime 50 kVA / 40 kW; standby 56 kVA / 45 kW | khác: NIANFENG NFL224-C | hãng: Yuchai | 
+  - đổi: genset: "Y56-H2 CONTACT" → "Y56-H2"
+  - nguồn: `| Y56-H2 CONTACT | 56KVA/ 45KW | 50KVA/ 40KW | YC4D80Z-D20 | Yuchai (China) | NIANFENG NFL224-C | Click Here`
+- **ĐỔI** n104 b3 dòng 4 alternator `NIANFENG NFL224-C` | tổ máy `Y56-H2` | prime 50 kVA / 40 kW; standby 56 kVA / 45 kW | khác: YC4D80Z-D20 | hãng: ∅ | 
+  - đổi: genset: "Y56-H2 CONTACT" → "Y56-H2"
+  - nguồn: `| Y56-H2 CONTACT | 56KVA/ 45KW | 50KVA/ 40KW | YC4D80Z-D20 | Yuchai (China) | NIANFENG NFL224-C | Click Here`
+- **ĐỔI** n104 b3 dòng 5 engine `YC4D100Z-D20` | tổ máy `Y68-H2` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: NIANFENG NFL224-E | hãng: Yuchai | 
+  - đổi: genset: "Y68-H2 CONTACT" → "Y68-H2"
+  - nguồn: `| Y68-H2 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | YC4D100Z-D20 | Yuchai (China) | NIANFENG NFL224-E | Click Here`
+- **ĐỔI** n104 b3 dòng 5 alternator `NIANFENG NFL224-E` | tổ máy `Y68-H2` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: YC4D100Z-D20 | hãng: ∅ | 
+  - đổi: genset: "Y68-H2 CONTACT" → "Y68-H2"
+  - nguồn: `| Y68-H2 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | YC4D100Z-D20 | Yuchai (China) | NIANFENG NFL224-E | Click Here`
+- **ĐỔI** n104 b3 dòng 6 engine `YC4D100Z-D20` | tổ máy `Y82-H2` | prime 75 kVA / 60 kW; standby 83 kVA / 66 kW | khác: NIANFENG NFL224-E | hãng: Yuchai | 
+  - đổi: genset: "Y82-H2 CONTACT" → "Y82-H2"
+  - nguồn: `| Y82-H2 CONTACT | 83KVA/ 66KW | 75KVA/ 60KW | YC4D100Z-D20 | Yuchai (China) | NIANFENG NFL224-E | Click Here`
+- **ĐỔI** n104 b3 dòng 6 alternator `NIANFENG NFL224-E` | tổ máy `Y82-H2` | prime 75 kVA / 60 kW; standby 83 kVA / 66 kW | khác: YC4D100Z-D20 | hãng: ∅ | 
+  - đổi: genset: "Y82-H2 CONTACT" → "Y82-H2"
+  - nguồn: `| Y82-H2 CONTACT | 83KVA/ 66KW | 75KVA/ 60KW | YC4D100Z-D20 | Yuchai (China) | NIANFENG NFL224-E | Click Here`
+- **ĐỔI** n104 b3 dòng 7 engine `YC6B130Z-D20` | tổ máy `Y95-H2` | prime 88 kVA / 70 kW; standby 96 kVA / 77 kW | khác: NIANFENG NFL224-F | hãng: Yuchai | 
+  - đổi: genset: "Y95-H2 CONTACT" → "Y95-H2"
+  - nguồn: `| Y95-H2 CONTACT | 96KVA/ 77KW | 88KVA/ 70KW | YC6B130Z-D20 | Yuchai (China) | NIANFENG NFL224-F | Click Here`
+- **ĐỔI** n104 b3 dòng 7 alternator `NIANFENG NFL224-F` | tổ máy `Y95-H2` | prime 88 kVA / 70 kW; standby 96 kVA / 77 kW | khác: YC6B130Z-D20 | hãng: ∅ | 
+  - đổi: genset: "Y95-H2 CONTACT" → "Y95-H2"
+  - nguồn: `| Y95-H2 CONTACT | 96KVA/ 77KW | 88KVA/ 70KW | YC6B130Z-D20 | Yuchai (China) | NIANFENG NFL224-F | Click Here`
+- **ĐỔI** n104 b3 dòng 8 engine `YC4D140-D33` | tổ máy `Y110-H2` | prime 100 kVA / 80 kW; standby 113 kVA / 90 kW | khác: NIANFENG NFL224-G | hãng: Yuchai | 
+  - đổi: genset: "Y110-H2 CONTACT" → "Y110-H2"
+  - nguồn: `| Y110-H2 CONTACT | 113KVA/ 90KW | 100KVA/ 80KW | YC4D140-D33 | Yuchai (China) | NIANFENG NFL224-G | Click Here`
+- **ĐỔI** n104 b3 dòng 8 alternator `NIANFENG NFL224-G` | tổ máy `Y110-H2` | prime 100 kVA / 80 kW; standby 113 kVA / 90 kW | khác: YC4D140-D33 | hãng: ∅ | 
+  - đổi: genset: "Y110-H2 CONTACT" → "Y110-H2"
+  - nguồn: `| Y110-H2 CONTACT | 113KVA/ 90KW | 100KVA/ 80KW | YC4D140-D33 | Yuchai (China) | NIANFENG NFL224-G | Click Here`
+- **ĐỔI** n104 b3 dòng 9 engine `YC6B160Z-D20` | tổ máy `Y125V1-H2` | prime 113 kVA / 90 kW; standby 125 kVA / 100 kW | khác: NIANFENG NFL274-C | hãng: Yuchai | 
+  - đổi: genset: "Y125V1-H2 CONTACT" → "Y125V1-H2"
+  - nguồn: `| Y125V1-H2 CONTACT | 125KVA/ 100KW | 113KVA/ 90KW | YC6B160Z-D20 | Yuchai (China) | NIANFENG NFL274-C | Click Here`
+- **ĐỔI** n104 b3 dòng 9 alternator `NIANFENG NFL274-C` | tổ máy `Y125V1-H2` | prime 113 kVA / 90 kW; standby 125 kVA / 100 kW | khác: YC6B160Z-D20 | hãng: ∅ | 
+  - đổi: genset: "Y125V1-H2 CONTACT" → "Y125V1-H2"
+  - nguồn: `| Y125V1-H2 CONTACT | 125KVA/ 100KW | 113KVA/ 90KW | YC6B160Z-D20 | Yuchai (China) | NIANFENG NFL274-C | Click Here`
+- **ĐỔI** n104 b3 dòng 10 engine `YC4D155-D33` | tổ máy `Y125V2-H2` | prime 113 kVA / 90 kW; standby 125 kVA / 100 kW | khác: NIANFENG NFL274-C | hãng: Yuchai | 
+  - đổi: genset: "Y125V2-H2 CONTACT" → "Y125V2-H2"
+  - nguồn: `| Y125V2-H2 CONTACT | 125KVA/ 100KW | 113KVA/ 90KW | YC4D155-D33 | Yuchai (China) | NIANFENG NFL274-C | Click Here`
+- **ĐỔI** n104 b3 dòng 10 alternator `NIANFENG NFL274-C` | tổ máy `Y125V2-H2` | prime 113 kVA / 90 kW; standby 125 kVA / 100 kW | khác: YC4D155-D33 | hãng: ∅ | 
+  - đổi: genset: "Y125V2-H2 CONTACT" → "Y125V2-H2"
+  - nguồn: `| Y125V2-H2 CONTACT | 125KVA/ 100KW | 113KVA/ 90KW | YC4D155-D33 | Yuchai (China) | NIANFENG NFL274-C | Click Here`
+- **ĐỔI** n104 b3 dòng 11 engine `YC4D180-D33` | tổ máy `Y135-H2` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: NIANFENG NFL274-DS | hãng: Yuchai | 
+  - đổi: genset: "Y135-H2 CONTACT" → "Y135-H2"
+  - nguồn: `| Y135-H2 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | YC4D180-D33 | Yuchai (China) | NIANFENG NFL274-DS | Click Here`
+- **ĐỔI** n104 b3 dòng 11 alternator `NIANFENG NFL274-DS` | tổ máy `Y135-H2` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: YC4D180-D33 | hãng: ∅ | 
+  - đổi: genset: "Y135-H2 CONTACT" → "Y135-H2"
+  - nguồn: `| Y135-H2 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | YC4D180-D33 | Yuchai (China) | NIANFENG NFL274-DS | Click Here`
+- **ĐỔI** n104 b3 dòng 12 engine `YC6B210L-D20` | tổ máy `Y165V2-H2` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: NIANFENG NFL274-D | hãng: Yuchai | 
+  - đổi: genset: "Y165V2-H2 CONTACT" → "Y165V2-H2"
+  - nguồn: `| Y165V2-H2 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | YC6B210L-D20 | Yuchai (China) | NIANFENG NFL274-D | Click Here`
+- **ĐỔI** n104 b3 dòng 12 alternator `NIANFENG NFL274-D` | tổ máy `Y165V2-H2` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: YC6B210L-D20 | hãng: ∅ | 
+  - đổi: genset: "Y165V2-H2 CONTACT" → "Y165V2-H2"
+  - nguồn: `| Y165V2-H2 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | YC6B210L-D20 | Yuchai (China) | NIANFENG NFL274-D | Click Here`
+- **ĐỔI** n104 b3 dòng 13 engine `YC4A205-D32` | tổ máy `Y165V1-H2` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: NIANFENG NFL274-D | hãng: Yuchai | 
+  - đổi: genset: "Y165V1-H2 CONTACT" → "Y165V1-H2"
+  - nguồn: `| Y165V1-H2 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | YC4A205-D32 | Yuchai (China) | NIANFENG NFL274-D | Click Here`
+- **ĐỔI** n104 b3 dòng 13 alternator `NIANFENG NFL274-D` | tổ máy `Y165V1-H2` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: YC4A205-D32 | hãng: ∅ | 
+  - đổi: genset: "Y165V1-H2 CONTACT" → "Y165V1-H2"
+  - nguồn: `| Y165V1-H2 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | YC4A205-D32 | Yuchai (China) | NIANFENG NFL274-D | Click Here`
+- **ĐỔI** n104 b3 dòng 14 engine `YC6A245L-D20` | tổ máy `Y200V1-H2` | prime 188 kVA / 150 kW; standby 200 kVA / 160 kW | khác: NIANFENG NFL274-F | hãng: Yuchai | 
+  - đổi: genset: "Y200V1-H2 CONTACT" → "Y200V1-H2"
+  - nguồn: `| Y200V1-H2 CONTACT | 200KVA/ 160KW | 188KVA/ 150KW | YC6A245L-D20 | Yuchai (China) | NIANFENG NFL274-F | Click Here`
+- **ĐỔI** n104 b3 dòng 14 alternator `NIANFENG NFL274-F` | tổ máy `Y200V1-H2` | prime 188 kVA / 150 kW; standby 200 kVA / 160 kW | khác: YC6A245L-D20 | hãng: ∅ | 
+  - đổi: genset: "Y200V1-H2 CONTACT" → "Y200V1-H2"
+  - nguồn: `| Y200V1-H2 CONTACT | 200KVA/ 160KW | 188KVA/ 150KW | YC6A245L-D20 | Yuchai (China) | NIANFENG NFL274-F | Click Here`
+- **ĐỔI** n104 b3 dòng 15 engine `YC6A245-D32` | tổ máy `Y200V2-H2` | prime 188 kVA / 150 kW; standby 200 kVA / 160 kW | khác: NIANFENG NFL274-F | hãng: Yuchai | 
+  - đổi: genset: "Y200V2-H2 CONTACT" → "Y200V2-H2"
+  - nguồn: `| Y200V2-H2 CONTACT | 200KVA/ 160KW | 188KVA/ 150KW | YC6A245-D32 | Yuchai (China) | NIANFENG NFL274-F | Click Here`
+- **ĐỔI** n104 b3 dòng 15 alternator `NIANFENG NFL274-F` | tổ máy `Y200V2-H2` | prime 188 kVA / 150 kW; standby 200 kVA / 160 kW | khác: YC6A245-D32 | hãng: ∅ | 
+  - đổi: genset: "Y200V2-H2 CONTACT" → "Y200V2-H2"
+  - nguồn: `| Y200V2-H2 CONTACT | 200KVA/ 160KW | 188KVA/ 150KW | YC6A245-D32 | Yuchai (China) | NIANFENG NFL274-F | Click Here`
+- **ĐỔI** n104 b3 dòng 16 engine `YC6A285-D32` | tổ máy `Y220-H2` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: NIANFENG NFL274-G | hãng: Yuchai | 
+  - đổi: genset: "Y220-H2 CONTACT" → "Y220-H2"
+  - nguồn: `| Y220-H2 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | YC6A285-D32 | Yuchai (China) | NIANFENG NFL274-G | Click Here`
+- **ĐỔI** n104 b3 dòng 16 alternator `NIANFENG NFL274-G` | tổ máy `Y220-H2` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: YC6A285-D32 | hãng: ∅ | 
+  - đổi: genset: "Y220-H2 CONTACT" → "Y220-H2"
+  - nguồn: `| Y220-H2 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | YC6A285-D32 | Yuchai (China) | NIANFENG NFL274-G | Click Here`
+- **ĐỔI** n104 b3 dòng 17 engine `YC6A305-D32` | tổ máy `Y250-H2` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: NIANFENG NFL274-G | hãng: Yuchai | 
+  - đổi: genset: "Y250-H2 CONTACT" → "Y250-H2"
+  - nguồn: `| Y250-H2 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | YC6A305-D32 | Yuchai (China) | NIANFENG NFL274-G | Click Here`
+- **ĐỔI** n104 b3 dòng 17 alternator `NIANFENG NFL274-G` | tổ máy `Y250-H2` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: YC6A305-D32 | hãng: ∅ | 
+  - đổi: genset: "Y250-H2 CONTACT" → "Y250-H2"
+  - nguồn: `| Y250-H2 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | YC6A305-D32 | Yuchai (China) | NIANFENG NFL274-G | Click Here`
+- **ĐỔI** n104 b3 dòng 18 engine `YC6MK360L-D20` | tổ máy `Y275V1-H2` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: NIANFENG NFL274-J | hãng: Yuchai | 
+  - đổi: genset: "Y275V1-H2 CONTACT" → "Y275V1-H2"
+  - nguồn: `| Y275V1-H2 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | YC6MK360L-D20 | Yuchai (China) | NIANFENG NFL274-J | Click Here`
+- **ĐỔI** n104 b3 dòng 18 alternator `NIANFENG NFL274-J` | tổ máy `Y275V1-H2` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: YC6MK360L-D20 | hãng: ∅ | 
+  - đổi: genset: "Y275V1-H2 CONTACT" → "Y275V1-H2"
+  - nguồn: `| Y275V1-H2 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | YC6MK360L-D20 | Yuchai (China) | NIANFENG NFL274-J | Click Here`
+- **ĐỔI** n104 b3 dòng 19 engine `YC6MK360-D30` | tổ máy `Y275V2-H2` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: NIANFENG NFL274-J | hãng: Yuchai | 
+  - đổi: genset: "Y275V2-H2 CONTACT" → "Y275V2-H2"
+  - nguồn: `| Y275V2-H2 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | YC6MK360-D30 | Yuchai (China) | NIANFENG NFL274-J | Click Here`
+- **ĐỔI** n104 b3 dòng 19 alternator `NIANFENG NFL274-J` | tổ máy `Y275V2-H2` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: YC6MK360-D30 | hãng: ∅ | 
+  - đổi: genset: "Y275V2-H2 CONTACT" → "Y275V2-H2"
+  - nguồn: `| Y275V2-H2 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | YC6MK360-D30 | Yuchai (China) | NIANFENG NFL274-J | Click Here`
+- **ĐỔI** n104 b3 dòng 20 engine `YC6MK420L-D21` | tổ máy `Y340V1-H2` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: NIANFENG NFS4-DS | hãng: Yuchai | 
+  - đổi: genset: "Y340V1-H2 CONTACT" → "Y340V1-H2"
+  - nguồn: `| Y340V1-H2 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | YC6MK420L-D21 | Yuchai (China) | NIANFENG NFS4-DS | Click Here`
+- **ĐỔI** n104 b3 dòng 20 alternator `NIANFENG NFS4-DS` | tổ máy `Y340V1-H2` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: YC6MK420L-D21 | hãng: ∅ | 
+  - đổi: genset: "Y340V1-H2 CONTACT" → "Y340V1-H2"
+  - nguồn: `| Y340V1-H2 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | YC6MK420L-D21 | Yuchai (China) | NIANFENG NFS4-DS | Click Here`
+- **ĐỔI** n104 b3 dòng 21 engine `YC6MK420-D31` | tổ máy `Y340V2-H2` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: NIANFENG NFS4-DS | hãng: Yuchai | 
+  - đổi: genset: "Y340V2-H2 CONTACT" → "Y340V2-H2"
+  - nguồn: `| Y340V2-H2 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | YC6MK420-D31 | Yuchai (China) | NIANFENG NFS4-DS | Click Here`
+- **ĐỔI** n104 b3 dòng 21 alternator `NIANFENG NFS4-DS` | tổ máy `Y340V2-H2` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: YC6MK420-D31 | hãng: ∅ | 
+  - đổi: genset: "Y340V2-H2 CONTACT" → "Y340V2-H2"
+  - nguồn: `| Y340V2-H2 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | YC6MK420-D31 | Yuchai (China) | NIANFENG NFS4-DS | Click Here`
+- **ĐỔI** n104 b3 dòng 22 engine `YC6K500-D31` | tổ máy `Y410-H2` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: NIANFENG NFL4-E | hãng: Yuchai | 
+  - đổi: genset: "Y410-H2 CONTACT" → "Y410-H2"
+  - nguồn: `| Y410-H2 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | YC6K500-D31 | Yuchai (China) | NIANFENG NFL4-E | Click Here`
+- **ĐỔI** n104 b3 dòng 22 alternator `NIANFENG NFL4-E` | tổ máy `Y410-H2` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: YC6K500-D31 | hãng: ∅ | 
+  - đổi: genset: "Y410-H2 CONTACT" → "Y410-H2"
+  - nguồn: `| Y410-H2 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | YC6K500-D31 | Yuchai (China) | NIANFENG NFL4-E | Click Here`
+- **ĐỔI** n104 b3 dòng 23 engine `YC6MJ515L-D22` | tổ máy `Y450-H2` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: NIANFENG NFL4-F | hãng: Yuchai | 
+  - đổi: genset: "Y450-H2 CONTACT" → "Y450-H2"
+  - nguồn: `| Y450-H2 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | YC6MJ515L-D22 | Yuchai (China) | NIANFENG NFL4-F | Click Here`
+- **ĐỔI** n104 b3 dòng 23 alternator `NIANFENG NFL4-F` | tổ máy `Y450-H2` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: YC6MJ515L-D22 | hãng: ∅ | 
+  - đổi: genset: "Y450-H2 CONTACT" → "Y450-H2"
+  - nguồn: `| Y450-H2 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | YC6MJ515L-D22 | Yuchai (China) | NIANFENG NFL4-F | Click Here`
+- **ĐỔI** n104 b3 dòng 24 engine `YC6T660L-D21` | tổ máy `Y550-H2` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: NIANFENG NFL5-C | hãng: Yuchai | 
+  - đổi: genset: "Y550-H2 CONTACT" → "Y550-H2"
+  - nguồn: `| Y550-H2 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | YC6T660L-D21 | Yuchai (China) | NIANFENG NFL5-C | Click Here`
+- **ĐỔI** n104 b3 dòng 24 alternator `NIANFENG NFL5-C` | tổ máy `Y550-H2` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: YC6T660L-D21 | hãng: ∅ | 
+  - đổi: genset: "Y550-H2 CONTACT" → "Y550-H2"
+  - nguồn: `| Y550-H2 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | YC6T660L-D21 | Yuchai (China) | NIANFENG NFL5-C | Click Here`
+- **ĐỔI** n104 b3 dòng 25 engine `YC6TD780-D32` | tổ máy `Y625-H2` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: NIANFENG NFL5-D | hãng: Yuchai | 
+  - đổi: genset: "Y625-H2 CONTACT" → "Y625-H2"
+  - nguồn: `| Y625-H2 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | YC6TD780-D32 | Yuchai (China) | NIANFENG NFL5-D | Click Here`
+- **ĐỔI** n104 b3 dòng 25 alternator `NIANFENG NFL5-D` | tổ máy `Y625-H2` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: YC6TD780-D32 | hãng: ∅ | 
+  - đổi: genset: "Y625-H2 CONTACT" → "Y625-H2"
+  - nguồn: `| Y625-H2 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | YC6TD780-D32 | Yuchai (China) | NIANFENG NFL5-D | Click Here`
+- **ĐỔI** n104 b3 dòng 26 engine `YC6TD840-D32` | tổ máy `Y680-H2` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: NIANFENG NFL5-E | hãng: Yuchai | 
+  - đổi: genset: "Y680-H2 CONTACT" → "Y680-H2"
+  - nguồn: `| Y680-H2 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | YC6TD840-D32 | Yuchai (China) | NIANFENG NFL5-E | Click Here`
+- **ĐỔI** n104 b3 dòng 26 alternator `NIANFENG NFL5-E` | tổ máy `Y680-H2` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: YC6TD840-D32 | hãng: ∅ | 
+  - đổi: genset: "Y680-H2 CONTACT" → "Y680-H2"
+  - nguồn: `| Y680-H2 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | YC6TD840-D32 | Yuchai (China) | NIANFENG NFL5-E | Click Here`
+- **ĐỔI** n104 b3 dòng 27 engine `YC6TD1020-D32` | tổ máy `Y825-H2` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: NIANFENG NFL5-F | hãng: Yuchai | 
+  - đổi: genset: "Y825-H2 CONTACT" → "Y825-H2"
+  - nguồn: `| Y825-H2 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | YC6TD1020-D32 | Yuchai (China) | NIANFENG NFL5-F | Click Here`
+- **ĐỔI** n104 b3 dòng 27 alternator `NIANFENG NFL5-F` | tổ máy `Y825-H2` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: YC6TD1020-D32 | hãng: ∅ | 
+  - đổi: genset: "Y825-H2 CONTACT" → "Y825-H2"
+  - nguồn: `| Y825-H2 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | YC6TD1020-D32 | Yuchai (China) | NIANFENG NFL5-F | Click Here`
+- **ĐỔI** n104 b3 dòng 28 engine `YC6TH1070-D33` | tổ máy `Y880-H2` | prime 813 kVA / 650 kW; standby 888 kVA / 710 kW | khác: NIANFENG NFL5-G | hãng: Yuchai | 
+  - đổi: genset: "Y880-H2 CONTACT" → "Y880-H2"
+  - nguồn: `| Y880-H2 CONTACT | 888KVA/ 710KW | 813KVA/ 650KW | YC6TH1070-D33 | Yuchai (China) | NIANFENG NFL5-G | Click Here`
+- **ĐỔI** n104 b3 dòng 28 alternator `NIANFENG NFL5-G` | tổ máy `Y880-H2` | prime 813 kVA / 650 kW; standby 888 kVA / 710 kW | khác: YC6TH1070-D33 | hãng: ∅ | 
+  - đổi: genset: "Y880-H2 CONTACT" → "Y880-H2"
+  - nguồn: `| Y880-H2 CONTACT | 888KVA/ 710KW | 813KVA/ 650KW | YC6TH1070-D33 | Yuchai (China) | NIANFENG NFL5-G | Click Here`
+- **ĐỔI** n104 b3 dòng 29 engine `YC6TH1220-D33` | tổ máy `Y1000-H2` | prime 913 kVA / 730 kW; standby 1000 kVA / 800 kW | khác: NIANFENG NFL6-C | hãng: Yuchai | 
+  - đổi: genset: "Y1000-H2 CONTACT" → "Y1000-H2"
+  - nguồn: `| Y1000-H2 CONTACT | 1000KVA/ 800KW | 913KVA/ 730KW | YC6TH1220-D33 | Yuchai (China) | NIANFENG NFL6-C | Click Here`
+- **ĐỔI** n104 b3 dòng 29 alternator `NIANFENG NFL6-C` | tổ máy `Y1000-H2` | prime 913 kVA / 730 kW; standby 1000 kVA / 800 kW | khác: YC6TH1220-D33 | hãng: ∅ | 
+  - đổi: genset: "Y1000-H2 CONTACT" → "Y1000-H2"
+  - nguồn: `| Y1000-H2 CONTACT | 1000KVA/ 800KW | 913KVA/ 730KW | YC6TH1220-D33 | Yuchai (China) | NIANFENG NFL6-C | Click Here`
+- **ĐỔI** n104 b3 dòng 30 engine `YC6TH1350-D33` | tổ máy `Y1100V1-H2` | prime 1100 kVA / 880 kW; standby 1100 kVA / 880 kW | khác: NIANFENG NFL6-D | hãng: Yuchai | 
+  - đổi: genset: "Y1100V1-H2 CONTACT" → "Y1100V1-H2"
+  - nguồn: `| Y1100V1-H2 CONTACT | 1100KVA/ 880KW | 1100KVA/ 880KW | YC6TH1350-D33 | Yuchai (China) | NIANFENG NFL6-D | Click Here`
+- **ĐỔI** n104 b3 dòng 30 alternator `NIANFENG NFL6-D` | tổ máy `Y1100V1-H2` | prime 1100 kVA / 880 kW; standby 1100 kVA / 880 kW | khác: YC6TH1350-D33 | hãng: ∅ | 
+  - đổi: genset: "Y1100V1-H2 CONTACT" → "Y1100V1-H2"
+  - nguồn: `| Y1100V1-H2 CONTACT | 1100KVA/ 880KW | 1100KVA/ 880KW | YC6TH1350-D33 | Yuchai (China) | NIANFENG NFL6-D | Click Here`
+- **ĐỔI** n104 b3 dòng 31 engine `YC12VTD1350-D32` | tổ máy `Y1100V2-H2` | prime 1100 kVA / 880 kW; standby 1100 kVA / 880 kW | khác: NIANFENG NFL6-D | hãng: Yuchai | 
+  - đổi: genset: "Y1100V2-H2 CONTACT" → "Y1100V2-H2"
+  - nguồn: `| Y1100V2-H2 CONTACT | 1100KVA/ 880KW | 1100KVA/ 880KW | YC12VTD1350-D32 | Yuchai (China) | NIANFENG NFL6-D | Click Here`
+- **ĐỔI** n104 b3 dòng 31 alternator `NIANFENG NFL6-D` | tổ máy `Y1100V2-H2` | prime 1100 kVA / 880 kW; standby 1100 kVA / 880 kW | khác: YC12VTD1350-D32 | hãng: ∅ | 
+  - đổi: genset: "Y1100V2-H2 CONTACT" → "Y1100V2-H2"
+  - nguồn: `| Y1100V2-H2 CONTACT | 1100KVA/ 880KW | 1100KVA/ 880KW | YC12VTD1350-D32 | Yuchai (China) | NIANFENG NFL6-D | Click Here`
+- **ĐỔI** n104 b3 dòng 32 engine `YC12VTD1500-D32` | tổ máy `Y1250-H2` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: NIANFENG NFL6-E | hãng: Yuchai | 
+  - đổi: genset: "Y1250-H2 CONTACT" → "Y1250-H2"
+  - nguồn: `| Y1250-H2 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | YC12VTD1500-D32 | Yuchai (China) | NIANFENG NFL6-E | Click Here`
+- **ĐỔI** n104 b3 dòng 32 alternator `NIANFENG NFL6-E` | tổ máy `Y1250-H2` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: YC12VTD1500-D32 | hãng: ∅ | 
+  - đổi: genset: "Y1250-H2 CONTACT" → "Y1250-H2"
+  - nguồn: `| Y1250-H2 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | YC12VTD1500-D32 | Yuchai (China) | NIANFENG NFL6-E | Click Here`
+- **ĐỔI** n104 b3 dòng 33 engine `YC12VTD1680-D33` | tổ máy `Y1375V1-H2` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: NIANFENG NFL6-F | hãng: Yuchai | 
+  - đổi: genset: "Y1375V1-H2 CONTACT" → "Y1375V1-H2"
+  - nguồn: `| Y1375V1-H2 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | YC12VTD1680-D33 | Yuchai (China) | NIANFENG NFL6-F | Click Here`
+- **ĐỔI** n104 b3 dòng 33 alternator `NIANFENG NFL6-F` | tổ máy `Y1375V1-H2` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: YC12VTD1680-D33 | hãng: ∅ | 
+  - đổi: genset: "Y1375V1-H2 CONTACT" → "Y1375V1-H2"
+  - nguồn: `| Y1375V1-H2 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | YC12VTD1680-D33 | Yuchai (China) | NIANFENG NFL6-F | Click Here`
+- **ĐỔI** n104 b3 dòng 34 engine `YC12VTD1680-D32` | tổ máy `Y1375V2-H2` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: NIANFENG NFL6-F | hãng: Yuchai | 
+  - đổi: genset: "Y1375V2-H2 CONTACT" → "Y1375V2-H2"
+  - nguồn: `| Y1375V2-H2 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | YC12VTD1680-D32 | Yuchai (China) | NIANFENG NFL6-F | Click Here`
+- **ĐỔI** n104 b3 dòng 34 alternator `NIANFENG NFL6-F` | tổ máy `Y1375V2-H2` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: YC12VTD1680-D32 | hãng: ∅ | 
+  - đổi: genset: "Y1375V2-H2 CONTACT" → "Y1375V2-H2"
+  - nguồn: `| Y1375V2-H2 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | YC12VTD1680-D32 | Yuchai (China) | NIANFENG NFL6-F | Click Here`
+- **ĐỔI** n104 b3 dòng 35 engine `YC12VTD1860-D33` | tổ máy `Y1500-H2` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: NIANFENG NFL6-G | hãng: Yuchai | 
+  - đổi: genset: "Y1500-H2 CONTACT" → "Y1500-H2"
+  - nguồn: `| Y1500-H2 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | YC12VTD1860-D33 | Yuchai (China) | NIANFENG NFL6-G | Click Here`
+- **ĐỔI** n104 b3 dòng 35 alternator `NIANFENG NFL6-G` | tổ máy `Y1500-H2` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: YC12VTD1860-D33 | hãng: ∅ | 
+  - đổi: genset: "Y1500-H2 CONTACT" → "Y1500-H2"
+  - nguồn: `| Y1500-H2 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | YC12VTD1860-D33 | Yuchai (China) | NIANFENG NFL6-G | Click Here`
+- **ĐỔI** n104 b3 dòng 36 engine `YC12VTD2070-D33` | tổ máy `Y1650V1-H2` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: NIANFENG NFL6-G | hãng: Yuchai | 
+  - đổi: genset: "Y1650V1-H2 CONTACT" → "Y1650V1-H2"
+  - nguồn: `| Y1650V1-H2 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | YC12VTD2070-D33 | Yuchai (China) | NIANFENG NFL6-G | Click Here`
+- **ĐỔI** n104 b3 dòng 36 alternator `NIANFENG NFL6-G` | tổ máy `Y1650V1-H2` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: YC12VTD2070-D33 | hãng: ∅ | 
+  - đổi: genset: "Y1650V1-H2 CONTACT" → "Y1650V1-H2"
+  - nguồn: `| Y1650V1-H2 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | YC12VTD2070-D33 | Yuchai (China) | NIANFENG NFL6-G | Click Here`
+- **ĐỔI** n104 b3 dòng 37 engine `YC12VTD2070-D32` | tổ máy `Y1650V2-H2` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: NIANFENG NFL6-G | hãng: Yuchai | 
+  - đổi: genset: "Y1650V2-H2 CONTACT" → "Y1650V2-H2"
+  - nguồn: `| Y1650V2-H2 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | YC12VTD2070-D32 | Yuchai (China) | NIANFENG NFL6-G | Click Here`
+- **ĐỔI** n104 b3 dòng 37 alternator `NIANFENG NFL6-G` | tổ máy `Y1650V2-H2` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: YC12VTD2070-D32 | hãng: ∅ | 
+  - đổi: genset: "Y1650V2-H2 CONTACT" → "Y1650V2-H2"
+  - nguồn: `| Y1650V2-H2 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | YC12VTD2070-D32 | Yuchai (China) | NIANFENG NFL6-G | Click Here`
+- **ĐỔI** n104 b3 dòng 38 engine `YC12VC2170-D33` | tổ máy `Y1875V1-H2` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: NIANFENG NFL7-C | hãng: Yuchai | 
+  - đổi: genset: "Y1875V1-H2 CONTACT" → "Y1875V1-H2"
+  - nguồn: `| Y1875V1-H2 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | YC12VC2170-D33 | Yuchai (China) | NIANFENG NFL7-C | Click Here`
+- **ĐỔI** n104 b3 dòng 38 alternator `NIANFENG NFL7-C` | tổ máy `Y1875V1-H2` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: YC12VC2170-D33 | hãng: ∅ | 
+  - đổi: genset: "Y1875V1-H2 CONTACT" → "Y1875V1-H2"
+  - nguồn: `| Y1875V1-H2 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | YC12VC2170-D33 | Yuchai (China) | NIANFENG NFL7-C | Click Here`
+- **ĐỔI** n104 b3 dòng 39 engine `YC16VTD2270-D32` | tổ máy `Y1875V2-H2` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: NIANFENG NFL7-C | hãng: Yuchai | 
+  - đổi: genset: "Y1875V2-H2 CONTACT" → "Y1875V2-H2"
+  - nguồn: `| Y1875V2-H2 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | YC16VTD2270-D32 | Yuchai (China) | NIANFENG NFL7-C | Click Here`
+- **ĐỔI** n104 b3 dòng 39 alternator `NIANFENG NFL7-C` | tổ máy `Y1875V2-H2` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: YC16VTD2270-D32 | hãng: ∅ | 
+  - đổi: genset: "Y1875V2-H2 CONTACT" → "Y1875V2-H2"
+  - nguồn: `| Y1875V2-H2 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | YC16VTD2270-D32 | Yuchai (China) | NIANFENG NFL7-C | Click Here`
+- **ĐỔI** n104 b3 dòng 40 engine `YC16VTD2510-D32` | tổ máy `Y2060-H2` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: NIANFENG NFL7-D | hãng: Yuchai | 
+  - đổi: genset: "Y2060-H2 CONTACT" → "Y2060-H2"
+  - nguồn: `| Y2060-H2 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | YC16VTD2510-D32 | Yuchai (China) | NIANFENG NFL7-D | Click Here`
+- **ĐỔI** n104 b3 dòng 40 alternator `NIANFENG NFL7-D` | tổ máy `Y2060-H2` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: YC16VTD2510-D32 | hãng: ∅ | 
+  - đổi: genset: "Y2060-H2 CONTACT" → "Y2060-H2"
+  - nguồn: `| Y2060-H2 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | YC16VTD2510-D32 | Yuchai (China) | NIANFENG NFL7-D | Click Here`
+- **ĐỔI** n104 b3 dòng 41 engine `YC16VTD2700-D32` | tổ máy `Y2200-H2` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: NIANFENG NFL7-E | hãng: Yuchai | 
+  - đổi: genset: "Y2200-H2 CONTACT" → "Y2200-H2"
+  - nguồn: `| Y2200-H2 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | YC16VTD2700-D32 | Yuchai (China) | NIANFENG NFL7-E | Click Here`
+- **ĐỔI** n104 b3 dòng 41 alternator `NIANFENG NFL7-E` | tổ máy `Y2200-H2` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: YC16VTD2700-D32 | hãng: ∅ | 
+  - đổi: genset: "Y2200-H2 CONTACT" → "Y2200-H2"
+  - nguồn: `| Y2200-H2 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | YC16VTD2700-D32 | Yuchai (China) | NIANFENG NFL7-E | Click Here`
+- **ĐỔI** n104 b3 dòng 42 engine `YC20VTD3000-D30` | tổ máy `Y2500-H2` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2100 kW | khác: NIANFENG NFL7-F | hãng: Yuchai | 
+  - đổi: genset: "Y2500-H2 CONTACT" → "Y2500-H2"
+  - nguồn: `| Y2500-H2 CONTACT | 2500KVA/ 2100KW | 2250KVA/ 1800KW | YC20VTD3000-D30 | Yuchai (China) | NIANFENG NFL7-F | Click Here`
+- **ĐỔI** n104 b3 dòng 42 alternator `NIANFENG NFL7-F` | tổ máy `Y2500-H2` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2100 kW | khác: YC20VTD3000-D30 | hãng: ∅ | 
+  - đổi: genset: "Y2500-H2 CONTACT" → "Y2500-H2"
+  - nguồn: `| Y2500-H2 CONTACT | 2500KVA/ 2100KW | 2250KVA/ 1800KW | YC20VTD3000-D30 | Yuchai (China) | NIANFENG NFL7-F | Click Here`
+- **ĐỔI** n104 b3 dòng 43 engine `YC20VTD3300-D30` | tổ máy `Y2750-H2` | prime 2500 kVA / 2000 kW; standby 2750 kVA / 2200 kW | khác: NIANFENG NFL7-G | hãng: Yuchai | 
+  - đổi: genset: "Y2750-H2 CONTACT" → "Y2750-H2"
+  - nguồn: `| Y2750-H2 CONTACT | 2750KVA/ 2200KW | 2500KVA/ 2000KW | YC20VTD3300-D30 | Yuchai (China) | NIANFENG NFL7-G | Click Here`
+- **ĐỔI** n104 b3 dòng 43 alternator `NIANFENG NFL7-G` | tổ máy `Y2750-H2` | prime 2500 kVA / 2000 kW; standby 2750 kVA / 2200 kW | khác: YC20VTD3300-D30 | hãng: ∅ | 
+  - đổi: genset: "Y2750-H2 CONTACT" → "Y2750-H2"
+  - nguồn: `| Y2750-H2 CONTACT | 2750KVA/ 2200KW | 2500KVA/ 2000KW | YC20VTD3300-D30 | Yuchai (China) | NIANFENG NFL7-G | Click Here`
+- **ĐỔI** n105 b4 dòng 0 engine `KT38-G` | tổ máy `CC825-H2` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: Stamford S5L1D-G41 | hãng: Cummins | 
+  - đổi: genset: "CC825-H2 CONTACT" → "CC825-H2"
+  - nguồn: `| CC825-H2 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | KT38-G | Cummins (CCEC CHINA) | Stamford S5L1D-G41 | Click Here`
+- **ĐỔI** n105 b4 dòng 0 alternator `S5L1D-G41` | tổ máy `CC825-H2` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: KT38-G | hãng: Stamford | 
+  - đổi: genset: "CC825-H2 CONTACT" → "CC825-H2"
+  - nguồn: `| CC825-H2 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | KT38-G | Cummins (CCEC CHINA) | Stamford S5L1D-G41 | Click Here`
+- **ĐỔI** n105 b4 dòng 1 engine `KTA38-G2` | tổ máy `CC1000-H2` | prime 910 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: Stamford S6L1D-D41 | hãng: Cummins | 
+  - đổi: genset: "CC1000-H2 CONTACT" → "CC1000-H2"
+  - nguồn: `| CC1000-H2 CONTACT | 1000KVA/ 800KW | 910KVA/ 720KW | KTA38-G2 | Cummins (CCEC CHINA) | Stamford S6L1D-D41 | Click Here`
+- **ĐỔI** n105 b4 dòng 1 alternator `S6L1D-D41` | tổ máy `CC1000-H2` | prime 910 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: KTA38-G2 | hãng: Stamford | 
+  - đổi: genset: "CC1000-H2 CONTACT" → "CC1000-H2"
+  - nguồn: `| CC1000-H2 CONTACT | 1000KVA/ 800KW | 910KVA/ 720KW | KTA38-G2 | Cummins (CCEC CHINA) | Stamford S6L1D-D41 | Click Here`
+- **ĐỔI** n105 b4 dòng 2 engine `KTA38-G2B` | tổ máy `CC1030-H2` | prime 938 kVA / 750 kW; standby 1038 kVA / 830 kW | khác: Stamford S6L1D-D41 | hãng: Cummins | 
+  - đổi: genset: "CC1030-H2 CONTACT" → "CC1030-H2"
+  - nguồn: `| CC1030-H2 CONTACT | 1038KVA/ 830KW | 938KVA/ 750KW | KTA38-G2B | Cummins (CCEC CHINA) | Stamford S6L1D-D41 | Click Here`
+- **ĐỔI** n105 b4 dòng 2 alternator `S6L1D-D41` | tổ máy `CC1030-H2` | prime 938 kVA / 750 kW; standby 1038 kVA / 830 kW | khác: KTA38-G2B | hãng: Stamford | 
+  - đổi: genset: "CC1030-H2 CONTACT" → "CC1030-H2"
+  - nguồn: `| CC1030-H2 CONTACT | 1038KVA/ 830KW | 938KVA/ 750KW | KTA38-G2B | Cummins (CCEC CHINA) | Stamford S6L1D-D41 | Click Here`
+- **ĐỔI** n105 b4 dòng 3 engine `KTA38-G2A` | tổ máy `CC1100-H2` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: Stamford S6L1D-D41 | hãng: Cummins | 
+  - đổi: genset: "CC1100-H2 CONTACT" → "CC1100-H2"
+  - nguồn: `| CC1100-H2 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | KTA38-G2A | Cummins (CCEC CHINA) | Stamford S6L1D-D41 | Click Here`
+- **ĐỔI** n105 b4 dòng 3 alternator `S6L1D-D41` | tổ máy `CC1100-H2` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: KTA38-G2A | hãng: Stamford | 
+  - đổi: genset: "CC1100-H2 CONTACT" → "CC1100-H2"
+  - nguồn: `| CC1100-H2 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | KTA38-G2A | Cummins (CCEC CHINA) | Stamford S6L1D-D41 | Click Here`
+- **ĐỔI** n105 b4 dòng 4 engine `KTA38-G4` | tổ máy `CC1250-H2` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: Stamford S6L1D-E41 | hãng: Cummins | 
+  - đổi: genset: "CC1250-H2 CONTACT" → "CC1250-H2"
+  - nguồn: `| CC1250-H2 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | KTA38-G4 | Cummins (CCEC CHINA) | Stamford S6L1D-E41 | Click Here`
+- **ĐỔI** n105 b4 dòng 4 alternator `S6L1D-E41` | tổ máy `CC1250-H2` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: KTA38-G4 | hãng: Stamford | 
+  - đổi: genset: "CC1250-H2 CONTACT" → "CC1250-H2"
+  - nguồn: `| CC1250-H2 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | KTA38-G4 | Cummins (CCEC CHINA) | Stamford S6L1D-E41 | Click Here`
+- **ĐỔI** n105 b4 dòng 5 engine `KTA38-G9` | tổ máy `CC1375-H2` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: Stamford S6L1D-F41 | hãng: Cummins | 
+  - đổi: genset: "CC1375-H2 CONTACT" → "CC1375-H2"
+  - nguồn: `| CC1375-H2 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | KTA38-G9 | Cummins (CCEC CHINA) | Stamford S6L1D-F41 | Click Here`
+- **ĐỔI** n105 b4 dòng 5 alternator `S6L1D-F41` | tổ máy `CC1375-H2` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: KTA38-G9 | hãng: Stamford | 
+  - đổi: genset: "CC1375-H2 CONTACT" → "CC1375-H2"
+  - nguồn: `| CC1375-H2 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | KTA38-G9 | Cummins (CCEC CHINA) | Stamford S6L1D-F41 | Click Here`
+- **ĐỔI** n105 b4 dòng 6 engine `QSK38-G4` | tổ máy `CC1500V1-H2` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: Stamford S6L1D-H41 | hãng: Cummins | 
+  - đổi: genset: "CC1500V1-H2 CONTACT" → "CC1500V1-H2"
+  - nguồn: `| CC1500V1-H2 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | QSK38-G4 | Cummins (CCEC CHINA) | Stamford S6L1D-H41 | Click Here`
+- **ĐỔI** n105 b4 dòng 6 alternator `S6L1D-H41` | tổ máy `CC1500V1-H2` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: QSK38-G4 | hãng: Stamford | 
+  - đổi: genset: "CC1500V1-H2 CONTACT" → "CC1500V1-H2"
+  - nguồn: `| CC1500V1-H2 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | QSK38-G4 | Cummins (CCEC CHINA) | Stamford S6L1D-H41 | Click Here`
+- **ĐỔI** n105 b4 dòng 7 engine `KTA50-G3` | tổ máy `CC1500V2-H2` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: Stamford S6L1D-H41 | hãng: Cummins | 
+  - đổi: genset: "CC1500V2-H2 CONTACT" → "CC1500V2-H2"
+  - nguồn: `| CC1500V2-H2 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | KTA50-G3 | Cummins (CCEC CHINA) | Stamford S6L1D-H41 | Click Here`
+- **ĐỔI** n105 b4 dòng 7 alternator `S6L1D-H41` | tổ máy `CC1500V2-H2` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: KTA50-G3 | hãng: Stamford | 
+  - đổi: genset: "CC1500V2-H2 CONTACT" → "CC1500V2-H2"
+  - nguồn: `| CC1500V2-H2 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | KTA50-G3 | Cummins (CCEC CHINA) | Stamford S6L1D-H41 | Click Here`
+- **ĐỔI** n105 b4 dòng 8 engine `KTA50-G9` | tổ máy `CC1875-H2` | prime 1600 kVA / 1280 kW; standby 1875 kVA / 1500 kW | khác: Stamford S7L1D-C41 | hãng: Cummins | 
+  - đổi: genset: "CC1875-H2 CONTACT" → "CC1875-H2"
+  - nguồn: `| CC1875-H2 CONTACT | 1875KVA/ 1500KW | 1600KVA/ 1280KW | KTA50-G9 | Cummins (CCEC CHINA) | Stamford S7L1D-C41 | Click Here`
+- **ĐỔI** n105 b4 dòng 8 alternator `S7L1D-C41` | tổ máy `CC1875-H2` | prime 1600 kVA / 1280 kW; standby 1875 kVA / 1500 kW | khác: KTA50-G9 | hãng: Stamford | 
+  - đổi: genset: "CC1875-H2 CONTACT" → "CC1875-H2"
+  - nguồn: `| CC1875-H2 CONTACT | 1875KVA/ 1500KW | 1600KVA/ 1280KW | KTA50-G9 | Cummins (CCEC CHINA) | Stamford S7L1D-C41 | Click Here`
+- **ĐỔI** n106 b5 dòng 0 engine `4B3.9-G11` | tổ máy `CD27-H2` | prime 25 kVA / 20 kW; standby 28 kVA / 22 kW | khác: Stamford S0L2-M1 | hãng: Cummins | 
+  - đổi: genset: "CD27-H2 CONTACT" → "CD27-H2"
+  - nguồn: `| CD27-H2 CONTACT | 28KVA/ 22KW | 25KVA/ 20KW | 4B3.9-G11 | Cummins (DCEC CHINA) | Stamford S0L2-M1 | Click Here`
+- **ĐỔI** n106 b5 dòng 0 alternator `S0L2-M1` | tổ máy `CD27-H2` | prime 25 kVA / 20 kW; standby 28 kVA / 22 kW | khác: 4B3.9-G11 | hãng: Stamford | 
+  - đổi: genset: "CD27-H2 CONTACT" → "CD27-H2"
+  - nguồn: `| CD27-H2 CONTACT | 28KVA/ 22KW | 25KVA/ 20KW | 4B3.9-G11 | Cummins (DCEC CHINA) | Stamford S0L2-M1 | Click Here`
+- **ĐỔI** n106 b5 dòng 1 engine `4B3.9-G2` | tổ máy `CD32-H2` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: Stamford S0L2-P1 | hãng: Cummins | 
+  - đổi: genset: "CD32-H2 CONTACT" → "CD32-H2"
+  - nguồn: `| CD32-H2 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | 4B3.9-G2 | Cummins (DCEC CHINA) | Stamford S0L2-P1 | Click Here`
+- **ĐỔI** n106 b5 dòng 1 alternator `S0L2-P1` | tổ máy `CD32-H2` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: 4B3.9-G2 | hãng: Stamford | 
+  - đổi: genset: "CD32-H2 CONTACT" → "CD32-H2"
+  - nguồn: `| CD32-H2 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | 4B3.9-G2 | Cummins (DCEC CHINA) | Stamford S0L2-P1 | Click Here`
+- **ĐỔI** n106 b5 dòng 2 engine `4B3.9-G12` | tổ máy `CD40-H2` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: Stamford S1L2-J1 | hãng: Cummins | 
+  - đổi: genset: "CD40-H2 CONTACT" → "CD40-H2"
+  - nguồn: `| CD40-H2 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | 4B3.9-G12 | Cummins (DCEC CHINA) | Stamford S1L2-J1 | Click Here`
+- **ĐỔI** n106 b5 dòng 2 alternator `S1L2-J1` | tổ máy `CD40-H2` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: 4B3.9-G12 | hãng: Stamford | 
+  - đổi: genset: "CD40-H2 CONTACT" → "CD40-H2"
+  - nguồn: `| CD40-H2 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | 4B3.9-G12 | Cummins (DCEC CHINA) | Stamford S1L2-J1 | Click Here`
+- **ĐỔI** n106 b5 dòng 3 engine `4BT3.9-G2` | tổ máy `CD50-H2` | prime 45 kVA / 36 kW; standby 50 kVA / 40 kW | khác: Stamford S1L2-N1 | hãng: Cummins | 
+  - đổi: genset: "CD50-H2 CONTACT" → "CD50-H2"
+  - nguồn: `| CD50-H2 CONTACT | 50KVA/ 40KW | 45KVA/ 36KW | 4BT3.9-G2 | Cummins (DCEC CHINA) | Stamford S1L2-N1 | Click Here`
+- **ĐỔI** n106 b5 dòng 3 alternator `S1L2-N1` | tổ máy `CD50-H2` | prime 45 kVA / 36 kW; standby 50 kVA / 40 kW | khác: 4BT3.9-G2 | hãng: Stamford | 
+  - đổi: genset: "CD50-H2 CONTACT" → "CD50-H2"
+  - nguồn: `| CD50-H2 CONTACT | 50KVA/ 40KW | 45KVA/ 36KW | 4BT3.9-G2 | Cummins (DCEC CHINA) | Stamford S1L2-N1 | Click Here`
+- **ĐỔI** n106 b5 dòng 4 engine `4BTA3.9-G2 (QC50/60E)` | tổ máy `CD68-H2` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: Stamford S1L2-Y1 | hãng: Cummins |  | ⚠ model có ngoặc / gạch chéo
+  - đổi: genset: "CD68-H2 CONTACT" → "CD68-H2"
+  - nguồn: `| CD68-H2 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | 4BTA3.9-G2 (QC50/60E) | Cummins (DCEC CHINA) | Stamford S1L2-Y1 | Click Here`
+- **ĐỔI** n106 b5 dòng 4 alternator `S1L2-Y1` | tổ máy `CD68-H2` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: 4BTA3.9-G2 (QC50/60E) | hãng: Stamford | 
+  - đổi: genset: "CD68-H2 CONTACT" → "CD68-H2"
+  - nguồn: `| CD68-H2 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | 4BTA3.9-G2 (QC50/60E) | Cummins (DCEC CHINA) | Stamford S1L2-Y1 | Click Here`
+- **ĐỔI** n106 b5 dòng 5 engine `4BTA3.9-G2 (QC58/67E)` | tổ máy `CD82-H2` | prime 75 kVA / 60 kW; standby 83 kVA / 66 kW | khác: Stamford UCI224F | hãng: Cummins |  | ⚠ model có ngoặc / gạch chéo
+  - đổi: genset: "CD82-H2 CONTACT" → "CD82-H2"
+  - nguồn: `| CD82-H2 CONTACT | 83KVA/ 66KW | 75KVA/ 60KW | 4BTA3.9-G2 (QC58/67E) | Cummins (DCEC CHINA) | Stamford UCI224F | Click Here`
+- **ĐỔI** n106 b5 dòng 5 alternator `UCI224F` | tổ máy `CD82-H2` | prime 75 kVA / 60 kW; standby 83 kVA / 66 kW | khác: 4BTA3.9-G2 (QC58/67E) | hãng: Stamford | 
+  - đổi: genset: "CD82-H2 CONTACT" → "CD82-H2"
+  - nguồn: `| CD82-H2 CONTACT | 83KVA/ 66KW | 75KVA/ 60KW | 4BTA3.9-G2 (QC58/67E) | Cummins (DCEC CHINA) | Stamford UCI224F | Click Here`
+- **ĐỔI** n106 b5 dòng 6 engine `4BTA3.9-G11` | tổ máy `CD90-H2` | prime 80 kVA / 64 kW; standby 90 kVA / 72 kW | khác: Stamford UCI224G | hãng: Cummins | 
+  - đổi: genset: "CD90-H2 CONTACT" → "CD90-H2"
+  - nguồn: `| CD90-H2 CONTACT | 90KVA/ 72KW | 80KVA/ 64KW | 4BTA3.9-G11 | Cummins (DCEC CHINA) | Stamford UCI224G | Click Here`
+- **ĐỔI** n106 b5 dòng 6 alternator `UCI224G` | tổ máy `CD90-H2` | prime 80 kVA / 64 kW; standby 90 kVA / 72 kW | khác: 4BTA3.9-G11 | hãng: Stamford | 
+  - đổi: genset: "CD90-H2 CONTACT" → "CD90-H2"
+  - nguồn: `| CD90-H2 CONTACT | 90KVA/ 72KW | 80KVA/ 64KW | 4BTA3.9-G11 | Cummins (DCEC CHINA) | Stamford UCI224G | Click Here`
+- **ĐỔI** n106 b5 dòng 7 engine `4BTA3.9-G13` | tổ máy `CD110-H2` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: Stamford UCI274C | hãng: Cummins | 
+  - đổi: genset: "CD110-H2 CONTACT" → "CD110-H2"
+  - nguồn: `| CD110-H2 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | 4BTA3.9-G13 | Cummins (DCEC CHINA) | Stamford UCI274C | Click Here`
+- **ĐỔI** n106 b5 dòng 7 alternator `UCI274C` | tổ máy `CD110-H2` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: 4BTA3.9-G13 | hãng: Stamford | 
+  - đổi: genset: "CD110-H2 CONTACT" → "CD110-H2"
+  - nguồn: `| CD110-H2 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | 4BTA3.9-G13 | Cummins (DCEC CHINA) | Stamford UCI274C | Click Here`
+- **ĐỔI** n106 b5 dòng 8 engine `6BT5.9-G2 (QC96/115E)` | tổ máy `CD135V1-H2` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: Stamford UCI274D | hãng: Cummins |  | ⚠ model có ngoặc / gạch chéo
+  - đổi: genset: "CD135V1-H2 CONTACT" → "CD135V1-H2"
+  - nguồn: `| CD135V1-H2 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | 6BT5.9-G2 (QC96/115E) | Cummins (DCEC CHINA) | Stamford UCI274D | Click Here`
+- **ĐỔI** n106 b5 dòng 8 alternator `UCI274D` | tổ máy `CD135V1-H2` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: 6BT5.9-G2 (QC96/115E) | hãng: Stamford | 
+  - đổi: genset: "CD135V1-H2 CONTACT" → "CD135V1-H2"
+  - nguồn: `| CD135V1-H2 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | 6BT5.9-G2 (QC96/115E) | Cummins (DCEC CHINA) | Stamford UCI274D | Click Here`
+- **ĐỔI** n106 b5 dòng 9 engine `6BTA5.9-G2` | tổ máy `CD135V2-H2` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: Stamford UCI274D | hãng: Cummins | 
+  - đổi: genset: "CD135V2-H2 CONTACT" → "CD135V2-H2"
+  - nguồn: `| CD135V2-H2 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | 6BTA5.9-G2 | Cummins (DCEC CHINA) | Stamford UCI274D | Click Here`
+- **ĐỔI** n106 b5 dòng 9 alternator `UCI274D` | tổ máy `CD135V2-H2` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: 6BTA5.9-G2 | hãng: Stamford | 
+  - đổi: genset: "CD135V2-H2 CONTACT" → "CD135V2-H2"
+  - nguồn: `| CD135V2-H2 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | 6BTA5.9-G2 | Cummins (DCEC CHINA) | Stamford UCI274D | Click Here`
+- **ĐỔI** n106 b5 dòng 10 engine `6BTAA5.9-G2` | tổ máy `CD150-H2` | prime 138 kVA / 110 kW; standby 150 kVA / 120 kW | khác: Stamford UCI274E | hãng: Cummins | 
+  - đổi: genset: "CD150-H2 CONTACT" → "CD150-H2"
+  - nguồn: `| CD150-H2 CONTACT | 150KVA/ 120KW | 138KVA/ 110KW | 6BTAA5.9-G2 | Cummins (DCEC CHINA) | Stamford UCI274E | Click Here`
+- **ĐỔI** n106 b5 dòng 10 alternator `UCI274E` | tổ máy `CD150-H2` | prime 138 kVA / 110 kW; standby 150 kVA / 120 kW | khác: 6BTAA5.9-G2 | hãng: Stamford | 
+  - đổi: genset: "CD150-H2 CONTACT" → "CD150-H2"
+  - nguồn: `| CD150-H2 CONTACT | 150KVA/ 120KW | 138KVA/ 110KW | 6BTAA5.9-G2 | Cummins (DCEC CHINA) | Stamford UCI274E | Click Here`
+- **ĐỔI** n106 b5 dòng 11 engine `6BTAA5.9-G12` | tổ máy `CD165-H2` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: Stamford UCI274E | hãng: Cummins | 
+  - đổi: genset: "CD165-H2 CONTACT" → "CD165-H2"
+  - nguồn: `| CD165-H2 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | 6BTAA5.9-G12 | Cummins (DCEC CHINA) | Stamford UCI274E | Click Here`
+- **ĐỔI** n106 b5 dòng 11 alternator `UCI274E` | tổ máy `CD165-H2` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: 6BTAA5.9-G12 | hãng: Stamford | 
+  - đổi: genset: "CD165-H2 CONTACT" → "CD165-H2"
+  - nguồn: `| CD165-H2 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | 6BTAA5.9-G12 | Cummins (DCEC CHINA) | Stamford UCI274E | Click Here`
+- **ĐỔI** n106 b5 dòng 12 engine `6CTA8.3-G2` | tổ máy `CD205-H2` | prime 188 kVA / 150 kW; standby 206 kVA / 165 kW | khác: Stamford UCI274G | hãng: Cummins | 
+  - đổi: genset: "CD205-H2 CONTACT" → "CD205-H2"
+  - nguồn: `| CD205-H2 CONTACT | 206KVA/ 165KW | 188KVA/ 150KW | 6CTA8.3-G2 | Cummins (DCEC CHINA) | Stamford UCI274G | Click Here`
+- **ĐỔI** n106 b5 dòng 12 alternator `UCI274G` | tổ máy `CD205-H2` | prime 188 kVA / 150 kW; standby 206 kVA / 165 kW | khác: 6CTA8.3-G2 | hãng: Stamford | 
+  - đổi: genset: "CD205-H2 CONTACT" → "CD205-H2"
+  - nguồn: `| CD205-H2 CONTACT | 206KVA/ 165KW | 188KVA/ 150KW | 6CTA8.3-G2 | Cummins (DCEC CHINA) | Stamford UCI274G | Click Here`
+- **ĐỔI** n106 b5 dòng 13 engine `6CTAA8.3-G2` | tổ máy `CD220-H2` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: Stamford UCI274G | hãng: Cummins | 
+  - đổi: genset: "CD220-H2 CONTACT" → "CD220-H2"
+  - nguồn: `| CD220-H2 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | 6CTAA8.3-G2 | Cummins (DCEC CHINA) | Stamford UCI274G | Click Here`
+- **ĐỔI** n106 b5 dòng 13 alternator `UCI274G` | tổ máy `CD220-H2` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: 6CTAA8.3-G2 | hãng: Stamford | 
+  - đổi: genset: "CD220-H2 CONTACT" → "CD220-H2"
+  - nguồn: `| CD220-H2 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | 6CTAA8.3-G2 | Cummins (DCEC CHINA) | Stamford UCI274G | Click Here`
+- **ĐỔI** n106 b5 dòng 14 engine `6LTAA8.9-G2` | tổ máy `CD275-H2` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: Stamford UCDI274J | hãng: Cummins | 
+  - đổi: genset: "CD275-H2 CONTACT" → "CD275-H2"
+  - nguồn: `| CD275-H2 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | 6LTAA8.9-G2 | Cummins (DCEC CHINA) | Stamford UCDI274J | Click Here`
+- **ĐỔI** n106 b5 dòng 14 alternator `UCDI274J` | tổ máy `CD275-H2` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: 6LTAA8.9-G2 | hãng: Stamford | 
+  - đổi: genset: "CD275-H2 CONTACT" → "CD275-H2"
+  - nguồn: `| CD275-H2 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | 6LTAA8.9-G2 | Cummins (DCEC CHINA) | Stamford UCDI274J | Click Here`
+- **ĐỔI** n106 b5 dòng 15 engine `6LTAA8.9-G3` | tổ máy `CD310V1-H2` | prime 275 kVA / 220 kW; standby 313 kVA / 250 kW | khác: Stamford S4L1D-C41 | hãng: Cummins | 
+  - đổi: genset: "CD310V1-H2 CONTACT" → "CD310V1-H2"
+  - nguồn: `| CD310V1-H2 CONTACT | 313KVA/ 250KW | 275KVA/ 220KW | 6LTAA8.9-G3 | Cummins (DCEC CHINA) | Stamford S4L1D-C41 | Click Here`
+- **ĐỔI** n106 b5 dòng 15 alternator `S4L1D-C41` | tổ máy `CD310V1-H2` | prime 275 kVA / 220 kW; standby 313 kVA / 250 kW | khác: 6LTAA8.9-G3 | hãng: Stamford | 
+  - đổi: genset: "CD310V1-H2 CONTACT" → "CD310V1-H2"
+  - nguồn: `| CD310V1-H2 CONTACT | 313KVA/ 250KW | 275KVA/ 220KW | 6LTAA8.9-G3 | Cummins (DCEC CHINA) | Stamford S4L1D-C41 | Click Here`
+- **ĐỔI** n106 b5 dòng 16 engine `6LTAA9.5-G3` | tổ máy `CD310V2-H2` | prime 275 kVA / 220 kW; standby 313 kVA / 250 kW | khác: Stamford S4L1D-C41 | hãng: Cummins | 
+  - đổi: genset: "CD310V2-H2 CONTACT" → "CD310V2-H2"
+  - nguồn: `| CD310V2-H2 CONTACT | 313KVA/ 250KW | 275KVA/ 220KW | 6LTAA9.5-G3 | Cummins (DCEC CHINA) | Stamford S4L1D-C41 | Click Here`
+- **ĐỔI** n106 b5 dòng 16 alternator `S4L1D-C41` | tổ máy `CD310V2-H2` | prime 275 kVA / 220 kW; standby 313 kVA / 250 kW | khác: 6LTAA9.5-G3 | hãng: Stamford | 
+  - đổi: genset: "CD310V2-H2 CONTACT" → "CD310V2-H2"
+  - nguồn: `| CD310V2-H2 CONTACT | 313KVA/ 250KW | 275KVA/ 220KW | 6LTAA9.5-G3 | Cummins (DCEC CHINA) | Stamford S4L1D-C41 | Click Here`
+- **ĐỔI** n106 b5 dòng 17 engine `6LTAA9.5-G1` | tổ máy `CD344-H2` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: Stamford S4L1D-D41 | hãng: Cummins | 
+  - đổi: genset: "CD344-H2 CONTACT" → "CD344-H2"
+  - nguồn: `| CD344-H2 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | 6LTAA9.5-G1 | Cummins (DCEC CHINA) | Stamford S4L1D-D41 | Click Here`
+- **ĐỔI** n106 b5 dòng 17 alternator `S4L1D-D41` | tổ máy `CD344-H2` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: 6LTAA9.5-G1 | hãng: Stamford | 
+  - đổi: genset: "CD344-H2 CONTACT" → "CD344-H2"
+  - nguồn: `| CD344-H2 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | 6LTAA9.5-G1 | Cummins (DCEC CHINA) | Stamford S4L1D-D41 | Click Here`
+- **ĐỔI** n106 b5 dòng 18 engine `6ZTAA13-G3` | tổ máy `CD413-H2` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: Stamford S4L1D-E41 | hãng: Cummins | 
+  - đổi: genset: "CD413-H2 CONTACT" → "CD413-H2"
+  - nguồn: `| CD413-H2 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | 6ZTAA13-G3 | Cummins (DCEC CHINA) | Stamford S4L1D-E41 | Click Here`
+- **ĐỔI** n106 b5 dòng 18 alternator `S4L1D-E41` | tổ máy `CD413-H2` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: 6ZTAA13-G3 | hãng: Stamford | 
+  - đổi: genset: "CD413-H2 CONTACT" → "CD413-H2"
+  - nguồn: `| CD413-H2 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | 6ZTAA13-G3 | Cummins (DCEC CHINA) | Stamford S4L1D-E41 | Click Here`
+- **ĐỔI** n106 b5 dòng 19 engine `QSZ13-G6` | tổ máy `CD450-H2` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: Stamford S4L1D-E41 | hãng: Cummins | 
+  - đổi: genset: "CD450-H2 CONTACT" → "CD450-H2"
+  - nguồn: `| CD450-H2 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | QSZ13-G6 | Cummins (DCEC CHINA) | Stamford S4L1D-E41 | Click Here`
+- **ĐỔI** n106 b5 dòng 19 alternator `S4L1D-E41` | tổ máy `CD450-H2` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: QSZ13-G6 | hãng: Stamford | 
+  - đổi: genset: "CD450-H2 CONTACT" → "CD450-H2"
+  - nguồn: `| CD450-H2 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | QSZ13-G6 | Cummins (DCEC CHINA) | Stamford S4L1D-E41 | Click Here`
+- **ĐỔI** n106 b5 dòng 20 engine `6ZTAA13-G4` | tổ máy `CD500V1-H2` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: Stamford S4L1D-F41 | hãng: Cummins | 
+  - đổi: genset: "CD500V1-H2 CONTACT" → "CD500V1-H2"
+  - nguồn: `| CD500V1-H2 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | 6ZTAA13-G4 | Cummins (DCEC CHINA) | Stamford S4L1D-F41 | Click Here`
+- **ĐỔI** n106 b5 dòng 20 alternator `S4L1D-F41` | tổ máy `CD500V1-H2` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: 6ZTAA13-G4 | hãng: Stamford | 
+  - đổi: genset: "CD500V1-H2 CONTACT" → "CD500V1-H2"
+  - nguồn: `| CD500V1-H2 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | 6ZTAA13-G4 | Cummins (DCEC CHINA) | Stamford S4L1D-F41 | Click Here`
+- **ĐỔI** n106 b5 dòng 21 engine `QSZ13-G2` | tổ máy `CD500V2-H2` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: Stamford S4L1D-F41 | hãng: Cummins | 
+  - đổi: genset: "CD500V2-H2 CONTACT" → "CD500V2-H2"
+  - nguồn: `| CD500V2-H2 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | QSZ13-G2 | Cummins (DCEC CHINA) | Stamford S4L1D-F41 | Click Here`
+- **ĐỔI** n106 b5 dòng 21 alternator `S4L1D-F41` | tổ máy `CD500V2-H2` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: QSZ13-G2 | hãng: Stamford | 
+  - đổi: genset: "CD500V2-H2 CONTACT" → "CD500V2-H2"
+  - nguồn: `| CD500V2-H2 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | QSZ13-G2 | Cummins (DCEC CHINA) | Stamford S4L1D-F41 | Click Here`
+- **ĐỔI** n106 b5 dòng 22 engine `QSZ13-G7` | tổ máy `CD500V3-H2` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: Stamford S4L1D-F41 | hãng: Cummins | 
+  - đổi: genset: "CD500V3-H2 CONTACT" → "CD500V3-H2"
+  - nguồn: `| CD500V3-H2 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | QSZ13-G7 | Cummins (DCEC CHINA) | Stamford S4L1D-F41 | Click Here`
+- **ĐỔI** n106 b5 dòng 22 alternator `S4L1D-F41` | tổ máy `CD500V3-H2` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: QSZ13-G7 | hãng: Stamford | 
+  - đổi: genset: "CD500V3-H2 CONTACT" → "CD500V3-H2"
+  - nguồn: `| CD500V3-H2 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | QSZ13-G7 | Cummins (DCEC CHINA) | Stamford S4L1D-F41 | Click Here`
+- **ĐỔI** n106 b5 dòng 23 engine `QSZ13-G3` | tổ máy `CD550V1-H2` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: Stamford S4L1D-G41 | hãng: Cummins | 
+  - đổi: genset: "CD550V1-H2 CONTACT" → "CD550V1-H2"
+  - nguồn: `| CD550V1-H2 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | QSZ13-G3 | Cummins (DCEC CHINA) | Stamford S4L1D-G41 | Click Here`
+- **ĐỔI** n106 b5 dòng 23 alternator `S4L1D-G41` | tổ máy `CD550V1-H2` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: QSZ13-G3 | hãng: Stamford | 
+  - đổi: genset: "CD550V1-H2 CONTACT" → "CD550V1-H2"
+  - nguồn: `| CD550V1-H2 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | QSZ13-G3 | Cummins (DCEC CHINA) | Stamford S4L1D-G41 | Click Here`
+- **ĐỔI** n106 b5 dòng 24 engine `QSZ13-G5` | tổ máy `CD550V2-H2` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: Stamford S4L1D-G41 | hãng: Cummins | 
+  - đổi: genset: "CD550V2-H2 CONTACT" → "CD550V2-H2"
+  - nguồn: `| CD550V2-H2 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | QSZ13-G5 | Cummins (DCEC CHINA) | Stamford S4L1D-G41 | Click Here`
+- **ĐỔI** n106 b5 dòng 24 alternator `S4L1D-G41` | tổ máy `CD550V2-H2` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: QSZ13-G5 | hãng: Stamford | 
+  - đổi: genset: "CD550V2-H2 CONTACT" → "CD550V2-H2"
+  - nguồn: `| CD550V2-H2 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | QSZ13-G5 | Cummins (DCEC CHINA) | Stamford S4L1D-G41 | Click Here`
+- **ĐỔI** n106 b5 dòng 25 engine `QSZ13-G11` | tổ máy `CD600-H2` | prime 550 kVA / 440 kW; standby 600 kVA / 480 kW | khác: Stamford S5L1D-D41 | hãng: Cummins | 
+  - đổi: genset: "CD600-H2 CONTACT" → "CD600-H2"
+  - nguồn: `| CD600-H2 CONTACT | 600KVA/ 480KW | 550KVA/ 440KW | QSZ13-G11 | Cummins (DCEC CHINA) | Stamford S5L1D-D41 | Click Here`
+- **ĐỔI** n106 b5 dòng 25 alternator `S5L1D-D41` | tổ máy `CD600-H2` | prime 550 kVA / 440 kW; standby 600 kVA / 480 kW | khác: QSZ13-G11 | hãng: Stamford | 
+  - đổi: genset: "CD600-H2 CONTACT" → "CD600-H2"
+  - nguồn: `| CD600-H2 CONTACT | 600KVA/ 480KW | 550KVA/ 440KW | QSZ13-G11 | Cummins (DCEC CHINA) | Stamford S5L1D-D41 | Click Here`
+- **ĐỔI** n107 b6 dòng 0 engine `VTA28-G5` | tổ máy `CG750V2-H2` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: Stamford S5L1D-F41 | hãng: Cummins | 
+  - đổi: genset: "CG750V2-H2 CONTACT" → "CG750V2-H2"
+  - nguồn: `| CG750V2-H2 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | VTA28-G5 | Cummins (USA) | Stamford S5L1D-F41 | Click Here`
+- **ĐỔI** n107 b6 dòng 0 alternator `S5L1D-F41` | tổ máy `CG750V2-H2` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: VTA28-G5 | hãng: Stamford | 
+  - đổi: genset: "CG750V2-H2 CONTACT" → "CG750V2-H2"
+  - nguồn: `| CG750V2-H2 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | VTA28-G5 | Cummins (USA) | Stamford S5L1D-F41 | Click Here`
+- **ĐỔI** n107 b6 dòng 1 engine `QSK23-G5` | tổ máy `CG825-H2` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: Stamford S5L1D-G41 | hãng: Cummins | 
+  - đổi: genset: "CG825-H2 CONTACT" → "CG825-H2"
+  - nguồn: `| CG825-H2 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | QSK23-G5 | Cummins (India) | Stamford S5L1D-G41 | Click Here`
+- **ĐỔI** n107 b6 dòng 1 alternator `S5L1D-G41` | tổ máy `CG825-H2` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: QSK23-G5 | hãng: Stamford | 
+  - đổi: genset: "CG825-H2 CONTACT" → "CG825-H2"
+  - nguồn: `| CG825-H2 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | QSK23-G5 | Cummins (India) | Stamford S5L1D-G41 | Click Here`
+- **ĐỔI** n107 b6 dòng 2 engine `QSK23-G6` | tổ máy `CG930-H2` | prime 850 kVA / 680 kW; standby 938 kVA / 750 kW | khác: Stamford S6L1D-C41 | hãng: Cummins | 
+  - đổi: genset: "CG930-H2 CONTACT" → "CG930-H2"
+  - nguồn: `| CG930-H2 CONTACT | 938KVA/ 750KW | 850KVA/ 680KW | QSK23-G6 | Cummins (India) | Stamford S6L1D-C41 | Click Here`
+- **ĐỔI** n107 b6 dòng 2 alternator `S6L1D-C41` | tổ máy `CG930-H2` | prime 850 kVA / 680 kW; standby 938 kVA / 750 kW | khác: QSK23-G6 | hãng: Stamford | 
+  - đổi: genset: "CG930-H2 CONTACT" → "CG930-H2"
+  - nguồn: `| CG930-H2 CONTACT | 938KVA/ 750KW | 850KVA/ 680KW | QSK23-G6 | Cummins (India) | Stamford S6L1D-C41 | Click Here`
+- **ĐỔI** n107 b6 dòng 3 engine `QSK23-G7` | tổ máy `CG1000V1-H2` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: Stamford S6L1D-D41 | hãng: Cummins | 
+  - đổi: genset: "CG1000V1-H2 CONTACT" → "CG1000V1-H2"
+  - nguồn: `| CG1000V1-H2 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | QSK23-G7 | Cummins (India) | Stamford S6L1D-D41 | Click Here`
+- **ĐỔI** n107 b6 dòng 3 alternator `S6L1D-D41` | tổ máy `CG1000V1-H2` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: QSK23-G7 | hãng: Stamford | 
+  - đổi: genset: "CG1000V1-H2 CONTACT" → "CG1000V1-H2"
+  - nguồn: `| CG1000V1-H2 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | QSK23-G7 | Cummins (India) | Stamford S6L1D-D41 | Click Here`
+- **ĐỔI** n107 b6 dòng 4 engine `QSK23-G3` | tổ máy `CG1000V2-H2` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: Stamford S6L1D-D41 | hãng: Cummins | 
+  - đổi: genset: "CG1000V2-H2 CONTACT" → "CG1000V2-H2"
+  - nguồn: `| CG1000V2-H2 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | QSK23-G3 | Cummins (India) | Stamford S6L1D-D41 | Click Here`
+- **ĐỔI** n107 b6 dòng 4 alternator `S6L1D-D41` | tổ máy `CG1000V2-H2` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: QSK23-G3 | hãng: Stamford | 
+  - đổi: genset: "CG1000V2-H2 CONTACT" → "CG1000V2-H2"
+  - nguồn: `| CG1000V2-H2 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | QSK23-G3 | Cummins (India) | Stamford S6L1D-D41 | Click Here`
+- **ĐỔI** n107 b6 dòng 5 engine `KTA38-G3` | tổ máy `CG1100V1-H2` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: Stamford S6L1D-D41 | hãng: Cummins | 
+  - đổi: genset: "CG1100V1-H2 CONTACT" → "CG1100V1-H2"
+  - nguồn: `| CG1100V1-H2 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | KTA38-G3 | Cummins (USA) | Stamford S6L1D-D41 | Click Here`
+- **ĐỔI** n107 b6 dòng 5 alternator `S6L1D-D41` | tổ máy `CG1100V1-H2` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: KTA38-G3 | hãng: Stamford | 
+  - đổi: genset: "CG1100V1-H2 CONTACT" → "CG1100V1-H2"
+  - nguồn: `| CG1100V1-H2 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | KTA38-G3 | Cummins (USA) | Stamford S6L1D-D41 | Click Here`
+- **ĐỔI** n107 b6 dòng 6 engine `QST30-G3` | tổ máy `CG1100V2-H2` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: Stamford S6L1D-D41 | hãng: Cummins | 
+  - đổi: genset: "CG1100V2-H2 CONTACT" → "CG1100V2-H2"
+  - nguồn: `| CG1100V2-H2 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | QST30-G3 | Cummins (India) | Stamford S6L1D-D41 | Click Here`
+- **ĐỔI** n107 b6 dòng 6 alternator `S6L1D-D41` | tổ máy `CG1100V2-H2` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: QST30-G3 | hãng: Stamford | 
+  - đổi: genset: "CG1100V2-H2 CONTACT" → "CG1100V2-H2"
+  - nguồn: `| CG1100V2-H2 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | QST30-G3 | Cummins (India) | Stamford S6L1D-D41 | Click Here`
+- **ĐỔI** n107 b6 dòng 7 engine `KTA38-G4` | tổ máy `CG1250V1-H2` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: Stamford S6L1D-E41 | hãng: Cummins | 
+  - đổi: genset: "CG1250V1-H2 CONTACT" → "CG1250V1-H2"
+  - nguồn: `| CG1250V1-H2 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | KTA38-G4 | Cummins (USA) | Stamford S6L1D-E41 | Click Here`
+- **ĐỔI** n107 b6 dòng 7 alternator `S6L1D-E41` | tổ máy `CG1250V1-H2` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: KTA38-G4 | hãng: Stamford | 
+  - đổi: genset: "CG1250V1-H2 CONTACT" → "CG1250V1-H2"
+  - nguồn: `| CG1250V1-H2 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | KTA38-G4 | Cummins (USA) | Stamford S6L1D-E41 | Click Here`
+- **ĐỔI** n107 b6 dòng 8 engine `QST30-G5` | tổ máy `CG1250V2-H2` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: Stamford S6L1D-E41 | hãng: Cummins | 
+  - đổi: genset: "CG1250V2-H2 CONTACT" → "CG1250V2-H2"
+  - nguồn: `| CG1250V2-H2 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | QST30-G5 | Cummins (India) | Stamford S6L1D-E41 | Click Here`
+- **ĐỔI** n107 b6 dòng 8 alternator `S6L1D-E41` | tổ máy `CG1250V2-H2` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: QST30-G5 | hãng: Stamford | 
+  - đổi: genset: "CG1250V2-H2 CONTACT" → "CG1250V2-H2"
+  - nguồn: `| CG1250V2-H2 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | QST30-G5 | Cummins (India) | Stamford S6L1D-E41 | Click Here`
+- **ĐỔI** n107 b6 dòng 9 engine `QST30-G4` | tổ máy `CG1250V3-H2` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: Stamford S6L1D-E41 | hãng: Cummins | 
+  - đổi: genset: "CG1250V3-H2 CONTACT" → "CG1250V3-H2"
+  - nguồn: `| CG1250V3-H2 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | QST30-G4 | Cummins (UK) | Stamford S6L1D-E41 | Click Here`
+- **ĐỔI** n107 b6 dòng 9 alternator `S6L1D-E41` | tổ máy `CG1250V3-H2` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: QST30-G4 | hãng: Stamford | 
+  - đổi: genset: "CG1250V3-H2 CONTACT" → "CG1250V3-H2"
+  - nguồn: `| CG1250V3-H2 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | QST30-G4 | Cummins (UK) | Stamford S6L1D-E41 | Click Here`
+- **ĐỔI** n107 b6 dòng 10 engine `QSK38-G5` | tổ máy `CG1375-H2` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: Stamford S6L1D-F41 | hãng: Cummins | 
+  - đổi: genset: "CG1375-H2 CONTACT" → "CG1375-H2"
+  - nguồn: `| CG1375-H2 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | QSK38-G5 | Cummins (India) | Stamford S6L1D-F41 | Click Here`
+- **ĐỔI** n107 b6 dòng 10 alternator `S6L1D-F41` | tổ máy `CG1375-H2` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: QSK38-G5 | hãng: Stamford | 
+  - đổi: genset: "CG1375-H2 CONTACT" → "CG1375-H2"
+  - nguồn: `| CG1375-H2 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | QSK38-G5 | Cummins (India) | Stamford S6L1D-F41 | Click Here`
+- **ĐỔI** n107 b6 dòng 11 engine `QSK38-G4` | tổ máy `CG1500V1-H2` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: Stamford S6L1D-H41 | hãng: Cummins | 
+  - đổi: genset: "CG1500V1-H2 CONTACT" → "CG1500V1-H2"
+  - nguồn: `| CG1500V1-H2 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | QSK38-G4 | Cummins (UK) | Stamford S6L1D-H41 | Click Here`
+- **ĐỔI** n107 b6 dòng 11 alternator `S6L1D-H41` | tổ máy `CG1500V1-H2` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: QSK38-G4 | hãng: Stamford | 
+  - đổi: genset: "CG1500V1-H2 CONTACT" → "CG1500V1-H2"
+  - nguồn: `| CG1500V1-H2 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | QSK38-G4 | Cummins (UK) | Stamford S6L1D-H41 | Click Here`
+- **ĐỔI** n107 b6 dòng 12 engine `KTA50-G3` | tổ máy `CG1500V2-H2` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: Stamford S6L1D-H41 | hãng: Cummins | 
+  - đổi: genset: "CG1500V2-H2 CONTACT" → "CG1500V2-H2"
+  - nguồn: `| CG1500V2-H2 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | KTA50-G3 | Cummins (India) | Stamford S6L1D-H41 | Click Here`
+- **ĐỔI** n107 b6 dòng 12 alternator `S6L1D-H41` | tổ máy `CG1500V2-H2` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: KTA50-G3 | hãng: Stamford | 
+  - đổi: genset: "CG1500V2-H2 CONTACT" → "CG1500V2-H2"
+  - nguồn: `| CG1500V2-H2 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | KTA50-G3 | Cummins (India) | Stamford S6L1D-H41 | Click Here`
+- **ĐỔI** n107 b6 dòng 13 engine `QSK50-G3` | tổ máy `CG1750-H2` | prime 1500 kVA / 1200 kW; standby 1750 kVA / 1400 kW | khác: Stamford S7L1D-C41 | hãng: Cummins | 
+  - đổi: genset: "CG1750-H2 CONTACT" → "CG1750-H2"
+  - nguồn: `| CG1750-H2 CONTACT | 1750KVA/ 1400KW | 1500KVA/ 1200KW | QSK50-G3 | Cummins (India) | Stamford S7L1D-C41 | Click Here`
+- **ĐỔI** n107 b6 dòng 13 alternator `S7L1D-C41` | tổ máy `CG1750-H2` | prime 1500 kVA / 1200 kW; standby 1750 kVA / 1400 kW | khác: QSK50-G3 | hãng: Stamford | 
+  - đổi: genset: "CG1750-H2 CONTACT" → "CG1750-H2"
+  - nguồn: `| CG1750-H2 CONTACT | 1750KVA/ 1400KW | 1500KVA/ 1200KW | QSK50-G3 | Cummins (India) | Stamford S7L1D-C41 | Click Here`
+- **ĐỔI** n107 b6 dòng 14 engine `KTA50-G9` | tổ máy `CG1875V1-H2` | prime 1600 kVA / 1280 kW; standby 1875 kVA / 1500 kW | khác: Stamford S7L1D-C41 | hãng: Cummins | 
+  - đổi: genset: "CG1875V1-H2 CONTACT" → "CG1875V1-H2"
+  - nguồn: `| CG1875V1-H2 CONTACT | 1875KVA/ 1500KW | 1600KVA/ 1280KW | KTA50-G9 | Cummins (India) | Stamford S7L1D-C41 | Click Here`
+- **ĐỔI** n107 b6 dòng 14 alternator `S7L1D-C41` | tổ máy `CG1875V1-H2` | prime 1600 kVA / 1280 kW; standby 1875 kVA / 1500 kW | khác: KTA50-G9 | hãng: Stamford | 
+  - đổi: genset: "CG1875V1-H2 CONTACT" → "CG1875V1-H2"
+  - nguồn: `| CG1875V1-H2 CONTACT | 1875KVA/ 1500KW | 1600KVA/ 1280KW | KTA50-G9 | Cummins (India) | Stamford S7L1D-C41 | Click Here`
+- **ĐỔI** n107 b6 dòng 15 engine `QSK50-G5` | tổ máy `CG1875V2-H2` | prime 1700 kVA / 1360 kW; standby 1875 kVA / 1500 kW | khác: Stamford S7L1D-C41 | hãng: Cummins | 
+  - đổi: genset: "CG1875V2-H2 CONTACT" → "CG1875V2-H2"
+  - nguồn: `| CG1875V2-H2 CONTACT | 1875KVA/ 1500KW | 1700KVA/ 1360KW | QSK50-G5 | Cummins (India) | Stamford S7L1D-C41 | Click Here`
+- **ĐỔI** n107 b6 dòng 15 alternator `S7L1D-C41` | tổ máy `CG1875V2-H2` | prime 1700 kVA / 1360 kW; standby 1875 kVA / 1500 kW | khác: QSK50-G5 | hãng: Stamford | 
+  - đổi: genset: "CG1875V2-H2 CONTACT" → "CG1875V2-H2"
+  - nguồn: `| CG1875V2-H2 CONTACT | 1875KVA/ 1500KW | 1700KVA/ 1360KW | QSK50-G5 | Cummins (India) | Stamford S7L1D-C41 | Click Here`
+- **ĐỔI** n107 b6 dòng 16 engine `QSK50-G4` | tổ máy `CG1875V3-H2` | prime 1700 kVA / 1360 kW; standby 1875 kVA / 1500 kW | khác: Stamford S7L1D-C41 | hãng: Cummins | 
+  - đổi: genset: "CG1875V3-H2 CONTACT" → "CG1875V3-H2"
+  - nguồn: `| CG1875V3-H2 CONTACT | 1875KVA/ 1500KW | 1700KVA/ 1360KW | QSK50-G4 | Cummins (UK) | Stamford S7L1D-C41 | Click Here`
+- **ĐỔI** n107 b6 dòng 16 alternator `S7L1D-C41` | tổ máy `CG1875V3-H2` | prime 1700 kVA / 1360 kW; standby 1875 kVA / 1500 kW | khác: QSK50-G4 | hãng: Stamford | 
+  - đổi: genset: "CG1875V3-H2 CONTACT" → "CG1875V3-H2"
+  - nguồn: `| CG1875V3-H2 CONTACT | 1875KVA/ 1500KW | 1700KVA/ 1360KW | QSK50-G4 | Cummins (UK) | Stamford S7L1D-C41 | Click Here`
+- **ĐỔI** n107 b6 dòng 17 engine `QSK50-G6` | tổ máy `CG2000-H2` | prime 1825 kVA / 1460 kW; standby 2000 kVA / 1600 kW | khác: Stamford S7L1D-E41 | hãng: Cummins | 
+  - đổi: genset: "CG2000-H2 CONTACT" → "CG2000-H2"
+  - nguồn: `| CG2000-H2 CONTACT | 2000KVA/ 1600KW | 1825KVA/ 1460KW | QSK50-G6 | Cummins (UK) | Stamford S7L1D-E41 | Click Here`
+- **ĐỔI** n107 b6 dòng 17 alternator `S7L1D-E41` | tổ máy `CG2000-H2` | prime 1825 kVA / 1460 kW; standby 2000 kVA / 1600 kW | khác: QSK50-G6 | hãng: Stamford | 
+  - đổi: genset: "CG2000-H2 CONTACT" → "CG2000-H2"
+  - nguồn: `| CG2000-H2 CONTACT | 2000KVA/ 1600KW | 1825KVA/ 1460KW | QSK50-G6 | Cummins (UK) | Stamford S7L1D-E41 | Click Here`
+- **ĐỔI** n107 b6 dòng 18 engine `QSK60-G5` | tổ máy `CG2200-H2` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: Stamford S7L1D-F41 | hãng: Cummins | 
+  - đổi: genset: "CG2200-H2 CONTACT" → "CG2200-H2"
+  - nguồn: `| CG2200-H2 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | QSK60-G5 | Cummins (UK) | Stamford S7L1D-F41 | Click Here`
+- **ĐỔI** n107 b6 dòng 18 alternator `S7L1D-F41` | tổ máy `CG2200-H2` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: QSK60-G5 | hãng: Stamford | 
+  - đổi: genset: "CG2200-H2 CONTACT" → "CG2200-H2"
+  - nguồn: `| CG2200-H2 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | QSK60-G5 | Cummins (UK) | Stamford S7L1D-F41 | Click Here`
+- **ĐỔI** n107 b6 dòng 19 engine `QSK60-G6` | tổ máy `CG2500V1-H2` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: Stamford S7L1D-G41 | hãng: Cummins | 
+  - đổi: genset: "CG2500V1-H2 CONTACT" → "CG2500V1-H2"
+  - nguồn: `| CG2500V1-H2 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | QSK60-G6 | Cummins (UK) | Stamford S7L1D-G41 | Click Here`
+- **ĐỔI** n107 b6 dòng 19 alternator `S7L1D-G41` | tổ máy `CG2500V1-H2` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: QSK60-G6 | hãng: Stamford | 
+  - đổi: genset: "CG2500V1-H2 CONTACT" → "CG2500V1-H2"
+  - nguồn: `| CG2500V1-H2 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | QSK60-G6 | Cummins (UK) | Stamford S7L1D-G41 | Click Here`
+- **ĐỔI** n107 b6 dòng 20 engine `QSK60-G7` | tổ máy `CG2500V2-H2` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: Stamford S7L1D-G41 | hãng: Cummins | 
+  - đổi: genset: "CG2500V2-H2 CONTACT" → "CG2500V2-H2"
+  - nguồn: `| CG2500V2-H2 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | QSK60-G7 | Cummins (UK) | Stamford S7L1D-G41 | Click Here`
+- **ĐỔI** n107 b6 dòng 20 alternator `S7L1D-G41` | tổ máy `CG2500V2-H2` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: QSK60-G7 | hãng: Stamford | 
+  - đổi: genset: "CG2500V2-H2 CONTACT" → "CG2500V2-H2"
+  - nguồn: `| CG2500V2-H2 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | QSK60-G7 | Cummins (UK) | Stamford S7L1D-G41 | Click Here`
+- **ĐỔI** n107 b6 dòng 21 engine `QSK60-G15` | tổ máy `CG2500V3-H2` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: Stamford S7L1D-G41 | hãng: Cummins | 
+  - đổi: genset: "CG2500V3-H2 CONTACT" → "CG2500V3-H2"
+  - nguồn: `| CG2500V3-H2 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | QSK60-G15 | Cummins (UK) | Stamford S7L1D-G41 | Click Here`
+- **ĐỔI** n107 b6 dòng 21 alternator `S7L1D-G41` | tổ máy `CG2500V3-H2` | prime 2250 kVA / 1800 kW; standby 2500 kVA / 2000 kW | khác: QSK60-G15 | hãng: Stamford | 
+  - đổi: genset: "CG2500V3-H2 CONTACT" → "CG2500V3-H2"
+  - nguồn: `| CG2500V3-H2 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | QSK60-G15 | Cummins (UK) | Stamford S7L1D-G41 | Click Here`
+- **ĐỔI** n108 b7 dòng 4 engine `4B3.9-G12` | tổ máy `CD33/H1` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: Stamford S0L2-P1 | hãng: Cummins | 
+  - đổi: genset: "CD33/H1 CONTACT" → "CD33/H1"
+  - nguồn: `| CD33/H1 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | 4B3.9-G12 | Cummins (China Dongfeng) | Stamford S0L2-P1 | Click Here |`
+- **ĐỔI** n108 b7 dòng 4 alternator `S0L2-P1` | tổ máy `CD33/H1` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: 4B3.9-G12 | hãng: Stamford | 
+  - đổi: genset: "CD33/H1 CONTACT" → "CD33/H1"
+  - nguồn: `| CD33/H1 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | 4B3.9-G12 | Cummins (China Dongfeng) | Stamford S0L2-P1 | Click Here |`
+- **ĐỔI** n108 b7 dòng 24 engine `QSB5.9-30` | tổ máy `CD125N/H1` | prime 113 kVA / 90 kW; standby 125 kVA / 100 kW | khác: Stamford UCI274D | hãng: Cummins | 
+  - đổi: genset: "CD125N/H1 CONTACT" → "CD125N/H1"
+  - nguồn: `| CD125N/H1 CONTACT | 125KVA/ 100KW | 113KVA/ 90KW | QSB5.9-30 | Cummins (China Dongfeng) | Stamford UCI274D | Click Here |`
+- **ĐỔI** n108 b7 dòng 24 alternator `UCI274D` | tổ máy `CD125N/H1` | prime 113 kVA / 90 kW; standby 125 kVA / 100 kW | khác: QSB5.9-30 | hãng: Stamford | 
+  - đổi: genset: "CD125N/H1 CONTACT" → "CD125N/H1"
+  - nguồn: `| CD125N/H1 CONTACT | 125KVA/ 100KW | 113KVA/ 90KW | QSB5.9-30 | Cummins (China Dongfeng) | Stamford UCI274D | Click Here |`
+- **ĐỔI** n108 b7 dòng 26 engine `6BTAA5.9-G2` | tổ máy `CD150/H1` | prime 138 kVA / 110 kW; standby 150 kVA / 120 kW | khác: Stamford UCI274ES | hãng: Cummins | 
+  - đổi: genset: "CD150/H1 CONTACT" → "CD150/H1"
+  - nguồn: `| CD150/H1 CONTACT | 150KVA/ 120KW | 138KVA/ 110KW | 6BTAA5.9-G2 | Cummins (China Dongfeng) | Stamford UCI274ES | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 26 alternator `UCI274ES` | tổ máy `CD150/H1` | prime 138 kVA / 110 kW; standby 150 kVA / 120 kW | khác: 6BTAA5.9-G2 | hãng: Stamford | 
+  - đổi: genset: "CD150/H1 CONTACT" → "CD150/H1"
+  - nguồn: `| CD150/H1 CONTACT | 150KVA/ 120KW | 138KVA/ 110KW | 6BTAA5.9-G2 | Cummins (China Dongfeng) | Stamford UCI274ES | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 57 engine `403A-11G1` | tổ máy `P10/H1` | prime 9 kVA / 7 kW; standby 10 kVA / 8 kW | khác: Stamford S0L1-H1 | hãng: Perkins | 
+  - đổi: genset: "P10/H1 CONTACT" → "P10/H1"
+  - nguồn: `| P10/H1 CONTACT | 10KVA/ 8KW | 9KVA/ 7KW | 403A-11G1 | Perkins China | Stamford S0L1-H1 | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 57 alternator `S0L1-H1` | tổ máy `P10/H1` | prime 9 kVA / 7 kW; standby 10 kVA / 8 kW | khác: 403A-11G1 | hãng: Stamford | 
+  - đổi: genset: "P10/H1 CONTACT" → "P10/H1"
+  - nguồn: `| P10/H1 CONTACT | 10KVA/ 8KW | 9KVA/ 7KW | 403A-11G1 | Perkins China | Stamford S0L1-H1 | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 83 engine `4006-23TAG2A` | tổ máy `P825/H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: Stamford S5L1D-H4 | hãng: Perkins | 
+  - đổi: genset: "P825/H1 CONTACT" → "P825/H1"
+  - nguồn: `| P825/H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | 4006-23TAG2A | Perkins China | Stamford S5L1D-H4 | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 83 alternator `S5L1D-H4` | tổ máy `P825/H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: 4006-23TAG2A | hãng: Stamford | 
+  - đổi: genset: "P825/H1 CONTACT" → "P825/H1"
+  - nguồn: `| P825/H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | 4006-23TAG2A | Perkins China | Stamford S5L1D-H4 | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 88 engine `4012-46TWG2A` | tổ máy `P1375/H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: Stamford S6L1D-G4 | hãng: Perkins | 
+  - đổi: genset: "P1375/H1 CONTACT" → "P1375/H1"
+  - nguồn: `| P1375/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | 4012-46TWG2A | Perkins China | Stamford S6L1D-G4 | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 88 alternator `S6L1D-G4` | tổ máy `P1375/H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: 4012-46TWG2A | hãng: Stamford | 
+  - đổi: genset: "P1375/H1 CONTACT" → "P1375/H1"
+  - nguồn: `| P1375/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | 4012-46TWG2A | Perkins China | Stamford S6L1D-G4 | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 95 engine `S6R2-PTA-C` | tổ máy `M688/H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: Stamford HCI544FS | hãng: Mitsubishi | 
+  - đổi: genset: "M688/H1 CONTACT" → "M688/H1"
+  - nguồn: `| M688/H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | S6R2-PTA-C | Mitsubishi (SME Shanghai) | Stamford HCI544FS | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 95 alternator `HCI544FS` | tổ máy `M688/H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: S6R2-PTA-C | hãng: Stamford | 
+  - đổi: genset: "M688/H1 CONTACT" → "M688/H1"
+  - nguồn: `| M688/H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | S6R2-PTA-C | Mitsubishi (SME Shanghai) | Stamford HCI544FS | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 96 engine `S6R2-PTA-C` | tổ máy `M750/H1` | prime 675 kVA / 540 kW; standby 750 kVA / 600 kW | khác: Stamford S5L1D-G4 | hãng: Mitsubishi | 
+  - đổi: genset: "M750/H1 CONTACT" → "M750/H1"
+  - nguồn: `| M750/H1 CONTACT | 750KVA/ 600KW | 675KVA/ 540KW | S6R2-PTA-C | Mitsubishi (SME Shanghai) | Stamford S5L1D-G4 | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 96 alternator `S5L1D-G4` | tổ máy `M750/H1` | prime 675 kVA / 540 kW; standby 750 kVA / 600 kW | khác: S6R2-PTA-C | hãng: Stamford | 
+  - đổi: genset: "M750/H1 CONTACT" → "M750/H1"
+  - nguồn: `| M750/H1 CONTACT | 750KVA/ 600KW | 675KVA/ 540KW | S6R2-PTA-C | Mitsubishi (SME Shanghai) | Stamford S5L1D-G4 | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 97 engine `S6R2-PTAA-C` | tổ máy `M825/H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: Stamford S5L1D-H4 | hãng: Mitsubishi | 
+  - đổi: genset: "M825/H1 CONTACT" → "M825/H1"
+  - nguồn: `| M825/H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | S6R2-PTAA-C | Mitsubishi (SME Shanghai) | Stamford S5L1D-H4 | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 97 alternator `S5L1D-H4` | tổ máy `M825/H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: S6R2-PTAA-C | hãng: Stamford | 
+  - đổi: genset: "M825/H1 CONTACT" → "M825/H1"
+  - nguồn: `| M825/H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | S6R2-PTAA-C | Mitsubishi (SME Shanghai) | Stamford S5L1D-H4 | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 98 engine `S12R-PTA-C` | tổ máy `M1375/H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: Stamford S6L1D-G4 | hãng: Mitsubishi | 
+  - đổi: genset: "M1375/H1 CONTACT" → "M1375/H1"
+  - nguồn: `| M1375/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | S12R-PTA-C | Mitsubishi (SME Shanghai) | Stamford S6L1D-G4 | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 98 alternator `S6L1D-G4` | tổ máy `M1375/H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: S12R-PTA-C | hãng: Stamford | 
+  - đổi: genset: "M1375/H1 CONTACT" → "M1375/H1"
+  - nguồn: `| M1375/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | S12R-PTA-C | Mitsubishi (SME Shanghai) | Stamford S6L1D-G4 | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 99 engine `S12R-PTA2-C` | tổ máy `M1500/H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: Stamford S6L1D-H4 | hãng: Mitsubishi | 
+  - đổi: genset: "M1500/H1 CONTACT" → "M1500/H1"
+  - nguồn: `| M1500/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | S12R-PTA2-C | Mitsubishi (SME Shanghai) | Stamford S6L1D-H4 | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 99 alternator `S6L1D-H4` | tổ máy `M1500/H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: S12R-PTA2-C | hãng: Stamford | 
+  - đổi: genset: "M1500/H1 CONTACT" → "M1500/H1"
+  - nguồn: `| M1500/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | S12R-PTA2-C | Mitsubishi (SME Shanghai) | Stamford S6L1D-H4 | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 105 engine `YC4V35-D20` | tổ máy `Y23V1-H1` | prime 20 kVA / 16 kW; standby 23 kVA / 18 kW | khác: NIANFENG NF184D | hãng: Yuchai | 
+  - đổi: genset: "Y23V1-H1 CONTACT" → "Y23V1-H1"
+  - nguồn: `| Y23V1-H1 CONTACT | 23KVA/ 18KW | 20KVA/ 16KW | YC4V35-D20 | Yuchai (China) | NIANFENG NF184D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 105 alternator `NIANFENG NF184D` | tổ máy `Y23V1-H1` | prime 20 kVA / 16 kW; standby 23 kVA / 18 kW | khác: YC4V35-D20 | hãng: ∅ | 
+  - đổi: genset: "Y23V1-H1 CONTACT" → "Y23V1-H1"
+  - nguồn: `| Y23V1-H1 CONTACT | 23KVA/ 18KW | 20KVA/ 16KW | YC4V35-D20 | Yuchai (China) | NIANFENG NF184D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 106 engine `YCDV254FHZ-25` | tổ máy `Y23V2-H1` | prime 20 kVA / 16 kW; standby 23 kVA / 18 kW | khác: NIANFENG NF184D | hãng: Yuchai | 
+  - đổi: genset: "Y23V2-H1 CONTACT" → "Y23V2-H1"
+  - nguồn: `| Y23V2-H1 CONTACT | 23KVA/ 18KW | 20KVA/ 16KW | YCDV254FHZ-25 | Yuchai (China) | NIANFENG NF184D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 106 alternator `NIANFENG NF184D` | tổ máy `Y23V2-H1` | prime 20 kVA / 16 kW; standby 23 kVA / 18 kW | khác: YCDV254FHZ-25 | hãng: ∅ | 
+  - đổi: genset: "Y23V2-H1 CONTACT" → "Y23V2-H1"
+  - nguồn: `| Y23V2-H1 CONTACT | 23KVA/ 18KW | 20KVA/ 16KW | YCDV254FHZ-25 | Yuchai (China) | NIANFENG NF184D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 107 engine `YCDV254FHZ-35` | tổ máy `Y28-H1` | prime 25 kVA / 20 kW; standby 28 kVA / 22 kW | khác: NIANFENG NF184F | hãng: Yuchai | 
+  - đổi: genset: "Y28-H1 CONTACT" → "Y28-H1"
+  - nguồn: `| Y28-H1 CONTACT | 28KVA/ 22KW | 25KVA/ 20KW | YCDV254FHZ-35 | Yuchai (China) | NIANFENG NF184F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 107 alternator `NIANFENG NF184F` | tổ máy `Y28-H1` | prime 25 kVA / 20 kW; standby 28 kVA / 22 kW | khác: YCDV254FHZ-35 | hãng: ∅ | 
+  - đổi: genset: "Y28-H1 CONTACT" → "Y28-H1"
+  - nguồn: `| Y28-H1 CONTACT | 28KVA/ 22KW | 25KVA/ 20KW | YCDV254FHZ-35 | Yuchai (China) | NIANFENG NF184F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 108 engine `YC4V45Z-D20` | tổ máy `Y33V1-H1` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: NIANFENG NF184G | hãng: Yuchai | 
+  - đổi: genset: "Y33V1-H1 CONTACT" → "Y33V1-H1"
+  - nguồn: `| Y33V1-H1 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | YC4V45Z-D20 | Yuchai (China) | NIANFENG NF184G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 108 alternator `NIANFENG NF184G` | tổ máy `Y33V1-H1` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: YC4V45Z-D20 | hãng: ∅ | 
+  - đổi: genset: "Y33V1-H1 CONTACT" → "Y33V1-H1"
+  - nguồn: `| Y33V1-H1 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | YC4V45Z-D20 | Yuchai (China) | NIANFENG NF184G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 109 engine `YCDV254FHZ-40` | tổ máy `Y33V2-H1` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: NIANFENG NF184G | hãng: Yuchai | 
+  - đổi: genset: "Y33V2-H1 CONTACT" → "Y33V2-H1"
+  - nguồn: `| Y33V2-H1 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | YCDV254FHZ-40 | Yuchai (China) | NIANFENG NF184G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 109 alternator `NIANFENG NF184G` | tổ máy `Y33V2-H1` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: YCDV254FHZ-40 | hãng: ∅ | 
+  - đổi: genset: "Y33V2-H1 CONTACT" → "Y33V2-H1"
+  - nguồn: `| Y33V2-H1 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | YCDV254FHZ-40 | Yuchai (China) | NIANFENG NF184G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 110 engine `YC4V55Z-D20` | tổ máy `Y41V1-H1` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: NIANFENG NF184H | hãng: Yuchai | 
+  - đổi: genset: "Y41V1-H1 CONTACT" → "Y41V1-H1"
+  - nguồn: `| Y41V1-H1 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | YC4V55Z-D20 | Yuchai (China) | NIANFENG NF184H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 110 alternator `NIANFENG NF184H` | tổ máy `Y41V1-H1` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: YC4V55Z-D20 | hãng: ∅ | 
+  - đổi: genset: "Y41V1-H1 CONTACT" → "Y41V1-H1"
+  - nguồn: `| Y41V1-H1 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | YC4V55Z-D20 | Yuchai (China) | NIANFENG NF184H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 111 engine `YCDV254FHZ-50` | tổ máy `Y41V2-H1` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: NIANFENG NF184H | hãng: Yuchai | 
+  - đổi: genset: "Y41V2-H1 CONTACT" → "Y41V2-H1"
+  - nguồn: `| Y41V2-H1 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | YCDV254FHZ-50 | Yuchai (China) | NIANFENG NF184H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 111 alternator `NIANFENG NF184H` | tổ máy `Y41V2-H1` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: YCDV254FHZ-50 | hãng: ∅ | 
+  - đổi: genset: "Y41V2-H1 CONTACT" → "Y41V2-H1"
+  - nguồn: `| Y41V2-H1 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | YCDV254FHZ-50 | Yuchai (China) | NIANFENG NF184H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 112 engine `YC4D80-D34` | tổ máy `Y56V1-H1` | prime 50 kVA / 40 kW; standby 56 kVA / 45 kW | khác: NIANFENG NF224D | hãng: Yuchai | 
+  - đổi: genset: "Y56V1-H1 CONTACT" → "Y56V1-H1"
+  - nguồn: `| Y56V1-H1 CONTACT | 56KVA/ 45KW | 50KVA/ 40KW | YC4D80-D34 | Yuchai (China) | NIANFENG NF224D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 112 alternator `NIANFENG NF224D` | tổ máy `Y56V1-H1` | prime 50 kVA / 40 kW; standby 56 kVA / 45 kW | khác: YC4D80-D34 | hãng: ∅ | 
+  - đổi: genset: "Y56V1-H1 CONTACT" → "Y56V1-H1"
+  - nguồn: `| Y56V1-H1 CONTACT | 56KVA/ 45KW | 50KVA/ 40KW | YC4D80-D34 | Yuchai (China) | NIANFENG NF224D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 113 engine `YCD4V33H6-75` | tổ máy `Y56V2-H1` | prime 50 kVA / 40 kW; standby 56 kVA / 45 kW | khác: NIANFENG NF224D | hãng: Yuchai | 
+  - đổi: genset: "Y56V2-H1 CONTACT" → "Y56V2-H1"
+  - nguồn: `| Y56V2-H1 CONTACT | 56KVA/ 45KW | 50KVA/ 40KW | YCD4V33H6-75 | Yuchai (China) | NIANFENG NF224D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 113 alternator `NIANFENG NF224D` | tổ máy `Y56V2-H1` | prime 50 kVA / 40 kW; standby 56 kVA / 45 kW | khác: YCD4V33H6-75 | hãng: ∅ | 
+  - đổi: genset: "Y56V2-H1 CONTACT" → "Y56V2-H1"
+  - nguồn: `| Y56V2-H1 CONTACT | 56KVA/ 45KW | 50KVA/ 40KW | YCD4V33H6-75 | Yuchai (China) | NIANFENG NF224D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 114 engine `YC4D90-D34` | tổ máy `Y69V1-H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: NIANFENG NF224F | hãng: Yuchai | 
+  - đổi: genset: "Y69V1-H1 CONTACT" → "Y69V1-H1"
+  - nguồn: `| Y69V1-H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | YC4D90-D34 | Yuchai (China) | NIANFENG NF224F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 114 alternator `NIANFENG NF224F` | tổ máy `Y69V1-H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: YC4D90-D34 | hãng: ∅ | 
+  - đổi: genset: "Y69V1-H1 CONTACT" → "Y69V1-H1"
+  - nguồn: `| Y69V1-H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | YC4D90-D34 | Yuchai (China) | NIANFENG NF224F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 115 engine `YC4D90Z-D25` | tổ máy `Y69V2-H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: NIANFENG NF224F | hãng: Yuchai | 
+  - đổi: genset: "Y69V2-H1 CONTACT" → "Y69V2-H1"
+  - nguồn: `| Y69V2-H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | YC4D90Z-D25 | Yuchai (China) | NIANFENG NF224F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 115 alternator `NIANFENG NF224F` | tổ máy `Y69V2-H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: YC4D90Z-D25 | hãng: ∅ | 
+  - đổi: genset: "Y69V2-H1 CONTACT" → "Y69V2-H1"
+  - nguồn: `| Y69V2-H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | YC4D90Z-D25 | Yuchai (China) | NIANFENG NF224F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 116 engine `YC4A100Z-D25` | tổ máy `Y83V1-H1` | prime 75 kVA / 60 kW; standby 83 kVA / 66 kW | khác: NIANFENG NF224G | hãng: Yuchai | 
+  - đổi: genset: "Y83V1-H1 CONTACT" → "Y83V1-H1"
+  - nguồn: `| Y83V1-H1 CONTACT | 83KVA/ 66KW | 75KVA/ 60KW | YC4A100Z-D25 | Yuchai (China) | NIANFENG NF224G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 116 alternator `NIANFENG NF224G` | tổ máy `Y83V1-H1` | prime 75 kVA / 60 kW; standby 83 kVA / 66 kW | khác: YC4A100Z-D25 | hãng: ∅ | 
+  - đổi: genset: "Y83V1-H1 CONTACT" → "Y83V1-H1"
+  - nguồn: `| Y83V1-H1 CONTACT | 83KVA/ 66KW | 75KVA/ 60KW | YC4A100Z-D25 | Yuchai (China) | NIANFENG NF224G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 117 engine `YC4D105-D34` | tổ máy `Y83V2-H1` | prime 75 kVA / 60 kW; standby 83 kVA / 66 kW | khác: NIANFENG NF224G | hãng: Yuchai | 
+  - đổi: genset: "Y83V2-H1 CONTACT" → "Y83V2-H1"
+  - nguồn: `| Y83V2-H1 CONTACT | 83KVA/ 66KW | 75KVA/ 60KW | YC4D105-D34 | Yuchai (China) | NIANFENG NF224G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 117 alternator `NIANFENG NF224G` | tổ máy `Y83V2-H1` | prime 75 kVA / 60 kW; standby 83 kVA / 66 kW | khác: YC4D105-D34 | hãng: ∅ | 
+  - đổi: genset: "Y83V2-H1 CONTACT" → "Y83V2-H1"
+  - nguồn: `| Y83V2-H1 CONTACT | 83KVA/ 66KW | 75KVA/ 60KW | YC4D105-D34 | Yuchai (China) | NIANFENG NF224G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 118 engine `YC4A140L-D25` | tổ máy `Y113V1-H1` | prime 100 kVA / 80 kW; standby 113 kVA / 90 kW | khác: NIANFENG NF274C | hãng: Yuchai | 
+  - đổi: genset: "Y113V1-H1 CONTACT" → "Y113V1-H1"
+  - nguồn: `| Y113V1-H1 CONTACT | 113KVA/ 90KW | 100KVA/ 80KW | YC4A140L-D25 | Yuchai (China) | NIANFENG NF274C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 118 alternator `NIANFENG NF274C` | tổ máy `Y113V1-H1` | prime 100 kVA / 80 kW; standby 113 kVA / 90 kW | khác: YC4A140L-D25 | hãng: ∅ | 
+  - đổi: genset: "Y113V1-H1 CONTACT" → "Y113V1-H1"
+  - nguồn: `| Y113V1-H1 CONTACT | 113KVA/ 90KW | 100KVA/ 80KW | YC4A140L-D25 | Yuchai (China) | NIANFENG NF274C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 119 engine `YC4D140-D31` | tổ máy `Y113V2-H1` | prime 100 kVA / 80 kW; standby 113 kVA / 90 kW | khác: NIANFENG NF274C | hãng: Yuchai | 
+  - đổi: genset: "Y113V2-H1 CONTACT" → "Y113V2-H1"
+  - nguồn: `| Y113V2-H1 CONTACT | 113KVA/ 90KW | 100KVA/ 80KW | YC4D140-D31 | Yuchai (China) | NIANFENG NF274C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 119 alternator `NIANFENG NF274C` | tổ máy `Y113V2-H1` | prime 100 kVA / 80 kW; standby 113 kVA / 90 kW | khác: YC4D140-D31 | hãng: ∅ | 
+  - đổi: genset: "Y113V2-H1 CONTACT" → "Y113V2-H1"
+  - nguồn: `| Y113V2-H1 CONTACT | 113KVA/ 90KW | 100KVA/ 80KW | YC4D140-D31 | Yuchai (China) | NIANFENG NF274C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 120 engine `YC4D155-D31` | tổ máy `Y125-H1` | prime 113 kVA / 90 kW; standby 125 kVA / 100 kW | khác: NIANFENG NF274DS | hãng: Yuchai | 
+  - đổi: genset: "Y125-H1 CONTACT" → "Y125-H1"
+  - nguồn: `| Y125-H1 CONTACT | 125KVA/ 100KW | 113KVA/ 90KW | YC4D155-D31 | Yuchai (China) | NIANFENG NF274DS | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 120 alternator `NIANFENG NF274DS` | tổ máy `Y125-H1` | prime 113 kVA / 90 kW; standby 125 kVA / 100 kW | khác: YC4D155-D31 | hãng: ∅ | 
+  - đổi: genset: "Y125-H1 CONTACT" → "Y125-H1"
+  - nguồn: `| Y125-H1 CONTACT | 125KVA/ 100KW | 113KVA/ 90KW | YC4D155-D31 | Yuchai (China) | NIANFENG NF274DS | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 121 engine `YC4A180L-D2` | tổ máy `Y138-H1` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: NIANFENG NF274E | hãng: Yuchai | 
+  - đổi: genset: "Y138-H1 CONTACT" → "Y138-H1"
+  - nguồn: `| Y138-H1 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | YC4A180L-D2 | Yuchai (China) | NIANFENG NF274E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 121 alternator `NIANFENG NF274E` | tổ máy `Y138-H1` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: YC4A180L-D2 | hãng: ∅ | 
+  - đổi: genset: "Y138-H1 CONTACT" → "Y138-H1"
+  - nguồn: `| Y138-H1 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | YC4A180L-D2 | Yuchai (China) | NIANFENG NF274E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 122 engine `YC4A190-D30` | tổ máy `Y150-H1` | prime 138 kVA / 110 kW; standby 150 kVA / 120 kW | khác: NIANFENG NF274E | hãng: Yuchai | 
+  - đổi: genset: "Y150-H1 CONTACT" → "Y150-H1"
+  - nguồn: `| Y150-H1 CONTACT | 150KVA/ 120KW | 138KVA/ 110KW | YC4A190-D30 | Yuchai (China) | NIANFENG NF274E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 122 alternator `NIANFENG NF274E` | tổ máy `Y150-H1` | prime 138 kVA / 110 kW; standby 150 kVA / 120 kW | khác: YC4A190-D30 | hãng: ∅ | 
+  - đổi: genset: "Y150-H1 CONTACT" → "Y150-H1"
+  - nguồn: `| Y150-H1 CONTACT | 150KVA/ 120KW | 138KVA/ 110KW | YC4A190-D30 | Yuchai (China) | NIANFENG NF274E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 123 engine `YC6A205-D30` | tổ máy `Y165V1-H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: NIANFENG NF274FS | hãng: Yuchai | 
+  - đổi: genset: "Y165V1-H1 CONTACT" → "Y165V1-H1"
+  - nguồn: `| Y165V1-H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | YC6A205-D30 | Yuchai (China) | NIANFENG NF274FS | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 123 alternator `NIANFENG NF274FS` | tổ máy `Y165V1-H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: YC6A205-D30 | hãng: ∅ | 
+  - đổi: genset: "Y165V1-H1 CONTACT" → "Y165V1-H1"
+  - nguồn: `| Y165V1-H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | YC6A205-D30 | Yuchai (China) | NIANFENG NF274FS | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 124 engine `YC6B205L-D20` | tổ máy `Y165V2-H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: NIANFENG NF274FS | hãng: Yuchai | 
+  - đổi: genset: "Y165V2-H1 CONTACT" → "Y165V2-H1"
+  - nguồn: `| Y165V2-H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | YC6B205L-D20 | Yuchai (China) | NIANFENG NF274FS | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 124 alternator `NIANFENG NF274FS` | tổ máy `Y165V2-H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: YC6B205L-D20 | hãng: ∅ | 
+  - đổi: genset: "Y165V2-H1 CONTACT" → "Y165V2-H1"
+  - nguồn: `| Y165V2-H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | YC6B205L-D20 | Yuchai (China) | NIANFENG NF274FS | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 125 engine `YC6A245-D30` | tổ máy `Y200V1-H1` | prime 188 kVA / 150 kW; standby 200 kVA / 160 kW | khác: NIANFENG NF274H | hãng: Yuchai | 
+  - đổi: genset: "Y200V1-H1 CONTACT" → "Y200V1-H1"
+  - nguồn: `| Y200V1-H1 CONTACT | 200KVA/ 160KW | 188KVA/ 150KW | YC6A245-D30 | Yuchai (China) | NIANFENG NF274H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 125 alternator `NIANFENG NF274H` | tổ máy `Y200V1-H1` | prime 188 kVA / 150 kW; standby 200 kVA / 160 kW | khác: YC6A245-D30 | hãng: ∅ | 
+  - đổi: genset: "Y200V1-H1 CONTACT" → "Y200V1-H1"
+  - nguồn: `| Y200V1-H1 CONTACT | 200KVA/ 160KW | 188KVA/ 150KW | YC6A245-D30 | Yuchai (China) | NIANFENG NF274H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 126 engine `YC6A245L-D21` | tổ máy `Y200V2-H1` | prime 188 kVA / 150 kW; standby 200 kVA / 160 kW | khác: NIANFENG NF274H | hãng: Yuchai | 
+  - đổi: genset: "Y200V2-H1 CONTACT" → "Y200V2-H1"
+  - nguồn: `| Y200V2-H1 CONTACT | 200KVA/ 160KW | 188KVA/ 150KW | YC6A245L-D21 | Yuchai (China) | NIANFENG NF274H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 126 alternator `NIANFENG NF274H` | tổ máy `Y200V2-H1` | prime 188 kVA / 150 kW; standby 200 kVA / 160 kW | khác: YC6A245L-D21 | hãng: ∅ | 
+  - đổi: genset: "Y200V2-H1 CONTACT" → "Y200V2-H1"
+  - nguồn: `| Y200V2-H1 CONTACT | 200KVA/ 160KW | 188KVA/ 150KW | YC6A245L-D21 | Yuchai (China) | NIANFENG NF274H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 127 engine `YC6A275-D30` | tổ máy `Y220V1-H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: NIANFENG NF274H | hãng: Yuchai | 
+  - đổi: genset: "Y220V1-H1 CONTACT" → "Y220V1-H1"
+  - nguồn: `| Y220V1-H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | YC6A275-D30 | Yuchai (China) | NIANFENG NF274H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 127 alternator `NIANFENG NF274H` | tổ máy `Y220V1-H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: YC6A275-D30 | hãng: ∅ | 
+  - đổi: genset: "Y220V1-H1 CONTACT" → "Y220V1-H1"
+  - nguồn: `| Y220V1-H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | YC6A275-D30 | Yuchai (China) | NIANFENG NF274H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 128 engine `YCD6Q33H6-260` | tổ máy `Y220V2-H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: NIANFENG NF274H | hãng: Yuchai | 
+  - đổi: genset: "Y220V2-H1 CONTACT" → "Y220V2-H1"
+  - nguồn: `| Y220V2-H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | YCD6Q33H6-260 | Yuchai (China) | NIANFENG NF274H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 128 alternator `NIANFENG NF274H` | tổ máy `Y220V2-H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: YCD6Q33H6-260 | hãng: ∅ | 
+  - đổi: genset: "Y220V2-H1 CONTACT" → "Y220V2-H1"
+  - nguồn: `| Y220V2-H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | YCD6Q33H6-260 | Yuchai (China) | NIANFENG NF274H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 129 engine `YC6MK350-D30` | tổ máy `Y275V1-H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: NIANFENG NF274K | hãng: Yuchai | 
+  - đổi: genset: "Y275V1-H1 CONTACT" → "Y275V1-H1"
+  - nguồn: `| Y275V1-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | YC6MK350-D30 | Yuchai (China) | NIANFENG NF274K | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 129 alternator `NIANFENG NF274K` | tổ máy `Y275V1-H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: YC6MK350-D30 | hãng: ∅ | 
+  - đổi: genset: "Y275V1-H1 CONTACT" → "Y275V1-H1"
+  - nguồn: `| Y275V1-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | YC6MK350-D30 | Yuchai (China) | NIANFENG NF274K | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 130 engine `YC6MK350L-D20` | tổ máy `Y275V2-H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: NIANFENG NF274K | hãng: Yuchai | 
+  - đổi: genset: "Y275V2-H1 CONTACT" → "Y275V2-H1"
+  - nguồn: `| Y275V2-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | YC6MK350L-D20 | Yuchai (China) | NIANFENG NF274K | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 130 alternator `NIANFENG NF274K` | tổ máy `Y275V2-H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: YC6MK350L-D20 | hãng: ∅ | 
+  - đổi: genset: "Y275V2-H1 CONTACT" → "Y275V2-H1"
+  - nguồn: `| Y275V2-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | YC6MK350L-D20 | Yuchai (China) | NIANFENG NF274K | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 131 engine `YC6MK420-D30` | tổ máy `Y344V1-H1` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: NIANFENG NF314E | hãng: Yuchai | 
+  - đổi: genset: "Y344V1-H1 CONTACT" → "Y344V1-H1"
+  - nguồn: `| Y344V1-H1 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | YC6MK420-D30 | Yuchai (China) | NIANFENG NF314E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 131 alternator `NIANFENG NF314E` | tổ máy `Y344V1-H1` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: YC6MK420-D30 | hãng: ∅ | 
+  - đổi: genset: "Y344V1-H1 CONTACT" → "Y344V1-H1"
+  - nguồn: `| Y344V1-H1 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | YC6MK420-D30 | Yuchai (China) | NIANFENG NF314E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 132 engine `YC6MK420L-D20` | tổ máy `Y344V2-H1` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: NIANFENG NF314E | hãng: Yuchai | 
+  - đổi: genset: "Y344V2-H1 CONTACT" → "Y344V2-H1"
+  - nguồn: `| Y344V2-H1 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | YC6MK420L-D20 | Yuchai (China) | NIANFENG NF314E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 132 alternator `NIANFENG NF314E` | tổ máy `Y344V2-H1` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: YC6MK420L-D20 | hãng: ∅ | 
+  - đổi: genset: "Y344V2-H1 CONTACT" → "Y344V2-H1"
+  - nguồn: `| Y344V2-H1 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | YC6MK420L-D20 | Yuchai (China) | NIANFENG NF314E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 133 engine `YC6MK450-D30` | tổ máy `Y375-H1` | prime 350 kVA / 280 kW; standby 375 kVA / 300 kW | khác: NIANFENG NF314F | hãng: Yuchai | 
+  - đổi: genset: "Y375-H1 CONTACT" → "Y375-H1"
+  - nguồn: `| Y375-H1 CONTACT | 375KVA/ 300KW | 350KVA/ 280KW | YC6MK450-D30 | Yuchai (China) | NIANFENG NF314F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 133 alternator `NIANFENG NF314F` | tổ máy `Y375-H1` | prime 350 kVA / 280 kW; standby 375 kVA / 300 kW | khác: YC6MK450-D30 | hãng: ∅ | 
+  - đổi: genset: "Y375-H1 CONTACT" → "Y375-H1"
+  - nguồn: `| Y375-H1 CONTACT | 375KVA/ 300KW | 350KVA/ 280KW | YC6MK450-D30 | Yuchai (China) | NIANFENG NF314F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 134 engine `YC6K500-D31` | tổ máy `Y413V1-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: NIANFENG NF314G | hãng: Yuchai | 
+  - đổi: genset: "Y413V1-H1 CONTACT" → "Y413V1-H1"
+  - nguồn: `| Y413V1-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | YC6K500-D31 | Yuchai (China) | NIANFENG NF314G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 134 alternator `NIANFENG NF314G` | tổ máy `Y413V1-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: YC6K500-D31 | hãng: ∅ | 
+  - đổi: genset: "Y413V1-H1 CONTACT" → "Y413V1-H1"
+  - nguồn: `| Y413V1-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | YC6K500-D31 | Yuchai (China) | NIANFENG NF314G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 135 engine `YC6MJ500-D30` | tổ máy `Y413V2-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: NIANFENG NF314G | hãng: Yuchai | 
+  - đổi: genset: "Y413V2-H1 CONTACT" → "Y413V2-H1"
+  - nguồn: `| Y413V2-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | YC6MJ500-D30 | Yuchai (China) | NIANFENG NF314G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 135 alternator `NIANFENG NF314G` | tổ máy `Y413V2-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: YC6MJ500-D30 | hãng: ∅ | 
+  - đổi: genset: "Y413V2-H1 CONTACT" → "Y413V2-H1"
+  - nguồn: `| Y413V2-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | YC6MJ500-D30 | Yuchai (China) | NIANFENG NF314G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 136 engine `YC6MJ500L-D21` | tổ máy `Y413V3-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: NIANFENG NF314G | hãng: Yuchai | 
+  - đổi: genset: "Y413V3-H1 CONTACT" → "Y413V3-H1"
+  - nguồn: `| Y413V3-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | YC6MJ500L-D21 | Yuchai (China) | NIANFENG NF314G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 136 alternator `NIANFENG NF314G` | tổ máy `Y413V3-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: YC6MJ500L-D21 | hãng: ∅ | 
+  - đổi: genset: "Y413V3-H1 CONTACT" → "Y413V3-H1"
+  - nguồn: `| Y413V3-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | YC6MJ500L-D21 | Yuchai (China) | NIANFENG NF314G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 137 engine `YC6K520-D30` | tổ máy `Y450V1-H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: NIANFENG NF314H | hãng: Yuchai | 
+  - đổi: genset: "Y450V1-H1 CONTACT" → "Y450V1-H1"
+  - nguồn: `| Y450V1-H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | YC6K520-D30 | Yuchai (China) | NIANFENG NF314H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 137 alternator `NIANFENG NF314H` | tổ máy `Y450V1-H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: YC6K520-D30 | hãng: ∅ | 
+  - đổi: genset: "Y450V1-H1 CONTACT" → "Y450V1-H1"
+  - nguồn: `| Y450V1-H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | YC6K520-D30 | Yuchai (China) | NIANFENG NF314H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 138 engine `YC6MJ540-D30` | tổ máy `Y450V2-H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: NIANFENG NF314H | hãng: Yuchai | 
+  - đổi: genset: "Y450V2-H1 CONTACT" → "Y450V2-H1"
+  - nguồn: `| Y450V2-H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | YC6MJ540-D30 | Yuchai (China) | NIANFENG NF314H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 138 alternator `NIANFENG NF314H` | tổ máy `Y450V2-H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: YC6MJ540-D30 | hãng: ∅ | 
+  - đổi: genset: "Y450V2-H1 CONTACT" → "Y450V2-H1"
+  - nguồn: `| Y450V2-H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | YC6MJ540-D30 | Yuchai (China) | NIANFENG NF314H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 139 engine `YC6K600-D30` | tổ máy `Y500V1-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: NIANFENG NF314J | hãng: Yuchai | 
+  - đổi: genset: "Y500V1-H1 CONTACT" → "Y500V1-H1"
+  - nguồn: `| Y500V1-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | YC6K600-D30 | Yuchai (China) | NIANFENG NF314J | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 139 alternator `NIANFENG NF314J` | tổ máy `Y500V1-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: YC6K600-D30 | hãng: ∅ | 
+  - đổi: genset: "Y500V1-H1 CONTACT" → "Y500V1-H1"
+  - nguồn: `| Y500V1-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | YC6K600-D30 | Yuchai (China) | NIANFENG NF314J | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 140 engine `YC6MJ600-D30` | tổ máy `Y500V2-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: NIANFENG NF314J | hãng: Yuchai | 
+  - đổi: genset: "Y500V2-H1 CONTACT" → "Y500V2-H1"
+  - nguồn: `| Y500V2-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | YC6MJ600-D30 | Yuchai (China) | NIANFENG NF314J | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 140 alternator `NIANFENG NF314J` | tổ máy `Y500V2-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: YC6MJ600-D30 | hãng: ∅ | 
+  - đổi: genset: "Y500V2-H1 CONTACT" → "Y500V2-H1"
+  - nguồn: `| Y500V2-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | YC6MJ600-D30 | Yuchai (China) | NIANFENG NF314J | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 141 engine `YC6K660-D30` | tổ máy `Y550V1-H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: NIANFENG NF354D | hãng: Yuchai | 
+  - đổi: genset: "Y550V1-H1 CONTACT" → "Y550V1-H1"
+  - nguồn: `| Y550V1-H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | YC6K660-D30 | Yuchai (China) | NIANFENG NF354D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 141 alternator `NIANFENG NF354D` | tổ máy `Y550V1-H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: YC6K660-D30 | hãng: ∅ | 
+  - đổi: genset: "Y550V1-H1 CONTACT" → "Y550V1-H1"
+  - nguồn: `| Y550V1-H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | YC6K660-D30 | Yuchai (China) | NIANFENG NF354D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 142 engine `YC6T660-D31` | tổ máy `Y550V2-H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: NIANFENG NF354D | hãng: Yuchai | 
+  - đổi: genset: "Y550V2-H1 CONTACT" → "Y550V2-H1"
+  - nguồn: `| Y550V2-H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | YC6T660-D31 | Yuchai (China) | NIANFENG NF354D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 142 alternator `NIANFENG NF354D` | tổ máy `Y550V2-H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: YC6T660-D31 | hãng: ∅ | 
+  - đổi: genset: "Y550V2-H1 CONTACT" → "Y550V2-H1"
+  - nguồn: `| Y550V2-H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | YC6T660-D31 | Yuchai (China) | NIANFENG NF354D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 143 engine `YC6TD780-D31` | tổ máy `Y625-H1` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: NIANFENG NF354E | hãng: Yuchai | 
+  - đổi: genset: "Y625-H1 CONTACT" → "Y625-H1"
+  - nguồn: `| Y625-H1 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | YC6TD780-D31 | Yuchai (China) | NIANFENG NF354E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 143 alternator `NIANFENG NF354E` | tổ máy `Y625-H1` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: YC6TD780-D31 | hãng: ∅ | 
+  - đổi: genset: "Y625-H1 CONTACT" → "Y625-H1"
+  - nguồn: `| Y625-H1 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | YC6TD780-D31 | Yuchai (China) | NIANFENG NF354E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 144 engine `YC6TC840-D31` | tổ máy `Y688V1-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: NIANFENG NF354F | hãng: Yuchai | 
+  - đổi: genset: "Y688V1-H1 CONTACT" → "Y688V1-H1"
+  - nguồn: `| Y688V1-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | YC6TC840-D31 | Yuchai (China) | NIANFENG NF354F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 144 alternator `NIANFENG NF354F` | tổ máy `Y688V1-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: YC6TC840-D31 | hãng: ∅ | 
+  - đổi: genset: "Y688V1-H1 CONTACT" → "Y688V1-H1"
+  - nguồn: `| Y688V1-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | YC6TC840-D31 | Yuchai (China) | NIANFENG NF354F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 145 engine `YC6TD840-D31` | tổ máy `Y688V2-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: NIANFENG NF354F | hãng: Yuchai | 
+  - đổi: genset: "Y688V2-H1 CONTACT" → "Y688V2-H1"
+  - nguồn: `| Y688V2-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | YC6TD840-D31 | Yuchai (China) | NIANFENG NF354F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 145 alternator `NIANFENG NF354F` | tổ máy `Y688V2-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: YC6TD840-D31 | hãng: ∅ | 
+  - đổi: genset: "Y688V2-H1 CONTACT" → "Y688V2-H1"
+  - nguồn: `| Y688V2-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | YC6TD840-D31 | Yuchai (China) | NIANFENG NF354F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 146 engine `YC6TC900-D31` | tổ máy `Y756V1-H1` | prime 688 kVA / 550 kW; standby 756 kVA / 605 kW | khác: NIANFENG NF354H | hãng: Yuchai | 
+  - đổi: genset: "Y756V1-H1 CONTACT" → "Y756V1-H1"
+  - nguồn: `| Y756V1-H1 CONTACT | 756KVA/ 605KW | 688KVA/ 550KW | YC6TC900-D31 | Yuchai (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 146 alternator `NIANFENG NF354H` | tổ máy `Y756V1-H1` | prime 688 kVA / 550 kW; standby 756 kVA / 605 kW | khác: YC6TC900-D31 | hãng: ∅ | 
+  - đổi: genset: "Y756V1-H1 CONTACT" → "Y756V1-H1"
+  - nguồn: `| Y756V1-H1 CONTACT | 756KVA/ 605KW | 688KVA/ 550KW | YC6TC900-D31 | Yuchai (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 147 engine `YC6TD900-D31` | tổ máy `Y756V2-H1` | prime 688 kVA / 550 kW; standby 756 kVA / 605 kW | khác: NIANFENG NF354H | hãng: Yuchai | 
+  - đổi: genset: "Y756V2-H1 CONTACT" → "Y756V2-H1"
+  - nguồn: `| Y756V2-H1 CONTACT | 756KVA/ 605KW | 688KVA/ 550KW | YC6TD900-D31 | Yuchai (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 147 alternator `NIANFENG NF354H` | tổ máy `Y756V2-H1` | prime 688 kVA / 550 kW; standby 756 kVA / 605 kW | khác: YC6TD900-D31 | hãng: ∅ | 
+  - đổi: genset: "Y756V2-H1 CONTACT" → "Y756V2-H1"
+  - nguồn: `| Y756V2-H1 CONTACT | 756KVA/ 605KW | 688KVA/ 550KW | YC6TD900-D31 | Yuchai (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 148 engine `YC6TD1000-D30` | tổ máy `Y825-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: NIANFENG NF354H | hãng: Yuchai | 
+  - đổi: genset: "Y825-H1 CONTACT" → "Y825-H1"
+  - nguồn: `| Y825-H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | YC6TD1000-D30 | Yuchai (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 148 alternator `NIANFENG NF354H` | tổ máy `Y825-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: YC6TD1000-D30 | hãng: ∅ | 
+  - đổi: genset: "Y825-H1 CONTACT" → "Y825-H1"
+  - nguồn: `| Y825-H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | YC6TD1000-D30 | Yuchai (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 149 engine `YC6TD1100-D30` | tổ máy `Y888V1-H1` | prime 813 kVA / 650 kW; standby 888 kVA / 710 kW | khác: NIANFENG NF404C | hãng: Yuchai | 
+  - đổi: genset: "Y888V1-H1 CONTACT" → "Y888V1-H1"
+  - nguồn: `| Y888V1-H1 CONTACT | 888KVA/ 710KW | 813KVA/ 650KW | YC6TD1100-D30 | Yuchai (China) | NIANFENG NF404C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 149 alternator `NIANFENG NF404C` | tổ máy `Y888V1-H1` | prime 813 kVA / 650 kW; standby 888 kVA / 710 kW | khác: YC6TD1100-D30 | hãng: ∅ | 
+  - đổi: genset: "Y888V1-H1 CONTACT" → "Y888V1-H1"
+  - nguồn: `| Y888V1-H1 CONTACT | 888KVA/ 710KW | 813KVA/ 650KW | YC6TD1100-D30 | Yuchai (China) | NIANFENG NF404C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 150 engine `YC6TH1070-D31` | tổ máy `Y888V2-H1` | prime 813 kVA / 650 kW; standby 888 kVA / 710 kW | khác: NIANFENG NF404C | hãng: Yuchai | 
+  - đổi: genset: "Y888V2-H1 CONTACT" → "Y888V2-H1"
+  - nguồn: `| Y888V2-H1 CONTACT | 888KVA/ 710KW | 813KVA/ 650KW | YC6TH1070-D31 | Yuchai (China) | NIANFENG NF404C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 150 alternator `NIANFENG NF404C` | tổ máy `Y888V2-H1` | prime 813 kVA / 650 kW; standby 888 kVA / 710 kW | khác: YC6TH1070-D31 | hãng: ∅ | 
+  - đổi: genset: "Y888V2-H1 CONTACT" → "Y888V2-H1"
+  - nguồn: `| Y888V2-H1 CONTACT | 888KVA/ 710KW | 813KVA/ 650KW | YC6TH1070-D31 | Yuchai (China) | NIANFENG NF404C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 151 engine `YC6TH1220-D31` | tổ máy `Y1000-H1` | prime 913 kVA / 730 kW; standby 1000 kVA / 800 kW | khác: NIANFENG NF404D | hãng: Yuchai | 
+  - đổi: genset: "Y1000-H1 CONTACT" → "Y1000-H1"
+  - nguồn: `| Y1000-H1 CONTACT | 1000KVA/ 800KW | 913KVA/ 730KW | YC6TH1220-D31 | Yuchai (China) | NIANFENG NF404D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 151 alternator `NIANFENG NF404D` | tổ máy `Y1000-H1` | prime 913 kVA / 730 kW; standby 1000 kVA / 800 kW | khác: YC6TH1220-D31 | hãng: ∅ | 
+  - đổi: genset: "Y1000-H1 CONTACT" → "Y1000-H1"
+  - nguồn: `| Y1000-H1 CONTACT | 1000KVA/ 800KW | 913KVA/ 730KW | YC6TH1220-D31 | Yuchai (China) | NIANFENG NF404D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 152 engine `YC6TH1320-D31` | tổ máy `Y1100V1-H1` | prime 1100 kVA / 880 kW; standby 1100 kVA / 880 kW | khác: NIANFENG NF404E | hãng: Yuchai | 
+  - đổi: genset: "Y1100V1-H1 CONTACT" → "Y1100V1-H1"
+  - nguồn: `| Y1100V1-H1 CONTACT | 1100KVA/ 880KW | 1100KVA/ 880KW | YC6TH1320-D31 | Yuchai (China) | NIANFENG NF404E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 152 alternator `NIANFENG NF404E` | tổ máy `Y1100V1-H1` | prime 1100 kVA / 880 kW; standby 1100 kVA / 880 kW | khác: YC6TH1320-D31 | hãng: ∅ | 
+  - đổi: genset: "Y1100V1-H1 CONTACT" → "Y1100V1-H1"
+  - nguồn: `| Y1100V1-H1 CONTACT | 1100KVA/ 880KW | 1100KVA/ 880KW | YC6TH1320-D31 | Yuchai (China) | NIANFENG NF404E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 153 engine `YC12VTD1350-D30` | tổ máy `Y1100V2-H1` | prime 1100 kVA / 880 kW; standby 1100 kVA / 880 kW | khác: NIANFENG NF404E | hãng: Yuchai | 
+  - đổi: genset: "Y1100V2-H1 CONTACT" → "Y1100V2-H1"
+  - nguồn: `| Y1100V2-H1 CONTACT | 1100KVA/ 880KW | 1100KVA/ 880KW | YC12VTD1350-D30 | Yuchai (China) | NIANFENG NF404E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 153 alternator `NIANFENG NF404E` | tổ máy `Y1100V2-H1` | prime 1100 kVA / 880 kW; standby 1100 kVA / 880 kW | khác: YC12VTD1350-D30 | hãng: ∅ | 
+  - đổi: genset: "Y1100V2-H1 CONTACT" → "Y1100V2-H1"
+  - nguồn: `| Y1100V2-H1 CONTACT | 1100KVA/ 880KW | 1100KVA/ 880KW | YC12VTD1350-D30 | Yuchai (China) | NIANFENG NF404E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 154 engine `YC6C1520-D31` | tổ máy `Y1250V1-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: NIANFENG NF404F | hãng: Yuchai | 
+  - đổi: genset: "Y1250V1-H1 CONTACT" → "Y1250V1-H1"
+  - nguồn: `| Y1250V1-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | YC6C1520-D31 | Yuchai (China) | NIANFENG NF404F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 154 alternator `NIANFENG NF404F` | tổ máy `Y1250V1-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: YC6C1520-D31 | hãng: ∅ | 
+  - đổi: genset: "Y1250V1-H1 CONTACT" → "Y1250V1-H1"
+  - nguồn: `| Y1250V1-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | YC6C1520-D31 | Yuchai (China) | NIANFENG NF404F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 155 engine `YC12VTD1500-D30` | tổ máy `Y1250V2-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: NIANFENG NF404F | hãng: Yuchai | 
+  - đổi: genset: "Y1250V2-H1 CONTACT" → "Y1250V2-H1"
+  - nguồn: `| Y1250V2-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | YC12VTD1500-D30 | Yuchai (China) | NIANFENG NF404F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 155 alternator `NIANFENG NF404F` | tổ máy `Y1250V2-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: YC12VTD1500-D30 | hãng: ∅ | 
+  - đổi: genset: "Y1250V2-H1 CONTACT" → "Y1250V2-H1"
+  - nguồn: `| Y1250V2-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | YC12VTD1500-D30 | Yuchai (China) | NIANFENG NF404F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 156 engine `YC6C1660-D30` | tổ máy `Y1375V1-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: NIANFENG NF404G | hãng: Yuchai | 
+  - đổi: genset: "Y1375V1-H1 CONTACT" → "Y1375V1-H1"
+  - nguồn: `| Y1375V1-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | YC6C1660-D30 | Yuchai (China) | NIANFENG NF404G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 156 alternator `NIANFENG NF404G` | tổ máy `Y1375V1-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: YC6C1660-D30 | hãng: ∅ | 
+  - đổi: genset: "Y1375V1-H1 CONTACT" → "Y1375V1-H1"
+  - nguồn: `| Y1375V1-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | YC6C1660-D30 | Yuchai (China) | NIANFENG NF404G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 157 engine `YC6C1660-D31` | tổ máy `Y1375V2-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: NIANFENG NF404G | hãng: Yuchai | 
+  - đổi: genset: "Y1375V2-H1 CONTACT" → "Y1375V2-H1"
+  - nguồn: `| Y1375V2-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | YC6C1660-D31 | Yuchai (China) | NIANFENG NF404G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 157 alternator `NIANFENG NF404G` | tổ máy `Y1375V2-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: YC6C1660-D31 | hãng: ∅ | 
+  - đổi: genset: "Y1375V2-H1 CONTACT" → "Y1375V2-H1"
+  - nguồn: `| Y1375V2-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | YC6C1660-D31 | Yuchai (China) | NIANFENG NF404G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 158 engine `YC12VTD1680-D30` | tổ máy `Y1375V3-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: NIANFENG NF404G | hãng: Yuchai | 
+  - đổi: genset: "Y1375V3-H1 CONTACT" → "Y1375V3-H1"
+  - nguồn: `| Y1375V3-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | YC12VTD1680-D30 | Yuchai (China) | NIANFENG NF404G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 158 alternator `NIANFENG NF404G` | tổ máy `Y1375V3-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: YC12VTD1680-D30 | hãng: ∅ | 
+  - đổi: genset: "Y1375V3-H1 CONTACT" → "Y1375V3-H1"
+  - nguồn: `| Y1375V3-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | YC12VTD1680-D30 | Yuchai (China) | NIANFENG NF404G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 177 engine `4HTAA4.3-G34` | tổ máy `SC110V1-H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: NIANFENG NF274C | hãng: SDEC | 
+  - đổi: genset: "SC110V1-H1 CONTACT" → "SC110V1-H1"
+  - nguồn: `| SC110V1-H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | 4HTAA4.3-G34 | SHANGCHAI (China) | NIANFENG NF274C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 177 alternator `NIANFENG NF274C` | tổ máy `SC110V1-H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: 4HTAA4.3-G34 | hãng: ∅ | 
+  - đổi: genset: "SC110V1-H1 CONTACT" → "SC110V1-H1"
+  - nguồn: `| SC110V1-H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | 4HTAA4.3-G34 | SHANGCHAI (China) | NIANFENG NF274C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 178 engine `SC4H140D2` | tổ máy `SC110V2-H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: NIANFENG NF274C | hãng: SDEC | 
+  - đổi: genset: "SC110V2-H1 CONTACT" → "SC110V2-H1"
+  - nguồn: `| SC110V2-H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | SC4H140D2 | SHANGCHAI (China) | NIANFENG NF274C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 178 alternator `NIANFENG NF274C` | tổ máy `SC110V2-H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: SC4H140D2 | hãng: ∅ | 
+  - đổi: genset: "SC110V2-H1 CONTACT" → "SC110V2-H1"
+  - nguồn: `| SC110V2-H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | SC4H140D2 | SHANGCHAI (China) | NIANFENG NF274C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 179 engine `4HTAA4.3-G36` | tổ máy `SC138V1-H1` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: NIANFENG NF274E | hãng: SDEC | 
+  - đổi: genset: "SC138V1-H1 CONTACT" → "SC138V1-H1"
+  - nguồn: `| SC138V1-H1 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | 4HTAA4.3-G36 | SHANGCHAI (China) | NIANFENG NF274E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 179 alternator `NIANFENG NF274E` | tổ máy `SC138V1-H1` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: 4HTAA4.3-G36 | hãng: ∅ | 
+  - đổi: genset: "SC138V1-H1 CONTACT" → "SC138V1-H1"
+  - nguồn: `| SC138V1-H1 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | 4HTAA4.3-G36 | SHANGCHAI (China) | NIANFENG NF274E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 180 engine `SC4H180D2` | tổ máy `SC138V2-H1` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: NIANFENG NF274E | hãng: SDEC | 
+  - đổi: genset: "SC138V2-H1 CONTACT" → "SC138V2-H1"
+  - nguồn: `| SC138V2-H1 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | SC4H180D2 | SHANGCHAI (China) | NIANFENG NF274E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 180 alternator `NIANFENG NF274E` | tổ máy `SC138V2-H1` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: SC4H180D2 | hãng: ∅ | 
+  - đổi: genset: "SC138V2-H1 CONTACT" → "SC138V2-H1"
+  - nguồn: `| SC138V2-H1 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | SC4H180D2 | SHANGCHAI (China) | NIANFENG NF274E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 183 engine `6HTAA6.5-G33` | tổ máy `SC206V1-H1` | prime 188 kVA / 150 kW; standby 206 kVA / 165 kW | khác: NIANFENG NF274H | hãng: SDEC | 
+  - đổi: genset: "SC206V1-H1 CONTACT" → "SC206V1-H1"
+  - nguồn: `| SC206V1-H1 CONTACT | 206KVA/ 165KW | 188KVA/ 150KW | 6HTAA6.5-G33 | SHANGCHAI (China) | NIANFENG NF274H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 183 alternator `NIANFENG NF274H` | tổ máy `SC206V1-H1` | prime 188 kVA / 150 kW; standby 206 kVA / 165 kW | khác: 6HTAA6.5-G33 | hãng: ∅ | 
+  - đổi: genset: "SC206V1-H1 CONTACT" → "SC206V1-H1"
+  - nguồn: `| SC206V1-H1 CONTACT | 206KVA/ 165KW | 188KVA/ 150KW | 6HTAA6.5-G33 | SHANGCHAI (China) | NIANFENG NF274H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 184 engine `SC7H250D2` | tổ máy `SC206V2-H1` | prime 188 kVA / 150 kW; standby 206 kVA / 165 kW | khác: NIANFENG NF274H | hãng: SDEC | 
+  - đổi: genset: "SC206V2-H1 CONTACT" → "SC206V2-H1"
+  - nguồn: `| SC206V2-H1 CONTACT | 206KVA/ 165KW | 188KVA/ 150KW | SC7H250D2 | SHANGCHAI (China) | NIANFENG NF274H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 184 alternator `NIANFENG NF274H` | tổ máy `SC206V2-H1` | prime 188 kVA / 150 kW; standby 206 kVA / 165 kW | khác: SC7H250D2 | hãng: ∅ | 
+  - đổi: genset: "SC206V2-H1 CONTACT" → "SC206V2-H1"
+  - nguồn: `| SC206V2-H1 CONTACT | 206KVA/ 165KW | 188KVA/ 150KW | SC7H250D2 | SHANGCHAI (China) | NIANFENG NF274H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 191 engine `6ETAA11.8-G32` | tổ máy `SC344V1-H1` | prime 344 kVA / 275 kW; standby 344 kVA / 275 kW | khác: NIANFENG NF314E | hãng: SDEC | 
+  - đổi: genset: "SC344V1-H1 CONTACT" → "SC344V1-H1"
+  - nguồn: `| SC344V1-H1 CONTACT | 344KVA/ 275KW | 344KVA/ 275KW | 6ETAA11.8-G32 | SHANGCHAI (China) | NIANFENG NF314E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 191 alternator `NIANFENG NF314E` | tổ máy `SC344V1-H1` | prime 344 kVA / 275 kW; standby 344 kVA / 275 kW | khác: 6ETAA11.8-G32 | hãng: ∅ | 
+  - đổi: genset: "SC344V1-H1 CONTACT" → "SC344V1-H1"
+  - nguồn: `| SC344V1-H1 CONTACT | 344KVA/ 275KW | 344KVA/ 275KW | 6ETAA11.8-G32 | SHANGCHAI (China) | NIANFENG NF314E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 192 engine `SC13G420D2` | tổ máy `SC344V2-H1` | prime 344 kVA / 275 kW; standby 344 kVA / 275 kW | khác: NIANFENG NF314E | hãng: SDEC | 
+  - đổi: genset: "SC344V2-H1 CONTACT" → "SC344V2-H1"
+  - nguồn: `| SC344V2-H1 CONTACT | 344KVA/ 275KW | 344KVA/ 275KW | SC13G420D2 | SHANGCHAI (China) | NIANFENG NF314E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 192 alternator `NIANFENG NF314E` | tổ máy `SC344V2-H1` | prime 344 kVA / 275 kW; standby 344 kVA / 275 kW | khác: SC13G420D2 | hãng: ∅ | 
+  - đổi: genset: "SC344V2-H1 CONTACT" → "SC344V2-H1"
+  - nguồn: `| SC344V2-H1 CONTACT | 344KVA/ 275KW | 344KVA/ 275KW | SC13G420D2 | SHANGCHAI (China) | NIANFENG NF314E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 193 engine `6ETAA11.8-G33` | tổ máy `SC385V1-H1` | prime 350 kVA / 280 kW; standby 385 kVA / 308 kW | khác: NIANFENG NF314F | hãng: SDEC | 
+  - đổi: genset: "SC385V1-H1 CONTACT" → "SC385V1-H1"
+  - nguồn: `| SC385V1-H1 CONTACT | 385KVA/ 308KW | 350KVA/ 280KW | 6ETAA11.8-G33 | SHANGCHAI (China) | NIANFENG NF314F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 193 alternator `NIANFENG NF314F` | tổ máy `SC385V1-H1` | prime 350 kVA / 280 kW; standby 385 kVA / 308 kW | khác: 6ETAA11.8-G33 | hãng: ∅ | 
+  - đổi: genset: "SC385V1-H1 CONTACT" → "SC385V1-H1"
+  - nguồn: `| SC385V1-H1 CONTACT | 385KVA/ 308KW | 350KVA/ 280KW | 6ETAA11.8-G33 | SHANGCHAI (China) | NIANFENG NF314F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 194 engine `SC12E460D2` | tổ máy `SC385V2-H1` | prime 350 kVA / 280 kW; standby 385 kVA / 308 kW | khác: NIANFENG NF314F | hãng: SDEC | 
+  - đổi: genset: "SC385V2-H1 CONTACT" → "SC385V2-H1"
+  - nguồn: `| SC385V2-H1 CONTACT | 385KVA/ 308KW | 350KVA/ 280KW | SC12E460D2 | SHANGCHAI (China) | NIANFENG NF314F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 194 alternator `NIANFENG NF314F` | tổ máy `SC385V2-H1` | prime 350 kVA / 280 kW; standby 385 kVA / 308 kW | khác: SC12E460D2 | hãng: ∅ | 
+  - đổi: genset: "SC385V2-H1 CONTACT" → "SC385V2-H1"
+  - nguồn: `| SC385V2-H1 CONTACT | 385KVA/ 308KW | 350KVA/ 280KW | SC12E460D2 | SHANGCHAI (China) | NIANFENG NF314F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 195 engine `6ETAA11.8-G31` | tổ máy `SC413V1-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: NIANFENG NF314G | hãng: SDEC | 
+  - đổi: genset: "SC413V1-H1 CONTACT" → "SC413V1-H1"
+  - nguồn: `| SC413V1-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | 6ETAA11.8-G31 | SHANGCHAI (China) | NIANFENG NF314G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 195 alternator `NIANFENG NF314G` | tổ máy `SC413V1-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: 6ETAA11.8-G31 | hãng: ∅ | 
+  - đổi: genset: "SC413V1-H1 CONTACT" → "SC413V1-H1"
+  - nguồn: `| SC413V1-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | 6ETAA11.8-G31 | SHANGCHAI (China) | NIANFENG NF314G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 196 engine `SC15G500D2` | tổ máy `SC413V2-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: NIANFENG NF314G | hãng: SDEC | 
+  - đổi: genset: "SC413V2-H1 CONTACT" → "SC413V2-H1"
+  - nguồn: `| SC413V2-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | SC15G500D2 | SHANGCHAI (China) | NIANFENG NF314G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 196 alternator `NIANFENG NF314G` | tổ máy `SC413V2-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: SC15G500D2 | hãng: ∅ | 
+  - đổi: genset: "SC413V2-H1 CONTACT" → "SC413V2-H1"
+  - nguồn: `| SC413V2-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | SC15G500D2 | SHANGCHAI (China) | NIANFENG NF314G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 197 engine `6ETAA12.8-G32` | tổ máy `SC450V1-H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: NIANFENG NF314H | hãng: SDEC | 
+  - đổi: genset: "SC450V1-H1 CONTACT" → "SC450V1-H1"
+  - nguồn: `| SC450V1-H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | 6ETAA12.8-G32 | SHANGCHAI (China) | NIANFENG NF314H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 197 alternator `NIANFENG NF314H` | tổ máy `SC450V1-H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: 6ETAA12.8-G32 | hãng: ∅ | 
+  - đổi: genset: "SC450V1-H1 CONTACT" → "SC450V1-H1"
+  - nguồn: `| SC450V1-H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | 6ETAA12.8-G32 | SHANGCHAI (China) | NIANFENG NF314H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 198 engine `SC13E550D2` | tổ máy `SC450V2-H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: NIANFENG NF314H | hãng: SDEC | 
+  - đổi: genset: "SC450V2-H1 CONTACT" → "SC450V2-H1"
+  - nguồn: `| SC450V2-H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | SC13E550D2 | SHANGCHAI (China) | NIANFENG NF314H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 198 alternator `NIANFENG NF314H` | tổ máy `SC450V2-H1` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: SC13E550D2 | hãng: ∅ | 
+  - đổi: genset: "SC450V2-H1 CONTACT" → "SC450V2-H1"
+  - nguồn: `| SC450V2-H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | SC13E550D2 | SHANGCHAI (China) | NIANFENG NF314H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 199 engine `6ETAA12.8-G31` | tổ máy `SC500V1-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: NIANFENG NF314J | hãng: SDEC | 
+  - đổi: genset: "SC500V1-H1 CONTACT" → "SC500V1-H1"
+  - nguồn: `| SC500V1-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | 6ETAA12.8-G31 | SHANGCHAI (China) | NIANFENG NF314J | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 199 alternator `NIANFENG NF314J` | tổ máy `SC500V1-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: 6ETAA12.8-G31 | hãng: ∅ | 
+  - đổi: genset: "SC500V1-H1 CONTACT" → "SC500V1-H1"
+  - nguồn: `| SC500V1-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | 6ETAA12.8-G31 | SHANGCHAI (China) | NIANFENG NF314J | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 200 engine `SC25G610D2` | tổ máy `SC500V2-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: NIANFENG NF314J | hãng: SDEC | 
+  - đổi: genset: "SC500V2-H1 CONTACT" → "SC500V2-H1"
+  - nguồn: `| SC500V2-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | SC25G610D2 | SHANGCHAI (China) | NIANFENG NF314J | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 200 alternator `NIANFENG NF314J` | tổ máy `SC500V2-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: SC25G610D2 | hãng: ∅ | 
+  - đổi: genset: "SC500V2-H1 CONTACT" → "SC500V2-H1"
+  - nguồn: `| SC500V2-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | SC25G610D2 | SHANGCHAI (China) | NIANFENG NF314J | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 201 engine `6ETAA12.8-G310` | tổ máy `SC563V1-H1` | prime 500 kVA / 400 kW; standby 563 kVA / 450 kW | khác: NIANFENG NF354D | hãng: SDEC | 
+  - đổi: genset: "SC563V1-H1 CONTACT" → "SC563V1-H1"
+  - nguồn: `| SC563V1-H1 CONTACT | 563KVA/ 450KW | 500KVA/ 400KW | 6ETAA12.8-G310 | SHANGCHAI (China) | NIANFENG NF354D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 201 alternator `NIANFENG NF354D` | tổ máy `SC563V1-H1` | prime 500 kVA / 400 kW; standby 563 kVA / 450 kW | khác: 6ETAA12.8-G310 | hãng: ∅ | 
+  - đổi: genset: "SC563V1-H1 CONTACT" → "SC563V1-H1"
+  - nguồn: `| SC563V1-H1 CONTACT | 563KVA/ 450KW | 500KVA/ 400KW | 6ETAA12.8-G310 | SHANGCHAI (China) | NIANFENG NF354D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 202 engine `6KTAA25-G311` | tổ máy `SC563V2-H1` | prime 500 kVA / 400 kW; standby 563 kVA / 450 kW | khác: NIANFENG NF354D | hãng: SDEC | 
+  - đổi: genset: "SC563V2-H1 CONTACT" → "SC563V2-H1"
+  - nguồn: `| SC563V2-H1 CONTACT | 563KVA/ 450KW | 500KVA/ 400KW | 6KTAA25-G311 | SHANGCHAI (China) | NIANFENG NF354D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 202 alternator `NIANFENG NF354D` | tổ máy `SC563V2-H1` | prime 500 kVA / 400 kW; standby 563 kVA / 450 kW | khác: 6KTAA25-G311 | hãng: ∅ | 
+  - đổi: genset: "SC563V2-H1 CONTACT" → "SC563V2-H1"
+  - nguồn: `| SC563V2-H1 CONTACT | 563KVA/ 450KW | 500KVA/ 400KW | 6KTAA25-G311 | SHANGCHAI (China) | NIANFENG NF354D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 203 engine `12GTAA27-G34` | tổ máy `SC563V3-H1` | prime 500 kVA / 400 kW; standby 563 kVA / 450 kW | khác: NIANFENG NF354D | hãng: SDEC | 
+  - đổi: genset: "SC563V3-H1 CONTACT" → "SC563V3-H1"
+  - nguồn: `| SC563V3-H1 CONTACT | 563KVA/ 450KW | 500KVA/ 400KW | 12GTAA27-G34 | SHANGCHAI (China) | NIANFENG NF354D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 203 alternator `NIANFENG NF354D` | tổ máy `SC563V3-H1` | prime 500 kVA / 400 kW; standby 563 kVA / 450 kW | khác: 12GTAA27-G34 | hãng: ∅ | 
+  - đổi: genset: "SC563V3-H1 CONTACT" → "SC563V3-H1"
+  - nguồn: `| SC563V3-H1 CONTACT | 563KVA/ 450KW | 500KVA/ 400KW | 12GTAA27-G34 | SHANGCHAI (China) | NIANFENG NF354D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 204 engine `SC25G690D2` | tổ máy `SC563V4-H1` | prime 500 kVA / 400 kW; standby 563 kVA / 450 kW | khác: NIANFENG NF354D | hãng: SDEC | 
+  - đổi: genset: "SC563V4-H1 CONTACT" → "SC563V4-H1"
+  - nguồn: `| SC563V4-H1 CONTACT | 563KVA/ 450KW | 500KVA/ 400KW | SC25G690D2 | SHANGCHAI (China) | NIANFENG NF354D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 204 alternator `NIANFENG NF354D` | tổ máy `SC563V4-H1` | prime 500 kVA / 400 kW; standby 563 kVA / 450 kW | khác: SC25G690D2 | hãng: ∅ | 
+  - đổi: genset: "SC563V4-H1 CONTACT" → "SC563V4-H1"
+  - nguồn: `| SC563V4-H1 CONTACT | 563KVA/ 450KW | 500KVA/ 400KW | SC25G690D2 | SHANGCHAI (China) | NIANFENG NF354D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 205 engine `6KTAA25-G310` | tổ máy `SC625V1-H1` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: NIANFENG NF354E | hãng: SDEC | 
+  - đổi: genset: "SC625V1-H1 CONTACT" → "SC625V1-H1"
+  - nguồn: `| SC625V1-H1 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | 6KTAA25-G310 | SHANGCHAI (China) | NIANFENG NF354E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 205 alternator `NIANFENG NF354E` | tổ máy `SC625V1-H1` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: 6KTAA25-G310 | hãng: ∅ | 
+  - đổi: genset: "SC625V1-H1 CONTACT" → "SC625V1-H1"
+  - nguồn: `| SC625V1-H1 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | 6KTAA25-G310 | SHANGCHAI (China) | NIANFENG NF354E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 206 engine `12GTAA27-G33` | tổ máy `SC625V2-H1` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: NIANFENG NF354E | hãng: SDEC | 
+  - đổi: genset: "SC625V2-H1 CONTACT" → "SC625V2-H1"
+  - nguồn: `| SC625V2-H1 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | 12GTAA27-G33 | SHANGCHAI (China) | NIANFENG NF354E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 206 alternator `NIANFENG NF354E` | tổ máy `SC625V2-H1` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: 12GTAA27-G33 | hãng: ∅ | 
+  - đổi: genset: "SC625V2-H1 CONTACT" → "SC625V2-H1"
+  - nguồn: `| SC625V2-H1 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | 12GTAA27-G33 | SHANGCHAI (China) | NIANFENG NF354E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 207 engine `SC27G755D2` | tổ máy `SC625V3-H1` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: NIANFENG NF354E | hãng: SDEC | 
+  - đổi: genset: "SC625V3-H1 CONTACT" → "SC625V3-H1"
+  - nguồn: `| SC625V3-H1 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | SC27G755D2 | SHANGCHAI (China) | NIANFENG NF354E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 207 alternator `NIANFENG NF354E` | tổ máy `SC625V3-H1` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: SC27G755D2 | hãng: ∅ | 
+  - đổi: genset: "SC625V3-H1 CONTACT" → "SC625V3-H1"
+  - nguồn: `| SC625V3-H1 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | SC27G755D2 | SHANGCHAI (China) | NIANFENG NF354E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 208 engine `6KTAA25-G39` | tổ máy `SC688V1-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: NIANFENG NF354F | hãng: SDEC | 
+  - đổi: genset: "SC688V1-H1 CONTACT" → "SC688V1-H1"
+  - nguồn: `| SC688V1-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | 6KTAA25-G39 | SHANGCHAI (China) | NIANFENG NF354F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 208 alternator `NIANFENG NF354F` | tổ máy `SC688V1-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: 6KTAA25-G39 | hãng: ∅ | 
+  - đổi: genset: "SC688V1-H1 CONTACT" → "SC688V1-H1"
+  - nguồn: `| SC688V1-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | 6KTAA25-G39 | SHANGCHAI (China) | NIANFENG NF354F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 209 engine `12GTAA27-G32` | tổ máy `SC688V2-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: NIANFENG NF354F | hãng: SDEC | 
+  - đổi: genset: "SC688V2-H1 CONTACT" → "SC688V2-H1"
+  - nguồn: `| SC688V2-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | 12GTAA27-G32 | SHANGCHAI (China) | NIANFENG NF354F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 209 alternator `NIANFENG NF354F` | tổ máy `SC688V2-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: 12GTAA27-G32 | hãng: ∅ | 
+  - đổi: genset: "SC688V2-H1 CONTACT" → "SC688V2-H1"
+  - nguồn: `| SC688V2-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | 12GTAA27-G32 | SHANGCHAI (China) | NIANFENG NF354F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 210 engine `SC27G830D2` | tổ máy `SC688V3-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: NIANFENG NF354F | hãng: SDEC | 
+  - đổi: genset: "SC688V3-H1 CONTACT" → "SC688V3-H1"
+  - nguồn: `| SC688V3-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | SC27G830D2 | SHANGCHAI (China) | NIANFENG NF354F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 210 alternator `NIANFENG NF354F` | tổ máy `SC688V3-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: SC27G830D2 | hãng: ∅ | 
+  - đổi: genset: "SC688V3-H1 CONTACT" → "SC688V3-H1"
+  - nguồn: `| SC688V3-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | SC27G830D2 | SHANGCHAI (China) | NIANFENG NF354F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 211 engine `6KTAA25-G38` | tổ máy `SC750V1-H1` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: NIANFENG NF354H | hãng: SDEC | 
+  - đổi: genset: "SC750V1-H1 CONTACT" → "SC750V1-H1"
+  - nguồn: `| SC750V1-H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | 6KTAA25-G38 | SHANGCHAI (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 211 alternator `NIANFENG NF354H` | tổ máy `SC750V1-H1` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: 6KTAA25-G38 | hãng: ∅ | 
+  - đổi: genset: "SC750V1-H1 CONTACT" → "SC750V1-H1"
+  - nguồn: `| SC750V1-H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | 6KTAA25-G38 | SHANGCHAI (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 212 engine `12GTAA27-G31` | tổ máy `SC750V2-H1` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: NIANFENG NF354H | hãng: SDEC | 
+  - đổi: genset: "SC750V2-H1 CONTACT" → "SC750V2-H1"
+  - nguồn: `| SC750V2-H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | 12GTAA27-G31 | SHANGCHAI (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 212 alternator `NIANFENG NF354H` | tổ máy `SC750V2-H1` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: 12GTAA27-G31 | hãng: ∅ | 
+  - đổi: genset: "SC750V2-H1 CONTACT" → "SC750V2-H1"
+  - nguồn: `| SC750V2-H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | 12GTAA27-G31 | SHANGCHAI (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 213 engine `SC27G900D2` | tổ máy `SC750V3-H1` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: NIANFENG NF354H | hãng: SDEC | 
+  - đổi: genset: "SC750V3-H1 CONTACT" → "SC750V3-H1"
+  - nguồn: `| SC750V3-H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | SC27G900D2 | SHANGCHAI (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 213 alternator `NIANFENG NF354H` | tổ máy `SC750V3-H1` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: SC27G900D2 | hãng: ∅ | 
+  - đổi: genset: "SC750V3-H1 CONTACT" → "SC750V3-H1"
+  - nguồn: `| SC750V3-H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | SC27G900D2 | SHANGCHAI (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 214 engine `6KTAA25-G32` | tổ máy `SC825V1-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: NIANFENG NF354H | hãng: SDEC | 
+  - đổi: genset: "SC825V1-H1 CONTACT" → "SC825V1-H1"
+  - nguồn: `| SC825V1-H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | 6KTAA25-G32 | SHANGCHAI (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 214 alternator `NIANFENG NF354H` | tổ máy `SC825V1-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: 6KTAA25-G32 | hãng: ∅ | 
+  - đổi: genset: "SC825V1-H1 CONTACT" → "SC825V1-H1"
+  - nguồn: `| SC825V1-H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | 6KTAA25-G32 | SHANGCHAI (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 215 engine `6KTAA25-G37` | tổ máy `SC825V2-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: NIANFENG NF354H | hãng: SDEC | 
+  - đổi: genset: "SC825V2-H1 CONTACT" → "SC825V2-H1"
+  - nguồn: `| SC825V2-H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | 6KTAA25-G37 | SHANGCHAI (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 215 alternator `NIANFENG NF354H` | tổ máy `SC825V2-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: 6KTAA25-G37 | hãng: ∅ | 
+  - đổi: genset: "SC825V2-H1 CONTACT" → "SC825V2-H1"
+  - nguồn: `| SC825V2-H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | 6KTAA25-G37 | SHANGCHAI (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 216 engine `SC25K990D2` | tổ máy `SC825V3-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: NIANFENG NF354H | hãng: SDEC | 
+  - đổi: genset: "SC825V3-H1 CONTACT" → "SC825V3-H1"
+  - nguồn: `| SC825V3-H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | SC25K990D2 | SHANGCHAI (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 216 alternator `NIANFENG NF354H` | tổ máy `SC825V3-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: SC25K990D2 | hãng: ∅ | 
+  - đổi: genset: "SC825V3-H1 CONTACT" → "SC825V3-H1"
+  - nguồn: `| SC825V3-H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | SC25K990D2 | SHANGCHAI (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 217 engine `6KTAA25-G31` | tổ máy `SC900-H1` | prime 800 kVA / 640 kW; standby 900 kVA / 720 kW | khác: NIANFENG NF404C | hãng: SDEC | 
+  - đổi: genset: "SC900-H1 CONTACT" → "SC900-H1"
+  - nguồn: `| SC900-H1 CONTACT | 900KVA/ 720KW | 800KVA/ 640KW | 6KTAA25-G31 | SHANGCHAI (China) | NIANFENG NF404C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 217 alternator `NIANFENG NF404C` | tổ máy `SC900-H1` | prime 800 kVA / 640 kW; standby 900 kVA / 720 kW | khác: 6KTAA25-G31 | hãng: ∅ | 
+  - đổi: genset: "SC900-H1 CONTACT" → "SC900-H1"
+  - nguồn: `| SC900-H1 CONTACT | 900KVA/ 720KW | 800KVA/ 640KW | 6KTAA25-G31 | SHANGCHAI (China) | NIANFENG NF404C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 218 engine `6KTAA25-G320` | tổ máy `SC1000V1-H1` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: NIANFENG NF404D | hãng: SDEC | 
+  - đổi: genset: "SC1000V1-H1 CONTACT" → "SC1000V1-H1"
+  - nguồn: `| SC1000V1-H1 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | 6KTAA25-G320 | SHANGCHAI (China) | NIANFENG NF404D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 218 alternator `NIANFENG NF404D` | tổ máy `SC1000V1-H1` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: 6KTAA25-G320 | hãng: ∅ | 
+  - đổi: genset: "SC1000V1-H1 CONTACT" → "SC1000V1-H1"
+  - nguồn: `| SC1000V1-H1 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | 6KTAA25-G320 | SHANGCHAI (China) | NIANFENG NF404D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 219 engine `6WTAA35-G32` | tổ máy `SC1000V2-H1` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: NIANFENG NF404D | hãng: SDEC | 
+  - đổi: genset: "SC1000V2-H1 CONTACT" → "SC1000V2-H1"
+  - nguồn: `| SC1000V2-H1 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | 6WTAA35-G32 | SHANGCHAI (China) | NIANFENG NF404D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 219 alternator `NIANFENG NF404D` | tổ máy `SC1000V2-H1` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: 6WTAA35-G32 | hãng: ∅ | 
+  - đổi: genset: "SC1000V2-H1 CONTACT" → "SC1000V2-H1"
+  - nguồn: `| SC1000V2-H1 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | 6WTAA35-G32 | SHANGCHAI (China) | NIANFENG NF404D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 220 engine `6KTAA25-G321` | tổ máy `SC1100V1-H1` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: NIANFENG NF404E | hãng: SDEC | 
+  - đổi: genset: "SC1100V1-H1 CONTACT" → "SC1100V1-H1"
+  - nguồn: `| SC1100V1-H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | 6KTAA25-G321 | SHANGCHAI (China) | NIANFENG NF404E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 220 alternator `NIANFENG NF404E` | tổ máy `SC1100V1-H1` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: 6KTAA25-G321 | hãng: ∅ | 
+  - đổi: genset: "SC1100V1-H1 CONTACT" → "SC1100V1-H1"
+  - nguồn: `| SC1100V1-H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | 6KTAA25-G321 | SHANGCHAI (China) | NIANFENG NF404E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 221 engine `6WTAA35-G31` | tổ máy `SC1100V2-H1` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: NIANFENG NF404E | hãng: SDEC | 
+  - đổi: genset: "SC1100V2-H1 CONTACT" → "SC1100V2-H1"
+  - nguồn: `| SC1100V2-H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | 6WTAA35-G31 | SHANGCHAI (China) | NIANFENG NF404E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 221 alternator `NIANFENG NF404E` | tổ máy `SC1100V2-H1` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: 6WTAA35-G31 | hãng: ∅ | 
+  - đổi: genset: "SC1100V2-H1 CONTACT" → "SC1100V2-H1"
+  - nguồn: `| SC1100V2-H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | 6WTAA35-G31 | SHANGCHAI (China) | NIANFENG NF404E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 222 engine `6WTAA35-G310` | tổ máy `SC1250-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: NIANFENG NF404F | hãng: SDEC | 
+  - đổi: genset: "SC1250-H1 CONTACT" → "SC1250-H1"
+  - nguồn: `| SC1250-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | 6WTAA35-G310 | SHANGCHAI (China) | NIANFENG NF404F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 222 alternator `NIANFENG NF404F` | tổ máy `SC1250-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: 6WTAA35-G310 | hãng: ∅ | 
+  - đổi: genset: "SC1250-H1 CONTACT" → "SC1250-H1"
+  - nguồn: `| SC1250-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | 6WTAA35-G310 | SHANGCHAI (China) | NIANFENG NF404F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 223 engine `6WTAA35-G311` | tổ máy `SC1375-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: NIANFENG NF404G | hãng: SDEC | 
+  - đổi: genset: "SC1375-H1 CONTACT" → "SC1375-H1"
+  - nguồn: `| SC1375-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | 6WTAA35-G311 | SHANGCHAI (China) | NIANFENG NF404G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 223 alternator `NIANFENG NF404G` | tổ máy `SC1375-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: 6WTAA35-G311 | hãng: ∅ | 
+  - đổi: genset: "SC1375-H1 CONTACT" → "SC1375-H1"
+  - nguồn: `| SC1375-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | 6WTAA35-G311 | SHANGCHAI (China) | NIANFENG NF404G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 224 engine `12KTA58-G36` | tổ máy `SC1500-H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: NIANFENG NF404H | hãng: SDEC | 
+  - đổi: genset: "SC1500-H1 CONTACT" → "SC1500-H1"
+  - nguồn: `| SC1500-H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | 12KTA58-G36 | SHANGCHAI (China) | NIANFENG NF404H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 224 alternator `NIANFENG NF404H` | tổ máy `SC1500-H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: 12KTA58-G36 | hãng: ∅ | 
+  - đổi: genset: "SC1500-H1 CONTACT" → "SC1500-H1"
+  - nguồn: `| SC1500-H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | 12KTA58-G36 | SHANGCHAI (China) | NIANFENG NF404H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 225 engine `12KTA58-G35` | tổ máy `SC1688-H1` | prime 1653 kVA / 1250 kW; standby 1688 kVA / 1350 kW | khác: NIANFENG NF454C | hãng: SDEC | 
+  - đổi: genset: "SC1688-H1 CONTACT" → "SC1688-H1"
+  - nguồn: `| SC1688-H1 CONTACT | 1688KVA/ 1350KW | 1653KVA/ 1250KW | 12KTA58-G35 | SHANGCHAI (China) | NIANFENG NF454C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 225 alternator `NIANFENG NF454C` | tổ máy `SC1688-H1` | prime 1653 kVA / 1250 kW; standby 1688 kVA / 1350 kW | khác: 12KTA58-G35 | hãng: ∅ | 
+  - đổi: genset: "SC1688-H1 CONTACT" → "SC1688-H1"
+  - nguồn: `| SC1688-H1 CONTACT | 1688KVA/ 1350KW | 1653KVA/ 1250KW | 12KTA58-G35 | SHANGCHAI (China) | NIANFENG NF454C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 226 engine `12KTA58-G34` | tổ máy `SC1875-H1` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: NIANFENG NF454D | hãng: SDEC | 
+  - đổi: genset: "SC1875-H1 CONTACT" → "SC1875-H1"
+  - nguồn: `| SC1875-H1 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | 12KTA58-G34 | SHANGCHAI (China) | NIANFENG NF454D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 226 alternator `NIANFENG NF454D` | tổ máy `SC1875-H1` | prime 1688 kVA / 1350 kW; standby 1875 kVA / 1500 kW | khác: 12KTA58-G34 | hãng: ∅ | 
+  - đổi: genset: "SC1875-H1 CONTACT" → "SC1875-H1"
+  - nguồn: `| SC1875-H1 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | 12KTA58-G34 | SHANGCHAI (China) | NIANFENG NF454D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 227 engine `12KTA58-G33` | tổ máy `SC2063-H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: NIANFENG NF454E | hãng: SDEC | 
+  - đổi: genset: "SC2063-H1 CONTACT" → "SC2063-H1"
+  - nguồn: `| SC2063-H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | 12KTA58-G33 | SHANGCHAI (China) | NIANFENG NF454E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 227 alternator `NIANFENG NF454E` | tổ máy `SC2063-H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: 12KTA58-G33 | hãng: ∅ | 
+  - đổi: genset: "SC2063-H1 CONTACT" → "SC2063-H1"
+  - nguồn: `| SC2063-H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | 12KTA58-G33 | SHANGCHAI (China) | NIANFENG NF454E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 230 engine `WP2.3D25E200` | tổ máy `W25-H1` | prime 23 kVA / 18 kW; standby 25 kVA / 20 kW | khác: NIANFENG NF184E | hãng: Weichai | 
+  - đổi: genset: "W25-H1 CONTACT" → "W25-H1"
+  - nguồn: `| W25-H1 CONTACT | 25KVA/ 20KW | 23KVA/ 18KW | WP2.3D25E200 | WEICHAI (China) | NIANFENG NF184E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 230 alternator `NIANFENG NF184E` | tổ máy `W25-H1` | prime 23 kVA / 18 kW; standby 25 kVA / 20 kW | khác: WP2.3D25E200 | hãng: ∅ | 
+  - đổi: genset: "W25-H1 CONTACT" → "W25-H1"
+  - nguồn: `| W25-H1 CONTACT | 25KVA/ 20KW | 23KVA/ 18KW | WP2.3D25E200 | WEICHAI (China) | NIANFENG NF184E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 231 engine `WP2.3D33E200` | tổ máy `W33-H1` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: NIANFENG NF184G | hãng: Weichai | 
+  - đổi: genset: "W33-H1 CONTACT" → "W33-H1"
+  - nguồn: `| W33-H1 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | WP2.3D33E200 | WEICHAI (China) | NIANFENG NF184G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 231 alternator `NIANFENG NF184G` | tổ máy `W33-H1` | prime 30 kVA / 24 kW; standby 33 kVA / 26 kW | khác: WP2.3D33E200 | hãng: ∅ | 
+  - đổi: genset: "W33-H1 CONTACT" → "W33-H1"
+  - nguồn: `| W33-H1 CONTACT | 33KVA/ 26KW | 30KVA/ 24KW | WP2.3D33E200 | WEICHAI (China) | NIANFENG NF184G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 232 engine `WP2.3D40E200` | tổ máy `W41-H1` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: NIANFENG NF184H | hãng: Weichai | 
+  - đổi: genset: "W41-H1 CONTACT" → "W41-H1"
+  - nguồn: `| W41-H1 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | WP2.3D40E200 | WEICHAI (China) | NIANFENG NF184H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 232 alternator `NIANFENG NF184H` | tổ máy `W41-H1` | prime 38 kVA / 30 kW; standby 41 kVA / 33 kW | khác: WP2.3D40E200 | hãng: ∅ | 
+  - đổi: genset: "W41-H1 CONTACT" → "W41-H1"
+  - nguồn: `| W41-H1 CONTACT | 41KVA/ 33KW | 38KVA/ 30KW | WP2.3D40E200 | WEICHAI (China) | NIANFENG NF184H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 233 engine `WP2.3D48E200` | tổ máy `W50-H1` | prime 45 kVA / 36 kW; standby 50 kVA / 40 kW | khác: NIANFENG NF224D | hãng: Weichai | 
+  - đổi: genset: "W50-H1 CONTACT" → "W50-H1"
+  - nguồn: `| W50-H1 CONTACT | 50KVA/ 40KW | 45KVA/ 36KW | WP2.3D48E200 | WEICHAI (China) | NIANFENG NF224D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 233 alternator `NIANFENG NF224D` | tổ máy `W50-H1` | prime 45 kVA / 36 kW; standby 50 kVA / 40 kW | khác: WP2.3D48E200 | hãng: ∅ | 
+  - đổi: genset: "W50-H1 CONTACT" → "W50-H1"
+  - nguồn: `| W50-H1 CONTACT | 50KVA/ 40KW | 45KVA/ 36KW | WP2.3D48E200 | WEICHAI (China) | NIANFENG NF224D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 234 engine `WP4.1D66E200` | tổ máy `W69-H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: NIANFENG NF224F | hãng: Weichai | 
+  - đổi: genset: "W69-H1 CONTACT" → "W69-H1"
+  - nguồn: `| W69-H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | WP4.1D66E200 | WEICHAI (China) | NIANFENG NF224F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 234 alternator `NIANFENG NF224F` | tổ máy `W69-H1` | prime 63 kVA / 50 kW; standby 69 kVA / 55 kW | khác: WP4.1D66E200 | hãng: ∅ | 
+  - đổi: genset: "W69-H1 CONTACT" → "W69-H1"
+  - nguồn: `| W69-H1 CONTACT | 69KVA/ 55KW | 63KVA/ 50KW | WP4.1D66E200 | WEICHAI (China) | NIANFENG NF224F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 235 engine `WP4.1D80E200` | tổ máy `W88-H1` | prime 80 kVA / 64 kW; standby 88 kVA / 70 kW | khác: NIANFENG NF224G | hãng: Weichai | 
+  - đổi: genset: "W88-H1 CONTACT" → "W88-H1"
+  - nguồn: `| W88-H1 CONTACT | 88KVA/ 70KW | 80KVA/ 64KW | WP4.1D80E200 | WEICHAI (China) | NIANFENG NF224G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 235 alternator `NIANFENG NF224G` | tổ máy `W88-H1` | prime 80 kVA / 64 kW; standby 88 kVA / 70 kW | khác: WP4.1D80E200 | hãng: ∅ | 
+  - đổi: genset: "W88-H1 CONTACT" → "W88-H1"
+  - nguồn: `| W88-H1 CONTACT | 88KVA/ 70KW | 80KVA/ 64KW | WP4.1D80E200 | WEICHAI (China) | NIANFENG NF224G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 236 engine `WP4.1D100E200` | tổ máy `W110-H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: NIANFENG NF274C | hãng: Weichai | 
+  - đổi: genset: "W110-H1 CONTACT" → "W110-H1"
+  - nguồn: `| W110-H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | WP4.1D100E200 | WEICHAI (China) | NIANFENG NF274C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 236 alternator `NIANFENG NF274C` | tổ máy `W110-H1` | prime 100 kVA / 80 kW; standby 110 kVA / 88 kW | khác: WP4.1D100E200 | hãng: ∅ | 
+  - đổi: genset: "W110-H1 CONTACT" → "W110-H1"
+  - nguồn: `| W110-H1 CONTACT | 110KVA/ 88KW | 100KVA/ 80KW | WP4.1D100E200 | WEICHAI (China) | NIANFENG NF274C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 237 engine `WP6D132E200` | tổ máy `W138-H1` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: NIANFENG NF274E | hãng: Weichai | 
+  - đổi: genset: "W138-H1 CONTACT" → "W138-H1"
+  - nguồn: `| W138-H1 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | WP6D132E200 | WEICHAI (China) | NIANFENG NF274E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 237 alternator `NIANFENG NF274E` | tổ máy `W138-H1` | prime 125 kVA / 100 kW; standby 138 kVA / 110 kW | khác: WP6D132E200 | hãng: ∅ | 
+  - đổi: genset: "W138-H1 CONTACT" → "W138-H1"
+  - nguồn: `| W138-H1 CONTACT | 138KVA/ 110KW | 125KVA/ 100KW | WP6D132E200 | WEICHAI (China) | NIANFENG NF274E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 238 engine `WP6D152E200` | tổ máy `W165-H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: NIANFENG NF274FS | hãng: Weichai | 
+  - đổi: genset: "W165-H1 CONTACT" → "W165-H1"
+  - nguồn: `| W165-H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | WP6D152E200 | WEICHAI (China) | NIANFENG NF274FS | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 238 alternator `NIANFENG NF274FS` | tổ máy `W165-H1` | prime 150 kVA / 120 kW; standby 165 kVA / 132 kW | khác: WP6D152E200 | hãng: ∅ | 
+  - đổi: genset: "W165-H1 CONTACT" → "W165-H1"
+  - nguồn: `| W165-H1 CONTACT | 165KVA/ 132KW | 150KVA/ 120KW | WP6D152E200 | WEICHAI (China) | NIANFENG NF274FS | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 239 engine `WP10D200E200` | tổ máy `W220-H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: NIANFENG NF274H | hãng: Weichai | 
+  - đổi: genset: "W220-H1 CONTACT" → "W220-H1"
+  - nguồn: `| W220-H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | WP10D200E200 | WEICHAI (China) | NIANFENG NF274H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 239 alternator `NIANFENG NF274H` | tổ máy `W220-H1` | prime 200 kVA / 160 kW; standby 220 kVA / 176 kW | khác: WP10D200E200 | hãng: ∅ | 
+  - đổi: genset: "W220-H1 CONTACT" → "W220-H1"
+  - nguồn: `| W220-H1 CONTACT | 220KVA/ 176KW | 200KVA/ 160KW | WP10D200E200 | WEICHAI (China) | NIANFENG NF274H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 240 engine `WP10D238E200` | tổ máy `W250-H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: NIANFENG NF274J | hãng: Weichai | 
+  - đổi: genset: "W250-H1 CONTACT" → "W250-H1"
+  - nguồn: `| W250-H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | WP10D238E200 | WEICHAI (China) | NIANFENG NF274J | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 240 alternator `NIANFENG NF274J` | tổ máy `W250-H1` | prime 225 kVA / 180 kW; standby 250 kVA / 200 kW | khác: WP10D238E200 | hãng: ∅ | 
+  - đổi: genset: "W250-H1 CONTACT" → "W250-H1"
+  - nguồn: `| W250-H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | WP10D238E200 | WEICHAI (China) | NIANFENG NF274J | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 241 engine `WP10D264E200` | tổ máy `W275-H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: NIANFENG NF274K | hãng: Weichai | 
+  - đổi: genset: "W275-H1 CONTACT" → "W275-H1"
+  - nguồn: `| W275-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | WP10D264E200 | WEICHAI (China) | NIANFENG NF274K | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 241 alternator `NIANFENG NF274K` | tổ máy `W275-H1` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: WP10D264E200 | hãng: ∅ | 
+  - đổi: genset: "W275-H1 CONTACT" → "W275-H1"
+  - nguồn: `| W275-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | WP10D264E200 | WEICHAI (China) | NIANFENG NF274K | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 242 engine `WP10D320E200` | tổ máy `W344-H1` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: NIANFENG NF314E | hãng: Weichai | 
+  - đổi: genset: "W344-H1 CONTACT" → "W344-H1"
+  - nguồn: `| W344-H1 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | WP10D320E200 | WEICHAI (China) | NIANFENG NF314E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 242 alternator `NIANFENG NF314E` | tổ máy `W344-H1` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: WP10D320E200 | hãng: ∅ | 
+  - đổi: genset: "W344-H1 CONTACT" → "W344-H1"
+  - nguồn: `| W344-H1 CONTACT | 344KVA/ 275KW | 313KVA/ 250KW | WP10D320E200 | WEICHAI (China) | NIANFENG NF314E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 243 engine `WP12D353E200` | tổ máy `W413-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: NIANFENG NF314E | hãng: Weichai | 
+  - đổi: genset: "W413-H1 CONTACT" → "W413-H1"
+  - nguồn: `| W413-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | WP12D353E200 | WEICHAI (China) | NIANFENG NF314E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 243 alternator `NIANFENG NF314E` | tổ máy `W413-H1` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: WP12D353E200 | hãng: ∅ | 
+  - đổi: genset: "W413-H1 CONTACT" → "W413-H1"
+  - nguồn: `| W413-H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | WP12D353E200 | WEICHAI (China) | NIANFENG NF314E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 244 engine `WP13D385E200` | tổ máy `W438-H1` | prime 400 kVA / 320 kW; standby 438 kVA / 350 kW | khác: NIANFENG NF314H | hãng: Weichai | 
+  - đổi: genset: "W438-H1 CONTACT" → "W438-H1"
+  - nguồn: `| W438-H1 CONTACT | 438KVA/ 350KW | 400KVA/ 320KW | WP13D385E200 | WEICHAI (China) | NIANFENG NF314H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 244 alternator `NIANFENG NF314H` | tổ máy `W438-H1` | prime 400 kVA / 320 kW; standby 438 kVA / 350 kW | khác: WP13D385E200 | hãng: ∅ | 
+  - đổi: genset: "W438-H1 CONTACT" → "W438-H1"
+  - nguồn: `| W438-H1 CONTACT | 438KVA/ 350KW | 400KVA/ 320KW | WP13D385E200 | WEICHAI (China) | NIANFENG NF314H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 245 engine `WP13D440E310` | tổ máy `W500-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: NIANFENG NF314J | hãng: Weichai | 
+  - đổi: genset: "W500-H1 CONTACT" → "W500-H1"
+  - nguồn: `| W500-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | WP13D440E310 | WEICHAI (China) | NIANFENG NF314J | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 245 alternator `NIANFENG NF314J` | tổ máy `W500-H1` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: WP13D440E310 | hãng: ∅ | 
+  - đổi: genset: "W500-H1 CONTACT" → "W500-H1"
+  - nguồn: `| W500-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | WP13D440E310 | WEICHAI (China) | NIANFENG NF314J | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 246 engine `WP13D490E310` | tổ máy `W550-H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: NIANFENG NF354D | hãng: Weichai | 
+  - đổi: genset: "W550-H1 CONTACT" → "W550-H1"
+  - nguồn: `| W550-H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | WP13D490E310 | WEICHAI (China) | NIANFENG NF354D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 246 alternator `NIANFENG NF354D` | tổ máy `W550-H1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: WP13D490E310 | hãng: ∅ | 
+  - đổi: genset: "W550-H1 CONTACT" → "W550-H1"
+  - nguồn: `| W550-H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | WP13D490E310 | WEICHAI (China) | NIANFENG NF354D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 247 engine `6M33D633E200` | tổ máy `W688-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: NIANFENG NF354F | hãng: Weichai | 
+  - đổi: genset: "W688-H1 CONTACT" → "W688-H1"
+  - nguồn: `| W688-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | 6M33D633E200 | WEICHAI (China) | NIANFENG NF354F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 247 alternator `NIANFENG NF354F` | tổ máy `W688-H1` | prime 625 kVA / 500 kW; standby 688 kVA / 550 kW | khác: 6M33D633E200 | hãng: ∅ | 
+  - đổi: genset: "W688-H1 CONTACT" → "W688-H1"
+  - nguồn: `| W688-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | 6M33D633E200 | WEICHAI (China) | NIANFENG NF354F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 248 engine `6M33D670E200` | tổ máy `W750-H1` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: NIANFENG NF354H | hãng: Weichai | 
+  - đổi: genset: "W750-H1 CONTACT" → "W750-H1"
+  - nguồn: `| W750-H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | 6M33D670E200 | WEICHAI (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 248 alternator `NIANFENG NF354H` | tổ máy `W750-H1` | prime 688 kVA / 550 kW; standby 750 kVA / 600 kW | khác: 6M33D670E200 | hãng: ∅ | 
+  - đổi: genset: "W750-H1 CONTACT" → "W750-H1"
+  - nguồn: `| W750-H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | 6M33D670E200 | WEICHAI (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 249 engine `6M33D725E310` | tổ máy `W825-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 600 kW | khác: NIANFENG NF354H | hãng: Weichai |  | ⚠ standby kW/kVA=0.73
+  - đổi: genset: "W825-H1 CONTACT" → "W825-H1"
+  - nguồn: `| W825-H1 CONTACT | 825KVA/ 600KW | 750KVA/ 600KW | 6M33D725E310 | WEICHAI (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 249 alternator `NIANFENG NF354H` | tổ máy `W825-H1` | prime 750 kVA / 600 kW; standby 825 kVA / 600 kW | khác: 6M33D725E310 | hãng: ∅ |  | ⚠ standby kW/kVA=0.73
+  - đổi: genset: "W825-H1 CONTACT" → "W825-H1"
+  - nguồn: `| W825-H1 CONTACT | 825KVA/ 600KW | 750KVA/ 600KW | 6M33D725E310 | WEICHAI (China) | NIANFENG NF354H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 250 engine `8M33D800E200` | tổ máy `W888-H1` | prime 800 kVA / 640 kW; standby 888 kVA / 710 kW | khác: NIANFENG NF404C | hãng: Weichai | 
+  - đổi: genset: "W888-H1 CONTACT" → "W888-H1"
+  - nguồn: `| W888-H1 CONTACT | 888KVA/ 710KW | 800KVA/ 640KW | 8M33D800E200 | WEICHAI (China) | NIANFENG NF404C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 250 alternator `NIANFENG NF404C` | tổ máy `W888-H1` | prime 800 kVA / 640 kW; standby 888 kVA / 710 kW | khác: 8M33D800E200 | hãng: ∅ | 
+  - đổi: genset: "W888-H1 CONTACT" → "W888-H1"
+  - nguồn: `| W888-H1 CONTACT | 888KVA/ 710KW | 800KVA/ 640KW | 8M33D800E200 | WEICHAI (China) | NIANFENG NF404C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 251 engine `8M33D890E200` | tổ máy `W1000-H1` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: NIANFENG NF404D | hãng: Weichai | 
+  - đổi: genset: "W1000-H1 CONTACT" → "W1000-H1"
+  - nguồn: `| W1000-H1 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | 8M33D890E200 | WEICHAI (China) | NIANFENG NF404D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 251 alternator `NIANFENG NF404D` | tổ máy `W1000-H1` | prime 900 kVA / 720 kW; standby 1000 kVA / 800 kW | khác: 8M33D890E200 | hãng: ∅ | 
+  - đổi: genset: "W1000-H1 CONTACT" → "W1000-H1"
+  - nguồn: `| W1000-H1 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | 8M33D890E200 | WEICHAI (China) | NIANFENG NF404D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 252 engine `8M33D975E310` | tổ máy `W1100-H1` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: NIANFENG NF404E | hãng: Weichai | 
+  - đổi: genset: "W1100-H1 CONTACT" → "W1100-H1"
+  - nguồn: `| W1100-H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | 8M33D975E310 | WEICHAI (China) | NIANFENG NF404E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 252 alternator `NIANFENG NF404E` | tổ máy `W1100-H1` | prime 1000 kVA / 800 kW; standby 1100 kVA / 880 kW | khác: 8M33D975E310 | hãng: ∅ | 
+  - đổi: genset: "W1100-H1 CONTACT" → "W1100-H1"
+  - nguồn: `| W1100-H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | 8M33D975E310 | WEICHAI (China) | NIANFENG NF404E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 253 engine `12M33D1108E200` | tổ máy `W1250-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: NIANFENG NF404F | hãng: Weichai | 
+  - đổi: genset: "W1250-H1 CONTACT" → "W1250-H1"
+  - nguồn: `| W1250-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | 12M33D1108E200 | WEICHAI (China) | NIANFENG NF404F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 253 alternator `NIANFENG NF404F` | tổ máy `W1250-H1` | prime 1125 kVA / 900 kW; standby 1250 kVA / 1000 kW | khác: 12M33D1108E200 | hãng: ∅ | 
+  - đổi: genset: "W1250-H1 CONTACT" → "W1250-H1"
+  - nguồn: `| W1250-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | 12M33D1108E200 | WEICHAI (China) | NIANFENG NF404F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 254 engine `12M33D1210E200` | tổ máy `W1375V1-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: NIANFENG NF404G | hãng: Weichai | 
+  - đổi: genset: "W1375V1-H1 CONTACT" → "W1375V1-H1"
+  - nguồn: `| W1375V1-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | 12M33D1210E200 | WEICHAI (China) | NIANFENG NF404G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 254 alternator `NIANFENG NF404G` | tổ máy `W1375V1-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: 12M33D1210E200 | hãng: ∅ | 
+  - đổi: genset: "W1375V1-H1 CONTACT" → "W1375V1-H1"
+  - nguồn: `| W1375V1-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | 12M33D1210E200 | WEICHAI (China) | NIANFENG NF404G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 255 engine `12M33D1240E310` | tổ máy `W1375V2-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: NIANFENG NF404G | hãng: Weichai | 
+  - đổi: genset: "W1375V2-H1 CONTACT" → "W1375V2-H1"
+  - nguồn: `| W1375V2-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | 12M33D1240E310 | WEICHAI (China) | NIANFENG NF404G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 255 alternator `NIANFENG NF404G` | tổ máy `W1375V2-H1` | prime 1250 kVA / 1000 kW; standby 1375 kVA / 1100 kW | khác: 12M33D1240E310 | hãng: ∅ | 
+  - đổi: genset: "W1375V2-H1 CONTACT" → "W1375V2-H1"
+  - nguồn: `| W1375V2-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | 12M33D1240E310 | WEICHAI (China) | NIANFENG NF404G | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 256 engine `12M33D1320E200` | tổ máy `W1500V1-H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: NIANFENG NF404H | hãng: Weichai | 
+  - đổi: genset: "W1500V1-H1 CONTACT" → "W1500V1-H1"
+  - nguồn: `| W1500V1-H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | 12M33D1320E200 | WEICHAI (China) | NIANFENG NF404H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 256 alternator `NIANFENG NF404H` | tổ máy `W1500V1-H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: 12M33D1320E200 | hãng: ∅ | 
+  - đổi: genset: "W1500V1-H1 CONTACT" → "W1500V1-H1"
+  - nguồn: `| W1500V1-H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | 12M33D1320E200 | WEICHAI (China) | NIANFENG NF404H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 257 engine `12M33D1320E310` | tổ máy `W1500V2-H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: NIANFENG NF404H | hãng: Weichai | 
+  - đổi: genset: "W1500V2-H1 CONTACT" → "W1500V2-H1"
+  - nguồn: `| W1500V2-H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | 12M33D1320E310 | WEICHAI (China) | NIANFENG NF404H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 257 alternator `NIANFENG NF404H` | tổ máy `W1500V2-H1` | prime 1375 kVA / 1100 kW; standby 1500 kVA / 1200 kW | khác: 12M33D1320E310 | hãng: ∅ | 
+  - đổi: genset: "W1500V2-H1 CONTACT" → "W1500V2-H1"
+  - nguồn: `| W1500V2-H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | 12M33D1320E310 | WEICHAI (China) | NIANFENG NF404H | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 258 engine `12M33D1500E310` | tổ máy `W1650-H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: NIANFENG NF454C | hãng: Weichai | 
+  - đổi: genset: "W1650-H1 CONTACT" → "W1650-H1"
+  - nguồn: `| W1650-H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | 12M33D1500E310 | WEICHAI (China) | NIANFENG NF454C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 258 alternator `NIANFENG NF454C` | tổ máy `W1650-H1` | prime 1500 kVA / 1200 kW; standby 1650 kVA / 1320 kW | khác: 12M33D1500E310 | hãng: ∅ | 
+  - đổi: genset: "W1650-H1 CONTACT" → "W1650-H1"
+  - nguồn: `| W1650-H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | 12M33D1500E310 | WEICHAI (China) | NIANFENG NF454C | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 259 engine `16M33D1580E310` | tổ máy `W1825-H1` | prime 1650 kVA / 1320 kW; standby 1825 kVA / 1460 kW | khác: NIANFENG NF454D | hãng: Weichai | 
+  - đổi: genset: "W1825-H1 CONTACT" → "W1825-H1"
+  - nguồn: `| W1825-H1 CONTACT | 1825KVA/ 1460KW | 1650KVA/ 1320KW | 16M33D1580E310 | WEICHAI (China) | NIANFENG NF454D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 259 alternator `NIANFENG NF454D` | tổ máy `W1825-H1` | prime 1650 kVA / 1320 kW; standby 1825 kVA / 1460 kW | khác: 16M33D1580E310 | hãng: ∅ | 
+  - đổi: genset: "W1825-H1 CONTACT" → "W1825-H1"
+  - nguồn: `| W1825-H1 CONTACT | 1825KVA/ 1460KW | 1650KVA/ 1320KW | 16M33D1580E310 | WEICHAI (China) | NIANFENG NF454D | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 260 engine `16M33D1680E310` | tổ máy `W1900-H1` | prime 1750 kVA / 1400 kW; standby 1900 kVA / 1520 kW | khác: NIANFENG NF454E | hãng: Weichai | 
+  - đổi: genset: "W1900-H1 CONTACT" → "W1900-H1"
+  - nguồn: `| W1900-H1 CONTACT | 1900KVA/ 1520KW | 1750KVA/ 1400KW | 16M33D1680E310 | WEICHAI (China) | NIANFENG NF454E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 260 alternator `NIANFENG NF454E` | tổ máy `W1900-H1` | prime 1750 kVA / 1400 kW; standby 1900 kVA / 1520 kW | khác: 16M33D1680E310 | hãng: ∅ | 
+  - đổi: genset: "W1900-H1 CONTACT" → "W1900-H1"
+  - nguồn: `| W1900-H1 CONTACT | 1900KVA/ 1520KW | 1750KVA/ 1400KW | 16M33D1680E310 | WEICHAI (China) | NIANFENG NF454E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 261 engine `16M33D1800E310` | tổ máy `W2063-H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: NIANFENG NF454E | hãng: Weichai | 
+  - đổi: genset: "W2063-H1 CONTACT" → "W2063-H1"
+  - nguồn: `| W2063-H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | 16M33D1800E310 | WEICHAI (China) | NIANFENG NF454E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 261 alternator `NIANFENG NF454E` | tổ máy `W2063-H1` | prime 1875 kVA / 1500 kW; standby 2063 kVA / 1650 kW | khác: 16M33D1800E310 | hãng: ∅ | 
+  - đổi: genset: "W2063-H1 CONTACT" → "W2063-H1"
+  - nguồn: `| W2063-H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | 16M33D1800E310 | WEICHAI (China) | NIANFENG NF454E | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 262 engine `16M33D1980E310` | tổ máy `W2200-H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: NIANFENG NF454F | hãng: Weichai | 
+  - đổi: genset: "W2200-H1 CONTACT" → "W2200-H1"
+  - nguồn: `| W2200-H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | 16M33D1980E310 | WEICHAI (China) | NIANFENG NF454F | Click Here | Download`
+- **ĐỔI** n108 b7 dòng 262 alternator `NIANFENG NF454F` | tổ máy `W2200-H1` | prime 2000 kVA / 1600 kW; standby 2200 kVA / 1760 kW | khác: 16M33D1980E310 | hãng: ∅ | 
+  - đổi: genset: "W2200-H1 CONTACT" → "W2200-H1"
+  - nguồn: `| W2200-H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | 16M33D1980E310 | WEICHAI (China) | NIANFENG NF454F | Click Here | Download`
 
 ## fukangsi-yangzhou (mới 0, mất 0, đổi 366)
 
