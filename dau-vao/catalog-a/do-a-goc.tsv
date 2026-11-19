@@ -1,0 +1,497 @@
+ncc	n	bang	hdong	da_doc	dong
+agg-fuzhou	115	14	1	0	| DC330G6-NG | 330/264 | LYX15H-G350 | AGG
+agg-fuzhou	116	15	1	0	| CU1375G6-NG | 1375/1100 | K50N-G11SH | Cummins
+agg-fuzhou	116	15	2	0	| CU1250G6-NG | 1250/1000 | K50N-G10S | Cummins
+agg-fuzhou	116	15	3	0	| CU1125G6-NG | 1125/900 | K50N-G9S | Cummins
+agg-fuzhou	116	15	4	0	| CU1000G6-NG | 1000/800 | K38N-G8S | Cummins
+agg-fuzhou	116	15	5	0	| CU875G6-NG | 875/700 | K38N-G7S | Cummins
+agg-fuzhou	116	15	6	0	| CU750G6-NG | 750/600 | K38N-G6S | Cummins
+agg-fuzhou	116	15	7	0	| CU625G6-NG | 625/500 | K38N-G5S | Cummins
+agg-fuzhou	116	15	8	0	| CU500G6-NG | 500/400 | K19N-G4S | Cummins
+agg-fuzhou	116	15	9	0	| CU438G6-NG | 437.5/350 | K19N-G3S | Cummins
+aosif	1065	148	2	0	| Cranking Motor Voltage | DC24V
+baifa-power	101	1	2	0	| BF-V770-T2 | 770 | 700 | VOLVO | TWD1645GE | EMS2 / ECU | S5L1D-G4 | STAGE II /TIER 2 | SWEDEN
+baifa-power	101	1	4	0	| BF-C825Q-T2 | 825 | 750 | CUMMINS | QSK23-G8 | | S5L1D-H41 | TIER 2/ CHINA STAGE3 | INDIA
+baifa-power	101	1	5	0	| BF-C900Q-T2 | 900 | 810 | QSK23-G9 | | S6L1D-C4 | TIER 2/ CHINA STAGE3 | INDIA
+baifa-power	101	1	6	0	| BF-P895-T2 | 895 | 813 | PERKINS | 2806C-E18TTAG6 | | S6L1D-C4 | TIER 2 | USA
+baifa-power	101	1	7	0	| BF-P938-T2 | 938 | 850 | 2806C-E18TTAG7 | | S6L1D-C4 | TIER 2 | UK
+baifa-power	101	1	13	0	| BF-C1100Q-T2 | 1100 | 1000 | CUMMINS | QST30-G4 | | S6L1D-E4 | TIER 2/ CHINA STAGE3 | USA
+baifa-power	101	1	14	0	| BF-C1100Q-T2 | 1100 | 1000 | QSK38-G10 | | S6L1D-E4 | TIER 2/ CHINA STAGE3 | CHINA
+baifa-power	101	1	15	0	| BF-C1250Q-T2 | 1250 | 1135 | QSK38-G2 | | S6L1D-F4 | TIER 2/ CHINA STAGE3 | UK
+baifa-power	101	1	16	0	| BF-C1400Q-T2 | 1400 | 1275 | QSK38-G3 | | S6L1D-G4 | TIER 2/ CHINA STAGE3 | UK
+baifa-power	101	1	17	0	| BF-C1400Q-T2 | 1400 | 1275 | QSK38-G5 | | S6L1D-G4 | TIER 2/ CHINA STAGE3 | UK
+baifa-power	101	1	18	0	| BF-C1400Q-T2 | 1400 | 1275 | QSK50-G2 | | S6L1D-G4 | TIER 2/ CHINA STAGE3 | TBA
+baifa-power	101	1	19	0	| BF-C1540Q-T2 | 1540 | 1400 | QSK50-G3 | | S6L1D-H4 | TIER 2/ CHINA STAGE3 | UK/ CCEC
+baifa-power	101	1	20	0	| BF-C1700Q-T2 | 1700 | 1540 | QSK50-G4 | | S7L1D-C4 | TIER 2/ CHINA STAGE3 | UK/ CCEC
+baifa-power	101	1	21	0	| BF-C1825Q-T2 | 1825 | 1650 | QSK50-G7 | | S7L1D-D4 | TIER 2/ CHINA STAGE3 | UK/ CCEC
+baifa-power	101	1	22	0	| BF-C1875Q-T2 | 1875 | 1713 | QSK50-G13 | | S7L1D-E41 | TIER 2/ CHINA STAGE3 | UK/ CCEC
+baifa-power	101	1	23	0	| BF-C1875Q-T2 | 1875 | 1750 | QSK50-G19 | | S7L1D-E41 | TIER 2 | TBA
+baifa-power	101	1	24	0	| BF-C2000Q-T2 | 2000 | 1875 | QSK50-G20 | | S7L1D-F41 | TIER 2 | TBA
+baifa-power	101	1	25	0	| BF-C2250Q-T2 | 2250 | 2000 | QSK50-G21 | | S7L1D-G41 | TIER 2 | TBA
+baifa-power	101	1	26	0	| BF-C1875Q-T2 | 1875 | 1700 | QSK60-G10 | | S7L1D-E41 | TIER 2/ CHINA STAGE3 | TBA
+baifa-power	101	1	27	0	| BF-C2250-T2 | 2250 | 2000 | QSK60-G11 | | S7L1D-G41 | TIER 2/ CHINA STAGE3 | UK
+baifa-power	101	1	28	0	| BF-C2000Q-T2 | 2000 | 1825 | QSK60-G12 | | S7L1D-F41 | TIER 2/ CHINA STAGE3 | UK
+baifa-power	101	1	29	0	| BF-C2500Q-T2 | 2500 | 2000 | QSK60-G18 | | S7L1D-G41 | TIER 2/ CHINA STAGE3 | UK
+baifa-power	101	1	30	0	| BF-C2500Q-T2 | 2500 | 2250 | QSK60-G21 | | S7L1D-H41 | TIER 2/ CHINA STAGE3 | UK
+baifa-power	101	1	31	0	| BF-C2750Q-T2 | 2750 | 2500 | QSK60-G23 | | S7L1D-J41 | TIER 2/ CHINA STAGE3 | UK/ CCEC
+baifa-power	101	1	32	0	| BF-C3000Q-T2 | 3000 | 2750 | QSK78-G15 | | LSA52.3 UL16 | TIER 2/ CHINA STAGE3 | UK
+baifa-power	101	3	2	0	| BF-C28Q-3 | 28 | 25 | CUMMINS (CHINA) | QSB3.9-G31 | ECM | S0L2-M1 | Stage IIIA / CHINA STAGE3 | CHINA
+baifa-power	101	3	3	0	| BF-C40Q-3 | 44 | 40 | QSB3.9-G33 | ECM | S1L2-K1 | Stage IIIA / CHINA STAGE3 | CHINA
+baifa-power	101	3	4	0	| BF-C70Q-3 | 70 | 64 | QSB3.9-G35 | ECM | S1L2-Y1 | Stage IIIA / CHINA STAGE3 | CHINA
+baifa-power	101	3	5	0	| BF-C95Q-3 | 94 | 85 | QSB3.9-G37 | ECM | UCI 224G1 | Stage IIIA / CHINA STAGE4 | CHINA
+baifa-power	101	3	6	0	| BF-C110Q-3 | 110 | 100 | QSB3.9-G39 | ECM | UCI 274C1 | Stage IIIA / CHINA STAGE5 | CHINA
+baifa-power	101	3	7	0	| BF-C125Q-3 | 125 | 115 | QSB5.9-G30 | ECM | UCI 274D1 | Stage IIIA / CHINA STAGE6 | CHINA
+baifa-power	101	3	8	0	| BF-C140Q-3 | 138 | 125 | QSB5.9-G31 | ECM | UCI 274ES1 | Stage IIIA / CHINA STAGE7 | CHINA
+baifa-power	101	3	9	0	| BF-C165Q-3 | 165 | 150 | QSB5.9-G33 | ECM | UCI 274F1 | Stage IIIA / CHINA STAGE8 | CHINA
+baifa-power	101	3	10	0	| BF-C200Q-3 | 200 | 182 | QSB6.7-G32 | ECM | UCI 274G1 | Stage IIIA / CHINA STAGE9 | CHINA
+baifa-power	101	3	11	0	| BF-C206Q-3 | 206 | 188 | QSB6.7-G32 | ECM | UCI 274H1 | Stage IIIA / CHINA STAGE10 | CHINA
+baifa-power	101	3	12	0	| BF-C220Q-3 | 220 | 200 | QSB6.7-G31 | ECM | UCDI 274H1 | Stage IIIA / CHINA STAGE11 | CHINA
+baifa-power	101	3	13	0	| BF-C250Q-3 | 250 | 230 | QSB6.7-G31 | ECM | UCDI 274J1 | Stage IIIA / CHINA STAGE12 | CHINA
+baifa-power	101	3	14	0	| BF-C275Q-3 | 275 | 250 | QSL8.9-G4 | ECM | UCDI 274K1 | Stage IIIA / CHINA STAGE13 | CHINA
+baifa-power	101	3	15	0	| BF-C315DQ-3 | 315 | 290 | QSL8.9-G33 | ECM | S4L1S-D41 | Stage IIIA / CHINA STAGE14 | CHINA
+baifa-power	101	3	16	0	| BF-C350DQ-3 | 340 | 310 | QSL8.9-G30 | ECM | S4L1S-D41 | Stage IIIA / CHINA STAGE15 | CHINA
+baifa-power	101	3	17	0	| BF-C360DQ-3 | 350 | 320 | QSL8.9-G30 | ECM | S4L1S-E41 | Stage IIIA / CHINA STAGE16 | CHINA
+baifa-power	101	3	18	0	| BF-C400Q-3 | 400 | 360 | QSZ13-G6 | ECM | S4L1D-E41 | Stage IIIA / CHINA STAGE17 | CHINA
+baifa-power	101	3	19	0	| BF-C450Q-3 | 450 | 400 | QSZ13-G7 | ECM | S4L1D-F41 | Stage IIIA / CHINA STAGE18 | CHINA
+baifa-power	101	3	20	0	| BF-C440Q-3 | 438 | 400 | CUMMINS (CHINA) | QSNT-G3 | | VARIOUS | CHINA STAGE3 | CHINA
+baifa-power	101	3	21	0	| BF-C500Q-3 | 500 | 450 | QSNT-G4X | | CHINA STAGE3 | CHINA
+baifa-power	101	3	22	0	| BF-C500Q-3 | 500 | 450 | QSNT-G4X | | CHINA STAGE3 | CHINA
+baifa-power	101	3	23	0	| BF-C500Q-3 | 500 | 450 | QSK19-G14 | | CHINA STAGE3 | CHINA
+baifa-power	101	3	24	0	| BF-C560Q-3 | 563 | 500 | QSK19-G13 | | CHINA STAGE3 | CHINA
+baifa-power	101	3	25	0	| BF-C630Q-3 | 631 | 575 | QSK19-G12 | | CHINA STAGE3 | CHINA
+baifa-power	101	3	26	0	| BF-C650Q-3 | 650 | 588 | QSK19-G6 | | CHINA STAGE3 | CHINA
+baifa-power	101	3	27	0	| BF-C713Q-3 | 713 | 650 | QSK19-G4 | | CHINA STAGE3 | CHINA
+baifa-power	101	3	28	0	| BF-C750Q-3 | 750 | 688 | QSK19-G11 | | CHINA STAGE3 | CHINA
+baifa-power	101	3	29	0	| BF-C500Q-3 | 500 | 455 | QSK19-G15 | | CHINA STAGE3 | CHINA
+baifa-power	101	3	30	0	| BF-C550Q-3 | 550 | 500 | QSK19-G16 | | CHINA STAGE3 | CHINA
+baifa-power	103	5	2	0	| BF-C28Q-3 | 28 | 25 | CUMMINS (CHINA) | QSB3.9-G31 | ECM | S0L2-M1 | Stage IIIA / CHINA STAGE3 | CHINA
+baifa-power	103	5	3	0	| BF-C40Q-3 | 44 | 40 | QSB3.9-G33 | ECM | S1L2-K1 | Stage IIIA / CHINA STAGE3 | CHINA
+baifa-power	103	5	4	0	| BF-C70Q-3 | 70 | 64 | QSB3.9-G35 | ECM | S1L2-Y1 | Stage IIIA / CHINA STAGE3 | CHINA
+baifa-power	103	5	5	0	| BF-C95Q-3 | 94 | 85 | QSB3.9-G37 | ECM | UCI 224G1 | Stage IIIA / CHINA STAGE4 | CHINA
+baifa-power	103	5	6	0	| BF-C110Q-3 | 110 | 100 | QSB3.9-G39 | ECM | UCI 274C1 | Stage IIIA / CHINA STAGE5 | CHINA
+baifa-power	103	5	7	0	| BF-C125Q-3 | 125 | 115 | QSB5.9-G30 | ECM | UCI 274D1 | Stage IIIA / CHINA STAGE6 | CHINA
+baifa-power	103	5	8	0	| BF-C140Q-3 | 138 | 125 | QSB5.9-G31 | ECM | UCI 274ES1 | Stage IIIA / CHINA STAGE7 | CHINA
+baifa-power	103	5	9	0	| BF-C165Q-3 | 165 | 150 | QSB5.9-G33 | ECM | UCI 274F1 | Stage IIIA / CHINA STAGE8 | CHINA
+baifa-power	103	5	10	0	| BF-C200Q-3 | 200 | 182 | QSB6.7-G32 | ECM | UCI 274G1 | Stage IIIA / CHINA STAGE9 | CHINA
+baifa-power	103	5	11	0	| BF-C206Q-3 | 206 | 188 | QSB6.7-G32 | ECM | UCI 274H1 | Stage IIIA / CHINA STAGE10 | CHINA
+baifa-power	103	5	12	0	| BF-C220Q-3 | 220 | 200 | QSB6.7-G31 | ECM | UCDI 274H1 | Stage IIIA / CHINA STAGE11 | CHINA
+baifa-power	103	5	13	0	| BF-C250Q-3 | 250 | 230 | QSB6.7-G31 | ECM | UCDI 274J1 | Stage IIIA / CHINA STAGE12 | CHINA
+baifa-power	103	5	14	0	| BF-C275Q-3 | 275 | 250 | QSL8.9-G4 | ECM | UCDI 274K1 | Stage IIIA / CHINA STAGE13 | CHINA
+baifa-power	103	5	15	0	| BF-C315DQ-3 | 315 | 290 | QSL8.9-G33 | ECM | S4L1S-D41 | Stage IIIA / CHINA STAGE14 | CHINA
+baifa-power	103	5	16	0	| BF-C350DQ-3 | 340 | 310 | QSL8.9-G30 | ECM | S4L1S-D41 | Stage IIIA / CHINA STAGE15 | CHINA
+baifa-power	103	5	17	0	| BF-C360DQ-3 | 350 | 320 | QSL8.9-G30 | ECM | S4L1S-E41 | Stage IIIA / CHINA STAGE16 | CHINA
+baifa-power	103	5	18	0	| BF-C400Q-3 | 400 | 360 | QSZ13-G6 | ECM | S4L1D-E41 | Stage IIIA / CHINA STAGE17 | CHINA
+baifa-power	103	5	19	0	| BF-C450Q-3 | 450 | 400 | QSZ13-G7 | ECM | S4L1D-F41 | Stage IIIA / CHINA STAGE18 | CHINA
+baifa-power	103	5	20	0	| BF-C440Q-3 | 438 | 400 | CUMMINS (CHINA) | QSNT-G3 | | VARIOUS | CHINA STAGE3 | CHINA
+baifa-power	103	5	21	0	| BF-C500Q-3 | 500 | 450 | QSNT-G4X | | CHINA STAGE3 | CHINA
+baifa-power	103	5	22	0	| BF-C500Q-3 | 500 | 450 | QSNT-G4X | | CHINA STAGE3 | CHINA
+baifa-power	103	5	23	0	| BF-C500Q-3 | 500 | 450 | QSK19-G14 | | CHINA STAGE3 | CHINA
+baifa-power	103	5	24	0	| BF-C560Q-3 | 563 | 500 | QSK19-G13 | | CHINA STAGE3 | CHINA
+baifa-power	103	5	25	0	| BF-C630Q-3 | 631 | 575 | QSK19-G12 | | CHINA STAGE3 | CHINA
+baifa-power	103	5	26	0	| BF-C650Q-3 | 650 | 588 | QSK19-G6 | | CHINA STAGE3 | CHINA
+baifa-power	103	5	27	0	| BF-C713Q-3 | 713 | 650 | QSK19-G4 | | CHINA STAGE3 | CHINA
+baifa-power	103	5	28	0	| BF-C750Q-3 | 750 | 688 | QSK19-G11 | | CHINA STAGE3 | CHINA
+baifa-power	103	5	29	0	| BF-C500Q-3 | 500 | 455 | QSK19-G15 | | CHINA STAGE3 | CHINA
+baifa-power	103	5	30	0	| BF-C550Q-3 | 550 | 500 | QSK19-G16 | | CHINA STAGE3 | CHINA
+baifa-power	106	8	2	0	| BF-V900TWIN-T2 | 900 | 820 | VOLVO PENTA | 2*TAD1344GE | EMS2 / ECU | 2*S4L1D-F41 | ISO 20'ft HC
+baifa-power	106	8	3	0	| BF-V1000TWIN-T2 | 1000 | 900 | 2*TAD1345GE | EMS2 / ECU | 2*S4L1D-G41 | ISO 20'ft HC
+baifa-power	106	8	4	0	| BF-V1100TWIN-T2 | 1100 | 1000 | 2*TAD1346GE | EMS2 / ECU | 2*S5L1D-C41 | ISO 20'ft HC
+baifa-power	106	8	5	0	| BF-V1320TWIN-T2 | 1320 | 1200 | 2*TAD1642GE | EMS2 / ECU | 2*S5L1D-E41 | ISO 20'ft HC
+baifa-power	106	8	6	0	| BF-V1375TWIN-T2 | 1376 | 1250 | 2*TWD1644GE | EMS2 / ECU | 2*S5L1D-E41 | ISO 20'ft HC
+baifa-power	106	8	7	0	| BF-V1440TWIN-T2 | 1440 | 1300 | 2*TWD1644GE | EMS2 / ECU | 2*S5L1D-F41 | ISO 20'ft HC
+baifa-power	106	8	8	0	| BF-V1540TWIN-T2 | 1540 | 1400 | 2*TWD1645GE | EMS2 / ECU | 2*S5L1D-G4 | ISO 20'ft HC
+camda-generator	126	27	1	0	| Cycle | 4 Stroke | Standby | 575
+elitech-power	1001	78	1	0	| EPS18DZA-3 | Deutz | 18kVA | 20kVA | BFM3 G1 | 50Hz | 3-Phase | DOWNLOAD PDF | eps18dza-3-deutz-18kva-diesel-generator-specs
+elitech-power	1001	78	2	0	| EPS20DZA-3 | Deutz | 20kVA | 24kVA | BFM3 G1 | 50Hz | 3-Phase | DOWNLOAD PDF | eps20dza-3-deutz-20kva-diesel-generator-specs
+elitech-power	1001	78	3	0	| EPS28DZA-3 | Deutz | 28kVA | 30kVA | BFM3 G2 | 50Hz | 3-Phase | DOWNLOAD PDF | eps28dza-3-deutz-28kva-diesel-generator-specs
+elitech-power	1001	78	4	0	| EPS30DZA-3 | Deutz | 30kVA | 35kVA | BFM3 G2 | 50Hz | 3-Phase | DOWNLOAD PDF | eps30dza-3-deutz-30kva-diesel-generator-specs
+elitech-power	1001	78	5	0	| EPS40DZA-3 | Deutz | 40kVA | 42kVA | BFM3T | 50Hz | 3-Phase | DOWNLOAD PDF | eps40dza-3-deutz-40kva-diesel-generator-specs
+elitech-power	1001	78	6	0	| EPS50DZA-3 | Deutz | 50kVA | 55kVA | BFM3C | 50Hz | 3-Phase | DOWNLOAD PDF | eps50dza-3-deutz-50kva-diesel-generator-specs
+elitech-power	1001	83	1	0	| EPS12.5WCA-3 | WEICHAI POWER | 12.5kVA | 14kVA | WP2.3D25E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps12.5wca-3-weichai-12.5kva-diesel-generator-specs
+elitech-power	1001	83	2	0	| EPS15WCA-3 | WEICHAI POWER | 15kVA | 16.5kVA | WP2.3D25E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps15wca-3-weichai-15kva-diesel-generator-specs
+elitech-power	1001	83	3	0	| EPS20WCA-3 | WEICHAI POWER | 20kVA | 20kVA | WP2.3D25E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps20wca-3-weichai-20kva-diesel-generator-specs
+elitech-power	1001	83	4	0	| EPS20WCA-3B | WEICHAI POWER | 20kVA | 24kVA | WP2.3D25E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps20wca-3b-weichai-20kva-diesel-generator-specs
+elitech-power	1001	83	5	0	| EPS28WCA-3 | WEICHAI POWER | 28kVA | 30kVA | WP2.3D25E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps28wca-3-weichai-28kva-diesel-generator-specs
+elitech-power	1001	83	6	0	| EPS28WCA-3B | WEICHAI POWER | 28kVA | 30kVA | WP2.3D33E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps28wca-3b-weichai-28kva-diesel-generator-specs
+elitech-power	1001	83	7	0	| EPS30WCA-3 | WEICHAI POWER | 30kVA | 35kVA | WP2.3D33E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps30wca-3-weichai-30kva-diesel-generator-specs
+elitech-power	1001	83	8	0	| EPS37.5WCA-3 | WEICHAI POWER | 37.5kVA | 40kVA | WP2.3D33E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps37.5wca-3-weichai-37.5kva-diesel-generator-specs
+elitech-power	1001	83	9	0	| EPS38WCA-3 | WEICHAI POWER | 38kVA | 40kVA | WP2.3D40E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps38wca-3-weichai-38kva-diesel-generator-specs
+elitech-power	1001	83	10	0	| EPS50WCA-3 | WEICHAI POWER | 50kVA | 55kVA | WP2.3D48E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps50wca-3-weichai-50kva-diesel-generator-specs
+elitech-power	1001	83	11	0	| EPS60WCA-3 | WEICHAI POWER | 60kVA | 70kVA | WP4.1D66E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps60wca-3-weichai-60kva-diesel-generator-specs
+elitech-power	1001	83	12	0	| EPS70WCA-3 | WEICHAI POWER | 70kVA | 80kVA | WP4.1D66E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps70wca-3-weichai-70kva-diesel-generator-specs
+elitech-power	1001	83	13	0	| EPS75WCA-3 | WEICHAI POWER | 75kVA | 83kVA | WP4.1D66E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps75wca-3-weichai-75kva-diesel-generator-specs
+elitech-power	1001	83	14	0	| EPS80WCA-3 | WEICHAI POWER | 80kVA | 88kVA | WP4.1D80E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps80wca-3-weichai-80kva-diesel-generator-specs
+elitech-power	1001	83	15	0	| EPS85WCA-3 | WEICHAI POWER | 85kVA | 94kVA | WP4.1D80E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps85wca-3-weichai-85kva-diesel-generator-specs
+elitech-power	1001	83	16	0	| EPS90WCA-3 | WEICHAI POWER | 90kVA | 100kVA | WP4.1D80E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps90wca-3-weichai-90kva-diesel-generator-specs
+elitech-power	1001	83	17	0	| EPS100WCA-3 | WEICHAI POWER | 100kVA | 110kVA | WP4.1D100E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps100wca-3-weichai-100kva-diesel-generator-specs
+elitech-power	1001	83	18	0	| EPS100WCA-3B | WEICHAI POWER | 100kVA | 110kVA | WP4.1D100E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps100wca-3b-weichai-100kva-diesel-generator-specs
+elitech-power	1001	83	19	0	| EPS115WCA-3 | WEICHAI POWER | 115kVA | 125kVA | WP4.1D100E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps115wca-3-weichai-115kva-diesel-generator-specs
+elitech-power	1001	83	20	0	| EPS125WCA-3 | WEICHAI POWER | 125kVA | 138kVA | WP4.1D100E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps125wca-3-weichai-125kva-diesel-generator-specs
+elitech-power	1001	83	21	0	| EPS135WCA-3 | WEICHAI POWER | 135kVA | 150kVA | WP6D132E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps135wca-3-weichai-135kva-diesel-generator-specs
+elitech-power	1001	83	22	0	| EPS150WCA-3 | WEICHAI POWER | 150kVA | 165kVA | WP6D152E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps150wca-3-weichai-150kva-diesel-generator-specs
+elitech-power	1001	83	23	0	| EPS180WCA-3 | WEICHAI POWER | 180kVA | 200kVA | WP6D167E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps180wca-3-weichai-180kva-diesel-generator-specs
+elitech-power	1001	83	24	0	| EPS188WCA-3 | WEICHAI POWER | 188kVA | 205kVA | WP10D200E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps188wca-3-weichai-188kva-diesel-generator-specs
+elitech-power	1001	83	25	0	| EPS200WCA-3 | WEICHAI POWER | 200kVA | 250kVA | WP10D200E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps200wca-3-weichai-200kva-diesel-generator-specs
+elitech-power	1001	83	26	0	| EPS225WCA-3 | WEICHAI POWER | 225kVA | 250kVA | WP10D238E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps225wca-3-weichai-225kva-diesel-generator-specs
+elitech-power	1001	83	27	0	| EPS250WCA-3 | WEICHAI POWER | 250kVA | 275kVA | WP10D238E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps250wca-3-weichai-250kva-diesel-generator-specs
+elitech-power	1001	83	28	0	| EPS250WCA-3B | WEICHAI POWER | 250kVA | 275kVA | WP10D264E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps250wca-3b-weichai-250kva-diesel-generator-specs
+elitech-power	1001	83	29	0	| EPS270WCA-3 | WEICHAI POWER | 270kVA | 297kVA | WP10D264E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps270wca-3-weichai-270kva-diesel-generator-specs
+elitech-power	1001	83	30	0	| EPS300WCA-3 | WEICHAI POWER | 300kVA | 330kVA | WP10D264E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps300wca-3-weichai-300kva-diesel-generator-specs
+elitech-power	1001	83	31	0	| EPS300WCA-3B | WEICHAI POWER | 300kVA | 330kVA | WP10D320E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps300wca-3b-weichai-300kva-diesel-generator-specs
+elitech-power	1001	83	32	0	| EPS325WCA-3 | WEICHAI POWER | 325kVA | 358kVA | WP10D320E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps325wca-3-weichai-325kva-diesel-generator-specs
+elitech-power	1001	83	33	0	| EPS350WCA-3 | WEICHAI POWER | 350kVA | 385kVA | WP10D320E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps350wca-3-weichai-350kva-diesel-generator-specs
+elitech-power	1001	83	34	0	| EPS375WCA-3 | WEICHAI POWER | 375kVA | 413kVA | WP12D353E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps375wca-3-weichai-375kva-diesel-generator-specs
+elitech-power	1001	83	35	0	| EPS400WCA-3 | WEICHAI POWER | 400kVA | 440kVA | WP12D353E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps400wca-3-weichai-400kva-diesel-generator-specs
+elitech-power	1001	83	36	0	| EPS400WCA-3 | WEICHAI POWER | 400kVA | 440kVA | WP13D385E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps400wca-3-weichai-400kva-diesel-generator-specs
+elitech-power	1001	83	37	0	| EPS440WCA-3 | WEICHAI POWER | 440kVA | 480kVA | WP13D405E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps440wca-3-weichai-440kva-diesel-generator-specs
+elitech-power	1001	83	38	0	| EPS440WCA-3 | WEICHAI POWER | 440kVA | 480kVA | WP13D440E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps440wca-3-weichai-440kva-diesel-generator-specs
+elitech-power	1001	83	39	0	| EPS450WCA-3 | WEICHAI POWER | 450kVA | 495kVA | WP13D440E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps450wca-3-weichai-450kva-diesel-generator-specs
+elitech-power	1001	83	40	0	| EPS475WCA-3 | WEICHAI POWER | 475kVA | 523kVA | WP13D440E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps475wca-3-weichai-475kva-diesel-generator-specs
+elitech-power	1001	83	41	0	| EPS500WCA-3 | WEICHAI POWER | 500kVA | 550kVA | WP13D440E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps500wca-3-weichai-500kva-diesel-generator-specs
+elitech-power	1001	83	42	0	| EPS500WCA-3B | WEICHAI POWER | 500kVA | 550kVA | WP13D490E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps500wca-3b-weichai-500kva-diesel-generator-specs
+elitech-power	1001	83	43	0	| EPS525WCA-3 | WEICHAI POWER | 525kVA | 578kVA | WP13D490E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps525wca-3-weichai-525kva-diesel-generator-specs
+elitech-power	1001	83	44	0	| EPS560WCA-3 | WEICHAI POWER | 560kVA | 619kVA | WP13D490E200 | 50Hz | 3-Phase | DOWNLOAD PDF | eps560wca-3-weichai-560kva-diesel-generator-specs
+fdk-energy	103	2	1	0	| CG250-H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | QSL9-G2 | Cummins (USA) | Stamford UCDI274J | Click Here | Download
+fdk-energy	103	2	2	0	| CG275-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | QSL9-G3 | Cummins (USA) | Stamford UCDI274K | Click Here | Download
+fdk-energy	103	2	3	0	| CG330-H1 CONTACT | 330KVA/ 264KW | 300KVA/ 240KW | QSL9-G5 | Cummins (USA) | Stamford S4L1D-D41 | Click Here | Download
+fdk-energy	103	2	4	0	| CG500E-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | QSX15-G6 | Cummins (USA) | Stamford S4L1D-G41 | Click Here | Download
+fdk-energy	103	2	5	0	| CG550-H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | KTA19-G4 | Cummins (India) | Stamford S5L1D-C41 | Click Here | Download
+fdk-energy	103	2	6	0	| CG550E-H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | QSX15-G8 | Cummins (USA) | Stamford S5L1D-C41 | Click Here | Download
+fdk-energy	103	2	7	0	| CG688-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | VTA28-G5 | Cummins (India) | Stamford S5L1D-F41 | Click Here | Download
+fdk-energy	103	2	8	0	| CG825-H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | VTA28-G6 | Cummins (India) | Stamford S5L1D-H41 | Click Here | Download
+fdk-energy	103	2	9	0	| CG825E/H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | QSK23-G2 | Cummins (India) | Stamford S5L1D-H41 | Click Here | Download
+fdk-energy	103	2	10	0	| CG880E-H1 CONTACT | 880KVA/ 704KW | 800KVA/ 640KW | QSK23-G3 | Cummins (India) | Stamford S6L1D-C41 | Click Here | Download
+fdk-energy	103	2	11	0	| CG1000E-H1 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | QST30-G3 | Cummins (USA) | Stamford S6L1D-D41 | Click Here | Download
+fdk-energy	103	2	12	0	| CG1100-H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | KTA38-G5 | Cummins (India) | Stamford S6L1D-E41 | Click Here | Download
+fdk-energy	103	2	13	0	| CG1100E-H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | QST30-G4 | Cummins (USA) | Stamford S6L1D-E41 | Click Here | Download
+fdk-energy	103	2	14	0	| CG1250-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | KTA38-G9 | Cummins (India) | Stamford S6L1D-F41 | Click Here | Download
+fdk-energy	103	2	15	0	| CG1250E-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | QSK38-G2 | Cummins (UK) | Stamford S6L1D-F41 | Click Here | Download
+fdk-energy	103	2	16	0	| CG1375-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | KTA50-G3 | Cummins (India) | Stamford S6L1D-G41 | Click Here | Download
+fdk-energy	103	2	17	0	| CG1375E-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | QSK38-G3 | Cummins (UK) | Stamford S6L1D-G41 | Click Here | Download
+fdk-energy	103	2	18	0	| CG1500-H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | KTA50-G8 | Cummins (India) | Stamford S6L1D-H41 | Click Here | Download
+fdk-energy	103	2	19	0	| CG1500N-H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | QSK50-G3 | Cummins (India) | Stamford S6L1D-H41 | Click Here |
+fdk-energy	103	2	20	0	| CG1650-H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | KTA50-GS8 | Cummins (India) | Stamford S7L1D-C41 | Click Here | Download
+fdk-energy	103	2	21	0	| CG1700E-H1 CONTACT | 1700KVA/ 1360KW | 1540KVA/ 1232KW | QSK50-G4 | Cummins (India) | Stamford S7L1D-C41 | Click Here | Download
+fdk-energy	103	2	22	0	| CG1825E-H1 CONTACT | 1825KVA/ 1460KW | 1650KVA/ 1320KW | QSK50-G7 | Cummins (India) | Stamford S7L1D-D41 | Click Here | Download
+fdk-energy	103	2	23	0	| CG2063EV1-H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | QSK60-G3 | Cummins (UK) | Stamford S7L1D-F41 | Click Here | Download
+fdk-energy	103	2	24	0	| CG2063V2E/H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | QSK60-G7 | Cummins (UK) | Stamford S7L1D-F41 | Click Here | Download
+fdk-energy	103	2	25	0	| CG2200E-H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | QSK60-G4 | Cummins (UK) | Stamford S7L1D-G41 | Click Here | Download
+fdk-energy	103	2	26	0	| CG2500EV1-H1 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | QSK60-G8 | Cummins (UK) | Stamford S7L1D-H41 | Click Here | Download
+fdk-energy	103	2	27	0	| CG2500EV2-H1 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | QSK60-G21 | Cummins (UK) | Stamford S7L1D-H41 | Click Here | Download
+fdk-energy	103	2	28	0	| CG2750EV1-H1 CONTACT | 2750KVA/ 2200KW | 2500KVA/ 2000KW | QSK60-G23 | Cummins (UK) | Stamford S7L1D-J41 | Click Here | Download
+fdk-energy	103	2	29	0	| CG2750EV2-H1 CONTACT | 2750KVA/ 2200KW | 2500KVA/ 2000KW | QSK78-G18 | Cummins (UK) | Stamford S7L1D-J41 | Click Here | Download
+fdk-energy	103	2	30	0	| CG3000E-H1 CONTACT | 3000KVA/ 2400KW | 2750KVA/ 2200KW | QSK78-G9 | Cummins (UK) | Stamford S7L1D-K41 | Click Here | Download
+fdk-energy	103	2	31	0	| CC250/H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | NTA855-GA | Cummins (CCEC CHINA) | Stamford UCDI274J | Click Here | Download
+fdk-energy	103	2	32	0	| CC275/H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | NTA855-GA | Cummins (CCEC CHINA) | Stamford UCDI274K | Click Here | Download
+fdk-energy	103	2	33	0	| CC315/H1 CONTACT | 313KVA/ 250KW | 275KVA/ 220KW | NTA855-G1A | Cummins (CCEC CHINA) | Stamford S4L1D-D41 | Click Here | Download
+fdk-energy	103	2	34	0	| CC350/H1 CONTACT | 344KVA/ 275KW | 312KVA/ 250KW | NTA855-G1B | Cummins (CCEC CHINA) | Stamford S4L1D-E41 | Click Here | Download
+fdk-energy	103	2	35	0	| CC388V1/H1 CONTACT | 388KVA/ 310KW | 350KVA/ 280KW | NTA855-G2A | Cummins (CCEC CHINA) | Stamford S4L1D-E41 | Click Here | Download
+fdk-energy	103	2	36	0	| CC388V2/H1 CONTACT | 388KVA/ 310KW | 350KVA/ 280KW | NTA855-G4 | Cummins (CCEC CHINA) | Stamford S4L1D-E41 | Click Here | Download
+fdk-energy	103	2	37	0	| CC415V1/H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | NTAA855-G7 | Cummins (CCEC CHINA) | Stamford S4L1D-F41 | Click Here | Download
+fdk-energy	103	2	38	0	| CC415V2/H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | QSNT-G3 | Cummins (CCEC CHINA) | Stamford S4L1D-F41 | Click Here | Download
+fdk-energy	103	2	39	0	| CC415V3/H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | KTA19-G2 | Cummins (CCEC CHINA) | Stamford S4L1D-F41 | Click Here | Download
+fdk-energy	103	2	40	0	| CC450/H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | QSNT-G3 | Cummins (CCEC CHINA) | Stamford S4L1D-F41 | Click Here | Download
+fdk-energy	103	2	41	0	| CC500/H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | KTA19-G3 | Cummins (CCEC CHINA) | Stamford S4L1D-G41 | Click Here | Download
+fdk-energy	103	2	42	0	| CC500N/H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | QSNT-G4X | Cummins (CCEC CHINA) | Stamford S4L1D-G41 | Click Here |
+fdk-energy	103	2	43	0	| CC550V1/H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | KTA19-G3A | Cummins (CCEC CHINA) | Stamford S5L1D-C41 | Click Here | Download
+fdk-energy	103	2	44	0	| CC550V2/H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | KTA19-G4 | Cummins (CCEC CHINA) | Stamford S5L1D-C41 | Click Here | Download
+fdk-energy	103	2	45	0	| CC630V1/H1 CONTACT | 631KVA/ 505KW | 563KVA/ 450KW | KTA19-G8 | Cummins (CCEC CHINA) | Stamford S5L1D-E41 | Click Here | Download
+fdk-energy	103	2	46	0	| CC630V2/H1 CONTACT | 631KVA/ 505KW | 563KVA/ 450KW | KTAA19-G6 | Cummins (CCEC CHINA) | Stamford S5L1D-E41 | Click Here | Download
+fdk-energy	103	2	47	0	| CC688V1/H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | KTA19-G8A | Cummins (CCEC CHINA) | Stamford S5L1D-F41 | Click Here | Download
+fdk-energy	103	2	48	0	| CC688V2/H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | KTAA19-G6A | Cummins (CCEC CHINA) | Stamford S5L1D-F41 | Click Here | Download
+fdk-energy	103	2	49	0	| CC725/H1 CONTACT | 725KVA/ 580KW | 650KVA/ 520KW | QSK19-G4 | Cummins (CCEC CHINA) | Stamford S5L1D-F41 | Click Here | Download
+fdk-energy	103	2	50	0	| CC750/H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | KTA19-G9A | Cummins (CCEC CHINA) | Stamford S5L1D-G41 | Click Here |
+fdk-energy	103	2	51	0	| CC750N/H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | QSK19-G11 | Cummins (CCEC CHINA) | Stamford S5L1D-G41 | Click Here |
+fdk-energy	103	2	52	0	| CC800/H1 CONTACT | 800KVA/ 640KW | 725KVA/ 580KW | KT38-GA | Cummins (CCEC CHINA) | Stamford S5L1D-H41 | Click Here | Download
+fdk-energy	103	2	53	0	| CC825/H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | KTA38-G2 | Cummins (CCEC CHINA) | Stamford S5L1D-H41 | Click Here | Download
+fdk-energy	103	2	54	0	| CC900/H1 CONTACT | 900KVA/ 720KW | 800KVA/ 640KW | KTA38-G2B | Cummins (CCEC CHINA) | Stamford S6L1D-C41 | Click Here | Download
+fdk-energy	103	2	55	0	| CC1000/H1 CONTACT | 1000KVA/ 800KW | 910KVA/ 720KW | KTA38-G2A | Cummins (CCEC CHINA) | Stamford S6L1D-D41 | Click Here | Download
+fdk-energy	103	2	56	0	| CC1100/H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | KTA38-G5 | Cummins (CCEC CHINA) | Stamford S6L1D-E41 | Click Here | Download
+fdk-energy	103	2	57	0	| CC1250/H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | KTA38-G9 | Cummins (CCEC CHINA) | Stamford S6L1D-F41 | Click Here | Download
+fdk-energy	103	2	58	0	| CC1375/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | KTA50-G3 | Cummins (CCEC CHINA) | Stamford S6L1D-G41 | Click Here | Download
+fdk-energy	103	2	59	0	| CC1375E/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | QSK38-G5 | Cummins (CCEC CHINA) | Stamford S6L1D-G41 | Click Here | Download
+fdk-energy	103	2	60	0	| CC1375N/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | KTA38-G9A | Cummins (CCEC CHINA) | Stamford S6L1D-G41 | Click Here |
+fdk-energy	103	2	61	0	| CC1375N2/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | QSK38-G29 | Cummins (CCEC CHINA) | Stamford S6L1D-G41 | Click Here |
+fdk-energy	103	2	62	0	| CC1500/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | KTA50-G8 | Cummins (CCEC CHINA) | Stamford S6L1D-H41 | Click Here | Download
+fdk-energy	103	2	63	0	| CC1500N/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | KTA50-G7E | Cummins (CCEC CHINA) | Stamford S6L1D-H41 | Click Here |
+fdk-energy	103	2	64	0	| CC1500N1/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | QSK38-G30 | Cummins (CCEC CHINA) | Stamford S6L1D-H41 | Click Here |
+fdk-energy	103	2	65	0	| CC1650/H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | KTA50-GS8 | Cummins (CCEC CHINA) | Stamford S7L1D-C41 | Click Here | Download
+fdk-energy	103	2	66	0	| CC1650N/H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | KTA50-G8E | Cummins (CCEC CHINA) | Stamford S7L1D-C41 | Click Here |
+fdk-energy	103	2	67	0	| CC1650N1/H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | QSK38-G31 | Cummins (CCEC CHINA) | Stamford S7L1D-C41 | Click Here |
+fdk-energy	103	2	68	0	| CC1700/H1 CONTACT | 1700KVA/ 1360KW | 1540KVA/ 1232KW | QSK50-G4 | Cummins (CCEC CHINA) | Stamford S7L1D-C41 | Click Here |
+fdk-energy	103	2	69	0	| CC1825/H1 CONTACT | 1825KVA/ 1460KW | 1650KVA/ 1320KW | QSK50-G7 | Cummins (CCEC CHINA) | Stamford S7L1D-D41 | Click Here |
+fdk-energy	103	2	70	0	| CC1825N/H1 CONTACT | 1825KVA/ 1460KW | 1650KVA/ 1320KW | QSK38-G32 | Cummins (CCEC CHINA) | Stamford S7L1D-D41 | Click Here |
+fdk-energy	103	2	71	0	| CC1875/H1 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | KTA50-G15A | Cummins (CCEC CHINA) | Stamford S7L1D-E41 | Click Here |
+fdk-energy	103	2	72	0	| CC1875N/H1 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | KTA50-G15X | Cummins (CCEC CHINA) | Stamford S7L1D-E41 | Click Here |
+fdk-energy	103	2	73	0	| CC1875N1/H1 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | QSK50-G13 | Cummins (CCEC CHINA) | Stamford S7L1D-E41 | Click Here |
+fdk-energy	103	2	74	0	| CC2063/H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | KTA50-G16A | Cummins (CCEC CHINA) | Stamford S7L1D-F41 | Click Here |
+fdk-energy	103	2	75	0	| CC2063N/H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | QSK50-G16 | Cummins (CCEC CHINA) | Stamford S7L1D-F41 | Click Here |
+fdk-energy	103	2	76	0	| CC2200/H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | KTA50-G16B | Cummins (CCEC CHINA) | Stamford S7L1D-G41 | Click Here |
+fdk-energy	103	2	77	0	| CC2200N/H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | QSK50-G17 | Cummins (CCEC CHINA) | Stamford S7L1D-G41 | Click Here |
+fdk-energy	103	2	78	0	| CC2750/H1 CONTACT | 2750KVA/ 2200KW | 2500KVA/ 2000KW | QSK50-G17 | Cummins (CCEC CHINA) | Stamford S7L1D-J41 | Click Here |
+fdk-energy	105	4	1	1	| CC340-H2 CONTACT | 344KVA/ 275KW | 312KVA/ 250KW | NTA855-G1 | Cummins (CCEC CHINA) | Stamford S4L1D-D41 | Click Here
+fdk-energy	105	4	2	1	| CC395-H2 CONTACT | 388KVA/ 310KW | 350KVA/ 280KW | NTA855-G1B | Cummins (CCEC CHINA) | Stamford S4L1D-D41 | Click Here
+fdk-energy	105	4	3	1	| CC412-H2 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | NTA855-G3 | Cummins (CCEC CHINA) | Stamford S4L1D-E41 | Click Here
+fdk-energy	105	4	4	1	| CC450-H2 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | NTA855-G3 | Cummins (CCEC CHINA) | Stamford S4L1D-E41 | Click Here
+fdk-energy	105	4	5	1	| CC500-H2 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | KTA19-G2 | Cummins (CCEC CHINA) | Stamford S4L1D-F41 | Click Here
+fdk-energy	105	4	6	1	| CC560-H2 CONTACT | 563KVA/ 450KW | 500KVA/ 400KW | KTA19-G3 | Cummins (CCEC CHINA) | Stamford S4L1D-G41 | Click Here
+fdk-energy	105	4	7	1	| CC630-H2 CONTACT | 631KVA/ 505KW | 563KVA/ 450KW | KTA19-G3A | Cummins (CCEC CHINA) | Stamford S5L1D-D41 | Click Here
+fdk-energy	105	4	8	1	| CC688-H2 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | QSK19-G4 | Cummins (CCEC CHINA) | Stamford S5L1D-E41 | Click Here
+fdk-energy	105	4	9	1	| CC750-H2 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | QSK19-G8 | Cummins (CCEC CHINA) | Stamford S5L1D-E41 | Click Here
+fdk-energy	107	6	1	0	| CG560-H2 CONTACT | 560KVA/ 450KW | 500KVA/ 400KW | QSX15-G7 | Cummins (USA) | Stamford S4L1D-G41 | Click Here
+fdk-energy	107	6	2	0	| CG625V1-H2 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | QSX15-G9 | Cummins (USA) | Stamford S5L1D-D41 | Click Here
+fdk-energy	107	6	3	0	| CG625V2-H2 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | KTA19-G4 | Cummins (USA) | Stamford S5L1D-D41 | Click Here
+fdk-energy	107	6	4	0	| CG680-H2 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | QSK19-G4 | Cummins (USA) | Stamford S5L1D-E41 | Click Here
+fdk-energy	107	6	5	0	| CG750V1-H2 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | QSK19-G5 | Cummins (India) | Stamford S5L1D-F41 | Click Here
+fdk-energy	108	7	1	0	| CG250-H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | QSL9-G2 | Cummins (USA) | Stamford UCDI274J | Click Here | Download
+fdk-energy	108	7	2	0	| CG275-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | QSL9-G3 | Cummins (USA) | Stamford UCDI274K | Click Here | Download
+fdk-energy	108	7	3	0	| CG330-H1 CONTACT | 330KVA/ 264KW | 300KVA/ 240KW | QSL9-G5 | Cummins (USA) | Stamford S4L1D-D41 | Click Here | Download
+fdk-energy	108	7	4	0	| CG500E-H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | QSX15-G6 | Cummins (USA) | Stamford S4L1D-G41 | Click Here | Download
+fdk-energy	108	7	5	0	| CG550-H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | KTA19-G4 | Cummins (India) | Stamford S5L1D-C41 | Click Here | Download
+fdk-energy	108	7	6	0	| CG550E-H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | QSX15-G8 | Cummins (USA) | Stamford S5L1D-C41 | Click Here | Download
+fdk-energy	108	7	7	0	| CG688-H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | VTA28-G5 | Cummins (India) | Stamford S5L1D-F41 | Click Here | Download
+fdk-energy	108	7	8	0	| CG825-H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | VTA28-G6 | Cummins (India) | Stamford S5L1D-H41 | Click Here | Download
+fdk-energy	108	7	9	0	| CG825E/H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | QSK23-G2 | Cummins (India) | Stamford S5L1D-H41 | Click Here | Download
+fdk-energy	108	7	10	0	| CG880E-H1 CONTACT | 880KVA/ 704KW | 800KVA/ 640KW | QSK23-G3 | Cummins (India) | Stamford S6L1D-C41 | Click Here | Download
+fdk-energy	108	7	11	0	| CG1000E-H1 CONTACT | 1000KVA/ 800KW | 900KVA/ 720KW | QST30-G3 | Cummins (USA) | Stamford S6L1D-D41 | Click Here | Download
+fdk-energy	108	7	12	0	| CG1100-H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | KTA38-G5 | Cummins (India) | Stamford S6L1D-E41 | Click Here | Download
+fdk-energy	108	7	13	0	| CG1100E-H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | QST30-G4 | Cummins (USA) | Stamford S6L1D-E41 | Click Here | Download
+fdk-energy	108	7	14	0	| CG1250-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | KTA38-G9 | Cummins (India) | Stamford S6L1D-F41 | Click Here | Download
+fdk-energy	108	7	15	0	| CG1250E-H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | QSK38-G2 | Cummins (UK) | Stamford S6L1D-F41 | Click Here | Download
+fdk-energy	108	7	16	0	| CG1375-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | KTA50-G3 | Cummins (India) | Stamford S6L1D-G41 | Click Here | Download
+fdk-energy	108	7	17	0	| CG1375E-H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | QSK38-G3 | Cummins (UK) | Stamford S6L1D-G41 | Click Here | Download
+fdk-energy	108	7	18	0	| CG1500-H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | KTA50-G8 | Cummins (India) | Stamford S6L1D-H41 | Click Here | Download
+fdk-energy	108	7	19	0	| CG1650-H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | KTA50-GS8 | Cummins (India) | Stamford S7L1D-C41 | Click Here | Download
+fdk-energy	108	7	20	0	| CG1700E-H1 CONTACT | 1700KVA/ 1360KW | 1540KVA/ 1232KW | QSK50-G4 | Cummins (India) | Stamford S7L1D-C41 | Click Here | Download
+fdk-energy	108	7	21	0	| CG1825E-H1 CONTACT | 1825KVA/ 1460KW | 1650KVA/ 1320KW | QSK50-G7 | Cummins (India) | Stamford S7L1D-D41 | Click Here | Download
+fdk-energy	108	7	22	0	| CG2063EV1-H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | QSK60-G3 | Cummins (UK) | Stamford S7L1D-F41 | Click Here | Download
+fdk-energy	108	7	23	0	| CG2063V2E/H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | QSK60-G7 | Cummins (UK) | Stamford S7L1D-F41 | Click Here | Download
+fdk-energy	108	7	24	0	| CG2200E-H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | QSK60-G4 | Cummins (UK) | Stamford S7L1D-G41 | Click Here | Download
+fdk-energy	108	7	25	0	| CG2500EV1-H1 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | QSK60-G8 | Cummins (UK) | Stamford S7L1D-H41 | Click Here | Download
+fdk-energy	108	7	26	0	| CG2500EV2-H1 CONTACT | 2500KVA/ 2000KW | 2250KVA/ 1800KW | QSK60-G21 | Cummins (UK) | Stamford S7L1D-H41 | Click Here | Download
+fdk-energy	108	7	27	0	| CG2750EV1-H1 CONTACT | 2750KVA/ 2200KW | 2500KVA/ 2000KW | QSK60-G23 | Cummins (UK) | Stamford S7L1D-J41 | Click Here | Download
+fdk-energy	108	7	28	0	| CG2750EV2-H1 CONTACT | 2750KVA/ 2200KW | 2500KVA/ 2000KW | QSK78-G18 | Cummins (UK) | Stamford S7L1D-J41 | Click Here | Download
+fdk-energy	108	7	29	0	| CG3000E-H1 CONTACT | 3000KVA/ 2400KW | 2750KVA/ 2200KW | QSK78-G9 | Cummins (UK) | Stamford S7L1D-K41 | Click Here | Download
+fdk-energy	108	7	30	0	| CC250/H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | NTA855-GA | Cummins (CCEC CHINA) | Stamford UCDI274J | Click Here | Download
+fdk-energy	108	7	31	0	| CC275/H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | NTA855-GA | Cummins (CCEC CHINA) | Stamford UCDI274K | Click Here | Download
+fdk-energy	108	7	32	0	| CC315/H1 CONTACT | 313KVA/ 250KW | 275KVA/ 220KW | NTA855-G1A | Cummins (CCEC CHINA) | Stamford S4L1D-D41 | Click Here | Download
+fdk-energy	108	7	33	0	| CC350/H1 CONTACT | 344KVA/ 275KW | 312KVA/ 250KW | NTA855-G1B | Cummins (CCEC CHINA) | Stamford S4L1D-E41 | Click Here | Download
+fdk-energy	108	7	34	0	| CC388V1/H1 CONTACT | 388KVA/ 310KW | 350KVA/ 280KW | NTA855-G2A | Cummins (CCEC CHINA) | Stamford S4L1D-E41 | Click Here | Download
+fdk-energy	108	7	35	0	| CC388V2/H1 CONTACT | 388KVA/ 310KW | 350KVA/ 280KW | NTA855-G4 | Cummins (CCEC CHINA) | Stamford S4L1D-E41 | Click Here | Download
+fdk-energy	108	7	36	0	| CC415V1/H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | NTAA855-G7 | Cummins (CCEC CHINA) | Stamford S4L1D-F41 | Click Here | Download
+fdk-energy	108	7	37	0	| CC415V2/H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | QSNT-G3 | Cummins (CCEC CHINA) | Stamford S4L1D-F41 | Click Here | Download
+fdk-energy	108	7	38	0	| CC415V3/H1 CONTACT | 413KVA/ 330KW | 375KVA/ 300KW | KTA19-G2 | Cummins (CCEC CHINA) | Stamford S4L1D-F41 | Click Here | Download
+fdk-energy	108	7	39	0	| CC450/H1 CONTACT | 450KVA/ 360KW | 400KVA/ 320KW | QSNT-G3 | Cummins (CCEC CHINA) | Stamford S4L1D-F41 | Click Here | Download
+fdk-energy	108	7	40	0	| CC500/H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | KTA19-G3 | Cummins (CCEC CHINA) | Stamford S4L1D-G41 | Click Here | Download
+fdk-energy	108	7	41	0	| CC500N/H1 CONTACT | 500KVA/ 400KW | 450KVA/ 360KW | QSNT-G4X | Cummins (CCEC CHINA) | Stamford S4L1D-G41 | Click Here |
+fdk-energy	108	7	42	0	| CC550V1/H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | KTA19-G3A | Cummins (CCEC CHINA) | Stamford S5L1D-C41 | Click Here | Download
+fdk-energy	108	7	43	0	| CC550V2/H1 CONTACT | 550KVA/ 440KW | 500KVA/ 400KW | KTA19-G4 | Cummins (CCEC CHINA) | Stamford S5L1D-C41 | Click Here | Download
+fdk-energy	108	7	44	0	| CC630V1/H1 CONTACT | 631KVA/ 505KW | 563KVA/ 450KW | KTA19-G8 | Cummins (CCEC CHINA) | Stamford S5L1D-E41 | Click Here | Download
+fdk-energy	108	7	45	0	| CC630V2/H1 CONTACT | 631KVA/ 505KW | 563KVA/ 450KW | KTAA19-G6 | Cummins (CCEC CHINA) | Stamford S5L1D-E41 | Click Here | Download
+fdk-energy	108	7	46	0	| CC688V1/H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | KTA19-G8A | Cummins (CCEC CHINA) | Stamford S5L1D-F41 | Click Here | Download
+fdk-energy	108	7	47	0	| CC688V2/H1 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | KTAA19-G6A | Cummins (CCEC CHINA) | Stamford S5L1D-F41 | Click Here | Download
+fdk-energy	108	7	48	0	| CC725/H1 CONTACT | 725KVA/ 580KW | 650KVA/ 520KW | QSK19-G4 | Cummins (CCEC CHINA) | Stamford S5L1D-F41 | Click Here | Download
+fdk-energy	108	7	49	0	| CC750/H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | KTA19-G9A | Cummins (CCEC CHINA) | Stamford S5L1D-G41 | Click Here |
+fdk-energy	108	7	50	0	| CC750N/H1 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | QSK19-G11 | Cummins (CCEC CHINA) | Stamford S5L1D-G41 | Click Here |
+fdk-energy	108	7	51	0	| CC800/H1 CONTACT | 800KVA/ 640KW | 725KVA/ 580KW | KT38-GA | Cummins (CCEC CHINA) | Stamford S5L1D-H41 | Click Here | Download
+fdk-energy	108	7	52	0	| CC825/H1 CONTACT | 825KVA/ 660KW | 750KVA/ 600KW | KTA38-G2 | Cummins (CCEC CHINA) | Stamford S5L1D-H41 | Click Here | Download
+fdk-energy	108	7	53	0	| CC900/H1 CONTACT | 900KVA/ 720KW | 800KVA/ 640KW | KTA38-G2B | Cummins (CCEC CHINA) | Stamford S6L1D-C41 | Click Here | Download
+fdk-energy	108	7	54	0	| CC1000/H1 CONTACT | 1000KVA/ 800KW | 910KVA/ 720KW | KTA38-G2A | Cummins (CCEC CHINA) | Stamford S6L1D-D41 | Click Here | Download
+fdk-energy	108	7	55	0	| CC1100/H1 CONTACT | 1100KVA/ 880KW | 1000KVA/ 800KW | KTA38-G5 | Cummins (CCEC CHINA) | Stamford S6L1D-E41 | Click Here | Download
+fdk-energy	108	7	56	0	| CC1250/H1 CONTACT | 1250KVA/ 1000KW | 1125KVA/ 900KW | KTA38-G9 | Cummins (CCEC CHINA) | Stamford S6L1D-F41 | Click Here | Download
+fdk-energy	108	7	57	0	| CC1375/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | KTA50-G3 | Cummins (CCEC CHINA) | Stamford S6L1D-G41 | Click Here | Download
+fdk-energy	108	7	58	0	| CC1375E/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | QSK38-G5 | Cummins (CCEC CHINA) | Stamford S6L1D-G41 | Click Here | Download
+fdk-energy	108	7	59	0	| CC1375N/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | KTA38-G9A | Cummins (CCEC CHINA) | Stamford S6L1D-G41 | Click Here |
+fdk-energy	108	7	60	0	| CC1375N2/H1 CONTACT | 1375KVA/ 1100KW | 1250KVA/ 1000KW | QSK38-G29 | Cummins (CCEC CHINA) | Stamford S6L1D-G41 | Click Here |
+fdk-energy	108	7	61	0	| CC1500/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | KTA50-G8 | Cummins (CCEC CHINA) | Stamford S6L1D-H41 | Click Here | Download
+fdk-energy	108	7	62	0	| CC1500N/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | KTA50-G7E | Cummins (CCEC CHINA) | Stamford S6L1D-H41 | Click Here |
+fdk-energy	108	7	63	0	| CC1500N1/H1 CONTACT | 1500KVA/ 1200KW | 1375KVA/ 1100KW | QSK38-G30 | Cummins (CCEC CHINA) | Stamford S6L1D-H41 | Click Here |
+fdk-energy	108	7	64	0	| CC1650/H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | KTA50-GS8 | Cummins (CCEC CHINA) | Stamford S7L1D-C41 | Click Here | Download
+fdk-energy	108	7	65	0	| CC1650N/H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | KTA50-G8E | Cummins (CCEC CHINA) | Stamford S7L1D-C41 | Click Here |
+fdk-energy	108	7	66	0	| CC1650N1/H1 CONTACT | 1650KVA/ 1320KW | 1500KVA/ 1200KW | QSK38-G31 | Cummins (CCEC CHINA) | Stamford S7L1D-C41 | Click Here |
+fdk-energy	108	7	67	0	| CC1700/H1 CONTACT | 1700KVA/ 1360KW | 1540KVA/ 1232KW | QSK50-G4 | Cummins (CCEC CHINA) | Stamford S7L1D-C41 | Click Here |
+fdk-energy	108	7	68	0	| CC1825/H1 CONTACT | 1825KVA/ 1460KW | 1650KVA/ 1320KW | QSK50-G7 | Cummins (CCEC CHINA) | Stamford S7L1D-D41 | Click Here |
+fdk-energy	108	7	69	0	| CC1825N/H1 CONTACT | 1825KVA/ 1460KW | 1650KVA/ 1320KW | QSK38-G32 | Cummins (CCEC CHINA) | Stamford S7L1D-D41 | Click Here |
+fdk-energy	108	7	70	0	| CC1875/H1 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | KTA50-G15A | Cummins (CCEC CHINA) | Stamford S7L1D-E41 | Click Here |
+fdk-energy	108	7	71	0	| CC1875N/H1 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | KTA50-G15X | Cummins (CCEC CHINA) | Stamford S7L1D-E41 | Click Here |
+fdk-energy	108	7	72	0	| CC1875N1/H1 CONTACT | 1875KVA/ 1500KW | 1688KVA/ 1350KW | QSK50-G13 | Cummins (CCEC CHINA) | Stamford S7L1D-E41 | Click Here |
+fdk-energy	108	7	73	0	| CC2063/H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | KTA50-G16A | Cummins (CCEC CHINA) | Stamford S7L1D-F41 | Click Here |
+fdk-energy	108	7	74	0	| CC2063N/H1 CONTACT | 2063KVA/ 1650KW | 1875KVA/ 1500KW | QSK50-G16 | Cummins (CCEC CHINA) | Stamford S7L1D-F41 | Click Here |
+fdk-energy	108	7	75	0	| CC2200/H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | KTA50-G16B | Cummins (CCEC CHINA) | Stamford S7L1D-G41 | Click Here |
+fdk-energy	108	7	76	0	| CC2200N/H1 CONTACT | 2200KVA/ 1760KW | 2000KVA/ 1600KW | QSK50-G17 | Cummins (CCEC CHINA) | Stamford S7L1D-G41 | Click Here |
+fdk-energy	108	7	77	0	| CC2750/H1 CONTACT | 2750KVA/ 2200KW | 2500KVA/ 2000KW | QSK50-G17 | Cummins (CCEC CHINA) | Stamford S7L1D-J41 | Click Here |
+fdk-energy	109	8	1	0	| CG560-H2 CONTACT | 560KVA/ 450KW | 500KVA/ 400KW | QSX15-G7 | Cummins (USA) | Stamford S4L1D-G41 | Click Here
+fdk-energy	109	8	2	0	| CG625V1-H2 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | QSX15-G9 | Cummins (USA) | Stamford S5L1D-D41 | Click Here
+fdk-energy	109	8	3	0	| CG625V2-H2 CONTACT | 625KVA/ 500KW | 563KVA/ 450KW | KTA19-G4 | Cummins (USA) | Stamford S5L1D-D41 | Click Here
+fdk-energy	109	8	4	0	| CG680-H2 CONTACT | 688KVA/ 550KW | 625KVA/ 500KW | QSK19-G4 | Cummins (USA) | Stamford S5L1D-E41 | Click Here
+fdk-energy	109	8	5	0	| CG750V1-H2 CONTACT | 750KVA/ 600KW | 688KVA/ 550KW | QSK19-G5 | Cummins (India) | Stamford S5L1D-F41 | Click Here
+generatordieselchina	104	3	1	0	| Model | R-CC1250D5/S | R-P1250D5/S | R-M1250D5/S | R-JM1250D5/S
+generatordieselchina	105	4	1	0	| Model | R-CC1000D5/S | R-P1000D5/S | R-M1000D5/S | R-JM1000D5/S
+keliang-fuan	101	0	1	0	| | CONTINUOUS DUTY(H/125K) | STAND-BY(H/163K)
+longkai-power	1001	16	3	0	| STAMFORD | UCI224F
+longkai-power	1002	18	3	0	| STAMFORD | UCI224G
+longkai-power	1003	20	3	0	| STAMFORD | UCI274D
+longkai-power	1005	23	3	0	| STAMFORD | UCI274F
+longkai-power	1006	25	3	0	| STAMFORD | UCI274G
+longkai-power	1007	27	3	0	| STAMFORD | UCI274G
+longkai-power	1008	29	3	0	| STAMFORD | UCI274H
+longkai-power	1009	31	3	0	| STAMFORD | UCDI274J
+longkai-power	1010	33	3	0	| STAMFORD | UCDI274K
+longkai-power	1011	35	3	0	| STAMFORD | HCI444D
+longkai-power	1024	61	3	0	| STAMFORD | UCI224F
+longkai-power	1025	63	3	0	| STAMFORD | UCI224G
+longkai-power	1026	65	3	0	| STAMFORD | UCI274C
+longkai-power	1027	67	3	0	| STAMFORD | UCI274D
+longkai-power	1028	69	3	0	| STAMFORD | UCI274D
+longkai-power	1029	71	3	0	| STAMFORD | UCI274E
+longkai-power	1030	73	3	0	| STAMFORD | UCI274F
+longkai-power	1031	75	3	0	| STAMFORD | UCI274G
+longkai-power	1032	76	3	0	| STAMFORD | UCI274H
+longkai-power	1033	78	3	0	| STAMFORD | UCDI274J
+longkai-power	1034	80	3	0	| STAMFORD | UCDI274K
+longkai-power	1035	82	3	0	| STAMFORD | HCI444E-S4L1D-E41/S4L1S-E4
+longkai-power	1037	85	3	0	| STAMFORD | HCI444F
+longkai-power	1038	87	3	0	| STAMFORD | HCI544C-S4L1D-G41
+longkai-power	1039	89	3	0	| STAMFORD | HCI544C-S5L1D-C4/S5L1S-C4
+longkai-power	1040	91	3	0	| STAMFORD | HCI544E-S5L1D-E4/S5L1S-E4
+longkai-power	1041	93	3	0	| STAMFORD | HCI544FS-S5L1D-F4/S5L1S-F4
+longkai-power	1042	95	3	0	| STAMFORD | HCI544F-S5L1D-F4/S5L1S-F4
+longkai-power	1043	97	3	0	| STAMFORD | LVI634B-S5L1D-H4
+longkai-power	1044	99	3	0	| STAMFORD | LVI634C/HCI634G-S6L1D-C4
+longkai-power	1045	101	3	0	| STAMFORD | LVI634D/HCI634H-S6L1D-D4
+longkai-power	1046	103	3	0	| STAMFORD | LVI634E/HCI634J-S6L1D-E4
+longkai-power	1054	118	3	0	| STAMFORD | UCI224F
+longkai-power	1056	121	3	0	| STAMFORD | UCI224G
+longkai-power	1057	123	3	0	| STAMFORD | UCI224G
+longkai-power	1059	126	3	0	| STAMFORD | UCI274C
+longkai-power	1060	128	3	0	| STAMFORD | UCI274C
+longkai-power	1062	131	3	0	| STAMFORD | UCI274D
+longkai-power	1063	133	3	0	| STAMFORD | UCI274D
+longkai-power	1067	137	3	0	| STAMFORD | UCI274E
+longkai-power	1068	139	3	0	| STAMFORD | UCI274F
+longkai-power	1070	142	3	0	| STAMFORD | UCI274G
+longkai-power	1071	144	3	0	| STAMFORD | UCI274G
+longkai-power	1073	147	3	0	| STAMFORD | UCI274H
+longkai-power	1074	149	3	0	| STAMFORD | UCI274H
+longkai-power	1077	154	3	0	| STAMFORD | UCDI274K
+longkai-power	1078	156	3	0	| STAMFORD | UCDI274K
+longkai-power	1081	161	3	0	| STAMFORD | HCI444D
+longkai-power	1115	216	3	0	| STAMFORD | LVI634F/HCI634K-S6L1D-F4
+longkai-power	1127	236	3	0	| STAMFORD | UCI224E
+longkai-power	1128	238	3	0	| STAMFORD | UCI224F
+longkai-power	1129	240	3	0	| STAMFORD | UCI274C
+longkai-power	1130	242	3	0	| STAMFORD | UCI274D
+longkai-power	1131	244	3	0	| STAMFORD | UCI274F
+longkai-power	1132	246	3	0	| STAMFORD | UCI274G
+longkai-power	1133	248	3	0	| STAMFORD | UCI274H
+longkai-power	1134	250	3	0	| STAMFORD | UCI274J
+longkai-power	1135	252	3	0	| STAMFORD | UCDI274K
+longkai-power	1149	278	3	0	| STAMFORD | LVI634F/HCI634K-S6L1D-F4
+longkai-power	1154	285	3	0	| STAMFORD | S7L1D-D4
+longkai-power	1156	288	3	0	| STAMFORD | S7L1D-F4
+longkai-power	1159	293	3	0	| STAMFORD | S7L1D-H4
+longkai-power	1160	295	3	0	| STAMFORD | S7L1D-H4
+longkai-power	1161	297	3	0	| STAMFORD | S7L1D-J4
+penlucky	108	6	1	0	| PLWM16B1 | 16 | 16 | WP2.3CD25E200 | TAL A40 D | Electronics | 1266*760*1145 | view
+penlucky	108	6	2	0	| PLWM20B1 | 20 | 20 | WP2.3CD33E200 | TAL A40 F | Electronics | 1266*760*1145 | view
+penlucky	108	6	3	0	| PLWM24B1 | 24 | 24 | WP2.3CD33E200 | TAL A40 G | Electronics | 1266*760*1145 | view
+penlucky	108	6	4	0	| PLWM30B1 | 30 | 30 | WP2.3CD40E200 | TAL A42 C | Electronics | 1266*760*1145 | view
+penlucky	108	6	5	0	| PLWM40B1 | 40 | 40 | WP4.1CD66E200 | TAL A42 E | Mechanical/ electronic | 1543*936*1122 | view
+penlucky	108	6	6	0	| PLWM50B1 | 50 | 50 | WP4. 1CD66E200 | TAL A42 H | Mechanical/ electronic | 1543*936*1122 | view
+penlucky	108	6	7	0	| PL-WM64B1 | 64 | 64 | WP4. 1CD83E200 | TAL A44 C | Mechanical/ electronic | 1633*936*1122 | view
+penlucky	108	6	8	0	| PLWM30D | 30 | 30 | WP4CD44E200 | TAL A44 D | Mechanical/ electronic | 1700*827*1212 | view
+penlucky	108	6	9	0	| PLWM40D | 40 | 40 | WP4CD66E200 | TAL A44 D | Mechanical/ electronic | 1700*827*1212 | view
+penlucky	108	6	10	0	| PLWM50D | 50 | 50 | WP4CD66E200 | TAL A44 E | Mechanical/ electronic | 1700*827*1212 | view
+penlucky	108	6	11	0	| PLWM64D | 64 | 64 | WP4CD100E200 | TAL A44 J | Mechanical/ electronic | 1700*827*1212 | view
+penlucky	108	6	12	0	| PLWM75D | 75 | 75 | WP4CD100E200 | TAL A44 K | Mechanical/ electronic | 1700*827*1212 | view
+penlucky	108	6	13	0	| PLWM90D | 90 | 90 | WP6CD132E200 | TAL A44 L | Mechanical/ electronic | 2150*778*1385 | view
+penlucky	108	6	14	0	| PLWM100 | 100 | 100 | WP6CD132E200 | TAL A44 M | Mechanical/ electronic | 2150*778*1385 | view
+penlucky	108	6	15	0	| PLWM120D | 120 | 120 | WP6CD152E200 | TAL A46 D | Mechanical/ electronic | 2150*778*1385 | view
+penlucky	108	6	16	0	| PLWM150S | 150 | 150 | WP10CD200E200 | TAL A46 E | Mechanical/ electronic | 2375*1000*1572 | view
+penlucky	108	6	17	0	| PLWM180S | 180 | 180 | WP10CD238E200 | TAL A46 F | Mechanical/ electronic | 2542*1000*1572 | view
+penlucky	108	6	18	0	| PLWM200S | 200 | 200 | WP10CD264E200 | TAL A46 G | Mechanical/ electronic | 2542*1000*1572 | view
+penlucky	108	6	19	0	| PLWM250S | 250 | 250 | WP12CD317E200 | TAL A46 H | Mechanical/ electronic | 2669*1000*1572 | view
+penlucky	108	6	20	0	| PLWM250S1 | 250 | 250 | WP12CD290E201 | TAL A473 A | Mechanical/ electronic | 2517*1123*1628 | view
+penlucky	108	6	21	0	| PLWM300 | 300 | 300 | WP13CD385E200 | TAL A473 A | Electronically-controlled common rail | 2664*1000*1532 | view
+penlucky	108	6	22	0	| PLWM350 | 350 | 350 | 6M33CD447E200 | TAL A473 B | Electronics | 3010*1040*1600 | view
+penlucky	108	6	23	0	| PLWM400 | 400 | 400 | 6M33CD484E200 | TAL A473 C | Electronics | 3010*1040*1600 | view
+penlucky	108	6	24	0	| PLWM450 | 450 | 450 | 6M33CD550E200 | TAL A473 E | Electronics | 3140*1040*1600 | view
+penlucky	108	6	25	0	| PLWM500 | 500 | 500 | 12M33CD748E200 | TAL A473 F | Electronics | 3140*1040*1600 | view
+penlucky	108	6	26	0	| PLWM600 | 600 | 600 | 12M33CD748E200 | TAL A49 B | Electronics | 3596*1521*1927 | view
+penlucky	108	6	27	0	| PLWM700 | 700 | 700 | 12M33CD902E200 | TAL A49 C | Electronics | 3820*1521*1927 | view
+penlucky	108	6	28	0	| PLWM800 | 800 | 800 | 12M33CD968E200 | TAL A49 D | Electronics | 3895*1521*1927 | view
+penlucky	108	6	29	0	| PLWM900 | 900 | 900 | 12M33CD1100E200 | TAL A49 E | Electronics | 3914*1521*1927 | view
+penlucky	108	6	30	0	| PLWM250X | 250 | 250 | X6170ZCD280-1 | TAL A49 C | Mechanical /electronic | 3288*1255*1977 | view
+penlucky	108	6	31	0	| PLWM300X | 300 | 300 | X6170ZCD330-1 | TAL A49 C | Mechanical /electronic | 3241*1255*1977 | view
+penlucky	108	6	32	0	| PLWM350X | 350 | 350 | X6170ZCD390-4 | TAL A49 D | Mechanical /electronic | 3400*1236*2001 | view
+penlucky	108	6	33	0	| PLWM400X | 400 | 400 | X6170ZCD440-4 | TAL A49 E | Mechanical /electronic | 3466*1236*2001 | view
+penlucky	108	6	34	0	| PLWM450X | 450 | 450 | X6170ZCD500-5 | TAL A49 E | Mechanical /electronic | 3728*1406*2004 | view
+rcg-power	105	6	1	0	| R-JM2250D5-S | 2250kVA / 1800kW | 2500kVA / 2000kW | S16R2-PTAW | LSA52.3L9 | PDF
+rcg-power	106	7	1	0	| R-SM650D5-S | 650kVA / 520kW | 715kVA / 572kW | S6R2-PTA-C | TAL-A473-F | PDF
+rcg-power	106	7	2	0	| R-SM750D5-S | 750kVA / 600kW | 825kVA / 660kW | S6R2-PTAA-C | TAL-A49-B | PDF
+rcg-power	107	9	1	0	| R-XC375D5-S | 375 kVA / 300 kW | 413 kVA / 330 kW | CA6DM3-49D | WR444FS | PDF
+rcg-power	120	18	1	0	| R-WB18D5/S | 18 kVA / 14 kW | 20 kVA / 16 kW | 潍柴博杜安 & 4M06G20/5 | 威而纳 & WR184ES | PDF
+rcg-power	120	18	2	0	| R-WB23D5/S | 23 kVA / 18 kW | 25 kVA / 20 kW | 潍柴博杜安 & 4M06G25/5 | 威而纳 & WR184ES | PDF
+rcg-power	120	18	3	0	| R-WB30D5/S | 30 kVA / 24 kW | 33 kVA / 26 kW | 潍柴博杜安 & 4M06G35/5 | 威而纳 & WR184G | PDF
+rcg-power	120	18	4	0	| R-WB40D5/S | 40 kVA / 32 kW | 44 kVA / 35 kW | 潍柴博杜安 & 4M06G44/5 | 威而纳 & WR184H | PDF
+rcg-power	120	18	5	0	| R-WB45D5/S | 45 kVA / 36 kW | 50 kVA / 40 kW | 潍柴博杜安 & 4M06G50/5 | 威而纳 & WR224C | PDF
+rcg-power	120	18	6	0	| R-WB50D5/S | 50 kVA / 40 kW | 55 kVA / 44 kW | 潍柴博杜安 & 4M06G55/5 | 威而纳 & WR224D | PDF
+rcg-power	120	18	7	0	| R-WB65D5/S | 65 kVA / 52 kW | 72 kVA / 57 kW | 潍柴博杜安 & 4M10G70/5 | 威而纳 & WR224F | PDF
+rcg-power	120	18	8	0	| R-WB80D5/S | 80 kVA / 64 kW | 88 kVA / 70 kW | 潍柴博杜安 & 4M10G88/5 | 威而纳 & WR224G | PDF
+rcg-power	120	18	9	0	| R-WB100D5/S | 100 kVA / 80 kW | 110 kVA / 88 kW | 潍柴博杜安 & 4M10G110/5 | 威而纳 & WR274C | PDF
+rcg-power	120	18	10	0	| R-WB113D5/S | 113 kVA / 90 kW | 124 kVA / 99 kW | 潍柴博杜安 & 4M10G125/5 | 威而纳 & WR274D | PDF
+rcg-power	120	18	11	0	| R-WB135D5/S | 135 kVA / 108 kW | 149 kVA / 119 kW | 潍柴博杜安 & 6M11G150/5 | 威而纳 & WR274DL | PDF
+rcg-power	120	18	12	0	| R-WB150D5/S | 150kVA / 120kW | 165kVA / 132kW | 潍柴博杜安 & 6M11G165/5 | 威而纳 & WR274EL | PDF
+rcg-power	120	18	13	0	| R-WB162D5/S | 162 kVA / 130 kW | 178 kVA / 143 kW | 潍柴博杜安 & 6M11G188/5 | 威而纳 & WR274H | PDF
+rcg-power	120	18	14	0	| R-WB200D5/S | 200kVA / 160kW | 220kVA / 176kW | 潍柴博杜安 & 6M16G220/5 | 威而纳 & WR274H | PDF
+rcg-power	120	18	15	0	| R-WB230D5/S | 230 kVA / 184 kW | 250 kVA / 200 kW | 潍柴博杜安 & 6M16G250/5 | 威而纳 & WR274J | PDF
+rcg-power	120	18	16	0	| R-WB250D5/S | 250kVA / 200kW | 275kVA / 220kW | 潍柴博杜安 & 6M16G275/5 | 威而纳 & WR274K | PDF
+rcg-power	120	18	17	0	| R-WB320D5/S | 320 kVA / 256 kW | 352 kVA / 282 kW | 潍柴博杜安 & 6M16G350/5 | 威而纳 & WR444ES | PDF
+rcg-power	120	18	18	0	| R-WB375D5/S(6M21G400) | 375 kVA / 300 kW | 413 kVA / 330 kW | 潍柴博杜安 & 6M21G400/5 | 威而纳 & WR444E | PDF
+rcg-power	120	18	19	0	| R-WB375D5/S(6M21G440) | 375 kVA / 300 kW | 413 kVA / 330 kW | 潍柴博杜安 & 6M21G440/5 | 威而纳 & WR444F | PDF
+rcg-power	120	18	20	0	| R-WB438D5/S | 438 kVA / 350 kW | 482 kVA / 385 kW | 潍柴博杜安 & 6M21G500/5 | 威而纳 & WR444FL | PDF
+rcg-power	120	18	21	0	| R-WB500D5/S | 500kVA / 400kW | 550kVA / 440kW | 潍柴博杜安 & 6M21G550/5 | 威而纳 & WR544C | PDF
+rcg-power	120	18	22	0	| R-WB650D5/S(6M33G660) | 650kVA / 520kW | 715kVA / 572kW | 潍柴博杜安 & 6M33G660/5 | 威而纳 & WR544FS | PDF
+rcg-power	120	18	23	0	| R-WB650D5/S(6M33G715) | 650kVA / 520kW | 715kVA / 572kW | 潍柴博杜安 & 6M33G715/5 | 威而纳 & WR544F | PDF
+rcg-power	120	18	24	0	| R-WB680D5/S | 680 kVA / 544 kW | 7505 kVA / 600 kW | 潍柴博杜安 & 6M33G750/5 | 威而纳 & WR544FL | PDF
+rcg-power	120	18	25	0	| R-WB750D5/S | 750 kVA / 600 kW | 825 kVA / 660 kW | 潍柴博杜安 & 6M33G825/5 | 威而纳 & WR544FL | PDF
+rcg-power	120	18	26	0	| R-WB800D5/S | 800kVA / 640kW | 880kVA / 704kW | 潍柴博杜安 & 8M33G900/5 | 威而纳 & WR634C | PDF
+rcg-power	120	18	27	0	| R-WB900D5/S | 900kVA / 720kW | 990kVA / 792kW | 潍柴博杜安 & 8M33G1000/5 | 威而纳 & WR634D | PDF
+rcg-power	120	18	28	0	| R-WB1000D5/S | 1000kVA / 800kW | 1100kVA / 880kW | 潍柴博杜安 & 8M33G1100/5 | 威而纳 & WR634E | PDF
+rcg-power	120	18	29	0	| R-WB1150D5/S | 1150kVA / 920kW | 1250kVA / 1000kW | 潍柴博杜安 & 12M33G1250/5 | 威而纳 & WR634F | PDF
+rcg-power	120	18	30	0	| R-WB1250D5/S | 1250kVA / 1000kW | 1375kVA / 1100kW | 潍柴博杜安 & 12M33G1400/5 | 威而纳 & WR634G | PDF
+rcg-power	120	18	31	0	| R-WB1375D5/S | 1375kVA / 1100kW | 1513kVA / 1210kW | 潍柴博杜安 & 12M33G1500/5 | 威而纳 & WR734B | PDF
+rcg-power	120	18	32	0	| R-WB1500D5/S | 1500kVA / 1200kW | 1650kVA / 1320kW | 潍柴博杜安 & 12M33G1650/5 | 威而纳 & WR734C | PDF
+rcg-power	120	18	33	0	| R-WB1750D5/S | 1750 kVA / 1400 kW | 1925 kVA / 1540 kW | 潍柴博杜安 & 16M33G1900/5 | 威而纳 & WR734E | PDF
+rcg-power	120	18	34	0	| R-WB1875D5/S | 1875kVA / 1500kW | 2063kVA / 1650kW | 潍柴博杜安 & 16M33G2000/5 | 威而纳 & WR734E | PDF
+rcg-power	120	18	35	0	| R-WB2000D5/S | 2000kVA / 1600kW | 2200kVA / 1760kW | 潍柴博杜安 & 16M33G22505 | 威而纳 & WR734F | PDF
+rcg-power	120	18	36	0	| R-WB2250D5/S | 2250kVA / 1800kW | 2500kVA / 2000kW | 潍柴博杜安 & 20M33G2500/5 | 威而纳 & WR734G | PDF
+rcg-power	120	18	37	0	| R-WB2500D5/S | 2500kVA / 2000kW | NA / NA | 潍柴博杜安 & 12M55G2750/5 | 威而纳 & WR734H | PDF
+simpson-power	102	1	1	0	| SP1800D-L | 1800/2250 | SME | S16R-PTAA2-C | 5720×2400×3436 | SP1800D-L.pdf
+simpson-power	102	1	2	0	| SP1800D-M | 1800/2250 | MITSUBISHI | S16R-PTAA2 | 5720×2480×3440 | SP1800D-M.pdf
+simpson-power	103	2	1	0	| SP1100D-L | 1100/1375 | SME | S12R-PTA-C | 4654×2136×2790 | SP1100D-L.pdf
+simpson-power	104	3	1	0	| SP0600D-L | 600/750 | SME | S6R2-PTA-C | 3805×1557×2146 | SP0600D-L.pdf
+simpson-power	111	6	1	0	| SP1800D-L | 1800/2250 | 菱重 | S16R-PTAA2-C | 5720×2400×3436 | SP1800D-L.pdf
+simpson-power	111	6	2	0	| SP1800D-M | 1800/2250 | 三菱 MITSUBISHI | S16R-PTAA2 | 5720×2480×3440 | SP1800D-M.pdf
+simpson-power	112	7	1	0	| SP1100D-L | 1100/1375 | 菱重 | S12R-PTA-C | 4654×2136×2790 | SP1100D-L.pdf
+simpson-power	113	8	1	0	| SP0600D-L | 600/750 | 菱重 | S6R2-PTA-C | 3805×1557×2146 | SP0600D-L.pdf
+sunkings	109	8	1	0	| Engine Model | K38N-G8 | Gas pressure | 55PSI=379KPA
+taylor-power	101	0	1	0	| TA45JD kW: 45 Engine: John Deere, 4045TF290B, 4.5L Turbocharged Inline 4-Cylinder, Tier 4i Download Spec | TA45JD | 45 | John Deere, 4045TF290B, 4.5L Turbocharged Inline 4-Cylinder, Tier 4i | Download
+visa-gensets	101	0	2	0	| S12 OPEN | 12 | Open | | undefined | | Manual version | Stand-By
+visa-gensets	102	1	1	0	| S12 OPEN | 12 | Open | | undefined | | Manual version | Stand-By
+visa-gensets	105	10	1	0	| S12 OPEN | 12 | Open | | undefined | | Manual version | Stand-By
+welland-power	104	3	1	1	| 53WC0140A00 | 150 | 3 | 50 | Cummins | 6BTAA5.9G6 | None | TROP | Stamford | UCI274E1 | View
+welland-power	104	3	2	1	| 53WC0160A00 | 170 | 3 | 50 | Cummins | 6BTAA5.9G7 | None | TROP | Stamford | UCI274F1 | View
+welland-power	104	3	3	1	| 53WC0220A00 | 220 | 3 | 50 | Cummins | QSB7G5 | IIIA | TROP | Stamford | UCI274H1 | View
+welland-power	104	3	4	1	| 53WC0220A01 | 220 | 3 | 50 | Cummins | QSB7G5 | IIIA | TROP | Leroy Somer | TAL044M | View
+welland-power	104	3	5	1	| 53WC0275A00 | 275 | 3 | 50 | Cummins | QSL9G3 | IIIA | TROP | Stamford | UCDI274K1 | View
+welland-power	104	3	6	1	| 53WC0275A00 | 275 | 3 | 50 | Cummins | QSL9G3 | IIIA | TROP | Stamford | UCDI274K1 | View
+welland-power	104	3	7	1	| 53WC0330A00 | 340 | 3 | 50 | Cummins | QSL9G5 | None | TROP | Stamford | S4L1D-D41 | View
+welland-power	104	3	8	1	| 53WC0450A00 | 407 | 3 | 50 | Cummins | QSZ13G6 | None | TROP | Stamford | S4L1D-E41 | View
+welland-power	104	3	9	1	| 53WC0550B01 | 550 | 3 | 50 | Cummins | KTA19G4 | None | TROP | Leroy Somer | TAL0473C | View
+welland-power	104	3	10	1	| 53WC0500A00 | 561 | 3 | 50 | Cummins | QSX15G8 | None | TROP | Stamford | HCI544D1 | View
+welland-power	104	3	11	1	| 53WC0550B00 | 565 | 3 | 50 | Cummins | KTA19G4 | None | TROP | Stamford | S5L1D-D41 | View
+welland-power	104	3	12	1	| 53WC0550C01 | 581 | 3 | 50 | Cummins | QSZ13G10 | None | TROP | Stamford | S5L1D-D41 | View
+xinhengxin-fujian	1001	21	1	0	| Model | 544D
+xinhengxin-fujian	1001	21	3	0	| STAMFORD | HCI544D
+xinhengxin-fujian	1003	25	3	0	| STAMFORD | PI734A
