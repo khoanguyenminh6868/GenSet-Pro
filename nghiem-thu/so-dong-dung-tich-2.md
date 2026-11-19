@@ -439,7 +439,36 @@ vào TOP đều đã có trong `all` của main, chỉ là lấp chỗ trống (
     - (2) số đạt trước;
     - (3) hoà phiếu thì không có số chính xác, về "mọi nguồn".
 
+### Bổ sung Vòng 4: 36 lần chênh, 270 dòng đổi điểm (`top30-cloud\diem.mjs` → `diem.txt`)
+
+- **36 lần chênh** (đa tập 14.609 ↔ tập 14.573): 36 / 36 là khoá xuất hiện HAI lần trong `all` của main ở cùng một lượt (cùng
+  NCC, động cơ, đầu phát, chữ dòng; vd uleengen YC6T660LD20 bảng tiếng Anh và tiếng Trung ở IB2200032133#0 / IB2200049662#0;
+  wintpower 6BTAA59G12 WTC165 ở IB2200067764#0). Nhánh loại cả hai lần. Không có khoá nào còn ở nhánh mà ít lần hơn.
+- **270 dòng đổi điểm, đều −600, ở đúng 2 lượt** (trước em ghi "0 dòng đổi điểm": SAI, vì cmp chỉ so khoá):
+  - IB2400389856#0: 151 dòng 6BT5.9-G2. HSMT ghi "Động cơ … Cummins Dongfeng 6BT5.9G2 hoặc tương đương" và "Dung tích xy lanh
+    5.9 L, đường kính xy lanh 102 mm, hành trình xy lanh 120 mm".
+  - IB2400440222#0: 119 dòng 6BTA5.9-G2. HSMT ghi "Động cơ: Model: 6BTA5.9-G2 (hoặc tương đương)" và "Tổng dung tích xy lanh:
+    5.9 Lít".
+  - Tiêu chí: luật dung tích tối thiểu (`ruled: disp`). Số đông {5.88, 5.9}, số chính xác 5,88 < 5,9.
+  - Vì sao không bị loại như lượt khác: HSMT NÊU ĐÍCH DANH model động cơ (`isNamed = named(hints, e.model)`). Với model HSMT
+    nêu, `candidates` không loại mà giữ dòng, trừ 600 điểm và ghi lý do ("dung tích 5.88 L < 5.9 L HSMT yêu cầu (số đông …)")
+    cho agent thấy (luật có từ trước, cho mọi luật tối thiểu). Không phải ngưỡng mềm hay "khoảng".
+  - Mọi dòng của model đó ở hai lượt đều đổi điểm (main 1861 → 1261, …). Danh sách đủ 270 dòng ở `diem.txt`.
+- **Hệ quả với top của 2 lượt:**
+  - Dòng model nêu đích danh vẫn ở top: 8 dòng ở top cả trước lẫn sau mỗi lượt. Điểm của chúng vẫn hơn mọi dòng khác ~350 nhờ
+    điểm "HSMT nêu model".
+  - Thứ tự đổi: ở IB2400440222#0, dòng ettes-power 6BTA5.9-G (khoá khác, không bị trừ, 1165) lên đầu.
+  - Top đổi ở phần dưới: dòng Cummins cùng họ mà KHÔNG phải model nêu (6BTAA5.9-G2, 6BT5.9-G2, QSB5.9-G3 ở IB2400440222#0;
+    6BTA5.9-G2, 6BT5.9-G1, QSB5.9-G2 ở IB2400389856#0) bị loại hẳn, thay bằng 6CTA8.3, 1106A70TAG2, WP6D152, CA6DF219D…
+    ở IB2400440222#0 và các mã 6BT5.9 khoá lạ ở IB2400389856#0.
+  - Agent sẽ thấy chính model HSMT nêu bị ghi "dung tích 5.88 L < 5.9 L" dù HSMT tự ghi model đó là 5,9 L (và D×S 102×120,
+    đúng D×S nguồn ghi): **đây là chỗ luật so chặt tự mâu thuẫn với HSMT, Khoa cần xem.**
+  - Phương án:
+    - (1) giữ như nay;
+    - (2) model HSMT nêu thì không áp dung tích (HSMT đã chọn nó);
+    - (3) model HSMT nêu thì so bằng số làm tròn như HSMT ghi.
+
 ### Chưa kiểm
 
-- Cách đếm 5.217 / 270 / 405 của điều phối.
+- Cách đếm 5.217 / 270 / 405 của điều phối: đã rõ (số khoá khác nhau gom qua mọi lượt; 270 là lần đổi điểm).
 - Datasheet hãng: Cummins 6BT5.9 (5,9 hay 5,88), KT38G, Y4100D, YD4EZLD.
