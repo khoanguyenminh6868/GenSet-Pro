@@ -1432,14 +1432,22 @@ export function bandOf(cap) {
 }
 // The alternator record a row's "other" cell names. The cell often carries the make ("Stamford S5L1D-H41", "Leroy-Somer
 // TAL044"), which the catalog's key leaves out: try the cell as written, then without the make words at its start.
+// A make of one or two words ("Stamford", "Leroy Somer", "Mecc Alte", "FG Wilson"; Khoa 19/11/2026 altof-fgw: "FG Wilson FGL20060"
+// and "Leroy Somer TAL-A47-A" were left whole because only the first word was tried as a make). FG Wilson is read here only
+// at the start of the cell (as the catalog reads it in the alternator's own cell), it is not in CAT.ALT_BRANDS.
+const ALT_CELL_MAKE = [...(CAT.ALT_BRANDS || []).map(([re]) => re), /^fg[\s-]?wilson$/i];
 export function altOf(alts, cell) {
   const s = String(cell || "").trim(), hit = alts.get(CAT.keyOf(s));
   if (hit) return hit;
   let rest = s;
   for (let i = 0; i < 3; i++) {
-    const m = rest.match(/^(\S+)\s+(\S.*)$/);
-    if (!m || !CAT.ALT_BRANDS.some(([re]) => re.test(m[1]))) break;
-    rest = m[2].trim();
+    // a two-word make first, only when the two words ARE the make ("Leroy Somer"; "Stamford HCI" is a make and a code
+    // fragment, not one), then a one-word make as before; then what is left of the cell
+    const m = rest.match(/^(\S+)\s+(\S.*)$/), m2 = rest.match(/^(\S+\s+\S+)\s+(\S.*)$/);
+    const whole = (w) => ALT_CELL_MAKE.some((re) => { const k = re.exec(w); return !!k && k[0].length === w.length; });
+    const pick = (m2 && whole(m2[1]) ? m2 : null) || (m && ALT_CELL_MAKE.some((re) => re.test(m[1])) ? m : null);
+    if (!pick) break;
+    rest = pick[2].trim();
     const r = alts.get(CAT.keyOf(rest));
     if (r) return r;
   }
