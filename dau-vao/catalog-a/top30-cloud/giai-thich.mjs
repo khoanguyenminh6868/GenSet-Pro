@@ -91,14 +91,14 @@ for (const id of Object.keys(ch).sort()) {
       const o = recOf(split(k).lk), c = lineCls(split(k).lk), p = o?.power || {};
       const r = kvaPrime(p), th = [];
       if (!p.prime) th.push("không prime"); if (!p.standby) th.push("không standby"); if (!["prime", "standby", "rated"].some((x) => p[x]?.kVA != null)) th.push("không kVA");
-      const ratio = r && h.cap ? r / h.cap : null;
-      topd.push([id, h.cap, "vào", k, ga.get(k) ?? "", h.topScore[h.top.indexOf(k)], c || (ga.has(k) ? (ga.get(k) === ha.get(k) ? "E điểm không đổi" : "D điểm đổi") : "D trước bị loại: " + (gd.get(keyOfAll(k)) || []).join("/")), pw(p), ratio?.toFixed(2) ?? "?", th.join(",")].join("\t"));
+      const capK = h.cap ? (/kw/i.test(h.cap.unit) ? h.cap.value / 0.8 : h.cap.value) : null; const ratio = r && capK ? r / capK : null;
+      topd.push([id, `${h.cap?.value} ${h.cap?.unit}`, "vào", k, ga.get(k) ?? "", h.topScore[h.top.indexOf(k)], c || (ga.has(k) ? (ga.get(k) === ha.get(k) ? "E điểm không đổi" : "D điểm đổi") : "D trước bị loại: " + (gd.get(keyOfAll(k)) || []).join("/")), pw(p), ratio?.toFixed(2) ?? "?", th.join(",")].join("\t"));
       bump(T.topVao, c ? c.split(":")[0] : ga.has(k) ? (ga.get(k) === ha.get(k) ? "E điểm không đổi" : "D điểm đổi") : "D trước bị loại");
     }
     for (const k of g.top) if (!ht.has(k)) {
       const c = lineCls(split(k).lk);
       const cls = c ? c.split(":")[0] : !ha.has(k) ? "rời all: " + (hd.get(keyOfAll(k)) || []).join("/") : ha.get(k) === ga.get(k) ? "F điểm không đổi, bị đẩy" : ha.get(k) < ga.get(k) ? "D điểm giảm" : "D điểm tăng nhưng vẫn ra";
-      topd.push([id, h.cap, "ra", k, g.topScore[g.top.indexOf(k)], ha.get(k) ?? "", cls, "", "", ""].join("\t"));
+      topd.push([id, `${h.cap?.value} ${h.cap?.unit}`, "ra", k, g.topScore[g.top.indexOf(k)], ha.get(k) ?? "", cls, "", "", ""].join("\t"));
       bump(T.topRa, cls.replace(/[0-9]/g, ""));
     }
   }
