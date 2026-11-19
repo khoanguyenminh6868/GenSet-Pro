@@ -86,15 +86,21 @@ for (const k of runs) {
   }
 }
 for (const [key, o] of [...gb].sort((a, c) => c[1].rows - a[1].rows)) L.push(`  ${key}\t${o.rows} dòng\tgiữ: V ${o.V}, F ${o.F}`);
-// Giá của W: nhóm W giữ lại (so nhánh) mà D × S × z nguồn ghi không đạt.
-for (const name of ["W1", "W2"]) {
-  L.push(`\n===== ${name} giữ lại so nhánh: đối chiếu đường kính × hành trình × xi lanh nguồn ghi =====`);
-  for (const [key, o] of [...keptGroups[name]].sort((a, c) => c[1].rows - a[1].rows)) {
-    const [e, r, thr] = key.split("\t"), t = Number(thr.slice(2)), ds = dsOf(e);
-    const fail = ds.filter((x) => (r === "disp" ? x.l < t : x.l > t * 1.005)), pass = ds.filter((x) => !fail.includes(x));
-    const v = !ds.length ? "không nguồn nào ghi D×S×z" : !pass.length ? "D×S×z KHÔNG ĐẠT" : !fail.length ? "D×S×z đạt" : "D×S×z nguồn ghi khác nhau";
+// Đối chiếu D × S × z nguồn ghi: nhóm F giữ lại / loại thêm so nhánh. Loại thêm mà D×S×z đạt = số đông có thể sai (báo riêng).
+const judge = (key) => {
+  const [e, r, thr] = key.split("\t"), t = Number(thr.slice(2)), ds = dsOf(e);
+  const fail = ds.filter((x) => (r === "disp" ? x.l < t : x.l > t * 1.005)), pass = ds.filter((x) => !fail.includes(x));
+  return { v: !ds.length ? "không nguồn nào ghi D×S×z" : !pass.length ? "D×S×z KHÔNG ĐẠT" : !fail.length ? "D×S×z ĐẠT" : "D×S×z nguồn ghi khác nhau", ds };
+};
+for (const [title, m] of [["F giữ lại so nhánh", keptGroups.F], ["F loại thêm so nhánh", dropGroups.F]]) {
+  L.push(`\n===== ${title}: đối chiếu đường kính × hành trình × xi lanh nguồn ghi =====`);
+  const tally = {};
+  for (const [key, o] of [...m].sort((a, c) => c[1].rows - a[1].rows)) {
+    const { v, ds } = judge(key);
+    tally[v] = (tally[v] || 0) + 1;
     L.push(`  ${key}\t${o.rows} dòng / ${o.runs.size} lượt\t${v}\t${ds.map((x) => `${x.k} (${x.n} NCC)`).join("; ")}`);
   }
+  L.push(`  → ${JSON.stringify(tally)}`);
 }
 L.push(`\n6DTAA89G34 D×S×z: ${dsOf("6DTAA89G34").map((x) => `${x.k} (${x.n} NCC)`).join("; ")}`);
 fs.writeFileSync(OUT, L.join("\n"));
