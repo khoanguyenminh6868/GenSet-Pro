@@ -1,0 +1,152 @@
+{
+  "id": "haitai-weifang",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Weifang Haitai Power Machinery Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "HAITAI"
+    ]
+  },
+  "website": "https://www.hitepower.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": "Weifang"
+  },
+  "founded": 2010,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Generating sets",
+      "fuel": "diesel",
+      "engineMakes": [
+        "Cummins",
+        "Perkins",
+        "Weichai",
+        "Ricardo"
+      ],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 4000,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          2
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        2
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Hãng động cơ lấy theo menu sản phẩm trên trang chủ"
+  ],
+  "sources": [
+    {
+      "n": 2,
+      "url": "https://www.hitepower.com/about-us.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "HAITAI Power is a manufacturer specializing in continuous and emergency power generation equipment that established in 2010.",
+        "It covers an area of more than 30,000 square meters, including 10,000 square meters of production workshops, with a designed annual production capacity of 10KVA-4000KVA generating sets of 10,000 units"
+      ],
+      "file": "sources/haitai-weifang/2.md"
+    },
+    {
+      "n": 3001,
+      "url": "https://www.hitepower.com/product-list-controller.html",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "DSE8610 Synchronising & Load Sharing Control Module"
+      ],
+      "file": "sources/haitai-weifang/3001.md"
+    },
+    {
+      "n": 101,
+      "url": "https://www.hitepower.com/product-lng-cng-natural-methane-gas-generator-set.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "| Weight | KW | KVA | mm | L | mm | kg"
+      ],
+      "file": "sources/haitai-weifang/101.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "LNG CNG PNG Natural Methane Gas Generator Set",
+      "header": [
+        "| Weight | KW | KVA | mm | L | mm | kg"
+      ],
+      "rows": [
+        "| HTG-500GF | 500 | 625 | 12V190ZDT-2 | 190 *210 | 39.2 | IG-NT",
+        "| 4770×2200×2778 | 11800 | HTG-1100GF | 1100 | 1375 | H16V190ZLT-2 | 190x215",
+        "| 97.53 | IG-NT | 6070×2380×2776 | 22000 | HTG-1500GF | 1500 | 1875",
+        "| 16V190 | 190x215 | 97.53 | IG-NT | 6070×2380×2776 | 22000 | HTG-2000GF",
+        "| 2000 | 2500 | L20V190 | 19 0x255 | 144.6 | IG-NT | 7500x2300x2800",
+        "| 29000 | HTG-4000GF | 4000 | 5000 | 16V26/32T | 260x320 | 272"
+      ]
+    }
+  ],
+  "controllers": [
+    {
+      "brand": "Deep Sea",
+      "model": "DSE7320",
+      "text": "DSE7320",
+      "line": "| FD1ES | HGM6110/DSE7320",
+      "src": [
+        101
+      ]
+    },
+    {
+      "brand": "Deep Sea",
+      "model": "DSE8610",
+      "text": "DSE8610",
+      "line": "DSE8610 Synchronising & Load Sharing Control Module",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6100N",
+      "text": "HGM6100N",
+      "line": "HGM6100N series automatic controller uses micro-processing technique which can achieve precision...",
+      "src": [
+        3001
+      ]
+    },
+    {
+      "brand": "SmartGen",
+      "model": "HGM6110",
+      "text": "HGM6110",
+      "line": "| FD1ES | HGM6110/DSE7320",
+      "src": [
+        101
+      ]
+    }
+  ]
+}

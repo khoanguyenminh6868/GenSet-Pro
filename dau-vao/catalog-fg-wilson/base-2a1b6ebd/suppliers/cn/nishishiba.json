@@ -1,0 +1,71 @@
+{
+  "id": "nishishiba",
+  "country": "JP",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": {
+    "en": "NISHISHIBA ELECTRIC CO., LTD.",
+    "zh": null,
+    "brands": [
+      "NSDK",
+      "Nishishiba"
+    ]
+  },
+  "website": "https://www.nishishiba.co.jp/nsdk/english/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Hệ thống phát điện, máy phát và thiết bị điện công nghiệp / tàu thủy",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "Electric Power Generating Systems",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ tiếng Anh không ghi dải công suất, năm thành lập; chưa lưu trang sản phẩm máy phát không chổi than"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.nishishiba.co.jp/nsdk/english/index.htm",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Copyright 2000 - 2024 NISHISHIBA ELECTRIC CO.,LTD, All Rights Reserved.",
+        "Electric Power Generating Systems",
+        "Generating and Industrial System",
+        "Personal Power-generating System"
+      ],
+      "file": "sources/nishishiba/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

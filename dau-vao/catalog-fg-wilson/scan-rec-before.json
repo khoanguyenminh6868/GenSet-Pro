@@ -1,0 +1,610 @@
+[
+ {
+  "sup": "generatordieselchina",
+  "n": 101,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "Stamford S7L1D-J4 / Leroy-Somer LSA 52.3 L12",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "20V4000G23F",
+  "makes": [],
+  "row": "Model: R-MYC2500D5/S · 50Hz (1500 rpm) ¦ | Standby Power | 2200 kW / 2750 kVA ¦ | Prime Power | 2000 kW / 2500 kVA ¦ | Engine Model | 20V4000G23F ¦ | Alternator | Stamford S7L1D-J4 / Leroy-Somer LSA 52.3 L12 ¦ | Fuel Consumption | 342.9 / 4"
+ },
+ {
+  "sup": "generatordieselchina",
+  "n": 103,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "Stamford S6L1D-F4 / Leroy-Somer LSA 50.2 M6",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "KTA50-G3",
+  "makes": [],
+  "row": "Model: R-CC1563D6/S · 60Hz (1800 rpm) ¦ | Standby Power | 1250 kW / 1562.5 kVA ¦ | Prime Power | 1137 kW / 1421.2 kVA ¦ | Engine Model | KTA50-G3 ¦ | Alternator | Stamford S6L1D-F4 / Leroy-Somer LSA 50.2 M6 ¦ | Fuel Consumption | 205.1 / 27"
+ },
+ {
+  "sup": "generatordieselchina",
+  "n": 106,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "Stamford S5L1D-H4 / Leroy-Somer TAL-A49-C",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "KTA38-G2B",
+  "makes": [],
+  "row": "Model: R-CC1038D6/S · 60Hz (1800 rpm) ¦ | Standby Power | 830 kW / 1037.5 kVA ¦ | Prime Power | 755 kW / 943.8 kVA ¦ | Engine Model | KTA38-G2B ¦ | Alternator | Stamford S5L1D-H4 / Leroy-Somer TAL-A49-C ¦ | Fuel Consumption | 140.9 / 187.9 "
+ },
+ {
+  "sup": "generatordieselchina",
+  "n": 108,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "Stamford S5L1D-F4 / Leroy-Somer TAL-A473-F",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "KTAA19-G6A",
+  "makes": [],
+  "row": "Model: R-CC625D5/S · 50Hz (1500 rpm) ¦ | Standby Power | 550 kW / 687.5 kVA ¦ | Prime Power | 500 kW / 625 kVA ¦ | Engine Model | KTAA19-G6A ¦ | Alternator | Stamford S5L1D-F4 / Leroy-Somer TAL-A473-F ¦ | Fuel Consumption | 96.4 / 128.6 L/h"
+ },
+ {
+  "sup": "generatordieselchina",
+  "n": 110,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "Stamford S4L1D-G4 / Leroy-Somer TAL-A473-B",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "6ZTAA13-G2",
+  "makes": [],
+  "row": "Model: R-DC438D5/S · 50Hz (1500 rpm) ¦ | Standby Power | 385 kW / 481 kVA ¦ | Prime Power | 350 kW / 438 kVA ¦ | Engine Model | 6ZTAA13-G2 ¦ | Alternator | Stamford S4L1D-G4 / Leroy-Somer TAL-A473-B ¦ | Fuel Consumption | 60.0 / 80.0 L/h (@"
+ },
+ {
+  "sup": "generatordieselchina",
+  "n": 111,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "Stamford S4L1D-F4 / Leroy-Somer TAL-A473-A",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "NTAA855-G7",
+  "makes": [],
+  "row": "Model: R-CC375D5/S · 50Hz (1500 rpm) ¦ | Standby Power | 330 kW / 412.5 kVA ¦ | Prime Power | 300 kW / 375 kVA ¦ | Engine Model | NTAA855-G7 ¦ | Alternator | Stamford S4L1D-F4 / Leroy-Somer TAL-A473-A ¦ | Fuel Consumption | 55.4 / 73.8 L/h "
+ },
+ {
+  "sup": "generatordieselchina",
+  "n": 112,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "Stamford S4L1D-D4 / Leroy-Somer TAL-A46-G",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "NTA855-G1B",
+  "makes": [],
+  "row": "Model: R-CC313D5/S · 50Hz (1500 rpm) ¦ | Standby Power | 275 kW / 343.8 kVA ¦ | Prime Power | 250 kW / 312.5 kVA ¦ | Engine Model | NTA855-G1B ¦ | Alternator | Stamford S4L1D-D4 / Leroy-Somer TAL-A46-G ¦ | Fuel Consumption | 46.6 / 62.1 L/h"
+ },
+ {
+  "sup": "generatordieselchina",
+  "n": 114,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "Stamford UCI274H / Leroy-Somer TAL-A44-M",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "6CTAA8.3-G2",
+  "makes": [],
+  "row": "Model: R-DC200D5/S · 50Hz (1500 rpm) ¦ | Standby Power | 176 kW / 220 kVA ¦ | Prime Power | 160 kW / 200 kVA ¦ | Engine Model | 6CTAA8.3-G2 ¦ | Alternator | Stamford UCI274H / Leroy-Somer TAL-A44-M ¦ | Fuel Consumption | 29.3 / 39.0 L/h (@7"
+ },
+ {
+  "sup": "generatordieselchina",
+  "n": 115,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "Stamford UCI274H / Leroy-Somer TAL-A44-M",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "QSB6.7-G32",
+  "makes": [],
+  "row": "Model: R-DC180D5/S · 50Hz (1500 rpm) ¦ | Standby Power | 165 kW / 206 kVA ¦ | Prime Power | 150 kW / 188 kVA ¦ | Engine Model | QSB6.7-G32 ¦ | Alternator | Stamford UCI274H / Leroy-Somer TAL-A44-M ¦ | Fuel Consumption | 26.9 / 35.9 L/h (@75"
+ },
+ {
+  "sup": "generatordieselchina",
+  "n": 117,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "Stamford UCI274ES / Leroy-Somer TAL-A44-E",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "6BTA5.9-G2",
+  "makes": [],
+  "row": "Model: R-DC113D5/S · 50Hz (1500 rpm) ¦ | Standby Power | 110 kW / 138 kVA ¦ | Prime Power | 100 kW / 125 kVA ¦ | Engine Model | 6BTA5.9-G2 ¦ | Alternator | Stamford UCI274ES / Leroy-Somer TAL-A44-E ¦ | Fuel Consumption | 18.8 / 25.1 L/h (@7"
+ },
+ {
+  "sup": "generatordieselchina",
+  "n": 119,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "Stamford UCI224F / Leroy-Somer TAL-A44-C",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "4BTA3.9-G11",
+  "makes": [],
+  "row": "Model: R-DC91D6/S · 60Hz (1800 rpm) ¦ | Standby Power | 80.3 kW / 100.4 kVA ¦ | Prime Power | 73 kW / 91.2 kVA ¦ | Engine Model | 4BTA3.9-G11 ¦ | Alternator | Stamford UCI224F / Leroy-Somer TAL-A44-C ¦ | Fuel Consumption | 13.5 / 18.0 L/h ("
+ },
+ {
+  "sup": "generatordieselchina",
+  "n": 120,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "Stamford UCI224E / Leroy-Somer TAL-A42-H",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "4BTA3.9-G2",
+  "makes": [],
+  "row": "Model: R-DC69D6/S · 60Hz (1800 rpm) ¦ | Standby Power | 60 kW / 75 kVA ¦ | Prime Power | 55 kW / 68.8 kVA ¦ | Engine Model | 4BTA3.9-G2 ¦ | Alternator | Stamford UCI224E / Leroy-Somer TAL-A42-H ¦ | Fuel Consumption | 10.8 / 14.3 L/h (@75% /"
+ },
+ {
+  "sup": "generatordieselchina",
+  "n": 121,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "Stamford S1L2-Y1 / Leroy-Somer TAL-A42-H",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "4BTA3.9-G2",
+  "makes": [],
+  "row": "Model: R-DC60D5/S · 50Hz (1500 rpm) ¦ | Standby Power | 55 kW / 70 kVA ¦ | Prime Power | 50 kW / 63 kVA ¦ | Engine Model | 4BTA3.9-G2 ¦ | Alternator | Stamford S1L2-Y1 / Leroy-Somer TAL-A42-H ¦ | Fuel Consumption | 9.5 / 12.7 L/h (@75% / @1"
+ },
+ {
+  "sup": "generatordieselchina",
+  "n": 122,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "Stamford S1L2-R1 / Leroy-Somer TAL-A42-G",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "4BTA3.9-G2",
+  "makes": [],
+  "row": "Model: R-DC50D5/S · 50Hz (1500 rpm) ¦ | Standby Power | 44 kW / 55 kVA ¦ | Prime Power | 40 kW / 50 kVA ¦ | Engine Model | 4BTA3.9-G2 ¦ | Alternator | Stamford S1L2-R1 / Leroy-Somer TAL-A42-G ¦ | Fuel Consumption | 7.6 / 10.1 L/h (@75% / @1"
+ },
+ {
+  "sup": "generatordieselchina",
+  "n": 123,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "Stamford S1L2-K1 / Leroy-Somer TAL-A42-E",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "4BT3.9-G1",
+  "makes": [],
+  "row": "Model: R-DC40D5/S · 50Hz (1500 rpm) ¦ | Standby Power | 33 kW / 42 kVA ¦ | Prime Power | 30 kW / 38 kVA ¦ | Engine Model | 4BT3.9-G1 ¦ | Alternator | Stamford S1L2-K1 / Leroy-Somer TAL-A42-E ¦ | Fuel Consumption | 6.1 / 8.2 L/h (@75% / @100"
+ },
+ {
+  "sup": "genlitec",
+  "n": 122,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "FG Wilson FGL70030",
+  "brands": [
+   "fgwilson"
+  ],
+  "model": "4006-23TAG3A",
+  "makes": [
+   "Perkins"
+  ],
+  "row": "| Model | FG Wilson P900-1 ¦ | Frequency | 50Hz ¦ | Prime Power | 800kVA / 640kW ¦ | Standby Power | 892kVA / 713.6kW ¦ | Voltage | 380/400/415V ¦ | Phase | 3-Phase, 4-Wire ¦ | Power Factor | 0.8 ¦ | Engine | Perkins 4006-23TAG3A ¦ | Altern"
+ },
+ {
+  "sup": "genlitec",
+  "n": 123,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "FG Wilson FGL30020",
+  "brands": [
+   "fgwilson"
+  ],
+  "model": "1104A-44TG2",
+  "makes": [
+   "Perkins"
+  ],
+  "row": "| Genset Model | FG Wilson P88-3 ¦ | Prime Power | 80kVA/64kW ¦ | Standby Power | 88kVA/70.4kW ¦ | Frequency | 50Hz ¦ | Engine | Perkins 1104A-44TG2 ¦ | Alternator | FG Wilson FGL30020 ¦ | Fuel Tank Capacity | 180 Liters ¦ | Engine Model | "
+ },
+ {
+  "sup": "genlitec",
+  "n": 124,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "FG Wilson FGL20060",
+  "brands": [
+   "fgwilson"
+  ],
+  "model": "1103A-33TG1",
+  "makes": [
+   "Perkins"
+  ],
+  "row": "| Genset Model | FG Wilson P50-3 ¦ | Prime Power | 45kVA/36kW ¦ | Standby Power | 50kVA/40kW ¦ | Frequency | 50Hz ¦ | Engine | Perkins 1103A-33TG1 ¦ | Alternator | FG Wilson FGL20060 ¦ | Fuel Tank Capacity | 145 Liters ¦ | Engine Model | Pe"
+ },
+ {
+  "sup": "genlitec",
+  "n": 125,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "FG Wilson FGL30040",
+  "brands": [
+   "fgwilson"
+  ],
+  "model": "1104C-44TAG2",
+  "makes": [
+   "Perkins"
+  ],
+  "row": "| Genset Model | FG Wilson P110-3 ¦ | Prime Power | 100kVA/80kW ¦ | Standby Power | 110kVA/88kW ¦ | Frequency | 50Hz ¦ | Engine | Perkins 1104C-44TAG2 ¦ | Alternator | FG Wilson FGL30040 ¦ | Fuel Tank Capacity | 218 Litres ¦ | Engine Model "
+ },
+ {
+  "sup": "genlitec",
+  "n": 126,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "FG Wilson FGL20080",
+  "brands": [
+   "fgwilson"
+  ],
+  "model": "1103A-33TG2",
+  "makes": [
+   "Perkins"
+  ],
+  "row": "| Genset Model | FG Wilson P65-5 ¦ | Prime Power | 60kVA/48kW ¦ | Standby Power | 65kVA/52kW ¦ | Frequency | 50Hz ¦ | Engine | Perkins 1103A-33TG2 ¦ | Alternator | FG Wilson FGL20080 ¦ | Fuel Tank Capacity | 145 Liters ¦ | Engine Model | Pe"
+ },
+ {
+  "sup": "genlitec",
+  "n": 127,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "FG Wilson FGL20030",
+  "brands": [
+   "fgwilson"
+  ],
+  "model": "1103A-33G1",
+  "makes": [
+   "Perkins"
+  ],
+  "row": "| Genset Model | FG Wilson P33-3 ¦ | Prime Power | 30kVA/24kW ¦ | Standby Power | 33kVA/26.4kW ¦ | Frequency | 50Hz ¦ | Engine | Perkins 1103A-33G1 ¦ | Alternator | FG Wilson FGL20030 ¦ | Fuel Tank Capacity | 71 Liters ¦ | Engine Model | Pe"
+ },
+ {
+  "sup": "genlitec",
+  "n": 128,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "FG Wilson FGL30080",
+  "brands": [
+   "fgwilson"
+  ],
+  "model": "1106A-70TG1",
+  "makes": [
+   "Perkins"
+  ],
+  "row": "| Genset Model | FG Wilson P150-5 ¦ | Prime Power | 135kVA/108kW ¦ | Standby Power | 150kVA/120kW ¦ | Frequency | 50Hz ¦ | Engine | Perkins 1106A-70TG1 ¦ | Alternator | FG Wilson FGL30080 ¦ | Fuel Tank Capacity | 327 Liters ¦ | Engine Model"
+ },
+ {
+  "sup": "genlitec",
+  "n": 129,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "FG Wilson FGL30100",
+  "brands": [
+   "fgwilson"
+  ],
+  "model": "1106A-70TAG2",
+  "makes": [
+   "Perkins"
+  ],
+  "row": "| Genset Model | FG Wilson P165-5 ¦ | Prime Power | 135kVA/108kW ¦ | Standby Power | 150kVA/120kW ¦ | Frequency | 50Hz ¦ | Engine | Perkins 1106A-70TAG2 ¦ | Alternator | FG Wilson FGL30100 ¦ | Fuel Tank Capacity | 327 Liters ¦ | Engine Mode"
+ },
+ {
+  "sup": "genlitec",
+  "n": 130,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "FG Wilson FGL30120",
+  "brands": [
+   "fgwilson"
+  ],
+  "model": "1106A-70TAG3",
+  "makes": [
+   "Perkins"
+  ],
+  "row": "| Genset Model | FG Wilson P200-3 ¦ | Prime Power | 180kVA/144kW ¦ | Standby Power | 200kVA/160kW ¦ | Frequency | 50Hz ¦ | Engine | Perkins 1106A-70TAG3 ¦ | Alternator | FG Wilson FGL30120 ¦ | Fuel Tank Capacity | 394 Liters ¦ | Engine Mode"
+ },
+ {
+  "sup": "genlitec",
+  "n": 131,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "FG Wilson FGL30120",
+  "brands": [
+   "fgwilson"
+  ],
+  "model": "1106A-70TAG4",
+  "makes": [
+   "Perkins"
+  ],
+  "row": "| Genset Model | FG Wilson P220-3 ¦ | Prime Power | 200kVA/160kW ¦ | Standby Power | 220kVA/176kW ¦ | Frequency | 50Hz ¦ | Engine | Perkins 1106A-70TAG4 ¦ | Alternator | FG Wilson FGL30120 ¦ | Fuel Tank Capacity | 394 Liters ¦ | Engine Mode"
+ },
+ {
+  "sup": "genlitec",
+  "n": 134,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "FG Wilson FG26A250",
+  "brands": [
+   "fgwilson"
+  ],
+  "model": "1506A-E88TAG5",
+  "makes": [
+   "Perkins"
+  ],
+  "row": "| Genset Model | FG Wilson P330-5 ¦ | Prime Power | 300kVA/240kW ¦ | Standby Power | 330kVA/264kW ¦ | Frequency | 50Hz ¦ | Engine | Perkins 1506A-E88TAG5 ¦ | Alternator | FG Wilson FG26A250 ¦ | Fuel Tank Capacity | 528 Liters ¦ | Engine Mod"
+ },
+ {
+  "sup": "genlitec",
+  "n": 135,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "FG Wilson FG29A280",
+  "brands": [
+   "fgwilson"
+  ],
+  "model": "2206A-E13TAG2",
+  "makes": [
+   "Perkins"
+  ],
+  "row": "| Genset Model | FG Wilson P400-3 ¦ | Prime Power | 350kVA/280kW ¦ | Standby Power | 400kVA/320kW ¦ | Frequency | 50Hz ¦ | Engine | Perkins 2206A-E13TAG2 ¦ | Alternator | FG Wilson FG29A280 ¦ | Fuel Tank Capacity | 888 Liters ¦ | Engine Mod"
+ },
+ {
+  "sup": "genlitec",
+  "n": 136,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "FG Wilson FG29A320",
+  "brands": [
+   "fgwilson"
+  ],
+  "model": "2206A-E13TAG3",
+  "makes": [
+   "Perkins"
+  ],
+  "row": "| Genset Model | FG Wilson P450-3 ¦ | Prime Power | 400kVA/320kW ¦ | Standby Power | 450kVA/360kW ¦ | Frequency | 50Hz ¦ | Engine | Perkins 2206A-E13TAG3 ¦ | Alternator | FG Wilson FG29A320 ¦ | Fuel Tank Capacity | 888 Liters ¦ | Engine Mod"
+ },
+ {
+  "sup": "genlitec",
+  "n": 137,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "FG Wilson FG29A360",
+  "brands": [
+   "fgwilson"
+  ],
+  "model": "2506A-E15TAG1",
+  "makes": [
+   "Perkins"
+  ],
+  "row": "| Genset Model | FG Wilson P500-3 ¦ | Prime Power | 450kVA/360kW ¦ | Standby Power | 500kVA/400kW ¦ | Frequency | 50Hz ¦ | Engine | Perkins 2506A-E15TAG1 ¦ | Alternator | FG Wilson FG29A360 ¦ | Fuel Tank Capacity | 888 Liters ¦ | Engine Mod"
+ },
+ {
+  "sup": "genlitec",
+  "n": 138,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "FG Wilson FG29A400",
+  "brands": [
+   "fgwilson"
+  ],
+  "model": "2506A-E15TAG2",
+  "makes": [
+   "Perkins"
+  ],
+  "row": "| Genset Model | FG Wilson P550-3 ¦ | Prime Power | 500kVA/400kW ¦ | Standby Power | 550kVA/440kW ¦ | Frequency | 50Hz ¦ | Engine | Perkins 2506A-E15TAG2 ¦ | Alternator | FG Wilson FG29A400 ¦ | Fuel Tank Capacity | 888 Liters ¦ | Engine Mod"
+ },
+ {
+  "sup": "genlitec",
+  "n": 139,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "FG Wilson FG33A450",
+  "brands": [
+   "fgwilson"
+  ],
+  "model": "2806A-E18TAG1",
+  "makes": [
+   "Perkins"
+  ],
+  "row": "| Genset Model | FG Wilson P605-3 ¦ | Prime Power | 550kVA/440kW ¦ | Standby Power | 605kVA/484kW ¦ | Frequency | 50Hz ¦ | Engine | Perkins 2806A-E18TAG1 ¦ | Alternator | FG Wilson FG33A450 ¦ | Fuel Tank Capacity | 1132 Litres ¦ | Engine Mo"
+ },
+ {
+  "sup": "genlitec",
+  "n": 140,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "FG Wilson FG33A450",
+  "brands": [
+   "fgwilson"
+  ],
+  "model": "2806A-E18TAG1",
+  "makes": [
+   "Perkins"
+  ],
+  "row": "| Genset Model | FG Wilson P605-3 ¦ | Prime Power | 550kVA/440kW ¦ | Standby Power | 605kVA/484kW ¦ | Frequency | 50Hz ¦ | Engine | Perkins 2806A-E18TAG1 ¦ | Alternator | FG Wilson FG33A450 ¦ | Fuel Tank Capacity | 1132 Liters ¦ | Engine Mo"
+ },
+ {
+  "sup": "genlitec",
+  "n": 141,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "FG Wilson FG33A560",
+  "brands": [
+   "fgwilson"
+  ],
+  "model": "2806A-E18TAG2",
+  "makes": [
+   "Perkins"
+  ],
+  "row": "| Genset Model | FG Wilson P715-3 ¦ | Prime Power | 650kVA/520kW ¦ | Standby Power | 715kVA/572kW ¦ | Frequency | 50Hz ¦ | Engine | Perkins 2806A-E18TAG2 ¦ | Alternator | FG Wilson FG33A560 ¦ | Fuel Tank Capacity | 1132 Liters ¦ | Engine Mo"
+ },
+ {
+  "sup": "genlitec",
+  "n": 149,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "GENLITEC S274G120 ( STAMFORD & LEROY SOMER alternators for options)",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "P086TI-I",
+  "makes": [
+   "Doosan"
+  ],
+  "row": "Model GDS150D5 | GDS150S5 ¦ Voltage 220/380V | 230/400V | 240/415V ¦ Standby Power: 132KW/165KVA ¦ Prime Power: 120KW/150KVA ¦ Frequency: 50Hz ¦ Speed: 1500 RPM ¦ Voltage: 220/380V (230/400V or 240/415V available according to different coun"
+ },
+ {
+  "sup": "genlitec",
+  "n": 150,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "GENLITEC S274G200 ( STAMFORD & LEROY SOMER alternators for options)",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "DP086LA",
+  "makes": [
+   "Doosan"
+  ],
+  "row": "Model GDS250D6 | GDS250S6 ¦ Voltage 110/190V | 120/208V | 127/220V | 254/440V ¦ Standby Power: 220KW/275KVA ¦ Prime Power: 200KW/250KVA ¦ Frequency: 60Hz ¦ Speed: 1800 RPM ¦ Voltage: 120/208V (110/190V, 127/220V, 254/440V or 277/480V availa"
+ },
+ {
+  "sup": "genlitec",
+  "n": 151,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "GENLITEC S274G180 ( STAMFORD & LEROY SOMER alternators for options)",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "P086TI",
+  "makes": [
+   "Doosan"
+  ],
+  "row": "Model GDS225D6 | GDS225S6 ¦ Voltage 110/190V | 120/208V | 127/220V | 254/440V ¦ Standby Power: 200KW/250KVA ¦ Prime Power: 180KW/225KVA ¦ Frequency: 60Hz ¦ Speed: 1800 RPM ¦ Voltage: 120/208V (110/190V, 127/220V, 254/440V or 277/480V availa"
+ },
+ {
+  "sup": "genlitec",
+  "n": 152,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "GENLITEC S274G150 ( STAMFORD & LEROY SOMER alternators for options)",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "P086TI-I",
+  "makes": [
+   "Doosan"
+  ],
+  "row": "Model GDS188D6 | GDS188S6 ¦ Voltage 110/190V | 120/208V | 127/220V | 254/440V ¦ Standby Power: 165KW/206KVA ¦ Prime Power: 150KW/188KVA ¦ Frequency: 60Hz ¦ Speed: 1800 RPM ¦ Voltage: 120/208V (110/190V, 127/220V, 254/440V or 277/480V availa"
+ },
+ {
+  "sup": "genlitec",
+  "n": 153,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "GENLITEC S274G160 ( STAMFORD & LEROY SOMER alternators for options)",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "P086TI",
+  "makes": [
+   "Doosan"
+  ],
+  "row": "Model GDS200D5 | GDS200S5 ¦ Voltage 220/380V | 230/400V | 240/415V ¦ Standby Power: 176KW/220KVA ¦ Prime Power: 160KW/200KVA ¦ Frequency: 50Hz ¦ Speed: 1500 RPM ¦ Voltage: 220/380V (230/400V or 240/415V available according to different coun"
+ },
+ {
+  "sup": "genlitec",
+  "n": 154,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "GENLITEC S274G180 ( STAMFORD & LEROY SOMER alternators for options)",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "P086 LA",
+  "makes": [
+   "Doosan"
+  ],
+  "row": "Model GDS225D5 | GDS225S5 ¦ Voltage 220/380V | 230/400V | 240/415V ¦ Standby Power: 200KW/250KVA ¦ Prime Power: 180KW/225KVA ¦ Frequency: 50Hz ¦ Speed: 1500 RPM ¦ Voltage: 220/380V (230/400V or 240/415V available according to different coun"
+ },
+ {
+  "sup": "genlitec",
+  "n": 160,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "GENLITEC S314G220 ( STAMFORD & LEROY SOMER alternators for options)",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "P126TI",
+  "makes": [
+   "Doosan"
+  ],
+  "row": "Model GDS275D5 | GDS275S5 ¦ Voltage 220/380V | 230/400V | 240/415V ¦ Standby Power: 250KW/313KVA ¦ Prime Power: 220KW/275KVA ¦ Frequency: 50Hz ¦ Speed: 1500 RPM ¦ Voltage: 220/380V (230/400V or 240/415V available according to different coun"
+ },
+ {
+  "sup": "genlitec",
+  "n": 161,
+  "kind": "engine",
+  "where": "engine.other",
+  "cell": "GENLITEC S314G250 ( STAMFORD & LEROY SOMER alternators for options)",
+  "brands": [
+   "stamford",
+   "leroy"
+  ],
+  "model": "P126TI",
+  "makes": [
+   "Doosan"
+  ],
+  "row": "Model GDS313D6 | GDS313S6 ¦ Voltage 110/190V | 120/208V | 127/220V | 254/440V ¦ Standby Power: 275KW/335KVA ¦ Prime Power: 250KW/313KVA ¦ Frequency: 60Hz ¦ Speed: 1800 RPM ¦ Voltage: 120/208V (110/190V, 127/220V, 254/440V or 277/480V availa"
+ }
+]

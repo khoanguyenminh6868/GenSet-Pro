@@ -1,0 +1,254 @@
+[
+ {
+  "id": "generatordieselchina",
+  "p": ".specTables[5].rows[4]",
+  "kind": "2BR",
+  "s": "| Alternator | Stamford S5L1D-H4 / Leroy-Somer TAL-A49-C"
+ },
+ {
+  "id": "generatordieselchina",
+  "p": ".specTables[7].rows[4]",
+  "kind": "2BR",
+  "s": "| Alternator | Stamford S5L1D-F4 / Leroy-Somer TAL-A473-F"
+ },
+ {
+  "id": "generatordieselchina",
+  "p": ".specTables[9].rows[4]",
+  "kind": "2BR",
+  "s": "| Alternator | Stamford S4L1D-G4 / Leroy-Somer TAL-A473-B"
+ },
+ {
+  "id": "generatordieselchina",
+  "p": ".specTables[10].rows[4]",
+  "kind": "2BR",
+  "s": "| Alternator | Stamford S4L1D-F4 / Leroy-Somer TAL-A473-A"
+ },
+ {
+  "id": "generatordieselchina",
+  "p": ".specTables[11].rows[4]",
+  "kind": "2BR",
+  "s": "| Alternator | Stamford S4L1D-D4 / Leroy-Somer TAL-A46-G"
+ },
+ {
+  "id": "generatordieselchina",
+  "p": ".specTables[13].rows[4]",
+  "kind": "2BR",
+  "s": "| Alternator | Stamford UCI274H / Leroy-Somer TAL-A44-M"
+ },
+ {
+  "id": "generatordieselchina",
+  "p": ".specTables[14].rows[4]",
+  "kind": "2BR",
+  "s": "| Alternator | Stamford UCI274H / Leroy-Somer TAL-A44-M"
+ },
+ {
+  "id": "generatordieselchina",
+  "p": ".specTables[16].rows[4]",
+  "kind": "2BR",
+  "s": "| Alternator | Stamford UCI274ES / Leroy-Somer TAL-A44-E"
+ },
+ {
+  "id": "generatordieselchina",
+  "p": ".specTables[18].rows[4]",
+  "kind": "2BR",
+  "s": "| Alternator | Stamford UCI224F / Leroy-Somer TAL-A44-C"
+ },
+ {
+  "id": "generatordieselchina",
+  "p": ".specTables[19].rows[4]",
+  "kind": "2BR",
+  "s": "| Alternator | Stamford UCI224E / Leroy-Somer TAL-A42-H"
+ },
+ {
+  "id": "generatordieselchina",
+  "p": ".specTables[20].rows[4]",
+  "kind": "2BR",
+  "s": "| Alternator | Stamford S1L2-Y1 / Leroy-Somer TAL-A42-H"
+ },
+ {
+  "id": "generatordieselchina",
+  "p": ".specTables[21].rows[4]",
+  "kind": "2BR",
+  "s": "| Alternator | Stamford S1L2-R1 / Leroy-Somer TAL-A42-G"
+ },
+ {
+  "id": "generatordieselchina",
+  "p": ".specTables[22].rows[4]",
+  "kind": "2BR",
+  "s": "| Alternator | Stamford S1L2-K1 / Leroy-Somer TAL-A42-E"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[21].rows[8]",
+  "kind": "FGALT",
+  "s": "| Alternator | FG Wilson FGL70030"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[21].rows[14]",
+  "kind": "FGALT",
+  "s": "| Alternator Model | FG Wilson FGL70030"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[22].rows[5]",
+  "kind": "FGALT",
+  "s": "| Alternator | FG Wilson FGL30020"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[23].rows[5]",
+  "kind": "FGALT",
+  "s": "| Alternator | FG Wilson FGL20060"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[24].rows[5]",
+  "kind": "FGALT",
+  "s": "| Alternator | FG Wilson FGL30040"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[25].rows[5]",
+  "kind": "FGALT",
+  "s": "| Alternator | FG Wilson FGL20080"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[26].rows[5]",
+  "kind": "FGALT",
+  "s": "| Alternator | FG Wilson FGL20030"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[27].rows[5]",
+  "kind": "FGALT",
+  "s": "| Alternator | FG Wilson FGL30080"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[28].rows[5]",
+  "kind": "FGALT",
+  "s": "| Alternator | FG Wilson FGL30100"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[29].rows[5]",
+  "kind": "FGALT",
+  "s": "| Alternator | FG Wilson FGL30120"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[30].rows[5]",
+  "kind": "FGALT",
+  "s": "| Alternator | FG Wilson FGL30120"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[33].rows[5]",
+  "kind": "FGALT",
+  "s": "| Alternator | FG Wilson FG26A250"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[34].rows[5]",
+  "kind": "FGALT",
+  "s": "| Alternator | FG Wilson FG29A280"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[35].rows[5]",
+  "kind": "FGALT",
+  "s": "| Alternator | FG Wilson FG29A320"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[36].rows[5]",
+  "kind": "FGALT",
+  "s": "| Alternator | FG Wilson FG29A360"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[37].rows[5]",
+  "kind": "FGALT",
+  "s": "| Alternator | FG Wilson FG29A400"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[38].rows[5]",
+  "kind": "FGALT",
+  "s": "| Alternator | FG Wilson FG33A450"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[39].rows[5]",
+  "kind": "FGALT",
+  "s": "| Alternator | FG Wilson FG33A450"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[40].rows[5]",
+  "kind": "FGALT",
+  "s": "| Alternator | FG Wilson FG33A560"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[97].rows[10]",
+  "kind": "FGALT",
+  "s": "| Alternator Make | FG Wilson"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[103].rows[10]",
+  "kind": "FGALT",
+  "s": "| Alternator Make | FG Wilson"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[109].rows[9]",
+  "kind": "FGALT",
+  "s": "| Alternator Make | FG Wilson"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[115].rows[10]",
+  "kind": "FGALT",
+  "s": "| Alternator Make | FG Wilson"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[121].rows[9]",
+  "kind": "FGALT",
+  "s": "| Alternator Make | FG Wilson"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[127].rows[10]",
+  "kind": "FGALT",
+  "s": "| Alternator Make | FG Wilson"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[133].rows[9]",
+  "kind": "FGALT",
+  "s": "| Alternator Make | FG Wilson"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[139].rows[9]",
+  "kind": "FGALT",
+  "s": "| Alternator Make | FG Wilson"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[145].rows[9]",
+  "kind": "FGALT",
+  "s": "| Alternator Make | FG Wilson"
+ },
+ {
+  "id": "genlitec",
+  "p": ".specTables[151].rows[9]",
+  "kind": "FGALT",
+  "s": "| Alternator Make | FG Wilson"
+ }
+]

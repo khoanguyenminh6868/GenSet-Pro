@@ -1,0 +1,89 @@
+{
+  "id": "oukai-fuan",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "Fuan Oukai Power Equipment Co.,Ltd.",
+    "zh": null,
+    "brands": [
+      "Oukai"
+    ]
+  },
+  "website": "http://www.fjouk.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": "Fu'an"
+  },
+  "founded": 2004,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Sản xuất đầu phát và tổ máy ở Phúc An",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Generator sets",
+      "fuel": "other",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "alternator",
+      "series": "Generators (alternators)",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang tiếng Anh không ghi dải công suất, chứng chỉ; bản quyền ghi 2009-2013 nên thông tin có thể cũ",
+    "Nguồn không ghi loại nhiên liệu của tổ máy (fuel để other)"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.fjouk.com/index_en.asp",
+      "accessedAt": "2026-10-29",
+      "tier": "A",
+      "quote": [
+        "China--Oukai power equipment co.,ltd. was founded in 2004, located in the Fuan City known as \"China Motor City\", Oukai is one production-oriented enterprises with generators, generator sets R&D, manufacturing, sales and service as one",
+        "Address : Yanhu Development Zone Fuan Fujian"
+      ],
+      "file": "sources/oukai-fuan/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-29",
+  "checkedBy": "discover-bot"
+}

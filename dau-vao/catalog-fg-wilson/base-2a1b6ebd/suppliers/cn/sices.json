@@ -1,0 +1,180 @@
+{
+  "id": "sices",
+  "country": "IT",
+  "role": "controller_maker",
+  "status": "partial",
+  "names": {
+    "en": "SICES S.r.l.",
+    "zh": null,
+    "brands": [
+      "SICES"
+    ]
+  },
+  "website": "https://www.sices.eu/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [
+    "mecc-alte"
+  ],
+  "strengths": [
+    {
+      "text": "Theo hãng: một trong các nhà sản xuất chính bộ điều khiển tổ máy (Ý)",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không liệt kê model; theo tin bên thứ ba mảng bộ điều khiển SICES đã về Mecc Alte"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://sices.eu/",
+      "accessedAt": "2026-11-04",
+      "tier": "A",
+      "quote": [
+        "© 2025 SICES S.r.l.",
+        "Siamo uno dei principali produttori mondiali di controllori per gruppi elettrogeni"
+      ],
+      "file": "sources/sices/1.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://sices.eu/download/customized-amf-control-panels/?wpdmdl=13879",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "genset controller model GC315Plus, GC310 or GC350 mounted on the front door."
+      ],
+      "file": "sources/sices/2001.md",
+      "official": true
+    },
+    {
+      "n": 2002,
+      "url": "https://sices.eu/download/synchro-parallel-control-panel-in-modular-version/?wpdmdl=13868",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "Genset controller GC500Plus."
+      ],
+      "file": "sources/sices/2002.md",
+      "official": true
+    },
+    {
+      "n": 2003,
+      "url": "https://sices.eu/download/quadro-elettrico-di-parallelo-per-2-3-4-gruppi-elettrogeno-in-isola/?wpdmdl=13869",
+      "accessedAt": "2026-11-14",
+      "tier": "A",
+      "quote": [
+        "DST4602Evolution - Avanzata centralina di controllo a microprocessore la quale incorpora",
+        "GC600 - Centralina di controllo a microprocessore compatta ed affidabile la quale",
+        "GC400 - Centralina di controllo a microprocessore compatta ed affidabile la quale"
+      ],
+      "file": "sources/sices/2003.md",
+      "official": true
+    },
+    {
+      "n": 6001,
+      "url": "https://www.meccalte.com/en/news-and-events/mecc-alte-acquires-sices-controllers",
+      "accessedAt": "2026-11-17",
+      "tier": "A",
+      "quote": [
+        "will continue to be designed and developed in its Italian plants"
+      ],
+      "file": "sources/sices/6001.md",
+      "official": true
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-14",
+  "checkedBy": "claude (rà nhà cung cấp G7, 04/11)",
+  "specTables": [],
+  "controllers": [
+    {
+      "brand": "SICES",
+      "model": "GC315Plus",
+      "text": "GC315Plus",
+      "line": "genset controller model GC315Plus, GC310 or GC350 mounted on the front door. In",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "SICES",
+      "model": "GC310",
+      "text": "GC310",
+      "line": "genset controller model GC315Plus, GC310 or GC350 mounted on the front door. In",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "SICES",
+      "model": "GC350",
+      "text": "GC350",
+      "line": "genset controller model GC315Plus, GC310 or GC350 mounted on the front door. In",
+      "src": [
+        2001
+      ]
+    },
+    {
+      "brand": "SICES",
+      "model": "GC500Plus",
+      "text": "GC500Plus",
+      "line": "Genset controller GC500Plus.                                  8. Opening of the GCB;",
+      "src": [
+        2002
+      ]
+    },
+    {
+      "brand": "SICES",
+      "model": "DST4602Evolution",
+      "text": "DST4602Evolution",
+      "line": "DST4602Evolution - Avanzata centralina di controllo a microprocessore la quale incorpora",
+      "src": [
+        2003
+      ]
+    },
+    {
+      "brand": "SICES",
+      "model": "GC600",
+      "text": "GC600",
+      "line": "GC600 - Centralina di controllo a microprocessore compatta ed affidabile la quale",
+      "src": [
+        2003
+      ]
+    },
+    {
+      "brand": "SICES",
+      "model": "GC400",
+      "text": "GC400",
+      "line": "GC400 - Centralina di controllo a microprocessore compatta ed affidabile la quale",
+      "src": [
+        2003
+      ]
+    }
+  ],
+  "manufacturing": [
+    {
+      "country": "IT",
+      "city": null,
+      "scope": "design",
+      "products": "SMARTECH",
+      "src": [
+        6001
+      ],
+      "quote": [
+        "will continue to be designed and developed in its Italian plants"
+      ],
+      "note": "SICES thuộc Mecc Alte từ 07/03/2024; nhà máy SICES không được nêu tên, Ấn Độ chỉ là kế hoạch"
+    }
+  ],
+  "manufacturingNote": "SICES: nhà máy sản xuất chưa xác nhận (Khoa 16/11/2026: cần xác nhận); nguồn hãng chỉ nói thiết kế ở Ý"
+}

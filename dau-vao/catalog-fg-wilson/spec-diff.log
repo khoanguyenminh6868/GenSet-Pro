@@ -1,0 +1,4 @@
+bản ghi cũ 59016, mới 59064 | khác 10 | chỉ cũ 0, chỉ mới 48 | bảng có đổi 43
+{"makes":10}
+đảo vai: 0 → 0 | tự kiểm: cần soát tay 0
+Chưa đọc được (`node suppliers/unread-tables.mjs`, để thiếu thay vì đoán): bảng không cho bản ghi nào: 3.191 → 3.191; dòng điện / điện áp theo vị trí không khớp công suất: 230 → 230; dòng là cặp nhãn | giá trị: 164 → 164; số vô lý so với công suất: 139 → 139; dòng tổng quan dòng máy: một dải công suất, không là một tổ máy: 90 → 90; số bằng đúng công suất của dòng, không là khối lượng / độ ồn: 77 → 77; mã đầu phát trùng model tổ máy: 37 → 37; cặp a/b dưới nhãn không ghi mức / đơn vị: 34 → 34; tổ máy nhiều động cơ: 6 → 6; điện áp trùng công suất của dòng: 6 → 6; dòng điện tổ máy không khớp công suất: 5 → 5; trang có hai động cơ: số liệu kích cỡ động cơ không rõ của động cơ nào: 2 → 2; số có dấu phẩy nghìn / thập phân không rõ: 2 → 2; một ô ghi hai mã: 1 → 1; ô dòng điện không đọc được thành số: 1 → 1

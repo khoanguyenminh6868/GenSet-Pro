@@ -1,0 +1,96 @@
+{
+  "id": "datakom",
+  "country": "TR",
+  "role": "controller_maker",
+  "status": "incomplete",
+  "names": {
+    "en": "Datakom Electronics Engineering A.S",
+    "zh": null,
+    "brands": [
+      "Datakom"
+    ]
+  },
+  "website": "https://datakom.com.tr/",
+  "hq": {
+    "province": null,
+    "city": null
+  },
+  "founded": null,
+  "strengths": [],
+  "certifications": [],
+  "productLines": [
+    {
+      "kind": "controller",
+      "series": "DC Genset Controllers",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        6002
+      ]
+    }
+  ],
+  "manufacturing": [
+    {
+      "country": "TR",
+      "city": "Istanbul",
+      "scope": "manufacture",
+      "src": [
+        6001,
+        6002
+      ],
+      "quote": [
+        "Datakom started building its new factory in Istanbul.",
+        "Datakom moved to its new factory of 5000m2 big."
+      ],
+      "note": "Nguồn chỉ nói xây / chuyển sang nhà máy mới ở Istanbul, không nói thẳng sản xuất mọi sản phẩm hay dòng nào."
+    },
+    {
+      "country": "TR",
+      "scope": "manufacture",
+      "khoa": "Khoa chốt 16/11/2026",
+      "note": "Mặc định TR (MADE_DEFAULT); nguồn chỉ nói xây nhà máy mới."
+    }
+  ],
+  "sources": [
+    {
+      "n": 6001,
+      "url": "https://datakom.com.tr/NewsDetail/announcement-regarding-the-construction-of-new-factory/44?lang=5",
+      "accessedAt": "2026-11-17",
+      "tier": "A",
+      "quote": [
+        "Datakom started building its new factory in Istanbul."
+      ],
+      "file": "sources/datakom/6001.md",
+      "official": true
+    },
+    {
+      "n": 6002,
+      "url": "https://datakom.com.tr/",
+      "accessedAt": "2026-11-17",
+      "tier": "A",
+      "quote": [
+        "DC Genset Controllers",
+        "Datakom moved to its new factory of 5000m2 big."
+      ],
+      "file": "sources/datakom/6002.md",
+      "official": true
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [
+    "năm thành lập",
+    "trụ sở",
+    "dải công suất (bộ điều khiển không có)",
+    "thông số bộ điều khiển"
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-17"
+}

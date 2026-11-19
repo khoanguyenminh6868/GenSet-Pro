@@ -1,0 +1,175 @@
+{
+  "id": "hanma-tech",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "安徽汉马发动机有限公司",
+    "brands": [
+      "远程动力",
+      "汉马"
+    ]
+  },
+  "website": "https://www.camc.cc/",
+  "hq": {
+    "province": "Anhui",
+    "city": "Maanshan"
+  },
+  "founded": 2013,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ diesel 'Yuancheng' (远程动力) cho xe tải, tàu thủy và tổ máy",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thành lập 2013 tại Mã An Sơn (An Huy), tiền thân là phân xưởng động cơ của Hualing Motors",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "engine",
+      "series": "远程动力发动机",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "汉马柴油发电机组 (神驰 SC…HM)",
+      "fuel": "diesel",
+      "power": {
+        "min": 230,
+        "max": 410,
+        "unit": "kW",
+        "rating": "prime",
+        "src": [
+          2001
+        ]
+      },
+      "engineMakes": [
+        "汉马"
+      ],
+      "engineModels": [
+        "CM6D12F.250 30",
+        "CM6D18F.290 30",
+        "CM6D28F.300 30",
+        "CM6D28F.350 30",
+        "CM6D30F.408 30"
+      ],
+      "src": [
+        2001
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "汉马动力 CM6D10 / CM6D18 / CM6D28 / CM6D30",
+      "fuel": "diesel",
+      "power": {
+        "min": 199,
+        "max": 412,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          2002
+        ]
+      },
+      "src": [
+        2002
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Website là của công ty mẹ 汉马科技 (camc.cc); chưa có dải công suất động cơ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.powerchinashow.com/news2ae18.html?id=2632",
+      "accessedAt": "2026-11-01",
+      "tier": "B",
+      "quote": [
+        "安徽汉马发动机有限公司 （以下简称“汉马科技”），成立于2013年，位于安徽马鞍山经济技术开发区，其前身是“安徽华菱汽车有限公司发动机分公司”",
+        "“远程动力”于2013年正式投放市场",
+        "船用发动机和发电机组"
+      ],
+      "file": "sources/hanma-tech/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.camc.cc/culture",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "拥有安徽华菱汽车有限公司、安徽星马专用汽车有限公司、安徽汉马发动机有限公司等主要分子公司",
+        "拥有华菱汽车、星马汽车、汉马动力三大品牌"
+      ],
+      "file": "sources/hanma-tech/2.md"
+    },
+    {
+      "n": 2001,
+      "url": "https://www.jssenci.com/pd48661701.html",
+      "accessedAt": "2026-11-14",
+      "tier": "B",
+      "quote": [
+        "汉马动力系列发动机均采用直列6缸、整体缸盖、四气门、顶置凸轮轴、后置齿轮系技术",
+        "| SC230HM | 230/253 | CM6D12F.250 30 | 250/275 | 128X153 | 6 | 30 | ≤200 | 国Ⅲ | |",
+        "| SC410HM | 410/450 | CM6D30F.408 30 | 450/490 | 130X161 | 6 | 41 | ≤195 | 国Ⅲ | |"
+      ],
+      "file": "sources/hanma-tech/2001.md",
+      "official": false
+    },
+    {
+      "n": 2002,
+      "url": "http://www.camc-tw.url.tw/html/product/power/engine.html",
+      "accessedAt": "2026-11-14",
+      "tier": "B",
+      "quote": [
+        "主要包括CM6D10、CM6D18、CM6D28和CM6D30系列柴油機，排量分別為7.8升、9.8升、11.8升和12.8升，功率覆蓋範圍199Kw-412Kw",
+        "該發動機適用於物流運輸車輛、工程運輸車輛、特種車輛以及長途客車、工程機械和發電機組等。"
+      ],
+      "file": "sources/hanma-tech/2002.md",
+      "official": false
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-14",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 2001,
+      "title": "汉马系列 汉马 SERIES (国Ⅲ排放 STAGEⅢ EMISSION) — tổ máy 神驰 SC…HM dùng động cơ 汉马",
+      "header": [
+        "| 机组型号Set Type | 机组输出功率（KW） （主用/备用） | 柴油机型号 Engine model | 柴油机功率（KW） 主用/备用 Prime/Standby | 缸径X行程（mm） Bore-stroke ratio | 缸数 Number of vat | 机油容量（L）Machine oil capacity | 燃油消耗 Fuel consumption g/kw·h | 排放 Discharge | 开架机组 Open Type"
+      ],
+      "rows": [
+        "| SC230HM | 230/253 | CM6D12F.250 30 | 250/275 | 128X153 | 6 | 30 | ≤200 | 国Ⅲ | |",
+        "| SC265HM | 265/290 | CM6D18F.290 30 | 290/319 | 118X150 | 6 | 34.5 | ≤240 | 国Ⅲ | |",
+        "| SC274HM | 274/300 | CM6D28F.300 30 | 300/330 | 128X153 | 6 | 34.5 | ≤200 | 国Ⅲ | |",
+        "| SC320HM | 320/350 | CM6D28F.350 30 | 350/385 | 128X153 | 6 | 41.6 | ≤200 | 国Ⅲ | |",
+        "| SC410HM | 410/450 | CM6D30F.408 30 | 450/490 | 130X161 | 6 | 41 | ≤195 | 国Ⅲ | |"
+      ]
+    }
+  ]
+}

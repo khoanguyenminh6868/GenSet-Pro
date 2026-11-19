@@ -1,0 +1,85 @@
+{
+  "id": "yaohu-chongqing",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "partial",
+  "names": {
+    "en": "CHONGQING YAOHU POWER MACHINE CO.,LTD.",
+    "zh": null,
+    "brands": [
+      "Yaohu"
+    ]
+  },
+  "website": null,
+  "hq": {
+    "province": "Chongqing",
+    "city": "Chongqing"
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ xăng / diesel, máy phát xăng / diesel, máy phát-hàn, bơm",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Gasoline / diesel generators",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "Gasoline / diesel engines",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn là gian hàng CCCME (hạng B); không ghi dải công suất"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.cccme.cn/shop/cccme9834/introduction.aspx",
+      "accessedAt": "2026-11-01",
+      "tier": "B",
+      "quote": [
+        "Chongqing Yaohu Power Machine Co., Ltd. is a leading professional manufacturer of gasoline engines, diesel engines, gasoline generators, diesel generators, water pumps, welding generators",
+        "Address:No.23 Jinshan Avenue, Tongliang Industrial Park, Chongqing,China"
+      ],
+      "file": "sources/yaohu-chongqing/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}

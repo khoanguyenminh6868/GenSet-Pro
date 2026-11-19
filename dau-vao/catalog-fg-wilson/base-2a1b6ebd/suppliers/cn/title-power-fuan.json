@@ -1,0 +1,104 @@
+{
+  "id": "title-power-fuan",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "FUJIAN TITLE ENGINE POWER CO.,LTD.",
+    "zh": null,
+    "brands": [
+      "TITLE"
+    ]
+  },
+  "website": "https://www.titlepowers.com/",
+  "hq": {
+    "province": "Fujian",
+    "city": null
+  },
+  "founded": 1996,
+  "foundedSrc": [
+    2
+  ],
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Diesel generator sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 3300,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [
+        "open",
+        "silent",
+        "trailer",
+        "container"
+      ],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [
+    {
+      "name": "ISO9001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "ISO14001",
+      "src": [
+        1
+      ]
+    },
+    {
+      "name": "CE",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "exportMarkets": [],
+  "missing": [],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.titlepowers.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "TITLE supplies generating sets ranging 10KVA—3,300KVA open type, soundproof type, trailer type, containerized type diesel generator sets",
+        "IS09001&IS014001& CE certified"
+      ],
+      "file": "sources/title-power-fuan/1.md"
+    },
+    {
+      "n": 2,
+      "url": "https://www.titlepowers.com/about.html",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "FUJIAN TITLE ENGINE POWER CO.,LTD. was founded in 1996, located in Xibeiyang Industrial Zone, Fujian Province, the factory covers an area of 15 acres"
+      ],
+      "file": "sources/title-power-fuan/2.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

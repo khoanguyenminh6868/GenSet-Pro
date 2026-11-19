@@ -1,0 +1,90 @@
+{
+  "id": "gensyntop",
+  "country": "CN",
+  "role": "genset_oem",
+  "status": "verified",
+  "names": {
+    "en": "Shandong Gensyn Top Power Co., Ltd.",
+    "zh": null,
+    "brands": [
+      "Gensyn Top"
+    ]
+  },
+  "website": "https://www.gensyntoppower-generator.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": null
+  },
+  "founded": 2013,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "Biogas / gas engine generators",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 10,
+        "max": 100,
+        "unit": "kW",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "genset",
+      "series": "Diesel Generator Sets",
+      "fuel": "diesel",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Dải 10–100 kW chỉ gộp từ 2 sản phẩm gas trên trang chủ"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://www.gensyntoppower-generator.com/",
+      "accessedAt": "2026-10-28",
+      "tier": "A",
+      "quote": [
+        "We were established in 2013, the factory covers an area of 10000 square meters, located in Shandong",
+        "silent biogas electricity generator—delivering 10KW to 50KW",
+        "Industry Use Construction gas engine generator delivers 30KW to 100KW"
+      ],
+      "file": "sources/gensyntop/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-10-28",
+  "checkedBy": "claude-code"
+}

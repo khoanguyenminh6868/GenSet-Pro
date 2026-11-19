@@ -1,0 +1,127 @@
+{
+  "id": "shengdong-dongying",
+  "country": "CN",
+  "role": "engine_maker",
+  "status": "partial",
+  "names": {
+    "en": null,
+    "zh": "胜利动力机械集团有限公司",
+    "brands": [
+      "胜动"
+    ]
+  },
+  "website": "http://www.slpmg.com/",
+  "hq": {
+    "province": "Shandong",
+    "city": null
+  },
+  "founded": null,
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Động cơ khí đốt trong và tổ máy khí dòng 190 (12V, 16V, 20V) cho phát điện phân tán",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thuộc tập đoàn 水发集团; tổ máy khí công suất lớn được chọn vào danh sách thiết bị 'đầu tiên' của tỉnh Sơn Đông 2026",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "genset",
+      "series": "190系列燃气发电机组",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    },
+    {
+      "kind": "engine",
+      "series": "燃气内燃机",
+      "fuel": "gas",
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": null,
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Trang chủ không ghi dải công suất kW, năm thành lập"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "http://www.slpmg.com/",
+      "accessedAt": "2026-11-01",
+      "tier": "A",
+      "quote": [
+        "Copyrigh @ 2023 胜利动力机械集团有限公司 All Rights Reserved",
+        "全国分布式燃气发电产业的创建带领者。国家级分布式能源燃气内燃机装备自主化研发制造基地。",
+        "12V190系列燃气发电机组",
+        "20V190系列燃气发电机组",
+        "水发集团权属胜动集团自主研发的“智能化大功率燃气发电机组”成功入选"
+      ],
+      "file": "sources/shengdong-dongying/1.md"
+    },
+    {
+      "n": 101,
+      "url": "http://www.slpmg.com/product/50.html",
+      "accessedAt": "2026-11-13",
+      "tier": "A",
+      "quote": [
+        "| 型号 | 额定功率KVA | 额定电压V | 额定电流A | 功率因数cosφ | 频率Hz | 额定转速r/min"
+      ],
+      "file": "sources/shengdong-dongying/101.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)",
+  "specTables": [
+    {
+      "n": 101,
+      "title": "1FC6系列、JFG系列三相交流同步发电机-胜利动力机械集团",
+      "header": [
+        "| 型号 | 额定功率KVA | 额定电压V | 额定电流A | 功率因数cosφ | 频率Hz | 额定转速r/min"
+      ],
+      "rows": [
+        "| 1FC6 455-6 | 625 | 400 | 902 | 0.8 | 50 | 1000",
+        "| 1FC6 457-6 | 750 | 400 | 1083 | 0.8 | 50 | 1000",
+        "| JFG700-6/10500 | 875 | 10500 | 48 | 0.8 | 50 | 1000",
+        "| JFG700-6/6300 | 875 | 6300 | 80 | 0.8 | 50 | 1000",
+        "| JFG1000-6/10500 | 1250 | 10500 | 69 | 0.8 | 50 | 1000",
+        "| JFG1000-6/6300 | 1250 | 6300 | 115 | 0.8 | 50 | 1000",
+        "| JFG1200-6/10500 | 1500 | 10500 | 82 | 0.8 | 50 | 1000",
+        "| JFG1200-6/6300 | 1500 | 6300 | 137 | 0.8 | 50 | 1000",
+        "| JFG1500-6/10500 | 1875 | 10500 | 103 | 0.8 | 50 | 1000",
+        "| JFG1500-6/6300 | 1875 | 6300 | 172 | 0.8 | 50 | 1000",
+        "| JFG2000-6/10500 | 2500 | 10500 | 137 | 0.8 | 50 | 1000",
+        "| JFG2000-6/6300 | 2500 | 6300 | 229 | 0.8 | 50 | 1000"
+      ]
+    }
+  ]
+}

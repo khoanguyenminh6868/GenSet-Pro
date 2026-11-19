@@ -1,0 +1,83 @@
+{
+  "id": "nianfeng-fujian",
+  "country": "CN",
+  "role": "alternator_maker",
+  "status": "partial",
+  "names": {
+    "en": "NIANFENG (FUJIAN) MOTOR CO., LTD.",
+    "zh": null,
+    "brands": []
+  },
+  "website": null,
+  "hq": {
+    "province": "Fujian",
+    "city": "Fuan"
+  },
+  "founded": 2018,
+  "foundedSrc": [
+    1
+  ],
+  "relatedIds": [],
+  "strengths": [
+    {
+      "text": "Đầu phát không chổi than và đầu phát cao áp 8–6250 kVA, hơn 60.000 chiếc/năm",
+      "src": [
+        1
+      ]
+    },
+    {
+      "text": "Thành lập 7/2018 tại Phúc An, 40.000 m², hơn 200 nhân viên",
+      "src": [
+        1
+      ]
+    }
+  ],
+  "productLines": [
+    {
+      "kind": "alternator",
+      "series": "AC generator, brushless alternator and high-voltage generator",
+      "fuel": null,
+      "engineMakes": [],
+      "engineModels": [],
+      "alternatorMakes": [],
+      "power": {
+        "min": 8,
+        "max": 6250,
+        "unit": "kVA",
+        "rating": "unspecified",
+        "src": [
+          1
+        ]
+      },
+      "frequency": [],
+      "voltage": [],
+      "types": [],
+      "emission": [],
+      "standards": [],
+      "src": [
+        1
+      ]
+    }
+  ],
+  "certifications": [],
+  "exportMarkets": [],
+  "missing": [
+    "Nguồn là trang danh mục nhà triển lãm Heat & Electro 2025 (hạng B), chưa có website riêng"
+  ],
+  "sources": [
+    {
+      "n": 1,
+      "url": "https://online.gefera.ru/eng/info/HEM25/catalog/d74f4e1c-8640-49fc-5edb-feb6778aa9fd/",
+      "accessedAt": "2026-11-01",
+      "tier": "B",
+      "quote": [
+        "NIANFENG (FUJIAN) MOTOR CO., LTD. founded in July 2018, is located in Fu'an City, Fujian Province. The company covers an area of 40,000 square meters and has more than 200 employees.",
+        "It is a professional manufacturer for the ac generator, brushless alternator and high-voltage generator. The power covers 8kVA to 6250kVA, the production capacity is over 60000 pieces per year."
+      ],
+      "file": "sources/nianfeng-fujian/1.md"
+    }
+  ],
+  "confidence": "medium",
+  "checkedAt": "2026-11-01",
+  "checkedBy": "discover-bot (Claude)"
+}
