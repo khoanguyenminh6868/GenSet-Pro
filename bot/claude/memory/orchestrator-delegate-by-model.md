@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-17T23:31:42.397Z
+  modified: 2026-11-19T18:54:38.142Z
 ---
 
 Phiên chính đóng vai kỹ sư trưởng + điều phối (business, sales, kỹ thuật): phân rã, viết brief, kiểm kết quả, quyết định. Việc thực thi giao session khác với model theo độ khó.
@@ -25,3 +25,4 @@ Khoa 18/11/2026 nhắc lại ("vì sao em không điều phối cho các model k
 - **Kiểm bắt buộc** (Khoa 10/11/2026): session con KHÔNG tự merge, không tự thay tệp bot đang chạy ([[bot-ops]]); gửi nghiệm thu gồm link PR, lệnh kiểm + đầu ra thật, số đo trước/sau, rủi ro + cách quay lui. Phiên điều phối kiểm ĐỘC LẬP: CI, diff đúng phạm vi, chạy lại lệnh kiểm chính, đối chiếu ngẫu nhiên vài mẫu với nguồn, kiểm quy tắc trong bộ nhớ, đo hiệu quả bằng chỉ số của việc. PR lớn/rủi ro cao: thêm một session review độc lập (model khác tác giả, chỉ đọc). Đạt mới merge ([[git-workflow]]) rồi kiểm lại sau merge.
 
 - **Đo top 30 trên cloud** (Khoa 19/11/2026 "ok, làm thử đi", thử đạt): thay cho đo trên máy. Phiên con Sonnet tạo với `environment_id: env_01J7VDMwjMHp9EmsKKDVA2k2` (GenSet-Cloud) + `source_url` repo; chạy `NODE_USE_ENV_PROXY=1 node suppliers/do-gop.mjs` cho từng commit (~35 phút / lượt, chạy song song được), đẩy kết quả nén lên nhánh `...-ket-qua` (chỉ số thông báo, khoá dòng, điểm: repo public, không đẩy bidhist). Phiên cloud không đọc ổ C:, không nhắn về được → brief tự đủ, điều phối fetch nhánh về rồi so ĐA TẬP. Không so với tệp gop cũ trên máy (bidhist khác ngày).
+- **Xem phiên con đang làm gì** (bẫy 19/11/2026): KHÔNG gọi `list_events` với `kinds: ["assistant"]` và limit lớn (đổ cả transcript, hàng chục nghìn token, làm phiên điều phối phải compact). Dùng `get_session` (status_bucket), xem tệp nghiệm thu / log nó ghi, tiến trình trên máy; cần thì nhắn hỏi, nó trả ≤5 dòng. So kết quả đo: đếm theo LẦN và theo KHOÁ KHÁC NHAU ra số khác nhau, ghi rõ đang đếm kiểu nào trước khi bảo phiên con sai.
