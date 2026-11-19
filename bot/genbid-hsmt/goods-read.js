@@ -6,7 +6,7 @@
   // ghi vào genbid-bot-logs\history-goods-audit.tsv và không đưa lên web. Trường đã đọc (USED), trường biết là không
   // cần (IGNORED: mã, thứ tự, tổng, thuế, cờ, nơi/thời gian giao hàng), còn lại có giá trị thì báo.
   const USED = new Set(["name", "nameGood", "goodName", "code", "codeGood", "model", "lableGood", "labelGood", "label", "manufacturer", "origin", "yearGood", "yearManufacture",
-    "quantity", "qty", "unit", "uom", "priceUnit", "bidPrice", "unitPrice", "feature", "technique", "description", "otherInfo", "note", "goodDescription"]);
+    "quantity", "qty", "unit", "uom", "priceUnit", "bidPrice", "unitPrice", "feature", "technique", "description", "otherInfo", "note", "goodDescription", "reqLabel"]);
   const IGNORED = new Set(["id", "pos", "parent", "children", "currentItemIndex", "groupCode", "groupFormula", "isGroup", "isAdminConfig", "title", "formCode", "nameTable", "lotNo", "lotName",
     "group", "bidItem", "type", "isDiscount", "costType", "taxValue", "tax", "importTax", "taxSpecial", "chiPhiNhapNgoai", "chiPhiSanXuat", "amount", "bidAmount", "amountTotal",
     "amountBeforeTax", "priceIncludeTax", "priceExcludeTax", "exwUnitPrice", "exwPrice", "cost", "investCapital", "ratedQuantity", "circulationNum", "originQty", "isAfter33936",
@@ -96,6 +96,10 @@
         name: str(r.name, r.nameGood, r.goodName), code: str(r.codeGood, r.code, r.model), label: str(r.lableGood, r.labelGood, /^\d{4,10}$/.test(String(r.label ?? "").trim()) ? "" : r.label), // mẫu cũ: label là mã HS (8502)
         maker: str(r.manufacturer), origin: str(r.origin), year: str(r.yearGood, r.yearManufacture), qty: pos(r.quantity, r.qty), unit: str(r.unit, r.uom),
         unitPrice: unitOf(r), desc: desc.slice(0, 8000), ...(str(r.otherInfo, r.note) ? { note: str(r.otherInfo, r.note).slice(0, 2000) } : {}),
+        // reqLabel = cột "Xuất xứ" của bảng E-HSMT do bên mời thầu điền: YÊU CẦU xuất xứ của dòng (chữ tự do: "G7", "Việt Nam",
+        // "Theo quy định tại Chương V"...), khác `origin` là xuất xứ nhà thầu trúng chào (Khoa 2026-11-19, rà soát 67 gói; xem
+        // genbid-work\dieu-phoi\nghiem-thu\reqlabel-1.md). Chỉ có ở mẫu dsHhKq.dsHH của gói ~2024; không có thì bỏ khoá.
+        ...(str(r.reqLabel) ? { reqOrigin: str(r.reqLabel).slice(0, 500) } : {}),
       };
     }).filter((r) => r.name || r.code || r.label);
   };
