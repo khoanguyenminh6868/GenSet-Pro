@@ -24,4 +24,4 @@ Giống hệt = top + topScore theo mảng, `all` theo đa tập (khoá@điểm)
 | 286 | 229 | 544 | 34 | 0 |
 
 sha256 (giải nén): gốc `2723b15324aa852aa7a85a9805cd725d47322c723a72022d05fe933e6cb7be0d`, nhánh `36411ea1860e817c3cda9756288ed134690459c27401990d5fa8c3e5c7b11ae1`.
-(Trùng sha256 với "nhánh mới" của R1b là bình thường: gốc ở đây chính là phần nền đã gộp PR #941 — chưa kiểm ssâu hơn.)
+(Ghi chú: sha256 của lượt gốc trùng sha256 lượt "nhánh mới" (573506701, PR #941) trong R1b; chưa tìm nguyên nhân.)
