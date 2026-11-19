@@ -162,7 +162,9 @@
     ["compr", "engine", "Tỉ số nén", /compression/i, null, /\d\s*:\s*1|^\d+(\.\d+)?$/],
     ["asp", "engine", "Nạp khí", /aspirat|intake|进气|吸气/i, null, /turbo|natural|aftercool|intercool|增压|自然|ta\b|na\b/i],
     ["gov", "engine", "Điều tốc", /gov|调速/i, null, /electr|mechan|electron|ecu|governor|电子|机械|\bg[123]\b|class/i],
-    ["emission", "engine", "Tiêu chuẩn khí thải", /emission|排放/i, null, /stage|tier|euro|epa|non-road|exempt|china|\bgb\b|国[一二三四五ⅡⅢⅣ]|[ⅡⅢⅣ]|\b(ii|iii|iv|v)\b|\bt[1-4]\b/i],
+    ["emission", "engine", "Tiêu chuẩn khí thải", /emission|排放/i, null, /^(?![\s\S]*stage(?:[4-9]|[1-9]\d)\b)[\s\S]*(?:stage|tier|euro|epa|non-road|exempt|china|\bgb\b|国[一二三四五ⅡⅢⅣ]|[ⅡⅢⅣ]|\b(ii|iii|iv|v)\b|\bt[1-4]\b)/i],
+    // ^ "CHINA STAGE4" … "CHINA STAGE18" (baifa n101, a spreadsheet's fill run counting up from "CHINA STAGE3"): no such
+    //   stage; a figure glued to "STAGE" from 4 up is not read (catalog-a; no other value in cn/ is written that way).
     ["coolant", "engine", "Nước làm mát", /coolant|cooling\s*water|water\s*(tank|capacity)/i, /temp|温度|pressure|压力|flow/i, /^\d/],
     // Charge-air / piston cooling is not the engine's cooling system ("Air/Air cooling", "Aftercooling", "Charge Air Cooling").
     ["aircool", "engine", "Làm mát khí nạp / piston", /after\s*-?cool|charge\s*air|piston\s*cool|inter\s*-?cool|air\s*\/\s*(air|water)\s*cool|增压空气|活塞冷却/i, null, COOL],
@@ -1235,7 +1237,8 @@
         // cell left blank the next code, the datasheet "SP0022D-C.pdf", was read as the engine).
         const twoG = cellsOf(line).filter((c) => /-G\d+\s*[(（]\s*G\d+\s*[)）]$/i.test(c));
         if (twoG.length) { note(t, ti, ri, "một ô ghi hai mã", twoG.join(", ")); return; }
-        const raw = cellsOf(line).map((c) => c.replace(/\s+made in [a-z ]+$|\s*[（][^）]*[）]\s*$/i, "").trim());
+        // "CG250-H1 CONTACT" (fdk-energy): the page's "Contact" link text run into the model cell (catalog-a).
+        const raw = cellsOf(line).map((c) => c.replace(/\s+made in [a-z ]+$|\s*[（][^）]*[）]\s*$/i, "").replace(/^(\S+)\s+CONTACT$/, "$1").trim());
         // A make in Chinese, "&", then the code ("沃尔沃 & TAD530GE", "斯坦福 & UCI224G", rcg-power n124): the code alone is the
         // cell's model; the make stays in the row's text for makesFor (catalog-bang-r1).
         const cells = raw.map((c) => c.replace(/^[一-鿿]{1,8}\s*&\s*(?=\S*\d\S*$)/, ""));
@@ -1245,7 +1248,7 @@
         // A set of two engines ("| 1100 | 1000 | … | 2 x TAD1641GE | … | SCP8610", tecnogen): the cell is no code, the
         // controller was read as the engine. The set's output is not one engine's: the row gives no engine at all.
         // The code may be written with spaces ("2 x DC13 072A 02 14", Scania): whole, joined, or its first word.
-        if (cells.some((c) => { const m = c.match(/^[2-4]\s*[x×]\s*(\S.*)$/i); return m && [m[1], m[1].replace(/\s+/g, ""), m[1].split(/\s+/)[0]].some(isCode); })) { note(t, ti, ri, "tổ máy nhiều động cơ", line); return; }
+        if (cells.some((c) => { const m = c.match(/^[2-4]\s*[x×*]\s*(\S.*)$/i); /* "2*TWD1645GE" (baifa n106 TWIN, catalog-a) */ return m && [m[1], m[1].replace(/\s+/g, ""), m[1].split(/\s+/)[0]].some(isCode); })) { note(t, ti, ri, "tổ máy nhiều động cơ", line); return; }
         // A table of series ("| Power range | models | Engine | Alternator | Controller", eastern-lion: "Engine By Cummins | 22 –
         // 444 kW | 40 | 4BTA3.9-G2 | EL 274K"): the row is a family of 40 models over a range of outputs, the engine and the
         // alternator are one example of it, not the set's own parts (lech-cot-11).

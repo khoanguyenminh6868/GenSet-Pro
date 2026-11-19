@@ -17,7 +17,7 @@ test("(a) fdk-energy n103: dòng máy ngay dưới tiêu đề đọc như dòng
     "| CG275-H1 CONTACT | 275KVA/ 220KW | 250KVA/ 200KW | QSL9-G3 | Cummins (USA) | Stamford UCDI274K | Click Here | Download"],
   rows: ["| CD23/H1 CONTACT | 23KVA/ 18KW | 20KVA/ 16KW | 4B3.9-G11 | Cummins (China Dongfeng) | Stamford S0L2-G1 | Click Here |"] }]);
   const e = recs(s, "engine");
-  assert.deepEqual(e.map((r) => [r.row, r.genset, r.model]), [[0, "CD23/H1 CONTACT", "4B3.9-G11"], [1, "CG250-H1 CONTACT", "QSL9-G2"], [2, "CG275-H1 CONTACT", "QSL9-G3"]]);
+  assert.deepEqual(e.map((r) => [r.row, r.genset, r.model]), [[0, "CD23/H1", "4B3.9-G11"], [1, "CG250-H1", "QSL9-G2"], [2, "CG275-H1", "QSL9-G3"]]);
   assert.deepEqual(e[1].power, { standby: { kVA: 250, kW: 200 }, prime: { kVA: 225, kW: 180 } });
   assert.equal(e[1].line, "| CG250-H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | QSL9-G2 | Cummins (USA) | Stamford UCDI274J | Click Here | Download");
   // tiêu đề lưu kèm bản ghi chỉ còn dòng tiêu đề thật
@@ -122,4 +122,25 @@ test("(b) 燃油 消耗 (honny n101), 电 流 / 排 气 量 (yunding n2001), 缸
   rows: ["| 1000GF | 1100 | 1000 | 1985/1805 | A12V190ZL | 济柴 | 1200 | 12 | 200 | 12000 | 6200 × 1950 ×3 000"] }]), "engine")[0];
   assert.equal(spec(z, "cyl"), "12");
   assert.equal(spec(z, "weight"), "12000");
+});
+
+test("soát của điều phối: 'CONTACT' (chữ liên kết của fdk) không thuộc model tổ máy; '2*' (TWIN, baifa n106) không cho bản ghi; 'CHINA STAGE16' không là khí thải", () => {
+  const f = recs(sup("fdk-energy", [{ n: 103, title: "Diesel Generator Set (9-3250KVA) - FDK Energy", header: [
+    "| | Genset Model | Standby Power | Prime Power | Engine Model | Engine Original | Alternator Model | Details | Download PDF"],
+  rows: ["| CD23/H1 CONTACT | 23KVA/ 18KW | 20KVA/ 16KW | 4B3.9-G11 | Cummins (China Dongfeng) | Stamford S0L2-G1 | Click Here |"] }]), "engine");
+  assert.equal(f[0].genset, "CD23/H1");
+  const notes = [];
+  const b = recs(sup("baifa-power", [{ n: 106, title: "", header: [
+    "| BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY",
+    "| Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD",
+    "| BF-V900TWIN-T2 | 900 | 820 | VOLVO PENTA | 2*TAD1344GE | EMS2 / ECU | 2*S4L1D-F41 | ISO 20'ft HC"],
+  rows: ["| BF-C625-3 | 625 | 569 | QSK19-G17 | | CHINA STAGE3 | CHINA"] }]), null, notes);
+  assert.deepEqual(b.map((r) => r.genset), ["BF-C625-3"]);
+  assert.equal(notes.filter((x) => x.reason === "tổ máy nhiều động cơ").length, 1);
+  const head = ["| BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY", "| Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD"];
+  const e = recs(sup("baifa-power", [{ n: 101, title: "", header: head, rows: [
+    "| BF-C28Q-3 | 28 | 25 | CUMMINS (CHINA) | QSB3.9-G31 | ECM | S0L2-M1 | Stage IIIA / CHINA STAGE3 | CHINA",
+    "| BF-C200Q-3 | 200 | 180 | CUMMINS (CHINA) | QSL9-G5 | ECM | S1L2-K1 | Stage IIIA / CHINA STAGE16 | CHINA"] }]), "engine");
+  assert.equal(spec(e[0], "emission"), "Stage IIIA / CHINA STAGE3");
+  assert.equal(spec(e[1], "emission"), undefined);
 });
