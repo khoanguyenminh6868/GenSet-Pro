@@ -487,7 +487,8 @@
       // outputs, right after the model.
       const tm = h.slice(0, tp).findIndex((x) => /model|型号|机组|^\s*type\s*$|set\s*type/i.test(x));
       let p0;
-      const subline = gi >= 0 && tm < 0 && tp === 0;
+      // (gi > 1: the genset code is in a column after the outputs, "功率 | 备用功率 | 品牌 | 整机编号", zhengchi; they are not "right after the model")
+      const subline = gi >= 0 && gi <= 1 && tm < 0 && tp === 0;
       if (gi >= 0 && tm >= 0) p0 = tp + gi - tm;
       else if (subline) p0 = gi + 1;
       else if (!h[0] && h.length === cells.length + 1) p0 = tp - 1;
@@ -1248,6 +1249,16 @@
         for (const h of (t.header || []).map(cellsOf)) if (h.length === n) h.forEach((x, i) => engTitle(x) && js.add(i));
         return js.size === 1 ? [...js][0] : -1;
       };
+      // The one column the header titles as the genset's own model / number ("整机编号", "整机型号", "机组型号", "Genset model"),
+      // in a header row with as many cells as the row: -1 when no such row, or two. Used only when the genset's code is the
+      // row's FIRST code, in a column after the second (zhengchi n102-120: "功率 | 备用功率 | 品牌 | 整机编号 | 柴油机型号" put the
+      // genset code at 3, so it was read as the engine and the real engine model (柴油机型号) was lost; catalog-b3).
+      const GEN_TITLE = /^(整机|机组|发电机组|成套机组)\s*(型号|编号|代号)$|^(genset|generator\s*set)\s*model$/i;
+      const gensetCol = (n) => {
+        const js = new Set();
+        for (const h of (t.header || []).map(cellsOf)) if (h.length === n) h.forEach((x, i) => GEN_TITLE.test(x.trim()) && js.add(i));
+        return js.size === 1 ? [...js][0] : -1;
+      };
       t.rows.forEach((line, ri) => {
         // A note after the code ("1104C-44TAG2 made in china", "4BTA3.9-G2 （ QC58/67E ）") makes the cell
         // fail isCode and the next code (the alternator) would be read as the engine: drop the note.
@@ -1280,7 +1291,7 @@
         let gi = -1, ei = -1, ai = -1;
         if (engineTable) ei = codes[0];
         else {
-          gi = codes[0] === 0 || codes[0] === 1 ? codes[0] : -1;
+          gi = codes[0] === 0 || codes[0] === 1 || (codes[0] > 1 && codes[0] === gensetCol(cells.length)) ? codes[0] : -1;
           const rest = codes.filter((i) => i !== gi);
           const alt = rest.filter((i) => ALT_CODE.test(cells[i]) || (hasAltCol && FRAME_ALT.test(cells[i].trim())));
           if (hasAltCol && alt.length) ai = alt[0];
