@@ -180,6 +180,37 @@ export function majorityOf(figs) {
   if (won < 3 * next) return null;
   return { win: t.win, votes: Object.fromEntries([...t.votes].map(([v, ss]) => [v, ss.length])), blocked: extra };
 }
+// Dung tích chỉ khác độ làm tròn là MỘT sự thật (Khoa 19/11/2026, so-dong-dung-tich vòng 3: DP222CB 21.927 / 21.9 là một
+// phiếu, không phải hai phiếu trái nhau). Tương thích: làm tròn số nhiều chữ số thập phân hơn về số chữ số của số kia ra đúng
+// số kia, và lệch ≤ 1 % (4.3 ↔ 4 hay 5.9 ↔ 6, có thể là số xi lanh đọc nhầm, không gộp). Không nhận cắt cụt (37.88 ↛ 37.8).
+const decsOf = (x) => { const s = String(x), i = s.indexOf("."); return i < 0 || /e/i.test(s) ? 0 : s.length - i - 1; };
+// Số so ngưỡng của nhóm thắng: số CHÍNH XÁC NHẤT (nhiều chữ số thập phân nhất; Khoa 19/11: nguồn chỉ ghi số làm tròn mà HSMT đòi
+// số chính xác hơn thì loại, Y490D 2.67 ↔ ≥ 2.672; nguồn có số chính xác không đạt thì loại dù số làm tròn đạt, SC8D 8.27 / 8.3
+// ↔ ≥ 8.3). Nhiều số cùng độ chính xác (D1146 8.071 / 8.074, WP41D80E200 4.087 / 4.088): số nhiều phiếu hơn; bằng phiếu thì
+// số trượt trước (nhỏ hơn khi so tối thiểu, lớn hơn khi so trần), như Khoa chọn loại khi nguồn không đủ căn cứ.
+export function dispExact(mj, kind) {
+  const d = Math.max(...mj.group.map(decsOf)), p = mj.group.filter((x) => decsOf(x) === d);
+  return p.sort((a, b) => (mj.raw[b] || 0) - (mj.raw[a] || 0) || (kind === "max" ? b - a : a - b))[0];
+}
+export const roundCompat = (x, y) => {
+  if (x === y) return true;
+  const [p, c] = decsOf(x) >= decsOf(y) ? [x, y] : [y, x], d = decsOf(c);
+  if (decsOf(p) === d) return false;
+  const k = 10 ** d;
+  return Math.abs(Math.round(p * k + 1e-9) / k - c) < 1e-9 && Math.abs(p - c) <= Math.abs(c) * 0.01;
+};
+// majorityOf trên nhóm giá trị tương thích làm tròn (bắc cầu; đại diện: số nhỏ nhất của nhóm); trả thêm `group` = mọi số của
+// nhóm thắng, `raw` = số người bỏ phiếu (sau gộp NCC) cho từng số của nhóm.
+export function majorityRound(figs) {
+  const vals = [...new Set(figs.map(([, x]) => x).filter((x) => typeof x === "number" && Number.isFinite(x)))].sort((a, b) => a - b);
+  const root = new Map(vals.map((v) => [v, v])), find = (v) => (root.get(v) === v ? v : find(root.get(v)));
+  for (let i = 0; i < vals.length; i++) for (let j = i + 1; j < vals.length; j++) if (roundCompat(vals[i], vals[j])) { const a = find(vals[i]), b = find(vals[j]); if (a !== b) root.set(Math.max(a, b), Math.min(a, b)); }
+  const mj = majorityOf(figs.map(([s, x]) => [s, typeof x === "number" && root.has(x) ? find(x) : x]));
+  if (!mj) return null;
+  const group = vals.filter((v) => find(v) === mj.win), raw = {};
+  for (const v of group) raw[v] = new Set(figs.filter(([, x]) => x === v).map(([s]) => s)).size;
+  return { ...mj, group, raw };
+}
 const normWhyVi = (why) => [...new Set(why.map((w) => NORM_VI[w] || w))].join(", ");
 export const ORIGIN = { cn: "Trung Quốc", g7: "G7 (Mỹ, Anh, Đức, Pháp, Ý, Nhật, Canada)", g20: "G20 (các nước thành viên trừ Trung Quốc)", other: "Khác (không phải Trung Quốc)", all: "Tất cả",
   // Only read from the HSMT ("G7, EU"), never chosen on the web (Khoa, 2026-11-10).
@@ -1509,10 +1540,15 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // judged by it alone (longkai's "No. cylinders | V 12" for the 6-cylinder QSK19-G4 no longer keeps it for "≥ 12 xi
       // lanh"). No such value: as before. The displacement too (MAJ_KEYS, Khoa 19/11/2026), its voters merged by dispVoters:
       // Chinese suppliers copy one template table, so counting each made a copied error win (MTU 1600 ×6, TAD1341GE).
-      const majOf = (all, key) => majorityOf(all.map(([f, x]) => { const s = f.supplierId ?? u.supplierId; return [key === "disp" ? dispVoter(s) : s, x]; }));
+      const majOf = (all, key) => {
+        const figs = all.map(([f, x]) => { const s = f.supplierId ?? u.supplierId; return [key === "disp" ? dispVoter(s) : s, x]; });
+        // Dung tích: các số chỉ khác độ làm tròn là một phiếu (majorityRound), so ngưỡng bằng số chính xác nhất (dispExact).
+        return key === "disp" ? majorityRound(figs) : majorityOf(figs);
+      };
       const below = (key, min, read) => { const all = [...ef, ...(u.specs || [])].filter((f) => f.key === key).map((f) => [f, read(f.value, f)]), fs = all.filter(([, x]) => x != null && x !== BLOCK), v = fs.map(([, x]) => x);
         const mj = min && MAJ_KEYS.has(key) ? majOf(all, key) : null;
-        if (mj) { if (mj.win < min) srcOf[key] = { n: v.length, win: mj.win, votes: mj.votes }; return mj.win < min ? mj.win : null; }
+        // Dung tích: so chặt bằng số chính xác nhất của nhóm thắng (DP222CB {21.9, 21.927} ↔ ≥ 21.927 đạt; Y490D 2.67 ↔ ≥ 2.672 loại).
+        if (mj) { const x = mj.group ? dispExact(mj, "min") : mj.win, lo = x < min; if (lo) srcOf[key] = { n: v.length, win: mj.win, votes: mj.votes, ...(mj.group ? { group: mj.group, exact: x } : {}) }; return lo ? x : null; }
         // Normalized: a source giving a figure the layer cannot compare (no unit, cc...) is "Chưa rõ": the row is not left out.
         const hit = min && v.length && !all.some(([, x]) => x === BLOCK) && v.every((x) => x < min); if (hit) srcOf[key] = { n: v.length, sources: new Set(fs.map(([f]) => `${f.supplierId ?? ""}#${f.n ?? ""}`)).size, ofRow: fs.filter(([f]) => (u.specs || []).includes(f)).length };
         return hit ? v[0] : null; };
@@ -1541,8 +1577,10 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // the minimum; Khoa 19/11/2026 "có"), else by every source as before.
       const dhF = hints.maxDisp ? given.filter((f) => f.key === "disp").map((f) => [f, dispOf(f.value, f)]) : [], dh0 = dhF.map(([, x]) => x), dh = dh0.filter((x) => x != null && x !== BLOCK);
       const mjMax = dhF.length && MAJ_KEYS.has("disp") ? majOf(dhF, "disp") : null;
-      const overMax = mjMax ? mjMax.win > hints.maxDisp * 1.005 : dh.length && !dh0.includes(BLOCK) && dh.every((x) => x > hints.maxDisp * 1.005);
-      if (overMax) { score -= 600; ruled.push("maxDisp"); if (mjMax) srcOf.maxDisp = { win: mjMax.win, votes: mjMax.votes }; why.push(`dung tích ${mjMax ? mjMax.win : dh[0]} L > ${hints.maxDisp} L HSMT cho phép${byMaj("maxDisp")}`); }
+      // Trần so như main (× 1,005), bằng số chính xác nhất của nhóm thắng.
+      const xMax = mjMax ? dispExact(mjMax, "max") : null;
+      const overMax = mjMax ? xMax > hints.maxDisp * 1.005 : dh.length && !dh0.includes(BLOCK) && dh.every((x) => x > hints.maxDisp * 1.005);
+      if (overMax) { score -= 600; ruled.push("maxDisp"); if (mjMax) srcOf.maxDisp = { win: mjMax.win, votes: mjMax.votes, group: mjMax.group, exact: xMax }; why.push(`dung tích ${mjMax ? xMax : dh[0]} L > ${hints.maxDisp} L HSMT cho phép${byMaj("maxDisp")}`); }
       if (cl != null) { score -= 600; ruled.push("cyl"); why.push(`${cl} xi lanh < ${hints.minCyl} HSMT yêu cầu${byMaj("cyl")}`); }
       // The HSMT gives the bare count (cylExact, Khoa 2026-11-17): another count by every source that gives one, the
       // row's own cell first ("12V", "12.V"), is left out too (a 12-cylinder engine for "6 xy lanh"). Sources that

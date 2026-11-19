@@ -71,7 +71,7 @@ test("12V2000G25: frs-shenyang + tellhow-power chung ô container 6058*2438*2591
   const d = dropOf(r, "rise-power", "12V2000G25");
   assert.ok(d, "dòng RMM515 bị loại");
   assert.deepEqual(d.ruled, ["maxDisp"]);
-  assert.deepEqual(d.src.maxDisp, { win: 23.88, votes: { 21: 1, 23.88: 3 } });
+  assert.deepEqual(d.src.maxDisp, { win: 23.88, votes: { 21: 1, 23.88: 3 }, group: [23.88], exact: 23.88 });
 });
 
 test("KD186FAE: koop-changzhou là hãng động cơ (engine_maker) → không gộp với gordon-power dù cùng ô kích thước và cùng dung tích", () => {

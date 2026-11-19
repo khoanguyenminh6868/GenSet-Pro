@@ -92,7 +92,7 @@ test("dung tích tối đa: số đông 30 L × 3 : 18,9 L × 1 → loại mọi
   assert.equal(r.dropped.length, 5);
   const d = r.dropped.find((x) => x.u.supplierId === "bad");
   assert.deepEqual(d.ruled, ["maxDisp"]);
-  assert.deepEqual(d.src.maxDisp, { win: 30, votes: { 18.9: 1, 30: 3 } });
+  assert.deepEqual(d.src.maxDisp, { win: 30, votes: { 18.9: 1, 30: 3 }, group: [30], exact: 30 });
   // Đối chứng 2 : 1: như trước (không phải mọi nguồn > 25) → không loại.
   assert.equal(run(big.filter((s) => s.id !== "r"), free("Dung tích xi lanh: ≤ 25 lít\n50 Hz")).dropped.length, 0);
 });
