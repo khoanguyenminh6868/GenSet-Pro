@@ -311,3 +311,135 @@ WP23D 89×92×4 = 2,289 × 6–8 : 1–2; KTA19G2 / G4 159×159×6 = 18,942 × 3
 
 - Top 30 main 671797e4 ↔ nhánh 48044c61: điều phối đo trên cloud, gửi tệp về để giải thích.
 - Dung tích thật của YD4EZLD (4.087 hay 4.08), Y4100D, KT38G theo datasheet hãng.
+
+## Vòng 4 (19/11/2026): giải thích top 30 cloud, main 671797e4 ↔ nhánh 48044c61
+
+Tệp ở `dau-vao\so-dong-dung-tich\top30-cloud\`:
+- `runs-doi.mjs`: tìm lượt khác.
+- `do-r.mjs` → `do-r-nhanh.json`: chạy lại cục bộ các lượt khác bằng code nhánh, ghi mọi dòng bị loại kèm `ruled` / `src`.
+- `an-r.mjs` → `an-r.txt`: giải thích ĐỦ, mọi nhóm, mọi lượt.
+- `pushed.mjs` → `pushed.txt`: dòng bị đẩy khỏi top.
+- `one.mjs <lượt>`: xem tay một lượt.
+- `votes.mjs` (thư mục trên): phiếu dung tích của một động cơ.
+
+### 0. Số đếm và chạy lại
+
+So theo khoá dòng đầy đủ (NCC | động cơ | đầu phát | chữ dòng), cả theo tập lẫn đa tập:
+- 1.093 lượt: 952 giống hệt, 141 lượt `all` khác, 127 lượt top khác.
+- Rời `all`: 14.573 khoá. VÀO `all`: **0**.
+- Rời top: 776 khoá; vào top: 757 khoá.
+
+Số của điều phối (rời 5.217 / vào 270 / ra top 405) em không tái lập được bằng các cách gom khoá đã thử: NCC | động cơ ra
+10.426 / 0; thêm đầu phát ra 11.355 / 0; bỏ đầu phát vẫn 14.573 / 0. Cần xem cách đếm bên điều phối.
+
+Chạy lại 141 lượt cục bộ (bidhist `genbid-test\noi-chuan-hoa`, cùng `cn`): 140 lượt khớp cloud từng ký tự (all + top).
+Lượt không khớp là IB2400121273#0: bidhist cục bộ cho 0 ứng viên (khác bản cloud tải 11:21Z). Lượt này chỉ có 1 khoá rời
+`all`: elitech-power 403D15G (EPS11PA3), HSMT ≥ 2,3 L. Đây là nhóm {1.496, 1.5} của 403D15G, số chính xác 1.496 < 2.3, giống
+10 dòng 403D15G ≥ 2,3 ở lượt khác (`an-r.txt`). Như vậy 14.572 / 14.573 khoá được giải thích bằng lượt chạy lại, 1 khoá bằng
+đối chiếu.
+
+### 1. Mọi khoá rời `all` (`an-r.txt` mục 1, 463 nhóm động cơ × luật × ngưỡng, 0 dòng không rõ ngoài khoá trên)
+
+Mọi khoá rời đều bị loại bởi luật dung tích (`disp` hoặc `maxDisp`) theo số đông. Không có luật nào khác.
+
+| Lớp | Dòng |
+|---|---|
+| Sai thật: số chính xác của nhóm thắng không đạt, và không có số làm tròn nào đạt | 11.763 |
+| (a) Nhóm thắng có số làm tròn đạt, số chính xác không đạt (Khoa 19/11: LOẠI) | 2.653 |
+| (b) Nguồn chỉ có số làm tròn của ngưỡng (Khoa 19/11: LOẠI) | 156 |
+| Không thấy trong lượt chạy lại (IB2400121273#0, giải thích ở trên) | 1 |
+
+- Trong 11.763 dòng sai thật: 5.419 dòng thuộc nhóm thắng chỉ một số (số đông dung tích của chặng B, gộp NCC C6); 6.344 dòng
+  thuộc nhóm có gộp làm tròn (số đông mới hoặc số chính xác mới).
+- (a) theo ngưỡng (dòng): ≥ 5,9: 1.832; ≥ 19: 380; ≥ 10,34: 120; ≥ 2,3: 106; ≥ 6,8: 74; ≥ 7,15: 60; ≥ 8,3: 52; ≥ 4,4: 11;
+  trần ≤ 8: 10; ≥ 23: 8.
+  - ≥ 5,9 là họ Cummins 6BT5.9 / QSB5.9 (nhóm {5.88, 5.9}, D×S nguồn ghi 102×120×6 = 5,883).
+  - ≥ 19 là KTA19 / QSK19 (nhóm {18.9, 19}, 159×159×6 = 18,942).
+  - D×S nguồn ghi ở mọi nhóm (a) đều cho số dưới ngưỡng, khớp số chính xác.
+- (b): 2206CE13TAG3 (67) và TAG2 (40) với ≥ 12,513 (12.5); SC4H95D2 với ≥ 4,33 (45) và ≥ 4,329 (4) (4.3; D×S 105×124×4 =
+  4,295). Y490D không đổi vì main cũng loại: mọi nguồn chỉ ghi 2.67 < 2.672.
+- Mỗi nhóm trong `an-r.txt` có: phiếu, nhóm thắng, số chính xác, lớp, nguồn gốc ("có gộp làm tròn" / "nhóm một số"), D×S×z
+  nguồn ghi (3 bộ nhiều NCC nhất), số dòng / lượt.
+
+### 2. Khoá vào `all`: 0
+
+Theo khoá dòng đầy đủ, nhánh không có dòng nào mà main không có. Luật siết lại chỉ loại dòng, không cứu dòng nào. 757 khoá
+vào TOP đều đã có trong `all` của main, chỉ là lấp chỗ trống (mục 3).
+
+### 3. 127 lượt top đổi (`an-r.txt` mục 3: mỗi lượt có ngưỡng, số dòng top trước → sau, động cơ rời / vào top và lý do)
+
+- **Không lượt nào top rỗng hay còn < 5 dòng.** 118 lượt vẫn đủ 30 dòng. 9 lượt top giảm (trước → sau): 26→25, 25→22,
+  21→20, 21→19, 21→18, 20→19, 19→17, 18→16, 16→12.
+- Rời top 776 khoá:
+  - 714 khoá rời vì dòng bị loại khỏi `all` (lý do như mục 1).
+  - 62 khoá vẫn ở `all` nhưng bị đẩy khỏi top (`pushed.txt`):
+    - 9: thay bằng dòng cùng động cơ, cùng điểm (thứ tự hoà điểm);
+    - 5: thay bằng dòng cùng NCC, cùng điểm;
+    - 4: bằng điểm thấp nhất top mới;
+    - 6: điểm thấp hơn mọi dòng top mới;
+    - 38: điểm cao hơn dòng thấp nhất của top mới. Nguyên nhân là cách chọn top: 12 chỗ cho dòng động cơ Trung Quốc được
+      chọn TRƯỚC, mỗi động cơ ≤ 3 dòng, mỗi NCC ≤ 4 dòng, mỗi hãng ≤ 10 dòng. Dòng Trung Quốc điểm cao bị loại thì 12 chỗ
+      lấy dòng Trung Quốc điểm thấp hơn. Các dòng này chiếm trần động cơ (25 dòng), trần NCC (6), trần hãng Cummins (6),
+      nên dòng điểm cao phía sau bị chặn. Dòng còn lại (IB2300343208#0, dingbo 401661TRG3, 456 điểm) soát tay bằng
+      `one.mjs`: dòng Yuchai YC12V / YC16V của fdk-energy và longkai-power bị loại (trần ≤ 66 L) nên hai NCC này hết bị
+      trần 4 dòng / NCC; dòng 4016TAG2A fdk (481) và 12M55D2210E310 longkai (465) vào phần chọn theo điểm, đẩy dòng 456 ra.
+- Vào top 757 khoá: đều có trong `all` của main (0 dòng mới), lấp chỗ dòng rời theo đúng thứ tự chọn ở trên.
+
+### 4. Bảng cho Khoa: 10 động cơ mất nhiều dòng nhất (rời `all`)
+
+| Động cơ | Dòng / lượt | Ngưỡng HSMT (dòng) | Số đông (phiếu) → số chính xác | D×S×z nguồn ghi | Câu HSMT điển hình |
+|---|---|---|---|---|---|
+| 6BTAA5.9-G12 | 1.170 / 15 | ≥ 5,9 (412), ≥ 6,7 (238), ≥ 8,3 (127), ≥ 6,75 (121), ≥ 6,8 (108), ≥ 6,44 (102), ≥ 6,87 (59), khác 3 | {5.88, 5.9}: 5.88 × 16 : 8.3 × 1 → 5,88 | 102×120×6 = 5,883 (7 NCC) | IB2200037783: "Dung tích xi lanh 5900cc" (Hyundai DHY110KSE) |
+| 6BTAA5.9-G2 | 888 / 19 | ≥ 5,9 (370), ≥ 6,7 (176), ≥ 6,87 (133), ≥ 8,07 (102), ≥ 8,3 (39), khác 68 | {5.88, 5.9} × 15 → 5,88 | 5,883 (8 NCC) | như trên |
+| 6BTA5.9-G2 | 709 / 16 | ≥ 5,9 (376), ≥ 8,07 (127), ≥ 6,87 (119), ≥ 6,871 (61), khác 26 | {5.88, 5.9} × 16 → 5,88 | 5,883 (8 NCC) | như trên |
+| 6LTAA8.9-G2 | 656 / 6 | ≥ 11,051 (512), ≥ 9,726 (144) | 8.9 × 18 : 8.3 × 1 → 8,9 | 114×145×6 = 8,880 (8); 114×135×6 = 8,268 (4) | IB2300042675: "Dung tích xi lanh: ≥ 11.051 L" |
+| 404D-22TG | 492 / 15 | ≥ 2,54 … ≥ 3,9 (12 ngưỡng) | {2.2, 2.216} → 2,216 | 84×100×4 = 2,217 (4) | IB2200064629: "Động cơ: dung tích …" (ngưỡng ≥ 2,54) |
+| 1104C-44TAG2 | 447 / 9 | ≥ 5,9 (194), ≥ 4,837 (99), ≥ 4,7 (98), khác 56 | {4.4, 4.41} × 20 : 12.6 × 1 → 4,41 | 105×127×4 = 4,399 (7) | IB2200037783: "5900cc" |
+| 6BT5.9-G2 | 427 / 5 | ≥ 5,9 (427) | {5.88, 5.9} × 17 → 5,88 | 5,883 (9) | IB2200037783: "5900cc" |
+| 403D-15G | 418 / 15 | ≥ 1,8 (158), ≥ 1,6 (126), ≥ 2,27 (92), khác 42 | {1.496, 1.5} × 10 : 149 : 2.2 → 1,496 | 84×90×3 = 1,496 (8); ×4 = 1,995 (1) | IB2400513782: "Tổng dung tích xilanh: >= 1,8 lít" |
+| 6LTAA9.5-G3 | 398 / 14 | ≥ 11,051 (262), ≥ 9,726 (65), khác 71 | 9.5 × 7 : 14 : 8.9 → 9,5 | 116×148×6 = 9,385 (2) | IB2300042675: "≥ 11.051 L" |
+| 6CTAA8.3-G2 | 281 / 11 | ≥ 9,726 (127), ≥ 8,8 (127), khác 27 | 8.3 × 16 → 8,3 | 114×135×6 = 8,268 (9) | IB2200082109: "Dung tích xi lanh: 9.726 L." |
+
+**Hệ quả của quyết định "loại" (lớp (a)):**
+- Họ 6BT5.9 / QSB5.9 (Cummins, tên ghi "5.9") mất 1.832 dòng ở các gói ghi ≥ 5,9 L / "5900cc", vì số chính xác của nguồn là
+  5,88 (D×S 5,883).
+- KTA19 / QSK19 mất 380 dòng ở gói ≥ 19 L (18,9; D×S 18,942).
+- Nếu HSMT ghi "5900cc" là tên gọi 5.9 L của chính dòng Cummins này thì loại là quá chặt. Đây là hệ quả trực tiếp của luật
+  so chặt Khoa chọn; em không đổi gì.
+
+### 5. Ba nhóm và luật hoà phiếu (nêu phương án, không chốt)
+
+- **YD4EZLD** (HSMT ≥ 4,087): bản cloud (sau #941) GIỮ đủ 29 dòng, không có trong khác biệt.
+  - #941 đọc được thêm bảng jinjia-power (3.86). Phiếu (`votes.mjs`): 4.1 × 3 (depco, wintpower, yangdong), 4.08 × 1
+    (waeta-fujian), 3.86 × 1, 3.857 × 1.
+  - Gộp làm tròn: {4.08, 4.1} × 4 : {3.857, 3.86} × 2, không đủ gấp 3 nên không có số đông, quay về "mọi nguồn" → 4,1 đạt → giữ.
+  - Đếm cũ (không gộp làm tròn) thì 4.1 × 3 thắng. Tức là gộp làm tròn cũng có thể LÀM MẤT số đông.
+  - Phương án nếu số đông trở lại (thêm nguồn ghi 4.1 / 4.08):
+    - (1) giữ luật: số chính xác 4,08 < 4,087 → loại;
+    - (2) nhận cắt cụt khi D×S của chính nguồn đó cho số dài hơn mà cắt ra đúng nó (105×118×4 = 4,087 → 4.08) → đạt;
+    - (3) ghi chú dữ liệu nguồn waeta-fujian.
+- **Y4100D** (trần ≤ 2,9, IB2300293753#1, 6 dòng):
+  - Phiếu: 3.707 × 3 (depco, wintpower, yangdong; yangdong là hãng động cơ), 3.7 × 1, 2.54 × 1 (jinjia), 2.545 × 1 (victory).
+    Không gộp được 2.54 với 2.545 (2.545 làm tròn ra 2.55).
+  - Nhóm {3.7, 3.707} × 4 thắng → 3,707 > 2,9 → loại. D×S: 100×118×4 = 3,707 (1 NCC) : 90×100×4 = 2,545 (1 NCC).
+  - Phương án:
+    - (1) giữ (hãng Yangdong ghi 3.707);
+    - (2) khi bộ D×S nguồn ghi mâu thuẫn ngang phiếu thì bỏ số đông, về "mọi nguồn" → có nguồn 2,545 ≤ 2,9 → giữ.
+- **KT38G** (trần ≤ 22, IB2300254479#0, 31 dòng):
+  - Phiếu: {37.8 × 6, 38 × 2} = 7 phiếu sau gộp NCC : 18.9 × 2 (agestar, mingbang-mbkl).
+  - D×S: 159×159×12 = 37,885 (2) : 159×159×6 = 18,942 (1). Số 18.9 là số của KTA19, nhưng em mới đối chiếu D×S, chưa kiểm
+    datasheet hãng.
+  - Phương án: (1) giữ loại; (2) như Y4100D (2) → giữ.
+- **Luật hoà phiếu "số trượt trước"** (cùng độ chính xác, cùng phiếu): 5 nhóm thắng toàn danh mục rơi vào: D1146 / D1146T
+  {8.071, 8.074}, DP086LA {8.071, 8.074}, WP41D80E200 {4.087, 4.088}, YC4D90ZD21 {4.214, 4.215}.
+  - Trong 141 lượt cloud chỉ DP086LA (trần ≤ 8) có mặt: cả 8,071 lẫn 8,074 đều > 8,04, nên luật nào cũng loại. Luật hoà
+    phiếu hiện KHÔNG đổi dòng nào.
+  - Phương án:
+    - (1) số trượt trước (đang dùng);
+    - (2) số đạt trước;
+    - (3) hoà phiếu thì không có số chính xác, về "mọi nguồn".
+
+### Chưa kiểm
+
+- Cách đếm 5.217 / 270 / 405 của điều phối.
+- Datasheet hãng: Cummins 6BT5.9 (5,9 hay 5,88), KT38G, Y4100D, YD4EZLD.
