@@ -40,6 +40,10 @@ Không có (không ca `todo` nào). Ba lần ca đỏ trong lúc viết đều d
 - `node --test web/test/static.test.mjs`: 11/11.
 - CHƯA chạy toàn bộ `npx playwright test` cục bộ (máy đang bận phép đo nặng); dựa vào CI job `web` của PR. Một lần chạy chung 45 ca có 1 ca báo "grid không thấy" (`openApp` hết 10 s lúc nhiều ca chạy song song cùng máy đang nặng), chạy lại 59 ca thì xanh; ca đó là `file-transfer` "không lấy được tệp" (chập chờn do tải máy, chưa tái hiện lại).
 
+## CI của PR #935 (đã chạy)
+- Lần 1: `server` xanh (cả 8 ca trình duyệt CHẠY thật trên ubuntu-latest, `# skipped 0`), `suppliers` xanh, `web` ĐỎ 3 ca của `file-transfer` (128 passed): (1) tab PDF của Chromium không đầu vẫn `about:blank` (không có trình xem PDF) → đổi sang `window.open` giả, kiểm địa chỉ blob + đọc lại là `application/pdf`; (2) ca "kho assets" bấm Upload khi `state.db` chưa sẵn sàng nên báo "Đăng nhập…" → chờ `#dtitle`; (3) bấm "Bỏ tệp" khi hộp thoại Huỷ chưa đóng hẳn → chờ `#ov` ẩn. Cả 3 là lỗi của test, không phải mã sản phẩm. Thêm timeout cho pdf.js (chậm khi máy bận).
+- Lần 2 (commit sau sửa): `web` xanh (5m14s), `server` xanh, `suppliers` xanh. Cục bộ: 90 ca `file-transfer` + `back-forward` × 2 lần, 4 worker: 90 passed.
+
 ## Rủi ro / quay lui
 Chỉ thêm tệp test: quay lui = xoá 3 tệp + 2 dòng README. Rủi ro: test (a) phụ thuộc có trình duyệt trên CI; chập chờn do tải máy ở (b) nếu CI chậm (timeout 30 s / ca, `retries: 0`).
 
