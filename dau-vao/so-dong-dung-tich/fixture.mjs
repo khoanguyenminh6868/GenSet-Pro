@@ -14,7 +14,9 @@ for (const f of fs.readdirSync(dir).filter((x) => x.endsWith(".json")).sort()) {
   const tables = [];
   for (const t of s.specTables || []) {
     const titleHit = String(t.title || "").split(/[\s:–—|,/()]+/).some((w) => keys.has(CAT.keyOf(w)));
-    const rows = titleHit ? t.rows : (t.rows || []).filter((l) => CAT.cellsOf(l).some((c) => keys.has(CAT.keyOf(c))));
+    const hit = (t.rows || []).filter((l) => CAT.cellsOf(l).some((c) => keys.has(CAT.keyOf(c))));
+    // Tờ một model (không tiêu đề cột, dòng "nhãn | giá trị"): chép cả bảng, số nằm ở các dòng khác dòng có mã.
+    const rows = titleHit || (hit.length && !(t.header || []).length && (t.rows || []).length <= 60) ? t.rows : hit;
     if (rows.length) tables.push({ n: t.n, title: t.title, header: t.header, rows });
   }
   if (tables.length) out.push({ id: s.id, country: s.country || "CN", role: s.role, confidence: s.confidence || "high", ...(s.controllers ? { controllers: s.controllers.map(({ brand, model }) => ({ brand, model })) } : {}), specTables: tables });
