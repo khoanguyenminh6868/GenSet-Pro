@@ -51,7 +51,7 @@ node --test bot/test/*.test.mjs          → # pass 137  # fail 0   (7 ca mới 
 for f in bot/genbid-hsmt/*.js; node --check → không lỗi
 Invoke-Pester bot/test/Publish-GenBidHsmt.Tests.ps1 (Windows PowerShell 5.1, Pester 5)  → PASSED 30 FAILED 0
 ```
-CI của PR (test-bot, test-bot-ps) chưa xem kết quả lúc viết.
+CI #946: `bot` pass, `bot-ps` (pwsh) pass, `bot-ps-win` (PowerShell 5.1) pass. #947 không có CI chạy ingest.py.
 
 Ca biên (tự tạo, scratchpad, `node kit/genbid-sync.js publish-text`):
 ```
@@ -93,7 +93,6 @@ Không đăng lại gì lên web thật.
 - **Sandbox Ubuntu:** chưa chạy. Cùng mã (`unrar lt` của RARLAB cùng định dạng; bsdtar `-tvf` cùng định dạng; antiword). antiword không phân biệt .doc có mật khẩu → ghi chú chung "không đọc được".
 - `ingest.py`: máy không có Python, chưa chạy; cần xem log lượt Action đầu sau khi merge.
 - `ocrHsmt` có token: chưa chạy lượt Phân tích thật (không được ghi web); chỉ kiểm tải bằng token trong `run.js`.
-- CI của hai PR.
 
 ## Rủi ro + quay lui
 - Publish lâu hơn: ~6 s mỗi .doc, tới vài chục giây mỗi .rar lớn; trong timeout 120 phút của `ps("Publish-GenBidHsmt.ps1")`. Mỗi lệnh node có timeout riêng (Word 180 s, giải nén 300 s).
