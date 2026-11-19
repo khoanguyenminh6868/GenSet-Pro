@@ -1,0 +1,435 @@
+bản ghi cũ 60086, mới 60077 | khác 72 | chỉ cũ 33, chỉ mới 24 | bảng có đổi 52
+{"model":65,"other":4,"power":5,"cyl bỏ":4,"weight thêm":4}
+
+[acepow-fuan n127 bảng 34] ×1
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi alternator UC274D / UCI274D
+
+[aosif n123 bảng 21] ×1
+  H: | Prime Power | Standby Power | Engine Model | Fuel Consumption | Cylinder | Displacement
+  H: | KVA/KW | KVA/KW | | L/h
+   19 | AW1125 | 1000/800 | 1125/900 | 8M33D1012E311^ | 218.9 | 12V | 31.8 |
+        ⇒ model: 8M33D1012E311^ → 8M33D1012E311
+
+[baifa-power n101 bảng 3] ×5
+  H: | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY
+  H: | Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD
+   34 | BF-BD1100-3 | 1100 | 1000 | 8M33G6D3/5^ | | CHINA STAGE3 | CHINA
+        ⇒ model: 8M33G6D3/5^ → 8M33G6D3/5
+   42 | BF-BD2250-3 | 2250 | 2000 | 16M33G8D3/5^ | | CHINA STAGE3 | CHINA
+        ⇒ model: 16M33G8D3/5^ → 16M33G8D3/5
+   44 | BF-BD2500-3 | 2500 | 2250 | 20M33G4D3/5^ | | CHINA STAGE3 | CHINA
+        ⇒ model: 20M33G4D3/5^ → 20M33G4D3/5
+   47 | BF-BD3000-3 | 3000 | 2750 | 12M55G6D3/5^ | | CHINA STAGE3 | CHINA
+        ⇒ model: 12M55G6D3/5^ → 12M55G6D3/5
+   51 | BF-BD4100-3 | 4125 | 3750 | 16M55G6D3/5^ | | CHINA STAGE3 | CHINA
+        ⇒ model: 16M55G6D3/5^ → 16M55G6D3/5
+
+[bruno-generators n101 bảng 0] ×2
+  H: | | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 HZ | | 60 HZ | | | | | | | | | TANK l | DIMENSIONS cm | | | MAXIMUM SIZE cm | | | WEIGHT kg | STANDARD PANEL
+  H: | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 Hz | | 60 Hz | | Engine | cm3 | kWm | kWm | fuel consumption (l/h) | fuel consumption (l/h) | Aspiration | TANK (l) | DIMENSIONS (cm) | | | MAXIMUM SIZE (cm) | | | WEIGHT | STANDARD PANEL
+  H: | | | | | | | kVA LTP | kVA PRP | kVA LTP | kVA PRP | | | 1500 rpm | 1800 rpm | 1500 rpm* | 1800 rpm* | | | L | W | H | L | W | H | |
+    0 | SL 9506 KL | 6 | 250 W | 1500 W | AC | 230 V | 5.3 | 4.5 | 6.5 | 6 | KOHLER KDW 702 | 686 | 5 | 5.9 | 0.8 | 0.7 | N | 140 | 245 | 130 | 230 | 245 | 280 | 920 | 1050 | MCP 120-80
+        ⇒ MẤT bản ghi engine MCP 120-80
+    8 | SB 9508 KL | 8 | 250 W | 2000 W | AC | 230 V | 5.3 | 4.5 | 6.5 | 6 | KOHLER KDW 702 | 686 | 5 | 5.9 | 0.8 | 0.7 | N | 140 | 245 | 130 | 230 | 245 | 280 | 920 | 1120 | MCP 120-80
+        ⇒ MẤT bản ghi engine MCP 120-80
+
+[bruno-generators n103 bảng 1] ×2
+  H: | | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 HZ | | 60 HZ | | | | | | | | | TANK l | DIMENSIONS cm | | | MAXIMUM SIZE cm | | | WEIGHT kg | STANDARD PANEL
+  H: | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 Hz | | 60 Hz | | Engine | cm3 | kWm | kWm | fuel consumption (l/h) | fuel consumption (l/h) | Aspiration | TANK (l) | DIMENSIONS (cm) | | | MAXIMUM SIZE (cm) | | | WEIGHT | STANDARD PANEL
+  H: | | | | | | | kVA LTP | kVA PRP | kVA LTP | kVA PRP | | | 1500 rpm | 1800 rpm | 1500 rpm* | 1800 rpm* | | | L | W | H | L | W | H | |
+    0 | MB 9504 KL | 4 | 250 W | 1000 W | DC | 48 V | - | - | - | - | KOHLER LDW 702 | 686 | - | 5,9 | - | 0,35 | N | 110 | 235 | 148 | 225 | 235 | 202 | 883 | 1060 | Q401 AUS-80
+        ⇒ MẤT bản ghi engine Q401 AUS-80
+    1 | MB 9504 KL | 4 | 300 W | 1200 W | DC | 48 V | - | - | - | - | KOHLER LDW 702 | 686 | - | 5,9 | - | 0,46 | N | 110 | 235 | 148 | 225 | 235 | 202 | 883 | 1065 | Q401 AUS-80
+        ⇒ MẤT bản ghi engine Q401 AUS-80
+
+[bruno-generators n104 bảng 2] ×1
+  H: | | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 HZ | | 60 HZ | | | | | | | | | TANK l | DIMENSIONS cm | | | MAXIMUM SIZE cm | | | WEIGHT kg | STANDARD PANEL
+  H: | MODEL | NUMBER OF HEADS | W PER LAMP | TOTAL W | CURRENT | VOLTAGE V | 50 Hz | | 60 Hz | | Engine | cm3 | kWm | kWm | fuel consumption (l/h) | fuel consumption (l/h) | Aspiration | TANK (l) | DIMENSIONS (cm) | | | MAXIMUM SIZE (cm) | | | WEIGHT | STANDARD PANEL
+  H: | | | | | | | kVA LTP | kVA PRP | kVA LTP | kVA PRP | | | 1500 rpm | 1800 rpm | 1500 rpm* | 1800 rpm* | | | L | W | H | L | W | H | |
+    1 | MT 9810 KL** | 8+2 | 330+250 W | 3140 W | AC | 230 V | 8,6 | 7,6 | 9,5 | 9 | KOHLER KDW 1003 | 1028 | 7,6 | 9,1 | 1,4 | 1,3 | N | 250 | 244 | 190 | 225 | 419 | 237 | 920 | 2000 | MCP 120-8
+        ⇒ MẤT bản ghi engine MCP 120-80
+
+[chuangyuan-zhongshan n103 bảng 3] ×2
+  H: | | 潍柴国二系列机组参数 | 发动机技术参数
+  H: | 序号 | 主用功率 (KW) | 额定电压 (V) | 额定转速 (RPM) | 额定功率因数 | 频率 (HZ) | 参考机组尺寸 （长*宽*高）mm | 参考重量 (KG) | 发动机型号 | 气缸数/缸径/行程 | 排量(L)
+   47 | 20 | 800 | 400 | 1500 | 0.8 | 50 | 4200*1800*2300 | 7200 | 8M33D975E310^ | 8/150/185 | 26.14
+        ⇒ model: 8M33D975E310^ → 8M33D975E310
+   56 | 29 | 1600 | 400 | 1500 | 0.8 | 50 | 5200*2100*2700 | 11500 | 16M33D1980E310^ | 16/150/185 | 52.3
+        ⇒ model: 16M33D1980E310^ → 16M33D1980E310
+
+[eastern-lion-fuan n114 bảng 18] ×2
+  H: | | Genset Specification 400/230V 50HZ | Engine | Brushless Alternator | Controller | Datasheet
+  H: | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller | Datasheet
+   14 | GF/GFS-HC67 | 48 | 60 | 53 | 67 | 4105ZD(小泵） | 56 | EL 224E | 48 | RUIFEN6120 | Detail
+        ⇒ MẤT bản ghi engine EL 224E
+   14 | GF/GFS-HC67 | 48 | 60 | 53 | 67 | 4105ZD(小泵） | 56 | EL 224E | 48 | RUIFEN6120 | Detail
+        ⇒ other: EL 224E → null
+
+[eastern-lion-fuan n142 bảng 44] ×22
+  H: | | Genset Specification 400/230V 50HZ | Engine | Brushless Alternator | Controller | Datasheet
+  H: | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller | Datasheet
+    0 | GF/GFS-WL128 | 128 | 160 | 142 | 178 | D114系列WLD171 | 171KW | EL 274F | 128 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 274F
+    1 | GF/GFS-WL160 | 160 | 200 | 178 | 223 | D114系列WLD206 | 206KW | EL 274H | 160 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 274H
+    2 | GF/GFS-WL184 | 184 | 230 | 204 | 255 | D114系列WLD227 | 227KW | EL 274J | 184 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 274J
+    3 | GF/GFS-WL200 | 200 | 250 | 222 | 278 | D114系列WLD263 | 263KW | EL 274K | 200 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 274K
+    4 | GF/GFS-WL236 | 236 | 295 | 262 | 328 | G128系列WLG308 | 308KW | EL 314D | 236 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 314D
+    5 | GF/GFS-WL260 | 260 | 325 | 289 | 361 | G128系列WLG330 | 330KW | EL 314E | 260 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 314E
+    6 | GF/GFS-WL304 | 304 | 380 | 338 | 423 | G128系列WLG375 | 375KW | EL 314F | 304 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 314F
+    7 | GF/GFS-WL360 | 360 | 450 | 400 | 500 | G128系列WLG450 | 450KW | EL 354C | 360 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 354C
+    8 | GF/GFS-WL360 | 360 | 450 | 400 | 500 | 12V系列WLV450 | 450KW | EL 354C | 360 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 354C
+    9 | GF/GFS-WL400 | 400 | 500 | 444 | 555 | 12V系列WLV510 | 510KW | EL 354D | 400 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 354D
+   10 | GF/GFS-WL440 | 440 | 550 | 489 | 611 | 12V系列WLV565 | 565KW | EL 354ES | 440 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 354ES
+   11 | GF/GFS-WL500 | 500 | 625 | 556 | 695 | 12V系列WLV610 | 610KW | EL 354FS | 500 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 354FS
+   12 | GF/GFS-WL500 | 500 | 625 | 556 | 695 | 12V系列WLV630 | 630KW | EL 354FS | 500 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 354FS
+   13 | GF/GFS-WL550 | 550 | 687.5 | 611 | 764 | 12V系列WLV680 | 680KW | EL 354G | 550 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 354G
+   14 | GF/GFS-WL600 | 600 | 750 | 667 | 834 | 12V系列WLV720 | 720KW | EL 354H | 600 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 354H
+   15 | GF/GFS-WL640 | 640 | 800 | 711 | 889 | 12V系列WLV780 | 780KW | EL 404C | 640 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 404C
+   16 | GF/GFS-WL640 | 640 | 800 | 711 | 889 | 12V系列WLV826 | 826KW | EL 404C | 640 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 404C
+   17 | GF/GFS-WL728 | 728 | 910 | 809 | 1011 | 12V系列WLV886 | 886KW | EL 404D | 728 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 404D
+   18 | GF/GFS-WL728 | 728 | 910 | 809 | 1011 | 12V系列WLV956 | 956KW | EL 404D | 728 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 404D
+   19 | GF/GFS-WL728 | 728 | 910 | 809 | 1011 | 12V系列WLV1020 | 1020KW | EL 404D | 728 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 404D
+   20 | GF/GFS-WL728 | 728 | 910 | 809 | 1011 | 12V系列WLV1100四气门 | 1100KW | EL 404D | 728 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 404D
+   21 | GF/GFS-WL800 | 800 | 1000 | 889 | 1111 | 12V系列WLV1200四气门 | 1200KW | EL 404E | 800 | Smartgen 6120 | Detail
+        ⇒ MẤT bản ghi engine EL 404E
+
+[eastern-lion-fuan n144 bảng 48] ×6
+  H: | | Genset Specification 400/230V 50HZ | Engine | Brushless Alternator | Controller | Datasheet
+  H: | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller | Datasheet
+   14 | GFS-W222 | 160 | 200 | 178 | 222 | 6126ZLD新 | 215 | EL 274H | 160 | RUIFEN6120 | Detail
+        ⇒ MẤT bản ghi engine EL 274H
+   14 | GFS-W222 | 160 | 200 | 178 | 222 | 6126ZLD新 | 215 | EL 274H | 160 | RUIFEN6120 | Detail
+        ⇒ other: EL 274H → null
+   15 | GFS-W250 | 180 | 225 | 200 | 250 | 6126ZLD新 | 215 | EL 274J | 184 | RUIFEN6120 | Detail
+        ⇒ MẤT bản ghi engine EL 274J
+   15 | GFS-W250 | 180 | 225 | 200 | 250 | 6126ZLD新 | 215 | EL 274J | 184 | RUIFEN6120 | Detail
+        ⇒ other: EL 274J → null
+   16 | GFS-W278 | 200 | 250 | 222 | 278 | 6126ZLD-1新 | 260 | EL 274K | 200 | RUIFEN6120 | Detail
+        ⇒ MẤT bản ghi engine EL 274K
+   16 | GFS-W278 | 200 | 250 | 222 | 278 | 6126ZLD-1新 | 260 | EL 274K | 200 | RUIFEN6120 | Detail
+        ⇒ other: EL 274K → null
+
+[ettes-power n146 bảng 51] ×4
+  H: | Model | Prime Power | Standby Power | Engine Model | Max Power (kW/Hp) | Cyls.& Type | Dspl. (L) | Overall Dimmension (mm) | Weight (kg) | PDF D/L
+  H: | kW | kVa | kW | kVa
+    0 | EP-12 | 9 | 11 | 10 | 12 | 403D-11G ★ | TBA | 3.L | TBA | 1300*690*1320 | 280 |
+        ⇒ model: 403D-11G ★ → 403D-11G★
+    1 | EP-18 | 13 | 16 | 14 | 18 | 403D-15G ★ | TBA | 3.L | TBA | 1300*690*1320 | 350 |
+        ⇒ model: 403D-15G ★ → 403D-15G★
+    2 | EP-20 | 14 | 18 | 16 | 20 | 403A-15G2 ★ | TBA | 3.L | TBA | 1300*690*1320 | 360 |
+        ⇒ model: 403A-15G2 ★ → 403A-15G2★
+    3 | EP-26 | 19 | 24 | 21 | 26 | 404D-22G ★ | TBA | 4.L | TBA | 1470*690*1320 | 430 |
+        ⇒ model: 404D-22G ★ → 404D-22G★
+
+[fengfa-taizhou n101 bảng 0] ×1
+  H: | Genset model | Output power | Engine model | Bore*Stroke | CYL | Displacement | C/R | Fuel consumption | Dimension | Weight
+  H: | KW | KVA | (mm) | （L） | L/h | (mm) | (Kg)
+    6 | CCFJ100JW | 100 | 125 | 6CT8.3–GM115 | 114×135 | 6 | 8.3 | 17.3:1 | 24.94 | 2110*860*1360 | 1650
+        ⇒ model: 6CT8.3–GM115 → 6CT8.3-GM115
+
+[gb-power n1010 bảng 25] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator LSA 43.2 L6
+
+[gb-power n1020 bảng 35] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator HCI 444D
+
+[generatordieselchina n128 bảng 27] ×1
+  H: | | Engine series | Where it is made | Power range
+  H: | B / C / L / Z | Xiangyang, China — DCEC (Dongfeng Cummins) | 16–400 kW
+  H: | N855 / K19 / K38 / K50 | Chongqing, China — CCEC (Chongqing Cummins) | 200–1,340 kW
+    0 | QSM11 | Xi’an, China — XCEC (Xi’an Cummins) | 245–343 kWm
+        ⇒ model: 245–343 kWm → 245-343 kWm
+
+[genlitec n132 bảng 31] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator LL5114H
+
+[genlitec n133 bảng 32] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator LL5114H
+
+[genlitec n142 bảng 41] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator LL7224J
+
+[genlitec n143 bảng 42] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator LL7224L
+
+[huatai-yangzhou n111 bảng 10] ×3
+  H: | 组型号Type of set | 输出功率 Power of output (KW/KVA) | 额定电流Rated current (A) | 柴油机参数 Parameters of set | 机组尺寸及重量 Size and weight of machine set
+  H: | 型号 Type | 额定功率 power (KW) | 缸数及类型Numbers& Type of cylinder | 燃油消耗 (g/kw.h)Consumption of fuel(g/kw.h) | 机油容量 Oil capacity (L) | 长×宽×高 Length Width Height (MM) | 净重 Net Weight (kg)
+   12 | 700GF | 140/165 | 1267 | WD305TAD68 | 750 | 12缸V型 | 196 | 55 | 3800×1800×2100 | 4550
+        ⇒ power: R 165/140 → ∅
+   13 | 800GF | 140/165 | 1448 | WD327TAD78 | 858 | 12缸V型 | 196 | 60 | 3900×1850×2100 | 5000
+        ⇒ power: R 165/140 → ∅
+   14 | 850GF | 140/165 | 1538.5 | WD327TAD82 | 902 | 12缸V型 | 196 | 60 | 3900×1850×2100 | 5000
+        ⇒ power: R 165/140 → ∅
+
+[jet-power n112 bảng 11] ×1
+  H: | Model | 416V / 60Hz / 1800RPM | WEICHAI Diesel Engine | Brushless Alternator
+  H: | Standby output | Prime Output | Model | No. of Cylinder | Governor | Bore×Stroke | Displacement | Fuel cons.
+  H: | KVA | KW | KVA | KW | (MM) | (L) | （L/h）
+   10 | WP-188 | 188 | 150 | 181 | 145 | WP6D180E201^ | 6L | Electronic | 105*130 | 6.75 | 36.7 | JET274F
+        ⇒ model: WP6D180E201^ → WP6D180E201
+
+[landtop-fuzhou n122 bảng 18] ×1
+  H: | Genset Model | Genset Standby Power | Genset Prime Power | Governor Type | Engine Model | Alternator Model
+  H: | KVA | KW | KVA | KW
+   38 | LTP2269B | 2269 | 1815 | 2063 | 1650 | ECU | 16M33G2250/5^ | LTP454S -1650
+        ⇒ model: 16M33G2250/5^ → 16M33G2250/5
+
+[mecca-power n5001 bảng 46] ×1
+  H: | Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator
+   23 | MC1125BD | 800 | 1000 | 900 | 1125 | 8M33G900/6^ |
+        ⇒ model: 8M33G900/6^ → 8M33G900/6
+
+[mecca-power n5001 bảng 47] ×1
+  H: | Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator
+   34 | MC2250WC | 1600 | 2000 | 1800 | 2250 | 16M33D1980E310^ |
+        ⇒ model: 16M33D1980E310^ → 16M33D1980E310
+
+[mecca-power n5001 bảng 48] ×1
+  H: | Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator
+   23 | MC1125WC | 800 | 1000 | 900 | 1125 | 8M33D1012E311^ |
+        ⇒ model: 8M33D1012E311^ → 8M33D1012E311
+
+[saudi-diesel n109 bảng 5] ×2
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator TAL-A44-M
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator TAL-A46-C
+
+[saudi-diesel n110 bảng 6] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator TAL-A46-F
+
+[saudi-diesel n111 bảng 7] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator TAL-A46-H
+
+[saudi-diesel n112 bảng 8] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator TAL-A47-A
+
+[saudi-diesel n113 bảng 9] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator TAL-A47-A
+
+[saudi-diesel n114 bảng 10] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator TAL-A47-C
+
+[saudi-diesel n115 bảng 11] ×2
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator TAL-A47-D
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator TAL-A47-F
+
+[saudi-diesel n116 bảng 12] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator TAL-A47-F
+
+[saudi-diesel n117 bảng 13] ×2
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator TAL-A49B
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator TAL-A49-C
+
+[saudi-diesel n118 bảng 14] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator TAL-A49-B1
+
+[saudi-diesel n119 bảng 15] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator TAL-A49-C
+
+[saudi-diesel n120 bảng 16] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator TAL-44-B
+
+[saudi-diesel n121 bảng 17] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator TAL-44-D
+
+[saudi-diesel n122 bảng 18] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator TAL-A44-M
+
+[tecgen-fujian n125 bảng 21] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi alternator UCI 274J
+
+[tecnogen n2005 bảng 4] ×5
+  H: | MODEL | kVA LTP | kVA PRP | kVA LTP | kVA PRP | | Regulator | Cylinder | cm3 | kWm 1500 rpm | kWm 1800 rpm | (l/h) 1500 rpm | (l/h) 1800 rpm | Aspiration | Standard panel | Automatic panel | dB(A) (•) 7 m | | | | |
+  H: | | 50 Hz | | 60 Hz | | Engine | | | | | | Cons. 70% | Cons. 70% | | | | | Tank l | L | W | H | Kg
+    0 | MI12MSX* | 11 | 10 | 13.2 | 12 | S3L2 SD | M | 3 | 1318 | 9.7 | 11.8 | 2.1 | 2.5 | N | AUS7310-17 | ACP 7320 | 65 | 75 | 150 | 80 | 125 | 560
+        ⇒ model: AUS7310-17 → S3L2 SD; power: P 11.8/9.7 S 13.2/10 → P 10/· S 11/·; cyl: 3 → ∅; weight: ∅ → 560
+    1 | MI17MSX* | 14.8 | 13.5 | 18.8 | 17 | S4L2 SD | M | 4 | 1758 | 13.7 | 16.2 | 2.8 | 3.4 | N | AUS7310-17 | ACP 7320 | 65 | 75 | 150 | 80 | 125 | 560
+        ⇒ model: AUS7310-17 → S4L2 SD; cyl: 4 → ∅; weight: ∅ → 560
+    3 | MI12TSX* | 11.5 | 10.5 | 14.2 | 12.9 | S3L2 SD | M | 3 | 1318 | 9.7 | 11.8 | 2 | 2.5 | N | AUS7310-14 | ACP 7320 | 65 | 75 | 150 | 80 | 125 | 560
+        ⇒ model: AUS7310-14 → S3L2 SD; cyl: 3 → ∅; weight: ∅ → 560
+    4 | MI17TSX* | 16.5 | 15 | 19.8 | 18 | S4L2 SD | M | 4 | 1758 | 13.7 | 16.2 | 2.9 | 3.5 | N | AUS7310-15 | ACP 7320 | 65 | 75 | 150 | 80 | 125 | 560
+        ⇒ model: AUS7310-15 → S4L2 SD; power: P 3.5/2.9 S 19.8/15 → P 15/· S 16.5/·; cyl: 4 → ∅; weight: ∅ → 560
+    7 | MI45TSX* | 42 | 40 | 54 | 49 | S4S DT SD | M | 4 | 3331 | 36.7 | 43.7 | 7.1 | 8.6 | T | AUS7310 | ACP 7320 | 67 | 135 | 196 | 98 | 136 | 1000
+        ⇒ MẤT bản ghi engine AUS7310
+
+[tellhow-power n102 bảng 1] ×1
+  H: | Model | Engine model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Noise (no load) | Tank capacity
+  H: | （kW） | （kW） | mm | （kg） | dB(A)@1m | dB(A)@7m | （L）
+   24 | THSC360 | QSNT-G4× | 360 | 400 | 4600×1720×2502 | 5385 | 83 | 73 | 850
+        ⇒ model: QSNT-G4× → QSNT-G4
+
+[tellhow-power n103 bảng 2] ×1
+  H: | Model | Engine model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Noise (no load) | Tank capacity
+  H: | kW | kW | mm | kg | dB(A)@1m | dB(A)@7m | （L）
+   20 | THCC1350 | KTA50-G15× | 1350 | 1500 | 12192×2438×2896 | 20200 | 88 | 80 | 2000
+        ⇒ model: KTA50-G15× → KTA50-G15
+
+[tellhow-power n107 bảng 6] ×7
+  H: | Model | Engine model | Prime power | Standby power | Overall size | Weight （Kg） | Noise (no load) | Tank capacity
+  H: | （kW） | （kW） | Length (L)×Width (W)×Height (H) | 1m | 7m | （L）
+    6 | THCM1320 | 12V4000G23F ★ | 1320 | 1450 | 12192X2438X2896 | 23000 | 86 | 78 | 2000L
+        ⇒ model: 12V4000G23F ★ → 12V4000G23F
+    7 | THCM1470 | 12V4000G63F ★ | 1470 | 1610 | 12192X2438X2896 | 23000 | 86 | 78 | 2000L
+        ⇒ model: 12V4000G63F ★ → 12V4000G63F
+    8 | THCM1670 | 16V4000G23F ★ | 1670 | 1800 | 12192X2438X2896 | 25500 | 88 | 78 | 2000L
+        ⇒ model: 16V4000G23F ★ → 16V4000G23F
+    9 | THCM1800 | 16V4000G63F ★ | 1800 | 2000 | 12192X2438X2896 | 26000 | 88 | 78 | 2000L
+        ⇒ model: 16V4000G63F ★ → 16V4000G63F
+   10 | THCM2000 | 20V4000G23F ★ | 2000 | 2200 | 12192X2438X2896 | 30100 | 86 | 80 | 2000L
+        ⇒ model: 20V4000G23F ★ → 20V4000G23F
+   11 | THCM2240 | 20V4000G63F ★ | 2240 | 2460 | 12192X2438X2896 | 30450 | 86 | 80 | 2000L
+        ⇒ model: 20V4000G63F ★ → 20V4000G63F
+   12 | THCM2400 | 20V4000G63LF ★ | 2400 | 2640 | 12192X2438X2896 | 31050 | 86 | 80 | 2000L
+        ⇒ model: 20V4000G63LF ★ → 20V4000G63LF
+
+[tellhow-power n115 bảng 7] ×11
+  H: | Model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Engine model | Number of cylinders/arrangement | Displacement | Fuel consumption rate | Lubricating oil capacity | Total coolant capacity
+  H: | (kW) | (kW) | mm | (Kg) | (L) | g/kw.h | (L) | (L)
+    1 | THLV200 | 200 | 220 | 2740×1372×1706 | 1930 | TAD851GE ★ | 6/L | 7.7 | 210 | 27 | 41
+        ⇒ model: TAD851GE ★ → TAD851GE
+    3 | THLV230 | 231 | 254 | 2740×1372×1706 | 1930 | TAD852GE ★ | 6/L | 7.7 | 198 | 27 | 41
+        ⇒ model: TAD852GE ★ → TAD852GE
+    7 | THLV260 | 260 | 286 | 3060×1275×1615 | 3000 | TAD1351GE ★ | 6/L | 12.78 | 200 | 36 | 44
+        ⇒ model: TAD1351GE ★ → TAD1351GE
+   10 | THLV300 | 300 | 330 | 3060×1275×1615 | 3000 | TAD1354GE ★ | 6/L | 12.78 | 196 | 36 | 44
+        ⇒ model: TAD1354GE ★ → TAD1354GE
+   12 | THLV330 | 330 | 360 | 3060×1275×1615 | 3200 | TAD1355GE ★ | 6/L | 12.78 | 192 | 36 | 44
+        ⇒ model: TAD1355GE ★ → TAD1355GE
+   14 | THLV370 | 370 | 407 | 3102×1238×1972 | 3500 | TAD1650GE ★ | 6/L | 16.12 | 202 | 48 | 60
+        ⇒ model: TAD1650GE ★ → TAD1650GE
+   16 | THLV400 | 400 | 440 | 3102×1238×1972 | 3500 | TAD1651GE ★ | 6/L | 16.12 | 198 | 48 | 60
+        ⇒ model: TAD1651GE ★ → TAD1651GE
+   18 | THLV480 | 480 | 529 | 3258×1390×1985 | 4000 | TWD1652GE ★ | 6/L | 16.12 | 210 | 48 | 118
+        ⇒ model: TWD1652GE ★ → TWD1652GE
+   19 | THLV500 | 500 | 550 | 3258×1390×1985 | 4230 | TWD1653GE ★ | 6/L | 16.12 | 208 | 48 | 118
+        ⇒ model: TWD1653GE ★ → TWD1653GE
+   21 | THLV520 | 520 | 574 | 3621×1390×1985 | 4500 | TWD1653GE ★ | 6/L | 16.12 | 208 | 48 | 118
+        ⇒ model: TWD1653GE ★ → TWD1653GE
+   22 | THLV560 | 560 | 616 | 3621×1390×1985 | 4700 | TWD1645GE ★ | 6/L | 16.12 | 191 | 48 | 160
+        ⇒ model: TWD1645GE ★ → TWD1645GE
+
+[tellhow-power n115 bảng 8] ×8
+  H: | Model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Engine model | Number of cylinders/arrangement | Displacement | Fuel consumption rate | Lubricating oil capacity | Total coolant capacity
+  H: | (kW) | (kW) | mm | (Kg) | (L) | g/kw.h | (L) | (L)
+    1 | THLV207 | 207 | 228 | 2740×1372×1706 | 1930 | TAD851GE ★ | 6/L | 7.7 | 210 | 27 | 17
+        ⇒ model: TAD851GE ★ → TAD851GE
+    4 | THLV230 | 230 | 253 | 2740×1372×1706 | 1930 | TAD852GE ★ | 6/L | 7.7 | 198 | 27 | 41
+        ⇒ model: TAD852GE ★ → TAD852GE
+    6 | THLV250 | 250 | 275 | 2740×1372×1706 | 1930 | TAD853GE ★ | 6/L | 7.7 | 189 | 25 | 17
+        ⇒ model: TAD853GE ★ → TAD853GE
+    9 | THLV273 | 273 | 300 | 3060×1275×1615 | 3000 | TAD1351GE ★ | 6/L | 12.78 | 200 | 36 | 44
+        ⇒ model: TAD1351GE ★ → TAD1351GE
+   10 | THLV320 | 320 | 350 | 3060×1275×1615 | 3000 | TAD1354GE ★ | 6/L | 12.78 | 196 | 36 | 44
+        ⇒ model: TAD1354GE ★ → TAD1354GE
+   12 | THLV323 | 323 | 353 | 3060×1275×1615 | 3200 | TAD1355GE ★ | 6/L | 12.78 | 192 | 36 | 44
+        ⇒ model: TAD1355GE ★ → TAD1355GE
+   17 | THLV413 | 413 | 454 | 3102×1238×1972 | 3500 | TAD1650GE ★ | 6/L | 16.12 | 202 | 48 | 60
+        ⇒ model: TAD1650GE ★ → TAD1650GE
+   19 | THLV464 | 464 | 513 | 3102×1238×1972 | 3500 | TAD1651GE ★ | 6/L | 16.12 | 198 | 48 | 60
+        ⇒ model: TAD1651GE ★ → TAD1651GE
+
+[tellhow-power n126 bảng 11] ×7
+  H: | Model | Prime power | Standby power | Overall size Length (L)×Width (W)×Height (H) | Weight | Engine model | Number of cylinders /arrangement | Displacement | Fuel consumption rate | Lubricating oil capacity | Total coolant capacity
+  H: | (kW) | (kW) | mm | (Kg) | (L) | g/kw.h | (L) | (L)
+    4 | THHM1320 | 1320 | 1450 | 6062×2252×2543 | 14740 | 12V4000G23F ★ | 12/V | 57.2 | 189 | 260 | 520
+        ⇒ model: 12V4000G23F ★ → 12V4000G23F
+    5 | THHM1470 | 1470 | 1610 | 6062×2252×2543 | 14990 | 12V4000G63F ★ | 12/V | 57.2 | 193 | 260 | 570
+        ⇒ model: 12V4000G63F ★ → 12V4000G63F
+    6 | THHM1670 | 1670 | 1800 | 6539×2334×2583 | 16680 | 16V4000G23F ★ | 16/V | 76.3 | 192 | 300 | 685
+        ⇒ model: 16V4000G23F ★ → 16V4000G23F
+    7 | THHM1800 | 1800 | 2000 | 6539×2334×2583 | 16680 | 16V4000G63F ★ | 16/V | 76.3 | 191 | 300 | 730
+        ⇒ model: 16V4000G63F ★ → 16V4000G63F
+    8 | THHM2000 | 2000 | 2200 | 7171×2555×2706 | 19450 | 20V4000G23F ★ | 20/V | 95.4 | 195 | 390 | 795
+        ⇒ model: 20V4000G23F ★ → 20V4000G23F
+    9 | THHM2240 | 2240 | 2460 | 7171×2555×2706 | 20000 | 20V4000G63F ★ | 20/V | 95.4 | 193 | 390 | 825
+        ⇒ model: 20V4000G63F ★ → 20V4000G63F
+   10 | THHM2400 | 2400 | 2640 | 7271×2555×2706 | 20800 | 20V4000G63LF ★ | 20/V | 95.4 | 192 | 390 | 850
+        ⇒ model: 20V4000G63LF ★ → 20V4000G63LF
+
+[voltgent n110 bảng 9] ×1
+  H: | Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet
+   68 | VB1050-6 | 1050 | 840 | 950 | 760 | Baudouin | 8M33G900/6^ | [EN] [RU] [ES] [PT]
+        ⇒ model: 8M33G900/6^ → 8M33G900/6
+
+[waeta-fujian n107 bảng 13] ×1
+  H: | Model | Standby Power | Prime Power | Engine | Read More
+  H: | Kva | Kw | Kva | Kw | Engine Model | No. of Cylinder | Displacement(L) | Download
+   10 | WTA-W188 | 188 | 150 | / | / | WP6D180E201^ | 6 L | 6.75 | Wechai Series.xlsx
+        ⇒ model: WP6D180E201^ → WP6D180E201
+
+[weichai-heavy-machinery n106 bảng 5] ×2
+  H: | Genset Model | Rated speed (rpm) | Standby Power (kVA/kW) | Prime Power (kVA/kW) | Baudouin Engine Model | Cylinders | Bore × Stroke (mm) | Governing System | Emission standard
+    3 | WPG1000*7^ | 1500 | 1000/800 | / | 6M31G1000/5^ | 6 | 149×177 | Electronic control | Non-Road Emission Exempt
+        ⇒ model: 6M31G1000/5^ → 6M31G1000/5
+    7 | WPG800*76 | 1800 | 1000/800 | / | 6M31G800/6^ | 6 | 149×177 | Electronic control | Non-Road Emission Exempt
+        ⇒ model: 6M31G800/6^ → 6M31G800/6
+
+[weichai-power n134 bảng 27] ×2
+  H: | Genset Model | Rated speed (rpm) | Standby Power (kVA/kW) | Prime Power (kVA/kW) | Baudouin Engine Model | Cylinders | Bore × Stroke (mm) | Governing System | Emission standard
+    3 | WPG1000*7^ | 1500 | 1000/800 | / | 6M31G1000/5^ | 6 | 149×177 | Electronic control | Non-Road Emission Exempt
+        ⇒ model: 6M31G1000/5^ → 6M31G1000/5
+    7 | WPG800*76 | 1800 | 1000/800 | / | 6M31G800/6^ | 6 | 149×177 | Electronic control | Non-Road Emission Exempt
+        ⇒ model: 6M31G800/6^ → 6M31G800/6
+
+[zhengdian-zhengzhou n102 bảng 1] ×1
+  H: | | 机组 | 柴油机发动机技术参数
+  H: | 机组型号 | 备用功率 | 额定功率 | 电流A | 净重KG | 机组外型净尺寸mm×mm×mm | 柴油机型号 | 功率KW | 缸数 | 缸径mm | 行程mm | 排气量L | 压缩比 | 机油容量L | 燃油消耗率g/KW.h
+    0 | 50GF | 55 | 50 | 99/90 | 1380 | 2300×800×1350 | 4135D—1 | 64.7/58.8 | 4 | 135 | 140 | 8 | 16.5:1 | 25.2 | 231.2
+        ⇒ model: 4135D—1 → 4135D-1
+
+==== tự kiểm số (verSpec) ====
+(!) [tecnogen n2005 bảng 4 cyl] dòng 0: 3 → ∅ (nhãn "Cylinder") | {"standby":{"kVA":11},"prime":{"kVA":10}} | | MI12MSX* | 11 | 10 | 13.2 | 12 | S3L2 SD | M | 3 | 1318 | 9.7 | 11.8 | 2.1 | 2.5 | N | AUS7310-17 | ACP 7320 | 65 | 75 | 150 | 80 | 125 | 560
+    [tecnogen n2005 bảng 4 weight] dòng 0: ∅ → 560 (nhãn "Kg") | | MI12MSX* | 11 | 10 | 13.2 | 12 | S3L2 SD | M | 3 | 1318 | 9.7 | 11.8 | 2.1 | 2.5 | N | AUS7310-17 | ACP 7320 | 65 | 75 | 150 | 80 | 125 | 560
+(!) [tecnogen n2005 bảng 4 cyl] dòng 1: 4 → ∅ (nhãn "Cylinder") | {"standby":{"kVA":14.8},"prime":{"kVA":13.5}} | | MI17MSX* | 14.8 | 13.5 | 18.8 | 17 | S4L2 SD | M | 4 | 1758 | 13.7 | 16.2 | 2.8 | 3.4 | N | AUS7310-17 | ACP 7320 | 65 | 75 | 150 | 80 | 125 | 560
+(!) [tecnogen n2005 bảng 4 cyl] dòng 3: 3 → ∅ (nhãn "Cylinder") | {"standby":{"kVA":11.5},"prime":{"kVA":10.5}} | | MI12TSX* | 11.5 | 10.5 | 14.2 | 12.9 | S3L2 SD | M | 3 | 1318 | 9.7 | 11.8 | 2 | 2.5 | N | AUS7310-14 | ACP 7320 | 65 | 75 | 150 | 80 | 125 | 560
+(!) [tecnogen n2005 bảng 4 cyl] dòng 4: 4 → ∅ (nhãn "Cylinder") | {"standby":{"kVA":16.5},"prime":{"kVA":15}} | | MI17TSX* | 16.5 | 15 | 19.8 | 18 | S4L2 SD | M | 4 | 1758 | 13.7 | 16.2 | 2.9 | 3.5 | N | AUS7310-15 | ACP 7320 | 65 | 75 | 150 | 80 | 125 | 560
+
+4  cyl bỏ: mới không kiểm được
+4  weight thêm: mới tự xác nhận
+
+cần soát tay: 4
