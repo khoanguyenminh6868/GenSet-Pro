@@ -791,16 +791,12 @@
     return lines;
   }
   // What a table's header says, made readable before any reading (catalog-bang-r1, Khoa 19/11/2026 "làm nhóm 1"):
-  // - a header written with a space between each Chinese character ("机 组 型 号 | 发 动 机 型 号", simpson-power): the
-  //   spaces go, so the titles are known (发动机 is the engine column);
+  // - a header written with spaces between Chinese characters ("机 组 型 号 | 发 动 机 型 号", simpson-power; "机组重 量",
+  //   "排 气 量", "燃油 消耗", catalog-a): the spaces go, so the titles are known (发动机 is the engine column);
   // - a table with no header whose first row is the header and the first genset row run together ("| | Model | Prime Power
   //   (kW) | … | Dimensions (mm) | JJC-20GF | 20 | 22 | …", jinjia-power, 18 tables): split in two, only when the row is k
   //   titles (first "Model / 型号", none a figure or a code) then k cells starting with a code, and every other row has k cells.
   //   The row keeps its index (row 0), its text is the part after the titles, word for word.
-  // Only letter-spaced runs of four characters or more ("发 动 机 型 号", "机 组 型 号": simpson-power 16 tables, yingtai
-  // n101 / n2003); a space between two words ("发动机 型号", "机组重 量", "重庆 康明斯") or a three-character run ("排 气 量",
-  // yunding) stays: taking those out changed how 10 tables already read are read (tried, spec-diff), out of this change.
-  const HAN_GAP = /[一-鿿](?: [一-鿿]){3,}/;
   function stuckHeader(rows) {
     if (rows.length < 2) return null;
     const c = cellsOf(rows[0]);
@@ -812,11 +808,34 @@
     if (!rows.slice(1).every((r) => cellsOf(r).length === k)) return null;
     return { header: "| " + c.slice(0, k).join(" | "), row: "| " + c.slice(k).join(" | ") };
   }
-  function tidyTable(t) {
+  // catalog-a (Khoa 19/11/2026 "Làm", đề xuất của catalog-bang-r1): ANY space between two Chinese characters of a header
+  // goes ("机组重 量", "排 气 量", "发动机 型号"): a header cell is one title, a space inside a Chinese word is layout.
+  // Only the header: in rows a space may part a make from a model ("重庆 康明斯").
+  const HAN_SP = /([一-鿿]) +(?=[一-鿿])/g;
+  // Genset rows that the page put in the header, under the titles (catalog-a: baifa, penlucky, fdk-energy, elitech, rcg,
+  // agg-fuzhou, simpson, welland: "| | Genset Model | Standby Power | … " then "| CG250-H1 CONTACT | 250KVA/ 200KW | …").
+  // A header line from the second on is a genset row when its FIRST cell is a code, the table's first row also starts
+  // with a code, and it has a figure; such lines must run to the end of the header (a title line after them: which is
+  // a title is not known, the table is left as it was and noted). Sub-title lines before them stay ("Standby KVA |
+  // Prime KVA | Brand …", baifa). The moved rows are read AFTER the table's rows, numbered from rows.length, so the rows
+  // already read keep their index.
+  function headerRows(t) {
+    const h = t.header || [], rows = t.rows || [];
+    if (h.length < 2 || !rows.length || !isCode(cellsOf(rows[0])[0])) return null;
+    const data = (l) => { const c = cellsOf(l); return c.length >= 3 && isCode(c[0]) && c.slice(1).some((x) => /\d/.test(x)); };
+    const at = h.findIndex((l, i) => i >= 1 && data(l));
+    if (at < 0) return null;
+    if (!h.slice(at).every(data)) return { mixed: true, at };
+    return { at };
+  }
+  function tidyTable(t, note = () => {}) {
     let header = t.header || [], rows = t.rows || [], changed = false;
-    if (header.some((h) => HAN_GAP.test(h))) { header = header.map((h) => h.replace(new RegExp(HAN_GAP.source, "g"), (m) => m.replace(/ /g, ""))); changed = true; }
+    if (header.some((h) => /[一-鿿] +[一-鿿]/.test(h))) { header = header.map((h) => h.replace(HAN_SP, "$1")); changed = true; }
     const st = !header.length && stuckHeader(rows);
     if (st) { header = [st.header]; rows = [st.row, ...rows.slice(1)]; changed = true; }
+    const hr = !isLabelTable(t) && headerRows({ header, rows });
+    if (hr?.mixed) note("dòng máy lẫn với dòng tiêu đề", header[hr.at]);
+    else if (hr) { rows = [...rows, ...header.slice(hr.at)]; header = header.slice(0, hr.at); changed = true; }
     return changed ? { ...t, header, rows } : t;
   }
   const isLabelTable = (t) => {
@@ -1119,7 +1138,7 @@
     const note = notes ? (t, ti, row, reason, detail) => notes.push({ supplierId: s.id, n: t.n, table: ti, title: String(t.title || ""), row, reason, detail: detail == null ? null : String(detail).slice(0, 200) }) : () => {};
     const ownBrand = (list) => brandIn([s.names?.en, ...(s.names?.brands || [])].join(" "), list);
     (s.specTables || []).forEach((t0, ti) => {
-      const t = tidyTable(t0);
+      const t = tidyTable(t0, (reason, detail) => note(t0, ti, null, reason, detail));
       const headerText = (t.header || []).join(" ");
       const title = String(t.title || "");
       const titleHead = title.split(/\s[|–-]\s|\|/)[0];

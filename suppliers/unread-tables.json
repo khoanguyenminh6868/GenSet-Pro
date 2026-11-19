@@ -16,6 +16,11 @@
    "tables": 36,
    "sups": 18
   },
+  "dòng máy lẫn với dòng tiêu đề": {
+   "items": 5,
+   "tables": 5,
+   "sups": 3
+  },
   "dòng điện / điện áp theo vị trí không khớp công suất": {
    "items": 230,
    "tables": 15,
@@ -3428,6 +3433,19 @@
    "rows": {},
    "sample": {
     "bảng không cho bản ghi nào": "| Power band | Typical engine families | Application fit"
+   }
+  },
+  {
+   "supplierId": "baifa-power",
+   "n": 101,
+   "table": 1,
+   "title": "",
+   "reasons": {
+    "dòng máy lẫn với dòng tiêu đề": 1
+   },
+   "rows": {},
+   "sample": {
+    "dòng máy lẫn với dòng tiêu đề": "| BF-V770-T2 | 770 | 700 | VOLVO | TWD1645GE | EMS2 / ECU | S5L1D-G4 | STAGE II /TIER 2 | SWEDEN"
    }
   },
   {
@@ -32957,6 +32975,19 @@
    }
   },
   {
+   "supplierId": "rcg-power",
+   "n": 120,
+   "table": 18,
+   "title": "R-WB 系列 (博杜安) -江苏瑞昌哥尔德发电设备股份有限公司",
+   "reasons": {
+    "dòng máy lẫn với dòng tiêu đề": 1
+   },
+   "rows": {},
+   "sample": {
+    "dòng máy lẫn với dòng tiêu đề": "| R-WB18D5/S | 18 kVA / 14 kW | 20 kVA / 16 kW | 潍柴博杜安 & 4M06G20/5 | 威而纳 & WR184ES | PDF"
+   }
+  },
+  {
    "supplierId": "rehlko",
    "n": 2001,
    "table": 0,
@@ -39744,10 +39775,12 @@
    "table": 0,
    "title": "Second hand | visa.it",
    "reasons": {
+    "dòng máy lẫn với dòng tiêu đề": 1,
     "bảng không cho bản ghi nào": 1
    },
    "rows": {},
    "sample": {
+    "dòng máy lẫn với dòng tiêu đề": "| S12 OPEN | 12 | Open | | undefined | | Manual version | Stand-By",
     "bảng không cho bản ghi nào": "| | MODEL | KVA | VERSION | ENGINE | ALTERNATOR | YEAR | PANEL | RECOMMENDED USE"
    }
   },
@@ -39757,10 +39790,12 @@
    "table": 1,
    "title": "Second hand | visa.it",
    "reasons": {
+    "dòng máy lẫn với dòng tiêu đề": 1,
     "bảng không cho bản ghi nào": 1
    },
    "rows": {},
    "sample": {
+    "dòng máy lẫn với dòng tiêu đề": "| S12 OPEN | 12 | Open | | undefined | | Manual version | Stand-By",
     "bảng không cho bản ghi nào": "| | MODEL | KVA | VERSION | ENGINE | ALTERNATOR | YEAR | PANEL | RECOMMENDED USE"
    }
   },
@@ -39770,10 +39805,12 @@
    "table": 10,
    "title": "Second hand | visa.it",
    "reasons": {
+    "dòng máy lẫn với dòng tiêu đề": 1,
     "bảng không cho bản ghi nào": 1
    },
    "rows": {},
    "sample": {
+    "dòng máy lẫn với dòng tiêu đề": "| S12 OPEN | 12 | Open | | undefined | | Manual version | Stand-By",
     "bảng không cho bản ghi nào": "| | MODEL | KVA | VERSION | ENGINE | ALTERNATOR | YEAR | PANEL | RECOMMENDED USE"
    }
   },
