@@ -1,0 +1,24 @@
+bản ghi cũ 59787, mới 59786 | khác 4 | chỉ cũ 1, chỉ mới 0 | bảng có đổi 2
+{"power":4}
+
+[kaihua-genset n114 bảng 16] ×4
+  H: | Genset Model | Standby Power | Prime power | Engine model | Dimension | Weight(KG)
+  H: | KVA | KW | KVA | KW
+   42 | KH-291GF | 360 | 288 | 364 | 291 | OC16 071A 02-81 | 5200*2100*2390 | 5300
+        ⇒ power: P 360/288 S 364/291 → ∅
+   43 | KH-327GF | 360 | 288 | 409 | 327 | OC16 071A 02-82 | 5200*2100*2390 | 5300
+        ⇒ power: P 360/288 S 409/327 → ∅
+   44 | KH-364GF | 360 | 288 | 455 | 364 | OC16 071A 02-83 | 5200*2100*2390 | 5300
+        ⇒ power: P 360/288 S 455/364 → ∅
+   45 | KH-316GF | 349 | 279 | 395 | 316 | OC16 071A 02-91 | 5200*2100*2390 | 5300
+        ⇒ power: P 349/279 S 395/316 → ∅
+
+[mpmc-powertech n114 bảng 11] ×1
+  undefined (bảng nhãn)
+        ⇒ MẤT bản ghi engine DC13 093A 02-75
+
+==== tự kiểm số (verSpec) ====
+
+
+
+cần soát tay: 0

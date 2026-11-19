@@ -103,7 +103,39 @@ Từ khoá thêm: chỉ "Mesin" (conductorjasa). KHÔNG thêm: từ dịch máy 
 - `soat-cuoi.md` / `soat-cuoi.tsv`: MỌI bản ghi mới / mất / đổi in cạnh dòng nguồn (model, tổ máy, kVA / kW prime / standby, động cơ ↔ đầu phát, hãng, thông số, cờ ⚠) — **cho điều phối soát lại**; `soat-cuoi-model-to-may-moi.txt` (507 khoá tổ máy mới).
 - `spec-diff-cuoi.txt` / `.md` (bản cuối), `spec-diff-1…5` (các lượt thử, mục 2–3), `row-flags-goc.json` / `row-flags-nhanh.json`.
 
+## 8. Top 30 (đo cloud: gốc d8db6166 ↔ nhánh 82587105; 928 gói / 1.093 lượt / 0 lỗi)
+
+Tệp ở `dau-vao\bang-chua-doc-r1\top30-cloud\`: `cmp-top30.md` (tóm tắt), `cmp-dong.tsv` (MỌI dòng đổi của mọi lượt + lớp), `cmp-ef.tsv` (dòng bị đẩy / được kéo, kèm lý do), `cmp-moi-vao-top.tsv`, `cmp-ct.md` + `ct-dropped.tsv` (chạy lại 101 lượt trên máy), `cmp-d1-model.tsv`; script `cmp-top30.mjs`, `luot-chi-tiet.mjs`, `cmp-ct.mjs`, `chk-top.mjs`, `chk-fe*.mjs`, `chk-d1.mjs`. `all` so theo ĐA TẬP khoá → điểm; khoá dòng bỏ trường đầu phát khi tra bản ghi. **Dòng "không rõ": 0.**
+
+Lớp của một dòng (theo bản ghi động cơ của chính dòng, khoá NCC | model | chữ dòng, so `fromSupplier` gốc ↔ nhánh): **A1** bản ghi mới ở bảng gốc đã đọc (mã Scania bốn cụm thay model rác), **A2** bản ghi mới ở bảng R1, **B1** bản ghi mất (model rác / ô hai mã), **C** bản ghi của chính dòng đổi, **D1** dòng không đổi nhưng bản ghi KHÁC của cùng model động cơ mới / mất / đổi (đổi thông số gộp, số đông, hãng → đổi điểm hoặc luật loại), **D2** như D1 cho model đầu phát, **E / F** dòng không đổi, điểm không đổi, vào / ra top vì luật chọn top. Điểm của một dòng chỉ phụ thuộc chính dòng + thông số / hãng của model động cơ và đầu phát của nó, nên mọi dòng đổi mà không thuộc A–D đều phải là E / F; kết quả: 0 dòng ngoài các lớp.
+
+Lượt (1.093): giống hệt 148; **top đổi 209** = 82 đổi tập dòng + 7 cùng tập chỉ đổi điểm (D1) + 120 cùng tập, cùng điểm, chỉ đổi THỨ TỰ các dòng hoà điểm (thứ tự duyệt động cơ đổi vì có model mới; sort giữ thứ tự cũ cho dòng hoà); **chỉ `all` đổi 718**; **chỉ `dropped` đổi 18** (+1 lượt IB2200018828#0 cũng đổi `dropped` nhưng đã đếm ở nhóm hoà điểm).
+
+| | A2 | A1 | B1 | C | D1 | D2 | E / F | tổng |
+|---|--:|--:|--:|--:|--:|--:|--:|--:|
+| `all` vào (dòng) | 11.241 | 2.233 | | | 120 | | | 13.594 |
+| `all` ra | | | 902 | 2 | 75 | | | 979 |
+| `all` đổi điểm | | | | 3 | 1.159 | 36 | | 1.198 |
+| top vào | 67 | 37 | | | 29 | 1 | 16 (E) | 150 |
+| top ra | | | 38 | 1 | 28 | 2 | 65 (F) | 134 |
+
+**(1) 718 lượt chỉ `all` đổi, 18 lượt chỉ `dropped` đổi.** `all` là mọi dòng qua dải công suất (`near`) và các ngưỡng HSMT; 887 bản ghi mới (jinjia, simpson, aj-power Scania…) vào `all` của 858 lượt (A2) / 244 lượt (A1) nhưng điểm không đủ vào top. `all` ra 902 dòng là bản ghi model rác cũ (tecnogen AUS7310, cgm B300/B400/B750, baifa "4 months", aj-power đầu phát làm động cơ) nay mang mã đúng: chúng ra với khoá cũ và vào lại (A1) với khoá mới. `dropped` chỉ là SỐ dòng bị luật HSMT loại; chạy lại 101 lượt trên máy (bidhist máy 18/11, `luot-chi-tiet.mjs`; gốc khớp cloud 101/101 lượt: `all`, top, `dropped`) cho danh sách: ở 19 lượt chỉ đổi `dropped`, chênh của TỪNG lượt bằng đúng số bản ghi mới bị loại (vào 80: ngưỡng prime 40, dung tích 22, xi lanh 13, nhiều ngưỡng cùng lúc 5) trừ bản ghi mất (ra 7, ngưỡng prime); `rowflag` không đổi ở lượt nào. Ở các lượt khác còn có dòng CŨ đổi lý do loại (`maxDisp` → `maxDisp,cyl`…): 132 dòng, 100 % thuộc model động cơ có bản ghi mới / mất (D1; 98 ở IB2400238834#0).
+
+**(2) Dòng CŨ đổi điểm: 1.198 dòng, TẤT CẢ đều TĂNG** (|Δ| ≤ 10: 810, 11–50: 335, > 50: 53, lớn nhất 80). D1 1.159: 34 model; thông số gộp của model đổi (thêm dung tích / xi lanh / tiêu hao từ dòng mới, số đông `win`) ở mọi model, trong đó 6R1600G10F (MTU, +1 dòng) chiếm 640 dòng-lượt, SC10E420D2 209, 8V1600G20F 201, YC6K570D30 158, 1106A70TG1 97; hãng đổi ở 2 model: 4016TAG không hãng → Perkins (bản ghi simpson mới ghi Perkins), AUS7310 không hãng → Mitsubishi (xem dưới). D2 36 dòng: model đầu phát có bản ghi R1 mới. C 3 dòng: simpson SP1540DP / 4016TAG (bản ghi đổi: thêm kích thước, hãng). Từng dòng: `cmp-dong.tsv`; từng model: `cmp-d1-model.tsv`.
+- Sót từ gốc, KHÔNG do nhánh tạo: tecnogen MI45TSX* (động cơ Mitsubishi "S4S DT SD") vẫn đọc mã đầu phát "AUS7310" làm động cơ (gốc cũng vậy). 21 dòng AUS7310 khác nay thành mã Scania nên khoá AUS7310 chỉ còn dòng này, hãng thành Mitsubishi, điểm −10 → 50 (IB2300135189#0, không vào top). Ghi vào việc đề xuất.
+
+**(3) Dòng mới vào top thiếu công suất: 45 / 104 dòng, 34 / 48 lượt.** 43 không có prime: simpson 25 (chỉ standby, máy xăng / diesel nhỏ 4–11,5 kVA), rcg 9 (chỉ standby, Volvo Penta), kaihua 6 (chỉ "rated": cột Standby ghi "None"), huadong 3 (standby + rated); 2 không có kVA: jinjia YC12VC2700D31 / YC12VC2510D31, nhưng hai lượt đó HSMT ghi kW (1.800 / 1.600 kW) nên so cùng đơn vị, tỉ số 1,00. Dải (`cap` thật từ chạy lại): mọi 104 dòng mới vào top có prime tương đương (prime, không có thì standby ÷ 1,1, rồi rated) / cap = 0,90–1,27; **không dòng nào ngoài dải**. 17 dòng có prime tương đương dưới cap (standby ÷ 1,1 < cap, ví dụ rcg TAD1343GEB standby 413 kVA ở gói 410 kVA): cùng cách xử lý như mọi dòng chỉ-standby đang có. 4 dòng trên 1,25 là simpson ZS182F 4,2 kVA ở gói 3 kVA, đã bị trừ điểm (−25).
+
+**(4) Dòng bị đẩy khỏi top (F, 65 dòng, điểm không đổi):** hoà điểm ở biên 29 (điểm bằng điểm cuối top mới, chỉ đổi thứ tự); điểm dưới biên mới (dòng mới điểm cao hơn vào) 13; trần 4 dòng / NCC 7; trần 3 dòng / động cơ 2; chỗ dành (12 dòng hãng TQ / hãng G7-G20) hoặc trần hãng 14. E 16 (được kéo vào): trần 4 dòng / NCC (dòng cùng NCC ra) 12, hoà điểm 2, trước bị chặn 1, chỗ dành 1. Lý do E / F suy theo luật chọn top (`candidates` dòng 1563–1620), không chạy lại từng bước `pick`. Dòng điểm cao bị đẩy (≥ 150): stone-power KT38G 273 (IB2300000242#0), fdk-energy 4HTAA4.3-G34 274 (IB2400459339#1), eastern-lion YC4A190 257, uleengen YC4A180 253, bobig 4HTAA4.3 253 (IB2400238834#0), kaihua WP13 217 (IB2500314401#0), victory 2806A 162; đủ 36 dòng "thật" (không hoà điểm) ở `cmp-ef.tsv`.
+
+## 9. Ngoại lệ theo dòng (Khoa 19/11/2026), commit 57350670
+
+- `ROW_EXCEPTIONS` trong `catalog.js` (repo chưa có cơ chế ngoại lệ dòng chạy cả web lẫn bot; `rowok` là trạng thái web): khớp NCC + n + model tổ máy + chữ dòng nguyên văn, ghi note "ngoại lệ theo dòng". kaihua n114 KH-291 / 327 / 364 / 316GF `nopower` (bản ghi giữ, công suất trống); mpmc n114 MS530-2 `drop`. Không sửa `suppliers/cn`.
+- `spec-diff git:82587105 .`: đúng 5 bản ghi (4 power → trống, 1 mất), đảo vai 0 → 0; 1.301 test qua (3 test mới: 5 dòng, dòng bên cạnh KH-512GF / KH-200GF / MS500-2 không đổi, chữ nguồn đổi thì ngoại lệ hết hiệu lực); `quality --check` không xấu đi; `unread-tables.json` +1 bảng (mpmc n114).
+- Chạy lại 101 lượt trên máy với code này: khác 82587105 chỉ ở 12 lượt, đều do các dòng kaihua OC16 rời `all` (công suất trống nên không qua dải) và `dropped` −1 / −2 ở 2 lượt (IB2300025731#0, IB2400116021#0).
+
 ## Cần ghi nhớ
 
-- Khoa cần quyết: (1) có tạo bản ghi "tổ máy không mã động cơ" không (82 bảng R1, ~2.600 dòng, teksan riêng 1.180 dòng; cũng là điều kiện cho V1 của chặng 1); (2) kaihua 4 dòng khí OC16 tiêu đề trái số: giữ cách ghép theo độ lớn (hiện tại) hay để trống; (3) mpmc MS530-2 (nguồn ghi standby 553 và 663 kVA).
+- Khoa đã quyết 19/11: (1) bản ghi "tổ máy không mã động cơ" làm (VIỆC SAU, không trong PR #941); (2) kaihua OC16 4 dòng để trống công suất; (3) mpmc MS530-2 bỏ — (2)(3) đã làm ở mục 9.
+- Đề xuất thêm: tecnogen MI45TSX* còn đọc "AUS7310" (mã đầu phát) làm động cơ (mục 8 (2)).
 - Việc đề xuất riêng (không tự mở): dòng dữ liệu nằm trong dòng tiêu đề thứ 2 (157 dòng / 6 NCC); gộp dấu cách Hán ngắn ở tiêu đề (9 NCC đang đọc).
