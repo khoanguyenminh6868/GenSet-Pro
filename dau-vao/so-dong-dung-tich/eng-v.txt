@@ -1,0 +1,513 @@
+Nhóm (động cơ, trước, sau) đổi hoặc nhóm thắng V có > 1 số: 275
+  1104C44TAG1|4.4|4.4|4.4/4.41|trước {"4.4":6,"4.41":1}|V {"4.4":7}  (49 dòng)
+  1104C44TAG2|4.4|4.4|4.4/4.41|trước {"4.41":4,"4.4":15,"12.6":1}|V {"4.4":19,"12.6":1}  (154 dòng)
+  1104DE44TAG1|4.4|4.4|4.4/4.41|trước {"4.4":3,"4.41":1}|V {"4.4":4}  (22 dòng)
+  1104DE44TAG2|4.4|4.399|4.399/4.4/4.41|trước {"4.4":3,"4.399":1,"4.41":1}|V {"4.399":5}  (29 dòng)
+  1106A70TAG2|null|7|7/7.01|trước {}|V {"7":17}  (143 dòng)
+  1106A70TAG3|null|7|7/7.01|trước {}|V {"6":1,"7":17}  (151 dòng)
+  1106A70TAG4|null|7|7/7.01|trước {}|V {"7":15}  (104 dòng)
+  1106A70TG1|null|7|7/7.01|trước {}|V {"6":1,"7":17,"6.6":1,"12.6":1}  (139 dòng)
+  1106DE70TAG2|null|7|7/7.01|trước {}|V {"7":4}  (29 dòng)
+  1106DE70TAG3|null|7|7/7.01|trước {}|V {"7":4}  (27 dòng)
+  1106DE70TAG4|null|7|7/7.01|trước {}|V {"7":4}  (28 dòng)
+  1206AE70TTAG1|null|7|7/7.01|trước {}|V {"7":5}  (37 dòng)
+  1206AE70TTAG2|null|7|7/7.01|trước {}|V {"7":6}  (48 dòng)
+  1206AE70TTAG3|null|7|7/7.01|trước {}|V {"7":7}  (61 dòng)
+  12M55D2210E310|65.65|65.65|65.65/65.7|trước {"65.7":1,"65.65":6}|V {"65.65":7}  (17 dòng)
+  12M55D2450E310|65.65|65.65|65.65/65.7|trước {"65.7":1,"65.65":5}|V {"65.65":6}  (17 dòng)
+  12M55D2700E310|65.65|65.65|65.65/65.7|trước {"65.7":1,"65.65":3}|V {"65.65":4}  (10 dòng)
+  12V4000G63F|null|57|57/57.2|trước {}|V {"57":3}  (13 dòng)
+  1706AE93TAG1|null|9.29|9.29/9.3|trước {}|V {"9.29":5}  (34 dòng)
+  1706AE93TAG2|9.29|9.29|9.29/9.3|trước {"9.29":3,"9.3":1}|V {"9.29":4}  (24 dòng)
+  18V2000G85|null|35.8|35.8/35.82|trước {}|V {"35.8":3}  (22 dòng)
+  2806AE18TAG1A|18.1|18.1|18.1/18.13|trước {"18.1":6}|V {"18.1":6}  (37 dòng)
+  2806AE18TAG2|18.1|18|18/18.1/18.13|trước {"18":2,"18.1":12,"18.13":3}|V {"18":17}  (104 dòng)
+  2806AE18TAG3|null|18.1|18.1/18.13|trước {}|V {"18.1":3}  (12 dòng)
+  2806CE18TAG1A|null|18|18/18.1/18.13|trước {}|V {"18":15}  (75 dòng)
+  2806CE18TAG3|null|18.1|18.1/18.13|trước {}|V {"18.1":5}  (19 dòng)
+  400623TAG2A|null|22.9|22.9/22.92/22.921/23|trước {}|V {"22.9":18}  (124 dòng)
+  400623TAG3A|null|22.9|22.9/22.92/22.921/23|trước {}|V {"22.9":20}  (156 dòng)
+  4008TAG1A|null|30.56|30.56/30.561/30.6|trước {}|V {"30":1,"30.56":10,"22.92":1,"30.5":3}  (79 dòng)
+  4008TAG2|null|30.56|30.56/30.561/30.6|trước {}|V {"30":1,"30.56":5,"30.5":1}  (77 dòng)
+  401246TAG2A|null|45.8|45.8/45.84/45.842/46|trước {}|V {"458":1,"45.8":21}  (130 dòng)
+  401246TAG3A|null|45.8|45.8/45.84/45.842/46|trước {}|V {"45.8":19}  (135 dòng)
+  401246TWG2A|null|45.8|45.8/45.84/45.842/46|trước {}|V {"458":1,"45.8":20}  (146 dòng)
+  401246TWG3A|null|45.8|45.8/45.84/45.842/46|trước {}|V {"45.8":10}  (72 dòng)
+  401661TRG2|null|61|61/61.1/61.123|trước {}|V {"61":4}  (44 dòng)
+  401661TRG3|null|61|61/61.1/61.12/61.123|trước {}|V {"61":15}  (101 dòng)
+  4016TAG1A|null|61|61/61.1/61.12/61.123|trước {}|V {"61":14,"45.842":2}  (81 dòng)
+  4016TAG2A|null|61|61/61.1/61.12/61.123|trước {}|V {"61":17}  (88 dòng)
+  403A15G1|null|1.496|1.496/1.5|trước {}|V {"1.496":10,"1.131":1,"2.2":1}  (77 dòng)
+  403A15G2|1.496|1.49|1.49/1.496/1.5|trước {"1.496":6,"1.131":1,"2.2":1,"1.5":1,"1.49":1}|V {"1.49":8,"1.131":1,"2.2":1}  (103 dòng)
+  403D15G|null|1.496|1.496/1.5|trước {}|V {"149":1,"1.496":10,"2.2":1}  (121 dòng)
+  404A22G1|2.216|2.2|2.2/2.216|trước {"2.216":9,"2.2":3}|V {"2.2":12}  (81 dòng)
+  404D22G|null|2.2|2.2/2.216|trước {}|V {"2.2":14}  (122 dòng)
+  404D22TAG|null|2.2|2.2/2.216|trước {}|V {"2.2":3}  (11 dòng)
+  404D22TG|null|2.2|2.2/2.216|trước {}|V {"22":1,"2.2":9}  (89 dòng)
+  4B39G11|3.9|3.9|3.9/3.92|trước {"3.9":8,"3.92":1}|V {"3.9":9}  (86 dòng)
+  4B39G1|3.9|3.9|3.9/3.92|trước {"3.9":8,"3.92":2}|V {"3.9":10}  (96 dòng)
+  4B39G1|3.9|3.9|3.9/3.92|trước {"3.9":9,"3.92":2}|V {"3.9":11}  (2 dòng)
+  4B39G2|3.9|3.9|3.9/3.92|trước {"3.9":12,"4.5":1,"3.92":1}|V {"3.9":13,"4.5":1}  (164 dòng)
+  4B39G2|3.9|3.9|3.9/3.92|trước {"3.9":13,"4.5":1,"3.92":1}|V {"3.9":14,"4.5":1}  (1 dòng)
+  4BT39G1|3.9|3.9|3.9/3.92|trước {"3.9":9,"3.92":3}|V {"3.9":12}  (2 dòng)
+  4BT39G1|null|3.9|3.9/3.92|trước {}|V {"3.9":11}  (126 dòng)
+  4BT39G2|3.9|3.9|3.9/3.92|trước {"3.9":13,"3.92":3}|V {"3.9":16}  (166 dòng)
+  4BTA39G2|3.9|3.9|3.9/3.92|trước {"3.9":14,"3.92":1}|V {"3.9":15}  (287 dòng)
+  4BTAA39G3|3.9|3.9|3.9/3.92|trước {"3.9":3,"3.92":1}|V {"3.9":4}  (19 dòng)
+  4D24G6|null|2.449|2.449/2.45|trước {}|V {"2.449":3}  (12 dòng)
+  4D24G7|null|2.449|2.449/2.45|trước {}|V {"4.214":1,"2.449":3}  (13 dòng)
+  4D24TG0|null|2.449|2.449/2.45|trước {}|V {"2.449":3}  (13 dòng)
+  4D24TG2|null|2.449|2.449/2.45|trước {}|V {"2.449":3}  (12 dòng)
+  4DX2153D|null|3.857|3.857/3.86|trước {}|V {"3.857":3}  (21 dòng)
+  4DX2265D|null|3.857|3.857/3.86|trước {}|V {"3.857":3}  (12 dòng)
+  4DX2378D|null|3.857|3.857/3.86|trước {}|V {"3.857":3}  (13 dòng)
+  4DX2382D|null|3.857|3.857/3.86|trước {}|V {"3.857":3}  (10 dòng)
+  4M06G44/5|null|2.29|2.29/2.3|trước {}|V {"2.29":3}  (18 dòng)
+  6BT59G1|null|5.88|5.88/5.9|trước {}|V {"5.88":9}  (79 dòng)
+  6BT59G2|5.9|5.88|5.88/5.9|trước {"5.9":14,"5.88":2}|V {"5.88":16}  (259 dòng)
+  6BTA59G2|5.9|5.88|5.88/5.9|trước {"5.9":14,"5.88":1}|V {"5.88":15}  (168 dòng)
+  6BTA59G2|5.9|5.88|5.88/5.9|trước {"5.9":15,"5.88":1}|V {"5.88":16}  (1 dòng)
+  6BTAA59G12|5.9|5.88|5.88/5.9|trước {"8.3":1,"5.9":14,"5.88":1}|V {"8.3":1,"5.88":15}  (152 dòng)
+  6BTAA59G12|5.9|5.88|5.88/5.9|trước {"8.3":1,"5.9":15,"5.88":1}|V {"8.3":1,"5.88":16}  (1 dòng)
+  6BTAA59G2|5.9|5.88|5.88/5.9|trước {"5.9":13,"5.88":1}|V {"5.88":14}  (191 dòng)
+  6BTAA59G2|5.9|5.88|5.88/5.9|trước {"5.9":14,"5.88":1}|V {"5.88":15}  (1 dòng)
+  6DTAA89G34|null|8.8|8.8/8.82|trước {}|V {"8.8":3,"8.9":1}  (15 dòng)
+  6ETAA118G31|11.8|11.8|11.8/11.82|trước {"11.8":6,"11.82":1}|V {"11.8":7}  (36 dòng)
+  6ETAA118G32|11.8|11.8|11.8/11.82|trước {"11.8":4,"11.82":1}|V {"11.8":5}  (21 dòng)
+  6ETAA118G33|11.8|11.8|11.8/11.82|trước {"11.8":3,"11.82":1}|V {"11.8":4}  (23 dòng)
+  6ETAA128G31|12.8|12.8|12.8/12.82|trước {"12.8":5,"12.82":1}|V {"12.8":6}  (35 dòng)
+  6ETAA128G32|12.8|12.8|12.8/12.82|trước {"12.8":6,"12.82":1}|V {"12.8":7}  (36 dòng)
+  6KTAA25G310|null|25|25/25.18/25.2|trước {}|V {"25":7}  (31 dòng)
+  6KTAA25G311|25.2|25|25/25.18/25.2|trước {"25":1,"25.2":4,"25.18":1}|V {"25":6}  (41 dòng)
+  6KTAA25G31|null|25|25/25.18/25.2|trước {}|V {"25":6}  (33 dòng)
+  6KTAA25G321|25.2|25.18|25.18/25.2|trước {"25.18":1,"25.2":3}|V {"25.18":4}  (29 dòng)
+  6KTAA25G32|null|25|25/25.18/25.2|trước {}|V {"25":6}  (29 dòng)
+  6KTAA25G33|25.2|25|25/25.18/25.2|trước {"25":1,"25.2":3,"25.18":1}|V {"25":5}  (20 dòng)
+  6KTAA25G34|null|25|25/25.18/25.2|trước {}|V {"25":6}  (19 dòng)
+  6KTAA25G35|null|25|25/25.2|trước {}|V {"25":4}  (18 dòng)
+  6KTAA25G36|25.2|25|25/25.18/25.2|trước {"25":1,"25.2":3,"25.18":1}|V {"25":5}  (18 dòng)
+  6KTAA25G38|25.2|25|25/25.18/25.2|trước {"25":1,"25.2":4,"25.18":1}|V {"25":6}  (22 dòng)
+  6KTAA25G39|null|25|25/25.18/25.2|trước {}|V {"25":6}  (31 dòng)
+  6M16G275/5|null|9.726|9.726/9.73|trước {}|V {"9.726":3}  (24 dòng)
+  8M33D800E200|null|26.1|26.1/26.14|trước {}|V {"26.1":4}  (21 dòng)
+  8M33D975E310|null|26.1|26.1/26.14|trước {}|V {"26.1":3}  (14 dòng)
+  BF4M1013EC|null|4.76|4.76/4.764|trước {}|V {"4.76":3}  (1 dòng)
+  BF4M1013FC|null|4.76|4.76/4.764|trước {}|V {"4.76":5}  (58 dòng)
+  BF4M1013FC|null|4.76|4.76/4.764|trước {}|V {"4.76":6}  (1 dòng)
+  BF6M1013EC|null|7.146|7.146/7.15|trước {}|V {"7.146":3}  (1 dòng)
+  BF6M1013FCG2|null|7.146|7.146/7.15|trước {}|V {"7.146":3,"7.14":1}  (49 dòng)
+  BF6M1013FCG2|null|7.146|7.146/7.15|trước {}|V {"7.146":4,"7.14":1}  (1 dòng)
+  BF6M1013FCG3|null|7.146|7.146/7.15|trước {}|V {"7.146":3,"7.14":1}  (57 dòng)
+  BF6M1013FCG3|null|7.146|7.146/7.15|trước {}|V {"7.146":4,"7.14":1}  (2 dòng)
+  BF6M1015CLAG1A|null|11.9|11.9/11.906|trước {}|V {"11.9":5}  (28 dòng)
+  BF6M1015CLAG2A|null|11.9|11.9/11.906|trước {}|V {"11.9":6}  (24 dòng)
+  BF6M1015CLAG3A|null|11.9|11.9/11.906|trước {}|V {"11.9":6}  (32 dòng)
+  BF6M1015CLAG4|null|11.9|11.9/11.906|trước {}|V {"11.9":8}  (32 dòng)
+  BF6M1015CPLAG|null|11.9|11.9/11.906|trước {}|V {"11.9":7}  (34 dòng)
+  BF6M1015LAGA|null|11.9|11.9/11.906|trước {}|V {"11.9":6}  (29 dòng)
+  BF8M1015CLAG1A|null|15.87|15.87/15.874/15.9|trước {}|V {"15.87":5}  (30 dòng)
+  BF8M1015CLAG2|null|15.87|15.87/15.874/15.9|trước {}|V {"15.87":5}  (29 dòng)
+  BF8M1015CPLAG1A|null|15.87|15.87/15.874/15.9|trước {}|V {"15.87":5}  (23 dòng)
+  BF8M1015CPLAG2|null|15.87|15.87/15.874/15.9|trước {}|V {"15.87":5}  (29 dòng)
+  BF8M1015CPLAG3|null|15.87|15.87/15.874/15.9|trước {}|V {"15.87":6}  (24 dòng)
+  BF8M1015CPLAG4|null|15.87|15.87/15.874/15.9|trước {}|V {"15.87":5}  (30 dòng)
+  BF8M1015CPLAG5|null|15.87|15.87/15.874/15.9|trước {}|V {"15.87":6}  (32 dòng)
+  D1146T|null|8.07|8.07/8.071/8.074|trước {}|V {"8.07":3}  (34 dòng)
+  D1146|null|8.07|8.07/8.071/8.074|trước {}|V {"8.07":3}  (30 dòng)
+  DP086LA|null|8|8/8.071/8.074/8.1|trước {}|V {"8":5}  (54 dòng)
+  DP086TA|null|8.071|8.071/8.1|trước {}|V {"8.071":3,"9.1":1}  (36 dòng)
+  DP126LB|null|11|11/11.05/11.051/11.1|trước {}|V {"11":3,"14.6":1}  (53 dòng)
+  DP126LB|null|11|11/11.05/11.051/11.1|trước {}|V {"11":4,"14.6":1}  (1 dòng)
+  DP158LC|null|14.6|14.6/14.618/14.62|trước {}|V {"14.6":6}  (79 dòng)
+  DP158LD|null|14.6|14.6/14.618/14.62|trước {}|V {"14.6":7}  (82 dòng)
+  DP180LA|null|18.27|18.27/18.273/18.3|trước {}|V {"18.237":1,"18.27":5}  (65 dòng)
+  DP180LB|null|18.27|18.27/18.273/18.3|trước {}|V {"18.27":5}  (64 dòng)
+  DP222CA|null|21.9|21.9/21.927|trước {}|V {"21.9":5}  (32 dòng)
+  DP222CB|21.9|21.9|21.9/21.927|trước {"21.9":4,"21.927":1}|V {"21.9":5}  (40 dòng)
+  DP222LA|null|21.9|21.9/21.927|trước {}|V {"21.9":6}  (21 dòng)
+  DP222LB|null|21.9|21.9/21.927|trước {}|V {"21.9":7}  (65 dòng)
+  DP222LC|null|21.9|21.9/21.927|trước {}|V {"21.9":7}  (73 dòng)
+  HC12V132ZLLAG2A|null|23.8|23.8/23.812|trước {}|V {"23.8":3}  (26 dòng)
+  K4100D|null|3.6|3.6/3.61|trước {}|V {"3.2":1,"3.6":3}  (44 dòng)
+  KT38GA|38|37.8|37.8/38|trước {"19":1,"38":3,"37.8":1}|V {"19":1,"37.8":4}  (39 dòng)
+  KT38G|null|37.8|37.8/38|trước {}|V {"18.9":2,"37.8":7}  (83 dòng)
+  KTA19G2|null|18.9|18.9/19|trước {}|V {"13":1,"14":2,"18.9":9,"14.5":1}  (91 dòng)
+  KTA19G3A|null|18.9|18.9/19|trước {}|V {"13":1,"18.9":15}  (143 dòng)
+  KTA19G3A|null|18.9|18.9/19|trước {}|V {"13":1,"18.9":16}  (1 dòng)
+  KTA19G3|null|18.9|18.9/19|trước {}|V {"18.9":19}  (148 dòng)
+  KTA19G4|null|18.9|18.9/19|trước {}|V {"18.9":11}  (122 dòng)
+  KTA19G8|null|18.9|18.9/19|trước {}|V {"18.9":12}  (69 dòng)
+  KTA19G9A|null|18.9|18.9/19|trước {}|V {"18.9":4}  (18 dòng)
+  KTA38G1|null|37.8|37.8/38|trước {}|V {"37.8":8}  (67 dòng)
+  KTA38G2A|null|37.8|37.8/38|trước {}|V {"37.8":19}  (164 dòng)
+  KTA38G2A|null|37.8|37.8/38|trước {}|V {"37.8":20}  (2 dòng)
+  KTA38G2B|null|37.8|37.8/38|trước {}|V {"37.8":16}  (135 dòng)
+  KTA38G2B|null|37.8|37.8/38|trước {}|V {"37.8":17}  (1 dòng)
+  KTA38G2|null|37.8|37.8/38|trước {}|V {"37.8":16}  (165 dòng)
+  KTA38G4|null|37.8|37.8/38|trước {}|V {"37.8":8}  (61 dòng)
+  KTA38G5|null|37.8|37.8/38|trước {}|V {"37.8":18}  (131 dòng)
+  KTA38G5|null|37.8|37.8/38|trước {}|V {"37.8":19}  (1 dòng)
+  KTA38G9A|38|37.8|37.8/38|trước {"38":3,"37.8":1}|V {"37.8":4}  (11 dòng)
+  KTA38G9E|38|37.8|37.8/38|trước {"38":4,"37.8":1}|V {"37.8":5}  (17 dòng)
+  KTA38G9|null|37.8|37.8/38|trước {}|V {"37.8":15}  (154 dòng)
+  KTA38G9|null|37.8|37.8/38|trước {}|V {"37.8":16}  (1 dòng)
+  KTA38GA|null|37.8|37.8/38|trước {}|V {"37.8":5}  (16 dòng)
+  KTA38GA|null|37.8|37.8/38|trước {}|V {"37.8":6}  (1 dòng)
+  KTA50G15A|50|50|50/50.3|trước {"50":3,"50.3":1}|V {"50":4}  (20 dòng)
+  KTA50G15X|null|50|50/50.3|trước {}|V {"50":4}  (28 dòng)
+  KTA50G15|null|50|50/50.3|trước {}|V {"50":4}  (23 dòng)
+  KTA50G16A|null|50|50/50.3|trước {}|V {"50":5}  (24 dòng)
+  KTA50G3|null|50|50/50.3|trước {}|V {"50":17,"50.8":1,"37.8":1}  (197 dòng)
+  KTA50G3|null|50|50/50.3|trước {}|V {"50":18,"50.8":1,"37.8":1}  (1 dòng)
+  KTA50G7E|null|50|50/50.3|trước {}|V {"50":5}  (17 dòng)
+  KTA50G8|null|50|50/50.3|trước {}|V {"50":18,"37.8":1}  (114 dòng)
+  KTA50G8|null|50|50/50.3|trước {}|V {"50":19,"37.8":1}  (1 dòng)
+  KTA50G9|null|50|50/50.3|trước {}|V {"50":5,"37.8":1,"50.8":1}  (71 dòng)
+  KTA50G9|null|50|50/50.3|trước {}|V {"50":6,"37.8":1,"50.8":1}  (1 dòng)
+  KTA50GS8|null|50|50/50.3|trước {}|V {"50":16,"37.8":2}  (113 dòng)
+  KTA50GS8|null|50|50/50.3|trước {}|V {"50":17,"37.8":2}  (1 dòng)
+  KTAA19G5|null|18.9|18.9/19|trước {}|V {"18.9":15}  (132 dòng)
+  KTAA19G5|null|18.9|18.9/19|trước {}|V {"18.9":16}  (1 dòng)
+  KTAA19G6A|null|18.9|18.9/19|trước {}|V {"18.9":18}  (140 dòng)
+  KTAA19G6A|null|18.9|18.9/19|trước {}|V {"18.9":19}  (3 dòng)
+  KTAA19G6|null|18.9|18.9/19|trước {}|V {"18.9":14}  (65 dòng)
+  KTAA19G7|null|18.9|18.9/19|trước {}|V {"18.9":6}  (16 dòng)
+  P158LE|null|14.618|14.618/14.62|trước {}|V {"14.618":3}  (18 dòng)
+  QSB39G3|3.9|3.9|3.9/3.92|trước {"3.9":5,"3.92":1}|V {"3.9":6}  (34 dòng)
+  QSB59G2|5.9|5.88|5.88/5.9|trước {"5.9":5,"5.88":1}|V {"5.88":6}  (26 dòng)
+  QSB59G3|5.9|5.88|5.88/5.9|trước {"5.9":5,"5.88":1}|V {"5.88":6}  (36 dòng)
+  QSK19G11|19|18.9|18.9/19|trước {"19":3,"18.9":1}|V {"18.9":4}  (22 dòng)
+  QSK19G14|null|18.9|18.9/19|trước {}|V {"18.9":3}  (18 dòng)
+  QSK19G20|null|18.9|18.9/19|trước {}|V {"38":1,"18.9":3}  (15 dòng)
+  QSK19G4|null|18.9|18.9/19|trước {}|V {"18.9":6}  (87 dòng)
+  QSK38G5|null|37.7|37.7/38|trước {}|V {"37.7":7}  (85 dòng)
+  QSK50G7|null|50|50/50.3|trước {}|V {"50":3}  (26 dòng)
+  QSK60G6|null|60|60/60.2|trước {}|V {"60":3}  (13 dòng)
+  QSKTAA19G4|null|18.9|18.9/19|trước {}|V {"18.9":3}  (9 dòng)
+  S12RPTA2C|49.03|49|49/49.03|trước {"49":1,"49.03":5}|V {"49":6}  (50 dòng)
+  S12RPTAA2C|49.03|49|49/49.03|trước {"49":1,"49.03":6}|V {"49":7}  (56 dòng)
+  S12RPTAC|49.03|49|49/49.03|trước {"49":1,"49.03":5}|V {"49":6}  (57 dòng)
+  S16RPTA2C|65.37|65.37|65.37/65.4|trước {"65.4":2,"65.37":6}|V {"65.37":8}  (49 dòng)
+  S16RPTAA2C|65.37|65.37|65.37/65.4|trước {"65.4":2,"65.37":6}|V {"65.37":8}  (52 dòng)
+  S16RPTAC|65.37|65.37|65.37/65.4|trước {"65.4":2,"65.37":6}|V {"65.37":8}  (58 dòng)
+  S6R2PTAAC|29.96|29.96|29.96/30|trước {"30":1,"29.96":4}|V {"29.96":5}  (49 dòng)
+  S6R2PTAC|null|29.96|29.96/30|trước {}|V {"29.96":5}  (50 dòng)
+  SC13G355D2|null|12.88|12.88/12.9|trước {}|V {"12.88":5}  (22 dòng)
+  SC13G420D2|12.88|12.88|12.88/12.9|trước {"12.88":10,"12.8":1,"12.9":1}|V {"12.88":11,"12.8":1}  (63 dòng)
+  SC13G420D2|12.88|12.88|12.88/12.9|trước {"12.88":11,"12.8":1,"12.9":1}|V {"12.88":12,"12.8":1}  (1 dòng)
+  SC15G500D2|14.16|14.16|14.16/14.2|trước {"14.16":11,"14.2":2}|V {"14.16":13}  (68 dòng)
+  SC8D220D2|8.27|8.27|8.27/8.3|trước {"8.27":3,"8.3":1}|V {"8.27":4}  (15 dòng)
+  SC8D280D2|8.27|8.27|8.27/8.3|trước {"8.27":11,"6.5":1,"8.8":1,"8.3":2}|V {"8.27":13,"6.5":1,"8.8":1}  (59 dòng)
+  SC9D310D2|8.82|8.8|8.8/8.82|trước {"8.8":2,"8.82":11,"8.9":2}|V {"8.8":13,"8.9":2}  (60 dòng)
+  SC9D340D2|8.82|8.8|8.8/8.82|trước {"8.82":9,"8.8":1,"8.9":2}|V {"8.8":10,"8.9":2}  (64 dòng)
+  WP10D200E200|9.726|9.7|9.7/9.72/9.726/9.73|trước {"9.7":1,"9.726":7,"6.75":1,"9.72":2,"6.25":1,"9.73":1}|V {"9.7":12,"6.75":1,"6.25":1}  (54 dòng)
+  WP10D200E201|null|9.7|9.7/9.726/9.73|trước {}|V {"9.7":4}  (21 dòng)
+  WP10D238E200|9.726|9.7|9.7/9.72/9.726/9.73|trước {"9.7":2,"9.726":7,"9.72":1,"6.25":1,"9.73":1}|V {"9.7":11,"6.25":1}  (55 dòng)
+  WP10D238E200|9.726|9.7|9.7/9.72/9.726/9.73|trước {"9.7":2,"9.726":8,"9.72":1,"6.25":1,"9.73":1}|V {"9.7":12,"6.25":1}  (1 dòng)
+  WP10D238E201|null|9.7|9.7/9.726/9.73|trước {}|V {"9.7":4}  (20 dòng)
+  WP10D264E200|9.726|9.7|9.7/9.72/9.726/9.73|trước {"9.726":7,"9.7":1,"9.72":1,"6.25":1,"9.73":1}|V {"9.7":10,"6.25":1}  (55 dòng)
+  WP10D264E201|null|9.726|9.726/9.73|trước {}|V {"9.726":3}  (23 dòng)
+  WP10D264E350|null|9.7|9.7/9.726|trước {}|V {"9.7":3}  (4 dòng)
+  WP10D320E200|null|9.7|9.7/9.726/9.73|trước {}|V {"9.7":9}  (48 dòng)
+  WP10D320E350|null|9.7|9.7/9.726|trước {}|V {"9.7":4}  (6 dòng)
+  WP12D317E200|null|11.59|11.59/11.596/11.6|trước {}|V {"11.59":4,"9.726":1,"6.25":1}  (26 dòng)
+  WP13D385E200|12.54|12.5|12.5/12.54|trước {"12.5":2,"12.54":10,"6.25":1}|V {"12.5":12,"6.25":1}  (54 dòng)
+  WP13D385E200|12.54|12.5|12.5/12.54|trước {"12.5":2,"12.54":11,"6.25":1}|V {"12.5":13,"6.25":1}  (4 dòng)
+  WP13D385E201|12.54|12.5|12.5/12.54|trước {"12.5":1,"12.54":3}|V {"12.5":4}  (27 dòng)
+  WP13D385E310|null|12.5|12.5/12.54|trước {}|V {"12.5":4}  (8 dòng)
+  WP13D405E200|12.54|12.5|12.5/12.54|trước {"12.54":5,"12.5":1}|V {"12.5":6}  (32 dòng)
+  WP13D405E200|12.54|12.5|12.5/12.54|trước {"12.54":6,"12.5":1}|V {"12.5":7}  (1 dòng)
+  WP13D440E310|null|12.5|12.5/12.54|trước {}|V {"12.5":6}  (34 dòng)
+  WP13D490E310|12.54|12.5|12.5/12.54|trước {"12.5":1,"12.54":4}|V {"12.5":5}  (33 dòng)
+  WP23D25E200|null|2.289|2.289/2.29/2.3|trước {}|V {"2.289":7,"2.5":1}  (38 dòng)
+  WP23D30E201|null|2.29|2.29/2.3|trước {}|V {"2.29":3}  (20 dòng)
+  WP23D33E200|null|2.289|2.289/2.29/2.3|trước {}|V {"2.289":8,"2.5":1}  (43 dòng)
+  WP23D40E200|2.3|2.289|2.289/2.29/2.3|trước {"2.3":5,"2.5":1,"2.29":1,"2.289":1}|V {"2.289":7,"2.5":1}  (39 dòng)
+  WP23D47E201|null|2.29|2.29/2.3|trước {}|V {"2.29":4}  (21 dòng)
+  WP23D48E200|null|2.289|2.289/2.29/2.3|trước {}|V {"2.289":6,"3.12":1,"2.5":1}  (46 dòng)
+  WP23D58E201|2.3|2.29|2.29/2.3|trước {"2.3":3,"2.29":1}|V {"2.29":4}  (20 dòng)
+  WP41D66E200|4.087|4.08|4.08/4.087/4.1|trước {"4.1":1,"4.8":1,"4.087":5,"4.5":1,"4.08":1}|V {"4.08":7,"4.8":1,"4.5":1}  (48 dòng)
+  WP41D80E200|4.087|4.08|4.08/4.087/4.088/4.1|trước {"4.1":1,"4.8":1,"4.087":4,"4.5":1,"4.088":1,"4.08":1}|V {"4.08":7,"4.8":1,"4.5":1}  (40 dòng)
+  WP41D80E201|null|4.08|4.08/4.087/4.09/4.1|trước {}|V {"4.08":4}  (23 dòng)
+  WP41D95E201|null|4.08|4.08/4.087/4.09/4.1|trước {}|V {"4.08":4}  (21 dòng)
+  WP6D132E200|6.75|6.75|6.75/6.8|trước {"6.8":1,"6.75":8,"6.25":1}|V {"6.75":9,"6.25":1}  (52 dòng)
+  WP6D132E201|6.75|6.75|6.75/6.8|trước {"6.8":1,"6.75":3,"6.25":1}|V {"6.75":4,"6.25":1}  (26 dòng)
+  WP6D152E200|6.75|6.75|6.75/6.8|trước {"6.8":1,"6.75":7,"6.25":1}|V {"6.75":8,"6.25":1}  (57 dòng)
+  WP6D158E201|6.75|6.75|6.75/6.8|trước {"6.8":1,"6.75":3,"6.25":1}|V {"6.75":4,"6.25":1}  (23 dòng)
+  WP6D167E200|6.75|6.75|6.75/6.8|trước {"6.8":1,"6.75":4}|V {"6.75":5}  (27 dòng)
+  WP6D180E201|null|6.75|6.75/6.8|trước {}|V {"6.75":3,"6.25":1}  (16 dòng)
+  Y4100D|3.707|3.7|3.7/3.707|trước {"3.707":3,"2.545":1,"3.7":1}|V {"3.7":4,"2.545":1}  (4 dòng)
+  Y4100D|null|3.7|3.7/3.707|trước {}|V {"3.7":3,"2.545":1}  (48 dòng)
+  Y4105D|4.1|4.08|4.08/4.1|trước {"4.1":3,"4.08":1}|V {"4.08":4}  (5 dòng)
+  Y4105D|null|4.08|4.08/4.1|trước {}|V {"4.08":3}  (45 dòng)
+  Y4105ZLD|4.1|4.08|4.08/4.1|trước {"4.1":3,"3.857":1,"4.08":1}|V {"4.08":4,"3.857":1}  (4 dòng)
+  Y4105ZLD|null|4.08|4.08/4.1|trước {}|V {"4.08":3,"3.857":1}  (51 dòng)
+  YC12VC1680LD20|79.17|79.17|79.17/79.2|trước {"79.17":3,"79.2":1}|V {"79.17":4}  (14 dòng)
+  YC12VC2070LD20|79.17|79.17|79.17/79.2|trước {"79.17":3,"79.2":1}|V {"79.17":4}  (17 dòng)
+  YC12VC2510LD20|null|79.17|79.17/79.2|trước {}|V {"79.17":3}  (10 dòng)
+  YC4A100ZD20|null|4.837|4.837/4.84|trước {}|V {"4.837":4,"4.2":1,"4.58":1}  (40 dòng)
+  YC4D60D21|null|4.2|4.2/4.21/4.214|trước {}|V {"4.2":8}  (50 dòng)
+  YC4D85ZD20|4.214|4.2|4.2/4.21/4.214|trước {"4.214":3,"4.2":1,"4.21":1}|V {"4.2":5}  (22 dòng)
+  YC4D90ZD21|null|4.2|4.2/4.21/4.214/4.215|trước {}|V {"4.2":5}  (29 dòng)
+  YC6A230LD20|null|7.25|7.25/7.252/7.26/7.3|trước {}|V {"7.52":1,"7.25":7,"7.525":1}  (30 dòng)
+  YC6B135ZD20|null|6.87|6.87/6.871/6.9|trước {}|V {"6.87":7}  (30 dòng)
+  YC6B155LD21|null|6.87|6.87/6.871/6.9|trước {}|V {"6.87":5}  (20 dòng)
+  YC6B180LD20|null|6.87|6.87/6.871/6.9|trước {}|V {"6.87":10,"7.26":1}  (52 dòng)
+  YC6C1020LD20|39.58|39.58|39.58/39.584/39.6|trước {"39.584":1,"39.85":1,"39.58":4,"39.6":1}|V {"39.58":6,"39.85":1}  (24 dòng)
+  YC6C1070D31|39.58|39.58|39.58/39.584|trước {"39.58":4}|V {"39.58":4}  (31 dòng)
+  YC6C1070LD20|39.58|39.58|39.58/39.6|trước {"39.85":1,"39.58":4,"39.6":1}|V {"39.85":1,"39.58":5}  (20 dòng)
+  YC6C1220LD20|39.58|39.58|39.58/39.584|trước {"39.584":1,"39.58":3,"79.2":1}|V {"39.58":4,"79.2":1}  (15 dòng)
+  YC6C1320LD20|39.58|39.58|39.58/39.584|trước {"39.584":1,"39.58":3,"79.2":1}|V {"39.58":4,"79.2":1}  (17 dòng)
+  YC6MJ500LD21|11.73|11.726|11.726/11.73|trước {"11.73":3,"11.76":1,"11.726":1,"12.151":1}|V {"11.726":4,"11.76":1,"12.151":1}  (33 dòng)
+  YC6MK350D30|10.34|10.338|10.338/10.34|trước {"10.34":7,"10.338":1}|V {"10.338":8}  (35 dòng)
+  YC6MK350LD20|null|10.338|10.338/10.34|trước {}|V {"10.33":1,"10.338":8,"8.4":1}  (53 dòng)
+  YC6MK420LD20|null|10.3|10.3/10.33/10.338/10.34|trước {}|V {"10.38":1,"10.3":10,"10.388":1,"9.8":1}  (70 dòng)
+  YC6TD840D31|19.6|19.598|19.598/19.6|trước {"19.6":8,"19.598":1}|V {"19.598":9}  (52 dòng)
+  YC6TD840D31|19.6|19.598|19.598/19.6|trước {"19.6":9,"19.598":1}|V {"19.598":10}  (1 dòng)
+  YC6TD900D31|19.6|19.598|19.598/19.6|trước {"19.6":7,"19.598":1}|V {"19.598":8}  (49 dòng)
+  YD385D|1.532|1.53|1.53/1.532|trước {"1.532":3,"1.53":1}|V {"1.53":4}  (5 dòng)
+  YD385D|null|1.53|1.53/1.532|trước {}|V {"1.53":3}  (53 dòng)
+  YD480D|1.809|1.8|1.8/1.809|trước {"1.809":4,"1.8":1}|V {"1.8":5}  (4 dòng)
+  YD480D|null|1.8|1.8/1.809|trước {}|V {"1.8":4}  (51 dòng)
+  YD4EZLD|4.1|4.08|4.08/4.1|trước {"4.1":3,"3.857":1,"4.08":1}|V {"4.08":4,"3.857":1}  (4 dòng)
+  YD4EZLD|null|4.08|4.08/4.1|trước {}|V {"4.08":3,"3.857":1}  (45 dòng)
+  YM6H4LFD|null|8.82|8.82/8.822|trước {}|V {"8.82":3}  (26 dòng)
+  YND485D|2.156|2.156|2.156/2.16|trước {"2.156":3,"2.16":1}|V {"2.156":4}  (4 dòng)
+  YND485D|null|2.156|2.156/2.16|trước {}|V {"2.156":3}  (50 dòng)
+7 nhóm sai đã biết:
+  10V1600G70F|null|null||trước {}|V {}  (7 dòng)
+  12V1600G80F|null|null||trước {}|V {}  (6 dòng)
+  6R1600G70F|null|null||trước {}|V {}  (6 dòng)
+  6R1600G80F|null|null||trước {}|V {}  (6 dòng)
+  8V1600G70F|null|null||trước {}|V {}  (6 dòng)
+  8V1600G80F|null|null||trước {}|V {}  (6 dòng)
+  TAD1341GE|null|null||trước {}|V {}  (29 dòng)
+Khoá động cơ có ký tự ngoài A-Z 0-9 . - /: 228
+  4BTA39G2(G45E1)  NCC: comappower, deman-power, suneco-linyi, yanan-power
+  4BTA39G2(G52E1)  NCC: comappower, deman-power, suneco-linyi, yanan-power
+  6BT59G2(G75E1)  NCC: comappower, deman-power, suneco-linyi, yanan-power
+  6BT59G2(G84E1)  NCC: comappower, deman-power, suneco-linyi, yanan-power
+  4BTA39G2(QC50/60E)  NCC: fdk-energy, sr-genset, waeta-fujian
+  KTA38D(M)  NCC: mecca-power, walter-yangzhou
+  4BTA39G2(QC58/67E)  NCC: fdk-energy, sr-genset
+  KTA19D(M)  NCC: mecca-power, walter-yangzhou
+  6BT59G2(QC96/115E)  NCC: fdk-energy, sr-genset
+  LR4M3LRD(G3)  NCC: longkai-power, previa-ningde
+  YD4KD(YD485D)  NCC: comappower, yanan-power
+  16M33D1980E310^  NCC: chuangyuan-zhongshan, mecca-power
+  400623TAG3A(UK)  NCC: comappower, landtop-fuzhou
+  4BTA39G2(M)  NCC: lees-power, xingguang-jiangsu
+  6BT59G1(G75M1)  NCC: deman-power, yanan-power
+  6BT59G2(QC86/100E)  NCC: fdk-energy, sr-genset
+  6BT59G2(M)  NCC: lees-power, xingguang-jiangsu
+  6BTA59G2(G75E1)  NCC: deman-power, yanan-power
+  6M31G1000/5^  NCC: weichai-heavy-machinery, weichai-power
+  6M31G800/6^  NCC: weichai-heavy-machinery, weichai-power
+  8M33D1012E311^  NCC: aosif, mecca-power
+  8M33G900/6^  NCC: mecca-power, voltgent
+  LR6M3LRD(G3)  NCC: longkai-power, previa-ningde
+  WP6D180E201^  NCC: jet-power, waeta-fujian
+  L6123×155  NCC: gordon-power
+  NT855D(M)  NCC: mecca-power
+  V8128×142  NCC: gordon-power
+  (YD4KD)YD485D  NCC: eastern-lion-fuan
+  KTA50–G3  NCC: powerlink-shanghai
+  L6111×139  NCC: gordon-power
+  6BT59G1(G2)  NCC: simpson-power
+  6ZTAA13G2(DCEC)  NCC: jiuan-power
+  1103A33G(INDIA)  NCC: landtop-fuzhou
+  1103A33TG1(INDIA)  NCC: landtop-fuzhou
+  1103A33TG2(INDIA)  NCC: landtop-fuzhou
+  12M33G14D3/5(12M33G1650/5)  NCC: kaihua-genset
+  12V4000G14F(3B)  NCC: comappower
+  12V4000G14F(3B)12V4000G74F(3D)  NCC: yanan-power
+  12V4000G14S(3B)  NCC: comappower
+  12V4000G14S(3B)12V4000G74S(3D)  NCC: yanan-power
+  12V4000G23F★  NCC: tellhow-power
+  12V4000G63F★  NCC: tellhow-power
+  12V4000G74F(3D)  NCC: comappower
+  12V4000G74S(3D)  NCC: comappower
+  16V4000G23F★  NCC: tellhow-power
+  16V4000G63F★  NCC: tellhow-power
+  180CST/50°CHFO  NCC: gdf-guangzhou
+  2*S4L1DG41  NCC: baifa-power
+  2*S5L1DC41  NCC: baifa-power
+  2*S5L1DD41  NCC: baifa-power
+  2*TAD1650GE  NCC: baifa-power
+  2*TAD1651GE  NCC: baifa-power
+  2*TWD1653GE  NCC: baifa-power
+  2*TWD1683GE  NCC: baifa-power
+  2*TWD1744GE  NCC: baifa-power
+  20V4000G23F★  NCC: tellhow-power
+  20V4000G63F★  NCC: tellhow-power
+  20V4000G63LF★  NCC: tellhow-power
+  403A15G2★  NCC: ettes-power
+  4BT39G1(G2)  NCC: simpson-power
+  DE2V1000(2V92)  NCC: genlitec
+  DE2V1250(2V95)  NCC: genlitec
+  DE2V920(2V88)  NCC: genlitec
+  NTA885G1(M)  NCC: huayuan-weifang
+  PHF6100ZLD1(R1J01)  NCC: power-hf
+  TAD1351GE★  NCC: tellhow-power
+  TAD1351GE(1341GE)  NCC: sanq-power
+  TAD1352GE(1342GE)  NCC: sanq-power
+  TAD1354GE★  NCC: tellhow-power
+  TAD1354GE(1343GE)  NCC: sanq-power
+  TAD1355GE★  NCC: tellhow-power
+  TAD1355GE(1344GE)  NCC: sanq-power
+  TAD1650GE★  NCC: tellhow-power
+  TAD1650GE(1345GE)  NCC: sanq-power
+  TAD1651GE★  NCC: tellhow-power
+  TAD1651GE(1641GE)  NCC: sanq-power
+  TAD1652GE(1642GE)  NCC: sanq-power
+  TAD550GE(530GE)  NCC: sanq-power
+  TAD551GE(531GE)  NCC: sanq-power
+  TAD750GE(532GE)  NCC: sanq-power
+  TAD751GE(731GE)  NCC: sanq-power
+  TAD752GE(732GE)  NCC: sanq-power
+  TAD753GE(733GE)  NCC: sanq-power
+  TAD754GE(734GE)  NCC: sanq-power
+  TAD851GE★  NCC: tellhow-power
+  TAD852GE★  NCC: tellhow-power
+  TWD1653GE★  NCC: tellhow-power
+  TWD1653GE(1643GE)  NCC: sanq-power
+  (YD485D)  NCC: acepow-fuan
+  1100F(E)  NCC: zc-power
+  1104A44TG1★  NCC: ettes-power
+  1104A44TG2★  NCC: ettes-power
+  1104C44TAG2★  NCC: ettes-power
+  1106A70TAG2★  NCC: ettes-power
+  1106A70TAG3★  NCC: ettes-power
+  1106A70TAG4★  NCC: ettes-power
+  1106A70TG1★  NCC: ettes-power
+  119,21106A70TG1  NCC: cgm-italia
+  1196,8401246TWG3A  NCC: cgm-italia
+  1206AE70TTAG1(UK/EP)  NCC: landtop-fuzhou
+  1206AE70TTAG2(UK/EP)  NCC: landtop-fuzhou
+  1206AE70TTAG3(UK/EP)  NCC: landtop-fuzhou
+  12M55G6D3/5^  NCC: baifa-power
+  12V4000G24F(3B)  NCC: comappower
+  12V4000G24F(3B)12V4000G84F(3D)  NCC: yanan-power
+  12V4000G24S(3B)  NCC: comappower
+  12V4000G24S(3B)12V4000G84S(3D)  NCC: yanan-power
+  12V4000G84F(3D)  NCC: comappower
+  12V4000G84S(3D)  NCC: comappower
+  1506AE88TAG3(USA/EU)  NCC: landtop-fuzhou
+  1506AE88TAG5(USA/EU)  NCC: landtop-fuzhou
+  158,41106A70TAG3  NCC: cgm-italia
+  16M33G2250/5^  NCC: landtop-fuzhou
+  16M33G8D3/5^  NCC: baifa-power
+  16M55G6D3/5^  NCC: baifa-power
+  16V4000G14F(3B)  NCC: comappower
+  16V4000G14F(3B)16V4000G74F(3D)  NCC: yanan-power
+  16V4000G14S(3B)  NCC: comappower
+  16V4000G14S(3B)16V4000G74S(3D)  NCC: yanan-power
+  16V4000G24F(3B)  NCC: comappower
+  16V4000G24F(3B)16V4000G84F(3D)  NCC: yanan-power
+  16V4000G24S(3B)  NCC: comappower
+  16V4000G74F(3D)  NCC: comappower
+  16V4000G74S(3D)  NCC: comappower
+  16V4000G84F(3D)  NCC: comappower
+  16V4000G84S(3D)  NCC: comappower
+  1706AE93TAG1(USA/EU)  NCC: landtop-fuzhou
+  1706AE93TAG2(USA/EU)  NCC: landtop-fuzhou
+  186FA(E)  NCC: zc-power
+  19,000MAX  NCC: winco
+  192F(E)  NCC: zc-power
+  2*S4L1DF41  NCC: baifa-power
+  2*TAD1346GE  NCC: baifa-power
+  2*TAD1352GE  NCC: baifa-power
+  2*TAD1353GE  NCC: baifa-power
+  2*TAD1355GE  NCC: baifa-power
+  2*TAD1382GE  NCC: baifa-power
+  2*TAD1642GE  NCC: baifa-power
+  2*TWD1644GE  NCC: baifa-power
+  2*TWD1645GE  NCC: baifa-power
+  2*TWD1652GE  NCC: baifa-power
+  2*TWD1682GE  NCC: baifa-power
+  20M33G4D3/5^  NCC: baifa-power
+  20V4000G14F(3B)  NCC: comappower
+  20V4000G14F(3B)20V4000G64F(3D)  NCC: yanan-power
+  20V4000G14S(3B)  NCC: comappower
+  20V4000G14S(3B)20V4000G64S(3D)  NCC: yanan-power
+  20V4000G24F(3B)  NCC: comappower
+  20V4000G24F(3B)20V4000G74F(3D)  NCC: yanan-power
+  20V4000G24S(3B)  NCC: comappower
+  20V4000G24S(3B)20V4000G74S(3D)  NCC: yanan-power
+  20V4000G34F(3B)  NCC: comappower
+  20V4000G34F(3B)20V4000G84F(3D)  NCC: yanan-power
+  20V4000G44S(3B)  NCC: comappower
+  20V4000G44S(3B)20V4000G94S(3D)  NCC: yanan-power
+  20V4000G64F(3D)  NCC: comappower
+  20V4000G64S(3D)  NCC: comappower
+  20V4000G74F(3D)  NCC: comappower
+  20V4000G74S(3D)  NCC: comappower
+  20V4000G84F(3D)  NCC: comappower
+  20V4000G94S(3D)  NCC: comappower
+  2206CE13TAG2(USA/EU)  NCC: landtop-fuzhou
+  2206CE13TAG3(USA/EU)  NCC: landtop-fuzhou
+  245–343KWM  NCC: generatordieselchina
+  2506CE15TAG1(USA/EU)  NCC: landtop-fuzhou
+  2506CE15TAG2(USA/EU)  NCC: landtop-fuzhou
+  2806AE18TAG2(USA/EU)  NCC: landtop-fuzhou
+  2806CE18TAG1A(USA/EU)  NCC: landtop-fuzhou
+  400623TAG2A(INDIA)  NCC: landtop-fuzhou
+  400623TAG2A(UK)  NCC: landtop-fuzhou
+  400623TAG3A(INDIA)  NCC: landtop-fuzhou
+  4008TAG2A(INDIA)  NCC: landtop-fuzhou
+  4008TAG2A(UK)  NCC: landtop-fuzhou
+  403A11G1★  NCC: ettes-power
+  403A15G1★  NCC: ettes-power
+  403D11G★  NCC: ettes-power
+  403D15G★  NCC: ettes-power
+  4045HFG20(103KW)  NCC: aksa-power
+  404A22G1★  NCC: ettes-power
+  404D22(EPA/EUIIIA)  NCC: gtl-power
+  404D22G★  NCC: ettes-power
+  404D22TG★  NCC: ettes-power
+  4135D—1  NCC: zhengdian-zhengzhou
+  4B39G1(G2)  NCC: simpson-power
+  4BTA39G13(40)  NCC: elitech-power
+  4BTA39G13(50)  NCC: elitech-power
+  4HTAA43*G34  NCC: frs-shenyang
+  6,500LBS  NCC: byc-power
+  6135HF475(C)  NCC: cooltech-shanghai
+  6BT59G2(115)  NCC: bobig-power
+  6CT83–GM115  NCC: fengfa-taizhou
+  6M33G8D3/5(6M33G825/5)  NCC: kaihua-genset
+  8M33D975E310^  NCC: chuangyuan-zhongshan
+  8M33G6D3/5^  NCC: baifa-power
+  B5178F(E)  NCC: bison-zhejiang
+  B5186F(E)  NCC: bison-zhejiang
+  DC1372A(0213)  NCC: jcb-power
+  DX22(DP222CC)  NCC: hd-hyundai-infracore
+  DX37(DP372CC)  NCC: hd-hyundai-infracore
+  KLA38G2(M)  NCC: huayuan-weifang
+  KTA19G3?NR2  NCC: yanfa-yancheng
+  KTA19G3(M)  NCC: huayuan-weifang
+  KTA19G4(M)  NCC: huayuan-weifang
+  KTA38G(M)  NCC: huayuan-weifang
+  KTA50D(M1)  NCC: mecca-power
+  KTA50D(M2)  NCC: mecca-power
+  KTA50G15×  NCC: tellhow-power
+  KTALGG2(M)  NCC: huayuan-weifang
+  NTA855D(M)  NCC: walter-yangzhou
+  NTA855G2(M)  NCC: huayuan-weifang
+  NTA885GL(M)  NCC: huayuan-weifang
+  PHF4056ZD1(R1J01)  NCC: power-hf
+  PHF4075ZLD1(R4J01)  NCC: power-hf
+  PHF6084ZD1(R1J01)  NCC: power-hf
+  PHF6110ZLD1(R2J01)  NCC: power-hf
+  PHF6132ZLD1(R4J01)  NCC: power-hf
+  QSK60D(M)  NCC: mecca-power
+  QSNTG4×  NCC: tellhow-power
+  SAE3#  NCC: quanchai
+  TAD853GE★  NCC: tellhow-power
+  TWD1645GE★  NCC: tellhow-power
+  TWD1652GE★  NCC: tellhow-power
+  X:KD170F  NCC: koop-changzhou
+  X:KD156FA/XE:KD186FAE  NCC: koop-changzhou
+  X:KD178F/XE:KD178FE  NCC: koop-changzhou
+  X:KD188FA/XE:KD188FAE  NCC: koop-changzhou
+  X:KD192F/XE:KD192FE  NCC: koop-changzhou
+  ZH4100D/30,1KW  NCC: bauer-generator
