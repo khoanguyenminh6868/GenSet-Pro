@@ -58,7 +58,8 @@ test("MTU 6R1600G70F (nhóm sai đã biết): bộ ba bdadl / fukangsi / pengpai
 
 test("12V2000G25: frs-shenyang + tellhow-power chung ô container 6058*2438*2591 KHÔNG gộp; bộ ba ghi 21 L (số của 12V1600) một phiếu → 23,88 thắng", () => {
   const t = engine("12V2000G25");
-  assert.deepEqual(t.groups, [["bdadl-shanghai", "fukangsi-yangzhou", "pengpai-yangzhou"]]);
+  // Từ #941 (catalog R1 đọc bảng jinjia-power): jinjia + yunding cùng ô 4000*1650*2280 và cùng 23,88 → một phiếu (đúng C6).
+  assert.deepEqual(t.groups, [["bdadl-shanghai", "fukangsi-yangzhou", "pengpai-yangzhou"], ["jinjia-power", "yunding-jiangsu"]]);
   assert.notEqual(t.v.get("frs-shenyang"), t.v.get("tellhow-power"));
   const lines = (id) => SUPS.find((s) => s.id === id).specTables.flatMap((x) => x.rows).filter((l) => l.includes("12V2000G25")).join(" ");
   const box = /6058[*×xX]2438[*×xX]2591/;
@@ -92,10 +93,11 @@ test("TAD531GE: mất giá trị thắng (4,76 × 6 : 1,5 × 1 → bộ năm m�
 
 test("TAD1351GE: giữ giá trị thắng 12,78 (fukangsi + pengpai gộp, còn 8 phiếu : 9,36 × 1); trần ≤ 11 lít loại dòng liangzi tự ghi 9,36", () => {
   const t = engine("TAD1351GE");
-  assert.deepEqual(t.groups, [["fukangsi-yangzhou", "pengpai-yangzhou"]]);
+  // Từ #941: jinjia-power 3100×1150×1600 và victory-generator 3100*1150*1600, cùng 12,78 → một phiếu (đúng C6).
+  assert.deepEqual(t.groups, [["fukangsi-yangzhou", "pengpai-yangzhou"], ["jinjia-power", "victory-generator"]]);
   assert.equal(t.before?.win, 12.78);
   assert.deepEqual(t.after?.votes, { 12.78: 8, 9.36: 1 });
-  assert.deepEqual(t.before?.votes, { 12.78: 9, 9.36: 1 });
+  assert.deepEqual(t.before?.votes, { 12.78: 10, 9.36: 1 }, "từ #941 thêm phiếu jinjia-power");
   const r = runOn(SUPS, 312.5, "Dung tích xi lanh: ≤ 11 lít\n50 Hz");
   const d = dropOf(r, "liangzi-yangzhou", "TAD1351GE");
   assert.ok(d, "dòng LZ- V250 (9,36 L, số của TAD941GE) bị loại theo số đông 12,78");
