@@ -1,0 +1,139 @@
+Lần chạy lại trên máy khớp cloud: 510/510 lượt; lệch: 0 
+
+RỜI all	bản ghi / dòng không còn ở nhánh	1117 dòng-lượt, 25 khoá
+   102	eastern-lion-fuan|EL354C|
+   84	tecnogen|AUS731017|
+   73	eastern-lion-fuan|EL314D|
+   68	eastern-lion-fuan|EL404D|
+   68	eastern-lion-fuan|EL274K|RUIFEN6120
+   68	eastern-lion-fuan|EL274K|
+   51	eastern-lion-fuan|EL354D|
+   51	eastern-lion-fuan|EL274F|
+   50	eastern-lion-fuan|EL274J|
+   50	eastern-lion-fuan|EL354ES|
+   48	eastern-lion-fuan|EL274J|RUIFEN6120
+   46	eastern-lion-fuan|EL224E|RUIFEN6120
+   44	eastern-lion-fuan|EL404C|
+   42	eastern-lion-fuan|EL354FS|
+   36	eastern-lion-fuan|EL314E|
+   36	eastern-lion-fuan|EL274H|RUIFEN6120
+   36	eastern-lion-fuan|EL274H|
+   33	eastern-lion-fuan|EL354H|
+   31	eastern-lion-fuan|EL314F|
+   26	tecnogen|AUS731014|
+   26	bruno-generators|MCP12080|
+   24	eastern-lion-fuan|EL354G|
+   10	eastern-lion-fuan|EL404E|
+   8	tecnogen|AUS7310|
+   6	tecnogen|AUS731015|
+
+RỜI all	nhánh loại: cyl	36 dòng-lượt, 9 khoá
+   7	voltgent|8M33G900/6|
+   6	baifa-power|20M33G4D3/5|
+   5	baifa-power|8M33G6D3/5|
+   5	baifa-power|12M55G6D3/5|
+   4	agg-fuzhou|6M31G1000/5|
+   4	agg-fuzhou|6M31G800/6|
+   3	cgm-italia|6M31G1000/5|
+   1	baifa-power|16M33G8D3/5|
+   1	baifa-power|16M55G6D3/5|
+
+RỜI all	nhánh loại: disp	7 dòng-lượt, 4 khoá
+   2	agg-fuzhou|6M31G1000/5|
+   2	agg-fuzhou|6M31G800/6|
+   2	cgm-italia|6M31G1000/5|
+   1	mecca-power|8M33G900/6|
+
+RỜI all	nhánh loại: disp,cyl	16 dòng-lượt, 6 khoá
+   6	agg-fuzhou|6M31G1000/5|
+   6	agg-fuzhou|6M31G800/6|
+   1	voltgent|8M33G900/6|
+   1	mecca-power|16M33D1980E310|
+   1	landtop-fuzhou|16M33G2250/5|LTP454S1650
+   1	cgm-italia|6M31G1000/5|
+
+RỜI all	nhánh loại: maxDisp	2 dòng-lượt, 2 khoá
+   1	mecca-power|16M33D1980E310|
+   1	landtop-fuzhou|16M33G2250/5|LTP454S1650
+
+RỜI all	nhánh loại: maxDisp,cyl	1 dòng-lượt, 1 khoá
+   1	voltgent|8M33G900/6|
+
+VÀO all	bản ghi / dòng mới ở nhánh	145 dòng-lượt, 2 khoá
+   90	tecnogen|S4L2SD|
+   55	tecnogen|S3L2SD|
+
+VÀO all	gốc loại: cyl,freq	8 dòng-lượt, 2 khoá
+   4	kaihua-genset|8M33D1012E311|
+   4	walter-yangzhou|8M33D1012E311|
+
+VÀO all	gốc loại: disp	12 dòng-lượt, 9 khoá
+   3	uleengen|8M33D1012E311|S6L1DD41
+   2	uleengen|8M33D1012E311|
+   1	waeta-fujian|WP6D180E201|
+   1	jet-power|8M33D1012E311|JET634E
+   1	kaichen-jiangsu|8M33D1012E311|
+   1	kaihua-genset|8M33D1012E311|
+   1	waeta-fujian|8M33D1012E311|
+   1	walter-yangzhou|8M33D1012E311|
+   1	wiseke-taizhou|8M33D1012E311|
+
+VÀO all	gốc loại: disp,cyl,freq	2 dòng-lượt, 2 khoá
+   1	kaihua-genset|8M33D1012E311|
+   1	walter-yangzhou|8M33D1012E311|
+
+VÀO all	gốc loại: freq	11 dòng-lượt, 8 khoá
+   2	kaihua-genset|8M33D1012E311|
+   2	walter-yangzhou|8M33D1012E311|
+   2	wiseke-taizhou|8M33D1012E311|
+   1	eastern-lion-fuan|EL274J|RUIFEN6120
+   1	eastern-lion-fuan|EL274K|RUIFEN6120
+   1	eastern-lion-fuan|EL274J|
+   1	eastern-lion-fuan|EL274K|
+   1	waeta-fujian|8M33D1012E311|
+
+ĐIỂM	+32	65 dòng-lượt, 10 khoá
+   17	agg-fuzhou|6M31G1000/5|
+   17	agg-fuzhou|6M31G800/6|
+   9	landtop-fuzhou|16M33G2250/5|LTP454S1650
+   7	cgm-italia|6M31G1000/5|
+   4	tellhow-power|16V4000G63F|
+   4	tellhow-power|TAD851GE|
+   3	tellhow-power|16V4000G23F|
+   2	tellhow-power|20V4000G23F|
+   1	tellhow-power|20V4000G63F|
+   1	tellhow-power|20V4000G63LF|
+
+ĐIỂM	+40	12 dòng-lượt, 3 khoá
+   9	voltgent|8M33G900/6|
+   2	mecca-power|8M33G900/6|
+   1	tellhow-power|12V4000G63F|
+
+ĐIỂM	+48	43 dòng-lượt, 6 khoá
+   21	waeta-fujian|WP6D180E201|
+   8	tellhow-power|TWD1653GE|
+   6	tellhow-power|TWD1652GE|
+   4	tellhow-power|TAD852GE|
+   3	jet-power|WP6D180E201|JET274F
+   1	tellhow-power|TAD853GE|
+
+ĐIỂM	+56	34 dòng-lượt, 8 khoá
+   10	mecca-power|16M33D1980E310|
+   8	tellhow-power|TAD1651GE|
+   4	tellhow-power|TWD1645GE|
+   4	tellhow-power|TAD1650GE|
+   2	chuangyuan-zhongshan|16M33D1980E310|
+   2	tellhow-power|TAD1351GE|
+   2	tellhow-power|TAD1354GE|
+   2	tellhow-power|TAD1355GE|
+
+ĐIỂM	+68	36 dòng-lượt, 5 khoá
+   11	baifa-power|20M33G4D3/5|
+   9	baifa-power|16M33G8D3/5|
+   9	baifa-power|12M55G6D3/5|
+   5	baifa-power|8M33G6D3/5|
+   2	baifa-power|16M55G6D3/5|
+
+ĐIỂM	+8	13 dòng-lượt, 2 khoá
+   10	aosif|8M33D1012E311|
+   3	mecca-power|8M33D1012E311|
