@@ -162,13 +162,37 @@ test("lịch sử: nhà thầu lặp trong danh sách của một phần, chỉ 
 test("lịch sử, kiểm mẫu bảng (Khoa 07/11): trường lạ có giá trị, khoá lạ của dsHhKq, cột lạ được báo; trường lạ rỗng thì không", async () => {
   const k = kq268027();
   const list = JSON.parse(k.lotResultDTO[0].goodsList);
-  list.dsHhKq[0].dsHH[1].reqLabel = "G7"; // seen on IB2400166974 (genbid-bot-logs\history-goods-audit.tsv, 09/11)
-  list.dsHhKq[0].dsHH[1].reqOrigin = ""; // empty: not reported
+  list.dsHhKq[0].dsHH[1].reqCountry = "G7"; // an invented unknown field (reqLabel is now a known field, see the next test)
+  list.dsHhKq[0].dsHH[1].reqOther = ""; // empty: not reported
   list.dsHhKq[0].lotAmount = 5; // an unknown key of the wrapper
   k.lotResultDTO[0].goodsList = JSON.stringify(list);
   const r = await runSnippet("history-extract.js", { root: vueRoot({ dtlKqlcnt: { bideContractorInputResultDTO: k } }), tables: [table([...GOODS_HEADS, "Cột mới"])] });
-  assert.deepEqual(r.audit.map((a) => [a.kind, a.what, a.sample]), [["shape", "dsHhKq.lotAmount", "5"], ["field", "reqLabel", "G7"], ["header", "Cột mới", [...GOODS_HEADS, "Cột mới"].join(" | ")]]);
+  assert.deepEqual(r.audit.map((a) => [a.kind, a.what, a.sample]), [["shape", "dsHhKq.lotAmount", "5"], ["field", "reqCountry", "G7"], ["header", "Cột mới", [...GOODS_HEADS, "Cột mới"].join(" | ")]]);
   assert.deepEqual(r.lots[0].goods, [STORED_GOODS(387)], "kiểm mẫu không làm mất dòng hàng");
+});
+
+test("lịch sử: reqLabel = yêu cầu xuất xứ của E-HSMT (IB2400166974: reqLabel G7, origin G7; IB2400440445: reqLabel dài, origin 'Lắp ráp tại Việt Nam') đọc vào reqOrigin, không báo kiểm mẫu, không đổi origin", async () => {
+  const long = "Máy phát điện công suất:  15KVA/16,5KVA, 3 pha và có vỏ chống ồn, lắp giáp tại Việt Nam ( động cơ Mitsubish  và đầu phát Leroy Somer - Xuất xứ Ấn độ )";
+  const rows = [
+    { name: "Piston", uom: "cái", qty: 12, description: "Theo quy định tại Chương V.", reqLabel: "G7", origin: "G7", manufacturer: "Cummins", bidPrice: 10780000, amount: 129360000 },
+    { name: "Máy phát điện 15KVA", uom: "Tổ máy", qty: 1, reqLabel: long, origin: "Lắp ráp tại Việt Nam", bidPrice: 5, amount: 5 },
+    { name: "Bộ lọc", uom: "cái", qty: 2, reqLabel: null, origin: "Việt Nam", bidPrice: 3, amount: 6 },
+    { name: "Dây", uom: "m", qty: 2, reqLabel: "   ", origin: "Việt Nam", bidPrice: 3, amount: 6 },
+    { name: "Lõi", uom: "cái", qty: 2, reqLabel: "X".repeat(900), origin: "", bidPrice: 3, amount: 6 },
+  ];
+  const kq = { lotResultDTO: [{ lotNo: "PP1", lotPrice: 1, goodsList: JSON.stringify({ dsHhKq: [{ lotNo: "PP1", contractorCode: "vn1", dsHH: rows, dsDvlq: [] }], dsDvlqKq: [] }), contractorList: [c("vn1", "A", 1, { bidResult: 1 })] }] };
+  const r = await runSnippet("history-extract.js", { root: vueRoot({ dtlKqlcnt: { bideContractorInputResultDTO: kq } }), tables: [table(GOODS_HEADS)] });
+  assert.equal(r.audit, undefined, "reqLabel không còn là trường lạ");
+  assert.deepEqual(r.lots[0].goods.map((g) => [g.name, g.origin, g.reqOrigin]), [
+    ["Piston", "G7", "G7"],
+    ["Máy phát điện 15KVA", "Lắp ráp tại Việt Nam", long.replace(/\s+/g, " ")],
+    ["Bộ lọc", "Việt Nam", undefined],
+    ["Dây", "Việt Nam", undefined],
+    ["Lõi", "", "X".repeat(500)],
+  ]);
+  assert.ok(!("reqOrigin" in r.lots[0].goods[2]), "không có yêu cầu thì không thêm khoá");
+  const b = await runSnippet("bidders-extract.js", { root: vueRoot({ dtlKqlcnt: { bideContractorInputResultDTO: kq } }), search: "?notifyNo=IB1&step=kqlcnt" });
+  assert.equal(b.audit, undefined);
 });
 
 test("lịch sử, gói dịch vụ (goodsList object listTG/listDG): không có dòng hàng, không báo kiểm mẫu", async () => {
