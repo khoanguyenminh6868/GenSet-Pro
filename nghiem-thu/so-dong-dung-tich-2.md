@@ -235,3 +235,79 @@ Ngoài ra khoảng 152 khoá có ngoặc kiểu `4BTA39G2(G45E1)`, không tính 
 
 - Số dung tích thật của 6DTAA89G34, SC8D280D2 / SC8D220D2 (8.27 hay 8.3), SC4H95D2 (4.3 hay 4.33).
 - Biến thể "làm tròn ngưỡng" cho lớp (b).
+
+## Vòng 3 (19/11/2026): luật chốt của Khoa
+
+### W1 / W2 (khoảng làm tròn): Khoa bỏ, không có số
+
+Đã viết `dispFails` (sau cờ) và chạy `do-w.mjs`; Khoa quyết trong lúc chạy nên đã dừng ở lượt 20 / 261. Tệp chỉ ghi khi
+xong nên KHÔNG có số nào của W1 / W2. Mã W đã xoá. Kiểm tay trên các ca mẫu khi viết: W1 giữ Y490D (2.67 ↔ ≥ 2.672) và 2206
+(12.5 ↔ ≥ 12.513), loại YC6K (12.94 ↔ ≥ 13) và SC8D (8.27 ↔ ≥ 8.3); nhưng cũng giữ SC4H95D2 (4.3 ↔ ≥ 4.33; nguồn ghi
+105×124×4 = 4,295 < 4,33) và cả số nguyên "13" với trần 12.7 (khoảng [12.5; 13.5)). Đó là cái giá W phải trả; Khoa không chọn.
+
+### Luật chốt (Khoa 19/11): đã hiện thực, không cờ
+
+- Các số tương thích làm tròn (`roundCompat` như Vòng 2, không nhận cắt cụt) của một động cơ gộp thành MỘT nhóm phiếu
+  (`majorityRound`).
+- So ngưỡng CHẶT bằng số chính xác nhất của nhóm thắng (`dispExact`): tối thiểu số < ngưỡng thì loại; trần số > trần × 1,005
+  thì loại. Main đang so trần `x > maxDisp * 1.005` (dòng 1490 của main), nên giữ đúng hệ số này.
+- Nhiều số cùng độ chính xác cao nhất: lấy số nhiều phiếu hơn (số người bỏ phiếu sau gộp NCC); bằng phiếu thì lấy số trượt
+  trước (nhỏ hơn khi so tối thiểu, lớn hơn khi so trần), theo hướng Khoa chọn loại khi nguồn không đủ căn cứ. Các nhóm thắng rơi
+  vào trường hợp này (toàn danh mục, `eng-v.txt`): D1146T và D1146 {8.07, 8.071, 8.074}, DP086LA {8, 8.071, 8.074, 8.1},
+  WP41D80E200 {4.08, 4.087, 4.088, 4.1}, YC4D90ZD21 {4.2, 4.21, 4.214, 4.215}.
+- `srcOf.disp` / `srcOf.maxDisp` thêm `group` (mọi số của nhóm thắng) và `exact` (số đem so); lý do ghi số `exact`.
+- Commit acd2f7e4 (luật + test `cand-disp-round.test.mjs` dòng thật, fixture `fixtures/so-dong-lam-tron.json` chép nguyên
+  văn 108 NCC / 1.399 dòng), sửa `suppliers/CLAUDE.md`. Merge main 671797e4 (c9373ab1). Commit 48044c61: #941 đọc được bảng
+  jinjia-power, nên test C6 có thêm hai nhóm, đều đúng tiêu chí C6: jinjia + yunding (12V2000G25, cùng ô 4000*1650*2280, cùng
+  23.88) và jinjia + victory (TAD1351GE, 3100×1150×1600 / 3100*1150*1600, cùng 12.78; 12.78 trước gộp 10 phiếu, sau 8, vẫn
+  thắng). Đã đẩy; test suppliers 1156/1156, bot 130/130, web 161/161; spec-diff ↔ 671797e4: 0 bản ghi đổi.
+- Test dòng thật: DP222CB {21.9, 21.927} ↔ ≥ 21.927 giữ; SC8D280D2 {8.27, 8.3} ↔ ≥ 8.3 loại; Y490D 2.67 ↔ ≥ 2.672 loại;
+  403D15G {1.496, 1.5} (trước chia phiếu, không số đông) ↔ ≥ 1.6 loại; 6DTAA89G34 {8.8, 8.82} × 3 : 8.9 × 1, số chính xác
+  8.82, nguồn hanyang-weifang ghi 114×144 → 114×144×6 = 8,819 L; trần WP10D264E200 {9.7, 9.72, 9.726, 9.73} ↔ ≤ 9.5 loại
+  theo 9.726, ↔ ≤ 9.7 ở lại (9.726 ≤ 9.7485).
+
+### Đo luật chốt (F) trên 261 lượt (`do-f.mjs`, `an-f.mjs` → `an-f.txt`)
+
+Đo bằng code trước merge #941 (acd2f7e4, cùng `cn` như gop-nhanh); top 30 lần cuối (main mới ↔ nhánh) điều phối đo trên
+cloud. Đếm theo danh sách `all` (dòng ứng viên còn lại), so từng khoá dòng có đầu phát; số này khác cách đếm theo khoá dòng bị
+loại ở Vòng 2 (ở đó V loại thêm "130 nhóm / 5.107 dòng"; theo `all` là 92 nhóm / 3.062 dòng).
+
+| | so nhánh #939 | so main (gop-main) |
+|---|---|---|
+| giữ lại | 1 nhóm / 64 dòng (DP222CB, 3 lượt) | 0 |
+| loại thêm | 125 nhóm / 5.621 dòng | 419 nhóm / 14.879 dòng |
+| lượt top 30 đổi | 70 | 126 |
+
+(Đối chứng V cùng cách đếm: giữ 6 nhóm / 178 dòng, loại thêm 92 nhóm / 3.062 dòng, top đổi 56 so nhánh / 113 so main.)
+
+Lớp (b), 25 nhóm số thắng là ngưỡng HSMT làm tròn: F giữ DP222CB (64 / 66 dòng; 2 dòng còn lại bị loại vì lý do khác hoặc
+khoá đầu phát trùng), loại cả 24 nhóm còn lại, gồm 5 nhóm "chỉ số làm tròn đạt" (SC8D280D2, SC8D220D2, WP6D152 / 167 / 158E…)
+và 19 nhóm nguồn chỉ có số làm tròn (Y490D, 2206…, 1103A33…, 1506AE88…, SC4H95D2, YC6K600 / 660D30, WP6D152E310).
+Đúng như Khoa quyết.
+
+7 nhóm sai đã biết (MTU 1600, TAD1341GE): không có giá trị thắng trước và sau (gộp làm tròn không đổi các nhóm này).
+
+### Soát số đông mới bằng đường kính × hành trình × số xi lanh nguồn ghi
+
+Hai lần soát (D×S×z đọc qua lớp chuẩn hoá, mỗi NCC một bộ, dung tích = π/4·D²·S·z):
+- 130 nhóm V loại thêm (`soat-ds.mjs` → `soat-ds.txt`): 97 khớp (mọi D×S×z cũng không đạt), 33 có NCC ghi D×S khác,
+  **0 nhóm trái** (D×S×z mọi nguồn đều đạt).
+- 125 nhóm F loại thêm so nhánh (`an-f.txt`): 86 khớp, 38 có NCC ghi D×S khác, 1 không nguồn nào ghi D×S (QSK19G14 18.9 ↔
+  ≥ 19), **0 nhóm trái**.
+
+Nhóm có NCC ghi D×S khác: hầu hết số đông D×S khớp số đông dung tích, chỉ 1–2 NCC lệch (403D15G / 403A15G1 84×90×3 = 1,496 ×
+8 NCC : ×4 = 1,995 × 1; YC6MK420LD20 123×145×6 = 10,338 × 12 : 131×145 × 1; WP10D320E200 126×130×6 = 9,726 × 9 : 127×165 × 1;
+WP23D 89×92×4 = 2,289 × 6–8 : 1–2; KTA19G2 / G4 159×159×6 = 18,942 × 3–6 : 1–2; WP12D317E200 11,596 × 4 : 9,726 × 2 :
+11,413 × 1; 400623TAG3A 22,921 × 12 : 30,561 × 1). **Cần Khoa / điều phối xem riêng** (D×S không đủ để khẳng định số đông):
+- **YD4EZLD** (chỉ F, không có ở V): nhóm {4.08, 4.1}, số chính xác 4.08 < HSMT ≥ 4.087 → loại 29 dòng / 1 lượt. D×S nguồn
+  ghi: 105×118×4 = 4,087 (1 NCC) : 102×118×4 = 3,857 (1 NCC). 4.08 có thể là 4.087 bị CẮT CỤT (làm tròn ra 4.09): nếu đúng thì
+  dòng đạt. Luật không nhận cắt cụt nên loại.
+- **Y4100D** trần ≤ 2.9: {3.7, 3.707}; D×S 100×118×4 = 3,707 (1) : 90×100×4 = 2,545 (1). Loại 6 dòng / 1 lượt.
+- **KT38G** trần ≤ 22: {37.8, 38}; D×S 159×159×12 = 37,885 (2) : ×6 = 18,942 (1). Loại 31 dòng / 1 lượt.
+
+6DTAA89G34: D×S nguồn ghi 114×144×6 = 8,819 (1 NCC) → loại với ≥ 8,9 là đúng theo nguồn.
+
+### Chưa kiểm
+
+- Top 30 main 671797e4 ↔ nhánh 48044c61: điều phối đo trên cloud, gửi tệp về để giải thích.
+- Dung tích thật của YD4EZLD (4.087 hay 4.08), Y4100D, KT38G theo datasheet hãng.

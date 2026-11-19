@@ -1,0 +1,283 @@
+ncc	n	bang	dau-hieu	ban-ghi	vi-du-model	tieu-de-bang
+agg-fuzhou	115	14	url,ng	23	LY13-G280 / LYX12H-G275 / LYL9.5H-G220 / LYL8.9H-G190	AGG-德塔
+agg-fuzhou	116	15	url,ng,dongco	11	K19N-G2 / K50N-G11H / K50N-G10 / K50N-G9	康明斯-德塔
+agg-fuzhou	117	16	url,ng	6	4016-61TRS2 / 4016-61TRS1 / 4008-30TRS2 / 4008-30TRS1	帕金斯-德塔
+agg-fuzhou	118	17	url,ng,dongco	2	OC16 071A 02-82	斯堪尼亚-德塔
+agg-power	2005	4	dongco	1	QSK23G3	AGG CU880E5
+agg-power	2009	8	dongco	1	QSK19G4	AGG CU713E5
+agg-power	2066	65	dongco	1	QSK78G9	AGG CU3000E5
+agg-power	2067	66	dongco	1	QSK60G23	AGG CU2750E5
+agg-power	2068	67	dongco	1	QSK60G21	AGG CU2500E5A
+agg-power	2069	68	dongco	1	QSK60G8	AGG CU2500E5
+agg-power	2070	69	dongco	1	QSK60G4	AGG CU2250E5
+agg-power	2071	70	dongco	1	QSK60G3	AGG CU2063E5
+agg-power	2072	71	dongco	1	QSK50G7	AGG CU1825E5
+aoke-yangzhou	101	0	dongco	2	QSK60G13 / 4016-61TRG3	2100KW - 奥克发电【官网】|500KW发电机组，200KW发电机组，800KW发电机组，1000KW发电机组
+aoke-yangzhou	103	1	dongco	1	QSK60G13	1900KW - 奥克发电【官网】|500KW发电机组，200KW发电机组，800KW发电机组，1000KW发电机组
+aoke-yangzhou	104	2	dongco	2	QSK60G4 / 4016TAG2A	1800KW - 奥克发电【官网】|500KW发电机组，200KW发电机组，800KW发电机组，1000KW发电机组
+aoke-yangzhou	105	3	dongco	2	QSK60G3 / 4016TAG1A	1700KW - 奥克发电【官网】|500KW发电机组，200KW发电机组，800KW发电机组，1000KW发电机组
+aoke-yangzhou	106	4	dongco	2	QSK60G3 / YC12V2510L-D20	1600KW - 奥克发电【官网】|500KW发电机组，200KW发电机组，800KW发电机组，1000KW发电机组
+aosif	108	6	chu,dongco	12	K19N-G1 / K19N-G3 / K19N-G4 / K38N-G5	Cummins Natural Gas Series（50HZ）-Xiamen Aosif Engineering Ltd.
+aosif	109	7	chu	6	4006-23TRS1 / 4006-23TRS2 / 4008-30TRS1 / 4008-30TRS2	Perkins Natural Gas Series-Xiamen Aosif Engineering Ltd.
+aosif	110	8	chu	4	GV158TI / GV180TI / GV222TI / GV222CB	Hyundai Natural Gas Series(50HZ)-Xiamen Aosif Engineering Ltd.
+aosif	111	9	chu	10	WP4D77E300NG / WP6D132E300NG / WP10D200E300NG / WP13D317E300NG	Weichai Natural Gas Series（50HZ）-Xiamen Aosif Engineering Ltd.
+aosif	112	10	chu	7	YCTD20600N-D30 / YC12VTD1350N-D31 / YC12VC1680N-D32 / YC16VTD1680N-D30	Yuchai Natural Gas Series-Xiamen Aosif Engineering Ltd.
+aosif	113	11	chu,dongco	9	K19N-G1B / K19N-G3B / K19N-G4B / K38N-G5B	Cummins Biogas Series（50HZ）-Xiamen Aosif Engineering Ltd.
+aosif	117	15	dongco	70	QSB5-G1 / QSB5-G2 / QSB5-G10 / QSB5-G3	Imported Cummins Series(60HZ)-Xiamen Aosif Engineering Ltd.
+aosif	119	17	chu,dongco	12	K19N-G2 / K19N-G3S / K19N-G4S / K38N-G5S	Cummins Natural Gas Series（60HZ）-Xiamen Aosif Engineering Ltd.
+aosif	120	18	chu	4	GV158TI / GV180TI / GV222TI / GV222CB	Hyundai Natural Gas Series(60HZ)-Xiamen Aosif Engineering Ltd.
+aosif	121	19	chu	9	WP4D77E301NG / WP6D132E301NG / WP10D200E301NG / WP13D317E301NG	Weichai Natural Gas Series（60HZ）-Xiamen Aosif Engineering Ltd.
+aosif	122	20	chu,dongco	9	K19N-G2B / K19N-G3BS / K19N-G4BS / K38N-G5BS	Cummins Biogas Series（60HZ）-Xiamen Aosif Engineering Ltd.
+bdadl-shanghai	130	32	dongco	18	QSNT-G6 / QSNT-G7 / QSNT-G2 / QSNT-G3	重庆康明斯系列-上海博杜安动力科技有限公司
+bison-zhejiang	1003	36	url	1	BS170F	Datasheet: View the gasoline generator Catalog
+cameo-power	127	16	url	3	CP190F / CP460 / CP690	10kw Gasoline Generator - China 10kw Gasoline Generator Manufacturers Suppliers 
+chenxing-weifang	101	0	chu	1	NT855-GA	200KW发电机组-康明斯发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	102	1	chu	1	6CTA8.3-G2	150KW发电机组-康明斯发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	103	2	chu	1	6BTAA5.9-G2	120KW发电机组-康明斯发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	104	3	chu	1	6BTA5.9-G2	100kw康明斯电调同步无刷柴油发电机组-康明斯发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应
+chenxing-weifang	107	4	chu	1	4BTA3.9-G2	50KW发电机组-康明斯发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	108	5	chu	1	4BT3.9-G2	30KW发电机组-康明斯发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	109	6	chu	1	NTA855-G2A	300KW发电机组-康明斯发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	110	7	chu	1	KTA19-G3A	400KW发电机组-康明斯发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	111	8	chu	1	WP10D200E200	200KW发电机组-潍柴动力发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	112	9	chu	1	WP6D152E200	150KW发电机组-潍柴动力发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	113	10	chu	1	WP6D132E200	120KW发电机组-潍柴动力发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	114	11	chu	1	WP4D108E200	潍柴100KW发电机组-潍柴动力发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	115	12	chu	1	WP4D99E200	75KW发电机组-潍柴动力发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	116	13	chu	1	WP4D66E200	50KW发电机组-潍柴动力发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	117	14	chu	1	WP12D317E200	250KW发电机组-潍柴动力发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	118	15	chu	1	WP13D385E200	300KW发电机组-潍柴动力发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	119	16	chu	1	YC4D60-D21	40KW发电机组-玉柴柴油发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	120	17	chu	1	YC4FA55Z-D20	30KW发电机组-玉柴柴油发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	121	18	chu	1	YC4D85Z-D20	50KW发电机组-玉柴柴油发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	122	19	chu	1	YC6B155L-D21	玉柴100KW发电机组-玉柴柴油发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	123	20	chu	1	YC6B180L-D20	120KW发电机组-玉柴柴油发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	124	21	chu	1	YC6A230L-D20	150KW发电机组-玉柴柴油发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	126	22	chu	1	YC6MK350L-D20	200KW发电机组-玉柴柴油发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	127	23	chu	1	YC6MK420L-D20	250KW发电机组-玉柴柴油发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	128	24	chu	1	YC6MJ480L-D20	300KW发电机组-玉柴柴油发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	129	25	chu	1	YC6T600L-D22	400KW发电机组-玉柴柴油发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	130	26	chu	1	YC6TD840L-D20	500KW发电机组-玉柴柴油发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	131	27	chu	1	YC6C1020L-D20	600KW发电机组-玉柴柴油发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	132	28	chu	1	YC6C1220L-D20	700KW发电机组-玉柴柴油发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	133	29	chu	1	YC6C1320L-D20	玉柴800KW发电机组-玉柴柴油发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	134	30	chu	1	YC6C1320L-D20	900KW发电机组-玉柴柴油发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	135	31	chu	1	SC27G900D2	600KW发电机组-上柴发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	136	32	chu	1	SC27G755D2	500KW发电机组-上柴发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	137	33	chu	1	SC25G610D2	400KW发电机组-上柴发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	138	34	chu	1	SC12E460D2	300KW发电机组-上柴发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	139	35	chu	1	SC9D310D2	200KW发电机组-上柴发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+chenxing-weifang	140	36	chu	1	SC7H230D2	150KW发电机组-上柴发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
+ettes-power	101	0	chu,url	11	E0834LE322 / E0836LE302 / E2876TE302 / E2876LE202	MAN Biogas Power generator, Combined Heat and Power (CHP) Unit
+ettes-power	101	1	chu,url	10	E0834LE322 / E0836LE302 / E2876LE302 / E2676LE212	MAN Biogas Power generator, Combined Heat and Power (CHP) Unit
+ettes-power	102	2	chu,url	6	JC15DT / 12V190ZDT / 12V190ZL / H16V190ZLT	Natural Gas Power Generator, Combined Heat and Power (CHP ),Cogeneration
+ettes-power	102	3	chu,url	6	JC15DT / 12V190ZDT / 12V190ZL / H16V190ZLT	Natural Gas Power Generator, Combined Heat and Power (CHP ),Cogeneration
+ettes-power	103	4	chu,url	12	TCG3016V08 CG132-8 / TCG3016V12 CG132-12 / TCG3016V16 CG132-16 / TCG3016V16S CG132-16	MWM Natural Gas Power Generator, CHP Unit, Cogeneration
+ettes-power	103	5	chu,url	9	TCG3016V8 CG132-8 / TCG3016V12 CG132-12 / TCG3016V16S CG132-16 / TCG3016V16S CG132-16S	MWM Natural Gas Power Generator, CHP Unit, Cogeneration
+ettes-power	104	6	chu,url	16	E0834E312 / E0834E302 / E0834LE312 / E0836E302	MAN Natural Gas Power Generator, CHP Unit, Cogeneration
+ettes-power	104	7	chu,url	17	E0834E302 / E0834LE312 / E0836E302 / E0836LE302	MAN Natural Gas Power Generator, CHP Unit, Cogeneration
+ettes-power	105	8	chu,url,dongco	14	4BTA3.9-G / 6BTA5.9-G / 6CTA8.3-G / NTA855-G	Cummins Series Natural Gas Power Generator, CHP, Cogeneration
+ettes-power	105	9	chu,url,dongco	14	4BTA3.9-G / 6BTA5.9-G / 6CTA8.3-G / NTA855-G	Cummins Series Natural Gas Power Generator, CHP, Cogeneration
+genmac	2052	49	dongco	1	QSK23G3	GENMAC ZEUS G800CO - Cummins QSK23G3 - 810 kVA PRP (catalogue Industrial 50Hz 01
+gillette-generators	101	0	chu	1	GPE-75EH	GPE-75EH - Gillette Generators
+gillette-generators	102	1	chu	1	GPE-75EH	GPE-75EH-3 - Gillette Generators
+gillette-generators	103	2	chu	1	GPE-125EH	GPE-125EH - Gillette Generators
+gillette-generators	104	3	chu	1	GPE-125EH	GPE-125EH-3 - Gillette Generators
+gillette-generators	105	4	chu	1	GPED-65EK-3	GPED-65EK-3 - Gillette Generators
+gillette-generators	106	5	chu	1	EVTD-65EK	EVTD-65EK - Gillette Generators
+googol	101	1	chu	5	JTA8V-NG838 / JT10V-NG1042 / JT12V-NG1247 / JTA16V-NG1663	Gas Genset COP:1000-2500kVA & Gas Genset COP:1000-2500kVA生产厂家 &价格 &工厂 - Chongqin
+googol	102	3	chu	6	RTAA6L-NG296 / RTAA8V-NG333 / RTAA8L-NG398 / RTAA10V-NG438	Gas Genset COP:350-750kVA & Gas Genset COP:350-750kVA生产厂家 &价格 &工厂 - Chongqing Go
+green-power-generators	116	17	dongco	28	X2.5G2 / X3.3G1 / 4BTAA3.3G16 / 4BTAA3.3G13	Gruppi elettrogeni Stazionari Cummins - Green Power Generators
+green-power-generators	124	25	chu,url	6	6.7LNA / 6.7LT / 8.1LT / 10LT	Gruppi elettrogeni a Gas PSI - Green Power Generators
+green-power-generators	125	26	chu,url	4	GV158TI / GV222TI / GV222CA / GV222CB	Gruppi elettrogeni a Gas Hyundai - Green Power Generators
+huayuan-weifang	105	4	chu	19	4B3.9 / 4BTA3.9G / 6B5.9G / 6BT5.9G	Cummings series gas generator set - Automatic Generator Set - Weifang Huayuan Di
+innio-jenbacher	2001	0	chu	1	J312	Jenbacher J312 – khí tự nhiên, Pel/Pth 50 Hz & 60 Hz
+innio-jenbacher	2002	4	chu	1	J208	Jenbacher J208 – khí tự nhiên, Pel/Pth 50 Hz & 60 Hz
+innio-jenbacher	2003	6	chu	1	J412	Jenbacher J412 – khí tự nhiên, Pel/Pth 50 Hz & 60 Hz
+innio-jenbacher	2004	10	chu,url	1	J316	Jenbacher J316 – trang sản phẩm jenbacher.com
+innio-jenbacher	2005	11	chu,url	1	J320	Jenbacher J320 – trang sản phẩm jenbacher.com
+innio-jenbacher	2006	12	chu,url	1	J416	Jenbacher J416 – trang sản phẩm jenbacher.com
+innio-jenbacher	2007	13	chu,url	1	J420	Jenbacher J420 D/E – trang sản phẩm jenbacher.com
+jet-power	114	13	dongco	88	4B3.9-G11 / TAL-A40-F / TAL-A40-G / 4B3.9-G2	60Hz Cummins Water Cooled Diesel Generator Set Supply | Jet Power
+jiangchai-xuzhou	110	9	dongco	80	4B3.9-G1 / 4B3.9-G2 / 4BT3.9-G1 / 4BT3.9-G2	康明斯_发电机组厂家_江柴控股集团有限公司
+jianghao-genset	104	4	chu	5	Chaochai CY4102 / Huafeng HF6105Q / Huafeng HF6105ZQ / SC9DT210D2	Gas Generator-Jiangsu Jianghao Generator Co.,Ltd.
+jianghao-genset	104	5	chu	24	6BT / 6CT / 6LT / 6LT8.9	Gas Generator-Jiangsu Jianghao Generator Co.,Ltd.
+jichai-huanneng	101	0	url	1	8300D/M	Silent Type CE Approved Low Rpm 400KW Biomass Gas( Syngas) Generator Set Supplie
+jichai-huanneng	102	1	url	1	8300D/M-2	Silent Type CE Approved Low Rpm 500KW Biomass Gas ( Syngas) Generator Set Suppli
+jichai-huanneng	105	5	chu,url	1	H16V190ZLZ-2	Silent Type CE Approved 1000KW Biogas (methane)Generator Set Suppliers and Manuf
+jichai-huanneng	111	10	chu,url	1	6116GD	1200kw Natural Gas Burning Generator SetsSuppliers and Manufacturers China - New
+kaihua-genset	114	16	dongco	69	DC09 320A 02-61 / DC09 320A 02-62 / DC09 320A 02-63 / DC09 320A 02-64	Scania Generator-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD
+kaihua-genset	116	18	chu,url	19	KH4B3.9T / KH4BT3.9T / KH4BTA3.9T / KH6BT5.9T	gas generator,Gas Generator-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD
+kigerpower	2011	10	url	1	2V80FD	KG15000E - Specifications
+kingway-power	102	1	chu,url	1	Kingway KAI313	China 250KW LPG Power Dual Fuel Inverter Emergency Use Recoil Start Generator Ma
+kingway-power	117	12	chu,url	1	Kingway KAI250	China 70KW Double Membrane Biogas Storage Tank For Waste Water Treatment Manufac
+kingway-power	118	13	chu,url	1	Kingway KAI6250	China 500KW High-efficiency Biogas Genset Agricultural Waste Manufacturers Suppl
+kingway-power	119	14	chu,url	1	Kingway KAI2500	China 2000KW Standby Power Biogas Engine Generator Set Containerized Manufacture
+kingway-power	125	17	chu,url	1	KWL8.9G-G200	China Gas Generagtor Set Manufacturers Suppliers Factory - Customized Gas Genera
+lees-power	134	32	url,dongco	17	QSB3.9-G35 / QSB5.9-G31 / QSBT5.9H-G55 / QSL8.9-G180	- Buy Product on Wuxi Lees Power Company Limited - Generator Expert!
+lees-power	135	33	url	3	WG1605N / WG2503N / WG3800N	- Buy Product on Wuxi Lees Power Company Limited - Generator Expert!
+man-engines	104	4	chu	9	D2676 / D2862 / D3872 / E3262	Compact MAN diesel and gas engines as auxiliary engines | MAN Engines
+man-engines	105	5	chu,url	6	E0834 / E0836 / E2876 / E3268	Low-pollution MAN gas engines for power generation | MAN Engines
+man-engines	105	6	chu,url	6	E0834 / E0836 / E2876 / E3268	Low-pollution MAN gas engines for power generation | MAN Engines
+man-engines	111	8	chu,url	3	Efficiency 2 / mechanical 1 / Combustion 3	Naturally aspirated MAN E3262 gas engine | MAN Engines
+mecca-power	5001	31	dongco	86	4BTAA3.3G14 / QSB5-G1 / QSB5-G2 / QSB5-G3	Catalog mecca-power-catalog-2026 — trang 8 trái (50Hz)
+mecca-power	5001	32	dongco	77	QSB5-G1 / QSB5-G2 / QSB5-G3 / QSB5-G4	Catalog mecca-power-catalog-2026 — trang 8 phải (60Hz)
+mwm	1002	17	chu	1	TCG 3016	Datasheet: EN
+mwm	1002	18	chu	1	TCG 3016	Datasheet: EN
+mwm	1028	71	chu	1	TCG 2032	Datasheet: EN
+mwm	1028	72	chu	1	TCG 2032	Datasheet: EN
+mwm	1040	85	chu	4	TCG 2020 / V12 K1 / V12 K / V16 K	Datasheet: EN
+mwm	1040	87	chu	4	TCG 2020 / V12 K1 / V12 K / V16 K	Datasheet: EN
+naipute-weifang	2001	0	chu,url	1	NQ35D3.3	30GFT natural gas / biogas generator
+naipute-weifang	2002	1	chu,url	1	ND68D6	50GFT natural gas / biogas generator
+naipute-weifang	2003	2	chu,url	1	ND68D9TL	80GFT natural gas / biogas generator
+naipute-weifang	2004	3	chu,url	1	NY78D12TL	100GFT natural gas / biogas generator
+naipute-weifang	2005	4	chu,url	1	ND119D18TL	160GFT natural gas / biogas generator
+naipute-weifang	2006	5	chu,url	1	NY129D22TL	200GFT natural gas / biogas generator
+naipute-weifang	2007	6	chu,url	1	NY196D35TL	300GFT natural gas / biogas generator
+naipute-weifang	2008	7	chu,url	1	NY196D40-TL	350GFT natural gas / biogas generator
+naipute-weifang	2009	8	chu,url	1	NY396D55TL	500GFT natural gas / biogas generator
+naipute-weifang	2010	9	chu,url	1	NY103D17TL	150 GFT LPG generator
+naipute-weifang	2011	10	chu,url	1	NY196D32TL	280 GFT LPG generator
+naipute-weifang	2012	11	chu,url	1	NW52D4	30GFT biomass gas generator
+naipute-weifang	2013	12	chu,url	1	NS118D17TL	150GFT - J1 biomass gas generator
+naipute-weifang	2014	13	chu,url	1	NY163D23TL	200GFT - J2 biomass gas generator
+penlucky	102	1	dongco	142	4B3.9-G1 / S0L2-M1 / S0L2-P1 / 4BT3.9-G1	Cummins Generator | Penlucky
+penlucky	107	5	url	21	WP4D44E200NG / WP4D66E300NG / WP4D77E300NG / WP6D100E3OONG	Gaseous Industrial Generators | Penlucky
+pingchang-yangzhou	105	4	dongco	46	KTA19-G4 / KTAA19-G5 / KTA19-G8E / QSK19-G12	使用康明斯柴油机作为动力系统-扬州平常机械有限公司111
+power-hf	108	8	chu,url	7	PHF3020ZX1Q / PHF3030Z1Q / PHF4035ZX1Q / PHF4050ZL1Q	R系列燃气发动机 - 燃气发动机 - 华丰动力股份有限公司--官网
+power-hf	111	13	chu,url	8	PHF3020ZX1Q1 / PHF3030Z1Q1 / PHF4035ZX1Q1 / PHF4050ZL1Q1	燃气发电机组 - 燃气发电机组 - 华丰动力股份有限公司--官网
+powerlink-shanghai	2005	151	dongco	4	QSK60G3	HV Series HVC1875S
+powerlink-shanghai	2005	152	dongco	4	QSK60G4	HV Series HVC2045S
+powerzoo	101	0	chu	1	QSK95-G2	3750 kVA Diesel Genset Powered by Cummins Engine QSK95-G2 from China manufacture
+powerzoo	102	1	chu	1	KTA38-G2	900 kVA Diesel Generators Powered by Cummins Engine KTA38-G2 from China manufact
+powerzoo	103	2	chu	1	QSK60-G4	2000kVA Cummins Electric Generator QSK60-G4 from China manufacturer - POWERZOO |
+powerzoo	104	3	chu	1	QST30-G4	1000kVA Cummins Generators Set QST30-G4 from China manufacturer - POWERZOO | Die
+powerzoo	105	4	chu	1	KTA38-G9	1250kVA Cummins Engine Large Range Generators Set KTA38-G9 from China manufactur
+powerzoo	106	5	chu	1	KTA38-G1	712kVA Cummins Diesel Generators Set KTA38-G1 from China manufacturer - POWERZOO
+powerzoo	107	6	chu	1	KTAA19-G5	525kVA Cummins Diesel Generator Set KTAA19-G5 from China manufacturer - POWERZOO
+powerzoo	108	7	chu	1	QSNT-G3	400kVA Diesel Generators Cummins Genset QSNT-G3 -C400P5 from China manufacturer 
+powerzoo	109	8	chu	1	NT855-GA	250kVA Diesel Generator Cummins Diesel Engine NT855-GA -C250P5 from China manufa
+powerzoo	110	9	chu	1	6ZTAA13-G2	425kVA Diesel Generator Cummins Diesel Engine 6ZTAA13-G3 - C425P5 from China man
+powerzoo	111	10	chu	1	6LTAA8.9-G2	250kVA Diesel Generator Cummins Diesel Engine 6LTAA8.9-G2 -C250P5 from China man
+powerzoo	112	11	chu	1	6BTAA5.9-G12	150kVA Silent Diesel Generator Cummins Diesel Engine 6BTAA5.9-G12 -C150P5 from C
+powerzoo	113	12	chu	1	4BT3.9-G2	Cummins 40kVA Diesel Generator 4BT3.9-G2 Diesel Engine C40P5 from China manufact
+powerzoo	114	13	chu	1	4B3.9-G2	30kVA Diesel Generator Cummins Engine 4B3.9-G2 from China manufacturer - POWERZO
+powerzoo	115	14	chu	1	4BT3.9-G1	Cummins 40kVA Diesel Generator 4BT3.9-G1 Diesel Engine C40P5 from China manufact
+powerzoo	116	15	chu	1	4BTA3.9-G2	C65P5 65kVA Cummins Diesel Generator 4BTA3.9-G2 Diesel Engine from China manufac
+powerzoo	117	16	chu	1	4BTA3.9-G2	Cummins Diesel Generator 4BTA3.9-G2 56kVA Generator C56P5 from China manufacture
+powerzoo	118	17	chu	1	6BT5.9-G2	100kVA Cummins Diesel Generator 6BT5.9-G2 Cummins Diesel Engine C100P5 from Chin
+powerzoo	119	18	chu	1	4DW81-23D	16kVA Diesel Generator Fawde Diesel Engine 4DW81-23D -F16P5 from China manufactu
+powerzoo	120	19	chu	1	4DW91-38D	24kVA Diesel Generators Set Fawde Engine Model 4DW91-38D from China manufacturer
+powerzoo	121	20	chu	1	JE493DBE-03	25 kVA Isuzu Diesel Generators Engine Model JE493DBE-03 from China manufacturer 
+powerzoo	122	21	chu	1	2206C-E13TAG2	400 kVA Perkins Diesel Generators Engine Model 2206C-E13TAG2 from China manufact
+powerzoo	123	22	chu	1	2506C-E15TAG3	560 kVA Perkins Diesel Generators Engine Model 2506C-E15TAG3 from China manufact
+powerzoo	124	23	chu	1	2806C-E18TAG1A	625 kVA Perkins Diesel Generators Engine Model 2806C-E18TAG1A from China manufac
+powerzoo	125	24	chu	1	JE493DBE-01	30 kVA Isuzu Diesel Generators Engine Model JE493DBE-01 from China manufacturer 
+powerzoo	126	25	chu	1	4DW91-38D	28kVA Diesel Generators Set Fawde Engine Model 4DW91-38D from China manufacturer
+powerzoo	127	26	chu	1	4DW92-42D	31kVA Diesel Generators Set Fawde Engine Model 4DW92-42D from China manufacturer
+powerzoo	128	27	chu	1	4DX21-53D	34kVA Diesel Generators Set Fawde Engine Model 4DX21-53D from China manufacturer
+powerzoo	129	28	chu	1	4DX21-53D	40kVA Diesel Generators Set Fawde Engine Model 4DX21-53D from China manufacturer
+powerzoo	130	29	chu	1	4DX21-61D-HMS20W	45kVA Diesel Generators Set Fawde Engine Model 4DX21-61D-HMS20W from China manuf
+powerzoo	131	30	chu	1	4DX22-75D-HMS20W	53kVA Diesel Generators Set Fawde Engine Model 4DX22-75D-HMS20W from China manuf
+powerzoo	132	31	chu	1	4DX23-82D	63kVA Diesel Generators Set Fawde Engine Model 4DX23-82D from China manufacturer
+powerzoo	133	32	chu	1	4DX23-90D-HMS20W	70kVA Diesel Generators Set Fawde Engine Model 4DX23-90D-HMS20W from China manuf
+powerzoo	134	33	chu	1	CA4110/125Z-11D	85kVA Diesel Generators Set Fawde Engine Model CA4110/125Z-11D from China manufa
+powerzoo	135	34	chu	1	CA4DF2-14D	100kVA Diesel Generators Set Fawde Engine Model CA4DF2-14D from China manufactur
+powerzoo	136	35	chu	1	CA6DF2D-16D	119kVA Diesel Generators Set Fawde Engine Model CA6DF2D-16D from China manufactu
+powerzoo	137	36	chu	1	CA6DF2-18D	138kVA Diesel Generators Set Fawde Engine Model CA6DF2-18D from China manufactur
+powerzoo	138	37	chu	1	CA6DF2-21D	150kVA Diesel Generators Set Fawde Engine Model CA6DF2-21D from China manufactur
+powerzoo	139	38	chu	1	CA6DF2-21D	168kVA Diesel Generators Set Fawde Engine Model CA6DF2-21D from China manufactur
+powerzoo	140	39	chu	1	CA6DL1-27D	214kVA Diesel Generators Set Fawde Engine Model CA6DL1-27D from China manufactur
+powerzoo	141	40	chu	1	CA6DL2-32D	245kVA Diesel Generators Set Fawde Engine Model CA6DL2-32D from China manufactur
+powerzoo	142	41	chu	1	CA6DM2J-42D	313kVA Diesel Generators Set Fawde Engine Model CA6DM2J-42D from China manufactu
+powerzoo	143	42	chu	1	4B3.9-G1	Cummins Diesel Engine 4B3.9-G1 Power Diesel Generator-C25P5 from China manufactu
+powerzoo	144	43	chu	1	KTA38-G2B	938 kVA Diesel Generator Set Powered by Cummins Engine KTA38-G2B from China manu
+powerzoo	145	44	chu	1	QSK50-G7	1650kVA Cummins Large Range Generators QSK50-G7 from China manufacturer - POWERZ
+powerzoo	146	45	chu	1	KTA50-G8	1375kVA Cummins Large Range Generators Set KTA50-G8 from China manufacturer - PO
+powerzoo	147	46	chu	1	KTA19-G4	500kVA Cummins Diesel Generator Set KTA19-G4 -C500P5 from China manufacturer - P
+powerzoo	148	47	chu	1	NTAA855-G7A	450kVA Diesel Generators Cummins Genset NTAA855-G7A -C450S5 from China manufactu
+powerzoo	149	48	chu	1	NTA855-G1A	275kVA Diesel Generator Set Cummins Diesel Engine NTA855-G1A -C275P5 from China 
+powerzoo	150	49	chu	1	6ZTAA13-G3	388kVA Diesel Generator Cummins Diesel Engine 6ZTAA13-G3 -C388P5 from China manu
+powerzoo	151	50	chu	1	KTA50-GS8	1475kVA Cummins Large Range Generators Set KTA50-GS8 from China manufacturer - P
+powerzoo	152	51	chu	1	QSK95-G4	3363kVA Cummins Diesel Generator QSK95-G4 from China manufacturer - POWERZOO | D
+powerzoo	153	52	chu	1	QSK50-G16	1875kVA Cummins Engine Generator QSK50-G16 from China manufacturer - POWERZOO | 
+powerzoo	154	53	chu	1	KTA38-G2A	910kVA Cummins Engine Generators Set KTA38-G2A from China manufacturer - POWERZO
+powerzoo	155	54	chu	1	KTA50-G3	1250kVA Cummins Large Range Generators Set KTA50-G3 from China manufacturer - PO
+powerzoo	156	55	chu	1	KTA38-G2B	800kVA Cummins Engine Generators Set KTA38-G2B from China manufacturer - POWERZO
+powerzoo	157	56	chu	1	KTA38-G2A	1000 kVA Diesel Generator Set Powered by Cummins Engine KTA38-G2A from China man
+powerzoo	158	57	chu	1	KTA38-G4	1125 kVA Diesel Generator Set Powered by Cummins Engine KTA38-G4 from China manu
+powerzoo	159	58	chu	1	KTA38-G9	1250 kVA Diesel Generator Set Powered by Cummins Engine KTA38-G9 from China manu
+powerzoo	160	59	chu	1	KTA50-G3	1375 kVA Diesel Generator Sets Powered by Cummins Engine KTA50-G3 from China man
+powerzoo	161	60	chu	1	KTA50-G9	1575 kVA Diesel Generator Sets Powered by Cummins Engine KTA50-G9 from China man
+powerzoo	162	61	chu	1	QSX15-G8	450 kVA Diesel Generator Sets Powered by Cummins Engine QSX15-G8 from China manu
+powerzoo	163	62	chu	1	VTA28-G5	681 kVA Diesel Generator Sets Powered by Cummins Engine VTA28-G5 from China manu
+powerzoo	164	63	chu	1	QSK23-G3	910 kVA Diesel Generator Sets Powered by Cummins Engine QSK23-G3 from China manu
+powerzoo	165	64	chu	1	QST30-G3	1038 kVA Diesel Generator Sets Powered by Cummins Engine QST30-G3 from China man
+powerzoo	166	65	chu	1	QST30-G4	1138 kVA Diesel Genset Powered by Cummins Engine QST30-G4 from China manufacture
+powerzoo	167	66	chu	1	4B3.9-G2	Cummins Diesel Engine 4B3.9-G2 Diesel Generator-C28P5 from China manufacturer - 
+powerzoo	168	67	chu	8	JE493DB-04 / JE493DB-02 / JE493ZDB-04 / JE493ZLDB-02	ISUZU Series from China, ISUZU Series Manufacturer & Supplier - POWERZOO | Diese
+powerzoo	169	68	chu	10	3TNM68-GGE / 3TNV76-GGE / 3TNV88-GGE / 4TNV88-GGE	Yanmar Series from China, Yanmar Series Manufacturer & Supplier - POWERZOO | Die
+powerzoo	169	69	chu	10	3TNM74F-NGGE / 3TNV76-GGE / 3TNV82A-GGE / 3TNV82A-BGGE	Yanmar Series from China, Yanmar Series Manufacturer & Supplier - POWERZOO | Die
+powerzoo	170	70	chu	1	4TNV84T-BGGE	26kVA Yanmar Diesel Generators Engine Model 4TNV84T-BGGE from China manufacturer
+powerzoo	171	71	chu	1	4TNV84T-GGE	26kVA Yanmar Diesel Generators Engine Model 4TNV84T-GGE from China manufacturer 
+powerzoo	172	72	chu	1	4TNV88-BGGE	21kVA Yanmar Diesel Generators Engine Model 4TNV88-BGGE from China manufacturer 
+powerzoo	173	73	chu	1	4TNV88-GGE	21kVA Yanmar Diesel Generators Engine Model 4TNV88-GGE from China manufacturer -
+powerzoo	174	74	chu	1	3TNV88-BGGE	15kVA Yanmar Diesel Generators Engine Model 3TNV88-BGGE from China manufacturer 
+powerzoo	175	75	chu	1	3TNV88-GGE	15kVA Yanmar Diesel Generators Engine Model 3TNV88-GGE from China manufacturer -
+powerzoo	176	76	chu	1	3TNV82A-BGGE	12kVA Yanmar Diesel Generators Engine Model 3TNV82A-BGGE from China manufacturer
+powerzoo	177	77	chu	1	3TNV82A-GGE	12kVA Diesel Generators Yanmar Engine 3TNV82A-GGE from China manufacturer - POWE
+powerzoo	178	78	chu	1	3TNV76-GGE	9kVA Diesel Generators Yanmar Engine 3TNV76-GGE from China manufacturer - POWERZ
+repower-gas	101	0	chu,url	1	1-4bar	Supply Gas Generator 500kw With Two Years Warranty Wholesale Factory - Tianjin S
+repower-gas	1001	2	chu,url	2	12V190ZDT1-1 / 1FC6 series	Datasheet: &#xe785; 500Kw 60hz Gas Genset Specification.pdf
+rise-power	122	29	chu,url	17	4190T3-2 / 4190 ZLT1-2 / 6190 TL-2 / 12V190Z-2	Gas Powered Generator Set | Gas Generator | RISE Power
+rise-power	122	30	chu,url	2	16V165RQ / IFC2 561-4LB42	Gas Powered Generator Set | Gas Generator | RISE Power
+rise-power	122	31	chu,url	38	4BT3.9-GA / UCI224D / 4BTA3.9-GA / 4BTAA3.9-GA	Gas Powered Generator Set | Gas Generator | RISE Power
+ronsun-power	104	3	chu,url	1	12V190 Series	1000kW 1250kVA Natural Gas Generator Set - Ronsun Power
+ronsun-power	119	18	chu,url	1	H16V190ZLZ-2	1000kW 1250kVA Biogas Generator Set - Ronsun Power
+ronsun-power	149	48	chu,url	1	V12-Gas Series	500kW 625kVA Biogas Generator Set - Ronsun Power
+simpson-power	120	11	chu	10	4105DA / 4135ADT / 6135ADT / 6135RDT	SIMPSON- Natural gasis
+slong-power	105	4	chu,url	3	SL460 / SL550 / GB1000	China 10KW Triple Fuel Silent Soundproof Gasoline LPG Gas Generator Manufacturer
+slong-power	106	5	chu,url	4	SL390 / SL420 / SL440 / SL460	China 7kw Low Noise Gas Generator For Camping Home Backup Natural Gas LPG LNG CN
+slong-power	143	11	chu,url	6	SL390 / SL420 / SL460 / GB750	China Best Price LPG Generator 5kW To 20kW Models Available Manufacturers Factor
+sunkings	109	8	chu,url	1	DC 24V	500kw Gas Generator 625kva Natural Gas Generator Set Cummins genset
+taihai-taizhou	118	18	chu	25	4NG3.9-G1 / 4NG4.0-G1 / 4NG3.9TAA-G1 / 6NG6.0-G1	天然气发电机组-产品展示_泰州泰海机电设备有限公司
+tecnogen	2002	1	dongco	16	QSB5G3 / QSB5G4 / QSB5G5 / QSB5G6	Tecnogen Enermax (Cummins): model | kVA LTP/PRP 50 Hz | kVA LTP/PRP 60 Hz | engi
+tecnogen	2010	9	dongco	20	VTA28G5 / QST30G3 / QST30G4 / KTA38G5	Tecnogen Tenax (Cummins) open skid: model | kVA LTP/PRP 50 Hz | kVA LTP/PRP 60 H
+tide-power	2003	29	chu,url	1	TCG3016V16S	Gas Genset Selector Sheets (50Hz)
+victory-generator	117	24	chu,url	10	HG4B / HG6B / HGN14 / HGNT14	30KVA~625KVA Cummins Gas Generator Set
+victory-generator	118	25	chu,url	6	LPG210 / LPG2500 / LPG420 / LPG6500	2KW~10.5KW Gas(LPG) Portable Generator
+victory-generator	118	26	chu,url	6	LPG210 / LPG2500 / LPG420 / LPG6500	2KW~10.5KW Gas(LPG) Portable Generator
+victory-generator	119	27	url	8	VT2500CL / VT3000CL / VT3800CL / VT5000CL	2KW~8.8KW Gasoline Portable Generator
+victory-generator	119	28	url	8	VT2500CL / VT3000CL / VT3800CL / VT5000CL	2KW~8.8KW Gasoline Portable Generator
+victory-generator	124	36	url	1	LT420	4.5KW~5.5KW Gasoline Welding Generator
+victory-generator	130	45	url	2	LT620	8.5KW~10.5KW Gasoline Twin-cylinder Generator
+victory-generator	130	46	url	2	LT620	8.5KW~10.5KW Gasoline Twin-cylinder Generator
+victory-generator	131	47	url	4	LT420 / VT6500S / VT7500S	4.5KW~6.6KW Silent Gasoline Portable Generator
+victory-generator	131	48	url	4	LT420 / VT6500S / VT7500S	4.5KW~6.6KW Silent Gasoline Portable Generator
+victory-generator	132	49	url	4	LT620 / VT11000S / VT11000S-3	8.5KW~10.5KW Silent Gasoline Twin-cylinder Generator
+victory-generator	132	50	url	4	LT620 / VT11000S / VT11000S-3	8.5KW~10.5KW Silent Gasoline Twin-cylinder Generator
+weichai-heavy-machinery	104	3	url,ng	2	12M26G2N0/5 / 12M26G2N0/6	625 kVA Standard Land-based Generator Set-WEICHAI HEAVY MACHINERY CO.,LTD
+weichai-heavy-machinery	105	4	url,ng	2	6M33G6N0/5 / 6M33G6N0/6	500 kVA Standard Land-based Generator Set-WEICHAI HEAVY MACHINERY CO.,LTD
+weichai-heavy-machinery	112	11	url,ng	4	16M33G6N0/5 / 16M33G6N2/5 / 16M33G6N0/6 / 16M33G4N2/6	1350 kVA – 1500 kVA Standard Land-based Generator Set-WEICHAI HEAVY MACHINERY CO
+weichai-heavy-machinery	113	12	url,ng	2	12M33G10N0/5 / 12M33G14N0/6	1060 kVA – 1130 kVA Standard Land-based Generator Set-WEICHAI HEAVY MACHINERY CO
+weichai-power	125	19	ng	4	16M33G6N0/5 / 16M33G6N2/5 / 16M33G6N0/6 / 16M33G4N2/6	1350 kVA – 1500 kVA Standard Land-based Generator Set-Weichai Power official web
+weichai-power	126	20	ng	2	12M33G10N0/5 / 12M33G14N0/6	1060 kVA – 1130 kVA Standard Land-based Generator Set-Weichai Power official web
+weichai-power	127	21	ng	2	12M26G2N0/5 / 12M26G2N0/6	625 kVA Standard Land-based Generator Set-Weichai Power official website
+weichai-power	128	22	ng	2	6M33G6N0/5 / 6M33G6N0/6	500 kVA Standard Land-based Generator Set-Weichai Power official website
+weiman-fujian	101	0	chu,url	19	WT2.3D25E / WT2.3D33E / WT2.3D40E / WT4.1D66E	Gas Generator Set – WEIMAN
+welland-power	101	0	dongco	594	4M06G2D0/S / S1L2-J1 / S0L2-G1 / 4M06G4D0/S	Welland Power UK Diesel Generators
+westinpower	112	15	chu,url	16	E0834 E312 / E0834 E302 / E0836 E312 / E0834 LE312	Gas Generator Sets with MAN Engines | Westinpower
+westinpower	112	16	chu,url	30	E0834 E312 / UCI224D / E0834 E302 / UCI224F	Gas Generator Sets with MAN Engines | Westinpower
+westinpower	112	17	chu,url	8	E0834 LE322 / E0836 LE302 / E2876 TE302 / E2676 LE212	Gas Generator Sets with MAN Engines | Westinpower
+westinpower	112	18	chu,url	18	E0834 LE322 / UCI224G / E0836 LE302 / UCI274E	Gas Generator Sets with MAN Engines | Westinpower
+westinpower	114	21	chu,url	8	4M11G2N0/5 / 4M11G4N0/5 / 6M16G4N0/5 / 6M21G4N0/5	Natural Gas Generator Sets with Baudouin Engines | Westinpower
+westinpower	115	22	chu,url	7	4006-23TRS1 / 4006-23TRS2 / 4006-E23TRS4 / 4008-30TRS1	Gas Generator Sets with Perkins Engines | Westinpower
+westinpower	115	23	chu,url	8	4006-23TRS1 / 4006-E23TRS3 / 4006-23TRS2 / 4006-E23TRS4	Gas Generator Sets with Perkins Engines | Westinpower
+wintpower	101	0	dongco	49	4B3.9G2 / 4BT3.9G2 / 4BTA3.9-G11 / 6BT5.9G2	China Diesel Power Generator Set Cummins Dg Soundproof Silent Type Generating Ma
+xingguang-jiangsu	120	16	dongco	85	KTA38-G2A / KTA38-G5 / KTA38-G9 / KTA50-G3	1000-4000kVA-Jiangsu Starlight Electricity Equipment Co., Ltd
+xinshengan-shandong	101	0	chu	1	XSA-300	300kW燃气发电机组-新盛安动力科技（山东）有限公司
+xinshengan-shandong	102	1	chu	1	XSA-200	新盛安潍柴燃气发电机组-新盛安动力科技（山东）有限公司
+xinshengan-shandong	104	2	chu	1	12M26D605E300NG	300kW燃气发电机组-新盛安动力科技（山东）有限公司
+xinzhengfa	110	9	chu	18	295ZQ / 2100ZQ / K4100ZQ / K4102ZQ	燃气发电机组-郑州新郑发发电设备厂
+yingtai-jiangsu	114	25	chu	31	4B-G / 6B-G / 6BT-G / NT855-GA	燃气发电机组-英泰集团有限公司
