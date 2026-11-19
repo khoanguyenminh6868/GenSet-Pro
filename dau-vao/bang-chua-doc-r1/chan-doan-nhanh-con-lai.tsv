@@ -1,0 +1,212 @@
+ncc	n	bang	loai	so-dong	tieu-de-cot
+acepow-fuan	103	6	G	1	| Generating Set Model | Prime | Standby
+acepow-fuan	105	8	G	3	| Generating Set Model | Prime | Standby
+acepow-fuan	106	9	G	3	| Generating Set Model | Prime | Standby
+acepow-fuan	107	10	G	3	| Generating Set Model | Prime | Standby
+acepow-fuan	110	14	G	1	| Generating Set Model | Prime | Standby
+acepow-fuan	110	15	N	1	| APW-100 | 100% Load | 90% Load | 70% Load | 50% Load | 20% Load
+acepow-fuan	116	22	U	1	| Generating Set Model | Prime | Standby
+acepow-fuan	117	24	G	1	| Generating Set Model | Prime | Standby
+acepow-fuan	126	33	E	38	| Engine Model | | | | | | Model | Engine Power(KW) | Bore / stroke | Intake | Displacement | Adjustable rate | No of valves per cylinder | Rated | Standby | MM
+acepow-fuan	140	47	G	1	| Generating Set Model | Prime | Standby
+acepow-fuan	143	50	G	3	| Generating Set Model | Prime | Standby
+acepow-fuan	144	51	G	3	| Generating Set Model | Prime | Standby
+acepow-fuan	145	53	G	1	| Generating Set Model | Prime | Standby
+acepow-fuan	148	57	G	1	| Generating Set Model | Prime | Standby
+acepow-fuan	150	59	G	3	| Generating Set Model | Prime | Standby
+acepow-fuan	152	61	G	3	| Generating Set Model | Prime | Standby
+camda-generator	137	43	U	44	| Open Type | kVA | kW | kVA | kW
+camda-generator	137	44	U	25	| Open Type | kVA | kW | kVA | kW
+camda-generator	138	45	U	43	| Silent Canopy | kVA | kW | kVA | kW
+camda-generator	138	46	U	25	| Silent Canopy | kVA | kW | kVA | kW
+camda-generator	139	47	U	10	| Container type | kVA | kW | kVA | kW
+camda-generator	155	50	U	11	| Container type | kVA | kW
+camda-generator	157	52	U	36	| Silent Canopy | kVA | kW | kVA | kW
+camda-generator	157	53	U	36	| Silent Canopy | kVA | kW | kVA | kW
+camda-generator	158	54	U	36	| Open Type | kVA | kW | kVA | kW
+camda-generator	158	55	U	36	| Open Type | kVA | kW | kVA | kW
+conductorjasa	111	33	L	2	
+conductorjasa	124	52	U	12	| | Model | Mesin | Prime (kVA) | Standby (kVA) | Tipe
+conductorjasa	125	53	U	9	| | Model | Mesin | Prime (kVA) | Standby (kVA) | Tipe
+eastern-lion-fuan	154	58	G	21	| | Model | 50Hz Output (kW) | 50Hz Output (kVA) | 60Hz Output (kW) | 60Hz Output (kVA)
+excel-power-ningde	107	6	A	19	| Model | Output | Mounting Dimensions(mm) | Frame Dimensions(mm) | Weight(kg) | KW | KVA | A | B | C | D | E | F | G | H | K | a | b | h1 | h | L1 | L2 | g
+excel-power-ningde	108	7	A	9	| Model | Prime Output (1500rpm/50Hz) 400V | Prime Output (1800rpm/60Hz) 440V | KVA | KW | KVA | KW
+faraday-wuxi	102	1	A	11	| 型 号 | 额定容量(kVA) | 额定功率(kW) | 型 号 | 额定容量(kVA) | 额定功率(kW)
+faraday-wuxi	103	2	A	17	| 型 号 | 额定容量(kVA) | 额定功率(kW) | 型 号 | 额定容量(kVA) | 额定功率(kW)
+faraday-wuxi	106	6	A	16	| 型 号 | 额定容量(kVA) | 额定功率(kW) | 型 号 | 额定容量(kVA) | 额定功率(kW)
+frs-shenyang	107	6	G	23	| 机组型号 | 机组主用功率 （kW） | 控制器型号 | 气缸数 | 排量 | 缸数/排列 (mm) | 压缩比 | 机组尺寸 - 开架 (mm) | 机组重量 - 开架 (kg)
+frs-shenyang	108	7	G	27	| 型号 | 主用功率 （kW） | 主用功率 （kVA） | 相数 | 功率因数 | 缸径*行程 （mm） | 排量 （cc） | 尺寸 （mm） | 重量 （kg）
+frs-shenyang	108	8	G	10	| 型号 | 主用功率 （kW） | 主用功率 （kVA） | 相数 | 功率因数 | 缸径*行程 （mm） | 排量 （cc） | 尺寸 （mm） | 重量 （kg）
+googol	101	0	G	5	| No. | Gas Genset Model | Continuous Power（kW/kVA) | Frequency（Hz） | Voltage (V) | Generator Efficiency
+googol	102	2	G	6	| No. | Gas Genset Model | Continuous Power（kW/kVA) | Frequency（Hz） | Voltage (V) | Generator Efficiency
+googol	107	8	G	2	| Model | Engine (Output Power) | Genset (Typical Generation Output Power) | No. of Cylinders | Displacement (L) | Weight (kg) | Full Load Consumption (L/h) | Standby (kW) | Prime (kW) | Standby (kW/kVA) | Prime (kW/kVA)
+googol	109	9	G	5	| Model | Engine (Output Power) | Genset (Typical Generation Output Power) | No. of Cylinders | Displacement (L) | Weight (kg) | Full Load Consumption (L/h) | Standby (kW) | Prime (kW) | Standby (kW/kVA) | Prime (kW/kVA)
+googol	111	10	G	3	| Model | Engine (Output Power) | Genset (Typical Generation Output Power) | No. of Cylinders | Displacement (L) | Weight (kg) | Full Load Consumption (L/h) | | Standby (kW) | Prime (kW) | Standby (kW/kVA) | Prime (kW/kVA) | | | |
+googol	113	11	G	2	| Model | Engine (Output Power) | Genset (Typical Generation Output Power) | No. of Cylinders | Displacement (L) | Weight (kg) | Full Load Consumption (L/h) | Standby (kW) | Prime (kW) | Standby (kW/kVA) | Prime (kW/kVA)
+googol	115	12	G	2	| Model | Engine (Output Power) | Genset (Typical Generation Output Power) | No. of Cylinders | Displacement (L) | Weight (kg) | Full Load Consumption (L/h) | Standby (kW) | Prime (kW) | Standby (kW/kVA) | Prime (kW/kVA)
+googol	116	13	G	2	| Model | Engine (Output Power) | Genset (Typical Generation Output Power) | No. of Cylinders | Displacement (L) | Weight (kg) | Full Load Consumption (L/h) | Standby (kW) | Prime (kW) | Standby (kW/kVA) | Prime (kW/kVA)
+googol	117	14	G	2	| Model | Engine (Output Power) | Genset (Typical Generation Output Power) | No. of Cylinders | Displacement (L) | Weight (kg) | Full Load Consumption (L/h) | Standby (kW) | Prime (kW) | Standby (kW/kVA) | Prime (kW/kVA)
+gordon-power	117	17	G	28	| Model | Output | Current | Pole | Frq. | Speed | kW | kVA | A | Number | Hz | rpm
+green-power-generators	115	16	G	29	| | MODELLO MODEL | TIPO TYPE | POTENZA POWER | MOTORE ENGINE | SERBATOIO TANK | DIMENSIONI DIMENSIONS | PESO WEIGHT | DOWNLOAD | kVA - 50 Hz | MODELLO MODEL | REG | CIL. | CONSUMO AL 75% PRP CONSUMPTION AT 75% PRP | Lu | La | A | LEROY SOMER | LINZ | MECC ALTE | STAMFORD | PRP | ESP | N. | L/h | L 
+green-power-generators	117	18	G	19	| | MODELLO MODEL | TIPO TYPE | POTENZA POWER | MOTORE ENGINE | | SERBATOIO TANK | DIMENSIONI DIMENSIONS | PESO WEIGHT | DOWNLOAD | kVA - 50 Hz | MODELLO MODEL | REG | CIL. | CONSUMO AL 75% PRP CONSUMPTION AT 75% PRP | EMISSIONI EMISSIONS | DIESEL | UREA | Lu | La | A | LEROY SOMER | LINZ | MECC ALT
+green-power-generators	126	27	G	3	| | MODELLO MODEL | TIPO TYPE | POTENZA POWER | MOTORE ENGINE | DOWNLOAD | kVA - 50 Hz | kVA - 60 Hz | MODELLO MODEL | CARBURANTE FUEL | REG | CIL. | LEROY SOMER | LINZ | MECC ALTE | STAMFORD | PRP | ESP | PRP | ESP | N.
+green-power-generators	130	31	G	24	| | MODELLO MODEL | POTENZA POWER (PRP kVA) | POTENZA POWER (LTP kVA) | MOTORE ENGINE | CONSUMO CONSUMPTION (l/h) | SERBATOIO TANK (l) | DIMENSIONI (LxLxA) DIMENSIONS (LxWxH) (mm) | PESO WEIGHT (kg)
+green-power-generators	132	33	G	3	| | MODELLO MODEL | FARI LIGHTS (W) | SOLLEVAMENTO LIFTING | ALTEZZA MAX MAX HEIGHT (mt) | MOTORE ENGINE | GENERATORE GENSET (rpm) | POTENZA TOT TOT POWER (kVA) | RIMORCHIO STRADALE FAST TRAILER | EQUIPAGGIAMENTO EQUIPMENT
+green-power-generators	133	34	G	3	| | MODELLO MODEL | FARI LIGHTS (W) | SOLLEVAMENTO LIFTING | ALTEZZA MAX MAX HEIGHT (mt) | MOTORE ENGINE | GENERATORE GENSET (rpm) | POTENZA TOT TOT POWER (kVA) | RIMORCHIO STRADALE FAST TRAILER | EQUIPAGGIAMENTO EQUIPMENT
+green-power-generators	134	36	U	2	| | MODELLO MODEL | RACCORDO MANDATA DISCHARGE COUPLING (DN) | PORTATA FLOW (l/min) | PREVALENZA PRESSURE (mt) | PASSAGGIO SOLIDI SOLIDS HANDLING (mm) | POTENZA ASSORBITA ABSORBED POWER (PRP - kW) | POTENZA ASSORBITA ABSORBED POWER (Avviamento / Starting) | ALIMENTAZIONE FUELING
+green-power-generators	1001	41	L	33	
+hipower	1001	21	A	5	| (+/-1%) | MX341 AVR | Model for HRVW1375 | TWD 1683 GE
+hosem-power	106	5	U	15	| KW | KVA | Hz/ V | KW/RPM | LXWXH(mm) | (Kgs)
+interpower-international	2002	1	G	23	| Genset Model | Prime kVA | Standby kVA | Data Sheet
+jet-power	111	10	U	11	| KVA | KW | KVA | KW | (L) | (MM) | (L x W x H) | Kg | (L x W x H) | Kg
+jet-power	119	16	G	49	| MODEL | 3-PHASE 50Hz /380V-440V | 3-PHASE 60Hz / 416V-480V | PACKAGE | WEIGHT | (KVA) | (KW) | (KVA) | (KW) | LXWXH | kg
+jet-power	133	28	U	41	| KVA | KW | KVA | KW | (L) | (g•h) | (MM)
+kangjin-power	101	0	G	4	| | Model | Rated Power (kW@rpm) | Max Torque (N·m@rpm)
+kangjin-power	102	1	G	6	| | Model | Rated Power (kW@rpm) | Max Torque (N·m@rpm)
+kangwo-xiamen	101	3	G	17	| 机组型号 | 功率 KW KVA | 长X宽X高（cm） | 重量（kg）
+keliang-fuan	108	4	G	25	| Model | Output | Installing dimensions | External dimensions | KW | KVA | A | B | C | D | E | F | G | H | K | a | b | h1 | h | L1 | L2
+keliang-fuan	124	6	G	19	| Model | Output (kW) | Installing Dimensions | External Dimensions | A | B | C | D | E | F | G | H | K | a | b | h1 | h | L1 | L2 | g
+kente-power	103	4	K	23	| uhlobo lwe-genset | okukhiphayo okukaliwe | injini | i-alternator | KW/KVA | imodeli | amandla alinganiselwe | imodeli
+kente-power	103	5	K	8	| uhlobo lwe-genset | okukhiphayo okukaliwe | injini | i-alternator | KW/KVA | imodeli | amandla alinganiselwe | imodeli
+kente-power	103	6	K	19	| uhlobo lwe-genset | okukhiphayo okukaliwe | injini | i-alternator | KW/KVA | imodeli | amandla alinganiselwe | imodeli
+kente-power	106	8	K	23	| uhlobo lwegenset | imveliso rated | injini | ialternator | KW/KVA | imodeli | amandla alinganisiwe | imodeli
+kente-power	106	9	K	8	| uhlobo lwegenset | imveliso rated | injini | ialternator | KW/KVA | imodeli | amandla alinganisiwe | imodeli
+kente-power	106	10	K	19	| uhlobo lwegenset | imveliso rated | injini | ialternator | KW/KVA | imodeli | amandla alinganisiwe | imodeli
+kente-power	108	11	K	24	| Umzekelo weGenset | 50HZ PF=0.8 400/230V 3Phase 4Wire | Imodeli yeNjini | cyl | Bore | IStorke | ukufuduswa | Irhuluneli | Vula Uhlobo loMda | Amandla okulinda | Prime Power | I-Cons 100% (L/H) | KVA/KW | KVA/KW | MM | MM | L | | L×W×H (MM) | Ubunzima KG
+kente-power	115	13	K	8	| seòrsa genset | toradh air a mheas | einnsean | alternator | KW/KVA | modail | cumhachd air a mheas | modail
+kente-power	118	15	K	24	| Model Genset | 50HZ PF=0.8 400/230V 3Cyfnod 4Wire | Model Injan | cyl | Bore | Strôc | dadleoli | Llywodraethwr | Dimensiwn Math Agored | Pŵer Wrth Gefn | Prif Bwer | Anfanteision 100% （L/H） | KVA/KW | KVA/KW | MM | MM | L | | L × W × H （MM） | Pwysau KG
+kente-power	121	16	K	23	| typ agregátu | menovitý výkon | motora | alternátor | KW/KVA | Model | menovitý výkon | Model
+kente-power	121	17	K	8	| typ agregátu | menovitý výkon | motora | alternátor | KW/KVA | Model | menovitý výkon | Model
+kente-power	128	18	K	24	| Nooca Genset | 50HZ PF=0.8 400/230V 3 Wajiga 4 Wire | Qaabka Matoorka | cyl | Bore | Storke | barakac | Gudoomiye | Fur nooca cabbirka | Awoodda Joogtada | Awoodda Koowaad | Qasaarooyinka 100% (L/H) | KVA/KW | KVA/KW | MM | MM | L | | L×W×H(MM) | Miisaanka KG
+kente-power	130	19	K	24	| Model generátora | 50HZ PF=0,8 400/230V 3fázový 4dr. | Model motora | cyl | Bore | Storke | posunutie | guvernér | Otvorený rozmer typu | Pohotovostný režim | Prime Power | Nevýhody 100 % (L/H) | KVA/KW | KVA/KW | MM | MM | L | | D×Š×V（MM） | Hmotnosť KG
+kente-power	135	20	K	24	| Tauira Genset | 50HZ PF=0.8 400/230V Waea 3Waea 4 | Tauira Miihini | cyl | Poaka | Taaka | whakanekehanga | Kawana | Tuwhera Momo Ahu | Mana Tatari | Te Mana Pirimia | He kino 100%（L/H） | KVA/KW | KVA/KW | MM | MM | L | | L×W×H（MM） | Taumaha KG
+kente-power	136	21	K	23	| mofuta oa genset | tlhahiso e lekantsoeng | enjene | alternator | KW/KVA | mohlala | matla a lekantsoeng | mohlala
+kente-power	137	22	K	24	| Mudell Genset | 50HZ PF=0.8 400/230V 3Phase 4Wire | Mudell tal-Magna | cil | Bore | Storke | spostament | Gvernatur | Dimensjoni tat-Tip Miftuħ | Qawwa Standby | Qawwa Prim | Żvantaġġi 100% (L/H) | KVA/KW | KVA/KW | MM | MM | L | | L×W×H（MM） | Piż KG
+kente-power	145	23	K	23	| karazana genset | vokatra nomena | maotera | alternator | KW/KVA | MODELY | fahefana nomena | MODELY
+kente-power	145	24	K	8	| karazana genset | vokatra nomena | maotera | alternator | KW/KVA | MODELY | fahefana nomena | MODELY
+kente-power	145	25	K	19	| karazana genset | vokatra nomena | maotera | alternator | KW/KVA | MODELY | fahefana nomena | MODELY
+kente-power	147	26	K	23	| Genset Typ | bewäert Ausgang | motor | Alternator | KW/KVA | Modell | bewäert Kraaft | Modell
+kente-power	147	27	K	8	| Genset Typ | bewäert Ausgang | motor | Alternator | KW/KVA | Modell | bewäert Kraaft | Modell
+kente-power	147	28	K	19	| Genset Typ | bewäert Ausgang | motor | Alternator | KW/KVA | Modell | bewäert Kraaft | Modell
+kente-power	149	29	K	19	| ģenseta tips | nominālā jauda | dzinējs | ģenerators | KW/KVA | modelis | nominālā jauda | modelis
+kente-power	154	31	K	23	| tegund gensets | metið framleiðsla | vél | alternator | KW/KVA | fyrirmynd | nafnafli | fyrirmynd
+kente-power	154	32	K	19	| tegund gensets | metið framleiðsla | vél | alternator | KW/KVA | fyrirmynd | nafnafli | fyrirmynd
+kente-power	155	33	K	24	| Modely Genset | 50HZ PF=0.8 400/230V 3 Phase 4 Wire | Modely motera | cyl | niteraka | Storke | famindran-toerana | governora | Open Type Dimension | Hery mijoro | Prime Power | Ny ratsy 100% (L/H) | KVA/KW | KVA/KW | MM | MM | L | | L×W×H（MM） | Lanja KG
+kente-power	157	34	K	23	| yam genset | rated tso zis | cav | alternator | KW/KVA | qauv | rated zog | qauv
+kente-power	157	35	K	8	| yam genset | rated tso zis | cav | alternator | KW/KVA | qauv | rated zog | qauv
+kente-power	157	36	K	19	| yam genset | rated tso zis | cav | alternator | KW/KVA | qauv | rated zog | qauv
+kente-power	160	38	K	24	| Genset modelis | 50 HZ PF = 0,8 400/230 V 3 fazių 4 laidų | Variklio modelis | cil | Gręžimas | Gandras | poslinkis | gubernatorius | Atidarykite tipo matmenis | Maitinimas budėjimo režimu | Pirminė galia | Minusai 100% (L/H) | KVA/KW | KVA/KW | MM | MM | L | | P × P × A (MM) | Svoris KG
+kente-power	161	39	K	24	| Genset modelis | 50 HZ PF=0,8 400/230 V 3 fāzu 4 vadu | Dzinēja modelis | cil | Urbums | Stārķis | pārvietošanās | gubernators | Atveriet tipa izmēru | Gaidstāves barošana | Galvenā jauda | Mīnusi 100% (L/H) | KVA/KW | KVA/KW | MM | MM | L | | G × P × A (MM) | Svars KG
+kente-power	164	40	K	24	| Modela Genset | 50HZ PF=0,8 400/230V 3Phase 4Wire | Modela motorê | cyl | Kolîn | Storke | jicîhûwarkirin | Walî | Pîvana Tîpa Vekirî | Standby Power | Hêza Serokwezîr | Kêmasî 100% (L/H) | KVA/KW | KVA/KW | MM | MM | L | | L×W×H（MM） | Giraniya KG
+kente-power	167	41	K	24	| Genset líkan | 50HZ PF=0,8 400/230V 3fasa 4víra | Vélargerð | cyl | Bore | Storke | tilfærslu | ríkisstjóri | Opna tegundarvídd | Standby Power | Prime Power | Gallar 100%（L/H） | KVA/KW | KVA/KW | MM | MM | L | | L×B×H（MM） | Þyngd KG
+kente-power	168	42	K	24	| Genset Qauv | 50HZ PF = 0.8 400/230V 3phase 4Wire | Cav Qauv | cil | Npog | Storke | hloov chaw | Tus tswv xeev | Qhib Hom Dimension | Standby Fais Fab | Prime hwj chim | Cons 100% (L / H) | KVA/KW | KVA/KW | MM | MM | L | | L × W × H (MM) | Nyhav KG
+kente-power	170	43	K	24	| Ke Ana Hoʻohālike Genset | 50HZ PF=0.8 400/230V 3Phase 4Uea | Hoʻohālike ʻenekini | cyl | ʻAha | Storke | ka hoʻoneʻe ʻana | Kiaaina | Wehe ʻAno Ana | Mana Kū | Mana Nui | He 100%（L/H） | KVA/KW | KVA/KW | MM | MM | L | | L×W×H（MM） | Kaumaha KG
+kente-power	171	44	K	24	| Genset Modèl | 50HZ PF = 0.8 400/230V 3Phase 4Wire | Modèl motè | sil | raz | Storke | deplasman | Gouvènè | Louvri Kalite Dimansyon | Sispansyon pouvwa | Premye pouvwa | Dezavantaj 100% (L/H) | KVA/KW | KVA/KW | MM | MM | L | | L×W×H（MM） | Pwa KG
+kente-power	173	45	K	24	| გენსეტი მოდელი | 50HZ PF=0.8 400/230V 3ფაზიანი 4მავთული | ძრავის მოდელი | ცილი | მოწყენილი | სტორკი | გადაადგილება | გუბერნატორი | ღია ტიპის განზომილება | ლოდინის სიმძლავრე | Prime Power | მინუსები 100% (L/H) | კვა/კვტ | კვა/კვტ | MM | MM | L | | L×W×H(MM) | წონა კგ
+kente-power	174	46	K	24	| Modelo de grupo electrógeno | 50 HZ PF = 0,8 400/230 V trifásico 4 cables | Modelo de motor | cil | Aborrecer | Cegoña | desprazamento | Gobernador | Dimensión de tipo aberto | Alimentación en espera | Poder Primeiro | Contras 100% (L/H) | KVA/KW | KVA/KW | MM | MM | L | | L×W×H (MM) | Peso KG
+kente-power	179	49	K	24	| Model generatora | 50HZ PF=0.8 400/230V 3fazna 4žica | Model motora | cyl | Dosadno | Štorke | pomak | Guverner | Otvorena dimenzija tipa | Napajanje u stanju pripravnosti | Prime Power | Nedostaci 100% (L/H) | KVA/KW | KVA/KW | MM | MM | L | | D×Š×V (MM) | Težina KG
+kente-power	180	50	K	24	| Modellu Genset | 50HZ PF = 0.8 400/230V 3Phase 4Wire | Mudellu di mutore | cil | Bore | Cicogna | spustamentu | guvernatore | Dimensione di tipu aperta | Power Standby | Primu Power | Cons 100% (L/H) | KVA/KW | KVA/KW | MM | MM | L | | L × L × H (MM) | Pesu KG
+kofo	101	0	E	13	| 系列 | 序号 | 型号 | 缸数/缸径/行程(mm) | 总排量(L) | 燃烧方式 | 进气方式 | 标定功率/转速(kw/min) | 净质量(含水箱、空滤器、不含消声器)(kg) | 外形尺寸(含水箱、空滤支架，不含空滤器、消声器)(mm) | 冷却液容积(L) | 润滑油容积(L) | 飞轮壳/飞轮接口 | 建议配套机组功率(kW)
+landtop-fuzhou	114	2	G	9	| Model | Rated Output (KW) | Current (A) | Voltage (V) | Rated Speed (r/min) | Frequency (Hz) | N,W (kg) | G.W (kg) | Size(cm) | 20″ PCS | Series Connection | Parallel Connection | Series Connection | Parallel Connection
+landtop-fuzhou	115	3	G	11	| Model | Rated Output (KW) | Rated Capacity (Kva) | Rated Current (A) | Rated Speed (r/min) | Rated Voltage (V) | Frequency (Hz) | N,W (kg) | G.W (kg) | Size(cm) | 20″ PCS
+lanzhou-electric	102	0	G	15	| 型号 | 额定容量 KVA | 额定功率 KW | 额定电流 A | 额定转速 r/min | 效率 % | 重量 kg | 最大功率 KW | 型号 | 额定容量 KVA
+lees-power	133	31	G	20	| Model | Electrical Power KW | Efficiency (%) | Nox mg/m3 | Dimensions L×W×H (mm) | Weight (kg) | Specifications | LEES | MTU | Electrical Efficiency | Thermal Efficiency | Total Efficiency
+longkai-power	113	3	G	112	| Model | KW/3PH/50Hz | 1PH/50Hz | Dimension(cm) | Weight(kg) | PDF
+mamo-power	103	2	U	22	| (KW) | (KVA) | (KW) | (KVA) | (KW)
+mamo-power	103	3	U	16	| (KW) | (KVA) | (KW) | (KVA) | (KW)
+mamo-power	109	9	U	22	| (KW) | (KVA) | (KW) | (KVA) | (KW)
+man-engines	1006	24	L	5	
+man-engines	1006	32	L	8	
+man-engines	1006	35	L	13	
+mecca-power	144	17	U	34	| KVA / KW | KVA/KW | Model | Origin | L/H(100%) | L | L*W*H (MM) | KGS
+mecca-power	159	21	U	17	| KVA / KW | KVA/KW | Model | Origin | L/H(100%) | L | L*W*H (MM) | KGS
+mingbang-mbkl	101	0	U	37	| Item | Alternator Model | Prime Power | MB Series | RPM | Frequency (HZ) | KW | KVA
+mwm	1016	41	L	4	
+nenjo-generator	101	0	G	46	| High base | ModeL | KW | KW | 机座高 | 型 号 | 三相 Three phase 50H1500RPM400V | 三相 Three phase 60HZ1800RPM440V | 常用 Prime power 40℃ | 备用 Standby power 27℃ | 常用 Prime power 40℃ | 备用 Standby power 27℃
+nenjo-generator	111	6	G	46	| High base | ModeL | KW | KW | 机座高 | 型 号 | 三相 Three phase 50H1500RPM400V | 三相 Three phase 60HZ1800RPM440V | 常用 Prime power 40℃ | 备用 Standby power 27℃ | 常用 Prime power 40℃ | 备用 Standby power 27℃
+penlucky	116	7	G	3	| Model | Rated power output (kW@RPM) | Peak torque (N.m@RPM) | Cylinders | Displacement (L) | Aspiration
+penlucky	119	8	G	8	| Model | Rated power output (kW@RPM) | Peak torque (N.m@RPM) | Cylinders | Displacement (L) | Aspiration
+penlucky	120	9	G	4	| Model | Rated power output (kW@RPM) | Peak torque (N.m@RPM) | Cylinders | Displacement (L) | Aspiration
+power-hf	102	2	E	4	| 系列 | 型号 | 标定功率(kW) | 1h功率(kW) | 转速（rpm) | 进气方式 | 调速方式 | 适配机组
+power-hf	103	4	E	6	| 系列 | 型号 | 标定功率(kW) | 1h功率(kW) | 转速（rpm) | 进气方式 | 调速方式 | 适配机组 (常用功率/备用功率)
+power-hf	104	6	E	3	| 系列 | 机器型号 | 标定功率(kW) | 1h功率(kW) | 转速（rpm) | 进气方式 | 调速方式 | 适配机组 (常用功率/备用功率)
+power-hf	108	9	E	6	| 系列 | 型号 | 标定功率(kW) | 1h功率(kW) | 转速（rpm) | 进气方式 | 调速方式 | 适配机型 | R系列燃气发动机 | PHF3020ZX1Q | 20 | 22 | 1500 | 自然吸气 | 电子 | 发电机组
+rise-power	103	1	A	36	| Alternator Model | Prime Power | Voltage (V) | Rated Current (A) | Frequency (Hz) | Dimension (CM) | Quantity for 20' Container | Quantity for 40' Container | kW | kVA
+rise-power	104	2	U	44	| Model | New Model | kVA, 50Hz, 3P, 40oC/27℃ | Net Weight (kg) | Package Dimension (mm) | Sets /Package | Continuous (kVA) | Standby (kVA)
+rise-power	105	3	A	17	| Alternator Model | Prime Power | Voltage (V) | Rated Current (A) | Frequency (Hz) | kW | kVA
+rise-power	128	32	L	60	
+rise-power	131	34	G	20	| Model | Standby Power(kW) | Cylinders | Displacement (L) | Fuel Consumption(L/h) | Oil Consumption(g/kWh) | Lube Capacity(L) | Coolant Capacity(L) | Dimensions | L*W*H(mm) | Weight (kg)
+sanq-power	107	10	U	28	| kW/kVa | kW/kVa | Open type | Silent type | Open Type | Silent type
+sanq-power	107	11	U	22	| kW/kVa | kW/kVa | Open type | Silent type | Open Type | Silent type
+sanq-power	108	13	U	21	| kW/kVa | kW/kVa | Open type | Silent type | Open Type | Silent type
+shengfeng-fuan	104	2	G	11	| 型号 | 额定功率 (kW) | 额定容量 (kVA) | 额定电流 (A) | 功率因数 (cos&Phi;) | 额定转速 (r/min)
+shengfeng-fuan	106	4	G	35	| 型号 | 额定功率 (KW) | 额定功率 (KVA) | 频率 (HZ) | 电压 (v)
+shengfeng-fuan	111	7	G	35	| Model | Rated Power (KW) | Rated Capacity (KVA) | Fre. (HZ) | Voltage (v)
+sincro-soga	124	0	A	5	| model | frame size (mm) | kVA (S1) – H class – p.f.1 230V 50 Hz | efficiency 4/4 50 Hz
+sincro-soga	126	2	A	6	| model | frame size (mm) | kW (S1) – H class 400V 50 Hz | kW (S1) – H class 230V 50 Hz | efficiency 4/4 p.f. 0,8 50 Hz
+sincro-soga	131	7	A	9	| model | kVA stand by 400V 50 Hz | kVA (S1) – H class 400V 50 Hz | efficiency 4/4 p.f. 0,8 50 Hz | leads
+sincro-soga	132	8	A	5	| model | kVA stand by 400V 50 Hz | kVA (S1) – H class 400V 50 Hz | efficiency 4/4 p.f. 0,8 50 Hz | LEADS
+sincro-soga	135	11	A	6	| model | kVA stand by 230V 50 Hz | kVA (S1) – H class 230V 50 Hz | efficiency 4/4 p.f. 0,8 50 Hz | LEADS
+sincro-soga	140	16	A	2	| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz
+sincro-soga	141	17	A	5	| model | frame size mm | kVA (S1) – H class 230V 50 Hz | kVA (S1) – H class 240V 60 Hz
+sincro-soga	142	18	A	5	| model | frame size mm | kVA (S1) – H class 400V 50 Hz | kVA (S1) – H class 480V 60 Hz
+sincro-soga	144	20	A	7	| model | A | kW @28 VDC
+sincro-soga	146	22	A	8	| model | A | kW @56 VDC
+sincro-soga	148	24	A	9	| model | A | kW @28 VDC
+sincro-soga	150	26	A	12	| model | A | kW @56 VDC
+stemac	101	2	U	7	| | MOD | STANDBY | PRIME | COP | MARCA | MODELO | *Cons Nm3/h | kVA | kWe | CV | kVA | kWe | CV | kVA | kWe | CV
+superwatt-swt	102	1	G	4	| Model | Frequency | Phase / Voltage | Prime Power | Standby Power | Rated Speed
+superwatt-swt	111	13	E	4	| Engine Model | Standby Power | 100% Prime Power | 75% Prime Power
+superwatt-swt	123	23	G	3	| Model | Prime Power | Standby Power | Frequency | Rated Speed | Voltage | Power Factor
+superwatt-swt	135	36	U	13	| Model | Configuration Reference | Prime Power | Standby Power | Frequency | Voltage
+teksan	101	0	G	931	| | COMPARE | Model | Phase | Hz | Power 9 - 45 kVA 46 - 110 kVA 111 - 179 kVA 180 - 300 kVA 301 - 499 kVA 500 - 749 kVA 750 - 999 kVA 1000 - 1499 kVA 1500 - 2500 kVA 2501 - 4500 kVA | Voltage | Engine | ALL | Standby (ESP) | Prime (PRP) | kVA | kW | kVA | kW
+teksan	102	1	G	68	| | COMPARE | Model | Phase | Hz | Power 9 - 45 kVA 46 - 110 kVA 111 - 179 kVA 180 - 300 kVA 301 - 499 kVA 500 - 749 kVA 750 - 999 kVA 1000 - 1499 kVA 1500 - 2500 kVA 2501 - 4500 kVA | Voltage | Engine | ALL | Standby (ESP) | Prime (PRP) | kVA | kW | kVA | kW
+teksan	104	3	G	110	| | COMPARE | Model | Phase | Hz | Power 9 - 45 kVA 46 - 110 kVA 111 - 179 kVA 180 - 300 kVA 301 - 499 kVA 500 - 749 kVA 750 - 999 kVA 1000 - 1499 kVA 1500 - 2500 kVA 2501 - 4500 kVA | Voltage | Engine | ALL | Standby (ESP) | Prime (PRP) | kVA | kW | kVA | kW
+teksan	106	5	G	71	| | COMPARE | Model | Phase | Hz | Power 9 - 45 kVA 46 - 110 kVA 111 - 179 kVA 180 - 300 kVA 301 - 499 kVA 500 - 749 kVA 750 - 999 kVA 1000 - 1499 kVA 1500 - 2500 kVA 2501 - 4500 kVA | Voltage | Engine | ALL | Standby (ESP) | Prime (PRP) | kVA | kW | kVA | kW
+vantek-jiangsu	111	13	G	4	| 柴油发电机组 | 电动潜水泵 | 发电功率 KW | 排水总流量 m3/h | 扬程 m
+victory-generator	102	2	A	50	| New Model | Old Model | 60HZ 380-400V Standard | 60HZ/416V or YY 208V | 60HZ/440-460V or YY 220V | 60HZ /480V or YY 240V | 60HZ/380-400V Special winding) | KW/Cont. | KW/Standby | KW/Cont. | KW/Standby | KW/Cont. | KW/Standby | KW/Cont. | KW/Standby | KW/Cont. | KW/Standby
+victory-generator	109	14	U	24	| Genset Model | Fre. (HZ) | Prime Power | Stanby Power | Model | Cylinder | Model | Rated current (based on 400V) | IP | Protection Grade | KW | KVA | KW | KVA
+vpower-hk	101	0	G	15	| | 输出 | 效率 | | 型号 | 电能 (kWe) | 热能 (kW) | 电能 (%) | 热能 (%) | 整体 (%)
+vpower-hk	102	1	G	11	| | 输出 | 效率 | | 型号 | 电能 (kWe) | 热能 (kW) | 电能 (%) | 热能 (%) | 整体 (%)
+wartsila	101	1	L	5	
+wartsila	101	3	L	7	
+wartsila	101	5	L	7	
+wartsila	101	7	L	6	
+wartsila	101	9	L	7	
+wartsila	101	11	L	8	
+westinpower	113	19	G	3	| N0. | Genset Model | Rated Power | Engine Model | Cylinder | Bore*Stroke (mm) | Displacement (L) | Dimensions | kW | kVA | L*W*H (mm)
+westinpower	113	20	U	2	| N0. | Genset Model | Rated Power | Cylinder | Bore*Stroke (mm) | Displacement (L) | Rated Current (A) | Battery | Breaker Model | Dimensions | Weight | kW | kVA | L*W*H (mm) | (kg)
+winco	1007	11	L	6	
+xingguang-jiangsu	115	14	A	19	| 型号 | 功率 (KW) | 型号 | 功率 (kw) | 型号 | 功率 (kw)
+xingguang-jiangsu	119	15	A	14	| 功率（ kw ） | 型号 | 功率（ kw ） | 型号
+xinhengxin-fujian	108	7	G	42	| MODEL | Rate Power （KW） | Rate Capacity （KW） | Fre. (Hz) | Voltage (V)
+xinhengxin-fujian	110	9	G	8	| Model | Output | Current(A) | Voltage(V) | Rated P.F | No.of poles | Speed(r.p.m) | Volt.regulation | (kW) | Series | Parallel | Series | Parallel | (CosΦ) | 50HZ | 60HZ | (%)
+xinhengxin-fujian	118	17	G	10	| Model | Prime | Voltage | Current | No.of pole | Speed | Volt.regulation | (kW) | (kVA) | (V) | (A) | (r.p.m) | (%)
+xinhengxin-fujian	1002	23	L	2	
+yihua-fujian	105	4	G	13	| Model | Rated Power (KW/KVA) | Rated Volt(V) | Rated Curr. (A) | Rated Speed (r/min) | Frequency (Hz) | Max.directly-starting Motor (kW)
+yingtai-jiangsu	101	0	G	57	| 机组型号 Genset Model | 功率（主用） | 功率（备用） | 电流（主用） Power(A) | 电流（备用） Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimensions L*W*H(m) | KW | KVA | KW | KVA
+yingtai-jiangsu	101	1	G	57	| 品 牌 Br and | 发 动 机 型 号 En g ine Ty pe | 功 率 (主用) Power (KW) | 功率 (备用) Po wer (KW) | 缸 数 No Of Cylin ders | 缸径 *行程 Bore /Strokse (MM) | 排 气 量 Exha ust Csp acity (L) | 压 缩 比 Com pression Ratio | 机 油 容 量 Lubri cating Cap acity (L) | 燃油耗 Fuel Consu mptio (G / KW.H) | 燃油消耗率 Fuel Con sum ptio (L/H) | 调 
+yingtai-jiangsu	102	2	U	5	| 型号 model | 额定功率 rated power(KW) | 原动机 Prime mover | 功率 power (KW) | 燃油消耗量 SFOC (L/h) | 外形尺寸 size（mm） | 净重 weight kg | L | B | H
+yingtai-jiangsu	102	3	U	5	| 型号 model | 额定功率 rated power(KW) | 原动机 Prime mover | 功率 power (KW) | 燃油消耗量 SFOC (L/h) | 外形尺寸 size（mm） | 净重 weight kg | L | B | H
+yingtai-jiangsu	102	4	U	6	| 型号 model | 额定功率 rated power(KW) | 原动机 Prime mover | 功率 power (KW) | 燃油消耗量 SFOC (L/h) | 外形尺寸 size（mm） | 净重 weight kg | L | B | H
+yingtai-jiangsu	104	7	G	47	| 机组型号 Genset Model | 主用功率（主用） | 备用功率（备用） | 电流（主用） Power(A) | 电流（备用） Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimensions L*W*H(m) | 品牌 Brand | KW | KVA | KW | KVA
+yingtai-jiangsu	104	8	E	47	| 发动机型号 Engine Type | 功 率(主用) Power (KW) | 功率 (备用) Power (KW) | 缸数 No Of Cylin ders | 缸径 *行程 Bore /Stro kse (MM) | 排气量 Exha ust Cspa city(L) | 压缩比 Comp ression Ratio | 机油容量 Lubri cating Cap acity (L) | 燃油耗 Fuel Consu mptio (G /KW.H) | 燃油耗 Fuel Cons umptio (L/H) | 调速方式 Type Of Go vernor | 冷却液容量 Liqui
+yingtai-jiangsu	105	9	G	48	| 机组型号 Genset Model | 功率（主用） | 功率（备用） | 电流（主用） Power(A) | 电流（备用） Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimensions L*W*H(m) | 品牌 Brand | KW | KVA | KW | KVA
+yingtai-jiangsu	105	10	E	48	| 发动机 型号 Engine Type | 功率( 主用) Power (KW) | 功率( 备用) Power (KW) | 缸数 No Of Cylin ders | 缸径*行程 Bore /Strokse (MM) | 排气量 Exhau st Cs pa city (L) | 压缩比 Compre ssion Ratio | 机油容量 Lubri cating Cap acity (L) | 燃油耗 Fuel Consu mptio (G/ KW.H) | 燃油耗 Fuel Consum ptio (L /H) | 调速方式 Type Of Gover nor | 冷却液容量 Liq
+yingtai-jiangsu	107	13	G	69	| 机组型号 Genset Model | 功率（主用） | 功率（备用） | 电流（主用） Power(A) | 电流（备用） Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimensions L*W*H(m) | 品牌 Brand | KW | KVA | KW | KVA
+yingtai-jiangsu	109	17	G	77	| 机组型号 | 功率（主用） | 功率（主用） | 功率（备用） | 功率（备用） | 电流（主用） | 电流（备用） | 净重 | 外形尺寸 | 品牌 | KW | KVA | KW | KVA | A | A | kg | m*m*m
+yingtai-jiangsu	112	22	G	19	| 机组型号 Engine Type | 功率（主用） | 功率（备用） | 电流（主用） Power(A) | 电流（备用） Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimensions L*W*H(m) | KW | KVA | KW | KVA
+yingtai-jiangsu	112	23	E	19	| 发动机 型号 Engine Type | 功率 (主用) Power (KW) | 功率 (备用) Power (KW) | 缸数 No Of Cylin ders | 缸径*行程 Bore/ Stro kse (MM) | 排气量 Exhaust Cspa city (L) | 压缩比 Compr ession Ratio | 机油容量 Lubrica ting Capacity (L) | 燃油耗 Fuel Consum ptio (G/ KW.H) | 燃油耗 Fuel Consum ptio (L/H) | 调速方式 Type Of Gover nor | 冷却液容量 Liquid
+yingtai-jiangsu	115	27	G	19	| 型号 | 容量KVA | 功率KW | 电压V | 电流A | 相数 | 频率HZ | 防护等级IP | 绝缘等级 | 调压率%
+yingtai-jiangsu	116	28	G	45	| 型号 | 容量KVA | 功率KW | 电压V | 电流A | 相数 | 频率HZ | 防护等级IP | 绝缘等级 | 调压率%
+yingtai-jiangsu	118	29	G	37	| 机组型号 Genset Model | 功率（主用） | 功率（备用） | 电流（主用） Power(A) | 电流（备用） Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimensions L*W*H(m) | 品牌 Brand | KW | KVA | KW | KVA
+yingtai-jiangsu	118	30	E	37	| 发动机型 Engine Type | 功率(主用) Power(KW) | 功率(备用) Power(KW) | 缸数 NoOf Cylinders | 缸径 *行程 Bore /Stroks (MM) | 排气量 Exhaust Cspacity (L) | 压缩比 Compre ssion Ratio | 机油容量 Compre ssion Ratio | 燃油耗 Fuel Consu mptio (G/KW.H) | 燃油耗 Fuel Consumptio (L/H) | 调速方式 Type Of Governor | 冷却液容量(L) Liquid coolind capacity
+yingtai-jiangsu	2001	32	E	36	| 发动机型 Engine Type | 功率(主用) Power(KW) | 功率(备用) Power(KW) | 缸数 NoOf Cylinders | 缸径 *行程 Bore /Stroks (MM) | 排气量 Exhaust Cspacity (L) | 压缩比 Compre ssion Ratio | 机油容量 Compre ssion Ratio | 燃油耗 Fuel Consu mptio (G/KW.H) | 燃油耗 Fuel Consumptio (L/H) | 调速方式 Type Of Governor | 冷却液容量(L) Liquid coolind capacity
+yingtai-jiangsu	2003	34	G	56	| 品 牌 Br and | 发 动 机 型 号 En g ine Ty pe | 功 率 (主用) Power (KW) | 功率 (备用) Po wer (KW) | 缸 数 No Of Cylin ders | 缸径 *行程 Bore /Strokse (MM) | 排 气 量 Exha ust Csp acity (L) | 压 缩 比 Com pression Ratio | 机 油 容 量 Lubri cating Cap acity (L) | 燃油耗 Fuel Consu mptio (G / KW.H) | 燃油消耗率 Fuel Con sum ptio (L/H) | 调 
+yingtai-jiangsu	2006	37	E	46	| 发动机型号 Engine Type | 功 率(主用) Power (KW) | 功率 (备用) Power (KW) | 缸数 No Of Cylin ders | 缸径 *行程 Bore /Stro kse (MM) | 排气量 Exha ust Cspa city(L) | 压缩比 Comp ression Ratio | 机油容量 Lubri cating Cap acity (L) | 燃油耗 Fuel Consu mptio (G /KW.H) | 燃油耗 Fuel Cons umptio (L/H) | 调速方式 Type Of Go vernor | 冷却液容量 Liqui
+yingtai-jiangsu	2007	38	E	39	| 发动机 型号 | 发动机功率（kW） | 气缸数量 | 缸径*行程（mm） | 发动机排量（L） | 压缩比 | 机油容量（L） | 燃油消耗量（g/kW．h） | 调速方式 | 冷却液容量（升） | 排放等级
+yingtai-jiangsu	2009	40	E	47	| 发动机 型号 Engine Type | 功率( 主用) Power (KW) | 功率( 备用) Power (KW) | 缸数 No Of Cylin ders | 缸径*行程 Bore /Strokse (MM) | 排气量 Exhau st Cs pa city (L) | 压缩比 Compre ssion Ratio | 机油容量 Lubri cating Cap acity (L) | 燃油耗 Fuel Consu mptio (G/ KW.H) | 燃油耗 Fuel Consum ptio (L /H) | 调速方式 Type Of Gover nor | 冷却液容量 Liq
+yingtai-jiangsu	2010	41	U	10	| 型号 model | 额定功率 rated power(KW) | 原动机 Prime mover | 功率 power (KW) | 燃油消耗量 SFOC (L/h) | 外形尺寸 size（mm） | 净重 weight kg
+zc-power	109	11	G	5	| | Model | Rated Power | Max Power | Voltage | Frequency | Engine | Fuel Tank | Runtime (50%) | Noise (7m) | Start | Weight
+zc-power	109	12	G	4	| | Model | Rated Power | Max Power | Voltage | Frequency | Noise (7m) | Fuel Tank | Runtime (50%) | Start | Weight
+zhengdian-zhengzhou	103	2	G	41	| 产品型号 | 规格 | 功率 KW | 转速 r/min

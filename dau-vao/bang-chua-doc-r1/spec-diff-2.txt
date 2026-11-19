@@ -1,0 +1,2318 @@
+bản ghi cũ 59064, mới 59791 | khác 123 | chỉ cũ 79, chỉ mới 806 | bảng có đổi 86
+{"model":84,"other":42,"phase bỏ":3,"dims thêm":18,"makes":4,"cyl bỏ":22,"weight thêm":22}
+
+[agg-fuzhou n102 bảng 1] ×30
+  H: | | 发电机型号 | ESP (kVA/kW) | PRP (kVA/kW) | 发动机型号 | 品牌
+   63 | S313E5 | 313/250 | 275/220 | DC09 072A 02-12 | Scania
+        ⇒ THÊM bản ghi engine DC09 072A 02-12
+   64 | S330E5 | 330/264 | 300/240 | DC09 072A 02-13 | Scania
+        ⇒ THÊM bản ghi engine DC09 072A 02-13
+   66 | S360E5 | 360/288 | 325/260 | DC09 072A 02-14 | Scania
+        ⇒ THÊM bản ghi engine DC09 072A 02-14
+   68 | S400E5 | 400/320 | 375/300 | DC13 072A 02-11 | Scania
+        ⇒ THÊM bản ghi engine DC13 072A 02-11
+   69 | S450E5 | 450/360 | 400/320 | DC13 072A 02-12 | Scania
+        ⇒ THÊM bản ghi engine DC13 072A 02-12
+   71 | S500E5 | 500/400 | 450/360 | DC13 072A 02-13 | Scania
+        ⇒ THÊM bản ghi engine DC13 072A 02-13
+   73 | S535E5 | 535/428 | 480/384 | DC13 093A 02-72 | Scania
+        ⇒ THÊM bản ghi engine DC13 093A 02-72
+   74 | S550E5 | 550/440 | 500/400 | DC13 072A 02-14 | Scania
+        ⇒ THÊM bản ghi engine DC13 072A 02-14
+   77 | S600E5A | 600/480 | 550/440 | DC16 093A 02-52 | Scania
+        ⇒ THÊM bản ghi engine DC16 093A 02-52
+   79 | S660E5A | 660/528 | 600/480 | DC16 093A 02-53 | Scania
+        ⇒ THÊM bản ghi engine DC16 093A 02-53
+   81 | S700E5 | 700/560 | 640/512 | DC16 093A 02-54 | Scania
+        ⇒ THÊM bản ghi engine DC16 093A 02-54
+   82 | S715E5 | 715/572 | 650/520 | DC16 078A 02-42 | Scania
+        ⇒ THÊM bản ghi engine DC16 078A 02-42
+   83 | S770E5 | 770/616 | 700/560 | DC16 078A 02-43 | Scania
+        ⇒ THÊM bản ghi engine DC16 078A 02-43
+   84 | S800E5 | 800/640 | 725/580 | DC16 078A 02-44 | Scania
+        ⇒ THÊM bản ghi engine DC16 078A 02-44
+   85 | S800E5A | 800/640 | 750/600 | DC16 078A 02-45 | Scania
+        ⇒ THÊM bản ghi engine DC16 078A 02-45
+   86 | S313E6 | 313/250 | 275/220 | DC09 072A 02-11 | Scania
+        ⇒ THÊM bản ghi engine DC09 072A 02-11
+   88 | S344E6 | 344/275 | 313/250 | DC09 072A 02-12 | Scania
+        ⇒ THÊM bản ghi engine DC09 072A 02-12
+   89 | S360E6 | 360/288 | 330/264 | DC09 072A 02-13 | Scania
+        ⇒ THÊM bản ghi engine DC09 072A 02-13
+   91 | S413E6 | 413/330 | 375/300 | DC09 072A 02-14 | Scania
+        ⇒ THÊM bản ghi engine DC09 072A 02-14
+   92 | S440E6 | 440/352 | 400/320 | DC13 072A 02-11 | Scania
+        ⇒ THÊM bản ghi engine DC13 072A 02-11
+   94 | S500E6 | 500/400 | 450/360 | DC13 072A 02-12 | Scania
+        ⇒ THÊM bản ghi engine DC13 072A 02-12
+   97 | S550E6A | 550/440 | 500/400 | DC13 093A 02-72 | Scania
+        ⇒ THÊM bản ghi engine DC13 093A 02-72
+   99 | S600E6A | 600/480 | 550/440 | DC16 093A 02-52 | Scania
+        ⇒ THÊM bản ghi engine DC16 093A 02-52
+  100 | S625E6 | 625/500 | 563/450 | DC13 093A 02-74 | Scania
+        ⇒ THÊM bản ghi engine DC13 093A 02-74
+  102 | S660E6A | 660/528 | 600/480 | DC16 093A 02-53 | Scania
+        ⇒ THÊM bản ghi engine DC16 093A 02-53
+  104 | S715E6 | 715/572 | 650/520 | DC16 078A 02-42 | Scania
+        ⇒ THÊM bản ghi engine DC16 078A 02-42
+  105 | S715E6A | 715/572 | 650/520 | DC16 093A 02-54 | Scania
+        ⇒ THÊM bản ghi engine DC16 093A 02-54
+  106 | S770E6 | 770/616 | 700/560 | DC16 078A 02-43 | Scania
+        ⇒ THÊM bản ghi engine DC16 078A 02-43
+  107 | S800E6 | 800/640 | 728/582 | DC16 078A 02-44 | Scania
+        ⇒ THÊM bản ghi engine DC16 078A 02-44
+  108 | S800E6A | 800/640 | 750/600 | DC16 078A 02-45 | Scania
+        ⇒ THÊM bản ghi engine DC16 078A 02-45
+
+[agg-fuzhou n103 bảng 2] ×1
+  H: | | 发电机型号 | ESP (kVA/kW) | PRP (kVA/kW) | 发动机型号 | 品牌
+  113 | S275E5 | 275/220 | 250/200 | DC09 072A 02-11 | Scania
+        ⇒ THÊM bản ghi engine DC09 072A 02-11
+
+[agg-fuzhou n112 bảng 11] ×31
+  H: | | 发电机型号 | ESP (kVA/kW) | PRP (kVA/kW) | 发动机型号
+    0 | S275E5 | 275/220 | 250/200 | DC09 072A 02-11
+        ⇒ THÊM bản ghi engine DC09 072A 02-11
+    1 | S313E5 | 313/250 | 275/220 | DC09 072A 02-12
+        ⇒ THÊM bản ghi engine DC09 072A 02-12
+    2 | S330E5 | 330/264 | 300/240 | DC09 072A 02-13
+        ⇒ THÊM bản ghi engine DC09 072A 02-13
+    4 | S360E5 | 360/288 | 325/260 | DC09 072A 02-14
+        ⇒ THÊM bản ghi engine DC09 072A 02-14
+    6 | S400E5 | 400/320 | 375/300 | DC13 072A 02-11
+        ⇒ THÊM bản ghi engine DC13 072A 02-11
+    7 | S450E5 | 450/360 | 400/320 | DC13 072A 02-12
+        ⇒ THÊM bản ghi engine DC13 072A 02-12
+    9 | S500E5 | 500/400 | 450/360 | DC13 072A 02-13
+        ⇒ THÊM bản ghi engine DC13 072A 02-13
+   11 | S535E5 | 535/428 | 480/384 | DC13 093A 02-72
+        ⇒ THÊM bản ghi engine DC13 093A 02-72
+   12 | S550E5 | 550/440 | 500/400 | DC13 072A 02-14
+        ⇒ THÊM bản ghi engine DC13 072A 02-14
+   15 | S600E5A | 600/480 | 550/440 | DC16 093A 02-52
+        ⇒ THÊM bản ghi engine DC16 093A 02-52
+   17 | S660E5A | 660/528 | 600/480 | DC16 093A 02-53
+        ⇒ THÊM bản ghi engine DC16 093A 02-53
+   19 | S700E5 | 700/560 | 640/512 | DC16 093A 02-54
+        ⇒ THÊM bản ghi engine DC16 093A 02-54
+   20 | S715E5 | 715/572 | 650/520 | DC16 078A 02-42
+        ⇒ THÊM bản ghi engine DC16 078A 02-42
+   21 | S770E5 | 770/616 | 700/560 | DC16 078A 02-43
+        ⇒ THÊM bản ghi engine DC16 078A 02-43
+   22 | S800E5 | 800/640 | 725/580 | DC16 078A 02-44
+        ⇒ THÊM bản ghi engine DC16 078A 02-44
+   23 | S800E5A | 800/640 | 750/600 | DC16 078A 02-45
+        ⇒ THÊM bản ghi engine DC16 078A 02-45
+   24 | S313E6 | 313/250 | 275/220 | DC09 072A 02-11
+        ⇒ THÊM bản ghi engine DC09 072A 02-11
+   26 | S344E6 | 344/275 | 313/250 | DC09 072A 02-12
+        ⇒ THÊM bản ghi engine DC09 072A 02-12
+   27 | S360E6 | 360/288 | 330/264 | DC09 072A 02-13
+        ⇒ THÊM bản ghi engine DC09 072A 02-13
+   29 | S413E6 | 413/330 | 375/300 | DC09 072A 02-14
+        ⇒ THÊM bản ghi engine DC09 072A 02-14
+   30 | S440E6 | 440/352 | 400/320 | DC13 072A 02-11
+        ⇒ THÊM bản ghi engine DC13 072A 02-11
+   32 | S500E6 | 500/400 | 450/360 | DC13 072A 02-12
+        ⇒ THÊM bản ghi engine DC13 072A 02-12
+   35 | S550E6A | 550/440 | 500/400 | DC13 093A 02-72
+        ⇒ THÊM bản ghi engine DC13 093A 02-72
+   37 | S600E6A | 600/480 | 550/440 | DC16 093A 02-52
+        ⇒ THÊM bản ghi engine DC16 093A 02-52
+   38 | S625E6 | 625/500 | 563/450 | DC13 093A 02-74
+        ⇒ THÊM bản ghi engine DC13 093A 02-74
+   40 | S660E6A | 660/528 | 600/480 | DC16 093A 02-53
+        ⇒ THÊM bản ghi engine DC16 093A 02-53
+   42 | S715E6 | 715/572 | 650/520 | DC16 078A 02-42
+        ⇒ THÊM bản ghi engine DC16 078A 02-42
+   43 | S715E6A | 715/572 | 650/520 | DC16 093A 02-54
+        ⇒ THÊM bản ghi engine DC16 093A 02-54
+   44 | S770E6 | 770/616 | 700/560 | DC16 078A 02-43
+        ⇒ THÊM bản ghi engine DC16 078A 02-43
+   45 | S800E6 | 800/640 | 728/582 | DC16 078A 02-44
+        ⇒ THÊM bản ghi engine DC16 078A 02-44
+   46 | S800E6A | 800/640 | 750/600 | DC16 078A 02-45
+        ⇒ THÊM bản ghi engine DC16 078A 02-45
+
+[agg-fuzhou n118 bảng 17] ×2
+  H: | | 发电机型号 | COP (kVA/kW) | 发动机型号 | 品牌
+    0 | S400G6-NG | 400/320 | OC16 071A 02-82 | Scania
+        ⇒ THÊM bản ghi engine OC16 071A 02-82
+    1 | S375G5-NG | 375/300 | OC16 071A 02-82 | Scania
+        ⇒ THÊM bản ghi engine OC16 071A 02-82
+
+[agg-power n2048 bảng 47] ×1
+  H: Generator Model
+  H: ESP (kVA/kW)
+  H: PRP (kVA/kW)
+    2 700/560
+        ⇒ THÊM bản ghi engine DC16 072A 02-13
+
+[agg-power n2049 bảng 48] ×1
+  H: Generator Model
+  H: ESP (kVA/kW)
+  H: PRP (kVA/kW)
+    2 650/520
+        ⇒ THÊM bản ghi engine DC16 072A 02-12
+
+[agg-power n2050 bảng 49] ×1
+  H: Generator Model
+  H: ESP (kVA/kW)
+  H: PRP (kVA/kW)
+    2 640/512
+        ⇒ THÊM bản ghi engine DC16 093A 02-54
+
+[agg-power n2051 bảng 50] ×1
+  H: Generator Model
+  H: ESP (kVA/kW)
+  H: PRP (kVA/kW)
+    2 500/400
+        ⇒ THÊM bản ghi engine DC13 072A 02-14
+
+[agg-power n2052 bảng 51] ×1
+  H: Generator Model
+  H: ESP (kVA/kW)
+  H: PRP (kVA/kW)
+    2 375/300
+        ⇒ THÊM bản ghi engine DC13 072A 02-11
+
+[agg-power n2053 bảng 52] ×1
+  H: Generator Model
+  H: ESP (kVA/kW)
+  H: PRP (kVA/kW)
+    2 330/264
+        ⇒ THÊM bản ghi engine DC09 072A 02-14
+
+[agg-power n2054 bảng 53] ×1
+  H: Generator Model
+  H: ESP (kVA/kW)
+  H: PRP (kVA/kW)
+    2 300/240
+        ⇒ THÊM bản ghi engine DC09 072A 02-13
+
+[agg-power n2055 bảng 54] ×1
+  H: Generator Model
+  H: ESP (kVA/kW)
+  H: PRP (kVA/kW)
+    2 275/220
+        ⇒ THÊM bản ghi engine DC09 072A 02-12
+
+[aj-power n103 bảng 2] ×54
+  H: | | Model | Frequency | Phase | R.P.M | Prime-kVA | Standby kVA | Engine | Engine Model | Alternator Model | Datasheet
+    0 | AJ280 | 50hz | Three Phase | 1500 | 250.0 | 280.0 | | DC9 072A 02-11 | MA4114D S4L1D-C | AJ280 Scania Three Phase Scania 50Hz
+        ⇒ model: MA4114D S4L1D-C → DC9 072A 02-11; other: null → MA4114D S4L1D-C
+    0 | AJ280 | 50hz | Three Phase | 1500 | 250.0 | 280.0 | | DC9 072A 02-11 | MA4114D S4L1D-C | AJ280 Scania Three Phase Scania 50Hz
+        ⇒ THÊM bản ghi alternator MA4114D S4L1D-C
+    1 | AJ280 | 60hz | Three Phase | 1800 | 281.3 | 312.5 | | DC9 072A 02-11 | MA4114D S4L1D-C | AJ280 Three Phase Scania 60Hz
+        ⇒ model: MA4114D S4L1D-C → DC9 072A 02-11; other: null → MA4114D S4L1D-C
+    1 | AJ280 | 60hz | Three Phase | 1800 | 281.3 | 312.5 | | DC9 072A 02-11 | MA4114D S4L1D-C | AJ280 Three Phase Scania 60Hz
+        ⇒ THÊM bản ghi alternator MA4114D S4L1D-C
+    2 | AJ310 | 50hz | Three Phase | 1500 | 280.0 | 310.0 | | DC9 072A 02-12 | MA4114E S4L1D-D | AJ310 Three Phase Scania 50Hz
+        ⇒ model: MA4114E S4L1D-D → DC9 072A 02-12; other: null → MA4114E S4L1D-D
+    2 | AJ310 | 50hz | Three Phase | 1500 | 280.0 | 310.0 | | DC9 072A 02-12 | MA4114E S4L1D-D | AJ310 Three Phase Scania 50Hz
+        ⇒ THÊM bản ghi alternator MA4114E S4L1D-D
+    3 | AJ310 | 60hz | Three Phase | 1800 | 306.3 | 343.8 | | DC9 072A 02-12 | MA4114E S4L1D-C | AJ310 Three Phase Scania 60Hz
+        ⇒ model: MA4114E S4L1D-C → DC9 072A 02-12; other: null → MA4114E S4L1D-C
+    3 | AJ310 | 60hz | Three Phase | 1800 | 306.3 | 343.8 | | DC9 072A 02-12 | MA4114E S4L1D-C | AJ310 Three Phase Scania 60Hz
+        ⇒ THÊM bản ghi alternator MA4114E S4L1D-C
+    4 | AJ330 | 50hz | Three Phase | 1500 | 300.0 | 330.0 | | DC9 072A 02-13 | MA4114E S4L1D-D | AJ330 Three Phase Scania 50Hz
+        ⇒ model: MA4114E S4L1D-D → DC9 072A 02-13; other: null → MA4114E S4L1D-D
+    4 | AJ330 | 50hz | Three Phase | 1500 | 300.0 | 330.0 | | DC9 072A 02-13 | MA4114E S4L1D-D | AJ330 Three Phase Scania 50Hz
+        ⇒ THÊM bản ghi alternator MA4114E S4L1D-D
+    5 | AJ330 | 60hz | Three Phase | 1800 | 325.0 | 368.8 | | DC9 072A 02-13 | MA4114E S4L1D-D | AJ330 Three Phase Scania 60Hz
+        ⇒ model: MA4114E S4L1D-D → DC9 072A 02-13; other: null → MA4114E S4L1D-D
+    5 | AJ330 | 60hz | Three Phase | 1800 | 325.0 | 368.8 | | DC9 072A 02-13 | MA4114E S4L1D-D | AJ330 Three Phase Scania 60Hz
+        ⇒ THÊM bản ghi alternator MA4114E S4L1D-D
+    6 | AJ360 | 50hz | Three Phase | 1500 | 330.0 | 360.0 | | DC9 072A 02-14 | MA4114F S4L1D-E | AJ360 Three Phase Scania 50hz
+        ⇒ model: MA4114F S4L1D-E → DC9 072A 02-14; other: null → MA4114F S4L1D-E
+    6 | AJ360 | 50hz | Three Phase | 1500 | 330.0 | 360.0 | | DC9 072A 02-14 | MA4114F S4L1D-E | AJ360 Three Phase Scania 50hz
+        ⇒ THÊM bản ghi alternator MA4114F S4L1D-E
+    7 | AJ360 | 60hz | Three Phase | 1800 | 362.5 | 412.5 | | DC9 072A 02-14 | MA4114F S4L1D-D | AJ360 Three Phase Scania 60hz
+        ⇒ model: MA4114F S4L1D-D → DC9 072A 02-14; other: null → MA4114F S4L1D-D
+    7 | AJ360 | 60hz | Three Phase | 1800 | 362.5 | 412.5 | | DC9 072A 02-14 | MA4114F S4L1D-D | AJ360 Three Phase Scania 60hz
+        ⇒ THÊM bản ghi alternator MA4114F S4L1D-D
+    8 | AJ375 | 50hz | Three Phase | 1500 | 350.0 | 375.0 | | DC13 072A 02-11 | MA4114F S4L1D-E | AJ375 Three Phase Scania 50HZ
+        ⇒ model: MA4114F S4L1D-E → DC13 072A 02-11; other: null → MA4114F S4L1D-E
+    8 | AJ375 | 50hz | Three Phase | 1500 | 350.0 | 375.0 | | DC13 072A 02-11 | MA4114F S4L1D-E | AJ375 Three Phase Scania 50HZ
+        ⇒ THÊM bản ghi alternator MA4114F S4L1D-E
+    9 | AJ375 | 60hz | Three Phase | 1800 | 387.5 | 437.5 | | DC13 072A 02-11 | MA4114F S4L1D-E | AJ375 Three Phase Scania 60Hz
+        ⇒ model: MA4114F S4L1D-E → DC13 072A 02-11; other: null → MA4114F S4L1D-E
+    9 | AJ375 | 60hz | Three Phase | 1800 | 387.5 | 437.5 | | DC13 072A 02-11 | MA4114F S4L1D-E | AJ375 Three Phase Scania 60Hz
+        ⇒ THÊM bản ghi alternator MA4114F S4L1D-E
+   10 | AJ400 | 50hz | Three Phase | 1500 | 370.0 | 400.0 | | DC13 072A 02-11 | MA5114G S4L1D-F | AJ400 Three Phase Scania 50Hz
+        ⇒ model: MA5114G S4L1D-F → DC13 072A 02-11; other: null → MA5114G S4L1D-F
+   10 | AJ400 | 50hz | Three Phase | 1500 | 370.0 | 400.0 | | DC13 072A 02-11 | MA5114G S4L1D-F | AJ400 Three Phase Scania 50Hz
+        ⇒ THÊM bản ghi alternator MA5114G S4L1D-F
+   11 | AJ400 | 60hz | Three Phase | 1800 | 412.5 | 462.5 | | DC9 072A 02-11 | MA4114F S4L1D-E | AJ400 Three Phase Scania 60Hz
+        ⇒ model: MA4114F S4L1D-E → DC9 072A 02-11; other: null → MA4114F S4L1D-E
+   11 | AJ400 | 60hz | Three Phase | 1800 | 412.5 | 462.5 | | DC9 072A 02-11 | MA4114F S4L1D-E | AJ400 Three Phase Scania 60Hz
+        ⇒ THÊM bản ghi alternator MA4114F S4L1D-E
+   12 | AJ440 | 50hz | Three Phase | 1500 | 400.0 | 440.0 | | DC13 072A 02-12 | MA5114A S4L1D-F | AJ440 Three Phase Scania 50Hz
+        ⇒ model: MA5114A S4L1D-F → DC13 072A 02-12; other: null → MA5114A S4L1D-F
+   12 | AJ440 | 50hz | Three Phase | 1500 | 400.0 | 440.0 | | DC13 072A 02-12 | MA5114A S4L1D-F | AJ440 Three Phase Scania 50Hz
+        ⇒ THÊM bản ghi alternator MA5114A S4L1D-F
+   13 | AJ440 | 60hz | Three Phase | 1800 | 431.3 | 500.0 | | DC13 072A 02-12 | MA5114A S4L1D-F | AJ440 Three Phase Scania 60Hz
+        ⇒ model: MA5114A S4L1D-F → DC13 072A 02-12; other: null → MA5114A S4L1D-F
+   13 | AJ440 | 60hz | Three Phase | 1800 | 431.3 | 500.0 | | DC13 072A 02-12 | MA5114A S4L1D-F | AJ440 Three Phase Scania 60Hz
+        ⇒ THÊM bản ghi alternator MA5114A S4L1D-F
+   14 | AJ460 | 50hz | Three Phase | 1500 | 410.0 | 460.0 | | DC13 072A 02-12 | MA5114B S4L1D-F | AJ460 Three Phase Scania 50Hz
+        ⇒ model: MA5114B S4L1D-F → DC13 072A 02-12; other: null → MA5114B S4L1D-F
+   14 | AJ460 | 50hz | Three Phase | 1500 | 410.0 | 460.0 | | DC13 072A 02-12 | MA5114B S4L1D-F | AJ460 Three Phase Scania 50Hz
+        ⇒ THÊM bản ghi alternator MA5114B S4L1D-F
+   15 | AJ460 | 60hz | Three Phase | 1800 | 450.0 | 512.3 | | DC13 072A 02-12 | MA5114A S4L1D-F | AJ460 Three Phase Scania 60Hz
+        ⇒ model: MA5114A S4L1D-F → DC13 072A 02-12; other: null → MA5114A S4L1D-F
+   15 | AJ460 | 60hz | Three Phase | 1800 | 450.0 | 512.3 | | DC13 072A 02-12 | MA5114A S4L1D-F | AJ460 Three Phase Scania 60Hz
+        ⇒ THÊM bản ghi alternator MA5114A S4L1D-F
+   16 | AJ500 | 50hz | Three Phase | 1500 | 450.0 | 500.0 | | DC13 072A 02-13 | MA5114B S4L1D-G | AJ500 Three Phase Scania 50Hz
+        ⇒ model: MA5114B S4L1D-G → DC13 072A 02-13; other: null → MA5114B S4L1D-G
+   16 | AJ500 | 50hz | Three Phase | 1500 | 450.0 | 500.0 | | DC13 072A 02-13 | MA5114B S4L1D-G | AJ500 Three Phase Scania 50Hz
+        ⇒ THÊM bản ghi alternator MA5114B S4L1D-G
+   17 | AJ500 | 60hz | Three Phase | 1800 | 500.0 | 556.3 | | DC13 072A 02-13 | MA5114B S4L1D-F | AJ500 Three Phase Scania 60Hz
+        ⇒ model: MA5114B S4L1D-F → DC13 072A 02-13; other: null → MA5114B S4L1D-F
+   17 | AJ500 | 60hz | Three Phase | 1800 | 500.0 | 556.3 | | DC13 072A 02-13 | MA5114B S4L1D-F | AJ500 Three Phase Scania 60Hz
+        ⇒ THÊM bản ghi alternator MA5114B S4L1D-F
+   18 | AJ550 | 50hz | Three Phase | 1500 | 500.0 | 550.0 | | DC13 072A 02-14 | MA5114C HCI544D | AJ550 Three Phase Scania 50Hz
+        ⇒ model: MA5114C HCI544D → DC13 072A 02-14; other: null → MA5114C HCI544D
+   18 | AJ550 | 50hz | Three Phase | 1500 | 500.0 | 550.0 | | DC13 072A 02-14 | MA5114C HCI544D | AJ550 Three Phase Scania 50Hz
+        ⇒ THÊM bản ghi alternator MA5114C HCI544D
+   19 | AJ615 | 50hz | Three Phase | 1500 | 560.0 | 615.0 | | DC16 093A 02-52 | MA5114E HCI544E | AJ615 Three Phase Scania 50Hz
+        ⇒ model: MA5114E HCI544E → DC16 093A 02-52; other: null → MA5114E HCI544E
+   19 | AJ615 | 50hz | Three Phase | 1500 | 560.0 | 615.0 | | DC16 093A 02-52 | MA5114E HCI544E | AJ615 Three Phase Scania 50Hz
+        ⇒ THÊM bản ghi alternator MA5114E HCI544E
+   20 | AJ615 | 60hz | Three Phase | 1800 | 550.0 | 606.3 | | DC16 093A 02-52 | S4L1D-G | AJ615 Three Phase Scania 60Hz
+        ⇒ other: null → DC16 093A 02-52; phase: Three Phase → ∅
+   20 | AJ615 | 60hz | Three Phase | 1800 | 550.0 | 606.3 | | DC16 093A 02-52 | S4L1D-G | AJ615 Three Phase Scania 60Hz
+        ⇒ THÊM bản ghi engine DC16 093A 02-52
+   21 | AJ670 | 50hz | Three Phase | 1500 | 610.0 | 670.0 | | DC16 093A 02-53 | MA5114E HCI544E | AJ670 Three Phase Scania 50Hz
+        ⇒ model: MA5114E HCI544E → DC16 093A 02-53; other: null → MA5114E HCI544E
+   21 | AJ670 | 50hz | Three Phase | 1500 | 610.0 | 670.0 | | DC16 093A 02-53 | MA5114E HCI544E | AJ670 Three Phase Scania 50Hz
+        ⇒ THÊM bản ghi alternator MA5114E HCI544E
+   22 | AJ670 | 60hz | Three Phase | 1800 | 608.8 | 671.3 | | DC16 093A 02-53 | HCI544D | AJ670 Three Phase Scania 60Hz
+        ⇒ other: null → DC16 093A 02-53; phase: Three Phase → ∅
+   22 | AJ670 | 60hz | Three Phase | 1800 | 608.8 | 671.3 | | DC16 093A 02-53 | HCI544D | AJ670 Three Phase Scania 60Hz
+        ⇒ THÊM bản ghi engine DC16 093A 02-53
+   23 | AJ710 | 50hz | Three Phase | 1500 | 650.0 | 710.0 | | DC16 093A 02-54 | MA5114F HCI544F | AJ710 Three Phase Scania 50hz
+        ⇒ model: MA5114F HCI544F → DC16 093A 02-54; other: null → MA5114F HCI544F
+   23 | AJ710 | 50hz | Three Phase | 1500 | 650.0 | 710.0 | | DC16 093A 02-54 | MA5114F HCI544F | AJ710 Three Phase Scania 50hz
+        ⇒ THÊM bản ghi alternator MA5114F HCI544F
+   24 | AJ710 | 60hz | Three Phase | 1800 | 661.3 | 730.0 | | DC16 093A 02-54 | HCI544E | AJ710 Three Phase Scania 60hz
+        ⇒ other: null → DC16 093A 02-54; phase: Three Phase → ∅
+   24 | AJ710 | 60hz | Three Phase | 1800 | 661.3 | 730.0 | | DC16 093A 02-54 | HCI544E | AJ710 Three Phase Scania 60hz
+        ⇒ THÊM bản ghi engine DC16 093A 02-54
+   25 | AJ770 | 50hz | Three Phase | 1500 | 700.0 | 770.0 | | DC16 078A 02-43 | MA5114G S5L1D-G | AJ770 Three Phase Scania 50Hz
+        ⇒ model: MA5114G S5L1D-G → DC16 078A 02-43; other: null → MA5114G S5L1D-G
+   25 | AJ770 | 50hz | Three Phase | 1500 | 700.0 | 770.0 | | DC16 078A 02-43 | MA5114G S5L1D-G | AJ770 Three Phase Scania 50Hz
+        ⇒ THÊM bản ghi alternator MA5114G S5L1D-G
+   26 | AJ770 | 60hz | Three Phase | 1800 | 700.0 | 770.0 | | DC16 078A 02-43 | MA5114E HCI544F | AJ770 Three Phase Scania 60Hz
+        ⇒ model: MA5114E HCI544F → DC16 078A 02-43; other: null → MA5114E HCI544F
+   26 | AJ770 | 60hz | Three Phase | 1800 | 700.0 | 770.0 | | DC16 078A 02-43 | MA5114E HCI544F | AJ770 Three Phase Scania 60Hz
+        ⇒ THÊM bản ghi alternator MA5114E HCI544F
+
+[baifa-power n104 bảng 6] ×12
+  H: | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | | | | |
+  H: | | Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD | FUEL CONSUMPTION 75% L/H | Emission | ENGINE MANUFACTURER / COUNTRY | ESTIMATED ENGINE DELIVERY TIME | 1500/1800 RPM SWITCHABLE
+   24 | BF-SC385-V | 385 | 350 | SCANIA | DC13 320A 02-61 | ECU | S4L1D-E41 | 46.4 | STAGE V | SWEDEN | 4 months | ●
+        ⇒ model: 4 months → DC13 320A 02-61
+   24 | BF-SC385-V | 385 | 350 | SCANIA | DC13 320A 02-61 | ECU | S4L1D-E41 | 46.4 | STAGE V | SWEDEN | 4 months | ●
+        ⇒ other: 4 months → DC13 320A 02-61
+   30 | BF-SC440-V | 440 | 400 | SCANIA | DC13 320A 02-62 | ECU | S4L1D-F41 | 52.5 | STAGE V | SWEDEN | 4 months | ●
+        ⇒ model: 4 months → DC13 320A 02-62
+   30 | BF-SC440-V | 440 | 400 | SCANIA | DC13 320A 02-62 | ECU | S4L1D-F41 | 52.5 | STAGE V | SWEDEN | 4 months | ●
+        ⇒ other: 4 months → DC13 320A 02-62
+   33 | BF-SC500-V 13L | 495 | 450 | SCANIA | DC13 320A 02-63 | ECU | S4L1D-G41 | 59 | STAGE V | SWEDEN | 4 months | ●
+        ⇒ model: 4 months → DC13 320A 02-63
+   33 | BF-SC500-V 13L | 495 | 450 | SCANIA | DC13 320A 02-63 | ECU | S4L1D-G41 | 59 | STAGE V | SWEDEN | 4 months | ●
+        ⇒ other: 4 months → DC13 320A 02-63
+   34 | BF-SC500-V 16L | 500 | 450 | SCANIA | DC16 320A 02-61 | ECU | S4L1D-G41 | 61.2 | STAGE V | SWEDEN | 4 months | ●
+        ⇒ model: 4 months → DC16 320A 02-61
+   34 | BF-SC500-V 16L | 500 | 450 | SCANIA | DC16 320A 02-61 | ECU | S4L1D-G41 | 61.2 | STAGE V | SWEDEN | 4 months | ●
+        ⇒ other: 4 months → DC16 320A 02-61
+   35 | BF-SC550-V | 550 | 500 | SCANIA | DC16 320A 02-62 | ECU | S5L1D-C41 | 67.7 | STAGE V | SWEDEN | 4 months | ●
+        ⇒ model: 4 months → DC16 320A 02-62
+   35 | BF-SC550-V | 550 | 500 | SCANIA | DC16 320A 02-62 | ECU | S5L1D-C41 | 67.7 | STAGE V | SWEDEN | 4 months | ●
+        ⇒ other: 4 months → DC16 320A 02-62
+   37 | BF-SC610-V | 605 | 550 | SCANIA | DC16 320A 02-63 | ECU | S5L1D-D41 | 74.4 | STAGE V | SWEDEN | 4 months | ●
+        ⇒ model: 4 months → DC16 320A 02-63
+   37 | BF-SC610-V | 605 | 550 | SCANIA | DC16 320A 02-63 | ECU | S5L1D-D41 | 74.4 | STAGE V | SWEDEN | 4 months | ●
+        ⇒ other: 4 months → DC16 320A 02-63
+
+[baifa-power n105 bảng 7] ×12
+  H: | PREMIUM | P≥8KW NOMINAL POWER, WITH EPA TIER4 FINAL CERTIFICATE 1800RPM 60Hz |
+  H: | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | PRICE | | | |
+  H: | | Standby KVA | Prime KVA | Brand | Model | Gov. | STAMFORD | Standard pricelist price OPEN UNIT | Emission | ENGINE MANUFACTURER / COUNTRY | ESTIMATED ENGINE DELIVERY TIME | 1500/1800 RPM SWITCHABLE
+   15 | BF-SC385-60T4F | 385 | 350 | SCANIA | DC13 320A 02-61 | ECU | S4L1D-E41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+        ⇒ other: null → DC13 320A 02-61
+   15 | BF-SC385-60T4F | 385 | 350 | SCANIA | DC13 320A 02-61 | ECU | S4L1D-E41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+        ⇒ THÊM bản ghi engine DC13 320A 02-61
+   18 | BF-SC440-60T4F | 440 | 400 | SCANIA | DC13 320A 02-62 | ECU | S4L1D-F41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+        ⇒ other: null → DC13 320A 02-62
+   18 | BF-SC440-60T4F | 440 | 400 | SCANIA | DC13 320A 02-62 | ECU | S4L1D-F41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+        ⇒ THÊM bản ghi engine DC13 320A 02-62
+   20 | BF-SC500-60T4F 13L | 495 | 450 | SCANIA | DC13 320A 02-63 | ECU | S4L1D-G41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+        ⇒ other: null → DC13 320A 02-63
+   20 | BF-SC500-60T4F 13L | 495 | 450 | SCANIA | DC13 320A 02-63 | ECU | S4L1D-G41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+        ⇒ THÊM bản ghi engine DC13 320A 02-63
+   21 | BF-SC500-60T4F 16L | 500 | 450 | SCANIA | DC16 320A 02-61 | ECU | S4L1D-G41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+        ⇒ other: null → DC16 320A 02-61
+   21 | BF-SC500-60T4F 16L | 500 | 450 | SCANIA | DC16 320A 02-61 | ECU | S4L1D-G41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+        ⇒ THÊM bản ghi engine DC16 320A 02-61
+   22 | BF-SC550-60T4F | 550 | 500 | SCANIA | DC16 320A 02-62 | ECU | S5L1D-C41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+        ⇒ other: null → DC16 320A 02-62
+   22 | BF-SC550-60T4F | 550 | 500 | SCANIA | DC16 320A 02-62 | ECU | S5L1D-C41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+        ⇒ THÊM bản ghi engine DC16 320A 02-62
+   23 | BF-SC610-60T4F | 605 | 550 | SCANIA | DC16 320A 02-63 | ECU | S5L1D-D41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+        ⇒ other: null → DC16 320A 02-63
+   23 | BF-SC610-60T4F | 605 | 550 | SCANIA | DC16 320A 02-63 | ECU | S5L1D-D41 | | EPA TIER 4 FINAL | SWEDEN | | ●
+        ⇒ THÊM bản ghi engine DC16 320A 02-63
+
+[cgm-italia n101 bảng 5] ×32
+  H: | | Model | PDF | PRP | STYB | Engine | M/E | Emissions | No. of cylinders | Net mechanical power | ¾ load consumption | Tank | Open base frame | Soundproof canopy | dB(A) at 7 mt | Manual panel | Automatic panel
+  H: | | | KVA | KW | KVA | KW | | | | | Hp/Kw | lt/hr | lt | Modello | Kg | LxLWxH [mm] | Modello | Kg | LxLWxH [mm] | dB(A) | Modello | Modello
+    0 | 250S | | 250 | 200 | 275 | 220 | DC09 072A 02 11 | E | 0 | 5 | 294.9/220 | 38 | 250 | B300 | 2470 | 2800x1310x1800 | C300 | 3130 | 3700x1435x2250 | 69 | QM250 | QA250
+        ⇒ model: B300 → DC09 072A 02 11
+    1 | 280S | | 280 | 224 | 308 | 246.4 | DC09 072A 02 12 | E | 0 | 5 | 324.4/242 | 42 | 250 | B300 | 2685 | 2800x1310x1800 | C300 | 3345 | 3700x1435x2250 | 69 | QM500 | QA500
+        ⇒ model: B300 → DC09 072A 02 12
+    2 | 300S | | 300 | 240 | 330 | 264 | DC09 072A 02 13 | E | 0 | 5 | 349.9/261 | 45 | 250 | B300 | 2685 | 2800x1310x1800 | C300 | 3345 | 3700x1435x2250 | 69 | QM500 | QA500
+        ⇒ model: B300 → DC09 072A 02 13
+    3 | 330S | | 330 | 264 | 363 | 290.4 | DC09 072A 02 14 | E | 0 | 5 | 379.4/283 | 49 | 250 | B300 | 2770 | 2800x1310x1800 | C300 | 3430 | 3700x1435x2250 | 69 | QM500 | QA500
+        ⇒ model: B300 → DC09 072A 02 14
+    4 | 375S | | 375 | 300 | 413 | 330.4 | DC13 072A 02 11 | E | 0 | 6 | 429/320 | 54 | 400 | B400 | 3230 | 2950x1550x2100 | C450 | 4220 | 4270x1735x2350 | 69 | QM500 | QA500
+        ⇒ model: B400 → DC13 072A 02 11
+    5 | 410S | | 410 | 328 | 451 | 360.8 | DC13 072A 02 12 | E | 0 | 6 | 475.9/355 | 60 | 400 | B400 | 3230 | 2950x1550x2100 | C450 | 4220 | 4270x1735x2350 | 69 | QM500 | QA500
+        ⇒ model: B400 → DC13 072A 02 12
+    6 | 450S | | 450 | 360 | 495 | 396 | DC13 072A 02 13 | E | 0 | 6 | 526.8/393 | 66 | 400 | B400 | 3280 | 2950x1550x2100 | C450 | 4270 | 4270x1735x2350 | 69 | QM500 | QA500
+        ⇒ model: B400 → DC13 072A 02 13
+    7 | 500S | | 500 | 400 | 550 | 440 | DC13 072A 02 14 | E | 0 | 6 | 573.7/428 | 72 | 400 | B400 | 3345 | 2950x1550x2100 | C450 | 4335 | 4270x1735x2350 | 69 | QM500 | QA500
+        ⇒ model: B400 → DC13 072A 02 14
+    8 | 555S | | 555 | 444 | 610 | 488 | DC16 093A 02 52 | E | 0 | 8 | 634/473 | 83 | 400 | B750 | 4430 | 3450x1550x2300 | C500 | 5570 | 4850x1866x2547 | 69 | QM1000 | QA1000
+        ⇒ model: B750 → DC16 093A 02 52
+    9 | 600S | | 600 | 480 | 660 | 528 | DC16 093A 02 54 | E | 0 | 8 | 730.6/545 | 90 | 400 | B750 | 4680 | 3450x1550x2300 | C500 | 5720 | 4850x1866x2547 | 69 | QM1000 | QA1000
+        ⇒ model: B750 → DC16 093A 02 54
+   10 | 625S | | 625 | 500 | 688 | 550.4 | DC16 093A 02 54 | E | 0 | 8 | 730.6/545 | 93 | 400 | B750 | 4680 | 3450x1550x2300 | C500 | 5860 | 4850x1866x2547 | 69 | QM1000 | QA1000
+        ⇒ model: B750 → DC16 093A 02 54
+   11 | 640S | | 640 | 512 | 704 | 563.2 | DC16 093A 02 54 | E | 0 | 8 | 730.6/545 | 95 | 400 | B750 | 4680 | 3450x1550x2300 | C500 | 5860 | 4850x1866x2547 | 69 | QM1000 | QA1000
+        ⇒ model: B750 → DC16 093A 02 54
+   12 | 650S | | 650 | 520 | 715 | 572 | DC16 078A 02 42 | E | 0 | 8 | 741.3/553 | 98 | 400 | B750 | 4680 | 3450x1550x2300 | C500 | 5880 | 4850x1866x2547 | 69 | QM1000 | QA1000
+        ⇒ model: B750 → DC16 078A 02 42
+   13 | 700S | | 700 | 560 | 770 | 616 | DC16 078A 02 43 | E | 0 | 8 | 798.9/596 | 105 | 400 | B750 | 4930 | 3450x1550x2300 | C500 | 5960 | 4850x1866x2547 | 69 | QM1000 | QA1000
+        ⇒ model: B750 → DC16 078A 02 43
+   14 | 730S | | 730 | 584 | 803 | 642.4 | DC16 078A 02 44 | E | 0 | 8 | 829.8/619 | 110 | 400 | B750 | 4930 | 3450x1550x2300 | C500 | 6030 | 4850x1866x2547 | 69 | QM1000 | QA1000
+        ⇒ model: B750 → DC16 078A 02 44
+   15 | e250S | | 250 | 200 | 275 | 220 | DC09 071A 02 01 | E | 3A | 5 | 294.9/220 | 44 | 250 | B300 | 2470 | 2800x1310x1800 | C300 | 3130 | 3700x1435x2250 | 69 | QM250 | QA250
+        ⇒ model: B300 → DC09 071A 02 01
+   16 | e280S | | 280 | 224 | 308 | 246.4 | DC09 071A 02 02 | E | 3A | 5 | 324.4/242 | 48 | 250 | B300 | 2685 | 2800x1310x1800 | C300 | 3345 | 3700x1435x2250 | 69 | QM500 | QA500
+        ⇒ model: B300 → DC09 071A 02 02
+   17 | e300S | | 300 | 240 | 330 | 264 | DC09 071A 02 03 | E | 3A | 5 | 349.9/261 | 51 | 250 | B300 | 2685 | 2800x1310x1800 | C300 | 3345 | 3700x1435x2250 | 69 | QM500 | QA500
+        ⇒ model: B300 → DC09 071A 02 03
+   18 | e330S | | 330 | 264 | 363 | 290.4 | DC09 071A 02 04 | E | 3A | 5 | 379.4/283 | 55.5 | 250 | B300 | 2770 | 2800x1310x1800 | C300 | 3430 | 3700x1435x2250 | 69 | QM500 | QA500
+        ⇒ model: B300 → DC09 071A 02 04
+   19 | e365S | | 365 | 292 | 402 | 321.6 | DC13 071A 02 01 | E | 3A | 6 | 422.3/315 | 59.5 | 400 | B400 | 3230 | 2950x1550x2100 | C450 | 4220 | 4270x1735x2350 | 69 | QM500 | QA500
+        ⇒ model: B400 → DC13 071A 02 01
+   20 | e410S | | 410 | 328 | 451 | 360.8 | DC09 071A 02 02 | E | 3A | 6 | 474.5/354 | 66.7 | 400 | B400 | 3230 | 2950x1550x2100 | C450 | 4220 | 4270x1735x2350 | 69 | QM500 | QA500
+        ⇒ model: B400 → DC09 071A 02 02
+   21 | e500S | | 500 | 400 | 550 | 440 | DC16 071A 02 01 | E | 3A | 8 | 569.7/425 | 82.6 | 400 | B750 | 4130 | 3450x1550x2300 | C750 | 5470 | 5050x2150x2550 | 69 | QM500 | QA500
+        ⇒ model: B750 → DC16 071A 02 01
+   22 | e550S | | 550 | 440 | 605 | 484 | DC16 071A 02 02 | E | 3A | 8 | 626/467 | 90 | 400 | B750 | 4430 | 3450x1550x2300 | C500 | 5530 | 4850x1866x2547 | 69 | QM1000 | QA1000
+        ⇒ model: B750 → DC16 071A 02 02
+   23 | v250S | | 250 | 200 | 275 | 220 | DC09 320A 02 61 | E | 5 | 5 | 290.9/217 | 39.6 | 250 | B300 | 2770 | 2800x1310x1800 | C300 | 3330 | 3700x1435x2250 | 69 | QM250A | QA250A
+        ⇒ model: B300 → DC09 320A 02 61
+   24 | v275S | | 275 | 220 | 303 | 242.4 | DC09 320A 02 62 | E | 5 | 5 | 319/238 | 43 | 250 | B300 | 2985 | 2800x1310x1800 | C300 | 3545 | 3700x1435x2250 | 69 | QM500 | QA500
+        ⇒ model: B300 → DC09 320A 02 62
+   25 | v300S | | 300 | 240 | 330 | 264 | DC09 320A 02 63 | E | 5 | 5 | 347.2/259 | 47 | 250 | B300 | 2985 | 2800x1310x1800 | C300 | 3545 | 3700x1435x2250 | 69 | QM500 | QA500
+        ⇒ model: B300 → DC09 320A 02 63
+   26 | v330S | | 330 | 264 | 363 | 290.4 | DC09 320A 02 64 | E | 5 | 5 | 379.4/283 | 51 | 250 | B300 | 3070 | 2800x1310x1800 | C300 | 3630 | 3700x1435x2250 | 69 | QM500 | QA500
+        ⇒ model: B300 → DC09 320A 02 64
+   27 | v350S | | 350 | 280 | 385 | 308 | DC13 320A 02 61 | E | 5 | 6 | 408.8/305 | 53 | 400 | B400 | 3380 | 2950x1550x2100 | C450 | 4270 | 4270x1735x2350 | 69 | QM500 | QA500
+        ⇒ model: B400 → DC13 320A 02 61
+   28 | v400S | | 400 | 320 | 440 | 352 | DC13 320A 02 62 | E | 5 | 6 | 461.1/344 | 60 | 400 | B400 | 3530 | 2950x1550x2100 | C450 | 4420 | 4270x1735x2350 | 69 | QM500 | QA500
+        ⇒ model: B400 → DC13 320A 02 62
+   29 | v450S | | 450 | 360 | 495 | 396 | DC13 320A 02 63 | E | 5 | 6 | 518.8/387 | 67 | 400 | B400 | 3560 | 2950x1550x2100 | C450 | 4450 | 4270x1735x2350 | 69 | QM500 | QA500
+        ⇒ model: B400 → DC13 320A 02 63
+   30 | v500S | | 500 | 400 | 550 | 440 | DC16 320A 02 62 | E | 5 | 8 | 571/426 | 82 | 400 | B750 | 4280 | 3450x1550x2300 | C500 | 5900 | 4850x1866x2547 | 69 | QM500 | QA500
+        ⇒ model: B750 → DC16 320A 02 62
+   31 | v550S | | 550 | 440 | 605 | 484 | DC16 320A 02 63 | E | 5 | 8 | 627.3/468 | 85 | 400 | B750 | 4580 | 3450x1550x2300 | C500 | 5950 | 4850x1866x2547 | 69 | QM1000 | QA1000
+        ⇒ model: B750 → DC16 320A 02 63
+
+[green-power-generators n111 bảng 12] ×13
+  H: | | MODELLO MODEL | TIPO TYPE | POTENZA POWER | MOTORE ENGINE | SERBATOIO TANK | DIMENSIONI DIMENSIONS | PESO WEIGHT | DOWNLOAD
+  H: | kVA - 50 Hz | MODELLO MODEL | REG | CIL. | CONSUMO AL 75% PRP CONSUMPTION AT 75% PRP | Lu | La | A | LEROY SOMER | LINZ | MECC ALTE | STAMFORD
+  H: | PRP | ESP | N. | L/h | L | mm | mm | mm | kg
+    0 | GP280 A/S | O | 250 | 275 | DC09 072A 02 11 | E | 6 | 39 | 150 | 3000 | 1100 | 1750 | 1950 | | | |
+        ⇒ THÊM bản ghi engine DC09 072A 02 11
+    2 | GP330 A/S | O | 300 | 330 | DC13 072A 02 11 | E | 6 | 45 | 150 | 3000 | 1100 | 2200 | 2050 | | | |
+        ⇒ THÊM bản ghi engine DC13 072A 02 11
+    4 | GP385 A/S | O | 350 | 385 | DC13 072A 02 11 | E | 6 | 54 | 170 | 3300 | 1100 | 2200 | 2840 | | | |
+        ⇒ THÊM bản ghi engine DC13 072A 02 11
+    6 | GP410 A/S | O | 373 | 410 | DC13 072A 02 11 | E | 6 | 57 | 170 | 3300 | 1100 | 2200 | 2980 | | | |
+        ⇒ THÊM bản ghi engine DC13 072A 02 11
+    8 | GP440 A/S | O | 400 | 440 | DC13 072A 02 12 | E | 6 | 61 | 170 | 3300 | 1100 | 2200 | 2980 | | | |
+        ⇒ THÊM bản ghi engine DC13 072A 02 12
+   10 | GP505 A/S | O | 450 | 500 | DC13 072A 02 13 | E | 6 | 67 | 170 | 3300 | 1100 | 2200 | 3060 | | | |
+        ⇒ THÊM bản ghi engine DC13 072A 02 13
+   12 | GP560 A/S | O | 500 | 550 | DC13 072A 02 14 | E | 8 | 72 | 170 | 3300 | 1100 | 2200 | 3120 | | | |
+        ⇒ THÊM bản ghi engine DC13 072A 02 14
+   14 | GP610 A/S | O | 550 | 600 | DC16 093A 02 52 | E | 8 | 83 | 320 | 3400 | 1400 | 2260 | 3950 | | | |
+        ⇒ THÊM bản ghi engine DC16 093A 02 52
+   16 | GP660 A/S | O | 600 | 660 | DC16 093A 02 54 | E | 8 | 91 | 320 | 3400 | 1400 | 2260 | 4000 | | | |
+        ⇒ THÊM bản ghi engine DC16 093A 02 54
+   18 | GP700 A/S | O | 640 | 704 | DC16 093A 02 54 | E | 8 | 94 | 320 | 3400 | 1400 | 2200 | 4230 | | | |
+        ⇒ THÊM bản ghi engine DC16 093A 02 54
+   20 | GP720 A/S | O | 650 | 715 | DC16 078A 02 42 | E | 8 | 98 | 320 | 3400 | 1400 | 2200 | 4230 | | | |
+        ⇒ THÊM bản ghi engine DC16 078A 02 42
+   22 | GP780 A/S | O | 700 | 770 | DC16 078A 02 43 | E | 8 | 106 | 320 | 3400 | 1400 | 2200 | 4350 | | | |
+        ⇒ THÊM bản ghi engine DC16 078A 02 43
+   24 | GP810 A/S | O | 725 | 800 | DC16 078A 02 44 | E | 8 | 123.8 | 320 | 3400 | 1400 | 2200 | 4590 | | | |
+        ⇒ THÊM bản ghi engine DC16 078A 02 44
+
+[green-power-generators n120 bảng 21] ×1
+  H: | | MODELLO MODEL | TIPO TYPE | POTENZA POWER | MOTORE ENGINE | | SERBATOIO TANK | DIMENSIONI DIMENSIONS | PESO WEIGHT | DOWNLOAD
+  H: | kVA - 50 Hz | MODELLO MODEL | REG | CIL. | CONSUMO AL 75% PRP CONSUMPTION AT 75% PRP | EMISSIONI EMISSIONS | DIESEL | UREA | Lu | La | A | LEROY SOMER | LINZ | MECC ALTE | STAMFORD
+  H: | PRP | ESP | N. | L/h | L | L | mm | mm | mm | kg
+    0 | GP280 A/S-SV | O | 250 | 275 | DC09 320A 02 61 | E | 5 | 39,4 | STAGE V | 300 | 60 | 3300 | 1100 | 2400 | N.A. | | | |
+        ⇒ THÊM bản ghi engine DC09 320A 02 61
+
+[huadong-yangzhou n106 bảng 5] ×9
+  H: | 机组型号 | 输出功率（KVA/KW） | 额定 电流 (A) | 100% 负载 燃油耗 （L/h） | 发动机 | 外形尺寸（mm） L ×W×H | 净重量 （Kg）
+  H: | 额定功率 | 备用功率 | 型号 | 最大功率 （KW）
+    0 | HDSC250 | 250/200 | 275/220 | 362 | 47 | DC9 65A 10-93 | 247 | 3035×1210×1900 | 2027
+        ⇒ THÊM bản ghi engine DC9 65A 10-93
+    2 | HDSC275 | 275/220 | 303/242 | 398 | 52 | DC9 65A 10-94 | 269 | 3140×1210×1900 | 2300
+        ⇒ THÊM bản ghi engine DC9 65A 10-94
+    4 | HDSC300 | 300/240 | 330/264 | 434 | 56 | DC9 65A 10-95 | 292 | 3140×1210×1900 | 2300
+        ⇒ THÊM bản ghi engine DC9 65A 10-95
+    6 | HDSC325 | 325/260 | 357/286 | 471 | 61 | DC09 073A 02-24 | 317 | 3140×1210×1900 | 2390
+        ⇒ THÊM bản ghi engine DC09 073A 02-24
+   13 | HDSC500 | 500/400 | 550/440 | 724 | 93 | DC13 073A 02-24 | 480 | 3560×1205×2160 | 3810
+        ⇒ THÊM bản ghi engine DC13 073A 02-24
+   15 | HDSC550 | 550/440 | 605/484 | 796 | 102 | DC16 44A 10-27 | 523 | 3570×1205×2210 | 3958
+        ⇒ THÊM bản ghi engine DC16 44A 10-27
+   16 | HDSC600 | 600/480 | 660/528 | 868 | 119 | DC16 072A 02-14 | 587 | 3570×1205×2210 | 4110
+        ⇒ THÊM bản ghi engine DC16 072A 02-14
+   17 | HDSC650 | 650/520 | 715/572 | 942 | 129 | DC16 072A 02-15 | 634 | 3680×1205×2210 | 4260
+        ⇒ THÊM bản ghi engine DC16 072A 02-15
+   18 | HDSC700 | 700/560 | 770/616 | 1014 | 138 | DC16 072A 02-16 | 680 | 3680×1205×2210 | 4350
+        ⇒ THÊM bản ghi engine DC16 072A 02-16
+
+[jinjia-power n101 bảng 0] ×58
+  H: | Model | Prime Power (kW) | Standby (kW) | kVA | Engine | Cyl. | Displacement (L) | Fuel (g/kW·h) | Weight (kg) | Dimensions (mm)
+    0 | JJC-20GF | 20 | 22 | 25 | 4B3.9-G11 | 4 | 3.9 | 208 | 700 | 1650x720x1200
+        ⇒ THÊM bản ghi engine 4B3.9-G11
+    1 | JJC-24GF | 24 | 26.4 | 30 | 4B3.9-G2 | 4 | 3.9 | 208 | 700 | 1650x720x1200
+        ⇒ THÊM bản ghi engine 4B3.9-G2
+    2 | JJC-30GF | 30 | 33 | 37.5 | 4BT3.9-G2 | 4 | 3.9 | 208 | 750 | 1770x880x1450
+        ⇒ THÊM bản ghi engine 4BT3.9-G2
+    3 | JJC-40GF | 40 | 44 | 50 | 4BTA3.9-G2 | 4 | 3.9 | 210 | 820 | 1880x900x1300
+        ⇒ THÊM bản ghi engine 4BTA3.9-G2
+    4 | JJC-50GF | 50 | 55 | 62.5 | 4BTA3.9-G2 | 4 | 3.9 | 210 | 850 | 1880x900x1300
+        ⇒ THÊM bản ghi engine 4BTA3.9-G2
+    5 | JJC-64GF | 64 | 70.4 | 80 | 4BTA3.9-G11 | 4 | 3.9 | 210 | 1000 | 1850x800x1300
+        ⇒ THÊM bản ghi engine 4BTA3.9-G11
+    6 | JJC-80GF | 80 | 88 | 100 | 6BT5.9-G2 | 6 | 5.9 | 210 | 1250 | 2100x900x1400
+        ⇒ THÊM bản ghi engine 6BT5.9-G2
+    7 | JJC-100GF | 100 | 110 | 125 | 6BTA5.9-G2 | 6 | 5.9 | 207 | 1300 | 2230x1040x1480
+        ⇒ THÊM bản ghi engine 6BTA5.9-G2
+    8 | JJC-120GF | 120 | 132 | 150 | 6BTAA5.9-G2 | 6 | 5.9 | 207 | 1350 | 2230x1040x1480
+        ⇒ THÊM bản ghi engine 6BTAA5.9-G2
+    9 | JJC-132GF | 132 | 145.2 | 165 | 6BTAA5.9-G12 | 6 | 5.9 | 207 | 1350 | 2460x880x1480
+        ⇒ THÊM bản ghi engine 6BTAA5.9-G12
+   10 | JJC-150GF | 150 | 165 | 187.5 | 6CTA8.3-G2 | 6 | 8.3 | 207 | 1650 | 2370x1040x1640
+        ⇒ THÊM bản ghi engine 6CTA8.3-G2
+   11 | JJC-180GF | 180 | 198 | 225 | 6CTAA8.3-G2 | 6 | 8.3 | 207 | 1700 | 2450x980x1510
+        ⇒ THÊM bản ghi engine 6CTAA8.3-G2
+   12 | JJC-200GF | 200 | 220 | 250 | 6LTAA8.9-G2 | 6 | 8.9 | 207 | 1980 | 2450x950x1550
+        ⇒ THÊM bản ghi engine 6LTAA8.9-G2
+   13 | JJC-220GF | 220 | 242 | 275 | 6LTAA8.9-G3 | 6 | 8.9 | 203 | 2050 | 2500x950x1550
+        ⇒ THÊM bản ghi engine 6LTAA8.9-G3
+   14 | JJC-250GF | 250 | 275 | 312.5 | 6ZTAA13-G2 | 6 | 13 | 202 | 2900 | 2900x1200x1750
+        ⇒ THÊM bản ghi engine 6ZTAA13-G2
+   15 | JJC-280GF | 280 | 308 | 350 | 6ZTAA13-G3 | 6 | 13 | 202 | 3000 | 2900x1200x1750
+        ⇒ THÊM bản ghi engine 6ZTAA13-G3
+   16 | JJC-300GF | 300 | 330 | 375 | 6ZTAA13-G3 | 6 | 13 | 202 | 3000 | 2900x1200x1750
+        ⇒ THÊM bản ghi engine 6ZTAA13-G3
+   17 | JJC-320GF | 320 | 352 | 400 | 6ZTAA13-G3 | 6 | 13 | 202 | 3000 | 2900x1200x1750
+        ⇒ THÊM bản ghi engine 6ZTAA13-G3
+   18 | JJC-360GF | 360 | 396 | 450 | QSZ13-G2 | 6 | 13 | 202 | 3100 | 3150x1350x1800
+        ⇒ THÊM bản ghi engine QSZ13-G2
+   19 | JJC-400GF | 400 | 440 | 500 | QSZ13-G2 | 6 | 13 | 201 | 3200 | 3150x1350x1800
+        ⇒ THÊM bản ghi engine QSZ13-G2
+   20 | JJC-450GF | 450 | 495 | 562.5 | QSZ13-G3 | 6 | 13 | 201 | 3250 | 3150x1350x1800
+        ⇒ THÊM bản ghi engine QSZ13-G3
+   21 | JJC-200GF | 200 | 220 | 250 | NT855-GA | 6 | 14 | 206 | 2600 | 2910x1100x1700
+        ⇒ THÊM bản ghi engine NT855-GA
+   22 | JJC-250GF | 250 | 275 | 312.5 | NTA855-G1A | 6 | 14 | 207 | 2880 | 3100x1050x1750
+        ⇒ THÊM bản ghi engine NTA855-G1A
+   23 | JJC-256GF | 256 | 281.6 | 320 | NTA855-G1B | 6 | 14 | 207 | 2950 | 3050x1100x1780
+        ⇒ THÊM bản ghi engine NTA855-G1B
+   24 | JJC-275GF | 275 | 302.5 | 344 | NTA855-G2A | 6 | 14 | 206 | 3000 | 3200x1050x1750
+        ⇒ THÊM bản ghi engine NTA855-G2A
+   25 | JJC-280GF | 280 | 308 | 350 | MTAA11-G3 | 6 | 11 | 206 | 2900 | 3100x1050x1750
+        ⇒ THÊM bản ghi engine MTAA11-G3
+   26 | JJC-300GF | 300 | 330 | 375 | NTAA855-G7 | 6 | 14 | 205 | 3100 | 3200x1100x1800
+        ⇒ THÊM bản ghi engine NTAA855-G7
+   27 | JJC-320GF | 320 | 352 | 400 | NTA855-G4 | 6 | 14 | 205 | 3100 | 3200x1100x1800
+        ⇒ THÊM bản ghi engine NTA855-G4
+   28 | JJC-350GF | 350 | 385 | 437.5 | NTAA855-G7A | 6 | 14 | 205 | 3200 | 3300x1250x1850
+        ⇒ THÊM bản ghi engine NTAA855-G7A
+   29 | JJC-360GF | 360 | 396 | 450 | KTA19-G3 | 6 | 19 | 206 | 3700 | 3460x1360x1970
+        ⇒ THÊM bản ghi engine KTA19-G3
+   30 | JJC-400GF | 400 | 440 | 500 | KTA19-G3A | 6 | 19 | 206 | 3700 | 3460x1360x1970
+        ⇒ THÊM bản ghi engine KTA19-G3A
+   31 | JJC-450GF | 450 | 495 | 562.5 | KTA19-G3A | 6 | 19 | 206 | 3750 | 3460x1360x1900
+        ⇒ THÊM bản ghi engine KTA19-G3A
+   32 | JJC-460GF | 460 | 506 | 575 | KTAA19-G6 | 6 | 19 | 206 | 4200 | 3500x1500x2000
+        ⇒ THÊM bản ghi engine KTAA19-G6
+   33 | JJC-480GF | 480 | 528 | 600 | KTA19-G8 | 6 | 19 | 204 | 4200 | 3500x1500x2000
+        ⇒ THÊM bản ghi engine KTA19-G8
+   34 | JJC-500GF | 500 | 550 | 625 | KTA19-G8 | 6 | 19 | 204 | 4260 | 3500x1500x2000
+        ⇒ THÊM bản ghi engine KTA19-G8
+   35 | JJC-520GF | 520 | 572 | 650 | QSK19-G4 | 6 | 19 | 204 | 4500 | 3600x1500x2000
+        ⇒ THÊM bản ghi engine QSK19-G4
+   36 | JJC-530GF | 530 | 583 | 662.5 | KTAA19-G6A | 6 | 19 | 204 | 4800 | 3600x1500x2000
+        ⇒ THÊM bản ghi engine KTAA19-G6A
+   37 | JJC-560GF | 560 | 616 | 700 | QSK19-G4 | 6 | 19 | 204 | 4800 | 3600x1500x2000
+        ⇒ THÊM bản ghi engine QSK19-G4
+   38 | JJC-570GF | 570 | 627 | 712 | KTA38-G1 | 12 | 38 | 204 | 7000 | 4300x1700x2350
+        ⇒ THÊM bản ghi engine KTA38-G1
+   39 | JJC-600GF | 600 | 660 | 750 | KTA38-G2 | 12 | 38 | 205 | 7500 | 4300x1700x2400
+        ⇒ THÊM bản ghi engine KTA38-G2
+   40 | JJC-640GF | 640 | 704 | 800 | KTA38-G2 | 12 | 38 | 205 | 7500 | 4300x1700x2400
+        ⇒ THÊM bản ghi engine KTA38-G2
+   41 | JJC-700GF | 700 | 770 | 875 | KTA38-G2B | 12 | 38 | 206 | 8000 | 4400x1750x2450
+        ⇒ THÊM bản ghi engine KTA38-G2B
+   42 | JJC-800GF | 800 | 880 | 1000 | KTA38-G2A | 12 | 38 | 206 | 8100 | 4400x2060x2300
+        ⇒ THÊM bản ghi engine KTA38-G2A
+   43 | JJC-824GF | 824 | 906.4 | 1030 | KTA38-G5 | 12 | 38 | 206 | 8100 | 4400x2060x2300
+        ⇒ THÊM bản ghi engine KTA38-G5
+   44 | JJC-900GF | 900 | 990 | 1125 | KTA38-G9 | 12 | 38 | 206 | 8200 | 4350x2050x2250
+        ⇒ THÊM bản ghi engine KTA38-G9
+   45 | JJC-1000GF | 1000 | 1100 | 1250 | KTA38-G9 | 12 | 38 | 206 | 9200 | 4350x2050x2250
+        ⇒ THÊM bản ghi engine KTA38-G9
+   46 | JJC-1100GF | 1100 | 1210 | 1375 | KTA50-G3 | 16 | 50 | 206 | 9800 | 5000x2000x2500
+        ⇒ THÊM bản ghi engine KTA50-G3
+   47 | JJC-1200GF | 1200 | 1320 | 1500 | KTA50-G8 | 16 | 50 | 206 | 10500 | 5600x2140x2630
+        ⇒ THÊM bản ghi engine KTA50-G8
+   48 | JJC-1340GF | 1340 | 1474 | 1675 | KTA50-G8 | 16 | 50 | 206 | 10800 | 5600x2140x2630
+        ⇒ THÊM bản ghi engine KTA50-G8
+   49 | JJC-1500GF | 1500 | 1650 | 1875 | KTA50-G15A | 16 | 50 | 204 | 11500 | 5700x2200x2700
+        ⇒ THÊM bản ghi engine KTA50-G15A
+   50 | JJC-1600GF | 1600 | 1760 | 2000 | KTA50-G16A | 16 | 50 | 204 | 13000 | 5800x2300x2800
+        ⇒ THÊM bản ghi engine KTA50-G16A
+   51 | JJC-1600GF | 1600 | 1760 | 2000 | QSK60-G3 | 16 | 60.2 | 208 | 14000 | 6200x2300x2800
+        ⇒ THÊM bản ghi engine QSK60-G3
+   52 | JJC-1800GF | 1800 | 1980 | 2250 | QSK60-G4 | 16 | 60.2 | 208 | 15000 | 6300x2300x2800
+        ⇒ THÊM bản ghi engine QSK60-G4
+   53 | JJC-2000GF | 2000 | 2200 | 2500 | QSK60-G5 | 16 | 60.2 | 210 | 16000 | 6500x2400x2900
+        ⇒ THÊM bản ghi engine QSK60-G5
+   54 | JJC-2200GF | 2200 | 2420 | 2750 | QSK60-G6 | 16 | 60.2 | 210 | 17000 | 6600x2400x2900
+        ⇒ THÊM bản ghi engine QSK60-G6
+   55 | JJC-2500GF | 2500 | 2750 | 3125 | QSK78-G | 18 | 78 | 215 | 20000 | 7200x2600x3100
+        ⇒ THÊM bản ghi engine QSK78-G
+   56 | JJC-2800GF | 2800 | 3080 | 3500 | QSK78-G | 18 | 78 | 215 | 22000 | 7400x2600x3200
+        ⇒ THÊM bản ghi engine QSK78-G
+   57 | JJC-3000GF | 3000 | 3300 | 3750 | QSK95-G | 16 | 95 | 220 | 25000 | 7800x2800x3400
+        ⇒ THÊM bản ghi engine QSK95-G
+
+[jinjia-power n102 bảng 1] ×34
+  H: | Model | Prime Power (kW) | Standby (kW) | kVA | Engine | Cyl. | Displacement (L) | Fuel (g/kW·h) | Weight (kg) | Dimensions (mm)
+    0 | JJY-90GF | 90 | 99 | 112.5 | YC6B135Z-D20 | 6 | 6.87 | 197 | 1300 | 2250×800×1300
+        ⇒ THÊM bản ghi engine YC6B135Z-D20
+    1 | JJY-100GF | 100 | 110 | 125 | YC6B155L-D21 | 6 | 6.87 | 196 | 1500 | 2300×800×1300
+        ⇒ THÊM bản ghi engine YC6B155L-D21
+    2 | JJY-120GF | 120 | 132 | 150 | YC6B180L-D20 | 6 | 6.87 | 196 | 1600 | 2350×830×1300
+        ⇒ THÊM bản ghi engine YC6B180L-D20
+    3 | JJY-132GF | 132 | 145 | 165 | YC6B205L-D20 | 6 | 6.87 | 196 | 1700 | 2500×850×1300
+        ⇒ THÊM bản ghi engine YC6B205L-D20
+    4 | JJY-150GF | 150 | 165 | 187.5 | YC6A230L-D20 | 6 | 7.26 | 195 | 2100 | 2550×900×1350
+        ⇒ THÊM bản ghi engine YC6A230L-D20
+    5 | JJY-160GF | 160 | 176 | 200 | YC6A245L-D21 | 6 | 7.26 | 195 | 2300 | 2500×970×1500
+        ⇒ THÊM bản ghi engine YC6A245L-D21
+    6 | JJY-180GF | 180 | 198 | 225 | YC6MK285L-D20 | 6 | 10.33 | 195 | 2600 | 3000×1030×1600
+        ⇒ THÊM bản ghi engine YC6MK285L-D20
+    7 | JJY-200GF | 200 | 220 | 250 | YC6MK350L-D20 | 6 | 10.33 | 195 | 2750 | 3000×1050×1650
+        ⇒ THÊM bản ghi engine YC6MK350L-D20
+    8 | JJY-220GF | 220 | 242 | 275 | YC6MK420L-D20 | 6 | 10.33 | 195 | 2800 | 3020×1050×1650
+        ⇒ THÊM bản ghi engine YC6MK420L-D20
+    9 | JJY-250GF | 250 | 275 | 312.5 | YC6MK420L-D20 | 6 | 10.33 | 195 | 3000 | 3050×1150×1750
+        ⇒ THÊM bản ghi engine YC6MK420L-D20
+   10 | JJY-280GF | 280 | 308 | 350 | YC6MJ480L-D20 | 6 | 11.73 | 215 | 3050 | 3100×1150×1750
+        ⇒ THÊM bản ghi engine YC6MJ480L-D20
+   11 | JJY-300GF | 300 | 330 | 375 | YC6MJ480L-D20 | 6 | 11.73 | 215 | 3100 | 3100×1150×1750
+        ⇒ THÊM bản ghi engine YC6MJ480L-D20
+   12 | JJY-320GF | 320 | 352 | 400 | YC6K520-D30 | 6 | 12.15 | 205 | 3500 | 3300×1250×1850
+        ⇒ THÊM bản ghi engine YC6K520-D30
+   13 | JJY-350GF | 350 | 385 | 437.5 | YC6K570-D30 | 6 | 12.94 | 205 | 3500 | 3350×1250×1850
+        ⇒ THÊM bản ghi engine YC6K570-D30
+   14 | JJY-380GF | 380 | 418 | 475 | YC6K570-D30 | 6 | 12.94 | 205 | 3500 | 3350×1250×1850
+        ⇒ THÊM bản ghi engine YC6K570-D30
+   15 | JJY-400GF | 400 | 440 | 500 | YC6T600L-D22 | 6 | 16.35 | 195 | 3900 | 3460×1350×1850
+        ⇒ THÊM bản ghi engine YC6T600L-D22
+   16 | JJY-440GF | 440 | 484 | 550 | YC6T660L-D20 | 6 | 16.35 | 195 | 3950 | 3500×1500×1950
+        ⇒ THÊM bản ghi engine YC6T660L-D20
+   17 | JJY-500GF | 500 | 550 | 625 | YC6TD780L-D20 | 6 | 19.6 | 225 | 4100 | 3600×1500×1950
+        ⇒ THÊM bản ghi engine YC6TD780L-D20
+   18 | JJY-550GF | 550 | 605 | 687.5 | YC6TD840L-D20 | 6 | 19.6 | 225 | 4200 | 3650×1600×2000
+        ⇒ THÊM bản ghi engine YC6TD840L-D20
+   19 | JJY-600GF | 600 | 660 | 750 | YC6TD900-D31 | 6 | 19.6 | 225 | 4500 | 3750×1650×2000
+        ⇒ THÊM bản ghi engine YC6TD900-D31
+   20 | JJY-650GF | 650 | 715 | 812.5 | YC6TD1000-D30 | 6 | 19.6 | 225 | 4650 | 3750×1650×2000
+        ⇒ THÊM bản ghi engine YC6TD1000-D30
+   21 | JJY-700GF | 700 | 770 | 875 | YC6C1020-D31 | 6 | 39.58 | 220 | 5500 | 4000×1650×2100
+        ⇒ THÊM bản ghi engine YC6C1020-D31
+   22 | JJY-800GF | 800 | 880 | 1000 | YC6C1220-D31 | 6 | 39.58 | 220 | 8050 | 4620×1800×2600
+        ⇒ THÊM bản ghi engine YC6C1220-D31
+   23 | JJY-880GF | 880 | 968 | 1100 | YC6C1320-D31 | 6 | 39.58 | 220 | 8550 | 5200×2150×2600
+        ⇒ THÊM bản ghi engine YC6C1320-D31
+   24 | JJY-1000GF | 1000 | 1100 | 1250 | YC6C1520-D31 | 6 | 39.58 | 220 | 8680 | 5280×2150×2600
+        ⇒ THÊM bản ghi engine YC6C1520-D31
+   25 | JJY-1100GF | 1100 | 1210 | 1375 | YC12VC1680-D31 | 12 | 79.17 | 210 | 9800 | 5400×2150×2600
+        ⇒ THÊM bản ghi engine YC12VC1680-D31
+   26 | JJY-1200GF | 1200 | 1320 | 1500 | YC12VC2070-D31 | 12 | 79.17 | 210 | 10050 | 5400×2300×2600
+        ⇒ THÊM bản ghi engine YC12VC2070-D31
+   27 | JJY-1320GF | 1320 | 1452 | 1650 | YC12VC2070-D31 | 12 | 79.17 | 210 | 10100 | 5400×2300×2600
+        ⇒ THÊM bản ghi engine YC12VC2070-D31
+   28 | JJY-1500GF | 1500 | 1650 | 1875 | YC12VC2270-D31 | 12 | 79.17 | 210 | 12000 | 5600×2280×2600
+        ⇒ THÊM bản ghi engine YC12VC2270-D31
+   29 | JJY-1600GF | 1600 | 1760 | 2000 | YC12VC2510-D31 | 12 | 79.17 | 210 | 12500 | 5600×2280×2600
+        ⇒ THÊM bản ghi engine YC12VC2510-D31
+   30 | JJY-1800GF | 1800 | 1980 | 2250 | YC12VC2700-D31 | 12 | 79.17 | 210 | 13200 | 5650×2350×2600
+        ⇒ THÊM bản ghi engine YC12VC2700-D31
+   31 | JJY-2000GF | 2000 | 2200 | 2500 | YC16VC3000-D31 | 16 | 105.6 | 196 | 17500 | 7350×2670×2950
+        ⇒ THÊM bản ghi engine YC16VC3000-D31
+   32 | JJY-2200GF | 2200 | 2420 | 2750 | YC16VC3300-D31 | 16 | 105.6 | 196 | 17580 | 7350×2670×2950
+        ⇒ THÊM bản ghi engine YC16VC3300-D31
+   33 | JJY-2400GF | 2400 | 2640 | 3000 | YC16VC3600-D31 | 16 | 105.6 | 196 | 19200 | 7400×3100×3300
+        ⇒ THÊM bản ghi engine YC16VC3600-D31
+
+[jinjia-power n103 bảng 2] ×16
+  H: | Model | Prime Power (kW) | Standby (kW) | kVA | Engine | Cyl. | Displacement (L) | Fuel (g/kW·h) | Weight (kg) | Dimensions (mm)
+    0 | JJV-80GF | 80 | 88 | 100 | TAD550GE | 4 | 4.76 | 213 | 1030 | 2100×700×1450
+        ⇒ THÊM bản ghi engine TAD550GE
+    1 | JJV-90GF | 90 | 99 | 112.5 | TAD551GE | 4 | 4.76 | 214 | 1150 | 2100×960×1450
+        ⇒ THÊM bản ghi engine TAD551GE
+    2 | JJV-112GF | 112 | 123 | 140 | TAD750GE | 6 | 7.15 | 214 | 1200 | 2500×1020×1500
+        ⇒ THÊM bản ghi engine TAD750GE
+    3 | JJV-128GF | 128 | 141 | 160 | TAD752GE | 6 | 7.15 | 213 | 1700 | 2520×1060×1530
+        ⇒ THÊM bản ghi engine TAD752GE
+    4 | JJV-160GF | 160 | 176 | 200 | TAD753GE | 6 | 7.15 | 216 | 1800 | 2550×1060×1530
+        ⇒ THÊM bản ghi engine TAD753GE
+    5 | JJV-180GF | 180 | 198 | 225 | TAD754GE | 6 | 7.15 | 204 | 1900 | 2600×1100×1530
+        ⇒ THÊM bản ghi engine TAD754GE
+    6 | JJV-200GF | 200 | 220 | 250 | TAD754GE | 6 | 7.15 | 204 | 1950 | 2600×1100×1530
+        ⇒ THÊM bản ghi engine TAD754GE
+    7 | JJV-220GF | 220 | 242 | 275 | TAD754GE | 6 | 7.15 | 204 | 1950 | 2600×1100×1530
+        ⇒ THÊM bản ghi engine TAD754GE
+    8 | JJV-280GF | 280 | 308 | 350 | TAD1351GE | 6 | 12.78 | 198 | 2850 | 3100×1150×1600
+        ⇒ THÊM bản ghi engine TAD1351GE
+    9 | JJV-300GF | 300 | 330 | 375 | TAD1352GE | 6 | 12.78 | 198 | 2900 | 3100×1150×1600
+        ⇒ THÊM bản ghi engine TAD1352GE
+   10 | JJV-320GF | 320 | 352 | 400 | TAD1354GE | 6 | 12.78 | 198 | 2950 | 3100×1150×1600
+        ⇒ THÊM bản ghi engine TAD1354GE
+   11 | JJV-350GF | 350 | 385 | 437.5 | TAD1355GE | 6 | 12.78 | 199 | 3050 | 3100×1150×1600
+        ⇒ THÊM bản ghi engine TAD1355GE
+   12 | JJV-400GF | 400 | 440 | 500 | TAD1650GE | 6 | 16.12 | 199 | 3300 | 3200×1150×1880
+        ⇒ THÊM bản ghi engine TAD1650GE
+   13 | JJV-440GF | 440 | 484 | 550 | TAD1651GE | 6 | 16.12 | 199 | 3400 | 3200×1150×1880
+        ⇒ THÊM bản ghi engine TAD1651GE
+   14 | JJV-500GF | 500 | 550 | 625 | TWD1652GE | 6 | 16.12 | 199 | 3600 | 3350×1350×1950
+        ⇒ THÊM bản ghi engine TWD1652GE
+   15 | JJV-550GF | 550 | 605 | 687.5 | TWD1653GE | 6 | 16.12 | 199 | 3700 | 3400×1350×2000
+        ⇒ THÊM bản ghi engine TWD1653GE
+
+[jinjia-power n104 bảng 3] ×37
+  H: | Model | Prime Power (kW) | Standby (kW) | kVA | Engine | Cyl. | Displacement (L) | Fuel (g/kW·h) | Weight (kg) | Dimensions (mm)
+    0 | JJS-40GF | 40 | 44 | 50 | 4ZT3.5-G21 | 4 | 3.5 | 210 | 915 | 1700×600×1200
+        ⇒ THÊM bản ghi engine 4ZT3.5-G21
+    1 | JJS-50GF | 50 | 55 | 62.5 | SC4H95D2 | 4 | 4.3 | 204 | 950 | 1900×893×1170
+        ⇒ THÊM bản ghi engine SC4H95D2
+    2 | JJS-64GF | 64 | 70 | 80 | SC4H115D2 | 4 | 4.3 | 204 | 1020 | 1950×893×1170
+        ⇒ THÊM bản ghi engine SC4H115D2
+    3 | JJS-80GF | 80 | 88 | 100 | SC4H140D2 | 4 | 4.3 | 195 | 1080 | 1983×973×1185
+        ⇒ THÊM bản ghi engine SC4H140D2
+    4 | JJS-90GF | 90 | 99 | 112.5 | SC4H160D2 | 4 | 4.3 | 198 | 1100 | 1983×973×1185
+        ⇒ THÊM bản ghi engine SC4H160D2
+    5 | JJS-100GF | 100 | 110 | 125 | SC4H180D2 | 4 | 4.3 | 198 | 1123 | 1983×973×1185
+        ⇒ THÊM bản ghi engine SC4H180D2
+    6 | JJS-120GF | 120 | 132 | 150 | SC7H205D2 | 6 | 6.5 | 198 | 1357 | 2413×940×1376
+        ⇒ THÊM bản ghi engine SC7H205D2
+    7 | JJS-130GF | 130 | 143 | 162.5 | SC7H220D2 | 6 | 6.5 | 152 | 1412 | 2413×940×1376
+        ⇒ THÊM bản ghi engine SC7H220D2
+    8 | JJS-136GF | 136 | 150 | 170 | SC7H230D2 | 6 | 6.5 | 165 | 1437 | 2413×940×1376
+        ⇒ THÊM bản ghi engine SC7H230D2
+    9 | JJS-150GF | 150 | 165 | 187.5 | SC7H250D2 | 6 | 6.5 | 170 | 1437 | 2413×940×1376
+        ⇒ THÊM bản ghi engine SC7H250D2
+   10 | JJS-160GF | 160 | 176 | 200 | SC8D280D2 | 6 | 8.3 | 185 | 1770 | 2490×1080×1630
+        ⇒ THÊM bản ghi engine SC8D280D2
+   11 | JJS-180GF | 180 | 198 | 225 | SC9D310D2 | 6 | 8.9 | 200 | 1670 | 2505×980×1500
+        ⇒ THÊM bản ghi engine SC9D310D2
+   12 | JJS-200GF | 200 | 220 | 250 | SC9D340D2 | 6 | 8.9 | 200 | 1835 | 2540×1000×1486
+        ⇒ THÊM bản ghi engine SC9D340D2
+   13 | JJS-220GF | 220 | 242 | 275 | SC10E380D2 | 6 | 10.4 | 198 | 1526 | 3065×1105×1626
+        ⇒ THÊM bản ghi engine SC10E380D2
+   14 | JJS-240GF | 240 | 264 | 300 | SC10E420D2 | 6 | 10.4 | 192 | 1526 | 3065×1105×1626
+        ⇒ THÊM bản ghi engine SC10E420D2
+   15 | JJS-280GF | 280 | 308 | 350 | SC12E460D2 | 6 | 11.8 | 192 | 1640 | 3065×1105×1626
+        ⇒ THÊM bản ghi engine SC12E460D2
+   16 | JJS-300GF | 300 | 330 | 375 | SC13E500D2 | 6 | 12.8 | 192 | 2760 | 3080×1230×1670
+        ⇒ THÊM bản ghi engine SC13E500D2
+   17 | JJS-320GF | 320 | 352 | 400 | 6ETAA11.8-G31 | 6 | 11.8 | 192 | 1640 | 3065×1105×1626
+        ⇒ THÊM bản ghi engine 6ETAA11.8-G31
+   18 | JJS-350GF | 350 | 385 | 437.5 | 6ETAA12.8-G32 | 6 | 12.8 | 190 | 2970 | 3147×1230×1670
+        ⇒ THÊM bản ghi engine 6ETAA12.8-G32
+   19 | JJS-400GF | 400 | 440 | 500 | SC25G610D2 | 12 | 25.8 | 190 | 2700 | 3300×1105×1626
+        ⇒ THÊM bản ghi engine SC25G610D2
+   20 | JJS-450GF | 450 | 495 | 562.5 | SC25G690D2 | 12 | 25.8 | 205 | 2700 | 3300×1105×1626
+        ⇒ THÊM bản ghi engine SC25G690D2
+   21 | JJS-500GF | 500 | 550 | 625 | SC27G755D2 | 12 | 26.6 | 205 | 4195 | 3449×1400×1992
+        ⇒ THÊM bản ghi engine SC27G755D2
+   22 | JJS-550GF | 550 | 605 | 687.5 | SC27G830D2 | 12 | 26.6 | 205 | 4300 | 3548×1400×1992
+        ⇒ THÊM bản ghi engine SC27G830D2
+   23 | JJS-600GF | 600 | 660 | 750 | SC27G900D2 | 12 | 26.6 | 205 | 4370 | 3548×1400×1992
+        ⇒ THÊM bản ghi engine SC27G900D2
+   24 | JJS-650GF | 650 | 715 | 812.5 | 6KTAA25-G32 | 6 | 25.2 | 205 | 4510 | 3548×1400×1992
+        ⇒ THÊM bản ghi engine 6KTAA25-G32
+   25 | JJS-700GF | 700 | 770 | 875 | SC33W1150D2 | 6 | 32.8 | 192 | 4605 | 3624×1400×1992
+        ⇒ THÊM bản ghi engine SC33W1150D2
+   26 | JJS-720GF | 720 | 792 | 900 | 6KTAA25-G320 | 6 | 25.2 | 205 | 5260 | 3900×1608×2109
+        ⇒ THÊM bản ghi engine 6KTAA25-G320
+   27 | JJS-800GF | 800 | 880 | 1000 | 6WTAA35-G31 | 6 | 35.1 | 195 | 5400 | 4191×1608×2109
+        ⇒ THÊM bản ghi engine 6WTAA35-G31
+   28 | JJS-900GF | 900 | 990 | 1125 | 6WTAA35-G310 | 6 | 35.1 | 195 | 6400 | 4433×1700×2025
+        ⇒ THÊM bản ghi engine 6WTAA35-G310
+   29 | JJS-1000GF | 1000 | 1100 | 1250 | 6WTAA35-G311 | 6 | 35.1 | 195 | 8090 | 4440×1855×2477
+        ⇒ THÊM bản ghi engine 6WTAA35-G311
+   30 | JJS-1200GF | 1200 | 1320 | 1500 | 12KTA58-G35 | 12 | 57.2 | 188 | 8300 | 4471×1975×2477
+        ⇒ THÊM bản ghi engine 12KTA58-G35
+   31 | JJS-1500GF | 1500 | 1650 | 1875 | 12KTA58-G34 | 12 | 57.2 | 190 | 11500 | 4850×1850×2650
+        ⇒ THÊM bản ghi engine 12KTA58-G34
+   32 | JJS-1600GF | 1600 | 1760 | 2000 | 12KTA58-G32 | 12 | 57.2 | 190 | 12500 | 5000×1900×2700
+        ⇒ THÊM bản ghi engine 12KTA58-G32
+   33 | JJS-1800GF | 1800 | 1980 | 2250 | 12KTA58-G31 | 12 | 57.2 | 188 | 14000 | 5200×2000×2800
+        ⇒ THÊM bản ghi engine 12KTA58-G31
+   34 | JJS-2000GF | 2000 | 2200 | 2500 | S16R-PTA2-C | 16 | 65.3 | 188 | 15500 | 5500×2100×2900
+        ⇒ THÊM bản ghi engine S16R-PTA2-C
+   35 | JJS-2200GF | 2200 | 2420 | 2750 | S16R2-PTAW-C | 16 | 65.3 | 186 | 17000 | 5700×2200×3000
+        ⇒ THÊM bản ghi engine S16R2-PTAW-C
+   36 | JJS-2400GF | 2400 | 2640 | 3000 | S16R2-PTAA2-C | 16 | 65.3 | 185 | 18500 | 6000×2300×3100
+        ⇒ THÊM bản ghi engine S16R2-PTAA2-C
+
+[jinjia-power n105 bảng 4] ×40
+  H: | Model | Prime Power (kW) | Standby (kW) | kVA | Engine | Cyl. | Displacement (L) | Fuel (g/kW·h) | Weight (kg) | Dimensions (mm)
+    0 | JJW-12GF | 12 | 13.2 | 15 | WP2.3D12E2 | 4 | 2.29 | 240 | 480 | 1500×700×1100
+        ⇒ THÊM bản ghi engine WP2.3D12E2
+    1 | JJW-20GF | 20 | 22 | 25 | WP2.3D20E2 | 4 | 2.29 | 238 | 500 | 1500×700×1100
+        ⇒ THÊM bản ghi engine WP2.3D20E2
+    2 | JJW-30GF | 30 | 33 | 37.5 | WP4.1D30E2 | 4 | 2.77 | 235 | 650 | 1700×750×1200
+        ⇒ THÊM bản ghi engine WP4.1D30E2
+    3 | JJW-40GF | 40 | 44 | 50 | WP4.1D40E2 | 4 | 2.77 | 230 | 680 | 1750×750×1200
+        ⇒ THÊM bản ghi engine WP4.1D40E2
+    4 | JJW-50GF | 50 | 55 | 62.5 | WP6D50E2 | 6 | 5.96 | 225 | 850 | 1900×850×1300
+        ⇒ THÊM bản ghi engine WP6D50E2
+    5 | JJW-64GF | 64 | 70 | 80 | WP6D64E2 | 6 | 5.96 | 222 | 900 | 1950×850×1300
+        ⇒ THÊM bản ghi engine WP6D64E2
+    6 | JJW-80GF | 80 | 88 | 100 | WP6D80E2 | 6 | 5.96 | 220 | 950 | 2000×900×1350
+        ⇒ THÊM bản ghi engine WP6D80E2
+    7 | JJW-100GF | 100 | 110 | 125 | WP10D100E200 | 6 | 9.73 | 215 | 1200 | 2300×1000×1500
+        ⇒ THÊM bản ghi engine WP10D100E200
+    8 | JJW-120GF | 120 | 132 | 150 | WP10D120E200 | 6 | 9.73 | 213 | 1250 | 2350×1000×1500
+        ⇒ THÊM bản ghi engine WP10D120E200
+    9 | JJW-150GF | 150 | 165 | 187.5 | WP13D150E200 | 6 | 11.59 | 210 | 1400 | 2500×1050×1550
+        ⇒ THÊM bản ghi engine WP13D150E200
+   10 | JJW-160GF | 160 | 176 | 200 | WP13D160E200 | 6 | 11.59 | 208 | 1450 | 2550×1050×1550
+        ⇒ THÊM bản ghi engine WP13D160E200
+   11 | JJW-180GF | 180 | 198 | 225 | WP13D180E200 | 6 | 11.59 | 205 | 1500 | 2600×1050×1550
+        ⇒ THÊM bản ghi engine WP13D180E200
+   12 | JJW-200GF | 200 | 220 | 250 | WP13D200E200 | 6 | 11.59 | 205 | 1550 | 2650×1100×1600
+        ⇒ THÊM bản ghi engine WP13D200E200
+   13 | JJW-220GF | 220 | 242 | 275 | WP13D220E200 | 6 | 11.59 | 205 | 1600 | 2700×1100×1600
+        ⇒ THÊM bản ghi engine WP13D220E200
+   14 | JJW-250GF | 250 | 275 | 312.5 | 6M26D250E310 | 6 | 16.96 | 200 | 2300 | 2900×1200×1700
+        ⇒ THÊM bản ghi engine 6M26D250E310
+   15 | JJW-280GF | 280 | 308 | 350 | 6M26D280E310 | 6 | 16.96 | 200 | 2400 | 2950×1200×1750
+        ⇒ THÊM bản ghi engine 6M26D280E310
+   16 | JJW-300GF | 300 | 330 | 375 | 6M26D300E310 | 6 | 16.96 | 198 | 2500 | 3000×1250×1750
+        ⇒ THÊM bản ghi engine 6M26D300E310
+   17 | JJW-320GF | 320 | 352 | 400 | 6M33D320E310 | 6 | 18.56 | 198 | 2800 | 3100×1300×1800
+        ⇒ THÊM bản ghi engine 6M33D320E310
+   18 | JJW-360GF | 360 | 396 | 450 | 6M33D360E310 | 6 | 18.56 | 196 | 2900 | 3150×1300×1800
+        ⇒ THÊM bản ghi engine 6M33D360E310
+   19 | JJW-400GF | 400 | 440 | 500 | 6M33D400E310 | 6 | 18.56 | 196 | 3000 | 3200×1350×1850
+        ⇒ THÊM bản ghi engine 6M33D400E310
+   20 | JJW-450GF | 450 | 495 | 562.5 | 6M33D450E310 | 6 | 18.56 | 196 | 3200 | 3300×1350×1850
+        ⇒ THÊM bản ghi engine 6M33D450E310
+   21 | JJW-500GF | 500 | 550 | 625 | 12M26D500E310 | 12 | 33.92 | 198 | 4000 | 3600×1500×2000
+        ⇒ THÊM bản ghi engine 12M26D500E310
+   22 | JJW-550GF | 550 | 605 | 687.5 | 12M26D550E310 | 12 | 33.92 | 198 | 4200 | 3700×1500×2000
+        ⇒ THÊM bản ghi engine 12M26D550E310
+   23 | JJW-600GF | 600 | 660 | 750 | 12M33D600E310 | 12 | 37.12 | 196 | 4500 | 3800×1600×2100
+        ⇒ THÊM bản ghi engine 12M33D600E310
+   24 | JJW-660GF | 660 | 726 | 825 | 12M33D660E310 | 12 | 37.12 | 195 | 4700 | 3900×1600×2100
+        ⇒ THÊM bản ghi engine 12M33D660E310
+   25 | JJW-700GF | 700 | 770 | 875 | 12M33D700E310 | 12 | 37.12 | 195 | 4900 | 4000×1700×2150
+        ⇒ THÊM bản ghi engine 12M33D700E310
+   26 | JJW-800GF | 800 | 880 | 1000 | 12M33D800E310 | 12 | 37.12 | 195 | 5200 | 4200×1700×2200
+        ⇒ THÊM bản ghi engine 12M33D800E310
+   27 | JJW-900GF | 900 | 990 | 1125 | 12M33D900E310 | 12 | 37.12 | 195 | 5500 | 4400×1800×2250
+        ⇒ THÊM bản ghi engine 12M33D900E310
+   28 | JJW-1000GF | 1000 | 1100 | 1250 | 12M33D1000E310 | 12 | 37.12 | 195 | 5800 | 4600×1800×2300
+        ⇒ THÊM bản ghi engine 12M33D1000E310
+   29 | JJW-1200GF | 1200 | 1320 | 1500 | 16M33D1200E310 | 16 | 50.27 | 195 | 7800 | 5000×2000×2400
+        ⇒ THÊM bản ghi engine 16M33D1200E310
+   30 | JJW-1400GF | 1400 | 1540 | 1750 | 16M33D1400E310 | 16 | 50.27 | 195 | 8200 | 5200×2100×2500
+        ⇒ THÊM bản ghi engine 16M33D1400E310
+   31 | JJW-1500GF | 1500 | 1650 | 1875 | 16M33D1500E310 | 16 | 50.27 | 195 | 8500 | 5300×2100×2500
+        ⇒ THÊM bản ghi engine 16M33D1500E310
+   32 | JJW-1600GF | 1600 | 1760 | 2000 | 12M55D1600E310 | 12 | 65.65 | 195 | 12000 | 5800×2200×2700
+        ⇒ THÊM bản ghi engine 12M55D1600E310
+   33 | JJW-1800GF | 1800 | 1980 | 2250 | 12M55D1800E310 | 12 | 65.65 | 195 | 13000 | 6000×2300×2800
+        ⇒ THÊM bản ghi engine 12M55D1800E310
+   34 | JJW-2000GF | 2000 | 2200 | 2500 | 12M55D2000E310 | 12 | 65.65 | 195 | 14500 | 6400×2400×2900
+        ⇒ THÊM bản ghi engine 12M55D2000E310
+   35 | JJW-2200GF | 2200 | 2420 | 2750 | 12M55D2200E310 | 12 | 65.65 | 195 | 16000 | 6600×2500×3000
+        ⇒ THÊM bản ghi engine 12M55D2200E310
+   36 | JJW-2400GF | 2400 | 2640 | 3000 | 16M55D2900E310 | 16 | 87.5 | 198 | 14500 | 6200×2500×3000
+        ⇒ THÊM bản ghi engine 16M55D2900E310
+   37 | JJW-2600GF | 2600 | 2860 | 3250 | 16M55D3300E310 | 16 | 87.5 | 198 | 15800 | 6400×2600×3100
+        ⇒ THÊM bản ghi engine 16M55D3300E310
+   38 | JJW-2800GF | 2800 | 3080 | 3500 | 16M55D3500E310 | 16 | 87.5 | 197 | 16500 | 6500×2700×3200
+        ⇒ THÊM bản ghi engine 16M55D3500E310
+   39 | JJW-3000GF | 3000 | 3300 | 3750 | 16M55D3600E310 | 16 | 87.5 | 196 | 17800 | 6800×2900×3300
+        ⇒ THÊM bản ghi engine 16M55D3600E310
+
+[jinjia-power n106 bảng 5] ×34
+  H: | Model | Prime Power (kW) | Standby (kW) | kVA | Engine | Cyl. | Displacement (L) | Fuel (g/kW·h) | Weight (kg) | Dimensions (mm)
+    0 | JJP-7GF | 7 | 7.7 | 8.8 | 403A-11G1 | 3 | 1.13 | 248 | 300 | 1200*700*1100
+        ⇒ THÊM bản ghi engine 403A-11G1
+    1 | JJP-10GF | 10 | 11 | 12.5 | 403A-15G1 | 3 | 1.5 | 248 | 350 | 1250*700*1100
+        ⇒ THÊM bản ghi engine 403A-15G1
+    2 | JJP-12GF | 12 | 13.2 | 15 | 403A-15G2 | 3 | 1.49 | 250 | 350 | 1250*700*1100
+        ⇒ THÊM bản ghi engine 403A-15G2
+    3 | JJP-16GF | 16 | 17.6 | 20 | 404A-22G1 | 4 | 2.22 | 237 | 500 | 1500*710*1200
+        ⇒ THÊM bản ghi engine 404A-22G1
+    4 | JJP-50GF | 50 | 55 | 62.5 | 1104A-44TG1 | 4 | 4.4 | 208 | 1100 | 1800*750*1200
+        ⇒ THÊM bản ghi engine 1104A-44TG1
+    5 | JJP-64GF | 64 | 70.4 | 80 | 1104A-44TG2 | 4 | 4.4 | 208 | 1150 | 1800*750*1200
+        ⇒ THÊM bản ghi engine 1104A-44TG2
+    6 | JJP-80GF | 80 | 88 | 100 | 1104C-44TAG2 | 4 | 4.4 | 205 | 1250 | 1950*800*1300
+        ⇒ THÊM bản ghi engine 1104C-44TAG2
+    7 | JJP-110GF | 110 | 121 | 137.5 | 1106A-70TG1 | 6 | 5.65 | 199 | 1350 | 2480*950*1500
+        ⇒ THÊM bản ghi engine 1106A-70TG1
+    8 | JJP-120GF | 120 | 132 | 150 | 1106A-70TAG2 | 6 | 7.01 | 208 | 1450 | 2600*960*1500
+        ⇒ THÊM bản ghi engine 1106A-70TAG2
+    9 | JJP-140GF | 140 | 154 | 175 | 1106A-70TAG3 | 6 | 7.01 | 206 | 1700 | 2700*960*1500
+        ⇒ THÊM bản ghi engine 1106A-70TAG3
+   10 | JJP-160GF | 160 | 176 | 200 | 1106A-70TAG4 | 6 | 7.01 | 220 | 2100 | 2800*960*1450
+        ⇒ THÊM bản ghi engine 1106A-70TAG4
+   11 | JJP-24GF | 24 | 26.4 | 30 | 1103A-33G | 3 | 3.3 | 211 | 800 | 1500*750*1100
+        ⇒ THÊM bản ghi engine 1103A-33G
+   12 | JJP-36GF | 36 | 39.6 | 45 | 1103A-33TG1 | 3 | 3.3 | 211 | 920 | 1750*750*1300
+        ⇒ THÊM bản ghi engine 1103A-33TG1
+   13 | JJP-180GF | 180 | 198 | 225 | 1506A-E88TAG2 | 6 | 8.8 | 200 | 2100 | 3000*1000*1700
+        ⇒ THÊM bản ghi engine 1506A-E88TAG2
+   14 | JJP-200GF | 200 | 220 | 250 | 1506A-E88TAG3 | 6 | 8.81 | 200 | 2150 | 3100*1000*1700
+        ⇒ THÊM bản ghi engine 1506A-E88TAG3
+   15 | JJP-220GF | 220 | 242 | 275 | 1506A-E88TAG4 | 6 | 8.8 | 198 | 2150 | 3100*1000*1700
+        ⇒ THÊM bản ghi engine 1506A-E88TAG4
+   16 | JJP-240GF | 240 | 264 | 300 | 1506A-E88TAG5 | 6 | 8.81 | 198 | 2150 | 3100*1000*1700
+        ⇒ THÊM bản ghi engine 1506A-E88TAG5
+   17 | JJP-280GF | 280 | 308 | 350 | 2206C-E13TAG2 | 6 | 12.5 | 209 | 3200 | 3100*1120*1780
+        ⇒ THÊM bản ghi engine 2206C-E13TAG2
+   18 | JJP-320GF | 320 | 352 | 400 | 2206C-E13TAG3 | 6 | 12.5 | 206 | 3300 | 3100*1120*1780
+        ⇒ THÊM bản ghi engine 2206C-E13TAG3
+   19 | JJP-360GF | 360 | 396 | 450 | 2506C-E15TAG1 | 6 | 15.2 | 211 | 3700 | 3450*1200*2050
+        ⇒ THÊM bản ghi engine 2506C-E15TAG1
+   20 | JJP-400GF | 400 | 440 | 500 | 2506C-E15TAG2 | 6 | 15.12 | 211 | 3760 | 3450*1200*2100
+        ⇒ THÊM bản ghi engine 2506C-E15TAG2
+   21 | JJP-480GF | 480 | 528 | 600 | 2806C-E18TAG1A | 6 | 18.1 | 216 | 4600 | 3600*1600*2200
+        ⇒ THÊM bản ghi engine 2806C-E18TAG1A
+   22 | JJP-520GF | 520 | 572 | 650 | 2806A-E18TAG2 | 6 | 18.13 | 202 | 4800 | 3600*1600*2200
+        ⇒ THÊM bản ghi engine 2806A-E18TAG2
+   23 | JJP-600GF | 600 | 660 | 750 | 4006-23TAG2A | 6 | 22.9 | 209 | 5500 | 3980*1800*2300
+        ⇒ THÊM bản ghi engine 4006-23TAG2A
+   24 | JJP-640GF | 640 | 704 | 800 | 4006-23TAG3A | 6 | 22.92 | 209 | 6000 | 3980*1800*2300
+        ⇒ THÊM bản ghi engine 4006-23TAG3A
+   25 | JJP-720GF | 720 | 792 | 900 | 4008TAG1A | 8 | 30.5 | 206 | 7700 | 4680*2100*2500
+        ⇒ THÊM bản ghi engine 4008TAG1A
+   26 | JJP-800GF | 800 | 880 | 1000 | 4008TAG2A | 8 | 30.56 | 206 | 8000 | 4680*2100*2500
+        ⇒ THÊM bản ghi engine 4008TAG2A
+   27 | JJP-1000GF | 1000 | 1100 | 1250 | 4012-46TWG2A | 12 | 45.8 | 212 | 9900 | 4950*2200*2600
+        ⇒ THÊM bản ghi engine 4012-46TWG2A
+   28 | JJP-1100GF | 1100 | 1210 | 1375 | 4012-46TWG3A | 12 | 45.84 | 212 | 10000 | 4950*2200*2600
+        ⇒ THÊM bản ghi engine 4012-46TWG3A
+   29 | JJP-1200GF | 1200 | 1320 | 1500 | 4012-46TAG2A | 12 | 45.8 | 212 | 11000 | 5100*2200*2600
+        ⇒ THÊM bản ghi engine 4012-46TAG2A
+   30 | JJP-1360GF | 1360 | 1496 | 1700 | 4012-46TAG3A | 12 | 45.84 | 212 | 12000 | 5100*2200*2600
+        ⇒ THÊM bản ghi engine 4012-46TAG3A
+   31 | JJP-1480GF | 1480 | 1628 | 1850 | 4016TAG1A | 16 | 61.1 | 205 | 13500 | 5700*2800*3100
+        ⇒ THÊM bản ghi engine 4016TAG1A
+   32 | JJP-1600GF | 1600 | 1760 | 2000 | 4016TAG2A | 16 | 61.12 | 208 | 14000 | 5800*2800*3100
+        ⇒ THÊM bản ghi engine 4016TAG2A
+   33 | JJP-1800GF | 1800 | 1980 | 2250 | 4016-61TRG3 | 16 | 61.1 | 205 | 15700 | 5900*2800*3100
+        ⇒ THÊM bản ghi engine 4016-61TRG3
+
+[jinjia-power n107 bảng 6] ×22
+  H: | Model | Prime Power (kW) | Standby (kW) | kVA | Engine | Cyl. | Displacement (L) | Fuel (g/kW·h) | Weight (kg) | Dimensions (mm)
+    0 | JJM-220GF | 220 | 242 | 275 | 6R1600G10F | 6 | 10.5 | 201 | 2500 | 2800*1150*1650
+        ⇒ THÊM bản ghi engine 6R1600G10F
+    1 | JJM-250GF | 250 | 275 | 312.5 | 6R1600G20F | 6 | 10.52 | 199 | 2900 | 2800*1150*1650
+        ⇒ THÊM bản ghi engine 6R1600G20F
+    2 | JJM-300GF | 300 | 330 | 375 | 8V1600G10F | 8 | 14 | 191 | 3230 | 2840*1660*1975
+        ⇒ THÊM bản ghi engine 8V1600G10F
+    3 | JJM-320GF | 320 | 352 | 400 | 8V1600G20F | 8 | 14.03 | 190 | 3250 | 2840*1660*1975
+        ⇒ THÊM bản ghi engine 8V1600G20F
+    4 | JJM-360GF | 360 | 396 | 450 | 10V1600G10F | 10 | 17.5 | 191 | 3800 | 3230*1660*2040
+        ⇒ THÊM bản ghi engine 10V1600G10F
+    5 | JJM-400GF | 400 | 440 | 500 | 10V1600G20F | 10 | 17.53 | 190 | 4000 | 3320*1350*1850
+        ⇒ THÊM bản ghi engine 10V1600G20F
+    6 | JJM-480GF | 480 | 528 | 600 | 12V1600G10F | 12 | 21 | 195 | 3900 | 3300*1400*1970
+        ⇒ THÊM bản ghi engine 12V1600G10F
+    7 | JJM-500GF | 500 | 550 | 625 | 12V1600G20F | 12 | 21.04 | 195 | 4410 | 3400*1350*1850
+        ⇒ THÊM bản ghi engine 12V1600G20F
+    8 | JJM-550GF | 550 | 605 | 687.5 | 12V2000G25 | 12 | 23.88 | 197 | 6500 | 4000*1650*2280
+        ⇒ THÊM bản ghi engine 12V2000G25
+    9 | JJM-630GF | 630 | 693 | 787.5 | 12V2000G65 | 12 | 23.89 | 202 | 7000 | 4200*1650*2280
+        ⇒ THÊM bản ghi engine 12V2000G65
+   10 | JJM-800GF | 800 | 880 | 1000 | 16V2000G25 | 16 | 31.84 | 198 | 7800 | 4500*2000*2300
+        ⇒ THÊM bản ghi engine 16V2000G25
+   11 | JJM-880GF | 880 | 968 | 1100 | 16V2000G65 | 16 | 31.86 | 198 | 7830 | 4500*2000*2300
+        ⇒ THÊM bản ghi engine 16V2000G65
+   12 | JJM-1000GF | 1000 | 1100 | 1250 | 18V2000G65 | 18 | 35.82 | 202 | 9000 | 4700*2000*2380
+        ⇒ THÊM bản ghi engine 18V2000G65
+   13 | JJM-1100GF | 1100 | 1210 | 1375 | 12V4000G21R | 12 | 48.75 | 199 | 11500 | 6100*2100*2400
+        ⇒ THÊM bản ghi engine 12V4000G21R
+   14 | JJM-1200GF | 1200 | 1320 | 1500 | 12V4000G23R | 12 | 57.2 | 195 | 12000 | 6150*2150*2400
+        ⇒ THÊM bản ghi engine 12V4000G23R
+   15 | JJM-1400GF | 1400 | 1540 | 1750 | 12V4000G23 | 12 | 57.2 | 189 | 13000 | 6150*2150*2400
+        ⇒ THÊM bản ghi engine 12V4000G23
+   16 | JJM-1500GF | 1500 | 1650 | 1875 | 12V4000G63 | 12 | 57.2 | 193 | 14000 | 6150*2150*2400
+        ⇒ THÊM bản ghi engine 12V4000G63
+   17 | JJM-1760GF | 1760 | 1936 | 2200 | 16V4000G23 | 16 | 76.27 | 192 | 17000 | 6500*2600*2500
+        ⇒ THÊM bản ghi engine 16V4000G23
+   18 | JJM-1900GF | 1900 | 2090 | 2375 | 16V4000G63 | 16 | 76.3 | 191 | 17500 | 6550*2600*2500
+        ⇒ THÊM bản ghi engine 16V4000G63
+   19 | JJM-2200GF | 2200 | 2420 | 2750 | 20V4000G23 | 20 | 95.33 | 195 | 24000 | 8300*2950*2550
+        ⇒ THÊM bản ghi engine 20V4000G23
+   20 | JJM-2400GF | 2400 | 2640 | 3000 | 20V4000G63 | 20 | 95.4 | 193 | 24500 | 8300*2950*2550
+        ⇒ THÊM bản ghi engine 20V4000G63
+   21 | JJM-2500GF | 2500 | 2750 | 3125 | 20V4000G63L | 20 | 95.33 | 192 | 25000 | 8300*2950*2550
+        ⇒ THÊM bản ghi engine 20V4000G63L
+
+[jinjia-power n108 bảng 7] ×11
+  H: | Model | Prime Power (kW) | Standby (kW) | kVA | Engine | Cyl. | Displacement (L) | Fuel (g/kW·h) | Weight (kg) | Dimensions (mm)
+    0 | JJSL-480GF | 480 | 528 | 600 | S6R-PTA | 6 | 24.5 | 196 | 5000 | 3600*1600*2300
+        ⇒ THÊM bản ghi engine S6R-PTA
+    1 | JJSL-520GF | 520 | 572 | 650 | S6R2-PTA | 6 | 29.96 | 196 | 5100 | 3600*1600*2300
+        ⇒ THÊM bản ghi engine S6R2-PTA
+    2 | JJSL-600GF | 600 | 660 | 750 | S6R2-PTAA | 6 | 30 | 196 | 5750 | 4000*1800*1950
+        ⇒ THÊM bản ghi engine S6R2-PTAA
+    3 | JJSL-800GF | 800 | 880 | 1000 | S12H-PTA | 12 | 37.1 | 206 | 8200 | 4400*1800*2500
+        ⇒ THÊM bản ghi engine S12H-PTA
+    4 | JJSL-1000GF | 1000 | 1100 | 1250 | S12R-PTA | 12 | 49.03 | 221 | 9100 | 4650*2100*2600
+        ⇒ THÊM bản ghi engine S12R-PTA
+    5 | JJSL-1100GF | 1100 | 1210 | 1375 | S12R-PTA2 | 12 | 49 | 221 | 9600 | 4650*2200*2700
+        ⇒ THÊM bản ghi engine S12R-PTA2
+    6 | JJSL-1200GF | 1200 | 1320 | 1500 | S12R-PTAA2 | 12 | 49.03 | 209 | 10000 | 4650*2200*2700
+        ⇒ THÊM bản ghi engine S12R-PTAA2
+    7 | JJSL-1300GF | 1300 | 1430 | 1625 | S16R-PTA | 16 | 65.4 | 206 | 11750 | 5400*2500*3000
+        ⇒ THÊM bản ghi engine S16R-PTA
+    8 | JJSL-1500GF | 1500 | 1650 | 1875 | S16R-PTA2 | 16 | 65.37 | 207 | 12000 | 5400*2500*3000
+        ⇒ THÊM bản ghi engine S16R-PTA2
+    9 | JJSL-1600GF | 1600 | 1760 | 2000 | S16R-PTAA2 | 16 | 65.4 | 206 | 14400 | 5900*2500*3500
+        ⇒ THÊM bản ghi engine S16R-PTAA2
+   10 | JJSL-1800GF | 1800 | 1980 | 2250 | S16R2-PTAW | 16 | 79.9 | 209 | 17200 | 6000*2600*3500
+        ⇒ THÊM bản ghi engine S16R2-PTAW
+
+[jinjia-power n109 bảng 8] ×10
+  H: | Model | Prime Power (kW) | Standby (kW) | kVA | Engine | Cyl. | Displacement (L) | Fuel (g/kW·h) | Weight (kg) | Dimensions (mm)
+    0 | JJYD-9GF | 9 | 9.9 | 11.2 | YD380D | 3 | 1.532 | 262 | 560 | 1900*730*1130
+        ⇒ THÊM bản ghi engine YD380D
+    1 | JJYD-10GF | 10 | 11 | 12.5 | YD385D | 3 | 1.53 | 262 | 600 | 1900*730*1130
+        ⇒ THÊM bản ghi engine YD385D
+    2 | JJYD-12GF | 12 | 13.2 | 15 | YD480D | 4 | 1.532 | 262 | 680 | 2100*730*1130
+        ⇒ THÊM bản ghi engine YD480D
+    3 | JJYD-15GF | 15 | 16.5 | 18.8 | YND485D | 4 | 2.16 | 245 | 750 | 2100*730*1130
+        ⇒ THÊM bản ghi engine YND485D
+    4 | JJYD-20GF | 20 | 22 | 25 | YSD490D | 4 | 2.545 | 243 | 780 | 2250*730*1140
+        ⇒ THÊM bản ghi engine YSD490D
+    5 | JJYD-24GF | 24 | 26.4 | 30 | Y4100D | 4 | 2.54 | 243 | 800 | 2250*850*1280
+        ⇒ THÊM bản ghi engine Y4100D
+    6 | JJYD-30GF | 30 | 33 | 37.5 | Y4102D | 4 | 3.857 | 240 | 900 | 2250*850*1280
+        ⇒ THÊM bản ghi engine Y4102D
+    7 | JJYD-40GF | 40 | 44 | 50 | Y4102ZD | 4 | 3.86 | 240 | 920 | 2250*850*1280
+        ⇒ THÊM bản ghi engine Y4102ZD
+    8 | JJYD-50GF | 50 | 55 | 62.5 | Y4105ZLD | 4 | 3.857 | 240 | 960 | 2250*850*1280
+        ⇒ THÊM bản ghi engine Y4105ZLD
+    9 | JJYD-60GF | 60 | 66 | 75 | YD4EZLD | 4 | 3.86 | 240 | 980 | 2250*850*1280
+        ⇒ THÊM bản ghi engine YD4EZLD
+
+[kaihua-genset n114 bảng 16] ×69
+  H: | Genset Model | Standby Power | Prime power | Engine model | Dimension | Weight(KG)
+  H: | KVA | KW | KVA | KW
+    0 | KH-200GF | None | None | 250 | 200 | DC09 320A 02-61 | 3400*1300*1900 | 2600
+        ⇒ THÊM bản ghi engine DC09 320A 02-61
+    1 | KH-220GF | None | None | 275 | 220 | DC09 320A 02-62 | 3400*1300*1900 | 2600
+        ⇒ THÊM bản ghi engine DC09 320A 02-62
+    2 | KH-240GF | None | None | 300 | 240 | DC09 320A 02-63 | 3400*1300*1900 | 2600
+        ⇒ THÊM bản ghi engine DC09 320A 02-63
+    3 | KH-264GF | None | None | 330 | 264 | DC09 320A 02-64 | 3400*1300*1900 | 2600
+        ⇒ THÊM bản ghi engine DC09 320A 02-64
+    4 | KH-202GF | None | None | 253 | 202 | DC09 071A 02-01 | 3500*1300*2000 | 2700
+        ⇒ THÊM bản ghi engine DC09 071A 02-01
+    5 | KH-223GF | None | None | 279 | 223 | DC09 071A 02-02 | 3500*1300*2000 | 2700
+        ⇒ THÊM bản ghi engine DC09 071A 02-02
+    6 | KH-243GF | None | None | 304 | 243 | DC09 071A 02-03 | 3500*1300*2000 | 2700
+        ⇒ THÊM bản ghi engine DC09 071A 02-03
+    7 | KH-263GF | None | None | 329 | 263 | DC09 071A 02-04 | 3500*1300*2000 | 2700
+        ⇒ THÊM bản ghi engine DC09 071A 02-04
+    8 | KH-202GF | 280 | 224 | 253 | 202 | DC09 072A 02-11 | 3890*1460*2150 | 3100
+        ⇒ THÊM bản ghi engine DC09 072A 02-11
+    9 | KH-223GF | 310 | 248 | 279 | 223 | DC09 072A 02-12 | 3890*1460*2150 | 3100
+        ⇒ THÊM bản ghi engine DC09 072A 02-12
+   10 | KH-243GF | 335 | 268 | 304 | 243 | DC09 072A 02-13 | 3890*1460*2150 | 3100
+        ⇒ THÊM bản ghi engine DC09 072A 02-13
+   11 | KH-263GF | 361 | 289 | 329 | 263 | DC09 072A 02-14 | 3890*1460*2150 | 3100
+        ⇒ THÊM bản ghi engine DC09 072A 02-14
+   12 | KH-202GF | 280 | 224 | 253 | 202 | DC09 073A 02-21 | 4230*1440*2250 | 3800
+        ⇒ THÊM bản ghi engine DC09 073A 02-21
+   13 | KH-223GF | 310 | 248 | 279 | 223 | DC09 073A 02-22 | 4230*1440*2250 | 3800
+        ⇒ THÊM bản ghi engine DC09 073A 02-22
+   14 | KH-243GF | 335 | 268 | 304 | 243 | DC09 073A 02-23 | 4230*1440*2250 | 3800
+        ⇒ THÊM bản ghi engine DC09 073A 02-23
+   15 | KH-263GF | 361 | 289 | 329 | 263 | DC09 073A 02-24 | 4230*1440*2250 | 3800
+        ⇒ THÊM bản ghi engine DC09 073A 02-24
+   16 | KH-280GF | None | None | 350 | 280 | DC13 320A 02-61 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 320A 02-61
+   17 | KH-320GF | None | None | 400 | 320 | DC13 320A 02-62 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 320A 02-62
+   18 | KH-360GF | None | None | 450 | 360 | DC13 320A 02-63 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 320A 02-63
+   19 | KH-293GF | None | None | 366 | 293 | DC13 071A 02-01 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 071A 02-01
+   20 | KH-329GF | None | None | 411 | 329 | DC13 071A 02-02 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 071A 02-02
+   21 | KH-298GF | None | None | 373 | 298 | DC13 072A 02-11 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 072A 02-11
+   22 | KH-330GF | None | None | 413 | 330 | DC13 072A 02-12 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 072A 02-12
+   23 | KH-365GF | None | None | 456 | 365 | DC13 072A 02-13 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 072A 02-13
+   24 | KH-402GF | None | None | 503 | 402 | DC13 072A 02-14 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 072A 02-14
+   25 | KH-326GF | 408 | 326 | None | None | DC13 072A 02-15 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 072A 02-15
+   26 | KH-298GF | 408 | 326 | 373 | 298 | DC13 073A 02-21 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 073A 02-21
+   27 | KH-330GF | 456 | 365 | 413 | 330 | DC13 073A 02-22 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 073A 02-22
+   28 | KH-365GF | 503 | 402 | 456 | 365 | DC13 073A 02-23 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 073A 02-23
+   29 | KH-402GF | 553 | 442 | 503 | 402 | DC13 073A 02-24 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 073A 02-24
+   30 | KH-400GF | None | None | 500 | 400 | DC16 071A 02-01 | 4300*1800*2430 | 4500
+        ⇒ THÊM bản ghi engine DC16 071A 02-01
+   31 | KH-439GF | None | None | 549 | 439 | DC16 071A 02-02 | 4300*1800*2430 | 4500
+        ⇒ THÊM bản ghi engine DC16 071A 02-02
+   32 | KH-481GF | 661 | 529 | 601 | 481 | DC16 072A 02-11 | 4300*1800*2430 | 4500
+        ⇒ THÊM bản ghi engine DC16 072A 02-11
+   33 | KH-521GF | 716 | 573 | 651 | 521 | DC16 072A 02-12 | 4300*1800*2430 | 4500
+        ⇒ THÊM bản ghi engine DC16 072A 02-12
+   34 | KH-561GF | 771 | 617 | 701 | 561 | DC16 072A 02-13 | 4300*1800*2430 | 4500
+        ⇒ THÊM bản ghi engine DC16 072A 02-13
+   35 | KH-480GF | 660 | 528 | 600 | 480 | DC16 078A 02-41 | 4300*1800*2430 | 4500
+        ⇒ THÊM bản ghi engine DC16 078A 02-41
+   36 | KH-520GF | 715 | 572 | 650 | 520 | DC16 078A 02-42 | 4300*1800*2430 | 4500
+        ⇒ THÊM bản ghi engine DC16 078A 02-42
+   37 | KH-560GF | 770 | 616 | 700 | 560 | DC16 078A 02-43 | 4300*1800*2430 | 4500
+        ⇒ THÊM bản ghi engine DC16 078A 02-43
+   38 | KH-411GF | 567 | 454 | 514 | 411 | DC16 093A 02-51 | 5200*2100*2390 | 5300
+        ⇒ THÊM bản ghi engine DC16 093A 02-51
+   39 | KH-444GF | 613 | 490 | 555 | 444 | DC16 093A 02-52 | 5200*2100*2390 | 5300
+        ⇒ THÊM bản ghi engine DC16 093A 02-52
+   40 | KH-485GF | 668 | 534 | 606 | 485 | DC16 093A 02-53 | 5200*2100*2390 | 5300
+        ⇒ THÊM bản ghi engine DC16 093A 02-53
+   41 | KH-512GF | 706 | 565 | 640 | 512 | DC16 093A 02-54 | 5200*2100*2390 | 5300
+        ⇒ THÊM bản ghi engine DC16 093A 02-54
+   42 | KH-291GF | 360 | 288 | 364 | 291 | OC16 071A 02-81 | 5200*2100*2390 | 5300
+        ⇒ THÊM bản ghi engine OC16 071A 02-81
+   43 | KH-327GF | 360 | 288 | 409 | 327 | OC16 071A 02-82 | 5200*2100*2390 | 5300
+        ⇒ THÊM bản ghi engine OC16 071A 02-82
+   44 | KH-364GF | 360 | 288 | 455 | 364 | OC16 071A 02-83 | 5200*2100*2390 | 5300
+        ⇒ THÊM bản ghi engine OC16 071A 02-83
+   45 | KH-316GF | 349 | 279 | 395 | 316 | OC16 071A 02-91 | 5200*2100*2390 | 5300
+        ⇒ THÊM bản ghi engine OC16 071A 02-91
+   49 | KH-272GF | None | None | 340 | 272 | DC09 320A 02-64 | 3400*1300*1900 | 2600
+        ⇒ THÊM bản ghi engine DC09 320A 02-64
+   50 | KH-222GF | None | None | 278 | 222 | DC09 071A 02-01 | 3500*1300*2000 | 2700
+        ⇒ THÊM bản ghi engine DC09 071A 02-01
+   51 | KH-245GF | None | None | 306 | 245 | DC09 071A 02-02 | 3500*1300*2000 | 2700
+        ⇒ THÊM bản ghi engine DC09 071A 02-02
+   52 | KH-262GF | None | None | 328 | 262 | DC09 071A 02-03 | 3500*1300*2000 | 2700
+        ⇒ THÊM bản ghi engine DC09 071A 02-03
+   53 | KH-282GF | None | None | 353 | 282 | DC09 071A 02-04 | 3500*1300*2000 | 2700
+        ⇒ THÊM bản ghi engine DC09 071A 02-04
+   54 | KH-222GF | 309 | 247 | 278 | 222 | DC09 072A 02-11 | 3890*1460*2150 | 3100
+        ⇒ THÊM bản ghi engine DC09 072A 02-11
+   55 | KH-245GF | 338 | 270 | 306 | 245 | DC09 072A 02-12 | 3890*1460*2150 | 3100
+        ⇒ THÊM bản ghi engine DC09 072A 02-12
+   56 | KH-262GF | 361 | 289 | 328 | 262 | DC09 072A 02-13 | 3890*1460*2150 | 3100
+        ⇒ THÊM bản ghi engine DC09 072A 02-13
+   57 | KH-293GF | 405 | 324 | 366 | 293 | DC09 072A 02-14 | 3890*1460*2150 | 3100
+        ⇒ THÊM bản ghi engine DC09 072A 02-14
+   58 | KH-222GF | 309 | 247 | 278 | 222 | DC09 073A 02-21 | 4230*1440*2250 | 3800
+        ⇒ THÊM bản ghi engine DC09 073A 02-21
+   59 | KH-245GF | 338 | 270 | 306 | 245 | DC09 073A 02-22 | 4230*1440*2250 | 3800
+        ⇒ THÊM bản ghi engine DC09 073A 02-22
+   60 | KH-262GF | 361 | 289 | 328 | 262 | DC09 073A 02-23 | 4230*1440*2250 | 3800
+        ⇒ THÊM bản ghi engine DC09 073A 02-23
+   61 | KH-293GF | 405 | 324 | 366 | 293 | DC09 073A 02-24 | 4230*1440*2250 | 3800
+        ⇒ THÊM bản ghi engine DC09 073A 02-24
+   65 | KH-329GF | None | None | 411 | 329 | DC13 071A 02-01 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 071A 02-01
+   67 | KH-337GF | 460 | 368 | 421 | 337 | DC13 072A 02-11 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 072A 02-11
+   68 | KH-365GF | 508 | 406 | 456 | 365 | DC13 072A 02-12 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 072A 02-12
+   69 | KH-402GF | 553 | 442 | 503 | 402 | DC13 072A 02-13 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 072A 02-13
+   70 | KH-402GF | 553 | 442 | 503 | 402 | DC13 072A 02-14 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 072A 02-14
+   71 | KH-377GF | 471 | 377 | None | None | DC13 072A 02-15 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 072A 02-15
+   72 | KH-400GF | 552 | 442 | 500 | 400 | DC13 093A 02-72 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 093A 02-72
+   73 | KH-440GF | 607 | 486 | 550 | 440 | DC13 093A 02-73 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 093A 02-73
+   74 | KH-453GF | 625 | 500 | 566 | 453 | DC13 093A 02-74 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 093A 02-74
+   75 | KH-480GF | 662 | 530 | 600 | 480 | DC13 093A 02-75 | 4230*1440*2250 | 3840
+        ⇒ THÊM bản ghi engine DC13 093A 02-75
+
+[mpmc-powertech n106 bảng 5] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC16 078A 02-45
+
+[mpmc-powertech n112 bảng 9] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC16 078A 02-43
+
+[mpmc-powertech n113 bảng 10] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC16 093A 02-54
+
+[mpmc-powertech n114 bảng 11] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC13 093A 02-75
+
+[mpmc-powertech n115 bảng 12] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC13 093A 02-74
+
+[mpmc-powertech n116 bảng 13] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC13 093A 02-73
+
+[mpmc-powertech n117 bảng 14] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC13 093A 02-72
+
+[mpmc-powertech n118 bảng 15] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC13 072A 02-12
+
+[mpmc-powertech n119 bảng 16] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC13 072A 02-11
+
+[mpmc-powertech n120 bảng 17] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC09 072A 02-14
+
+[mpmc-powertech n121 bảng 18] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC09 072A 02-13
+
+[mpmc-powertech n122 bảng 19] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC09 072A 02-12
+
+[mpmc-powertech n123 bảng 20] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC09 072A 02-11
+
+[mpmc-powertech n124 bảng 21] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC16 078A 02-45
+
+[mpmc-powertech n125 bảng 22] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC16 078A 02-43
+
+[mpmc-powertech n126 bảng 23] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC16 078A 02-42
+
+[mpmc-powertech n127 bảng 24] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC16 093A 02-54
+
+[mpmc-powertech n128 bảng 25] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC16 093A 02-53
+
+[mpmc-powertech n129 bảng 26] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC16 093A 02-52
+
+[mpmc-powertech n130 bảng 27] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC16 071A 02-02
+
+[mpmc-powertech n131 bảng 28] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC16 093A 02-51
+
+[mpmc-powertech n132 bảng 29] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC13 072A 02-14
+
+[mpmc-powertech n133 bảng 30] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC16 071A 02-01
+
+[mpmc-powertech n134 bảng 31] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC13 093A 02-72
+
+[mpmc-powertech n135 bảng 32] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC13 072A 02-12
+
+[mpmc-powertech n136 bảng 33] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC13 071A 02-02
+
+[mpmc-powertech n137 bảng 34] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC13 072A 02-11
+
+[mpmc-powertech n138 bảng 35] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC13 071A 02-01
+
+[mpmc-powertech n139 bảng 36] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC09 072A 02-14
+
+[mpmc-powertech n140 bảng 37] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC09 071A 02-04
+
+[mpmc-powertech n142 bảng 39] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC09 071A 02-03
+
+[mpmc-powertech n144 bảng 41] ×1
+  undefined (bảng nhãn)
+        ⇒ THÊM bản ghi engine DC09 071A 02-02
+
+[rcg-power n124 bảng 19] ×36
+  H: | | 型号 | 主电源 | 备用电源 | 发动机 | 交流发电机 | 下载
+    0 | R-V85D5/S | 85 kVA / 68 kW | 94 kVA / 75 kW | 沃尔沃 & TAD530GE | 利莱森玛 & TAL-A44-C | PDF
+        ⇒ THÊM bản ghi engine TAD530GE
+    0 | R-V85D5/S | 85 kVA / 68 kW | 94 kVA / 75 kW | 沃尔沃 & TAD530GE | 利莱森玛 & TAL-A44-C | PDF
+        ⇒ THÊM bản ghi alternator TAL-A44-C
+    1 | R-V100D5/S | 100 kVA / 80 kW | 110 kVA / 88 kW | 沃尔沃 & TAD531GE | 利莱森玛 & TAL-A44-D | PDF
+        ⇒ THÊM bản ghi engine TAD531GE
+    1 | R-V100D5/S | 100 kVA / 80 kW | 110 kVA / 88 kW | 沃尔沃 & TAD531GE | 利莱森玛 & TAL-A44-D | PDF
+        ⇒ THÊM bản ghi alternator TAL-A44-D
+    2 | R-V125D5/S | 125 kVA / 100 kW | 138 kVA / 110 kW | 沃尔沃 & TAD532GE | 利莱森玛 & TAL-A44-E | PDF
+        ⇒ THÊM bản ghi engine TAD532GE
+    2 | R-V125D5/S | 125 kVA / 100 kW | 138 kVA / 110 kW | 沃尔沃 & TAD532GE | 利莱森玛 & TAL-A44-E | PDF
+        ⇒ THÊM bản ghi alternator TAL-A44-E
+    3 | R-V150D5/S | 150 kVA / 120 kW | 165 kVA / 132 kW | 沃尔沃 & TAD731GE | 利莱森玛 & TAL-A44-J | PDF
+        ⇒ THÊM bản ghi engine TAD731GE
+    3 | R-V150D5/S | 150 kVA / 120 kW | 165 kVA / 132 kW | 沃尔沃 & TAD731GE | 利莱森玛 & TAL-A44-J | PDF
+        ⇒ THÊM bản ghi alternator TAL-A44-J
+    4 | R-V180D5/S | 180 kVA / 145 kW | 200 kVA / 160 kW | 沃尔沃 & TAD732GE | 利莱森玛 & TAL-A44-L | PDF
+        ⇒ THÊM bản ghi engine TAD732GE
+    4 | R-V180D5/S | 180 kVA / 145 kW | 200 kVA / 160 kW | 沃尔沃 & TAD732GE | 利莱森玛 & TAL-A44-L | PDF
+        ⇒ THÊM bản ghi alternator TAL-A44-L
+    5 | R-V200D5/S | 200 kVA / 160 kW | 220 kVA / 176 kW | 沃尔沃 & TAD733GE | 利莱森玛 & TAL-A44-M | PDF
+        ⇒ THÊM bản ghi engine TAD733GE
+    5 | R-V200D5/S | 200 kVA / 160 kW | 220 kVA / 176 kW | 沃尔沃 & TAD733GE | 利莱森玛 & TAL-A44-M | PDF
+        ⇒ THÊM bản ghi alternator TAL-A44-M
+    6 | R-V250D5/S(TAD734GE) | 250 kVA / 200 kW | 275 kVA / 220 kW | 沃尔沃 & TAD734GE | 利莱森玛 & TAL-A46-D | PDF
+        ⇒ THÊM bản ghi engine TAD734GE
+    6 | R-V250D5/S(TAD734GE) | 250 kVA / 200 kW | 275 kVA / 220 kW | 沃尔沃 & TAD734GE | 利莱森玛 & TAL-A46-D | PDF
+        ⇒ THÊM bản ghi alternator TAL-A46-D
+    7 | R-V250D5/S(TAD841GE) | 250 kVA / 200 kW | 275 kVA / 220 kW | 沃尔沃 & TAD841GE | 利莱森玛 & TAL-A46-D | PDF
+        ⇒ THÊM bản ghi engine TAD841GE
+    7 | R-V250D5/S(TAD841GE) | 250 kVA / 200 kW | 275 kVA / 220 kW | 沃尔沃 & TAD841GE | 利莱森玛 & TAL-A46-D | PDF
+        ⇒ THÊM bản ghi alternator TAL-A46-D
+    8 | R-V300D5/S | 300kVA / 240kW | 330kVA / 264kW | 沃尔沃 & TAD842GE | 利莱森玛 & TAL-A46-F | PDF
+        ⇒ THÊM bản ghi engine TAD842GE
+    8 | R-V300D5/S | 300kVA / 240kW | 330kVA / 264kW | 沃尔沃 & TAD842GE | 利莱森玛 & TAL-A46-F | PDF
+        ⇒ THÊM bản ghi alternator TAL-A46-F
+    9 | R-V313D5/S | 313 kVA / 250 kW | 344 kVA / 275 kW | 沃尔沃 & TAD1341GE-B | 利莱森玛 & TAL-A46-G | PDF
+        ⇒ THÊM bản ghi engine TAD1341GE-B
+    9 | R-V313D5/S | 313 kVA / 250 kW | 344 kVA / 275 kW | 沃尔沃 & TAD1341GE-B | 利莱森玛 & TAL-A46-G | PDF
+        ⇒ THÊM bản ghi alternator TAL-A46-G
+   10 | R-V325D5/S | 325 kVA / 260 kW | 358 kVA / 286 kW | 沃尔沃 & TAD843GE | 利莱森玛 & TAL-A46-G | PDF
+        ⇒ THÊM bản ghi engine TAD843GE
+   10 | R-V325D5/S | 325 kVA / 260 kW | 358 kVA / 286 kW | 沃尔沃 & TAD843GE | 利莱森玛 & TAL-A46-G | PDF
+        ⇒ THÊM bản ghi alternator TAL-A46-G
+   11 | R-V350D5/S | 350 kVA / 280 kW | 385 kVA / 308 kW | 沃尔沃 & TAD1342GE-B | 利莱森玛 & TAL-A46-H | PDF
+        ⇒ THÊM bản ghi engine TAD1342GE-B
+   11 | R-V350D5/S | 350 kVA / 280 kW | 385 kVA / 308 kW | 沃尔沃 & TAD1342GE-B | 利莱森玛 & TAL-A46-H | PDF
+        ⇒ THÊM bản ghi alternator TAL-A46-H
+   12 | R-V375D5/S | 375 kVA / 300 kW | 413 kVA / 330 kW | 沃尔沃 & TAD1343GE-B | 利莱森玛 & TAL-A473-A | PDF
+        ⇒ THÊM bản ghi engine TAD1343GE-B
+   12 | R-V375D5/S | 375 kVA / 300 kW | 413 kVA / 330 kW | 沃尔沃 & TAD1343GE-B | 利莱森玛 & TAL-A473-A | PDF
+        ⇒ THÊM bản ghi alternator TAL-A473-A
+   13 | R-V400D5/S | 400 kVA / 320 kW | 450 kVA / 360 kW | 沃尔沃 & TAD1344GE-B | 利莱森玛 & TAL-A473-A | PDF
+        ⇒ THÊM bản ghi engine TAD1344GE-B
+   13 | R-V400D5/S | 400 kVA / 320 kW | 450 kVA / 360 kW | 沃尔沃 & TAD1344GE-B | 利莱森玛 & TAL-A473-A | PDF
+        ⇒ THÊM bản ghi alternator TAL-A473-A
+   14 | R-V450D5/S | 450 kVA / 360 kW | 495 kVA / 396 kW | 沃尔沃 & TAD1345GE-B | 利莱森玛 & TAL-A473-B | PDF
+        ⇒ THÊM bản ghi engine TAD1345GE-B
+   14 | R-V450D5/S | 450 kVA / 360 kW | 495 kVA / 396 kW | 沃尔沃 & TAD1345GE-B | 利莱森玛 & TAL-A473-B | PDF
+        ⇒ THÊM bản ghi alternator TAL-A473-B
+   15 | R-V500D5/S(TAD1346GE) | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1346GE | 利莱森玛 & TAL-A473-C | PDF
+        ⇒ THÊM bản ghi engine TAD1346GE
+   15 | R-V500D5/S(TAD1346GE) | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1346GE | 利莱森玛 & TAL-A473-C | PDF
+        ⇒ THÊM bản ghi alternator TAL-A473-C
+   16 | R-V500D5/S(TAD1641GE-B) | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1641GE-B | 利莱森玛 & TAL-A473-C | PDF
+        ⇒ THÊM bản ghi engine TAD1641GE-B
+   16 | R-V500D5/S(TAD1641GE-B) | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1641GE-B | 利莱森玛 & TAL-A473-C | PDF
+        ⇒ THÊM bản ghi alternator TAL-A473-C
+   17 | R-V600D5/S | 600 kVA / 480 KW | 660 kVA / 528 kW | 沃尔沃 & TAD1642GE-B | 利莱森玛 & TAL-A473-E | PDF
+        ⇒ THÊM bản ghi engine TAD1642GE-B
+   17 | R-V600D5/S | 600 kVA / 480 KW | 660 kVA / 528 kW | 沃尔沃 & TAD1642GE-B | 利莱森玛 & TAL-A473-E | PDF
+        ⇒ THÊM bản ghi alternator TAL-A473-E
+
+[rcg-power n124 bảng 20] ×70
+  H: | | 型号 | 主电源 | 备用电源 | 发动机 | 交流发电机 | 下载
+    0 | R-V85D5/S | 85 kVA / 68 kW | 94 kVA / 75 kW | 沃尔沃 & TAD530GE | 斯坦福 & UCI224G | PDF
+        ⇒ THÊM bản ghi engine TAD530GE
+    0 | R-V85D5/S | 85 kVA / 68 kW | 94 kVA / 75 kW | 沃尔沃 & TAD530GE | 斯坦福 & UCI224G | PDF
+        ⇒ THÊM bản ghi alternator UCI224G
+    1 | R-V100D5/S | 100 kVA / 80 kW | 110 kVA / 88 kW | 沃尔沃 & TAD531GE | 斯坦福 & UCI274C | PDF
+        ⇒ THÊM bản ghi engine TAD531GE
+    1 | R-V100D5/S | 100 kVA / 80 kW | 110 kVA / 88 kW | 沃尔沃 & TAD531GE | 斯坦福 & UCI274C | PDF
+        ⇒ THÊM bản ghi alternator UCI274C
+    2 | R-V125D5/S | 125 kVA / 100 kW | 138 kVA / 110 kW | 沃尔沃 & TAD532GE | 斯坦福 & UCI274ES | PDF
+        ⇒ THÊM bản ghi engine TAD532GE
+    2 | R-V125D5/S | 125 kVA / 100 kW | 138 kVA / 110 kW | 沃尔沃 & TAD532GE | 斯坦福 & UCI274ES | PDF
+        ⇒ THÊM bản ghi alternator UCI274ES
+    3 | R-V150D5/S | 150 kVA / 120 kW | 165 kVA / 132 kW | 沃尔沃 & TAD731GE | 斯坦福 & UCI274F | PDF
+        ⇒ THÊM bản ghi engine TAD731GE
+    3 | R-V150D5/S | 150 kVA / 120 kW | 165 kVA / 132 kW | 沃尔沃 & TAD731GE | 斯坦福 & UCI274F | PDF
+        ⇒ THÊM bản ghi alternator UCI274F
+    4 | R-V180D5/S | 180 kVA / 145 kW | 200 kVA / 160 kW | 沃尔沃 & TAD732GE | 斯坦福 & UCI274G | PDF
+        ⇒ THÊM bản ghi engine TAD732GE
+    4 | R-V180D5/S | 180 kVA / 145 kW | 200 kVA / 160 kW | 沃尔沃 & TAD732GE | 斯坦福 & UCI274G | PDF
+        ⇒ THÊM bản ghi alternator UCI274G
+    5 | R-V200D5/S | 200 kVA / 160 kW | 220 kVA / 176 kW | 沃尔沃 & TAD733GE | 斯坦福 & UCI274H | PDF
+        ⇒ THÊM bản ghi engine TAD733GE
+    5 | R-V200D5/S | 200 kVA / 160 kW | 220 kVA / 176 kW | 沃尔沃 & TAD733GE | 斯坦福 & UCI274H | PDF
+        ⇒ THÊM bản ghi alternator UCI274H
+    6 | R-V250D5/S(TAD734GE) | 250 kVA / 200 kW | 275 kVA / 220 kW | 沃尔沃 & TAD734GE | 斯坦福 & UCDI274K | PDF
+        ⇒ THÊM bản ghi engine TAD734GE
+    6 | R-V250D5/S(TAD734GE) | 250 kVA / 200 kW | 275 kVA / 220 kW | 沃尔沃 & TAD734GE | 斯坦福 & UCDI274K | PDF
+        ⇒ THÊM bản ghi alternator UCDI274K
+    7 | R-V250D5/S(TAD841GE) | 250 kVA / 200 kW | 275 kVA / 220 kW | 沃尔沃 & TAD841GE | 斯坦福 & UCDI274K | PDF
+        ⇒ THÊM bản ghi engine TAD841GE
+    7 | R-V250D5/S(TAD841GE) | 250 kVA / 200 kW | 275 kVA / 220 kW | 沃尔沃 & TAD841GE | 斯坦福 & UCDI274K | PDF
+        ⇒ THÊM bản ghi alternator UCDI274K
+    8 | R-V300D5/S | 300kVA / 240kW | 330kVA / 264kW | 沃尔沃 & TAD842GE | 斯坦福 & S4L1D-D4 | PDF
+        ⇒ THÊM bản ghi engine TAD842GE
+    8 | R-V300D5/S | 300kVA / 240kW | 330kVA / 264kW | 沃尔沃 & TAD842GE | 斯坦福 & S4L1D-D4 | PDF
+        ⇒ THÊM bản ghi alternator S4L1D-D4
+    9 | R-V313D5/S | 313 kVA / 250 kW | 344 kVA / 275 kW | 沃尔沃 & TAD1341GE-B | 斯坦福 & S4L1D-D4 | PDF
+        ⇒ THÊM bản ghi engine TAD1341GE-B
+    9 | R-V313D5/S | 313 kVA / 250 kW | 344 kVA / 275 kW | 沃尔沃 & TAD1341GE-B | 斯坦福 & S4L1D-D4 | PDF
+        ⇒ THÊM bản ghi alternator S4L1D-D4
+   10 | R-V325D5/S | 325 kVA / 260 kW | 358 kVA / 286 kW | 沃尔沃 & TAD843GE | 斯坦福 & S4L1D-E4 | PDF
+        ⇒ THÊM bản ghi engine TAD843GE
+   10 | R-V325D5/S | 325 kVA / 260 kW | 358 kVA / 286 kW | 沃尔沃 & TAD843GE | 斯坦福 & S4L1D-E4 | PDF
+        ⇒ THÊM bản ghi alternator S4L1D-E4
+   11 | R-V350D5/S | 350 kVA / 280 kW | 385 kVA / 308 kW | 沃尔沃 & TAD1342GE-B | 斯坦福 & S4L1D-E4 | PDF
+        ⇒ THÊM bản ghi engine TAD1342GE-B
+   11 | R-V350D5/S | 350 kVA / 280 kW | 385 kVA / 308 kW | 沃尔沃 & TAD1342GE-B | 斯坦福 & S4L1D-E4 | PDF
+        ⇒ THÊM bản ghi alternator S4L1D-E4
+   12 | R-V375D5/S | 375 kVA / 300 kW | 413 kVA / 330 kW | 沃尔沃 & TAD1343GE-B | 斯坦福 & S4L1D-F4 | PDF
+        ⇒ THÊM bản ghi engine TAD1343GE-B
+   12 | R-V375D5/S | 375 kVA / 300 kW | 413 kVA / 330 kW | 沃尔沃 & TAD1343GE-B | 斯坦福 & S4L1D-F4 | PDF
+        ⇒ THÊM bản ghi alternator S4L1D-F4
+   13 | R-V400D5/S | 400 kVA / 320 kW | 450 kVA / 360 kW | 沃尔沃 & TAD1344GE-B | 斯坦福 & S4L1D-F4 | PDF
+        ⇒ THÊM bản ghi engine TAD1344GE-B
+   13 | R-V400D5/S | 400 kVA / 320 kW | 450 kVA / 360 kW | 沃尔沃 & TAD1344GE-B | 斯坦福 & S4L1D-F4 | PDF
+        ⇒ THÊM bản ghi alternator S4L1D-F4
+   14 | R-V450D5/S | 450 kVA / 360 kW | 495 kVA / 396 kW | 沃尔沃 & TAD1345GE-B | 斯坦福 & S4L1D-G4 | PDF
+        ⇒ THÊM bản ghi engine TAD1345GE-B
+   14 | R-V450D5/S | 450 kVA / 360 kW | 495 kVA / 396 kW | 沃尔沃 & TAD1345GE-B | 斯坦福 & S4L1D-G4 | PDF
+        ⇒ THÊM bản ghi alternator S4L1D-G4
+   15 | R-V500D5/S(TAD1346GE) | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1346GE | 斯坦福 & S5L1D-C4 | PDF
+        ⇒ THÊM bản ghi engine TAD1346GE
+   15 | R-V500D5/S(TAD1346GE) | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1346GE | 斯坦福 & S5L1D-C4 | PDF
+        ⇒ THÊM bản ghi alternator S5L1D-C4
+   16 | R-V500D5/S(TAD1641GE-B) | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1641GE-B | 斯坦福 & S5L1D-C4 | PDF
+        ⇒ THÊM bản ghi engine TAD1641GE-B
+   16 | R-V500D5/S(TAD1641GE-B) | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1641GE-B | 斯坦福 & S5L1D-C4 | PDF
+        ⇒ THÊM bản ghi alternator S5L1D-C4
+   17 | R-V600D5/S | 600 kVA / 480 KW | 660 kVA / 528 kW | 沃尔沃 & TAD1642GE-B | 斯坦福 & S5L1D-E4 | PDF
+        ⇒ THÊM bản ghi engine TAD1642GE-B
+   17 | R-V600D5/S | 600 kVA / 480 KW | 660 kVA / 528 kW | 沃尔沃 & TAD1642GE-B | 斯坦福 & S5L1D-E4 | PDF
+        ⇒ THÊM bản ghi alternator S5L1D-E4
+   18 | R-V85D5/S | 85 kVA / 68 kW | 94 kVA / 75 kW | 沃尔沃 & TAD550GE | 斯坦福 & UCI224G | PDF
+        ⇒ THÊM bản ghi engine TAD550GE
+   18 | R-V85D5/S | 85 kVA / 68 kW | 94 kVA / 75 kW | 沃尔沃 & TAD550GE | 斯坦福 & UCI224G | PDF
+        ⇒ THÊM bản ghi alternator UCI224G
+   19 | R-V100D5/S | 100 kVA / 80 kW | 110 kVA / 88 kW | 沃尔沃 & TAD551GE | 斯坦福 & UCI274C | PDF
+        ⇒ THÊM bản ghi engine TAD551GE
+   19 | R-V100D5/S | 100 kVA / 80 kW | 110 kVA / 88 kW | 沃尔沃 & TAD551GE | 斯坦福 & UCI274C | PDF
+        ⇒ THÊM bản ghi alternator UCI274C
+   20 | R-V125D5/S | 125 kVA / 100 kW | 138 kVA / 110 kW | 沃尔沃 & TAD750GE | 斯坦福 & UCI274ES | PDF
+        ⇒ THÊM bản ghi engine TAD750GE
+   20 | R-V125D5/S | 125 kVA / 100 kW | 138 kVA / 110 kW | 沃尔沃 & TAD750GE | 斯坦福 & UCI274ES | PDF
+        ⇒ THÊM bản ghi alternator UCI274ES
+   21 | R-V150D5/S | 150 kVA / 120 kW | 165 kVA / 132 kW | 沃尔沃 & TAD751GE | 斯坦福 & UCI274F | PDF
+        ⇒ THÊM bản ghi engine TAD751GE
+   21 | R-V150D5/S | 150 kVA / 120 kW | 165 kVA / 132 kW | 沃尔沃 & TAD751GE | 斯坦福 & UCI274F | PDF
+        ⇒ THÊM bản ghi alternator UCI274F
+   22 | R-V180D5/S | 180 kVA / 145 kW | 200 kVA / 160 kW | 沃尔沃 & TAD752GE | 斯坦福 & UCI274G | PDF
+        ⇒ THÊM bản ghi engine TAD752GE
+   22 | R-V180D5/S | 180 kVA / 145 kW | 200 kVA / 160 kW | 沃尔沃 & TAD752GE | 斯坦福 & UCI274G | PDF
+        ⇒ THÊM bản ghi alternator UCI274G
+   23 | R-V200D5/S | 200 kVA / 160 kW | 220 kVA / 176 kW | 沃尔沃 & TAD753GE | 斯坦福 & UCI274H | PDF
+        ⇒ THÊM bản ghi engine TAD753GE
+   23 | R-V200D5/S | 200 kVA / 160 kW | 220 kVA / 176 kW | 沃尔沃 & TAD753GE | 斯坦福 & UCI274H | PDF
+        ⇒ THÊM bản ghi alternator UCI274H
+   24 | R-V225D5/S | 225 kVA / 180 kW | 248 kVA / 198 kW | 沃尔沃 & TAD754GE | 斯坦福 & UCDI274K | PDF
+        ⇒ THÊM bản ghi engine TAD754GE
+   24 | R-V225D5/S | 225 kVA / 180 kW | 248 kVA / 198 kW | 沃尔沃 & TAD754GE | 斯坦福 & UCDI274K | PDF
+        ⇒ THÊM bản ghi alternator UCDI274K
+   25 | R-V250D5/S | 250 kVA / 200 kW | 275 kVA / 220 kW | 沃尔沃 & TAD754GE | 斯坦福 & UCDI274K | PDF
+        ⇒ THÊM bản ghi engine TAD754GE
+   25 | R-V250D5/S | 250 kVA / 200 kW | 275 kVA / 220 kW | 沃尔沃 & TAD754GE | 斯坦福 & UCDI274K | PDF
+        ⇒ THÊM bản ghi alternator UCDI274K
+   26 | R-V300D5/S | 300kVA / 240kW | 330kVA / 264kW | 沃尔沃 & TAD1351GE | 斯坦福 & S4L1D-D4 | PDF
+        ⇒ THÊM bản ghi engine TAD1351GE
+   26 | R-V300D5/S | 300kVA / 240kW | 330kVA / 264kW | 沃尔沃 & TAD1351GE | 斯坦福 & S4L1D-D4 | PDF
+        ⇒ THÊM bản ghi alternator S4L1D-D4
+   27 | R-V325D5/S | 325 kVA / 260 kW | 358 kVA / 286 kW | 沃尔沃 & TAD1351GE | 斯坦福 & S4L1D-E4 | PDF
+        ⇒ THÊM bản ghi engine TAD1351GE
+   27 | R-V325D5/S | 325 kVA / 260 kW | 358 kVA / 286 kW | 沃尔沃 & TAD1351GE | 斯坦福 & S4L1D-E4 | PDF
+        ⇒ THÊM bản ghi alternator S4L1D-E4
+   28 | R-V375D5/S | 375 kVA / 300 kW | 413 kVA / 330 kW | 沃尔沃 & TAD1354GE | 斯坦福 & S4L1D-F4 | PDF
+        ⇒ THÊM bản ghi engine TAD1354GE
+   28 | R-V375D5/S | 375 kVA / 300 kW | 413 kVA / 330 kW | 沃尔沃 & TAD1354GE | 斯坦福 & S4L1D-F4 | PDF
+        ⇒ THÊM bản ghi alternator S4L1D-F4
+   29 | R-V400D5/S | 400 kVA / 320 kW | 450 kVA / 360 kW | 沃尔沃 & TAD1355GE | 斯坦福 & S4L1D-F4 | PDF
+        ⇒ THÊM bản ghi engine TAD1355GE
+   29 | R-V400D5/S | 400 kVA / 320 kW | 450 kVA / 360 kW | 沃尔沃 & TAD1355GE | 斯坦福 & S4L1D-F4 | PDF
+        ⇒ THÊM bản ghi alternator S4L1D-F4
+   30 | R-V450D5/S | 450 kVA / 360 kW | 495 kVA / 396 kW | 沃尔沃 & TAD1650GE | 斯坦福 & S4L1D-G4 | PDF
+        ⇒ THÊM bản ghi engine TAD1650GE
+   30 | R-V450D5/S | 450 kVA / 360 kW | 495 kVA / 396 kW | 沃尔沃 & TAD1650GE | 斯坦福 & S4L1D-G4 | PDF
+        ⇒ THÊM bản ghi alternator S4L1D-G4
+   31 | R-V500D5/S | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1651GE | 斯坦福 & S5L1D-C4 | PDF
+        ⇒ THÊM bản ghi engine TAD1651GE
+   31 | R-V500D5/S | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1651GE | 斯坦福 & S5L1D-C4 | PDF
+        ⇒ THÊM bản ghi alternator S5L1D-C4
+   32 | R-V600D5/S | 600 kVA / 480 KW | 660 kVA / 528 kW | 沃尔沃 & TWD1652GE | 斯坦福 & S5L1D-E4 | PDF
+        ⇒ THÊM bản ghi engine TWD1652GE
+   32 | R-V600D5/S | 600 kVA / 480 KW | 660 kVA / 528 kW | 沃尔沃 & TWD1652GE | 斯坦福 & S5L1D-E4 | PDF
+        ⇒ THÊM bản ghi alternator S5L1D-E4
+   33 | R-V650D5/S | 650 kVA / 520 kW | 715 kVA / 572 kW | 沃尔沃 & TWD1653GE | 斯坦福 & S5L1D-F4 | PDF
+        ⇒ THÊM bản ghi engine TWD1653GE
+   33 | R-V650D5/S | 650 kVA / 520 kW | 715 kVA / 572 kW | 沃尔沃 & TWD1653GE | 斯坦福 & S5L1D-F4 | PDF
+        ⇒ THÊM bản ghi alternator S5L1D-F4
+   34 | R-V700D5/S | 700kVA / 560kW | 770kVA / 616kW | 沃尔沃 & TWD1645GE | 斯坦福 & S5L1D-G4 | PDF
+        ⇒ THÊM bản ghi engine TWD1645GE
+   34 | R-V700D5/S | 700kVA / 560kW | 770kVA / 616kW | 沃尔沃 & TWD1645GE | 斯坦福 & S5L1D-G4 | PDF
+        ⇒ THÊM bản ghi alternator S5L1D-G4
+
+[rise-power n119 bảng 24] ×6
+  H: | Generator Model | Engine Model | Alternator Model | Frequency (Hz) | Prime Power | Standby Power
+  H: | kW | kVA | kW | kVA
+    0 | RSCM200 | DC9 65A 10-93 | MP-200-4 | 50 | 200 | 253 | 220 | 278
+        ⇒ other: null → DC9 65A 10-93
+    0 | RSCM200 | DC9 65A 10-93 | MP-200-4 | 50 | 200 | 253 | 220 | 278
+        ⇒ THÊM bản ghi engine DC9 65A 10-93
+    1 | RSCM220 | DC9 65A 10-94 | MP-220-4 | 50 | 220 | 278 | 242 | 307
+        ⇒ other: null → DC9 65A 10-94
+    1 | RSCM220 | DC9 65A 10-94 | MP-220-4 | 50 | 220 | 278 | 242 | 307
+        ⇒ THÊM bản ghi engine DC9 65A 10-94
+    2 | RSCM240 | DC9 65A 10-95 | MP-250-4 | 50 | 240 | 303 | 264 | 329
+        ⇒ other: null → DC9 65A 10-95
+    2 | RSCM240 | DC9 65A 10-95 | MP-250-4 | 50 | 240 | 303 | 264 | 329
+        ⇒ THÊM bản ghi engine DC9 65A 10-95
+
+[simpson-power n101 bảng 0] ×47
+  H: | 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据
+    0 | SP0011D-P | 11/14 | Perkins | 403D-15G | 1100×550×1030 | SP0011D-P.pdf
+        ⇒ THÊM bản ghi engine 403D-15G
+    1 | SP0017D-P | 17/21 | 404D-22G | 1100×550×1030 | SP0017D-P.pdf
+        ⇒ THÊM bản ghi engine 404D-22G
+    2 | SP0026D-P | 26/33 | 1103A-33G | 1585×750×1250 | SP0026D-P.pdf
+        ⇒ THÊM bản ghi engine 1103A-33G
+    3 | SP0035D-P | 35/44 | 1103A-33TG1 | 1900×760×1250 | SP0035D-P.pdf
+        ⇒ THÊM bản ghi engine 1103A-33TG1
+    4 | SP0040D-P | 40/50 | 1103A-33TG1 | 1900×760×1250 | SP0040D-P.pdf
+        ⇒ THÊM bản ghi engine 1103A-33TG1
+    5 | SP0052D-P | 52/65 | 1103A-33TG2 | 1900×760×1250 | SP0052D-P.pdf
+        ⇒ THÊM bản ghi engine 1103A-33TG2
+    6 | SP0070D-P | 70/88 | 1104A-44TG2 | 1865×810×1170 | SP0070D-P.pdf
+        ⇒ THÊM bản ghi engine 1104A-44TG2
+    7 | SP0080D-P | 80/100 | 1006TG1A | 2240×760×1315 | SP0080D-P.pdf
+        ⇒ THÊM bản ghi engine 1006TG1A
+    8 | SP0082D-P | 82/103 | 1104C-44TAG2 | 2240×760×1315 | SP0082D-P.pdf
+        ⇒ THÊM bản ghi engine 1104C-44TAG2
+    9 | SP0088D-P | 88/110 | 1006TG2A | 2240×760×1315 | SP0088D-P.pdf
+        ⇒ THÊM bản ghi engine 1006TG2A
+   10 | SP0120D-P | 120/150 | 1006TAG | 2420×760×1430 | SP0120D-P.pdf
+        ⇒ THÊM bản ghi engine 1006TAG
+   11 | SP0132D-P | 132/165 | 1006TAG2 | 2420×760×1430 | SP0132D-P.pdf
+        ⇒ THÊM bản ghi engine 1006TAG2
+   12 | SP0154D-P | 154/193 | 1106C-E66TAG4 | 2420×760×1520 | SP0154D-P.pdf
+        ⇒ THÊM bản ghi engine 1106C-E66TAG4
+   13 | SP0176D-P | 176/220 | 1306C-E87TAG3 | 2750×1100×1785 | SP0176D-P.pdf
+        ⇒ THÊM bản ghi engine 1306C-E87TAG3
+   14 | SP0200D-P | 200/250 | 1306C-E87TAG4 | 2750×1100×1785 | SP0200D-P.pdf
+        ⇒ THÊM bản ghi engine 1306C-E87TAG4
+   15 | SP0220D-P | 220/275 | 1306C-E87TAG6 | 2750×1100×1785 | SP0220D-P.pdf
+        ⇒ THÊM bản ghi engine 1306C-E87TAG6
+   16 | SP0280D-P | 280/350 | 2206C-E13TAG2 | 3280×1130×1950 | SP0280D-P.pdf
+        ⇒ THÊM bản ghi engine 2206C-E13TAG2
+   17 | SP0022D-C | 22/27 | CUMMINS | 4B3.9-G1(G2) | 1800×7410×1380 | SP0022D-C.pdf
+        ⇒ THÊM bản ghi engine 4B3.9-G1(G2)
+   18 | SP0026D-C | 26/33 | 4BT3.9-G1(G2) | 1800×7410×1380 | SP0026D-C.pdf
+        ⇒ THÊM bản ghi engine 4BT3.9-G1(G2)
+   19 | SP0033D-C | 33/41 | 4BT3.9-G1(G2) | 1800×7410×1380 | SP0033D-C.pdf
+        ⇒ THÊM bản ghi engine 4BT3.9-G1(G2)
+   20 | SP0044D-C | 44/55 | 4BTA3.9-G2 | 1880×750×1520 | SP0044D-C.pdf
+        ⇒ THÊM bản ghi engine 4BTA3.9-G2
+   21 | SP0050D-C | 50/63 | 4BTA3.9-G2 | 1880×750×1520 | SP0050D-C.pdf
+        ⇒ THÊM bản ghi engine 4BTA3.9-G2
+   22 | SP0060D-C | 60/75 | 6BT5.9-G1(G2) | 2150×840×1400 | SP0060D-C.pdf
+        ⇒ THÊM bản ghi engine 6BT5.9-G1(G2)
+   23 | SP0070D-C | 70/88 | 6BT5.9-G1(G2) | 2150×840×1400 | SP0070D-C.pdf
+        ⇒ THÊM bản ghi engine 6BT5.9-G1(G2)
+   24 | SP0080D-C | 80/100 | 6BT5.9-G1(G2) | 2150×840×1400 | SP0080D-C.pdf
+        ⇒ THÊM bản ghi engine 6BT5.9-G1(G2)
+   25 | SP0100D-C | 100/125 | 6BTA5.9-G2 | 2150×840×1400 | SP0100D-C.pdf
+        ⇒ THÊM bản ghi engine 6BTA5.9-G2
+   26 | SP0108D-C | 108/135 | 6BTA5.9-G2 | 2150×840×1400 | SP0108D-C.pdf
+        ⇒ THÊM bản ghi engine 6BTA5.9-G2
+   27 | SP0120D-C | 120/150 | 6BTAA5.9-G2 | 2260×860×1450 | SP0120D-C.pdf
+        ⇒ THÊM bản ghi engine 6BTAA5.9-G2
+   28 | SP0132D-C | 132/165 | 6CTA8.3-G2 | 2300×860×1560 | SP0132D-C.pdf
+        ⇒ THÊM bản ghi engine 6CTA8.3-G2
+   29 | SP0165D-C | 165/206 | 6CTA8.3-G2 | 2300×860×1560 | SP0165D-C.pdf
+        ⇒ THÊM bản ghi engine 6CTA8.3-G2
+   30 | SP0176D-C | 176/220 | 6CTAA8.3-G2 | 2300×860×1560 | SP0176D-C.pdf
+        ⇒ THÊM bản ghi engine 6CTAA8.3-G2
+   31 | SP0188D-C | 188/235 | 6CTAA8.3-G2 | 2300×860×1560 | SP0188D-C.pdf
+        ⇒ THÊM bản ghi engine 6CTAA8.3-G2
+   32 | SP0220D-C | 220/275 | 6LTAA8.9-G2 | 2530×955×1603 | SP0220D-C.pdf
+        ⇒ THÊM bản ghi engine 6LTAA8.9-G2
+   33 | SP0250D-C | 250/313 | QSM11-G2 | 2860×1050×1900 | SP0250D-C.pdf
+        ⇒ THÊM bản ghi engine QSM11-G2
+   34 | SP0275D-C | 275/344 | QSM11-G2 | 2860×1050×1900 | SP0275D-C.pdf
+        ⇒ THÊM bản ghi engine QSM11-G2
+   35 | SP0013D-D | 13/16 | DEUTZ | F2L912 | 1200×700×1350 | SP0013D-D.pdf
+        ⇒ THÊM bản ghi engine F2L912
+   36 | SP0017D-D | 17/21 | F3L912 | 1200×700×1350 | SP0017D-D.pdf
+        ⇒ THÊM bản ghi engine F3L912
+   37 | SP0022D-D | 22/27.5 | F3L912 | 1200×700×1350 | SP0022D-D.pdf
+        ⇒ THÊM bản ghi engine F3L912
+   38 | SP0027D-D | 27/33.7 | F4L912 | 1550×870×1378 | SP0027D-D.pdf
+        ⇒ THÊM bản ghi engine F4L912
+   39 | SP0033D-D | 33/41 | F4L913 | 1600×870×1378 | SP0033D-D.pdf
+        ⇒ THÊM bản ghi engine F4L913
+   40 | SP0040D-D | 40/50 | F4L912T | 1600×870×1378 | SP0040D-D.pdf
+        ⇒ THÊM bản ghi engine F4L912T
+   41 | SP0044D-D | 44/55 | F6L912 | 1900×830×1273 | SP0044D-D.pdf
+        ⇒ THÊM bản ghi engine F6L912
+   42 | SP0048D-D | 48/60 | F6L913 | 1900×830×1273 | SP0048D-D.pdf
+        ⇒ THÊM bản ghi engine F6L913
+   43 | SP0050D-D | 50/625 | BF4L913 | 1540×830×1273 | SP0050D-D.pdf
+        ⇒ THÊM bản ghi engine BF4L913
+   44 | SP0053D-D | 53/66 | F6L912T | 1800×830×1320 | SP0053D-D.pdf
+        ⇒ THÊM bản ghi engine F6L912T
+   45 | SP0082D-D | 82/102.5 | BF6L913 | 1900×830×1317 | SP0082D-D.pdf
+        ⇒ THÊM bản ghi engine BF6L913
+   46 | SP0100D-D | 100/125 | BF6L913C | 1950×830×1353 | SP0100D-D.pdf
+        ⇒ THÊM bản ghi engine BF6L913C
+
+[simpson-power n102 bảng 1] ×9
+  H: | 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × 高 ) | 机 组 数 据
+  H: | SP1800D-L | 1800/2250 | SME | S16R-PTAA2-C | 5720×2400×3436 | SP1800D-L.pdf
+  H: | SP1800D-M | 1800/2250 | MITSUBISHI | S16R-PTAA2 | 5720×2480×3440 | SP1800D-M.pdf
+    0 | SP1800D-U | 1800/2250 | MTU | 16V4000G23 | 7330×2150×2836 | SP1800D-U.pdf
+        ⇒ dims: ∅ → 7330×2150×2836
+    1 | SP2000D-U | 2000/2500 | 16V4000G63 | 7330×2150×2836 | SP2000D-U.pdf
+        ⇒ dims: ∅ → 7330×2150×2836
+    2 | SP2200D-U | 2200/2750 | 20V4000G23 | 7600×2760×2950 | SP2200D-U.pdf
+        ⇒ dims: ∅ → 7600×2760×2950
+    3 | SP2400D-U | 2400/3000 | 20V4000G63 | 7600×2760×2950 | SP2400D-U.pdf
+        ⇒ dims: ∅ → 7600×2760×2950
+    4 | SP2500D-U | 2500/3125 | 20V4000G63 | 7600×2760×2950 | SP2500D-U.pdf
+        ⇒ dims: ∅ → 7600×2760×2950
+    5 | SP2640D-U | 2640/3300 | 20V4000G63L | 7760×2760×2950 | SP2640D-U.pdf
+        ⇒ dims: ∅ → 7760×2760×2950
+    6 | SP2750D-U | 2750/3488 | 20V4000G63L | 7760×2760×2950 | SP2750D-U.pdf
+        ⇒ dims: ∅ → 7760×2760×2950
+    7 | SP1800D-P | 1800/2250 | Perkins | 4016TAG2A | 6140×2300×3020 | SP1800D-P.pdf
+        ⇒ dims: ∅ → 6140×2300×3020
+    8 | SP2000D-P | 2000/2500 | 4016-61TRG3 | 6140×2300×3020 | SP2000D-P.pdf
+        ⇒ makes: Mitsubishi → Mitsubishi,Perkins; dims: ∅ → 6140×2300×3020
+
+[simpson-power n103 bảng 2] ×22
+  H: | 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据
+  H: | SP1100D-L | 1100/1375 | SME | S12R-PTA-C | 4654×2136×2790 | SP1100D-L.pdf
+    0 | SP1200D-L | 1200/1500 | S12R-PTA2-C | 4715×2136×2758 | SP1200D-L.pdf
+        ⇒ THÊM bản ghi engine S12R-PTA2-C
+    1 | SP1320D-L | 1320/1650 | S12R-PTAA2-C | 5219×2192×3056 | SP1320D-L.pdf
+        ⇒ THÊM bản ghi engine S12R-PTAA2-C
+    2 | SP1500D-L | 1500/1875 | S16R-PTA-C | 5476×2289×3056 | SP1500D-L.pdf
+        ⇒ THÊM bản ghi engine S16R-PTA-C
+    3 | SP1600D-L | 1600/2000 | S16R-PTA2-C | 5720×2400×3436 | SP1600D-L.pdf
+        ⇒ THÊM bản ghi engine S16R-PTA2-C
+    4 | SP1200D-M | 1200/1500 | S12R-PTA2 | 4850×1900×2570 | SP1200D-M.pdf
+        ⇒ THÊM bản ghi engine S12R-PTA2
+    5 | SP1250D-M | 1250/1562 | S12R-PTAA2 | 5100×2000×2600 | SP1250D-M.pdf
+        ⇒ THÊM bản ghi engine S12R-PTAA2
+    6 | SP1320D-M | 1320/1650 | S12R-PTAA2 | 5100×2000×2600 | SP1320D-M.pdf
+        ⇒ THÊM bản ghi engine S12R-PTAA2
+    7 | SP1500D-M | 1500/1875 | S16R-PTA | 5720×2134×2672 | SP1500D-M.pdf
+        ⇒ THÊM bản ghi engine S16R-PTA
+    8 | SP1600D-M | 1600/2000 | S16R-PTA2 | 5720×2134×2672 | SP1600D-M.pdf
+        ⇒ THÊM bản ghi engine S16R-PTA2
+    9 | SP1680D-M | 1680/2100 | S16R-PTA2 | 5720×2134×2672 | SP1680D-M.pdf
+        ⇒ THÊM bản ghi engine S16R-PTA2
+   10 | SP1760D-M | 1760/2200 | S16R-PTAA2 | 5720×2480×3440 | SP1760D-M.pdf
+        ⇒ THÊM bản ghi engine S16R-PTAA2
+   11 | SP1100D-U | 1100/1375 | MTU | 12V4000G21R | 5680×2100×2660 | SP1100D-U.pdf
+        ⇒ THÊM bản ghi engine 12V4000G21R
+   12 | SP1210D-U | 1210/1513 | 12V4000G23R | 5680×2100×2660 | SP1210D-U.pdf
+        ⇒ THÊM bản ghi engine 12V4000G23R
+   13 | SP1320D-U | 1320/1650 | 12V4000G23 | 5680×2100×2660 | SP1320D-U.pdf
+        ⇒ THÊM bản ghi engine 12V4000G23
+   14 | SP1450D-U | 1450/1813 | 12V4000G23 | 5680×2100×2660 | SP1450D-U.pdf
+        ⇒ THÊM bản ghi engine 12V4000G23
+   15 | SP1600D-U | 1600/2000 | 12V4000G63 | 5680×2100×2660 | SP1600D-U.pdf
+        ⇒ THÊM bản ghi engine 12V4000G63
+   16 | SP1100D-P | 1100/1375 | Perkins | 4012-46TWG2A | 5590×1800×2600 | SP1100D-P.pdf
+        ⇒ THÊM bản ghi engine 4012-46TWG2A
+   17 | SP1200D-P | 1200/1500 | 4012-46TWG3A | 5590×1800×2600 | SP1200D-P.pdf
+        ⇒ THÊM bản ghi engine 4012-46TWG3A
+   18 | SP1320D-P | 1320/1650 | 4012-46TAG2A | 5590×1800×2550 | SP1320D-P.pdf
+        ⇒ THÊM bản ghi engine 4012-46TAG2A
+   19 | SP1485D-P | 1485/1856 | 4012-46TAG3A | 5590×1800×2550 | SP1485D-P.pdf
+        ⇒ THÊM bản ghi engine 4012-46TAG3A
+   20 | SP1540D-P | 1540/1925 | 4016TAG | 6140×2300×3020 | SP1540D-P.pdf
+        ⇒ THÊM bản ghi engine 4016TAG
+   21 | SP1620D-P | 1620/2025 | 4016TAG1A | 6140×2300×3020 | SP1620D-P.pdf
+        ⇒ THÊM bản ghi engine 4016TAG1A
+
+[simpson-power n104 bảng 3] ×11
+  H: | 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据
+  H: | SP0600D-L | 600/750 | SME | S6R2-PTA-C | 3805×1557×2146 | SP0600D-L.pdf
+    0 | SP0700D-L | 700/875 | S6R2-PTAA-C | 4069×1744×1977 | SP0700D-L.pdf
+        ⇒ THÊM bản ghi engine S6R2-PTAA-C
+    1 | SP0560D-M | 560/700 | S6R-PTA | 3595×1422×2150 | SP0560D-M.pdf
+        ⇒ THÊM bản ghi engine S6R-PTA
+    2 | SP0600D-M | 600/750 | S6R2-PTA | 3818×1600×2000 | SP0600D-M.pdf
+        ⇒ THÊM bản ghi engine S6R2-PTA
+    3 | SP0660D-M | 660/825 | S6R2-PTAA | 3818×1600×2100 | SP0660D-M.pdf
+        ⇒ THÊM bản ghi engine S6R2-PTAA
+    4 | SP0720D-M | 720/900 | S12A2-PTA | 4500×1680×2200 | SP0720D-M.pdf
+        ⇒ THÊM bản ghi engine S12A2-PTA
+    5 | SP0825D-M | 825/1035 | S12H-PTA | 4500×1880×2341 | SP0825D-M.pdf
+        ⇒ THÊM bản ghi engine S12H-PTA
+    6 | SP0920D-M | 920/1150 | S12H-PTA | 4500×1880×2341 | SP0920D-M.pdf
+        ⇒ THÊM bản ghi engine S12H-PTA
+    7 | SP0308D-U | 308/385 | MTU | 8V1600G70F | 3040×1350×2000 | SP0308D-U.pdf
+        ⇒ THÊM bản ghi engine 8V1600G70F
+    8 | SP0352D-U | 352/440 | 8V1600G80F | 3040×1350×2000 | SP0352D-U.pdf
+        ⇒ THÊM bản ghi engine 8V1600G80F
+    9 | SP0400D-U | 400/500 | 10V1600G70F | 3200×1350×2240 | SP0400D-U.pdf
+        ⇒ THÊM bản ghi engine 10V1600G70F
+   10 | SP0440D-U | 440/550 | 10V1600G80F | 3200×1350×2240 | SP0440D-U.pdf
+        ⇒ THÊM bản ghi engine 10V1600G80F
+
+[simpson-power n109 bảng 4] ×22
+  H: | 机组型号 | 备用功率 ( kW/kVA) | 发动机型号 | 机组尺寸 (mm) ( 长×宽×高) | 机组数据
+    0 | SS0022D-C | 22/27 | 4B3.9-G1（G2） | 2800×1200×1650 |
+        ⇒ THÊM bản ghi engine 4B3.9-G1
+    1 | SS0026D-C | 26/33 | 4B3.9-G1（G2） | 2800×1200×1650 |
+        ⇒ THÊM bản ghi engine 4B3.9-G1
+    2 | SS0033D-C | 33/41 | 4B3.9-G1（G2） | 2800×1200×1650 |
+        ⇒ THÊM bản ghi engine 4B3.9-G1
+    3 | SS0044D-C | 44/55 | 4BTA3.9-G2 | 2800×1200×1650 |
+        ⇒ THÊM bản ghi engine 4BTA3.9-G2
+    4 | SS0050D-C | 50/63 | 4BTA3.9-G2 | 2800×1200×1650 |
+        ⇒ THÊM bản ghi engine 4BTA3.9-G2
+    5 | SS0060D-C | 60/75 | 6BT5.9-G1（G2） | 3800×1300×1800 |
+        ⇒ THÊM bản ghi engine 6BT5.9-G1
+    6 | SS0070D-C | 70/88 | 6BT5.9-G1（G2） | 3800×1300×1800 |
+        ⇒ THÊM bản ghi engine 6BT5.9-G1
+    7 | SS0080D-C | 80/100 | 6BT5.9-G1（G2） | 3800×1300×1800 |
+        ⇒ THÊM bản ghi engine 6BT5.9-G1
+    8 | SS0100D-C | 100/125 | 6BT5.9-G2 | 3800×1300×1800 |
+        ⇒ THÊM bản ghi engine 6BT5.9-G2
+    9 | SS0108D-C | 108/135 | 6BT5.9-G2 | 3800×1300×1800 |
+        ⇒ THÊM bản ghi engine 6BT5.9-G2
+   10 | SS0120D-C | 120/150 | 6BTAA5.9-G2 | 3800×1300×1800 |
+        ⇒ THÊM bản ghi engine 6BTAA5.9-G2
+   11 | SS0132D-C | 132/165 | 6CTA8.3-G2 | 4000×1400×1800 |
+        ⇒ THÊM bản ghi engine 6CTA8.3-G2
+   12 | SS0165D-C | 165/206 | 6CTA8.3-G2 | 4000×1400×1800 |
+        ⇒ THÊM bản ghi engine 6CTA8.3-G2
+   13 | SS0176D-C | 176/220 | 6CTAA8.3-G2 | 4000×1400×1800 |
+        ⇒ THÊM bản ghi engine 6CTAA8.3-G2
+   14 | SS0188D-C | 188/235 | 6CTAA8.3-G2 | 4000×1400×1800 |
+        ⇒ THÊM bản ghi engine 6CTAA8.3-G2
+   15 | SS0220D-C | 220/275 | 6LTAA8.9-G2 | 4500×1600×2200 |
+        ⇒ THÊM bản ghi engine 6LTAA8.9-G2
+   16 | SS0250D-C | 250/313 | QSM11-G2 | 4500×1600×2200 |
+        ⇒ THÊM bản ghi engine QSM11-G2
+   17 | SS0275D-C | 275/344 | QSM11-G2 | 4500×1600×2200 |
+        ⇒ THÊM bản ghi engine QSM11-G2
+   18 | SS0300D-C | 300/375 | QSM11-G2 | 4500×1600×2200 |
+        ⇒ THÊM bản ghi engine QSM11-G2
+   19 | SS0330D-C | 330/413 | QSM13-G2 | 8500×2500×2800 |
+        ⇒ THÊM bản ghi engine QSM13-G2
+   20 | SS0400D-C | 400/500 | QSM13-G2 | 8500×2500×2800 |
+        ⇒ THÊM bản ghi engine QSM13-G2
+   21 | SS0440D-C | 440/550 | QSM13-G3 | 8500×2500×2800 |
+        ⇒ THÊM bản ghi engine QSM13-G3
+
+[simpson-power n110 bảng 5] ×13
+  H: | 机组型号 | 备用功率 ( kW/kVA) | 发动机型号 | 机组尺寸 (mm) ( 长×宽×高) | 机组数据
+    0 | SP0011D-P | 11/14 | 403D-15G | 1100×550×1030 | SP0011D-P.pdf
+        ⇒ THÊM bản ghi engine 403D-15G
+   17 | SP0320D-P | 320/400 | 2206C-E13TAG2 | 3280×1130×1950 | SP0320D-P.pdf
+        ⇒ THÊM bản ghi engine 2206C-E13TAG2
+   18 | SP0352D-P | 352/440 | 2206C-E13TAG3 | 3280×1130×1950 | SP0352D-P.pdf
+        ⇒ THÊM bản ghi engine 2206C-E13TAG3
+   19 | SP0400D-P | 400/500 | 2506C-E15TAG1 | 3300×1200×2060 | SP0400D-P.pdf
+        ⇒ THÊM bản ghi engine 2506C-E15TAG1
+   20 | SP0440D-P | 440/550 | 2506C-E15TAG2 | 3300×1200×2060 | SP0440D-P.pdf
+        ⇒ THÊM bản ghi engine 2506C-E15TAG2
+   21 | SP0528D-P | 528/660 | 2806A-E18TAG1A | 3300×1550×2100 | SP0528D-P.pdf
+        ⇒ THÊM bản ghi engine 2806A-E18TAG1A
+   22 | SP0572D-P | 572/715 | 2806A-E18TAG2 | 3300×1550×2100 | SP0572D-P.pdf
+        ⇒ THÊM bản ghi engine 2806A-E18TAG2
+   23 | SP0640D-P | 640/800 | 4006-23TAG2A | 4100×1920×2250 | SP0640D-P.pdf
+        ⇒ THÊM bản ghi engine 4006-23TAG2A
+   24 | SP0704D-P | 704/880 | 4006-23TAG3A | 4100×1920×2250 | SP0704D-P.pdf
+        ⇒ THÊM bản ghi engine 4006-23TAG3A
+   25 | SP0800D-P | 800/1125 | 4008TAG2A | 4570×2046×2230 | SP0800D-P.pdf
+        ⇒ THÊM bản ghi engine 4008TAG2A
+   26 | SP0880D-P | 880/1100 | 4008TAG2A | 4570×2046×2230 | SP0880D-P.pdf
+        ⇒ THÊM bản ghi engine 4008TAG2A
+   27 | SP1100D-P | 1100/1375 | 4012-46TWG2A | 5590×1800×2600 | SP1100D-P.pdf
+        ⇒ THÊM bản ghi engine 4012-46TWG2A
+   33 | SP1800D-P | 1800/2250 | 4016TAG2A | 6140×2300×3020 | SP1800D-P.pdf
+        ⇒ THÊM bản ghi engine 4016TAG2A
+
+[simpson-power n111 bảng 6] ×8
+  H: | 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × 高 ) | 机 组 数 据
+  H: | SP1800D-L | 1800/2250 | 菱重 | S16R-PTAA2-C | 5720×2400×3436 | SP1800D-L.pdf
+  H: | SP1800D-M | 1800/2250 | 三菱 MITSUBISHI | S16R-PTAA2 | 5720×2480×3440 | SP1800D-M.pdf
+    0 | SP1800D-U | 1800/2250 | 奔驰 MTU | 16V4000G23 | 6280×2600×2748 | SP1800D-U.pdf
+        ⇒ dims: ∅ → 6280×2600×2748
+    1 | SP2000D-U | 2000/2500 | 16V4000G63 | 6600×2600×2800 | SP2000D-U.pdf
+        ⇒ dims: ∅ → 6600×2600×2800
+    2 | SP2200D-U | 2200/2750 | 20V4000G23 | 6930×2600×2800 | SP2200D-U.pdf
+        ⇒ dims: ∅ → 6930×2600×2800
+    3 | SP2400D-U | 2400/3000 | 20V4000G63 | 6930×2600×2800 | SP2400D-U.pdf
+        ⇒ dims: ∅ → 6930×2600×2800
+    4 | SP2500D-U | 2500/3125 | 20V4000G63 | 6930×2600×2800 | SP2500D-U.pdf
+        ⇒ dims: ∅ → 6930×2600×2800
+    5 | SP2650D-U | 2650/3313 | 20V4000G63L | 6930×2600×2800 | SP2650D-U.pdf
+        ⇒ dims: ∅ → 6930×2600×2800
+    6 | SP2750D-U | 2750/3488 | 20V4000G63L | 6930×2600×2800 | SP2750D-U.pdf
+        ⇒ dims: ∅ → 6930×2600×2800
+    7 | SP1800D-P | 1800/2250 | 珀金斯 Perkins | 4016TAG2A | 6140×2300×3020 | SP1800D-P.pdf
+        ⇒ dims: ∅ → 6140×2300×3020
+
+[simpson-power n112 bảng 7] ×20
+  H: | 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据
+  H: | SP1100D-L | 1100/1375 | 菱重 | S12R-PTA-C | 4654×2136×2790 | SP1100D-L.pdf
+    0 | SP1200D-L | 1200/1500 | S12R-PTA2-C | 4715×2136×2758 | SP1200D-L.pdf
+        ⇒ MẤT bản ghi engine S12R-PTA2-C
+    1 | SP1320D-L | 1320/1650 | S12R-PTAA2-C | 5219×2192×3056 | SP1320D-L.pdf
+        ⇒ MẤT bản ghi engine S12R-PTAA2-C
+    2 | SP1500D-L | 1500/1875 | S16R-PTA-C | 5476×2289×3056 | SP1500D-L.pdf
+        ⇒ MẤT bản ghi engine S16R-PTA-C
+    3 | SP1600D-L | 1600/2000 | S16R-PTA2-C | 5720×2400×3436 | SP1600D-L.pdf
+        ⇒ MẤT bản ghi engine S16R-PTA2-C
+    8 | SP1200D-M | 1200/1500 | S12R-PTA2 | 4850×1900×2570 | SP1200D-M.pdf
+        ⇒ MẤT bản ghi engine S12R-PTA2
+    9 | SP1250D-M | 1250/1562 | S12R-PTAA2 | 5100×2000×2600 | SP1250D-M.pdf
+        ⇒ MẤT bản ghi engine S12R-PTAA2
+   10 | SP1320D-M | 1320/1650 | S12R-PTAA2 | 5100×2000×2600 | SP1320D-M.pdf
+        ⇒ MẤT bản ghi engine S12R-PTAA2
+   11 | SP1500D-M | 1500/1875 | S16R-PTA | 5720×2134×2672 | SP1500D-M.pdf
+        ⇒ MẤT bản ghi engine S16R-PTA
+   12 | SP1600D-M | 1600/2000 | S16R-PTA2 | 5720×2134×2672 | SP1600D-M.pdf
+        ⇒ MẤT bản ghi engine S16R-PTA2
+   13 | SP1680D-M | 1680/2100 | S16R-PTA2 | 5720×2134×2672 | SP1680D-M.pdf
+        ⇒ MẤT bản ghi engine S16R-PTA2
+   14 | SP1760D-M | 1760/2200 | S16R-PTAA2 | 5720×2480×3440 | SP1760D-M.pdf
+        ⇒ MẤT bản ghi engine S16R-PTAA2
+   16 | SP1210D-U | 1210/1513 | 12V4000G23R | 5680×2100×2660 | SP1210D-U.pdf
+        ⇒ MẤT bản ghi engine 12V4000G23R
+   17 | SP1320D-U | 1320/1650 | 12V4000G23 | 5680×2100×2660 | SP1320D-U.pdf
+        ⇒ MẤT bản ghi engine 12V4000G23
+   18 | SP1450D-U | 1450/1813 | 12V4000G23 | 5680×2100×2660 | SP1450D-U.pdf
+        ⇒ MẤT bản ghi engine 12V4000G23
+   19 | SP1600D-U | 1600/2000 | 12V4000G63 | 5680×2100×2660 | SP1600D-U.pdf
+        ⇒ MẤT bản ghi engine 12V4000G63
+   21 | SP1200D-P | 1200/1500 | 4012-46TWG3A | 5590×1800×2600 | SP1200D-P.pdf
+        ⇒ MẤT bản ghi engine 4012-46TWG3A
+   22 | SP1320D-P | 1320/1650 | 4012-46TAG2A | 5590×1800×2550 | SP1320D-P.pdf
+        ⇒ MẤT bản ghi engine 4012-46TAG2A
+   23 | SP1485D-P | 1485/1856 | 4012-46TAG3A | 5590×1800×2550 | SP1485D-P.pdf
+        ⇒ MẤT bản ghi engine 4012-46TAG3A
+   24 | SP1540D-P | 1540/1925 | 4016TAG | 6140×2300×3020 | SP1540D-P.pdf
+        ⇒ MẤT bản ghi engine 4016TAG
+   25 | SP1620D-P | 1620/2025 | 4016TAG1A | 6140×2300×3020 | SP1620D-P.pdf
+        ⇒ MẤT bản ghi engine 4016TAG1A
+
+[simpson-power n113 bảng 8] ×19
+  H: | 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据
+  H: | SP0600D-L | 600/750 | 菱重 | S6R2-PTA-C | 3805×1557×2146 | SP0600D-L.pdf
+    0 | SP0700D-L | 700/875 | S6R2-PTAA-C | 4069×1744×1977 | SP0700D-L.pdf
+        ⇒ MẤT bản ghi engine S6R2-PTAA-C
+   11 | SP0560D-M | 560/700 | S6R-PTA | 3595×1422×2150 | SP0560D-M.pdf
+        ⇒ MẤT bản ghi engine S6R-PTA
+   12 | SP0600D-M | 600/750 | S6R2-PTA | 3818×1600×2000 | SP0600D-M.pdf
+        ⇒ MẤT bản ghi engine S6R2-PTA
+   13 | SP0660D-M | 660/825 | S6R2-PTAA | 3818×1600×2100 | SP0660D-M.pdf
+        ⇒ MẤT bản ghi engine S6R2-PTAA
+   14 | SP0720D-M | 720/900 | S12A2-PTA | 4500×1680×2200 | SP0720D-M.pdf
+        ⇒ MẤT bản ghi engine S12A2-PTA
+   15 | SP0825D-M | 825/1035 | S12H-PTA | 4500×1880×2341 | SP0825D-M.pdf
+        ⇒ MẤT bản ghi engine S12H-PTA
+   16 | SP0920D-M | 920/1150 | S12H-PTA | 4500×1880×2341 | SP0920D-M.pdf
+        ⇒ MẤT bản ghi engine S12H-PTA
+   18 | SP0440D-U | 440/550 | 10V1600G80F | 3200×1350×2240 | SP0440D-U.pdf
+        ⇒ MẤT bản ghi engine 10V1600G80F
+   26 | SP0352D-P | 352/440 | 2206C-E13TAG3 | 3280×1130×1950 | SP0352D-P.pdf
+        ⇒ MẤT bản ghi engine 2206C-E13TAG3
+   28 | SP0440D-P | 440/550 | 2506C-E15TAG2 | 3300×1200×2060 | SP0440D-P.pdf
+        ⇒ MẤT bản ghi engine 2506C-E15TAG2
+   29 | SP0528D-P | 528/660 | 2806A-E18TAG1A | 3300×1550×2100 | SP0528D-P.pdf
+        ⇒ MẤT bản ghi engine 2806A-E18TAG1A
+   30 | SP0572D-P | 572/715 | 2806A-E18TAG2 | 3300×1550×2100 | SP0572D-P.pdf
+        ⇒ MẤT bản ghi engine 2806A-E18TAG2
+   31 | SP0640D-P | 640/800 | 4006-23TAG2A | 4100×1920×2250 | SP0640D-P.pdf
+        ⇒ MẤT bản ghi engine 4006-23TAG2A
+   32 | SP0704D-P | 704/880 | 4006-23TAG3A | 4100×1920×2250 | SP0704D-P.pdf
+        ⇒ MẤT bản ghi engine 4006-23TAG3A
+   33 | SP0800D-P | 800/1125 | 4008TAG2A | 4570×2046×2230 | SP0800D-P.pdf
+        ⇒ MẤT bản ghi engine 4008TAG2A
+   34 | SP0880D-P | 880/1100 | 4008TAG2A | 4570×2046×2230 | SP0880D-P.pdf
+        ⇒ MẤT bản ghi engine 4008TAG2A
+   35 | SP0330D-C | 330/413 | QSZ13-G2 | 3410×1230×1920 | SP0330D-C.pdf
+        ⇒ makes:  → Cummins
+   36 | SP0400D-C | 400/500 | QSZ13-G2 | 3410×1230×1920 | SP0400D-C.pdf
+        ⇒ makes:  → Cummins
+   37 | SP0440D-C | 440/550 | QSZ13-G3 | 3410×1230×1920 | SP0440D-C.pdf
+        ⇒ makes:  → Cummins
+
+[simpson-power n114 bảng 9] ×42
+  H: | 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据
+   16 | SP0017D-P | 17/21 | 404D-22G | 1100×550×1030 | SP0017D-P.pdf
+        ⇒ MẤT bản ghi engine 404D-22G
+   17 | SP0026D-P | 26/33 | 1103A-33G | 1585×750×1250 | SP0026D-P.pdf
+        ⇒ MẤT bản ghi engine 1103A-33G
+   18 | SP0035D-P | 35/44 | 1103A-33TG1 | 1900×760×1250 | SP0035D-P.pdf
+        ⇒ MẤT bản ghi engine 1103A-33TG1
+   19 | SP0040D-P | 40/50 | 1103A-33TG1 | 1900×760×1250 | SP0040D-P.pdf
+        ⇒ MẤT bản ghi engine 1103A-33TG1
+   20 | SP0052D-P | 52/65 | 1103A-33TG2 | 1900×760×1250 | SP0052D-P.pdf
+        ⇒ MẤT bản ghi engine 1103A-33TG2
+   21 | SP0070D-P | 70/88 | 1104A-44TG2 | 1865×810×1170 | SP0070D-P.pdf
+        ⇒ MẤT bản ghi engine 1104A-44TG2
+   22 | SP0080D-P | 80/100 | 1006TG1A | 2240×760×1315 | SP0080D-P.pdf
+        ⇒ MẤT bản ghi engine 1006TG1A
+   23 | SP0082D-P | 82/103 | 1104C-44TAG2 | 2240×760×1315 | SP0082D-P.pdf
+        ⇒ MẤT bản ghi engine 1104C-44TAG2
+   24 | SP0088D-P | 88/110 | 1006TG2A | 2240×760×1315 | SP0088D-P.pdf
+        ⇒ MẤT bản ghi engine 1006TG2A
+   25 | SP0120D-P | 120/150 | 1006TAG | 2420×760×1430 | SP0120D-P.pdf
+        ⇒ MẤT bản ghi engine 1006TAG
+   26 | SP0132D-P | 132/165 | 1006TAG2 | 2420×760×1430 | SP0132D-P.pdf
+        ⇒ MẤT bản ghi engine 1006TAG2
+   27 | SP0154D-P | 154/193 | 1106C-E66TAG4 | 2420×760×1520 | SP0154D-P.pdf
+        ⇒ MẤT bản ghi engine 1106C-E66TAG4
+   28 | SP0176D-P | 176/220 | 1306C-E87TAG3 | 2750×1100×1785 | SP0176D-P.pdf
+        ⇒ MẤT bản ghi engine 1306C-E87TAG3
+   29 | SP0200D-P | 200/250 | 1306C-E87TAG4 | 2750×1100×1785 | SP0200D-P.pdf
+        ⇒ MẤT bản ghi engine 1306C-E87TAG4
+   30 | SP0220D-P | 220/275 | 1306C-E87TAG6 | 2750×1100×1785 | SP0220D-P.pdf
+        ⇒ MẤT bản ghi engine 1306C-E87TAG6
+   31 | SP0280D-P | 280/350 | 2206C-E13TAG2 | 3280×1130×1950 | SP0280D-P.pdf
+        ⇒ MẤT bản ghi engine 2206C-E13TAG2
+   33 | SP0026D-C | 26/33 | 4BT3.9-G1(G2) | 1800×7410×1380 | SP0026D-C.pdf
+        ⇒ MẤT bản ghi engine 4BT3.9-G1(G2)
+   34 | SP0033D-C | 33/41 | 4BT3.9-G1(G2) | 1800×7410×1380 | SP0033D-C.pdf
+        ⇒ MẤT bản ghi engine 4BT3.9-G1(G2)
+   35 | SP0044D-C | 44/55 | 4BTA3.9-G2 | 1880×750×1520 | SP0044D-C.pdf
+        ⇒ MẤT bản ghi engine 4BTA3.9-G2
+   36 | SP0050D-C | 50/63 | 4BTA3.9-G2 | 1880×750×1520 | SP0050D-C.pdf
+        ⇒ MẤT bản ghi engine 4BTA3.9-G2
+   37 | SP0060D-C | 60/75 | 6BT5.9-G1(G2) | 2150×840×1400 | SP0060D-C.pdf
+        ⇒ MẤT bản ghi engine 6BT5.9-G1(G2)
+   38 | SP0070D-C | 70/88 | 6BT5.9-G1(G2) | 2150×840×1400 | SP0070D-C.pdf
+        ⇒ MẤT bản ghi engine 6BT5.9-G1(G2)
+   39 | SP0080D-C | 80/100 | 6BT5.9-G1(G2) | 2150×840×1400 | SP0080D-C.pdf
+        ⇒ MẤT bản ghi engine 6BT5.9-G1(G2)
+   40 | SP0100D-C | 100/125 | 6BTA5.9-G2 | 2150×840×1400 | SP0100D-C.pdf
+        ⇒ MẤT bản ghi engine 6BTA5.9-G2
+   41 | SP0108D-C | 108/135 | 6BTA5.9-G2 | 2150×840×1400 | SP0108D-C.pdf
+        ⇒ MẤT bản ghi engine 6BTA5.9-G2
+   42 | SP0120D-C | 120/150 | 6BTAA5.9-G2 | 2260×860×1450 | SP0120D-C.pdf
+        ⇒ MẤT bản ghi engine 6BTAA5.9-G2
+   43 | SP0132D-C | 132/165 | 6CTA8.3-G2 | 2300×860×1560 | SP0132D-C.pdf
+        ⇒ MẤT bản ghi engine 6CTA8.3-G2
+   44 | SP0165D-C | 165/206 | 6CTA8.3-G2 | 2300×860×1560 | SP0165D-C.pdf
+        ⇒ MẤT bản ghi engine 6CTA8.3-G2
+   45 | SP0176D-C | 176/220 | 6CTAA8.3-G2 | 2300×860×1560 | SP0176D-C.pdf
+        ⇒ MẤT bản ghi engine 6CTAA8.3-G2
+   46 | SP0188D-C | 188/235 | 6CTAA8.3-G2 | 2300×860×1560 | SP0188D-C.pdf
+        ⇒ MẤT bản ghi engine 6CTAA8.3-G2
+   47 | SP0220D-C | 220/275 | 6LTAA8.9-G2 | 2530×955×1603 | SP0220D-C.pdf
+        ⇒ MẤT bản ghi engine 6LTAA8.9-G2
+   48 | SP0250D-C | 250/313 | QSM11-G2 | 2860×1050×1900 | SP0250D-C.pdf
+        ⇒ MẤT bản ghi engine QSM11-G2
+   49 | SP0275D-C | 275/344 | QSM11-G2 | 2860×1050×1900 | SP0275D-C.pdf
+        ⇒ MẤT bản ghi engine QSM11-G2
+   51 | SP0017D-D | 17/21 | F3L912 | 1200×700×1350 | SP0017D-D.pdf
+        ⇒ MẤT bản ghi engine F3L912
+   52 | SP0022D-D | 22/27.5 | F3L912 | 1200×700×1350 | SP0022D-D.pdf
+        ⇒ MẤT bản ghi engine F3L912
+   53 | SP0027D-D | 27/33.7 | F4L912 | 1550×870×1378 | SP0027D-D.pdf
+        ⇒ MẤT bản ghi engine F4L912
+   54 | SP0033D-D | 33/41 | F4L913 | 1600×870×1378 | SP0033D-D.pdf
+        ⇒ MẤT bản ghi engine F4L913
+   55 | SP0040D-D | 40/50 | F4L912T | 1600×870×1378 | SP0040D-D.pdf
+        ⇒ MẤT bản ghi engine F4L912T
+   56 | SP0044D-D | 44/55 | F6L912 | 1900×830×1273 | SP0044D-D.pdf
+        ⇒ MẤT bản ghi engine F6L912
+   59 | SP0053D-D | 53/66 | F6L912T | 1800×830×1320 | SP0053D-D.pdf
+        ⇒ MẤT bản ghi engine F6L912T
+   60 | SP0082D-D | 82/102.5 | BF6L913 | 1900×830×1317 | SP0082D-D.pdf
+        ⇒ MẤT bản ghi engine BF6L913
+   61 | SP0100D-D | 100/125 | BF6L913C | 1950×830×1353 | SP0100D-D.pdf
+        ⇒ MẤT bản ghi engine BF6L913C
+
+[simpson-power n115 bảng 10] ×4
+  H: | 机组型号 | 备用功率 ( kW/kVA) | 发动机型号 | 机组尺寸 (mm) ( 长×宽×高) | 机组数据
+    0 | SP0500D-M | 500/625 | S6R-PTA | 3595×1422×2150 | SP0500D-M.pdf
+        ⇒ THÊM bản ghi engine S6R-PTA
+    7 | SP1000D-M | 1000/1250 | S12R-PTA | 4500×1880×2341 | SP1000D-M.pdf
+        ⇒ THÊM bản ghi engine S12R-PTA
+    8 | SP1100D-M | 1100/1375 | S12R-PTA | 4850×1900×2570 | SP1100D-M.pdf
+        ⇒ THÊM bản ghi engine S12R-PTA
+   16 | SP1800D-M | 1800/2250 | S16R-PTAA2 | 5720×2480×3440 | SP1800D-M.pdf
+        ⇒ THÊM bản ghi engine S16R-PTAA2
+
+[simpson-power n121 bảng 12] ×7
+  H: | 机组型号 | 备用功率 ( kW/kVA) | 发动机型号 | 机组尺寸 (mm) ( 长×宽×高) | 机组数据
+    0 | SPH1100D-P | 1100/1375 | 4012-46TWG2A | 5790×1800×2600 | SPH1100D-P.pdf
+        ⇒ THÊM bản ghi engine 4012-46TWG2A
+    1 | SPH1200D-P | 1200/1500 | 4012-46TWG3A | 5790×1800×2600 | SPH1200D-P.pdf
+        ⇒ THÊM bản ghi engine 4012-46TWG3A
+    2 | SPH1320D-P | 1320/1650 | 4012-46TAG2A | 5800×1800×2550 | SPH1320D-P.pdf
+        ⇒ THÊM bản ghi engine 4012-46TAG2A
+    3 | SPH1540D-P | 1540/1925 | 4016TAG | 6300×2300×3020 | SPH1540D-P.pdf
+        ⇒ THÊM bản ghi engine 4016TAG
+    4 | SPH1620D-P | 1620/2025 | 4016TAG1A | 6300×2300×3020 | SPH1620D-P.pdf
+        ⇒ THÊM bản ghi engine 4016TAG1A
+    5 | SPH1800D-P | 1804/2255 | 4016TAG2A | 6300×2300×3020 | SPH1800D-P.pdf
+        ⇒ THÊM bản ghi engine 4016TAG2A
+    6 | SPH2000D-P | 2000/2500 | 4016-61TRG3 | 6300×2300×3020 | SPH2000D-P.pdf
+        ⇒ THÊM bản ghi engine 4016-61TRG3
+
+[simpson-power n122 bảng 13] ×12
+  H: | 机组型号 | 备用功率 ( kW/kVA) | 发动机型号 | 机组尺寸 (mm) ( 长×宽×高) | 机组数据
+    0 | SPH1100D-U | 1100/1375 | 12V4000G21R | 5680×2100×2660 | SPH1100D-U.pdf
+        ⇒ THÊM bản ghi engine 12V4000G21R
+    1 | SPH1210D-U | 1210/1513 | 12V4000G23R | 5680×2100×2660 | SPH1210D-U.pdf
+        ⇒ THÊM bản ghi engine 12V4000G23R
+    2 | SPH1320D-U | 1320/1650 | 12V4000G23 | 5780×2100×2660 | SPH1320D-U.pdf
+        ⇒ THÊM bản ghi engine 12V4000G23
+    3 | SPH1450D-U | 1450/1813 | 12V4000G23 | 5780×2100×2660 | SPH1450D-U.pdf
+        ⇒ THÊM bản ghi engine 12V4000G23
+    4 | SPH1600D-U | 1600/2000 | 12V4000G63 | 5780×2100×2660 | SPH1600D-U.pdf
+        ⇒ THÊM bản ghi engine 12V4000G63
+    5 | SPH1800D-U | 1800/2250 | 16V4000G23 | 7630×2229×2624 | SPH1800D-U.pdf
+        ⇒ THÊM bản ghi engine 16V4000G23
+    6 | SPH2000D-U | 2000/2500 | 16V4000G63 | 7630×2229×2624 | SPH2000D-U.pdf
+        ⇒ THÊM bản ghi engine 16V4000G63
+    7 | SPH2200D-U | 2200/2750 | 20V4000G23 | 7880×2680×2835 | SPH2200D-U.pdf
+        ⇒ THÊM bản ghi engine 20V4000G23
+    8 | SPH2400D-U | 2400/3000 | 20V4000G63 | 7880×2680×2835 | SPH2400D-U.pdf
+        ⇒ THÊM bản ghi engine 20V4000G63
+    9 | SPH2500D-U | 2500/3125 | 20V4000G63 | 7600×2760×2950 | SPH2500D-U.pdf
+        ⇒ THÊM bản ghi engine 20V4000G63
+   10 | SPH2640D-U | 2640/3300 | 20V4000G63L | 7760×2760×2950 | SPH2640D-U.pdf
+        ⇒ THÊM bản ghi engine 20V4000G63L
+   11 | SPH2750D-U | 2750/3438 | 20V4000G63L | 7760×2760×2950 | SPH2750D-U.pdf
+        ⇒ THÊM bản ghi engine 20V4000G63L
+
+[simpson-power n123 bảng 14] ×8
+  H: | 机组型号 | 备用功率 ( kW/kVA) | 发动机型号 | 机组尺寸 (mm) ( 长×宽×高) | 机组数据
+    0 | SPH1100D-M | 1100/1375 | S12R-PTA | 5100×2100×2700 | SPH1100D-M.pdf
+        ⇒ THÊM bản ghi engine S12R-PTA
+    1 | SPH1200D-M | 1200/1500 | S12R-PTA2 | 5100×2100×2700 | SPH1200D-M.pdf
+        ⇒ THÊM bản ghi engine S12R-PTA2
+    2 | SPH1250D-M | 1250/1562 | S12R-PTAA2 | 5400×2100×2800 | SPH1320D-M.pdf
+        ⇒ THÊM bản ghi engine S12R-PTAA2
+    3 | SPH1320D-M | 1320/1650 | S12R-PTAA2 | 5400×2100×2800 | SPH1500D-M.pdf
+        ⇒ THÊM bản ghi engine S12R-PTAA2
+    4 | SPH1500D-M | 1500/1875 | S16R-PTA | 6170×2450×3000 | SPH1600D-M.pdf
+        ⇒ THÊM bản ghi engine S16R-PTA
+    5 | SPH1600D-M | 1600/2000 | S16R-PTA2 | 6170×2450×3000 | SPH1680D-M.pdf
+        ⇒ THÊM bản ghi engine S16R-PTA2
+    6 | SPH1680D-M | 1680/2100 | S16R-PTAA2 | 6000×2700×3500 | SPH1800D-M.pdf
+        ⇒ THÊM bản ghi engine S16R-PTAA2
+    7 | SPH1800D-M | 1800/2250 | S16R2-PTAW | 6980×2820×3360 | SPH2000D-M.pdf
+        ⇒ THÊM bản ghi engine S16R2-PTAW
+
+[simpson-power n124 bảng 15] ×10
+  H: | 机组型号 | 备用功率 ( kW/kVA) | 发动机型号 | 机组尺寸 (mm) ( 长×宽×高) | 机组数据
+    0 | SGH2200X | 2.2/2.2 | ZS168FA | 623×468×491 |
+        ⇒ THÊM bản ghi engine ZS168FA
+    1 | SGH4200X | 4.2/4.2 | ZS182F | 710×549×595 |
+        ⇒ THÊM bản ghi engine ZS182F
+    2 | SGH6500E | 5.2/5.2 | GX390 | 710×549×595 |
+        ⇒ THÊM bản ghi engine GX390
+    3 | SGH8500E | 6.5/6.5 | ZS190F | 710×549×595 |
+        ⇒ THÊM bản ghi engine ZS190F
+    4 | SGH1110E | 10/10 | GX630 | 953×617×622 |
+        ⇒ THÊM bản ghi engine GX630
+    5 | SGH3135E | 10/12.5 | GX630 | 953×617×622 |
+        ⇒ THÊM bản ghi engine GX630
+    6 | SGH1130E | 11.5/11.5 | GX690 | 953×617×622 |
+        ⇒ THÊM bản ghi engine GX690
+    7 | SGH3160E | 11.5/14.37 | GX690 | 953×617×622 |
+        ⇒ THÊM bản ghi engine GX690
+    8 | SGH1150E | 12/12 | GX690 | 953×617×622 |
+        ⇒ THÊM bản ghi engine GX690
+    9 | SGH3180E | 13/16.25 | GX690 | 953×617×622 |
+        ⇒ THÊM bản ghi engine GX690
+
+[simpson-power n125 bảng 16] ×12
+  H: | 机组型号 | 备用功率 ( kW/kVA) | 发动机型号 | 机组尺寸 (mm) ( 长×宽×高) | 机组数据
+    0 | SS0013D-D | 13/16 | F2L912 | 2000×1200×1800 |
+        ⇒ THÊM bản ghi engine F2L912
+    1 | SS0017D-D | 17/21 | F3L912 | 2000×1200×1800 |
+        ⇒ THÊM bản ghi engine F3L912
+    2 | SS0022D-D | 22/27.5 | F3L912 | 2000×1200×1800 |
+        ⇒ THÊM bản ghi engine F3L912
+    3 | SS0027D-D | 27/33.7 | F4L912 | 2200×1200×1800 |
+        ⇒ THÊM bản ghi engine F4L912
+    4 | SS0033D-D | 33/41 | F4L913 | 2200×1200×1800 |
+        ⇒ THÊM bản ghi engine F4L913
+    5 | SS0040D-D | 40/50 | F4L912T | 2200×1200×1800 |
+        ⇒ THÊM bản ghi engine F4L912T
+    6 | SS0044D-D | 44/55 | F6L912 | 2600×1200×1800 |
+        ⇒ THÊM bản ghi engine F6L912
+    7 | SS0048D-D | 44/55 | F6L913 | 2600×1200×1800 |
+        ⇒ THÊM bản ghi engine F6L913
+    8 | SS0050D-D | 50/625 | BF4L913 | 2600×1200×1800 |
+        ⇒ THÊM bản ghi engine BF4L913
+    9 | SS0053D-D | 53/66 | F6L912T | 2600×1200×1800 |
+        ⇒ THÊM bản ghi engine F6L912T
+   10 | SS0082D-D | 82/102.5 | BF6L913 | 2600×1200×1800 |
+        ⇒ THÊM bản ghi engine BF6L913
+   11 | SS0100D-D | 100/125 | BF6L913C | 2600×1200×1800 |
+        ⇒ THÊM bản ghi engine BF6L913C
+
+[simpson-power n126 bảng 17] ×2
+  H: | 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发动机型号 | 机 组 尺 寸 (mm) ( 长×宽×高) | 机 组 数 据
+    0 | SP0013D-D | 13/16 | F2L912 | 1200×700×1350 | SP0013D-D.pdf
+        ⇒ dims: ∅ → 1200×700×1350
+    8 | SP0050D-D | 50/625 | BF4L913 | 1540×830×1273 | SP0050D-D.pdf
+        ⇒ MẤT bản ghi engine BF4L913
+
+[simpson-power n128 bảng 19] ×2
+  H: | 机组型号 | 备用功率 ( kW/kVA) | 发动机型号 | 机组尺寸 (mm) ( 长×宽×高) | 机组数据
+    0 | SP0022D-C | 22/27 | 4B3.9-G1(G2) | 1800×7410×1380 | SP0022D-C.pdf
+        ⇒ THÊM bản ghi engine 4B3.9-G1(G2)
+   18 | SP0300D-C | 300/375 | QSM11-G2 | 2860×1050×1900 | SP0300D-C.pdf
+        ⇒ THÊM bản ghi engine QSM11-G2
+
+[tecnogen n2004 bảng 3] ×22
+  H: | MODEL | kVA LTP | kVA PRP | kVA LTP | kVA PRP | | Regulator | Cylinder | cm3 | kWm 1500 rpm | kWm 1800 rpm | (l/h) 1500 rpm | (l/h) 1800 rpm | Aspiration | Standard panel | Automatic panel | dB(A) (•) 7 m | | | | |
+  H: | | 50 Hz | | 60 Hz | | Engine | | | | | | Cons. 70% | Cons. 70% | | | | | Tank l | L | W | H | Kg
+    0 | SA275TSX | 275 | 250 | 308 | 280 | DC09 072A 02 11 | E | 5 | 9300 | 220 | 241 | 34,0 | 39,7 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 3690
+        ⇒ model: AUS7310 → DC09 072A 02 11; cyl: 5 → ∅; weight: ∅ → 3690
+    1 | SA300TSX | 300 | 275 | 335 | 305 | DC09 072A 02 12 | E | 5 | 9300 | 242 | 263 | 37,0 | 43,0 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 3760
+        ⇒ model: AUS7310 → DC09 072A 02 12; cyl: 5 → ∅; weight: ∅ → 3760
+    2 | SA330TSX | 330 | 300 | 360 | 325 | DC09 072A 02 13 | E | 5 | 9300 | 261 | 282 | 40,4 | 45,9 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 3760
+        ⇒ model: AUS7310 → DC09 072A 02 13; cyl: 5 → ∅; weight: ∅ → 3760
+    3 | SA365TSX | 358 | 325 | 402 | 365 | DC09 072A 02 14 | E | 5 | 9300 | 283 | 315 | 46,8 | 54,8 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 4200
+        ⇒ model: AUS7310 → DC09 072A 02 14; cyl: 5 → ∅; weight: ∅ → 4200
+    4 | SA400TSX | 400 | 365 | 462 | 420 | DC13 072A 02 11 | E | 6 | 12700 | 320 | 362 | 47,6 | 55,9 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 5040
+        ⇒ model: AUS7310 → DC13 072A 02 11; cyl: 6 → ∅; weight: ∅ → 5040
+    5 | SA450TSX | 450 | 410 | 505 | 460 | DC13 072A 02 12 | E | 6 | 12700 | 355 | 393 | 53,6 | 61,3 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 5260
+        ⇒ model: AUS7310 → DC13 072A 02 12; cyl: 6 → ∅; weight: ∅ → 5260
+    6 | SA500TSX | 500 | 455 | 550 | 500 | DC13 072A 02 13 | E | 6 | 12700 | 393 | 428 | 59,2 | 66,6 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 5260
+        ⇒ model: AUS7310 → DC13 072A 02 13; cyl: 6 → ∅; weight: ∅ → 5260
+    7 | SA550TSX | 550 | 500 | 550 | 500 | DC13 072A 02 14 | E | 6 | 12700 | 428 | 428 | 64,7 | 66,6 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 5310
+        ⇒ model: AUS7310 → DC13 072A 02 14; cyl: 6 → ∅; weight: ∅ → 5310
+    8 | SA600TSX | 600 | 550 | 610 | 550 | DC16 093A 02 52 | E | 8V | 16400 | 473 | 468 | 73,9 | 78,0 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230 | 5900
+        ⇒ model: AUS7310 → DC16 093A 02 52; cyl: 8V → ∅; weight: ∅ → 5900
+    9 | SA660TSX | 660 | 600 | 725 | 655 | DC16 093A 02 54 | E | 8V | 16400 | 545 | 555 | 85,9 | 98,5 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230 | 5900
+        ⇒ model: AUS7310 → DC16 093A 02 54; cyl: 8V → ∅; weight: ∅ → 5900
+   10 | SA710TSX | 706 | 640 | 725 | 655 | DC16 093A 02 54 | E | 8V | 16400 | 545 | 555 | 91,8 | 98,5 | T | Q7310AUS | ACP 7320 | 69 | 1000 | 485 | 200 | 230 | 5900
+        ⇒ model: Q7310AUS → DC16 093A 02 54; cyl: 8V → ∅; weight: ∅ → 5900
+   11 | SA725TSX | 715 | 650 | 720 | 650 | DC16 078A 02 42 | E | 8V | 16400 | 553 | 553 | 92,7 | 96,6 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230 | 5900
+        ⇒ model: AUS7310 → DC16 078A 02 42; cyl: 8V → ∅; weight: ∅ → 5900
+   12 | SA770TSX | 770 | 700 | 770 | 700 | DC16 078A 02 43 | E | 8V | 16400 | 596 | 597 | 93,8 | 98,0 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230 | 5900
+        ⇒ model: AUS7310 → DC16 078A 02 43; cyl: 8V → ∅; weight: ∅ → 5900
+   13 | SA800TSX | 800 | 730 | 800 | 730 | DC16 078A 02 44 | E | 8V | 16400 | 619 | 617 | 98,0 | 101,3 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230 | 5900
+        ⇒ model: AUS7310 → DC16 078A 02 44; cyl: 8V → ∅; weight: ∅ → 5900
+   15 | SA273TSX** | 275 | 250 | 308 | 280 | DC09 071A 02 01 | E | 5 | 9300 | 220 | 241 | 38.8 | 43.3 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 3690
+        ⇒ model: AUS7310 → DC09 071A 02 01; cyl: 5 → ∅; weight: ∅ → 3690
+   16 | SA303TSX** | 300 | 275 | 335 | 305 | DC09 071A 02 02 | E | 5 | 9300 | 242 | 263 | 42.3 | 46.8 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 3760
+        ⇒ model: AUS7310 → DC09 071A 02 02; cyl: 5 → ∅; weight: ∅ → 3760
+   17 | SA333TSX** | 330 | 300 | 360 | 325 | DC09 071A 02 03 | E | 5 | 9300 | 261 | 282 | 46.0 | 50.1 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 3760
+        ⇒ model: AUS7310 → DC09 071A 02 03; cyl: 5 → ∅; weight: ∅ → 3760
+   18 | SA363TSX** | 360 | 325 | 392 | 357 | DC09 071A 02 04 | E | 5 | 9300 | 283 | 303 | 49.5 | 54.6 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 4200
+        ⇒ model: AUS7310 → DC09 071A 02 04; cyl: 5 → ∅; weight: ∅ → 4200
+   19 | SA403TSX** | 400 | 365 | 457 | 415 | DC13 071A 02 01 | E | 6 | 12700 | 315 | 354 | 53.0 | 62.4 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 5040
+        ⇒ model: AUS7310 → DC13 071A 02 01; cyl: 6 → ∅; weight: ∅ → 5040
+   20 | SA453TSX** | 450 | 410 | 457 | 415 | DC13 071A 02 02 | E | 6 | 12700 | 354 | 354 | 59.4 | 62.4 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 5260
+        ⇒ model: AUS7310 → DC13 071A 02 02; cyl: 6 → ∅; weight: ∅ → 5260
+   21 | SA553TSX** | 550 | 500 | 598 | 543 | DC16 071A 02 01 | E | 8V | 16400 | 425 | 460 | 74.3 | 82.0 | T | AUS7310 | ACP 7320 | 68 | 1000 | 485 | 200 | 230 | 5310
+        ⇒ model: AUS7310 → DC16 071A 02 01; cyl: 8V → ∅; weight: ∅ → 5310
+   22 | SA603TSX** | 605 | 550 | 598 | 543 | DC16 071A 02 02 | E | 8V | 16400 | 467 | 460 | 81.3 | 82.0 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230 | 5900
+        ⇒ model: AUS7310 → DC16 071A 02 02; cyl: 8V → ∅; weight: ∅ → 5900
+
+[visa-gensets n103 bảng 3] ×5
+  H: | KVA PRP | ENGINE BRAND | MODEL | GENSET RANGE | ENGINE DATA
+    0 | 300,0 | Scania | DC09 320A 02-63 | T.B.D. | &dArr;
+        ⇒ THÊM bản ghi engine DC09 320A 02-63
+    1 | 400,0 | Scania | DC13 320A 02-62 | T.B.D. | &dArr;
+        ⇒ THÊM bản ghi engine DC13 320A 02-62
+    2 | 450,0 | Scania | DC13 320A 02-63 | T.B.D. | &dArr;
+        ⇒ THÊM bản ghi engine DC13 320A 02-63
+    3 | 500,0 | Scania | DC16 320A 02-62 | T.B.D. | &dArr;
+        ⇒ THÊM bản ghi engine DC16 320A 02-62
+    4 | 550,0 | Scania | DC16 320A 02-63 | T.B.D. | &dArr;
+        ⇒ THÊM bản ghi engine DC16 320A 02-63
+
+[voltgent n102 bảng 1] ×6
+  H: | Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet
+  145 | VS300-5-S5 | 300 | 240 | 275 | 220 | SCANIA | DC09 320A 02-62 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC09 320A 02-62
+  146 | VS330-5-S5 | 330 | 264 | 300 | 240 | SCANIA | DC09 320A 02-63 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC09 320A 02-63
+  147 | VS358-5-S5 | 358 | 286 | 325 | 260 | SCANIA | DC09 320A 02-64 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC09 320A 02-64
+  148 | VS440-5-S5 | 440 | 352 | 400 | 320 | SCANIA | DC13 320A 02-62 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC13 320A 02-62
+  149 | VS500-5-S5 | 500 | 400 | 450 | 360 | SCANIA | DC13 320A 02-63 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC13 320A 02-63
+  151 | VS600-5-S5 | 600 | 480 | 550 | 440 | SCANIA | DC16 320A 02-63 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC16 320A 02-63
+
+[voltgent n107 bảng 6] ×25
+  H: | Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet
+    0 | VS275-5 | 275 | 220 | 250 | 200 | Scania | DC09 072A 02-11 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC09 072A 02-11
+    1 | VS313-5 | 313 | 250 | 275 | 220 | Scania | DC09 072A 02-12 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC09 072A 02-12
+    2 | VS330-5 | 330 | 264 | 300 | 240 | Scania | DC09 072A 02-13 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC09 072A 02-13
+    3 | VS360-5 | 360 | 288 | 330 | 264 | Scania | DC09 072A 02-14 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC09 072A 02-14
+    4 | VS400-5 | 400 | 320 | 375 | 300 | Scania | DC13 072A 02-11 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC13 072A 02-11
+    5 | VS450-5 | 450 | 360 | 400 | 320 | Scania | DC13 072A 02-12 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC13 072A 02-12
+    6 | VS500-5 | 500 | 400 | 450 | 360 | Scania | DC13 072A 02-13 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC13 072A 02-13
+    7 | VS550-5 | 550 | 440 | 500 | 400 | Scania | DC13 072A 02-14 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC13 072A 02-14
+    8 | VS660-5 | 660 | 528 | 600 | 480 | Scania | DC16 093A 02-53 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC16 093A 02-53
+    9 | VS700-5 | 700 | 560 | 640 | 512 | Scania | DC16 093A 02-54 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC16 093A 02-54
+   10 | VS715-5 | 715 | 572 | 650 | 520 | Scania | DC 16 078A 02-42 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC 16 078A 02-42
+   11 | VS770-5 | 770 | 616 | 700 | 560 | Scania | DC 16 078A 02-43 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC 16 078A 02-43
+   12 | VS800-5 | 800 | 640 | 725 | 580 | Scania | DC 16 078A 02-44 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC 16 078A 02-44
+   21 | VS313-6 | 313 | 250 | 275 | 220 | Scania | DC09 072A 02-11 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC09 072A 02-11
+   22 | VS344-6 | 344 | 275 | 313 | 250 | Scania | DC09 072A 02-12 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC09 072A 02-12
+   23 | VS360-6 | 360 | 288 | 330 | 264 | Scania | DC09 072A 02-13 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC09 072A 02-13
+   24 | VS413-6 | 413 | 330 | 375 | 300 | Scania | DC09 072A 02-14 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC09 072A 02-14
+   25 | VS460-6 | 460 | 360 | 420 | 328 | Scania | DC13 072A 02-11 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC13 072A 02-11
+   26 | VS500-6 | 500 | 400 | 450 | 360 | Scania | DC13 072A 02-12 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC13 072A 02-12
+   27 | VS550-6 | 550 | 440 | 500 | 400 | Scania | DC13 093A 02-72 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC13 093A 02-72
+   28 | VS600-6 | 600 | 480 | 550 | 440 | Scania | DC13 093A 02-73 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC13 093A 02-73
+   29 | VS660-6 | 660 | 528 | 600 | 480 | Scania | DC13 093A 02-75 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC13 093A 02-75
+   30 | VS715-6 | 715 | 572 | 650 | 520 | Scania | DC16 093A 02-54 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC16 093A 02-54
+   31 | VS770-6 | 770 | 616 | 700 | 560 | Scania | DC16 078A 02-43 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC16 078A 02-43
+   32 | VS800-6 | 800 | 640 | 725 | 580 | Scania | DC16 078A 02-44 | [EN] [RU] [ES] [PT]
+        ⇒ THÊM bản ghi engine DC16 078A 02-44
+
+==== tự kiểm số (verSpec) ====
+(!) [aj-power n103 bảng 2 phase] dòng 20: Three Phase → ∅ (nhãn "Phase") | {"prime":{"kVA":550},"standby":{"kVA":606.3}} | | AJ615 | 60hz | Three Phase | 1800 | 550.0 | 606.3 | | DC16 093A 02-52 | S4L1D-G | AJ615 Three Phase Scania 60Hz
+(!) [aj-power n103 bảng 2 phase] dòng 22: Three Phase → ∅ (nhãn "Phase") | {"prime":{"kVA":608.8},"standby":{"kVA":671.3}} | | AJ670 | 60hz | Three Phase | 1800 | 608.8 | 671.3 | | DC16 093A 02-53 | HCI544D | AJ670 Three Phase Scania 60Hz
+(!) [aj-power n103 bảng 2 phase] dòng 24: Three Phase → ∅ (nhãn "Phase") | {"prime":{"kVA":661.3},"standby":{"kVA":730}} | | AJ710 | 60hz | Three Phase | 1800 | 661.3 | 730.0 | | DC16 093A 02-54 | HCI544E | AJ710 Three Phase Scania 60hz
+    [simpson-power n102 bảng 1 dims] dòng 0: ∅ → 7330×2150×2836 (nhãn "机组尺寸 (mm) ( 长 × 宽 × 高 )") | | SP1800D-U | 1800/2250 | MTU | 16V4000G23 | 7330×2150×2836 | SP1800D-U.pdf
+    [simpson-power n111 bảng 6 dims] dòng 0: ∅ → 6280×2600×2748 (nhãn "机组尺寸 (mm) ( 长 × 宽 × 高 )") | | SP1800D-U | 1800/2250 | 奔驰 MTU | 16V4000G23 | 6280×2600×2748 | SP1800D-U.pdf
+    [simpson-power n126 bảng 17 dims] dòng 0: ∅ → 1200×700×1350 (nhãn "机组尺寸 (mm) ( 长×宽×高)") | | SP0013D-D | 13/16 | F2L912 | 1200×700×1350 | SP0013D-D.pdf
+(!) [tecnogen n2004 bảng 3 cyl] dòng 0: 5 → ∅ (nhãn "Cylinder") | {"standby":{"kVA":275},"prime":{"kVA":250}} | | SA275TSX | 275 | 250 | 308 | 280 | DC09 072A 02 11 | E | 5 | 9300 | 220 | 241 | 34,0 | 39,7 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 
+    [tecnogen n2004 bảng 3 weight] dòng 0: ∅ → 3690 (nhãn "Kg") | | SA275TSX | 275 | 250 | 308 | 280 | DC09 072A 02 11 | E | 5 | 9300 | 220 | 241 | 34,0 | 39,7 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 
+(!) [tecnogen n2004 bảng 3 cyl] dòng 1: 5 → ∅ (nhãn "Cylinder") | {"standby":{"kVA":300},"prime":{"kVA":275}} | | SA300TSX | 300 | 275 | 335 | 305 | DC09 072A 02 12 | E | 5 | 9300 | 242 | 263 | 37,0 | 43,0 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 
+(!) [tecnogen n2004 bảng 3 cyl] dòng 2: 5 → ∅ (nhãn "Cylinder") | {"standby":{"kVA":330},"prime":{"kVA":300}} | | SA330TSX | 330 | 300 | 360 | 325 | DC09 072A 02 13 | E | 5 | 9300 | 261 | 282 | 40,4 | 45,9 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 
+(!) [tecnogen n2004 bảng 3 cyl] dòng 3: 5 → ∅ (nhãn "Cylinder") | {"standby":{"kVA":358},"prime":{"kVA":325}} | | SA365TSX | 358 | 325 | 402 | 365 | DC09 072A 02 14 | E | 5 | 9300 | 283 | 315 | 46,8 | 54,8 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 |
+(!) [tecnogen n2004 bảng 3 cyl] dòng 4: 6 → ∅ (nhãn "Cylinder") | {"standby":{"kVA":400},"prime":{"kVA":365}} | | SA400TSX | 400 | 365 | 462 | 420 | DC13 072A 02 11 | E | 6 | 12700 | 320 | 362 | 47,6 | 55,9 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 
+(!) [tecnogen n2004 bảng 3 cyl] dòng 5: 6 → ∅ (nhãn "Cylinder") | {"standby":{"kVA":450},"prime":{"kVA":410}} | | SA450TSX | 450 | 410 | 505 | 460 | DC13 072A 02 12 | E | 6 | 12700 | 355 | 393 | 53,6 | 61,3 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 
+(!) [tecnogen n2004 bảng 3 cyl] dòng 6: 6 → ∅ (nhãn "Cylinder") | {"standby":{"kVA":500},"prime":{"kVA":455}} | | SA500TSX | 500 | 455 | 550 | 500 | DC13 072A 02 13 | E | 6 | 12700 | 393 | 428 | 59,2 | 66,6 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 
+(!) [tecnogen n2004 bảng 3 cyl] dòng 7: 6 → ∅ (nhãn "Cylinder") | {"standby":{"kVA":550},"prime":{"kVA":500}} | | SA550TSX | 550 | 500 | 550 | 500 | DC13 072A 02 14 | E | 6 | 12700 | 428 | 428 | 64,7 | 66,6 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 
+(!) [tecnogen n2004 bảng 3 cyl] dòng 8: 8V → ∅ (nhãn "Cylinder") | {"standby":{"kVA":600},"prime":{"kVA":550}} | | SA600TSX | 600 | 550 | 610 | 550 | DC16 093A 02 52 | E | 8V | 16400 | 473 | 468 | 73,9 | 78,0 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230
+(!) [tecnogen n2004 bảng 3 cyl] dòng 9: 8V → ∅ (nhãn "Cylinder") | {"standby":{"kVA":660},"prime":{"kVA":600}} | | SA660TSX | 660 | 600 | 725 | 655 | DC16 093A 02 54 | E | 8V | 16400 | 545 | 555 | 85,9 | 98,5 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230
+(!) [tecnogen n2004 bảng 3 cyl] dòng 10: 8V → ∅ (nhãn "Cylinder") | {"standby":{"kVA":706},"prime":{"kVA":640}} | | SA710TSX | 706 | 640 | 725 | 655 | DC16 093A 02 54 | E | 8V | 16400 | 545 | 555 | 91,8 | 98,5 | T | Q7310AUS | ACP 7320 | 69 | 1000 | 485 | 200 | 23
+(!) [tecnogen n2004 bảng 3 cyl] dòng 11: 8V → ∅ (nhãn "Cylinder") | {"standby":{"kVA":715},"prime":{"kVA":650}} | | SA725TSX | 715 | 650 | 720 | 650 | DC16 078A 02 42 | E | 8V | 16400 | 553 | 553 | 92,7 | 96,6 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230
+(!) [tecnogen n2004 bảng 3 cyl] dòng 12: 8V → ∅ (nhãn "Cylinder") | {"standby":{"kVA":770},"prime":{"kVA":700}} | | SA770TSX | 770 | 700 | 770 | 700 | DC16 078A 02 43 | E | 8V | 16400 | 596 | 597 | 93,8 | 98,0 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230
+(!) [tecnogen n2004 bảng 3 cyl] dòng 13: 8V → ∅ (nhãn "Cylinder") | {"standby":{"kVA":800},"prime":{"kVA":730}} | | SA800TSX | 800 | 730 | 800 | 730 | DC16 078A 02 44 | E | 8V | 16400 | 619 | 617 | 98,0 | 101,3 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 23
+(!) [tecnogen n2004 bảng 3 cyl] dòng 15: 5 → ∅ (nhãn "Cylinder") | {"standby":{"kVA":275},"prime":{"kVA":250}} | | SA273TSX** | 275 | 250 | 308 | 280 | DC09 071A 02 01 | E | 5 | 9300 | 220 | 241 | 38.8 | 43.3 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 
+(!) [tecnogen n2004 bảng 3 cyl] dòng 16: 5 → ∅ (nhãn "Cylinder") | {"standby":{"kVA":300},"prime":{"kVA":275}} | | SA303TSX** | 300 | 275 | 335 | 305 | DC09 071A 02 02 | E | 5 | 9300 | 242 | 263 | 42.3 | 46.8 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 
+(!) [tecnogen n2004 bảng 3 cyl] dòng 17: 5 → ∅ (nhãn "Cylinder") | {"standby":{"kVA":330},"prime":{"kVA":300}} | | SA333TSX** | 330 | 300 | 360 | 325 | DC09 071A 02 03 | E | 5 | 9300 | 261 | 282 | 46.0 | 50.1 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 
+(!) [tecnogen n2004 bảng 3 cyl] dòng 18: 5 → ∅ (nhãn "Cylinder") | {"standby":{"kVA":360},"prime":{"kVA":325}} | | SA363TSX** | 360 | 325 | 392 | 357 | DC09 071A 02 04 | E | 5 | 9300 | 283 | 303 | 49.5 | 54.6 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223
+(!) [tecnogen n2004 bảng 3 cyl] dòng 19: 6 → ∅ (nhãn "Cylinder") | {"standby":{"kVA":400},"prime":{"kVA":365}} | | SA403TSX** | 400 | 365 | 457 | 415 | DC13 071A 02 01 | E | 6 | 12700 | 315 | 354 | 53.0 | 62.4 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 22
+(!) [tecnogen n2004 bảng 3 cyl] dòng 20: 6 → ∅ (nhãn "Cylinder") | {"standby":{"kVA":450},"prime":{"kVA":410}} | | SA453TSX** | 450 | 410 | 457 | 415 | DC13 071A 02 02 | E | 6 | 12700 | 354 | 354 | 59.4 | 62.4 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 22
+(!) [tecnogen n2004 bảng 3 cyl] dòng 21: 8V → ∅ (nhãn "Cylinder") | {"standby":{"kVA":550},"prime":{"kVA":500}} | | SA553TSX** | 550 | 500 | 598 | 543 | DC16 071A 02 01 | E | 8V | 16400 | 425 | 460 | 74.3 | 82.0 | T | AUS7310 | ACP 7320 | 68 | 1000 | 485 | 200 | 2
+(!) [tecnogen n2004 bảng 3 cyl] dòng 22: 8V → ∅ (nhãn "Cylinder") | {"standby":{"kVA":605},"prime":{"kVA":550}} | | SA603TSX** | 605 | 550 | 598 | 543 | DC16 071A 02 02 | E | 8V | 16400 | 467 | 460 | 81.3 | 82.0 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 2
+
+22  cyl bỏ: mới không kiểm được
+18  dims thêm: mới tự xác nhận
+3  phase bỏ: mới không kiểm được
+22  weight thêm: mới tự xác nhận
+
+cần soát tay: 25

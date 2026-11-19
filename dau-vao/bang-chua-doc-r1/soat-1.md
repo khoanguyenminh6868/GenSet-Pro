@@ -1,0 +1,2297 @@
+# Soát bản ghi gốc ↔ nhánh (mọi bản ghi, không lấy mẫu)
+
+Mới 900, mất 163 (79 gộp vào bản ghi khác qua `also`), đổi 39; bản ghi mới / đổi có cờ ⚠: 355. Model tổ máy trong bản ghi mới: 696 khoá, trong đó 513 khoá CHƯA có ở bản gốc.
+
+## agg-fuzhou (mới 64, mất 0, đổi 0)
+
+- **MỚI** n102 b1 dòng 63 engine `DC09 072A 02-12` | tổ máy `S313E5` | prime 275 kVA / 220 kW; standby 313 kVA / 250 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S313E5 | 313/250 | 275/220 | DC09 072A 02-12 | Scania`
+- **MỚI** n102 b1 dòng 64 engine `DC09 072A 02-13` | tổ máy `S330E5` | prime 300 kVA / 240 kW; standby 330 kVA / 264 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S330E5 | 330/264 | 300/240 | DC09 072A 02-13 | Scania`
+- **MỚI** n102 b1 dòng 66 engine `DC09 072A 02-14` | tổ máy `S360E5` | prime 325 kVA / 260 kW; standby 360 kVA / 288 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S360E5 | 360/288 | 325/260 | DC09 072A 02-14 | Scania`
+- **MỚI** n102 b1 dòng 68 engine `DC13 072A 02-11` | tổ máy `S400E5` | prime 375 kVA / 300 kW; standby 400 kVA / 320 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S400E5 | 400/320 | 375/300 | DC13 072A 02-11 | Scania`
+- **MỚI** n102 b1 dòng 69 engine `DC13 072A 02-12` | tổ máy `S450E5` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S450E5 | 450/360 | 400/320 | DC13 072A 02-12 | Scania`
+- **MỚI** n102 b1 dòng 71 engine `DC13 072A 02-13` | tổ máy `S500E5` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S500E5 | 500/400 | 450/360 | DC13 072A 02-13 | Scania`
+- **MỚI** n102 b1 dòng 73 engine `DC13 093A 02-72` | tổ máy `S535E5` | prime 480 kVA / 384 kW; standby 535 kVA / 428 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S535E5 | 535/428 | 480/384 | DC13 093A 02-72 | Scania`
+- **MỚI** n102 b1 dòng 74 engine `DC13 072A 02-14` | tổ máy `S550E5` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S550E5 | 550/440 | 500/400 | DC13 072A 02-14 | Scania`
+- **MỚI** n102 b1 dòng 77 engine `DC16 093A 02-52` | tổ máy `S600E5A` | prime 550 kVA / 440 kW; standby 600 kVA / 480 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S600E5A | 600/480 | 550/440 | DC16 093A 02-52 | Scania`
+- **MỚI** n102 b1 dòng 79 engine `DC16 093A 02-53` | tổ máy `S660E5A` | prime 600 kVA / 480 kW; standby 660 kVA / 528 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S660E5A | 660/528 | 600/480 | DC16 093A 02-53 | Scania`
+- **MỚI** n102 b1 dòng 81 engine `DC16 093A 02-54` | tổ máy `S700E5` | prime 640 kVA / 512 kW; standby 700 kVA / 560 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S700E5 | 700/560 | 640/512 | DC16 093A 02-54 | Scania`
+- **MỚI** n102 b1 dòng 82 engine `DC16 078A 02-42` | tổ máy `S715E5` | prime 650 kVA / 520 kW; standby 715 kVA / 572 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S715E5 | 715/572 | 650/520 | DC16 078A 02-42 | Scania`
+- **MỚI** n102 b1 dòng 83 engine `DC16 078A 02-43` | tổ máy `S770E5` | prime 700 kVA / 560 kW; standby 770 kVA / 616 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S770E5 | 770/616 | 700/560 | DC16 078A 02-43 | Scania`
+- **MỚI** n102 b1 dòng 84 engine `DC16 078A 02-44` | tổ máy `S800E5` | prime 725 kVA / 580 kW; standby 800 kVA / 640 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S800E5 | 800/640 | 725/580 | DC16 078A 02-44 | Scania`
+- **MỚI** n102 b1 dòng 85 engine `DC16 078A 02-45` | tổ máy `S800E5A` | prime 750 kVA / 600 kW; standby 800 kVA / 640 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S800E5A | 800/640 | 750/600 | DC16 078A 02-45 | Scania`
+- **MỚI** n102 b1 dòng 86 engine `DC09 072A 02-11` | tổ máy `S313E6` | prime 275 kVA / 220 kW; standby 313 kVA / 250 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S313E6 | 313/250 | 275/220 | DC09 072A 02-11 | Scania`
+- **MỚI** n102 b1 dòng 88 engine `DC09 072A 02-12` | tổ máy `S344E6` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S344E6 | 344/275 | 313/250 | DC09 072A 02-12 | Scania`
+- **MỚI** n102 b1 dòng 89 engine `DC09 072A 02-13` | tổ máy `S360E6` | prime 330 kVA / 264 kW; standby 360 kVA / 288 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S360E6 | 360/288 | 330/264 | DC09 072A 02-13 | Scania`
+- **MỚI** n102 b1 dòng 91 engine `DC09 072A 02-14` | tổ máy `S413E6` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S413E6 | 413/330 | 375/300 | DC09 072A 02-14 | Scania`
+- **MỚI** n102 b1 dòng 92 engine `DC13 072A 02-11` | tổ máy `S440E6` | prime 400 kVA / 320 kW; standby 440 kVA / 352 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S440E6 | 440/352 | 400/320 | DC13 072A 02-11 | Scania`
+- **MỚI** n102 b1 dòng 94 engine `DC13 072A 02-12` | tổ máy `S500E6` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S500E6 | 500/400 | 450/360 | DC13 072A 02-12 | Scania`
+- **MỚI** n102 b1 dòng 97 engine `DC13 093A 02-72` | tổ máy `S550E6A` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S550E6A | 550/440 | 500/400 | DC13 093A 02-72 | Scania`
+- **MỚI** n102 b1 dòng 99 engine `DC16 093A 02-52` | tổ máy `S600E6A` | prime 550 kVA / 440 kW; standby 600 kVA / 480 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S600E6A | 600/480 | 550/440 | DC16 093A 02-52 | Scania`
+- **MỚI** n102 b1 dòng 100 engine `DC13 093A 02-74` | tổ máy `S625E6` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S625E6 | 625/500 | 563/450 | DC13 093A 02-74 | Scania`
+- **MỚI** n102 b1 dòng 102 engine `DC16 093A 02-53` | tổ máy `S660E6A` | prime 600 kVA / 480 kW; standby 660 kVA / 528 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S660E6A | 660/528 | 600/480 | DC16 093A 02-53 | Scania`
+- **MỚI** n102 b1 dòng 104 engine `DC16 078A 02-42` | tổ máy `S715E6` | prime 650 kVA / 520 kW; standby 715 kVA / 572 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S715E6 | 715/572 | 650/520 | DC16 078A 02-42 | Scania`
+- **MỚI** n102 b1 dòng 105 engine `DC16 093A 02-54` | tổ máy `S715E6A` | prime 650 kVA / 520 kW; standby 715 kVA / 572 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S715E6A | 715/572 | 650/520 | DC16 093A 02-54 | Scania`
+- **MỚI** n102 b1 dòng 106 engine `DC16 078A 02-43` | tổ máy `S770E6` | prime 700 kVA / 560 kW; standby 770 kVA / 616 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S770E6 | 770/616 | 700/560 | DC16 078A 02-43 | Scania`
+- **MỚI** n102 b1 dòng 107 engine `DC16 078A 02-44` | tổ máy `S800E6` | prime 728 kVA / 582 kW; standby 800 kVA / 640 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S800E6 | 800/640 | 728/582 | DC16 078A 02-44 | Scania`
+- **MỚI** n102 b1 dòng 108 engine `DC16 078A 02-45` | tổ máy `S800E6A` | prime 750 kVA / 600 kW; standby 800 kVA / 640 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S800E6A | 800/640 | 750/600 | DC16 078A 02-45 | Scania`
+- **MỚI** n103 b2 dòng 113 engine `DC09 072A 02-11` | tổ máy `S275E5` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S275E5 | 275/220 | 250/200 | DC09 072A 02-11 | Scania`
+- **MỚI** n112 b11 dòng 0 engine `DC09 072A 02-11` | tổ máy `S275E5` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S275E5 | 275/220 | 250/200 | DC09 072A 02-11`
+- **MỚI** n112 b11 dòng 1 engine `DC09 072A 02-12` | tổ máy `S313E5` | prime 275 kVA / 220 kW; standby 313 kVA / 250 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S313E5 | 313/250 | 275/220 | DC09 072A 02-12`
+- **MỚI** n112 b11 dòng 2 engine `DC09 072A 02-13` | tổ máy `S330E5` | prime 300 kVA / 240 kW; standby 330 kVA / 264 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S330E5 | 330/264 | 300/240 | DC09 072A 02-13`
+- **MỚI** n112 b11 dòng 4 engine `DC09 072A 02-14` | tổ máy `S360E5` | prime 325 kVA / 260 kW; standby 360 kVA / 288 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S360E5 | 360/288 | 325/260 | DC09 072A 02-14`
+- **MỚI** n112 b11 dòng 6 engine `DC13 072A 02-11` | tổ máy `S400E5` | prime 375 kVA / 300 kW; standby 400 kVA / 320 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S400E5 | 400/320 | 375/300 | DC13 072A 02-11`
+- **MỚI** n112 b11 dòng 7 engine `DC13 072A 02-12` | tổ máy `S450E5` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S450E5 | 450/360 | 400/320 | DC13 072A 02-12`
+- **MỚI** n112 b11 dòng 9 engine `DC13 072A 02-13` | tổ máy `S500E5` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S500E5 | 500/400 | 450/360 | DC13 072A 02-13`
+- **MỚI** n112 b11 dòng 11 engine `DC13 093A 02-72` | tổ máy `S535E5` | prime 480 kVA / 384 kW; standby 535 kVA / 428 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S535E5 | 535/428 | 480/384 | DC13 093A 02-72`
+- **MỚI** n112 b11 dòng 12 engine `DC13 072A 02-14` | tổ máy `S550E5` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S550E5 | 550/440 | 500/400 | DC13 072A 02-14`
+- **MỚI** n112 b11 dòng 15 engine `DC16 093A 02-52` | tổ máy `S600E5A` | prime 550 kVA / 440 kW; standby 600 kVA / 480 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S600E5A | 600/480 | 550/440 | DC16 093A 02-52`
+- **MỚI** n112 b11 dòng 17 engine `DC16 093A 02-53` | tổ máy `S660E5A` | prime 600 kVA / 480 kW; standby 660 kVA / 528 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S660E5A | 660/528 | 600/480 | DC16 093A 02-53`
+- **MỚI** n112 b11 dòng 19 engine `DC16 093A 02-54` | tổ máy `S700E5` | prime 640 kVA / 512 kW; standby 700 kVA / 560 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S700E5 | 700/560 | 640/512 | DC16 093A 02-54`
+- **MỚI** n112 b11 dòng 20 engine `DC16 078A 02-42` | tổ máy `S715E5` | prime 650 kVA / 520 kW; standby 715 kVA / 572 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S715E5 | 715/572 | 650/520 | DC16 078A 02-42`
+- **MỚI** n112 b11 dòng 21 engine `DC16 078A 02-43` | tổ máy `S770E5` | prime 700 kVA / 560 kW; standby 770 kVA / 616 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S770E5 | 770/616 | 700/560 | DC16 078A 02-43`
+- **MỚI** n112 b11 dòng 22 engine `DC16 078A 02-44` | tổ máy `S800E5` | prime 725 kVA / 580 kW; standby 800 kVA / 640 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S800E5 | 800/640 | 725/580 | DC16 078A 02-44`
+- **MỚI** n112 b11 dòng 23 engine `DC16 078A 02-45` | tổ máy `S800E5A` | prime 750 kVA / 600 kW; standby 800 kVA / 640 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S800E5A | 800/640 | 750/600 | DC16 078A 02-45`
+- **MỚI** n112 b11 dòng 24 engine `DC09 072A 02-11` | tổ máy `S313E6` | prime 275 kVA / 220 kW; standby 313 kVA / 250 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S313E6 | 313/250 | 275/220 | DC09 072A 02-11`
+- **MỚI** n112 b11 dòng 26 engine `DC09 072A 02-12` | tổ máy `S344E6` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S344E6 | 344/275 | 313/250 | DC09 072A 02-12`
+- **MỚI** n112 b11 dòng 27 engine `DC09 072A 02-13` | tổ máy `S360E6` | prime 330 kVA / 264 kW; standby 360 kVA / 288 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S360E6 | 360/288 | 330/264 | DC09 072A 02-13`
+- **MỚI** n112 b11 dòng 29 engine `DC09 072A 02-14` | tổ máy `S413E6` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S413E6 | 413/330 | 375/300 | DC09 072A 02-14`
+- **MỚI** n112 b11 dòng 30 engine `DC13 072A 02-11` | tổ máy `S440E6` | prime 400 kVA / 320 kW; standby 440 kVA / 352 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S440E6 | 440/352 | 400/320 | DC13 072A 02-11`
+- **MỚI** n112 b11 dòng 32 engine `DC13 072A 02-12` | tổ máy `S500E6` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S500E6 | 500/400 | 450/360 | DC13 072A 02-12`
+- **MỚI** n112 b11 dòng 35 engine `DC13 093A 02-72` | tổ máy `S550E6A` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S550E6A | 550/440 | 500/400 | DC13 093A 02-72`
+- **MỚI** n112 b11 dòng 37 engine `DC16 093A 02-52` | tổ máy `S600E6A` | prime 550 kVA / 440 kW; standby 600 kVA / 480 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S600E6A | 600/480 | 550/440 | DC16 093A 02-52`
+- **MỚI** n112 b11 dòng 38 engine `DC13 093A 02-74` | tổ máy `S625E6` | prime 563 kVA / 450 kW; standby 625 kVA / 500 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S625E6 | 625/500 | 563/450 | DC13 093A 02-74`
+- **MỚI** n112 b11 dòng 40 engine `DC16 093A 02-53` | tổ máy `S660E6A` | prime 600 kVA / 480 kW; standby 660 kVA / 528 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S660E6A | 660/528 | 600/480 | DC16 093A 02-53`
+- **MỚI** n112 b11 dòng 42 engine `DC16 078A 02-42` | tổ máy `S715E6` | prime 650 kVA / 520 kW; standby 715 kVA / 572 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S715E6 | 715/572 | 650/520 | DC16 078A 02-42`
+- **MỚI** n112 b11 dòng 43 engine `DC16 093A 02-54` | tổ máy `S715E6A` | prime 650 kVA / 520 kW; standby 715 kVA / 572 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S715E6A | 715/572 | 650/520 | DC16 093A 02-54`
+- **MỚI** n112 b11 dòng 44 engine `DC16 078A 02-43` | tổ máy `S770E6` | prime 700 kVA / 560 kW; standby 770 kVA / 616 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S770E6 | 770/616 | 700/560 | DC16 078A 02-43`
+- **MỚI** n112 b11 dòng 45 engine `DC16 078A 02-44` | tổ máy `S800E6` | prime 728 kVA / 582 kW; standby 800 kVA / 640 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S800E6 | 800/640 | 728/582 | DC16 078A 02-44`
+- **MỚI** n112 b11 dòng 46 engine `DC16 078A 02-45` | tổ máy `S800E6A` | prime 750 kVA / 600 kW; standby 800 kVA / 640 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S800E6A | 800/640 | 750/600 | DC16 078A 02-45`
+- **MỚI** n118 b17 dòng 0 engine `OC16 071A 02-82` | tổ máy `S400G6-NG` | prime 400 kVA / 320 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S400G6-NG | 400/320 | OC16 071A 02-82 | Scania`
+- **MỚI** n118 b17 dòng 1 engine `OC16 071A 02-82` | tổ máy `S375G5-NG` | prime 375 kVA / 300 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| S375G5-NG | 375/300 | OC16 071A 02-82 | Scania`
+
+## agg-power (mới 8, mất 0, đổi 0)
+
+- **MỚI** n2048 b47 dòng 2 engine `DC16 072A 02-13` | tổ máy `S770E5` | prime 700 kVA / 560 kW; standby 770 kVA / 616 kW | khác: ∅ | hãng: Scania |  | ⚠ standby kVA=770 không có trong dòng; standby kW=616 không có trong dòng; mã động cơ không có trong dòng
+  - nguồn: `700/560`
+- **MỚI** n2049 b48 dòng 2 engine `DC16 072A 02-12` | tổ máy `S715E5` | prime 650 kVA / 520 kW; standby 715 kVA / 572 kW | khác: ∅ | hãng: Scania |  | ⚠ standby kVA=715 không có trong dòng; standby kW=572 không có trong dòng; mã động cơ không có trong dòng
+  - nguồn: `650/520`
+- **MỚI** n2050 b49 dòng 2 engine `DC16 093A 02-54` | tổ máy `S700E5` | prime 640 kVA / 512 kW; standby 700 kVA / 560 kW | khác: ∅ | hãng: Scania |  | ⚠ standby kVA=700 không có trong dòng; standby kW=560 không có trong dòng; mã động cơ không có trong dòng
+  - nguồn: `640/512`
+- **MỚI** n2051 b50 dòng 2 engine `DC13 072A 02-14` | tổ máy `S550E5` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: ∅ | hãng: Scania |  | ⚠ standby kVA=550 không có trong dòng; standby kW=440 không có trong dòng; mã động cơ không có trong dòng
+  - nguồn: `500/400`
+- **MỚI** n2052 b51 dòng 2 engine `DC13 072A 02-11` | tổ máy `S400E5` | prime 375 kVA / 300 kW; standby 400 kVA / 320 kW | khác: ∅ | hãng: Scania |  | ⚠ standby kVA=400 không có trong dòng; standby kW=320 không có trong dòng; mã động cơ không có trong dòng
+  - nguồn: `375/300`
+- **MỚI** n2053 b52 dòng 2 engine `DC09 072A 02-14` | tổ máy `S360E5` | prime 330 kVA / 264 kW; standby 360 kVA / 288 kW | khác: ∅ | hãng: Scania |  | ⚠ standby kVA=360 không có trong dòng; standby kW=288 không có trong dòng; mã động cơ không có trong dòng
+  - nguồn: `330/264`
+- **MỚI** n2054 b53 dòng 2 engine `DC09 072A 02-13` | tổ máy `S330E5` | prime 300 kVA / 240 kW; standby 330 kVA / 264 kW | khác: ∅ | hãng: Scania |  | ⚠ standby kVA=330 không có trong dòng; standby kW=264 không có trong dòng; mã động cơ không có trong dòng
+  - nguồn: `300/240`
+- **MỚI** n2055 b54 dòng 2 engine `DC09 072A 02-12` | tổ máy `S313E5` | prime 275 kVA / 220 kW; standby 313 kVA / 250 kW | khác: ∅ | hãng: Scania |  | ⚠ standby kVA=313 không có trong dòng; standby kW=250 không có trong dòng; mã động cơ không có trong dòng
+  - nguồn: `275/220`
+
+## aj-power (mới 51, mất 24, đổi 3)
+
+- **MỚI** n103 b2 dòng 0 engine `DC9 072A 02-11` | tổ máy `AJ280` | prime 250 kVA / - kW; standby 280 kVA / - kW | khác: MA4114D S4L1D-C | hãng: Scania | 
+  - nguồn: `| AJ280 | 50hz | Three Phase | 1500 | 250.0 | 280.0 | | DC9 072A 02-11 | MA4114D S4L1D-C | AJ280 Scania Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 0 alternator `MA4114D S4L1D-C` | tổ máy `AJ280` | prime 250 kVA / - kW; standby 280 kVA / - kW | khác: DC9 072A 02-11 | hãng: ∅ | 
+  - nguồn: `| AJ280 | 50hz | Three Phase | 1500 | 250.0 | 280.0 | | DC9 072A 02-11 | MA4114D S4L1D-C | AJ280 Scania Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 1 engine `DC9 072A 02-11` | tổ máy `AJ280` | prime 281.3 kVA / - kW; standby 312.5 kVA / - kW | khác: MA4114D S4L1D-C | hãng: Scania | 
+  - nguồn: `| AJ280 | 60hz | Three Phase | 1800 | 281.3 | 312.5 | | DC9 072A 02-11 | MA4114D S4L1D-C | AJ280 Three Phase Scania 60Hz`
+- **MỚI** n103 b2 dòng 1 alternator `MA4114D S4L1D-C` | tổ máy `AJ280` | prime 281.3 kVA / - kW; standby 312.5 kVA / - kW | khác: DC9 072A 02-11 | hãng: ∅ | 
+  - nguồn: `| AJ280 | 60hz | Three Phase | 1800 | 281.3 | 312.5 | | DC9 072A 02-11 | MA4114D S4L1D-C | AJ280 Three Phase Scania 60Hz`
+- **MỚI** n103 b2 dòng 2 engine `DC9 072A 02-12` | tổ máy `AJ310` | prime 280 kVA / - kW; standby 310 kVA / - kW | khác: MA4114E S4L1D-D | hãng: Scania | 
+  - nguồn: `| AJ310 | 50hz | Three Phase | 1500 | 280.0 | 310.0 | | DC9 072A 02-12 | MA4114E S4L1D-D | AJ310 Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 2 alternator `MA4114E S4L1D-D` | tổ máy `AJ310` | prime 280 kVA / - kW; standby 310 kVA / - kW | khác: DC9 072A 02-12 | hãng: ∅ | 
+  - nguồn: `| AJ310 | 50hz | Three Phase | 1500 | 280.0 | 310.0 | | DC9 072A 02-12 | MA4114E S4L1D-D | AJ310 Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 3 engine `DC9 072A 02-12` | tổ máy `AJ310` | prime 306.3 kVA / - kW; standby 343.8 kVA / - kW | khác: MA4114E S4L1D-C | hãng: Scania | 
+  - nguồn: `| AJ310 | 60hz | Three Phase | 1800 | 306.3 | 343.8 | | DC9 072A 02-12 | MA4114E S4L1D-C | AJ310 Three Phase Scania 60Hz`
+- **MỚI** n103 b2 dòng 3 alternator `MA4114E S4L1D-C` | tổ máy `AJ310` | prime 306.3 kVA / - kW; standby 343.8 kVA / - kW | khác: DC9 072A 02-12 | hãng: ∅ | 
+  - nguồn: `| AJ310 | 60hz | Three Phase | 1800 | 306.3 | 343.8 | | DC9 072A 02-12 | MA4114E S4L1D-C | AJ310 Three Phase Scania 60Hz`
+- **MỚI** n103 b2 dòng 4 engine `DC9 072A 02-13` | tổ máy `AJ330` | prime 300 kVA / - kW; standby 330 kVA / - kW | khác: MA4114E S4L1D-D | hãng: Scania | 
+  - nguồn: `| AJ330 | 50hz | Three Phase | 1500 | 300.0 | 330.0 | | DC9 072A 02-13 | MA4114E S4L1D-D | AJ330 Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 4 alternator `MA4114E S4L1D-D` | tổ máy `AJ330` | prime 300 kVA / - kW; standby 330 kVA / - kW | khác: DC9 072A 02-13 | hãng: ∅ | 
+  - nguồn: `| AJ330 | 50hz | Three Phase | 1500 | 300.0 | 330.0 | | DC9 072A 02-13 | MA4114E S4L1D-D | AJ330 Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 5 engine `DC9 072A 02-13` | tổ máy `AJ330` | prime 325 kVA / - kW; standby 368.8 kVA / - kW | khác: MA4114E S4L1D-D | hãng: Scania | 
+  - nguồn: `| AJ330 | 60hz | Three Phase | 1800 | 325.0 | 368.8 | | DC9 072A 02-13 | MA4114E S4L1D-D | AJ330 Three Phase Scania 60Hz`
+- **MỚI** n103 b2 dòng 5 alternator `MA4114E S4L1D-D` | tổ máy `AJ330` | prime 325 kVA / - kW; standby 368.8 kVA / - kW | khác: DC9 072A 02-13 | hãng: ∅ | 
+  - nguồn: `| AJ330 | 60hz | Three Phase | 1800 | 325.0 | 368.8 | | DC9 072A 02-13 | MA4114E S4L1D-D | AJ330 Three Phase Scania 60Hz`
+- **MỚI** n103 b2 dòng 6 engine `DC9 072A 02-14` | tổ máy `AJ360` | prime 330 kVA / - kW; standby 360 kVA / - kW | khác: MA4114F S4L1D-E | hãng: Scania | 
+  - nguồn: `| AJ360 | 50hz | Three Phase | 1500 | 330.0 | 360.0 | | DC9 072A 02-14 | MA4114F S4L1D-E | AJ360 Three Phase Scania 50hz`
+- **MỚI** n103 b2 dòng 6 alternator `MA4114F S4L1D-E` | tổ máy `AJ360` | prime 330 kVA / - kW; standby 360 kVA / - kW | khác: DC9 072A 02-14 | hãng: ∅ | 
+  - nguồn: `| AJ360 | 50hz | Three Phase | 1500 | 330.0 | 360.0 | | DC9 072A 02-14 | MA4114F S4L1D-E | AJ360 Three Phase Scania 50hz`
+- **MỚI** n103 b2 dòng 7 engine `DC9 072A 02-14` | tổ máy `AJ360` | prime 362.5 kVA / - kW; standby 412.5 kVA / - kW | khác: MA4114F S4L1D-D | hãng: Scania | 
+  - nguồn: `| AJ360 | 60hz | Three Phase | 1800 | 362.5 | 412.5 | | DC9 072A 02-14 | MA4114F S4L1D-D | AJ360 Three Phase Scania 60hz`
+- **MỚI** n103 b2 dòng 7 alternator `MA4114F S4L1D-D` | tổ máy `AJ360` | prime 362.5 kVA / - kW; standby 412.5 kVA / - kW | khác: DC9 072A 02-14 | hãng: ∅ | 
+  - nguồn: `| AJ360 | 60hz | Three Phase | 1800 | 362.5 | 412.5 | | DC9 072A 02-14 | MA4114F S4L1D-D | AJ360 Three Phase Scania 60hz`
+- **MỚI** n103 b2 dòng 8 engine `DC13 072A 02-11` | tổ máy `AJ375` | prime 350 kVA / - kW; standby 375 kVA / - kW | khác: MA4114F S4L1D-E | hãng: Scania | 
+  - nguồn: `| AJ375 | 50hz | Three Phase | 1500 | 350.0 | 375.0 | | DC13 072A 02-11 | MA4114F S4L1D-E | AJ375 Three Phase Scania 50HZ`
+- **MỚI** n103 b2 dòng 8 alternator `MA4114F S4L1D-E` | tổ máy `AJ375` | prime 350 kVA / - kW; standby 375 kVA / - kW | khác: DC13 072A 02-11 | hãng: ∅ | 
+  - nguồn: `| AJ375 | 50hz | Three Phase | 1500 | 350.0 | 375.0 | | DC13 072A 02-11 | MA4114F S4L1D-E | AJ375 Three Phase Scania 50HZ`
+- **MỚI** n103 b2 dòng 9 engine `DC13 072A 02-11` | tổ máy `AJ375` | prime 387.5 kVA / - kW; standby 437.5 kVA / - kW | khác: MA4114F S4L1D-E | hãng: Scania | 
+  - nguồn: `| AJ375 | 60hz | Three Phase | 1800 | 387.5 | 437.5 | | DC13 072A 02-11 | MA4114F S4L1D-E | AJ375 Three Phase Scania 60Hz`
+- **MỚI** n103 b2 dòng 9 alternator `MA4114F S4L1D-E` | tổ máy `AJ375` | prime 387.5 kVA / - kW; standby 437.5 kVA / - kW | khác: DC13 072A 02-11 | hãng: ∅ | 
+  - nguồn: `| AJ375 | 60hz | Three Phase | 1800 | 387.5 | 437.5 | | DC13 072A 02-11 | MA4114F S4L1D-E | AJ375 Three Phase Scania 60Hz`
+- **MỚI** n103 b2 dòng 10 engine `DC13 072A 02-11` | tổ máy `AJ400` | prime 370 kVA / - kW; standby 400 kVA / - kW | khác: MA5114G S4L1D-F | hãng: Scania | 
+  - nguồn: `| AJ400 | 50hz | Three Phase | 1500 | 370.0 | 400.0 | | DC13 072A 02-11 | MA5114G S4L1D-F | AJ400 Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 10 alternator `MA5114G S4L1D-F` | tổ máy `AJ400` | prime 370 kVA / - kW; standby 400 kVA / - kW | khác: DC13 072A 02-11 | hãng: ∅ | 
+  - nguồn: `| AJ400 | 50hz | Three Phase | 1500 | 370.0 | 400.0 | | DC13 072A 02-11 | MA5114G S4L1D-F | AJ400 Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 11 engine `DC9 072A 02-11` | tổ máy `AJ400` | prime 412.5 kVA / - kW; standby 462.5 kVA / - kW | khác: MA4114F S4L1D-E | hãng: Scania | 
+  - nguồn: `| AJ400 | 60hz | Three Phase | 1800 | 412.5 | 462.5 | | DC9 072A 02-11 | MA4114F S4L1D-E | AJ400 Three Phase Scania 60Hz`
+- **MỚI** n103 b2 dòng 11 alternator `MA4114F S4L1D-E` | tổ máy `AJ400` | prime 412.5 kVA / - kW; standby 462.5 kVA / - kW | khác: DC9 072A 02-11 | hãng: ∅ | 
+  - nguồn: `| AJ400 | 60hz | Three Phase | 1800 | 412.5 | 462.5 | | DC9 072A 02-11 | MA4114F S4L1D-E | AJ400 Three Phase Scania 60Hz`
+- **MỚI** n103 b2 dòng 12 engine `DC13 072A 02-12` | tổ máy `AJ440` | prime 400 kVA / - kW; standby 440 kVA / - kW | khác: MA5114A S4L1D-F | hãng: Scania | 
+  - nguồn: `| AJ440 | 50hz | Three Phase | 1500 | 400.0 | 440.0 | | DC13 072A 02-12 | MA5114A S4L1D-F | AJ440 Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 12 alternator `MA5114A S4L1D-F` | tổ máy `AJ440` | prime 400 kVA / - kW; standby 440 kVA / - kW | khác: DC13 072A 02-12 | hãng: ∅ | 
+  - nguồn: `| AJ440 | 50hz | Three Phase | 1500 | 400.0 | 440.0 | | DC13 072A 02-12 | MA5114A S4L1D-F | AJ440 Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 13 engine `DC13 072A 02-12` | tổ máy `AJ440` | prime 431.3 kVA / - kW; standby 500 kVA / - kW | khác: MA5114A S4L1D-F | hãng: Scania | 
+  - nguồn: `| AJ440 | 60hz | Three Phase | 1800 | 431.3 | 500.0 | | DC13 072A 02-12 | MA5114A S4L1D-F | AJ440 Three Phase Scania 60Hz`
+- **MỚI** n103 b2 dòng 13 alternator `MA5114A S4L1D-F` | tổ máy `AJ440` | prime 431.3 kVA / - kW; standby 500 kVA / - kW | khác: DC13 072A 02-12 | hãng: ∅ | 
+  - nguồn: `| AJ440 | 60hz | Three Phase | 1800 | 431.3 | 500.0 | | DC13 072A 02-12 | MA5114A S4L1D-F | AJ440 Three Phase Scania 60Hz`
+- **MỚI** n103 b2 dòng 14 engine `DC13 072A 02-12` | tổ máy `AJ460` | prime 410 kVA / - kW; standby 460 kVA / - kW | khác: MA5114B S4L1D-F | hãng: Scania | 
+  - nguồn: `| AJ460 | 50hz | Three Phase | 1500 | 410.0 | 460.0 | | DC13 072A 02-12 | MA5114B S4L1D-F | AJ460 Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 14 alternator `MA5114B S4L1D-F` | tổ máy `AJ460` | prime 410 kVA / - kW; standby 460 kVA / - kW | khác: DC13 072A 02-12 | hãng: ∅ | 
+  - nguồn: `| AJ460 | 50hz | Three Phase | 1500 | 410.0 | 460.0 | | DC13 072A 02-12 | MA5114B S4L1D-F | AJ460 Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 15 engine `DC13 072A 02-12` | tổ máy `AJ460` | prime 450 kVA / - kW; standby 512.3 kVA / - kW | khác: MA5114A S4L1D-F | hãng: Scania | 
+  - nguồn: `| AJ460 | 60hz | Three Phase | 1800 | 450.0 | 512.3 | | DC13 072A 02-12 | MA5114A S4L1D-F | AJ460 Three Phase Scania 60Hz`
+- **MỚI** n103 b2 dòng 15 alternator `MA5114A S4L1D-F` | tổ máy `AJ460` | prime 450 kVA / - kW; standby 512.3 kVA / - kW | khác: DC13 072A 02-12 | hãng: ∅ | 
+  - nguồn: `| AJ460 | 60hz | Three Phase | 1800 | 450.0 | 512.3 | | DC13 072A 02-12 | MA5114A S4L1D-F | AJ460 Three Phase Scania 60Hz`
+- **MỚI** n103 b2 dòng 16 engine `DC13 072A 02-13` | tổ máy `AJ500` | prime 450 kVA / - kW; standby 500 kVA / - kW | khác: MA5114B S4L1D-G | hãng: Scania | 
+  - nguồn: `| AJ500 | 50hz | Three Phase | 1500 | 450.0 | 500.0 | | DC13 072A 02-13 | MA5114B S4L1D-G | AJ500 Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 16 alternator `MA5114B S4L1D-G` | tổ máy `AJ500` | prime 450 kVA / - kW; standby 500 kVA / - kW | khác: DC13 072A 02-13 | hãng: ∅ | 
+  - nguồn: `| AJ500 | 50hz | Three Phase | 1500 | 450.0 | 500.0 | | DC13 072A 02-13 | MA5114B S4L1D-G | AJ500 Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 17 engine `DC13 072A 02-13` | tổ máy `AJ500` | prime 500 kVA / - kW; standby 556.3 kVA / - kW | khác: MA5114B S4L1D-F | hãng: Scania | 
+  - nguồn: `| AJ500 | 60hz | Three Phase | 1800 | 500.0 | 556.3 | | DC13 072A 02-13 | MA5114B S4L1D-F | AJ500 Three Phase Scania 60Hz`
+- **MỚI** n103 b2 dòng 17 alternator `MA5114B S4L1D-F` | tổ máy `AJ500` | prime 500 kVA / - kW; standby 556.3 kVA / - kW | khác: DC13 072A 02-13 | hãng: ∅ | 
+  - nguồn: `| AJ500 | 60hz | Three Phase | 1800 | 500.0 | 556.3 | | DC13 072A 02-13 | MA5114B S4L1D-F | AJ500 Three Phase Scania 60Hz`
+- **MỚI** n103 b2 dòng 18 engine `DC13 072A 02-14` | tổ máy `AJ550` | prime 500 kVA / - kW; standby 550 kVA / - kW | khác: MA5114C HCI544D | hãng: Scania | 
+  - nguồn: `| AJ550 | 50hz | Three Phase | 1500 | 500.0 | 550.0 | | DC13 072A 02-14 | MA5114C HCI544D | AJ550 Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 18 alternator `MA5114C HCI544D` | tổ máy `AJ550` | prime 500 kVA / - kW; standby 550 kVA / - kW | khác: DC13 072A 02-14 | hãng: ∅ | 
+  - nguồn: `| AJ550 | 50hz | Three Phase | 1500 | 500.0 | 550.0 | | DC13 072A 02-14 | MA5114C HCI544D | AJ550 Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 19 engine `DC16 093A 02-52` | tổ máy `AJ615` | prime 560 kVA / - kW; standby 615 kVA / - kW | khác: MA5114E HCI544E | hãng: Scania | 
+  - nguồn: `| AJ615 | 50hz | Three Phase | 1500 | 560.0 | 615.0 | | DC16 093A 02-52 | MA5114E HCI544E | AJ615 Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 19 alternator `MA5114E HCI544E` | tổ máy `AJ615` | prime 560 kVA / - kW; standby 615 kVA / - kW | khác: DC16 093A 02-52 | hãng: ∅ | 
+  - nguồn: `| AJ615 | 50hz | Three Phase | 1500 | 560.0 | 615.0 | | DC16 093A 02-52 | MA5114E HCI544E | AJ615 Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 20 engine `DC16 093A 02-52` | tổ máy `AJ615` | prime 550 kVA / - kW; standby 606.3 kVA / - kW | khác: S4L1D-G | hãng: Scania | 
+  - nguồn: `| AJ615 | 60hz | Three Phase | 1800 | 550.0 | 606.3 | | DC16 093A 02-52 | S4L1D-G | AJ615 Three Phase Scania 60Hz`
+- **MỚI** n103 b2 dòng 21 engine `DC16 093A 02-53` | tổ máy `AJ670` | prime 610 kVA / - kW; standby 670 kVA / - kW | khác: MA5114E HCI544E | hãng: Scania | 
+  - nguồn: `| AJ670 | 50hz | Three Phase | 1500 | 610.0 | 670.0 | | DC16 093A 02-53 | MA5114E HCI544E | AJ670 Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 21 alternator `MA5114E HCI544E` | tổ máy `AJ670` | prime 610 kVA / - kW; standby 670 kVA / - kW | khác: DC16 093A 02-53 | hãng: ∅ | 
+  - nguồn: `| AJ670 | 50hz | Three Phase | 1500 | 610.0 | 670.0 | | DC16 093A 02-53 | MA5114E HCI544E | AJ670 Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 22 engine `DC16 093A 02-53` | tổ máy `AJ670` | prime 608.8 kVA / - kW; standby 671.3 kVA / - kW | khác: HCI544D | hãng: Scania | 
+  - nguồn: `| AJ670 | 60hz | Three Phase | 1800 | 608.8 | 671.3 | | DC16 093A 02-53 | HCI544D | AJ670 Three Phase Scania 60Hz`
+- **MỚI** n103 b2 dòng 23 engine `DC16 093A 02-54` | tổ máy `AJ710` | prime 650 kVA / - kW; standby 710 kVA / - kW | khác: MA5114F HCI544F | hãng: Scania | 
+  - nguồn: `| AJ710 | 50hz | Three Phase | 1500 | 650.0 | 710.0 | | DC16 093A 02-54 | MA5114F HCI544F | AJ710 Three Phase Scania 50hz`
+- **MỚI** n103 b2 dòng 23 alternator `MA5114F HCI544F` | tổ máy `AJ710` | prime 650 kVA / - kW; standby 710 kVA / - kW | khác: DC16 093A 02-54 | hãng: ∅ | 
+  - nguồn: `| AJ710 | 50hz | Three Phase | 1500 | 650.0 | 710.0 | | DC16 093A 02-54 | MA5114F HCI544F | AJ710 Three Phase Scania 50hz`
+- **MỚI** n103 b2 dòng 24 engine `DC16 093A 02-54` | tổ máy `AJ710` | prime 661.3 kVA / - kW; standby 730 kVA / - kW | khác: HCI544E | hãng: Scania | 
+  - nguồn: `| AJ710 | 60hz | Three Phase | 1800 | 661.3 | 730.0 | | DC16 093A 02-54 | HCI544E | AJ710 Three Phase Scania 60hz`
+- **MỚI** n103 b2 dòng 25 engine `DC16 078A 02-43` | tổ máy `AJ770` | prime 700 kVA / - kW; standby 770 kVA / - kW | khác: MA5114G S5L1D-G | hãng: Scania | 
+  - nguồn: `| AJ770 | 50hz | Three Phase | 1500 | 700.0 | 770.0 | | DC16 078A 02-43 | MA5114G S5L1D-G | AJ770 Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 25 alternator `MA5114G S5L1D-G` | tổ máy `AJ770` | prime 700 kVA / - kW; standby 770 kVA / - kW | khác: DC16 078A 02-43 | hãng: ∅ | 
+  - nguồn: `| AJ770 | 50hz | Three Phase | 1500 | 700.0 | 770.0 | | DC16 078A 02-43 | MA5114G S5L1D-G | AJ770 Three Phase Scania 50Hz`
+- **MỚI** n103 b2 dòng 26 engine `DC16 078A 02-43` | tổ máy `AJ770` | prime 700 kVA / - kW; standby 770 kVA / - kW | khác: MA5114E HCI544F | hãng: Scania | 
+  - nguồn: `| AJ770 | 60hz | Three Phase | 1800 | 700.0 | 770.0 | | DC16 078A 02-43 | MA5114E HCI544F | AJ770 Three Phase Scania 60Hz`
+- **MỚI** n103 b2 dòng 26 alternator `MA5114E HCI544F` | tổ máy `AJ770` | prime 700 kVA / - kW; standby 770 kVA / - kW | khác: DC16 078A 02-43 | hãng: ∅ | 
+  - nguồn: `| AJ770 | 60hz | Three Phase | 1800 | 700.0 | 770.0 | | DC16 078A 02-43 | MA5114E HCI544F | AJ770 Three Phase Scania 60Hz`
+- **MẤT** n103 b2 dòng 0 engine `MA4114D S4L1D-C` | tổ máy `AJ280` | prime 250 kVA / - kW; standby 280 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ280 | 50hz | Three Phase | 1500 | 250.0 | 280.0 | | DC9 072A 02-11 | MA4114D S4L1D-C | AJ280 Scania Three Phase Scania 50Hz`
+- **MẤT** n103 b2 dòng 1 engine `MA4114D S4L1D-C` | tổ máy `AJ280` | prime 281.3 kVA / - kW; standby 312.5 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ280 | 60hz | Three Phase | 1800 | 281.3 | 312.5 | | DC9 072A 02-11 | MA4114D S4L1D-C | AJ280 Three Phase Scania 60Hz`
+- **MẤT** n103 b2 dòng 2 engine `MA4114E S4L1D-D` | tổ máy `AJ310` | prime 280 kVA / - kW; standby 310 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ310 | 50hz | Three Phase | 1500 | 280.0 | 310.0 | | DC9 072A 02-12 | MA4114E S4L1D-D | AJ310 Three Phase Scania 50Hz`
+- **MẤT** n103 b2 dòng 3 engine `MA4114E S4L1D-C` | tổ máy `AJ310` | prime 306.3 kVA / - kW; standby 343.8 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ310 | 60hz | Three Phase | 1800 | 306.3 | 343.8 | | DC9 072A 02-12 | MA4114E S4L1D-C | AJ310 Three Phase Scania 60Hz`
+- **MẤT** n103 b2 dòng 4 engine `MA4114E S4L1D-D` | tổ máy `AJ330` | prime 300 kVA / - kW; standby 330 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ330 | 50hz | Three Phase | 1500 | 300.0 | 330.0 | | DC9 072A 02-13 | MA4114E S4L1D-D | AJ330 Three Phase Scania 50Hz`
+- **MẤT** n103 b2 dòng 5 engine `MA4114E S4L1D-D` | tổ máy `AJ330` | prime 325 kVA / - kW; standby 368.8 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ330 | 60hz | Three Phase | 1800 | 325.0 | 368.8 | | DC9 072A 02-13 | MA4114E S4L1D-D | AJ330 Three Phase Scania 60Hz`
+- **MẤT** n103 b2 dòng 6 engine `MA4114F S4L1D-E` | tổ máy `AJ360` | prime 330 kVA / - kW; standby 360 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ360 | 50hz | Three Phase | 1500 | 330.0 | 360.0 | | DC9 072A 02-14 | MA4114F S4L1D-E | AJ360 Three Phase Scania 50hz`
+- **MẤT** n103 b2 dòng 7 engine `MA4114F S4L1D-D` | tổ máy `AJ360` | prime 362.5 kVA / - kW; standby 412.5 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ360 | 60hz | Three Phase | 1800 | 362.5 | 412.5 | | DC9 072A 02-14 | MA4114F S4L1D-D | AJ360 Three Phase Scania 60hz`
+- **MẤT** n103 b2 dòng 8 engine `MA4114F S4L1D-E` | tổ máy `AJ375` | prime 350 kVA / - kW; standby 375 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ375 | 50hz | Three Phase | 1500 | 350.0 | 375.0 | | DC13 072A 02-11 | MA4114F S4L1D-E | AJ375 Three Phase Scania 50HZ`
+- **MẤT** n103 b2 dòng 9 engine `MA4114F S4L1D-E` | tổ máy `AJ375` | prime 387.5 kVA / - kW; standby 437.5 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ375 | 60hz | Three Phase | 1800 | 387.5 | 437.5 | | DC13 072A 02-11 | MA4114F S4L1D-E | AJ375 Three Phase Scania 60Hz`
+- **MẤT** n103 b2 dòng 10 engine `MA5114G S4L1D-F` | tổ máy `AJ400` | prime 370 kVA / - kW; standby 400 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ400 | 50hz | Three Phase | 1500 | 370.0 | 400.0 | | DC13 072A 02-11 | MA5114G S4L1D-F | AJ400 Three Phase Scania 50Hz`
+- **MẤT** n103 b2 dòng 11 engine `MA4114F S4L1D-E` | tổ máy `AJ400` | prime 412.5 kVA / - kW; standby 462.5 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ400 | 60hz | Three Phase | 1800 | 412.5 | 462.5 | | DC9 072A 02-11 | MA4114F S4L1D-E | AJ400 Three Phase Scania 60Hz`
+- **MẤT** n103 b2 dòng 12 engine `MA5114A S4L1D-F` | tổ máy `AJ440` | prime 400 kVA / - kW; standby 440 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ440 | 50hz | Three Phase | 1500 | 400.0 | 440.0 | | DC13 072A 02-12 | MA5114A S4L1D-F | AJ440 Three Phase Scania 50Hz`
+- **MẤT** n103 b2 dòng 13 engine `MA5114A S4L1D-F` | tổ máy `AJ440` | prime 431.3 kVA / - kW; standby 500 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ440 | 60hz | Three Phase | 1800 | 431.3 | 500.0 | | DC13 072A 02-12 | MA5114A S4L1D-F | AJ440 Three Phase Scania 60Hz`
+- **MẤT** n103 b2 dòng 14 engine `MA5114B S4L1D-F` | tổ máy `AJ460` | prime 410 kVA / - kW; standby 460 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ460 | 50hz | Three Phase | 1500 | 410.0 | 460.0 | | DC13 072A 02-12 | MA5114B S4L1D-F | AJ460 Three Phase Scania 50Hz`
+- **MẤT** n103 b2 dòng 15 engine `MA5114A S4L1D-F` | tổ máy `AJ460` | prime 450 kVA / - kW; standby 512.3 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ460 | 60hz | Three Phase | 1800 | 450.0 | 512.3 | | DC13 072A 02-12 | MA5114A S4L1D-F | AJ460 Three Phase Scania 60Hz`
+- **MẤT** n103 b2 dòng 16 engine `MA5114B S4L1D-G` | tổ máy `AJ500` | prime 450 kVA / - kW; standby 500 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ500 | 50hz | Three Phase | 1500 | 450.0 | 500.0 | | DC13 072A 02-13 | MA5114B S4L1D-G | AJ500 Three Phase Scania 50Hz`
+- **MẤT** n103 b2 dòng 17 engine `MA5114B S4L1D-F` | tổ máy `AJ500` | prime 500 kVA / - kW; standby 556.3 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ500 | 60hz | Three Phase | 1800 | 500.0 | 556.3 | | DC13 072A 02-13 | MA5114B S4L1D-F | AJ500 Three Phase Scania 60Hz`
+- **MẤT** n103 b2 dòng 18 engine `MA5114C HCI544D` | tổ máy `AJ550` | prime 500 kVA / - kW; standby 550 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ550 | 50hz | Three Phase | 1500 | 500.0 | 550.0 | | DC13 072A 02-14 | MA5114C HCI544D | AJ550 Three Phase Scania 50Hz`
+- **MẤT** n103 b2 dòng 19 engine `MA5114E HCI544E` | tổ máy `AJ615` | prime 560 kVA / - kW; standby 615 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ615 | 50hz | Three Phase | 1500 | 560.0 | 615.0 | | DC16 093A 02-52 | MA5114E HCI544E | AJ615 Three Phase Scania 50Hz`
+- **MẤT** n103 b2 dòng 21 engine `MA5114E HCI544E` | tổ máy `AJ670` | prime 610 kVA / - kW; standby 670 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ670 | 50hz | Three Phase | 1500 | 610.0 | 670.0 | | DC16 093A 02-53 | MA5114E HCI544E | AJ670 Three Phase Scania 50Hz`
+- **MẤT** n103 b2 dòng 23 engine `MA5114F HCI544F` | tổ máy `AJ710` | prime 650 kVA / - kW; standby 710 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ710 | 50hz | Three Phase | 1500 | 650.0 | 710.0 | | DC16 093A 02-54 | MA5114F HCI544F | AJ710 Three Phase Scania 50hz`
+- **MẤT** n103 b2 dòng 25 engine `MA5114G S5L1D-G` | tổ máy `AJ770` | prime 700 kVA / - kW; standby 770 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ770 | 50hz | Three Phase | 1500 | 700.0 | 770.0 | | DC16 078A 02-43 | MA5114G S5L1D-G | AJ770 Three Phase Scania 50Hz`
+- **MẤT** n103 b2 dòng 26 engine `MA5114E HCI544F` | tổ máy `AJ770` | prime 700 kVA / - kW; standby 770 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ MẤT HẲN
+  - nguồn: `| AJ770 | 60hz | Three Phase | 1800 | 700.0 | 770.0 | | DC16 078A 02-43 | MA5114E HCI544F | AJ770 Three Phase Scania 60Hz`
+- **ĐỔI** n103 b2 dòng 20 alternator `S4L1D-G` | tổ máy `AJ615` | prime 550 kVA / - kW; standby 606.3 kVA / - kW | khác: DC16 093A 02-52 | hãng: ∅ | 
+  - đổi: specs: [{"key":"phase","label":"Phase","value":"Three Phase"}] → []; other: null → "DC16 093A 02-52"
+  - nguồn: `| AJ615 | 60hz | Three Phase | 1800 | 550.0 | 606.3 | | DC16 093A 02-52 | S4L1D-G | AJ615 Three Phase Scania 60Hz`
+- **ĐỔI** n103 b2 dòng 22 alternator `HCI544D` | tổ máy `AJ670` | prime 608.8 kVA / - kW; standby 671.3 kVA / - kW | khác: DC16 093A 02-53 | hãng: ∅ | 
+  - đổi: specs: [{"key":"phase","label":"Phase","value":"Three Phase"}] → []; other: null → "DC16 093A 02-53"
+  - nguồn: `| AJ670 | 60hz | Three Phase | 1800 | 608.8 | 671.3 | | DC16 093A 02-53 | HCI544D | AJ670 Three Phase Scania 60Hz`
+- **ĐỔI** n103 b2 dòng 24 alternator `HCI544E` | tổ máy `AJ710` | prime 661.3 kVA / - kW; standby 730 kVA / - kW | khác: DC16 093A 02-54 | hãng: ∅ | 
+  - đổi: specs: [{"key":"phase","label":"Phase","value":"Three Phase"}] → []; other: null → "DC16 093A 02-54"
+  - nguồn: `| AJ710 | 60hz | Three Phase | 1800 | 661.3 | 730.0 | | DC16 093A 02-54 | HCI544E | AJ710 Three Phase Scania 60hz`
+
+## baifa-power (mới 12, mất 6, đổi 12)
+
+- **MỚI** n104 b6 dòng 24 engine `DC13 320A 02-61` | tổ máy `BF-SC385-V` | prime 350 kVA / - kW; standby 385 kVA / - kW | khác: S4L1D-E41 | hãng: Scania | fuel75=46.4; emission=STAGE V; gov=ECU
+  - nguồn: `| BF-SC385-V | 385 | 350 | SCANIA | DC13 320A 02-61 | ECU | S4L1D-E41 | 46.4 | STAGE V | SWEDEN | 4 months | ●`
+- **MỚI** n104 b6 dòng 30 engine `DC13 320A 02-62` | tổ máy `BF-SC440-V` | prime 400 kVA / - kW; standby 440 kVA / - kW | khác: S4L1D-F41 | hãng: Scania | fuel75=52.5; emission=STAGE V; gov=ECU
+  - nguồn: `| BF-SC440-V | 440 | 400 | SCANIA | DC13 320A 02-62 | ECU | S4L1D-F41 | 52.5 | STAGE V | SWEDEN | 4 months | ●`
+- **MỚI** n104 b6 dòng 33 engine `DC13 320A 02-63` | tổ máy `BF-SC500-V 13L` | prime 450 kVA / - kW; standby 495 kVA / - kW | khác: S4L1D-G41 | hãng: Scania | fuel75=59; emission=STAGE V; gov=ECU
+  - nguồn: `| BF-SC500-V 13L | 495 | 450 | SCANIA | DC13 320A 02-63 | ECU | S4L1D-G41 | 59 | STAGE V | SWEDEN | 4 months | ●`
+- **MỚI** n104 b6 dòng 34 engine `DC16 320A 02-61` | tổ máy `BF-SC500-V 16L` | prime 450 kVA / - kW; standby 500 kVA / - kW | khác: S4L1D-G41 | hãng: Scania | fuel75=61.2; emission=STAGE V; gov=ECU
+  - nguồn: `| BF-SC500-V 16L | 500 | 450 | SCANIA | DC16 320A 02-61 | ECU | S4L1D-G41 | 61.2 | STAGE V | SWEDEN | 4 months | ●`
+- **MỚI** n104 b6 dòng 35 engine `DC16 320A 02-62` | tổ máy `BF-SC550-V` | prime 500 kVA / - kW; standby 550 kVA / - kW | khác: S5L1D-C41 | hãng: Scania | fuel75=67.7; emission=STAGE V; gov=ECU
+  - nguồn: `| BF-SC550-V | 550 | 500 | SCANIA | DC16 320A 02-62 | ECU | S5L1D-C41 | 67.7 | STAGE V | SWEDEN | 4 months | ●`
+- **MỚI** n104 b6 dòng 37 engine `DC16 320A 02-63` | tổ máy `BF-SC610-V` | prime 550 kVA / - kW; standby 605 kVA / - kW | khác: S5L1D-D41 | hãng: Scania | fuel75=74.4; emission=STAGE V; gov=ECU
+  - nguồn: `| BF-SC610-V | 605 | 550 | SCANIA | DC16 320A 02-63 | ECU | S5L1D-D41 | 74.4 | STAGE V | SWEDEN | 4 months | ●`
+- **MỚI** n105 b7 dòng 15 engine `DC13 320A 02-61` | tổ máy `BF-SC385-60T4F` | prime 350 kVA / - kW; standby 385 kVA / - kW | khác: S4L1D-E41 | hãng: Scania | emission=EPA TIER 4 FINAL; gov=ECU
+  - nguồn: `| BF-SC385-60T4F | 385 | 350 | SCANIA | DC13 320A 02-61 | ECU | S4L1D-E41 | | EPA TIER 4 FINAL | SWEDEN | | ●`
+- **MỚI** n105 b7 dòng 18 engine `DC13 320A 02-62` | tổ máy `BF-SC440-60T4F` | prime 400 kVA / - kW; standby 440 kVA / - kW | khác: S4L1D-F41 | hãng: Scania | emission=EPA TIER 4 FINAL; gov=ECU
+  - nguồn: `| BF-SC440-60T4F | 440 | 400 | SCANIA | DC13 320A 02-62 | ECU | S4L1D-F41 | | EPA TIER 4 FINAL | SWEDEN | | ●`
+- **MỚI** n105 b7 dòng 20 engine `DC13 320A 02-63` | tổ máy `BF-SC500-60T4F 13L` | prime 450 kVA / - kW; standby 495 kVA / - kW | khác: S4L1D-G41 | hãng: Scania | emission=EPA TIER 4 FINAL; gov=ECU
+  - nguồn: `| BF-SC500-60T4F 13L | 495 | 450 | SCANIA | DC13 320A 02-63 | ECU | S4L1D-G41 | | EPA TIER 4 FINAL | SWEDEN | | ●`
+- **MỚI** n105 b7 dòng 21 engine `DC16 320A 02-61` | tổ máy `BF-SC500-60T4F 16L` | prime 450 kVA / - kW; standby 500 kVA / - kW | khác: S4L1D-G41 | hãng: Scania | emission=EPA TIER 4 FINAL; gov=ECU
+  - nguồn: `| BF-SC500-60T4F 16L | 500 | 450 | SCANIA | DC16 320A 02-61 | ECU | S4L1D-G41 | | EPA TIER 4 FINAL | SWEDEN | | ●`
+- **MỚI** n105 b7 dòng 22 engine `DC16 320A 02-62` | tổ máy `BF-SC550-60T4F` | prime 500 kVA / - kW; standby 550 kVA / - kW | khác: S5L1D-C41 | hãng: Scania | emission=EPA TIER 4 FINAL; gov=ECU
+  - nguồn: `| BF-SC550-60T4F | 550 | 500 | SCANIA | DC16 320A 02-62 | ECU | S5L1D-C41 | | EPA TIER 4 FINAL | SWEDEN | | ●`
+- **MỚI** n105 b7 dòng 23 engine `DC16 320A 02-63` | tổ máy `BF-SC610-60T4F` | prime 550 kVA / - kW; standby 605 kVA / - kW | khác: S5L1D-D41 | hãng: Scania | emission=EPA TIER 4 FINAL; gov=ECU
+  - nguồn: `| BF-SC610-60T4F | 605 | 550 | SCANIA | DC16 320A 02-63 | ECU | S5L1D-D41 | | EPA TIER 4 FINAL | SWEDEN | | ●`
+- **MẤT** n104 b6 dòng 24 engine `4 months` | tổ máy `BF-SC385-V` | prime 350 kVA / - kW; standby 385 kVA / - kW | khác: S4L1D-E41 | hãng: Scania | fuel75=46.4; emission=STAGE V; gov=ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-SC385-V | 385 | 350 | SCANIA | DC13 320A 02-61 | ECU | S4L1D-E41 | 46.4 | STAGE V | SWEDEN | 4 months | ●`
+- **MẤT** n104 b6 dòng 30 engine `4 months` | tổ máy `BF-SC440-V` | prime 400 kVA / - kW; standby 440 kVA / - kW | khác: S4L1D-F41 | hãng: Scania | fuel75=52.5; emission=STAGE V; gov=ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-SC440-V | 440 | 400 | SCANIA | DC13 320A 02-62 | ECU | S4L1D-F41 | 52.5 | STAGE V | SWEDEN | 4 months | ●`
+- **MẤT** n104 b6 dòng 33 engine `4 months` | tổ máy `BF-SC500-V 13L` | prime 450 kVA / - kW; standby 495 kVA / - kW | khác: S4L1D-G41 | hãng: Scania | fuel75=59; emission=STAGE V; gov=ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-SC500-V 13L | 495 | 450 | SCANIA | DC13 320A 02-63 | ECU | S4L1D-G41 | 59 | STAGE V | SWEDEN | 4 months | ●`
+- **MẤT** n104 b6 dòng 34 engine `4 months` | tổ máy `BF-SC500-V 16L` | prime 450 kVA / - kW; standby 500 kVA / - kW | khác: S4L1D-G41 | hãng: Scania | fuel75=61.2; emission=STAGE V; gov=ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-SC500-V 16L | 500 | 450 | SCANIA | DC16 320A 02-61 | ECU | S4L1D-G41 | 61.2 | STAGE V | SWEDEN | 4 months | ●`
+- **MẤT** n104 b6 dòng 35 engine `4 months` | tổ máy `BF-SC550-V` | prime 500 kVA / - kW; standby 550 kVA / - kW | khác: S5L1D-C41 | hãng: Scania | fuel75=67.7; emission=STAGE V; gov=ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-SC550-V | 550 | 500 | SCANIA | DC16 320A 02-62 | ECU | S5L1D-C41 | 67.7 | STAGE V | SWEDEN | 4 months | ●`
+- **MẤT** n104 b6 dòng 37 engine `4 months` | tổ máy `BF-SC610-V` | prime 550 kVA / - kW; standby 605 kVA / - kW | khác: S5L1D-D41 | hãng: Scania | fuel75=74.4; emission=STAGE V; gov=ECU | ⚠ MẤT HẲN
+  - nguồn: `| BF-SC610-V | 605 | 550 | SCANIA | DC16 320A 02-63 | ECU | S5L1D-D41 | 74.4 | STAGE V | SWEDEN | 4 months | ●`
+- **ĐỔI** n104 b6 dòng 24 alternator `S4L1D-E41` | tổ máy `BF-SC385-V` | prime 350 kVA / - kW; standby 385 kVA / - kW | khác: DC13 320A 02-61 | hãng: Stamford | fuel75=46.4; emission=STAGE V; gov=ECU
+  - đổi: other: "4 months" → "DC13 320A 02-61"
+  - nguồn: `| BF-SC385-V | 385 | 350 | SCANIA | DC13 320A 02-61 | ECU | S4L1D-E41 | 46.4 | STAGE V | SWEDEN | 4 months | ●`
+- **ĐỔI** n104 b6 dòng 30 alternator `S4L1D-F41` | tổ máy `BF-SC440-V` | prime 400 kVA / - kW; standby 440 kVA / - kW | khác: DC13 320A 02-62 | hãng: Stamford | fuel75=52.5; emission=STAGE V; gov=ECU
+  - đổi: other: "4 months" → "DC13 320A 02-62"
+  - nguồn: `| BF-SC440-V | 440 | 400 | SCANIA | DC13 320A 02-62 | ECU | S4L1D-F41 | 52.5 | STAGE V | SWEDEN | 4 months | ●`
+- **ĐỔI** n104 b6 dòng 33 alternator `S4L1D-G41` | tổ máy `BF-SC500-V 13L` | prime 450 kVA / - kW; standby 495 kVA / - kW | khác: DC13 320A 02-63 | hãng: Stamford | fuel75=59; emission=STAGE V; gov=ECU
+  - đổi: other: "4 months" → "DC13 320A 02-63"
+  - nguồn: `| BF-SC500-V 13L | 495 | 450 | SCANIA | DC13 320A 02-63 | ECU | S4L1D-G41 | 59 | STAGE V | SWEDEN | 4 months | ●`
+- **ĐỔI** n104 b6 dòng 34 alternator `S4L1D-G41` | tổ máy `BF-SC500-V 16L` | prime 450 kVA / - kW; standby 500 kVA / - kW | khác: DC16 320A 02-61 | hãng: Stamford | fuel75=61.2; emission=STAGE V; gov=ECU
+  - đổi: other: "4 months" → "DC16 320A 02-61"
+  - nguồn: `| BF-SC500-V 16L | 500 | 450 | SCANIA | DC16 320A 02-61 | ECU | S4L1D-G41 | 61.2 | STAGE V | SWEDEN | 4 months | ●`
+- **ĐỔI** n104 b6 dòng 35 alternator `S5L1D-C41` | tổ máy `BF-SC550-V` | prime 500 kVA / - kW; standby 550 kVA / - kW | khác: DC16 320A 02-62 | hãng: Stamford | fuel75=67.7; emission=STAGE V; gov=ECU
+  - đổi: other: "4 months" → "DC16 320A 02-62"
+  - nguồn: `| BF-SC550-V | 550 | 500 | SCANIA | DC16 320A 02-62 | ECU | S5L1D-C41 | 67.7 | STAGE V | SWEDEN | 4 months | ●`
+- **ĐỔI** n104 b6 dòng 37 alternator `S5L1D-D41` | tổ máy `BF-SC610-V` | prime 550 kVA / - kW; standby 605 kVA / - kW | khác: DC16 320A 02-63 | hãng: Stamford | fuel75=74.4; emission=STAGE V; gov=ECU
+  - đổi: other: "4 months" → "DC16 320A 02-63"
+  - nguồn: `| BF-SC610-V | 605 | 550 | SCANIA | DC16 320A 02-63 | ECU | S5L1D-D41 | 74.4 | STAGE V | SWEDEN | 4 months | ●`
+- **ĐỔI** n105 b7 dòng 15 alternator `S4L1D-E41` | tổ máy `BF-SC385-60T4F` | prime 350 kVA / - kW; standby 385 kVA / - kW | khác: DC13 320A 02-61 | hãng: Stamford | emission=EPA TIER 4 FINAL; gov=ECU
+  - đổi: other: null → "DC13 320A 02-61"
+  - nguồn: `| BF-SC385-60T4F | 385 | 350 | SCANIA | DC13 320A 02-61 | ECU | S4L1D-E41 | | EPA TIER 4 FINAL | SWEDEN | | ●`
+- **ĐỔI** n105 b7 dòng 18 alternator `S4L1D-F41` | tổ máy `BF-SC440-60T4F` | prime 400 kVA / - kW; standby 440 kVA / - kW | khác: DC13 320A 02-62 | hãng: Stamford | emission=EPA TIER 4 FINAL; gov=ECU
+  - đổi: other: null → "DC13 320A 02-62"
+  - nguồn: `| BF-SC440-60T4F | 440 | 400 | SCANIA | DC13 320A 02-62 | ECU | S4L1D-F41 | | EPA TIER 4 FINAL | SWEDEN | | ●`
+- **ĐỔI** n105 b7 dòng 20 alternator `S4L1D-G41` | tổ máy `BF-SC500-60T4F 13L` | prime 450 kVA / - kW; standby 495 kVA / - kW | khác: DC13 320A 02-63 | hãng: Stamford | emission=EPA TIER 4 FINAL; gov=ECU
+  - đổi: other: null → "DC13 320A 02-63"
+  - nguồn: `| BF-SC500-60T4F 13L | 495 | 450 | SCANIA | DC13 320A 02-63 | ECU | S4L1D-G41 | | EPA TIER 4 FINAL | SWEDEN | | ●`
+- **ĐỔI** n105 b7 dòng 21 alternator `S4L1D-G41` | tổ máy `BF-SC500-60T4F 16L` | prime 450 kVA / - kW; standby 500 kVA / - kW | khác: DC16 320A 02-61 | hãng: Stamford | emission=EPA TIER 4 FINAL; gov=ECU
+  - đổi: other: null → "DC16 320A 02-61"
+  - nguồn: `| BF-SC500-60T4F 16L | 500 | 450 | SCANIA | DC16 320A 02-61 | ECU | S4L1D-G41 | | EPA TIER 4 FINAL | SWEDEN | | ●`
+- **ĐỔI** n105 b7 dòng 22 alternator `S5L1D-C41` | tổ máy `BF-SC550-60T4F` | prime 500 kVA / - kW; standby 550 kVA / - kW | khác: DC16 320A 02-62 | hãng: Stamford | emission=EPA TIER 4 FINAL; gov=ECU
+  - đổi: other: null → "DC16 320A 02-62"
+  - nguồn: `| BF-SC550-60T4F | 550 | 500 | SCANIA | DC16 320A 02-62 | ECU | S5L1D-C41 | | EPA TIER 4 FINAL | SWEDEN | | ●`
+- **ĐỔI** n105 b7 dòng 23 alternator `S5L1D-D41` | tổ máy `BF-SC610-60T4F` | prime 550 kVA / - kW; standby 605 kVA / - kW | khác: DC16 320A 02-63 | hãng: Stamford | emission=EPA TIER 4 FINAL; gov=ECU
+  - đổi: other: null → "DC16 320A 02-63"
+  - nguồn: `| BF-SC610-60T4F | 605 | 550 | SCANIA | DC16 320A 02-63 | ECU | S5L1D-D41 | | EPA TIER 4 FINAL | SWEDEN | | ●`
+
+## cgm-italia (mới 32, mất 32, đổi 0)
+
+- **MỚI** n101 b5 dòng 0 engine `DC09 072A 02 11` | tổ máy `250S` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: ∅ | hãng: ∅ | weight=2470; noise=69
+  - nguồn: `| 250S | | 250 | 200 | 275 | 220 | DC09 072A 02 11 | E | 0 | 5 | 294.9/220 | 38 | 250 | B300 | 2470 | 2800x1310x1800 | C300 | 3130 | 3700x1435x2250 | 69 | QM250 | QA250`
+- **MỚI** n101 b5 dòng 1 engine `DC09 072A 02 12` | tổ máy `280S` | prime 280 kVA / 224 kW; standby 308 kVA / 246.4 kW | khác: ∅ | hãng: ∅ | weight=2685; noise=69
+  - nguồn: `| 280S | | 280 | 224 | 308 | 246.4 | DC09 072A 02 12 | E | 0 | 5 | 324.4/242 | 42 | 250 | B300 | 2685 | 2800x1310x1800 | C300 | 3345 | 3700x1435x2250 | 69 | QM500 | QA500`
+- **MỚI** n101 b5 dòng 2 engine `DC09 072A 02 13` | tổ máy `300S` | prime 300 kVA / 240 kW; standby 330 kVA / 264 kW | khác: ∅ | hãng: ∅ | weight=2685; noise=69
+  - nguồn: `| 300S | | 300 | 240 | 330 | 264 | DC09 072A 02 13 | E | 0 | 5 | 349.9/261 | 45 | 250 | B300 | 2685 | 2800x1310x1800 | C300 | 3345 | 3700x1435x2250 | 69 | QM500 | QA500`
+- **MỚI** n101 b5 dòng 3 engine `DC09 072A 02 14` | tổ máy `330S` | prime 330 kVA / 264 kW; standby 363 kVA / 290.4 kW | khác: ∅ | hãng: ∅ | weight=2770; noise=69
+  - nguồn: `| 330S | | 330 | 264 | 363 | 290.4 | DC09 072A 02 14 | E | 0 | 5 | 379.4/283 | 49 | 250 | B300 | 2770 | 2800x1310x1800 | C300 | 3430 | 3700x1435x2250 | 69 | QM500 | QA500`
+- **MỚI** n101 b5 dòng 4 engine `DC13 072A 02 11` | tổ máy `375S` | prime 375 kVA / 300 kW; standby 413 kVA / 330.4 kW | khác: ∅ | hãng: ∅ | weight=3230; noise=69
+  - nguồn: `| 375S | | 375 | 300 | 413 | 330.4 | DC13 072A 02 11 | E | 0 | 6 | 429/320 | 54 | 400 | B400 | 3230 | 2950x1550x2100 | C450 | 4220 | 4270x1735x2350 | 69 | QM500 | QA500`
+- **MỚI** n101 b5 dòng 5 engine `DC13 072A 02 12` | tổ máy `410S` | prime 410 kVA / 328 kW; standby 451 kVA / 360.8 kW | khác: ∅ | hãng: ∅ | weight=3230; noise=69
+  - nguồn: `| 410S | | 410 | 328 | 451 | 360.8 | DC13 072A 02 12 | E | 0 | 6 | 475.9/355 | 60 | 400 | B400 | 3230 | 2950x1550x2100 | C450 | 4220 | 4270x1735x2350 | 69 | QM500 | QA500`
+- **MỚI** n101 b5 dòng 6 engine `DC13 072A 02 13` | tổ máy `450S` | prime 450 kVA / 360 kW; standby 495 kVA / 396 kW | khác: ∅ | hãng: ∅ | weight=3280; noise=69
+  - nguồn: `| 450S | | 450 | 360 | 495 | 396 | DC13 072A 02 13 | E | 0 | 6 | 526.8/393 | 66 | 400 | B400 | 3280 | 2950x1550x2100 | C450 | 4270 | 4270x1735x2350 | 69 | QM500 | QA500`
+- **MỚI** n101 b5 dòng 7 engine `DC13 072A 02 14` | tổ máy `500S` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: ∅ | hãng: ∅ | weight=3345; noise=69
+  - nguồn: `| 500S | | 500 | 400 | 550 | 440 | DC13 072A 02 14 | E | 0 | 6 | 573.7/428 | 72 | 400 | B400 | 3345 | 2950x1550x2100 | C450 | 4335 | 4270x1735x2350 | 69 | QM500 | QA500`
+- **MỚI** n101 b5 dòng 8 engine `DC16 093A 02 52` | tổ máy `555S` | prime 555 kVA / 444 kW; standby 610 kVA / 488 kW | khác: ∅ | hãng: ∅ | weight=4430; noise=69
+  - nguồn: `| 555S | | 555 | 444 | 610 | 488 | DC16 093A 02 52 | E | 0 | 8 | 634/473 | 83 | 400 | B750 | 4430 | 3450x1550x2300 | C500 | 5570 | 4850x1866x2547 | 69 | QM1000 | QA1000`
+- **MỚI** n101 b5 dòng 9 engine `DC16 093A 02 54` | tổ máy `600S` | prime 600 kVA / 480 kW; standby 660 kVA / 528 kW | khác: ∅ | hãng: ∅ | weight=4680; noise=69
+  - nguồn: `| 600S | | 600 | 480 | 660 | 528 | DC16 093A 02 54 | E | 0 | 8 | 730.6/545 | 90 | 400 | B750 | 4680 | 3450x1550x2300 | C500 | 5720 | 4850x1866x2547 | 69 | QM1000 | QA1000`
+- **MỚI** n101 b5 dòng 10 engine `DC16 093A 02 54` | tổ máy `625S` | prime 625 kVA / 500 kW; standby 688 kVA / 550.4 kW | khác: ∅ | hãng: ∅ | weight=4680; noise=69
+  - nguồn: `| 625S | | 625 | 500 | 688 | 550.4 | DC16 093A 02 54 | E | 0 | 8 | 730.6/545 | 93 | 400 | B750 | 4680 | 3450x1550x2300 | C500 | 5860 | 4850x1866x2547 | 69 | QM1000 | QA1000`
+- **MỚI** n101 b5 dòng 11 engine `DC16 093A 02 54` | tổ máy `640S` | prime 640 kVA / 512 kW; standby 704 kVA / 563.2 kW | khác: ∅ | hãng: ∅ | weight=4680; noise=69
+  - nguồn: `| 640S | | 640 | 512 | 704 | 563.2 | DC16 093A 02 54 | E | 0 | 8 | 730.6/545 | 95 | 400 | B750 | 4680 | 3450x1550x2300 | C500 | 5860 | 4850x1866x2547 | 69 | QM1000 | QA1000`
+- **MỚI** n101 b5 dòng 12 engine `DC16 078A 02 42` | tổ máy `650S` | prime 650 kVA / 520 kW; standby 715 kVA / 572 kW | khác: ∅ | hãng: ∅ | weight=4680; noise=69
+  - nguồn: `| 650S | | 650 | 520 | 715 | 572 | DC16 078A 02 42 | E | 0 | 8 | 741.3/553 | 98 | 400 | B750 | 4680 | 3450x1550x2300 | C500 | 5880 | 4850x1866x2547 | 69 | QM1000 | QA1000`
+- **MỚI** n101 b5 dòng 13 engine `DC16 078A 02 43` | tổ máy `700S` | prime 700 kVA / 560 kW; standby 770 kVA / 616 kW | khác: ∅ | hãng: ∅ | weight=4930; noise=69
+  - nguồn: `| 700S | | 700 | 560 | 770 | 616 | DC16 078A 02 43 | E | 0 | 8 | 798.9/596 | 105 | 400 | B750 | 4930 | 3450x1550x2300 | C500 | 5960 | 4850x1866x2547 | 69 | QM1000 | QA1000`
+- **MỚI** n101 b5 dòng 14 engine `DC16 078A 02 44` | tổ máy `730S` | prime 730 kVA / 584 kW; standby 803 kVA / 642.4 kW | khác: ∅ | hãng: ∅ | weight=4930; noise=69
+  - nguồn: `| 730S | | 730 | 584 | 803 | 642.4 | DC16 078A 02 44 | E | 0 | 8 | 829.8/619 | 110 | 400 | B750 | 4930 | 3450x1550x2300 | C500 | 6030 | 4850x1866x2547 | 69 | QM1000 | QA1000`
+- **MỚI** n101 b5 dòng 15 engine `DC09 071A 02 01` | tổ máy `e250S` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: ∅ | hãng: ∅ | weight=2470; noise=69
+  - nguồn: `| e250S | | 250 | 200 | 275 | 220 | DC09 071A 02 01 | E | 3A | 5 | 294.9/220 | 44 | 250 | B300 | 2470 | 2800x1310x1800 | C300 | 3130 | 3700x1435x2250 | 69 | QM250 | QA250`
+- **MỚI** n101 b5 dòng 16 engine `DC09 071A 02 02` | tổ máy `e280S` | prime 280 kVA / 224 kW; standby 308 kVA / 246.4 kW | khác: ∅ | hãng: ∅ | weight=2685; noise=69
+  - nguồn: `| e280S | | 280 | 224 | 308 | 246.4 | DC09 071A 02 02 | E | 3A | 5 | 324.4/242 | 48 | 250 | B300 | 2685 | 2800x1310x1800 | C300 | 3345 | 3700x1435x2250 | 69 | QM500 | QA500`
+- **MỚI** n101 b5 dòng 17 engine `DC09 071A 02 03` | tổ máy `e300S` | prime 300 kVA / 240 kW; standby 330 kVA / 264 kW | khác: ∅ | hãng: ∅ | weight=2685; noise=69
+  - nguồn: `| e300S | | 300 | 240 | 330 | 264 | DC09 071A 02 03 | E | 3A | 5 | 349.9/261 | 51 | 250 | B300 | 2685 | 2800x1310x1800 | C300 | 3345 | 3700x1435x2250 | 69 | QM500 | QA500`
+- **MỚI** n101 b5 dòng 18 engine `DC09 071A 02 04` | tổ máy `e330S` | prime 330 kVA / 264 kW; standby 363 kVA / 290.4 kW | khác: ∅ | hãng: ∅ | weight=2770; noise=69
+  - nguồn: `| e330S | | 330 | 264 | 363 | 290.4 | DC09 071A 02 04 | E | 3A | 5 | 379.4/283 | 55.5 | 250 | B300 | 2770 | 2800x1310x1800 | C300 | 3430 | 3700x1435x2250 | 69 | QM500 | QA500`
+- **MỚI** n101 b5 dòng 19 engine `DC13 071A 02 01` | tổ máy `e365S` | prime 365 kVA / 292 kW; standby 402 kVA / 321.6 kW | khác: ∅ | hãng: ∅ | weight=3230; noise=69
+  - nguồn: `| e365S | | 365 | 292 | 402 | 321.6 | DC13 071A 02 01 | E | 3A | 6 | 422.3/315 | 59.5 | 400 | B400 | 3230 | 2950x1550x2100 | C450 | 4220 | 4270x1735x2350 | 69 | QM500 | QA500`
+- **MỚI** n101 b5 dòng 20 engine `DC09 071A 02 02` | tổ máy `e410S` | prime 410 kVA / 328 kW; standby 451 kVA / 360.8 kW | khác: ∅ | hãng: ∅ | weight=3230; noise=69
+  - nguồn: `| e410S | | 410 | 328 | 451 | 360.8 | DC09 071A 02 02 | E | 3A | 6 | 474.5/354 | 66.7 | 400 | B400 | 3230 | 2950x1550x2100 | C450 | 4220 | 4270x1735x2350 | 69 | QM500 | QA500`
+- **MỚI** n101 b5 dòng 21 engine `DC16 071A 02 01` | tổ máy `e500S` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: ∅ | hãng: ∅ | weight=4130; noise=69
+  - nguồn: `| e500S | | 500 | 400 | 550 | 440 | DC16 071A 02 01 | E | 3A | 8 | 569.7/425 | 82.6 | 400 | B750 | 4130 | 3450x1550x2300 | C750 | 5470 | 5050x2150x2550 | 69 | QM500 | QA500`
+- **MỚI** n101 b5 dòng 22 engine `DC16 071A 02 02` | tổ máy `e550S` | prime 550 kVA / 440 kW; standby 605 kVA / 484 kW | khác: ∅ | hãng: ∅ | weight=4430; noise=69
+  - nguồn: `| e550S | | 550 | 440 | 605 | 484 | DC16 071A 02 02 | E | 3A | 8 | 626/467 | 90 | 400 | B750 | 4430 | 3450x1550x2300 | C500 | 5530 | 4850x1866x2547 | 69 | QM1000 | QA1000`
+- **MỚI** n101 b5 dòng 23 engine `DC09 320A 02 61` | tổ máy `v250S` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: ∅ | hãng: ∅ | weight=2770; noise=69
+  - nguồn: `| v250S | | 250 | 200 | 275 | 220 | DC09 320A 02 61 | E | 5 | 5 | 290.9/217 | 39.6 | 250 | B300 | 2770 | 2800x1310x1800 | C300 | 3330 | 3700x1435x2250 | 69 | QM250A | QA250A`
+- **MỚI** n101 b5 dòng 24 engine `DC09 320A 02 62` | tổ máy `v275S` | prime 275 kVA / 220 kW; standby 303 kVA / 242.4 kW | khác: ∅ | hãng: ∅ | weight=2985; noise=69
+  - nguồn: `| v275S | | 275 | 220 | 303 | 242.4 | DC09 320A 02 62 | E | 5 | 5 | 319/238 | 43 | 250 | B300 | 2985 | 2800x1310x1800 | C300 | 3545 | 3700x1435x2250 | 69 | QM500 | QA500`
+- **MỚI** n101 b5 dòng 25 engine `DC09 320A 02 63` | tổ máy `v300S` | prime 300 kVA / 240 kW; standby 330 kVA / 264 kW | khác: ∅ | hãng: ∅ | weight=2985; noise=69
+  - nguồn: `| v300S | | 300 | 240 | 330 | 264 | DC09 320A 02 63 | E | 5 | 5 | 347.2/259 | 47 | 250 | B300 | 2985 | 2800x1310x1800 | C300 | 3545 | 3700x1435x2250 | 69 | QM500 | QA500`
+- **MỚI** n101 b5 dòng 26 engine `DC09 320A 02 64` | tổ máy `v330S` | prime 330 kVA / 264 kW; standby 363 kVA / 290.4 kW | khác: ∅ | hãng: ∅ | weight=3070; noise=69
+  - nguồn: `| v330S | | 330 | 264 | 363 | 290.4 | DC09 320A 02 64 | E | 5 | 5 | 379.4/283 | 51 | 250 | B300 | 3070 | 2800x1310x1800 | C300 | 3630 | 3700x1435x2250 | 69 | QM500 | QA500`
+- **MỚI** n101 b5 dòng 27 engine `DC13 320A 02 61` | tổ máy `v350S` | prime 350 kVA / 280 kW; standby 385 kVA / 308 kW | khác: ∅ | hãng: ∅ | weight=3380; noise=69
+  - nguồn: `| v350S | | 350 | 280 | 385 | 308 | DC13 320A 02 61 | E | 5 | 6 | 408.8/305 | 53 | 400 | B400 | 3380 | 2950x1550x2100 | C450 | 4270 | 4270x1735x2350 | 69 | QM500 | QA500`
+- **MỚI** n101 b5 dòng 28 engine `DC13 320A 02 62` | tổ máy `v400S` | prime 400 kVA / 320 kW; standby 440 kVA / 352 kW | khác: ∅ | hãng: ∅ | weight=3530; noise=69
+  - nguồn: `| v400S | | 400 | 320 | 440 | 352 | DC13 320A 02 62 | E | 5 | 6 | 461.1/344 | 60 | 400 | B400 | 3530 | 2950x1550x2100 | C450 | 4420 | 4270x1735x2350 | 69 | QM500 | QA500`
+- **MỚI** n101 b5 dòng 29 engine `DC13 320A 02 63` | tổ máy `v450S` | prime 450 kVA / 360 kW; standby 495 kVA / 396 kW | khác: ∅ | hãng: ∅ | weight=3560; noise=69
+  - nguồn: `| v450S | | 450 | 360 | 495 | 396 | DC13 320A 02 63 | E | 5 | 6 | 518.8/387 | 67 | 400 | B400 | 3560 | 2950x1550x2100 | C450 | 4450 | 4270x1735x2350 | 69 | QM500 | QA500`
+- **MỚI** n101 b5 dòng 30 engine `DC16 320A 02 62` | tổ máy `v500S` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: ∅ | hãng: ∅ | weight=4280; noise=69
+  - nguồn: `| v500S | | 500 | 400 | 550 | 440 | DC16 320A 02 62 | E | 5 | 8 | 571/426 | 82 | 400 | B750 | 4280 | 3450x1550x2300 | C500 | 5900 | 4850x1866x2547 | 69 | QM500 | QA500`
+- **MỚI** n101 b5 dòng 31 engine `DC16 320A 02 63` | tổ máy `v550S` | prime 550 kVA / 440 kW; standby 605 kVA / 484 kW | khác: ∅ | hãng: ∅ | weight=4580; noise=69
+  - nguồn: `| v550S | | 550 | 440 | 605 | 484 | DC16 320A 02 63 | E | 5 | 8 | 627.3/468 | 85 | 400 | B750 | 4580 | 3450x1550x2300 | C500 | 5950 | 4850x1866x2547 | 69 | QM1000 | QA1000`
+- **MẤT** n101 b5 dòng 0 engine `B300` | tổ máy `250S` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: ∅ | hãng: ∅ | weight=2470; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| 250S | | 250 | 200 | 275 | 220 | DC09 072A 02 11 | E | 0 | 5 | 294.9/220 | 38 | 250 | B300 | 2470 | 2800x1310x1800 | C300 | 3130 | 3700x1435x2250 | 69 | QM250 | QA250`
+- **MẤT** n101 b5 dòng 1 engine `B300` | tổ máy `280S` | prime 280 kVA / 224 kW; standby 308 kVA / 246.4 kW | khác: ∅ | hãng: ∅ | weight=2685; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| 280S | | 280 | 224 | 308 | 246.4 | DC09 072A 02 12 | E | 0 | 5 | 324.4/242 | 42 | 250 | B300 | 2685 | 2800x1310x1800 | C300 | 3345 | 3700x1435x2250 | 69 | QM500 | QA500`
+- **MẤT** n101 b5 dòng 2 engine `B300` | tổ máy `300S` | prime 300 kVA / 240 kW; standby 330 kVA / 264 kW | khác: ∅ | hãng: ∅ | weight=2685; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| 300S | | 300 | 240 | 330 | 264 | DC09 072A 02 13 | E | 0 | 5 | 349.9/261 | 45 | 250 | B300 | 2685 | 2800x1310x1800 | C300 | 3345 | 3700x1435x2250 | 69 | QM500 | QA500`
+- **MẤT** n101 b5 dòng 3 engine `B300` | tổ máy `330S` | prime 330 kVA / 264 kW; standby 363 kVA / 290.4 kW | khác: ∅ | hãng: ∅ | weight=2770; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| 330S | | 330 | 264 | 363 | 290.4 | DC09 072A 02 14 | E | 0 | 5 | 379.4/283 | 49 | 250 | B300 | 2770 | 2800x1310x1800 | C300 | 3430 | 3700x1435x2250 | 69 | QM500 | QA500`
+- **MẤT** n101 b5 dòng 4 engine `B400` | tổ máy `375S` | prime 375 kVA / 300 kW; standby 413 kVA / 330.4 kW | khác: ∅ | hãng: ∅ | weight=3230; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| 375S | | 375 | 300 | 413 | 330.4 | DC13 072A 02 11 | E | 0 | 6 | 429/320 | 54 | 400 | B400 | 3230 | 2950x1550x2100 | C450 | 4220 | 4270x1735x2350 | 69 | QM500 | QA500`
+- **MẤT** n101 b5 dòng 5 engine `B400` | tổ máy `410S` | prime 410 kVA / 328 kW; standby 451 kVA / 360.8 kW | khác: ∅ | hãng: ∅ | weight=3230; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| 410S | | 410 | 328 | 451 | 360.8 | DC13 072A 02 12 | E | 0 | 6 | 475.9/355 | 60 | 400 | B400 | 3230 | 2950x1550x2100 | C450 | 4220 | 4270x1735x2350 | 69 | QM500 | QA500`
+- **MẤT** n101 b5 dòng 6 engine `B400` | tổ máy `450S` | prime 450 kVA / 360 kW; standby 495 kVA / 396 kW | khác: ∅ | hãng: ∅ | weight=3280; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| 450S | | 450 | 360 | 495 | 396 | DC13 072A 02 13 | E | 0 | 6 | 526.8/393 | 66 | 400 | B400 | 3280 | 2950x1550x2100 | C450 | 4270 | 4270x1735x2350 | 69 | QM500 | QA500`
+- **MẤT** n101 b5 dòng 7 engine `B400` | tổ máy `500S` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: ∅ | hãng: ∅ | weight=3345; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| 500S | | 500 | 400 | 550 | 440 | DC13 072A 02 14 | E | 0 | 6 | 573.7/428 | 72 | 400 | B400 | 3345 | 2950x1550x2100 | C450 | 4335 | 4270x1735x2350 | 69 | QM500 | QA500`
+- **MẤT** n101 b5 dòng 8 engine `B750` | tổ máy `555S` | prime 555 kVA / 444 kW; standby 610 kVA / 488 kW | khác: ∅ | hãng: ∅ | weight=4430; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| 555S | | 555 | 444 | 610 | 488 | DC16 093A 02 52 | E | 0 | 8 | 634/473 | 83 | 400 | B750 | 4430 | 3450x1550x2300 | C500 | 5570 | 4850x1866x2547 | 69 | QM1000 | QA1000`
+- **MẤT** n101 b5 dòng 9 engine `B750` | tổ máy `600S` | prime 600 kVA / 480 kW; standby 660 kVA / 528 kW | khác: ∅ | hãng: ∅ | weight=4680; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| 600S | | 600 | 480 | 660 | 528 | DC16 093A 02 54 | E | 0 | 8 | 730.6/545 | 90 | 400 | B750 | 4680 | 3450x1550x2300 | C500 | 5720 | 4850x1866x2547 | 69 | QM1000 | QA1000`
+- **MẤT** n101 b5 dòng 10 engine `B750` | tổ máy `625S` | prime 625 kVA / 500 kW; standby 688 kVA / 550.4 kW | khác: ∅ | hãng: ∅ | weight=4680; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| 625S | | 625 | 500 | 688 | 550.4 | DC16 093A 02 54 | E | 0 | 8 | 730.6/545 | 93 | 400 | B750 | 4680 | 3450x1550x2300 | C500 | 5860 | 4850x1866x2547 | 69 | QM1000 | QA1000`
+- **MẤT** n101 b5 dòng 11 engine `B750` | tổ máy `640S` | prime 640 kVA / 512 kW; standby 704 kVA / 563.2 kW | khác: ∅ | hãng: ∅ | weight=4680; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| 640S | | 640 | 512 | 704 | 563.2 | DC16 093A 02 54 | E | 0 | 8 | 730.6/545 | 95 | 400 | B750 | 4680 | 3450x1550x2300 | C500 | 5860 | 4850x1866x2547 | 69 | QM1000 | QA1000`
+- **MẤT** n101 b5 dòng 12 engine `B750` | tổ máy `650S` | prime 650 kVA / 520 kW; standby 715 kVA / 572 kW | khác: ∅ | hãng: ∅ | weight=4680; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| 650S | | 650 | 520 | 715 | 572 | DC16 078A 02 42 | E | 0 | 8 | 741.3/553 | 98 | 400 | B750 | 4680 | 3450x1550x2300 | C500 | 5880 | 4850x1866x2547 | 69 | QM1000 | QA1000`
+- **MẤT** n101 b5 dòng 13 engine `B750` | tổ máy `700S` | prime 700 kVA / 560 kW; standby 770 kVA / 616 kW | khác: ∅ | hãng: ∅ | weight=4930; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| 700S | | 700 | 560 | 770 | 616 | DC16 078A 02 43 | E | 0 | 8 | 798.9/596 | 105 | 400 | B750 | 4930 | 3450x1550x2300 | C500 | 5960 | 4850x1866x2547 | 69 | QM1000 | QA1000`
+- **MẤT** n101 b5 dòng 14 engine `B750` | tổ máy `730S` | prime 730 kVA / 584 kW; standby 803 kVA / 642.4 kW | khác: ∅ | hãng: ∅ | weight=4930; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| 730S | | 730 | 584 | 803 | 642.4 | DC16 078A 02 44 | E | 0 | 8 | 829.8/619 | 110 | 400 | B750 | 4930 | 3450x1550x2300 | C500 | 6030 | 4850x1866x2547 | 69 | QM1000 | QA1000`
+- **MẤT** n101 b5 dòng 15 engine `B300` | tổ máy `e250S` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: ∅ | hãng: ∅ | weight=2470; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| e250S | | 250 | 200 | 275 | 220 | DC09 071A 02 01 | E | 3A | 5 | 294.9/220 | 44 | 250 | B300 | 2470 | 2800x1310x1800 | C300 | 3130 | 3700x1435x2250 | 69 | QM250 | QA250`
+- **MẤT** n101 b5 dòng 16 engine `B300` | tổ máy `e280S` | prime 280 kVA / 224 kW; standby 308 kVA / 246.4 kW | khác: ∅ | hãng: ∅ | weight=2685; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| e280S | | 280 | 224 | 308 | 246.4 | DC09 071A 02 02 | E | 3A | 5 | 324.4/242 | 48 | 250 | B300 | 2685 | 2800x1310x1800 | C300 | 3345 | 3700x1435x2250 | 69 | QM500 | QA500`
+- **MẤT** n101 b5 dòng 17 engine `B300` | tổ máy `e300S` | prime 300 kVA / 240 kW; standby 330 kVA / 264 kW | khác: ∅ | hãng: ∅ | weight=2685; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| e300S | | 300 | 240 | 330 | 264 | DC09 071A 02 03 | E | 3A | 5 | 349.9/261 | 51 | 250 | B300 | 2685 | 2800x1310x1800 | C300 | 3345 | 3700x1435x2250 | 69 | QM500 | QA500`
+- **MẤT** n101 b5 dòng 18 engine `B300` | tổ máy `e330S` | prime 330 kVA / 264 kW; standby 363 kVA / 290.4 kW | khác: ∅ | hãng: ∅ | weight=2770; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| e330S | | 330 | 264 | 363 | 290.4 | DC09 071A 02 04 | E | 3A | 5 | 379.4/283 | 55.5 | 250 | B300 | 2770 | 2800x1310x1800 | C300 | 3430 | 3700x1435x2250 | 69 | QM500 | QA500`
+- **MẤT** n101 b5 dòng 19 engine `B400` | tổ máy `e365S` | prime 365 kVA / 292 kW; standby 402 kVA / 321.6 kW | khác: ∅ | hãng: ∅ | weight=3230; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| e365S | | 365 | 292 | 402 | 321.6 | DC13 071A 02 01 | E | 3A | 6 | 422.3/315 | 59.5 | 400 | B400 | 3230 | 2950x1550x2100 | C450 | 4220 | 4270x1735x2350 | 69 | QM500 | QA500`
+- **MẤT** n101 b5 dòng 20 engine `B400` | tổ máy `e410S` | prime 410 kVA / 328 kW; standby 451 kVA / 360.8 kW | khác: ∅ | hãng: ∅ | weight=3230; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| e410S | | 410 | 328 | 451 | 360.8 | DC09 071A 02 02 | E | 3A | 6 | 474.5/354 | 66.7 | 400 | B400 | 3230 | 2950x1550x2100 | C450 | 4220 | 4270x1735x2350 | 69 | QM500 | QA500`
+- **MẤT** n101 b5 dòng 21 engine `B750` | tổ máy `e500S` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: ∅ | hãng: ∅ | weight=4130; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| e500S | | 500 | 400 | 550 | 440 | DC16 071A 02 01 | E | 3A | 8 | 569.7/425 | 82.6 | 400 | B750 | 4130 | 3450x1550x2300 | C750 | 5470 | 5050x2150x2550 | 69 | QM500 | QA500`
+- **MẤT** n101 b5 dòng 22 engine `B750` | tổ máy `e550S` | prime 550 kVA / 440 kW; standby 605 kVA / 484 kW | khác: ∅ | hãng: ∅ | weight=4430; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| e550S | | 550 | 440 | 605 | 484 | DC16 071A 02 02 | E | 3A | 8 | 626/467 | 90 | 400 | B750 | 4430 | 3450x1550x2300 | C500 | 5530 | 4850x1866x2547 | 69 | QM1000 | QA1000`
+- **MẤT** n101 b5 dòng 23 engine `B300` | tổ máy `v250S` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: ∅ | hãng: ∅ | weight=2770; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| v250S | | 250 | 200 | 275 | 220 | DC09 320A 02 61 | E | 5 | 5 | 290.9/217 | 39.6 | 250 | B300 | 2770 | 2800x1310x1800 | C300 | 3330 | 3700x1435x2250 | 69 | QM250A | QA250A`
+- **MẤT** n101 b5 dòng 24 engine `B300` | tổ máy `v275S` | prime 275 kVA / 220 kW; standby 303 kVA / 242.4 kW | khác: ∅ | hãng: ∅ | weight=2985; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| v275S | | 275 | 220 | 303 | 242.4 | DC09 320A 02 62 | E | 5 | 5 | 319/238 | 43 | 250 | B300 | 2985 | 2800x1310x1800 | C300 | 3545 | 3700x1435x2250 | 69 | QM500 | QA500`
+- **MẤT** n101 b5 dòng 25 engine `B300` | tổ máy `v300S` | prime 300 kVA / 240 kW; standby 330 kVA / 264 kW | khác: ∅ | hãng: ∅ | weight=2985; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| v300S | | 300 | 240 | 330 | 264 | DC09 320A 02 63 | E | 5 | 5 | 347.2/259 | 47 | 250 | B300 | 2985 | 2800x1310x1800 | C300 | 3545 | 3700x1435x2250 | 69 | QM500 | QA500`
+- **MẤT** n101 b5 dòng 26 engine `B300` | tổ máy `v330S` | prime 330 kVA / 264 kW; standby 363 kVA / 290.4 kW | khác: ∅ | hãng: ∅ | weight=3070; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| v330S | | 330 | 264 | 363 | 290.4 | DC09 320A 02 64 | E | 5 | 5 | 379.4/283 | 51 | 250 | B300 | 3070 | 2800x1310x1800 | C300 | 3630 | 3700x1435x2250 | 69 | QM500 | QA500`
+- **MẤT** n101 b5 dòng 27 engine `B400` | tổ máy `v350S` | prime 350 kVA / 280 kW; standby 385 kVA / 308 kW | khác: ∅ | hãng: ∅ | weight=3380; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| v350S | | 350 | 280 | 385 | 308 | DC13 320A 02 61 | E | 5 | 6 | 408.8/305 | 53 | 400 | B400 | 3380 | 2950x1550x2100 | C450 | 4270 | 4270x1735x2350 | 69 | QM500 | QA500`
+- **MẤT** n101 b5 dòng 28 engine `B400` | tổ máy `v400S` | prime 400 kVA / 320 kW; standby 440 kVA / 352 kW | khác: ∅ | hãng: ∅ | weight=3530; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| v400S | | 400 | 320 | 440 | 352 | DC13 320A 02 62 | E | 5 | 6 | 461.1/344 | 60 | 400 | B400 | 3530 | 2950x1550x2100 | C450 | 4420 | 4270x1735x2350 | 69 | QM500 | QA500`
+- **MẤT** n101 b5 dòng 29 engine `B400` | tổ máy `v450S` | prime 450 kVA / 360 kW; standby 495 kVA / 396 kW | khác: ∅ | hãng: ∅ | weight=3560; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| v450S | | 450 | 360 | 495 | 396 | DC13 320A 02 63 | E | 5 | 6 | 518.8/387 | 67 | 400 | B400 | 3560 | 2950x1550x2100 | C450 | 4450 | 4270x1735x2350 | 69 | QM500 | QA500`
+- **MẤT** n101 b5 dòng 30 engine `B750` | tổ máy `v500S` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: ∅ | hãng: ∅ | weight=4280; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| v500S | | 500 | 400 | 550 | 440 | DC16 320A 02 62 | E | 5 | 8 | 571/426 | 82 | 400 | B750 | 4280 | 3450x1550x2300 | C500 | 5900 | 4850x1866x2547 | 69 | QM500 | QA500`
+- **MẤT** n101 b5 dòng 31 engine `B750` | tổ máy `v550S` | prime 550 kVA / 440 kW; standby 605 kVA / 484 kW | khác: ∅ | hãng: ∅ | weight=4580; noise=69 | ⚠ MẤT HẲN
+  - nguồn: `| v550S | | 550 | 440 | 605 | 484 | DC16 320A 02 63 | E | 5 | 8 | 627.3/468 | 85 | 400 | B750 | 4580 | 3450x1550x2300 | C500 | 5950 | 4850x1866x2547 | 69 | QM1000 | QA1000`
+
+## conductorjasa (mới 10, mất 0, đổi 0)
+
+- **MỚI** n124 b52 dòng 0 engine `4006-23TAG2A` | tổ máy `PJPS-750 WP2` | ∅ | khác: ∅ | hãng: Perkins |  | ⚠ không công suất
+  - nguồn: `| PJPS-750 WP2 | Perkins 4006-23TAG2A | 750 | 825 | Open Type · opsi silent, container`
+- **MỚI** n124 b52 dòng 1 engine `4012-46TWG2A` | tổ máy `PJPS-1250 WP1` | ∅ | khác: ∅ | hãng: Perkins |  | ⚠ không công suất
+  - nguồn: `| PJPS-1250 WP1 | Perkins 4012-46TWG2A | 1250 | 1375 | Open Type · opsi silent, container`
+- **MỚI** n124 b52 dòng 6 engine `S12H-PTA` | tổ máy `MJPS-1000` | ∅ | khác: ∅ | hãng: Mitsubishi |  | ⚠ không công suất
+  - nguồn: `| MJPS-1000 | Mitsubishi S12H-PTA | 1000 | 1100 | Open Type · opsi silent, container`
+- **MỚI** n124 b52 dòng 7 engine `S16R-PTAA2` | tổ máy `MJPS-2000` | ∅ | khác: ∅ | hãng: Mitsubishi |  | ⚠ không công suất
+  - nguồn: `| MJPS-2000 | Mitsubishi S16R-PTAA2 | 2000 | 2200 | Open Type · opsi silent, container`
+- **MỚI** n124 b52 dòng 8 engine `6M33G825/5` | tổ máy `BJPS-750-WP` | ∅ | khác: ∅ | hãng: Baudouin |  | ⚠ không công suất; model có ngoặc / gạch chéo
+  - nguồn: `| BJPS-750-WP | Baudouin 6M33G825/5 | 750 | 825 | Open Type · opsi silent, container`
+- **MỚI** n124 b52 dòng 9 engine `12M33G1400/5` | tổ máy `BJPS-1250-WP` | ∅ | khác: ∅ | hãng: Baudouin |  | ⚠ không công suất; model có ngoặc / gạch chéo
+  - nguồn: `| BJPS-1250-WP | Baudouin 12M33G1400/5 | 1250 | 1375 | Open Type · opsi silent, container`
+- **MỚI** n124 b52 dòng 10 engine `20M33G2500/5` | tổ máy `BJPS-2250-WP` | ∅ | khác: ∅ | hãng: Baudouin |  | ⚠ không công suất; model có ngoặc / gạch chéo
+  - nguồn: `| BJPS-2250-WP | Baudouin 20M33G2500/5 | 2250 | 2500 | Open Type · opsi silent, container`
+- **MỚI** n124 b52 dòng 11 engine `16M55G4000/5` | tổ máy `BJPS-3750-WP` | ∅ | khác: ∅ | hãng: Baudouin |  | ⚠ không công suất; model có ngoặc / gạch chéo
+  - nguồn: `| BJPS-3750-WP | Baudouin 16M55G4000/5 | 3750 | 4125 | Open Type · opsi silent, container`
+- **MỚI** n125 b53 dòng 1 engine `S16R-PTA` | tổ máy `MJPS-1740` | ∅ | khác: ∅ | hãng: Mitsubishi |  | ⚠ không công suất
+  - nguồn: `| MJPS-1740 | Mitsubishi S16R-PTA | 1740 | 1914 | Open Type · opsi silent, container`
+- **MỚI** n125 b53 dòng 7 engine `16M55G3300/5` | tổ máy `BJPS-3000-WP` | ∅ | khác: ∅ | hãng: Baudouin |  | ⚠ không công suất; model có ngoặc / gạch chéo
+  - nguồn: `| BJPS-3000-WP | Baudouin 16M55G3300/5 | 3000 | 3313 | Open Type · opsi silent, container`
+
+## green-power-generators (mới 14, mất 0, đổi 0)
+
+- **MỚI** n111 b12 dòng 0 engine `DC09 072A 02 11` | tổ máy `GP280 A/S` | ∅ | khác: ∅ | hãng: Scania |  | ⚠ không công suất
+  - nguồn: `| GP280 A/S | O | 250 | 275 | DC09 072A 02 11 | E | 6 | 39 | 150 | 3000 | 1100 | 1750 | 1950 | | | |`
+- **MỚI** n111 b12 dòng 2 engine `DC13 072A 02 11` | tổ máy `GP330 A/S` | ∅ | khác: ∅ | hãng: Scania |  | ⚠ không công suất
+  - nguồn: `| GP330 A/S | O | 300 | 330 | DC13 072A 02 11 | E | 6 | 45 | 150 | 3000 | 1100 | 2200 | 2050 | | | |`
+- **MỚI** n111 b12 dòng 4 engine `DC13 072A 02 11` | tổ máy `GP385 A/S` | ∅ | khác: ∅ | hãng: Scania |  | ⚠ không công suất
+  - nguồn: `| GP385 A/S | O | 350 | 385 | DC13 072A 02 11 | E | 6 | 54 | 170 | 3300 | 1100 | 2200 | 2840 | | | |`
+- **MỚI** n111 b12 dòng 6 engine `DC13 072A 02 11` | tổ máy `GP410 A/S` | ∅ | khác: ∅ | hãng: Scania |  | ⚠ không công suất
+  - nguồn: `| GP410 A/S | O | 373 | 410 | DC13 072A 02 11 | E | 6 | 57 | 170 | 3300 | 1100 | 2200 | 2980 | | | |`
+- **MỚI** n111 b12 dòng 8 engine `DC13 072A 02 12` | tổ máy `GP440 A/S` | ∅ | khác: ∅ | hãng: Scania |  | ⚠ không công suất
+  - nguồn: `| GP440 A/S | O | 400 | 440 | DC13 072A 02 12 | E | 6 | 61 | 170 | 3300 | 1100 | 2200 | 2980 | | | |`
+- **MỚI** n111 b12 dòng 10 engine `DC13 072A 02 13` | tổ máy `GP505 A/S` | ∅ | khác: ∅ | hãng: Scania |  | ⚠ không công suất
+  - nguồn: `| GP505 A/S | O | 450 | 500 | DC13 072A 02 13 | E | 6 | 67 | 170 | 3300 | 1100 | 2200 | 3060 | | | |`
+- **MỚI** n111 b12 dòng 12 engine `DC13 072A 02 14` | tổ máy `GP560 A/S` | ∅ | khác: ∅ | hãng: Scania |  | ⚠ không công suất
+  - nguồn: `| GP560 A/S | O | 500 | 550 | DC13 072A 02 14 | E | 8 | 72 | 170 | 3300 | 1100 | 2200 | 3120 | | | |`
+- **MỚI** n111 b12 dòng 14 engine `DC16 093A 02 52` | tổ máy `GP610 A/S` | ∅ | khác: ∅ | hãng: Scania |  | ⚠ không công suất
+  - nguồn: `| GP610 A/S | O | 550 | 600 | DC16 093A 02 52 | E | 8 | 83 | 320 | 3400 | 1400 | 2260 | 3950 | | | |`
+- **MỚI** n111 b12 dòng 16 engine `DC16 093A 02 54` | tổ máy `GP660 A/S` | ∅ | khác: ∅ | hãng: Scania |  | ⚠ không công suất
+  - nguồn: `| GP660 A/S | O | 600 | 660 | DC16 093A 02 54 | E | 8 | 91 | 320 | 3400 | 1400 | 2260 | 4000 | | | |`
+- **MỚI** n111 b12 dòng 18 engine `DC16 093A 02 54` | tổ máy `GP700 A/S` | ∅ | khác: ∅ | hãng: Scania |  | ⚠ không công suất
+  - nguồn: `| GP700 A/S | O | 640 | 704 | DC16 093A 02 54 | E | 8 | 94 | 320 | 3400 | 1400 | 2200 | 4230 | | | |`
+- **MỚI** n111 b12 dòng 20 engine `DC16 078A 02 42` | tổ máy `GP720 A/S` | ∅ | khác: ∅ | hãng: Scania |  | ⚠ không công suất
+  - nguồn: `| GP720 A/S | O | 650 | 715 | DC16 078A 02 42 | E | 8 | 98 | 320 | 3400 | 1400 | 2200 | 4230 | | | |`
+- **MỚI** n111 b12 dòng 22 engine `DC16 078A 02 43` | tổ máy `GP780 A/S` | ∅ | khác: ∅ | hãng: Scania |  | ⚠ không công suất
+  - nguồn: `| GP780 A/S | O | 700 | 770 | DC16 078A 02 43 | E | 8 | 106 | 320 | 3400 | 1400 | 2200 | 4350 | | | |`
+- **MỚI** n111 b12 dòng 24 engine `DC16 078A 02 44` | tổ máy `GP810 A/S` | ∅ | khác: ∅ | hãng: Scania |  | ⚠ không công suất
+  - nguồn: `| GP810 A/S | O | 725 | 800 | DC16 078A 02 44 | E | 8 | 123.8 | 320 | 3400 | 1400 | 2200 | 4590 | | | |`
+- **MỚI** n120 b21 dòng 0 engine `DC09 320A 02 61` | tổ máy `GP280 A/S-SV` | ∅ | khác: ∅ | hãng: Scania |  | ⚠ không công suất
+  - nguồn: `| GP280 A/S-SV | O | 250 | 275 | DC09 320A 02 61 | E | 5 | 39,4 | STAGE V | 300 | 60 | 3300 | 1100 | 2400 | N.A. | | | |`
+
+## huadong-yangzhou (mới 9, mất 0, đổi 0)
+
+- **MỚI** n106 b5 dòng 0 engine `DC9 65A 10-93` | tổ máy `HDSC250` | standby 275 kVA / 220 kW; rated 250 kVA / 200 kW | khác: ∅ | hãng: Scania | fuel=47; weight=2027; dims=3035×1210×1900
+  - nguồn: `| HDSC250 | 250/200 | 275/220 | 362 | 47 | DC9 65A 10-93 | 247 | 3035×1210×1900 | 2027`
+- **MỚI** n106 b5 dòng 2 engine `DC9 65A 10-94` | tổ máy `HDSC275` | standby 303 kVA / 242 kW; rated 275 kVA / 220 kW | khác: ∅ | hãng: Scania | fuel=52; weight=2300; dims=3140×1210×1900
+  - nguồn: `| HDSC275 | 275/220 | 303/242 | 398 | 52 | DC9 65A 10-94 | 269 | 3140×1210×1900 | 2300`
+- **MỚI** n106 b5 dòng 4 engine `DC9 65A 10-95` | tổ máy `HDSC300` | standby 330 kVA / 264 kW; rated 300 kVA / 240 kW | khác: ∅ | hãng: Scania | fuel=56; weight=2300; dims=3140×1210×1900
+  - nguồn: `| HDSC300 | 300/240 | 330/264 | 434 | 56 | DC9 65A 10-95 | 292 | 3140×1210×1900 | 2300`
+- **MỚI** n106 b5 dòng 6 engine `DC09 073A 02-24` | tổ máy `HDSC325` | standby 357 kVA / 286 kW; rated 325 kVA / 260 kW | khác: ∅ | hãng: Scania | fuel=61; weight=2390; dims=3140×1210×1900
+  - nguồn: `| HDSC325 | 325/260 | 357/286 | 471 | 61 | DC09 073A 02-24 | 317 | 3140×1210×1900 | 2390`
+- **MỚI** n106 b5 dòng 13 engine `DC13 073A 02-24` | tổ máy `HDSC500` | standby 550 kVA / 440 kW; rated 500 kVA / 400 kW | khác: ∅ | hãng: Scania | fuel=93; weight=3810; dims=3560×1205×2160
+  - nguồn: `| HDSC500 | 500/400 | 550/440 | 724 | 93 | DC13 073A 02-24 | 480 | 3560×1205×2160 | 3810`
+- **MỚI** n106 b5 dòng 15 engine `DC16 44A 10-27` | tổ máy `HDSC550` | standby 605 kVA / 484 kW; rated 550 kVA / 440 kW | khác: ∅ | hãng: Scania | fuel=102; weight=3958; dims=3570×1205×2210
+  - nguồn: `| HDSC550 | 550/440 | 605/484 | 796 | 102 | DC16 44A 10-27 | 523 | 3570×1205×2210 | 3958`
+- **MỚI** n106 b5 dòng 16 engine `DC16 072A 02-14` | tổ máy `HDSC600` | standby 660 kVA / 528 kW; rated 600 kVA / 480 kW | khác: ∅ | hãng: Scania | fuel=119; weight=4110; dims=3570×1205×2210
+  - nguồn: `| HDSC600 | 600/480 | 660/528 | 868 | 119 | DC16 072A 02-14 | 587 | 3570×1205×2210 | 4110`
+- **MỚI** n106 b5 dòng 17 engine `DC16 072A 02-15` | tổ máy `HDSC650` | standby 715 kVA / 572 kW; rated 650 kVA / 520 kW | khác: ∅ | hãng: Scania | fuel=129; weight=4260; dims=3680×1205×2210
+  - nguồn: `| HDSC650 | 650/520 | 715/572 | 942 | 129 | DC16 072A 02-15 | 634 | 3680×1205×2210 | 4260`
+- **MỚI** n106 b5 dòng 18 engine `DC16 072A 02-16` | tổ máy `HDSC700` | standby 770 kVA / 616 kW; rated 700 kVA / 560 kW | khác: ∅ | hãng: Scania | fuel=138; weight=4350; dims=3680×1205×2210
+  - nguồn: `| HDSC700 | 700/560 | 770/616 | 1014 | 138 | DC16 072A 02-16 | 680 | 3680×1205×2210 | 4350`
+
+## jinjia-power (mới 262, mất 0, đổi 0)
+
+- **MỚI** n101 b0 dòng 0 engine `4B3.9-G11` | tổ máy `JJC-20GF` | prime - kVA / 20 kW; standby 25 kVA / 22 kW | khác: ∅ | hãng: Cummins | cyl=4; disp=3.9; weight=700; dims=1650x720x1200; fuel=208 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-20GF | 20 | 22 | 25 | 4B3.9-G11 | 4 | 3.9 | 208 | 700 | 1650x720x1200`
+- **MỚI** n101 b0 dòng 1 engine `4B3.9-G2` | tổ máy `JJC-24GF` | prime - kVA / 24 kW; standby 30 kVA / 26.4 kW | khác: ∅ | hãng: Cummins | cyl=4; disp=3.9; weight=700; dims=1650x720x1200; fuel=208 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-24GF | 24 | 26.4 | 30 | 4B3.9-G2 | 4 | 3.9 | 208 | 700 | 1650x720x1200`
+- **MỚI** n101 b0 dòng 2 engine `4BT3.9-G2` | tổ máy `JJC-30GF` | prime - kVA / 30 kW; standby 37.5 kVA / 33 kW | khác: ∅ | hãng: Cummins | cyl=4; disp=3.9; weight=750; dims=1770x880x1450; fuel=208 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-30GF | 30 | 33 | 37.5 | 4BT3.9-G2 | 4 | 3.9 | 208 | 750 | 1770x880x1450`
+- **MỚI** n101 b0 dòng 3 engine `4BTA3.9-G2` | tổ máy `JJC-40GF` | prime - kVA / 40 kW; standby 50 kVA / 44 kW | khác: ∅ | hãng: Cummins | cyl=4; disp=3.9; weight=820; dims=1880x900x1300; fuel=210 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-40GF | 40 | 44 | 50 | 4BTA3.9-G2 | 4 | 3.9 | 210 | 820 | 1880x900x1300`
+- **MỚI** n101 b0 dòng 4 engine `4BTA3.9-G2` | tổ máy `JJC-50GF` | prime - kVA / 50 kW; standby 62.5 kVA / 55 kW | khác: ∅ | hãng: Cummins | cyl=4; disp=3.9; weight=850; dims=1880x900x1300; fuel=210 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-50GF | 50 | 55 | 62.5 | 4BTA3.9-G2 | 4 | 3.9 | 210 | 850 | 1880x900x1300`
+- **MỚI** n101 b0 dòng 5 engine `4BTA3.9-G11` | tổ máy `JJC-64GF` | prime - kVA / 64 kW; standby 80 kVA / 70.4 kW | khác: ∅ | hãng: Cummins | cyl=4; disp=3.9; weight=1000; dims=1850x800x1300; fuel=210 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-64GF | 64 | 70.4 | 80 | 4BTA3.9-G11 | 4 | 3.9 | 210 | 1000 | 1850x800x1300`
+- **MỚI** n101 b0 dòng 6 engine `6BT5.9-G2` | tổ máy `JJC-80GF` | prime - kVA / 80 kW; standby 100 kVA / 88 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=5.9; weight=1250; dims=2100x900x1400; fuel=210 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-80GF | 80 | 88 | 100 | 6BT5.9-G2 | 6 | 5.9 | 210 | 1250 | 2100x900x1400`
+- **MỚI** n101 b0 dòng 7 engine `6BTA5.9-G2` | tổ máy `JJC-100GF` | prime - kVA / 100 kW; standby 125 kVA / 110 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=5.9; weight=1300; dims=2230x1040x1480; fuel=207 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-100GF | 100 | 110 | 125 | 6BTA5.9-G2 | 6 | 5.9 | 207 | 1300 | 2230x1040x1480`
+- **MỚI** n101 b0 dòng 8 engine `6BTAA5.9-G2` | tổ máy `JJC-120GF` | prime - kVA / 120 kW; standby 150 kVA / 132 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=5.9; weight=1350; dims=2230x1040x1480; fuel=207 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-120GF | 120 | 132 | 150 | 6BTAA5.9-G2 | 6 | 5.9 | 207 | 1350 | 2230x1040x1480`
+- **MỚI** n101 b0 dòng 9 engine `6BTAA5.9-G12` | tổ máy `JJC-132GF` | prime - kVA / 132 kW; standby 165 kVA / 145.2 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=5.9; weight=1350; dims=2460x880x1480; fuel=207 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-132GF | 132 | 145.2 | 165 | 6BTAA5.9-G12 | 6 | 5.9 | 207 | 1350 | 2460x880x1480`
+- **MỚI** n101 b0 dòng 10 engine `6CTA8.3-G2` | tổ máy `JJC-150GF` | prime - kVA / 150 kW; standby 187.5 kVA / 165 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=8.3; weight=1650; dims=2370x1040x1640; fuel=207 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-150GF | 150 | 165 | 187.5 | 6CTA8.3-G2 | 6 | 8.3 | 207 | 1650 | 2370x1040x1640`
+- **MỚI** n101 b0 dòng 11 engine `6CTAA8.3-G2` | tổ máy `JJC-180GF` | prime - kVA / 180 kW; standby 225 kVA / 198 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=8.3; weight=1700; dims=2450x980x1510; fuel=207 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-180GF | 180 | 198 | 225 | 6CTAA8.3-G2 | 6 | 8.3 | 207 | 1700 | 2450x980x1510`
+- **MỚI** n101 b0 dòng 12 engine `6LTAA8.9-G2` | tổ máy `JJC-200GF` | prime - kVA / 200 kW; standby 250 kVA / 220 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=8.9; weight=1980; dims=2450x950x1550; fuel=207 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-200GF | 200 | 220 | 250 | 6LTAA8.9-G2 | 6 | 8.9 | 207 | 1980 | 2450x950x1550`
+- **MỚI** n101 b0 dòng 13 engine `6LTAA8.9-G3` | tổ máy `JJC-220GF` | prime - kVA / 220 kW; standby 275 kVA / 242 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=8.9; weight=2050; dims=2500x950x1550; fuel=203 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-220GF | 220 | 242 | 275 | 6LTAA8.9-G3 | 6 | 8.9 | 203 | 2050 | 2500x950x1550`
+- **MỚI** n101 b0 dòng 14 engine `6ZTAA13-G2` | tổ máy `JJC-250GF` | prime - kVA / 250 kW; standby 312.5 kVA / 275 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=13; weight=2900; dims=2900x1200x1750; fuel=202 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-250GF | 250 | 275 | 312.5 | 6ZTAA13-G2 | 6 | 13 | 202 | 2900 | 2900x1200x1750`
+- **MỚI** n101 b0 dòng 15 engine `6ZTAA13-G3` | tổ máy `JJC-280GF` | prime - kVA / 280 kW; standby 350 kVA / 308 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=13; weight=3000; dims=2900x1200x1750; fuel=202 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-280GF | 280 | 308 | 350 | 6ZTAA13-G3 | 6 | 13 | 202 | 3000 | 2900x1200x1750`
+- **MỚI** n101 b0 dòng 16 engine `6ZTAA13-G3` | tổ máy `JJC-300GF` | prime - kVA / 300 kW; standby 375 kVA / 330 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=13; weight=3000; dims=2900x1200x1750; fuel=202 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-300GF | 300 | 330 | 375 | 6ZTAA13-G3 | 6 | 13 | 202 | 3000 | 2900x1200x1750`
+- **MỚI** n101 b0 dòng 17 engine `6ZTAA13-G3` | tổ máy `JJC-320GF` | prime - kVA / 320 kW; standby 400 kVA / 352 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=13; weight=3000; dims=2900x1200x1750; fuel=202 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-320GF | 320 | 352 | 400 | 6ZTAA13-G3 | 6 | 13 | 202 | 3000 | 2900x1200x1750`
+- **MỚI** n101 b0 dòng 18 engine `QSZ13-G2` | tổ máy `JJC-360GF` | prime - kVA / 360 kW; standby 450 kVA / 396 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=13; weight=3100; dims=3150x1350x1800; fuel=202 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-360GF | 360 | 396 | 450 | QSZ13-G2 | 6 | 13 | 202 | 3100 | 3150x1350x1800`
+- **MỚI** n101 b0 dòng 19 engine `QSZ13-G2` | tổ máy `JJC-400GF` | prime - kVA / 400 kW; standby 500 kVA / 440 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=13; weight=3200; dims=3150x1350x1800; fuel=201 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-400GF | 400 | 440 | 500 | QSZ13-G2 | 6 | 13 | 201 | 3200 | 3150x1350x1800`
+- **MỚI** n101 b0 dòng 20 engine `QSZ13-G3` | tổ máy `JJC-450GF` | prime - kVA / 450 kW; standby 562.5 kVA / 495 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=13; weight=3250; dims=3150x1350x1800; fuel=201 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-450GF | 450 | 495 | 562.5 | QSZ13-G3 | 6 | 13 | 201 | 3250 | 3150x1350x1800`
+- **MỚI** n101 b0 dòng 21 engine `NT855-GA` | tổ máy `JJC-200GF` | prime - kVA / 200 kW; standby 250 kVA / 220 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=14; weight=2600; dims=2910x1100x1700; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-200GF | 200 | 220 | 250 | NT855-GA | 6 | 14 | 206 | 2600 | 2910x1100x1700`
+- **MỚI** n101 b0 dòng 22 engine `NTA855-G1A` | tổ máy `JJC-250GF` | prime - kVA / 250 kW; standby 312.5 kVA / 275 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=14; weight=2880; dims=3100x1050x1750; fuel=207 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-250GF | 250 | 275 | 312.5 | NTA855-G1A | 6 | 14 | 207 | 2880 | 3100x1050x1750`
+- **MỚI** n101 b0 dòng 23 engine `NTA855-G1B` | tổ máy `JJC-256GF` | prime - kVA / 256 kW; standby 320 kVA / 281.6 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=14; weight=2950; dims=3050x1100x1780; fuel=207 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-256GF | 256 | 281.6 | 320 | NTA855-G1B | 6 | 14 | 207 | 2950 | 3050x1100x1780`
+- **MỚI** n101 b0 dòng 24 engine `NTA855-G2A` | tổ máy `JJC-275GF` | prime - kVA / 275 kW; standby 344 kVA / 302.5 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=14; weight=3000; dims=3200x1050x1750; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-275GF | 275 | 302.5 | 344 | NTA855-G2A | 6 | 14 | 206 | 3000 | 3200x1050x1750`
+- **MỚI** n101 b0 dòng 25 engine `MTAA11-G3` | tổ máy `JJC-280GF` | prime - kVA / 280 kW; standby 350 kVA / 308 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=11; weight=2900; dims=3100x1050x1750; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-280GF | 280 | 308 | 350 | MTAA11-G3 | 6 | 11 | 206 | 2900 | 3100x1050x1750`
+- **MỚI** n101 b0 dòng 26 engine `NTAA855-G7` | tổ máy `JJC-300GF` | prime - kVA / 300 kW; standby 375 kVA / 330 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=14; weight=3100; dims=3200x1100x1800; fuel=205 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-300GF | 300 | 330 | 375 | NTAA855-G7 | 6 | 14 | 205 | 3100 | 3200x1100x1800`
+- **MỚI** n101 b0 dòng 27 engine `NTA855-G4` | tổ máy `JJC-320GF` | prime - kVA / 320 kW; standby 400 kVA / 352 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=14; weight=3100; dims=3200x1100x1800; fuel=205 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-320GF | 320 | 352 | 400 | NTA855-G4 | 6 | 14 | 205 | 3100 | 3200x1100x1800`
+- **MỚI** n101 b0 dòng 28 engine `NTAA855-G7A` | tổ máy `JJC-350GF` | prime - kVA / 350 kW; standby 437.5 kVA / 385 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=14; weight=3200; dims=3300x1250x1850; fuel=205 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-350GF | 350 | 385 | 437.5 | NTAA855-G7A | 6 | 14 | 205 | 3200 | 3300x1250x1850`
+- **MỚI** n101 b0 dòng 29 engine `KTA19-G3` | tổ máy `JJC-360GF` | prime - kVA / 360 kW; standby 450 kVA / 396 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=19; weight=3700; dims=3460x1360x1970; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-360GF | 360 | 396 | 450 | KTA19-G3 | 6 | 19 | 206 | 3700 | 3460x1360x1970`
+- **MỚI** n101 b0 dòng 30 engine `KTA19-G3A` | tổ máy `JJC-400GF` | prime - kVA / 400 kW; standby 500 kVA / 440 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=19; weight=3700; dims=3460x1360x1970; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-400GF | 400 | 440 | 500 | KTA19-G3A | 6 | 19 | 206 | 3700 | 3460x1360x1970`
+- **MỚI** n101 b0 dòng 31 engine `KTA19-G3A` | tổ máy `JJC-450GF` | prime - kVA / 450 kW; standby 562.5 kVA / 495 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=19; weight=3750; dims=3460x1360x1900; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-450GF | 450 | 495 | 562.5 | KTA19-G3A | 6 | 19 | 206 | 3750 | 3460x1360x1900`
+- **MỚI** n101 b0 dòng 32 engine `KTAA19-G6` | tổ máy `JJC-460GF` | prime - kVA / 460 kW; standby 575 kVA / 506 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=19; weight=4200; dims=3500x1500x2000; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-460GF | 460 | 506 | 575 | KTAA19-G6 | 6 | 19 | 206 | 4200 | 3500x1500x2000`
+- **MỚI** n101 b0 dòng 33 engine `KTA19-G8` | tổ máy `JJC-480GF` | prime - kVA / 480 kW; standby 600 kVA / 528 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=19; weight=4200; dims=3500x1500x2000; fuel=204 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-480GF | 480 | 528 | 600 | KTA19-G8 | 6 | 19 | 204 | 4200 | 3500x1500x2000`
+- **MỚI** n101 b0 dòng 34 engine `KTA19-G8` | tổ máy `JJC-500GF` | prime - kVA / 500 kW; standby 625 kVA / 550 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=19; weight=4260; dims=3500x1500x2000; fuel=204 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-500GF | 500 | 550 | 625 | KTA19-G8 | 6 | 19 | 204 | 4260 | 3500x1500x2000`
+- **MỚI** n101 b0 dòng 35 engine `QSK19-G4` | tổ máy `JJC-520GF` | prime - kVA / 520 kW; standby 650 kVA / 572 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=19; weight=4500; dims=3600x1500x2000; fuel=204 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-520GF | 520 | 572 | 650 | QSK19-G4 | 6 | 19 | 204 | 4500 | 3600x1500x2000`
+- **MỚI** n101 b0 dòng 36 engine `KTAA19-G6A` | tổ máy `JJC-530GF` | prime - kVA / 530 kW; standby 662.5 kVA / 583 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=19; weight=4800; dims=3600x1500x2000; fuel=204 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-530GF | 530 | 583 | 662.5 | KTAA19-G6A | 6 | 19 | 204 | 4800 | 3600x1500x2000`
+- **MỚI** n101 b0 dòng 37 engine `QSK19-G4` | tổ máy `JJC-560GF` | prime - kVA / 560 kW; standby 700 kVA / 616 kW | khác: ∅ | hãng: Cummins | cyl=6; disp=19; weight=4800; dims=3600x1500x2000; fuel=204 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-560GF | 560 | 616 | 700 | QSK19-G4 | 6 | 19 | 204 | 4800 | 3600x1500x2000`
+- **MỚI** n101 b0 dòng 38 engine `KTA38-G1` | tổ máy `JJC-570GF` | prime - kVA / 570 kW; standby 712 kVA / 627 kW | khác: ∅ | hãng: Cummins | cyl=12; disp=38; weight=7000; dims=4300x1700x2350; fuel=204 | ⚠ standby kW/kVA=0.88; prime > standby
+  - nguồn: `| JJC-570GF | 570 | 627 | 712 | KTA38-G1 | 12 | 38 | 204 | 7000 | 4300x1700x2350`
+- **MỚI** n101 b0 dòng 39 engine `KTA38-G2` | tổ máy `JJC-600GF` | prime - kVA / 600 kW; standby 750 kVA / 660 kW | khác: ∅ | hãng: Cummins | cyl=12; disp=38; weight=7500; dims=4300x1700x2400; fuel=205 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-600GF | 600 | 660 | 750 | KTA38-G2 | 12 | 38 | 205 | 7500 | 4300x1700x2400`
+- **MỚI** n101 b0 dòng 40 engine `KTA38-G2` | tổ máy `JJC-640GF` | prime - kVA / 640 kW; standby 800 kVA / 704 kW | khác: ∅ | hãng: Cummins | cyl=12; disp=38; weight=7500; dims=4300x1700x2400; fuel=205 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-640GF | 640 | 704 | 800 | KTA38-G2 | 12 | 38 | 205 | 7500 | 4300x1700x2400`
+- **MỚI** n101 b0 dòng 41 engine `KTA38-G2B` | tổ máy `JJC-700GF` | prime - kVA / 700 kW; standby 875 kVA / 770 kW | khác: ∅ | hãng: Cummins | cyl=12; disp=38; weight=8000; dims=4400x1750x2450; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-700GF | 700 | 770 | 875 | KTA38-G2B | 12 | 38 | 206 | 8000 | 4400x1750x2450`
+- **MỚI** n101 b0 dòng 42 engine `KTA38-G2A` | tổ máy `JJC-800GF` | prime - kVA / 800 kW; standby 1000 kVA / 880 kW | khác: ∅ | hãng: Cummins | cyl=12; disp=38; weight=8100; dims=4400x2060x2300; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-800GF | 800 | 880 | 1000 | KTA38-G2A | 12 | 38 | 206 | 8100 | 4400x2060x2300`
+- **MỚI** n101 b0 dòng 43 engine `KTA38-G5` | tổ máy `JJC-824GF` | prime - kVA / 824 kW; standby 1030 kVA / 906.4 kW | khác: ∅ | hãng: Cummins | cyl=12; disp=38; weight=8100; dims=4400x2060x2300; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-824GF | 824 | 906.4 | 1030 | KTA38-G5 | 12 | 38 | 206 | 8100 | 4400x2060x2300`
+- **MỚI** n101 b0 dòng 44 engine `KTA38-G9` | tổ máy `JJC-900GF` | prime - kVA / 900 kW; standby 1125 kVA / 990 kW | khác: ∅ | hãng: Cummins | cyl=12; disp=38; weight=8200; dims=4350x2050x2250; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-900GF | 900 | 990 | 1125 | KTA38-G9 | 12 | 38 | 206 | 8200 | 4350x2050x2250`
+- **MỚI** n101 b0 dòng 45 engine `KTA38-G9` | tổ máy `JJC-1000GF` | prime - kVA / 1000 kW; standby 1250 kVA / 1100 kW | khác: ∅ | hãng: Cummins | cyl=12; disp=38; weight=9200; dims=4350x2050x2250; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-1000GF | 1000 | 1100 | 1250 | KTA38-G9 | 12 | 38 | 206 | 9200 | 4350x2050x2250`
+- **MỚI** n101 b0 dòng 46 engine `KTA50-G3` | tổ máy `JJC-1100GF` | prime - kVA / 1100 kW; standby 1375 kVA / 1210 kW | khác: ∅ | hãng: Cummins | cyl=16; disp=50; weight=9800; dims=5000x2000x2500; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-1100GF | 1100 | 1210 | 1375 | KTA50-G3 | 16 | 50 | 206 | 9800 | 5000x2000x2500`
+- **MỚI** n101 b0 dòng 47 engine `KTA50-G8` | tổ máy `JJC-1200GF` | prime - kVA / 1200 kW; standby 1500 kVA / 1320 kW | khác: ∅ | hãng: Cummins | cyl=16; disp=50; weight=10500; dims=5600x2140x2630; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-1200GF | 1200 | 1320 | 1500 | KTA50-G8 | 16 | 50 | 206 | 10500 | 5600x2140x2630`
+- **MỚI** n101 b0 dòng 48 engine `KTA50-G8` | tổ máy `JJC-1340GF` | prime - kVA / 1340 kW; standby 1675 kVA / 1474 kW | khác: ∅ | hãng: Cummins | cyl=16; disp=50; weight=10800; dims=5600x2140x2630; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-1340GF | 1340 | 1474 | 1675 | KTA50-G8 | 16 | 50 | 206 | 10800 | 5600x2140x2630`
+- **MỚI** n101 b0 dòng 49 engine `KTA50-G15A` | tổ máy `JJC-1500GF` | prime - kVA / 1500 kW; standby 1875 kVA / 1650 kW | khác: ∅ | hãng: Cummins | cyl=16; disp=50; weight=11500; dims=5700x2200x2700; fuel=204 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-1500GF | 1500 | 1650 | 1875 | KTA50-G15A | 16 | 50 | 204 | 11500 | 5700x2200x2700`
+- **MỚI** n101 b0 dòng 50 engine `KTA50-G16A` | tổ máy `JJC-1600GF` | prime - kVA / 1600 kW; standby 2000 kVA / 1760 kW | khác: ∅ | hãng: Cummins | cyl=16; disp=50; weight=13000; dims=5800x2300x2800; fuel=204 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-1600GF | 1600 | 1760 | 2000 | KTA50-G16A | 16 | 50 | 204 | 13000 | 5800x2300x2800`
+- **MỚI** n101 b0 dòng 51 engine `QSK60-G3` | tổ máy `JJC-1600GF` | prime - kVA / 1600 kW; standby 2000 kVA / 1760 kW | khác: ∅ | hãng: Cummins | cyl=16; disp=60.2; weight=14000; dims=6200x2300x2800; fuel=208 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-1600GF | 1600 | 1760 | 2000 | QSK60-G3 | 16 | 60.2 | 208 | 14000 | 6200x2300x2800`
+- **MỚI** n101 b0 dòng 52 engine `QSK60-G4` | tổ máy `JJC-1800GF` | prime - kVA / 1800 kW; standby 2250 kVA / 1980 kW | khác: ∅ | hãng: Cummins | cyl=16; disp=60.2; weight=15000; dims=6300x2300x2800; fuel=208 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-1800GF | 1800 | 1980 | 2250 | QSK60-G4 | 16 | 60.2 | 208 | 15000 | 6300x2300x2800`
+- **MỚI** n101 b0 dòng 53 engine `QSK60-G5` | tổ máy `JJC-2000GF` | prime - kVA / 2000 kW; standby 2500 kVA / 2200 kW | khác: ∅ | hãng: Cummins | cyl=16; disp=60.2; weight=16000; dims=6500x2400x2900; fuel=210 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-2000GF | 2000 | 2200 | 2500 | QSK60-G5 | 16 | 60.2 | 210 | 16000 | 6500x2400x2900`
+- **MỚI** n101 b0 dòng 54 engine `QSK60-G6` | tổ máy `JJC-2200GF` | prime - kVA / 2200 kW; standby 2750 kVA / 2420 kW | khác: ∅ | hãng: Cummins | cyl=16; disp=60.2; weight=17000; dims=6600x2400x2900; fuel=210 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-2200GF | 2200 | 2420 | 2750 | QSK60-G6 | 16 | 60.2 | 210 | 17000 | 6600x2400x2900`
+- **MỚI** n101 b0 dòng 55 engine `QSK78-G` | tổ máy `JJC-2500GF` | prime - kVA / 2500 kW; standby 3125 kVA / 2750 kW | khác: ∅ | hãng: Cummins | cyl=18; disp=78; weight=20000; dims=7200x2600x3100; fuel=215 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-2500GF | 2500 | 2750 | 3125 | QSK78-G | 18 | 78 | 215 | 20000 | 7200x2600x3100`
+- **MỚI** n101 b0 dòng 56 engine `QSK78-G` | tổ máy `JJC-2800GF` | prime - kVA / 2800 kW; standby 3500 kVA / 3080 kW | khác: ∅ | hãng: Cummins | cyl=18; disp=78; weight=22000; dims=7400x2600x3200; fuel=215 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-2800GF | 2800 | 3080 | 3500 | QSK78-G | 18 | 78 | 215 | 22000 | 7400x2600x3200`
+- **MỚI** n101 b0 dòng 57 engine `QSK95-G` | tổ máy `JJC-3000GF` | prime - kVA / 3000 kW; standby 3750 kVA / 3300 kW | khác: ∅ | hãng: Cummins | cyl=16; disp=95; weight=25000; dims=7800x2800x3400; fuel=220 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJC-3000GF | 3000 | 3300 | 3750 | QSK95-G | 16 | 95 | 220 | 25000 | 7800x2800x3400`
+- **MỚI** n102 b1 dòng 0 engine `YC6B135Z-D20` | tổ máy `JJY-90GF` | prime - kVA / 90 kW; standby 112.5 kVA / 99 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=6.87; weight=1300; dims=2250×800×1300; fuel=197 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-90GF | 90 | 99 | 112.5 | YC6B135Z-D20 | 6 | 6.87 | 197 | 1300 | 2250×800×1300`
+- **MỚI** n102 b1 dòng 1 engine `YC6B155L-D21` | tổ máy `JJY-100GF` | prime - kVA / 100 kW; standby 125 kVA / 110 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=6.87; weight=1500; dims=2300×800×1300; fuel=196 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-100GF | 100 | 110 | 125 | YC6B155L-D21 | 6 | 6.87 | 196 | 1500 | 2300×800×1300`
+- **MỚI** n102 b1 dòng 2 engine `YC6B180L-D20` | tổ máy `JJY-120GF` | prime - kVA / 120 kW; standby 150 kVA / 132 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=6.87; weight=1600; dims=2350×830×1300; fuel=196 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-120GF | 120 | 132 | 150 | YC6B180L-D20 | 6 | 6.87 | 196 | 1600 | 2350×830×1300`
+- **MỚI** n102 b1 dòng 3 engine `YC6B205L-D20` | tổ máy `JJY-132GF` | prime - kVA / 132 kW; standby 165 kVA / 145 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=6.87; weight=1700; dims=2500×850×1300; fuel=196 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-132GF | 132 | 145 | 165 | YC6B205L-D20 | 6 | 6.87 | 196 | 1700 | 2500×850×1300`
+- **MỚI** n102 b1 dòng 4 engine `YC6A230L-D20` | tổ máy `JJY-150GF` | prime - kVA / 150 kW; standby 187.5 kVA / 165 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=7.26; weight=2100; dims=2550×900×1350; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-150GF | 150 | 165 | 187.5 | YC6A230L-D20 | 6 | 7.26 | 195 | 2100 | 2550×900×1350`
+- **MỚI** n102 b1 dòng 5 engine `YC6A245L-D21` | tổ máy `JJY-160GF` | prime - kVA / 160 kW; standby 200 kVA / 176 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=7.26; weight=2300; dims=2500×970×1500; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-160GF | 160 | 176 | 200 | YC6A245L-D21 | 6 | 7.26 | 195 | 2300 | 2500×970×1500`
+- **MỚI** n102 b1 dòng 6 engine `YC6MK285L-D20` | tổ máy `JJY-180GF` | prime - kVA / 180 kW; standby 225 kVA / 198 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=10.33; weight=2600; dims=3000×1030×1600; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-180GF | 180 | 198 | 225 | YC6MK285L-D20 | 6 | 10.33 | 195 | 2600 | 3000×1030×1600`
+- **MỚI** n102 b1 dòng 7 engine `YC6MK350L-D20` | tổ máy `JJY-200GF` | prime - kVA / 200 kW; standby 250 kVA / 220 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=10.33; weight=2750; dims=3000×1050×1650; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-200GF | 200 | 220 | 250 | YC6MK350L-D20 | 6 | 10.33 | 195 | 2750 | 3000×1050×1650`
+- **MỚI** n102 b1 dòng 8 engine `YC6MK420L-D20` | tổ máy `JJY-220GF` | prime - kVA / 220 kW; standby 275 kVA / 242 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=10.33; weight=2800; dims=3020×1050×1650; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-220GF | 220 | 242 | 275 | YC6MK420L-D20 | 6 | 10.33 | 195 | 2800 | 3020×1050×1650`
+- **MỚI** n102 b1 dòng 9 engine `YC6MK420L-D20` | tổ máy `JJY-250GF` | prime - kVA / 250 kW; standby 312.5 kVA / 275 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=10.33; weight=3000; dims=3050×1150×1750; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-250GF | 250 | 275 | 312.5 | YC6MK420L-D20 | 6 | 10.33 | 195 | 3000 | 3050×1150×1750`
+- **MỚI** n102 b1 dòng 10 engine `YC6MJ480L-D20` | tổ máy `JJY-280GF` | prime - kVA / 280 kW; standby 350 kVA / 308 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=11.73; weight=3050; dims=3100×1150×1750; fuel=215 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-280GF | 280 | 308 | 350 | YC6MJ480L-D20 | 6 | 11.73 | 215 | 3050 | 3100×1150×1750`
+- **MỚI** n102 b1 dòng 11 engine `YC6MJ480L-D20` | tổ máy `JJY-300GF` | prime - kVA / 300 kW; standby 375 kVA / 330 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=11.73; weight=3100; dims=3100×1150×1750; fuel=215 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-300GF | 300 | 330 | 375 | YC6MJ480L-D20 | 6 | 11.73 | 215 | 3100 | 3100×1150×1750`
+- **MỚI** n102 b1 dòng 12 engine `YC6K520-D30` | tổ máy `JJY-320GF` | prime - kVA / 320 kW; standby 400 kVA / 352 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=12.15; weight=3500; dims=3300×1250×1850; fuel=205 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-320GF | 320 | 352 | 400 | YC6K520-D30 | 6 | 12.15 | 205 | 3500 | 3300×1250×1850`
+- **MỚI** n102 b1 dòng 13 engine `YC6K570-D30` | tổ máy `JJY-350GF` | prime - kVA / 350 kW; standby 437.5 kVA / 385 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=12.94; weight=3500; dims=3350×1250×1850; fuel=205 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-350GF | 350 | 385 | 437.5 | YC6K570-D30 | 6 | 12.94 | 205 | 3500 | 3350×1250×1850`
+- **MỚI** n102 b1 dòng 14 engine `YC6K570-D30` | tổ máy `JJY-380GF` | prime - kVA / 380 kW; standby 475 kVA / 418 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=12.94; weight=3500; dims=3350×1250×1850; fuel=205 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-380GF | 380 | 418 | 475 | YC6K570-D30 | 6 | 12.94 | 205 | 3500 | 3350×1250×1850`
+- **MỚI** n102 b1 dòng 15 engine `YC6T600L-D22` | tổ máy `JJY-400GF` | prime - kVA / 400 kW; standby 500 kVA / 440 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=16.35; weight=3900; dims=3460×1350×1850; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-400GF | 400 | 440 | 500 | YC6T600L-D22 | 6 | 16.35 | 195 | 3900 | 3460×1350×1850`
+- **MỚI** n102 b1 dòng 16 engine `YC6T660L-D20` | tổ máy `JJY-440GF` | prime - kVA / 440 kW; standby 550 kVA / 484 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=16.35; weight=3950; dims=3500×1500×1950; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-440GF | 440 | 484 | 550 | YC6T660L-D20 | 6 | 16.35 | 195 | 3950 | 3500×1500×1950`
+- **MỚI** n102 b1 dòng 17 engine `YC6TD780L-D20` | tổ máy `JJY-500GF` | prime - kVA / 500 kW; standby 625 kVA / 550 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=19.6; weight=4100; dims=3600×1500×1950; fuel=225 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-500GF | 500 | 550 | 625 | YC6TD780L-D20 | 6 | 19.6 | 225 | 4100 | 3600×1500×1950`
+- **MỚI** n102 b1 dòng 18 engine `YC6TD840L-D20` | tổ máy `JJY-550GF` | prime - kVA / 550 kW; standby 687.5 kVA / 605 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=19.6; weight=4200; dims=3650×1600×2000; fuel=225 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-550GF | 550 | 605 | 687.5 | YC6TD840L-D20 | 6 | 19.6 | 225 | 4200 | 3650×1600×2000`
+- **MỚI** n102 b1 dòng 19 engine `YC6TD900-D31` | tổ máy `JJY-600GF` | prime - kVA / 600 kW; standby 750 kVA / 660 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=19.6; weight=4500; dims=3750×1650×2000; fuel=225 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-600GF | 600 | 660 | 750 | YC6TD900-D31 | 6 | 19.6 | 225 | 4500 | 3750×1650×2000`
+- **MỚI** n102 b1 dòng 20 engine `YC6TD1000-D30` | tổ máy `JJY-650GF` | prime - kVA / 650 kW; standby 812.5 kVA / 715 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=19.6; weight=4650; dims=3750×1650×2000; fuel=225 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-650GF | 650 | 715 | 812.5 | YC6TD1000-D30 | 6 | 19.6 | 225 | 4650 | 3750×1650×2000`
+- **MỚI** n102 b1 dòng 21 engine `YC6C1020-D31` | tổ máy `JJY-700GF` | prime - kVA / 700 kW; standby 875 kVA / 770 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=39.58; weight=5500; dims=4000×1650×2100; fuel=220 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-700GF | 700 | 770 | 875 | YC6C1020-D31 | 6 | 39.58 | 220 | 5500 | 4000×1650×2100`
+- **MỚI** n102 b1 dòng 22 engine `YC6C1220-D31` | tổ máy `JJY-800GF` | prime - kVA / 800 kW; standby 1000 kVA / 880 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=39.58; weight=8050; dims=4620×1800×2600; fuel=220 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-800GF | 800 | 880 | 1000 | YC6C1220-D31 | 6 | 39.58 | 220 | 8050 | 4620×1800×2600`
+- **MỚI** n102 b1 dòng 23 engine `YC6C1320-D31` | tổ máy `JJY-880GF` | prime - kVA / 880 kW; standby 1100 kVA / 968 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=39.58; weight=8550; dims=5200×2150×2600; fuel=220 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-880GF | 880 | 968 | 1100 | YC6C1320-D31 | 6 | 39.58 | 220 | 8550 | 5200×2150×2600`
+- **MỚI** n102 b1 dòng 24 engine `YC6C1520-D31` | tổ máy `JJY-1000GF` | prime - kVA / 1000 kW; standby 1250 kVA / 1100 kW | khác: ∅ | hãng: Yuchai | cyl=6; disp=39.58; weight=8680; dims=5280×2150×2600; fuel=220 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-1000GF | 1000 | 1100 | 1250 | YC6C1520-D31 | 6 | 39.58 | 220 | 8680 | 5280×2150×2600`
+- **MỚI** n102 b1 dòng 25 engine `YC12VC1680-D31` | tổ máy `JJY-1100GF` | prime - kVA / 1100 kW; standby 1375 kVA / 1210 kW | khác: ∅ | hãng: Yuchai | cyl=12; disp=79.17; weight=9800; dims=5400×2150×2600; fuel=210 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-1100GF | 1100 | 1210 | 1375 | YC12VC1680-D31 | 12 | 79.17 | 210 | 9800 | 5400×2150×2600`
+- **MỚI** n102 b1 dòng 26 engine `YC12VC2070-D31` | tổ máy `JJY-1200GF` | prime - kVA / 1200 kW; standby 1500 kVA / 1320 kW | khác: ∅ | hãng: Yuchai | cyl=12; disp=79.17; weight=10050; dims=5400×2300×2600; fuel=210 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-1200GF | 1200 | 1320 | 1500 | YC12VC2070-D31 | 12 | 79.17 | 210 | 10050 | 5400×2300×2600`
+- **MỚI** n102 b1 dòng 27 engine `YC12VC2070-D31` | tổ máy `JJY-1320GF` | prime - kVA / 1320 kW; standby 1650 kVA / 1452 kW | khác: ∅ | hãng: Yuchai | cyl=12; disp=79.17; weight=10100; dims=5400×2300×2600; fuel=210 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-1320GF | 1320 | 1452 | 1650 | YC12VC2070-D31 | 12 | 79.17 | 210 | 10100 | 5400×2300×2600`
+- **MỚI** n102 b1 dòng 28 engine `YC12VC2270-D31` | tổ máy `JJY-1500GF` | prime - kVA / 1500 kW; standby 1875 kVA / 1650 kW | khác: ∅ | hãng: Yuchai | cyl=12; disp=79.17; weight=12000; dims=5600×2280×2600; fuel=210 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-1500GF | 1500 | 1650 | 1875 | YC12VC2270-D31 | 12 | 79.17 | 210 | 12000 | 5600×2280×2600`
+- **MỚI** n102 b1 dòng 29 engine `YC12VC2510-D31` | tổ máy `JJY-1600GF` | prime - kVA / 1600 kW; standby 2000 kVA / 1760 kW | khác: ∅ | hãng: Yuchai | cyl=12; disp=79.17; weight=12500; dims=5600×2280×2600; fuel=210 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-1600GF | 1600 | 1760 | 2000 | YC12VC2510-D31 | 12 | 79.17 | 210 | 12500 | 5600×2280×2600`
+- **MỚI** n102 b1 dòng 30 engine `YC12VC2700-D31` | tổ máy `JJY-1800GF` | prime - kVA / 1800 kW; standby 2250 kVA / 1980 kW | khác: ∅ | hãng: Yuchai | cyl=12; disp=79.17; weight=13200; dims=5650×2350×2600; fuel=210 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-1800GF | 1800 | 1980 | 2250 | YC12VC2700-D31 | 12 | 79.17 | 210 | 13200 | 5650×2350×2600`
+- **MỚI** n102 b1 dòng 31 engine `YC16VC3000-D31` | tổ máy `JJY-2000GF` | prime - kVA / 2000 kW; standby 2500 kVA / 2200 kW | khác: ∅ | hãng: Yuchai | cyl=16; disp=105.6; weight=17500; dims=7350×2670×2950; fuel=196 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-2000GF | 2000 | 2200 | 2500 | YC16VC3000-D31 | 16 | 105.6 | 196 | 17500 | 7350×2670×2950`
+- **MỚI** n102 b1 dòng 32 engine `YC16VC3300-D31` | tổ máy `JJY-2200GF` | prime - kVA / 2200 kW; standby 2750 kVA / 2420 kW | khác: ∅ | hãng: Yuchai | cyl=16; disp=105.6; weight=17580; dims=7350×2670×2950; fuel=196 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-2200GF | 2200 | 2420 | 2750 | YC16VC3300-D31 | 16 | 105.6 | 196 | 17580 | 7350×2670×2950`
+- **MỚI** n102 b1 dòng 33 engine `YC16VC3600-D31` | tổ máy `JJY-2400GF` | prime - kVA / 2400 kW; standby 3000 kVA / 2640 kW | khác: ∅ | hãng: Yuchai | cyl=16; disp=105.6; weight=19200; dims=7400×3100×3300; fuel=196 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJY-2400GF | 2400 | 2640 | 3000 | YC16VC3600-D31 | 16 | 105.6 | 196 | 19200 | 7400×3100×3300`
+- **MỚI** n103 b2 dòng 0 engine `TAD550GE` | tổ máy `JJV-80GF` | prime - kVA / 80 kW; standby 100 kVA / 88 kW | khác: ∅ | hãng: Volvo Penta | cyl=4; disp=4.76; weight=1030; dims=2100×700×1450; fuel=213 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJV-80GF | 80 | 88 | 100 | TAD550GE | 4 | 4.76 | 213 | 1030 | 2100×700×1450`
+- **MỚI** n103 b2 dòng 1 engine `TAD551GE` | tổ máy `JJV-90GF` | prime - kVA / 90 kW; standby 112.5 kVA / 99 kW | khác: ∅ | hãng: Volvo Penta | cyl=4; disp=4.76; weight=1150; dims=2100×960×1450; fuel=214 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJV-90GF | 90 | 99 | 112.5 | TAD551GE | 4 | 4.76 | 214 | 1150 | 2100×960×1450`
+- **MỚI** n103 b2 dòng 2 engine `TAD750GE` | tổ máy `JJV-112GF` | prime - kVA / 112 kW; standby 140 kVA / 123 kW | khác: ∅ | hãng: Volvo Penta | cyl=6; disp=7.15; weight=1200; dims=2500×1020×1500; fuel=214 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJV-112GF | 112 | 123 | 140 | TAD750GE | 6 | 7.15 | 214 | 1200 | 2500×1020×1500`
+- **MỚI** n103 b2 dòng 3 engine `TAD752GE` | tổ máy `JJV-128GF` | prime - kVA / 128 kW; standby 160 kVA / 141 kW | khác: ∅ | hãng: Volvo Penta | cyl=6; disp=7.15; weight=1700; dims=2520×1060×1530; fuel=213 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJV-128GF | 128 | 141 | 160 | TAD752GE | 6 | 7.15 | 213 | 1700 | 2520×1060×1530`
+- **MỚI** n103 b2 dòng 4 engine `TAD753GE` | tổ máy `JJV-160GF` | prime - kVA / 160 kW; standby 200 kVA / 176 kW | khác: ∅ | hãng: Volvo Penta | cyl=6; disp=7.15; weight=1800; dims=2550×1060×1530; fuel=216 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJV-160GF | 160 | 176 | 200 | TAD753GE | 6 | 7.15 | 216 | 1800 | 2550×1060×1530`
+- **MỚI** n103 b2 dòng 5 engine `TAD754GE` | tổ máy `JJV-180GF` | prime - kVA / 180 kW; standby 225 kVA / 198 kW | khác: ∅ | hãng: Volvo Penta | cyl=6; disp=7.15; weight=1900; dims=2600×1100×1530; fuel=204 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJV-180GF | 180 | 198 | 225 | TAD754GE | 6 | 7.15 | 204 | 1900 | 2600×1100×1530`
+- **MỚI** n103 b2 dòng 6 engine `TAD754GE` | tổ máy `JJV-200GF` | prime - kVA / 200 kW; standby 250 kVA / 220 kW | khác: ∅ | hãng: Volvo Penta | cyl=6; disp=7.15; weight=1950; dims=2600×1100×1530; fuel=204 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJV-200GF | 200 | 220 | 250 | TAD754GE | 6 | 7.15 | 204 | 1950 | 2600×1100×1530`
+- **MỚI** n103 b2 dòng 7 engine `TAD754GE` | tổ máy `JJV-220GF` | prime - kVA / 220 kW; standby 275 kVA / 242 kW | khác: ∅ | hãng: Volvo Penta | cyl=6; disp=7.15; weight=1950; dims=2600×1100×1530; fuel=204 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJV-220GF | 220 | 242 | 275 | TAD754GE | 6 | 7.15 | 204 | 1950 | 2600×1100×1530`
+- **MỚI** n103 b2 dòng 8 engine `TAD1351GE` | tổ máy `JJV-280GF` | prime - kVA / 280 kW; standby 350 kVA / 308 kW | khác: ∅ | hãng: Volvo Penta | cyl=6; disp=12.78; weight=2850; dims=3100×1150×1600; fuel=198 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJV-280GF | 280 | 308 | 350 | TAD1351GE | 6 | 12.78 | 198 | 2850 | 3100×1150×1600`
+- **MỚI** n103 b2 dòng 9 engine `TAD1352GE` | tổ máy `JJV-300GF` | prime - kVA / 300 kW; standby 375 kVA / 330 kW | khác: ∅ | hãng: Volvo Penta | cyl=6; disp=12.78; weight=2900; dims=3100×1150×1600; fuel=198 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJV-300GF | 300 | 330 | 375 | TAD1352GE | 6 | 12.78 | 198 | 2900 | 3100×1150×1600`
+- **MỚI** n103 b2 dòng 10 engine `TAD1354GE` | tổ máy `JJV-320GF` | prime - kVA / 320 kW; standby 400 kVA / 352 kW | khác: ∅ | hãng: Volvo Penta | cyl=6; disp=12.78; weight=2950; dims=3100×1150×1600; fuel=198 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJV-320GF | 320 | 352 | 400 | TAD1354GE | 6 | 12.78 | 198 | 2950 | 3100×1150×1600`
+- **MỚI** n103 b2 dòng 11 engine `TAD1355GE` | tổ máy `JJV-350GF` | prime - kVA / 350 kW; standby 437.5 kVA / 385 kW | khác: ∅ | hãng: Volvo Penta | cyl=6; disp=12.78; weight=3050; dims=3100×1150×1600; fuel=199 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJV-350GF | 350 | 385 | 437.5 | TAD1355GE | 6 | 12.78 | 199 | 3050 | 3100×1150×1600`
+- **MỚI** n103 b2 dòng 12 engine `TAD1650GE` | tổ máy `JJV-400GF` | prime - kVA / 400 kW; standby 500 kVA / 440 kW | khác: ∅ | hãng: Volvo Penta | cyl=6; disp=16.12; weight=3300; dims=3200×1150×1880; fuel=199 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJV-400GF | 400 | 440 | 500 | TAD1650GE | 6 | 16.12 | 199 | 3300 | 3200×1150×1880`
+- **MỚI** n103 b2 dòng 13 engine `TAD1651GE` | tổ máy `JJV-440GF` | prime - kVA / 440 kW; standby 550 kVA / 484 kW | khác: ∅ | hãng: Volvo Penta | cyl=6; disp=16.12; weight=3400; dims=3200×1150×1880; fuel=199 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJV-440GF | 440 | 484 | 550 | TAD1651GE | 6 | 16.12 | 199 | 3400 | 3200×1150×1880`
+- **MỚI** n103 b2 dòng 14 engine `TWD1652GE` | tổ máy `JJV-500GF` | prime - kVA / 500 kW; standby 625 kVA / 550 kW | khác: ∅ | hãng: Volvo Penta | cyl=6; disp=16.12; weight=3600; dims=3350×1350×1950; fuel=199 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJV-500GF | 500 | 550 | 625 | TWD1652GE | 6 | 16.12 | 199 | 3600 | 3350×1350×1950`
+- **MỚI** n103 b2 dòng 15 engine `TWD1653GE` | tổ máy `JJV-550GF` | prime - kVA / 550 kW; standby 687.5 kVA / 605 kW | khác: ∅ | hãng: Volvo Penta | cyl=6; disp=16.12; weight=3700; dims=3400×1350×2000; fuel=199 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJV-550GF | 550 | 605 | 687.5 | TWD1653GE | 6 | 16.12 | 199 | 3700 | 3400×1350×2000`
+- **MỚI** n104 b3 dòng 0 engine `4ZT3.5-G21` | tổ máy `JJS-40GF` | prime - kVA / 40 kW; standby 50 kVA / 44 kW | khác: ∅ | hãng: SDEC | cyl=4; disp=3.5; weight=915; dims=1700×600×1200; fuel=210 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-40GF | 40 | 44 | 50 | 4ZT3.5-G21 | 4 | 3.5 | 210 | 915 | 1700×600×1200`
+- **MỚI** n104 b3 dòng 1 engine `SC4H95D2` | tổ máy `JJS-50GF` | prime - kVA / 50 kW; standby 62.5 kVA / 55 kW | khác: ∅ | hãng: SDEC | cyl=4; disp=4.3; weight=950; dims=1900×893×1170; fuel=204 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-50GF | 50 | 55 | 62.5 | SC4H95D2 | 4 | 4.3 | 204 | 950 | 1900×893×1170`
+- **MỚI** n104 b3 dòng 2 engine `SC4H115D2` | tổ máy `JJS-64GF` | prime - kVA / 64 kW; standby 80 kVA / 70 kW | khác: ∅ | hãng: SDEC | cyl=4; disp=4.3; weight=1020; dims=1950×893×1170; fuel=204 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-64GF | 64 | 70 | 80 | SC4H115D2 | 4 | 4.3 | 204 | 1020 | 1950×893×1170`
+- **MỚI** n104 b3 dòng 3 engine `SC4H140D2` | tổ máy `JJS-80GF` | prime - kVA / 80 kW; standby 100 kVA / 88 kW | khác: ∅ | hãng: SDEC | cyl=4; disp=4.3; weight=1080; dims=1983×973×1185; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-80GF | 80 | 88 | 100 | SC4H140D2 | 4 | 4.3 | 195 | 1080 | 1983×973×1185`
+- **MỚI** n104 b3 dòng 4 engine `SC4H160D2` | tổ máy `JJS-90GF` | prime - kVA / 90 kW; standby 112.5 kVA / 99 kW | khác: ∅ | hãng: SDEC | cyl=4; disp=4.3; weight=1100; dims=1983×973×1185; fuel=198 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-90GF | 90 | 99 | 112.5 | SC4H160D2 | 4 | 4.3 | 198 | 1100 | 1983×973×1185`
+- **MỚI** n104 b3 dòng 5 engine `SC4H180D2` | tổ máy `JJS-100GF` | prime - kVA / 100 kW; standby 125 kVA / 110 kW | khác: ∅ | hãng: SDEC | cyl=4; disp=4.3; weight=1123; dims=1983×973×1185; fuel=198 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-100GF | 100 | 110 | 125 | SC4H180D2 | 4 | 4.3 | 198 | 1123 | 1983×973×1185`
+- **MỚI** n104 b3 dòng 6 engine `SC7H205D2` | tổ máy `JJS-120GF` | prime - kVA / 120 kW; standby 150 kVA / 132 kW | khác: ∅ | hãng: SDEC | cyl=6; disp=6.5; weight=1357; dims=2413×940×1376; fuel=198 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-120GF | 120 | 132 | 150 | SC7H205D2 | 6 | 6.5 | 198 | 1357 | 2413×940×1376`
+- **MỚI** n104 b3 dòng 7 engine `SC7H220D2` | tổ máy `JJS-130GF` | prime - kVA / 130 kW; standby 162.5 kVA / 143 kW | khác: ∅ | hãng: SDEC | cyl=6; disp=6.5; weight=1412; dims=2413×940×1376; fuel=152 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-130GF | 130 | 143 | 162.5 | SC7H220D2 | 6 | 6.5 | 152 | 1412 | 2413×940×1376`
+- **MỚI** n104 b3 dòng 8 engine `SC7H230D2` | tổ máy `JJS-136GF` | prime - kVA / 136 kW; standby 170 kVA / 150 kW | khác: ∅ | hãng: SDEC | cyl=6; disp=6.5; weight=1437; dims=2413×940×1376; fuel=165 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-136GF | 136 | 150 | 170 | SC7H230D2 | 6 | 6.5 | 165 | 1437 | 2413×940×1376`
+- **MỚI** n104 b3 dòng 9 engine `SC7H250D2` | tổ máy `JJS-150GF` | prime - kVA / 150 kW; standby 187.5 kVA / 165 kW | khác: ∅ | hãng: SDEC | cyl=6; disp=6.5; weight=1437; dims=2413×940×1376; fuel=170 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-150GF | 150 | 165 | 187.5 | SC7H250D2 | 6 | 6.5 | 170 | 1437 | 2413×940×1376`
+- **MỚI** n104 b3 dòng 10 engine `SC8D280D2` | tổ máy `JJS-160GF` | prime - kVA / 160 kW; standby 200 kVA / 176 kW | khác: ∅ | hãng: SDEC | cyl=6; disp=8.3; weight=1770; dims=2490×1080×1630; fuel=185 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-160GF | 160 | 176 | 200 | SC8D280D2 | 6 | 8.3 | 185 | 1770 | 2490×1080×1630`
+- **MỚI** n104 b3 dòng 11 engine `SC9D310D2` | tổ máy `JJS-180GF` | prime - kVA / 180 kW; standby 225 kVA / 198 kW | khác: ∅ | hãng: SDEC | cyl=6; disp=8.9; weight=1670; dims=2505×980×1500; fuel=200 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-180GF | 180 | 198 | 225 | SC9D310D2 | 6 | 8.9 | 200 | 1670 | 2505×980×1500`
+- **MỚI** n104 b3 dòng 12 engine `SC9D340D2` | tổ máy `JJS-200GF` | prime - kVA / 200 kW; standby 250 kVA / 220 kW | khác: ∅ | hãng: SDEC | cyl=6; disp=8.9; weight=1835; dims=2540×1000×1486; fuel=200 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-200GF | 200 | 220 | 250 | SC9D340D2 | 6 | 8.9 | 200 | 1835 | 2540×1000×1486`
+- **MỚI** n104 b3 dòng 13 engine `SC10E380D2` | tổ máy `JJS-220GF` | prime - kVA / 220 kW; standby 275 kVA / 242 kW | khác: ∅ | hãng: SDEC | cyl=6; disp=10.4; weight=1526; dims=3065×1105×1626; fuel=198 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-220GF | 220 | 242 | 275 | SC10E380D2 | 6 | 10.4 | 198 | 1526 | 3065×1105×1626`
+- **MỚI** n104 b3 dòng 14 engine `SC10E420D2` | tổ máy `JJS-240GF` | prime - kVA / 240 kW; standby 300 kVA / 264 kW | khác: ∅ | hãng: SDEC | cyl=6; disp=10.4; weight=1526; dims=3065×1105×1626; fuel=192 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-240GF | 240 | 264 | 300 | SC10E420D2 | 6 | 10.4 | 192 | 1526 | 3065×1105×1626`
+- **MỚI** n104 b3 dòng 15 engine `SC12E460D2` | tổ máy `JJS-280GF` | prime - kVA / 280 kW; standby 350 kVA / 308 kW | khác: ∅ | hãng: SDEC | cyl=6; disp=11.8; weight=1640; dims=3065×1105×1626; fuel=192 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-280GF | 280 | 308 | 350 | SC12E460D2 | 6 | 11.8 | 192 | 1640 | 3065×1105×1626`
+- **MỚI** n104 b3 dòng 16 engine `SC13E500D2` | tổ máy `JJS-300GF` | prime - kVA / 300 kW; standby 375 kVA / 330 kW | khác: ∅ | hãng: SDEC | cyl=6; disp=12.8; weight=2760; dims=3080×1230×1670; fuel=192 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-300GF | 300 | 330 | 375 | SC13E500D2 | 6 | 12.8 | 192 | 2760 | 3080×1230×1670`
+- **MỚI** n104 b3 dòng 17 engine `6ETAA11.8-G31` | tổ máy `JJS-320GF` | prime - kVA / 320 kW; standby 400 kVA / 352 kW | khác: ∅ | hãng: SDEC | cyl=6; disp=11.8; weight=1640; dims=3065×1105×1626; fuel=192 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-320GF | 320 | 352 | 400 | 6ETAA11.8-G31 | 6 | 11.8 | 192 | 1640 | 3065×1105×1626`
+- **MỚI** n104 b3 dòng 18 engine `6ETAA12.8-G32` | tổ máy `JJS-350GF` | prime - kVA / 350 kW; standby 437.5 kVA / 385 kW | khác: ∅ | hãng: SDEC | cyl=6; disp=12.8; weight=2970; dims=3147×1230×1670; fuel=190 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-350GF | 350 | 385 | 437.5 | 6ETAA12.8-G32 | 6 | 12.8 | 190 | 2970 | 3147×1230×1670`
+- **MỚI** n104 b3 dòng 19 engine `SC25G610D2` | tổ máy `JJS-400GF` | prime - kVA / 400 kW; standby 500 kVA / 440 kW | khác: ∅ | hãng: SDEC | cyl=12; disp=25.8; weight=2700; dims=3300×1105×1626; fuel=190 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-400GF | 400 | 440 | 500 | SC25G610D2 | 12 | 25.8 | 190 | 2700 | 3300×1105×1626`
+- **MỚI** n104 b3 dòng 20 engine `SC25G690D2` | tổ máy `JJS-450GF` | prime - kVA / 450 kW; standby 562.5 kVA / 495 kW | khác: ∅ | hãng: SDEC | cyl=12; disp=25.8; weight=2700; dims=3300×1105×1626; fuel=205 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-450GF | 450 | 495 | 562.5 | SC25G690D2 | 12 | 25.8 | 205 | 2700 | 3300×1105×1626`
+- **MỚI** n104 b3 dòng 21 engine `SC27G755D2` | tổ máy `JJS-500GF` | prime - kVA / 500 kW; standby 625 kVA / 550 kW | khác: ∅ | hãng: SDEC | cyl=12; disp=26.6; weight=4195; dims=3449×1400×1992; fuel=205 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-500GF | 500 | 550 | 625 | SC27G755D2 | 12 | 26.6 | 205 | 4195 | 3449×1400×1992`
+- **MỚI** n104 b3 dòng 22 engine `SC27G830D2` | tổ máy `JJS-550GF` | prime - kVA / 550 kW; standby 687.5 kVA / 605 kW | khác: ∅ | hãng: SDEC | cyl=12; disp=26.6; weight=4300; dims=3548×1400×1992; fuel=205 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-550GF | 550 | 605 | 687.5 | SC27G830D2 | 12 | 26.6 | 205 | 4300 | 3548×1400×1992`
+- **MỚI** n104 b3 dòng 23 engine `SC27G900D2` | tổ máy `JJS-600GF` | prime - kVA / 600 kW; standby 750 kVA / 660 kW | khác: ∅ | hãng: SDEC | cyl=12; disp=26.6; weight=4370; dims=3548×1400×1992; fuel=205 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-600GF | 600 | 660 | 750 | SC27G900D2 | 12 | 26.6 | 205 | 4370 | 3548×1400×1992`
+- **MỚI** n104 b3 dòng 24 engine `6KTAA25-G32` | tổ máy `JJS-650GF` | prime - kVA / 650 kW; standby 812.5 kVA / 715 kW | khác: ∅ | hãng: SDEC | cyl=6; disp=25.2; weight=4510; dims=3548×1400×1992; fuel=205 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-650GF | 650 | 715 | 812.5 | 6KTAA25-G32 | 6 | 25.2 | 205 | 4510 | 3548×1400×1992`
+- **MỚI** n104 b3 dòng 25 engine `SC33W1150D2` | tổ máy `JJS-700GF` | prime - kVA / 700 kW; standby 875 kVA / 770 kW | khác: ∅ | hãng: SDEC | cyl=6; disp=32.8; weight=4605; dims=3624×1400×1992; fuel=192 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-700GF | 700 | 770 | 875 | SC33W1150D2 | 6 | 32.8 | 192 | 4605 | 3624×1400×1992`
+- **MỚI** n104 b3 dòng 26 engine `6KTAA25-G320` | tổ máy `JJS-720GF` | prime - kVA / 720 kW; standby 900 kVA / 792 kW | khác: ∅ | hãng: SDEC | cyl=6; disp=25.2; weight=5260; dims=3900×1608×2109; fuel=205 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-720GF | 720 | 792 | 900 | 6KTAA25-G320 | 6 | 25.2 | 205 | 5260 | 3900×1608×2109`
+- **MỚI** n104 b3 dòng 27 engine `6WTAA35-G31` | tổ máy `JJS-800GF` | prime - kVA / 800 kW; standby 1000 kVA / 880 kW | khác: ∅ | hãng: SDEC | cyl=6; disp=35.1; weight=5400; dims=4191×1608×2109; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-800GF | 800 | 880 | 1000 | 6WTAA35-G31 | 6 | 35.1 | 195 | 5400 | 4191×1608×2109`
+- **MỚI** n104 b3 dòng 28 engine `6WTAA35-G310` | tổ máy `JJS-900GF` | prime - kVA / 900 kW; standby 1125 kVA / 990 kW | khác: ∅ | hãng: SDEC | cyl=6; disp=35.1; weight=6400; dims=4433×1700×2025; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-900GF | 900 | 990 | 1125 | 6WTAA35-G310 | 6 | 35.1 | 195 | 6400 | 4433×1700×2025`
+- **MỚI** n104 b3 dòng 29 engine `6WTAA35-G311` | tổ máy `JJS-1000GF` | prime - kVA / 1000 kW; standby 1250 kVA / 1100 kW | khác: ∅ | hãng: SDEC | cyl=6; disp=35.1; weight=8090; dims=4440×1855×2477; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-1000GF | 1000 | 1100 | 1250 | 6WTAA35-G311 | 6 | 35.1 | 195 | 8090 | 4440×1855×2477`
+- **MỚI** n104 b3 dòng 30 engine `12KTA58-G35` | tổ máy `JJS-1200GF` | prime - kVA / 1200 kW; standby 1500 kVA / 1320 kW | khác: ∅ | hãng: SDEC | cyl=12; disp=57.2; weight=8300; dims=4471×1975×2477; fuel=188 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-1200GF | 1200 | 1320 | 1500 | 12KTA58-G35 | 12 | 57.2 | 188 | 8300 | 4471×1975×2477`
+- **MỚI** n104 b3 dòng 31 engine `12KTA58-G34` | tổ máy `JJS-1500GF` | prime - kVA / 1500 kW; standby 1875 kVA / 1650 kW | khác: ∅ | hãng: SDEC | cyl=12; disp=57.2; weight=11500; dims=4850×1850×2650; fuel=190 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-1500GF | 1500 | 1650 | 1875 | 12KTA58-G34 | 12 | 57.2 | 190 | 11500 | 4850×1850×2650`
+- **MỚI** n104 b3 dòng 32 engine `12KTA58-G32` | tổ máy `JJS-1600GF` | prime - kVA / 1600 kW; standby 2000 kVA / 1760 kW | khác: ∅ | hãng: SDEC | cyl=12; disp=57.2; weight=12500; dims=5000×1900×2700; fuel=190 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-1600GF | 1600 | 1760 | 2000 | 12KTA58-G32 | 12 | 57.2 | 190 | 12500 | 5000×1900×2700`
+- **MỚI** n104 b3 dòng 33 engine `12KTA58-G31` | tổ máy `JJS-1800GF` | prime - kVA / 1800 kW; standby 2250 kVA / 1980 kW | khác: ∅ | hãng: SDEC | cyl=12; disp=57.2; weight=14000; dims=5200×2000×2800; fuel=188 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-1800GF | 1800 | 1980 | 2250 | 12KTA58-G31 | 12 | 57.2 | 188 | 14000 | 5200×2000×2800`
+- **MỚI** n104 b3 dòng 34 engine `S16R-PTA2-C` | tổ máy `JJS-2000GF` | prime - kVA / 2000 kW; standby 2500 kVA / 2200 kW | khác: ∅ | hãng: SDEC | cyl=16; disp=65.3; weight=15500; dims=5500×2100×2900; fuel=188 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-2000GF | 2000 | 2200 | 2500 | S16R-PTA2-C | 16 | 65.3 | 188 | 15500 | 5500×2100×2900`
+- **MỚI** n104 b3 dòng 35 engine `S16R2-PTAW-C` | tổ máy `JJS-2200GF` | prime - kVA / 2200 kW; standby 2750 kVA / 2420 kW | khác: ∅ | hãng: SDEC | cyl=16; disp=65.3; weight=17000; dims=5700×2200×3000; fuel=186 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-2200GF | 2200 | 2420 | 2750 | S16R2-PTAW-C | 16 | 65.3 | 186 | 17000 | 5700×2200×3000`
+- **MỚI** n104 b3 dòng 36 engine `S16R2-PTAA2-C` | tổ máy `JJS-2400GF` | prime - kVA / 2400 kW; standby 3000 kVA / 2640 kW | khác: ∅ | hãng: SDEC | cyl=16; disp=65.3; weight=18500; dims=6000×2300×3100; fuel=185 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJS-2400GF | 2400 | 2640 | 3000 | S16R2-PTAA2-C | 16 | 65.3 | 185 | 18500 | 6000×2300×3100`
+- **MỚI** n105 b4 dòng 0 engine `WP2.3D12E2` | tổ máy `JJW-12GF` | prime - kVA / 12 kW; standby 15 kVA / 13.2 kW | khác: ∅ | hãng: Weichai | cyl=4; disp=2.29; weight=480; dims=1500×700×1100; fuel=240 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-12GF | 12 | 13.2 | 15 | WP2.3D12E2 | 4 | 2.29 | 240 | 480 | 1500×700×1100`
+- **MỚI** n105 b4 dòng 1 engine `WP2.3D20E2` | tổ máy `JJW-20GF` | prime - kVA / 20 kW; standby 25 kVA / 22 kW | khác: ∅ | hãng: Weichai | cyl=4; disp=2.29; weight=500; dims=1500×700×1100; fuel=238 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-20GF | 20 | 22 | 25 | WP2.3D20E2 | 4 | 2.29 | 238 | 500 | 1500×700×1100`
+- **MỚI** n105 b4 dòng 2 engine `WP4.1D30E2` | tổ máy `JJW-30GF` | prime - kVA / 30 kW; standby 37.5 kVA / 33 kW | khác: ∅ | hãng: Weichai | cyl=4; disp=2.77; weight=650; dims=1700×750×1200; fuel=235 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-30GF | 30 | 33 | 37.5 | WP4.1D30E2 | 4 | 2.77 | 235 | 650 | 1700×750×1200`
+- **MỚI** n105 b4 dòng 3 engine `WP4.1D40E2` | tổ máy `JJW-40GF` | prime - kVA / 40 kW; standby 50 kVA / 44 kW | khác: ∅ | hãng: Weichai | cyl=4; disp=2.77; weight=680; dims=1750×750×1200; fuel=230 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-40GF | 40 | 44 | 50 | WP4.1D40E2 | 4 | 2.77 | 230 | 680 | 1750×750×1200`
+- **MỚI** n105 b4 dòng 4 engine `WP6D50E2` | tổ máy `JJW-50GF` | prime - kVA / 50 kW; standby 62.5 kVA / 55 kW | khác: ∅ | hãng: Weichai | cyl=6; disp=5.96; weight=850; dims=1900×850×1300; fuel=225 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-50GF | 50 | 55 | 62.5 | WP6D50E2 | 6 | 5.96 | 225 | 850 | 1900×850×1300`
+- **MỚI** n105 b4 dòng 5 engine `WP6D64E2` | tổ máy `JJW-64GF` | prime - kVA / 64 kW; standby 80 kVA / 70 kW | khác: ∅ | hãng: Weichai | cyl=6; disp=5.96; weight=900; dims=1950×850×1300; fuel=222 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-64GF | 64 | 70 | 80 | WP6D64E2 | 6 | 5.96 | 222 | 900 | 1950×850×1300`
+- **MỚI** n105 b4 dòng 6 engine `WP6D80E2` | tổ máy `JJW-80GF` | prime - kVA / 80 kW; standby 100 kVA / 88 kW | khác: ∅ | hãng: Weichai | cyl=6; disp=5.96; weight=950; dims=2000×900×1350; fuel=220 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-80GF | 80 | 88 | 100 | WP6D80E2 | 6 | 5.96 | 220 | 950 | 2000×900×1350`
+- **MỚI** n105 b4 dòng 7 engine `WP10D100E200` | tổ máy `JJW-100GF` | prime - kVA / 100 kW; standby 125 kVA / 110 kW | khác: ∅ | hãng: Weichai | cyl=6; disp=9.73; weight=1200; dims=2300×1000×1500; fuel=215 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-100GF | 100 | 110 | 125 | WP10D100E200 | 6 | 9.73 | 215 | 1200 | 2300×1000×1500`
+- **MỚI** n105 b4 dòng 8 engine `WP10D120E200` | tổ máy `JJW-120GF` | prime - kVA / 120 kW; standby 150 kVA / 132 kW | khác: ∅ | hãng: Weichai | cyl=6; disp=9.73; weight=1250; dims=2350×1000×1500; fuel=213 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-120GF | 120 | 132 | 150 | WP10D120E200 | 6 | 9.73 | 213 | 1250 | 2350×1000×1500`
+- **MỚI** n105 b4 dòng 9 engine `WP13D150E200` | tổ máy `JJW-150GF` | prime - kVA / 150 kW; standby 187.5 kVA / 165 kW | khác: ∅ | hãng: Weichai | cyl=6; disp=11.59; weight=1400; dims=2500×1050×1550; fuel=210 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-150GF | 150 | 165 | 187.5 | WP13D150E200 | 6 | 11.59 | 210 | 1400 | 2500×1050×1550`
+- **MỚI** n105 b4 dòng 10 engine `WP13D160E200` | tổ máy `JJW-160GF` | prime - kVA / 160 kW; standby 200 kVA / 176 kW | khác: ∅ | hãng: Weichai | cyl=6; disp=11.59; weight=1450; dims=2550×1050×1550; fuel=208 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-160GF | 160 | 176 | 200 | WP13D160E200 | 6 | 11.59 | 208 | 1450 | 2550×1050×1550`
+- **MỚI** n105 b4 dòng 11 engine `WP13D180E200` | tổ máy `JJW-180GF` | prime - kVA / 180 kW; standby 225 kVA / 198 kW | khác: ∅ | hãng: Weichai | cyl=6; disp=11.59; weight=1500; dims=2600×1050×1550; fuel=205 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-180GF | 180 | 198 | 225 | WP13D180E200 | 6 | 11.59 | 205 | 1500 | 2600×1050×1550`
+- **MỚI** n105 b4 dòng 12 engine `WP13D200E200` | tổ máy `JJW-200GF` | prime - kVA / 200 kW; standby 250 kVA / 220 kW | khác: ∅ | hãng: Weichai | cyl=6; disp=11.59; weight=1550; dims=2650×1100×1600; fuel=205 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-200GF | 200 | 220 | 250 | WP13D200E200 | 6 | 11.59 | 205 | 1550 | 2650×1100×1600`
+- **MỚI** n105 b4 dòng 13 engine `WP13D220E200` | tổ máy `JJW-220GF` | prime - kVA / 220 kW; standby 275 kVA / 242 kW | khác: ∅ | hãng: Weichai | cyl=6; disp=11.59; weight=1600; dims=2700×1100×1600; fuel=205 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-220GF | 220 | 242 | 275 | WP13D220E200 | 6 | 11.59 | 205 | 1600 | 2700×1100×1600`
+- **MỚI** n105 b4 dòng 14 engine `6M26D250E310` | tổ máy `JJW-250GF` | prime - kVA / 250 kW; standby 312.5 kVA / 275 kW | khác: ∅ | hãng: Weichai | cyl=6; disp=16.96; weight=2300; dims=2900×1200×1700; fuel=200 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-250GF | 250 | 275 | 312.5 | 6M26D250E310 | 6 | 16.96 | 200 | 2300 | 2900×1200×1700`
+- **MỚI** n105 b4 dòng 15 engine `6M26D280E310` | tổ máy `JJW-280GF` | prime - kVA / 280 kW; standby 350 kVA / 308 kW | khác: ∅ | hãng: Weichai | cyl=6; disp=16.96; weight=2400; dims=2950×1200×1750; fuel=200 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-280GF | 280 | 308 | 350 | 6M26D280E310 | 6 | 16.96 | 200 | 2400 | 2950×1200×1750`
+- **MỚI** n105 b4 dòng 16 engine `6M26D300E310` | tổ máy `JJW-300GF` | prime - kVA / 300 kW; standby 375 kVA / 330 kW | khác: ∅ | hãng: Weichai | cyl=6; disp=16.96; weight=2500; dims=3000×1250×1750; fuel=198 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-300GF | 300 | 330 | 375 | 6M26D300E310 | 6 | 16.96 | 198 | 2500 | 3000×1250×1750`
+- **MỚI** n105 b4 dòng 17 engine `6M33D320E310` | tổ máy `JJW-320GF` | prime - kVA / 320 kW; standby 400 kVA / 352 kW | khác: ∅ | hãng: Weichai | cyl=6; disp=18.56; weight=2800; dims=3100×1300×1800; fuel=198 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-320GF | 320 | 352 | 400 | 6M33D320E310 | 6 | 18.56 | 198 | 2800 | 3100×1300×1800`
+- **MỚI** n105 b4 dòng 18 engine `6M33D360E310` | tổ máy `JJW-360GF` | prime - kVA / 360 kW; standby 450 kVA / 396 kW | khác: ∅ | hãng: Weichai | cyl=6; disp=18.56; weight=2900; dims=3150×1300×1800; fuel=196 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-360GF | 360 | 396 | 450 | 6M33D360E310 | 6 | 18.56 | 196 | 2900 | 3150×1300×1800`
+- **MỚI** n105 b4 dòng 19 engine `6M33D400E310` | tổ máy `JJW-400GF` | prime - kVA / 400 kW; standby 500 kVA / 440 kW | khác: ∅ | hãng: Weichai | cyl=6; disp=18.56; weight=3000; dims=3200×1350×1850; fuel=196 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-400GF | 400 | 440 | 500 | 6M33D400E310 | 6 | 18.56 | 196 | 3000 | 3200×1350×1850`
+- **MỚI** n105 b4 dòng 20 engine `6M33D450E310` | tổ máy `JJW-450GF` | prime - kVA / 450 kW; standby 562.5 kVA / 495 kW | khác: ∅ | hãng: Weichai | cyl=6; disp=18.56; weight=3200; dims=3300×1350×1850; fuel=196 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-450GF | 450 | 495 | 562.5 | 6M33D450E310 | 6 | 18.56 | 196 | 3200 | 3300×1350×1850`
+- **MỚI** n105 b4 dòng 21 engine `12M26D500E310` | tổ máy `JJW-500GF` | prime - kVA / 500 kW; standby 625 kVA / 550 kW | khác: ∅ | hãng: Weichai | cyl=12; disp=33.92; weight=4000; dims=3600×1500×2000; fuel=198 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-500GF | 500 | 550 | 625 | 12M26D500E310 | 12 | 33.92 | 198 | 4000 | 3600×1500×2000`
+- **MỚI** n105 b4 dòng 22 engine `12M26D550E310` | tổ máy `JJW-550GF` | prime - kVA / 550 kW; standby 687.5 kVA / 605 kW | khác: ∅ | hãng: Weichai | cyl=12; disp=33.92; weight=4200; dims=3700×1500×2000; fuel=198 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-550GF | 550 | 605 | 687.5 | 12M26D550E310 | 12 | 33.92 | 198 | 4200 | 3700×1500×2000`
+- **MỚI** n105 b4 dòng 23 engine `12M33D600E310` | tổ máy `JJW-600GF` | prime - kVA / 600 kW; standby 750 kVA / 660 kW | khác: ∅ | hãng: Weichai | cyl=12; disp=37.12; weight=4500; dims=3800×1600×2100; fuel=196 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-600GF | 600 | 660 | 750 | 12M33D600E310 | 12 | 37.12 | 196 | 4500 | 3800×1600×2100`
+- **MỚI** n105 b4 dòng 24 engine `12M33D660E310` | tổ máy `JJW-660GF` | prime - kVA / 660 kW; standby 825 kVA / 726 kW | khác: ∅ | hãng: Weichai | cyl=12; disp=37.12; weight=4700; dims=3900×1600×2100; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-660GF | 660 | 726 | 825 | 12M33D660E310 | 12 | 37.12 | 195 | 4700 | 3900×1600×2100`
+- **MỚI** n105 b4 dòng 25 engine `12M33D700E310` | tổ máy `JJW-700GF` | prime - kVA / 700 kW; standby 875 kVA / 770 kW | khác: ∅ | hãng: Weichai | cyl=12; disp=37.12; weight=4900; dims=4000×1700×2150; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-700GF | 700 | 770 | 875 | 12M33D700E310 | 12 | 37.12 | 195 | 4900 | 4000×1700×2150`
+- **MỚI** n105 b4 dòng 26 engine `12M33D800E310` | tổ máy `JJW-800GF` | prime - kVA / 800 kW; standby 1000 kVA / 880 kW | khác: ∅ | hãng: Weichai | cyl=12; disp=37.12; weight=5200; dims=4200×1700×2200; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-800GF | 800 | 880 | 1000 | 12M33D800E310 | 12 | 37.12 | 195 | 5200 | 4200×1700×2200`
+- **MỚI** n105 b4 dòng 27 engine `12M33D900E310` | tổ máy `JJW-900GF` | prime - kVA / 900 kW; standby 1125 kVA / 990 kW | khác: ∅ | hãng: Weichai | cyl=12; disp=37.12; weight=5500; dims=4400×1800×2250; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-900GF | 900 | 990 | 1125 | 12M33D900E310 | 12 | 37.12 | 195 | 5500 | 4400×1800×2250`
+- **MỚI** n105 b4 dòng 28 engine `12M33D1000E310` | tổ máy `JJW-1000GF` | prime - kVA / 1000 kW; standby 1250 kVA / 1100 kW | khác: ∅ | hãng: Weichai | cyl=12; disp=37.12; weight=5800; dims=4600×1800×2300; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-1000GF | 1000 | 1100 | 1250 | 12M33D1000E310 | 12 | 37.12 | 195 | 5800 | 4600×1800×2300`
+- **MỚI** n105 b4 dòng 29 engine `16M33D1200E310` | tổ máy `JJW-1200GF` | prime - kVA / 1200 kW; standby 1500 kVA / 1320 kW | khác: ∅ | hãng: Weichai | cyl=16; disp=50.27; weight=7800; dims=5000×2000×2400; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-1200GF | 1200 | 1320 | 1500 | 16M33D1200E310 | 16 | 50.27 | 195 | 7800 | 5000×2000×2400`
+- **MỚI** n105 b4 dòng 30 engine `16M33D1400E310` | tổ máy `JJW-1400GF` | prime - kVA / 1400 kW; standby 1750 kVA / 1540 kW | khác: ∅ | hãng: Weichai | cyl=16; disp=50.27; weight=8200; dims=5200×2100×2500; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-1400GF | 1400 | 1540 | 1750 | 16M33D1400E310 | 16 | 50.27 | 195 | 8200 | 5200×2100×2500`
+- **MỚI** n105 b4 dòng 31 engine `16M33D1500E310` | tổ máy `JJW-1500GF` | prime - kVA / 1500 kW; standby 1875 kVA / 1650 kW | khác: ∅ | hãng: Weichai | cyl=16; disp=50.27; weight=8500; dims=5300×2100×2500; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-1500GF | 1500 | 1650 | 1875 | 16M33D1500E310 | 16 | 50.27 | 195 | 8500 | 5300×2100×2500`
+- **MỚI** n105 b4 dòng 32 engine `12M55D1600E310` | tổ máy `JJW-1600GF` | prime - kVA / 1600 kW; standby 2000 kVA / 1760 kW | khác: ∅ | hãng: Weichai | cyl=12; disp=65.65; weight=12000; dims=5800×2200×2700; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-1600GF | 1600 | 1760 | 2000 | 12M55D1600E310 | 12 | 65.65 | 195 | 12000 | 5800×2200×2700`
+- **MỚI** n105 b4 dòng 33 engine `12M55D1800E310` | tổ máy `JJW-1800GF` | prime - kVA / 1800 kW; standby 2250 kVA / 1980 kW | khác: ∅ | hãng: Weichai | cyl=12; disp=65.65; weight=13000; dims=6000×2300×2800; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-1800GF | 1800 | 1980 | 2250 | 12M55D1800E310 | 12 | 65.65 | 195 | 13000 | 6000×2300×2800`
+- **MỚI** n105 b4 dòng 34 engine `12M55D2000E310` | tổ máy `JJW-2000GF` | prime - kVA / 2000 kW; standby 2500 kVA / 2200 kW | khác: ∅ | hãng: Weichai | cyl=12; disp=65.65; weight=14500; dims=6400×2400×2900; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-2000GF | 2000 | 2200 | 2500 | 12M55D2000E310 | 12 | 65.65 | 195 | 14500 | 6400×2400×2900`
+- **MỚI** n105 b4 dòng 35 engine `12M55D2200E310` | tổ máy `JJW-2200GF` | prime - kVA / 2200 kW; standby 2750 kVA / 2420 kW | khác: ∅ | hãng: Weichai | cyl=12; disp=65.65; weight=16000; dims=6600×2500×3000; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-2200GF | 2200 | 2420 | 2750 | 12M55D2200E310 | 12 | 65.65 | 195 | 16000 | 6600×2500×3000`
+- **MỚI** n105 b4 dòng 36 engine `16M55D2900E310` | tổ máy `JJW-2400GF` | prime - kVA / 2400 kW; standby 3000 kVA / 2640 kW | khác: ∅ | hãng: Weichai | cyl=16; disp=87.5; weight=14500; dims=6200×2500×3000; fuel=198 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-2400GF | 2400 | 2640 | 3000 | 16M55D2900E310 | 16 | 87.5 | 198 | 14500 | 6200×2500×3000`
+- **MỚI** n105 b4 dòng 37 engine `16M55D3300E310` | tổ máy `JJW-2600GF` | prime - kVA / 2600 kW; standby 3250 kVA / 2860 kW | khác: ∅ | hãng: Weichai | cyl=16; disp=87.5; weight=15800; dims=6400×2600×3100; fuel=198 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-2600GF | 2600 | 2860 | 3250 | 16M55D3300E310 | 16 | 87.5 | 198 | 15800 | 6400×2600×3100`
+- **MỚI** n105 b4 dòng 38 engine `16M55D3500E310` | tổ máy `JJW-2800GF` | prime - kVA / 2800 kW; standby 3500 kVA / 3080 kW | khác: ∅ | hãng: Weichai | cyl=16; disp=87.5; weight=16500; dims=6500×2700×3200; fuel=197 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-2800GF | 2800 | 3080 | 3500 | 16M55D3500E310 | 16 | 87.5 | 197 | 16500 | 6500×2700×3200`
+- **MỚI** n105 b4 dòng 39 engine `16M55D3600E310` | tổ máy `JJW-3000GF` | prime - kVA / 3000 kW; standby 3750 kVA / 3300 kW | khác: ∅ | hãng: Weichai | cyl=16; disp=87.5; weight=17800; dims=6800×2900×3300; fuel=196 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJW-3000GF | 3000 | 3300 | 3750 | 16M55D3600E310 | 16 | 87.5 | 196 | 17800 | 6800×2900×3300`
+- **MỚI** n106 b5 dòng 0 engine `403A-11G1` | tổ máy `JJP-7GF` | prime - kVA / 7 kW; standby 8.8 kVA / 7.7 kW | khác: ∅ | hãng: Perkins | cyl=3; disp=1.13; weight=300; dims=1200*700*1100; fuel=248 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-7GF | 7 | 7.7 | 8.8 | 403A-11G1 | 3 | 1.13 | 248 | 300 | 1200*700*1100`
+- **MỚI** n106 b5 dòng 1 engine `403A-15G1` | tổ máy `JJP-10GF` | prime - kVA / 10 kW; standby 12.5 kVA / 11 kW | khác: ∅ | hãng: Perkins | cyl=3; disp=1.5; weight=350; dims=1250*700*1100; fuel=248 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-10GF | 10 | 11 | 12.5 | 403A-15G1 | 3 | 1.5 | 248 | 350 | 1250*700*1100`
+- **MỚI** n106 b5 dòng 2 engine `403A-15G2` | tổ máy `JJP-12GF` | prime - kVA / 12 kW; standby 15 kVA / 13.2 kW | khác: ∅ | hãng: Perkins | cyl=3; disp=1.49; weight=350; dims=1250*700*1100; fuel=250 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-12GF | 12 | 13.2 | 15 | 403A-15G2 | 3 | 1.49 | 250 | 350 | 1250*700*1100`
+- **MỚI** n106 b5 dòng 3 engine `404A-22G1` | tổ máy `JJP-16GF` | prime - kVA / 16 kW; standby 20 kVA / 17.6 kW | khác: ∅ | hãng: Perkins | cyl=4; disp=2.22; weight=500; dims=1500*710*1200; fuel=237 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-16GF | 16 | 17.6 | 20 | 404A-22G1 | 4 | 2.22 | 237 | 500 | 1500*710*1200`
+- **MỚI** n106 b5 dòng 4 engine `1104A-44TG1` | tổ máy `JJP-50GF` | prime - kVA / 50 kW; standby 62.5 kVA / 55 kW | khác: ∅ | hãng: Perkins | cyl=4; disp=4.4; weight=1100; dims=1800*750*1200; fuel=208 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-50GF | 50 | 55 | 62.5 | 1104A-44TG1 | 4 | 4.4 | 208 | 1100 | 1800*750*1200`
+- **MỚI** n106 b5 dòng 5 engine `1104A-44TG2` | tổ máy `JJP-64GF` | prime - kVA / 64 kW; standby 80 kVA / 70.4 kW | khác: ∅ | hãng: Perkins | cyl=4; disp=4.4; weight=1150; dims=1800*750*1200; fuel=208 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-64GF | 64 | 70.4 | 80 | 1104A-44TG2 | 4 | 4.4 | 208 | 1150 | 1800*750*1200`
+- **MỚI** n106 b5 dòng 6 engine `1104C-44TAG2` | tổ máy `JJP-80GF` | prime - kVA / 80 kW; standby 100 kVA / 88 kW | khác: ∅ | hãng: Perkins | cyl=4; disp=4.4; weight=1250; dims=1950*800*1300; fuel=205 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-80GF | 80 | 88 | 100 | 1104C-44TAG2 | 4 | 4.4 | 205 | 1250 | 1950*800*1300`
+- **MỚI** n106 b5 dòng 7 engine `1106A-70TG1` | tổ máy `JJP-110GF` | prime - kVA / 110 kW; standby 137.5 kVA / 121 kW | khác: ∅ | hãng: Perkins | cyl=6; disp=5.65; weight=1350; dims=2480*950*1500; fuel=199 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-110GF | 110 | 121 | 137.5 | 1106A-70TG1 | 6 | 5.65 | 199 | 1350 | 2480*950*1500`
+- **MỚI** n106 b5 dòng 8 engine `1106A-70TAG2` | tổ máy `JJP-120GF` | prime - kVA / 120 kW; standby 150 kVA / 132 kW | khác: ∅ | hãng: Perkins | cyl=6; disp=7.01; weight=1450; dims=2600*960*1500; fuel=208 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-120GF | 120 | 132 | 150 | 1106A-70TAG2 | 6 | 7.01 | 208 | 1450 | 2600*960*1500`
+- **MỚI** n106 b5 dòng 9 engine `1106A-70TAG3` | tổ máy `JJP-140GF` | prime - kVA / 140 kW; standby 175 kVA / 154 kW | khác: ∅ | hãng: Perkins | cyl=6; disp=7.01; weight=1700; dims=2700*960*1500; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-140GF | 140 | 154 | 175 | 1106A-70TAG3 | 6 | 7.01 | 206 | 1700 | 2700*960*1500`
+- **MỚI** n106 b5 dòng 10 engine `1106A-70TAG4` | tổ máy `JJP-160GF` | prime - kVA / 160 kW; standby 200 kVA / 176 kW | khác: ∅ | hãng: Perkins | cyl=6; disp=7.01; weight=2100; dims=2800*960*1450; fuel=220 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-160GF | 160 | 176 | 200 | 1106A-70TAG4 | 6 | 7.01 | 220 | 2100 | 2800*960*1450`
+- **MỚI** n106 b5 dòng 11 engine `1103A-33G` | tổ máy `JJP-24GF` | prime - kVA / 24 kW; standby 30 kVA / 26.4 kW | khác: ∅ | hãng: Perkins | cyl=3; disp=3.3; weight=800; dims=1500*750*1100; fuel=211 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-24GF | 24 | 26.4 | 30 | 1103A-33G | 3 | 3.3 | 211 | 800 | 1500*750*1100`
+- **MỚI** n106 b5 dòng 12 engine `1103A-33TG1` | tổ máy `JJP-36GF` | prime - kVA / 36 kW; standby 45 kVA / 39.6 kW | khác: ∅ | hãng: Perkins | cyl=3; disp=3.3; weight=920; dims=1750*750*1300; fuel=211 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-36GF | 36 | 39.6 | 45 | 1103A-33TG1 | 3 | 3.3 | 211 | 920 | 1750*750*1300`
+- **MỚI** n106 b5 dòng 13 engine `1506A-E88TAG2` | tổ máy `JJP-180GF` | prime - kVA / 180 kW; standby 225 kVA / 198 kW | khác: ∅ | hãng: Perkins | cyl=6; disp=8.8; weight=2100; dims=3000*1000*1700; fuel=200 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-180GF | 180 | 198 | 225 | 1506A-E88TAG2 | 6 | 8.8 | 200 | 2100 | 3000*1000*1700`
+- **MỚI** n106 b5 dòng 14 engine `1506A-E88TAG3` | tổ máy `JJP-200GF` | prime - kVA / 200 kW; standby 250 kVA / 220 kW | khác: ∅ | hãng: Perkins | cyl=6; disp=8.81; weight=2150; dims=3100*1000*1700; fuel=200 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-200GF | 200 | 220 | 250 | 1506A-E88TAG3 | 6 | 8.81 | 200 | 2150 | 3100*1000*1700`
+- **MỚI** n106 b5 dòng 15 engine `1506A-E88TAG4` | tổ máy `JJP-220GF` | prime - kVA / 220 kW; standby 275 kVA / 242 kW | khác: ∅ | hãng: Perkins | cyl=6; disp=8.8; weight=2150; dims=3100*1000*1700; fuel=198 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-220GF | 220 | 242 | 275 | 1506A-E88TAG4 | 6 | 8.8 | 198 | 2150 | 3100*1000*1700`
+- **MỚI** n106 b5 dòng 16 engine `1506A-E88TAG5` | tổ máy `JJP-240GF` | prime - kVA / 240 kW; standby 300 kVA / 264 kW | khác: ∅ | hãng: Perkins | cyl=6; disp=8.81; weight=2150; dims=3100*1000*1700; fuel=198 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-240GF | 240 | 264 | 300 | 1506A-E88TAG5 | 6 | 8.81 | 198 | 2150 | 3100*1000*1700`
+- **MỚI** n106 b5 dòng 17 engine `2206C-E13TAG2` | tổ máy `JJP-280GF` | prime - kVA / 280 kW; standby 350 kVA / 308 kW | khác: ∅ | hãng: Perkins | cyl=6; disp=12.5; weight=3200; dims=3100*1120*1780; fuel=209 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-280GF | 280 | 308 | 350 | 2206C-E13TAG2 | 6 | 12.5 | 209 | 3200 | 3100*1120*1780`
+- **MỚI** n106 b5 dòng 18 engine `2206C-E13TAG3` | tổ máy `JJP-320GF` | prime - kVA / 320 kW; standby 400 kVA / 352 kW | khác: ∅ | hãng: Perkins | cyl=6; disp=12.5; weight=3300; dims=3100*1120*1780; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-320GF | 320 | 352 | 400 | 2206C-E13TAG3 | 6 | 12.5 | 206 | 3300 | 3100*1120*1780`
+- **MỚI** n106 b5 dòng 19 engine `2506C-E15TAG1` | tổ máy `JJP-360GF` | prime - kVA / 360 kW; standby 450 kVA / 396 kW | khác: ∅ | hãng: Perkins | cyl=6; disp=15.2; weight=3700; dims=3450*1200*2050; fuel=211 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-360GF | 360 | 396 | 450 | 2506C-E15TAG1 | 6 | 15.2 | 211 | 3700 | 3450*1200*2050`
+- **MỚI** n106 b5 dòng 20 engine `2506C-E15TAG2` | tổ máy `JJP-400GF` | prime - kVA / 400 kW; standby 500 kVA / 440 kW | khác: ∅ | hãng: Perkins | cyl=6; disp=15.12; weight=3760; dims=3450*1200*2100; fuel=211 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-400GF | 400 | 440 | 500 | 2506C-E15TAG2 | 6 | 15.12 | 211 | 3760 | 3450*1200*2100`
+- **MỚI** n106 b5 dòng 21 engine `2806C-E18TAG1A` | tổ máy `JJP-480GF` | prime - kVA / 480 kW; standby 600 kVA / 528 kW | khác: ∅ | hãng: Perkins | cyl=6; disp=18.1; weight=4600; dims=3600*1600*2200; fuel=216 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-480GF | 480 | 528 | 600 | 2806C-E18TAG1A | 6 | 18.1 | 216 | 4600 | 3600*1600*2200`
+- **MỚI** n106 b5 dòng 22 engine `2806A-E18TAG2` | tổ máy `JJP-520GF` | prime - kVA / 520 kW; standby 650 kVA / 572 kW | khác: ∅ | hãng: Perkins | cyl=6; disp=18.13; weight=4800; dims=3600*1600*2200; fuel=202 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-520GF | 520 | 572 | 650 | 2806A-E18TAG2 | 6 | 18.13 | 202 | 4800 | 3600*1600*2200`
+- **MỚI** n106 b5 dòng 23 engine `4006-23TAG2A` | tổ máy `JJP-600GF` | prime - kVA / 600 kW; standby 750 kVA / 660 kW | khác: ∅ | hãng: Perkins | cyl=6; disp=22.9; weight=5500; dims=3980*1800*2300; fuel=209 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-600GF | 600 | 660 | 750 | 4006-23TAG2A | 6 | 22.9 | 209 | 5500 | 3980*1800*2300`
+- **MỚI** n106 b5 dòng 24 engine `4006-23TAG3A` | tổ máy `JJP-640GF` | prime - kVA / 640 kW; standby 800 kVA / 704 kW | khác: ∅ | hãng: Perkins | cyl=6; disp=22.92; weight=6000; dims=3980*1800*2300; fuel=209 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-640GF | 640 | 704 | 800 | 4006-23TAG3A | 6 | 22.92 | 209 | 6000 | 3980*1800*2300`
+- **MỚI** n106 b5 dòng 25 engine `4008TAG1A` | tổ máy `JJP-720GF` | prime - kVA / 720 kW; standby 900 kVA / 792 kW | khác: ∅ | hãng: Perkins | cyl=8; disp=30.5; weight=7700; dims=4680*2100*2500; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-720GF | 720 | 792 | 900 | 4008TAG1A | 8 | 30.5 | 206 | 7700 | 4680*2100*2500`
+- **MỚI** n106 b5 dòng 26 engine `4008TAG2A` | tổ máy `JJP-800GF` | prime - kVA / 800 kW; standby 1000 kVA / 880 kW | khác: ∅ | hãng: Perkins | cyl=8; disp=30.56; weight=8000; dims=4680*2100*2500; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-800GF | 800 | 880 | 1000 | 4008TAG2A | 8 | 30.56 | 206 | 8000 | 4680*2100*2500`
+- **MỚI** n106 b5 dòng 27 engine `4012-46TWG2A` | tổ máy `JJP-1000GF` | prime - kVA / 1000 kW; standby 1250 kVA / 1100 kW | khác: ∅ | hãng: Perkins | cyl=12; disp=45.8; weight=9900; dims=4950*2200*2600; fuel=212 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-1000GF | 1000 | 1100 | 1250 | 4012-46TWG2A | 12 | 45.8 | 212 | 9900 | 4950*2200*2600`
+- **MỚI** n106 b5 dòng 28 engine `4012-46TWG3A` | tổ máy `JJP-1100GF` | prime - kVA / 1100 kW; standby 1375 kVA / 1210 kW | khác: ∅ | hãng: Perkins | cyl=12; disp=45.84; weight=10000; dims=4950*2200*2600; fuel=212 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-1100GF | 1100 | 1210 | 1375 | 4012-46TWG3A | 12 | 45.84 | 212 | 10000 | 4950*2200*2600`
+- **MỚI** n106 b5 dòng 29 engine `4012-46TAG2A` | tổ máy `JJP-1200GF` | prime - kVA / 1200 kW; standby 1500 kVA / 1320 kW | khác: ∅ | hãng: Perkins | cyl=12; disp=45.8; weight=11000; dims=5100*2200*2600; fuel=212 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-1200GF | 1200 | 1320 | 1500 | 4012-46TAG2A | 12 | 45.8 | 212 | 11000 | 5100*2200*2600`
+- **MỚI** n106 b5 dòng 30 engine `4012-46TAG3A` | tổ máy `JJP-1360GF` | prime - kVA / 1360 kW; standby 1700 kVA / 1496 kW | khác: ∅ | hãng: Perkins | cyl=12; disp=45.84; weight=12000; dims=5100*2200*2600; fuel=212 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-1360GF | 1360 | 1496 | 1700 | 4012-46TAG3A | 12 | 45.84 | 212 | 12000 | 5100*2200*2600`
+- **MỚI** n106 b5 dòng 31 engine `4016TAG1A` | tổ máy `JJP-1480GF` | prime - kVA / 1480 kW; standby 1850 kVA / 1628 kW | khác: ∅ | hãng: Perkins | cyl=16; disp=61.1; weight=13500; dims=5700*2800*3100; fuel=205 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-1480GF | 1480 | 1628 | 1850 | 4016TAG1A | 16 | 61.1 | 205 | 13500 | 5700*2800*3100`
+- **MỚI** n106 b5 dòng 32 engine `4016TAG2A` | tổ máy `JJP-1600GF` | prime - kVA / 1600 kW; standby 2000 kVA / 1760 kW | khác: ∅ | hãng: Perkins | cyl=16; disp=61.12; weight=14000; dims=5800*2800*3100; fuel=208 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-1600GF | 1600 | 1760 | 2000 | 4016TAG2A | 16 | 61.12 | 208 | 14000 | 5800*2800*3100`
+- **MỚI** n106 b5 dòng 33 engine `4016-61TRG3` | tổ máy `JJP-1800GF` | prime - kVA / 1800 kW; standby 2250 kVA / 1980 kW | khác: ∅ | hãng: Perkins | cyl=16; disp=61.1; weight=15700; dims=5900*2800*3100; fuel=205 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJP-1800GF | 1800 | 1980 | 2250 | 4016-61TRG3 | 16 | 61.1 | 205 | 15700 | 5900*2800*3100`
+- **MỚI** n107 b6 dòng 0 engine `6R1600G10F` | tổ máy `JJM-220GF` | prime - kVA / 220 kW; standby 275 kVA / 242 kW | khác: ∅ | hãng: MTU | cyl=6; disp=10.5; weight=2500; dims=2800*1150*1650; fuel=201 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-220GF | 220 | 242 | 275 | 6R1600G10F | 6 | 10.5 | 201 | 2500 | 2800*1150*1650`
+- **MỚI** n107 b6 dòng 1 engine `6R1600G20F` | tổ máy `JJM-250GF` | prime - kVA / 250 kW; standby 312.5 kVA / 275 kW | khác: ∅ | hãng: MTU | cyl=6; disp=10.52; weight=2900; dims=2800*1150*1650; fuel=199 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-250GF | 250 | 275 | 312.5 | 6R1600G20F | 6 | 10.52 | 199 | 2900 | 2800*1150*1650`
+- **MỚI** n107 b6 dòng 2 engine `8V1600G10F` | tổ máy `JJM-300GF` | prime - kVA / 300 kW; standby 375 kVA / 330 kW | khác: ∅ | hãng: MTU | cyl=8; disp=14; weight=3230; dims=2840*1660*1975; fuel=191 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-300GF | 300 | 330 | 375 | 8V1600G10F | 8 | 14 | 191 | 3230 | 2840*1660*1975`
+- **MỚI** n107 b6 dòng 3 engine `8V1600G20F` | tổ máy `JJM-320GF` | prime - kVA / 320 kW; standby 400 kVA / 352 kW | khác: ∅ | hãng: MTU | cyl=8; disp=14.03; weight=3250; dims=2840*1660*1975; fuel=190 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-320GF | 320 | 352 | 400 | 8V1600G20F | 8 | 14.03 | 190 | 3250 | 2840*1660*1975`
+- **MỚI** n107 b6 dòng 4 engine `10V1600G10F` | tổ máy `JJM-360GF` | prime - kVA / 360 kW; standby 450 kVA / 396 kW | khác: ∅ | hãng: MTU | cyl=10; disp=17.5; weight=3800; dims=3230*1660*2040; fuel=191 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-360GF | 360 | 396 | 450 | 10V1600G10F | 10 | 17.5 | 191 | 3800 | 3230*1660*2040`
+- **MỚI** n107 b6 dòng 5 engine `10V1600G20F` | tổ máy `JJM-400GF` | prime - kVA / 400 kW; standby 500 kVA / 440 kW | khác: ∅ | hãng: MTU | cyl=10; disp=17.53; weight=4000; dims=3320*1350*1850; fuel=190 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-400GF | 400 | 440 | 500 | 10V1600G20F | 10 | 17.53 | 190 | 4000 | 3320*1350*1850`
+- **MỚI** n107 b6 dòng 6 engine `12V1600G10F` | tổ máy `JJM-480GF` | prime - kVA / 480 kW; standby 600 kVA / 528 kW | khác: ∅ | hãng: MTU | cyl=12; disp=21; weight=3900; dims=3300*1400*1970; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-480GF | 480 | 528 | 600 | 12V1600G10F | 12 | 21 | 195 | 3900 | 3300*1400*1970`
+- **MỚI** n107 b6 dòng 7 engine `12V1600G20F` | tổ máy `JJM-500GF` | prime - kVA / 500 kW; standby 625 kVA / 550 kW | khác: ∅ | hãng: MTU | cyl=12; disp=21.04; weight=4410; dims=3400*1350*1850; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-500GF | 500 | 550 | 625 | 12V1600G20F | 12 | 21.04 | 195 | 4410 | 3400*1350*1850`
+- **MỚI** n107 b6 dòng 8 engine `12V2000G25` | tổ máy `JJM-550GF` | prime - kVA / 550 kW; standby 687.5 kVA / 605 kW | khác: ∅ | hãng: MTU | cyl=12; disp=23.88; weight=6500; dims=4000*1650*2280; fuel=197 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-550GF | 550 | 605 | 687.5 | 12V2000G25 | 12 | 23.88 | 197 | 6500 | 4000*1650*2280`
+- **MỚI** n107 b6 dòng 9 engine `12V2000G65` | tổ máy `JJM-630GF` | prime - kVA / 630 kW; standby 787.5 kVA / 693 kW | khác: ∅ | hãng: MTU | cyl=12; disp=23.89; weight=7000; dims=4200*1650*2280; fuel=202 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-630GF | 630 | 693 | 787.5 | 12V2000G65 | 12 | 23.89 | 202 | 7000 | 4200*1650*2280`
+- **MỚI** n107 b6 dòng 10 engine `16V2000G25` | tổ máy `JJM-800GF` | prime - kVA / 800 kW; standby 1000 kVA / 880 kW | khác: ∅ | hãng: MTU | cyl=16; disp=31.84; weight=7800; dims=4500*2000*2300; fuel=198 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-800GF | 800 | 880 | 1000 | 16V2000G25 | 16 | 31.84 | 198 | 7800 | 4500*2000*2300`
+- **MỚI** n107 b6 dòng 11 engine `16V2000G65` | tổ máy `JJM-880GF` | prime - kVA / 880 kW; standby 1100 kVA / 968 kW | khác: ∅ | hãng: MTU | cyl=16; disp=31.86; weight=7830; dims=4500*2000*2300; fuel=198 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-880GF | 880 | 968 | 1100 | 16V2000G65 | 16 | 31.86 | 198 | 7830 | 4500*2000*2300`
+- **MỚI** n107 b6 dòng 12 engine `18V2000G65` | tổ máy `JJM-1000GF` | prime - kVA / 1000 kW; standby 1250 kVA / 1100 kW | khác: ∅ | hãng: MTU | cyl=18; disp=35.82; weight=9000; dims=4700*2000*2380; fuel=202 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-1000GF | 1000 | 1100 | 1250 | 18V2000G65 | 18 | 35.82 | 202 | 9000 | 4700*2000*2380`
+- **MỚI** n107 b6 dòng 13 engine `12V4000G21R` | tổ máy `JJM-1100GF` | prime - kVA / 1100 kW; standby 1375 kVA / 1210 kW | khác: ∅ | hãng: MTU | cyl=12; disp=48.75; weight=11500; dims=6100*2100*2400; fuel=199 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-1100GF | 1100 | 1210 | 1375 | 12V4000G21R | 12 | 48.75 | 199 | 11500 | 6100*2100*2400`
+- **MỚI** n107 b6 dòng 14 engine `12V4000G23R` | tổ máy `JJM-1200GF` | prime - kVA / 1200 kW; standby 1500 kVA / 1320 kW | khác: ∅ | hãng: MTU | cyl=12; disp=57.2; weight=12000; dims=6150*2150*2400; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-1200GF | 1200 | 1320 | 1500 | 12V4000G23R | 12 | 57.2 | 195 | 12000 | 6150*2150*2400`
+- **MỚI** n107 b6 dòng 15 engine `12V4000G23` | tổ máy `JJM-1400GF` | prime - kVA / 1400 kW; standby 1750 kVA / 1540 kW | khác: ∅ | hãng: MTU | cyl=12; disp=57.2; weight=13000; dims=6150*2150*2400; fuel=189 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-1400GF | 1400 | 1540 | 1750 | 12V4000G23 | 12 | 57.2 | 189 | 13000 | 6150*2150*2400`
+- **MỚI** n107 b6 dòng 16 engine `12V4000G63` | tổ máy `JJM-1500GF` | prime - kVA / 1500 kW; standby 1875 kVA / 1650 kW | khác: ∅ | hãng: MTU | cyl=12; disp=57.2; weight=14000; dims=6150*2150*2400; fuel=193 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-1500GF | 1500 | 1650 | 1875 | 12V4000G63 | 12 | 57.2 | 193 | 14000 | 6150*2150*2400`
+- **MỚI** n107 b6 dòng 17 engine `16V4000G23` | tổ máy `JJM-1760GF` | prime - kVA / 1760 kW; standby 2200 kVA / 1936 kW | khác: ∅ | hãng: MTU | cyl=16; disp=76.27; weight=17000; dims=6500*2600*2500; fuel=192 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-1760GF | 1760 | 1936 | 2200 | 16V4000G23 | 16 | 76.27 | 192 | 17000 | 6500*2600*2500`
+- **MỚI** n107 b6 dòng 18 engine `16V4000G63` | tổ máy `JJM-1900GF` | prime - kVA / 1900 kW; standby 2375 kVA / 2090 kW | khác: ∅ | hãng: MTU | cyl=16; disp=76.3; weight=17500; dims=6550*2600*2500; fuel=191 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-1900GF | 1900 | 2090 | 2375 | 16V4000G63 | 16 | 76.3 | 191 | 17500 | 6550*2600*2500`
+- **MỚI** n107 b6 dòng 19 engine `20V4000G23` | tổ máy `JJM-2200GF` | prime - kVA / 2200 kW; standby 2750 kVA / 2420 kW | khác: ∅ | hãng: MTU | cyl=20; disp=95.33; weight=24000; dims=8300*2950*2550; fuel=195 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-2200GF | 2200 | 2420 | 2750 | 20V4000G23 | 20 | 95.33 | 195 | 24000 | 8300*2950*2550`
+- **MỚI** n107 b6 dòng 20 engine `20V4000G63` | tổ máy `JJM-2400GF` | prime - kVA / 2400 kW; standby 3000 kVA / 2640 kW | khác: ∅ | hãng: MTU | cyl=20; disp=95.4; weight=24500; dims=8300*2950*2550; fuel=193 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-2400GF | 2400 | 2640 | 3000 | 20V4000G63 | 20 | 95.4 | 193 | 24500 | 8300*2950*2550`
+- **MỚI** n107 b6 dòng 21 engine `20V4000G63L` | tổ máy `JJM-2500GF` | prime - kVA / 2500 kW; standby 3125 kVA / 2750 kW | khác: ∅ | hãng: MTU | cyl=20; disp=95.33; weight=25000; dims=8300*2950*2550; fuel=192 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJM-2500GF | 2500 | 2750 | 3125 | 20V4000G63L | 20 | 95.33 | 192 | 25000 | 8300*2950*2550`
+- **MỚI** n108 b7 dòng 0 engine `S6R-PTA` | tổ máy `JJSL-480GF` | prime - kVA / 480 kW; standby 600 kVA / 528 kW | khác: ∅ | hãng: Mitsubishi | cyl=6; disp=24.5; weight=5000; dims=3600*1600*2300; fuel=196 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJSL-480GF | 480 | 528 | 600 | S6R-PTA | 6 | 24.5 | 196 | 5000 | 3600*1600*2300`
+- **MỚI** n108 b7 dòng 1 engine `S6R2-PTA` | tổ máy `JJSL-520GF` | prime - kVA / 520 kW; standby 650 kVA / 572 kW | khác: ∅ | hãng: Mitsubishi | cyl=6; disp=29.96; weight=5100; dims=3600*1600*2300; fuel=196 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJSL-520GF | 520 | 572 | 650 | S6R2-PTA | 6 | 29.96 | 196 | 5100 | 3600*1600*2300`
+- **MỚI** n108 b7 dòng 2 engine `S6R2-PTAA` | tổ máy `JJSL-600GF` | prime - kVA / 600 kW; standby 750 kVA / 660 kW | khác: ∅ | hãng: Mitsubishi | cyl=6; disp=30; weight=5750; dims=4000*1800*1950; fuel=196 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJSL-600GF | 600 | 660 | 750 | S6R2-PTAA | 6 | 30 | 196 | 5750 | 4000*1800*1950`
+- **MỚI** n108 b7 dòng 3 engine `S12H-PTA` | tổ máy `JJSL-800GF` | prime - kVA / 800 kW; standby 1000 kVA / 880 kW | khác: ∅ | hãng: Mitsubishi | cyl=12; disp=37.1; weight=8200; dims=4400*1800*2500; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJSL-800GF | 800 | 880 | 1000 | S12H-PTA | 12 | 37.1 | 206 | 8200 | 4400*1800*2500`
+- **MỚI** n108 b7 dòng 4 engine `S12R-PTA` | tổ máy `JJSL-1000GF` | prime - kVA / 1000 kW; standby 1250 kVA / 1100 kW | khác: ∅ | hãng: Mitsubishi | cyl=12; disp=49.03; weight=9100; dims=4650*2100*2600; fuel=221 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJSL-1000GF | 1000 | 1100 | 1250 | S12R-PTA | 12 | 49.03 | 221 | 9100 | 4650*2100*2600`
+- **MỚI** n108 b7 dòng 5 engine `S12R-PTA2` | tổ máy `JJSL-1100GF` | prime - kVA / 1100 kW; standby 1375 kVA / 1210 kW | khác: ∅ | hãng: Mitsubishi | cyl=12; disp=49; weight=9600; dims=4650*2200*2700; fuel=221 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJSL-1100GF | 1100 | 1210 | 1375 | S12R-PTA2 | 12 | 49 | 221 | 9600 | 4650*2200*2700`
+- **MỚI** n108 b7 dòng 6 engine `S12R-PTAA2` | tổ máy `JJSL-1200GF` | prime - kVA / 1200 kW; standby 1500 kVA / 1320 kW | khác: ∅ | hãng: Mitsubishi | cyl=12; disp=49.03; weight=10000; dims=4650*2200*2700; fuel=209 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJSL-1200GF | 1200 | 1320 | 1500 | S12R-PTAA2 | 12 | 49.03 | 209 | 10000 | 4650*2200*2700`
+- **MỚI** n108 b7 dòng 7 engine `S16R-PTA` | tổ máy `JJSL-1300GF` | prime - kVA / 1300 kW; standby 1625 kVA / 1430 kW | khác: ∅ | hãng: Mitsubishi | cyl=16; disp=65.4; weight=11750; dims=5400*2500*3000; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJSL-1300GF | 1300 | 1430 | 1625 | S16R-PTA | 16 | 65.4 | 206 | 11750 | 5400*2500*3000`
+- **MỚI** n108 b7 dòng 8 engine `S16R-PTA2` | tổ máy `JJSL-1500GF` | prime - kVA / 1500 kW; standby 1875 kVA / 1650 kW | khác: ∅ | hãng: Mitsubishi | cyl=16; disp=65.37; weight=12000; dims=5400*2500*3000; fuel=207 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJSL-1500GF | 1500 | 1650 | 1875 | S16R-PTA2 | 16 | 65.37 | 207 | 12000 | 5400*2500*3000`
+- **MỚI** n108 b7 dòng 9 engine `S16R-PTAA2` | tổ máy `JJSL-1600GF` | prime - kVA / 1600 kW; standby 2000 kVA / 1760 kW | khác: ∅ | hãng: Mitsubishi | cyl=16; disp=65.4; weight=14400; dims=5900*2500*3500; fuel=206 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJSL-1600GF | 1600 | 1760 | 2000 | S16R-PTAA2 | 16 | 65.4 | 206 | 14400 | 5900*2500*3500`
+- **MỚI** n108 b7 dòng 10 engine `S16R2-PTAW` | tổ máy `JJSL-1800GF` | prime - kVA / 1800 kW; standby 2250 kVA / 1980 kW | khác: ∅ | hãng: Mitsubishi | cyl=16; disp=79.9; weight=17200; dims=6000*2600*3500; fuel=209 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJSL-1800GF | 1800 | 1980 | 2250 | S16R2-PTAW | 16 | 79.9 | 209 | 17200 | 6000*2600*3500`
+- **MỚI** n109 b8 dòng 0 engine `YD380D` | tổ máy `JJYD-9GF` | prime - kVA / 9 kW; standby 11.2 kVA / 9.9 kW | khác: ∅ | hãng: Yangdong | cyl=3; disp=1.532; weight=560; dims=1900*730*1130; fuel=262 | ⚠ standby kW/kVA=0.88; prime > standby
+  - nguồn: `| JJYD-9GF | 9 | 9.9 | 11.2 | YD380D | 3 | 1.532 | 262 | 560 | 1900*730*1130`
+- **MỚI** n109 b8 dòng 1 engine `YD385D` | tổ máy `JJYD-10GF` | prime - kVA / 10 kW; standby 12.5 kVA / 11 kW | khác: ∅ | hãng: Yangdong | cyl=3; disp=1.53; weight=600; dims=1900*730*1130; fuel=262 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJYD-10GF | 10 | 11 | 12.5 | YD385D | 3 | 1.53 | 262 | 600 | 1900*730*1130`
+- **MỚI** n109 b8 dòng 2 engine `YD480D` | tổ máy `JJYD-12GF` | prime - kVA / 12 kW; standby 15 kVA / 13.2 kW | khác: ∅ | hãng: Yangdong | cyl=4; disp=1.532; weight=680; dims=2100*730*1130; fuel=262 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJYD-12GF | 12 | 13.2 | 15 | YD480D | 4 | 1.532 | 262 | 680 | 2100*730*1130`
+- **MỚI** n109 b8 dòng 3 engine `YND485D` | tổ máy `JJYD-15GF` | prime - kVA / 15 kW; standby 18.8 kVA / 16.5 kW | khác: ∅ | hãng: Yangdong | cyl=4; disp=2.16; weight=750; dims=2100*730*1130; fuel=245 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJYD-15GF | 15 | 16.5 | 18.8 | YND485D | 4 | 2.16 | 245 | 750 | 2100*730*1130`
+- **MỚI** n109 b8 dòng 4 engine `YSD490D` | tổ máy `JJYD-20GF` | prime - kVA / 20 kW; standby 25 kVA / 22 kW | khác: ∅ | hãng: Yangdong | cyl=4; disp=2.545; weight=780; dims=2250*730*1140; fuel=243 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJYD-20GF | 20 | 22 | 25 | YSD490D | 4 | 2.545 | 243 | 780 | 2250*730*1140`
+- **MỚI** n109 b8 dòng 5 engine `Y4100D` | tổ máy `JJYD-24GF` | prime - kVA / 24 kW; standby 30 kVA / 26.4 kW | khác: ∅ | hãng: Yangdong | cyl=4; disp=2.54; weight=800; dims=2250*850*1280; fuel=243 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJYD-24GF | 24 | 26.4 | 30 | Y4100D | 4 | 2.54 | 243 | 800 | 2250*850*1280`
+- **MỚI** n109 b8 dòng 6 engine `Y4102D` | tổ máy `JJYD-30GF` | prime - kVA / 30 kW; standby 37.5 kVA / 33 kW | khác: ∅ | hãng: Yangdong | cyl=4; disp=3.857; weight=900; dims=2250*850*1280; fuel=240 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJYD-30GF | 30 | 33 | 37.5 | Y4102D | 4 | 3.857 | 240 | 900 | 2250*850*1280`
+- **MỚI** n109 b8 dòng 7 engine `Y4102ZD` | tổ máy `JJYD-40GF` | prime - kVA / 40 kW; standby 50 kVA / 44 kW | khác: ∅ | hãng: Yangdong | cyl=4; disp=3.86; weight=920; dims=2250*850*1280; fuel=240 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJYD-40GF | 40 | 44 | 50 | Y4102ZD | 4 | 3.86 | 240 | 920 | 2250*850*1280`
+- **MỚI** n109 b8 dòng 8 engine `Y4105ZLD` | tổ máy `JJYD-50GF` | prime - kVA / 50 kW; standby 62.5 kVA / 55 kW | khác: ∅ | hãng: Yangdong | cyl=4; disp=3.857; weight=960; dims=2250*850*1280; fuel=240 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJYD-50GF | 50 | 55 | 62.5 | Y4105ZLD | 4 | 3.857 | 240 | 960 | 2250*850*1280`
+- **MỚI** n109 b8 dòng 9 engine `YD4EZLD` | tổ máy `JJYD-60GF` | prime - kVA / 60 kW; standby 75 kVA / 66 kW | khác: ∅ | hãng: Yangdong | cyl=4; disp=3.86; weight=980; dims=2250*850*1280; fuel=240 | ⚠ standby kW/kVA=0.88
+  - nguồn: `| JJYD-60GF | 60 | 66 | 75 | YD4EZLD | 4 | 3.86 | 240 | 980 | 2250*850*1280`
+
+## kaihua-genset (mới 69, mất 0, đổi 0)
+
+- **MỚI** n114 b16 dòng 0 engine `DC09 320A 02-61` | tổ máy `KH-200GF` | rated 250 kVA / 200 kW | khác: ∅ | hãng: Scania | dims=3400*1300*1900; weight=2600
+  - nguồn: `| KH-200GF | None | None | 250 | 200 | DC09 320A 02-61 | 3400*1300*1900 | 2600`
+- **MỚI** n114 b16 dòng 1 engine `DC09 320A 02-62` | tổ máy `KH-220GF` | rated 275 kVA / 220 kW | khác: ∅ | hãng: Scania | dims=3400*1300*1900; weight=2600
+  - nguồn: `| KH-220GF | None | None | 275 | 220 | DC09 320A 02-62 | 3400*1300*1900 | 2600`
+- **MỚI** n114 b16 dòng 2 engine `DC09 320A 02-63` | tổ máy `KH-240GF` | rated 300 kVA / 240 kW | khác: ∅ | hãng: Scania | dims=3400*1300*1900; weight=2600
+  - nguồn: `| KH-240GF | None | None | 300 | 240 | DC09 320A 02-63 | 3400*1300*1900 | 2600`
+- **MỚI** n114 b16 dòng 3 engine `DC09 320A 02-64` | tổ máy `KH-264GF` | rated 330 kVA / 264 kW | khác: ∅ | hãng: Scania | dims=3400*1300*1900; weight=2600
+  - nguồn: `| KH-264GF | None | None | 330 | 264 | DC09 320A 02-64 | 3400*1300*1900 | 2600`
+- **MỚI** n114 b16 dòng 4 engine `DC09 071A 02-01` | tổ máy `KH-202GF` | rated 253 kVA / 202 kW | khác: ∅ | hãng: Scania | dims=3500*1300*2000; weight=2700
+  - nguồn: `| KH-202GF | None | None | 253 | 202 | DC09 071A 02-01 | 3500*1300*2000 | 2700`
+- **MỚI** n114 b16 dòng 5 engine `DC09 071A 02-02` | tổ máy `KH-223GF` | rated 279 kVA / 223 kW | khác: ∅ | hãng: Scania | dims=3500*1300*2000; weight=2700
+  - nguồn: `| KH-223GF | None | None | 279 | 223 | DC09 071A 02-02 | 3500*1300*2000 | 2700`
+- **MỚI** n114 b16 dòng 6 engine `DC09 071A 02-03` | tổ máy `KH-243GF` | rated 304 kVA / 243 kW | khác: ∅ | hãng: Scania | dims=3500*1300*2000; weight=2700
+  - nguồn: `| KH-243GF | None | None | 304 | 243 | DC09 071A 02-03 | 3500*1300*2000 | 2700`
+- **MỚI** n114 b16 dòng 7 engine `DC09 071A 02-04` | tổ máy `KH-263GF` | rated 329 kVA / 263 kW | khác: ∅ | hãng: Scania | dims=3500*1300*2000; weight=2700
+  - nguồn: `| KH-263GF | None | None | 329 | 263 | DC09 071A 02-04 | 3500*1300*2000 | 2700`
+- **MỚI** n114 b16 dòng 8 engine `DC09 072A 02-11` | tổ máy `KH-202GF` | prime 253 kVA / 202 kW; standby 280 kVA / 224 kW | khác: ∅ | hãng: Scania | dims=3890*1460*2150; weight=3100
+  - nguồn: `| KH-202GF | 280 | 224 | 253 | 202 | DC09 072A 02-11 | 3890*1460*2150 | 3100`
+- **MỚI** n114 b16 dòng 9 engine `DC09 072A 02-12` | tổ máy `KH-223GF` | prime 279 kVA / 223 kW; standby 310 kVA / 248 kW | khác: ∅ | hãng: Scania | dims=3890*1460*2150; weight=3100
+  - nguồn: `| KH-223GF | 310 | 248 | 279 | 223 | DC09 072A 02-12 | 3890*1460*2150 | 3100`
+- **MỚI** n114 b16 dòng 10 engine `DC09 072A 02-13` | tổ máy `KH-243GF` | prime 304 kVA / 243 kW; standby 335 kVA / 268 kW | khác: ∅ | hãng: Scania | dims=3890*1460*2150; weight=3100
+  - nguồn: `| KH-243GF | 335 | 268 | 304 | 243 | DC09 072A 02-13 | 3890*1460*2150 | 3100`
+- **MỚI** n114 b16 dòng 11 engine `DC09 072A 02-14` | tổ máy `KH-263GF` | prime 329 kVA / 263 kW; standby 361 kVA / 289 kW | khác: ∅ | hãng: Scania | dims=3890*1460*2150; weight=3100
+  - nguồn: `| KH-263GF | 361 | 289 | 329 | 263 | DC09 072A 02-14 | 3890*1460*2150 | 3100`
+- **MỚI** n114 b16 dòng 12 engine `DC09 073A 02-21` | tổ máy `KH-202GF` | prime 253 kVA / 202 kW; standby 280 kVA / 224 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3800
+  - nguồn: `| KH-202GF | 280 | 224 | 253 | 202 | DC09 073A 02-21 | 4230*1440*2250 | 3800`
+- **MỚI** n114 b16 dòng 13 engine `DC09 073A 02-22` | tổ máy `KH-223GF` | prime 279 kVA / 223 kW; standby 310 kVA / 248 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3800
+  - nguồn: `| KH-223GF | 310 | 248 | 279 | 223 | DC09 073A 02-22 | 4230*1440*2250 | 3800`
+- **MỚI** n114 b16 dòng 14 engine `DC09 073A 02-23` | tổ máy `KH-243GF` | prime 304 kVA / 243 kW; standby 335 kVA / 268 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3800
+  - nguồn: `| KH-243GF | 335 | 268 | 304 | 243 | DC09 073A 02-23 | 4230*1440*2250 | 3800`
+- **MỚI** n114 b16 dòng 15 engine `DC09 073A 02-24` | tổ máy `KH-263GF` | prime 329 kVA / 263 kW; standby 361 kVA / 289 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3800
+  - nguồn: `| KH-263GF | 361 | 289 | 329 | 263 | DC09 073A 02-24 | 4230*1440*2250 | 3800`
+- **MỚI** n114 b16 dòng 16 engine `DC13 320A 02-61` | tổ máy `KH-280GF` | rated 350 kVA / 280 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-280GF | None | None | 350 | 280 | DC13 320A 02-61 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 17 engine `DC13 320A 02-62` | tổ máy `KH-320GF` | rated 400 kVA / 320 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-320GF | None | None | 400 | 320 | DC13 320A 02-62 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 18 engine `DC13 320A 02-63` | tổ máy `KH-360GF` | rated 450 kVA / 360 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-360GF | None | None | 450 | 360 | DC13 320A 02-63 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 19 engine `DC13 071A 02-01` | tổ máy `KH-293GF` | rated 366 kVA / 293 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-293GF | None | None | 366 | 293 | DC13 071A 02-01 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 20 engine `DC13 071A 02-02` | tổ máy `KH-329GF` | rated 411 kVA / 329 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-329GF | None | None | 411 | 329 | DC13 071A 02-02 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 21 engine `DC13 072A 02-11` | tổ máy `KH-298GF` | rated 373 kVA / 298 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-298GF | None | None | 373 | 298 | DC13 072A 02-11 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 22 engine `DC13 072A 02-12` | tổ máy `KH-330GF` | rated 413 kVA / 330 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-330GF | None | None | 413 | 330 | DC13 072A 02-12 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 23 engine `DC13 072A 02-13` | tổ máy `KH-365GF` | rated 456 kVA / 365 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-365GF | None | None | 456 | 365 | DC13 072A 02-13 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 24 engine `DC13 072A 02-14` | tổ máy `KH-402GF` | rated 503 kVA / 402 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-402GF | None | None | 503 | 402 | DC13 072A 02-14 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 25 engine `DC13 072A 02-15` | tổ máy `KH-326GF` | rated 408 kVA / 326 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-326GF | 408 | 326 | None | None | DC13 072A 02-15 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 26 engine `DC13 073A 02-21` | tổ máy `KH-298GF` | prime 373 kVA / 298 kW; standby 408 kVA / 326 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-298GF | 408 | 326 | 373 | 298 | DC13 073A 02-21 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 27 engine `DC13 073A 02-22` | tổ máy `KH-330GF` | prime 413 kVA / 330 kW; standby 456 kVA / 365 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-330GF | 456 | 365 | 413 | 330 | DC13 073A 02-22 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 28 engine `DC13 073A 02-23` | tổ máy `KH-365GF` | prime 456 kVA / 365 kW; standby 503 kVA / 402 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-365GF | 503 | 402 | 456 | 365 | DC13 073A 02-23 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 29 engine `DC13 073A 02-24` | tổ máy `KH-402GF` | prime 503 kVA / 402 kW; standby 553 kVA / 442 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-402GF | 553 | 442 | 503 | 402 | DC13 073A 02-24 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 30 engine `DC16 071A 02-01` | tổ máy `KH-400GF` | rated 500 kVA / 400 kW | khác: ∅ | hãng: Scania | dims=4300*1800*2430; weight=4500
+  - nguồn: `| KH-400GF | None | None | 500 | 400 | DC16 071A 02-01 | 4300*1800*2430 | 4500`
+- **MỚI** n114 b16 dòng 31 engine `DC16 071A 02-02` | tổ máy `KH-439GF` | rated 549 kVA / 439 kW | khác: ∅ | hãng: Scania | dims=4300*1800*2430; weight=4500
+  - nguồn: `| KH-439GF | None | None | 549 | 439 | DC16 071A 02-02 | 4300*1800*2430 | 4500`
+- **MỚI** n114 b16 dòng 32 engine `DC16 072A 02-11` | tổ máy `KH-481GF` | prime 601 kVA / 481 kW; standby 661 kVA / 529 kW | khác: ∅ | hãng: Scania | dims=4300*1800*2430; weight=4500
+  - nguồn: `| KH-481GF | 661 | 529 | 601 | 481 | DC16 072A 02-11 | 4300*1800*2430 | 4500`
+- **MỚI** n114 b16 dòng 33 engine `DC16 072A 02-12` | tổ máy `KH-521GF` | prime 651 kVA / 521 kW; standby 716 kVA / 573 kW | khác: ∅ | hãng: Scania | dims=4300*1800*2430; weight=4500
+  - nguồn: `| KH-521GF | 716 | 573 | 651 | 521 | DC16 072A 02-12 | 4300*1800*2430 | 4500`
+- **MỚI** n114 b16 dòng 34 engine `DC16 072A 02-13` | tổ máy `KH-561GF` | prime 701 kVA / 561 kW; standby 771 kVA / 617 kW | khác: ∅ | hãng: Scania | dims=4300*1800*2430; weight=4500
+  - nguồn: `| KH-561GF | 771 | 617 | 701 | 561 | DC16 072A 02-13 | 4300*1800*2430 | 4500`
+- **MỚI** n114 b16 dòng 35 engine `DC16 078A 02-41` | tổ máy `KH-480GF` | prime 600 kVA / 480 kW; standby 660 kVA / 528 kW | khác: ∅ | hãng: Scania | dims=4300*1800*2430; weight=4500
+  - nguồn: `| KH-480GF | 660 | 528 | 600 | 480 | DC16 078A 02-41 | 4300*1800*2430 | 4500`
+- **MỚI** n114 b16 dòng 36 engine `DC16 078A 02-42` | tổ máy `KH-520GF` | prime 650 kVA / 520 kW; standby 715 kVA / 572 kW | khác: ∅ | hãng: Scania | dims=4300*1800*2430; weight=4500
+  - nguồn: `| KH-520GF | 715 | 572 | 650 | 520 | DC16 078A 02-42 | 4300*1800*2430 | 4500`
+- **MỚI** n114 b16 dòng 37 engine `DC16 078A 02-43` | tổ máy `KH-560GF` | prime 700 kVA / 560 kW; standby 770 kVA / 616 kW | khác: ∅ | hãng: Scania | dims=4300*1800*2430; weight=4500
+  - nguồn: `| KH-560GF | 770 | 616 | 700 | 560 | DC16 078A 02-43 | 4300*1800*2430 | 4500`
+- **MỚI** n114 b16 dòng 38 engine `DC16 093A 02-51` | tổ máy `KH-411GF` | prime 514 kVA / 411 kW; standby 567 kVA / 454 kW | khác: ∅ | hãng: Scania | dims=5200*2100*2390; weight=5300
+  - nguồn: `| KH-411GF | 567 | 454 | 514 | 411 | DC16 093A 02-51 | 5200*2100*2390 | 5300`
+- **MỚI** n114 b16 dòng 39 engine `DC16 093A 02-52` | tổ máy `KH-444GF` | prime 555 kVA / 444 kW; standby 613 kVA / 490 kW | khác: ∅ | hãng: Scania | dims=5200*2100*2390; weight=5300
+  - nguồn: `| KH-444GF | 613 | 490 | 555 | 444 | DC16 093A 02-52 | 5200*2100*2390 | 5300`
+- **MỚI** n114 b16 dòng 40 engine `DC16 093A 02-53` | tổ máy `KH-485GF` | prime 606 kVA / 485 kW; standby 668 kVA / 534 kW | khác: ∅ | hãng: Scania | dims=5200*2100*2390; weight=5300
+  - nguồn: `| KH-485GF | 668 | 534 | 606 | 485 | DC16 093A 02-53 | 5200*2100*2390 | 5300`
+- **MỚI** n114 b16 dòng 41 engine `DC16 093A 02-54` | tổ máy `KH-512GF` | prime 640 kVA / 512 kW; standby 706 kVA / 565 kW | khác: ∅ | hãng: Scania | dims=5200*2100*2390; weight=5300
+  - nguồn: `| KH-512GF | 706 | 565 | 640 | 512 | DC16 093A 02-54 | 5200*2100*2390 | 5300`
+- **MỚI** n114 b16 dòng 42 engine `OC16 071A 02-81` | tổ máy `KH-291GF` | prime 360 kVA / 288 kW; standby 364 kVA / 291 kW | khác: ∅ | hãng: Scania | dims=5200*2100*2390; weight=5300
+  - nguồn: `| KH-291GF | 360 | 288 | 364 | 291 | OC16 071A 02-81 | 5200*2100*2390 | 5300`
+- **MỚI** n114 b16 dòng 43 engine `OC16 071A 02-82` | tổ máy `KH-327GF` | prime 360 kVA / 288 kW; standby 409 kVA / 327 kW | khác: ∅ | hãng: Scania | dims=5200*2100*2390; weight=5300
+  - nguồn: `| KH-327GF | 360 | 288 | 409 | 327 | OC16 071A 02-82 | 5200*2100*2390 | 5300`
+- **MỚI** n114 b16 dòng 44 engine `OC16 071A 02-83` | tổ máy `KH-364GF` | prime 360 kVA / 288 kW; standby 455 kVA / 364 kW | khác: ∅ | hãng: Scania | dims=5200*2100*2390; weight=5300 | ⚠ standby > 1,25 × prime
+  - nguồn: `| KH-364GF | 360 | 288 | 455 | 364 | OC16 071A 02-83 | 5200*2100*2390 | 5300`
+- **MỚI** n114 b16 dòng 45 engine `OC16 071A 02-91` | tổ máy `KH-316GF` | prime 349 kVA / 279 kW; standby 395 kVA / 316 kW | khác: ∅ | hãng: Scania | dims=5200*2100*2390; weight=5300
+  - nguồn: `| KH-316GF | 349 | 279 | 395 | 316 | OC16 071A 02-91 | 5200*2100*2390 | 5300`
+- **MỚI** n114 b16 dòng 49 engine `DC09 320A 02-64` | tổ máy `KH-272GF` | rated 340 kVA / 272 kW | khác: ∅ | hãng: Scania | dims=3400*1300*1900; weight=2600
+  - nguồn: `| KH-272GF | None | None | 340 | 272 | DC09 320A 02-64 | 3400*1300*1900 | 2600`
+- **MỚI** n114 b16 dòng 50 engine `DC09 071A 02-01` | tổ máy `KH-222GF` | rated 278 kVA / 222 kW | khác: ∅ | hãng: Scania | dims=3500*1300*2000; weight=2700
+  - nguồn: `| KH-222GF | None | None | 278 | 222 | DC09 071A 02-01 | 3500*1300*2000 | 2700`
+- **MỚI** n114 b16 dòng 51 engine `DC09 071A 02-02` | tổ máy `KH-245GF` | rated 306 kVA / 245 kW | khác: ∅ | hãng: Scania | dims=3500*1300*2000; weight=2700
+  - nguồn: `| KH-245GF | None | None | 306 | 245 | DC09 071A 02-02 | 3500*1300*2000 | 2700`
+- **MỚI** n114 b16 dòng 52 engine `DC09 071A 02-03` | tổ máy `KH-262GF` | rated 328 kVA / 262 kW | khác: ∅ | hãng: Scania | dims=3500*1300*2000; weight=2700
+  - nguồn: `| KH-262GF | None | None | 328 | 262 | DC09 071A 02-03 | 3500*1300*2000 | 2700`
+- **MỚI** n114 b16 dòng 53 engine `DC09 071A 02-04` | tổ máy `KH-282GF` | rated 353 kVA / 282 kW | khác: ∅ | hãng: Scania | dims=3500*1300*2000; weight=2700
+  - nguồn: `| KH-282GF | None | None | 353 | 282 | DC09 071A 02-04 | 3500*1300*2000 | 2700`
+- **MỚI** n114 b16 dòng 54 engine `DC09 072A 02-11` | tổ máy `KH-222GF` | prime 278 kVA / 222 kW; standby 309 kVA / 247 kW | khác: ∅ | hãng: Scania | dims=3890*1460*2150; weight=3100
+  - nguồn: `| KH-222GF | 309 | 247 | 278 | 222 | DC09 072A 02-11 | 3890*1460*2150 | 3100`
+- **MỚI** n114 b16 dòng 55 engine `DC09 072A 02-12` | tổ máy `KH-245GF` | prime 306 kVA / 245 kW; standby 338 kVA / 270 kW | khác: ∅ | hãng: Scania | dims=3890*1460*2150; weight=3100
+  - nguồn: `| KH-245GF | 338 | 270 | 306 | 245 | DC09 072A 02-12 | 3890*1460*2150 | 3100`
+- **MỚI** n114 b16 dòng 56 engine `DC09 072A 02-13` | tổ máy `KH-262GF` | prime 328 kVA / 262 kW; standby 361 kVA / 289 kW | khác: ∅ | hãng: Scania | dims=3890*1460*2150; weight=3100
+  - nguồn: `| KH-262GF | 361 | 289 | 328 | 262 | DC09 072A 02-13 | 3890*1460*2150 | 3100`
+- **MỚI** n114 b16 dòng 57 engine `DC09 072A 02-14` | tổ máy `KH-293GF` | prime 366 kVA / 293 kW; standby 405 kVA / 324 kW | khác: ∅ | hãng: Scania | dims=3890*1460*2150; weight=3100
+  - nguồn: `| KH-293GF | 405 | 324 | 366 | 293 | DC09 072A 02-14 | 3890*1460*2150 | 3100`
+- **MỚI** n114 b16 dòng 58 engine `DC09 073A 02-21` | tổ máy `KH-222GF` | prime 278 kVA / 222 kW; standby 309 kVA / 247 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3800
+  - nguồn: `| KH-222GF | 309 | 247 | 278 | 222 | DC09 073A 02-21 | 4230*1440*2250 | 3800`
+- **MỚI** n114 b16 dòng 59 engine `DC09 073A 02-22` | tổ máy `KH-245GF` | prime 306 kVA / 245 kW; standby 338 kVA / 270 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3800
+  - nguồn: `| KH-245GF | 338 | 270 | 306 | 245 | DC09 073A 02-22 | 4230*1440*2250 | 3800`
+- **MỚI** n114 b16 dòng 60 engine `DC09 073A 02-23` | tổ máy `KH-262GF` | prime 328 kVA / 262 kW; standby 361 kVA / 289 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3800
+  - nguồn: `| KH-262GF | 361 | 289 | 328 | 262 | DC09 073A 02-23 | 4230*1440*2250 | 3800`
+- **MỚI** n114 b16 dòng 61 engine `DC09 073A 02-24` | tổ máy `KH-293GF` | prime 366 kVA / 293 kW; standby 405 kVA / 324 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3800
+  - nguồn: `| KH-293GF | 405 | 324 | 366 | 293 | DC09 073A 02-24 | 4230*1440*2250 | 3800`
+- **MỚI** n114 b16 dòng 65 engine `DC13 071A 02-01` | tổ máy `KH-329GF` | rated 411 kVA / 329 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-329GF | None | None | 411 | 329 | DC13 071A 02-01 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 67 engine `DC13 072A 02-11` | tổ máy `KH-337GF` | prime 421 kVA / 337 kW; standby 460 kVA / 368 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-337GF | 460 | 368 | 421 | 337 | DC13 072A 02-11 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 68 engine `DC13 072A 02-12` | tổ máy `KH-365GF` | prime 456 kVA / 365 kW; standby 508 kVA / 406 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-365GF | 508 | 406 | 456 | 365 | DC13 072A 02-12 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 69 engine `DC13 072A 02-13` | tổ máy `KH-402GF` | prime 503 kVA / 402 kW; standby 553 kVA / 442 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-402GF | 553 | 442 | 503 | 402 | DC13 072A 02-13 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 70 engine `DC13 072A 02-14` | tổ máy `KH-402GF` | prime 503 kVA / 402 kW; standby 553 kVA / 442 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-402GF | 553 | 442 | 503 | 402 | DC13 072A 02-14 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 71 engine `DC13 072A 02-15` | tổ máy `KH-377GF` | rated 471 kVA / 377 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-377GF | 471 | 377 | None | None | DC13 072A 02-15 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 72 engine `DC13 093A 02-72` | tổ máy `KH-400GF` | prime 500 kVA / 400 kW; standby 552 kVA / 442 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-400GF | 552 | 442 | 500 | 400 | DC13 093A 02-72 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 73 engine `DC13 093A 02-73` | tổ máy `KH-440GF` | prime 550 kVA / 440 kW; standby 607 kVA / 486 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-440GF | 607 | 486 | 550 | 440 | DC13 093A 02-73 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 74 engine `DC13 093A 02-74` | tổ máy `KH-453GF` | prime 566 kVA / 453 kW; standby 625 kVA / 500 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-453GF | 625 | 500 | 566 | 453 | DC13 093A 02-74 | 4230*1440*2250 | 3840`
+- **MỚI** n114 b16 dòng 75 engine `DC13 093A 02-75` | tổ máy `KH-480GF` | prime 600 kVA / 480 kW; standby 662 kVA / 530 kW | khác: ∅ | hãng: Scania | dims=4230*1440*2250; weight=3840
+  - nguồn: `| KH-480GF | 662 | 530 | 600 | 480 | DC13 093A 02-75 | 4230*1440*2250 | 3840`
+
+## mpmc-powertech (mới 32, mất 0, đổi 0)
+
+- **MỚI** n106 b5 dòng undefined engine `DC16 078A 02-45` | tổ máy `MS640-2` | prime 727 kVA / 582 kW; standby 800 kVA / 640 kW | khác: ∅ | hãng: Scania | fuel=149.7 L/H; dims=4200×1650×2520 mm; tank=5500 kg / 1150 L | ⚠ prime kVA=727 không có trong dòng; prime kW=582 không có trong dòng; standby kVA=800 không có trong dòng; standby kW=640 không có trong dòng; mã động cơ không có trong dòng; fuel=149.7 L/H không có trong dòng; dims=4200×1650×2520 mm không có trong dòng; tank=5500 kg / 1150 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n112 b9 dòng undefined engine `DC16 078A 02-43` | tổ máy `MS615-2` | prime 699 kVA / 559 kW; standby 769 kVA / 615 kW | khác: ∅ | hãng: Scania | fuel=146.2 L/H; dims=4050×1650×2450 mm; tank=4800 kg / 1100 L | ⚠ prime kVA=699 không có trong dòng; prime kW=559 không có trong dòng; standby kVA=769 không có trong dòng; standby kW=615 không có trong dòng; mã động cơ không có trong dòng; fuel=146.2 L/H không có trong dòng; dims=4050×1650×2450 mm không có trong dòng; tank=4800 kg / 1100 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n113 b10 dòng undefined engine `DC16 093A 02-54` | tổ máy `MS575-2` | prime 653 kVA / 523 kW; standby 719 kVA / 575 kW | khác: ∅ | hãng: Scania | fuel=140.0 L/H; dims=4050×1650×2450 mm; tank=4750 kg / 1100 L | ⚠ prime kVA=653 không có trong dòng; prime kW=523 không có trong dòng; standby kVA=719 không có trong dòng; standby kW=575 không có trong dòng; mã động cơ không có trong dòng; fuel=140.0 L/H không có trong dòng; dims=4050×1650×2450 mm không có trong dòng; tank=4750 kg / 1100 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n114 b11 dòng undefined engine `DC13 093A 02-75` | tổ máy `MS530-2` | prime 602 kVA / 482 kW; standby 553 kVA / 530 kW | khác: ∅ | hãng: Scania | fuel=122.0 L/H; dims=4050×1650×2450 mm; tank=4700 kg / 1100 L | ⚠ standby kW/kVA=0.96; prime > standby; prime kVA=602 không có trong dòng; prime kW=482 không có trong dòng; standby kVA=553 không có trong dòng; standby kW=530 không có trong dòng; mã động cơ không có trong dòng; fuel=122.0 L/H không có trong dòng; dims=4050×1650×2450 mm không có trong dòng; tank=4700 kg / 1100 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n115 b12 dòng undefined engine `DC13 093A 02-74` | tổ máy `MS500-2` | prime 568 kVA / 455 kW; standby 625 kVA / 500 kW | khác: ∅ | hãng: Scania | fuel=113.0 L/H; dims=4050×1650×2450 mm; tank=4700 kg / 1100 L | ⚠ prime kVA=568 không có trong dòng; prime kW=455 không có trong dòng; standby kVA=625 không có trong dòng; standby kW=500 không có trong dòng; mã động cơ không có trong dòng; fuel=113.0 L/H không có trong dòng; dims=4050×1650×2450 mm không có trong dòng; tank=4700 kg / 1100 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n116 b13 dòng undefined engine `DC13 093A 02-73` | tổ máy `MS484-2` | prime 550 kVA / 440 kW; standby 605 kVA / 484 kW | khác: ∅ | hãng: ∅ | fuel=110.0 L/H; dims=3850×1250×2030 mm; tank=3750 kg / 1000 L | ⚠ prime kVA=550 không có trong dòng; prime kW=440 không có trong dòng; standby kVA=605 không có trong dòng; standby kW=484 không có trong dòng; mã động cơ không có trong dòng; fuel=110.0 L/H không có trong dòng; dims=3850×1250×2030 mm không có trong dòng; tank=3750 kg / 1000 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n117 b14 dòng undefined engine `DC13 093A 02-72` | tổ máy `MS440-2` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: ∅ | hãng: Scania | fuel=103.0 L/H; dims=3850×1250×2030 mm; tank=3750 kg / 1000 L | ⚠ prime kVA=500 không có trong dòng; prime kW=400 không có trong dòng; standby kVA=550 không có trong dòng; standby kW=440 không có trong dòng; mã động cơ không có trong dòng; fuel=103.0 L/H không có trong dòng; dims=3850×1250×2030 mm không có trong dòng; tank=3750 kg / 1000 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n118 b15 dòng undefined engine `DC13 072A 02-12` | tổ máy `MS400-2` | prime 455 kVA / 364 kW; standby 500 kVA / 400 kW | khác: ∅ | hãng: Scania | fuel=91.8 L/H; dims=3850×1250×2030 mm; tank=3700 kg / 1000 L | ⚠ prime kVA=455 không có trong dòng; prime kW=364 không có trong dòng; standby kVA=500 không có trong dòng; standby kW=400 không có trong dòng; mã động cơ không có trong dòng; fuel=91.8 L/H không có trong dòng; dims=3850×1250×2030 mm không có trong dòng; tank=3700 kg / 1000 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n119 b16 dòng undefined engine `DC13 072A 02-11` | tổ máy `MS365-2` | prime 415 kVA / 332 kW; standby 456 kVA / 365 kW | khác: ∅ | hãng: Scania | fuel=80.9 L/H; dims=3850×1250×2030 mm; tank=3650 kg / 1000 L | ⚠ prime kVA=415 không có trong dòng; prime kW=332 không có trong dòng; standby kVA=456 không có trong dòng; standby kW=365 không có trong dòng; mã động cơ không có trong dòng; fuel=80.9 L/H không có trong dòng; dims=3850×1250×2030 mm không có trong dòng; tank=3650 kg / 1000 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n120 b17 dòng undefined engine `DC09 072A 02-14` | tổ máy `MS320-2` | prime 364 kVA / 291 kW; standby 400 kVA / 320 kW | khác: ∅ | hãng: Scania | fuel=77.2 L/H; dims=3350×1050×1650 mm; tank=2800 kg / 600 L | ⚠ prime kVA=364 không có trong dòng; prime kW=291 không có trong dòng; standby kVA=400 không có trong dòng; standby kW=320 không có trong dòng; mã động cơ không có trong dòng; fuel=77.2 L/H không có trong dòng; dims=3350×1050×1650 mm không có trong dòng; tank=2800 kg / 600 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n121 b18 dòng undefined engine `DC09 072A 02-13` | tổ máy `MS285-2` | prime 324 kVA / 259 kW; standby 356 kVA / 285 kW | khác: ∅ | hãng: Scania | fuel=68.4 L/H; dims=3350×1050×1650 mm; tank=2750 kg / 600 L | ⚠ prime kVA=324 không có trong dòng; prime kW=259 không có trong dòng; standby kVA=356 không có trong dòng; standby kW=285 không có trong dòng; mã động cơ không có trong dòng; fuel=68.4 L/H không có trong dòng; dims=3350×1050×1650 mm không có trong dòng; tank=2750 kg / 600 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n122 b19 dòng undefined engine `DC09 072A 02-12` | tổ máy `MS270-2` | prime 307 kVA / 245 kW; standby 338 kVA / 270 kW | khác: ∅ | hãng: Scania | fuel=63.0 L/H; dims=3350×1050×1650 mm; tank=2700 kg / 600 L | ⚠ prime kVA=307 không có trong dòng; prime kW=245 không có trong dòng; standby kVA=338 không có trong dòng; standby kW=270 không có trong dòng; mã động cơ không có trong dòng; fuel=63.0 L/H không có trong dòng; dims=3350×1050×1650 mm không có trong dòng; tank=2700 kg / 600 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n123 b20 dòng undefined engine `DC09 072A 02-11` | tổ máy `MS245-2` | prime 278 kVA / 223 kW; standby 306 kVA / 245 kW | khác: ∅ | hãng: Scania | fuel=56.2 L/H; dims=3350×1050×1650 mm; tank=2650 kg / 600 L | ⚠ prime kVA=278 không có trong dòng; prime kW=223 không có trong dòng; standby kVA=306 không có trong dòng; standby kW=245 không có trong dòng; mã động cơ không có trong dòng; fuel=56.2 L/H không có trong dòng; dims=3350×1050×1650 mm không có trong dòng; tank=2650 kg / 600 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n124 b21 dòng undefined engine `DC16 078A 02-45` | tổ máy `MS750-1` | prime 750 kVA / 600 kW; standby 825 kVA / 660 kW | khác: ∅ | hãng: Scania | fuel=146.9 L/H; dims=4200×1650×2520 mm | ⚠ prime kVA=750 không có trong dòng; prime kW=600 không có trong dòng; standby kVA=825 không có trong dòng; standby kW=660 không có trong dòng; mã động cơ không có trong dòng; fuel=146.9 L/H không có trong dòng; dims=4200×1650×2520 mm không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n125 b22 dòng undefined engine `DC16 078A 02-43` | tổ máy `MS700-1` | prime 700 kVA / 560 kW; standby 770 kVA / 616 kW | khác: ∅ | hãng: Scania | fuel=138.7 L/H; dims=4200×1650×2520 mm | ⚠ prime kVA=700 không có trong dòng; prime kW=560 không có trong dòng; standby kVA=770 không có trong dòng; standby kW=616 không có trong dòng; mã động cơ không có trong dòng; fuel=138.7 L/H không có trong dòng; dims=4200×1650×2520 mm không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n126 b23 dòng undefined engine `DC16 078A 02-42` | tổ máy `MS650-1` | prime 650 kVA / 520 kW; standby 715 kVA / 572 kW | khác: ∅ | hãng: Scania | fuel=129.8 L/H; dims=4200×1650×2520 mm; tank=5500 kg / 1150 L | ⚠ prime kVA=650 không có trong dòng; prime kW=520 không có trong dòng; standby kVA=715 không có trong dòng; standby kW=572 không có trong dòng; mã động cơ không có trong dòng; fuel=129.8 L/H không có trong dòng; dims=4200×1650×2520 mm không có trong dòng; tank=5500 kg / 1150 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n127 b24 dòng undefined engine `DC16 093A 02-54` | tổ máy `MS640-1` | prime 640 kVA / 512 kW; standby 704 kVA / 563 kW | khác: ∅ | hãng: Scania | fuel=118.7 L/H; dims=4050×1650×2450 mm | ⚠ prime kVA=640 không có trong dòng; prime kW=512 không có trong dòng; standby kVA=704 không có trong dòng; standby kW=563 không có trong dòng; mã động cơ không có trong dòng; fuel=118.7 L/H không có trong dòng; dims=4050×1650×2450 mm không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n128 b25 dòng undefined engine `DC16 093A 02-53` | tổ máy `MS600-1` | prime 600 kVA / 480 kW; standby 660 kVA / 528 kW | khác: ∅ | hãng: Scania | fuel=109.0 L/H; dims=4050×1650×2450 mm | ⚠ prime kVA=600 không có trong dòng; prime kW=480 không có trong dòng; standby kVA=660 không có trong dòng; standby kW=528 không có trong dòng; mã động cơ không có trong dòng; fuel=109.0 L/H không có trong dòng; dims=4050×1650×2450 mm không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n129 b26 dòng undefined engine `DC16 093A 02-52` | tổ máy `MS555-1` | prime 555 kVA / 444 kW; standby 611 kVA / 488 kW | khác: ∅ | hãng: Scania | fuel=108.0 L/H; dims=4200×1650×2520 mm; tank=4800 kg / 1100 L | ⚠ prime kVA=555 không có trong dòng; prime kW=444 không có trong dòng; standby kVA=611 không có trong dòng; standby kW=488 không có trong dòng; mã động cơ không có trong dòng; fuel=108.0 L/H không có trong dòng; dims=4200×1650×2520 mm không có trong dòng; tank=4800 kg / 1100 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n130 b27 dòng undefined engine `DC16 071A 02-02` | tổ máy `MS550-1` | prime 550 kVA / 440 kW; standby 550 kVA / 440 kW | khác: ∅ | hãng: Scania | fuel=104.6 L/H; dims=4200×1650×2520 mm; tank=5500 kg / 1150 L | ⚠ prime kVA=550 không có trong dòng; prime kW=440 không có trong dòng; standby kVA=550 không có trong dòng; standby kW=440 không có trong dòng; mã động cơ không có trong dòng; fuel=104.6 L/H không có trong dòng; dims=4200×1650×2520 mm không có trong dòng; tank=5500 kg / 1150 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n131 b28 dòng undefined engine `DC16 093A 02-51` | tổ máy `MS510-1` | prime 510 kVA / 408 kW; standby 561 kVA / 449 kW | khác: ∅ | hãng: Scania | fuel=98.4 L/H; dims=4050×1650×2450 mm; tank=4700 kg / 1100 L | ⚠ prime kVA=510 không có trong dòng; prime kW=408 không có trong dòng; standby kVA=561 không có trong dòng; standby kW=449 không có trong dòng; mã động cơ không có trong dòng; fuel=98.4 L/H không có trong dòng; dims=4050×1650×2450 mm không có trong dòng; tank=4700 kg / 1100 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n132 b29 dòng undefined engine `DC13 072A 02-14` | tổ máy `MS500-1` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: ∅ | hãng: ∅ | fuel=90.4 L/H; dims=3850×1250×2030 mm; tank=3800 kg / 1000 L | ⚠ prime kVA=500 không có trong dòng; prime kW=400 không có trong dòng; standby kVA=550 không có trong dòng; standby kW=440 không có trong dòng; mã động cơ không có trong dòng; fuel=90.4 L/H không có trong dòng; dims=3850×1250×2030 mm không có trong dòng; tank=3800 kg / 1000 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n133 b30 dòng undefined engine `DC16 071A 02-01` | tổ máy `MS500-1` | prime 500 kVA / 400 kW; standby 500 kVA / 400 kW | khác: ∅ | hãng: ∅ | fuel=95.1 L/H; dims=4050×1650×2450 mm | ⚠ prime kVA=500 không có trong dòng; prime kW=400 không có trong dòng; standby kVA=500 không có trong dòng; standby kW=400 không có trong dòng; mã động cơ không có trong dòng; fuel=95.1 L/H không có trong dòng; dims=4050×1650×2450 mm không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n134 b31 dòng undefined engine `DC13 093A 02-72` | tổ máy `MS480-1` | prime 480 kVA / 384 kW; standby 528 kVA / 422 kW | khác: ∅ | hãng: ∅ | fuel=78.8 L/H; dims=3850×1250×2030 mm; tank=3750 kg / 1000 L | ⚠ prime kVA=480 không có trong dòng; prime kW=384 không có trong dòng; standby kVA=528 không có trong dòng; standby kW=422 không có trong dòng; mã động cơ không có trong dòng; fuel=78.8 L/H không có trong dòng; dims=3850×1250×2030 mm không có trong dòng; tank=3750 kg / 1000 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n135 b32 dòng undefined engine `DC13 072A 02-12` | tổ máy `MS413-1` | prime 413 kVA / 330 kW; standby 454 kVA / 363 kW | khác: ∅ | hãng: ∅ | fuel=70.6 L/H; dims=3850×1250×2030 mm; tank=3700 kg / 1000 L | ⚠ prime kVA=413 không có trong dòng; prime kW=330 không có trong dòng; standby kVA=454 không có trong dòng; standby kW=363 không có trong dòng; mã động cơ không có trong dòng; fuel=70.6 L/H không có trong dòng; dims=3850×1250×2030 mm không có trong dòng; tank=3700 kg / 1000 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n136 b33 dòng undefined engine `DC13 071A 02-02` | tổ máy `MS410-1` | prime 410 kVA / 328 kW; standby 410 kVA / 328 kW | khác: ∅ | hãng: ∅ | fuel=77.9 L/H; dims=3850×1250×2030 mm; tank=3800 kg / 1000 L | ⚠ prime kVA=410 không có trong dòng; prime kW=328 không có trong dòng; standby kVA=410 không có trong dòng; standby kW=328 không có trong dòng; mã động cơ không có trong dòng; fuel=77.9 L/H không có trong dòng; dims=3850×1250×2030 mm không có trong dòng; tank=3800 kg / 1000 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n137 b34 dòng undefined engine `DC13 072A 02-11` | tổ máy `MS370-1` | prime 370 kVA / 296 kW; standby 407 kVA / 326 kW | khác: ∅ | hãng: ∅ | fuel=61.7 L/H; dims=3850×1250×2030 mm; tank=3650 kg / 1000 L | ⚠ prime kVA=370 không có trong dòng; prime kW=296 không có trong dòng; standby kVA=407 không có trong dòng; standby kW=326 không có trong dòng; mã động cơ không có trong dòng; fuel=61.7 L/H không có trong dòng; dims=3850×1250×2030 mm không có trong dòng; tank=3650 kg / 1000 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n138 b35 dòng undefined engine `DC13 071A 02-01` | tổ máy `MS365-1` | prime 365 kVA / 292 kW; standby 365 kVA / 292 kW | khác: ∅ | hãng: ∅ | fuel=69.1 L/H; dims=3850×1250×2030 mm; tank=3750 kg / 1000 L | ⚠ prime kVA=365 không có trong dòng; prime kW=292 không có trong dòng; standby kVA=365 không có trong dòng; standby kW=292 không có trong dòng; mã động cơ không có trong dòng; fuel=69.1 L/H không có trong dòng; dims=3850×1250×2030 mm không có trong dòng; tank=3750 kg / 1000 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n139 b36 dòng undefined engine `DC09 072A 02-14` | tổ máy `MS325-1` | prime 325 kVA / 260 kW; standby 358 kVA / 286 kW | khác: ∅ | hãng: ∅ | fuel=60.3 L/H; dims=3350×1050×1650 mm; tank=2800 kg / 600 L | ⚠ prime kVA=325 không có trong dòng; prime kW=260 không có trong dòng; standby kVA=358 không có trong dòng; standby kW=286 không có trong dòng; mã động cơ không có trong dòng; fuel=60.3 L/H không có trong dòng; dims=3350×1050×1650 mm không có trong dòng; tank=2800 kg / 600 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n140 b37 dòng undefined engine `DC09 071A 02-04` | tổ máy `MS325-1` | prime 325 kVA / 260 kW; standby 325 kVA / 260 kW | khác: ∅ | hãng: Scania | fuel=62.4 L/H; dims=3350×1050×1650 mm; tank=2800 kg / 600 L | ⚠ prime kVA=325 không có trong dòng; prime kW=260 không có trong dòng; standby kVA=325 không có trong dòng; standby kW=260 không có trong dòng; mã động cơ không có trong dòng; fuel=62.4 L/H không có trong dòng; dims=3350×1050×1650 mm không có trong dòng; tank=2800 kg / 600 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n142 b39 dòng undefined engine `DC09 071A 02-03` | tổ máy `MS300-1` | prime 300 kVA / 240 kW; standby 300 kVA / 240 kW | khác: ∅ | hãng: Scania | fuel=57.9 L/H; dims=3350×1050×1650 mm; tank=2750 kg / 600 L | ⚠ prime kVA=300 không có trong dòng; prime kW=240 không có trong dòng; standby kVA=300 không có trong dòng; standby kW=240 không có trong dòng; mã động cơ không có trong dòng; fuel=57.9 L/H không có trong dòng; dims=3350×1050×1650 mm không có trong dòng; tank=2750 kg / 600 L không có trong dòng
+  - nguồn: `undefined`
+- **MỚI** n144 b41 dòng undefined engine `DC09 071A 02-02` | tổ máy `MS275-1` | prime 275 kVA / 220 kW; standby 275 kVA / 220 kW | khác: ∅ | hãng: Scania | fuel=53.8 L/H; dims=3350×1050×1650 mm; tank=2700 kg / 600 L | ⚠ prime kVA=275 không có trong dòng; prime kW=220 không có trong dòng; standby kVA=275 không có trong dòng; standby kW=220 không có trong dòng; mã động cơ không có trong dòng; fuel=53.8 L/H không có trong dòng; dims=3350×1050×1650 mm không có trong dòng; tank=2700 kg / 600 L không có trong dòng
+  - nguồn: `undefined`
+
+## rcg-power (mới 106, mất 0, đổi 0)
+
+- **MỚI** n124 b19 dòng 0 engine `TAD530GE` | tổ máy `R-V85D5/S` | standby 94 kVA / 75 kW | khác: TAL-A44-C | hãng: Volvo Penta | 
+  - nguồn: `| R-V85D5/S | 85 kVA / 68 kW | 94 kVA / 75 kW | 沃尔沃 & TAD530GE | 利莱森玛 & TAL-A44-C | PDF`
+- **MỚI** n124 b19 dòng 0 alternator `TAL-A44-C` | tổ máy `R-V85D5/S` | standby 94 kVA / 75 kW | khác: TAD530GE | hãng: Leroy-Somer | 
+  - nguồn: `| R-V85D5/S | 85 kVA / 68 kW | 94 kVA / 75 kW | 沃尔沃 & TAD530GE | 利莱森玛 & TAL-A44-C | PDF`
+- **MỚI** n124 b19 dòng 1 engine `TAD531GE` | tổ máy `R-V100D5/S` | standby 110 kVA / 88 kW | khác: TAL-A44-D | hãng: Volvo Penta | 
+  - nguồn: `| R-V100D5/S | 100 kVA / 80 kW | 110 kVA / 88 kW | 沃尔沃 & TAD531GE | 利莱森玛 & TAL-A44-D | PDF`
+- **MỚI** n124 b19 dòng 1 alternator `TAL-A44-D` | tổ máy `R-V100D5/S` | standby 110 kVA / 88 kW | khác: TAD531GE | hãng: Leroy-Somer | 
+  - nguồn: `| R-V100D5/S | 100 kVA / 80 kW | 110 kVA / 88 kW | 沃尔沃 & TAD531GE | 利莱森玛 & TAL-A44-D | PDF`
+- **MỚI** n124 b19 dòng 2 engine `TAD532GE` | tổ máy `R-V125D5/S` | standby 138 kVA / 110 kW | khác: TAL-A44-E | hãng: Volvo Penta | 
+  - nguồn: `| R-V125D5/S | 125 kVA / 100 kW | 138 kVA / 110 kW | 沃尔沃 & TAD532GE | 利莱森玛 & TAL-A44-E | PDF`
+- **MỚI** n124 b19 dòng 2 alternator `TAL-A44-E` | tổ máy `R-V125D5/S` | standby 138 kVA / 110 kW | khác: TAD532GE | hãng: Leroy-Somer | 
+  - nguồn: `| R-V125D5/S | 125 kVA / 100 kW | 138 kVA / 110 kW | 沃尔沃 & TAD532GE | 利莱森玛 & TAL-A44-E | PDF`
+- **MỚI** n124 b19 dòng 3 engine `TAD731GE` | tổ máy `R-V150D5/S` | standby 165 kVA / 132 kW | khác: TAL-A44-J | hãng: Volvo Penta | 
+  - nguồn: `| R-V150D5/S | 150 kVA / 120 kW | 165 kVA / 132 kW | 沃尔沃 & TAD731GE | 利莱森玛 & TAL-A44-J | PDF`
+- **MỚI** n124 b19 dòng 3 alternator `TAL-A44-J` | tổ máy `R-V150D5/S` | standby 165 kVA / 132 kW | khác: TAD731GE | hãng: Leroy-Somer | 
+  - nguồn: `| R-V150D5/S | 150 kVA / 120 kW | 165 kVA / 132 kW | 沃尔沃 & TAD731GE | 利莱森玛 & TAL-A44-J | PDF`
+- **MỚI** n124 b19 dòng 4 engine `TAD732GE` | tổ máy `R-V180D5/S` | standby 200 kVA / 160 kW | khác: TAL-A44-L | hãng: Volvo Penta | 
+  - nguồn: `| R-V180D5/S | 180 kVA / 145 kW | 200 kVA / 160 kW | 沃尔沃 & TAD732GE | 利莱森玛 & TAL-A44-L | PDF`
+- **MỚI** n124 b19 dòng 4 alternator `TAL-A44-L` | tổ máy `R-V180D5/S` | standby 200 kVA / 160 kW | khác: TAD732GE | hãng: Leroy-Somer | 
+  - nguồn: `| R-V180D5/S | 180 kVA / 145 kW | 200 kVA / 160 kW | 沃尔沃 & TAD732GE | 利莱森玛 & TAL-A44-L | PDF`
+- **MỚI** n124 b19 dòng 5 engine `TAD733GE` | tổ máy `R-V200D5/S` | standby 220 kVA / 176 kW | khác: TAL-A44-M | hãng: Volvo Penta | 
+  - nguồn: `| R-V200D5/S | 200 kVA / 160 kW | 220 kVA / 176 kW | 沃尔沃 & TAD733GE | 利莱森玛 & TAL-A44-M | PDF`
+- **MỚI** n124 b19 dòng 5 alternator `TAL-A44-M` | tổ máy `R-V200D5/S` | standby 220 kVA / 176 kW | khác: TAD733GE | hãng: Leroy-Somer | 
+  - nguồn: `| R-V200D5/S | 200 kVA / 160 kW | 220 kVA / 176 kW | 沃尔沃 & TAD733GE | 利莱森玛 & TAL-A44-M | PDF`
+- **MỚI** n124 b19 dòng 6 engine `TAD734GE` | tổ máy `R-V250D5/S(TAD734GE)` | standby 275 kVA / 220 kW | khác: TAL-A46-D | hãng: Volvo Penta | 
+  - nguồn: `| R-V250D5/S(TAD734GE) | 250 kVA / 200 kW | 275 kVA / 220 kW | 沃尔沃 & TAD734GE | 利莱森玛 & TAL-A46-D | PDF`
+- **MỚI** n124 b19 dòng 6 alternator `TAL-A46-D` | tổ máy `R-V250D5/S(TAD734GE)` | standby 275 kVA / 220 kW | khác: TAD734GE | hãng: Leroy-Somer | 
+  - nguồn: `| R-V250D5/S(TAD734GE) | 250 kVA / 200 kW | 275 kVA / 220 kW | 沃尔沃 & TAD734GE | 利莱森玛 & TAL-A46-D | PDF`
+- **MỚI** n124 b19 dòng 7 engine `TAD841GE` | tổ máy `R-V250D5/S(TAD841GE)` | standby 275 kVA / 220 kW | khác: TAL-A46-D | hãng: Volvo Penta | 
+  - nguồn: `| R-V250D5/S(TAD841GE) | 250 kVA / 200 kW | 275 kVA / 220 kW | 沃尔沃 & TAD841GE | 利莱森玛 & TAL-A46-D | PDF`
+- **MỚI** n124 b19 dòng 7 alternator `TAL-A46-D` | tổ máy `R-V250D5/S(TAD841GE)` | standby 275 kVA / 220 kW | khác: TAD841GE | hãng: Leroy-Somer | 
+  - nguồn: `| R-V250D5/S(TAD841GE) | 250 kVA / 200 kW | 275 kVA / 220 kW | 沃尔沃 & TAD841GE | 利莱森玛 & TAL-A46-D | PDF`
+- **MỚI** n124 b19 dòng 8 engine `TAD842GE` | tổ máy `R-V300D5/S` | standby 330 kVA / 264 kW | khác: TAL-A46-F | hãng: Volvo Penta | 
+  - nguồn: `| R-V300D5/S | 300kVA / 240kW | 330kVA / 264kW | 沃尔沃 & TAD842GE | 利莱森玛 & TAL-A46-F | PDF`
+- **MỚI** n124 b19 dòng 8 alternator `TAL-A46-F` | tổ máy `R-V300D5/S` | standby 330 kVA / 264 kW | khác: TAD842GE | hãng: Leroy-Somer | 
+  - nguồn: `| R-V300D5/S | 300kVA / 240kW | 330kVA / 264kW | 沃尔沃 & TAD842GE | 利莱森玛 & TAL-A46-F | PDF`
+- **MỚI** n124 b19 dòng 9 engine `TAD1341GE-B` | tổ máy `R-V313D5/S` | standby 344 kVA / 275 kW | khác: TAL-A46-G | hãng: Volvo Penta | 
+  - nguồn: `| R-V313D5/S | 313 kVA / 250 kW | 344 kVA / 275 kW | 沃尔沃 & TAD1341GE-B | 利莱森玛 & TAL-A46-G | PDF`
+- **MỚI** n124 b19 dòng 9 alternator `TAL-A46-G` | tổ máy `R-V313D5/S` | standby 344 kVA / 275 kW | khác: TAD1341GE-B | hãng: Leroy-Somer | 
+  - nguồn: `| R-V313D5/S | 313 kVA / 250 kW | 344 kVA / 275 kW | 沃尔沃 & TAD1341GE-B | 利莱森玛 & TAL-A46-G | PDF`
+- **MỚI** n124 b19 dòng 10 engine `TAD843GE` | tổ máy `R-V325D5/S` | standby 358 kVA / 286 kW | khác: TAL-A46-G | hãng: Volvo Penta | 
+  - nguồn: `| R-V325D5/S | 325 kVA / 260 kW | 358 kVA / 286 kW | 沃尔沃 & TAD843GE | 利莱森玛 & TAL-A46-G | PDF`
+- **MỚI** n124 b19 dòng 10 alternator `TAL-A46-G` | tổ máy `R-V325D5/S` | standby 358 kVA / 286 kW | khác: TAD843GE | hãng: Leroy-Somer | 
+  - nguồn: `| R-V325D5/S | 325 kVA / 260 kW | 358 kVA / 286 kW | 沃尔沃 & TAD843GE | 利莱森玛 & TAL-A46-G | PDF`
+- **MỚI** n124 b19 dòng 11 engine `TAD1342GE-B` | tổ máy `R-V350D5/S` | standby 385 kVA / 308 kW | khác: TAL-A46-H | hãng: Volvo Penta | 
+  - nguồn: `| R-V350D5/S | 350 kVA / 280 kW | 385 kVA / 308 kW | 沃尔沃 & TAD1342GE-B | 利莱森玛 & TAL-A46-H | PDF`
+- **MỚI** n124 b19 dòng 11 alternator `TAL-A46-H` | tổ máy `R-V350D5/S` | standby 385 kVA / 308 kW | khác: TAD1342GE-B | hãng: Leroy-Somer | 
+  - nguồn: `| R-V350D5/S | 350 kVA / 280 kW | 385 kVA / 308 kW | 沃尔沃 & TAD1342GE-B | 利莱森玛 & TAL-A46-H | PDF`
+- **MỚI** n124 b19 dòng 12 engine `TAD1343GE-B` | tổ máy `R-V375D5/S` | standby 413 kVA / 330 kW | khác: TAL-A473-A | hãng: Volvo Penta | 
+  - nguồn: `| R-V375D5/S | 375 kVA / 300 kW | 413 kVA / 330 kW | 沃尔沃 & TAD1343GE-B | 利莱森玛 & TAL-A473-A | PDF`
+- **MỚI** n124 b19 dòng 12 alternator `TAL-A473-A` | tổ máy `R-V375D5/S` | standby 413 kVA / 330 kW | khác: TAD1343GE-B | hãng: Leroy-Somer | 
+  - nguồn: `| R-V375D5/S | 375 kVA / 300 kW | 413 kVA / 330 kW | 沃尔沃 & TAD1343GE-B | 利莱森玛 & TAL-A473-A | PDF`
+- **MỚI** n124 b19 dòng 13 engine `TAD1344GE-B` | tổ máy `R-V400D5/S` | standby 450 kVA / 360 kW | khác: TAL-A473-A | hãng: Volvo Penta | 
+  - nguồn: `| R-V400D5/S | 400 kVA / 320 kW | 450 kVA / 360 kW | 沃尔沃 & TAD1344GE-B | 利莱森玛 & TAL-A473-A | PDF`
+- **MỚI** n124 b19 dòng 13 alternator `TAL-A473-A` | tổ máy `R-V400D5/S` | standby 450 kVA / 360 kW | khác: TAD1344GE-B | hãng: Leroy-Somer | 
+  - nguồn: `| R-V400D5/S | 400 kVA / 320 kW | 450 kVA / 360 kW | 沃尔沃 & TAD1344GE-B | 利莱森玛 & TAL-A473-A | PDF`
+- **MỚI** n124 b19 dòng 14 engine `TAD1345GE-B` | tổ máy `R-V450D5/S` | standby 495 kVA / 396 kW | khác: TAL-A473-B | hãng: Volvo Penta | 
+  - nguồn: `| R-V450D5/S | 450 kVA / 360 kW | 495 kVA / 396 kW | 沃尔沃 & TAD1345GE-B | 利莱森玛 & TAL-A473-B | PDF`
+- **MỚI** n124 b19 dòng 14 alternator `TAL-A473-B` | tổ máy `R-V450D5/S` | standby 495 kVA / 396 kW | khác: TAD1345GE-B | hãng: Leroy-Somer | 
+  - nguồn: `| R-V450D5/S | 450 kVA / 360 kW | 495 kVA / 396 kW | 沃尔沃 & TAD1345GE-B | 利莱森玛 & TAL-A473-B | PDF`
+- **MỚI** n124 b19 dòng 15 engine `TAD1346GE` | tổ máy `R-V500D5/S(TAD1346GE)` | standby 550 kVA / 440 kW | khác: TAL-A473-C | hãng: Volvo Penta | 
+  - nguồn: `| R-V500D5/S(TAD1346GE) | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1346GE | 利莱森玛 & TAL-A473-C | PDF`
+- **MỚI** n124 b19 dòng 15 alternator `TAL-A473-C` | tổ máy `R-V500D5/S(TAD1346GE)` | standby 550 kVA / 440 kW | khác: TAD1346GE | hãng: Leroy-Somer | 
+  - nguồn: `| R-V500D5/S(TAD1346GE) | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1346GE | 利莱森玛 & TAL-A473-C | PDF`
+- **MỚI** n124 b19 dòng 16 engine `TAD1641GE-B` | tổ máy `R-V500D5/S(TAD1641GE-B)` | standby 550 kVA / 440 kW | khác: TAL-A473-C | hãng: Volvo Penta | 
+  - nguồn: `| R-V500D5/S(TAD1641GE-B) | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1641GE-B | 利莱森玛 & TAL-A473-C | PDF`
+- **MỚI** n124 b19 dòng 16 alternator `TAL-A473-C` | tổ máy `R-V500D5/S(TAD1641GE-B)` | standby 550 kVA / 440 kW | khác: TAD1641GE-B | hãng: Leroy-Somer | 
+  - nguồn: `| R-V500D5/S(TAD1641GE-B) | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1641GE-B | 利莱森玛 & TAL-A473-C | PDF`
+- **MỚI** n124 b19 dòng 17 engine `TAD1642GE-B` | tổ máy `R-V600D5/S` | standby 660 kVA / 528 kW | khác: TAL-A473-E | hãng: Volvo Penta | 
+  - nguồn: `| R-V600D5/S | 600 kVA / 480 KW | 660 kVA / 528 kW | 沃尔沃 & TAD1642GE-B | 利莱森玛 & TAL-A473-E | PDF`
+- **MỚI** n124 b19 dòng 17 alternator `TAL-A473-E` | tổ máy `R-V600D5/S` | standby 660 kVA / 528 kW | khác: TAD1642GE-B | hãng: Leroy-Somer | 
+  - nguồn: `| R-V600D5/S | 600 kVA / 480 KW | 660 kVA / 528 kW | 沃尔沃 & TAD1642GE-B | 利莱森玛 & TAL-A473-E | PDF`
+- **MỚI** n124 b20 dòng 0 engine `TAD530GE` | tổ máy `R-V85D5/S` | standby 94 kVA / 75 kW | khác: UCI224G | hãng: Volvo Penta | 
+  - nguồn: `| R-V85D5/S | 85 kVA / 68 kW | 94 kVA / 75 kW | 沃尔沃 & TAD530GE | 斯坦福 & UCI224G | PDF`
+- **MỚI** n124 b20 dòng 0 alternator `UCI224G` | tổ máy `R-V85D5/S` | standby 94 kVA / 75 kW | khác: TAD530GE | hãng: Stamford | 
+  - nguồn: `| R-V85D5/S | 85 kVA / 68 kW | 94 kVA / 75 kW | 沃尔沃 & TAD530GE | 斯坦福 & UCI224G | PDF`
+- **MỚI** n124 b20 dòng 1 engine `TAD531GE` | tổ máy `R-V100D5/S` | standby 110 kVA / 88 kW | khác: UCI274C | hãng: Volvo Penta | 
+  - nguồn: `| R-V100D5/S | 100 kVA / 80 kW | 110 kVA / 88 kW | 沃尔沃 & TAD531GE | 斯坦福 & UCI274C | PDF`
+- **MỚI** n124 b20 dòng 1 alternator `UCI274C` | tổ máy `R-V100D5/S` | standby 110 kVA / 88 kW | khác: TAD531GE | hãng: Stamford | 
+  - nguồn: `| R-V100D5/S | 100 kVA / 80 kW | 110 kVA / 88 kW | 沃尔沃 & TAD531GE | 斯坦福 & UCI274C | PDF`
+- **MỚI** n124 b20 dòng 2 engine `TAD532GE` | tổ máy `R-V125D5/S` | standby 138 kVA / 110 kW | khác: UCI274ES | hãng: Volvo Penta | 
+  - nguồn: `| R-V125D5/S | 125 kVA / 100 kW | 138 kVA / 110 kW | 沃尔沃 & TAD532GE | 斯坦福 & UCI274ES | PDF`
+- **MỚI** n124 b20 dòng 2 alternator `UCI274ES` | tổ máy `R-V125D5/S` | standby 138 kVA / 110 kW | khác: TAD532GE | hãng: Stamford | 
+  - nguồn: `| R-V125D5/S | 125 kVA / 100 kW | 138 kVA / 110 kW | 沃尔沃 & TAD532GE | 斯坦福 & UCI274ES | PDF`
+- **MỚI** n124 b20 dòng 3 engine `TAD731GE` | tổ máy `R-V150D5/S` | standby 165 kVA / 132 kW | khác: UCI274F | hãng: Volvo Penta | 
+  - nguồn: `| R-V150D5/S | 150 kVA / 120 kW | 165 kVA / 132 kW | 沃尔沃 & TAD731GE | 斯坦福 & UCI274F | PDF`
+- **MỚI** n124 b20 dòng 3 alternator `UCI274F` | tổ máy `R-V150D5/S` | standby 165 kVA / 132 kW | khác: TAD731GE | hãng: Stamford | 
+  - nguồn: `| R-V150D5/S | 150 kVA / 120 kW | 165 kVA / 132 kW | 沃尔沃 & TAD731GE | 斯坦福 & UCI274F | PDF`
+- **MỚI** n124 b20 dòng 4 engine `TAD732GE` | tổ máy `R-V180D5/S` | standby 200 kVA / 160 kW | khác: UCI274G | hãng: Volvo Penta | 
+  - nguồn: `| R-V180D5/S | 180 kVA / 145 kW | 200 kVA / 160 kW | 沃尔沃 & TAD732GE | 斯坦福 & UCI274G | PDF`
+- **MỚI** n124 b20 dòng 4 alternator `UCI274G` | tổ máy `R-V180D5/S` | standby 200 kVA / 160 kW | khác: TAD732GE | hãng: Stamford | 
+  - nguồn: `| R-V180D5/S | 180 kVA / 145 kW | 200 kVA / 160 kW | 沃尔沃 & TAD732GE | 斯坦福 & UCI274G | PDF`
+- **MỚI** n124 b20 dòng 5 engine `TAD733GE` | tổ máy `R-V200D5/S` | standby 220 kVA / 176 kW | khác: UCI274H | hãng: Volvo Penta | 
+  - nguồn: `| R-V200D5/S | 200 kVA / 160 kW | 220 kVA / 176 kW | 沃尔沃 & TAD733GE | 斯坦福 & UCI274H | PDF`
+- **MỚI** n124 b20 dòng 5 alternator `UCI274H` | tổ máy `R-V200D5/S` | standby 220 kVA / 176 kW | khác: TAD733GE | hãng: Stamford | 
+  - nguồn: `| R-V200D5/S | 200 kVA / 160 kW | 220 kVA / 176 kW | 沃尔沃 & TAD733GE | 斯坦福 & UCI274H | PDF`
+- **MỚI** n124 b20 dòng 6 engine `TAD734GE` | tổ máy `R-V250D5/S(TAD734GE)` | standby 275 kVA / 220 kW | khác: UCDI274K | hãng: Volvo Penta | 
+  - nguồn: `| R-V250D5/S(TAD734GE) | 250 kVA / 200 kW | 275 kVA / 220 kW | 沃尔沃 & TAD734GE | 斯坦福 & UCDI274K | PDF`
+- **MỚI** n124 b20 dòng 6 alternator `UCDI274K` | tổ máy `R-V250D5/S(TAD734GE)` | standby 275 kVA / 220 kW | khác: TAD734GE | hãng: Stamford | 
+  - nguồn: `| R-V250D5/S(TAD734GE) | 250 kVA / 200 kW | 275 kVA / 220 kW | 沃尔沃 & TAD734GE | 斯坦福 & UCDI274K | PDF`
+- **MỚI** n124 b20 dòng 7 engine `TAD841GE` | tổ máy `R-V250D5/S(TAD841GE)` | standby 275 kVA / 220 kW | khác: UCDI274K | hãng: Volvo Penta | 
+  - nguồn: `| R-V250D5/S(TAD841GE) | 250 kVA / 200 kW | 275 kVA / 220 kW | 沃尔沃 & TAD841GE | 斯坦福 & UCDI274K | PDF`
+- **MỚI** n124 b20 dòng 7 alternator `UCDI274K` | tổ máy `R-V250D5/S(TAD841GE)` | standby 275 kVA / 220 kW | khác: TAD841GE | hãng: Stamford | 
+  - nguồn: `| R-V250D5/S(TAD841GE) | 250 kVA / 200 kW | 275 kVA / 220 kW | 沃尔沃 & TAD841GE | 斯坦福 & UCDI274K | PDF`
+- **MỚI** n124 b20 dòng 8 engine `TAD842GE` | tổ máy `R-V300D5/S` | standby 330 kVA / 264 kW | khác: S4L1D-D4 | hãng: Volvo Penta | 
+  - nguồn: `| R-V300D5/S | 300kVA / 240kW | 330kVA / 264kW | 沃尔沃 & TAD842GE | 斯坦福 & S4L1D-D4 | PDF`
+- **MỚI** n124 b20 dòng 8 alternator `S4L1D-D4` | tổ máy `R-V300D5/S` | standby 330 kVA / 264 kW | khác: TAD842GE | hãng: Stamford | 
+  - nguồn: `| R-V300D5/S | 300kVA / 240kW | 330kVA / 264kW | 沃尔沃 & TAD842GE | 斯坦福 & S4L1D-D4 | PDF`
+- **MỚI** n124 b20 dòng 9 engine `TAD1341GE-B` | tổ máy `R-V313D5/S` | standby 344 kVA / 275 kW | khác: S4L1D-D4 | hãng: Volvo Penta | 
+  - nguồn: `| R-V313D5/S | 313 kVA / 250 kW | 344 kVA / 275 kW | 沃尔沃 & TAD1341GE-B | 斯坦福 & S4L1D-D4 | PDF`
+- **MỚI** n124 b20 dòng 9 alternator `S4L1D-D4` | tổ máy `R-V313D5/S` | standby 344 kVA / 275 kW | khác: TAD1341GE-B | hãng: Stamford | 
+  - nguồn: `| R-V313D5/S | 313 kVA / 250 kW | 344 kVA / 275 kW | 沃尔沃 & TAD1341GE-B | 斯坦福 & S4L1D-D4 | PDF`
+- **MỚI** n124 b20 dòng 10 engine `TAD843GE` | tổ máy `R-V325D5/S` | standby 358 kVA / 286 kW | khác: S4L1D-E4 | hãng: Volvo Penta | 
+  - nguồn: `| R-V325D5/S | 325 kVA / 260 kW | 358 kVA / 286 kW | 沃尔沃 & TAD843GE | 斯坦福 & S4L1D-E4 | PDF`
+- **MỚI** n124 b20 dòng 10 alternator `S4L1D-E4` | tổ máy `R-V325D5/S` | standby 358 kVA / 286 kW | khác: TAD843GE | hãng: Stamford | 
+  - nguồn: `| R-V325D5/S | 325 kVA / 260 kW | 358 kVA / 286 kW | 沃尔沃 & TAD843GE | 斯坦福 & S4L1D-E4 | PDF`
+- **MỚI** n124 b20 dòng 11 engine `TAD1342GE-B` | tổ máy `R-V350D5/S` | standby 385 kVA / 308 kW | khác: S4L1D-E4 | hãng: Volvo Penta | 
+  - nguồn: `| R-V350D5/S | 350 kVA / 280 kW | 385 kVA / 308 kW | 沃尔沃 & TAD1342GE-B | 斯坦福 & S4L1D-E4 | PDF`
+- **MỚI** n124 b20 dòng 11 alternator `S4L1D-E4` | tổ máy `R-V350D5/S` | standby 385 kVA / 308 kW | khác: TAD1342GE-B | hãng: Stamford | 
+  - nguồn: `| R-V350D5/S | 350 kVA / 280 kW | 385 kVA / 308 kW | 沃尔沃 & TAD1342GE-B | 斯坦福 & S4L1D-E4 | PDF`
+- **MỚI** n124 b20 dòng 12 engine `TAD1343GE-B` | tổ máy `R-V375D5/S` | standby 413 kVA / 330 kW | khác: S4L1D-F4 | hãng: Volvo Penta | 
+  - nguồn: `| R-V375D5/S | 375 kVA / 300 kW | 413 kVA / 330 kW | 沃尔沃 & TAD1343GE-B | 斯坦福 & S4L1D-F4 | PDF`
+- **MỚI** n124 b20 dòng 12 alternator `S4L1D-F4` | tổ máy `R-V375D5/S` | standby 413 kVA / 330 kW | khác: TAD1343GE-B | hãng: Stamford | 
+  - nguồn: `| R-V375D5/S | 375 kVA / 300 kW | 413 kVA / 330 kW | 沃尔沃 & TAD1343GE-B | 斯坦福 & S4L1D-F4 | PDF`
+- **MỚI** n124 b20 dòng 13 engine `TAD1344GE-B` | tổ máy `R-V400D5/S` | standby 450 kVA / 360 kW | khác: S4L1D-F4 | hãng: Volvo Penta | 
+  - nguồn: `| R-V400D5/S | 400 kVA / 320 kW | 450 kVA / 360 kW | 沃尔沃 & TAD1344GE-B | 斯坦福 & S4L1D-F4 | PDF`
+- **MỚI** n124 b20 dòng 13 alternator `S4L1D-F4` | tổ máy `R-V400D5/S` | standby 450 kVA / 360 kW | khác: TAD1344GE-B | hãng: Stamford | 
+  - nguồn: `| R-V400D5/S | 400 kVA / 320 kW | 450 kVA / 360 kW | 沃尔沃 & TAD1344GE-B | 斯坦福 & S4L1D-F4 | PDF`
+- **MỚI** n124 b20 dòng 14 engine `TAD1345GE-B` | tổ máy `R-V450D5/S` | standby 495 kVA / 396 kW | khác: S4L1D-G4 | hãng: Volvo Penta | 
+  - nguồn: `| R-V450D5/S | 450 kVA / 360 kW | 495 kVA / 396 kW | 沃尔沃 & TAD1345GE-B | 斯坦福 & S4L1D-G4 | PDF`
+- **MỚI** n124 b20 dòng 14 alternator `S4L1D-G4` | tổ máy `R-V450D5/S` | standby 495 kVA / 396 kW | khác: TAD1345GE-B | hãng: Stamford | 
+  - nguồn: `| R-V450D5/S | 450 kVA / 360 kW | 495 kVA / 396 kW | 沃尔沃 & TAD1345GE-B | 斯坦福 & S4L1D-G4 | PDF`
+- **MỚI** n124 b20 dòng 15 engine `TAD1346GE` | tổ máy `R-V500D5/S(TAD1346GE)` | standby 550 kVA / 440 kW | khác: S5L1D-C4 | hãng: Volvo Penta | 
+  - nguồn: `| R-V500D5/S(TAD1346GE) | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1346GE | 斯坦福 & S5L1D-C4 | PDF`
+- **MỚI** n124 b20 dòng 15 alternator `S5L1D-C4` | tổ máy `R-V500D5/S(TAD1346GE)` | standby 550 kVA / 440 kW | khác: TAD1346GE | hãng: Stamford | 
+  - nguồn: `| R-V500D5/S(TAD1346GE) | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1346GE | 斯坦福 & S5L1D-C4 | PDF`
+- **MỚI** n124 b20 dòng 16 engine `TAD1641GE-B` | tổ máy `R-V500D5/S(TAD1641GE-B)` | standby 550 kVA / 440 kW | khác: S5L1D-C4 | hãng: Volvo Penta | 
+  - nguồn: `| R-V500D5/S(TAD1641GE-B) | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1641GE-B | 斯坦福 & S5L1D-C4 | PDF`
+- **MỚI** n124 b20 dòng 16 alternator `S5L1D-C4` | tổ máy `R-V500D5/S(TAD1641GE-B)` | standby 550 kVA / 440 kW | khác: TAD1641GE-B | hãng: Stamford | 
+  - nguồn: `| R-V500D5/S(TAD1641GE-B) | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1641GE-B | 斯坦福 & S5L1D-C4 | PDF`
+- **MỚI** n124 b20 dòng 17 engine `TAD1642GE-B` | tổ máy `R-V600D5/S` | standby 660 kVA / 528 kW | khác: S5L1D-E4 | hãng: Volvo Penta | 
+  - nguồn: `| R-V600D5/S | 600 kVA / 480 KW | 660 kVA / 528 kW | 沃尔沃 & TAD1642GE-B | 斯坦福 & S5L1D-E4 | PDF`
+- **MỚI** n124 b20 dòng 17 alternator `S5L1D-E4` | tổ máy `R-V600D5/S` | standby 660 kVA / 528 kW | khác: TAD1642GE-B | hãng: Stamford | 
+  - nguồn: `| R-V600D5/S | 600 kVA / 480 KW | 660 kVA / 528 kW | 沃尔沃 & TAD1642GE-B | 斯坦福 & S5L1D-E4 | PDF`
+- **MỚI** n124 b20 dòng 18 engine `TAD550GE` | tổ máy `R-V85D5/S` | standby 94 kVA / 75 kW | khác: UCI224G | hãng: Volvo Penta | 
+  - nguồn: `| R-V85D5/S | 85 kVA / 68 kW | 94 kVA / 75 kW | 沃尔沃 & TAD550GE | 斯坦福 & UCI224G | PDF`
+- **MỚI** n124 b20 dòng 18 alternator `UCI224G` | tổ máy `R-V85D5/S` | standby 94 kVA / 75 kW | khác: TAD550GE | hãng: Stamford | 
+  - nguồn: `| R-V85D5/S | 85 kVA / 68 kW | 94 kVA / 75 kW | 沃尔沃 & TAD550GE | 斯坦福 & UCI224G | PDF`
+- **MỚI** n124 b20 dòng 19 engine `TAD551GE` | tổ máy `R-V100D5/S` | standby 110 kVA / 88 kW | khác: UCI274C | hãng: Volvo Penta | 
+  - nguồn: `| R-V100D5/S | 100 kVA / 80 kW | 110 kVA / 88 kW | 沃尔沃 & TAD551GE | 斯坦福 & UCI274C | PDF`
+- **MỚI** n124 b20 dòng 19 alternator `UCI274C` | tổ máy `R-V100D5/S` | standby 110 kVA / 88 kW | khác: TAD551GE | hãng: Stamford | 
+  - nguồn: `| R-V100D5/S | 100 kVA / 80 kW | 110 kVA / 88 kW | 沃尔沃 & TAD551GE | 斯坦福 & UCI274C | PDF`
+- **MỚI** n124 b20 dòng 20 engine `TAD750GE` | tổ máy `R-V125D5/S` | standby 138 kVA / 110 kW | khác: UCI274ES | hãng: Volvo Penta | 
+  - nguồn: `| R-V125D5/S | 125 kVA / 100 kW | 138 kVA / 110 kW | 沃尔沃 & TAD750GE | 斯坦福 & UCI274ES | PDF`
+- **MỚI** n124 b20 dòng 20 alternator `UCI274ES` | tổ máy `R-V125D5/S` | standby 138 kVA / 110 kW | khác: TAD750GE | hãng: Stamford | 
+  - nguồn: `| R-V125D5/S | 125 kVA / 100 kW | 138 kVA / 110 kW | 沃尔沃 & TAD750GE | 斯坦福 & UCI274ES | PDF`
+- **MỚI** n124 b20 dòng 21 engine `TAD751GE` | tổ máy `R-V150D5/S` | standby 165 kVA / 132 kW | khác: UCI274F | hãng: Volvo Penta | 
+  - nguồn: `| R-V150D5/S | 150 kVA / 120 kW | 165 kVA / 132 kW | 沃尔沃 & TAD751GE | 斯坦福 & UCI274F | PDF`
+- **MỚI** n124 b20 dòng 21 alternator `UCI274F` | tổ máy `R-V150D5/S` | standby 165 kVA / 132 kW | khác: TAD751GE | hãng: Stamford | 
+  - nguồn: `| R-V150D5/S | 150 kVA / 120 kW | 165 kVA / 132 kW | 沃尔沃 & TAD751GE | 斯坦福 & UCI274F | PDF`
+- **MỚI** n124 b20 dòng 22 engine `TAD752GE` | tổ máy `R-V180D5/S` | standby 200 kVA / 160 kW | khác: UCI274G | hãng: Volvo Penta | 
+  - nguồn: `| R-V180D5/S | 180 kVA / 145 kW | 200 kVA / 160 kW | 沃尔沃 & TAD752GE | 斯坦福 & UCI274G | PDF`
+- **MỚI** n124 b20 dòng 22 alternator `UCI274G` | tổ máy `R-V180D5/S` | standby 200 kVA / 160 kW | khác: TAD752GE | hãng: Stamford | 
+  - nguồn: `| R-V180D5/S | 180 kVA / 145 kW | 200 kVA / 160 kW | 沃尔沃 & TAD752GE | 斯坦福 & UCI274G | PDF`
+- **MỚI** n124 b20 dòng 23 engine `TAD753GE` | tổ máy `R-V200D5/S` | standby 220 kVA / 176 kW | khác: UCI274H | hãng: Volvo Penta | 
+  - nguồn: `| R-V200D5/S | 200 kVA / 160 kW | 220 kVA / 176 kW | 沃尔沃 & TAD753GE | 斯坦福 & UCI274H | PDF`
+- **MỚI** n124 b20 dòng 23 alternator `UCI274H` | tổ máy `R-V200D5/S` | standby 220 kVA / 176 kW | khác: TAD753GE | hãng: Stamford | 
+  - nguồn: `| R-V200D5/S | 200 kVA / 160 kW | 220 kVA / 176 kW | 沃尔沃 & TAD753GE | 斯坦福 & UCI274H | PDF`
+- **MỚI** n124 b20 dòng 24 engine `TAD754GE` | tổ máy `R-V225D5/S` | standby 248 kVA / 198 kW | khác: UCDI274K | hãng: Volvo Penta | 
+  - nguồn: `| R-V225D5/S | 225 kVA / 180 kW | 248 kVA / 198 kW | 沃尔沃 & TAD754GE | 斯坦福 & UCDI274K | PDF`
+- **MỚI** n124 b20 dòng 24 alternator `UCDI274K` | tổ máy `R-V225D5/S` | standby 248 kVA / 198 kW | khác: TAD754GE | hãng: Stamford | 
+  - nguồn: `| R-V225D5/S | 225 kVA / 180 kW | 248 kVA / 198 kW | 沃尔沃 & TAD754GE | 斯坦福 & UCDI274K | PDF`
+- **MỚI** n124 b20 dòng 25 engine `TAD754GE` | tổ máy `R-V250D5/S` | standby 275 kVA / 220 kW | khác: UCDI274K | hãng: Volvo Penta | 
+  - nguồn: `| R-V250D5/S | 250 kVA / 200 kW | 275 kVA / 220 kW | 沃尔沃 & TAD754GE | 斯坦福 & UCDI274K | PDF`
+- **MỚI** n124 b20 dòng 25 alternator `UCDI274K` | tổ máy `R-V250D5/S` | standby 275 kVA / 220 kW | khác: TAD754GE | hãng: Stamford | 
+  - nguồn: `| R-V250D5/S | 250 kVA / 200 kW | 275 kVA / 220 kW | 沃尔沃 & TAD754GE | 斯坦福 & UCDI274K | PDF`
+- **MỚI** n124 b20 dòng 26 engine `TAD1351GE` | tổ máy `R-V300D5/S` | standby 330 kVA / 264 kW | khác: S4L1D-D4 | hãng: Volvo Penta | 
+  - nguồn: `| R-V300D5/S | 300kVA / 240kW | 330kVA / 264kW | 沃尔沃 & TAD1351GE | 斯坦福 & S4L1D-D4 | PDF`
+- **MỚI** n124 b20 dòng 26 alternator `S4L1D-D4` | tổ máy `R-V300D5/S` | standby 330 kVA / 264 kW | khác: TAD1351GE | hãng: Stamford | 
+  - nguồn: `| R-V300D5/S | 300kVA / 240kW | 330kVA / 264kW | 沃尔沃 & TAD1351GE | 斯坦福 & S4L1D-D4 | PDF`
+- **MỚI** n124 b20 dòng 27 engine `TAD1351GE` | tổ máy `R-V325D5/S` | standby 358 kVA / 286 kW | khác: S4L1D-E4 | hãng: Volvo Penta | 
+  - nguồn: `| R-V325D5/S | 325 kVA / 260 kW | 358 kVA / 286 kW | 沃尔沃 & TAD1351GE | 斯坦福 & S4L1D-E4 | PDF`
+- **MỚI** n124 b20 dòng 27 alternator `S4L1D-E4` | tổ máy `R-V325D5/S` | standby 358 kVA / 286 kW | khác: TAD1351GE | hãng: Stamford | 
+  - nguồn: `| R-V325D5/S | 325 kVA / 260 kW | 358 kVA / 286 kW | 沃尔沃 & TAD1351GE | 斯坦福 & S4L1D-E4 | PDF`
+- **MỚI** n124 b20 dòng 28 engine `TAD1354GE` | tổ máy `R-V375D5/S` | standby 413 kVA / 330 kW | khác: S4L1D-F4 | hãng: Volvo Penta | 
+  - nguồn: `| R-V375D5/S | 375 kVA / 300 kW | 413 kVA / 330 kW | 沃尔沃 & TAD1354GE | 斯坦福 & S4L1D-F4 | PDF`
+- **MỚI** n124 b20 dòng 28 alternator `S4L1D-F4` | tổ máy `R-V375D5/S` | standby 413 kVA / 330 kW | khác: TAD1354GE | hãng: Stamford | 
+  - nguồn: `| R-V375D5/S | 375 kVA / 300 kW | 413 kVA / 330 kW | 沃尔沃 & TAD1354GE | 斯坦福 & S4L1D-F4 | PDF`
+- **MỚI** n124 b20 dòng 29 engine `TAD1355GE` | tổ máy `R-V400D5/S` | standby 450 kVA / 360 kW | khác: S4L1D-F4 | hãng: Volvo Penta | 
+  - nguồn: `| R-V400D5/S | 400 kVA / 320 kW | 450 kVA / 360 kW | 沃尔沃 & TAD1355GE | 斯坦福 & S4L1D-F4 | PDF`
+- **MỚI** n124 b20 dòng 29 alternator `S4L1D-F4` | tổ máy `R-V400D5/S` | standby 450 kVA / 360 kW | khác: TAD1355GE | hãng: Stamford | 
+  - nguồn: `| R-V400D5/S | 400 kVA / 320 kW | 450 kVA / 360 kW | 沃尔沃 & TAD1355GE | 斯坦福 & S4L1D-F4 | PDF`
+- **MỚI** n124 b20 dòng 30 engine `TAD1650GE` | tổ máy `R-V450D5/S` | standby 495 kVA / 396 kW | khác: S4L1D-G4 | hãng: Volvo Penta | 
+  - nguồn: `| R-V450D5/S | 450 kVA / 360 kW | 495 kVA / 396 kW | 沃尔沃 & TAD1650GE | 斯坦福 & S4L1D-G4 | PDF`
+- **MỚI** n124 b20 dòng 30 alternator `S4L1D-G4` | tổ máy `R-V450D5/S` | standby 495 kVA / 396 kW | khác: TAD1650GE | hãng: Stamford | 
+  - nguồn: `| R-V450D5/S | 450 kVA / 360 kW | 495 kVA / 396 kW | 沃尔沃 & TAD1650GE | 斯坦福 & S4L1D-G4 | PDF`
+- **MỚI** n124 b20 dòng 31 engine `TAD1651GE` | tổ máy `R-V500D5/S` | standby 550 kVA / 440 kW | khác: S5L1D-C4 | hãng: Volvo Penta | 
+  - nguồn: `| R-V500D5/S | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1651GE | 斯坦福 & S5L1D-C4 | PDF`
+- **MỚI** n124 b20 dòng 31 alternator `S5L1D-C4` | tổ máy `R-V500D5/S` | standby 550 kVA / 440 kW | khác: TAD1651GE | hãng: Stamford | 
+  - nguồn: `| R-V500D5/S | 500 kVA / 400 kW | 550 kVA / 440 kW | 沃尔沃 & TAD1651GE | 斯坦福 & S5L1D-C4 | PDF`
+- **MỚI** n124 b20 dòng 32 engine `TWD1652GE` | tổ máy `R-V600D5/S` | standby 660 kVA / 528 kW | khác: S5L1D-E4 | hãng: Volvo Penta | 
+  - nguồn: `| R-V600D5/S | 600 kVA / 480 KW | 660 kVA / 528 kW | 沃尔沃 & TWD1652GE | 斯坦福 & S5L1D-E4 | PDF`
+- **MỚI** n124 b20 dòng 32 alternator `S5L1D-E4` | tổ máy `R-V600D5/S` | standby 660 kVA / 528 kW | khác: TWD1652GE | hãng: Stamford | 
+  - nguồn: `| R-V600D5/S | 600 kVA / 480 KW | 660 kVA / 528 kW | 沃尔沃 & TWD1652GE | 斯坦福 & S5L1D-E4 | PDF`
+- **MỚI** n124 b20 dòng 33 engine `TWD1653GE` | tổ máy `R-V650D5/S` | standby 715 kVA / 572 kW | khác: S5L1D-F4 | hãng: Volvo Penta | 
+  - nguồn: `| R-V650D5/S | 650 kVA / 520 kW | 715 kVA / 572 kW | 沃尔沃 & TWD1653GE | 斯坦福 & S5L1D-F4 | PDF`
+- **MỚI** n124 b20 dòng 33 alternator `S5L1D-F4` | tổ máy `R-V650D5/S` | standby 715 kVA / 572 kW | khác: TWD1653GE | hãng: Stamford | 
+  - nguồn: `| R-V650D5/S | 650 kVA / 520 kW | 715 kVA / 572 kW | 沃尔沃 & TWD1653GE | 斯坦福 & S5L1D-F4 | PDF`
+- **MỚI** n124 b20 dòng 34 engine `TWD1645GE` | tổ máy `R-V700D5/S` | standby 770 kVA / 616 kW | khác: S5L1D-G4 | hãng: Volvo Penta | 
+  - nguồn: `| R-V700D5/S | 700kVA / 560kW | 770kVA / 616kW | 沃尔沃 & TWD1645GE | 斯坦福 & S5L1D-G4 | PDF`
+- **MỚI** n124 b20 dòng 34 alternator `S5L1D-G4` | tổ máy `R-V700D5/S` | standby 770 kVA / 616 kW | khác: TWD1645GE | hãng: Stamford | 
+  - nguồn: `| R-V700D5/S | 700kVA / 560kW | 770kVA / 616kW | 沃尔沃 & TWD1645GE | 斯坦福 & S5L1D-G4 | PDF`
+
+## rise-power (mới 3, mất 0, đổi 3)
+
+- **MỚI** n119 b24 dòng 0 engine `DC9 65A 10-93` | tổ máy `RSCM200` | ∅ | khác: MP-200-4 | hãng: Scania |  | ⚠ không công suất
+  - nguồn: `| RSCM200 | DC9 65A 10-93 | MP-200-4 | 50 | 200 | 253 | 220 | 278`
+- **MỚI** n119 b24 dòng 1 engine `DC9 65A 10-94` | tổ máy `RSCM220` | ∅ | khác: MP-220-4 | hãng: Scania |  | ⚠ không công suất
+  - nguồn: `| RSCM220 | DC9 65A 10-94 | MP-220-4 | 50 | 220 | 278 | 242 | 307`
+- **MỚI** n119 b24 dòng 2 engine `DC9 65A 10-95` | tổ máy `RSCM240` | ∅ | khác: MP-250-4 | hãng: Scania |  | ⚠ không công suất
+  - nguồn: `| RSCM240 | DC9 65A 10-95 | MP-250-4 | 50 | 240 | 303 | 264 | 329`
+- **ĐỔI** n119 b24 dòng 0 alternator `MP-200-4` | tổ máy `RSCM200` | ∅ | khác: DC9 65A 10-93 | hãng: ∅ |  | ⚠ không công suất
+  - đổi: other: null → "DC9 65A 10-93"
+  - nguồn: `| RSCM200 | DC9 65A 10-93 | MP-200-4 | 50 | 200 | 253 | 220 | 278`
+- **ĐỔI** n119 b24 dòng 1 alternator `MP-220-4` | tổ máy `RSCM220` | ∅ | khác: DC9 65A 10-94 | hãng: ∅ |  | ⚠ không công suất
+  - đổi: other: null → "DC9 65A 10-94"
+  - nguồn: `| RSCM220 | DC9 65A 10-94 | MP-220-4 | 50 | 220 | 278 | 242 | 307`
+- **ĐỔI** n119 b24 dòng 2 alternator `MP-250-4` | tổ máy `RSCM240` | ∅ | khác: DC9 65A 10-95 | hãng: ∅ |  | ⚠ không công suất
+  - đổi: other: null → "DC9 65A 10-95"
+  - nguồn: `| RSCM240 | DC9 65A 10-95 | MP-250-4 | 50 | 240 | 303 | 264 | 329`
+
+## simpson-power (mới 170, mất 79, đổi 21)
+
+- **MỚI** n101 b0 dòng 0 engine `403D-15G` | tổ máy `SP0011D-P` | standby 14 kVA / 11 kW | khác: ∅ | hãng: Perkins | dims=1100×550×1030
+  - nguồn: `| SP0011D-P | 11/14 | Perkins | 403D-15G | 1100×550×1030 | SP0011D-P.pdf`
+- **MỚI** n101 b0 dòng 1 engine `404D-22G` | tổ máy `SP0017D-P` | standby 21 kVA / 17 kW | khác: ∅ | hãng: Perkins | dims=1100×550×1030
+  - nguồn: `| SP0017D-P | 17/21 | 404D-22G | 1100×550×1030 | SP0017D-P.pdf`
+- **MỚI** n101 b0 dòng 2 engine `1103A-33G` | tổ máy `SP0026D-P` | standby 33 kVA / 26 kW | khác: ∅ | hãng: Perkins | dims=1585×750×1250
+  - nguồn: `| SP0026D-P | 26/33 | 1103A-33G | 1585×750×1250 | SP0026D-P.pdf`
+- **MỚI** n101 b0 dòng 3 engine `1103A-33TG1` | tổ máy `SP0035D-P` | standby 44 kVA / 35 kW | khác: ∅ | hãng: Perkins | dims=1900×760×1250
+  - nguồn: `| SP0035D-P | 35/44 | 1103A-33TG1 | 1900×760×1250 | SP0035D-P.pdf`
+- **MỚI** n101 b0 dòng 4 engine `1103A-33TG1` | tổ máy `SP0040D-P` | standby 50 kVA / 40 kW | khác: ∅ | hãng: Perkins | dims=1900×760×1250
+  - nguồn: `| SP0040D-P | 40/50 | 1103A-33TG1 | 1900×760×1250 | SP0040D-P.pdf`
+- **MỚI** n101 b0 dòng 5 engine `1103A-33TG2` | tổ máy `SP0052D-P` | standby 65 kVA / 52 kW | khác: ∅ | hãng: Perkins | dims=1900×760×1250
+  - nguồn: `| SP0052D-P | 52/65 | 1103A-33TG2 | 1900×760×1250 | SP0052D-P.pdf`
+- **MỚI** n101 b0 dòng 6 engine `1104A-44TG2` | tổ máy `SP0070D-P` | standby 88 kVA / 70 kW | khác: ∅ | hãng: Perkins | dims=1865×810×1170
+  - nguồn: `| SP0070D-P | 70/88 | 1104A-44TG2 | 1865×810×1170 | SP0070D-P.pdf`
+- **MỚI** n101 b0 dòng 7 engine `1006TG1A` | tổ máy `SP0080D-P` | standby 100 kVA / 80 kW | khác: ∅ | hãng: Perkins | dims=2240×760×1315
+  - nguồn: `| SP0080D-P | 80/100 | 1006TG1A | 2240×760×1315 | SP0080D-P.pdf`
+- **MỚI** n101 b0 dòng 8 engine `1104C-44TAG2` | tổ máy `SP0082D-P` | standby 103 kVA / 82 kW | khác: ∅ | hãng: Perkins | dims=2240×760×1315
+  - nguồn: `| SP0082D-P | 82/103 | 1104C-44TAG2 | 2240×760×1315 | SP0082D-P.pdf`
+- **MỚI** n101 b0 dòng 9 engine `1006TG2A` | tổ máy `SP0088D-P` | standby 110 kVA / 88 kW | khác: ∅ | hãng: Perkins | dims=2240×760×1315
+  - nguồn: `| SP0088D-P | 88/110 | 1006TG2A | 2240×760×1315 | SP0088D-P.pdf`
+- **MỚI** n101 b0 dòng 10 engine `1006TAG` | tổ máy `SP0120D-P` | standby 150 kVA / 120 kW | khác: ∅ | hãng: Perkins | dims=2420×760×1430
+  - nguồn: `| SP0120D-P | 120/150 | 1006TAG | 2420×760×1430 | SP0120D-P.pdf`
+- **MỚI** n101 b0 dòng 11 engine `1006TAG2` | tổ máy `SP0132D-P` | standby 165 kVA / 132 kW | khác: ∅ | hãng: Perkins | dims=2420×760×1430
+  - nguồn: `| SP0132D-P | 132/165 | 1006TAG2 | 2420×760×1430 | SP0132D-P.pdf`
+- **MỚI** n101 b0 dòng 12 engine `1106C-E66TAG4` | tổ máy `SP0154D-P` | standby 193 kVA / 154 kW | khác: ∅ | hãng: Perkins | dims=2420×760×1520
+  - nguồn: `| SP0154D-P | 154/193 | 1106C-E66TAG4 | 2420×760×1520 | SP0154D-P.pdf`
+- **MỚI** n101 b0 dòng 13 engine `1306C-E87TAG3` | tổ máy `SP0176D-P` | standby 220 kVA / 176 kW | khác: ∅ | hãng: Perkins | dims=2750×1100×1785
+  - nguồn: `| SP0176D-P | 176/220 | 1306C-E87TAG3 | 2750×1100×1785 | SP0176D-P.pdf`
+- **MỚI** n101 b0 dòng 14 engine `1306C-E87TAG4` | tổ máy `SP0200D-P` | standby 250 kVA / 200 kW | khác: ∅ | hãng: Perkins | dims=2750×1100×1785
+  - nguồn: `| SP0200D-P | 200/250 | 1306C-E87TAG4 | 2750×1100×1785 | SP0200D-P.pdf`
+- **MỚI** n101 b0 dòng 15 engine `1306C-E87TAG6` | tổ máy `SP0220D-P` | standby 275 kVA / 220 kW | khác: ∅ | hãng: Perkins | dims=2750×1100×1785
+  - nguồn: `| SP0220D-P | 220/275 | 1306C-E87TAG6 | 2750×1100×1785 | SP0220D-P.pdf`
+- **MỚI** n101 b0 dòng 16 engine `2206C-E13TAG2` | tổ máy `SP0280D-P` | standby 350 kVA / 280 kW | khác: ∅ | hãng: Perkins | dims=3280×1130×1950
+  - nguồn: `| SP0280D-P | 280/350 | 2206C-E13TAG2 | 3280×1130×1950 | SP0280D-P.pdf`
+- **MỚI** n101 b0 dòng 17 engine `4B3.9-G1(G2)` | tổ máy `SP0022D-C` | standby 27 kVA / 22 kW | khác: ∅ | hãng: Cummins | dims=1800×7410×1380 | ⚠ model có ngoặc / gạch chéo
+  - nguồn: `| SP0022D-C | 22/27 | CUMMINS | 4B3.9-G1(G2) | 1800×7410×1380 | SP0022D-C.pdf`
+- **MỚI** n101 b0 dòng 18 engine `4BT3.9-G1(G2)` | tổ máy `SP0026D-C` | standby 33 kVA / 26 kW | khác: ∅ | hãng: Cummins | dims=1800×7410×1380 | ⚠ model có ngoặc / gạch chéo
+  - nguồn: `| SP0026D-C | 26/33 | 4BT3.9-G1(G2) | 1800×7410×1380 | SP0026D-C.pdf`
+- **MỚI** n101 b0 dòng 19 engine `4BT3.9-G1(G2)` | tổ máy `SP0033D-C` | standby 41 kVA / 33 kW | khác: ∅ | hãng: Cummins | dims=1800×7410×1380 | ⚠ model có ngoặc / gạch chéo
+  - nguồn: `| SP0033D-C | 33/41 | 4BT3.9-G1(G2) | 1800×7410×1380 | SP0033D-C.pdf`
+- **MỚI** n101 b0 dòng 20 engine `4BTA3.9-G2` | tổ máy `SP0044D-C` | standby 55 kVA / 44 kW | khác: ∅ | hãng: Cummins | dims=1880×750×1520
+  - nguồn: `| SP0044D-C | 44/55 | 4BTA3.9-G2 | 1880×750×1520 | SP0044D-C.pdf`
+- **MỚI** n101 b0 dòng 21 engine `4BTA3.9-G2` | tổ máy `SP0050D-C` | standby 63 kVA / 50 kW | khác: ∅ | hãng: Cummins | dims=1880×750×1520
+  - nguồn: `| SP0050D-C | 50/63 | 4BTA3.9-G2 | 1880×750×1520 | SP0050D-C.pdf`
+- **MỚI** n101 b0 dòng 22 engine `6BT5.9-G1(G2)` | tổ máy `SP0060D-C` | standby 75 kVA / 60 kW | khác: ∅ | hãng: Cummins | dims=2150×840×1400 | ⚠ model có ngoặc / gạch chéo
+  - nguồn: `| SP0060D-C | 60/75 | 6BT5.9-G1(G2) | 2150×840×1400 | SP0060D-C.pdf`
+- **MỚI** n101 b0 dòng 23 engine `6BT5.9-G1(G2)` | tổ máy `SP0070D-C` | standby 88 kVA / 70 kW | khác: ∅ | hãng: Cummins | dims=2150×840×1400 | ⚠ model có ngoặc / gạch chéo
+  - nguồn: `| SP0070D-C | 70/88 | 6BT5.9-G1(G2) | 2150×840×1400 | SP0070D-C.pdf`
+- **MỚI** n101 b0 dòng 24 engine `6BT5.9-G1(G2)` | tổ máy `SP0080D-C` | standby 100 kVA / 80 kW | khác: ∅ | hãng: Cummins | dims=2150×840×1400 | ⚠ model có ngoặc / gạch chéo
+  - nguồn: `| SP0080D-C | 80/100 | 6BT5.9-G1(G2) | 2150×840×1400 | SP0080D-C.pdf`
+- **MỚI** n101 b0 dòng 25 engine `6BTA5.9-G2` | tổ máy `SP0100D-C` | standby 125 kVA / 100 kW | khác: ∅ | hãng: Cummins | dims=2150×840×1400
+  - nguồn: `| SP0100D-C | 100/125 | 6BTA5.9-G2 | 2150×840×1400 | SP0100D-C.pdf`
+- **MỚI** n101 b0 dòng 26 engine `6BTA5.9-G2` | tổ máy `SP0108D-C` | standby 135 kVA / 108 kW | khác: ∅ | hãng: Cummins | dims=2150×840×1400
+  - nguồn: `| SP0108D-C | 108/135 | 6BTA5.9-G2 | 2150×840×1400 | SP0108D-C.pdf`
+- **MỚI** n101 b0 dòng 27 engine `6BTAA5.9-G2` | tổ máy `SP0120D-C` | standby 150 kVA / 120 kW | khác: ∅ | hãng: Cummins | dims=2260×860×1450
+  - nguồn: `| SP0120D-C | 120/150 | 6BTAA5.9-G2 | 2260×860×1450 | SP0120D-C.pdf`
+- **MỚI** n101 b0 dòng 28 engine `6CTA8.3-G2` | tổ máy `SP0132D-C` | standby 165 kVA / 132 kW | khác: ∅ | hãng: Cummins | dims=2300×860×1560
+  - nguồn: `| SP0132D-C | 132/165 | 6CTA8.3-G2 | 2300×860×1560 | SP0132D-C.pdf`
+- **MỚI** n101 b0 dòng 29 engine `6CTA8.3-G2` | tổ máy `SP0165D-C` | standby 206 kVA / 165 kW | khác: ∅ | hãng: Cummins | dims=2300×860×1560
+  - nguồn: `| SP0165D-C | 165/206 | 6CTA8.3-G2 | 2300×860×1560 | SP0165D-C.pdf`
+- **MỚI** n101 b0 dòng 30 engine `6CTAA8.3-G2` | tổ máy `SP0176D-C` | standby 220 kVA / 176 kW | khác: ∅ | hãng: Cummins | dims=2300×860×1560
+  - nguồn: `| SP0176D-C | 176/220 | 6CTAA8.3-G2 | 2300×860×1560 | SP0176D-C.pdf`
+- **MỚI** n101 b0 dòng 31 engine `6CTAA8.3-G2` | tổ máy `SP0188D-C` | standby 235 kVA / 188 kW | khác: ∅ | hãng: Cummins | dims=2300×860×1560
+  - nguồn: `| SP0188D-C | 188/235 | 6CTAA8.3-G2 | 2300×860×1560 | SP0188D-C.pdf`
+- **MỚI** n101 b0 dòng 32 engine `6LTAA8.9-G2` | tổ máy `SP0220D-C` | standby 275 kVA / 220 kW | khác: ∅ | hãng: Cummins | dims=2530×955×1603
+  - nguồn: `| SP0220D-C | 220/275 | 6LTAA8.9-G2 | 2530×955×1603 | SP0220D-C.pdf`
+- **MỚI** n101 b0 dòng 33 engine `QSM11-G2` | tổ máy `SP0250D-C` | standby 313 kVA / 250 kW | khác: ∅ | hãng: Cummins | dims=2860×1050×1900
+  - nguồn: `| SP0250D-C | 250/313 | QSM11-G2 | 2860×1050×1900 | SP0250D-C.pdf`
+- **MỚI** n101 b0 dòng 34 engine `QSM11-G2` | tổ máy `SP0275D-C` | standby 344 kVA / 275 kW | khác: ∅ | hãng: Cummins | dims=2860×1050×1900
+  - nguồn: `| SP0275D-C | 275/344 | QSM11-G2 | 2860×1050×1900 | SP0275D-C.pdf`
+- **MỚI** n101 b0 dòng 35 engine `F2L912` | tổ máy `SP0013D-D` | standby 16 kVA / 13 kW | khác: ∅ | hãng: Deutz | dims=1200×700×1350
+  - nguồn: `| SP0013D-D | 13/16 | DEUTZ | F2L912 | 1200×700×1350 | SP0013D-D.pdf`
+- **MỚI** n101 b0 dòng 36 engine `F3L912` | tổ máy `SP0017D-D` | standby 21 kVA / 17 kW | khác: ∅ | hãng: Deutz | dims=1200×700×1350
+  - nguồn: `| SP0017D-D | 17/21 | F3L912 | 1200×700×1350 | SP0017D-D.pdf`
+- **MỚI** n101 b0 dòng 37 engine `F3L912` | tổ máy `SP0022D-D` | standby 27.5 kVA / 22 kW | khác: ∅ | hãng: Deutz | dims=1200×700×1350
+  - nguồn: `| SP0022D-D | 22/27.5 | F3L912 | 1200×700×1350 | SP0022D-D.pdf`
+- **MỚI** n101 b0 dòng 38 engine `F4L912` | tổ máy `SP0027D-D` | standby 33.7 kVA / 27 kW | khác: ∅ | hãng: Deutz | dims=1550×870×1378
+  - nguồn: `| SP0027D-D | 27/33.7 | F4L912 | 1550×870×1378 | SP0027D-D.pdf`
+- **MỚI** n101 b0 dòng 39 engine `F4L913` | tổ máy `SP0033D-D` | standby 41 kVA / 33 kW | khác: ∅ | hãng: Deutz | dims=1600×870×1378
+  - nguồn: `| SP0033D-D | 33/41 | F4L913 | 1600×870×1378 | SP0033D-D.pdf`
+- **MỚI** n101 b0 dòng 40 engine `F4L912T` | tổ máy `SP0040D-D` | standby 50 kVA / 40 kW | khác: ∅ | hãng: Deutz | dims=1600×870×1378
+  - nguồn: `| SP0040D-D | 40/50 | F4L912T | 1600×870×1378 | SP0040D-D.pdf`
+- **MỚI** n101 b0 dòng 41 engine `F6L912` | tổ máy `SP0044D-D` | standby 55 kVA / 44 kW | khác: ∅ | hãng: Deutz | dims=1900×830×1273
+  - nguồn: `| SP0044D-D | 44/55 | F6L912 | 1900×830×1273 | SP0044D-D.pdf`
+- **MỚI** n101 b0 dòng 42 engine `F6L913` | tổ máy `SP0048D-D` | standby 60 kVA / 48 kW | khác: ∅ | hãng: ∅ | dims=1900×830×1273
+  - nguồn: `| SP0048D-D | 48/60 | F6L913 | 1900×830×1273 | SP0048D-D.pdf`
+- **MỚI** n101 b0 dòng 43 engine `BF4L913` | tổ máy `SP0050D-D` | ∅ | khác: ∅ | hãng: Deutz | dims=1540×830×1273 | ⚠ không công suất
+  - nguồn: `| SP0050D-D | 50/625 | BF4L913 | 1540×830×1273 | SP0050D-D.pdf`
+- **MỚI** n101 b0 dòng 44 engine `F6L912T` | tổ máy `SP0053D-D` | standby 66 kVA / 53 kW | khác: ∅ | hãng: Deutz | dims=1800×830×1320
+  - nguồn: `| SP0053D-D | 53/66 | F6L912T | 1800×830×1320 | SP0053D-D.pdf`
+- **MỚI** n101 b0 dòng 45 engine `BF6L913` | tổ máy `SP0082D-D` | standby 102.5 kVA / 82 kW | khác: ∅ | hãng: Deutz | dims=1900×830×1317
+  - nguồn: `| SP0082D-D | 82/102.5 | BF6L913 | 1900×830×1317 | SP0082D-D.pdf`
+- **MỚI** n101 b0 dòng 46 engine `BF6L913C` | tổ máy `SP0100D-D` | standby 125 kVA / 100 kW | khác: ∅ | hãng: Deutz | dims=1950×830×1353
+  - nguồn: `| SP0100D-D | 100/125 | BF6L913C | 1950×830×1353 | SP0100D-D.pdf`
+- **MỚI** n103 b2 dòng 0 engine `S12R-PTA2-C` | tổ máy `SP1200D-L` | standby 1500 kVA / 1200 kW | khác: ∅ | hãng: ∅ | dims=4715×2136×2758
+  - nguồn: `| SP1200D-L | 1200/1500 | S12R-PTA2-C | 4715×2136×2758 | SP1200D-L.pdf`
+- **MỚI** n103 b2 dòng 1 engine `S12R-PTAA2-C` | tổ máy `SP1320D-L` | standby 1650 kVA / 1320 kW | khác: ∅ | hãng: ∅ | dims=5219×2192×3056
+  - nguồn: `| SP1320D-L | 1320/1650 | S12R-PTAA2-C | 5219×2192×3056 | SP1320D-L.pdf`
+- **MỚI** n103 b2 dòng 2 engine `S16R-PTA-C` | tổ máy `SP1500D-L` | standby 1875 kVA / 1500 kW | khác: ∅ | hãng: ∅ | dims=5476×2289×3056
+  - nguồn: `| SP1500D-L | 1500/1875 | S16R-PTA-C | 5476×2289×3056 | SP1500D-L.pdf`
+- **MỚI** n103 b2 dòng 3 engine `S16R-PTA2-C` | tổ máy `SP1600D-L` | standby 2000 kVA / 1600 kW | khác: ∅ | hãng: ∅ | dims=5720×2400×3436
+  - nguồn: `| SP1600D-L | 1600/2000 | S16R-PTA2-C | 5720×2400×3436 | SP1600D-L.pdf`
+- **MỚI** n103 b2 dòng 4 engine `S12R-PTA2` | tổ máy `SP1200D-M` | standby 1500 kVA / 1200 kW | khác: ∅ | hãng: Mitsubishi | dims=4850×1900×2570
+  - nguồn: `| SP1200D-M | 1200/1500 | S12R-PTA2 | 4850×1900×2570 | SP1200D-M.pdf`
+- **MỚI** n103 b2 dòng 5 engine `S12R-PTAA2` | tổ máy `SP1250D-M` | standby 1562 kVA / 1250 kW | khác: ∅ | hãng: Mitsubishi | dims=5100×2000×2600
+  - nguồn: `| SP1250D-M | 1250/1562 | S12R-PTAA2 | 5100×2000×2600 | SP1250D-M.pdf`
+- **MỚI** n103 b2 dòng 6 engine `S12R-PTAA2` | tổ máy `SP1320D-M` | standby 1650 kVA / 1320 kW | khác: ∅ | hãng: Mitsubishi | dims=5100×2000×2600
+  - nguồn: `| SP1320D-M | 1320/1650 | S12R-PTAA2 | 5100×2000×2600 | SP1320D-M.pdf`
+- **MỚI** n103 b2 dòng 7 engine `S16R-PTA` | tổ máy `SP1500D-M` | standby 1875 kVA / 1500 kW | khác: ∅ | hãng: Mitsubishi | dims=5720×2134×2672
+  - nguồn: `| SP1500D-M | 1500/1875 | S16R-PTA | 5720×2134×2672 | SP1500D-M.pdf`
+- **MỚI** n103 b2 dòng 8 engine `S16R-PTA2` | tổ máy `SP1600D-M` | standby 2000 kVA / 1600 kW | khác: ∅ | hãng: Mitsubishi | dims=5720×2134×2672
+  - nguồn: `| SP1600D-M | 1600/2000 | S16R-PTA2 | 5720×2134×2672 | SP1600D-M.pdf`
+- **MỚI** n103 b2 dòng 9 engine `S16R-PTA2` | tổ máy `SP1680D-M` | standby 2100 kVA / 1680 kW | khác: ∅ | hãng: Mitsubishi | dims=5720×2134×2672
+  - nguồn: `| SP1680D-M | 1680/2100 | S16R-PTA2 | 5720×2134×2672 | SP1680D-M.pdf`
+- **MỚI** n103 b2 dòng 10 engine `S16R-PTAA2` | tổ máy `SP1760D-M` | standby 2200 kVA / 1760 kW | khác: ∅ | hãng: Mitsubishi | dims=5720×2480×3440
+  - nguồn: `| SP1760D-M | 1760/2200 | S16R-PTAA2 | 5720×2480×3440 | SP1760D-M.pdf`
+- **MỚI** n103 b2 dòng 11 engine `12V4000G21R` | tổ máy `SP1100D-U` | standby 1375 kVA / 1100 kW | khác: ∅ | hãng: MTU | dims=5680×2100×2660
+  - nguồn: `| SP1100D-U | 1100/1375 | MTU | 12V4000G21R | 5680×2100×2660 | SP1100D-U.pdf`
+- **MỚI** n103 b2 dòng 12 engine `12V4000G23R` | tổ máy `SP1210D-U` | standby 1513 kVA / 1210 kW | khác: ∅ | hãng: ∅ | dims=5680×2100×2660
+  - nguồn: `| SP1210D-U | 1210/1513 | 12V4000G23R | 5680×2100×2660 | SP1210D-U.pdf`
+- **MỚI** n103 b2 dòng 13 engine `12V4000G23` | tổ máy `SP1320D-U` | standby 1650 kVA / 1320 kW | khác: ∅ | hãng: ∅ | dims=5680×2100×2660
+  - nguồn: `| SP1320D-U | 1320/1650 | 12V4000G23 | 5680×2100×2660 | SP1320D-U.pdf`
+- **MỚI** n103 b2 dòng 14 engine `12V4000G23` | tổ máy `SP1450D-U` | standby 1813 kVA / 1450 kW | khác: ∅ | hãng: ∅ | dims=5680×2100×2660
+  - nguồn: `| SP1450D-U | 1450/1813 | 12V4000G23 | 5680×2100×2660 | SP1450D-U.pdf`
+- **MỚI** n103 b2 dòng 15 engine `12V4000G63` | tổ máy `SP1600D-U` | standby 2000 kVA / 1600 kW | khác: ∅ | hãng: ∅ | dims=5680×2100×2660
+  - nguồn: `| SP1600D-U | 1600/2000 | 12V4000G63 | 5680×2100×2660 | SP1600D-U.pdf`
+- **MỚI** n103 b2 dòng 16 engine `4012-46TWG2A` | tổ máy `SP1100D-P` | standby 1375 kVA / 1100 kW | khác: ∅ | hãng: Perkins | dims=5590×1800×2600
+  - nguồn: `| SP1100D-P | 1100/1375 | Perkins | 4012-46TWG2A | 5590×1800×2600 | SP1100D-P.pdf`
+- **MỚI** n103 b2 dòng 17 engine `4012-46TWG3A` | tổ máy `SP1200D-P` | standby 1500 kVA / 1200 kW | khác: ∅ | hãng: Perkins | dims=5590×1800×2600
+  - nguồn: `| SP1200D-P | 1200/1500 | 4012-46TWG3A | 5590×1800×2600 | SP1200D-P.pdf`
+- **MỚI** n103 b2 dòng 18 engine `4012-46TAG2A` | tổ máy `SP1320D-P` | standby 1650 kVA / 1320 kW | khác: ∅ | hãng: Perkins | dims=5590×1800×2550
+  - nguồn: `| SP1320D-P | 1320/1650 | 4012-46TAG2A | 5590×1800×2550 | SP1320D-P.pdf`
+- **MỚI** n103 b2 dòng 19 engine `4012-46TAG3A` | tổ máy `SP1485D-P` | standby 1856 kVA / 1485 kW | khác: ∅ | hãng: Perkins | dims=5590×1800×2550
+  - nguồn: `| SP1485D-P | 1485/1856 | 4012-46TAG3A | 5590×1800×2550 | SP1485D-P.pdf`
+- **MỚI** n103 b2 dòng 20 engine `4016TAG` | tổ máy `SP1540D-P` | standby 1925 kVA / 1540 kW | khác: ∅ | hãng: Perkins | dims=6140×2300×3020
+  - nguồn: `| SP1540D-P | 1540/1925 | 4016TAG | 6140×2300×3020 | SP1540D-P.pdf`
+- **MỚI** n103 b2 dòng 21 engine `4016TAG1A` | tổ máy `SP1620D-P` | standby 2025 kVA / 1620 kW | khác: ∅ | hãng: Perkins | dims=6140×2300×3020
+  - nguồn: `| SP1620D-P | 1620/2025 | 4016TAG1A | 6140×2300×3020 | SP1620D-P.pdf`
+- **MỚI** n104 b3 dòng 0 engine `S6R2-PTAA-C` | tổ máy `SP0700D-L` | standby 875 kVA / 700 kW | khác: ∅ | hãng: ∅ | dims=4069×1744×1977
+  - nguồn: `| SP0700D-L | 700/875 | S6R2-PTAA-C | 4069×1744×1977 | SP0700D-L.pdf`
+- **MỚI** n104 b3 dòng 1 engine `S6R-PTA` | tổ máy `SP0560D-M` | standby 700 kVA / 560 kW | khác: ∅ | hãng: Mitsubishi | dims=3595×1422×2150
+  - nguồn: `| SP0560D-M | 560/700 | S6R-PTA | 3595×1422×2150 | SP0560D-M.pdf`
+- **MỚI** n104 b3 dòng 2 engine `S6R2-PTA` | tổ máy `SP0600D-M` | standby 750 kVA / 600 kW | khác: ∅ | hãng: Mitsubishi | dims=3818×1600×2000
+  - nguồn: `| SP0600D-M | 600/750 | S6R2-PTA | 3818×1600×2000 | SP0600D-M.pdf`
+- **MỚI** n104 b3 dòng 3 engine `S6R2-PTAA` | tổ máy `SP0660D-M` | standby 825 kVA / 660 kW | khác: ∅ | hãng: Mitsubishi | dims=3818×1600×2100
+  - nguồn: `| SP0660D-M | 660/825 | S6R2-PTAA | 3818×1600×2100 | SP0660D-M.pdf`
+- **MỚI** n104 b3 dòng 4 engine `S12A2-PTA` | tổ máy `SP0720D-M` | standby 900 kVA / 720 kW | khác: ∅ | hãng: Mitsubishi | dims=4500×1680×2200
+  - nguồn: `| SP0720D-M | 720/900 | S12A2-PTA | 4500×1680×2200 | SP0720D-M.pdf`
+- **MỚI** n104 b3 dòng 5 engine `S12H-PTA` | tổ máy `SP0825D-M` | standby 1035 kVA / 825 kW | khác: ∅ | hãng: Mitsubishi | dims=4500×1880×2341
+  - nguồn: `| SP0825D-M | 825/1035 | S12H-PTA | 4500×1880×2341 | SP0825D-M.pdf`
+- **MỚI** n104 b3 dòng 6 engine `S12H-PTA` | tổ máy `SP0920D-M` | standby 1150 kVA / 920 kW | khác: ∅ | hãng: Mitsubishi | dims=4500×1880×2341
+  - nguồn: `| SP0920D-M | 920/1150 | S12H-PTA | 4500×1880×2341 | SP0920D-M.pdf`
+- **MỚI** n104 b3 dòng 7 engine `8V1600G70F` | tổ máy `SP0308D-U` | standby 385 kVA / 308 kW | khác: ∅ | hãng: MTU | dims=3040×1350×2000
+  - nguồn: `| SP0308D-U | 308/385 | MTU | 8V1600G70F | 3040×1350×2000 | SP0308D-U.pdf`
+- **MỚI** n104 b3 dòng 8 engine `8V1600G80F` | tổ máy `SP0352D-U` | standby 440 kVA / 352 kW | khác: ∅ | hãng: ∅ | dims=3040×1350×2000
+  - nguồn: `| SP0352D-U | 352/440 | 8V1600G80F | 3040×1350×2000 | SP0352D-U.pdf`
+- **MỚI** n104 b3 dòng 9 engine `10V1600G70F` | tổ máy `SP0400D-U` | standby 500 kVA / 400 kW | khác: ∅ | hãng: ∅ | dims=3200×1350×2240
+  - nguồn: `| SP0400D-U | 400/500 | 10V1600G70F | 3200×1350×2240 | SP0400D-U.pdf`
+- **MỚI** n104 b3 dòng 10 engine `10V1600G80F` | tổ máy `SP0440D-U` | standby 550 kVA / 440 kW | khác: ∅ | hãng: ∅ | dims=3200×1350×2240
+  - nguồn: `| SP0440D-U | 440/550 | 10V1600G80F | 3200×1350×2240 | SP0440D-U.pdf`
+- **MỚI** n109 b4 dòng 0 engine `4B3.9-G1` | tổ máy `SS0022D-C` | standby 27 kVA / 22 kW | khác: ∅ | hãng: Cummins | dims=2800×1200×1650
+  - nguồn: `| SS0022D-C | 22/27 | 4B3.9-G1（G2） | 2800×1200×1650 |`
+- **MỚI** n109 b4 dòng 1 engine `4B3.9-G1` | tổ máy `SS0026D-C` | standby 33 kVA / 26 kW | khác: ∅ | hãng: Cummins | dims=2800×1200×1650
+  - nguồn: `| SS0026D-C | 26/33 | 4B3.9-G1（G2） | 2800×1200×1650 |`
+- **MỚI** n109 b4 dòng 2 engine `4B3.9-G1` | tổ máy `SS0033D-C` | standby 41 kVA / 33 kW | khác: ∅ | hãng: Cummins | dims=2800×1200×1650
+  - nguồn: `| SS0033D-C | 33/41 | 4B3.9-G1（G2） | 2800×1200×1650 |`
+- **MỚI** n109 b4 dòng 3 engine `4BTA3.9-G2` | tổ máy `SS0044D-C` | standby 55 kVA / 44 kW | khác: ∅ | hãng: Cummins | dims=2800×1200×1650
+  - nguồn: `| SS0044D-C | 44/55 | 4BTA3.9-G2 | 2800×1200×1650 |`
+- **MỚI** n109 b4 dòng 4 engine `4BTA3.9-G2` | tổ máy `SS0050D-C` | standby 63 kVA / 50 kW | khác: ∅ | hãng: Cummins | dims=2800×1200×1650
+  - nguồn: `| SS0050D-C | 50/63 | 4BTA3.9-G2 | 2800×1200×1650 |`
+- **MỚI** n109 b4 dòng 5 engine `6BT5.9-G1` | tổ máy `SS0060D-C` | standby 75 kVA / 60 kW | khác: ∅ | hãng: Cummins | dims=3800×1300×1800
+  - nguồn: `| SS0060D-C | 60/75 | 6BT5.9-G1（G2） | 3800×1300×1800 |`
+- **MỚI** n109 b4 dòng 6 engine `6BT5.9-G1` | tổ máy `SS0070D-C` | standby 88 kVA / 70 kW | khác: ∅ | hãng: Cummins | dims=3800×1300×1800
+  - nguồn: `| SS0070D-C | 70/88 | 6BT5.9-G1（G2） | 3800×1300×1800 |`
+- **MỚI** n109 b4 dòng 7 engine `6BT5.9-G1` | tổ máy `SS0080D-C` | standby 100 kVA / 80 kW | khác: ∅ | hãng: Cummins | dims=3800×1300×1800
+  - nguồn: `| SS0080D-C | 80/100 | 6BT5.9-G1（G2） | 3800×1300×1800 |`
+- **MỚI** n109 b4 dòng 8 engine `6BT5.9-G2` | tổ máy `SS0100D-C` | standby 125 kVA / 100 kW | khác: ∅ | hãng: Cummins | dims=3800×1300×1800
+  - nguồn: `| SS0100D-C | 100/125 | 6BT5.9-G2 | 3800×1300×1800 |`
+- **MỚI** n109 b4 dòng 9 engine `6BT5.9-G2` | tổ máy `SS0108D-C` | standby 135 kVA / 108 kW | khác: ∅ | hãng: Cummins | dims=3800×1300×1800
+  - nguồn: `| SS0108D-C | 108/135 | 6BT5.9-G2 | 3800×1300×1800 |`
+- **MỚI** n109 b4 dòng 10 engine `6BTAA5.9-G2` | tổ máy `SS0120D-C` | standby 150 kVA / 120 kW | khác: ∅ | hãng: Cummins | dims=3800×1300×1800
+  - nguồn: `| SS0120D-C | 120/150 | 6BTAA5.9-G2 | 3800×1300×1800 |`
+- **MỚI** n109 b4 dòng 11 engine `6CTA8.3-G2` | tổ máy `SS0132D-C` | standby 165 kVA / 132 kW | khác: ∅ | hãng: Cummins | dims=4000×1400×1800
+  - nguồn: `| SS0132D-C | 132/165 | 6CTA8.3-G2 | 4000×1400×1800 |`
+- **MỚI** n109 b4 dòng 12 engine `6CTA8.3-G2` | tổ máy `SS0165D-C` | standby 206 kVA / 165 kW | khác: ∅ | hãng: Cummins | dims=4000×1400×1800
+  - nguồn: `| SS0165D-C | 165/206 | 6CTA8.3-G2 | 4000×1400×1800 |`
+- **MỚI** n109 b4 dòng 13 engine `6CTAA8.3-G2` | tổ máy `SS0176D-C` | standby 220 kVA / 176 kW | khác: ∅ | hãng: Cummins | dims=4000×1400×1800
+  - nguồn: `| SS0176D-C | 176/220 | 6CTAA8.3-G2 | 4000×1400×1800 |`
+- **MỚI** n109 b4 dòng 14 engine `6CTAA8.3-G2` | tổ máy `SS0188D-C` | standby 235 kVA / 188 kW | khác: ∅ | hãng: Cummins | dims=4000×1400×1800
+  - nguồn: `| SS0188D-C | 188/235 | 6CTAA8.3-G2 | 4000×1400×1800 |`
+- **MỚI** n109 b4 dòng 15 engine `6LTAA8.9-G2` | tổ máy `SS0220D-C` | standby 275 kVA / 220 kW | khác: ∅ | hãng: Cummins | dims=4500×1600×2200
+  - nguồn: `| SS0220D-C | 220/275 | 6LTAA8.9-G2 | 4500×1600×2200 |`
+- **MỚI** n109 b4 dòng 16 engine `QSM11-G2` | tổ máy `SS0250D-C` | standby 313 kVA / 250 kW | khác: ∅ | hãng: Cummins | dims=4500×1600×2200
+  - nguồn: `| SS0250D-C | 250/313 | QSM11-G2 | 4500×1600×2200 |`
+- **MỚI** n109 b4 dòng 17 engine `QSM11-G2` | tổ máy `SS0275D-C` | standby 344 kVA / 275 kW | khác: ∅ | hãng: Cummins | dims=4500×1600×2200
+  - nguồn: `| SS0275D-C | 275/344 | QSM11-G2 | 4500×1600×2200 |`
+- **MỚI** n109 b4 dòng 18 engine `QSM11-G2` | tổ máy `SS0300D-C` | standby 375 kVA / 300 kW | khác: ∅ | hãng: Cummins | dims=4500×1600×2200
+  - nguồn: `| SS0300D-C | 300/375 | QSM11-G2 | 4500×1600×2200 |`
+- **MỚI** n109 b4 dòng 19 engine `QSM13-G2` | tổ máy `SS0330D-C` | standby 413 kVA / 330 kW | khác: ∅ | hãng: Cummins | dims=8500×2500×2800
+  - nguồn: `| SS0330D-C | 330/413 | QSM13-G2 | 8500×2500×2800 |`
+- **MỚI** n109 b4 dòng 20 engine `QSM13-G2` | tổ máy `SS0400D-C` | standby 500 kVA / 400 kW | khác: ∅ | hãng: Cummins | dims=8500×2500×2800
+  - nguồn: `| SS0400D-C | 400/500 | QSM13-G2 | 8500×2500×2800 |`
+- **MỚI** n109 b4 dòng 21 engine `QSM13-G3` | tổ máy `SS0440D-C` | standby 550 kVA / 440 kW | khác: ∅ | hãng: Cummins | dims=8500×2500×2800
+  - nguồn: `| SS0440D-C | 440/550 | QSM13-G3 | 8500×2500×2800 |`
+- **MỚI** n110 b5 dòng 0 engine `403D-15G` | tổ máy `SP0011D-P` | standby 14 kVA / 11 kW | khác: ∅ | hãng: Perkins | dims=1100×550×1030
+  - nguồn: `| SP0011D-P | 11/14 | 403D-15G | 1100×550×1030 | SP0011D-P.pdf`
+- **MỚI** n110 b5 dòng 17 engine `2206C-E13TAG2` | tổ máy `SP0320D-P` | standby 400 kVA / 320 kW | khác: ∅ | hãng: Perkins | dims=3280×1130×1950
+  - nguồn: `| SP0320D-P | 320/400 | 2206C-E13TAG2 | 3280×1130×1950 | SP0320D-P.pdf`
+- **MỚI** n110 b5 dòng 18 engine `2206C-E13TAG3` | tổ máy `SP0352D-P` | standby 440 kVA / 352 kW | khác: ∅ | hãng: Perkins | dims=3280×1130×1950
+  - nguồn: `| SP0352D-P | 352/440 | 2206C-E13TAG3 | 3280×1130×1950 | SP0352D-P.pdf`
+- **MỚI** n110 b5 dòng 19 engine `2506C-E15TAG1` | tổ máy `SP0400D-P` | standby 500 kVA / 400 kW | khác: ∅ | hãng: Perkins | dims=3300×1200×2060
+  - nguồn: `| SP0400D-P | 400/500 | 2506C-E15TAG1 | 3300×1200×2060 | SP0400D-P.pdf`
+- **MỚI** n110 b5 dòng 20 engine `2506C-E15TAG2` | tổ máy `SP0440D-P` | standby 550 kVA / 440 kW | khác: ∅ | hãng: Perkins | dims=3300×1200×2060
+  - nguồn: `| SP0440D-P | 440/550 | 2506C-E15TAG2 | 3300×1200×2060 | SP0440D-P.pdf`
+- **MỚI** n110 b5 dòng 21 engine `2806A-E18TAG1A` | tổ máy `SP0528D-P` | standby 660 kVA / 528 kW | khác: ∅ | hãng: Perkins | dims=3300×1550×2100
+  - nguồn: `| SP0528D-P | 528/660 | 2806A-E18TAG1A | 3300×1550×2100 | SP0528D-P.pdf`
+- **MỚI** n110 b5 dòng 22 engine `2806A-E18TAG2` | tổ máy `SP0572D-P` | standby 715 kVA / 572 kW | khác: ∅ | hãng: Perkins | dims=3300×1550×2100
+  - nguồn: `| SP0572D-P | 572/715 | 2806A-E18TAG2 | 3300×1550×2100 | SP0572D-P.pdf`
+- **MỚI** n110 b5 dòng 23 engine `4006-23TAG2A` | tổ máy `SP0640D-P` | standby 800 kVA / 640 kW | khác: ∅ | hãng: Perkins | dims=4100×1920×2250
+  - nguồn: `| SP0640D-P | 640/800 | 4006-23TAG2A | 4100×1920×2250 | SP0640D-P.pdf`
+- **MỚI** n110 b5 dòng 24 engine `4006-23TAG3A` | tổ máy `SP0704D-P` | standby 880 kVA / 704 kW | khác: ∅ | hãng: Perkins | dims=4100×1920×2250
+  - nguồn: `| SP0704D-P | 704/880 | 4006-23TAG3A | 4100×1920×2250 | SP0704D-P.pdf`
+- **MỚI** n110 b5 dòng 25 engine `4008TAG2A` | tổ máy `SP0800D-P` | ∅ | khác: ∅ | hãng: Perkins | dims=4570×2046×2230 | ⚠ không công suất
+  - nguồn: `| SP0800D-P | 800/1125 | 4008TAG2A | 4570×2046×2230 | SP0800D-P.pdf`
+- **MỚI** n110 b5 dòng 26 engine `4008TAG2A` | tổ máy `SP0880D-P` | standby 1100 kVA / 880 kW | khác: ∅ | hãng: Perkins | dims=4570×2046×2230
+  - nguồn: `| SP0880D-P | 880/1100 | 4008TAG2A | 4570×2046×2230 | SP0880D-P.pdf`
+- **MỚI** n110 b5 dòng 27 engine `4012-46TWG2A` | tổ máy `SP1100D-P` | standby 1375 kVA / 1100 kW | khác: ∅ | hãng: Perkins | dims=5590×1800×2600
+  - nguồn: `| SP1100D-P | 1100/1375 | 4012-46TWG2A | 5590×1800×2600 | SP1100D-P.pdf`
+- **MỚI** n110 b5 dòng 33 engine `4016TAG2A` | tổ máy `SP1800D-P` | standby 2250 kVA / 1800 kW | khác: ∅ | hãng: Perkins | dims=6140×2300×3020
+  - nguồn: `| SP1800D-P | 1800/2250 | 4016TAG2A | 6140×2300×3020 | SP1800D-P.pdf`
+- **MỚI** n115 b10 dòng 0 engine `S6R-PTA` | tổ máy `SP0500D-M` | standby 625 kVA / 500 kW | khác: ∅ | hãng: Mitsubishi | dims=3595×1422×2150
+  - nguồn: `| SP0500D-M | 500/625 | S6R-PTA | 3595×1422×2150 | SP0500D-M.pdf`
+- **MỚI** n115 b10 dòng 7 engine `S12R-PTA` | tổ máy `SP1000D-M` | standby 1250 kVA / 1000 kW | khác: ∅ | hãng: Mitsubishi | dims=4500×1880×2341
+  - nguồn: `| SP1000D-M | 1000/1250 | S12R-PTA | 4500×1880×2341 | SP1000D-M.pdf`
+- **MỚI** n115 b10 dòng 8 engine `S12R-PTA` | tổ máy `SP1100D-M` | standby 1375 kVA / 1100 kW | khác: ∅ | hãng: Mitsubishi | dims=4850×1900×2570
+  - nguồn: `| SP1100D-M | 1100/1375 | S12R-PTA | 4850×1900×2570 | SP1100D-M.pdf`
+- **MỚI** n115 b10 dòng 16 engine `S16R-PTAA2` | tổ máy `SP1800D-M` | standby 2250 kVA / 1800 kW | khác: ∅ | hãng: Mitsubishi | dims=5720×2480×3440
+  - nguồn: `| SP1800D-M | 1800/2250 | S16R-PTAA2 | 5720×2480×3440 | SP1800D-M.pdf`
+- **MỚI** n121 b12 dòng 0 engine `4012-46TWG2A` | tổ máy `SPH1100D-P` | standby 1375 kVA / 1100 kW | khác: ∅ | hãng: Perkins | dims=5790×1800×2600
+  - nguồn: `| SPH1100D-P | 1100/1375 | 4012-46TWG2A | 5790×1800×2600 | SPH1100D-P.pdf`
+- **MỚI** n121 b12 dòng 1 engine `4012-46TWG3A` | tổ máy `SPH1200D-P` | standby 1500 kVA / 1200 kW | khác: ∅ | hãng: Perkins | dims=5790×1800×2600
+  - nguồn: `| SPH1200D-P | 1200/1500 | 4012-46TWG3A | 5790×1800×2600 | SPH1200D-P.pdf`
+- **MỚI** n121 b12 dòng 2 engine `4012-46TAG2A` | tổ máy `SPH1320D-P` | standby 1650 kVA / 1320 kW | khác: ∅ | hãng: Perkins | dims=5800×1800×2550
+  - nguồn: `| SPH1320D-P | 1320/1650 | 4012-46TAG2A | 5800×1800×2550 | SPH1320D-P.pdf`
+- **MỚI** n121 b12 dòng 3 engine `4016TAG` | tổ máy `SPH1540D-P` | standby 1925 kVA / 1540 kW | khác: ∅ | hãng: Perkins | dims=6300×2300×3020
+  - nguồn: `| SPH1540D-P | 1540/1925 | 4016TAG | 6300×2300×3020 | SPH1540D-P.pdf`
+- **MỚI** n121 b12 dòng 4 engine `4016TAG1A` | tổ máy `SPH1620D-P` | standby 2025 kVA / 1620 kW | khác: ∅ | hãng: Perkins | dims=6300×2300×3020
+  - nguồn: `| SPH1620D-P | 1620/2025 | 4016TAG1A | 6300×2300×3020 | SPH1620D-P.pdf`
+- **MỚI** n121 b12 dòng 5 engine `4016TAG2A` | tổ máy `SPH1800D-P` | standby 2255 kVA / 1804 kW | khác: ∅ | hãng: Perkins | dims=6300×2300×3020
+  - nguồn: `| SPH1800D-P | 1804/2255 | 4016TAG2A | 6300×2300×3020 | SPH1800D-P.pdf`
+- **MỚI** n121 b12 dòng 6 engine `4016-61TRG3` | tổ máy `SPH2000D-P` | standby 2500 kVA / 2000 kW | khác: ∅ | hãng: Perkins | dims=6300×2300×3020
+  - nguồn: `| SPH2000D-P | 2000/2500 | 4016-61TRG3 | 6300×2300×3020 | SPH2000D-P.pdf`
+- **MỚI** n122 b13 dòng 0 engine `12V4000G21R` | tổ máy `SPH1100D-U` | standby 1375 kVA / 1100 kW | khác: ∅ | hãng: MTU | dims=5680×2100×2660
+  - nguồn: `| SPH1100D-U | 1100/1375 | 12V4000G21R | 5680×2100×2660 | SPH1100D-U.pdf`
+- **MỚI** n122 b13 dòng 1 engine `12V4000G23R` | tổ máy `SPH1210D-U` | standby 1513 kVA / 1210 kW | khác: ∅ | hãng: MTU | dims=5680×2100×2660
+  - nguồn: `| SPH1210D-U | 1210/1513 | 12V4000G23R | 5680×2100×2660 | SPH1210D-U.pdf`
+- **MỚI** n122 b13 dòng 2 engine `12V4000G23` | tổ máy `SPH1320D-U` | standby 1650 kVA / 1320 kW | khác: ∅ | hãng: MTU | dims=5780×2100×2660
+  - nguồn: `| SPH1320D-U | 1320/1650 | 12V4000G23 | 5780×2100×2660 | SPH1320D-U.pdf`
+- **MỚI** n122 b13 dòng 3 engine `12V4000G23` | tổ máy `SPH1450D-U` | standby 1813 kVA / 1450 kW | khác: ∅ | hãng: MTU | dims=5780×2100×2660
+  - nguồn: `| SPH1450D-U | 1450/1813 | 12V4000G23 | 5780×2100×2660 | SPH1450D-U.pdf`
+- **MỚI** n122 b13 dòng 4 engine `12V4000G63` | tổ máy `SPH1600D-U` | standby 2000 kVA / 1600 kW | khác: ∅ | hãng: MTU | dims=5780×2100×2660
+  - nguồn: `| SPH1600D-U | 1600/2000 | 12V4000G63 | 5780×2100×2660 | SPH1600D-U.pdf`
+- **MỚI** n122 b13 dòng 5 engine `16V4000G23` | tổ máy `SPH1800D-U` | standby 2250 kVA / 1800 kW | khác: ∅ | hãng: MTU | dims=7630×2229×2624
+  - nguồn: `| SPH1800D-U | 1800/2250 | 16V4000G23 | 7630×2229×2624 | SPH1800D-U.pdf`
+- **MỚI** n122 b13 dòng 6 engine `16V4000G63` | tổ máy `SPH2000D-U` | standby 2500 kVA / 2000 kW | khác: ∅ | hãng: MTU | dims=7630×2229×2624
+  - nguồn: `| SPH2000D-U | 2000/2500 | 16V4000G63 | 7630×2229×2624 | SPH2000D-U.pdf`
+- **MỚI** n122 b13 dòng 7 engine `20V4000G23` | tổ máy `SPH2200D-U` | standby 2750 kVA / 2200 kW | khác: ∅ | hãng: MTU | dims=7880×2680×2835
+  - nguồn: `| SPH2200D-U | 2200/2750 | 20V4000G23 | 7880×2680×2835 | SPH2200D-U.pdf`
+- **MỚI** n122 b13 dòng 8 engine `20V4000G63` | tổ máy `SPH2400D-U` | standby 3000 kVA / 2400 kW | khác: ∅ | hãng: MTU | dims=7880×2680×2835
+  - nguồn: `| SPH2400D-U | 2400/3000 | 20V4000G63 | 7880×2680×2835 | SPH2400D-U.pdf`
+- **MỚI** n122 b13 dòng 9 engine `20V4000G63` | tổ máy `SPH2500D-U` | standby 3125 kVA / 2500 kW | khác: ∅ | hãng: MTU | dims=7600×2760×2950
+  - nguồn: `| SPH2500D-U | 2500/3125 | 20V4000G63 | 7600×2760×2950 | SPH2500D-U.pdf`
+- **MỚI** n122 b13 dòng 10 engine `20V4000G63L` | tổ máy `SPH2640D-U` | standby 3300 kVA / 2640 kW | khác: ∅ | hãng: MTU | dims=7760×2760×2950
+  - nguồn: `| SPH2640D-U | 2640/3300 | 20V4000G63L | 7760×2760×2950 | SPH2640D-U.pdf`
+- **MỚI** n122 b13 dòng 11 engine `20V4000G63L` | tổ máy `SPH2750D-U` | standby 3438 kVA / 2750 kW | khác: ∅ | hãng: MTU | dims=7760×2760×2950
+  - nguồn: `| SPH2750D-U | 2750/3438 | 20V4000G63L | 7760×2760×2950 | SPH2750D-U.pdf`
+- **MỚI** n123 b14 dòng 0 engine `S12R-PTA` | tổ máy `SPH1100D-M` | standby 1375 kVA / 1100 kW | khác: ∅ | hãng: Mitsubishi | dims=5100×2100×2700
+  - nguồn: `| SPH1100D-M | 1100/1375 | S12R-PTA | 5100×2100×2700 | SPH1100D-M.pdf`
+- **MỚI** n123 b14 dòng 1 engine `S12R-PTA2` | tổ máy `SPH1200D-M` | standby 1500 kVA / 1200 kW | khác: ∅ | hãng: Mitsubishi | dims=5100×2100×2700
+  - nguồn: `| SPH1200D-M | 1200/1500 | S12R-PTA2 | 5100×2100×2700 | SPH1200D-M.pdf`
+- **MỚI** n123 b14 dòng 2 engine `S12R-PTAA2` | tổ máy `SPH1250D-M` | standby 1562 kVA / 1250 kW | khác: ∅ | hãng: Mitsubishi | dims=5400×2100×2800
+  - nguồn: `| SPH1250D-M | 1250/1562 | S12R-PTAA2 | 5400×2100×2800 | SPH1320D-M.pdf`
+- **MỚI** n123 b14 dòng 3 engine `S12R-PTAA2` | tổ máy `SPH1320D-M` | standby 1650 kVA / 1320 kW | khác: ∅ | hãng: Mitsubishi | dims=5400×2100×2800
+  - nguồn: `| SPH1320D-M | 1320/1650 | S12R-PTAA2 | 5400×2100×2800 | SPH1500D-M.pdf`
+- **MỚI** n123 b14 dòng 4 engine `S16R-PTA` | tổ máy `SPH1500D-M` | standby 1875 kVA / 1500 kW | khác: ∅ | hãng: Mitsubishi | dims=6170×2450×3000
+  - nguồn: `| SPH1500D-M | 1500/1875 | S16R-PTA | 6170×2450×3000 | SPH1600D-M.pdf`
+- **MỚI** n123 b14 dòng 5 engine `S16R-PTA2` | tổ máy `SPH1600D-M` | standby 2000 kVA / 1600 kW | khác: ∅ | hãng: Mitsubishi | dims=6170×2450×3000
+  - nguồn: `| SPH1600D-M | 1600/2000 | S16R-PTA2 | 6170×2450×3000 | SPH1680D-M.pdf`
+- **MỚI** n123 b14 dòng 6 engine `S16R-PTAA2` | tổ máy `SPH1680D-M` | standby 2100 kVA / 1680 kW | khác: ∅ | hãng: Mitsubishi | dims=6000×2700×3500
+  - nguồn: `| SPH1680D-M | 1680/2100 | S16R-PTAA2 | 6000×2700×3500 | SPH1800D-M.pdf`
+- **MỚI** n123 b14 dòng 7 engine `S16R2-PTAW` | tổ máy `SPH1800D-M` | standby 2250 kVA / 1800 kW | khác: ∅ | hãng: Mitsubishi | dims=6980×2820×3360
+  - nguồn: `| SPH1800D-M | 1800/2250 | S16R2-PTAW | 6980×2820×3360 | SPH2000D-M.pdf`
+- **MỚI** n124 b15 dòng 0 engine `ZS168FA` | tổ máy `SGH2200X` | standby 2.2 kVA / 2.2 kW | khác: ∅ | hãng: ∅ | dims=623×468×491 | ⚠ standby kW/kVA=1.00
+  - nguồn: `| SGH2200X | 2.2/2.2 | ZS168FA | 623×468×491 |`
+- **MỚI** n124 b15 dòng 1 engine `ZS182F` | tổ máy `SGH4200X` | standby 4.2 kVA / 4.2 kW | khác: ∅ | hãng: ∅ | dims=710×549×595 | ⚠ standby kW/kVA=1.00
+  - nguồn: `| SGH4200X | 4.2/4.2 | ZS182F | 710×549×595 |`
+- **MỚI** n124 b15 dòng 2 engine `GX390` | tổ máy `SGH6500E` | standby 5.2 kVA / 5.2 kW | khác: ∅ | hãng: ∅ | dims=710×549×595 | ⚠ standby kW/kVA=1.00
+  - nguồn: `| SGH6500E | 5.2/5.2 | GX390 | 710×549×595 |`
+- **MỚI** n124 b15 dòng 3 engine `ZS190F` | tổ máy `SGH8500E` | standby 6.5 kVA / 6.5 kW | khác: ∅ | hãng: ∅ | dims=710×549×595 | ⚠ standby kW/kVA=1.00
+  - nguồn: `| SGH8500E | 6.5/6.5 | ZS190F | 710×549×595 |`
+- **MỚI** n124 b15 dòng 4 engine `GX630` | tổ máy `SGH1110E` | standby 10 kVA / 10 kW | khác: ∅ | hãng: ∅ | dims=953×617×622 | ⚠ standby kW/kVA=1.00
+  - nguồn: `| SGH1110E | 10/10 | GX630 | 953×617×622 |`
+- **MỚI** n124 b15 dòng 5 engine `GX630` | tổ máy `SGH3135E` | standby 12.5 kVA / 10 kW | khác: ∅ | hãng: ∅ | dims=953×617×622
+  - nguồn: `| SGH3135E | 10/12.5 | GX630 | 953×617×622 |`
+- **MỚI** n124 b15 dòng 6 engine `GX690` | tổ máy `SGH1130E` | standby 11.5 kVA / 11.5 kW | khác: ∅ | hãng: ∅ | dims=953×617×622 | ⚠ standby kW/kVA=1.00
+  - nguồn: `| SGH1130E | 11.5/11.5 | GX690 | 953×617×622 |`
+- **MỚI** n124 b15 dòng 7 engine `GX690` | tổ máy `SGH3160E` | standby 14.37 kVA / 11.5 kW | khác: ∅ | hãng: ∅ | dims=953×617×622
+  - nguồn: `| SGH3160E | 11.5/14.37 | GX690 | 953×617×622 |`
+- **MỚI** n124 b15 dòng 8 engine `GX690` | tổ máy `SGH1150E` | standby 12 kVA / 12 kW | khác: ∅ | hãng: ∅ | dims=953×617×622 | ⚠ standby kW/kVA=1.00
+  - nguồn: `| SGH1150E | 12/12 | GX690 | 953×617×622 |`
+- **MỚI** n124 b15 dòng 9 engine `GX690` | tổ máy `SGH3180E` | standby 16.25 kVA / 13 kW | khác: ∅ | hãng: ∅ | dims=953×617×622
+  - nguồn: `| SGH3180E | 13/16.25 | GX690 | 953×617×622 |`
+- **MỚI** n125 b16 dòng 0 engine `F2L912` | tổ máy `SS0013D-D` | standby 16 kVA / 13 kW | khác: ∅ | hãng: Deutz | dims=2000×1200×1800
+  - nguồn: `| SS0013D-D | 13/16 | F2L912 | 2000×1200×1800 |`
+- **MỚI** n125 b16 dòng 1 engine `F3L912` | tổ máy `SS0017D-D` | standby 21 kVA / 17 kW | khác: ∅ | hãng: Deutz | dims=2000×1200×1800
+  - nguồn: `| SS0017D-D | 17/21 | F3L912 | 2000×1200×1800 |`
+- **MỚI** n125 b16 dòng 2 engine `F3L912` | tổ máy `SS0022D-D` | standby 27.5 kVA / 22 kW | khác: ∅ | hãng: Deutz | dims=2000×1200×1800
+  - nguồn: `| SS0022D-D | 22/27.5 | F3L912 | 2000×1200×1800 |`
+- **MỚI** n125 b16 dòng 3 engine `F4L912` | tổ máy `SS0027D-D` | standby 33.7 kVA / 27 kW | khác: ∅ | hãng: Deutz | dims=2200×1200×1800
+  - nguồn: `| SS0027D-D | 27/33.7 | F4L912 | 2200×1200×1800 |`
+- **MỚI** n125 b16 dòng 4 engine `F4L913` | tổ máy `SS0033D-D` | standby 41 kVA / 33 kW | khác: ∅ | hãng: Deutz | dims=2200×1200×1800
+  - nguồn: `| SS0033D-D | 33/41 | F4L913 | 2200×1200×1800 |`
+- **MỚI** n125 b16 dòng 5 engine `F4L912T` | tổ máy `SS0040D-D` | standby 50 kVA / 40 kW | khác: ∅ | hãng: Deutz | dims=2200×1200×1800
+  - nguồn: `| SS0040D-D | 40/50 | F4L912T | 2200×1200×1800 |`
+- **MỚI** n125 b16 dòng 6 engine `F6L912` | tổ máy `SS0044D-D` | standby 55 kVA / 44 kW | khác: ∅ | hãng: Deutz | dims=2600×1200×1800
+  - nguồn: `| SS0044D-D | 44/55 | F6L912 | 2600×1200×1800 |`
+- **MỚI** n125 b16 dòng 7 engine `F6L913` | tổ máy `SS0048D-D` | standby 55 kVA / 44 kW | khác: ∅ | hãng: Deutz | dims=2600×1200×1800
+  - nguồn: `| SS0048D-D | 44/55 | F6L913 | 2600×1200×1800 |`
+- **MỚI** n125 b16 dòng 8 engine `BF4L913` | tổ máy `SS0050D-D` | ∅ | khác: ∅ | hãng: Deutz | dims=2600×1200×1800 | ⚠ không công suất
+  - nguồn: `| SS0050D-D | 50/625 | BF4L913 | 2600×1200×1800 |`
+- **MỚI** n125 b16 dòng 9 engine `F6L912T` | tổ máy `SS0053D-D` | standby 66 kVA / 53 kW | khác: ∅ | hãng: Deutz | dims=2600×1200×1800
+  - nguồn: `| SS0053D-D | 53/66 | F6L912T | 2600×1200×1800 |`
+- **MỚI** n125 b16 dòng 10 engine `BF6L913` | tổ máy `SS0082D-D` | standby 102.5 kVA / 82 kW | khác: ∅ | hãng: Deutz | dims=2600×1200×1800
+  - nguồn: `| SS0082D-D | 82/102.5 | BF6L913 | 2600×1200×1800 |`
+- **MỚI** n125 b16 dòng 11 engine `BF6L913C` | tổ máy `SS0100D-D` | standby 125 kVA / 100 kW | khác: ∅ | hãng: Deutz | dims=2600×1200×1800
+  - nguồn: `| SS0100D-D | 100/125 | BF6L913C | 2600×1200×1800 |`
+- **MỚI** n128 b19 dòng 0 engine `4B3.9-G1(G2)` | tổ máy `SP0022D-C` | standby 27 kVA / 22 kW | khác: ∅ | hãng: Cummins | dims=1800×7410×1380 | ⚠ model có ngoặc / gạch chéo
+  - nguồn: `| SP0022D-C | 22/27 | 4B3.9-G1(G2) | 1800×7410×1380 | SP0022D-C.pdf`
+- **MỚI** n128 b19 dòng 18 engine `QSM11-G2` | tổ máy `SP0300D-C` | standby 375 kVA / 300 kW | khác: ∅ | hãng: Cummins | dims=2860×1050×1900
+  - nguồn: `| SP0300D-C | 300/375 | QSM11-G2 | 2860×1050×1900 | SP0300D-C.pdf`
+- **MẤT** n112 b7 dòng 0 engine `S12R-PTA2-C` | tổ máy `SP1200D-L` | standby 1500 kVA / 1200 kW | khác: ∅ | hãng: ∅ | dims=4715×2136×2758 | ⚠ gộp vào n103 b2 dòng 0
+  - nguồn: `| SP1200D-L | 1200/1500 | S12R-PTA2-C | 4715×2136×2758 | SP1200D-L.pdf`
+- **MẤT** n112 b7 dòng 1 engine `S12R-PTAA2-C` | tổ máy `SP1320D-L` | standby 1650 kVA / 1320 kW | khác: ∅ | hãng: ∅ | dims=5219×2192×3056 | ⚠ gộp vào n103 b2 dòng 1
+  - nguồn: `| SP1320D-L | 1320/1650 | S12R-PTAA2-C | 5219×2192×3056 | SP1320D-L.pdf`
+- **MẤT** n112 b7 dòng 2 engine `S16R-PTA-C` | tổ máy `SP1500D-L` | standby 1875 kVA / 1500 kW | khác: ∅ | hãng: ∅ | dims=5476×2289×3056 | ⚠ gộp vào n103 b2 dòng 2
+  - nguồn: `| SP1500D-L | 1500/1875 | S16R-PTA-C | 5476×2289×3056 | SP1500D-L.pdf`
+- **MẤT** n112 b7 dòng 3 engine `S16R-PTA2-C` | tổ máy `SP1600D-L` | standby 2000 kVA / 1600 kW | khác: ∅ | hãng: ∅ | dims=5720×2400×3436 | ⚠ gộp vào n103 b2 dòng 3
+  - nguồn: `| SP1600D-L | 1600/2000 | S16R-PTA2-C | 5720×2400×3436 | SP1600D-L.pdf`
+- **MẤT** n112 b7 dòng 8 engine `S12R-PTA2` | tổ máy `SP1200D-M` | standby 1500 kVA / 1200 kW | khác: ∅ | hãng: ∅ | dims=4850×1900×2570 | ⚠ gộp vào n103 b2 dòng 4
+  - nguồn: `| SP1200D-M | 1200/1500 | S12R-PTA2 | 4850×1900×2570 | SP1200D-M.pdf`
+- **MẤT** n112 b7 dòng 9 engine `S12R-PTAA2` | tổ máy `SP1250D-M` | standby 1562 kVA / 1250 kW | khác: ∅ | hãng: ∅ | dims=5100×2000×2600 | ⚠ gộp vào n103 b2 dòng 5
+  - nguồn: `| SP1250D-M | 1250/1562 | S12R-PTAA2 | 5100×2000×2600 | SP1250D-M.pdf`
+- **MẤT** n112 b7 dòng 10 engine `S12R-PTAA2` | tổ máy `SP1320D-M` | standby 1650 kVA / 1320 kW | khác: ∅ | hãng: ∅ | dims=5100×2000×2600 | ⚠ gộp vào n103 b2 dòng 6
+  - nguồn: `| SP1320D-M | 1320/1650 | S12R-PTAA2 | 5100×2000×2600 | SP1320D-M.pdf`
+- **MẤT** n112 b7 dòng 11 engine `S16R-PTA` | tổ máy `SP1500D-M` | standby 1875 kVA / 1500 kW | khác: ∅ | hãng: ∅ | dims=5720×2134×2672 | ⚠ gộp vào n103 b2 dòng 7
+  - nguồn: `| SP1500D-M | 1500/1875 | S16R-PTA | 5720×2134×2672 | SP1500D-M.pdf`
+- **MẤT** n112 b7 dòng 12 engine `S16R-PTA2` | tổ máy `SP1600D-M` | standby 2000 kVA / 1600 kW | khác: ∅ | hãng: ∅ | dims=5720×2134×2672 | ⚠ gộp vào n103 b2 dòng 8
+  - nguồn: `| SP1600D-M | 1600/2000 | S16R-PTA2 | 5720×2134×2672 | SP1600D-M.pdf`
+- **MẤT** n112 b7 dòng 13 engine `S16R-PTA2` | tổ máy `SP1680D-M` | standby 2100 kVA / 1680 kW | khác: ∅ | hãng: ∅ | dims=5720×2134×2672 | ⚠ gộp vào n103 b2 dòng 9
+  - nguồn: `| SP1680D-M | 1680/2100 | S16R-PTA2 | 5720×2134×2672 | SP1680D-M.pdf`
+- **MẤT** n112 b7 dòng 14 engine `S16R-PTAA2` | tổ máy `SP1760D-M` | standby 2200 kVA / 1760 kW | khác: ∅ | hãng: ∅ | dims=5720×2480×3440 | ⚠ gộp vào n103 b2 dòng 10
+  - nguồn: `| SP1760D-M | 1760/2200 | S16R-PTAA2 | 5720×2480×3440 | SP1760D-M.pdf`
+- **MẤT** n112 b7 dòng 16 engine `12V4000G23R` | tổ máy `SP1210D-U` | standby 1513 kVA / 1210 kW | khác: ∅ | hãng: ∅ | dims=5680×2100×2660 | ⚠ gộp vào n103 b2 dòng 12
+  - nguồn: `| SP1210D-U | 1210/1513 | 12V4000G23R | 5680×2100×2660 | SP1210D-U.pdf`
+- **MẤT** n112 b7 dòng 17 engine `12V4000G23` | tổ máy `SP1320D-U` | standby 1650 kVA / 1320 kW | khác: ∅ | hãng: ∅ | dims=5680×2100×2660 | ⚠ gộp vào n103 b2 dòng 13
+  - nguồn: `| SP1320D-U | 1320/1650 | 12V4000G23 | 5680×2100×2660 | SP1320D-U.pdf`
+- **MẤT** n112 b7 dòng 18 engine `12V4000G23` | tổ máy `SP1450D-U` | standby 1813 kVA / 1450 kW | khác: ∅ | hãng: ∅ | dims=5680×2100×2660 | ⚠ gộp vào n103 b2 dòng 14
+  - nguồn: `| SP1450D-U | 1450/1813 | 12V4000G23 | 5680×2100×2660 | SP1450D-U.pdf`
+- **MẤT** n112 b7 dòng 19 engine `12V4000G63` | tổ máy `SP1600D-U` | standby 2000 kVA / 1600 kW | khác: ∅ | hãng: ∅ | dims=5680×2100×2660 | ⚠ gộp vào n103 b2 dòng 15
+  - nguồn: `| SP1600D-U | 1600/2000 | 12V4000G63 | 5680×2100×2660 | SP1600D-U.pdf`
+- **MẤT** n112 b7 dòng 21 engine `4012-46TWG3A` | tổ máy `SP1200D-P` | standby 1500 kVA / 1200 kW | khác: ∅ | hãng: ∅ | dims=5590×1800×2600 | ⚠ gộp vào n103 b2 dòng 17
+  - nguồn: `| SP1200D-P | 1200/1500 | 4012-46TWG3A | 5590×1800×2600 | SP1200D-P.pdf`
+- **MẤT** n112 b7 dòng 22 engine `4012-46TAG2A` | tổ máy `SP1320D-P` | standby 1650 kVA / 1320 kW | khác: ∅ | hãng: ∅ | dims=5590×1800×2550 | ⚠ gộp vào n103 b2 dòng 18
+  - nguồn: `| SP1320D-P | 1320/1650 | 4012-46TAG2A | 5590×1800×2550 | SP1320D-P.pdf`
+- **MẤT** n112 b7 dòng 23 engine `4012-46TAG3A` | tổ máy `SP1485D-P` | standby 1856 kVA / 1485 kW | khác: ∅ | hãng: ∅ | dims=5590×1800×2550 | ⚠ gộp vào n103 b2 dòng 19
+  - nguồn: `| SP1485D-P | 1485/1856 | 4012-46TAG3A | 5590×1800×2550 | SP1485D-P.pdf`
+- **MẤT** n112 b7 dòng 24 engine `4016TAG` | tổ máy `SP1540D-P` | standby 1925 kVA / 1540 kW | khác: ∅ | hãng: ∅ | dims=6140×2300×3020 | ⚠ gộp vào n103 b2 dòng 20
+  - nguồn: `| SP1540D-P | 1540/1925 | 4016TAG | 6140×2300×3020 | SP1540D-P.pdf`
+- **MẤT** n112 b7 dòng 25 engine `4016TAG1A` | tổ máy `SP1620D-P` | standby 2025 kVA / 1620 kW | khác: ∅ | hãng: ∅ | dims=6140×2300×3020 | ⚠ gộp vào n103 b2 dòng 21
+  - nguồn: `| SP1620D-P | 1620/2025 | 4016TAG1A | 6140×2300×3020 | SP1620D-P.pdf`
+- **MẤT** n113 b8 dòng 0 engine `S6R2-PTAA-C` | tổ máy `SP0700D-L` | standby 875 kVA / 700 kW | khác: ∅ | hãng: ∅ | dims=4069×1744×1977 | ⚠ gộp vào n104 b3 dòng 0
+  - nguồn: `| SP0700D-L | 700/875 | S6R2-PTAA-C | 4069×1744×1977 | SP0700D-L.pdf`
+- **MẤT** n113 b8 dòng 11 engine `S6R-PTA` | tổ máy `SP0560D-M` | standby 700 kVA / 560 kW | khác: ∅ | hãng: ∅ | dims=3595×1422×2150 | ⚠ gộp vào n104 b3 dòng 1
+  - nguồn: `| SP0560D-M | 560/700 | S6R-PTA | 3595×1422×2150 | SP0560D-M.pdf`
+- **MẤT** n113 b8 dòng 12 engine `S6R2-PTA` | tổ máy `SP0600D-M` | standby 750 kVA / 600 kW | khác: ∅ | hãng: ∅ | dims=3818×1600×2000 | ⚠ gộp vào n104 b3 dòng 2
+  - nguồn: `| SP0600D-M | 600/750 | S6R2-PTA | 3818×1600×2000 | SP0600D-M.pdf`
+- **MẤT** n113 b8 dòng 13 engine `S6R2-PTAA` | tổ máy `SP0660D-M` | standby 825 kVA / 660 kW | khác: ∅ | hãng: ∅ | dims=3818×1600×2100 | ⚠ gộp vào n104 b3 dòng 3
+  - nguồn: `| SP0660D-M | 660/825 | S6R2-PTAA | 3818×1600×2100 | SP0660D-M.pdf`
+- **MẤT** n113 b8 dòng 14 engine `S12A2-PTA` | tổ máy `SP0720D-M` | standby 900 kVA / 720 kW | khác: ∅ | hãng: ∅ | dims=4500×1680×2200 | ⚠ gộp vào n104 b3 dòng 4
+  - nguồn: `| SP0720D-M | 720/900 | S12A2-PTA | 4500×1680×2200 | SP0720D-M.pdf`
+- **MẤT** n113 b8 dòng 15 engine `S12H-PTA` | tổ máy `SP0825D-M` | standby 1035 kVA / 825 kW | khác: ∅ | hãng: ∅ | dims=4500×1880×2341 | ⚠ gộp vào n104 b3 dòng 5
+  - nguồn: `| SP0825D-M | 825/1035 | S12H-PTA | 4500×1880×2341 | SP0825D-M.pdf`
+- **MẤT** n113 b8 dòng 16 engine `S12H-PTA` | tổ máy `SP0920D-M` | standby 1150 kVA / 920 kW | khác: ∅ | hãng: ∅ | dims=4500×1880×2341 | ⚠ gộp vào n104 b3 dòng 6
+  - nguồn: `| SP0920D-M | 920/1150 | S12H-PTA | 4500×1880×2341 | SP0920D-M.pdf`
+- **MẤT** n113 b8 dòng 18 engine `10V1600G80F` | tổ máy `SP0440D-U` | standby 550 kVA / 440 kW | khác: ∅ | hãng: ∅ | dims=3200×1350×2240 | ⚠ gộp vào n104 b3 dòng 10
+  - nguồn: `| SP0440D-U | 440/550 | 10V1600G80F | 3200×1350×2240 | SP0440D-U.pdf`
+- **MẤT** n113 b8 dòng 26 engine `2206C-E13TAG3` | tổ máy `SP0352D-P` | standby 440 kVA / 352 kW | khác: ∅ | hãng: ∅ | dims=3280×1130×1950 | ⚠ gộp vào n110 b5 dòng 18
+  - nguồn: `| SP0352D-P | 352/440 | 2206C-E13TAG3 | 3280×1130×1950 | SP0352D-P.pdf`
+- **MẤT** n113 b8 dòng 28 engine `2506C-E15TAG2` | tổ máy `SP0440D-P` | standby 550 kVA / 440 kW | khác: ∅ | hãng: ∅ | dims=3300×1200×2060 | ⚠ gộp vào n110 b5 dòng 20
+  - nguồn: `| SP0440D-P | 440/550 | 2506C-E15TAG2 | 3300×1200×2060 | SP0440D-P.pdf`
+- **MẤT** n113 b8 dòng 29 engine `2806A-E18TAG1A` | tổ máy `SP0528D-P` | standby 660 kVA / 528 kW | khác: ∅ | hãng: ∅ | dims=3300×1550×2100 | ⚠ gộp vào n110 b5 dòng 21
+  - nguồn: `| SP0528D-P | 528/660 | 2806A-E18TAG1A | 3300×1550×2100 | SP0528D-P.pdf`
+- **MẤT** n113 b8 dòng 30 engine `2806A-E18TAG2` | tổ máy `SP0572D-P` | standby 715 kVA / 572 kW | khác: ∅ | hãng: ∅ | dims=3300×1550×2100 | ⚠ gộp vào n110 b5 dòng 22
+  - nguồn: `| SP0572D-P | 572/715 | 2806A-E18TAG2 | 3300×1550×2100 | SP0572D-P.pdf`
+- **MẤT** n113 b8 dòng 31 engine `4006-23TAG2A` | tổ máy `SP0640D-P` | standby 800 kVA / 640 kW | khác: ∅ | hãng: ∅ | dims=4100×1920×2250 | ⚠ gộp vào n110 b5 dòng 23
+  - nguồn: `| SP0640D-P | 640/800 | 4006-23TAG2A | 4100×1920×2250 | SP0640D-P.pdf`
+- **MẤT** n113 b8 dòng 32 engine `4006-23TAG3A` | tổ máy `SP0704D-P` | standby 880 kVA / 704 kW | khác: ∅ | hãng: ∅ | dims=4100×1920×2250 | ⚠ gộp vào n110 b5 dòng 24
+  - nguồn: `| SP0704D-P | 704/880 | 4006-23TAG3A | 4100×1920×2250 | SP0704D-P.pdf`
+- **MẤT** n113 b8 dòng 33 engine `4008TAG2A` | tổ máy `SP0800D-P` | ∅ | khác: ∅ | hãng: ∅ | dims=4570×2046×2230 | ⚠ gộp vào n110 b5 dòng 25
+  - nguồn: `| SP0800D-P | 800/1125 | 4008TAG2A | 4570×2046×2230 | SP0800D-P.pdf`
+- **MẤT** n113 b8 dòng 34 engine `4008TAG2A` | tổ máy `SP0880D-P` | standby 1100 kVA / 880 kW | khác: ∅ | hãng: ∅ | dims=4570×2046×2230 | ⚠ gộp vào n110 b5 dòng 26
+  - nguồn: `| SP0880D-P | 880/1100 | 4008TAG2A | 4570×2046×2230 | SP0880D-P.pdf`
+- **MẤT** n114 b9 dòng 16 engine `404D-22G` | tổ máy `SP0017D-P` | standby 21 kVA / 17 kW | khác: ∅ | hãng: ∅ | dims=1100×550×1030 | ⚠ gộp vào n101 b0 dòng 1
+  - nguồn: `| SP0017D-P | 17/21 | 404D-22G | 1100×550×1030 | SP0017D-P.pdf`
+- **MẤT** n114 b9 dòng 17 engine `1103A-33G` | tổ máy `SP0026D-P` | standby 33 kVA / 26 kW | khác: ∅ | hãng: ∅ | dims=1585×750×1250 | ⚠ gộp vào n101 b0 dòng 2
+  - nguồn: `| SP0026D-P | 26/33 | 1103A-33G | 1585×750×1250 | SP0026D-P.pdf`
+- **MẤT** n114 b9 dòng 18 engine `1103A-33TG1` | tổ máy `SP0035D-P` | standby 44 kVA / 35 kW | khác: ∅ | hãng: ∅ | dims=1900×760×1250 | ⚠ gộp vào n101 b0 dòng 3
+  - nguồn: `| SP0035D-P | 35/44 | 1103A-33TG1 | 1900×760×1250 | SP0035D-P.pdf`
+- **MẤT** n114 b9 dòng 19 engine `1103A-33TG1` | tổ máy `SP0040D-P` | standby 50 kVA / 40 kW | khác: ∅ | hãng: ∅ | dims=1900×760×1250 | ⚠ gộp vào n101 b0 dòng 4
+  - nguồn: `| SP0040D-P | 40/50 | 1103A-33TG1 | 1900×760×1250 | SP0040D-P.pdf`
+- **MẤT** n114 b9 dòng 20 engine `1103A-33TG2` | tổ máy `SP0052D-P` | standby 65 kVA / 52 kW | khác: ∅ | hãng: ∅ | dims=1900×760×1250 | ⚠ gộp vào n101 b0 dòng 5
+  - nguồn: `| SP0052D-P | 52/65 | 1103A-33TG2 | 1900×760×1250 | SP0052D-P.pdf`
+- **MẤT** n114 b9 dòng 21 engine `1104A-44TG2` | tổ máy `SP0070D-P` | standby 88 kVA / 70 kW | khác: ∅ | hãng: ∅ | dims=1865×810×1170 | ⚠ gộp vào n101 b0 dòng 6
+  - nguồn: `| SP0070D-P | 70/88 | 1104A-44TG2 | 1865×810×1170 | SP0070D-P.pdf`
+- **MẤT** n114 b9 dòng 22 engine `1006TG1A` | tổ máy `SP0080D-P` | standby 100 kVA / 80 kW | khác: ∅ | hãng: ∅ | dims=2240×760×1315 | ⚠ gộp vào n101 b0 dòng 7
+  - nguồn: `| SP0080D-P | 80/100 | 1006TG1A | 2240×760×1315 | SP0080D-P.pdf`
+- **MẤT** n114 b9 dòng 23 engine `1104C-44TAG2` | tổ máy `SP0082D-P` | standby 103 kVA / 82 kW | khác: ∅ | hãng: ∅ | dims=2240×760×1315 | ⚠ gộp vào n101 b0 dòng 8
+  - nguồn: `| SP0082D-P | 82/103 | 1104C-44TAG2 | 2240×760×1315 | SP0082D-P.pdf`
+- **MẤT** n114 b9 dòng 24 engine `1006TG2A` | tổ máy `SP0088D-P` | standby 110 kVA / 88 kW | khác: ∅ | hãng: ∅ | dims=2240×760×1315 | ⚠ gộp vào n101 b0 dòng 9
+  - nguồn: `| SP0088D-P | 88/110 | 1006TG2A | 2240×760×1315 | SP0088D-P.pdf`
+- **MẤT** n114 b9 dòng 25 engine `1006TAG` | tổ máy `SP0120D-P` | standby 150 kVA / 120 kW | khác: ∅ | hãng: ∅ | dims=2420×760×1430 | ⚠ gộp vào n101 b0 dòng 10
+  - nguồn: `| SP0120D-P | 120/150 | 1006TAG | 2420×760×1430 | SP0120D-P.pdf`
+- **MẤT** n114 b9 dòng 26 engine `1006TAG2` | tổ máy `SP0132D-P` | standby 165 kVA / 132 kW | khác: ∅ | hãng: ∅ | dims=2420×760×1430 | ⚠ gộp vào n101 b0 dòng 11
+  - nguồn: `| SP0132D-P | 132/165 | 1006TAG2 | 2420×760×1430 | SP0132D-P.pdf`
+- **MẤT** n114 b9 dòng 27 engine `1106C-E66TAG4` | tổ máy `SP0154D-P` | standby 193 kVA / 154 kW | khác: ∅ | hãng: ∅ | dims=2420×760×1520 | ⚠ gộp vào n101 b0 dòng 12
+  - nguồn: `| SP0154D-P | 154/193 | 1106C-E66TAG4 | 2420×760×1520 | SP0154D-P.pdf`
+- **MẤT** n114 b9 dòng 28 engine `1306C-E87TAG3` | tổ máy `SP0176D-P` | standby 220 kVA / 176 kW | khác: ∅ | hãng: ∅ | dims=2750×1100×1785 | ⚠ gộp vào n101 b0 dòng 13
+  - nguồn: `| SP0176D-P | 176/220 | 1306C-E87TAG3 | 2750×1100×1785 | SP0176D-P.pdf`
+- **MẤT** n114 b9 dòng 29 engine `1306C-E87TAG4` | tổ máy `SP0200D-P` | standby 250 kVA / 200 kW | khác: ∅ | hãng: ∅ | dims=2750×1100×1785 | ⚠ gộp vào n101 b0 dòng 14
+  - nguồn: `| SP0200D-P | 200/250 | 1306C-E87TAG4 | 2750×1100×1785 | SP0200D-P.pdf`
+- **MẤT** n114 b9 dòng 30 engine `1306C-E87TAG6` | tổ máy `SP0220D-P` | standby 275 kVA / 220 kW | khác: ∅ | hãng: ∅ | dims=2750×1100×1785 | ⚠ gộp vào n101 b0 dòng 15
+  - nguồn: `| SP0220D-P | 220/275 | 1306C-E87TAG6 | 2750×1100×1785 | SP0220D-P.pdf`
+- **MẤT** n114 b9 dòng 31 engine `2206C-E13TAG2` | tổ máy `SP0280D-P` | standby 350 kVA / 280 kW | khác: ∅ | hãng: ∅ | dims=3280×1130×1950 | ⚠ gộp vào n101 b0 dòng 16
+  - nguồn: `| SP0280D-P | 280/350 | 2206C-E13TAG2 | 3280×1130×1950 | SP0280D-P.pdf`
+- **MẤT** n114 b9 dòng 33 engine `4BT3.9-G1(G2)` | tổ máy `SP0026D-C` | standby 33 kVA / 26 kW | khác: ∅ | hãng: ∅ | dims=1800×7410×1380 | ⚠ gộp vào n101 b0 dòng 18
+  - nguồn: `| SP0026D-C | 26/33 | 4BT3.9-G1(G2) | 1800×7410×1380 | SP0026D-C.pdf`
+- **MẤT** n114 b9 dòng 34 engine `4BT3.9-G1(G2)` | tổ máy `SP0033D-C` | standby 41 kVA / 33 kW | khác: ∅ | hãng: ∅ | dims=1800×7410×1380 | ⚠ gộp vào n101 b0 dòng 19
+  - nguồn: `| SP0033D-C | 33/41 | 4BT3.9-G1(G2) | 1800×7410×1380 | SP0033D-C.pdf`
+- **MẤT** n114 b9 dòng 35 engine `4BTA3.9-G2` | tổ máy `SP0044D-C` | standby 55 kVA / 44 kW | khác: ∅ | hãng: ∅ | dims=1880×750×1520 | ⚠ gộp vào n101 b0 dòng 20
+  - nguồn: `| SP0044D-C | 44/55 | 4BTA3.9-G2 | 1880×750×1520 | SP0044D-C.pdf`
+- **MẤT** n114 b9 dòng 36 engine `4BTA3.9-G2` | tổ máy `SP0050D-C` | standby 63 kVA / 50 kW | khác: ∅ | hãng: ∅ | dims=1880×750×1520 | ⚠ gộp vào n101 b0 dòng 21
+  - nguồn: `| SP0050D-C | 50/63 | 4BTA3.9-G2 | 1880×750×1520 | SP0050D-C.pdf`
+- **MẤT** n114 b9 dòng 37 engine `6BT5.9-G1(G2)` | tổ máy `SP0060D-C` | standby 75 kVA / 60 kW | khác: ∅ | hãng: ∅ | dims=2150×840×1400 | ⚠ gộp vào n101 b0 dòng 22
+  - nguồn: `| SP0060D-C | 60/75 | 6BT5.9-G1(G2) | 2150×840×1400 | SP0060D-C.pdf`
+- **MẤT** n114 b9 dòng 38 engine `6BT5.9-G1(G2)` | tổ máy `SP0070D-C` | standby 88 kVA / 70 kW | khác: ∅ | hãng: ∅ | dims=2150×840×1400 | ⚠ gộp vào n101 b0 dòng 23
+  - nguồn: `| SP0070D-C | 70/88 | 6BT5.9-G1(G2) | 2150×840×1400 | SP0070D-C.pdf`
+- **MẤT** n114 b9 dòng 39 engine `6BT5.9-G1(G2)` | tổ máy `SP0080D-C` | standby 100 kVA / 80 kW | khác: ∅ | hãng: ∅ | dims=2150×840×1400 | ⚠ gộp vào n101 b0 dòng 24
+  - nguồn: `| SP0080D-C | 80/100 | 6BT5.9-G1(G2) | 2150×840×1400 | SP0080D-C.pdf`
+- **MẤT** n114 b9 dòng 40 engine `6BTA5.9-G2` | tổ máy `SP0100D-C` | standby 125 kVA / 100 kW | khác: ∅ | hãng: ∅ | dims=2150×840×1400 | ⚠ gộp vào n101 b0 dòng 25
+  - nguồn: `| SP0100D-C | 100/125 | 6BTA5.9-G2 | 2150×840×1400 | SP0100D-C.pdf`
+- **MẤT** n114 b9 dòng 41 engine `6BTA5.9-G2` | tổ máy `SP0108D-C` | standby 135 kVA / 108 kW | khác: ∅ | hãng: ∅ | dims=2150×840×1400 | ⚠ gộp vào n101 b0 dòng 26
+  - nguồn: `| SP0108D-C | 108/135 | 6BTA5.9-G2 | 2150×840×1400 | SP0108D-C.pdf`
+- **MẤT** n114 b9 dòng 42 engine `6BTAA5.9-G2` | tổ máy `SP0120D-C` | standby 150 kVA / 120 kW | khác: ∅ | hãng: ∅ | dims=2260×860×1450 | ⚠ gộp vào n101 b0 dòng 27
+  - nguồn: `| SP0120D-C | 120/150 | 6BTAA5.9-G2 | 2260×860×1450 | SP0120D-C.pdf`
+- **MẤT** n114 b9 dòng 43 engine `6CTA8.3-G2` | tổ máy `SP0132D-C` | standby 165 kVA / 132 kW | khác: ∅ | hãng: ∅ | dims=2300×860×1560 | ⚠ gộp vào n101 b0 dòng 28
+  - nguồn: `| SP0132D-C | 132/165 | 6CTA8.3-G2 | 2300×860×1560 | SP0132D-C.pdf`
+- **MẤT** n114 b9 dòng 44 engine `6CTA8.3-G2` | tổ máy `SP0165D-C` | standby 206 kVA / 165 kW | khác: ∅ | hãng: ∅ | dims=2300×860×1560 | ⚠ gộp vào n101 b0 dòng 29
+  - nguồn: `| SP0165D-C | 165/206 | 6CTA8.3-G2 | 2300×860×1560 | SP0165D-C.pdf`
+- **MẤT** n114 b9 dòng 45 engine `6CTAA8.3-G2` | tổ máy `SP0176D-C` | standby 220 kVA / 176 kW | khác: ∅ | hãng: ∅ | dims=2300×860×1560 | ⚠ gộp vào n101 b0 dòng 30
+  - nguồn: `| SP0176D-C | 176/220 | 6CTAA8.3-G2 | 2300×860×1560 | SP0176D-C.pdf`
+- **MẤT** n114 b9 dòng 46 engine `6CTAA8.3-G2` | tổ máy `SP0188D-C` | standby 235 kVA / 188 kW | khác: ∅ | hãng: ∅ | dims=2300×860×1560 | ⚠ gộp vào n101 b0 dòng 31
+  - nguồn: `| SP0188D-C | 188/235 | 6CTAA8.3-G2 | 2300×860×1560 | SP0188D-C.pdf`
+- **MẤT** n114 b9 dòng 47 engine `6LTAA8.9-G2` | tổ máy `SP0220D-C` | standby 275 kVA / 220 kW | khác: ∅ | hãng: ∅ | dims=2530×955×1603 | ⚠ gộp vào n101 b0 dòng 32
+  - nguồn: `| SP0220D-C | 220/275 | 6LTAA8.9-G2 | 2530×955×1603 | SP0220D-C.pdf`
+- **MẤT** n114 b9 dòng 48 engine `QSM11-G2` | tổ máy `SP0250D-C` | standby 313 kVA / 250 kW | khác: ∅ | hãng: ∅ | dims=2860×1050×1900 | ⚠ gộp vào n101 b0 dòng 33
+  - nguồn: `| SP0250D-C | 250/313 | QSM11-G2 | 2860×1050×1900 | SP0250D-C.pdf`
+- **MẤT** n114 b9 dòng 49 engine `QSM11-G2` | tổ máy `SP0275D-C` | standby 344 kVA / 275 kW | khác: ∅ | hãng: ∅ | dims=2860×1050×1900 | ⚠ gộp vào n101 b0 dòng 34
+  - nguồn: `| SP0275D-C | 275/344 | QSM11-G2 | 2860×1050×1900 | SP0275D-C.pdf`
+- **MẤT** n114 b9 dòng 51 engine `F3L912` | tổ máy `SP0017D-D` | standby 21 kVA / 17 kW | khác: ∅ | hãng: Deutz | dims=1200×700×1350 | ⚠ gộp vào n101 b0 dòng 36
+  - nguồn: `| SP0017D-D | 17/21 | F3L912 | 1200×700×1350 | SP0017D-D.pdf`
+- **MẤT** n114 b9 dòng 52 engine `F3L912` | tổ máy `SP0022D-D` | standby 27.5 kVA / 22 kW | khác: ∅ | hãng: Deutz | dims=1200×700×1350 | ⚠ gộp vào n101 b0 dòng 37
+  - nguồn: `| SP0022D-D | 22/27.5 | F3L912 | 1200×700×1350 | SP0022D-D.pdf`
+- **MẤT** n114 b9 dòng 53 engine `F4L912` | tổ máy `SP0027D-D` | standby 33.7 kVA / 27 kW | khác: ∅ | hãng: Deutz | dims=1550×870×1378 | ⚠ gộp vào n101 b0 dòng 38
+  - nguồn: `| SP0027D-D | 27/33.7 | F4L912 | 1550×870×1378 | SP0027D-D.pdf`
+- **MẤT** n114 b9 dòng 54 engine `F4L913` | tổ máy `SP0033D-D` | standby 41 kVA / 33 kW | khác: ∅ | hãng: Deutz | dims=1600×870×1378 | ⚠ gộp vào n101 b0 dòng 39
+  - nguồn: `| SP0033D-D | 33/41 | F4L913 | 1600×870×1378 | SP0033D-D.pdf`
+- **MẤT** n114 b9 dòng 55 engine `F4L912T` | tổ máy `SP0040D-D` | standby 50 kVA / 40 kW | khác: ∅ | hãng: Deutz | dims=1600×870×1378 | ⚠ gộp vào n101 b0 dòng 40
+  - nguồn: `| SP0040D-D | 40/50 | F4L912T | 1600×870×1378 | SP0040D-D.pdf`
+- **MẤT** n114 b9 dòng 56 engine `F6L912` | tổ máy `SP0044D-D` | standby 55 kVA / 44 kW | khác: ∅ | hãng: Deutz | dims=1900×830×1273 | ⚠ gộp vào n101 b0 dòng 41
+  - nguồn: `| SP0044D-D | 44/55 | F6L912 | 1900×830×1273 | SP0044D-D.pdf`
+- **MẤT** n114 b9 dòng 59 engine `F6L912T` | tổ máy `SP0053D-D` | standby 66 kVA / 53 kW | khác: ∅ | hãng: Deutz | dims=1800×830×1320 | ⚠ gộp vào n101 b0 dòng 44
+  - nguồn: `| SP0053D-D | 53/66 | F6L912T | 1800×830×1320 | SP0053D-D.pdf`
+- **MẤT** n114 b9 dòng 60 engine `BF6L913` | tổ máy `SP0082D-D` | standby 102.5 kVA / 82 kW | khác: ∅ | hãng: Deutz | dims=1900×830×1317 | ⚠ gộp vào n101 b0 dòng 45
+  - nguồn: `| SP0082D-D | 82/102.5 | BF6L913 | 1900×830×1317 | SP0082D-D.pdf`
+- **MẤT** n114 b9 dòng 61 engine `BF6L913C` | tổ máy `SP0100D-D` | standby 125 kVA / 100 kW | khác: ∅ | hãng: Deutz | dims=1950×830×1353 | ⚠ gộp vào n101 b0 dòng 46
+  - nguồn: `| SP0100D-D | 100/125 | BF6L913C | 1950×830×1353 | SP0100D-D.pdf`
+- **MẤT** n126 b17 dòng 8 engine `BF4L913` | tổ máy `SP0050D-D` | ∅ | khác: ∅ | hãng: Deutz |  | ⚠ gộp vào n101 b0 dòng 43
+  - nguồn: `| SP0050D-D | 50/625 | BF4L913 | 1540×830×1273 | SP0050D-D.pdf`
+- **ĐỔI** n102 b1 dòng 0 engine `16V4000G23` | tổ máy `SP1800D-U` | standby 2250 kVA / 1800 kW | khác: ∅ | hãng: MTU | dims=7330×2150×2836
+  - đổi: header: ["| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × → ["| 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据","| S; specs: [] → [{"key":"dims","label":"机组尺寸 (mm) ( 长 × 宽 × 高 )","value":"7330×2150×2836"}]
+  - nguồn: `| SP1800D-U | 1800/2250 | MTU | 16V4000G23 | 7330×2150×2836 | SP1800D-U.pdf`
+- **ĐỔI** n102 b1 dòng 1 engine `16V4000G63` | tổ máy `SP2000D-U` | standby 2500 kVA / 2000 kW | khác: ∅ | hãng: Mitsubishi | dims=7330×2150×2836
+  - đổi: header: ["| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × → ["| 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据","| S; specs: [] → [{"key":"dims","label":"机组尺寸 (mm) ( 长 × 宽 × 高 )","value":"7330×2150×2836"}]
+  - nguồn: `| SP2000D-U | 2000/2500 | 16V4000G63 | 7330×2150×2836 | SP2000D-U.pdf`
+- **ĐỔI** n102 b1 dòng 2 engine `20V4000G23` | tổ máy `SP2200D-U` | standby 2750 kVA / 2200 kW | khác: ∅ | hãng: Mitsubishi | dims=7600×2760×2950
+  - đổi: header: ["| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × → ["| 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据","| S; specs: [] → [{"key":"dims","label":"机组尺寸 (mm) ( 长 × 宽 × 高 )","value":"7600×2760×2950"}]
+  - nguồn: `| SP2200D-U | 2200/2750 | 20V4000G23 | 7600×2760×2950 | SP2200D-U.pdf`
+- **ĐỔI** n102 b1 dòng 3 engine `20V4000G63` | tổ máy `SP2400D-U` | standby 3000 kVA / 2400 kW | khác: ∅ | hãng: Mitsubishi | dims=7600×2760×2950
+  - đổi: header: ["| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × → ["| 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据","| S; specs: [] → [{"key":"dims","label":"机组尺寸 (mm) ( 长 × 宽 × 高 )","value":"7600×2760×2950"}]
+  - nguồn: `| SP2400D-U | 2400/3000 | 20V4000G63 | 7600×2760×2950 | SP2400D-U.pdf`
+- **ĐỔI** n102 b1 dòng 4 engine `20V4000G63` | tổ máy `SP2500D-U` | standby 3125 kVA / 2500 kW | khác: ∅ | hãng: Mitsubishi | dims=7600×2760×2950
+  - đổi: header: ["| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × → ["| 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据","| S; specs: [] → [{"key":"dims","label":"机组尺寸 (mm) ( 长 × 宽 × 高 )","value":"7600×2760×2950"}]
+  - nguồn: `| SP2500D-U | 2500/3125 | 20V4000G63 | 7600×2760×2950 | SP2500D-U.pdf`
+- **ĐỔI** n102 b1 dòng 5 engine `20V4000G63L` | tổ máy `SP2640D-U` | standby 3300 kVA / 2640 kW | khác: ∅ | hãng: Mitsubishi | dims=7760×2760×2950
+  - đổi: header: ["| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × → ["| 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据","| S; specs: [] → [{"key":"dims","label":"机组尺寸 (mm) ( 长 × 宽 × 高 )","value":"7760×2760×2950"}]
+  - nguồn: `| SP2640D-U | 2640/3300 | 20V4000G63L | 7760×2760×2950 | SP2640D-U.pdf`
+- **ĐỔI** n102 b1 dòng 6 engine `20V4000G63L` | tổ máy `SP2750D-U` | standby 3488 kVA / 2750 kW | khác: ∅ | hãng: Mitsubishi | dims=7760×2760×2950
+  - đổi: header: ["| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × → ["| 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据","| S; specs: [] → [{"key":"dims","label":"机组尺寸 (mm) ( 长 × 宽 × 高 )","value":"7760×2760×2950"}]
+  - nguồn: `| SP2750D-U | 2750/3488 | 20V4000G63L | 7760×2760×2950 | SP2750D-U.pdf`
+- **ĐỔI** n102 b1 dòng 7 engine `4016TAG2A` | tổ máy `SP1800D-P` | standby 2250 kVA / 1800 kW | khác: ∅ | hãng: Perkins | dims=6140×2300×3020
+  - đổi: header: ["| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × → ["| 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据","| S; specs: [] → [{"key":"dims","label":"机组尺寸 (mm) ( 长 × 宽 × 高 )","value":"6140×2300×3020"}]
+  - nguồn: `| SP1800D-P | 1800/2250 | Perkins | 4016TAG2A | 6140×2300×3020 | SP1800D-P.pdf`
+- **ĐỔI** n102 b1 dòng 8 engine `4016-61TRG3` | tổ máy `SP2000D-P` | standby 2500 kVA / 2000 kW | khác: ∅ | hãng: Mitsubishi,Perkins | dims=6140×2300×3020
+  - đổi: header: ["| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × → ["| 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据","| S; specs: [] → [{"key":"dims","label":"机组尺寸 (mm) ( 长 × 宽 × 高 )","value":"6140×2300×3020"}]; makes: [{"name":"Mitsubishi","via":"tiêu đề cột"}] → [{"name":"Mitsubishi","via":"tiêu đề cột"},{"name":"Perkins","via":"tên trang"}]
+  - nguồn: `| SP2000D-P | 2000/2500 | 4016-61TRG3 | 6140×2300×3020 | SP2000D-P.pdf`
+- **ĐỔI** n111 b6 dòng 0 engine `16V4000G23` | tổ máy `SP1800D-U` | standby 2250 kVA / 1800 kW | khác: ∅ | hãng: MTU | dims=6280×2600×2748
+  - đổi: header: ["| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × → ["| 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据","| S; specs: [] → [{"key":"dims","label":"机组尺寸 (mm) ( 长 × 宽 × 高 )","value":"6280×2600×2748"}]
+  - nguồn: `| SP1800D-U | 1800/2250 | 奔驰 MTU | 16V4000G23 | 6280×2600×2748 | SP1800D-U.pdf`
+- **ĐỔI** n111 b6 dòng 1 engine `16V4000G63` | tổ máy `SP2000D-U` | standby 2500 kVA / 2000 kW | khác: ∅ | hãng: Mitsubishi | dims=6600×2600×2800
+  - đổi: header: ["| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × → ["| 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据","| S; specs: [] → [{"key":"dims","label":"机组尺寸 (mm) ( 长 × 宽 × 高 )","value":"6600×2600×2800"}]
+  - nguồn: `| SP2000D-U | 2000/2500 | 16V4000G63 | 6600×2600×2800 | SP2000D-U.pdf`
+- **ĐỔI** n111 b6 dòng 2 engine `20V4000G23` | tổ máy `SP2200D-U` | standby 2750 kVA / 2200 kW | khác: ∅ | hãng: Mitsubishi | dims=6930×2600×2800
+  - đổi: header: ["| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × → ["| 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据","| S; specs: [] → [{"key":"dims","label":"机组尺寸 (mm) ( 长 × 宽 × 高 )","value":"6930×2600×2800"}]
+  - nguồn: `| SP2200D-U | 2200/2750 | 20V4000G23 | 6930×2600×2800 | SP2200D-U.pdf`
+- **ĐỔI** n111 b6 dòng 3 engine `20V4000G63` | tổ máy `SP2400D-U` | standby 3000 kVA / 2400 kW | khác: ∅ | hãng: Mitsubishi | dims=6930×2600×2800
+  - đổi: header: ["| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × → ["| 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据","| S; specs: [] → [{"key":"dims","label":"机组尺寸 (mm) ( 长 × 宽 × 高 )","value":"6930×2600×2800"}]
+  - nguồn: `| SP2400D-U | 2400/3000 | 20V4000G63 | 6930×2600×2800 | SP2400D-U.pdf`
+- **ĐỔI** n111 b6 dòng 4 engine `20V4000G63` | tổ máy `SP2500D-U` | standby 3125 kVA / 2500 kW | khác: ∅ | hãng: Mitsubishi | dims=6930×2600×2800
+  - đổi: header: ["| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × → ["| 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据","| S; specs: [] → [{"key":"dims","label":"机组尺寸 (mm) ( 长 × 宽 × 高 )","value":"6930×2600×2800"}]
+  - nguồn: `| SP2500D-U | 2500/3125 | 20V4000G63 | 6930×2600×2800 | SP2500D-U.pdf`
+- **ĐỔI** n111 b6 dòng 5 engine `20V4000G63L` | tổ máy `SP2650D-U` | standby 3313 kVA / 2650 kW | khác: ∅ | hãng: Mitsubishi | dims=6930×2600×2800
+  - đổi: header: ["| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × → ["| 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据","| S; specs: [] → [{"key":"dims","label":"机组尺寸 (mm) ( 长 × 宽 × 高 )","value":"6930×2600×2800"}]
+  - nguồn: `| SP2650D-U | 2650/3313 | 20V4000G63L | 6930×2600×2800 | SP2650D-U.pdf`
+- **ĐỔI** n111 b6 dòng 6 engine `20V4000G63L` | tổ máy `SP2750D-U` | standby 3488 kVA / 2750 kW | khác: ∅ | hãng: Mitsubishi | dims=6930×2600×2800
+  - đổi: header: ["| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × → ["| 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据","| S; specs: [] → [{"key":"dims","label":"机组尺寸 (mm) ( 长 × 宽 × 高 )","value":"6930×2600×2800"}]
+  - nguồn: `| SP2750D-U | 2750/3488 | 20V4000G63L | 6930×2600×2800 | SP2750D-U.pdf`
+- **ĐỔI** n111 b6 dòng 7 engine `4016TAG2A` | tổ máy `SP1800D-P` | standby 2250 kVA / 1800 kW | khác: ∅ | hãng: Perkins | dims=6140×2300×3020
+  - đổi: header: ["| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × → ["| 机组型号 | 备用功率 ( kW/kVA) | 发动机品牌 | 发动机型号 | 机组尺寸 (mm) ( 长 × 宽 × 高 ) | 机组数据","| S; specs: [] → [{"key":"dims","label":"机组尺寸 (mm) ( 长 × 宽 × 高 )","value":"6140×2300×3020"}]
+  - nguồn: `| SP1800D-P | 1800/2250 | 珀金斯 Perkins | 4016TAG2A | 6140×2300×3020 | SP1800D-P.pdf`
+- **ĐỔI** n113 b8 dòng 35 engine `QSZ13-G2` | tổ máy `SP0330D-C` | standby 413 kVA / 330 kW | khác: ∅ | hãng: Cummins | dims=3410×1230×1920
+  - đổi: makes: [] → [{"name":"Cummins","via":"tên trang"}]
+  - nguồn: `| SP0330D-C | 330/413 | QSZ13-G2 | 3410×1230×1920 | SP0330D-C.pdf`
+- **ĐỔI** n113 b8 dòng 36 engine `QSZ13-G2` | tổ máy `SP0400D-C` | standby 500 kVA / 400 kW | khác: ∅ | hãng: Cummins | dims=3410×1230×1920
+  - đổi: makes: [] → [{"name":"Cummins","via":"tên trang"}]
+  - nguồn: `| SP0400D-C | 400/500 | QSZ13-G2 | 3410×1230×1920 | SP0400D-C.pdf`
+- **ĐỔI** n113 b8 dòng 37 engine `QSZ13-G3` | tổ máy `SP0440D-C` | standby 550 kVA / 440 kW | khác: ∅ | hãng: Cummins | dims=3410×1230×1920
+  - đổi: makes: [] → [{"name":"Cummins","via":"tên trang"}]
+  - nguồn: `| SP0440D-C | 440/550 | QSZ13-G3 | 3410×1230×1920 | SP0440D-C.pdf`
+- **ĐỔI** n126 b17 dòng 0 engine `F2L912` | tổ máy `SP0013D-D` | standby 16 kVA / 13 kW | khác: ∅ | hãng: Deutz | dims=1200×700×1350
+  - đổi: header: ["| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发动机型号 | 机 组 尺 寸 (mm) ( 长×宽×高) | 机 组 数 据"] → ["| 机组型号 | 备用功率 ( kW/kVA) | 发动机型号 | 机组尺寸 (mm) ( 长×宽×高) | 机组数据"]; specs: [] → [{"key":"dims","label":"机组尺寸 (mm) ( 长×宽×高)","value":"1200×700×1350"}]
+  - nguồn: `| SP0013D-D | 13/16 | F2L912 | 1200×700×1350 | SP0013D-D.pdf`
+
+## tecnogen (mới 22, mất 22, đổi 0)
+
+- **MỚI** n2004 b3 dòng 0 engine `DC09 072A 02 11` | tổ máy `SA275TSX` | prime 250 kVA / - kW; standby 275 kVA / - kW | khác: ∅ | hãng: Scania | weight=3690
+  - nguồn: `| SA275TSX | 275 | 250 | 308 | 280 | DC09 072A 02 11 | E | 5 | 9300 | 220 | 241 | 34,0 | 39,7 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 3690`
+- **MỚI** n2004 b3 dòng 1 engine `DC09 072A 02 12` | tổ máy `SA300TSX` | prime 275 kVA / - kW; standby 300 kVA / - kW | khác: ∅ | hãng: Scania | weight=3760
+  - nguồn: `| SA300TSX | 300 | 275 | 335 | 305 | DC09 072A 02 12 | E | 5 | 9300 | 242 | 263 | 37,0 | 43,0 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 3760`
+- **MỚI** n2004 b3 dòng 2 engine `DC09 072A 02 13` | tổ máy `SA330TSX` | prime 300 kVA / - kW; standby 330 kVA / - kW | khác: ∅ | hãng: Scania | weight=3760
+  - nguồn: `| SA330TSX | 330 | 300 | 360 | 325 | DC09 072A 02 13 | E | 5 | 9300 | 261 | 282 | 40,4 | 45,9 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 3760`
+- **MỚI** n2004 b3 dòng 3 engine `DC09 072A 02 14` | tổ máy `SA365TSX` | prime 325 kVA / - kW; standby 358 kVA / - kW | khác: ∅ | hãng: Scania | weight=4200
+  - nguồn: `| SA365TSX | 358 | 325 | 402 | 365 | DC09 072A 02 14 | E | 5 | 9300 | 283 | 315 | 46,8 | 54,8 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 4200`
+- **MỚI** n2004 b3 dòng 4 engine `DC13 072A 02 11` | tổ máy `SA400TSX` | prime 365 kVA / - kW; standby 400 kVA / - kW | khác: ∅ | hãng: Scania | weight=5040
+  - nguồn: `| SA400TSX | 400 | 365 | 462 | 420 | DC13 072A 02 11 | E | 6 | 12700 | 320 | 362 | 47,6 | 55,9 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 5040`
+- **MỚI** n2004 b3 dòng 5 engine `DC13 072A 02 12` | tổ máy `SA450TSX` | prime 410 kVA / - kW; standby 450 kVA / - kW | khác: ∅ | hãng: Scania | weight=5260
+  - nguồn: `| SA450TSX | 450 | 410 | 505 | 460 | DC13 072A 02 12 | E | 6 | 12700 | 355 | 393 | 53,6 | 61,3 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 5260`
+- **MỚI** n2004 b3 dòng 6 engine `DC13 072A 02 13` | tổ máy `SA500TSX` | prime 455 kVA / - kW; standby 500 kVA / - kW | khác: ∅ | hãng: Scania | weight=5260
+  - nguồn: `| SA500TSX | 500 | 455 | 550 | 500 | DC13 072A 02 13 | E | 6 | 12700 | 393 | 428 | 59,2 | 66,6 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 5260`
+- **MỚI** n2004 b3 dòng 7 engine `DC13 072A 02 14` | tổ máy `SA550TSX` | prime 500 kVA / - kW; standby 550 kVA / - kW | khác: ∅ | hãng: Scania | weight=5310
+  - nguồn: `| SA550TSX | 550 | 500 | 550 | 500 | DC13 072A 02 14 | E | 6 | 12700 | 428 | 428 | 64,7 | 66,6 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 5310`
+- **MỚI** n2004 b3 dòng 8 engine `DC16 093A 02 52` | tổ máy `SA600TSX` | prime 550 kVA / - kW; standby 600 kVA / - kW | khác: ∅ | hãng: Scania | weight=5900
+  - nguồn: `| SA600TSX | 600 | 550 | 610 | 550 | DC16 093A 02 52 | E | 8V | 16400 | 473 | 468 | 73,9 | 78,0 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230 | 5900`
+- **MỚI** n2004 b3 dòng 9 engine `DC16 093A 02 54` | tổ máy `SA660TSX` | prime 600 kVA / - kW; standby 660 kVA / - kW | khác: ∅ | hãng: Scania | weight=5900
+  - nguồn: `| SA660TSX | 660 | 600 | 725 | 655 | DC16 093A 02 54 | E | 8V | 16400 | 545 | 555 | 85,9 | 98,5 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230 | 5900`
+- **MỚI** n2004 b3 dòng 10 engine `DC16 093A 02 54` | tổ máy `SA710TSX` | prime 640 kVA / - kW; standby 706 kVA / - kW | khác: ∅ | hãng: Scania | weight=5900
+  - nguồn: `| SA710TSX | 706 | 640 | 725 | 655 | DC16 093A 02 54 | E | 8V | 16400 | 545 | 555 | 91,8 | 98,5 | T | Q7310AUS | ACP 7320 | 69 | 1000 | 485 | 200 | 230 | 5900`
+- **MỚI** n2004 b3 dòng 11 engine `DC16 078A 02 42` | tổ máy `SA725TSX` | prime 650 kVA / - kW; standby 715 kVA / - kW | khác: ∅ | hãng: Scania | weight=5900
+  - nguồn: `| SA725TSX | 715 | 650 | 720 | 650 | DC16 078A 02 42 | E | 8V | 16400 | 553 | 553 | 92,7 | 96,6 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230 | 5900`
+- **MỚI** n2004 b3 dòng 12 engine `DC16 078A 02 43` | tổ máy `SA770TSX` | prime 700 kVA / - kW; standby 770 kVA / - kW | khác: ∅ | hãng: Scania | weight=5900
+  - nguồn: `| SA770TSX | 770 | 700 | 770 | 700 | DC16 078A 02 43 | E | 8V | 16400 | 596 | 597 | 93,8 | 98,0 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230 | 5900`
+- **MỚI** n2004 b3 dòng 13 engine `DC16 078A 02 44` | tổ máy `SA800TSX` | prime 730 kVA / - kW; standby 800 kVA / - kW | khác: ∅ | hãng: Scania | weight=5900
+  - nguồn: `| SA800TSX | 800 | 730 | 800 | 730 | DC16 078A 02 44 | E | 8V | 16400 | 619 | 617 | 98,0 | 101,3 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230 | 5900`
+- **MỚI** n2004 b3 dòng 15 engine `DC09 071A 02 01` | tổ máy `SA273TSX**` | prime 250 kVA / - kW; standby 275 kVA / - kW | khác: ∅ | hãng: Scania | weight=3690
+  - nguồn: `| SA273TSX** | 275 | 250 | 308 | 280 | DC09 071A 02 01 | E | 5 | 9300 | 220 | 241 | 38.8 | 43.3 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 3690`
+- **MỚI** n2004 b3 dòng 16 engine `DC09 071A 02 02` | tổ máy `SA303TSX**` | prime 275 kVA / - kW; standby 300 kVA / - kW | khác: ∅ | hãng: Scania | weight=3760
+  - nguồn: `| SA303TSX** | 300 | 275 | 335 | 305 | DC09 071A 02 02 | E | 5 | 9300 | 242 | 263 | 42.3 | 46.8 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 3760`
+- **MỚI** n2004 b3 dòng 17 engine `DC09 071A 02 03` | tổ máy `SA333TSX**` | prime 300 kVA / - kW; standby 330 kVA / - kW | khác: ∅ | hãng: Scania | weight=3760
+  - nguồn: `| SA333TSX** | 330 | 300 | 360 | 325 | DC09 071A 02 03 | E | 5 | 9300 | 261 | 282 | 46.0 | 50.1 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 3760`
+- **MỚI** n2004 b3 dòng 18 engine `DC09 071A 02 04` | tổ máy `SA363TSX**` | prime 325 kVA / - kW; standby 360 kVA / - kW | khác: ∅ | hãng: Scania | weight=4200
+  - nguồn: `| SA363TSX** | 360 | 325 | 392 | 357 | DC09 071A 02 04 | E | 5 | 9300 | 283 | 303 | 49.5 | 54.6 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 4200`
+- **MỚI** n2004 b3 dòng 19 engine `DC13 071A 02 01` | tổ máy `SA403TSX**` | prime 365 kVA / - kW; standby 400 kVA / - kW | khác: ∅ | hãng: Scania | weight=5040
+  - nguồn: `| SA403TSX** | 400 | 365 | 457 | 415 | DC13 071A 02 01 | E | 6 | 12700 | 315 | 354 | 53.0 | 62.4 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 5040`
+- **MỚI** n2004 b3 dòng 20 engine `DC13 071A 02 02` | tổ máy `SA453TSX**` | prime 410 kVA / - kW; standby 450 kVA / - kW | khác: ∅ | hãng: Scania | weight=5260
+  - nguồn: `| SA453TSX** | 450 | 410 | 457 | 415 | DC13 071A 02 02 | E | 6 | 12700 | 354 | 354 | 59.4 | 62.4 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 5260`
+- **MỚI** n2004 b3 dòng 21 engine `DC16 071A 02 01` | tổ máy `SA553TSX**` | prime 500 kVA / - kW; standby 550 kVA / - kW | khác: ∅ | hãng: Scania | weight=5310
+  - nguồn: `| SA553TSX** | 550 | 500 | 598 | 543 | DC16 071A 02 01 | E | 8V | 16400 | 425 | 460 | 74.3 | 82.0 | T | AUS7310 | ACP 7320 | 68 | 1000 | 485 | 200 | 230 | 5310`
+- **MỚI** n2004 b3 dòng 22 engine `DC16 071A 02 02` | tổ máy `SA603TSX**` | prime 550 kVA / - kW; standby 605 kVA / - kW | khác: ∅ | hãng: Scania | weight=5900
+  - nguồn: `| SA603TSX** | 605 | 550 | 598 | 543 | DC16 071A 02 02 | E | 8V | 16400 | 467 | 460 | 81.3 | 82.0 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230 | 5900`
+- **MẤT** n2004 b3 dòng 0 engine `AUS7310` | tổ máy `SA275TSX` | prime 250 kVA / - kW; standby 275 kVA / - kW | khác: ∅ | hãng: Scania | cyl=5 | ⚠ MẤT HẲN
+  - nguồn: `| SA275TSX | 275 | 250 | 308 | 280 | DC09 072A 02 11 | E | 5 | 9300 | 220 | 241 | 34,0 | 39,7 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 3690`
+- **MẤT** n2004 b3 dòng 1 engine `AUS7310` | tổ máy `SA300TSX` | prime 275 kVA / - kW; standby 300 kVA / - kW | khác: ∅ | hãng: Scania | cyl=5 | ⚠ MẤT HẲN
+  - nguồn: `| SA300TSX | 300 | 275 | 335 | 305 | DC09 072A 02 12 | E | 5 | 9300 | 242 | 263 | 37,0 | 43,0 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 3760`
+- **MẤT** n2004 b3 dòng 2 engine `AUS7310` | tổ máy `SA330TSX` | prime 300 kVA / - kW; standby 330 kVA / - kW | khác: ∅ | hãng: Scania | cyl=5 | ⚠ MẤT HẲN
+  - nguồn: `| SA330TSX | 330 | 300 | 360 | 325 | DC09 072A 02 13 | E | 5 | 9300 | 261 | 282 | 40,4 | 45,9 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 3760`
+- **MẤT** n2004 b3 dòng 3 engine `AUS7310` | tổ máy `SA365TSX` | prime 325 kVA / - kW; standby 358 kVA / - kW | khác: ∅ | hãng: Scania | cyl=5 | ⚠ MẤT HẲN
+  - nguồn: `| SA365TSX | 358 | 325 | 402 | 365 | DC09 072A 02 14 | E | 5 | 9300 | 283 | 315 | 46,8 | 54,8 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 4200`
+- **MẤT** n2004 b3 dòng 4 engine `AUS7310` | tổ máy `SA400TSX` | prime 365 kVA / - kW; standby 400 kVA / - kW | khác: ∅ | hãng: Scania | cyl=6 | ⚠ MẤT HẲN
+  - nguồn: `| SA400TSX | 400 | 365 | 462 | 420 | DC13 072A 02 11 | E | 6 | 12700 | 320 | 362 | 47,6 | 55,9 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 5040`
+- **MẤT** n2004 b3 dòng 5 engine `AUS7310` | tổ máy `SA450TSX` | prime 410 kVA / - kW; standby 450 kVA / - kW | khác: ∅ | hãng: Scania | cyl=6 | ⚠ MẤT HẲN
+  - nguồn: `| SA450TSX | 450 | 410 | 505 | 460 | DC13 072A 02 12 | E | 6 | 12700 | 355 | 393 | 53,6 | 61,3 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 5260`
+- **MẤT** n2004 b3 dòng 6 engine `AUS7310` | tổ máy `SA500TSX` | prime 455 kVA / - kW; standby 500 kVA / - kW | khác: ∅ | hãng: Scania | cyl=6 | ⚠ MẤT HẲN
+  - nguồn: `| SA500TSX | 500 | 455 | 550 | 500 | DC13 072A 02 13 | E | 6 | 12700 | 393 | 428 | 59,2 | 66,6 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 5260`
+- **MẤT** n2004 b3 dòng 7 engine `AUS7310` | tổ máy `SA550TSX` | prime 500 kVA / - kW; standby 550 kVA / - kW | khác: ∅ | hãng: Scania | cyl=6 | ⚠ MẤT HẲN
+  - nguồn: `| SA550TSX | 550 | 500 | 550 | 500 | DC13 072A 02 14 | E | 6 | 12700 | 428 | 428 | 64,7 | 66,6 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 5310`
+- **MẤT** n2004 b3 dòng 8 engine `AUS7310` | tổ máy `SA600TSX` | prime 550 kVA / - kW; standby 600 kVA / - kW | khác: ∅ | hãng: Scania | cyl=8V | ⚠ MẤT HẲN
+  - nguồn: `| SA600TSX | 600 | 550 | 610 | 550 | DC16 093A 02 52 | E | 8V | 16400 | 473 | 468 | 73,9 | 78,0 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230 | 5900`
+- **MẤT** n2004 b3 dòng 9 engine `AUS7310` | tổ máy `SA660TSX` | prime 600 kVA / - kW; standby 660 kVA / - kW | khác: ∅ | hãng: Scania | cyl=8V | ⚠ MẤT HẲN
+  - nguồn: `| SA660TSX | 660 | 600 | 725 | 655 | DC16 093A 02 54 | E | 8V | 16400 | 545 | 555 | 85,9 | 98,5 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230 | 5900`
+- **MẤT** n2004 b3 dòng 10 engine `Q7310AUS` | tổ máy `SA710TSX` | prime 640 kVA / - kW; standby 706 kVA / - kW | khác: ∅ | hãng: Scania | cyl=8V | ⚠ MẤT HẲN
+  - nguồn: `| SA710TSX | 706 | 640 | 725 | 655 | DC16 093A 02 54 | E | 8V | 16400 | 545 | 555 | 91,8 | 98,5 | T | Q7310AUS | ACP 7320 | 69 | 1000 | 485 | 200 | 230 | 5900`
+- **MẤT** n2004 b3 dòng 11 engine `AUS7310` | tổ máy `SA725TSX` | prime 650 kVA / - kW; standby 715 kVA / - kW | khác: ∅ | hãng: Scania | cyl=8V | ⚠ MẤT HẲN
+  - nguồn: `| SA725TSX | 715 | 650 | 720 | 650 | DC16 078A 02 42 | E | 8V | 16400 | 553 | 553 | 92,7 | 96,6 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230 | 5900`
+- **MẤT** n2004 b3 dòng 12 engine `AUS7310` | tổ máy `SA770TSX` | prime 700 kVA / - kW; standby 770 kVA / - kW | khác: ∅ | hãng: Scania | cyl=8V | ⚠ MẤT HẲN
+  - nguồn: `| SA770TSX | 770 | 700 | 770 | 700 | DC16 078A 02 43 | E | 8V | 16400 | 596 | 597 | 93,8 | 98,0 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230 | 5900`
+- **MẤT** n2004 b3 dòng 13 engine `AUS7310` | tổ máy `SA800TSX` | prime 730 kVA / - kW; standby 800 kVA / - kW | khác: ∅ | hãng: Scania | cyl=8V | ⚠ MẤT HẲN
+  - nguồn: `| SA800TSX | 800 | 730 | 800 | 730 | DC16 078A 02 44 | E | 8V | 16400 | 619 | 617 | 98,0 | 101,3 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230 | 5900`
+- **MẤT** n2004 b3 dòng 15 engine `AUS7310` | tổ máy `SA273TSX**` | prime 250 kVA / - kW; standby 275 kVA / - kW | khác: ∅ | hãng: Scania | cyl=5 | ⚠ MẤT HẲN
+  - nguồn: `| SA273TSX** | 275 | 250 | 308 | 280 | DC09 071A 02 01 | E | 5 | 9300 | 220 | 241 | 38.8 | 43.3 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 3690`
+- **MẤT** n2004 b3 dòng 16 engine `AUS7310` | tổ máy `SA303TSX**` | prime 275 kVA / - kW; standby 300 kVA / - kW | khác: ∅ | hãng: Scania | cyl=5 | ⚠ MẤT HẲN
+  - nguồn: `| SA303TSX** | 300 | 275 | 335 | 305 | DC09 071A 02 02 | E | 5 | 9300 | 242 | 263 | 42.3 | 46.8 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 3760`
+- **MẤT** n2004 b3 dòng 17 engine `AUS7310` | tổ máy `SA333TSX**` | prime 300 kVA / - kW; standby 330 kVA / - kW | khác: ∅ | hãng: Scania | cyl=5 | ⚠ MẤT HẲN
+  - nguồn: `| SA333TSX** | 330 | 300 | 360 | 325 | DC09 071A 02 03 | E | 5 | 9300 | 261 | 282 | 46.0 | 50.1 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 3760`
+- **MẤT** n2004 b3 dòng 18 engine `AUS7310` | tổ máy `SA363TSX**` | prime 325 kVA / - kW; standby 360 kVA / - kW | khác: ∅ | hãng: Scania | cyl=5 | ⚠ MẤT HẲN
+  - nguồn: `| SA363TSX** | 360 | 325 | 392 | 357 | DC09 071A 02 04 | E | 5 | 9300 | 283 | 303 | 49.5 | 54.6 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 4200`
+- **MẤT** n2004 b3 dòng 19 engine `AUS7310` | tổ máy `SA403TSX**` | prime 365 kVA / - kW; standby 400 kVA / - kW | khác: ∅ | hãng: Scania | cyl=6 | ⚠ MẤT HẲN
+  - nguồn: `| SA403TSX** | 400 | 365 | 457 | 415 | DC13 071A 02 01 | E | 6 | 12700 | 315 | 354 | 53.0 | 62.4 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 5040`
+- **MẤT** n2004 b3 dòng 20 engine `AUS7310` | tổ máy `SA453TSX**` | prime 410 kVA / - kW; standby 450 kVA / - kW | khác: ∅ | hãng: Scania | cyl=6 | ⚠ MẤT HẲN
+  - nguồn: `| SA453TSX** | 450 | 410 | 457 | 415 | DC13 071A 02 02 | E | 6 | 12700 | 354 | 354 | 59.4 | 62.4 | T | AUS7310 | ACP 7320 | 68 | 1000 | 425 | 200 | 223 | 5260`
+- **MẤT** n2004 b3 dòng 21 engine `AUS7310` | tổ máy `SA553TSX**` | prime 500 kVA / - kW; standby 550 kVA / - kW | khác: ∅ | hãng: Scania | cyl=8V | ⚠ MẤT HẲN
+  - nguồn: `| SA553TSX** | 550 | 500 | 598 | 543 | DC16 071A 02 01 | E | 8V | 16400 | 425 | 460 | 74.3 | 82.0 | T | AUS7310 | ACP 7320 | 68 | 1000 | 485 | 200 | 230 | 5310`
+- **MẤT** n2004 b3 dòng 22 engine `AUS7310` | tổ máy `SA603TSX**` | prime 550 kVA / - kW; standby 605 kVA / - kW | khác: ∅ | hãng: Scania | cyl=8V | ⚠ MẤT HẲN
+  - nguồn: `| SA603TSX** | 605 | 550 | 598 | 543 | DC16 071A 02 02 | E | 8V | 16400 | 467 | 460 | 81.3 | 82.0 | T | AUS7310 | ACP 7320 | 69 | 1000 | 485 | 200 | 230 | 5900`
+
+## visa-gensets (mới 5, mất 0, đổi 0)
+
+- **MỚI** n103 b3 dòng 0 engine `DC09 320A 02-63` | tổ máy `∅` | prime 300 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ không model tổ máy
+  - nguồn: `| 300,0 | Scania | DC09 320A 02-63 | T.B.D. | &dArr;`
+- **MỚI** n103 b3 dòng 1 engine `DC13 320A 02-62` | tổ máy `∅` | prime 400 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ không model tổ máy
+  - nguồn: `| 400,0 | Scania | DC13 320A 02-62 | T.B.D. | &dArr;`
+- **MỚI** n103 b3 dòng 2 engine `DC13 320A 02-63` | tổ máy `∅` | prime 450 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ không model tổ máy
+  - nguồn: `| 450,0 | Scania | DC13 320A 02-63 | T.B.D. | &dArr;`
+- **MỚI** n103 b3 dòng 3 engine `DC16 320A 02-62` | tổ máy `∅` | prime 500 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ không model tổ máy
+  - nguồn: `| 500,0 | Scania | DC16 320A 02-62 | T.B.D. | &dArr;`
+- **MỚI** n103 b3 dòng 4 engine `DC16 320A 02-63` | tổ máy `∅` | prime 550 kVA / - kW | khác: ∅ | hãng: Scania |  | ⚠ không model tổ máy
+  - nguồn: `| 550,0 | Scania | DC16 320A 02-63 | T.B.D. | &dArr;`
+
+## voltgent (mới 31, mất 0, đổi 0)
+
+- **MỚI** n102 b1 dòng 145 engine `DC09 320A 02-62` | tổ máy `VS300-5-S5` | prime 275 kVA / 220 kW; standby 300 kVA / 240 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS300-5-S5 | 300 | 240 | 275 | 220 | SCANIA | DC09 320A 02-62 | [EN] [RU] [ES] [PT]`
+- **MỚI** n102 b1 dòng 146 engine `DC09 320A 02-63` | tổ máy `VS330-5-S5` | prime 300 kVA / 240 kW; standby 330 kVA / 264 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS330-5-S5 | 330 | 264 | 300 | 240 | SCANIA | DC09 320A 02-63 | [EN] [RU] [ES] [PT]`
+- **MỚI** n102 b1 dòng 147 engine `DC09 320A 02-64` | tổ máy `VS358-5-S5` | prime 325 kVA / 260 kW; standby 358 kVA / 286 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS358-5-S5 | 358 | 286 | 325 | 260 | SCANIA | DC09 320A 02-64 | [EN] [RU] [ES] [PT]`
+- **MỚI** n102 b1 dòng 148 engine `DC13 320A 02-62` | tổ máy `VS440-5-S5` | prime 400 kVA / 320 kW; standby 440 kVA / 352 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS440-5-S5 | 440 | 352 | 400 | 320 | SCANIA | DC13 320A 02-62 | [EN] [RU] [ES] [PT]`
+- **MỚI** n102 b1 dòng 149 engine `DC13 320A 02-63` | tổ máy `VS500-5-S5` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS500-5-S5 | 500 | 400 | 450 | 360 | SCANIA | DC13 320A 02-63 | [EN] [RU] [ES] [PT]`
+- **MỚI** n102 b1 dòng 151 engine `DC16 320A 02-63` | tổ máy `VS600-5-S5` | prime 550 kVA / 440 kW; standby 600 kVA / 480 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS600-5-S5 | 600 | 480 | 550 | 440 | SCANIA | DC16 320A 02-63 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 0 engine `DC09 072A 02-11` | tổ máy `VS275-5` | prime 250 kVA / 200 kW; standby 275 kVA / 220 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS275-5 | 275 | 220 | 250 | 200 | Scania | DC09 072A 02-11 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 1 engine `DC09 072A 02-12` | tổ máy `VS313-5` | prime 275 kVA / 220 kW; standby 313 kVA / 250 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS313-5 | 313 | 250 | 275 | 220 | Scania | DC09 072A 02-12 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 2 engine `DC09 072A 02-13` | tổ máy `VS330-5` | prime 300 kVA / 240 kW; standby 330 kVA / 264 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS330-5 | 330 | 264 | 300 | 240 | Scania | DC09 072A 02-13 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 3 engine `DC09 072A 02-14` | tổ máy `VS360-5` | prime 330 kVA / 264 kW; standby 360 kVA / 288 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS360-5 | 360 | 288 | 330 | 264 | Scania | DC09 072A 02-14 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 4 engine `DC13 072A 02-11` | tổ máy `VS400-5` | prime 375 kVA / 300 kW; standby 400 kVA / 320 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS400-5 | 400 | 320 | 375 | 300 | Scania | DC13 072A 02-11 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 5 engine `DC13 072A 02-12` | tổ máy `VS450-5` | prime 400 kVA / 320 kW; standby 450 kVA / 360 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS450-5 | 450 | 360 | 400 | 320 | Scania | DC13 072A 02-12 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 6 engine `DC13 072A 02-13` | tổ máy `VS500-5` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS500-5 | 500 | 400 | 450 | 360 | Scania | DC13 072A 02-13 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 7 engine `DC13 072A 02-14` | tổ máy `VS550-5` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS550-5 | 550 | 440 | 500 | 400 | Scania | DC13 072A 02-14 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 8 engine `DC16 093A 02-53` | tổ máy `VS660-5` | prime 600 kVA / 480 kW; standby 660 kVA / 528 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS660-5 | 660 | 528 | 600 | 480 | Scania | DC16 093A 02-53 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 9 engine `DC16 093A 02-54` | tổ máy `VS700-5` | prime 640 kVA / 512 kW; standby 700 kVA / 560 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS700-5 | 700 | 560 | 640 | 512 | Scania | DC16 093A 02-54 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 10 engine `DC 16 078A 02-42` | tổ máy `VS715-5` | prime 650 kVA / 520 kW; standby 715 kVA / 572 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS715-5 | 715 | 572 | 650 | 520 | Scania | DC 16 078A 02-42 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 11 engine `DC 16 078A 02-43` | tổ máy `VS770-5` | prime 700 kVA / 560 kW; standby 770 kVA / 616 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS770-5 | 770 | 616 | 700 | 560 | Scania | DC 16 078A 02-43 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 12 engine `DC 16 078A 02-44` | tổ máy `VS800-5` | prime 725 kVA / 580 kW; standby 800 kVA / 640 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS800-5 | 800 | 640 | 725 | 580 | Scania | DC 16 078A 02-44 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 21 engine `DC09 072A 02-11` | tổ máy `VS313-6` | prime 275 kVA / 220 kW; standby 313 kVA / 250 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS313-6 | 313 | 250 | 275 | 220 | Scania | DC09 072A 02-11 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 22 engine `DC09 072A 02-12` | tổ máy `VS344-6` | prime 313 kVA / 250 kW; standby 344 kVA / 275 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS344-6 | 344 | 275 | 313 | 250 | Scania | DC09 072A 02-12 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 23 engine `DC09 072A 02-13` | tổ máy `VS360-6` | prime 330 kVA / 264 kW; standby 360 kVA / 288 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS360-6 | 360 | 288 | 330 | 264 | Scania | DC09 072A 02-13 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 24 engine `DC09 072A 02-14` | tổ máy `VS413-6` | prime 375 kVA / 300 kW; standby 413 kVA / 330 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS413-6 | 413 | 330 | 375 | 300 | Scania | DC09 072A 02-14 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 25 engine `DC13 072A 02-11` | tổ máy `VS460-6` | prime 420 kVA / 328 kW; standby 460 kVA / 360 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS460-6 | 460 | 360 | 420 | 328 | Scania | DC13 072A 02-11 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 26 engine `DC13 072A 02-12` | tổ máy `VS500-6` | prime 450 kVA / 360 kW; standby 500 kVA / 400 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS500-6 | 500 | 400 | 450 | 360 | Scania | DC13 072A 02-12 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 27 engine `DC13 093A 02-72` | tổ máy `VS550-6` | prime 500 kVA / 400 kW; standby 550 kVA / 440 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS550-6 | 550 | 440 | 500 | 400 | Scania | DC13 093A 02-72 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 28 engine `DC13 093A 02-73` | tổ máy `VS600-6` | prime 550 kVA / 440 kW; standby 600 kVA / 480 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS600-6 | 600 | 480 | 550 | 440 | Scania | DC13 093A 02-73 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 29 engine `DC13 093A 02-75` | tổ máy `VS660-6` | prime 600 kVA / 480 kW; standby 660 kVA / 528 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS660-6 | 660 | 528 | 600 | 480 | Scania | DC13 093A 02-75 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 30 engine `DC16 093A 02-54` | tổ máy `VS715-6` | prime 650 kVA / 520 kW; standby 715 kVA / 572 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS715-6 | 715 | 572 | 650 | 520 | Scania | DC16 093A 02-54 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 31 engine `DC16 078A 02-43` | tổ máy `VS770-6` | prime 700 kVA / 560 kW; standby 770 kVA / 616 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS770-6 | 770 | 616 | 700 | 560 | Scania | DC16 078A 02-43 | [EN] [RU] [ES] [PT]`
+- **MỚI** n107 b6 dòng 32 engine `DC16 078A 02-44` | tổ máy `VS800-6` | prime 725 kVA / 580 kW; standby 800 kVA / 640 kW | khác: ∅ | hãng: Scania | 
+  - nguồn: `| VS800-6 | 800 | 640 | 725 | 580 | Scania | DC16 078A 02-44 | [EN] [RU] [ES] [PT]`
