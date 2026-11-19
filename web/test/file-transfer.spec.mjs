@@ -45,6 +45,11 @@ async function stubNet(page, files = {}, { scratchFail = [] } = {}) {
   }, { files, scratchFail });
 }
 const net = (page) => page.evaluate(() => window.__net);
+// window.open giả: tab mới của Chromium không đầu có thể hiện PDF hoặc tải về tuỳ bản, nên ghi lại đối số, địa chỉ được đặt, đóng.
+const stubOpen = (page) => page.evaluate(() => {
+  window.__popup = { args: null, href: "", closed: false };
+  window.open = (...args) => { window.__popup.args = args; return { location: { set href(v) { window.__popup.href = v; } }, close() { window.__popup.closed = true; } }; };
+});
 
 // ---------- Báo giá NCC ----------
 
@@ -81,18 +86,26 @@ test.describe("tệp báo giá NCC", () => {
 
   test("tệp PDF mở ở tab mới bằng link blob application/pdf (không tải về)", async ({ page }) => {
     await openQuote(page, { "/_gh/f-pdf": { type: "application/pdf", bytes: [...tinyPdf(["Bao gia (FAKE)"])] } });
-    const [pop] = await Promise.all([page.waitForEvent("popup"), page.locator('[data-qopen="r1:0"]').click()]);
-    await expect.poll(() => pop.url()).toMatch(/^blob:http:\/\/127\.0\.0\.1:\d+\//);
+    await stubOpen(page);
+    await page.locator('[data-qopen="r1:0"]').click();
+    // window.open("", "_blank") mở trước khi chờ (không thì trình duyệt chặn); sau khi có tệp, tab được đưa tới link blob.
+    await expect.poll(() => page.evaluate(() => window.__popup.href)).toMatch(/^blob:http:\/\/127\.0\.0\.1:\d+\//);
+    expect(await page.evaluate(() => window.__popup.args)).toEqual(["", "_blank"]);
+    // Link blob là PDF thật: đọc lại từ chính trang (Chromium không đầu có thể tải thay vì hiện PDF, nên không dựa vào tab).
+    const blob = await page.evaluate(async () => { const b = await (await fetch(window.__popup.href)).blob(); return { type: b.type, head: new TextDecoder().decode((await b.arrayBuffer()).slice(0, 5)) }; });
+    expect(blob).toEqual({ type: "application/pdf", head: "%PDF-" });
     expect((await net(page)).fetched).toEqual(["/_gh/f-pdf"]);
-    await pop.close();
+    expect(await page.evaluate(() => window.__popup.closed)).toBe(false);
   });
 
   test("không lấy được tệp: báo 'Không mở được tệp' kèm lý do; PDF thì tab mới bị đóng, danh sách tệp giữ nguyên", async ({ page }) => {
     await openQuote(page, {}); // mọi địa chỉ → HTTP 404
     await page.locator('[data-qopen="r1:1"]').click();
     await expect(toast(page)).toContainText("Không mở được tệp: HTTP 404");
-    const [pop] = await Promise.all([page.waitForEvent("popup"), page.locator('[data-qopen="r1:0"]').click()]);
-    await expect.poll(() => pop.isClosed()).toBe(true);
+    await stubOpen(page);
+    await page.locator('[data-qopen="r1:0"]').click();
+    await expect.poll(() => page.evaluate(() => window.__popup.closed)).toBe(true);
+    expect(await page.evaluate(() => window.__popup.href)).toBe("");
     await expect(toast(page)).toContainText("Không mở được tệp: HTTP 404");
     await expect(page.locator("#dbody .docrow")).toHaveCount(2);
     expect(await writesOf(page, "quote/")).toHaveLength(0);
@@ -147,6 +160,7 @@ test.describe("tệp báo giá NCC", () => {
     await page.locator('[data-qdel="r1:1"]').click();
     await expect(page.locator("#qDelOk")).toBeVisible();
     await page.locator("[data-close]").last().click();
+    await expect(page.locator("#ov")).toBeHidden();
     expect((await net(page)).quote).toEqual([]);
     expect(await writesOf(page, "quote/")).toHaveLength(0);
 
@@ -208,10 +222,11 @@ test.describe("tệp HSMT: tải về, xem PDF", () => {
   });
 
   test("Xem PDF: khung xem vẽ đủ trang bằng pdf.js; Tải về lưu đúng tệp; lỗi lấy tệp hiện thông báo trong khung", async ({ page, libs }) => {
+    test.setTimeout(60000);
     const pdf = tinyPdf(["E-HSMT (FAKE)", "Prime power 160 kVA"]);
     await openInfo(page, { "/_gh/h-pdf": { type: "application/pdf", bytes: [...pdf] } });
     await page.locator("[data-openpdf]").click();
-    await expect(page.locator("#pvBody")).toContainText("1 trang");
+    await expect(page.locator("#pvBody")).toContainText("1 trang", { timeout: 25000 }); // pdf.js + worker tải theo nhu cầu: chậm khi máy bận
     await expect(page.locator("#pvBody canvas")).toHaveCount(1);
     expect(libs).toContain("pdf.min.js");
     const [dl] = await Promise.all([page.waitForEvent("download"), page.locator("#pvSave").click()]);
@@ -274,6 +289,8 @@ test.describe("tải tệp lên dự án", () => {
 
   test("kho tệp không dùng được (chế độ xem hạn chế): báo, không ghi hsmt", async ({ page }) => {
     await openApp(page, "#goi/" + PROJ);
+    await expect(page.locator("#pFiles")).toHaveCount(1); // chưa có db thì addProjectFiles báo "Đăng nhập": chờ khung vẽ xong
+    await expect(page.locator("#dtitle")).toBeVisible();
     await page.evaluate(() => { const use = window.claude.use.bind(window.claude); window.claude.use = async (n) => (n === "assets" ? null : use(n)); });
     await page.locator("#pFiles").setInputFiles({ name: "a.txt", mimeType: "text/plain", buffer: Buffer.from(TEXT) });
     await expect(toast(page)).toContainText("Chế độ xem này không tải tệp lên được.");
@@ -282,6 +299,8 @@ test.describe("tải tệp lên dự án", () => {
 
   test("tải lên lỗi (kho assets ném lỗi): báo lý do, không ghi hsmt, khung tải lên dùng lại được", async ({ page }) => {
     await openApp(page, "#goi/" + PROJ);
+    await expect(page.locator("#pFiles")).toHaveCount(1);
+    await expect(page.locator("#dtitle")).toBeVisible();
     await page.evaluate(() => { const use = window.claude.use.bind(window.claude); window.claude.use = async (n) => (n === "assets" ? { async upload() { throw { message: "hết dung lượng (server thử)" }; } } : use(n)); });
     await page.locator("#pFiles").setInputFiles({ name: "a.txt", mimeType: "text/plain", buffer: Buffer.from(TEXT) });
     await expect(toast(page)).toContainText("Không tải được tệp lên: hết dung lượng (server thử)");
@@ -299,6 +318,7 @@ test.describe("tải tệp lên dự án", () => {
     await expect(page.locator("#dbody .docrow")).toHaveCount(2);
     await page.locator('[data-pdel="0"]').click();
     await page.locator("[data-close]").last().click(); // Huỷ
+    await expect(page.locator("#ov")).toBeHidden(); // hộp thoại đóng hẳn trước khi mở lại (không thì bấm nhầm vào hộp đang đóng)
     await expect(page.locator("#dbody .docrow")).toHaveCount(2);
     await page.locator('[data-pdel="0"]').click();
     await page.locator("#pDelOk").click();
