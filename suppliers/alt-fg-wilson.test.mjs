@@ -54,11 +54,13 @@ test("hai hãng: model Leroy-Somer có dấu cách ('LSA 52.3 L12', n101) đọc
   const a = recs(gdc(101, "R-MYC2500D5/S", "20V4000G23F", "Stamford S7L1D-J4 / Leroy-Somer LSA 52.3 L12"), "alternator");
   assert.deepEqual(a.map((r) => [r.model, names(r)]), [["S7L1D-J4", ["Stamford"]], ["LSA 52.3 L12", ["Leroy-Somer"]]]);
 });
-test("không đoán: danh sách hãng không kèm model, hay hai mã không hãng, hay một hãng hai model thì KHÔNG tách", () => {
-  // "Leroy Somer TAL-A44-M / TAL-A46-C" (một hãng, hai model, saudi-diesel) không cho bản ghi nào
-  assert.equal(recs(gdc(114, "R-X", "6CTAA8.3-G2", "Leroy Somer TAL-A44-M / TAL-A46-C"), "alternator").length, 0);
+test("không đoán: danh sách hãng không kèm model, hay hai mã không hãng thì KHÔNG tách", () => {
+  // "Leroy Somer TAL-A44-M / TAL-A46-C" (một hãng viết một lần trước hai model, saudi-diesel): từ catalog-b (Khoa 19/11/2026)
+  // mỗi model một bản ghi Leroy-Somer, test ở suppliers/catalog-b.test.mjs
+  assert.deepEqual(recs(gdc(114, "R-X", "6CTAA8.3-G2", "Leroy Somer TAL-A44-M / TAL-A46-C"), "alternator").map((r) => [r.model, names(r)]),
+    [["TAL-A44-M", ["Leroy-Somer"]], ["TAL-A46-C", ["Leroy-Somer"]]]);
   assert.equal(recs(gdc(114, "R-X", "6CTAA8.3-G2", "Stamford, Marathon, Leroy Somer"), "alternator").length, 0);
-  // hai mã không hãng: không tách, không gắn hãng (cách đọc cũ của cả ô giữ nguyên, ngoài phạm vi: model còn dấu "/")
+  // hai mã không hãng: không tách, không gắn hãng (ô bảng ngang như cũ; ô bảng nhãn từ catalog-b không cho bản ghi)
   const two = recs(gdc(114, "R-X", "6CTAA8.3-G2", "S5L1D-C41 / S5L1D-F41"), "alternator");
   assert.ok(two.length <= 1 && two.every((r) => names(r).length === 0));
 });
