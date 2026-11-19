@@ -471,6 +471,7 @@ vào TOP đều đã có trong `all` của main, chỉ là lấp chỗ trống (
 ### Chưa kiểm
 
 - Cách đếm 5.217 / 270 / 405 của điều phối: đã rõ (số khoá khác nhau gom qua mọi lượt; 270 là lần đổi điểm).
+- Datasheet hãng: Cummins 6BT5.9 (5,9 hay 5,88), KT38G, Y4100D, YD4EZLD.
 
 ## Khoa chốt 19/11 đêm: "giữ chặt"; merge #945
 
@@ -478,4 +479,12 @@ vào TOP đều đã có trong `all` của main, chỉ là lấp chỗ trống (
   giữ loại; luật hoà phiếu giữ "số trượt trước". Đã ghi vào `suppliers/CLAUDE.md` (93f4586c) để không ai nới lại.
 - Merge main a89b88be (#945, `web/catalog.js`) → d4063a36. Test: suppliers 1166/1166, bot 137/137, web 161/161. Không test C6
   nào đổi. spec-diff ↔ a89b88be: 0 bản ghi đổi. Đầu nhánh đã đẩy: 93f4586c.
-- Datasheet hãng: Cummins 6BT5.9 (5,9 hay 5,88), KT38G, Y4100D, YD4EZLD.
+
+## Vòng 5 (20/11/2026): đo cloud lần 2 (a89b88be ↔ 93f4586c), #939 đã merge (b00762f1)
+
+74 lần rời `all` thêm so với Vòng 4 (14.683 ↔ 14.609), 0 lần mất (`top30-cloud-2\them.mjs`). Đều là dòng mới của #945 thuộc
+động cơ × ngưỡng đã có ở Vòng 4: WP23D25 / 33 / 40 / 48E200 (≥ 2,3 … 2,771), WP10D320E200 (≥ 10,34 / 11 / 11,051),
+WP10D264 / 238E200 (≤ 6,8 / 8), WP41D66E200 (≥ 4,3 / 4,329 / 4,33), WP6D152 / 167E200 (≥ 6,8), WP6D132E200 (≤ 5,9),
+WP13D385E200 (≤ 9,84), KTA19G3A / G4 / G8, KTAA19G6 (≥ 19, ≤ 14,6), KTA38G2 / G2A (≤ 22), S16RPTAA2 / S16R2PTAW (≤ 20 / 66).
+Chỉ một cặp (lượt, động cơ) chưa có dòng rời ở Vòng 4: IB2300163186#1 WP23D25E200 ≥ 2,3, 1 dòng. Nhóm {2.289, 2.29, 2.3}
+→ 2,289 với cùng ngưỡng ≥ 2,3 đã có ở 3 lượt khác của Vòng 4. Không có gì khác loại.
