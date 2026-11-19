@@ -1,0 +1,17 @@
+{
+ "tables": 3191,
+ "suppliers": 206,
+ "rows": 40591,
+ "tổ_máy": {
+  "distinct": 5211,
+  "notInCatalog": 4040
+ },
+ "bộ_phận": {
+  "distinct": 399,
+  "notInCatalog": 204
+ },
+ "tổ_máy_và_bộ_phận": {
+  "distinct": 5525,
+  "notInCatalog": 4216
+ }
+}

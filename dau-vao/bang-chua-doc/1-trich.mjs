@@ -12,7 +12,7 @@ const dir = path.join(WT, "suppliers", "cn");
 const S = fs.readdirSync(dir).filter((f) => f.endsWith(".json")).sort().map((f) => JSON.parse(fs.readFileSync(path.join(dir, f), "utf8")));
 
 const norm = (r) => String(r).normalize("NFKC").toLowerCase().replace(/[^\p{L}\p{N}¦]/gu, "");
-const readAny = new Set(), readBySup = new Map(), readTab = new Set();
+const readAny = new Map(), readBySup = new Map(), readTab = new Set(), readTabs = [], postings = new Map();
 const per = [], unread = [], known = new Set(), knownGen = new Set();
 let skipped = [];
 for (const s of S) {
@@ -31,7 +31,7 @@ for (const s of S) {
     if (!(t.rows || []).length) return;
     if (used.has(ti)) {
       row.used++;
-      readSet(s.id, t);
+      t.__ti = ti; readSet(s.id, t);
       return;
     }
     row.unread++;
@@ -43,11 +43,13 @@ for (const s of S) {
 function readSet(sid, t) {
   for (const r of [...(t.header || []), ...t.rows]) {
     const k = norm(r); if (k.length < 6) continue;
-    readAny.add(k);
+    if (!readAny.has(k)) readAny.set(k, sid + "#n" + t.n);
     if (!readBySup.has(sid)) readBySup.set(sid, new Set());
     readBySup.get(sid).add(k);
   }
   readTab.add(norm([...(t.header || []), ...t.rows].join("¦")));
+  const id = readTabs.length; readTabs.push({ sid, n: t.n, ti: t.__ti, nrows: [...(t.header || []), ...t.rows].length });
+  for (const r of new Set([...(t.header || []), ...t.rows].map(norm))) { if (r.length < 6) continue; if (!postings.has(r)) postings.set(r, []); postings.get(r).push(id); }
 }
 // Bảng đọc xong rồi mới biết hết tập dòng đã đọc (bảng chưa đọc có thể đứng trước bảng đã đọc trong danh sách NCC).
 for (const u of unread) {
@@ -56,6 +58,11 @@ for (const u of unread) {
   u.nrows = rs.length;
   u.covSame = rs.filter((k) => same.has(k)).length;
   u.covAny = rs.filter((k) => readAny.has(k)).length;
+  const uk = [...new Set(rs)];
+  const cnt = new Map(); for (const k of uk) for (const id of postings.get(k) || []) if ((postings.get(k) || []).length <= 300) cnt.set(id, (cnt.get(id) || 0) + 1);
+  const best = (same) => { let b = null; for (const [id, c] of cnt) { const r = readTabs[id]; if ((r.sid === u.sup) !== same) continue; if (!b || c > b.c) b = { c, ref: r.sid + "#n" + r.n + "#b" + r.ti, rt: r.nrows }; } return b; };
+  u.bestSame = best(true); u.bestOther = best(false); u.nuniq = uk.length;
+  u.coverBy = [];
   u.dupTab = readTab.has(norm([...u.header, ...u.rows].join("¦")));
 }
 fs.writeFileSync(path.join(OUT, "dem-theo-ncc.tsv"), ["ncc\tvai-tro\ttrang-thai\ttinh-vao-thong-ke\ttong-bang\tbang-co-dong\tbang-ra-ban-ghi\tbang-khong-ra-ban-ghi"].concat(per.map((r) => [r.id, r.role, r.status, r.counted ? 1 : 0, r.tables, r.withRows, r.used, r.unread].join("\t"))).join("\n") + "\n");

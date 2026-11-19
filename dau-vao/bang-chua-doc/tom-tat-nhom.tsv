@@ -1,0 +1,26 @@
+nhom	so-bang	so-ncc	so-dong	bang-co-model-nhin-thay	dong-model-tong-theo-bang	dong-model-chua-co-theo-bang	model-khac-nhau	model-chua-co-trong-catalog	%bang-co-công_suất	%bang-co-prime_standby	%bang-co-động_cơ	%bang-co-đầu_phát	%bang-co-nhiên_liệu	%bang-co-kích_thước	%bang-co-trọng_lượng	%bang-co-điện_áp_tần_số	%bang-co-độ_ồn	%bang-co-bộ_điều_khiển	dinh-nghia
+A1	164	11	1072	0	0	0	0	0	85	95	10	2	87	1	10	10	1	1	Nằm trọn trong một bảng đã đọc của cùng NCC: ≥90% dòng khác nhau (chuẩn hoá chữ thường, bỏ ký tự không phải chữ/số, ≥6 ký tự) có trong MỘT bảng đã cho bản ghi; bảng chưa đọc có ≥2 dòng
+A2	10	2	73	0	0	0	0	0	100	100	100	0	10	0	0	10	0	0	Nằm trọn trong một bảng đã đọc của NCC khác: như A1 nhưng bảng chứa ở NCC khác; bảng chưa đọc có ≥4 dòng, dòng có ở >300 bảng đã đọc không tính
+B1	7	5	47	0	0	0	0	0	86	29	86	0	14	0	0	14	0	0	Lặp đúng một bảng chưa đọc khác (nội dung chuẩn hoá giống hệt; bản đầu tiên ở lại nhóm của nó)
+C1	4	2	28	0	0	0	0	0	0	0	25	0	0	25	25	50	0	25	Không phải bảng tổ máy: không dòng nào có từ công suất (kVA/kW…), prime/standby, động cơ, đầu phát; không dòng Model; <40% dòng bắt đầu bằng mã model
+F1	41	7	82	41	41	16	40	16	100	93	56	0	5	0	0	15	0	0	Mảnh bảng ≤3 dòng, không nhãn Model; tiêu đề trang có mã nhìn giống model
+F2	183	24	272	0	0	0	0	0	98	32	76	4	3	1	0	7	0	2	Mảnh bảng ≤3 dòng, không nhãn Model; tiêu đề không có mã
+H1	145	21	2275	75	183	114	155	86	48	34	39	24	5	55	57	88	3	3	Đầu phát rời: không dòng nào (và tiêu đề không) có từ tổ máy (genset / generating set / generator set / 机组); ≥2 dòng có từ đầu phát (alternator, Stamford, winding, excitation, reactance, poles, IP23…) và không ít hơn số dòng có từ động cơ
+L1	61	2	202	0	0	0	0	0	100	5	21	5	95	0	2	95	0	0	Niêm yết máy (bán lại / máy cũ): 2 dòng đầu có ≥4 trong Manufacturer / Model / Year / Hours / Condition / Wattage / Version…, kèm Year hoặc Hours hoặc Condition
+M1	231	36	2663	166	297	166	244	118	96	56	81	8	70	19	33	43	13	7	Động cơ rời: không có từ tổ máy như H1, không có chữ kVA nào (công suất động cơ tính kWm / kW); ≥2 dòng có từ động cơ (bore, stroke, displacement, cylinders, governor…) và đầu phát không nhiều hơn
+O1	15	7	110	0	0	0	0	0	100	0	27	7	80	27	33	33	20	0	Chủ đề khác: không có từ tổ máy, động cơ, đầu phát, prime/standby; ≤1 dòng nhắc công suất; chỉ có từ nhiên liệu / tải / ồn / kích thước / trọng lượng; không dòng nào bắt đầu bằng mã model
+O2	34	3	117	0	0	0	0	0	91	100	56	0	18	0	6	0	0	0	Bảng tiêu thụ nhiên liệu / công suất theo mức tải: ≥50% dòng bắt đầu '75%…', '100%Prime…', không mã model
+P1	181	24	1854	142	879	809	840	782	65	76	81	36	13	37	32	57	15	8	Dòng thô pdftotext: <30% dòng có gạch đứng, ô tách bằng dấu cách (cột không rõ)
+R1	249	57	5990	249	4666	3018	2999	2353	98	48	54	18	28	41	31	38	1	1	Nhiều model xếp DÒNG, có dòng tiêu đề cột (một trong 2 dòng đầu không bắt đầu bằng mã, có từ công suất/prime/standby): ô mô tả model (ô đầu, hoặc ô 2 nếu ô đầu là số thứ tự) của ≥40% dòng là mã, median ≥4 ô/dòng
+R2	68	12	575	68	295	171	269	158	99	69	66	3	65	75	6	12	0	0	Nhiều model xếp DÒNG, KHÔNG dòng tiêu đề cột (mọi dòng đều bắt đầu bằng mã model): cột nào là công suất phải đoán từ giá trị
+R3	6	2	180	0	0	0	0	0	83	100	0	0	83	0	0	0	0	0	Nhiều dòng, MỖI DÒNG bắt đầu bằng SỐ (công suất), không có cột model; median ≥5 ô: dòng thuộc model nào chưa rõ (model ở tiêu đề / bảng khác)
+S1	15	1	103	0	0	0	0	0	100	0	93	100	0	0	0	20	0	93	Danh mục dòng sản phẩm / liên kết: ≥2 dòng có 'Power range', 'View details →', 'catalog' (một dòng = một dòng sản phẩm, không phải model), median ≥4 ô
+T1	204	39	2231	204	622	451	560	401	100	61	58	6	39	35	38	75	12	2	Nhiều model xếp CỘT: có dòng nhãn Model với ≥2 mã khác nhau, các dòng khác là nhãn thông số đứng đầu dòng
+T3	102	23	1011	0	0	0	0	0	88	30	26	3	23	7	14	76	3	1	Nhiều cột giá trị (median ≥5 ô), nhãn thông số đứng đầu ≥60% dòng, không dòng Model nhận được (model có thể ở tiêu đề cột bị mất / ở dòng trên)
+V1	465	31	6757	465	465	261	358	243	100	88	78	40	54	21	21	88	42	9	Một máy dạng dọc (≥60% dòng ≤3 ô: nhãn | giá trị), CÓ dòng nhãn Model với mã
+V2	232	25	2141	232	232	161	184	119	98	85	88	30	20	36	41	44	2	3	Một máy dạng dọc, không dòng Model nhưng tiêu đề trang có mã nhìn giống model
+V3	281	56	3748	0	0	0	0	0	94	40	54	27	36	33	32	61	14	15	Một máy dạng dọc, không dòng Model và tiêu đề không có mã
+V4	186	25	951	83	85	79	43	37	99	81	55	13	28	9	40	75	7	12	Một máy dạng dọc kép: ≥50% dòng 4 ô, nhãn | giá trị | nhãn | giá trị
+V5	53	2	108	53	53	53	53	53	100	100	2	0	98	96	98	2	98	0	Bảng nhỏ hỗn hợp (≤12 dòng, ≤6 ô), tiêu đề trang có mã nhìn giống model, không khớp luật dọc / ngang
+V6	140	2	5670	140	140	1	138	1	100	100	100	0	100	4	98	98	22	5	Một máy dạng dọc như V1 nhưng ≥3 dòng dùng dấu chấm dẫn (Manufacturer……CUMMINS | Fuel consumption): nhãn và giá trị dính trong một ô
+Z	114	29	2331	0	0	0	0	0	96	11	33	19	15	13	45	50	4	5	Chưa xếp được

@@ -1,0 +1,26 @@
+nhom	so-bang-nhom	da-mo	dung-dinh-nghia	dung-nghia-noi-dung	ghi-chu (mo = doc tieu de + 1-3 dong dau cua bang; khong doc het tung bang; mau = cach deu trong nhom sap theo NCC, n, b; xem 3-mau-kiem.mjs)
+A1	164	24	24	24	22 bang co 100% dong trong bang da doc, 2 bang phu 16/17 dong (genlitec). Doi chieu tung dong voi bang da doc (chkA)
+A2	10	10	10	10	10/10 co 100% dong trong bang da doc cua NCC khac (perkins.com <-> perkins-wuxi, shengfeng <-> xinrongbang)
+B1	7	7	7	7	Cung noi dung chuan hoa voi mot bang chua doc khac
+C1	4	4	4	4	Can nang/kich thuoc, dieu chinh dien ap, tan so, chuc nang bang dieu khien: khong phai thong so to may
+F1	41	14	14	12	2/14 ma trong tieu de la ma dong co / ten tep, khong phai model to may
+F2	183	14	14	14	Manh <=3 dong, tieu de khong co ma; 7/14 la Perkins "Product Comparison" (khong gan duoc model)
+H1	145	14	14	10	4/14 (shanhua) la bang cong suat to may/dong co, khong phai dau phat
+L1	61	8	8	8	younes-bros (may cu/ban lai)
+M1	231	14	14	9	5/14 la bang to may / CHP / khi (bison, leton, sevenpower, shanhua, vpower)
+O1	15	14	14	9	5/14 co dong model hoac cong suat (eastern-lion dau phat, green-power, sevenpower CHP x3)
+O2	34	8	8	8	Tieu thu nhien lieu theo muc tai (koten, aosif)
+P1	181	14	14	9	5/14 la dau phat (firstall, kwise, marelli) hoac dong co (scania, jenbacher), cung la bang nhieu model
+R1	249	18	18	11	11/18 dong to may co cong suat; 5/18 dau phat (faraday, keliang, mingbang, rise-power, sincro); 2/18 dong co (kofo, yingtai b3084)
+R2	68	12	10	10	2/12 ngoai dinh nghia (man-engines, mwm: manh, khong co dong model)
+R3	6	6	6	6	Dong bat dau bang so cong suat, khong co cot model (yingtai, gfe)
+S1	15	1	1	1	15/15 la eastern-lion; chi mo 1 bang (cac bang con lai cung nguon cung dang)
+T1	204	14	13	10	1/14 sai bo cuc (kingway: dong chu); 4/14 ma o dong "Model" la ma AVR/dong co (gfe, mwm), khong phai to may
+T3	102	12	12	1	Chi 1/12 la bang to may (atlas-copco); con lai dau phat / dong co / ban tinh cong suat / manh
+V1	465	14	14	14	Mot may, co dong Model; 1/14 ma model lay nham (teksan: ma dong co 403D-15G)
+V2	232	14	14	14	Mot may, ma model o tieu de trang
+V3	281	16	15	10	6/16 la manh bang / dau phat / chuyen vi (lance-power) / bang dong co; 1 sai bo cuc
+V4	186	14	14	12	2/14 la bang tieu de 4 cot (camda), stone-power
+V5	53	8	8	8	Teksan: dong ESP (kVA) roi dong kich thuoc theo vo; model o tieu de (TJxx)
+V6	140	8	8	8	lees-power: dong "Manufacturer......CUMMINS"
+Z	114	14	0	0	Khong xep duoc: MWM (45, bang dong co khi nhieu ngon ngu), shangyan (14, dau phat), faraday (7), kc-generatorset (6), bison (4), green-power (4)…
