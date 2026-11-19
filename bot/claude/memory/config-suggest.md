@@ -47,7 +47,7 @@ metadata:
 - Gợi ý lại KHÔNG giữ dòng ứng viên của lượt trước (Khoa: "không cần giữ"); Tìm NCC / cấu hình internet vẫn giữ.
 - Khoa muốn bắt lỗi đọc ngưỡng HSMT có hệ thống: `suppliers/hints-audit.mjs` (so code đọc với Phân tích).
 
-**Đặc thù hãng động cơ (Khoa chốt 18/11/2026, IB2600612866: HSMT ghi buồng đốt E-TVCS của Kubota mà kết quả có CAT / Perkins / Yanmar; CHƯA code, chặng 2 chờ bảng `suppliers/engine-traits.json`):**
+**Đặc thù hãng động cơ (Khoa chốt 18/11/2026, IB2600612866: HSMT ghi buồng đốt E-TVCS của Kubota mà kết quả có CAT / Perkins / Yanmar; đã nối vào Gợi ý cấu hình: PR #930 merge 19/11/2026, luật chi tiết ở `suppliers/CLAUDE.md`):**
 - HSMT có từ đặc thù của một hãng động cơ → "chỉ gợi ý hãng đó và bỏ trần 2 cấu hình cho hãng đó".
 - Bảng từ đặc thù: `suppliers/engine-traits.json` (PR #914). Khoa 18/11: tên dòng máy (TNV, QSK60, NEF…) KHÔNG là đặc thù ("không"); từ đặc thù ở yêu cầu bộ điều khiển (PowerCommand, EMCP…) "thì chỉ đề xuất bộ điều khiển đó, không liên quan động cơ"; nhận sdeciepower.com (SDEC) và cn.yuchaiie.com (Yuchai) là nguồn chính hãng ("ok"). Đo 1.548 gói: trong yêu cầu động cơ chỉ có E-TVCS (3 gói).
 - Cấu hình tìm trên internet cũng phải nằm trong dải công suất 100–140% (120% trên 30 kVA) như ứng viên danh mục (Khoa: "có"; Denyo 13 kVA từng vào gói 8,5 kVA).
