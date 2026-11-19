@@ -150,6 +150,18 @@ def ingest(key):
         put_docs([{"coll": "hsmtreq", "id": key, "data": {**req, "doneAt": now(), "error": reason}}])
         print(f"{key}: marked failed")
         return
+    # Publish-GenBidHsmt.ps1 writes hsmt/hsmttext straight to the web from the same release, and since 19/11/2026 it also
+    # reads .doc/.xlsx/archives, which this script cannot; ocrHsmt of the bot later adds OCR text to the same docs. When
+    # the web already lists exactly these assets (same asset ids: this very upload), rewriting would drop that text and
+    # set those files back to "no text": only the request is marked done. A run by hand (workflow_dispatch, KEYS) still
+    # rewrites everything.
+    urls = sorted(f"/_gh/{f['asset']}" for f in files)
+    def bot_wrote(prev):
+        return not os.environ.get("KEYS") and urls == sorted(f.get("url", "") for f in prev.get("files") or []) and prev.get("textChunks") is not None
+    if bot_wrote(get_doc("hsmt", key) or {}):
+        put_docs([{"coll": "hsmtreq", "id": key, "data": {**req, "doneAt": now(), "error": ""}}])
+        print(f"{key}: already on the web from the bot ({len(files)} files), text kept")
+        return
     recs, texts = [], []
     with tempfile.TemporaryDirectory() as tmp:
         for f in files:
@@ -166,7 +178,12 @@ def ingest(key):
                 texts.append(f"--- Tệp: {name} ---\n{text.strip()}")
             print(f"  {name}: {f['size']} bytes, asset {f['asset']}, text={'yes' if has else 'no'}")
     parts = chunks("\n\n".join(texts))
+    # The bot may have written while this run read and OCR'd the files: check again just before writing.
     prev = get_doc("hsmt", key) or {}
+    if bot_wrote(prev):
+        put_docs([{"coll": "hsmtreq", "id": key, "data": {**req, "doneAt": now(), "error": ""}}])
+        print(f"{key}: written on the web by the bot meanwhile ({len(files)} files), text kept")
+        return
     doc = {**prev, "notifyNo": key, "updatedAt": now(), "source": "muasamcong (VNeGP Agent)", "files": recs, "textChunks": len(parts)}
     rows = [{"coll": "hsmttext", "id": f"{key}_{i}", "data": {"text": t}} for i, t in enumerate(parts)]
     rows.append({"coll": "hsmt", "id": key, "data": doc})
