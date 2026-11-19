@@ -1594,6 +1594,7 @@
   // build() in small steps, so a page can spread it over idle time: step(timeLeft) works until timeLeft() (ms) is 4 or
   // less, at least one supplier or model a call, and returns true once done; result() is then what build() returns.
   function builder(suppliers) {
+    useManufacturing(suppliers);
     const maps = { engine: new Map(), alternator: new Map(), controller: new Map() };
     // A controller: from the supplier's `controllers` (suppliers/controllers.mjs, each with its source line) and from
     // the genset rows of its tables that name one (then with that row's genset, power and engine).
@@ -1779,8 +1780,52 @@
     AvK: "DE", "Linz Electric": "IT", Sincro: "IT", WEG: "BR" };
   const CTRL_COUNTRY = { "Deep Sea": "GB", SmartGen: "CN", ComAp: "CZ", DEIF: "DK", Datakom: "TR", Woodward: "US", Harsen: "CN",
     Mebay: "CN", Lixise: "CN", Emko: "TR" };
+  // Fallback only (catalog-manufacturing, Khoa 19/11/2026): the place of a make's own plant now comes from the
+  // `manufacturing[]` of the maker's record (suppliers/cn, PR #862 / #866; `madeFrom` below). This table answers only for a
+  // make whose record is not among the suppliers given to build() / builder() (a partial list, a test), or whose record
+  // gives no place for it: nothing is guessed beyond what it said before.
   const MADE_DEFAULT = { Stamford: "GB", "Leroy-Somer": "FR", "Mecc Alte": "IT", AvK: "RO", "Deep Sea": "GB", DEIF: "DK", Woodward: "PL",
     Datakom: "TR", ComAp: "CZ" };
+  // manufacturing[] of the maker records → the place of a make's own plant: Map make → { at, why } | { models: [[token, at, why]] }.
+  // Rules (suppliers/CLAUDE.md, manufacturing[]; Khoa's answers 16/11/2026 in config-suggest / supplier-db memory; no rule of its own):
+  // - only `scope: "manufacture"` entries count; `scope: "design"` (ComAp Praha, SICES Italy) is not a place of manufacture;
+  // - the entry `khoa` without `src` ("Khoa chốt dd/mm/yyyy", no `products`) is the place Khoa settled for the record's first
+  //   make (Stamford → GB, Leroy-Somer → FR, Mecc Alte → IT, ComAp → CZ, Datakom → TR);
+  // - a sourced entry for "All products" (DSE, DEIF) is the place of every make of the record, "<make> (all)" (AvK) of that make;
+  // - a sourced entry listing products only ("easYgen-1500/2000/3000/3000XT, LS5, …", Woodward) is the place of those models and
+  //   of no other model of the make; used only when the make has no entry of the kinds above (Stamford's "S4, S5, S6, S7" is
+  //   not: the Khoa default stands); an entry that names no products and has no `khoa` (Datakom Istanbul, Mecc Alte's four
+  //   plants) says nothing of which products and is left out; two different places among the entries of one make → no place.
+  const madeFrom = new Map();
+  const productTokens = (products) => String(products || "").split(/[,;]/).flatMap((part) => {
+    const p = part.trim(), [first, ...rest] = p.split("/");
+    if (!rest.length) return [p];
+    const pre = first.replace(/[0-9A-Za-z]+$/, "");
+    return [first, ...rest.map((x) => pre + x.trim())];
+  }).map((x) => x.toLowerCase().replace(/[^a-z0-9]/g, "")).filter((x) => x.length >= 3);
+  function useManufacturing(suppliers) {
+    const recs = (suppliers || []).filter((s) => s && Array.isArray(s.manufacturing) && s.manufacturing.length);
+    // A list with no maker record (one supplier given to build()) leaves what an earlier list gave.
+    if (!recs.length) return;
+    madeFrom.clear();
+    const makeOf = (b) => [...brandIn(String(b || ""), ALT_BRANDS), ...brandIn(String(b || ""), CONTROLLERS.map((c) => [c.word, c.brand]))];
+    for (const s of recs) {
+      const makes = [...new Set((s.brands || s.names?.brands || []).flatMap(makeOf))];
+      if (!makes.length) continue;
+      const places = new Map(), lists = new Map();
+      const put = (m, at, why) => { const o = places.get(m); if (!o) places.set(m, { at, why }); else if (o.at !== at) o.conflict = true; };
+      for (const e of s.manufacturing) {
+        if (e.scope !== "manufacture" || !e.country) continue;
+        const pr = String(e.products || "").trim();
+        if (e.khoa && !pr && !e.src) put(makes[0], e.country, `mặc định theo hãng (${e.khoa})`);
+        else if (e.src && /^all(\s+products)?$/i.test(pr)) for (const m of makes) put(m, e.country, `hãng ghi nơi sản xuất — hồ sơ hãng, nguồn ${[].concat(e.src).join("/")} (${e.city || e.country}, mọi sản phẩm)`);
+        else if (e.src && /\(all\)\s*$/i.test(pr)) for (const m of makeOf(pr)) put(m, e.country, `hãng ghi nơi sản xuất — hồ sơ hãng, nguồn ${[].concat(e.src).join("/")} (${e.city || e.country}, ${pr})`);
+        else if (e.src && pr) for (const m of makes) lists.set(m, [...(lists.get(m) || []), ...productTokens(pr).map((t) => [t, e.country, `hãng ghi nơi sản xuất — hồ sơ hãng, nguồn ${[].concat(e.src).join("/")} (${e.city || e.country}: ${pr})`])]);
+      }
+      for (const [m, p] of places) if (!p.conflict && !madeFrom.has(m)) madeFrom.set(m, { at: p.at, why: p.why });
+      for (const [m, l] of lists) if (!places.has(m) && !madeFrom.has(m)) madeFrom.set(m, { models: l });
+    }
+  }
   // Nơi sản xuất of one row (Khoa, 2026-11-16/17, việc "thương hiệu ≠ nơi sản xuất"): what the row, its column titles
   // and the page title say of the make, never guessed from the model.
   // - A Chinese plant of the make (CN_PLANT: DCEC / CCEC, Perkins Wuxi, SME, MTU Yuchai, 潍柴博杜安, 无锡斯坦福,
@@ -1842,7 +1887,18 @@
   const entryMakes = (e) => String(e.make || "").split(" / ").filter(Boolean);
   const makeCountry = (kind, n) => (kind === "engine" ? (FOREIGN_ENGINE.has(n) ? ENGINE_COUNTRY[n] : "CN") : (kind === "alternator" ? ALT_COUNTRY : CTRL_COUNTRY)[n]) || null;
   // Woodward: Kraków makes the easYgen-1500 / 2000 / 3000 / 3000XT; the easYgen-800 may be made in China (not checked).
-  const madeDefault = (n, model) => (n === "Woodward" ? (/easy\s?gen\s?-?(1500|2000|3000)/i.test(String(model || "")) ? "PL" : null) : MADE_DEFAULT[n] || null);
+  // { at, why } | null. The maker's record (madeFrom) first; without it the old table.
+  const madeDefault = (n, model) => {
+    const f = madeFrom.get(n);
+    if (f?.at) return { at: f.at, why: f.why };
+    if (f?.models) {
+      const m = String(model || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+      const hit = m && f.models.find(([t]) => m.includes(t));
+      return hit ? { at: hit[1], why: hit[2] } : null;
+    }
+    const at = n === "Woodward" ? (/easy\s?gen\s?-?(1500|2000|3000)/i.test(String(model || "")) ? "PL" : null) : MADE_DEFAULT[n] || null;
+    return at ? { at, why: "mặc định theo hãng (Khoa chốt 16/11/2026)" } : null;
+  };
   // `text`: one text, or the texts from the nearest to the farthest (the row, its column titles, the page title): the
   // nearest that tells decides ("Cummins (USA)" on fdk-energy's row under a page title naming CCEC and Cummins India).
   function madeIn(kind, makes, text, model) {
@@ -1860,8 +1916,8 @@
     }
     const cnMake = list.find((n) => makeCountry(kind, n) === "CN");
     if (cnMake) return { at: "CN", why: `hãng Trung Quốc (${cnMake})` };
-    const d = [...new Set(list.map((n) => madeDefault(n, model)))];
-    if (d.length === 1 && d[0]) return { at: d[0], why: "mặc định theo hãng (Khoa chốt 16/11/2026)" };
+    const ds = list.map((n) => madeDefault(n, model)), d = [...new Set(ds.map((x) => x?.at || null))];
+    if (d.length === 1 && d[0]) return { at: d[0], why: ds[0].why };
     return { at: "?", why: null };
   }
   // The text of one row of an entry that may tell the place: the row, its column titles, the table / page title.
@@ -1961,7 +2017,7 @@
     return { votes, win: winOf(new Map([...votes].map(([v, ss]) => [v, ss.length]))), split, dropped };
   }
 
-  const api = { build, builder, tally, partsIn, fromSupplier, unread, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, powersIn, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, madeAt, madeIn, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS };
+  const api = { build, builder, tally, partsIn, fromSupplier, unread, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, powersIn, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, madeAt, madeIn, useManufacturing, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);
