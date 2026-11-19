@@ -1381,9 +1381,6 @@
       ["fukangsi-yangzhou", 2001, "FKS-C20", "| FKS-C20 | 20/25 | 东风康明斯 | 4B3.9-G1 | 4 | 3.92 | 9 | ≤210 | 1600*800*1300 | 5500"],
       ["pengpai-yangzhou", 125, "PPDL-C20", "| PPDL-C20 | 20/25 | 东风康明斯 | 4B3.9-G1 | 4 | 3.92 | 9 | ≤210 | 1600*800*1300 | 5500"]].map(([supplierId, n, genset, line]) => (
       { supplierId, n, genset, line, act: "dropspec", keys: ["weight"], khoa: "Khoa 19/11/2026", why: "nguồn ghi khối lượng không hợp công suất của dòng (1.440 kg cho 1.600 kW, 5.500 kg cho 20 kW): bỏ riêng khối lượng, giữ phần còn lại của dòng" })),
-    // aosif n123 AW1125 (8M33D1012E311): "12V | 31.8" is 12M26's cylinders / displacement; 8M33D1012E311 is 8 cylinders, 150×185 mm ≈ 26.1 L
-    // (waeta, wiseke: 8 / 26.14). Điều phối đề xuất, Khoa CHƯA duyệt riêng (gỡ được: bỏ mục này).
-    { supplierId: "aosif", n: 123, genset: "AW1125", line: "| AW1125 | 1000/800 | 1125/900 | 8M33D1012E311^ | 218.9 | 12V | 31.8 |", act: "dropspec", keys: ["cyl", "disp"], khoa: "điều phối đề xuất, Khoa chưa duyệt", why: "nguồn ghi 12V / 31,8 L cho động cơ 8 xi lanh (nguồn khác ghi 8 / 26,14 L): bỏ riêng số xi lanh và dung tích" },
   ];
   function rowExceptions(s, list, note) {
     const ex = ROW_EXCEPTIONS.filter((x) => x.supplierId === s.id);
