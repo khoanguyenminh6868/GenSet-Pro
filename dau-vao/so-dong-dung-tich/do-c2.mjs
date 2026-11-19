@@ -45,7 +45,7 @@ for (const e of cat.engines) {
   if (!uses.length) continue;
   models++;
   // Bộ số động cơ của từng NCC (mọi fact + mọi dòng của NCC cho model này), và chữ ký các dòng (số ngoài động cơ).
-  const eng = new Map(), rowSig = new Map(), dwSig = new Map(), maker = [];
+  const eng = new Map(), rowSig = new Map(), dwSig = new Map(), dimSig = new Map(), maker = [];
   const addEng = (sid, f, ctx) => { const m = eng.get(sid) || new Map(); const v = canon(f, ctx); if (v == null) return; m.set(f.key, new Set([...(m.get(f.key) || []), String(v)])); eng.set(sid, m); };
   for (const f of ef) if (ENG.includes(f.key)) { addEng(f.supplierId, f, undefined); if (f.sheet || roleOf.get(f.supplierId) === "engine_maker") maker.push({ sid: f.supplierId, key: f.key, value: f.value, n: f.n, read: canon(f, undefined) }); }
   for (const u of uses) {
@@ -57,12 +57,20 @@ for (const e of cat.engines) {
     const dw = (k) => (u.specs || []).filter((f) => f.key === k).map((f) => compact(f.value).replace(/[×x]/g, "*")).sort().join("/");
     const d = dw("dims"), wt = dw("weight");
     if (d && wt) dwSig.set(u.supplierId, new Set([...(dwSig.get(u.supplierId) || []), `${d}|${wt}`]));
+    // C4: ô kích thước tổ máy (ba số nối bằng * × x) giống hệt trong CHỮ dòng nguồn (không qua bộ đọc thông số).
+    const lineText = u.line || (u.lines?.rows || []).join(" | ");
+    for (const c of CAT.cellsOf(lineText)) {
+      const k = compact(c).replace(/[×x]/g, "*").replace(/mm$/, "");
+      if (/^\d{3,5}(\.\d+)?\*\d{3,5}(\.\d+)?\*\d{3,5}(\.\d+)?$/.test(k)) dimSig.set(u.supplierId, new Set([...(dimSig.get(u.supplierId) || []), k]));
+    }
   }
   const engKey = (sid) => { const m = eng.get(sid); return m && m.size ? [...m].sort(([a], [b]) => a.localeCompare(b)).map(([k, vs]) => `${k}=${[...vs].sort().join("/")}`).join(";") : null; };
   const sids = [...new Set([...ef.map((f) => f.supplierId), ...uses.map((u) => u.supplierId)])].sort();
-  const c1 = uf(), c2 = uf(), c3 = uf();
+  const c1 = uf(), c2 = uf(), c3 = uf(), c4 = uf();
   for (let i = 0; i < sids.length; i++) for (let j = i + 1; j < sids.length; j++) {
     const a = sids[i], b = sids[j], ka = engKey(a);
+    const xa = dimSig.get(a), xb = dimSig.get(b);
+    if (xa && xb && [...xa].some((s) => xb.has(s))) c4.union(a, b);
     const da = dwSig.get(a), db = dwSig.get(b);
     if (da && db && [...da].some((s) => db.has(s))) c3.union(a, b);
     if (!ka || ka !== engKey(b)) continue;
@@ -80,24 +88,26 @@ for (const e of cat.engines) {
       const m1 = B.majorityOf(figs.map((g) => [c1.find(g.sid), g.x]));
       const m2 = B.majorityOf(figs.map((g) => [c2.find(g.sid), g.x]));
       const m3 = B.majorityOf(figs.map((g) => [c3.find(g.sid), g.x]));
+      const m4 = B.majorityOf(figs.map((g) => [c4.find(g.sid), g.x]));
       const m0 = B.majorityOf(figs.map((g) => [g.x === B.BLOCK ? g.sid : `v:${g.x}`, g.x]));
       const w = (m) => m?.win ?? null;
-      if (w(base) === w(m1) && w(base) === w(m2) && w(base) === w(m3)) continue;
+      if (w(base) === w(m1) && w(base) === w(m2) && w(base) === w(m3) && w(base) === w(m4)) continue;
       // Có đổi hành vi thật không: chỉ khi các nguồn ghi ≥ 2 giá trị (kể cả "không so được"); một giá trị thì có / không có
       // giá trị thắng cho cùng kết quả với luật "mọi nguồn".
       const distinct = new Set(figs.filter((g) => g.x != null).map((g) => (g.x === B.BLOCK ? "X" : g.x))).size;
-      const gk = `${e.key}|${key}|${w(base)}|${w(m1)}|${w(m2)}|${w(m3)}`;
+      const gk = `${e.key}|${key}|${w(base)}|${w(m1)}|${w(m2)}|${w(m3)}|${w(m4)}`;
       const who = {}; for (const g of figs) if (g.x != null) (who[g.x === B.BLOCK ? "X" : g.x] ||= new Set()).add(g.sid);
       const grp = (c) => { const by = new Map(); for (const s of sids) { const r = c.find(s); by.set(r, [...(by.get(r) || []), s]); } return [...by.values()].filter((l) => l.length > 1 && l.some((s) => figs.some((g) => g.sid === s))); };
       const g = groups.get(gk) || {
-        model: e.model, ekey: e.key, make: e.make || "", key, before: w(base), c1: w(m1), c2: w(m2), c3: w(m3), c0: w(m0), matters: distinct > 1,
-        votes: { before: base?.votes ?? null, c1: m1?.votes ?? null, c2: m2?.votes ?? null, c3: m3?.votes ?? null },
-        groupsC3: [],
+        model: e.model, ekey: e.key, make: e.make || "", key, before: w(base), c1: w(m1), c2: w(m2), c3: w(m3), c4: w(m4), c0: w(m0), matters: distinct > 1,
+        votes: { before: base?.votes ?? null, c1: m1?.votes ?? null, c2: m2?.votes ?? null, c3: m3?.votes ?? null, c4: m4?.votes ?? null },
+        groupsC3: [], groupsC4: [],
         who: Object.fromEntries(Object.entries(who).map(([v, s]) => [v, [...s].sort()])),
         groupsC1: grp(c1).map((l) => ({ sids: l, eng: engKey(l[0]) })), groupsC2: grp(c2).map((l) => ({ sids: l, eng: engKey(l[0]) })),
         maker: maker.filter((m) => m.key === key || m.key === "bore" || m.key === "cyl"), engBy: Object.fromEntries(sids.map((s) => [s, engKey(s)])), rows: 0, lines: new Map(),
       };
       if (!g.rows) g.groupsC3 = grp(c3).map((l) => ({ sids: l, dw: [...(dwSig.get(l[0]) || [])].filter((s) => l.slice(1).some((t) => dwSig.get(t)?.has(s))) }));
+      if (!g.rows) g.groupsC4 = grp(c4).map((l) => ({ sids: l, dims: [...(dimSig.get(l[0]) || [])].filter((s) => l.slice(1).some((t) => dimSig.get(t)?.has(s))) }));
       if (distinct > 1) g.matters = true;
       g.rows++;
       for (const f of figs) { const lk = `${f.sid}|${f.f.value}`; if (!g.lines.has(lk)) g.lines.set(lk, { sid: f.sid, n: f.f.n ?? u.table ?? null, label: f.f.label, value: f.f.value, read: f.x === B.BLOCK ? "KHÔNG SO ĐƯỢC" : f.x, line: String(f.f.line || u.line || "").slice(0, 170) }); }
@@ -109,8 +119,9 @@ const list = [...groups.values()].sort((a, b) => a.key.localeCompare(b.key) || a
 const head = `Động cơ có dòng: ${models}; lượt (dòng × khoá) có số: ${rowsSeen}; nhóm model+khoá+kết quả đổi: ${list.length} (disp ${list.filter((g) => g.key === "disp").length}, cyl ${list.filter((g) => g.key === "cyl").length})`;
 const lines = [head];
 for (const g of list) {
-  lines.push(`\n## ${g.make} ${g.model} · ${g.key} · trước ${g.before} → C1 ${g.c1} · C2 ${g.c2} · C3 ${g.c3} · ${g.rows} dòng${g.matters ? " · ĐỔI HÀNH VI" : " · một giá trị (không đổi hành vi)"}`);
-  lines.push(`   phiếu trước ${JSON.stringify(g.votes.before)} · C1 ${JSON.stringify(g.votes.c1)} · C2 ${JSON.stringify(g.votes.c2)} · C3 ${JSON.stringify(g.votes.c3)}`);
+  lines.push(`\n## ${g.make} ${g.model} · ${g.key} · trước ${g.before} → C1 ${g.c1} · C2 ${g.c2} · C3 ${g.c3} · C4 ${g.c4} · ${g.rows} dòng${g.matters ? " · ĐỔI HÀNH VI" : " · một giá trị (không đổi hành vi)"}`);
+  lines.push(`   phiếu trước ${JSON.stringify(g.votes.before)} · C1 ${JSON.stringify(g.votes.c1)} · C2 ${JSON.stringify(g.votes.c2)} · C3 ${JSON.stringify(g.votes.c3)} · C4 ${JSON.stringify(g.votes.c4)}`);
+  for (const x of g.groupsC4) lines.push(`   gộp C4: ${x.sids.join(", ")}  [ô kích thước chung: ${x.dims.join(" ; ")}]`);
   for (const x of g.groupsC3) lines.push(`   gộp C3: ${x.sids.join(", ")}  [kích thước|khối lượng chung: ${x.dw.join(" ; ")}]`);
   lines.push(`   NCC theo giá trị: ${JSON.stringify(g.who)}`);
   for (const x of g.groupsC1) lines.push(`   gộp C1: ${x.sids.join(", ")}  [${x.eng}]`);

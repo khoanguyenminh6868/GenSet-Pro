@@ -9,13 +9,12 @@ Viết gọn lại 13/11/2026 (sáng, giờ VN). Cập nhật 16/11: #786 (nối
 |---|---|---|---|
 | Phủ test: việc còn mở sau 13/11 (trưa) | — (phiên H1, H2, H3, W1, W2 đã xong, chưa lưu trữ: chờ Khoa) | — | (6) Chưa phủ: nhánh trình duyệt `server/`, tải tệp báo giá / HSMT dự án, Forward sau Back từ link thẳng |
 | Số đông cho DUNG TÍCH, phương án (c) (Khoa 19/11 "làm"). #902 đã merge 18/11; `config-bot.mjs` RẢNH từ 19/11 (Chất lượng 1, Đặc thù hãng chặng 2 đã merge): giao được. Thêm việc để quyết: thứ tự `CN_ROWS` ↔ `PER_SUPPLIER` trong `pick` (IB2200065274: 3 dòng Cummins KTA38 của fdk-energy hết suất vì SDEC điểm thấp lấy suất hãng TQ trước; `nghiem-thu\lech-cot-9-2.md`) | `session_011tAj4QhJ3PHgbfinJtwuJm` | Opus | Chặng A chỉ ĐO + báo cáo `nghiem-thu\so-dong-dung-tich-1.md` (kèm phân tích `CN_ROWS` ↔ `PER_SUPPLIER`, +50 xingguang) rồi DỪNG chờ Khoa duyệt; chặng B mới sửa `config-bot.mjs` (worktree `wt-so-dong-c`, nhánh `so-dong-dung-tich`) |
-| `catalog.js` đọc `manufacturing[]` (#862, #866) thay `MADE_DEFAULT` (Khoa 19/11 "làm") | `session_011tAj4NQqGs86S8vNZ7jFX6` | Sonnet | PR draft + `nghiem-thu\catalog-manufacturing-1.md` (worktree `wt-manufacturing`, nhánh `catalog-manufacturing`); điều phối kiểm độc lập rồi merge; xong thì giao FG Wilson |
+| Đọc đầu phát FG Wilson và ô hai hãng ("Stamford X / Leroy-Somer Y") trong `catalog.js` (đề xuất của #873; Khoa 19/11 "làm") | `session_011tAj4Qv8TswVEvK33Vftdd` | Sonnet | PR draft + `nghiem-thu\catalog-fg-wilson-1.md` (worktree `wt-fg-wilson`, nhánh `catalog-fg-wilson`), có đo top 30; điều phối kiểm độc lập rồi merge |
 
 ## Chưa giao
 | Việc | Ghi chú | Model |
 |---|---|---|
 | Sửa 10 ca `todo` trong `suppliers/domain.test.mjs` (PR #622; bảng ở `nghiem-thu\test-review.md`) | Chờ Khoa duyệt; sửa xong bỏ `todo` | Sonnet |
-| Đọc đầu phát FG Wilson và ô hai hãng ("Stamford X / Leroy-Somer Y") trong `catalog.js` (đề xuất của #873) | Khoa duyệt 19/11 ("làm 1,2,3"); giao NGAY SAU khi PR `manufacturing[]` merge (cùng catalog.js) | Sonnet |
 
 ## Chờ Khoa
 - (18/11) Nhánh remote `lech-cot-9` còn trên GitHub (phiên điều phối xoá bị chặn quyền): Khoa xoá tay nếu muốn. (Màn "Dòng nghi sai": Khoa đã xem 19/11, ok.)
