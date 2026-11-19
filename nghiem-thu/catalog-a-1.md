@@ -1,4 +1,6 @@
-**CẬP NHẬT lượt 2 (commit 9ac6b690, soát của điều phối) — xem mục 10. Số cuối gốc 671797e4 ↔ nhánh 9ac6b690: +374 bản ghi mới, 64 mất (18 gộp qua `also` + 46 bản ghi tổ máy đôi "2*" CŨ của baifa nay bỏ đúng luật "tổ máy nhiều động cơ"), 1.101 bản ghi fdk bỏ chữ "CONTACT" ở model tổ máy; phần (b) không đổi. Các tệp `soat-cuoi.*`, `spec-diff-cuoi.*`, `hop-ly-cuoi.tsv`, `row-flags-nhanh.json` đã thay bằng bản lượt 2. Phần dưới (mục 1–9) là lượt 1 (c977a26b).**
+**CẬP NHẬT lượt 3 — SHA ĐO: 4600d59d (mục 11). Số cuối gốc 671797e4 ↔ nhánh 4600d59d: +364 bản ghi mới (= lượt 2 trừ đúng 10 bản ghi máy khí agg-fuzhou), 64 mất (18 gộp + 46 TWIN cũ), 1.101 bản ghi fdk bỏ "CONTACT"; (b) không đổi; đảo vai 0 → 0; row-flags 165 (giống lượt 1–2); 1.311 test qua. `soat-cuoi.*`, `spec-diff-cuoi.*`, `hop-ly-cuoi.tsv`, `row-flags-nhanh.json` là bản lượt 3.**
+
+**Lượt 2 (commit 9ac6b690, soát của điều phối) — xem mục 10. Số cuối gốc 671797e4 ↔ nhánh 9ac6b690: +374 bản ghi mới, 64 mất (18 gộp qua `also` + 46 bản ghi tổ máy đôi "2*" CŨ của baifa nay bỏ đúng luật "tổ máy nhiều động cơ"), 1.101 bản ghi fdk bỏ chữ "CONTACT" ở model tổ máy; phần (b) không đổi. Các tệp `soat-cuoi.*`, `spec-diff-cuoi.*`, `hop-ly-cuoi.tsv`, `row-flags-nhanh.json` đã thay bằng bản lượt 2. Phần dưới (mục 1–9) là lượt 1 (c977a26b).**
 
 **Kết luận bằng số lượt 1 (đo, `suppliers/cn` hiện tại, gốc 671797e4 ↔ nhánh c977a26b): +388 bản ghi mới (224 dòng máy chưa từng đọc ở 7 NCC, 209 model tổ máy chưa có), 18 bản ghi gộp vào bản ghi khác (không mất dữ liệu), +1.130 khối lượng, +455 tiêu hao, +52 dòng điện, +74 xi lanh ở 9 NCC đang đọc; đảo vai 0 → 0; mọi số mới đều có trong chữ dòng nguồn. Số đo khác ước của brief ở (a): dòng máy trong tiêu đề là 422 dòng / 9 NCC (không phải 157 / 6) — ước cũ bỏ sót fdk-energy 174, elitech 50, rcg 41. Còn 5 giá trị nguồn ghi sai rõ (1440 kg cho máy 1600 kW ×3, 5500 kg cho máy 20 kW ×2) cần quyết.**
 
@@ -134,8 +136,42 @@ Lệnh lượt 2 + đầu ra:
 - `row-flags.mjs --json`: 165 dòng, đúng cùng khoá lượt 1 (mới 0, mất 0).
 - `node --test suppliers/*.test.mjs web/test/*.test.mjs` → 1.310 / 1.310 (thêm 1 ca: CONTACT, 2*, STAGE16). `quality --check`: không xấu đi. `unread-tables.json` chụp lại (3.306 bảng).
 
+## 11. Lượt 3 — máy khí (điều phối 19/11), commit 4600d59d
+
+- Luật: `gasTable` — tên bảng / tiêu đề / dòng có "燃气 / 沼气 / 天然气 / natural gas / gas gen|engine|set / biogas / LPG / CNG", hoặc ô đầu của dòng đuôi "-NG" → dòng máy trong tiêu đề KHÔNG chuyển sang dòng, note "bảng máy khí: dòng máy trong tiêu đề không đọc thêm". Dòng sẵn có của bảng đọc như cũ (34 bản ghi agg n115 / n116 giữ).
+- Đo: `spec-diff.mjs git:671797e4 .` → `bản ghi cũ 59786, mới 60086 | khác 2883 | chỉ cũ 64, chỉ mới 364 | bảng có đổi 128` (lượt 2: chỉ mới 374 → đúng 10 bản ghi agg bỏ; `soat-3`: MỚI agg-fuzhou 0). Không bảng dòng-chuyển nào khác bị luật này chặn (364 = 374 − 10). row-flags 165, cùng khoá. `quality --check` không xấu đi. Test 1.311 / 1.311 (+1 ca agg n116).
+
+**Dấu hiệu máy khí đang đọc như máy thường — CHỈ ĐẾM, không sửa** (`7-may-khi.mjs` trên nhánh 4600d59d → `may-khi.tsv` từng bảng, `may-khi-tom-tat.txt`). Dấu hiệu: `chu` (chữ trong tên bảng / tiêu đề / dòng), `url` (URL trang nguồn có gas / ranqi / biogas / lpg), `ng` (model tổ máy đuôi NG), `dongco` (động cơ khí đã biết: Cummins K19N / K38N / K50N / QSK..G / QSV, Scania OC.., "..N-G.."). Bảng có dấu hiệu cấp bảng → đếm mọi bản ghi của bảng; chỉ `dongco` → đếm riêng bản ghi động cơ đó.
+
+**Tổng: 52 NCC, 282 bảng, 1.051 bản ghi.** CHƯA soát tay; có báo nhầm biết trước: `chu` bắt cả dòng giới thiệu trang ("…提供柴油、燃气发电机组…", chenxing-weifang 37 bảng / 37 bản ghi; "Diesel Generator Set Gas Generator Set BESS…" thanh menu, powerzoo 79 / 104) → hai NCC này gần như chắc là máy diesel. Đáng tin hơn: `url` + `chu` cùng lúc, `ng`, tiêu đề bảng là "燃气发电机组" (yingtai) / "Gas Generator Sets with MAN Engines" (westinpower) / "MAN Biogas" (ettes).
+
+| NCC | bảng | bản ghi | dấu hiệu (số bảng) |
+|---|--:|--:|---|
+| ettes-power | 10 | 115 | chu 10, url 10, dongco 2 |
+| powerzoo | 79 | 104 | chu 79 (báo nhầm: menu) |
+| westinpower | 7 | 95 | chu 7, url 7 |
+| aosif | 11 | 85 | chu 10, dongco 5 |
+| victory-generator | 12 | 59 | chu 3, url 12 |
+| rise-power | 3 | 57 | chu 3, url 3 |
+| agg-fuzhou | 4 | 42 | url 4, ng 4, dongco 2 |
+| chenxing-weifang | 37 | 37 | chu 37 (báo nhầm: tên trang) |
+| yingtai-jiangsu | 1 | 31 | chu 1 |
+| penlucky | 2 | 30 | dongco 1, url 1 |
+| jianghao-genset | 2 | 29 | chu 2 |
+| taihai-taizhou | 1 | 25 | chu 1 |
+| man-engines | 4 | 24 | chu 4, url 3 |
+| kaihua-genset | 2 | 23 | dongco 1, chu 1, url 1 |
+| lees-power | 2 | 20 | url 2, dongco 1 |
+| huayuan-weifang, weiman-fujian | 1 / 1 | 19 / 19 | chu (+url weiman) |
+| xinzhengfa | 1 | 18 | chu 1 |
+| green-power-generators, power-hf, tecnogen | 3 / 2 / 2 | 15 / 15 / 15 | dongco, chu, url |
+| naipute-weifang | 14 | 14 | chu 14, url 14 |
+| slong-power, mwm, googol, simpson, weichai-heavy-machinery, weichai-power | 3 / 6 / 2 / 1 / 4 / 4 | 13 / 12 / 11 / 10 / 10 / 10 | chu / url / ng |
+| agg-power, jiangchai, powerlink, welland, innio-jenbacher, gillette, aoke, kingway, mecca | | 9 / 8 / 8 / 8 / 7 / 6 / 5 / 5 / 5 | dongco / chu / url |
+| các NCC còn lại (jichai, xingguang, cameo, pingchang, repower-gas, ronsun, xinshengan, jet-power, wintpower, bdadl, bison, genmac, kigerpower, sunkings, tide…; đủ ở `may-khi-tom-tat.txt`) | | 1–4 mỗi NCC | |
+
 ## Cần ghi nhớ
 
 - Khoa 19/11 duyệt "Làm" (a) + (b): đã làm ở PR #945.
-- Chờ quyết: 3 dòng 1.440 kg (mục 8, điều phối trình Khoa); agg-fuzhou n115/n116 máy khí (mục 10 điểm 2): để như cũ hay mở việc "nhiên liệu tổ máy".
+- Chờ quyết: 3 dòng 1.440 kg (mục 8, điều phối trình Khoa); việc "nhiên liệu tổ máy" (điều phối trình Khoa; đếm dấu hiệu ở mục 11: 52 NCC / 282 bảng / 1.051 bản ghi, chưa soát tay).
 - Đề xuất việc riêng (không tự mở): agg-fuzhou "COP" đọc thành prime (cả bảng cũ); bdadl / fukangsi / pengpai không đọc được công suất "1600/1750"; baifa n101 b1 + rcg n120 (62 dòng máy lẫn tiêu đề) cần luật riêng.
