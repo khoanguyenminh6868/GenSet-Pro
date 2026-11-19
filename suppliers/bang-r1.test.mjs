@@ -79,12 +79,14 @@ test("simpson n101: tiêu đề chữ Hán cách từng chữ ('发 动 机 型 
   assert.ok(notes.some((x) => x.reason === "một ô ghi hai mã" && /4B3\.9-G1\(G2\)/.test(x.detail)));
 });
 
-test("tiêu đề chữ Hán chỉ cách một chỗ giữa hai từ ('机组重 量', '发动机 型号') KHÔNG bị gộp (bảng đang đọc giữ nguyên)", () => {
+// catalog-a (Khoa 19/11/2026 "Làm"): mọi dấu cách giữa hai chữ Hán của tiêu đề nay đều gộp ("机组重 量" → "机组重量").
+test("tiêu đề chữ Hán cách một chỗ giữa hai từ ('机组重 量') được gộp, đọc ra khối lượng (catalog-a)", () => {
   const h = "| 机组型号 | 输出功率 (KW/KVA) | 柴油机型号 | 机组重 量(KG)";
   const s = sup("pengpai-yangzhou", [{ n: 1, title: "t", header: [h], rows: ["| PPDL-C1500 | 1500/1875 | KTA50-G15 | 13000"] }]);
   const e = recs(s, "engine");
   assert.equal(e.length, 1);
-  assert.deepEqual(e[0].header, [h]);
+  assert.deepEqual(e[0].header, ["| 机组型号 | 输出功率 (KW/KVA) | 柴油机型号 | 机组重量(KG)"]);
+  assert.equal(e[0].specs.find((x) => x.key === "weight")?.value, "13000");
 });
 
 test("rcg-power n124: ô 'hãng chữ Hán & mã' → mã, hãng vẫn đọc từ chữ Hán của dòng", () => {
