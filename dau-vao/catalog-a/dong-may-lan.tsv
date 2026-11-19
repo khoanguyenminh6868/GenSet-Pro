@@ -1,0 +1,5 @@
+baifa-power	n101	b1	| BF-V770-T2 | 770 | 700 | VOLVO | TWD1645GE | EMS2 / ECU | S5L1D-G4 | STAGE II /TIER 2 | SWEDEN
+rcg-power	n120	b18	| R-WB18D5/S | 18 kVA / 14 kW | 20 kVA / 16 kW | 潍柴博杜安 & 4M06G20/5 | 威而纳 & WR184ES | PDF
+visa-gensets	n101	b0	| S12 OPEN | 12 | Open | | undefined | | Manual version | Stand-By
+visa-gensets	n102	b1	| S12 OPEN | 12 | Open | | undefined | | Manual version | Stand-By
+visa-gensets	n105	b10	| S12 OPEN | 12 | Open | | undefined | | Manual version | Stand-By

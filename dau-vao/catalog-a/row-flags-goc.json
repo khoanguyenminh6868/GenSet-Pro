@@ -1,0 +1,2760 @@
+[
+ {
+  "key": "aoke-yangzhou|engine|MTAA11G3|98c2a52b31c2",
+  "supplierId": "aoke-yangzhou",
+  "n": 129,
+  "table": 27,
+  "row": 1,
+  "kind": "engine",
+  "model": "MTAA11-G3",
+  "line": "| AOKE-C280 | 250KW | 280KW | 重庆康明斯 | MTAA11-G3 | 6 | 108 | 39 | 200 | 3100*1300*1760 | 3200 | | 详细参数",
+  "drop": true,
+  "reasons": [
+   {
+    "code": "absurd",
+    "detail": "disp \"108\" (nhãn \"排量(L)\")"
+   }
+  ]
+ },
+ {
+  "key": "aoke-yangzhou|engine|6R1600G20F|a563b6873fd5",
+  "supplierId": "aoke-yangzhou",
+  "n": 129,
+  "table": 27,
+  "row": 2,
+  "kind": "engine",
+  "model": "6R1600G20F",
+  "line": "| AOKE-M275 | 250KW | 275KW | 奔驰 | 6R1600G20F | 6 | 105 | 43 | 200 | 2900*1150*1650 | 2620 | | 详细参数",
+  "drop": true,
+  "reasons": [
+   {
+    "code": "absurd",
+    "detail": "disp \"105\" (nhãn \"排量(L)\")"
+   }
+  ]
+ },
+ {
+  "key": "bruno-generators|engine|MCP12080|c5a685ff5f6c",
+  "supplierId": "bruno-generators",
+  "n": 101,
+  "table": 0,
+  "row": 0,
+  "kind": "engine",
+  "model": "MCP 120-80",
+  "line": "| SL 9506 KL | 6 | 250 W | 1500 W | AC | 230 V | 5.3 | 4.5 | 6.5 | 6 | KOHLER KDW 702 | 686 | 5 | 5.9 | 0.8 | 0.7 | N | 140 | 245 | 130 | 230 | 245 | 280 | 920 | 1050 | MCP 120-80",
+  "drop": true,
+  "reasons": [
+   {
+    "code": "absurd",
+    "detail": "weight \"1050\" (nhãn \"WEIGHT kg\")"
+   }
+  ]
+ },
+ {
+  "key": "bruno-generators|engine|MCP12080|849ee5c9462f",
+  "supplierId": "bruno-generators",
+  "n": 101,
+  "table": 0,
+  "row": 8,
+  "kind": "engine",
+  "model": "MCP 120-80",
+  "line": "| SB 9508 KL | 8 | 250 W | 2000 W | AC | 230 V | 5.3 | 4.5 | 6.5 | 6 | KOHLER KDW 702 | 686 | 5 | 5.9 | 0.8 | 0.7 | N | 140 | 245 | 130 | 230 | 245 | 280 | 920 | 1120 | MCP 120-80",
+  "drop": true,
+  "reasons": [
+   {
+    "code": "absurd",
+    "detail": "weight \"1120\" (nhãn \"WEIGHT kg\")"
+   }
+  ]
+ },
+ {
+  "key": "cameo-power|engine|YC4D105D34|3e8bdef1fc7c",
+  "supplierId": "cameo-power",
+  "n": 107,
+  "table": 6,
+  "row": null,
+  "kind": "engine",
+  "model": "YC4D105-D34",
+  "line": null,
+  "drop": true,
+  "reasons": [
+   {
+    "code": "absurd",
+    "detail": "engPower \"35/41\" (nhãn \"Engine Power(kw) (prime/standby)\")"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|S6BPTA|6aa5268372da",
+  "supplierId": "depco-power",
+  "n": 2257,
+  "table": 261,
+  "row": null,
+  "kind": "engine",
+  "model": "S6B-PTA",
+  "line": null,
+  "drop": true,
+  "reasons": [
+   {
+    "code": "absurd",
+    "detail": "disp \"12.88\" (nhãn \"Displacement(L)\")"
+   }
+  ]
+ },
+ {
+  "key": "fdk-energy|engine|QSK50G7|f4bdfd04ed71",
+  "supplierId": "fdk-energy",
+  "n": 1040,
+  "table": 48,
+  "row": null,
+  "kind": "engine",
+  "model": "QSK50-G7",
+  "line": null,
+  "drop": true,
+  "reasons": [
+   {
+    "code": "absurd",
+    "detail": "engPower \"1107kw/1500\" (nhãn \"Prime power / Speed (KW/RPM)\")"
+   }
+  ]
+ },
+ {
+  "key": "fdk-energy|alternator|S7L1DD41|f4bdfd04ed71",
+  "supplierId": "fdk-energy",
+  "n": 1040,
+  "table": 48,
+  "row": null,
+  "kind": "alternator",
+  "model": "S7L1D-D41",
+  "line": null,
+  "drop": true,
+  "reasons": [
+   {
+    "code": "absurd",
+    "detail": "engPower \"1107kw/1500\" (nhãn \"Prime power / Speed (KW/RPM)\")"
+   }
+  ]
+ },
+ {
+  "key": "huatai-yangzhou|engine|WD305TAD68|acf1d2037339",
+  "supplierId": "huatai-yangzhou",
+  "n": 111,
+  "table": 10,
+  "row": 12,
+  "kind": "engine",
+  "model": "WD305TAD68",
+  "line": "| 700GF | 140/165 | 1267 | WD305TAD68 | 750 | 12缸V型 | 196 | 55 | 3800×1800×2100 | 4550",
+  "drop": true,
+  "reasons": [
+   {
+    "code": "absurd",
+    "detail": "current \"1267\" (nhãn \"额定电流Rated current (A)\")"
+   }
+  ]
+ },
+ {
+  "key": "huatai-yangzhou|engine|WD327TAD78|fd8d82d95f26",
+  "supplierId": "huatai-yangzhou",
+  "n": 111,
+  "table": 10,
+  "row": 13,
+  "kind": "engine",
+  "model": "WD327TAD78",
+  "line": "| 800GF | 140/165 | 1448 | WD327TAD78 | 858 | 12缸V型 | 196 | 60 | 3900×1850×2100 | 5000",
+  "drop": true,
+  "reasons": [
+   {
+    "code": "absurd",
+    "detail": "current \"1448\" (nhãn \"额定电流Rated current (A)\")"
+   }
+  ]
+ },
+ {
+  "key": "huatai-yangzhou|engine|WD327TAD82|8d5b82cf4d7a",
+  "supplierId": "huatai-yangzhou",
+  "n": 111,
+  "table": 10,
+  "row": 14,
+  "kind": "engine",
+  "model": "WD327TAD82",
+  "line": "| 850GF | 140/165 | 1538.5 | WD327TAD82 | 902 | 12缸V型 | 196 | 60 | 3900×1850×2100 | 5000",
+  "drop": true,
+  "reasons": [
+   {
+    "code": "absurd",
+    "detail": "current \"1538.5\" (nhãn \"额定电流Rated current (A)\")"
+   }
+  ]
+ },
+ {
+  "key": "huipu-power|engine|401246TAG2A|ad61205c4c39",
+  "supplierId": "huipu-power",
+  "n": 105,
+  "table": 4,
+  "row": 30,
+  "kind": "engine",
+  "model": "4012-46TAG2A",
+  "line": "| HP-P1330 | 1200 | 1330 | 4012-46TAG2A | 12 | 160*190 | 458 | 301 | 501 | 177.1 | 4980*2200*2520 | 10200",
+  "drop": true,
+  "reasons": [
+   {
+    "code": "absurd",
+    "detail": "disp \"458\" (nhãn \"Swept volume(L)\")"
+   }
+  ]
+ },
+ {
+  "key": "huipu-power|engine|TAD1341GE|affcce127693",
+  "supplierId": "huipu-power",
+  "n": 106,
+  "table": 5,
+  "row": 7,
+  "kind": "engine",
+  "model": "TAD1341GE",
+  "line": "| HP-V280 | 280 | 280 | TAD1341GE | 6 | 131*158 | 1278 | 65.4 | 148 | 36 | 3050*1114*1391 | 2420",
+  "drop": true,
+  "reasons": [
+   {
+    "code": "absurd",
+    "detail": "disp \"1278\" (nhãn \"Swept volume(L)\")"
+   }
+  ]
+ },
+ {
+  "key": "huipu-power|engine|TAD1345GE|107fc80b4e6e",
+  "supplierId": "huipu-power",
+  "n": 106,
+  "table": 5,
+  "row": 11,
+  "kind": "engine",
+  "model": "TAD1345GE",
+  "line": "| HP-V400 | 360 | 400 | TAD1345GE | 6 | 131*158 | 1278 | 96.8 | 210 | 36 | 3210*1114*1600 | 2750",
+  "drop": true,
+  "reasons": [
+   {
+    "code": "absurd",
+    "detail": "disp \"1278\" (nhãn \"Swept volume(L)\")"
+   }
+  ]
+ },
+ {
+  "key": "jiangchai-xuzhou|engine|6M33D506E310|bad00c95c276",
+  "supplierId": "jiangchai-xuzhou",
+  "n": 107,
+  "table": 6,
+  "row": 27,
+  "kind": "engine",
+  "model": "6M33D506E310",
+  "line": "| J20B400M | 400 | 450 | 潍柴博杜安 | 6M33D506E310 | 7200 | 88 | 3.673*1.5*1.95 | 4500 | 详细",
+  "drop": true,
+  "reasons": [
+   {
+    "code": "absurd",
+    "detail": "current \"7200\" (nhãn \"电流（A）\")"
+   }
+  ]
+ },
+ {
+  "key": "jlmech-wuhan|engine|401246TWG2A|489c9411c08f",
+  "supplierId": "jlmech-wuhan",
+  "n": 103,
+  "table": 2,
+  "row": 18,
+  "kind": "engine",
+  "model": "4012-46TWG2A",
+  "line": "| JL-1000GF | 1000 | 1250 | 1800 | 4012-46TWG2A | 12 | 160*190 | 458 | 177 | 212 | 4950*2200*2550 | 8500",
+  "drop": true,
+  "reasons": [
+   {
+    "code": "absurd",
+    "detail": "disp \"458\" (nhãn \"Displacement (L)\")"
+   }
+  ]
+ },
+ {
+  "key": "jlmech-wuhan|engine|YC6MK285LD20|bc285cfa2a2d",
+  "supplierId": "jlmech-wuhan",
+  "n": 104,
+  "table": 3,
+  "row": 12,
+  "kind": "engine",
+  "model": "YC6MK285L-D20",
+  "line": "| JL-180GF | 180 | 225 | 324 | YC6MK285L-D20 | 6 | 123*145 | 10.33 | 28 | 195 | 30001030*1550 | 2600",
+  "drop": true,
+  "reasons": [
+   {
+    "code": "absurd",
+    "detail": "dims \"30001030*1550\" (nhãn \"Size\")"
+   }
+  ]
+ },
+ {
+  "key": "jlmech-wuhan|engine|Y06MK350LD20|fda50b4d1951",
+  "supplierId": "jlmech-wuhan",
+  "n": 104,
+  "table": 3,
+  "row": 14,
+  "kind": "engine",
+  "model": "Y06MK350L-D20",
+  "line": "| JL-220GF | 220 | 275 | 396 | Y06MK350L-D20 | 6 | 123*145 | 10.33 | 28 | 195 | 31001100*1750 | 2800",
+  "drop": true,
+  "reasons": [
+   {
+    "code": "absurd",
+    "detail": "dims \"31001100*1750\" (nhãn \"Size\")"
+   }
+  ]
+ },
+ {
+  "key": "mingbang-mbkl|engine|TAD1642GE|4e30449fd629",
+  "supplierId": "mingbang-mbkl",
+  "n": 125,
+  "table": 5,
+  "row": 13,
+  "kind": "engine",
+  "model": "TAD1642GE",
+  "line": "| 14 | MB-V480 | 600 | 480 | 660 | 528 | TAD1642GE | 4 | 4.4 | 105*127 | 118.4 | 4700×2100×2600",
+  "drop": true,
+  "reasons": [
+   {
+    "code": "absurd",
+    "detail": "disp \"4.4\" (nhãn \"Displacement\")"
+   },
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 13"
+   }
+  ]
+ },
+ {
+  "key": "westinpower|engine|400623TAG3A|f4d5cf841388",
+  "supplierId": "westinpower",
+  "n": 1064,
+  "table": 92,
+  "row": null,
+  "kind": "engine",
+  "model": "4006-23TAG3A",
+  "line": null,
+  "drop": true,
+  "reasons": [
+   {
+    "code": "absurd",
+    "detail": "speed \"1191\" (nhãn \"Rated rotation speed\")"
+   }
+  ]
+ },
+ {
+  "key": "yongcai-elecmama|engine|QC385BT|ddbf8589a867",
+  "supplierId": "yongcai-elecmama",
+  "n": 172,
+  "table": 60,
+  "row": null,
+  "kind": "engine",
+  "model": "QC385BT",
+  "line": null,
+  "drop": true,
+  "reasons": [
+   {
+    "code": "absurd",
+    "detail": "speed \"2350 rpm\" (nhãn \"Engine speed\")"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|WP41D80E200|5b22b1050ea5",
+  "supplierId": "bdadl-shanghai",
+  "n": 128,
+  "table": 27,
+  "row": 3,
+  "kind": "engine",
+  "model": "WP4.1D80E200",
+  "line": "| BDA-W64 | 64/70 | 潍柴动力 | WP4.1D80E200 | 6 | 4.8 | 10 | ≤215 | 2300*700*1200 | 1150",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 4 × 14, 6 × 1"
+   }
+  ]
+ },
+ {
+  "key": "victory-generator|engine|WP4D100E200|ec29ccab93f3",
+  "supplierId": "victory-generator",
+  "n": 114,
+  "table": 20,
+  "row": 5,
+  "kind": "engine",
+  "model": "WP4D100E200",
+  "line": "| V64F | 50 | 58 | 73 | 64 | 80 | WP4D100E200 | 227 | 6 | 105 | 120 | 6.25 | 10.25 | 16.8 | 24 V | 1950 x 1000 x 1450 | 1200",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 4 × 12, 6 × 1"
+   }
+  ]
+ },
+ {
+  "key": "victory-generator|engine|WP4D100E200|b2bfb21483ef",
+  "supplierId": "victory-generator",
+  "n": 114,
+  "table": 20,
+  "row": 6,
+  "kind": "engine",
+  "model": "WP4D100E200",
+  "line": "| V75F | 50 | 68 | 85 | 75 | 93 | WP4D100E200 | 227 | 6 | 105 | 120 | 6.25 | 10.25 | 16.8 | 24 V | 1950 x 1000 x 1450 | 1200",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 4 × 12, 6 × 1"
+   }
+  ]
+ },
+ {
+  "key": "victory-generator|engine|WP4D100E200|df758eb51d14",
+  "supplierId": "victory-generator",
+  "n": 114,
+  "table": 20,
+  "row": 7,
+  "kind": "engine",
+  "model": "WP4D100E200",
+  "line": "| V88F | 50 | 80 | 100 | 88 | 110 | WP4D100E200 | 227 | 6 | 105 | 120 | 6.25 | 14 | 25.8 | 24 V | 2300 x 1000 x 1600 | 1200",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 4 × 12, 6 × 1"
+   }
+  ]
+ },
+ {
+  "key": "huipu-power|engine|WP4D108E200|4e4e3f336fa2",
+  "supplierId": "huipu-power",
+  "n": 104,
+  "table": 3,
+  "row": 7,
+  "kind": "engine",
+  "model": "WP4D108E200",
+  "line": "| HP-W90 | 80 | 90 | WP4D108E200 | 6 | 105*130 | 4.5 | 18.75 | 120 | 12 | 2100*920*1500 | 1195",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 4 × 7, 6 × 1"
+   }
+  ]
+ },
+ {
+  "key": "victory-generator|engine|YD480D|6808ed6fa18e",
+  "supplierId": "victory-generator",
+  "n": 103,
+  "table": 3,
+  "row": 2,
+  "kind": "engine",
+  "model": "YD480D",
+  "line": "| V12YD | 50 | 11 | 13.75 | 12 | 15 | YD480D | 3 | Natural | Direct injection | 1.532 | 85*90 | ≤5 | ≤262 | 2100*730*1130",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"3\" = 3, số đông 3 × 1, 4 × 10"
+   }
+  ]
+ },
+ {
+  "key": "victory-generator|engine|YD480D|be79aeeaec7c",
+  "supplierId": "victory-generator",
+  "n": 103,
+  "table": 4,
+  "row": 2,
+  "kind": "engine",
+  "model": "YD480D",
+  "line": "| V15YD | 60 | 13 | 16.25 | 15 | 18.75 | YD480D | 3 | Natural | Direct injection | 1.809 | 80*90 | ≤5 | ≤249 | 2100*730*1130",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"3\" = 3, số đông 3 × 1, 4 × 10"
+   }
+  ]
+ },
+ {
+  "key": "yunding-jiangsu|engine|WP13D440E310|b5261025235e",
+  "supplierId": "yunding-jiangsu",
+  "n": 2008,
+  "table": 14,
+  "row": 22,
+  "kind": "engine",
+  "model": "WP13D440E310",
+  "line": "| YDW-400GF | 400 | 500 | 720 | WP13D440E310 | 9 | 127*165 | 12.54 | 30 | 205 | 3100*1150*1600 | 3050",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"9\" = 9, số đông 6 × 7, 9 × 1"
+   }
+  ]
+ },
+ {
+  "key": "longkai-power|engine|6M33D633E200|5481e8f3432e",
+  "supplierId": "longkai-power",
+  "n": 1144,
+  "table": 271,
+  "row": null,
+  "kind": "engine",
+  "model": "6M33D633E200",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"V 12\" = 12, số đông 6 × 11, 12 × 1"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|12M26D902E200|0ba8072b0821",
+  "supplierId": "bdadl-shanghai",
+  "n": 128,
+  "table": 27,
+  "row": 15,
+  "kind": "engine",
+  "model": "12M26D902E200",
+  "line": "| BDA-W720 | 720/800 | 潍柴博杜安 | 12M26D902E200 | 8 | 31.8 | 113 | ≤210 | 4500*1800*2100 | 6100",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"8\" = 8, số đông 12 × 14"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|12M26D968E200|43013b10c0e0",
+  "supplierId": "bdadl-shanghai",
+  "n": 128,
+  "table": 27,
+  "row": 16,
+  "kind": "engine",
+  "model": "12M26D968E200",
+  "line": "| BDA-W800 | 800/880 | 潍柴博杜安 | 12M26D968E200 | 8 | 31.8 | 113 | ≤210 | 4900*2100*2500 | 8000",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"8\" = 8, số đông 12 × 16"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|12M33D1108E200|9c042001d0d1",
+  "supplierId": "bdadl-shanghai",
+  "n": 128,
+  "table": 27,
+  "row": 17,
+  "kind": "engine",
+  "model": "12M33D1108E200",
+  "line": "| BDA-W900 | 900/1000 | 潍柴博杜安 | 12M33D1108E200 | 8 | 39.2 | 113 | ≤210 | 5000*2000*2100 | 9600",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"8\" = 8, số đông 12 × 16"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|12M33D1210E200|d8c4ca3f0e2c",
+  "supplierId": "bdadl-shanghai",
+  "n": 128,
+  "table": 27,
+  "row": 18,
+  "kind": "engine",
+  "model": "12M33D1210E200",
+  "line": "| BDA-W1000 | 1000/1100 | 潍柴博杜安 | 12M33D1210E200 | 10 | 39.2 | 146 | ≤210 | 5300*2200*2600 | 10000",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"10\" = 10, số đông 12 × 14"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|12M33D1320E200|ce1e6271b21d",
+  "supplierId": "bdadl-shanghai",
+  "n": 128,
+  "table": 27,
+  "row": 19,
+  "kind": "engine",
+  "model": "12M33D1320E200",
+  "line": "| BDA-W1100 | 1100/1200 | 潍柴博杜安 | 12M33D1320E200 | 10 | 39.2 | 146 | ≤210 | 5400*2000*2500 | 13000",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"10\" = 10, số đông 12 × 13"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|12M33D1108E310|b49c3d00983f",
+  "supplierId": "bdadl-shanghai",
+  "n": 128,
+  "table": 28,
+  "row": 16,
+  "kind": "engine",
+  "model": "12M33D1108E310",
+  "line": "| BDA-W900 | 900/1000 | 潍柴博杜安 | 12M33D1108E310 | 10 | 39.2 | 146 | ≤195 | 5000*2000*2200 | 9600",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"10\" = 10, số đông 12 × 6"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|16M33D1680E310|692fa3d27f28",
+  "supplierId": "bdadl-shanghai",
+  "n": 128,
+  "table": 28,
+  "row": 20,
+  "kind": "engine",
+  "model": "16M33D1680E310",
+  "line": "| BDA-W1400 | 1400/1520 | 潍柴博杜安 | 16M33D1680E310 | 12 | 52.3 | 180 | ≤195 | 5400*2200*2240 | 10800",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 1, 16 × 12"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|16M33D1800E310|c47a50182506",
+  "supplierId": "bdadl-shanghai",
+  "n": 128,
+  "table": 28,
+  "row": 21,
+  "kind": "engine",
+  "model": "16M33D1800E310",
+  "line": "| BDA-W1500 | 1500/1650 | 潍柴博杜安 | 16M33D1800E310 | 12 | 52.3 | 180 | ≤195 | 5800*2200*2300 | 11500",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 1, 16 × 9"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|4BTA39G2|591fe84f1b39",
+  "supplierId": "bdadl-shanghai",
+  "n": 131,
+  "table": 33,
+  "row": 4,
+  "kind": "engine",
+  "model": "4BTA3.9-G2",
+  "line": "| BDA-C52 | 52/56 | 东风康明斯 | 4BTA3.9-G2 | 6 | 3.92 | 16 | ≤210 | 1900*850*1200 | 560",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 4 × 23"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|KTA50G3|072425343b30",
+  "supplierId": "bdadl-shanghai",
+  "n": 130,
+  "table": 31,
+  "row": 20,
+  "kind": "engine",
+  "model": "KTA50-G3",
+  "line": "| BDA-C1000 | 1000/1100 | 重庆康明斯 | KTA50-G3 | 10 | 50 | 177 | ≤203 | 5000*2000*2550 | 10100",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"10\" = 10, số đông 12 × 3, 16 × 30"
+   }
+  ]
+ },
+ {
+  "key": "comappower|engine|KTA50G3|05ad8312a918",
+  "supplierId": "comappower",
+  "n": 102,
+  "table": 5,
+  "row": 37,
+  "kind": "engine",
+  "model": "KTA50-G3",
+  "line": "| COM1575C | 1575kVA | 1260kW | 1375kVA | 1100kW | KTA50-G3 | 12 | COM1575C",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 3, 16 × 30"
+   }
+  ]
+ },
+ {
+  "key": "huipu-power|engine|KTA50G3|35ae3ea98488",
+  "supplierId": "huipu-power",
+  "n": 103,
+  "table": 2,
+  "row": 23,
+  "kind": "engine",
+  "model": "KTA50-G3",
+  "line": "| HP-C1100 | 1000 | 1100 | KTA50-G3 | 12 | 159*159 | 50 | 261 | 424 | 177 | 5105*2120*2260 | 9099",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 3, 16 × 30"
+   }
+  ]
+ },
+ {
+  "key": "mingbang-mbkl|engine|KTA50G3|1bc98f546b18",
+  "supplierId": "mingbang-mbkl",
+  "n": 122,
+  "table": 2,
+  "row": 48,
+  "kind": "engine",
+  "model": "KTA50-G3",
+  "line": "| 49 | MB-C1000 | 1250 | 1000 | 1375 | 1100 | KTA50-G3 | 12 | 37.8 | 159*159 | 213",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 3, 16 × 30"
+   }
+  ]
+ },
+ {
+  "key": "suneco-linyi|engine|KTA50G3|c34d029753cf",
+  "supplierId": "suneco-linyi",
+  "n": 101,
+  "table": 1,
+  "row": 37,
+  "kind": "engine",
+  "model": "KTA50-G3",
+  "line": "| ECO1575C | 1575kVA | 1260kW | 1375kVA | 1100kW | KTA50-G3 | 12 | ECO1575C",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 3, 16 × 30"
+   }
+  ]
+ },
+ {
+  "key": "xinhengxin-fujian|engine|KTA50G3|ce6b87e9a339",
+  "supplierId": "xinhengxin-fujian",
+  "n": 105,
+  "table": 4,
+  "row": 40,
+  "kind": "engine",
+  "model": "KTA50-G3",
+  "line": "| GF-C1250 | 1100/1350 | 1250/1500 | 60 | KTA50-G3 | 1560 | 12 | 5100x2050x2450/10120 | 12192x2438x2896/14120 | GF-C1250 .pdf",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 3, 16 × 30"
+   }
+  ]
+ },
+ {
+  "key": "xinzhengfa|engine|KTA50G3|62adf650200a",
+  "supplierId": "xinzhengfa",
+  "n": 105,
+  "table": 4,
+  "row": 37,
+  "kind": "engine",
+  "model": "KTA50-G3",
+  "line": "| ZF-1100 | 1227/1100 | KTA50-G3 | 1227 | 12 | 159 | 159 | 161 | 215.9 | 5000*2000*2450 | 9800",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 3, 16 × 30"
+   }
+  ]
+ },
+ {
+  "key": "yingtai-jiangsu|engine|KTA50G3|c13b61f0b185",
+  "supplierId": "yingtai-jiangsu",
+  "n": 114,
+  "table": 25,
+  "row": 8,
+  "kind": "engine",
+  "model": "KTA50-G3",
+  "line": "| 400GF-A | 400 | 500 | 440 | 480 | 720 | 3700 | 2.0*0.9*1.1 | KTA50-G3 | 12",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 3, 16 × 30"
+   }
+  ]
+ },
+ {
+  "key": "comappower|engine|DP126LB|19be48a3a81f",
+  "supplierId": "comappower",
+  "n": 110,
+  "table": 22,
+  "row": 6,
+  "kind": "engine",
+  "model": "DP126LB",
+  "line": "| COM400DS | 400kVA | 320kW | 365kVA | 292kW | DP126LB | 8 | COM400DS",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"8\" = 8, số đông 6 × 5, 8 × 1"
+   }
+  ]
+ },
+ {
+  "key": "comappower|engine|DP126LB|3927d461b92a",
+  "supplierId": "comappower",
+  "n": 110,
+  "table": 23,
+  "row": 6,
+  "kind": "engine",
+  "model": "DP126LB",
+  "line": "| COM440DS | 440kVA | 352kW | 401kVA | 321kW | DP126LB | 8 | COM440DS",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"8\" = 8, số đông 6 × 5, 8 × 1"
+   }
+  ]
+ },
+ {
+  "key": "huipu-power|engine|403A11G1|1633031ecd4f",
+  "supplierId": "huipu-power",
+  "n": 105,
+  "table": 4,
+  "row": 0,
+  "kind": "engine",
+  "model": "403A-11G1",
+  "line": "| HP-P8 | 7 | 8 | 403A-11G1 | 4 | 84*100 | 2.2 | 5.3 | 40 | 9.8 | 1335*600*1095 | 420",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 3 × 12, 4 × 1"
+   }
+  ]
+ },
+ {
+  "key": "waeta-fujian|engine|6M33G8255|813ff6fd67d0",
+  "supplierId": "waeta-fujian",
+  "n": 103,
+  "table": 4,
+  "row": 24,
+  "kind": "engine",
+  "model": "6M33G825/5",
+  "line": "| WTA-B825 | 825 | 660 | 750 | 600 | 6M33G825/5 | 8 L | 19.6 | Baudouin Series.xlsx",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"8 L\" = 8, số đông 6 × 4, 8 × 1"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|400623TAG3A|f95fcaa8c531",
+  "supplierId": "depco-power",
+  "n": 2636,
+  "table": 640,
+  "row": null,
+  "kind": "engine",
+  "model": "4006-23TAG3A",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"8L\" = 8, số đông 6 × 27"
+   }
+  ]
+ },
+ {
+  "key": "aoke-yangzhou|engine|401661TRG3|f2afdc0c4d6e",
+  "supplierId": "aoke-yangzhou",
+  "n": 101,
+  "table": 0,
+  "row": 1,
+  "kind": "engine",
+  "model": "4016-61TRG3",
+  "line": "| AOKE-P1980 | 1800KW | 1980KW | 珀金斯 | 4016-61TRG3 | 12 | 61.123 | 237.2 | 200 | 5730*2300*3020 | 15500 | | 详细参数",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 1, 16 × 22"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|403A15G1|5966d8bd64de",
+  "supplierId": "depco-power",
+  "n": 2644,
+  "table": 648,
+  "row": null,
+  "kind": "engine",
+  "model": "403A-15G1",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 3 × 14, 4 × 2"
+   }
+  ]
+ },
+ {
+  "key": "huipu-power|engine|403A15G1|4860a8870cc8",
+  "supplierId": "huipu-power",
+  "n": 105,
+  "table": 4,
+  "row": 1,
+  "kind": "engine",
+  "model": "403A-15G1",
+  "line": "| HP-P11 | 10 | 11 | 403A-15G1 | 4 | 84*100 | 2.2 | 5.3 | 42 | 9.8 | 1335*600*1095 | 420",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 3 × 14, 4 × 2"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|403D11G|ad19182f6a08",
+  "supplierId": "depco-power",
+  "n": 2441,
+  "table": 445,
+  "row": null,
+  "kind": "engine",
+  "model": "403D-11G",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 3 × 16, 4 × 1"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|403D15G|491b70235b87",
+  "supplierId": "depco-power",
+  "n": 2440,
+  "table": 444,
+  "row": null,
+  "kind": "engine",
+  "model": "403D-15G",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 3 × 18, 4 × 1"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|403D15G|7b3b7510a19d",
+  "supplierId": "depco-power",
+  "n": 2641,
+  "table": 645,
+  "row": null,
+  "kind": "engine",
+  "model": "403D-15G",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 3 × 18, 4 × 1"
+   }
+  ]
+ },
+ {
+  "key": "waeta-fujian|engine|12M33G16505|9b1517a42018",
+  "supplierId": "waeta-fujian",
+  "n": 103,
+  "table": 4,
+  "row": 34,
+  "kind": "engine",
+  "model": "12M33G1650/5",
+  "line": "| WTA-B1650 | 1650 | 1320 | 1500 | 1200 | 12M33G1650/5 | 16 V | 39.2 | Baudouin Series.xlsx",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"16 V\" = 16, số đông 12 × 5, 16 × 1"
+   }
+  ]
+ },
+ {
+  "key": "mingbang-mbkl|engine|KTA50GS8|f4f0582590b1",
+  "supplierId": "mingbang-mbkl",
+  "n": 122,
+  "table": 2,
+  "row": 50,
+  "kind": "engine",
+  "model": "KTA50-GS8",
+  "line": "| 51 | MB-C1200 | 1500 | 1200 | 1650 | 1320 | KTA50-GS8 | 12 | 37.8 | 159*159 | 213",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 1, 16 × 29"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|KTA50G8|4628b0979a73",
+  "supplierId": "bdadl-shanghai",
+  "n": 130,
+  "table": 31,
+  "row": 21,
+  "kind": "engine",
+  "model": "KTA50-G8",
+  "line": "| BDA-C1100 | 1100/1320 | 重庆康明斯 | KTA50-G8 | 10 | 50 | 204 | ≤203 | 5100*2200*2650 | 12000",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"10\" = 10, số đông 12 × 2, 16 × 30"
+   }
+  ]
+ },
+ {
+  "key": "mingbang-mbkl|engine|KTA50G8|363c243784eb",
+  "supplierId": "mingbang-mbkl",
+  "n": 122,
+  "table": 2,
+  "row": 49,
+  "kind": "engine",
+  "model": "KTA50-G8",
+  "line": "| 50 | MB-C1100 | 1375 | 1100 | 1513 | 1210 | KTA50-G8 | 12 | 37.8 | 159*159 | 213",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 2, 16 × 30"
+   }
+  ]
+ },
+ {
+  "key": "xinzhengfa|engine|KTA50G8|2f1bc95e7c6e",
+  "supplierId": "xinzhengfa",
+  "n": 105,
+  "table": 4,
+  "row": 38,
+  "kind": "engine",
+  "model": "KTA50-G8",
+  "line": "| ZF-1200 | 1429/1200 | KTA50-G8 | 1397 | 12 | 159 | 159 | 161 | 215.9 | 5600*2000*2450 | 10700",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 2, 16 × 30"
+   }
+  ]
+ },
+ {
+  "key": "xinzhengfa|engine|KTA50G8|fb882ee31d6c",
+  "supplierId": "xinzhengfa",
+  "n": 105,
+  "table": 4,
+  "row": 39,
+  "kind": "engine",
+  "model": "KTA50-G8",
+  "line": "| ZF-1300 | 1429/1300 | KTA50-G8 | 1397 | 12 | 159 | 159 | 161 | 215.9 | 5600*2000*2450 | 10700",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 2, 16 × 30"
+   }
+  ]
+ },
+ {
+  "key": "yingtai-jiangsu|engine|KTA50G8|2f41ebde3419",
+  "supplierId": "yingtai-jiangsu",
+  "n": 114,
+  "table": 25,
+  "row": 9,
+  "kind": "engine",
+  "model": "KTA50-G8",
+  "line": "| 500GF-A | 500 | 625 | 550 | 600 | 900 | 4200 | 2.15*0.9*1.45 | KTA50-G8 | 12",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 2, 16 × 30"
+   }
+  ]
+ },
+ {
+  "key": "aoke-yangzhou|engine|D226B3D|4b9beec4bb83",
+  "supplierId": "aoke-yangzhou",
+  "n": 150,
+  "table": 48,
+  "row": 4,
+  "kind": "engine",
+  "model": "D226B-3D",
+  "line": "| AOKE-H33 | 30KW | 33KW | 道依茨 | D226B-3D | 4 | 3.114 | 10 | 200 | 1750×730×1450 | 900 | | 详细参数",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 3 × 9, 4 × 1"
+   }
+  ]
+ },
+ {
+  "key": "aoke-yangzhou|engine|D226B3D|399c13f2eaae",
+  "supplierId": "aoke-yangzhou",
+  "n": 151,
+  "table": 49,
+  "row": 3,
+  "kind": "engine",
+  "model": "D226B-3D",
+  "line": "| AOKE-H33 | 30KW | 33KW | 道依茨 | D226B-3D | 4 | 3.114 | 10 | 200 | 1750*730*1450 | 900 | | 详细参数",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 3 × 9, 4 × 1"
+   }
+  ]
+ },
+ {
+  "key": "aoke-yangzhou|engine|TD226B3D|4a627d6a8702",
+  "supplierId": "aoke-yangzhou",
+  "n": 147,
+  "table": 45,
+  "row": 2,
+  "kind": "engine",
+  "model": "TD226B-3D",
+  "line": "| AOKE-H55 | 45KW | 50KW | 道依茨 | TD226B-3D | 4 | 3.114 | 10 | 200 | 1750*730*1450 | 900 | | 详细参数",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 3 × 8, 4 × 1"
+   }
+  ]
+ },
+ {
+  "key": "aoke-yangzhou|engine|TD226B3D|2af03df8486c",
+  "supplierId": "aoke-yangzhou",
+  "n": 148,
+  "table": 46,
+  "row": 3,
+  "kind": "engine",
+  "model": "TD226B-3D",
+  "line": "| AOKE-H50 | 45KW | 50KW | 道依茨 | TD226B-3D | 4 | 3.114 | 10 | 200 | 1750×730×1450 | 900 | | 详细参数",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 3 × 8, 4 × 1"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|WP6D132E201|0bb4a699f947",
+  "supplierId": "depco-power",
+  "n": 2027,
+  "table": 31,
+  "row": null,
+  "kind": "engine",
+  "model": "WP6D132E201",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 7"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|WP6D180E201|e7f2437f3e72",
+  "supplierId": "depco-power",
+  "n": 2025,
+  "table": 29,
+  "row": null,
+  "kind": "engine",
+  "model": "WP6D180E201",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 6"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|WP10D200E201|4db0f666c74b",
+  "supplierId": "depco-power",
+  "n": 2024,
+  "table": 28,
+  "row": null,
+  "kind": "engine",
+  "model": "WP10D200E201",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 4"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|WP10D238E201|58e7d1e963f1",
+  "supplierId": "depco-power",
+  "n": 2023,
+  "table": 27,
+  "row": null,
+  "kind": "engine",
+  "model": "WP10D238E201",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 6"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|WP10D264E201|ee276a9cbb15",
+  "supplierId": "depco-power",
+  "n": 2022,
+  "table": 26,
+  "row": null,
+  "kind": "engine",
+  "model": "WP10D264E201",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 5"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|WP13D385E201|d958eef26564",
+  "supplierId": "depco-power",
+  "n": 2019,
+  "table": 23,
+  "row": null,
+  "kind": "engine",
+  "model": "WP13D385E201",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 6"
+   }
+  ]
+ },
+ {
+  "key": "mingbang-mbkl|engine|KT38G|8ab6605365aa",
+  "supplierId": "mingbang-mbkl",
+  "n": 122,
+  "table": 2,
+  "row": 41,
+  "kind": "engine",
+  "model": "KT38-G",
+  "line": "| 42 | MB-C500 | 625 | 500 | 688 | 550 | KT38-G | 6 | 18.9 | 159*159 | 202",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 6 × 2, 12 × 15"
+   }
+  ]
+ },
+ {
+  "key": "xinhengxin-fujian|engine|KT38G|a80fad8a63d0",
+  "supplierId": "xinhengxin-fujian",
+  "n": 105,
+  "table": 4,
+  "row": 33,
+  "kind": "engine",
+  "model": "KT38-G",
+  "line": "| GF-C680 | 612/765 | 680/850 | 60 | KT38-G | 747 | 6 | 3400x1400x2150/4100 | 4300x1700x2200/5250 | GF-C680",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 6 × 2, 12 × 15"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|KTA38G2|d00c9c24c7aa",
+  "supplierId": "bdadl-shanghai",
+  "n": 130,
+  "table": 31,
+  "row": 14,
+  "kind": "engine",
+  "model": "KTA38-G2",
+  "line": "| BDA-C600 | 600/660 | 重庆康明斯 | KTA38-G2 | 6 | 38 | 135 | ≤203 | 4400*1800*2500 | 8500",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 12 × 28"
+   }
+  ]
+ },
+ {
+  "key": "xinhengxin-fujian|engine|KTA38G2|071e7d9f6c8b",
+  "supplierId": "xinhengxin-fujian",
+  "n": 105,
+  "table": 4,
+  "row": 35,
+  "kind": "engine",
+  "model": "KTA38-G2",
+  "line": "| GF-C800 | 720/900 | 800/1000 | 60 | KTA38-G2 | 895 | 6 | 3500x1550x2300/4500 | 4900x1800x2500/5540 | GF-C800",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 12 × 28"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|KTA38G2B|5daa7965ef4b",
+  "supplierId": "bdadl-shanghai",
+  "n": 130,
+  "table": 31,
+  "row": 15,
+  "kind": "engine",
+  "model": "KTA38-G2B",
+  "line": "| BDA-C640 | 640/710 | 重庆康明斯 | KTA38-G2B | 6 | 38 | 135 | ≤203 | 4400*1800*2400 | 8466",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 12 × 28"
+   }
+  ]
+ },
+ {
+  "key": "xinhengxin-fujian|engine|KTA38G2B|8ce74d621f1c",
+  "supplierId": "xinhengxin-fujian",
+  "n": 105,
+  "table": 4,
+  "row": 36,
+  "kind": "engine",
+  "model": "KTA38-G2B",
+  "line": "| GF-C830 | 747/934 | 830/1038 | 60 | KTA38-G2B | 920 | 6 | 3500x1550x2300/4580 | 4900x1800x2500/5650 | GF-C830",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 12 × 28"
+   }
+  ]
+ },
+ {
+  "key": "xinhengxin-fujian|engine|KTA38G2A|698bc00c51f2",
+  "supplierId": "xinhengxin-fujian",
+  "n": 105,
+  "table": 4,
+  "row": 37,
+  "kind": "engine",
+  "model": "KTA38-G2A",
+  "line": "| GF-C900 | 810/1013 | 900/1125 | 60 | KTA38-G2A | 1007 | 6 | 4550x2100x2450/7500 | 5700x2220x2500/9600 | GF-C900",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 12 × 29"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|BF8M1015CLAG1A|04eb1459bcd9",
+  "supplierId": "depco-power",
+  "n": 2360,
+  "table": 364,
+  "row": null,
+  "kind": "engine",
+  "model": "BF8M1015C-LA G1A",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 6 × 1, 8 × 10"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|BF8M1015CLAG2|2b18fff1fee0",
+  "supplierId": "depco-power",
+  "n": 2359,
+  "table": 363,
+  "row": null,
+  "kind": "engine",
+  "model": "BF8M1015C-LA G2",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 6 × 1, 8 × 9"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|BF8M1015CPLAG1A|6ac778037e2b",
+  "supplierId": "depco-power",
+  "n": 2358,
+  "table": 362,
+  "row": null,
+  "kind": "engine",
+  "model": "BF8M1015CP-LA G1A",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 8 × 10"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|BF8M1015CPLAG2|4248f4dc3e98",
+  "supplierId": "depco-power",
+  "n": 2357,
+  "table": 361,
+  "row": null,
+  "kind": "engine",
+  "model": "BF8M1015CP-LA G2",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 6 × 1, 8 × 10"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|BF8M1015CPLAG3|8f236f6c6a7d",
+  "supplierId": "depco-power",
+  "n": 2356,
+  "table": 360,
+  "row": null,
+  "kind": "engine",
+  "model": "BF8M1015CP-LA G3",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 6 × 1, 8 × 10"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|BF8M1015CPLAG4|f044b48cd8af",
+  "supplierId": "depco-power",
+  "n": 2355,
+  "table": 359,
+  "row": null,
+  "kind": "engine",
+  "model": "BF8M1015CP-LA G4",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 6 × 1, 8 × 10"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|BF8M1015CPLAG5|86c4f2262251",
+  "supplierId": "depco-power",
+  "n": 2354,
+  "table": 358,
+  "row": null,
+  "kind": "engine",
+  "model": "BF8M1015CP-LA G5",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 6 × 1, 8 × 11"
+   }
+  ]
+ },
+ {
+  "key": "sanq-power|engine|SC15G500D2|94dbecee8b85",
+  "supplierId": "sanq-power",
+  "n": 115,
+  "table": 20,
+  "row": 14,
+  "kind": "engine",
+  "model": "SC15G500D2",
+  "line": "| SQS440 | 400/440 | 320/350 | 630 | SC15G500D2 | LTG-360 | 12 | 14.16 | 200 | 3500 | 3200*1350*1950",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 6 × 26"
+   }
+  ]
+ },
+ {
+  "key": "sanq-power|engine|SC15G500D2|4fe0af7d43a2",
+  "supplierId": "sanq-power",
+  "n": 121,
+  "table": 25,
+  "row": 14,
+  "kind": "engine",
+  "model": "SC15G500D2",
+  "line": "| SQS440 | 400/440 | 320/350 | 630 | SC15G500D2 | LTG-360 | 12 | 14.2 | 3500 | 3200*1350*1950",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 6 × 26"
+   }
+  ]
+ },
+ {
+  "key": "aoke-yangzhou|engine|SC33W1150D2|558ee4f82390",
+  "supplierId": "aoke-yangzhou",
+  "n": 117,
+  "table": 15,
+  "row": 3,
+  "kind": "engine",
+  "model": "SC33W1150D2",
+  "line": "| AOKE-S780 | 710KW | 780KW | 上柴 | SC33W1150D2 | 12 | 32.8 | 75 | 215 | 4400*1700*2150 | 5500 | | 详细参数",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 6 × 22, 12 × 2"
+   }
+  ]
+ },
+ {
+  "key": "victory-generator|engine|SC33W1150D2|aeadaab295ab",
+  "supplierId": "victory-generator",
+  "n": 108,
+  "table": 13,
+  "row": 22,
+  "kind": "engine",
+  "model": "SC33W1150D2",
+  "line": "| V780SC | 50 | 710 | 887.5 | 780 | 975 | SC33W1150D2 | 12V | 32.8 | 4400*1720*2170 | 7359",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12V\" = 12, số đông 6 × 22, 12 × 2"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|403A15G2|223fadb36f72",
+  "supplierId": "depco-power",
+  "n": 2643,
+  "table": 647,
+  "row": null,
+  "kind": "engine",
+  "model": "403A-15G2",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 3 × 14, 4 × 2"
+   }
+  ]
+ },
+ {
+  "key": "huipu-power|engine|403A15G2|d9223723728f",
+  "supplierId": "huipu-power",
+  "n": 105,
+  "table": 4,
+  "row": 2,
+  "kind": "engine",
+  "model": "403A-15G2",
+  "line": "| HP-P13 | 12 | 13 | 403A-15G2 | 4 | 84*100 | 2.2 | 5.3 | 55 | 9.8 | 1335*600*1095 | 420",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 3 × 14, 4 × 2"
+   }
+  ]
+ },
+ {
+  "key": "aoke-yangzhou|engine|4016TAG1A|8aa38b99b864",
+  "supplierId": "aoke-yangzhou",
+  "n": 105,
+  "table": 3,
+  "row": 2,
+  "kind": "engine",
+  "model": "4016TAG1A",
+  "line": "| AOKE-P1628 | 1480KW | 1628KW | 珀金斯 | 4016TAG1A | 12 | 61.123 | 237.2 | 200 | 5730*2300*3020 | 15500 | | 详细参数",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 1, 16 × 25"
+   }
+  ]
+ },
+ {
+  "key": "aoke-yangzhou|engine|4016TAG2A|b264c9abd9b6",
+  "supplierId": "aoke-yangzhou",
+  "n": 104,
+  "table": 2,
+  "row": 1,
+  "kind": "engine",
+  "model": "4016TAG2A",
+  "line": "| AOKE-P1760 | 1600KW | 1760KW | 珀金斯 | 4016TAG2A | 12 | 61.123 | 237.2 | 200 | 5730*2300*3020 | 15500 | | 详细参数",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 1, 16 × 25"
+   }
+  ]
+ },
+ {
+  "key": "mingbang-mbkl|engine|1006TAG|6c66d9210095",
+  "supplierId": "mingbang-mbkl",
+  "n": 126,
+  "table": 6,
+  "row": 14,
+  "kind": "engine",
+  "model": "1006TAG",
+  "line": "| 15 | MB-P108 | 135 | 108 | 150 | 120 | 1006TAG | 4 | 6.0 | 100*127 | 208 | 3000×1200×1740",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 3"
+   }
+  ]
+ },
+ {
+  "key": "victory-generator|engine|4BTA39G13|0e4616451519",
+  "supplierId": "victory-generator",
+  "n": 110,
+  "table": 15,
+  "row": 8,
+  "kind": "engine",
+  "model": "4BTA3.9-G13",
+  "line": "| V75C | 50 | 68 | 85 | 75 | 94 | 4BTA3.9-G13 | 16 | 5.9 | 6L | electronic | 2140*950*1530 | 1270 | 2900*1030*2000 | 1740",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6L\" = 6, số đông 4 × 6, 6 × 1"
+   }
+  ]
+ },
+ {
+  "key": "victory-generator|engine|4BTA39G13|fc731cc306b1",
+  "supplierId": "victory-generator",
+  "n": 110,
+  "table": 15,
+  "row": 9,
+  "kind": "engine",
+  "model": "4BTA3.9-G13",
+  "line": "| V88C | 50 | 80 | 100 | 88 | 110 | 4BTA3.9-G13 | 18.8 | 5.9 | 6L | electronic | 2140*950*1530 | 1270 | 2900*1030*2000 | 1740",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6L\" = 6, số đông 4 × 6, 6 × 1"
+   }
+  ]
+ },
+ {
+  "key": "longkai-power|engine|QSK19G4|9ae4946c1886",
+  "supplierId": "longkai-power",
+  "n": 1104,
+  "table": 202,
+  "row": null,
+  "kind": "engine",
+  "model": "QSK19-G4",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"V 12\" = 12, số đông 6 × 16, 12 × 1"
+   }
+  ]
+ },
+ {
+  "key": "aosif|engine|KTA19G9A|598edd1af962",
+  "supplierId": "aosif",
+  "n": 102,
+  "table": 1,
+  "row": 49,
+  "kind": "engine",
+  "model": "KTA19-G9A",
+  "line": "| AC750-III | 681/545 | 750/600 | KTA19-G9A | 147 | 12V | 18.9 |",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12V\" = 12, số đông 6 × 5"
+   }
+  ]
+ },
+ {
+  "key": "comappower|engine|QSK38G5|83569b0d0114",
+  "supplierId": "comappower",
+  "n": 102,
+  "table": 5,
+  "row": 43,
+  "kind": "engine",
+  "model": "QSK38-G5",
+  "line": "| COM1438C | 1438kVA | 1150kW | 1200kVA | 960kW | QSK38-G5 | 6 | COM1438C",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 12 × 13, 16 × 2"
+   }
+  ]
+ },
+ {
+  "key": "fdk-energy|engine|QSK38G5|6df7e19ccd7d",
+  "supplierId": "fdk-energy",
+  "n": 1074,
+  "table": 82,
+  "row": null,
+  "kind": "engine",
+  "model": "QSK38-G5",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"16\" = 16, số đông 12 × 13, 16 × 2"
+   }
+  ]
+ },
+ {
+  "key": "longkai-power|engine|QSK38G5|6dd16c8ff48d",
+  "supplierId": "longkai-power",
+  "n": 1118,
+  "table": 222,
+  "row": null,
+  "kind": "engine",
+  "model": "QSK38-G5",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"V 16\" = 16, số đông 12 × 13, 16 × 2"
+   }
+  ]
+ },
+ {
+  "key": "suneco-linyi|engine|QSK38G5|c103448fa879",
+  "supplierId": "suneco-linyi",
+  "n": 101,
+  "table": 1,
+  "row": 43,
+  "kind": "engine",
+  "model": "QSK38-G5",
+  "line": "| ECO1438C | 1438kVA | 1150kW | 1200kVA | 960kW | QSK38-G5 | 6 | ECO1438C",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 12 × 13, 16 × 2"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|KTA50G15X|4e71c61bf90f",
+  "supplierId": "bdadl-shanghai",
+  "n": 130,
+  "table": 31,
+  "row": 23,
+  "kind": "engine",
+  "model": "KTA50-G15X",
+  "line": "| BDA-C1340 | 1340/1500 | 重庆康明斯 | KTA50-G15X | 10 | 50 | 204 | ≤203 | 5900*2250*2500 | 12000",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"10\" = 10, số đông 10 × 1, 16 × 4"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|QSK60G21|c009011bec9c",
+  "supplierId": "bdadl-shanghai",
+  "n": 130,
+  "table": 32,
+  "row": 23,
+  "kind": "engine",
+  "model": "QSK60G21",
+  "line": "| BDA-C1800 | 1800/2000 | 重庆康明斯 | QSK60G21 | 12 | 50 | 204 | ≤203 | 6200*2300*2550 | 15500",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 1, 16 × 3"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|4BTAA39G3|8bcea5dd164b",
+  "supplierId": "bdadl-shanghai",
+  "n": 131,
+  "table": 33,
+  "row": 5,
+  "kind": "engine",
+  "model": "4BTAA3.9-G3",
+  "line": "| BDA-C80 | 80/88 | 东风康明斯 | 4BTAA3.9-G3 | 6 | 3.92 | 16 | ≤210 | 2100*850*1450 | 950",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 4 × 4, 6 × 1"
+   }
+  ]
+ },
+ {
+  "key": "xinhengxin-fujian|engine|KTA38G1|4b8bffc0b956",
+  "supplierId": "xinhengxin-fujian",
+  "n": 105,
+  "table": 4,
+  "row": 34,
+  "kind": "engine",
+  "model": "KTA38-G1",
+  "line": "| GF-C770 | 700/875 | 770/963 | 60 | KTA38-G1 | 847 | 6 | 3400x1400x2150/4100 | 4300x1700x2200/5250 | GF-C770",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 6 × 1, 12 × 10"
+   }
+  ]
+ },
+ {
+  "key": "waeta-fujian|engine|8M33G11005|599f337a6e60",
+  "supplierId": "waeta-fujian",
+  "n": 103,
+  "table": 4,
+  "row": 27,
+  "kind": "engine",
+  "model": "8M33G1100/5",
+  "line": "| WTA-B1100 | 1100 | 880 | 1000 | 800 | 8M33G1100/5 | 12 V | 26.14 | Baudouin Series.xlsx",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12 V\" = 12, số đông 8 × 3, 12 × 1"
+   }
+  ]
+ },
+ {
+  "key": "yunding-jiangsu|engine|WP13D490E310|7e52e49b384e",
+  "supplierId": "yunding-jiangsu",
+  "n": 2008,
+  "table": 14,
+  "row": 23,
+  "kind": "engine",
+  "model": "WP13D490E310",
+  "line": "| YDW-450GF | 450 | 562.5 | 810 | WP13D490E310 | 9 | 127*165 | 12.54 | 30 | 205 | 3260*1390*1850 | 3200",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"9\" = 9, số đông 6 × 8, 9 × 1"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|16M33D1980E310|b285ef38069b",
+  "supplierId": "bdadl-shanghai",
+  "n": 128,
+  "table": 28,
+  "row": 22,
+  "kind": "engine",
+  "model": "16M33D1980E310",
+  "line": "| BDA-W1600 | 1600/1800 | 潍柴博杜安 | 16M33D1980E310 | 12 | 52.3 | 180 | ≤195 | 5800*2800*3100 | 14000",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 1, 16 × 5"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|16M55D2900E310|01e6c0774335",
+  "supplierId": "bdadl-shanghai",
+  "n": 128,
+  "table": 28,
+  "row": 26,
+  "kind": "engine",
+  "model": "16M55D2900E310",
+  "line": "| BDA-W2400 | 2400/2650 | 潍柴博杜安 | 16M55D2900E310 | 12 | 87.5 | 280 | ≤195 | 6500*2600*2300 | 12500",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 1, 16 × 6"
+   }
+  ]
+ },
+ {
+  "key": "aoke-yangzhou|engine|16V2000G65|77631a73455c",
+  "supplierId": "aoke-yangzhou",
+  "n": 114,
+  "table": 12,
+  "row": 1,
+  "kind": "engine",
+  "model": "16V2000G65",
+  "line": "| AOKE-M880 | 800KW | 880KW | 奔驰 | 16V2000G65 | 12 | 31.48 | 110 | 200 | 4220*1580*2250 | 6590 | | 详细参数",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 1, 16 × 15"
+   }
+  ]
+ },
+ {
+  "key": "aoke-yangzhou|engine|16V2000G25|28e8172a5caa",
+  "supplierId": "aoke-yangzhou",
+  "n": 116,
+  "table": 14,
+  "row": 1,
+  "kind": "engine",
+  "model": "16V2000G25",
+  "line": "| AOKE-M800 | 728KW | 800KW | 奔驰 | 16V2000G25 | 12 | 31.84 | 102 | 200 | 4380*1580*2250 | 6190 | | 详细参数",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 1, 16 × 15"
+   }
+  ]
+ },
+ {
+  "key": "aoke-yangzhou|engine|SC33W990D2|a2884b7ce0b2",
+  "supplierId": "aoke-yangzhou",
+  "n": 119,
+  "table": 17,
+  "row": 1,
+  "kind": "engine",
+  "model": "SC33W990D2",
+  "line": "| AOKE-S660 | 600KW | 660KW | 上柴 | SC33W990D2 | 12 | 32.8 | 75 | 215 | 4400 x 1690x 2150 | 4500 | | 详细参数",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 6 × 24, 12 × 3"
+   }
+  ]
+ },
+ {
+  "key": "taihai-taizhou|engine|SC33W990D2|d549f8293ad5",
+  "supplierId": "taihai-taizhou",
+  "n": 108,
+  "table": 8,
+  "row": 26,
+  "kind": "engine",
+  "model": "SC33W990D2",
+  "line": "| TH-600GF | 600 | 750 | 1080 | SC33W990D2 | 12 | 180*215 | 32.8 | 57 | 215 | 3700*1700*1950 | 5300",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 6 × 24, 12 × 3"
+   }
+  ]
+ },
+ {
+  "key": "victory-generator|engine|SC33W990D2|729a4524a621",
+  "supplierId": "victory-generator",
+  "n": 108,
+  "table": 13,
+  "row": 21,
+  "kind": "engine",
+  "model": "SC33W990D2",
+  "line": "| V660SC | 50 | 600 | 750 | 660 | 825 | SC33W990D2 | 12V | 32.8 | 4360*1620*2160 | 6820",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12V\" = 12, số đông 6 × 24, 12 × 3"
+   }
+  ]
+ },
+ {
+  "key": "mingbang-mbkl|engine|TAD1345GE|cf5d9047704e",
+  "supplierId": "mingbang-mbkl",
+  "n": 125,
+  "table": 5,
+  "row": 11,
+  "kind": "engine",
+  "model": "TAD1345GE",
+  "line": "| 12 | MB-V360 | 450 | 360 | 495 | 396 | TAD1345GE | 4 | 4.4 | 105*127 | 93.2 | 4300×2100×2500",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 13"
+   }
+  ]
+ },
+ {
+  "key": "mingbang-mbkl|engine|TAD1344GE|b7b2c123c25a",
+  "supplierId": "mingbang-mbkl",
+  "n": 125,
+  "table": 5,
+  "row": 10,
+  "kind": "engine",
+  "model": "TAD1344GE",
+  "line": "| 11 | MB-V320 | 400 | 320 | 440 | 352 | TAD1344GE | 4 | 4.4 | 105*127 | 76.9 | 4300×2100×2500",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 13"
+   }
+  ]
+ },
+ {
+  "key": "mingbang-mbkl|engine|TAD1343GE|975b8877fe33",
+  "supplierId": "mingbang-mbkl",
+  "n": 125,
+  "table": 5,
+  "row": 9,
+  "kind": "engine",
+  "model": "TAD1343GE",
+  "line": "| 10 | MB-V300 | 375 | 300 | 413 | 330 | TAD1343GE | 4 | 4.4 | 105*127 | 69.9 | 4000×1800×2300",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 13"
+   }
+  ]
+ },
+ {
+  "key": "mingbang-mbkl|engine|TAD1342GE|5a50f91445e3",
+  "supplierId": "mingbang-mbkl",
+  "n": 125,
+  "table": 5,
+  "row": 8,
+  "kind": "engine",
+  "model": "TAD1342GE",
+  "line": "| 9 | MB-V280 | 350 | 280 | 385 | 308 | TAD1342GE | 4 | 3.3 | 105*127 | 76.9 | 4000×1800×2300",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 11"
+   }
+  ]
+ },
+ {
+  "key": "mingbang-mbkl|engine|TAD734GE|2e1872aa390f",
+  "supplierId": "mingbang-mbkl",
+  "n": 125,
+  "table": 5,
+  "row": 6,
+  "kind": "engine",
+  "model": "TAD734GE",
+  "line": "| 7 | MB-V200 | 250 | 200 | 275 | 220 | TAD734GE | 4 | 3.3 | 105*127 | 48.5 | 3300×1400×1940",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 16"
+   }
+  ]
+ },
+ {
+  "key": "mingbang-mbkl|engine|TAD733GE|e30df0ad7721",
+  "supplierId": "mingbang-mbkl",
+  "n": 125,
+  "table": 5,
+  "row": 5,
+  "kind": "engine",
+  "model": "TAD733GE",
+  "line": "| 6 | MB-V160 | 200 | 160 | 220 | 176 | TAD733GE | 4 | 3.3 | 105*127 | 48.5 | 3300×1400×1940",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 16"
+   }
+  ]
+ },
+ {
+  "key": "aoke-yangzhou|engine|TAD531GE|892d6308f12d",
+  "supplierId": "aoke-yangzhou",
+  "n": 137,
+  "table": 35,
+  "row": 0,
+  "kind": "engine",
+  "model": "TAD531GE",
+  "line": "| AOKE-V133 | 121KW | 133KW | 沃尔沃 | TAD531GE | 6 | 7.15 | 20 | 204 | 2400*950*1550 | 1760 | | 详细参数",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 4 × 16"
+   }
+  ]
+ },
+ {
+  "key": "yunding-jiangsu|engine|YC6B180LD20|444c4c07a522",
+  "supplierId": "yunding-jiangsu",
+  "n": 2006,
+  "table": 8,
+  "row": 8,
+  "kind": "engine",
+  "model": "YC6B180L-D20",
+  "line": "| YDY-120GF | 120 | 150 | 216 | YC6B180L-D20 | 4 | 108*125 | 6.87 | 21 | 198 | 2350*950*1420 | 1450",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 21"
+   }
+  ]
+ },
+ {
+  "key": "haifeng-taizhou|engine|YC4A100ZD20|03a55f529766",
+  "supplierId": "haifeng-taizhou",
+  "n": 2008,
+  "table": 7,
+  "row": 7,
+  "kind": "engine",
+  "model": "YC4A100Z-D20",
+  "line": "| HF-64GF | 80 | 64 | YC4A100Z-D20 | 6L | 108/125 | 6.871 | 205 | 2250×780×1380 | 1250",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6L\" = 6, số đông 4 × 14, 6 × 1"
+   }
+  ]
+ },
+ {
+  "key": "aoke-yangzhou|engine|DB58|7b22853db280",
+  "supplierId": "aoke-yangzhou",
+  "n": 146,
+  "table": 44,
+  "row": 3,
+  "kind": "engine",
+  "model": "DB58",
+  "line": "| AOKE-D55 | 50KW | 55KW | 斗山 | DB58 | 4 | 5.785 | 19 | 195 | 2000*750*1100 | 1500 | | 详细参数",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 8"
+   }
+  ]
+ },
+ {
+  "key": "longkai-power|engine|QSK19G6|6f4fa960e91a",
+  "supplierId": "longkai-power",
+  "n": 1102,
+  "table": 198,
+  "row": null,
+  "kind": "engine",
+  "model": "QSK19-G6",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"V 12\" = 12, số đông 6 × 5, 12 × 1"
+   }
+  ]
+ },
+ {
+  "key": "longkai-power|engine|QSK19G11|73189d2b16c2",
+  "supplierId": "longkai-power",
+  "n": 1105,
+  "table": 203,
+  "row": null,
+  "kind": "engine",
+  "model": "QSK19-G11",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"V 12\" = 12, số đông 6 × 8, 12 × 1"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|KT38GA|a862e7b3c489",
+  "supplierId": "bdadl-shanghai",
+  "n": 130,
+  "table": 31,
+  "row": 13,
+  "kind": "engine",
+  "model": "KT38-GA",
+  "line": "| BDA-C580 | 580/640 | 重庆康明斯 | KT38-GA | 6 | 19 | 50 | ≤203 | 4200*1800*2300 | 7800",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 6 × 1, 12 × 9"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|KTA38G9E|06c8435b7518",
+  "supplierId": "bdadl-shanghai",
+  "n": 130,
+  "table": 31,
+  "row": 19,
+  "kind": "engine",
+  "model": "KTA38-G9E",
+  "line": "| BDA-C900 | 900/1000 | 重庆康明斯 | KTA38-G9E | 8 | 38 | 135 | ≤203 | 4500*1750*2450 | 9200",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"8\" = 8, số đông 8 × 1, 12 × 4"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|KTA50G7E|90a376b5d690",
+  "supplierId": "bdadl-shanghai",
+  "n": 130,
+  "table": 32,
+  "row": 19,
+  "kind": "engine",
+  "model": "KTA50-G7E",
+  "line": "| BDA-C1100 | 1100/1320 | 重庆康明斯 | KTA50-G7E | 12 | 50 | 204 | ≤203 | 5300*2100*2550 | 10000",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 1, 16 × 4"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|KTA50G15A|a2399f493b84",
+  "supplierId": "bdadl-shanghai",
+  "n": 130,
+  "table": 32,
+  "row": 21,
+  "kind": "engine",
+  "model": "KTA50-G15A",
+  "line": "| BDA-C1340 | 1340/1500 | 重庆康明斯 | KTA50-G15A | 12 | 50 | 204 | ≤203 | 5900*2250*2500 | 12000",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 1, 16 × 4"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|KTA50G16A|8f78d620fc53",
+  "supplierId": "bdadl-shanghai",
+  "n": 130,
+  "table": 32,
+  "row": 22,
+  "kind": "engine",
+  "model": "KTA50-G16A",
+  "line": "| BDA-C1500 | 1500/1600 | 重庆康明斯 | KTA50-G16A | 12 | 50 | 204 | ≤203 | 6200*2250*2500 | 12000",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 12 × 1, 16 × 5"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|WP6D158E201|ed00104e6ae7",
+  "supplierId": "depco-power",
+  "n": 2026,
+  "table": 30,
+  "row": null,
+  "kind": "engine",
+  "model": "WP6D158E201",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 7"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|WP13D510E311|b3d30628c026",
+  "supplierId": "depco-power",
+  "n": 2017,
+  "table": 21,
+  "row": null,
+  "kind": "engine",
+  "model": "WP13D510E311",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 6"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|WP13D510E311|eeacd9712791",
+  "supplierId": "depco-power",
+  "n": 2018,
+  "table": 22,
+  "row": null,
+  "kind": "engine",
+  "model": "WP13D510E311",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 6"
+   }
+  ]
+ },
+ {
+  "key": "hanyang-weifang|engine|4HTAA43G36|d4215de7dcaf",
+  "supplierId": "hanyang-weifang",
+  "n": 125,
+  "table": 11,
+  "row": 5,
+  "kind": "engine",
+  "model": "4HTAA4.3-G36",
+  "line": "| HY-120 | 4HTAA4.3-G36 | 125 | 140 | 6 | 105*124 | 4.3 | 192 | 1800*600*1200 | 1100 | T3",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 4 × 6, 6 × 1"
+   }
+  ]
+ },
+ {
+  "key": "mingbang-mbkl|engine|YC6T600LD22|91e3ba45a19e",
+  "supplierId": "mingbang-mbkl",
+  "n": 123,
+  "table": 3,
+  "row": 18,
+  "kind": "engine",
+  "model": "YC6T600L-D22",
+  "line": "| 19 | MB-Y400 | 500 | 400 | 550 | 440 | YC6T600L-D22 | 12 | 16.3 | 145*165 | 195 | 4500×2100×2600",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 6 × 20, 12 × 1"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|WP41D66E310|6c7ad623aad4",
+  "supplierId": "bdadl-shanghai",
+  "n": 128,
+  "table": 28,
+  "row": 1,
+  "kind": "engine",
+  "model": "WP4.1D66E310",
+  "line": "| BDA-W50 | 50/55 | 潍柴动力 | WP4.1D66E310 | 6 | 4.8 | 10 | ≤195 | 2200*750*1600 | 1050",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 4 × 4, 6 × 1"
+   }
+  ]
+ },
+ {
+  "key": "yanan-power|engine|QSB39G2|2c0e8aecde31",
+  "supplierId": "yanan-power",
+  "n": 101,
+  "table": 0,
+  "row": 9,
+  "kind": "engine",
+  "model": "QSB3.9-G2",
+  "line": "| YN66C | 66kVA | 53kW | 60kVA | 48kW | QSB3.9-G2 | 6 | YN66C",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 4 × 8, 6 × 1"
+   }
+  ]
+ },
+ {
+  "key": "haifeng-taizhou|engine|QSB39G3|5f4a37385b29",
+  "supplierId": "haifeng-taizhou",
+  "n": 2001,
+  "table": 0,
+  "row": 9,
+  "kind": "engine",
+  "model": "QSB3.9-G3",
+  "line": "| HF-70GF | 87.5 | 70 | QSB3.9-G3 | 6L | 102/120 | 206 | 2200*800*1300 | 1180",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6L\" = 6, số đông 4 × 9, 6 × 2"
+   }
+  ]
+ },
+ {
+  "key": "liangzi-yangzhou|engine|QSB39G3|5d238cd20441",
+  "supplierId": "liangzi-yangzhou",
+  "n": 123,
+  "table": 21,
+  "row": 1,
+  "kind": "engine",
+  "model": "QSB3.9-G3",
+  "line": "| LZ-C75 | 75/93.75 | 东风康明斯 | QSB3.9-G3 | 6 | 3.92 | 11 | ≤192 | 1800*800*1300 | 800 | 详细参数",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 4 × 9, 6 × 2"
+   }
+  ]
+ },
+ {
+  "key": "yanan-power|engine|QSB39G3|ab29e2befe6b",
+  "supplierId": "yanan-power",
+  "n": 101,
+  "table": 0,
+  "row": 12,
+  "kind": "engine",
+  "model": "QSB3.9-G3",
+  "line": "| YN88C | 88kVA | 70kW | 80kVA | 64kW | QSB3.9-G3 | 6 | YN88C",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 4 × 9, 6 × 2"
+   }
+  ]
+ },
+ {
+  "key": "mingbang-mbkl|engine|TAD1341GE|3e1a2522ffec",
+  "supplierId": "mingbang-mbkl",
+  "n": 125,
+  "table": 5,
+  "row": 7,
+  "kind": "engine",
+  "model": "TAD1341GE",
+  "line": "| 8 | MB-V252 | 315 | 252 | 347 | 277 | TAD1341GE | 4 | 3.3 | 105*127 | 61.7 | 4000×1800×2300",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 12"
+   }
+  ]
+ },
+ {
+  "key": "mingbang-mbkl|engine|TAD1641GE|e07add7978ec",
+  "supplierId": "mingbang-mbkl",
+  "n": 125,
+  "table": 5,
+  "row": 12,
+  "kind": "engine",
+  "model": "TAD1641GE",
+  "line": "| 13 | MB-V400 | 500 | 400 | 550 | 440 | TAD1641GE | 4 | 4.4 | 105*127 | 91.9 | 4500×2100×2600",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 12"
+   }
+  ]
+ },
+ {
+  "key": "mingbang-mbkl|engine|TWD1643GE|a5e1baf6c635",
+  "supplierId": "mingbang-mbkl",
+  "n": 125,
+  "table": 5,
+  "row": 14,
+  "kind": "engine",
+  "model": "TWD1643GE",
+  "line": "| 15 | MB-V500 | 625 | 500 | 688 | 550 | TWD1643GE | 4 | 6.0 | 100*127 | 69.9 | 4700×2100×2600",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 11"
+   }
+  ]
+ },
+ {
+  "key": "liangzi-yangzhou|engine|TAD750GE|92f9c93cb1fd",
+  "supplierId": "liangzi-yangzhou",
+  "n": 121,
+  "table": 19,
+  "row": 6,
+  "kind": "engine",
+  "model": "TAD750GE",
+  "line": "| LZ-V100 | 100/125 | 沃尔沃遍达 | TAD750GE | 4 | 4.76 | 13 | ≤206 | 2500*750*1400 | 1300 | 详细参数",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 10"
+   }
+  ]
+ },
+ {
+  "key": "fukangsi-yangzhou|engine|YC6C1070LD20|ad58e39e86e7",
+  "supplierId": "fukangsi-yangzhou",
+  "n": 2002,
+  "table": 4,
+  "row": 31,
+  "kind": "engine",
+  "model": "YC6C1070L-D20",
+  "line": "| FKS-Y700 | 700/875 | 广西玉柴股份 | YC6C1070L-D20 | 12 | 39.58 | 180 | 200*210 | 4700*1800*2100 | 7200",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 6 × 10, 12 × 1"
+   }
+  ]
+ },
+ {
+  "key": "pengpai-yangzhou|engine|YC6C1070LD20|8914f2227856",
+  "supplierId": "pengpai-yangzhou",
+  "n": 129,
+  "table": 32,
+  "row": 31,
+  "kind": "engine",
+  "model": "YC6C1070L-D20",
+  "line": "| PPDL-Y700 | 700/875 | 广西玉柴股份 | YC6C1070L-D20 | 12 | 39.58 | 180 | 200*210 | 4700*1800*2100 | 7200",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 6 × 10, 12 × 1"
+   }
+  ]
+ },
+ {
+  "key": "mingbang-mbkl|engine|YC6T550LD21|72dcd840033d",
+  "supplierId": "mingbang-mbkl",
+  "n": 123,
+  "table": 3,
+  "row": 17,
+  "kind": "engine",
+  "model": "YC6T550L-D21",
+  "line": "| 18 | MB-Y350 | 437.5 | 350 | 481.25 | 385 | YC6T550L-D21 | 12 | 16.3 | 145*165 | 195 | 4300×2100×2500",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 6 × 13, 12 × 1"
+   }
+  ]
+ },
+ {
+  "key": "mingbang-mbkl|engine|TAD731GE|52e33a68c7ef",
+  "supplierId": "mingbang-mbkl",
+  "n": 125,
+  "table": 5,
+  "row": 3,
+  "kind": "engine",
+  "model": "TAD731GE",
+  "line": "| 4 | MB-V120 | 150 | 120 | 165 | 132 | TAD731GE | 4 | 2.2 | 84*100 | 30.9 | 3000×1200×1740",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 15"
+   }
+  ]
+ },
+ {
+  "key": "bdadl-shanghai|engine|WP46ND138E310|8c51b8547be6",
+  "supplierId": "bdadl-shanghai",
+  "n": 128,
+  "table": 28,
+  "row": 2,
+  "kind": "engine",
+  "model": "WP4.6ND138E310",
+  "line": "| BDA-W100 | 100/120 | 潍柴动力 | WP4.6ND138E310 | 6 | 6.5 | 18 | ≤195 | 2300*800*1300 | 1500",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"6\" = 6, số đông 4 × 4, 6 × 1"
+   }
+  ]
+ },
+ {
+  "key": "xingguang-jiangsu|engine|YC12VC2700D31|0a4d355e7d64",
+  "supplierId": "xingguang-jiangsu",
+  "n": 113,
+  "table": 12,
+  "row": 53,
+  "kind": "engine",
+  "model": "YC12VC2700-D31",
+  "line": "| XG-1870GF | 1700/1870 | YC12VC2700-D31 | 1805/1985 | 16 | 370 | ≤ 196 | 国 III | 5900 × 2650 × 2950 | 18000",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"16\" = 16, số đông 12 × 11, 16 × 1"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|6M33G6606|c523a986346d",
+  "supplierId": "depco-power",
+  "n": 2385,
+  "table": 389,
+  "row": null,
+  "kind": "engine",
+  "model": "6M33G660/6",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 6 × 5, 12 × 1"
+   }
+  ]
+ },
+ {
+  "key": "waeta-fujian|engine|12M33G13206|0584ffd24670",
+  "supplierId": "waeta-fujian",
+  "n": 103,
+  "table": 5,
+  "row": 32,
+  "kind": "engine",
+  "model": "12M33G1320/6",
+  "line": "| WTA-B1650 | 1650 | 1320 | 1500 | 1200 | 12M33G1320/6 | 16 V | 39.2 | Baudouin Series.xlsx",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"16 V\" = 16, số đông 12 × 3, 16 × 1"
+   }
+  ]
+ },
+ {
+  "key": "depco-power|engine|WP10D288E201|11baf897f73a",
+  "supplierId": "depco-power",
+  "n": 2021,
+  "table": 25,
+  "row": null,
+  "kind": "engine",
+  "model": "WP10D288E201",
+  "line": null,
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"4\" = 4, số đông 4 × 1, 6 × 3"
+   }
+  ]
+ },
+ {
+  "key": "taihai-taizhou|engine|QTA4320G7|a86a8a213ca4",
+  "supplierId": "taihai-taizhou",
+  "n": 110,
+  "table": 10,
+  "row": 22,
+  "kind": "engine",
+  "model": "QTA4320G7",
+  "line": "| T H-2000GF | 2000 | 2420 | 3600 | QTA4320G7 | 20 | 170*195 | 300 | 481 | 6200*2600*2800 | 14000",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"20\" = 20, số đông 16 × 3, 20 × 1"
+   }
+  ]
+ },
+ {
+  "key": "huatai-yangzhou|engine|H16V190ZL|1a2994930a40",
+  "supplierId": "huatai-yangzhou",
+  "n": 110,
+  "table": 9,
+  "row": 7,
+  "kind": "engine",
+  "model": "H16V190ZL",
+  "line": "| 2000GF | 2000 | H16V190ZL | 12L | 190/215 | 73.15 | 350 | 19000 | 8200*3500*",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12L\" = 12, số đông 12 × 1, 16 × 4"
+   }
+  ]
+ },
+ {
+  "key": "world-power-fuzhou|engine|QSK19G3|0dfdeb8534db",
+  "supplierId": "world-power-fuzhou",
+  "n": 103,
+  "table": 1,
+  "row": 51,
+  "kind": "engine",
+  "model": "QSK19-G3",
+  "line": "| WDPG-C650Q | 520 | 650 | 570 | 713 | QSK19-G3 | 12 | E |",
+  "drop": false,
+  "reasons": [
+   {
+    "code": "cylMaj",
+    "detail": "\"12\" = 12, số đông 6 × 4, 12 × 1"
+   }
+  ]
+ }
+]
