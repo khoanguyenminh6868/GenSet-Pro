@@ -1,0 +1,322 @@
+
+### 16M33D1980E310^ (2 dòng) → 16M33D1980E310 (17 dòng, 14 NCC)
+  dùng: chuangyuan-zhongshan n103 b3 r56 | | 29 | 1600 | 400 | 1500 | 0.8 | 50 | 5200*2100*2700 | 11500 | 16M33D1980E310^ | 16/150/185 | 52.3
+  dùng: mecca-power n5001 b47 r34 | | MC2250WC | 1600 | 2000 | 1800 | 2250 | 16M33D1980E310^ |
+  chú thích? mecca-power/5001.md:2660:     MC188BD     188       150  168       135  6M11G188/5^    CN      32.6        6L        6.8           Elec   2500*1150*1650  1900
+  chú thích? mecca-power/5001.md:2692:     MC1100BD    1100      880  1000      800  8M33G1100/5^   CN      214         8L        26.14         ECU    5000*1800*2000  7650
+  chú thích? mecca-power/5001.md:2714:     MC2250BD    2250  1800     2063  1650     16M33G2250/5^  CN      428.6       16L       52.3          ECU    6520*2210*2500  13800
+  chú thích? mecca-power/5001.md:2718:     MC2500BD    2500  2000     2250  1800     20M33G2500/5^  CN      466.4       20L       65.4          ECU    6620*2210*2500  14000
+  chú thích? mecca-power/5001.md:2724:     MC3000BD    3000  2400     2750  2200     12M55G3000/5^  CN      557.2       12L       65.7          ECU    6620*2260*2800  16500
+  chú thích? mecca-power/5001.md:2732:     MC4125BD    4125  3300     3750  3000     16M55G4000/5^  CN      755.1       16L       87.5          ECU    6660*2260*2800  14000
+  chú thích? mecca-power/5001.md:2771: MC220BD     220       176              200       160            6M11G176/6^  CN      43.7        6L        6.75          Elec  2500*1150*1650  1900
+  chú thích? mecca-power/5001.md:2801: MC1125BD    1125      900              1000      800            8M33G900/6^  CN      223.5       8L        26.14         Elec  5000*1800*2000  7650
+  chú thích? mecca-power/5001.md:2807: MC1150BD    1250      1000             1138      910  12M26G1000/6^          CN      259.5       12L       31.8          Elec  5000*1800*2000  7650
+  chú thích? mecca-power/5001.md:2823: MC2188BD    2188      1750             2000  1600     16M33G1750/6^          CN      434.2       16L       52.3          ECU   5300*2300*3350  11500
+  chú thích? mecca-power/5001.md:2827: MC2750BD    2750      2200             2500  2000     20M33G2200/6^          CN      552.1       20L       65.4          ECU   5500*2300*2750  15800
+  chú thích? mecca-power/5001.md:2831: MC3125BD    3125      2500             2813  2250     12M55G2500/6^          CN      583.9       12L       65.65         ECU   5800*2300*3350  13000
+  chú thích? mecca-power/5001.md:2839: MC4125BD    4125      3300             3750  3000     16M55G3300/6^          CN      794.4       16L       87.5          ECU   6290*2300*3750  14950
+  chú thích? mecca-power/5001.md:2874:     MC188WC     188       150  170        136  WP6D167E200^     CN      35.36       6L        6.75          M      2500*1150*1550  1660
+  chú thích? mecca-power/5001.md:2926:     MC2250WC    2250  1800     2000   1600     16M33D1980E310^  CN      485.36      16V       52.3          ECU    5200*2500*2700  13500
+  chú thích? mecca-power/5001.md:2930:     MC2500WC    2500  2000     2250   1800     20M33D2210E310^  CN      477.5       20V       65.4          ECU    5800*2300*2700  13000
+  chú thích? mecca-power/5001.md:2936:     MC3000WC    3000  2400     2750   2200     12M55D2700E310^  CN      515.02      12V       65.65         ECU    6660*2260*2800  14000
+  chú thích? mecca-power/5001.md:2944:     MC4125WC    4125  3300     3750   3000     16M55D3600E310^  CN      783.01      16V       87.5          ECU    6660*2260*2800  14000
+  chú thích? mecca-power/5001.md:3005: MC1125WC    1125          900  1000      800  8M33D1012E311^  CN      245.24      8V        26.14         ECU    5000*1800*2000  7650
+
+### 6M31G1000/5^ (2 dòng) → 6M31G1000/5 (3 dòng, 3 NCC)
+  dùng: weichai-heavy-machinery n106 b5 r3 | | WPG1000*7^ | 1500 | 1000/800 | / | 6M31G1000/5^ | 6 | 149×177 | Electronic control | Non-Road Emission Exempt
+  chú thích? weichai-heavy-machinery/106.md:270: WPG1000*7^
+  chú thích? weichai-heavy-machinery/106.md:278: 6M31G1000/5^
+  chú thích? weichai-heavy-machinery/106.md:350: 6M31G800/6^
+  dùng: weichai-power n134 b27 r3 | | WPG1000*7^ | 1500 | 1000/800 | / | 6M31G1000/5^ | 6 | 149×177 | Electronic control | Non-Road Emission Exempt
+  chú thích? weichai-power/134.md:375: WPG1000*7^
+  chú thích? weichai-power/134.md:383: 6M31G1000/5^
+  chú thích? weichai-power/134.md:455: 6M31G800/6^
+
+### 6M31G800/6^ (2 dòng) → 6M31G800/6 (1 dòng, 1 NCC)
+  dùng: weichai-heavy-machinery n106 b5 r7 | | WPG800*76 | 1800 | 1000/800 | / | 6M31G800/6^ | 6 | 149×177 | Electronic control | Non-Road Emission Exempt
+  chú thích? weichai-heavy-machinery/106.md:270: WPG1000*7^
+  chú thích? weichai-heavy-machinery/106.md:278: 6M31G1000/5^
+  chú thích? weichai-heavy-machinery/106.md:350: 6M31G800/6^
+  dùng: weichai-power n134 b27 r7 | | WPG800*76 | 1800 | 1000/800 | / | 6M31G800/6^ | 6 | 149×177 | Electronic control | Non-Road Emission Exempt
+  chú thích? weichai-power/134.md:375: WPG1000*7^
+  chú thích? weichai-power/134.md:383: 6M31G1000/5^
+  chú thích? weichai-power/134.md:455: 6M31G800/6^
+
+### 8M33D1012E311^ (2 dòng) → 8M33D1012E311 (11 dòng, 7 NCC)
+  dùng: aosif n123 b21 r19 | | AW1125 | 1000/800 | 1125/900 | 8M33D1012E311^ | 218.9 | 12V | 31.8 |
+  dùng: mecca-power n5001 b48 r23 | | MC1125WC | 800 | 1000 | 900 | 1125 | 8M33D1012E311^ |
+  chú thích? mecca-power/5001.md:2660:     MC188BD     188       150  168       135  6M11G188/5^    CN      32.6        6L        6.8           Elec   2500*1150*1650  1900
+  chú thích? mecca-power/5001.md:2692:     MC1100BD    1100      880  1000      800  8M33G1100/5^   CN      214         8L        26.14         ECU    5000*1800*2000  7650
+  chú thích? mecca-power/5001.md:2714:     MC2250BD    2250  1800     2063  1650     16M33G2250/5^  CN      428.6       16L       52.3          ECU    6520*2210*2500  13800
+  chú thích? mecca-power/5001.md:2718:     MC2500BD    2500  2000     2250  1800     20M33G2500/5^  CN      466.4       20L       65.4          ECU    6620*2210*2500  14000
+  chú thích? mecca-power/5001.md:2724:     MC3000BD    3000  2400     2750  2200     12M55G3000/5^  CN      557.2       12L       65.7          ECU    6620*2260*2800  16500
+  chú thích? mecca-power/5001.md:2732:     MC4125BD    4125  3300     3750  3000     16M55G4000/5^  CN      755.1       16L       87.5          ECU    6660*2260*2800  14000
+  chú thích? mecca-power/5001.md:2771: MC220BD     220       176              200       160            6M11G176/6^  CN      43.7        6L        6.75          Elec  2500*1150*1650  1900
+  chú thích? mecca-power/5001.md:2801: MC1125BD    1125      900              1000      800            8M33G900/6^  CN      223.5       8L        26.14         Elec  5000*1800*2000  7650
+  chú thích? mecca-power/5001.md:2807: MC1150BD    1250      1000             1138      910  12M26G1000/6^          CN      259.5       12L       31.8          Elec  5000*1800*2000  7650
+  chú thích? mecca-power/5001.md:2823: MC2188BD    2188      1750             2000  1600     16M33G1750/6^          CN      434.2       16L       52.3          ECU   5300*2300*3350  11500
+  chú thích? mecca-power/5001.md:2827: MC2750BD    2750      2200             2500  2000     20M33G2200/6^          CN      552.1       20L       65.4          ECU   5500*2300*2750  15800
+  chú thích? mecca-power/5001.md:2831: MC3125BD    3125      2500             2813  2250     12M55G2500/6^          CN      583.9       12L       65.65         ECU   5800*2300*3350  13000
+  chú thích? mecca-power/5001.md:2839: MC4125BD    4125      3300             3750  3000     16M55G3300/6^          CN      794.4       16L       87.5          ECU   6290*2300*3750  14950
+  chú thích? mecca-power/5001.md:2874:     MC188WC     188       150  170        136  WP6D167E200^     CN      35.36       6L        6.75          M      2500*1150*1550  1660
+  chú thích? mecca-power/5001.md:2926:     MC2250WC    2250  1800     2000   1600     16M33D1980E310^  CN      485.36      16V       52.3          ECU    5200*2500*2700  13500
+  chú thích? mecca-power/5001.md:2930:     MC2500WC    2500  2000     2250   1800     20M33D2210E310^  CN      477.5       20V       65.4          ECU    5800*2300*2700  13000
+  chú thích? mecca-power/5001.md:2936:     MC3000WC    3000  2400     2750   2200     12M55D2700E310^  CN      515.02      12V       65.65         ECU    6660*2260*2800  14000
+  chú thích? mecca-power/5001.md:2944:     MC4125WC    4125  3300     3750   3000     16M55D3600E310^  CN      783.01      16V       87.5          ECU    6660*2260*2800  14000
+  chú thích? mecca-power/5001.md:3005: MC1125WC    1125          900  1000      800  8M33D1012E311^  CN      245.24      8V        26.14         ECU    5000*1800*2000  7650
+
+### 8M33G900/6^ (2 dòng) → 8M33G900/6 (6 dòng, 6 NCC)
+  dùng: mecca-power n5001 b46 r23 | | MC1125BD | 800 | 1000 | 900 | 1125 | 8M33G900/6^ |
+  chú thích? mecca-power/5001.md:2660:     MC188BD     188       150  168       135  6M11G188/5^    CN      32.6        6L        6.8           Elec   2500*1150*1650  1900
+  chú thích? mecca-power/5001.md:2692:     MC1100BD    1100      880  1000      800  8M33G1100/5^   CN      214         8L        26.14         ECU    5000*1800*2000  7650
+  chú thích? mecca-power/5001.md:2714:     MC2250BD    2250  1800     2063  1650     16M33G2250/5^  CN      428.6       16L       52.3          ECU    6520*2210*2500  13800
+  chú thích? mecca-power/5001.md:2718:     MC2500BD    2500  2000     2250  1800     20M33G2500/5^  CN      466.4       20L       65.4          ECU    6620*2210*2500  14000
+  chú thích? mecca-power/5001.md:2724:     MC3000BD    3000  2400     2750  2200     12M55G3000/5^  CN      557.2       12L       65.7          ECU    6620*2260*2800  16500
+  chú thích? mecca-power/5001.md:2732:     MC4125BD    4125  3300     3750  3000     16M55G4000/5^  CN      755.1       16L       87.5          ECU    6660*2260*2800  14000
+  chú thích? mecca-power/5001.md:2771: MC220BD     220       176              200       160            6M11G176/6^  CN      43.7        6L        6.75          Elec  2500*1150*1650  1900
+  chú thích? mecca-power/5001.md:2801: MC1125BD    1125      900              1000      800            8M33G900/6^  CN      223.5       8L        26.14         Elec  5000*1800*2000  7650
+  chú thích? mecca-power/5001.md:2807: MC1150BD    1250      1000             1138      910  12M26G1000/6^          CN      259.5       12L       31.8          Elec  5000*1800*2000  7650
+  chú thích? mecca-power/5001.md:2823: MC2188BD    2188      1750             2000  1600     16M33G1750/6^          CN      434.2       16L       52.3          ECU   5300*2300*3350  11500
+  chú thích? mecca-power/5001.md:2827: MC2750BD    2750      2200             2500  2000     20M33G2200/6^          CN      552.1       20L       65.4          ECU   5500*2300*2750  15800
+  chú thích? mecca-power/5001.md:2831: MC3125BD    3125      2500             2813  2250     12M55G2500/6^          CN      583.9       12L       65.65         ECU   5800*2300*3350  13000
+  chú thích? mecca-power/5001.md:2839: MC4125BD    4125      3300             3750  3000     16M55G3300/6^          CN      794.4       16L       87.5          ECU   6290*2300*3750  14950
+  chú thích? mecca-power/5001.md:2874:     MC188WC     188       150  170        136  WP6D167E200^     CN      35.36       6L        6.75          M      2500*1150*1550  1660
+  chú thích? mecca-power/5001.md:2926:     MC2250WC    2250  1800     2000   1600     16M33D1980E310^  CN      485.36      16V       52.3          ECU    5200*2500*2700  13500
+  chú thích? mecca-power/5001.md:2930:     MC2500WC    2500  2000     2250   1800     20M33D2210E310^  CN      477.5       20V       65.4          ECU    5800*2300*2700  13000
+  chú thích? mecca-power/5001.md:2936:     MC3000WC    3000  2400     2750   2200     12M55D2700E310^  CN      515.02      12V       65.65         ECU    6660*2260*2800  14000
+  chú thích? mecca-power/5001.md:2944:     MC4125WC    4125  3300     3750   3000     16M55D3600E310^  CN      783.01      16V       87.5          ECU    6660*2260*2800  14000
+  chú thích? mecca-power/5001.md:3005: MC1125WC    1125          900  1000      800  8M33D1012E311^  CN      245.24      8V        26.14         ECU    5000*1800*2000  7650
+  dùng: voltgent n110 b9 r68 | | VB1050-6 | 1050 | 840 | 950 | 760 | Baudouin | 8M33G900/6^ | [EN] [RU] [ES] [PT]
+
+### WP6D180E201^ (2 dòng) → WP6D180E201 (16 dòng, 15 NCC)
+  dùng: jet-power n112 b11 r10 | | WP-188 | 188 | 150 | 181 | 145 | WP6D180E201^ | 6L | Electronic | 105*130 | 6.75 | 36.7 | JET274F
+  dùng: waeta-fujian n107 b13 r10 | | WTA-W188 | 188 | 150 | / | / | WP6D180E201^ | 6 L | 6.75 | Wechai Series.xlsx
+
+### KTA50–G3 (4 dòng) → KTA50G3 (201 dòng, 101 NCC)
+  dùng: powerlink-shanghai n2001 b17 rundefined | 
+  chú thích? powerlink-shanghai/2001.md:499: Hybrid System – AI Computing Power Station
+  chú thích? powerlink-shanghai/2001.md:500: Hybrid System – Mine Camp
+  dùng: powerlink-shanghai n2001 b17 rundefined | 
+  dùng: powerlink-shanghai n2001 b17 rundefined | 
+  dùng: powerlink-shanghai n2001 b17 rundefined | 
+
+### 12V4000G23F★ (2 dòng) → 12V4000G23F (18 dòng, 13 NCC)
+  dùng: tellhow-power n107 b6 r6 | | THCM1320 | 12V4000G23F ★ | 1320 | 1450 | 12192X2438X2896 | 23000 | 86 | 78 | 2000L
+  chú thích? tellhow-power/107.md:99: Those marked with ★ are optional engines provided with the national stage-III emission report
+  dùng: tellhow-power n126 b11 r4 | | THHM1320 | 1320 | 1450 | 6062×2252×2543 | 14740 | 12V4000G23F ★ | 12/V | 57.2 | 189 | 260 | 520
+  chú thích? tellhow-power/126.md:97: The engines marked with * meet national stage-III emission standard. Those marked with ★ are optional engines provided with the national stage-III emission report
+
+### 12V4000G63F★ (2 dòng) → 12V4000G63F (13 dòng, 13 NCC)
+  dùng: tellhow-power n107 b6 r7 | | THCM1470 | 12V4000G63F ★ | 1470 | 1610 | 12192X2438X2896 | 23000 | 86 | 78 | 2000L
+  chú thích? tellhow-power/107.md:99: Those marked with ★ are optional engines provided with the national stage-III emission report
+  dùng: tellhow-power n126 b11 r5 | | THHM1470 | 1470 | 1610 | 6062×2252×2543 | 14990 | 12V4000G63F ★ | 12/V | 57.2 | 193 | 260 | 570
+  chú thích? tellhow-power/126.md:97: The engines marked with * meet national stage-III emission standard. Those marked with ★ are optional engines provided with the national stage-III emission report
+
+### 16V4000G23F★ (2 dòng) → 16V4000G23F (14 dòng, 13 NCC)
+  dùng: tellhow-power n107 b6 r8 | | THCM1670 | 16V4000G23F ★ | 1670 | 1800 | 12192X2438X2896 | 25500 | 88 | 78 | 2000L
+  chú thích? tellhow-power/107.md:99: Those marked with ★ are optional engines provided with the national stage-III emission report
+  dùng: tellhow-power n126 b11 r6 | | THHM1670 | 1670 | 1800 | 6539×2334×2583 | 16680 | 16V4000G23F ★ | 16/V | 76.3 | 192 | 300 | 685
+  chú thích? tellhow-power/126.md:97: The engines marked with * meet national stage-III emission standard. Those marked with ★ are optional engines provided with the national stage-III emission report
+
+### 16V4000G63F★ (2 dòng) → 16V4000G63F (13 dòng, 13 NCC)
+  dùng: tellhow-power n107 b6 r9 | | THCM1800 | 16V4000G63F ★ | 1800 | 2000 | 12192X2438X2896 | 26000 | 88 | 78 | 2000L
+  chú thích? tellhow-power/107.md:99: Those marked with ★ are optional engines provided with the national stage-III emission report
+  dùng: tellhow-power n126 b11 r7 | | THHM1800 | 1800 | 2000 | 6539×2334×2583 | 16680 | 16V4000G63F ★ | 16/V | 76.3 | 191 | 300 | 730
+  chú thích? tellhow-power/126.md:97: The engines marked with * meet national stage-III emission standard. Those marked with ★ are optional engines provided with the national stage-III emission report
+
+### 20V4000G23F★ (2 dòng) → 20V4000G23F (15 dòng, 14 NCC)
+  dùng: tellhow-power n107 b6 r10 | | THCM2000 | 20V4000G23F ★ | 2000 | 2200 | 12192X2438X2896 | 30100 | 86 | 80 | 2000L
+  chú thích? tellhow-power/107.md:99: Those marked with ★ are optional engines provided with the national stage-III emission report
+  dùng: tellhow-power n126 b11 r8 | | THHM2000 | 2000 | 2200 | 7171×2555×2706 | 19450 | 20V4000G23F ★ | 20/V | 95.4 | 195 | 390 | 795
+  chú thích? tellhow-power/126.md:97: The engines marked with * meet national stage-III emission standard. Those marked with ★ are optional engines provided with the national stage-III emission report
+
+### 20V4000G63F★ (2 dòng) → 20V4000G63F (15 dòng, 14 NCC)
+  dùng: tellhow-power n107 b6 r11 | | THCM2240 | 20V4000G63F ★ | 2240 | 2460 | 12192X2438X2896 | 30450 | 86 | 80 | 2000L
+  chú thích? tellhow-power/107.md:99: Those marked with ★ are optional engines provided with the national stage-III emission report
+  dùng: tellhow-power n126 b11 r9 | | THHM2240 | 2240 | 2460 | 7171×2555×2706 | 20000 | 20V4000G63F ★ | 20/V | 95.4 | 193 | 390 | 825
+  chú thích? tellhow-power/126.md:97: The engines marked with * meet national stage-III emission standard. Those marked with ★ are optional engines provided with the national stage-III emission report
+
+### 20V4000G63LF★ (2 dòng) → 20V4000G63LF (12 dòng, 12 NCC)
+  dùng: tellhow-power n107 b6 r12 | | THCM2400 | 20V4000G63LF ★ | 2400 | 2640 | 12192X2438X2896 | 31050 | 86 | 80 | 2000L
+  chú thích? tellhow-power/107.md:99: Those marked with ★ are optional engines provided with the national stage-III emission report
+  dùng: tellhow-power n126 b11 r10 | | THHM2400 | 2400 | 2640 | 7271×2555×2706 | 20800 | 20V4000G63LF ★ | 20/V | 95.4 | 192 | 390 | 850
+  chú thích? tellhow-power/126.md:97: The engines marked with * meet national stage-III emission standard. Those marked with ★ are optional engines provided with the national stage-III emission report
+
+### 403A15G2★ (2 dòng) → 403A15G2 (104 dòng, 61 NCC)
+  dùng: ettes-power n146 b50 r2 | | EP-17 | 12 | 15 | 13 | 17 | 403A-15G2★ | TBA | 3.L | TBA | 1250*500*1100 | 370 |
+  chú thích? ettes-power/146.md:213: • Models with mark of "★" means the engine made by Perkins China, other models are made in UK.
+  chú thích? ettes-power/146.md:259: • Models with mark of " ★" means the engine made by Perkins China, other models are made in UK.
+  dùng: ettes-power n146 b51 r2 | | EP-20 | 14 | 18 | 16 | 20 | 403A-15G2 ★ | TBA | 3.L | TBA | 1300*690*1320 | 360 |
+
+### TAD1351GE★ (2 dòng) → TAD1351GE (43 dòng, 30 NCC)
+  dùng: tellhow-power n115 b7 r7 | | THLV260 | 260 | 286 | 3060×1275×1615 | 3000 | TAD1351GE ★ | 6/L | 12.78 | 200 | 36 | 44
+  chú thích? tellhow-power/115.md:103: Those marked with ★ are optional engines provided with the national stage-III emission report
+  chú thích? tellhow-power/115.md:134: Those marked with ★ are optional engines provided with the national stage-III emission report
+  dùng: tellhow-power n115 b8 r9 | | THLV273 | 273 | 300 | 3060×1275×1615 | 3000 | TAD1351GE ★ | 6/L | 12.78 | 200 | 36 | 44
+
+### TAD1354GE★ (2 dòng) → TAD1354GE (34 dòng, 25 NCC)
+  dùng: tellhow-power n115 b7 r10 | | THLV300 | 300 | 330 | 3060×1275×1615 | 3000 | TAD1354GE ★ | 6/L | 12.78 | 196 | 36 | 44
+  chú thích? tellhow-power/115.md:103: Those marked with ★ are optional engines provided with the national stage-III emission report
+  chú thích? tellhow-power/115.md:134: Those marked with ★ are optional engines provided with the national stage-III emission report
+  dùng: tellhow-power n115 b8 r10 | | THLV320 | 320 | 350 | 3060×1275×1615 | 3000 | TAD1354GE ★ | 6/L | 12.78 | 196 | 36 | 44
+
+### TAD1355GE★ (2 dòng) → TAD1355GE (36 dòng, 27 NCC)
+  dùng: tellhow-power n115 b7 r12 | | THLV330 | 330 | 360 | 3060×1275×1615 | 3200 | TAD1355GE ★ | 6/L | 12.78 | 192 | 36 | 44
+  chú thích? tellhow-power/115.md:103: Those marked with ★ are optional engines provided with the national stage-III emission report
+  chú thích? tellhow-power/115.md:134: Those marked with ★ are optional engines provided with the national stage-III emission report
+  dùng: tellhow-power n115 b8 r12 | | THLV323 | 323 | 353 | 3060×1275×1615 | 3200 | TAD1355GE ★ | 6/L | 12.78 | 192 | 36 | 44
+
+### TAD1650GE★ (2 dòng) → TAD1650GE (40 dòng, 29 NCC)
+  dùng: tellhow-power n115 b7 r14 | | THLV370 | 370 | 407 | 3102×1238×1972 | 3500 | TAD1650GE ★ | 6/L | 16.12 | 202 | 48 | 60
+  chú thích? tellhow-power/115.md:103: Those marked with ★ are optional engines provided with the national stage-III emission report
+  chú thích? tellhow-power/115.md:134: Those marked with ★ are optional engines provided with the national stage-III emission report
+  dùng: tellhow-power n115 b8 r17 | | THLV413 | 413 | 454 | 3102×1238×1972 | 3500 | TAD1650GE ★ | 6/L | 16.12 | 202 | 48 | 60
+
+### TAD1651GE★ (2 dòng) → TAD1651GE (41 dòng, 29 NCC)
+  dùng: tellhow-power n115 b7 r16 | | THLV400 | 400 | 440 | 3102×1238×1972 | 3500 | TAD1651GE ★ | 6/L | 16.12 | 198 | 48 | 60
+  chú thích? tellhow-power/115.md:103: Those marked with ★ are optional engines provided with the national stage-III emission report
+  chú thích? tellhow-power/115.md:134: Those marked with ★ are optional engines provided with the national stage-III emission report
+  dùng: tellhow-power n115 b8 r19 | | THLV464 | 464 | 513 | 3102×1238×1972 | 3500 | TAD1651GE ★ | 6/L | 16.12 | 198 | 48 | 60
+
+### TAD851GE★ (2 dòng) → TAD851GE (10 dòng, 5 NCC)
+  dùng: tellhow-power n115 b7 r1 | | THLV200 | 200 | 220 | 2740×1372×1706 | 1930 | TAD851GE ★ | 6/L | 7.7 | 210 | 27 | 41
+  chú thích? tellhow-power/115.md:103: Those marked with ★ are optional engines provided with the national stage-III emission report
+  chú thích? tellhow-power/115.md:134: Those marked with ★ are optional engines provided with the national stage-III emission report
+  dùng: tellhow-power n115 b8 r1 | | THLV207 | 207 | 228 | 2740×1372×1706 | 1930 | TAD851GE ★ | 6/L | 7.7 | 210 | 27 | 17
+
+### TAD852GE★ (2 dòng) → TAD852GE (9 dòng, 6 NCC)
+  dùng: tellhow-power n115 b7 r3 | | THLV230 | 231 | 254 | 2740×1372×1706 | 1930 | TAD852GE ★ | 6/L | 7.7 | 198 | 27 | 41
+  chú thích? tellhow-power/115.md:103: Those marked with ★ are optional engines provided with the national stage-III emission report
+  chú thích? tellhow-power/115.md:134: Those marked with ★ are optional engines provided with the national stage-III emission report
+  dùng: tellhow-power n115 b8 r4 | | THLV230 | 230 | 253 | 2740×1372×1706 | 1930 | TAD852GE ★ | 6/L | 7.7 | 198 | 27 | 41
+
+### TWD1653GE★ (2 dòng) → TWD1653GE (33 dòng, 29 NCC)
+  dùng: tellhow-power n115 b7 r19 | | THLV500 | 500 | 550 | 3258×1390×1985 | 4230 | TWD1653GE ★ | 6/L | 16.12 | 208 | 48 | 118
+  chú thích? tellhow-power/115.md:103: Those marked with ★ are optional engines provided with the national stage-III emission report
+  chú thích? tellhow-power/115.md:134: Those marked with ★ are optional engines provided with the national stage-III emission report
+  dùng: tellhow-power n115 b7 r21 | | THLV520 | 520 | 574 | 3621×1390×1985 | 4500 | TWD1653GE ★ | 6/L | 16.12 | 208 | 48 | 118
+
+### 1104A44TG1★ (1 dòng) → 1104A44TG1 (137 dòng, 80 NCC)
+  dùng: ettes-power n146 b50 r11 | | EP-72 | 52 | 65 | 58 | 72 | 1104A-44TG1★ | TBA | 4.L | TBA | 1760*760*1380 | 900 |
+  chú thích? ettes-power/146.md:213: • Models with mark of "★" means the engine made by Perkins China, other models are made in UK.
+  chú thích? ettes-power/146.md:259: • Models with mark of " ★" means the engine made by Perkins China, other models are made in UK.
+
+### 1104A44TG2★ (1 dòng) → 1104A44TG2 (149 dòng, 86 NCC)
+  dùng: ettes-power n146 b50 r12 | | EP-88 | 64 | 80 | 70 | 88 | 1104A-44TG2★ | TBA | 4.L | TBA | 1760*760*1380 | 900 |
+  chú thích? ettes-power/146.md:213: • Models with mark of "★" means the engine made by Perkins China, other models are made in UK.
+  chú thích? ettes-power/146.md:259: • Models with mark of " ★" means the engine made by Perkins China, other models are made in UK.
+
+### 1104C44TAG2★ (1 dòng) → 1104C44TAG2 (155 dòng, 85 NCC)
+  dùng: ettes-power n146 b50 r13 | | EP-110 | 80 | 100 | 88 | 110 | 1104C-44TAG2★ | TBA | 4.L | TBA | 1760*760*1380 | 900 |
+  chú thích? ettes-power/146.md:213: • Models with mark of "★" means the engine made by Perkins China, other models are made in UK.
+  chú thích? ettes-power/146.md:259: • Models with mark of " ★" means the engine made by Perkins China, other models are made in UK.
+
+### 1106A70TAG2★ (1 dòng) → 1106A70TAG2 (144 dòng, 83 NCC)
+  dùng: ettes-power n146 b50 r17 | | EP-165 | 120 | 150 | 132 | 165 | 1106A-70TAG2★ | TBA | 6.L | TBA | 2410*930*1650 | 1600 |
+  chú thích? ettes-power/146.md:213: • Models with mark of "★" means the engine made by Perkins China, other models are made in UK.
+  chú thích? ettes-power/146.md:259: • Models with mark of " ★" means the engine made by Perkins China, other models are made in UK.
+
+### 1106A70TAG3★ (1 dòng) → 1106A70TAG3 (152 dòng, 79 NCC)
+  dùng: ettes-power n146 b50 r18 | | EP-200 | 144 | 180 | 160 | 200 | 1106A-70TAG3★ | TBA | 6.L | TBA | 2550*930*1670 | 1800 |
+  chú thích? ettes-power/146.md:213: • Models with mark of "★" means the engine made by Perkins China, other models are made in UK.
+  chú thích? ettes-power/146.md:259: • Models with mark of " ★" means the engine made by Perkins China, other models are made in UK.
+
+### 1106A70TAG4★ (1 dòng) → 1106A70TAG4 (105 dòng, 80 NCC)
+  dùng: ettes-power n146 b50 r19 | | EP-220 | 160 | 200 | 176 | 220 | 1106A-70TAG4★ | TBA | 6.L | TBA | 2550*930*1670 | 1860 |
+  chú thích? ettes-power/146.md:213: • Models with mark of "★" means the engine made by Perkins China, other models are made in UK.
+  chú thích? ettes-power/146.md:259: • Models with mark of " ★" means the engine made by Perkins China, other models are made in UK.
+
+### 1106A70TG1★ (1 dòng) → 1106A70TG1 (140 dòng, 76 NCC)
+  dùng: ettes-power n146 b50 r14 | | EP-150 | 108 | 135 | 120 | 150 | 1106A-70TG1★ | TBA | 6.L | TBA | 2410*930*1650 | 1550 |
+  chú thích? ettes-power/146.md:213: • Models with mark of "★" means the engine made by Perkins China, other models are made in UK.
+  chú thích? ettes-power/146.md:259: • Models with mark of " ★" means the engine made by Perkins China, other models are made in UK.
+
+### 12M55G6D3/5^ (1 dòng) → 12M55G6D3/5 (8 dòng, 5 NCC)
+  dùng: baifa-power n101 b3 r47 | | BF-BD3000-3 | 3000 | 2750 | 12M55G6D3/5^ | | CHINA STAGE3 | CHINA
+
+### 16M33G2250/5^ (1 dòng) → 16M33G2250/5 (15 dòng, 11 NCC)
+  dùng: landtop-fuzhou n122 b18 r38 | | LTP2269B | 2269 | 1815 | 2063 | 1650 | ECU | 16M33G2250/5^ | LTP454S -1650
+
+### 16M33G8D3/5^ (1 dòng) → 16M33G8D3/5 (10 dòng, 6 NCC)
+  dùng: baifa-power n101 b3 r42 | | BF-BD2250-3 | 2250 | 2000 | 16M33G8D3/5^ | | CHINA STAGE3 | CHINA
+
+### 16M55G6D3/5^ (1 dòng) → 16M55G6D3/5 (6 dòng, 4 NCC)
+  dùng: baifa-power n101 b3 r51 | | BF-BD4100-3 | 4125 | 3750 | 16M55G6D3/5^ | | CHINA STAGE3 | CHINA
+
+### 20M33G4D3/5^ (1 dòng) → 20M33G4D3/5 (7 dòng, 5 NCC)
+  dùng: baifa-power n101 b3 r44 | | BF-BD2500-3 | 2500 | 2250 | 20M33G4D3/5^ | | CHINA STAGE3 | CHINA
+
+### 403A11G1★ (1 dòng) → 403A11G1 (65 dòng, 48 NCC)
+  dùng: ettes-power n146 b50 r0 | | EP-10 | 7 | 9 | 8 | 10 | 403A-11G1★ | TBA | 3.L | TBA | 1150*500*1100 | 280 |
+  chú thích? ettes-power/146.md:213: • Models with mark of "★" means the engine made by Perkins China, other models are made in UK.
+  chú thích? ettes-power/146.md:259: • Models with mark of " ★" means the engine made by Perkins China, other models are made in UK.
+
+### 403A15G1★ (1 dòng) → 403A15G1 (78 dòng, 56 NCC)
+  dùng: ettes-power n146 b50 r1 | | EP-15 | 10 | 13 | 11 | 15 | 403A-15G1★ | TBA | 3.L | TBA | 1250*500*1100 | 350 |
+  chú thích? ettes-power/146.md:213: • Models with mark of "★" means the engine made by Perkins China, other models are made in UK.
+  chú thích? ettes-power/146.md:259: • Models with mark of " ★" means the engine made by Perkins China, other models are made in UK.
+
+### 403D11G★ (1 dòng) → 403D11G (116 dòng, 59 NCC)
+  dùng: ettes-power n146 b51 r0 | | EP-12 | 9 | 11 | 10 | 12 | 403D-11G ★ | TBA | 3.L | TBA | 1300*690*1320 | 280 |
+  chú thích? ettes-power/146.md:213: • Models with mark of "★" means the engine made by Perkins China, other models are made in UK.
+  chú thích? ettes-power/146.md:259: • Models with mark of " ★" means the engine made by Perkins China, other models are made in UK.
+
+### 403D15G★ (1 dòng) → 403D15G (123 dòng, 61 NCC)
+  dùng: ettes-power n146 b51 r1 | | EP-18 | 13 | 16 | 14 | 18 | 403D-15G ★ | TBA | 3.L | TBA | 1300*690*1320 | 350 |
+  chú thích? ettes-power/146.md:213: • Models with mark of "★" means the engine made by Perkins China, other models are made in UK.
+  chú thích? ettes-power/146.md:259: • Models with mark of " ★" means the engine made by Perkins China, other models are made in UK.
+
+### 404A22G1★ (1 dòng) → 404A22G1 (82 dòng, 61 NCC)
+  dùng: ettes-power n146 b50 r3 | | EP-22 | 16 | 20 | 18 | 22 | 404A22G1★ | TBA | 4.L | TBA | 1370*880*1450 | 430 |
+  chú thích? ettes-power/146.md:213: • Models with mark of "★" means the engine made by Perkins China, other models are made in UK.
+  chú thích? ettes-power/146.md:259: • Models with mark of " ★" means the engine made by Perkins China, other models are made in UK.
+
+### 404D22G★ (1 dòng) → 404D22G (122 dòng, 64 NCC)
+  dùng: ettes-power n146 b51 r3 | | EP-26 | 19 | 24 | 21 | 26 | 404D-22G ★ | TBA | 4.L | TBA | 1470*690*1320 | 430 |
+  chú thích? ettes-power/146.md:213: • Models with mark of "★" means the engine made by Perkins China, other models are made in UK.
+  chú thích? ettes-power/146.md:259: • Models with mark of " ★" means the engine made by Perkins China, other models are made in UK.
+
+### 404D22TG★ (1 dòng) → 404D22TG (89 dòng, 53 NCC)
+  dùng: ettes-power n146 b50 r4 | | EP-30 | 22 | 27 | 24 | 30 | 404D-22TG★ | TBA | 4.L | TBA | 1503*900*1200 | 680 |
+  chú thích? ettes-power/146.md:213: • Models with mark of "★" means the engine made by Perkins China, other models are made in UK.
+  chú thích? ettes-power/146.md:259: • Models with mark of " ★" means the engine made by Perkins China, other models are made in UK.
+
+### 4135D—1 (1 dòng) → 4135D1 (5 dòng, 4 NCC)
+  dùng: zhengdian-zhengzhou n102 b1 r0 | | 50GF | 55 | 50 | 99/90 | 1380 | 2300×800×1350 | 4135D—1 | 64.7/58.8 | 4 | 135 | 140 | 8 | 16.5:1 | 25.2 | 231.2
+
+### 4HTAA43*G34 (1 dòng) → 4HTAA43G34 (19 dòng, 16 NCC)
+  dùng: frs-shenyang n106 b5 r23 | | FRS-80SP | 80 | 88 | 1930*943*1196 | 1078 | 4HTAA4.3*G34 | 95/105 | 4/L | 105*124 | 4.3 | 195 | 13
+
+### 6CT83–GM115 (1 dòng) → 6CT83GM115 (10 dòng, 8 NCC)
+  dùng: fengfa-taizhou n101 b0 r6 | | CCFJ100JW | 100 | 125 | 6CT8.3–GM115 | 114×135 | 6 | 8.3 | 17.3:1 | 24.94 | 2110*860*1360 | 1650
+
+### 8M33D975E310^ (1 dòng) → 8M33D975E310 (14 dòng, 11 NCC)
+  dùng: chuangyuan-zhongshan n103 b3 r47 | | 20 | 800 | 400 | 1500 | 0.8 | 50 | 4200*1800*2300 | 7200 | 8M33D975E310^ | 8/150/185 | 26.14
+
+### 8M33G6D3/5^ (1 dòng) → 8M33G6D3/5 (9 dòng, 6 NCC)
+  dùng: baifa-power n101 b3 r34 | | BF-BD1100-3 | 1100 | 1000 | 8M33G6D3/5^ | | CHINA STAGE3 | CHINA
+
+### KTA50G15× (1 dòng) → KTA50G15 (23 dòng, 19 NCC)
+  dùng: tellhow-power n103 b2 r20 | | THCC1350 | KTA50-G15× | 1350 | 1500 | 12192×2438×2896 | 20200 | 88 | 80 | 2000
+  chú thích? tellhow-power/103.md:134: ×
+  chú thích? tellhow-power/103.md:136: ×
+
+### QSNTG4× (1 dòng) → QSNTG4 (2 dòng, 2 NCC)
+  dùng: tellhow-power n102 b1 r24 | | THSC360 | QSNT-G4× | 360 | 400 | 4600×1720×2502 | 5385 | 83 | 73 | 850
+  chú thích? tellhow-power/102.md:150: ×
+  chú thích? tellhow-power/102.md:152: ×
+
+### TAD853GE★ (1 dòng) → TAD853GE (3 dòng, 3 NCC)
+  dùng: tellhow-power n115 b8 r6 | | THLV250 | 250 | 275 | 2740×1372×1706 | 1930 | TAD853GE ★ | 6/L | 7.7 | 189 | 25 | 17
+  chú thích? tellhow-power/115.md:103: Those marked with ★ are optional engines provided with the national stage-III emission report
+  chú thích? tellhow-power/115.md:134: Those marked with ★ are optional engines provided with the national stage-III emission report
+
+### TWD1645GE★ (1 dòng) → TWD1645GE (42 dòng, 29 NCC)
+  dùng: tellhow-power n115 b7 r22 | | THLV560 | 560 | 616 | 3621×1390×1985 | 4700 | TWD1645GE ★ | 6/L | 16.12 | 191 | 48 | 160
+  chú thích? tellhow-power/115.md:103: Those marked with ★ are optional engines provided with the national stage-III emission report
+  chú thích? tellhow-power/115.md:134: Those marked with ★ are optional engines provided with the national stage-III emission report
+
+### TWD1652GE★ (1 dòng) → TWD1652GE (31 dòng, 27 NCC)
+  dùng: tellhow-power n115 b7 r18 | | THLV480 | 480 | 529 | 3258×1390×1985 | 4000 | TWD1652GE ★ | 6/L | 16.12 | 210 | 48 | 118
+  chú thích? tellhow-power/115.md:103: Those marked with ★ are optional engines provided with the national stage-III emission report
+  chú thích? tellhow-power/115.md:134: Those marked with ★ are optional engines provided with the national stage-III emission report
