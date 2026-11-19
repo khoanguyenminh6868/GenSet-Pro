@@ -7,9 +7,9 @@
    "sups": 17
   },
   "bảng không cho bản ghi nào": {
-   "items": 3191,
-   "tables": 3191,
-   "sups": 206
+   "items": 3110,
+   "tables": 3110,
+   "sups": 198
   },
   "số vô lý so với công suất": {
    "items": 139,
@@ -57,9 +57,9 @@
    "sups": 1
   },
   "một ô ghi hai mã": {
-   "items": 1,
-   "tables": 1,
-   "sups": 1
+   "items": 25,
+   "tables": 5,
+   "sups": 2
   },
   "số có dấu phẩy nghìn / thập phân không rõ": {
    "items": 2,
@@ -667,136 +667,6 @@
    "rows": {},
    "sample": {
     "bảng không cho bản ghi nào": "| Emission level | EU StageV / US T4F"
-   }
-  },
-  {
-   "supplierId": "agg-fuzhou",
-   "n": 112,
-   "table": 11,
-   "title": "斯堪尼亚-德塔",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | 发电机型号 | ESP (kVA/kW) | PRP (kVA/kW) | 发动机型号"
-   }
-  },
-  {
-   "supplierId": "agg-fuzhou",
-   "n": 118,
-   "table": 17,
-   "title": "斯堪尼亚-德塔",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | 发电机型号 | COP (kVA/kW) | 发动机型号 | 品牌"
-   }
-  },
-  {
-   "supplierId": "agg-power",
-   "n": 2048,
-   "table": 47,
-   "title": "S770E5",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Generator Model"
-   }
-  },
-  {
-   "supplierId": "agg-power",
-   "n": 2049,
-   "table": 48,
-   "title": "S715E5",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Generator Model"
-   }
-  },
-  {
-   "supplierId": "agg-power",
-   "n": 2050,
-   "table": 49,
-   "title": "S700E5",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Generator Model"
-   }
-  },
-  {
-   "supplierId": "agg-power",
-   "n": 2051,
-   "table": 50,
-   "title": "S550E5",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Generator Model"
-   }
-  },
-  {
-   "supplierId": "agg-power",
-   "n": 2052,
-   "table": 51,
-   "title": "S400E5",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Generator Model"
-   }
-  },
-  {
-   "supplierId": "agg-power",
-   "n": 2053,
-   "table": 52,
-   "title": "S360E5",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Generator Model"
-   }
-  },
-  {
-   "supplierId": "agg-power",
-   "n": 2054,
-   "table": 53,
-   "title": "S330E5",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Generator Model"
-   }
-  },
-  {
-   "supplierId": "agg-power",
-   "n": 2055,
-   "table": 54,
-   "title": "S313E5",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Generator Model"
    }
   },
   {
@@ -6732,32 +6602,6 @@
    "rows": {},
    "sample": {
     "bảng không cho bản ghi nào": "| Prime Output | 250 kVA | 200 kW"
-   }
-  },
-  {
-   "supplierId": "conductorjasa",
-   "n": 124,
-   "table": 52,
-   "title": "Genset Besar 500–4125 kVA Open & Silent | Conductorjasa",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | Model | Mesin | Prime (kVA) | Standby (kVA) | Tipe"
-   }
-  },
-  {
-   "supplierId": "conductorjasa",
-   "n": 125,
-   "table": 53,
-   "title": "Genset Data Center hingga 4125 kVA, N+1 | Conductorjasa",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | Model | Mesin | Prime (kVA) | Standby (kVA) | Tipe"
    }
   },
   {
@@ -14031,19 +13875,6 @@
   },
   {
    "supplierId": "green-power-generators",
-   "n": 111,
-   "table": 12,
-   "title": "Gruppi elettrogeni Stazionari Scania - Green Power Generators",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | MODELLO MODEL | TIPO TYPE | POTENZA POWER | MOTORE ENGINE | SERBATOIO TANK | DIMENSIONI DIMENSIONS | PESO WEIGHT | DOWNLOAD"
-   }
-  },
-  {
-   "supplierId": "green-power-generators",
    "n": 115,
    "table": 16,
    "title": "Gruppi elettrogeni Stazionari Mtu - Green Power Generators",
@@ -14074,8 +13905,7 @@
    "table": 21,
    "title": "Gruppi elettrogeni Mobili Scania - Green Power Generators",
    "reasons": {
-    "tổ máy nhiều động cơ": 1,
-    "bảng không cho bản ghi nào": 1
+    "tổ máy nhiều động cơ": 1
    },
    "rows": {
     "tổ máy nhiều động cơ": [
@@ -14083,8 +13913,7 @@
     ]
    },
    "sample": {
-    "tổ máy nhiều động cơ": "| GP1100 S/S-SV | S | 1000 | 1100 | 2X DC13 505A AE | E | 8 | 143,7 | STAGE V | 250 | 60 | 8300 | 2460 | 2820 | N.A. | | | |",
-    "bảng không cho bản ghi nào": "| | MODELLO MODEL | TIPO TYPE | POTENZA POWER | MOTORE ENGINE | | SERBATOIO TANK | DIMENSIONI DIMENSIONS | PESO WEIGHT | DOWNLOAD"
+    "tổ máy nhiều động cơ": "| GP1100 S/S-SV | S | 1000 | 1100 | 2X DC13 505A AE | E | 8 | 143,7 | STAGE V | 250 | 60 | 8300 | 2460 | 2820 | N.A. | | | |"
    }
   },
   {
@@ -17578,19 +17407,6 @@
    }
   },
   {
-   "supplierId": "huadong-yangzhou",
-   "n": 106,
-   "table": 5,
-   "title": "Scania系列 - 陆用电站-产品中心 - 扬州市华东动力机械有限公司",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| 机组型号 | 输出功率（KVA/KW） | 额定 电流 (A) | 100% 负载 燃油耗 （L/h） | 发动机 | 外形尺寸（mm） L ×W×H | 净重量 （Kg）"
-   }
-  },
-  {
    "supplierId": "huaquan-power",
    "n": 105,
    "table": 4,
@@ -18249,240 +18065,6 @@
    }
   },
   {
-   "supplierId": "jinjia-power",
-   "n": 101,
-   "table": 0,
-   "title": "Cummins Generator 20kW-3000kW | Jinjia Power",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | Model | Prime Power (kW) | Standby (kW) | kVA | Engine | Cyl. | Displacement (L) | Fuel (g/kW·h) | Weight (kg) | Dimensions (mm) | JJC-20GF | 20 | 22 | 25 | 4B3.9-G11 | 4 | 3.9 | 208 | 700 | 1650x"
-   }
-  },
-  {
-   "supplierId": "jinjia-power",
-   "n": 102,
-   "table": 1,
-   "title": "Yuchai Generator 90kW-2400kW | Jinjia Power",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | Model | Prime Power (kW) | Standby (kW) | kVA | Engine | Cyl. | Displacement (L) | Fuel (g/kW·h) | Weight (kg) | Dimensions (mm) | JJY-90GF | 90 | 99 | 112.5 | YC6B135Z-D20 | 6 | 6.87 | 197 | 1300"
-   }
-  },
-  {
-   "supplierId": "jinjia-power",
-   "n": 103,
-   "table": 2,
-   "title": "Volvo Penta Generator 80kW-550kW | Jinjia Power",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | Model | Prime Power (kW) | Standby (kW) | kVA | Engine | Cyl. | Displacement (L) | Fuel (g/kW·h) | Weight (kg) | Dimensions (mm) | JJV-80GF | 80 | 88 | 100 | TAD550GE | 4 | 4.76 | 213 | 1030 | 210"
-   }
-  },
-  {
-   "supplierId": "jinjia-power",
-   "n": 104,
-   "table": 3,
-   "title": "SDEC Generator 40kW-2400kW | Jinjia Power",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | Model | Prime Power (kW) | Standby (kW) | kVA | Engine | Cyl. | Displacement (L) | Fuel (g/kW·h) | Weight (kg) | Dimensions (mm) | JJS-40GF | 40 | 44 | 50 | 4ZT3.5-G21 | 4 | 3.5 | 210 | 915 | 1700"
-   }
-  },
-  {
-   "supplierId": "jinjia-power",
-   "n": 105,
-   "table": 4,
-   "title": "Weichai Generator 12kW-3000kW | Jinjia Power",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | Model | Prime Power (kW) | Standby (kW) | kVA | Engine | Cyl. | Displacement (L) | Fuel (g/kW·h) | Weight (kg) | Dimensions (mm) | JJW-12GF | 12 | 13.2 | 15 | WP2.3D12E2 | 4 | 2.29 | 240 | 480 | 1"
-   }
-  },
-  {
-   "supplierId": "jinjia-power",
-   "n": 106,
-   "table": 5,
-   "title": "Perkins Generator 7kW-1800kW | Jinjia Power",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | Model | Prime Power (kW) | Standby (kW) | kVA | Engine | Cyl. | Displacement (L) | Fuel (g/kW·h) | Weight (kg) | Dimensions (mm) | JJP-7GF | 7 | 7.7 | 8.8 | 403A-11G1 | 3 | 1.13 | 248 | 300 | 1200"
-   }
-  },
-  {
-   "supplierId": "jinjia-power",
-   "n": 107,
-   "table": 6,
-   "title": "MTU Generator 220kW-2500kW | Jinjia Power",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | Model | Prime Power (kW) | Standby (kW) | kVA | Engine | Cyl. | Displacement (L) | Fuel (g/kW·h) | Weight (kg) | Dimensions (mm) | JJM-220GF | 220 | 242 | 275 | 6R1600G10F | 6 | 10.5 | 201 | 2500 "
-   }
-  },
-  {
-   "supplierId": "jinjia-power",
-   "n": 108,
-   "table": 7,
-   "title": "Mitsubishi Generator 480kW-1800kW | Jinjia Power",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | Model | Prime Power (kW) | Standby (kW) | kVA | Engine | Cyl. | Displacement (L) | Fuel (g/kW·h) | Weight (kg) | Dimensions (mm) | JJSL-480GF | 480 | 528 | 600 | S6R-PTA | 6 | 24.5 | 196 | 5000 | "
-   }
-  },
-  {
-   "supplierId": "jinjia-power",
-   "n": 109,
-   "table": 8,
-   "title": "Yangdong Generator 9kW-60kW | Jinjia Power",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | Model | Prime Power (kW) | Standby (kW) | kVA | Engine | Cyl. | Displacement (L) | Fuel (g/kW·h) | Weight (kg) | Dimensions (mm) | JJYD-9GF | 9 | 9.9 | 11.2 | YD380D | 3 | 1.532 | 262 | 560 | 1900"
-   }
-  },
-  {
-   "supplierId": "jinjia-power",
-   "n": 110,
-   "table": 9,
-   "title": "康明斯柴油发电机组参数_20-2750kW功率范围 | 锦佳动力",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | 型号 | 常用功率 (kW) | 备用功率 (kW) | kVA | 发动机 | 缸数 | 排量 (L) | 油耗 (g/kW·h) | 重量 (kg) | 尺寸 (mm) | JJC-20GF | 20 | 22 | 25 | 4B3.9-G11 | 4 | 3.9 | 208 | 700 | 1650x720x1200"
-   }
-  },
-  {
-   "supplierId": "jinjia-power",
-   "n": 111,
-   "table": 10,
-   "title": "玉柴柴油发电机组参数_10-1000kW高性价比 | 锦佳动力",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | 型号 | 常用功率 (kW) | 备用功率 (kW) | kVA | 发动机 | 缸数 | 排量 (L) | 油耗 (g/kW·h) | 重量 (kg) | 尺寸 (mm) | JJY-90GF | 90 | 99 | 112.5 | YC6B135Z-D20 | 6 | 6.87 | 197 | 1300 | 2250×800×1300"
-   }
-  },
-  {
-   "supplierId": "jinjia-power",
-   "n": 112,
-   "table": 11,
-   "title": "沃尔沃柴油发电机组 | 低排放静音备用电源 | 锦佳动力",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | 型号 | 常用功率 (kW) | 备用功率 (kW) | kVA | 发动机 | 缸数 | 排量 (L) | 油耗 (g/kW·h) | 重量 (kg) | 尺寸 (mm) | JJV-80GF | 80 | 88 | 100 | TAD550GE | 4 | 4.76 | 213 | 1030 | 2100×700×1450"
-   }
-  },
-  {
-   "supplierId": "jinjia-power",
-   "n": 113,
-   "table": 12,
-   "title": "上柴柴油发电机组参数_50-800kW上海柴油发动机 | 锦佳动力",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | 型号 | 常用功率 (kW) | 备用功率 (kW) | kVA | 发动机 | 缸数 | 排量 (L) | 油耗 (g/kW·h) | 重量 (kg) | 尺寸 (mm) | JJS-40GF | 40 | 44 | 50 | 4ZT3.5-G21 | 4 | 3.5 | 210 | 915 | 1700×600×1200"
-   }
-  },
-  {
-   "supplierId": "jinjia-power",
-   "n": 114,
-   "table": 13,
-   "title": "潍柴柴油发电机组参数_30-1200kW高性能动力 | 锦佳动力",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | 型号 | 常用功率 (kW) | 备用功率 (kW) | kVA | 发动机 | 缸数 | 排量 (L) | 油耗 (g/kW·h) | 重量 (kg) | 尺寸 (mm) | JJW-12GF | 12 | 13.2 | 15 | WP2.3D12E2 | 4 | 2.29 | 240 | 480 | 1500×700×1100"
-   }
-  },
-  {
-   "supplierId": "jinjia-power",
-   "n": 115,
-   "table": 14,
-   "title": "珀金斯柴油发电机组参数_10-2000kW英国珀金斯 | 锦佳动力",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | 型号 | 常用功率 (kW) | 备用功率 (kW) | kVA | 发动机 | 缸数 | 排量 (L) | 油耗 (g/kW·h) | 重量 (kg) | 尺寸 (mm) | JJP-7GF | 7 | 7.7 | 8.8 | 403A-11G1 | 3 | 1.13 | 248 | 300 | 1200*700*1100"
-   }
-  },
-  {
-   "supplierId": "jinjia-power",
-   "n": 116,
-   "table": 15,
-   "title": "MTU柴油发电机组参数_200-4000kW关键应用首选 | 锦佳动力",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | 型号 | 常用功率 (kW) | 备用功率 (kW) | kVA | 发动机 | 缸数 | 排量 (L) | 油耗 (g/kW·h) | 重量 (kg) | 尺寸 (mm) | JJM-220GF | 220 | 242 | 275 | 6R1600G10F | 6 | 10.5 | 201 | 2500 | 2800*1150*1650"
-   }
-  },
-  {
-   "supplierId": "jinjia-power",
-   "n": 117,
-   "table": 16,
-   "title": "三菱柴油发电机组参数_200-2000kW日本三菱 | 锦佳动力",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | 型号 | 常用功率 (kW) | 备用功率 (kW) | kVA | 发动机 | 缸数 | 排量 (L) | 油耗 (g/kW·h) | 重量 (kg) | 尺寸 (mm) | JJSL-480GF | 480 | 528 | 600 | S6R-PTA | 6 | 24.5 | 196 | 5000 | 3600*1600*2300"
-   }
-  },
-  {
-   "supplierId": "jinjia-power",
-   "n": 118,
-   "table": 17,
-   "title": "扬动柴油发电机组参数_5-100kW经济型小功率 | 锦佳动力",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | 型号 | 常用功率 (kW) | 备用功率 (kW) | kVA | 发动机 | 缸数 | 排量 (L) | 油耗 (g/kW·h) | 重量 (kg) | 尺寸 (mm) | JJYD-9GF | 9 | 9.9 | 11.2 | YD380D | 3 | 1.532 | 262 | 560 | 1900*730*1130"
-   }
-  },
-  {
    "supplierId": "john-deere-power",
    "n": 2001,
    "table": 1,
@@ -18792,19 +18374,6 @@
    "rows": {},
    "sample": {
     "bảng không cho bản ghi nào": "| Power Output | 200 kW / 250 kVA"
-   }
-  },
-  {
-   "supplierId": "kaihua-genset",
-   "n": 114,
-   "table": 16,
-   "title": "Scania Generator-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| Genset Model | Standby Power | Prime power | Engine model | Dimension | Weight(KG)"
    }
   },
   {
@@ -28811,396 +28380,6 @@
   },
   {
    "supplierId": "mpmc-powertech",
-   "n": 106,
-   "table": 5,
-   "title": "MPMC MS640-2 727kVA 60Hz Diesel Generator Set Powered by SCANIA DC16 078A 02-45",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 727kVA/582kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 112,
-   "table": 9,
-   "title": "MPMC MS615-2 699kVA 60Hz Diesel Generator Set Powered by SCANIA DC16 078A 02-43",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 699kVA/559kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 113,
-   "table": 10,
-   "title": "MPMC MS575-2 653kVA 60Hz Diesel Generator Set Powered by SCANIA DC16 093A 02-54",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 653kVA/523kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 114,
-   "table": 11,
-   "title": "MPMC MS530-2 602kVA 60Hz Diesel Generator Set Powered by SCANIA DC13 093A 02-75",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 602kVA/482kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 115,
-   "table": 12,
-   "title": "MPMC MS500-2 568kVA 60Hz Diesel Generator Set Powered by SCANIA DC13 093A 02-74",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 568kVA/455kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 116,
-   "table": 13,
-   "title": "MPMC MS484-2 550kVA 60Hz Diesel Gen Set | SCANIA DC13 093A 02-73",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 550kVA/440kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 117,
-   "table": 14,
-   "title": "MPMC MS440-2 500kVA 60Hz Diesel Generator Set Powered by SCANIA DC13 093A 02-72",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 500kVA/400kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 118,
-   "table": 15,
-   "title": "MPMC MS400-2 455kVA 60Hz Diesel Generator Set Powered by SCANIA DC13 072A 02-12",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 455kVA/364kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 119,
-   "table": 16,
-   "title": "MPMC MS365-2 415kVA 60Hz Diesel Generator Set Powered by SCANIA DC13 072A 02-11",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 415kVA/332kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 120,
-   "table": 17,
-   "title": "MPMC MS320-2 364kVA 60Hz Diesel Generator Set Powered by SCANIA DC09 072A 02-14",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 364kVA/291kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 121,
-   "table": 18,
-   "title": "MPMC MS285-2 324kVA 60Hz Diesel Generator Set Powered by SCANIA DC09 072A 02-13",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 324kVA/259kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 122,
-   "table": 19,
-   "title": "MPMC MS270-2 307kVA Diesel Generator Set Powered by SCANIA DC09 072A 02-12|MPMC",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 307kVA/245kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 123,
-   "table": 20,
-   "title": "MPMC MS245-2 278kVA Diesel Generator Set Powered by SCANIA DC09 072A 02-11| MPMC",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 278kVA/223kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 124,
-   "table": 21,
-   "title": "MPMC MS750-1 750kVA Diesel Generator Set Powered by SCANIA DC16 078A 02-45 | MPMC",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 750kVA/600kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 125,
-   "table": 22,
-   "title": "MPMC MS700-1 700kVA Diesel Generator Set Powered by SCANIA DC16 078A 02-43 | MPMC",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 700kVA/560kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 126,
-   "table": 23,
-   "title": "MPMC MS650-1 650kVA Diesel Generator Set Powered by SCANIA DC16 078A 02-42| MPMC",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 650kVA/520kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 127,
-   "table": 24,
-   "title": "MPMC MS640-1 640kVA Diesel Generator Set Powered by SCANIA DC16 093A 02-54 | MPMC",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 640kVA/512kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 128,
-   "table": 25,
-   "title": "MPMC MS600-1 600kVA Diesel Generator Set Powered by SCANIA DC16 093A 02-53 | MPMC",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 600kVA/480kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 129,
-   "table": 26,
-   "title": "MPMC MS555-1 555kVA Diesel Generator Set Powered by SCANIA DC16 093A 02-52| MPMC",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 555kVA/444kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 130,
-   "table": 27,
-   "title": "MPMC MS550-1 550kVA Stage IIIA Diesel Generator Set Powered by SCANIA DC16 071A 02-02| MPMC",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 550kVA/440kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 131,
-   "table": 28,
-   "title": "MPMC MS510-1 510kVA Diesel Generator Set Powered by SCANIA DC16 093A 02-51 | MPMC",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 510kVA/408kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 132,
-   "table": 29,
-   "title": "MS500-1 500kVA Diesel Generator Set | SCANIA DC13 072A 02-14 | MPMC",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 500kVA/400kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 133,
-   "table": 30,
-   "title": "MS500-1 500kVA Diesel Generator Set | SCANIA DC16 071A 02-01 | MPMC",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 500kVA/400kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 134,
-   "table": 31,
-   "title": "MS480-1 480kVA Diesel Generator Set | SCANIA DC13 093A 02-72 | MPMC",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 480kVA/384kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 135,
-   "table": 32,
-   "title": "MS413-1 413kVA Diesel Generator Set | SCANIA DC13 072A 02-12 | MPMC",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 413kVA/330kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 136,
-   "table": 33,
-   "title": "MS410-1 410kVA Diesel Generator Set | SCANIA DC13 071A 02-02 | MPMC",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 410kVA/328kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 137,
-   "table": 34,
-   "title": "MS370-1 370kVA Diesel Generator Set | SCANIA DC13 072A 02-11 | MPMC",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 370kVA/296kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 138,
-   "table": 35,
-   "title": "MS365-1 365kVA Diesel Generator Set | SCANIA DC13 071A 02-01 | MPMC",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 365kVA/292kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 139,
-   "table": 36,
-   "title": "MS325-1 325kVA Diesel Generator Set | SCANIA DC09 072A 02-14 | MPMC",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 325kVA/260kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 140,
-   "table": 37,
-   "title": "MPMC MS325-1 325kVA Stage IIIA Diesel Generator Set Powered by SCANIA DC09 071A 02-04",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 325kVA/260kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
    "n": 141,
    "table": 38,
    "title": "MS300-1 300kVA Diesel Generator Set | SCANIA DC09 072A 02-13 | MPMC",
@@ -29214,35 +28393,9 @@
   },
   {
    "supplierId": "mpmc-powertech",
-   "n": 142,
-   "table": 39,
-   "title": "MPMC MS300-1 300kVA Stage IIIA Diesel Generator Set Powered by SCANIA DC09 071A 02-03",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 300kVA/240kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
    "n": 143,
    "table": 40,
    "title": "MS275-1 275kVA Diesel Generator Set | SCANIA DC09 072A 02-12 | MPMC",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "Prime Power: 275kVA/220kW"
-   }
-  },
-  {
-   "supplierId": "mpmc-powertech",
-   "n": 144,
-   "table": 41,
-   "title": "MPMC MS275-1 275kVA Stage IIIA Diesel Generator Set Powered by SCANIA DC09 071A 02-02",
    "reasons": {
     "bảng không cho bản ghi nào": 1
    },
@@ -33764,19 +32917,6 @@
    }
   },
   {
-   "supplierId": "rcg-power",
-   "n": 124,
-   "table": 20,
-   "title": "R-V 系列 (沃尔沃) -江苏瑞昌哥尔德发电设备股份有限公司",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| | 型号 | 主电源 | 备用电源 | 发动机 | 交流发电机 | 下载"
-   }
-  },
-  {
    "supplierId": "rehlko",
    "n": 2001,
    "table": 0,
@@ -37017,37 +36157,20 @@
    "table": 0,
    "title": "10kW-100kW",
    "reasons": {
-    "bảng không cho bản ghi nào": 1
+    "một ô ghi hai mã": 6
    },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × 高 ) | 机 组 数 据"
-   }
-  },
-  {
-   "supplierId": "simpson-power",
-   "n": 103,
-   "table": 2,
-   "title": "1100kW-1800kW",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
+   "rows": {
+    "một ô ghi hai mã": [
+     17,
+     18,
+     19,
+     22,
+     23,
+     24
+    ]
    },
-   "rows": {},
    "sample": {
-    "bảng không cho bản ghi nào": "| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × 高 ) | 机 组 数 据"
-   }
-  },
-  {
-   "supplierId": "simpson-power",
-   "n": 104,
-   "table": 3,
-   "title": "300kW-1100kW",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 品 牌 | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长 × 宽 × 高 ) | 机 组 数 据"
+    "một ô ghi hai mã": "4B3.9-G1(G2)"
    }
   },
   {
@@ -37056,115 +36179,42 @@
    "table": 4,
    "title": "SIMPSON Cummins Soundproof Unit",
    "reasons": {
-    "bảng không cho bản ghi nào": 1
+    "một ô ghi hai mã": 6
    },
-   "rows": {},
+   "rows": {
+    "một ô ghi hai mã": [
+     0,
+     1,
+     2,
+     5,
+     6,
+     7
+    ]
+   },
    "sample": {
-    "bảng không cho bản ghi nào": "| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长×宽×高) | 机 组 数 据"
+    "một ô ghi hai mã": "4B3.9-G1（G2）"
    }
   },
   {
    "supplierId": "simpson-power",
-   "n": 110,
-   "table": 5,
-   "title": "辛普森·珀金斯柴油发电机组",
+   "n": 114,
+   "table": 9,
+   "title": "10kW-300kW",
    "reasons": {
-    "bảng không cho bản ghi nào": 1
+    "một ô ghi hai mã": 6
    },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长×宽×高) | 机 组 数 据"
-   }
-  },
-  {
-   "supplierId": "simpson-power",
-   "n": 115,
-   "table": 10,
-   "title": "SIMPSON-Mitsubishi diesel generating set",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
+   "rows": {
+    "một ô ghi hai mã": [
+     32,
+     33,
+     34,
+     37,
+     38,
+     39
+    ]
    },
-   "rows": {},
    "sample": {
-    "bảng không cho bản ghi nào": "| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长×宽×高) | 机 组 数 据"
-   }
-  },
-  {
-   "supplierId": "simpson-power",
-   "n": 121,
-   "table": 12,
-   "title": "SIMPSON Perkins High Voltage Diesel Generators",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长×宽×高) | 机 组 数 据"
-   }
-  },
-  {
-   "supplierId": "simpson-power",
-   "n": 122,
-   "table": 13,
-   "title": "SIMPSON MTU High Voltage Diesel Generators",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长×宽×高) | 机 组 数 据"
-   }
-  },
-  {
-   "supplierId": "simpson-power",
-   "n": 123,
-   "table": 14,
-   "title": "SIMPSON Mitsubishi High Voltage Diesel Generators",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长×宽×高) | 机 组 数 据"
-   }
-  },
-  {
-   "supplierId": "simpson-power",
-   "n": 124,
-   "table": 15,
-   "title": "SIMPSON-GasGenerators",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长×宽×高) | 机 组 数 据"
-   }
-  },
-  {
-   "supplierId": "simpson-power",
-   "n": 125,
-   "table": 16,
-   "title": "SIMPSON-Deutz Soundproof Unit",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长×宽×高) | 机 组 数 据"
-   }
-  },
-  {
-   "supplierId": "simpson-power",
-   "n": 127,
-   "table": 18,
-   "title": "SIMPSON Cummins series sound proof enclosure Genset",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长×宽×高) | 机 组 数 据"
+    "một ô ghi hai mã": "4B3.9-G1(G2)"
    }
   },
   {
@@ -37173,11 +36223,20 @@
    "table": 19,
    "title": "SIMPSON- Cummins Series",
    "reasons": {
-    "bảng không cho bản ghi nào": 1
+    "một ô ghi hai mã": 6
    },
-   "rows": {},
+   "rows": {
+    "một ô ghi hai mã": [
+     0,
+     1,
+     2,
+     5,
+     6,
+     7
+    ]
+   },
    "sample": {
-    "bảng không cho bản ghi nào": "| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长×宽×高) | 机 组 数 据"
+    "một ô ghi hai mã": "4B3.9-G1(G2)"
    }
   },
   {
@@ -40676,19 +39735,6 @@
    "rows": {},
    "sample": {
     "bảng không cho bản ghi nào": "| | MODEL | KVA | VERSION | ENGINE | ALTERNATOR | YEAR | PANEL | RECOMMENDED USE"
-   }
-  },
-  {
-   "supplierId": "voltgent",
-   "n": 107,
-   "table": 6,
-   "title": "Scania Diesel Generator",
-   "reasons": {
-    "bảng không cho bản ghi nào": 1
-   },
-   "rows": {},
-   "sample": {
-    "bảng không cho bản ghi nào": "| Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet"
    }
   },
   {
