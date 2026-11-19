@@ -1658,6 +1658,9 @@
   // "KTA50-G15×"), and an en / em dash is a hyphen ("KTA50–G3", "4135D—1"): the model left alone stood apart from the same
   // model of other suppliers and missed the majority rule (catalog-b). "★" is dropped by tidyModel, where the supplier is
   // known (MARK_KEEP). O/0 and I/1 are NOT merged.
+  // "^" (baifa, aosif, mecca, landtop, Weichai's own sheets…): no source found says what it means. Khoa 19/11/2026 did not
+  // know either and kept the merge; it rests on no source. Merging also brings one supplier's wrong figures to the others'
+  // rows: aosif "8M33D1012E311^" 12V / 31,8 L against 8 cyl / 26,14 L (waeta, wiseke) → no majority (catalog-b-1.md).
   const keyOf = (m) => String(m).normalize("NFKC").toUpperCase().replace(/[\s\-_.·–—]/g, "").replace(/[*†‡^×]+$/, "");
   const MARK_TAIL = /\s*[*＊†‡★☆^×]+$/;
   // A mark a supplier's note gives a meaning that tells the model apart (catalog-b, not merged with the bare model): ettes-power
