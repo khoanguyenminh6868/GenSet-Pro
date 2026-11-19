@@ -1,14 +1,4 @@
 loai	ncc	n	bang	dong	kieu	model	to-may	cong-suat	khac	hang	thong-so	co	dong-nguon	doi
-MỚI	agg-fuzhou	115	14	23	engine	LYX15H-G350	DC330G6-NG	prime 330 kVA / 264 kW					| DC330G6-NG | 330/264 | LYX15H-G350 | AGG	
-MỚI	agg-fuzhou	116	15	11	engine	K50N-G11SH	CU1375G6-NG	prime 1375 kVA / 1100 kW		Cummins			| CU1375G6-NG | 1375/1100 | K50N-G11SH | Cummins	
-MỚI	agg-fuzhou	116	15	12	engine	K50N-G10S	CU1250G6-NG	prime 1250 kVA / 1000 kW		Cummins			| CU1250G6-NG | 1250/1000 | K50N-G10S | Cummins	
-MỚI	agg-fuzhou	116	15	13	engine	K50N-G9S	CU1125G6-NG	prime 1125 kVA / 900 kW		Cummins			| CU1125G6-NG | 1125/900 | K50N-G9S | Cummins	
-MỚI	agg-fuzhou	116	15	14	engine	K38N-G8S	CU1000G6-NG	prime 1000 kVA / 800 kW		Cummins			| CU1000G6-NG | 1000/800 | K38N-G8S | Cummins	
-MỚI	agg-fuzhou	116	15	15	engine	K38N-G7S	CU875G6-NG	prime 875 kVA / 700 kW		Cummins			| CU875G6-NG | 875/700 | K38N-G7S | Cummins	
-MỚI	agg-fuzhou	116	15	16	engine	K38N-G6S	CU750G6-NG	prime 750 kVA / 600 kW		Cummins			| CU750G6-NG | 750/600 | K38N-G6S | Cummins	
-MỚI	agg-fuzhou	116	15	17	engine	K38N-G5S	CU625G6-NG	prime 625 kVA / 500 kW		Cummins			| CU625G6-NG | 625/500 | K38N-G5S | Cummins	
-MỚI	agg-fuzhou	116	15	18	engine	K19N-G4S	CU500G6-NG	prime 500 kVA / 400 kW		Cummins			| CU500G6-NG | 500/400 | K19N-G4S | Cummins	
-MỚI	agg-fuzhou	116	15	19	engine	K19N-G3S	CU438G6-NG	prime 437.5 kVA / 350 kW		Cummins			| CU438G6-NG | 437.5/350 | K19N-G3S | Cummins	
 MỚI	baifa-power	101	3	64	engine	QSB3.9-G31	BF-C28Q-3	prime 25 kVA / - kW; standby 28 kVA / - kW	S0L2-M1	Cummins	emission=Stage IIIA / CHINA STAGE3		| BF-C28Q-3 | 28 | 25 | CUMMINS (CHINA) | QSB3.9-G31 | ECM | S0L2-M1 | Stage IIIA / CHINA STAGE3 | CHINA	
 MỚI	baifa-power	101	3	64	alternator	S0L2-M1	BF-C28Q-3	prime 25 kVA / - kW; standby 28 kVA / - kW	QSB3.9-G31	Stamford	emission=Stage IIIA / CHINA STAGE3		| BF-C28Q-3 | 28 | 25 | CUMMINS (CHINA) | QSB3.9-G31 | ECM | S0L2-M1 | Stage IIIA / CHINA STAGE3 | CHINA	
 MỚI	baifa-power	101	3	65	engine	QSB3.9-G33	BF-C40Q-3	prime 40 kVA / - kW; standby 44 kVA / - kW	S1L2-K1		emission=Stage IIIA / CHINA STAGE3		| BF-C40Q-3 | 44 | 40 | QSB3.9-G33 | ECM | S1L2-K1 | Stage IIIA / CHINA STAGE3 | CHINA	

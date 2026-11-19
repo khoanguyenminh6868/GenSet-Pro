@@ -1,29 +1,6 @@
 # Soát bản ghi gốc ↔ nhánh (mọi bản ghi, không lấy mẫu)
 
-Mới 374, mất 64 (18 gộp vào bản ghi khác qua `also`), đổi 4040 (thêm 1256 bản ghi chỉ đổi chữ tiêu đề lưu kèm); bản ghi mới / đổi có cờ ⚠: 723. Model tổ máy trong bản ghi mới: 216 khoá, trong đó 211 khoá CHƯA có ở bản gốc.
-
-## agg-fuzhou (mới 10, mất 0, đổi 0)
-
-- **MỚI** n115 b14 dòng 23 engine `LYX15H-G350` | tổ máy `DC330G6-NG` | prime 330 kVA / 264 kW | khác: ∅ | hãng: ∅ | 
-  - nguồn: `| DC330G6-NG | 330/264 | LYX15H-G350 | AGG`
-- **MỚI** n116 b15 dòng 11 engine `K50N-G11SH` | tổ máy `CU1375G6-NG` | prime 1375 kVA / 1100 kW | khác: ∅ | hãng: Cummins | 
-  - nguồn: `| CU1375G6-NG | 1375/1100 | K50N-G11SH | Cummins`
-- **MỚI** n116 b15 dòng 12 engine `K50N-G10S` | tổ máy `CU1250G6-NG` | prime 1250 kVA / 1000 kW | khác: ∅ | hãng: Cummins | 
-  - nguồn: `| CU1250G6-NG | 1250/1000 | K50N-G10S | Cummins`
-- **MỚI** n116 b15 dòng 13 engine `K50N-G9S` | tổ máy `CU1125G6-NG` | prime 1125 kVA / 900 kW | khác: ∅ | hãng: Cummins | 
-  - nguồn: `| CU1125G6-NG | 1125/900 | K50N-G9S | Cummins`
-- **MỚI** n116 b15 dòng 14 engine `K38N-G8S` | tổ máy `CU1000G6-NG` | prime 1000 kVA / 800 kW | khác: ∅ | hãng: Cummins | 
-  - nguồn: `| CU1000G6-NG | 1000/800 | K38N-G8S | Cummins`
-- **MỚI** n116 b15 dòng 15 engine `K38N-G7S` | tổ máy `CU875G6-NG` | prime 875 kVA / 700 kW | khác: ∅ | hãng: Cummins | 
-  - nguồn: `| CU875G6-NG | 875/700 | K38N-G7S | Cummins`
-- **MỚI** n116 b15 dòng 16 engine `K38N-G6S` | tổ máy `CU750G6-NG` | prime 750 kVA / 600 kW | khác: ∅ | hãng: Cummins | 
-  - nguồn: `| CU750G6-NG | 750/600 | K38N-G6S | Cummins`
-- **MỚI** n116 b15 dòng 17 engine `K38N-G5S` | tổ máy `CU625G6-NG` | prime 625 kVA / 500 kW | khác: ∅ | hãng: Cummins | 
-  - nguồn: `| CU625G6-NG | 625/500 | K38N-G5S | Cummins`
-- **MỚI** n116 b15 dòng 18 engine `K19N-G4S` | tổ máy `CU500G6-NG` | prime 500 kVA / 400 kW | khác: ∅ | hãng: Cummins | 
-  - nguồn: `| CU500G6-NG | 500/400 | K19N-G4S | Cummins`
-- **MỚI** n116 b15 dòng 19 engine `K19N-G3S` | tổ máy `CU438G6-NG` | prime 437.5 kVA / 350 kW | khác: ∅ | hãng: Cummins | 
-  - nguồn: `| CU438G6-NG | 437.5/350 | K19N-G3S | Cummins`
+Mới 364, mất 64 (18 gộp vào bản ghi khác qua `also`), đổi 4040 (thêm 1222 bản ghi chỉ đổi chữ tiêu đề lưu kèm); bản ghi mới / đổi có cờ ⚠: 723. Model tổ máy trong bản ghi mới: 206 khoá, trong đó 201 khoá CHƯA có ở bản gốc.
 
 ## baifa-power (mới 46, mất 46, đổi 58)
 

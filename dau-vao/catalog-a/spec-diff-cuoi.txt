@@ -1,31 +1,5 @@
-bản ghi cũ 59786, mới 60096 | khác 2883 | chỉ cũ 64, chỉ mới 374 | bảng có đổi 130
+bản ghi cũ 59786, mới 60086 | khác 2883 | chỉ cũ 64, chỉ mới 364 | bảng có đổi 128
 {"makes":72,"weight thêm":1130,"genset":1101,"fuel thêm":455,"current thêm":52,"cyl thêm":74}
-
-[agg-fuzhou n115 bảng 14] ×1
-  H: | | 发电机型号 | COP (kVA/kW) | 发动机型号 | 品牌
-   23 | DC330G6-NG | 330/264 | LYX15H-G350 | AGG
-        ⇒ THÊM bản ghi engine LYX15H-G350
-
-[agg-fuzhou n116 bảng 15] ×9
-  H: | | 发电机型号 | COP (kVA/kW) | 发动机型号 | 品牌
-   11 | CU1375G6-NG | 1375/1100 | K50N-G11SH | Cummins
-        ⇒ THÊM bản ghi engine K50N-G11SH
-   12 | CU1250G6-NG | 1250/1000 | K50N-G10S | Cummins
-        ⇒ THÊM bản ghi engine K50N-G10S
-   13 | CU1125G6-NG | 1125/900 | K50N-G9S | Cummins
-        ⇒ THÊM bản ghi engine K50N-G9S
-   14 | CU1000G6-NG | 1000/800 | K38N-G8S | Cummins
-        ⇒ THÊM bản ghi engine K38N-G8S
-   15 | CU875G6-NG | 875/700 | K38N-G7S | Cummins
-        ⇒ THÊM bản ghi engine K38N-G7S
-   16 | CU750G6-NG | 750/600 | K38N-G6S | Cummins
-        ⇒ THÊM bản ghi engine K38N-G6S
-   17 | CU625G6-NG | 625/500 | K38N-G5S | Cummins
-        ⇒ THÊM bản ghi engine K38N-G5S
-   18 | CU500G6-NG | 500/400 | K19N-G4S | Cummins
-        ⇒ THÊM bản ghi engine K19N-G4S
-   19 | CU438G6-NG | 437.5/350 | K19N-G3S | Cummins
-        ⇒ THÊM bản ghi engine K19N-G3S
 
 [baifa-power n101 bảng 0] ×2
   H: | BAIFA MODEL | POWER | DIESEL ENGINE | ALTERNATOR | Emission | ENGINE MANUFACTURER / COUNTRY

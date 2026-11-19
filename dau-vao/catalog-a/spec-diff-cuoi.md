@@ -1,10 +1,10 @@
 <!-- spec-diff -->
 ## Kiểm chéo danh mục (spec-diff): git:671797e4 ↔ .
 
-- Bản ghi: 59.786 → 60.096; **2883** đổi, 64 mất, 374 thêm, ở 130 bảng của 14 NCC
+- Bản ghi: 59.786 → 60.086; **2883** đổi, 64 mất, 364 thêm, ở 128 bảng của 13 NCC
 - Đảo vai động cơ ↔ đầu phát (mã mà ≥ 3 NCC khác đọc ở vai kia): 0 → **0** ✅
 - Tự kiểm số với công suất của dòng: 692 giá trị đổi / thêm không tự xác nhận được (soát tay)
-- Chưa đọc được (`node suppliers/unread-tables.mjs`, để thiếu thay vì đoán): bảng không cho bản ghi nào: 3.111 → 3.112; dòng điện / điện áp theo vị trí không khớp công suất: 230 → 230; dòng là cặp nhãn | giá trị: 164 → 164; số vô lý so với công suất: 139 → 139; dòng tổng quan dòng máy: một dải công suất, không là một tổ máy: 90 → 90; số bằng đúng công suất của dòng, không là khối lượng / độ ồn: 77 → 77; tổ máy nhiều động cơ: 6 → 40; mã đầu phát trùng model tổ máy: 37 → 37; cặp a/b dưới nhãn không ghi mức / đơn vị: 34 → 34; một ô ghi hai mã: 25 → 25; điện áp trùng công suất của dòng: 6 → 6; dòng điện tổ máy không khớp công suất: 5 → 5; ngoại lệ theo dòng: 5 → 5; dòng máy lẫn với dòng tiêu đề: 0 → 5; trang có hai động cơ: số liệu kích cỡ động cơ không rõ của động cơ nào: 2 → 2; số có dấu phẩy nghìn / thập phân không rõ: 2 → 2; ô dòng điện không đọc được thành số: 1 → 1
+- Chưa đọc được (`node suppliers/unread-tables.mjs`, để thiếu thay vì đoán): bảng không cho bản ghi nào: 3.111 → 3.112; dòng điện / điện áp theo vị trí không khớp công suất: 230 → 230; dòng là cặp nhãn | giá trị: 164 → 164; số vô lý so với công suất: 139 → 139; dòng tổng quan dòng máy: một dải công suất, không là một tổ máy: 90 → 90; số bằng đúng công suất của dòng, không là khối lượng / độ ồn: 77 → 77; tổ máy nhiều động cơ: 6 → 40; mã đầu phát trùng model tổ máy: 37 → 37; cặp a/b dưới nhãn không ghi mức / đơn vị: 34 → 34; một ô ghi hai mã: 25 → 25; điện áp trùng công suất của dòng: 6 → 6; dòng điện tổ máy không khớp công suất: 5 → 5; ngoại lệ theo dòng: 5 → 5; dòng máy lẫn với dòng tiêu đề: 0 → 5; trang có hai động cơ: số liệu kích cỡ động cơ không rõ của động cơ nào: 2 → 2; số có dấu phẩy nghìn / thập phân không rõ: 2 → 2; bảng máy khí: dòng máy trong tiêu đề không đọc thêm: 0 → 2; ô dòng điện không đọc được thành số: 1 → 1
 - Thay đổi là chủ ý thì không chặn; vẫn phải soát MỌI dạng và đo top 30 ứng viên bằng tay (bộ nhớ kiem-cheo-toan-bo). Bản đầy đủ: artifact `spec-diff` của lượt chạy.
 
 ### Theo NCC
@@ -23,7 +23,6 @@
 | yunding-jiangsu | 52 | 52 | 0 | 0 |
 | elitech-power | 50 | 0 | 0 | 50 |
 | simpson-power | 21 | 13 | 0 | 8 |
-| agg-fuzhou | 10 | 0 | 0 | 10 |
 | rcg-power | 8 | 0 | 0 | 8 |
 
 ### Dạng thay đổi (vài ví dụ mỗi dạng)
@@ -55,14 +54,14 @@ xingguang-jiangsu n101 b0 dòng 0 NT855-GA: ∅ → ≤191
 honny-dongguan n101 b0 dòng 0 GP500-4P: ∅ → 109
     | HGM550E | 550 | 500 | 440 | 400 | 109 | 722 | PTAA6L-EG490 | 490 | 445 | L6 | 135 | 166 | 14 | 15.5:1 | GP500-4P | 3400 | 1300 | 1650 | 3400
 ```
-**THÊM bản ghi**: 374 lượt, 7 NCC
+**THÊM bản ghi**: 364 lượt, 6 NCC
 ```
-agg-fuzhou n115 b14 dòng 23 LYX15H-G350: engine LYX15H-G350
-    | DC330G6-NG | 330/264 | LYX15H-G350 | AGG
 baifa-power n101 b3 dòng 64 QSB3.9-G31: engine QSB3.9-G31
     | BF-C28Q-3 | 28 | 25 | CUMMINS (CHINA) | QSB3.9-G31 | ECM | S0L2-M1 | Stage IIIA / CHINA STAGE3 | CHINA
 elitech-power n1001 b78 dòng 32 BFM3 G1: engine BFM3 G1
     | EPS18DZA-3 | Deutz | 18kVA | 20kVA | BFM3 G1 | 50Hz | 3-Phase | DOWNLOAD PDF | eps18dza-3-deutz-18kva-diesel-generator-specs
+fdk-energy n103 b2 dòng 412 QSL9-G2: engine QSL9-G2
+    | CG250-H1 CONTACT | 250KVA/ 200KW | 225KVA/ 180KW | QSL9-G2 | Cummins (USA) | Stamford UCDI274J | Click Here | Download
 ```
 **cyl thêm**: 74 lượt, 1 NCC
 ```
