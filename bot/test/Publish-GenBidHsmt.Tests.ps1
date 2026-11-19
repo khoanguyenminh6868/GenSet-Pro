@@ -5,7 +5,10 @@
 Describe 'Publish-GenBidHsmt.ps1: hàm' {
     BeforeAll {
         $global:BotTD = $TestDrive
-        Import-BotFunctions 'Publish-GenBidHsmt.ps1' @('Get-FileText', 'Split-Utf8', 'Merge-Doc', 'Now-Iso')
+        Import-BotFunctions 'Publish-GenBidHsmt.ps1' @('Get-FileText', 'Get-NodeText', 'Split-Utf8', 'Merge-Doc', 'Now-Iso')
+        # $NodeExt khai báo ở đầu script (ngoài hàm): lấy đúng dòng đó.
+        $line = (Get-Content -Encoding UTF8 (Join-Path $global:BotDir 'Publish-GenBidHsmt.ps1')) -match '^\$NodeExt = ' | Select-Object -First 1
+        $global:NodeExt = @([regex]::Matches($line, "'(\.[a-z0-9]+)'") | ForEach-Object { $_.Groups[1].Value })
         $global:Key = 'IB0000000001'
         # pdftotext giả: chép tệp "PDF" (thực ra là chữ đã dựng sẵn, trang cách nhau bởi \f) ra tệp đích, như `pdftotext -layout -enc UTF-8 in out`.
         $global:pdftotext = { Copy-Item -LiteralPath $args[3] -Destination $args[4] }
@@ -107,12 +110,63 @@ Describe 'Publish-GenBidHsmt.ps1: hàm' {
             $p = Join-Path $global:Dir 'bad.docx'; Write-BotText $p 'không phải zip'
             Assert-Eq (ReadTxt (Get-Item $p)) ''
         }
-        It 'đuôi khác (.xlsx, .jpg, .rar) hoặc không có tệp -> rỗng; đuôi viết hoa vẫn nhận' {
-            $p = Join-Path $global:Dir 'a.xlsx'; Write-BotText $p 'x'
+        It 'đuôi khác (.jpg, .dwg) hoặc không có tệp -> rỗng; .xlsx khi máy không có node -> rỗng; đuôi viết hoa vẫn nhận' {
+            $p = Join-Path $global:Dir 'a.jpg'; Write-BotText $p 'x'
             Assert-Eq (ReadTxt (Get-Item $p)) ''
+            $global:node = $null
+            $x = Join-Path $global:Dir 'a.xlsx'; Write-BotText $x 'x'
+            Assert-Eq (ReadTxt (Get-Item $x)) ''
             Assert-Eq (ReadTxt $null) ''
             $u = Join-Path $global:Dir 'B.TXT'; Write-BotText $u 'chữ'
             Assert-Eq (ReadTxt (Get-Item $u)) 'chữ'
+        }
+    }
+
+    Context '.doc / .xlsx / tệp nén: lệnh publish-text của genbid-sync.js (node giả)' {
+        BeforeAll {
+            # node giả: ghi <out>.txt (chữ) và <out>.json (needOcr, notes) như `node genbid-sync.js publish-text --file F --name N --out O`.
+            $global:NodeReply = @{ text = ''; needOcr = @(); notes = @() }
+            $global:node = {
+                $global:NodeArgs = @($args)
+                $o = $args[7]
+                [IO.File]::WriteAllText("$o.txt", $global:NodeReply.text, $global:Utf8NoBom)
+                [IO.File]::WriteAllText("$o.json", (@{ chars = 0; needOcr = @($global:NodeReply.needOcr); notes = @($global:NodeReply.notes) } | ConvertTo-Json), $global:Utf8NoBom)
+                'SUMMARY: 1 ký tự'
+            }
+            $global:NoInbox = $false
+            $global:TmpDir = $global:Dir
+            $global:SyncJs = 'genbid-sync.js'
+        }
+        It 'các đuôi gửi sang node: .doc .rtf .xlsx .zip .rar .7z; trả chữ, xoá tệp tạm, gửi tên gốc' {
+            Assert-Eq ($global:NodeExt -join ' ') '.doc .rtf .xlsx .zip .rar .7z'
+            $global:NodeReply = @{ text = 'Yêu cầu kỹ thuật máy phát 500 kVA'; needOcr = @(); notes = @() }
+            foreach ($e in $global:NodeExt) {
+                $p = Join-Path $global:Dir "Chương V$e"; Write-BotText $p 'x'
+                Assert-Eq (ReadTxt (Get-Item $p)) 'Yêu cầu kỹ thuật máy phát 500 kVA' $e
+                Assert-Eq $global:NodeArgs[1] 'publish-text'
+                Assert-Eq $global:NodeArgs[5] "Chương V$e"
+                Assert-False (Test-Path "$($global:NodeArgs[7]).json")
+                Assert-False (Test-Path "$($global:NodeArgs[7]).txt")
+            }
+        }
+        It 'có tệp scan/ảnh bên trong (needOcr) -> rỗng, để OCR cả tệp lúc Phân tích' {
+            $global:NodeReply = @{ text = 'phần có chữ'; needOcr = @('a.rar/scan.pdf'); notes = @() }
+            $p = Join-Path $global:Dir 'a.rar'; Write-BotText $p 'x'
+            Assert-Eq (ReadTxt (Get-Item $p)) ''
+        }
+        It 'lý do không đọc được (mật khẩu, tệp hỏng) vào $ReadNote' {
+            $global:NodeReply = @{ text = ''; needOcr = @(); notes = @('b.rar: có mật khẩu') }
+            $global:ReadNote = ''
+            $p = Join-Path $global:Dir 'b.rar'; Write-BotText $p 'x'
+            Assert-Eq (ReadTxt (Get-Item $p)) ''
+            Assert-Eq $global:ReadNote 'b.rar: có mật khẩu'
+        }
+        It '-NoInbox (lệnh specs tự đọc): không gọi node' {
+            $global:NoInbox = $true; $global:NodeArgs = $null
+            $p = Join-Path $global:Dir 'c.doc'; Write-BotText $p 'x'
+            Assert-Eq (ReadTxt (Get-Item $p)) ''
+            Assert-True ($null -eq $global:NodeArgs)
+            $global:NoInbox = $false
         }
     }
 

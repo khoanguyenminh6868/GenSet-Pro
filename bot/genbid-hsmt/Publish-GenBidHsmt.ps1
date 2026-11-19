@@ -103,9 +103,33 @@ function Get-FileText($f) {
                 return $xml.Replace('&amp;', '&').Replace('&lt;', '<').Replace('&gt;', '>')
             }
             '.txt' { return [IO.File]::ReadAllText($f.FullName, [Text.Encoding]::UTF8) }
+            { $_ -in $NodeExt } { return Get-NodeText $f }
         }
     } catch { Write-Host "  Không đọc được chữ của $($f.Name): $($_.Exception.Message)" }
     ''
+}
+# .doc/.rtf (Word trên Windows, antiword/catdoc trên sandbox), .xlsx, .zip/.rar/.7z (UnRAR / tar, đọc từng tệp bên trong):
+# đọc bằng lệnh publish-text của genbid-sync.js, cùng đường đọc với Phân tích (ocrHsmt) nhưng không OCR (19/11/2026, trước
+# đây Publish chỉ đọc PDF/DOCX/TXT, ba loại này chờ tới lượt Phân tích đầu tiên). Tệp nén có trang scan hay ảnh bên trong
+# thì để trống cả tệp, Phân tích OCR cả tệp như trước. Lý do không đọc được (mật khẩu, tệp hỏng, quá giới hạn) ghi vào
+# $script:ReadNote và files[].readNote.
+$NodeExt = @('.doc', '.rtf', '.xlsx', '.zip', '.rar', '.7z')
+$node = (Get-Command node -ErrorAction SilentlyContinue).Source
+$SyncJs = Join-Path $PSScriptRoot 'genbid-sync.js'
+$script:ReadNote = ''
+function Get-NodeText($f) {
+    # -NoInbox (lệnh specs): genbid-sync.js tự đọc và ghi đè chữ ngay sau đó.
+    if ($NoInbox) { return '' }
+    if (-not $node) { Write-Host "  $($f.Name): máy không có node, để Phân tích đọc"; return '' }
+    $out = Join-Path $TmpDir "genbid-pt-$Key-$(Get-Random)"
+    & $node $SyncJs publish-text --file $f.FullName --name $f.Name --out $out | Where-Object { $_ -notmatch '^SUMMARY: ' } | ForEach-Object { Write-Host "  $_" }
+    if (-not (Test-Path "$out.json")) { Write-Host "  $($f.Name): publish-text không trả kết quả"; Remove-Item "$out.txt" -ErrorAction SilentlyContinue; return '' }
+    $r = [IO.File]::ReadAllText("$out.json", [Text.Encoding]::UTF8) | ConvertFrom-Json
+    $t = [IO.File]::ReadAllText("$out.txt", [Text.Encoding]::UTF8)
+    Remove-Item "$out.json", "$out.txt"
+    $script:ReadNote = (@($r.notes) -join '; ')
+    if (@($r.needOcr).Count) { Write-Host "  $($f.Name): có $(@($r.needOcr).Count) tệp scan/ảnh bên trong, để OCR lúc Phân tích"; return '' }
+    $t
 }
 # Cắt chuỗi thành các đoạn tối đa $max byte UTF-8, không cắt giữa một ký tự.
 function Split-Utf8([string]$text, [int]$max) {
@@ -194,10 +218,13 @@ if (-not $NoCommit) {
             $recs = @(); $texts = @()
             foreach ($it in $items) {
                 $f = $keep | Where-Object { $_.Name -eq $it.name } | Select-Object -First 1
+                $script:ReadNote = ''
                 $text = Get-FileText $f
                 $has = ($text -replace '\s', '').Length -gt 40
                 $asset = ($files | Where-Object { $_.assetName -eq $it.assetName } | Select-Object -First 1).asset
-                $recs += [ordered]@{ name = $it.name; size = $it.size; hasText = $has; converted = $false; path = $it.name; url = "/_gh/$asset" }
+                $rec = [ordered]@{ name = $it.name; size = $it.size; hasText = $has; converted = $false; path = $it.name; url = "/_gh/$asset" }
+                if ($script:ReadNote) { $rec.readNote = $script:ReadNote.Substring(0, [Math]::Min(500, $script:ReadNote.Length)) }
+                $recs += $rec
                 if ($has) { $texts += "--- Tệp: $($it.name) ---`n$($text.Trim())" }
             }
             $parts = @(Split-Utf8 ($texts -join "`n`n") 190000)
