@@ -11,6 +11,11 @@
    "tables": 3112,
    "sups": 199
   },
+  "bảng máy khí: dòng máy trong tiêu đề không đọc thêm": {
+   "items": 2,
+   "tables": 2,
+   "sups": 1
+  },
   "số vô lý so với công suất": {
    "items": 139,
    "tables": 36,
@@ -677,6 +682,32 @@
    "rows": {},
    "sample": {
     "bảng không cho bản ghi nào": "| Emission level | EU StageV / US T4F"
+   }
+  },
+  {
+   "supplierId": "agg-fuzhou",
+   "n": 115,
+   "table": 14,
+   "title": "AGG-德塔",
+   "reasons": {
+    "bảng máy khí: dòng máy trong tiêu đề không đọc thêm": 1
+   },
+   "rows": {},
+   "sample": {
+    "bảng máy khí: dòng máy trong tiêu đề không đọc thêm": "| DC330G6-NG | 330/264 | LYX15H-G350 | AGG"
+   }
+  },
+  {
+   "supplierId": "agg-fuzhou",
+   "n": 116,
+   "table": 15,
+   "title": "康明斯-德塔",
+   "reasons": {
+    "bảng máy khí: dòng máy trong tiêu đề không đọc thêm": 1
+   },
+   "rows": {},
+   "sample": {
+    "bảng máy khí: dòng máy trong tiêu đề không đọc thêm": "| CU1375G6-NG | 1375/1100 | K50N-G11SH | Cummins"
    }
   },
   {

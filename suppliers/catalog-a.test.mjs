@@ -144,3 +144,13 @@ test("soát của điều phối: 'CONTACT' (chữ liên kết của fdk) không
   assert.equal(spec(e[0], "emission"), "Stage IIIA / CHINA STAGE3");
   assert.equal(spec(e[1], "emission"), undefined);
 });
+
+test("bảng máy khí (agg-fuzhou n116, model đuôi -NG): dòng máy trong tiêu đề KHÔNG đọc thêm, dòng của bảng như cũ (điều phối 19/11)", () => {
+  const notes = [];
+  const r = recs(sup("agg-fuzhou", [{ n: 116, title: "康明斯-德塔", header: [
+    "| | 发电机型号 | COP (kVA/kW) | 发动机型号 | 品牌",
+    "| CU1375G6-NG | 1375/1100 | K50N-G11SH | Cummins"],
+  rows: ["| CU1250G6-NG | 1250/1000 | K50N-G10S | Cummins"] }]), "engine", notes);
+  assert.deepEqual(r.map((o) => o.genset), ["CU1250G6-NG"]);
+  assert.deepEqual(notes.filter((x) => /bảng máy khí/.test(x.reason)).map((x) => x.detail), ["| CU1375G6-NG | 1375/1100 | K50N-G11SH | Cummins"]);
+});

@@ -830,6 +830,8 @@
     if (!h.slice(at).every(data)) return { mixed: true, at };
     return { at };
   }
+  const GAS_WORD = /燃气|沼气|天然气|natural\s*gas|\bgas\s+(gen|engine|set)|\bbiogas\b|\bLPG\b|\bCNG\b/i;
+  const gasTable = (t, lines) => GAS_WORD.test(`${t.title || ""} ${lines.join(" ")}`) || lines.some((l) => /-NG$/i.test(cellsOf(l)[0] || ""));
   function tidyTable(t, note = () => {}) {
     let header = t.header || [], rows = t.rows || [], changed = false;
     if (header.some((h) => /[一-鿿] +[一-鿿]/.test(h))) { header = header.map((h) => h.replace(HAN_SP, "$1")); changed = true; }
@@ -837,6 +839,10 @@
     if (st) { header = [st.header]; rows = [st.row, ...rows.slice(1)]; changed = true; }
     const hr = !isLabelTable(t) && headerRows({ header, rows });
     if (hr?.mixed) note("dòng máy lẫn với dòng tiêu đề", header[hr.at]);
+    // A gas set's table ("DC330G6-NG", agg-fuzhou n115 / n116 on the natural-gas pages): the catalog has no fuel yet, so
+    // its rows in the header are not added as if diesel (điều phối 19/11/2026: "thà thiếu"; the table's own rows stay as
+    // before, a fuel rule is a task of its own).
+    else if (hr && gasTable(t, [...header, ...rows])) note("bảng máy khí: dòng máy trong tiêu đề không đọc thêm", header[hr.at]);
     else if (hr) { rows = [...rows, ...header.slice(hr.at)]; header = header.slice(0, hr.at); changed = true; }
     return changed ? { ...t, header, rows } : t;
   }
