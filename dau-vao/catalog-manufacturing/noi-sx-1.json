@@ -1,0 +1,26 @@
+{
+ "ref": "origin/main",
+ "total": 60350,
+ "onlyA": 0,
+ "onlyB": 0,
+ "layers": [
+  {
+   "layer": "madeAt | controller | Deep Sea | at GB (đổi why) | why: mặc định theo hãng (Khoa chốt 16/11/2026) → hãng ghi nơi sản xuất — hồ sơ hãng, nguồn 6001/6002 (Hunmanby, North Yorkshire, mọi sản phẩm)",
+   "n": 276,
+   "ex": [
+    "controller|DSE7320|acepow-fuan|113|d35b33de|0",
+    "controller|DSE7320|ade-power|2007|d2370c64|1",
+    "controller|DSE7320|aksa-power|2001|7bda221c|2"
+   ]
+  },
+  {
+   "layer": "madeAt | controller | DEIF | at DK (đổi why) | why: mặc định theo hãng (Khoa chốt 16/11/2026) → hãng ghi nơi sản xuất — hồ sơ hãng, nguồn 6001/6002 (Skive, mọi sản phẩm)",
+   "n": 14,
+   "ex": [
+    "controller|AGC150|senci|2001|70f3122f|0",
+    "controller|AGC150|superwatt-swt|114|df7e5e98|1",
+    "controller|SGC420|pulita-energy|101|08a1ccce|0"
+   ]
+  }
+ ]
+}
