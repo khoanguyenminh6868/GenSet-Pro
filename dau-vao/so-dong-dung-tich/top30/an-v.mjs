@@ -26,7 +26,7 @@ for (const [k, x] of Object.entries(dv)) {
 L.unshift(`1. do-v off so gop-nhanh: ${same} lượt trùng, ${diff} lượt khác (trên ${Object.keys(dv).length} lượt có minDisp / maxDisp)`);
 // 2 + 3
 const pass = (rule, x, h) => (rule === "disp" ? x >= h.minDisp : x <= h.maxDisp * 1.005);
-const g1 = new Map(), gT = new Map(), gRes = new Map(), gNew = new Map();
+const gW = new Map(), gN = new Map(), g1 = new Map(), gT = new Map(), gRes = new Map(), gNew = new Map();
 const add = (m, key, run) => { const o = m.get(key) || { rows: 0, runs: new Set() }; o.rows++; o.runs.add(run); m.set(key, o); };
 let topCh = 0, topRuns = [], rescuedTop = 0, newTop = 0;
 for (const [k, x] of Object.entries(dv)) {
@@ -40,6 +40,17 @@ for (const [k, x] of Object.entries(dv)) {
     if (comp.length) add(g1, `${d.e}\t${rule}\tthắng ${s.win}\t${thr}\ttương thích đạt ${comp.join("/")}\tsố ${s.vals.join(",")}`, k);
     const tr = s.vals.filter((v) => v !== s.win && !B.roundCompat(v, s.win) && decs(v) > decs(s.win) && Math.abs(trunc(v, decs(s.win)) - s.win) < 1e-9 && pass(rule, v, h));
     if (tr.length) add(gT, `${d.e}\t${rule}\tthắng ${s.win}\t${thr}\tchỉ khớp khi cắt cụt ${tr.join("/")}\tsố ${s.vals.join(",")}`, k);
+    const t = rule === "disp" ? h.minDisp : h.maxDisp;
+    if (B.roundCompat(s.win, t)) add(gW, `${d.e}\t${rule}\tthắng ${s.win}\t${thr}\tsố ${s.vals.join(",")}`, k);
+    else if (!comp.length && Math.abs(s.win - t) <= t * 0.03) add(gN, `${d.e}\t${rule}\tthắng ${s.win}\t${thr}\tsố ${s.vals.join(",")}`, k);
+  }
+  {
+    const onK0 = new Set(x.on.drop.map((d) => noAlt(d.k)));
+    for (const d of x.off.drop) {
+      const rule = d.ruled.find((r) => r === "disp" || r === "maxDisp"), s = d[rule];
+      if (!s?.vals || !onK0.has(noAlt(d.k))) continue;
+      if (s.vals.some((v) => v !== s.win && B.roundCompat(v, s.win) && pass(rule, v, h))) L.push(`  V vẫn loại dù có số tương thích đạt: ${k} ${d.k} ${JSON.stringify(x.on.drop.find((o) => noAlt(o.k) === noAlt(d.k))[rule])}`);
+    }
   }
   const onK = new Map(x.on.drop.map((d) => [noAlt(d.k), d])), offK = new Map(x.off.drop.map((d) => [noAlt(d.k), d]));
   const sTopOn = new Set(x.on.top.map(noAlt));
@@ -66,6 +77,8 @@ const dump = (title, m) => {
 };
 dump("2. Nhánh hiện tại: dòng bị loại mà có số TƯƠNG THÍCH LÀM TRÒN với số thắng đạt ngưỡng", g1);
 dump("2b. Chỉ khớp khi CẮT CỤT (không nhận vào lớp làm tròn)", gT);
+dump("2c. Số thắng là NGƯỠNG HSMT làm tròn (nguồn không ghi số chính xác hơn; V không đổi)", gW);
+dump("2d. Còn lại: số thắng lệch ngưỡng ≤ 3% (loại đúng theo số)", gN);
 dump("3a. V giữ lại (off loại, on không loại)", gRes);
 dump("3b. V loại thêm (off không loại, on loại)", gNew);
 L.push(`\n3c. Lượt top đổi giữa off và on: ${topCh} (${topRuns.join(" ")}); dòng được giữ mà vào top: ${rescuedTop}; dòng mới bị loại vốn ở top: ${newTop}`);

@@ -111,3 +111,127 @@ Các nhóm "mất thắng" ở chặng A là so với C0 (số đông không g�
 
 - Khoá `rowKey` của `R.dropped` không có `r.a`, nên ô máy phát rỗng. Lần đầu so lệch 2807 dòng vì chuyện này. Khi so `dropped` với `all`, bỏ trường thứ 3 (`cmp.cjs` `noAlt`).
 - Đẩy đè nhánh đã đẩy bị chặn (auto mode). Rebase chỉ để kiểm, đừng đẩy. Để PR tự gộp main.
+
+## Vòng 2 (19/11/2026): lớp loại do làm tròn, đo biến thể V
+
+Chỉ đo, CHƯA đẩy lên PR. Mã V nằm trong worktree `wt-so-dong-c` (`suppliers/config-bot.mjs`, chưa commit), chỉ chạy khi
+`GENBID_DISP_ROUND=1`; không có cờ thì test vẫn 1128/1128. Tệp đo trong `dau-vao\so-dong-dung-tich\`: `do-v.mjs` (đo),
+`an-v.mjs` + `an-v.txt` (phân tích, đủ mọi nhóm), `eng-v.txt` (theo động cơ), `odd-keys.txt` (khoá ký tự lạ).
+
+### Định nghĩa "tương thích làm tròn"
+
+Hai số x, y tương thích khi: làm tròn số có NHIỀU chữ số thập phân hơn về số chữ số của số kia thì ra đúng số kia,
+VÀ hai số lệch nhau ≤ 1% (`roundCompat`). Ví dụ 21.927 ~ 21.9; 6.75 ~ 6.8; 10.338 ~ 10.34 ~ 10.3. Hai số cùng số chữ số
+thập phân thì không tương thích (trừ khi bằng nhau).
+- Mức 1% là để loại 4.3 ~ 4 hay 5.9 ~ 6: lệch như vậy có thể là đọc nhầm số xi lanh hoặc số khác, không phải làm tròn.
+- KHÔNG nhận cắt cụt (37.88 → 37.8): người ghi số làm tròn chứ không cắt; nhận cắt cụt sẽ gộp cả 37.88 với 37.8 lẫn
+  37.9, mở rộng nhóm mà không có cơ sở. Đo thực tế: 0 dòng chỉ khớp khi cắt cụt (mục 2b của `an-v.txt`), nên chọn này
+  không đổi kết quả.
+
+### 1. Liệt kê đủ: dòng bị loại vì dung tích có liên quan làm tròn (nhánh hiện tại, 261 lượt có ngưỡng dung tích)
+
+164 nhóm lệch ≤ 3% mà điều phối đếm = **25 nhóm "số thắng là ngưỡng HSMT làm tròn" + 139 nhóm loại đúng theo số**.
+Các nhóm này tách thành:
+
+**(a) Nguồn có số chính xác hơn, tương thích với số thắng và đạt ngưỡng: 6 nhóm, 181 khoá dòng (= 180 dòng bảng; một
+dòng có hai đầu phát).** V sửa đúng lớp này.
+
+| Động cơ | Số thắng | Ngưỡng | Số tương thích đạt | Các số trong phiếu | Dòng / lượt |
+|---|---|---|---|---|---|
+| DP222CB | 21.9 | ≥ 21.927 | 21.927 | 21.9, 21.927 | 66 / 3 |
+| SC8D280D2 | 8.27 | ≥ 8.3 | 8.3 | 6.5, 8.27, 8.3, 8.8 | 46 / 2 |
+| WP6D152E200 | 6.75 | ≥ 6.8 | 6.8 | 6.25, 6.75, 6.8 | 30 / 1 |
+| WP6D167E200 | 6.75 | ≥ 6.8 | 6.8 | 6.75, 6.8 | 20 / 1 |
+| WP6D158E201 | 6.75 | ≥ 6.8 | 6.8 | 6.25, 6.75, 6.8 | 12 / 1 |
+| SC8D220D2 | 8.27 | ≥ 8.3 | 8.3 | 8.27, 8.3 | 7 / 1 |
+
+**(b) Số thắng chính là NGƯỠNG HSMT làm tròn, nguồn không có số nào chính xác hơn: 19 nhóm thêm (25 nhóm tính cả 6
+nhóm ở (a)), 687 khoá dòng.** V KHÔNG sửa lớp này vì V chỉ gộp các số của nguồn với nhau. Y490D (2.67, HSMT ≥ 2.672,
+48 dòng / 2 lượt) thuộc lớp này. Danh sách đủ ở mục 2c của `an-v.txt`; lớn nhất:
+- 1103A33G 3.3 / ≥ 3.331 (109 dòng / 1 lượt);
+- 2206CE13TAG3 12.5 / ≥ 12.513 (68 / 1), cùng 6 model 2206 khác (TAG2 39, AE13TAG3 13, AE13TAG6 11, DE13TAG3 8,
+  AE13TAG2 7, AE13TAG5 6, DE13TAG2 6);
+- 1506AE88TAG5 8.8 / ≥ 8.82 (63 / 1), TAG4 4, TAG1 1;
+- Y490D 2.67 / ≥ 2.672 (48 / 2);
+- SC4H95D2 4.3 / ≥ 4.33 (45 / 1) và ≥ 4.329 (4 / 1);
+- YC6K600D30 12.94 / ≥ 13 (40 / 3), YC6K660D30 (22 / 2);
+- 1103A33TG1 3.3 / ≥ 3.331 (11 / 1); WP6D152E310 6.75 / ≥ 6.8 (1 / 1).
+Với lớp này, sự thật là "nguồn ghi số làm tròn, HSMT ghi số chính xác": theo nguồn KHÔNG biết được là đạt hay không
+(vd 12.94 có thể là 12.94 thật, < 13). **Điểm Khoa quyết**: có so ngưỡng sau khi làm tròn ngưỡng về độ chính xác của số
+thắng không (biến thể khác V, chưa đo).
+
+**(c) Loại đúng theo số (số thắng lệch ngưỡng ≤ 3% nhưng không phải làm tròn): 139 nhóm, 3.804 khoá dòng**, mục 2d
+của `an-v.txt`. Ví dụ: 2806AE18TAG2 18.1 < 18.273 (232 / 3); 6LTAA95G3 9.5 < 9.726; MTA11G2 10.8 < 11.051; 404A22G1
+2.216 < 2.27; SC4H160D2 4.3 < 4.4; TAD1355GE 12.78 > trần 12.7; 6ZTAA13G2 13 > trần 12.7.
+
+Cắt cụt: 0 nhóm.
+
+### 2. Biến thể V
+
+V: các số tương thích làm tròn của một động cơ gộp thành MỘT nhóm phiếu (bắc cầu, đại diện là số nhỏ nhất); nhóm thắng
+có một số đạt ngưỡng thì dòng đạt; với trần: có một số ≤ trần × 1,005.
+
+**Lượt đo:** 261 lượt có minDisp hoặc maxDisp (không chỉ 108 lượt có dòng đổi ở chặng B). Lượt không có hai ngưỡng này
+không đọc số đông dung tích nên V không đổi được gì. Phải chạy cả 261 lượt (không chỉ 108) vì V có thể TẠO giá trị thắng
+mới ở động cơ trước đây không có số đông, tức là loại thêm dòng ở lượt chặng B không đổi. Mỗi lượt chạy hai lần trong
+cùng tiến trình: V tắt (khớp gop-nhanh 261 / 261 lượt: top, all, dòng bị loại) và V bật.
+
+**Kết quả:**
+- **V giữ lại 6 nhóm / 180 dòng** (đúng 6 nhóm (a)). 7 dòng vào lại top 30.
+  - Đạt theo số chính xác nhất: DP222CB (21.927 ≥ 21.927), 66 dòng / 3 lượt.
+  - **CHỈ số làm tròn đạt, số chính xác hơn không đạt: Khoa quyết.** Đủ 5 nhóm, 114 dòng:
+
+    | Động cơ | Nhóm | Ngưỡng | Dòng / lượt |
+    |---|---|---|---|
+    | SC8D280D2 | 8.27 / 8.3 | ≥ 8.3 | 46 / 2 (IB2200067764#0, IB2200092179#0) |
+    | WP6D152E200 | 6.75 / 6.8 | ≥ 6.8 | 30 / 1 (IB2300359120#0) |
+    | WP6D167E200 | 6.75 / 6.8 | ≥ 6.8 | 20 / 1 (IB2300359120#0) |
+    | WP6D158E201 | 6.75 / 6.8 | ≥ 6.8 | 12 / 1 (IB2300359120#0) |
+    | SC8D220D2 | 8.27 / 8.3 | ≥ 8.3 | 6 / 1 (IB2200067764#0) |
+
+  - Lớp (b) (Y490D, 2206, 1103A33, YC6K…) V không sửa: 19 nhóm vẫn bị loại.
+- **Thay đổi NGOÀI lớp làm tròn: có, lớn.** V loại THÊM 130 nhóm / 5.107 dòng ở 56 lượt đổi top (186 dòng đang ở top 30
+  bị loại). Nguyên nhân: trước V, phiếu một động cơ chia theo độ làm tròn (vd 403D15G: 1.496 và 1.5) nên không đủ gấp 3
+  lần, không có số đông; V gộp lại thì có số đông và loại dòng theo nó. Theo cách V chạy, mọi số trong nhóm thắng đều
+  không đạt ngưỡng, nên các dòng này bị loại đúng theo số của nguồn, nếu số đông đúng. Lớn nhất:
+  - 403D15G / 403A15G1 nhóm 1.496 / 1.5 với HSMT ≥ 1.6 … 2.67 (hàng chục lượt, mỗi lượt 50–156 dòng);
+  - YC6MK350LD20 / YC6MK420LD20 nhóm 10.3 / 10.33 / 10.338 / 10.34 (≥ 11.051, trần 6.8 / 8 / 9.5 / 9.84);
+  - BF4M1013FC 4.76 / 4.764; 404D22TG 2.2 / 2.216; KTA19G2/G3/G3A/G4 18.9 / 19 với trần 14.6; KTA38G2/G2A, KT38G
+    37.8 / 38 với trần 22; 401246TWG2A / TAG2A 45.8 / 46; WP10D320E200 9.7 / 9.726 / 9.73; 1106A70TG1 7 / 7.01;
+    DP126LB 11 / 11.05 / 11.051 / 11.1; QSK19G20 18.9 / 19; SC13G355D2 12.88 / 12.9; WP23D 2.289 / 2.29 / 2.3 …
+  - **Cần soát:** 6DTAA89G34 có phiếu {8.8: 3 (gộp 8.8 + 8.82), 8.9: 1}, nhưng tên model ghi "8.9". Trước V không có số
+    đông; V cho thắng 8.8 và loại 12 dòng / 2 lượt với HSMT ≥ 8.9 (IB2300158982#0, IB2400216393#0). Chưa kiểm số thật
+    của model này.
+  - Danh sách đủ 130 nhóm (động cơ, nhóm thắng, ngưỡng, phiếu, dòng / lượt): mục 3b của `an-v.txt`.
+  - Ngoài hai việc trên, V không đổi gì: số xi lanh không đụng tới; điểm của dòng không đổi; lượt không có ngưỡng
+    dung tích không chạy V.
+- **7 nhóm sai đã biết** (6R / 8V / 10V / 12V1600G70F / G80F, TAD1341GE): trước và sau V đều KHÔNG có giá trị thắng
+  (`eng-v.txt`), tức là vẫn sửa đủ.
+- Khác ở mức động cơ (toàn danh mục, không chỉ 261 lượt): 275 nhóm (động cơ, số đông trước, số đông sau) đổi hoặc nhóm
+  thắng V có > 1 số (`eng-v.txt`). Có bắc cầu dài: 18 / 18.1 / 18.13; 22.9 / 22.92 / 22.921 / 23; 61 / 61.1 / 61.12 /
+  61.123; 9.7 / 9.72 / 9.726 / 9.73. 6BT5.9 trước thắng 5.9, V đổi thành nhóm {5.88, 5.9} đại diện 5.88: với HSMT
+  ≥ 5.9, dòng vẫn đạt nhờ số 5.9 (cùng loại "Khoa quyết" như trên; ở 261 lượt không có ngưỡng nào rơi vào khoảng này).
+
+### 3. Khoá động cơ có ký tự lạ (chỉ đếm, không sửa: thuộc `catalog.js`)
+
+6.873 khoá động cơ; 89 khoá có ký tự ngoài A–Z 0–9 . - / ( ). Theo ký tự: ★ ×33, * ×20, ^ ×13, `,` ×6, × ×5, : ×5,
+– ×3, ° ×1, — ×1, ? ×1, # ×1. **52 khoá có khoá sạch tồn tại riêng** (dòng bị tách khỏi model thật):
+1104A44TG1★ 1104A44TG2★ 1104C44TAG2★ 1106A70TAG2★ 1106A70TAG3★ 1106A70TAG4★ 1106A70TG1★ 12M55G6D3/5^ 12V4000G23F★
+12V4000G63F★ 16M33D1980E310^ 16M33G2250/5^ 16M33G8D3/5^ 16M55G6D3/5^ 16V4000G23F★ 16V4000G63F★ 20M33G4D3/5^
+20V4000G23F★ 20V4000G63F★ 20V4000G63LF★ 403A11G1★ 403A15G1★ 403A15G2★ 403D11G★ 403D15G★ 404A22G1★ 404D22G★
+404D22TG★ 4135D—1 4HTAA43*G34 6CT83–GM115 6M31G1000/5^ 6M31G800/6^ 8M33D1012E311^ 8M33D975E310^ 8M33G6D3/5^
+8M33G900/6^ KTA50G15× KTA50–G3 QSNTG4× TAD1351GE★ TAD1354GE★ TAD1355GE★ TAD1650GE★ TAD1651GE★ TAD851GE★ TAD852GE★
+TAD853GE★ TWD1645GE★ TWD1652GE★ TWD1653GE★ WP6D180E201^. Đủ 89 khoá (ký tự, số dòng, NCC) ở `odd-keys.txt`.
+Ngoài ra khoảng 152 khoá có ngoặc kiểu `4BTA39G2(G45E1)`, không tính là ký tự lạ.
+
+### Khoa quyết
+
+1. 5 nhóm / 114 dòng chỉ đạt nhờ số làm tròn (bảng ở mục 2): V giữ hay không.
+2. Lớp (b), 19 nhóm / ~500 dòng, số thắng là ngưỡng HSMT làm tròn: có làm tròn ngưỡng về độ chính xác của số thắng
+   không (chưa đo).
+3. Nhận V với phần loại thêm 130 nhóm / 5.107 dòng không (đều là số đông mới sau khi gộp; soát 6DTAA89G34).
+
+### Chưa kiểm
+
+- Số dung tích thật của 6DTAA89G34, SC8D280D2 / SC8D220D2 (8.27 hay 8.3), SC4H95D2 (4.3 hay 4.33).
+- Biến thể "làm tròn ngưỡng" cho lớp (b).
