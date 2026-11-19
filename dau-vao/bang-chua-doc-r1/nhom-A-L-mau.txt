@@ -1,0 +1,190 @@
+
+== acepow-fuan n126 b33  hc=5/7/3 rc=7 codes=["YT3B2-D"] {"R:có mã, không ra động cơ / đầu phát":38}
+H | Engine Model | | | | | ## | Model | Engine Power(KW) | Bore / stroke | Intake | Displacement | Adjustable rate | No of valves per cylinder ## | Rated | Standby | MM
+R | YT3B2-D | 30 | 33 | 108x120 | Natural | 3.3 | <5% |
+R | YT3A2Z-D | 36 | 38 | 105x120 | Turbo | 3.12 | <5% |
+
+== agg-fuzhou n112 b11  hc=5 rc=4 codes=["S275E5"] {"R:có mã, không ra động cơ / đầu phát":47}
+H | | 发电机型号 | ESP (kVA/kW) | PRP (kVA/kW) | 发动机型号
+R | S275E5 | 275/220 | 250/200 | DC09 072A 02-11
+R | S313E5 | 313/250 | 275/220 | DC09 072A 02-12
+
+== agg-fuzhou n118 b17  hc=5 rc=4 codes=["S400G6-NG"] {"R:có mã, không ra động cơ / đầu phát":2}
+H | | 发电机型号 | COP (kVA/kW) | 发动机型号 | 品牌
+R | S400G6-NG | 400/320 | OC16 071A 02-82 | Scania
+R | S375G5-NG | 375/300 | OC16 071A 02-82 | Scania
+
+== conductorjasa n111 b33 L:bảng nhãn (không tiêu đề) hc= rc=6 codes=undefined {}
+H 
+R | DJPS-100 AP BF6L914 100 kVA prime | BF6L914 | 100 | 110 | 19,7 L/jam | 2100 × 780x 1350 mm
+R | DJPS-100 WP BF 4M 1 013 EC 100 kVA prime | BF 4M 1 013 EC | 100 | 110 | 18,4 L/jam | 2200 × 800x 1500 mm
+
+== googol n107 b8  hc=7/4 rc=9 codes=["PTAA20V-EG1120C"] {"R:có mã, không ra động cơ / đầu phát":2}
+H | Model | Engine (Output Power) | Genset (Typical Generation Output Power) | No. of Cylinders | Displacement (L) | Weight (kg) | Full Load Consumption (L/h) ## | Standby (kW) | Prime (kW) | Standby (kW/kVA) | Prime (kW/kVA)
+R | PTAA20V-EG1120C | 1120 | 1020 | 1000/1250 | 900/1125 | V20 | 40.7 | 2450 | 238
+R | PTAA20V-EG1225C | 1225 | 1115 | 1100/1375 | 1000/1250 | V20 | 40.7 | 2450 | 264
+
+== green-power-generators n111 b12  hc=9/12/9 rc=16 codes=["GP280 A/S"] {"R:có mã, không ra động cơ / đầu phát":26}
+H | | MODELLO MODEL | TIPO TYPE | POTENZA POWER | MOTORE ENGINE | SERBATOIO TANK | DIMENSIONI DIMENSIONS | PESO WEIGHT | DOWNLOAD ## | kVA - 50 Hz | MODELLO MODEL | REG | CIL. | CONSUMO AL 75% PRP CONSUMPTION AT 75% PRP | Lu | La | A | LEROY SOMER | LINZ | MECC ALTE | STAMFORD ## | PRP | ESP | N. | L/h | L | mm | mm | mm | kg
+R | GP280 A/S | O | 250 | 275 | DC09 072A 02 11 | E | 6 | 39 | 150 | 3000 | 1100 | 1750 | 1950 | | | |
+R | GP280 S/S | S | 265 | 3800 | 1200 | 2000 | 3050
+
+== green-power-generators n130 b31  hc=9 rc=8 codes=["GP6 SH/K-SV"] {"R:có mã, không ra động cơ / đầu phát":24}
+H | | MODELLO MODEL | POTENZA POWER (PRP kVA) | POTENZA POWER (LTP kVA) | MOTORE ENGINE | CONSUMO CONSUMPTION (l/h) | SERBATOIO TANK (l) | DIMENSIONI (LxLxA) DIMENSIONS (LxWxH) (mm) | PESO WEIGHT (kg)
+R | GP6 SH/K-SV | 5 | 5,5 | KOHLER | 1,2 | 55 | 1300 x 700 x 970 | 370
+R | GP9 SH/K-SV | 8 | 8,8 | KOHLER | 1,8 | 55 | 1300 x 700 x 970 | 400
+
+== green-power-generators n132 b33  hc=10 rc=8 codes=["GL10"] {"R:có mã, không ra động cơ / đầu phát":3}
+H | | MODELLO MODEL | FARI LIGHTS (W) | SOLLEVAMENTO LIFTING | ALTEZZA MAX MAX HEIGHT (mt) | MOTORE ENGINE | GENERATORE GENSET (rpm) | POTENZA TOT TOT POWER (kVA) | RIMORCHIO STRADALE FAST TRAILER | EQUIPAGGIAMENTO EQUIPMENT
+R | GL10 | 4X160 | MANUALE (*) MANUAL (*) | 8,5 | KOHLER YANMAR | 1500 | 10 | Monoasse - timone fisso Single axle - fixed drawbar | Torre: sensore crepuscolare, rotazione 350° Generatore: insonorizzazione, prese, stacca batterie Lighting tower: light s
+R | GL15 | 4X160 | MANUALE (*) MANUAL (*) | 8,5 | KOHLER YANMAR | 1500 | 15 | Monoasse - timone fisso Single axle - fixed drawbar
+
+== green-power-generators n1001 b41 L:bảng nhãn (không tiêu đề) hc= rc=6 codes=undefined {}
+H 
+R | GP900 A/P | 400 | 4000 | 1800 | 2350 | 6500
+R | / | M7 | A5 | GP6A/KW-C | 55 | 1300 | 700 | 1000 | 300
+
+== huadong-yangzhou n106 b5  hc=7/4 rc=9 codes=["HDSC250"] {"R:có mã, không ra động cơ / đầu phát":12,"R:không ô mã":7}
+H | 机组型号 | 输出功率（KVA/KW） | 额定 电流 (A) | 100% 负载 燃油耗 （L/h） | 发动机 | 外形尺寸（mm） L ×W×H | 净重量 （Kg） ## | 额定功率 | 备用功率 | 型号 | 最大功率 （KW）
+R | HDSC250 | 250/200 | 275/220 | 362 | 47 | DC9 65A 10-93 | 247 | 3035×1210×1900 | 2027
+R | DC09 073A 02-21 | 249
+
+== jinjia-power n101 b0 L:bảng nhãn (không tiêu đề) hc= rc=10 codes=undefined {}
+H 
+R | | Model | Prime Power (kW) | Standby (kW) | kVA | Engine | Cyl. | Displacement (L) | Fuel (g/kW·h) | Weight (kg) | Dimensions (mm) | JJC-20GF | 20 | 22 | 25 | 4B3.9-G11 | 4 | 3.9 | 208 | 700 | 1650x720x1200
+R | JJC-24GF | 24 | 26.4 | 30 | 4B3.9-G2 | 4 | 3.9 | 208 | 700 | 1650x720x1200
+
+== jinjia-power n110 b9 L:bảng nhãn (không tiêu đề) hc= rc=10 codes=undefined {}
+H 
+R | | 型号 | 常用功率 (kW) | 备用功率 (kW) | kVA | 发动机 | 缸数 | 排量 (L) | 油耗 (g/kW·h) | 重量 (kg) | 尺寸 (mm) | JJC-20GF | 20 | 22 | 25 | 4B3.9-G11 | 4 | 3.9 | 208 | 700 | 1650x720x1200
+R | JJC-24GF | 24 | 26.4 | 30 | 4B3.9-G2 | 4 | 3.9 | 208 | 700 | 1650x720x1200
+
+== kaihua-genset n114 b16  hc=6/4 rc=8 codes=["KH-200GF"] {"R:có mã, không ra động cơ / đầu phát":76}
+H | Genset Model | Standby Power | Prime power | Engine model | Dimension | Weight(KG) ## | KVA | KW | KVA | KW
+R | KH-200GF | None | None | 250 | 200 | DC09 320A 02-61 | 3400*1300*1900 | 2600
+R | KH-220GF | None | None | 275 | 220 | DC09 320A 02-62 | 3400*1300*1900 | 2600
+
+== lees-power n133 b31  hc=7/5 rc=10 codes=["LSMU800NGE3"] {"R:có mã, không ra động cơ / đầu phát":16,"R:không ô mã":4}
+H | Model | Electrical Power KW | Efficiency (%) | Nox mg/m3 | Dimensions L×W×H (mm) | Weight (kg) | Specifications ## | LEES | MTU | Electrical Efficiency | Thermal Efficiency | Total Efficiency
+R | LSMU800NGE3 | MTU 8V4000 GS/L32 | 776 | 41.9 | 46.7 | 88.6 | 500 | 4000×2000×2300 | 10000 | PDF
+R | 800 | 43.0 | 42.7 | 85.7 | 500 | PDF
+
+== man-engines n1006 b24 L:bảng nhãn (không tiêu đề) hc= rc=3 codes=undefined {}
+H 
+R | E08 | E0834 LE302 | 4.6 l | 68 kW
+R | E0836 LE302 | 6.9 l | 110 kW
+
+== man-engines n1006 b35 L:bảng nhãn (không tiêu đề) hc= rc=3 codes=undefined {}
+H 
+R | – | 80 kW | 4
+R | E0836 LE302 | 6.9 l
+
+== mwm n1016 b41 L:bảng nhãn (không tiêu đề) hc= rc=7 codes=undefined {}
+H 
+R | Mittlerer effektiver Druck | bar | 21,5 | 18,7 | 21,5 | 18,7 | 17,6
+R | kW | 2.206 | 1.983 | 2.293 | 2.060 | 2.078
+
+== power-hf n108 b9  hc=8/8 rc=7 codes=["PHF3030Z1Q"] {"R:có mã, không ra động cơ / đầu phát":6}
+H | 系列 | 型号 | 标定功率(kW) | 1h功率(kW) | 转速（rpm) | 进气方式 | 调速方式 | 适配机型 ## | R系列燃气发动机 | PHF3020ZX1Q | 20 | 22 | 1500 | 自然吸气 | 电子 | 发电机组
+R | PHF3030Z1Q | 30 | 33 | 1800 | 增压 | 电子 | 发电机组
+R | PHF4035ZX1Q | 35 | 38.5 | 1500 | 自然吸气 | 电子 | 发电机组
+
+== rcg-power n124 b20  hc=7 rc=6 codes=["R-V85D5/S"] {"R:có mã, không ra động cơ / đầu phát":35}
+H | | 型号 | 主电源 | 备用电源 | 发动机 | 交流发电机 | 下载
+R | R-V85D5/S | 85 kVA / 68 kW | 94 kVA / 75 kW | 沃尔沃 & TAD530GE | 斯坦福 & UCI224G | PDF
+R | R-V100D5/S | 100 kVA / 80 kW | 110 kVA / 88 kW | 沃尔沃 & TAD531GE | 斯坦福 & UCI274C | PDF
+
+== rise-power n103 b1  hc=8/2 rc=9 codes=["GM-8.6-4"] {"R:có mã, không ra động cơ / đầu phát":36}
+H | Alternator Model | Prime Power | Voltage (V) | Rated Current (A) | Frequency (Hz) | Dimension (CM) | Quantity for 20' Container | Quantity for 40' Container ## | kW | kVA
+R | GM-8.6-4 | 8.6 | 11 | 200/400V | 15.5 | 50Hz | 69*58*68 | 80 | 170
+R | GM-12-4 | 12 | 15 | 200/400V | 21.7 | 50Hz | 69*58*68 | 80 | 170
+
+== rise-power n128 b32 L:bảng nhãn (không tiêu đề) hc= rc=9 codes=undefined {}
+H 
+R | MODEL | 400V/50Hz/3Ph | 400V/50Hz/3Ph | 400V/50Hz/3Ph
+R | 1500RPM | Cont.duty/40℃ | Standby / 40℃ | Standby / 27OC
+
+== superwatt-swt n111 b13  hc=4 rc=4 codes=["QSK60-G4"] {"R:có mã, không ra động cơ / đầu phát":4}
+H | Engine Model | Standby Power | 100% Prime Power | 75% Prime Power
+R | QSK60-G4 | 437L/h | 394L/h | 291L/h
+R | QSK60-G8 | 500L/h | 449L/h | 335L/h
+
+== teksan n101 b0  hc=9/2/4 rc=10 codes=["TJ8BD-1"] {"R:có mã, không ra động cơ / đầu phát":931}
+H | | COMPARE | Model | Phase | Hz | Power 9 - 45 kVA 46 - 110 kVA 111 - 179 kVA 180 - 300 kVA 301 - 499 kVA 500 - 749 kVA 750 - 999 kVA 1000 - 1499 kVA 1500 - 2500 kVA 2501 - 4500 kVA | Voltage | Engine | ALL ## | Standby (ESP) | Prime (PRP) ## | kVA | kW | kVA | kW
+R | | TJ8BD-1 | 1 | 50 | 8 | 6.4 | 7 | 5.6 | 230 | BAUDOUIN |
+R | | TJ8PE-1 | 1 | 50 | 8 | 6.4 | 7 | 5.6 | 230 | PERKINS |
+
+== vantek-jiangsu n111 b13  hc=5 rc=5 codes=["YH-30MT"] {"R:có mã, không ra động cơ / đầu phát":4}
+H | 柴油发电机组 | 电动潜水泵 | 发电功率 KW | 排水总流量 m3/h | 扬程 m
+R | YH-30MT | 1台 | 30 | 200-400 | 9
+R | YH-50MT | 2台 | 50 | 400-800 | 9
+
+== voltgent n107 b6  hc=8 rc=8 codes=["VS275-5"] {"R:có mã, không ra động cơ / đầu phát":32,"R:không ô mã":1}
+H | Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet
+R | VS275-5 | 275 | 220 | 250 | 200 | Scania | DC09 072A 02-11 | [EN] [RU] [ES] [PT]
+R | VS313-5 | 313 | 250 | 275 | 220 | Scania | DC09 072A 02-12 | [EN] [RU] [ES] [PT]
+
+== wartsila n101 b1 L:bảng nhãn (không tiêu đề) hc= rc=5 codes=undefined {}
+H 
+R | | 60 Hz | 50 Hz
+R | Engine type | 195 kW/cyl, 1200 rpm | 160 kW/cyl, 1000 rpm
+
+== wartsila n101 b3 L:bảng nhãn (không tiêu đề) hc= rc=5 codes=undefined {}
+H 
+R | Engine type | 60 Hz | 50 Hz
+R | 580 kW/cyl, 720 rpm | 600 kW/cyl, 750 rpm
+
+== wartsila n101 b11 L:bảng nhãn (không tiêu đề) hc= rc=5 codes=undefined {}
+H 
+R | Engine type | 60Hz/720rpm | 50 Hz/750 rpm
+R | 560 kW/cyl | 580 kW/cyl
+
+== westinpower n113 b19  hc=8/3 rc=9 codes=["LY1200"] {"R:có mã, không ra động cơ / đầu phát":3}
+H | N0. | Genset Model | Rated Power | Engine Model | Cylinder | Bore*Stroke (mm) | Displacement (L) | Dimensions ## | kW | kVA | L*W*H (mm)
+R | 1 | LY1200 | 1100 | 1375 | Liyu Engine | 12/V | 170*195 | 53.1 | 4700*1700*2300
+R | 2 | LY1600 | 1460 | 1825 | Liyu Engine | 16/V | 170*195 | 70.8 | 5940*1700*2615
+
+== winco n1007 b11 L:bảng nhãn (không tiêu đề) hc= rc=5 codes=undefined {}
+H 
+R | PSS30 | SINGLE PHASE | 25,200 | 24,300
+R | PRIME | THREE PHASE | 25,200 | 24,300 | MSG425
+
+== xinhengxin-fujian n1002 b23 L:bảng nhãn (không tiêu đề) hc= rc=4 codes=undefined {}
+H 
+R | MODEL: C750-60 | 440V | | 1800rpm
+R | @ | 100% (Standby Power) Load | 214g/kWh | 163L/h
+
+== yingtai-jiangsu n104 b8  hc=13 rc=13 codes=["403D-07"] {"R:có mã, không ra động cơ / đầu phát":46,"R:không ô mã":1}
+H | 发动机型号 Engine Type | 功 率(主用) Power (KW) | 功率 (备用) Power (KW) | 缸数 No Of Cylin ders | 缸径 *行程 Bore /Stro kse (MM) | 排气量 Exha ust Cspa city(L) | 压缩比 Comp ression Ratio | 机油容量 Lubri cating Cap acity (L) | 燃油耗 Fuel Consu mptio (G /KW.H) | 燃油耗 Fuel Cons umptio (L/H) | 调速方式 Type Of Go vernor | 冷却液容量 Liquid coolind capacity | 排放等级 Emission leveis
+R | 403D-07 | 5.4 | 5.9 | 3 | 67x72 | 0.761 | 23.5:1 | 3.05 | ≤252 | 1.63 | | |
+R | 403A-11G1 | 8 | 9 | 3 | 77x81 | 1.13 | 23.0:1 | 4.9 | ≤252 | 2.42 | 机械 | 5.2 | ／
+
+== yingtai-jiangsu n105 b10  hc=13 rc=13 codes=["SC4H95D2"] {"R:có mã, không ra động cơ / đầu phát":47,"R:không ô mã":1}
+H | 发动机 型号 Engine Type | 功率( 主用) Power (KW) | 功率( 备用) Power (KW) | 缸数 No Of Cylin ders | 缸径*行程 Bore /Strokse (MM) | 排气量 Exhau st Cs pa city (L) | 压缩比 Compre ssion Ratio | 机油容量 Lubri cating Cap acity (L) | 燃油耗 Fuel Consu mptio (G/ KW.H) | 燃油耗 Fuel Consum ptio (L /H) | 调速方式 Type Of Gover nor | 冷却液容量 Liquid coolind capa city | 排放 等级 Emiss ion leveis
+R | SC4H95D2 | 62 | 68 | 4 | 105x124 | 4.3 | 17.3:1 | 13 | 200 | 14.8 | 机械/电调 | 14 | 国II
+R | SC4H115D2 | 78 | 86 | 4 | 105x124 | 4.3 | 17.3:1 | 13 | 200 | 18.7 | 机械/电调 | 14 | 国II
+
+== yingtai-jiangsu n112 b22  hc=7/4 rc=9 codes=["20GF"] {"R:có mã, không ra động cơ / đầu phát":18,"R:không ô mã":1}
+H | 机组型号 Engine Type | 功率（主用） | 功率（备用） | 电流（主用） Power(A) | 电流（备用） Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimensions L*W*H(m) ## | KW | KVA | KW | KVA
+R | 20GF | 20 | 25 | 22 | 27.5 | 36 | 39.6 | 606 | 1.5*0.72*1.15
+R | 24GF | 24 | 30 | 26.4 | 33 | 43.2 | 47.52 | 620 | 1.6*0.72*1.15
+
+== yingtai-jiangsu n112 b23  hc=13 rc=13 codes=["K4100D"] {"R:có mã, không ra động cơ / đầu phát":18,"R:không ô mã":1}
+H | 发动机 型号 Engine Type | 功率 (主用) Power (KW) | 功率 (备用) Power (KW) | 缸数 No Of Cylin ders | 缸径*行程 Bore/ Stro kse (MM) | 排气量 Exhaust Cspa city (L) | 压缩比 Compr ession Ratio | 机油容量 Lubrica ting Capacity (L) | 燃油耗 Fuel Consum ptio (G/ KW.H) | 燃油耗 Fuel Consum ptio (L/H) | 调速方式 Type Of Gover nor | 冷却液容量 Liquid coolind capa city | 排放等级 Emiss ion leveis
+R | K4100D | 30.1 | 33 | 4 | 100X115 | 3.61 | 19:1 | 15 | ≦258 | 9.3 | 机械 | 12 | /
+R | K4100D | 30.1 | 33 | 4 | 100X115 | 3.61 | 19:1 | 15 | ≦258 | 9.3 | 机械 | 12 | /
+
+== yingtai-jiangsu n118 b30  hc=13 rc=13 codes=["NT855-GA"] {"R:có mã, không ra động cơ / đầu phát":36,"R:không ô mã":1}
+H | 发动机型 Engine Type | 功率(主用) Power(KW) | 功率(备用) Power(KW) | 缸数 NoOf Cylinders | 缸径 *行程 Bore /Stroks (MM) | 排气量 Exhaust Cspacity (L) | 压缩比 Compre ssion Ratio | 机油容量 Compre ssion Ratio | 燃油耗 Fuel Consu mptio (G/KW.H) | 燃油耗 Fuel Consumptio (L/H) | 调速方式 Type Of Governor | 冷却液容量(L) Liquid coolind capacity | 排放等级 Emission leveis
+R | NT855-GA | 231 | 254 | 6 | 140X152 | 14 | 15.0:1 | 36 | 199 | 55 | 电子调速 | 62 | 无
+R | MTA11-G2A | 234 | 257 | 6 | 125X147 | 10.8 | 16.1:1 | 34 | 199 | 56 | 电子调速 | 62 | 无
+
+== yingtai-jiangsu n2007 b38  hc=11 rc=12 codes=["PTAA13EG1"] {"R:có mã, không ra động cơ / đầu phát":39}
+H | 发动机 型号 | 发动机功率（kW） | 气缸数量 | 缸径*行程（mm） | 发动机排量（L） | 压缩比 | 机油容量（L） | 燃油消耗量（g/kW．h） | 调速方式 | 冷却液容量（升） | 排放等级
+R | PTAA13EG1 | 346 | 378 | L6 | 128×166 | 12.8 | 15.5:1 | 40 | 198.75 | 电喷 | 36 | T3
+R | PTAA13EG3 | 366 | 408 | L6 | 128×166 | 12.8 | 15.5:1 | 40 | 200.86 | 电喷 | 36 | T3
+
+== zc-power n109 b11  hc=12 rc=11 codes=["ZC-GF2500"] {"R:có mã, không ra động cơ / đầu phát":5}
+H | | Model | Rated Power | Max Power | Voltage | Frequency | Engine | Fuel Tank | Runtime (50%) | Noise (7m) | Start | Weight
+R | ZC-GF2500 | 2.0 kW | 2.5 kW | 110/220V | 50/60Hz | OHV 208cc | 15L | 11 hrs | 68 dB | Recoil | 42 kg
+R | ZC-GF3500 | 2.8 kW | 3.5 kW | 110/220V | 50/60Hz | OHV 223cc | 15L | 10 hrs | 69 dB | Recoil | 48 kg
