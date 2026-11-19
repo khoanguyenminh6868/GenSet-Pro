@@ -82,13 +82,66 @@ Mất: huatai WD305TAD68 / WD327TAD78 / WD327TAD82 `absurd current` (việc 4: h
 - Rủi ro: luật cột "Engine" có thể chạm bảng mới cào sau này có tiêu đề trùng khít ô nhưng lệch nghĩa → chỉ làm MẤT động cơ (không gán sai), có note để tìm (`unread-tables.mjs --reason "ô động cơ không đọc được, mã ở cột khác"`). Gộp khoá ^ đổi số đông của 13 khoá (thêm 1 phiếu mỗi khoá; chỉ 1 cặp mâu thuẫn, không đổi kết quả). Top 30 chưa đo: các dòng đổi điểm dự kiến ở gói đòi MTU 4000 / Volvo TAD / Baudouin M33 (khoá gộp), Leroy-Somer TAL (saudi) và gói 30–50 kVA (tecnogen).
 - Quay lui: `git revert` commit 30621946 (một commit; không đổi dữ liệu `cn/`).
 
+## 12. Top 30 trên cloud (a89b88be ↔ 30621946; tệp và script ở `dau-vao\catalog-b\top30-cloud\`)
+- **Ghép khoá** (`9-ghep.mjs` → `ghep.txt`, `ghep-cap.tsv`). Khoá đo của `do-gop` là NCC | e.key | a.key | keyOf(chữ dòng). `keyOf` mới bỏ "–" / "—" và dấu cuối ^ ×, còn `tidyModel` bỏ ★ ở NCC khác ettes. Nên cùng một dòng có thể ra khoá khác chữ. Em chuẩn hoá hai bên bằng cùng một hàm rồi so.
+  - 1093 lượt, 0 lỗi. 349 lượt giống y chữ, 583 lượt chỉ khác chữ khoá, 510 lượt khác thật.
+  - 147 cặp khoá cũ ↔ mới. Điểm giữ nguyên ở mọi cặp chỉ đổi chữ.
+  - Trong 510 lượt khác thật: top đổi ở 70 lượt (69 lượt đổi tập), all đổi ở 502, dropped / rowflag đổi ở 236.
+- **Chạy lại trên máy** (`luot-chi-tiet.mjs`, cùng mã, bidhist chụp 18/11) cho 510 lượt khác, có ghi lý do loại: khớp cloud 510/510. `10-ly-do.mjs` → `ly-do.txt` gán lý do cho từng khoá:
+  - **Rời all**
+    - 1117 dòng-lượt / 25 khoá: bản ghi không còn ở nhánh.
+      - eastern-lion EL… (việc 2): 26 dòng, ô động cơ là chữ Hán ("G128系列WLG308", "4105ZD(小泵）"). Không còn mã động cơ đọc được, nên mất cả dòng. Kèm 4 đầu phát RUIFEN6120.
+      - tecnogen AUS7310xx (việc 2): mã này là đầu phát, nay đọc thành động cơ S3L2SD / S4L2SD.
+      - bruno MCP12080 (việc 2): mã này cũng là đầu phát; động cơ của dòng là KOHLER KDW1003.
+    - 62 dòng-lượt: luật cyl / disp / maxDisp nay loại vì khoá thường gộp được số từ bảng của hãng.
+      - Bảng của chính hãng (weichai-power, weichai-heavy-machinery) và baifa đều ghi `^`.
+      - Ví dụ: agg-fuzhou / cgm 6M31G1000/5 và 6M31G800/6 nhận 6 xi lanh, 149×177; voltgent / mecca 8M33G900/6; baifa 20M33G4D3/5 (20 xi lanh), 8M33G6D3/5, 12M55G6D3/5, 16M33G8D3/5, 16M55G6D3/5; mecca 16M33D1980E310 (16V / 52,3 L); landtop 16M33G2250/5.
+      - Đây là loại đúng theo số của hãng.
+  - **Vào all**
+    - 145 dòng-lượt: tecnogen S4L2SD / S3L2SD. Đây là động cơ thật của các dòng AUS7310 ở trên (việc 2).
+    - 4 dòng-lượt: eastern-lion EL274J / EL274K. Gốc loại vì "động cơ chỉ có dòng 60 Hz". Nhánh mất các dòng chữ Hán nên còn dưới 2 dòng ghi tần số, luật freq không áp nữa.
+    - 1 dòng-lượt: waeta WP6D180E201 (gốc loại theo disp). Gộp với `WP6D180E201^` khiến số đông dung tích đổi.
+    - **28 dòng-lượt: 8M33D1012E311 của kaihua, walter, wiseke, waeta, uleengen, jet, kaichen.** Gốc loại theo cyl / disp / freq, nhánh thì không. Đã xác minh nguyên nhân (`11-khoa-8m33.mjs`):
+      - Gốc: khoá thường có 8 xi lanh / 26,14 L (waeta, wiseke; 150×185 × 8 xi lanh ≈ 26,2 L). Khoá `^` chỉ có aosif ghi 12V / 31,8 L, cùng dòng 50 Hz.
+      - Gộp lại thì dung tích không còn số đông (26,14 ↔ 31,8), nên luật disp không áp. Xi lanh 8 / 8 / 12 cũng không loại được. Thêm dòng 50 Hz của aosif nên động cơ không còn "chỉ 60 Hz".
+      - **Số của aosif sai nguồn**: 12 xi lanh 150×185 phải ≈ 39 L, không phải 31,8 L.
+      - Không dòng nào trong số này vào top.
+  - **Đổi điểm** (42 khoá, mọi delta dương, mỗi khoá một giá trị cố định):
+    - Bội của 8 = thêm loại thông số động cơ khi gộp khoá (+8 mỗi loại).
+      - +32: agg / cgm 6M31G…, landtop 16M33G2250/5, tellhow.
+      - +40: voltgent / mecca 8M33G900/6.
+      - +48: waeta / jet WP6D180E201, tellhow TWD / TAD.
+      - +56: mecca / chuangyuan 16M33D1980E310, tellhow.
+      - +8: aosif / mecca 8M33D1012E311.
+    - +68 (baifa ^, 5 khoá) = +60 vì có hãng (khoá `^` của baifa trước đây không có hãng) + 8.
+- **Ra / vào top** (14 khoá ra, 9 khoá vào):
+  - tecnogen AUS7310xx (59 dòng-lượt) → S4L2SD / S3L2SD (56): cùng dòng, đổi động cơ. 404D22G (4) / S4Q2Z361SD (1) nhường chỗ cho tecnogen S4L2SD / KDI1903M khi xếp lại các dòng của cùng NCC.
+  - bruno MCP12080 (16): dòng mất. Thay bằng dòng xếp sau.
+  - cgm 6M31G1000/5: ra 4 (cyl / disp), vào 1 lượt (+32). cgm 4008TAG1 nhường chỗ ở lượt đó.
+  - jet WP10D200E200 → jet WP6D180E201 (+48).
+  - IB2300233670#0: mecca 16M33D1980E310 và landtop 16M33G2250/5 bị loại theo maxDisp / disp → mecca 5016AE61TRG3, rcg R1850GE vào.
+  - baifa 16M55G6D3/5: ra (cyl).
+  - kangwo 6CT83GM115 → victory LT620: xếp lại do dòng trên rời. Bản ghi victory không đổi ở PR.
+- **Việc 2 (khoá dòng và quyết định đã bấm)** (`8-rowkey-cmp.mjs` → `rowkey-cmp.txt`): KHÔNG ảnh hưởng.
+  - Quyết định `rowok` / `blockedRows` (bot và web) khớp theo NCC | băm chữ dòng (`lineKey`), không theo model / `keyOf`.
+  - Web hiện có 0 quyết định `rowok`.
+  - `lineKey` chỉ có ở gốc: 32, đúng các dòng không còn bản ghi (eastern-lion 26, bruno 5, tecnogen 1). Chỉ có ở nhánh: 0.
+  - `ROW_EXCEPTIONS` khớp theo chữ dòng: 5 → 8 lượt khớp, vẫn áp. `unread-tables.json` theo bảng.
+- **Việc 4 (tecnogen n2005)**: dòng 0 / 1 / 3 / 4 nay động cơ S3L2 SD / S4L2 SD.
+  - Công suất đổi ở dòng 0 (P 11,8 / 9,7, S 13,2 / 10 → P 10, S 11 kVA) và dòng 4 (P 3,5 / 2,9 → P 15, S 16,5): bản cũ đọc lệch cột.
+  - Mất số xi lanh 3 / 4 ở 4 dòng (thiếu, không sai). Thêm khối lượng 560 ×4.
+  - Dòng 7 (MI45TSX*) không còn động cơ.
+- **Hướng xử lý cho 8M33D1012E311 (chờ quyết)**: (a) cắm cờ / `ROW_EXCEPTIONS` cho số cyl / disp ở dòng aosif (n?, sai nguồn); (b) để `^` của aosif tách (`MARK_KEEP` theo NCC), nhưng như vậy vẫn không có căn cứ; (c) chấp nhận vì không vào top.
+  - Em đề xuất (a), làm thành việc riêng.
+
 ## Chưa kiểm
-- Top 30 (điều phối đo cloud; em giải thích mọi lượt đổi khi có tệp ở `dau-vao\catalog-b\top30-cloud\`).
+- Top 30: ĐÃ đo trên cloud và giải thích ở mục 12.
 - md5 JSON `build()` gốc ↔ nhánh: không đo riêng (spec-diff + builder qua `odd-keys`, `cap-gop`, row-flags đã so); bidprice, web thật: không đo. Không mở lại URL nguồn.
 
 ## Cần Khoa / điều phối quyết
-1. ★ ettes-power: giữ tách (hiện tại) hay gộp với model Perkins và đưa "Perkins China" vào nơi sản xuất của dòng (`madeAt`, việc riêng: đọc chú thích cuối bảng)?
-2. ^ Baudouin / Weichai: em gộp vì không có chú thích; nếu Khoa biết ^ là biến thể (vd. Stage III Trung Quốc) thì thêm `^` vào `MARK_KEEP` theo NCC.
+1. ~~★ ettes-power~~: Khoa (qua điều phối, 20/11) quyết TÁCH, giữ như PR.
+2. ~~^ Baudouin / Weichai~~: Khoa "không biết" → giữ GỘP như PR; comment ở `keyOf` (commit e0cb3ea5) ghi rõ việc gộp không dựa trên nguồn nào.
+2b. MỚI (mục 12): aosif "8M33D1012E311^" ghi 12V / 31,8 L. Gộp với khoá thường (8 xi lanh / 26,14 L của waeta, wiseke) làm luật cyl / disp / freq không loại được 28 dòng-lượt của 7 NCC khác. Không dòng nào vào top. Hướng xử lý xem mục 12.
 3. Việc riêng đề xuất (không tự mở): zhengchi mã tổ máy làm động cơ (517 dòng); eastern-lion đọc "EL xxx" làm đầu phát; "RUIFEN6120" / controller đọc làm đầu phát ở bảng khác của eastern-lion.
 
 ## Cần ghi nhớ
