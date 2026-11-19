@@ -1,4 +1,6 @@
-**Kết luận bằng số (đo, `suppliers/cn` hiện tại, gốc 671797e4 ↔ nhánh c977a26b): +388 bản ghi mới (224 dòng máy chưa từng đọc ở 7 NCC, 209 model tổ máy chưa có), 18 bản ghi gộp vào bản ghi khác (không mất dữ liệu), +1.130 khối lượng, +455 tiêu hao, +52 dòng điện, +74 xi lanh ở 9 NCC đang đọc; đảo vai 0 → 0; mọi số mới đều có trong chữ dòng nguồn. Số đo khác ước của brief ở (a): dòng máy trong tiêu đề là 422 dòng / 9 NCC (không phải 157 / 6) — ước cũ bỏ sót fdk-energy 174, elitech 50, rcg 41. Còn 5 giá trị nguồn ghi sai rõ (1440 kg cho máy 1600 kW ×3, 5500 kg cho máy 20 kW ×2) cần quyết.**
+**CẬP NHẬT lượt 2 (commit 9ac6b690, soát của điều phối) — xem mục 10. Số cuối gốc 671797e4 ↔ nhánh 9ac6b690: +374 bản ghi mới, 64 mất (18 gộp qua `also` + 46 bản ghi tổ máy đôi "2*" CŨ của baifa nay bỏ đúng luật "tổ máy nhiều động cơ"), 1.101 bản ghi fdk bỏ chữ "CONTACT" ở model tổ máy; phần (b) không đổi. Các tệp `soat-cuoi.*`, `spec-diff-cuoi.*`, `hop-ly-cuoi.tsv`, `row-flags-nhanh.json` đã thay bằng bản lượt 2. Phần dưới (mục 1–9) là lượt 1 (c977a26b).**
+
+**Kết luận bằng số lượt 1 (đo, `suppliers/cn` hiện tại, gốc 671797e4 ↔ nhánh c977a26b): +388 bản ghi mới (224 dòng máy chưa từng đọc ở 7 NCC, 209 model tổ máy chưa có), 18 bản ghi gộp vào bản ghi khác (không mất dữ liệu), +1.130 khối lượng, +455 tiêu hao, +52 dòng điện, +74 xi lanh ở 9 NCC đang đọc; đảo vai 0 → 0; mọi số mới đều có trong chữ dòng nguồn. Số đo khác ước của brief ở (a): dòng máy trong tiêu đề là 422 dòng / 9 NCC (không phải 157 / 6) — ước cũ bỏ sót fdk-energy 174, elitech 50, rcg 41. Còn 5 giá trị nguồn ghi sai rõ (1440 kg cho máy 1600 kW ×3, 5500 kg cho máy 20 kW ×2) cần quyết.**
 
 # catalog-a — dòng máy nằm trong tiêu đề + gộp dấu cách chữ Hán của tiêu đề (19/11/2026)
 
@@ -114,8 +116,26 @@ Danh sách đủ: `dong-may-lan.tsv` (5 note), `do-a-goc.tsv` (496 dòng quét),
 - `spec-diff-cuoi.txt` / `.md`; `row-flags-goc.json` / `row-flags-nhanh.json`; `hop-ly-1.tsv`; `nhan-doi.tsv`; `dong-chuyen.tsv`; `dong-may-lan.tsv`; `do-a-goc.tsv`, `quet.tsv`.
 - Script: `1-quet-tieu-de.cjs`, `2-do-a.cjs`, `3-soat.mjs` (bản của `4-soat-moi.mjs` R1, thêm cột `doi`, tách bản ghi chỉ đổi tiêu đề lưu kèm), `4-nhan.mjs`, `5-hop-ly.mjs`, `6-dong-chuyen.mjs`; `goc\web\catalog.js` = origin/main 671797e4.
 
+## 10. Lượt 2 — soát của điều phối (5 điểm, soát ĐỦ trên mọi bản ghi), commit 9ac6b690
+
+| # | điểm | đo (đủ) | xử lý |
+|---|---|---|---|
+| 1 | fdk "CG250-H1 CONTACT": chữ liên kết dính ô model | 184 / 184 bản ghi mới; VÀ 1.119 / 1.747 bản ghi fdk CŨ ở gốc (chỉ fdk-energy trong cn/ có ô "… CONTACT") | CẮT: ô "<một từ> CONTACT" → "<một từ>" (trong bước làm sạch ô của dòng). spec-diff: đúng 1.101 bản ghi chỉ đổi `genset` "X CONTACT" → "X" (soát: 0 trường hợp khác dạng này); 0 bản ghi fdk còn "CONTACT"; model động cơ / đầu phát, công suất không đổi |
+| 2 | agg-fuzhou n115 / n116 là tổ máy khí | trang nguồn: https://www.aggpower.cn/agg-natural-gas-generator-sets và …/cummins-natural-gas-generator-sets, chữ "燃气发电机组" → CHẮC là máy khí; 10 bản ghi mới. Nhưng gốc ĐÃ đọc 34 bản ghi từ chính hai bảng này như máy thường; catalog không có trường nhiên liệu, config-bot không có luật khí (grep "gas / 燃气" trong `config-bot.mjs`: 0) → máy khí khác (kaihua OC16, …) cũng đang vào ứng viên | CHƯA sửa, chờ quyết: (i) để như cũ (10 bản ghi mới cùng cách đọc 34 bản ghi cũ), hay (ii) việc riêng "nhiên liệu tổ máy" (đánh dấu bảng / trang khí, loại khỏi ứng viên diesel) — đụng nhiều NCC, ngoài phạm vi. Nếu điều phối muốn bỏ riêng 10 bản ghi mới thì không có luật chung an toàn trong phạm vi này |
+| 3 | baifa emission "CHINA STAGE16" | bản ghi mới: STAGE3 ×6 (đúng), STAGE4 … STAGE18 mỗi giá trị ×2 = 30 (rác: ô bảng tính kéo số tăng dần). Toàn catalog (gốc + nhánh): giá trị "stage" + số Ả Rập ≥ 4 CHỈ có ở 30 giá trị này | KHÔNG ĐỌC: regex `ok` của `emission` từ chối "stage" dính số 4–99 ("CHINA STAGE4"); "CHINA STAGE3", "STAGE V", "Stage IIIA" giữ. Bản ghi giữ, chỉ bỏ trường emission. Còn lại: 6 "Stage IIIA / CHINA STAGE3" |
+| 4 | baifa TWIN "2*TWD1645GE" | bản ghi mới: 7 dòng n106 b8-header × 2 = 14; bản ghi CŨ ở gốc cũng có: 46 (baifa n101 b0, n104 b6, n105 b7, n106 b8; có cả rác "engine 2*S4L1D-G41", "alternator 4 months") | BỎ: luật có sẵn "tổ máy nhiều động cơ" (`^[2-4]\s*[x×]`, tecnogen "2 x TAD1641GE") nhận thêm `*`. Dòng không cho bản ghi, ghi note → "tổ máy nhiều động cơ: 6 → 40" (34 dòng). 14 mới không vào; 46 cũ mất (MẤT HẲN đúng ý, liệt kê trong `soat-cuoi.tsv`). Bảng baifa n106 b8 (toàn dòng TWIN) thành "không cho bản ghi nào" (3.111 → 3.112) |
+| 5 | penlucky "| 16 | 16 |" → prime 16 kW | tiêu đề "Primary Powe /KW \| Continuous power/ KW": cột 2 là continuous (COP) — theo luật có sẵn COP không là mức nào; 34 / 34 dòng mới đều prime = cột 1 (vd PLWM500X 500 / 400: prime 500 kW, COP 400 bỏ). Không mất mức prime / standby nào (bảng không có standby) | không đổi |
+| — | 3 dòng 1.440 kg | — | để nguyên, chờ Khoa (điều phối trình) |
+
+Lệnh lượt 2 + đầu ra:
+- `spec-diff.mjs git:671797e4 .` → `bản ghi cũ 59786, mới 60096 | khác 2883 | chỉ cũ 64, chỉ mới 374 | bảng có đổi 130`, `{"makes":72,"weight thêm":1130,"genset":1101,"fuel thêm":455,"current thêm":52,"cyl thêm":74}`, `đảo vai: 0 → 0`.
+- `3-soat.mjs` → `Mới 374, mất 64 (18 gộp vào bản ghi khác qua also), đổi 4040 (thêm 1256 bản ghi chỉ đổi chữ tiêu đề lưu kèm)`; MỚI có cờ: 0; đổi ngoài (b): chỉ `makes` 72 (như lượt 1) + `genset` 1.101 (CONTACT).
+- `5-hop-ly.mjs soat-cuoi.tsv` → đúng 5 "NGHI" như lượt 1 (1.440 kg ×3, 5.500 kg ×2).
+- `row-flags.mjs --json`: 165 dòng, đúng cùng khoá lượt 1 (mới 0, mất 0).
+- `node --test suppliers/*.test.mjs web/test/*.test.mjs` → 1.310 / 1.310 (thêm 1 ca: CONTACT, 2*, STAGE16). `quality --check`: không xấu đi. `unread-tables.json` chụp lại (3.306 bảng).
+
 ## Cần ghi nhớ
 
 - Khoa 19/11 duyệt "Làm" (a) + (b): đã làm ở PR #945.
-- Chờ quyết: 3 dòng 1.440 kg (mục 8); đề xuất cơ chế "bỏ một thông số" cho `ROW_EXCEPTIONS`.
+- Chờ quyết: 3 dòng 1.440 kg (mục 8, điều phối trình Khoa); agg-fuzhou n115/n116 máy khí (mục 10 điểm 2): để như cũ hay mở việc "nhiên liệu tổ máy".
 - Đề xuất việc riêng (không tự mở): agg-fuzhou "COP" đọc thành prime (cả bảng cũ); bdadl / fukangsi / pengpai không đọc được công suất "1600/1750"; baifa n101 b1 + rcg n120 (62 dòng máy lẫn tiêu đề) cần luật riêng.
