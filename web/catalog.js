@@ -32,6 +32,14 @@
     [/\bengga\b|英格/i, "Engga"], [/\bfaraday\b|法拉第/i, "Faraday"], [/\bsiemens\b|西门子/i, "Siemens"],
     [/\bavk\b/i, "AvK"], [/\blinz\b/i, "Linz Electric"], [/\bsincro\b/i, "Sincro"], [/\bweg\b/i, "WEG"],
   ];
+  // FG Wilson as an alternator's make (genlitec: "| Alternator Make | FG Wilson", "| Alternator | FG Wilson FGL70030"). Read ONLY from
+  // the alternator's own cell or its make cell, never from a page title / column header / whole row (those name the genset's
+  // make), so it is not in ALT_BRANDS (which title, header and HSMT readings use).
+  const FG_WILSON = [/\bfg[\s-]?wilson\b/i, "FG Wilson"];
+  const ALT_CELL_BRANDS = [...ALT_BRANDS, FG_WILSON];
+  // A make word at the start of an alternator cell ("Stamford S5L1D-C41", "FG Wilson FGL70030").
+  const ALT_PREFIX = /^(stamford|leroy[\s-]?somer|mecc\s?alte|marathon|engga|fg\s?wilson)\s+/i, FG_PREFIX = /^fg\s?wilson\s+/i;
+  // ("Leroy Somer TAL-A44-M / TAL-A46-C", one make and two models; "Stamford HCI 444D", a code with a space: other forms, not read here.)
   // Mã đầu phát của các dòng phổ biến: dùng để biết ô nào là đầu phát khi bảng có cả động cơ lẫn đầu phát.
   const ALT_CODE = /^(UC[DIM]{0,2}\s?\d{3}|UCI\d|HC[IKM]?\s?\d{3}|PI\s?\d{3}|PE\s?\d{3}|S[0-9][LM]\d|P[0-9]\s?\d{2,}|LV[ISM]?\d{3}|TAL[\s-]?[A-Z]?\d{2}|LSA\s?\d{2}|LL\d{4}|ECP\s?\d{2}|ECO\s?\d{2}|NPE\s?\d{2}|MP[\s-]?\d{2,}|MX[\s-]?\d{3}|EG\s?\d{3}|1FC\d|FD\d[A-Z]|LTP\d{3}|BW(?:C|LV|P)?-?\d|BC[IA]?\s?1[0-9]{2}[A-Z])\/?/i; // LTP / BW: landtop, bobig (alternator model right after the engine, no brand in the header); BC164 / BC184: acepow's alternator stands BEFORE the engine ("| BC184E | ISUZU | JE493DB-04", read as the engine)
   // A cell of figures with a look-alike letter ("3S0", "312.S": OCR of 350, 312.5, vantek) that is the kVA of the kW before it
@@ -1072,10 +1080,12 @@
       const base = { supplierId: s.id, n: t.n, table: ti, title };
       const makesFor = (kind, rowText, brandCell, model = "") => {
         const list = kind === "engine" ? ENGINE_BRANDS : ALT_BRANDS, makes = [];
-        const cell = brandCell ? brandIn(brandCell, list) : [];
+        const cell = brandCell ? brandIn(brandCell, kind === "engine" ? list : ALT_CELL_BRANDS) : [];
         const row = brandIn(rowText, list), hdr = kind === "engine" ? hEng : hAlt, ttl = kind === "engine" ? tEng : tAlt;
+        const own = kind === "alternator" ? brandIn(model, [FG_WILSON]) : []; // FG Wilson written in the alternator's own cell
         if (cell.length === 1) addMake(makes, cell[0], "dòng bảng");
         else if (row.length === 1) addMake(makes, row[0], "dòng bảng");
+        else if (own.length === 1) addMake(makes, own[0], "dòng bảng");
         else if (kind === "alternator" && CN_ALT_CODE.test(String(model).trim())) return makes;
         else if (hdr.length === 1) addMake(makes, hdr[0], "tiêu đề cột");
         else if (ttl.length === 1) addMake(makes, ttl[0], "tên trang");
@@ -1132,8 +1142,12 @@
           });
           if (c.engine && isCode(c.engine.replace(/^[a-z]+\s+(?=\S*\d)/i, (m) => (brandIn(m, ENGINE_BRANDS).length ? "" : m))))
             out.push({ ...base, kind: "engine", model: c.engine.replace(/^(cummins|perkins|weichai|yuchai|deutz|volvo|baudouin|mtu|doosan|mitsubishi|sdec|kubota|yanmar|isuzu|ricardo|lovol|fawde)\s+/i, ""), makes: makesFor("engine", c.engine + " " + (c.engineBrand || ""), c.engineBrand), genset: c.genset || null, power, freq: tFreq || freqIn(block.join(" "), true), other: c.alternator || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows } });
-          if (c.alternator && isCode(c.alternator.replace(/^[a-z-]+\s+(?=\S*\d)/i, "")))
-            out.push({ ...base, kind: "alternator", model: c.alternator.replace(/^(stamford|leroy[\s-]?somer|mecc\s?alte|marathon|engga)\s+/i, ""), makes: makesFor("alternator", c.alternator + " " + (c.altBrand || ""), c.altBrand, c.alternator), genset: c.genset || null, power, freq: tFreq || freqIn(block.join(" "), true), other: c.engine || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows } });
+          // A cell that offers two alternators, each with its own make ("Stamford UCI274H / Leroy-Somer TAL-A44-M"): one record per
+          // model, each with the make written next to it (a make is never guessed from a code, the two are not merged).
+          const altSplit = splitAltCell(c.alternator);
+          for (const ac of altSplit || (c.alternator ? [c.alternator] : []))
+          if (isCode(ac.replace(/^[a-z-]+\s+(?=\S*\d)/i, "")) || ((altSplit || FG_PREFIX.test(ac)) && isCode(ac.replace(ALT_PREFIX, ""))))
+            out.push({ ...base, kind: "alternator", model: ac.replace(ALT_PREFIX, ""), makes: altSplit ? makesFor("alternator", ac, null, ac) : makesFor("alternator", ac + " " + (c.altBrand || ""), c.altBrand, ac), genset: c.genset || null, power, freq: tFreq || freqIn(block.join(" "), true), other: c.engine || null, specs: c.specs || [], lines: { header: t.header || [], rows: t.rows } });
         }
         return;
       }
@@ -1507,6 +1521,15 @@
   const brandedCode = (cell, list) => {
     const m = String(cell || "").trim().replace(/\s*[*＊†‡]+$/, "").match(/^([a-z]+)\s+(penta|infracore|heavy|power|diesel|engines?)\s+(\S.*)$/i);
     return m && brandIn(m[1], list).length && isCode(m[3]) ? m[3] : null;
+  };
+
+  // "Stamford UCI274H / Leroy-Somer TAL-A44-M": two alternators offered in one cell, each part a make word and a model code.
+  // All or nothing: one part that is not "make + code" (a list of makes, a code with no make) leaves the cell as one (null).
+  const splitAltCell = (cell) => {
+    const parts = String(cell || "").split(/\s*[/／]\s*/).map((p) => p.trim());
+    if (parts.length < 2) return null;
+    for (const p of parts) { const m = p.match(ALT_PREFIX); if (!m || !isCode(p.slice(m[0].length))) return null; }
+    return parts;
   };
 
   // Bộ điều khiển (Khoa, 2026-11-01): make and model read from one line of a saved page or a table row, word for word.
