@@ -280,8 +280,8 @@ loại ở Vòng 2 (ở đó V loại thêm "130 nhóm / 5.107 dòng"; theo `all
 
 (Đối chứng V cùng cách đếm: giữ 6 nhóm / 178 dòng, loại thêm 92 nhóm / 3.062 dòng, top đổi 56 so nhánh / 113 so main.)
 
-Lớp (b), 25 nhóm số thắng là ngưỡng HSMT làm tròn: F giữ DP222CB (64 / 66 dòng; 2 dòng còn lại bị loại vì lý do khác hoặc
-khoá đầu phát trùng), loại cả 24 nhóm còn lại, gồm 5 nhóm "chỉ số làm tròn đạt" (SC8D280D2, SC8D220D2, WP6D152 / 167 / 158E…)
+Lớp (b), 25 nhóm số thắng là ngưỡng HSMT làm tròn: F giữ DP222CB (64 dòng theo `all`; Vòng 2 đếm 66 theo khoá dòng bị loại,
+chưa soát vì sao lệch 2), loại cả 24 nhóm còn lại, gồm 5 nhóm "chỉ số làm tròn đạt" (SC8D280D2, SC8D220D2, WP6D152 / 167 / 158E…)
 và 19 nhóm nguồn chỉ có số làm tròn (Y490D, 2206…, 1103A33…, 1506AE88…, SC4H95D2, YC6K600 / 660D30, WP6D152E310).
 Đúng như Khoa quyết.
 

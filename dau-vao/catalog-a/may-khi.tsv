@@ -3,32 +3,32 @@ agg-fuzhou	115	14	url,ng	23	LY13-G280 / LYX12H-G275 / LYL9.5H-G220 / LYL8.9H-G19
 agg-fuzhou	116	15	url,ng,dongco	11	K19N-G2 / K50N-G11H / K50N-G10 / K50N-G9	康明斯-德塔
 agg-fuzhou	117	16	url,ng	6	4016-61TRS2 / 4016-61TRS1 / 4008-30TRS2 / 4008-30TRS1	帕金斯-德塔
 agg-fuzhou	118	17	url,ng,dongco	2	OC16 071A 02-82	斯堪尼亚-德塔
-agg-power	2005	4	dongco	1	QSK23G3	AGG CU880E5
-agg-power	2009	8	dongco	1	QSK19G4	AGG CU713E5
-agg-power	2066	65	dongco	1	QSK78G9	AGG CU3000E5
-agg-power	2067	66	dongco	1	QSK60G23	AGG CU2750E5
-agg-power	2068	67	dongco	1	QSK60G21	AGG CU2500E5A
-agg-power	2069	68	dongco	1	QSK60G8	AGG CU2500E5
-agg-power	2070	69	dongco	1	QSK60G4	AGG CU2250E5
-agg-power	2071	70	dongco	1	QSK60G3	AGG CU2063E5
-agg-power	2072	71	dongco	1	QSK50G7	AGG CU1825E5
-aoke-yangzhou	101	0	dongco	2	QSK60G13 / 4016-61TRG3	2100KW - 奥克发电【官网】|500KW发电机组，200KW发电机组，800KW发电机组，1000KW发电机组
-aoke-yangzhou	103	1	dongco	1	QSK60G13	1900KW - 奥克发电【官网】|500KW发电机组，200KW发电机组，800KW发电机组，1000KW发电机组
-aoke-yangzhou	104	2	dongco	2	QSK60G4 / 4016TAG2A	1800KW - 奥克发电【官网】|500KW发电机组，200KW发电机组，800KW发电机组，1000KW发电机组
-aoke-yangzhou	105	3	dongco	2	QSK60G3 / 4016TAG1A	1700KW - 奥克发电【官网】|500KW发电机组，200KW发电机组，800KW发电机组，1000KW发电机组
-aoke-yangzhou	106	4	dongco	2	QSK60G3 / YC12V2510L-D20	1600KW - 奥克发电【官网】|500KW发电机组，200KW发电机组，800KW发电机组，1000KW发电机组
+agg-power	2005	4	dongco	1 (chỉ bản ghi động cơ khí)	QSK23G3	AGG CU880E5
+agg-power	2009	8	dongco	1 (chỉ bản ghi động cơ khí)	QSK19G4	AGG CU713E5
+agg-power	2066	65	dongco	1 (chỉ bản ghi động cơ khí)	QSK78G9	AGG CU3000E5
+agg-power	2067	66	dongco	1 (chỉ bản ghi động cơ khí)	QSK60G23	AGG CU2750E5
+agg-power	2068	67	dongco	1 (chỉ bản ghi động cơ khí)	QSK60G21	AGG CU2500E5A
+agg-power	2069	68	dongco	1 (chỉ bản ghi động cơ khí)	QSK60G8	AGG CU2500E5
+agg-power	2070	69	dongco	1 (chỉ bản ghi động cơ khí)	QSK60G4	AGG CU2250E5
+agg-power	2071	70	dongco	1 (chỉ bản ghi động cơ khí)	QSK60G3	AGG CU2063E5
+agg-power	2072	71	dongco	1 (chỉ bản ghi động cơ khí)	QSK50G7	AGG CU1825E5
+aoke-yangzhou	101	0	dongco	1 (chỉ bản ghi động cơ khí)	QSK60G13 / 4016-61TRG3	2100KW - 奥克发电【官网】|500KW发电机组，200KW发电机组，800KW发电机组，1000KW发电机组
+aoke-yangzhou	103	1	dongco	1 (chỉ bản ghi động cơ khí)	QSK60G13	1900KW - 奥克发电【官网】|500KW发电机组，200KW发电机组，800KW发电机组，1000KW发电机组
+aoke-yangzhou	104	2	dongco	1 (chỉ bản ghi động cơ khí)	QSK60G4 / 4016TAG2A	1800KW - 奥克发电【官网】|500KW发电机组，200KW发电机组，800KW发电机组，1000KW发电机组
+aoke-yangzhou	105	3	dongco	1 (chỉ bản ghi động cơ khí)	QSK60G3 / 4016TAG1A	1700KW - 奥克发电【官网】|500KW发电机组，200KW发电机组，800KW发电机组，1000KW发电机组
+aoke-yangzhou	106	4	dongco	1 (chỉ bản ghi động cơ khí)	QSK60G3 / YC12V2510L-D20	1600KW - 奥克发电【官网】|500KW发电机组，200KW发电机组，800KW发电机组，1000KW发电机组
 aosif	108	6	chu,dongco	12	K19N-G1 / K19N-G3 / K19N-G4 / K38N-G5	Cummins Natural Gas Series（50HZ）-Xiamen Aosif Engineering Ltd.
 aosif	109	7	chu	6	4006-23TRS1 / 4006-23TRS2 / 4008-30TRS1 / 4008-30TRS2	Perkins Natural Gas Series-Xiamen Aosif Engineering Ltd.
 aosif	110	8	chu	4	GV158TI / GV180TI / GV222TI / GV222CB	Hyundai Natural Gas Series(50HZ)-Xiamen Aosif Engineering Ltd.
 aosif	111	9	chu	10	WP4D77E300NG / WP6D132E300NG / WP10D200E300NG / WP13D317E300NG	Weichai Natural Gas Series（50HZ）-Xiamen Aosif Engineering Ltd.
 aosif	112	10	chu	7	YCTD20600N-D30 / YC12VTD1350N-D31 / YC12VC1680N-D32 / YC16VTD1680N-D30	Yuchai Natural Gas Series-Xiamen Aosif Engineering Ltd.
 aosif	113	11	chu,dongco	9	K19N-G1B / K19N-G3B / K19N-G4B / K38N-G5B	Cummins Biogas Series（50HZ）-Xiamen Aosif Engineering Ltd.
-aosif	117	15	dongco	70	QSB5-G1 / QSB5-G2 / QSB5-G10 / QSB5-G3	Imported Cummins Series(60HZ)-Xiamen Aosif Engineering Ltd.
+aosif	117	15	dongco	3 (chỉ bản ghi động cơ khí)	QSB5-G1 / QSB5-G2 / QSB5-G10 / QSB5-G3	Imported Cummins Series(60HZ)-Xiamen Aosif Engineering Ltd.
 aosif	119	17	chu,dongco	12	K19N-G2 / K19N-G3S / K19N-G4S / K38N-G5S	Cummins Natural Gas Series（60HZ）-Xiamen Aosif Engineering Ltd.
 aosif	120	18	chu	4	GV158TI / GV180TI / GV222TI / GV222CB	Hyundai Natural Gas Series(60HZ)-Xiamen Aosif Engineering Ltd.
 aosif	121	19	chu	9	WP4D77E301NG / WP6D132E301NG / WP10D200E301NG / WP13D317E301NG	Weichai Natural Gas Series（60HZ）-Xiamen Aosif Engineering Ltd.
 aosif	122	20	chu,dongco	9	K19N-G2B / K19N-G3BS / K19N-G4BS / K38N-G5BS	Cummins Biogas Series（60HZ）-Xiamen Aosif Engineering Ltd.
-bdadl-shanghai	130	32	dongco	18	QSNT-G6 / QSNT-G7 / QSNT-G2 / QSNT-G3	重庆康明斯系列-上海博杜安动力科技有限公司
+bdadl-shanghai	130	32	dongco	1 (chỉ bản ghi động cơ khí)	QSNT-G6 / QSNT-G7 / QSNT-G2 / QSNT-G3	重庆康明斯系列-上海博杜安动力科技有限公司
 bison-zhejiang	1003	36	url	1	BS170F	Datasheet: View the gasoline generator Catalog
 cameo-power	127	16	url	3	CP190F / CP460 / CP690	10kw Gasoline Generator - China 10kw Gasoline Generator Manufacturers Suppliers 
 chenxing-weifang	101	0	chu	1	NT855-GA	200KW发电机组-康明斯发电机组-潍坊晨兴动力设备有限公司-提供柴油、燃气发电机组的成套设备制造、销售、安装及相关配套工程服务的服务供应商
@@ -78,7 +78,7 @@ ettes-power	104	6	chu,url	16	E0834E312 / E0834E302 / E0834LE312 / E0836E302	MAN 
 ettes-power	104	7	chu,url	17	E0834E302 / E0834LE312 / E0836E302 / E0836LE302	MAN Natural Gas Power Generator, CHP Unit, Cogeneration
 ettes-power	105	8	chu,url,dongco	14	4BTA3.9-G / 6BTA5.9-G / 6CTA8.3-G / NTA855-G	Cummins Series Natural Gas Power Generator, CHP, Cogeneration
 ettes-power	105	9	chu,url,dongco	14	4BTA3.9-G / 6BTA5.9-G / 6CTA8.3-G / NTA855-G	Cummins Series Natural Gas Power Generator, CHP, Cogeneration
-genmac	2052	49	dongco	1	QSK23G3	GENMAC ZEUS G800CO - Cummins QSK23G3 - 810 kVA PRP (catalogue Industrial 50Hz 01
+genmac	2052	49	dongco	1 (chỉ bản ghi động cơ khí)	QSK23G3	GENMAC ZEUS G800CO - Cummins QSK23G3 - 810 kVA PRP (catalogue Industrial 50Hz 01
 gillette-generators	101	0	chu	1	GPE-75EH	GPE-75EH - Gillette Generators
 gillette-generators	102	1	chu	1	GPE-75EH	GPE-75EH-3 - Gillette Generators
 gillette-generators	103	2	chu	1	GPE-125EH	GPE-125EH - Gillette Generators
@@ -87,7 +87,7 @@ gillette-generators	105	4	chu	1	GPED-65EK-3	GPED-65EK-3 - Gillette Generators
 gillette-generators	106	5	chu	1	EVTD-65EK	EVTD-65EK - Gillette Generators
 googol	101	1	chu	5	JTA8V-NG838 / JT10V-NG1042 / JT12V-NG1247 / JTA16V-NG1663	Gas Genset COP:1000-2500kVA & Gas Genset COP:1000-2500kVA生产厂家 &价格 &工厂 - Chongqin
 googol	102	3	chu	6	RTAA6L-NG296 / RTAA8V-NG333 / RTAA8L-NG398 / RTAA10V-NG438	Gas Genset COP:350-750kVA & Gas Genset COP:350-750kVA生产厂家 &价格 &工厂 - Chongqing Go
-green-power-generators	116	17	dongco	28	X2.5G2 / X3.3G1 / 4BTAA3.3G16 / 4BTAA3.3G13	Gruppi elettrogeni Stazionari Cummins - Green Power Generators
+green-power-generators	116	17	dongco	5 (chỉ bản ghi động cơ khí)	X2.5G2 / X3.3G1 / 4BTAA3.3G16 / 4BTAA3.3G13	Gruppi elettrogeni Stazionari Cummins - Green Power Generators
 green-power-generators	124	25	chu,url	6	6.7LNA / 6.7LT / 8.1LT / 10LT	Gruppi elettrogeni a Gas PSI - Green Power Generators
 green-power-generators	125	26	chu,url	4	GV158TI / GV222TI / GV222CA / GV222CB	Gruppi elettrogeni a Gas Hyundai - Green Power Generators
 huayuan-weifang	105	4	chu	19	4B3.9 / 4BTA3.9G / 6B5.9G / 6BT5.9G	Cummings series gas generator set - Automatic Generator Set - Weifang Huayuan Di
@@ -98,15 +98,15 @@ innio-jenbacher	2004	10	chu,url	1	J316	Jenbacher J316 – trang sản phẩm jen
 innio-jenbacher	2005	11	chu,url	1	J320	Jenbacher J320 – trang sản phẩm jenbacher.com
 innio-jenbacher	2006	12	chu,url	1	J416	Jenbacher J416 – trang sản phẩm jenbacher.com
 innio-jenbacher	2007	13	chu,url	1	J420	Jenbacher J420 D/E – trang sản phẩm jenbacher.com
-jet-power	114	13	dongco	88	4B3.9-G11 / TAL-A40-F / TAL-A40-G / 4B3.9-G2	60Hz Cummins Water Cooled Diesel Generator Set Supply | Jet Power
-jiangchai-xuzhou	110	9	dongco	80	4B3.9-G1 / 4B3.9-G2 / 4BT3.9-G1 / 4BT3.9-G2	康明斯_发电机组厂家_江柴控股集团有限公司
+jet-power	114	13	dongco	2 (chỉ bản ghi động cơ khí)	4B3.9-G11 / TAL-A40-F / TAL-A40-G / 4B3.9-G2	60Hz Cummins Water Cooled Diesel Generator Set Supply | Jet Power
+jiangchai-xuzhou	110	9	dongco	8 (chỉ bản ghi động cơ khí)	4B3.9-G1 / 4B3.9-G2 / 4BT3.9-G1 / 4BT3.9-G2	康明斯_发电机组厂家_江柴控股集团有限公司
 jianghao-genset	104	4	chu	5	Chaochai CY4102 / Huafeng HF6105Q / Huafeng HF6105ZQ / SC9DT210D2	Gas Generator-Jiangsu Jianghao Generator Co.,Ltd.
 jianghao-genset	104	5	chu	24	6BT / 6CT / 6LT / 6LT8.9	Gas Generator-Jiangsu Jianghao Generator Co.,Ltd.
 jichai-huanneng	101	0	url	1	8300D/M	Silent Type CE Approved Low Rpm 400KW Biomass Gas( Syngas) Generator Set Supplie
 jichai-huanneng	102	1	url	1	8300D/M-2	Silent Type CE Approved Low Rpm 500KW Biomass Gas ( Syngas) Generator Set Suppli
 jichai-huanneng	105	5	chu,url	1	H16V190ZLZ-2	Silent Type CE Approved 1000KW Biogas (methane)Generator Set Suppliers and Manuf
 jichai-huanneng	111	10	chu,url	1	6116GD	1200kw Natural Gas Burning Generator SetsSuppliers and Manufacturers China - New
-kaihua-genset	114	16	dongco	69	DC09 320A 02-61 / DC09 320A 02-62 / DC09 320A 02-63 / DC09 320A 02-64	Scania Generator-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD
+kaihua-genset	114	16	dongco	4 (chỉ bản ghi động cơ khí)	DC09 320A 02-61 / DC09 320A 02-62 / DC09 320A 02-63 / DC09 320A 02-64	Scania Generator-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD
 kaihua-genset	116	18	chu,url	19	KH4B3.9T / KH4BT3.9T / KH4BTA3.9T / KH6BT5.9T	gas generator,Gas Generator-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD
 kigerpower	2011	10	url	1	2V80FD	KG15000E - Specifications
 kingway-power	102	1	chu,url	1	Kingway KAI313	China 250KW LPG Power Dual Fuel Inverter Emergency Use Recoil Start Generator Ma
@@ -120,8 +120,8 @@ man-engines	104	4	chu	9	D2676 / D2862 / D3872 / E3262	Compact MAN diesel and gas
 man-engines	105	5	chu,url	6	E0834 / E0836 / E2876 / E3268	Low-pollution MAN gas engines for power generation | MAN Engines
 man-engines	105	6	chu,url	6	E0834 / E0836 / E2876 / E3268	Low-pollution MAN gas engines for power generation | MAN Engines
 man-engines	111	8	chu,url	3	Efficiency 2 / mechanical 1 / Combustion 3	Naturally aspirated MAN E3262 gas engine | MAN Engines
-mecca-power	5001	31	dongco	86	4BTAA3.3G14 / QSB5-G1 / QSB5-G2 / QSB5-G3	Catalog mecca-power-catalog-2026 — trang 8 trái (50Hz)
-mecca-power	5001	32	dongco	77	QSB5-G1 / QSB5-G2 / QSB5-G3 / QSB5-G4	Catalog mecca-power-catalog-2026 — trang 8 phải (60Hz)
+mecca-power	5001	31	dongco	4 (chỉ bản ghi động cơ khí)	4BTAA3.3G14 / QSB5-G1 / QSB5-G2 / QSB5-G3	Catalog mecca-power-catalog-2026 — trang 8 trái (50Hz)
+mecca-power	5001	32	dongco	1 (chỉ bản ghi động cơ khí)	QSB5-G1 / QSB5-G2 / QSB5-G3 / QSB5-G4	Catalog mecca-power-catalog-2026 — trang 8 phải (60Hz)
 mwm	1002	17	chu	1	TCG 3016	Datasheet: EN
 mwm	1002	18	chu	1	TCG 3016	Datasheet: EN
 mwm	1028	71	chu	1	TCG 2032	Datasheet: EN
@@ -142,13 +142,13 @@ naipute-weifang	2011	10	chu,url	1	NY196D32TL	280 GFT LPG generator
 naipute-weifang	2012	11	chu,url	1	NW52D4	30GFT biomass gas generator
 naipute-weifang	2013	12	chu,url	1	NS118D17TL	150GFT - J1 biomass gas generator
 naipute-weifang	2014	13	chu,url	1	NY163D23TL	200GFT - J2 biomass gas generator
-penlucky	102	1	dongco	142	4B3.9-G1 / S0L2-M1 / S0L2-P1 / 4BT3.9-G1	Cummins Generator | Penlucky
+penlucky	102	1	dongco	9 (chỉ bản ghi động cơ khí)	4B3.9-G1 / S0L2-M1 / S0L2-P1 / 4BT3.9-G1	Cummins Generator | Penlucky
 penlucky	107	5	url	21	WP4D44E200NG / WP4D66E300NG / WP4D77E300NG / WP6D100E3OONG	Gaseous Industrial Generators | Penlucky
-pingchang-yangzhou	105	4	dongco	46	KTA19-G4 / KTAA19-G5 / KTA19-G8E / QSK19-G12	使用康明斯柴油机作为动力系统-扬州平常机械有限公司111
+pingchang-yangzhou	105	4	dongco	3 (chỉ bản ghi động cơ khí)	KTA19-G4 / KTAA19-G5 / KTA19-G8E / QSK19-G12	使用康明斯柴油机作为动力系统-扬州平常机械有限公司111
 power-hf	108	8	chu,url	7	PHF3020ZX1Q / PHF3030Z1Q / PHF4035ZX1Q / PHF4050ZL1Q	R系列燃气发动机 - 燃气发动机 - 华丰动力股份有限公司--官网
 power-hf	111	13	chu,url	8	PHF3020ZX1Q1 / PHF3030Z1Q1 / PHF4035ZX1Q1 / PHF4050ZL1Q1	燃气发电机组 - 燃气发电机组 - 华丰动力股份有限公司--官网
-powerlink-shanghai	2005	151	dongco	4	QSK60G3	HV Series HVC1875S
-powerlink-shanghai	2005	152	dongco	4	QSK60G4	HV Series HVC2045S
+powerlink-shanghai	2005	151	dongco	4 (chỉ bản ghi động cơ khí)	QSK60G3	HV Series HVC1875S
+powerlink-shanghai	2005	152	dongco	4 (chỉ bản ghi động cơ khí)	QSK60G4	HV Series HVC2045S
 powerzoo	101	0	chu	1	QSK95-G2	3750 kVA Diesel Genset Powered by Cummins Engine QSK95-G2 from China manufacture
 powerzoo	102	1	chu	1	KTA38-G2	900 kVA Diesel Generators Powered by Cummins Engine KTA38-G2 from China manufact
 powerzoo	103	2	chu	1	QSK60-G4	2000kVA Cummins Electric Generator QSK60-G4 from China manufacturer - POWERZOO |
@@ -242,8 +242,8 @@ slong-power	106	5	chu,url	4	SL390 / SL420 / SL440 / SL460	China 7kw Low Noise Ga
 slong-power	143	11	chu,url	6	SL390 / SL420 / SL460 / GB750	China Best Price LPG Generator 5kW To 20kW Models Available Manufacturers Factor
 sunkings	109	8	chu,url	1	DC 24V	500kw Gas Generator 625kva Natural Gas Generator Set Cummins genset
 taihai-taizhou	118	18	chu	25	4NG3.9-G1 / 4NG4.0-G1 / 4NG3.9TAA-G1 / 6NG6.0-G1	天然气发电机组-产品展示_泰州泰海机电设备有限公司
-tecnogen	2002	1	dongco	16	QSB5G3 / QSB5G4 / QSB5G5 / QSB5G6	Tecnogen Enermax (Cummins): model | kVA LTP/PRP 50 Hz | kVA LTP/PRP 60 Hz | engi
-tecnogen	2010	9	dongco	20	VTA28G5 / QST30G3 / QST30G4 / KTA38G5	Tecnogen Tenax (Cummins) open skid: model | kVA LTP/PRP 50 Hz | kVA LTP/PRP 60 H
+tecnogen	2002	1	dongco	3 (chỉ bản ghi động cơ khí)	QSB5G3 / QSB5G4 / QSB5G5 / QSB5G6	Tecnogen Enermax (Cummins): model | kVA LTP/PRP 50 Hz | kVA LTP/PRP 60 Hz | engi
+tecnogen	2010	9	dongco	12 (chỉ bản ghi động cơ khí)	VTA28G5 / QST30G3 / QST30G4 / KTA38G5	Tecnogen Tenax (Cummins) open skid: model | kVA LTP/PRP 50 Hz | kVA LTP/PRP 60 H
 tide-power	2003	29	chu,url	1	TCG3016V16S	Gas Genset Selector Sheets (50Hz)
 victory-generator	117	24	chu,url	10	HG4B / HG6B / HGN14 / HGNT14	30KVA~625KVA Cummins Gas Generator Set
 victory-generator	118	25	chu,url	6	LPG210 / LPG2500 / LPG420 / LPG6500	2KW~10.5KW Gas(LPG) Portable Generator
@@ -266,7 +266,7 @@ weichai-power	126	20	ng	2	12M33G10N0/5 / 12M33G14N0/6	1060 kVA – 1130 kVA Stan
 weichai-power	127	21	ng	2	12M26G2N0/5 / 12M26G2N0/6	625 kVA Standard Land-based Generator Set-Weichai Power official website
 weichai-power	128	22	ng	2	6M33G6N0/5 / 6M33G6N0/6	500 kVA Standard Land-based Generator Set-Weichai Power official website
 weiman-fujian	101	0	chu,url	19	WT2.3D25E / WT2.3D33E / WT2.3D40E / WT4.1D66E	Gas Generator Set – WEIMAN
-welland-power	101	0	dongco	594	4M06G2D0/S / S1L2-J1 / S0L2-G1 / 4M06G4D0/S	Welland Power UK Diesel Generators
+welland-power	101	0	dongco	8 (chỉ bản ghi động cơ khí)	4M06G2D0/S / S1L2-J1 / S0L2-G1 / 4M06G4D0/S	Welland Power UK Diesel Generators
 westinpower	112	15	chu,url	16	E0834 E312 / E0834 E302 / E0836 E312 / E0834 LE312	Gas Generator Sets with MAN Engines | Westinpower
 westinpower	112	16	chu,url	30	E0834 E312 / UCI224D / E0834 E302 / UCI224F	Gas Generator Sets with MAN Engines | Westinpower
 westinpower	112	17	chu,url	8	E0834 LE322 / E0836 LE302 / E2876 TE302 / E2676 LE212	Gas Generator Sets with MAN Engines | Westinpower
@@ -274,8 +274,8 @@ westinpower	112	18	chu,url	18	E0834 LE322 / UCI224G / E0836 LE302 / UCI274E	Gas 
 westinpower	114	21	chu,url	8	4M11G2N0/5 / 4M11G4N0/5 / 6M16G4N0/5 / 6M21G4N0/5	Natural Gas Generator Sets with Baudouin Engines | Westinpower
 westinpower	115	22	chu,url	7	4006-23TRS1 / 4006-23TRS2 / 4006-E23TRS4 / 4008-30TRS1	Gas Generator Sets with Perkins Engines | Westinpower
 westinpower	115	23	chu,url	8	4006-23TRS1 / 4006-E23TRS3 / 4006-23TRS2 / 4006-E23TRS4	Gas Generator Sets with Perkins Engines | Westinpower
-wintpower	101	0	dongco	49	4B3.9G2 / 4BT3.9G2 / 4BTA3.9-G11 / 6BT5.9G2	China Diesel Power Generator Set Cummins Dg Soundproof Silent Type Generating Ma
-xingguang-jiangsu	120	16	dongco	85	KTA38-G2A / KTA38-G5 / KTA38-G9 / KTA50-G3	1000-4000kVA-Jiangsu Starlight Electricity Equipment Co., Ltd
+wintpower	101	0	dongco	2 (chỉ bản ghi động cơ khí)	4B3.9G2 / 4BT3.9G2 / 4BTA3.9-G11 / 6BT5.9G2	China Diesel Power Generator Set Cummins Dg Soundproof Silent Type Generating Ma
+xingguang-jiangsu	120	16	dongco	4 (chỉ bản ghi động cơ khí)	KTA38-G2A / KTA38-G5 / KTA38-G9 / KTA50-G3	1000-4000kVA-Jiangsu Starlight Electricity Equipment Co., Ltd
 xinshengan-shandong	101	0	chu	1	XSA-300	300kW燃气发电机组-新盛安动力科技（山东）有限公司
 xinshengan-shandong	102	1	chu	1	XSA-200	新盛安潍柴燃气发电机组-新盛安动力科技（山东）有限公司
 xinshengan-shandong	104	2	chu	1	12M26D605E300NG	300kW燃气发电机组-新盛安动力科技（山东）有限公司
