@@ -2743,7 +2743,7 @@ async function downloadHsmtFile(key, i) {
 // In-page PDF viewer: attachments are fetched from the artifact's own storage and drawn with pdf.js.
 async function openPdf(key, i) {
   const f = state.hsmt[key].files[i];
-  modal(h`<div class="row"><h2 style="flex:1;min-width:0;overflow-wrap:anywhere">${f.name}</h2><button class="btn sm" id="pvSave">Tải về</button>${raw(CLOSE_BTN)}</div>
+  modal(h`<div class="row"><h2 style="flex:1;min-width:0;overflow-wrap:anywhere">${f.name}</h2><button class="btn sm" id="pvSave" style="display:inline-flex;align-items:center;gap:6px">${raw(DL_SVG.replace(/width="20" height="20"/, 'width="16" height="16"'))}Tải về</button>${raw(CLOSE_BTN)}</div>
     <div id="pvBody" class="pv"><div class="loading">${raw(progress("Đang mở tệp..."))}</div></div>`, null, "wide pvdlg");
   let blob;
   try {
