@@ -170,6 +170,52 @@ Lệnh lượt 2 + đầu ra:
 | agg-power, jiangchai, powerlink, welland, innio-jenbacher, gillette, aoke, kingway, mecca | | 9 / 8 / 8 / 8 / 7 / 6 / 5 / 5 / 5 | dongco / chu / url |
 | các NCC còn lại (jichai, xingguang, cameo, pingchang, repower-gas, ronsun, xinshengan, jet-power, wintpower, bdadl, bison, genmac, kigerpower, sunkings, tide…; đủ ở `may-khi-tom-tat.txt`) | | 1–4 mỗi NCC | |
 
+## 12. Top 30 (cloud gốc 671797e4 ↔ nhánh 4600d59d, bidhist 12:17Z) — giải thích ĐỦ, không lấy mẫu
+
+Tệp: `dau-vao\catalog-a\top30-cloud\` — `cmp-top30.mjs` → `cmp-top30.md`; `luot-chi-tiet.mjs` chạy lại 807 lượt có đổi trên máy (`ct-goc.json`, `ct-nhanh.json`, có `dropped` kèm lý do) → **lệch cloud 0 lượt** (all, top, số dropped); `giai-thich.mjs` → `giai-thich.md`, `roi-all.tsv`, `vao-all.tsv`, `top-doi.tsv`, `giam-diem.tsv`; `dropped-chi.mjs` → `dropped-chi.tsv`; `f-ly-do.tsv` (dòng bị đẩy); `hints.mjs` (ngưỡng HSMT của lượt). Lượt: giống 286, top đổi 229 (153 đổi tập dòng, 76 chỉ đổi thứ tự/điểm), chỉ all đổi 544, chỉ dropped đổi 34–36; **không rõ 0**.
+
+**Cách đếm khoá.** Đếm thẳng trên `gop-goc.json`/`gop-nhanh.json` (khoá đầy đủ `NCC|động cơ|đầu phát|keyOf(dòng)`, hợp mọi lượt): rời all **51** khoá (461 dòng-lượt), vào all **197** khoá (5.340 dòng-lượt), ra top **98** khoá (khớp số điều phối), vào top 77 khoá. Số 97 / 265 của điều phối khác cách đếm (có lẽ tính cặp khoá+điểm hay theo lượt); xin định nghĩa nếu cần khớp.
+
+### 12.1 Rời all — 51 khoá (42 cặp NCC|động cơ), 461 dòng-lượt, mọi khoá có lý do
+| nhóm | dòng-lượt | khoá NCC\|động cơ | vì sao | đúng? |
+|---|--:|---|---|---|
+| B bản ghi không còn | 299 | baifa 20 model `2*…` (2*TAD1346/1352/1353/1355/1382/1642/1650/1651GE, 2*TWD1644/1645/1652/1653/1682/1683/1744GE, 2*S4L1DF41/DG41, 2*S5L1DC41/DD41) | luật tổ máy nhiều động cơ (mục 10 điểm 4, điều phối đề xuất bỏ) | đúng |
+| C rowflag | 98 | fukangsi, pengpai `4B3.9-G1` | (b) đọc thêm khối lượng 5500 kg cho máy 20 kW → row-flags absurd "drop" | đúng (nguồn sai, bị chặn là đúng ý cổng) |
+| D/C cyl | 46 | zhengdian 8 model (4B5.9-G2 4, NT/T/TC12V135/138 12, Z8V190 8), vantek TAD1640GE 6, tecgen NTA855-G7A 6, xinzhengfa 5 model 12V | (b) đọc thêm "缸 数" của zhengdian → model có số xi lanh → trượt `cylExact`/`minCyl` HSMT (vd IB2300217672 minCyl 8; IB2600217137 exact 4; IB2200032133 exact 6) | đúng: số là chữ nguồn, đúng thật của động cơ |
+| D disp | 10 | xinzhengfa NT12V138ZLDW, T12V138ZLDW, TC12V138ZLDW | nay có cyl 12 → config-bot tính dung tích từ bore "135/150" × hành trình = 12 × π/4 × 13,5² × 15 ≈ 25,8 L < minDisp (26,6 IB2400533611/IB2400596787/IB2500473200; 29,7 IB2500464050; 78 IB2300162912) | đúng theo luật config-bot (12V138 thật ~25,8 L) |
+| D/C lọc hãng/xuất xứ | 8 | `16M33G0D3/5` (baifa C 1, deman, yanan), mamo `6M33CD447/484/550E200` | hãng model đổi: 16M33G0D3/5 gốc mang "Cummins" (sai, lấy từ dòng khác trong tiêu đề) → nay Baudouin; mamo gốc không hãng → nay Weichai (bản ghi mới penlucky "power by WEICHAI"); gói IB2600337362 (g7eu), IB2500503506 / IB2500541094#0#1 (g7) lọc hãng TQ | đúng (M33 là Baudouin/Weichai, SX ở TQ) |
+
+Ví dụ điều phối nêu: huadong TAD941GE, huayuan NT855G, aosif/mecca QSK38-G30 KHÔNG rời all — chỉ đổi điểm/thứ hạng do bản ghi mới (fdk) vào cùng lượt; baifa 20M33G4D3/5^ đổi điểm 75→15 (mục 12.4), không rời. Từng dòng-lượt: `roi-all.tsv`.
+
+### 12.2 Vào all — 197 khoá, 5.340 dòng-lượt
+| NCC | lý do | dòng-lượt |
+|---|---|--:|
+| elitech-power | A bản ghi mới (dòng chuyển từ tiêu đề) | 2.165 |
+| fdk-energy | A | 1.872 |
+| baifa-power | A | 1.059 |
+| simpson-power | A | 96 |
+| rcg-power | A | 91 |
+| penlucky | A | 55 |
+| baifa-power | C: KTA19-G8E, QSK19-G17 trước bị loại "made" (hãng sai), nay hãng đổi | 2 |
+Từng khoá: `vao-all.tsv` / `giai-thich.md`.
+
+### 12.3 153 lượt đổi tập top (214 dòng vào / 214 dòng ra; từng dòng ở `top-doi.tsv`, lý do dòng ra ở `f-ly-do.tsv`)
+- **Vào**: A bản ghi mới 176 (139 lượt), E điểm không đổi 35, C dòng đổi 2 (kangwo TWD1645GE vào chỗ 2*TAD baifa bỏ: IB2300000242, IB2300194512), D điểm tăng 1 (tecgen NTA855-G7A 540→548, IB2400258097).
+- **Ra**: F điểm không đổi bị đẩy 190; C dòng đổi 13 (baifa 20M33G4D3/5^ / 16M55G0D3/5 / 12M55G6D3/5^ / 12M55G2D3/5 giảm điểm, mục 12.4; yunding QSB6.7-G31 / KTA50-G15X, fdk S16R-PTA dòng đổi chữ, điểm giữ, bị đẩy); B 5 (2*TAD baifa); D giảm điểm 5 (kaihua 16M55G0D3/5 ×3, 20M33G2D3/5, deman 12M55G2D3/5); rời all 1 (tecgen NTA855-G7A cyl, IB2400573523).
+- **190 dòng F bị đẩy, mỗi dòng gán lý do** (`f-ly-do.tsv`): cùng NCC với dòng vào (trần dòng mỗi NCC) 112; cùng động cơ (trần mỗi động cơ) 10; dòng vào điểm cao hơn 35; **hoà điểm 33** — 15 lượt chỉ đổi một cặp E↔F cùng điểm ở ranh giới (vd IB2500410852 bobig WP10D264E200 269 vào, dingbo 1506A-E88TAG3 269 ra): `rows.sort` ổn định nên dòng hoà giữ thứ tự chèn `rows` = thứ tự động cơ/bản ghi trong catalog, đổi khi có bản ghi mới / gộp `also`. Không phải lỗi, nhưng là thứ tự ngẫu nhiên giữa hai dòng bằng điểm (có sẵn trước PR).
+- **Mọi dòng MỚI vào top (A, 176 dòng-lượt) trong dải HSMT**: prime (kVA; standby ÷1,1; kW ÷0,8) / cỡ lượt nằm **0,90–1,27 cả 176**: baifa 2, elitech 78, fdk 86, penlucky 2, rcg 8. **Thiếu mức**: chỉ penlucky 2 (chỉ prime kW, không standby, không kVA — cột 2 nguồn là COP, đã không đọc thành standby); elitech/fdk/baifa/rcg có đủ prime + standby.
+
+### 12.4 Dòng cũ giảm điểm — 88 dòng-lượt (tăng 558), mọi dòng một lý do
+| giảm | dòng-lượt | dòng | vì sao |
+|--:|--:|---|---|
+| 60 | 42 | baifa 20M33G4D3/5^, 12M55G6D3/5^, 8M33G6D3/5^, 16M33G8D3/5^, 16M55G6D3/5^… | mất "+60 có hãng" (config-bot dòng 1419): gốc mang hãng "Cummins" sai (lấy nhầm từ dòng khác của tiêu đề), nay không hãng |
+| 300 | 10 C + 24 D | baifa / deman / yanan / kaihua / penlucky 20M33G2D3/5, 16M55G0D3/5, 16M33G0D3/5, 12M55G2D3/5 | mất "+300 hãng HSMT nêu" (dòng 1413): HSMT nêu Cummins, model Baudouin bị gán Cummins sai; nay đúng Baudouin (vẫn có hãng nên giữ +60) |
+| 360 | 12 | baifa (cùng nhóm) | mất cả hai |
+Mọi lần giảm là sửa lỗi gán hãng Cummins cho model Baudouin M33/M55. Từng dòng: `giam-diem.tsv`.
+
+### 12.5 Lượt chỉ dropped đổi (36) — `dropped-chi.tsv`
+Mọi khoá vào dropped là bản ghi MỚI (A) bị luật HSMT loại: elitech (cyl, disp, maxDisp, layout, prime), baifa (disp, maxDisp, prime, freq, layout, cyl), fdk (cyl/disp/layout/prime). Riêng fukangsi/pengpai 4B3.9-G1 ở IB2300108940#1: lý do đổi cyl → rowflag (cùng dòng, nay bị chặn bởi 5500 kg). Không lượt nào có dòng cũ mới bị loại ngoài các dòng mục 12.1.
+
 ## Cần ghi nhớ
 
 - Khoa 19/11 duyệt "Làm" (a) + (b): đã làm ở PR #945.
