@@ -471,4 +471,11 @@ vào TOP đều đã có trong `all` của main, chỉ là lấp chỗ trống (
 ### Chưa kiểm
 
 - Cách đếm 5.217 / 270 / 405 của điều phối: đã rõ (số khoá khác nhau gom qua mọi lượt; 270 là lần đổi điểm).
+
+## Khoa chốt 19/11 đêm: "giữ chặt"; merge #945
+
+- Khoa chốt sau khi xem bảng hệ quả: luật nhánh giữ nguyên. Model HSMT nêu đích danh vẫn trừ 600 (`isNamed`); Y4100D / KT38G
+  giữ loại; luật hoà phiếu giữ "số trượt trước". Đã ghi vào `suppliers/CLAUDE.md` (93f4586c) để không ai nới lại.
+- Merge main a89b88be (#945, `web/catalog.js`) → d4063a36. Test: suppliers 1166/1166, bot 137/137, web 161/161. Không test C6
+  nào đổi. spec-diff ↔ a89b88be: 0 bản ghi đổi. Đầu nhánh đã đẩy: 93f4586c.
 - Datasheet hãng: Cummins 6BT5.9 (5,9 hay 5,88), KT38G, Y4100D, YD4EZLD.
