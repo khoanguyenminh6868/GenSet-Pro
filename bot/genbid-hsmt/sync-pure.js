@@ -985,6 +985,61 @@ function normHighlights(result) {
 // The highlights of an analysis with those of normHighlights put in (in place of the ones an earlier pass put in).
 const withNormHighlights = (result) => [...(Array.isArray(result?.highlights) ? result.highlights : []).filter((h) => h?.by !== NORM_BY), ...normHighlights(result)];
 
+// ---------- archives (.rar, .zip, .7z) the bot unpacks to read (archiveText of genbid-sync.js; Publish 19/11/2026) ----------
+// An archive is listed before it is unpacked: more entries or more bytes than this, or an entry that would land outside the
+// folder, and it is not unpacked at all (a reason is noted). files / depth: documents read inside, archives inside archives.
+const ARCHIVE_LIMITS = { entries: 500, bytes: 1024 ** 3, files: 30, depth: 1 };
+// An entry name that would be written outside the folder: absolute ("/x", "C:\x", "\\srv\x") or with a ".." part.
+const unsafeEntry = (name) => { const n = String(name || "").replace(/\\/g, "/"); return n.startsWith("/") || /^[a-z]:/i.test(n) || n.split("/").includes(".."); };
+// `unrar lt -p-` (technical list): blocks of "Name: <name>", "Type: File|Directory|...", "Size: <bytes>".
+function unrarList(out) {
+  const list = [];
+  for (const line of String(out || "").split(/\r?\n/)) {
+    const m = line.match(/^\s*(Name|Type|Size):\s?(.*)$/);
+    if (!m) continue;
+    if (m[1] === "Name") list.push({ name: m[2], size: 0, dir: false });
+    else if (list.length && m[1] === "Type") list[list.length - 1].dir = /^Directory/i.test(m[2].trim());
+    else if (list.length && m[1] === "Size") list[list.length - 1].size = Number(m[2].trim()) || 0;
+  }
+  return list;
+}
+// `tar -tvf` (bsdtar, Windows tar.exe too): "-rw-r--r--  0 0      0        1234 Nov 19 17:41 name".
+function tarList(out) {
+  return String(out || "").split(/\r?\n/).map((l) => l.match(/^([dlhcbps-])[rwxsStT-]{9}\S*\s+\d+\s+\S+\s+\S+\s+(\d+)\s+\S+\s+\d+\s+[\d:]+\s(.+)$/))
+    .filter(Boolean).map(([, t, size, name]) => ({ name: name.replace(/ -> .*$|link to .*$/, ""), size: Number(size), dir: t === "d", link: t === "l" || t === "h" }));
+}
+// Why a listed archive is not unpacked ("" when it may be).
+function archiveRefusal(list, lim = ARCHIVE_LIMITS) {
+  const bad = list.find((e) => unsafeEntry(e.name));
+  if (bad) return `có mục đường dẫn ra ngoài thư mục (${bad.name.slice(0, 80)}), không giải nén`;
+  if (list.length > lim.entries) return `có ${list.length} mục, quá giới hạn ${lim.entries}, không giải nén`;
+  const bytes = list.reduce((s, e) => s + (e.size || 0), 0);
+  if (bytes > lim.bytes) return `giải nén ra ${Math.round(bytes / 1048576)} MB, quá giới hạn ${Math.round(lim.bytes / 1048576)} MB, không giải nén`;
+  return "";
+}
+// UnRAR's exit codes (RARLAB unrar, documented in rar.txt). 1 (warning) comes with errors on a truncated archive ("Unexpected
+// end of archive", the files before the break are unpacked): noted, what came out is still read.
+const UNRAR_EXIT = { 1: "tệp nén có lỗi (hỏng hoặc thiếu một phần)", 2:"tệp nén hỏng", 3: "tệp nén hỏng (sai CRC)", 4: "tệp nén bị khoá", 5: "không ghi được tệp giải nén", 6: "không mở được tệp nén",
+  7: "lệnh giải nén sai", 8: "không đủ bộ nhớ", 9: "không tạo được tệp giải nén", 10: "không có tệp nào", 11: "có mật khẩu", 255: "giải nén bị dừng" };
+const unrarFail = (status) => (status == null ? "giải nén quá thời gian" : status > 0 ? UNRAR_EXIT[status] || `giải nén lỗi (mã ${status})` : "");
+// tar (libarchive) says why on stderr.
+function tarFail(status, stderr) {
+  const s = String(stderr || "");
+  if (/passphrase|encrypt/i.test(s)) return "có mật khẩu";
+  if (status == null) return "giải nén quá thời gian";
+  if (!status) return "";
+  const l = s.split(/\r?\n/).map((x) => x.replace(/^tar(\.exe)?:\s*/i, "").trim()).find(Boolean);
+  return `tệp nén hỏng hoặc không đọc được${l ? ` (${l.slice(0, 120)})` : ""}`;
+}
+// A PDF read without OCR (Publish): left for OCR at Phân tích when it has 5+ pages and 30%+ of them nearly empty (scans),
+// when its text layer is a broken font (garbled, ocr-pdf.js), or when it gives almost nothing. pdftotext ends every page
+// with a form feed. Same rule as Get-FileText of Publish-GenBidHsmt.ps1, plus the "almost nothing" case.
+function pdfNeedsOcr(text, garbled = () => false) {
+  const t = String(text || ""), pages = t.split("\f").slice(0, -1);
+  const empty = pages.filter((p) => p.replace(/\s/g, "").length < 60).length;
+  return (pages.length >= 5 && empty / pages.length >= 0.3) || garbled(t) || t.replace(/\s/g, "").length <= 40;
+}
+
 module.exports = {
   NORM_BANDS, normPower, noiseLimits, fuelLimits, normHighlights, withNormHighlights,
   feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF, FIELDS, FIELD_DEFAULT, fieldsOf, searchTermsOf, mergeFound, API_PRICE, usageUsd, spendMeter,
@@ -997,4 +1052,5 @@ module.exports = {
   capCompare, SPEC_COMP, specComp, sameItems, reqNear, itemBare, specTwin, specsMerge, specsEmpty, partHead,
   askCut, askTrace, normTxt, numsOf, sourceOf, found, nearby, scoreItems, checkSupplier, SELF_KINDS,
   SELF_STATUS, subSections, SELF_AS, selfCheckItems, checkSelfChecks, checkResult,
+  ARCHIVE_LIMITS, unsafeEntry, unrarList, tarList, archiveRefusal, UNRAR_EXIT, unrarFail, tarFail, pdfNeedsOcr,
 };

@@ -7,14 +7,29 @@
    "sups": 17
   },
   "bảng không cho bản ghi nào": {
-   "items": 3111,
-   "tables": 3111,
-   "sups": 198
+   "items": 3112,
+   "tables": 3112,
+   "sups": 199
+  },
+  "bảng máy khí: dòng máy trong tiêu đề không đọc thêm": {
+   "items": 2,
+   "tables": 2,
+   "sups": 1
   },
   "số vô lý so với công suất": {
    "items": 139,
    "tables": 36,
    "sups": 18
+  },
+  "tổ máy nhiều động cơ": {
+   "items": 40,
+   "tables": 8,
+   "sups": 3
+  },
+  "dòng máy lẫn với dòng tiêu đề": {
+   "items": 5,
+   "tables": 5,
+   "sups": 3
   },
   "dòng điện / điện áp theo vị trí không khớp công suất": {
    "items": 230,
@@ -45,11 +60,6 @@
    "items": 34,
    "tables": 34,
    "sups": 1
-  },
-  "tổ máy nhiều động cơ": {
-   "items": 6,
-   "tables": 4,
-   "sups": 2
   },
   "trang có hai động cơ: số liệu kích cỡ động cơ không rõ của động cơ nào": {
    "items": 2,
@@ -672,6 +682,32 @@
    "rows": {},
    "sample": {
     "bảng không cho bản ghi nào": "| Emission level | EU StageV / US T4F"
+   }
+  },
+  {
+   "supplierId": "agg-fuzhou",
+   "n": 115,
+   "table": 14,
+   "title": "AGG-德塔",
+   "reasons": {
+    "bảng máy khí: dòng máy trong tiêu đề không đọc thêm": 1
+   },
+   "rows": {},
+   "sample": {
+    "bảng máy khí: dòng máy trong tiêu đề không đọc thêm": "| DC330G6-NG | 330/264 | LYX15H-G350 | AGG"
+   }
+  },
+  {
+   "supplierId": "agg-fuzhou",
+   "n": 116,
+   "table": 15,
+   "title": "康明斯-德塔",
+   "reasons": {
+    "bảng máy khí: dòng máy trong tiêu đề không đọc thêm": 1
+   },
+   "rows": {},
+   "sample": {
+    "bảng máy khí: dòng máy trong tiêu đề không đọc thêm": "| CU1375G6-NG | 1375/1100 | K50N-G11SH | Cummins"
    }
   },
   {
@@ -3428,6 +3464,119 @@
    "rows": {},
    "sample": {
     "bảng không cho bản ghi nào": "| Power band | Typical engine families | Application fit"
+   }
+  },
+  {
+   "supplierId": "baifa-power",
+   "n": 101,
+   "table": 0,
+   "title": "",
+   "reasons": {
+    "tổ máy nhiều động cơ": 1
+   },
+   "rows": {
+    "tổ máy nhiều động cơ": [
+     30
+    ]
+   },
+   "sample": {
+    "tổ máy nhiều động cơ": "| BF-V900TWIN-T3 | 900 | 820 | VOLVO PENTA | 2*TAD1355GE | EMS2 / ECU | 2*S4L1D-F41 | STAGE IIIA/ TIER 3 | SWEDEN"
+   }
+  },
+  {
+   "supplierId": "baifa-power",
+   "n": 101,
+   "table": 1,
+   "title": "",
+   "reasons": {
+    "dòng máy lẫn với dòng tiêu đề": 1
+   },
+   "rows": {},
+   "sample": {
+    "dòng máy lẫn với dòng tiêu đề": "| BF-V770-T2 | 770 | 700 | VOLVO | TWD1645GE | EMS2 / ECU | S5L1D-G4 | STAGE II /TIER 2 | SWEDEN"
+   }
+  },
+  {
+   "supplierId": "baifa-power",
+   "n": 104,
+   "table": 6,
+   "title": "",
+   "reasons": {
+    "tổ máy nhiều động cơ": 5
+   },
+   "rows": {
+    "tổ máy nhiều động cơ": [
+     40,
+     41,
+     42,
+     43,
+     44
+    ]
+   },
+   "sample": {
+    "tổ máy nhiều động cơ": "| BF-V880TWIN-V | 880 | 800 | VOLVO PENTA | 2*TAD1382GE | ECU | 2*S4L1D-F41 | 110.9 | STAGE V | SWEDEN | 4-5 MONTHS |"
+   }
+  },
+  {
+   "supplierId": "baifa-power",
+   "n": 105,
+   "table": 7,
+   "title": "",
+   "reasons": {
+    "tổ máy nhiều động cơ": 6
+   },
+   "rows": {
+    "tổ máy nhiều động cơ": [
+     27,
+     28,
+     29,
+     30,
+     31,
+     32
+    ]
+   },
+   "sample": {
+    "tổ máy nhiều động cơ": "| BF-SC880TWIN-60T4F | 880 | 80 | SCANIA | 2*DC13 320A 02-62 | ECU | 2*S4L1D-F41 | | PA TIER 4 FINAL | SWEDEN | | ●"
+   }
+  },
+  {
+   "supplierId": "baifa-power",
+   "n": 106,
+   "table": 8,
+   "title": "",
+   "reasons": {
+    "tổ máy nhiều động cơ": 22,
+    "bảng không cho bản ghi nào": 1
+   },
+   "rows": {
+    "tổ máy nhiều động cơ": [
+     0,
+     1,
+     2,
+     3,
+     4,
+     5,
+     6,
+     7,
+     8,
+     9,
+     10,
+     11,
+     12,
+     13,
+     14,
+     15,
+     16,
+     17,
+     18,
+     19,
+     20,
+     21
+    ]
+   },
+   "sample": {
+    "tổ máy nhiều động cơ": "| BF-V1670TWIN-T2 | 1672 | 1520 | 2*TWD1744GE | ECM4 | 2*S5L1D-H41 | ISO 20'ft HC",
+    "bảng không cho bản ghi nào": "| | POWERED BY VOLVO | 1500RPM | STAGE 2 TIER 2"
    }
   },
   {
@@ -32957,6 +33106,19 @@
    }
   },
   {
+   "supplierId": "rcg-power",
+   "n": 120,
+   "table": 18,
+   "title": "R-WB 系列 (博杜安) -江苏瑞昌哥尔德发电设备股份有限公司",
+   "reasons": {
+    "dòng máy lẫn với dòng tiêu đề": 1
+   },
+   "rows": {},
+   "sample": {
+    "dòng máy lẫn với dòng tiêu đề": "| R-WB18D5/S | 18 kVA / 14 kW | 20 kVA / 16 kW | 潍柴博杜安 & 4M06G20/5 | 威而纳 & WR184ES | PDF"
+   }
+  },
+  {
    "supplierId": "rehlko",
    "n": 2001,
    "table": 0,
@@ -39744,10 +39906,12 @@
    "table": 0,
    "title": "Second hand | visa.it",
    "reasons": {
+    "dòng máy lẫn với dòng tiêu đề": 1,
     "bảng không cho bản ghi nào": 1
    },
    "rows": {},
    "sample": {
+    "dòng máy lẫn với dòng tiêu đề": "| S12 OPEN | 12 | Open | | undefined | | Manual version | Stand-By",
     "bảng không cho bản ghi nào": "| | MODEL | KVA | VERSION | ENGINE | ALTERNATOR | YEAR | PANEL | RECOMMENDED USE"
    }
   },
@@ -39757,10 +39921,12 @@
    "table": 1,
    "title": "Second hand | visa.it",
    "reasons": {
+    "dòng máy lẫn với dòng tiêu đề": 1,
     "bảng không cho bản ghi nào": 1
    },
    "rows": {},
    "sample": {
+    "dòng máy lẫn với dòng tiêu đề": "| S12 OPEN | 12 | Open | | undefined | | Manual version | Stand-By",
     "bảng không cho bản ghi nào": "| | MODEL | KVA | VERSION | ENGINE | ALTERNATOR | YEAR | PANEL | RECOMMENDED USE"
    }
   },
@@ -39770,10 +39936,12 @@
    "table": 10,
    "title": "Second hand | visa.it",
    "reasons": {
+    "dòng máy lẫn với dòng tiêu đề": 1,
     "bảng không cho bản ghi nào": 1
    },
    "rows": {},
    "sample": {
+    "dòng máy lẫn với dòng tiêu đề": "| S12 OPEN | 12 | Open | | undefined | | Manual version | Stand-By",
     "bảng không cho bản ghi nào": "| | MODEL | KVA | VERSION | ENGINE | ALTERNATOR | YEAR | PANEL | RECOMMENDED USE"
    }
   },

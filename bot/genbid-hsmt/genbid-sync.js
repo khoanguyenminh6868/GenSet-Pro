@@ -54,6 +54,7 @@ const {
   GOODS_MAX, WEBFORM_MAX, KEEP, splitSections, technicalOfIII, trimHsmt, compact, headCut, noticeBody,
   densestCut, SPECS_PART_OVERLAP, SPECS_PARTS_MAX, partsOf, specsMerge, specsEmpty, partHead, askCut, askTrace,
   checkResult, feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF, spendMeter, searchTermsOf, mergeFound, isGpkd,
+  ARCHIVE_LIMITS, unrarList, tarList, archiveRefusal, unrarFail, tarFail, pdfNeedsOcr,
 } = require("./sync-pure.js");
 
 // ---------- web (Vercel) ----------
@@ -1329,9 +1330,21 @@ function ocrText(f, find = 0) {
   log(`    OCR lỗi (${path.basename(f)}): ${ocrErr(r.stderr || r.error?.message || "")}`);
   return path.extname(f).toLowerCase() === ".pdf" ? cp.spawnSync(pdftotext(), ["-layout", "-enc", "UTF-8", f, "-"], { encoding: "utf8", maxBuffer: 256 << 20 }).stdout || "" : "";
 }
-function fileText(f, find) {
+// How fileText reads (reset by the caller): noOcr (Publish, `publish-text`): PDFs through pdftotext only, scans and pictures
+// listed in needOcr instead of read (OCR waits for Phân tích, ocrHsmt); notes: why something was not read (password,
+// broken archive, limits), so a file without text says why instead of nothing.
+const READ = { noOcr: false, needOcr: [], notes: [] };
+const readNote = (name, why) => { READ.notes.push(`${name}: ${why}`); log(`    ${name}: ${why}`); };
+function pdfNoOcr(f, name) {
+  if (IMG_EXT.includes(path.extname(f).toLowerCase())) { READ.needOcr.push(name); return ""; }
+  const t = cp.spawnSync(pdftotext(), ["-layout", "-enc", "UTF-8", f, "-"], { encoding: "utf8", maxBuffer: 256 << 20, timeout: 300e3 }).stdout || "";
+  if (pdfNeedsOcr(t, require("./ocr-pdf.js").garbled)) { READ.needOcr.push(name); return ""; }
+  return t;
+}
+function fileText(f, find, name = path.basename(f)) {
   const ext = path.extname(f).toLowerCase();
   try {
+    if ((ext === ".pdf" || IMG_EXT.includes(ext)) && READ.noOcr) return pdfNoOcr(f, name);
     if (ext === ".pdf" || IMG_EXT.includes(ext)) return ocrText(f, find);
     if (ext === ".docx" || ext === ".xlsx") {
       // Windows tar.exe cannot open a path with Vietnamese letters: read a copy under a plain name.
@@ -1341,9 +1354,13 @@ function fileText(f, find) {
       finally { fs.rmSync(plain, { force: true }); }
     }
     if (ext === ".txt" || ext === ".csv") return fs.readFileSync(f, "utf8");
-    if (ext === ".doc" || ext === ".rtf") return wordText(f);
-    if (ARCHIVE_EXT.includes(ext)) return archiveText(f);
-  } catch {}
+    if (ext === ".doc" || ext === ".rtf") {
+      const t = wordText(f);
+      if (!t.trim()) readNote(name, IS_WIN ? "Word không mở được (tệp hỏng, có mật khẩu, hoặc máy không có Word)" : "antiword / catdoc / LibreOffice không đọc được (hoặc máy không có)");
+      return t;
+    }
+    if (ARCHIVE_EXT.includes(ext)) return archiveText(f, 0, name);
+  } catch (e) { readNote(name, `lỗi khi đọc (${String(e.message).split("\n")[0].slice(0, 120)})`); }
   return "";
 }
 // Old Word .doc / .rtf: Word on this PC saves a plain-text copy (Unicode), which is read back.
@@ -1357,9 +1374,10 @@ function wordText(f) {
     const q = (s) => "'" + s.replace(/'/g, "''") + "'";
     const script = `$w = New-Object -ComObject Word.Application; $w.Visible = $false; $w.DisplayAlerts = 0
 $w.AutomationSecurity = 3
-try { $d = $w.Documents.Open(${q(src)}, $false, $true); $d.SaveAs2(${q(out)}, 2, $false, '', $false, '', $false, $false, $false, $false, $false, 65001); $d.Close($false) } finally { $w.Quit() }`;
+try { $d = $w.Documents.Open(${q(src)}, $false, $true, $false, 'genbid-no-password'); $d.SaveAs2(${q(out)}, 2, $false, '', $false, '', $false, $false, $false, $false, $false, 65001); $d.Close($false) } finally { $w.Quit() }`;
     // Plain text in UTF-8 (format 2, encoding 65001): "Unicode text" (format 7) came out as ANSI with "?" for every
-    // Vietnamese letter on some .doc files (IB2400577020), read back as UTF-16 garbage.
+    // Vietnamese letter on some .doc files (IB2400577020), read back as UTF-16 garbage. A password is given (19/11/2026) so
+    // a protected file fails at once instead of Word waiting on a hidden password box until the timeout; others ignore it.
     cp.spawnSync(PLAT.PWSH, PLAT.psArgv(script), { encoding: "utf8", timeout: 180e3 });
     return fs.existsSync(out) ? fs.readFileSync(out, "utf8").replace(/^﻿/, "") : "";
   } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
@@ -1380,20 +1398,43 @@ try { foreach ($e in $z.Entries) { if (-not $e.Name) { continue }
   [IO.Compression.ZipFileExtensions]::ExtractToFile($e, (Join-Path ${q(out)} ('e{0}-{1}{2}' -f $i, $b.Trim(), $ext)), $true); $i++ } } finally { $z.Dispose() }`;
   cp.spawnSync(PLAT.PWSH, PLAT.psArgv(script), { encoding: "utf8", timeout: 300e3 });
 }
-function archiveText(f, depth = 0) {
-  if (depth > 1) return "";
+// Listed first (archiveRefusal: entry count, unpacked size, entries that would land outside the folder), then unpacked;
+// a password, a broken archive or a limit is noted (READ.notes) with the archive's name instead of giving nothing silently.
+// Links unpacked from the archive are not followed. name: what the notes call the archive (its name in the HSMT).
+function archiveText(f, depth = 0, name = path.basename(f)) {
+  if (depth > ARCHIVE_LIMITS.depth) { readNote(name, `tệp nén lồng quá ${ARCHIVE_LIMITS.depth + 1} lớp, không đọc`); return ""; }
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "genbid-arc-"));
   try {
     const src = path.join(tmp, "in" + path.extname(f).toLowerCase()), out = path.join(tmp, "x");
     fs.copyFileSync(f, src); fs.mkdirSync(out);
     // tar.exe skips RAR5 entries with Vietnamese names: .rar goes through WinRAR's UnRAR when the PC has it.
-    if (path.extname(src) === ".rar" && UNRAR) cp.spawnSync(UNRAR, ["x", "-y", "-inul", src, out + path.sep], { timeout: 300e3 });
-    else cp.spawnSync(TAR, ["-xf", src, "-C", out], { encoding: "utf8", timeout: 300e3 });
-    if (path.extname(src) === ".zip" && !fs.readdirSync(out).length) unzipPlain(src, out);
-    const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => (e.isDirectory() ? walk(path.join(d, e.name)) : [path.join(d, e.name)]));
-    return walk(out).slice(0, 30).map((x) => {
-      const t = ARCHIVE_EXT.includes(path.extname(x).toLowerCase()) ? archiveText(x, depth + 1) : fileText(x);
-      return t.trim() ? `--- ${path.relative(out, x)} ---\n${t.trim()}` : "";
+    const rar = path.extname(src) === ".rar" && UNRAR;
+    const run = (exe, a) => cp.spawnSync(exe, a, { encoding: "utf8", maxBuffer: 64 << 20, timeout: 300e3 });
+    const ls = rar ? run(UNRAR, ["lt", "-p-", src]) : run(TAR, ["-tvf", src]);
+    // A tar listing that fails part way (a .zip entry name that is not UTF-8) still lists the rest; only a password stops here.
+    const lsWhy = rar ? (ls.status === 1 ? "" : unrarFail(ls.status)) :/passphrase|encrypt/i.test(ls.stderr || "") ? "có mật khẩu" : "";
+    if (lsWhy) { readNote(name, lsWhy); return ""; }
+    const refuse = archiveRefusal(rar ? unrarList(ls.stdout) : tarList(ls.stdout));
+    if (refuse) { readNote(name, refuse); return ""; }
+    const x = rar ? run(UNRAR, ["x", "-y", "-p-", "-inul", src, out + path.sep]) : run(TAR, ["-xf", src, "-C", out]);
+    let why = rar ? unrarFail(x.status) : tarFail(x.status, x.stderr);
+    if (path.extname(src) === ".zip" && !fs.readdirSync(out).length && why !== "có mật khẩu") { unzipPlain(src, out); if (fs.readdirSync(out).length) why = ""; }
+    // Only plain files and folders inside out (no link to elsewhere on this PC).
+    const inside = (p) => { try { return fs.realpathSync(p).startsWith(fs.realpathSync(out) + path.sep); } catch { return false; } };
+    let links = 0;
+    const walk = (d) => fs.readdirSync(d, { withFileTypes: true }).flatMap((e) => {
+      const p = path.join(d, e.name);
+      if (e.isSymbolicLink() || !inside(p)) { links++; return []; }
+      return e.isDirectory() ? walk(p) : e.isFile() ? [p] : [];
+    });
+    const all = walk(out);
+    if (why) readNote(name, why + (all.length ? `, đọc ${all.length} tệp giải nén được` : ""));
+    if (links) readNote(name, `bỏ qua ${links} liên kết trong tệp nén`);
+    if (all.length > ARCHIVE_LIMITS.files) readNote(name, `có ${all.length} tệp, chỉ đọc ${ARCHIVE_LIMITS.files} tệp đầu`);
+    return all.slice(0, ARCHIVE_LIMITS.files).map((p) => {
+      const inner = `${name}/${path.relative(out, p).replace(/\\/g, "/")}`;
+      const t = ARCHIVE_EXT.includes(path.extname(p).toLowerCase()) ? archiveText(p, depth + 1, inner) : fileText(p, undefined, inner);
+      return t.trim() ? `--- ${path.relative(out, p)} ---\n${t.trim()}` : "";
     }).filter(Boolean).join("\n\n");
   } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
 }
@@ -1407,23 +1448,27 @@ async function ocrHsmt(key, hsmt, maxBytes = Infinity, find) {
   const todo = (hsmt?.files || []).filter((f) => f.hasText === false && !f.ocrTried && f.url && readable.includes(path.extname(f.name).toLowerCase()) && !(f.size > maxBytes));
   if (!todo.length) return hsmt;
   const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "genbid-hsmtocr-"));
-  const added = [], tried = [];
+  const added = [], tried = [], why = new Map(); // why: the reasons fileText noted (password, broken archive, ...) → hsmt files[].readNote
   try {
     for (const f of todo) {
       const local = path.join(tmp, "f" + (added.length + tried.length) + path.extname(f.name).toLowerCase());
       try {
-        const r = await fetch(new URL(f.url, API).toString());
+        // /_gh needs the ingest token since 12/11/2026 (PR #593): without it every download was HTTP 401 and no new
+        // .doc/.rar/scan got its text here. The token only goes to the web's own host.
+        const u = new URL(f.url, API);
+        const r = await fetch(u.toString(), u.origin === new URL(API).origin ? { headers: { Authorization: `Bearer ${token()}` } } : {});
         if (!r.ok) { log(`    Không tải được ${f.name} (HTTP ${r.status})`); continue; }
         fs.writeFileSync(local, Buffer.from(await r.arrayBuffer()));
       } catch (e) { log(`    Không tải được ${f.name}: ${e.message}`); continue; }
-      const before = ocrPages, text = fileText(local, find), n = ocrPages - before;
+      READ.notes = [];
+      const before = ocrPages, text = fileText(local, find, f.name), n = ocrPages - before;
       fs.rmSync(local, { force: true });
       if (text.replace(/\s/g, "").length > 40) { added.push({ f, text, n }); log(`    Đọc được chữ${n ? ` (OCR ${n} trang)` : ""}: ${f.name}`); }
-      else { tried.push(f); log(`    Không đọc được chữ: ${f.name}`); }
+      else { tried.push(f); why.set(f, READ.notes.join("; ").slice(0, 500)); log(`    Không đọc được chữ: ${f.name}`); }
     }
   } finally { fs.rmSync(tmp, { recursive: true, force: true }); }
   if (!added.length && !tried.length) return hsmt;
-  const files = hsmt.files.map((f) => { const a = added.find((x) => x.f === f); return a ? { ...f, hasText: true, ...(a.n ? { ocr: a.n } : {}) } : tried.includes(f) ? { ...f, ocrTried: true } : f; });
+  const files = hsmt.files.map((f) => { const a = added.find((x) => x.f === f); return a ? { ...f, hasText: true, ...(a.n ? { ocr: a.n } : {}) } : tried.includes(f) ? { ...f, ocrTried: true, ...(why.get(f) ? { readNote: why.get(f) } : {}) } : f; });
   if (!added.length) { const next = { ...hsmt, files }; await post([{ coll: "hsmt", id: key, data: next }]); return next; }
   const all = [await hsmtText(key), ...added.map((a) => `--- Tệp: ${a.f.name}${a.n ? " (OCR)" : ""} ---\n${a.text.trim()}`)].filter(Boolean).join("\n\n");
   // Same chunks as Publish-GenBidHsmt.ps1 / ingest.py: at most 190,000 UTF-8 bytes each.
@@ -2011,6 +2056,16 @@ async function runFinish() {
       const t = fileText(String(opt("file")));
       console.log(t);
       summary = `${t.replace(/\s/g, "").length} ký tự`;
+    }
+    else if (cmd === "publish-text") { // Publish-GenBidHsmt.ps1: text of a .doc/.rtf/.xlsx/archive right after download, no OCR (--file F --name N --out O)
+      // O.txt: the text; O.json: needOcr (a scan or picture inside: the file is left without text, for ocrHsmt to read it
+      // whole with OCR at Phân tích) and notes. The text is not in the JSON: ConvertFrom-Json of PowerShell 5.1 stops at 2 MB.
+      Object.assign(READ, { noOcr: true, needOcr: [], notes: [] });
+      const f = String(opt("file")), name = typeof opt("name") === "string" ? opt("name") : path.basename(f);
+      const t = fileText(f, undefined, name);
+      fs.writeFileSync(String(opt("out")) + ".txt", t, "utf8");
+      fs.writeFileSync(String(opt("out")) + ".json", JSON.stringify({ chars: t.replace(/\s/g, "").length, needOcr: READ.needOcr, notes: READ.notes }), "utf8");
+      summary = `${t.replace(/\s/g, "").length} ký tự${READ.needOcr.length ? `, ${READ.needOcr.length} tệp chờ OCR` : ""}${READ.notes.length ? `, ${READ.notes.length} ghi chú` : ""}`;
     }
     else if (cmd === "ocr-hsmt") { // OCR the scanned HSMT files of tenders already on the web (--key K for one)
       const keys = typeof opt("key") === "string" ? [opt("key")] : (await docs("hsmt")).filter((d) => (d.data?.files || []).some((f) => f.hasText === false)).map((d) => d.id);
