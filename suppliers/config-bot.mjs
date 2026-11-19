@@ -127,7 +127,43 @@ export const BLOCK = Symbol("chưa so được");
 // counted against the winner (added to the next value): the winner must still win. → { win, votes, blocked } or null.
 // candidates() uses it for these keys only (Khoa 18/11/2026: "làm (d) trước. (c) để đo và làm sau"; (c) = suppliers giving
 // the same figures for a model count as one vote, for the displacement).
-const MAJ_KEYS = new Set(["cyl"]);
+// Displacement too (Khoa 19/11/2026, (c) "số đông dung tích"), with the suppliers that copy one template table counted as
+// ONE vote (dispVoters): MTU 1600 ×6 and TAD1341GE no longer win by bdadl / fukangsi / pengpai's copied figures.
+const MAJ_KEYS = new Set(["cyl", "disp"]);
+// A genset's outer size that is a standard ISO container (20 / 30 / 40 ft: 2438 mm wide, 6058 / 9125 / 12192 mm long, any
+// height; rounded "6060*2440*2600", "12200*2438*2896" too): two suppliers writing it is no sign of a copied table.
+const DIMS_CELL = /^\d{3,5}(?:\.\d+)?\*\d{3,5}(?:\.\d+)?\*\d{3,5}(?:\.\d+)?$/;
+export const isContainerDims = (k) => { const [L, W] = String(k).split("*").map(Number); return W >= 2435 && W <= 2440 && ((L >= 6038 && L <= 6060) || (L >= 9125 && L <= 9201) || (L >= 12000 && L <= 12200)); };
+const dimsCells = (text) => CAT.cellsOf(String(text || "")).map((c) => String(c).toLowerCase().replace(/\s+/g, "").replace(/[×x]/g, "*").replace(/mm$/, "")).filter((k) => DIMS_CELL.test(k));
+// Who votes for an engine's displacement (C6, so-dong-dung-tich 19/11/2026: Chinese suppliers copy one template table, so
+// a "majority" can be one copied error). Two suppliers are ONE voter when, for this engine, a row of each gives the same
+// genset size cell ("2900*1100*1600", the assembler's own figure; not a container size) AND they give the same set of
+// displacement figures. A supplier that is the engine's maker (role engine_maker) or gives a maker's datasheet of it
+// (`sheet`, a "Datasheet: …" table) is never merged. `read(f, ctx)` → number | BLOCK | null (as candidates reads it).
+// → Map supplierId → voter id (the first supplierId of its group, sorted).
+export function dispVoters(e, ef, { suppliers = new Map(), read, rowsMap } = {}) {
+  const vals = new Map(), dims = new Map(), add = (m, s, v) => m.set(s, new Set([...(m.get(s) || []), v]));
+  const val = (f, ctx) => { const x = read(f, ctx); return x == null ? null : x === BLOCK ? `?${String(f.value ?? "").toLowerCase().replace(/\s+/g, "")}` : String(x); };
+  for (const f of ef) if (f.key === "disp") { const v = val(f, undefined); if (v != null) add(vals, f.supplierId, v); }
+  for (const u of e.uses || []) {
+    const ctx = useNormCtx(u, rowsMap);
+    for (const f of u.specs || []) if (f.key === "disp") { const v = val(f, ctx); if (v != null) add(vals, u.supplierId, v); }
+    for (const k of dimsCells(u.line || (u.lines?.rows || []).join(" | "))) if (!isContainerDims(k)) add(dims, u.supplierId, k);
+  }
+  const dsTables = (s) => new Set((suppliers.get(s)?.specTables || []).filter((t) => /^Datasheet: /.test(t.title || "")).map((t) => t.n));
+  const solo = (s) => suppliers.get(s)?.role === "engine_maker" || ef.some((f) => f.supplierId === s && (f.sheet || dsTables(s).has(f.n)));
+  const sids = [...new Set([...ef.map((f) => f.supplierId), ...(e.uses || []).map((u) => u.supplierId)])].filter((s) => s != null).sort();
+  const root = new Map(sids.map((s) => [s, s])), find = (s) => { while (root.get(s) !== s) s = root.get(s); return s; };
+  const key = (s) => [...(vals.get(s) || [])].sort().join("/");
+  const free = sids.filter((s) => vals.has(s) && dims.has(s) && !solo(s));
+  for (let i = 0; i < free.length; i++) for (let j = i + 1; j < free.length; j++) {
+    const a = free[i], b = free[j];
+    if (key(a) !== key(b) || ![...dims.get(a)].some((k) => dims.get(b).has(k))) continue;
+    const ra = find(a), rb = find(b);
+    if (ra !== rb) root.set(ra < rb ? rb : ra, ra < rb ? ra : rb);
+  }
+  return new Map(sids.map((s) => [s, find(s)]));
+}
 // row-flags-lib.mjs dùng các hàm này (nó không import ngược config-bot: vòng import + top-level await làm node thoát 13).
 rowFlagsUse({ majorityOf, BLOCK, normFig, useNormCtx });
 export function majorityOf(figs) {
@@ -1388,6 +1424,15 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
     if (focus && !focus.has(e.key)) continue;
     const viaCn = origin === "cn" && CAT.originOf(e) === "other";
     const ef = facts.get(`engine:${e.key}`) || [], eKeys = new Set(ef.map((f) => f.key));
+    // Displacement voters of this engine (dispVoters), built once when a row needs them.
+    let voters = null;
+    const dispVoter = (s) => {
+      if (!voters) {
+        const read = specNormOn("disp") ? (f, ctx) => { const x = normFig(f, ctx ?? NORM_CTX.get(f), { unit: "L" }); return x.ok ? x.r.num ?? null : x.why.includes("value") ? null : BLOCK; } : (f) => dispLitres(f);
+        voters = dispVoters(e, ef, { suppliers: sup, read, rowsMap });
+      }
+      return voters.get(s) ?? s;
+    };
     for (const u of e.uses) {
       // The genset model the HSMT names (Khoa 2026-11-12, IB2600601812 "Mã hiệu DHY110K SE"): its row stays whatever its
       // power reads (Hyundai's DHY110KSE table gives the engine's 100 kW only, no kVA) and goes first.
@@ -1445,7 +1490,13 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
           if (judge("controller", best) < 0) score -= 300;
         }
       }
-      if (offers.length) score += 50;
+      // A controller named: on the row, or in the supplier's record (then every row of that supplier). The reason says
+      // which (Khoa 19/11/2026 "ok": the 50 points showed no reason; points unchanged).
+      if (offers.length) {
+        score += 50;
+        const names = (l) => [...new Set(l.map((c) => [c.brand, c.model].filter(Boolean).join(" ")).filter(Boolean))].slice(0, 3).join(", ");
+        why.push((rowCtrl.length ? `dòng ghi bộ điều khiển ${names(rowCtrl)}` : `NCC có hồ sơ bộ điều khiển ${names(s?.controllers || [])}`).trim());
+      }
       // A controller with its maker's datasheet: its functions can be checked against the HSMT.
       if (offers.some((c) => c.model && factsFor(facts, "controller", c.model).length)) { score += 40; why.push("bộ điều khiển có datasheet hãng"); }
       score += 8 * Math.min(eKeys.size, 8);
@@ -1456,11 +1507,11 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       const nfig = (f, want) => { const x = normFig(f, ctxOf(f), want); if (!x.ok) normSkip.push({ key: f.key, label: f.label, value: f.value, why: x.why, supplierId: f.supplierId ?? u.supplierId, line: f.line ?? u.line }); return x.ok ? x.r : null; };
       // The cylinder count the suppliers agree on by the majority rule (majorityOf, lech-cot-9 18/11/2026) settles it: the row is
       // judged by it alone (longkai's "No. cylinders | V 12" for the 6-cylinder QSK19-G4 no longer keeps it for "≥ 12 xi
-      // lanh"). No such value: as before. Only the count (MAJ_KEYS, Khoa 18/11/2026 "làm (d) trước"): Chinese suppliers copy
-      // one template table, so a displacement "majority" can be a copied error (MTU 1600 ×6, TAD1341GE: 7 of 191 wrong).
-      const majOf = (all) => majorityOf(all.map(([f, x]) => [f.supplierId ?? u.supplierId, x]));
+      // lanh"). No such value: as before. The displacement too (MAJ_KEYS, Khoa 19/11/2026), its voters merged by dispVoters:
+      // Chinese suppliers copy one template table, so counting each made a copied error win (MTU 1600 ×6, TAD1341GE).
+      const majOf = (all, key) => majorityOf(all.map(([f, x]) => { const s = f.supplierId ?? u.supplierId; return [key === "disp" ? dispVoter(s) : s, x]; }));
       const below = (key, min, read) => { const all = [...ef, ...(u.specs || [])].filter((f) => f.key === key).map((f) => [f, read(f.value, f)]), fs = all.filter(([, x]) => x != null && x !== BLOCK), v = fs.map(([, x]) => x);
-        const mj = min && MAJ_KEYS.has(key) ? majOf(all) : null;
+        const mj = min && MAJ_KEYS.has(key) ? majOf(all, key) : null;
         if (mj) { if (mj.win < min) srcOf[key] = { n: v.length, win: mj.win, votes: mj.votes }; return mj.win < min ? mj.win : null; }
         // Normalized: a source giving a figure the layer cannot compare (no unit, cc...) is "Chưa rõ": the row is not left out.
         const hit = min && v.length && !all.some(([, x]) => x === BLOCK) && v.every((x) => x < min); if (hit) srcOf[key] = { n: v.length, sources: new Set(fs.map(([f]) => `${f.supplierId ?? ""}#${f.n ?? ""}`)).size, ofRow: fs.filter(([f]) => (u.specs || []).includes(f)).length };
@@ -1485,9 +1536,13 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       const traitMake = hints.trait?.engineMake;
       if (traitMake && !(e.make || "").split(" / ").includes(traitMake)) { ruled.push("trait"); why.push(`HSMT ghi ${hints.trait.engineTerms.map((x) => x.term).join(", ")} (đặc thù động cơ ${traitMake}), động cơ ${e.make ? `hãng ${e.make}` : "chưa rõ hãng"}`); }
       const byMaj = (k) => (srcOf[k]?.win != null ? ` (số đông nhà cung cấp: ${Object.entries(srcOf[k].votes).map(([v, c]) => `${v} × ${c}`).join(", ")})` : "");
-      if (dl != null) { score -= 600; ruled.push("disp"); why.push(`dung tích ${dl} L < ${hints.minDisp} L HSMT yêu cầu`); }
-      const dh0 = hints.maxDisp ? given.filter((f) => f.key === "disp").map((f) => dispOf(f.value, f)) : [], dh = dh0.filter((x) => x != null && x !== BLOCK);
-      if (dh.length && !dh0.includes(BLOCK) && dh.every((x) => x > hints.maxDisp * 1.005)) { score -= 600; ruled.push("maxDisp"); why.push(`dung tích ${dh[0]} L > ${hints.maxDisp} L HSMT cho phép`); }
+      if (dl != null) { score -= 600; ruled.push("disp"); why.push(`dung tích ${dl} L < ${hints.minDisp} L HSMT yêu cầu${byMaj("disp")}`); }
+      // Past the largest displacement the HSMT allows: by the value the suppliers agree on (majority, voters merged as for
+      // the minimum; Khoa 19/11/2026 "có"), else by every source as before.
+      const dhF = hints.maxDisp ? given.filter((f) => f.key === "disp").map((f) => [f, dispOf(f.value, f)]) : [], dh0 = dhF.map(([, x]) => x), dh = dh0.filter((x) => x != null && x !== BLOCK);
+      const mjMax = dhF.length && MAJ_KEYS.has("disp") ? majOf(dhF, "disp") : null;
+      const overMax = mjMax ? mjMax.win > hints.maxDisp * 1.005 : dh.length && !dh0.includes(BLOCK) && dh.every((x) => x > hints.maxDisp * 1.005);
+      if (overMax) { score -= 600; ruled.push("maxDisp"); if (mjMax) srcOf.maxDisp = { win: mjMax.win, votes: mjMax.votes }; why.push(`dung tích ${mjMax ? mjMax.win : dh[0]} L > ${hints.maxDisp} L HSMT cho phép${byMaj("maxDisp")}`); }
       if (cl != null) { score -= 600; ruled.push("cyl"); why.push(`${cl} xi lanh < ${hints.minCyl} HSMT yêu cầu${byMaj("cyl")}`); }
       // The HSMT gives the bare count (cylExact, Khoa 2026-11-17): another count by every source that gives one, the
       // row's own cell first ("12V", "12.V"), is left out too (a 12-cylinder engine for "6 xy lanh"). Sources that
