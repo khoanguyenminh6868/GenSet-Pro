@@ -214,7 +214,10 @@ td.locc{white-space:normal!important;min-width:90px;max-width:130px}
 .sbtn:disabled{opacity:.35;cursor:default}
 .more{display:flex;justify-content:center;padding:12px;border-top:1px solid var(--line)}
 .pv{display:flex;flex-direction:column;gap:10px;align-items:center}
-.pv canvas{width:100%;height:auto;background:#fff;border-radius:4px;box-shadow:var(--shadow)}
+/* PDF viewer: the name / Tải về / close row stays put, only the pages scroll (Khoa, 2026-11-19). */
+.modal.pvdlg{overflow:hidden}
+.modal.pvdlg .pv{flex:1;min-height:0;overflow:auto;overscroll-behavior:contain}
+.pv canvas{flex:none;width:100%;height:auto;background:#fff;border-radius:4px;box-shadow:var(--shadow)}
 .modal.wide{width:min(1040px,100%)}
 table{border-collapse:collapse;width:100%}
 th,td{padding:8px 9px;border-bottom:1px solid var(--line);text-align:left;vertical-align:top}
@@ -2741,7 +2744,7 @@ async function downloadHsmtFile(key, i) {
 async function openPdf(key, i) {
   const f = state.hsmt[key].files[i];
   modal(h`<div class="row"><h2 style="flex:1;min-width:0;overflow-wrap:anywhere">${f.name}</h2><button class="btn sm" id="pvSave">Tải về</button>${raw(CLOSE_BTN)}</div>
-    <div id="pvBody" class="pv"><div class="loading">${raw(progress("Đang mở tệp..."))}</div></div>`, null, "wide");
+    <div id="pvBody" class="pv"><div class="loading">${raw(progress("Đang mở tệp..."))}</div></div>`, null, "wide pvdlg");
   let blob;
   try {
     blob = await fetchSiteFile(f.url);
