@@ -25,3 +25,6 @@ Giống hệt = top + topScore theo mảng, `all` theo đa tập (khoá@điểm)
 | 286 | 229 | 543 | 35 | 0 |
 
 Từng lượt khác (807 lượt, `all ra` = có ở gốc mất ở nhánh, `all vào` = mới ở nhánh, mỗi lượt tối đa 6 dòng mỗi loại): xem `chi-tiet-khac.md`.
+
+## Lưu ý đầu PR
+Lúc bắt đầu đo `git ls-remote` cho `refs/pull/945/head` = `c977a26b…` (đúng yêu cầu) và đã đo commit đó. Khi đo xong, đầu PR #945 đã chuyển sang `4600d59dca859a6e1126b3b4a8363bc0e3b53708` (có commit mới sau lúc đo); kết quả ở đây KHÔNG gồm commit mới đó.
