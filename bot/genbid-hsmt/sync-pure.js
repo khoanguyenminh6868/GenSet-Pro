@@ -1040,6 +1040,22 @@ function pdfNeedsOcr(text, garbled = () => false) {
   return (pages.length >= 5 && empty / pages.length >= 0.3) || garbled(t) || t.replace(/\s/g, "").length <= 40;
 }
 
+// Writing many rows to /api/ingest (ocrHsmt: a tender read from a big archive gave ~3.4 million characters in ONE request:
+// HTTP 413 FUNCTION_PAYLOAD_TOO_LARGE, 2026-11-19). A Vercel function takes at most 4.5 MB of body; Publish-GenBidHsmt.ps1
+// already sends at most 15 text chunks (~3 MB) per call. Same here: at most 15 rows and 3,000,000 UTF-8 bytes of JSON per
+// batch (api/ingest.js itself takes 1-200 rows). A single row larger than the limit goes alone (cannot be split).
+const WRITE_BATCH = { rows: 15, bytes: 3000000 };
+function batchRows(rows, { rows: maxRows, bytes: maxBytes } = WRITE_BATCH) {
+  const out = []; let cur = [], size = 0;
+  for (const r of rows.filter(Boolean)) {
+    const n = Buffer.byteLength(JSON.stringify(r), "utf8");
+    if (cur.length && (cur.length >= maxRows || size + n > maxBytes)) { out.push(cur); cur = []; size = 0; }
+    cur.push(r); size += n;
+  }
+  if (cur.length) out.push(cur);
+  return out;
+}
+
 module.exports = {
   NORM_BANDS, normPower, noiseLimits, fuelLimits, normHighlights, withNormHighlights,
   feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF, FIELDS, FIELD_DEFAULT, fieldsOf, searchTermsOf, mergeFound, API_PRICE, usageUsd, spendMeter,
@@ -1053,4 +1069,5 @@ module.exports = {
   askCut, askTrace, normTxt, numsOf, sourceOf, found, nearby, scoreItems, checkSupplier, SELF_KINDS,
   SELF_STATUS, subSections, SELF_AS, selfCheckItems, checkSelfChecks, checkResult,
   ARCHIVE_LIMITS, unsafeEntry, unrarList, tarList, archiveRefusal, UNRAR_EXIT, unrarFail, tarFail, pdfNeedsOcr,
+  WRITE_BATCH, batchRows,
 };

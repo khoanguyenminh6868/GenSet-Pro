@@ -54,7 +54,7 @@ const {
   GOODS_MAX, WEBFORM_MAX, KEEP, splitSections, technicalOfIII, trimHsmt, compact, headCut, noticeBody,
   densestCut, SPECS_PART_OVERLAP, SPECS_PARTS_MAX, partsOf, specsMerge, specsEmpty, partHead, askCut, askTrace,
   checkResult, feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF, spendMeter, searchTermsOf, mergeFound, isGpkd,
-  ARCHIVE_LIMITS, unrarList, tarList, archiveRefusal, unrarFail, tarFail, pdfNeedsOcr,
+  ARCHIVE_LIMITS, unrarList, tarList, archiveRefusal, unrarFail, tarFail, pdfNeedsOcr, batchRows,
 } = require("./sync-pure.js");
 
 // ---------- web (Vercel) ----------
@@ -1475,7 +1475,11 @@ async function ocrHsmt(key, hsmt, maxBytes = Infinity, find) {
   const parts = []; let b = Buffer.from(all, "utf8");
   while (b.length) { let cut = Math.min(b.length, 190000); while (cut < b.length && (b[cut] & 0xc0) === 0x80) cut--; parts.push(b.subarray(0, cut).toString("utf8")); b = b.subarray(cut); }
   const next = { ...hsmt, files, textChunks: parts.length, updatedAt: now() };
-  await post([...parts.map((text, i) => ({ coll: "hsmttext", id: `${key}_${i}`, data: { text } })), { coll: "hsmt", id: key, data: next }]);
+  // Small batches (batchRows: under Vercel's 4.5 MB body limit), chunks first and the hsmt record LAST: hsmt carries
+  // hasText / textChunks, so a write that stops half way leaves the files still "no text" and the next run reads them
+  // again (chunks are whole documents by id: a repeat overwrites, harmless).
+  for (const b of batchRows(parts.map((text, i) => ({ coll: "hsmttext", id: `${key}_${i}`, data: { text } })))) await post(b, { retry: 2 });
+  await post([{ coll: "hsmt", id: key, data: next }], { retry: 2 });
   return next;
 }
 const KIND_PROMPT = { analysis: "analysis-prompt.md", translation: "translate-prompt.md", compare: "compare-prompt.md", hsdt: "hsdt-prompt.md", tlkt: "tlkt-prompt.md", supplier: "supplier-prompt.md" };
@@ -1723,7 +1727,7 @@ async function prepOne(kind, key, requestedAt, dir) {
     const rel = path.join(dir, "rel"), scan = path.join(dir, "scan"), render = path.join(KIT, "Render-GenBidScan.ps1");
     input += `\n## Tệp scan chưa có chữ\n${scans.map((s) => "- " + s).join("\n")}\n`
       // Files a project's owner uploaded on the web (tab Dự án) live only in the web's file store.
-      + (hsmt?.source === "tải tay" ? `Tệp tải tay trên web, tải về bằng Invoke-WebRequest:\n${(hsmt.files || []).filter((f) => f.hasText === false && f.url).map((f) => `- ${f.name}: ${API.replace(/\/api$/, "")}${f.url}`).join("\n")}\n` : "")
+      + (hsmt?.source === "tải tay" ? `Tệp tải tay trên web, tải về bằng Invoke-WebRequest KÈM token (/_gh cần đăng nhập, không kèm thì HTTP 401): -Headers @{ Authorization = "Bearer $((Get-Content -Raw '${path.join(ROOT, ".genbid-ingest-token")}').Trim())" }, không in token ra:\n${(hsmt.files || []).filter((f) => f.hasText === false && f.url).map((f) => `- ${f.name}: ${API.replace(/\/api$/, "")}${f.url}`).join("\n")}\n` : "")
       + `Tệp nằm ở ${local}. Nếu không có: gh release download hsmt-${key} --repo khoanguyenminh6868/GenSet-Pro --dir "${rel}" (tên gốc trong C:\\Projects\\GenSet Pro\\hsmt-inbox\\inbox\\${key}\\release.json).\n`
       + `Xem trang: ${PLAT.PWSH} -NoProfile -File "${render}" -Pdf <pdf> -OutDir "${scan}" -First <n> -Last <m>, rồi đọc ảnh PNG, mỗi lần khoảng 10 trang, chỉ các chương cần.\n`;
   }
