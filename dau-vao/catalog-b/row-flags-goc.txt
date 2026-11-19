@@ -1,0 +1,42 @@
+bản ghi 60086 (khoá khác nhau 59517), bị gắn cờ 165, trong đó bị loại (mức drop) 23
+    23  absurd (drop)  số vô lý so với công suất của dòng
+   143  cylMaj (show)  số xi lanh lệch số đông NCC khác
+
+Theo NCC (dòng bị cờ / bản ghi; bị loại; bảng nghi / bảng):
+  bdadl-shanghai: 26/447; loại 0; 5/40 bảng; {"cylMaj":26}
+  depco-power: 25/830; loại 1; 25/653 bảng; {"absurd":1,"cylMaj":24}
+  mingbang-mbkl: 18/218; loại 1; 4/36 bảng; {"absurd":1,"cylMaj":18}
+  aoke-yangzhou: 15/172; loại 2; 14/54 bảng; {"absurd":2,"cylMaj":13}
+  victory-generator: 9/636; loại 0; 5/48 bảng; {"cylMaj":9}
+  huipu-power: 8/149; loại 3; 4/6 bảng; {"absurd":3,"cylMaj":5}
+  xinhengxin-fujian: 6/339; loại 0; 1/19 bảng; {"cylMaj":6}
+  longkai-power: 5/1109; loại 0; 5/175 bảng; {"cylMaj":5}
+  comappower: 4/644; loại 0; 3/27 bảng; {"cylMaj":4}
+  huatai-yangzhou: 4/184; loại 3; 2/11 bảng; {"absurd":3,"cylMaj":1}
+  waeta-fujian: 4/707; loại 0; 2/26 bảng; {"cylMaj":4}
+  fdk-energy: 3/1913; loại 2; 2/207 bảng; {"absurd":2,"cylMaj":1}
+  jlmech-wuhan: 3/113; loại 3; 2/4 bảng; {"absurd":3}
+  xinzhengfa: 3/226; loại 0; 1/10 bảng; {"cylMaj":3}
+  yunding-jiangsu: 3/393; loại 0; 2/15 bảng; {"cylMaj":3}
+  bruno-generators: 2/14; loại 2; 1/3 bảng; {"absurd":2}
+  fukangsi-yangzhou: 2/411; loại 1; 2/21 bảng; {"absurd":1,"cylMaj":1}
+  haifeng-taizhou: 2/267; loại 0; 2/10 bảng; {"cylMaj":2}
+  liangzi-yangzhou: 2/374; loại 0; 2/34 bảng; {"cylMaj":2}
+  pengpai-yangzhou: 2/447; loại 1; 2/36 bảng; {"absurd":1,"cylMaj":1}
+  sanq-power: 2/1180; loại 0; 2/171 bảng; {"cylMaj":2}
+  suneco-linyi: 2/397; loại 0; 1/8 bảng; {"cylMaj":2}
+  taihai-taizhou: 2/299; loại 0; 2/14 bảng; {"cylMaj":2}
+  yanan-power: 2/760; loại 0; 1/11 bảng; {"cylMaj":2}
+  yingtai-jiangsu: 2/263; loại 0; 1/8 bảng; {"cylMaj":2}
+  aosif: 1/752; loại 0; 1/153 bảng; {"cylMaj":1}
+  cameo-power: 1/50; loại 1; 1/16 bảng; {"absurd":1}
+  hanyang-weifang: 1/317; loại 0; 1/11 bảng; {"cylMaj":1}
+  jiangchai-xuzhou: 1/321; loại 1; 1/10 bảng; {"absurd":1}
+  westinpower: 1/516; loại 1; 1/164 bảng; {"absurd":1}
+  world-power-fuzhou: 1/193; loại 0; 1/8 bảng; {"cylMaj":1}
+  xingguang-jiangsu: 1/746; loại 0; 1/18 bảng; {"cylMaj":1}
+  yongcai-elecmama: 1/204; loại 1; 1/47 bảng; {"absurd":1}
+  zhengdian-zhengzhou: 1/189; loại 0; 1/10 bảng; {"cylMaj":1}
+
+NCC quá nửa số bảng bị nghi:
+  huipu-power: 4/6

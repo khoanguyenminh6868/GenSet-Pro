@@ -11,7 +11,7 @@ const cat = CAT.build(sups), re = new RegExp(RE, "i");
 for (const kind of ["engines", "alternators"]) {
   if (KIND && !kind.startsWith(KIND)) continue;
   for (const e of cat[kind]) for (const u of e.uses) {
-    const l = String(u.line || "");
+    const l = [u.line, ...(u.lines?.header || []), ...(u.lines?.rows || [])].filter(Boolean).find((x) => re.test(x)) || String(u.line || "");
     if (re.test(l)) console.log(`${kind}\t${e.key}\t${u.supplierId}\tn${u.n}\tb${u.table}\tr${u.row}\t${JSON.stringify(u.power)}\t${l.slice(0, 200)}`);
   }
 }
