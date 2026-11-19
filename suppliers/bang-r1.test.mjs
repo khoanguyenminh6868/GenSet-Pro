@@ -129,3 +129,33 @@ test("comappower n108: '/kw' kế thừa mức standby nhưng 463 kW với 500 k
   // dòng khớp hệ số 0,8 không đổi
   assert.deepEqual(e[1].power, { standby: { kVA: 412, kW: 330 }, prime: { kVA: 375, kW: 300 } });
 });
+
+// Ngoại lệ theo dòng (Khoa 19/11/2026, không phải luật): đọc tệp thật trong suppliers/cn.
+import fs from "node:fs";
+const real = (id) => JSON.parse(fs.readFileSync(new URL(`./cn/${id}.json`, import.meta.url), "utf8"));
+test("ngoại lệ kaihua n114: 4 dòng OC16 giữ bản ghi, công suất để trống; dòng bên cạnh không đổi", () => {
+  const notes = [], e = recs(real("kaihua-genset"), "engine", notes).filter((r) => r.n === 114);
+  const by = (g) => e.filter((r) => r.genset === g);
+  for (const g of ["KH-291GF", "KH-327GF", "KH-364GF", "KH-316GF"]) {
+    assert.equal(by(g).length, 1, g);
+    assert.equal(by(g)[0].power, null, g);
+    assert.match(by(g)[0].model, /^OC16 071A 02-\d\d$/);
+  }
+  assert.equal(notes.filter((x) => x.reason === "ngoại lệ theo dòng").length, 4);
+  assert.deepEqual(by("KH-512GF")[0].power, { standby: { kVA: 706, kW: 565 }, prime: { kVA: 640, kW: 512 } });
+  assert.deepEqual(by("KH-200GF")[0].power, { rated: { kVA: 250, kW: 200 } }); // như 82587105 ("None" ở cột Standby)
+});
+test("ngoại lệ mpmc n114: MS530-2 không cho bản ghi; MS500-2 (n115) vẫn đọc", () => {
+  const notes = [], all = recs(real("mpmc-powertech"), null, notes);
+  assert.equal(all.filter((r) => r.genset === "MS530-2").length, 0);
+  assert.equal(notes.filter((x) => x.reason === "ngoại lệ theo dòng").length, 1);
+  const ms500 = all.filter((r) => r.genset === "MS500-2" && r.kind === "engine");
+  assert.equal(ms500.length, 1);
+  assert.equal(ms500[0].model, "DC13 093A 02-74");
+});
+test("ngoại lệ tự hết hiệu lực khi chữ dòng nguồn đổi", () => {
+  const s = real("kaihua-genset"), t = s.specTables.find((t) => t.n === 114);
+  t.rows = t.rows.map((r) => r.startsWith("| KH-291GF") ? r.replace("| 360 | 288 | 364", "| 400 | 320 | 364") : r);
+  const r = recs(s, "engine").find((r) => r.genset === "KH-291GF");
+  assert.ok(r.power);
+});

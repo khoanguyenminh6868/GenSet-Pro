@@ -1289,7 +1289,35 @@
         break;
       }
     }
-    return mergeRepeats(out);
+    return mergeRepeats(rowExceptions(s, out, note));
+  }
+  // Rows Khoa decided one by one (not a rule: no other row changes). A record is hit only when supplier, source n,
+  // genset model AND the source line, word for word, all match, so an exception lapses by itself when the source is
+  // re-crawled. `nopower`: the record stays, its power is left empty; `drop`: the row gives no record. Each hit is
+  // written in `notes` (reason "ngoại lệ theo dòng"). Test: suppliers/bang-r1.test.mjs.
+  const ROW_EXCEPTIONS = [
+    // kaihua OC16 (gas): the page's Standby column holds 360/360/360/349 kVA under Prime 364/409/455/395 kVA, i.e. the
+    // two ratings swapped or one of them wrong; read by size it would be a guess.
+    ...["| KH-291GF | 360 | 288 | 364 | 291 | OC16 071A 02-81 | 5200*2100*2390 | 5300",
+      "| KH-327GF | 360 | 288 | 409 | 327 | OC16 071A 02-82 | 5200*2100*2390 | 5300",
+      "| KH-364GF | 360 | 288 | 455 | 364 | OC16 071A 02-83 | 5200*2100*2390 | 5300",
+      "| KH-316GF | 349 | 279 | 395 | 316 | OC16 071A 02-91 | 5200*2100*2390 | 5300"].map((line) => (
+      { supplierId: "kaihua-genset", n: 114, genset: line.split("|")[1].trim(), line, act: "nopower", khoa: "Khoa 19/11/2026", why: "nguồn ghi Standby nhỏ hơn Prime (hai mức tự mâu thuẫn): để trống công suất, không ghép theo độ lớn" })),
+    // mpmc MS530-2: "Standby Power: 553kVA/530kW" under "Prime Power: 602kVA" and the label table's "663kVA / 530kW".
+    { supplierId: "mpmc-powertech", n: 114, genset: "MS530-2", line: "Standby Power: 553kVA/530kW", act: "drop", khoa: "Khoa 19/11/2026", why: "nguồn tự mâu thuẫn (standby 553 kVA và 663 kVA, nhỏ hơn prime 602 kVA): bỏ dòng" },
+  ];
+  function rowExceptions(s, list, note) {
+    const ex = ROW_EXCEPTIONS.filter((x) => x.supplierId === s.id);
+    if (!ex.length) return list;
+    const out = [];
+    for (const o of list) {
+      const lines = [o.line, ...(o.lines?.header || []), ...(o.lines?.rows || [])].filter((x) => x != null).map((x) => String(x).trim());
+      const x = ex.find((x) => x.n === o.n && o.genset && keyOf(o.genset) === keyOf(x.genset) && lines.includes(x.line.trim()));
+      if (!x) { out.push(o); continue; }
+      note({ n: o.n, title: o.title }, o.table, o.row ?? null, "ngoại lệ theo dòng", `${x.act}: ${x.khoa}, ${x.why}`);
+      if (x.act === "nopower") out.push({ ...o, power: null });
+    }
+    return out;
   }
   // One row written word for word in several tables of the same supplier (a dealer's page per series that repeats the
   // same genset row, a PDF table and the page's own table; 5,250 of 64,788 records on 2026-11-16) is one record, not

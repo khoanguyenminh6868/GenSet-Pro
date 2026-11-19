@@ -7,8 +7,8 @@
    "sups": 17
   },
   "bảng không cho bản ghi nào": {
-   "items": 3110,
-   "tables": 3110,
+   "items": 3111,
+   "tables": 3111,
    "sups": 198
   },
   "số vô lý so với công suất": {
@@ -59,6 +59,11 @@
   "một ô ghi hai mã": {
    "items": 25,
    "tables": 5,
+   "sups": 2
+  },
+  "ngoại lệ theo dòng": {
+   "items": 5,
+   "tables": 2,
    "sups": 2
   },
   "số có dấu phẩy nghìn / thập phân không rõ": {
@@ -18377,6 +18382,26 @@
    }
   },
   {
+   "supplierId": "kaihua-genset",
+   "n": 114,
+   "table": 16,
+   "title": "Scania Generator-TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD",
+   "reasons": {
+    "ngoại lệ theo dòng": 4
+   },
+   "rows": {
+    "ngoại lệ theo dòng": [
+     42,
+     43,
+     44,
+     45
+    ]
+   },
+   "sample": {
+    "ngoại lệ theo dòng": "nopower: Khoa 19/11/2026, nguồn ghi Standby nhỏ hơn Prime (hai mức tự mâu thuẫn): để trống công suất, không ghép theo độ lớn"
+   }
+  },
+  {
    "supplierId": "kangjin-power",
    "n": 101,
    "table": 0,
@@ -28376,6 +28401,21 @@
    "rows": {},
    "sample": {
     "bảng không cho bản ghi nào": "Prime Power: 3300kVA/2640kW"
+   }
+  },
+  {
+   "supplierId": "mpmc-powertech",
+   "n": 114,
+   "table": 11,
+   "title": "MPMC MS530-2 602kVA 60Hz Diesel Generator Set Powered by SCANIA DC13 093A 02-75",
+   "reasons": {
+    "ngoại lệ theo dòng": 1,
+    "bảng không cho bản ghi nào": 1
+   },
+   "rows": {},
+   "sample": {
+    "ngoại lệ theo dòng": "drop: Khoa 19/11/2026, nguồn tự mâu thuẫn (standby 553 kVA và 663 kVA, nhỏ hơn prime 602 kVA): bỏ dòng",
+    "bảng không cho bản ghi nào": "Prime Power: 602kVA/482kW"
    }
   },
   {
