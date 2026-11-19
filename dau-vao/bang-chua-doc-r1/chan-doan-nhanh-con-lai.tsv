@@ -26,8 +26,6 @@ camda-generator	157	53	U	36	| Silent Canopy | kVA | kW | kVA | kW
 camda-generator	158	54	U	36	| Open Type | kVA | kW | kVA | kW
 camda-generator	158	55	U	36	| Open Type | kVA | kW | kVA | kW
 conductorjasa	111	33	L	2	
-conductorjasa	124	52	U	12	| | Model | Mesin | Prime (kVA) | Standby (kVA) | Tipe
-conductorjasa	125	53	U	9	| | Model | Mesin | Prime (kVA) | Standby (kVA) | Tipe
 eastern-lion-fuan	154	58	G	21	| | Model | 50Hz Output (kW) | 50Hz Output (kVA) | 60Hz Output (kW) | 60Hz Output (kVA)
 excel-power-ningde	107	6	A	19	| Model | Output | Mounting Dimensions(mm) | Frame Dimensions(mm) | Weight(kg) | KW | KVA | A | B | C | D | E | F | G | H | K | a | b | h1 | h | L1 | L2 | g
 excel-power-ningde	108	7	A	9	| Model | Prime Output (1500rpm/50Hz) 400V | Prime Output (1800rpm/60Hz) 440V | KVA | KW | KVA | KW

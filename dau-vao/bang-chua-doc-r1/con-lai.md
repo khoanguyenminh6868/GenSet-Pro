@@ -1,4 +1,4 @@
-# Bảng R1 còn chưa đọc: 211
+# Bảng R1 còn chưa đọc: 209
 
 | loại | ý nghĩa | bảng | NCC | dòng |
 |---|---|--:|--:|--:|
@@ -7,7 +7,7 @@
 | A | bảng ĐẦU PHÁT rời (hãng đầu phát, hoặc tiêu đề đầu là đầu phát) | 23 | 7 | 292 |
 | E | bảng ĐỘNG CƠ rời (tiêu đề đầu là động cơ / dòng động cơ, không có cột model tổ máy) | 15 | 5 | 393 |
 | G | chỉ có model TỔ MÁY (mỗi dòng một mã; động cơ chỉ ghi hãng hoặc không có): catalog chưa có loại bản ghi tổ máy không động cơ | 82 | 29 | 2638 |
-| U | ≥ 2 mã nhưng tiêu đề không nêu cột nào là động cơ / đầu phát (dòng tiêu đề chỉ còn đơn vị, hoặc 'Model' trơ hai lần, hoặc tiêu đề khác nghĩa) | 35 | 16 | 728 |
+| U | ≥ 2 mã nhưng tiêu đề không nêu cột nào là động cơ / đầu phát (dòng tiêu đề chỉ còn đơn vị, hoặc 'Model' trơ hai lần, hoặc tiêu đề khác nghĩa) | 33 | 15 | 707 |
 | N | không có ô mã ở dòng nào | 1 | 1 | 1 |
 
 ## K: bản dịch máy (nhiều thứ tiếng) của bảng tiếng Anh cùng NCC đã đọc (40 bảng)
@@ -1179,7 +1179,7 @@
   R | ZS195 | 单机（常柴豹） | 8.8 | 2000
   ```
 
-## U: ≥ 2 mã nhưng tiêu đề không nêu cột nào là động cơ / đầu phát (dòng tiêu đề chỉ còn đơn vị, hoặc 'Model' trơ hai lần, hoặc tiêu đề khác nghĩa) (35 bảng)
+## U: ≥ 2 mã nhưng tiêu đề không nêu cột nào là động cơ / đầu phát (dòng tiêu đề chỉ còn đơn vị, hoặc 'Model' trơ hai lần, hoặc tiêu đề khác nghĩa) (33 bảng)
 
 - acepow-fuan n116 b22 (1 dòng) — mã: ["APC-40","40kVA32kW"]
   ```
@@ -1245,18 +1245,6 @@
   H | Open Type | kVA | kW | kVA | kW
   R | KDGP10S1 | 12 | 10 | 11 | 9 | 403D-11G | 1500×650×1225 | 436
   R | KDGP13S1 | 17 | 13 | 15 | 12 | 403D-15G | 1500×650×1225 | 500
-  ```
-- conductorjasa n124 b52 (12 dòng) — mã: ["PJPS-750 WP2","Perkins 4006-23TAG2A"]
-  ```
-  H | | Model | Mesin | Prime (kVA) | Standby (kVA) | Tipe
-  R | PJPS-750 WP2 | Perkins 4006-23TAG2A | 750 | 825 | Open Type · opsi silent, container
-  R | PJPS-1250 WP1 | Perkins 4012-46TWG2A | 1250 | 1375 | Open Type · opsi silent, container
-  ```
-- conductorjasa n125 b53 (9 dòng) — mã: ["MJPS-1000","Mitsubishi S12H-PTA"]
-  ```
-  H | | Model | Mesin | Prime (kVA) | Standby (kVA) | Tipe
-  R | MJPS-1000 | Mitsubishi S12H-PTA | 1000 | 1100 | Open Type · opsi silent, container
-  R | MJPS-1740 | Mitsubishi S16R-PTA | 1740 | 1914 | Open Type · opsi silent, container
   ```
 - green-power-generators n134 b36 (2 dòng) — mã: ["SUB LSC1.4S-51","UNI 25"]
   ```

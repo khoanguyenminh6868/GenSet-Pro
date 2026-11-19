@@ -1987,7 +1987,7 @@
   "sup": "conductorjasa",
   "n": 124,
   "ti": 52,
-  "used": false,
+  "used": true,
   "title": "Genset Besar 500–4125 kVA Open & Silent | Conductorjasa",
   "header": [
    "| | Model | Mesin | Prime (kVA) | Standby (kVA) | Tipe"
@@ -2012,36 +2012,27 @@
   "medRowCells": 5,
   "tableReason": null,
   "rowReasons": {
-   "R:có mã, không ra động cơ / đầu phát": 12
+   "R:ra bản ghi": 8,
+   "R:có mã, không ra động cơ / đầu phát": 4
   },
   "tableNotes": [],
   "sample": [
    {
     "ri": 0,
-    "reason": "R:có mã, không ra động cơ / đầu phát",
+    "reason": "R:ra bản ghi",
     "d": {
-     "codes": [
-      "PJPS-750 WP2",
-      "Perkins 4006-23TAG2A"
-     ],
      "gi": 0,
-     "hasEngineCol": false,
-     "hasAltCol": false,
-     "engineTable": false
+     "ei": 1,
+     "ai": -1
     }
    },
    {
     "ri": 1,
-    "reason": "R:có mã, không ra động cơ / đầu phát",
+    "reason": "R:ra bản ghi",
     "d": {
-     "codes": [
-      "PJPS-1250 WP1",
-      "Perkins 4012-46TWG2A"
-     ],
      "gi": 0,
-     "hasEngineCol": false,
-     "hasAltCol": false,
-     "engineTable": false
+     "ei": 1,
+     "ai": -1
     }
    },
    {
@@ -2052,7 +2043,7 @@
       "Perkins 4016-61TRG3"
      ],
      "gi": 1,
-     "hasEngineCol": false,
+     "hasEngineCol": true,
      "hasAltCol": false,
      "engineTable": false
     }
@@ -2063,7 +2054,7 @@
   "sup": "conductorjasa",
   "n": 125,
   "ti": 53,
-  "used": false,
+  "used": true,
   "title": "Genset Data Center hingga 4125 kVA, N+1 | Conductorjasa",
   "header": [
    "| | Model | Mesin | Prime (kVA) | Standby (kVA) | Tipe"
@@ -2085,50 +2076,36 @@
   "medRowCells": 5,
   "tableReason": null,
   "rowReasons": {
-   "R:có mã, không ra động cơ / đầu phát": 9
+   "R:ra bản ghi": 7,
+   "R:có mã, không ra động cơ / đầu phát": 2
   },
   "tableNotes": [],
   "sample": [
    {
     "ri": 0,
-    "reason": "R:có mã, không ra động cơ / đầu phát",
+    "reason": "R:ra bản ghi",
     "d": {
-     "codes": [
-      "MJPS-1000",
-      "Mitsubishi S12H-PTA"
-     ],
      "gi": 0,
-     "hasEngineCol": false,
-     "hasAltCol": false,
-     "engineTable": false
+     "ei": 1,
+     "ai": -1
     }
    },
    {
     "ri": 1,
-    "reason": "R:có mã, không ra động cơ / đầu phát",
+    "reason": "R:ra bản ghi",
     "d": {
-     "codes": [
-      "MJPS-1740",
-      "Mitsubishi S16R-PTA"
-     ],
      "gi": 0,
-     "hasEngineCol": false,
-     "hasAltCol": false,
-     "engineTable": false
+     "ei": 1,
+     "ai": -1
     }
    },
    {
     "ri": 2,
-    "reason": "R:có mã, không ra động cơ / đầu phát",
+    "reason": "R:ra bản ghi",
     "d": {
-     "codes": [
-      "MJPS-2000",
-      "Mitsubishi S16R-PTAA2"
-     ],
      "gi": 0,
-     "hasEngineCol": false,
-     "hasAltCol": false,
-     "engineTable": false
+     "ei": 1,
+     "ai": -1
     }
    }
   ]
@@ -13424,12 +13401,13 @@
   "medRowCells": 4,
   "tableReason": null,
   "rowReasons": {
-   "R:ra bản ghi": 22
+   "R:ra bản ghi": 16,
+   "N:một ô ghi hai mã": 6
   },
   "tableNotes": [],
   "sample": [
    {
-    "ri": 0,
+    "ri": 3,
     "reason": "R:ra bản ghi",
     "d": {
      "gi": 0,
@@ -13438,7 +13416,7 @@
     }
    },
    {
-    "ri": 1,
+    "ri": 4,
     "reason": "R:ra bản ghi",
     "d": {
      "gi": 0,
@@ -13447,7 +13425,7 @@
     }
    },
    {
-    "ri": 2,
+    "ri": 8,
     "reason": "R:ra bản ghi",
     "d": {
      "gi": 0,
@@ -14005,12 +13983,13 @@
   "medRowCells": 5,
   "tableReason": null,
   "rowReasons": {
-   "R:ra bản ghi": 22
+   "R:ra bản ghi": 16,
+   "N:một ô ghi hai mã": 6
   },
   "tableNotes": [],
   "sample": [
    {
-    "ri": 0,
+    "ri": 3,
     "reason": "R:ra bản ghi",
     "d": {
      "gi": 0,
@@ -14019,7 +13998,7 @@
     }
    },
    {
-    "ri": 1,
+    "ri": 4,
     "reason": "R:ra bản ghi",
     "d": {
      "gi": 0,
@@ -14028,7 +14007,7 @@
     }
    },
    {
-    "ri": 2,
+    "ri": 8,
     "reason": "R:ra bản ghi",
     "d": {
      "gi": 0,
