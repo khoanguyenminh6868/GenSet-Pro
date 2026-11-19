@@ -378,6 +378,8 @@ blockquote{margin:0;padding:5px 10px;border-left:2px solid var(--line);color:var
 .rowflags{list-style:none;padding-left:0;gap:12px}.rowflag{border-top:1px solid var(--line);padding-top:8px}.rowflagtext{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--panel2);border-radius:6px;padding:6px 8px;margin:6px 0;font-size:12px}.btn.on{border-color:var(--violet);background:var(--violet-soft)}
 /* Phone: supplier tables become one card per row; td[data-l] shows its column name. */
 @media (max-width:640px){table.supcards thead{display:none}table.supcards,table.supcards tbody,table.supcards tr,table.supcards td{display:block;width:auto}table.supcards tr{padding:10px 12px;border-bottom:1px solid var(--line)}table.supcards td{border:0;padding:2px 0}table.supcards td[data-l]::before{content:attr(data-l) ": ";color:var(--dim);font-size:11.5px}}
+/* Đối chiếu HSDT trên điện thoại: mỗi yêu cầu một thẻ, một cột (Khoa, 2026-11-20). */
+@media (max-width:640px){table.cmcards thead{display:none}table.cmcards,table.cmcards tbody,table.cmcards tr,table.cmcards td{display:block;width:auto}table.cmcards tr{padding:10px 12px;border-bottom:1px solid var(--line)}table.cmcards tr:last-child{border-bottom:0}table.cmcards td{border:0;padding:3px 0;overflow-wrap:anywhere}table.cmcards td.cm-req{font-weight:600;padding-bottom:5px}table.cmcards td:empty{display:none}table.cmcards td[data-l]::before{content:attr(data-l) ": ";color:var(--dim);font-size:11.5px}}
 /* Chip "Trúng N gói" ở lưới nhà cung cấp: desktop ở ô Vai trò, mobile dưới tên (Khoa, 2026-11-12). */
 table.supmain .wonm{display:none}@media (max-width:640px){table.supmain .wonm{display:block;margin-top:4px}table.supmain .wond{display:none}}
 /* Supplier / catalog window: small banner on top, the filters and the table header stay put, only the rows scroll (Khoa, 2026-11-01). */
@@ -4656,13 +4658,13 @@ function comparisonHtml(c) {
     </div>
     <div class="row small">${raw(Object.entries(STATUS).map(([k, l]) => h`<span class="st ${k}">${cnt(k)} ${l}</span>`).join('<span class="muted">·</span>'))}</div>
     ${raw(selfChecksHtml(c))}
-    <div class="tablewrap"><table>
+    <div class="tablewrap"><table class="cmcards">
       <thead><tr><th>Yêu cầu</th><th>Hồ sơ đáp ứng</th><th>Kết quả</th><th>Ghi chú</th></tr></thead>
       <tbody>${raw(items.map((i) => h`<tr>
-        <td>${raw(i.critical ? '<span class="badge" style="color:var(--red);border-color:transparent;margin-bottom:4px">Bắt buộc</span><br>' : "")}${i.requirement}${raw(SHOW_SRC && i.requirementRef ? h`<div class="muted small">${i.requirementRef}</div>` : "")}</td>
-        <td>${i.offered || "—"}${raw(SHOW_SRC && i.offeredRef ? h`<div class="muted small">${i.offeredRef}</div>` : "")}</td>
-        <td><span class="st ${i.status}">${STATUS[i.status] || i.status}</span></td>
-        <td class="small">${i.note}</td></tr>`).join(""))}</tbody>
+        <td class="cm-req">${raw(i.critical ? '<span class="badge" style="color:var(--red);border-color:transparent;margin-bottom:4px">Bắt buộc</span><br>' : "")}${i.requirement}${raw(SHOW_SRC && i.requirementRef ? h`<div class="muted small">${i.requirementRef}</div>` : "")}</td>
+        <td data-l="Hồ sơ đáp ứng">${i.offered || "—"}${raw(SHOW_SRC && i.offeredRef ? h`<div class="muted small">${i.offeredRef}</div>` : "")}</td>
+        <td data-l="Kết quả"><span class="st ${i.status}">${STATUS[i.status] || i.status}</span></td>
+        <td class="small" data-l="Ghi chú">${i.note}</td></tr>`).join(""))}</tbody>
     </table></div>
     <details class="sec" open><summary>Việc cần làm trước khi nộp</summary><div><ul class="clean">${raw((c.recommendations || []).map((x) => h`<li>${x}</li>`).join(""))}</ul></div></details>
     <details class="sec" ${raw((c.missingDocuments || []).length ? "open" : "")}><summary>Tài liệu còn thiếu (${(c.missingDocuments || []).length})</summary><div><ul class="clean">${raw((c.missingDocuments || []).map((x) => h`<li>${x}</li>`).join("") || "<li>Không thiếu tài liệu nào.</li>")}</ul></div></details>
