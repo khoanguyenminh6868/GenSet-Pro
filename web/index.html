@@ -151,7 +151,7 @@ html.kbd .banner a.home:focus-visible{outline:2px solid var(--violet);outline-of
 .cfglist{display:flex;flex-direction:column;gap:6px;margin:8px 0}.cfglist>.cfgcard,.cfglist>.cfgcard[open]+.cfgcard{margin:0}.cfgcard>summary{align-items:center}.cfgcard[open]>summary{margin-bottom:6px}.cfgcard .cfgparts{font-weight:400}
 @media (max-width:640px){table.cfgcols{table-layout:auto!important}table.cfgcols colgroup{display:none}}
 .cfggrid{margin:6px 0}.gfilt{cursor:pointer;font-family:inherit}.gfilt:hover{filter:brightness(1.2)}.gfilt.on{outline:2px solid currentColor;outline-offset:1px}
-.cfggrid[data-filt="met"] tr[data-st]:not([data-st="met"]),.cfggrid[data-filt="not_met"] tr[data-st]:not([data-st="not_met"]),.cfggrid[data-filt="unclear"] tr[data-st]:not([data-st="unclear"]),.cfggrid[data-filt="confirm"] tr[data-st]:not([data-st="confirm"]){display:none}.cfggrid>summary{padding:4px 0;align-items:center}.cfggrid[open]>summary{margin-bottom:4px}
+.cfggrid[data-filt="met"] tr[data-st]:not([data-st="met"]),.cfggrid[data-filt="not_met"] tr[data-st]:not([data-st="not_met"]),.cfggrid[data-filt="unclear"] tr[data-st]:not([data-st="unclear"]),.cfggrid[data-filt="confirm"] tr[data-st]:not([data-st="confirm"]){display:none}.cfggrid>summary{padding:4px 0;align-items:center}.cfggrid .chev{font-size:.75em}/* same size as the ▶ of Đã trúng thầu above it (Khoa, 2026-11-19) */.cfggrid[open]>summary{margin-bottom:4px}
 .kpi.bplev{cursor:default}.kpi.bplev .kv{font-size:20px}
 /* Giá gợi ý: each level its own colour, none violet (Khoa, 2026-11-04). */
 .kpi.bp-low{--kc:var(--mint)}.kpi.bp-mid{--kc:var(--blue)}.kpi.bp-high{--kc:var(--orange)}
@@ -4202,7 +4202,7 @@ function cfgGridBox(id, checks, body) {
   const f = gridFilt?.get(id) || "";
   const cnt = [["met", "ok"], ["not_met", "bad"], ["unclear", "warn"], ["confirm", "cfm"]].map(([k, c]) => [k, checks.filter((x) => cfgGridSt(x) === k).length, c, CFG_STATUS[k][0]])
     .filter(([, v]) => v).map(([k, v, c, l]) => h`<button type="button" class="chip ${c} gfilt${f === k ? " on" : ""}" data-gfilt="${k}" data-l="${l}" aria-pressed="${f === k}" title="${gfiltTitle(f === k, l)}">${l} ${v}</button>`).join("");
-  return h`<details class="sizebox cfggrid" data-sizebox="${id}" data-filt="${f}" ${sizeOpen?.has(id) || f ? "open" : ""}><summary class="small" title="Bấm để thu gọn / mở rộng"><span class="chev" aria-hidden="true">▾</span><b>Đối chiếu yêu cầu HSMT (${checks.length})</b>${raw(cnt)}</summary>${raw(body)}</details>`;
+  return h`<details class="sizebox cfggrid" data-sizebox="${id}" data-filt="${f}" ${sizeOpen?.has(id) || f ? "open" : ""}><summary class="small" title="Bấm để thu gọn / mở rộng"><span class="chev" aria-hidden="true">▼</span><b>Đối chiếu yêu cầu HSMT (${checks.length})</b>${raw(cnt)}</summary>${raw(body)}</details>`;
 }
 // Desktop: cột Cấu hình chào rộng hơn 30px, cột Kết quả hẹp hơn 30px so với độ rộng trình duyệt tự chia (Khoa, 2026-11-19).
 // Đo khi lưới mở (toggle cũng chạy khi lưới được vẽ sẵn ở trạng thái mở) và đo lại khi đổi cỡ cửa sổ.
