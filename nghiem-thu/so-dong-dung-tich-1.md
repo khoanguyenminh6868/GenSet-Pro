@@ -108,3 +108,36 @@ Mọi giá trị mới khớp D×S×z do NCC ghi trừ chỗ ghi rõ (phép tín
 - Nhóm NCC chép chung bảng (cùng ô kích thước tổ máy cho cùng model), ngoài bdadl / fukangsi / pengpai / liangzi / huatai: jianghao-genset / kangwo-guangdong / sanq-power / taihai-taizhou; victory-generator / wintpower; rise-power / sdec; frs-shenyang / gtl-power / tellhow-power; aoke-yangzhou / walter-yangzhou / vantek-jiangsu; jlmech-wuhan / uleengen / yunding-jiangsu.
 - Bộ đọc thông số không đọc được khối lượng ở bảng bdadl (`机组重 量(KG)` tách dòng) — ngoài phạm vi, chưa sửa.
 - Script: `dau-vao\so-dong-dung-tich\do-c2.mjs`, `bang.cjs`.
+
+## Vòng 2 (19/11, điều phối yêu cầu): C5 = C4 bỏ ô container chuẩn + không gộp hồ sơ / datasheet hãng
+Vẫn CHỈ ĐO, không sửa mã. Cùng mã và dữ liệu `babd36d6` như vòng 1 (main nay là `2a1b6ebd`, có đổi `web/catalog.js` của phiên khác; chưa đo lại trên đó). Script `dau-vao\so-dong-dung-tich\do-c5.mjs` → `do-c5.txt` / `do-c5.json`; danh sách ô container `container-scan.mjs` → `container-scan.txt`; bảng `bang-c5.md` (A: mọi nhóm C4 ≠ C5; B: đủ 70 nhóm C5; C: biến thể C6).
+
+### Ô kích thước coi là container (và vì sao)
+Quy tắc: rộng 2435–2440 mm VÀ dài 6038–6060 (20 ft), 9125–9201 (30 ft) hoặc 12000–12200 (40 ft), mọi chiều cao. Chuẩn ISO 668: rộng ngoài 2438 mm (8 ft), dài 6058 mm (20 ft) / 12192 mm (40 ft), cao 2591 mm (8 ft 6, GP) / 2896 mm (9 ft 6, HQ); kích thước này là thông số chuẩn, không phải số riêng của nhà lắp ráp (kiến thức chuẩn, không lấy từ nguồn trong repo). Các ô có trong `suppliers/cn` (quét mọi bảng, `container-scan.txt`):
+| Ô | Loại | Số NCC ghi |
+|---|---|---|
+| 6058*2438*2591 | 20GP | 10 |
+| 6058*2438*2896 | 20HQ | 4 |
+| 12192*2438*2896 | 40HQ | 10 |
+| 12192*2438*2591 | 40GP | 2 |
+| 9125*2438*2896 | 30 ft HQ | 1 |
+| 9201*2438*2591 | 30 ft | 1 |
+| 6059*2438*2591, 6038*2438*2591, 6060*2438*2595, 6060*2440*2600, 6050*2435*2585, 6050*2438*2896 | 20 ft làm tròn / gõ lệch | 1 mỗi ô |
+| 12200*2438*2896, 12192*2435*2896, 12200*2440*2590, 12000*2440*2600 | 40 ft làm tròn | 1 mỗi ô |
+| 6058*2438*3151, 6058*2438*3251 | 20 ft cộng ống xả / bệ (zhengchi-power) | 1 mỗi ô |
+Không coi là container: 12000*2400*2900 (biao-xiamen, rộng 2400), 6050*2660*2870 (kangwo + yunding, rộng 2660), 6150*2150*2400 (11 NCC: vỏ cách âm, không phải container), các ô 5060 / 5460 / 6360 × 2438 (agestar, dài không chuẩn). Ô chỉ một NCC ghi không ảnh hưởng việc gộp.
+Hồ sơ không gộp: NCC `role: engine_maker` (vd `yangdong`, `sdec`, `yto`) hoặc có fact của model từ datasheet hãng (`sheet` hay bảng "Datasheet: …", vd westinpower, fdk-energy, aosif).
+
+### Kết quả C5 so với C4 (nhóm đổi hành vi)
+- C4: dung tích mất 45 / mới 24 / giữ 46; xi lanh mất 2 / giữ 10. C5: dung tích mất 45 / **mới 25** / giữ 45; xi lanh như C4.
+- **7 nhóm sai đã biết: C5 vẫn sửa đủ 7** (cả 7 hết giá trị thắng).
+- **6 model Yangdong: C5 KHÔNG giữ được** (Y4100D, YD380D, YD385D, YD480D, YND485D, YSD490D vẫn mất thắng). Lý do không phải hồ sơ hãng bị gộp (`yangdong` vốn không bị gộp) mà là victory-generator + wintpower cùng ô kích thước tổ máy riêng (1900*730*1130, 2100*730*1130, 2250*850*1280 / 1140), không phải container → vẫn gộp; thường còn 2 phiếu độc lập < 3. Ở YD380D / Y4100D / YD480D / YSD490D hai NCC này ghi số KHÁC nhau (victory 1,532 ↔ wintpower 1,357 cho YD380D) mà vẫn gộp, phiếu chung của nhóm bị bỏ (luật `tally`: NCC hai giá trị không có số đông thì không phiếu).
+- Danh sách đủ các nhóm C4 ≠ C5: 22 nhóm (`bang-c5.md` mục A). Chỉ **1 nhóm đổi giá trị thắng**: Mitsubishi S16R-PTA-C, C4 không thắng → C5 thắng 65,37 (65,37 × 6 : 65,4 × 2; khớp 170×180×16 = 65,37, phép tính trên số NCC ghi). 21 nhóm còn lại chỉ đổi cách gộp, giá trị thắng như nhau: gộp do container bị bỏ ở KTA38-G9 (2 nhóm), KTA50-G8, S12R-PTAA2-C, S16R-PTA2-C, 12V2000G25, MTU 18V2000G26F, YC6C1070-D31, YC6C1220-D31; rise-power + sdec không còn gộp (sdec là hãng) ở S12R-PTA-C / PTA2-C / PTAA2-C, S16R-PTAA2-C, S6R2-PTAA-C, SC13G420D2, SC15G500D2, SC25G690D2, SC27G830D2, SC7H230D2, SC7H250D2, SC9D340D2; MTU 16V2000G45 (westinpower có datasheet, không gộp; xi lanh, một giá trị).
+
+### Đo thêm (không được yêu cầu): C6 = C5 + chỉ gộp hai NCC ghi CÙNG tập giá trị cho khoá đang đếm
+Lý do: bảng chép thì số giống hệt; hai NCC chung kích thước mà ghi dung tích khác nhau thì không phải bằng chứng chép số. Script `do-c6.mjs` → `do-c6.txt` / `do-c6.json`; bảng `bang-c5.md` mục C (đủ 20 nhóm C5 ≠ C6).
+- Dung tích: mất 31 / mới 21 / giữ 63 (C5: 45 / 25 / 45). Xi lanh như C4 / C5. 7 nhóm sai: vẫn sửa đủ 7.
+- Giữ lại được (so với C5): Yangdong Y4100D, YD380D (2 nhóm), YD480D, YSD490D (nguồn hãng `yangdong` xác nhận); Perkins 1104D-E44TAG2 4,4; SDEC SC9D340D2 8,82; Volvo TAD733GE 7,15; Yuchai YC6C1020L / 1070-D31 / 1070L / 1220L / 1320L 39,58, YC6T550L-D21 16,35; mới thêm Yuchai YC6A245L-D20 7,25 (7,25 × 3 : 7,52 × 1; tính 108×132×6 = 7,26).
+- Mất so với C5 (về "mọi nguồn" = như main): giá trị thắng mới của KTA38-G9 37,8, KTA50-G8 50,3, TAD1343GE / TAD1344GE 12,78, WP10D320E200 9,726. Các giá trị mới này ở C4 / C5 có được một phần NHỜ gộp NCC ghi số khác nhau (phiếu nhóm bị bỏ làm bên thua mất phiếu), tức là tác dụng phụ của cách gộp, không phải bằng chứng.
+- YD385D, YND485D vẫn mất ở C6: victory + wintpower ghi cùng số VÀ cùng kích thước (đúng là chép), còn depco-power + nhóm đó = 2 phiếu < 3; fact dung tích của `yangdong` không nằm trong phiếu của các dòng này (chỉ có đường kính).
+- Em đề xuất C6 thay C5 nếu Khoa muốn giữ nhiều giá trị thắng đúng nhất mà vẫn sửa đủ 7 nhóm sai. Chưa đo top 30.
