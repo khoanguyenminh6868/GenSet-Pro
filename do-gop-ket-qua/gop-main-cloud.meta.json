@@ -1,0 +1,13 @@
+{
+ "code": "origin/main 2a1b6ebd9e8777813d61630ac13664dffd4c90b1",
+ "script": "suppliers/do-gop.mjs (nhánh do-gop-cloud)",
+ "bidhistFetchedAt": "2026-11-19T05:02:57.892Z",
+ "goi": 928,
+ "ncc": 432,
+ "luot": 1093,
+ "luotLoi": 0,
+ "giayTinh": 2099,
+ "ramDinhMB": 1962,
+ "sha256GiaiNen": "65683a58ade66268 (3 lượt: 1 đơn + 2 song song, giống hệt)",
+ "ghiChu": "Chỉ số thông báo, khoá dòng NCC và điểm. Không có chữ HSMT."
+}
