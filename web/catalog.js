@@ -1893,7 +1893,7 @@
     if (f?.at) return { at: f.at, why: f.why };
     if (f?.models) {
       const m = String(model || "").toLowerCase().replace(/[^a-z0-9]/g, "");
-      const hit = m && f.models.find(([t]) => m.startsWith(t));
+      const hit = m && f.models.find(([t]) => m.includes(t));
       return hit ? { at: hit[1], why: hit[2] } : null;
     }
     const at = n === "Woodward" ? (/easy\s?gen\s?-?(1500|2000|3000)/i.test(String(model || "")) ? "PL" : null) : MADE_DEFAULT[n] || null;

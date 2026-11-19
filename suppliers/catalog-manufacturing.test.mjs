@@ -37,6 +37,11 @@ test("hồ sơ thật: mỗi hãng có nơi sản xuất đúng như manufacturi
   assert.equal(at("controller", "Woodward", "easYgen-3000XT").at, "PL");
   assert.equal(at("controller", "Woodward", "easYgen-800").at, "?");
   assert.equal(at("controller", "Woodward", "").at, "?");
+  // Như regex cũ: khớp ở BẤT KỲ vị trí của model (tiền tố hãng, hậu tố "series"); easYgen-800 và dòng không nêu vẫn không rõ.
+  assert.equal(at("controller", "Woodward", "Woodward easYgen-3000").at, "PL");
+  assert.equal(at("controller", "Woodward", "easYgen 2000 series").at, "PL");
+  assert.equal(at("controller", "Woodward", "EASYGEN 2500").at, "?");
+  assert.equal(at("controller", "Woodward", "Woodward easYgen-800").at, "?");
   // Hãng không có hồ sơ nơi sản xuất (Marathon chỉ có manufacturingNote, SICES chỉ "design"): giữ "không rõ".
   assert.equal(at("alternator", "Marathon").at, "?");
   assert.equal(at("controller", "SICES").at, "?");
