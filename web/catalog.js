@@ -1370,6 +1370,17 @@
       { supplierId: "huatai-yangzhou", n: 111, genset: line.split("|")[1].trim(), line, act: "nopower", khoa: "Khoa 19/11/2026", why: "nguồn ghi đường kính / hành trình xi lanh (140/165 mm) dưới nhãn công suất: để trống công suất" })),
     // mpmc MS530-2: "Standby Power: 553kVA/530kW" under "Prime Power: 602kVA" and the label table's "663kVA / 530kW".
     { supplierId: "mpmc-powertech", n: 114, genset: "MS530-2", line: "Standby Power: 553kVA/530kW", act: "drop", khoa: "Khoa 19/11/2026", why: "nguồn tự mâu thuẫn (standby 553 kVA và 663 kVA, nhỏ hơn prime 602 kVA): bỏ dòng" },
+    // `dropspec` (catalog-b2): the row stays, only the listed spec keys of the row are left out (the source gets ONE figure
+    // wrong; the rest of the row is read as before). Not a rule: no other row changes.
+    // Weight: 1,440 kg on a 1,600 kW set and 5,500 kg on a 20 kW set (the same page's 4B3.9-G2 row of the 20 kW set says 600 kg).
+    // pengpai n131 repeats the LZ1750 row word for word: `mergeRepeats` would put the figure back, so it is listed too.
+    ...[["bdadl-shanghai", 104, "BDA-LZ1750", "| BDA-LZ1750 | 1600/1750 | 上海菱重 | S16R-PTAA2-C | 16 | 65.4 | 213 | ≤432 | 5875×2392×3453 | 1440"],
+      ["fukangsi-yangzhou", 2009, "FKS-LZ1750", "| FKS-LZ1750 | 1600/1750 | 上海菱重 | S16R-PTAA2-C | 16 | 65.4 | 213 | ≤432 | 5875×2392×3453 | 1440"],
+      ["pengpai-yangzhou", 103, "PPDL-LZ1750", "| PPDL-LZ1750 | 1600/1750 | 上海菱重 | S16R-PTAA2-C | 16 | 65.4 | 213 | ≤432 | 5875×2392×3453 | 1440"],
+      ["pengpai-yangzhou", 131, "PPDL-LZ1750", "| PPDL-LZ1750 | 1600/1750 | 上海菱重 | S16R-PTAA2-C | 16 | 65.4 | 213 | ≤432 | 5875×2392×3453 | 1440"],
+      ["fukangsi-yangzhou", 2001, "FKS-C20", "| FKS-C20 | 20/25 | 东风康明斯 | 4B3.9-G1 | 4 | 3.92 | 9 | ≤210 | 1600*800*1300 | 5500"],
+      ["pengpai-yangzhou", 125, "PPDL-C20", "| PPDL-C20 | 20/25 | 东风康明斯 | 4B3.9-G1 | 4 | 3.92 | 9 | ≤210 | 1600*800*1300 | 5500"]].map(([supplierId, n, genset, line]) => (
+      { supplierId, n, genset, line, act: "dropspec", keys: ["weight"], khoa: "Khoa 19/11/2026", why: "nguồn ghi khối lượng không hợp công suất của dòng (1.440 kg cho 1.600 kW, 5.500 kg cho 20 kW): bỏ riêng khối lượng, giữ phần còn lại của dòng" })),
   ];
   function rowExceptions(s, list, note) {
     const ex = ROW_EXCEPTIONS.filter((x) => x.supplierId === s.id);
@@ -1381,6 +1392,7 @@
       if (!x) { out.push(o); continue; }
       note({ n: o.n, title: o.title }, o.table, o.row ?? null, "ngoại lệ theo dòng", `${x.act}: ${x.khoa}, ${x.why}`);
       if (x.act === "nopower") out.push({ ...o, power: null });
+      else if (x.act === "dropspec") out.push({ ...o, specs: (o.specs || []).filter((sp) => !x.keys.includes(sp.key)) });
     }
     return out;
   }
