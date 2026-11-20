@@ -47,3 +47,13 @@ Dòng sai số ô (bản cách âm green không ghi động cơ, dòng lees ch�
 ## Cần ghi nhớ
 - Danh sách tường minh, khoá bằng tiêu đề đầu nguyên văn: cào lại đổi tiêu đề thì bảng tự thôi đọc và có note, phải thêm lại tay.
 - Nếu sau này `isCode` / bộ đọc thường đọc được bảng nào trong danh sách, `listedEngineRows` tự nhường (không đọc lần hai) — nên xoá mục khỏi danh sách khi đó.
+
+## Vòng 2: gộp main 2ed96b02 (#958 fuelOf + #963 Gợi ý theo nhiên liệu), điều phối 20/11/2026
+- SHA `c9276ef2843554d96d94d1350487c2c38902c9e4`. Xung đột `web/catalog.js` (cuối `fromSupplier`): đặt `out.push(...listedEngineRows(...))` TRƯỚC khối nhiên liệu → bản ghi 4 bảng qua cùng `fuelSigns` / `fuelFrom` / `fuelPage`. `web/CLAUDE.md`: giữ cả mục Nhiên liệu, mục Tổ máy (bản main, có #968) và mục Bảng bỏ sót.
+- Nhiên liệu MỌI bản ghi 4 bảng (`dau-vao/catalog-c/fuel-x.mjs`):
+  - green n126 Scania (3): `gas` / `B` / `bảng ghi "METANO"` (ô dòng "METANO / BIOGAS METHANE / BIOGAS") — tự ra, không cần FUEL_PAGES.
+  - lees n133 (16, cả bản -6): `gas` / `T` / `URL ghi "GAS GENERATOR"` (https://www.leespower.com/MTU-GAS-GENERATOR-SET-pd106395538.html) — tự ra.
+  - green n115 MTU (16), n117 Kohler (8): không có trường fuel (trang không ghi nhiên liệu ở bảng / URL n115; URL n117 "diesel-benzina" là trang chung diesel + xăng, fuelOf không gán) → không fuel sai.
+- build(): engines khi để rỗng 4 bảng = gốc 2ed96b02 `c1903b1c6a777fc2f8199bae128fb04f`; spec-diff `git:2ed96b02 .`: 60.073 → 60.116, 0 đổi / 0 mất / +43, đảo vai 0, tổ máy 1.700 không đổi.
+- Test: `bang-bo-sot.test.mjs` 6/6 (thêm fuel n126, lees, n115 không fuel); `suppliers/*.test.mjs` 1.214/0; `web/test/*.test.mjs` 161/0.
+- Hệ quả Gợi ý: dòng của n126 / lees (fuel gas) bị `candidates` loại ở gói diesel (`ruled: "fuel"`), như dòng khí khác — rủi ro máy khí lọt vào ứng viên ở vòng 1 hết.

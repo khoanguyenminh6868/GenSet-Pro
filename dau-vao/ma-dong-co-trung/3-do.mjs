@@ -39,7 +39,8 @@ function catFor(origin, sync, partsOnly, brand) {
   return cache.get(k);
 }
 const res = Object.fromEntries(classes.map((c) => [c, { runs: 0, slots: 0, samples: [] }]));
-const all = { runs: 0, anyRuns: 0, aliasInTop: 0 };
+const all = { runs: 0, anyRuns: 0, aliasInTop: 0 }, T0 = Date.now();
+console.error(`dựng catalog xong ${((Date.now() - T0) / 1000).toFixed(0)}s`);
 for (const d of hist) {
   const key = d.notifyNo, text = d.config.text, kvaText = (d.config.kvas || []).map((k) => `${k.v} ${k.u}`).join(", ");
   const found = B.sizesOf([kvaText, d.bidName], d.bidName);
@@ -68,6 +69,7 @@ for (const d of hist) {
       if (slots) { res[c].runs++; res[c].slots += slots; any = true; if (res[c].samples.length < 6) res[c].samples.push(`${key} ${rn.cap.value} ${rn.cap.unit}: ${hit.join(" || ")}`); }
     }
     if (any) all.anyRuns++;
+    if (all.runs % 25 === 0) { console.error(`${all.runs} lượt, ${((Date.now() - T0) / 1000).toFixed(0)}s, ${key}`); fs.writeFileSync(path.join(HERE, "do.json"), JSON.stringify({ partial: true, all, res }, null, 1)); }
     all.aliasInTop += top.filter((r) => classes.some((c) => groups[c].alias.has(r.e.key))).length;
   }
 }
