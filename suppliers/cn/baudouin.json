@@ -567,6 +567,19 @@
         "| Bore & Stroke (mm) | 150 x 185"
       ],
       "file": "sources/baudouin/1020.md"
+    },
+    {
+      "n": 1021,
+      "url": "https://github.com/khoanguyenminh6868/GenSet-Pro/releases/download/datasheets-upload/baudouin-6m31g825-5-datasheet.pdf",
+      "accessedAt": "2026-11-20",
+      "tier": "A",
+      "quote": [
+        "| Engine model | 6M31G825/5",
+        "| Compression ratio | 14 : 1",
+        "| 75% PRP | 186 | 113",
+        "From: PDF do Khoa cung cấp 20/11/2026 (datasheet động cơ 6M31G825/5 của Baudouin, ngày tài liệu 17/03/25; đặt trên release datasheets-upload)"
+      ],
+      "file": "sources/baudouin/1021.md"
     }
   ],
   "confidence": "medium",
@@ -2203,6 +2216,65 @@
         "| Diesel Engine | Speed",
         "| RPM | mm | mm | mm",
         "| Kg | mm | mm | mm"
+      ]
+    },
+    {
+      "n": 1021,
+      "title": "Datasheet: 6M31G825/5 PowerKit Engine Datasheet",
+      "header": [],
+      "rows": [
+        "| Engine model | 6M31G825/5",
+        "| N° of Cylinders / Valves | 6 / 24",
+        "| Cylinders arrangement | In line",
+        "| Bore x Stroke (mm) | 149 × 177",
+        "| Displacement (L) | 18.5",
+        "| Thermodynamic Cycle | Diesel 4 stroke",
+        "| Firing Order | 1-5-3-6-2-4",
+        "| Mean Piston Speed (m/s) | 8.9",
+        "| BMEP @ ESP (Bar) | 32",
+        "| Cooling System | Liquid (water + 50% antifreeze)",
+        "| Injection System | Direct",
+        "| Fuel System | High Pressure Common Rail",
+        "| Aspiration | Turbocharged and Aftercooled",
+        "| Compression ratio | 14 : 1",
+        "| Flywheel housing | SAE 1",
+        "| Flywheel | 14\"",
+        "| Rotation Viewed from Flywheel | Counter Clockwise",
+        "| Allowed static bending moment of the flywheel housing | TBD",
+        "| N° of teeth on flywheel ring gear | 141",
+        "| Inertia of flywheel (kg•m²) | 2.05",
+        "| Inertia of crankshaft (kg•m²) | 1.13",
+        "| Emission standard | N/A",
+        "| Overall Dimensions with radiator (Length x Width x Height) (mm) | 2234 x 1400 x 1742",
+        "| Engine dry weight without radiator and without radiator pipes (kg) | 1627",
+        "| Engine dry weight with radiator and radiator pipes (kg) | 2017",
+        "| Engine wet weight with radiator (includes oil, coolant) (kg) | 2162",
+        "| Governor | ECU",
+        "| Diesel engine noise (Acoustic power level) (dB(A)) | 117.6",
+        "| Noise - upper side (dB(A)) | 101.4",
+        "| Noise - right side (view from flywheel) (dB(A)) | 101.5",
+        "| Noise - left side (view from flywheel) (dB(A)) | 101.5",
+        "| Noise – front (radiator) side (dB(A)) | 100.9",
+        "| Noise – rear (flywheel) side (dB(A)) | 100.6",
+        "| Rating | gr/kWh | L/hr",
+        "| 100% ESP | 196 | 173",
+        "| 100% PRP | 193 | 156",
+        "| 75% PRP | 186 | 113",
+        "| 50% PRP | 190 | 77",
+        "| 25% PRP | 207 | 42",
+        "Fuel consumption tolerance +/- 5%"
+      ]
+    },
+    {
+      "n": 1021,
+      "title": "Datasheet: 6M31G825/5 PowerKit Engine Datasheet",
+      "header": [
+        "| Gross | Engine Output | Net Engine | Output | *",
+        "| RPM | PRP | ESP | PRP | ESP",
+        "| kWm | BHP | kWm | BHP | kWm | BHP | kWm | BHP"
+      ],
+      "rows": [
+        "| 1500 | 680 | 912 | 740 | 992 | 663 | 889 | 723 | 970"
       ]
     },
     {
