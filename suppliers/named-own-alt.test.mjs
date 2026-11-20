@@ -1,6 +1,6 @@
-// node --test suppliers/named-own-alt.test.mjs — #969 (Khoa 20/11/2026): `named()` khớp TRỌN token của chữ HSMT (không còn chuỗi
-// con của chữ dồn: "Model: 224D" từng thành "model224d" chứa "el224d"), và đầu phát tự gắn nhãn của chính NCC (OWN_BRAND_ALTS:
-// eastern-lion "EL 164D" / "ELS 184F") không được +40 "tra được đầu phát" / +3 mỗi loại thông số trên dòng của NCC đó.
+// node --test suppliers/named-own-alt.test.mjs — #969 (Khoa chốt (i) 20/11/2026): đầu phát tự gắn nhãn của chính NCC
+// (OWN_BRAND_ALTS: eastern-lion "EL 164D" / "ELS 184F") không được +40 "tra được đầu phát" / +3 mỗi loại thông số trên MỌI dòng
+// của NCC đó. `named()` trọn token là của main (#986); ở đây chỉ giữ ca mã EL.
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -10,14 +10,10 @@ const C = globalThis.GenbidCatalog;
 const real = (id) => JSON.parse(fs.readFileSync(new URL(`./cn/${id}.json`, import.meta.url), "utf8"));
 const H = (s) => hintsOf(`Chương V. Yêu cầu kỹ thuật\n${s}`);
 
-test("named(): chặn HẸP: mã đầu phát tự gắn nhãn (EL) phải khớp trọn token; model khác giữ chuỗi con như main", () => {
+test("named() (trọn token của main, #986) với mã đầu phát EL: không khớp qua ranh giới chữ, nêu đích danh thật vẫn nhận", () => {
   assert.equal(named(H("Đầu phát: Model: 224D, loại không chổi than"), "EL 224D"), false);  // IB2300027083 kiểu này
   assert.equal(named(H("Đầu phát: Model: 184J, máy phát"), "EL184J"), false);
-  assert.equal(named(H("Đầu phát Eastern Lion EL 224D"), "EL 224D"), true);       // nêu đích danh thật vẫn nhận
-  assert.equal(named(H("Đầu phát Stamford HCI 544 D hoặc tương đương"), "HCI544D"), true);
-  // model khác: y như main (chuỗi con của chữ dồn), việc trọn token cho mọi hãng là PR riêng
-  assert.equal(named(H("Động cơ Cummins 6BT5.9-G2"), "6BT5.9-G"), true);
-  assert.equal(named(H("Ắc quy khởi động 12VDC/24VDC"), "DC 24V"), true);
+  assert.equal(named(H("Đầu phát Eastern Lion EL 224D"), "EL 224D"), true);
   // hints dựng tay không có `bounds`: như cũ (chuỗi con)
   assert.equal(named({ text: "model224d" }, "EL224D"), true);
 });

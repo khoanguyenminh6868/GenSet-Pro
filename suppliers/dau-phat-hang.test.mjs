@@ -7,7 +7,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { primeKvaOf, altNeedOf, makerAlts, makerAltsOf, makerAltFix, makerAltChecks, contKva, sourceRatings, ratingsFor, altAttrChecks, altKvaOf, rankConfigs } from "./config-bot.mjs";
+import { primeKvaOf, altNeedOf, makerAlts, makerAltsOf, makerAltFix, makerAltChecks, contKva, sourceRatings, ratingsFor, altAttrChecks, altKvaOf, rankConfigs, makerDerate, makerMadeOf } from "./config-bot.mjs";
 
 const CAT = globalThis.GenbidCatalog;
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -57,8 +57,13 @@ test("makerAlts IB2600603983: LSA 49.3 M8 (820 kVA cột H 125 K / 40 °C, AREP 
   assert.ok(m8.lines.includes("| LSA 49.3 M8 | kVA | 820 | 820 | 820 | 810 | 760 | 760 | 760 | 710 | 910 | 910 | 910 | 885 | 945 | 945 | 945 | 925"));
   // Without the 300 % asked, TAL-A49-B (750 kVA) is the smallest that meets, but it states its short circuit as no figure
   // the HSMT asks here, so with it asked it is out.
-  const noSc = makerAlts(makers, RT, { ...need, sc: false });
+  const noSc = makerAlts(makers, RT, { ...need, sc: false, site: null });
   assert.equal(noSc[0].model, "TAL-A49-B");
+  // At 45 °C (B2): M8 after the LSA table's 0.973 = 797.9 kVA; TAL-A49-B has no derating in the saved sources → unknown, after.
+  assert.equal(m8.derated, 797.9);
+  const hot = makerAlts(makers, RT, { ...need, sc: false }, { all: true });
+  assert.ok(hot.findIndex((m) => m.model === "TAL-A49-B") > hot.findIndex((m) => m.model === "LSA 49.3 M8"));
+  assert.deepEqual(hot.find((m) => m.model === "TAL-A49-B").unknown, ["suy giảm theo nhiệt độ của hiện trường"]);
   // At most 2 a make; ≤ 130 %.
   assert.ok(makerAlts(makers, RT, { ...need, sc: false }).every((m) => m.kva <= 750 * 1.3 + 0.5));
   assert.ok(new Set(makerAlts(makers, RT, { ...need, sc: false, kva: 200 }).map((m) => m.make)).size >= 1);
@@ -136,13 +141,21 @@ test("makerAltFix: đầu phát hãng agent chọn — giữ khi có trong danh 
   assert.match(row9.problems[0], /chưa bị chứng minh là không đạt/); assert.equal(row9.result.configs[0].alternator.model, "LSA 49.3 L9");
 });
 
-test("makerAltChecks: công suất cột liên tục (45 °C → chưa rõ, cần suy giảm), xuất xứ thương hiệu G7 / EU → đạt", () => {
+test("makerAltChecks: công suất cột liên tục (45 °C → hệ số 0,973 của bảng Leroy-Somer [6003] → đạt), xuất xứ thương hiệu G7 / EU → đạt", () => {
   const { result, need } = fix([{ rank: 1, engine: { model: "E" }, alternator: null, checks: [] }]);
   const reqs = IB_REQS.map((r) => ({ ...r, item: r.item || r.code, level: "core" }));
   const c = makerAltChecks(result.configs[0], reqs, need);
   const pw = c.checks.find((x) => x.item === "Công suất đầu phát");
   assert.equal(pw.sourceQuote, "| LSA 49.3 M8 | kVA | 820 | 820 | 820 | 810 | 760 | 760 | 760 | 710 | 910 | 910 | 910 | 885 | 945 | 945 | 945 | 925");
-  assert.equal(pw.status, "unclear");assert.match(pw.offered, /820 kVA \(Continuous cấp H 125 K \/ 40 °C, 50 Hz, 3 pha, 380 \/ 400 V/); assert.match(pw.note, /45 °C.*suy giảm/);
+  assert.equal(pw.status, "met"); assert.match(pw.offered, /^797,9 kVA sau suy giảm \(820 kVA Continuous cấp H 125 K \/ 40 °C, 50 Hz, 3 pha, 380 \/ 400 V/);
+  assert.match(pw.note, /45 °C\) vượt 40 °C.*hệ số nhiệt độ 0\.973 \(cột 45 °C \(đúng mức HSMT, không nội suy\); leroy-somer-fuzhou \[6003\]: "Ambient T °C 25 40 45 50 55 60 \(\*\) \| Class H 1.076 1 0.973 0.946 0.918 0.889"\); 820 kVA × 0.973 = 797,9 kVA ≥ 750 kVA HSMT/);
+  assert.deepEqual(pw.derate.map((x) => [x.what, x.factor, x.src.n]), [["nhiệt độ", 0.973, 6003]]);
+  // 55 °C: 820 × 0.918 = 752.8 ≥ 750 → met; 60 °C: 820 × 0.889 = 729 < 750 → not met.
+  const at = (temp) => makerAltChecks({ ...result.configs[0], checks: [] }, reqs, { ...need, site: { temp } }).checks.find((x) => x.item === "Công suất đầu phát");
+  assert.equal(at(55).status, "met"); assert.equal(at(60).status, "not_met"); assert.match(at(60).note, /729 kVA < 750 kVA HSMT/);
+  // A TAL (not in the LSA table) at 45 °C: no derating in the saved sources → unclear, saying where it looked.
+  const tal = makerAltChecks({ ...result.configs[0], alternator: { ...result.configs[0].alternator, model: "TAL-A49-B" }, checks: [] }, reqs, need).checks.find((x) => x.item === "Công suất đầu phát");
+  assert.equal(tal.status, "unclear"); assert.match(tal.note, /không có hệ số suy giảm theo nhiệt độ \(đã tìm trong tờ leroy-somer-fuzhou \[1012\]\): chưa rõ/);
   const cool = makerAltChecks({ ...result.configs[0], checks: [] }, reqs, { ...need, site: null }).checks.find((x) => x.item === "Công suất đầu phát");
   assert.equal(cool.status, "met");
   const og = c.checks.find((x) => x.item === "Xuất xứ đầu phát");
@@ -228,4 +241,28 @@ test("rankConfigs: cùng động cơ, đầu phát NCC chào + đầu phát hãn
   // Khoa 20/11/2026 (câu 1): both of the pair stay; Cummins' ceiling (1) still leaves out the other Cummins engine.
   // Same score: the Chinese make (Yuchai) first, an older rule.
   assert.deepEqual(out, ["YCV2.5T45-G20 | 184GS", "4B3.9-G12 | TAL-A42-E", "4B3.9-G12 | S0L2-P1"]);
+});
+
+test("makerDerate (B2): hệ số suy giảm chỉ từ nguồn đã lưu của hãng, mốc nóng / cao hơn, không nội suy", () => {
+  const ls = (temp, alt = null, model = "LSA 49.3 M8") => makerDerate({ supplierId: "leroy-somer-fuzhou", n: 1012, model }, { temp, alt });
+  assert.equal(ls(40), null);
+  assert.equal(ls(45).f, 0.973);
+  assert.equal(ls(47).f, 0.946); assert.match(ls(47).parts[0].why, /cột 50 °C \(mốc ngay trên 47/);
+  assert.equal(ls(61).f, null); assert.deepEqual(ls(61).missing, ["nhiệt độ"]);
+  assert.equal(ls(null, 1200).f, 0.975);
+  assert.equal(ls(45, 2000).f, Number((0.973 * 0.949).toFixed(4)));
+  assert.deepEqual(ls(45, null, "TAL-A49-B").missing, ["nhiệt độ"]);
+  // Stamford: its own sheet's "3% for every 5°C … exceeds 40°C" and "3% for every 500 metres … exceeds 1000 metres".
+  const st = (temp, alt = null) => makerDerate({ supplierId: "stamford-avk-china", n: 1001, model: "S5L1D-H4" }, { temp, alt });
+  assert.equal(st(45).f, 0.97); assert.equal(st(46).f, 0.94); assert.match(st(45).parts[0].src.line, /3% for every 5°C by which the operational ambient/);
+  assert.equal(st(null, 1500).f, 0.97); assert.equal(st(null, 1600).f, 0.94);
+  assert.deepEqual(st(62).missing, ["nhiệt độ"]);
+  // Another maker: none.
+  assert.deepEqual(makerDerate({ supplierId: "mecc-alte", n: 1001, model: "ECO40" }, { temp: 45 }).missing, ["nhiệt độ"]);
+});
+
+test("makerMadeOf: tờ nhà máy Phúc Châu và Stamford Trung Quốc → sản xuất tại Trung Quốc, thương hiệu giữ nước hãng", () => {
+  assert.deepEqual([makerMadeOf("leroy-somer-fuzhou", "Leroy-Somer", "LSA 49.3 M8").at, makerMadeOf("leroy-somer-fuzhou", "Leroy-Somer", "LSA 49.3 M8").brand], ["CN", "FR"]);
+  const s = makerMadeOf("stamford-avk-china", "Stamford", "S5L1D-H4");
+  assert.equal(s.at, "CN"); assert.notEqual(s.brand, "CN"); assert.match(s.why, /Stamford ở Trung Quốc/);
 });
