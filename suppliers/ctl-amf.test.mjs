@@ -45,5 +45,7 @@ test("ctlStep: series hai số đầu", () => {
   assert.ok(CM.ctlStep("DSE7320 MKII") < CM.ctlStep("DSE7420"));
   assert.ok(CM.ctlStep("DSE7420 MKII") < CM.ctlStep("DSE8610"));
   assert.equal(CM.ctlStep("DSE7310"), CM.ctlStep("DSE7320"));
-  assert.equal(CM.ctlStep("InteliLite 4"), null);
+  assert.ok(CM.ctlStep("InteliLite 4") < CM.ctlStep("InteliGen 1000"));
+  assert.ok(CM.ctlStep("HGM6120N") < CM.ctlStep("HGM9510"));
+  assert.equal(CM.ctlStep("Foo 12"), null);
 });

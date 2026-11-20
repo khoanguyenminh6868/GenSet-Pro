@@ -2696,7 +2696,10 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     if (!names.length) return;
     const { out, mainPair } = ctlCands(c, names), floor = Math.max(1, (mainPair?.met || 0) - 1);
     const step = (a) => (a.step == null ? Infinity : a.step);
-    const alts = out.filter((a) => a.met >= floor && (!ctlAmf || a.kind === "amf" || !a.kind))
+    // Not a higher step than the main controller when it only equals it (điều phối 20/11/2026: DSE8620 / HGM9510 / InteliGen
+    // beside a DSE7320 / HGM6120 / AMF25 that does as well).
+    const mainStep = CM.ctlStep(ctlModelOf(c.controller)), up = (a) => a.step != null && mainStep != null && a.step > mainStep && a.met <= (mainPair?.met || 0);
+    const alts = out.filter((a) => a.met >= floor && !up(a) && (!ctlAmf || a.kind === "amf" || !a.kind))
       .sort((a, b) => b.met - a.met || (a.notOffered ? 1 : 0) - (b.notOffered ? 1 : 0) || step(a) - step(b));
     if (!alts.length) return;
     c.controller.alternatives = alts.slice(0, 2).map(({ parts, step: _s, ...a }) => a);
@@ -2790,6 +2793,11 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     }
     // An alternator from its maker's own sheet (makerAltFix): that saved sheet of the maker's record.
     if (src.kind === "maker") {
+      // A controller from its maker's datasheet (bdk-amf, Khoa 20/11/2026): that table of the controller maker's record.
+      if (sup.get(src.supplierId)?.role === "controller_maker") {
+        const t = (sup.get(src.supplierId).specTables || []).find((x) => x.n === Number(src.n));
+        return t ? norm([t.title, ...(t.header || []), ...t.rows].join(" \n ")) : null;
+      }
       const s = sup.get(src.supplierId), f = path.join(sourcesDir || path.join(ROOT, "sources"), String(src.supplierId), `${Number(src.n)}.md`);
       return s && (s.sources || []).some((x) => Number(x.n) === Number(src.n)) && fs.existsSync(f) ? norm(fs.readFileSync(f, "utf8")) : null;
     }
@@ -2926,12 +2934,18 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   const altNeed = makerAltFix(result, { suppliers, RT, built, rowOf, hsmtText, cap, sync, problems, sourcesDir });
   for (const c of result.configs) {
     const texts = {};
+    // A main controller the agent chose from its maker's datasheet, which no supplier of the configuration offers
+    // (bdk-amf, Khoa 20/11/2026 "2"): labelled as such by code; its source is that datasheet table (sourceText "maker").
+    if (c.controller) {
+      if (c.controller.src?.kind === "maker" && sup.get(c.controller.src.supplierId)?.role === "controller_maker") { c.controller.fromMaker = true; c.controller.label = CM.CTL_ALT_LABEL; }
+      else { delete c.controller.fromMaker; if (c.controller.label === CM.CTL_ALT_LABEL) delete c.controller.label; }
+    }
     for (const part of ["engine", "alternator", "genset", "controller"]) {
       const p = c[part];
       if (!p) continue;
       texts[part] = sourceText(p.src, p.model);
       if (!texts[part]) { p.unverified = true; problems.push(`#${c.rank} ${part} ${p.model}: không tìm thấy nguồn (${p.src?.kind || "?"})`); continue; }
-      if (!p.fromMaker && !texts[part].includes(norm(p.model).replace(/\s+/g, " ")) && !texts[part].replace(/\s/g, "").includes(norm(p.model).replace(/\s/g, ""))) { p.unverified = true; problems.push(`#${c.rank} ${part}: model ${p.model} không có trong nguồn`); }
+      if ((!p.fromMaker || part === "controller") && !texts[part].includes(norm(p.model).replace(/\s+/g, " ")) && !texts[part].replace(/\s/g, "").includes(norm(p.model).replace(/\s/g, ""))) { p.unverified = true; problems.push(`#${c.rank} ${part}: model ${p.model} không có trong nguồn`); }
       if (p.src?.kind === "internet" && p.src.quote && !texts[part].includes(norm(p.src.quote))) { p.unverified = true; problems.push(`#${c.rank} ${part}: câu trích web không có trong trang đã lưu`); }
       // A controller's make may come from its model code (DSE… is Deep Sea, HGM… SmartGen), as web/catalog.js reads it.
       const makeOfCode = part === "controller" && CAT.controllersIn(p.model).some((x) => x.model && x.brand === p.make);
@@ -3172,6 +3186,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     khoaRules(c, result.requirements || [], row, { origin });
     originChecks(c, result, origin, sup);
     madeChecks(c, result.requirements || [], row, built);
+    makerCtlChecks(c, result.requirements || []);
     makerAltChecks(c, result.requirements || [], altNeed, { sourcesDir });
     if (namedHere) NG.brandLicensedChecks(c, result.requirements || [], namedHere, NG.namedHit(c, namedHere, namedCtx), (id) => sup.get(id));
     comboChecks(c, { combo, row: rowOf(c.genset?.src || c.engine?.src), engFacts: [...factsOf(c, "engine"), ...ratingsFor(RT.eng, c.engine?.model)], altFacts: factsOf(c, "alternator"), altRatings: ratingsFor(RT.alt, c.alternator?.model), altKva: c.alternator?.model ? altKva.get(CAT.keyOf(c.alternator.model)) || [] : [], reqs: result.requirements || [] });
@@ -4440,6 +4455,20 @@ const openCheck = (c, r) => {
   const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
   return !x ? { x: null } : x.status === "unclear" && !x.conflict && !x.version && !x.parts?.length ? { x } : null;
 };
+// A main controller chosen from its maker's datasheet (controller.fromMaker, bdk-amf, Khoa 20/11/2026 "2"): no supplier of the
+// configuration offers it, so its origin is a paper the supplier sends (CO), whatever the agent wrote.
+export function makerCtlChecks(c, reqs = []) {
+  if (!c.controller?.fromMaker) return c;
+  for (const r of reqs) {
+    if (r.code !== "ctl_origin" || r.byCode) continue;
+    const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
+    putCheck(c, x, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: `Bộ điều khiển ${c.controller.model}`, part: "controller",
+      level: r.level === "option" ? "option" : "core", status: "confirm", confirm: "document", byCode: true, rule: "bdk-hang",
+      note: `${CM.CTL_ALT_LABEL}: cần NCC xác nhận xuất xứ (CO) của bộ điều khiển.` });
+    if (x) { delete x.sourceQuote; delete x.factSrc; }
+  }
+  return c;
+}
 const putCheck = (c, x, check) => {
   if (x) { delete x.unverified; delete x.hint; x.was = x.was || x.status; Object.assign(x, check); } else c.checks = [...(c.checks || []), check];
 };

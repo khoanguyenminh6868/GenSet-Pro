@@ -244,7 +244,14 @@ export const kindOf = (kinds, model) => kinds.get(dseNum(model)) || null;
 // The step of a Deep Sea controller in its maker's range, for the order of equal alternatives: the series, the first two
 // digits (61xx < 73xx < 74xx < 86xx). Inferred from the maker's numbering (DSE7320 MKII / DSE7420 MKII, DSE8610 MKII), not
 // written by the maker as an order; null for a controller with no such number.
-export const ctlStep = (model) => { const n = dseNum(model); return n ? Math.floor(Number(n) / 100) : null; };
+// SmartGen the same way (HGM6120 61 < HGM9510 95). ComAp by family word (InteliNano < InteliLite, its "AMF9 / AMF25 / MRS"
+// models < InteliGen < InteliSys): also inferred, from ComAp's own product line names. Steps compare within one make only.
+const COMAP_STEP = [[/intelinano/i, 1], [/intelilite|^\s*(?:amf|mrs)\s?\d+/i, 2], [/inteligen/i, 3], [/intelisys/i, 4]];
+export const ctlStep = (model) => {
+  const m = String(model || ""), n = dseNum(m) || m.match(/\bHGM\s?(\d{4})/i)?.[1];
+  if (n) return Math.floor(Number(n) / 100);
+  return COMAP_STEP.find(([re]) => re.test(m))?.[1] ?? null;
+};
 // The HSMT asks for a set that starts and takes the load when the mains fail (Khoa's 2nd answer): an ATS, "khi mất điện lưới".
 // The abbreviations in capitals only ("ats" / "amf" in lower case are other words).
 export const AMF_RE = /chuy[ểe]n\s+(?:đổi\s+)?ngu[ồo]n\s+t[ựu]\s+đ[ộo]ng|m[ấa]t\s+(?:đi[ệe]n\s+)?l[ưu][ớo]i|mains\s+failure/i, AMF_ABBR = /\bATS\b|\bAMF\b/;

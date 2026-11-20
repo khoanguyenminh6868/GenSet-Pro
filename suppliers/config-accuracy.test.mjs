@@ -396,6 +396,30 @@ test("catalog.md: controllers of the same make only the maker's datasheet gives,
   assert.match(ctlMd, /### DSE7420 MKII — supplierId: dse, n: 1003 — loại theo datasheet hãng: tự động khi mất lưới \(AMF\)/);
 });
 
+test("a main controller from its maker's datasheet (src.kind maker): no source problem, labelled, origin to confirm (bdk-amf)", () => {
+  const r = ctlConfig("DSE7320 MKII", [{ ...amf }]);
+  r.requirements.push({ item: "Xuất xứ bộ điều khiển", requirement: "G7", quote: "Bộ điều khiển Deep Sea", part: "controller", level: "core", code: "ctl_origin" });
+  r.configs[0].controller.src = { kind: "maker", supplierId: "dse", n: 1001 };
+  r.configs[0].checks.push({ item: "Xuất xứ bộ điều khiển", hsmtQuote: "Bộ điều khiển Deep Sea", offered: "UK", sourceQuote: "Automatic start and stopping of generator", part: "controller", status: "met" });
+  const run = (x) => check(x, { hsmtText: hsmt, suppliers: [...sups, dse], readWeb: () => null, origin: "all" });
+  const { problems, result } = run(r), c = result.configs[0];
+  assert.deepEqual(problems, []);
+  assert.equal(c.controller.fromMaker, true);
+  assert.equal(c.controller.label, "Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào");
+  assert.equal(c.checks.find((x) => /AMF/.test(x.item)).status, "met", JSON.stringify(c.checks.map((x) => [x.item, x.status])));
+  const o = c.checks.find((x) => x.item === "Xuất xứ bộ điều khiển");
+  assert.equal(o.status, "confirm");
+  assert.match(o.note, /cần NCC xác nhận xuất xứ \(CO\)/);
+  // Run again: the same.
+  const again = run(JSON.parse(JSON.stringify(result))).result.configs[0];
+  assert.equal(JSON.stringify(again.controller), JSON.stringify(c.controller));
+  assert.equal(again.checks.find((x) => x.item === "Xuất xứ bộ điều khiển").status, "confirm");
+  // A model the maker's table does not have is a problem.
+  const bad = ctlConfig("DSE8610 MKII", [{ ...amf }]);
+  bad.configs[0].controller.src = { kind: "maker", supplierId: "dse", n: 1001 };
+  assert.ok(run(bad).problems.some((p) => /model DSE8610 MKII không có trong nguồn/.test(p)));
+});
+
 test("SmartGen: a series written HGM6110N/6120N...,'models: text' lines and wrapped sentences go to the right models", () => {
   const sg = { id: "sg", role: "controller_maker", specTables: [{ n: 1001, title: "Datasheet: HGM6100N SERIES (HGM6110N/6120N/6110NC/6120NC)", header: [], rows: [
     "HGM6100N SERIES",
