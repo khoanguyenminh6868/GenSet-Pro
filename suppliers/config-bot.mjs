@@ -938,6 +938,27 @@ export function layoutOf(value) {
   if (/^\s*\d{1,2}\s*[.\-]?\s*L\s*$|^\s*L\s*-?\s*\d{1,2}\s*$|\bDiesel\s*L\b/i.test(s)) return "inline";
   return null;
 }
+// The fuel of the genset the HSMT asks (Khoa 20/11/2026, máy khí bước 2): "diesel" | "gas" | "gasoline" | null.
+//  - one kind named → that kind; a HSMT that names none → "diesel" (a generator tender is diesel unless it says otherwise);
+//  - two kinds or more (a maintenance package of petrol and diesel sets, a menu of choices) → null: no rule, nothing dropped.
+// Only the words that name the FUEL of the set: "khí tự nhiên" alone is "hút khí tự nhiên" (a naturally aspirated engine),
+// and "xăng dầu" is a petrol station; "dầu DO" / "diesel" in spare parts lists name diesel too, which only matters beside another kind.
+const FUEL_GAS_H = /khí\s*thiên\s*nhiên|\bbio-?gas\b|khí\s*sinh\s*học|khí\s*hóa\s*lỏng|\bLPG\b|\bCNG\b|\bLNG\b|natural\s*gas|nhiên\s*liệu\s*(?:sử\s*dụng\s*)?(?:là\s*|:\s*|bằng\s*)(?:khí|gas)(?![a-zà-ỹ])(?!\s*(?:thải|nạp|nén|đốt|hậu|quyển|xả|hút|gió))|(?:chạy|dùng|sử\s*dụng)\s*(?:nhiên\s*liệu\s*)?(?:bằng\s*)?(?:khí|gas)(?![a-zà-ỹ])(?!\s*(?:thải|nạp|nén|đốt|hậu|quyển|xả|hút|gió))|(?<!liên\s*)động\s*cơ\s*(?:chạy\s*)?(?:bằng\s*)?(?:khí|gas)(?![a-zà-ỹ])(?!\s*(?:thải|nạp|nén|đốt|hậu|quyển|xả|hút|gió))|\bgas\s+(?:engine|generator|genset)/i;
+const FUEL_GASOLINE_H = /(?:chạy|dùng|sử\s*dụng)\s*(?:nhiên\s*liệu\s*)?(?:bằng\s*)?xăng(?![a-zà-ỹ])(?!\s*dầu)|(?:động\s*cơ|máy|nhiên\s*liệu(?:\s*sử\s*dụng)?)\s*(?:là\s*|:\s*|bằng\s*)?xăng(?![a-zà-ỹ])(?!\s*dầu)|nhiên\s*liệu[^.\n]{0,40}(?:hoặc|và|\/|,)\s*xăng(?![a-zà-ỹ])(?!\s*dầu)|\bgasoline\b|\bpetrol\b/i;
+const FUEL_DIESEL_H = /\bdi[ee]?zel\b|\bdiesel\b|\bdầu\s*(?:diesel|do)\b|động\s*cơ\s*(?:chạy\s*)?dầu\b|chạy\s*dầu\b/i;
+export function fuelOfHsmt(text) {
+  const t = String(text || "").normalize("NFC"), kinds = [];
+  const g = t.match(FUEL_GAS_H), x = t.match(FUEL_GASOLINE_H), d = t.match(FUEL_DIESEL_H);
+  if (g) kinds.push(["gas", g[0]]);
+  if (x) kinds.push(["gasoline", x[0]]);
+  if (d) kinds.push(["diesel", d[0]]);
+  if (kinds.length > 1) return { fuel: null, stated: true, why: `HSMT nêu nhiều loại nhiên liệu (${kinds.map((k) => k[1]).join("; ")})` };
+  if (kinds.length === 1) return { fuel: kinds[0][0], stated: true, why: kinds[0][1] };
+  return { fuel: "diesel", stated: false, why: "HSMT không nêu nhiên liệu, coi là diesel" };
+}
+// A catalog use (`u.fuel` "gas" / "gasoline" / "dual", written only when the page says it) against the fuel the HSMT asks:
+// true when it is the wrong one; a use with no fuel is never wrong (empty is not diesel).
+export const fuelOff = (want, useFuel) => !!want && !!useFuel && !(want === "gas" ? useFuel === "gas" || useFuel === "dual" : want === "gasoline" ? useFuel === "gasoline" || useFuel === "dual" : false);
 export function hintsOf(text, extra = "", sizing = null) {
   const t = `${technicalPart(text)}\n${String(extra ?? "").normalize("NFC")}`;
   const names = (list) => list.filter(([re]) => re.test(t)).map(([, n]) => n);
@@ -953,7 +974,7 @@ export function hintsOf(text, extra = "", sizing = null) {
   const engineMakes = names(CAT.ENGINE_BRANDS);
   for (const m of [trait.engineMake, ...trait.unused.filter((u) => u.equivalent && u.at === "engine").map((u) => u.makeName)]) if (m && !engineMakes.includes(m)) engineMakes.push(m);
   return { engineMakes, trait, altMakes: names(CAT.ALT_BRANDS), ctrlMakes: ctrl, ctrlModels: CAT.controllersIn(t).filter((c) => c.model).map((c) => CAT.keyOf(c.model)),
-    freq: f50 && !f60 ? 50 : f60 && !f50 ? 60 : null, cylLayout: cylLayoutOf(t), madeRule: partOriginOfHsmt(text), text: squashOf(t), ...engineMins(t), ...(sized ? sized.mins : {}), ...(sized?.note ? { sizeNote: sized.note } : {}) };
+    freq: f50 && !f60 ? 50 : f60 && !f50 ? 60 : null, cylLayout: cylLayoutOf(t), fuel: fuelOfHsmt(technicalPart(text)).fuel, madeRule: partOriginOfHsmt(text), text: squashOf(t), ...engineMins(t), ...(sized ? sized.mins : {}), ...(sized?.note ? { sizeNote: sized.note } : {}) };
 }
 // The engine minimums the HSMT states ("Dung tích xy lanh ≥ 11,05 L", "Tối thiểu 06 xi lanh"), one value each: a tender
 // of several gensets that gives two values is left alone. candidates() ranks an engine a source shows below them lower
@@ -1649,6 +1670,10 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         const lay = own.length ? own : Object.keys(bySup).filter((k) => bySup[k].size >= 2);
         if (lay.length && lay.every((x) => x !== hints.cylLayout)) { score -= 600; ruled.push("layout"); why.push(`xi lanh ${lay[0] === "v" ? "chữ V" : "thẳng hàng"}, HSMT yêu cầu ${hints.cylLayout === "v" ? "chữ V" : "thẳng hàng"}`); }
       }
+      // The row's fuel against the HSMT's (Khoa 20/11/2026): a row whose page says gas / gasoline is dropped for a diesel
+      // HSMT (one that names none counts as diesel), a gasoline row for a gas HSMT and the other way round; dual (gasoline
+      // + LPG / gas) suits both. A row with no fuel written stays. `u.fuel` is written by web/catalog.js (fuelOf).
+      if (fuelOff(hints.fuel, u.fuel)) { score -= 600; ruled.push("fuel"); why.push(`nhiên liệu ${u.fuel === "gas" ? "khí" : u.fuel === "gasoline" ? "xăng" : "xăng / khí"} (${u.fuelWhy || "bảng nguồn"}), HSMT ${hints.fuel === "diesel" ? "diesel" : hints.fuel === "gas" ? "khí" : "xăng"}`); }
       // An engine of the other frequency (Khoa, 2026-11-17: Baudouin 6M33G660/6 and 6M33G633/6, the 1800 rpm / 60 Hz
       // versions, held two of Baudouin's three places for a 50 Hz tender; their rows in tables that name no frequency
       // passed the frequency filter above): every row of the engine that names a frequency names the other one, two
@@ -2896,6 +2921,19 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
         return { ...base, status: "not_met", note: `Code ghi: HSMT nêu đích danh ${t.term} (${t.makeName}); ${named ? `bộ điều khiển ${named} không phải ${t.term}` : "cấu hình không có bộ điều khiển"}.` };
       });
       c.checks = [...out, ...c.checks];
+    }
+    // (6) Fuel (Khoa 20/11/2026): a configuration whose catalog rows (the c.suppliers lines) say gas / gasoline for a diesel
+    // HSMT (or the other way round) is "không đạt" at the engine, ranked after, still shown; a row with no fuel written says
+    // nothing. Only rows of the catalog: the code writes nothing about an engine found on the internet.
+    c.checks = (c.checks || []).filter((x) => !x?.fuelRule);
+    {
+      const fh = fuelOfHsmt(technicalPart(hsmtText || ""));
+      const bad = fh.fuel ? (c.suppliers || []).filter((s) => !s.unverified).map((s) => rows.get(`${s.supplierId}|${Number(s.n)}|${CAT.keyOf(s.line || "")}`)).filter((u) => fuelOff(fh.fuel, u?.fuel)) : [];
+      if (bad.length) {
+        const kind = (f) => (f === "gas" ? "khí" : f === "gasoline" ? "xăng" : "xăng / khí"), want = fh.fuel === "diesel" ? "diesel" : kind(fh.fuel);
+        const u = bad[0];
+        c.checks.unshift({ item: "Nhiên liệu (HSMT)", requirement: `Nhiên liệu của tổ máy: ${want} (${fh.why})`, hsmtQuote: fh.stated ? fh.why : "", offered: `Dòng bảng của ${u.supplierId} ghi ${kind(u.fuel)}`, part: "engine", level: "core", byCode: true, fuelRule: true, status: "not_met", note: `Code ghi: dòng catalog ${u.supplierId} [${u.n}] ${u.fuelWhy || ""} (mức ${u.fuelFrom || "?"}); HSMT ${fh.stated ? "nêu" : "không nêu nhiên liệu nên coi là"} ${want}.` });
+      }
     }
     confirmChecks(c, result.requirements || []);
     vregChecks(c, result.requirements || [], factsOf(c, "alternator"));
