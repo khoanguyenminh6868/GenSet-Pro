@@ -39,3 +39,41 @@ Một PR `web/catalog.js` `ROW_EXCEPTIONS`: 10 dòng `dropspec` (disp: aoke ×2,
 
 ## Cần ghi nhớ
 Nguồn jlmech / huipu / yunding hay làm mất dấu chấm hoặc `*` ở từng ô: xử lý theo dòng (`dropspec`), không đổi luật chung.
+
+---
+# Bổ sung (20/11, theo yêu cầu điều phối): 7 dòng loại còn lại + 3 dòng chưa bị cờ
+
+## (1) 7 dòng mức loại còn lại (CHỈ ĐỌC, chưa sửa gì)
+Cách xét như trên: cờ + số kích hoạt, tệp lưu, trang sống (curl ngày 20/11; cameo và mingbang trả 403 với curl nên đọc lại bằng Firecrawl theo quy tắc `suppliers/CLAUDE.md`; fdk và westinpower là PDF tải về, so bằng pdftotext). Cả 6 nguồn: trang sống = bản lưu.
+
+| Dòng | Cờ / số kích hoạt | Nguồn thật ghi | Nguyên nhân | Đề xuất |
+|---|---|---|---|---|
+| cameo-power n107 b6 `YC4D105-D34` (cột SC-70YC của bảng 3 cột) | engPower "35/41" (nhãn "Engine Power(kw) (prime/standby)") ↔ công suất tổ máy 64/70 kW | Bảng ngang: "Rate Power 64/70", "Engine Power 35/41". Hai cột kia ghi công suất động cơ = công suất tổ máy (50/55 ↔ 50/55; 55/60 ↔ 55/60) | NGUỒN GHI SAI (động cơ nhỏ hơn tổ máy). Không ghi số thay (70/77 hay 64/70 đều là đoán) | `dropspec` engPower. Bảng này là bảng ngang theo cột, bản ghi không có `line`: khi viết ngoại lệ phải kiểm khoá dòng của `ROW_EXCEPTIONS` (khớp theo chữ `lines.header`/`rows`) có chạy cho bảng ngang không; chưa thử |
+| fdk-energy n1040 b48 `QSK50-G7` + đầu phát `S7L1D-D41` (cùng tờ PDF CG1825E-H1) | engPower "1107kw/1500" (nhãn "Prime power / Speed (KW/RPM)") ↔ tổ máy 1320 kW / 1650 kVA | PDF ghi: "Prime Power 1320KW/1650KVA" nhưng động cơ "Prime power / Speed 1107kw/1500", "Standby 1224kw/1500". Động cơ 1107 kW không kéo nổi tổ máy 1320 kW. Tên tệp ghi CG1825E (1825 kVA), nội dung 1650 kVA | Nguồn tự mâu thuẫn (cặp nhãn–giá trị đọc ĐÚNG thứ tự; pdftotext -layout làm lệch cột nhưng ô "Prime power / Speed" vẫn đi với 1107kw/1500). Bản ghi đầu phát bị loại theo cả dòng (luật B(iii): chặn cả dòng bảng động cơ lẫn đầu phát), không phải vì số của đầu phát | GIỮ cờ loại (nguồn tự mâu thuẫn). Không `dropspec`: tổ máy 1320 kW cũng không chắc đúng |
+| jiangchai-xuzhou n107 b6 d27 `6M33D506E310` (J20B400M) | current "7200" (nhãn 电流（A）) ↔ 400/450 kW | `\| J20B400M \| 400 \| 450 \| 潍柴博杜安 \| 6M33D506E310 \| 7200 \| 88 \|…`. Cùng bảng: J20B520M (470/520 kW) 846 A, J20B580M 936 A; cột 电流 của các dòng 6M33 khác 810–1000 | NGUỒN GHI SAI (thừa một chữ số; số đúng không ghi) | `dropspec` current |
+| mingbang-mbkl n125 b5 d13 `TAD1642GE` (MB-V480) | disp "4.4" (4,4 L / 480 kW = 0,009 < 0,01); cylMaj "4" (số đông 6 × 14) | Trang ghi 4 xi lanh, 4.4 L, 105*127 cho dòng này (và cho cả 15 dòng "Cylinder 4"; dòng 15 TWD1643GE ghi 4 xi lanh nhưng 6.0 L, 100*127: 6.0 L chỉ khớp 6 xi lanh). aoke-yangzhou (NCC khác) ghi TAD1642GE 6 xi lanh, 16.12 L | NGUỒN GHI SAI: cột xi lanh / dung tích của bảng chép từ động cơ nhỏ; tự mâu thuẫn rõ ở dòng 15. Dòng V480 tự khớp hình học (4×π/4×10,5²×12,7 = 4,39), nên chỉ "nguồn khác" mới cho biết sai | `dropspec` cyl + disp + bore của dòng V480; BÁO: 14 dòng còn lại của bảng cùng nguồn ghi "4" xi lanh, chưa soát hết (không bị cờ vì thể tích / kW còn trong ngưỡng) — Khoa quyết có bỏ cả bảng không |
+| westinpower n1064 b92 `4006-23TAG3A` (TP880L) | speed "1191" (nhãn "Rated rotation speed", r/min) | PDF: "Power(ESP) 900/718, Power(PRP) 800/641, Rated Voltage 400, Rated Current 1299, Rated rotation speed 1191, Power Factor 0.8…". Trang 2 của CÙNG PDF: "Engine speed Rated 1500 RPM" | NGUỒN GHI SAI (hai chỗ trong một tờ không khớp); đọc đúng thứ tự nhãn–giá trị | `dropspec` speed (chỉ bỏ 1191; "1500 RPM" của trang 2 là ô khác, không dùng thay) |
+| yongcai-elecmama n172 b60 `QC385BT` | speed "2350 rpm" (nhãn "Engine speed") ↔ chuẩn 750–3600 nhưng bản ghi mang tư cách động cơ tổ máy | Trang liệt kê "Quanchai QC385BT diesel engine for tractor … Rated output 18.8 KW, Engine speed 2350 rpm". Đó là động cơ máy kéo, KHÔNG phải tổ máy phát. 2350 rpm đúng cho động cơ đó | KHÔNG phải số sai: là bản ghi không thuộc tổ máy (trang bán động cơ rời). Cờ loại cho đúng kết quả | GIỮ cờ loại; việc đúng là bỏ bản ghi khỏi tổ máy / không phải `dropspec` |
+
+Tổng 7 bản ghi: nguồn ghi sai 4 (cameo, jiangchai, mingbang, westinpower), nguồn tự mâu thuẫn 2 (fdk ×2 bản ghi), không phải tổ máy 1 (yongcai). Lỗi đọc: 0.
+
+## (2) 3 dòng cùng kiểu mất dấu chấm mà không bị cờ
+Chạy `recordsOf` + `absurdOf` + `normFig` trên toàn bộ `cn` (script scratchpad `diag.mjs`/`diag3.mjs`, chỉ đọc):
+
+| Dòng | Chữ nguồn | Số đúng theo CHÍNH nguồn (không ghi vào dữ liệu) | Vì sao row-flags không bắt |
+|---|---|---|---|
+| jlmech-wuhan n102 `JL-320GF`, `JL-350GF` (SC15G500D2) | "142" ở cột Displacement; bore×stroke 135*165, 6 xi lanh | Bảng KHÔNG có dòng nào khác cho động cơ này; hình học 6×π/4×13,5²×16,5 = 14,17 L nên "142" nhìn là mất dấu chấm, nhưng nguồn không ghi 14.2 nên chỉ nêu là bằng chứng, không kết luận số | Hàng tiêu đề đơn vị của bảng ("\| KW \| KVA \| A \| mm \| L \| L \| g/kw.h…") thiếu ô nên lệch cột: nhãn thành "Displacement (**mm**)", "Cylinder (L)", "Bore*Stroke (g/kw.h)". `absurdOf` chỉ xét disp khi `normFig` ra đơn vị L ⇒ trả `null` (không xét). Catalog cũng không dùng "142" như lít (thiếu đơn vị đúng) nên không vào Gợi ý; chỉ hiện chữ thô ở web |
+| yunding-jiangsu n2006 `YDY-1100GF` (YC12VTD1830-D30) | "392" | Dòng kề cùng bảng, cùng bore×stroke 152*180, 12 xi lanh: `YDY-1000GF … YC12VTD1680-D30 … 39.2` | Bản ghi KHÔNG có spec `disp` (có cyl, bore, current, weight…; dòng hai-ba mươi kia thì có). Không có số nào để kiểm. Lý do reader bỏ "392" chưa lần ra (nghi lọc khoảng hợp lý của `likely` ở `catalog.js` ~dòng 1040: dải 0,4–100 L; chưa xác nhận, chưa chạy riêng) |
+
+Bổ sung tìm được khi quét (cùng bảng họ jlmech, cùng cơ chế lệch tiêu đề "Displacement (mm)"): jlmech-wuhan n104 `JL-30GF` "249" (dòng JL-24GF cùng bảng ghi "2.49", cùng YC2115 115*120) và `JL-40GF` "433" (YCD4J12D-55, 105*125 ×4 xi lanh = 4,33 L; dòng này xuất hiện HAI lần trong bảng). Cũng chưa bị cờ vì cùng lý do. Ngoài ra n104 có ô "6.B7" (chữ B lẫn trong số).
+
+## Đếm trên toàn bộ `suppliers/cn` (trả lời "bắt oan bao nhiêu")
+- 10.183 bản ghi động cơ có spec `disp`: 9.885 đọc ra L hoặc cc (xét được); 298 không xét theo L: 122 là cc (hợp lệ), 176 "không đọc được đơn vị" (nhãn ghi mm hoặc thiếu đơn vị). Trong 176 ca đó, 133 có công suất dòng để so; nếu cứ coi số thô là L và áp ngưỡng hiện có (L > 300 hoặc L/kW ngoài 0,01–0,3), BẮT ĐÚNG 4 bản ghi, tất cả là jlmech: n102 ×2 ("142") và n104 ×2 ("249", "433"), và BẮT OAN 0 bản ghi. 43 ca không có công suất nên không xét được.
+- Yunding "392": không thuộc nhóm trên (không có spec disp); luật cờ không đổi cũng không bắt được.
+- Vậy tác động nếu Khoa muốn mở rộng luật cờ ("disp đơn vị không đọc được thì vẫn so số thô khi số vượt hẳn ngưỡng"): 4 dòng (đều đúng), 0 oan, nhưng chỉ trên dữ liệu hiện tại; chưa đề xuất đổi luật vì mẫu 4 dòng của MỘT NCC (cùng lỗi lệch tiêu đề) là quá nhỏ để kết luận.
+
+## Đề xuất gộp cho bước 2 (chờ #954 và Khoa)
+`dropspec`: engPower cameo SC-70YC; current jiangchai J20B400M; cyl+disp+bore mingbang MB-V480; speed westin TP880L. Giữ cờ loại: fdk, yongcai. Nếu Khoa muốn bỏ luôn số sai chưa bị cờ: disp jlmech n102 ×2, n104 ×2 (JL-30GF, JL-40GF) và yunding n2006 YDY-1100GF (reader đã bỏ số nên chỉ cần xác nhận). Mọi `dropspec` khớp từng chữ dòng nguồn; mỗi dòng xuất hiện một lần trong `cn`, trừ jlmech JL-40GF (hai lần cùng bảng, `mergeRepeats` gộp).
+
+## Chưa kiểm được
+- Lý do reader bỏ "392" của yunding; khoá dòng `dropspec` cho bảng ngang của cameo; số liệu 14 dòng còn lại bảng mingbang V; PDF fdk / westin chỉ đọc bằng pdftotext (không so ảnh trang).
