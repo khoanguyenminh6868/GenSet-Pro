@@ -25,30 +25,28 @@
   {
    "rank": 1,
    "engine": "Cummins 4B3.9-G12",
-   "alternator": "Stamford S0L2-P1",
-   "controller": "Deep Sea DSE7320",
+   "alternator": "Leroy-Somer TAL-A42-E",
+   "controller": "Deep Sea Deepsea 6120",
    "named": "equivalent",
    "suppliers": [
-    "fdk-energy:108",
-    "long-gen:110",
-    "mecca-power:101"
+    "aosif:101",
+    "longkai-power:121",
+    "voltgent:103"
    ],
    "checks": {
     "genset": "3/0/4/7",
-    "engine": "7/0/6/0",
-    "alternator": "2/0/6/0",
-    "controller": "4/0/1/0"
+    "engine": "6/0/7/0",
+    "alternator": "4/0/0/2",
+    "controller": "5/0/0/0"
    },
    "unverifiedChecks": 0,
    "notMet": [],
-   "lossWarn": [
-    "alt_power:unclear"
-   ]
+   "lossWarn": []
   },
   {
    "rank": 2,
    "engine": "FAWDE 4DW93-42D-YFD10W",
-   "alternator": null,
+   "alternator": "Leroy-Somer TAL-A42-E",
    "controller": "Deep Sea DSE6120",
    "named": "equivalent",
    "suppliers": [
@@ -57,17 +55,34 @@
    "checks": {
     "genset": "2/0/5/7",
     "engine": "0/0/13/0",
-    "alternator": "0/0/7/1",
+    "alternator": "4/0/0/2",
     "controller": "5/0/0/0"
    },
    "unverifiedChecks": 0,
    "notMet": [],
-   "lossWarn": [
-    "alt_power:unclear"
-   ]
+   "lossWarn": []
   },
   {
    "rank": 3,
+   "engine": "FAWDE 4DX21-45D-YFD10W",
+   "alternator": "Leroy-Somer TAL-A42-E",
+   "controller": "Deep Sea DSE6120",
+   "named": "equivalent",
+   "suppliers": [
+    "longkai-power:119"
+   ],
+   "checks": {
+    "genset": "2/0/5/7",
+    "engine": "0/0/13/0",
+    "alternator": "4/0/0/2",
+    "controller": "3/0/0/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": []
+  },
+  {
+   "rank": 4,
    "engine": "Yuchai YCV2.5T45-G20",
    "alternator": "184GS",
    "controller": "SmartGen HGM6110",
@@ -80,27 +95,6 @@
     "engine": "0/0/13/0",
     "alternator": "0/0/7/1",
     "controller": "3/0/2/0"
-   },
-   "unverifiedChecks": 0,
-   "notMet": [],
-   "lossWarn": [
-    "alt_power:unclear"
-   ]
-  },
-  {
-   "rank": 4,
-   "engine": "FAWDE 4DX21-45D-YFD10W",
-   "alternator": null,
-   "controller": "Deep Sea DSE6120",
-   "named": "equivalent",
-   "suppliers": [
-    "longkai-power:119"
-   ],
-   "checks": {
-    "genset": "2/0/5/7",
-    "engine": "0/0/13/0",
-    "alternator": "0/0/7/1",
-    "controller": "3/0/0/0"
    },
    "unverifiedChecks": 0,
    "notMet": [],
