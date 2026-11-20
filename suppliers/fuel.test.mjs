@@ -53,8 +53,8 @@ test("không ghi: menu / khẩu hiệu / đơn vị / chữ mơ hồ / mâu thu�
     ["chenxing-weifang", 101],                                    // khẩu hiệu "提供柴油、燃气发电机组…"
     ["gillette-generators", 101],                                 // "Natural Gas and … Diesel" là menu
     ["westinpower", 1003],                                        // m³/h = lưu lượng nước làm mát
-    ["simpson-power", 124],                                       // "SIMPSON-GasGenerators": gas hay gasoline?
-    ["jianghao-genset", 104],                                     // tiêu đề "Gas Generator" nhưng "FuelCon. (L)"
+    // simpson-power n124 ("SIMPSON-GasGenerators") và jianghao-genset n104 ("Gas Generator" + "FuelCon. (L)"): dấu hiệu của
+    // trang vẫn không đủ; từ 20/11/2026 có nhiên liệu qua FUEL_PAGES (ca "nhiên liệu theo bảng" cuối tệp).
     ["victory-generator", 129], ["victory-generator", 133],       // "Diesel Twin-cylinder"; chữ xăng ở dòng khác
     ["kingway-power", 117],                                       // bể chứa khí sinh học
     ["man-engines", 104],                                         // "diesel and gas engines" trộn
@@ -105,4 +105,24 @@ test("COP / Continuous không là prime (agg-fuzhou n115–118: cột \"COP (kVA
   // cột Prime thật vẫn là prime (agg-fuzhou bảng diesel n101: ESP / PRP)
   const d = rec("agg-fuzhou", 101).find((r) => r.power?.prime);
   assert.ok(d, "bảng diesel vẫn đọc prime");
+});
+
+test("nhiên liệu theo bảng (Khoa 20/11/2026, FUEL_PAGES): jianghao n104 khí, simpson n124 xăng chỉ dòng Honda GX, zc-power n109 tổ máy xăng", () => {
+  const jh = rec("jianghao-genset", 104);                          // chú thích ① dưới hai bảng: "…natural gas, oil filed gas, bio-gas…"
+  assert.equal(jh.length, 29);
+  assert.ok(jh.every((r) => r.fuel === "gas" && r.fuelFrom === "T" && /natural gas/.test(r.fuelWhy)));
+  const sp = rec("simpson-power", 124);                            // trang không ghi nhiên liệu; datasheet Honda ghi xăng
+  const gx = sp.filter((r) => /^GX(390|630|690)$/.test(r.model));
+  assert.equal(gx.length, 7);
+  for (const r of gx) { assert.equal(r.fuel, "gasoline"); assert.equal(r.fuelFrom, "D"); assert.ok(r.fuelWhy.includes(r.model) && /engines\.honda\.com/.test(r.fuelWhy)); }
+  assert.ok(sp.filter((r) => !gx.includes(r)).every((r) => r.fuel === undefined));   // ZS168FA / ZS182F / ZS190F: không rõ
+  const zc = C.gensetsOf(real("zc-power")).filter((r) => r.n === 109);
+  assert.equal(zc.length, 9);
+  assert.ok(zc.every((r) => r.fuel === "gasoline" && r.fuelFrom === "T"));
+  // bảng tổ máy khác (GENSET_TABLES) không tự đọc nhiên liệu
+  assert.ok(C.gensetsOf(real("zc-power")).filter((r) => r.n !== 109).every((r) => r.fuel === undefined));
+  // tới gensets của build()
+  const g = C.build([real("zc-power")]).gensets.filter((e) => e.uses.some((u) => u.n === 109));
+  assert.equal(g.length, 9);
+  assert.ok(g.every((e) => e.uses.every((u) => u.fuel === "gasoline")));
 });
