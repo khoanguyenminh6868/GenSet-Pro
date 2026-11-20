@@ -1527,6 +1527,10 @@
       [106, "HP-V280", "| HP-V280 | 280 | 280 | TAD1341GE | 6 | 131*158 | 1278 | 65.4 | 148 | 36 | 3050*1114*1391 | 2420"],
       [106, "HP-V400", "| HP-V400 | 360 | 400 | TAD1345GE | 6 | 131*158 | 1278 | 96.8 | 210 | 36 | 3210*1114*1600 | 2750"]].map(([n, genset, line]) => (
       { supplierId: "huipu-power", n, genset, line, act: "dropspec", keys: ["disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi dung tích 458 / 1278 L (cùng cỡ động cơ ở dòng khác của trang ghi 45.8): bỏ riêng dung tích" })),
+    // green-power n115 (bảng bỏ sót, ENGINE_CELL_TABLES) GP1000 A/M: "12V 1600 G31F | E | 16" — "12V" is 12 cylinders (MTU 12V 1600
+    // spec: "Cylinder configuration 12 V"); as the only cylinder source of 12V1600G31F, the 16 ruled out mecca / lees rows for
+    // HSMTs asking 12 (top 30 cloud #967). Candidate for `fixspec` (cyl = 12) once that mechanism lands.
+    { supplierId: "green-power-generators", n: 115, genset: "GP1000 A/M", line: "| GP1000 A/M | O | 910 | 1005 | 12V 1600 G31F | E | 16 | 139 | 450 | 4450 | 1910 | 2250 | 6250 | | | |", act: "dropspec", keys: ["cyl"], khoa: "điều phối 20/11/2026", why: "nguồn ghi 16 xi lanh cho MTU 12V 1600 G31F (mã 12V và tài liệu MTU: 12 xi lanh): bỏ riêng số xi lanh" },
   ];
   function rowExceptions(s, list, note) {
     const ex = ROW_EXCEPTIONS.filter((x) => x.supplierId === s.id);
