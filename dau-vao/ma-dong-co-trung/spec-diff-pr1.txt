@@ -1,0 +1,1193 @@
+bản ghi cũ 60075, mới 60075 | khác 447 | chỉ cũ 0, chỉ mới 0 | bảng có đổi 107
+{"model":447}
+
+[aj-power n101 bảng 0] ×18
+  H: | | Model | Frequency | Phase | R.P.M | Prime-kVA | Standby kVA | Engine | Engine Model | Alternator Model | Datasheet
+    2 | AJ10 | 50hz | Three Phase | 1500 | 9.0 | 10.0 | | 403D-11G Derate | MA1114B | AJ10 Emissions Optimised Three Phase 50Hz
+        ⇒ model: 403D-11G Derate → 403D-11G
+    3 | AJ10 | 60hz | Three Phase | 1800 | 9.0 | 10.0 | | 403D-11G Derate | MA1114B | AJ10 Emissions Optimised Three Phase 60Hz
+        ⇒ model: 403D-11G Derate → 403D-11G
+    4 | AJ10 | 50hz | Single Phase | 1500 | 6.6 | 7.3 | | 403D-11G Derate | MA1114B | AJ10 Emissions Optimised Single Phase 50Hz
+        ⇒ model: 403D-11G Derate → 403D-11G
+    5 | AJ10 | 60hz | Single Phase | 1800 | 8.3 | 9.2 | | 403D-11G Derate | MA1114B | AJ10 Emissions Optimised Single Phase 60Hz
+        ⇒ model: 403D-11G Derate → 403D-11G
+    6 | AJ14 | 50hz | Single Phase | 1500 | 9.5 | 10.6 | | 403A-15G1 Derate | MA1114C2 | AJ14 Single Phase 50Hz
+        ⇒ model: 403A-15G1 Derate → 403A-15G1
+    7 | AJ14 | 50hz | Three Phase | 1500 | 13.0 | 14.3 | | 403A-15G1 Derate | MA1114C2 | AJ14 Three Phase 50Hz
+        ⇒ model: 403A-15G1 Derate → 403A-15G1
+   12 | AJ17 | 50hz | Single Phase | 1500 | 10.5 | 11.4 | | 403A-15G2 Derate | MA1114C2 | AJ17 Single Phase 50Hz
+        ⇒ model: 403A-15G2 Derate → 403A-15G2
+   13 | AJ17 | 50hz | Three Phase | 1500 | 15.0 | 16.5 | | 403A-15G2 Derate | MA1114C2 | AJ17 Three Phase 50Hz
+        ⇒ model: 403A-15G2 Derate → 403A-15G2
+   14 | AJ22 | 50hz | Single Phase | 1500 | 15.1 | 16.6 | | 404A-22G1 Derate | MA1114F | AJ22 Single Phase 50Hz
+        ⇒ model: 404A-22G1 Derate → 404A-22G1
+   15 | AJ22 | 50hz | Three Phase | 1500 | 20.0 | 22.0 | | 404A-22G1 Derate | MA1114E | AJ22 Three Phase 50Hz
+        ⇒ model: 404A-22G1 Derate → 404A-22G1
+   16 | AJ22 | 60hz | Three Phase | 1800 | 18.0 | 20.0 | | 404D-22G Derate | MA1114E | AJ22 Emission Optimised Three Phase 60Hz
+        ⇒ model: 404D-22G Derate → 404D-22G
+   17 | AJ22 | 50hz | Three Phase | 1500 | 20.0 | 22.0 | | 404D-22G Derate | MA1114E | AJ22 Emission Optimised Three Phase 50Hz
+        ⇒ model: 404D-22G Derate → 404D-22G
+   18 | AJ22 | 60hz | Single Phase | 1800 | 18.0 | 20.0 | | 404D-22G Derate | MA1114F | AJ22 Emission Optimised Single Phase 60Hz
+        ⇒ model: 404D-22G Derate → 404D-22G
+   19 | AJ22 | 50hz | Single Phase | 1500 | 15.1 | 16.6 | | 404D-22G Derate | MA1114F | AJ22 Emission Optimised Single Phase 50Hz
+        ⇒ model: 404D-22G Derate → 404D-22G
+   20 | AJ22 Rental | 50hz | Three Phase | 1500 | 20.0 | 22.0 | | 404J-22G Derate | MA1114E | AJ22 Rental
+        ⇒ model: 404J-22G Derate → 404J-22G
+   25 | AJ50 | 50hz | Single Phase | 1500 | 35.0 | 38.0 | | 1103A-33TG1 Derate | MA2114C | AJ50 Single Phase 50Hz 3 Series
+        ⇒ model: 1103A-33TG1 Derate → 1103A-33TG1
+   26 | AJ50 | 50hz | Three Phase | 1500 | 45.0 | 50.0 | | 1103A-33TG1 Derate | MA2114B | AJ50 Three Phase 50Hz 3 Series
+        ⇒ model: 1103A-33TG1 Derate → 1103A-33TG1
+   27 | AJ50 | 60hz | Three Phase | 1800 | 56.3 | 62.5 | | 1103A-33TG1 Derate | MA2114C | AJ50 Three Phase 60Hz 3 Series
+        ⇒ model: 1103A-33TG1 Derate → 1103A-33TG1
+
+[aj-power n102 bảng 1] ×4
+  H: | | Model | Frequency | Phase | R.P.M | Prime-kVA | Standby kVA | Engine | Engine Model | Alternator Model | Datasheet
+    4 | AJ50 | 50hz | Single Phase | 1500 | 35.0 | 38.0 | | 1103A-33TG1 Derate | MA2114C | AJ50 Single Phase Perkins 50Hz 5 Series
+        ⇒ model: 1103A-33TG1 Derate → 1103A-33TG1
+    5 | AJ50 | 60hz | Single Phase | 1800 | 42.0 | 46.0 | | 1103A-33TG1 Derate | MA2114C | AJ50 Single Phase Perkins 60Hz 5 Series
+        ⇒ model: 1103A-33TG1 Derate → 1103A-33TG1
+    6 | AJ50 | 50hz | Three Phase | 1500 | 45.0 | 50.0 | | 1103A-33TG1 Derate | MA2114B | AJ50 Three Phase Perkins 50 Hz 5 Series
+        ⇒ model: 1103A-33TG1 Derate → 1103A-33TG1
+    7 | AJ50 | 60hz | Three Phase | 1800 | 56.3 | 62.5 | | 1103A-33TG1 Derate | MA2114C | AJ50 Three Phase Perkins 60Hz 5 Series
+        ⇒ model: 1103A-33TG1 Derate → 1103A-33TG1
+
+[aj-power n104 bảng 3] ×2
+  H: | | Model | Frequency | Phase | R.P.M | Prime-kVA | Standby kVA | Engine | Engine Model | Alternator Model | Datasheet
+    2 | AJ880 | 50hz | Three Phase | 1500 | 800.0 | 880.0 | | 4006-23TAG3A Derate | MA6014A | AJ880 Perkins 50Hz
+        ⇒ model: 4006-23TAG3A Derate → 4006-23TAG3A
+    3 | AJ900 | 50hz | Three Phase | 1500 | 800.0 | 900.0 | | 4006-23TAG3A Derate | MA6014A | AJ900 Perkins 50Hz
+        ⇒ model: 4006-23TAG3A Derate → 4006-23TAG3A
+
+[aksa-power n2005 bảng 4] ×1
+  H: Model Name                                                                                                            AJD 110
+    0 400 / 231                         88.0                              110                                       80.0                           100                         159
+        ⇒ model: 4045HFG20 (103kW) → 4045HFG20
+
+[bauer-generator n2001 bảng 0] ×1
+  H: Bauer GFS-12 ATS, 12 kW/15 kVA Notstromgenerator / Notstromaggregat - Bauer Generator
+    0 Dauerleistung [kW/kVA/PS] 12/15/16,32
+        ⇒ model: ZH490D/22KW → ZH490D
+
+[bauer-generator n2003 bảng 2] ×1
+  H: Bauer GFS-24 ATS, Notstromgenerator / Notstromaggregat, - Bauer Generator
+    0 Dauerleistung [kW/kVA/PS] 24 / 30 / 32,63
+        ⇒ model: ZH4100D/30,1 KW → ZH4100D
+
+[bauer-generator n2004 bảng 3] ×1
+  H: Bauer GFS-40 ATS, 40 kW/50 kVA Notstromgenerator / Notstromaggregat - Bauer Generator
+    0 Dauerleistung [kW/kVA/PS] 40 / 50 / 54,39
+        ⇒ model: ZH4102ZD/44KW → ZH4102ZD
+
+[bauer-generator n2005 bảng 4] ×1
+  H: Bauer GFS-50 ATS, 50 kW/62,5 kVA Notstromgenerator / Notstromaggregat - Bauer Generator
+    0 Dauerleistung [kW/kVA/PS] 50 / 62,5 / 67,98
+        ⇒ model: ZH4105ZD/56KW → ZH4105ZD
+
+[bauer-generator n2006 bảng 5] ×1
+  H: Bauer GFS-80 ATS, 80 kW/100 kVA Notstromgenerator / Notstromaggregat - Bauer Generator
+    0 Dauerleistung [kW/kVA/PS] 80 / 100 / 108,77
+        ⇒ model: ZH6105ZLD/100KW → ZH6105ZLD
+
+[bauer-generator n2007 bảng 6] ×1
+  H: Bauer GFS-90 ATS, 90 kW/112,5 kVA Notstromgenerator / Notstromaggregat - Bauer Generator
+    0 Dauerleistung [kW/kVA/PS] 90 / 112,5 / 122,37
+        ⇒ model: ZH6105AZLD/110KW → ZH6105AZLD
+
+[bauer-generator n2008 bảng 7] ×1
+  H: Bauer GFS-120 ATS, 120 kW/150 kVA Notstromgenerator / Notstromaggregat - Bauer Generator
+    0 Dauerleistung [kW/kVA/PS] 120 / 150 / 163,16
+        ⇒ model: ZH6105IZLD/132KW → ZH6105IZLD
+
+[cgm-italia n1001 bảng 13] ×19
+  H: | M/E Engine governor | EU Emission standard | consumo ¾ caricoconsumption 3/4 loadconsommation 3/4 charge
+  H: | OPEN BASE FRAME | SOUNDPROOF CANOPY | dB(A) at 7 mt
+  H: | quadro manualemanual panelpanneau manuel | quadro automaticoAMF panelpanneau automatique
+   27 | 135P | 135 | 108 | 149 | 119,2 1106A-70TG1
+        ⇒ model: 119,2 1106A-70TG1 → 1106A-70TG1
+   33 | 180P | 180 | 144 | 198 | 158,4 1106A-70TAG3
+        ⇒ model: 158,4 1106A-70TAG3 → 1106A-70TAG3
+   39 | 230P | 230 | 184 | 253 | 202 1206A-E70TTAG2
+        ⇒ model: 202 1206A-E70TTAG2 → 1206A-E70TTAG2
+   42 | 250P | 250 | 200 | 275 | 220 1206A-E70TTAG3
+        ⇒ model: 220 1206A-E70TTAG3 → 1206A-E70TTAG3
+   45 | 280P | 280 | 224 | 308 | 246 1506A-E88TAG4
+        ⇒ model: 246 1506A-E88TAG4 → 1506A-E88TAG4
+   48 | 300P | 300 | 240 | 330 | 264 1506A-E88TAG5
+        ⇒ model: 264 1506A-E88TAG5 → 1506A-E88TAG5
+   51 | STAGE 0/II | 350P | 350 | 280 | 385 | 308 1706A-E93TAG2
+        ⇒ model: 308 1706A-E93TAG2 → 1706A-E93TAG2
+   54 | 400P | 400 | 320 | 440 | 352 2206A-E13TAG3
+        ⇒ model: 352 2206A-E13TAG3 → 2206A-E13TAG3
+   56 | 450P | 450 | 360 | 495 | 396 2506A-E15TAG1
+        ⇒ model: 396 2506A-E15TAG1 → 2506A-E15TAG1
+   59 | 500P | 500 | 400 | 550 | 440 2506A-E15TAG2
+        ⇒ model: 440 2506A-E15TAG2 → 2506A-E15TAG2
+   62 | 600P | 600 | 480 | 660 | 528 2806A-E18TAG1A
+        ⇒ model: 528 2806A-E18TAG1A → 2806A-E18TAG1A
+   65 | 650P | 650 | 520 | 715 | 572 2806A-E18TAG2
+        ⇒ model: 572 2806A-E18TAG2 → 2806A-E18TAG2
+   69 | 700P | 700 | 560 | 770 | 616 2806A-E18TTAG4
+        ⇒ model: 616 2806A-E18TTAG4 → 2806A-E18TTAG4
+   72 | 750P | 750 | 600 | 825 | 660 2806A-E18TTAG5
+        ⇒ model: 660 2806A-E18TTAG5 → 2806A-E18TTAG5
+   86 | 1250P | 1250 | 1000 | 1375 | 1100 4012-46TWG2A
+        ⇒ model: 1100 4012-46TWG2A → 4012-46TWG2A
+   90 | 1360P | 1360 | 1088 | 1496 | 1196,8 4012-46TWG3A
+        ⇒ model: 1196,8 4012-46TWG3A → 4012-46TWG3A
+   94 | 1500P | 1500 | 1200 | 1650 | 1320 4012-46TAG2A
+        ⇒ model: 1320 4012-46TAG2A → 4012-46TAG2A
+   98 | 1700P | 1700 | 1360 | 1870 | 1496 4012-46TAG3A
+        ⇒ model: 1496 4012-46TAG3A → 4012-46TAG3A
+  110 | 2500P | 2500 | 2000 | 2500 | 2000 4016-61TRG3X
+        ⇒ model: 2000 4016-61TRG3X → 4016-61TRG3X
+
+[comappower n103 bảng 7] ×1
+  H: | | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data
+   23 | COM935PE | 935kVA | 748kW | 850kVA | 680kW | 4006-23TAG3A(UK) | 6 | COM935PE
+        ⇒ model: 4006-23TAG3A(UK) → 4006-23TAG3A
+
+[eastern-lion-fuan n109 bảng 9] ×52
+  H: | | Genset Specification 400/230V 50HZ | Engine | Brushless Alternator | Controller | Datasheet
+  H: | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller | Datasheet
+    0 | GF/GFS-WX184 | 184 | 230 | 204 | 255 | WD129TAD23/1500 | 235-259 | EL 274J | 184 | Smartgen 6120 | Detail
+        ⇒ model: WD129TAD23/1500 → WD129TAD23
+    1 | GF/GFS-WX200 | 200 | 250 | 222 | 278 | WD129TAD25/1500 | 258-284 | EL 274K | 200 | Smartgen 6120 | Detail
+        ⇒ model: WD129TAD25/1500 → WD129TAD25
+    2 | GF/GFS-WX236 | 236 | 295 | 262 | 328 | WD135TAD28/1500 | 280-308 | EL 314D | 236 | Smartgen 6120 | Detail
+        ⇒ model: WD135TAD28/1500 → WD135TAD28
+    3 | GF/GFS-WX236 | 236 | 295 | 262 | 328 | WD145TAD30/1500 | 309-340 | EL 314D | 236 | Smartgen 6120 | Detail
+        ⇒ model: WD145TAD30/1500 → WD145TAD30
+    4 | GF/GFS-WX260 | 260 | 325 | 289 | 361 | WD145TAD33L/1500 | 339-373 | EL 314E | 260 | Smartgen 6120 | Detail
+        ⇒ model: WD145TAD33L/1500 → WD145TAD33L
+    5 | GF/GFS-WX280 | 280 | 350 | 311 | 389 | WD145TAD35/1500 | 353-388 | EL 314FS | 280 | Smartgen 6120 | Detail
+        ⇒ model: WD145TAD35/1500 → WD145TAD35
+    6 | GF/GFS-WX304 | 304 | 380 | 338 | 423 | WD269TAD38/1500 | 382-420 | EL 314F | 304 | Smartgen 6120 | Detail
+        ⇒ model: WD269TAD38/1500 → WD269TAD38
+    7 | GF/GFS-WX320 | 320 | 400 | 356 | 445 | WD269TAD41/1500 | 418-460 | EL 314G | 320 | Smartgen 6120 | Detail
+        ⇒ model: WD269TAD41/1500 → WD269TAD41
+    8 | GF/GFS-WX360 | 360 | 450 | 400 | 500 | WD269TAD43/1500 | 432-475 | EL 354C | 360 | Smartgen 6120 | Detail
+        ⇒ model: WD269TAD43/1500 → WD269TAD43
+    9 | GF/GFS-WX360 | 360 | 450 | 400 | 500 | WD269TAD45/1500 | 465-512 | EL 354C | 360 | Smartgen 6120 | Detail
+        ⇒ model: WD269TAD45/1500 → WD269TAD45
+   10 | GF/GFS-WX360 | 360 | 450 | 400 | 500 | WD269TAD48/1500 | 482-530 | EL 354C | 360 | Smartgen 6120 | Detail
+        ⇒ model: WD269TAD48/1500 → WD269TAD48
+   11 | GF/GFS-WX400 | 400 | 500 | 444 | 555 | WD269TAD50/1500 | 506-556 | EL 354D | 400 | Smartgen 6120 | Detail
+        ⇒ model: WD269TAD50/1500 → WD269TAD50
+   12 | GF/GFS-WX440 | 440 | 550 | 489 | 611 | WD269TAD56/1500 | 562-618 | EL 354ES | 440 | Smartgen 6120 | Detail
+        ⇒ model: WD269TAD56/1500 → WD269TAD56
+   13 | GF/GFS-WX480 | 480 | 600 | 533 | 666 | WD287TAD58/1500 | 588-647 | EL 354E | 480 | Smartgen 6120 | Detail
+        ⇒ model: WD287TAD58/1500 → WD287TAD58
+   14 | GF/GFS-WX500 | 500 | 625 | 556 | 695 | WD287TAD61L/1500 | 618-680 | EL 354FS | 500 | Smartgen 6120 | Detail
+        ⇒ model: WD287TAD61L/1500 → WD287TAD61L
+   15 | GF/GFS-WX536 | 536 | 670 | 596 | 745 | WX287TAD68/1500 | 682-750 | EL 354F | 536 | Smartgen 6120 | Detail
+        ⇒ model: WX287TAD68/1500 → WX287TAD68
+   16 | GF/GFS-WX320 | 320 | 400 | 356 | 445 | WD164TAD43/1500 | 430-473 | EL 314G | 320 | Smartgen 6120 | Detail
+        ⇒ model: WD164TAD43/1500 → WD164TAD43
+   17 | GF/GFS-WX360 | 360 | 450 | 400 | 500 | WD164TAD45/1500 | 450-495 | EL 354C | 360 | Smartgen 6120 | Detail
+        ⇒ model: WD164TAD45/1500 → WD164TAD45
+   18 | GF/GFS-WX500 | 500 | 625 | 556 | 695 | WD180TAD61/1500 | 618-680 | EL 354FS | 500 | Smartgen 6120 | Detail
+        ⇒ model: WD180TAD61/1500 → WD180TAD61
+   19 | GF/GFS-WX536 | 536 | 670 | 596 | 745 | WD327TAD68/1500 | 682-750 | EL 354F | 536 | Smartgen 6120 | Detail
+        ⇒ model: WD327TAD68/1500 → WD327TAD68
+   20 | GF/GFS-WX600 | 600 | 750 | 667 | 834 | WD327TAD73/1500 | 730-803 | EL 354H | 600 | Smartgen 6120 | Detail
+        ⇒ model: WD327TAD73/1500 → WD327TAD73
+   21 | GF/GFS-WX640 | 640 | 800 | 711 | 889 | WD327TAD78/1500 | 780-858 | EL 404C | 640 | Smartgen 6120 | Detail
+        ⇒ model: WD327TAD78/1500 → WD327TAD78
+   22 | GF/GFS-WX640 | 640 | 800 | 711 | 889 | WD327TAD82/1500 | 820-902 | EL 404C | 640 | Smartgen 6120 | Detail
+        ⇒ model: WD327TAD82/1500 → WD327TAD82
+   23 | GF/GFS-WX728 | 728 | 910 | 809 | 1011 | WD327TAD88/1500 | 882-970 | EL 404D | 728 | Smartgen 6120 | Detail
+        ⇒ model: WD327TAD88/1500 → WD327TAD88
+   24 | GF/GFS-WX800 | 800 | 1000 | 889 | 1111 | WD327TAD100/1500 | 1000-— | EL 404E | 800 | Smartgen 6120 | Detail
+        ⇒ model: WD327TAD100/1500 → WD327TAD100
+   25 | GF/GFS-WX904 | 904 | 1130 | 1004 | 1255 | WD360TAD110/1500 | 1100-— | EL 404F | 904 | Smartgen 6120 | Detail
+        ⇒ model: WD360TAD110/1500 → WD360TAD110
+   26 | GF/GFS-WX1000 | 1000 | 1250 | 1111 | 1389 | WD360TAD120/1500 | 1200-— | EL 404G | 1000 | Smartgen 6120 | Detail
+        ⇒ model: WD360TAD120/1500 → WD360TAD120
+   27 | GF/GFS-WX48 | 48 | 60 | 53 | 66 | WJ43D6/1500 | 56-61.6 | EL 224E | 48 | Smartgen 6120 | Detail
+        ⇒ model: WJ43D6/1500 → WJ43D6
+   28 | GF/GFS-WX58 | 58 | 73 | 64 | 80 | WJ45TAD7/1500 | 66-72.6 | EL 224F | 58 | Smartgen 6120 | Detail
+        ⇒ model: WJ45TAD7/1500 → WJ45TAD7
+   29 | GF/GFS-WX68 | 68 | 85 | 76 | 95 | WJ65TD8/1500 | 84-92.4 | EL 224G | 68 | Smartgen 6120 | Detail
+        ⇒ model: WJ65TD8/1500 → WJ65TD8
+   30 | GF/GFS-WX80 | 80 | 100 | 89 | 111 | WJ68TAD11/1500 | 110-121 | EL 274C | 80 | Smartgen 6120 | Detail
+        ⇒ model: WJ68TAD11/1500 → WJ68TAD11
+   31 | GF/GFS-WX128 | 128 | 160 | 142 | 178 | WJ78TAD17/1500 | 170-187 | EL 274F | 128 | Smartgen 6120 | Detail
+        ⇒ model: WJ78TAD17/1500 → WJ78TAD17
+   32 | GF/GFS-WX160 | 160 | 200 | 178 | 223 | WJ97TAD21/1500 | 215-236 | EL 274H | 160 | Smartgen 6120 | Detail
+        ⇒ model: WJ97TAD21/1500 → WJ97TAD21
+   33 | GF/GFS-WX184 | 184 | 230 | 204 | 255 | WJ97TAD24/1500 | 240-264 | EL 274J | 184 | Smartgen 6120 | Detail
+        ⇒ model: WJ97TAD24/1500 → WJ97TAD24
+   34 | GF/GFS-WX184 | 184 | 230 | 204 | 255 | WD129TAD23-10/1800 | 235-259 | EL 274J | 184 | Smartgen 6120 | Detail
+        ⇒ model: WD129TAD23-10/1800 → WD129TAD23-10
+   35 | GF/GFS-WX200 | 200 | 250 | 222 | 278 | WD129TAD25-10/1800 | 258-284 | EL 274K | 200 | Smartgen 6120 | Detail
+        ⇒ model: WD129TAD25-10/1800 → WD129TAD25-10
+   36 | GF/GFS-WX236 | 236 | 295 | 262 | 328 | WD135TAD28-10/1800 | 280-308 | EL 314D | 236 | Smartgen 6120 | Detail
+        ⇒ model: WD135TAD28-10/1800 → WD135TAD28-10
+   37 | GF/GFS-WX260 | 260 | 325 | 289 | 361 | WD145TAD30-10/1800 | 309-340 | EL 314E | 260 | Smartgen 6120 | Detail
+        ⇒ model: WD145TAD30-10/1800 → WD145TAD30-10
+   38 | GF/GFS-WX280 | 280 | 350 | 311 | 389 | WD145TAD33-10/1800 | 339-373 | EL 314FS | 280 | Smartgen 6120 | Detail
+        ⇒ model: WD145TAD33-10/1800 → WD145TAD33-10
+   39 | GF/GFS-WX280 | 280 | 350 | 311 | 389 | WD145TAD35-10/1800 | 353-388 | EL 314FS | 280 | Smartgen 6120 | Detail
+        ⇒ model: WD145TAD35-10/1800 → WD145TAD35-10
+   40 | GF/GFS-WX304 | 304 | 380 | 338 | 423 | WD269TAD38-10/1800 | 382-420 | EL 314F | 304 | Smartgen 6120 | Detail
+        ⇒ model: WD269TAD38-10/1800 → WD269TAD38-10
+   41 | GF/GFS-WX360 | 360 | 450 | 400 | 500 | WD269TAD41-10/1800 | 418-460 | EL 354C | 360 | Smartgen 6120 | Detail
+        ⇒ model: WD269TAD41-10/1800 → WD269TAD41-10
+   42 | GF/GFS-WX360 | 360 | 450 | 400 | 500 | WD269TAD43-10/1800 | 432-475 | EL 354C | 360 | Smartgen 6120 | Detail
+        ⇒ model: WD269TAD43-10/1800 → WD269TAD43-10
+   43 | GF/GFS-WX400 | 400 | 500 | 444 | 555 | WD269TAD45-10/1800 | 465-512 | EL 354D | 400 | Smartgen 6120 | Detail
+        ⇒ model: WD269TAD45-10/1800 → WD269TAD45-10
+   44 | GF/GFS-WX400 | 400 | 500 | 444 | 555 | WD269TAD48-10/1800 | 482-530 | EL 354D | 400 | Smartgen 6120 | Detail
+        ⇒ model: WD269TAD48-10/1800 → WD269TAD48-10
+   45 | GF/GFS-WX440 | 440 | 550 | 489 | 611 | WD269TAD50-10/1800 | 506-556 | EL 354ES | 440 | Smartgen 6120 | Detail
+        ⇒ model: WD269TAD50-10/1800 → WD269TAD50-10
+   46 | GF/GFS-WX480 | 480 | 600 | 533 | 666 | WD269TAD56-10/1800 | 562-618 | EL 354E | 480 | Smartgen 6120 | Detail
+        ⇒ model: WD269TAD56-10/1800 → WD269TAD56-10
+   47 | GF/GFS-WX500 | 500 | 625 | 556 | 695 | WD287TAD58-10/1800 | 588-647 | EL 354FS | 500 | Smartgen 6120 | Detail
+        ⇒ model: WD287TAD58-10/1800 → WD287TAD58-10
+   48 | GF/GFS-WX536 | 536 | 670 | 596 | 745 | WD287TAD61L-10/1800 | 618-680 | EL 354F | 536 | Smartgen 6120 | Detail
+        ⇒ model: WD287TAD61L-10/1800 → WD287TAD61L-10
+   49 | GF/GFS-WX550 | 550 | 688 | 611 | 764 | WD327TAD68-10/1800 | 682-750 | EL 354G | 550 | Smartgen 6120 | Detail
+        ⇒ model: WD327TAD68-10/1800 → WD327TAD68-10
+   50 | GF/GFS-WX640 | 640 | 800 | 711 | 889 | WD327TAD78-10/1800 | 780-858 | EL 404C | 640 | Smartgen 6120 | Detail
+        ⇒ model: WD327TAD78-10/1800 → WD327TAD78-10
+   51 | GF/GFS-WX640 | 640 | 800 | 711 | 889 | WD327TAD82-10/1800 | 820-902 | EL 404C | 640 | Smartgen 6120 | Detail
+        ⇒ model: WD327TAD82-10/1800 → WD327TAD82-10
+
+[eastern-lion-fuan n119 bảng 25] ×52
+  H: | | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller
+    0 | GF/GFS-WX184 | 184 | 230 | 204 | 255 | WD129TAD23/1500 | 235-259 | EL 274J | 184 | Smartgen 6120
+        ⇒ model: WD129TAD23/1500 → WD129TAD23
+    1 | GF/GFS-WX200 | 200 | 250 | 222 | 278 | WD129TAD25/1500 | 258-284 | EL 274K | 200 | Smartgen 6120
+        ⇒ model: WD129TAD25/1500 → WD129TAD25
+    2 | GF/GFS-WX236 | 236 | 295 | 262 | 328 | WD135TAD28/1500 | 280-308 | EL 314D | 236 | Smartgen 6120
+        ⇒ model: WD135TAD28/1500 → WD135TAD28
+    3 | GF/GFS-WX236 | 236 | 295 | 262 | 328 | WD145TAD30/1500 | 309-340 | EL 314D | 236 | Smartgen 6120
+        ⇒ model: WD145TAD30/1500 → WD145TAD30
+    4 | GF/GFS-WX260 | 260 | 325 | 289 | 361 | WD145TAD33L/1500 | 339-373 | EL 314E | 260 | Smartgen 6120
+        ⇒ model: WD145TAD33L/1500 → WD145TAD33L
+    5 | GF/GFS-WX280 | 280 | 350 | 311 | 389 | WD145TAD35/1500 | 353-388 | EL 314FS | 280 | Smartgen 6120
+        ⇒ model: WD145TAD35/1500 → WD145TAD35
+    6 | GF/GFS-WX304 | 304 | 380 | 338 | 423 | WD269TAD38/1500 | 382-420 | EL 314F | 304 | Smartgen 6120
+        ⇒ model: WD269TAD38/1500 → WD269TAD38
+    7 | GF/GFS-WX320 | 320 | 400 | 356 | 445 | WD269TAD41/1500 | 418-460 | EL 314G | 320 | Smartgen 6120
+        ⇒ model: WD269TAD41/1500 → WD269TAD41
+    8 | GF/GFS-WX360 | 360 | 450 | 400 | 500 | WD269TAD43/1500 | 432-475 | EL 354C | 360 | Smartgen 6120
+        ⇒ model: WD269TAD43/1500 → WD269TAD43
+    9 | GF/GFS-WX360 | 360 | 450 | 400 | 500 | WD269TAD45/1500 | 465-512 | EL 354C | 360 | Smartgen 6120
+        ⇒ model: WD269TAD45/1500 → WD269TAD45
+   10 | GF/GFS-WX360 | 360 | 450 | 400 | 500 | WD269TAD48/1500 | 482-530 | EL 354C | 360 | Smartgen 6120
+        ⇒ model: WD269TAD48/1500 → WD269TAD48
+   11 | GF/GFS-WX400 | 400 | 500 | 444 | 555 | WD269TAD50/1500 | 506-556 | EL 354D | 400 | Smartgen 6120
+        ⇒ model: WD269TAD50/1500 → WD269TAD50
+   12 | GF/GFS-WX440 | 440 | 550 | 489 | 611 | WD269TAD56/1500 | 562-618 | EL 354ES | 440 | Smartgen 6120
+        ⇒ model: WD269TAD56/1500 → WD269TAD56
+   13 | GF/GFS-WX480 | 480 | 600 | 533 | 666 | WD287TAD58/1500 | 588-647 | EL 354E | 480 | Smartgen 6120
+        ⇒ model: WD287TAD58/1500 → WD287TAD58
+   14 | GF/GFS-WX500 | 500 | 625 | 556 | 695 | WD287TAD61L/1500 | 618-680 | EL 354FS | 500 | Smartgen 6120
+        ⇒ model: WD287TAD61L/1500 → WD287TAD61L
+   15 | GF/GFS-WX536 | 536 | 670 | 596 | 745 | WX287TAD68/1500 | 682-750 | EL 354F | 536 | Smartgen 6120
+        ⇒ model: WX287TAD68/1500 → WX287TAD68
+   16 | GF/GFS-WX320 | 320 | 400 | 356 | 445 | WD164TAD43/1500 | 430-473 | EL 314G | 320 | Smartgen 6120
+        ⇒ model: WD164TAD43/1500 → WD164TAD43
+   17 | GF/GFS-WX360 | 360 | 450 | 400 | 500 | WD164TAD45/1500 | 450-495 | EL 354C | 360 | Smartgen 6120
+        ⇒ model: WD164TAD45/1500 → WD164TAD45
+   18 | GF/GFS-WX500 | 500 | 625 | 556 | 695 | WD180TAD61/1500 | 618-680 | EL 354FS | 500 | Smartgen 6120
+        ⇒ model: WD180TAD61/1500 → WD180TAD61
+   19 | GF/GFS-WX536 | 536 | 670 | 596 | 745 | WD327TAD68/1500 | 682-750 | EL 354F | 536 | Smartgen 6120
+        ⇒ model: WD327TAD68/1500 → WD327TAD68
+   20 | GF/GFS-WX600 | 600 | 750 | 667 | 834 | WD327TAD73/1500 | 730-803 | EL 354H | 600 | Smartgen 6120
+        ⇒ model: WD327TAD73/1500 → WD327TAD73
+   21 | GF/GFS-WX640 | 640 | 800 | 711 | 889 | WD327TAD78/1500 | 780-858 | EL 404C | 640 | Smartgen 6120
+        ⇒ model: WD327TAD78/1500 → WD327TAD78
+   22 | GF/GFS-WX640 | 640 | 800 | 711 | 889 | WD327TAD82/1500 | 820-902 | EL 404C | 640 | Smartgen 6120
+        ⇒ model: WD327TAD82/1500 → WD327TAD82
+   23 | GF/GFS-WX728 | 728 | 910 | 809 | 1011 | WD327TAD88/1500 | 882-970 | EL 404D | 728 | Smartgen 6120
+        ⇒ model: WD327TAD88/1500 → WD327TAD88
+   24 | GF/GFS-WX800 | 800 | 1000 | 889 | 1111 | WD327TAD100/1500 | 1000-— | EL 404E | 800 | Smartgen 6120
+        ⇒ model: WD327TAD100/1500 → WD327TAD100
+   25 | GF/GFS-WX904 | 904 | 1130 | 1004 | 1255 | WD360TAD110/1500 | 1100-— | EL 404F | 904 | Smartgen 6120
+        ⇒ model: WD360TAD110/1500 → WD360TAD110
+   26 | GF/GFS-WX1000 | 1000 | 1250 | 1111 | 1389 | WD360TAD120/1500 | 1200-— | EL 404G | 1000 | Smartgen 6120
+        ⇒ model: WD360TAD120/1500 → WD360TAD120
+   27 | GF/GFS-WX48 | 48 | 60 | 53 | 66 | WJ43D6/1500 | 56-61.6 | EL 224E | 48 | Smartgen 6120
+        ⇒ model: WJ43D6/1500 → WJ43D6
+   28 | GF/GFS-WX58 | 58 | 73 | 64 | 80 | WJ45TAD7/1500 | 66-72.6 | EL 224F | 58 | Smartgen 6120
+        ⇒ model: WJ45TAD7/1500 → WJ45TAD7
+   29 | GF/GFS-WX68 | 68 | 85 | 76 | 95 | WJ65TD8/1500 | 84-92.4 | EL 224G | 68 | Smartgen 6120
+        ⇒ model: WJ65TD8/1500 → WJ65TD8
+   30 | GF/GFS-WX80 | 80 | 100 | 89 | 111 | WJ68TAD11/1500 | 110-121 | EL 274C | 80 | Smartgen 6120
+        ⇒ model: WJ68TAD11/1500 → WJ68TAD11
+   31 | GF/GFS-WX128 | 128 | 160 | 142 | 178 | WJ78TAD17/1500 | 170-187 | EL 274F | 128 | Smartgen 6120
+        ⇒ model: WJ78TAD17/1500 → WJ78TAD17
+   32 | GF/GFS-WX160 | 160 | 200 | 178 | 223 | WJ97TAD21/1500 | 215-236 | EL 274H | 160 | Smartgen 6120
+        ⇒ model: WJ97TAD21/1500 → WJ97TAD21
+   33 | GF/GFS-WX184 | 184 | 230 | 204 | 255 | WJ97TAD24/1500 | 240-264 | EL 274J | 184 | Smartgen 6120
+        ⇒ model: WJ97TAD24/1500 → WJ97TAD24
+   34 | GF/GFS-WX184 | 184 | 230 | 204 | 255 | WD129TAD23-10/1800 | 235-259 | EL 274J | 184 | Smartgen 6120
+        ⇒ model: WD129TAD23-10/1800 → WD129TAD23-10
+   35 | GF/GFS-WX200 | 200 | 250 | 222 | 278 | WD129TAD25-10/1800 | 258-284 | EL 274K | 200 | Smartgen 6120
+        ⇒ model: WD129TAD25-10/1800 → WD129TAD25-10
+   36 | GF/GFS-WX236 | 236 | 295 | 262 | 328 | WD135TAD28-10/1800 | 280-308 | EL 314D | 236 | Smartgen 6120
+        ⇒ model: WD135TAD28-10/1800 → WD135TAD28-10
+   37 | GF/GFS-WX260 | 260 | 325 | 289 | 361 | WD145TAD30-10/1800 | 309-340 | EL 314E | 260 | Smartgen 6120
+        ⇒ model: WD145TAD30-10/1800 → WD145TAD30-10
+   38 | GF/GFS-WX280 | 280 | 350 | 311 | 389 | WD145TAD33-10/1800 | 339-373 | EL 314FS | 280 | Smartgen 6120
+        ⇒ model: WD145TAD33-10/1800 → WD145TAD33-10
+   39 | GF/GFS-WX280 | 280 | 350 | 311 | 389 | WD145TAD35-10/1800 | 353-388 | EL 314FS | 280 | Smartgen 6120
+        ⇒ model: WD145TAD35-10/1800 → WD145TAD35-10
+   40 | GF/GFS-WX304 | 304 | 380 | 338 | 423 | WD269TAD38-10/1800 | 382-420 | EL 314F | 304 | Smartgen 6120
+        ⇒ model: WD269TAD38-10/1800 → WD269TAD38-10
+   41 | GF/GFS-WX360 | 360 | 450 | 400 | 500 | WD269TAD41-10/1800 | 418-460 | EL 354C | 360 | Smartgen 6120
+        ⇒ model: WD269TAD41-10/1800 → WD269TAD41-10
+   42 | GF/GFS-WX360 | 360 | 450 | 400 | 500 | WD269TAD43-10/1800 | 432-475 | EL 354C | 360 | Smartgen 6120
+        ⇒ model: WD269TAD43-10/1800 → WD269TAD43-10
+   43 | GF/GFS-WX400 | 400 | 500 | 444 | 555 | WD269TAD45-10/1800 | 465-512 | EL 354D | 400 | Smartgen 6120
+        ⇒ model: WD269TAD45-10/1800 → WD269TAD45-10
+   44 | GF/GFS-WX400 | 400 | 500 | 444 | 555 | WD269TAD48-10/1800 | 482-530 | EL 354D | 400 | Smartgen 6120
+        ⇒ model: WD269TAD48-10/1800 → WD269TAD48-10
+   45 | GF/GFS-WX440 | 440 | 550 | 489 | 611 | WD269TAD50-10/1800 | 506-556 | EL 354ES | 440 | Smartgen 6120
+        ⇒ model: WD269TAD50-10/1800 → WD269TAD50-10
+   46 | GF/GFS-WX480 | 480 | 600 | 533 | 666 | WD269TAD56-10/1800 | 562-618 | EL 354E | 480 | Smartgen 6120
+        ⇒ model: WD269TAD56-10/1800 → WD269TAD56-10
+   47 | GF/GFS-WX500 | 500 | 625 | 556 | 695 | WD287TAD58-10/1800 | 588-647 | EL 354FS | 500 | Smartgen 6120
+        ⇒ model: WD287TAD58-10/1800 → WD287TAD58-10
+   48 | GF/GFS-WX536 | 536 | 670 | 596 | 745 | WD287TAD61L-10/1800 | 618-680 | EL 354F | 536 | Smartgen 6120
+        ⇒ model: WD287TAD61L-10/1800 → WD287TAD61L-10
+   49 | GF/GFS-WX550 | 550 | 688 | 611 | 764 | WD327TAD68-10/1800 | 682-750 | EL 354G | 550 | Smartgen 6120
+        ⇒ model: WD327TAD68-10/1800 → WD327TAD68-10
+   50 | GF/GFS-WX640 | 640 | 800 | 711 | 889 | WD327TAD78-10/1800 | 780-858 | EL 404C | 640 | Smartgen 6120
+        ⇒ model: WD327TAD78-10/1800 → WD327TAD78-10
+   51 | GF/GFS-WX640 | 640 | 800 | 711 | 889 | WD327TAD82-10/1800 | 820-902 | EL 404C | 640 | Smartgen 6120
+        ⇒ model: WD327TAD82-10/1800 → WD327TAD82-10
+
+[jet-power n115 bảng 14] ×5
+  H: | Model | 416V / 60Hz / 1800RPM | ISUZU Diesel Engine | Alternator
+  H: | Standby output | Prime Output | Model / Output | Engine type | Displacement | Bore×Stroke | BRUSHLESS
+  H: | KVA | KW | KVA | KW | No. of Cylinder | Governor | (L) | (MM) | 100% copper
+    0 | IS-28 | 27.5 | 22 | 25 | 20 | JE493DB-03/24KW | L4 | Mechanical | 2.771 | 93×102 | JET184FS/20KW
+        ⇒ model: JE493DB-03/24KW → JE493DB-03
+    1 | IS-33 | 33 | 26.4 | 30 | 24 | JE493DB-01/28KW | L4 | Mechanical | 2.771 | 93×102 | JET184G/25KW
+        ⇒ model: JE493DB-01/28KW → JE493DB-01
+    2 | IS-38 | 38 | 30 | 35 | 28 | JE493ZDB-03/34KW | L4 | Mechanical | 2.771 | 93×102 | JET184H/30KW
+        ⇒ model: JE493ZDB-03/34KW → JE493ZDB-03
+    3 | IS-55 | 55 | 44 | 50 | 40 | JE493ZLDB-01/46KW | L4 | Mechanical | 2.771 | 93×102 | JET224C/40KW
+        ⇒ model: JE493ZLDB-01/46KW → JE493ZLDB-01
+    4 | IS-69 | 69 | 55 | 63 | 50 | JE493ZLDC-01/61KW | L4 | Mechanical | 2.771 | 93×102 | JET224E/50KW
+        ⇒ model: JE493ZLDC-01/61KW → JE493ZLDC-01
+
+[jet-power n123 bảng 19] ×8
+  H: | Model | 416V / 60Hz / 1800RPM | Yangdong Diesel Engine 1800rpm | Alternator / 60Hz | Open type | Soundproof type
+  H: | Standby output | Prime Output | Model / Output | Engine type | Displacement | Bore×Stroke | Stamford type | Packing (mm) | Weight | Packing (mm) | Weight
+  H: | KVA | KW | KVA | KW | No. of Cylinder | Governor | (L) | (MM) | Brushless type | (L x W x H) | Kg | (L x W x H) | Kg
+    0 | YD-11 | 12 | 9.6 | 11 | 8.8 | YD385D/13KW | L3 | Mechanical | 1.532 | 85×90 | JET164B/8.8KW | 1650*800*1000 | 510 | 2100*900*1100 | 720
+        ⇒ model: YD385D/13KW → YD385D
+    1 | YD-14 | 15 | 12 | 14 | 11 | YD385D/13KW | L3 | Mechanical | 1.532 | 85×90 | JET164C/11KW | 1650*800*1000 | 530 | 2100*900*1100 | 740
+        ⇒ model: YD385D/13KW → YD385D
+    2 | YD-16 | 17.5 | 14 | 16 | 13 | YD480D/17KW | L4 | Mechanical | 1.809 | 80×90 | JET164D/13KW | 1650*800*1000 | 580 | 2100*900*1100 | 790
+        ⇒ model: YD480D/17KW → YD480D
+    3 | YD-20 | 22 | 17.6 | 20 | 16 | YND485D/20KW | L4 | Mechanical | 2.043 | 85×90 | JET164D/16KW | 1650*800*1000 | 600 | 2200*1000*1150 | 800
+        ⇒ model: YND485D/20KW → YND485D
+    4 | YD-25 | 27.5 | 22 | 25 | 20 | YSD490D/25KW | L4 | Mechanical | 2.54 | 90×100 | JET184E/20KW | 1800*800*1100 | 750 | 2200*1000*1150 | 980
+        ⇒ model: YSD490D/25KW → YSD490D
+    5 | YD-30 | 33 | 26.4 | 30 | 24 | Y4100D/333KW | L4 | Mechanical | 3.298 | 100×105 | JET184F/24KW | 1800*800*1100 | 800 | 2200*1000*1150 | 1030
+        ⇒ model: Y4100D/333KW → Y4100D
+    6 | YD-38 | 41 | 33 | 37.5 | 30 | Y4102D/39.6KW | L4 | Mechanical | 3.857 | 102×118 | JET184G/30KW | 1900*900*1250 | 910 | 2300*1000*1300 | 1150
+        ⇒ model: Y4102D/39.6KW → Y4102D
+    7 | YD-50 | 55 | 44 | 50 | 40 | Y4102ZD/48KW | L4 | Mechanical | 3.857 | 102×118 | JET184J/40KW | 1900*900*1250 | 980 | 2300*1000*1300 | 1230
+        ⇒ model: Y4102ZD/48KW → Y4102ZD
+
+[jet-power n124 bảng 20] ×8
+  H: | Model | 400V / 50Hz /1500RPM | Yangdong Diesel Engine 1500rpm | Alternator | Open type | Soundproof type
+  H: | Standby output | Prime Output | Model | Engine type | Displacement | Bore×Stroke | Stamford type | Packing (mm) | Weight | Packing (mm) | Weight
+  H: | KVA | KW | KVA | KW | No. of Cylinder | Governor | (L) | (MM) | Brushless type | (L x W x H) | Kg | (L x W x H) | Kg
+    0 | YD-12 | 12 | 9.6 | 11 | 8.8 | YD385D/11KW | L3 | Mechanical | 1.532 | 85×90 | JET164B/8.8KW | 1650*800*1000 | 510 | 2100*900*1100 | 720
+        ⇒ model: YD385D/11KW → YD385D
+    1 | YD-15 | 15 | 12 | 13.8 | 11 | YD480D/14KW | L4 | Mechanical | 1.809 | 80×90 | JET164C/10.8KW | 1650*800*1000 | 530 | 2100*900*1100 | 740
+        ⇒ model: YD480D/14KW → YD480D
+    2 | YD-17 | 16.5 | 13.2 | 15 | 12 | YD485D/17KW | L4 | Mechanical | 2.043 | 85×90 | JET164D/12.8KW | 1650*800*1000 | 580 | 2100*900*1100 | 790
+        ⇒ model: YD485D/17KW → YD485D
+    3 | YD-25 | 25 | 20 | 22.5 | 18 | Y490D/24KW | L4 | Mechanical | 2.54 | 90×100 | JET184E/18KW | 1800*800*1100 | 600 | 2200*1000*1150 | 820
+        ⇒ model: Y490D/24KW → Y490D
+    4 | YD-28 | 28 | 22 | 25 | 20 | Y4100D/34.5KW | L4 | Mechanical | 3.298 | 100×105 | JET184F/22KW | 1800*800*1100 | 750 | 2200*1000*1150 | 980
+        ⇒ model: Y4100D/34.5KW → Y4100D
+    5 | YD-35 | 35 | 28 | 31 | 25 | Y4102D/33KW | L4 | Mechanical | 3.857 | 102×118 | JET184G/25KW | 1800*800*1100 | 800 | 2200*1000*1150 | 1030
+        ⇒ model: Y4102D/33KW → Y4102D
+    6 | YD-42 | 42 | 33 | 38 | 30 | Y4105D/38KW | L4 | Mechanical | 4.1 | 105×118 | JET184H/30KW | 1900*900*1250 | 910 | 2300*1000*1300 | 1150
+        ⇒ model: Y4105D/38KW → Y4105D
+    7 | YD-55 | 55 | 44 | 50 | 40 | Y4105ZLD/55KW | L4 | Mechanical | 4.1 | 105×118 | JET224D/40KW | 1900*900*1250 | 980 | 2300*1000*1300 | 1230
+        ⇒ model: Y4105ZLD/55KW → Y4105ZLD
+
+[jet-power n125 bảng 21] ×8
+  H: | Model | 400V / 50Hz / 1500RPM | Kubota Diesel Engine | Alternator | Open type | Soundproof type
+  H: | Standby output | Prime Output | Model | Engine type | Displacement | Bore×Stroke | Stamford Copy | Packing (mm) | Weight | Packing (mm) | Weight
+  H: | KVA | KW | KVA | KW | No. of Cylinder | Aspirated | (L) | (MM) | (L x W x H) | Kg | (L x W x H) | Kg
+    0 | K-7 | 7.5 | 6 | 7 | 5.5 | D905-E2BG-CHN-1/6.7KW | 3 | Naturally Aspirated | 0.898 | 72×73.6 | JET164A1/5.5KW | 1200*650*1000 | 320 | 1800*850*1100 | 540
+        ⇒ model: D905-E2BG-CHN-1/6.7KW → D905-E2BG-CHN-1
+    1 | K-9 | 9 | 7.5 | 8.5 | 6.8 | D1105-E2BG-CHN-1/8.4KW | 3 | Naturally Aspirated | 1.123 | 78 x 78.4 | JET164A/6.8KW | 1200*650*1000 | 350 | 1800*850*1100 | 570
+        ⇒ model: D1105-E2BG-CHN-1/8.4KW → D1105-E2BG-CHN-1
+    2 | K-13 | 13 | 10 | 11 | 8.8 | V1505-E2BG-CHN-1/11.1KW | 4 | Naturally Aspirated | 1.498 | 78 x 78.4 | JET164B/8.8KW | 1600*750*1050 | 400 | 2000*950*1150 | 630
+        ⇒ model: V1505-E2BG-CHN-1/11.1KW → V1505-E2BG-CHN-1
+    3 | K-14 | 14 | 11 | 12.5 | 10 | D1703-E2BG-CHN-1/12.8kw | 3 | Naturally Aspirated | 1.647 | 87 x 92.4 | JET164C/10.8KW | 1600*750*1050 | 450 | 2000*950*1150 | 680
+        ⇒ model: D1703-E2BG-CHN-1/12.8kw → D1703-E2BG-CHN-1
+    4 | K-18 | 18 | 14 | 16 | 12.8 | V2203-E2BG-CHN-1/17.2kw | 4 | Naturally Aspirated | 2.197 | 87 x 92.4 | JET164D/12.8KW | 1600*750*1050 | 560 | 2000*950*1150 | 790
+        ⇒ model: V2203-E2BG-CHN-1/17.2kw → V2203-E2BG-CHN-1
+    5 | K-22 | 22 | 17.6 | 20 | 16 | V2003-T-E2BG-CHN-1/20.4KW | 4 | Turbocharged | 1.999 | 83 x 92.4 | JET184E/18KW | 1600*750*1050 | 580 | 2000*950*1150 | 810
+        ⇒ model: V2003-T-E2BG-CHN-1/20.4KW → V2003-T-E2BG-CHN-1
+    6 | K-30 | 30 | 24.2 | 27.5 | 22 | V3300-E2BG2-CHN-1/26.3KW | 4 | Naturally Aspirated | 3.318 | 98 x 110 | JET184F/22KW | 1800*750*1050 | 620 | 2200*950*1150 | 850
+        ⇒ model: V3300-E2BG2-CHN-1/26.3KW → V3300-E2BG2-CHN-1
+    7 | K-39 | 39 | 31 | 35 | 28 | V3300-T-E2BG2-CHN-1/32.1kw | 4 | Turbocharged | 3.318 | 98 x 110 | JET184H/30KW | 1800*750*1050 | 650 | 2200*950*1150 | 880
+        ⇒ model: V3300-T-E2BG2-CHN-1/32.1kw → V3300-T-E2BG2-CHN-1
+
+[jet-power n126 bảng 22] ×15
+  H: | Model | 400V / 50Hz / 1500RPM | DOOSAN Diesel Engine | Alternator | Open type | Soundproof type
+  H: | Standby output | Prime Output | Model | Engine type | Displacement | Bore×Stroke | Stamford Copy | Packing (mm) | Weight | Packing (mm) | Weight
+  H: | KVA | KW | KVA | KW | No. of Cylinder | Governor | (L) | (MM) | (L x W x H) | Kg | (L x W x H) | Kg
+    0 | DS-154 | 154 | 123 | 140 | 112 | DP086TA/137KW | L6 | Electric | 8.071 | 111×139 | JET274E/112KW | 2800*950*1600 | 1650 | 3600*1200*1800 | 2140
+        ⇒ model: DP086TA/137KW → DP086TA
+    1 | DS-175 | 175 | 140 | 160 | 128 | P086TI-I/149KW | L6 | Electric | 8.071 | 111×139 | JET274F/128KW | 2800*950*1600 | 1700 | 3600*1200*1800 | 2190
+        ⇒ model: JET274F/128KW → JET274F
+    2 | DS-220 | 220 | 176 | 200 | 160 | P086TI/177KW | L6 | Electric | 8.071 | 111×139 | JET274H/160KW | 2800*950*1600 | 1750 | 3600*1200*1800 | 2240
+        ⇒ model: JET274H/160KW → JET274H
+    3 | DS-250 | 250 | 200 | 225 | 180 | DP086LA/201KW | L6 | Electric | 8.071 | 111×139 | JET274J/180KW | 2800*950*1600 | 1810 | 3600*1200*1800 | 2300
+        ⇒ model: DP086LA/201KW → DP086LA
+    4 | DS-275 | 275 | 220 | 250 | 200 | P126TI/241KW | L6 | Electric | 11.051 | 123×155 | JET274K/200KW | 2970*1100*1600 | 2000 | 3650*1300*2000 | 2700
+        ⇒ model: JET274K/200KW → JET274K
+    5 | DS-300 | 300 | 240 | 275 | 220 | P126TI/241KW | L6 | Electric | 11.051 | 123×155 | JET444D/240KW | 2970*1100*1600 | 2100 | 3650*1300*2000 | 2800
+        ⇒ model: JET444D/240KW → JET444D
+    6 | DS-330 | 330 | 264 | 300 | 240 | P126TI-II/265KW | L6 | Electric | 11.051 | 126×155 | JET444D/240KW | 2970*1100*1600 | 2157 | 3650*1300*2000 | 2857
+        ⇒ model: JET444D/240KW → JET444D
+    7 | DS-413 | 413 | 330 | 375 | 300 | P158LE-I/327KW | V8 | Electric | 14.6 | 128×142 | JET444FS/304KW | 3100*1400*1920 | 2664 | 3900*1800*2200 | 3400
+        ⇒ model: JET444FS/304KW → JET444FS
+    8 | DS-454 | 454 | 363 | 413 | 330 | P158LE/363KW | V8 | Electric | 14.6 | 128×142 | JET444F/320KW | 3100*1400*1920 | 2800 | 3900*1800*2200 | 3550
+        ⇒ model: JET444F/320KW → JET444F
+    9 | DS-500 | 500 | 400 | 450 | 360 | DP158LC/408KW | V8 | Electric | 14.6 | 128×142 | JET544C/360KW | 3600*1400*1920 | 2860 | 4600*1800*2200 | 3610
+        ⇒ model: DP158LC/408KW → DP158LC
+   10 | DS-550 | 550 | 440 | 500 | 400 | DP158LD/464KW | V8 | Electric | 14.6 | 128×142 | JET544D/400KW | 3600*1400*1920 | 2920 | 4600*1800*2200 | 3670
+        ⇒ model: DP158LD/464KW → DP158LD
+   11 | DS-625 | 625 | 500 | 563 | 450 | DP180LA/502KW | V10 | Electric | 18.3 | 128×142 | JET544E/480KW | 3600*1400*1920 | 3250 | 4600*1800*2200 | 4000
+        ⇒ model: DP180LA/502KW → DP180LA
+   12 | DS-688 | 688 | 550 | 625 | 500 | DP180LB/556KW | V10 | Electric | 18.3 | 128×142 | JET544FS/500KW | 3600*1400*1920 | 3320 | 4600*1800*2200 | 4070
+        ⇒ model: DP180LB/556KW → DP180LB
+   13 | DS-756 | 756 | 605 | 688 | 550 | DP222LB/604KW | V12 | Electric | 21.9 | 128×142 | JET544F/536KW | 4200*1400*1920 | 4200 | 5000*1800*2250 | 5000
+        ⇒ model: DP222LB/604KW → DP222LB
+   14 | DS-825 | 825 | 660 | 750 | 600 | DP222LC/657KW | V12 | Electric | 21.9 | 128×142 | JET634B/600KW | 4200*1400*1920 | 4300 | 5000*1800*2250 | 5100
+        ⇒ model: DP222LC/657KW → DP222LC
+
+[jet-power n127 bảng 23] ×9
+  H: | Model | 400V / 50Hz / 1500rpm | MITSUBISHI DIESEL ENGINE |
+  H: | Alternator | Open type | Soundproof type
+  H: | Standby Power | Prime Power | Engine | No. of Cylinders / Alignment | Bore/Stroke | Displacement | Fuel Consumption of Full Load | Governing Type | Compression Ratio | Packing (mm) | Weight | Packing (mm) | Weight
+    0 | M-715 | 715 | 572 | 650 | 520 | S6R2-PTA-C/575KW | 6L | 170×120 | 29.96 | 124L/h | Electronic | 14.1 | HCI544F/570KVA | 3650*1600*1900 | 5620 | 4600*2000*2250 | 6620
+        ⇒ model: S6R2-PTA-C/575KW → S6R2-PTA-C
+    1 | M-825 | 825 | 660 | 750 | 600 | S6R2-PTAA-C/645KW | 6L | 170×220 | 29.96 | 158L/h | Electronic | 14.1 | HCI634G/800KVA | 3650*1600*1900 | 5850 | 4600*2000*2250 | 6850
+        ⇒ model: S6R2-PTAA-C/645KW → S6R2-PTAA-C
+    2 | M-1375 | 1375 | 1100 | 1250 | 1000 | S12R-PTA-C/1080KW | 12V | 170×180 | 49.03 | 247L/h | Electronic | 14.0 | PI734A/1260KVA | 4600*2220*2500 | 9400 | 6050*2435*2585 | 11400
+        ⇒ model: S12R-PTA-C/1080KW → S12R-PTA-C
+    3 | M-1500 | 1500 | 1200 | 1375 | 1100 | S12R-PTA2-C/1165KW | 12V | 170×180 | 49.03 | 272L/h | Electronic | 13.5 | PI734B/1400KVA | 4600*2220*2500 | 9600 | 6050*2435*2585 | 11600
+        ⇒ model: S12R-PTA2-C/1165KW → S12R-PTA2-C
+    4 | M-1650 | 1650 | 1320 | 1500 | 1200 | S12R-PTAA2-C/1277KW | 12V | 170×180 | 49.03 | 331L/h | Electronic | 13.5 | PI734C/1550KVA | 4600*2220*2500 | 9800 | 6050*2435*2585 | 11800
+        ⇒ model: S12R-PTAA2-C/1277KW → S12R-PTAA2-C
+    5 | M-1875 | 1875 | 1500 | 1700 | 1360 | S16R-PTA-C/1450KW | 16V | 170×180 | 65.37 | 370L/h | Electronic | 14.0 | PI734ES/1775KVA | 5680*2350*2980 | 11750 | 12192*2435*2896 | 14750
+        ⇒ model: S16R-PTA-C/1450KW → S16R-PTA-C
+    6 | M-2063 | 2062.5 | 1650 | 1875 | 1500 | S16R-PTA2-C/1600KW | 16V | 170×180 | 65.37 | 408L/h | Electronic | 13.5 | PI 734E/1900KVA | 5680*2350*2980 | 13600 | 12192*2435*2896 | 16600
+        ⇒ model: S16R-PTA2-C/1600KW → S16R-PTA2-C
+    7 | M-2200 | 2200 | 1760 | 2000 | 1600 | S16R-PTAA2-C /1684KW | 16V | 170×180 | 65.37 | 441L/h | Electronic | 14.0 | PI 734F/2080KVA | 6050*2450*3460 | 14700 | 12192*2435*2896 | 17700
+        ⇒ model: S16R-PTAA2-C /1684KW → S16R-PTAA2-C
+    8 | M-2500 | 2500 | 2000 | 2250 | 1800 | S16R2-PTAW-C/1960KW | 16V | 170×220 | 79.9 | 484L/h | Electronic | 14.0 | PI734G/2200KVA | 6050*2450*3460 | 15200 | 12192*2435*2896 | 18200
+        ⇒ model: S16R2-PTAW-C/1960KW → S16R2-PTAW-C
+
+[jet-power n128 bảng 24] ×5
+  H: | Model | 400V / 50Hz / 1500RPM | ISUZU Diesel Engine | Alternator
+  H: | Standby output | Prime Output | Model / Output | Engine type | Displacement | Bore×Stroke | BRUSHLESS
+  H: | KVA | KW | KVA | KW | No. of Cylinder | Governor | (L) | (MM) | 100% copper
+    0 | IS-22 | 22 | 17.6 | 20 | 16 | JE493DB-04/21KW | L4 | Mechanical | 2.771 | 93×102 | JET184D/16KW
+        ⇒ model: JE493DB-04/21KW → JE493DB-04
+    1 | IS-28 | 27.5 | 22 | 25 | 20 | JE493DB-02/24KW | L4 | Mechanical | 2.771 | 93×102 | JET184FS/20KW
+        ⇒ model: JE493DB-02/24KW → JE493DB-02
+    2 | IS-33 | 33 | 26.4 | 30 | 24 | JE493ZDB-04/28KW | L4 | Mechanical | 2.771 | 93×102 | JET184G/25KW
+        ⇒ model: JE493ZDB-04/28KW → JE493ZDB-04
+    3 | IS-41 | 41 | 33 | 37.5 | 30 | JE493ZLDB-02/38KW | L4 | Mechanical | 2.771 | 93×102 | JET184H/30KW
+        ⇒ model: JE493ZLDB-02/38KW → JE493ZLDB-02
+    4 | IS-55 | 55 | 44 | 50 | 40 | JE493ZLDC-02/51KW | L4 | Mechanical | 2.771 | 93×102 | JET224D/40KW
+        ⇒ model: JE493ZLDC-02/51KW → JE493ZLDC-02
+
+[jet-power n130 bảng 26] ×9
+  H: | Model | 400V / 50Hz / 1500RPM | Japan Yanmar Diesel Engine | Alternator | Open type | Soundproof type
+  H: | Standby output | Prime Output | Model | Engine type | Displacement | Bore×Stroke | Stamford | Packing (mm) | Weight | Packing (mm) | Weight
+  H: | KVA | KW | KVA | KW | No. of Cylinder | Governor | (L) | (MM) | (L x W x H) | Kg | (L x W x H) | Kg
+    0 | YN-11 | 11 | 8.8 | 10 | 8 | 3TNV82A-GGE/9.9KW | 3 | Mechanical | 1.331 | 82x84 | PI044E/10KVA | 1200x600x950 | 430 | 1700x860x1060 | 630
+        ⇒ model: 3TNV82A-GGE/9.9KW → 3TNV82A-GGE
+    1 | YN-14 | 13.8 | 11 | 12.5 | 10 | 3TNV88-GGE/12.2KW | 3 | Mechanical | 1.642 | 88x90 | PI044F/12.5KVA | 1200x600x950 | 460 | 1700x860x1060 | 660
+        ⇒ model: 3TNV88-GGE/12.2KW → 3TNV88-GGE
+    2 | YN-16 | 16.5 | 13.2 | 15 | 12 | 4TNV88-GGE/16.4KW | 4 | Mechanical | 2.19 | 88x90 | PI044G/15KVA | 1400x660x1000 | 530 | 2000x900x1100 | 760
+        ⇒ model: 4TNV88-GGE/16.4KW → 4TNV88-GGE
+    3 | YN-20 | 20.0 | 16 | 17.5 | 14 | 4TNV88-GGE/16.4KW | 4 | Mechanical | 2.19 | 88x90 | PI044H/17.5KVA | 1400x660x1000 | 550 | 2000x900x1100 | 780
+        ⇒ model: 4TNV88-GGE/16.4KW → 4TNV88-GGE
+    4 | YN-22 | 22 | 17.6 | 20 | 16 | 4TNV84T-GGE/19.1KW | 4 | Mechanical | 1.995 | 84x90 | PI144D/20KVA | 1400x660x1000 | 570 | 2000x900x1100 | 800
+        ⇒ model: 4TNV84T-GGE/19.1KW → 4TNV84T-GGE
+    5 | YN-28 | 27.5 | 22 | 25 | 20 | 4TNV98-GGE/30.7KW | 4 | Mechanical | 3.319 | 98x110 | PI144E/25KVA | 1600x760x1000 | 600 | 2000x900x1100 | 880
+        ⇒ model: 4TNV98-GGE/30.7KW → 4TNV98-GGE
+    6 | YN-33 | 33 | 26.4 | 30 | 24 | 4TNV98-GGE/30.7KW | 4 | Mechanical | 3.319 | 98x110 | PI144G/30KVA | 1600x760x1000 | 620 | 2000x900x1100 | 900
+        ⇒ model: 4TNV98-GGE/30.7KW → 4TNV98-GGE
+    7 | YN-42 | 41.3 | 33 | 37.5 | 30 | 4TNV98T-GGE/37.7KW | 4 | Mechanical | 3.319 | 98x110 | PI144J/40KVA | 1800x800x1200 | 650 | 2200x900x1200 | 930
+        ⇒ model: 4TNV98T-GGE/37.7KW → 4TNV98T-GGE
+    8 | YN-55 | 55 | 44 | 50 | 40 | 4TNV106-GGE/44.9KW | 4 | Mechanical | 4.412 | 106x125 | UCI224D/50KVA | 1800x800x1200 | 680 | 2200x900x1200 | 960
+        ⇒ model: 4TNV106-GGE/44.9KW → 4TNV106-GGE
+
+[jet-power n134 bảng 29] ×18
+  H: | Model | 400V / 50Hz / 1500RPM | FAWDE Diesel Engine | Alternator | Open type | Soundproof type
+  H: | Standby | Prime | Model | Engine type | Displacement | Bore×Stroke | JET POWER BRAND | Packing (mm) | Weight | Packing (mm) | Weight
+  H: | KVA | KW | KVA | KW | No. of Cylinder | Governor | (L) | (MM) | BRUSHLESS TYPE | (L x W x H) | Kg | (L x W x H) | Kg
+    0 | XC-17 | 17 | 13.2 | 15 | 12 | 4DW81-23D/17KW | L4 | Mech. | 2.27 | 85×100 | 164D/12.8KW | 1450*650*1050 | 580 | 2000*950*1100 | 860
+        ⇒ model: 4DW81-23D/17KW → 4DW81-23D
+    1 | XC-23 | 23 | 18 | 20 | 16 | 4DW91-29D /21KW | L4 | Mech. | 2.54 | 90×100 | JET184E/18KW | 1450*650*1050 | 610 | 2000*950*1100 | 890
+        ⇒ model: 4DW91-29D /21KW → 4DW91-29D
+    2 | XC-28 | 28 | 22 | 25 | 20 | 4DW92-35D /26KW | L4 | Mech. | 2.54 | 90×100 | JET184F/22KW | 1450*650*1050 | 650 | 2000*950*1100 | 930
+        ⇒ model: 4DW92-35D /26KW → 4DW92-35D
+    3 | XC-33 | 33 | 26.4 | 30 | 24 | 4DX21-45D /33KW | L4 | Mech. | 3.86 | 102×118 | JET184G/25KW | 1800*760*1050 | 720 | 2200*950*1250 | 1070
+        ⇒ model: 4DX21-45D /33KW → 4DX21-45D
+    4 | XC-41 | 41 | 33 | 38 | 30 | 4DX22-50D /37KW | L4 | Mech. | 3.86 | 102×118 | JET184H/30KW | 1800*760*1050 | 800 | 2200*950*1250 | 1150
+        ⇒ model: 4DX22-50D /37KW → 4DX22-50D
+    5 | XC-55 | 55 | 44 | 50 | 40 | 4DX23-65D /48KW | L4 | Mech. | 3.86 | 102×118 | JET224D/40KW | 1800*760*1050 | 860 | 2200*950*1250 | 1210
+        ⇒ model: 4DX23-65D /48KW → 4DX23-65D
+    6 | XC-69 | 69 | 55 | 63 | 50 | 4110/125Z-09D/65KW | L4 | Mech. | 4.75 | 110×125 | JET224E/48KW | 2000*850*1100 | 980 | 2450*950*1300 | 1480
+        ⇒ model: 4110/125Z-09D/65KW → 4110/125Z-09D
+    7 | XC-83 | 83 | 66 | 75 | 60 | CA4DF2-12D/84KW | L4 | Mech. | 4.75 | 110×125 | JET224F/58KW | 2450*850*1100 | 1120 | 2850*1080*1550 | 1920
+        ⇒ model: CA4DF2-12D/84KW → CA4DF2-12D
+    8 | XC-96 | 96 | 77 | 88 | 70 | CA4DF2-12D/84KW | L4 | Mech. | 4.75 | 110×125 | JET224G/68KW | 2450*850*1100 | 1180 | 2850*1080*1550 | 1980
+        ⇒ model: CA4DF2-12D/84KW → CA4DF2-12D
+    9 | XC-110 | 110 | 88 | 100 | 80 | CA6DF2D-14D/96KW | L6 | Electronic | 6.55 | 110×115 | JET274C/80KW | 2550*1000*1550 | 1350 | 2850*1080*1550 | 2150
+        ⇒ model: CA6DF2D-14D/96KW → CA6DF2D-14D
+   10 | XC-138 | 138 | 110 | 125 | 100 | CA6DF2-17D/125KW | L6 | Electronic | 7.13 | 110×125 | JET274D1/100KW | 2550*1000*1550 | 1450 | 2850*1080*1550 | 2250
+        ⇒ model: CA6DF2-17D/125KW → CA6DF2-17D
+   11 | XC-165 | 165 | 132 | 150 | 120 | CA6DF2-19D/140KW | L6 | Electronic | 7.13 | 110×125 | JET274F/128KW | 2550*1000*1550 | 1650 | 3100*1100*1650 | 2800
+        ⇒ model: CA6DF2-19D/140KW → CA6DF2-19D
+   12 | XC-206 | 206 | 165 | 188 | 150 | CA6DL1-24/176KW | L6 | Electronic | 7.7 | 110×135 | JET274H/160KW | 2800*1050*1650 | 1800 | 3100*1100*1650 | 2950
+        ⇒ model: CA6DL1-24/176KW → CA6DL1-24
+   13 | XC-250 | 250 | 200 | 225 | 180 | CA6DL2-30D/227KW | L6 | Electronic | 8.57 | 112×145 | JET274J/184KW | 2800*1050*1650 | 2100 | 3600*1400*1850 | 3400
+        ⇒ model: CA6DL2-30D/227KW → CA6DL2-30D
+   14 | XC-275 | 275 | 220 | 250 | 200 | CA6DL2-30D/227KW | L6 | Electronic | 8.57 | 112×145 | JET274K/200KW | 2800*1050*1650 | 2350 | 3600*1400*1850 | 3650
+        ⇒ model: CA6DL2-30D/227KW → CA6DL2-30D
+   15 | XC-344 | 344 | 275 | 313 | 250 | CA6DM2J-39D/287KW | L6 | Electronic | 11.04 | 123×155 | JET444D/236KW | 3050*1250*1700 | 2550 | 3600*1400*1850 | 3850
+        ⇒ model: CA6DM2J-39D/287KW → CA6DM2J-39D
+   16 | XC-358 | 358 | 286 | 325 | 260 | CA6DM2J-41D/300KW | L6 | Electronic | 11.04 | 123×155 | JET444E/260KW | 3050*1250*1700 | 2650 | 3800*1400*2200 | 4150
+        ⇒ model: CA6DM2J-41D/300KW → CA6DM2J-41D
+   17 | XC-413 | 413 | 330 | 375 | 300 | CA6DN1J-45D/332KW | L6 | Electronic | 12.53 | 131×155 | JET444FS/304KW | 3200*1250*1900 | 2800 | 3800*1400*2200 | 4300
+        ⇒ model: CA6DN1J-45D/332KW → CA6DN1J-45D
+
+[jiuan-power n121 bảng 20] ×1
+  undefined (bảng nhãn)
+        ⇒ model: 6ZTAA13-G2 (DCEC) → 6ZTAA13-G2
+
+[jiuan-power n122 bảng 21] ×1
+  undefined (bảng nhãn)
+        ⇒ model: 6ZTAA13-G2 (DCEC) → 6ZTAA13-G2
+
+[jiuan-power n146 bảng 45] ×1
+  undefined (bảng nhãn)
+        ⇒ model: 6ZTAA13-G2 (DCEC) → 6ZTAA13-G2
+
+[kaihua-genset n122 bảng 28] ×22
+  H: | HICHAIPOWER Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension mm Open Type | Dimension mm Soundproof Type | Data PDF
+   23 | HC-825GF | 825 | 750 | UK 4006-23TAG2A | S5L1D-H1 | 3965*1710*2200 | ISO 20'ft GP | Download
+        ⇒ model: UK 4006-23TAG2A → 4006-23TAG2A
+   24 | HC-825GF | 825 | 750 | India 4006-23TAG2A | S5L1D-H1 | 3965*1710*2200 | ISO 20'ft GP | Download
+        ⇒ model: India 4006-23TAG2A → 4006-23TAG2A
+   25 | HC-880GF | 880 | 800 | UK 4006-23TAG3A | S6L1D-C4 | 3965*1710*2200 | ISO 20'ft GP | Download
+        ⇒ model: UK 4006-23TAG3A → 4006-23TAG3A
+   26 | HC-880GF | 880 | 800 | India 4006-23TAG3A | S6L1D-C4 | 3965*1710*2200 | ISO 20'ft GP | Download
+        ⇒ model: India 4006-23TAG3A → 4006-23TAG3A
+   27 | HC-1100GF | 1100 | 1000 | UK 4008TAG2 | S6L1D-E5 | 4650*2046*2300 | ISO 20'ft GP | Download
+        ⇒ model: UK 4008TAG2 → 4008TAG2
+   28 | HC-1100GF | 1100 | 1000 | India 4008TAG2 | S6L1D-E4 | 4650*2046*2300 | ISO 20'ft GP | Download
+        ⇒ model: India 4008TAG2 → 4008TAG2
+   29 | HC-1250GF | 1250 | 1125 | UK 4008-30TAG3 | S6L1D-F4 | 4650*2046*2300 | ISO 20'ft GP | Download
+        ⇒ model: UK 4008-30TAG3 → 4008-30TAG3
+   30 | HC-1250GF | 1250 | 1125 | India 4008-30TAG3 | S6L1D-F4 | 4650*2046*2300 | ISO 20'ft GP | Download
+        ⇒ model: India 4008-30TAG3 → 4008-30TAG3
+   31 | HC-1375GF | 1375 | 1250 | UK 4012-46TWG2A | S6L1D-G4 | 4700*1780*2400 | ISO 20'ft HQ | Download
+        ⇒ model: UK 4012-46TWG2A → 4012-46TWG2A
+   32 | HC-1375GF | 1375 | 1250 | India 4012-46TWG2A | S6L1D-G4 | 4700*1780*2400 | ISO 20'ft HQ | Download
+        ⇒ model: India 4012-46TWG2A → 4012-46TWG2A
+   33 | HC-1650 | 1650 | 1500 | UK 4012-46TAG2A | S7L1D-C41 | 5000*2200*2850 | ISO 20'ft HQ | Download
+        ⇒ model: UK 4012-46TAG2A → 4012-46TAG2A
+   34 | HC-1650GF | 1650 | 1500 | India 4012-46TAG2A | S7L1D-C41 | 5000*2200*2850 | ISO 20'ft HQ | Download
+        ⇒ model: India 4012-46TAG2A → 4012-46TAG2A
+   35 | HC-1800GF | 1812.5 | 1650 | UK 4012-46TAG3A | S7L1D-D41 | 5100*2200*2850 | ISO 20'ft HQ | Download
+        ⇒ model: UK 4012-46TAG3A → 4012-46TAG3A
+   36 | HC-1800GF | 1812.5 | 1650 | India 4012-46TAG3A | S7L1D-D41 | 5100*2200*2850 | ISO 20'ft HQ | Download
+        ⇒ model: India 4012-46TAG3A → 4012-46TAG3A
+   37 | HC-1875GF | 1875 | 1705 | UK 4012-46TAG3A | S7L1D-E41 | 5100*2200*2850 | ISO 20'ft HQ | Download
+        ⇒ model: UK 4012-46TAG3A → 4012-46TAG3A
+   38 | HC-1875GF | 1875 | 1705 | India 4012-46TAG3A | S7L1D-E41 | 5100*2200*2850 | ISO 20'ft HQ | Download
+        ⇒ model: India 4012-46TAG3A → 4012-46TAG3A
+   39 | HC-2000GF | 2000 | 1850 | UK 4016TAG1A | S7L1D-F41 | 5400*2650*2650 | ISO 40'ft HQ | Download
+        ⇒ model: UK 4016TAG1A → 4016TAG1A
+   40 | HC-2000GF | 2000 | 1850 | India 4016TAG1A | S7L1D-F41 | 5400*2650*2650 | ISO 40'ft HQ | Download
+        ⇒ model: India 4016TAG1A → 4016TAG1A
+   43 | HC-2250GF | 2250 | 2050 | UK 4016TAG2A | S7L1D-G41 | 5400*2650*2650 | ISO 40'ft HQ | Download
+        ⇒ model: UK 4016TAG2A → 4016TAG2A
+   44 | HC-2250GF | 2250 | 2050 | India 4016TAG2A | S7L1D-G41 | 5400*2650*2650 | ISO 40'ft HQ | Download
+        ⇒ model: India 4016TAG2A → 4016TAG2A
+   45 | HC-2500GF | 2500 | 2272.5 | UK 4016-61TRG3 | S7L1D-J4 or PI 734H1 | 6000*2700*3400 | ISO 40'ft HQ | Download
+        ⇒ model: UK 4016-61TRG3 → 4016-61TRG3
+   46 | HC-2500GF | 2500 | 2272.5 | India 4016-61TRG3 | S7L1D-J4 or PI 734H1 | 6000*2700*3400 | ISO 40'ft HQ | Download
+        ⇒ model: India 4016-61TRG3 → 4016-61TRG3
+
+[kc-generatorset n102 bảng 1] ×1
+  H: | Engine: NTA855-G1B | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade sile
+    0 | Power factor | 400/230 | 50 | 3 | 468 | 260 | 0.8 | Engine parameters | Manufacturer/Model | Chongkang/NTA855-G1B | Intake system | Supercharged, intercooled
+        ⇒ model: Chongkang/NTA855-G1B → NTA855-G1B
+
+[kc-generatorset n103 bảng 2] ×1
+  H: | Engine: QSB6.7-G3 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silen
+    0 | Power factor | 400/230 | 50 | 3 | 259.2 | 144 | 0.8 | Engine parameters | Manufacturer/Model | Dongfeng Cummins/QSB6.7-G3 | Inhalation method | Turbocharged, air-to-air intercooled
+        ⇒ model: Dongfeng Cummins/QSB6.7-G3 → QSB6.7-G3
+
+[kc-generatorset n104 bảng 3] ×1
+  H: | Engine: KTAA19-G6A | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade sile
+    0 | Power factor | 400/230 | 50 | 3 | 900 | 500 | 0.8 | Engine parameters | Manufacturer/Model | Shigeyasu/KTAA19-G6A | Intake system | Exhaust gas turbocharging, air-to-air intercooling
+        ⇒ model: Shigeyasu/KTAA19-G6A → KTAA19-G6A
+
+[kc-generatorset n105 bảng 4] ×1
+  H: | Engine: 4BT3.9-G2 | Generator: single bearing, protection rating IP22, insulation class H | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silen
+    0 | Power factor | 400/230 | 50 | 3 | 54 | 30 | 0.8 | Engine parameters | Manufacturer/Model | Dongfeng Cummins/4BT3.9-G2 | Intake system | Boost
+        ⇒ model: Dongfeng Cummins/4BT3.9-G2 → 4BT3.9-G2
+
+[kc-generatorset n106 bảng 5] ×1
+  H: | Engine: KTA38-G1B | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silen
+    0 | Power factor | 400/230 | 50 | 3 | 1080 | 600 | 0.8 | Engine parameters | Manufacturer/Model | Chongkang/KTA38-G1B | Intake system | Exhaust gas turbocharger, intercooler
+        ⇒ model: Chongkang/KTA38-G1B → KTA38-G1B
+
+[kc-generatorset n107 bảng 6] ×1
+  H: | Engine: QTA10V-EG1670D | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade 
+    0 | Power factor | 400/230 | 50 | 3 | 2376 | 1320 | 0.8 | Engine parameters | Manufacturer/Model | Pangu Power/QTA10V-EG1670D | Intake system | Air Cool
+        ⇒ model: Pangu Power/QTA10V-EG1670D → QTA10V-EG1670D
+
+[kc-generatorset n109 bảng 8] ×1
+  H: | Engine: QSZ13-G3 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silenc
+    0 | Power factor | 400/230 | 50 | 3 | 720 | 400 | 0.8 | Engine parameters | Manufacturer/Model | Dongfeng Cummins/QSZ13-G3 | Inhalation method | Turbocharged & Air-to-Air Intercooled
+        ⇒ model: Dongfeng Cummins/QSZ13-G3 → QSZ13-G3
+
+[kc-generatorset n115 bảng 14] ×1
+  H: | Engine: YC6TD780-D31 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade si
+    0 | Power factor | 400/230 | 50 | 3 | 90 | 50 | 0.8 | Engine parameters | Manufacturer/Model | Guangxi Yuchai/YC6TD780-D31 | Intake system | Supercharging, air-to-air intercooling
+        ⇒ model: Guangxi Yuchai/YC6TD780-D31 → YC6TD780-D31
+
+[kc-generatorset n116 bảng 15] ×1
+  H: | Engine: YC6TF1660-D31 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade s
+    0 | Power factor | 400/230 | 50 | 3 | 1800 | 1000 | 0.8 | Engine parameters | Manufacturer/Model | Guangxi Yuchai/YC6TF1660-D31 | Intake system | Supercharging, air-to-air intercooling
+        ⇒ model: Guangxi Yuchai/YC6TF1660-D31 → YC6TF1660-D31
+
+[kc-generatorset n119 bảng 18] ×1
+  H: | Engine: YC6MJ600-D30 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade si
+    0 | Power factor | 400/230 | 50 | 3 | 648 | 360 | 0.8 | Engine parameters | Manufacturer/Model | Guangxi Yuchai/YC6MJ600-D30 | Intake system | Supercharging, air-to-air intercooling
+        ⇒ model: Guangxi Yuchai/YC6MJ600-D30 → YC6MJ600-D30
+
+[kc-generatorset n120 bảng 19] ×1
+  H: | Engine：NTAA855-G7 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade silen
+    0 | Power factor | 400/230 | 50 | 3 | 504 | 280 | 0.8 | Engine parameters | Manufacturer/Model | Chongkang/NTAA855-G7 | Intake system | Supercharging, air-to-air intercooling
+        ⇒ model: Chongkang/NTAA855-G7 → NTAA855-G7
+
+[kc-generatorset n121 bảng 20] ×1
+  H: | Engine: YC6C1520-D31 | Generator: single bearing, IP22 protection rating, Class H insulation | Radiator rated for 40°C ambient temperature, cooling fan with safety guard, air filter, fuel filter, and oil filter | Common steel base frame, vibration isolators, standard control panel | 24V charging alternator, industrial-grade si
+    0 | Power factor | 400/230 | 50 | 3 | 1620 | 900 | 0.8 | Engine parameters | Manufacturer/Model | Guangxi Yuchai/YC6C1520-D31 | Intake system | Supercharging, air-to-air intercooling
+        ⇒ model: Guangxi Yuchai/YC6C1520-D31 → YC6C1520-D31
+
+[landtop-fuzhou n126 bảng 26] ×22
+  H: | Genset Model | Genset Standby Power | Genset Prime Power | Engine Model | Alternator Model
+  H: | KVA | KW | KVA | KW
+    5 | LTP33P | 33 | 26 | 30 | 24 | 1103A-33G(India) | LTP184S-24
+        ⇒ model: 1103A-33G(India) → 1103A-33G
+    6 | LTP50P | 50 | 40 | 45 | 36 | 1103A-33TG1(India) | LTP224S-36
+        ⇒ model: 1103A-33TG1(India) → 1103A-33TG1
+    7 | LTP66P | 66 | 53 | 60 | 48 | 1103A-33TG2(India) | LTP224S-48
+        ⇒ model: 1103A-33TG2(India) → 1103A-33TG2
+   15 | LTP220P | 220 | 176 | 200 | 160 | 1206A-E70TTAG1(UK/EP) | LTP274S-160
+        ⇒ model: 1206A-E70TTAG1(UK/EP) → 1206A-E70TTAG1
+   16 | LTP248P | 248 | 198 | 225 | 180 | 1206A-E70TTAG2(UK/EP) | LTP274S-180
+        ⇒ model: 1206A-E70TTAG2(UK/EP) → 1206A-E70TTAG2
+   17 | LTP275P | 275 | 220 | 250 | 200 | 1206A-E70TTAG3(UK/EP) | LTP274S8-200
+        ⇒ model: 1206A-E70TTAG3(UK/EP) → 1206A-E70TTAG3
+   18 | LTP275P | 275 | 220 | 250 | 200 | 1506A-E88TAG3(USA/EU) | LTP274S8-200
+        ⇒ model: 1506A-E88TAG3(USA/EU) → 1506A-E88TAG3
+   19 | LTP330P | 330 | 264 | 300 | 240 | 1506A-E88TAG5(USA/EU) | LTP314S-240
+        ⇒ model: 1506A-E88TAG5(USA/EU) → 1506A-E88TAG5
+   20 | LTP330P | 330 | 264 | 300 | 240 | 1706A-E93TAG1(USA/EU) | LTP314S-240
+        ⇒ model: 1706A-E93TAG1(USA/EU) → 1706A-E93TAG1
+   21 | LTP385P | 385 | 308 | 350 | 280 | 1706A-E93TAG2(USA/EU) | LTP314S-280
+        ⇒ model: 1706A-E93TAG2(USA/EU) → 1706A-E93TAG2
+   22 | LTP385P | 385 | 308 | 350 | 280 | 2206C-E13TAG2 (USA/EU) | LTP314S-280
+        ⇒ model: 2206C-E13TAG2 (USA/EU) → 2206C-E13TAG2
+   23 | LTP440P | 440 | 352 | 400 | 320 | 2206C-E13TAG3 (USA/EU) | LTP314S-320
+        ⇒ model: 2206C-E13TAG3 (USA/EU) → 2206C-E13TAG3
+   24 | LTP495P | 495 | 396 | 450 | 360 | 2506C-E15TAG1 (USA/EU) | LTP354S-360
+        ⇒ model: 2506C-E15TAG1 (USA/EU) → 2506C-E15TAG1
+   25 | LTP550P | 550 | 440 | 500 | 400 | 2506C-E15TAG2 (USA/EU) | LTP354S-400
+        ⇒ model: 2506C-E15TAG2 (USA/EU) → 2506C-E15TAG2
+   26 | LTP660P | 660 | 528 | 600 | 480 | 2806C-E18TAG1A (USA/EU) | LTP354S-480
+        ⇒ model: 2806C-E18TAG1A (USA/EU) → 2806C-E18TAG1A
+   27 | LTP715P | 715 | 572 | 650 | 520 | 2806A-E18TAG2 (USA/EU) | LTP354S-520
+        ⇒ model: 2806A-E18TAG2 (USA/EU) → 2806A-E18TAG2
+   28 | LTP825P | 825 | 660 | 750 | 600 | 4006-23TAG2A(India) | LTP404S-600
+        ⇒ model: 4006-23TAG2A(India) → 4006-23TAG2A
+   29 | LTP825P | 825 | 660 | 750 | 600 | 4006-23TAG2A(UK) | LTP404S-600
+        ⇒ model: 4006-23TAG2A(UK) → 4006-23TAG2A
+   30 | LTP880P | 880 | 704 | 800 | 640 | 4006-23TAG3A(India) | LTP404S-640
+        ⇒ model: 4006-23TAG3A(India) → 4006-23TAG3A
+   31 | LTP880P | 880 | 704 | 800 | 640 | 4006-23TAG3A(UK) | LTP404S-640
+        ⇒ model: 4006-23TAG3A(UK) → 4006-23TAG3A
+   34 | LTP1100P | 1100 | 880 | 1000 | 800 | 4008TAG2A(India) | LTP404S-800
+        ⇒ model: 4008TAG2A(India) → 4008TAG2A
+   35 | LTP1100P | 1100 | 880 | 1000 | 800 | 4008TAG2A(UK) | LTP404S-800
+        ⇒ model: 4008TAG2A(UK) → 4008TAG2A
+
+[landtop-fuzhou n126 bảng 27] ×3
+  H: | Genset Model | Genset Standby Power | Genset Prime Power | Engine Model | Alternator Model
+  H: | KVA | KW | KVA | KW
+    5 | LTP39P | 39 | 31 | 35 | 28 | 1103A-33G(India) | LTP184S-28
+        ⇒ model: 1103A-33G(India) → 1103A-33G
+    6 | LTP58P | 58 | 46 | 53 | 42 | 1103A-33TG1(India) | LTP224S-42
+        ⇒ model: 1103A-33TG1(India) → 1103A-33TG1
+    7 | LTP76P | 76 | 61 | 69 | 55 | 1103A-33TG2(India) | LTP224S-55
+        ⇒ model: 1103A-33TG2(India) → 1103A-33TG2
+
+[mecca-power n105 bảng 6] ×24
+  H: | Model | LTP | PRP | Engine | Fuel Cons. | Cylinder | Displacement | Gov. | Dimention | Weight
+  H: | KVA / KW | KVA/KW | Model | Origin | L/H(100%) | L | L*W*H (MM) | KGS
+    0 | MC10YD | 10 | 8 | 9 | 7 | YD380D/10KW | CN | 2.2 | 3L/NA | 1.357 | M | 1550*760*1250 | 460
+        ⇒ model: YD380D/10KW → YD380D
+    1 | MC14YD | 14 | 11 | 13 | 10 | YD385D/12KW | CN | 2.7 | 3L/NA | 1.532 | M | 1550*760*1250 | 480
+        ⇒ model: YD385D/12KW → YD385D
+    2 | MC17YD | 17 | 13 | 15 | 12 | YD480D/14KW | CN | 3.5 | 4L/NA | 1.809 | M | 1650*760*1250 | 491
+        ⇒ model: YD480D/14KW → YD480D
+    3 | MC19YD | 19 | 15 | 18 | 14 | YND485D/17KW | CN | 4.1 | 4L/NA | 2.156 | M | 1650*760*1250 | 512
+        ⇒ model: YND485D/17KW → YND485D
+    4 | MC25YD | 25 | 20 | 23 | 18 | YSD490D/21KW | CN | 5.2 | 4L/NA | 2.540 | M | 1760*760*1250 | 530
+        ⇒ model: YSD490D/21KW → YSD490D
+    5 | MC28YD | 28 | 22 | 25 | 20 | Y490PD/24KW | CN | 5.2 | 4L/NA | 2.670 | M | 1760*760*1250 | 560
+        ⇒ model: Y490PD/24KW → Y490PD
+    6 | MC33YD | 33 | 26 | 30 | 24 | Y4100D/32KW | CN | 6.8 | 4L/NA | 3.707 | M | 1880*760*1300 | 690
+        ⇒ model: Y4100D/32KW → Y4100D
+    7 | MC41YD | 41 | 33 | 38 | 30 | Y4105D/38KW | CN | 9.2 | 4L/NA | 4.100 | M | 1880*760*1300 | 795
+        ⇒ model: Y4105D/38KW → Y4105D
+    8 | MC55YD | 55 | 44 | 50 | 40 | Y4102ZLD/48KW | CN | 9.4 | 4L/TC | 3.875 | M | 1880*760*1300 | 805
+        ⇒ model: Y4102ZLD/48KW → Y4102ZLD
+    9 | MC66YD | 66 | 53 | 60 | 48 | Y4105ZLD/55KW | CN | 11.5 | 4L/TC | 4.100 | E | 1880*760*1300 | 823
+        ⇒ model: Y4105ZLD/55KW → Y4105ZLD
+   10 | MC74YD | 74 | 59 | 68 | 54 | YD4EZLD/63KW | CN | 16.5 | 4L/TC | 4.100 | E | 1970*730*1430 | 890
+        ⇒ model: YD4EZLD/63KW → YD4EZLD
+   11 | MC94YD | 94 | 75 | 85 | 68 | Y4110ZLD/80KW | CN | 20.9 | 4L/TC | 4.484 | E | 2050*900*1430 | 1050
+        ⇒ model: Y4110ZLD/80KW → Y4110ZLD
+   12 | MC12YD | 12 | 10 | 11 | 9 | YD380D/12KW | CN | 3.0 | 3L/NA | 1.357 | M | 1550*760*1250 | 460
+        ⇒ model: YD380D/12KW → YD380D
+   13 | MC17YD | 17 | 13 | 15 | 12 | YD385D/14.4KW | CN | 3.4 | 3L/NA | 1.532 | M | 1550*760*1250 | 480
+        ⇒ model: YD385D/14.4KW → YD385D
+   14 | MC19YD | 19 | 15 | 18 | 14 | YD480D/17KW | CN | 4.1 | 4L/NA | 1.809 | M | 1650*760*1250 | 491
+        ⇒ model: YD480D/17KW → YD480D
+   15 | MC22YD | 22 | 18 | 20 | 16 | YND485D/20KW | CN | 5.1 | 4L/NA | 2.156 | M | 1650*760*1250 | 512
+        ⇒ model: YND485D/20KW → YND485D
+   16 | MC28YD | 28 | 22 | 25 | 20 | YSD490D/25KW | CN | 5.9 | 4L/NA | 2.540 | M | 1760*760*1250 | 530
+        ⇒ model: YSD490D/25KW → YSD490D
+   17 | MC33YD | 33 | 26 | 30 | 24 | Y490PD/28KW | CN | 6.4 | 4L/NA | 2.670 | M | 1760*760*1250 | 560
+        ⇒ model: Y490PD/28KW → Y490PD
+   18 | MC44YD | 44 | 35 | 40 | 32 | Y4100D/38KW | CN | 9.3 | 4L/NA | 3.707 | M | 1880*760*1300 | 690
+        ⇒ model: Y4100D/38KW → Y4100D
+   19 | MC52YD | 52 | 42 | 48 | 38 | Y4105D/45KW | CN | 10.6 | 4L/NA | 4.100 | M | 1880*760*1300 | 795
+        ⇒ model: Y4105D/45KW → Y4105D
+   20 | MC58YD | 58 | 46 | 53 | 42 | Y4102ZLD/53KW | CN | 14.1 | 4L/TC | 3.875 | M | 1880*760*1300 | 805
+        ⇒ model: Y4102ZLD/53KW → Y4102ZLD
+   21 | MC690YD | 69 | 55 | 63 | 50 | Y4105ZLD/60KW | CN | 14.7 | 4L/TC | 4.100 | E | 1880*760*1300 | 823
+        ⇒ model: Y4105ZLD/60KW → Y4105ZLD
+   22 | MC80YD | 80 | 64 | 73 | 58 | YD4EZLD/68KW | CN | 17.8 | 4L/TC | 4.100 | E | 1970*730*1430 | 890
+        ⇒ model: YD4EZLD/68KW → YD4EZLD
+   23 | MC100YD | 99 | 79 | 90 | 72 | Y4110ZLD/85KW | CN | 20.9 | 4L/TC | 4.484 | E | 2050*900*1430 | 1050
+        ⇒ model: Y4110ZLD/85KW → Y4110ZLD
+
+[nenjo-generator n119 bảng 7] ×8
+  H: | 型号 Model | 发动机品牌 Engine brand | 发动机型号 Engine Model | 机组功率 Genset Prime KW | 机组功率 Genset Prime KVA | 发动机功率 Engine Output KW | 转速可调 Switchable | 调速方式 Control | 排放标准 Emission
+    0 | HJ7.2P | 帕金斯 PERKINS | 403D-11G commodity | 7.2 | 9.0 | 9.5 | N | mech | N/A<19K W
+        ⇒ model: 403D-11G commodity → 403D-11G
+   39 | HJ600P | 帕金斯 PERKINS | 4006-23TAG2A Switchable | 600.0 | 746.0 | 682.0 | Y | electric | N
+        ⇒ model: 4006-23TAG2A Switchable → 4006-23TAG2A
+   44 | HJ1000P | 帕金斯 PERKINS | 4012-46TWG2A Switchable | 1000.0 | 1250.0 | 1113.0 | Y | electric | N
+        ⇒ model: 4012-46TWG2A Switchable → 4012-46TWG2A
+   45 | HJ1200P | 帕金斯 PERKINS | 4012-46TAG2A Switchable | 1200.0 | 1500.0 | 1331.0 | Y | electric | N
+        ⇒ model: 4012-46TAG2A Switchable → 4012-46TAG2A
+   93 | HJ600P | 帕金斯 PERKINS | 4006-23TAG2A Switchable | 600.0 | 750.0 | 682.0 | Y | electric | N
+        ⇒ model: 4006-23TAG2A Switchable → 4006-23TAG2A
+   95 | HJ800P | 帕金斯 PERKINS | 4008TAG2 Switchable | 800.0 | 1000.0 | 894.0 | Y | electric | N
+        ⇒ model: 4008TAG2 Switchable → 4008TAG2
+   97 | HJ1200P | 帕金斯 PERKINS | 4012-46TAG2A Switchable | 1200.0 | 1500.0 | 1459.0 | Y | electric | N
+        ⇒ model: 4012-46TAG2A Switchable → 4012-46TAG2A
+  100 | HJ680P | 帕金斯 PERKINS | 4006-23TAG3A 1800 | 680.0 | 850.0 | 759.0 | N | electric | N
+        ⇒ model: 4006-23TAG3A 1800 → 4006-23TAG3A
+
+[saudi-diesel n101 bảng 0] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Hyundai P086TI → P086TI
+
+[saudi-diesel n109 bảng 5] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Hyundai P086TI → P086TI
+
+[saudi-diesel n110 bảng 6] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Hyundai P126TI-II / P126TI → P126TI-II / P126TI
+
+[saudi-diesel n111 bảng 7] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Hyundai P126TI-II → P126TI-II
+
+[saudi-diesel n112 bảng 8] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Hyundai P158LE → P158LE
+
+[saudi-diesel n113 bảng 9] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Hyundai P158LE → P158LE
+
+[saudi-diesel n114 bảng 10] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Hyundai DP158LD → DP158LD
+
+[saudi-diesel n115 bảng 11] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Hyundai DP180LA → DP180LA
+
+[saudi-diesel n116 bảng 12] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Hyundai DP180LB → DP180LB
+
+[saudi-diesel n117 bảng 13] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Hyundai DP222LB → DP222LB
+
+[saudi-diesel n118 bảng 14] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Hyundai DP222LA → DP222LA
+
+[saudi-diesel n119 bảng 15] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Hyundai DP222LC → DP222LC
+
+[sr-genset n2004 bảng 7] ×7
+  H: | Standby | Prime | Engine | Alternator | Open Type Dimension | Silent Type Dimension
+  H: | kVA | kW | kVA | kW | Model | Gov | Stamford | Leroy Somer | SRGENSET
+    1 | 12.1 | 9.9 | 11 | 9 | 403D-11G commodity | Mech | S0L1-H1 | TAL-A40-C | SA164-10.6 | 1400*690*1000 | 1860*810*1152
+        ⇒ model: 403D-11G commodity → 403D-11G
+   10 | 185.9 | 148.5 | 169 | 135 | 1106A-70TAG2 Switchable | Elec | UCI 274E | TAL-A44-H | SA274-134 | 2650*960*1650 | 3360*1110*1750
+        ⇒ model: 1106A-70TAG2 Switchable → 1106A-70TAG2
+   11 | 216.7 | 173.8 | 197 | 158 | 1106A-70TAG3 Switchable | Elec | UCI 274F | TAL-A44-K | SA274-154 | 2650*960*1650 | 3360*1110*1750
+        ⇒ model: 1106A-70TAG3 Switchable → 1106A-70TAG3
+   20 | 825 | 660 | 750 | 600 | 4006-23TAG2A Switchable | Elec | S5L1D-E4 | TAL-A473-E | SA354-600 | 4350*1750*2270 | 5400*2260*2500
+        ⇒ model: 4006-23TAG2A Switchable → 4006-23TAG2A
+   22 | 1100 | 880 | 1000 | 800 | 4008TAG2 Switchable | Elec | S6L1D-C4 | TAL-A49-C | SA404-874 | 5000*2182*2460 | 5400*2260*2500
+        ⇒ model: 4008TAG2 Switchable → 4008TAG2
+   23 | 1375 | 1100 | 1250 | 1000 | 4012-46TWG2A Switchable | Elec | S6L1D-E4 | TAL-A49-E | SA404-1080 | 5000*2182*2460 | 40'HQ Container
+        ⇒ model: 4012-46TWG2A Switchable → 4012-46TWG2A
+   24 | 1650 | 1320 | 1500 | 1200 | 4012-46TAG2A Switchable | Elec | S6L1D-G4 | LSA50.2 M6 | SA404-1200 | 5000*2182*2460 | 40'HQ Container
+        ⇒ model: 4012-46TAG2A Switchable → 4012-46TAG2A
+
+[sr-genset n2009 bảng 13] ×6
+  H: | | Standby | Prime | Engine | Alternator
+  H: | | kVA | kW | kVA | kW | Model | Brand | Stamford | Kwise | SRGENSET
+   27 | 66 | 53 | 60 | 48 | 1104D-44TG2 EU | Perkins | S1L2-Y1 | TAL-A42-H | /
+        ⇒ model: 1104D-44TG2 EU → 1104D-44TG2
+   28 | 88 | 70 | 80 | 64 | 1104D-E44TAG1 EU | Perkins | UCI224G | TAL-A44-C | /
+        ⇒ model: 1104D-E44TAG1 EU → 1104D-E44TAG1
+   29 | 110 | 88 | 100 | 80 | 1104D-E44TAG2 EU | Perkins | UCI274C | TAL-A44-D | /
+        ⇒ model: 1104D-E44TAG2 EU → 1104D-E44TAG2
+   30 | 154 | 123 | 140 | 112 | 1106D-E70TAG2 EU | Perkins | UCI274E | TAL-A44-H | /
+        ⇒ model: 1106D-E70TAG2 EU → 1106D-E70TAG2
+   31 | 172 | 138 | 156 | 125 | 1106D-E70TAG3 EU | Perkins | UCI274F | TAL-A44-J | /
+        ⇒ model: 1106D-E70TAG3 EU → 1106D-E70TAG3
+   32 | 198 | 158 | 180 | 144 | 1106D-E70TAG4 EU | Perkins | UCI274G | TAL-A44-L | /
+        ⇒ model: 1106D-E70TAG4 EU → 1106D-E70TAG4
+
+[stone-power n111 bảng 13] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Mistubishi S16R-PTA2-C → S16R-PTA2-C
+
+[superwatt-swt n106 bảng 6] ×1
+  undefined (bảng nhãn)
+        ⇒ model: QSK38-G5 cummins → QSK38-G5
+
+[superwatt-swt n112 bảng 14] ×1
+  undefined (bảng nhãn)
+        ⇒ model: S16R2-PTAW-C SME → S16R2-PTAW-C
+
+[superwatt-swt n114 bảng 16] ×1
+  undefined (bảng nhãn)
+        ⇒ model: WP7D264E310 Weichai → WP7D264E310
+
+[superwatt-swt n115 bảng 17] ×1
+  undefined (bảng nhãn)
+        ⇒ model: WP13D440E310 Weichai → WP13D440E310
+
+[superwatt-swt n116 bảng 18] ×1
+  undefined (bảng nhãn)
+        ⇒ model: V3300-BG KUBOTA → V3300-BG
+
+[superwatt-swt n117 bảng 19] ×1
+  undefined (bảng nhãn)
+        ⇒ model: TWD1653GE VOLVO → TWD1653GE
+
+[superwatt-swt n118 bảng 20] ×1
+  undefined (bảng nhãn)
+        ⇒ model: QSZ13-G10 cummins → QSZ13-G10
+
+[superwatt-swt n119 bảng 21] ×1
+  undefined (bảng nhãn)
+        ⇒ model: 404D-22G PERKINS → 404D-22G
+
+[superwatt-swt n124 bảng 24] ×1
+  undefined (bảng nhãn)
+        ⇒ model: 2806A-E18TAG2 PERKINS → 2806A-E18TAG2
+
+[tecgen-fujian n105 bảng 4] ×1
+  H: | Product | 400kW Cummins Genset | Genset Prime Power | 400kW / 500kVA
+    1 | Voltage | 400 / 230V | Engine Model | DCEC QSZ13-G10
+        ⇒ model: DCEC QSZ13-G10 → QSZ13-G10
+
+[tecgen-fujian n130 bảng 29] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Yangdong Y4105D → Y4105D
+
+[weiman-fujian n112 bảng 14] ×39
+  H: | Gensets | | Size & Weight | Download
+  H: | Model | Gensets power(KW/KVA) | Engine model | Open Type Size (mm) | Weight (KG) | Silent Type Size (mm) | Weight (KG)
+  H: | Prime | Standby
+    0 | WT-WP22 | 16 | 20 | 17.6 | 22 | WP2.3D25E200/23KW | 1700x650x1100 | 464 | 2000x900x1200 | 749 | More data
+        ⇒ model: WP2.3D25E200/23KW → WP2.3D25E200
+    1 | WT-WP27.5 | 20 | 25 | 22 | 28 | WP2.3D33E200/30KW | 1700x650x1100 | 484 | 2250x900x1200 | 789 | More data
+        ⇒ model: WP2.3D33E200/30KW → WP2.3D33E200
+    2 | WT-WP33 | 24 | 30 | 26.4 | 33 | WP2.3D33E200/30KW | 1830x650x1100 | 670 | 2250x900x1250 | 975 | More data
+        ⇒ model: WP2.3D33E200/30KW → WP2.3D33E200
+    3 | WT-WP42 | 30 | 38 | 33 | 41 | WP2.3D40E200/36KW | 1830x650x1100 | 685 | 2250x900x1250 | 985 | More data
+        ⇒ model: WP2.3D40E200/36KW → WP2.3D40E200
+    4 | WT-WP50 | 36 | 45 | 39.6 | 50 | WP2.3D48E200/44KW | 1830x630x1320 | 687 | 2350x950x1250 | 995 | More data
+        ⇒ model: WP2.3D48E200/44KW → WP2.3D48E200
+    5 | WT-WP55 | 40 | 50 | 44 | 55 | WP4.1D66E200/60KW | 1900x750x1320 | 712 | 2350x950x1250 | 1030 | More data
+        ⇒ model: WP4.1D66E200/60KW → WP4.1D66E200
+    6 | WT-WP69 | 50 | 63 | 55 | 69 | WP4.1D66E200/60KW | 1900x860x1150 | 910 | 2550x1000x1280 | 1030 | More data
+        ⇒ model: WP4.1D66E200/60KW → WP4.1D66E200
+    7 | WT-WP80 | 60 | 75 | 66 | 83 | WP4.1D80E200/72KW | 1900x860x1150 | 1020 | 2700x1100x1400 | 1075 | More data
+        ⇒ model: WP4.1D80E200/72KW → WP4.1D80E200
+    9 | WT-WP150 | 108 | 135 | 118.8 | 149 | WP6D132E200/120KW | 2500*1000*1650 | 1340 | 3350x1100x1650 | 2230 | More data
+        ⇒ model: WP6D132E200/120KW → WP6D132E200
+   10 | WT-WP165 | 120 | 150 | 132 | 165 | WP6D152E200/138KW | 2500*1000*1650 | 1510 | 3450x1100x1650 | 2420 | More data
+        ⇒ model: WP6D152E200/138KW → WP6D152E200
+   11 | WT-WP206 | 150 | 188 | 165 | 206 | WP10D200E200/182KW | 3180*1050*1750 | 1910 | 3600x1100x1650 | 2780 | More data
+        ⇒ model: WP10D200E200/182KW → WP10D200E200
+   12 | WT-WP250 | 180 | 225 | 198 | 248 | WP10D238E200/216kw | 3280*1050*1750 | 2130 | 3750*1300*1850 | 2920 | More data
+        ⇒ model: WP10D238E200/216kw → WP10D238E200
+   13 | WT-WP275 | 200 | 250 | 220 | 275 | WP10D264E200/240kw | 3280*1050*1750 | 2220 | 3750*1300*1850 | 3000 | More data
+        ⇒ model: WP10D264E200/240kw → WP10D264E200
+   14 | WT-WP360 | 260 | 325 | 286 | 358 | WP10D320E200/291kw | 3380*1050*1750 | 2360 | 3900*1400*2200 | 3111 | More data
+        ⇒ model: WP10D320E200/291kw → WP10D320E200
+   15 | WT-WP360 | 260 | 325 | 286 | 358 | WP12D353E200/288kw | 3580*1550*2100 | 2560 | 3900*1400*2200 | 3320 | More data
+        ⇒ model: WP12D353E200/288kw → WP12D353E200
+   16 | WT-WP415 | 300 | 375 | 330 | 413 | WP13D385E200/350kw | 3880*1550*2100 | 2750 | 4200*1600*2200 | 3560 | More data
+        ⇒ model: WP13D385E200/350kw → WP13D385E200
+   17 | WT-WP440 | 320 | 400 | 352 | 440 | WP13D405E200/368kw | 3880*1550*2100 | 2880 | 4500x1800x2200 | 3850 | More data
+        ⇒ model: WP13D405E200/368kw → WP13D405E200
+   18 | WT-WP495 | 360 | 450 | 396 | 495 | WP13D440E200/392kw | 3880*1550*2100 | 3020 | 4500x1800x2200 | 4130 | More data
+        ⇒ model: WP13D440E200/392kw → WP13D440E200
+   19 | WT-WP550 | 400 | 500 | 440 | 550 | WP13D490E310/450KW | 3880*1550*2100 | 3160 | 4500x1800x2200 | 4330 | More data
+        ⇒ model: WP13D490E310/450KW → WP13D490E310
+   21 | WT-WP688 | 500 | 625 | 550 | 688 | 6M33D633E200 /575KW | 4350*1600*2100 | 4635 | 4900x1800x2200 | 6010 | More data
+        ⇒ model: 6M33D633E200 /575KW → 6M33D633E200
+   22 | WT-WP825 | 600 | 750 | 660 | 825 | 6M33D725E310/675KW | 4350*1600*2100 | 4835 | 5400x2000x2500 | 6550 | More data
+        ⇒ model: 6M33D725E310/675KW → 6M33D725E310
+   23 | WT-WP880 | 640 | 800 | 704 | 880 | 8M33D800E200/730/800KW | 4750*1800*2200 | 5160 | 5400x2000x2500 | 7160 | More data
+        ⇒ model: 8M33D800E200/730/800KW → 8M33D800E200
+   24 | WT-WP1000 | 730 | 913 | 803 | 1004 | 8M33D890E200/815/890KW | 4750*1800*2200 | 5160 | 5400x2000x2500 | 7160 | More data
+        ⇒ model: 8M33D890E200/815/890KW → 8M33D890E200
+   25 | WT-WP1100 | 800 | 1000 | 880 | 1100 | 12M26D968E200/880KW | 5050*1800*2200 | 6980 | 5900x2200x2500 | 8530 | More data
+        ⇒ model: 12M26D968E200/880KW → 12M26D968E200
+   26 | WT-WP1240 | 900 | 1125 | 990 | 1238 | 12M33D1108E200/1007KW | 5260*2200*2550 | 8900 | 5900x2200x2500 | 12900 | More data
+        ⇒ model: 12M33D1108E200/1007KW → 12M33D1108E200
+   27 | WT-WP1375 | 1000 | 1250 | 1100 | 1375 | 12M33D1210E200/1108KW | 5460*2200*2550 | 9300 | 6400x2200x2500 | 14300 | More data
+        ⇒ model: 12M33D1210E200/1108KW → 12M33D1210E200
+   28 | WT-WP1500 | 1100 | 1375 | 1210 | 1513 | 12M33D1320E200/1200KW | 5460*2200*2550 | 10000 | 6400x2200x2500 | 16500 | More data
+        ⇒ model: 12M33D1320E200/1200KW → 12M33D1320E200
+   29 | WT-WP1650 | 1200 | 1500 | 1320 | 1650 | 12M33D1500E310/1350KW | 5460*2200*2550 | 10500 | 40HQ | 20500 | More data
+        ⇒ model: 12M33D1500E310/1350KW → 12M33D1500E310
+   30 | WT-WP1800 | 1300 | 1625 | 1430 | 1788 | 16M33D1530E310/1390KW | 6027*2350*2580 | 12000 | 40HQ | 22000 | More data
+        ⇒ model: 16M33D1530E310/1390KW → 16M33D1530E310
+   31 | WT-WP1800 | 1300 | 1625 | 1430 | 1788 | 16M33D1580E310/1430KW | 6027*2350*2580 | 12600 | 40HQ | 22600 | More data
+        ⇒ model: 16M33D1580E310/1430KW → 16M33D1580E310
+   32 | WT-WP1925 | 1400 | 1750 | 1540 | 1925 | 16M33D1680E310/1530KW | 6027*2350*2580 | 13000 | 40HQ | 23000 | More data
+        ⇒ model: 16M33D1680E310/1530KW → 16M33D1680E310
+   33 | WT-WP2060 | 1500 | 1875 | 1650 | 2063 | 16M33D1800E310/1680KW | 6027*2350*2580 | 13600 | 40HQ | 23600 | More data
+        ⇒ model: 16M33D1800E310/1680KW → 16M33D1800E310
+   34 | WT-WP2200 | 1600 | 2000 | 1760 | 2200 | 16M33D1980E310/1800KW | 6027*2350*2580 | 13600 | 40HQ | 23600 | More data
+        ⇒ model: 16M33D1980E310/1800KW → 16M33D1980E310
+   35 | WT-WP2475 | 1800 | 2250 | 1980 | 2475 | 12M55D2210E310/2010KW | 7200*2450*2690 | 18500 | 40HQ | 28500 | More data
+        ⇒ model: 12M55D2210E310/2010KW → 12M55D2210E310
+   36 | WT-WP2750 | 2000 | 2500 | 2200 | 2750 | 12M55D2450E310/2200KW | 7200*2450*2690 | 19500 | 40HQ | 29500 | More data
+        ⇒ model: 12M55D2450E310/2200KW → 12M55D2450E310
+   37 | WT-WP3025 | 2200 | 2750 | 2420 | 3025 | 12M55D2700E310/2420KW | 7200*2450*2690 | 19500 | 40HQ | 29500 | More data
+        ⇒ model: 12M55D2700E310/2420KW → 12M55D2700E310
+   38 | WT-WP3300 | 2400 | 3000 | 2640 | 3300 | 16M55D2900E310/2646KW | 7800*2550*2690 | 21000 | 40HQ | 31000 | More data
+        ⇒ model: 16M55D2900E310/2646KW → 16M55D2900E310
+   39 | WT-WP63 | | 0 | 0 | 0 | 16M55D3300E310/2900KW | | | 40HQ | | More data
+        ⇒ model: 16M55D3300E310/2900KW → 16M55D3300E310
+   40 | WT-WP4215 | 3000 | 3750 | 3300 | 4125 | 16M55D3600E310/3300KW | | | | | More data
+        ⇒ model: 16M55D3600E310/3300KW → 16M55D3600E310
+
+[yongcai-elecmama n118 bảng 14] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Yangdong Y495D → Y495D
+
+[yongcai-elecmama n120 bảng 16] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Yangdong Y4100D → Y4100D
+
+[yongcai-elecmama n121 bảng 17] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Yangdong Y4105ZLD → Y4105ZLD
+
+[yongcai-elecmama n122 bảng 18] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Yangdong Y490D → Y490D
+
+[yongcai-elecmama n123 bảng 19] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Yangdong YD480D → YD480D
+
+[yongcai-elecmama n124 bảng 20] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Yangdong Y4110ZLD → Y4110ZLD
+
+[yongcai-elecmama n125 bảng 21] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Yangdong YD385D → YD385D
+
+[yongcai-elecmama n126 bảng 22] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Yangdong Y4105D → Y4105D
+
+[yongcai-elecmama n127 bảng 23] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Yangdong Y4102D → Y4102D
+
+[yongcai-elecmama n128 bảng 24] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Yangdong YSD490D → YSD490D
+
+[yongcai-elecmama n129 bảng 25] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Yangdong Y4102ZLD → Y4102ZLD
+
+[yongcai-elecmama n130 bảng 26] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Yangdong YND485D → YND485D
+
+[yongcai-elecmama n131 bảng 27] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Yangdong YD4EZLD → YD4EZLD
+
+[yongcai-elecmama n132 bảng 28] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Yangdong YD380D → YD380D
+
+[yongcai-elecmama n134 bảng 30] ×1
+  undefined (bảng nhãn)
+        ⇒ model: Yangdong YD380D → YD380D
+
+[yongcai-elecmama n147 bảng 37] ×1
+  undefined (bảng nhãn)
+        ⇒ model: FAW 4DX21-45D → 4DX21-45D
+
+[yongcai-elecmama n148 bảng 38] ×1
+  undefined (bảng nhãn)
+        ⇒ model: FAW 4DX22-65D-HMS20W → 4DX22-65D-HMS20W
+
+[yongcai-elecmama n149 bảng 39] ×1
+  undefined (bảng nhãn)
+        ⇒ model: FAW CA6DF2D-14D → CA6DF2D-14D
+
+[yongcai-elecmama n150 bảng 40] ×1
+  undefined (bảng nhãn)
+        ⇒ model: FAW 4DX23-78D-HMS20W → 4DX23-78D-HMS20W
+
+[yongcai-elecmama n151 bảng 41] ×1
+  undefined (bảng nhãn)
+        ⇒ model: FAW 4DX23-65D → 4DX23-65D
+
+[yongcai-elecmama n153 bảng 42] ×1
+  undefined (bảng nhãn)
+        ⇒ model: FAW 4110/125Z-09D → 4110/125Z-09D
+
+[yongcai-elecmama n155 bảng 43] ×1
+  undefined (bảng nhãn)
+        ⇒ model: FAW 4DW92-39D-HMS20W → 4DW92-39D-HMS20W
+
+[yongcai-elecmama n156 bảng 44] ×1
+  undefined (bảng nhãn)
+        ⇒ model: FAW CA6DF2-17D → CA6DF2-17D
+
+[yongcai-elecmama n157 bảng 45] ×1
+  undefined (bảng nhãn)
+        ⇒ model: FAW 4DX22-50D → 4DX22-50D
+
+[yongcai-elecmama n158 bảng 46] ×1
+  undefined (bảng nhãn)
+        ⇒ model: FAW CA4DF2-12D → CA4DF2-12D
+
+[yongcai-elecmama n159 bảng 47] ×1
+  undefined (bảng nhãn)
+        ⇒ model: FAW 4DX21-53D-HMS20W → 4DX21-53D-HMS20W
+
+[yongcai-elecmama n160 bảng 48] ×1
+  undefined (bảng nhãn)
+        ⇒ model: FAW CA6DN1-45D → CA6DN1-45D
+
+[yongcai-elecmama n161 bảng 49] ×1
+  undefined (bảng nhãn)
+        ⇒ model: FAW CA6DN1J-45D → CA6DN1J-45D
+
+[yongcai-elecmama n162 bảng 50] ×1
+  undefined (bảng nhãn)
+        ⇒ model: FAW CA6DM2-41D → CA6DM2-41D
+
+[yongcai-elecmama n163 bảng 51] ×1
+  undefined (bảng nhãn)
+        ⇒ model: FAW CA6DM2J-41D → CA6DM2J-41D
+
+[yongcai-elecmama n164 bảng 52] ×1
+  undefined (bảng nhãn)
+        ⇒ model: FAW CA6DM2-39D → CA6DM2-39D
+
+[yongcai-elecmama n165 bảng 53] ×1
+  undefined (bảng nhãn)
+        ⇒ model: FAW CA6DM2J-39D → CA6DM2J-39D
+
+[yongcai-elecmama n166 bảng 54] ×1
+  undefined (bảng nhãn)
+        ⇒ model: FAW CA6DL2-30 → CA6DL2-30
+
+[yongcai-elecmama n167 bảng 55] ×1
+  undefined (bảng nhãn)
+        ⇒ model: FAW CA6DL2-27D → CA6DL2-27D
+
+[yongcai-elecmama n168 bảng 56] ×1
+  undefined (bảng nhãn)
+        ⇒ model: FAW CA6DL1-24D → CA6DL1-24D
+
+[yongcai-elecmama n169 bảng 57] ×1
+  undefined (bảng nhãn)
+        ⇒ model: FAW CA6DF2-19D → CA6DF2-19D
+
+==== tự kiểm số (verSpec) ====
+
+
+
+cần soát tay: 0
+
+==== tổ máy (gensetsOf) ====
+bản ghi cũ 1700, mới 1700 | khác 0 | chỉ cũ 0, chỉ mới 0 | bảng có đổi 0
+{}

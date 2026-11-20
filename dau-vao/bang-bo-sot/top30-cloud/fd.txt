@@ -1,0 +1,57 @@
+engine:12V1600G10F: khoá thông số 7 → 7
+   + cyl=12 [green-power-generators n115]
+engine:12V1600G20F: khoá thông số 7 → 7
+   + cyl=12 [green-power-generators n115]
+engine:12V1600G21F: khoá thông số 0 → 1 (mới: cyl)
+   + cyl=12 [green-power-generators n115]
+engine:12V1600G31F: khoá thông số 0 → 1 (mới: cyl)
+   + cyl=16 [green-power-generators n115]
+engine:12V4000G14F: khoá thông số 4 → 4
+   + cyl=12 [green-power-generators n115]
+engine:12V4000G14RF: khoá thông số 4 → 5 (mới: cyl)
+   + cyl=12 [green-power-generators n115]
+engine:12V4000G24F: khoá thông số 6 → 6
+   + cyl=12 [green-power-generators n115]
+engine:16V2000G26F: khoá thông số 0 → 1 (mới: cyl)
+   + cyl=16 [green-power-generators n115]
+engine:16V2000G36F: khoá thông số 0 → 1 (mới: cyl)
+   + cyl=16 [green-power-generators n115]
+engine:16V4000G14F: khoá thông số 6 → 6
+   + cyl=16 [green-power-generators n115]
+engine:16V4000G24F: khoá thông số 4 → 4
+   + cyl=16 [green-power-generators n115]
+engine:18V2000G26F: khoá thông số 8 → 8
+   + cyl=18 [green-power-generators n115]
+engine:20V4000G14F: khoá thông số 6 → 6
+   + cyl=20 [green-power-generators n115]
+engine:20V4000G24F: khoá thông số 6 → 6
+   + cyl=20 [green-power-generators n115]
+engine:20V4000G34F: khoá thông số 6 → 6
+   + cyl=20 [green-power-generators n115]
+engine:KDI1903TCR: khoá thông số 0 → 2 (mới: cyl,emission)
+   + cyl=3 [green-power-generators n117]
+   + emission=STAGE V [green-power-generators n117]
+engine:KDI2504TCR: khoá thông số 0 → 2 (mới: cyl,emission)
+   + cyl=4 [green-power-generators n117]
+   + emission=STAGE V [green-power-generators n117]
+engine:KDW1003: khoá thông số 0 → 2 (mới: cyl,emission)
+   + cyl=3 [green-power-generators n117]
+   + emission=STAGE V [green-power-generators n117]
+engine:KDW702: khoá thông số 0 → 2 (mới: cyl,emission)
+   + cyl=2 [green-power-generators n117]
+   + emission=STAGE V [green-power-generators n117]
+engine:KSD1403NA: khoá thông số 0 → 2 (mới: cyl,emission)
+   + cyl=3 [green-power-generators n117]
+   + emission=STAGE V [green-power-generators n117]
+engine:KSD1403TC: khoá thông số 0 → 2 (mới: cyl,emission)
+   + cyl=3 [green-power-generators n117]
+   + emission=STAGE V [green-power-generators n117]
+engine:KSD1403TCA: khoá thông số 0 → 2 (mới: cyl,emission)
+   + cyl=3 [green-power-generators n117]
+   + emission=STAGE V [green-power-generators n117]
+engine:OC16071A0281: khoá thông số 0 → 1 (mới: cyl)
+   + cyl=8 [green-power-generators n126]
+engine:OC16071A0282: khoá thông số 0 → 1 (mới: cyl)
+   + cyl=8 [green-power-generators n126]
+engine:OC16071A0283: khoá thông số 0 → 1 (mới: cyl)
+   + cyl=8 [green-power-generators n126]

@@ -1,0 +1,295 @@
+origin: g7eu | auto: {"origin":"g7eu","quote":"2 Nhà sản xuất/ nhãn hiệu Nhóm các nước khối G7, EU","scope":"parts","basis":"origin"} | partsOnly: true | brand: false | grp: 222
+hints: {"engineMakes":[],"trait":{"engineMake":null,"engineTerms":[],"controllers":[],"unused":[]},"altMakes":[],"ctrlMakes":[],"ctrlModels":[],"freq":50,"cylLayout":"inline","fuel":"diesel","madeRule":{"engine":null,"alternator":null,"controller":null},"minDisp":null,"maxDisp":null,"minCyl":6,"cylExact":true,"minPrime":{"kVA":700},"maxFuel":156,"maxFuel75":null,"maxFuel50":77,"compr":14,"comprExact":true}
+
+ứng viên: 30 / 476 dòng qua lọc, 935 dòng bị loại
+
+== 30 DÒNG CHỌN ==
+#1 (hạng thô 1) điểm 281 | Volvo Penta TWD1645GE | dingbo n108 XG-560GF | prime {"kVA":700,"kW":560} sb null | ĐP ? LSA49.3 M6 | BĐK Deep Sea,HGM6110
+      vì: NCC có hồ sơ bộ điều khiển Deep Sea, SmartGen HGM6110; bộ điều khiển có datasheet hãng
+#2 (hạng thô 2) điểm 278 | Perkins 4006-23TAG2A | gb-power n1027  | prime {"kW":560,"kVA":700} sb {"kW":616,"kVA":770} | ĐP Stamford LVI634B | BĐK DSE6020
+      vì: dòng ghi bộ điều khiển Deep Sea DSE6020; bộ điều khiển có datasheet hãng
+#3 (hạng thô 8) điểm 277 | Cummins QSK23-G2 | fdk-energy n103 CG825E/H1 | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP Stamford S5L1D-H41 | BĐK InteliGen,DSE3110,DSE7320
+      vì: NCC có hồ sơ bộ điều khiển ComAp InteliGen, Deep Sea DSE3110, Deep Sea DSE7320; bộ điều khiển có datasheet hãng
+#4 (hạng thô 3) điểm 277 | Perkins 4006-23TAG2A | uleengen n103 UP750GF | prime null sb null | ĐP Stamford S5L1D-H41 | BĐK ComAp,DSE6020,DSE6120
+      vì: NCC có hồ sơ bộ điều khiển ComAp, Deep Sea DSE6020, Deep Sea DSE6120; bộ điều khiển có datasheet hãng
+#5 (hạng thô 7) điểm 277 | Mitsubishi S6R2-PTAA-C | fdk-energy n103 M825/H1 | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP Stamford S5L1D-H41 | BĐK InteliGen,DSE3110,DSE7320
+      vì: NCC có hồ sơ bộ điều khiển ComAp InteliGen, Deep Sea DSE3110, Deep Sea DSE7320; bộ điều khiển có datasheet hãng
+#6 (hạng thô 10) điểm 274 | Perkins 4006-23TAG3A | fdk-energy n103 P825/H1 | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP Stamford S5L1D-H4 | BĐK InteliGen,DSE3110,DSE7320
+      vì: NCC có hồ sơ bộ điều khiển ComAp InteliGen, Deep Sea DSE3110, Deep Sea DSE7320; bộ điều khiển có datasheet hãng
+#7 (hạng thô 15) điểm 271 | Perkins 4006-23TAG2A | koten-power n4014 KP750D5 | prime {"kW":600,"kVA":750} sb {"kW":660,"kVA":825} | ĐP Stamford LVI634B | BĐK ComAp,Deep Sea,HGM6110N
+      vì: NCC có hồ sơ bộ điều khiển ComAp, Deep Sea, SmartGen HGM6110N; bộ điều khiển có datasheet hãng
+#8 (hạng thô 16) điểm 270 | Perkins 4006-23TAG3A | uleengen n103 UP800GF | prime null sb null | ĐP Stamford S6L1D-C41 | BĐK ComAp,DSE6020,DSE6120
+      vì: NCC có hồ sơ bộ điều khiển ComAp, Deep Sea DSE6020, Deep Sea DSE6120; bộ điều khiển có datasheet hãng
+#9 (hạng thô 20) điểm 269 | Mitsubishi S6R2-PTAA | fdk-energy n103 M825N/H1 | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP Stamford S5L1D-H41 | BĐK InteliGen,DSE3110,DSE7320
+      vì: NCC có hồ sơ bộ điều khiển ComAp InteliGen, Deep Sea DSE3110, Deep Sea DSE7320; bộ điều khiển có datasheet hãng
+#10 (hạng thô 21) điểm 268 | Baudouin 6M33G825/5 | longkai-power n108 LG600BD | prime {"kW":600,"kVA":750} sb {"kW":660,"kVA":825} | ĐP Leroy-Somer LSA49.3 M65 | BĐK DSE6120
+      vì: NCC có hồ sơ bộ điều khiển Deep Sea DSE6120; bộ điều khiển có datasheet hãng
+#11 (hạng thô 33) điểm 261 | Perkins 4006-23TAG3A | voltgent n101 P900-1 | prime {"kVA":800,"kW":640} sb {"kVA":900,"kW":720} | ĐP FG Wilson FGL70030 | BĐK DSE7420,ComAp,DSE6120
+      vì: dòng ghi bộ điều khiển Deep Sea DSE7420; bộ điều khiển có datasheet hãng
+#12 (hạng thô 41) điểm 254 | Mitsubishi S6R2-PTAA | stone-power n102 SM750E5 | prime {"kW":600,"kVA":750} sb {"kW":660,"kVA":825} | ĐP Marathon MX-600-4 | BĐK ComAp,DSE6020,DSE7320
+      vì: NCC có hồ sơ bộ điều khiển ComAp, Deep Sea DSE6020, Deep Sea DSE7320; bộ điều khiển có datasheet hãng
+#13 (hạng thô 43) điểm 244 | Perkins 2806A-E18TTAG4 | voltgent n101 P780-1 | prime {"kVA":706,"kW":564.8} sb {"kVA":780,"kW":624} | ĐP Leroy-Somer LL7224J | BĐK ComAp,DSE6120,DSE7410
+      vì: NCC có hồ sơ bộ điều khiển ComAp, Deep Sea DSE6120, Deep Sea DSE7410; bộ điều khiển có datasheet hãng
+#14 (hạng thô 49) điểm 235 | Baudouin 6M33G750/5 | kaihua-genset n119 HC-BD760 | prime {"kVA":700} sb {"kVA":760} | ĐP Stamford S5L1D-G4 | BĐK InteliGen,DSE6020,DSE6120
+      vì: NCC có hồ sơ bộ điều khiển ComAp InteliGen, Deep Sea DSE6020, Deep Sea DSE6120; bộ điều khiển có datasheet hãng
+#15 (hạng thô 57) điểm 229 | Mitsubishi S6R2-PTAA-C | wintpower n102 WT-MEZ770 | prime {"kVA":700,"kW":560} sb {"kVA":770,"kW":616} | ĐP - | BĐK AMF25,DKG-309,DSE4620
+      vì: NCC có hồ sơ bộ điều khiển ComAp AMF25, Datakom DKG-309, Deep Sea DSE4620; bộ điều khiển có datasheet hãng
+#16 (hạng thô 60) điểm 228 | Cummins KTAA19-G6A | jiuan-power n109 CDC710KVA | prime {"kW":568,"kVA":710} sb {"kW":640,"kVA":800} | ĐP - | BĐK ComAp,DSE6120,DSE7220
+      vì: NCC có hồ sơ bộ điều khiển ComAp, Deep Sea DSE6120, Deep Sea DSE7220; bộ điều khiển có datasheet hãng
+#17 (hạng thô 118) điểm 214 | Cummins QSK19-G20 | aosif n102 AC825 | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP - | BĐK DSE6120,DSE7320
+      vì: NCC có hồ sơ bộ điều khiển Deep Sea DSE6120, Deep Sea DSE7320; bộ điều khiển có datasheet hãng
+#18 (hạng thô 121) điểm 213 | Baudouin 6M33G8D3/5 (6M33G825/5) | kaihua-genset n119 HC-BD825 | prime {"kVA":750} sb {"kVA":825} | ĐP Stamford S5L1D-H41 | BĐK InteliGen,DSE6020,DSE6120
+      vì: NCC có hồ sơ bộ điều khiển ComAp InteliGen, Deep Sea DSE6020, Deep Sea DSE6120; bộ điều khiển có datasheet hãng
+#19 (hạng thô 206) điểm 172 | Volvo Penta TWD1673GE | comappower n108 COM775V | prime {"kVA":705,"kW":564} sb {"kVA":775,"kW":620} | ĐP - | BĐK InteliGen
+      vì: NCC có hồ sơ bộ điều khiển ComAp InteliGen; bộ điều khiển có datasheet hãng
+#20 (hạng thô 224) điểm 165 | Scania DC16 078A 02-43 | kaihua-genset n114 KH-560GF | prime {"kVA":700,"kW":560} sb {"kVA":770,"kW":616} | ĐP - | BĐK InteliGen,DSE6020,DSE6120
+      vì: NCC có hồ sơ bộ điều khiển ComAp InteliGen, Deep Sea DSE6020, Deep Sea DSE6120; bộ điều khiển có datasheet hãng
+#21 (hạng thô 227) điểm 165 | Scania DC16 072A 02-13 | kaihua-genset n114 KH-561GF | prime {"kVA":701,"kW":561} sb {"kVA":771,"kW":617} | ĐP - | BĐK InteliGen,DSE6020,DSE6120
+      vì: NCC có hồ sơ bộ điều khiển ComAp InteliGen, Deep Sea DSE6020, Deep Sea DSE6120; bộ điều khiển có datasheet hãng
+#22 (hạng thô 230) điểm 163 | Mitsubishi S6R-PTA-S | ettes-power n159 ES-788 | prime {"kW":570,"kVA":713} sb {"kW":630,"kVA":788} | ĐP - | BĐK ComAp,DSE8620,DEIF
+      vì: NCC có hồ sơ bộ điều khiển ComAp, Deep Sea DSE8620, DEIF; bộ điều khiển có datasheet hãng
+#23 (hạng thô 231) điểm 162 | MTU 12V2000G63 | rise-power n118 RMM576 | prime {"kVA":720,"kW":576} sb {"kVA":781,"kW":625} | ĐP - | BĐK DSE6110,DSE7320,DSE8610
+      vì: NCC có hồ sơ bộ điều khiển Deep Sea DSE6110, Deep Sea DSE7320, Deep Sea DSE8610; bộ điều khiển có datasheet hãng
+#24 (hạng thô 377) điểm 118 | MTU 12V1600G11F | mecca-power n5001 MC825M | prime {"kW":600,"kVA":750} sb {"kW":660,"kVA":825} | ĐP - | BĐK ComAp,Deep Sea,DEIF
+      vì: NCC có hồ sơ bộ điều khiển ComAp, Deep Sea, DEIF
+#25 (hạng thô 404) điểm 113 | MTU 12V2000G26F | baifa-power n101 BF-M880-T2 | prime {"kVA":800} sb {"kVA":880} | ĐP Stamford S6L1D-C4 | BĐK -
+      vì: 
+#26 (hạng thô 437) điểm 80 | FPT V20 TE2 | legapower n109 IV800 | prime {"kVA":720} sb {"kVA":800} | ĐP - | BĐK -
+      vì: 
+#27 (hạng thô 447) điểm 75 | Volvo Penta TWD1645GE-B | walter-yangzhou n111 WET-620 | prime {"kVA":700,"kW":560} sb {"kVA":775,"kW":620} | ĐP - | BĐK -
+      vì: 
+#28 (hạng thô 446) điểm 75 | Scania DC16 072A 02-16 | huadong-yangzhou n106 HDSC700 | prime null sb {"kVA":770,"kW":616} | ĐP - | BĐK -
+      vì: 
+#29 (hạng thô 448) điểm 74 | Perkins 2806A-E18TAG4 | pauway-tianjin n104 PWP777 | prime {"kVA":706.25,"kW":565} sb {"kVA":777,"kW":621.5} | ĐP - | BĐK -
+      vì: 
+#30 (hạng thô 460) điểm 68 | MAN D2842LE203 | xinzhengfa n107 ZF600GF | prime null sb null | ĐP - | BĐK -
+      vì: 
+
+== MỌI DÒNG BAUDOUIN (qua lọc) ==
+CHỌN hạng thô 21 điểm 268 | Baudouin 6M33G825/5 | longkai-power n108 LG600BD | prime {"kW":600,"kVA":750} sb {"kW":660,"kVA":825} | ĐP Leroy-Somer LSA49.3 M65 | BĐK DSE6120
+      vì: NCC có hồ sơ bộ điều khiển Deep Sea DSE6120; bộ điều khiển có datasheet hãng
+CHỌN hạng thô 49 điểm 235 | Baudouin 6M33G750/5 | kaihua-genset n119 HC-BD760 | prime {"kVA":700} sb {"kVA":760} | ĐP Stamford S5L1D-G4 | BĐK InteliGen,DSE6020,DSE6120
+      vì: NCC có hồ sơ bộ điều khiển ComAp InteliGen, Deep Sea DSE6020, Deep Sea DSE6120; bộ điều khiển có datasheet hãng
+ngoài hạng thô 55 điểm 234 | Baudouin 6M33G825/5 | rcg-power n112 R-WB750D5-S | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP Leroy-Somer TAL-A49-B | BĐK Deep Sea,SmartGen,DEIF
+      vì: NCC có hồ sơ bộ điều khiển Deep Sea, SmartGen, DEIF
+ngoài hạng thô 56 điểm 234 | Baudouin 6M33G825/5 | rcg-power n112 R-WB750D5-S | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP Stamford S5L1D-H4 | BĐK Deep Sea,SmartGen,DEIF
+      vì: NCC có hồ sơ bộ điều khiển Deep Sea, SmartGen, DEIF
+ngoài hạng thô 98 điểm 222 | Baudouin 6M33G825/5 | comappower n105 COM825B | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP - | BĐK InteliGen
+      vì: NCC có hồ sơ bộ điều khiển ComAp InteliGen; bộ điều khiển có datasheet hãng
+ngoài hạng thô 99 điểm 222 | Baudouin 6M33G825/5 | koten-power n4005 KB750D5 | prime {"kW":600,"kVA":750} sb {"kW":660,"kVA":825} | ĐP - | BĐK ComAp,Deep Sea,HGM6110N
+      vì: NCC có hồ sơ bộ điều khiển ComAp, Deep Sea, SmartGen HGM6110N; bộ điều khiển có datasheet hãng
+ngoài hạng thô 100 điểm 222 | Baudouin 6M33G825/5 | rcg-power n112 R-WB750D5-S | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP ? WR544FL | BĐK Deep Sea,SmartGen,DEIF
+      vì: NCC có hồ sơ bộ điều khiển Deep Sea, SmartGen, DEIF
+ngoài hạng thô 101 điểm 222 | Baudouin 6M33G825/5 | westinpower n108 TB825 | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP - | BĐK DSE8004,DSE8610,DEIF
+      vì: NCC có hồ sơ bộ điều khiển Deep Sea DSE8004, Deep Sea DSE8610, DEIF; bộ điều khiển có datasheet hãng
+CHỌN hạng thô 121 điểm 213 | Baudouin 6M33G8D3/5 (6M33G825/5) | kaihua-genset n119 HC-BD825 | prime {"kVA":750} sb {"kVA":825} | ĐP Stamford S5L1D-H41 | BĐK InteliGen,DSE6020,DSE6120
+      vì: NCC có hồ sơ bộ điều khiển ComAp InteliGen, Deep Sea DSE6020, Deep Sea DSE6120; bộ điều khiển có datasheet hãng
+ngoài hạng thô 130 điểm 206 | Baudouin 8M33G1D0/5 | kaihua-genset n119 HC-BD880-III | prime {"kVA":800} sb {"kVA":880} | ĐP Stamford S6L1D-C41 | BĐK InteliGen,DSE6020,DSE6120
+      vì: NCC có hồ sơ bộ điều khiển ComAp InteliGen, Deep Sea DSE6020, Deep Sea DSE6120; bộ điều khiển có datasheet hãng
+ngoài hạng thô 142 điểm 190 | Baudouin 6M31G825/5 | voltgent n110 VB825-5 | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP - | BĐK ComAp,DSE6120,DSE7410
+      vì: NCC có hồ sơ bộ điều khiển ComAp, Deep Sea DSE6120, Deep Sea DSE7410; bộ điều khiển có datasheet hãng
+ngoài hạng thô 157 điểm 183 | Baudouin 6M31G900/5 | voltgent n110 VB900-5 | prime {"kVA":800,"kW":640} sb {"kVA":900,"kW":720} | ĐP - | BĐK ComAp,DSE6120,DSE7410
+      vì: NCC có hồ sơ bộ điều khiển ComAp, Deep Sea DSE6120, Deep Sea DSE7410; bộ điều khiển có datasheet hãng
+ngoài hạng thô 175 điểm 182 | Baudouin 6M33G825/5 | mecca-power n5001 MC825BD | prime {"kW":600,"kVA":750} sb {"kW":660,"kVA":825} | ĐP - | BĐK ComAp,Deep Sea,DEIF
+      vì: NCC có hồ sơ bộ điều khiển ComAp, Deep Sea, DEIF
+ngoài hạng thô 179 điểm 178 | Baudouin 6M33G8D3/5 | rcg-power n112 R-WB750D5-S | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP Leroy-Somer TAL-A49-B | BĐK Deep Sea,SmartGen,DEIF
+      vì: NCC có hồ sơ bộ điều khiển Deep Sea, SmartGen, DEIF
+ngoài hạng thô 180 điểm 178 | Baudouin 6M33G8D3/5 | rcg-power n112 R-WB750D5-S | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP Stamford S5L1D-H4 | BĐK Deep Sea,SmartGen,DEIF
+      vì: NCC có hồ sơ bộ điều khiển Deep Sea, SmartGen, DEIF
+ngoài hạng thô 205 điểm 172 | Baudouin 6M33G825/5 | landtop-fuzhou n122 LTP825B | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP ? LTP404S -600 | BĐK -
+      vì: 
+ngoài hạng thô 215 điểm 166 | Baudouin 6M33G8D3/5 | rcg-power n112 R-WB750D5-S | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP ? WR544FL | BĐK Deep Sea,SmartGen,DEIF
+      vì: NCC có hồ sơ bộ điều khiển Deep Sea, SmartGen, DEIF
+ngoài hạng thô 216 điểm 166 | Baudouin 6M33G8D3/5 | voltgent n102 VB813-5-S3 | prime {"kVA":750,"kW":600} sb {"kVA":813,"kW":650} | ĐP - | BĐK ComAp,DSE6120,DSE7410
+      vì: NCC có hồ sơ bộ điều khiển ComAp, Deep Sea DSE6120, Deep Sea DSE7410; bộ điều khiển có datasheet hãng
+ngoài hạng thô 229 điểm 163 | Baudouin 6M33G825/5 | previa-ningde n104 PR600BD | prime {"kW":600,"kVA":750} sb {"kW":660,"kVA":825} | ĐP Leroy-Somer LSA49.3 M65 | BĐK -
+      vì: 
+ngoài hạng thô 252 điểm 147 | Baudouin 6M33G825/5 | weichai-heavy-machinery n119 WPG825*7 | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP - | BĐK -
+      vì: 
+ngoài hạng thô 253 điểm 147 | Baudouin 6M33G825/5 | weichai-power n133 WPG825*7 | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP - | BĐK -
+      vì: 
+ngoài hạng thô 325 điểm 132 | Baudouin 6M33G825/5 | yanan-power n106 YN825B | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP - | BĐK -
+      vì: 
+ngoài hạng thô 330 điểm 126 | Baudouin 6M33G8D3/5 | deman-power n2402 DM813B | prime {"kVA":750,"kW":600} sb {"kVA":813,"kW":650} | ĐP - | BĐK Deep Sea,SmartGen,ComAp
+      vì: NCC có hồ sơ bộ điều khiển Deep Sea, SmartGen, ComAp
+ngoài hạng thô 372 điểm 122 | Baudouin 6M33G6D2/5 | weichai-power n119 WPG700*7 | prime null sb {"kVA":700,"kW":560} | ĐP - | BĐK -
+      vì: 
+ngoài hạng thô 391 điểm 115 | Baudouin 6M31G825/5 | weichai-heavy-machinery n106 WPG825*7 | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP - | BĐK -
+      vì: 
+ngoài hạng thô 392 điểm 115 | Baudouin 6M31G825/5 | weichai-power n134 WPG825*7 | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP - | BĐK -
+      vì: 
+ngoài hạng thô 393 điểm 115 | Baudouin 6M31G660/6 | weichai-heavy-machinery n106 WPG660*76 | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP - | BĐK -
+      vì: 
+ngoài hạng thô 394 điểm 115 | Baudouin 6M31G660/6 | weichai-power n134 WPG660*76 | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP - | BĐK -
+      vì: 
+ngoài hạng thô 395 điểm 115 | Baudouin 6M33G8D2/5 | weichai-power n119 WPG750*7 | prime null sb {"kVA":750,"kW":600} | ĐP - | BĐK -
+      vì: 
+ngoài hạng thô 396 điểm 115 | Baudouin 6M33G8D2/6 | weichai-power n119 WPG600*76 | prime null sb {"kVA":750,"kW":600} | ĐP - | BĐK -
+      vì: 
+ngoài hạng thô 418 điểm 108 | Baudouin 6M31G900/5 | weichai-heavy-machinery n106 WPG900*7 | prime {"kVA":800,"kW":640} sb {"kVA":900,"kW":720} | ĐP - | BĐK -
+      vì: 
+ngoài hạng thô 419 điểm 108 | Baudouin 6M31G900/5 | weichai-power n134 WPG900*7 | prime {"kVA":800,"kW":640} sb {"kVA":900,"kW":720} | ĐP - | BĐK -
+      vì: 
+ngoài hạng thô 422 điểm 104 | Baudouin 6M33G12D2/6 | weichai-power n119 WPG660*76 | prime null sb {"kVA":825,"kW":660} | ĐP - | BĐK -
+      vì: 
+ngoài hạng thô 424 điểm 100 | Baudouin 6M31G825/5 | agg-fuzhou n107 B825E5 | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP - | BĐK -
+      vì: 
+ngoài hạng thô 425 điểm 100 | Baudouin 6M31G660/6 | agg-fuzhou n107 B825E6 | prime {"kVA":750,"kW":600} sb {"kVA":825,"kW":660} | ĐP - | BĐK -
+      vì: 
+ngoài hạng thô 428 điểm 93 | Baudouin 6M31G900/5 | agg-fuzhou n107 B880E5 | prime {"kVA":800,"kW":640} sb {"kVA":880,"kW":704} | ĐP - | BĐK -
+      vì: 
+ngoài hạng thô 438 điểm 76 | Baudouin 6M33G8D3/5 | baifa-power n101 BD-BD812-T3 | prime {"kVA":750} sb {"kVA":812.5} | ĐP - | BĐK -
+      vì: 
+ngoài hạng thô 439 điểm 76 | Baudouin 6M33G8D3/5 | yanan-power n106 YN813B | prime {"kVA":750,"kW":600} sb {"kVA":813,"kW":650} | ĐP - | BĐK -
+      vì: 
+ngoài hạng thô 440 điểm 76 | Baudouin 6M33G8D3/5 | yanan-power n106 YN813B | prime {"kVA":750,"kW":600} sb {"kVA":813,"kW":650} | ĐP - | BĐK -
+      vì: 
+ngoài hạng thô 465 điểm 61 | Baudouin 12M26G704/6 | agg-fuzhou n107 B875D6 | prime {"kVA":800,"kW":640} sb {"kVA":875,"kW":700} | ĐP - | BĐK -
+      vì: 
+ngoài hạng thô 466 điểm 61 | Baudouin 6M31G700/6 | agg-fuzhou n107 B875E6 | prime {"kVA":800,"kW":640} sb {"kVA":875,"kW":700} | ĐP - | BĐK -
+      vì: 
+
+== DÒNG 6M31 / Baudouin BỊ LOẠI ==
+  6M33G715/5 | agg-fuzhou n107 | prime | {}
+  6M33G715/5 | comappower n105 | prime | {}
+  6M33G715/5 | deman-power n2296 | prime | {}
+  6M33G715/5 | koten-power n4005 | prime | {}
+  6M33G715/5 | landtop-fuzhou n122 | prime | {}
+  6M33G715/5 | longkai-power n108 | prime | {}
+  6M33G715/5 | mecca-power n5001 | prime | {}
+  6M33G715/5 | previa-ningde n104 | prime | {}
+  6M33G715/5 | rcg-power n112 | prime | {}
+  6M33G715/5 | rcg-power n112 | prime | {}
+  6M33G715/5 | rcg-power n112 | prime | {}
+  6M33G715/5 | voltgent n110 | prime | {}
+  6M33G715/5 | waeta-fujian n103 | prime | {}
+  6M33G715/5 | weichai-heavy-machinery n119 | prime | {}
+  6M33G715/5 | weichai-power n133 | prime | {}
+  6M33G715/5 | westinpower n108 | prime | {}
+  6M33G715/5 | yanan-power n106 | prime | {}
+  6M33G825/5 | waeta-fujian n103 | cyl | {}
+  6M33G575/6 | kaihua-genset n119 | prime,freq | {}
+  6M33G575/6 | koten-power n4006 | prime,freq | {}
+  6M33G575/6 | landtop-fuzhou n122 | prime,freq | {}
+  6M33G575/6 | voltgent n110 | prime,freq | {}
+  6M33G575/6 | waeta-fujian n103 | prime,freq | {}
+  6M33G575/6 | yanan-power n106 | prime,freq | {}
+  6M33G600/6 | agg-fuzhou n107 | prime,freq | {}
+  6M33G600/6 | kaihua-genset n119 | prime,freq | {}
+  6M33G600/6 | koten-power n4006 | prime,freq | {}
+  6M33G600/6 | landtop-fuzhou n122 | prime,freq | {}
+  6M33G600/6 | longkai-power n108 | prime,freq | {}
+  6M33G600/6 | previa-ningde n104 | prime,freq | {}
+  6M33G600/6 | voltgent n110 | prime,freq | {}
+  6M33G600/6 | waeta-fujian n103 | prime,freq | {}
+  6M33G600/6 | weichai-heavy-machinery n119 | prime,freq | {}
+  6M33G600/6 | weichai-power n133 | prime,freq | {}
+  6M33G600/6 | yanan-power n106 | prime,freq | {}
+  6M33G750/5 | agg-fuzhou n107 | prime | {}
+  6M33G750/5 | comappower n105 | prime | {}
+  6M33G750/5 | landtop-fuzhou n122 | prime | {}
+  6M33G750/5 | longkai-power n108 | prime | {}
+  6M33G750/5 | mecca-power n5001 | prime | {}
+  6M33G750/5 | previa-ningde n104 | prime | {}
+  6M33G750/5 | rcg-power n112 | prime | {}
+  6M33G750/5 | rcg-power n112 | prime | {}
+  6M33G750/5 | rcg-power n112 | prime | {}
+  6M33G750/5 | voltgent n110 | prime | {}
+  6M33G750/5 | waeta-fujian n103 | prime | {}
+  6M33G750/5 | westinpower n108 | prime | {}
+  6M33G750/5 | yanan-power n106 | prime | {}
+  6M33G660/6 | comappower n105 | prime,freq | {}
+  6M33G660/6 | kaihua-genset n119 | freq | {}
+  6M33G660/6 | koten-power n4006 | freq | {}
+  6M33G660/6 | landtop-fuzhou n122 | freq | {}
+  6M33G660/6 | longkai-power n108 | freq | {}
+  6M33G660/6 | previa-ningde n104 | freq | {}
+  6M33G660/6 | voltgent n110 | freq | {}
+  6M33G660/6 | waeta-fujian n103 | freq | {}
+  6M33G660/6 | weichai-heavy-machinery n119 | freq | {}
+  6M33G660/6 | weichai-power n133 | freq | {}
+  6M33G660/6 | yanan-power n106 | freq | {}
+  12M26G900/5 | comappower n105 | cyl | {}
+  12M26G900/5 | landtop-fuzhou n122 | cyl | {"cyl":{"win":12,"votes":{"12":3}}}
+  12M26G900/5 | longkai-power n108 | cyl | {"cyl":{"win":12,"votes":{"12":3}}}
+  12M26G900/5 | mecca-power n5001 | cyl | {"cyl":{"win":12,"votes":{"12":3}}}
+  12M26G900/5 | previa-ningde n104 | cyl | {"cyl":{"win":12,"votes":{"12":3}}}
+  12M26G900/5 | rcg-power n112 | cyl | {"cyl":{"win":12,"votes":{"12":3}}}
+  12M26G900/5 | rcg-power n112 | cyl | {"cyl":{"win":12,"votes":{"12":3}}}
+  12M26G900/5 | rcg-power n112 | cyl | {"cyl":{"win":12,"votes":{"12":3}}}
+  12M26G900/5 | waeta-fujian n103 | cyl,layout | {}
+  12M26G900/5 | westinpower n108 | cyl | {"cyl":{"win":12,"votes":{"12":3}}}
+  12M26G900/5 | yanan-power n106 | cyl | {}
+  12M26G800/6 | comappower n105 | cyl,freq | {}
+  12M26G800/6 | longkai-power n108 | cyl,freq | {"cyl":{"win":12,"votes":{"12":6}}}
+  12M26G800/6 | previa-ningde n104 | cyl,freq | {"cyl":{"win":12,"votes":{"12":6}}}
+  8M33G900/5 | agg-fuzhou n107 | cyl | {}
+  8M33G900/5 | kaihua-genset n119 | cyl | {}
+  8M33G900/5 | landtop-fuzhou n122 | cyl | {}
+  8M33G900/5 | longkai-power n108 | cyl | {}
+  8M33G900/5 | mecca-power n5001 | cyl | {}
+  8M33G900/5 | previa-ningde n104 | cyl | {}
+  8M33G900/5 | rcg-power n112 | cyl | {}
+  8M33G900/5 | rcg-power n112 | cyl | {}
+  8M33G900/5 | rcg-power n112 | cyl | {}
+  8M33G900/5 | waeta-fujian n103 | cyl | {}
+  8M33G900/5 | yanan-power n106 | cyl | {}
+  6M33G633/6 | agg-fuzhou n107 | freq | {}
+  6M33G633/6 | landtop-fuzhou n122 | freq | {}
+  6M33G633/6 | longkai-power n108 | prime,freq | {}
+  6M33G633/6 | previa-ningde n104 | prime,freq | {}
+  6M33G633/6 | voltgent n110 | freq | {}
+  6M33G633/6 | waeta-fujian n103 | freq | {}
+  6M33G6D3/5 | baifa-power n101 | prime | {}
+  6M33G6D3/5 | deman-power n2302 | prime | {}
+  6M33G6D3/5 | kaihua-genset n119 | prime | {}
+  6M33G6D3/5 | rcg-power n112 | prime | {}
+  6M33G6D3/5 | rcg-power n112 | prime | {}
+  6M33G6D3/5 | rcg-power n112 | prime | {}
+  6M33G6D3/5 | voltgent n102 | prime | {}
+  6M33G6D3/5 | voltgent n1050 | prime | {}
+  6M33G6D3/5 | yanan-power n106 | prime | {}
+  6M33G6D3/5 | yanan-power n106 | prime | {}
+  8M33G2D3/5 | deman-power n2403 | cyl | {}
+  8M33G2D3/5 | rcg-power n112 | cyl | {}
+  8M33G2D3/5 | rcg-power n112 | cyl | {}
+  8M33G2D3/5 | rcg-power n112 | cyl | {}
+  8M33G2D3/5 | voltgent n102 | cyl | {}
+  8M33G2D3/5 | yanan-power n106 | cyl | {}
+  8M33G2D3/5 | yanan-power n106 | cyl | {}
+  6M31G725/5 | agg-fuzhou n107 | prime | {}
+  6M31G725/5 | weichai-heavy-machinery n106 | prime | {}
+  6M31G725/5 | weichai-power n134 | prime | {}
+  6M31G580/6 | agg-fuzhou n107 | prime | {}
+  6M31G600/6 | agg-fuzhou n107 | prime | {}
+  6M31G600/6 | weichai-heavy-machinery n106 | prime | {}
+  6M31G600/6 | weichai-power n134 | prime | {}
+  6M33G8D2/5 | baifa-power n101 | prime | {}
+  8M33G2D2/5 | baifa-power n101 | cyl | {}
+  8M33G2D2/5 | weichai-heavy-machinery n111 | cyl | {}
+  8M33G2D2/5 | weichai-power n118 | cyl | {}
+  8M33G4D2/5 | baifa-power n101 | cyl | {}
+  6M31G750/5 | agg-fuzhou n107 | prime | {}
+  12M26D748E201 | gordon-power n116 | fuel | {}
+  6M33D632E201 | gordon-power n116 | prime | {}
+
+== 6M31G825/5 trong danh mục đầy đủ (trước lọc xuất xứ / dải công suất) ==
+động cơ 6M31G825/5 | make Baudouin | makesAll [{"name":"Baudouin","via":"tên trang","supplierId":"agg-fuzhou","n":107},{"name":"Baudouin","via":"dòng bảng","supplierId":"voltgent","n":110},{"name":"Baudouin","via":"tiêu đề cột","supplierId":"weichai-heavy-machinery","n":106}] | uses 5
+   agg-fuzhou n107 | genset B825E5 | freq null | power {"standby":{"kVA":825,"kW":660},"prime":{"kVA":750,"kW":600}} | other null | line | B825E5 | 825/660 | 750/600 | 6M31G825/5
+   cgm-italia n101 | genset 750B | freq null | power {"prime":{"kVA":750,"kW":600},"standby":{"kVA":825,"kW":660}} | other null | line | 750B | | 750 | 600 | 825 | 660 | 6M31G825/5 | E | 0 | 6 | 888.7/663 | 400 | B750 | 5750 | 3450x1550x2300 | C750 | 7420 | 5050x2150x2550 | 69 | QM1000 | QA1000
+   voltgent n110 | genset VB825-5 | freq null | power {"standby":{"kVA":825,"kW":660},"prime":{"kVA":750,"kW":600}} | other null | line | VB825-5 | 825 | 660 | 750 | 600 | Baudouin | 6M31G825/5 | [EN] [RU] [ES] [PT]
+   weichai-heavy-machinery n106 | genset WPG825*7 | freq null | power {"standby":{"kVA":825,"kW":660},"prime":{"kVA":750,"kW":600}} | other null | line | WPG825*7 | 1500 | 825/660 | 750/600 | 6M31G825/5 | 6 | 149×177 | Electronic control | Non-Road Emission Exempt
+   weichai-power n134 | genset WPG825*7 | freq null | power {"standby":{"kVA":825,"kW":660},"prime":{"kVA":750,"kW":600}} | other null | line | WPG825*7 | 1500 | 825/660 | 750/600 | 6M31G825/5 | 6 | 149×177 | Electronic control | Non-Road Emission Exempt
+   facts: cyl=6 (weichai-heavy-machinery) | bore=149×177 (weichai-heavy-machinery) | gov=Electronic control (weichai-heavy-machinery) | emission=Non-Road Emission Exempt (weichai-heavy-machinery) | cyl=6 (weichai-power) | bore=149×177 (weichai-power) | gov=Electronic control (weichai-power) | emission=Non-Road Emission Exempt (weichai-power)
+   còn trong cat sau lọc xuất xứ: true | uses: agg-fuzhou,voltgent,weichai-heavy-machinery,weichai-power
+
+== Đầu phát LSA 49.3 M8 trong danh mục ==
+Leroy-Somer LSA49.3 M8 | key LSA493M8 | facts: ip=IP 23 | insul=H | excit=AREP / PMG | vreg=± 0.25% | ip=IP 23
+Leroy-Somer LSA49.3M8/656KW | key LSA493M8/656KW | facts: 
+Leroy-Somer LSA49.3M8/820KW | key LSA493M8/820KW | facts: 
+
+== Bộ điều khiển trong danh mục (7320 / 7420 / 890) ==
+Deep Sea DSE7320 | NCC 44 | datasheet: 0 dòng
+Deep Sea DSE7320MKII | NCC 8 | datasheet: 238 dòng
+Deep Sea DSE7420 | NCC 18 | datasheet: 0 dòng
+Deep Sea DSE7420 MKII | NCC 1 | datasheet: 250 dòng

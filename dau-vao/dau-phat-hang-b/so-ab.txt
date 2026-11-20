@@ -1,0 +1,90 @@
+## IB2600574589 (4 → 4 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 400 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 380 / 415 V (lấy số nhỏ nhất), không quá 130 %; kích từ PMG","used":0}
+  giống hệt
+## IB2600581294 (7 → 7 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 500 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 380 V (lấy số nhỏ nhất), không quá 130 %","used":0}
+  giống hệt
+## IB2600581977 (4 → 4 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 250 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 400 V (lấy số nhỏ nhất), không quá 130 %; ổn định điện áp ±1 %; xuất xứ G7 / EU","used":0}
+  giống hệt
+## IB2600586587 (6 → 6 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 160 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 380 V (lấy số nhỏ nhất), không quá 130 %; ổn định điện áp ±1 %","used":0}
+  giống hệt
+## IB2600592658 (1 → 1 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 500 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 380 / 440 V (lấy số nhỏ nhất), không quá 130 %; hãng Leroy-Somer","used":0}
+  giống hệt
+## IB2600592684 (0 → 0 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 500 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, không quá 130 %","used":0}
+  giống hệt
+## IB2600594596 (0 → 0 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 400 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, không quá 130 %","used":0}
+  giống hệt
+## IB2600595853 (1 → 1 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 500 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 380 / 440 V (lấy số nhỏ nhất), không quá 130 %; hãng Leroy-Somer","used":0}
+  giống hệt
+## IB2600599817 (0 → 0 cấu hình)
+  giống hệt
+## IB2600601812 (6 → 6 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 100 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 380 V (lấy số nhỏ nhất), không quá 130 %; ổn định điện áp ±1 %","used":0}
+  giống hệt
+## IB2600602880 (1 → 1 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 150 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 400 V (lấy số nhỏ nhất), không quá 130 %; ổn định điện áp ±1 %; hãng Leroy-Somer","used":1}
+  #1→#1 6BTAA5.9-G12 | TAL-A44-J
+    đầu phát: (không) → TAL-A44-J [datasheet hãng, code đặt] — Kích từ SHUNT / AREP / PMG; AVR R120 / R180 (theo kiểu kích từ, chọn khi đặt hàng)
+    hạng 1 → 1; điểm [0,0,0,11,10,0,1] → [0,0,0,11,5,0,1]
+    check alternator|Hãng đầu phát: unclear → met — (Leroy-Somer (đầu phát TAL-A44-J chọn theo datasheet hãng, NCC chưa chào))
+    check alternator|Model đầu phát: unclear → met — (TAL-A44-J (Leroy-Somer, chọn theo datasheet hãng, NCC chưa chào))
+    check alternator|Xuất xứ đầu phát: unclear → met — (Đầu phát TAL-A44-J (hãng Leroy-Somer, sản xuất tại Trung Quốc (tờ của nhà máy Phúc Châu (l)
+    check alternator|Ổn định điện áp: unclear → met — (±1 / ±0,5%)
+    check alternator|Cấp cách điện: unclear → met — (Cấp H)
+## IB2600603983 (8 → 8 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 750 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 380 V (lấy số nhỏ nhất), không quá 130 %; ngắn mạch 300 % / 10 s; ổn định điện áp ±0,5 %; xuất xứ G7 / EU","used":4}
+  #1→#1 6M31G825/5 | LSA 49.3 M8
+    đầu phát: (không) → LSA 49.3 M8 [datasheet hãng, code đặt] — Kích từ AREP / PMG; AVR D350
+    hạng 1 → 1; điểm [0,0,0,40,14,0,2] → [0,0,0,40,9,0,2]
+    check alternator|Xuất xứ đầu phát: unclear → met — (Đầu phát LSA 49.3 M8 (hãng Leroy-Somer, sản xuất tại Trung Quốc (tờ của nhà máy Phúc Châu )
+    check alternator|Kiểu đầu phát (không chổi than, tự kích): unclear → (không có)
+    check alternator|Cấp cách điện: unclear → met — (Cấp H)
+    check alternator|Ổn định điện áp: unclear → met — (±0,25%)
+    check alternator|Kích từ đầu phát (PMG / AREP): unclear → (không có)
+    check alternator|Dòng ngắn mạch duy trì (300% / 10 s): unclear → met — (300% (3 IN) trong 10 giây (tờ hãng))
+    check alternator|Quá tốc đầu phát: unclear → met — (Quá tốc độ tối đa 2.250 v/p)
+  #3→#3 12V2000G63 | LSA 49.3 M8
+    đầu phát: (không) → LSA 49.3 M8 [datasheet hãng, code đặt] — Kích từ AREP / PMG; AVR D350
+    hạng 3 → 3; điểm [0,0,0,43,14,0,3] → [0,0,0,43,9,0,3]
+    check alternator|Xuất xứ đầu phát: unclear → met — (Đầu phát LSA 49.3 M8 (hãng Leroy-Somer, sản xuất tại Trung Quốc (tờ của nhà máy Phúc Châu )
+    check alternator|Kiểu đầu phát (không chổi than, tự kích): unclear → (không có)
+    check alternator|Cấp cách điện: unclear → met — (Cấp H)
+    check alternator|Ổn định điện áp: unclear → met — (±0,25%)
+    check alternator|Kích từ đầu phát (PMG / AREP): unclear → (không có)
+    check alternator|Dòng ngắn mạch duy trì (300% / 10 s): unclear → met — (300% (3 IN) trong 10 giây (tờ hãng))
+    check alternator|Quá tốc đầu phát: unclear → met — (Quá tốc độ tối đa 2.250 v/p)
+  #5→#5 QSK23-G2 | LSA 49.3 M8
+    đầu phát: (không) → LSA 49.3 M8 [datasheet hãng, code đặt] — Kích từ AREP / PMG; AVR D350
+    hạng 5 → 5; điểm [1,0,0,39,12,0,2] → [1,0,0,39,7,0,2]
+    check alternator|Xuất xứ đầu phát: unclear → met — (Đầu phát LSA 49.3 M8 (hãng Leroy-Somer, sản xuất tại Trung Quốc (tờ của nhà máy Phúc Châu )
+    check alternator|Kiểu đầu phát (không chổi than, tự kích): unclear → (không có)
+    check alternator|Cấp cách điện: unclear → met — (Cấp H)
+    check alternator|Ổn định điện áp: unclear → met — (±0,25%)
+    check alternator|Kích từ đầu phát (PMG / AREP): unclear → (không có)
+    check alternator|Dòng ngắn mạch duy trì (300% / 10 s): unclear → met — (300% (3 IN) trong 10 giây (tờ hãng))
+    check alternator|Quá tốc đầu phát: unclear → met — (Quá tốc độ tối đa 2.250 v/p)
+  #8→#8 12V1600G11F | LSA 49.3 M8
+    đầu phát: (không) → LSA 49.3 M8 [datasheet hãng, code đặt] — Kích từ AREP / PMG; AVR D350
+    hạng 8 → 8; điểm [1,0,0,55,13,0,1] → [1,0,0,55,8,0,1]
+    check alternator|Xuất xứ đầu phát: unclear → met — (Đầu phát LSA 49.3 M8 (hãng Leroy-Somer, sản xuất tại Trung Quốc (tờ của nhà máy Phúc Châu )
+    check alternator|Kiểu đầu phát (không chổi than, tự kích): unclear → (không có)
+    check alternator|Cấp cách điện: unclear → met — (Cấp H)
+    check alternator|Ổn định điện áp: unclear → met — (±0,25%)
+    check alternator|Kích từ đầu phát (PMG / AREP): unclear → (không có)
+    check alternator|Dòng ngắn mạch duy trì (300% / 10 s): unclear → met — (300% (3 IN) trong 10 giây (tờ hãng))
+    check alternator|Quá tốc đầu phát: unclear → met — (Quá tốc độ tối đa 2.250 v/p)
+## IB2600604739 (0 → 0 cấu hình)
+  giống hệt
+## IB2600607539 (0 → 0 cấu hình)
+  giống hệt
+## IB2600609805 (3 → 3 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 150 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 400 V (lấy số nhỏ nhất), không quá 130 %; ổn định điện áp ±1 %; hãng Leroy-Somer","used":1}
+  #1→#1 6BTAA5.9-G12 | TAL-A44-J
+    đầu phát: (không) → TAL-A44-J [datasheet hãng, code đặt] — Kích từ SHUNT / AREP / PMG; AVR R120 / R180 (theo kiểu kích từ, chọn khi đặt hàng)
+    hạng 1 → 1; điểm [0,0,0,23,10,0,0] → [0,0,0,23,4,0,0]
+    check alternator|Model đầu phát: unclear → met — (TAL-A44-J (Leroy-Somer, chọn theo datasheet hãng, NCC chưa chào))
+    check alternator|Hãng đầu phát: unclear → met — (Leroy-Somer (đầu phát TAL-A44-J chọn theo datasheet hãng, NCC chưa chào))
+    check alternator|Xuất xứ đầu phát: unclear → met — (Đầu phát TAL-A44-J (hãng Leroy-Somer, sản xuất tại Trung Quốc (tờ của nhà máy Phúc Châu (l)
+    check alternator|Công suất đầu phát: unclear → met — (150 kVA (Continuous cấp H 125 K / 40 °C, 50 Hz, 3 pha, 400 V; datasheet hãng Leroy-Somer))
+    check alternator|Ổn định điện áp: unclear → met — (±1 / ±0,5%)
+    check alternator|Cấp cách điện: unclear → met — (Cấp H)
+## IB2600612866 (1 → 1 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 9 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, không quá 130 %; ổn định điện áp ±1 %","used":0}
+  giống hệt
+## IB2600613475 (5 → 5 cấu hình) — makerAlt: {"need":"50 Hz; ≥ 12 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, không quá 130 %; ổn định điện áp ±1 %","used":0}
+  giống hệt
+
+Tổng: 47 cấu hình ở nhánh; đổi đầu phát 6; đổi hạng / điểm 6; check đổi trạng thái 39.

@@ -1,0 +1,67 @@
+IB2200018828#0 minCyl 6 cylExact true
+   baifa all gốc true nhánh true | dropped gốc: 
+IB2200035219#0 minCyl 1 cylExact true
+IB2300005377#0 minCyl 12 cylExact true
+   baifa dropped: baifa-power|16V2000G26F|||BFM1100T2|1100|1000||16V2000G26F|| cyl
+   baifa dropped: baifa-power|16V2000G36F|||BFM1250T2|1250|1135||16V2000G36F|| cyl
+   baifa dropped: baifa-power|16V2000G16F|||BFM1000T2|1000|910||16V2000G16F||S prime
+   baifa all gốc true nhánh false | dropped gốc: prime
+IB2300096122#0 minCyl 12 cylExact true
+   baifa dropped: baifa-power|16V2000G26F|||BFM1100T2|1100|1000||16V2000G26F|| cyl
+   baifa all gốc true nhánh true | dropped gốc: 
+IB2300254479#0 minCyl 12 cylExact true
+   baifa all gốc true nhánh true | dropped gốc: 
+IB2300268389#0 minCyl 6 cylExact true
+IB2300315082#0 minCyl 12 cylExact true
+IB2400302943#0 minCyl 6 cylExact true
+IB2400377756#0 minCyl 16 cylExact false
+   baifa all gốc true nhánh true | dropped gốc: 
+IB2500320544#0 minCyl 12 cylExact true
+   baifa dropped: baifa-power|16V2000G26F|||BFM1100T2|1100|1000||16V2000G26F|| cyl
+   baifa dropped: baifa-power|16V2000G36F|||BFM1250T2|1250|1135||16V2000G36F|| cyl
+   baifa all gốc true nhánh true | dropped gốc: 
+IB2500432527#0 minCyl 12 cylExact true
+   baifa dropped: baifa-power|16V2000G26F|||BFM1100T2|1100|1000||16V2000G26F|| cyl
+   baifa dropped: baifa-power|16V2000G36F|||BFM1250T2|1250|1135||16V2000G36F|| cyl
+   baifa all gốc true nhánh true | dropped gốc: 
+IB2600418114#0 minCyl 12 cylExact true
+   baifa dropped: baifa-power|16V2000G26F|||BFM1100T2|1100|1000||16V2000G26F|| cyl
+   baifa dropped: baifa-power|16V2000G36F|||BFM1250T2|1250|1135||16V2000G36F|| cyl
+   baifa all gốc true nhánh true | dropped gốc: 
+IB2600588204#0 minCyl 4 cylExact false
+
+(b) lượt đổi top: 49; lượt có khoá ra mà KHÔNG có dòng 4 bảng vào và không khoá vào nào tăng điểm: 0 
+   1× RA aj-power|DC16093A0254 AJ710: điểm không đổi, bị chen
+        IB2400058723#0(vào: 1 dòng 4 bảng)
+   2× RA baifa-power|12V2000G26F BFM880T2: điểm không đổi, bị chen
+        IB2300000242#0(vào: 0 dòng 4 bảng; mecca-power 118→126)
+        IB2300194512#0(vào: 0 dòng 4 bảng; mecca-power 118→126)
+   1× RA baifa-power|16V2000G16F BFM1000T2: điểm không đổi, bị chen
+        IB2600350175#0(vào: 0 dòng 4 bảng; mecca-power 116→124)
+   1× RA cameo-power|CP188FE VOLTAGE(V): điểm không đổi, bị chen
+        IB2300133361#0(vào: 1 dòng 4 bảng)
+   1× RA cgm-italia|400830TAG3 1125P: điểm không đổi, bị chen
+        IB2200073279#0(vào: 3 dòng 4 bảng)
+   1× RA cgm-italia|KDW1003 V7,5LW: rời all
+        IB2200035219#0(vào: 0 dòng 4 bảng)
+   1× RA fdk-energy|403A11G1 P10/H1CONTACT: điểm không đổi, bị chen
+        IB2500287209#0(vào: 1 dòng 4 bảng)
+   1× RA genesal-energy|DC13072A : điểm không đổi, bị chen
+        IB2500159012#0(vào: 1 dòng 4 bảng)
+   1× RA saudi-diesel|S12RPTAR1 STANDBYPOWER: điểm không đổi, bị chen
+        IB2500400828#0(vào: 3 dòng 4 bảng)
+   2× RA suneco-linyi|D905E2BG ECO7K: điểm không đổi, bị chen
+        IB2200052056#0(vào: 1 dòng 4 bảng)
+        IB2400186078#0(vào: 0 dòng 4 bảng; cgm-italia 50→66)
+   1× RA tecnogen|2806AE18TTAG4 PK770TSX: điểm không đổi, bị chen
+        IB2200019427#0(vào: 1 dòng 4 bảng)
+   2× RA tecnogen|400830TAG3 PK1250TV: điểm không đổi, bị chen
+        IB2200073279#0(vào: 3 dòng 4 bảng)
+        IB2500400828#0(vào: 3 dòng 4 bảng)
+   2× RA tecnogen|QST30G4 CU1100TV: điểm không đổi, bị chen
+        IB2200073279#0(vào: 3 dòng 4 bảng)
+        IB2500400828#0(vào: 3 dòng 4 bảng)
+   1× RA visa-gensets|DC16320A0263 550,0: điểm không đổi, bị chen
+        IB2200020538#0(vào: 1 dòng 4 bảng)
+   1× RA wacker-neuson|KSD1403NA : rời all
+        IB2600588204#0(vào: 0 dòng 4 bảng)

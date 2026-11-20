@@ -1,0 +1,266 @@
+vai_khoa_dich	dong_truoc	dong_sau	nhan_them	khop	hang_truoc	hang_sau
+engines|400623TAG2A	126	133	7	đúng	Perkins	Perkins
+engines|401246TAG2A	132	138	6	đúng	Perkins	Perkins
+engines|400623TAG3A	157	165	8	đúng	Perkins	Perkins
+engines|4008TAG2	77	81	4	đúng	Perkins	Perkins
+engines|401246TWG2A	151	156	5	đúng	Perkins	Perkins
+engines|403D11G	116	122	6	đúng	Perkins	Perkins
+engines|Y4105D	50	55	5	đúng	Yangdong	Yangdong
+engines|Y4105ZLD	56	60	4	đúng	Yangdong	Yangdong
+engines|YD480D	56	61	5	đúng	Yangdong	Yangdong
+engines|YND485D	55	59	4	đúng	Yangdong	Yangdong
+engines|YSD490D	55	59	4	đúng	Yangdong	Yangdong
+engines|1103A33TG1	172	181	9	đúng	Perkins	Perkins
+engines|404D22G	122	127	5	đúng	Perkins	Perkins
+engines|6ZTAA13G2	110	113	3	đúng	Cummins	Cummins
+engines|1103A33G	173	175	2	đúng	Perkins	Perkins
+engines|1103A33TG2	152	154	2	đúng	Perkins	Perkins
+engines|403A15G1	78	80	2	đúng	Perkins	Perkins
+engines|403A15G2	104	106	2	đúng	Perkins	Perkins
+engines|404A22G1	82	84	2	đúng	Perkins	Perkins
+engines|4TNV88GGE	23	25	2	đúng	Yanmar	Yanmar
+engines|4TNV98GGE	21	23	2	đúng	Yanmar	Yanmar
+engines|CA4DF212D	16	19	3	đúng	FAWDE	FAWDE
+engines|CA6DL230D	16	18	2	đúng	FAWDE	FAWDE
+engines|P086TI	17	19	2	đúng	Doosan / Hyundai	Doosan / Hyundai
+engines|P158LE	18	20	2	đúng	Doosan / Hyundai	Doosan / Hyundai
+engines|401246TAG3A	136	141	5	đúng	Perkins	Perkins
+engines|JET444D	0	2	2	đúng	(chưa có)	Doosan
+engines|WD129TAD2310	0	2	2	đúng	(chưa có)	
+engines|WD129TAD23	8	10	2	đúng	Wudong	Wudong
+engines|WD129TAD2510	0	2	2	đúng	(chưa có)	
+engines|WD129TAD25	5	7	2	đúng	Wudong	Wudong
+engines|WD135TAD2810	0	2	2	đúng	(chưa có)	
+engines|WD135TAD28	7	9	2	đúng	Wudong	Wudong
+engines|WD145TAD3010	0	2	2	đúng	(chưa có)	
+engines|WD145TAD30	9	11	2	đúng	Wudong	Wudong
+engines|WD145TAD3310	0	2	2	đúng	(chưa có)	
+engines|WD145TAD33L	8	10	2	đúng	Wudong	Wudong
+engines|WD145TAD3510	0	2	2	đúng	(chưa có)	
+engines|WD145TAD35	6	8	2	đúng	Wudong	Wudong
+engines|WD164TAD43	2	4	2	đúng	Wudong	Wudong
+engines|WD164TAD45	1	3	2	đúng	Wudong	Wudong
+engines|WD180TAD61	1	3	2	đúng	Wudong	Wudong
+engines|WD269TAD3810	0	2	2	đúng	(chưa có)	
+engines|WD269TAD38	6	8	2	đúng	Wudong	Wudong
+engines|WD269TAD4110	0	2	2	đúng	(chưa có)	
+engines|WD269TAD41	9	11	2	đúng	Wudong	Wudong
+engines|WD269TAD4310	0	2	2	đúng	(chưa có)	
+engines|WD269TAD43	7	9	2	đúng	Wudong	Wudong
+engines|WD269TAD4510	0	2	2	đúng	(chưa có)	
+engines|WD269TAD45	5	7	2	đúng	Wudong	Wudong
+engines|WD269TAD4810	0	2	2	đúng	(chưa có)	
+engines|WD269TAD48	7	9	2	đúng	Wudong	Wudong
+engines|WD269TAD5010	0	2	2	đúng	(chưa có)	
+engines|WD269TAD50	9	11	2	đúng	Wudong	Wudong
+engines|WD269TAD5610	0	2	2	đúng	(chưa có)	
+engines|WD269TAD56	10	12	2	đúng	Wudong	Wudong
+engines|WD287TAD5810	0	2	2	đúng	(chưa có)	
+engines|WD287TAD58	5	7	2	đúng	Wudong	Wudong
+engines|WD287TAD61L10	0	2	2	đúng	(chưa có)	
+engines|WD287TAD61L	10	12	2	đúng	Wudong	Wudong
+engines|WD327TAD100	4	6	2	đúng	Wudong	Wudong
+engines|WD327TAD6810	0	2	2	đúng	(chưa có)	
+engines|WD327TAD68	1	3	2	đúng	Wudong	Wudong
+engines|WD327TAD73	3	5	2	đúng	Wudong	Wudong
+engines|WD327TAD7810	0	2	2	đúng	(chưa có)	
+engines|WD327TAD78	7	9	2	đúng	Wudong	Wudong
+engines|WD327TAD8210	0	2	2	đúng	(chưa có)	
+engines|WD327TAD82	6	8	2	đúng	Wudong	Wudong
+engines|WD327TAD88	8	10	2	đúng	Wudong	Wudong
+engines|WD360TAD110	4	6	2	đúng	Wudong	Wudong
+engines|WD360TAD120	4	6	2	đúng	Wudong	Wudong
+engines|WJ43D6	1	3	2	đúng	Wudong	Wudong
+engines|WJ45TAD7	1	3	2	đúng	Wudong	Wudong
+engines|WJ65TD8	1	3	2	đúng	Wudong	Wudong
+engines|WJ68TAD11	1	3	2	đúng	Wudong	Wudong
+engines|WJ78TAD17	1	3	2	đúng	Wudong	Wudong
+engines|WJ97TAD21	1	3	2	đúng	Wudong	Wudong
+engines|WJ97TAD24	1	3	2	đúng	Wudong	Wudong
+engines|WP23D33E200	46	48	2	đúng	Weichai	Weichai
+engines|WP41D66E200	51	53	2	đúng	Weichai	Weichai
+engines|WX287TAD68	3	5	2	đúng	Wudong	Wudong
+engines|YD380D	59	63	4	đúng	Yangdong	Yangdong
+engines|YD385D	59	65	6	đúng	Yangdong	Yangdong
+engines|1104D44TG2	13	14	1	đúng	Perkins	Perkins
+engines|1104DE44TAG1	22	23	1	đúng	Perkins	Perkins
+engines|1104DE44TAG2	29	30	1	đúng	Perkins	Perkins
+engines|1106A70TAG2	144	145	1	đúng	Perkins	Perkins
+engines|1106A70TAG3	152	154	2	đúng	Perkins	Perkins
+engines|1106DE70TAG2	29	30	1	đúng	Perkins	Perkins
+engines|1106DE70TAG3	27	28	1	đúng	Perkins	Perkins
+engines|1106DE70TAG4	28	29	1	đúng	Perkins	Perkins
+engines|1106A70TG1	140	141	1	đúng	Perkins	Perkins
+engines|401246TWG3A	74	75	1	đúng	Perkins	Perkins
+engines|1206AE70TTAG1	37	38	1	đúng	Perkins	Perkins
+engines|1206AE70TTAG2	48	50	2	đúng	Perkins	Perkins
+engines|1206AE70TTAG3	61	63	2	đúng	Perkins	Perkins
+engines|12M26D968E200	38	39	1	đúng	Weichai	Weichai
+engines|12M33D1108E200	46	47	1	đúng	Weichai	Weichai
+engines|12M33D1210E200	44	45	1	đúng	Weichai	Weichai
+engines|12M33D1320E200	34	35	1	đúng	Weichai	Weichai
+engines|12M33D1500E310	18	19	1	đúng	Weichai	Weichai
+engines|12M55D2210E310	17	18	1	đúng	Weichai	Weichai
+engines|12M55D2450E310	17	18	1	đúng	Weichai	Weichai
+engines|12M55D2700E310	10	11	1	đúng	Weichai	Weichai
+engines|1506AE88TAG3	73	74	1	đúng	Perkins	Perkins
+engines|1506AE88TAG5	107	109	2	đúng	Perkins	Perkins
+engines|16M33D1530E310	16	17	1	đúng	Weichai	Weichai
+engines|16M33D1580E310	22	23	1	đúng	Weichai	Weichai
+engines|16M33D1680E310	27	28	1	đúng	Weichai	Weichai
+engines|16M33D1800E310	24	25	1	đúng	Weichai	Weichai
+engines|16M33D1980E310	19	20	1	đúng	Weichai	Weichai
+engines|16M55D2900E310	13	14	1	đúng	Weichai	Weichai
+engines|16M55D3300E310	11	12	1	đúng	Weichai	Weichai
+engines|16M55D3600E310	9	10	1	đúng	Weichai	Weichai
+engines|1706AE93TAG1	34	35	1	đúng	Perkins	Perkins
+engines|1706AE93TAG2	24	26	2	đúng	Perkins	Perkins
+engines|401661TRG3X	14	15	1	đúng	Perkins	Perkins
+engines|2206CE13TAG2	98	99	1	đúng	Perkins	Perkins
+engines|2206CE13TAG3	88	89	1	đúng	Perkins	Perkins
+engines|1506AE88TAG4	32	33	1	đúng	Perkins	Perkins
+engines|2506CE15TAG1	111	112	1	đúng	Perkins	Perkins
+engines|2506CE15TAG2	102	103	1	đúng	Perkins	Perkins
+engines|2806AE18TAG2	105	108	3	đúng	Perkins	Perkins
+engines|2806CE18TAG1A	76	77	1	đúng	Perkins	Perkins
+engines|2206AE13TAG3	30	31	1	đúng	Perkins	Perkins
+engines|2506AE15TAG1	25	26	1	đúng	Perkins	Perkins
+engines|3TNV82AGGE	19	20	1	đúng	Yanmar	Yanmar
+engines|3TNV88GGE	20	21	1	đúng	Yanmar	Yanmar
+engines|4008TAG2A	85	87	2	đúng	Perkins	Perkins
+engines|4045HFG20	0	1	1	đúng	(chưa có)	John Deere
+engines|404J22G	8	9	1	đúng	Perkins	Perkins
+engines|4110/125Z09D	10	12	2	đúng	FAWDE	FAWDE
+engines|2506AE15TAG2	22	23	1	đúng	Perkins	Perkins
+engines|4BTA39G13	47	49	2	đúng	Cummins	Cummins
+engines|4DW8123D	23	24	1	đúng	FAWDE	FAWDE
+engines|4DW9129D	19	20	1	đúng	FAWDE	FAWDE
+engines|4DW9235D	19	20	1	đúng	FAWDE	FAWDE
+engines|4DX2145D	9	11	2	đúng	FAWDE	FAWDE
+engines|4DX2250D	9	11	2	đúng	FAWDE / Xichai	FAWDE
+engines|4DX2365D	7	9	2	đúng	FAWDE / Xichai	FAWDE
+engines|4TNV106GGE	16	17	1	đúng	Yanmar	Yanmar
+engines|4TNV84TGGE	19	20	1	đúng	Yanmar	Yanmar
+engines|4TNV98TGGE	16	17	1	đúng	Yanmar	Yanmar
+engines|2806AE18TAG1A	37	38	1	đúng	Perkins	Perkins
+engines|2806AE18TTAG4	20	21	1	đúng	Perkins	Perkins
+engines|2806AE18TTAG5	29	30	1	đúng	Perkins	Perkins
+engines|6BT59G2	262	263	1	đúng	Cummins	Cummins
+engines|6M33D633E200	40	41	1	đúng	Weichai	Weichai
+engines|6M33D725E310	24	25	1	đúng	Weichai	Weichai
+engines|8M33D800E200	21	22	1	đúng	Weichai	Weichai
+engines|8M33D890E200	21	22	1	đúng	Weichai	Weichai
+engines|CA6DF217D	16	18	2	đúng	FAWDE	FAWDE
+engines|CA6DF219D	13	15	2	đúng	FAWDE	FAWDE
+engines|CA6DF2D14D	13	15	2	đúng	FAWDE	FAWDE
+engines|CA6DL124	0	1	1	đúng	(chưa có)	FAWDE
+engines|CA6DM2J39D	22	24	2	đúng	FAWDE	FAWDE
+engines|CA6DM2J41D	19	21	2	đúng	FAWDE	FAWDE
+engines|CA6DN1J45D	10	12	2	đúng	FAWDE	FAWDE
+engines|KTA38G1B	17	18	1	đúng	Cummins	Cummins
+engines|NTA855G1B	133	134	1	đúng	Cummins	Cummins
+engines|NTAA855G7	83	84	1	đúng	Cummins	Cummins
+engines|D1105E2BGCHN1	1	2	1	đúng	Kubota	Kubota
+engines|D1703E2BGCHN1	1	2	1	đúng	Kubota	Kubota
+engines|D905E2BGCHN1	0	1	1	đúng	(chưa có)	Kubota
+engines|QSZ13G10	41	43	2	đúng	Cummins	Cummins
+engines|4BT39G2	167	168	1	đúng	Cummins	Cummins
+engines|QSB67G3	25	26	1	đúng	Cummins	Cummins
+engines|QSZ13G3	130	131	1	đúng	Cummins	Cummins
+engines|DP086LA	54	55	1	đúng	Doosan / Hyundai	Doosan / Hyundai
+engines|DP086TA	36	37	1	đúng	Doosan / Hyundai	Doosan / Hyundai
+engines|DP158LC	79	80	1	đúng	Doosan / Hyundai	Doosan / Hyundai
+engines|DP158LD	82	84	2	đúng	Doosan / Hyundai	Doosan / Hyundai
+engines|DP180LA	65	67	2	đúng	Doosan / Hyundai	Doosan / Hyundai
+engines|DP180LB	64	66	2	đúng	Doosan / Hyundai	Doosan / Hyundai
+engines|DP222LB	65	67	2	đúng	Doosan / Hyundai	Doosan / Hyundai
+engines|DP222LC	73	75	2	đúng	Doosan / Hyundai	Doosan / Hyundai
+engines|4DW9239DHMS20W	7	8	1	đúng	FAWDE	FAWDE
+engines|4DX2153DHMS20W	5	6	1	đúng	FAWDE	FAWDE
+engines|4DX2265DHMS20W	6	7	1	đúng	FAWDE	FAWDE
+engines|4DX2378DHMS20W	5	6	1	đúng	FAWDE	FAWDE
+engines|CA6DL124D	17	18	1	đúng	FAWDE	FAWDE
+engines|CA6DL227D	20	21	1	đúng	FAWDE	FAWDE
+engines|CA6DL230	5	6	1	đúng	FAWDE	FAWDE
+engines|CA6DM239D	3	4	1	đúng	FAWDE / Xichai	FAWDE / Xichai
+engines|CA6DM241D	3	4	1	đúng	FAWDE / Xichai	FAWDE / Xichai
+engines|CA6DN145D	3	4	1	đúng	FAWDE / Xichai	FAWDE / Xichai
+engines|YC6C1520D31	46	47	1	đúng	Yuchai	Yuchai
+engines|YC6MJ600D30	22	23	1	đúng	Yuchai	Yuchai
+engines|YC6TD780D31	44	45	1	đúng	Yuchai	Yuchai
+engines|YC6TF1660D31	1	2	1	đúng	Yuchai	Yuchai
+engines|DP222LA	21	22	1	đúng	Hyundai / Doosan	Hyundai / Doosan
+engines|P126TIII	12	13	1	đúng	Doosan / Hyundai	Doosan / Hyundai
+engines|P126TIII/P126TI	0	1	1	đúng	(chưa có)	Hyundai
+engines|400830TAG3	57	59	2	đúng	Perkins	Perkins
+engines|401661TRG3	103	105	2	đúng	Perkins	Perkins
+engines|4016TAG1A	83	85	2	đúng	Perkins	Perkins
+engines|4016TAG2A	91	93	2	đúng	Perkins	Perkins
+engines|JE493DB01	16	17	1	đúng	Isuzu	Isuzu
+engines|JE493DB02	18	19	1	đúng	Isuzu	Isuzu
+engines|JE493DB03	16	17	1	đúng	Isuzu	Isuzu
+engines|JE493DB04	25	26	1	đúng	Isuzu	Isuzu
+engines|JE493ZDB03	18	19	1	đúng	Isuzu	Isuzu
+engines|JE493ZDB04	20	21	1	đúng	Isuzu	Isuzu
+engines|JE493ZLDB01	19	20	1	đúng	Isuzu	Isuzu
+engines|JE493ZLDB02	21	22	1	đúng	Isuzu	Isuzu
+engines|JE493ZLDC01	3	4	1	đúng	Isuzu	Isuzu
+engines|JE493ZLDC02	7	8	1	đúng	Isuzu	Isuzu
+engines|JET274F	0	1	1	đúng	(chưa có)	Doosan
+engines|JET274H	0	1	1	đúng	(chưa có)	Doosan
+engines|JET274K	0	1	1	đúng	(chưa có)	Doosan
+engines|JET444F	0	1	1	đúng	(chưa có)	Doosan
+engines|JET444FS	0	1	1	đúng	(chưa có)	Doosan
+engines|S16RPTA2C	50	52	2	đúng	Mitsubishi	Mitsubishi
+engines|QTA10VEG1670D	3	4	1	đúng	Googol	Googol
+engines|QSK38G5	86	87	1	đúng	Cummins	Cummins
+engines|S12RPTAC	59	60	1	đúng	Mitsubishi	Mitsubishi
+engines|S12RPTA2C	50	51	1	đúng	Mitsubishi	Mitsubishi
+engines|S12RPTAA2C	56	57	1	đúng	Mitsubishi	Mitsubishi
+engines|S16RPTAC	58	59	1	đúng	Mitsubishi	Mitsubishi
+engines|S16RPTAA2C	54	55	1	đúng	Mitsubishi	Mitsubishi
+engines|S16R2PTAWC	29	31	2	đúng	Mitsubishi	Mitsubishi
+engines|S6R2PTAC	53	54	1	đúng	Mitsubishi	Mitsubishi
+engines|S6R2PTAAC	50	51	1	đúng	Mitsubishi	Mitsubishi
+engines|KTAA19G6A	145	146	1	đúng	Cummins	Cummins
+engines|TWD1653GE	35	36	1	đúng	Volvo Penta	Volvo Penta
+engines|V1505E2BGCHN1	1	2	1	đúng	Kubota	Kubota
+engines|V2003TE2BGCHN1	1	2	1	đúng	Kubota	Kubota
+engines|V2203E2BGCHN1	1	2	1	đúng	Kubota	Kubota
+engines|V3300BG	9	10	1	đúng	Kubota	Kubota
+engines|V3300E2BG2CHN1	1	2	1	đúng	Kubota	Kubota
+engines|V3300TE2BG2CHN1	1	2	1	đúng	Kubota	Kubota
+engines|WP10D200E200	56	57	1	đúng	Weichai	Weichai
+engines|WP10D238E200	58	59	1	đúng	Weichai	Weichai
+engines|WP10D264E200	58	59	1	đúng	Weichai	Weichai
+engines|WP10D320E200	51	52	1	đúng	Weichai	Weichai
+engines|WP12D353E200	20	21	1	đúng	Weichai	Weichai
+engines|WP13D385E200	59	60	1	đúng	Weichai	Weichai
+engines|WP13D405E200	34	35	1	đúng	Weichai	Weichai
+engines|WP13D440E200	7	8	1	đúng	Weichai	Weichai
+engines|WP13D440E310	34	35	1	đúng	Weichai	Weichai
+engines|WP13D490E310	33	34	1	đúng	Weichai	Weichai
+engines|WP23D25E200	43	44	1	đúng	Weichai	Weichai
+engines|WP23D40E200	40	41	1	đúng	Weichai	Weichai
+engines|WP23D48E200	47	48	1	đúng	Weichai	Weichai
+engines|WP41D80E200	43	44	1	đúng	Weichai	Weichai
+engines|WP6D132E200	53	54	1	đúng	Weichai	Weichai
+engines|WP6D152E200	58	59	1	đúng	Weichai	Weichai
+engines|WP7D264E310	7	8	1	đúng	Weichai	Weichai
+engines|Y4100D	53	58	5	đúng	Yangdong	Yangdong
+engines|Y4102D	54	57	3	đúng	Yangdong	Yangdong
+engines|Y4102ZD	44	45	1	đúng	Yangdong	Yangdong
+engines|Y4102ZLD	48	51	3	đúng	Yangdong	Yangdong
+engines|Y4110ZLD	36	39	3	đúng	Yangdong	Yangdong
+engines|Y490D	35	37	2	đúng	Yangdong	Yangdong
+engines|Y490PD	5	7	2	đúng	Yangdong	Yangdong
+engines|Y495D	52	53	1	đúng	Yangdong	Yangdong
+engines|YD4EZLD	50	53	3	đúng	Yangdong	Yangdong
+engines|YD485D	5	6	1	đúng	Yangdong	Yangdong
+engines|ZH4100D	7	8	1	đúng	Ricardo	Ricardo
+engines|ZH4102ZD	7	8	1	đúng		
+engines|ZH4105ZD	19	20	1	đúng	Ricardo	Ricardo
+engines|ZH490D	5	6	1	đúng	Ricardo	Ricardo
+engines|ZH6105AZLD	0	1	1	đúng	(chưa có)	Ricardo
+engines|ZH6105IZLD	0	1	1	đúng	(chưa có)	Ricardo
+engines|ZH6105ZLD	0	1	1	đúng	(chưa có)	Ricardo

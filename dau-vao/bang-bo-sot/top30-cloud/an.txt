@@ -1,0 +1,75 @@
+(0) chạy lại cục bộ trùng cloud: 135/140 LỆCH: IB2200052056#0 IB2300133361#0 IB2300133361#1 IB2400457172#0 IB2500416364#0
+
+(1a) khoá NCC khác chỉ đổi điểm (cùng số bản): 281 lượt-khoá
+   21× agg-fuzhou|12V4000G14RF Δ8 why giống
+   5× baifa-power|16V2000G26F Δ8 why giống
+   9× baifa-power|16V2000G36F Δ8 why giống
+   4× cgm-italia|KDW1003 Δ16 why giống
+   4× cgm-italia|KDW702 Δ16 why giống
+   16× lees-power|12V1600G21F Δ8 why giống
+   5× lees-power|12V1600G31F Δ8 why giống
+   22× mecca-power|12V1600G21F Δ8 why giống
+   20× mecca-power|12V1600G31F Δ8 why giống
+   40× mecca-power|12V4000G14RF Δ8 why giống
+   5× pauway-tianjin|16V2000G26F Δ8 why giống
+   5× pauway-tianjin|16V2000G36F Δ8 why giống
+   3× tellhow-power|12V4000G14RF Δ8 why giống
+   21× voltgent|12V4000G14RF Δ8 why giống
+   8× wacker-neuson|KSD1403NA Δ16 why giống
+   75× westinpower|12V4000G14RF Δ8 why giống
+   18× xingguang-jiangsu|12V4000G14RF Δ8 why giống
+
+(1b) khoá NCC khác rời / vào all: 35 lượt-khoá
+   1× RỜI agg-fuzhou|OC16071A0282|||S375G5NG|375/300|OC16071A0282|SCANIA | cyl  [IB2400302943#0]
+   1× RỜI agg-fuzhou|OC16071A0282|||S400G6NG|400/320|OC16071A0282|SCANIA | cyl  [IB2400302943#0]
+   5× RỜI baifa-power|16V2000G26F|S6L1DE4||BFM1100T2|1100|1000||16V2000G26F||S6L1DE4 | không ở dropped (ngoài 30 / khác)  [IB2300005377#0 IB2300096122#0 IB2500320544#0 IB2500432527#0 IB2600418114#0]
+   4× RỜI baifa-power|16V2000G36F|S6L1DF4||BFM1250T2|1250|1135||16V2000G36F||S6L1DF4 | không ở dropped (ngoài 30 / khác)  [IB2300005377#0 IB2500320544#0 IB2500432527#0 IB2600418114#0]
+   1× RỜI cgm-italia|KDW1003|||V7,5LW||75|6|82|66|KOHLERKDW1003|M|5|3|102/76|21|55|B20|345|1400X700X | cyl  [IB2200035219#0]
+   1× RỜI lees-power|12V1600G21F|||LSIM1000S3|1000|909|800|727|12V1600G21F|PDF | cyl src={"cyl":{"n":1,"sources":1,"ofRow":0}}  [IB2400377756#0]
+   1× RỜI lees-power|12V1600G21F|||LSIM1000S3|1000|909|800|727|12V1600G21F|PDF | cyl  [IB2200018828#0]
+   4× RỜI lees-power|12V1600G31F|||LSIM1125S3|1125|1023|900|818|12V1600G31F|PDF | cyl  [IB2300005377#0 IB2500320544#0 IB2500432527#0 IB2600418114#0]
+   1× RỜI mecca-power|12V1600G21F|||MC880M|640|800|704|880|12V1600G21F| | cyl src={"cyl":{"n":1,"sources":1,"ofRow":0}}  [IB2400377756#0]
+   1× RỜI mecca-power|12V1600G21F|||MC880M|640|800|704|880|12V1600G21F| | cyl  [IB2300268389#0]
+   5× RỜI mecca-power|12V1600G31F|||MC990M|720|900|792|990|12V1600G31F| | cyl  [IB2200018828#0 IB2300096122#0 IB2300254479#0 IB2300268389#0 IB2300315082#0]
+   5× RỜI pauway-tianjin|16V2000G26F|||PWM1125|800/1000|NA/NA|16V2000G26F|VIEWPDF | cyl  [IB2300005377#0 IB2300096122#0 IB2500320544#0 IB2500432527#0 IB2600418114#0]
+   4× RỜI pauway-tianjin|16V2000G36F|||PWM1250|900/1125|NA/NA|16V2000G36F|VIEWPDF | cyl  [IB2300005377#0 IB2500320544#0 IB2500432527#0 IB2600418114#0]
+   1× RỜI wacker-neuson|KSD1403NA||PRIMEOUTPUTKW/KVA135/13520/2528/35IECIENCY | cyl src={"cyl":{"n":1,"sources":1,"ofRow":0}}  [IB2600588204#0]
+
+(1c) hints (minCyl / cylLayout / fuel / freq / minDisp) của 13 lượt có khoá NCC khác rời / vào:
+   IB2200018828#0 cap={"value":820,"unit":"kVA"} minCyl=6 layout=inline fuel=diesel freq=50 minDisp=- maxDisp=-
+   IB2200035219#0 cap={"value":6,"unit":"kVA"} minCyl=1 layout=- fuel=diesel freq=50 minDisp=- maxDisp=-
+   IB2300005377#0 cap={"value":1000,"unit":"kVA"} minCyl=12 layout=v fuel=diesel freq=50 minDisp=- maxDisp=-
+   IB2300096122#0 cap={"value":850,"unit":"kVA"} minCyl=12 layout=v fuel=diesel freq=50 minDisp=31.8 maxDisp=-
+   IB2300254479#0 cap={"value":825,"unit":"kVA"} minCyl=12 layout=v fuel=diesel freq=50 minDisp=- maxDisp=22
+   IB2300268389#0 cap={"value":750,"unit":"kVA"} minCyl=6 layout=- fuel=diesel freq=50 minDisp=- maxDisp=-
+   IB2300315082#0 cap={"value":750,"unit":"kVA"} minCyl=12 layout=v fuel=diesel freq=50 minDisp=21.927 maxDisp=-
+   IB2400302943#0 cap={"value":350,"unit":"kVA"} minCyl=6 layout=inline fuel=- freq=50 minDisp=6 maxDisp=-
+   IB2400377756#0 cap={"value":800,"unit":"kVA"} minCyl=16 layout=v fuel=diesel freq=50 minDisp=- maxDisp=-
+   IB2500320544#0 cap={"value":1000,"unit":"kVA"} minCyl=12 layout=v fuel=diesel freq=50 minDisp=- maxDisp=-
+   IB2500432527#0 cap={"value":1000,"unit":"kVA"} minCyl=12 layout=v fuel=diesel freq=50 minDisp=21.9 maxDisp=-
+   IB2600418114#0 cap={"value":1000,"unit":"kVA"} minCyl=12 layout=v fuel=diesel freq=50 minDisp=25 maxDisp=-
+   IB2600588204#0 cap={"value":12,"unit":"kVA"} minCyl=4 layout=inline fuel=diesel freq=- minDisp=2.3 maxDisp=-
+
+(2) dòng 4 bảng trong ứng viên (all) ở các lượt khác: 113 lượt-dòng; dòng khí (n126 / lees) trong all: 0
+   5× green-power-generators|12V1600G10F GP610A/M
+   5× green-power-generators|12V1600G10F GP650A/M
+   5× green-power-generators|12V1600G20F GP700A/M
+   9× green-power-generators|12V1600G21F GP880A/M
+   8× green-power-generators|12V1600G31F GP1000A/M
+   4× green-power-generators|12V4000G14F GP1780A/M
+   4× green-power-generators|12V4000G24F GP2040A/M
+   6× green-power-generators|16V2000G26F GP1120A/M
+   6× green-power-generators|16V2000G36F GP1260A/M
+   3× green-power-generators|16V4000G14F GP2310A/M
+   3× green-power-generators|16V4000G24F GP2530A/M
+   1× green-power-generators|18V2000G26F GP1380A/M
+   4× green-power-generators|20V4000G14F GP2800A/M
+   3× green-power-generators|20V4000G24F GP3100A/M
+   1× green-power-generators|KDI2504TCR GP44A/KSV
+   2× green-power-generators|KDI2504TCR GP50A/KSV
+   11× green-power-generators|KDW1003 GP9A/KSVA
+   4× green-power-generators|KDW702 GP6A/KSV
+   22× green-power-generators|KSD1403NA GP11A/KSV
+   5× green-power-generators|KSD1403TC GP18A/KSV
+   2× green-power-generators|KSD1403TCA GP22A/KSV
+   dòng 4 bảng bị loại (theo ruled): cyl+prime+fuel75 ×1, cyl+fuel75 ×2, prime ×22, cyl ×6, cyl+prime ×1, fuel ×12, fuel75 ×5, maxDisp ×2

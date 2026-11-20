@@ -1,0 +1,30 @@
+== Độ phủ và thiếu thông tin sau chuẩn hoá (web/spec-norm.js) ==
+mã        giá trị   có số    thiếu (tỉ lệ trên số giá trị)
+fuel        11649    100%   load 77.8%, unit 10.7%, ambiguous 0.2%, number 0%
+fuel75       1054   99.8%   unit 32.8%, value 0.2%
+fuel50        685   99.7%   unit 49.9%, value 0.3%
+noise         734    100%   distance 2.6%, ambiguous 0.4%, unit 0.4%
+dims        22310    100%   enclosure 87.4%, order 56.3%, unit 31.6%, ambiguous 0.4%
+weight      19621    100%   enclosure 92.6%, basis 85.4%, unit 5.7%, ambiguous 0.3%
+disp        11633   99.3%   unit 1.7%, number 0.7%
+bore         7943    100%   unit 20.7%, stroke 5.4%, ambiguous 0.1%
+cyl         15106    100%   layout 70.3%, value 0%
+compr        2220    100%   —
+speed        3917    100%   unit 15.1%, kind 0%
+voltage      4750    100%   unit 9.2%
+phase        3650   99.9%   value 0.1%
+pf           1555    100%   ambiguous 1.4%
+tank         1755     97%   unit 24%, value 3%
+engPower     5776    100%   speed 59.6%, ambiguous 2.1%, unit 1.3%
+emission     2349   99.9%   scale 43.5%, value 0.1%
+công suất tổ máy (47066 dòng động cơ của tổ máy): thiếu rating 12.7%, thiếu freq 70.9%, thiếu value 11%
+
+== Mâu thuẫn hằng số động cơ giữa các NCC (model có ≥2 NCC ghi) ==
+mã      trước (audit3)      sau, đủ đơn vị      sau, gồm giá trị thiếu đơn vị
+cyl     143/1427            24/1427             24/1427
+disp    394/1121            190/1116            190/1117
+bore    188/960             36/805              51/960
+compr   67/208              42/208              42/208
+
+--check: không chỉ số nào xấu đi quá ngưỡng.
+quality exit 0
