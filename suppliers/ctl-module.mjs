@@ -2,8 +2,9 @@
 // The checks of "Truyền thông, giám sát từ xa" (code ctl_comm) are scored for the PAIR controller + communication module:
 //  - Q5: a part that names a function (4G, Internet, RS485, BMS...) is "met" only when its quote has that function's words; a
 //    function the quote lacks may be shown by another line of the controller's own datasheet, else the part is "unclear".
-//  - Q2: Ethernet / RS232 / RS485 / USB / BMS / Modbus / SNMP / CAN come from the controller's datasheet only (a gateway's
-//    Ethernet port is not the controller's); 4G / 5G / GSM / SMS / Internet may come from a module.
+//  - Q2: RS232 / RS485 / USB / BMS / Modbus / SNMP / CAN come from the controller's datasheet only; 4G / 5G / GSM / SMS /
+//    Internet / Ethernet may come from a module (Ethernet: Khoa 20/11/2026 "có", with the note ETH_NOTE; only a line of the
+//    module that says it has Ethernet, not an optional extension).
 //  - Q3: "BMS" is met by a line that says BMS / building management, or Modbus / BACnet / SNMP (note: NCC to confirm).
 //  - Q4: a module the code adds (the supplier did not offer it) makes such a part "met" (`viaModule`), always labelled
 //    "Mô-đun chọn theo tài liệu hãng, NCC chưa chào". Only when the module is compatible: the controller's datasheet names it,
@@ -35,7 +36,8 @@ export const SUBS = [
   // Not "web" alone: "in built web SCADA" (DSE7420 MKII) is a local web server on its Ethernet port, not the Internet; nor
   // "DSEWebNet" / "WebSupervisor" (the maker's remote system, reached through a gateway).
   { k: "Internet", vi: /internet|\bIoT\b|cloud|đám mây/i, src: /internet|\bIoT\b|\bcloud\b/i, mod: true },
-  { k: "Ethernet", vi: /ethernet|\bLAN\b|\bTCP/i, src: /ethernet|\bLAN\b|\bTCP/i, mod: false },
+  // Ethernet from a module (Khoa 20/11/2026 "có", điều phối): the gateway's port counts, with ETH_NOTE.
+  { k: "Ethernet", vi: /ethernet|\bLAN\b|\bTCP/i, src: /ethernet|\bLAN\b|\bTCP/i, mod: true, modNote: true },
   { k: "RS485", vi: /RS-?485/i, src: /RS-?485/i, mod: false },
   { k: "RS232", vi: /RS-?232/i, src: /RS-?232/i, mod: false },
   { k: "USB", vi: /\bUSB/i, src: /\bUSB/i, mod: false },
@@ -47,6 +49,7 @@ export const SUBS = [
 export const subsOf = (name) => SUBS.filter((s) => s.vi.test(String(name || "")));
 export const BMS_NOTE = "BMS qua Modbus/SNMP, cần NCC xác nhận.";
 export const MODULE_LABEL = "Mô-đun chọn theo tài liệu hãng, NCC chưa chào";
+export const ethNote = (models) => `Ethernet nằm trên mô-đun ${models.join(", ")}, không phải trên bộ điều khiển.`;
 
 // A line of the controller's own datasheet that shows the function: not a module's line ("| DSE890 MKII | DSEWebNet® Gateway"
 // is the gateway's), not an optional extension ("Extendable options including 4G/GPS, Ethernet and RS485/RS232": the
@@ -66,6 +69,8 @@ const OTHER_DEVICE = /third[\s-]party|replacement/i;
 export function modShows(line, sub, m) {
   const l = String(line || ""), named = moduleIn(l);
   if (!sub.mod || OTHER_DEVICE.test(l) || named.some((x) => x.key !== m.key)) return null;
+  // Ethernet only where the module's sheet says it has it, not an optional extension (the trap of Q2).
+  if (sub.modNote && EXT.test(l)) return null;
   return sub.src.test(l) ? { line: l, via: null } : null;
 }
 
@@ -181,7 +186,8 @@ export function commModules(c, parts = [], ctlFacts = [], compat = [], modFacts 
     x.alsoQuotes = e.per.filter((p) => p !== first).map((p) => ({ sub: p.sub.k, supplierId: p.f.supplierId, n: p.f.n, line: p.line }));
     if (!x.alsoQuotes.length) delete x.alsoQuotes;
     x.moduleNote = MODULE_LABEL;
-    x.note = `${MODULE_LABEL}.${e.per.some((p) => p.via) ? ` ${BMS_NOTE}` : ""}`;
+    const eth = [...new Set(e.per.filter((p) => p.by === "module" && p.sub.modNote).map((p) => p.m.model))];
+    x.note = `${MODULE_LABEL}.${eth.length ? ` ${ethNote(eth)}` : ""}${e.per.some((p) => p.via) ? ` ${BMS_NOTE}` : ""}`;
     delete x.hint; delete x.unverified; delete x.wordsMissing;
   }
   const mods = chosen.filter((x) => used.has(x.m.key)).map(({ m, compat }) => ({ model: m.model, make: m.make, ...(m.order ? { order: m.order } : {}), compat, offeredBy: null, label: MODULE_LABEL,
