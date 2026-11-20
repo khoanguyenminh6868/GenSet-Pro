@@ -14,4 +14,9 @@ const text = fs.readFileSync("C:/Projects/GenSet Pro/genbid-work/dieu-phoi/dau-v
 const cap = CB.capacity([a?.keyInfo?.generatorCapacity, ...(a?.technicalSpecs || []).filter((s) => /công suất|capacity|power/i.test(s.item || "")).map((s) => s.requirement)]);
 const o = CB.check(result, { hsmtText: text, suppliers: sups, readWeb: () => null, origin: result.origin, basis: result.originBasis, sized: false, sourcesDir: path.join(root, "suppliers", "sources"), cap });
 CB.rankConfigs(o.result);
-for (const c of o.result.configs) console.log(c.rank, c.engine?.make, c.engine?.model, "|", c.controller?.model, (c.controller?.modules || []).map((m) => m.model).join("+"), "\n   ", c.controller?.altLine || "(không có phương án khác)");
+const show = (r) => r.configs.map((c) => `${c.rank} ${c.engine?.make} ${c.engine?.model} | ${c.controller?.model} ${(c.controller?.modules || []).map((m) => m.model).join("+")} [${c.controller?.label || c.controller?.src?.supplierId || ""}]\n    ${c.controller?.wasWhy || "(không thay)"}\n    ${c.controller?.altLine || "(không có phương án khác)"}\n    ctl checks: ${(c.checks || []).filter((x) => x.part === "controller").map((x) => x.status).join(",")}`).join("\n");
+const first = show(o.result);
+console.log(first, "\nproblems", o.problems.length);
+const o2 = CB.check(o.result, { hsmtText: text, suppliers: sups, readWeb: () => null, origin: result.origin, basis: result.originBasis, sized: false, sourcesDir: path.join(root, "suppliers", "sources"), cap });
+CB.rankConfigs(o2.result);
+console.log("lặp lại:", show(o2.result) === first ? "giống" : `KHÁC\n${show(o2.result)}`);

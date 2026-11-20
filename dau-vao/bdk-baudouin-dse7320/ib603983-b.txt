@@ -1,0 +1,26 @@
+1 Cummins QSK19-G20 | DSE7420 DSE890 MKII [voltgent]
+    (không thay)
+    Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (NCC aosif chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE8620 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa)
+    ctl checks: met,unclear,unclear,unclear,unclear,met,unclear,met
+2 Mitsubishi S6R2-PTAA-C | DSE8610 DSE890 MKII [fdk-energy]
+    (không thay)
+    Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (NCC fdk-energy chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE7420 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa)
+    ctl checks: met,met,unclear,unclear,unclear,met,unclear,met
+3 Baudouin 6M31G825/5 | DSE7420 DSE890 MKII [voltgent]
+    (không thay)
+    Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE8620 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa)
+    ctl checks: met,unclear,unclear,unclear,unclear,met,unclear,met
+4 Scania DC16 078A 02-43 | Deep Sea 8610 DSE890 MKII [kaihua-genset]
+    (không thay)
+    Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (NCC kaihua-genset chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE7420 MKII + DSE890 MKII (NCC voltgent chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa)
+    ctl checks: met,met,unclear,unclear,unclear,met,unclear,met
+5 Perkins 4006-23TAG2A | DSE8610 DSE890 MKII [uleengen]
+    (không thay)
+    Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (NCC uleengen chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE7420 MKII + DSE890 MKII (NCC uleengen chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa)
+    ctl checks: met,unclear,unclear,unclear,met,unclear,met
+6 Baudouin 6M33G825/5 | DSE6120 DSE890 MKII [longkai-power]
+    (không thay)
+    Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE7420 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa)
+    ctl checks: met,unclear,unclear,unclear,unclear,unclear,unclear,met 
+problems 0
+lặp lại: giống

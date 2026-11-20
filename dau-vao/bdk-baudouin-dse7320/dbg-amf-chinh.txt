@@ -1,0 +1,102 @@
+problems off [] on [
+  '#1 controller: model DSE7320 MKII không có trong nguồn',
+  '#4 controller: model DSE7420 MKII không có trong nguồn',
+  '#5 controller: model DSE7420 MKII không có trong nguồn'
+] lặp lại on: false
+
+QSK19-G20: DSE7420 → DSE7320 MKII
+ Xuất xứ bộ điều khiển: met → unclear Code thay bộ điều khiển DSE7420 bằng DSE7320 MKII: datasheet DSE7320 MKII không có câu trích của DSE7420, cần kiểm lại.
+
+ Cảnh báo, nhật ký sự kiện: unclear → unclear
+  · Nhật ký lỗi: met → unclear Code thay bộ điều khiển DSE7420 bằng DSE7320 MKII: datasheet DSE7320 MKII không có câu trích của DSE7420, cần kiểm lại.
+ Truyền thông, giám sát từ xa: met → unclear
+  · Cổng kết nối với hệ thống kiểm soát từ xa: met → unclear Code thay bộ điều khiển DSE7420 bằng DSE7320 MKII: datasheet DSE7320 MKII không có câu trích của DSE7420, cần kiểm lại.
+  · BMS: met → unclear Code thay bộ điều khiển DSE7420 bằng DSE7320 MKII: datasheet DSE7320 MKII không có câu trích của DSE7420, cần kiểm lại.
+ Cấp bảo vệ bộ điều khiển: met → unclear IP65 ở mặt trước mô-đun khi lắp lên tủ. Code thay bộ điều khiển DSE7420 bằng DSE7320 MKII: datasheet DSE7320 MKII không có câu trích của DSE7420, cần kiểm lại.
+
+
+S6R2-PTAA-C: DSE8610 → DSE7420 MKII
+ Xuất xứ bộ điều khiển: met → unclear Code thay bộ điều khiển DSE8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của DSE8610, cần kiểm lại.
+
+ Khởi động, dừng, tự động cấp điện (AMF): met → unclear
+  · Kết hợp với tủ ATS: met → unclear Code thay bộ điều khiển DSE8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của DSE8610, cần kiểm lại.
+  · Khởi động máy và tắt máy: met → unclear Code thay bộ điều khiển DSE8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của DSE8610, cần kiểm lại.
+  · Cài đặt, hiệu chỉnh tần số qua hệ thống điều tốc: met → unclear Code thay bộ điều khiển DSE8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của DSE8610, cần kiểm lại.
+ Đo lường, hiển thị: unclear → unclear
+  · Dòng điện các pha: met → unclear Code thay bộ điều khiển DSE8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của DSE8610, cần kiểm lại.
+ Cảnh báo, nhật ký sự kiện: unclear → unclear
+  · Nhật ký lỗi: met → unclear Code thay bộ điều khiển DSE8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của DSE8610, cần kiểm lại.
+ Truyền thông, giám sát từ xa: met → unclear
+  · Cổng kết nối với hệ thống kiểm soát từ xa: met → unclear Code thay bộ điều khiển DSE8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của DSE8610, cần kiểm lại.
+  · RS485: met → unclear Code thay bộ điều khiển DSE8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của DSE8610, cần kiểm lại.
+  · BMS: met → unclear Code thay bộ điều khiển DSE8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của DSE8610, cần kiểm lại.
+ Cấp bảo vệ bộ điều khiển: met → unclear IP65 ở mặt trước mô-đun khi lắp lên tủ. Code thay bộ điều khiển DSE8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của DSE8610, cần kiểm lại.
+
+
+6M31G825/5: DSE7420 → DSE7320 MKII
+ Xuất xứ bộ điều khiển: met → unclear Code thay bộ điều khiển DSE7420 bằng DSE7320 MKII: datasheet DSE7320 MKII không có câu trích của DSE7420, cần kiểm lại.
+
+ Cảnh báo, nhật ký sự kiện: unclear → unclear
+  · Nhật ký lỗi: met → unclear Code thay bộ điều khiển DSE7420 bằng DSE7320 MKII: datasheet DSE7320 MKII không có câu trích của DSE7420, cần kiểm lại.
+ Truyền thông, giám sát từ xa: met → unclear
+  · Cổng kết nối với hệ thống kiểm soát từ xa: met → unclear Code thay bộ điều khiển DSE7420 bằng DSE7320 MKII: datasheet DSE7320 MKII không có câu trích của DSE7420, cần kiểm lại.
+  · BMS: met → unclear Code thay bộ điều khiển DSE7420 bằng DSE7320 MKII: datasheet DSE7320 MKII không có câu trích của DSE7420, cần kiểm lại.
+ Cấp bảo vệ bộ điều khiển: met → unclear IP65 ở mặt trước mô-đun khi lắp lên tủ. Code thay bộ điều khiển DSE7420 bằng DSE7320 MKII: datasheet DSE7320 MKII không có câu trích của DSE7420, cần kiểm lại.
+
+
+DC16 078A 02-43: Deep Sea 8610 → DSE7420 MKII
+ Xuất xứ bộ điều khiển: met → unclear Code thay bộ điều khiển Deep Sea 8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của Deep Sea 8610, cần kiểm lại.
+
+ Khởi động, dừng, tự động cấp điện (AMF): met → unclear
+  · Kết hợp với tủ ATS: met → unclear Code thay bộ điều khiển Deep Sea 8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của Deep Sea 8610, cần kiểm lại.
+  · Khởi động máy và tắt máy: met → unclear Code thay bộ điều khiển Deep Sea 8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của Deep Sea 8610, cần kiểm lại.
+  · Cài đặt, hiệu chỉnh tần số qua hệ thống điều tốc: met → unclear Code thay bộ điều khiển Deep Sea 8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của Deep Sea 8610, cần kiểm lại.
+ Đo lường, hiển thị: unclear → unclear
+  · Dòng điện các pha: met → unclear Code thay bộ điều khiển Deep Sea 8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của Deep Sea 8610, cần kiểm lại.
+ Cảnh báo, nhật ký sự kiện: unclear → unclear
+  · Nhật ký lỗi: met → unclear Code thay bộ điều khiển Deep Sea 8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của Deep Sea 8610, cần kiểm lại.
+ Truyền thông, giám sát từ xa: met → unclear
+  · Cổng kết nối với hệ thống kiểm soát từ xa: met → unclear Code thay bộ điều khiển Deep Sea 8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của Deep Sea 8610, cần kiểm lại.
+  · RS485: met → unclear Code thay bộ điều khiển Deep Sea 8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của Deep Sea 8610, cần kiểm lại.
+  · BMS: met → unclear Code thay bộ điều khiển Deep Sea 8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của Deep Sea 8610, cần kiểm lại.
+ Cấp bảo vệ bộ điều khiển: met → unclear IP65 ở mặt trước mô-đun khi lắp lên tủ. Code thay bộ điều khiển Deep Sea 8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của Deep Sea 8610, cần kiểm lại.
+
+
+4006-23TAG2A: DSE8610 → DSE7420 MKII
+ Khởi động, dừng, tự động cấp điện (AMF): met → unclear
+  · Kết hợp với tủ ATS: met → unclear Code thay bộ điều khiển DSE8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của DSE8610, cần kiểm lại.
+  · Khởi động máy và tắt máy: met → unclear Code thay bộ điều khiển DSE8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của DSE8610, cần kiểm lại.
+  · Cài đặt, hiệu chỉnh tần số qua hệ thống điều tốc: met → unclear Code thay bộ điều khiển DSE8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của DSE8610, cần kiểm lại.
+ Đo lường, hiển thị: unclear → unclear
+  · Dòng điện các pha: met → unclear Code thay bộ điều khiển DSE8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của DSE8610, cần kiểm lại.
+ Cảnh báo, nhật ký sự kiện: unclear → unclear
+  · Nhật ký lỗi: met → unclear Code thay bộ điều khiển DSE8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của DSE8610, cần kiểm lại.
+ Truyền thông, giám sát từ xa: met → unclear
+  · Cổng kết nối với hệ thống kiểm soát từ xa: met → unclear Code thay bộ điều khiển DSE8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của DSE8610, cần kiểm lại.
+  · RS485: met → unclear Code thay bộ điều khiển DSE8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của DSE8610, cần kiểm lại.
+  · BMS: met → unclear Code thay bộ điều khiển DSE8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của DSE8610, cần kiểm lại.
+ Cấp bảo vệ bộ điều khiển: met → unclear IP65 ở mặt trước mô-đun khi lắp lên tủ. Code thay bộ điều khiển DSE8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của DSE8610, cần kiểm lại.
+
+ Xuất xứ bộ điều khiển: undefined → unclear Code thay bộ điều khiển DSE8610 bằng DSE7420 MKII: datasheet DSE7420 MKII không có câu trích của DSE8610, cần kiểm lại.
+
+
+6M33G825/5: DSE6120 → DSE4620
+ Xuất xứ bộ điều khiển: met → unclear Code thay bộ điều khiển DSE6120 bằng DSE4620: datasheet DSE4620 không có câu trích của DSE6120, cần kiểm lại.
+
+ Khởi động, dừng, tự động cấp điện (AMF): unclear → unclear
+  · Kết hợp với tủ ATS: met → unclear Code thay bộ điều khiển DSE6120 bằng DSE4620: datasheet DSE4620 không có câu trích của DSE6120, cần kiểm lại.
+  · Khởi động máy và tắt máy: met → unclear Code thay bộ điều khiển DSE6120 bằng DSE4620: datasheet DSE4620 không có câu trích của DSE6120, cần kiểm lại.
+  · Dừng máy khẩn cấp: met → unclear Code thay bộ điều khiển DSE6120 bằng DSE4620: datasheet DSE4620 không có câu trích của DSE6120, cần kiểm lại.
+  · Chọn chế độ làm việc, điều khiển trạng thái và lập trình: met → unclear Code thay bộ điều khiển DSE6120 bằng DSE4620: datasheet DSE4620 không có câu trích của DSE6120, cần kiểm lại.
+ Đo lường, hiển thị: unclear → unclear
+  · Điện áp các pha: met → unclear Code thay bộ điều khiển DSE6120 bằng DSE4620: datasheet DSE4620 không có câu trích của DSE6120, cần kiểm lại.
+  · Dòng điện các pha: met → unclear Code thay bộ điều khiển DSE6120 bằng DSE4620: datasheet DSE4620 không có câu trích của DSE6120, cần kiểm lại.
+  · Tần số: met → unclear Code thay bộ điều khiển DSE6120 bằng DSE4620: datasheet DSE4620 không có câu trích của DSE6120, cần kiểm lại.
+ Cảnh báo, nhật ký sự kiện: unclear → unclear
+  · Nhật ký lỗi: met → unclear Code thay bộ điều khiển DSE6120 bằng DSE4620: datasheet DSE4620 không có câu trích của DSE6120, cần kiểm lại.
+ Bảo vệ, dừng máy: unclear → unclear
+  · Dừng khẩn cấp: met → unclear Code thay bộ điều khiển DSE6120 bằng DSE4620: datasheet DSE4620 không có câu trích của DSE6120, cần kiểm lại.
+ Truyền thông, giám sát từ xa: unclear → unclear
+  · USB: met → unclear Code thay bộ điều khiển DSE6120 bằng DSE4620: datasheet DSE4620 không có câu trích của DSE6120, cần kiểm lại.
+ Cấp bảo vệ bộ điều khiển: met → unclear IP65 ở mặt trước mô-đun, cần gioăng kèm theo. Code thay bộ điều khiển DSE6120 bằng DSE4620: datasheet DSE4620 không có câu trích của DSE6120, cần kiểm lại.
+
