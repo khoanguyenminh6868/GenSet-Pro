@@ -49,7 +49,7 @@ test("archiveRefusal: đường dẫn thoát thư mục, quá số mục, quá d
   assert.match(P.archiveRefusal([{ name: "bomb.bin", size: 2 * 1048576 }], { ...lim, bytes: 1048576 }), /2 MB, quá giới hạn 1 MB/);
   assert.equal(P.archiveRefusal([{ name: "a", size: 50 }, { name: "b", size: 50 }], lim), "");
   assert.equal(P.archiveRefusal([]), "");
-  assert.deepEqual(P.ARCHIVE_LIMITS, { entries: 500, bytes: 1024 ** 3, files: 30, depth: 1 });
+  assert.deepEqual(P.ARCHIVE_LIMITS, { entries: 500, bytes: 1024 ** 3, files: 500, depth: 1 });
 });
 test("unrarFail: 0 không lỗi; 1 tệp nén thiếu/hỏng một phần; 11 mật khẩu, 3 sai CRC, quá thời gian, mã lạ", () => {
   assert.equal(P.unrarFail(0), "");
