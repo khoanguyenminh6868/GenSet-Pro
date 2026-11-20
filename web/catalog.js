@@ -1145,7 +1145,9 @@
     if (x == null) return /^(gov|asp|emission|engType|excit|controller|cooling|start|insul|ip|phase)$/.test(key);
     switch (key) {
       case "cyl": return x >= 1 && x <= 20;
-      case "disp": return /cc|ml/i.test(v) ? x >= 400 && x <= 100000 : x >= 0.4 && x <= 100;
+      // Over 100 L only when the SET's own kW makes it plausible (0.01-0.3 L per kW, up to 300 L): a 16-cylinder 200x210 engine
+      // is 105.56 L (frs, tellhow, waeta, yunding), honny QTA20V 108 L on 2,640 kW; a 108 L figure on a 250 kW set (0.43) stays out.
+      case "disp": return /cc|ml/i.test(v) ? x >= 400 && x <= 100000 : x >= 0.4 && (x <= 100 || (x <= 300 && !!kW && x / kW >= 0.01 && x / kW <= 0.3));
       case "bore": return n.length >= 2 && n.slice(0, 2).every((y) => y >= 50 && y <= 400);
       case "dims": return n.length >= 3 && n.slice(0, 3).every((y) => (y >= 300 && y <= 16000) || (y >= 0.3 && y <= 16));
       case "weight": return /^[≈~]?\s*\d+(?:[.,]\d+)?\s*(kg|kgs|t)?$/i.test(String(v).trim()) && x >= 30 && x <= 80000;
@@ -1497,6 +1499,32 @@
       ["fukangsi-yangzhou", 2001, "FKS-C20", "| FKS-C20 | 20/25 | 东风康明斯 | 4B3.9-G1 | 4 | 3.92 | 9 | ≤210 | 1600*800*1300 | 5500"],
       ["pengpai-yangzhou", 125, "PPDL-C20", "| PPDL-C20 | 20/25 | 东风康明斯 | 4B3.9-G1 | 4 | 3.92 | 9 | ≤210 | 1600*800*1300 | 5500"]].map(([supplierId, n, genset, line]) => (
       { supplierId, n, genset, line, act: "dropspec", keys: ["weight"], khoa: "Khoa 19/11/2026", why: "nguồn ghi khối lượng không hợp công suất của dòng (1.440 kg cho 1.600 kW, 5.500 kg cho 20 kW): bỏ riêng khối lượng, giữ phần còn lại của dòng" })),
+    // `fixspec` (dung-tich-sua-1, Khoa 20/11/2026 "nếu đã biết lý do sao sai thì sửa cho đúng"): the source lost a decimal point in ONE
+    // figure. The figure is replaced only when BOTH hold: (a) bore x stroke x cylinders of the SAME row gives the corrected figure
+    // within 2 %, and (b) the engine maker's document or at least two other suppliers write the same figure. `from` is the source's
+    // text (it must match the spec's value word for word), `to` the corrected figure, `why` the grounds, `src` where to check them.
+    // The spec keeps `fixed` and the record `fixed[]`, so the catalog shows it as corrected, never as the source's own figure.
+    // A row that lacks (a) or (b) gets `dropspec` instead.
+    ...[["JL-320GF", "| JL-320GF | 320 | 400 | 576 | SC15G500D2 | 6 | 135*165 | 142 | 41 | 205 | 3100*1250*1650 | 2700", "142", "14.2", "6 | 135*165 → 14.17 L (lệch 0,2 %); bdadl n127, hanyang n125, sanq n121 ghi 14.2, 12 NCC ghi 14.16", "hình học dòng: 135×165×6 xi lanh = 14.17 L"],
+      ["JL-350GF", "| JL-350GF | 350 | 437.5 | 630 | sC15G500D2 | 6 | 135*165 | 142 | 41 | 205 | 3150*1250*1650 | 2800", "142", "14.2", "6 | 135*165 → 14.17 L (lệch 0,2 %); bdadl n127, hanyang n125, sanq n121 ghi 14.2, 12 NCC ghi 14.16", "hình học dòng: 135×165×6 xi lanh = 14.17 L"]]
+      .map(([genset, line, from, to, why, src]) => ({ supplierId: "jlmech-wuhan", n: 102, genset, line, act: "fixspec", fixes: [{ key: "disp", from, to, why, src }], khoa: "Khoa 20/11/2026", why })),
+    { supplierId: "jlmech-wuhan", n: 104, genset: "JL-30GF", line: "| JL-30GF | 30.0 | 37.5 | 54 | YC2115ZD | 2 | 115*120 | 249 | 6.5 | 225 | 1500*800*1050 | 700", act: "fixspec", khoa: "Khoa 20/11/2026",
+      fixes: [{ key: "disp", from: "249", to: "2.49", why: "2 | 115*120 → 2.49 L (lệch 0,1 %); fukangsi n2002 và pengpai n129 ghi 2.49", src: "hình học dòng: 115×120×2 xi lanh = 2.49 L" }], why: "mất dấu chấm: 249 → 2.49" },
+    { supplierId: "jlmech-wuhan", n: 103, genset: "JL-10GF", line: "| JL-10GF | 10 | 2.5 | 18 | 403D-15G | 3 | 84*90 | 149 | 6 | 248 | 1250*700*1100 | 350", act: "fixspec", khoa: "Khoa 20/11/2026",
+      fixes: [{ key: "disp", from: "149", to: "1.496", why: "3 | 84*90 → 1.496 L (lệch 0 %); 1.496 ở depco, genlitec ×3, gb-power, weiman, wintpower (1.5 ở jianghao, mingbang, aoke, rise, waeta)", src: "hình học dòng: 84×90×3 xi lanh = 1.496 L" }], why: "mất dấu chấm: 149 → 1.496" },
+    // YCD4J12D-55: 105*125, 4 cylinders gives 4.33 L, but no other supplier lists the engine and no maker document was found: (b) fails.
+    { supplierId: "jlmech-wuhan", n: 104, genset: "JL-40GF", line: "| JL-40GF | 40 | 50 | 72 | YCD4J12D-55 | 4 | 105*125 | 433 | 11 | 225 | 1800*800*1100 | 800", act: "dropspec", keys: ["disp"], khoa: "Khoa 20/11/2026", why: "mất dấu chấm (433, hình học dòng 4.33 L) nhưng chưa có tài liệu hãng / NCC khác cho YCD4J12D-55: bỏ riêng dung tích" },
+    // mingbang n125: every row says 4 cylinders and a 3.3-6.0 L displacement for Volvo Penta TAD13xx / TAD16xx / TWD1643GE (the table looks
+    // copied from small engines). Volvo: TAD1341GE-B / TAD1345GE in-line 6, 12.8 L (131x158), TAD1642GE in-line 6, 16.12 L (144x165). The row's
+    // own bore x stroke (105*127, 100*127) is wrong too, so (a) fails for both keys: `dropspec` cyl + disp (Khoa 20/11/2026 "ok bỏ").
+    ...["| 8 | MB-V252 | 315 | 252 | 347 | 277 | TAD1341GE | 4 | 3.3 | 105*127 | 61.7 | 4000×1800×2300",
+      "| 9 | MB-V280 | 350 | 280 | 385 | 308 | TAD1342GE | 4 | 3.3 | 105*127 | 76.9 | 4000×1800×2300",
+      "| 10 | MB-V300 | 375 | 300 | 413 | 330 | TAD1343GE | 4 | 4.4 | 105*127 | 69.9 | 4000×1800×2300",
+      "| 11 | MB-V320 | 400 | 320 | 440 | 352 | TAD1344GE | 4 | 4.4 | 105*127 | 76.9 | 4300×2100×2500",
+      "| 12 | MB-V360 | 450 | 360 | 495 | 396 | TAD1345GE | 4 | 4.4 | 105*127 | 93.2 | 4300×2100×2500",
+      "| 13 | MB-V400 | 500 | 400 | 550 | 440 | TAD1641GE | 4 | 4.4 | 105*127 | 91.9 | 4500×2100×2600",
+      "| 15 | MB-V500 | 625 | 500 | 688 | 550 | TWD1643GE | 4 | 6.0 | 100*127 | 69.9 | 4700×2100×2600"].map((line) => (
+      { supplierId: "mingbang-mbkl", n: 125, genset: line.split("|")[2].trim(), line, act: "dropspec", keys: ["cyl", "disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi 4 xi lanh và dung tích 3,3–6,0 L cho động cơ Volvo Penta 6 xi lanh 12,8–16,1 L (bore / stroke của dòng cũng sai nên không đủ căn cứ sửa): bỏ xi lanh và dung tích" })),
   ];
   function rowExceptions(s, list, note) {
     const ex = ROW_EXCEPTIONS.filter((x) => x.supplierId === s.id);
@@ -1509,6 +1537,17 @@
       note({ n: o.n, title: o.title }, o.table, o.row ?? null, "ngoại lệ theo dòng", `${x.act}: ${x.khoa}, ${x.why}`);
       if (x.act === "nopower") out.push({ ...o, power: null });
       else if (x.act === "dropspec") out.push({ ...o, specs: (o.specs || []).filter((sp) => !x.keys.includes(sp.key)) });
+      else if (x.act === "fixspec") {
+        // Replace only a spec whose value is word for word the source's `from`; any other value (the source changed) is left as read.
+        const fixed = [];
+        const specs = (o.specs || []).map((sp) => {
+          const f = x.fixes.find((y) => y.key === sp.key && String(sp.value).trim() === y.from);
+          if (!f) return sp;
+          fixed.push({ key: f.key, from: f.from, to: f.to, why: f.why, src: f.src });
+          return { ...sp, value: f.to, fixed: { from: f.from, why: f.why, src: f.src } };
+        });
+        out.push(fixed.length ? { ...o, specs, fixed } : o);
+      }
     }
     return out;
   }
