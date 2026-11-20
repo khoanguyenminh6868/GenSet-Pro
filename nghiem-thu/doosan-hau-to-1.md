@@ -60,7 +60,7 @@ Cả 4 đều đạt → không dòng nào giữ dropspec. Lưu ý: số lượn
 - Hai dòng Perkins dựa số đông NCC (không có datasheet Perkins lưu trong repo).
 
 ## Chưa kiểm được
-- Top 30 ứng viên (không giao). CI GitHub của PR chưa chờ kết quả lúc viết (nghiệm thu viết ngay sau khi mở PR).
+- Top 30 ứng viên (không giao). CI GitHub PR #1012: web, server, suppliers, spec-diff đều pass.
 - P126TI- (kachai-hangzhou, hậu tố cụt): chờ quyết.
 
 ## Cần ghi nhớ
