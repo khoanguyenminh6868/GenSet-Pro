@@ -214,5 +214,50 @@ export function bestPair(names = [], ctlFacts = [], compat = [], modFacts = new 
   const used = new Set(cur.modules);
   return { ...cur, modules: chosen.filter((x) => used.has(x.m.model)).map((x) => ({ model: x.m.model, make: x.m.make, ...(x.m.order ? { order: x.m.order } : {}) })) };
 }
+// ---------- Bộ điều khiển theo datasheet hãng, AMF, thay bộ chính (Khoa 20/11/2026, IB2600603983: "1. Có 2. Có 3. Có") ----------
+// A controller the configuration's suppliers do not offer, chosen from its maker's datasheet.
+export const CTL_ALT_LABEL = "Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào";
+// The kind of each Deep Sea controller as its maker's datasheet writes it: "amf" (auto mains (utility) failure), "sync"
+// (synchronising), "start" (auto start only). Read from the words right after the model in a line of a controller_maker's
+// table, up to the next model ("The DSE7310 MKII is an auto start control module and the DSE7320 MKII is an auto mains
+// (utility) failure control module"); words before the model are another's. A model read as two kinds takes amf, then sync
+// (DSE8610 MKII: "Synchronising Auto Start"). Only Deep Sea (DSE + 4 digits) for now; key = the number ("7320").
+const DSE_RE = /\bDSE\s?(\d{4})(?:\s?MK\s?I{1,3})?\b/gi;
+export function ctlKinds(suppliers = []) {
+  const votes = new Map();
+  for (const s of suppliers || []) {
+    if (s?.role !== "controller_maker") continue;
+    for (const t of s.specTables || []) for (const line of [t.title, ...(t.rows || [])]) {
+      const l = String(line || ""), hits = [...l.matchAll(DSE_RE)];
+      hits.forEach((h, i) => {
+        const seg = l.slice(h.index + h[0].length, i + 1 < hits.length ? hits[i + 1].index : l.length);
+        const k = /mains\W+(?:\(?utility\)?\W+)?failure|\bAMF\b/i.test(seg) ? "amf" : /synchroni[sz]/i.test(seg) ? "sync" : /auto\W+start/i.test(seg) ? "start" : null;
+        if (k) votes.set(h[1], new Set([...(votes.get(h[1]) || []), k]));
+      });
+    }
+  }
+  return new Map([...votes].map(([n, ks]) => [n, ["amf", "sync", "start"].find((k) => ks.has(k))]));
+}
+export const dseNum = (model) => String(model || "").match(/\bDSE\s?(\d{4})\b/i)?.[1] || null;
+export const kindOf = (kinds, model) => kinds.get(dseNum(model)) || null;
+// The step of a Deep Sea controller in its maker's range, for "a lower step" (Khoa's 3rd answer): the series, the first two
+// digits (61xx < 73xx < 74xx < 86xx). Inferred from the maker's numbering (DSE7320 MKII / DSE7420 MKII, DSE8610 MKII), not
+// written by the maker as an order; null for a controller with no such number.
+export const ctlStep = (model) => { const n = dseNum(model); return n ? Math.floor(Number(n) / 100) : null; };
+// The HSMT asks for a set that starts and takes the load when the mains fail (Khoa's 2nd answer): an ATS, "khi mất điện lưới".
+export const AMF_RE = /\bATS\b|chuy[ểe]n\s+(?:đổi\s+)?ngu[ồo]n\s+t[ựu]\s+đ[ộo]ng|m[ấa]t\s+(?:đi[ệe]n\s+)?l[ưu][ớo]i|\bAMF\b|mains\s+failure/i;
+export const needsAmf = (text) => AMF_RE.test(String(text || ""));
+// The HSMT asks for sets running in parallel: a synchronising controller must stay one.
+export const SYNC_RE = /h[òo][àa]\s+đ[ồo]ng\s+b[ộo]|ch[ạa]y\s+song\s+song|v[ậa]n\s+h[àa]nh\s+song\s+song|load\s?shar|synchroni[sz]/i;
+export const needsSync = (text) => SYNC_RE.test(String(text || ""));
+// Whether controller `kind` may stand in for one of `mainKind` under the HSMT: an AMF one when the HSMT asks for it; else the
+// same kind as the one offered (an AMF 7420 is not swapped for an auto start 7310), and never off a synchronising one when the
+// HSMT asks for parallel running. Unknown kinds: only when nothing is asked and the main's kind is unknown too.
+export function kindFits(kind, mainKind, { amf = false, sync = false } = {}) {
+  if (sync && mainKind === "sync") return kind === "sync";
+  if (amf) return kind === "amf";
+  return mainKind ? kind === mainKind : !kind;
+}
+
 // The line of Q1: "Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (đạt 5/7 ...)".
-export const altLineOf = (alts = []) => (alts.length ? `Phương án khác đạt tương đương: ${alts.map((a) => `${[a.model, ...a.modules.map((m) => m.model)].join(" + ")} (truyền thông: code dò datasheet đạt ${a.met}/${a.total}${a.unclear.length ? `, chưa rõ: ${a.unclear.join(", ")}` : ""})`).join("; ")}` : "");
+export const altLineOf = (alts = []) => (alts.length ? `Phương án khác đạt tương đương: ${alts.map((a) => `${[a.model, ...a.modules.map((m) => m.model)].join(" + ")} (${a.notOffered ? `${CTL_ALT_LABEL}; ` : a.offeredBy ? `NCC ${a.offeredBy} chào; ` : ""}truyền thông: code dò datasheet đạt ${a.met}/${a.total}${a.unclear.length ? `, chưa rõ: ${a.unclear.join(", ")}` : ""})`).join("; ")}` : "");

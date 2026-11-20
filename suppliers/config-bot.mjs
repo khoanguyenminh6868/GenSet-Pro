@@ -2622,28 +2622,117 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   // bdk-mo-dun PR 3 (Khoa 20/11/2026 "ok"): only a pair that meets at least as many parts as the configuration's own
   // controller with its best modules, scored the same way, less one (DSE7320 + DSE890 5/7 beside DSE7420 6/7 stays;
   // DSE6120 1/4, DSE6020 + DSE890 2/7 go).
-  const ctlAlternatives = (c, reqs) => {
-    delete c.controller.alternatives; delete c.controller.altLine;
-    const names = reqs.filter((r) => r.code === "ctl_comm" && r.part === "controller").flatMap((r) => (r.parts?.length ? r.parts.map((p) => p.item) : [r.item])).filter(Boolean);
-    if (!names.length) return;
-    const main = CAT.keyOf(ctlModelOf(c.controller)), mainKeys = new Set([main, ...factsOf(c, "controller").map((f) => CAT.keyOf(f.sheetModel || ""))]);
+  const commNames = (reqs) => reqs.filter((r) => r.code === "ctl_comm" && r.part === "controller").flatMap((r) => (r.parts?.length ? r.parts.map((p) => p.item) : [r.item])).filter(Boolean);
+  // bdk-amf (Khoa 20/11/2026, IB2600603983, "1. Có 2. Có 3. Có"): (1) the other controllers of the same make also come from the
+  // other lines the configuration's suppliers offer (the record's `controllers`) and from the controller maker's own datasheets
+  // ("Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào"); (2) the HSMT asks for an ATS / "khi mất điện lưới" → only an
+  // AMF controller (its kind read from the maker's datasheet, CM.ctlKinds); (3) one of them replaces the main controller when
+  // it meets at least as many communication parts (bestPair) and is a lower step (CM.ctlStep), see ctlSwap.
+  const ctlKinds = CM.ctlKinds(suppliers), tech = technicalPart(hsmtText || "") || hsmtText || "";
+  const ctlNeed = { amf: CM.needsAmf(tech), sync: CM.needsSync(tech) };
+  // The controllers that may stand in for c's main one, each scored with its best modules: [{ model, make, kind, step, met, ...,
+  // offeredAs + offeredBy | notOffered, src }]. The one the code replaced (controller.was) first.
+  const ctlCands = (c, names) => {
+    const mainList = factsOf(c, "controller"), main = CAT.keyOf(ctlModelOf(c.controller));
+    const mainKeys = new Set([main, ...mainList.map((f) => CAT.keyOf(f.sheetModel || ""))]);
     const brand = CAT.controllersIn(ctlModelOf(c.controller)).find((x) => x.model)?.brand || c.controller.make;
-    const mainList = factsOf(c, "controller");
-    const floor = Math.max(1, (mainList.length ? CM.bestPair(names, mainList, compatOf(ctlModelOf(c.controller), mainList), modFacts).met : 0) - 1);
-    const seen = new Set(), alts = [];
-    for (const x of CAT.controllersIn(c.controller.src?.line || "").filter((y) => y.model && (!brand || norm(y.brand) === norm(brand)))) {
+    const seen = new Set(), out = [];
+    const tryAlt = (x, how) => {
       const k = CAT.keyOf(x.model);
-      if (seen.has(k) || mainKeys.has(k)) continue;
+      if (seen.has(k) || mainKeys.has(k)) return;
       seen.add(k);
       const list = factsFor(facts, "controller", x.model);
-      if (!list.length || list.some((f) => mainKeys.has(CAT.keyOf(f.sheetModel || "")))) continue;
-      const bp = CM.bestPair(names, list, compatOf(x.model, list), modFacts), sheets = [...new Set(list.map((f) => f.version || f.sheetModel).filter(Boolean))];
-      if (bp.met >= floor) alts.push({ model: sheets.length === 1 ? sheets[0] : x.model, offeredAs: x.model, make: x.brand, ...bp, parts: undefined });
+      if (!list.length || list.some((f) => mainKeys.has(CAT.keyOf(f.sheetModel || "")))) return;
+      const sheets = [...new Set(list.map((f) => f.version || f.sheetModel).filter(Boolean))], model = sheets.length === 1 ? sheets[0] : x.model;
+      if (seen.has(`sheet:${CAT.keyOf(model)}`)) return;
+      seen.add(`sheet:${CAT.keyOf(model)}`);
+      const bp = CM.bestPair(names, list, compatOf(x.model, list), modFacts);
+      const own = list.find((f) => sup.get(f.supplierId)?.role === "controller_maker") || list[0];
+      out.push({ model, ...(how.notOffered ? { notOffered: true, label: CM.CTL_ALT_LABEL } : { offeredAs: x.model, ...(how.by ? { offeredBy: how.by } : {}) }), make: x.brand,
+        kind: CM.kindOf(ctlKinds, model), step: CM.ctlStep(model), ...bp, parts: undefined, was: !!how.was,
+        src: how.src || { kind: "ctlsheet", supplierId: own.supplierId, n: own.n } });
+    };
+    const same = (y) => y.model && (!brand || norm(y.brand) === norm(brand));
+    const was = c.controller.was;
+    if (was?.model) for (const x of CAT.controllersIn(`${was.make || ""} ${ctlModelOf(was)}`).filter(same).slice(0, 1)) tryAlt(x, { by: was.src?.supplierId, src: was.src, was: true });
+    const line = (was || c.controller).src;
+    for (const x of CAT.controllersIn(line?.line || "").filter(same)) tryAlt(x, { by: line?.supplierId, src: line });
+    for (const s of c.suppliers || []) for (const o of sup.get(s.supplierId)?.controllers || []) {
+      for (const x of CAT.controllersIn(o.line || "").filter((y) => same(y) && CAT.keyOf(y.model) === CAT.keyOf(o.model || ""))) tryAlt(x, { by: s.supplierId, src: { kind: "controller", supplierId: s.supplierId, n: (o.src || [])[0] ?? null, line: o.line } });
     }
-    alts.sort((a, b) => b.met - a.met);
+    if (brand) for (const k of [...facts.keys()].filter((y) => y.startsWith("controller:")).sort()) {
+      if (!facts.get(k).some((f) => sup.get(f.supplierId)?.role === "controller_maker")) continue;
+      const sm = facts.get(k).find((f) => f.sheetModel)?.sheetModel || k.slice(11);
+      const x = CAT.controllersIn(sm).find((y) => same(y) && CAT.keyOf(y.model) === k.slice(11)) || CAT.controllersIn(sm).find(same);
+      if (x) tryAlt(x, { notOffered: true });
+    }
+    const mainPair = mainList.length ? CM.bestPair(names, mainList, compatOf(ctlModelOf(c.controller), mainList), modFacts) : null;
+    return { out, mainPair };
+  };
+  // Q1 + bdk-amf (1)(2): "Phương án khác đạt tương đương", best 2: the one the code replaced always (with who offered it), then
+  // those meeting ≥ the main pair − 1 (and ≥ 1), AMF only when the HSMT asks for it; more parts met first, then a supplier's
+  // offer, then the lower step (DSE7320 before DSE7420; điều phối 20/11/2026, inferred, not Khoa's own words).
+  const ctlAlternatives = (c, reqs) => {
+    delete c.controller.alternatives; delete c.controller.altLine;
+    const names = commNames(reqs);
+    if (!names.length) return;
+    const { out, mainPair } = ctlCands(c, names), floor = Math.max(1, (mainPair?.met || 0) - 1);
+    const step = (a) => (a.step == null ? Infinity : a.step);
+    const alts = out.filter((a) => a.was || (a.met >= floor && (!ctlNeed.amf || a.kind === "amf" || (a.kind == null && CM.ctlStep(a.model) == null))))
+      .sort((a, b) => (b.was ? 1 : 0) - (a.was ? 1 : 0) || b.met - a.met || (a.notOffered ? 1 : 0) - (b.notOffered ? 1 : 0) || step(a) - step(b));
     if (!alts.length) return;
-    c.controller.alternatives = alts.slice(0, 2).map(({ parts, ...a }) => a);
+    c.controller.alternatives = alts.slice(0, 2).map(({ parts, src, was, step: _s, ...a }) => a);
     c.controller.altLine = CM.altLineOf(c.controller.alternatives);
+  };
+  // bdk-amf (3): the main controller replaced by code. Run again on a checked result, the controller and the checks the code
+  // changed are put back first (idempotent). Only a Deep Sea main with a datasheet, on a tender with communication parts; the
+  // candidate: kind fits (CM.kindFits: AMF when the HSMT asks for it, never off a synchronising one when it asks for parallel
+  // running, else the same kind), a lower step, at least as many parts met; the closest lower step, then most parts met, then a
+  // supplier's offer. Each controller check is moved to the new controller's datasheet: the same line (factSrc) or a quote
+  // its datasheet has; else "chưa rõ" with the code's note.
+  const CTL_FIELDS = ["status", "note", "sourceQuote", "factSrc", "hint"];
+  const ctlRestore = (x) => {
+    CM.commRestore(x);
+    if (!x.ctlWas) return;
+    for (const k of CTL_FIELDS) { if (x.ctlWas[k] == null) delete x[k]; else x[k] = x.ctlWas[k]; }
+    delete x.ctlWas;
+  };
+  const ctlSwap = (c, reqs) => {
+    for (const x of c.checks || []) { ctlRestore(x); for (const p of x.parts || []) ctlRestore(p); }
+    if (c.controller?.was) c.controller = c.controller.was;
+    const names = commNames(reqs);
+    if (process.env.GENBID_CTL_SWAP === "0" || !c.controller?.model || !names.length || !factsOf(c, "controller").length) return;
+    const main = ctlModelOf(c.controller), mainStep = CM.ctlStep(main), mainKind = CM.kindOf(ctlKinds, main);
+    if (mainStep == null) return;
+    const { out, mainPair } = ctlCands(c, names);
+    const pick = out.filter((a) => a.step != null && a.step < mainStep && a.met >= mainPair.met && CM.kindFits(a.kind, mainKind, ctlNeed))
+      .sort((a, b) => b.step - a.step || b.met - a.met || (a.notOffered ? 1 : 0) - (b.notOffered ? 1 : 0))[0];
+    if (!pick) return;
+    const { alternatives, altLine, modules, ...was } = c.controller;
+    const why = [`truyền thông ${pick.met}/${pick.total} (bộ cũ ${mainPair.met}/${mainPair.total})`, `bậc thấp hơn (${pick.model} < ${main})`,
+      ctlNeed.amf ? `HSMT có ATS / mất điện lưới: loại AMF theo datasheet hãng` : mainKind ? `cùng loại ${mainKind} theo datasheet hãng` : ""].filter(Boolean).join("; ");
+    c.controller = { make: pick.make || was.make, model: pick.model, src: pick.src, ...(pick.notOffered ? { fromMaker: true, label: CM.CTL_ALT_LABEL } : {}), byCode: true, was,
+      wasWhy: `Code thay ${was.model}${was.src?.supplierId ? ` (NCC ${was.src.supplierId} chào)` : ""} bằng ${pick.model}${pick.notOffered ? ` (${CM.CTL_ALT_LABEL})` : pick.offeredBy ? ` (NCC ${pick.offeredBy} chào)` : ""}: ${why}.` };
+    const list = factsOf(c, "controller"), text = norm(list.map((f) => f.line).join(" \n "));
+    const move = (x) => {
+      if (x.byCode) return;
+      const fs0 = x.factSrc, quote = x.sourceQuote ? norm(x.sourceQuote) : "";
+      // The code's note of the other generation (written by an earlier check of this result) is about the old controller.
+      const strip = () => { if (x.note) { x.note = x.note.replace(/\s*Nguồn là datasheet [^;]+; nhà cung cấp ghi [^,]+, cần xác nhận đời \(MK\) của bộ điều khiển\.(?: Code ghi: datasheet đời khác thiếu chức năng này nên tính là chưa rõ, không phải không đạt\.)?/g, "").trim(); if (!x.note) delete x.note; } };
+      const same = fs0 ? list.find((f) => norm(f.line) === norm(fs0.line)) : null;
+      const byQuote = !same && quote ? list.find((f) => norm(f.line).includes(quote)) : null;
+      if (same || byQuote || (!fs0 && !quote)) {
+        if (same || byQuote) { x.ctlWas = x.ctlWas || Object.fromEntries(CTL_FIELDS.map((k) => [k, x[k] ?? null])); const f = same || byQuote; x.factSrc = { supplierId: f.supplierId, n: f.n, line: f.line }; strip(); }
+        return;
+      }
+      x.ctlWas = x.ctlWas || Object.fromEntries(CTL_FIELDS.map((k) => [k, x[k] ?? null]));
+      delete x.factSrc; delete x.hint; strip();
+      if (quote && text.includes(quote)) return;
+      if (x.status === "met" || x.status === "not_met") x.status = "unclear";
+      delete x.sourceQuote;
+      x.note = [x.note, `Code thay bộ điều khiển ${was.model} bằng ${pick.model}: datasheet ${pick.model} không có câu trích của ${was.model}, cần kiểm lại.`].filter(Boolean).join(" ");
+    };
+    for (const x of c.checks || []) if (x.part === "controller") { move(x); for (const p of x.parts || []) move(p); }
   };
   // Đồng bộ thương hiệu (Khoa, 2026-11-06): read from the HSMT by code, one requirement of the code's own in place of
   // any the agent wrote about it; its check is written below from the makes, never by the agent.
@@ -2730,6 +2819,11 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     if (src.kind === "controller") {
       const c = (sup.get(src.supplierId)?.controllers || []).find((x) => norm(x.line) === norm(src.line) && (src.n == null || (x.src || []).includes(Number(src.n))));
       return c ? norm(c.line) : null;
+    }
+    // A controller the code chose from its maker's datasheet (ctlSwap): the lines of that datasheet table.
+    if (src.kind === "ctlsheet") {
+      const t = (sup.get(src.supplierId)?.specTables || []).find((x) => x.n === Number(src.n));
+      return t ? norm([t.title, ...(t.header || []), ...t.rows].join(" \n ")) : null;
     }
     // An alternator from its maker's own sheet (makerAltFix): that saved sheet of the maker's record.
     if (src.kind === "maker") {
@@ -2867,6 +2961,8 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   comboNotes(result, combo);
   // Đầu phát theo datasheet hãng (dau-phat-hang B, Khoa 20/11/2026): before the sources of each part are read below.
   const altNeed = makerAltFix(result, { suppliers, RT, built, rowOf, hsmtText, cap, sync, problems, sourcesDir });
+  // bdk-amf (3): the main controller a lower step of its maker replaces (before its sources are read below).
+  for (const c of result.configs || []) ctlSwap(c, result.requirements || []);
   for (const c of result.configs) {
     const texts = {};
     for (const part of ["engine", "alternator", "genset", "controller"]) {
