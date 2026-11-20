@@ -17,7 +17,7 @@ for (const k of Object.keys(a)) {
     const out = [];
     if (JSON.stringify(ca.score) !== JSON.stringify(cb.score)) out.push(`điểm ${JSON.stringify(ca.score)} → ${JSON.stringify(cb.score)}`);
     for (const xb of cb.checks) {
-      const xa = ca.checks.find((y) => y.k.split("|")[1] === xb.k.split("|")[1]);
+      const xa = ca.checks.find((y) => y.k.split("|").slice(0, 2).join("|") === xb.k.split("|").slice(0, 2).join("|"));
       if (!xa) { out.push(`check mới: ${xb.k}`); continue; }
       if (st(xa) !== st(xb)) out.push(`check ${st(xa)} → ${xb.k.split("|")[2]}`);
       for (const pb of xb.parts) {

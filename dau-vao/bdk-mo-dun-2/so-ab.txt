@@ -1,18 +1,3 @@
-## IB2600581294
-  #1 SC25G690D2 | JET544D | null
-    check genset|Công suất liên tục|met → unclear (Chưa rõ)
-  #2 WP13D490E310 | JET544D | null
-    check genset|Công suất liên tục|met → unclear (Chưa rõ)
-  #3 6ETAA12.8-G310 | JET544D | null
-    check genset|Công suất liên tục|met → unclear (Chưa rõ)
-  #4 WP13D490E310 | BW-354D | null
-    check genset|Công suất liên tục|met → unclear (Chưa rõ)
-  #5 YCT16660-G31 | 544C | null
-    check genset|Công suất liên tục|met → met (Alternator Prime Power 400 kW)
-  #6 YC6T660L-D20 | EL 354D | null
-    check genset|Công suất liên tục|met → unclear (Alternator power 400 kW)
-  #7 YC6T660L-D20 | TFW2-400-4A | null
-    check genset|Công suất liên tục|unclear → unclear (Chưa rõ)
 ## IB2600581977
   lặp lại: gốc KHÁC, nhánh KHÁC
 ## IB2600601812
@@ -96,4 +81,4 @@
     mô-đun: DSE890 MKII (GSM/SMS)
     Phương án khác đạt tương đương: DSE8610 MKII + DSE890 MKII (truyền thông: code dò datasheet đạt 2/2); DSE6120 MKIII + DSE890 MKII (truyền thông: code dò datasheet đạt 1/2, chưa rõ: Modbus RTU RS485)
 
-# Gói có thay đổi: 8/17
+# Gói có thay đổi: 7/17
