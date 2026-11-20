@@ -1,8 +1,0 @@
-{
-  "name": "genbid-worker-kit",
-  "private": true,
-  "dependencies": {
-    "playwright-core": "1.45.3",
-    "tesseract.js": "^5.1.1"
-  }
-}
