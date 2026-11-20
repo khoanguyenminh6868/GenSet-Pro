@@ -1,0 +1,740 @@
+--- Tệp: Chương V. YÊU CẦU VỀ KỸ THUẬT.pdf ---
+1
+
+                       Phần 2. YÊU CẦU VỀ KỸ THUẬT
+                      Chương V. YÊU CẦU VỀ KỸ THUẬT
+
+Mục 1. Yêu cầu về kỹ thuật
+Yêu cầu về kỹ thuật bao gồm các nội dung cơ bản như sau:
+1.1. Giới thiệu chung về dự án/dự toán mua sắm, gói thầu
+- Tên dự toán mua sắm: Mua sắm bóng phát tia thay thế cho Hệ thống máy chụp cắt lớp
+vi tính 16 dãy Siemens SOMATOM go.Now tại khoa Chẩn đoán hình ảnh, Bệnh viện đa
+khoa tỉnh Điện Biên.
+- Tên gói thầu: Gói thầu số 3: Mua sắm bóng phát tia thay thế cho Hệ thống máy chụp cắt
+lớp vi tính 16 dãy Siemens SOMATOM go.Now tại khoa Chẩn đoán hình ảnh, Bệnh viện
+đa khoa tỉnh Điện Biên.
+- Nguồn vốn: Nguồn quỹ phát triển hoạt động sự nghiệp của Bệnh viện đa khoa tỉnh Điện
+Biên.
+- Chủ đầu tư: Bệnh viện đa khoa tỉnh Điện Biên.
+- Địa điểm thực hiện: Bệnh viện đa khoa tỉnh Điện Biên. Địa chỉ: Phường Mường Thanh,
+Tỉnh Điện Biên.
+- Hình thức lựa chọn nhà thầu: Đấu thầu rộng rãi trong nước, qua mạng.
+- Phương thức lựa chọn nhà thầu: Một giai đoạn, một túi hồ sơ.
+- Thời gian tổ chức lựa chọn nhà thầu: 90 ngày.
+- Thời gian bắt đầu tổ chức lựa chọn nhà thầu: Quý IV năm 2026.
+- Loại hợp đồng: Trọn gói.
+- Thời gian thực hiện gói thầu: 90 ngày.
+- Tùy chọn mua thêm: Không áp dụng.
+1.2. Yêu cầu về kỹ thuật
+1.2.1. Tài liệu chứng minh về tính hợp lệ của hàng hóa:
+- Nhà thầu phải nêu rõ: Ký mã hiệu, Nhãn hiệu, Xuất xứ, Hãng sản xuất của hàng hoá dự
+thầu theo quy định tại mẫu số 10B thuộc Chương IV của E-HSMT.
+- Tài liệu chứng minh đ c tính, thông số kỹ thu t của hàng hóa dự thầu: Nhà thầu cung
+cấp catalogue, tài liệu kỹ thu t ho c các tài liệu khác có giá trị tương đương có đầy đủ
+nội dung chứng minh các đ c tính, thông số kỹ thu t đối với hàng hóa dự thầu theo yêu
+cầu tại Mục 1.2.3. Yêu cầu kỹ thu t chi tiết - Chương V của E-HSMT.
+Ghi chú: Tất cả các tài liệu chứng minh tư cách hợp lệ của hàng hóa nếu sử dụng bằng
+tiếng nước ngoài phải kèm theo bản dịch tiếng Việt của cơ sở dịch thuật hợp pháp hoặc
+bản dịch tiếng Việt được đóng dấu xác nhận của nhà sản xuất, nhà đăng ký, nhà nhập
+khẩu hoặc tương đương. Nhà thầu phải chịu trách nhiệm về tính chính xác của nội dung
+bản dịch so với bản gốc và tính pháp lý của các tài liệu này.
+1.2.2. Nhà thầu cung cấp các tài liệu theo yêu cầu:
+1.2.2.1. Yêu cầu về cách trình bày các file trong E-HSDT đăng tải trên Hệ thống:
+Các tài liệu kèm theo phải được phân chia riêng biệt theo folder như sau:
+1. Folder 1. Tính hợp lệ:
+- File tính hợp lệ của nhà thầu
+   + Giấy chứng nh n đăng ký doanh nghiệp.
+                                          2
+
+    + Quyết định bổ nhiệm chức vụ và Giấy Ủy quyền cho người được phép ký các hồ sơ
+tham dự thầu trong E-HSDT của Nhà thầu trong trường hợp người ký này không phải là
+người đại diện theo Pháp lu t của Nhà thầu.
+- File Bảo đảm dự thầu và tài liệu chứng minh tính hợp lệ của người ký thư bảo lãnh
+    (trong trường hợp nhà thầu làm bảo lãnh dự thầu).
+- ... và các tài liệu liên quan khác (nếu có)
+2. Folder 2. Năng lực kinh nghiệm:
+- File 1. Báo cáo tài chính năm ___ (ví dụ: 2023)
+- File 2. Báo cáo tài chính năm ___ (ví dụ: 2024)
+- File 3. Báo cáo tài chính năm ___ (ví dụ: 2025)
+- File 4. Tờ khai thuế (ho c thông báo nộp tiền của cơ quan thuế đối với hộ kinh doanh)
+và Giấy nộp tiền có xác nh n của cơ quan thuế được in từ Hệ thống thuế điện tử ho c xác
+nh n của cơ quan thuế về việc thực hiện nghĩa vụ thuế.
+- File 5. Hợp đồng tương tự (bao gồm: Hợp đồng, biên bản nghiệm thu ho c biên bản
+    thanh lý, thông tin về hóa đơn theo quy định của pháp lu t,...)
+- File 6. Nhân sự chủ chốt (bao gồm: Bằng cấp, chứng chỉ chuyên môn,... và các tài liệu
+    khác theo yêu cầu của E-HSMT.)
+... và các tài liệu liên quan khác (nếu có)
+3. Folder 3. Kỹ thuật: Mỗi folder trong này sẽ bao gồm 01 ho c nhiều hàng hóa dự thầu
+    có cùng hãng sản xuất ho c cùng tài liệu pháp lý, trong mỗi folder đề nghị nhà thầu
+    tách riêng các file tài liệu và đánh số thứ tự
+- File 1. Bảng đáp ứng về kỹ thu t của hàng hóa dự thầu; Bảng xác định hợp đồng tương
+    tự theo Mã HS (File scan từ bản ký, đóng dấu)
+- File 2. Bảng đáp ứng về kỹ thu t của hàng hóa dự thầu; Bảng xác định hợp đồng tương
+    tự theo Mã HS (File word ho c excel)
+Folder 3.1. STT ___ (STT hàng hóa theo E-HSMT ví dụ: STT 1, 2, 3):
+ File 1. Tài liệu chứng minh đáp ứng về thông số kỹ thu t có highlight (đánh dấu) (bao
+gồm: bản gốc và bản dịch catalog, datasheet, brochure... do nhà sản xuất phát hành
+hoặc tương đương).
+ Các tài liệu liên quan khác (nếu có).
+(tương tự Folder 3.2, Folder 3.3... cho các hàng hóa có STT tiếp theo)
+1.2.2.2. Bảng đáp ứng về kỹ thuật của hàng hóa dự thầu:
+- Nhà thầu kê khai đầy đủ theo mẫu dưới đây và cung cấp file định dạng Word ho c excel
+kèm E-HSDT cùng bản in ký đóng dấu, hợp lệ.
+- Mẫu này dùng để phục vụ đánh giá về kỹ thu t hàng hóa chào thầu của nhà thầu. Yêu
+cầu nhà thầu phải điền đầy đủ và chính xác. Nhà thầu tự chịu trách nhiệm về h u quả
+ho c sự bất lợi nếu không làm đúng theo quy định. Việc nhà thầu cố tình kê khai thông
+tin không đúng với thông số kỹ thu t mà nhà sản xuất đã công bố nhằm mục đích vượt
+qua bước đánh giá về kỹ thu t được coi là hành vi gian l n trong đấu thầu quy định tại
+khoản 4 Điều 16 Lu t Đấu thầu và sẽ bị xử lý theo quy định của Pháp lu t.
+                                                         3
+
+       STT   Danh    Ký mã        Nhãn Xuất xứ Hãng sản Thông số kỹ   Thông số kỹ       Nội dung tham
+      trong mục hàng hiệu         hiệu (quốc gia, xuất thuật và các thuật và các tiêu chiếu chứng minh
+        E-    hóa                      vùng lãnh         tiêu chuẩn chuẩn của hàng Thông số kỹ thuật
+      HSMT                                thổ)              theo      hóa dự thầu     và các tiêu chuẩn
+                                                          E-HSMT                       của hàng hóa dự
+                                                                                             thầu
+       (1)         (2)     (3)     (4)     (5)     (6)       (7)           (8)                (9)
+
+
+  Ghi chú:
+ - Cột 1, 2, 7: Nhà thầu ghi thông tin theo yêu cầu của E-HSMT;
+ - Cột 3, 4, 5, 6, 8, 9: Nhà thầu ghi các thông tin của hàng hóa dự thầu;
+ + Cột 9: Nhà thầu phải nêu rõ các nội dung tham chiếu, số trang trong tài liệu có
+ highlight (đánh dấu) trên cả tài liệu tiếng Anh và tiếng Việt chứng minh thông số kỹ thu t
+ và các tiêu chuẩn của hàng hóa dự thầu phù hợp với nội dung kê khai ở cột 8.
+ 1.2.2.3. Bảng xác định hợp đồng tương tự theo Mã HS
+         Nhà thầu phải kê khai đầy đủ thông tin theo mẫu sau làm cơ sở xét tính chất và
+ quy mô của hợp đồng tương tự. Tổ chuyên gia xem xét và đánh giá hợp đồng tương tự
+ trên cơ sở thông tin kê khai của nhà thầu. Nhà thầu chịu trách nhiệm về tính chính xác và
+ trung thực của thông tin được cung cấp. Nhà thầu phải đính kèm trong E-HSDT file excel
+ và file scan có ký, đóng dấu hợp lệ của bảng kê khai theo mẫu dưới, đồng thời cung cấp
+ tài liệu chứng minh mã HS của m t hàng tương tự bằng các tài liệu hợp lệ liên quan (tờ
+ khai hải quan,...).
+                   Yêu cầu E-HSMT                                  Đáp ứng của E-HSDT
+         Danh        Mã hàng      Giá trị   Tên thành     Hợp        Hạng mục     Mã hàng hóa   Giá trị đã
+         mục         hóa (HS)    hợp đồng    viên liên    đồng       hàng hóa      (HS) của     thực hiện
+STT      hàng         yêu cầu    tương tự   danh đảm     tương      tương tự đã    hạng mục     của hạng
+          hóa        của hàng     (VND)     nhận (nếu      tự        thực hiện     hàng hóa     mục hàng
+                     hóa trong                  có)                                tương tự     hóa tương
+                                                                                                    tự
+                     E-HSMT
+(1)          (2)        (3)         (4)        (5)           (6)        (7)             (8)        (9)
+ 1
+...
+ n
+ Ghi chú
+ - Cột 2, 3, 4: Nhà thầu ghi thông tin theo yêu cầu của E-HSMT.
+ - Cột 5: Ghi tên thành viên liên danh cung cấp hàng hóa dự thầu tương ứng với các nội
+ dung của Thỏa thu n liên danh. Giá trị hợp đồng tương tự của thành viên liên danh được
+ xét trên cơ sở phần công việc đảm nh n.
+ - Cột 6: Nhà thầu ghi tên, số hiệu, ngày ký, chủ đầu tư, vai trò của nhà thầu (độc l p hay
+ thành viên liên danh, tỷ lệ % liên danh).
+ - Cột 7: Nhà thầu ghi STT, tên hạng mục hàng hóa tương tự đã thực hiện trong hợp đồng
+ tương tự.
+ - Cột 8: Nhà thầu kê khai Mã hàng hóa (HS của hạng mục hàng hóa tương tự đã thực
+ hiện, đề nghị ghi đầy đủ các số của mã HS.
+ - Cột 9: Nhà thầu ghi giá trị phần công việc đã thực hiện tương ứng với Mã hàng hóa (HS
+ yêu cầu, lưu ý đính kèm tài liệu chứng minh phần giá trị thực hiện đó đã được hoàn
+ thành, đảm bảo đáp ứng tối thiểu giá trị hợp đồng tương tự yêu cầu của từng hạng mục
+                                             4
+
+ (Tài liệu chứng minh bao gồm: hợp đồng, biên bản nghiệm thu ho c biên bản thanh lý,
+ thông tin về hóa đơn theo quy định của pháp lu t…)
+ 1.2.3. Yêu cầu về kỹ thuật cụ thể:
+ Yêu cầu thông số kỹ thu t quy định trong mục này là tối thiểu, chỉ nhằm mục đích mô tả
+ và không nhằm mục đích hạn chế nhà thầu; nhà thầu có thể chào thầu những hàng hóa có
+ thông số kỹ thu t tương đương ho c tốt hơn. Nhà thầu có văn bản giải trình, cung cấp tài
+ liệu để chứng minh thông số kỹ thu t nhà thầu chào là tương đương ho c tốt hơn.
+ Trường hợp nhà thầu không có văn bản giải trình, cung cấp tài liệu chứng minh thì đơn
+ vị tư vấn sẽ đánh giá theo đúng tài liệu kỹ thu t trong E-HSDT của nhà thầu đã chào.
+ (Bất k thương hiệu, ký mã hiệu (nếu có) trong tiêu chuẩn kỹ thu t chi tiết là để minh họa
+ các tiêu chuẩn chất lượng, tính năng kỹ thu t. Vì v y nhà thầu có thể chào các hàng hóa
+ có thương hiệu, ký mã hiệu khác nhưng phải đảm bảm tiêu chuẩn kỹ thu t, đ c tính kỹ
+ thu t, tính năng sử dụng tương đương ho c tốt hơn so với yêu cầu của E-HSMT).
+Hạng       Danh mục                    Thông số kỹ thuật và các tiêu chuẩn
+mục         hàng hóa
+ số
+  1      Bóng phát tia A. Yêu cầu chung:
+         (Tổ hợp bóng - Sản xuất năm 2025 trở về sau, mới 100%.
+         phát tia và các - Nhà sản xuất đạt tiêu chuẩn chất lượng ISO 13485.
+         linh phụ kiện B. Yêu cầu cấu hình:
+                          - Tổ hợp bóng phát tia và các linh phụ kiện kèm theo, bao
+           kèm theo)
+                          gồm:
+          thay thế cho + Bóng phát tia: 01 cái
+         Hệ thống máy + Hệ thống làm mát bóng: 01 bộ.
+          chụp cắt lớp C. Yêu cầu chỉ tiêu kỹ thuật:
+         vi tính 16 dãy - Tương thích hoàn toàn với Hệ thống máy chụp cắt lớp vi tính
+            Siemens       16 dãy Siemens SOMATOM go.Now (Model: SOMATOM
+          SOMATOM go.Now; Số Serial: 106615; Hãng sản xuất: Siemens).
+          go.Now (Có * Thông số kỹ thuật:
+                          - Tổ hợp bóng (XTA) bao gồm bóng phát tia, vỏ bảo vệ với
+          thu hồi linh
+                          stator tích hợp, bộ ph n theo dõi nhiệt độ, công tắc bảo vệ quá
+         kiện cũ hỏng) áp và bo mạch XTM để lưu trữ các dữ liệu hoạt động của tổ
+                         hợp bóng. Các bảo vệ an toàn và bức xạ được đảm bảo phù
+                         hợp với tiêu chuẩn IEC 60601. Vỏ tổ hợp bóng chứa đầy dầu
+                         và kết nối với hệ thống làm mát bằng các đầu kết nối nhanh.
+                         Các cáp cao áp (HV) đã được lắp đ t sẵn vào XTA.
+                         1. Bóng phát tia
+                         - Công suất danh định đầu vào của anode tại công suất nhiệt tham
+                         chiếu 200W:
+                         + F1: ≥ 21 kW
+                         + F2: ≥ 34 kW
+                         - Khả năng trữ nhiệt tối đa của Anode: ≥ 2.600.000 J
+                         (3.500.000 HU)
+                         - V t liệu phủ Anode: Rhenium - tungsten ho c tương đương.
+                         - V t liệu bia: Rhenium, tungsten, molybdenum-alloy, graphite ho c
+                         tương đương.
+                                     5
+
+Hạng   Danh mục               Thông số kỹ thuật và các tiêu chuẩn
+mục    hàng hóa
+ số
+                  - Công suất đầu vào liên tục của Anode: ≥ 2.5 kW
+                  - Điện áp danh định: ≥ 140 kV
+                  - Tần số quay Anode: ≥ 150 Hz
+                  - Dòng đốt nóng dây tóc cathode tối đa: ≥ 8.5A
+                  - Hiệu suất tỏa nhiệt tối đa liên tục: ≥ 3.100 W
+                  - Góc Anode (so với trục tham chiếu): 8°
+                  - Tiêu điểm danh định:
+                  + F1: ≥ 0.8 x 0.4
+                  + F2: ≥ 0.8 x 0.7
+                  - Công suất chụp CT danh định:
+                  + F1: ≥ 21 kW
+                  + F2: ≥ 29 kW
+                  - Bộ lọc giảm liều cố định: ≥ 5.5 mm Al/140 kV
+                  - Mức rò tia ở 140 kV/2.5 kW tại khoảng cách 1m: < 0.8
+                  mGy/h
+                  - Động cơ quay anode:
+                  + Stator 3 pha
+                  + Điện áp pha 430 – 750 Vpp
+                  + Dòng điện pha ≤ 25 Aeff * (25 Aeff chỉ dành cho giai đoạn
+                  tăng tốc (boost phase), dòng điện v n hành liên tục danh định
+                  ≤ 7 Aeff)
+                  2. Hệ thống làm mát bóng
+                  - Chất làm mát: Dầu cách điện
+                  - Tốc độ dòng chảy: ≥ 5 lít/phút
+                  - Thể tích chất làm mát (tổ hợp bóng bao gồm cả hệ thống làm
+                  mát): <10 lít
+                  D. Các yêu cầu khác:
+                  - Thời gian bảo hành: ≥ 12 tháng ho c tối đa 100.000ss (scan
+                  seconds) kể từ ngày bàn giao nghiệm thu.
+                  - Giấy chứng nh n kết quả kiểm định đối với các thiết bị thuộc
+                  diện phải kiểm định theo quy định.
+                  - Đối với hàng hóa nh p khẩu:
+                  + Giấy chứng nh n xuất xứ (CO), Giấy chứng nh n chất lượng
+                  (CQ) ho c giấy tờ khác tương đương;
+                  + Tờ khai hải quan nh p khẩu, hóa đơn thương mại (Invoice),
+                  V n đơn (Bill), Bảng kê hàng hóa (Packing list);
+                  - Đối với hàng hóa sản xuất tại Việt Nam: Giấy chứng nh n
+                  chất lượng xuất xưởng ho c tương đương; Số lưu hành nếu
+                  hàng hóa là thiết bị y tế.
+                  - Thu hồi linh kiện hỏng và trả lại cho hãng Siemens theo quy
+                  định.
+                  - Thu hồi hàng hóa trong trường hợp đã giao nhưng không
+                  đảm bảo chất lượng ho c có thông báo thu hồi của cơ quan có
+                  thẩm quyền nhưng nguyên nhân không phải do lỗi Chủ đầu tư.
+                                            6
+
+Hạng     Danh mục                   Thông số kỹ thuật và các tiêu chuẩn
+mục      hàng hóa
+ số
+                        - Linh kiện thay thế được lắp đ t hoàn chỉnh, hiệu chỉnh lại các
+                        thông số kỹ thu t đảm bảo đáp ứng các tiêu chuẩn kỹ thu t của
+                        hãng.
+                        - Thiết bị thay thế phải tương thích với Hệ thống máy chụp cắt
+                        lớp vi tính 16 dãy Siemens SOMATOM go.Now của Bệnh viện.
+                        - Có tổng đài hỗ trợ kỹ thu t trực tiếp 24/7
+                        - Cung cấp phụ tùng tiêu hao, phụ tùng thay thế trong thời gian
+                        tối thiểu 10 năm sau khi bán hàng.
+                        - Các kỹ sư, kỹ thu t viên thực hiện thay thế, sửa chữa thiết bị
+                        phải có chứng chỉ đào tạo của chính hãng Siemens.
+                        - Thời gian có m t xử lý sự cố ≤ 48 giờ từ khi nh n được yêu
+                        cầu, thời gian khắc phục cho một lần sự cố ≤ 7 ngày.
+
+ 1.3. Các yêu cầu khác
+ Không có
+ Mục 2. Bản vẽ
+ Không có bản vẽ
+ Mục 3. Kiểm tra và thử nghiệm
+ - Nội dung kiểm tra: Kiểm tra hàng hoá cung cấp có đ c tính kỹ thu t phù hợp với yêu
+ cầu của hàng hóa theo quy định tại Chương V - Yêu cầu kỹ thu t. Kiểm tra hàng hoá có
+ kèm chứng từ, hoá đơn hợp lệ. Chủ đầu tư có trách nhiệm theo dõi, kiểm tra, đối chiếu
+ hàng hoá sau khi nh n hàng. Trong vòng 10 ngày, nếu có vấn đề về chất lượng, Chủ đầu
+ tư phải thông báo cho nhà thầu để cùng tìm cách giải quyết. Chủ đầu tư được yêu cầu nhà
+ thầu cung cấp các tài liệu liên quan đến hàng hóa như: Tài liệu chứng minh nguồn gốc
+ xuất xứ, chất lượng và các giấy tờ khác của hàng hóa theo quy định…
+ - Việc kiểm tra, thử nghiệm phải được tiến hành tại đơn vị sử dụng và được tiến hành
+ trước khi bàn giao nghiệm thu. Toàn bộ chi phí cho việc kiểm tra, thử nghiệm do nhà
+ thầu chịu.
+ - Trường hợp hàng hóa không đạt yêu cầu qua kiểm tra, thử nghiệm thì nhà thầu phải
+ thay mới và phải chịu mọi chi phí phát sinh cho việc thay thế. Nếu việc thay thế không
+ thành công, nhà thầu phải hoàn trả lại toàn bộ tiền của các hàng hóa không đạt và phải
+ bồi thường các thiệt hại cho chủ đầu tư theo đúng quy định.
+
+--- Tệp: Mục 3. Tiêu chuẩn đánh giá về kỹ thuật.pdf ---
+Mục 3. Tiêu chuẩn đánh giá về kỹ thuật
+       3.2. Đánh giá theo phương pháp đạt/không đạt1:
+       Tiêu chuẩn đánh giá về kỹ thuật được đánh giá theo phương pháp “Đạt” hoặc
+”Không đạt” gồm các tiêu chí sau đây:
+                                                                     Sử dụng tiêu chí
+                          Nội dung đánh giá
+                                                                      đạt, không đạt
+  1. Đặc tính, - Hàng hóa dự thầu có đặc tính, thông số kỹ thuật phù        Đạt
+  thông số kỹ hợp, đáp ứng yêu cầu tại Mục 1.2.3. Yêu cầu về kỹ
+  thuật của thuật cụ thể thuộc Chương V của E-HSMT.
+  hàng hóa     - Hàng hóa dự thầu có đặc tính, thông số kỹ thuật        Không đạt
+               không đáp ứng yêu cầu tại Mục 1.2.3. Yêu cầu về kỹ
+               thuật cụ thể thuộc Chương V của E-HSMT.
+  2. Tính hợp Hàng hóa dự thầu đáp ứng yêu cầu theo quy định tại            Đạt
+  lệ của hàng Mục 1.2.1 thuộc Chương V của E-HSMT.
+  hóa          Hàng hóa dự thầu không đáp ứng yêu cầu theo quy          Không đạt
+               định tại Mục 1.2.1 thuộc Chương V của E-HSMT.
+  3. Tiến độ Tiến độ cung cấp hàng hóa đáp ứng theo yêu cầu tại             Đạt
+  cung     cấp Mẫu số 01A thuộc Chương IV của E-HSMT.
+  hàng hóa     Tiến độ cung cấp hàng hóa không đáp ứng theo yêu         Không đạt
+               cầu tại Mẫu số 01A thuộc Chương IV của E-HSMT.
+               Tất cả các tiêu chuẩn được xác định là đạt.                  Đạt
+    Kết luận
+               Có 1 tiêu chuẩn bị xác định không đạt.                   Không đạt
+
+E-HSDT được đánh giá là đáp ứng yêu cầu về kỹ thuật khi có tất cả các tiêu chí tổng quát
+đều được đánh giá là đạt.
+
+
+
+
+1
+    Trường hợp áp dụng phương pháp này thì xoá bỏ khoản 3.1 Mục 3 Chương này.
+
+--- Thông báo mời thầu ---
+Thông tin cơ bản
+Mã TBMT
+IB2600607539
+Ngày đăng tải
+13/11/2026 11:12
+Phiên bản thay đổi
+00
+Thông tin chung của KHLCNT
+Mã KHLCNT
+PL2600379194
+Phân loại KHLCNT
+Chi thường xuyên
+Tên dự toán mua sắm
+Mua sắm bóng phát tia thay thế cho Hệ thống máy chụp cắt lớp vi tính 16 dãy Siemens SOMATOM go.Now tại khoa Chẩn đoán hình ảnh, Bệnh viện đa khoa tỉnh Điện Biên.
+Thông tin gói thầu
+Quy trình áp dụng
+Luật Đấu thầu/ Áp dụng Luật Đấu thầu
+Tên gói thầu
+Gói thầu số 3: Mua sắm bóng phát tia thay thế cho Hệ thống máy chụp cắt lớp vi tính 16 dãy Siemens SOMATOM go.Now tại khoa Chẩn đoán hình ảnh, Bệnh viện đa khoa tỉnh Điện Biên
+Chủ đầu tư
+Bệnh viện đa khoa tỉnh Điện Biên
+Chi tiết nguồn vốn
+Nguồn quỹ phát triển hoạt động sự nghiệp của Bệnh viện đa khoa tỉnh Điện Biên.
+Lĩnh vực
+Hàng hóa
+Hình thức lựa chọn nhà thầu
+Đấu thầu rộng rãi
+Loại hợp đồng
+Trọn gói
+Trong nước/ Quốc tế
+Trong nước
+Phương thức lựa chọn nhà thầu
+Một giai đoạn một túi hồ sơ
+Thời gian thực hiện gói thầu
+90 ngày
+Gói thầu có nhiều phần/lô
+Không
+Cách thức dự thầu
+Hình thức dự thầu
+Qua mạng
+Địa điểm phát hành e-HSMT
+https://muasamcong.mof.gov.vn
+Chi phí nộp e-HSDT
+330.000 VND
+Địa điểm nhận e-HSDT
+https://muasamcong.mof.gov.vn
+Địa điểm thực hiện gói thầu
+
+Phường Mường Thanh, Tỉnh Điện Biên
+
+Thông tin dự thầu
+Thời điểm đóng thầu
+25/11/2026 09:00
+Thời điểm mở thầu
+25/11/2026 09:00
+Địa điểm mở thầu
+https://muasamcong.mof.gov.vn
+Hiệu lực hồ sơ dự thầu
+120 ngày
+Số tiền bảo đảm dự thầu
+25.000.000 VND (Theo Điều 20 Nghị định 214/2025/NĐ-CP, nhà thầu có tên trong danh sách không bảo đảm uy tín khi tham dự thầu, khi tham dự thầu phải thực hiện biện pháp bảo đảm dự thầu với giá trị gấp 03 lần giá trị yêu cầu đối với nhà thầu khác trong thời hạn 02 năm kể từ lần cuối cùng thực hiện các hành vi quy định tại khoản 1 Điều này.).
+Hình thức đảm bảo dự thầu
+Cam kết (Trường hợp nhà thầu có tên trong danh sách không bảo đảm uy tín khi tham dự thầu thì hình thức bảo đảm dự thầu là Thư bảo lãnh hoặc giấy chứng nhận bảo hiểm bảo lãnh)
+Thông tin quyết định phê duyệt
+Số quyết định phê duyệt
+3744/QĐ-BVT
+Ngày phê duyệt
+13/11/2026
+Cơ quan ban hành quyết định
+Bệnh viện đa khoa tỉnh Điện Biên
+Quyết định phê duyệt
+IB2600607539_QuyetDinhPheDuyetHSMT_13_11_2026.pdf 
+
+Thời điểm đóng thầu
+
+09:00
+
+25/11/2026
+
+### Chương II: Bảng dữ liệu
+Chương II. BẢNG DỮ LIỆU ĐẤU THẦU
+E-
+CDNT 1.1
+Tên Chủ đầu tư: Bệnh viện đa khoa tỉnh Điện Biên
+E-
+CDNT 1.2
+Tên gói thầu: Gói thầu số 3: Mua sắm bóng phát tia thay thế cho Hệ thống máy chụp cắt lớp vi tính 16 dãy Siemens SOMATOM go.Now tại khoa Chẩn đoán hình ảnh, Bệnh viện đa khoa tỉnh Điện Biên
+Tên dự án/
+dự toán mua sắm: Mua sắm bóng phát tia thay thế cho Hệ thống máy chụp cắt lớp vi tính 16 dãy Siemens SOMATOM go.Now tại khoa Chẩn đoán hình ảnh, Bệnh viện đa khoa tỉnh Điện Biên.
+E-
+CDNT 3
+Nguồn vốn:  Nguồn quỹ phát triển hoạt động sự nghiệp của Bệnh viện đa khoa tỉnh Điện Biên.
+E-
+CDNT 5.1 (c)
+Bảo đảm cạnh tranh trong đấu thầu theo quy định như sau: Nhà thầu tham dự thầu không có cổ phần hoặc vốn góp trên 30% với:
+- Chủ đầu tư: Bệnh viện đa khoa tỉnh Điện Biên. Địa chỉ chủ đầu tư: Tổ dân phố 4, Phường Mường Thanh, Phường Mường Thanh, Tỉnh Điện Biên.
++ Trường hợp nhà thầu, Chủ đầu tư là công ty mẹ, công ty con, công ty thành viên trong tập đoàn kinh tế nhà nước, tổng công ty nhà nước, nhà thầu được tham dự gói thầu của Chủ đầu tư nếu sản phẩm, dịch vụ thuộc gói thầu đó thuộc ngành, nghề sản xuất, kinh doanh chính của tập đoàn kinh tế nhà nước, tổng công ty nhà nước.
++ Trường hợp nhà thầu là đơn vị sự nghiệp công lập, nhà thầu tham dự thầu không cùng thuộc một cơ quan hoặc tổ chức trực tiếp quản lý với Chủ đầu tư, trừ trường hợp nhà thầu là đơn vị sự nghiệp công lập thuộc cơ quan quản lý nhà nước có chức năng, nhiệm vụ được  Tài liệu được in từ Hệ thống e-
+GP tại địa chỉ https://
+muasamcong.mof.gov.vn
+1
+giao phù hợp với tính chất gói thầu của cơ quan quản lý nhà nước đó; các đơn vị sự nghiệp công lập có cùng một cơ quan trực tiếp quản lý. + Đơn vị sự nghiệp công lập và doanh nghiệp có cùng một cơ quan trực tiếp quản lý, góp vốn khi tham dự thầu các gói thầu của nhau không phải đáp ứng quy định độc lập về pháp lý và độc lập về tài chính giữa nhà thầu với chủ đầu tư.
+Nhà thầu tham dự thầu không có cổ phần hoặc vốn góp với các nhà thầu tư vấn; không cùng có cổ phần hoặc vốn góp trên 20% của một tổ chức, cá nhân khác với từng bên, cụ thể như sau:
+Vai trò
+Tên đơn vị tư vấn
+Địa chỉ
+Tư vấn thẩm định giá:
+CÔNG TY CỔ PHẦN THẨM ĐỊNH GIÁ BẢO VIỆT
+Số 5 - Liền kề 5A, Tiểu khu đô thị mới Vạn Phúc, phường Hà Đông, Thành phố Hà Nội -  - Phường Hà Đông - Thành phố Hà Nội
+Tư vấn lập E-
+HSMT:
+CÔNG TY TNHH TƯ VẤN Y TẾ AN VIỆT
+Số nhà 21A, Ngách 6/48 Ngõ 11 Đường Tả Thanh Oai -  - Xã Đại Thanh - Thành phố Hà Nội
+Tư vấn thẩm định E-
+HSMT:
+CÔNG TY TNHH DỊCH VỤ TƯ VẤN MK VIỆT NAM Số 2 Ngõ 35 Đường An Thắng -  - Phường Chương Mỹ - Thành phố Hà Nội
+Tư vấn đánh giá E-
+HSDT:
+CÔNG TY TNHH TƯ VẤN Y TẾ AN VIỆT
+Số nhà 21A, Ngách 6/48 Ngõ 11 Đường Tả Thanh Oai -  - Xã Đại Thanh - Thành phố Hà Nội
+Tư vấn thẩm định kết quả lựa chọn nhà thầu:
+CÔNG TY TNHH DỊCH VỤ TƯ VẤN MK VIỆT NAM Số 2 Ngõ 35 Đường An Thắng -  - Phường Chương Mỹ - Thành phố Hà Nội
+ Tài liệu được in từ Hệ thống e-
+GP tại địa chỉ https://
+muasamcong.mof.gov.vn
+2
+Nhà thầu tham dự thầu không cùng thuộc một cơ quan hoặc tổ chức trực tiếp quản lý với nhà thầu tư vấn (đã nêu trên)
+(1)
+Tỷ lệ cổ phần, vốn góp giữa các bên được xác định tại thời điểm đóng thầu và theo tỷ lệ ghi trong giấy chứng nhận đăng ký doanh nghiệp, quyết định thành lập, các giấy tờ khác có giá trị tương đương.
+Trường hợp nhà thầu tham dự thầu với tư cách liên danh hoặc nhà thầu tư vấn được lựa chọn với tư cách liên danh, tỷ lệ sở hữu vốn của tổ chức, cá nhân khác trong liên danh được xác định theo công thức sau:
+n
+Tỷ lệ sở hữu vốn =
+∑
+Xi x Yi
+(i=1)
+Trong đó:
+Xi: Tỷ lệ sở hữu vốn của tổ chức, cá nhân khác trong thành viên liên danh thứ i;
+Yi: Tỷ lệ phần trăm (%) khối lượng công việc của thành viên liên danh thứ i trong thỏa thuận liên danh;
+n: Số thành viên tham gia trong liên danh.
+- Nhà thầu trong nước thuộc trường hợp quy định tại điểm g khoản 1 Điều 10 của Luật Đấu thầu khi chào thầu sản phẩm do nhà thầu đó sản xuất không phải đáp ứng quy định về bảo đảm cạnh tranh quy định tại Mục này.
+1
+ Chỉ đánh giá nội dung này đối với nhà thầu là đơn vị sự nghiệp.
+E-
+CDNT 5.4
+Không áp dụng
+Trường hợp có áp dụng nhà thầu phải cung cấp tài liệu để chứng minh việc áp dụng mua hàng hóa từ nhà thầu có từ 50% lao động trở lên là người khuyết tật, thương binh, dân tộc thiểu số có hợp đồng lao động với thời gian thực hiện hợp đồng từ 03 tháng trở lên và đến thời điểm đóng thầu hợp đồng vẫn còn hiệu lực được tham dự thầu.
+E-
+CDNT 7.5
+Hội nghị tiền đấu thầu: Không
+ Tài liệu được in từ Hệ thống e-
+GP tại địa chỉ https://
+muasamcong.mof.gov.vn
+3
+E-
+CDNT 8
+Chi phí nộp E-
+HSDT: 330.000 VND
+E-
+CDNT 10.8
+Nhà thầu phải nộp cùng với E-
+HSDT các tài liệu sau đây: - Tài liệu chứng minh về tính pháp lý của nhà thầu: Giấy chứng nhận đăng ký doanh nghiệp hoặc Giấy chứng nhận đầu tư hoặc Quyết định thành lập được cơ quan nhà nước có thẩm quyền cấp (đối với các tổ chức không có đăng ký kinh doanh) và các tài liệu liên quan khác.
+- Tài liệu chứng minh về tính hợp lệ của E-
+HSDT.
+- Tài liệu chứng minh về năng lực kinh nghiệm theo yêu cầu tại bảng số 01 hoặc bảng số 02. Bảng tiêu chuẩn đánh giá về năng lực và kinh nghiệm, mục 2.2. Tiêu chuẩn đánh giá về nhân sự chủ chốt thuộc Chương III. Tiêu chuẩn đánh giá E-
+HSDT.
+- Tài liệu chứng minh về kỹ thuật theo yêu cầu tại mục 1.2. Yêu cầu về kỹ thuật thuộc Chương V. Yêu cầu về kỹ thuật.
+- Các tài liệu khác theo yêu cầu của E-
+HSMT và theo quy định.
+.
+E-
+CDNT 12.1
+Nhà thầu không được phép nộp đề xuất phương án kỹ thuật thay thế.
+E-
+CDNT 13.5
+Chào giá: Theo Mẫu số 12.1 (12.1A hoặc 12.1B hoặc 12.1C) Chương IV.
+E-
+CDNT 15.10
+Thời hạn sử dụng dự kiến của hàng hóa (để yêu cầu vật tư, phụ tùng thay thế) : tối thiểu 12 tháng.
+E-
+CDNT 16.2
+Yêu cầu về tài liệu để chứng minh năng lực thực hiện hợp đồng của nhà thầu: Không yêu cầu giấy phép bán hàng, giấy ủy quyền bán hàng của nhà sản xuất hoặc của đại lý phân phối hoặc giấy chứng nhận quan hệ đối tác hoặc giấy cam kết hỗ trợ kỹ thuật, bảo hành của nhà sản xuất hoặc của đại lý phân phối hoặc tài liệu khác có giá trị tương đương.
+ Tài liệu được in từ Hệ thống e-
+GP tại địa chỉ https://
+muasamcong.mof.gov.vn
+4
+E-
+CDNT 17.1
+Thời hạn hiệu lực của E-
+HSDT là: ≥ 120 ngày, kể từ ngày có thời điểm đóng thầu.
+E-
+CDNT 18.2
+Nội dung bảo đảm dự thầu Giá trị bảo đảm dự thầu: 25.000.000 VND Đối với nhà thầu có tên trong danh sách nhà thầu có các hành vi quy định tại khoản 1 Điều 20 của Nghị định số 214/2025/
+NĐ-
+CP và được đăng tải trên Hệ thống mạng đấu thầu quốc gia phải thực hiện biện pháp bảo đảm dự thầu với giá trị gấp 03 lần giá trị yêu cầu nêu trên trong thời hạn 02 năm kể từ lần cuối cùng thực hiện các hành vi này. Trường hợp nhà thầu liên danh, thành viên liên danh có các hành vi quy định tại khoản 1 Điều 20 của Nghị định số 214/2025/
+NĐ-
+CP nêu trên phải thực hiện biện pháp bảo đảm dự thầu với giá trị gấp 03 lần giá trị bảo đảm dự thầu tương ứng với tỷ lệ giá trị công việc thành viên đó đảm nhận trong liên danh trong thời hạn 02 năm kể từ lần cuối cùng thực hiện hành vi này.
+- Thời gian có hiệu lực của bảo đảm dự thầu: ≥ 150  ngày.
+E-
+CDNT 18.4
+Thời gian hoàn trả hoặc giải tỏa bảo đảm dự thầu đối với nhà thầu không được lựa chọn: 14 ngày, kể từ ngày kết quả lựa chọn nhà thầu được phê duyệt.
+E-
+CDNT 28.4
+Cách tính ưu đãi:
+a) Ưu đãi đối với hàng hóa có xuất xứ Việt Nam có tỷ lệ chi phí sản xuất trong nước dưới 50% và không có hàng hóa nào có chi phí sản xuất trong nước từ 50% trở lên được xác định như sau: Hàng hóa không thuộc đối tượng được hưởng ưu đãi phải cộng thêm một khoản tiền bằng 7,5% giá dự thầu trừ đi giá trị giảm giá (nếu có) của hàng hóa đó vào giá dự thầu trừ đi giá trị giảm giá (nếu có) của nhà thầu để so sánh, xếp hạng
+Đối với trường hợp nhà thầu chào hàng hóa có xuất xứ Việt Nam có tỷ lệ chi phí sản xuất trong nước dưới 50% mà cơ sở sản xuất có từ 50% lao động là người khuyết tật, thương binh, dân tộc thiểu số có hợp đồng lao động với thời gian thực hiện hợp đồng từ 03 tháng trở  Tài liệu được in từ Hệ thống e-
+GP tại địa chỉ https://
+muasamcong.mof.gov.vn
+5
+lên và đến thời điểm đóng thầu hợp đồng vẫn còn hiệu lực thì được hưởng hệ số ưu đãi 10% thay cho hệ số ưu đãi 7,5%.
+b) Ưu đãi đối với hàng hóa có xuất xứ Việt Nam có tỷ lệ chi phí sản xuất trong nước từ 50% trở lên được xác định như sau: hàng hóa không thuộc đối tượng được hưởng ưu đãi phải cộng thêm một khoản tiền bằng 10% giá dự thầu trừ đi giá trị giảm giá (nếu có) của hàng hóa đó vào giá dự thầu trừ đi giá trị giảm giá (nếu có) của nhà thầu để so sánh, xếp hạng; hàng hóa thuộc đối tượng ưu đãi mà có tỷ lệ chi phí sản xuất trong nước dưới 50% phải cộng thêm một khoản tiền bằng 2,5% giá dự thầu trừ đi giá trị giảm giá (nếu có) của hàng hóa đó vào giá dự thầu trừ đi giá trị giảm giá (nếu có) của nhà thầu để so sánh, xếp hạng; hàng hóa có xuất xứ Việt Nam có tỷ lệ chi phí sản xuất trong nước dưới 50% mà cơ sở sản xuất có từ 50% lao động là người khuyết tật, thương binh, dân tộc thiểu số có hợp đồng lao động với thời gian thực hiện hợp đồng từ 03 tháng trở lên và đến thời điểm đóng thầu hợp đồng vẫn còn hiệu lực thì không phải cộng thêm tiền vào giá dự thầu của nhà thầu để so sánh, xếp hạng
+Đối với các trường hợp nhà thầu chào hàng hóa có xuất xứ Việt Nam có tỷ lệ chi phí sản xuất trong nước từ 50% trở lên mà cơ sở sản xuất có từ 50% lao động là người khuyết tật, thương binh, dân tộc thiểu số có hợp đồng lao động với thời gian thực hiện hợp đồng từ 03 tháng trở lên, đến thời điểm đóng thầu hợp đồng vẫn còn hiệu lực thì được hưởng hệ số ưu đãi 12% thay cho hệ số ưu đãi 10%.
+c) Ưu đãi đối với hàng hóa là sản phẩm đổi mới sáng tạo có xuất xứ Việt Nam, sản phẩm quy định tại điểm i khoản 1 Điều 10 của Luật Đấu thầu như sau: hàng hóa không thuộc đối tượng được hưởng ưu đãi phải cộng thêm một khoản tiền bằng 15% giá dự thầu trừ đi giá trị giảm giá (nếu có) của hàng hóa đó vào giá dự thầu trừ đi giá trị giảm giá (nếu có) của nhà thầu để so sánh, xếp hạng; hàng hóa thuộc đối tượng ưu đãi mà có tỷ lệ chi phí sản xuất trong nước dưới 50% phải cộng thêm một khoản tiền bằng 7,5% giá dự thầu trừ đi giá trị giảm giá (nếu có) của hàng hóa đó vào giá dự thầu trừ đi giá trị giảm giá (nếu có) của nhà thầu để so sánh, xếp hạng; hàng hóa thuộc đối tượng ưu đãi mà có tỷ lệ chi phí sản xuất trong nước từ 50% trở lên phải cộng thêm một khoản tiền bằng 5% giá dự thầu trừ đi giá trị giảm giá (nếu có) của hàng hóa đó vào giá dự thầu trừ đi giá trị giảm giá (nếu có) của nhà thầu để so sánh, xếp hạng
+Đối với các hàng hóa không phải là sản phẩm đổi mới sáng tạo xuất xứ Việt Nam, sản phẩm quy định tại điểm i khoản 1 Điều 10 của Luật Đấu thầu, trường hợp nhà thầu chào hàng hóa có xuất xứ Việt Nam có tỷ lệ chi phí sản xuất trong nước dưới 50% thì khi tính ưu đãi, hệ số 15% được thay bằng 7,5%; hàng hóa có xuất xứ Việt Nam có tỷ lệ chi phí sản xuất trong nước từ 50% trở lên thì khi tính ưu đãi, hệ số 15% được thay bằng 10%.
+d) Sản phẩm đổi mới sáng tạo được hưởng ưu đãi theo quy định tại điểm c khoản này khi đáp ứng một trong các điều kiện sau:
+- Sản phẩm thuộc danh mục công nghệ cao được ưu tiên đầu tư phát triển hoặc danh mục sản phẩm công nghệ cao được khuyến khích phát triển theo quyết định của Thủ tướng Chính phủ;
+ Tài liệu được in từ Hệ thống e-
+GP tại địa chỉ https://
+muasamcong.mof.gov.vn
+6
+- Sản phẩm, hàng hóa từ kết quả của nhiệm vụ khoa học, công nghệ và đổi mới sáng tạo đặc biệt, sản phẩm, hàng hóa từ kết quả của nhiệm vụ khoa học, công nghệ và đổi mới sáng tạo trong nước theo quy định của pháp luật về khoa học, công nghệ và đổi mới sáng tạo;
+- Sản phẩm được tạo ra trên cơ sở sáng chế, thiết kế bố trí mạch tích hợp bán dẫn, giống cây trồng của chính nhà thầu được cấp văn bằng bảo hộ trong thời hạn không quá 05 năm kể từ ngày được cấp hoặc chương trình máy tính của chính nhà thầu trong thời hạn không quá 05 năm kể từ ngày được cấp giấy chứng nhận đăng ký quyền tác giả;
+- Sản phẩm chip bán dẫn;
+- Sản phẩm đạt giải thưởng Hồ Chí Minh, giải thưởng nhà nước về khoa học và công nghệ theo quy định của pháp luật về giải thưởng thi đua khen thưởng và pháp luật về khoa học, công nghệ và đổi mới sáng tạo;
+- Sản phẩm mới tạo ra từ kết quả nghiên cứu và phát triển tại một trong các cơ sở của Trung tâm Đổi mới sáng tạo Quốc gia hoặc trung tâm đổi mới sáng tạo cấp quốc gia, trung tâm đổi mới sáng tạo cấp tỉnh;
+- Sản phẩm mới tạo ra từ kết quả nghiên cứu khoa học và phát triển công nghệ theo quy định của pháp luật về chuyển giao công nghệ.
+Sản phẩm đổi mới sáng tạo quy định tại khoản này được hưởng ưu đãi trong thời hạn 06 năm kể từ lần đầu được sản xuất và đủ điều kiện để đưa ra thị trường.
+E-
+CDNT 28.8
+- Các ưu đãi khác (nếu có): Không.
+E-
+CDNT 29.1
+Phương pháp đánh giá E-
+HSDT là:
+- Đánh giá về năng lực và kinh nghiệm: Đạt/
+Không đạt.
+- Đánh giá về kỹ thuật: Đạt/
+Không đạt.
+- Đánh giá về tài chính: Phương pháp giá thấp nhất.
+E-
+CDNT 29.3(d)
+Cách thức thực hiện: Việc so sánh, xếp hạng E-
+HSDT được xác định trên cơ sở giá dự thầu bao gồm toàn bộ thuế, phí, lệ phí (nếu có).
+ Tài liệu được in từ Hệ thống e-
+GP tại địa chỉ https://
+muasamcong.mof.gov.vn
+7
+E-
+CDNT 29.3(đ)
+Xếp hạng nhà thầu: nhà thầu có giá dự thầu sau khi trừ đi giá trị giảm giá (nếu có), cộng giá trị ưu đãi (nếu có) thấp nhất được xếp hạng thứ nhất.
+E-
+CDNT 31.4
+Nhà thầu có giá dự thầu sau khi trừ đi giá trị giảm giá (nếu có) thấp nhất.
+E-
+CDNT 34.1
+Tỷ lệ tăng khối lượng tối đa là: 0%.
+Tỷ lệ giảm khối lượng tối đa là: 0%.
+E-
+CDNT 34.2
+- Tùy chọn mua thêm: Không áp dụng
+E-
+CDNT 38.1(b)
+- Người có thẩm quyền: Giám đốc Sở Y tế tỉnh Điện Biên.
++ Địa chỉ: Số 251c Tổ 3 - Phường Mường Thanh - Tỉnh Điện Biên.
++ E-
+mail: syt@dienbien.gov.vn.
+- Bộ phận thường trực giúp việc cho Chủ tịch Hội đồng giải quyết kiến nghị: + Địa chỉ: Đơn vị được giao quản lý về hoạt động đấu thầu thuộc Sở Tài chính tỉnh Điện Biên - Phường Điện Biên Phủ, Tỉnh Điện Biên.
++ E-
+mail: stc@dienbien.gov.vn.
+E-
+CDNT 38.2
+Khi thấy quyền và lợi ích hợp pháp bị ảnh hưởng, nhà thầu, cơ quan, tổ chức được kiến nghị theo quy trình sau: Quy trình, thủ tục của việc giải quyết kiến nghị theo quy định tại Điều 138 của Nghị định 214/
+NĐ-
+CP ngày 04/08/2025 được sửa đổi, bổ sung bởi Nghị định số Nghị định số 349/2026/
+NĐ-
+CP ngày 09/09/2026 của Chính phủ và các văn bản liên quan khác.
+ Tài liệu được in từ Hệ thống e-
+GP tại địa chỉ https://
+muasamcong.mof.gov.vn
+8
++ E-
+mail của cá nhân/
+tổ chức/
+đơn vị: bvdktinhdienbien@gmail.com + Địa chỉ của cá nhân/
+tổ chức/
+đơn vị: Bệnh viện đa khoa tỉnh Điện Biên
++ Địa chỉ: Phường Mường Thanh, Tỉnh Điện Biên
+.
+ Tài liệu được in từ Hệ thống e-
+GP tại địa chỉ https://
+muasamcong.mof.gov.vn
+9
+
+### Chương VII: Điều kiện cụ thể của hợp đồng
+Chương VII. ĐIỀU KIỆN CỤ THỂ CỦA HỢP ĐỒNG
+E-
+ĐKC 1.1
+Chủ đầu tư là: Bệnh viện đa khoa tỉnh Điện Biên
+Địa chỉ: Tổ dân phố 4, Phường Mường Thanh, Phường Mường Thanh, Tỉnh Điện Biên
+Mã số thuế: 5600179012
+Số tài khoản: Điện thoại: Fax: Email: bvdktinhdienbien@gmail.com
+Đại diện ủy quyền (nếu có): E-
+ĐKC 1.3
+Nhà thầu: Địa chỉ:  Tài liệu được in từ Hệ thống e-
+GP tại địa chỉ https://
+muasamcong.mof.gov.vn
+1
+Mã số thuế: Số tài khoản: Điện thoại: Fax: Email: E-
+ĐKC 1.11
+Địa điểm dự án: Bệnh viện Đa khoa tỉnh Điện Biên. Địa chỉ: Phường Mường Thanh, tỉnh Điện Biên
+E-
+ĐKC 2.2 (i)
+Các tài liệu sau đây cũng là một phần của hợp đồng: 1. Bảo đảm thực hiện hợp đồng;
+2. Thoả thuận liên danh (nếu có);
+3. Các tài liệu kèm theo khác.
+E-
+ĐKC 4.1
+Các thông báo cần gửi về Chủ đầu tư theo địa chỉ dưới đây: Người nhận: Phòng Vật tư thiết bị y tế - Bệnh viện Đa khoa tỉnh Điện Biên
+Địa chỉ: Phường Mường Thanh, tỉnh Điện Biên
+Điện thoại: 02153827267
+Fax: Địa chỉ email: bvdktinhdienbien@gmail.com
+ Tài liệu được in từ Hệ thống e-
+GP tại địa chỉ https://
+muasamcong.mof.gov.vn
+2
+E-
+ĐKC 5.2
+Giá trị bảo đảm thực hiện hợp đồng: 3 % giá hợp đồng
+Hiệu lực của bảo đảm thực hiện hợp đồng: Bảo đảm thực hiện hợp đồng có hiệu lực kể từ ngày hợp đồng có hiệu lực cho đến: khi toàn bộ hàng hóa được bàn giao, hai bên ký biên bản nghiệm thu và Nhà thầu chuyển sang nghĩa vụ bảo hành theo quy định E-
+ĐKC 5.4
+Thời hạn hoàn trả bảo đảm thực hiện hợp đồng: Chủ đầu tư hoàn trả bảo đảm thực hiện hợp đồng cho nhà thầu ngay sau khi hoặc không chậm hơn 10 ngày kể từ ngày bảo đảm thực hiện hợp đồng hết hiệu lực
+E-
+ĐKC 6.1
+Danh sách nhà thầu phụ: E-
+ĐKC 7.2
+Thời gian để tiến hành hòa giải: Trong vòng 15 ngày kể từ ngày phát sinh tranh chấp
+Giải quyết tranh chấp: + Trường hợp tranh chấp giữa 2 bên không thể giải quyết thông qua thương lượng hoà giải, thì bất cứ bên nào cũng đều có thể yêu cầu đưa việc tranh chấp ra giải quyết tại Toà án.
++ Trong thời gian chờ đợi phân xử của Toà án, nhà thầu vẫn phải chịu trách nhiệm thực hiện hợp đồng theo đúng tiến độ, không vì lý do tranh chấp mà trì trệ công việc đối với từng hạng mục hay tạm ngừng thực hiện hợp đồng. Nếu không thực hiện quy định trên thì nhà thầu phải bồi thường cho Chủ đầu tư theo quy định tại điều khoản chậm trễ hoàn thành hợp đồng.
++ Quyết định của Toà án là quyết định cuối cùng ràng buộc các bên phải thực hiện.
+E-
+ĐKC 9
+Nhà thầu phải cung cấp các hóa đơn và chứng từ sau đây: Nhà thầu phải cung cấp các hóa đơn và chứng từ sau đây trong trường hợp có yêu cầu của Chủ đầu tư: - Đối với hàng hóa nhập khẩu: Bản gốc hoặc bản sao công chứng Giấy chứng nhận xuất xứ (CO), Giấy chứng nhận chất lượng (CQ)  Tài liệu được in từ Hệ thống e-
+GP tại địa chỉ https://
+muasamcong.mof.gov.vn
+3
+hoặc giấy tờ khác tương đương; Bản sao Tờ khai hải quan nhập khẩu, hóa đơn thương mại (Invoice), Vận đơn (Bill), Bảng kê hàng hóa (Packing list) và các tài liệu chứng minh hàng hóa được thông quan hợp pháp với đầy đủ thông tin về hàng hóa như trong hợp đồng.
+- Đối với hàng hóa sản xuất tại Việt Nam: Giấy chứng nhận chất lượng xuất xưởng hoặc tương đương; Số lưu hành nếu hàng hóa là thiết bị y tế.
+Chủ đầu tư phải nhận được các hóa đơn và chứng từ nêu trên trước khi hàng hóa đến địa điểm quy định, nếu không Nhà thầu sẽ phải chịu mọi chi phí phát sinh có liên quan. E-
+ĐKC 11.1
+Loại hợp đồng: Trọn gói
+E-
+ĐKC 11.2
+Giá hợp đồng: Cố định
+E-
+ĐKC 12.3
+Điều chỉnh thuế: Không được phép
+E-
+ĐKC 13.1
+Tạm ứng: Không áp dụng
+E-
+ĐKC 14.2
+Phương thức thanh toán: Chủ đầu tư thanh toán trực tiếp cho Nhà thầu
+- Hình thức thanh toán: Thanh toán bằng chuyển khoản theo quy định hiện hành;
+ Tài liệu được in từ Hệ thống e-
+GP tại địa chỉ https://
+muasamcong.mof.gov.vn
+4
+- Số lần thanh toán: Thanh toán làm 01 lần; - Đồng tiền thanh toán: Đồng Việt Nam;
+- Thời hạn thanh toán: Trong vòng 03 tháng kể từ ngày Chủ đầu tư nhận được đầy đủ các chứng từ thanh toán phù hợp với quy định của pháp luật, gồm: Hợp đồng; Hoá đơn bán hàng theo quy định; Biên bản bàn giao, nghiệm thu; Bảng xác định giá trị khối lượng công việc hoàn thành (Mẫu 08a) và các chứng từ kèm theo khác (nếu có).
+Các vấn đề được thống nhất cụ thể tại biên bản hoàn thiện hợp đồng.
+E-
+ĐKC 15.2
+Quyền: Không yêu cầu
+E-
+ĐKC 18.2
+Việc đóng gói, ghi chú đối với hàng hóa, các giấy tờ bên trong và bên ngoài kiện hàng: Theo tiêu chuẩn và quy định của nhà sản xuất
+E-
+ĐKC 19
+Nội dung bảo hiểm: Nhà thầu phải mua bảo hiểm cho hàng hóa theo quy định của pháp luật Việt Nam
+E-
+ĐKC 20.1
+Trách nhiệm vận chuyển hàng hóa được thực hiện như sau: Theo hợp đồng, Nhà thầu phải vận chuyển hàng hóa đến địa điểm dự án. Việc vận chuyển hàng hóa đến địa điểm dự án, bao gồm cả bảo hiểm và lưu kho theo quy định trong hợp đồng, do Nhà thầu thực hiện; các chi phí liên quan được tính trong giá hợp đồng E-
+ĐKC 20.2
+Các dịch vụ bao gồm:
+- Thực hiện việc cung cấp, lắp đặt hoặc giám sát việc lắp đặt, chạy thử, kiểm định (nếu có theo quy định) tại địa điểm sử dụng;
+- Cung cấp các dụng cụ cần thiết để lắp ráp, bảo dưỡng hàng hóa;
+ Tài liệu được in từ Hệ thống e-
+GP tại địa chỉ https://
+muasamcong.mof.gov.vn
+5
+- Cung cấp tài liệu chi tiết hướng dẫn vận hành và bảo dưỡng cho từng loại hàng hóa;
+- Vận hành hoặc giám sát hoặc bảo dưỡng, sửa chữa hàng hóa trong khoảng thời gian đã được các bên thỏa thuận, với điều kiện là dịch vụ này sẽ không miễn trừ cho Nhà thầu khỏi bất kỳ nghĩa vụ bảo hành nào theo hợp đồng này;
+- Hướng dẫn nhân sự của Chủ đầu tư về cách lắp đặt, chạy thử, vận hành, bảo dưỡng, sửa chữa hàng hóa.
+- Thu hồi linh kiện hỏng và trả lại cho hãng Siemens theo quy định.
+- Cung cấp phụ tùng tiêu hao, phụ tùng thay thế trong thời gian tối thiểu 10 năm sau khi bán hàng.
+E-
+ĐKC 21.1
+Kiểm tra, thử nghiệm hàng hóa: - Nội dung kiểm tra: Kiểm tra hàng hoá cung cấp có đặc tính kỹ thuật phù hợp với yêu cầu của hàng hóa theo quy định tại Chương V - Yêu cầu kỹ thuật. Kiểm tra hàng hoá có kèm chứng từ, hoá đơn hợp lệ. Bên mua có trách nhiệm theo dõi, kiểm tra, đối chiếu hàng hoá sau khi nhận hàng. Trong vòng 10 ngày, nếu có vấn đề về chất lượng, Bên mua phải thông báo cho Bên bán để cùng tìm cách giải quyết. Bên mua được yêu cầu Bên bán cung cấp các tài liệu liên quan đến hàng hóa như: Tài liệu chứng minh nguồn gốc xuất xứ, chất lượng và các giấy tờ khác của hàng hóa theo quy định...
+- Việc kiểm tra, thử nghiệm phải được tiến hành tại Bệnh viện Đa khoa tỉnh Điện Biên và được tiến hành trước khi bàn giao nghiệm thu. Toàn bộ chi phí cho việc kiểm tra, thử nghiệm do nhà thầu chịu.
+- Trường hợp hàng hóa không đạt yêu cầu qua kiểm tra, thử nghiệm thì nhà thầu phải thay mới và phải chịu mọi chi phí phát sinh cho việc thay thế. Nếu việc thay thế không thành công, nhà thầu phải hoàn trả lại toàn bộ tiền của các hàng hóa không đạt và phải bồi thường các thiệt hại cho chủ đầu tư theo đúng quy định.
+E-
+ĐKC 21.2
+Việc kiểm tra, thử nghiệm hàng hóa được thực hiện tại: Bệnh viện Đa khoa tỉnh Điện Biên
+E-
+ĐKC 22
+Căn cứ quy mô, tính chất và yêu cầu của gói thầu mà quy định cụ thể nội dung này theo một trong các cách thức sau: 1. Phạt vi phạm hợp đồng : Áp dụng
+Trường hợp áp dụng phạt vi phạm hợp đồng thì quy định như sau:  Tài liệu được in từ Hệ thống e-
+GP tại địa chỉ https://
+muasamcong.mof.gov.vn
+6
+Trừ trường hợp bất khả kháng theo quy định tại Mục 26 E-
+ĐKC, nếu Nhà thầu không thể giao hàng hay cung cấp các dịch vụ liên quan theo đúng thời hạn đã nêu trong hợp đồng thì Chủ đầu tư có thể khấu trừ vào giá hợp đồng một khoản tiền phạt tương ứng với: 1%/ tuần cho đến khi nội dung công việc đó được thực hiện. Chủ đầu tư sẽ khấu trừ đến 8%. Khi đạt đến mức phạt tối đa, Chủ đầu tư có thể xem xét chấm dứt hợp đồng theo quy định tại Mục 29 E-
+ĐKC.  2. Bồi thường thiệt hại: Áp dụng
+- Bồi thường thiệt hại trên cơ sở toàn bộ thiệt hại thực tế;
+E-
+ĐKC 23.3
+Thời hạn bảo hành là: ≥ 12 tháng hoặc tối đa 100.000ss (scan seconds) kể từ ngày bàn giao nghiệm thu
+Địa điểm để áp dụng bảo hành là: Bệnh viện Đa khoa tỉnh Điện Biên
+E-
+ĐKC 23.5, E-
+ĐKC 23.6
+Thời hạn sửa chữa, thay thế là: - Thời gian có mặt xử lý sự cố ≤ 48 giờ từ khi nhận được yêu cầu, thời gian khắc phục cho một lần sự cố ≤ 7 ngày.
+- Có tổng đài hỗ trợ kỹ thuật trực tiếp 24/7
+E-
+ĐKC 27.7(d)
+Trường hợp đề xuất giải pháp tiết kiệm chi phí được Chủ đầu tư chấp thuận và giúp giảm giá hợp đồng, Chủ đầu tư thanh toán cho Nhà thầu 0% giá trị giảm giá hợp đồng Trường hợp ô điền thông tin không đủ độ dài để điền các nội dung về hợp đồng cụ thể hoặc không thể điền được công thức thì đính kèm, tuy nhiên trong từng nội dung cụ thể phải ghi rõ tham chiếu đến tệp tin đính kèm:  Tài liệu được in từ Hệ thống e-
+GP tại địa chỉ https://
+muasamcong.mof.gov.vn
+7
