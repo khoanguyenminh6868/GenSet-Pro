@@ -63,8 +63,19 @@ export function records({ C, S }) {
   }
   return m;
 }
+// Bản ghi tổ máy của bảng không ghi mã động cơ (`gensetsOf`, danh sách GENSET_TABLES; việc C PR 1), khoá như records().
+// So riêng: không vào đếm bản ghi / đảo vai / tự kiểm của fromSupplier. Bên chưa có gensetsOf → rỗng (mọi bản ghi là "THÊM").
+export function gensetRecords({ C, S }) {
+  const m = new Map();
+  if (!C.gensetsOf) return m;
+  for (const s of S) {
+    if (s.status === "incomplete") continue;
+    for (const o of C.gensetsOf(s)) m.set([o.supplierId, o.n, o.table, o.row, o.kind].join("|") + "#0", o);
+  }
+  return m;
+}
 
-const pw = (p) => (p ? ["prime", "standby", "rated"].filter((k) => p[k]).map((k) => `${k[0].toUpperCase()} ${p[k].kVA ?? "·"}/${p[k].kW ?? "·"}`).join(" ") : "∅");
+const pw = (p) => (p ? ["prime", "standby", "rated", "unrated"].filter((k) => p[k]).map((k) => `${k[0].toUpperCase()} ${p[k].kVA ?? "·"}/${p[k].kW ?? "·"}`).join(" ") : "∅");
 const specMap = (o) => Object.fromEntries((o.specs || []).map((s, i, l) => [s.key + (l.slice(0, i).filter((t) => t.key === s.key).length || ""), s]));
 const parts = (x) => ({ model: x.model, genset: x.genset ?? "", power: pw(x.power), freq: x.freq, other: x.other, makes: (x.makes || []).map((m) => m.name).join(","), specs: Object.fromEntries(Object.entries(specMap(x)).map(([k, s]) => [k, `${s.value}`])) });
 const FIELDS = ["model", "genset", "power", "freq", "other", "makes"];
@@ -256,11 +267,15 @@ export function unreadLine(un) {
   const n = (s, k) => (s ? (s[k]?.items || 0).toLocaleString("vi-VN") : "—");
   return `- Chưa đọc được (\`node suppliers/unread-tables.mjs\`, để thiếu thay vì đoán): ${keys.map((k) => `${k}: ${n(un.a, k)} → ${n(un.b, k)}`).join("; ") || "không có"}`;
 }
-export function markdown({ d, swA, swB, ver, norm, un, labels = ["cũ", "mới"], maxSup = 40, maxKinds = 30 }) {
+export function gensetLine(gd) {
+  return gd && (gd.nA || gd.nB) ? `- Tổ máy bảng không ghi mã động cơ (\`gensetsOf\`, chưa nối Gợi ý): ${gd.nA.toLocaleString("vi-VN")} → ${gd.nB.toLocaleString("vi-VN")}; ${gd.changed} đổi, ${gd.onlyA} mất, ${gd.onlyB} thêm (bản đầy đủ: phần "tổ máy" của artifact)` : "";
+}
+export function markdown({ d, swA, swB, ver, norm, un, gd, labels = ["cũ", "mới"], maxSup = 40, maxKinds = 30 }) {
   const out = ["<!-- spec-diff -->", `## Kiểm chéo danh mục (spec-diff): ${labels[0]} ↔ ${labels[1]}`, ""];
   const swapUp = swB.n > swA.n;
   const ul = unreadLine(un);
   out.push(`- Bản ghi: ${d.nA.toLocaleString("vi-VN")} → ${d.nB.toLocaleString("vi-VN")}; **${d.changed}** đổi, ${d.onlyA} mất, ${d.onlyB} thêm, ở ${d.tabs.size} bảng của ${d.bySup.size} NCC`);
+  if (gensetLine(gd)) out.push(gensetLine(gd));
   out.push(`- Đảo vai động cơ ↔ đầu phát (mã mà ≥ 3 NCC khác đọc ở vai kia): ${swA.n} → **${swB.n}**${swapUp ? " ❌ TĂNG (chặn)" : " ✅"}`);
   out.push(`- Tự kiểm số với công suất của dòng: ${ver.fails.length} giá trị đổi / thêm không tự xác nhận được (soát tay)`);
   if (!norm.skipped) out.push(`- Lớp chuẩn hoá (spec-norm): ${norm.changes.length} thông số đổi kết quả`);
@@ -306,7 +321,8 @@ export function run(sa, sb) {
   const ver = verify(a, b);
   const norm = sa.normText === sb.normText ? { kinds: {}, changes: [], skipped: true } : normDiff(sa, sb, a, b);
   const un = { a: sa.C.unread ? unreadSummary(sa.C.unread(sa.S)) : null, b: sb.C.unread ? unreadSummary(sb.C.unread(sb.S)) : null };
-  return { a, b, d, swA, swB, ver, norm, un };
+  const gd = diff(gensetRecords(sa), gensetRecords(sb));
+  return { a, b, d, swA, swB, ver, norm, un, gd };
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
@@ -321,7 +337,8 @@ if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.ar
   console.log(head.join("\n"));
   console.log(`đảo vai: ${r.swA.n} → ${r.swB.n} | tự kiểm: cần soát tay ${r.ver.fails.length}${r.norm.skipped ? "" : ` | chuẩn hoá: ${r.norm.changes.length} thông số đổi`}`);
   if (unreadLine(r.un)) console.log(unreadLine(r.un).slice(2));
-  if (out) fs.writeFileSync(out, fullText(r.d) + "\n\n==== tự kiểm số (verSpec) ====\n" + r.ver.text + (r.norm.skipped ? "" : "\n\n==== chuẩn hoá ====\n" + r.norm.changes.map((c) => `${c.kind} | ${where(c.o)} ${c.o.model}: ${c.txt}`).join("\n")), "utf8");
+  if (gensetLine(r.gd)) console.log(gensetLine(r.gd).slice(2));
+  if (out) fs.writeFileSync(out, fullText(r.d) + "\n\n==== tự kiểm số (verSpec) ====\n" + r.ver.text + (r.norm.skipped ? "" : "\n\n==== chuẩn hoá ====\n" + r.norm.changes.map((c) => `${c.kind} | ${where(c.o)} ${c.o.model}: ${c.txt}`).join("\n")) + (r.gd.nA || r.gd.nB ? "\n\n==== tổ máy (gensetsOf) ====\n" + fullText(r.gd) : ""), "utf8");
   if (swapList) fs.writeFileSync(swapList, r.swB.text, "utf8");
   if (md) fs.writeFileSync(md, markdown({ ...r, labels: [labels[0] || A, labels[1] || B] }), "utf8");
   if (gate && r.swB.n > r.swA.n) { console.error(`đảo vai tăng: ${r.swA.n} → ${r.swB.n}`); process.exit(1); }
