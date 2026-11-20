@@ -507,7 +507,8 @@
       // outputs, right after the model.
       const tm = h.slice(0, tp).findIndex((x) => /model|型号|机组|^\s*type\s*$|set\s*type/i.test(x));
       let p0;
-      const subline = gi >= 0 && tm < 0 && tp === 0;
+      // (gi > 1: the genset code is in a column after the outputs, "功率 | 备用功率 | 品牌 | 整机编号", zhengchi; they are not "right after the model")
+      const subline = gi >= 0 && gi <= 1 && tm < 0 && tp === 0;
       if (gi >= 0 && tm >= 0) p0 = tp + gi - tm;
       else if (subline) p0 = gi + 1;
       else if (!h[0] && h.length === cells.length + 1) p0 = tp - 1;
@@ -1327,8 +1328,9 @@
         const cell = brandCell ? brandIn(brandCell, kind === "engine" ? list : ALT_CELL_BRANDS) : [];
         const row = brandIn(rowText, list), hdr = kind === "engine" ? hEng : hAlt, ttl = kind === "engine" ? tEng : tAlt;
         const own = kind === "alternator" ? brandIn(model, [FG_WILSON]) : []; // FG Wilson written in the alternator's own cell
-        if (cell.length === 1) addMake(makes, cell[0], "dòng bảng");
-        else if (row.length === 1) addMake(makes, row[0], "dòng bảng");
+        const rowLevel = MAKE_LEVEL_LOW.some((x) => x.supplierId === s.id && x.title.test(headerText)) ? "tên trang" : "dòng bảng";
+        if (cell.length === 1) addMake(makes, cell[0], rowLevel);
+        else if (row.length === 1) addMake(makes, row[0], rowLevel);
         else if (own.length === 1) addMake(makes, own[0], "dòng bảng");
         else if (kind === "alternator" && CN_ALT_CODE.test(String(model).trim())) return makes;
         else if (hdr.length === 1) addMake(makes, hdr[0], "tiêu đề cột");
@@ -1437,6 +1439,16 @@
         for (const h of (t.header || []).map(cellsOf)) if (h.length === n) h.forEach((x, i) => engTitle(x) && js.add(i));
         return js.size === 1 ? [...js][0] : -1;
       };
+      // The one column the header titles as the genset's own model / number ("整机编号", "整机型号", "机组型号", "Genset model"),
+      // in a header row with as many cells as the row: -1 when no such row, or two. Used only when the genset's code is the
+      // row's FIRST code, in a column after the second (zhengchi n102-120: "功率 | 备用功率 | 品牌 | 整机编号 | 柴油机型号" put the
+      // genset code at 3, so it was read as the engine and the real engine model (柴油机型号) was lost; catalog-b3).
+      const GEN_TITLE = /^(整机|机组|发电机组|成套机组)\s*(型号|编号|代号)$|^(genset|generator\s*set)\s*model$/i;
+      const gensetCol = (n) => {
+        const js = new Set();
+        for (const h of (t.header || []).map(cellsOf)) if (h.length === n) h.forEach((x, i) => GEN_TITLE.test(x.trim()) && js.add(i));
+        return js.size === 1 ? [...js][0] : -1;
+      };
       t.rows.forEach((line, ri) => {
         // A note after the code ("1104C-44TAG2 made in china", "4BTA3.9-G2 （ QC58/67E ）") makes the cell
         // fail isCode and the next code (the alternator) would be read as the engine: drop the note.
@@ -1449,7 +1461,13 @@
         const raw = cellsOf(line).map((c) => c.replace(/\s+made in [a-z ]+$|\s*[（][^）]*[）]\s*$/i, "").replace(/^(\S+)\s+CONTACT$/, "$1").trim());
         // A make in Chinese, "&", then the code ("沃尔沃 & TAD530GE", "斯坦福 & UCI224G", rcg-power n124): the code alone is the
         // cell's model; the make stays in the row's text for makesFor (catalog-bang-r1).
-        const cells = raw.map((c) => c.replace(/^[一-鿿]{1,8}\s*&\s*(?=\S*\d\S*$)/, ""));
+        const cells = raw.map((c) => c.replace(/^[一-鿿]{1,8}\s*&\s*(?=\S*\d\S*$)/, "")).map((c) => {
+          // Full-width hyphen U+FF0D inside a code cell, read as "-" (catalog-b3, Khoa 20/11/2026): an explicit supplier list, and
+          // only a cell that is ONE code "YC12VTD2000－D30" (letters / digits either side), nothing else of the row or table.
+          if (!DASH_FIX.some((x) => x.supplierId === s.id) || !/^[A-Za-z0-9.]+－[A-Za-z0-9.]+$/.test(c)) return c;
+          note(t, ti, ri, "ô mã viết dấu － toàn chiều rộng, đọc như '-'", c);
+          return c.replace("－", "-");
+        });
         // A kVA / kW misread with a look-alike letter ("3S0", "312.S" in vantek) is a figure, not a model (ocrFig).
         const codes = cells.map((c, i) => (!ocrFig(cells, i) && (isCode(c) || brandedCode(c, ENGINE_BRANDS) || brandedCode(c, ALT_BRANDS)) ? i : -1)).filter((i) => i >= 0);
         if (!codes.length) return;
@@ -1469,7 +1487,7 @@
         let gi = -1, ei = -1, ai = -1;
         if (engineTable) ei = codes[0];
         else {
-          gi = codes[0] === 0 || codes[0] === 1 ? codes[0] : -1;
+          gi = codes[0] === 0 || codes[0] === 1 || (codes[0] > 1 && codes[0] === gensetCol(cells.length)) ? codes[0] : -1;
           const rest = codes.filter((i) => i !== gi);
           const alt = rest.filter((i) => ALT_CODE.test(cells[i]) || (hasAltCol && FRAME_ALT.test(cells[i].trim())) || own(cells[i]));
           if (hasAltCol && alt.length) ai = alt[0];
@@ -1546,7 +1564,7 @@
       const f = fuelFrom(fuelSg.get(o.table), o.line || `| ${o.genset || ""}`) || fuelPage(s.id, o, s.specTables[o.table]?.header?.[0]);
       if (f) { o.fuel = f.fuel; o.fuelFrom = f.from; o.fuelWhy = f.why; }
     }
-    return mergeRepeats(namedPower(s, rowExceptions(s, out, note), note));
+    return mergeRepeats(namedPower(s, tableDrops(s, rowExceptions(s, out, note), note), note));
   }
   // Engine tables Khoa listed one by one (catalog nhóm 3, câu 6 = C, Khoa 20/11/2026): an engine maker's figures on a genset
   // supplier's page, no genset in the row. Keyed by supplier + n + the FIRST header line word for word (a re-crawl that
@@ -1581,6 +1599,37 @@
       const specs = (o.specs || []).filter((sp) => sp.key !== "engPower");
       if (/^\d+(\.\d+)?$/.test(ep)) specs.push({ key: "engPower", label: x.engPower[1], value: ep });
       return { ...o, power: { rated: { kW: +m[1] } }, specs, powerFrom: "tên tổ máy" };
+    });
+  }
+  // Spec keys of a whole table form left out (catalog-b3, Khoa 20/11/2026), an explicit list, not a rule: matched by supplier
+  // AND a title in the table's header. zhengchi-power's tables of "整机编号" (n102+): the "缸数 | 排量(L)" columns disagree with
+  // the other suppliers' figures for the same engine (displacement 164 of 321 models, cylinders 57 of 373: WP2.3D25E200
+  // "6 | 8.2" against 4 cylinders, 2.3 L), so the figures are not taken for the engine. Everything else of the rows is read
+  // as before. The n101 table ("机组型号") is not listed.
+  // Make written in the rows of a whole table form counts at the LOWEST level ("tên trang") instead of "dòng bảng"
+  // (catalog-b3, Khoa 20/11/2026), an explicit list: matched by supplier AND a title in the table's header. zhengchi-power's
+  // "整机编号" tables put the BRAND OF A WHOLE CATALOGUE CATEGORY in the "品牌" cell ("上柴" covers SDEC's own SC-series and the
+  // licensed Mitsubishi S12R / S16R; "潍柴" covers WP, M26 / M33, PHF, K41xx, R61xx, D226B, 495D), so it is not the maker of
+  // each engine. At row level that one vote turned Mitsubishi / Ricardo / Wudong engines of other suppliers to "chưa rõ" or to
+  // another make (22 engines, 3,828 row-turns). As a page-level vote it still names the make where nothing higher exists.
+  // Suppliers whose code cells may carry U+FF0D (full-width hyphen) as the hyphen (catalog-b3, Khoa 20/11/2026). Only zhengchi-power
+  // (4 rows: n112 / n113 / n114 / n116 "YC12VTD…－D30"); aosif, jiangchai-xuzhou, walter-yangzhou, westinpower write the same in
+  // their own codes and are NOT listed (not approved).
+  const DASH_FIX = [{ supplierId: "zhengchi-power", khoa: "Khoa 20/11/2026" }];
+  const MAKE_LEVEL_LOW = [
+    { supplierId: "zhengchi-power", title: /整机编号/, khoa: "Khoa 20/11/2026", why: "ô 品牌 là nhãn của cả danh mục (上柴 gồm SC-series lẫn S12R / S16R; 潍柴 gồm WP, M26, PHF, K41xx, R61xx...)" },
+  ];
+  const TABLE_DROPS = [
+    { supplierId: "zhengchi-power", title: /整机编号/, keys: ["cyl", "disp"], khoa: "Khoa 20/11/2026", why: "cột 缸数 / 排量 của bảng lệch số của NCC khác cho cùng động cơ (dung tích 164 / 321 model)" },
+  ];
+  function tableDrops(s, list, note) {
+    const ds = TABLE_DROPS.filter((x) => x.supplierId === s.id);
+    if (!ds.length) return list;
+    return list.map((o) => {
+      const d = ds.find((x) => (o.header || []).some((h) => x.title.test(h)));
+      if (!d || !(o.specs || []).some((sp) => d.keys.includes(sp.key))) return o;
+      note({ n: o.n, title: o.title }, o.table, o.row ?? null, "bỏ thông số theo bảng", `${d.keys.join(", ")}: ${d.khoa}, ${d.why}`);
+      return { ...o, specs: o.specs.filter((sp) => !d.keys.includes(sp.key)) };
     });
   }
   // Rows Khoa decided one by one (not a rule: no other row changes). A record is hit only when supplier, source n,
