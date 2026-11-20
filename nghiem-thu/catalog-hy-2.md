@@ -123,3 +123,7 @@ So ĐỦ đa tập (`so-du-b.mjs` → `so-du-b-dong.tsv` / `-khoa.tsv`): 386 lư
 **Top:** 70 lượt đổi top (53 đổi tập) là hệ quả của hai mục trên: dòng rời vì xi lanh / dung tích nhường chỗ, dòng được cộng điểm leo hạng. NCC có khoá đổi chỉ là các NCC bán mã Cummins kể trên và người được nhường chỗ.
 
 **Kết luận:** "NCC khác đổi 0" không đạt theo nghĩa đen, nhưng mọi thay đổi đều do số Cummins đúng, lần đầu có cho các mã này. Đề xuất GIỮ #973 như ce676c1b, không thêm commit.
+
+**Ứng viên dropspec (chưa làm, điều phối duyệt ghi 20/11/2026):** aosif, dòng tổ máy QSL9G5 (bảng dọc "General performance data"). Chính dòng ghi "No of cylinder | 4", "Bore x stroke 107X124MM", "Displacement 6.69L", "Model QSL9G7": số của động cơ khác chép nhầm vào trang. Ở IB2300305099#0 (HSMT đòi đúng 4 xi lanh), `candidates` ưu tiên ô của chính dòng hơn số đông 6, nên dòng ở lại, là dòng duy nhất còn lại của QSL9G5. Cần Khoa duyệt dropspec cyl (có thể cả bore / disp) cho dòng này.
+
+**Merge:** #973 gộp main 66cc1008 → SHA cuối **694af4ec**. CI xanh, test 1.461/0; so-patch 435/435 NCC phần đổi giống ce676c1b.
