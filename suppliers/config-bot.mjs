@@ -1900,7 +1900,12 @@ export const MAX_CONFIGS = 8, PER_MAKE_CONFIGS = 2;
 // Cummins too (Khoa, 2026-11-17, same tender: QSK23-G2 and QSK19-G20 at ranks 1 and 3).
 // Mitsubishi too (Khoa, 2026-11-17).
 export const ONE_CONFIG_MAKES = ["perkins", "volvo penta", "cummins", "mitsubishi"];
-export const perMakeConfigs = (make) => (ONE_CONFIG_MAKES.includes(String(make || "").split("/")[0].trim().toLowerCase()) ? 1 : PER_MAKE_CONFIGS);
+// Baudouin: 3 configurations (Khoa 20/11/2026, IB2600603983: "Sửa lại luật để Baudouin được 3 cấu hình").
+export const THREE_CONFIG_MAKES = ["baudouin"];
+export const perMakeConfigs = (make) => {
+  const mk = String(make || "").split("/")[0].trim().toLowerCase();
+  return ONE_CONFIG_MAKES.includes(mk) ? 1 : THREE_CONFIG_MAKES.includes(mk) ? 3 : PER_MAKE_CONFIGS;
+};
 // A configuration whose controller (engine, alternator) is that of an earlier one may leave out the checks of that
 // part: the code copies them: a check read from the model's figures (factSrc), one whose quote is also in this
 // configuration's own source of that part, and a controller function no source states. Each copy is then checked
@@ -5006,7 +5011,8 @@ export function rankConfigs(result) {
       if (!first.controller?.model && c.controller?.model) first.controller = c.controller;
       return false;
     }
-    // At most 2 per engine make (Khoa, 2026-11-11), so another make gets the place of a third.
+    // At most 2 per engine make (Khoa, 2026-11-11), so another make gets the place of a third (perMakeConfigs: 1 for
+    // ONE_CONFIG_MAKES, 3 for Baudouin).
     const mk = String(c.engine?.make || "").split("/")[0].trim().toLowerCase();
     // A configuration kept from Tìm NCC (keepFound) is outside that limit: Khoa wants it back, whatever else the run found.
     // So is the make of an engine term the HSMT gives (Đặc thù hãng động cơ, Khoa 18/11/2026: "chỉ gợi ý hãng đó và bỏ
