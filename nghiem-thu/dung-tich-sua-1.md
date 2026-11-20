@@ -109,3 +109,9 @@ Bảng đo khác: gốc cloud 08:19Z, tôi chạy lại bằng bidhist 20/11 12:
 
 **TAD1641GE lệch 1 dòng (21 ↔ 22), IB2600217137#0** (HSMT 130×163, 13,0 L, 6 xi lanh, luật `cyl`): dòng đó là `mingbang-mbkl | TAD1641GE | MB-V400 | 500 kVA | 4 | 4.4 | 105*127` (n125, số 13). Gốc: dòng KHÔNG bị loại, điểm 373 (ở `all`). Nhánh: bị loại `ruled: cyl`. Lý do: luật `cyl` (HSMT ghi trơ 6 = chính xác) xét ô của chính dòng trước, và NGUỒN MÂU THUẪN thì không xét; ở gốc ô của dòng ghi "4" còn các NCC khác ghi 6 nên bị coi là mâu thuẫn và dòng được giữ. #992 bỏ `cyl` sai của dòng (mingbang n125 `dropspec` cyl + disp) nên chỉ còn các nguồn khác, thống nhất 6 → luật loại dòng. Hướng đúng (TAD1641GE là 6 xi lanh thẳng hàng); 21 dòng kia đã bị loại ở cả hai bản.
 CI 95a02064: server, spec-diff, suppliers, web đều pass (Vercel bỏ qua do Ignored Build Step).
+
+### 8c. Trả lời điều phối: IB2600217137#0, `cyl` loại 22 dòng TAD1641GE là LOẠI OAN (lỗi đọc HSMT có sẵn ở main, không do #992)
+- Chữ gốc HSMT: "Động cơ - loại, số xy lanh: Động cơ Diesel 4 kỳ, 6 xy lanh xếp thẳng hàng" (500 kVA; 130 × 163 mm; 13,0 L).
+- `hintsOf` (cả gốc b8752924 lẫn nhánh) trả `minCyl = 4, cylExact = true` (và `minDisp = 13`): nhãn "số xy lanh" rồi `[^\d\n]{0,30}?` nuốt "Động cơ Diesel " và nhận "4" của "4 kỳ" (nhánh `\b` cuối của regex nhãn ở `engineLists`). Thử trực tiếp: "Động cơ 4 kỳ, 6 xy lanh xếp thẳng hàng" và "4 thì, 6 xy lanh thẳng hàng" cũng ra 4.
+- `candidates` so số xi lanh của động cơ (TAD1641GE: 6, mọi nguồn) với 4 → `ruled: cyl` (-600) cho mọi dòng 6 xi lanh của lượt này (45 dòng loại cyl ở nhánh, gồm 22 dòng TAD1641GE). Các động cơ 4 xi lanh thì lọt: gói này đang ưu tiên sai.
+- Cần sửa riêng (không làm ở #992): `engineLists` không được nhận số đứng trước "kỳ" / "thì" làm số xi lanh. Nên quét toàn bộ gói bằng `hints-audit.mjs` / bidhist trước và sau.
