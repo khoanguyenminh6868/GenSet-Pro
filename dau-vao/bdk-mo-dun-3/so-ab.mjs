@@ -26,8 +26,8 @@ for (const k of Object.keys(a)) {
         if (pa.split("|")[1] !== pb.split("|")[1] || pa !== pb) out.push(`  ${xb.k.split("|")[1]} › ${n}: ${pa.split("|")[1]} → ${pb.split("|")[1]}${pa.split("|")[1] === pb.split("|")[1] ? " (chữ đổi)" : ""} :: ${pb.split("|").slice(2).join(" | ").slice(0, 260)}`);
       }
     }
-    if (cb.modules) out.push(`mô-đun: ${cb.modules.map((m) => `${m.model} (${m.why.join(", ")})`).join(", ")}`);
-    if (cb.altLine) out.push(cb.altLine);
+    if (JSON.stringify(ca.modules) !== JSON.stringify(cb.modules) && cb.modules) out.push(`mô-đun: ${cb.modules.map((m) => `${m.model} (${m.why.join(", ")})`).join(", ")}`);
+    if ((ca.altLine || "") !== (cb.altLine || "")) out.push(`phương án khác: [${ca.altLine || "—"}] → [${cb.altLine || "—"}]`);
     if (out.length) lines.push(`  #${cb.rank} ${key(cb)}`, ...out.map((o) => `    ${o}`));
   }
   if (lines.length) { nChange++; console.log(`## ${k}`); console.log(lines.join("\n")); }
