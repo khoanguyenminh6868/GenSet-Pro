@@ -47,6 +47,8 @@ test("green-power n126 (Scania khí): 'OC16 071A 02 81 (E)' → OC16 071A 02 81,
   assert.deepEqual([e.model, e.genset, e.power, e.freq, spec(e, "cyl")], ["OC16 071A 02 81", "GP385A/G", { prime: { kVA: 350 } }, 50, "8"]);
   assert.deepEqual(e.makes.map((m) => m.name), ["Scania"]);
   assert.equal(C.keyOf(e.model), C.keyOf("OC16 071A 02-81"));
+  // Máy khí: nhiên liệu từ chính dòng (fuelOf, mức B), bản ghi bảng bỏ sót đi qua cùng bước nhiên liệu của fromSupplier.
+  assert.deepEqual([e.fuel, e.fuelFrom, e.fuelWhy], ["gas", "B", 'bảng ghi "METANO"']);
 });
 
 test("lees-power n133: 'MTU 8V4000 GS/L32' → hãng MTU (dòng bảng) + model 8V4000 GS/L32; 'Electrical Power KW' không ghi mức → rated; dòng không model bỏ", () => {
@@ -59,6 +61,16 @@ test("lees-power n133: 'MTU 8V4000 GS/L32' → hãng MTU (dòng bảng) + model 
   assert.deepEqual(e[0].makes.map((m) => [m.name, m.via]), [["MTU", "dòng bảng"]]);
   assert.deepEqual([spec(e[0], "dims"), spec(e[0], "weight")], ["4000×2000×2300", "10000"]);
   assert.ok(notes.some((x) => x.row === 1 && /không ghi động cơ/.test(x.reason)));
+});
+
+test("nhiên liệu: lees n133 khí theo URL trang (mức T); green n115 MTU diesel không ghi nhiên liệu → không có trường fuel", () => {
+  const LEES = { n: 133, title: "- Buy Product on Wuxi Lees Power Company Limited - Generator Expert!",
+    header: ["| Model | Electrical Power KW | Efficiency (%) | Nox mg/m3 | Dimensions L×W×H (mm) | Weight (kg) | Specifications"],
+    rows: ["| LSMU800NGE3 | MTU 8V4000 GS/L32 | 776 | 41.9 | 46.7 | 88.6 | 500 | 4000×2000×2300 | 10000 | PDF"] };
+  const e = engines({ ...sup("lees-power", [LEES]), sources: [{ n: 133, url: "https://www.leespower.com/MTU-GAS-GENERATOR-SET-pd106395538.html" }] })[0];
+  assert.deepEqual([e.fuel, e.fuelFrom, e.fuelWhy], ["gas", "T", 'URL ghi "GAS GENERATOR"']);
+  const m = engines({ ...sup("green-power-generators", [MTU]), sources: [{ n: 115, url: "https://www.greenpowergen.it/prodotti/gruppi-elettrogeni-stazionari/mtu/" }] });
+  assert.ok(m.length && m.every((r) => r.fuel === undefined));
 });
 
 test("danh sách: tiêu đề đổi → không đọc, ghi note; NCC / bảng khác không đọc theo danh sách", () => {
