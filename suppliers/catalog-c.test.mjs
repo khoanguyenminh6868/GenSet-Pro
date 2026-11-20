@@ -51,11 +51,11 @@ test("googol n107: cột 'Engine (Output Power)' là kW ĐỘNG CƠ, công suấ
   assert.deepEqual(r.makes.map((m) => [m.name, m.via]), [["Googol", "hãng sản xuất"]]);
 });
 
-test("googol n101: 'Continuous Power' không là prime: số giữ, không mức (unrated); cột tần số đọc", () => {
+test("googol n101: 'Continuous Power' không là prime: số giữ, không mức (rated); cột tần số đọc", () => {
   const s = sup("googol", [{ n: 101, title: "Gas Genset COP:1000-2500kVA & Gas Genset COP:1000-2500kVA生产厂家 &价格 &工厂 - Chongqing Googol Engine-Tech. Co.,Ltd.",
     header: ["| No. | Gas Genset Model | Continuous Power（kW/kVA) | Frequency（Hz） | Voltage (V) | Generator Efficiency"], rows: ["| 1 | GPAC1000-XXX-50 | 800/1000 | 50 | 400-11000 | 95.50%"] }], { role: "engine_maker" });
   const r = one(s, "GPAC1000-XXX-50");
-  assert.deepEqual(r.power, { unrated: { kW: 800, kVA: 1000 } });
+  assert.deepEqual(r.power, { rated: { kW: 800, kVA: 1000 } });
   assert.equal(r.freq, 50);
   assert.equal(r.power.prime, undefined);
 });
@@ -97,12 +97,12 @@ test("acepow n105: 2 dòng kích thước dính dưới dòng tổ máy (6 ô) k
 
 test("vpower n101: 'kWe' là công suất điện không mức; kW NHIỆT (热能) không là kVA", () => {
   const r = read(sup("vpower-hk", [{ n: 101, title: "VPower | 天然气系列", header: ["| | 输出 | 效率 |", "| 型号 | 电能 (kWe) | 热能 (kW) | 电能 (%) | 热能 (%) | 整体 (%)"], rows: ["| PPU4500NG | 4500 | 3668 | 44.6 | 43.1 | 87.7"] }]))[0];
-  assert.deepEqual(r.power, { unrated: { kW: 4500 } }); // trước: rated 4.500 kVA / 3.668 kW
+  assert.deepEqual(r.power, { rated: { kW: 4500 } }); // trước: rated 4.500 kVA / 3.668 kW
 });
 
 test("kangwo n101: '功率 KW KVA' một ô hai số cách nhau dấu cách, không mức; cột '（cm）' ghi số mm không đọc", () => {
   const r = read(sup("kangwo-xiamen", [{ n: 101, title: "网站首页 --- 厦门康沃机电设备有限公司", header: ["| 机组型号 | 功率 KW KVA | 长X宽X高（cm） | 重量（kg）"], rows: ["| KE200 | 200 250 | 4900X1800X2500 | 4800"] }]))[0];
-  assert.deepEqual(r.power, { unrated: { kW: 200, kVA: 250 } });
+  assert.deepEqual(r.power, { rated: { kW: 200, kVA: 250 } });
   assert.deepEqual(r.specs.map((x) => [x.key, x.value]), [["weight", "4800"]]);
 });
 
