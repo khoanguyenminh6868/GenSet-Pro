@@ -75,7 +75,7 @@ export function gensetRecords({ C, S }) {
   return m;
 }
 
-const pw = (p) => (p ? ["prime", "standby", "rated", "unrated"].filter((k) => p[k]).map((k) => `${k[0].toUpperCase()} ${p[k].kVA ?? "·"}/${p[k].kW ?? "·"}`).join(" ") : "∅");
+const pw = (p) => (p ? ["prime", "standby", "rated"].filter((k) => p[k]).map((k) => `${k[0].toUpperCase()} ${p[k].kVA ?? "·"}/${p[k].kW ?? "·"}`).join(" ") : "∅");
 const specMap = (o) => Object.fromEntries((o.specs || []).map((s, i, l) => [s.key + (l.slice(0, i).filter((t) => t.key === s.key).length || ""), s]));
 const parts = (x) => ({ model: x.model, genset: x.genset ?? "", power: pw(x.power), freq: x.freq, other: x.other, makes: (x.makes || []).map((m) => m.name).join(","), specs: Object.fromEntries(Object.entries(specMap(x)).map(([k, s]) => [k, `${s.value}`])) });
 const FIELDS = ["model", "genset", "power", "freq", "other", "makes"];
