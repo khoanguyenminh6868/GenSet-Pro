@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-20T06:22:19.125Z
+  modified: 2026-11-20T07:54:09.708Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Code xếp sẵn 30 dòng ứng viên; mọi số/câu trích phải có nguyên văn trong nguồn, sai → "Đạt" thành "Chưa rõ". ~6–11 phút, ~3 USD/gói. Yêu cầu theo bộ mã cố định `suppliers/reqcodes.mjs` (thêm mã: dòng `R(...)` đúng thứ tự + test; tăng `REQ_VERSION`).
@@ -95,6 +95,10 @@ Phân tích: `genbid-work\dieu-phoi\dau-vao\ib2600603983\phan-tich.md`; tiến �
 6. "Ok": bổ sung dữ liệu Mecc Alte (ECO / NPE) + Stamford trên 750 kVA sau, bằng Firecrawl; Marathon để lại.
 7. "Nếu không ghi tương đương thì chỉ chọn hãng đó" (HSMT nêu đích danh hãng đầu phát). Có "tương đương" → thêm hãng khác xếp sau, và HSMT đòi đồng bộ thương hiệu thì không dùng đầu phát khác hãng tổ máy: là khuyến nghị, Khoa không nhắc riêng.
 Kết quả phải ghi rõ "đầu phát chọn theo datasheet hãng, NCC chưa chào" ([[khong-viet-au]]).
+
+**Đầu phát hãng PR B (#987): Khoa trả lời 4 câu (20/11/2026):** (1) cấu hình NCC chào bị cấu hình cùng động cơ + đầu phát hãng do code gắn đẩy ra vì trần mỗi hãng → Khoa: "vì sao không thể giữ lại cả 2 cấu hình nếu phù hợp?" (em hiểu: giữ cả hai, cặp cùng động cơ khác đầu phát tính một chỗ của trần); (2) Leroy-Somer trên tờ nhà máy Phúc Châu = sản xuất tại Trung Quốc ("ok"); (3) HSMT nêu model đầu phát kèm "hoặc tương đương" mà code chọn model khác đạt → check Model đạt; (4) suy giảm theo nhiệt độ (45 °C ↔ tờ 40 °C): tìm hệ số của hãng, không tìm được thì "chưa rõ".
+
+**Mã động cơ trùng: Khoa trả lời 4 câu (20/11/2026, đề xuất `nghiem-thu\ma-dong-co-trung-de-xuat.md`):** (1) ô hai mã "X (Y)" / "X / Y" → "b)": TÁCH hai bản ghi, dòng NCC tính cho cả hai mã (kể cả kaihua / koten "6M33G8D3/5 (6M33G825/5)"; phần "mã nội bộ NCC thì giữ mã ngoài ngoặc" là khuyến nghị của em đi kèm, Khoa không phản đối); (2) Perkins đuôi " L" → "để riêng" (chưa có nguồn giải thích); (3) "Derate" / "Switchable" → "gộp" vào mã gốc, dòng nguồn giữ chữ; (4) đọc "India" / "UK" trong ô động cơ làm nơi sản xuất → "ok, làm sau". Các lớp không cần hỏi (công suất dính mã, tên hãng dính mã, nơi sản xuất dính mã, khác mỗi ngoặc) sửa thẳng ở `web/catalog.js`.
 
 **Bộ điều khiển + mô-đun truyền thông: Khoa trả lời 6 câu (20/11/2026, đề xuất `nghiem-thu\bdk-mo-dun-de-xuat.md`; Khoa gõ "6 câu về đầu phát" rồi xác nhận "Anh nhầm, 6 câu đó là cho bộ điều khiển"):**
 1. "Ok cho khuyến nghị": chấm và xếp theo cặp tốt nhất (theo datasheet DSE7420 MKII ≥ DSE7320 MKII nên có thể ra 7420 + DSE890); cặp khác cũng không có "không đạt" (DSE7320 MKII + DSE890 MKII) hiện thành dòng "Phương án khác đạt tương đương" trong cùng cấu hình, không chiếm chỗ trong 8 cấu hình. Khoa không nêu lý do chọn 7320.
