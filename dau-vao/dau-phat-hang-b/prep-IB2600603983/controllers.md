@@ -1,0 +1,8860 @@
+# Thông số bộ điều khiển (datasheet của hãng; ghi factSrc với supplierId, n và line là dòng nguyên văn)
+
+### DSE7320 — datasheet của DSE7320 MKII (nhà cung cấp ghi DSE7320: cần xác nhận đời) — supplierId: deep-sea-electronics, n: 1001
+- DSEGenset® Data Sheet
+- | DSE7310 MKII Auto Start & DSE7320 MKII | Auto
+- | Mains | (Utility)
+- | Failure | Control
+- Modules
+- Part Number: 7310-03 / 7320-03
+- | DSE7310 MKII | DSE7320 MKII
+- Overview
+- The DSE7310 MKII is an auto start control module and the DSE7320 MKII is an auto mains (utility) failure control module suitable for a wide variety of
+- single, diesel or gas, gen-set applications. Monitoring an extensive number of engine parameters, the modules will display warnings, shutdown and
+- engine status information on the back-lit LCD screen, illuminated LEDs and remote PC.
+- The DSE7320 MKII will also monitor the mains (utility) supply. The modules include USB, RS232 and RS485 ports as well as dedicated DSENet®
+- terminals for system expansion. Both modules are compatible with electronic (CAN) and non-electronic (magnetic pick-up/alternator sensing) engines
+- and offer an extensive number of flexible inputs, outputs and extensive engine protections so the system can be easily adapted to meet the most
+- demanding industry requirements. The extensive list of features includes enhanced event and performance monitoring, remote communications & PLC
+- functionality.
+- The modules can be easily configured using the DSE Configuration Suite PC software. Selected front panel editing is also available.
+- Common Key Features
+- | • | Advanced PLC functionality including multi-purpose PIDs
+- | • | Flexible inputs and outputs
+- | • | DSENet® expansion support
+- | • | PC configuration using DSE Configuration Suite
+- | • | Multiple language support
+- | • | Enhanced 4-line text display
+- | • | Integrated RS232 and RS485 ports providing Modbus RTU support
+- | • | Data logging of up to 10 parameters
+- | • | Multi-level PIN protected front panel editor
+- | • | Manual front panel and automatic control modes
+- | • | Latest ECU / ECM support for a wide range of engine manufacturers
+- | • | Multiple selectable configurations
+- | • | Customisable module power up and screensaver options
+- | • | IP65 rating (with supplied gasket) offers increased resistance to
+- water ingress
+- Product Documentation
+- | DSE7310 MKII Auto Start & DSE7320 MKII Auto | Mains (Utility) Failure Control Modules
+- Features
+- | • | 3 phase generator and mains (utility) sensing with protection
+- | • | Automatic start and stopping of generator and transfer of load
+- based on mains (utility) availability
+- Automatic Mains (Utility) Failure
+- | DSE7310 MKII Auto Start | & | DSE7320
+- | MKII | Auto
+- Mains (Utility) Failure Control Modules
+- Specifications
+- DC Supply
+- | Continuous Voltage | Rating | 8 V to 35 V DC continuous
+- | Cranking Dropouts | Able to survive 0 V for 100 ms, providing supply was at least 10 V before dropout
+- and supply recovers to 5 V. This is achieved without the need for internal batteries.
+- Backlight will not be maintained during cranking.
+- | Maximum Operating Current | 340 mA at 12 V, 160 mA at 24 V
+- | Maximum Standby Current | 160 mA at 12 V, 80 mA at 24 V
+- | Charge Alternator Excitation | /
+- | Fail Range | 0 V to 35 V
+- Voltage Measurement
+- DSE7320 MKII: 2
+- | Measurement Inputs | 3 Phase + Neutral
+- | DSE7320 MKII: Generator and | Mains
+- | Voltage Range | 15 V to 415 V Phase to Neutral
+- 25 V to 720 V Phase to Phase
+- | Frequency Range | 3.5 Hz to 75 Hz
+- | Resolution | 1 V
+- | Accuracy | ±1 %
+- Current Measurement
+- | Number | 4
+- | Measurement Inputs | 3 Phase with Earth Fault
+- DSE7320 MKII: Generator or Load
+- | Current Range | 0 A to 1 A
+- 0 A to 5 A
+- | Resolution | 25 mA
+- | Accuracy | ±1 % of Nominal (excluding CT error)
+- Analogue Inputs
+- | Number | 6
+- | Type | Negative Switching Digital Input (6), Resistive
+- | Analogue | Input | (6),
+- | Current | Analogue
+- Input (4) and Voltage Analogue Input (4)
+- | Digital Input Closed Voltage Threshold | Less than 2.1 V
+- | Digital Input Open Voltage Threshold | Greater than 6.6 V
+- | Resistive Analogue Measurement Range | Input A: 0 Ω to 240 Ω
+- Input B, E & F: 0 Ω to 3 kΩ
+- Input C & D: 0 Ω to 480 Ω
+- | Current Analogue Measurement | Range | Input A & F: 0 mA to 20 mA
+- | Voltage Analogue Measurement | Range | Input A & F: 0 V to 10 V
+- | Analogue Resolution | 1 %
+- | Analogue Accuracy | ±2 %
+- Digital Inputs
+- | Number | 8
+- | Type | Negative Switching
+- | Digital | Input
+- | Closed Voltage Threshold | Less than 2.1 V
+- | Open Voltage Threshold | Greater than 6.6 V
+- Emergency Stop Input
+- | Number | 1
+- | Type | Positive Switching
+- | Closed Voltage Threshold | Greater than 5.0 V
+- | Open Voltage Threshold | Less than 3.0 V
+- Magnetic Pick-up Input
+- | Voltage Input Range | 0.5 VPeak to | 70 VPeak
+- | Frequency Input Range | 5 Hz to 10
+- kHz
+- | Resolution | 1 Hz
+- | Flywheel Teeth | 10 to 500
+- Digital Outputs
+- | Number | 10
+- | Type | 1 Normally Open Volt-Free Contacts
+- 1 Normally Closed Volt-Free Contacts
+- 8 Positive Switching DC Output
+- | Volt-Free Contact Output Rating | 5 ADC resistive at 30 VDC
+- 8 AAC resistive at 250 VAC
+- | Positive DC Output Rating | Output A to B (Fuel and Start): 15 ADC at Emergency Stop
+- | input | supply
+- voltage
+- Output E, F, G, H, I & J: 2 ADC at module supply voltage
+- Communications
+- | USB B | 1 Programming Port
+- | DSENet® | 1 Expansion Port
+- | RS232 | 1 Modbus RTU Port
+- | RS485 | 1 Modbus RTU Port
+- | CAN | 1 Non-Isolated Ports
+- ECU - Engine ECU / ECM
+- Temperature
+- | Operating Temperature | -30 °C to +70 °C / -22 °F to +158 °F
+- | Storage Temperature | -40 °C to +80 °C / -40 °F to +176 °F
+- Dimensions
+- | Overall (W x H x D) | 245 mm x 184 mm x 51 mm / 9.6” x 7.2” x 2.0”
+- Mounting
+- | Type | Panel Fascia Mounting
+- | Panel Cut-Out (W x H) | 220 mm x 160 mm / 8.7” x 6.3”
+- | Maximum Panel Thickness | 8 mm / 0.3”
+- | DSE7310 MKII Auto Start & DSE7320 MKII Auto Mains | (Utility)
+- Related Products
+- DSENet®
+- | DSE2548 | DSENet® LED Output Expansion Module | 2548-01
+- | DSE2520 MKII | DSENet® Remote Display Module for DSE7420 MKII | 7320-03
+- | DSE2510 MKII | DSENet® Remote Display Module for DSE7410 MKII | 7310-03
+- | DSE2157 | DSENet® Output Expansion Module | 2157-01
+- | DSE2152 | DSENet® Analogue Output Expansion Module | 2152-01
+- | DSE2133 | DSENet® RTD/Thermocouple Input Expansion Module | 2133-01
+- | DSE2131 | DSENet® Ratiometric Input Expansion Module | 2131-01
+- | DSE2130 | DSENet® Input Expansion Module | 2130-01
+- DSEWebNet®
+- | DSE890 MKII | DSEWebNet® Gateway | 0890-04
+- Environmental Testing Standards
+- Electro-Magnetic Compatibility
+- | BS EN 61000-6-2 | EMC Generic Immunity Standard for the Industrial Environment
+- | BS EN 61000-6-4 | EMC Generic Emission Standard for the Industrial Environment
+- Electrical Safety
+- | BS EN 61010 | Safety of Information Technology Equipment, including Electrical Business Equipment
+- | BS EN 60068-2-1 | Ab/Ae Cold Test -30 ºC
+- | BS EN 60068-2-2 | Bb/Be Dry Heat +70 ºC
+- Vibration
+- | BS EN 60068-2-6 | Ten sweeps in each of three major axes
+- 5 Hz to 8 Hz at ±7.5 mm,
+- 8 Hz to 500 Hz at 2 Gn
+- Humidity
+- | BS EN 60068-2-30 | Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+- | BS EN 60068-2-78 | Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+- Shock
+- | BS EN 60068-2-27 | Three shocks in each of three major axes
+- 15 Gn in 11 ms
+- | Degrees of Protection | Provided
+- | by | Enclosures
+- | BS EN 60529 | IP65 - IP65 - From the front of the module when the gasket is installed into a control
+- panel.
+- | DSE7310 MKII Auto Start & DSE7320 MKII Auto | Mains (Utility)
+- | Failure | Control Modules
+- | DSE7310 | MKII | DSE7320
+- MKII
+- | Pin | Description
+- | 1 to 2 | DC Supply | 1 to 2
+- | 3 | Emergency Stop | 3
+- Emergency Stop
+- | 4 | Fuel | 4
+- Fuel
+- | 5 | Start | 5
+- Start
+- | 6 | Charge Alternator | 6
+- Charger Alternator
+- | 7 | Not Applicable | 7
+- Not Applicable
+- | 8 to 13 | Digital Outputs | 8 to 13
+- | 14 to 20 | Analogue Inputs | 14 to 20
+- | 21 to 23 | Magnetic Pick-Up | 21 to 23
+- Magnetic Pick-Up
+- | 24 to 26 | Engine ECU/ECM | 24 to 26
+- Engine ECU/ECM
+- | 27 to 29 | DSENet® | 27 to 29
+- | 30-31 | Normally Closed Volt Free Output | 30-31
+- Normally Closed Volt Free Output
+- | 32-33 | Normally Open Volt Free Output | 32-33
+- Normally Open Volt Free Output
+- | 34-37 | Generator Voltage Sensing | 34-37
+- Generator Voltage Sensing
+- | 38-41 | Not applicable | 38-41
+- Mains (Utility) Voltage Sensing
+- | 42-47 | Generator Current Sensing | 42-47
+- Generator Current Sensing
+- | 48-55 | Digital Inputs | 48-55
+- | 56-58 | RS485 | 56-58 | RS485
+- | DSE7310 MKII Auto Start & DSE7320 | MKII
+- | Auto | Mains
+- | (Utility) | Failure
+- | Control | Modules
+- | Part Number: 7310-03 / 7320-03 | 220 MM
+- Technical Drawing
+- 51 MM
+- 37 MM
+- | 245 MM | 37 MM
+- | 160 MM | ( 6.3 " )
+- | 184 MM | ( 7.2 " ) | 160 MM | ( 6.3 " )
+- Connection Label
+- ABCDEFGH
+- | DC Supply : | 8-35V, 0.5A max
+- | DC Outputs : | 24V, 15A(4-5) 2A(8-13)
+- | DC Inputs : | 30V max
+- | RS232 | Volts-free Outputs : | 250Vac, 8A
+- | AC Voltage Inputs : | 600Vac 50/60Hz 1-3PH
+- | AC Current Inputs : | 5A, 50/60Hz 1-3PH
+- | Charge Alternator : | 30V, 2.5W max
+- | Magnetic Pickup : | 70V,10kHz max
+- | Analog Inputs : | 10V max
+- | Comms Port : | 5V max
+- | 58 | A | RS485
+- | 56 | SCR
+- Made in UK
+- | D + | ECU
+- | ABCDE | F
+- | SCR H | L SCR B
+- A SCR
+- | Refer to | PIN out
+- | description | charts for connection information
+- | on | the
+- | operating | mode controller is configured
+- for.
+- | Product | Documentation
+- Installation Instructions
+- Operator Manual
+- Configuration Suite PC Manual
+
+### DSE8610 — datasheet của DSE8610 MKII (nhà cung cấp ghi DSE8610: cần xác nhận đời) — supplierId: deep-sea-electronics, n: 1004
+- DSEGenset® Data Sheet
+- | DSE8610 MKII Synchronising & Load Sharing | Auto
+- | Start | Control
+- Module
+- Part Number: 8610-02
+- Overview
+- The DSE8610 MKII is a market-leading Synchronising Auto Start Control Module suitable for use in a multi-generator loadshare system, designed to
+- synchronise up to 32 generators including electronic and non-electronic engines. The DSE8610 MKII monitors the generator and indicates operational
+- status and fault conditions, automatically starting or stopping the engine on load demand or fault conditions.
+- System alarms are annunciated on the LCD screen (multiple language options available), illuminated LED and audible sounder. The event log records
+- 250 events to facilitate easy maintenance, and an extensive number of fixed and flexible monitoring, metering and protection features are included.
+- Designed to offer increased built in support for active sensors for 0 V to 10 V & 4 mA to 20 mA. Comprehensive communication and system expansion
+- options are available.
+- Using the DSE PC Configuration Suite Software allows easy alteration of the operational sequences, timers and alarms. With all communication ports
+- capable of being active at the same time, the DSE8610 MKII is ideal for a wide variety of demanding load share applications. The Advanced PLC tool
+- within Configuration Suite provides users with an extremely powerful configuration tool for the most demanding applications.
+- | Key | Features
+- | • | Slip sync and dead bus synchronising control
+- | • | Integrated Ethernet port providing Modbus TCP and SNMP v2c
+- | • | Multi-set communication (MSC) link with optional redundancy
+- support
+- | • | 3-phase generator and bus sensing with protection
+- | • | Data logging of up to 20 parameters
+- | • | Latest ECU / ECM support for a wide range of engine
+- manufacturers
+- | • | Integrated governor & AVR control
+- | • | Customisable shared data via MSC link
+- | • | Advanced PLC functionality including multi-purpose PIDs
+- | • | Flexible inputs and outputs
+- | • | DSENet® expansion support
+- | • | PC configuration using DSE Configuration Suite
+- | • | Multiple language support
+- | • | 4-line high-resolution display
+- | • | Manual front panel and automatic control modes
+- | • | Rubber sealing gasket (IP65 protection)
+- | • | Integrated RS232 and RS485 ports providing Modbus RTU
+- Product Documentation
+- | DSE8610 MKII Synchronising & Load Sharing Auto | Start
+- Control Module
+- Multi-Set Controller Key Features
+- | • | Multiple generator synchronising and droop / isochronous load sharing
+- control
+- | • | Advanced load demand schemes including automatic start / stop on
+- load change, genset optimisation and balancing of engine hours
+- | • | Multiple mains (utility) and generator synchronising ATS with
+- short / long-term parallel control*
+- | • | Mains (utility) failure detection including mains (utility) decoupling
+- detection*
+- | • | Based load and peak lopping / shaving control*
+- | Typical | Applications
+- | DSE8610 | MKII | DSE8610 MKII
+- | DSE8610 MKII | DSE8610 MKII
+- | DSE8660 MKII | DSE8610 MKII
+- *When used with DSE8660 MKII controllers
+- | DSE8610 MKII Synchronising | &
+- | Load | Sharing
+- | Auto | Start Control Module
+- Specifications
+- DC Supply
+- | Continuous Voltage | Rating | 5 V to 35 V DC continuous
+- | Cranking Dropouts | Able to survive 0 V for 100 ms, providing supply was at least 10 V before dropout
+- and supply recovers to 5 V. This is achieved without the need for internal batteries.
+- Backlight will not be maintained during cranking.
+- | Maximum Operating Current | 530 mA at 12 V, 280 mA at 24 V
+- | Maximum Standby Current | 320 mA at 12 V, 160 mA at 24 V
+- | Charge Alternator Excitation | /
+- | Fail Range | 0 V to 35 V
+- Voltage Measurement
+- | Number | 2
+- | Measurement Inputs | 3 Phase + Neutral
+- Generator and Bus
+- | Voltage Range | 15 V to 415 V Phase
+- | to | Neutral
+- | 25 V to 720 V Phase | to
+- Phase
+- | Frequency Range | 3.5 Hz to 75 Hz
+- Current Transformer Measurement
+- | Number | 4
+- | Measurement Inputs | 3
+- | Phase | Generator
+- | Current | with
+- | Earth | Fault
+- Current
+- | Current Range | 0 | A to 1
+- | 0 | A to 5
+- Analogue Inputs
+- | Type | Negative Switching Digital Input,
+- | Resistive | Analogue Input, Current Analogue Input or
+- Voltage Analogue Input
+- | Digital Input Closed Voltage Threshold | Less than 2.1 V
+- | Digital Input Open Voltage Threshold | Greater than 6.6 V
+- | Resistive Analogue Measurement Range | Input A: 0 Ω to 240 Ω
+- Input B to D: 0 Ω to 480 Ω
+- | Current Analogue Measurement | Range | 0 mA to 20 mA
+- | Voltage Analogue Measurement | Range | 0 V to 10 V
+- | Analogue Resolution | 1 %
+- | Analogue Accuracy | 2 %
+- Digital Inputs
+- | Number | 12
+- | Type | Negative Switching
+- | Digital | Input
+- | Closed Voltage Threshold | Less than 2.1 V
+- | Open Voltage Threshold | Greater than 6.6 V
+- Emergency Stop Input
+- | Number | 1
+- | Type | Positive Switching
+- | Closed Voltage Threshold | Greater than 5.0 V
+- | Open Voltage Threshold | Less than 3.0 V
+- Magnetic Pick-up Input
+- | Voltage Input Range | 0.5 VPeak to | 70 VPeak
+- | Frequency Input Range | 1 Hz to 10
+- kHz
+- | Resolution | 6.25 RPM
+- | Accuracy | ±25 RPM
+- Analogue Outputs
+- | Type | Voltage Analogue Output
+- | Function | Governor and AVR control
+- | Voltage Analogue Range | -5 V to 10 V
+- | Load Impedance | Minimum 500 Ω
+- | Isolation | Governor: ±1 kV
+- AVR: ±3 kV
+- Digital Outputs
+- | Type | 1 Normally Open Volt-Free Contacts
+- 1 Normally Closed Volt-Free Contacts
+- 10 Positive Switching DC Output
+- | Volt-Free Contact Output Rating | 5 ADC resistive at 30 VDC
+- 8 AAC resistive at 250 VAC
+- | Positive DC Output Rating | Output A to B (Fuel and Start): 15 ADC at Emergency
+- | Stop | input
+- | supply | voltage
+- Output E to L: 2 ADC at module supply voltage
+- Communications
+- | USB A | 1 Data Storage Port
+- | USB B | 1 Programming Port
+- | DSENet® | 1 Expansion Port
+- | RS485 | 2 Fully Isolated RS485 Ports*
+- | RS232 | 1 Modbus RTU Port
+- | Ethernet | 1 10/100 Ethernet Port
+- | CAN | 3 Fully Isolated CAN Ports
+- ECU – Engine ECU/ECM
+- MSC – MSC Link
+- CAN – Redundant MSC Link
+- Temperature
+- | Operating Temperature | -30 °C to +70 °C / -22 °F to +158
+- | Storage Temperature | -40 °C to +85 °C / -40 °F to +185
+- Dimensions
+- | Overall (W x H x D) | 245 mm x 184 mm x 51 mm / 9.6
+- Mounting
+- | Type | Panel Fascia Mounting
+- | Panel Cut-Out (W x H) | 220 mm x 160 mm / 8.66 ” x 6.3 ”
+- | Maximum Panel Thickness | 8 mm / 0.31”
+- *Second RS485 port available in future update
+- | DSE8610 MKII Synchronising & Load Sharing Auto Start | Control
+- Related Products
+- DSEGenset®
+- | DSE8680 | Synchronising Generator Bus Tie Control Module | 8680-01
+- | DSE8660 MKII | Auto Transfer Switch & Mains (Utility) Control Module | 8660-02
+- | DSE8003 MKII | 7” Graphical Colour Multi-Set Remote Overview Display | 8003-02
+- | DSEG0123 | Analogue Load Share Lines Interface | G0123-01
+- DSENet®
+- | DSE2548 | DSENet®
+- | LED Output Expansion Module | 2548-01
+- | DSE2157 | DSENet®
+- | Output Expansion Module | 2157-01
+- | DSE2152 | DSENet®
+- | Analogue Output Expansion Module | 2152-01
+- | DSE2133 | DSENet®
+- | RTD/Thermocouple Input Expansion | Module | 2133-01
+- | DSE2131 | DSENet®
+- | Ratiometric Input Expansion Module | 2131-01
+- | DSE2130 | DSENet®
+- | Input Expansion Module | 2130-01
+- DSEWebNet®
+- | DSE890 MKII | DSEWebNet® Gateway | 0890-04
+- | Remote Monitoring | Control
+- | DSESCADA | DSE Paralleling SCADA | 037-060
+- Accessories
+- | DSE2610 | Remote Display Module for DSE8610 MKII | 7410-01
+- | DSE124 | MSC and CANbus Extender | 0124-01
+- Auto Start Control Module
+- Environmental Testing Standards
+- Electro-Magnetic Compatibility
+- | BS EN 61000-6-2 | EMC Generic Immunity Standard for the Industrial Environment
+- | BS EN 61000-6-4 | EMC Generic Emission Standard for the Industrial Environment
+- Electrical Safety
+- | BS EN 61010 | Safety requirements for electrical equipment for measurement, control and laboratory
+- use
+- | BS EN 60068-2-1 | Ab/Ae Cold Test -30 ºC
+- | BS EN 60068-2-2 | Bb/Be Dry Heat +70 ºC
+- Vibration
+- | BS EN 60068-2-6 | Ten sweeps in each of three major axes
+- 5 Hz to 8 Hz at ±7.5 mm,
+- 8 Hz to 500 Hz at 2 Gn
+- Humidity
+- | BS EN 60068-2-30 | Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+- | BS EN 60068-2-78 | Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+- Shock
+- | BS EN 60068-2-27 | Three shocks in each of three major axes
+- 15 Gn in 11 ms
+- | Degrees of Protection | Provided
+- | by | Enclosures
+- | BS EN 60529 | IP65 - From the front of the module when installed into a control panel with supplied
+- gasket
+- | Single-Set | Controller
+- | Pin | Description
+- | 1 to 2 | DC Supply
+- | 3 | Emergency Stop
+- | 4 | Fuel
+- | 5 | Start
+- | 6 | Charge Alternator
+- | 7 to 14 | Digital Outputs
+- | 15 to 19 | Analogue Inputs
+- | 20 to 22 | Redundant MSC Link
+- | 23 to 25 | Magnetic Pick-Up
+- | 26 to 28 | Engine ECU/ECM
+- | 29 to 31 | DSENet®
+- | 32 to 34 | MSC Link
+- | 35 to 36 | Governor Control
+- | 37 | Not Applicable
+- | 38 to 39 | AVR Control
+- | 40 to 41 | Normally Closed Volt Free Output
+- | 42 to 43 | Normally Open Volt Free Output
+- | 44 to 47 | Generator Voltage Sensing
+- | 48 to 51 | Bus Voltage Sensing
+- | 52 to 56 | Generator Current Sensing
+- | 57 to 58 | Not Applicable
+- | 59 to 70 | Digital Inputs
+- | 71 to 76 | 2 x RS485*
+- | Auto | Start
+- | Control | Module
+- | Technical Drawing | 220.0 mm
+- 50.5 mm
+- | 250 mm | 35.5 mm
+- | 189 mm | [7.43 "] | 160.0 mm | [6.30"]
+- Connection Label
+- | DC Supply : | 8 V to 35 V, 1 A max
+- | DC Outputs : | 24 V, 15 A (T4 to T5); 2 A (T7 to T14)
+- | DC Inputs : | 30 V max
+- | Volt-free Outputs : | 250 V AC, 8 A
+- | AC Voltage inputs : | 600 V AC, 50 Hz / 60 Hz, 1 phase to 3 phase
+- | AC Current inputs : | 5 A, 50 Hz / 60 Hz, 1 phase to 3 phase
+- | Charge Alternator : | 30 V DC, 2.5 W max
+- | Magnetic Pickup : | 70 V RMS, 10 kHz max
+- | Analog Inputs : | 10 V DC max
+- | Comms Port : | 5 V DC max
+- | Governor / AVR : | +/- 10 V DC
+- Made in UK
+- | O/P REF | O/P REF
+- | Refer to PIN out description charts for | connection
+- | information | on the operating
+- | mode | controller is
+- | configured | for.
+- | Product | Documentation
+
+### HGM9510 — supplierId: smartgen, n: 1003
+- GENSET PARALLEL (WITH GENSET) CONTROLLER
+- USER MANUAL
+- +86-371-67981000 (overseas)
+- All rights reserved. No part of this publication may be reproduced in any material form (including
+- photocopying or storing in any medium by electronic means or other) without the written permission of
+- the copyright holder.
+- SmartGen reserves the right to change the contents of this document without prior notice.
+- Table 1 Software Version
+- | Date | Version
+- Contents
+- Original release.
+- Modify the outside drawing and the main display description;
+- Modify some parameters’ default value; Add the description of
+- “Power Management Mode” and “Load Shedding Control”.
+- | 2016-11-03 | 1.2 | 1. Add timer setting of gas gen-set.
+- 2. Add functions of input ports and output ports.
+- Fix a translation of characteristic.
+- Modify the parameter errors and optimize other problems.
+- | 2021-04-08 | 1.5 | Modify the terminal 34, 35 description in Terminal Connection
+- Description Table.
+- 1. Modify the description of GOV and AVR voltage range SW2 in
+- parameter setting contents and scopes table;
+- 2. Modify company logo.
+- Modify some contents of parameter setting:
+- 1. Change the “Charger Voltage” to “Charger D+ Voltage”;
+- 2. Add settings of fuel output time, ECU GOV gain and ECU
+- communication address;
+- 3. Add input functions of mains switch not control, mains split to
+- | island, | aftertreatment
+- | regeneration | inhibit
+- | and | manual
+- aftertreatment regeneration;
+- 4. Change the range of engine type to 0-45.
+- Modify the working and storage temperature ranges.
+- | This | manual is suitable for HGM9510 parallel controller only.
+- Table 2 Notation Clarification
+- | Sign | Instruction
+- | NOTE | Highlights an essential element of a procedure to ensure correctness.
+- | Indicates a procedure or practice, which, if not strictly observed, could | result
+- in
+- | CAUTION! | damage or destruction of equipment.
+- | Indicates a procedure or practice, which could result in injury to personnel | or
+- | WARNING! | loss of life if not followed correctly.
+- CONTENTS
+- | 1 | OVERVIEW ..................................................................................................................................................6
+- | 2 | MODULE COMPARISON ............................................................................................................................7
+- | 3 | PERFORMANCE AND CHARACTERISTICS...............................................................................................8
+- | 4 | SPECIFICATION ...................................................................................................................................... 10
+- | 5 | OPERATION............................................................................................................................................. 11
+- 5.1 INDICATORS ...................................................................................................................................... 11
+- 5.2 KEY FUNCTION DESCRIPTION ......................................................................................................... 12
+- 5.3 LCD DISPLAY ..................................................................................................................................... 13
+- | 5.3.1 | MAIN DISPLAY..........................................................................................................................13
+- | 5.3.2 | USER MENU AND PARAMETERS SETTING MENU.................................................................14
+- 5.4 AUTO START/STOP OPERATION ..................................................................................................... 18
+- 5.5 MANUALSTART/STOP OPERATION................................................................................................19
+- 5.6 SWITCH CONTROL PROCEDURES.................................................................................................... 19
+- | 5.6.1 | MANUAL CONTROL PROCEDURE ........................................................................................... 19
+- | 5.6.2 | AUTO CONTROL PROCEDURE.................................................................................................20
+- | 6 | PROTECTION .......................................................................................................................................... 21
+- 6.1 WARNING...........................................................................................................................................21
+- 6.2 SHUTDOWNALARM..........................................................................................................................23
+- 6.3 TRIP AND STOPALARM....................................................................................................................26
+- 6.4 TRIP ALARM ...................................................................................................................................... 27
+- | 7 | WIRING CONNECTION............................................................................................................................ 28
+- | 8 | SCOPES AND DEFINITIONS OF PROGRAMMABLE PARAMETERS..................................................... 31
+- 8.1 CONTENTSAND SCOPESOFPARAMETERS...................................................................................31
+- 8.2 ENABLE DEFINITION OF PROGRAMMABLE OUTPUT PORTS ........................................................ 44
+- | 8.2.1 | DEFINED CONTENTS OF PROGRAMMABLE OUTPUT PORTS .............................................. 44
+- | 8.2.2 | DEFINED PERIOD OUTPUT.......................................................................................................49
+- | 8.2.3 | DEFINED COMBINATION OUTPUT..........................................................................................49
+- 8.3 DEFINEDCONTENTSOFPROGRAMMABLEINPUTPORTS (ALLGND(B-)CONNECTED ACTIVE)51
+- 8.4 SELECTION OF SENSORS ................................................................................................................. 54
+- 8.5 CONDITIONSOF CRANKDISCONNECTSELECTION.......................................................................56
+- | 9 | PARAMETERS SETTING......................................................................................................................... 56
+- 10 SENSORS SETTING................................................................................................................................. 57
+- 11 COMMISSIONING ................................................................................................................................... 58
+- | 11.1 | STEP 1:SINGLEUNIT DEBUGGING................................................................................................58
+- | 11.2 | STEP 2:MANUALPARALLEL OPERATIONOFF-LOAD..................................................................58
+- | 11.3 | STEP 3: MANUAL PARALLEL OPERATION ON-LOAD ................................................................... 58
+- | 11.4 | STEP 4: AUTOMATIC PARALLEL OPERATION .............................................................................. 59
+- 12 TYPICAL APPLICATION ......................................................................................................................... 60
+- 13 POWER MANAGEMENT MODE.............................................................................................................. 62
+- 14 NEL TRIP ................................................................................................................................................. 63
+- 15 INSTALLATION....................................................................................................................................... 64
+- 16 CONNECTIONS OF CONTROLLER WITH J1939 ENGINE..................................................................... 66
+- | 16.1 | CUMMINS ISB/ISBE ........................................................................................................................ 66
+- | 16.2 | CUMMINS QSL9 .............................................................................................................................. 66
+- | 16.3 | CUMMINS QSM11 (IMPORT) ......................................................................................................... 67
+- | 16.4 | CUMMINS QSX15-CM570 .............................................................................................................. 67
+- | 16.5 | CUMMINS GCS-MODBUS ............................................................................................................... 68
+- | 16.6 | CUMMINS QSM11........................................................................................................................... 68
+- | 16.7 | CUMMINS QSZ13............................................................................................................................ 69
+- | 16.8 | DETROIT DIESEL DDEC III/IV .......................................................................................................... 69
+- | 16.9 | DEUTZ EMR2...................................................................................................................................70
+- 16.10 JOHN DEERE ................................................................................................................................... 70
+- 16.11 MTU MDEC ...................................................................................................................................... 70
+- 16.12 MTU ADEC (SMART MODULE) ....................................................................................................... 71
+- 16.13 MTU ADEC(SAMMODULE)............................................................................................................71
+- 16.14 PERKINS .......................................................................................................................................... 72
+- 16.15 SCANIA............................................................................................................................................72
+- 16.16 VOLVO EDC3 ................................................................................................................................... 73
+- 16.17 VOLVO EDC4 ................................................................................................................................... 73
+- 16.18 VOLVO-EMS2 .................................................................................................................................. 74
+- 16.19 YUCHAI............................................................................................................................................74
+- 16.20 WEICHAI .......................................................................................................................................... 75
+- 17 USB .......................................................................................................................................................... 76
+- 18 FAULT FINDING ...................................................................................................................................... 77
+- | 1 | OVERVIEW
+- HGM9510 controller is designed for manual/auto parallel system generators with similar or different
+- capacity. Additionally, it is suitable for single unit constant power output and mains paralleling. It allows
+- automatic start/stop, parallel running, data measurement, alarm protection as well as remote control,
+- remote measurement and remote communication function. It fits with LCD display, optional Chinese,
+- English and other languages interface, and it is reliable and easy to use.
+- Utilizing the GOV (Engine Speed Governor) and AVR (Automatic Voltage Regulator) control function, the
+- controller is able to synchronize and share load automatically; it can be used to parallel with other
+- HGM9510 controller.
+- HGM9510 controller also monitors the engine, indicating the operational status and fault conditions
+- accurately. When abnormal condition occurs, it splits bus and shuts down the genset, simultaneously
+- the exact failure mode information is indicated by the LCD display on the front panel. SAE J1939
+- interface enables the controller to communicate with various ECU (ENGINE CONTROL UNIT) which
+- fitted with J1939 interface.
+- The powerful 32-bit microprocessor contained within the module allows for precision parameters
+- measuring, fixed value adjustment, time setting and set value adjusting and etc. Majority parameters
+- can be configured from front panel, and all parameters can be configured by USB interface (or RS485)
+- to adjust via PC. It can be widely used in all types of automatic gen-set control system with compact
+- structure, advanced circuits, simple connections and high reliability.
+- | 2 | MODULE COMPARISON
+- Table 3 Module Comparison
+- | Item | HGM
+- | HGM | HGM
+- HGM
+- | LCD | Dimension | 3.7” | 4.3”
+- | Pixel | 132 x 64 | 480 x 272
+- | AMF | ●
+- | BUS Monitoring | ●
+- | Parallel Connection | ●
+- | Expansion Module | ●
+- | Input Port | 7 | 7 | 7 | 7 | 7 | 7 | 8 | 8 | 7 | 8
+- | Output Port | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8 | 8
+- | Sensor Number | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5 | 5
+- | Neutral (Earth) | ●
+- Current
+- | Schedule Function | ●
+- | ETHERNET | ●
+- | RS485 | ●
+- | GSM | ●
+- | USB | ●
+- | LINK | ●
+- | Real-time Clock | ●
+- | Event Log | ●
+- | Micro SD Card | ●
+- NOTE:
+- | 1) | Two of the outputs are fixed: start output and fuel
+- output.
+- | 2) | HGM9510’s analog sensors are composed by 3
+- | fixed sensors | (temperature,
+- | pressure, | level)
+- | and | 2
+- configurable
+- sensors.
+- NOTE: The features of HGM9210/HGM9220/HGM9310/HGM9320/HGM9410/HGM9420/HGM9520/HGM9610/
+- | HGM9620 controllers mentioned in this document may change, please check the corresponding user manual | for
+- accurate information.
+- | 3 | PERFORMANCE AND CHARACTERISTICS
+- |  | With ARM-based 32-bit SCM, high integration of hardware and more reliable;
+- |  | 480x272 LCD with backlight, multilingual interface (including English, Chinese or other languages)
+- which can be chosen at the site, making commissioning convenient for factory personnel;
+- |  | Improved LCD wear-resistance and scratch resistance due to hard screen acrylic;
+- |  | Silicon panel and pushbuttons for better operation in high/low temperature environment;
+- |  | RS485 communication port enables remote control, remote measuring, remote communication via
+- ModBus protocol;
+- |  | Fitted with CANBUS port and can communicate with J1939 genset. Not only can you monitor
+- frequently-used data (such as water temperature, oil pressure, engine speed, fuel consumption and
+- so on) of ECU machine, but also control start, stop, raising speed and speed droop via CANBUS
+- port;
+- |  | Suitable for 3-phase 4-wire, 3-phase 3-wire, single phase 2-wire, and 2-phase 3-wire systems with
+- voltage 120/240V and frequency 50/60Hz;
+- |  | Collects and shows 3-phase voltage, current, power parameter and frequency of Bus/Gens;
+- |  | For Bus, controller has loss of phase and reverse phase sequence detection functions; For
+- generator, controller has over voltage, under voltage, over frequency, under frequency, over current,
+- over power, reverse power, loss of phase, reverse phase sequence detection functions;
+- |  | Synchronization parameters: Voltage Difference Between Bus and Gens, Frequency Difference
+- Between Bus and Gens, Phase Difference Between Bus and Gens;
+- |  | Multiple running modes in auto state: with load running, off load running, demand parallel running;
+- |  | Ramp on and ramp off function;
+- |  | 3 fixed sensors (temperature, oil pressure and liquid level);
+- |  | 2 configurable sensors can be set as sensor of temperature, oil pressure or fuel level;
+- |  | More kinds of curves of temperature, oil pressure, fuel level can be used directly and users can
+- define the sensor curves by themselves;
+- |  | Precision measure and display parameters about Engine,
+- | Temp. (WT) | °C/°F (unit) both be displayed
+- | Oil pressure (OP) | kPa/psi/bar(unit) all be displayed
+- | Fuel level (FL) | % (unit)
+- | Speed (SPD) | r/min (unit)
+- | Battery Voltage (VB) | V (unit)
+- | Charger D+ Voltage | V (unit)
+- | Hour count (HC) can accumulate | Max. 65535 hours
+- | Start times can accumulate | Max. 65535 times
+- |  | Protection: automatic start/stop of the gen-set, ATS (Auto Transfer Switch) control with perfect
+- fault indication and protection function;
+- |  | All output ports are relay output;
+- |  | Parameter setting: parameters can be modified and stored in internal EEPROM memory and cannot
+- be lost even in case of power outage; most of them can be adjusted using front panel of the
+- controller and all of them can be modified using PC via USB or RS485 ports;
+- |  | Multiple crank disconnect conditions (speed sensor, oil pressure, generator frequency) are
+- optional;
+- |  | Widely power supply range DC(8~35)V, suitable to different starting battery voltage environment;
+- |  | Event log, real-time clock, scheduled start & stop generator (can be set as start genset once a
+- day/week/month whether with load or not);
+- |  | Accumulative total run time and total electric energy of A and B. Users can reset it as 0 and
+- re-accumulate the value which make convenience to users to count the total value as their wish.
+- |  | Can control engine heater, cooler and fuel pump.
+- |  | With maintenance function. Actions (warning, trip and stop, shutdown) can be set when
+- maintenance time out;
+- |  | All parameters used digital adjustment, instead of conventional analog modulation with normal
+- potentiometer, more reliable and stable;
+- |  | IP55 protection level can be achieved with the help of rubber-ring gasket between shell and control
+- panel;
+- |  | Metal fixing clips enable perfect in high temperature environment;
+- |  | Modular design, self-extinguishing ABS plastic shell, pluggable terminal, built-in mounting，compact
+- structure with easy installation.
+- | 4 | SPECIFICATION
+- Table 4 Technical Parameters
+- | Parameter | Details
+- | Working Voltage | DC8. 0V to 35. 0V, uninterruptible power
+- supply
+- | Overall Consumption | <4W (Standby mode: ≤2W)
+- AC Input:
+- | 3 Phase 4 Wire | AC 15V - 360V (ph-N)
+- | 3 Phase 3 Wire | AC 30V - 620V (ph- ph)
+- | Single Phase 2 Wire | AC 15V - 360V (ph-N)
+- | 2 Phase 3 Wire | AC 15V - 360V (ph-N)
+- | Alternator Frequency | 50Hz/60Hz
+- | Speed Sensor Voltage | 1. 0V to 24V (RMS)
+- | Speed Sensor Frequency | Maximum 10,000Hz
+- | Start Relay Output | 16A DC28V power supply output
+- | Fuel Relay Output | 16A DC28V power supply output
+- | Flexible Relay Output 1 | 7A DC28V power supply output
+- | Flexible Relay Output 2 | 7A DC28V power supply output
+- | Flexible Relay Output 3 | 7A DC28V power supply output
+- | Flexible Relay Output 4 | 7A 250VAC passive output
+- | Flexible Relay Output 5 | 7A 250VAC passive output
+- | Flexible Relay Output 6 | 7A 250VAC passive output
+- | Case Dimensions | 266mm x 182mm x 45mm
+- | Panel Cutout | 214mm x 160mm
+- | CT Secondary Current | Rated 5A
+- | Working Temperature | (-40~+70)°C
+- | Working Humidity | (20~93)%RH
+- | Storage Temperature | (-40~+80)°C
+- | Protection Level | IP55 Gasket
+- | Apply AC2.2kV voltage between high | voltage terminal and low
+- | Insulation Intensity | voltage terminal; The leakage current is | not more than 3mA within
+- 1min.
+- | Weight | 0.95kg
+- | 5 | OPERATION
+- | 5.1 | INDICATORS
+- Fig. 1 Panel Indicator Description
+- NOTE: Selected light indicators description:
+- Table 5 Warning and Alarm indicators
+- | Alarm Type | Warning
+- | Indicator | Alarm
+- Indicator
+- | Warning | Slow
+- | flashing | Slow flashing
+- | Trip Alarm | Slow
+- | Shutdown Alarm | Off
+- Fast flashing
+- | Trip and Stop Alarm | Off
+- Running indicator: illuminated from crank disconnect to ETS while off during other periods.
+- | Generator normal indicator: It is light on when generator is normal; flashing when generator | state
+- is
+- abnormal; off when there is no generator power.
+- | 5.2 | KEY FUNCTION DESCRIPTION
+- | Table | 6 Key Function Description
+- | Icon | Button
+- Description
+- Stop running generator in Auto/Manual mode; Lamp test
+- | Stop | (press at least 3 seconds); Reset alarm in stop mode; During
+- stopping process, press this button again to stop generator
+- immediately.
+- | Start | Start genset in Manual mode.
+- | Manual Mode | Press this key and controller enters in Manual mode.
+- | Auto Mode | Press this key and controller enters in Auto mode.
+- | Mute/Reset Alarm | Alarming sound off; If trip alarm occurs, pressing the button
+- at least 3 seconds can reset this alarm.
+- | Close | Close breaker in manual mode.
+- | Open | Open breaker in manual mode.
+- | Up/Increase | 1) Screen scroll;
+- 2) Up cursor and increase value in setting menu.
+- | Down/Decrease | 1) Screen scroll;
+- 2) Down cursor and decrease value in setting menu.
+- | Left | 1) Page scroll;
+- 2) Left move cursor in setting menu.
+- | Right | 1) Page scroll;
+- 2) Right move cursor in setting menu.
+- | Set/Confirm | Select viewing area.
+- | Exit | 1) Return to main menu;
+- 2) Return to previous menu in setting menu.
+- | NOTE: Press | and
+- simultaneously in manual mode will force generator to crank. Successful start
+- will not be judged according to crank disconnect conditions, operator will have to crank the starter motor manually; when
+- operator decides that the engine has fired, he/she should release the button and start output will be deactivated, safety
+- on delay will be initiated.
+- | CAUTION: Default password is “00318”, user can change it | in case of
+- others change the advanced parameters
+- | setting. Please clearly remember the password after changing. If | you forget
+- it, please contact SmartGen services and
+- send all information in the controller page of “ABOUT” to us.
+- 5.3 LCD DISPLAY
+- 5.3.1 MAIN DISPLAY
+- | Main screen show pages; use | to scroll the pages and
+- to scroll the screen.
+- ★Main Screen, including as below,
+- Gen: voltage, frequency, current, active power, reactive power;
+- Bus: voltage, frequency;
+- Engine: speed, temperature, oil pressure;
+- Some status.
+- ★Status, including as below,
+- Status of genset and ATS.
+- ★Engine, including as below,
+- | Engine speed, engine temperature, engine oil pressure, fuel level, flexible sensor 1, flexible | sensor | 2,
+- battery voltage, charger voltage, engine accumulated run, accumulated start times.
+- NOTE: If connected with J1939 engine via CANBUS port, this page also includes: coolant pressure, coolant level, fuel
+- temperature, fuel pressure, inlet temperature, exhaust temperature, turbo pressure, total fuel consumption and so on.
+- (Different engine with different parameters).
+- ★Generator, including as below,
+- Phase voltage, line voltage, frequency, phase sequence, current, each phase and total active power
+- (positive and negative), each phase and total reactive power (positive and negative), each phase and
+- total apparent power, each phase and average power factor (positive and negative), accumulated
+- energy (kWh, kVarh, kVAh), multi power, earth current, unbalanced current.
+- NOTE: Power factor shows as following,
+- Remark:
+- P stands for active power;
+- Q stands for reactive power.
+- Table 7 Power Factor Description
+- | Power | Conditions
+- | Active | Reactive
+- Remark
+- | Factor | Power
+- Power
+- | COS>0L | P>0,Q>0
+- | Input | Input
+- Load is inductive resistance.
+- | COS>0C | P>0,Q<0
+- | Input | Output
+- Load is capacitance resistance.
+- | COS<0L | P<0,Q>0
+- | Output | Input
+- Load is equal to one under excitation
+- generator.
+- | COS<0C | P<0,Q<0
+- | Output | Output
+- | Load is equal | to
+- | one | over
+- excitation
+- | 1. | Input active power, generator sends electricity to load.
+- | 2. | Output active power, load supplies electricity to generator.
+- | 3. | Input reactive power, generator sends reactive power to load.
+- | 4. | Output reactive power, load sends reactive power to generator.
+- ★Bus, including as below,
+- Phase voltage, line voltage, frequency, phase sequence.
+- ★Sync, including as below,
+- Volt difference, freq. difference, phase difference, active power percentage, target active power
+- percentage, reactive power percentage, target reactive power percentage, GOV percentage, AVR
+- percentage and MSC status.
+- ★Alarm:
+- NOTE: For ECU alarms and shutdown alarms, if the alarm information is displayed, check engine according to it,
+- otherwise, please check the engine manual according to SPN alarm code.
+- ★Event log
+- Make records about all start/stop events (shutdown alarm, trip and stop alarm, manual/auto start or
+- stop) and the real time when alarm occurs.
+- ★Others, including,
+- Time and date, maintenance due, input/output ports status.
+- ★About, including,
+- Issue time of software and hardware version, product PD number.
+- 5.3.2 USER MENU AND PARAMETERS SETTING MENU
+- | Press | key for more than 3s to enter into user manual.
+- |  | Parameter
+- | After entering the correct password (factory default password | is | 00318)
+- | you | can
+- enter parameter
+- settings screen.
+- |  | Language
+- | Selectable Chinese, English | and
+- | others | (default:
+- Espanol)
+- |  | Commissioning
+- On load, off load or custom commissioning can be chosen. Custom commissioning can configure on
+- load or not during commissioning, when to commissioning and select the mode after commissioning
+- (manual mode, auto mode and stop mode).
+- |  | Clear users’ accumulation
+- Can clear total run time A and B, total electric energy A and B.
+- Parameter setting including as following,
+- |  | Timer settings
+- |  | Engine settings
+- |  | Generator settings
+- |  | Load settings
+- |  | Breaker settings
+- |  | Analog sensor settings
+- |  | Input port settings
+- |  | Output port settings
+- |  | Module settings
+- |  | Scheduling and maintenance settings
+- |  | Synchronization settings
+- |  | Expansion module settings
+- Example:
+- | Return | >Start Delay | Interface 1: Use
+- | to scroll | settings,
+- | Timers > | >Stop Delay
+- | Engine | >Preheat Delay
+- | to enter settings | (interface 2),
+- | to | exit
+- | Generator | >Cranking Time
+- settings menu.
+- | Load | >Crank Rest Time
+- | Breaker | >Safety On Time
+- | Temp. Sensor | >Start Idle Time
+- | OP Sensor | >Warming Up Time
+- | Level Sensor | >Cooling Time
+- | Config Sensor | 1
+- >Stop Idle Time
+- | Config Sensor | 2
+- >ETS Hold Time
+- | Return | >
+- | Start Delay | Interface 2: Use
+- | Timers | >
+- | > | Stop Delay
+- | Engine | >
+- | Preheat Delay | to enter settings (Interface 4),
+- | to return | to
+- | Generator | >
+- | Cranking Time | previous menu. (interface 1)
+- | Load | >
+- Crank Rest Time
+- | Breaker | >
+- Safety On Time
+- | Temp. Sensor | >
+- Start Idle Time
+- | OP Sensor | >
+- Warming Up Time
+- | Level Sensor | >
+- Cooling Time
+- | > | Stop Idle Time
+- | > | ETS Hold Time
+- | Start Delay | Interface 3: Use
+- | to | scroll
+- settings,
+- | Preheat Delay | to confirm settings (Interface | 4),
+- | Cranking Time | previous menu. (Interface 1)
+- | HGM9510 Genset | Parallel
+- | > | Start Delay | Interface 4: Press
+- to enter settings (Interface
+- | > | Stop Delay | 00008
+- | > | Preheat Delay | 5), | to return to previous menu. (Interface 6).
+- | > | Cranking Time
+- | > | Crank Rest Time
+- | > | Safety On Time
+- | > | Start Idle Time
+- | > | Warming Up Time
+- | > | Cooling Time
+- | > | Start Delay | Interface 5: Press
+- to change cursor position,
+- | > | Preheat Delay
+- are used for changing cursor value,
+- | > | Cranking Time | Confirm setting (Interface 4),
+- exit setting
+- | > | Safety On Time | (Interface 4).
+- | > | Start Delay | Interface 6:
+- are used for changing the
+- | setting contents. | enter setting (Interface 4),
+- | > | Cranking Time | to return to previous menu. (Interface 1).
+- | > | Wait For Stop
+- | NOTE: Pressing | can exit setting directly during
+- setting.
+- 5.4 AUTO START/STOP OPERATION
+- | Auto mode is selected by pressing the | button; a LED beside the button will illuminate to confirm
+- the operation.
+- Automatic Start Sequence:
+- 1) When “Remote Start” is active, “Start Delay” timer is initiated;
+- 2) “Start Delay” countdown will be displayed on LCD;
+- 3) When start delay is over, preheat relay energizes (if configured), “preheat delay XX s” information
+- will be displayed on LCD;
+- 4) After the above delay, the Fuel Relay (if configured) is energized, and then one second later, the
+- Start Relay is engaged. The engine is cranked for a pre-set time. If the engine fails to fire during this
+- cranking attempt then the fuel relay and start relay are disengaged for the pre-set rest period;
+- “crank rest time” begins and wait for the next crank attempt.
+- 5) Should this start sequence continue beyond the set number of attempts, the start sequence will be
+- terminated, and Fail to Start fault will be displayed on LCD alarm page.
+- 6) In case of successful crank attempt, the “Safety On” timer is activated, Low Oil Pressure, High
+- Temperature, Under speed and Charge Alternator Failure inputs are all inactive. As soon as this
+- delay is over, “start idle” delay is initiated (if configured).
+- 7) During “start idle” delay, under speed, under frequency, under voltage alarms are inhibited. When
+- this delay is over, “warming up” delay is initiated (if configured).
+- 8) In the case of a single generator system, after the “warming up” delay, if generator status is normal,
+- its indicator will be illuminated. If generator voltage and frequency have reached on-load
+- requirements, then the generator close relay will be energized; genset will take load; generator
+- power indicator will illuminate and generator will enter into Normal Running status. If voltage or
+- frequency is abnormal, the controller will initiate shutdown alarm (alarm information will be
+- displayed on LCD).
+- 9) In case of running in parallel, after the warming up delay:
+- a) If bus has no voltage, then the controller will send a closing signal to other waiting parallel gensets
+- and generator close relay will activate, this prevents other sets in the system from attempting to
+- close their own breakers at the same time.
+- b) If bus has voltage or other gensets are already closed, the controller will adjust speed and voltage
+- through GOV and AVR to synchronize the gensets to the bus; when synchronism requirements has
+- been achieved, breaker close signal will be initiated and the genset will be paralleled with the bus.
+- Once they are paralleled, the controller will control the generator to gradually accelerate and share
+- load with other paralleled gensets.
+- NOTE: When started via “Remote Start (off Load)” input, same procedures as above but generator close relay
+- deactivated, moreover, genset off load. When started via “Remote Start (Demand)” input, the genset will start,
+- synchronize, parallel and share load automatically according to the pre-set priority order.
+- Automatic Stop Sequence,
+- | 1) | When the “Remote Start” signal is removed, the Stop Delay is initiated.
+- | 2) | Once this “stop delay” has expired, the module will ramp the load from the generator to remaining
+- set. The Generator Breaker will open and the “Cooling Delay” is then initiated. Should the Remote
+- Start signal be re-activated during the cooling down period, the set will return parallel status. Once
+- the “Cooling Delay” expires, the “Stop Idle” delay is initiated.
+- | 3) | During “Stop Idle” Delay (if configured), idle relay is energized.
+- | 4) | “ETS Solenoid Hold” begins, ETS relay is energized while fuel relay is de-energized, complete stop
+- is detected automatically.
+- | 5) | "Fail to Stop Delay" begins, complete stop is detected automatically.
+- | 6) | When generator is stop completely, “After stop” delay will be initiated. Otherwise, fail to stop alarm
+- is initiated and the corresponding alarm information is displayed on LCD. (If generator stops
+- successfully after “fail to stop” alarm has initiated, “After stop” delay will be initiated and the alarm
+- will be removed)
+- | 7) | Generator is placed into its standby mode after its “After stop” delay.
+- 5.5 MANUAL START/STOP OPERATION
+- | 1) | Manual mode is selected by pressing the
+- button; a LED besides the button will illuminate to
+- | confirm the operation; then press | button to start the gen-set; can detect crank disconnect
+- condition and generator accelerates to high-speed running automatically. With high temperature,
+- low oil pressure, over speed and abnormal voltage during generator running, controller can protect
+- genset to stop quickly (please refer to No.3~9 of Automatic Start Sequence for detail procedures).
+- | 2) | MANUAL STOP: Press | can shuts down the running generators. (Please refer to No.2~7 of
+- Automatic Start Sequence for detail procedures).
+- | NOTE: | In
+- | “manual | mode”,
+- | the | procedures
+- | of | ATS
+- | please | refer
+- | to | Switch
+- | Control | Procedure
+- | of | generator
+- | in | this
+- manual.
+- 5.6 SWITCH CONTROL PROCEDURES
+- 5.6.1 MANUAL CONTROL PROCEDURE
+- When controller is in Manual mode, the switch control procedures will start through manual transfer
+- procedures. Users can control the loading transfer of ATS via pressing button to switch on or off.
+- | Closing Operation: During genset normal running, press | if generator voltage and frequency have
+- reached on-load requirements
+- | 1) | In case of single unit running, generator closing relay outputs;
+- | 2) | In case of running in parallel:
+- | a) | If bus has no voltage, then the controller will send a closing signal to other waiting parallel gensets
+- | b) | If bus has voltage or other gensets are already closed, the controller will adjust speed and voltage
+- been achieved, breaker close signal will be initiated and the genset will be paralleled to the bus.
+- | Opening operation: Press | ,
+- 1) In case of single unit running, the controller sends open breaker signal.
+- | 2) | During parallel operation, controller first transfers load to other generators, and then sends
+- an
+- opening signal.
+- 5.6.2 AUTO CONTROL PROCEDURE
+- When controller is in auto mode, the switch control procedure is automatic control procedure.
+- NOTE: The auxiliary close input should be configured necessarily and make sure the connection is correct.
+- | 6 | PROTECTION
+- 6.1 WARNING
+- | When controller detects warning | signals, it only sends warning but not shuts down generator.
+- Table 8 Warning Alarm
+- | No. | Type
+- | 1 | Over Speed
+- When the controller detects that the genset speed has exceeded
+- the pre-set value, it will initiate a warning alarm.
+- | 2 | Under Speed
+- When the controller detects that the genset speed has fallen below
+- | 3 | Loss of Speed Signal | When the controller detects that the genset speed is 0 and the
+- action select “Warn”, it will initiate a warning alarm.
+- | 4 | Gen Over Frequency
+- When the controller detects that the genset frequency has
+- exceeded the pre-set value, it will initiate a warning alarm.
+- | 5 | Gen Under Frequency
+- When the controller detects that the genset frequency has fallen
+- below the pre-set value, it will initiate a warning alarm.
+- When the controller detects that the generator voltage has
+- | 6 | Gen Over Voltage
+- exceeded the pre-set value, the controller will initiate a warning
+- alarm.
+- | 7 | Gen Under Voltage
+- When the controller detects that the genset voltage has fallen
+- When the controller detects that the genset current has exceeded
+- | 8 | Gen Over Current
+- the pre-set value and the action selects “Warn”, it will initiate a
+- warning alarm.
+- | 9 | Fail To Stop
+- After “fail to stop” delay, if gen-set does not stop completely, it will
+- initiate a warning alarm.
+- | 10 | Charge Alternator
+- When the controller detects that charger voltage has fallen below
+- | Failure | the pre-set value, it will initiate a warning alarm.
+- | 11 | Battery Under Volt
+- When the controller detects that start battery voltage has fallen
+- | 12 | Battery Over Volt
+- When the controller detects that start battery voltage has exceeded
+- | 13 | Maintenance Due | When count down time is 0 and the action selects “Warn”, it will
+- If reverse power detection is enabled, when the controller detects
+- | 14 | Reverse Power
+- that the reverse power value (power is negative) has fallen below
+- If over power detection is enabled, when the controller detects that
+- | 15 | Over Power
+- the power value (power is positive) has exceeded the pre-set value
+- and the action selects “Warn”, it will initiate a warning alarm.
+- | 16 | ECU Warn | If an error message is received from ECU via J1939, it will initiate a
+- | 17 | Gen Loss of Phase
+- If loss of phase detection is enabled, When controller detects the
+- generator loss phase, it will initiate a warning alarm.
+- | 18 | Gen Reverse Phase
+- When the controller detects a phase rotation error, it will initiate a
+- | Sequence | warning alarm.
+- When the controller detects that the breaker close or open failure
+- | 19 | Switch Fail Warn
+- occurs, and the action selects “Warn”, it will initiate a warning
+- | 20 | Temperature Sensor
+- When the controller detects that the temperature sensor is open
+- | Open Circuit | circuit and the action selects “Warn”, it will initiate a warning alarm.
+- | 21 | High Temperature
+- When the controller detects that engine temperature has exceeded
+- | 22 | Low Temperature
+- When the controller detects that engine temperature has fallen
+- | 23 | Oil Pressure Open
+- When the controller detects that the oil pressure sensor is open
+- | Circuit | circuit and the action selects “Warn”, it will initiate a warning alarm.
+- | 24 | Low Oil Pressure
+- When the controller detects that the oil pressure has fallen below
+- | 25 | Level Sensor Open
+- When the controller detects that the level sensor is open circuit and
+- | Circuit | the action selects “Warn”, it will initiate a warning alarm.
+- | 26 | Low Fuel Level
+- When the controller detects that the fuel level has fallen below the
+- pre-set value, it will initiate a warning alarm.
+- | 27 | Flexible Sensor 1 Open | When the controller detects that the flexible sensor 1 is open circuit
+- | Circuit | and the action selects “Warn”, it will initiate a warning alarm.
+- | 28 | Flexible Sensor 1 High | When the controller detects that the sensor 1 value has exceeded
+- | 29 | Flexible
+- | Sensor | 1
+- | Low | When the controller detects that the sensor 1 value has fallen below
+- | 30 | Flexible
+- | Sensor | 2
+- | Open | When the controller detects that the flexible sensor 2 is open circuit
+- | 31 | Flexible
+- | High | When the controller detects that the sensor 2 value has exceeded
+- | 32 | Flexible Sensor 2 Low | When the controller detects that the sensor 2 value has fallen below
+- | 33 | Digital Input
+- When digit input port is set as warning and the alarm is active, it will
+- If earth fault detection is enabled, when the controller detects that
+- | 34 | Earth Fault
+- the earth fault current has exceeded the pre-set value and the
+- | Negative Sequence | When the controller detects the imbalance current has exceeded
+- | 35 | Current
+- the pre-set value and the action selects “Warn” it will initiate a
+- | 36 | Fail to sync
+- When the controller does not detect synchronization signal within
+- the pre-set synchronization time, it will initiate a warning alarm.
+- When the controller detects fewer modules on the MSC link than
+- the minimum number configured in the unit, it will initiate a warning
+- | 37 | MSC Too Few Sets | alarm. There are 2 possible reasons: a) Communication line
+- | between | the
+- | controllers | disconnects,
+- | which | interrupts
+- communication.
+- b) Other parallel gen-sets controllers have not been powered on.
+- | 38 | Loss of Excitation
+- When the controller detects that the genset negative reactive power
+- has exceeded the pre-set value, it will initiate a warning alarm.
+- 6.2 SHUTDOWN ALARM
+- When controller detects shutdown alarm, it will send signal to open breaker and shuts down generator.
+- Table 9 Shutdown Alarm
+- | 1 | Emergency Stop
+- When the controller detects an emergency stop alarm signal, it will
+- initiate a shutdown alarm.
+- | 2 | Over Speed
+- When the controller detects that the generator speed has exceeded
+- the pre-set value, it will initiate a shutdown alarm.
+- | 3 | Under Speed
+- When the controller detects that the generator speed has fallen
+- below the pre-set value, it will initiate a shutdown alarm.
+- | 4 | Loss of Speed Signal | When the controller detects that the engine speed is 0 and the
+- action selects “Shutdown”, it will initiate a shutdown alarm.
+- | 5 | Gen Over Frequency
+- exceeded the pre-set value, it will initiate a shutdown alarm.
+- | 6 | Gen Under Frequency
+- | 7 | Gen Over Voltage
+- exceeded the pre-set value, the controller will initiate a shutdown
+- | 8 | Genset Under Voltage
+- If the engine does not fire after the pre-set number of attempts, it
+- will initiate a shutdown alarm.
+- | 10 | Gen Over Current
+- the pre-set value and the action selects “Shutdown”, it will initiate a
+- shutdown alarm.
+- | 11 | Maintenance Due | When count down time is 0 and the action selects “Shutdown”, it
+
+### InteliGen — datasheet của InteliGen NT (nhà cung cấp ghi InteliGen: cần xác nhận đời) — supplierId: comap, n: 1004
+- InteliGen NT
+- Order code: IG-NT GC
+- Gen-set controller
+- Datasheet
+- Product description
+- | Comprehensive paralleling gen-set controller | Extendable with ComAp's extension modules
+- | Parallel operation up to 32 gen-sets | True RMS (TRMS) is used with Voltage, Current
+- | High level control for complex systems | and Power measurement
+- | Key features | Application overview
+- Load sharing and VAr sharing via CAN
+- Virtual shared inputs and outputs via CAN
+- Support of wide range of applications
+- Single or multiple gen-sets in parallel to mains
+- operation with automatic back up function, multiple
+- island operation
+- Advanced power management function
+- Customizable load control in parallel to mains
+- Wide range of ECU support
+- Highly configurable
+- Timers,Internal PLC , Force values and more
+- Compatible with ComAp's InteliVision displays
+- Active e-mail messaging and SMS with optional
+- communication module
+- Extensive built-in protection functions
+- Standard protections
+- User configurable protection
+- | | InteliGen NT Datasheet | | Related HW ver: 2.0 | | Related SW ver: 3.3.0 | | Date of issue: 6/13/2023
+- Technical data
+- | Power supply | Binary outputs
+- | Power supply | 8-36 V DC
+- | Number | 16, non-isolated
+- | range | 0.5 A (2 A per group)
+- | 0.4 A / 8 V DC | Max current | group1: BO1-6; group2: BO7-
+- | Power | 0.15 A / 24 V DC | 12
+- | consumption | 0.1 A / 36 V DC
+- | Switching to | Positive supply terminal
+- | RTC battery | 10 years (replaceable by official
+- | service) | Analog inputs
+- | Fusing | 2 A (without BOUT consumption)
+- | Number | 3 non-isolated
+- | Operating conditions | Type
+- Switchable (Voltage, Resistance,
+- Current)
+- | Operating | -20 ˚C to +70 ˚C
+- | Resolution | 10 bits, max 4 decimals
+- | temperature | Range | 0-5 V DC / 0-2500 Ω / 0-20 mA
+- | Storage temperature | -30 ˚C to +80 ˚C
+- | Input impedance | >100 kΩ / >100 kΩ / 180 Ω
+- | 2000 m above sea level for | ±1 % of meas. value ±1 mV
+- | Max. operating | max 480 V
+- | Accuracy | ±2 % of meas value ±2 Ω
+- | altitude | 4000 m above sea level for | ±1 % of meas value ±0.5 mA
+- max 400 V
+- | Operating | humidity | 95 % non-condensing (EN
+- Magnetic pick-up
+- | 5-25 Hz, ± 1.6 mm | Voltage input range | 2 | Vpk-pk to 50 Veff
+- | Vibration | 25-100 Hz, a = 4 g
+- Frequency input
+- | range | 4 Hz to 4kHz
+- | Shocks | a = 200 m/s2
+- Frequency
+- | Voltage measurement | measurement | 0.2 %
+- tolerance
+- | Measurement | 3 ph-n Gen voltage
+- | inputs | 3 ph-n Mains/Bus voltage
+- | Voltage | regulator
+- output
+- | Measurement range | 277 V | 5 V TTL PWM / ± 10 V DC
+- | Max allowed | Type
+- with IG-AVRi interface
+- | voltage | 125 % ph-n
+- | Accuracy | 1 % of 277 V
+- | Speed governor | output
+- | Frequency range | 40-70 Hz (at accy 0.1 Hz)
+- | Voltage | output | ± 10 V DC / max. 15 mA
+- | Input impedance | 0.6 MΩ ph-ph
+- | Voltage | output
+- | via | ± 10 V DC via 10 kΩ resistor /
+- | 0.3 MΩ ph-n | resistor | max . 1 mA
+- | Current measurement | PWM | 500÷3000 Hz / 5 V / max. 10 mA
+- | 3 ph Gen current | Communications
+- | Measurement | 1
+- | ph | Neutral/Mains current
+- | inputs | RS232 | (1)
+- Direct / Modem / Modbus / ECU non-
+- | galvanically isolated | isolated
+- | Measurement | 5A | External modules 250 kbps,
+- | range | CAN1 | max 200 m, Isolated
+- | Max allowed | 200%
+- Intercontroller and comm extensions
+- | continuous current | CAN2 | 250 / 50 kbps, max 200 / 1000 m,
+- | Accuracy | 2 % of 5 A
+- Isolated
+- | Input impedance | <0.1 Ω
+- Binary inputs
+- | Input resistance | 4.7 kΩ
+- | Close/Open | 0-2 V DC close contact
+- | indication | >4 V DC open contact
+- | InteliGen NT Datasheet | 2
+- Dimensions and terminals
+- Controller panel door mounting
+- Note: InteliGen NT can be mounted into panel doors as a standalone unit using provided metal holders. The
+- cut-out for the unit should be 1 mm wider then the unit on each side (i.e. cut-out dimensions 172 × 112 mm).
+- | InteliGen NT Datasheet | 3
+- | Available | extension modules
+- | Product | Description
+- | Order | code
+- | Inteli IO8/8 | 8 Binary inputs, 8 Binary outputs and 2 Analog outputs packed in a small unit (HW | I-IO8/8
+- switchable to IO16/0)
+- | Inteli AIN8 | 8 Analog inputs (R, I, V) and 1 pulse/frequency input in a small unit | I-AIN8
+- | Inteli AIN8TC | 8 Thermocouple Analog inputs in a small unit | I-AIN8TC
+- | Inteli AIO9/1 | 9 Analog inputs (4x DC, 4x thermocouples, 1x R) in a small unit | I-AIO9/1
+- | IS-AIN8 | 8 Analog inputs packed in a rugged metal unit | IS-AIN8
+- | IGS-PTM | 8 Binary inputs, 8 Binary outputs, 4 Analog inputs and 1 Analog output in a unit
+- IGS-PTM
+- | IGL-RA15 | 15 Binary LED output (3 colors) packed in a rugged metal unit | IGL-RA15
+- | I-AOUT8 | 8 Analog outputs packed in a rugged metal unit | I-AOUT8
+- | InternetBridge-NT | Multiple Internet connections (PC and Modbus) to all controllers on CAN2 or RS485
+- IB-NT
+- | I-LB+ | Direct connection (PC) to all controllers on CAN2 or RS485
+- I-LB+
+- Related products
+- Order code
+- | InteliVision 5 | Color 5.6" display for monitoring and control | INTELIVISION 5
+- | InteliVision 8 | Color 8" display for advanced monitoring, control & trending, USB capable | INTELIVISION 8
+- | InteliVision 12Touch | Color 12" touch display for advanced monitoring, control & trending, USB capable | RD1IV12TBZH
+- Functions and protections
+- | The described product fully supports the following functions and protections as defined by ANSI | (American
+- National Standards Institute):
+- | Description | ANSI
+- | code | code
+- | Synchronism | 25
+- | Excitation loss | 40
+- | Earth fault current | 51N+64
+- | Overfrequency | 81H
+- | check | IDMT
+- | Undervoltage | 27
+- | Current unbalance | 46
+- | Power factor | 55
+- | Underfrequency | 81L
+- | Overload | 32
+- | Temperature | 49T
+- | Overvoltage | 59
+- | ROCOF | 81R
+- monitoring
+- | Load shedding | 32P
+- | Generator | 50
+- | Gas (fuel) level | 71
+- overcurrent
+- | Reverse power | 32R
+- | Earth fault current | 50N+64
+- | Vector shift | 78
+- | Undercurrent | 37
+- | Overcurrent (IDMT) | 51
+- | AC reclosing | 79
+- Certificates and standards
+- | EN 60068-2-6 ed.2:2008 | EN 60068-2-64
+- | EN 60068-2-27 ed.2:2010 | EN 61010-1:2003
+- EN 60068-2-30:2005
+- 25/55°C, RH 95%, 48hours
+- | All | certificates and standards are available
+- | on: | https://webstore.iec.ch/
+- Manufacturer:
+- ComAp a.s.
+- | Czech Republic | E-mail: info@comap-control.com
+- | Phone: +420 246 | 012 | 111
+- | © | ComAp.
+- | Features | and
+- | specification | are
+- | subject | to
+- | change | without prior notice.
+
+### InteliGen — datasheet của InteliGen NT (nhà cung cấp ghi InteliGen: cần xác nhận đời) — supplierId: comap, n: 1006
+- BaseBox
+- Order code: IG-NT-BB
+- Gen-set Controller
+- | Comprehensivegen-set controllerforbothsingle | CompatiblewithComAp's InteliVisiondisplays
+- | andmultiplegensets operatinginstandby or | Activee-mail messagingandSMS
+- | paralleling modes | Extensive built-in protection functions
+- | To be used in conjunction with detachable colour | Standard protections
+- displays InteliVision5orInteliVision8
+- | Support of engines withECU (Electronic Control | User configurable protection
+- | Unit) | ExtendablewithComAp's extensionmodules
+- | Completeintegratedgen-set solutionandsignal | Application overview
+- sharingviaCAN bus –minimum external
+- components needed
+- Many communicationoptions –easy remote
+- supervising and servicing
+- Virtual sharedinputs andoutputs viaCAN
+- Support of widerangeof applications
+- Singleormultiplegen-sets inparallel tomains
+- operationwithautomatic back upfunction,
+- multiple island operation
+- Advancedpowermanagement function
+- Customizableloadcontrol inparallel tomains
+- Widerangeof ECU support
+- Timers, Internal PLC, Forcevalues andmore
+- | |InteliGenNT BaseBoxDatasheet | | Related HW ver: 2.0 | | Related SW ver: 3.1.0 | | Date of issue: 6/24/2020
+- | Power supply | Binary inputs
+- | Number | 12, non-iso
+- lated
+- | range | Input resistance | 4 | .7 kΩ
+- | Power supply | drop- | 20 ms(from8 V)
+- | Close/Open | 0-2
+- | V | DCclose co
+- ntact
+- | out immunity | indication | >4
+- | V | DCopen co
+- 0.4 A / 8 VDC
+- | Power consumption | 0.15 A / 24 VDC
+- Binary outputs
+- | 0.1 A / 36 VDC | Number | 12, non-isolated
+- | RTC battery | 10 years | 0.5 A (2 A pergroup)
+- | (replaceable byofficialservice) | Max current | group1: BO1-8; group2: BO9-
+- | Fusing | 2
+- | A (without BOUTconsumption) | 12
+- | Max. Power | Switching to
+- Negative/positive supplyterminal
+- | Dissipation | 16 W
+- Analog inputs
+- | Operating conditions | Number | 3, non-isolated
+- | Operating | -40 ˚Cto +70 ˚C
+- | temperature | Type
+- | Storage temperature | -40 ˚Cto +80 ˚C
+- | Resolution | 10 bits, max4 decimals
+- | 2000 mabove sea levelfor | Range | 0-5 V DC/ 0-2500 Ω/ 0-20 mA
+- | Input impedance | >100 kΩ/ >100 kΩ/ 180 Ω
+- | altitude | 4000 mabove sea levelfor | ±1 % of meas. value ±5 mV
+- | max400 V | Accuracy | ±2 % of measvalue ±2 Ω
+- | Operating humidity | 95 % w/o condensation | ±1 % of measvalue ±0.5 mA
+- | Vibration | 5-25 Hz, ±1.6 mm
+- | 25-100 Hz, a = 4 g | Magnetic pick-up
+- | Shocks | a=200 m/s2
+- | Voltage input range | 2
+- | Vp | k-pk to | 50 Veff
+- | Heat radiation | 16 W
+- | Frequency input | 4 Hzto | 15 kHz
+- | Voltage measurement | range
+- | measurement | 0.2 %
+- | inputs | 3
+- | Mains voltage/Bus voltage | tolerance
+- | Measurement | range | 277V
+- | Max allowed | 125 % ph-n
+- | voltage | Type | 5 V TTL
+- | PWM | / | ±10 V DCwith IG-
+- | Accuracy | 1 %of277V
+- AVRi interface
+- | Frequency range | 40-70 Hz(accuracy0.1 Hz)
+- | 45 | -55 Hz(accuracy<0.01 Hz)
+- | Voltage | output | ±10 V DC/ max. 10 mA
+- | Input impedance | 0.6 MΩph-ph, 0.3 MΩph-n
+- | via | ±10 V DCvia 10 kΩresistor/ max. 1
+- | Current measurement | resistor
+- mA
+- | 3 ph Gen current | PWM | 500÷3000 Hz/ 5 V / max. 10 mA
+- | Measurement | 1 ph Mainscurrent
+- | inputs | Communications
+- galvanically isolated
+- | Measurement range | 5A | RS232
+- Direct/Modbus, non-isolated
+- | Max allowed | Display
+- | port | non-isolated RS485, onlyterminal
+- | continuous current | 5A
+- connection
+- | Accuracy | 2 % of 5 A | CAN1
+- External modules
+- 250kbps, max200m, Isolated
+- Intercontrollerand comm
+- | CAN2 | extensions
+- 250/50kbps, max200/1000m,
+- | InteliGenNT BaseBoxDatasheet | 2
+- Dimensions, terminals and mounting
+- | Panel door mounting | DIN-rail mounting
+- Panel door mounting
+- | with InteliVision 5 | with InteliVision 8
+- | ① | InteliVision5
+- | ② | InteliGen-NT-BaseBox
+- | ③ | DIN-rail
+- | ④ | InteliVision 8
+- Note: InteliGenNT BaseBox canbemountedonastandardDIN rail or, incombinationwithInteliVision5or
+- InteliVision8, it canbedoormounted. InteliVision5features mountingrail fordirect mounting. Mountingin
+- combinationwithInteliVision8uses fourscrews providedintheInteliGenNT BaseBox package.
+- | InteliGenNT BaseBoxDatasheet | 3
+- | Available | Extension modules
+- | 8 Binaryinputs, 8 Binaryoutputsand 2 Analog outputsin a smallunit (HWswitchab | le
+- | to | IO1 | 6 | /0
+- | ) | I-IO8/8
+- Inteli IO8/8
+- | HWswitchableto IO16/0 -16 Binaryinputspacked in a smallunit | I-IO8/8
+- | Inteli AIN8 | 8 Analog inputs(R, I, V)and 1 pulse/frequencyinput in a smallunit | I-AIN8
+- | Inteli AIN8TC | 8 Thermocouple Analog inputsin a smallunit | I-AIN8TC
+- | Inteli AIO9/1 | 9 Analog inputs(4xDC, 4xthermocouples, 1xR)in a smallunit | I-AIO9/1
+- | IS-AIN8 | 8 Analog inputspacked in a rugged metalunit | IS-AIN8
+- | IGS-PTM | 8 Binaryinputs, 8 Binaryoutputs, 4 Analog inputsand 1 Analog output in a unit
+- | IGL-RA15 | 15 BinaryLEDoutput (3 colors)packed in a rugged metalunit | IGL-RA15
+- | I-AOUT8 | 8 Analog outputspacked in a rugged metalunit | I-AOUT8
+- | InteliBridge-NT | Multiple Internet connections(PCand Modbus)to allcontrollerson CAN2 orRS485
+- | I-LB+ | Direct connection (PC)to allcontrollers on CAN2 orRS485
+- | Related | products
+- | InteliVision 5 | Color5.6" displayformonitoring and control | INTELIVISION 5
+- | InteliVision 8 | Color8" displayforadvanced monitoring, control& trend
+- | ing, | USB capable | INTELIVISION 8
+- | InteliVision 12To | uch | 12,1" ColourDisplayUnit | RD1IV12TBZH
+- | InteliVision 18To | uch | Color18“touchscreen displaydesigned forcomplete mo
+- | nito | ring and control
+- | mu | lt
+- | ip | le | RD31840PBIE
+- controllersorcogeneration installation.
+- | ECON-4 | Digitalspeed governordedicated forspeed controlof ga
+- | s or | diesel engines. | ECON-4
+- | I-Step | Stepper motordriver module
+- I-Step
+- | Support of functions and protections as defined by ANSI (America | n
+- | tio | nal Standards Institute)
+- | code | Description
+- ANSI code
+- | Master unit | 1
+- | Voltage unbalance | 47
+- | Stopping device | 5
+- | Incomplete sequence r | elay | 48
+- | Multi-function device | 11
+- | Overcurrent | 50/50TD
+- | Overspeed | 12
+- | Earth fault | 50G
+- | Underspeed | 14
+- | Overcurrent IDMT | 51
+- | Starting-to-running transition | contractor | 19
+- | AC circuit breaker | 52
+- | Synchronizing-check | 25
+- | Thermal relay | 26
+- | Pressure switch | 63
+- | Liquid level switch | 71
+- | Annunciator | 30
+- | Alarm relay** | 74
+- | Overload(real power) | 32P
+- | Reclosing relay | 79
+- | Overfrequaency | 81O
+- | Master sequence device | 34
+- | Underfrequency | 81U
+- | Unit sequence starting * | 44
+- | Auto selective control/ | transfer | 83
+- | *MINT | **Extension module
+- | IGL- | R | A15 r
+- equired
+- | Certificates and | standards
+- Thisproduct isCE compliant.
+- | EN60068-2-6 ed.2:2008 | EN 60068-2-64
+- | EN60068-2-27 ed.2:2010 | EN 61010-1:2003
+- EN60068-2-30, May2000
+- | © | Com
+- | Ap. | Featur
+- | es | and
+- | specification | ar
+- | e | subject
+- | to | change
+- without prior notice.
+
+### InteliGen — datasheet của InteliGen NTC (nhà cung cấp ghi InteliGen: cần xác nhận đời) — supplierId: comap, n: 1005
+- InteliGenNTC
+- Order code: IG-NTC GC
+- Gen-set controller
+- Datasheet
+- Product description
+- | Comprehensive paralleling gen-set controller | Extendable with ComAp's extension modules
+- | Parallel operation up to 32 gen-sets | True RMS (TRMS) is used with Voltage, Current
+- | High level control for complex systems | and Power measurement
+- | Key features | Application overview
+- Load sharing and VAr sharing via CAN
+- Virtual shared inputs and outputs via CAN
+- Support of wide range of applications
+- Single or multiple gen-sets in parallel to mains
+- operation with automatic back up function, multiple
+- island operation
+- Advanced power management function
+- Customizable load control in parallel to mains
+- Wide range of ECU support
+- Highly configurable
+- Timers,Internal PLC , Force values and more
+- Compatible with ComAp's InteliVision displays
+- Active e-mail messaging and SMS with optional
+- communication module
+- Extensive built-in protection functions
+- Standard protections
+- User configurable protection
+- | | InteliGen NTC Datasheet | | Related HW ver: 2.0 | | Related SW ver: 3.3.0 | | Date of issue: 6/13/2023
+- Dimensions and terminals
+- Controller panel door mounting
+- | Note: InteliGen NTC can be mounted into panel doors as a standalone unit using provided metal | holders.
+- The cut-out for the unit should be 1 mm wider then the unit on each side (i.e. cut-out dimensions
+- 172 × 112 mm).
+- | InteliGen NTC Datasheet | 2
+- Technical data
+- | Power supply | Binary outputs
+- | Power supply | 8-36 V DC
+- | Number | 12, non-isolated
+- | range | 0.5 A (2 A per group)
+- | 0.4 A / 8 V DC | Max current | group1: BO1-6; group2: BO7-
+- | Power | 0.15 A / 24 V DC | 12
+- | consumption | 0.1 A / 36 V DC
+- | Switching to | Negative supply terminal
+- | RTC battery | 10 years (replaceable by official
+- | service) | Analog inputs
+- | Fusing | 2 A (without BOUT consumption)
+- | Number | 3 non-isolated
+- | Operating conditions | Type
+- Switchable (Voltage, Resistance,
+- Current)
+- | Operating temperature | -20 ˚C to +70 ˚C
+- | Resolution | 10 bits, max 4 decimals
+- | Storage temperature | -30 ˚C to +80 ˚C
+- | Range | 0-5 V DC / 0-2500 Ω / 0-20 mA
+- | 2000 m above sea level for | Input impedance | >100 kΩ / >100 kΩ / 180 Ω
+- | Max. operating | max 480 V | ±1 % of meas. value ±1 mV
+- | alltitude | 4000 m above sea level for
+- | Accuracy | ±2 % of meas value ±2 Ω
+- | max 400 V | ±1 % of meas value ±0.5 mA
+- | Operating | humidity | 95 % non-condensing (EN
+- | 60068-2-30) | Magnetic pick-up
+- | Vibration | 5-25 Hz, ± 1.6 mm
+- | Voltage input range | 2 | Vpk-pk to 50 Veff
+- 25-100 Hz, a = 4 g
+- | Shocks | a = 200 m/s2
+- | Frequency input | 4 Hz to 4kHz
+- range
+- | Voltage measurement | Frequency
+- | measurement | 0.2 %
+- | 3 ph-n Gen voltage | tolerance
+- | Measurement inputs | 3 ph-n Mains voltage/Bus
+- | voltage | Voltage
+- | regulator | output
+- | Measurement range | 277 V | 5 V TTL PWM / ± 10 V DC
+- | Max allowed voltage | 125 % ph-n
+- | Type | with IG-AVRi interface
+- | Accuracy | 1 % of 277 V
+- | 40-70 Hz (accuracy 0.1 Hz) | Speed governor
+- output
+- | Frequency range | 45-55 Hz (accuracy <0.01 Hz)
+- | Voltage | output | ±10 V DC / max.15 mA
+- | Input impedance | 0.6 MΩ ph-ph
+- | Voltage | output
+- | via | ±10 V DC via 10 kΩ resistor /
+- | 0.3 MΩ ph-n | resistor | max . 1 mA
+- | Current measurement | PWM | 500÷3000 Hz / 5V / max. 10 mA
+- | 3 ph Gen current | Communications
+- | Measurement | 1
+- | ph | Neutral/Mains current
+- | inputs | RS232 (1)
+- Direct / Modem / Modbus / ECU
+- | galvanically isolated | non-isolated
+- | Measurement | 1A/5A
+- | range | RS232 (2)
+- non-isolated
+- | Max allowed | 200 % / 200%
+- Direct / Modbus / IG-Display /
+- | continuous current | RS485 (1) | InteliVision 5 /
+- | Accuracy | 2 % of 1 A / 5 A | InteliVision 8, non-isolated
+- | Input impedance | <0.1 Ω | RS485 (2)
+- Direct / Modbus, isolated
+- | Binary inputs | USB port
+- Direct, slave, non- isolated
+- | CAN1 | External modules
+- | Number | 12, non-isolated | 250 kbps, max 200 m, Isolated
+- | Input resistance | 4.7 kΩ
+- Intercontroller and comm extensions
+- | Close/Open | 0-2 V DC close contact | CAN2 | 250 / 50 kbps, max 200 / 1000 m,
+- | indication | >4 V DC open contact
+- Isolated
+- | InteliGen NTC Datasheet | 3
+- | Available | extension modules
+- | Product | Description
+- | Order | code
+- | Inteli IO8/8 | 8 Binary inputs, 8 Binary outputs and 2 Analog outputs packed in a small unit (HW | I-IO8/8
+- switchable to IO16/0)
+- | Inteli AIN8 | 8 Analog inputs (R, I, V) and 1 pulse/frequency input in a small unit | I-AIN8
+- | Inteli AIN8TC | 8 Thermocouple Analog inputs in a small unit | I-AIN8TC
+- | Inteli AIO9/1 | 9 Analog inputs (4x DC, 4x thermocouples, 1x R) in a small unit | I-AIO9/1
+- | IS-AIN8 | 8 Analog inputs packed in a rugged metal unit | IS-AIN8
+- | IGS-PTM | 8 Binary inputs, 8 Binary outputs, 4 Analog inputs and 1 Analog output in a unit
+- IGS-PTM
+- | IGL-RA15 | 15 Binary LED output (3 colors) packed in a rugged metal unit | IGL-RA15
+- | I-AOUT8 | 8 Analog outputs packed in a rugged metal unit | I-AOUT8
+- | InternetBridge-NT | Multiple Internet connections (PC and Modbus) to all controllers on CAN2 or RS485
+- IB-NT
+- | I-LB+ | Direct connection (PC) to all controllers on CAN2 or RS485
+- I-LB+
+- Related products
+- Order code
+- | InteliVision 5 | Color 5.6" display for monitoring and control | INTELIVISION 5
+- | InteliVision 8 | Color 8" display for advanced monitoring, control & trending, USB capable | INTELIVISION 8
+- | InteliVision 12Touch | Color 12" touch display for advanced monitoring, control & trending, USB capable | RD1IV12TBZH
+- Functions and protections
+- | The described product fully supports the following functions and protections as defined by ANSI | (American
+- National Standards Institute):
+- | Description | ANSI
+- | code | code
+- | Synchronism | 25
+- | Excitation loss | 40
+- | Earth fault current | 51N+64
+- | Overfrequency | 81H
+- | check | IDMT
+- | Undervoltage | 27
+- | Current unbalance | 46
+- | Power factor | 55
+- | Underfrequency | 81L
+- | Overload | 32
+- | Temperature | 49T
+- | Overvoltage | 59
+- | ROCOF | 81R
+- monitoring
+- | Load shedding | 32P
+- | Generator | 50
+- | Gas (fuel) level | 71
+- overcurrent
+- | Reverse power | 32R
+- | Earth fault current | 50N+64
+- | Vector shift | 78
+- | Undercurrent | 37
+- | Overcurrent (IDMT) | 51
+- | AC reclosing | 79
+- Certificates and standards
+- | EN 60068-2-6 ed.2:2008 | EN 60068-2-64
+- | EN 60068-2-27 ed.2:2010 | EN 61010-1:2003
+- EN 60068-2-30:2005
+- 25/55°C, RH 95%, 48hours
+- | All | certificates and standards are available
+- | on: | https://webstore.iec.ch/
+- E-mail: info@comap-control.com
+- © ComAp. Features and specification are subject to change without prior notice.
+
+### InteliGen — datasheet của InteliGen NTC (nhà cung cấp ghi InteliGen: cần xác nhận đời) — supplierId: comap, n: 1007
+- InteliGen NTC
+- BaseBox
+- Order code: IG-NTC-BB
+- Gen-set Controller
+- | Product description | Extensive built-in protection functions
+- | Comprehensive paralleling gen-set controller | Standard protections
+- | Parallel operation up to 32 gen-sets | User configurable protection
+- | High level control for complex systems | Extendable with ComAp's extension modules
+- | CHP and gas engine controller | Application overview
+- Key features
+- Extended communication capabilities
+- Full Modbus slave support
+- GPS and AirGate support and more
+- Active e-mail messaging and SMS
+- | | InteliGen NTC BaseBox Datasheet | | Related HW ver: 2.0 | | Related SW ver: 3.3.0 | | Date of issue: 5/4/2022
+- | Power supply range | 8-36 V DC
+- | Number | 16, non-isolated
+- | Power supply drop- | 20 ms (from 8 V)
+- | Max current | 0.5 A (2 A per group)
+- | out immunity | group1: BO1-8; group2: 9-12
+- | 0.4 A / 8 VDC | Switching to
+- Negative/positive supply terminal
+- | Power consumption | 0.15 A / 24 VDC
+- Analog inputs
+- 0.1 A / 36 VDC
+- | 10 years | Number | 4, non-isolated
+- | RTC battery | (replaceable by official service)
+- | Type | Current)
+- | Fusing | 2
+- A (without BOUT consumption)
+- | Max. Power | Resolution | 10 bits, max 4 decimals
+- | Dissipation | 16 W
+- | Operating conditions | Input impedance | >100 kΩ / >100 kΩ / 180 Ω
+- ±1 % of meas. value ±5 mV
+- | Operating | -40 ˚C to +70 ˚C
+- | temperature | ±1 % of meas value ±0.5 mA
+- | Storage temperature | -40 ˚C to +80 ˚C
+- | 2000 m above sea level | Magnetic pick-up
+- | Max. operating | 4000 m above sea level for
+- | Voltage input range | 2
+- | Vpk-pk | to | 50 Veff
+- | altitude | max Ph-Ph voltage 400V AC
+- | Frequency input | 4 Hz
+- | to | 15 kHz
+- | Operating humidity | 95 % w/o condensation
+- | 5-25 Hz, ±1.6 mm | Frequency
+- | Vibration | 25-100 Hz, a = 4 g
+- | Shocks | a=200 m/s2
+- tolerance
+- | Heat radiation | 16 W
+- Voltage regulator output
+- | Voltage measurement | Type | 5 V TTL PWM / ±10 V DC with IG-
+- | 3 ph-n Gen voltage | AVRi interface
+- | Measurement inputs | 3
+- | ph-n Mains voltage/Bus voltage | Speed governor
+- | Measurement range | 110V / 277V
+- | Voltage | output | ±10 V DC / max. 10 mA
+- | via | ±10 V DC via 10 kΩ resistor / max . 1
+- | Accuracy | 1 % of 110V / 277V
+- | resistor | mA
+- | 40-70 Hz (accuracy 0.1 Hz) | PWM | 500÷3000 Hz / 5 V / max. 10 mA
+- Frequency range
+- | 45-55 Hz (accuracy <0.01 Hz) | Communications
+- | Input impedance | 0.6 MΩ ph-ph, 0.3 MΩ ph-n
+- | RS232 | Direct / Modbus, non-isolated
+- | Current measurement | RS485
+- | 3 ph Gen current | Non-isolated RS485, only terminal
+- | Measurement inputs | 1 ph Mains current
+- | Display port | connection
+- | galvanically isolated | USB port
+- Direct, Isolated
+- | Measurement range | 1A/5A
+- galvanically isolated
+- | Max allowed | 200 % / 200 %
+- | Ethernet port | LAN/Internet, Modbus TCP,
+- | continuous current | AirGate
+- | Accuracy | 2 % of 1 A / 5 A | External modules, 250 kbps, max
+- | Input impedance | < 0.1 Ω | CAN1 | 200 m, Isolated
+- | Binary inputs | Intercontroller and comm extensions,
+- | CAN2 | 250 / 50 kbps, max 200 / 1000 m,
+- | Close/Open | 0-2 V DC close contact
+- | InteliGen NTC BaseBox Datasheet | 2
+- Dimensions, terminals and mounting
+- | Panel door mounting | DIN-rail mounting
+- Panel door mounting
+- | with InteliVision 5 | with InteliVision 8
+- ① InteliVision5
+- ② InteliGenNTC-BaseBox
+- ③ DIN-rail
+- ④ InteliVision 8
+- Note: InteliGenNTC BaseBox can be mounted on a standard DIN rail or, in combination with InteliVision 5 or
+- InteliVision 8, it can be door mounted. InteliVision 5 features mounting rail for direct mounting. Mounting in
+- combination with InteliVision 8 uses four screws provided in the InteliGenNTC BaseBox package.
+- | InteliGen NTC BaseBox Datasheet | 3
+- | Available | Extension modules
+- | 8 Binary inputs, 8 Binary outputs and 2 Analog outputs in a small unit (HW | switchable
+- | to | IO16/0) | I-IO8/8
+- Inteli IO8/8
+- | HW switchableto IO16/0 - 16 Binary inputs packed in a small unit | I-IO8/8
+- | IGS-PTM | 8 Binary inputs, 8 Binary outputs, 4 Analog inputs and 1 Analog output in a
+- | unit | IGS-PTM
+- | IB-NT | Communication Module with Cellular/Ethernet Connection
+- | InteliVision 18Touch | Color 18“ touchscreen display designed for complete monitoring and control of multiple | RD31840PBIE
+- controllers or cogeneration installation.
+- | ECON-4 | Digital speed governor dedicated for speed control of gas or diesel engines. | ECON-4
+- | The product fully supports functions and protections as defined by ANSI (American National Standards | Institute).
+- Examples are bellow. Other functions can be found in the IGS-NT Reference guide.
+- Support of functions and protections as defined by ANSI (American National Standards Institute):
+- | Description | ANSI code
+- | Master unit | 1
+- | Voltage unbalance | 47
+- | Stopping device | 5
+- | Incomplete sequence relay | 48
+- | Multi-function device | 11
+- | Overcurrent | 50/50TD
+- | Overspeed | 12
+- | Earth fault | 50G
+- | Underspeed | 14
+- | Overcurrent IDMT | 51
+- | Starting-to-running transition | contractor | 19
+- | AC circuit breaker | 52
+- | Synchronizing-check | 25
+- | Thermal relay | 26
+- | Pressure switch | 63
+- | Liquid level switch | 71
+- | Annunciator | 30
+- | Alarm relay** | 74
+- | Overload(real power) | 32P
+- | Reclosing relay | 79
+- | Overfrequaency | 81O
+- | Master sequence device | 34
+- | Underfrequency | 81U
+- | Unit sequence starting * | 44
+- | Auto selective control/transfer | 83
+- | *MINT | **Extension module | IGL-RA15 required
+- | EN 60068-2-30, May 2000 | EN 60068-2-30:2005 | 25/55°C,
+- RH
+- 95%, 48hours
+- | List | of
+- standards is available on: https://webstore.iec.ch/
+- Manufacturer:
+- ComAp a.s.
+- | Czech Republic | E-mail: info@comap-control.com
+- | Phone: +420 246 | 012 | 111
+- | © | ComAp.
+- | Features | and
+- | specification | are
+- | subject | to
+- | change | without prior notice.
+
+### InteliGen — datasheet của InteliGen 500 (nhà cung cấp ghi InteliGen: cần xác nhận đời) — supplierId: comap, n: 1008
+- InteliGen 500 G2
+- Order code: IG4500XXBAA
+- | Controller | for multiple gen-set applications
+- Datasheet
+- Product description
+- | A paralleling controller with 5" colour display for advanced and more | Modbus Client which can initiate Modbus communication and
+- | complex diesel gen-set applications, supporting both single and multiple | control 3rd party devices*
+- | gen-sets running in grid-tied or island operations. | Built-in PLC interpreter with the use-to-use PLC Editor
+- | Key benefits | Remote connection and monitoring
+- | Great flexibility and wide range of applications support | AirGate 2.0 for easy connection to your equipment remotely,
+- | User-defined protections and setpoints, large PLC interpreter | without worrying about your asset’s IP address
+- | and easy extendability using SW key features | WebSupervisor—the cloud-based tool for fleet management
+- | Comunication capabilities and protocols | User-defined protections and setpoints on top of default
+- | In-built USB host/device, CAN, RS485 and Ethernet ports | parameters
+- | Modbus RTU/TCP, SNMP v1, v2c and v3, J1939 | Compatible load/Var sharing and power management with
+- | Cyber security by design to protect your business | other ComAp solutions
+- | Requirements of ISA 62443 level 2-3 by design | Slots for plug-in modules for 4G and GPS, additional Ethernet port,
+- | Key features | RS232/485 connection or additional binary inputs/outputs
+- | Support for installations with the option for cooperation with up to 32 | Application overview
+- gen-sets/mains/tie controllers
+- Keeping your business and data as safe as possible, meeting the
+- ISA 62443 level 2 - level 3 security requirements
+- User access management with 10 unique user accounts with
+- individual roles
+- StageV and Tier4Final ready by default
+- Multi ECU for communication with more J1939 devices such as
+- engine ECUs, digital AVR etc.
+- | Start-up synchronisation to minimise start sequence time and | get
+- the gen-set system up minimum possible delay
+- PV control supporting small hybrid microgrid (HMG) sites*
+- Faster and cost-effective operations with signal sharing over a
+- CAN bus across a group of control units*
+- *Extended feature (SW key required)
+- | | InteliGen 500 G2 Datasheet | | Related HW ver: 01.02.00 | | Related SW ver: 2.5.1 | | Date of issue: 7/17/2026
+- Dimensions, terminals and mounting
+- Plug-in module
+- Note: Dimension "x" depends on a plug-in module
+- Note: Dimensions are in millimeters.
+- Note: The final depth of the controller depends on the selected plug-in module – it can vary between 47 mm and "x" mm.
+- Mind also the size of connectors and cables (e.g. in case of RS232 connector, add about 60 mm more for standard
+- RS232 connector and cable).
+- Note: The controller is mounted into panel doors as a standalone unit using provided holders. The requested cutout size
+- is 187 × 132 mm. Use the screw holders delivered with the controller to fix the controller into the door.
+- | InteliGen 500 G2 Datasheet | 2
+- Technical data
+- | Power supply | Communications
+- | Power supply range | 8-36 VDC
+- | USB Device | Non-isolated type B connector
+- | Power consumption | USB Host
+- Non-isolated type A connector
+- | (without modules) | RS485
+- Isolated
+- | RTC battery | Socketed CR1632 (3 V)
+- | Ethernet | 10/100 Mbit
+- | Fusing power | 5 A / 6 × 0.5 A BOUT | Isolated, nominal impedance 120 Ω
+- | E-Stop fusing | 2A | CAN 1 + CAN 2 | CAN1: 250/125 kbps, CAN2: 250/125/50
+- | Max. Power Dissipation | 10 W
+- kbps
+- Modbus RTU/TCP
+- | Operating conditions | Protocols | SNMP v1/v2c/v3
+- | Protection degree (front | J1939
+- | panel) | IP 65
+- AC Current measurement
+- | Operating temperature | -30 ˚C to | +70
+- | ˚C | (-40 °C to +70 ˚C)*
+- | Measurement inputs | 3ph Gen current, 1ph Mains current
+- | Storage temperature | -30 ˚C to +80 ˚C
+- | 95 | % non-condensing
+- | Measurement range | 5A
+- | Operating humidity | (EN 60068-2-30)
+- | Max. allowed current | 10 A
+- | 5-25 Hz, ± 1.6 mm | Accuracy | ±20 mA for 0-2 A; 1 % of value for 2-5 A
+- | Vibration | 25-100 Hz, a = 4 g
+- | Input impedance | <0.1 Ω
+- | Shocks | a = 500 m/s2
+- E-Stop
+- | Surrounding air temperature | rating 70 °C
+- Dedicated terminal for safe E-Stop input.
+- | Suitable for pollution degree | 2 | Physical supply for binary outputs 1 & 2.
+- | D+ | Binary inputs
+- | Max. output current | 250 mA
+- | Number | 8, non-isolated
+- | Charging fail threshold | Adjustable | 0-2 VDC close contact
+- | AC Voltage measurement | Close/Open indication | 6-36 VDC open contact
+- | Measurement inputs | 3ph-n Gen voltage , 3ph-n Mains
+- Binary outputs
+- | 277 V AC / 480 V AC (EU) | Number | 8, non-isolated
+- | Measurement range | 346 V AC / 600 V AC (US/Canada)
+- | Max. current | BO 1-8 = 0.5 A
+- | Linear measurement | 350 V AC Ph-N
+- | Switching to | positive supply terminal
+- | and protection range | 660 V AC Ph-Ph
+- | Accuracy | 1%
+- | DC Analog | inputs
+- | Frequency range | 30-70 Hz (accuracy 0.01 Hz, resolution
+- | Number | 4, switchable (R/U/I)
+- | 0.001 Hz) | Range | R = 0-2500 Ω; U = 0-10 V; I = 0-20 mA
+- | Input impedance | 0.72 MΩ ph-ph , 0.36 MΩ ph-n | R: ±2 % from value ±5 Ω in range 0-250 Ω
+- | Voltage regulator output | Accuracy | R: ±4 % from value in range 250 Ω-2500 Ω
+- | Isolation | Isolated | U: 1 % from value ±100 mV
+- I: 1 % from value ±0.2 mA
+- | Type | max ±10 V DC
+- | Speed governor output | +5 V Power supply output
+- | Max. current | 100 mA
+- | Isolation | Non-isolated
+- | Output Type | ±10 V DC or 5 V @ 500 Hz
+- Magnetic pickup
+- | Display | 4 Vpk-pk to 50 Vpk-pk in range 4 Hz to 1 kHz
+- | Voltage input | 6 Vpk-pk to 50 Vpk-pk in range 1 to 5 kHz
+- | Type | Build-in colour TFT 5"
+- range
+- 10 Vpk-pk to 50 Vpk-pk in range 5 to 10 kHz
+- | Resolution | 800 × 480 px
+- Frequency input
+- | range | 4 Hz to 10 kHz
+- Frequency
+- | measurement | 0.2 % from measured value
+- tolerance
+- Note: *) If the device is powered on above -30 °C.
+- | InteliGen 500 G2 Datasheet | 3
+- | Available plug-in | modules
+- | Product | Description
+- Order code
+- | CM-RS232-485 | Dual port interface | CM223248XBX
+- | CM2-4G-GPS | 4G & GPS plug-in communication module | CM24GGPSXBX
+- | CM3-Ethernet | Internet / Ethernet plug-in communication module | CM3ETHERXBX
+- | EM-BIO8-EFCP | 8 additional binary inputs/outputs | EM2BIO8EXBX
+- Note: Controller has 2 slots for plug-in modules.
+- | Available CAN | modules
+- | IGL-RA15 | CAN remote annunciator with 15 LEDs | EM2IGLRABAA
+- | Inteli AIN8 | CAN module with 8 analog inputs | I-AIN8
+- | Inteli IO8/8 | CAN module with 8 binary inputs and 8 binary outputs | I-IO8/8
+- | IGS-PTM | CAN module with 8 binary inputs, 8 binary outputs, 4 analog inputs and 1 analog
+- | output | IGS-PTM
+- | Inteli AIN8TC | CAN module with 8 analog inputs dedicated for thermocouple sensors only. | I-AIN8TC
+- | Inteli AIO9/1 | CAN module with analog inputs and outputs – designed for DC measurement. | I-AIO9/1
+- | I-CR | CAN Repeater Module.
+- I-CR
+- | I-CR-R | CAN Redundancy Module.
+- I-CR-R
+- | Available | external
+- displays
+- | InteliVision | 5.2 | 5" TFT external display with 800 × 480 px resolution. | RD2IV5BXBAA
+- | InteliVision | 10Touch | 10.1" display unit for ComAp controllers with pre-installed
+- | InteliSCADA | display. | RD1IV10TBPF
+- | InteliVision | 13Touch | 13.3" display unit for ComAp controllers with pre-installed
+- | InteliSCADA | display. | RD1IV13TBME
+- | InteliVision | 18Touch | G2 | 18.5" display unit for ComAp controllers with pre-installed
+- | InteliSCADA | Lite. | RD2IV18TBPE
+- | List of Extended | features
+- | Extended feature | Description
+- | IG500 G2 Suite | A bundle of features including large PLC capacity, shared signals over CAN line and more. | SKEFSUITE01
+- | Modbus Client | Modbus Client functionality for integration of 3rd party devices. | SKMODBCLI01
+- | PV Control | The control of small hybrid microgrid sites consisting of a grid connection and a single genset
+- | and | SKEFPVCTRLX
+- photovoltaic (PV) inverters.
+- E-mail: info@comap-control.com
+- © ComAp. Features and specification are subject to change without prior notice.
+- Functions and protections
+- Support of functions and protections as defined by ANSI (American National Standards Institute):
+- | Description | ANSI
+- | code | Description
+- ANSI code
+- | Master unit | 1
+- | Temperature monitoring | 49T
+- | Stopping device | 5
+- | Overcurrent | 50/50TD
+- | Multi-function device | 11
+- | Earth fault | 50G
+- | Overspeed | 12
+- | Breaker failure | 50BF
+- | Underspeed | 14
+- | Overcurrent IDMT | 51
+- | Speed and frequency matching device | 15
+- | Voltage-restrained time overcurrent | 51V
+- | Data communication device | 16
+- | AC circuit breaker | 52
+- | Starting-to-running transition contactor | 19
+- | Power factor | 55
+- | Synchronizing check | 25
+- | Overvoltage | 59
+- | Thermal relay | 26
+- | Aux Overvoltage | 59X
+- | Undervoltage | 27
+- | Pressure switch | 63
+- | Aux Battery Under Voltage | 27X
+- | Liquid level switch | 71
+- | Overload (real power) | 32P
+- | Alarm relay** | 74
+- | Reverse power | 32R
+- | Vector shift | 78
+- | Master sequence device | 34
+- | Reclosing relay | 79
+- | Undercurrent | 37
+- | Overfrequency | 81O
+- | Excitation loss | 40
+- | Underfrequency | 81U
+- | Unit sequence starting* | 44
+- | ROCOF | 81R
+- | Current unbalance | 46
+- | Auto selective control/transfer | 83
+- | Voltage unbalance / Negative sequence | voltage | 47
+- | Regulating device | 90
+- | Incomplete sequence relay | 48
+- | *MINT | ** extension module IGL-RA15
+- required
+- Certifications and standards
+- | EN | 61000-6-2 | EN 60068-2-30 25/55°C, RH 95%, 48hours
+- | EN | 61000-6-4 | EN 60529 (front panel IP65, back side IP20)
+- | EN | 61010-1 | EN 60068-2-14
+- | EN | 60068-2-1 (-20 °C/16 h) | EN 60068-2-78
+- | EN | 60068-2-2 (70 °C/16 h) | UL 6200
+- | EN | 60068-2-6 (2÷25 Hz / ±1,6 mm; 25÷100
+- | Hz | / | 4.0
+- | g) | EN IEC 60255-127
+- | EN | 60068-2-27 (a=500 m/s ; T=6 ms) | EN 60255-27
+- EN 60255-26
+- EN IEC 60255-181
+- EN IEC 60255-1
+
+### InteliGen — datasheet của InteliGen 4 (nhà cung cấp ghi InteliGen: cần xác nhận đời) — supplierId: comap, n: 1009
+- InteliGen4 200
+- Order code: IG4200XXBAA, IG4200XXBLA
+- | Controller | for multiple gen-set applications
+- Datasheet
+- Product description
+- | InteliGen4 200 is a diesel gen-set control unit for common paralleling | User-defined protections and setpoints on top of default
+- | applications supporting both single and multiple gen-sets running in grid-tied | parameters
+- | or island operations. | Compatible load/Var sharing and power management with other
+- | Key benefits | ComAp solutions
+- | Great flexibility to fit all application needs | Slots for plug-in modules for 4G and GPS, additional Ethernet port,
+- | User-defined protections and setpoints, ease-to-use PLC | RS232/485 connection or additional binary inputs/outputs
+- | interpreter and plug-in modules for I/O extension | One hardware for more applications, enabling an easy switch
+- | Comunication capabilities and protocols | between MINT and SPtM application
+- | In-built USB host/device, CAN and RS485 | Possibility to have also mains application in a gen-set
+- | Plug-in modules for ethernet and 4G connectivity | controller
+- | Modbus RTU/TCP, SNMP v1, v2c and v3, J1939 | Event-based and fully configurable history for fast and easy
+- troubleshooting
+- | Cyber security by design to protect your business | Peak shaving for limiting the import from the mains (e.g., due to
+- | Requirements of ISA 62443 level 2-3 by design | higher prices)
+- | Key features | Load shedding ensuring the most important loads are running even
+- | Support for installations with the option for cooperation with up to 32 | when there is a lack of power
+- | gen-sets/mains/tie controllers | Application overview
+- Keeping your business and data as safe as possible, meeting the ISA
+- 62443 level 2 - level 3 security requirements
+- User access management with 4 unique user accounts with
+- individual roles
+- StageV and Tier4Final ready by default
+- Multi ECU for communication with more J1939 devices such as
+- engine ECUs, digital AVR etc.
+- Built-in PLC interpreter with the easy-to-use PLC Editor
+- Remote connection and monitoring
+- AirGate 2.0 for easy connection to your equipment remotely,
+- without worrying about your asset’s IP address
+- WebSupervisorcloud-based tool for fleet management
+- | | InteliGen4 200 Datasheet | | Related HW ver: 2.0 | | Related SW ver: 2.2 | | Date of issue: 1/30/2025
+- Dimensions, terminals and mounting
+- Plug-in module
+- Note: Dimension "x" depends on a plug-in module
+- Note: Dimensions are in millimeters.
+- Note: The final depth of the controller depends on the selected plug-in module – it can vary between 47 mm and "x" mm.
+- Mind also the size of connectors and cables (e.g. in case of RS232 connector, add about 60 mm more for standard
+- RS232 connector and cable).
+- Note: The controller is mounted into panel doors as a standalone unit using provided holders. The requested cutout size
+- is 187 × 132 mm. Use the screw holders delivered with the controller to fix the controller into the door.
+- | InteliGen4 200 Datasheet | 2
+- Technical data
+- | Power supply | Communications
+- | Power supply range | 8-36 VDC
+- | USB Device | Non-isolated type B connector
+- | Power consumption | USB Host
+- Non-isolated type A connector
+- | (without modules) | RS485
+- Isolated
+- | RTC battery | Replaceable (3 V) | Isolated, 250 / 50 kbps,
+- | CAN 1 + CAN | 2 | Terminator impedance 120 Ω
+- | Fusing power | 4
+- BOUT consumption
+- | E-Stop fusing | 10 A
+- Modbus RTU/TCP
+- | Max. Power Dissipation | 9W
+- | Protocols | SNMP v1/v2c/v3
+- | Operating conditions | Current measurement
+- | Protection degree (front | IP 65
+- | panel) | Measurement inputs | 3ph Gen current, 1ph Mains current
+- | Operating temperature | -20 ˚C to +70 ˚C
+- | Measurement range | 5A
+- | Operating temperature | Max. allowed current | 10 A
+- | for Low Temp. version | -40 ˚C to +70 ˚C
+- | Accuracy | ±20 mA for 0-2 A; 1 % of value for 2-5 A
+- | Storage temperature | -30 ˚C to +80 ˚C
+- | Input impedance | <0.1 Ω
+- | Operating humidity | 95
+- | % non-condensing | E-Stop
+- (EN 60068-2-30)
+- | 5-25 Hz, ± 1.6 mm | Dedicated terminal for safe E-Stop input.
+- | Vibration | 25-100 Hz, a = 4 g | Physical supply for binary outputs 1 & 2.
+- | Shocks | a = 500 m/s2
+- Binary inputs
+- | Surrounding air temperature rating | 70
+- | °C | Number | 8
+- | Suitable for pollution degree 2 | 0-2 VDC close contact
+- | Close/Open indication | 6-36 VDC open contact
+- | Max. output current | 250 mA
+- Binary outputs
+- | Charging fail threshold | Adjustable
+- | Number | 8
+- | Voltage measurement | Max. current | BO1,2=5 A (60 °C); BO1,2=4 A (70 °C),
+- BO3-8=0.5 A
+- | Measurement inputs | 3ph-n Gen voltage , 3ph-n Mains
+- | Switching to | positive supply terminal
+- 10-277 V AC / 10-480 V AC (EU)
+- | Measurement range | 10-346 V AC / 10-600 V AC
+- Analog inputs
+- | (US/Canada) | Number | 4, switchable (R/U/I)
+- | Linear measurement | 350 V AC Ph-N
+- | Range | R = 0-2500 Ω; U = 0-10 V; I = 0-20 mA
+- | and protection range | 660 V AC Ph-Ph | R: ±2 % from value ±5 Ω in range 0-250 Ω
+- | Accuracy | 1% | R: ±4 % from value in range 250 Ω-2500 Ω
+- | Frequency range | 30-70 Hz (accuracy 0.1 Hz)
+- | Accuracy | U: 1 % from value ±100 mV
+- | Input impedance | 0.72 MΩ ph-ph , 0.36 MΩ ph-n | I: 1 % from value ±0.2 mA
+- | Voltage regulator output | +5 V Power supply output
+- | Isolation | Isolated
+- | Max. current | 45 mA
+- | Type | max ±10 V DC
+- Magnetic pickup
+- | Speed governor output | 4 Vpk-pk to 50 Vpk-pk in range 4 Hz to 1 kHz
+- | Voltage input | 6 Vpk-pk to 50 Vpk-pk in range 1 to 5 kHz
+- | Isolation | Non-isolated
+- range
+- | Output Type | ±10 V DC or 5 V @ 500 Hz | 10 Vpk-pk to 50 Vpk-pk in range 5 to 10 kHz
+- | Display | Frequency input | 4 Hz to 10 kHz
+- | Type | Build-in monochromatic 3.2"
+- Frequency
+- | Resolution | 132 × 64 px
+- | measurement | 0.2 % from measured value
+- tolerance
+- | InteliGen4 200 Datasheet | 3
+- | Available plug-in | modules
+- | Product | Description
+- Order code
+- | CM-RS232-485 | Dual port interface | CM223248XBX
+- | CM2-4G-GPS | 4G & GPS plug-in communication module | CM24GGPSXBX
+- | CM3-Ethernet | Internet / Ethernet plug-in communication module | CM3ETHERXBX
+- | EM-BIO8-EFCP | 8 additional binary inputs/outputs | EM2BIO8EXBX
+- Note: Controller has 2 slots for plug-in modules.
+- | Available CAN | modules
+- | IGL-RA15 | CAN remote annunciator with 15 LEDs | EM2IGLRABAA
+- | Inteli AIN8 | CAN module with 8 analog inputs | I-AIN8
+- | Inteli IO8/8 | CAN module with 8 binary inputs and 8 binary outputs | I-IO8/8
+- | IGS-PTM | CAN module with 8 binary inputs, 8 binary outputs, 4 analog inputs and 1 analog
+- | output | IGS-PTM
+- | Inteli AIN8TC | CAN module with 8 analog inputs dedicated for thermocouple sensors only. | I-AIN8TC
+- | Inteli AIO9/1 | CAN module with analog inputs and outputs – designed for DC measurement. | I-AIO9/1
+- | I-CR | CAN Repeater Module.
+- I-CR
+- | I-CR-R | CAN Redundancy Module.
+- I-CR-R
+- Functions and protections
+- Support of functions and protections as defined by ANSI (American National Standards Institute):
+- | Description | ANSI
+- | code | Description
+- ANSI code
+- | Master unit | 1
+- | Incomplete sequence relay | 48
+- | Stopping device | 5
+- | Temperature monitoring | 49T
+- | Multi-function device | 11
+- | Overcurrent | 50/50TD
+- | Overspeed | 12
+- | Earth fault | 50G
+- | Underspeed | 14
+- | Breaker failure | 50BF
+- | Speed and frequency matching device | 15
+- | Overcurrent IDMT | 51
+- | Data communication device | 16
+- | AC circuit breaker | 52
+- | Starting-to-running transition contactor | 19
+- | Power factor | 55
+- | Synchronizing check | 25
+- | Overvoltage | 59
+- | Thermal relay | 26
+- | Aux Overvoltage | 59X
+- | Undervoltage | 27
+- | Pressure switch | 63
+- | Aux Battery Under Voltage | 27X
+- | Liquid level switch | 71
+- | Overload (real power) | 32P
+- | Alarm relay** | 74
+- | Reverse power | 32R
+- | Vector shift | 78
+- | Master sequence device | 34
+- | Reclosing relay | 79
+- | Undercurrent | 37
+- | Overfrequency | 81O
+- | Excitation loss | 40
+- | Underfrequency | 81U
+- | Unit sequence starting* | 44
+- | ROCOF | 81R
+- | Current unbalance | 46
+- | Auto selective control/transfer | 83
+- | Voltage unbalance / Negative sequence | voltage | 47
+- | Regulating device | 90
+- | *MINT | ** extension module IGL-RA15
+- required
+- Certifications and standards
+- | EN | 61000-6-2
+- | EN | 60068-2-30:2005 25/55°C, RH 95%, 48hours
+- | EN | 61000-6-4
+- | EN | 60529 (front panel IP65, back side IP20)
+- | EN | 61010-1
+- | UL | 6200
+- | EN | 60068-2-1 (-20 °C/16 h)
+- | EN | 60068-2-2 (70 °C/16 h)
+- | EN | 60068-2-6 (2÷25 Hz / ±1,6 mm; 25÷100
+- | Hz | / | 4.0
+- | EN | 60068-2-27 (a=500 m/s ; T=6 ms)
+- E-mail: info@comap-control.com
+- © ComAp. Features and specification are subject to change without prior notice.
+
+### InteliGen — datasheet của InteliGen 1000 (nhà cung cấp ghi InteliGen: cần xác nhận đời) — supplierId: comap, n: 1013
+- InteliGen
+- Order code: IG31000XBBB
+- | Datasheet | Gen-set
+- controller for complex applications
+- | Product description | CAN bus redundancy ensuring that a redundant CAN line
+- be created and take over in case of CAN failure*
+- | InteliGen 1000 is the most advanced gen-set controller for | Compliant with international grid codes
+- multiple gen-sets with paralleling operations, with or without
+- | connection to the mains or other source. Intended primarily for | European EN 50549, including national implementations
+- | complex applications, this high-end controller will help you | as VDE-AR-N 4110:2018, VDE-AR-N 4105:2018, G99,
+- | control and monitor demanding projects with critical | TÖR, American IEEE 1547 and others
+- | infrastructures such as data centers, hospitals and banks. | Compatible load/VAr sharing and power management
+- with other ComAp solutions
+- | Key benefits | Several load transfer options with possibility of less than
+- | Great flexibility for the most complex applications | 100 ms load transfer
+- | Large in-built PLC interpreter, user-defined protections | Multi ECU (Electronic Control Unit) for communication with
+- | and parameters and easy extension via plug-in modules, | more independent J1939 devices such as engine ECUs,
+- | CAN modules and SW key features | digital AVRs, breakers, etc.
+- | Ready for mission critical installations | In-built CAN bus logger and event-based history for easy
+- | Inter-controller communication and controller | and fast troubleshooting
+- | redundancy | Start-up synchronisation to minimize start sequence time
+- | Communication capabilities and protocols | and get the gen-set system up with minimal possible delay
+- | USB, 4 CAN ports, 3 ethernet ports, RS485 | Remote connection and monitoring
+- | Modbus Client/Server over RTU/TCP, SNMP v1, v2c | AirGate 2.0—easy connection to your equipment
+- | and v3, J1939 | remotely, without worrying about your asset's IP address
+- | Cyber security by design to protect your business | WebSupervisior—the cloud-based tool for fleet
+- monitoring
+- Meeting requirements of ISA 62443 level 2-3
+- | Key features | Application overview
+- CAN FD communication protocol enabling cooperation
+- with up to 64 gen-sets/mains/tie controllers
+- State of the art AC accuracy measurements to
+- participate on primary frequency control mechanism, grid
+- balancing and demand response projects
+- Hot-swap redundancy enabling a redundant unit to take
+- over in case the primary controller fails, helping to minimize
+- solution downtime*
+- *Extended feature (SW key required)
+- | | InteliGen 1000 4.1.0 Datasheet | | Related HW ver: 1.1.1 | | Related SW ver: 4.1.0 | | Date of issue: 9/4/2026
+- | Terminals and | dimensions
+- | InteliGen 1000 4.1.0 Datasheet | 2
+- | Technical data | Speed governor
+- output
+- | Protection | Basic isolation
+- | Power supply | Type
+- | Switchable: | U | ±10 | V, I ±20 mA, PWM: 0 V/5 V
+- | Power supply range | 8-36 V DC | U: 1 % from value ±100 mV
+- | Power consumption | 16 W
+- | Accuracy | I: 1 % from value ±200 uA
+- | RTC battery | Replaceable, type CR1632 3V
+- Magnetic pick-up
+- | Fusing power | 8A
+- | 2.5 | A | Controller + 10 x 0.5 A BOUTs
+- | Minimum input | 4 V pk-pk to 50 V pk-pk in range 4 Hz to 1 kHz
+- | Consumption | @ 8 V
+- voltage
+- | Fusing E-STOP | 2A
+- | Working voltage | 6 V pk-pk to 50 V pk-pk in range 4 Hz to 5 kHz
+- | range | 10 V pk-pk to 50 V pk-pk in range 4 Hz to 10 kHz
+- | Max. Heat Dissipation | 16 W
+- Frequency input
+- | D+ | range | 4 Hz to 10 kHz
+- | Max. excitation current | 250 mA
+- Frequency
+- | measurement | 0.2 % from range 10 kHz
+- | Charging fail threshold | 0 .. 100 % of voltage supply
+- tolerance
+- | Operating conditions | AC Current measurement
+- | Operating temperature | -40 °C to +70 °C | 3 phase Generator current
+- | Storage temperature | -40 ˚C to +80 ˚C
+- | Measurement inputs | 1 phase Mains current (Aux current)
+- | Operating humidity (norm | 25/55°C, | 48hours,95 % non-
+- | Measurement range | 1A/5A
+- | 60068-2-30) | condensing
+- Maximum
+- | (EN 60068-2-30) | continuous current | 2 A / 10 A
+- | Protection degree | IP20
+- | Allowed overload | 18 A for 15 sec.
+- | (enclosure) | ±3 mA / ±15 mA for 0.0 to 0.4 A / 0.0 to 2.0 A
+- | 5-25 Hz, ± 1.6 mm | Accuracy | 0.75 % of value for 0.4 to 1.0 A / 2.0 to 5.0 A
+- | Vibration | 25-100 Hz, a = 4 g
+- 33-67 Hz (accuracy 0.002 %)
+- | Shocks | a = 500 m/s2
+- Frequency range
+- | Surrounding air temperature rating | 70
+- | °C. | Sampling frequency | 6.4kHz (50Hz) / 7.68kHz (60Hz)
+- | Suitable for pollution degree 2. | Input impedance | < 0.1 Ω
+- | E-Stop | AC Voltage measurement
+- | Dedicated terminal for safe Emergency Stop input. | Measurement | 3 phase Generator voltage
+- | Physically disconnects BO 1 & BO 2 from power supply. | inputs | 3 phase Mains voltage
+- | Binary inputs | Nominal: 115 V L-N / 200 V L-L
+- suitable also for VT output, VT not present
+- | Number | 12, non-isolated | Maximal: 144 V L-N / 249 V L-L
+- | Close/Open | 0-2 V DC close contact
+- | Measurement | Nominal: 230 V L-N / 400 V L-L
+- | indication | 6-36 V DC open contact
+- | range | Maximal: 289 V L-N / 500 V L-L
+- | Configurable | Pull-up / Pull-down | Nominal (UL, cUL): 347 V L-N / 600 V L-L
+- | Pulse input | Bin 9 and 10 max. 50 Hz | Maximal: 433 V L-N / 750 V L-L
+- | Accuracy | 0.25 %
+- | Binary outputs | 33-67 Hz (accuracy 0.002 %)
+- | Number | 12, non-isolated | 267-520 Hz (accuracy 0.01 %)
+- | Max. current | 0.5 A
+- | Sampling | 6.4kHz (50Hz)
+- | frequency | 7.68kHz (60Hz)
+- | Switching to | Positive supply terminal
+- | Input impedance | 0.68 MΩ L-L , 0.34 MΩ L-N
+- | DC Analog | inputs
+- | Upper- | Active Low-Pass filter
+- | harmonics | Cutoff frequency 3100Hz (-3bB)
+- | Number | 4, switchable (R/U/I)
+- filtering
+- | Range | R | = 0-10000 Ω; U = 0-10 V; I = 0-20 mA
+- | Measurement category | CAT III, overvoltage category III
+- | R: 2 % from value for 0-250 Ω | Communications
+- R: 4% from value for 250-2500 Ω
+- | Accuracy | R: | 6 % from value for 5000-10000 Ω
+- | USB Device | Basic isolation, USB type B
+- | U: 1% from value ±100 mV | RS 485
+- Basic isolation
+- | I: 1% from value ±200 uA | ETH1 / ETH2
+- | ETH3 | 10/100 Mbit
+- | Voltage regulator | output
+- | CAN1A / CAN2A | Basic isolation, nominal impedance 120 Ω
+- | Protection | Reinforced isolation | CAN1 data rate: 500/250/50 kbps
+- | Type | Switchable:
+- | V, | I ±20 mA, PWM: 0 V/5 V | CAN1B / CAN2B | CAN2 | data rate: 2000/1000/400/250/125/50 kbps
+- | Accuracy | U: | 1 % from value ±100 mV
+- Modbus RTU/TCP
+- | I: | 1 % from value ±200 uA
+- | Protocols | SNMP v1/v2c/v3
+- Weight
+- | Controller / Package | 750 g / 920 g
+- | InteliGen 1000 4.1.0 Datasheet | 3
+- | Available plug-in | modules
+- | Product | Description
+- Order code
+- | *EM-BIO8-EFCP | Binary I/O plug-in module with 8 binary inputs or outputs. | EM2BIO8EXBX
+- | CM-4G-GPS | An easy-to-use and efficient solution for connecting controllers online via 4G. | CM24GGPSXBX
+- | CM-RS232-485 | Communication module for integration of controllers into a local monitoring system. | CM223248XBX
+- RS-232 terminal is not supported..
+- | CM-EICC | Communication module for Intercontroller Communication over the Ethernet. | CM3ETHERICC
+- Note: Controller has 2 slots for plug-in modules.
+- Note: Plug-in modules are supported on controller HW version 01.01.xx or HW type PCB 7, and higher.
+- Note: *EFCP is already included on the CU as aux current measurement, EFCP on BIO8 module is not supported.
+- Available extension modules
+- | Inteli AIN8 | CAN module with 8 analogue inputs and 1 RPM/impulse input. | I-AIN8
+- | Inteli AIN8TC | CAN module with 8 analog inputs for termocouples measurement. | I-AIN8TC
+- | Inteli AIO9/1 | CAN module with 9 analog inputs and 1 analog output. | I-AIO9/1
+- | Inteli IO8/8 | CAN module with 8 binary inputs and 8 binary outputs, or 16 binary inputs. | I-IO8/8
+- | IGS-PTM | CAN module with 4 analog inputs, 1 analog output, 8 binary inputs and 8 binary
+- IGS-PTM
+- outputs.
+- | I-AOUT8 | CAN module with 8 analog outputs. | I-AOUT8
+- | IS-AIN8 | CAN module with 8 analog inputs. | IS-AIN8
+- | IGL-RA15 | Remote annunciator with 15 programmable LEDs | EM2IGLRABAA
+- | ECON 4 | Digital speed governor dedicated for speed control of gas or diesel engines. | ECON-4
+- | InteliGateway | 100
+- | A communication gateway for connection of multiple Modbus devices to | CM2GW100BAB
+- WebSupervisor and InteliScada monitoring systems.
+- | InteliGateway | 101 | Similar as InteliGateway 100 with 4G cellular connectivity and GNSS capability. | CM2GW101BAB
+- | InteliGateway | 300
+- | A communication gateway for connection of multiple Modbus devices to | CM2GW300BAB
+- WebSupervisor and InteliScada monitoring systems and to ComAp controllers.
+- | InteliGateway | 301 | Similar as InteliGateway 300 with 4G cellular connectivity and GNSS capability. | CM2GW301BAB
+- | I-CR | CAN repeater module, compatible with 32C/8C CAN intercontroller communication
+- I-CR
+- modes (CAN FD not supported).
+- | I-CR-R | CAN redundancy module (CAN FD not supported).
+- I-CR-R
+- Available remote displays
+- | InteliVision | 5.2 | 5" TFT external display with 800x480 px resolution. | RD2IV5BXBAA
+- | InteliVision | 10Touch | 10.1" display with pre-installed InteliSCADA - Display Pro+. | RD1IV10TBPF
+- | InteliVision | 1050 | New 10.1" industrial panel PC with pre-installed InteliSCADA - Display Lite. | RD21050XBGA
+- | InteliVision | 13Touch | 13.3" Marine certified display with pre-installed InteliSCADA - Display Pro+. | RD1IV13TBME
+- | InteliVision | 1550 | New 15.6" industrial panel PC with pre-installed InteliSCADA - Display Pro+. | RD11550XBGA
+- | InteliVision | 18Touch | G3 | 18.5" panel PC with pre-installed InteliSCADA - Display Lite. | RD3IV18TBPE
+- Available simulators
+- | InteliGen 1000 + IV 5.2 | Portable simulator with a InteliGen 1000 gen-set controller and one InteliVision | SM4IG1K5BAB
+- | StarterKit | 5.2 colour display.
+- E-mail: info@comap-control.com
+- © ComAp. Features and specification are subject to change without prior notice.
+- | Available extended | features
+- | Extended Feature | Description
+- Order Code
+- | Modbus Client | Modbus client functionality for integration of 3rd party devices. | SKMODBCLI01
+- | CAN2 bus redundancy | Inter-controller CAN redundancy to maintain communication between | SKREDCAN201
+- controllers if the primary CAN bus fails.
+- | Controller Hot swap | Hot swap feature allows for a redundant/backup unit to take over control in | SKHOTSWAP01
+- case a primary controller fails.
+- | PLC Package 1 | Enhanced PLC capacity and number of PLC blocks. | SKPLCPCKG01
+- | Bank controller | The Bank controller for large scale projects managing up to 63 source
+- SKBANKCNTRL
+- controllers under a single bank controller.
+- | Variable speed generator | It supports direct connection of generators to engines without the need for | SW1VSGXXXXX
+- a variable frequency drive.
+- The Emulation tool allows testing of ComAp solutions in a virtual
+- | Emulation tool | environment without needing real physical machinery (engines,
+- SKEMTOOLXXX
+- generators, etc.).
+- Accessories
+- | Accessories | Description
+- | Mounting bracket | The door panel mounting bracket for InteliGen 1000 and InteliVision 5.2 | OT1MNT01AXX
+- display.
+- Functions and protections
+- Support for functions and protections as defined by ANSI (American National Standards Institute):
+- | Description | ANSI
+- | code | Description
+- | ANSI | code
+- | Description | ANSI code
+- | Master unit | 1
+- | Reverse power | 32R
+- | Earth fault current | IDMT | 51+64
+- | Stopping device | 5
+- | Master sequence device | 34
+- | AC circuit breaker | 52
+- | Multi-function device | 11
+- | Undercurrent | 37
+- | Power factor | 55
+- | Overspeed | 12
+- | Excitation loss | 40
+- | Overvoltage | 59
+- | Underspeed | 14
+- | Unit sequence starting | 44
+- | Pressure switch | 63
+- | Speed and frequency | 15
+- | Current unbalance | 46
+- | Liquid level switch | 71
+- matching device
+- | Data communications | 16EFT
+- | Voltage unbalance | 47
+- | Alarm relay * | 74
+- | device | 16SC
+- | Starting-to-running | 19
+- | Incomplete sequence relay | 48
+- | Vector shift | 78
+- transition contractor
+- | Synchronizing-check | 25
+- | Temperature monitoring | 49T
+- | Reclosing relay | 79
+- | Thermal relay | 26
+- | Overcurrent | 50/50TD
+- | Overfrequency | 81H
+- | Undervoltage | 27
+- | Earth fault current | 50N+64
+- | Underfrequency | 81U
+- | Annunciator | 30
+- | Overcurrent IDMT | 51
+- | ROCOF | 81R
+- | Overload | 32
+- | Voltage controlled | 51C
+- | Auto selective | 83
+- | overcurrent | control/transfer
+- | Load shedding | 32P
+- | Voltage restrained | 51V
+- | Regulating device | 90
+- overcurrent
+- | * | extension module IGL-RA15
+- required
+- Certifications and standards
+- | EN IEC 61000-6-2:2019 | EN 60068-2-1:2007
+- | EN IEC 61000-6-4:2019 | EN 60068-2-2:2007
+- | EN IEC 61010-1:2010/A1:2019/AC:2019-04 | EN 60068-2-6:2007
+- | EN IEC 60255-1:2009 | EN 60068-2-27:2008
+- | EN IEC 60255-26:2013 | EN 60068-2-30:2005
+- | EN IEC 60255-27:2013 | ULC 6200:2019
+- EN IEC 60255-127:2010
+- EN IEC 60255-181:2019
+- EN 60529:1991/A1:2000/A2:2013/AC:2016-12 (IP20)
+- | * ULC 6200:2019 Certified (see the NFL File for the FW version with the Witness test if it is required by the | certification
+- | of | the
+- | end | product)
+- Grid codes certifications
+- The product is compliant with global grid codes, but it is certified for the following standards:
+- EN 50549-1
+- EN 50549-2
+- German VDE-AR-N 4105:2018
+- Austrian TÖR Erzeuger Typ A
+- Austrian TÖR Erzeuger Typ B
+- | © | ComAp. Features and specification are subject to change without prior notice.
+
+### DSE3110 — supplierId: deep-sea-electronics, n: 1006
+- DSEGenset® Data Sheet
+- DSE3110 Manual & Auto Start Control Module
+- Part Number: 3110-01
+- Overview
+- The DSE3110 can be utilised as a manual or auto start module for single gen-set applications or engine only applications. The module has been
+- designed to work with non-electronic engines, providing advanced engine monitoring and protection features.
+- The DSE3110 includes a back-lit icon LCD display which clearly shows the status of the generator set at all times. The module monitors engine speed,
+- frequency, voltage and engine run hours and also displays the warning and shutdown status.
+- The module includes fixed and configurable outputs as well as configurable inputs making this product ideal for a wide variety of applications. The
+- module can either be programmed using the front panel or by using the DSE Configuration Suite PC software.
+- | Key | Features
+- | • | Back-lit icon LCD display
+- | • | Generator frequency display
+- | • | Front panel editing
+- | • | Battery voltage display
+- | • | LED and LCD alarm indication
+- | • | Engine speed display
+- | • | Power save mode
+- | • | Hours counter
+- | • | PC configurable
+- | • | Engine pre-heat
+- | • | 6 digital inputs
+- | • | Comprehensive shutdown or
+- | warning | on
+- | fault | condition
+- | • | 4 outputs (2 configurable and 2
+- | fixed | function)
+- | • | Configurable timers and alarms
+- | • | Alternative configuration
+- | • | Remote start input
+- | • | Generator voltage display
+- Product Documentation
+- | Manual / Auto Start Controller Key Features | Typical Applications
+- | • | Single phase generator sensing with protection
+- | • | Manual starting / control by fascia button and automatic
+- starting / control by inputs and other functions
+- Manual / Automatic Start
+- | DSE3110 Manual | &
+- | Auto Start | Control
+- Module
+- Specifications
+- DC Supply
+- | Continuous Voltage | Rating | 8 V to 35 V continuous
+- | Cranking Dropouts | Able to survive 0 V for 50 ms, providing supply was | at least 10 V
+- before dropout
+- | and supply recovers to 5 V. This is achieved without | the need for
+- internal batteries.
+- Backlight will not be maintained during cranking.
+- | Maximum Operating Current | 76 mA at 12 V, 61 mA at 24 V
+- | Maximum Standby Current | 45 mA at 12 V, 43 mA at 24 V
+- | Charge Alternator Excitation | /
+- | Fail Range | 8 V to 35 V fixed power source 2.5 W
+- Voltage Measurement
+- | Measurement Inputs | 1
+- | Voltage Range | 15 VAC to 333 VAC Phase to Neutral
+- | Frequency Range | 3.5 Hz to 75 Hz
+- | Resolution | ±1 VAC Phase to Neutral 0.1 Hz
+- | Accuracy | ±1% Full Scale Phase to Neutral ±0.2
+- Hz
+- Digital Inputs
+- | Number | 6
+- | Type | Negative Switching
+- | Closed Voltage Threshold | 40% with Respect to
+- | Positive | Supply
+- | Open Voltage Threshold | 60% with Respect to
+- Emergency Stop Input
+- | Number | 1
+- Magnetic Pick-up Input
+- | Voltage Input Range | 0.5 VPeak to | 70 VPeak
+- | Frequency Input Range | 5 Hz to 10
+- kHz
+- | Resolution | 6.25 RPM
+- | Accuracy | ±25 RPM
+- | Flywheel Teeth | 10 to 500
+- | Auto | Start
+- | Control | Module
+- Digital Outputs
+- | Number | 4
+- | Type | Positive Switching
+- | Positive DC Output Rating | 2 A Resistive Continuous at 35 V
+- Communications
+- | USB B | 1 Programmable Port
+- Temperature
+- | Operating Temperature | -30 °C to +70 °C / -22 °F to +158 °F
+- | Storage Temperature | -40 °C to +85 °C / -40 °F to +185 °F
+- Dimensions
+- | Overall (W x H x D) | 99 mm x 79 mm x 41.5 mm / 3.9” x 3.11”
+- Mounting
+- | Type | Panel Fascia Mounting
+- | Panel Cut-Out (W x H) | 80 mm x 68 mm / 3.15” x 2.86”
+- | Maximum Panel Thickness | 8 mm / 0.3”
+- | DSE3110 Manual & Auto | Start
+- Environmental Testing Standards
+- Electro-Magnetic Compatibility
+- | BS EN 61000-6-2 | EMC Generic Immunity Standard for the Industrial Environment
+- | BS EN 61000-6-4 | EMC Generic Emission Standard for the Industrial Environment
+- Electrical Safety
+- | BS EN 61010 | Safety Requirements for Electrical Equipment for Measurement, Control and Laboratory
+- use.
+- | BS EN 60068-2-1 | Ab/Ae Cold Test -30 ºC
+- | BS EN 60068-2-2 | Bb/Be Dry Heat +70 ºC
+- Vibration
+- | BS EN 60068-2-6 | Ten sweeps in each of three major axes
+- 5 Hz to 8 Hz at ±7.5 mm,
+- 8 Hz to 500 Hz at 2 Gn
+- Humidity
+- | BS EN 60068-2-30 | Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+- | BS EN 60068-2-78 | Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+- Shock
+- | BS EN 60068-2-27 | Three shocks in each of three major axes
+- 15 Gn in 11 ms
+- | Degrees of Protection | Provided
+- | by | Enclosures
+- | BS EN 60529 | IP65 - From the front of the module when installed into a control panel (with optional
+- gasket)
+- | DSE3110 | Manual
+- | & | Auto
+- | Start | Control
+- | Part Number: | 3110-01
+- DSE3110
+- | Pin | Description
+- | 1 to 2 | DC Supply
+- | 3 | Fuel
+- | 4 | Start
+- | 5 | Output C
+- | 6 | Output D
+- | 7 | Charge Fail / Excite
+- | 8 | Neutral
+- | 10 to 11 | Magnetic Pick-Up
+- | 12 | Digital Input A
+- | 13 | Digital Input B
+- | 14 | Digital Input C
+- | 15 | Digital Input D
+- | 16 | Digital Input E
+- | 17 | Digital Input F
+- | DSE3110 Manual | & Auto Start
+- | Control | Module | 80 mm
+- | Part Number: 3110-01 | ( 3.15 " )
+- 78.4 mm
+- | Technical Drawing | ( 3.09 " )
+- 41.5 mm
+- 33 mm
+- | 103.8 mm | 33 mm
+- | 66.4 mm | ( 2.62 " ) | 68 mm | ( 2.68 " )
+- | 83.8 mm | ( 3.30 " ) | 66.4 mm
+- Connection Label
+- | Made In UK | 13
+- | 3 | DC Supply : | 8-35 V, 0.5 A
+- | DC Outputs : | 30 V, 2 A
+- | 2 | DC Inputs : | 30 V Max
+- | AC Volts Inputs | : | 277 Vac 50/60 Hz
+- | 1 | CH/ Alternator : | 30 V, 2.5 W Max
+- | CAN Port : | 5 V Max
+- | Mag Pickup : | 70 V, 10 kHz Max
+- | Refer to PIN out description charts | for
+- | connection | information
+- | on | the
+- | operating | mode
+- | controller | is
+- configured for.
+- | Product | Documentation
+
+### HGM6110N — supplierId: smartgen, n: 1001
+- HGM6100N SERIES
+- (HGM6110N/6120N/6110NC/6120NC/6110CAN/6120CAN)
+- GENSET CONTROLLER
+- USER MANUAL
+- +86-371-67981000(overseas)
+- All rights reserved. No part of this publication may be reproduced in any material form (including
+- photocopying or storing in any medium by electronic means or other) without the written permission of
+- the copyright holder.
+- SmartGen reserves the right to change the contents of this document without prior notice.
+- Table 1 – Software Version
+- | Date | Version
+- Note
+- Original Release
+- Changed back panel picture of controller;
+- Modified Insulation Intensity description.
+- | 2018-08-02 | 1.2 | Configuration parameters were added in table 7;
+- Modified front panel drawing and keys description.
+- Added configuration parameters of active power loading
+- percentage;
+- Fixed crank disconnect conditions conforming to the controller;
+- Fixed LCD contrast ratio description;
+- Fixed Table 5 as Shutdown Alarms;
+- | 2020-08-18 | 1.6 | Deleted “Table 5” of “7.5 CONDITIONS OF CRANK DISCONNECT
+- (Table 5)”.
+- | 2020-09-10 | 1.7 | Modified the terminal number of output port 2 of typical
+- application diagrams.
+- Deleted MTU MDEC wiring diagram;
+- Added partial parameters.
+- Updated the Logo of SmartGen.
+- Unified the controller’s name and updated company address
+- information.
+- Added configurations of output port.
+- Modified the description of raise and drop speed and inputs;
+- Modified the description of remote control input;
+- | 2023-10-16 | 2.2 | Added the RS485 baud rate setting and new AC system option
+- (3P4W-ANC) in Table 7;
+- Added new outputs in Table 8: ECU Running Output and Fuel 1
+- Output.
+- CONTENTS
+- | 1 | OVERVIEW .................................................................................................................................................... 5
+- | 2 | PERFORMANCE AND CHARACTERISTICS................................................................................................5
+- | 3 | SPECIFICATION...........................................................................................................................................7
+- | 4 | OPERATION................................................................................................................................................. 8
+- 4.1 KEYS DESCRIPTION...........................................................................................................................8
+- 4.2 CONTROLLER PANEL........................................................................................................................9
+- 4.3 AUTOMATIC START/STOP OPERATION........................................................................................10
+- 4.4 MANUAL START/STOP OPERATION..............................................................................................10
+- 4.5 EMERGENCY START........................................................................................................................11
+- | 5 | PROTECTION.............................................................................................................................................11
+- 5.1 WARNINGS.......................................................................................................................................11
+- 5.2 SHUTDOWN ALARMS......................................................................................................................13
+- | 6 | CONNECTIONS..........................................................................................................................................15
+- | 7 | PARAMETER RANGE AND DEFINITION...................................................................................................18
+- 7.1 PARAMETER CONTENT AND RANGE TABLE................................................................................18
+- 7.2 DEFINED CONTENTS OF PROGRAMMABLE OUTPUT 1-4............................................................24
+- 7.3 DEFINED CONTENTS OF PROGRAMMABLE INPUT 1-5............................................................... 26
+- 7.4 SENSOR SELECTION....................................................................................................................... 28
+- 7.5 CONDITIONS OF CRANK DISCONNECT SELECTION....................................................................29
+- | 8 | PARAMETER SETTING..............................................................................................................................29
+- | 9 | SENSOR SETTING.....................................................................................................................................31
+- | 10 | COMMISSIONING......................................................................................................................................32
+- | 11 | TYPICAL APPLICATION............................................................................................................................33
+- | 12 | INSTALLATION..........................................................................................................................................35
+- 12.1 FIXING CLIPS................................................................................................................................... 35
+- 12.2 OVERALL DIMENSION AND PANEL CUTOUT................................................................................35
+- | 13 | CONNECTIONS OF CONTROLLER WITH J1939 ENGINE.......................................................................37
+- 13.1 CUMMINS ISB/ISBE.........................................................................................................................37
+- 13.2 CUMMINS QSL9...............................................................................................................................37
+- 13.3 CUMMINS QSM11 (IMPORT)..........................................................................................................37
+- 13.4 CUMMINS QSX15-CM570...............................................................................................................38
+- 13.5 CUMMINS GCS-MODBUS................................................................................................................38
+- 13.6 CUMMINS QSM11........................................................................................................................... 39
+- 13.7 CUMMINS QSZ13............................................................................................................................ 39
+- 13.8 DETROIT DIESEL DDEC III/IV.......................................................................................................... 40
+- 13.9 DEUTZ EMR2....................................................................................................................................40
+- 13.10 JOHN DEERE.................................................................................................................................40
+- 13.11 MTU ADEC (SMART MODULE)....................................................................................................40
+- 13.12 MTU ADEC (SAM MODULE).........................................................................................................41
+- 13.13 PERKINS........................................................................................................................................42
+- 13.14 SCANIA..........................................................................................................................................42
+- 13.15 VOLVO EDC3.................................................................................................................................42
+- 13.16 VOLVO EDC4.................................................................................................................................43
+- 13.17 VOLVO-EMS2................................................................................................................................43
+- 13.18 YUCHAI..........................................................................................................................................44
+- 13.19 WEICHAI........................................................................................................................................44
+- | 14 | FAULT FINDING.........................................................................................................................................45
+- | 1 | OVERVIEW
+- HGM6100N series genset controller, integrating digital, intelligent and network techniques, is used
+- for automatic control and monitoring system of single genset. It can carry out functions of automatic
+- start/stop, data measurement, alarm protection and “three remote” (remote control, remote
+- measurement and remote communication). The controller uses LCD display, optional language
+- interface including Chinese, English, Spanish, Russian, Portuguese, Turkish, Polish and French with
+- easy and reliable operation.
+- HGM6100N series genset controller uses micro-processing technique which can achieve precision
+- measurement, value adjustment, timing and threshold setting etc. All the parameters can be configured
+- from front panel or use USB interface (or RS485 interface) to adjust via PC. It can be widely used in all
+- types of automatic control system for its compact structure, simple connections and high reliability.
+- | 2 | PERFORMANCE AND CHARACTERISTICS
+- HGM6100N controller has six variants:
+- | HGM6110N/6110NC/6110CAN: Automatic Start Module, it controls generator | to start/stop
+- by
+- remote start signal;
+- NOTE1: HGM6110NC/6120NC has RS485 port, HGM6110N/6120N without.
+- HGM6110CAN/6120CAN has CAN port, HGM6110N/6120N and HGM6110NC/6120NC without.
+- NOTE2: HGM6110/6120 is taken as an example to describe in this manual.
+- Main characteristics are as following:
+-  132x64 LCD display with backlight, optional language interface (Chinese, English, Spanish, Russian,
+- Portuguese, Turkey, Polish and French), push-button operation;
+-  Acrylic screen, improved wearable and scratch resistance property;
+-  Silica-gel panel and keys can well adapt to higher and lower temperature;
+-  RS485 communication port enables “three remote” functions via MODBUS protocol;
+-  CANBUS port which can be connected to ECU with J1939, it not only can monitor frequently-used
+- data (such as water temperature, oil pressure, speed and fuel consumption, etc.) but also can
+- control start, stop, high speed and low speed (controller with CANBUS port is needed) via CANBUS
+- port;
+-  Adapt to 3P4W, 3P3W, 1P2W and 2P3W (120V/240V), 50Hz/60Hz system;
+-  Can measure and display 3 phase voltage, 3 phase current, frequency, power parameter of
+- mains/gens;
+- | Mains | Generator
+- | Line voltage (Uab, Ubc, and Uca) | Line voltage (Uab, Ubc, and Uca)
+- | Phase voltage (Ua, Ub, and Uc) | Phase voltage (Ua, Ub, and Uc)
+- | Frequency | Hz
+- | Phase sequence | Phase sequence
+- Load
+- | Current | IA, IB, IC
+- Each and total active power kW
+- Reactive power kvar
+- Apparent power kVA
+- | Power factor | PF
+- | Generator accumulated energy | kWh
+- | Output percentage with load | %
+- |  | For mains, genset has functions of over/under voltage and loss of phase; For gens, genset has
+- functions of over/under voltage, over/under frequency, over current and over power;
+- |  | Precision measure and display of parameters about engine;
+- | Temp. (WT) | °C/°F
+- | Oil pressure (OP) | kPa/psi/bar
+- | Fuel level (FL) | %
+- | Fuel remains | L
+- | Speed (SPD) | r/min
+- | Battery Voltage (VB) | V
+- | Charger Voltage (VD) | V
+- Accumulated running hours
+- Accumulated start times
+- |  | Control and protection function: Automatic start/stop of genset, load transfer (ATS control) and
+- perfect fault display and protection;
+- |  | With ETS, idle control, pre-heat control, speed raise/drop control, all of them are relay outputs;
+- |  | Parameter setting: Allow user to modify setting and store them in internal FLASH memory. The
+- parameters cannot be lost even when power off. All of parameters can be set not only from the front
+- panel, but also adjusted through USB interface (or RS485 interface) via PC;
+- |  | Multiple sensors of temperature, pressure and fuel level can be used directly, parameters can be
+- defined by user;
+- |  | Multiple conditions of crank disconnect (speed, oil pressure, frequency) can be selected;
+- |  | With emergency start function;
+- |  | With flywheel teeth numbers automatic identification function;
+- |  | Power supply range: (8~35)VDC, accommodating to different starting battery voltage environment;
+- |  | All parameters use digital modulation, instead of analog modulation using conventional
+- potentiometer, having improved reliability and stability;
+- |  | With maintenance function. Types (date or running time) can be selected and actions (warning or
+- alarm shutdown) can be set when maintenance time out;
+- |  | Event log, real-time clock, scheduled start & stop function (can be set as start unit once a
+- day/week/month whether with load or not);
+- |  | Add rubber gasket between shell and controller screen, the waterproof can reach IP65;
+- |  | Controller is fixed by metal fixing clips;
+- |  | Modular design, flame-retardant ABS shell, pluggable terminal, embedded mounting, compact
+- structure and easy installation.
+- | 3 | SPECIFICATION
+- Table 2 – Technical Parameters
+- | Items | Contents
+- | Working Voltage | DC8.0V to DC35.0V, continuous
+- | Power Consumption | <3W (Standby mode: ≤2W)
+- AC System
+- | 3P4W | AC15V - AC360V (ph-N)
+- | 3P3W | AC30V - AC620V (ph-ph)
+- | 1P2W | AC15V - AC360V (ph-N)
+- | 2P3W | AC15V - AC360V (ph-N)
+- | AC Alternator Frequency | 50Hz/60Hz
+- | Speed Sensor Voltage | 1.0V to 24V (RMS)
+- | Speed Sensor Frequency | 10,000 Hz (max.)
+- | Start Relay Output | 16A DC28V at supply voltage
+- | Fuel Relay Output | 16A DC28V at supply voltage
+- | Auxiliary Relay Output 1 | 7A DC28V at supply voltage
+- | Auxiliary Relay Output 2 | 7A AC250V volt-free output
+- | Auxiliary Relay Output 3 | 16A AC250V volt-free output
+- | Auxiliary Relay Output 4 | 16A AC250V volt-free output
+- | Overall Dimensions | 209mm x 166mm x 45mm
+- | Panel Cutout | 186mm x 141mm
+- | C.T. Secondary Current | 5A (rated)
+- | Working Temperature | (-25~+70)ºC
+- | Working Humidity | (20~93)%RH
+- | Storage Temperature | (-30~+80)ºC
+- | Protection Level | IP65: when water-proof gasket installed between control panel and
+- enclosure.
+- | Insulation Intensity | Apply AC2.2kV voltage between high voltage terminal and low voltage
+- terminal. The leakage current is not more than 3mA within 1min.
+- | Weight | 0.56kg
+- | 4 | OPERATION
+- | 4.1 | KEYS DESCRIPTION
+- Table 3 – Keys Description
+- | Icon | Key
+- Description
+- Can stop generator under Manual/Auto mode;
+- Can reset shutdown alarm;
+- | Stop/Reset | Press this key at least 3 seconds to test panel indicators are OK or not
+- (lamp test);
+- During stopping process, press this key again can stop generator
+- immediately.
+- | Start | Start genset under Manual mode; Press this key during starting process,
+- genset will jump to next status.
+- | Manual | Pressing this key will set the module as Manual mode.
+- | Auto | Pressing this key will set the module as Auto mode.
+- | Close/Open | Can control gens to switch on or off in Manual mode.
+- Note: The key is fit for HGM6120 series controllers.
+- | Close | Can control gens to switch on in Manual mode.
+- Note: The key is fit for HGM6110 series controllers.
+- | Open | Can control gens to switch off in Manual mode.
+- | Set/Confirm | Press this key to enter menu interface;
+- Shift cursor to confirm in parameters setting menu.
+- | Up/Increase | Screen scroll;
+- Up cursor and increase value in setting menu.
+- | Down/Decrease | Screen scroll;
+- Down cursor and decrease value in setting menu.
+- | Home/Return | Return to homepage when in main interface;
+- Exit when in parameters setting interface.
+- | 4.2 | CONTROLLER PANEL
+- Fig.1 – HGM6110 (HGM6110N/NC/CAN) Front Panel Indication
+- NOTE: Partial indicator states:
+- Alarm Indicator: slowly blink when warning alarms; fast blink when shutdown alarms; won’t illuminate when there is no
+- alarm.
+- Status Indicator: won’t illuminate when genset stand by; blink 1 time per second in start or stop process and always
+- illuminate when runs normally; for HGM6100CAN, press start key in auto mode or manual mode, ECU power outputs and
+- status indicator always illuminates.
+- | 4.3 | AUTOMATIC START/STOP OPERATION
+- | Auto mode is activated by pressing the | , LED indicator beside the key is illuminating which
+- confirms this action.
+- Starting Sequence
+- 1) HGM6120: When mains is abnormal (over/under voltage, loss of phase), it enters into “Mains
+- Abnormal Delay” and LCD displays count-down time. When delay is over, “Start Delay” begins.
+- 2) HGM6110: When “remote start” input is active, it enters into “Start Delay”.
+- 3) “Count- down” of start delay is displayed in LCD.
+- 4) When start delay is over, preheat relay is outputting (if configured), “Preheat Delay XX s” is
+- displayed in LCD.
+- 5) When preheat delay is over, fuel relay is outputting for 1s and then start relay outputs; if genset
+- failed to start during “Crank Time”, the fuel and start relay stop outputting and enter into “Crank
+- Rest Time” and wait for next cranking.
+- 6) If genset failed to start within set start times, the fifth line of LCD will turn black and Fail to Start
+- alarm will be displayed.
+- 7) Any time to start genset successfully, it will enter into “Safety Running”. During this period, alarms
+- of low oil pressure, high temperature, under speed, failed to charge and Aux. input (be configured)
+- are disabled. As soon as this delay is over, genset will enter into “Start Idle Delay” (if configured).
+- 8) During start idle delay, alarms of under speed, under frequency, under voltage are disabled. As
+- soon as this delay is over, genset will enter into “Warming Up Delay” (if configured).
+- 9) When “Warming Up Delay” is over, the indicator is illuminating if gens normal. If voltage and
+- frequency of genset reach the load requirement, close relay outputs, genset is taking load and
+- indicator illuminates; if voltage or frequency is abnormal, controller will alarm and shutdown (LCD
+- displays the alarm information).
+- Stopping Sequence
+- 1) HGM6120: During normal running, if mains normal, genset will enter into “Mains Normal Delay”,
+- when mains indicator illuminates, “Stop Delay” begins.
+- 2) HGM6110: Genset enters into “Stop Delay” as soon as “Remote Start” is inactive.
+- 3) When “Stop Delay” is over, genset enters into “Cooling Delay”. Closing relay is disconnected. After
+- switch “Transfer Delay”, closing relay is outputting, mains is taking load, generator indicator
+- extinguishes while mains indicator illuminates.
+- 4) When entering “Stop Idle Delay” (if configured), idle relay is energized to output.
+- 5) When entering “ETS Delay”, ETS relay is energized to output, fuel relay output is disconnected.
+- 6) When entering “Genset After Stop Time”, genset will automatically judge if it has stopped.
+- 7) When genset has stopped, it enters into standby mode; if genset failed to stop, controller will send
+- alarms (“Fail to Stop” alarm will be displayed in LCD).
+- | 4.4 | MANUAL START/STOP OPERATION
+- | 1) | HGM6120: Manual Mode is active when press
+- and its indicator illuminates. Under this mode,
+- | press | to start genset, it can automatically
+- detect crank disconnect and accelerate to high
+- speed running. If there is high temperature, low oil pressure, over speed and abnormal voltage
+- during genset running, controller can protect genset to stop (detail procedures please refer to
+- No.4~9 of Auto start operation). Under Manual Mode, switch won’t transfer automatically, it is
+- | necessary to press | to transfer load.
+- | 2) | HGM6110: Manual Mode is active when pressing
+- , and its indicator is illuminating. Then
+- | detect crank | disconnect and accelerate
+- to high
+- | speed | running. If there is high temperature, low
+- | oil pressure, | over speed and abnormal
+- voltage
+- | during | running, controller can protect genset to
+- | stop quickly | (detail procedures please
+- refer to
+- | No.4~9 of Auto start operation). After genset runs well in high speed, press | and gens takes
+- load.
+- | 3) | Manual Stop: Pressing
+- | can | shut
+- | down | the
+- | running | genset
+- | (detail | procedures
+- | please | refer
+- to
+- No.3~7 of Auto stop operation).
+- | 4.5 | EMERGENCY START
+- | In manual mode, pressing | and
+- simultaneously can compel genset to start. The controller
+- won’t judge whether the controller has started successfully according to disconnect conditions and the
+- disconnection of starter needs to be controlled by operators. When operators observed the genset has
+- started successfully, loose the keys and the controller enters safety delay with start no outputting.
+- | 5 | PROTECTION
+- | 5.1 | WARNINGS
+- When controller detects the warning signal, the genset only sends alarm and not stops. The alarms
+- are displayed in LCD.
+- Table 4 – Controller Warning Alarms
+- | No. | Items
+- | 1 | Loss of Speed Signal | When the speed of genset is 0 and speed loss delay is 0, controller will
+- send warning alarm signal and it will be displayed in LCD.
+- When the current of genset is higher than threshold, over current type is
+- | 2 | Genset Over Current | DMT and delay is 0, controller will send warning alarm signal and it will be
+- | 3 | Fail to Stop
+- When genset cannot stop when ETS delay/after stop delay is over,
+- controller will send warning alarm signal and it will be displayed in LCD.
+- When the fuel level of genset is lower than threshold or low fuel level
+- | 4 | Low Fuel Level
+- warning is active, controller will send warning alarm signal and it will be
+- | 5 | Fail to Charge
+- During genset normal running process, when the voltage difference
+- between B+ and the charger D+ (WL) is above the Failed to Charge voltage
+- difference for 5s, the controller shall issue “Failed to Charge” warning,
+- while at the same time LCD displays “Failed to Charge” warning.
+- | 6 | Battery Under Voltage
+- When the battery voltage of genset is lower than threshold, controller will
+- | 7 | Battery Over Voltage
+- When the battery voltage of genset is higher than threshold, controller will
+- | 8 | Low Coolant Level
+- When low coolant level input is active, controller will send warning alarm
+- signal and it will be displayed in LCD.
+- | 9 | Temp. Sensor Open
+- When sensor hasn’t connected to corresponding port, controller will send
+- warning alarm signal and it will be displayed in LCD.
+- | 10 | Oil Pressure
+- | Sensor | When sensor hasn’t connected to corresponding port, controller will send
+- | Open | warning alarm signal and it will be displayed in LCD.
+- Maintenance type is running time. When genset running time is longer
+- | Maintenance | Due
+- than maintenance time of user setting, or the maintenance type is date,
+- | 11 | Warning
+- the current date is over the setting date and the maintenance action is set
+- as warning, controller sends warning alarm signal and it will be displayed
+- in LCD.
+- When the water/cylinder temperature of genset is higher than threshold
+- | 12 | High Temp.
+- and Enabled High Temp. Stop Inhibit or Input High Temp. Stop Inhibit is
+- active, controller will send warning alarm signal and it will be displayed in
+- LCD.
+- When the oil pressure of genset is less than threshold and Enabled Low
+- | 13 | Low Oil Pressure
+- Oil Pressure Stop Inhibit or Input Low Oil Pressure Stop Inhibit is active,
+- | 14 | Input Warn
+- When external input is active, controller will send warning alarm signal and
+- it will be displayed in LCD.
+- | 15 | Failed to Charge
+- When “Failed to Charge” input is active, controller will send warning alarm
+- If over power detection is enabled, when the controller detects that the
+- | 16 | Over Power
+- power value (power is positive) has exceeded the pre-set value and the
+- action selects “Warn”, it will initiate a warning alarm.
+- | 17 | ECU Warn | If an error message is received from ECU via J1939, it will initiate a
+- warning alarm.
+- | 5.2 | SHUTDOWN ALARMS
+- | When controller detects | shutdown alarm, it will send signal to open and stop genset. The alarms
+- | are | displayed in LCD.
+- Table 5 – Shutdown Alarms
+- | 1 | Emergency Stop
+- When controller detects emergency stop signal, it will send shutdown
+- alarm signal and it will be displayed in LCD.
+- | 2 | High Temp.
+- When the temperature of water/cylinder is higher than set threshold,
+- controller will send shutdown alarm signal and it will be displayed in LCD.
+- | 3 | Low Oil Pressure
+- When oil pressure is lower than threshold, controller will send shutdown
+- | 4 | Over Speed
+- When genset speed is higher than set threshold, controller will send
+- shutdown alarm signal and it will be displayed in LCD.
+- | 5 | Under Speed
+- When genset speed is lower than set threshold, controller will send
+- | 6 | Loss of Speed Signal | When the speed is 0 and delay is not 0, controller will send shutdown
+- | 7 | Gen Over Voltage
+- When genset voltage is higher than threshold, controller will send
+- | 8 | Gen Under Voltage
+- When genset voltage is under set threshold, controller will send
+- | 9 | Gen Over Current | When genset current is higher than set threshold and delay is not 0, it will
+- send shutdown alarm signal and it will be displayed in LCD.
+- | 10 | Fail to Start
+- If controller fails to start within set start times, it will send shutdown
+- | 11 | Gen Over Frequency
+- When genset frequency is higher than set threshold, controller will send
+- | 12 | Gen Under Frequency
+- When genset frequency is lower than set threshold, controller will send
+- | 13 | Genset Failed | When genset frequency is 0, controller will send shutdown alarm signal
+- and it will be displayed in LCD.
+- | 14 | Low Fuel Level
+- When fuel level low input is active, controller will send shutdown alarm
+- | 15 | Low Coolant Level
+- When genset coolant level low input is active, controller will send
+- | 16 | Temp. Sensor Open
+- | 17 | Oil
+- | Pressure | Sensor
+- | Open | shutdown alarm signal and it will be displayed in LCD.
+- | 18 | Maintenance Due
+- the current date is over the setting date and the maintenance action is
+- set as shutdown, controller sends warning alarm signal and it will be
+- displayed in LCD. Maintenance alarm can be reset by setting parameters
+- via passwords.
+- | 19 | Input Shutdown
+- When external input is active, controller will send shutdown alarm signal
+- | 20 | Over Power
+- action selects “Shutdown”, it will initiate shutdown alarm.
+- | 21 | ECU Shutdown | If an error message is received from ECU via J1939, it will initiate
+- shutdown alarm.
+- | 22 | ECU Comm. Failure
+- If the module does not detect the ECU data, it will initiate shutdown
+- | 23 | Over Current Fault
+- When over current fault shutdown input is active, controller will send
+- | 24 | Over Speed
+- | Shutdown | When over speed shutdown input is active, controller will send shutdown
+- | Input Alarm | alarm signal and it will be displayed in LCD.
+- NOTE: ECU warning and Shutdown alarm explanation: check engine according to detailed alarm contents; otherwise
+- check engine user manual according to SPN alarm code for gaining information.
+- | 6 | CONNECTIONS
+- | Compared with HGM6120, HGM6110 | doesn’t
+- | have | 3-phase
+- | input | terminal
+- | of | mains voltage. The
+- back panel of HGM6120 is as below.
+- | Fig.3 – Controller | Rear
+- | Panel | Drawing
+- | HGM6100N | Series
+- | Table | 6 – Terminal Connection Description
+- | No. | Function
+- | Cable Size | Description
+- | 1 | DC input B- | 2.5mm2
+- Connected to negative of starter battery.
+- Connected to positive of starter battery. If wire length is
+- | 2 | DC input B+ | 2.5mm2 | over 30m, better to double wires in parallel. Max. 20A
+- fuse is recommended.
+- | 3 | Emergency Stop | 2.5mm2
+- Connected to B+ via emergency stop button.
+- | 4 | Fuel Relay Output | 1.5mm2 | B+ is supplied by 3 points, rated 16A.
+- | 5 | Start Relay Output | 1.5mm2 | B+ is supplied by 3 points, rated 16A Connect to starter
+- coil.
+- | 6 | Aux. Relay Output 1 | 1.5mm2 | B+ is supplied by 2 points, rated 7A.
+- | 7 | Normal close output, 7A rated.
+- | 8 | Aux. Relay Output 2 | 1.5mm2
+- Relay common port.
+- | 9 | Normal open output, 7A rated.
+- Reference Table
+- | 10 | Aux. Relay Output 3 | 2.5mm2
+- | Relay normal open volt-free contact | 8.
+- | 11 | output.
+- | 12 | Aux. Relay Output 4 | 2.5mm2 | 16A rated.
+- | 14 | Charger D+ Input | 1.0mm2
+- Connect to D+ (WL) terminal. If without, the terminal is
+- hung up.
+- | 15 | Speed Sensor Input
+- | Connected | to
+- | speed | sensor,
+- | shielding | line
+- is
+- | 16 | Speed Sensor Input
+- | (B- | 0.5mm2
+- recommended.
+- connected inside)
+- | 17 | Temp. Sensor Input | 1.0mm2
+- Connect to water/cylinder temp.
+- resistance type sensor.
+- | 18 | Oil Pressure Sensor Input | 1.0mm2
+- | Connect to oil pressure resistance | Reference
+- Table
+- | type sensor. | 10.
+- | 19 | Fuel Level Sensor Input | 1.0mm2
+- Connect to fuel level resistance type
+- sensor.
+- | 20 | Aux. Input 1 | 1.0mm2
+- Ground connected is active (B-).
+- | 21 | Aux. Input 2 | 1.0mm2
+- | Ground connected is active (B-). | Reference | Table 9
+- | 22 | Aux. Input 3 | 1.0mm2
+- | 23 | CT A Phase Sensing Input | 1.5mm2 | Connect secondary coil (rated 5A).
+- | 24 | CT B Phase Sensing Input | 1.5mm2 | Connect secondary coil (rated 5A).
+- | 25 | CT C Phase Sensing Input | 1.5mm2 | Connect secondary coil (rated 5A).
+- | 26 | CT Common Port | 1.5mm2
+- Refer to INSTALLATION description.
+- | 27 | Gens
+- | U | phase
+- | Voltage | 1.0mm2 | Connect to U phase output (2A fuse is recommended).
+- Sensing Input
+- | 28 | Gens
+- | V | phase
+- | Voltage | 1.0mm2 | Connect to V phase output (2A fuse is recommended).
+- sensing Input
+- | 29 | Gens W phase Voltage | 1.0mm2 | Connect to W phase output (2A fuse is recommended).
+- | 30 | Gens N2 Input | 1.0mm2
+- Connect to generator N-wire.
+- | 31 | Mains R phase Voltage | 1.0mm2 | Connect to mains R phase (2A fuse is recommended)
+- | Sensing Input | HGM6110 without
+- | 32 | Mains S phase Voltage | 1.0mm2 | Connect to mains S phase (2A fuse is recommended)
+- | Sensing Input | HGM6110 without.
+- | 33 | Mains T phase Voltage | 1.0mm2 | Connect to mains T phase, (2A fuse is recommended)
+- | 34 | Mains N1 Input | 1.0mm2 | Connect to mains N-wire, HGM6110 without.
+- | 35 | RS485 Common Ground
+- | / | Impedance-120Ω shielding wire
+- | is | recommended,
+- its
+- | 36 | RS485- | 0.5mm2
+- single-end connect with ground.
+- | 37 | RS485+ | 0.5mm2
+- | 38 | Aux. Input 4 | 1.0mm2
+- | Ground connected is active (B-). | Reference Table 9
+- | 39 | Aux. Input 5 | 1.0mm2
+- | 40 | Sensor Common | 1.0mm2
+- Sensor common port.
+- | 41 | CAN COM | 0.5mm2 | Impedance-120Ω shielding wire is recommended, its
+- | 42 | CAN L | 0.5mm2
+- single-end connect with ground (the controller without
+- | 43 | CAN H | 0.5mm2
+- CANBUS function doesn’t have this terminal).
+- | 44 | NULL
+- NOTE: USB ports in controller rear panel are programmable parameter ports; user can directly program via PC.
+- | 7 | PARAMETER RANGE AND DEFINITION
+- | 7.1 | PARAMETER CONTENT AND RANGE TABLE
+- Table 7 – Parameter Content and Range
+- | Range | Default
+- | 1 | Mains
+- | Normal Delay | (0-3600)s | 10
+- The delay from abnormal to normal or from
+- | 2 | Mains
+- | Abnormal | (0-3600)s | 5
+- normal to abnormal. It is used for ATS
+- | Delay | (automatic transfer switch) control.
+- When mains voltage is under the point, mains
+- | 3 | Mains
+- | Under Voltage | (30-60000)V | 184 | under voltage active. When the value is 30,
+- | mains | under
+- | voltage | disabled.
+- Return
+- difference is 10V.
+- When mains voltage is greater than the point,
+- | 4 | Mains Over Voltage | (30-60000)V | 276
+- mains over voltage active. When the point is
+- 60000V, mains over voltage disabled. Return
+- It’s the delay from mains open to generator
+- | 5 | Transfer Delay | (0-99.9)s | 1.0
+- closed or from generator open to mains
+- closed.
+- | 6(1) | Start Delay | (0-3600)s | 1
+- Time from mains abnormal or remote start
+- signal is active to start genset.
+- | 7(2) | Stop Delay | (0-3600)s | 1
+- Time from mains normal or remote start
+- signal is inactive to stop genset.
+- When engine start failure, it’s the maximum
+- | 8(3) | Start Times | (1-10) times | 3
+- cranking times. When setting crank times out,
+- controller sends start fail signal.
+- | 9(4) | Preheat Delay | (0-300)s | 0
+- Time of pre-powering heat plug before starter
+- is powered up.
+- | 10(5) | Cranking Time | (3-60)s | 8
+- Time of starter power up each time.
+- | 11(6) | Crank Rest Time | (3-60)s | 10
+- The second waiting time before power up
+- when engine start fail.
+- Alarm for low oil pressure, high temp, under
+- | 12(7) | Safety On Time | (1-60)s | 10
+- speed, under frequency/voltage, failed to
+- charge are all inactive.
+- | 13(8) | Start Idle Time | (0-3600)s | 0
+- Idle running time of genset when starting.
+- | 14(9) | Warming Up Time | (0-3600)s | 10
+- Warming time between genset switch on and
+- high speed running.
+- | 15(10) | Cooling Time | (3-3600)s | 10
+- Time for cooling before stopping.
+- | 16(11) | Stop Idle Time | (0-3600)s | 0
+- Idle running time when genset stop.
+- | 17(12) | ETS Solenoid Hold | (0-120)s | 20
+- Stop electromagnet’s power-on time when
+- genset is stopping.
+- If “ETS Solenoid Hold” set as 0, it is the time
+- | 18(13) | Wait for Stop Time | (0-120)s | 0
+- from end of idle delay to genset at rest; if not
+- 0, it is from end of ETS solenoid delay to
+- genset at rest.
+- | 19(14) | Switch Close Delay | (0.0-10.0)s | 5.0
+- Mains’ or generator’s switch closing pulse
+- width, when it is 0, output is continuous.
+- | 20(15) | Flywheel Teeth | (10.0-300.0) | 118
+- Number of flywheel teeth, it can detect
+- disconnection conditions and engine speed.
+- | 21(16) | Gen Abnormal Delay | (0-20.0)s | 10.0
+- Over or under voltage alarm delay.
+- When genset voltage is over the point,
+- | 22(17) | Gen
+- | Over | Voltage | (30-60000)V | 264
+- generator over voltage is active. When the
+- | Shutdown | point is 60000V, generator over voltage is
+- disabled.
+- When generator voltage is under the point,
+- | 23(18) | Gen Under
+- | Voltage | (30-60000)V | 196
+- generator under voltage is active. When the
+- | Shutdown | point is 30V, generator under voltage is
+- | 24(19) | Under
+- | Speed | (0-6000)r/min | 1200
+- When the engine speed is under the point for
+- | Shutdown | 10s, shutdown alarm signal is sent.
+- | 25(20) | Over
+- | Speed | (0-6000)r/min | 1710
+- When the engine speed is over the point for
+- | Shutdown | 2s, shutdown alarm signal is sent.
+- | Gen Under | Frequency
+- When generator frequency is lower than the
+- | 26(21) | Shutdown | (0-75.0)Hz | 45.0 | point (not equal to 0) for 10s, shutdown alarm
+- signal is sent.
+- | Gen Over | Frequency
+- When generator’s frequency is over the point
+- | 27(22) | Shutdown | (0-75.0)Hz | 57.0
+- | and | continues
+- | for | 2s,
+- | generator | over
+- frequency is active.
+- When the temperature sensor value is over
+- this point, it sends out high temp. alarm.
+- | 28(23) | High
+- | Temperature | (80-300)ºC | 98 | When the value is 300, warning alarm won’t
+- | Shutdown | be sent. (only suited for temperature sensor,
+- except for high temp. pressure alarm signal
+- inputted by programmable input port.)
+- When the oil pressure sensor value is under
+- this point, Low Oil Pressure alarm is sending
+- | 29(24) | Low
+- | Oil | Pressure | (0-400)kPa | 103 | out. When the value is 0, warning alarm won’t
+- | Shutdown | be sent. (only suited for oil pressure sensor,
+- except for low oil pressure alarm signal
+- | Low | Fuel
+- | Level | When fuel level sensor value is under this
+- | 30(25) | Warning Value | (0-100)% | 10 | point and remains for 10s, genset sends out
+- warning alarm, only warn but not shutdown.
+- | 31(26) | Loss of Speed
+- | Signal | (0-20.0)s | 5.0 | When the delay setting as 0s, it only warn but
+- | Delay | not shutdown.
+- During genset normal running, when B+ and
+- | 32(27) | Charging Failure Volt. | (0-30)V | 6.0
+- charger D+ (WL) voltage difference is above
+- | Difference | this value for 5s, the controller issues
+- “Charging Failure” warning.
+- When generator battery voltage is over the
+- | 33(28) | Battery Over Voltage | (12-40)V | 33.0 | point and remains for 20s, battery over
+- voltage signal is active. it only sends warn but
+- not shutdown.
+- When generator battery voltage is under the
+- | 34(29) | Battery Under Voltage | (4-30)V | 8.0 | point and remains for 20s, battery under
+- | 35(30) | CT Ratio | (5-6000)/5 | 500
+- External current transformer ratio.
+- | 36(31) | Full Load Rating | (5-6000)A | 500
+- | Rated | current
+- | of | generator,
+- | used | for
+- calculating over load current.
+- | 37(32) | Over
+- | Current | (50-130)% | 120
+- When load current is over the point, the over
+- | Percentage | current delay is initiated.
+- When load current is over the point, over
+- | 38(33) | Over Current Delay | (0-3600)s | 30 | current signal is sent. When the delay is 0,
+- only warn but not shutdown.
+- | 39(34) | Fuel Pump On | (0-100)% | 25
+- When the fuel level lower than the set value
+- for 10s, it sends a signal to open fuel pump.
+- | 40(35) | Fuel Pump Off | (0-100)% | 80
+- When the fuel level higher than the set value
+- for 10s, it sends a signal to close fuel pump.
+- | Factory | default:
+- | 41(36) | Aux. Output 1 | (0-26) | 2
+- Energized to stop. See
+- table 8.
+- | 42(37) | Aux. Output 2 | (0-26) | 3
+- | Factory | default: | Idle HGM6100N
+- | control. See table 8. | parameter
+- range:
+- | 43(38) | Aux. Output 3 | (0-26) | 5
+- | Factory | default: | Gens (0-25).
+- closed. See table 8.
+- | 44(39) | Aux. Output 4 | (0-26) | 6
+- Factory default: Mains
+- | 45(40) | Aux. Input 1 | (0-25) | 1
+- Factory default: High temperature alarm. See
+- | 46(41) | Active Type | (0-1) | 0
+- Factory default: close.
+
+### HGM6110NC — supplierId: smartgen, n: 1001
+- HGM6100N SERIES
+- (HGM6110N/6120N/6110NC/6120NC/6110CAN/6120CAN)
+- GENSET CONTROLLER
+- USER MANUAL
+- +86-371-67981000(overseas)
+- All rights reserved. No part of this publication may be reproduced in any material form (including
+- photocopying or storing in any medium by electronic means or other) without the written permission of
+- the copyright holder.
+- SmartGen reserves the right to change the contents of this document without prior notice.
+- Table 1 – Software Version
+- | Date | Version
+- Note
+- Original Release
+- Changed back panel picture of controller;
+- Modified Insulation Intensity description.
+- | 2018-08-02 | 1.2 | Configuration parameters were added in table 7;
+- Modified front panel drawing and keys description.
+- Added configuration parameters of active power loading
+- percentage;
+- Fixed crank disconnect conditions conforming to the controller;
+- Fixed LCD contrast ratio description;
+- Fixed Table 5 as Shutdown Alarms;
+- | 2020-08-18 | 1.6 | Deleted “Table 5” of “7.5 CONDITIONS OF CRANK DISCONNECT
+- (Table 5)”.
+- | 2020-09-10 | 1.7 | Modified the terminal number of output port 2 of typical
+- application diagrams.
+- Deleted MTU MDEC wiring diagram;
+- Added partial parameters.
+- Updated the Logo of SmartGen.
+- Unified the controller’s name and updated company address
+- information.
+- Added configurations of output port.
+- Modified the description of raise and drop speed and inputs;
+- Modified the description of remote control input;
+- | 2023-10-16 | 2.2 | Added the RS485 baud rate setting and new AC system option
+- (3P4W-ANC) in Table 7;
+- Added new outputs in Table 8: ECU Running Output and Fuel 1
+- Output.
+- CONTENTS
+- | 1 | OVERVIEW .................................................................................................................................................... 5
+- | 2 | PERFORMANCE AND CHARACTERISTICS................................................................................................5
+- | 3 | SPECIFICATION...........................................................................................................................................7
+- | 4 | OPERATION................................................................................................................................................. 8
+- 4.1 KEYS DESCRIPTION...........................................................................................................................8
+- 4.2 CONTROLLER PANEL........................................................................................................................9
+- 4.3 AUTOMATIC START/STOP OPERATION........................................................................................10
+- 4.4 MANUAL START/STOP OPERATION..............................................................................................10
+- 4.5 EMERGENCY START........................................................................................................................11
+- | 5 | PROTECTION.............................................................................................................................................11
+- 5.1 WARNINGS.......................................................................................................................................11
+- 5.2 SHUTDOWN ALARMS......................................................................................................................13
+- | 6 | CONNECTIONS..........................................................................................................................................15
+- | 7 | PARAMETER RANGE AND DEFINITION...................................................................................................18
+- 7.1 PARAMETER CONTENT AND RANGE TABLE................................................................................18
+- 7.2 DEFINED CONTENTS OF PROGRAMMABLE OUTPUT 1-4............................................................24
+- 7.3 DEFINED CONTENTS OF PROGRAMMABLE INPUT 1-5............................................................... 26
+- 7.4 SENSOR SELECTION....................................................................................................................... 28
+- 7.5 CONDITIONS OF CRANK DISCONNECT SELECTION....................................................................29
+- | 8 | PARAMETER SETTING..............................................................................................................................29
+- | 9 | SENSOR SETTING.....................................................................................................................................31
+- | 10 | COMMISSIONING......................................................................................................................................32
+- | 11 | TYPICAL APPLICATION............................................................................................................................33
+- | 12 | INSTALLATION..........................................................................................................................................35
+- 12.1 FIXING CLIPS................................................................................................................................... 35
+- 12.2 OVERALL DIMENSION AND PANEL CUTOUT................................................................................35
+- | 13 | CONNECTIONS OF CONTROLLER WITH J1939 ENGINE.......................................................................37
+- 13.1 CUMMINS ISB/ISBE.........................................................................................................................37
+- 13.2 CUMMINS QSL9...............................................................................................................................37
+- 13.3 CUMMINS QSM11 (IMPORT)..........................................................................................................37
+- 13.4 CUMMINS QSX15-CM570...............................................................................................................38
+- 13.5 CUMMINS GCS-MODBUS................................................................................................................38
+- 13.6 CUMMINS QSM11........................................................................................................................... 39
+- 13.7 CUMMINS QSZ13............................................................................................................................ 39
+- 13.8 DETROIT DIESEL DDEC III/IV.......................................................................................................... 40
+- 13.9 DEUTZ EMR2....................................................................................................................................40
+- 13.10 JOHN DEERE.................................................................................................................................40
+- 13.11 MTU ADEC (SMART MODULE)....................................................................................................40
+- 13.12 MTU ADEC (SAM MODULE).........................................................................................................41
+- 13.13 PERKINS........................................................................................................................................42
+- 13.14 SCANIA..........................................................................................................................................42
+- 13.15 VOLVO EDC3.................................................................................................................................42
+- 13.16 VOLVO EDC4.................................................................................................................................43
+- 13.17 VOLVO-EMS2................................................................................................................................43
+- 13.18 YUCHAI..........................................................................................................................................44
+- 13.19 WEICHAI........................................................................................................................................44
+- | 14 | FAULT FINDING.........................................................................................................................................45
+- | 1 | OVERVIEW
+- HGM6100N series genset controller, integrating digital, intelligent and network techniques, is used
+- for automatic control and monitoring system of single genset. It can carry out functions of automatic
+- start/stop, data measurement, alarm protection and “three remote” (remote control, remote
+- measurement and remote communication). The controller uses LCD display, optional language
+- interface including Chinese, English, Spanish, Russian, Portuguese, Turkish, Polish and French with
+- easy and reliable operation.
+- HGM6100N series genset controller uses micro-processing technique which can achieve precision
+- measurement, value adjustment, timing and threshold setting etc. All the parameters can be configured
+- from front panel or use USB interface (or RS485 interface) to adjust via PC. It can be widely used in all
+- types of automatic control system for its compact structure, simple connections and high reliability.
+- | 2 | PERFORMANCE AND CHARACTERISTICS
+- HGM6100N controller has six variants:
+- | HGM6110N/6110NC/6110CAN: Automatic Start Module, it controls generator | to start/stop
+- by
+- remote start signal;
+- NOTE1: HGM6110NC/6120NC has RS485 port, HGM6110N/6120N without.
+- HGM6110CAN/6120CAN has CAN port, HGM6110N/6120N and HGM6110NC/6120NC without.
+- NOTE2: HGM6110/6120 is taken as an example to describe in this manual.
+- Main characteristics are as following:
+-  132x64 LCD display with backlight, optional language interface (Chinese, English, Spanish, Russian,
+- Portuguese, Turkey, Polish and French), push-button operation;
+-  Acrylic screen, improved wearable and scratch resistance property;
+-  Silica-gel panel and keys can well adapt to higher and lower temperature;
+-  RS485 communication port enables “three remote” functions via MODBUS protocol;
+-  CANBUS port which can be connected to ECU with J1939, it not only can monitor frequently-used
+- data (such as water temperature, oil pressure, speed and fuel consumption, etc.) but also can
+- control start, stop, high speed and low speed (controller with CANBUS port is needed) via CANBUS
+- port;
+-  Adapt to 3P4W, 3P3W, 1P2W and 2P3W (120V/240V), 50Hz/60Hz system;
+-  Can measure and display 3 phase voltage, 3 phase current, frequency, power parameter of
+- mains/gens;
+- | Mains | Generator
+- | Line voltage (Uab, Ubc, and Uca) | Line voltage (Uab, Ubc, and Uca)
+- | Phase voltage (Ua, Ub, and Uc) | Phase voltage (Ua, Ub, and Uc)
+- | Frequency | Hz
+- | Phase sequence | Phase sequence
+- Load
+- | Current | IA, IB, IC
+- Each and total active power kW
+- Reactive power kvar
+- Apparent power kVA
+- | Power factor | PF
+- | Generator accumulated energy | kWh
+- | Output percentage with load | %
+- |  | For mains, genset has functions of over/under voltage and loss of phase; For gens, genset has
+- functions of over/under voltage, over/under frequency, over current and over power;
+- |  | Precision measure and display of parameters about engine;
+- | Temp. (WT) | °C/°F
+- | Oil pressure (OP) | kPa/psi/bar
+- | Fuel level (FL) | %
+- | Fuel remains | L
+- | Speed (SPD) | r/min
+- | Battery Voltage (VB) | V
+- | Charger Voltage (VD) | V
+- Accumulated running hours
+- Accumulated start times
+- |  | Control and protection function: Automatic start/stop of genset, load transfer (ATS control) and
+- perfect fault display and protection;
+- |  | With ETS, idle control, pre-heat control, speed raise/drop control, all of them are relay outputs;
+- |  | Parameter setting: Allow user to modify setting and store them in internal FLASH memory. The
+- parameters cannot be lost even when power off. All of parameters can be set not only from the front
+- panel, but also adjusted through USB interface (or RS485 interface) via PC;
+- |  | Multiple sensors of temperature, pressure and fuel level can be used directly, parameters can be
+- defined by user;
+- |  | Multiple conditions of crank disconnect (speed, oil pressure, frequency) can be selected;
+- |  | With emergency start function;
+- |  | With flywheel teeth numbers automatic identification function;
+- |  | Power supply range: (8~35)VDC, accommodating to different starting battery voltage environment;
+- |  | All parameters use digital modulation, instead of analog modulation using conventional
+- potentiometer, having improved reliability and stability;
+- |  | With maintenance function. Types (date or running time) can be selected and actions (warning or
+- alarm shutdown) can be set when maintenance time out;
+- |  | Event log, real-time clock, scheduled start & stop function (can be set as start unit once a
+- day/week/month whether with load or not);
+- |  | Add rubber gasket between shell and controller screen, the waterproof can reach IP65;
+- |  | Controller is fixed by metal fixing clips;
+- |  | Modular design, flame-retardant ABS shell, pluggable terminal, embedded mounting, compact
+- structure and easy installation.
+- | 3 | SPECIFICATION
+- Table 2 – Technical Parameters
+- | Items | Contents
+- | Working Voltage | DC8.0V to DC35.0V, continuous
+- | Power Consumption | <3W (Standby mode: ≤2W)
+- AC System
+- | 3P4W | AC15V - AC360V (ph-N)
+- | 3P3W | AC30V - AC620V (ph-ph)
+- | 1P2W | AC15V - AC360V (ph-N)
+- | 2P3W | AC15V - AC360V (ph-N)
+- | AC Alternator Frequency | 50Hz/60Hz
+- | Speed Sensor Voltage | 1.0V to 24V (RMS)
+- | Speed Sensor Frequency | 10,000 Hz (max.)
+- | Start Relay Output | 16A DC28V at supply voltage
+- | Fuel Relay Output | 16A DC28V at supply voltage
+- | Auxiliary Relay Output 1 | 7A DC28V at supply voltage
+- | Auxiliary Relay Output 2 | 7A AC250V volt-free output
+- | Auxiliary Relay Output 3 | 16A AC250V volt-free output
+- | Auxiliary Relay Output 4 | 16A AC250V volt-free output
+- | Overall Dimensions | 209mm x 166mm x 45mm
+- | Panel Cutout | 186mm x 141mm
+- | C.T. Secondary Current | 5A (rated)
+- | Working Temperature | (-25~+70)ºC
+- | Working Humidity | (20~93)%RH
+- | Storage Temperature | (-30~+80)ºC
+- | Protection Level | IP65: when water-proof gasket installed between control panel and
+- enclosure.
+- | Insulation Intensity | Apply AC2.2kV voltage between high voltage terminal and low voltage
+- terminal. The leakage current is not more than 3mA within 1min.
+- | Weight | 0.56kg
+- | 4 | OPERATION
+- | 4.1 | KEYS DESCRIPTION
+- Table 3 – Keys Description
+- | Icon | Key
+- Description
+- Can stop generator under Manual/Auto mode;
+- Can reset shutdown alarm;
+- | Stop/Reset | Press this key at least 3 seconds to test panel indicators are OK or not
+- (lamp test);
+- During stopping process, press this key again can stop generator
+- immediately.
+- | Start | Start genset under Manual mode; Press this key during starting process,
+- genset will jump to next status.
+- | Manual | Pressing this key will set the module as Manual mode.
+- | Auto | Pressing this key will set the module as Auto mode.
+- | Close/Open | Can control gens to switch on or off in Manual mode.
+- Note: The key is fit for HGM6120 series controllers.
+- | Close | Can control gens to switch on in Manual mode.
+- Note: The key is fit for HGM6110 series controllers.
+- | Open | Can control gens to switch off in Manual mode.
+- | Set/Confirm | Press this key to enter menu interface;
+- Shift cursor to confirm in parameters setting menu.
+- | Up/Increase | Screen scroll;
+- Up cursor and increase value in setting menu.
+- | Down/Decrease | Screen scroll;
+- Down cursor and decrease value in setting menu.
+- | Home/Return | Return to homepage when in main interface;
+- Exit when in parameters setting interface.
+- | 4.2 | CONTROLLER PANEL
+- NOTE: Partial indicator states:
+- Alarm Indicator: slowly blink when warning alarms; fast blink when shutdown alarms; won’t illuminate when there is no
+- alarm.
+- Status Indicator: won’t illuminate when genset stand by; blink 1 time per second in start or stop process and always
+- illuminate when runs normally; for HGM6100CAN, press start key in auto mode or manual mode, ECU power outputs and
+- status indicator always illuminates.
+- | 4.3 | AUTOMATIC START/STOP OPERATION
+- | Auto mode is activated by pressing the | , LED indicator beside the key is illuminating which
+- confirms this action.
+- Starting Sequence
+- 1) HGM6120: When mains is abnormal (over/under voltage, loss of phase), it enters into “Mains
+- Abnormal Delay” and LCD displays count-down time. When delay is over, “Start Delay” begins.
+- 2) HGM6110: When “remote start” input is active, it enters into “Start Delay”.
+- 3) “Count- down” of start delay is displayed in LCD.
+- 4) When start delay is over, preheat relay is outputting (if configured), “Preheat Delay XX s” is
+- displayed in LCD.
+- 5) When preheat delay is over, fuel relay is outputting for 1s and then start relay outputs; if genset
+- failed to start during “Crank Time”, the fuel and start relay stop outputting and enter into “Crank
+- Rest Time” and wait for next cranking.
+- 6) If genset failed to start within set start times, the fifth line of LCD will turn black and Fail to Start
+- alarm will be displayed.
+- 7) Any time to start genset successfully, it will enter into “Safety Running”. During this period, alarms
+- of low oil pressure, high temperature, under speed, failed to charge and Aux. input (be configured)
+- are disabled. As soon as this delay is over, genset will enter into “Start Idle Delay” (if configured).
+- 8) During start idle delay, alarms of under speed, under frequency, under voltage are disabled. As
+- soon as this delay is over, genset will enter into “Warming Up Delay” (if configured).
+- 9) When “Warming Up Delay” is over, the indicator is illuminating if gens normal. If voltage and
+- frequency of genset reach the load requirement, close relay outputs, genset is taking load and
+- indicator illuminates; if voltage or frequency is abnormal, controller will alarm and shutdown (LCD
+- displays the alarm information).
+- Stopping Sequence
+- 1) HGM6120: During normal running, if mains normal, genset will enter into “Mains Normal Delay”,
+- when mains indicator illuminates, “Stop Delay” begins.
+- 2) HGM6110: Genset enters into “Stop Delay” as soon as “Remote Start” is inactive.
+- 3) When “Stop Delay” is over, genset enters into “Cooling Delay”. Closing relay is disconnected. After
+- switch “Transfer Delay”, closing relay is outputting, mains is taking load, generator indicator
+- extinguishes while mains indicator illuminates.
+- 4) When entering “Stop Idle Delay” (if configured), idle relay is energized to output.
+- 5) When entering “ETS Delay”, ETS relay is energized to output, fuel relay output is disconnected.
+- 6) When entering “Genset After Stop Time”, genset will automatically judge if it has stopped.
+- 7) When genset has stopped, it enters into standby mode; if genset failed to stop, controller will send
+- alarms (“Fail to Stop” alarm will be displayed in LCD).
+- | 4.4 | MANUAL START/STOP OPERATION
+- | 1) | HGM6120: Manual Mode is active when press
+- and its indicator illuminates. Under this mode,
+- | press | to start genset, it can automatically
+- detect crank disconnect and accelerate to high
+- speed running. If there is high temperature, low oil pressure, over speed and abnormal voltage
+- during genset running, controller can protect genset to stop (detail procedures please refer to
+- No.4~9 of Auto start operation). Under Manual Mode, switch won’t transfer automatically, it is
+- | necessary to press | to transfer load.
+- | 2) | HGM6110: Manual Mode is active when pressing
+- , and its indicator is illuminating. Then
+- | detect crank | disconnect and accelerate
+- to high
+- | speed | running. If there is high temperature, low
+- | oil pressure, | over speed and abnormal
+- voltage
+- | during | running, controller can protect genset to
+- | stop quickly | (detail procedures please
+- refer to
+- | No.4~9 of Auto start operation). After genset runs well in high speed, press | and gens takes
+- load.
+- | 3) | Manual Stop: Pressing
+- | can | shut
+- | down | the
+- | running | genset
+- | (detail | procedures
+- | please | refer
+- to
+- No.3~7 of Auto stop operation).
+- | 4.5 | EMERGENCY START
+- | In manual mode, pressing | and
+- simultaneously can compel genset to start. The controller
+- won’t judge whether the controller has started successfully according to disconnect conditions and the
+- disconnection of starter needs to be controlled by operators. When operators observed the genset has
+- started successfully, loose the keys and the controller enters safety delay with start no outputting.
+- | 5 | PROTECTION
+- | 5.1 | WARNINGS
+- When controller detects the warning signal, the genset only sends alarm and not stops. The alarms
+- are displayed in LCD.
+- Table 4 – Controller Warning Alarms
+- | No. | Items
+- | 1 | Loss of Speed Signal | When the speed of genset is 0 and speed loss delay is 0, controller will
+- send warning alarm signal and it will be displayed in LCD.
+- When the current of genset is higher than threshold, over current type is
+- | 2 | Genset Over Current | DMT and delay is 0, controller will send warning alarm signal and it will be
+- | 3 | Fail to Stop
+- When genset cannot stop when ETS delay/after stop delay is over,
+- controller will send warning alarm signal and it will be displayed in LCD.
+- When the fuel level of genset is lower than threshold or low fuel level
+- | 4 | Low Fuel Level
+- warning is active, controller will send warning alarm signal and it will be
+- | 5 | Fail to Charge
+- During genset normal running process, when the voltage difference
+- between B+ and the charger D+ (WL) is above the Failed to Charge voltage
+- difference for 5s, the controller shall issue “Failed to Charge” warning,
+- while at the same time LCD displays “Failed to Charge” warning.
+- | 6 | Battery Under Voltage
+- When the battery voltage of genset is lower than threshold, controller will
+- | 7 | Battery Over Voltage
+- When the battery voltage of genset is higher than threshold, controller will
+- | 8 | Low Coolant Level
+- When low coolant level input is active, controller will send warning alarm
+- signal and it will be displayed in LCD.
+- | 9 | Temp. Sensor Open
+- When sensor hasn’t connected to corresponding port, controller will send
+- warning alarm signal and it will be displayed in LCD.
+- | 10 | Oil Pressure
+- | Sensor | When sensor hasn’t connected to corresponding port, controller will send
+- | Open | warning alarm signal and it will be displayed in LCD.
+- Maintenance type is running time. When genset running time is longer
+- | Maintenance | Due
+- than maintenance time of user setting, or the maintenance type is date,
+- | 11 | Warning
+- the current date is over the setting date and the maintenance action is set
+- as warning, controller sends warning alarm signal and it will be displayed
+- in LCD.
+- When the water/cylinder temperature of genset is higher than threshold
+- | 12 | High Temp.
+- and Enabled High Temp. Stop Inhibit or Input High Temp. Stop Inhibit is
+- active, controller will send warning alarm signal and it will be displayed in
+- LCD.
+- When the oil pressure of genset is less than threshold and Enabled Low
+- | 13 | Low Oil Pressure
+- Oil Pressure Stop Inhibit or Input Low Oil Pressure Stop Inhibit is active,
+- | 14 | Input Warn
+- When external input is active, controller will send warning alarm signal and
+- it will be displayed in LCD.
+- | 15 | Failed to Charge
+- When “Failed to Charge” input is active, controller will send warning alarm
+- If over power detection is enabled, when the controller detects that the
+- | 16 | Over Power
+- power value (power is positive) has exceeded the pre-set value and the
+- action selects “Warn”, it will initiate a warning alarm.
+- | 17 | ECU Warn | If an error message is received from ECU via J1939, it will initiate a
+- warning alarm.
+- | 5.2 | SHUTDOWN ALARMS
+- | When controller detects | shutdown alarm, it will send signal to open and stop genset. The alarms
+- | are | displayed in LCD.
+- Table 5 – Shutdown Alarms
+- | 1 | Emergency Stop
+- When controller detects emergency stop signal, it will send shutdown
+- alarm signal and it will be displayed in LCD.
+- | 2 | High Temp.
+- When the temperature of water/cylinder is higher than set threshold,
+- controller will send shutdown alarm signal and it will be displayed in LCD.
+- | 3 | Low Oil Pressure
+- When oil pressure is lower than threshold, controller will send shutdown
+- | 4 | Over Speed
+- When genset speed is higher than set threshold, controller will send
+- shutdown alarm signal and it will be displayed in LCD.
+- | 5 | Under Speed
+- When genset speed is lower than set threshold, controller will send
+- | 6 | Loss of Speed Signal | When the speed is 0 and delay is not 0, controller will send shutdown
+- | 7 | Gen Over Voltage
+- When genset voltage is higher than threshold, controller will send
+- | 8 | Gen Under Voltage
+- When genset voltage is under set threshold, controller will send
+- | 9 | Gen Over Current | When genset current is higher than set threshold and delay is not 0, it will
+- send shutdown alarm signal and it will be displayed in LCD.
+- | 10 | Fail to Start
+- If controller fails to start within set start times, it will send shutdown
+- | 11 | Gen Over Frequency
+- When genset frequency is higher than set threshold, controller will send
+- | 12 | Gen Under Frequency
+- When genset frequency is lower than set threshold, controller will send
+- | 13 | Genset Failed | When genset frequency is 0, controller will send shutdown alarm signal
+- and it will be displayed in LCD.
+- | 14 | Low Fuel Level
+- When fuel level low input is active, controller will send shutdown alarm
+- | 15 | Low Coolant Level
+- When genset coolant level low input is active, controller will send
+- | 16 | Temp. Sensor Open
+- | 17 | Oil
+- | Pressure | Sensor
+- | Open | shutdown alarm signal and it will be displayed in LCD.
+- | 18 | Maintenance Due
+- the current date is over the setting date and the maintenance action is
+- set as shutdown, controller sends warning alarm signal and it will be
+- displayed in LCD. Maintenance alarm can be reset by setting parameters
+- via passwords.
+- | 19 | Input Shutdown
+- When external input is active, controller will send shutdown alarm signal
+- | 20 | Over Power
+- action selects “Shutdown”, it will initiate shutdown alarm.
+- | 21 | ECU Shutdown | If an error message is received from ECU via J1939, it will initiate
+- shutdown alarm.
+- | 22 | ECU Comm. Failure
+- If the module does not detect the ECU data, it will initiate shutdown
+- | 23 | Over Current Fault
+- When over current fault shutdown input is active, controller will send
+- | 24 | Over Speed
+- | Shutdown | When over speed shutdown input is active, controller will send shutdown
+- | Input Alarm | alarm signal and it will be displayed in LCD.
+- NOTE: ECU warning and Shutdown alarm explanation: check engine according to detailed alarm contents; otherwise
+- check engine user manual according to SPN alarm code for gaining information.
+- | 6 | CONNECTIONS
+- | Compared with HGM6120, HGM6110 | doesn’t
+- | have | 3-phase
+- | input | terminal
+- | of | mains voltage. The
+- back panel of HGM6120 is as below.
+- | Fig.3 – Controller | Rear
+- | Panel | Drawing
+- | HGM6100N | Series
+- | Table | 6 – Terminal Connection Description
+- | No. | Function
+- | Cable Size | Description
+- | 1 | DC input B- | 2.5mm2
+- Connected to negative of starter battery.
+- Connected to positive of starter battery. If wire length is
+- | 2 | DC input B+ | 2.5mm2 | over 30m, better to double wires in parallel. Max. 20A
+- fuse is recommended.
+- | 3 | Emergency Stop | 2.5mm2
+- Connected to B+ via emergency stop button.
+- | 4 | Fuel Relay Output | 1.5mm2 | B+ is supplied by 3 points, rated 16A.
+- | 5 | Start Relay Output | 1.5mm2 | B+ is supplied by 3 points, rated 16A Connect to starter
+- coil.
+- | 6 | Aux. Relay Output 1 | 1.5mm2 | B+ is supplied by 2 points, rated 7A.
+- | 7 | Normal close output, 7A rated.
+- | 8 | Aux. Relay Output 2 | 1.5mm2
+- Relay common port.
+- | 9 | Normal open output, 7A rated.
+- Reference Table
+- | 10 | Aux. Relay Output 3 | 2.5mm2
+- | Relay normal open volt-free contact | 8.
+- | 11 | output.
+- | 12 | Aux. Relay Output 4 | 2.5mm2 | 16A rated.
+- | 14 | Charger D+ Input | 1.0mm2
+- Connect to D+ (WL) terminal. If without, the terminal is
+- hung up.
+- | 15 | Speed Sensor Input
+- | Connected | to
+- | speed | sensor,
+- | shielding | line
+- is
+- | 16 | Speed Sensor Input
+- | (B- | 0.5mm2
+- recommended.
+- connected inside)
+- | 17 | Temp. Sensor Input | 1.0mm2
+- Connect to water/cylinder temp.
+- resistance type sensor.
+- | 18 | Oil Pressure Sensor Input | 1.0mm2
+- | Connect to oil pressure resistance | Reference
+- Table
+- | type sensor. | 10.
+- | 19 | Fuel Level Sensor Input | 1.0mm2
+- Connect to fuel level resistance type
+- sensor.
+- | 20 | Aux. Input 1 | 1.0mm2
+- Ground connected is active (B-).
+- | 21 | Aux. Input 2 | 1.0mm2
+- | Ground connected is active (B-). | Reference | Table 9
+- | 22 | Aux. Input 3 | 1.0mm2
+- | 23 | CT A Phase Sensing Input | 1.5mm2 | Connect secondary coil (rated 5A).
+- | 24 | CT B Phase Sensing Input | 1.5mm2 | Connect secondary coil (rated 5A).
+- | 25 | CT C Phase Sensing Input | 1.5mm2 | Connect secondary coil (rated 5A).
+- | 26 | CT Common Port | 1.5mm2
+- Refer to INSTALLATION description.
+- | 27 | Gens
+- | U | phase
+- | Voltage | 1.0mm2 | Connect to U phase output (2A fuse is recommended).
+- Sensing Input
+- | 28 | Gens
+- | V | phase
+- | Voltage | 1.0mm2 | Connect to V phase output (2A fuse is recommended).
+- sensing Input
+- | 29 | Gens W phase Voltage | 1.0mm2 | Connect to W phase output (2A fuse is recommended).
+- | 30 | Gens N2 Input | 1.0mm2
+- Connect to generator N-wire.
+- | 31 | Mains R phase Voltage | 1.0mm2 | Connect to mains R phase (2A fuse is recommended)
+- | Sensing Input | HGM6110 without
+- | 32 | Mains S phase Voltage | 1.0mm2 | Connect to mains S phase (2A fuse is recommended)
+- | Sensing Input | HGM6110 without.
+- | 33 | Mains T phase Voltage | 1.0mm2 | Connect to mains T phase, (2A fuse is recommended)
+- | 34 | Mains N1 Input | 1.0mm2 | Connect to mains N-wire, HGM6110 without.
+- | 35 | RS485 Common Ground
+- | / | Impedance-120Ω shielding wire
+- | is | recommended,
+- its
+- | 36 | RS485- | 0.5mm2
+- single-end connect with ground.
+- | 37 | RS485+ | 0.5mm2
+- | 38 | Aux. Input 4 | 1.0mm2
+- | Ground connected is active (B-). | Reference Table 9
+- | 39 | Aux. Input 5 | 1.0mm2
+- | 40 | Sensor Common | 1.0mm2
+- Sensor common port.
+- | 41 | CAN COM | 0.5mm2 | Impedance-120Ω shielding wire is recommended, its
+- | 42 | CAN L | 0.5mm2
+- single-end connect with ground (the controller without
+- | 43 | CAN H | 0.5mm2
+- CANBUS function doesn’t have this terminal).
+- | 44 | NULL
+- NOTE: USB ports in controller rear panel are programmable parameter ports; user can directly program via PC.
+- | 7 | PARAMETER RANGE AND DEFINITION
+- | 7.1 | PARAMETER CONTENT AND RANGE TABLE
+- Table 7 – Parameter Content and Range
+- | Range | Default
+- | 1 | Mains
+- | Normal Delay | (0-3600)s | 10
+- The delay from abnormal to normal or from
+- | 2 | Mains
+- | Abnormal | (0-3600)s | 5
+- normal to abnormal. It is used for ATS
+- | Delay | (automatic transfer switch) control.
+- When mains voltage is under the point, mains
+- | 3 | Mains
+- | Under Voltage | (30-60000)V | 184 | under voltage active. When the value is 30,
+- | mains | under
+- | voltage | disabled.
+- Return
+- difference is 10V.
+- When mains voltage is greater than the point,
+- | 4 | Mains Over Voltage | (30-60000)V | 276
+- mains over voltage active. When the point is
+- 60000V, mains over voltage disabled. Return
+- It’s the delay from mains open to generator
+- | 5 | Transfer Delay | (0-99.9)s | 1.0
+- closed or from generator open to mains
+- closed.
+- | 6(1) | Start Delay | (0-3600)s | 1
+- Time from mains abnormal or remote start
+- signal is active to start genset.
+- | 7(2) | Stop Delay | (0-3600)s | 1
+- Time from mains normal or remote start
+- signal is inactive to stop genset.
+- When engine start failure, it’s the maximum
+- | 8(3) | Start Times | (1-10) times | 3
+- cranking times. When setting crank times out,
+- controller sends start fail signal.
+- | 9(4) | Preheat Delay | (0-300)s | 0
+- Time of pre-powering heat plug before starter
+- is powered up.
+- | 10(5) | Cranking Time | (3-60)s | 8
+- Time of starter power up each time.
+- | 11(6) | Crank Rest Time | (3-60)s | 10
+- The second waiting time before power up
+- when engine start fail.
+- Alarm for low oil pressure, high temp, under
+- | 12(7) | Safety On Time | (1-60)s | 10
+- speed, under frequency/voltage, failed to
+- charge are all inactive.
+- | 13(8) | Start Idle Time | (0-3600)s | 0
+- Idle running time of genset when starting.
+- | 14(9) | Warming Up Time | (0-3600)s | 10
+- Warming time between genset switch on and
+- high speed running.
+- | 15(10) | Cooling Time | (3-3600)s | 10
+- Time for cooling before stopping.
+- | 16(11) | Stop Idle Time | (0-3600)s | 0
+- Idle running time when genset stop.
+- | 17(12) | ETS Solenoid Hold | (0-120)s | 20
+- Stop electromagnet’s power-on time when
+- genset is stopping.
+- If “ETS Solenoid Hold” set as 0, it is the time
+- | 18(13) | Wait for Stop Time | (0-120)s | 0
+- from end of idle delay to genset at rest; if not
+- 0, it is from end of ETS solenoid delay to
+- genset at rest.
+- | 19(14) | Switch Close Delay | (0.0-10.0)s | 5.0
+- Mains’ or generator’s switch closing pulse
+- width, when it is 0, output is continuous.
+- | 20(15) | Flywheel Teeth | (10.0-300.0) | 118
+- Number of flywheel teeth, it can detect
+- disconnection conditions and engine speed.
+- | 21(16) | Gen Abnormal Delay | (0-20.0)s | 10.0
+- Over or under voltage alarm delay.
+- When genset voltage is over the point,
+- | 22(17) | Gen
+- | Over | Voltage | (30-60000)V | 264
+- generator over voltage is active. When the
+- | Shutdown | point is 60000V, generator over voltage is
+- disabled.
+- When generator voltage is under the point,
+- | 23(18) | Gen Under
+- | Voltage | (30-60000)V | 196
+- generator under voltage is active. When the
+- | Shutdown | point is 30V, generator under voltage is
+- | 24(19) | Under
+- | Speed | (0-6000)r/min | 1200
+- When the engine speed is under the point for
+- | Shutdown | 10s, shutdown alarm signal is sent.
+- | 25(20) | Over
+- | Speed | (0-6000)r/min | 1710
+- When the engine speed is over the point for
+- | Shutdown | 2s, shutdown alarm signal is sent.
+- | Gen Under | Frequency
+- When generator frequency is lower than the
+- | 26(21) | Shutdown | (0-75.0)Hz | 45.0 | point (not equal to 0) for 10s, shutdown alarm
+- signal is sent.
+- | Gen Over | Frequency
+- When generator’s frequency is over the point
+- | 27(22) | Shutdown | (0-75.0)Hz | 57.0
+- | and | continues
+- | for | 2s,
+- | generator | over
+- frequency is active.
+- When the temperature sensor value is over
+- this point, it sends out high temp. alarm.
+- | 28(23) | High
+- | Temperature | (80-300)ºC | 98 | When the value is 300, warning alarm won’t
+- | Shutdown | be sent. (only suited for temperature sensor,
+- except for high temp. pressure alarm signal
+- inputted by programmable input port.)
+- When the oil pressure sensor value is under
+- this point, Low Oil Pressure alarm is sending
+- | 29(24) | Low
+- | Oil | Pressure | (0-400)kPa | 103 | out. When the value is 0, warning alarm won’t
+- | Shutdown | be sent. (only suited for oil pressure sensor,
+- except for low oil pressure alarm signal
+- | Low | Fuel
+- | Level | When fuel level sensor value is under this
+- | 30(25) | Warning Value | (0-100)% | 10 | point and remains for 10s, genset sends out
+- warning alarm, only warn but not shutdown.
+- | 31(26) | Loss of Speed
+- | Signal | (0-20.0)s | 5.0 | When the delay setting as 0s, it only warn but
+- | Delay | not shutdown.
+- During genset normal running, when B+ and
+- | 32(27) | Charging Failure Volt. | (0-30)V | 6.0
+- charger D+ (WL) voltage difference is above
+- | Difference | this value for 5s, the controller issues
+- “Charging Failure” warning.
+- When generator battery voltage is over the
+- | 33(28) | Battery Over Voltage | (12-40)V | 33.0 | point and remains for 20s, battery over
+- voltage signal is active. it only sends warn but
+- not shutdown.
+- When generator battery voltage is under the
+- | 34(29) | Battery Under Voltage | (4-30)V | 8.0 | point and remains for 20s, battery under
+- | 35(30) | CT Ratio | (5-6000)/5 | 500
+- External current transformer ratio.
+- | 36(31) | Full Load Rating | (5-6000)A | 500
+- | Rated | current
+- | of | generator,
+- | used | for
+- calculating over load current.
+- | 37(32) | Over
+- | Current | (50-130)% | 120
+- When load current is over the point, the over
+- | Percentage | current delay is initiated.
+- When load current is over the point, over
+- | 38(33) | Over Current Delay | (0-3600)s | 30 | current signal is sent. When the delay is 0,
+- only warn but not shutdown.
+- | 39(34) | Fuel Pump On | (0-100)% | 25
+- When the fuel level lower than the set value
+- for 10s, it sends a signal to open fuel pump.
+- | 40(35) | Fuel Pump Off | (0-100)% | 80
+- When the fuel level higher than the set value
+- for 10s, it sends a signal to close fuel pump.
+- | Factory | default:
+- | 41(36) | Aux. Output 1 | (0-26) | 2
+- Energized to stop. See
+- table 8.
+- | 42(37) | Aux. Output 2 | (0-26) | 3
+- | Factory | default: | Idle HGM6100N
+- | control. See table 8. | parameter
+- range:
+- | 43(38) | Aux. Output 3 | (0-26) | 5
+- | Factory | default: | Gens (0-25).
+- closed. See table 8.
+- | 44(39) | Aux. Output 4 | (0-26) | 6
+- Factory default: Mains
+- | 45(40) | Aux. Input 1 | (0-25) | 1
+- Factory default: High temperature alarm. See
+- | 46(41) | Active Type | (0-1) | 0
+- Factory default: close.
+
+### HGM6120CAN — supplierId: smartgen, n: 1001
+- HGM6100N SERIES
+- (HGM6110N/6120N/6110NC/6120NC/6110CAN/6120CAN)
+- GENSET CONTROLLER
+- USER MANUAL
+- +86-371-67981000(overseas)
+- All rights reserved. No part of this publication may be reproduced in any material form (including
+- photocopying or storing in any medium by electronic means or other) without the written permission of
+- the copyright holder.
+- SmartGen reserves the right to change the contents of this document without prior notice.
+- Table 1 – Software Version
+- | Date | Version
+- Note
+- Original Release
+- Changed back panel picture of controller;
+- Modified Insulation Intensity description.
+- | 2018-08-02 | 1.2 | Configuration parameters were added in table 7;
+- Modified front panel drawing and keys description.
+- Added configuration parameters of active power loading
+- percentage;
+- Fixed crank disconnect conditions conforming to the controller;
+- Fixed LCD contrast ratio description;
+- Fixed Table 5 as Shutdown Alarms;
+- | 2020-08-18 | 1.6 | Deleted “Table 5” of “7.5 CONDITIONS OF CRANK DISCONNECT
+- (Table 5)”.
+- | 2020-09-10 | 1.7 | Modified the terminal number of output port 2 of typical
+- application diagrams.
+- Deleted MTU MDEC wiring diagram;
+- Added partial parameters.
+- Updated the Logo of SmartGen.
+- Unified the controller’s name and updated company address
+- information.
+- Added configurations of output port.
+- Modified the description of raise and drop speed and inputs;
+- Modified the description of remote control input;
+- | 2023-10-16 | 2.2 | Added the RS485 baud rate setting and new AC system option
+- (3P4W-ANC) in Table 7;
+- Added new outputs in Table 8: ECU Running Output and Fuel 1
+- Output.
+- CONTENTS
+- | 1 | OVERVIEW .................................................................................................................................................... 5
+- | 2 | PERFORMANCE AND CHARACTERISTICS................................................................................................5
+- | 3 | SPECIFICATION...........................................................................................................................................7
+- | 4 | OPERATION................................................................................................................................................. 8
+- 4.1 KEYS DESCRIPTION...........................................................................................................................8
+- 4.2 CONTROLLER PANEL........................................................................................................................9
+- 4.3 AUTOMATIC START/STOP OPERATION........................................................................................10
+- 4.4 MANUAL START/STOP OPERATION..............................................................................................10
+- 4.5 EMERGENCY START........................................................................................................................11
+- | 5 | PROTECTION.............................................................................................................................................11
+- 5.1 WARNINGS.......................................................................................................................................11
+- 5.2 SHUTDOWN ALARMS......................................................................................................................13
+- | 6 | CONNECTIONS..........................................................................................................................................15
+- | 7 | PARAMETER RANGE AND DEFINITION...................................................................................................18
+- 7.1 PARAMETER CONTENT AND RANGE TABLE................................................................................18
+- 7.2 DEFINED CONTENTS OF PROGRAMMABLE OUTPUT 1-4............................................................24
+- 7.3 DEFINED CONTENTS OF PROGRAMMABLE INPUT 1-5............................................................... 26
+- 7.4 SENSOR SELECTION....................................................................................................................... 28
+- 7.5 CONDITIONS OF CRANK DISCONNECT SELECTION....................................................................29
+- | 8 | PARAMETER SETTING..............................................................................................................................29
+- | 9 | SENSOR SETTING.....................................................................................................................................31
+- | 10 | COMMISSIONING......................................................................................................................................32
+- | 11 | TYPICAL APPLICATION............................................................................................................................33
+- | 12 | INSTALLATION..........................................................................................................................................35
+- 12.1 FIXING CLIPS................................................................................................................................... 35
+- 12.2 OVERALL DIMENSION AND PANEL CUTOUT................................................................................35
+- | 13 | CONNECTIONS OF CONTROLLER WITH J1939 ENGINE.......................................................................37
+- 13.1 CUMMINS ISB/ISBE.........................................................................................................................37
+- 13.2 CUMMINS QSL9...............................................................................................................................37
+- 13.3 CUMMINS QSM11 (IMPORT)..........................................................................................................37
+- 13.4 CUMMINS QSX15-CM570...............................................................................................................38
+- 13.5 CUMMINS GCS-MODBUS................................................................................................................38
+- 13.6 CUMMINS QSM11........................................................................................................................... 39
+- 13.7 CUMMINS QSZ13............................................................................................................................ 39
+- 13.8 DETROIT DIESEL DDEC III/IV.......................................................................................................... 40
+- 13.9 DEUTZ EMR2....................................................................................................................................40
+- 13.10 JOHN DEERE.................................................................................................................................40
+- 13.11 MTU ADEC (SMART MODULE)....................................................................................................40
+- 13.12 MTU ADEC (SAM MODULE).........................................................................................................41
+- 13.13 PERKINS........................................................................................................................................42
+- 13.14 SCANIA..........................................................................................................................................42
+- 13.15 VOLVO EDC3.................................................................................................................................42
+- 13.16 VOLVO EDC4.................................................................................................................................43
+- 13.17 VOLVO-EMS2................................................................................................................................43
+- 13.18 YUCHAI..........................................................................................................................................44
+- 13.19 WEICHAI........................................................................................................................................44
+- | 14 | FAULT FINDING.........................................................................................................................................45
+- | 1 | OVERVIEW
+- HGM6100N series genset controller, integrating digital, intelligent and network techniques, is used
+- for automatic control and monitoring system of single genset. It can carry out functions of automatic
+- start/stop, data measurement, alarm protection and “three remote” (remote control, remote
+- measurement and remote communication). The controller uses LCD display, optional language
+- interface including Chinese, English, Spanish, Russian, Portuguese, Turkish, Polish and French with
+- easy and reliable operation.
+- HGM6100N series genset controller uses micro-processing technique which can achieve precision
+- measurement, value adjustment, timing and threshold setting etc. All the parameters can be configured
+- from front panel or use USB interface (or RS485 interface) to adjust via PC. It can be widely used in all
+- types of automatic control system for its compact structure, simple connections and high reliability.
+- | 2 | PERFORMANCE AND CHARACTERISTICS
+- HGM6100N controller has six variants:
+- | HGM6120N/6120NC/6120CAN: Based on HGM6110N/6110NC/6110CAN, it | adds mains
+- AC
+- | monitoring and mains/generator automatic switching control (AMF), especially | suitable for
+- the
+- automation system composed by mains and genset.
+- HGM6110CAN/6120CAN has CAN port, HGM6110N/6120N and HGM6110NC/6120NC without.
+- NOTE2: HGM6110/6120 is taken as an example to describe in this manual.
+- Main characteristics are as following:
+-  132x64 LCD display with backlight, optional language interface (Chinese, English, Spanish, Russian,
+- Portuguese, Turkey, Polish and French), push-button operation;
+-  Acrylic screen, improved wearable and scratch resistance property;
+-  Silica-gel panel and keys can well adapt to higher and lower temperature;
+-  RS485 communication port enables “three remote” functions via MODBUS protocol;
+-  CANBUS port which can be connected to ECU with J1939, it not only can monitor frequently-used
+- data (such as water temperature, oil pressure, speed and fuel consumption, etc.) but also can
+- control start, stop, high speed and low speed (controller with CANBUS port is needed) via CANBUS
+- port;
+-  Adapt to 3P4W, 3P3W, 1P2W and 2P3W (120V/240V), 50Hz/60Hz system;
+-  Can measure and display 3 phase voltage, 3 phase current, frequency, power parameter of
+- mains/gens;
+- | Mains | Generator
+- | Line voltage (Uab, Ubc, and Uca) | Line voltage (Uab, Ubc, and Uca)
+- | Phase voltage (Ua, Ub, and Uc) | Phase voltage (Ua, Ub, and Uc)
+- | Frequency | Hz
+- | Phase sequence | Phase sequence
+- Load
+- | Current | IA, IB, IC
+- Each and total active power kW
+- Reactive power kvar
+- Apparent power kVA
+- | Power factor | PF
+- | Generator accumulated energy | kWh
+- | Output percentage with load | %
+- |  | For mains, genset has functions of over/under voltage and loss of phase; For gens, genset has
+- functions of over/under voltage, over/under frequency, over current and over power;
+- |  | Precision measure and display of parameters about engine;
+- | Temp. (WT) | °C/°F
+- | Oil pressure (OP) | kPa/psi/bar
+- | Fuel level (FL) | %
+- | Fuel remains | L
+- | Speed (SPD) | r/min
+- | Battery Voltage (VB) | V
+- | Charger Voltage (VD) | V
+- Accumulated running hours
+- Accumulated start times
+- |  | Control and protection function: Automatic start/stop of genset, load transfer (ATS control) and
+- perfect fault display and protection;
+- |  | With ETS, idle control, pre-heat control, speed raise/drop control, all of them are relay outputs;
+- |  | Parameter setting: Allow user to modify setting and store them in internal FLASH memory. The
+- parameters cannot be lost even when power off. All of parameters can be set not only from the front
+- panel, but also adjusted through USB interface (or RS485 interface) via PC;
+- |  | Multiple sensors of temperature, pressure and fuel level can be used directly, parameters can be
+- defined by user;
+- |  | Multiple conditions of crank disconnect (speed, oil pressure, frequency) can be selected;
+- |  | With emergency start function;
+- |  | With flywheel teeth numbers automatic identification function;
+- |  | Power supply range: (8~35)VDC, accommodating to different starting battery voltage environment;
+- |  | All parameters use digital modulation, instead of analog modulation using conventional
+- potentiometer, having improved reliability and stability;
+- |  | With maintenance function. Types (date or running time) can be selected and actions (warning or
+- alarm shutdown) can be set when maintenance time out;
+- |  | Event log, real-time clock, scheduled start & stop function (can be set as start unit once a
+- day/week/month whether with load or not);
+- |  | Add rubber gasket between shell and controller screen, the waterproof can reach IP65;
+- |  | Controller is fixed by metal fixing clips;
+- |  | Modular design, flame-retardant ABS shell, pluggable terminal, embedded mounting, compact
+- structure and easy installation.
+- | 3 | SPECIFICATION
+- Table 2 – Technical Parameters
+- | Items | Contents
+- | Working Voltage | DC8.0V to DC35.0V, continuous
+- | Power Consumption | <3W (Standby mode: ≤2W)
+- AC System
+- | 3P4W | AC15V - AC360V (ph-N)
+- | 3P3W | AC30V - AC620V (ph-ph)
+- | 1P2W | AC15V - AC360V (ph-N)
+- | 2P3W | AC15V - AC360V (ph-N)
+- | AC Alternator Frequency | 50Hz/60Hz
+- | Speed Sensor Voltage | 1.0V to 24V (RMS)
+- | Speed Sensor Frequency | 10,000 Hz (max.)
+- | Start Relay Output | 16A DC28V at supply voltage
+- | Fuel Relay Output | 16A DC28V at supply voltage
+- | Auxiliary Relay Output 1 | 7A DC28V at supply voltage
+- | Auxiliary Relay Output 2 | 7A AC250V volt-free output
+- | Auxiliary Relay Output 3 | 16A AC250V volt-free output
+- | Auxiliary Relay Output 4 | 16A AC250V volt-free output
+- | Overall Dimensions | 209mm x 166mm x 45mm
+- | Panel Cutout | 186mm x 141mm
+- | C.T. Secondary Current | 5A (rated)
+- | Working Temperature | (-25~+70)ºC
+- | Working Humidity | (20~93)%RH
+- | Storage Temperature | (-30~+80)ºC
+- | Protection Level | IP65: when water-proof gasket installed between control panel and
+- enclosure.
+- | Insulation Intensity | Apply AC2.2kV voltage between high voltage terminal and low voltage
+- terminal. The leakage current is not more than 3mA within 1min.
+- | Weight | 0.56kg
+- | 4 | OPERATION
+- | 4.1 | KEYS DESCRIPTION
+- Table 3 – Keys Description
+- | Icon | Key
+- Description
+- Can stop generator under Manual/Auto mode;
+- Can reset shutdown alarm;
+- | Stop/Reset | Press this key at least 3 seconds to test panel indicators are OK or not
+- (lamp test);
+- During stopping process, press this key again can stop generator
+- immediately.
+- | Start | Start genset under Manual mode; Press this key during starting process,
+- genset will jump to next status.
+- | Manual | Pressing this key will set the module as Manual mode.
+- | Auto | Pressing this key will set the module as Auto mode.
+- | Close/Open | Can control gens to switch on or off in Manual mode.
+- Note: The key is fit for HGM6120 series controllers.
+- | Close | Can control gens to switch on in Manual mode.
+- Note: The key is fit for HGM6110 series controllers.
+- | Open | Can control gens to switch off in Manual mode.
+- | Set/Confirm | Press this key to enter menu interface;
+- Shift cursor to confirm in parameters setting menu.
+- | Up/Increase | Screen scroll;
+- Up cursor and increase value in setting menu.
+- | Down/Decrease | Screen scroll;
+- Down cursor and decrease value in setting menu.
+- | Home/Return | Return to homepage when in main interface;
+- Exit when in parameters setting interface.
+- | 4.2 | CONTROLLER PANEL
+- NOTE: Partial indicator states:
+- Alarm Indicator: slowly blink when warning alarms; fast blink when shutdown alarms; won’t illuminate when there is no
+- alarm.
+- Status Indicator: won’t illuminate when genset stand by; blink 1 time per second in start or stop process and always
+- illuminate when runs normally; for HGM6100CAN, press start key in auto mode or manual mode, ECU power outputs and
+- status indicator always illuminates.
+- | 4.3 | AUTOMATIC START/STOP OPERATION
+- | Auto mode is activated by pressing the | , LED indicator beside the key is illuminating which
+- confirms this action.
+- Starting Sequence
+- 1) HGM6120: When mains is abnormal (over/under voltage, loss of phase), it enters into “Mains
+- Abnormal Delay” and LCD displays count-down time. When delay is over, “Start Delay” begins.
+- 2) HGM6110: When “remote start” input is active, it enters into “Start Delay”.
+- 3) “Count- down” of start delay is displayed in LCD.
+- 4) When start delay is over, preheat relay is outputting (if configured), “Preheat Delay XX s” is
+- displayed in LCD.
+- 5) When preheat delay is over, fuel relay is outputting for 1s and then start relay outputs; if genset
+- failed to start during “Crank Time”, the fuel and start relay stop outputting and enter into “Crank
+- Rest Time” and wait for next cranking.
+- 6) If genset failed to start within set start times, the fifth line of LCD will turn black and Fail to Start
+- alarm will be displayed.
+- 7) Any time to start genset successfully, it will enter into “Safety Running”. During this period, alarms
+- of low oil pressure, high temperature, under speed, failed to charge and Aux. input (be configured)
+- are disabled. As soon as this delay is over, genset will enter into “Start Idle Delay” (if configured).
+- 8) During start idle delay, alarms of under speed, under frequency, under voltage are disabled. As
+- soon as this delay is over, genset will enter into “Warming Up Delay” (if configured).
+- 9) When “Warming Up Delay” is over, the indicator is illuminating if gens normal. If voltage and
+- frequency of genset reach the load requirement, close relay outputs, genset is taking load and
+- indicator illuminates; if voltage or frequency is abnormal, controller will alarm and shutdown (LCD
+- displays the alarm information).
+- Stopping Sequence
+- 1) HGM6120: During normal running, if mains normal, genset will enter into “Mains Normal Delay”,
+- when mains indicator illuminates, “Stop Delay” begins.
+- 2) HGM6110: Genset enters into “Stop Delay” as soon as “Remote Start” is inactive.
+- 3) When “Stop Delay” is over, genset enters into “Cooling Delay”. Closing relay is disconnected. After
+- switch “Transfer Delay”, closing relay is outputting, mains is taking load, generator indicator
+- extinguishes while mains indicator illuminates.
+- 4) When entering “Stop Idle Delay” (if configured), idle relay is energized to output.
+- 5) When entering “ETS Delay”, ETS relay is energized to output, fuel relay output is disconnected.
+- 6) When entering “Genset After Stop Time”, genset will automatically judge if it has stopped.
+- 7) When genset has stopped, it enters into standby mode; if genset failed to stop, controller will send
+- alarms (“Fail to Stop” alarm will be displayed in LCD).
+- | 4.4 | MANUAL START/STOP OPERATION
+- | 1) | HGM6120: Manual Mode is active when press
+- and its indicator illuminates. Under this mode,
+- | press | to start genset, it can automatically
+- detect crank disconnect and accelerate to high
+- speed running. If there is high temperature, low oil pressure, over speed and abnormal voltage
+- during genset running, controller can protect genset to stop (detail procedures please refer to
+- No.4~9 of Auto start operation). Under Manual Mode, switch won’t transfer automatically, it is
+- | necessary to press | to transfer load.
+- | 2) | HGM6110: Manual Mode is active when pressing
+- , and its indicator is illuminating. Then
+- | detect crank | disconnect and accelerate
+- to high
+- | speed | running. If there is high temperature, low
+- | oil pressure, | over speed and abnormal
+- voltage
+- | during | running, controller can protect genset to
+- | stop quickly | (detail procedures please
+- refer to
+- | No.4~9 of Auto start operation). After genset runs well in high speed, press | and gens takes
+- load.
+- | 3) | Manual Stop: Pressing
+- | can | shut
+- | down | the
+- | running | genset
+- | (detail | procedures
+- | please | refer
+- to
+- No.3~7 of Auto stop operation).
+- | 4.5 | EMERGENCY START
+- | In manual mode, pressing | and
+- simultaneously can compel genset to start. The controller
+- won’t judge whether the controller has started successfully according to disconnect conditions and the
+- disconnection of starter needs to be controlled by operators. When operators observed the genset has
+- started successfully, loose the keys and the controller enters safety delay with start no outputting.
+- | 5 | PROTECTION
+- | 5.1 | WARNINGS
+- When controller detects the warning signal, the genset only sends alarm and not stops. The alarms
+- are displayed in LCD.
+- Table 4 – Controller Warning Alarms
+- | No. | Items
+- | 1 | Loss of Speed Signal | When the speed of genset is 0 and speed loss delay is 0, controller will
+- send warning alarm signal and it will be displayed in LCD.
+- When the current of genset is higher than threshold, over current type is
+- | 2 | Genset Over Current | DMT and delay is 0, controller will send warning alarm signal and it will be
+- | 3 | Fail to Stop
+- When genset cannot stop when ETS delay/after stop delay is over,
+- controller will send warning alarm signal and it will be displayed in LCD.
+- When the fuel level of genset is lower than threshold or low fuel level
+- | 4 | Low Fuel Level
+- warning is active, controller will send warning alarm signal and it will be
+- | 5 | Fail to Charge
+- During genset normal running process, when the voltage difference
+- between B+ and the charger D+ (WL) is above the Failed to Charge voltage
+- difference for 5s, the controller shall issue “Failed to Charge” warning,
+- while at the same time LCD displays “Failed to Charge” warning.
+- | 6 | Battery Under Voltage
+- When the battery voltage of genset is lower than threshold, controller will
+- | 7 | Battery Over Voltage
+- When the battery voltage of genset is higher than threshold, controller will
+- | 8 | Low Coolant Level
+- When low coolant level input is active, controller will send warning alarm
+- signal and it will be displayed in LCD.
+- | 9 | Temp. Sensor Open
+- When sensor hasn’t connected to corresponding port, controller will send
+- warning alarm signal and it will be displayed in LCD.
+- | 10 | Oil Pressure
+- | Sensor | When sensor hasn’t connected to corresponding port, controller will send
+- | Open | warning alarm signal and it will be displayed in LCD.
+- Maintenance type is running time. When genset running time is longer
+- | Maintenance | Due
+- than maintenance time of user setting, or the maintenance type is date,
+- | 11 | Warning
+- the current date is over the setting date and the maintenance action is set
+- as warning, controller sends warning alarm signal and it will be displayed
+- in LCD.
+- When the water/cylinder temperature of genset is higher than threshold
+- | 12 | High Temp.
+- and Enabled High Temp. Stop Inhibit or Input High Temp. Stop Inhibit is
+- active, controller will send warning alarm signal and it will be displayed in
+- LCD.
+- When the oil pressure of genset is less than threshold and Enabled Low
+- | 13 | Low Oil Pressure
+- Oil Pressure Stop Inhibit or Input Low Oil Pressure Stop Inhibit is active,
+- | 14 | Input Warn
+- When external input is active, controller will send warning alarm signal and
+- it will be displayed in LCD.
+- | 15 | Failed to Charge
+- When “Failed to Charge” input is active, controller will send warning alarm
+- If over power detection is enabled, when the controller detects that the
+- | 16 | Over Power
+- power value (power is positive) has exceeded the pre-set value and the
+- action selects “Warn”, it will initiate a warning alarm.
+- | 17 | ECU Warn | If an error message is received from ECU via J1939, it will initiate a
+- warning alarm.
+- | 5.2 | SHUTDOWN ALARMS
+- | When controller detects | shutdown alarm, it will send signal to open and stop genset. The alarms
+- | are | displayed in LCD.
+- Table 5 – Shutdown Alarms
+- | 1 | Emergency Stop
+- When controller detects emergency stop signal, it will send shutdown
+- alarm signal and it will be displayed in LCD.
+- | 2 | High Temp.
+- When the temperature of water/cylinder is higher than set threshold,
+- controller will send shutdown alarm signal and it will be displayed in LCD.
+- | 3 | Low Oil Pressure
+- When oil pressure is lower than threshold, controller will send shutdown
+- | 4 | Over Speed
+- When genset speed is higher than set threshold, controller will send
+- shutdown alarm signal and it will be displayed in LCD.
+- | 5 | Under Speed
+- When genset speed is lower than set threshold, controller will send
+- | 6 | Loss of Speed Signal | When the speed is 0 and delay is not 0, controller will send shutdown
+- | 7 | Gen Over Voltage
+- When genset voltage is higher than threshold, controller will send
+- | 8 | Gen Under Voltage
+- When genset voltage is under set threshold, controller will send
+- | 9 | Gen Over Current | When genset current is higher than set threshold and delay is not 0, it will
+- send shutdown alarm signal and it will be displayed in LCD.
+- | 10 | Fail to Start
+- If controller fails to start within set start times, it will send shutdown
+- | 11 | Gen Over Frequency
+- When genset frequency is higher than set threshold, controller will send
+- | 12 | Gen Under Frequency
+- When genset frequency is lower than set threshold, controller will send
+- | 13 | Genset Failed | When genset frequency is 0, controller will send shutdown alarm signal
+- and it will be displayed in LCD.
+- | 14 | Low Fuel Level
+- When fuel level low input is active, controller will send shutdown alarm
+- | 15 | Low Coolant Level
+- When genset coolant level low input is active, controller will send
+- | 16 | Temp. Sensor Open
+- | 17 | Oil
+- | Pressure | Sensor
+- | Open | shutdown alarm signal and it will be displayed in LCD.
+- | 18 | Maintenance Due
+- the current date is over the setting date and the maintenance action is
+- set as shutdown, controller sends warning alarm signal and it will be
+- displayed in LCD. Maintenance alarm can be reset by setting parameters
+- via passwords.
+- | 19 | Input Shutdown
+- When external input is active, controller will send shutdown alarm signal
+- | 20 | Over Power
+- action selects “Shutdown”, it will initiate shutdown alarm.
+- | 21 | ECU Shutdown | If an error message is received from ECU via J1939, it will initiate
+- shutdown alarm.
+- | 22 | ECU Comm. Failure
+- If the module does not detect the ECU data, it will initiate shutdown
+- | 23 | Over Current Fault
+- When over current fault shutdown input is active, controller will send
+- | 24 | Over Speed
+- | Shutdown | When over speed shutdown input is active, controller will send shutdown
+- | Input Alarm | alarm signal and it will be displayed in LCD.
+- NOTE: ECU warning and Shutdown alarm explanation: check engine according to detailed alarm contents; otherwise
+- check engine user manual according to SPN alarm code for gaining information.
+- | 6 | CONNECTIONS
+- | Compared with HGM6120, HGM6110 | doesn’t
+- | have | 3-phase
+- | input | terminal
+- | of | mains voltage. The
+- back panel of HGM6120 is as below.
+- | Fig.3 – Controller | Rear
+- | Panel | Drawing
+- | HGM6100N | Series
+- | Table | 6 – Terminal Connection Description
+- | No. | Function
+- | Cable Size | Description
+- | 1 | DC input B- | 2.5mm2
+- Connected to negative of starter battery.
+- Connected to positive of starter battery. If wire length is
+- | 2 | DC input B+ | 2.5mm2 | over 30m, better to double wires in parallel. Max. 20A
+- fuse is recommended.
+- | 3 | Emergency Stop | 2.5mm2
+- Connected to B+ via emergency stop button.
+- | 4 | Fuel Relay Output | 1.5mm2 | B+ is supplied by 3 points, rated 16A.
+- | 5 | Start Relay Output | 1.5mm2 | B+ is supplied by 3 points, rated 16A Connect to starter
+- coil.
+- | 6 | Aux. Relay Output 1 | 1.5mm2 | B+ is supplied by 2 points, rated 7A.
+- | 7 | Normal close output, 7A rated.
+- | 8 | Aux. Relay Output 2 | 1.5mm2
+- Relay common port.
+- | 9 | Normal open output, 7A rated.
+- Reference Table
+- | 10 | Aux. Relay Output 3 | 2.5mm2
+- | Relay normal open volt-free contact | 8.
+- | 11 | output.
+- | 12 | Aux. Relay Output 4 | 2.5mm2 | 16A rated.
+- | 14 | Charger D+ Input | 1.0mm2
+- Connect to D+ (WL) terminal. If without, the terminal is
+- hung up.
+- | 15 | Speed Sensor Input
+- | Connected | to
+- | speed | sensor,
+- | shielding | line
+- is
+- | 16 | Speed Sensor Input
+- | (B- | 0.5mm2
+- recommended.
+- connected inside)
+- | 17 | Temp. Sensor Input | 1.0mm2
+- Connect to water/cylinder temp.
+- resistance type sensor.
+- | 18 | Oil Pressure Sensor Input | 1.0mm2
+- | Connect to oil pressure resistance | Reference
+- Table
+- | type sensor. | 10.
+- | 19 | Fuel Level Sensor Input | 1.0mm2
+- Connect to fuel level resistance type
+- sensor.
+- | 20 | Aux. Input 1 | 1.0mm2
+- Ground connected is active (B-).
+- | 21 | Aux. Input 2 | 1.0mm2
+- | Ground connected is active (B-). | Reference | Table 9
+- | 22 | Aux. Input 3 | 1.0mm2
+- | 23 | CT A Phase Sensing Input | 1.5mm2 | Connect secondary coil (rated 5A).
+- | 24 | CT B Phase Sensing Input | 1.5mm2 | Connect secondary coil (rated 5A).
+- | 25 | CT C Phase Sensing Input | 1.5mm2 | Connect secondary coil (rated 5A).
+- | 26 | CT Common Port | 1.5mm2
+- Refer to INSTALLATION description.
+- | 27 | Gens
+- | U | phase
+- | Voltage | 1.0mm2 | Connect to U phase output (2A fuse is recommended).
+- Sensing Input
+- | 28 | Gens
+- | V | phase
+- | Voltage | 1.0mm2 | Connect to V phase output (2A fuse is recommended).
+- sensing Input
+- | 29 | Gens W phase Voltage | 1.0mm2 | Connect to W phase output (2A fuse is recommended).
+- | 30 | Gens N2 Input | 1.0mm2
+- Connect to generator N-wire.
+- | 31 | Mains R phase Voltage | 1.0mm2 | Connect to mains R phase (2A fuse is recommended)
+- | Sensing Input | HGM6110 without
+- | 32 | Mains S phase Voltage | 1.0mm2 | Connect to mains S phase (2A fuse is recommended)
+- | Sensing Input | HGM6110 without.
+- | 33 | Mains T phase Voltage | 1.0mm2 | Connect to mains T phase, (2A fuse is recommended)
+- | 34 | Mains N1 Input | 1.0mm2 | Connect to mains N-wire, HGM6110 without.
+- | 35 | RS485 Common Ground
+- | / | Impedance-120Ω shielding wire
+- | is | recommended,
+- its
+- | 36 | RS485- | 0.5mm2
+- single-end connect with ground.
+- | 37 | RS485+ | 0.5mm2
+- | 38 | Aux. Input 4 | 1.0mm2
+- | Ground connected is active (B-). | Reference Table 9
+- | 39 | Aux. Input 5 | 1.0mm2
+- | 40 | Sensor Common | 1.0mm2
+- Sensor common port.
+- | 41 | CAN COM | 0.5mm2 | Impedance-120Ω shielding wire is recommended, its
+- | 42 | CAN L | 0.5mm2
+- single-end connect with ground (the controller without
+- | 43 | CAN H | 0.5mm2
+- CANBUS function doesn’t have this terminal).
+- | 44 | NULL
+- NOTE: USB ports in controller rear panel are programmable parameter ports; user can directly program via PC.
+- | 7 | PARAMETER RANGE AND DEFINITION
+- | 7.1 | PARAMETER CONTENT AND RANGE TABLE
+- Table 7 – Parameter Content and Range
+- | Range | Default
+- | 1 | Mains
+- | Normal Delay | (0-3600)s | 10
+- The delay from abnormal to normal or from
+- | 2 | Mains
+- | Abnormal | (0-3600)s | 5
+- normal to abnormal. It is used for ATS
+- | Delay | (automatic transfer switch) control.
+- When mains voltage is under the point, mains
+- | 3 | Mains
+- | Under Voltage | (30-60000)V | 184 | under voltage active. When the value is 30,
+- | mains | under
+- | voltage | disabled.
+- Return
+- difference is 10V.
+- When mains voltage is greater than the point,
+- | 4 | Mains Over Voltage | (30-60000)V | 276
+- mains over voltage active. When the point is
+- 60000V, mains over voltage disabled. Return
+- It’s the delay from mains open to generator
+- | 5 | Transfer Delay | (0-99.9)s | 1.0
+- closed or from generator open to mains
+- closed.
+- | 6(1) | Start Delay | (0-3600)s | 1
+- Time from mains abnormal or remote start
+- signal is active to start genset.
+- | 7(2) | Stop Delay | (0-3600)s | 1
+- Time from mains normal or remote start
+- signal is inactive to stop genset.
+- When engine start failure, it’s the maximum
+- | 8(3) | Start Times | (1-10) times | 3
+- cranking times. When setting crank times out,
+- controller sends start fail signal.
+- | 9(4) | Preheat Delay | (0-300)s | 0
+- Time of pre-powering heat plug before starter
+- is powered up.
+- | 10(5) | Cranking Time | (3-60)s | 8
+- Time of starter power up each time.
+- | 11(6) | Crank Rest Time | (3-60)s | 10
+- The second waiting time before power up
+- when engine start fail.
+- Alarm for low oil pressure, high temp, under
+- | 12(7) | Safety On Time | (1-60)s | 10
+- speed, under frequency/voltage, failed to
+- charge are all inactive.
+- | 13(8) | Start Idle Time | (0-3600)s | 0
+- Idle running time of genset when starting.
+- | 14(9) | Warming Up Time | (0-3600)s | 10
+- Warming time between genset switch on and
+- high speed running.
+- | 15(10) | Cooling Time | (3-3600)s | 10
+- Time for cooling before stopping.
+- | 16(11) | Stop Idle Time | (0-3600)s | 0
+- Idle running time when genset stop.
+- | 17(12) | ETS Solenoid Hold | (0-120)s | 20
+- Stop electromagnet’s power-on time when
+- genset is stopping.
+- If “ETS Solenoid Hold” set as 0, it is the time
+- | 18(13) | Wait for Stop Time | (0-120)s | 0
+- from end of idle delay to genset at rest; if not
+- 0, it is from end of ETS solenoid delay to
+- genset at rest.
+- | 19(14) | Switch Close Delay | (0.0-10.0)s | 5.0
+- Mains’ or generator’s switch closing pulse
+- width, when it is 0, output is continuous.
+- | 20(15) | Flywheel Teeth | (10.0-300.0) | 118
+- Number of flywheel teeth, it can detect
+- disconnection conditions and engine speed.
+- | 21(16) | Gen Abnormal Delay | (0-20.0)s | 10.0
+- Over or under voltage alarm delay.
+- When genset voltage is over the point,
+- | 22(17) | Gen
+- | Over | Voltage | (30-60000)V | 264
+- generator over voltage is active. When the
+- | Shutdown | point is 60000V, generator over voltage is
+- disabled.
+- When generator voltage is under the point,
+- | 23(18) | Gen Under
+- | Voltage | (30-60000)V | 196
+- generator under voltage is active. When the
+- | Shutdown | point is 30V, generator under voltage is
+- | 24(19) | Under
+- | Speed | (0-6000)r/min | 1200
+- When the engine speed is under the point for
+- | Shutdown | 10s, shutdown alarm signal is sent.
+- | 25(20) | Over
+- | Speed | (0-6000)r/min | 1710
+- When the engine speed is over the point for
+- | Shutdown | 2s, shutdown alarm signal is sent.
+- | Gen Under | Frequency
+- When generator frequency is lower than the
+- | 26(21) | Shutdown | (0-75.0)Hz | 45.0 | point (not equal to 0) for 10s, shutdown alarm
+- signal is sent.
+- | Gen Over | Frequency
+- When generator’s frequency is over the point
+- | 27(22) | Shutdown | (0-75.0)Hz | 57.0
+- | and | continues
+- | for | 2s,
+- | generator | over
+- frequency is active.
+- When the temperature sensor value is over
+- this point, it sends out high temp. alarm.
+- | 28(23) | High
+- | Temperature | (80-300)ºC | 98 | When the value is 300, warning alarm won’t
+- | Shutdown | be sent. (only suited for temperature sensor,
+- except for high temp. pressure alarm signal
+- inputted by programmable input port.)
+- When the oil pressure sensor value is under
+- this point, Low Oil Pressure alarm is sending
+- | 29(24) | Low
+- | Oil | Pressure | (0-400)kPa | 103 | out. When the value is 0, warning alarm won’t
+- | Shutdown | be sent. (only suited for oil pressure sensor,
+- except for low oil pressure alarm signal
+- | Low | Fuel
+- | Level | When fuel level sensor value is under this
+- | 30(25) | Warning Value | (0-100)% | 10 | point and remains for 10s, genset sends out
+- warning alarm, only warn but not shutdown.
+- | 31(26) | Loss of Speed
+- | Signal | (0-20.0)s | 5.0 | When the delay setting as 0s, it only warn but
+- | Delay | not shutdown.
+- During genset normal running, when B+ and
+- | 32(27) | Charging Failure Volt. | (0-30)V | 6.0
+- charger D+ (WL) voltage difference is above
+- | Difference | this value for 5s, the controller issues
+- “Charging Failure” warning.
+- When generator battery voltage is over the
+- | 33(28) | Battery Over Voltage | (12-40)V | 33.0 | point and remains for 20s, battery over
+- voltage signal is active. it only sends warn but
+- not shutdown.
+- When generator battery voltage is under the
+- | 34(29) | Battery Under Voltage | (4-30)V | 8.0 | point and remains for 20s, battery under
+- | 35(30) | CT Ratio | (5-6000)/5 | 500
+- External current transformer ratio.
+- | 36(31) | Full Load Rating | (5-6000)A | 500
+- | Rated | current
+- | of | generator,
+- | used | for
+- calculating over load current.
+- | 37(32) | Over
+- | Current | (50-130)% | 120
+- When load current is over the point, the over
+- | Percentage | current delay is initiated.
+- When load current is over the point, over
+- | 38(33) | Over Current Delay | (0-3600)s | 30 | current signal is sent. When the delay is 0,
+- only warn but not shutdown.
+- | 39(34) | Fuel Pump On | (0-100)% | 25
+- When the fuel level lower than the set value
+- for 10s, it sends a signal to open fuel pump.
+- | 40(35) | Fuel Pump Off | (0-100)% | 80
+- When the fuel level higher than the set value
+- for 10s, it sends a signal to close fuel pump.
+- | Factory | default:
+- | 41(36) | Aux. Output 1 | (0-26) | 2
+- Energized to stop. See
+- table 8.
+- | 42(37) | Aux. Output 2 | (0-26) | 3
+- | Factory | default: | Idle HGM6100N
+- | control. See table 8. | parameter
+- range:
+- | 43(38) | Aux. Output 3 | (0-26) | 5
+- | Factory | default: | Gens (0-25).
+- closed. See table 8.
+- | 44(39) | Aux. Output 4 | (0-26) | 6
+- Factory default: Mains
+- | 45(40) | Aux. Input 1 | (0-25) | 1
+- Factory default: High temperature alarm. See
+- | 46(41) | Active Type | (0-1) | 0
+- Factory default: close.
+
+### HGM6110 — datasheet của HGM6110N (nhà cung cấp ghi HGM6110: cần xác nhận đời) — supplierId: smartgen, n: 1001: các dòng như ở mục HGM6110N
+
+### HGM6120 — datasheet của HGM6120N (nhà cung cấp ghi HGM6120: cần xác nhận đời) — supplierId: smartgen, n: 1001
+- HGM6100N SERIES
+- (HGM6110N/6120N/6110NC/6120NC/6110CAN/6120CAN)
+- GENSET CONTROLLER
+- USER MANUAL
+- +86-371-67981000(overseas)
+- All rights reserved. No part of this publication may be reproduced in any material form (including
+- photocopying or storing in any medium by electronic means or other) without the written permission of
+- the copyright holder.
+- SmartGen reserves the right to change the contents of this document without prior notice.
+- Table 1 – Software Version
+- | Date | Version
+- Note
+- Original Release
+- Changed back panel picture of controller;
+- Modified Insulation Intensity description.
+- | 2018-08-02 | 1.2 | Configuration parameters were added in table 7;
+- Modified front panel drawing and keys description.
+- Added configuration parameters of active power loading
+- percentage;
+- Fixed crank disconnect conditions conforming to the controller;
+- Fixed LCD contrast ratio description;
+- Fixed Table 5 as Shutdown Alarms;
+- | 2020-08-18 | 1.6 | Deleted “Table 5” of “7.5 CONDITIONS OF CRANK DISCONNECT
+- (Table 5)”.
+- | 2020-09-10 | 1.7 | Modified the terminal number of output port 2 of typical
+- application diagrams.
+- Deleted MTU MDEC wiring diagram;
+- Added partial parameters.
+- Updated the Logo of SmartGen.
+- Unified the controller’s name and updated company address
+- information.
+- Added configurations of output port.
+- Modified the description of raise and drop speed and inputs;
+- Modified the description of remote control input;
+- | 2023-10-16 | 2.2 | Added the RS485 baud rate setting and new AC system option
+- (3P4W-ANC) in Table 7;
+- Added new outputs in Table 8: ECU Running Output and Fuel 1
+- Output.
+- CONTENTS
+- | 1 | OVERVIEW .................................................................................................................................................... 5
+- | 2 | PERFORMANCE AND CHARACTERISTICS................................................................................................5
+- | 3 | SPECIFICATION...........................................................................................................................................7
+- | 4 | OPERATION................................................................................................................................................. 8
+- 4.1 KEYS DESCRIPTION...........................................................................................................................8
+- 4.2 CONTROLLER PANEL........................................................................................................................9
+- 4.3 AUTOMATIC START/STOP OPERATION........................................................................................10
+- 4.4 MANUAL START/STOP OPERATION..............................................................................................10
+- 4.5 EMERGENCY START........................................................................................................................11
+- | 5 | PROTECTION.............................................................................................................................................11
+- 5.1 WARNINGS.......................................................................................................................................11
+- 5.2 SHUTDOWN ALARMS......................................................................................................................13
+- | 6 | CONNECTIONS..........................................................................................................................................15
+- | 7 | PARAMETER RANGE AND DEFINITION...................................................................................................18
+- 7.1 PARAMETER CONTENT AND RANGE TABLE................................................................................18
+- 7.2 DEFINED CONTENTS OF PROGRAMMABLE OUTPUT 1-4............................................................24
+- 7.3 DEFINED CONTENTS OF PROGRAMMABLE INPUT 1-5............................................................... 26
+- 7.4 SENSOR SELECTION....................................................................................................................... 28
+- 7.5 CONDITIONS OF CRANK DISCONNECT SELECTION....................................................................29
+- | 8 | PARAMETER SETTING..............................................................................................................................29
+- | 9 | SENSOR SETTING.....................................................................................................................................31
+- | 10 | COMMISSIONING......................................................................................................................................32
+- | 11 | TYPICAL APPLICATION............................................................................................................................33
+- | 12 | INSTALLATION..........................................................................................................................................35
+- 12.1 FIXING CLIPS................................................................................................................................... 35
+- 12.2 OVERALL DIMENSION AND PANEL CUTOUT................................................................................35
+- | 13 | CONNECTIONS OF CONTROLLER WITH J1939 ENGINE.......................................................................37
+- 13.1 CUMMINS ISB/ISBE.........................................................................................................................37
+- 13.2 CUMMINS QSL9...............................................................................................................................37
+- 13.3 CUMMINS QSM11 (IMPORT)..........................................................................................................37
+- 13.4 CUMMINS QSX15-CM570...............................................................................................................38
+- 13.5 CUMMINS GCS-MODBUS................................................................................................................38
+- 13.6 CUMMINS QSM11........................................................................................................................... 39
+- 13.7 CUMMINS QSZ13............................................................................................................................ 39
+- 13.8 DETROIT DIESEL DDEC III/IV.......................................................................................................... 40
+- 13.9 DEUTZ EMR2....................................................................................................................................40
+- 13.10 JOHN DEERE.................................................................................................................................40
+- 13.11 MTU ADEC (SMART MODULE)....................................................................................................40
+- 13.12 MTU ADEC (SAM MODULE).........................................................................................................41
+- 13.13 PERKINS........................................................................................................................................42
+- 13.14 SCANIA..........................................................................................................................................42
+- 13.15 VOLVO EDC3.................................................................................................................................42
+- 13.16 VOLVO EDC4.................................................................................................................................43
+- 13.17 VOLVO-EMS2................................................................................................................................43
+- 13.18 YUCHAI..........................................................................................................................................44
+- 13.19 WEICHAI........................................................................................................................................44
+- | 14 | FAULT FINDING.........................................................................................................................................45
+- | 1 | OVERVIEW
+- HGM6100N series genset controller, integrating digital, intelligent and network techniques, is used
+- for automatic control and monitoring system of single genset. It can carry out functions of automatic
+- start/stop, data measurement, alarm protection and “three remote” (remote control, remote
+- measurement and remote communication). The controller uses LCD display, optional language
+- interface including Chinese, English, Spanish, Russian, Portuguese, Turkish, Polish and French with
+- easy and reliable operation.
+- HGM6100N series genset controller uses micro-processing technique which can achieve precision
+- measurement, value adjustment, timing and threshold setting etc. All the parameters can be configured
+- from front panel or use USB interface (or RS485 interface) to adjust via PC. It can be widely used in all
+- types of automatic control system for its compact structure, simple connections and high reliability.
+- | 2 | PERFORMANCE AND CHARACTERISTICS
+- HGM6100N controller has six variants:
+- | HGM6120N/6120NC/6120CAN: Based on HGM6110N/6110NC/6110CAN, it | adds mains
+- AC
+- | monitoring and mains/generator automatic switching control (AMF), especially | suitable for
+- the
+- automation system composed by mains and genset.
+- NOTE1: HGM6110NC/6120NC has RS485 port, HGM6110N/6120N without.
+- HGM6110CAN/6120CAN has CAN port, HGM6110N/6120N and HGM6110NC/6120NC without.
+- NOTE2: HGM6110/6120 is taken as an example to describe in this manual.
+- Main characteristics are as following:
+-  132x64 LCD display with backlight, optional language interface (Chinese, English, Spanish, Russian,
+- Portuguese, Turkey, Polish and French), push-button operation;
+-  Acrylic screen, improved wearable and scratch resistance property;
+-  Silica-gel panel and keys can well adapt to higher and lower temperature;
+-  RS485 communication port enables “three remote” functions via MODBUS protocol;
+-  CANBUS port which can be connected to ECU with J1939, it not only can monitor frequently-used
+- data (such as water temperature, oil pressure, speed and fuel consumption, etc.) but also can
+- control start, stop, high speed and low speed (controller with CANBUS port is needed) via CANBUS
+- port;
+-  Adapt to 3P4W, 3P3W, 1P2W and 2P3W (120V/240V), 50Hz/60Hz system;
+-  Can measure and display 3 phase voltage, 3 phase current, frequency, power parameter of
+- mains/gens;
+- | Mains | Generator
+- | Line voltage (Uab, Ubc, and Uca) | Line voltage (Uab, Ubc, and Uca)
+- | Phase voltage (Ua, Ub, and Uc) | Phase voltage (Ua, Ub, and Uc)
+- | Frequency | Hz
+- | Phase sequence | Phase sequence
+- Load
+- | Current | IA, IB, IC
+- Each and total active power kW
+- Reactive power kvar
+- Apparent power kVA
+- | Power factor | PF
+- | Generator accumulated energy | kWh
+- | Output percentage with load | %
+- |  | For mains, genset has functions of over/under voltage and loss of phase; For gens, genset has
+- functions of over/under voltage, over/under frequency, over current and over power;
+- |  | Precision measure and display of parameters about engine;
+- | Temp. (WT) | °C/°F
+- | Oil pressure (OP) | kPa/psi/bar
+- | Fuel level (FL) | %
+- | Fuel remains | L
+- | Speed (SPD) | r/min
+- | Battery Voltage (VB) | V
+- | Charger Voltage (VD) | V
+- Accumulated running hours
+- Accumulated start times
+- |  | Control and protection function: Automatic start/stop of genset, load transfer (ATS control) and
+- perfect fault display and protection;
+- |  | With ETS, idle control, pre-heat control, speed raise/drop control, all of them are relay outputs;
+- |  | Parameter setting: Allow user to modify setting and store them in internal FLASH memory. The
+- parameters cannot be lost even when power off. All of parameters can be set not only from the front
+- panel, but also adjusted through USB interface (or RS485 interface) via PC;
+- |  | Multiple sensors of temperature, pressure and fuel level can be used directly, parameters can be
+- defined by user;
+- |  | Multiple conditions of crank disconnect (speed, oil pressure, frequency) can be selected;
+- |  | With emergency start function;
+- |  | With flywheel teeth numbers automatic identification function;
+- |  | Power supply range: (8~35)VDC, accommodating to different starting battery voltage environment;
+- |  | All parameters use digital modulation, instead of analog modulation using conventional
+- potentiometer, having improved reliability and stability;
+- |  | With maintenance function. Types (date or running time) can be selected and actions (warning or
+- alarm shutdown) can be set when maintenance time out;
+- |  | Event log, real-time clock, scheduled start & stop function (can be set as start unit once a
+- day/week/month whether with load or not);
+- |  | Add rubber gasket between shell and controller screen, the waterproof can reach IP65;
+- |  | Controller is fixed by metal fixing clips;
+- |  | Modular design, flame-retardant ABS shell, pluggable terminal, embedded mounting, compact
+- structure and easy installation.
+- | 3 | SPECIFICATION
+- Table 2 – Technical Parameters
+- | Items | Contents
+- | Working Voltage | DC8.0V to DC35.0V, continuous
+- | Power Consumption | <3W (Standby mode: ≤2W)
+- AC System
+- | 3P4W | AC15V - AC360V (ph-N)
+- | 3P3W | AC30V - AC620V (ph-ph)
+- | 1P2W | AC15V - AC360V (ph-N)
+- | 2P3W | AC15V - AC360V (ph-N)
+- | AC Alternator Frequency | 50Hz/60Hz
+- | Speed Sensor Voltage | 1.0V to 24V (RMS)
+- | Speed Sensor Frequency | 10,000 Hz (max.)
+- | Start Relay Output | 16A DC28V at supply voltage
+- | Fuel Relay Output | 16A DC28V at supply voltage
+- | Auxiliary Relay Output 1 | 7A DC28V at supply voltage
+- | Auxiliary Relay Output 2 | 7A AC250V volt-free output
+- | Auxiliary Relay Output 3 | 16A AC250V volt-free output
+- | Auxiliary Relay Output 4 | 16A AC250V volt-free output
+- | Overall Dimensions | 209mm x 166mm x 45mm
+- | Panel Cutout | 186mm x 141mm
+- | C.T. Secondary Current | 5A (rated)
+- | Working Temperature | (-25~+70)ºC
+- | Working Humidity | (20~93)%RH
+- | Storage Temperature | (-30~+80)ºC
+- | Protection Level | IP65: when water-proof gasket installed between control panel and
+- enclosure.
+- | Insulation Intensity | Apply AC2.2kV voltage between high voltage terminal and low voltage
+- terminal. The leakage current is not more than 3mA within 1min.
+- | Weight | 0.56kg
+- | 4 | OPERATION
+- | 4.1 | KEYS DESCRIPTION
+- Table 3 – Keys Description
+- | Icon | Key
+- Description
+- Can stop generator under Manual/Auto mode;
+- Can reset shutdown alarm;
+- | Stop/Reset | Press this key at least 3 seconds to test panel indicators are OK or not
+- (lamp test);
+- During stopping process, press this key again can stop generator
+- immediately.
+- | Start | Start genset under Manual mode; Press this key during starting process,
+- genset will jump to next status.
+- | Manual | Pressing this key will set the module as Manual mode.
+- | Auto | Pressing this key will set the module as Auto mode.
+- | Close/Open | Can control gens to switch on or off in Manual mode.
+- Note: The key is fit for HGM6120 series controllers.
+- | Close | Can control gens to switch on in Manual mode.
+- Note: The key is fit for HGM6110 series controllers.
+- | Open | Can control gens to switch off in Manual mode.
+- | Set/Confirm | Press this key to enter menu interface;
+- Shift cursor to confirm in parameters setting menu.
+- | Up/Increase | Screen scroll;
+- Up cursor and increase value in setting menu.
+- | Down/Decrease | Screen scroll;
+- Down cursor and decrease value in setting menu.
+- | Home/Return | Return to homepage when in main interface;
+- Exit when in parameters setting interface.
+- | 4.2 | CONTROLLER PANEL
+- Fig.2 – HGM6120 (HGM6120N/NC/CAN) Front Panel Indication
+- NOTE: Partial indicator states:
+- Alarm Indicator: slowly blink when warning alarms; fast blink when shutdown alarms; won’t illuminate when there is no
+- alarm.
+- Status Indicator: won’t illuminate when genset stand by; blink 1 time per second in start or stop process and always
+- illuminate when runs normally; for HGM6100CAN, press start key in auto mode or manual mode, ECU power outputs and
+- status indicator always illuminates.
+- | 4.3 | AUTOMATIC START/STOP OPERATION
+- | Auto mode is activated by pressing the | , LED indicator beside the key is illuminating which
+- confirms this action.
+- Starting Sequence
+- 1) HGM6120: When mains is abnormal (over/under voltage, loss of phase), it enters into “Mains
+- Abnormal Delay” and LCD displays count-down time. When delay is over, “Start Delay” begins.
+- 2) HGM6110: When “remote start” input is active, it enters into “Start Delay”.
+- 3) “Count- down” of start delay is displayed in LCD.
+- 4) When start delay is over, preheat relay is outputting (if configured), “Preheat Delay XX s” is
+- displayed in LCD.
+- 5) When preheat delay is over, fuel relay is outputting for 1s and then start relay outputs; if genset
+- failed to start during “Crank Time”, the fuel and start relay stop outputting and enter into “Crank
+- Rest Time” and wait for next cranking.
+- 6) If genset failed to start within set start times, the fifth line of LCD will turn black and Fail to Start
+- alarm will be displayed.
+- 7) Any time to start genset successfully, it will enter into “Safety Running”. During this period, alarms
+- of low oil pressure, high temperature, under speed, failed to charge and Aux. input (be configured)
+- are disabled. As soon as this delay is over, genset will enter into “Start Idle Delay” (if configured).
+- 8) During start idle delay, alarms of under speed, under frequency, under voltage are disabled. As
+- soon as this delay is over, genset will enter into “Warming Up Delay” (if configured).
+- 9) When “Warming Up Delay” is over, the indicator is illuminating if gens normal. If voltage and
+- frequency of genset reach the load requirement, close relay outputs, genset is taking load and
+- indicator illuminates; if voltage or frequency is abnormal, controller will alarm and shutdown (LCD
+- displays the alarm information).
+- Stopping Sequence
+- 1) HGM6120: During normal running, if mains normal, genset will enter into “Mains Normal Delay”,
+- when mains indicator illuminates, “Stop Delay” begins.
+- 2) HGM6110: Genset enters into “Stop Delay” as soon as “Remote Start” is inactive.
+- 3) When “Stop Delay” is over, genset enters into “Cooling Delay”. Closing relay is disconnected. After
+- switch “Transfer Delay”, closing relay is outputting, mains is taking load, generator indicator
+- extinguishes while mains indicator illuminates.
+- 4) When entering “Stop Idle Delay” (if configured), idle relay is energized to output.
+- 5) When entering “ETS Delay”, ETS relay is energized to output, fuel relay output is disconnected.
+- 6) When entering “Genset After Stop Time”, genset will automatically judge if it has stopped.
+- 7) When genset has stopped, it enters into standby mode; if genset failed to stop, controller will send
+- alarms (“Fail to Stop” alarm will be displayed in LCD).
+- | 4.4 | MANUAL START/STOP OPERATION
+- | 1) | HGM6120: Manual Mode is active when press
+- and its indicator illuminates. Under this mode,
+- | press | to start genset, it can automatically
+- detect crank disconnect and accelerate to high
+- speed running. If there is high temperature, low oil pressure, over speed and abnormal voltage
+- during genset running, controller can protect genset to stop (detail procedures please refer to
+- No.4~9 of Auto start operation). Under Manual Mode, switch won’t transfer automatically, it is
+- | necessary to press | to transfer load.
+- | 2) | HGM6110: Manual Mode is active when pressing
+- , and its indicator is illuminating. Then
+- | detect crank | disconnect and accelerate
+- to high
+- | speed | running. If there is high temperature, low
+- | oil pressure, | over speed and abnormal
+- voltage
+- | during | running, controller can protect genset to
+- | stop quickly | (detail procedures please
+- refer to
+- | No.4~9 of Auto start operation). After genset runs well in high speed, press | and gens takes
+- load.
+- | 3) | Manual Stop: Pressing
+- | can | shut
+- | down | the
+- | running | genset
+- | (detail | procedures
+- | please | refer
+- to
+- No.3~7 of Auto stop operation).
+- | 4.5 | EMERGENCY START
+- | In manual mode, pressing | and
+- simultaneously can compel genset to start. The controller
+- won’t judge whether the controller has started successfully according to disconnect conditions and the
+- disconnection of starter needs to be controlled by operators. When operators observed the genset has
+- started successfully, loose the keys and the controller enters safety delay with start no outputting.
+- | 5 | PROTECTION
+- | 5.1 | WARNINGS
+- When controller detects the warning signal, the genset only sends alarm and not stops. The alarms
+- are displayed in LCD.
+- Table 4 – Controller Warning Alarms
+- | No. | Items
+- | 1 | Loss of Speed Signal | When the speed of genset is 0 and speed loss delay is 0, controller will
+- send warning alarm signal and it will be displayed in LCD.
+- When the current of genset is higher than threshold, over current type is
+- | 2 | Genset Over Current | DMT and delay is 0, controller will send warning alarm signal and it will be
+- | 3 | Fail to Stop
+- When genset cannot stop when ETS delay/after stop delay is over,
+- controller will send warning alarm signal and it will be displayed in LCD.
+- When the fuel level of genset is lower than threshold or low fuel level
+- | 4 | Low Fuel Level
+- warning is active, controller will send warning alarm signal and it will be
+- | 5 | Fail to Charge
+- During genset normal running process, when the voltage difference
+- between B+ and the charger D+ (WL) is above the Failed to Charge voltage
+- difference for 5s, the controller shall issue “Failed to Charge” warning,
+- while at the same time LCD displays “Failed to Charge” warning.
+- | 6 | Battery Under Voltage
+- When the battery voltage of genset is lower than threshold, controller will
+- | 7 | Battery Over Voltage
+- When the battery voltage of genset is higher than threshold, controller will
+- | 8 | Low Coolant Level
+- When low coolant level input is active, controller will send warning alarm
+- signal and it will be displayed in LCD.
+- | 9 | Temp. Sensor Open
+- When sensor hasn’t connected to corresponding port, controller will send
+- warning alarm signal and it will be displayed in LCD.
+- | 10 | Oil Pressure
+- | Sensor | When sensor hasn’t connected to corresponding port, controller will send
+- | Open | warning alarm signal and it will be displayed in LCD.
+- Maintenance type is running time. When genset running time is longer
+- | Maintenance | Due
+- than maintenance time of user setting, or the maintenance type is date,
+- | 11 | Warning
+- the current date is over the setting date and the maintenance action is set
+- as warning, controller sends warning alarm signal and it will be displayed
+- in LCD.
+- When the water/cylinder temperature of genset is higher than threshold
+- | 12 | High Temp.
+- and Enabled High Temp. Stop Inhibit or Input High Temp. Stop Inhibit is
+- active, controller will send warning alarm signal and it will be displayed in
+- LCD.
+- When the oil pressure of genset is less than threshold and Enabled Low
+- | 13 | Low Oil Pressure
+- Oil Pressure Stop Inhibit or Input Low Oil Pressure Stop Inhibit is active,
+- | 14 | Input Warn
+- When external input is active, controller will send warning alarm signal and
+- it will be displayed in LCD.
+- | 15 | Failed to Charge
+- When “Failed to Charge” input is active, controller will send warning alarm
+- If over power detection is enabled, when the controller detects that the
+- | 16 | Over Power
+- power value (power is positive) has exceeded the pre-set value and the
+- action selects “Warn”, it will initiate a warning alarm.
+- | 17 | ECU Warn | If an error message is received from ECU via J1939, it will initiate a
+- warning alarm.
+- | 5.2 | SHUTDOWN ALARMS
+- | When controller detects | shutdown alarm, it will send signal to open and stop genset. The alarms
+- | are | displayed in LCD.
+- Table 5 – Shutdown Alarms
+- | 1 | Emergency Stop
+- When controller detects emergency stop signal, it will send shutdown
+- alarm signal and it will be displayed in LCD.
+- | 2 | High Temp.
+- When the temperature of water/cylinder is higher than set threshold,
+- controller will send shutdown alarm signal and it will be displayed in LCD.
+- | 3 | Low Oil Pressure
+- When oil pressure is lower than threshold, controller will send shutdown
+- | 4 | Over Speed
+- When genset speed is higher than set threshold, controller will send
+- shutdown alarm signal and it will be displayed in LCD.
+- | 5 | Under Speed
+- When genset speed is lower than set threshold, controller will send
+- | 6 | Loss of Speed Signal | When the speed is 0 and delay is not 0, controller will send shutdown
+- | 7 | Gen Over Voltage
+- When genset voltage is higher than threshold, controller will send
+- | 8 | Gen Under Voltage
+- When genset voltage is under set threshold, controller will send
+- | 9 | Gen Over Current | When genset current is higher than set threshold and delay is not 0, it will
+- send shutdown alarm signal and it will be displayed in LCD.
+- | 10 | Fail to Start
+- If controller fails to start within set start times, it will send shutdown
+- | 11 | Gen Over Frequency
+- When genset frequency is higher than set threshold, controller will send
+- | 12 | Gen Under Frequency
+- When genset frequency is lower than set threshold, controller will send
+- | 13 | Genset Failed | When genset frequency is 0, controller will send shutdown alarm signal
+- and it will be displayed in LCD.
+- | 14 | Low Fuel Level
+- When fuel level low input is active, controller will send shutdown alarm
+- | 15 | Low Coolant Level
+- When genset coolant level low input is active, controller will send
+- | 16 | Temp. Sensor Open
+- | 17 | Oil
+- | Pressure | Sensor
+- | Open | shutdown alarm signal and it will be displayed in LCD.
+- | 18 | Maintenance Due
+- the current date is over the setting date and the maintenance action is
+- set as shutdown, controller sends warning alarm signal and it will be
+- displayed in LCD. Maintenance alarm can be reset by setting parameters
+- via passwords.
+- | 19 | Input Shutdown
+- When external input is active, controller will send shutdown alarm signal
+- | 20 | Over Power
+- action selects “Shutdown”, it will initiate shutdown alarm.
+- | 21 | ECU Shutdown | If an error message is received from ECU via J1939, it will initiate
+- shutdown alarm.
+- | 22 | ECU Comm. Failure
+- If the module does not detect the ECU data, it will initiate shutdown
+- | 23 | Over Current Fault
+- When over current fault shutdown input is active, controller will send
+- | 24 | Over Speed
+- | Shutdown | When over speed shutdown input is active, controller will send shutdown
+- | Input Alarm | alarm signal and it will be displayed in LCD.
+- NOTE: ECU warning and Shutdown alarm explanation: check engine according to detailed alarm contents; otherwise
+- check engine user manual according to SPN alarm code for gaining information.
+- | 6 | CONNECTIONS
+- | Compared with HGM6120, HGM6110 | doesn’t
+- | have | 3-phase
+- | input | terminal
+- | of | mains voltage. The
+- back panel of HGM6120 is as below.
+- | Fig.3 – Controller | Rear
+- | Panel | Drawing
+- | HGM6100N | Series
+- | Table | 6 – Terminal Connection Description
+- | No. | Function
+- | Cable Size | Description
+- | 1 | DC input B- | 2.5mm2
+- Connected to negative of starter battery.
+- Connected to positive of starter battery. If wire length is
+- | 2 | DC input B+ | 2.5mm2 | over 30m, better to double wires in parallel. Max. 20A
+- fuse is recommended.
+- | 3 | Emergency Stop | 2.5mm2
+- Connected to B+ via emergency stop button.
+- | 4 | Fuel Relay Output | 1.5mm2 | B+ is supplied by 3 points, rated 16A.
+- | 5 | Start Relay Output | 1.5mm2 | B+ is supplied by 3 points, rated 16A Connect to starter
+- coil.
+- | 6 | Aux. Relay Output 1 | 1.5mm2 | B+ is supplied by 2 points, rated 7A.
+- | 7 | Normal close output, 7A rated.
+- | 8 | Aux. Relay Output 2 | 1.5mm2
+- Relay common port.
+- | 9 | Normal open output, 7A rated.
+- Reference Table
+- | 10 | Aux. Relay Output 3 | 2.5mm2
+- | Relay normal open volt-free contact | 8.
+- | 11 | output.
+- | 12 | Aux. Relay Output 4 | 2.5mm2 | 16A rated.
+- | 14 | Charger D+ Input | 1.0mm2
+- Connect to D+ (WL) terminal. If without, the terminal is
+- hung up.
+- | 15 | Speed Sensor Input
+- | Connected | to
+- | speed | sensor,
+- | shielding | line
+- is
+- | 16 | Speed Sensor Input
+- | (B- | 0.5mm2
+- recommended.
+- connected inside)
+- | 17 | Temp. Sensor Input | 1.0mm2
+- Connect to water/cylinder temp.
+- resistance type sensor.
+- | 18 | Oil Pressure Sensor Input | 1.0mm2
+- | Connect to oil pressure resistance | Reference
+- Table
+- | type sensor. | 10.
+- | 19 | Fuel Level Sensor Input | 1.0mm2
+- Connect to fuel level resistance type
+- sensor.
+- | 20 | Aux. Input 1 | 1.0mm2
+- Ground connected is active (B-).
+- | 21 | Aux. Input 2 | 1.0mm2
+- | Ground connected is active (B-). | Reference | Table 9
+- | 22 | Aux. Input 3 | 1.0mm2
+- | 23 | CT A Phase Sensing Input | 1.5mm2 | Connect secondary coil (rated 5A).
+- | 24 | CT B Phase Sensing Input | 1.5mm2 | Connect secondary coil (rated 5A).
+- | 25 | CT C Phase Sensing Input | 1.5mm2 | Connect secondary coil (rated 5A).
+- | 26 | CT Common Port | 1.5mm2
+- Refer to INSTALLATION description.
+- | 27 | Gens
+- | U | phase
+- | Voltage | 1.0mm2 | Connect to U phase output (2A fuse is recommended).
+- Sensing Input
+- | 28 | Gens
+- | V | phase
+- | Voltage | 1.0mm2 | Connect to V phase output (2A fuse is recommended).
+- sensing Input
+- | 29 | Gens W phase Voltage | 1.0mm2 | Connect to W phase output (2A fuse is recommended).
+- | 30 | Gens N2 Input | 1.0mm2
+- Connect to generator N-wire.
+- | 31 | Mains R phase Voltage | 1.0mm2 | Connect to mains R phase (2A fuse is recommended)
+- | Sensing Input | HGM6110 without
+- | 32 | Mains S phase Voltage | 1.0mm2 | Connect to mains S phase (2A fuse is recommended)
+- | Sensing Input | HGM6110 without.
+- | 33 | Mains T phase Voltage | 1.0mm2 | Connect to mains T phase, (2A fuse is recommended)
+- | 34 | Mains N1 Input | 1.0mm2 | Connect to mains N-wire, HGM6110 without.
+- | 35 | RS485 Common Ground
+- | / | Impedance-120Ω shielding wire
+- | is | recommended,
+- its
+- | 36 | RS485- | 0.5mm2
+- single-end connect with ground.
+- | 37 | RS485+ | 0.5mm2
+- | 38 | Aux. Input 4 | 1.0mm2
+- | Ground connected is active (B-). | Reference Table 9
+- | 39 | Aux. Input 5 | 1.0mm2
+- | 40 | Sensor Common | 1.0mm2
+- Sensor common port.
+- | 41 | CAN COM | 0.5mm2 | Impedance-120Ω shielding wire is recommended, its
+- | 42 | CAN L | 0.5mm2
+- single-end connect with ground (the controller without
+- | 43 | CAN H | 0.5mm2
+- CANBUS function doesn’t have this terminal).
+- | 44 | NULL
+- NOTE: USB ports in controller rear panel are programmable parameter ports; user can directly program via PC.
+- | 7 | PARAMETER RANGE AND DEFINITION
+- | 7.1 | PARAMETER CONTENT AND RANGE TABLE
+- Table 7 – Parameter Content and Range
+- | Range | Default
+- | 1 | Mains
+- | Normal Delay | (0-3600)s | 10
+- The delay from abnormal to normal or from
+- | 2 | Mains
+- | Abnormal | (0-3600)s | 5
+- normal to abnormal. It is used for ATS
+- | Delay | (automatic transfer switch) control.
+- When mains voltage is under the point, mains
+- | 3 | Mains
+- | Under Voltage | (30-60000)V | 184 | under voltage active. When the value is 30,
+- | mains | under
+- | voltage | disabled.
+- Return
+- difference is 10V.
+- When mains voltage is greater than the point,
+- | 4 | Mains Over Voltage | (30-60000)V | 276
+- mains over voltage active. When the point is
+- 60000V, mains over voltage disabled. Return
+- It’s the delay from mains open to generator
+- | 5 | Transfer Delay | (0-99.9)s | 1.0
+- closed or from generator open to mains
+- closed.
+- | 6(1) | Start Delay | (0-3600)s | 1
+- Time from mains abnormal or remote start
+- signal is active to start genset.
+- | 7(2) | Stop Delay | (0-3600)s | 1
+- Time from mains normal or remote start
+- signal is inactive to stop genset.
+- When engine start failure, it’s the maximum
+- | 8(3) | Start Times | (1-10) times | 3
+- cranking times. When setting crank times out,
+- controller sends start fail signal.
+- | 9(4) | Preheat Delay | (0-300)s | 0
+- Time of pre-powering heat plug before starter
+- is powered up.
+- | 10(5) | Cranking Time | (3-60)s | 8
+- Time of starter power up each time.
+- | 11(6) | Crank Rest Time | (3-60)s | 10
+- The second waiting time before power up
+- when engine start fail.
+- Alarm for low oil pressure, high temp, under
+- | 12(7) | Safety On Time | (1-60)s | 10
+- speed, under frequency/voltage, failed to
+- charge are all inactive.
+- | 13(8) | Start Idle Time | (0-3600)s | 0
+- Idle running time of genset when starting.
+- | 14(9) | Warming Up Time | (0-3600)s | 10
+- Warming time between genset switch on and
+- high speed running.
+- | 15(10) | Cooling Time | (3-3600)s | 10
+- Time for cooling before stopping.
+- | 16(11) | Stop Idle Time | (0-3600)s | 0
+- Idle running time when genset stop.
+- | 17(12) | ETS Solenoid Hold | (0-120)s | 20
+- Stop electromagnet’s power-on time when
+- genset is stopping.
+- If “ETS Solenoid Hold” set as 0, it is the time
+- | 18(13) | Wait for Stop Time | (0-120)s | 0
+- from end of idle delay to genset at rest; if not
+- 0, it is from end of ETS solenoid delay to
+- genset at rest.
+- | 19(14) | Switch Close Delay | (0.0-10.0)s | 5.0
+- Mains’ or generator’s switch closing pulse
+- width, when it is 0, output is continuous.
+- | 20(15) | Flywheel Teeth | (10.0-300.0) | 118
+- Number of flywheel teeth, it can detect
+- disconnection conditions and engine speed.
+- | 21(16) | Gen Abnormal Delay | (0-20.0)s | 10.0
+- Over or under voltage alarm delay.
+- When genset voltage is over the point,
+- | 22(17) | Gen
+- | Over | Voltage | (30-60000)V | 264
+- generator over voltage is active. When the
+- | Shutdown | point is 60000V, generator over voltage is
+- disabled.
+- When generator voltage is under the point,
+- | 23(18) | Gen Under
+- | Voltage | (30-60000)V | 196
+- generator under voltage is active. When the
+- | Shutdown | point is 30V, generator under voltage is
+- | 24(19) | Under
+- | Speed | (0-6000)r/min | 1200
+- When the engine speed is under the point for
+- | Shutdown | 10s, shutdown alarm signal is sent.
+- | 25(20) | Over
+- | Speed | (0-6000)r/min | 1710
+- When the engine speed is over the point for
+- | Shutdown | 2s, shutdown alarm signal is sent.
+- | Gen Under | Frequency
+- When generator frequency is lower than the
+- | 26(21) | Shutdown | (0-75.0)Hz | 45.0 | point (not equal to 0) for 10s, shutdown alarm
+- signal is sent.
+- | Gen Over | Frequency
+- When generator’s frequency is over the point
+- | 27(22) | Shutdown | (0-75.0)Hz | 57.0
+- | and | continues
+- | for | 2s,
+- | generator | over
+- frequency is active.
+- When the temperature sensor value is over
+- this point, it sends out high temp. alarm.
+- | 28(23) | High
+- | Temperature | (80-300)ºC | 98 | When the value is 300, warning alarm won’t
+- | Shutdown | be sent. (only suited for temperature sensor,
+- except for high temp. pressure alarm signal
+- inputted by programmable input port.)
+- When the oil pressure sensor value is under
+- this point, Low Oil Pressure alarm is sending
+- | 29(24) | Low
+- | Oil | Pressure | (0-400)kPa | 103 | out. When the value is 0, warning alarm won’t
+- | Shutdown | be sent. (only suited for oil pressure sensor,
+- except for low oil pressure alarm signal
+- | Low | Fuel
+- | Level | When fuel level sensor value is under this
+- | 30(25) | Warning Value | (0-100)% | 10 | point and remains for 10s, genset sends out
+- warning alarm, only warn but not shutdown.
+- | 31(26) | Loss of Speed
+- | Signal | (0-20.0)s | 5.0 | When the delay setting as 0s, it only warn but
+- | Delay | not shutdown.
+- During genset normal running, when B+ and
+- | 32(27) | Charging Failure Volt. | (0-30)V | 6.0
+- charger D+ (WL) voltage difference is above
+- | Difference | this value for 5s, the controller issues
+- “Charging Failure” warning.
+- When generator battery voltage is over the
+- | 33(28) | Battery Over Voltage | (12-40)V | 33.0 | point and remains for 20s, battery over
+- voltage signal is active. it only sends warn but
+- not shutdown.
+- When generator battery voltage is under the
+- | 34(29) | Battery Under Voltage | (4-30)V | 8.0 | point and remains for 20s, battery under
+- | 35(30) | CT Ratio | (5-6000)/5 | 500
+- External current transformer ratio.
+- | 36(31) | Full Load Rating | (5-6000)A | 500
+- | Rated | current
+- | of | generator,
+- | used | for
+- calculating over load current.
+- | 37(32) | Over
+- | Current | (50-130)% | 120
+- When load current is over the point, the over
+- | Percentage | current delay is initiated.
+- When load current is over the point, over
+- | 38(33) | Over Current Delay | (0-3600)s | 30 | current signal is sent. When the delay is 0,
+- only warn but not shutdown.
+- | 39(34) | Fuel Pump On | (0-100)% | 25
+- When the fuel level lower than the set value
+- for 10s, it sends a signal to open fuel pump.
+- | 40(35) | Fuel Pump Off | (0-100)% | 80
+- When the fuel level higher than the set value
+- for 10s, it sends a signal to close fuel pump.
+- | Factory | default:
+- | 41(36) | Aux. Output 1 | (0-26) | 2
+- Energized to stop. See
+- table 8.
+- | 42(37) | Aux. Output 2 | (0-26) | 3
+- | Factory | default: | Idle HGM6100N
+- | control. See table 8. | parameter
+- range:
+- | 43(38) | Aux. Output 3 | (0-26) | 5
+- | Factory | default: | Gens (0-25).
+- closed. See table 8.
+- | 44(39) | Aux. Output 4 | (0-26) | 6
+- Factory default: Mains
+- | 45(40) | Aux. Input 1 | (0-25) | 1
+- Factory default: High temperature alarm. See
+- | 46(41) | Active Type | (0-1) | 0
+- Factory default: close.
+
+### HGM6120N — supplierId: smartgen, n: 1001: các dòng như ở mục HGM6120
+
+### DSE6120 — datasheet của DSE6120 MKIII (nhà cung cấp ghi DSE6120: cần xác nhận đời) — supplierId: deep-sea-electronics, n: 1002
+- | DSEGenset® | Data Sheet
+- | DSE6110 MKIII Auto Start | & DSE6120 MKIII
+- | Auto | Mains
+- | (Utility) | Failure
+- | Control | Modules
+- Part Number: 6110-05 / 6120-05
+- | DSE6110 MKIII | DSE6120 MKIII
+- Overview
+- The DSE6110 MKIII is a auto start control module and the DSE6120 MKIII is a auto mains (utility) failure control module suitable for a wide variety of
+- single, diesel or gas, gen-set applications. Monitoring an extensive number of engine parameters, the modules will display warnings, shutdown and
+- engine status information on the back-lit LCD screen.The DSE6120 MKIII will also monitor the mains (utility) supply. The modules include a USB port
+- as well as dedicated DSENet® terminals for system expansion.
+- Both modules are compatible with electronic (CAN) and non-electronic (magnetic pick-up/alternator sensing) engines and offer an extensive number of
+- flexible inputs, outputs and engine protections so the system can be easily adapted to meet the most demanding industry requirements.
+- The comprehensive list of features includes enhanced event and performance monitoring and PLC functionality.
+- The modules can be easily configured using the DSE Configuration Suite PC software. Selected front panel editing is also available.
+- Common Key Features
+- | • | PLC functionality
+- | • | Flexible inputs and outputs
+- | • | DSENet® expansion support
+- | • | PC configuration using DSE Configuration Suite
+- | • | Multiple language support
+- | • | Enhanced 4-line text display
+- | • | Manual front panel and automatic control modes
+- | • | Latest ECU / ECM support for a wide range of engine manufacturers
+- | • | IP65 rating (with optional gasket) offers increased resistance to
+- water ingress
+- | • | Multiple selectable configurations in one unit to suit changing
+- Product Approvals
+- | requirements | + CE
+- | • | Customisable module power-up & screen saver screens | + UL Listed: Standard - UL 6200:2nd Edition
+- Product Documentation
+- DSEGenset® Data Sheet
+- | DSE6110 MKIII Auto Start & DSE6120 MKIII | Auto
+- | Mains | (Utility) Failure Control
+- Modules
+- | • | 3 phase generator and mains (utility) sensing with protection
+- starting / control by inputs and other functions.
+- | • | Automatic start and stopping of generator and transfer of load
+- based on mains (utility) availability
+- Auto Mains (Utility) Failure
+- | DSE6110 MKIII Auto Start | & | DSE6120
+- | MKIII | Auto
+- Mains (Utility) Failure Control Modules
+- Specifications
+- DC Supply
+- | Continuous Voltage | Rating | 8 V to 35 V DC continuous
+- | Cranking Dropouts | Able to survive 0 V for 50 ms, providing supply was | at least 10 V
+- before dropout
+- | and supply recovers to 5 V. This is achieved without | the need for
+- internal batteries.
+- Backlight will not be maintained during cranking.
+- | Maximum Operating Current | 340 mA at 12 V, 160 mA at 24 V
+- | Maximum Standby Current | 160 mA at 12 V, 80 mA at 24 V
+- | Charge Alternator Excitation | /
+- | Fail Range | 0 V to 35 V
+- Voltage Measurement
+- DSE6120 MKIII: 2
+- | Measurement Inputs | 3 Phase + Neutral
+- | DSE6120 MKIII: Generator and | Mains
+- (Utility)
+- | Voltage Range | 15 V to 415 V Phase to Neutral
+- 25 V to 719 V Phase to Phase
+- | Frequency Range | 3.5 Hz to 75 Hz
+- | Resolution | 1 V
+- | Accuracy | ±1 %
+- Current Measurement
+- | Number | 3
+- | Measurement Inputs | 3 Phase
+- | DSE6120 MKIII: | Generator
+- | or | Load
+- | Current Range | 0 A to 5 A
+- | Resolution | 25 mA
+- | & | DSE6120
+- | DSE6110 MKIII | Auto Start & DSE6120 MKIII Auto Mains
+- Control Modules
+- Related Products
+- DSENet®
+- | DSE2548 | DSENet®
+- | LED Output Expansion Module | 2548-01
+- | DSE2157 | DSENet®
+- | Output Expansion Module | 2157-01
+- | DSE2152 | DSENet®
+- | Analogue Output Expansion Module | 2152-01
+- | DSE2133 | DSENet®
+- | RTD/Thermocouple Input Expansion | Module | 2133-01
+- | DSE2131 | DSENet®
+- | Ratiometric Input Expansion Module | 2131-01
+- | DSE2130 | DSENet®
+- | Input Expansion Module | 2130-00
+- DSEWebNet®
+- | DSE890 MKII | DSEWebNet® / IoT Gateway - 4G (GSM/Ethernet) | 0890-04
+- | DSE891 MKII | DSEWebNet® / IoT Gateway - Ethernet Only | 0891-04
+- Accessories
+- | Gasket | DSE61XX MKIII Gasket | 020-521
+- | MKIII | Auto Mains (Utility) Failure Control Modules
+- Environmental Testing Standards
+- Electro-Magnetic Compatibility
+- | BS EN 61000-6-2 | EMC Generic Immunity Standard for the Industrial Environment
+- | BS EN 61000-6-4 | EMC Generic Emission Standard for the Industrial Environment
+- Electrical Safety
+- | BS EN 61010 | Safety of Information Technology Equipment, including Electrical Business
+- Equipment
+- | BS EN 60068-2-1 | Ab/Ae Cold Test -30 ºC
+- | BS EN 60068-2-2 | Bb/Be Dry Heat +70 ºC
+- Vibration
+- | BS EN 60068-2-6 | Ten sweeps in each of three major axes
+- 5 Hz to 8 Hz at ±7.5 mm,
+- 8 Hz to 500 Hz at 2 Gn
+- Humidity
+- | BS EN 60068-2-30 | Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+- | BS EN 60068-2-78 | Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+- Shock
+- | BS EN 60068-2-27 | Three shocks in each of three major axes
+- 15 Gn in 11 ms
+- | Degrees of Protection | Provided
+- | by | Enclosures
+- | BS EN 60529 | IP65 - From the front of the module when installed into a control panel
+- (with Optional Gasket)
+- | DSE6110 MKIII | Auto Start & DSE6120 MKIII
+- | Auto | Mains (Utility)
+- | Failure | Control Modules
+- | DSE6110 | MKIII | DSE6120
+- MKIII
+- | Pin | Description
+- | 1 to 2 | DC Supply | 1 to 2
+- | 3 | Emergency Stop | 3
+- Emergency Stop
+- | 4 | Fuel | 4
+- Fuel
+- | 5 | Crank | 5
+- Crank
+- | 6 | Charge Alternator | 6
+- Charge Alternator
+- | 7 to 12 | Digital Outputs | 7 to 12
+- | 13 to 14 | Not Applicable | 13 to 14
+- Not Applicable
+- | 15 to 19 | Analogue Inputs | 15 to 19
+- | 20 to 22 | Magnetic Pick-Up | 20 to 22
+- Magnetic Pick-Up
+- | 23 to 25 | Engine ECU/ECM | 23 to 25
+- Engine ECU/ECM
+- | 26 to 28 | DSENet® | 26 to 28
+- | 29 to 32 | Generator Voltage
+- | Sensing | 29 to 32
+- Generator Voltage Sensing
+- | 33 to 36 | Not Applicable | 33 to 36
+- Mains (Utility) Voltage Sensing
+- | 37 to 41 | Generator Current
+- | Sensing | 37 to 41
+- Generator/Load Current Sensing
+- | 42 to 49 | Digital Inputs | 42 to 49
+- | 50 to 52 | Not Applicable | 50 to 52
+- | Mains | (Utility)
+- | Failure | Control
+- | Technical Drawing | 184 mm
+- 42.5 mm
+- | 221 mm | 31 mm
+- | 163 mm | ( 6.43 " ) | 137 mm | ( 5.39 " )
+- Connection Label
+- | DC Supply : | 8 V to 35 V, 0.5 A max
+- | DC Outputs : | 30 V, 5 A (T4 to T5); 2 A (T7 to T12)
+- | DC Inputs : | 30 V max
+- | AC Voltage Inputs : | 600 V AC, 50 Hz / 60 Hz, 1 ph to 3 ph
+- | AC Current Inputs : | 5 A, 50 Hz / 60 Hz, 1 ph to 3 ph
+- | Charge Alternator : | 30 VDC, 2.5 W max
+- | Magnetic Pickup : | 70 Vpeak, 10 kHz max
+- | Analog Inputs : | 10 V DC max
+- | Comms Port : | 5 V DC max
+- | Made in UK | 020-1054-01,3
+- ECU
+- | SCR | H
+- | L SCR | B
+- A SCR
+- USB
+- | Refer to | PIN
+- | out description | charts for connection information
+- | on | the operating mode controller is configured
+- for.
+- | Product | Documentation
+- Installation Instructions
+- Operator Manual
+- Configuration Suite PC Manual
+
+### DSE6020 — datasheet của DSE6020 MKII (nhà cung cấp ghi DSE6020: cần xác nhận đời) — supplierId: deep-sea-electronics, n: 1007
+- DSEGenset
+- | DSE6010/20 MKII | ENVIRONMENTAL TESTING STANDARDS
+- | AUTO START AND AUTO MAINS FAILURE | ELECTRO-MAGNETIC COMPATIBILITY
+- BS EN 61000-6-2
+- | CONTROL MODULES | EMC Generic Immunity Standard for
+- the Industrial Environment
+- BS EN 61000-6-4
+- EMC Generic Emission Standard for
+- | FEATURES | the Industrial Environment
+- ELECTRICAL SAFETY
+- BS EN 60950
+- Safety of Information Technology Equipment,
+- | Using the DSE Configuration Suite | including Electrical Business Equipment
+- | Control Module and the DSE6020 | electronic MPU and alternator
+- | PC Software the controller is easy | TEMPERATURE
+- | MKII Auto Mains (Utility) Failure | sensing engine support for diesel,
+- | to use and configure which allows | BS EN 60068-2-1
+- | Control Module are suitable for a | gas and petrol engines all in one
+- | alteration of operating parameters, | Ab/Ae Cold Test -30 oC
+- BS EN 60068-2-2
+- | wide variety of single gen-set | variant. With a number of flexible
+- | sequences, timers and alarms. | Bb/Be Dry Heat +70 oC
+- | applications. | inputs, outputs and protections, the
+- VIBRATION
+- | modules can be easily adapted to | BS EN 60068-2-6
+- | Monitoring engine speed, oil | suit a wide range of applications.
+- | AVAILABLE | VARIANTS
+- Ten sweeps in each of three
+- | pressure, coolant temperature, | major axes
+- | 6010-03 | Auto Start with real time clock | 5 Hz to 8 Hz at +/-7.5 mm,
+- | frequency, voltage, current, power | Through USB Communication both | 8 Hz to 500 Hz @ 2 GN
+- | and fuel level, the modules give | modules can be configured using | 6010-04
+- | Auto start with real time clock and | HUMIDITY
+- | comprehensive engine and | the DSE Configuration Suite PC
+- | heated display | BS EN 60068-2-30
+- | alternator protection. This is | Software or through the module's | Db Damp Heat Cyclic 20/55 oC
+- | indicated on a large back-lit LCD | front panel editor. | at 95% RH 48 Hours
+- | 6020-03 | Auto Mains Failure with real
+- | time | BS EN 60068-2-78
+- | icon display via an array of warning, | clock | Cab Damp Heat Static 40 oC
+- | electrical trip and shutdown alarms. | at 93% RH 48 Hours
+- | 6020-04 | Auto Mains Failure with real
+- time
+- | clock and heated display | SHOCK
+- BS EN 60068-2-27
+- Three shocks in each of three major axes
+- 15 GN in 11 mS
+- DEGREES OF PROTECTION
+- PROVIDED BY ENCLOSURES
+- BS EN 60529
+- IP65 - Front of module when installed into the
+- control panel with the optional sealing gasket.
+- COMPREHENSIVE FEATURE LIST TO SUIT A
+- WIDE VARIETY OF GEN-SET APPLICATIONS
+- PC
+- | USB | CONFIGURABLE
+- | DC OUTPUTS | ANALOGUE SENSOR /
+- | EMERGENCY | DC POWER
+- | PORT | INPUTS
+- | DIGITAL INPUT | STOP | SUPPLY 8-35V
+- DSE6010/20 MKII
+- OTHER
+- | MAINS (UTILITY) | DC OUTPUT
+- | GENERATOR / | DC OUTPUT
+- | GENERATOR | CHARGE
+- | FUEL & START | ELECTRONIC
+- | SENSING | 1 OF 4
+- | LOAD CURRENT | 1 OF 4
+- | SENSING | ALTERNATOR
+- | OUTPUTS | ENGINES &
+- | (DSE6020 MKII) | (Flexible with CAN)
+- MAGNETIC PICK-UP
+- | VOLTS | VOLTS
+- | 1ph | 1 | 1ph | 1 | 1ph
+- | 2ph | 2ph | 2ph
+- | 3ph | 3ph | 3ph
+- | DSE6010/20 MKII | SPECIFICATION
+- DC SUPPLY
+- | AUTO START AND AUTO MAINS FAILURE | CONTINUOUS VOLTAGE RATING
+- 8 V to 35 V Continuous
+- | CONTROL MODULES | CRANKING DROPOUTS
+- Able to survive 0 V for 50 mS, providing
+- supply was at least 10 V before dropout and
+- | FEATURES | supply recovers to 5 V. This is achieved
+- without the need for internal batteries.
+- LEDs and backlight will not be maintained
+- during cranking.
+- 100 mA at 12 V, 105 mA at 24 V
+- MAXIMUM STANDBY CURRENT
+- 60 mA at 12 V, 55 mA at 24 V
+- MAXIMUM SLEEP CURRENT
+- | (DSE6020 MKII only) | • Fully configurable via the fascia
+- | outputs | OUTPUTS
+- | • Multiple parameters are | (DSE6020 MKII only)
+- | DSE6010/20 MKII Installation Instructions | 053-174 | -40 °F to +158 °F
+- | DSE6010/20 MKII Operator Manual | 057-230
+- | DSE6010/20 MKII Configuration Suite PC Manual | 057-223
+- OPTIONAL PARTS
+- | PART | PART NUMBER
+- | IP65 Gasket | 020-521
+- | DEEP SEA ELECTRONICS PLC UK | DEEP SEA ELECTRONICS INC USA
+- | Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH | 3230 Williams Avenue, Rockford, IL 61101-2668 USA
+- | TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303 | TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+- | EMAIL sales@deepseaplc.com WEBSITE www.deepseaplc.com | EMAIL sales@deepseausa.com WEBSITE www.deepseausa.com
+
+### AMF25 — datasheet của InteliLite 4 AMF25 (nhà cung cấp ghi AMF25: cần xác nhận đời) — supplierId: comap, n: 1001
+- InteliLite 4
+- AMF 25
+- Order code: IL4AMF25BAA, IL4AMF25BLA
+- | Controller | for single gen-set applications
+- Datasheet
+- Product description
+- | Advanced single Gen-set controller for stand-by and prime-power | Power over USB for configuration without standard power supply
+- | applications | RTC with battery back-up, full calendar and enhanced scheduler
+- | Key benefits | Detailed history log with up to 350 records, including user logins and configuration
+- changes
+- | Great flexibility and wide range of application support | Remote Display support via RS485 (special RD FW for InteliLite 4 controllers)
+- | Variable predefined configurations tailored for specific applications | Up to 5 languages in one configuration, over 20 default languages available
+- | User defined protections and setpoints, integrated PLC logic | Load shedding and dummy load management
+- | Full control with fast and reliable remote communication support | Alternative configurations for genset with variable voltage and frequency
+- | Built-in USB host/device, CAN, RS485 interfaces | Tool for quick and organized configuration cloning in large production facilities
+- | Extendable options including 4G/GPS, Ethernet and RS485/RS232 | Available in low temperature version (order code: IL4AMF25BLA)
+- | Support of Modbus RTU/TCP, SNMP v1/v2c/v3 (SNMPv3 traps not | supported),
+- | and | Application overview
+- J1939 protocols.
+- Cyber security by design to safeguard your business
+- Designed in relevant requirements according to ISA 62443 level 2-3
+- Enhanced ECU support
+- StageV and Tier4Final ready by default with additional customisation
+- MultiECU support for enabling communication with more J1939 devices such as
+- engine ECUs, battery chargers, AVRs etc.
+- Key features
+- 4 applications in 1 HW: AMF (Stand-by) – default, MRS (Prime-power), Hybrid,
+- Engine
+- Monitoring via WebSupervisor, InteliSCADA, InteliConfig, active SMS and e-mails
+- or external SCADA system
+- Improved HW platform
+- Switchable analogue inputs (R/U/I)
+- 5 V reference output for analogue CU AIN Calibration
+- 2 high-current E-Stop binary outputs
+- 2 slots for extension plug-in modules (more binary I/Os, 4G & GPS, Ethernet, RS232
+- & RS485)
+- Geo-fencing based on GPS
+- Support of up to 5 extension CAN modules
+- | | InteliLite 4 AMF 25 Datasheet | | Related HW ver: 1.3.0 | | Related SW ver: 1.9.0 | | Date of issue: 8/6/2026
+- Dimensions, terminals and mounting
+- Note: The final depth of the controller depends on the selected plug-in module – it can vary between 41 mm
+- and 56 mm. Mind also the size of connectors and cables (e.g. in case of RS232 connector, add about 60 mm
+- more for standard RS232 connector and cable).
+- Note: The controller is to be mounted into panel doors as a standalone unit using provided holders. The
+- requested cutout size is 187 × 132 mm. Use the screw holders delivered with the controller to fix the controller
+- into the door.
+- | InteliLite 4 AMF 25 Datasheet | 2
+- Technical data
+- | Power supply | Current measurement
+- | Power supply range | 8-36 V DC
+- | Measurement inputs | 3ph Gen current
+- | Power consumption | Measurement range | 5A
+- | (without modules) | Max. allowed current | 10 A
+- | RTC battery | Replaceable (3 V)
+- | Accuracy | ±20
+- | mA | for | 0-2
+- | % | of value for 2-5 A
+- | Fusing power | 4
+- | BOUT consumption | Input impedance | <0.1 Ω
+- | E-Stop fusing | 10 A
+- E-Stop
+- | Max. power dissipation | 9W
+- Dedicated terminal for safe E-Stop input.
+- | Operating conditions | Physical supply for binary outputs 1 & 2.
+- | Protection degree (front | IP 65
+- Binary inputs
+- panel)
+- | Number | 8
+- | Operating temperature | -20˚C to +70˚C
+- | Close/Open indication | 0-2 V DC close contact
+- | Operating temperature | -40˚C to +70˚C | 6-36 V DC open contact
+- for Low Temp. version
+- | Storage temperature | -30˚C to +80˚C
+- Binary outputs
+- | Operating humidity | 95 % non-condensing
+- | (EN 60068-2-30) | BO1,2=5 A (60°C); BO1,2=4 A (70°C),
+- | 5-25 Hz, ± 1.6 mm | Max. current | BO3-8=0.5 A
+- | Vibration | 25-100 Hz, a = 400 m/s2
+- | Switching to | positive supply terminal
+- | Shocks | a = 500 m/s2
+- Analog inputs
+- | Surrounding air temperature rating | 70°C
+- | Suitable for pollution degree 2 | Number | 4, switchable (R/U/I)
+- | D+ | Range | R = 0-2500 Ω; U = 0-10 V; I = 0-20 mA
+- R: ±2 % from value ±5 Ω in range 0-250 Ω
+- | Max. output current | 250 mA | R: ±4 % from value in range 250 Ω-2500 Ω
+- | Charging fail threshold | Adjustable
+- | Accuracy | U: 1 % from value ±100 mV
+- | Voltage measurement | I: 1 % from value ±0.2 mA
+- | Measurement inputs | 3ph-n Gen voltage , 3ph-n Mains | +5 V Power supply output
+- | 10-277 V AC / 10-480 V AC (EU) | Max. current | 45 mA
+- | Measurement range | 10-346 V AC / 10-600 V AC
+- Magnetic pickup
+- (US/Canada)
+- | Linear measurement | 350 V AC Ph-N | 4 Vpk-pk to 50 Vpk-pk in range 4 Hz to 1 kHz
+- | Voltage input | 6 Vpk-pk to 50 Vpk-pk in range 1 to 5 kHz
+- | and protection range | 660 V AC Ph-Ph
+- range
+- | Accuracy | 1% | 10 Vpk-pk to 50 Vpk-pk in range 5 to 10 kHz
+- | 30-70 Hz | Frequency input | 4 Hz to 10 kHz
+- | Frequency range | 30-520 Hz with SW key
+- | accuracy 0.1 Hz | Frequency
+- | Input impedance | 0.72 MΩ ph-ph , 0.36 MΩ ph-n
+- | measurement | 0.2 % from measured value
+- tolerance
+- Display
+- | Type | Build-in monochromatic 3.2"
+- | Resolution | 132 × 64 px
+- Communications
+- | USB Device | Non-isolated type B connector
+- | USB Host | Non-isolated type A connector
+- | RS485 | Isolated
+- Non-isolated, 250 / 50 kbps,
+- | CAN | Terminator impedance 120 Ω
+- Modbus RTU/TCP
+- | Protocols | SNMP v1/v2c/v3
+- | InteliLite 4 AMF 25 Datasheet | 3
+- | Available plug-in | modules
+- | Product | Description
+- Order code
+- | CM-RS232-485 | Dual port (RS232 & RS485) plug-in communication
+- | module | CM223248XBX
+- | CM2-4G-GPS | 4G & GPS plug-in communication module | CM24GGPSXBX
+- | CM3-Ethernet | Internet / Ethernet plug-in communication module | CM3ETHERXBX
+- | EM-BIO8-EFCP | 8 additional binary inputs/outputs | EM2BIO8EXBX
+- Note: Controller has 2 slots for plug-in modules.
+- | Available CAN | modules
+- | IGL-RA15 | CAN remote annunciator with 15 LEDs | EM2IGLRABAA
+- | Inteli AIN8 | CAN module with 8 analog inputs | I-AIN8
+- | Inteli IO8/8 | CAN module with 8 binary inputs and 8 binary outputs | I-IO8/8
+- | IGS-PTM | CAN module with 8 binary inputs, 8 binary outputs, 4 analog inputs and 1 analog
+- | output | IGS-PTM
+- | Inteli AIN8TC | CAN module with 8 analog inputs dedicated for thermocouple sensors only. | I-AIN8TC
+- | Inteli AIO9/1 | CAN module with analog inputs and outputs – designed for DC measurement. | I-AIO9/1
+- List of SW Key Features
+- | SW Key Feature | Order code
+- | Modbus client for InteliLite 4 | SKMODCLI03
+- | PLC Package for InteliLite 4 Engine | application | SKPLCILX01
+- | 400 Hz for InteliLite 4 | SK400HZX01
+- Functions and protections
+- | Support of functions and protections as defined by ANSI | (American
+- | National | Standards
+- Institute):
+- | Description | ANSI
+- | code | Description
+- ANSI code
+- | Master unit | 1
+- | Voltage unbalance / Negative sequence | voltage | 47
+- | Stopping device | 5
+- | Incomplete sequence relay | 48
+- | Multi-function device | 11
+- | Overcurrent | 50/50TD
+- | Overspeed | 12
+- | Earth fault** | 50G
+- | Underspeed | 14
+- | Breaker failure | 50BF
+- | Starting-to-running transition | contactor | 19
+- | Overcurrent IDMT | 51
+- | Thermal relay | 26
+- | Overvoltage | 59 (cat III)
+- | Undervoltage | 27
+- | Aux Over Voltage | 59X
+- | Aux Battery Under Voltage | 27X
+- | Pressure switch | 63
+- | Annunciator | 30
+- | Liquid level switch | 71
+- | Overload (real power) | 32P
+- | Alarm relay*** | 74
+- | Reverse power | 32R
+- | Reclosing relay | 79
+- | Master sequence device | 34
+- | Overfrequency | 81O
+- | Unit sequence starting* | 44
+- | Underfrequency | 81U
+- | Current unbalance | 46
+- | Auto selective control/transfer | 83
+- | *Dual operation | **Extension module | EM-BIO8-EFCP
+- | required | *** extension module | IGL-RA15
+- required
+- Certifications and standards
+- | EN | 61000-6-2 | EN 60068-2-6 (2÷25 Hz / ±1,6 mm; 25÷100 Hz
+- | EN | 61000-6-4 | EN 60068-2-27 (a=500 m/s ; T=6 ms)
+- | EN | 61010-1 | EN 60068-2-30 25/55°C, RH 95%, 48hours
+- | EN | 61326-1 | EN 60529 (front panel IP65, back side IP20)
+- | EN | 60068-2-1 | (-20°C/16 h) | ULC 6200:2019 (R2025)
+- | EN | 60068-2-2 | (70°C/16 h)
+- E-mail: info@comap-control.com
+- © ComAp. Features and specification are subject to change without prior notice.
+
+### DSE4520 — datasheet của DSE4520 MKII (nhà cung cấp ghi DSE4520: cần xác nhận đời) — supplierId: deep-sea-electronics, n: 1008
+- DSEGenset®
+- | DSE4520 MKII | SPECIFICATIONS
+- DC SUPPLY
+- | AUTO MAINS FAILURE CONTROL MODULE | CONTINUOUS VOLTAGE RATING
+- 8 V to 35 V Continuous
+- CRANKING DROPOUTS
+- Able to survive 0 V for 50 mS, providing
+- supply was at least 10 V before dropout and
+- supply recovers to 5 V. This is achieved
+- without the need for internal batteries.
+- LEDs and backlight will not be maintained
+- during cranking.
+- MAXIMUM OPERATING CURRENT
+- 85 mA at 12 V, 96 mA at 24 V
+- MAXIMUM STANDBY CURRENT
+- 51 mA at 12 V, 47 mA at 24 V
+- MAXIMUM SLEEP CURRENT
+- 35 mA at 12 V, 32 mA at 24 V
+- MAXIMUM DEEP SLEEP CURRENT
+- <10 uA at 12 V, <10 uA at 24 V
+- MAINS (UTILITY)
+- VOLTAGE RANGE
+- 15 V to 415 V AC (Ph to N)
+- 26 V to 719 V AC (Ph to Ph)
+- FREQUENCY RANGE
+- 3.5 Hz to 75 Hz
+- OUTPUTS
+- OUTPUT A (FUEL)
+- | KEY FEATURES | • | 3 engine maintenance alarms
+- | KEY BENEFITS | 10 A short term, 5 A continuous,
+- | • Load unbalanced alarm | •
+- | Engine speed protection | • Automatically transfers between
+- at supply voltage
+- | • Configurable for use as an auto | •
+- | Engine hours counter | mains (utility) and generator
+- OUTPUT B (START)
+- | start and AMF control module | •
+- | Engine pre-heat | • Hours counter provides accurate | 10 A short term, 5 A continuous,
+- | • J1939-75 support and CAN alarm | •
+- | Engine run-time scheduler | information for monitoring and
+- | ignore functon | •
+- | Engine idle control for starting & | maintenance periods
+- | AUXILIARY OUTPUTS C, D, | E
+- | • Alternator frequency & CAN speed | stopping
+- | • User-friendly set-up and button | 2 A DC at supply voltage ­­­­
+- | sensing in one variant | • | Tier 4 engine instrumentation
+- | layout for ease of use | ­
+- | • Largest back-lit icon display in its | screens
+- | • Multiple parameters are monitored | GENERATOR
+- VOLTAGE RANGE
+- | class | •
+- | Battery voltage monitoring | simultaneously which are clearly | 15 V to 415 V AC (Ph to N)
+- | • Heated display option | •
+- | Start on low battery voltage | displayed on the large back-lit | 26 V to 719 V AC (Ph to Ph)
+- | • Real time clock provides accurate | •
+- | Configurable remote start input | icon display.
+- FREQUENCY RANGE
+- | event logging | • | 1 alternative configuration
+- | • The module can be configured to | 3.5 Hz to 75 Hz
+- | • Fully configurable via the fascia or | •
+- | Comprehensive warning, electrical | suit a wide range of applications
+- DIMENSIONS
+- | PC using USB communication | trip or shutdown protection upon
+- | • Uses DSE Configuration | OVERALL
+- | • Extremely efficient power save | fault condition
+- | Suite PC Software for simplified | 140 mm x 113 mm x 43 mm
+- | mode | •
+- | LCD alarm indication | configuration | 5.5’’ x 4.4” x 1.7”
+- | • 3 phase generator sensing | • | Event log (50)
+- | • Compatible with a wide range of | PANEL CUT-OUT
+- | • 3 phase mains (utility) sensing | •
+- | Fuel solenoid pulling circuit | CAN engines including Tier 4 | 118 mm x 92 mm
+- | • Compatible with 600 V ph to ph | •
+- | On-screen line diagram on/off | • Licence-free PC software | 4.6’’ x 3.6”
+- | nominal systems | functionality | • IP65 rating (with optional gasket)
+- MAXIMUM PANEL THICKNESS
+- | • Generator/load power monitoring | •
+- | Configurable CAN instrumentation | offers increased resistance to water | 8 mm
+- | (kW, kV A, kV Ar, pf) | (10)
+- | ingress | 0.3”
+- | • Accumulated power monitoring | •
+- | Water in fuel digital input | STORAGE TEMPERATURE RANGE
+- | (kW h, kVA h, kVAr h) | •
+- | Tank bund alarm digital input | -40 °C to +85 °C
+- | • Generator overload protection (kW) | •
+- | Generator at rest output | -40 °F to +185 °F
+- | • Generator/load current monitoring | •
+- | ECU periodic wake-up for | OPERATING TEMPERATURE RANGE
+- | and protection | information retrieval | -30 °C to +70 °C
+- | • Fuel and start outputs (configurable | •
+- | Back-light power-save mode | -22 °F to +158 °F
+- | when using CAN) | •
+- Adjustable delay crank timer
+- | • 4 configurable DC outputs | •
+- Pre/post heat functionality
+- | • 3 configurable analogue/digital | •
+- Overload protection
+- | inputs | •
+- | Mains/generator A/C system | OPTIONAL PARTS
+- | • 4 configurable digital inputs | selection
+- | • Configurable staged loading | •
+- Output timer for external audible
+- | outputs | alarm
+- | PART | PART NUMBER
+- | IP65 Gasket | 020-282
+- RELATED MATERIALS
+- | TITLE | PART NO.
+- | DSE4510/20 MKII Installation Instructions | 053-190
+- | DSE4510/20 MKII Operator Manual | 057-260
+- | DSE4510/20 MKII Configuration Suite PC Manual | 057-258
+- | DEEP SEA ELECTRONICS LTD UK | DEEP SEA ELECTRONICS INC USA
+- | Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH | 3230 Williams Avenue, Rockford, IL 61101-2668 USA
+- | TELEPHONE +44 (0) 1723 890099 | TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+- | EMAIL sales@deepseaelectronics.com WEBSITE www.deepseaelectronics.com | EMAIL usasales@deepseaelectronics.com WEBSITE www.deepseaelectronics.com
+- | DSE4520 MKII | ENVIRONMENTAL TESTING STANDARDS
+- ELECTRO-MAGNETIC COMPATIBILITY
+- BS EN 61000-6-2
+- | AUTO MAINS FAILURE CONTROL MODULE | EMC Generic Immunity Standard for
+- the Industrial Environment
+- BS EN 61000-6-4
+- EMC Generic Emission Standard for
+- ELECTRICAL SAFETY
+- | The DSE4520 MKII Auto Mains (Utility) | The module provides electronic J1939 | BS EN 60950
+- | *AVAILABLE VARIANTS | Safety of Information Technology Equipment,
+- | Failure Control Module is suitable | (CAN) and non-electronic (alternator
+- including Electrical Business Equipment
+- | for a wide variety of single gen-set | frequency sensing) engine support for | 4520-05
+- | Auto Mains Failure (Rtc) | TEMPERATURE
+- | applications. | diesel, gas and petrol engines all in | BS EN 60068-2-1
+- | one variant. With a number of flexible | Ab/Ae Cold Test -30
+- | Whilst maintaining functions included | inputs, outputs and protections, the | BS EN 60068-2-2
+- | within higher end controllers, such as | module can be easily adapted to suit | Bb/Be Dry Heat +70
+- | generator and load power monitoring, | a wide range of applications.
+- VIBRATION
+- | the DSE4520 MKII provides the user | BS EN 60068-2-6
+- | with an outstanding size to feature | Through USB communication the
+- | Ten sweeps in each of three | major
+- axes
+- | ratio. | module can be easily configured | 5 Hz to 8 Hz at +/-7.5 mm,
+- 8 Hz to 500 Hz at 2 gn
+- | using the DSE Configuration Suite PC | HUMIDITY
+- | Monitoring engine speed, oil pressure, | Software or can be fully configured | BS EN 60068-2-30
+- | coolant temperature, frequency, | through the module’s front panel | Db Damp Heat Cyclic 20/55 ºC
+- | voltage, current, power and fuel level, | editor. | at 95% RH 48 Hours
+- | the modules will give comprehensive | BS EN 60068-2-78
+- | engine and alternator protection. This | All DSE products are supported by | Cab Damp Heat Static 40 ºC
+- | will be indicated on the largest back-lit | our dedicated technical support team, | at 93% RH 48 Hours
+- | LCD icon display in its class via an | which gives customers and end users
+- SHOCK
+- | array of warning, electrical trip and | access to 24 hour help and advice. | BS EN 60068-2-27
+- | shutdown alarms. | Three shocks in each of three major axes
+- 15 gn in 11 mS
+- DEGREES OF PROTECTION
+- PROVIDED BY ENCLOSURES
+- BS EN 60529
+- IP65 - Front of module when installed into the
+- control panel with the optional sealing gasket.
+- | COMPREHENSIVE | FEATURE
+- LIST TO SUIT A
+- | WIDE VARIETY OF | GEN-SET
+- APPLICATIONS
+- PC
+- | USB | CONFIGURABLE
+- | DC OUTPUTS | ANALOGUE
+- DC POWER
+- | PORT | INPUTS
+- | SENDERS | SUPPLY 8-35V
+- | DSE4520 | MKII
+- DEUTZ
+- ISUZU
+- PERKINS
+- CATERPILLAR
+- MTU
+- | 7 | VOLVO
+- CUMMINS
+- | OTHER | SCANIA
+- | MAINS (UTILITY) | DC
+- | OUTPUT | GENERATOR/
+- | DC | OUTPUT
+- | GENERATOR | CHARGE
+- | FUEL & START | ELECTRONIC
+- | SENSING | LOAD CURRENT
+- | SENSING | ALTERNATOR
+- | OUTPUTS | ENGINE CAN
+- (Flexible with CAN)
+- | VOLTS | VOLTS
+- | 1ph | 1 | 1ph | 1 | 1ph
+- | 2ph | 2ph | 2ph
+- | 3ph | 3ph | 3ph
+
+### AMF20 — datasheet của InteliLite 4 AMF20 (nhà cung cấp ghi AMF20: cần xác nhận đời) — supplierId: comap, n: 1002
+- InteliLite 4
+- AMF 20
+- Order code: IL4AMF20BAA
+- | Controller | for single gen-set applications
+- Datasheet
+- Product description
+- | Advanced single Gen-set controller for stand-by and prime-power | Detailed history log with up to 150 records, including user logins and configuration
+- | applications | changes
+- Remote Display support via RS485 (special RD FW for InteliLite 4 controllers)
+- | Key benefits | Up to 5 languages in one configuration, over 20 default languages available
+- | Great flexibility and wide range of application support | Load shedding and dummy load management
+- | User defined protections and setpoints, integrated PLC logic | Alternative configurations for genset with variable voltage and frequency
+- | Full control with fast and reliable remote communication support | Tool for quick and organized configuration cloning in large production facilities
+- | Built-in USB host/device, CAN interfaces | Application overview
+- Extendable options including 4G/GPS, Ethernet and RS485/RS232
+- | Support of Modbus RTU/TCP, SNMP v1/v2c/v3 (SNMPv3 traps not | supported),
+- and
+- J1939 protocols.
+- Cyber security by design to safeguard your business
+- Designed in relevant requirements according to ISA 62443 level 2-3
+- Enhanced ECU support
+- StageV and Tier4Final ready by default with additional customisation
+- MultiECU support for enabling communication with more J1939 devices such as
+- engine ECUs, battery chargers, AVRs etc.
+- Key features
+- 2 applications in 1 HW: AMF (Stand-by) – default, MRS (Prime-power)
+- | Monitoring via WebSupervisor, InteliSCADA, InteliConfig, | active
+- | SMS | and
+- e-mails
+- or external SCADA system
+- Improved HW platform
+- Switchable analogue inputs (R/U/I)
+- 5 V reference output for analogue CU AIN Calibration
+- 2 high-current E-Stop binary outputs
+- 2 slots for extension plug-in modules (more binary I/Os, 4G & GPS, Ethernet, RS232
+- & RS485)
+- Geo-fencing based on GPS
+- Support of up to 5 extension CAN modules
+- Power over USB for configuration without standard power supply
+- RTC with battery back-up, full calendar and enhanced scheduler
+- | | InteliLite 4 AMF 20 Datasheet | | Related HW ver: 1.3.0 | | Related SW ver: 1.9.0 | | Date of issue: 8/6/2026
+- Dimensions, terminals and mounting
+- Note: The final depth of the controller depends on the selected plug-in module – it can vary between 41 mm
+- and 56 mm. Mind also the size of connectors and cables (e.g. in case of RS232 connector, add about 60 mm
+- more for standard RS232 connector and cable).
+- Note: The controller is to be mounted into panel doors as a standalone unit using provided holders. The
+- requested cutout size is 187 × 132 mm. Use the screw holders delivered with the controller to fix the controller
+- into the door.
+- | InteliLite 4 AMF 20 Datasheet | 2
+- Technical data
+- | Power supply | Current measurement
+- | Power supply range | 8-36 V DC
+- | Measurement inputs | 3ph Gen current
+- | Power consumption | Measurement range | 5A
+- | (without modules) | Max. allowed current | 10 A
+- | RTC battery | Replaceable (3 V)
+- | Accuracy | ±20
+- | mA | for | 0-2
+- | % | of value for 2-5 A
+- | Fusing power | 4
+- | BOUT consumption | Input impedance | <0.1 Ω
+- | E-Stop fusing | 10 A
+- E-Stop
+- | Max. power dissipation | 9W
+- Dedicated terminal for safe E-Stop input.
+- | Operating conditions | Physical supply for binary outputs 1 & 2.
+- | Protection degree (front | IP 65
+- Binary inputs
+- panel)
+- | Number | 6
+- | Operating temperature | -20˚C to +70˚C
+- | Close/Open indication | 0-2 V DC close contact
+- | Storage temperature | -30˚C to +80˚C | 6-36 V DC open contact
+- | Operating humidity | 95 % non-condensing
+- | (EN 60068-2-30) | Binary outputs
+- | 5-25 Hz, ± 1.6 mm | Number | 6
+- | Vibration | 25-100 Hz, a = 400 m/s2
+- | Max. current | BO1,2=5 A (60°C); BO1,2=4 A (70°C),
+- | Shocks | a = 500 m/s2 | BO3-6=0.5 A
+- | Surrounding air temperature rating | 70°C
+- | Switching to | positive supply terminal
+- | Suitable for pollution degree 2 | Analog inputs
+- | D+ | Number | 3, switchable (R/U/I)
+- | Max. output current | 250 mA
+- | Range | R = 0-2500 Ω; U = 0-10 V; I = 0-20 mA
+- | Charging fail threshold | Adjustable | R: ±2 % from value ±5 Ω in range 0-250 Ω
+- | Voltage measurement | Accuracy | R: ±4 % from value in range 250 Ω-2500 Ω
+- U: 1 % from value ±100 mV
+- | Measurement inputs | 3ph-n Gen voltage , 3ph-n Mains | I: 1 % from value ±0.2 mA
+- 10-277 V AC / 10-480 V AC (EU)
+- | Measurement range | 10-346 V AC / 10-600 V AC | +5 V Power supply output
+- | (US/Canada) | Max. current | 45 mA
+- | Linear measurement | 350 V AC Ph-N
+- Magnetic pickup
+- | and protection range | 660 V AC Ph-Ph
+- | Accuracy | 1% | 4 Vpk-pk to 50 Vpk-pk in range 4 Hz to 1 kHz
+- | Voltage input | 6 Vpk-pk to 50 Vpk-pk in range 1 to 5 kHz
+- | 30-70 Hz | range
+- | Frequency range | accuracy 0.1 Hz | 10 Vpk-pk to 50 Vpk-pk in range 5 to 10 kHz
+- | Input impedance | 0.72 MΩ ph-ph , 0.36 MΩ ph-n
+- | Frequency input | 4 Hz to 10 kHz
+- range
+- | Display | Frequency
+- | Type | Build-in monochromatic 3.2"
+- | measurement | 0.2 % from measured value
+- | Resolution | 132 × 64 px
+- tolerance
+- Communications
+- | USB Device | Non-isolated type B connector
+- | USB Host | Non-isolated type A connector
+- Non-isolated, 250 / 50 kbps,
+- | CAN | Terminator impedance 120 Ω
+- Modbus RTU/TCP
+- | Protocols | SNMP v1/v2c/v3
+- | InteliLite 4 AMF 20 Datasheet | 3
+- | Available plug-in | modules
+- | Product | Description
+- Order code
+- | CM-RS232-485 | Dual port (RS232 & RS485) plug-in communication
+- | module | CM223248XBX
+- | CM2-4G-GPS | 4G & GPS plug-in communication module | CM24GGPSXBX
+- | CM3-Ethernet | Internet / Ethernet plug-in communication module | CM3ETHERXBX
+- | EM-BIO8-EFCP | 8 additional binary inputs/outputs | EM2BIO8EXBX
+- Note: Controller has 2 slots for plug-in modules.
+- | Available CAN | modules
+- | IGL-RA15 | CAN remote annunciator with 15 LEDs | EM2IGLRABAA
+- | Inteli AIN8 | CAN module with 8 analog inputs | I-AIN8
+- | Inteli IO8/8 | CAN module with 8 binary inputs and 8 binary outputs | I-IO8/8
+- | IGS-PTM | CAN module with 8 binary inputs, 8 binary outputs, 4 analog inputs and 1 analog
+- | output | IGS-PTM
+- | Inteli AIN8TC | CAN module with 8 analog inputs dedicated for thermocouple sensors only. | I-AIN8TC
+- | Inteli AIO9/1 | CAN module with analog inputs and outputs – designed for DC measurement. | I-AIO9/1
+- Functions and protections
+- Support of functions and protections as defined by ANSI (American National Standards Institute):
+- | Description | ANSI
+- | code | Description
+- ANSI code
+- | Master unit | 1
+- | Incomplete sequence relay | 48
+- | Stopping device | 5
+- | Overcurrent | 50/50TD
+- | Multi-function device | 11
+- | Breaker failure | 50BF
+- | Overspeed | 12
+- | Overcurrent IDMT | 51
+- | Underspeed | 14
+- | Overvoltage | 59
+- | Starting-to-running transition | contactor | 19
+- | Aux Over Voltage | 59X
+- | Thermal relay | 26
+- | Pressure switch | 63
+- | Undervoltage | 27
+- | Liquid level switch | 71
+- | Aux Battery Under Voltage | 27X
+- | Alarm relay*** | 74
+- | Annunciator | 30
+- | Reclosing relay | 79
+- | Overload (real power) | 32P
+- | Overfrequency | 81O
+- | Master sequence device | 34
+- | Underfrequency | 81U
+- | Current unbalance | 46
+- | Auto selective control/transfer | 83
+- | Voltage unbalance / Negative | sequence
+- | voltage | 47
+- *** extension module IGL-RA15 required
+- Certifications and standards
+- | EN | 61000-6-2 | EN 60068-2-6 (2÷25 Hz / ±1,6 mm; 25÷100 Hz
+- | EN | 61000-6-4 | EN 60068-2-27 (a=500 m/s ; T=6 ms)
+- | EN | 61010-1 | EN 60068-2-30 25/55°C, RH 95%, 48hours
+- | EN | 61326-1 | EN 60529 (front panel IP65, back side IP20)
+- | EN | 60068-2-1 | (-20°C/16 h) | ULC 6200:2019 (R2025)
+- | EN | 60068-2-2 | (70°C/16 h)
+- E-mail: info@comap-control.com
+- © ComAp. Features and specification are subject to change without prior notice.
+
+### DSE7420 — datasheet của DSE7420 MKII (nhà cung cấp ghi DSE7420: cần xác nhận đời) — supplierId: deep-sea-electronics, n: 1003
+- DSEGenset® Data Sheet
+- | DSE7410 MKII Auto Start & DSE7420 MKII | Auto
+- | Mains | (Utility)
+- | Failure | Control
+- Modules
+- Part Number: 7410-03 / 7420-03
+- | DSE7410 MKII | DSE7420 MKII
+- Overview
+- The DSE7410 MKII is an Auto Start Control Module and the DSE7420 MKII is an Auto Mains (Utility) Failure Control Module suitable for a wide variety
+- of single, diesel or gas, gen-set applications. Monitoring an extensive number of engine parameters, the modules will display warnings, shutdown and
+- engine status information on the back-lit LCD screen, illuminated LEDs and remote PC.The DSE7420 MKII will also monitor the mains (utility) supply.
+- The modules include USB, RS232, RS485 and Ethernet ports as well as dedicated DSENet® terminals for system expansion.
+- Both modules are compatible with electronic (CAN) and non-electronic (magnetic pick-up/alternator sensing) engines and offer an extensive number of
+- flexible inputs, outputs and engine protections so the system can be easily adapted to meet the most demanding industry requirements.
+- The comprehensive list of features includes enhanced event and performance monitoring, remote communications & PLC functionality. Dual mutual
+- standby is now available on both the DSE7410 MKII & DSE7420 MKII using RS232 or RS485 communications.
+- The modules also feature SNMP functionality for connection to SNMP systems. The modules can be easily configured using the DSE Configuration
+- Suite PC software. Selected front panel editing is also available.
+- Common Key Features
+- | • | Advanced PLC functionality including multi-purpose PIDs
+- | • | Latest ECU / ECM support for a wide range of engine
+- | • | Flexible inputs and outputs
+- manufacturers
+- | • | DSENet® expansion support
+- | • | IP65 rating (with supplied gasket) offers increased resistance to
+- | • | PC configuration using DSE Configuration Suite
+- water ingress
+- | • | Multiple language support
+- | • | Dual mutual standby between two generators for redundancy and
+- | • | Enhanced 4-line text display
+- balancing of engine hours
+- | • | Integrated RS232 and RS485 ports providing Modbus RTU support
+- | • | Multiple selectable configurations in one unit to suit changing
+- | • | Integrated Ethernet port providing Modbus TCP, SNMP v2c and in
+- requirements
+- | built web SCADA support. | •
+- Customisable module power-up & screen saver screens
+- | • | Data logging of up to 20 parameters
+- | • | Multi-level PIN protected front panel editor
+- | • | Manual front panel and automatic control modes
+- Product Documentation
+- | DSE7410 MKII Auto Start & DSE7420 MKII Auto | Mains (Utility) Failure Control Modules
+- Features
+- | • | 3 phase generator and mains (utility) sensing with protection
+- starting / control by inputs and other functions.
+- | • | Automatic start and stopping of generator and transfer of load
+- based on mains (utility) availability
+- | • | Open and closed transition available with option for synchronisation
+- when used with a CAN engine and DSE CAN AVR
+- Automatic Mains (Utility) Failure
+- | DSE7410 MKII Auto Start | & | DSE7420
+- | MKII | Auto
+- Mains (Utility) Failure Control Modules
+- Specifications
+- DC Supply
+- | Continuous Voltage | Rating | 8 V to 35 V DC continuous
+- | Cranking Dropouts | Able to survive 0 V for 100 ms, providing supply was at least 10 V before dropout
+- and supply recovers to 5 V. This is achieved without the need for internal batteries.
+- Backlight will not be maintained during cranking.
+- | Maximum Operating Current | 340 mA at 12 V, 160 mA at 24 V
+- | Maximum Standby Current | 160 mA at 12 V, 80 mA at 24 V
+- | Charge Alternator Excitation | /
+- | Fail Range | 0 V to 35 V
+- Voltage Measurement
+- DSE7420 MKII: 2
+- | Measurement Inputs | 3 Phase + Neutral
+- | DSE7420 MKII: Generator and | Mains
+- | Voltage Range | 15 V to 415 V Phase to Neutral
+- 25 V to 719 V Phase to Phase
+- | Frequency Range | 3.5 Hz to 75 Hz
+- | Resolution | 1 V
+- | Accuracy | ±1 %
+- Current Measurement
+- | Number | 4
+- | Measurement Inputs | 3 Phase with Earth Fault
+- | DSE7420 MKII: Generator | or
+- Load
+- | Current Range | 0 A to 1 A
+- 0 A to 5 A
+- | Resolution | 25 mA
+- Analogue Inputs
+- | Number | 6
+- | Type | Negative Switching Digital Input (6), Resistive
+- | Analogue | Input | (6),
+- | Current | Analogue
+- Input (4) and Voltage Analogue Input (4)
+- | Digital Input Closed Voltage Threshold | Less than 2.1 V
+- | Digital Input Open Voltage Threshold | Greater than 6.6 V
+- | Resistive Analogue Measurement Range | Input A: 0 Ω to 240 Ω
+- Input B & F: 0 Ω to 3 kΩ
+- Input C, D & E: 0 Ω to 480 Ω
+- | Current Analogue Measurement | Range | Input A, B, E & F: 0 mA to 20 mA
+- | Voltage Analogue Measurement | Range | Input A, B, E & F: 0 V to 10 V
+- | Analogue Resolution | 1 %
+- | Analogue Accuracy | ±2 %
+- Digital Inputs
+- | Number | 8
+- | Type | Negative Switching
+- | Digital | Input
+- | Closed Voltage Threshold | Less than 2.1 V
+- | Open Voltage Threshold | Greater than 6.6 V
+- Emergency Stop Input
+- | Number | 1
+- | Type | Positive Switching
+- | Closed Voltage Threshold | Greater than 5.0 V
+- | Open Voltage Threshold | Less than 3.0 V
+- Magnetic Pick-up Input
+- | Voltage Input Range | 0.5 VPeak to | 70 VPeak
+- | Frequency Input Range | 5 Hz to 10
+- kHz
+- | Resolution | 1 Hz
+- | Flywheel Teeth | 10 to 500
+- Digital Outputs
+- | Number | 10
+- | Type | 1 Normally Open Volt-Free Contacts
+- 1 Normally Closed Volt-Free Contacts
+- 8 Positive Switching DC Output
+- | Volt-Free Contact Output Rating | 5 ADC resistive at 30 VDC
+- 8 AAC resistive at 250 VAC
+- | Positive DC Output Rating | Output A to B (Fuel and Start): 15 ADC at Emergency
+- | Stop | input
+- | supply | voltage
+- Output E to J: 2 ADC at module supply voltage
+- Communications
+- | USB A | 1 Data Storage Port
+- | USB B | 1 Programming Port
+- | DSENet® | 1 Expansion Port
+- | RS232 | 1 Modbus RTU Port
+- | RS485 | 1 Modbus RTU Port
+- | Ethernet | 1 10/100 Ethernet Port
+- | CAN | 2 Fully Isolated Ports
+- ECU - Engine ECU / ECM
+- CAN - Configurable CAN Communication
+- Temperature
+- | Operating Temperature | -30 °C to +70 °C / -22 °F to +158 °F
+- | Storage Temperature | -40 °C to +85 °C / -40 °F to +185 °F
+- Dimensions
+- | Overall (W x H x D) | 250.0 mm x 189.0 mm x 50.5 mm / 9.85” x 7.43” x 1.99”
+- Mounting
+- | Type | Panel Fascia Mounting
+- | Panel Cut-Out (W x H) | 220.0 mm x 160.0 mm / 8.66” x 6.30”
+- | Maximum Panel Thickness | 8 mm / 0.3”
+- | DSE7410 MKII Auto Start & DSE7420 MKII Auto Mains | (Utility)
+- Related Products
+- DSENet®
+- | DSE2548 | DSENet® LED Output Expansion Module | 2548-01
+- | DSE2520 MKII | DSENet® Remote Display Module for DSE7420 MKII | 7320-03
+- | DSE2157 | DSENet® Output Expansion Module | 2157-01
+- | DSE2152 | DSENet® Analogue Output Expansion Module | 2152-01
+- | DSE2133 | DSENet® RTD/Thermocouple Input Expansion Module | 2133-01
+- | DSE2131 | DSENet® Ratiometric Input Expansion Module | 2131-01
+- | DSE2130 | DSENet® Input Expansion Module | 2130-01
+- DSEWebNet®
+- | DSE890 MKII | DSEWebNet® Gateway | 0890-04
+- Environmental Testing Standards
+- Electro-Magnetic Compatibility
+- | BS EN 61000-6-2 | EMC Generic Immunity Standard for the Industrial Environment
+- | BS EN 61000-6-4 | EMC Generic Emission Standard for the Industrial Environment
+- Electrical Safety
+- | BS EN 61010 | Safety of Information Technology Equipment, including Electrical Business Equipment
+- | BS EN 60068-2-1 | Ab/Ae Cold Test -30 ºC
+- | BS EN 60068-2-2 | Bb/Be Dry Heat +70 ºC
+- Vibration
+- | BS EN 60068-2-6 | Ten sweeps in each of three major axes
+- 5 Hz to 8 Hz at ±7.5 mm,
+- 8 Hz to 500 Hz at 2 Gn
+- Humidity
+- | BS EN 60068-2-30 | Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+- | BS EN 60068-2-78 | Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+- Shock
+- | BS EN 60068-2-27 | Three shocks in each of three major axes
+- 15 Gn in 11 ms
+- | Degrees of Protection | Provided
+- | by | Enclosures
+- | BS EN 60529 | IP65 - From the front of the module when installed into a control panel (Integrated Gasket)
+- | DSE7410 MKII Auto Start & DSE7420 MKII Auto | Mains (Utility)
+- | Failure | Control Modules
+- | DSE7410 | MKII | DSE7420
+- MKII
+- | Pin | Description
+- | 1 to 2 | DC Supply | 1 to 2
+- | 3 | Emergency Stop | 3
+- Emergency Stop
+- | 4 | Fuel | 4
+- Fuel
+- | 5 | Start | 5
+- Start
+- | 6 | Charge Alternator | 6
+- Charger Alternator
+- | 7 | Not Applicable | 7
+- Not Applicable
+- | 8 to 13 | Digital Outputs | 8 to 13
+- | 14 to 20 | Analogue Inputs | 14 to 20
+- | 21 to 23 | Magnetic Pick-Up | 21 to 23
+- Magnetic Pick-Up
+- | 24 to 26 | Engine ECU/ECM | 24 to 26
+- Engine ECU/ECM
+- | 27 to 29 | DSENet® | 27 to 29
+- | 30 to 32 | Configurable CAN | 30 to 32
+- Configurable CAN
+- | 33 to 34 | Normally Closed Volt Free Output | 33 to 34
+- Normally Closed Volt Free Output
+- | 35 to 36 | Normally Open Volt Free Output | 35 to 36
+- Normally Open Volt Free Output
+- | 37 to 40 | Generator Voltage Sensing | 37 to 40
+- Generator Voltage Sensing
+- | 41 to 44 | Not Applicable | 41 to 44
+- Mains (Utility) Voltage Sensing
+- | 45 to 50 | Generator Current Sensing | 45 to 50
+- Generator/Load Current Sensing
+- | 51 to 58 | Digital Inputs | 51 to 58
+- | 59 to 61 | RS485 | 59 to 61 | RS485
+- | Mains | (Utility) Failure
+- | Control | Modules
+- | Part Number: 7410-03 / 7420-03 | 220.0 MM
+- | Technical Drawing | [8.66 "]
+- 50.5 MM
+- | 35.5 MM | 50.5 MM
+- | 250 MM | 35.5 MM
+- | 160.0 MM | [6.30"] | 189 MM | [7.43 "] | 160.0 MM | [6.30"]
+- | Connection | Label
+- ABCDEFGH
+- | DC Supply : | 8-35V, 0.5A max
+- | DC Outputs : | 24V, 15A(4-5) 2A(8-13)
+- | DC Inputs : | 30V max
+- | RS232 | Volt-free Outputs : | 250Vac, 8A
+- | AC Voltage Inputs : | 600Vac 50/60Hz 1-3PH
+- | AC Current Inputs : | 5A, 50/60Hz 1-3PH
+- | Charge Alternator : | 30V, 2.5W max
+- | Magnetic Pickup : | 70V,10kHz max
+- | Analog Inputs : | 10V max
+- | Comms Port : | 5V max
+- | 61 | A | RS485
+- | 59 | SCR
+- Made in UK
+- | D + | ECU
+- CAN
+- | E | FGHI
+- | J | ABCDEF
+- | SCR H | L SCR B
+- | A SCR | H
+- L SCR
+- | Refer to | PIN
+- | out description charts | for
+- | connection information on | the
+- | operating | mode controller is configured for.
+- | Product | Documentation
+- Installation Instructions
+- Operator Manual
+- Configuration Suite PC Manual
+
+### DSE4620 — supplierId: deep-sea-electronics, n: 1009
+- DSEGenset
+- | DSE4610/20 | ENVIRONMENTAL TESTING STANDARDS
+- | AUTO START AND AUTO MAINS FAILURE | ELECTRO-MAGNETIC COMPATIBILITY
+- | CONTROL MODULES | BS EN 61000-6-2
+- EMC Generic Immunity Standard for
+- | (ALTERNATOR FREQUENCY & MAGNETIC PICK-UP SPEED SENSING) | the Industrial Environment
+- BS EN 61000-6-4
+- EMC Generic Emission Standard for
+- the Industrial Environment
+- | FEATURES | ELECTRICAL SAFETY
+- BS EN 60950
+- Safety of Information Technology Equipment,
+- including Electrical Business Equipment
+- | Through USB Communication both | TEMPERATURE
+- | Module and the DSE4620 Auto | pressure, coolant temperature,
+- | modules can be easily configured | BS EN 60068-2-1
+- Ab/Ae Cold Test -30 oC
+- | Mains (Utility) Failure Control | frequency, voltage, current, power
+- | using the DSE Configuration Suite | BS EN 60068-2-2
+- | Module are suitable for a wide | and fuel level, the modules will give
+- | PC Software or can be fully | Bb/Be Dry Heat +70 oC
+- | variety of single gen-set | comprehensive engine and
+- | configured through the module's | VIBRATION
+- | applications. | alternator protection. This will be
+- | front panel editor. | BS EN 60068-2-6
+- | indicated on the largest back-lit | Ten sweeps in each of three
+- major axes
+- | Whilst maintaining functions | LCD icon display in its class via an
+- | All DSE products are supported by | 5 Hz to 8 Hz at +/-7.5 mm,
+- | included within higher end | array of warning, electrical trip and
+- | the DSE global technical support | 8 Hz to 500 Hz at 2 gn
+- | controllers, such as generator or | shutdown alarms.
+- | team which gives our customers | HUMIDITY
+- | load power monitoring, the | and end users access to 24 hour | BS EN 60068-2-30
+- | DSE46xx range of especially | Alternator frequency & magnetic
+- | system help and advice. | Db Damp Heat Cyclic 20/55 oC
+- at 95% RH 48 Hours
+- | compact controllers provide the | pick up speed sensing support for | BS EN 60068-2-78
+- | user with the ultimate size to | diesel, gas and petrol engines all in | Cab Damp Heat Static 40 oC
+- at 93% RH 48 Hours
+- | feature ratio. | one variant. With a number of
+- | flexible inputs, outputs and | SHOCK
+- | protections, the modules can be | BS EN 60068-2-27
+- Three shocks in each of three major axes
+- | easily adapted to suit a wide range | 15 gn in 11 mS
+- | of applications including lighting | DEGREES OF PROTECTION
+- | towers with the added option for | PROVIDED BY ENCLOSURES
+- | staged loading outputs. | BS EN 60529
+- IP65 - Front of module when installed into the
+- control panel with the optional sealing gasket.
+- | COMPREHENSIVE | FEATURE LIST TO SUIT A
+- | WIDE VARIETY OF | GEN-SET APPLICATIONS
+- PC
+- | USB | CONFIGURABLE
+- | DC OUTPUT | ANALOGUE SENDERS
+- DC POWER
+- DSE4610/20
+- OTHER
+- | MAINS (UTILITY) | DC OUTPUT
+- | GENERATOR / | DC OUTPUT
+- | GENERATOR | CHARGE
+- | FUEL AND | MAGNETIC PICK-UP
+- | SENSING | 1 OF 4 4620
+- | LOAD CURRENT | 1 OF 4 4620
+- | SENSING | ALTERNATOR
+- CRANK OUTPUTS
+- | (DSE4620) | 1 OF 2 4610
+- | VOLTS | VOLTS
+- | 1ph | 1 | 1ph | 1 | 1ph
+- | 2ph | 2ph | 2ph
+- | 3ph | 3ph | 3ph
+- ISSUE 1
+- | DSE4610/20 | SPECIFICATION
+- | AUTO START AND AUTO MAINS FAILURE | DC SUPPLY
+- | CONTROL MODULES | CONTINUOUS VOLTAGE RATING
+- 8 V to 35 V Continuous
+- | (ALTERNATOR FREQUENCY & MAGNETIC PICK-UP SPEED SENSING) | CRANKING DROPOUTS
+- Able to survive 0 V for 50 mS, providing
+- supply was at least 10 V before dropout and
+- supply recovers to 5 V. This is achieved
+- | FEATURES | without the need for internal batteries.
+- LEDs and backlight will not be maintained
+- during cranking.
+- MAXIMUM OPERATING CURRENT
+- MAXIMUM STANDBY CURRENT
+- 51 mA at 12 V, 47 mA at 24 V
+- MAXIMUM SLEEP CURRENT
+- 35 mA at 12 V, 32 mA at 24 V
+- MAINS (UTILITY) DSE4620 ONLY
+- VOLTAGE RANGE
+- | • | Configurable staged loading | AUXILIARY OUTPUTS E & F DSE4620
+- | (DSE4620 only) | its class
+- | its class | (DSE4620 only)
+- | protection upon fault condition | DIMENSIONS
+- | DSE4610/20 Installation Instructions | 053-156 | -22 °F to +158 °F
+- | DSE4610/20 Operator Manual | 057-200
+- | DSE4610/20 Configuration Suite PC Manual | 057-201
+- OPTIONAL PARTS
+- | PART | PART NUMBER
+- | IP65 Gasket | 020-282
+- | DEEP SEA ELECTRONICS PLC UK | DEEP SEA ELECTRONICS INC USA
+- | Highfield House, Hunmanby Industrial Estate, Hunmanby YO14 0PH | 3230 Williams Avenue, Rockford, IL 61101-2668 USA
+- | TELEPHONE +44 (0) 1723 890099 FACSIMILE +44 (0) 1723 893303 | TELEPHONE +1 (815) 316 8706 FACSIMILE +1 (815) 316 8708
+- | EMAIL sales@deepseaplc.com WEBSITE www.deepseaplc.com | EMAIL sales@deepseausa.com WEBSITE www.deepseausa.com
+
+### AMF8 — datasheet của InteliLite 4 AMF8 (nhà cung cấp ghi AMF8: cần xác nhận đời) — supplierId: comap, n: 1011
+- InteliLite 4
+- AMF 8
+- Order code: IL4AMF8XBAA
+- | Controller | for single gen-set applications
+- Datasheet
+- Product description
+- | Single Gen-set controller for stand-by and prime-power | RTC with battery back-up, full calendar and enhanced scheduler
+- | applications | Detailed history log with up to 150 records, including user logins and configuration
+- changes
+- | Key benefits | Remote Display support via RS485 (special RD FW for InteliLite 4 controllers)
+- | Great flexibility and wide range of application support | Up to 5 languages in one configuration, over 20 default languages available
+- | Variable predefined configurations tailored for specific applications | Dummy load management
+- | User defined protections and setpoints, integrated PLC logic | Alternative configurations for genset with variable voltage and frequency
+- | Full control with fast and reliable remote communication support | Tool for quick and organized configuration cloning in large production facilities
+- | Built-in USB device, CAN interfaces | Application overview
+- Extendable options including 4G/GPS, Ethernet and RS485/RS232
+- | Support of Modbus RTU/TCP, SNMP v1/v2c/v3 (SNMPv3 traps not | supported),
+- and
+- J1939 protocols.
+- Cyber security by design to safeguard your business
+- Designed in relevant requirements according to ISA 62443 level 2-3
+- Enhanced ECU support
+- StageV and Tier4Final ready by default with additional customisation
+- MultiECU support for enabling communication with more J1939 devices such as
+- engine ECUs, battery chargers, AVRs etc.
+- Key features
+- 3 applications in 1 HW: AMF (Stand-by) – default, MRS (Prime-power), Engine
+- | Monitoring via WebSupervisor, InteliSCADA, InteliConfig, | active
+- | SMS | and
+- e-mails
+- or external SCADA system
+- Improved HW platform
+- Switchable analogue inputs (R/U/I)
+- 5 V reference output for analogue CU AIN Calibration
+- 2 high-current E-Stop binary outputs
+- 1 slot for extension plug-in module (more binary I/Os, 4G & GPS, Ethernet, RS232 &
+- RS485)
+- Geo-fencing based on GPS
+- Support of up to 2 extension CAN modules
+- Power over USB for configuration without standard power supply
+- | | InteliLite 4 AMF 8 Datasheet | | Related HW ver: 1.1.0 | | Related SW ver: 1.9.0 | | Date of issue: 8/6/2026
+- Dimensions, terminals and mounting
+- Note: The final depth of the controller depends on the selected plug-in module – it can vary between 41 mm
+- and 56 mm. Mind also the size of connectors and cables (e.g. in case of RS232 connector, add about 60 mm
+- more for standard RS232 connector and cable).
+- Note: The controller is to be mounted into panel doors as a standalone unit using provided holders. The
+- requested cutout size is 172 × 112 mm. Use the screw holders delivered with the controller to fix the controller
+- into the door.
+- | InteliLite 4 AMF 8 Datasheet | 2
+- Technical data
+- | Power supply | E-Stop
+- | Power supply range | 8-36 V DC
+- Dedicated terminal for safe E-Stop input.
+- | Power consumption | Physical supply for binary outputs 1 & 2.
+- | (without modules) | Binary inputs
+- | RTC battery | Replaceable (3 V)
+- | Number | 6
+- | Fusing power | 4
+- | BOUT consumption | 0-2 V DC close contact
+- | E-Stop fusing | 10 A
+- | Close/Open indication | 6-36 V DC open contact
+- | Max. power dissipation | 7W
+- Binary outputs
+- | Operating conditions | Number | 6
+- | Protection degree (front | IP 65 | BO1,2=5 A (60°C); BO1,2=4 A (70°C),
+- | panel) | Max. current | BO3-6=0.5 A
+- | Operating temperature | -20˚C to +70˚C
+- | Switching to | positive supply terminal
+- | Storage temperature | -30˚C to +80˚C
+- Analog inputs
+- | Operating humidity | 95 % non-condensing
+- | (EN 60068-2-30) | Number | 3, switchable (R/U/I)
+- | 5-25 Hz, ± 1.6 mm | Range | R = 0-2500 Ω; U = 0-10 V; I = 0-20 mA
+- | Vibration | 25-100 Hz, a = 400 m/s2 | R: ±2 % from value ±5 Ω in range 0-250 Ω
+- | Shocks | a = 500 m/s2
+- | Accuracy | R: ±4 % from value in range 250 Ω-2500 Ω
+- | Surrounding air temperature | rating | 70°C | U: 1 % from value ±100 mV
+- | Suitable for pollution degree | 2 | I: 1 % from value ±0.2 mA
+- | D+ | +5 V Power supply output
+- | Max. output current | 250 mA
+- | Max. current | 45 mA
+- | Charging fail threshold | Adjustable
+- Magnetic pickup
+- | Voltage measurement | 4 Vpk-pk to 50 Vpk-pk in range 4 Hz to 1 kHz
+- | Voltage input | 6 Vpk-pk to 50 Vpk-pk in range 1 to 5 kHz
+- | Measurement inputs | 3ph-n Gen voltage , 3ph-n Mains
+- range
+- | 10-277 V AC / 10-480 V AC (EU) | 10 Vpk-pk to 50 Vpk-pk in range 5 to 10 kHz
+- | Measurement range | 10-346 V AC / 10-600 V AC
+- | Frequency input | 4 Hz to 10 kHz
+- | (US/Canada) | range
+- | Linear measurement | 350 V AC Ph-N
+- Frequency
+- | and protection range | 660 V AC Ph-Ph
+- | measurement | 0.2 % from measured value
+- tolerance
+- | Accuracy | 1%
+- 30-70 Hz
+- | Frequency range | accuracy 0.1 Hz
+- | Input impedance | 0.72 MΩ ph-ph , 0.36 MΩ ph-n
+- Display
+- | Type | Build-in monochromatic 3.2"
+- | Resolution | 132 × 64 px
+- Communications
+- | USB Device | Non-isolated type B connector
+- Non-isolated, 250 / 50 kbps,
+- | CAN | Terminator impedance 120 Ω
+- Modbus RTU/TCP
+- | Protocols | SNMP v1/v2c/v3
+- Current measurement
+- | Measurement inputs | 3ph Gen current
+- | Measurement range | 5A
+- | Max. allowed current | 10 A
+- | Accuracy | ±20
+- | mA | for | 0-2
+- | % | of value for 2-5 A
+- | Input impedance | <0.1 Ω
+- | InteliLite 4 AMF 8 Datasheet | 3
+- | Available plug-in | modules
+- | Product | Description
+- Order code
+- | CM-RS232-485 | Dual port (RS232 & RS485) plug-in communication
+- | module | CM223248XBX
+- | CM2-4G-GPS | 4G & GPS plug-in communication module | CM24GGPSXBX
+- | CM3-Ethernet | Internet / Ethernet plug-in communication module | CM3ETHERXBX
+- | EM-BIO8-EFCP | 8 additional binary inputs/outputs | EM2BIO8EXBX
+- Note: Controller has 1 slot for plug-in modules.
+- | Available CAN | modules
+- | IGL-RA15 | CAN remote annunciator with 15 LEDs | EM2IGLRABAA
+- | Inteli AIN8 | CAN module with 8 analog inputs | I-AIN8
+- | Inteli IO8/8 | CAN module with 8 binary inputs and 8 binary outputs | I-IO8/8
+- | IGS-PTM | CAN module with 8 binary inputs, 8 binary outputs, 4 analog inputs and 1 analog
+- | output | IGS-PTM
+- | Inteli AIN8TC | CAN module with 8 analog inputs dedicated for thermocouple sensors only. | I-AIN8TC
+- | Inteli AIO9/1 | CAN module with analog inputs and outputs – designed for DC measurement. | I-AIO9/1
+- Functions and protections
+- Support of functions and protections as defined by ANSI (American National Standards Institute):
+- | Description | ANSI
+- | code | Description
+- ANSI code
+- | Master unit | 1
+- | Incomplete sequence relay | 48
+- | Stopping device | 5
+- | Overcurrent | 50/50TD
+- | Multifunction device | 11
+- | Breaker failure | 50BF
+- | Underspeed | 14
+- | Overvoltage | 59
+- | Overspeed | 12
+- | Aux Over Voltage | 59X
+- | Starting-to-running transition | contactor | 19
+- | Pressure switch | 63
+- | Thermal relay | 26
+- | Liquid level switch | 71
+- | Undervoltage | 27
+- | Alarm relay*** | 74
+- | Aux Battery Under Voltage | 27X
+- | Reclosing relay | 79
+- | Annunciator | 30
+- | Overfrequency | 81O
+- | Overload (real power) | 32P
+- | Underfrequency | 81U
+- | Master sequence device | 34
+- | Auto selective control/transfer | 83
+- | Negative sequence voltage | 47
+- *** extension module IGL-RA15 required
+- Certifications and standards
+- | EN | 61000-6-2 | EN 60068-2-6 (2÷25 Hz / ±1,6 mm; 25÷100 Hz
+- | EN | 61000-6-4 | EN 60068-2-27 (a=500 m/s ; T=6 ms)
+- | EN | 61010-1 | EN 60068-2-30 25/55°C, RH 95%, 48hours
+- | EN | 61326-1 | EN 60529 (front panel IP65, back side IP20)
+- | EN | 60068-2-1 | (-20°C/16 h) | ULC 6200:2019 (R2025)
+- | EN | 60068-2-2 | (70°C/16 h)
+- E-mail: info@comap-control.com
+- © ComAp. Features and specification are subject to change without prior notice.
+
+### DSE6110 — datasheet của DSE6110 MKIII (nhà cung cấp ghi DSE6110: cần xác nhận đời) — supplierId: deep-sea-electronics, n: 1002
+- | DSEGenset® | Data Sheet
+- | DSE6110 MKIII Auto Start | & DSE6120 MKIII
+- | Auto | Mains
+- | (Utility) | Failure
+- | Control | Modules
+- Part Number: 6110-05 / 6120-05
+- | DSE6110 MKIII | DSE6120 MKIII
+- Overview
+- The DSE6110 MKIII is a auto start control module and the DSE6120 MKIII is a auto mains (utility) failure control module suitable for a wide variety of
+- single, diesel or gas, gen-set applications. Monitoring an extensive number of engine parameters, the modules will display warnings, shutdown and
+- Both modules are compatible with electronic (CAN) and non-electronic (magnetic pick-up/alternator sensing) engines and offer an extensive number of
+- flexible inputs, outputs and engine protections so the system can be easily adapted to meet the most demanding industry requirements.
+- The comprehensive list of features includes enhanced event and performance monitoring and PLC functionality.
+- The modules can be easily configured using the DSE Configuration Suite PC software. Selected front panel editing is also available.
+- Common Key Features
+- | • | PLC functionality
+- | • | Flexible inputs and outputs
+- | • | DSENet® expansion support
+- | • | PC configuration using DSE Configuration Suite
+- | • | Multiple language support
+- | • | Enhanced 4-line text display
+- | • | Manual front panel and automatic control modes
+- | • | Latest ECU / ECM support for a wide range of engine manufacturers
+- | • | IP65 rating (with optional gasket) offers increased resistance to
+- water ingress
+- | • | Multiple selectable configurations in one unit to suit changing
+- Product Approvals
+- | requirements | + CE
+- | • | Customisable module power-up & screen saver screens | + UL Listed: Standard - UL 6200:2nd Edition
+- Product Documentation
+- DSEGenset® Data Sheet
+- | DSE6110 MKIII Auto Start & DSE6120 MKIII | Auto
+- | Mains | (Utility) Failure Control
+- Modules
+- Applications
+- | • | 3 phase generator sensing with protection
+- | • | Manual starting / control by fascia button and automatic
+- starting / control by inputs and other functions
+- Auto Start
+- | DSE6110 MKIII Auto Start | & | DSE6120
+- | MKIII | Auto
+- Mains (Utility) Failure Control Modules
+- Specifications
+- DC Supply
+- | Continuous Voltage | Rating | 8 V to 35 V DC continuous
+- | Cranking Dropouts | Able to survive 0 V for 50 ms, providing supply was | at least 10 V
+- before dropout
+- | and supply recovers to 5 V. This is achieved without | the need for
+- internal batteries.
+- Backlight will not be maintained during cranking.
+- | Maximum Operating Current | 340 mA at 12 V, 160 mA at 24 V
+- | Maximum Standby Current | 160 mA at 12 V, 80 mA at 24 V
+- | Charge Alternator Excitation | /
+- | Fail Range | 0 V to 35 V
+- Voltage Measurement
+- | Number | DSE6110 MKIII: 1
+- | Measurement Inputs | 3 Phase + Neutral
+- DSE6110 MKIII: Generator
+- | Voltage Range | 15 V to 415 V Phase to Neutral
+- 25 V to 719 V Phase to Phase
+- | Frequency Range | 3.5 Hz to 75 Hz
+- | Resolution | 1 V
+- | Accuracy | ±1 %
+- Current Measurement
+- | Number | 3
+- | Measurement Inputs | 3 Phase
+- | DSE6110 MKIII: | Generator
+- | Current Range | 0 A to 5 A
+- | Resolution | 25 mA
+- | Mains (Utility) Failure | Control
+- | Part Number: 6110-05 | / 6120-05
+- Analogue Inputs
+- | Number | 4
+- | Type | 4 Negative Switching Digital Input
+- 4 Resistive Analogue Input
+- 2 Current Analogue Input
+- 2 Voltage Analogue Input
+- | Digital Input Closed Voltage Threshold | Less than 2.1 V
+- | Digital Input Open Voltage Threshold | Greater than 6.6 V
+- | Resistive Analogue Measurement Range | Input A: 0 Ω to 240 Ω
+- Input B to D: 0 Ω to 3 kΩ
+- | Current Analogue Measurement | Range | Input A & D: 0 mA to 20 mA
+- | Voltage Analogue Measurement | Range | Input A & D: 0 V to 10 V
+- | Analogue Resolution | 1 %
+- | Analogue Accuracy | ±2 %
+- Digital Inputs
+- | Number | 8
+- | Type | Negative Switching
+- | Digital | Input
+- | Closed Voltage Threshold | Less than 2.1 V
+- | Open Voltage Threshold | Greater than 6.6 V
+- Emergency Stop Input
+- | Number | 1
+- | Type | Positive Switching
+- | Closed Voltage Threshold | Greater than 5.0 V
+- | Open Voltage Threshold | Less than 3.0 V
+- Magnetic Pick-up Input
+- | Voltage Input Range | 0.5 VPeak to | 70 VPeak
+- | Frequency Input Range | 5 Hz to 10
+- kHz
+- | Resolution | 6.25 RPM
+- | Accuracy | ±25 RPM
+- | Flywheel Teeth | 10 to 500
+- Digital Outputs
+- | Type | Positive Switching DC Output
+- | Positive DC Output | Rating | Output A to B (Fuel and Start): 10 A for 10 s, | 5
+- | A Continuous | at
+- | Emergency | Stop
+- input supply voltage
+- Output C to H: 2 ADC at module supply voltage
+- Communications
+- | USB B | 1 Programming Port
+- | DSENet® | 1 Expansion Port
+- | CAN | 1 Port
+- | ECU - Engine ECU / | ECM
+- Temperature
+- | Operating Temperature | -30 °C to +70 °C / -22 °F to +158 °F
+- | Storage Temperature | -40 °C to +85 °C / -40 °F to +185 °F
+- Dimensions
+- | Overall (W x H x D) | 221 mm x 163 mm x 42.5 mm / 8.70 ” x 6.43 ”
+- Mounting
+- | Type | Panel Fascia Mounting
+- | Panel Cut-Out (W x H) | 184 mm x 137 mm / 7.24 ” x 5.39 ”
+- | Maximum Panel Thickness | 8 mm / 0.3”
+- | DSE6110 MKIII | Auto Start & DSE6120 MKIII Auto Mains
+- Control Modules
+- Related Products
+- DSENet®
+- | DSE2548 | DSENet®
+- | LED Output Expansion Module | 2548-01
+- | DSE2157 | DSENet®
+- | Output Expansion Module | 2157-01
+- | DSE2152 | DSENet®
+- | Analogue Output Expansion Module | 2152-01
+- | DSE2133 | DSENet®
+- | RTD/Thermocouple Input Expansion | Module | 2133-01
+- | DSE2131 | DSENet®
+- | Ratiometric Input Expansion Module | 2131-01
+- | DSE2130 | DSENet®
+- | Input Expansion Module | 2130-00
+- DSEWebNet®
+- | DSE890 MKII | DSEWebNet® / IoT Gateway - 4G (GSM/Ethernet) | 0890-04
+- | DSE891 MKII | DSEWebNet® / IoT Gateway - Ethernet Only | 0891-04
+- Accessories
+- | Gasket | DSE61XX MKIII Gasket | 020-521
+- | MKIII | Auto Mains (Utility) Failure Control Modules
+- Environmental Testing Standards
+- Electro-Magnetic Compatibility
+- | BS EN 61000-6-2 | EMC Generic Immunity Standard for the Industrial Environment
+- | BS EN 61000-6-4 | EMC Generic Emission Standard for the Industrial Environment
+- Electrical Safety
+- | BS EN 61010 | Safety of Information Technology Equipment, including Electrical Business
+- Equipment
+- | BS EN 60068-2-1 | Ab/Ae Cold Test -30 ºC
+- | BS EN 60068-2-2 | Bb/Be Dry Heat +70 ºC
+- Vibration
+- | BS EN 60068-2-6 | Ten sweeps in each of three major axes
+- 5 Hz to 8 Hz at ±7.5 mm,
+- 8 Hz to 500 Hz at 2 Gn
+- Humidity
+- | BS EN 60068-2-30 | Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+- | BS EN 60068-2-78 | Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+- Shock
+- | BS EN 60068-2-27 | Three shocks in each of three major axes
+- 15 Gn in 11 ms
+- | Degrees of Protection | Provided
+- | by | Enclosures
+- | BS EN 60529 | IP65 - From the front of the module when installed into a control panel
+- (with Optional Gasket)
+- | DSE6110 MKIII | Auto Start & DSE6120 MKIII
+- | Auto | Mains (Utility)
+- | Failure | Control Modules
+- | DSE6110 | MKIII | DSE6120
+- MKIII
+- | Pin | Description
+- | 1 to 2 | DC Supply | 1 to 2
+- | 3 | Emergency Stop | 3
+- Emergency Stop
+- | 4 | Fuel | 4
+- Fuel
+- | 5 | Crank | 5
+- Crank
+- | 6 | Charge Alternator | 6
+- Charge Alternator
+- | 7 to 12 | Digital Outputs | 7 to 12
+- | 13 to 14 | Not Applicable | 13 to 14
+- Not Applicable
+- | 15 to 19 | Analogue Inputs | 15 to 19
+- | 20 to 22 | Magnetic Pick-Up | 20 to 22
+- Magnetic Pick-Up
+- | 23 to 25 | Engine ECU/ECM | 23 to 25
+- Engine ECU/ECM
+- | 26 to 28 | DSENet® | 26 to 28
+- | 29 to 32 | Generator Voltage
+- | Sensing | 29 to 32
+- Generator Voltage Sensing
+- | 33 to 36 | Not Applicable | 33 to 36
+- Mains (Utility) Voltage Sensing
+- | 37 to 41 | Generator Current
+- | Sensing | 37 to 41
+- Generator/Load Current Sensing
+- | 42 to 49 | Digital Inputs | 42 to 49
+- | 50 to 52 | Not Applicable | 50 to 52
+- | Mains | (Utility)
+- | Failure | Control
+- | Technical Drawing | 184 mm
+- 42.5 mm
+- | 221 mm | 31 mm
+- | 163 mm | ( 6.43 " ) | 137 mm | ( 5.39 " )
+- Connection Label
+- | DC Supply : | 8 V to 35 V, 0.5 A max
+- | DC Outputs : | 30 V, 5 A (T4 to T5); 2 A (T7 to T12)
+- | DC Inputs : | 30 V max
+- | AC Voltage Inputs : | 600 V AC, 50 Hz / 60 Hz, 1 ph to 3 ph
+- | AC Current Inputs : | 5 A, 50 Hz / 60 Hz, 1 ph to 3 ph
+- | Charge Alternator : | 30 VDC, 2.5 W max
+- | Magnetic Pickup : | 70 Vpeak, 10 kHz max
+- | Analog Inputs : | 10 V DC max
+- | Comms Port : | 5 V DC max
+- | Made in UK | 020-1054-01,3
+- ECU
+- | SCR | H
+- | L SCR | B
+- A SCR
+- USB
+- | Refer to | PIN
+- | out description | charts for connection information
+- | on | the operating mode controller is configured
+- for.
+- | Product | Documentation
+- Installation Instructions
+- Operator Manual
+- Configuration Suite PC Manual
+
+### HGM6120U — supplierId: smartgen, n: 1002
+- HGM6100U SERIES
+- (HGM6110U/6110UC/6120U/6120UC)
+- GENSET CONTROLLER
+- USER MANUAL
+- | SMARTGEN (ZHENGZHOU) TECHNOLOGY CO., | LTD.
+- Chinese trademark
+- English trademark
+- SmartGen — make your generator smart
+- SmartGen Technology Co., Ltd.
+- No.28 Jinsuo Road
+- Zhengzhou
+- Henan Province
+- P. R. China
+- 0086-371-67981000(overseas)
+- http://www.smartgen.cn
+- All rights reserved. No part of this publication may be reproduced in any material form
+- (including photocopying or storing in any medium by electronic means or other)
+- without the written permission of the copyright holder.
+- Applications for the copyright holder’s written permission to reproduce any part of this
+- publication should be addressed to Smartgen Technology at the address above.
+- Any reference to trademarked product names used within this publication is owned by
+- their respective companies.
+- Smartgen Technology reserves the right to change the contents of this document
+- without prior notice.
+- Software Version
+- | Date | Version
+- Content
+- Original release
+- | Some parameters are | optimized.
+- Modify the foil color.
+- Modify the title.
+- Modify the Logo.
+- HGM6100U SERIES GENSET CONTROLLER
+- Contents
+- | 1 | SUMMARY .........................................................................................4
+- | 2 | PERFORMANCE AND CHARACTERISTICS.....................................5
+- | 3 | SPECIFICATION ................................................................................7
+- | 4 | OPERATION ....................................................................................... 8
+- 4.1 KEYS DSCRIPTION......................................................................................... 8
+- 4.2 CONTROLLER PANEL .................................................................................... 9
+- 4.3 AUTOMATIC START/STOP OPERATION...................................................... 10
+- 4.4 MANUAL START/STOP OPERATION............................................................ 12
+- | 5 | PROTECTION .................................................................................. 13
+- 5.1 WARNINGS.................................................................................................... 13
+- 5.2 SHUTDOWN ALARMS................................................................................... 15
+- | 6 | CONNECTIONS ...............................................................................17
+- | 7 | PARAMETER RANGE AND DEFINITION.........................................19
+- 7.1 PARAMETER CONTENT AND RANGE TABLE (TABLE 1)............................ 20
+- 7.2 PROGRAMMABLE OUTPUT 1-4 TABLE (TABLE 2) ..................................... 26
+- 7.3 PROGRAMMABLE INPUT 1-5 TABLE (ALL IS ACTIVE WHEN CONNECT TO
+- GROUND (B-) (TABLE 3) ...................................................................................... 27
+- 7.4 SENSOR SELECTION (TABLE 4) ................................................................. 28
+- 7.5 CONDITIONS OF CRANK DISCONNECT (TABLE 5) ................................... 29
+- | 8 | PARAMETER SETTING...................................................................30
+- | 9 | SENSOR SETTING..........................................................................32
+- 10 COMMISSIONING............................................................................33
+- 11 TYPICAL APPLICATION................................................................34
+- 12 INSTALLATION.................................................................................36
+- 12.1FIXING CLIPS................................................................................................ 36
+- 12.2OVERALL DIMENSION AND PANEL CUTOUT............................................. 37
+- 13 FAULT FINDING...............................................................................39
+- 1 SUMMARY
+- HGM6100U series automatic controller, integrating digital, intelligent and network
+- techniques, is used for automatic control and monitoring system of genset. It can carry
+- out functions of automatic start/stop, data measurement, alarm protection and three
+- “remote” (remote control, remote measure and remote communication). The controller
+- uses LCD display, optional display interface including Chinese, English, Spanish and
+- Russian with easy and reliable operation.
+- HGM6100U series automatic controller uses micro-processing technique which can
+- achieve precision measurement, value adjustment, timing and threshold setting etc..
+- All the parameters can be configured from front panel or use programmable interface
+- (or RS485 interface) to adjust via PC. It can be widely used in all types of automatic
+- control system for its compact structure, simple connections and high reliability.
+- 2 PERFORMANCE AND CHARACTERISTICS
+- HGM6100U controller has four variants:
+- HGM6120U/6120UC: Based on HGM6110U/6110UC, it adds mains AC monitoring
+- and mains/generator automatic switching control (AMF), especially suitable for the
+- automation system composed by mains and genset.
+- Note1: HGM6110UC/6120UC has RS485 port, HGM6110U/6120U without.
+-  132*64 LCD display with backlight, optional language interface (Chinese, English,
+- Spanish and Russian), push-button operation;
+-  Acrylic screen, improved wearable and scratch resistance property;
+-  Silica-gel panel and keys can well adapt to higher and lower temperature;
+-  With RS485 communication port, can achieve “three remote” functions via
+- MODBUS protocol;
+-  Adapt to 3P4W, 3P3W, 1P2W and 2P3W (120V/240V), 50Hz/60Hz AC power
+- system;
+-  Can measure and display 3 phase voltage, 3 phase current, frequency, power
+- parameter of mains/gens;
+- | Mains | Generator
+- | Line voltage (Uab, Ubc, and Uca) | Line voltage (Uab, Ubc, and Uca)
+- | Phase voltage (Ua, Ub, and Uc) | Phase voltage (Ua, Ub, and Uc)
+- | Frequency | HZ
+- Load
+- | Current | IA, IB, IC
+- Active power KW
+- Reactive power KVar
+- Apparent power KVA
+- Power factor PF
+- Generator accumulated energy kWh
+-  Mains have functions of over/under voltage and lack of phase; Gens have functions
+- of over/under voltage, over/under frequency and over current;
+-  Precision measure and display of parameters about engine,
+- | Temp. (WT), | °C/ °F both are displayed
+- | Oil pressure (OP), | kPa/Psi/Bar are all displayed
+- | Fuel level (FL), | %
+- | Speed (SPD), | RPM
+- | Battery Voltage (VB), | V
+- | Charger Voltage (VD), | V
+- Hours counter (HC) can accumulate Max. 999999 hours.
+- Start times can accumulate Max.999999 times.
+- |  | Control protection: Automatic start/stop of genset, load transfer(ATS control) and
+- perfect failure display and protection;
+- |  | With ETS, idle speed control, pre-heat control, speed droop/raising control, all of
+- them are relay output;
+- |  | Parameter setting: Allow user to modify setting and store them in internal FLASH
+- memory. The parameters cannot be lost even when power off. All of parameters can
+- be set not only from the front panel, but also use programmable interface (or PS485
+- interface) to adjust them via PC.;
+- |  | Multi sensors of temperature, pressure and fuel level can be used directly,
+- parameters can be defined by user;
+- |  | Multi conditions of crank disconnect (speed sensor, oil pressure, generator) can be
+- selected;
+- |  | Power supply range: (8~35)VDC, accommodating to different starting battery volts;
+- |  | All parameters use digital modulation, instead of analog modulation using
+- conventional potentiometer, having improved reliability and stability;
+- |  | Add rubber gasket between shell and controller screen, the waterproof can reach
+- IP55;
+- |  | Controller is fixed by metal fixing clips;
+- |  | Modular design, flame-retardant ABS shell, embedded mounting, compact structure
+- and easy installation.
+- 3 SPECIFICATION
+- | Items | Contents
+- | Working Voltage | DC8.0V to DC35.0V, continuous
+- | Power Consumption | <3W(Standby mode: ≤2W)
+- AC System
+- | 3P4W | AC15V - AC360 V (ph-N)
+- | 3P3W | AC30V - AC620 V (ph-ph)
+- | 1P2W | AC15V - AC360 V (ph-N)
+- | 2P3W | AC15V - AC360 V (ph-N)
+- | AC Alternator Frequency | 50Hz/60Hz
+- | Rotate speed sensor Voltage | 1.0V to 24V (RMS)
+- | Rotate speed sensor Frequency | 10,000 Hz (max.)
+- | Start Relay Output | 16 A DC28V at supply voltage
+- | Fuel Relay Output | 16 A DC28V at supply voltage
+- | Programmable Relay Output 1 | 7 A DC28V at supply voltage
+- | Programmable Relay Output 2 | 7 A 250VAC volt-free output
+- | Programmable Relay Output 3 | 16 Amp 250VAC volt-free output
+- | Programmable Relay Output 4 | 16 A 250VAC volt-free output
+- | Overall Dimensions | 197 mm x 152 mm x 47mm
+- | Panel Cutout | 186mm x 141mm
+- | C.T. Secondary Current | 5A (rated)
+- | Working Condition | Temperature: (-25~70)ºC; Humidity: | (20~93)%
+- | Storage Condition | Temperature: (-25~+70)ºC
+- | Protection Level | IP55 Gasket
+- Apply AC2.2kV voltage between high voltage
+- | Insulation Intensity | terminal and low voltage terminal;
+- | The leakage current is not more than 3mA | within
+- 1min.
+- | Weight | 0.56kg
+- 4 OPERATION
+- 4.1KEYS DSCRIPTION
+- Can stop generator under Manual/Auto mode; Can reset
+- shutdown alarm; Press this key at least 3 seconds to test
+- | Stop/ Reset | panel indicators are OK or not(lamp test);
+- During stopping process, press this key again can stop
+- generator immediately.
+- | Start | Start genset under Manual or Manual Test mode.
+- | Manual | Pressing this key will set the module as Manual mode.
+- | Auto | Pressing this key will set the module as Auto mode.
+- Controller is under manual testing mode.
+- | Running with load | Under this mode, gen-set will run automatically with
+- load
+- | Gens Close/Open | Can control gens to switch on or off in Manual mode.
+- | Set/ Confirm | Shift cursor to confirm In parameters setting menu.
+- | Up/Increase | Screen scroll;
+- Up cursor and increase value in setting menu.
+- | Down/Decrease | Scroll screen;
+- Down cursor and decrease value in setting menu.
+- | Menu | Pressing this key will set menu;
+- Again pressing this key can return main interface.
+- | HGM6100U | SERIES
+- | GENSET | CONTROLLER
+- | 4.2 CONTROLLER | PANEL
+- | HGM6100U | Genset
+- 5.2SHUTDOWN ALARMS
+- When controller detects shutdown alarm, it will send signal to open switch and stop
+- genset. The alarms are displayed in LCD.
+- Shutdown alarms as following,
+- | 1 | Emergency Stop
+- When controller detects emergency stop signal, it will send
+- a stop alarm signal and it will be displayed in LCD.
+- | High | Temp.
+- When the temperature of water/cylinder is higher than set
+- | 2 | Shutdown
+- threshold, controller will send a stop alarm signal and it will
+- be displayed in LCD.
+- | 3 | Low Oil Pressure
+- When oil pressure is lower than threshold, controller will
+- | Shutdown | send a stop alarm signal and it will be displayed in LCD.
+- | 4 | Over
+- | Speed | When genset speed is higher than set threshold, controller
+- | Shutdown | will send a stop alarm signal and it will be displayed in LCD.
+- | 5 | Under
+- | Speed | When genset speed is lower than set threshold, controller
+- | 6 | Loss Of Speed | When rotate speed is 0 and delay is not 0, controller will
+- | Signal Shutdown | send a stop alarm signal and it will be displayed in LCD.
+- When genset voltage is higher than threshold, controller will
+- send a stop alarm signal and it will be displayed in LCD.
+- Shutdown
+- | Genset | Under
+- When genset voltage is under set threshold, controller will
+- | 8 | Voltage
+- When genset current is higher than set threshold and delay
+- | 9 | Current | is not 0, it will send a stop alarm signal and it will be
+- | Shutdown | displayed in LCD.
+- | 10 | Fail To Start
+- Within set start times, if failed to start, controller will send a
+- stop alarm signal and it will be displayed in LCD.
+- | Over Frequency | When genset frequency is higher than set threshold,
+- | 11 | Shutdown
+- controller will send a stop alarm signal and it will be
+- | Under Frequency | When genset frequency is lower than set threshold,
+- | 12 | Shutdown
+- | 13 | Genset Failed | When genset frequency is 0, controller will send a stop
+- | 14 | Low Fuel Level
+- When fuel level low input is active, controller will send a
+- | 15 | Low Water Level
+- When genset water level low input is active, controller will
+- | 16 | Open Circuit
+- controller will send shutdown alarm signal and it will be
+- | 17 | Sensor
+- | Open | controller will send shutdown alarm signal and it will be
+- When genset running is longer than maintenance time of
+- | Maintenance time | user setting, and maintenance action is set as shutdown,
+- | 18 | out shutdown
+- controller send shutdown alarm signal and it will be
+- 6 CONNECTIONS
+- Descriptions of terminal connection as following,
+- | No. | Function
+- | Cable Size | Description
+- | 1 | DC input B- | 2.5mm2
+- Connected to negative of starter battery
+- Connected to positive of starter battery.
+- | 2 | DC input B+ | 2.5mm2 | If wire length is over 30m, better to
+- double wires in parallel. Max. 20A fuse
+- is recommended.
+- | 3 | Emergency Stop | 2.5mm2
+- Connected to B+ via emergency stop
+- button.
+- | 4 | Fuel Relay Output | 1.5mm2 | B+ is supplied by 3 points, rated 16A
+- | 5 | Start Relay Output | 1.5mm2 | B+ is supplied by 3 points, rated 16A
+- Connect to starter coil
+- | 6 | Aux. Relay Output 1 | 1.5mm2
+- | B+ is supplied | by | 2
+- points, rated 7A
+- | 7 | Normal close output, | 7
+- | A rated. | Reference
+- | 8 | Aux. Relay Output 2 | 1.5mm2
+- | Relay common port | table 2
+- | 9 | Normal open output, 7
+- A rated.
+- | 10 | Aux. Relay Output 3 | 2.5mm2
+- | Relay | normal
+- open
+- | 11 | volt-free contact output
+- | 12 | Aux. Relay Output 4 | 2.5mm2 | 16 A rated
+- | 14 | Charging Generator D+ | 1.0mm2
+- Connect to D+ (WL) terminal. If without,
+- | Input | the terminal is not connected.
+- | 15 | Speed sensor input
+- Connected to Speed sensor, shielding
+- | 16 | Speed sensor input, B- | 0.5mm2
+- line is recommended.
+- is connected.
+- | Connect | to
+- water
+- | 17 | Temp. Sensor Input | 1.0mm2
+- | /cylinder | temp.
+- | resistance type sensor | Reference
+- | 18 | Oil
+- | Pressure | Sensor | 1.0mm2
+- | Connect to oil pressure | table 4
+- | Input | resistance type sensor
+- | 19 | Liquid
+- | Level | Sensor | 1.0mm2
+- Connect to liquid level
+- | 20 | Configurable Input 1 | 1.0mm2
+- Ground connected is
+- active (B-)
+- | 21 | Configurable Input 2 | 1.0mm2
+- | Ground connected is | Reference
+- | active (B-) | table 3
+- | 22 | Configurable Input 3 | 1.0mm2
+- | 23 | CT A Phase Sensing | 1.5mm2 | Connect secondary coil, rated 5A
+- Input
+- | 24 | CT B Phase Sensing | 1.5mm2 | Connect secondary coil, rated 5A
+- | 25 | CT C Phase Sensing | 1.5mm2 | Connect secondary coil, rated 5A
+- | 26 | CT Common Port | 1.5mm2
+- Refer to INSTALLATION description.
+- | Generator | U
+- | phase | Connect to U phase output(2A fuse is
+- | 27 | Voltage | 1.0mm2
+- recommended)
+- Sensing Input
+- | 28 | Generator
+- | V | phase | 1.0mm2 | Connect to V phase output(2A fuse is
+- | Voltage sensing Input | recommended)
+- | 29 | Generator
+- | W | phase | 1.0mm2 | Connect to W phase output(2A fuse is
+- | Voltage Sensing Input | recommended)
+- | 30 | Generator N2 Input | 1.0mm2
+- Connect to generator N-wire
+- | 31 | Mains R phase Voltage | 1.0mm2 | Connect to mains R phase(2A fuse is
+- | 32 | Mains S phase Voltage | 1.0mm2 | Connect to mains S phase (2A fuse is
+- | 33 | Mains T phase Voltage | 1.0mm2 | Connect to mains T phase, (2A fuse is
+- | 35 | RS485
+- | Common | / | Impedance-120Ω
+- | shielding | wire
+- is
+- | Ground | recommended, its
+- | single-end | connect
+- | 36 | RS485 - | 0.5mm2
+- with ground.
+- | 37 | RS485+ | 0.5mm2
+- | 38 | Configurable Input 4 | 1.0mm2
+- | active (B-) | Reference
+- | 39 | Configurable Input 5 | 1.0mm2
+- | Ground connected is | table 3
+- | 40 | Sensor Common | 1.0mm2
+- Sensor common port
+- | Note: LINK ports in controller rear panel | are programmable parameter ports, user
+- can directly program SG72 via PC.
+- 7 PARAMETER RANGE AND DEFINITION
+- | 7.1 PARAMETER CONTENT AND | RANGE TABLE (TABLE 1)
+- | Range | Default
+- | 1 | Mains
+- | Normal | (0-3600)s | 10
+- The delay from abnormal to
+- | Delay | normal or from normal to
+- | Mains | Abnormal (0-3600)s
+- abnormal. It used for ATS
+- | 2 | Delay | 5
+- (automatic transfer switch)
+- control.
+- When mains voltage is under
+- | 3 | Mains | Under (30-620)V | 184
+- the point, mains under voltage
+- | Voltage | active. When the value is 30,
+- mains under voltage disabled.
+- | When | mains
+- | voltage | is
+- | Mains | Over (30-620)V
+- greater than the point, mains
+- | 4 | Voltage | 276
+- over voltage active. When the
+- point is 620V, mains over
+- voltage disabled.
+- It’s the delay from mains open
+- | 5 | Transfer
+- | Rest | (0-99.9)s | 1.0
+- to generator closed or from
+- | Time | generator open to mains
+- closed.
+- Time from mains abnormal or
+- | 6 | Start Delay | (0-3600)s | 1
+- remote start signal is active to
+- start genset.
+- Time from mains normal or
+- | 7 | Stop Delay | (0-3600)s | 1
+- remote start signal is inactive
+- to genset stop.
+- When engine start failure, it’s
+- the maximum cranking times.
+- | 8 | Start Times | (1-10) times | 3
+- When setting crank times out,
+- | controller | send
+- | start | fail
+- signal.
+- Time of pre-powering heat
+- | 9 | Preheat Time | (0-300)s | 0
+- plug before starter is powered
+- up.
+- | 10 | Crank Time | (3-60)s | 8
+- Time of starter power up each
+- time.
+- | The | second
+- | waiting | time
+- | 11 | Crank Rest Time | (3-60)s | 10
+- before power up when engine
+- start fail.
+- Alarm for low oil pressure,
+- | 12 | Safe
+- | Running | (1-60)s | 10
+- | high | temp,
+- | under | speed,
+- | Time | under
+- | frequency | /voltage,
+- charge fail are all inactive.
+- | 13 | Start Idle Time | (0-3600)s | 0
+- Idle running time of genset
+- when starting.
+- | Warming | time
+- between
+- | 14 | Warming Up Time | (0-3600)s | 10
+- genset switch on and high
+- speed running.
+- | 15 | Coolant Time | (3-3600)s | 10
+- | Time | for
+- | cooling | before
+- stopping.
+- | 16 | Stop Idle Time | (0-3600)s | 0
+- Idle running time when genset
+- stop.
+- Stop electromagnet’s power
+- | 17 | ETS Time | (0-120)s | 20
+- on time when genset is
+- If “ETS output time” set as 0,
+- it is the time from end of idle
+- | 18 | Over Stop Delay | (0-120)s | 0
+- delay to gen-set at rest; if not
+- 0, it is from end of ETS
+- solenoid delay to gen-set at
+- rest
+- | Switch | Close
+- Mains’ or generator’s switch
+- | 19 | Delay | (0-10)s | 5.0
+- closing pulse width, when it is
+- 0, output is continuous.
+- Number of flywheel teeth, it
+- | 20 | Flywheel Teeth | (10-300) | 118
+- | can | detect
+- disconnection
+- conditions and engine speed.
+- | 21 | Genset Abnormal | (0-20.0)s | 10.0
+- Over or under volt alarm
+- | Delay | delay
+- When genset voltage is over
+- the point, generator over
+- | 22 | Voltage shutdown | (30-620)V | 264
+- voltage is active. When the
+- point is 620V, generator over
+- voltage is disabled.
+- When generator voltage is
+- under the point, generator
+- | 23 | Voltage | (30-620)V | 196
+- under voltage is active. When
+- the point is 30V, generator
+- under voltage is disabled.
+- When the engine speed is
+- | 24 | Under
+- | Speed | (0-6000)RPM | 1200 | under the point for 10s,
+- | shutdown | shutdown alarm signal is sent
+- out.
+- | Over | Speed
+- | 25 | shutdown | (0-6000)RPM | 1710
+- | over | the
+- | point | for | 2s,
+- shutdown alarm signal is sent.
+- When generator frequency is
+- | 26 | Under Frequency | (0-75.0)Hz | 45.0
+- lower than the point (not
+- | shutdown | equal to 0) for 10s, shutdown
+- alarm signal is sent.
+- When generator’s frequency
+- | 27 | Over
+- | Frequency | (0-75.0)Hz | 57.0
+- | is | over
+- | the | point
+- and
+- | shutdown | continues for 2s, generator
+- over frequency is active.
+- | When | engine
+- temperature
+- sensor value is over this
+- point, it sends out high temp.
+- alarm. When the value is 140,
+- | 28 | High Temperature | (80-140)ºC | 98
+- warning alarm won’t be sent.
+- | shutdown | (only suited for temperature
+- sensor, except for high temp.
+- | pressure | alarm
+- signal
+- | inputted | by
+- programmable
+- input port )
+- When engine oil pressure
+- sensor value is under this
+- point, Low Oil Pressure alarm
+- is sending out. When the
+- | 29 | Low Oil Pressure | (0-400)kPa | 103 | value is 0, warning alarm
+- | shutdown | won’t be sent. (only suited for
+- oil pressure sensor, except for
+- low oil pressure alarm signal
+- input port)
+- When fuel level sensor value
+- under this point and remains
+- | 30 | Low Fuel Level | (0-100)% | 10 | for 10s, genset send out
+- warning alarm, only warn but
+- not shutdown.
+- | 31 | Loss Of Speed | (0-20.0)s | 5.0 | When the delay setting as 0s,
+- | Signal Delay | it only warn but not shutdown
+- During generator is running,
+- | when | charge
+- alternator
+- | 32 | Charge Failure | (0-30)V | 6.0
+- WL/D+ voltage is under this
+- point and remain for 5s,
+- generator will warning alarm
+- and shutdown.
+- | When | generator
+- battery
+- voltage is over the point and
+- | 33 | Voltage | (12-40)V | 33.0 | remains for 20s, battery over
+- voltage signal is active. it only
+- warn but not shutdown
+- voltage is under the point and
+- | 34 | Voltage | (4-30)V | 8.0 | remains for 20s, battery under
+- | 35 | CT Rate | (5-6000)/5 | 500
+- Current transformer rate
+- Rated current of generator,
+- | 36 | Full Load Current | (5-6000)A | 500
+- used for calculating over load
+- current.
+- | Over | Current
+- When load current is over the
+- | 37 | Percentage | (50-130)% | 120
+- point, the over current delay is
+- initiated.
+- | 38 | Over
+- | Current | (0-3600)s | 1296
+- point, over current signal is
+- | Delay | sent. When the delay is 0,
+- only warn but not shutdown.
+- When the fuel level lower than
+- | 39 | Fuel Pump Open | (0-100)% | 25 | the set value for 10s, send a
+- signal to open fuel pump.
+- When the fuel level higher
+- | 40 | Fuel Pump Close | (0-100)% | 80 | than the set value for 10s,
+- send a signal to close fuel
+- pump.
+- | 41 | Aux. Output 1 | (0-17) | 2
+- Factory default: Energized to
+- stop
+- | 42 | Aux. Output 2 | (0-17) | 3
+- Factory default: Idle control
+- | 43 | Aux. Output 3 | (0-17) | 5
+- Factory default: Gens closed
+- | 44 | Aux. Output 4 | (0-17) | 6
+- Factory default: Mains closed
+- | 45 | Aux. Input 1 | (0-15) | 1
+- | Factory | default:
+- High
+- temperature alarm
+- | 46 | Aux.
+- | Input | 1 | (0-1) | 0
+- Factory default: close
+- Active
+- | 47 | Aux.
+- | Input | 1 | (0-20.0)s | 2.0
+- Delay
+- | 48 | Aux. Input 2 | (0-15) | 2
+- | Low | oil
+- pressure alarm
+- | 49 | Aux.
+- | Input | 2 | (0-1) | 0
+- | 50 | Aux.
+- | Input | 2 | (0-20.0)s | 2.0
+- | 51 | Aux. Input 3 | (0-15) | 10
+- | Factory | default: Remote
+- start
+- input
+- | 52 | Aux.
+- | Input | 3 | (0-1) | 0
+- | Factory | default: close
+- | 53 | Aux.
+- | Input | 3 | (0-20.0)s | 2.0
+- | 54 | Aux. Input 4 | (0-15) | 11
+- | Factory | default: Low fuel
+- level
+- warn
+- | 55 | Aux.
+
+### DSE7410 — datasheet của DSE7410 MKII (nhà cung cấp ghi DSE7410: cần xác nhận đời) — supplierId: deep-sea-electronics, n: 1003
+- DSEGenset® Data Sheet
+- | DSE7410 MKII Auto Start & DSE7420 MKII | Auto
+- | Mains | (Utility)
+- | Failure | Control
+- Modules
+- Part Number: 7410-03 / 7420-03
+- | DSE7410 MKII | DSE7420 MKII
+- Overview
+- The DSE7410 MKII is an Auto Start Control Module and the DSE7420 MKII is an Auto Mains (Utility) Failure Control Module suitable for a wide variety
+- of single, diesel or gas, gen-set applications. Monitoring an extensive number of engine parameters, the modules will display warnings, shutdown and
+- The modules include USB, RS232, RS485 and Ethernet ports as well as dedicated DSENet® terminals for system expansion.
+- Both modules are compatible with electronic (CAN) and non-electronic (magnetic pick-up/alternator sensing) engines and offer an extensive number of
+- flexible inputs, outputs and engine protections so the system can be easily adapted to meet the most demanding industry requirements.
+- The comprehensive list of features includes enhanced event and performance monitoring, remote communications & PLC functionality. Dual mutual
+- standby is now available on both the DSE7410 MKII & DSE7420 MKII using RS232 or RS485 communications.
+- The modules also feature SNMP functionality for connection to SNMP systems. The modules can be easily configured using the DSE Configuration
+- Suite PC software. Selected front panel editing is also available.
+- Common Key Features
+- | • | Advanced PLC functionality including multi-purpose PIDs
+- | • | Latest ECU / ECM support for a wide range of engine
+- | • | Flexible inputs and outputs
+- manufacturers
+- | • | DSENet® expansion support
+- | • | IP65 rating (with supplied gasket) offers increased resistance to
+- | • | PC configuration using DSE Configuration Suite
+- water ingress
+- | • | Multiple language support
+- | • | Dual mutual standby between two generators for redundancy and
+- | • | Enhanced 4-line text display
+- balancing of engine hours
+- | • | Integrated RS232 and RS485 ports providing Modbus RTU support
+- | • | Multiple selectable configurations in one unit to suit changing
+- | • | Integrated Ethernet port providing Modbus TCP, SNMP v2c and in
+- requirements
+- | built web SCADA support. | •
+- Customisable module power-up & screen saver screens
+- | • | Data logging of up to 20 parameters
+- | • | Multi-level PIN protected front panel editor
+- | • | Manual front panel and automatic control modes
+- Product Documentation
+- | DSE7410 MKII Auto Start & DSE7420 MKII Auto | Mains (Utility) Failure Control Modules
+- | • | 3 phase generator sensing with protection
+- | • | Manual starting / control by fascia button and automatic
+- starting / control by inputs and other functions
+- Manual / Automatic Start
+- | DSE7410 MKII Auto Start | & | DSE7420
+- | MKII | Auto
+- Mains (Utility) Failure Control Modules
+- Specifications
+- DC Supply
+- | Continuous Voltage | Rating | 8 V to 35 V DC continuous
+- | Cranking Dropouts | Able to survive 0 V for 100 ms, providing supply was at least 10 V before dropout
+- and supply recovers to 5 V. This is achieved without the need for internal batteries.
+- Backlight will not be maintained during cranking.
+- | Maximum Operating Current | 340 mA at 12 V, 160 mA at 24 V
+- | Maximum Standby Current | 160 mA at 12 V, 80 mA at 24 V
+- | Charge Alternator Excitation | /
+- | Fail Range | 0 V to 35 V
+- Voltage Measurement
+- | Number | DSE7410 MKII: 1
+- | Measurement Inputs | 3 Phase + Neutral
+- DSE7410 MKII: Generator
+- | Voltage Range | 15 V to 415 V Phase to Neutral
+- 25 V to 719 V Phase to Phase
+- | Frequency Range | 3.5 Hz to 75 Hz
+- | Resolution | 1 V
+- | Accuracy | ±1 %
+- Current Measurement
+- | Number | 4
+- | Measurement Inputs | 3 Phase with Earth Fault
+- | Current Range | 0 A to 1 A
+- 0 A to 5 A
+- | Resolution | 25 mA
+- Analogue Inputs
+- | Number | 6
+- | Type | Negative Switching Digital Input (6), Resistive
+- | Analogue | Input | (6),
+- | Current | Analogue
+- Input (4) and Voltage Analogue Input (4)
+- | Digital Input Closed Voltage Threshold | Less than 2.1 V
+- | Digital Input Open Voltage Threshold | Greater than 6.6 V
+- | Resistive Analogue Measurement Range | Input A: 0 Ω to 240 Ω
+- Input B & F: 0 Ω to 3 kΩ
+- Input C, D & E: 0 Ω to 480 Ω
+- | Current Analogue Measurement | Range | Input A, B, E & F: 0 mA to 20 mA
+- | Voltage Analogue Measurement | Range | Input A, B, E & F: 0 V to 10 V
+- | Analogue Resolution | 1 %
+- | Analogue Accuracy | ±2 %
+- Digital Inputs
+- | Number | 8
+- | Type | Negative Switching
+- | Digital | Input
+- | Closed Voltage Threshold | Less than 2.1 V
+- | Open Voltage Threshold | Greater than 6.6 V
+- Emergency Stop Input
+- | Number | 1
+- | Type | Positive Switching
+- | Closed Voltage Threshold | Greater than 5.0 V
+- | Open Voltage Threshold | Less than 3.0 V
+- Magnetic Pick-up Input
+- | Voltage Input Range | 0.5 VPeak to | 70 VPeak
+- | Frequency Input Range | 5 Hz to 10
+- kHz
+- | Resolution | 1 Hz
+- | Flywheel Teeth | 10 to 500
+- Digital Outputs
+- | Number | 10
+- | Type | 1 Normally Open Volt-Free Contacts
+- 1 Normally Closed Volt-Free Contacts
+- 8 Positive Switching DC Output
+- | Volt-Free Contact Output Rating | 5 ADC resistive at 30 VDC
+- 8 AAC resistive at 250 VAC
+- | Positive DC Output Rating | Output A to B (Fuel and Start): 15 ADC at Emergency
+- | Stop | input
+- | supply | voltage
+- Output E to J: 2 ADC at module supply voltage
+- Communications
+- | USB A | 1 Data Storage Port
+- | USB B | 1 Programming Port
+- | DSENet® | 1 Expansion Port
+- | RS232 | 1 Modbus RTU Port
+- | RS485 | 1 Modbus RTU Port
+- | Ethernet | 1 10/100 Ethernet Port
+- | CAN | 2 Fully Isolated Ports
+- ECU - Engine ECU / ECM
+- CAN - Configurable CAN Communication
+- Temperature
+- | Operating Temperature | -30 °C to +70 °C / -22 °F to +158 °F
+- | Storage Temperature | -40 °C to +85 °C / -40 °F to +185 °F
+- Dimensions
+- | Overall (W x H x D) | 250.0 mm x 189.0 mm x 50.5 mm / 9.85” x 7.43” x 1.99”
+- Mounting
+- | Type | Panel Fascia Mounting
+- | Panel Cut-Out (W x H) | 220.0 mm x 160.0 mm / 8.66” x 6.30”
+- | Maximum Panel Thickness | 8 mm / 0.3”
+- | DSE7410 MKII Auto Start & DSE7420 MKII Auto Mains | (Utility)
+- Related Products
+- DSENet®
+- | DSE2548 | DSENet® LED Output Expansion Module | 2548-01
+- | DSE2510 MKII | DSENet® Remote Display Module for DSE7410 MKII | 7310-03
+- | DSE2157 | DSENet® Output Expansion Module | 2157-01
+- | DSE2152 | DSENet® Analogue Output Expansion Module | 2152-01
+- | DSE2133 | DSENet® RTD/Thermocouple Input Expansion Module | 2133-01
+- | DSE2131 | DSENet® Ratiometric Input Expansion Module | 2131-01
+- | DSE2130 | DSENet® Input Expansion Module | 2130-01
+- DSEWebNet®
+- | DSE890 MKII | DSEWebNet® Gateway | 0890-04
+- Environmental Testing Standards
+- Electro-Magnetic Compatibility
+- | BS EN 61000-6-2 | EMC Generic Immunity Standard for the Industrial Environment
+- | BS EN 61000-6-4 | EMC Generic Emission Standard for the Industrial Environment
+- Electrical Safety
+- | BS EN 61010 | Safety of Information Technology Equipment, including Electrical Business Equipment
+- | BS EN 60068-2-1 | Ab/Ae Cold Test -30 ºC
+- | BS EN 60068-2-2 | Bb/Be Dry Heat +70 ºC
+- Vibration
+- | BS EN 60068-2-6 | Ten sweeps in each of three major axes
+- 5 Hz to 8 Hz at ±7.5 mm,
+- 8 Hz to 500 Hz at 2 Gn
+- Humidity
+- | BS EN 60068-2-30 | Db Damp Heat Cyclic 20/55 ºC at 95% Relative Humidity 48 Hours
+- | BS EN 60068-2-78 | Cab Damp Heat Static 40 ºC at 93% Relative Humidity 48 Hours
+- Shock
+- | BS EN 60068-2-27 | Three shocks in each of three major axes
+- 15 Gn in 11 ms
+- | Degrees of Protection | Provided
+- | by | Enclosures
+- | BS EN 60529 | IP65 - From the front of the module when installed into a control panel (Integrated Gasket)
+- | DSE7410 MKII Auto Start & DSE7420 MKII Auto | Mains (Utility)
+- | Failure | Control Modules
+- | DSE7410 | MKII | DSE7420
+- MKII
+- | Pin | Description
+- | 1 to 2 | DC Supply | 1 to 2
+- | 3 | Emergency Stop | 3
+- Emergency Stop
+- | 4 | Fuel | 4
+- Fuel
+- | 5 | Start | 5
+- Start
+- | 6 | Charge Alternator | 6
+- Charger Alternator
+- | 7 | Not Applicable | 7
+- Not Applicable
+- | 8 to 13 | Digital Outputs | 8 to 13
+- | 14 to 20 | Analogue Inputs | 14 to 20
+- | 21 to 23 | Magnetic Pick-Up | 21 to 23
+- Magnetic Pick-Up
+- | 24 to 26 | Engine ECU/ECM | 24 to 26
+- Engine ECU/ECM
+- | 27 to 29 | DSENet® | 27 to 29
+- | 30 to 32 | Configurable CAN | 30 to 32
+- Configurable CAN
+- | 33 to 34 | Normally Closed Volt Free Output | 33 to 34
+- Normally Closed Volt Free Output
+- | 35 to 36 | Normally Open Volt Free Output | 35 to 36
+- Normally Open Volt Free Output
+- | 37 to 40 | Generator Voltage Sensing | 37 to 40
+- Generator Voltage Sensing
+- | 41 to 44 | Not Applicable | 41 to 44
+- Mains (Utility) Voltage Sensing
+- | 45 to 50 | Generator Current Sensing | 45 to 50
+- Generator/Load Current Sensing
+- | 51 to 58 | Digital Inputs | 51 to 58
+- | 59 to 61 | RS485 | 59 to 61 | RS485
+- | Mains | (Utility) Failure
+- | Control | Modules
+- | Part Number: 7410-03 / 7420-03 | 220.0 MM
+- | Technical Drawing | [8.66 "]
+- 50.5 MM
+- | 35.5 MM | 50.5 MM
+- | 250 MM | 35.5 MM
+- | 160.0 MM | [6.30"] | 189 MM | [7.43 "] | 160.0 MM | [6.30"]
+- | Connection | Label
+- ABCDEFGH
+- | DC Supply : | 8-35V, 0.5A max
+- | DC Outputs : | 24V, 15A(4-5) 2A(8-13)
+- | DC Inputs : | 30V max
+- | RS232 | Volt-free Outputs : | 250Vac, 8A
+- | AC Voltage Inputs : | 600Vac 50/60Hz 1-3PH
+- | AC Current Inputs : | 5A, 50/60Hz 1-3PH
+- | Charge Alternator : | 30V, 2.5W max
+- | Magnetic Pickup : | 70V,10kHz max
+- | Analog Inputs : | 10V max
+- | Comms Port : | 5V max
+- | 61 | A | RS485
+- | 59 | SCR
+- Made in UK
+- | D + | ECU
+- CAN
+- | E | FGHI
+- | J | ABCDEF
+- | SCR H | L SCR B
+- | A SCR | H
+- L SCR
+- | Refer to | PIN
+- | out description charts | for
+- | connection information on | the
+- | operating | mode controller is configured for.
+- | Product | Documentation
+- Installation Instructions
+- Operator Manual
+- Configuration Suite PC Manual
+
+### HGM6120UC — supplierId: smartgen, n: 1002
+- HGM6100U SERIES
+- (HGM6110U/6110UC/6120U/6120UC)
+- GENSET CONTROLLER
+- USER MANUAL
+- | SMARTGEN (ZHENGZHOU) TECHNOLOGY CO., | LTD.
+- Chinese trademark
+- English trademark
+- SmartGen — make your generator smart
+- SmartGen Technology Co., Ltd.
+- No.28 Jinsuo Road
+- Zhengzhou
+- Henan Province
+- P. R. China
+- 0086-371-67981000(overseas)
+- http://www.smartgen.cn
+- All rights reserved. No part of this publication may be reproduced in any material form
+- (including photocopying or storing in any medium by electronic means or other)
+- without the written permission of the copyright holder.
+- Applications for the copyright holder’s written permission to reproduce any part of this
+- publication should be addressed to Smartgen Technology at the address above.
+- Any reference to trademarked product names used within this publication is owned by
+- their respective companies.
+- Smartgen Technology reserves the right to change the contents of this document
+- without prior notice.
+- Software Version
+- | Date | Version
+- Content
+- Original release
+- | Some parameters are | optimized.
+- Modify the foil color.
+- Modify the title.
+- Modify the Logo.
+- HGM6100U SERIES GENSET CONTROLLER
+- Contents
+- | 1 | SUMMARY .........................................................................................4
+- | 2 | PERFORMANCE AND CHARACTERISTICS.....................................5
+- | 3 | SPECIFICATION ................................................................................7
+- | 4 | OPERATION ....................................................................................... 8
+- 4.1 KEYS DSCRIPTION......................................................................................... 8
+- 4.2 CONTROLLER PANEL .................................................................................... 9
+- 4.3 AUTOMATIC START/STOP OPERATION...................................................... 10
+- 4.4 MANUAL START/STOP OPERATION............................................................ 12
+- | 5 | PROTECTION .................................................................................. 13
+- 5.1 WARNINGS.................................................................................................... 13
+- 5.2 SHUTDOWN ALARMS................................................................................... 15
+- | 6 | CONNECTIONS ...............................................................................17
+- | 7 | PARAMETER RANGE AND DEFINITION.........................................19
+- 7.1 PARAMETER CONTENT AND RANGE TABLE (TABLE 1)............................ 20
+- 7.2 PROGRAMMABLE OUTPUT 1-4 TABLE (TABLE 2) ..................................... 26
+- 7.3 PROGRAMMABLE INPUT 1-5 TABLE (ALL IS ACTIVE WHEN CONNECT TO
+- GROUND (B-) (TABLE 3) ...................................................................................... 27
+- 7.4 SENSOR SELECTION (TABLE 4) ................................................................. 28
+- 7.5 CONDITIONS OF CRANK DISCONNECT (TABLE 5) ................................... 29
+- | 8 | PARAMETER SETTING...................................................................30
+- | 9 | SENSOR SETTING..........................................................................32
+- 10 COMMISSIONING............................................................................33
+- 11 TYPICAL APPLICATION................................................................34
+- 12 INSTALLATION.................................................................................36
+- 12.1FIXING CLIPS................................................................................................ 36
+- 12.2OVERALL DIMENSION AND PANEL CUTOUT............................................. 37
+- 13 FAULT FINDING...............................................................................39
+- 1 SUMMARY
+- HGM6100U series automatic controller, integrating digital, intelligent and network
+- techniques, is used for automatic control and monitoring system of genset. It can carry
+- out functions of automatic start/stop, data measurement, alarm protection and three
+- “remote” (remote control, remote measure and remote communication). The controller
+- uses LCD display, optional display interface including Chinese, English, Spanish and
+- Russian with easy and reliable operation.
+- HGM6100U series automatic controller uses micro-processing technique which can
+- achieve precision measurement, value adjustment, timing and threshold setting etc..
+- All the parameters can be configured from front panel or use programmable interface
+- (or RS485 interface) to adjust via PC. It can be widely used in all types of automatic
+- control system for its compact structure, simple connections and high reliability.
+- 2 PERFORMANCE AND CHARACTERISTICS
+- HGM6100U controller has four variants:
+- HGM6120U/6120UC: Based on HGM6110U/6110UC, it adds mains AC monitoring
+- and mains/generator automatic switching control (AMF), especially suitable for the
+- automation system composed by mains and genset.
+- Note1: HGM6110UC/6120UC has RS485 port, HGM6110U/6120U without.
+- Note2: HGM6110UC/6120UC is taken as an example to describe in this manual.
+-  132*64 LCD display with backlight, optional language interface (Chinese, English,
+- Spanish and Russian), push-button operation;
+-  Acrylic screen, improved wearable and scratch resistance property;
+-  Silica-gel panel and keys can well adapt to higher and lower temperature;
+-  With RS485 communication port, can achieve “three remote” functions via
+- MODBUS protocol;
+-  Adapt to 3P4W, 3P3W, 1P2W and 2P3W (120V/240V), 50Hz/60Hz AC power
+- system;
+-  Can measure and display 3 phase voltage, 3 phase current, frequency, power
+- parameter of mains/gens;
+- | Mains | Generator
+- | Line voltage (Uab, Ubc, and Uca) | Line voltage (Uab, Ubc, and Uca)
+- | Phase voltage (Ua, Ub, and Uc) | Phase voltage (Ua, Ub, and Uc)
+- | Frequency | HZ
+- Load
+- | Current | IA, IB, IC
+- Active power KW
+- Reactive power KVar
+- Apparent power KVA
+- Power factor PF
+- Generator accumulated energy kWh
+-  Mains have functions of over/under voltage and lack of phase; Gens have functions
+- of over/under voltage, over/under frequency and over current;
+-  Precision measure and display of parameters about engine,
+- | Temp. (WT), | °C/ °F both are displayed
+- | Oil pressure (OP), | kPa/Psi/Bar are all displayed
+- | Fuel level (FL), | %
+- | Speed (SPD), | RPM
+- | Battery Voltage (VB), | V
+- | Charger Voltage (VD), | V
+- Hours counter (HC) can accumulate Max. 999999 hours.
+- Start times can accumulate Max.999999 times.
+- |  | Control protection: Automatic start/stop of genset, load transfer(ATS control) and
+- perfect failure display and protection;
+- |  | With ETS, idle speed control, pre-heat control, speed droop/raising control, all of
+- them are relay output;
+- |  | Parameter setting: Allow user to modify setting and store them in internal FLASH
+- memory. The parameters cannot be lost even when power off. All of parameters can
+- be set not only from the front panel, but also use programmable interface (or PS485
+- interface) to adjust them via PC.;
+- |  | Multi sensors of temperature, pressure and fuel level can be used directly,
+- parameters can be defined by user;
+- |  | Multi conditions of crank disconnect (speed sensor, oil pressure, generator) can be
+- selected;
+- |  | Power supply range: (8~35)VDC, accommodating to different starting battery volts;
+- |  | All parameters use digital modulation, instead of analog modulation using
+- conventional potentiometer, having improved reliability and stability;
+- |  | Add rubber gasket between shell and controller screen, the waterproof can reach
+- IP55;
+- |  | Controller is fixed by metal fixing clips;
+- |  | Modular design, flame-retardant ABS shell, embedded mounting, compact structure
+- and easy installation.
+- 3 SPECIFICATION
+- | Items | Contents
+- | Working Voltage | DC8.0V to DC35.0V, continuous
+- | Power Consumption | <3W(Standby mode: ≤2W)
+- AC System
+- | 3P4W | AC15V - AC360 V (ph-N)
+- | 3P3W | AC30V - AC620 V (ph-ph)
+- | 1P2W | AC15V - AC360 V (ph-N)
+- | 2P3W | AC15V - AC360 V (ph-N)
+- | AC Alternator Frequency | 50Hz/60Hz
+- | Rotate speed sensor Voltage | 1.0V to 24V (RMS)
+- | Rotate speed sensor Frequency | 10,000 Hz (max.)
+- | Start Relay Output | 16 A DC28V at supply voltage
+- | Fuel Relay Output | 16 A DC28V at supply voltage
+- | Programmable Relay Output 1 | 7 A DC28V at supply voltage
+- | Programmable Relay Output 2 | 7 A 250VAC volt-free output
+- | Programmable Relay Output 3 | 16 Amp 250VAC volt-free output
+- | Programmable Relay Output 4 | 16 A 250VAC volt-free output
+- | Overall Dimensions | 197 mm x 152 mm x 47mm
+- | Panel Cutout | 186mm x 141mm
+- | C.T. Secondary Current | 5A (rated)
+- | Working Condition | Temperature: (-25~70)ºC; Humidity: | (20~93)%
+- | Storage Condition | Temperature: (-25~+70)ºC
+- | Protection Level | IP55 Gasket
+- Apply AC2.2kV voltage between high voltage
+- | Insulation Intensity | terminal and low voltage terminal;
+- | The leakage current is not more than 3mA | within
+- 1min.
+- | Weight | 0.56kg
+- 4 OPERATION
+- 4.1KEYS DSCRIPTION
+- Can stop generator under Manual/Auto mode; Can reset
+- shutdown alarm; Press this key at least 3 seconds to test
+- | Stop/ Reset | panel indicators are OK or not(lamp test);
+- During stopping process, press this key again can stop
+- generator immediately.
+- | Start | Start genset under Manual or Manual Test mode.
+- | Manual | Pressing this key will set the module as Manual mode.
+- | Auto | Pressing this key will set the module as Auto mode.
+- Controller is under manual testing mode.
+- | Running with load | Under this mode, gen-set will run automatically with
+- load
+- | Gens Close/Open | Can control gens to switch on or off in Manual mode.
+- | Set/ Confirm | Shift cursor to confirm In parameters setting menu.
+- | Up/Increase | Screen scroll;
+- Up cursor and increase value in setting menu.
+- | Down/Decrease | Scroll screen;
+- Down cursor and decrease value in setting menu.
+- | Menu | Pressing this key will set menu;
+- Again pressing this key can return main interface.
+- | HGM6100U | SERIES
+- | GENSET | CONTROLLER
+- | 4.2 CONTROLLER | PANEL
+- 4.3AUTOMATIC START/STOP OPERATION
+- | Auto mode is activated by pressing the | , LED indicator beside the button is
+- illuminating which confirms this action.
+- Starting Sequence,
+- 1) HGM6120UC: When mains is abnormal (over/under voltage, lack of phase), enter
+- into “Mains Abnormal Delay” and LCD displays count-down time. When delay is over,
+- “Start Delay” begins.
+- 3) “Count- down” of start delay is displayed in LCD.
+- 4) When start delay is over, preheat relay is outputting (if configured), “Preheat Delay
+- XX s” is displayed in LCD.
+- 5) When preheat delay is over, fuel relay is outputting for 1s and then start relay outputs;
+- if genset failed to start during “Crank Time”, the fuel and start relay stop outputting
+- and enter into “Crank Rest Time” and wait for next cranking.
+- 6) If genset failed to start within set start times, the fourth line of LED will turn black and
+- Fail to Start alarm will be displayed.
+- 7) Any time to start genset successfully, it will enter into “Safe Running”. During this
+- period, alarms of low oil pressure, high temperature, under speed, charge failure and
+- Aux. input (be configured) are disabled. As soon as this delay is over, genset will
+- enter into “Start Idle Delay” (if configured).
+- 8) During start idle delay, alarms of under speed, under frequency, under voltage are
+- disabled. As soon as this delay is over, genset will enter into “Warming up Delay” (if
+- configured).
+- 9) When “Warming up Delay” is over, the indicator is illuminating if gens normal. If
+- voltage and frequency of engine reach the load requirement, close relay outputs,
+- genset is taking load and indicator illuminates; if engine voltage or frequency is
+- abnormal, controller will alarm and shutdown (LCD displays the alarm information).
+- Stopping Sequence,
+- 1) HGM6120UC: during normal running, if mains normal, genset will enter into “Mains
+- Normal Delay”, when mains indicator illuminates, “Stop Delay” begins.
+- | 3) | When “Stop Delay” is over, genset enters into “Cooling Delay”. Closing relay is
+- disconnected. After switch “Transfer Rest Delay”, closing relay is outputting, mains is
+- taking load, generator indicator eliminates while mains indicator illuminates.
+- | 4) | When entering “Stop Idle Delay”, idle relay is energized to output. (If configured).
+- | 5) | When entering “ETS Delay”, ETS relay is energized to output, fuel relay output is
+- disconnected.
+- | 6) | When entering “Genset at Rest”, genset will automatically judge if it has stopped.
+- | 7) | When genset has stopped, enter into standby mode; if genset failed to stop,
+- controller will alarm (“Fail to Stop” alarm will be displayed in LCD).
+- 4.4MANUAL START/STOP OPERATION
+- | 1) | HGM6120UC, Auto Mode is active when press
+- and its indicator illuminates.
+- | Press | , then controller enters into “Manual Test Mode” and its indicator is
+- | illuminating. Under both of the modes, press | to start genset, it can automatically
+- detect crank disconnect and accelerate to high speed running. If there is high
+- temperature, low oil pressure, over speed and abnormal voltage during genset
+- running, controller can protect genset to stop (detail procedures please refer to
+- No.4~9 of Auto start operation). Under Manual Mode, switch won’t transfer
+- | automatically, it is necessary to press | to transfer load. Under “Manual Test Mode”,
+- after genset runs well in high speed, no matter mains is normal or not, loading switch
+- will be transferred to gens.
+- , and its indicator is
+- | illuminating. Then press | to start genset, it can automatically detect crank
+- disconnect and accelerate to high speed running. If there is high temperature, low oil
+- pressure, over speed and abnormal voltage during running, controller can protect
+- genset to stop quickly (detail procedures please refer to No.4~9 of Auto start
+- | operation). After genset runs well in high speed, press | and gens take load.
+- | 3) | Manual stop, pressing
+- can shut down the running genset (detail procedures
+- please refer to No.3~7 of Auto stop operation).
+- 5 PROTECTION
+- 5.1 WARNINGS
+- When controller detects the warning signal, the genset only alarm and not stop. The
+- alarms are displayed in LCD.
+- Warnings as following,
+- | No. | Items
+- Description
+- | Loss Of | Speed | When the speed of genset is 0 and speed loss delay is 0,
+- | 1 | Signal
+- controller will send warning alarm signal and it will be
+- displayed in LCD.
+- | Genset | Over
+- When the current of genset is higher than threshold and
+- | 2 | Current | setting over current delay is 0, controller will send warning
+- alarm signal and it will be displayed in LCD.
+- When genset cannot stop after the “stop delay” is over,
+- | 3 | Fail To Stop
+- When the fuel level of genset is lower than threshold or low
+- | 4 | Low Fuel Level
+- fuel level warning is active, controller will send warning
+- When the voltage of genset charger is lower than threshold,
+- | 5 | Charge Failure
+- | Battery | Under
+- When the battery voltage of genset is lower than threshold,
+- | 6 | Voltage
+- | Battery | Over
+- When the battery voltage of genset is higher than threshold,
+- | 7 | Voltage
+- | 8 | Low Water Level
+- When low water level input is active, controller will send
+- warning alarm signal and it will be displayed in LCD.
+- | Temp. | Sensor
+- When sensor hasn’t connected to corresponding port,
+- | 9 | Open Circuit
+- | Oil | Pressure
+- | 10 | Sensor
+- | Open | controller will send warning alarm signal and it will be
+- | Circuit | displayed in LCD.
+- | Maintenance time | When genset running time is longer than maintenance time
+- | 11 | out warn
+- of user setting, and the maintenance action is set as
+- warning, controller send warning alarm signal and it will be
+- displayed in LCD. When maintenance action type is set as
+- “Not used”, maintenance alarm reset.
+- | HGM6100U | Genset
+- 5.2SHUTDOWN ALARMS
+- When controller detects shutdown alarm, it will send signal to open switch and stop
+- genset. The alarms are displayed in LCD.
+- Shutdown alarms as following,
+- | 1 | Emergency Stop
+- When controller detects emergency stop signal, it will send
+- a stop alarm signal and it will be displayed in LCD.
+- | High | Temp.
+- When the temperature of water/cylinder is higher than set
+- | 2 | Shutdown
+- threshold, controller will send a stop alarm signal and it will
+- be displayed in LCD.
+- | 3 | Low Oil Pressure
+- When oil pressure is lower than threshold, controller will
+- | Shutdown | send a stop alarm signal and it will be displayed in LCD.
+- | 4 | Over
+- | Speed | When genset speed is higher than set threshold, controller
+- | Shutdown | will send a stop alarm signal and it will be displayed in LCD.
+- | 5 | Under
+- | Speed | When genset speed is lower than set threshold, controller
+- | 6 | Loss Of Speed | When rotate speed is 0 and delay is not 0, controller will
+- | Signal Shutdown | send a stop alarm signal and it will be displayed in LCD.
+- When genset voltage is higher than threshold, controller will
+- send a stop alarm signal and it will be displayed in LCD.
+- Shutdown
+- | Genset | Under
+- When genset voltage is under set threshold, controller will
+- | 8 | Voltage
+- When genset current is higher than set threshold and delay
+- | 9 | Current | is not 0, it will send a stop alarm signal and it will be
+- | Shutdown | displayed in LCD.
+- | 10 | Fail To Start
+- Within set start times, if failed to start, controller will send a
+- stop alarm signal and it will be displayed in LCD.
+- | Over Frequency | When genset frequency is higher than set threshold,
+- | 11 | Shutdown
+- controller will send a stop alarm signal and it will be
+- | Under Frequency | When genset frequency is lower than set threshold,
+- | 12 | Shutdown
+- | 13 | Genset Failed | When genset frequency is 0, controller will send a stop
+- | 14 | Low Fuel Level
+- When fuel level low input is active, controller will send a
+- | 15 | Low Water Level
+- When genset water level low input is active, controller will
+- | 16 | Open Circuit
+- controller will send shutdown alarm signal and it will be
+- | 17 | Sensor
+- | Open | controller will send shutdown alarm signal and it will be
+- When genset running is longer than maintenance time of
+- | Maintenance time | user setting, and maintenance action is set as shutdown,
+- | 18 | out shutdown
+- controller send shutdown alarm signal and it will be
+- 6 CONNECTIONS
+- | Compared with HGM6120UC, | HGM6110UC doesn’t have 3-phase input terminal of
+- | mains voltage. The back panel | of HGM6110UC and HGM6120UC is as below.
+- Descriptions of terminal connection as following,
+- | No. | Function
+- | Cable Size | Description
+- | 1 | DC input B- | 2.5mm2
+- Connected to negative of starter battery
+- Connected to positive of starter battery.
+- | 2 | DC input B+ | 2.5mm2 | If wire length is over 30m, better to
+- double wires in parallel. Max. 20A fuse
+- is recommended.
+- | 3 | Emergency Stop | 2.5mm2
+- Connected to B+ via emergency stop
+- button.
+- | 4 | Fuel Relay Output | 1.5mm2 | B+ is supplied by 3 points, rated 16A
+- | 5 | Start Relay Output | 1.5mm2 | B+ is supplied by 3 points, rated 16A
+- Connect to starter coil
+- | 6 | Aux. Relay Output 1 | 1.5mm2
+- | B+ is supplied | by | 2
+- points, rated 7A
+- | 7 | Normal close output, | 7
+- | A rated. | Reference
+- | 8 | Aux. Relay Output 2 | 1.5mm2
+- | Relay common port | table 2
+- | 9 | Normal open output, 7
+- A rated.
+- | 10 | Aux. Relay Output 3 | 2.5mm2
+- | Relay | normal
+- open
+- | 11 | volt-free contact output
+- | 12 | Aux. Relay Output 4 | 2.5mm2 | 16 A rated
+- | 14 | Charging Generator D+ | 1.0mm2
+- Connect to D+ (WL) terminal. If without,
+- | Input | the terminal is not connected.
+- | 15 | Speed sensor input
+- Connected to Speed sensor, shielding
+- | 16 | Speed sensor input, B- | 0.5mm2
+- line is recommended.
+- is connected.
+- | Connect | to
+- water
+- | 17 | Temp. Sensor Input | 1.0mm2
+- | /cylinder | temp.
+- | resistance type sensor | Reference
+- | 18 | Oil
+- | Pressure | Sensor | 1.0mm2
+- | Connect to oil pressure | table 4
+- | Input | resistance type sensor
+- | 19 | Liquid
+- | Level | Sensor | 1.0mm2
+- Connect to liquid level
+- | 20 | Configurable Input 1 | 1.0mm2
+- Ground connected is
+- active (B-)
+- | 21 | Configurable Input 2 | 1.0mm2
+- | Ground connected is | Reference
+- | active (B-) | table 3
+- | 22 | Configurable Input 3 | 1.0mm2
+- | 23 | CT A Phase Sensing | 1.5mm2 | Connect secondary coil, rated 5A
+- Input
+- | 24 | CT B Phase Sensing | 1.5mm2 | Connect secondary coil, rated 5A
+- | 25 | CT C Phase Sensing | 1.5mm2 | Connect secondary coil, rated 5A
+- | 26 | CT Common Port | 1.5mm2
+- Refer to INSTALLATION description.
+- | Generator | U
+- | phase | Connect to U phase output(2A fuse is
+- | 27 | Voltage | 1.0mm2
+- recommended)
+- Sensing Input
+- | 28 | Generator
+- | V | phase | 1.0mm2 | Connect to V phase output(2A fuse is
+- | Voltage sensing Input | recommended)
+- | 29 | Generator
+- | W | phase | 1.0mm2 | Connect to W phase output(2A fuse is
+- | Voltage Sensing Input | recommended)
+- | 30 | Generator N2 Input | 1.0mm2
+- Connect to generator N-wire
+- | 31 | Mains R phase Voltage | 1.0mm2 | Connect to mains R phase(2A fuse is
+- | 32 | Mains S phase Voltage | 1.0mm2 | Connect to mains S phase (2A fuse is
+- | 33 | Mains T phase Voltage | 1.0mm2 | Connect to mains T phase, (2A fuse is
+- | 35 | RS485
+- | Common | / | Impedance-120Ω
+- | shielding | wire
+- is
+- | Ground | recommended, its
+- | single-end | connect
+- | 36 | RS485 - | 0.5mm2
+- with ground.
+- | 37 | RS485+ | 0.5mm2
+- | 38 | Configurable Input 4 | 1.0mm2
+- | active (B-) | Reference
+- | 39 | Configurable Input 5 | 1.0mm2
+- | Ground connected is | table 3
+- | 40 | Sensor Common | 1.0mm2
+- Sensor common port
+- | Note: LINK ports in controller rear panel | are programmable parameter ports, user
+- can directly program SG72 via PC.
+- 7 PARAMETER RANGE AND DEFINITION
+- | 7.1 PARAMETER CONTENT AND | RANGE TABLE (TABLE 1)
+- | Range | Default
+- | 1 | Mains
+- | Normal | (0-3600)s | 10
+- The delay from abnormal to
+- | Delay | normal or from normal to
+- | Mains | Abnormal (0-3600)s
+- abnormal. It used for ATS
+- | 2 | Delay | 5
+- (automatic transfer switch)
+- control.
+- When mains voltage is under
+- | 3 | Mains | Under (30-620)V | 184
+- the point, mains under voltage
+- | Voltage | active. When the value is 30,
+- mains under voltage disabled.
+- | When | mains
+- | voltage | is
+- | Mains | Over (30-620)V
+- greater than the point, mains
+- | 4 | Voltage | 276
+- over voltage active. When the
+- point is 620V, mains over
+- voltage disabled.
+- It’s the delay from mains open
+- | 5 | Transfer
+- | Rest | (0-99.9)s | 1.0
+- to generator closed or from
+- | Time | generator open to mains
+- closed.
+- Time from mains abnormal or
+- | 6 | Start Delay | (0-3600)s | 1
+- remote start signal is active to
+- start genset.
+- Time from mains normal or
+- | 7 | Stop Delay | (0-3600)s | 1
+- remote start signal is inactive
+- to genset stop.
+- When engine start failure, it’s
+- the maximum cranking times.
+- | 8 | Start Times | (1-10) times | 3
+- When setting crank times out,
+- | controller | send
+- | start | fail
+- signal.
+- Time of pre-powering heat
+- | 9 | Preheat Time | (0-300)s | 0
+- plug before starter is powered
+- up.
+- | 10 | Crank Time | (3-60)s | 8
+- Time of starter power up each
+- time.
+- | The | second
+- | waiting | time
+- | 11 | Crank Rest Time | (3-60)s | 10
+- before power up when engine
+- start fail.
+- Alarm for low oil pressure,
+- | 12 | Safe
+- | Running | (1-60)s | 10
+- | high | temp,
+- | under | speed,
+- | Time | under
+- | frequency | /voltage,
+- charge fail are all inactive.
+- | 13 | Start Idle Time | (0-3600)s | 0
+- Idle running time of genset
+- when starting.
+- | Warming | time
+- between
+- | 14 | Warming Up Time | (0-3600)s | 10
+- genset switch on and high
+- speed running.
+- | 15 | Coolant Time | (3-3600)s | 10
+- | Time | for
+- | cooling | before
+- stopping.
+- | 16 | Stop Idle Time | (0-3600)s | 0
+- Idle running time when genset
+- stop.
+- Stop electromagnet’s power
+- | 17 | ETS Time | (0-120)s | 20
+- on time when genset is
+- If “ETS output time” set as 0,
+- it is the time from end of idle
+- | 18 | Over Stop Delay | (0-120)s | 0
+- delay to gen-set at rest; if not
+- 0, it is from end of ETS
+- solenoid delay to gen-set at
+- rest
+- | Switch | Close
+- Mains’ or generator’s switch
+- | 19 | Delay | (0-10)s | 5.0
+- closing pulse width, when it is
+- 0, output is continuous.
+- Number of flywheel teeth, it
+- | 20 | Flywheel Teeth | (10-300) | 118
+- | can | detect
+- disconnection
+- conditions and engine speed.
+- | 21 | Genset Abnormal | (0-20.0)s | 10.0
+- Over or under volt alarm
+- | Delay | delay
+- When genset voltage is over
+- the point, generator over
+- | 22 | Voltage shutdown | (30-620)V | 264
+- voltage is active. When the
+- point is 620V, generator over
+- voltage is disabled.
+- When generator voltage is
+- under the point, generator
+- | 23 | Voltage | (30-620)V | 196
+- under voltage is active. When
+- the point is 30V, generator
+- under voltage is disabled.
+- When the engine speed is
+- | 24 | Under
+- | Speed | (0-6000)RPM | 1200 | under the point for 10s,
+- | shutdown | shutdown alarm signal is sent
+- out.
+- | Over | Speed
+- | 25 | shutdown | (0-6000)RPM | 1710
+- | over | the
+- | point | for | 2s,
+- shutdown alarm signal is sent.
+- When generator frequency is
+- | 26 | Under Frequency | (0-75.0)Hz | 45.0
+- lower than the point (not
+- | shutdown | equal to 0) for 10s, shutdown
+- alarm signal is sent.
+- When generator’s frequency
+- | 27 | Over
+- | Frequency | (0-75.0)Hz | 57.0
+- | is | over
+- | the | point
+- and
+- | shutdown | continues for 2s, generator
+- over frequency is active.
+- | When | engine
+- temperature
+- sensor value is over this
+- point, it sends out high temp.
+- alarm. When the value is 140,
+- | 28 | High Temperature | (80-140)ºC | 98
+- warning alarm won’t be sent.
+- | shutdown | (only suited for temperature
+- sensor, except for high temp.
+- | pressure | alarm
+- signal
+- | inputted | by
+- programmable
+- input port )
+- When engine oil pressure
+- sensor value is under this
+- point, Low Oil Pressure alarm
+- is sending out. When the
+- | 29 | Low Oil Pressure | (0-400)kPa | 103 | value is 0, warning alarm
+- | shutdown | won’t be sent. (only suited for
+- oil pressure sensor, except for
+- low oil pressure alarm signal
+- input port)
+- When fuel level sensor value
+- under this point and remains
+- | 30 | Low Fuel Level | (0-100)% | 10 | for 10s, genset send out
+- warning alarm, only warn but
+- not shutdown.
+- | 31 | Loss Of Speed | (0-20.0)s | 5.0 | When the delay setting as 0s,
+- | Signal Delay | it only warn but not shutdown
+- During generator is running,
+- | when | charge
+- alternator
+- | 32 | Charge Failure | (0-30)V | 6.0
+- WL/D+ voltage is under this
+- point and remain for 5s,
+- generator will warning alarm
+- and shutdown.
+- | When | generator
+- battery
+- voltage is over the point and
+- | 33 | Voltage | (12-40)V | 33.0 | remains for 20s, battery over
+- voltage signal is active. it only
+- warn but not shutdown
+- voltage is under the point and
+- | 34 | Voltage | (4-30)V | 8.0 | remains for 20s, battery under
+- | 35 | CT Rate | (5-6000)/5 | 500
+- Current transformer rate
+- Rated current of generator,
+- | 36 | Full Load Current | (5-6000)A | 500
+- used for calculating over load
+- current.
+- | Over | Current
+- When load current is over the
+- | 37 | Percentage | (50-130)% | 120
+- point, the over current delay is
+- initiated.
+- | 38 | Over
+- | Current | (0-3600)s | 1296
+- point, over current signal is
+- | Delay | sent. When the delay is 0,
+- only warn but not shutdown.
+- When the fuel level lower than
+- | 39 | Fuel Pump Open | (0-100)% | 25 | the set value for 10s, send a
+- signal to open fuel pump.
+- When the fuel level higher
+- | 40 | Fuel Pump Close | (0-100)% | 80 | than the set value for 10s,
+- send a signal to close fuel
+- pump.
+- | 41 | Aux. Output 1 | (0-17) | 2
+- Factory default: Energized to
+- stop
+- | 42 | Aux. Output 2 | (0-17) | 3
+- Factory default: Idle control
+- | 43 | Aux. Output 3 | (0-17) | 5
+- Factory default: Gens closed
+- | 44 | Aux. Output 4 | (0-17) | 6
+- Factory default: Mains closed
+- | 45 | Aux. Input 1 | (0-15) | 1
+- | Factory | default:
+- High
+- temperature alarm
+- | 46 | Aux.
+- | Input | 1 | (0-1) | 0
+- Factory default: close
+- Active
+- | 47 | Aux.
+- | Input | 1 | (0-20.0)s | 2.0
+- Delay
+- | 48 | Aux. Input 2 | (0-15) | 2
+- | Low | oil
+- pressure alarm
+- | 49 | Aux.
+- | Input | 2 | (0-1) | 0
+- | 50 | Aux.
+- | Input | 2 | (0-20.0)s | 2.0
+- | 51 | Aux. Input 3 | (0-15) | 10
+- | Factory | default: Remote
+- start
+- input
+- | 52 | Aux.
+- | Input | 3 | (0-1) | 0
+- | Factory | default: close
+- | 53 | Aux.
+- | Input | 3 | (0-20.0)s | 2.0
+- | 54 | Aux. Input 4 | (0-15) | 11
+- | Factory | default: Low fuel
+- level
+- warn
+- | 55 | Aux.
+
+### MRS16 — datasheet của InteliLite 4 MRS16 (nhà cung cấp ghi MRS16: cần xác nhận đời) — supplierId: comap, n: 1003
+- InteliLite 4
+- MRS 16
+- Order code: IL4MRS16BAA, IL4MRS16BLA
+- | Controller | for single gen-set applications
+- Datasheet
+- Product description
+- | Advanced single Gen-set controller for prime-power applications | Detailed history log with up to 350 records, including user logins and configuration
+- changes
+- | Key benefits | Remote Display support via RS485 (special RD FW for InteliLite 4 controllers)
+- | Great flexibility and wide range of application support | Up to 5 languages in one configuration, over 20 default languages available
+- | Variable predefined configurations tailored for specific applications | Load shedding and dummy load management
+- | User defined protections and setpoints, integrated PLC logic | Alternative configurations for genset with variable voltage and frequency
+- | Full control with fast and reliable remote communication support | Tool for quick and organized configuration cloning in large production facilities
+- | Built-in USB host/device, CAN, RS485 interfaces | Available in low temperature version (order code: IL4MRS16BLA)
+- | Extendable options including 4G/GPS, Ethernet and RS485/RS232 | Application overview
+- | Support of Modbus RTU/TCP, SNMP v1/v2c/v3 (SNMPv3 traps not | supported),
+- and
+- J1939 protocols.
+- Cyber security by design to safeguard your business
+- Designed in relevant requirements according to ISA 62443 level 2-3
+- Enhanced ECU support
+- StageV and Tier4Final ready by default with additional customisation
+- MultiECU support for enabling communication with more J1939 devices such as
+- engine ECUs, battery chargers, AVRs etc.
+- Key features
+- 3 applications in 1 HW: MRS (Prime-power) – default, Hybrid, Engine
+- | Monitoring via WebSupervisor, InteliSCADA, InteliConfig, | active
+- | SMS | and
+- e-mails
+- or external SCADA system
+- Improved HW platform
+- Switchable analogue inputs (R/U/I)
+- 5 V reference output for analogue CU AIN Calibration
+- 2 high-current E-Stop binary outputs
+- 2 slots for extension plug-in modules (more binary I/Os, 4G & GPS, Ethernet, RS232
+- & RS485)
+- Geo-fencing based on GPS
+- Support of up to 5 extension CAN modules
+- Power over USB for configuration without standard power supply
+- RTC with battery back-up, full calendar and enhanced scheduler
+- | | InteliLite 4 MRS 16 Datasheet | | Related HW ver: 1.2.0 | | Related SW ver: 1.9.0 | | Date of issue: 8/6/2026
+- Dimensions, terminals and mounting
+- Note: The final depth of the controller depends on the selected plug-in module – it can vary between 41 mm
+- and 56 mm. Mind also the size of connectors and cables (e.g. in case of RS232 connector, add about 60 mm
+- more for standard RS232 connector and cable).
+- Note: The controller is to be mounted into panel doors as a standalone unit using provided holders. The
+- requested cutout size is 187 × 132 mm. Use the screw holders delivered with the controller to fix the controller
+- into the door.
+- | InteliLite 4 MRS 16 Datasheet | 2
+- Technical data
+- | Power supply | Current measurement
+- | Power supply range | 8-36 V DC
+- | Measurement inputs | 3ph Gen current
+- | Power consumption | Measurement range | 5A
+- | (without modules) | Max. allowed current | 10 A
+- | RTC battery | Replaceable (3 V)
+- | Accuracy | ±20
+- | mA | for | 0-2
+- | % | of value for 2-5 A
+- | Fusing power | 4
+- | BOUT consumption | Input impedance | <0.1 Ω
+- | E-Stop fusing | 10 A
+- E-Stop
+- | Max. power dissipation | 9W
+- Dedicated terminal for safe E-Stop input.
+- | Operating conditions | Physical supply for binary outputs 1 & 2.
+- | Protection degree (front | IP 65
+- Binary inputs
+- panel)
+- | Number | 8
+- | Operating temperature | -20˚C to +70˚C
+- | Close/Open indication | 0-2 V DC close contact
+- | Operating temperature | -40˚C to +70˚C | 6-36 V DC open contact
+- for Low Temp. version
+- | Storage temperature | -30˚C to +80˚C
+- Binary outputs
+- | Operating humidity | 95 % non-condensing
+- | (EN 60068-2-30) | BO1,2=5 A (60°C); BO1,2=4 A (70°C),
+- | 5-25 Hz, ± 1.6 mm | Max. current | BO3-8=0.5 A
+- | Vibration | 25-100 Hz, a = 400 m/s2
+- | Switching to | positive supply terminal
+- | Shocks | a = 500 m/s2
+- Analog inputs
+- | Surrounding air temperature rating | 70°C
+- | Suitable for pollution degree 2 | Number | 4, switchable (R/U/I)
+- | D+ | Range | R = 0-2500 Ω; U = 0-10 V; I = 0-20 mA
+- R: ±2 % from value ±5 Ω in range 0-250 Ω
+- | Max. output current | 250 mA | R: ±4 % from value in range 250 Ω-2500 Ω
+- | Charging fail threshold | Adjustable
+- | Accuracy | U: 1 % from value ±100 mV
+- | Voltage measurement | I: 1 % from value ±0.2 mA
+- | Measurement inputs | 3ph-n Gen voltage | +5 V Power supply output
+- | 10-277 V AC / 10-480 V AC (EU) | Max. current | 45 mA
+- | Measurement range | 10-346 V AC / 10-600 V AC
+- Magnetic pickup
+- (US/Canada)
+- | Linear measurement | 350 V AC Ph-N | 4 Vpk-pk to 50 Vpk-pk in range 4 Hz to 1 kHz
+- | Voltage input | 6 Vpk-pk to 50 Vpk-pk in range 1 to 5 kHz
+- | and protection range | 660 V AC Ph-Ph
+- range
+- | Accuracy | 1% | 10 Vpk-pk to 50 Vpk-pk in range 5 to 10 kHz
+- | 30-70 Hz | Frequency input | 4 Hz to 10 kHz
+- | Frequency range | 30-520 Hz with SW key
+- | accuracy 0.1 Hz | Frequency
+- | Input impedance | 0.72 MΩ ph-ph , 0.36 MΩ ph-n
+- | measurement | 0.2 % from measured value
+- tolerance
+- Display
+- | Type | Build-in monochromatic 3.2"
+- | Resolution | 132 × 64 px
+- Communications
+- | USB Device | Non-isolated type B connector
+- | USB Host | Non-isolated type A connector
+- | RS485 | Isolated
+- Non-isolated, 250 / 50 kbps,
+- | CAN | Terminator impedance 120 Ω
+- Modbus RTU/TCP
+- | Protocols | SNMP v1/v2c/v3
+- | InteliLite 4 MRS 16 Datasheet | 3
+- | Available plug-in | modules
+- | Product | Description
+- Order code
+- | CM-RS232-485 | Dual port (RS232 & RS485) plug-in communication
+- | module | CM223248XBX
+- | CM2-4G-GPS | 4G & GPS plug-in communication module | CM24GGPSXBX
+- | CM3-Ethernet | Internet / Ethernet plug-in communication module | CM3ETHERXBX
+- | EM-BIO8-EFCP | 8 additional binary inputs/outputs | EM2BIO8EXBX
+- Note: Controller has 2 slots for plug-in modules.
+- | Available CAN | modules
+- | IGL-RA15 | CAN remote annunciator with 15 LEDs | EM2IGLRABAA
+- | Inteli AIN8 | CAN module with 8 analog inputs | I-AIN8
+- | Inteli IO8/8 | CAN module with 8 binary inputs and 8 binary outputs | I-IO8/8
+- | IGS-PTM | CAN module with 8 binary inputs, 8 binary outputs, 4 analog inputs and 1 analog
+- | output | IGS-PTM
+- | Inteli AIN8TC | CAN module with 8 analog inputs dedicated for thermocouple sensors only. | I-AIN8TC
+- | Inteli AIO9/1 | CAN module with analog inputs and outputs – designed for DC measurement. | I-AIO9/1
+- List of SW Key Features
+- | SW Key Feature | Order code
+- | Modbus client for InteliLite 4 | SKMODCLI03
+- | PLC Package for InteliLite 4 Engine | application | SKPLCILX01
+- | 400 Hz for InteliLite 4 | SK400HZX01
+- Functions and protections
+- | Support of functions and protections as defined by ANSI | (American
+- | National | Standards
+- Institute):
+- | Description | ANSI
+- | code | Description
+- ANSI code
+- | Master unit | 1
+- | Voltage unbalance / Negative | sequence
+- | voltage | 47
+- | Stopping device | 5
+- | Incomplete sequence relay | 48
+- | Multi-function device | 11
+- | Overcurrent | 50/50TD
+- | Overspeed | 12
+- | Earth fault** | 50G
+- | Underspeed | 14
+- | Breaker failure ANSI | 50BF
+- | Starting-to-running transition | contactor | 19
+- | Overcurrent IDMT | 51
+- | Thermal relay | 26
+- | Overvoltage | 59
+- | Undervoltage | 27
+- | Aux Over Voltage | 59X
+- | Aux Battery Under Voltage | 27X
+- | Pressure switch | 63
+- | Annunciator | 30
+- | Liquid level switch | 71
+- | Overload (real power) | 32P
+- | Alarm relay*** | 74
+- | Reverse power | 32R
+- | Reclosing relay | 79
+- | Master sequence device | 34
+- | Overfrequency | 81O
+- | Unit sequence starting* | 44
+- | Underfrequency | 81U
+- | Current unbalance | 46
+- | *Dual operation | **Extension module | EM-BIO8-EFCP
+- | required | *** extension module | IGL-RA15
+- required
+- Certifications and standards
+- | EN | 61000-6-2 | EN 60068-2-6 (2÷25 Hz / ±1,6 mm; 25÷100 Hz
+- | EN | 61000-6-4 | EN 60068-2-27 (a=500 m/s ; T=6 ms)
+- | EN | 61010-1 | EN 60068-2-30 25/55°C, RH 95%, 48hours
+- | EN | 61326-1 | EN 60529 (front panel IP65, back side IP20)
+- | EN | 60068-2-1 | (-20°C/16 h) | ULC 6200:2019 (R2025)
+- | EN | 60068-2-2 | (70°C/16 h)
+- E-mail: info@comap-control.com
+- © ComAp. Features and specification are subject to change without prior notice.

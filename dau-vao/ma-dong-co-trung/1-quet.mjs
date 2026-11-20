@@ -6,7 +6,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { pathToFileURL, fileURLToPath } from "node:url";
 const SRC = process.argv[2] || "web";
-const WT = "C:/Projects/GenSet Pro/GenSet-Pro";
+const WT = process.argv[3] || "C:/Projects/GenSet Pro/GenSet-Pro", TAG = process.argv[4] || "";
 await import(pathToFileURL(`${WT}/suppliers/config-bot.mjs`).href);
 const CAT = globalThis.GenbidCatalog;
 const J = (f) => JSON.parse(fs.readFileSync(f, "utf8"));
@@ -45,7 +45,7 @@ for (const kind of ["engines", "alternators"]) {
   for (const e of list) { const k = e.key.replace(/[()（）/／,+&'’"]/g, ""); by.set(k, [...(by.get(k) || []), e]); }
   for (const [k, es] of by) if (es.length > 1) out.push({ kind, sep: "kytu", key: es.map((e) => e.key).join(" = "), names: es.flatMap((e) => e.names), target: k, rows: es.reduce((a, e) => a + e.uses.length, 0), sups: [...new Set(es.flatMap((e) => e.suppliers))], uses: es.flatMap((e) => e.uses.map((u) => `${e.key}: ${u.supplierId} n${u.n} | ${String(u.line || "").slice(0, 200)}`)) });
 }
-fs.writeFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), `quet-${SRC}.json`), JSON.stringify(out, null, 1));
+fs.writeFileSync(path.join(path.dirname(fileURLToPath(import.meta.url)), `quet-${SRC}${TAG}.json`), JSON.stringify(out, null, 1));
 console.log(`nguồn ${SRC}: ${sups.length} NCC, ${cat.engines.length} khoá động cơ, ${cat.alternators.length} khoá đầu phát; ${out.length} khoá nghi trùng`);
 for (const o of out) {
   console.log(`\n[${o.kind} ${o.sep}] ${o.key} (${o.rows} dòng, NCC ${o.sups.join(",")}, hãng ${o.make || "∅"}) → ${o.target} (${o.tRows ?? "-"} dòng, ${o.tSups ?? "-"} NCC, hãng ${o.tMake || "∅"}) | phần còn lại "${o.rest ?? ""}"`);
