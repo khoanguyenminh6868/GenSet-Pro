@@ -1896,9 +1896,10 @@
   //   cells: the cell counts a row of the table has; a row with another count is not one of its gensets and is left out
   //     with a note (yingtai n109: the googol ENGINE rows of 12 cells under the gensets' 9 / 10; acepow: the 6-cell size
   //     rows "APX-200 | 2800 | 1100 | …" under the 3-cell genset row).
-  //   prime / standby / rated / unrated: { kW, kVA } cell indexes, or { pair, order } for one cell "a/b" ("800/1000"),
-  //     units in the cell win, else `order`; `unrated` = figures with no prime / standby level ("Continuous Power" is no
-  //     level, web/CLAUDE.md; "电能 (kWe)"; "功率 KW KVA"), `rated` = the source writes "Rated Power".
+  //   prime / standby / rated: { kW, kVA } cell indexes, or { pair, order } for one cell "a/b" ("800/1000"),
+  //     units in the cell win, else `order`; `rated` = figures with no prime / standby level, as fromSupplier's `rated`
+  //     ("Rated Power"; "Continuous Power" is no level, web/CLAUDE.md; "电能 (kWe)"; "功率 KW KVA"; điều phối 20/11/2026:
+  //     one convention, no separate `unrated`).
   //   freq: the cell of the frequency ("50", "60Hz"; "50/60Hz" gives none); specs: [key, cell, label as the header writes it].
   // A cell "/", "TBA", "N/A", "0" or empty gives nothing (teksan's gas sets write "0" / "TBA" under Prime). The engine's
   // make: as fromSupplier's makesFor (row > header > page title > the maker itself).
@@ -1908,18 +1909,18 @@
       acepow: { cells: [3], model: 0, ...pairs(null) },
       frsGas: { cells: [9], model: 0, prime: { kW: 1 }, specs: [["cyl", 3, "气缸数"], ["disp", 4, "排量"], ["compr", 6, "压缩比"], ["dims", 7, "机组尺寸 - 开架 (mm)"], ["weight", 8, "机组重量 - 开架 (kg)"]] },
       frsSmall: { cells: [9], model: 0, prime: { kW: 1, kVA: 2 }, specs: [["phase", 3, "相数"], ["pf", 4, "功率因数"], ["bore", 5, "缸径*行程 （mm）"], ["disp", 6, "排量 （cc）"], ["dims", 7, "尺寸 （mm）"], ["weight", 8, "重量 （kg）"]] },
-      googolGas: { cells: [6], model: 1, unrated: { pair: 2 }, order: ["kW", "kVA"], freq: 3, specs: [["voltage", 4, "Voltage (V)"]] },
+      googolGas: { cells: [6], model: 1, rated: { pair: 2 }, order: ["kW", "kVA"], freq: 3, specs: [["voltage", 4, "Voltage (V)"]] },
       // "Engine (Output Power)" Standby | Prime (cells 1, 2) is the ENGINE's kW, not the set's: only "Genset (Typical
       // Generation Output Power)" Standby | Prime (kW/kVA), cells 3 and 4, is read (catalog-c-de-xuat 1.4.1).
       googolV: { cells: [9], model: 0, standby: { pair: 3 }, prime: { pair: 4 }, order: ["kW", "kVA"], specs: [["cyl", 5, "No. of Cylinders"], ["disp", 6, "Displacement (L)"], ["weight", 7, "Weight (kg)"], ["fuel", 8, "Full Load Consumption (L/h)"]] },
       greenPower: { cells: [8], model: 0, decComma: true, prime: { kVA: 1 }, standby: { kVA: 2 }, specs: [["fuel", 4, "CONSUMO CONSUMPTION (l/h)"], ["tank", 5, "SERBATOIO TANK (l)"], ["dims", 6, "DIMENSIONI (LxLxA) DIMENSIONS (LxWxH) (mm)"], ["weight", 7, "PESO WEIGHT (kg)"]] },
       interpower: { cells: [4], model: 0, prime: { kVA: 1 }, standby: { kVA: 2 } },
       // The size column is titled "（cm）" over figures in mm ("4900X1800X2500"): left out.
-      kangwo: { cells: [4], model: 0, unrated: { pair: 1, sep: " " }, order: ["kW", "kVA"], specs: [["weight", 3, "重量（kg）"]] },
+      kangwo: { cells: [4], model: 0, rated: { pair: 1, sep: " " }, order: ["kW", "kVA"], specs: [["weight", 3, "重量（kg）"]] },
       swtKubota: { cells: [6], model: 0, freq: 1, prime: { pair: 3 }, standby: { pair: 4 }, specs: [["speed", 5, "Rated Speed"]] },
       swtCummins: { cells: [7], model: 0, ...pairs(null), freq: 3, specs: [["speed", 4, "Rated Speed"], ["voltage", 5, "Voltage"], ["pf", 6, "Power Factor"]] },
       teksan: { cells: [9, 10], model: 1, standby: { kVA: 4, kW: 5 }, prime: { kVA: 6, kW: 7 }, freq: 3, specs: [["phase", 2, "Phase"], ["voltage", 8, "Voltage"]] },
-      vpower: { cells: [6], model: 0, unrated: { kW: 1 } },
+      vpower: { cells: [6], model: 0, rated: { kW: 1 } },
       westin: { cells: [9], model: 1, rated: { kW: 2, kVA: 3 }, specs: [["cyl", 5, "Cylinder"], ["bore", 6, "Bore*Stroke (mm)"], ["disp", 7, "Displacement (L)"], ["dims", 8, "Dimensions L*W*H (mm)"]] },
       // A row of 8 cells (yingtai n104 "| 12GF | 12 | 15 | 13 | 16.25 | 21.6 | 23.4 | 1.32* 0.552* 1.18": the weight cell is
       // missing): the model, power and currents (cells 0–6) stand where the header says; which later cell is missing is
@@ -2015,7 +2016,7 @@
         const model = String(cells[lay.model] || "").trim();
         if (!/\d/.test(model) || keyOf(model).length < 3) { note(t, ti, ri, "dòng bảng tổ máy không có model", line); return; }
         const power = {};
-        for (const lv of ["prime", "standby", "rated", "unrated"]) {
+        for (const lv of ["prime", "standby", "rated"]) {
           if (!lay[lv]) continue;
           const { level, bad } = gensetLevel(lay, lay[lv], cells, lay.order, lay.decComma);
           if (bad != null) note(t, ti, ri, `công suất ${lv} không đọc được: để trống`, bad);
