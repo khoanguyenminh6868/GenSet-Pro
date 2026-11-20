@@ -110,20 +110,107 @@ export function stamfordBookRatings(text) {
   return out;
 }
 
-// ---------- Leroy-Somer TAL ----------
+// ---------- Leroy-Somer TAL / LSA ----------
+// Mỗi khối "Ratings 50 Hz - 1500 R.P.M." đọc bằng cách cũ (lsBlockOld, giữ y từng ký tự các khối đã đọc được trước
+// 20/11/2026); khối cách cũ không cho số nào thì đọc bằng lsBlock (dau-phat-hang A, 20/11/2026): tiêu đề chế độ / cấp
+// nhiệt / pha xuống dòng ("| Duty / T° C | Continuous / 40" rồi "| °C | …"), dòng "Ratings" có "|" xen giữa, bảng chỉ có
+// cột 3 pha (LSA 46.3 → 52.3, TAL-A473 / A49), dòng "Y" chỉ ghi điện áp MỘT lần cho mọi nhóm (LSA 40 → 46.3), tên model
+// một dòng riêng ("| LSA | 52.3 | S5" rồi "| kVA | …"), số nghìn tách bằng dấu cách hay cả "|" ("1 250", "| 1 | 315 |").
 export function lsRatings(text) {
   const L = String(text).split("\n"), out = [];
   L.forEach((l, i) => {
+    if (!/^Ratings (50|60) Hz\s*-\s*(\d\s?\d{3}) R\.P\.M\./.test(flatLine(l))) return;
+    const old = lsBlockOld(L, i);
+    out.push(...(old.length ? old : lsBlock(L, i)));
+  });
+  return out;
+}
+const flatLine = (l) => String(l).replace(/\|/g, " ").replace(/\s+/g, " ").trim();
+// Số của một dòng định mức (sau chữ kVA / kW), đúng `n` số. Ô gõ liền ("103.2108.0") không là số. Thừa số thì ghép số
+// nghìn: một chữ số 1–9 đứng ngay trước một nhóm đúng 3 chữ số ("1 | 315", "1 000"). Chỉ nhận khi đúng MỘT cách ghép cho
+// đủ `n` số mà không còn số nào < 0,2 × số lớn nhất của dòng (chữ số "1" thừa); không thì null (không đoán cột).
+export function lsFigures(s, n) {
+  const toks = String(s).split(/[|\s]+/).filter(Boolean);
+  if (toks.some((t) => !/^\d+(\.\d+)?$/.test(t))) return null;
+  const k = toks.length - n;
+  if (k < 0) return null;
+  if (k === 0) return toks.map(num);
+  const can = toks.map((t, j) => /^[1-9]$/.test(t) && /^\d{3}$/.test(toks[j + 1] || ""));
+  const found = new Set(), pick = [];
+  const ok = (vals) => { const mx = Math.max(...vals); return vals.every((v) => v >= 0.2 * mx); };
+  const walk = (j, left) => {
+    if (found.size > 1) return;
+    if (left === 0) {
+      const vals = [];
+      for (let q = 0; q < toks.length; q++) { if (pick.includes(q)) { vals.push(num(toks[q] + toks[q + 1])); q++; } else vals.push(num(toks[q])); }
+      if (ok(vals)) found.add(vals.join(","));
+      return;
+    }
+    for (let q = j; q < toks.length; q++) if (can[q]) { pick.push(q); walk(q + 2, left - 1); pick.pop(); }
+  };
+  walk(0, k);
+  return found.size === 1 ? [...found][0].split(",").map(Number) : null;
+}
+function lsBlock(L, i) {
+  const out = [], hz = Number(flatLine(L[i]).match(/^Ratings (50|60) Hz/)[1]);
+  const find = (re, from = i + 1) => { for (let j = from; j < i + 14 && j < L.length; j++) if (re.test(L[j])) return j; return -1; };
+  const jd = find(/^\|\s*Duty/), jc = find(/^\|\s*Class/), jp = find(/^\|\s*Phase/), jy = find(/^\|\s*Y\s*\|/);
+  if ([jd, jc, jp, jy].some((x) => x < 0) || !(jd < jc && jc < jp && jp < jy)) return out;
+  const join = (a, b) => flatLine(L.slice(a, b).join(" "));
+  const duties = [...join(jd, jc).matchAll(/(Continuous|Stand-?by)(?: duty)?\s*\/\s*(\d{2})\s*°\s*C/gi)].map((m) => ({ duty: /stand/i.test(m[1]) ? "Standby" : "Cont.", word: /stand/i.test(m[1]) ? "Stand-by" : "Continuous", t: m[2] }));
+  const classes = [...join(jc, jp).matchAll(/\b([HF])\s*[:/]?\s*(\d{3})\s*°?\s*K\b/g)].map((m) => `${m[1]}:${m[2]}K`);
+  const phases = [...join(jp, jy).matchAll(/\b([13])\s*ph\./g)].map((m) => Number(m[1]));
+  const G = duties.length;
+  if (G < 2 || classes.length !== G || !(phases.length === G || phases.length === 2 * G)) return out;
+  const one = phases.length === 2 * G, vt = [...L[jy].matchAll(/(\d{3})\s*V(\*?)/g)].map((x) => ({ v: Number(x[1]), star: !!x[2] }));
+  if (!vt.length) return out;
+  const groups = duties.map((d, k) => ({ ...d, rise: `${classes[k]} ${d.word}/ ${d.t}°C` }));
+  // Hai cách hiểu dòng "Y": mỗi nhóm một phần (chia đều), hoặc một danh sách chung cho mọi nhóm. Mỗi cách bỏ / giữ điện
+  // áp có dấu *. Chỉ nhận dòng số khớp đúng MỘT cách.
+  const layouts = [];
+  for (const star of [true, false]) {
+    const v = vt.filter((x) => star || !x.star).map((x) => x.v);
+    if (!v.length) continue;
+    if (v.length % G === 0) layouts.push(groups.flatMap((g, k) => [...v.slice(k * v.length / G, (k + 1) * v.length / G).map((x) => ({ g, phase: 3, volt: x })), ...(one ? [{ g, phase: 1, volt: null }] : [])]));
+    if (G > 1) layouts.push(groups.flatMap((g) => [...v.map((x) => ({ g, phase: 3, volt: x })), ...(one ? [{ g, phase: 1, volt: null }] : [])]));
+  }
+  const head = L.slice(i, jy + 1);
+  const fit = (s) => {
+    const hits = new Map();
+    for (const cols of layouts) { const f = lsFigures(s, cols.length); if (f) hits.set(`${cols.length}:${f.join(",")}`, { cols, f }); }
+    // Hai cách hiểu cùng số cột cho cùng số: một cách (chọn cách đầu); khác nhau thì không đọc.
+    const keys = new Set([...hits.values()].map((h) => h.cols.map((c) => `${c.g.rise}|${c.phase}|${c.volt}`).join(";")));
+    return keys.size === 1 ? [...hits.values()][0] : null;
+  };
+  for (let r = jy + 1; r < L.length && r < jy + 40; r++) {
+    // Một dòng "Y" thứ hai là bảng của cách quấn dây khác ("12 wires version winding no. 6 (option)", LSA 50.2): không đọc.
+    if (/^Ratings |^Efficienc|^\| TAL[^|]*- Three-phase/.test(flatLine(L[r])) || /^\|?\s*(Duty|Y\s*\|)/.test(L[r])) break;
+    let f = flatLine(L[r]), line = [L[r]], model, rest;
+    const m = f.match(/^((?:TAL|LSA)\b[\w.\- ]*?)\s*kVA\b\s*(.*)$/);
+    if (m) { model = m[1].trim(); rest = L[r].slice(L[r].indexOf("kVA") + 3); }
+    else if (/^(?:TAL|LSA)\b[\w.\- ]*$/.test(f) && /^\|?\s*kVA\b/.test(L[r + 1] || "")) { model = f; line = [L[r], L[r + 1]]; r++; rest = L[r].slice(L[r].indexOf("kVA") + 3); }
+    else continue;
+    const hit = fit(rest);
+    if (!hit) continue;
+    const kwLine = L[r + 1] || "", kw = /^\|\s*kW\b/.test(kwLine) ? lsFigures(kwLine.slice(kwLine.indexOf("kW") + 2), hit.cols.length) : null;
+    hit.cols.forEach((col, k) => out.push({ part: "alternator", model: model.replace(/\s+/g, " ").replace(/ -/g, "-"), hz, duty: col.g.duty, rise: col.g.rise, phase: col.phase, volt: col.volt, kVA: hit.f[k], kW: kw ? kw[k] : null, eff: null, pf: 0.8,
+      lines: [...head, ...line, ...(kw ? [kwLine] : [])] }));
+  }
+  return out;
+}
+function lsBlockOld(L, i) {
+  const out = [], l = L[i];
+  {
     const m = l.match(/^Ratings (50|60) Hz - (\d{4}) R\.P\.M\./);
-    if (!m) return;
+    if (!m) return out;
     const hz = Number(m[1]), find = (re) => { for (let j = i + 1; j < i + 10 && j < L.length; j++) if (re.test(L[j])) return j; return -1; };
     const jd = find(/^\|\s*Duty/), jc = find(/^\|\s*Class/), jp = find(/^\|\s*Phase/), jy = find(/^\|\s*Y\s*\|/);
-    if ([jd, jc, jp, jy].some((x) => x < 0)) return;
+    if ([jd, jc, jp, jy].some((x) => x < 0)) return out;
     const duty = cells(L[jd]).slice(1).map((d) => (/stand/i.test(d) ? "Standby" : /contin/i.test(d) ? "Cont." : null)), temp = cells(L[jd]).slice(1);
     const cls = cells(L[jc]).slice(1);
     const vt = [...L[jy].matchAll(/(\d{3})V(\*?)/g)].map((x) => ({ v: Number(x[1]), star: !!x[2] }));
     const G = cls.length;
-    if (G < 2 || duty.length !== G || duty.some((d) => !d) || vt.length % G) return;
+    if (G < 2 || duty.length !== G || duty.some((d) => !d) || vt.length % G) return out;
     const per = vt.length / G, groups = cls.map((c, k) => ({ duty: duty[k], temp: temp[k], cls: c, v3: vt.slice(k * per, (k + 1) * per) }));
     const head = L.slice(i, jy + 1);
     for (let r = jy + 1; r < L.length && r < jy + 40; r++) {
@@ -142,7 +229,7 @@ export function lsRatings(text) {
       cols.forEach((col, k) => out.push({ part: "alternator", model, hz, duty: col.g.duty, rise: `${col.g.cls} ${col.g.temp}`, phase: col.phase, volt: col.volt, kVA: rest[k], kW: kwOk ? kw[k] : null, eff: null, pf: 0.8,
         lines: [...head, L[r], ...(kwOk ? [kwLine] : [])] }));
     }
-  });
+  }
   return out;
 }
 
@@ -210,6 +297,54 @@ export function altSheetAttrs(text) {
   // "This alternator is capable of achieving a balanced 300% sustained short circuit for up to 10 | seconds." (S-range).
   const sc = L.findIndex((l) => /300%\s*sustained\s*short\s*circuit\s*for\s*up\s*to\s*10\b/i.test(l));
   if (sc >= 0 && /capable of achieving a\b/i.test(L[sc - 1] || "") && /^\|?\s*seconds\b/i.test((L[sc + 1] || "").trim())) add("sc300", { pct: 300, s: 10 }, L[sc - 1], L[sc], L[sc + 1]);
+  return out;
+}
+
+// ---------- Thuộc tính chung của một tờ Leroy-Somer (dau-phat-hang A, 20/11/2026) ----------
+// Khối "General characteristics" của tờ TAL / LSA (một tờ = một dải, mọi model của dải): cách điện, kiểu kích từ, model
+// AVR, ổn định điện áp, cấp bảo vệ, dòng ngắn mạch, quá tốc, độ cao. Mỗi mục kèm dòng nguyên văn. Tờ nhiều cột (SHUNT |
+// AREP / PMG; "AVR type | R220 | D350"; "± 0.5% | ± 0.25%") KHÔNG ghép cột với kiểu kích từ (chữ PDF lệch cột): giữ danh
+// sách giá trị theo thứ tự tờ ghi. Ngắn mạch: `all: false` khi cột đầu ghi "-" (kiểu kích từ đầu không có, LSA 40–47.3).
+// Chưa nối vào config-bot (PR B của dau-phat-hang).
+export function lsSheetAttrs(text) {
+  const L = String(text).split("\n"), out = [];
+  const add = (key, value, ...lines) => out.push({ key, value, lines: lines.filter(Boolean) });
+  const start = L.findIndex((l) => /^General characteristics\b/i.test(l.trim()));
+  if (start < 0) return out;
+  let end = L.findIndex((l, j) => j > start && /^\|?\s*Ratings\s+(50|60)/.test(l));
+  if (end < 0) end = Math.min(L.length, start + 40);
+  const B = L.slice(start, end), at = (re) => B.findIndex((l) => re.test(l));
+  const ins = at(/^\|\s*Insulation class\s*\|/i), insM = ins >= 0 && B[ins].match(/^\|\s*Insulation class\s*\|\s*([BFH])\b/i);
+  if (insM) add("insulation", insM[1].toUpperCase(), B[ins]);
+  const ip = at(/^\|\s*Protection\s*\|/i), ipM = ip >= 0 && B[ip].match(/\bIP\s?(\d\d)\b/);
+  if (ipM) add("ip", `IP${ipM[1]}`, B[ip]);
+  // Kiểu kích từ: dòng "Excitation system" và tối đa 3 dòng sau nó (chữ bị PDF xuống dòng: "| SHUNT | AREP+" rồi "/ PMG").
+  const ex = B.map((l, j) => j).filter((j) => /Excitation system/i.test(B[j]));
+  const kinds = [], exLines = [];
+  for (const j of ex) for (let q = j; q < j + 4 && q < B.length; q++) {
+    if (q > j && /^\|\s*[A-Z][a-z]/.test(B[q]) && !/^\|\s*(SHUNT|AREP|PMG|PMI)/i.test(B[q])) break;
+    const hit = [...B[q].matchAll(/\b(SHUNT|AREP\+?|PMG|PMI)\b/g)].map((m) => m[1].replace("+", ""));
+    if (hit.length) { exLines.push(B[q]); for (const h of hit) if (!kinds.includes(h)) kinds.push(h); }
+  }
+  if (kinds.length) add("excitation", kinds, ...new Set(exLines));
+  const avr = at(/^\|\s*AVR type\s*\|/i);
+  if (avr >= 0) { const v = [...B[avr].matchAll(/\b([RD]\d{3})\b/g)].map((m) => m[1]); if (v.length) add("avr", [...new Set(v)], B[avr]); }
+  // "| Voltage regulation (*) | ± 0.8 % | ± 0.5" rồi "%" ở dòng sau: số ±, theo thứ tự cột.
+  const vr = at(/^\|\s*Voltage regulation\b/i);
+  if (vr >= 0) {
+    const two = `${B[vr]} ${/^\s*%/.test(B[vr + 1] || "") ? B[vr + 1] : ""}`, v = [...two.matchAll(/(?:±||\s)\s*(\d+(?:\.\d+)?)\s*%?/g)].map((m) => Number(m[1])).filter((x) => x > 0 && x < 5);
+    if (v.length) add("vreg", v, B[vr], /^\s*%/.test(B[vr + 1] || "") ? B[vr + 1] : null);
+  }
+  // "| Short-circuit current | 300% (3 IN) : 10s", "| Short-circuit current | - | 300% (3 IN): | 10" + "s".
+  const sc = at(/^\|\s*Short-circuit current\s*\|/i);
+  if (sc >= 0) {
+    const two = `${B[sc]} ${/^\s*s\b/i.test(B[sc + 1] || "") ? B[sc + 1] : ""}`, m = two.match(/(\d{3})\s*%\s*\(\s*3\s*IN\s*\)\s*:?[\s|]*(\d+)\s*\|?\s*s/i);
+    if (m) add("sc300", { pct: Number(m[1]), s: Number(m[2]), all: !/\|\s*-\s*\|/.test(B[sc]) }, B[sc], /^\s*s\b/i.test(B[sc + 1] || "") ? B[sc + 1] : null);
+  }
+  const os = at(/^\|\s*Overspeed\s*\|/i), osM = os >= 0 && B[os].match(/\|\s*(\d)\s?(\d{3})\s*R\.P\.M/i);
+  if (osM) add("overspeed", Number(osM[1] + osM[2]), B[os]);
+  const alt = at(/^\|\s*Altitude\s*\|/i), altM = alt >= 0 && B[alt].match(/≤\s*(\d)\s?(\d{3})\s*m\b/);
+  if (altM) add("altitude", Number(altM[1] + altM[2]), B[alt]);
   return out;
 }
 
