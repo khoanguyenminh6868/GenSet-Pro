@@ -1491,7 +1491,8 @@ const choiceKey = (r) => `${r.u.supplierId}\n${r.e.key}\n${r.a?.key || squashOf(
 // Alternators a supplier sells under its OWN label (Khoa 20/11/2026, #969 "B"): an explicit list of supplier + the code of
 // its labelled alternators, not a rule for other suppliers. eastern-lion's "EL 164D" / "ELS 184F" are found in the catalog
 // only because eastern-lion's own tables list them (web/catalog.js OWN_ALT / ALT_TABLES): `candidates` gives its rows no
-// "alternator found" +40 (nor the +3 per figure type), so they score as before the EL records existed. The records stay
+// "alternator found" +40 (nor the +3 per figure type) on EVERY such row, also rows main already scored with an EL alternator
+// (Khoa chốt (i) 20/11/2026; đo cloud: 22.755 lượt-cặp −40, dòng eastern-lion trong top 30: 684 → 93). The records stay
 // (catalog, web). Other suppliers' rows with an EL alternator are not in the list.
 export const OWN_BRAND_ALTS = [{ supplierId: "eastern-lion-fuan", code: /^ELS?\s?\d{3}[A-Z]{0,2}$/i, khoa: "Khoa 20/11/2026" }];
 const PER_ENGINE = 3, PER_NAMED_ENGINE = 8, PER_SUPPLIER = 4, CN_ROWS = 12, MAKE_ROWS = 3, SYNC_ROWS = 6, SYNC_PER_SUPPLIER = 2;
