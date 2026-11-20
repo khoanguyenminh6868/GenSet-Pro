@@ -1338,6 +1338,25 @@
         else if (s.role === (kind === "engine" ? "engine_maker" : "alternator_maker")) { const o = ownBrand(list); if (o.length === 1) addMake(makes, o[0], "hãng sản xuất"); }
         return makes;
       };
+      // An engine table on Khoa's list (ENGINE_TABLES): each row gives one engine record with the figures its entry names,
+      // no genset power (so never a candidate row; its figures go with the engine's key).
+      const engT = ENGINE_TABLES.find((x) => x.supplierId === s.id && x.n.includes(+t.n) && String(t0.header?.[0] ?? "").trim() === x.header);
+      if (engT) {
+        t.rows.forEach((line, ri) => {
+          const cells = cellsOf(line);
+          const brand = cells.length === engT.cells + 1 && engT.brand.test(cells[0]) ? cells.shift() : null;
+          if (cells.length !== engT.cells) { note(t, ti, ri, "dòng bảng động cơ sai số ô", line); return; }
+          const model = String(cells[engT.model]).trim();
+          if (!isCode(model)) { note(t, ti, ri, "dòng bảng động cơ không có model", line); return; }
+          const specs = [];
+          for (const [key, i, label] of engT.specs) {
+            const v = String(cells[i] ?? "").trim();
+            if (v && SPEC[key].ok.test(v)) specs.push({ key, label, value: v });
+          }
+          out.push({ ...base, row: ri, line, header: t.header || [], kind: "engine", model, genset: null, power: null, freq: null, specs, makes: makesFor("engine", line, brand), other: null });
+        });
+        return;
+      }
       const sec = isLabelTable(t) ? null : sectionSheet(t);
       if (sec || isLabelTable(t)) {
         // A page that lists several gensets one after the other ("Genset Model：SC700GFK" ... "Genset Model：SC85GFK",
@@ -1545,7 +1564,42 @@
       const f = fuelFrom(fuelSg.get(o.table), o.line || `| ${o.genset || ""}`) || fuelPage(s.id, o, s.specTables[o.table]?.header?.[0]);
       if (f) { o.fuel = f.fuel; o.fuelFrom = f.from; o.fuelWhy = f.why; }
     }
-    return mergeRepeats(tableDrops(s, rowExceptions(s, out, note), note));
+    return mergeRepeats(namedPower(s, tableDrops(s, rowExceptions(s, out, note), note), note));
+  }
+  // Engine tables Khoa listed one by one (catalog nhóm 3, câu 6 = C, Khoa 20/11/2026): an engine maker's figures on a genset
+  // supplier's page, no genset in the row. Keyed by supplier + n + the FIRST header line word for word (a re-crawl that
+  // changes it lapses the entry: the table is then read the common way). `cells`: cells of a row; a row with one more cell
+  // whose first cell is the brand (`brand`, only the first row: "进口 康明斯 Import Cummins") drops that cell. `specs`:
+  // [key, cell, label as the source writes it]; a cell that is not a figure ("/") is left out.
+  const ENGINE_TABLES = [
+    { supplierId: "yingtai-jiangsu", n: [101, 2003], khoa: "Khoa 20/11/2026",
+      header: "| 品 牌 Br and | 发 动 机 型 号 En g ine Ty pe | 功 率 (主用) Power (KW) | 功率 (备用) Po wer (KW) | 缸 数 No Of Cylin ders | 缸径 *行程 Bore /Strokse (MM) | 排 气 量 Exha ust Csp acity (L) | 压 缩 比 Com pression Ratio | 机 油 容 量 Lubri cating Cap acity (L) | 燃油耗 Fuel Consu mptio (G / KW.H) | 燃油消耗率 Fuel Con sum ptio (L/H) | 调 速方式 Type Of Gov ernor | 冷却液容量 Liquid coo lind ca paci ty | 排放等级 Emiss ion l eveis",
+      cells: 13, brand: /康明斯|cummins/i, model: 0,
+      specs: [["engPower", 1, "功率(主用) Power (KW)"], ["engPower", 2, "功率(备用) Power (KW)"], ["cyl", 3, "缸数 No Of Cylinders"], ["bore", 4, "缸径*行程 Bore/Stroke (MM)"], ["disp", 5, "排气量 Exhaust Capacity (L)"], ["compr", 6, "压缩比 Compression Ratio"]] },
+  ];
+  // Genset power from the set's NAME, for tables Khoa listed (câu 7 = C, Khoa 20/11/2026), and the engine's output from a
+  // named cell. huatai n111: "输出功率 (KW/KVA)" holds the engine's bore / stroke ("140/165"), no cell gives the set's power;
+  // "200GF" … "1000GF" is the set's kW (each row's current is that kW at 400 V, cos φ 0.8; 167 / 167 "NNNGF" rows of huatai's
+  // other tables read the same kW), the level is not written → `rated`. Keyed by supplier + n + first header line word for
+  // word; every record of the table whose genset is "<kW>GF" and whose `engCell` is its engine model.
+  const NAMED_POWER = [
+    { supplierId: "huatai-yangzhou", n: 111, khoa: "Khoa 20/11/2026", name: /^(\d{2,4})GF$/i,
+      header: "| 组型号Type of set | 输出功率 Power of output (KW/KVA) | 额定电流Rated current (A) | 柴油机参数 Parameters of set | 机组尺寸及重量 Size and weight of machine set",
+      engCell: 3, engPower: [4, "柴油机参数 额定功率 power (KW)"] },
+  ];
+  function namedPower(s, list, note) {
+    const ex = NAMED_POWER.filter((x) => x.supplierId === s.id);
+    if (!ex.length) return list;
+    return list.map((o) => {
+      const x = ex.find((x) => x.n === o.n && String(o.header?.[0] ?? "").trim() === x.header);
+      if (!x || o.kind !== "engine") return o;
+      const m = String(o.genset || "").trim().match(x.name), cells = cellsOf(o.line || "");
+      if (!m || String(cells[x.engCell] ?? "").trim() !== String(o.model).trim()) { note({ n: o.n, title: o.title }, o.table, o.row ?? null, "công suất theo tên không áp", o.genset); return o; }
+      const ep = String(cells[x.engPower[0]] ?? "").trim();
+      const specs = (o.specs || []).filter((sp) => sp.key !== "engPower");
+      if (/^\d+(\.\d+)?$/.test(ep)) specs.push({ key: "engPower", label: x.engPower[1], value: ep });
+      return { ...o, power: { rated: { kW: +m[1] } }, specs, powerFrom: "tên tổ máy" };
+    });
   }
   // Spec keys of a whole table form left out (catalog-b3, Khoa 20/11/2026), an explicit list, not a rule: matched by supplier
   // AND a title in the table's header. zhengchi-power's tables of "整机编号" (n102+): the "缸数 | 排量(L)" columns disagree with
@@ -1590,13 +1644,8 @@
       "| KH-364GF | 360 | 288 | 455 | 364 | OC16 071A 02-83 | 5200*2100*2390 | 5300",
       "| KH-316GF | 349 | 279 | 395 | 316 | OC16 071A 02-91 | 5200*2100*2390 | 5300"].map((line) => (
       { supplierId: "kaihua-genset", n: 114, genset: line.split("|")[1].trim(), line, act: "nopower", khoa: "Khoa 19/11/2026", why: "nguồn ghi Standby nhỏ hơn Prime (hai mức tự mâu thuẫn): để trống công suất, không ghép theo độ lớn" })),
-    // huatai-yangzhou n111 (catalog-b): the page puts "140/165" under "输出功率 Power of output (KW/KVA)"; it is the engine's bore /
-    // stroke in mm (wudong-wuxi gives 145×165 for WD327TAD78 / 82), not the set's kW / kVA (the row's 1267–1538.5 A is a 700–850 kW
-    // set). The other 14 rows of the table ("138/150", "145/165"…) already give no power (the pair fails kW / kVA).
-    ...["| 700GF | 140/165 | 1267 | WD305TAD68 | 750 | 12缸V型 | 196 | 55 | 3800×1800×2100 | 4550",
-      "| 800GF | 140/165 | 1448 | WD327TAD78 | 858 | 12缸V型 | 196 | 60 | 3900×1850×2100 | 5000",
-      "| 850GF | 140/165 | 1538.5 | WD327TAD82 | 902 | 12缸V型 | 196 | 60 | 3900×1850×2100 | 5000"].map((line) => (
-      { supplierId: "huatai-yangzhou", n: 111, genset: line.split("|")[1].trim(), line, act: "nopower", khoa: "Khoa 19/11/2026", why: "nguồn ghi đường kính / hành trình xi lanh (140/165 mm) dưới nhãn công suất: để trống công suất" })),
+    // huatai-yangzhou n111 700/800/850GF ("140/165", the engine's bore / stroke under the output title, catalog-b nopower
+    // 19/11/2026): the whole table now takes the set's power from its name (NAMED_POWER, Khoa 20/11/2026).
     // mpmc MS530-2: "Standby Power: 553kVA/530kW" under "Prime Power: 602kVA" and the label table's "663kVA / 530kW".
     { supplierId: "mpmc-powertech", n: 114, genset: "MS530-2", line: "Standby Power: 553kVA/530kW", act: "drop", khoa: "Khoa 19/11/2026", why: "nguồn tự mâu thuẫn (standby 553 kVA và 663 kVA, nhỏ hơn prime 602 kVA): bỏ dòng" },
     // `dropspec` (catalog-b2): the row stays, only the listed spec keys of the row are left out (the source gets ONE figure
@@ -1610,6 +1659,21 @@
       ["fukangsi-yangzhou", 2001, "FKS-C20", "| FKS-C20 | 20/25 | 东风康明斯 | 4B3.9-G1 | 4 | 3.92 | 9 | ≤210 | 1600*800*1300 | 5500"],
       ["pengpai-yangzhou", 125, "PPDL-C20", "| PPDL-C20 | 20/25 | 东风康明斯 | 4B3.9-G1 | 4 | 3.92 | 9 | ≤210 | 1600*800*1300 | 5500"]].map(([supplierId, n, genset, line]) => (
       { supplierId, n, genset, line, act: "dropspec", keys: ["weight"], khoa: "Khoa 19/11/2026", why: "nguồn ghi khối lượng không hợp công suất của dòng (1.440 kg cho 1.600 kW, 5.500 kg cho 20 kW): bỏ riêng khối lượng, giữ phần còn lại của dòng" })),
+    // yingtai's Cummins engine table (ENGINE_TABLES, no genset in the row: matched by `model`), n101 and n2003 (the same rows,
+    // `mergeRepeats` would put a figure back): figures Cummins' own sheets give otherwise (catalog-hy-2.md, 20/11/2026).
+    // KTA19-G4: Bore / Stroke 159 / 159 mm (cummins.com KTA19-G4 Coolpac sheet); QSL9-G5: compression ratio 16.8:1 (cummins.com
+    // C300D2R data sheet, engine QSL9-G5); QSL9 G7: displacement 8.9 L (cummins.com "QSL9 G7 & G2").
+    ...[101, 2003].flatMap((n) => [
+      ["KTA19G4", "| KTA19G4 | 448 | 504 | 6 | 159X160 | 18.9 | 13.9:1 | 72 | 213 | 107 | 电调 | 95 | N/A", ["bore"], "nguồn ghi 159X160, Cummins ghi 159 × 159 mm"],
+      ["QSL9G5", "| QSL9G5 | 268 | 310 | 6 | 114X145 | 8.8 | 17.8:1 | 24 | 199 | 63 | 电喷 | 28.5 | N/A", ["compr"], "nguồn ghi 17.8:1, Cummins ghi 16.8:1"],
+      ["QSL9G7", "| QSL9G7 | 271 | 300 | 6 | 114X145 | 8.8 | 16.1:1 | 24 | 214 | 70 | 电喷 | 28.5 | 国三", ["disp"], "nguồn ghi 8.8 L, Cummins ghi 8.9 L cho QSL9 G7"],
+      // Khoa 20/11/2026 (catalog-hy-2.md câu 1, 2): compression ratios the Cummins sheets found do not confirm. QSL9 G2–G4:
+      // 17.8:1 is the QSL9-G5 figure the source repeats down the family (G5 itself is 16.8:1); QSK60G7: 16.2:1 no Cummins sheet gives.
+      ["QSL9G2", "| QSL9G2 | 206 | 239 | 6 | 114X145 | 8.8 | 17.8:1 | 24 | 220 | 62 | 电喷 | 28.5 | 国三", ["compr"], "nguồn ghi 17.8:1, sheet Cummins không xác nhận", "Khoa 20/11/2026"],
+      ["QSL9G3", "| QSL9G3 | 227 | 257 | 6 | 114X145 | 8.8 | 17.8:1 | 24 | 221 | 59 | 电喷 | 28.5 | 国三", ["compr"], "nguồn ghi 17.8:1, sheet Cummins không xác nhận", "Khoa 20/11/2026"],
+      ["QSL9G4", "| QSL9G4 | 245 | 279 | 6 | 114X145 | 8.8 | 17.8:1 | 24 | 214 | 61 | 电喷 | 28.5 | 国三", ["compr"], "nguồn ghi 17.8:1, sheet Cummins không xác nhận", "Khoa 20/11/2026"],
+      ["QSK60G7", "| QSK60G7 | 1615 | 1790 | 16 | 159X190 | 60.2 | 16.2:1 | 280 | 197 | 380 | 电喷 | 541 | N/A", ["compr"], "nguồn ghi 16.2:1, sheet Cummins không xác nhận", "Khoa 20/11/2026"],
+    ].map(([model, line, keys, why, khoa]) => ({ supplierId: "yingtai-jiangsu", n, model, line, act: "dropspec", keys, khoa: khoa || "điều phối 20/11/2026 (cách #952 / #957)", why: `${why}: bỏ riêng số đó, giữ dòng` }))),
     // dropspec, Khoa 20/11/2026 ("9 dòng loại": the source itself writes a wrong figure; the live page was re-read the same day and
     // equals the saved page word for word, so it is the source, not the reader). No replacement figure is written: the source gives none.
     // aoke-yangzhou n129: 排量(L) "108" / "105" on 250 kW sets (the same table writes "14" and "12.88" for its other engines).
@@ -1646,7 +1710,7 @@
     const out = [];
     for (const o of list) {
       const lines = [o.line, ...(o.lines?.header || []), ...(o.lines?.rows || [])].filter((x) => x != null).map((x) => String(x).trim());
-      const x = ex.find((x) => x.n === o.n && o.genset && keyOf(o.genset) === keyOf(x.genset) && lines.includes(x.line.trim()));
+      const x = ex.find((x) => x.n === o.n && (x.genset ? o.genset && keyOf(o.genset) === keyOf(x.genset) : o.kind === "engine" && keyOf(o.model) === keyOf(x.model)) && lines.includes(x.line.trim()));
       if (!x) { out.push(o); continue; }
       note({ n: o.n, title: o.title }, o.table, o.row ?? null, "ngoại lệ theo dòng", `${x.act}: ${x.khoa}, ${x.why}`);
       if (x.act === "nopower") out.push({ ...o, power: null });
