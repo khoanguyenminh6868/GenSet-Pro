@@ -53,3 +53,11 @@ test("mã tổ máy ở cột 0 / 1 như cũ (zhengchi n101: 机组型号 ở c�
   assert.equal(r[0].genset, "ZCDL-V75");
   assert.equal(r[0].power.standby.kW, 75);
 });
+
+test("zhengchi bảng 整机编号: ô 品牌 là phiếu hãng ở mức 'tên trang' (Khoa 20/11/2026), NCC khác vẫn ở 'dòng bảng'", () => {
+  const z = recs(zc(["| 1450KW | 1600KW | 上柴 | ZCDL-S1450 | S16R-PTA-C | 50Hz | 230/400 | 6.3/10.5 | 238g/kw.h | 三相四线 | 16 | 65.37 | 7800×1600×2500 | 9500 | 更多"]), "engine");
+  assert.equal(z.length, 1);
+  assert.deepEqual(z[0].makes.map((m) => [m.name, m.via]), [["SDEC", "tên trang"]]);
+  const o = recs(sup("other-ncc", [{ n: 1, title: "三菱发电机组", header: ["| 型号 | 品牌 | 柴油机型号 | 功率"], rows: ["| ZX-1500 | 三菱 | S16R-PTA-C | 1500KW"] }]), "engine");
+  assert.deepEqual(o[0].makes.map((m) => [m.name, m.via]), [["Mitsubishi", "dòng bảng"]]);
+});

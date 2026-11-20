@@ -1160,8 +1160,9 @@
         const cell = brandCell ? brandIn(brandCell, kind === "engine" ? list : ALT_CELL_BRANDS) : [];
         const row = brandIn(rowText, list), hdr = kind === "engine" ? hEng : hAlt, ttl = kind === "engine" ? tEng : tAlt;
         const own = kind === "alternator" ? brandIn(model, [FG_WILSON]) : []; // FG Wilson written in the alternator's own cell
-        if (cell.length === 1) addMake(makes, cell[0], "dòng bảng");
-        else if (row.length === 1) addMake(makes, row[0], "dòng bảng");
+        const rowLevel = MAKE_LEVEL_LOW.some((x) => x.supplierId === s.id && x.title.test(headerText)) ? "tên trang" : "dòng bảng";
+        if (cell.length === 1) addMake(makes, cell[0], rowLevel);
+        else if (row.length === 1) addMake(makes, row[0], rowLevel);
         else if (own.length === 1) addMake(makes, own[0], "dòng bảng");
         else if (kind === "alternator" && CN_ALT_CODE.test(String(model).trim())) return makes;
         else if (hdr.length === 1) addMake(makes, hdr[0], "tiêu đề cột");
@@ -1365,6 +1366,15 @@
   // the other suppliers' figures for the same engine (displacement 164 of 321 models, cylinders 57 of 373: WP2.3D25E200
   // "6 | 8.2" against 4 cylinders, 2.3 L), so the figures are not taken for the engine. Everything else of the rows is read
   // as before. The n101 table ("机组型号") is not listed.
+  // Make written in the rows of a whole table form counts at the LOWEST level ("tên trang") instead of "dòng bảng"
+  // (catalog-b3, Khoa 20/11/2026), an explicit list: matched by supplier AND a title in the table's header. zhengchi-power's
+  // "整机编号" tables put the BRAND OF A WHOLE CATALOGUE CATEGORY in the "品牌" cell ("上柴" covers SDEC's own SC-series and the
+  // licensed Mitsubishi S12R / S16R; "潍柴" covers WP, M26 / M33, PHF, K41xx, R61xx, D226B, 495D), so it is not the maker of
+  // each engine. At row level that one vote turned Mitsubishi / Ricardo / Wudong engines of other suppliers to "chưa rõ" or to
+  // another make (22 engines, 3,828 row-turns). As a page-level vote it still names the make where nothing higher exists.
+  const MAKE_LEVEL_LOW = [
+    { supplierId: "zhengchi-power", title: /整机编号/, khoa: "Khoa 20/11/2026", why: "ô 品牌 là nhãn của cả danh mục (上柴 gồm SC-series lẫn S12R / S16R; 潍柴 gồm WP, M26, PHF, K41xx, R61xx...)" },
+  ];
   const TABLE_DROPS = [
     { supplierId: "zhengchi-power", title: /整机编号/, keys: ["cyl", "disp"], khoa: "Khoa 20/11/2026", why: "cột 缸数 / 排量 của bảng lệch số của NCC khác cho cùng động cơ (dung tích 164 / 321 model)" },
   ];
