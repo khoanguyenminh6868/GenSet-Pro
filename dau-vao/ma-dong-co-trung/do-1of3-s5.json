@@ -1,0 +1,67 @@
+{
+ "partial": true,
+ "all": {
+  "runs": 25,
+  "anyRuns": 8,
+  "aliasInTop": 50
+ },
+ "res": {
+  "X-hau-to-ma (khac dong co / hau to cong suat)": {
+   "runs": 0,
+   "slots": 0,
+   "samples": []
+  },
+  "F2-chu-chua-ro-nghia": {
+   "runs": 0,
+   "slots": 0,
+   "samples": []
+  },
+  "AB-hai-ma-mot-o (gach)": {
+   "runs": 0,
+   "slots": 0,
+   "samples": []
+  },
+  "AB-hai-ma-mot-o (ngoac)": {
+   "runs": 0,
+   "slots": 0,
+   "samples": []
+  },
+  "F1-chu-mo-ta": {
+   "runs": 0,
+   "slots": 0,
+   "samples": []
+  },
+  "D-noi-san-xuat": {
+   "runs": 0,
+   "slots": 0,
+   "samples": []
+  },
+  "C-cong-suat-dinh-ma": {
+   "runs": 8,
+   "slots": 9,
+   "samples": [
+    "IB2200016199 8.5 kVA: #12 YD385D (tecgen-fujian n131) + #14 YD385D (tecgen-fujian n129) + #15 YD385D (acepow-fuan n114) + #22 YD385D/11KW (jet-power n124)",
+    "IB2200016199 12 kVA: #9 YD480D (acepow-fuan n114) + #16 YD480D (tecgen-fujian n129) + #28 YD480D (minsun-motor n118) + #30 YD480D/14KW (jet-power n124)",
+    "IB2200029921 8.5 kVA: #19 YD380D/10KW (mecca-power n105) + #26 YD380D/12KW (mecca-power n105)",
+    "IB2200043097 12 kVA: #1 YD480D (acepow-fuan n114) + #2 YD480D (tecgen-fujian n129) + #14 YD480D (minsun-motor n118) + #15 YD480D/14KW (jet-power n124)",
+    "IB2300048642 12 kVA: #9 YD480D (acepow-fuan n114) + #16 YD480D (tecgen-fujian n129) + #28 YD480D (gordon-power n104) + #29 YD480D/14KW (jet-power n124)",
+    "IB2300067330 10.5 kVA: #4 YD385D (tecgen-fujian n131) + #6 YD385D (tecgen-fujian n129) + #9 YD385D (acepow-fuan n114) + #20 YD385D/11KW (jet-power n124)"
+   ]
+  },
+  "E-ten-hang-dinh-ma": {
+   "runs": 0,
+   "slots": 0,
+   "samples": []
+  },
+  "C-so-dinh-ma": {
+   "runs": 0,
+   "slots": 0,
+   "samples": []
+  },
+  "G-ngoac-quanh-hau-to": {
+   "runs": 0,
+   "slots": 0,
+   "samples": []
+  }
+ }
+}
