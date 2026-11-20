@@ -1,0 +1,187 @@
+
+# aksa-power/2001.md (                                                  )
+  (không đọc được mục nào)
+
+# aksa-power/2002.md (                                                  )
+  (không đọc được mục nào)
+
+# aksa-power/2003.md (                                                  )
+  (không đọc được mục nào)
+
+# aksa-power/2004.md (                                                  )
+  (không đọc được mục nào)
+
+# aksa-power/2005.md (                                                  )
+  (không đọc được mục nào)
+
+# aksa-power/2006.md (                                                  )
+  (không đọc được mục nào)
+
+# aksa-power/2007.md (                                                  )
+  (không đọc được mục nào)
+
+# aksa-power/2008.md (                                                  )
+  (không đọc được mục nào)
+
+# aksa-power/2009.md (                                                  )
+  (không đọc được mục nào)
+
+# aksa-power/2010.md (                                                  )
+  (không đọc được mục nào)
+
+# aksa-power/2011.md (                                                  )
+  (không đọc được mục nào)
+
+# aksa-power/2012.md (                                                  )
+  (không đọc được mục nào)
+
+# aksa-power/2013.md (                                                  )
+  (không đọc được mục nào)
+
+# gfe-power/1025.md ()
+  insulation = "H"   ⇐ | Insulation class | H | Excitation system 6 wire
+  ip = "IP23"   ⇐ | Protection | IP 23
+  excitation = ["SHUNT","AREP","PMG"]   ⇐ | SHUNT | AREP / PMG
+  avr = ["R150","R180"]   ⇐ | AVR type | R150 | R180
+  vreg = [1]   ⇐ | Voltage regulation (*) | ± 1 %
+  overspeed = 2250   ⇐ | Overspeed | 2250 R.P.M.
+  altitude = 1000   ⇐ | Altitude | ≤ 1000 m
+
+# leroy-somer-fuzhou/1001.md (| Low | Voltage | Alternators - 4 pole)
+  insulation = "H"   ⇐ | Insulation class | H
+  ip = "IP23"   ⇐ | Protection | IP 23
+  excitation = ["SHUNT","AREP"]   ⇐ | SHUNT | AREP+
+  avr = ["R120","R180"]   ⇐ | AVR type | R120 | R180
+  vreg = [1,0.5]   ⇐ | Voltage regulation (*) |  1 % |  0.5 %
+  overspeed = 2250   ⇐ | Overspeed | 2250 R.P.M.
+  altitude = 1000   ⇐ | Altitude | ≤ 1000 m
+
+# leroy-somer-fuzhou/1002.md (| Low | Voltage | Alternators - 4 pole)
+  insulation = "H"   ⇐ | Insulation class | H | Excitation system 6 wires
+  ip = "IP23"   ⇐ | Protection | IP 23
+  excitation = ["SHUNT","AREP","PMG"]   ⇐ | SHUNT | AREP+/PMG
+  avr = ["R120","R180"]   ⇐ | AVR type | R120 | R180
+  vreg = [1,0.5]   ⇐ | Voltage regulation (*) |  1 % |  0.5 %
+  overspeed = 2250   ⇐ | Overspeed | 2250 R.P.M.
+  altitude = 1000   ⇐ | Altitude | ≤ 1000 m
+
+# leroy-somer-fuzhou/1003.md (| Low | Voltage | Alternators - 4 pole)
+  insulation = "H"   ⇐ | Insulation class | H | Excitation system 6 wires
+  ip = "IP23"   ⇐ | Protection | IP 23
+  excitation = ["SHUNT","AREP","PMG"]   ⇐ | SHUNT | AREP+/PMG
+  avr = ["R120","R180"]   ⇐ | AVR type | R120 | R180
+  vreg = [1,0.5]   ⇐ | Voltage regulation (*) |  1 % |  0.5 %
+  overspeed = 2250   ⇐ | Overspeed | 2250 R.P.M.
+  altitude = 1000   ⇐ | Altitude | ≤ 1000 m
+
+# leroy-somer-fuzhou/1004.md (| Low | Voltage | Alternators - 4 pole)
+  insulation = "H"   ⇐ | Insulation class | H | Excitation system 6 wire
+  ip = "IP23"   ⇐ | Protection | IP 23
+  excitation = ["SHUNT","AREP","PMG"]   ⇐ | SHUNT | AREP+ ⏎ / PMG
+  avr = ["R150","R180"]   ⇐ | AVR type | R150 | R180
+  vreg = [0.8,0.5]   ⇐ | Voltage regulation (*) | ± 0.8 % | ± 0.5 ⏎ %
+  overspeed = 2250   ⇐ | Overspeed | 2250 R.P.M.
+  altitude = 1000   ⇐ | Altitude | ≤ 1000 m
+
+# leroy-somer-fuzhou/1005.md (| Low | Voltage Alternators - 4 pole)
+  insulation = "H"   ⇐ | Insulation class | H | Excitation system 6 wire
+  ip = "IP23"   ⇐ | Protection | IP 23
+  excitation = ["SHUNT","AREP","PMG"]   ⇐ | SHUNT | AREP+ / PMG
+  avr = ["R150","R180"]   ⇐ | AVR type | R150 | R180
+  vreg = [0.8,0.5]   ⇐ | Voltage regulation (*) | ± 0.8 % | ± 0.5 %
+  overspeed = 2250   ⇐ | Overspeed | 2250 R.P.M.
+  altitude = 1000   ⇐ | Altitude | ≤ 1000 m
+
+# leroy-somer-fuzhou/1006.md (| Low | Voltage Alternators - 4 pole)
+  insulation = "H"   ⇐ | Insulation class | H | Excitation system 6 wire
+  ip = "IP23"   ⇐ | Protection | IP 23
+  excitation = ["SHUNT","AREP","PMG"]   ⇐ | SHUNT | AREP+ / PMG
+  avr = ["R150","R180"]   ⇐ | AVR type | R150 | R180
+  vreg = [0.8,0.5]   ⇐ | Voltage regulation (*) | ± 0.8 % | ± 0.5 %
+  overspeed = 2250   ⇐ | Overspeed | 2250 R.P.M.
+  altitude = 1000   ⇐ | Altitude | ≤ 1000 m
+
+# leroy-somer-fuzhou/1007.md (LSA 40)
+  insulation = "H"   ⇐ | Insulation class | H
+  ip = "IP23"   ⇐ | Protection | IP 23
+  excitation = ["SHUNT","AREP"]   ⇐ | Excitation system | SHUNT ⏎ AREP
+  avr = ["R220","D350"]   ⇐ | AVR type | R220 | D350
+  vreg = [0.5,0.25]   ⇐ | Voltage regulation (*) | ± 0.5% | ± 0.25%
+  sc300 = {"pct":300,"s":10,"all":false}   ⇐ | Short-circuit current | - | 300% (3 IN): | 10 ⏎ s
+  overspeed = 2250   ⇐ | Overspeed | 2 250 R.P.M.
+  altitude = 1000   ⇐ | Altitude | ≤ 1 000 m
+
+# leroy-somer-fuzhou/1008.md (LSA 42.3)
+  insulation = "H"   ⇐ | Insulation class | H
+  ip = "IP23"   ⇐ | Protection | IP 23
+  excitation = ["SHUNT","AREP","PMG"]   ⇐ | Excitation system | SHUNT ⏎ AREP / PMG
+  avr = ["R220","D350"]   ⇐ | AVR type | R220 | D350
+  vreg = [0.5,0.25]   ⇐ | Voltage regulation (*) | ± 0.5% | ± 0.25%
+  sc300 = {"pct":300,"s":10,"all":false}   ⇐ | Short-circuit current | - | 300% (3 IN): 10 ⏎ s
+  overspeed = 2250   ⇐ | Overspeed | 2 250 R.P.M.
+  altitude = 1000   ⇐ | Altitude | ≤ 1 000 m
+
+# leroy-somer-fuzhou/1009.md (LSA 44.3)
+  insulation = "H"   ⇐ | Insulation class | H
+  ip = "IP23"   ⇐ | Protection | IP 23
+  excitation = ["SHUNT","AREP","PMG"]   ⇐ | Excitation system | SHUNT ⏎ AREP / PMG
+  avr = ["R250","D350"]   ⇐ | AVR type | R250 | D350
+  vreg = [0.5,0.25]   ⇐ | Voltage regulation (*) | ± 0.5% | ± 0.25%
+  sc300 = {"pct":300,"s":10,"all":false}   ⇐ | Short-circuit current | - | 300% (3 IN): 10 s
+  overspeed = 2250   ⇐ | Overspeed | 2 250 R.P.M.
+  altitude = 1000   ⇐ | Altitude | ≤ 1 000 m
+
+# leroy-somer-fuzhou/1010.md (LSA 46.3)
+  insulation = "H"   ⇐ | Insulation class | H
+  ip = "IP23"   ⇐ | Protection | IP 23
+  excitation = ["SHUNT","AREP","PMG"]   ⇐ | Excitation system | SHUNT ⏎ AREP / PMG
+  avr = ["R250","D350"]   ⇐ | AVR type | R250 | D350
+  vreg = [0.5,0.25]   ⇐ | Voltage regulation (*) | ± 0.5% | ± 0.25%
+  sc300 = {"pct":300,"s":10,"all":false}   ⇐ | Short-circuit current | - | 300% (3 IN) : 10s
+  overspeed = 2250   ⇐ | Overspeed | 2 250 R.P.M.
+  altitude = 1000   ⇐ | Altitude | ≤ 1 000 m
+
+# leroy-somer-fuzhou/1011.md (LSA 47.3)
+  insulation = "H"   ⇐ | Insulation class | H
+  ip = "IP23"   ⇐ | Protection | IP 23
+  excitation = ["SHUNT","AREP","PMG"]   ⇐ | Excitation system | SHUNT ⏎ AREP / PMG
+  avr = ["R250","D350"]   ⇐ | AVR type | R250 | D350
+  vreg = [0.5,0.25]   ⇐ | Voltage regulation (*) | ± 0.5% | ± 0.25%
+  sc300 = {"pct":300,"s":10,"all":false}   ⇐ | Short-circuit current | - | 300% (3 IN) : 10s
+  overspeed = 2250   ⇐ | Overspeed | 2 250 R.P.M.
+  altitude = 1000   ⇐ | Altitude | ≤ 1 000 m
+
+# leroy-somer-fuzhou/1012.md (LSA 49.3)
+  insulation = "H"   ⇐ | Insulation class | H
+  ip = "IP23"   ⇐ | Protection | IP 23
+  excitation = ["AREP","PMG"]   ⇐ | Excitation system | AREP / PMG
+  avr = ["D350"]   ⇐ | AVR type | D350
+  vreg = [0.25]   ⇐ | Voltage regulation (*) | ± 0.25%
+  sc300 = {"pct":300,"s":10,"all":true}   ⇐ | Short-circuit current | 300% (3 IN) : 10s
+  overspeed = 2250   ⇐ | Overspeed | 2 250 R.P.M.
+  altitude = 1000   ⇐ | Altitude | ≤ 1 000 m
+
+# leroy-somer-fuzhou/1013.md (LSA 50.2)
+  insulation = "H"   ⇐ | Insulation class | H
+  ip = "IP23"   ⇐ | Protection | IP 23
+  excitation = ["AREP","PMG"]   ⇐ | Excitation system | AREP / PMG
+  avr = ["D350"]   ⇐ | AVR type | D350
+  vreg = [0.25]   ⇐ | Voltage regulation (*) | ± 0.25 %
+  sc300 = {"pct":300,"s":10,"all":true}   ⇐ | Short-circuit current | 300% (3 IN) : 10s
+  overspeed = 2250   ⇐ | Overspeed | 2 250 R.P.M.
+  altitude = 1000   ⇐ | Altitude | ≤ 1 000 m
+
+# leroy-somer-fuzhou/1014.md (LSA 52.3)
+  insulation = "H"   ⇐ | Insulation class | H
+  ip = "IP23"   ⇐ | Protection | IP 23
+  excitation = ["AREP","PMI"]   ⇐ | Excitation system | AREP + PMI
+  avr = ["D550"]   ⇐ | AVR type | D550
+  vreg = [0.25]   ⇐ | Voltage regulation (*) | ± 0.25%
+  sc300 = {"pct":300,"s":10,"all":true}   ⇐ | Short-circuit current | 300% (3 IN) : 10s
+  overspeed = 2250   ⇐ | Overspeed | 2 250 R.P.M.
+  altitude = 1000   ⇐ | Altitude | ≤ 1 000 m
+
+# sevenpower-chengdu/144.md (Electrical Start Natural Gas Generator 100KW Backu)
+  (không đọc được mục nào)
+
+29 tệp có khối General characteristics

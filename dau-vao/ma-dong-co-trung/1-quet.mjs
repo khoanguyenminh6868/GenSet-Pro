@@ -21,7 +21,8 @@ for (const kind of ["engines", "alternators"]) {
     const hits = new Map();
     for (const name of e.names) {
       // Tokens: split on space and separators; every contiguous run of tokens whose key is another entry's key.
-      const toks = String(name).split(/[\s()（）/／,+&]+/).filter(Boolean);
+      // Two tokenizations: "/" kept inside a token (Baudouin "6M33G825/5", Weichai "6M16G220/6") and "/" as a separator.
+      for (const toks of [String(name).split(/[\s()（）,+&]+/).filter(Boolean), String(name).split(/[\s()（）/／,+&]+/).filter(Boolean)])
       for (let i = 0; i < toks.length; i++) for (let j = i + 1; j <= toks.length; j++) {
         if (i === 0 && j === toks.length) continue;
         const k = CAT.keyOf(toks.slice(i, j).join(" "));

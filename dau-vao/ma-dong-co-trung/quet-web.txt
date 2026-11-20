@@ -1,4 +1,4 @@
-nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 khoá nghi trùng
+nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1077 khoá nghi trùng
 
 [engines cach] KTA38G5 (133 dòng, NCC agestar,agg-fuzhou,agg-power,aoke-yangzhou,aosif,app-power-anpu,bdadl-shanghai,bobig-power,bspower-guangdong,chuangyuan-zhongshan,comappower,cooltech-shanghai,deman-power,depco-power,dingbo,eastern-lion-fuan,ettes-power,excel-power-ningde,fdk-energy,fengmao-weifang,frs-shenyang,fukangsi-yangzhou,gb-power,generatordieselchina,genesal-energy,gtl-power,haifeng-taizhou,hechai-changzhou,hosem-power,huadong-yangzhou,huali-shandong,huayuan-weifang,huipu-power,jiangchai-xuzhou,jinjia-power,jinlongteng-fujian,jiuan-power,kachai-hangzhou,kaichen-jiangsu,kaihua-genset,kanpor-fuan,keliang-fuan,koten-power,kusing-guangzhou,landtop-fuzhou,lees-power,legapower,liangzi-yangzhou,long-gen,longkai-power,mamo-power,mecca-power,minsun-motor,nenjo-generator,pauway-tianjin,pengpai-yangzhou,penlucky,power-hf,powerlink-shanghai,previa-ningde,rcg-power,rise-power,saonon,senci,senci-jiangsu,shunfeng-changzhou,sinogen,sr-genset,stone-power,suneco-linyi,sunkings,superwatt-power,taihai-taizhou,tecnogen,tellhow-power,uleengen,vantek-jiangsu,victory-generator,visa-gensets,voltgent,waeta-fujian,walter-yangzhou,weiman-fujian,welland-power,wintpower,wiseke-taizhou,world-power-fuzhou,xingguang-jiangsu,xinhengxin-fujian,xinzhengfa,yanan-power,yanfa-yancheng,yihua-fujian,yongcai-elecmama,yunding-jiangsu, hãng Cummins) → KTA38 (1 dòng, 1 NCC, hãng Cummins) | phần còn lại "G5"
    tên: ["KTA38-G5","KTA38G5","KTA38 G5"]
@@ -1179,12 +1179,12 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    nenjo-generator n119 b7 r44 | | HJ1000P | 帕金斯 PERKINS | 4012-46TWG2A Switchable | 1000.0 | 1250.0 | 1113.0 | Y | electric | N
    sr-genset n2004 b7 r23 | | 1375 | 1100 | 1250 | 1000 | 4012-46TWG2A Switchable | Elec | S6L1D-E4 | TAL-A49-E | SA404-1080 | 5000*2182*2460 | 40'HQ Container
 
-[engines gach] 403A11G1/403D11G (2 dòng, NCC victory-generator,westinpower, hãng Perkins) → 403A11G1 (63 dòng, 47 NCC, hãng Perkins) | phần còn lại "403D-11G"
+[engines gach] 403A11G1/403D11G (2 dòng, NCC victory-generator,westinpower, hãng Perkins) → 403D11G (113 dòng, 58 NCC, hãng Perkins) | phần còn lại "403A-11G1"
    tên: ["403A-11G1/ 403D-11G","403A-11G1/403D-11G"]
    victory-generator n112 b17 r0 | | V8P | 50 | 7.2 | 9 | 8 | 10 | 403A-11G1/ 403D-11G | 3 | 3 | 77 | 81 | 4.9 | 5.2 | 1480*750*1270 | 390
    westinpower n111 b12 r0 | | TP10 | 10 | 8 | 9 | 7 | 403A-11G1/403D-11G | 1.1 | 2.6 | 1402*715*1155 | 1856*826*1415
 
-[engines gach] 403A11G1/403D11G (2 dòng, NCC victory-generator,westinpower, hãng Perkins) → 403D11G (113 dòng, 58 NCC, hãng Perkins) | phần còn lại "403A-11G1"
+[engines gach] 403A11G1/403D11G (2 dòng, NCC victory-generator,westinpower, hãng Perkins) → 403A11G1 (63 dòng, 47 NCC, hãng Perkins) | phần còn lại "403D-11G"
    tên: ["403A-11G1/ 403D-11G","403A-11G1/403D-11G"]
    victory-generator n112 b17 r0 | | V8P | 50 | 7.2 | 9 | 8 | 10 | 403A-11G1/ 403D-11G | 3 | 3 | 77 | 81 | 4.9 | 5.2 | 1480*750*1270 | 390
    westinpower n111 b12 r0 | | TP10 | 10 | 8 | 9 | 7 | 403A-11G1/403D-11G | 1.1 | 2.6 | 1402*715*1155 | 1856*826*1415
@@ -1194,12 +1194,12 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    nenjo-generator n119 b7 r0 | | HJ7.2P | 帕金斯 PERKINS | 403D-11G commodity | 7.2 | 9.0 | 9.5 | N | mech | N/A<19K W
    sr-genset n2004 b7 r1 | | 12.1 | 9.9 | 11 | 9 | 403D-11G commodity | Mech | S0L1-H1 | TAL-A40-C | SA164-10.6 | 1400*690*1000 | 1860*810*1152
 
-[engines gach] 404A22G1/404D22G (2 dòng, NCC victory-generator,westinpower, hãng Perkins) → 404A22G1 (80 dòng, 60 NCC, hãng Perkins) | phần còn lại "404D-22G"
+[engines gach] 404A22G1/404D22G (2 dòng, NCC victory-generator,westinpower, hãng Perkins) → 404D22G (119 dòng, 63 NCC, hãng Perkins) | phần còn lại "404A-22G1"
    tên: ["404A-22G1/ 404D-22G","404A-22G1/404D-22G"]
    victory-generator n112 b17 r3 | | V18P | 50 | 16 | 20 | 18 | 22 | 404A-22G1/ 404D-22G | 5.3 | 4 | 84 | 100 | 10.6 | 7 | 1630*750*1320 | 553
    westinpower n111 b12 r3 | | TP22 | 22 | 18 | 20 | 16 | 404A-22G1/404D-22G | 2.2 | 5.3 | 1402*715*1155 | 1856*826*1415
 
-[engines gach] 404A22G1/404D22G (2 dòng, NCC victory-generator,westinpower, hãng Perkins) → 404D22G (119 dòng, 63 NCC, hãng Perkins) | phần còn lại "404A-22G1"
+[engines gach] 404A22G1/404D22G (2 dòng, NCC victory-generator,westinpower, hãng Perkins) → 404A22G1 (80 dòng, 60 NCC, hãng Perkins) | phần còn lại "404D-22G"
    tên: ["404A-22G1/ 404D-22G","404A-22G1/404D-22G"]
    victory-generator n112 b17 r3 | | V18P | 50 | 16 | 20 | 18 | 22 | 404A-22G1/ 404D-22G | 5.3 | 4 | 84 | 100 | 10.6 | 7 | 1630*750*1320 | 553
    westinpower n111 b12 r3 | | TP22 | 22 | 18 | 20 | 16 | 404A-22G1/404D-22G | 2.2 | 5.3 | 1402*715*1155 | 1856*826*1415
@@ -1399,6 +1399,16 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    landtop-fuzhou n126 b26 r7 | | LTP66P | 66 | 53 | 60 | 48 | 1103A-33TG2(India) | LTP224S-48
    landtop-fuzhou n126 b27 r7 | | LTP76P | 76 | 61 | 69 | 55 | 1103A-33TG2(India) | LTP224S-55
 
+[engines ngoac] 12M33G14D3/5(12M33G1650/5) (2 dòng, NCC kaihua-genset, hãng Baudouin) → 12M33G14D3/5 (7 dòng, 5 NCC, hãng Baudouin) | phần còn lại "12M33G1650/5"
+   tên: ["12M33G14D3/5 (12M33G1650/5)"]
+   kaihua-genset n119 b23 r29 | | HC-BD1650 | 1650 | 1500 | 12M33G14D3/5 (12M33G1650/5) | PI 734C1 | | | Download
+   kaihua-genset n127 b33 r29 | | HC-BD1650 | 1650 | 1500 | 12M33G14D3/5 (12M33G1650/5) | PI 734C1 | — | — | Download
+
+[engines ngoac] 12M33G14D3/5(12M33G1650/5) (2 dòng, NCC kaihua-genset, hãng Baudouin) → 12M33G1650/5 (29 dòng, 22 NCC, hãng Baudouin) | phần còn lại "12M33G14D3/5"
+   tên: ["12M33G14D3/5 (12M33G1650/5)"]
+   kaihua-genset n119 b23 r29 | | HC-BD1650 | 1650 | 1500 | 12M33G14D3/5 (12M33G1650/5) | PI 734C1 | | | Download
+   kaihua-genset n127 b33 r29 | | HC-BD1650 | 1650 | 1500 | 12M33G14D3/5 (12M33G1650/5) | PI 734C1 | — | — | Download
+
 [engines ngoac] 12V4000G14F(3B) (2 dòng, NCC comappower, hãng MTU) → 12V4000G14F (10 dòng, 7 NCC, hãng MTU) | phần còn lại "3B"
    tên: ["12V4000G14F(3B)"]
    comappower n106 b12 r5 | | COM1705MTU | 1705kVA | 1364kW | 1550kVA | 1240kW | 12V4000G14F(3B) | 12 | COM1705MTU
@@ -1429,12 +1439,12 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    aj-power n104 b3 r2 | | AJ880 | 50hz | Three Phase | 1500 | 800.0 | 880.0 | | 4006-23TAG3A Derate | MA6014A | AJ880 Perkins 50Hz
    aj-power n104 b3 r3 | | AJ900 | 50hz | Three Phase | 1500 | 800.0 | 900.0 | | 4006-23TAG3A Derate | MA6014A | AJ900 Perkins 50Hz
 
-[engines gach] 401246TWG4A/401246TAG2A (2 dòng, NCC victory-generator, hãng Perkins) → 401246TWG4A (7 dòng, 5 NCC, hãng Perkins) | phần còn lại "4012-46TAG2A"
+[engines gach] 401246TWG4A/401246TAG2A (2 dòng, NCC victory-generator, hãng Perkins) → 401246TAG2A (129 dòng, 77 NCC, hãng Perkins) | phần còn lại "4012-46TWG4A"
    tên: ["4012-46TWG4A/ 4012-46TAG2A"]
    victory-generator n112 b17 r33 | | V1320P | 50 | 1200 | 1500 | 1320 | 1650 | 4012-46TWG4A/ 4012-46TAG2A | 316 | 12 | 160 | 190 | 177 | 201 | 4950*2200*2460 | 9900
    victory-generator n112 b17 r65 | | V1320P | 60 | 1200 | 1500 | 1320 | 1650 | 4012-46TWG4A/ 4012-46TAG2A | 323 | 12 | 160 | 190 | 177 | 201 | 5030*2180*2600 | 9462
 
-[engines gach] 401246TWG4A/401246TAG2A (2 dòng, NCC victory-generator, hãng Perkins) → 401246TAG2A (129 dòng, 77 NCC, hãng Perkins) | phần còn lại "4012-46TWG4A"
+[engines gach] 401246TWG4A/401246TAG2A (2 dòng, NCC victory-generator, hãng Perkins) → 401246TWG4A (7 dòng, 5 NCC, hãng Perkins) | phần còn lại "4012-46TAG2A"
    tên: ["4012-46TWG4A/ 4012-46TAG2A"]
    victory-generator n112 b17 r33 | | V1320P | 50 | 1200 | 1500 | 1320 | 1650 | 4012-46TWG4A/ 4012-46TAG2A | 316 | 12 | 160 | 190 | 177 | 201 | 4950*2200*2460 | 9900
    victory-generator n112 b17 r65 | | V1320P | 60 | 1200 | 1500 | 1320 | 1650 | 4012-46TWG4A/ 4012-46TAG2A | 323 | 12 | 160 | 190 | 177 | 201 | 5030*2180*2600 | 9462
@@ -1459,12 +1469,12 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    zhengdian-zhengzhou n105 b4 r0 | | 20GF | 22 | 20 | 39/36 | 495D 6 | 29/26.5 | 95 | 115 | 3.26 | ≤ 258.4 | 660 | 1700×720×1080
    zhengdian-zhengzhou n105 b4 r1 | | 24GF | 26.4 | 24 | 47/43 | 495D 6 | 29/26.5 | 95 | 115 | 3.26 | ≤258.4 | 680 | 1700×720×1080
 
-[engines gach] 4B39G1/4B39G2 (2 dòng, NCC victory-generator, hãng Cummins) → 4B39G1 (96 dòng, 62 NCC, hãng Cummins) | phần còn lại "4B3.9-G2"
+[engines gach] 4B39G1/4B39G2 (2 dòng, NCC victory-generator, hãng Cummins) → 4B39G2 (162 dòng, 78 NCC, hãng Cummins) | phần còn lại "4B3.9-G1"
    tên: ["4B3.9-G1/ 4B3.9-G2"]
    victory-generator n110 b15 r1 | | V22C | 50 | 20 | 25 | 22 | 27.5 | 4B3.9-G1/ 4B3.9-G2 | 6.3 | 3.9 | 4L | electronic | 1750*970*1500 | 930 | 2250*1080*1255 | 1150
    victory-generator n110 b15 r2 | | V24C | 50 | 22 | 27.5 | 24 | 30 | 4B3.9-G1/ 4B3.9-G2 | 6.7 / 7.1 | 3.9 | 4L | electronic | 1750*970*1500 | 930 | 2250*1080*1255 | 1150
 
-[engines gach] 4B39G1/4B39G2 (2 dòng, NCC victory-generator, hãng Cummins) → 4B39G2 (162 dòng, 78 NCC, hãng Cummins) | phần còn lại "4B3.9-G1"
+[engines gach] 4B39G1/4B39G2 (2 dòng, NCC victory-generator, hãng Cummins) → 4B39G1 (96 dòng, 62 NCC, hãng Cummins) | phần còn lại "4B3.9-G2"
    tên: ["4B3.9-G1/ 4B3.9-G2"]
    victory-generator n110 b15 r1 | | V22C | 50 | 20 | 25 | 22 | 27.5 | 4B3.9-G1/ 4B3.9-G2 | 6.3 | 3.9 | 4L | electronic | 1750*970*1500 | 930 | 2250*1080*1255 | 1150
    victory-generator n110 b15 r2 | | V24C | 50 | 22 | 27.5 | 24 | 30 | 4B3.9-G1/ 4B3.9-G2 | 6.7 / 7.1 | 3.9 | 4L | electronic | 1750*970*1500 | 930 | 2250*1080*1255 | 1150
@@ -1779,7 +1789,17 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    kaihua-genset n119 b23 r9 | | HC-BD350 | 350 | 320 | WP10D320E200 6M16G350/5 | S4L1D-E41 | | 4090*1460*2150 | Download
    kaihua-genset n127 b33 r9 | | HC-BD350 | 350 | 320 | WP10D320E200 6M16G350/5 | S4L1D-E41 | — | 4090*1460*2150 | Download
 
+[engines gach] WP10D320E2006M16G350/5 (2 dòng, NCC kaihua-genset, hãng Baudouin) → 6M16G350/5 (27 dòng, 22 NCC, hãng Baudouin) | phần còn lại "WP10D320E200"
+   tên: ["WP10D320E200 6M16G350/5"]
+   kaihua-genset n119 b23 r9 | | HC-BD350 | 350 | 320 | WP10D320E200 6M16G350/5 | S4L1D-E41 | | 4090*1460*2150 | Download
+   kaihua-genset n127 b33 r9 | | HC-BD350 | 350 | 320 | WP10D320E200 6M16G350/5 | S4L1D-E41 | — | 4090*1460*2150 | Download
+
 [engines gach] WP13D385E2006M21G385/5 (2 dòng, NCC kaihua-genset, hãng Baudouin) → WP13D385E200 (59 dòng, 44 NCC, hãng Weichai) | phần còn lại "6M21G385 5"
+   tên: ["WP13D385E200 6M21G385/5"]
+   kaihua-genset n119 b23 r10 | | HC-BD385 | 385 | 350 | WP13D385E200 6M21G385/5 | S4L1D-E41 | | 4230*1460*2150 | Download
+   kaihua-genset n127 b33 r10 | | HC-BD385 | 385 | 350 | WP13D385E200 6M21G385/5 | S4L1D-E41 | — | 4230*1460*2150 | Download
+
+[engines gach] WP13D385E2006M21G385/5 (2 dòng, NCC kaihua-genset, hãng Baudouin) → 6M21G385/5 (4 dòng, 4 NCC, hãng Baudouin) | phần còn lại "WP13D385E200"
    tên: ["WP13D385E200 6M21G385/5"]
    kaihua-genset n119 b23 r10 | | HC-BD385 | 385 | 350 | WP13D385E200 6M21G385/5 | S4L1D-E41 | | 4230*1460*2150 | Download
    kaihua-genset n127 b33 r10 | | HC-BD385 | 385 | 350 | WP13D385E200 6M21G385/5 | S4L1D-E41 | — | 4230*1460*2150 | Download
@@ -1821,11 +1841,11 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["1103D-33G3/G2"]
    tecnogen n2001 b0 r45 | | PK37TSX** | 33 | 30 | 40 | 36 | 1103D-33G3/G2 | M | 3 | 3300 | 29 | 33,1 | 5,7 | 6,1 | N | AUS7310 | ACP 7320 | 67 | 135 | 196 | 98 | 136 | 1000
 
-[engines gach] 1104A44TG1/1104DE44TG1 (1 dòng, NCC victory-generator, hãng Perkins) → 1104A44TG1 (134 dòng, 79 NCC, hãng Perkins) | phần còn lại "1104D-E44TG1"
+[engines gach] 1104A44TG1/1104DE44TG1 (1 dòng, NCC victory-generator, hãng Perkins) → 1104DE44TG1 (8 dòng, 8 NCC, hãng Perkins) | phần còn lại "1104A-44TG1"
    tên: ["1104A-44TG1/ 1104D-E44TG1"]
    victory-generator n112 b17 r45 | | V66P | 60 | 60 | 75 | 66 | 83 | 1104A-44TG1/ 1104D-E44TG1 | 17.7 | 4 | 105 | 127 | 8 | 13 | 2220*750*1530 | 1054
 
-[engines gach] 1104A44TG1/1104DE44TG1 (1 dòng, NCC victory-generator, hãng Perkins) → 1104DE44TG1 (8 dòng, 8 NCC, hãng Perkins) | phần còn lại "1104A-44TG1"
+[engines gach] 1104A44TG1/1104DE44TG1 (1 dòng, NCC victory-generator, hãng Perkins) → 1104A44TG1 (134 dòng, 79 NCC, hãng Perkins) | phần còn lại "1104D-E44TG1"
    tên: ["1104A-44TG1/ 1104D-E44TG1"]
    victory-generator n112 b17 r45 | | V66P | 60 | 60 | 75 | 66 | 83 | 1104A-44TG1/ 1104D-E44TG1 | 17.7 | 4 | 105 | 127 | 8 | 13 | 2220*750*1530 | 1054
 
@@ -1833,19 +1853,19 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["1104A/C-44TG2/ 1104D-E44TAG1"]
    victory-generator n112 b17 r46 | | V80P | 60 | 72 | 90 | 80 | 100 | 1104A/C-44TG2/ 1104D-E44TAG1 | 22.3 | 4 | 105 | 127 | 8 | 13 | 2220*750*1530 | 1054
 
-[engines gach] 1104C44TAG2/1104DE44TAG2 (1 dòng, NCC victory-generator, hãng Perkins) → 1104C44TAG2 (152 dòng, 84 NCC, hãng Perkins) | phần còn lại "1104D-E44TAG2"
-   tên: ["1104C-44TAG2/ 1104D-E44TAG2"]
-   victory-generator n112 b17 r47 | | V100P | 60 | 92 | 115 | 100 | 125 | 1104C-44TAG2/ 1104D-E44TAG2 | 26.9 | 4 | 105 | 127 | 8 | 12.6 | 2220*750*1530 | 1054
-
 [engines gach] 1104C44TAG2/1104DE44TAG2 (1 dòng, NCC victory-generator, hãng Perkins) → 1104DE44TAG2 (29 dòng, 22 NCC, hãng Perkins) | phần còn lại "1104C-44TAG2"
    tên: ["1104C-44TAG2/ 1104D-E44TAG2"]
    victory-generator n112 b17 r47 | | V100P | 60 | 92 | 115 | 100 | 125 | 1104C-44TAG2/ 1104D-E44TAG2 | 26.9 | 4 | 105 | 127 | 8 | 12.6 | 2220*750*1530 | 1054
 
-[engines gach] 1104D44TG1/1103A33TG2 (1 dòng, NCC victory-generator, hãng Perkins) → 1104D44TG1 (11 dòng, 11 NCC, hãng Perkins) | phần còn lại "1103A-33TG2"
+[engines gach] 1104C44TAG2/1104DE44TAG2 (1 dòng, NCC victory-generator, hãng Perkins) → 1104C44TAG2 (152 dòng, 84 NCC, hãng Perkins) | phần còn lại "1104D-E44TAG2"
+   tên: ["1104C-44TAG2/ 1104D-E44TAG2"]
+   victory-generator n112 b17 r47 | | V100P | 60 | 92 | 115 | 100 | 125 | 1104C-44TAG2/ 1104D-E44TAG2 | 26.9 | 4 | 105 | 127 | 8 | 12.6 | 2220*750*1530 | 1054
+
+[engines gach] 1104D44TG1/1103A33TG2 (1 dòng, NCC victory-generator, hãng Perkins) → 1103A33TG2 (149 dòng, 81 NCC, hãng Perkins) | phần còn lại "1104D-44TG1"
    tên: ["1104D-44TG1/ 1103A-33TG2"]
    victory-generator n112 b17 r44 | | V60P | 60 | 54 | 68 | 60 | 75 | 1104D-44TG1/ 1103A-33TG2 | 16 | 4 | 105 | 127 | 8 | 13 | 1950*750*1430 | 1054
 
-[engines gach] 1104D44TG1/1103A33TG2 (1 dòng, NCC victory-generator, hãng Perkins) → 1103A33TG2 (149 dòng, 81 NCC, hãng Perkins) | phần còn lại "1104D-44TG1"
+[engines gach] 1104D44TG1/1103A33TG2 (1 dòng, NCC victory-generator, hãng Perkins) → 1104D44TG1 (11 dòng, 11 NCC, hãng Perkins) | phần còn lại "1103A-33TG2"
    tên: ["1104D-44TG1/ 1103A-33TG2"]
    victory-generator n112 b17 r44 | | V60P | 60 | 54 | 68 | 60 | 75 | 1104D-44TG1/ 1103A-33TG2 | 16 | 4 | 105 | 127 | 8 | 13 | 1950*750*1430 | 1054
 
@@ -1869,11 +1889,11 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["1106A-70TAG2 Switchable"]
    sr-genset n2004 b7 r10 | | 185.9 | 148.5 | 169 | 135 | 1106A-70TAG2 Switchable | Elec | UCI 274E | TAL-A44-H | SA274-134 | 2650*960*1650 | 3360*1110*1750
 
-[engines gach] 1106A70TAG2/1106DE70TAG2 (1 dòng, NCC victory-generator, hãng Perkins) → 1106A70TAG2 (141 dòng, 82 NCC, hãng Perkins) | phần còn lại "1106D-E70TAG2"
+[engines gach] 1106A70TAG2/1106DE70TAG2 (1 dòng, NCC victory-generator, hãng Perkins) → 1106DE70TAG2 (29 dòng, 21 NCC, hãng Perkins) | phần còn lại "1106A-70TAG2"
    tên: ["1106A-70TAG2/ 1106D-E70TAG2"]
    victory-generator n112 b17 r49 | | V150P | 60 | 135 | 169 | 150 | 188 | 1106A-70TAG2/ 1106D-E70TAG2 | 38.2 | 6 | 105 | 135 | 16.5 | 21 | 2620*770*1570 | 1699
 
-[engines gach] 1106A70TAG2/1106DE70TAG2 (1 dòng, NCC victory-generator, hãng Perkins) → 1106DE70TAG2 (29 dòng, 21 NCC, hãng Perkins) | phần còn lại "1106A-70TAG2"
+[engines gach] 1106A70TAG2/1106DE70TAG2 (1 dòng, NCC victory-generator, hãng Perkins) → 1106A70TAG2 (141 dòng, 82 NCC, hãng Perkins) | phần còn lại "1106D-E70TAG2"
    tên: ["1106A-70TAG2/ 1106D-E70TAG2"]
    victory-generator n112 b17 r49 | | V150P | 60 | 135 | 169 | 150 | 188 | 1106A-70TAG2/ 1106D-E70TAG2 | 38.2 | 6 | 105 | 135 | 16.5 | 21 | 2620*770*1570 | 1699
 
@@ -1881,11 +1901,11 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["1106A-70TAG3 Switchable"]
    sr-genset n2004 b7 r11 | | 216.7 | 173.8 | 197 | 158 | 1106A-70TAG3 Switchable | Elec | UCI 274F | TAL-A44-K | SA274-154 | 2650*960*1650 | 3360*1110*1750
 
-[engines gach] 1106A70TG1/1106DE70TAG3 (1 dòng, NCC ettes-power, hãng Perkins) → 1106A70TG1 (137 dòng, 75 NCC, hãng Perkins) | phần còn lại "1106D-E70TAG3"
+[engines gach] 1106A70TG1/1106DE70TAG3 (1 dòng, NCC ettes-power, hãng Perkins) → 1106DE70TAG3 (27 dòng, 20 NCC, hãng Perkins) | phần còn lại "1106A-70TG1"
    tên: ["1106A-70TG1/ 1106D-E70TAG3"]
    ettes-power n146 b51 r11 | | EP-165 | 120 | 150 | 132 | 165 | 1106A-70TG1/ 1106D-E70TAG3 | TBA | 6.L | TBA | 1760*760*1380 | 900 |
 
-[engines gach] 1106A70TG1/1106DE70TAG3 (1 dòng, NCC ettes-power, hãng Perkins) → 1106DE70TAG3 (27 dòng, 20 NCC, hãng Perkins) | phần còn lại "1106A-70TG1"
+[engines gach] 1106A70TG1/1106DE70TAG3 (1 dòng, NCC ettes-power, hãng Perkins) → 1106A70TG1 (137 dòng, 75 NCC, hãng Perkins) | phần còn lại "1106D-E70TAG3"
    tên: ["1106A-70TG1/ 1106D-E70TAG3"]
    ettes-power n146 b51 r11 | | EP-165 | 120 | 150 | 132 | 165 | 1106A-70TG1/ 1106D-E70TAG3 | TBA | 6.L | TBA | 1760*760*1380 | 900 |
 
@@ -2253,19 +2273,19 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["4008TAG2A(UK)"]
    landtop-fuzhou n126 b26 r35 | | LTP1100P | 1100 | 880 | 1000 | 800 | 4008TAG2A(UK) | LTP404S-800
 
-[engines gach] 401246TWG3A/401246TAG1A (1 dòng, NCC victory-generator, hãng Perkins) → 401246TWG3A (72 dòng, 48 NCC, hãng Perkins) | phần còn lại "4012-46TAG1A"
-   tên: ["4012-46TWG3A/ 4012-46TAG1A"]
-   victory-generator n112 b17 r32 | | V1200P | 50 | 1100 | 1375 | 1200 | 1500 | 4012-46TWG3A/ 4012-46TAG1A | 283 | 12 | 160 | 190 | 177 | 201 | 4760*2020*2481 | 8987
-
 [engines gach] 401246TWG3A/401246TAG1A (1 dòng, NCC victory-generator, hãng Perkins) → 401246TAG1A (7 dòng, 6 NCC, hãng Perkins) | phần còn lại "4012-46TWG3A"
    tên: ["4012-46TWG3A/ 4012-46TAG1A"]
    victory-generator n112 b17 r32 | | V1200P | 50 | 1100 | 1375 | 1200 | 1500 | 4012-46TWG3A/ 4012-46TAG1A | 283 | 12 | 160 | 190 | 177 | 201 | 4760*2020*2481 | 8987
 
-[engines gach] 403A15G1/403D15G (1 dòng, NCC victory-generator, hãng Perkins) → 403A15G1 (76 dòng, 55 NCC, hãng Perkins) | phần còn lại "403D-15G"
+[engines gach] 401246TWG3A/401246TAG1A (1 dòng, NCC victory-generator, hãng Perkins) → 401246TWG3A (72 dòng, 48 NCC, hãng Perkins) | phần còn lại "4012-46TAG1A"
+   tên: ["4012-46TWG3A/ 4012-46TAG1A"]
+   victory-generator n112 b17 r32 | | V1200P | 50 | 1100 | 1375 | 1200 | 1500 | 4012-46TWG3A/ 4012-46TAG1A | 283 | 12 | 160 | 190 | 177 | 201 | 4760*2020*2481 | 8987
+
+[engines gach] 403A15G1/403D15G (1 dòng, NCC victory-generator, hãng Perkins) → 403D15G (120 dòng, 60 NCC, hãng Perkins) | phần còn lại "403A-15G1"
    tên: ["403A-15G1/ 403D-15G"]
    victory-generator n112 b17 r1 | | V11P | 50 | 10.4 | 13 | 11 | 14 | 403A-15G1/ 403D-15G | 3.7 | 3 | 84 | 90 | 6 | 6 | 1480*750*1270 | 469
 
-[engines gach] 403A15G1/403D15G (1 dòng, NCC victory-generator, hãng Perkins) → 403D15G (120 dòng, 60 NCC, hãng Perkins) | phần còn lại "403A-15G1"
+[engines gach] 403A15G1/403D15G (1 dòng, NCC victory-generator, hãng Perkins) → 403A15G1 (76 dòng, 55 NCC, hãng Perkins) | phần còn lại "403D-15G"
    tên: ["403A-15G1/ 403D-15G"]
    victory-generator n112 b17 r1 | | V11P | 50 | 10.4 | 13 | 11 | 14 | 403A-15G1/ 403D-15G | 3.7 | 3 | 84 | 90 | 6 | 6 | 1480*750*1270 | 469
 
@@ -2285,11 +2305,11 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["495ZD 1-4"]
    zhengdian-zhengzhou n105 b4 r4 | | 30GF | 33 | 30 | 59/54 | 495ZD 1-4 | 39.6/36 | 95 | 115 | 3.26 | ≤251.6 | 760 | 1670 ×720 ×1140
 
-[engines gach] 4BT39G1/4BT39G2 (1 dòng, NCC victory-generator, hãng Cummins) → 4BT39G1 (122 dòng, 69 NCC, hãng Cummins) | phần còn lại "4BT3.9-G2"
+[engines gach] 4BT39G1/4BT39G2 (1 dòng, NCC victory-generator, hãng Cummins) → 4BT39G2 (161 dòng, 84 NCC, hãng Cummins) | phần còn lại "4BT3.9-G1"
    tên: ["4BT3.9-G1/ 4BT3.9-G2"]
    victory-generator n110 b15 r4 | | V36C | 50 | 32 | 40 | 36 | 45 | 4BT3.9-G1/ 4BT3.9-G2 | 10 / 9.3 | 3.9 | 4L | electronic | 1750*970*1500 | 950 | 2250*1080*1255 | 1150
 
-[engines gach] 4BT39G1/4BT39G2 (1 dòng, NCC victory-generator, hãng Cummins) → 4BT39G2 (161 dòng, 84 NCC, hãng Cummins) | phần còn lại "4BT3.9-G1"
+[engines gach] 4BT39G1/4BT39G2 (1 dòng, NCC victory-generator, hãng Cummins) → 4BT39G1 (122 dòng, 69 NCC, hãng Cummins) | phần còn lại "4BT3.9-G2"
    tên: ["4BT3.9-G1/ 4BT3.9-G2"]
    victory-generator n110 b15 r4 | | V36C | 50 | 32 | 40 | 36 | 45 | 4BT3.9-G1/ 4BT3.9-G2 | 10 / 9.3 | 3.9 | 4L | electronic | 1750*970*1500 | 950 | 2250*1080*1255 | 1150
 
@@ -2325,9 +2345,17 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["4DX23-65D /48KW"]
    jet-power n134 b29 r5 | | XC-55 | 55 | 44 | 50 | 40 | 4DX23-65D /48KW | L4 | Mech. | 3.86 | 102×118 | JET224D/40KW | 1800*760*1050 | 860 | 2200*950*1250 | 1210
 
+[engines gach] 4M10G100/6WP41D115E201 (1 dòng, NCC kaihua-genset, hãng Baudouin) → 4M10G100/6 (9 dòng, 9 NCC, hãng Baudouin) | phần còn lại "WP4.1D115E201"
+   tên: ["4M10G100/6 WP4.1D115E201"]
+   kaihua-genset n119 b23 r44 | | HC-BD125-60 | 125 | 112 | 4M10G100/6 WP4.1D115E201 | UCI 274C1 | | 2810*1140*1830 | Download
+
 [engines gach] 4M10G100/6WP41D115E201 (1 dòng, NCC kaihua-genset, hãng Baudouin) → WP41D115E201 (12 dòng, 11 NCC, hãng Weichai) | phần còn lại "4M10G100 6"
    tên: ["4M10G100/6 WP4.1D115E201"]
    kaihua-genset n119 b23 r44 | | HC-BD125-60 | 125 | 112 | 4M10G100/6 WP4.1D115E201 | UCI 274C1 | | 2810*1140*1830 | Download
+
+[engines gach] 4M10G83/6WP41D95E201 (1 dòng, NCC kaihua-genset, hãng Baudouin) → 4M10G83/6 (11 dòng, 11 NCC, hãng Baudouin) | phần còn lại "WP4.1D95E201"
+   tên: ["4M10G83/6 WP4.1D95E201"]
+   kaihua-genset n119 b23 r43 | | HC-BD100-60 | 100 | 94 | 4M10G83/6 WP4.1D95E201 | UCI 224G1 | | | Download
 
 [engines gach] 4M10G83/6WP41D95E201 (1 dòng, NCC kaihua-genset, hãng Baudouin) → WP41D95E201 (21 dòng, 18 NCC, hãng Weichai) | phần còn lại "4M10G83 6"
    tên: ["4M10G83/6 WP4.1D95E201"]
@@ -2409,17 +2437,25 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["6CTA8.3-G1/2"]
    xingguang-jiangsu n122 b18 r8 | | XG200S3 | 200 | 181 | Cummins | 6CTA8.3-G1/2 | PDF
 
-[engines gach] 6LTAA89G2/6LTAA89G3 (1 dòng, NCC victory-generator, hãng Cummins) → 6LTAA89G2 (188 dòng, 88 NCC, hãng Cummins) | phần còn lại "6LTAA8.9-G3"
-   tên: ["6LTAA8.9-G2/ 6LTAA8.9-G3"]
-   victory-generator n110 b15 r18 | | V220C | 50 | 200 | 250 | 220 | 275 | 6LTAA8.9-G2/ 6LTAA8.9-G3 | 53 / 54 | 8.9 | 6L | electronic | 2550*1020*1790 | 2000 | 3700*1090*2080 | 2600
-
 [engines gach] 6LTAA89G2/6LTAA89G3 (1 dòng, NCC victory-generator, hãng Cummins) → 6LTAA89G3 (112 dòng, 66 NCC, hãng Cummins) | phần còn lại "6LTAA8.9-G2"
    tên: ["6LTAA8.9-G2/ 6LTAA8.9-G3"]
    victory-generator n110 b15 r18 | | V220C | 50 | 200 | 250 | 220 | 275 | 6LTAA8.9-G2/ 6LTAA8.9-G3 | 53 / 54 | 8.9 | 6L | electronic | 2550*1020*1790 | 2000 | 3700*1090*2080 | 2600
 
+[engines gach] 6LTAA89G2/6LTAA89G3 (1 dòng, NCC victory-generator, hãng Cummins) → 6LTAA89G2 (188 dòng, 88 NCC, hãng Cummins) | phần còn lại "6LTAA8.9-G3"
+   tên: ["6LTAA8.9-G2/ 6LTAA8.9-G3"]
+   victory-generator n110 b15 r18 | | V220C | 50 | 200 | 250 | 220 | 275 | 6LTAA8.9-G2/ 6LTAA8.9-G3 | 53 / 54 | 8.9 | 6L | electronic | 2550*1020*1790 | 2000 | 3700*1090*2080 | 2600
+
+[engines gach] 6M11G110/6WP6D132E201 (1 dòng, NCC kaihua-genset, hãng Baudouin) → 6M11G110/6 (6 dòng, 6 NCC, hãng Baudouin) | phần còn lại "WP6D132E201"
+   tên: ["6M11G110/6 WP6D132E201"]
+   kaihua-genset n119 b23 r45 | | HC-BD140-60 | 138 | 125 | 6M11G110/6 WP6D132E201 | UCI 274D1 | | 3230*1170*1800 | Download
+
 [engines gach] 6M11G110/6WP6D132E201 (1 dòng, NCC kaihua-genset, hãng Baudouin) → WP6D132E201 (26 dòng, 21 NCC, hãng Weichai) | phần còn lại "6M11G110 6"
    tên: ["6M11G110/6 WP6D132E201"]
    kaihua-genset n119 b23 r45 | | HC-BD140-60 | 138 | 125 | 6M11G110/6 WP6D132E201 | UCI 274D1 | | 3230*1170*1800 | Download
+
+[engines gach] 6M11G135/6WP6D158E201 (1 dòng, NCC kaihua-genset, hãng Baudouin) → 6M11G135/6 (12 dòng, 11 NCC, hãng Baudouin) | phần còn lại "WP6D158E201"
+   tên: ["6M11G135/6 WP6D158E201"]
+   kaihua-genset n119 b23 r46 | | HC-BD165-60 | 165 | 150 | 6M11G135/6 WP6D158E201 | UCI 274E1 | | 3230*1170*1800 | Download
 
 [engines gach] 6M11G135/6WP6D158E201 (1 dòng, NCC kaihua-genset, hãng Baudouin) → WP6D158E201 (23 dòng, 19 NCC, hãng Weichai) | phần còn lại "6M11G135 6"
    tên: ["6M11G135/6 WP6D158E201"]
@@ -2432,6 +2468,14 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
 [engines gach] 6M33D725E310/675KW (1 dòng, NCC weiman-fujian, hãng Weichai) → 6M33D725E310 (24 dòng, 22 NCC, hãng Weichai) | phần còn lại "675KW"
    tên: ["6M33D725E310/675KW"]
    weiman-fujian n112 b14 r22 | | WT-WP825 | 600 | 750 | 660 | 825 | 6M33D725E310/675KW | 4350*1600*2100 | 4835 | 5400x2000x2500 | 6550 | More data
+
+[engines ngoac] 6M33G8D3/5(6M33G825/5) (1 dòng, NCC kaihua-genset, hãng Baudouin) → 6M33G8D3/5 (10 dòng, 7 NCC, hãng Baudouin) | phần còn lại "6M33G825/5"
+   tên: ["6M33G8D3/5 (6M33G825/5)"]
+   kaihua-genset n119 b23 r18 | | HC-BD825 | 825 | 750 | 6M33G8D3/5 (6M33G825/5) | S5L1D-H41 | 4000*2100*2080 | 5530*1860*2550 | Download
+
+[engines ngoac] 6M33G8D3/5(6M33G825/5) (1 dòng, NCC kaihua-genset, hãng Baudouin) → 6M33G825/5 (22 dòng, 17 NCC, hãng Baudouin) | phần còn lại "6M33G8D3/5"
+   tên: ["6M33G8D3/5 (6M33G825/5)"]
+   kaihua-genset n119 b23 r18 | | HC-BD825 | 825 | 750 | 6M33G8D3/5 (6M33G825/5) | S5L1D-H41 | 4000*2100*2080 | 5530*1860*2550 | Download
 
 [engines gach] 8M33D800E200/730/800KW (1 dòng, NCC weiman-fujian, hãng Weichai) → 8M33D800E200 (21 dòng, 17 NCC, hãng Weichai) | phần còn lại "730 800KW"
    tên: ["8M33D800E200/730/800KW"]
@@ -2620,6 +2664,10 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
 [engines gach] E3262LE212/202 (1 dòng, NCC ettes-power, hãng MAN) → E3262LE212 (1 dòng, 1 NCC, hãng MAN) | phần còn lại "202"
    tên: ["E3262LE212/202"]
    ettes-power n101 b0 r8 | | EM-520B5 | 520 | 654 | E3262LE212/202 | 550 | 12.V | 25.8 | 38.3% | 48.2% | 86.5% |
+
+[engines gach] FAW4110/125Z09D (1 dòng, NCC yongcai-elecmama, hãng ∅) → 4110/125Z09D (10 dòng, 10 NCC, hãng FAWDE) | phần còn lại "FAW"
+   tên: ["FAW 4110/125Z-09D"]
+   yongcai-elecmama n153 b42 r | Genset model : YCM55FA ; Phase number : 3 Phase ; Power factor : 0.8 lagging ; | Genset Model | YCM55FA ; | Power Factor | 0.8 lagging ; | Engine Model | FAW 4110/125Z-09D ; | Engine Power | 65-72kw ; | Bore x Stroke | 1
 
 [engines cach] FAW4DW9239DHMS20W (1 dòng, NCC yongcai-elecmama, hãng FAWDE) → 4DW9239DHMS20W (7 dòng, 6 NCC, hãng FAWDE) | phần còn lại "FAW"
    tên: ["FAW 4DW92-39D-HMS20W"]
@@ -3041,6 +3089,10 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["WP10D238E201 6M16G200/6"]
    kaihua-genset n119 b23 r49 | | HC-BD250-60 | 250 | 230 | WP10D238E201 6M16G200/6 | UCI 274H1 | | 3590*1310*2050 | Download
 
+[engines gach] WP10D238E2016M16G200/6 (1 dòng, NCC kaihua-genset, hãng Baudouin) → 6M16G200/6 (11 dòng, 11 NCC, hãng Baudouin) | phần còn lại "WP10D238E201"
+   tên: ["WP10D238E201 6M16G200/6"]
+   kaihua-genset n119 b23 r49 | | HC-BD250-60 | 250 | 230 | WP10D238E201 6M16G200/6 | UCI 274H1 | | 3590*1310*2050 | Download
+
 [engines gach] WP10D264E200/240KW (1 dòng, NCC weiman-fujian, hãng Weichai) → WP10D264E200 (58 dòng, 45 NCC, hãng Weichai) | phần còn lại "240kw"
    tên: ["WP10D264E200/240kw"]
    weiman-fujian n112 b14 r13 | | WT-WP275 | 200 | 250 | 220 | 275 | WP10D264E200/240kw | 3280*1050*1750 | 2220 | 3750*1300*1850 | 3000 | More data
@@ -3049,7 +3101,15 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["WP10D264E201 6M16G220/6"]
    kaihua-genset n119 b23 r50 | | HC-BD275-60 | 275 | 250 | WP10D264E201 6M16G220/6 | UCDI 274J1 | | 3890*1460*2150 | Download
 
+[engines gach] WP10D264E2016M16G220/6 (1 dòng, NCC kaihua-genset, hãng Baudouin) → 6M16G220/6 (12 dòng, 12 NCC, hãng Baudouin) | phần còn lại "WP10D264E201"
+   tên: ["WP10D264E201 6M16G220/6"]
+   kaihua-genset n119 b23 r50 | | HC-BD275-60 | 275 | 250 | WP10D264E201 6M16G220/6 | UCDI 274J1 | | 3890*1460*2150 | Download
+
 [engines gach] WP10D288E2016M16G250/6 (1 dòng, NCC kaihua-genset, hãng Baudouin) → WP10D288E201 (5 dòng, 5 NCC, hãng Weichai) | phần còn lại "6M16G250 6"
+   tên: ["WP10D288E201 6M16G250/6"]
+   kaihua-genset n119 b23 r51 | | HC-BD315-60 | 315 | 288 | WP10D288E201 6M16G250/6 | UCDI 274J1 | | 4090*1460*2150 | Download
+
+[engines gach] WP10D288E2016M16G250/6 (1 dòng, NCC kaihua-genset, hãng Baudouin) → 6M16G250/6 (11 dòng, 11 NCC, hãng Baudouin) | phần còn lại "WP10D288E201"
    tên: ["WP10D288E201 6M16G250/6"]
    kaihua-genset n119 b23 r51 | | HC-BD315-60 | 315 | 288 | WP10D288E201 6M16G250/6 | UCDI 274J1 | | 4090*1460*2150 | Download
 
@@ -3061,11 +3121,19 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["WP12D353E200/288kw"]
    weiman-fujian n112 b14 r15 | | WT-WP360 | 260 | 325 | 286 | 358 | WP12D353E200/288kw | 3580*1550*2100 | 2560 | 3900*1400*2200 | 3320 | More data
 
+[engines gach] WP13D360E2016M16G308/6 (1 dòng, NCC kaihua-genset, hãng Baudouin) → 6M16G308/6 (12 dòng, 12 NCC, hãng Baudouin) | phần còn lại "WP13D360E201"
+   tên: ["WP13D360E201 6M16G308/6"]
+   kaihua-genset n119 b23 r52 | | HC-BD385-60 | 385 | 350 | WP13D360E201 6M16G308/6 | S4L1D-D41 | | 4090*1460*2150 | Download
+
 [engines gach] WP13D385E200/350KW (1 dòng, NCC weiman-fujian, hãng Weichai) → WP13D385E200 (59 dòng, 44 NCC, hãng Weichai) | phần còn lại "350kw"
    tên: ["WP13D385E200/350kw"]
    weiman-fujian n112 b14 r16 | | WT-WP415 | 300 | 375 | 330 | 413 | WP13D385E200/350kw | 3880*1550*2100 | 2750 | 4200*1600*2200 | 3560 | More data
 
 [engines gach] WP13D385E2016M21G330/6 (1 dòng, NCC kaihua-genset, hãng Baudouin) → WP13D385E201 (27 dòng, 21 NCC, hãng Weichai) | phần còn lại "6M21G330 6"
+   tên: ["WP13D385E201 6M21G330/6"]
+   kaihua-genset n119 b23 r53 | | HC-BD415-60 | 415 | 380 | WP13D385E201 6M21G330/6 | S4L1D-E41 | | 4230*1460*2150 | Download
+
+[engines gach] WP13D385E2016M21G330/6 (1 dòng, NCC kaihua-genset, hãng Baudouin) → 6M21G330/6 (12 dòng, 12 NCC, hãng Baudouin) | phần còn lại "WP13D385E201"
    tên: ["WP13D385E201 6M21G330/6"]
    kaihua-genset n119 b23 r53 | | HC-BD415-60 | 415 | 380 | WP13D385E201 6M21G330/6 | S4L1D-E41 | | 4230*1460*2150 | Download
 
@@ -3086,6 +3154,10 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    weiman-fujian n112 b14 r19 | | WT-WP550 | 400 | 500 | 440 | 550 | WP13D490E310/450KW | 3880*1550*2100 | 3160 | 4500x1800x2200 | 4330 | More data
 
 [engines gach] WP13D510E3116M21G460/6 (1 dòng, NCC kaihua-genset, hãng Baudouin) → WP13D510E311 (22 dòng, 16 NCC, hãng Weichai) | phần còn lại "6M21G460 6"
+   tên: ["WP13D510E311 6M21G460/6"]
+   kaihua-genset n119 b23 r56 | | HC-BD550-60 | 550 | 500 | WP13D510E311 6M21G460/6 | S4L1D-F41 | 3400*1270*1974 | 4630*1660*2250 | Download
+
+[engines gach] WP13D510E3116M21G460/6 (1 dòng, NCC kaihua-genset, hãng Baudouin) → 6M21G460/6 (13 dòng, 12 NCC, hãng Baudouin) | phần còn lại "WP13D510E311"
    tên: ["WP13D510E311 6M21G460/6"]
    kaihua-genset n119 b23 r56 | | HC-BD550-60 | 550 | 500 | WP13D510E311 6M21G460/6 | S4L1D-F41 | 3400*1270*1974 | 4630*1660*2250 | Download
 
@@ -3114,6 +3186,10 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    weiman-fujian n112 b14 r10 | | WT-WP165 | 120 | 150 | 132 | 165 | WP6D152E200/138KW | 2500*1000*1650 | 1510 | 3450x1100x1650 | 2420 | More data
 
 [engines gach] WP6D180E2016M11G160/6 (1 dòng, NCC kaihua-genset, hãng Baudouin) → WP6D180E201 (18 dòng, 17 NCC, hãng Weichai) | phần còn lại "6M11G160 6"
+   tên: ["WP6D180E201 6M11G160/6"]
+   kaihua-genset n119 b23 r47 | | HC-BD200-60 | 200 | 180 | WP6D180E201 6M11G160/6 | UCI 274F1 | | 3230*1170*1800 | Download
+
+[engines gach] WP6D180E2016M11G160/6 (1 dòng, NCC kaihua-genset, hãng Baudouin) → 6M11G160/6 (11 dòng, 11 NCC, hãng Baudouin) | phần còn lại "WP6D180E201"
    tên: ["WP6D180E201 6M11G160/6"]
    kaihua-genset n119 b23 r47 | | HC-BD200-60 | 200 | 180 | WP6D180E201 6M11G160/6 | UCI 274F1 | | 3230*1170*1800 | Download
 
@@ -3865,6 +3941,13 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    minsun-motor n118 b22 r0 | | GF-Y10 | 10 | 8 | YD385D | SY-A 164B
    … +1
 
+[alternators gach] DPC224G/UCI224G/TALA44C (4 dòng, NCC depco-power, hãng ∅) → TALA44C (23 dòng, 7 NCC, hãng Leroy-Somer) | phần còn lại "DPC224G UCI224G"
+   tên: ["DPC224G/UCI224G/ TAL-A44-C","DPC224G/UCI224G/TAL-A44-C"]
+   depco-power n2540 b544 r | Item NO.: ; DPK-DTY-94S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4A3L-D ; PRP (kW): ; 68 ; PRP (kVA): ; 85 ; ESP (kW): ; 75 ; ESP (kVA): ; 94 ; Arrangement: ; 4L ; Govern
+   depco-power n2611 b615 r | Item NO.: ; DPK-DP-88 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TAG1 ; PRP (kW): ; 64 ; PRP (kVA): ; 80 ; ESP (kW): ; 70 ; ESP (kVA): ; 88 ; Arrangement: ; 4L ; 
+   depco-power n2612 b616 r | Item NO.: ; DPK-DP-88 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TG2 ; PRP (kW): ; 64 ; PRP (kVA): ; 80 ; ESP (kW): ; 70 ; ESP (kVA): ; 88 ; Arrangement: ; 4L ; G
+   depco-power n2627 b631 r | Item NO.: ; DPK-DB-88 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Baudouin ; Engine Model: ; 4M10G88/5 ; PRP (kW): ; 64 ; PRP (kVA): ; 80 ; ESP (kW): ; 70 ; ESP (kVA): ; 88 ; Arrangement: ; 4L ; Go
+
 [alternators gach] DPC224G/UCI224G/TALA44C (4 dòng, NCC depco-power, hãng ∅) → DPC224G (4 dòng, 1 NCC, hãng ∅) | phần còn lại "UCI224G TAL-A44-C"
    tên: ["DPC224G/UCI224G/ TAL-A44-C","DPC224G/UCI224G/TAL-A44-C"]
    depco-power n2540 b544 r | Item NO.: ; DPK-DTY-94S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4A3L-D ; PRP (kW): ; 68 ; PRP (kVA): ; 85 ; ESP (kW): ; 75 ; ESP (kVA): ; 94 ; Arrangement: ; 4L ; Govern
@@ -3873,13 +3956,6 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    depco-power n2627 b631 r | Item NO.: ; DPK-DB-88 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Baudouin ; Engine Model: ; 4M10G88/5 ; PRP (kW): ; 64 ; PRP (kVA): ; 80 ; ESP (kW): ; 70 ; ESP (kVA): ; 88 ; Arrangement: ; 4L ; Go
 
 [alternators gach] DPC224G/UCI224G/TALA44C (4 dòng, NCC depco-power, hãng ∅) → UCI224G (58 dòng, 17 NCC, hãng Stamford) | phần còn lại "DPC224G TAL-A44-C"
-   tên: ["DPC224G/UCI224G/ TAL-A44-C","DPC224G/UCI224G/TAL-A44-C"]
-   depco-power n2540 b544 r | Item NO.: ; DPK-DTY-94S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4A3L-D ; PRP (kW): ; 68 ; PRP (kVA): ; 85 ; ESP (kW): ; 75 ; ESP (kVA): ; 94 ; Arrangement: ; 4L ; Govern
-   depco-power n2611 b615 r | Item NO.: ; DPK-DP-88 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TAG1 ; PRP (kW): ; 64 ; PRP (kVA): ; 80 ; ESP (kW): ; 70 ; ESP (kVA): ; 88 ; Arrangement: ; 4L ; 
-   depco-power n2612 b616 r | Item NO.: ; DPK-DP-88 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TG2 ; PRP (kW): ; 64 ; PRP (kVA): ; 80 ; ESP (kW): ; 70 ; ESP (kVA): ; 88 ; Arrangement: ; 4L ; G
-   depco-power n2627 b631 r | Item NO.: ; DPK-DB-88 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Baudouin ; Engine Model: ; 4M10G88/5 ; PRP (kW): ; 64 ; PRP (kVA): ; 80 ; ESP (kW): ; 70 ; ESP (kVA): ; 88 ; Arrangement: ; 4L ; Go
-
-[alternators gach] DPC224G/UCI224G/TALA44C (4 dòng, NCC depco-power, hãng ∅) → TALA44C (23 dòng, 7 NCC, hãng Leroy-Somer) | phần còn lại "DPC224G UCI224G"
    tên: ["DPC224G/UCI224G/ TAL-A44-C","DPC224G/UCI224G/TAL-A44-C"]
    depco-power n2540 b544 r | Item NO.: ; DPK-DTY-94S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4A3L-D ; PRP (kW): ; 68 ; PRP (kVA): ; 85 ; ESP (kW): ; 75 ; ESP (kVA): ; 94 ; Arrangement: ; 4L ; Govern
    depco-power n2611 b615 r | Item NO.: ; DPK-DP-88 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TAG1 ; PRP (kW): ; 64 ; PRP (kVA): ; 80 ; ESP (kW): ; 70 ; ESP (kVA): ; 88 ; Arrangement: ; 4L ; 
@@ -3991,6 +4067,12 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    jinlongteng-fujian n101 b0 r11 | | JDC103 | 75 | 94 | 83 | 103 | 6BT5.9-G1 | 86 | 92 | 214 | 22.3 | 6×102×120 | 5.9 | 17.3:1 | 16.4 | 22.4 | JLT224GM(75KW) | UCI274C(80KW) | 3000*1120*1680 | 1550 | 2200*900*1500 | 1100
    jinlongteng-fujian n101 b0 r12 | | JDC94 | 68 | 85 | 75 | 94 | 6BT5.9-G2 | 86 | 92 | 214 | 22.3 | 6×102×120 | 5.9 | 17.3:1 | 16.4 | 22.4 | JLT224GM(75KW) | UCI274C(80KW) | 3000*1120*1680 | 1550 | 2200*900*1500 | 1100
 
+[alternators gach] DPC224F/UCI224F/TALA44C (3 dòng, NCC depco-power, hãng ∅) → TALA44C (23 dòng, 7 NCC, hãng Leroy-Somer) | phần còn lại "DPC224F UCI224F"
+   tên: ["DPC224F/UCI224F/ TAL-A44-C","DPC224F/UCI224F/TAL-A44-C"]
+   depco-power n2541 b545 r | Item NO.: ; DPK-DTY-78S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4B3Z-D ; PRP (kW): ; 57 ; PRP (kVA): ; 71 ; ESP (kW): ; 63 ; ESP (kVA): ; 78 ; Arrangement: ; 4L ; Govern
+   depco-power n2542 b546 r | Item NO.: ; DPK-DTY-76S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YT4B2Z-D ; PRP (kW): ; 55 ; PRP (kVA): ; 69 ; ESP (kW): ; 61 ; ESP (kVA): ; 76 ; Arrangement: ; 4L ; Govern
+   depco-power n2613 b617 r | Item NO.: ; DPK-DP-72 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TG1 ; PRP (kW): ; 52 ; PRP (kVA): ; 65 ; ESP (kW): ; 57 ; ESP (kVA): ; 72 ; Arrangement: ; 4L ; G
+
 [alternators gach] DPC224F/UCI224F/TALA44C (3 dòng, NCC depco-power, hãng ∅) → DPC224F (3 dòng, 1 NCC, hãng ∅) | phần còn lại "UCI224F TAL-A44-C"
    tên: ["DPC224F/UCI224F/ TAL-A44-C","DPC224F/UCI224F/TAL-A44-C"]
    depco-power n2541 b545 r | Item NO.: ; DPK-DTY-78S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4B3Z-D ; PRP (kW): ; 57 ; PRP (kVA): ; 71 ; ESP (kW): ; 63 ; ESP (kVA): ; 78 ; Arrangement: ; 4L ; Govern
@@ -3998,12 +4080,6 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    depco-power n2613 b617 r | Item NO.: ; DPK-DP-72 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TG1 ; PRP (kW): ; 52 ; PRP (kVA): ; 65 ; ESP (kW): ; 57 ; ESP (kVA): ; 72 ; Arrangement: ; 4L ; G
 
 [alternators gach] DPC224F/UCI224F/TALA44C (3 dòng, NCC depco-power, hãng ∅) → UCI224F (45 dòng, 17 NCC, hãng Stamford) | phần còn lại "DPC224F TAL-A44-C"
-   tên: ["DPC224F/UCI224F/ TAL-A44-C","DPC224F/UCI224F/TAL-A44-C"]
-   depco-power n2541 b545 r | Item NO.: ; DPK-DTY-78S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4B3Z-D ; PRP (kW): ; 57 ; PRP (kVA): ; 71 ; ESP (kW): ; 63 ; ESP (kVA): ; 78 ; Arrangement: ; 4L ; Govern
-   depco-power n2542 b546 r | Item NO.: ; DPK-DTY-76S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YT4B2Z-D ; PRP (kW): ; 55 ; PRP (kVA): ; 69 ; ESP (kW): ; 61 ; ESP (kVA): ; 76 ; Arrangement: ; 4L ; Govern
-   depco-power n2613 b617 r | Item NO.: ; DPK-DP-72 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TG1 ; PRP (kW): ; 52 ; PRP (kVA): ; 65 ; ESP (kW): ; 57 ; ESP (kVA): ; 72 ; Arrangement: ; 4L ; G
-
-[alternators gach] DPC224F/UCI224F/TALA44C (3 dòng, NCC depco-power, hãng ∅) → TALA44C (23 dòng, 7 NCC, hãng Leroy-Somer) | phần còn lại "DPC224F UCI224F"
    tên: ["DPC224F/UCI224F/ TAL-A44-C","DPC224F/UCI224F/TAL-A44-C"]
    depco-power n2541 b545 r | Item NO.: ; DPK-DTY-78S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4B3Z-D ; PRP (kW): ; 57 ; PRP (kVA): ; 71 ; ESP (kW): ; 63 ; ESP (kVA): ; 78 ; Arrangement: ; 4L ; Govern
    depco-power n2542 b546 r | Item NO.: ; DPK-DTY-76S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YT4B2Z-D ; PRP (kW): ; 55 ; PRP (kVA): ; 69 ; ESP (kW): ; 61 ; ESP (kVA): ; 76 ; Arrangement: ; 4L ; Govern
@@ -4123,6 +4199,11 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    depco-power n2615 b619 r | Item NO.: ; DPK-DP-50 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1103A-33G1 ; PRP (kW): ; 36 ; PRP (kVA): ; 45 ; ESP (kW): ; 40 ; ESP (kVA): ; 50 ; Arrangement: ; 3L ; Go
    depco-power n2630 b634 r | Item NO.: ; DPK-DB-50 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Baudouin ; Engine Model: ; 4M06G50/5 ; PRP (kW): ; 36 ; PRP (kVA): ; 45 ; ESP (kW): ; 40 ; ESP (kVA): ; 50 ; Arrangement: ; 4L ; Go
 
+[alternators gach] DPC224E/TALA42H/S1L2Y1 (2 dòng, NCC depco-power, hãng ∅) → S1L2Y1 (63 dòng, 13 NCC, hãng Stamford) | phần còn lại "DPC224E TAL-A42-H"
+   tên: ["DPC224E/TAL-A42-H/ S1L2-Y1"]
+   depco-power n2568 b572 r | Item NO.: ; DPK-DX-70 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A4K41LD ; PRP (kW): ; 50 ; PRP (kVA): ; 63 ; ESP (kW): ; 55 ; ESP (kVA): ; 69 ; Arrangement: ; 4L ; Gover
+   depco-power n2569 b573 r | Item NO.: ; DPK-DX-60 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A4K41ZD ; PRP (kW): ; 44 ; PRP (kVA): ; 55 ; ESP (kW): ; 48 ; ESP (kVA): ; 60 ; Arrangement: ; 4L ; Gover
+
 [alternators gach] DPC224E/TALA42H/S1L2Y1 (2 dòng, NCC depco-power, hãng ∅) → DPC224E (3 dòng, 1 NCC, hãng ∅) | phần còn lại "TAL-A42-H S1L2-Y1"
    tên: ["DPC224E/TAL-A42-H/ S1L2-Y1"]
    depco-power n2568 b572 r | Item NO.: ; DPK-DX-70 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A4K41LD ; PRP (kW): ; 50 ; PRP (kVA): ; 63 ; ESP (kW): ; 55 ; ESP (kVA): ; 69 ; Arrangement: ; 4L ; Gover
@@ -4133,10 +4214,10 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    depco-power n2568 b572 r | Item NO.: ; DPK-DX-70 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A4K41LD ; PRP (kW): ; 50 ; PRP (kVA): ; 63 ; ESP (kW): ; 55 ; ESP (kVA): ; 69 ; Arrangement: ; 4L ; Gover
    depco-power n2569 b573 r | Item NO.: ; DPK-DX-60 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A4K41ZD ; PRP (kW): ; 44 ; PRP (kVA): ; 55 ; ESP (kW): ; 48 ; ESP (kVA): ; 60 ; Arrangement: ; 4L ; Gover
 
-[alternators gach] DPC224E/TALA42H/S1L2Y1 (2 dòng, NCC depco-power, hãng ∅) → S1L2Y1 (63 dòng, 13 NCC, hãng Stamford) | phần còn lại "DPC224E TAL-A42-H"
-   tên: ["DPC224E/TAL-A42-H/ S1L2-Y1"]
-   depco-power n2568 b572 r | Item NO.: ; DPK-DX-70 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A4K41LD ; PRP (kW): ; 50 ; PRP (kVA): ; 63 ; ESP (kW): ; 55 ; ESP (kVA): ; 69 ; Arrangement: ; 4L ; Gover
-   depco-power n2569 b573 r | Item NO.: ; DPK-DX-60 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A4K41ZD ; PRP (kW): ; 44 ; PRP (kVA): ; 55 ; ESP (kW): ; 48 ; ESP (kVA): ; 60 ; Arrangement: ; 4L ; Gover
+[alternators gach] DPC274C/UCI274C/TALA44D (2 dòng, NCC depco-power, hãng ∅) → TALA44D (26 dòng, 7 NCC, hãng Leroy-Somer) | phần còn lại "DPC274C UCI274C"
+   tên: ["DPC274C/UCI274C/ TAL-A44-D","DPC274C/UCI274C/TAL-A44-D"]
+   depco-power n2068 b72 r | Item NO.: ; DPK-DTY-110S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4M3L-D ; PRP (kW): ; 80 ; PRP (kVA): ; 100 ; ESP (kW): ; 88 ; ESP (kVA): ; 110 ; Arrangement: ; 4L ; Gov
+   depco-power n2525 b529 r | Item NO.: ; DPK-DP-110 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TAG2 ; PRP (kW): ; 80 ; PRP (kVA): ; 100 ; ESP (kW): ; 88 ; ESP (kVA): ; 110 ; Arrangement: ; 4L
 
 [alternators gach] DPC274C/UCI274C/TALA44D (2 dòng, NCC depco-power, hãng ∅) → DPC274C (3 dòng, 1 NCC, hãng ∅) | phần còn lại "UCI274C TAL-A44-D"
    tên: ["DPC274C/UCI274C/ TAL-A44-D","DPC274C/UCI274C/TAL-A44-D"]
@@ -4144,11 +4225,6 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    depco-power n2525 b529 r | Item NO.: ; DPK-DP-110 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TAG2 ; PRP (kW): ; 80 ; PRP (kVA): ; 100 ; ESP (kW): ; 88 ; ESP (kVA): ; 110 ; Arrangement: ; 4L
 
 [alternators gach] DPC274C/UCI274C/TALA44D (2 dòng, NCC depco-power, hãng ∅) → UCI274C (88 dòng, 18 NCC, hãng Stamford) | phần còn lại "DPC274C TAL-A44-D"
-   tên: ["DPC274C/UCI274C/ TAL-A44-D","DPC274C/UCI274C/TAL-A44-D"]
-   depco-power n2068 b72 r | Item NO.: ; DPK-DTY-110S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4M3L-D ; PRP (kW): ; 80 ; PRP (kVA): ; 100 ; ESP (kW): ; 88 ; ESP (kVA): ; 110 ; Arrangement: ; 4L ; Gov
-   depco-power n2525 b529 r | Item NO.: ; DPK-DP-110 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TAG2 ; PRP (kW): ; 80 ; PRP (kVA): ; 100 ; ESP (kW): ; 88 ; ESP (kVA): ; 110 ; Arrangement: ; 4L
-
-[alternators gach] DPC274C/UCI274C/TALA44D (2 dòng, NCC depco-power, hãng ∅) → TALA44D (26 dòng, 7 NCC, hãng Leroy-Somer) | phần còn lại "DPC274C UCI274C"
    tên: ["DPC274C/UCI274C/ TAL-A44-D","DPC274C/UCI274C/TAL-A44-D"]
    depco-power n2068 b72 r | Item NO.: ; DPK-DTY-110S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4M3L-D ; PRP (kW): ; 80 ; PRP (kVA): ; 100 ; ESP (kW): ; 88 ; ESP (kVA): ; 110 ; Arrangement: ; 4L ; Gov
    depco-power n2525 b529 r | Item NO.: ; DPK-DP-110 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TAG2 ; PRP (kW): ; 80 ; PRP (kVA): ; 100 ; ESP (kW): ; 88 ; ESP (kVA): ; 110 ; Arrangement: ; 4L
@@ -4173,12 +4249,12 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    depco-power n2082 b86 r | Item NO.: ; DPK-DW-344 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Weichai ; Engine Model: ; WP12D317E200 ; PRP (kW): ; 250 ; PRP (kVA): ; 313 ; ESP (kW): ; 275 ; ESP (kVA): ; 344 ; Arrangement: ; 
    depco-power n2083 b87 r | Item NO.: ; DPK-DW-344 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Weichai ; Engine Model: ; WP10D320E200 ; PRP (kW): ; 250 ; PRP (kVA): ; 313 ; ESP (kW): ; 275 ; ESP (kVA): ; 344 ; Arrangement: ; 
 
-[alternators gach] DPC354C/S5L1DC4 (2 dòng, NCC depco-power, hãng Stamford) → DPC354C (3 dòng, 1 NCC, hãng ∅) | phần còn lại "S5L1D-C4"
+[alternators gach] DPC354C/S5L1DC4 (2 dòng, NCC depco-power, hãng Stamford) → S5L1DC4 (34 dòng, 7 NCC, hãng Stamford) | phần còn lại "DPC354C"
    tên: ["DPC354C/ S5L1D-C4"]
    depco-power n2054 b58 r | Item NO.: ; DPK-DTY-500S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YM6S9LF-DA ; PRP (kW): ; 360 ; PRP (kVA): ; 450 ; ESP (kW): ; 400 ; ESP (kVA): ; 500 ; Arrangement: ; 6L ;
    depco-power n2055 b59 r | Item NO.: ; DPK-DTY-450S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YM6S9LF-D ; PRP (kW): ; 330 ; PRP (kVA): ; 413 ; ESP (kW): ; 360 ; ESP (kVA): ; 450 ; Arrangement: ; 6L ; 
 
-[alternators gach] DPC354C/S5L1DC4 (2 dòng, NCC depco-power, hãng Stamford) → S5L1DC4 (34 dòng, 7 NCC, hãng Stamford) | phần còn lại "DPC354C"
+[alternators gach] DPC354C/S5L1DC4 (2 dòng, NCC depco-power, hãng Stamford) → DPC354C (3 dòng, 1 NCC, hãng ∅) | phần còn lại "S5L1D-C4"
    tên: ["DPC354C/ S5L1D-C4"]
    depco-power n2054 b58 r | Item NO.: ; DPK-DTY-500S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YM6S9LF-DA ; PRP (kW): ; 360 ; PRP (kVA): ; 450 ; ESP (kW): ; 400 ; ESP (kVA): ; 500 ; Arrangement: ; 6L ;
    depco-power n2055 b59 r | Item NO.: ; DPK-DTY-450S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YM6S9LF-D ; PRP (kW): ; 330 ; PRP (kVA): ; 413 ; ESP (kW): ; 360 ; ESP (kVA): ; 450 ; Arrangement: ; 6L ; 
@@ -4347,11 +4423,11 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["164D/12.8KW"]
    jet-power n134 b29 r0 | | XC-17 | 17 | 13.2 | 15 | 12 | 4DW81-23D/17KW | L4 | Mech. | 2.27 | 85×100 | 164D/12.8KW | 1450*650*1050 | 580 | 2000*950*1100 | 860
 
-[alternators gach] DPC164C/S0L1L1 (1 dòng, NCC depco-power, hãng Stamford) → DPC164C (1 dòng, 1 NCC, hãng ∅) | phần còn lại "S0L1-L1"
+[alternators gach] DPC164C/S0L1L1 (1 dòng, NCC depco-power, hãng Stamford) → S0L1L1 (24 dòng, 8 NCC, hãng Stamford) | phần còn lại "DPC164C"
    tên: ["DPC164C/ S0L1-L1"]
    depco-power n2268 b272 r | Item NO.: ; DPK-DKBT-14 ; Frequency(Hz): ; 60 ; Phase: ; 3 ; Voltage(V): ; 440 ; Engine: ; Kubota ; Engine Model: ; V1505 ; PRP (kW): ; 10 ; PRP (kVA): ; 12.5 ; ESP (kW): ; 11 ; ESP (kVA): ; 13.8 ; Arrangement: ; 4L ; Go
 
-[alternators gach] DPC164C/S0L1L1 (1 dòng, NCC depco-power, hãng Stamford) → S0L1L1 (24 dòng, 8 NCC, hãng Stamford) | phần còn lại "DPC164C"
+[alternators gach] DPC164C/S0L1L1 (1 dòng, NCC depco-power, hãng Stamford) → DPC164C (1 dòng, 1 NCC, hãng ∅) | phần còn lại "S0L1-L1"
    tên: ["DPC164C/ S0L1-L1"]
    depco-power n2268 b272 r | Item NO.: ; DPK-DKBT-14 ; Frequency(Hz): ; 60 ; Phase: ; 3 ; Voltage(V): ; 440 ; Engine: ; Kubota ; Engine Model: ; V1505 ; PRP (kW): ; 10 ; PRP (kVA): ; 12.5 ; ESP (kW): ; 11 ; ESP (kVA): ; 13.8 ; Arrangement: ; 4L ; Go
 
@@ -4367,15 +4443,15 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["DPC164D/PI 044G/TAL-A40-D"]
    depco-power n2643 b647 r | Item NO.: ; DPK-DP-17 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 403A-15G2 ; PRP (kW): ; 12 ; PRP (kVA): ; 15 ; ESP (kW): ; 13 ; ESP (kVA): ; 17 ; Arrangement: ; 4L ; Gov
 
+[alternators gach] DPC164D/TALA40D/S0L1P1 (1 dòng, NCC depco-power, hãng ∅) → S0L1P1 (22 dòng, 10 NCC, hãng Stamford) | phần còn lại "DPC164D TAL-A40-D"
+   tên: ["DPC164D/TAL-A40-D/ S0L1-P1"]
+   depco-power n2576 b580 r | Item NO.: ; DPK-DX-17 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; NC485BD ; PRP (kW): ; 12 ; PRP (kVA): ; 15 ; ESP (kW): ; 13 ; ESP (kVA): ; 17 ; Arrangement: ; 4L ; Gover
+
 [alternators gach] DPC164D/TALA40D/S0L1P1 (1 dòng, NCC depco-power, hãng ∅) → DPC164D (1 dòng, 1 NCC, hãng ∅) | phần còn lại "TAL-A40-D S0L1-P1"
    tên: ["DPC164D/TAL-A40-D/ S0L1-P1"]
    depco-power n2576 b580 r | Item NO.: ; DPK-DX-17 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; NC485BD ; PRP (kW): ; 12 ; PRP (kVA): ; 15 ; ESP (kW): ; 13 ; ESP (kVA): ; 17 ; Arrangement: ; 4L ; Gover
 
 [alternators gach] DPC164D/TALA40D/S0L1P1 (1 dòng, NCC depco-power, hãng ∅) → TALA40D (5 dòng, 3 NCC, hãng Leroy-Somer) | phần còn lại "DPC164D S0L1-P1"
-   tên: ["DPC164D/TAL-A40-D/ S0L1-P1"]
-   depco-power n2576 b580 r | Item NO.: ; DPK-DX-17 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; NC485BD ; PRP (kW): ; 12 ; PRP (kVA): ; 15 ; ESP (kW): ; 13 ; ESP (kVA): ; 17 ; Arrangement: ; 4L ; Gover
-
-[alternators gach] DPC164D/TALA40D/S0L1P1 (1 dòng, NCC depco-power, hãng ∅) → S0L1P1 (22 dòng, 10 NCC, hãng Stamford) | phần còn lại "DPC164D TAL-A40-D"
    tên: ["DPC164D/TAL-A40-D/ S0L1-P1"]
    depco-power n2576 b580 r | Item NO.: ; DPK-DX-17 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; NC485BD ; PRP (kW): ; 12 ; PRP (kVA): ; 15 ; ESP (kW): ; 13 ; ESP (kVA): ; 17 ; Arrangement: ; 4L ; Gover
 
@@ -4411,6 +4487,10 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["DPC184E/TAL-A40-F"]
    depco-power n2551 b555 r | Item NO.: ; DPK-DW-22 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Weichai ; Engine Model: ; WP2.3D25E200 ; PRP (kW): ; 16 ; PRP (kVA): ; 20 ; ESP (kW): ; 18 ; ESP (kVA): ; 22 ; Arrangement: ; 4L ; 
 
+[alternators gach] DPC184E/TALA40F/S0L2G1 (1 dòng, NCC depco-power, hãng ∅) → S0L2G1 (29 dòng, 9 NCC, hãng Stamford) | phần còn lại "DPC184E TAL-A40-F"
+   tên: ["DPC184E/TAL-A40-F/ S0L2-G1"]
+   depco-power n2575 b579 r | Item NO.: ; DPK-DX-22 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; C490BD ; PRP (kW): ; 16 ; PRP (kVA): ; 20 ; ESP (kW): ; 18 ; ESP (kVA): ; 22 ; Arrangement: ; 4L ; Govern
+
 [alternators gach] DPC184E/TALA40F/S0L2G1 (1 dòng, NCC depco-power, hãng ∅) → DPC184E (1 dòng, 1 NCC, hãng ∅) | phần còn lại "TAL-A40-F S0L2-G1"
    tên: ["DPC184E/TAL-A40-F/ S0L2-G1"]
    depco-power n2575 b579 r | Item NO.: ; DPK-DX-22 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; C490BD ; PRP (kW): ; 16 ; PRP (kVA): ; 20 ; ESP (kW): ; 18 ; ESP (kVA): ; 22 ; Arrangement: ; 4L ; Govern
@@ -4419,19 +4499,15 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["DPC184E/TAL-A40-F/ S0L2-G1"]
    depco-power n2575 b579 r | Item NO.: ; DPK-DX-22 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; C490BD ; PRP (kW): ; 16 ; PRP (kVA): ; 20 ; ESP (kW): ; 18 ; ESP (kVA): ; 22 ; Arrangement: ; 4L ; Govern
 
-[alternators gach] DPC184E/TALA40F/S0L2G1 (1 dòng, NCC depco-power, hãng ∅) → S0L2G1 (29 dòng, 9 NCC, hãng Stamford) | phần còn lại "DPC184E TAL-A40-F"
-   tên: ["DPC184E/TAL-A40-F/ S0L2-G1"]
-   depco-power n2575 b579 r | Item NO.: ; DPK-DX-22 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; C490BD ; PRP (kW): ; 16 ; PRP (kVA): ; 20 ; ESP (kW): ; 18 ; ESP (kVA): ; 22 ; Arrangement: ; 4L ; Govern
+[alternators gach] DPC184F/TALA40G/S0L2M1 (1 dòng, NCC depco-power, hãng ∅) → S0L2M1 (33 dòng, 10 NCC, hãng Stamford) | phần còn lại "DPC184F TAL-A40-G"
+   tên: ["DPC184F/TAL-A40-G/ S0L2-M1"]
+   depco-power n2574 b578 r | Item NO.: ; DPK-DX-28 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A495BD ; PRP (kW): ; 20 ; PRP (kVA): ; 25 ; ESP (kW): ; 22 ; ESP (kVA): ; 28 ; Arrangement: ; 4L ; Govern
 
 [alternators gach] DPC184F/TALA40G/S0L2M1 (1 dòng, NCC depco-power, hãng ∅) → DPC184F (3 dòng, 1 NCC, hãng ∅) | phần còn lại "TAL-A40-G S0L2-M1"
    tên: ["DPC184F/TAL-A40-G/ S0L2-M1"]
    depco-power n2574 b578 r | Item NO.: ; DPK-DX-28 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A495BD ; PRP (kW): ; 20 ; PRP (kVA): ; 25 ; ESP (kW): ; 22 ; ESP (kVA): ; 28 ; Arrangement: ; 4L ; Govern
 
 [alternators gach] DPC184F/TALA40G/S0L2M1 (1 dòng, NCC depco-power, hãng ∅) → TALA40G (11 dòng, 4 NCC, hãng ∅) | phần còn lại "DPC184F S0L2-M1"
-   tên: ["DPC184F/TAL-A40-G/ S0L2-M1"]
-   depco-power n2574 b578 r | Item NO.: ; DPK-DX-28 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A495BD ; PRP (kW): ; 20 ; PRP (kVA): ; 25 ; ESP (kW): ; 22 ; ESP (kVA): ; 28 ; Arrangement: ; 4L ; Govern
-
-[alternators gach] DPC184F/TALA40G/S0L2M1 (1 dòng, NCC depco-power, hãng ∅) → S0L2M1 (33 dòng, 10 NCC, hãng Stamford) | phần còn lại "DPC184F TAL-A40-G"
    tên: ["DPC184F/TAL-A40-G/ S0L2-M1"]
    depco-power n2574 b578 r | Item NO.: ; DPK-DX-28 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A495BD ; PRP (kW): ; 20 ; PRP (kVA): ; 25 ; ESP (kW): ; 22 ; ESP (kVA): ; 28 ; Arrangement: ; 4L ; Govern
 
@@ -4443,15 +4519,15 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["DPC184G/TAL-A42-C"]
    depco-power n2550 b554 r | Item NO.: ; DPK-DW-33 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Weichai ; Engine Model: ; WP2.3D33E200 ; PRP (kW): ; 24 ; PRP (kVA): ; 30 ; ESP (kW): ; 26 ; ESP (kVA): ; 33 ; Arrangement: ; 4L ; 
 
+[alternators gach] DPC184G/TALA42C/S0L2P1 (1 dòng, NCC depco-power, hãng ∅) → S0L2P1 (52 dòng, 11 NCC, hãng Stamford) | phần còn lại "DPC184G TAL-A42-C"
+   tên: ["DPC184G/TAL-A42-C/ S0L2-P1"]
+   depco-power n2573 b577 r | Item NO.: ; DPK-DX-33 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A498BD ; PRP (kW): ; 24 ; PRP (kVA): ; 30 ; ESP (kW): ; 26 ; ESP (kVA): ; 33 ; Arrangement: ; 4L ; Govern
+
 [alternators gach] DPC184G/TALA42C/S0L2P1 (1 dòng, NCC depco-power, hãng ∅) → DPC184G (1 dòng, 1 NCC, hãng ∅) | phần còn lại "TAL-A42-C S0L2-P1"
    tên: ["DPC184G/TAL-A42-C/ S0L2-P1"]
    depco-power n2573 b577 r | Item NO.: ; DPK-DX-33 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A498BD ; PRP (kW): ; 24 ; PRP (kVA): ; 30 ; ESP (kW): ; 26 ; ESP (kVA): ; 33 ; Arrangement: ; 4L ; Govern
 
 [alternators gach] DPC184G/TALA42C/S0L2P1 (1 dòng, NCC depco-power, hãng ∅) → TALA42C (17 dòng, 5 NCC, hãng ∅) | phần còn lại "DPC184G S0L2-P1"
-   tên: ["DPC184G/TAL-A42-C/ S0L2-P1"]
-   depco-power n2573 b577 r | Item NO.: ; DPK-DX-33 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A498BD ; PRP (kW): ; 24 ; PRP (kVA): ; 30 ; ESP (kW): ; 26 ; ESP (kVA): ; 33 ; Arrangement: ; 4L ; Govern
-
-[alternators gach] DPC184G/TALA42C/S0L2P1 (1 dòng, NCC depco-power, hãng ∅) → S0L2P1 (52 dòng, 11 NCC, hãng Stamford) | phần còn lại "DPC184G TAL-A42-C"
    tên: ["DPC184G/TAL-A42-C/ S0L2-P1"]
    depco-power n2573 b577 r | Item NO.: ; DPK-DX-33 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A498BD ; PRP (kW): ; 24 ; PRP (kVA): ; 30 ; ESP (kW): ; 26 ; ESP (kVA): ; 33 ; Arrangement: ; 4L ; Govern
 
@@ -4471,15 +4547,15 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["DPC184H/TAL-A42-E"]
    depco-power n2549 b553 r | Item NO.: ; DPK-DW-41 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Weichai ; Engine Model: ; WP2.3D40E200 ; PRP (kW): ; 30 ; PRP (kVA): ; 38 ; ESP (kW): ; 33 ; ESP (kVA): ; 41 ; Arrangement: ; 4L ; 
 
+[alternators gach] DPC184H/TALA42E/S1L2J1 (1 dòng, NCC depco-power, hãng ∅) → S1L2J1 (40 dòng, 9 NCC, hãng Stamford) | phần còn lại "DPC184H TAL-A42-E"
+   tên: ["DPC184H/TAL-A42-E/ S1L2-J1"]
+   depco-power n2572 b576 r | Item NO.: ; DPK-DX-40 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A498BZD ; PRP (kW): ; 27 ; PRP (kVA): ; 34 ; ESP (kW): ; 30 ; ESP (kVA): ; 38 ; Arrangement: ; 4L ; Gover
+
 [alternators gach] DPC184H/TALA42E/S1L2J1 (1 dòng, NCC depco-power, hãng ∅) → DPC184H (5 dòng, 1 NCC, hãng ∅) | phần còn lại "TAL-A42-E S1L2-J1"
    tên: ["DPC184H/TAL-A42-E/ S1L2-J1"]
    depco-power n2572 b576 r | Item NO.: ; DPK-DX-40 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A498BZD ; PRP (kW): ; 27 ; PRP (kVA): ; 34 ; ESP (kW): ; 30 ; ESP (kVA): ; 38 ; Arrangement: ; 4L ; Gover
 
 [alternators gach] DPC184H/TALA42E/S1L2J1 (1 dòng, NCC depco-power, hãng ∅) → TALA42E (13 dòng, 5 NCC, hãng Leroy-Somer) | phần còn lại "DPC184H S1L2-J1"
-   tên: ["DPC184H/TAL-A42-E/ S1L2-J1"]
-   depco-power n2572 b576 r | Item NO.: ; DPK-DX-40 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A498BZD ; PRP (kW): ; 27 ; PRP (kVA): ; 34 ; ESP (kW): ; 30 ; ESP (kVA): ; 38 ; Arrangement: ; 4L ; Gover
-
-[alternators gach] DPC184H/TALA42E/S1L2J1 (1 dòng, NCC depco-power, hãng ∅) → S1L2J1 (40 dòng, 9 NCC, hãng Stamford) | phần còn lại "DPC184H TAL-A42-E"
    tên: ["DPC184H/TAL-A42-E/ S1L2-J1"]
    depco-power n2572 b576 r | Item NO.: ; DPK-DX-40 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A498BZD ; PRP (kW): ; 27 ; PRP (kVA): ; 34 ; ESP (kW): ; 30 ; ESP (kVA): ; 38 ; Arrangement: ; 4L ; Gover
 
@@ -4503,6 +4579,10 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["DPC184J/S1L2-N1"]
    depco-power n2544 b548 r | Item NO.: ; DPK-DTY-45S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YT3A2Z-D ; PRP (kW): ; 33 ; PRP (kVA): ; 41 ; ESP (kW): ; 36 ; ESP (kVA): ; 45 ; Arrangement: ; 3L ; Govern
 
+[alternators gach] DPC184J/TALA42F/S1L2N1 (1 dòng, NCC depco-power, hãng ∅) → S1L2N1 (32 dòng, 10 NCC, hãng Stamford) | phần còn lại "DPC184J TAL-A42-F"
+   tên: ["DPC184J/TAL-A42-F/ S1L2-N1"]
+   depco-power n2571 b575 r | Item NO.: ; DPK-DX-50 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; 4D35ZD ; PRP (kW): ; 36 ; PRP (kVA): ; 45 ; ESP (kW): ; 40 ; ESP (kVA): ; 50 ; Arrangement: ; 4L ; Govern
+
 [alternators gach] DPC184J/TALA42F/S1L2N1 (1 dòng, NCC depco-power, hãng ∅) → DPC184J (2 dòng, 1 NCC, hãng ∅) | phần còn lại "TAL-A42-F S1L2-N1"
    tên: ["DPC184J/TAL-A42-F/ S1L2-N1"]
    depco-power n2571 b575 r | Item NO.: ; DPK-DX-50 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; 4D35ZD ; PRP (kW): ; 36 ; PRP (kVA): ; 45 ; ESP (kW): ; 40 ; ESP (kVA): ; 50 ; Arrangement: ; 4L ; Govern
@@ -4511,19 +4591,15 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["DPC184J/TAL-A42-F/ S1L2-N1"]
    depco-power n2571 b575 r | Item NO.: ; DPK-DX-50 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; 4D35ZD ; PRP (kW): ; 36 ; PRP (kVA): ; 45 ; ESP (kW): ; 40 ; ESP (kVA): ; 50 ; Arrangement: ; 4L ; Govern
 
-[alternators gach] DPC184J/TALA42F/S1L2N1 (1 dòng, NCC depco-power, hãng ∅) → S1L2N1 (32 dòng, 10 NCC, hãng Stamford) | phần còn lại "DPC184J TAL-A42-F"
-   tên: ["DPC184J/TAL-A42-F/ S1L2-N1"]
-   depco-power n2571 b575 r | Item NO.: ; DPK-DX-50 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; 4D35ZD ; PRP (kW): ; 36 ; PRP (kVA): ; 45 ; ESP (kW): ; 40 ; ESP (kVA): ; 50 ; Arrangement: ; 4L ; Govern
+[alternators gach] DPC224D/S1L2Y1/TALA42H (1 dòng, NCC depco-power, hãng ∅) → TALA42H (24 dòng, 7 NCC, hãng Leroy-Somer) | phần còn lại "DPC224D S1L2-Y1"
+   tên: ["DPC224D/S1L2-Y1/ TAL-A42-H"]
+   depco-power n2543 b547 r | Item NO.: ; DPK-DTY-60S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4B5-D ; PRP (kW): ; 44 ; PRP (kVA): ; 55 ; ESP (kW): ; 48 ; ESP (kVA): ; 61 ; Arrangement: ; 4L ; Governo
 
 [alternators gach] DPC224D/S1L2Y1/TALA42H (1 dòng, NCC depco-power, hãng ∅) → DPC224D (3 dòng, 1 NCC, hãng ∅) | phần còn lại "S1L2-Y1 TAL-A42-H"
    tên: ["DPC224D/S1L2-Y1/ TAL-A42-H"]
    depco-power n2543 b547 r | Item NO.: ; DPK-DTY-60S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4B5-D ; PRP (kW): ; 44 ; PRP (kVA): ; 55 ; ESP (kW): ; 48 ; ESP (kVA): ; 61 ; Arrangement: ; 4L ; Governo
 
 [alternators gach] DPC224D/S1L2Y1/TALA42H (1 dòng, NCC depco-power, hãng ∅) → S1L2Y1 (63 dòng, 13 NCC, hãng Stamford) | phần còn lại "DPC224D TAL-A42-H"
-   tên: ["DPC224D/S1L2-Y1/ TAL-A42-H"]
-   depco-power n2543 b547 r | Item NO.: ; DPK-DTY-60S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4B5-D ; PRP (kW): ; 44 ; PRP (kVA): ; 55 ; ESP (kW): ; 48 ; ESP (kVA): ; 61 ; Arrangement: ; 4L ; Governo
-
-[alternators gach] DPC224D/S1L2Y1/TALA42H (1 dòng, NCC depco-power, hãng ∅) → TALA42H (24 dòng, 7 NCC, hãng Leroy-Somer) | phần còn lại "DPC224D S1L2-Y1"
    tên: ["DPC224D/S1L2-Y1/ TAL-A42-H"]
    depco-power n2543 b547 r | Item NO.: ; DPK-DTY-60S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4B5-D ; PRP (kW): ; 44 ; PRP (kVA): ; 55 ; ESP (kW): ; 48 ; ESP (kVA): ; 61 ; Arrangement: ; 4L ; Governo
 
@@ -4535,15 +4611,15 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["DPC224D/TAL-A42-G"]
    depco-power n2548 b552 r | Item NO.: ; DPK-DW-55 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Weichai ; Engine Model: ; WP2.3D48E200 ; PRP (kW): ; 40 ; PRP (kVA): ; 50 ; ESP (kW): ; 44 ; ESP (kVA): ; 55 ; Arrangement: ; 4L ; 
 
+[alternators gach] DPC224D/TALA42G/S1L2R1 (1 dòng, NCC depco-power, hãng ∅) → S1L2R1 (15 dòng, 8 NCC, hãng Stamford) | phần còn lại "DPC224D TAL-A42-G"
+   tên: ["DPC224D/TAL-A42-G/ S1L2-R1"]
+   depco-power n2570 b574 r | Item NO.: ; DPK-DX-55 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; 4D35ZD ; PRP (kW): ; 40 ; PRP (kVA): ; 50 ; ESP (kW): ; 44 ; ESP (kVA): ; 55 ; Arrangement: ; 4L ; Govern
+
 [alternators gach] DPC224D/TALA42G/S1L2R1 (1 dòng, NCC depco-power, hãng ∅) → DPC224D (3 dòng, 1 NCC, hãng ∅) | phần còn lại "TAL-A42-G S1L2-R1"
    tên: ["DPC224D/TAL-A42-G/ S1L2-R1"]
    depco-power n2570 b574 r | Item NO.: ; DPK-DX-55 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; 4D35ZD ; PRP (kW): ; 40 ; PRP (kVA): ; 50 ; ESP (kW): ; 44 ; ESP (kVA): ; 55 ; Arrangement: ; 4L ; Govern
 
 [alternators gach] DPC224D/TALA42G/S1L2R1 (1 dòng, NCC depco-power, hãng ∅) → TALA42G (6 dòng, 4 NCC, hãng Leroy-Somer) | phần còn lại "DPC224D S1L2-R1"
-   tên: ["DPC224D/TAL-A42-G/ S1L2-R1"]
-   depco-power n2570 b574 r | Item NO.: ; DPK-DX-55 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; 4D35ZD ; PRP (kW): ; 40 ; PRP (kVA): ; 50 ; ESP (kW): ; 44 ; ESP (kVA): ; 55 ; Arrangement: ; 4L ; Govern
-
-[alternators gach] DPC224D/TALA42G/S1L2R1 (1 dòng, NCC depco-power, hãng ∅) → S1L2R1 (15 dòng, 8 NCC, hãng Stamford) | phần còn lại "DPC224D TAL-A42-G"
    tên: ["DPC224D/TAL-A42-G/ S1L2-R1"]
    depco-power n2570 b574 r | Item NO.: ; DPK-DX-55 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; 4D35ZD ; PRP (kW): ; 40 ; PRP (kVA): ; 50 ; ESP (kW): ; 44 ; ESP (kVA): ; 55 ; Arrangement: ; 4L ; Govern
 
@@ -4587,15 +4663,15 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["DPC224F/TAL-A42-H/ECP32 2M4C"]
    depco-power n2161 b165 r | Item NO.: ; DPK-DSE-75 ; Frequency(Hz): ; 60 ; Phase: ; 3 ; Voltage(V): ; 440 ; Engine: ; SDEC ; Engine Model: ; 4HT4.3-G22 ; PRP (kW): ; 55 ; PRP (kVA): ; 69 ; ESP (kW): ; 61 ; ESP (kVA): ; 76 ; Arrangement: ; 4L ; Gove
 
+[alternators gach] DPC224F/TALA44C/UCI224F (1 dòng, NCC depco-power, hãng ∅) → UCI224F (45 dòng, 17 NCC, hãng Stamford) | phần còn lại "DPC224F TAL-A44-C"
+   tên: ["DPC224F/TAL-A44-C/ UCI224F"]
+   depco-power n2567 b571 r | Item NO.: ; DPK-DX-80 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A4K41LD31 ; PRP (kW): ; 58 ; PRP (kVA): ; 73 ; ESP (kW): ; 64 ; ESP (kVA): ; 80 ; Arrangement: ; 4L ; Gov
+
 [alternators gach] DPC224F/TALA44C/UCI224F (1 dòng, NCC depco-power, hãng ∅) → DPC224F (3 dòng, 1 NCC, hãng ∅) | phần còn lại "TAL-A44-C UCI224F"
    tên: ["DPC224F/TAL-A44-C/ UCI224F"]
    depco-power n2567 b571 r | Item NO.: ; DPK-DX-80 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A4K41LD31 ; PRP (kW): ; 58 ; PRP (kVA): ; 73 ; ESP (kW): ; 64 ; ESP (kVA): ; 80 ; Arrangement: ; 4L ; Gov
 
 [alternators gach] DPC224F/TALA44C/UCI224F (1 dòng, NCC depco-power, hãng ∅) → TALA44C (23 dòng, 7 NCC, hãng Leroy-Somer) | phần còn lại "DPC224F UCI224F"
-   tên: ["DPC224F/TAL-A44-C/ UCI224F"]
-   depco-power n2567 b571 r | Item NO.: ; DPK-DX-80 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A4K41LD31 ; PRP (kW): ; 58 ; PRP (kVA): ; 73 ; ESP (kW): ; 64 ; ESP (kVA): ; 80 ; Arrangement: ; 4L ; Gov
-
-[alternators gach] DPC224F/TALA44C/UCI224F (1 dòng, NCC depco-power, hãng ∅) → UCI224F (45 dòng, 17 NCC, hãng Stamford) | phần còn lại "DPC224F TAL-A44-C"
    tên: ["DPC224F/TAL-A44-C/ UCI224F"]
    depco-power n2567 b571 r | Item NO.: ; DPK-DX-80 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A4K41LD31 ; PRP (kW): ; 58 ; PRP (kVA): ; 73 ; ESP (kW): ; 64 ; ESP (kVA): ; 80 ; Arrangement: ; 4L ; Gov
 
@@ -4739,11 +4815,11 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["DPC314EL/ S4L1S-E4"]
    depco-power n2057 b61 r | Item NO.: ; DPK-DTY-375S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YM6S9L-D ; PRP (kW): ; 270 ; PRP (kVA): ; 338 ; ESP (kW): ; 300 ; ESP (kVA): ; 375 ; Arrangement: ; 6L ; G
 
-[alternators gach] DPC314F/S4L1SF4 (1 dòng, NCC depco-power, hãng Stamford) → DPC314F (8 dòng, 1 NCC, hãng ∅) | phần còn lại "S4L1S-F4"
+[alternators gach] DPC314F/S4L1SF4 (1 dòng, NCC depco-power, hãng Stamford) → S4L1SF4 (2 dòng, 1 NCC, hãng Stamford) | phần còn lại "DPC314F"
    tên: ["DPC314F/ S4L1S-F4"]
    depco-power n2056 b60 r | Item NO.: ; DPK-DTY-426S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YM6S9L-DB ; PRP (kW): ; 310 ; PRP (kVA): ; 388 ; ESP (kW): ; 341 ; ESP (kVA): ; 426 ; Arrangement: ; 6L ; 
 
-[alternators gach] DPC314F/S4L1SF4 (1 dòng, NCC depco-power, hãng Stamford) → S4L1SF4 (2 dòng, 1 NCC, hãng Stamford) | phần còn lại "DPC314F"
+[alternators gach] DPC314F/S4L1SF4 (1 dòng, NCC depco-power, hãng Stamford) → DPC314F (8 dòng, 1 NCC, hãng ∅) | phần còn lại "S4L1S-F4"
    tên: ["DPC314F/ S4L1S-F4"]
    depco-power n2056 b60 r | Item NO.: ; DPK-DTY-426S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YM6S9L-DB ; PRP (kW): ; 310 ; PRP (kVA): ; 388 ; ESP (kW): ; 341 ; ESP (kVA): ; 426 ; Arrangement: ; 6L ; 
 
@@ -4787,11 +4863,11 @@ nguồn web: 309 NCC, 6864 khoá động cơ, 2661 khoá đầu phát; 1059 kho�
    tên: ["DPC354E/TAL-A473-E"]
    depco-power n2077 b81 r | Item NO.: ; DPK-DW-625 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Weichai ; Engine Model: ; 6M33D572E200 ; PRP (kW): ; 460 ; PRP (kVA): ; 575 ; ESP (kW): ; 500 ; ESP (kVA): ; 625 ; Arrangement: ; 
 
-[alternators gach] DPC354F/TALA473E (1 dòng, NCC depco-power, hãng Leroy-Somer) → DPC354F (2 dòng, 1 NCC, hãng ∅) | phần còn lại "TAL-A473-E"
+[alternators gach] DPC354F/TALA473E (1 dòng, NCC depco-power, hãng Leroy-Somer) → TALA473E (15 dòng, 5 NCC, hãng Leroy-Somer) | phần còn lại "DPC354F"
    tên: ["DPC354F/ TAL-A473-E"]
    depco-power n2139 b143 r | Item NO.: ; DPK-DSE-813 ; Frequency(Hz): ; 60 ; Phase: ; 3 ; Voltage(V): ; 440 ; Engine: ; SDEC ; Engine Model: ; 6KTAA25-G32.1 ; PRP (kW): ; 590 ; PRP (kVA): ; 738 ; ESP (kW): ; 650 ; ESP (kVA): ; 813 ; Arrangement: ; 6
 
-[alternators gach] DPC354F/TALA473E (1 dòng, NCC depco-power, hãng Leroy-Somer) → TALA473E (15 dòng, 5 NCC, hãng Leroy-Somer) | phần còn lại "DPC354F"
+[alternators gach] DPC354F/TALA473E (1 dòng, NCC depco-power, hãng Leroy-Somer) → DPC354F (2 dòng, 1 NCC, hãng ∅) | phần còn lại "TAL-A473-E"
    tên: ["DPC354F/ TAL-A473-E"]
    depco-power n2139 b143 r | Item NO.: ; DPK-DSE-813 ; Frequency(Hz): ; 60 ; Phase: ; 3 ; Voltage(V): ; 440 ; Engine: ; SDEC ; Engine Model: ; 6KTAA25-G32.1 ; PRP (kW): ; 590 ; PRP (kVA): ; 738 ; ESP (kW): ; 650 ; ESP (kVA): ; 813 ; Arrangement: ; 6
 

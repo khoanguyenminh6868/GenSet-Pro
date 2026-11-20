@@ -7392,19 +7392,18 @@
    "403A-11G1/ 403D-11G",
    "403A-11G1/403D-11G"
   ],
-  "target": "403A11G1",
+  "target": "403D11G",
   "targetNames": [
-   "403A-11G1",
-   "403A-11 G1"
+   "403D-11G"
   ],
-  "rest": "403D-11G",
+  "rest": "403A-11G1",
   "rows": 2,
   "sups": [
    "victory-generator",
    "westinpower"
   ],
-  "tRows": 63,
-  "tSups": 47,
+  "tRows": 113,
+  "tSups": 58,
   "make": "Perkins",
   "tMake": "Perkins",
   "uses": [
@@ -7420,18 +7419,19 @@
    "403A-11G1/ 403D-11G",
    "403A-11G1/403D-11G"
   ],
-  "target": "403D11G",
+  "target": "403A11G1",
   "targetNames": [
-   "403D-11G"
+   "403A-11G1",
+   "403A-11 G1"
   ],
-  "rest": "403A-11G1",
+  "rest": "403D-11G",
   "rows": 2,
   "sups": [
    "victory-generator",
    "westinpower"
   ],
-  "tRows": 113,
-  "tSups": 58,
+  "tRows": 63,
+  "tSups": 47,
   "make": "Perkins",
   "tMake": "Perkins",
   "uses": [
@@ -7473,18 +7473,18 @@
    "404A-22G1/ 404D-22G",
    "404A-22G1/404D-22G"
   ],
-  "target": "404A22G1",
+  "target": "404D22G",
   "targetNames": [
-   "404A-22G1"
+   "404D-22G"
   ],
-  "rest": "404D-22G",
+  "rest": "404A-22G1",
   "rows": 2,
   "sups": [
    "victory-generator",
    "westinpower"
   ],
-  "tRows": 80,
-  "tSups": 60,
+  "tRows": 119,
+  "tSups": 63,
   "make": "Perkins",
   "tMake": "Perkins",
   "uses": [
@@ -7500,18 +7500,18 @@
    "404A-22G1/ 404D-22G",
    "404A-22G1/404D-22G"
   ],
-  "target": "404D22G",
+  "target": "404A22G1",
   "targetNames": [
-   "404D-22G"
+   "404A-22G1"
   ],
-  "rest": "404A-22G1",
+  "rest": "404D-22G",
   "rows": 2,
   "sups": [
    "victory-generator",
    "westinpower"
   ],
-  "tRows": 119,
-  "tSups": 63,
+  "tRows": 80,
+  "tSups": 60,
   "make": "Perkins",
   "tMake": "Perkins",
   "uses": [
@@ -8473,6 +8473,56 @@
  {
   "kind": "engines",
   "sep": "ngoac",
+  "key": "12M33G14D3/5(12M33G1650/5)",
+  "names": [
+   "12M33G14D3/5 (12M33G1650/5)"
+  ],
+  "target": "12M33G14D3/5",
+  "targetNames": [
+   "12M33G14D3/5"
+  ],
+  "rest": "12M33G1650/5",
+  "rows": 2,
+  "sups": [
+   "kaihua-genset"
+  ],
+  "tRows": 7,
+  "tSups": 5,
+  "make": "Baudouin",
+  "tMake": "Baudouin",
+  "uses": [
+   "kaihua-genset n119 b23 r29 | | HC-BD1650 | 1650 | 1500 | 12M33G14D3/5 (12M33G1650/5) | PI 734C1 | | | Download",
+   "kaihua-genset n127 b33 r29 | | HC-BD1650 | 1650 | 1500 | 12M33G14D3/5 (12M33G1650/5) | PI 734C1 | — | — | Download"
+  ]
+ },
+ {
+  "kind": "engines",
+  "sep": "ngoac",
+  "key": "12M33G14D3/5(12M33G1650/5)",
+  "names": [
+   "12M33G14D3/5 (12M33G1650/5)"
+  ],
+  "target": "12M33G1650/5",
+  "targetNames": [
+   "12M33G1650/5"
+  ],
+  "rest": "12M33G14D3/5",
+  "rows": 2,
+  "sups": [
+   "kaihua-genset"
+  ],
+  "tRows": 29,
+  "tSups": 22,
+  "make": "Baudouin",
+  "tMake": "Baudouin",
+  "uses": [
+   "kaihua-genset n119 b23 r29 | | HC-BD1650 | 1650 | 1500 | 12M33G14D3/5 (12M33G1650/5) | PI 734C1 | | | Download",
+   "kaihua-genset n127 b33 r29 | | HC-BD1650 | 1650 | 1500 | 12M33G14D3/5 (12M33G1650/5) | PI 734C1 | — | — | Download"
+  ]
+ },
+ {
+  "kind": "engines",
+  "sep": "ngoac",
   "key": "12V4000G14F(3B)",
   "names": [
    "12V4000G14F(3B)"
@@ -8627,17 +8677,18 @@
   "names": [
    "4012-46TWG4A/ 4012-46TAG2A"
   ],
-  "target": "401246TWG4A",
+  "target": "401246TAG2A",
   "targetNames": [
-   "4012-46TWG4A"
+   "4012-46TAG2A",
+   "4012-46 TAG2A"
   ],
-  "rest": "4012-46TAG2A",
+  "rest": "4012-46TWG4A",
   "rows": 2,
   "sups": [
    "victory-generator"
   ],
-  "tRows": 7,
-  "tSups": 5,
+  "tRows": 129,
+  "tSups": 77,
   "make": "Perkins",
   "tMake": "Perkins",
   "uses": [
@@ -8652,18 +8703,17 @@
   "names": [
    "4012-46TWG4A/ 4012-46TAG2A"
   ],
-  "target": "401246TAG2A",
+  "target": "401246TWG4A",
   "targetNames": [
-   "4012-46TAG2A",
-   "4012-46 TAG2A"
+   "4012-46TWG4A"
   ],
-  "rest": "4012-46TWG4A",
+  "rest": "4012-46TAG2A",
   "rows": 2,
   "sups": [
    "victory-generator"
   ],
-  "tRows": 129,
-  "tSups": 77,
+  "tRows": 7,
+  "tSups": 5,
   "make": "Perkins",
   "tMake": "Perkins",
   "uses": [
@@ -8778,18 +8828,18 @@
   "names": [
    "4B3.9-G1/ 4B3.9-G2"
   ],
-  "target": "4B39G1",
+  "target": "4B39G2",
   "targetNames": [
-   "4B3.9-G1",
-   "4B3.9-G 1"
+   "4B3.9-G2",
+   "4B3.9G2"
   ],
-  "rest": "4B3.9-G2",
+  "rest": "4B3.9-G1",
   "rows": 2,
   "sups": [
    "victory-generator"
   ],
-  "tRows": 96,
-  "tSups": 62,
+  "tRows": 162,
+  "tSups": 78,
   "make": "Cummins",
   "tMake": "Cummins",
   "uses": [
@@ -8804,18 +8854,18 @@
   "names": [
    "4B3.9-G1/ 4B3.9-G2"
   ],
-  "target": "4B39G2",
+  "target": "4B39G1",
   "targetNames": [
-   "4B3.9-G2",
-   "4B3.9G2"
+   "4B3.9-G1",
+   "4B3.9-G 1"
   ],
-  "rest": "4B3.9-G1",
+  "rest": "4B3.9-G2",
   "rows": 2,
   "sups": [
    "victory-generator"
   ],
-  "tRows": 162,
-  "tSups": 78,
+  "tRows": 96,
+  "tSups": 62,
   "make": "Cummins",
   "tMake": "Cummins",
   "uses": [
@@ -10380,6 +10430,31 @@
  {
   "kind": "engines",
   "sep": "gach",
+  "key": "WP10D320E2006M16G350/5",
+  "names": [
+   "WP10D320E200 6M16G350/5"
+  ],
+  "target": "6M16G350/5",
+  "targetNames": [
+   "6M16G350/5"
+  ],
+  "rest": "WP10D320E200",
+  "rows": 2,
+  "sups": [
+   "kaihua-genset"
+  ],
+  "tRows": 27,
+  "tSups": 22,
+  "make": "Baudouin",
+  "tMake": "Baudouin",
+  "uses": [
+   "kaihua-genset n119 b23 r9 | | HC-BD350 | 350 | 320 | WP10D320E200 6M16G350/5 | S4L1D-E41 | | 4090*1460*2150 | Download",
+   "kaihua-genset n127 b33 r9 | | HC-BD350 | 350 | 320 | WP10D320E200 6M16G350/5 | S4L1D-E41 | — | 4090*1460*2150 | Download"
+  ]
+ },
+ {
+  "kind": "engines",
+  "sep": "gach",
   "key": "WP13D385E2006M21G385/5",
   "names": [
    "WP13D385E200 6M21G385/5"
@@ -10397,6 +10472,31 @@
   "tSups": 44,
   "make": "Baudouin",
   "tMake": "Weichai",
+  "uses": [
+   "kaihua-genset n119 b23 r10 | | HC-BD385 | 385 | 350 | WP13D385E200 6M21G385/5 | S4L1D-E41 | | 4230*1460*2150 | Download",
+   "kaihua-genset n127 b33 r10 | | HC-BD385 | 385 | 350 | WP13D385E200 6M21G385/5 | S4L1D-E41 | — | 4230*1460*2150 | Download"
+  ]
+ },
+ {
+  "kind": "engines",
+  "sep": "gach",
+  "key": "WP13D385E2006M21G385/5",
+  "names": [
+   "WP13D385E200 6M21G385/5"
+  ],
+  "target": "6M21G385/5",
+  "targetNames": [
+   "6M21G385/5"
+  ],
+  "rest": "WP13D385E200",
+  "rows": 2,
+  "sups": [
+   "kaihua-genset"
+  ],
+  "tRows": 4,
+  "tSups": 4,
+  "make": "Baudouin",
+  "tMake": "Baudouin",
   "uses": [
    "kaihua-genset n119 b23 r10 | | HC-BD385 | 385 | 350 | WP13D385E200 6M21G385/5 | S4L1D-E41 | | 4230*1460*2150 | Download",
    "kaihua-genset n127 b33 r10 | | HC-BD385 | 385 | 350 | WP13D385E200 6M21G385/5 | S4L1D-E41 | — | 4230*1460*2150 | Download"
@@ -10608,17 +10708,17 @@
   "names": [
    "1104A-44TG1/ 1104D-E44TG1"
   ],
-  "target": "1104A44TG1",
+  "target": "1104DE44TG1",
   "targetNames": [
-   "1104A-44TG1"
+   "1104D-E44TG1"
   ],
-  "rest": "1104D-E44TG1",
+  "rest": "1104A-44TG1",
   "rows": 1,
   "sups": [
    "victory-generator"
   ],
-  "tRows": 134,
-  "tSups": 79,
+  "tRows": 8,
+  "tSups": 8,
   "make": "Perkins",
   "tMake": "Perkins",
   "uses": [
@@ -10632,17 +10732,17 @@
   "names": [
    "1104A-44TG1/ 1104D-E44TG1"
   ],
-  "target": "1104DE44TG1",
+  "target": "1104A44TG1",
   "targetNames": [
-   "1104D-E44TG1"
+   "1104A-44TG1"
   ],
-  "rest": "1104A-44TG1",
+  "rest": "1104D-E44TG1",
   "rows": 1,
   "sups": [
    "victory-generator"
   ],
-  "tRows": 8,
-  "tSups": 8,
+  "tRows": 134,
+  "tSups": 79,
   "make": "Perkins",
   "tMake": "Perkins",
   "uses": [
@@ -10680,30 +10780,6 @@
   "names": [
    "1104C-44TAG2/ 1104D-E44TAG2"
   ],
-  "target": "1104C44TAG2",
-  "targetNames": [
-   "1104C-44TAG2"
-  ],
-  "rest": "1104D-E44TAG2",
-  "rows": 1,
-  "sups": [
-   "victory-generator"
-  ],
-  "tRows": 152,
-  "tSups": 84,
-  "make": "Perkins",
-  "tMake": "Perkins",
-  "uses": [
-   "victory-generator n112 b17 r47 | | V100P | 60 | 92 | 115 | 100 | 125 | 1104C-44TAG2/ 1104D-E44TAG2 | 26.9 | 4 | 105 | 127 | 8 | 12.6 | 2220*750*1530 | 1054"
-  ]
- },
- {
-  "kind": "engines",
-  "sep": "gach",
-  "key": "1104C44TAG2/1104DE44TAG2",
-  "names": [
-   "1104C-44TAG2/ 1104D-E44TAG2"
-  ],
   "target": "1104DE44TAG2",
   "targetNames": [
    "1104D-E44TAG2",
@@ -10725,25 +10801,25 @@
  {
   "kind": "engines",
   "sep": "gach",
-  "key": "1104D44TG1/1103A33TG2",
+  "key": "1104C44TAG2/1104DE44TAG2",
   "names": [
-   "1104D-44TG1/ 1103A-33TG2"
+   "1104C-44TAG2/ 1104D-E44TAG2"
   ],
-  "target": "1104D44TG1",
+  "target": "1104C44TAG2",
   "targetNames": [
-   "1104D-44TG1"
+   "1104C-44TAG2"
   ],
-  "rest": "1103A-33TG2",
+  "rest": "1104D-E44TAG2",
   "rows": 1,
   "sups": [
    "victory-generator"
   ],
-  "tRows": 11,
-  "tSups": 11,
+  "tRows": 152,
+  "tSups": 84,
   "make": "Perkins",
   "tMake": "Perkins",
   "uses": [
-   "victory-generator n112 b17 r44 | | V60P | 60 | 54 | 68 | 60 | 75 | 1104D-44TG1/ 1103A-33TG2 | 16 | 4 | 105 | 127 | 8 | 13 | 1950*750*1430 | 1054"
+   "victory-generator n112 b17 r47 | | V100P | 60 | 92 | 115 | 100 | 125 | 1104C-44TAG2/ 1104D-E44TAG2 | 26.9 | 4 | 105 | 127 | 8 | 12.6 | 2220*750*1530 | 1054"
   ]
  },
  {
@@ -10764,6 +10840,30 @@
   ],
   "tRows": 149,
   "tSups": 81,
+  "make": "Perkins",
+  "tMake": "Perkins",
+  "uses": [
+   "victory-generator n112 b17 r44 | | V60P | 60 | 54 | 68 | 60 | 75 | 1104D-44TG1/ 1103A-33TG2 | 16 | 4 | 105 | 127 | 8 | 13 | 1950*750*1430 | 1054"
+  ]
+ },
+ {
+  "kind": "engines",
+  "sep": "gach",
+  "key": "1104D44TG1/1103A33TG2",
+  "names": [
+   "1104D-44TG1/ 1103A-33TG2"
+  ],
+  "target": "1104D44TG1",
+  "targetNames": [
+   "1104D-44TG1"
+  ],
+  "rest": "1103A-33TG2",
+  "rows": 1,
+  "sups": [
+   "victory-generator"
+  ],
+  "tRows": 11,
+  "tSups": 11,
   "make": "Perkins",
   "tMake": "Perkins",
   "uses": [
@@ -10900,18 +11000,17 @@
   "names": [
    "1106A-70TAG2/ 1106D-E70TAG2"
   ],
-  "target": "1106A70TAG2",
+  "target": "1106DE70TAG2",
   "targetNames": [
-   "1106A-70TAG2",
-   "1106A 70TAG2"
+   "1106D-E70TAG2"
   ],
-  "rest": "1106D-E70TAG2",
+  "rest": "1106A-70TAG2",
   "rows": 1,
   "sups": [
    "victory-generator"
   ],
-  "tRows": 141,
-  "tSups": 82,
+  "tRows": 29,
+  "tSups": 21,
   "make": "Perkins",
   "tMake": "Perkins",
   "uses": [
@@ -10925,17 +11024,18 @@
   "names": [
    "1106A-70TAG2/ 1106D-E70TAG2"
   ],
-  "target": "1106DE70TAG2",
+  "target": "1106A70TAG2",
   "targetNames": [
-   "1106D-E70TAG2"
+   "1106A-70TAG2",
+   "1106A 70TAG2"
   ],
-  "rest": "1106A-70TAG2",
+  "rest": "1106D-E70TAG2",
   "rows": 1,
   "sups": [
    "victory-generator"
   ],
-  "tRows": 29,
-  "tSups": 21,
+  "tRows": 141,
+  "tSups": 82,
   "make": "Perkins",
   "tMake": "Perkins",
   "uses": [
@@ -10974,17 +11074,17 @@
   "names": [
    "1106A-70TG1/ 1106D-E70TAG3"
   ],
-  "target": "1106A70TG1",
+  "target": "1106DE70TAG3",
   "targetNames": [
-   "1106A-70TG1"
+   "1106D-E70TAG3"
   ],
-  "rest": "1106D-E70TAG3",
+  "rest": "1106A-70TG1",
   "rows": 1,
   "sups": [
    "ettes-power"
   ],
-  "tRows": 137,
-  "tSups": 75,
+  "tRows": 27,
+  "tSups": 20,
   "make": "Perkins",
   "tMake": "Perkins",
   "uses": [
@@ -10998,17 +11098,17 @@
   "names": [
    "1106A-70TG1/ 1106D-E70TAG3"
   ],
-  "target": "1106DE70TAG3",
+  "target": "1106A70TG1",
   "targetNames": [
-   "1106D-E70TAG3"
+   "1106A-70TG1"
   ],
-  "rest": "1106A-70TG1",
+  "rest": "1106D-E70TAG3",
   "rows": 1,
   "sups": [
    "ettes-power"
   ],
-  "tRows": 27,
-  "tSups": 20,
+  "tRows": 137,
+  "tSups": 75,
   "make": "Perkins",
   "tMake": "Perkins",
   "uses": [
@@ -13229,30 +13329,6 @@
   "names": [
    "4012-46TWG3A/ 4012-46TAG1A"
   ],
-  "target": "401246TWG3A",
-  "targetNames": [
-   "4012-46TWG3A"
-  ],
-  "rest": "4012-46TAG1A",
-  "rows": 1,
-  "sups": [
-   "victory-generator"
-  ],
-  "tRows": 72,
-  "tSups": 48,
-  "make": "Perkins",
-  "tMake": "Perkins",
-  "uses": [
-   "victory-generator n112 b17 r32 | | V1200P | 50 | 1100 | 1375 | 1200 | 1500 | 4012-46TWG3A/ 4012-46TAG1A | 283 | 12 | 160 | 190 | 177 | 201 | 4760*2020*2481 | 8987"
-  ]
- },
- {
-  "kind": "engines",
-  "sep": "gach",
-  "key": "401246TWG3A/401246TAG1A",
-  "names": [
-   "4012-46TWG3A/ 4012-46TAG1A"
-  ],
   "target": "401246TAG1A",
   "targetNames": [
    "4012-46TAG1A"
@@ -13273,25 +13349,25 @@
  {
   "kind": "engines",
   "sep": "gach",
-  "key": "403A15G1/403D15G",
+  "key": "401246TWG3A/401246TAG1A",
   "names": [
-   "403A-15G1/ 403D-15G"
+   "4012-46TWG3A/ 4012-46TAG1A"
   ],
-  "target": "403A15G1",
+  "target": "401246TWG3A",
   "targetNames": [
-   "403A-15G1"
+   "4012-46TWG3A"
   ],
-  "rest": "403D-15G",
+  "rest": "4012-46TAG1A",
   "rows": 1,
   "sups": [
    "victory-generator"
   ],
-  "tRows": 76,
-  "tSups": 55,
+  "tRows": 72,
+  "tSups": 48,
   "make": "Perkins",
   "tMake": "Perkins",
   "uses": [
-   "victory-generator n112 b17 r1 | | V11P | 50 | 10.4 | 13 | 11 | 14 | 403A-15G1/ 403D-15G | 3.7 | 3 | 84 | 90 | 6 | 6 | 1480*750*1270 | 469"
+   "victory-generator n112 b17 r32 | | V1200P | 50 | 1100 | 1375 | 1200 | 1500 | 4012-46TWG3A/ 4012-46TAG1A | 283 | 12 | 160 | 190 | 177 | 201 | 4760*2020*2481 | 8987"
   ]
  },
  {
@@ -13312,6 +13388,30 @@
   ],
   "tRows": 120,
   "tSups": 60,
+  "make": "Perkins",
+  "tMake": "Perkins",
+  "uses": [
+   "victory-generator n112 b17 r1 | | V11P | 50 | 10.4 | 13 | 11 | 14 | 403A-15G1/ 403D-15G | 3.7 | 3 | 84 | 90 | 6 | 6 | 1480*750*1270 | 469"
+  ]
+ },
+ {
+  "kind": "engines",
+  "sep": "gach",
+  "key": "403A15G1/403D15G",
+  "names": [
+   "403A-15G1/ 403D-15G"
+  ],
+  "target": "403A15G1",
+  "targetNames": [
+   "403A-15G1"
+  ],
+  "rest": "403D-15G",
+  "rows": 1,
+  "sups": [
+   "victory-generator"
+  ],
+  "tRows": 76,
+  "tSups": 55,
   "make": "Perkins",
   "tMake": "Perkins",
   "uses": [
@@ -13421,19 +13521,18 @@
   "names": [
    "4BT3.9-G1/ 4BT3.9-G2"
   ],
-  "target": "4BT39G1",
+  "target": "4BT39G2",
   "targetNames": [
-   "4BT3.9-G1",
-   "4BT3.9-G 1",
-   "4BT3.9G1"
+   "4BT3.9-G2",
+   "4BT3.9G2"
   ],
-  "rest": "4BT3.9-G2",
+  "rest": "4BT3.9-G1",
   "rows": 1,
   "sups": [
    "victory-generator"
   ],
-  "tRows": 122,
-  "tSups": 69,
+  "tRows": 161,
+  "tSups": 84,
   "make": "Cummins",
   "tMake": "Cummins",
   "uses": [
@@ -13447,18 +13546,19 @@
   "names": [
    "4BT3.9-G1/ 4BT3.9-G2"
   ],
-  "target": "4BT39G2",
+  "target": "4BT39G1",
   "targetNames": [
-   "4BT3.9-G2",
-   "4BT3.9G2"
+   "4BT3.9-G1",
+   "4BT3.9-G 1",
+   "4BT3.9G1"
   ],
-  "rest": "4BT3.9-G1",
+  "rest": "4BT3.9-G2",
   "rows": 1,
   "sups": [
    "victory-generator"
   ],
-  "tRows": 161,
-  "tSups": 84,
+  "tRows": 122,
+  "tSups": 69,
   "make": "Cummins",
   "tMake": "Cummins",
   "uses": [
@@ -13664,6 +13764,30 @@
   "names": [
    "4M10G100/6 WP4.1D115E201"
   ],
+  "target": "4M10G100/6",
+  "targetNames": [
+   "4M10G100/6"
+  ],
+  "rest": "WP4.1D115E201",
+  "rows": 1,
+  "sups": [
+   "kaihua-genset"
+  ],
+  "tRows": 9,
+  "tSups": 9,
+  "make": "Baudouin",
+  "tMake": "Baudouin",
+  "uses": [
+   "kaihua-genset n119 b23 r44 | | HC-BD125-60 | 125 | 112 | 4M10G100/6 WP4.1D115E201 | UCI 274C1 | | 2810*1140*1830 | Download"
+  ]
+ },
+ {
+  "kind": "engines",
+  "sep": "gach",
+  "key": "4M10G100/6WP41D115E201",
+  "names": [
+   "4M10G100/6 WP4.1D115E201"
+  ],
   "target": "WP41D115E201",
   "targetNames": [
    "WP4.1D115E201"
@@ -13679,6 +13803,30 @@
   "tMake": "Weichai",
   "uses": [
    "kaihua-genset n119 b23 r44 | | HC-BD125-60 | 125 | 112 | 4M10G100/6 WP4.1D115E201 | UCI 274C1 | | 2810*1140*1830 | Download"
+  ]
+ },
+ {
+  "kind": "engines",
+  "sep": "gach",
+  "key": "4M10G83/6WP41D95E201",
+  "names": [
+   "4M10G83/6 WP4.1D95E201"
+  ],
+  "target": "4M10G83/6",
+  "targetNames": [
+   "4M10G83/6"
+  ],
+  "rest": "WP4.1D95E201",
+  "rows": 1,
+  "sups": [
+   "kaihua-genset"
+  ],
+  "tRows": 11,
+  "tSups": 11,
+  "make": "Baudouin",
+  "tMake": "Baudouin",
+  "uses": [
+   "kaihua-genset n119 b23 r43 | | HC-BD100-60 | 100 | 94 | 4M10G83/6 WP4.1D95E201 | UCI 224G1 | | | Download"
   ]
  },
  {
@@ -14170,6 +14318,32 @@
   "names": [
    "6LTAA8.9-G2/ 6LTAA8.9-G3"
   ],
+  "target": "6LTAA89G3",
+  "targetNames": [
+   "6LTAA8.9-G3",
+   "6LTAA8.9G 3",
+   "6LTAA8.9G3"
+  ],
+  "rest": "6LTAA8.9-G2",
+  "rows": 1,
+  "sups": [
+   "victory-generator"
+  ],
+  "tRows": 112,
+  "tSups": 66,
+  "make": "Cummins",
+  "tMake": "Cummins",
+  "uses": [
+   "victory-generator n110 b15 r18 | | V220C | 50 | 200 | 250 | 220 | 275 | 6LTAA8.9-G2/ 6LTAA8.9-G3 | 53 / 54 | 8.9 | 6L | electronic | 2550*1020*1790 | 2000 | 3700*1090*2080 | 2600"
+  ]
+ },
+ {
+  "kind": "engines",
+  "sep": "gach",
+  "key": "6LTAA89G2/6LTAA89G3",
+  "names": [
+   "6LTAA8.9-G2/ 6LTAA8.9-G3"
+  ],
   "target": "6LTAA89G2",
   "targetNames": [
    "6LTAA8.9-G2",
@@ -14193,27 +14367,25 @@
  {
   "kind": "engines",
   "sep": "gach",
-  "key": "6LTAA89G2/6LTAA89G3",
+  "key": "6M11G110/6WP6D132E201",
   "names": [
-   "6LTAA8.9-G2/ 6LTAA8.9-G3"
+   "6M11G110/6 WP6D132E201"
   ],
-  "target": "6LTAA89G3",
+  "target": "6M11G110/6",
   "targetNames": [
-   "6LTAA8.9-G3",
-   "6LTAA8.9G 3",
-   "6LTAA8.9G3"
+   "6M11G110/6"
   ],
-  "rest": "6LTAA8.9-G2",
+  "rest": "WP6D132E201",
   "rows": 1,
   "sups": [
-   "victory-generator"
+   "kaihua-genset"
   ],
-  "tRows": 112,
-  "tSups": 66,
-  "make": "Cummins",
-  "tMake": "Cummins",
+  "tRows": 6,
+  "tSups": 6,
+  "make": "Baudouin",
+  "tMake": "Baudouin",
   "uses": [
-   "victory-generator n110 b15 r18 | | V220C | 50 | 200 | 250 | 220 | 275 | 6LTAA8.9-G2/ 6LTAA8.9-G3 | 53 / 54 | 8.9 | 6L | electronic | 2550*1020*1790 | 2000 | 3700*1090*2080 | 2600"
+   "kaihua-genset n119 b23 r45 | | HC-BD140-60 | 138 | 125 | 6M11G110/6 WP6D132E201 | UCI 274D1 | | 3230*1170*1800 | Download"
   ]
  },
  {
@@ -14238,6 +14410,30 @@
   "tMake": "Weichai",
   "uses": [
    "kaihua-genset n119 b23 r45 | | HC-BD140-60 | 138 | 125 | 6M11G110/6 WP6D132E201 | UCI 274D1 | | 3230*1170*1800 | Download"
+  ]
+ },
+ {
+  "kind": "engines",
+  "sep": "gach",
+  "key": "6M11G135/6WP6D158E201",
+  "names": [
+   "6M11G135/6 WP6D158E201"
+  ],
+  "target": "6M11G135/6",
+  "targetNames": [
+   "6M11G135/6"
+  ],
+  "rest": "WP6D158E201",
+  "rows": 1,
+  "sups": [
+   "kaihua-genset"
+  ],
+  "tRows": 12,
+  "tSups": 11,
+  "make": "Baudouin",
+  "tMake": "Baudouin",
+  "uses": [
+   "kaihua-genset n119 b23 r46 | | HC-BD165-60 | 165 | 150 | 6M11G135/6 WP6D158E201 | UCI 274E1 | | 3230*1170*1800 | Download"
   ]
  },
  {
@@ -14310,6 +14506,54 @@
   "tMake": "Weichai",
   "uses": [
    "weiman-fujian n112 b14 r22 | | WT-WP825 | 600 | 750 | 660 | 825 | 6M33D725E310/675KW | 4350*1600*2100 | 4835 | 5400x2000x2500 | 6550 | More data"
+  ]
+ },
+ {
+  "kind": "engines",
+  "sep": "ngoac",
+  "key": "6M33G8D3/5(6M33G825/5)",
+  "names": [
+   "6M33G8D3/5 (6M33G825/5)"
+  ],
+  "target": "6M33G8D3/5",
+  "targetNames": [
+   "6M33G8D3/5"
+  ],
+  "rest": "6M33G825/5",
+  "rows": 1,
+  "sups": [
+   "kaihua-genset"
+  ],
+  "tRows": 10,
+  "tSups": 7,
+  "make": "Baudouin",
+  "tMake": "Baudouin",
+  "uses": [
+   "kaihua-genset n119 b23 r18 | | HC-BD825 | 825 | 750 | 6M33G8D3/5 (6M33G825/5) | S5L1D-H41 | 4000*2100*2080 | 5530*1860*2550 | Download"
+  ]
+ },
+ {
+  "kind": "engines",
+  "sep": "ngoac",
+  "key": "6M33G8D3/5(6M33G825/5)",
+  "names": [
+   "6M33G8D3/5 (6M33G825/5)"
+  ],
+  "target": "6M33G825/5",
+  "targetNames": [
+   "6M33G825/5"
+  ],
+  "rest": "6M33G8D3/5",
+  "rows": 1,
+  "sups": [
+   "kaihua-genset"
+  ],
+  "tRows": 22,
+  "tSups": 17,
+  "make": "Baudouin",
+  "tMake": "Baudouin",
+  "uses": [
+   "kaihua-genset n119 b23 r18 | | HC-BD825 | 825 | 750 | 6M33G8D3/5 (6M33G825/5) | S5L1D-H41 | 4000*2100*2080 | 5530*1860*2550 | Download"
   ]
  },
  {
@@ -15451,6 +15695,31 @@
   "tMake": "MAN",
   "uses": [
    "ettes-power n101 b0 r8 | | EM-520B5 | 520 | 654 | E3262LE212/202 | 550 | 12.V | 25.8 | 38.3% | 48.2% | 86.5% |"
+  ]
+ },
+ {
+  "kind": "engines",
+  "sep": "gach",
+  "key": "FAW4110/125Z09D",
+  "names": [
+   "FAW 4110/125Z-09D"
+  ],
+  "target": "4110/125Z09D",
+  "targetNames": [
+   "4110/125Z-09D",
+   "4110/125Z09D"
+  ],
+  "rest": "FAW",
+  "rows": 1,
+  "sups": [
+   "yongcai-elecmama"
+  ],
+  "tRows": 10,
+  "tSups": 10,
+  "make": null,
+  "tMake": "FAWDE",
+  "uses": [
+   "yongcai-elecmama n153 b42 r | Genset model : YCM55FA ; Phase number : 3 Phase ; Power factor : 0.8 lagging ; | Genset Model | YCM55FA ; | Power Factor | 0.8 lagging ; | Engine Model | FAW 4110/125Z-09D ; | Engine Power | 65-72kw ; | Bore x Stroke | 1"
   ]
  },
  {
@@ -18015,6 +18284,30 @@
  {
   "kind": "engines",
   "sep": "gach",
+  "key": "WP10D238E2016M16G200/6",
+  "names": [
+   "WP10D238E201 6M16G200/6"
+  ],
+  "target": "6M16G200/6",
+  "targetNames": [
+   "6M16G200/6"
+  ],
+  "rest": "WP10D238E201",
+  "rows": 1,
+  "sups": [
+   "kaihua-genset"
+  ],
+  "tRows": 11,
+  "tSups": 11,
+  "make": "Baudouin",
+  "tMake": "Baudouin",
+  "uses": [
+   "kaihua-genset n119 b23 r49 | | HC-BD250-60 | 250 | 230 | WP10D238E201 6M16G200/6 | UCI 274H1 | | 3590*1310*2050 | Download"
+  ]
+ },
+ {
+  "kind": "engines",
+  "sep": "gach",
   "key": "WP10D264E200/240KW",
   "names": [
    "WP10D264E200/240kw"
@@ -18063,6 +18356,30 @@
  {
   "kind": "engines",
   "sep": "gach",
+  "key": "WP10D264E2016M16G220/6",
+  "names": [
+   "WP10D264E201 6M16G220/6"
+  ],
+  "target": "6M16G220/6",
+  "targetNames": [
+   "6M16G220/6"
+  ],
+  "rest": "WP10D264E201",
+  "rows": 1,
+  "sups": [
+   "kaihua-genset"
+  ],
+  "tRows": 12,
+  "tSups": 12,
+  "make": "Baudouin",
+  "tMake": "Baudouin",
+  "uses": [
+   "kaihua-genset n119 b23 r50 | | HC-BD275-60 | 275 | 250 | WP10D264E201 6M16G220/6 | UCDI 274J1 | | 3890*1460*2150 | Download"
+  ]
+ },
+ {
+  "kind": "engines",
+  "sep": "gach",
   "key": "WP10D288E2016M16G250/6",
   "names": [
    "WP10D288E201 6M16G250/6"
@@ -18080,6 +18397,30 @@
   "tSups": 5,
   "make": "Baudouin",
   "tMake": "Weichai",
+  "uses": [
+   "kaihua-genset n119 b23 r51 | | HC-BD315-60 | 315 | 288 | WP10D288E201 6M16G250/6 | UCDI 274J1 | | 4090*1460*2150 | Download"
+  ]
+ },
+ {
+  "kind": "engines",
+  "sep": "gach",
+  "key": "WP10D288E2016M16G250/6",
+  "names": [
+   "WP10D288E201 6M16G250/6"
+  ],
+  "target": "6M16G250/6",
+  "targetNames": [
+   "6M16G250/6"
+  ],
+  "rest": "WP10D288E201",
+  "rows": 1,
+  "sups": [
+   "kaihua-genset"
+  ],
+  "tRows": 11,
+  "tSups": 11,
+  "make": "Baudouin",
+  "tMake": "Baudouin",
   "uses": [
    "kaihua-genset n119 b23 r51 | | HC-BD315-60 | 315 | 288 | WP10D288E201 6M16G250/6 | UCDI 274J1 | | 4090*1460*2150 | Download"
   ]
@@ -18135,6 +18476,30 @@
  {
   "kind": "engines",
   "sep": "gach",
+  "key": "WP13D360E2016M16G308/6",
+  "names": [
+   "WP13D360E201 6M16G308/6"
+  ],
+  "target": "6M16G308/6",
+  "targetNames": [
+   "6M16G308/6"
+  ],
+  "rest": "WP13D360E201",
+  "rows": 1,
+  "sups": [
+   "kaihua-genset"
+  ],
+  "tRows": 12,
+  "tSups": 12,
+  "make": "Baudouin",
+  "tMake": "Baudouin",
+  "uses": [
+   "kaihua-genset n119 b23 r52 | | HC-BD385-60 | 385 | 350 | WP13D360E201 6M16G308/6 | S4L1D-D41 | | 4090*1460*2150 | Download"
+  ]
+ },
+ {
+  "kind": "engines",
+  "sep": "gach",
   "key": "WP13D385E200/350KW",
   "names": [
    "WP13D385E200/350kw"
@@ -18176,6 +18541,30 @@
   "tSups": 21,
   "make": "Baudouin",
   "tMake": "Weichai",
+  "uses": [
+   "kaihua-genset n119 b23 r53 | | HC-BD415-60 | 415 | 380 | WP13D385E201 6M21G330/6 | S4L1D-E41 | | 4230*1460*2150 | Download"
+  ]
+ },
+ {
+  "kind": "engines",
+  "sep": "gach",
+  "key": "WP13D385E2016M21G330/6",
+  "names": [
+   "WP13D385E201 6M21G330/6"
+  ],
+  "target": "6M21G330/6",
+  "targetNames": [
+   "6M21G330/6"
+  ],
+  "rest": "WP13D385E201",
+  "rows": 1,
+  "sups": [
+   "kaihua-genset"
+  ],
+  "tRows": 12,
+  "tSups": 12,
+  "make": "Baudouin",
+  "tMake": "Baudouin",
   "uses": [
    "kaihua-genset n119 b23 r53 | | HC-BD415-60 | 415 | 380 | WP13D385E201 6M21G330/6 | S4L1D-E41 | | 4230*1460*2150 | Download"
   ]
@@ -18296,6 +18685,30 @@
   "tSups": 16,
   "make": "Baudouin",
   "tMake": "Weichai",
+  "uses": [
+   "kaihua-genset n119 b23 r56 | | HC-BD550-60 | 550 | 500 | WP13D510E311 6M21G460/6 | S4L1D-F41 | 3400*1270*1974 | 4630*1660*2250 | Download"
+  ]
+ },
+ {
+  "kind": "engines",
+  "sep": "gach",
+  "key": "WP13D510E3116M21G460/6",
+  "names": [
+   "WP13D510E311 6M21G460/6"
+  ],
+  "target": "6M21G460/6",
+  "targetNames": [
+   "6M21G460/6"
+  ],
+  "rest": "WP13D510E311",
+  "rows": 1,
+  "sups": [
+   "kaihua-genset"
+  ],
+  "tRows": 13,
+  "tSups": 12,
+  "make": "Baudouin",
+  "tMake": "Baudouin",
   "uses": [
    "kaihua-genset n119 b23 r56 | | HC-BD550-60 | 550 | 500 | WP13D510E311 6M21G460/6 | S4L1D-F41 | 3400*1270*1974 | 4630*1660*2250 | Download"
   ]
@@ -18466,6 +18879,30 @@
   "tSups": 17,
   "make": "Baudouin",
   "tMake": "Weichai",
+  "uses": [
+   "kaihua-genset n119 b23 r47 | | HC-BD200-60 | 200 | 180 | WP6D180E201 6M11G160/6 | UCI 274F1 | | 3230*1170*1800 | Download"
+  ]
+ },
+ {
+  "kind": "engines",
+  "sep": "gach",
+  "key": "WP6D180E2016M11G160/6",
+  "names": [
+   "WP6D180E201 6M11G160/6"
+  ],
+  "target": "6M11G160/6",
+  "targetNames": [
+   "6M11G160/6"
+  ],
+  "rest": "WP6D180E201",
+  "rows": 1,
+  "sups": [
+   "kaihua-genset"
+  ],
+  "tRows": 11,
+  "tSups": 11,
+  "make": "Baudouin",
+  "tMake": "Baudouin",
   "uses": [
    "kaihua-genset n119 b23 r47 | | HC-BD200-60 | 200 | 180 | WP6D180E201 6M11G160/6 | UCI 274F1 | | 3230*1170*1800 | Download"
   ]
@@ -22780,6 +23217,35 @@
    "DPC224G/UCI224G/ TAL-A44-C",
    "DPC224G/UCI224G/TAL-A44-C"
   ],
+  "target": "TALA44C",
+  "targetNames": [
+   "TAL-A44-C",
+   "TAL A44 C"
+  ],
+  "rest": "DPC224G UCI224G",
+  "rows": 4,
+  "sups": [
+   "depco-power"
+  ],
+  "tRows": 23,
+  "tSups": 7,
+  "make": null,
+  "tMake": "Leroy-Somer",
+  "uses": [
+   "depco-power n2540 b544 r | Item NO.: ; DPK-DTY-94S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4A3L-D ; PRP (kW): ; 68 ; PRP (kVA): ; 85 ; ESP (kW): ; 75 ; ESP (kVA): ; 94 ; Arrangement: ; 4L ; Govern",
+   "depco-power n2611 b615 r | Item NO.: ; DPK-DP-88 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TAG1 ; PRP (kW): ; 64 ; PRP (kVA): ; 80 ; ESP (kW): ; 70 ; ESP (kVA): ; 88 ; Arrangement: ; 4L ; ",
+   "depco-power n2612 b616 r | Item NO.: ; DPK-DP-88 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TG2 ; PRP (kW): ; 64 ; PRP (kVA): ; 80 ; ESP (kW): ; 70 ; ESP (kVA): ; 88 ; Arrangement: ; 4L ; G",
+   "depco-power n2627 b631 r | Item NO.: ; DPK-DB-88 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Baudouin ; Engine Model: ; 4M10G88/5 ; PRP (kW): ; 64 ; PRP (kVA): ; 80 ; ESP (kW): ; 70 ; ESP (kVA): ; 88 ; Arrangement: ; 4L ; Go"
+  ]
+ },
+ {
+  "kind": "alternators",
+  "sep": "gach",
+  "key": "DPC224G/UCI224G/TALA44C",
+  "names": [
+   "DPC224G/UCI224G/ TAL-A44-C",
+   "DPC224G/UCI224G/TAL-A44-C"
+  ],
   "target": "DPC224G",
   "targetNames": [
    "DPC224G"
@@ -22822,35 +23288,6 @@
   "tSups": 17,
   "make": null,
   "tMake": "Stamford",
-  "uses": [
-   "depco-power n2540 b544 r | Item NO.: ; DPK-DTY-94S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4A3L-D ; PRP (kW): ; 68 ; PRP (kVA): ; 85 ; ESP (kW): ; 75 ; ESP (kVA): ; 94 ; Arrangement: ; 4L ; Govern",
-   "depco-power n2611 b615 r | Item NO.: ; DPK-DP-88 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TAG1 ; PRP (kW): ; 64 ; PRP (kVA): ; 80 ; ESP (kW): ; 70 ; ESP (kVA): ; 88 ; Arrangement: ; 4L ; ",
-   "depco-power n2612 b616 r | Item NO.: ; DPK-DP-88 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TG2 ; PRP (kW): ; 64 ; PRP (kVA): ; 80 ; ESP (kW): ; 70 ; ESP (kVA): ; 88 ; Arrangement: ; 4L ; G",
-   "depco-power n2627 b631 r | Item NO.: ; DPK-DB-88 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Baudouin ; Engine Model: ; 4M10G88/5 ; PRP (kW): ; 64 ; PRP (kVA): ; 80 ; ESP (kW): ; 70 ; ESP (kVA): ; 88 ; Arrangement: ; 4L ; Go"
-  ]
- },
- {
-  "kind": "alternators",
-  "sep": "gach",
-  "key": "DPC224G/UCI224G/TALA44C",
-  "names": [
-   "DPC224G/UCI224G/ TAL-A44-C",
-   "DPC224G/UCI224G/TAL-A44-C"
-  ],
-  "target": "TALA44C",
-  "targetNames": [
-   "TAL-A44-C",
-   "TAL A44 C"
-  ],
-  "rest": "DPC224G UCI224G",
-  "rows": 4,
-  "sups": [
-   "depco-power"
-  ],
-  "tRows": 23,
-  "tSups": 7,
-  "make": null,
-  "tMake": "Leroy-Somer",
   "uses": [
    "depco-power n2540 b544 r | Item NO.: ; DPK-DTY-94S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4A3L-D ; PRP (kW): ; 68 ; PRP (kVA): ; 85 ; ESP (kW): ; 75 ; ESP (kVA): ; 94 ; Arrangement: ; 4L ; Govern",
    "depco-power n2611 b615 r | Item NO.: ; DPK-DP-88 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TAG1 ; PRP (kW): ; 64 ; PRP (kVA): ; 80 ; ESP (kW): ; 70 ; ESP (kVA): ; 88 ; Arrangement: ; 4L ; ",
@@ -23273,6 +23710,34 @@
    "DPC224F/UCI224F/ TAL-A44-C",
    "DPC224F/UCI224F/TAL-A44-C"
   ],
+  "target": "TALA44C",
+  "targetNames": [
+   "TAL-A44-C",
+   "TAL A44 C"
+  ],
+  "rest": "DPC224F UCI224F",
+  "rows": 3,
+  "sups": [
+   "depco-power"
+  ],
+  "tRows": 23,
+  "tSups": 7,
+  "make": null,
+  "tMake": "Leroy-Somer",
+  "uses": [
+   "depco-power n2541 b545 r | Item NO.: ; DPK-DTY-78S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4B3Z-D ; PRP (kW): ; 57 ; PRP (kVA): ; 71 ; ESP (kW): ; 63 ; ESP (kVA): ; 78 ; Arrangement: ; 4L ; Govern",
+   "depco-power n2542 b546 r | Item NO.: ; DPK-DTY-76S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YT4B2Z-D ; PRP (kW): ; 55 ; PRP (kVA): ; 69 ; ESP (kW): ; 61 ; ESP (kVA): ; 76 ; Arrangement: ; 4L ; Govern",
+   "depco-power n2613 b617 r | Item NO.: ; DPK-DP-72 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TG1 ; PRP (kW): ; 52 ; PRP (kVA): ; 65 ; ESP (kW): ; 57 ; ESP (kVA): ; 72 ; Arrangement: ; 4L ; G"
+  ]
+ },
+ {
+  "kind": "alternators",
+  "sep": "gach",
+  "key": "DPC224F/UCI224F/TALA44C",
+  "names": [
+   "DPC224F/UCI224F/ TAL-A44-C",
+   "DPC224F/UCI224F/TAL-A44-C"
+  ],
   "target": "DPC224F",
   "targetNames": [
    "DPC224F"
@@ -23314,34 +23779,6 @@
   "tSups": 17,
   "make": null,
   "tMake": "Stamford",
-  "uses": [
-   "depco-power n2541 b545 r | Item NO.: ; DPK-DTY-78S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4B3Z-D ; PRP (kW): ; 57 ; PRP (kVA): ; 71 ; ESP (kW): ; 63 ; ESP (kVA): ; 78 ; Arrangement: ; 4L ; Govern",
-   "depco-power n2542 b546 r | Item NO.: ; DPK-DTY-76S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YT4B2Z-D ; PRP (kW): ; 55 ; PRP (kVA): ; 69 ; ESP (kW): ; 61 ; ESP (kVA): ; 76 ; Arrangement: ; 4L ; Govern",
-   "depco-power n2613 b617 r | Item NO.: ; DPK-DP-72 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TG1 ; PRP (kW): ; 52 ; PRP (kVA): ; 65 ; ESP (kW): ; 57 ; ESP (kVA): ; 72 ; Arrangement: ; 4L ; G"
-  ]
- },
- {
-  "kind": "alternators",
-  "sep": "gach",
-  "key": "DPC224F/UCI224F/TALA44C",
-  "names": [
-   "DPC224F/UCI224F/ TAL-A44-C",
-   "DPC224F/UCI224F/TAL-A44-C"
-  ],
-  "target": "TALA44C",
-  "targetNames": [
-   "TAL-A44-C",
-   "TAL A44 C"
-  ],
-  "rest": "DPC224F UCI224F",
-  "rows": 3,
-  "sups": [
-   "depco-power"
-  ],
-  "tRows": 23,
-  "tSups": 7,
-  "make": null,
-  "tMake": "Leroy-Somer",
   "uses": [
    "depco-power n2541 b545 r | Item NO.: ; DPK-DTY-78S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4B3Z-D ; PRP (kW): ; 57 ; PRP (kVA): ; 71 ; ESP (kW): ; 63 ; ESP (kVA): ; 78 ; Arrangement: ; 4L ; Govern",
    "depco-power n2542 b546 r | Item NO.: ; DPK-DTY-76S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YT4B2Z-D ; PRP (kW): ; 55 ; PRP (kVA): ; 69 ; ESP (kW): ; 61 ; ESP (kVA): ; 76 ; Arrangement: ; 4L ; Govern",
@@ -23895,6 +24332,31 @@
   "names": [
    "DPC224E/TAL-A42-H/ S1L2-Y1"
   ],
+  "target": "S1L2Y1",
+  "targetNames": [
+   "S1L2-Y1"
+  ],
+  "rest": "DPC224E TAL-A42-H",
+  "rows": 2,
+  "sups": [
+   "depco-power"
+  ],
+  "tRows": 63,
+  "tSups": 13,
+  "make": null,
+  "tMake": "Stamford",
+  "uses": [
+   "depco-power n2568 b572 r | Item NO.: ; DPK-DX-70 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A4K41LD ; PRP (kW): ; 50 ; PRP (kVA): ; 63 ; ESP (kW): ; 55 ; ESP (kVA): ; 69 ; Arrangement: ; 4L ; Gover",
+   "depco-power n2569 b573 r | Item NO.: ; DPK-DX-60 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A4K41ZD ; PRP (kW): ; 44 ; PRP (kVA): ; 55 ; ESP (kW): ; 48 ; ESP (kVA): ; 60 ; Arrangement: ; 4L ; Gover"
+  ]
+ },
+ {
+  "kind": "alternators",
+  "sep": "gach",
+  "key": "DPC224E/TALA42H/S1L2Y1",
+  "names": [
+   "DPC224E/TAL-A42-H/ S1L2-Y1"
+  ],
   "target": "DPC224E",
   "targetNames": [
    "DPC224E"
@@ -23942,26 +24404,28 @@
  {
   "kind": "alternators",
   "sep": "gach",
-  "key": "DPC224E/TALA42H/S1L2Y1",
+  "key": "DPC274C/UCI274C/TALA44D",
   "names": [
-   "DPC224E/TAL-A42-H/ S1L2-Y1"
+   "DPC274C/UCI274C/ TAL-A44-D",
+   "DPC274C/UCI274C/TAL-A44-D"
   ],
-  "target": "S1L2Y1",
+  "target": "TALA44D",
   "targetNames": [
-   "S1L2-Y1"
+   "TAL-A44-D",
+   "TAL A44 D"
   ],
-  "rest": "DPC224E TAL-A42-H",
+  "rest": "DPC274C UCI274C",
   "rows": 2,
   "sups": [
    "depco-power"
   ],
-  "tRows": 63,
-  "tSups": 13,
+  "tRows": 26,
+  "tSups": 7,
   "make": null,
-  "tMake": "Stamford",
+  "tMake": "Leroy-Somer",
   "uses": [
-   "depco-power n2568 b572 r | Item NO.: ; DPK-DX-70 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A4K41LD ; PRP (kW): ; 50 ; PRP (kVA): ; 63 ; ESP (kW): ; 55 ; ESP (kVA): ; 69 ; Arrangement: ; 4L ; Gover",
-   "depco-power n2569 b573 r | Item NO.: ; DPK-DX-60 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A4K41ZD ; PRP (kW): ; 44 ; PRP (kVA): ; 55 ; ESP (kW): ; 48 ; ESP (kVA): ; 60 ; Arrangement: ; 4L ; Gover"
+   "depco-power n2068 b72 r | Item NO.: ; DPK-DTY-110S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4M3L-D ; PRP (kW): ; 80 ; PRP (kVA): ; 100 ; ESP (kW): ; 88 ; ESP (kVA): ; 110 ; Arrangement: ; 4L ; Gov",
+   "depco-power n2525 b529 r | Item NO.: ; DPK-DP-110 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TAG2 ; PRP (kW): ; 80 ; PRP (kVA): ; 100 ; ESP (kW): ; 88 ; ESP (kVA): ; 110 ; Arrangement: ; 4L"
   ]
  },
  {
@@ -24012,33 +24476,6 @@
   "tSups": 18,
   "make": null,
   "tMake": "Stamford",
-  "uses": [
-   "depco-power n2068 b72 r | Item NO.: ; DPK-DTY-110S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4M3L-D ; PRP (kW): ; 80 ; PRP (kVA): ; 100 ; ESP (kW): ; 88 ; ESP (kVA): ; 110 ; Arrangement: ; 4L ; Gov",
-   "depco-power n2525 b529 r | Item NO.: ; DPK-DP-110 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TAG2 ; PRP (kW): ; 80 ; PRP (kVA): ; 100 ; ESP (kW): ; 88 ; ESP (kVA): ; 110 ; Arrangement: ; 4L"
-  ]
- },
- {
-  "kind": "alternators",
-  "sep": "gach",
-  "key": "DPC274C/UCI274C/TALA44D",
-  "names": [
-   "DPC274C/UCI274C/ TAL-A44-D",
-   "DPC274C/UCI274C/TAL-A44-D"
-  ],
-  "target": "TALA44D",
-  "targetNames": [
-   "TAL-A44-D",
-   "TAL A44 D"
-  ],
-  "rest": "DPC274C UCI274C",
-  "rows": 2,
-  "sups": [
-   "depco-power"
-  ],
-  "tRows": 26,
-  "tSups": 7,
-  "make": null,
-  "tMake": "Leroy-Somer",
   "uses": [
    "depco-power n2068 b72 r | Item NO.: ; DPK-DTY-110S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4M3L-D ; PRP (kW): ; 80 ; PRP (kVA): ; 100 ; ESP (kW): ; 88 ; ESP (kVA): ; 110 ; Arrangement: ; 4L ; Gov",
    "depco-power n2525 b529 r | Item NO.: ; DPK-DP-110 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Perkins ; Engine Model: ; 1104A-44TAG2 ; PRP (kW): ; 80 ; PRP (kVA): ; 100 ; ESP (kW): ; 88 ; ESP (kVA): ; 110 ; Arrangement: ; 4L"
@@ -24153,31 +24590,6 @@
   "names": [
    "DPC354C/ S5L1D-C4"
   ],
-  "target": "DPC354C",
-  "targetNames": [
-   "DPC354C"
-  ],
-  "rest": "S5L1D-C4",
-  "rows": 2,
-  "sups": [
-   "depco-power"
-  ],
-  "tRows": 3,
-  "tSups": 1,
-  "make": "Stamford",
-  "tMake": null,
-  "uses": [
-   "depco-power n2054 b58 r | Item NO.: ; DPK-DTY-500S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YM6S9LF-DA ; PRP (kW): ; 360 ; PRP (kVA): ; 450 ; ESP (kW): ; 400 ; ESP (kVA): ; 500 ; Arrangement: ; 6L ;",
-   "depco-power n2055 b59 r | Item NO.: ; DPK-DTY-450S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YM6S9LF-D ; PRP (kW): ; 330 ; PRP (kVA): ; 413 ; ESP (kW): ; 360 ; ESP (kVA): ; 450 ; Arrangement: ; 6L ; "
-  ]
- },
- {
-  "kind": "alternators",
-  "sep": "gach",
-  "key": "DPC354C/S5L1DC4",
-  "names": [
-   "DPC354C/ S5L1D-C4"
-  ],
   "target": "S5L1DC4",
   "targetNames": [
    "S5L1D-C4"
@@ -24191,6 +24603,31 @@
   "tSups": 7,
   "make": "Stamford",
   "tMake": "Stamford",
+  "uses": [
+   "depco-power n2054 b58 r | Item NO.: ; DPK-DTY-500S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YM6S9LF-DA ; PRP (kW): ; 360 ; PRP (kVA): ; 450 ; ESP (kW): ; 400 ; ESP (kVA): ; 500 ; Arrangement: ; 6L ;",
+   "depco-power n2055 b59 r | Item NO.: ; DPK-DTY-450S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YM6S9LF-D ; PRP (kW): ; 330 ; PRP (kVA): ; 413 ; ESP (kW): ; 360 ; ESP (kVA): ; 450 ; Arrangement: ; 6L ; "
+  ]
+ },
+ {
+  "kind": "alternators",
+  "sep": "gach",
+  "key": "DPC354C/S5L1DC4",
+  "names": [
+   "DPC354C/ S5L1D-C4"
+  ],
+  "target": "DPC354C",
+  "targetNames": [
+   "DPC354C"
+  ],
+  "rest": "S5L1D-C4",
+  "rows": 2,
+  "sups": [
+   "depco-power"
+  ],
+  "tRows": 3,
+  "tSups": 1,
+  "make": "Stamford",
+  "tMake": null,
   "uses": [
    "depco-power n2054 b58 r | Item NO.: ; DPK-DTY-500S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YM6S9LF-DA ; PRP (kW): ; 360 ; PRP (kVA): ; 450 ; ESP (kW): ; 400 ; ESP (kVA): ; 500 ; Arrangement: ; 6L ;",
    "depco-power n2055 b59 r | Item NO.: ; DPK-DTY-450S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YM6S9LF-D ; PRP (kW): ; 330 ; PRP (kVA): ; 413 ; ESP (kW): ; 360 ; ESP (kVA): ; 450 ; Arrangement: ; 6L ; "
@@ -25034,30 +25471,6 @@
   "names": [
    "DPC164C/ S0L1-L1"
   ],
-  "target": "DPC164C",
-  "targetNames": [
-   "DPC164C"
-  ],
-  "rest": "S0L1-L1",
-  "rows": 1,
-  "sups": [
-   "depco-power"
-  ],
-  "tRows": 1,
-  "tSups": 1,
-  "make": "Stamford",
-  "tMake": null,
-  "uses": [
-   "depco-power n2268 b272 r | Item NO.: ; DPK-DKBT-14 ; Frequency(Hz): ; 60 ; Phase: ; 3 ; Voltage(V): ; 440 ; Engine: ; Kubota ; Engine Model: ; V1505 ; PRP (kW): ; 10 ; PRP (kVA): ; 12.5 ; ESP (kW): ; 11 ; ESP (kVA): ; 13.8 ; Arrangement: ; 4L ; Go"
-  ]
- },
- {
-  "kind": "alternators",
-  "sep": "gach",
-  "key": "DPC164C/S0L1L1",
-  "names": [
-   "DPC164C/ S0L1-L1"
-  ],
   "target": "S0L1L1",
   "targetNames": [
    "S0L1-L1",
@@ -25072,6 +25485,30 @@
   "tSups": 8,
   "make": "Stamford",
   "tMake": "Stamford",
+  "uses": [
+   "depco-power n2268 b272 r | Item NO.: ; DPK-DKBT-14 ; Frequency(Hz): ; 60 ; Phase: ; 3 ; Voltage(V): ; 440 ; Engine: ; Kubota ; Engine Model: ; V1505 ; PRP (kW): ; 10 ; PRP (kVA): ; 12.5 ; ESP (kW): ; 11 ; ESP (kVA): ; 13.8 ; Arrangement: ; 4L ; Go"
+  ]
+ },
+ {
+  "kind": "alternators",
+  "sep": "gach",
+  "key": "DPC164C/S0L1L1",
+  "names": [
+   "DPC164C/ S0L1-L1"
+  ],
+  "target": "DPC164C",
+  "targetNames": [
+   "DPC164C"
+  ],
+  "rest": "S0L1-L1",
+  "rows": 1,
+  "sups": [
+   "depco-power"
+  ],
+  "tRows": 1,
+  "tSups": 1,
+  "make": "Stamford",
+  "tMake": null,
   "uses": [
    "depco-power n2268 b272 r | Item NO.: ; DPK-DKBT-14 ; Frequency(Hz): ; 60 ; Phase: ; 3 ; Voltage(V): ; 440 ; Engine: ; Kubota ; Engine Model: ; V1505 ; PRP (kW): ; 10 ; PRP (kVA): ; 12.5 ; ESP (kW): ; 11 ; ESP (kVA): ; 13.8 ; Arrangement: ; 4L ; Go"
   ]
@@ -25157,6 +25594,31 @@
   "names": [
    "DPC164D/TAL-A40-D/ S0L1-P1"
   ],
+  "target": "S0L1P1",
+  "targetNames": [
+   "S0L1-P1",
+   "S0L1.P1"
+  ],
+  "rest": "DPC164D TAL-A40-D",
+  "rows": 1,
+  "sups": [
+   "depco-power"
+  ],
+  "tRows": 22,
+  "tSups": 10,
+  "make": null,
+  "tMake": "Stamford",
+  "uses": [
+   "depco-power n2576 b580 r | Item NO.: ; DPK-DX-17 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; NC485BD ; PRP (kW): ; 12 ; PRP (kVA): ; 15 ; ESP (kW): ; 13 ; ESP (kVA): ; 17 ; Arrangement: ; 4L ; Gover"
+  ]
+ },
+ {
+  "kind": "alternators",
+  "sep": "gach",
+  "key": "DPC164D/TALA40D/S0L1P1",
+  "names": [
+   "DPC164D/TAL-A40-D/ S0L1-P1"
+  ],
   "target": "DPC164D",
   "targetNames": [
    "DPC164D"
@@ -25195,31 +25657,6 @@
   "tSups": 3,
   "make": null,
   "tMake": "Leroy-Somer",
-  "uses": [
-   "depco-power n2576 b580 r | Item NO.: ; DPK-DX-17 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; NC485BD ; PRP (kW): ; 12 ; PRP (kVA): ; 15 ; ESP (kW): ; 13 ; ESP (kVA): ; 17 ; Arrangement: ; 4L ; Gover"
-  ]
- },
- {
-  "kind": "alternators",
-  "sep": "gach",
-  "key": "DPC164D/TALA40D/S0L1P1",
-  "names": [
-   "DPC164D/TAL-A40-D/ S0L1-P1"
-  ],
-  "target": "S0L1P1",
-  "targetNames": [
-   "S0L1-P1",
-   "S0L1.P1"
-  ],
-  "rest": "DPC164D TAL-A40-D",
-  "rows": 1,
-  "sups": [
-   "depco-power"
-  ],
-  "tRows": 22,
-  "tSups": 10,
-  "make": null,
-  "tMake": "Stamford",
   "uses": [
    "depco-power n2576 b580 r | Item NO.: ; DPK-DX-17 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; NC485BD ; PRP (kW): ; 12 ; PRP (kVA): ; 15 ; ESP (kW): ; 13 ; ESP (kVA): ; 17 ; Arrangement: ; 4L ; Gover"
   ]
@@ -25426,6 +25863,30 @@
   "names": [
    "DPC184E/TAL-A40-F/ S0L2-G1"
   ],
+  "target": "S0L2G1",
+  "targetNames": [
+   "S0L2-G1"
+  ],
+  "rest": "DPC184E TAL-A40-F",
+  "rows": 1,
+  "sups": [
+   "depco-power"
+  ],
+  "tRows": 29,
+  "tSups": 9,
+  "make": null,
+  "tMake": "Stamford",
+  "uses": [
+   "depco-power n2575 b579 r | Item NO.: ; DPK-DX-22 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; C490BD ; PRP (kW): ; 16 ; PRP (kVA): ; 20 ; ESP (kW): ; 18 ; ESP (kVA): ; 22 ; Arrangement: ; 4L ; Govern"
+  ]
+ },
+ {
+  "kind": "alternators",
+  "sep": "gach",
+  "key": "DPC184E/TALA40F/S0L2G1",
+  "names": [
+   "DPC184E/TAL-A40-F/ S0L2-G1"
+  ],
   "target": "DPC184E",
   "targetNames": [
    "DPC184E"
@@ -25471,25 +25932,25 @@
  {
   "kind": "alternators",
   "sep": "gach",
-  "key": "DPC184E/TALA40F/S0L2G1",
+  "key": "DPC184F/TALA40G/S0L2M1",
   "names": [
-   "DPC184E/TAL-A40-F/ S0L2-G1"
+   "DPC184F/TAL-A40-G/ S0L2-M1"
   ],
-  "target": "S0L2G1",
+  "target": "S0L2M1",
   "targetNames": [
-   "S0L2-G1"
+   "S0L2-M1"
   ],
-  "rest": "DPC184E TAL-A40-F",
+  "rest": "DPC184F TAL-A40-G",
   "rows": 1,
   "sups": [
    "depco-power"
   ],
-  "tRows": 29,
-  "tSups": 9,
+  "tRows": 33,
+  "tSups": 10,
   "make": null,
   "tMake": "Stamford",
   "uses": [
-   "depco-power n2575 b579 r | Item NO.: ; DPK-DX-22 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; C490BD ; PRP (kW): ; 16 ; PRP (kVA): ; 20 ; ESP (kW): ; 18 ; ESP (kVA): ; 22 ; Arrangement: ; 4L ; Govern"
+   "depco-power n2574 b578 r | Item NO.: ; DPK-DX-28 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A495BD ; PRP (kW): ; 20 ; PRP (kVA): ; 25 ; ESP (kW): ; 22 ; ESP (kVA): ; 28 ; Arrangement: ; 4L ; Govern"
   ]
  },
  {
@@ -25537,30 +25998,6 @@
   "tSups": 4,
   "make": null,
   "tMake": null,
-  "uses": [
-   "depco-power n2574 b578 r | Item NO.: ; DPK-DX-28 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A495BD ; PRP (kW): ; 20 ; PRP (kVA): ; 25 ; ESP (kW): ; 22 ; ESP (kVA): ; 28 ; Arrangement: ; 4L ; Govern"
-  ]
- },
- {
-  "kind": "alternators",
-  "sep": "gach",
-  "key": "DPC184F/TALA40G/S0L2M1",
-  "names": [
-   "DPC184F/TAL-A40-G/ S0L2-M1"
-  ],
-  "target": "S0L2M1",
-  "targetNames": [
-   "S0L2-M1"
-  ],
-  "rest": "DPC184F TAL-A40-G",
-  "rows": 1,
-  "sups": [
-   "depco-power"
-  ],
-  "tRows": 33,
-  "tSups": 10,
-  "make": null,
-  "tMake": "Stamford",
   "uses": [
    "depco-power n2574 b578 r | Item NO.: ; DPK-DX-28 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A495BD ; PRP (kW): ; 20 ; PRP (kVA): ; 25 ; ESP (kW): ; 22 ; ESP (kVA): ; 28 ; Arrangement: ; 4L ; Govern"
   ]
@@ -25621,6 +26058,31 @@
   "names": [
    "DPC184G/TAL-A42-C/ S0L2-P1"
   ],
+  "target": "S0L2P1",
+  "targetNames": [
+   "S0L2-P1",
+   "S0L2.P1"
+  ],
+  "rest": "DPC184G TAL-A42-C",
+  "rows": 1,
+  "sups": [
+   "depco-power"
+  ],
+  "tRows": 52,
+  "tSups": 11,
+  "make": null,
+  "tMake": "Stamford",
+  "uses": [
+   "depco-power n2573 b577 r | Item NO.: ; DPK-DX-33 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A498BD ; PRP (kW): ; 24 ; PRP (kVA): ; 30 ; ESP (kW): ; 26 ; ESP (kVA): ; 33 ; Arrangement: ; 4L ; Govern"
+  ]
+ },
+ {
+  "kind": "alternators",
+  "sep": "gach",
+  "key": "DPC184G/TALA42C/S0L2P1",
+  "names": [
+   "DPC184G/TAL-A42-C/ S0L2-P1"
+  ],
   "target": "DPC184G",
   "targetNames": [
    "DPC184G"
@@ -25659,31 +26121,6 @@
   "tSups": 5,
   "make": null,
   "tMake": null,
-  "uses": [
-   "depco-power n2573 b577 r | Item NO.: ; DPK-DX-33 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A498BD ; PRP (kW): ; 24 ; PRP (kVA): ; 30 ; ESP (kW): ; 26 ; ESP (kVA): ; 33 ; Arrangement: ; 4L ; Govern"
-  ]
- },
- {
-  "kind": "alternators",
-  "sep": "gach",
-  "key": "DPC184G/TALA42C/S0L2P1",
-  "names": [
-   "DPC184G/TAL-A42-C/ S0L2-P1"
-  ],
-  "target": "S0L2P1",
-  "targetNames": [
-   "S0L2-P1",
-   "S0L2.P1"
-  ],
-  "rest": "DPC184G TAL-A42-C",
-  "rows": 1,
-  "sups": [
-   "depco-power"
-  ],
-  "tRows": 52,
-  "tSups": 11,
-  "make": null,
-  "tMake": "Stamford",
   "uses": [
    "depco-power n2573 b577 r | Item NO.: ; DPK-DX-33 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A498BD ; PRP (kW): ; 24 ; PRP (kVA): ; 30 ; ESP (kW): ; 26 ; ESP (kVA): ; 33 ; Arrangement: ; 4L ; Govern"
   ]
@@ -25793,6 +26230,31 @@
   "names": [
    "DPC184H/TAL-A42-E/ S1L2-J1"
   ],
+  "target": "S1L2J1",
+  "targetNames": [
+   "S1L2-J1",
+   "S1L2.J1"
+  ],
+  "rest": "DPC184H TAL-A42-E",
+  "rows": 1,
+  "sups": [
+   "depco-power"
+  ],
+  "tRows": 40,
+  "tSups": 9,
+  "make": null,
+  "tMake": "Stamford",
+  "uses": [
+   "depco-power n2572 b576 r | Item NO.: ; DPK-DX-40 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A498BZD ; PRP (kW): ; 27 ; PRP (kVA): ; 34 ; ESP (kW): ; 30 ; ESP (kVA): ; 38 ; Arrangement: ; 4L ; Gover"
+  ]
+ },
+ {
+  "kind": "alternators",
+  "sep": "gach",
+  "key": "DPC184H/TALA42E/S1L2J1",
+  "names": [
+   "DPC184H/TAL-A42-E/ S1L2-J1"
+  ],
   "target": "DPC184H",
   "targetNames": [
    "DPC184H"
@@ -25831,31 +26293,6 @@
   "tSups": 5,
   "make": null,
   "tMake": "Leroy-Somer",
-  "uses": [
-   "depco-power n2572 b576 r | Item NO.: ; DPK-DX-40 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A498BZD ; PRP (kW): ; 27 ; PRP (kVA): ; 34 ; ESP (kW): ; 30 ; ESP (kVA): ; 38 ; Arrangement: ; 4L ; Gover"
-  ]
- },
- {
-  "kind": "alternators",
-  "sep": "gach",
-  "key": "DPC184H/TALA42E/S1L2J1",
-  "names": [
-   "DPC184H/TAL-A42-E/ S1L2-J1"
-  ],
-  "target": "S1L2J1",
-  "targetNames": [
-   "S1L2-J1",
-   "S1L2.J1"
-  ],
-  "rest": "DPC184H TAL-A42-E",
-  "rows": 1,
-  "sups": [
-   "depco-power"
-  ],
-  "tRows": 40,
-  "tSups": 9,
-  "make": null,
-  "tMake": "Stamford",
   "uses": [
    "depco-power n2572 b576 r | Item NO.: ; DPK-DX-40 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A498BZD ; PRP (kW): ; 27 ; PRP (kVA): ; 34 ; ESP (kW): ; 30 ; ESP (kVA): ; 38 ; Arrangement: ; 4L ; Gover"
   ]
@@ -25989,6 +26426,30 @@
   "names": [
    "DPC184J/TAL-A42-F/ S1L2-N1"
   ],
+  "target": "S1L2N1",
+  "targetNames": [
+   "S1L2-N1"
+  ],
+  "rest": "DPC184J TAL-A42-F",
+  "rows": 1,
+  "sups": [
+   "depco-power"
+  ],
+  "tRows": 32,
+  "tSups": 10,
+  "make": null,
+  "tMake": "Stamford",
+  "uses": [
+   "depco-power n2571 b575 r | Item NO.: ; DPK-DX-50 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; 4D35ZD ; PRP (kW): ; 36 ; PRP (kVA): ; 45 ; ESP (kW): ; 40 ; ESP (kVA): ; 50 ; Arrangement: ; 4L ; Govern"
+  ]
+ },
+ {
+  "kind": "alternators",
+  "sep": "gach",
+  "key": "DPC184J/TALA42F/S1L2N1",
+  "names": [
+   "DPC184J/TAL-A42-F/ S1L2-N1"
+  ],
   "target": "DPC184J",
   "targetNames": [
    "DPC184J"
@@ -26034,25 +26495,26 @@
  {
   "kind": "alternators",
   "sep": "gach",
-  "key": "DPC184J/TALA42F/S1L2N1",
+  "key": "DPC224D/S1L2Y1/TALA42H",
   "names": [
-   "DPC184J/TAL-A42-F/ S1L2-N1"
+   "DPC224D/S1L2-Y1/ TAL-A42-H"
   ],
-  "target": "S1L2N1",
+  "target": "TALA42H",
   "targetNames": [
-   "S1L2-N1"
+   "TAL-A42-H",
+   "TAL A42 H"
   ],
-  "rest": "DPC184J TAL-A42-F",
+  "rest": "DPC224D S1L2-Y1",
   "rows": 1,
   "sups": [
    "depco-power"
   ],
-  "tRows": 32,
-  "tSups": 10,
+  "tRows": 24,
+  "tSups": 7,
   "make": null,
-  "tMake": "Stamford",
+  "tMake": "Leroy-Somer",
   "uses": [
-   "depco-power n2571 b575 r | Item NO.: ; DPK-DX-50 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; 4D35ZD ; PRP (kW): ; 36 ; PRP (kVA): ; 45 ; ESP (kW): ; 40 ; ESP (kVA): ; 50 ; Arrangement: ; 4L ; Govern"
+   "depco-power n2543 b547 r | Item NO.: ; DPK-DTY-60S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4B5-D ; PRP (kW): ; 44 ; PRP (kVA): ; 55 ; ESP (kW): ; 48 ; ESP (kVA): ; 61 ; Arrangement: ; 4L ; Governo"
   ]
  },
  {
@@ -26099,31 +26561,6 @@
   "tSups": 13,
   "make": null,
   "tMake": "Stamford",
-  "uses": [
-   "depco-power n2543 b547 r | Item NO.: ; DPK-DTY-60S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4B5-D ; PRP (kW): ; 44 ; PRP (kVA): ; 55 ; ESP (kW): ; 48 ; ESP (kVA): ; 61 ; Arrangement: ; 4L ; Governo"
-  ]
- },
- {
-  "kind": "alternators",
-  "sep": "gach",
-  "key": "DPC224D/S1L2Y1/TALA42H",
-  "names": [
-   "DPC224D/S1L2-Y1/ TAL-A42-H"
-  ],
-  "target": "TALA42H",
-  "targetNames": [
-   "TAL-A42-H",
-   "TAL A42 H"
-  ],
-  "rest": "DPC224D S1L2-Y1",
-  "rows": 1,
-  "sups": [
-   "depco-power"
-  ],
-  "tRows": 24,
-  "tSups": 7,
-  "make": null,
-  "tMake": "Leroy-Somer",
   "uses": [
    "depco-power n2543 b547 r | Item NO.: ; DPK-DTY-60S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; LR4B5-D ; PRP (kW): ; 44 ; PRP (kVA): ; 55 ; ESP (kW): ; 48 ; ESP (kVA): ; 61 ; Arrangement: ; 4L ; Governo"
   ]
@@ -26183,6 +26620,30 @@
   "names": [
    "DPC224D/TAL-A42-G/ S1L2-R1"
   ],
+  "target": "S1L2R1",
+  "targetNames": [
+   "S1L2-R1"
+  ],
+  "rest": "DPC224D TAL-A42-G",
+  "rows": 1,
+  "sups": [
+   "depco-power"
+  ],
+  "tRows": 15,
+  "tSups": 8,
+  "make": null,
+  "tMake": "Stamford",
+  "uses": [
+   "depco-power n2570 b574 r | Item NO.: ; DPK-DX-55 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; 4D35ZD ; PRP (kW): ; 40 ; PRP (kVA): ; 50 ; ESP (kW): ; 44 ; ESP (kVA): ; 55 ; Arrangement: ; 4L ; Govern"
+  ]
+ },
+ {
+  "kind": "alternators",
+  "sep": "gach",
+  "key": "DPC224D/TALA42G/S1L2R1",
+  "names": [
+   "DPC224D/TAL-A42-G/ S1L2-R1"
+  ],
   "target": "DPC224D",
   "targetNames": [
    "DPC224D"
@@ -26220,30 +26681,6 @@
   "tSups": 4,
   "make": null,
   "tMake": "Leroy-Somer",
-  "uses": [
-   "depco-power n2570 b574 r | Item NO.: ; DPK-DX-55 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; 4D35ZD ; PRP (kW): ; 40 ; PRP (kVA): ; 50 ; ESP (kW): ; 44 ; ESP (kVA): ; 55 ; Arrangement: ; 4L ; Govern"
-  ]
- },
- {
-  "kind": "alternators",
-  "sep": "gach",
-  "key": "DPC224D/TALA42G/S1L2R1",
-  "names": [
-   "DPC224D/TAL-A42-G/ S1L2-R1"
-  ],
-  "target": "S1L2R1",
-  "targetNames": [
-   "S1L2-R1"
-  ],
-  "rest": "DPC224D TAL-A42-G",
-  "rows": 1,
-  "sups": [
-   "depco-power"
-  ],
-  "tRows": 15,
-  "tSups": 8,
-  "make": null,
-  "tMake": "Stamford",
   "uses": [
    "depco-power n2570 b574 r | Item NO.: ; DPK-DX-55 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; 4D35ZD ; PRP (kW): ; 40 ; PRP (kVA): ; 50 ; ESP (kW): ; 44 ; ESP (kVA): ; 55 ; Arrangement: ; 4L ; Govern"
   ]
@@ -26503,6 +26940,31 @@
   "names": [
    "DPC224F/TAL-A44-C/ UCI224F"
   ],
+  "target": "UCI224F",
+  "targetNames": [
+   "UCI224F",
+   "UCI 224F"
+  ],
+  "rest": "DPC224F TAL-A44-C",
+  "rows": 1,
+  "sups": [
+   "depco-power"
+  ],
+  "tRows": 45,
+  "tSups": 17,
+  "make": null,
+  "tMake": "Stamford",
+  "uses": [
+   "depco-power n2567 b571 r | Item NO.: ; DPK-DX-80 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A4K41LD31 ; PRP (kW): ; 58 ; PRP (kVA): ; 73 ; ESP (kW): ; 64 ; ESP (kVA): ; 80 ; Arrangement: ; 4L ; Gov"
+  ]
+ },
+ {
+  "kind": "alternators",
+  "sep": "gach",
+  "key": "DPC224F/TALA44C/UCI224F",
+  "names": [
+   "DPC224F/TAL-A44-C/ UCI224F"
+  ],
   "target": "DPC224F",
   "targetNames": [
    "DPC224F"
@@ -26541,31 +27003,6 @@
   "tSups": 7,
   "make": null,
   "tMake": "Leroy-Somer",
-  "uses": [
-   "depco-power n2567 b571 r | Item NO.: ; DPK-DX-80 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A4K41LD31 ; PRP (kW): ; 58 ; PRP (kVA): ; 73 ; ESP (kW): ; 64 ; ESP (kVA): ; 80 ; Arrangement: ; 4L ; Gov"
-  ]
- },
- {
-  "kind": "alternators",
-  "sep": "gach",
-  "key": "DPC224F/TALA44C/UCI224F",
-  "names": [
-   "DPC224F/TAL-A44-C/ UCI224F"
-  ],
-  "target": "UCI224F",
-  "targetNames": [
-   "UCI224F",
-   "UCI 224F"
-  ],
-  "rest": "DPC224F TAL-A44-C",
-  "rows": 1,
-  "sups": [
-   "depco-power"
-  ],
-  "tRows": 45,
-  "tSups": 17,
-  "make": null,
-  "tMake": "Stamford",
   "uses": [
    "depco-power n2567 b571 r | Item NO.: ; DPK-DX-80 ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; Xinchai ; Engine Model: ; A4K41LD31 ; PRP (kW): ; 58 ; PRP (kVA): ; 73 ; ESP (kW): ; 64 ; ESP (kVA): ; 80 ; Arrangement: ; 4L ; Gov"
   ]
@@ -27432,30 +27869,6 @@
   "names": [
    "DPC314F/ S4L1S-F4"
   ],
-  "target": "DPC314F",
-  "targetNames": [
-   "DPC314F"
-  ],
-  "rest": "S4L1S-F4",
-  "rows": 1,
-  "sups": [
-   "depco-power"
-  ],
-  "tRows": 8,
-  "tSups": 1,
-  "make": "Stamford",
-  "tMake": null,
-  "uses": [
-   "depco-power n2056 b60 r | Item NO.: ; DPK-DTY-426S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YM6S9L-DB ; PRP (kW): ; 310 ; PRP (kVA): ; 388 ; ESP (kW): ; 341 ; ESP (kVA): ; 426 ; Arrangement: ; 6L ; "
-  ]
- },
- {
-  "kind": "alternators",
-  "sep": "gach",
-  "key": "DPC314F/S4L1SF4",
-  "names": [
-   "DPC314F/ S4L1S-F4"
-  ],
   "target": "S4L1SF4",
   "targetNames": [
    "S4L1S-F4"
@@ -27469,6 +27882,30 @@
   "tSups": 1,
   "make": "Stamford",
   "tMake": "Stamford",
+  "uses": [
+   "depco-power n2056 b60 r | Item NO.: ; DPK-DTY-426S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YM6S9L-DB ; PRP (kW): ; 310 ; PRP (kVA): ; 388 ; ESP (kW): ; 341 ; ESP (kVA): ; 426 ; Arrangement: ; 6L ; "
+  ]
+ },
+ {
+  "kind": "alternators",
+  "sep": "gach",
+  "key": "DPC314F/S4L1SF4",
+  "names": [
+   "DPC314F/ S4L1S-F4"
+  ],
+  "target": "DPC314F",
+  "targetNames": [
+   "DPC314F"
+  ],
+  "rest": "S4L1S-F4",
+  "rows": 1,
+  "sups": [
+   "depco-power"
+  ],
+  "tRows": 8,
+  "tSups": 1,
+  "make": "Stamford",
+  "tMake": null,
   "uses": [
    "depco-power n2056 b60 r | Item NO.: ; DPK-DTY-426S ; Frequency(Hz): ; 50 ; Phase: ; 3 ; Voltage(V): ; 380 ; Engine: ; YTO ; Engine Model: ; YM6S9L-DB ; PRP (kW): ; 310 ; PRP (kVA): ; 388 ; ESP (kW): ; 341 ; ESP (kVA): ; 426 ; Arrangement: ; 6L ; "
   ]
@@ -27725,30 +28162,6 @@
   "names": [
    "DPC354F/ TAL-A473-E"
   ],
-  "target": "DPC354F",
-  "targetNames": [
-   "DPC354F"
-  ],
-  "rest": "TAL-A473-E",
-  "rows": 1,
-  "sups": [
-   "depco-power"
-  ],
-  "tRows": 2,
-  "tSups": 1,
-  "make": "Leroy-Somer",
-  "tMake": null,
-  "uses": [
-   "depco-power n2139 b143 r | Item NO.: ; DPK-DSE-813 ; Frequency(Hz): ; 60 ; Phase: ; 3 ; Voltage(V): ; 440 ; Engine: ; SDEC ; Engine Model: ; 6KTAA25-G32.1 ; PRP (kW): ; 590 ; PRP (kVA): ; 738 ; ESP (kW): ; 650 ; ESP (kVA): ; 813 ; Arrangement: ; 6"
-  ]
- },
- {
-  "kind": "alternators",
-  "sep": "gach",
-  "key": "DPC354F/TALA473E",
-  "names": [
-   "DPC354F/ TAL-A473-E"
-  ],
   "target": "TALA473E",
   "targetNames": [
    "TAL-A473-E",
@@ -27763,6 +28176,30 @@
   "tSups": 5,
   "make": "Leroy-Somer",
   "tMake": "Leroy-Somer",
+  "uses": [
+   "depco-power n2139 b143 r | Item NO.: ; DPK-DSE-813 ; Frequency(Hz): ; 60 ; Phase: ; 3 ; Voltage(V): ; 440 ; Engine: ; SDEC ; Engine Model: ; 6KTAA25-G32.1 ; PRP (kW): ; 590 ; PRP (kVA): ; 738 ; ESP (kW): ; 650 ; ESP (kVA): ; 813 ; Arrangement: ; 6"
+  ]
+ },
+ {
+  "kind": "alternators",
+  "sep": "gach",
+  "key": "DPC354F/TALA473E",
+  "names": [
+   "DPC354F/ TAL-A473-E"
+  ],
+  "target": "DPC354F",
+  "targetNames": [
+   "DPC354F"
+  ],
+  "rest": "TAL-A473-E",
+  "rows": 1,
+  "sups": [
+   "depco-power"
+  ],
+  "tRows": 2,
+  "tSups": 1,
+  "make": "Leroy-Somer",
+  "tMake": null,
   "uses": [
    "depco-power n2139 b143 r | Item NO.: ; DPK-DSE-813 ; Frequency(Hz): ; 60 ; Phase: ; 3 ; Voltage(V): ; 440 ; Engine: ; SDEC ; Engine Model: ; 6KTAA25-G32.1 ; PRP (kW): ; 590 ; PRP (kVA): ; 738 ; ESP (kW): ; 650 ; ESP (kVA): ; 813 ; Arrangement: ; 6"
   ]
