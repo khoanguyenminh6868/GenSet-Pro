@@ -132,6 +132,18 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    "Ứng viên". What matters most (Khoa, 2026-11-02): the engine and the controller, then the alternator and the genset
    as a whole, then the `option` requirements. Prefer an
    engine and an alternator that appear together in the same genset row (a real configuration a manufacturer sells).
+   Alternator from its maker's datasheet (Khoa 2026-11-20: "miễn sao đạt yêu cầu của hsmt thì cứ gợi ý"): catalog.md
+   section "Đầu phát theo datasheet hãng (NCC chưa chào)" lists the models of the alternator makers' own sheets that the
+   code found to meet the HSMT (kVA at the continuous column, not standby; when the HSMT's site is above 40 °C / 1 000 m,
+   after the maker's own derating where its sources give one). Take one of them ONLY when the configuration's
+   row names no alternator; a row that names an alternator keeps it (the code itself replaces one whose maker sheet shows
+   it below the kVA needed, and keeps one the system has no figures for). Write `alternator` as { "model", "make", "src" }
+   with `src` copied from that section ({ "kind": "maker", "supplierId", "n" }); do not search the internet for this and
+   do not write alternator checks for it (the code writes them from the sheet). Never write it as if the supplier offered
+   it: `summary`, `why` and `gaps` say "đầu phát chọn theo datasheet hãng, nhà cung cấp chưa chào". A configuration
+   without an alternator is still a suggestion when the rest meets the HSMT. Two configurations of the same engine, one
+   with the alternator a supplier offers and one with an alternator from this section, both stay (Khoa 2026-11-20):
+   they take one place of the per-make limit, the later one right under the earlier.
    Write each model's checks once (Khoa 2026-11-03): in a configuration whose controller is the controller of an
    earlier configuration, leave out the controller checks; whose engine (alternator) is that of an earlier one, leave
    out the checks taken from "Thông số theo model" (`factSrc`). The code copies them from the earlier configuration
@@ -191,6 +203,41 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    generation is to be confirmed. A controller the source writes without its series ("Smartgen 6120", "SmartGen 6110
    automatic control module") is the model catalog.md shows after "bộ điều khiển trong dòng" / "bộ điều khiển nhà cung
    cấp chào" (HGM6120, HGM6110): keep `model` as the source writes it, and its datasheet in controllers.md counts.
+   Controller communication (`ctl_comm`) and communication modules (Khoa 2026-11-20; the code applies the same rules
+   after you, ctl-module.mjs): a part that names a function (4G, 5G, GSM / SMS, Internet, Ethernet, RS485, RS232, USB,
+   BMS, Modbus, SNMP, CAN) is `met` only when the quoted line has that function's words. A module's line in the
+   controller's datasheet ("| DSE890 MKII | DSEWebNet® Gateway | 0890-04"), a line of extendable options ("Extendable
+   options including 4G/GPS, Ethernet…") and a module's own datasheet are NOT the controller's words: do not quote them
+   for the controller. "web" alone, DSEWebNet and WebSupervisor are not Internet. RS485 / RS232 / USB / BMS / Modbus /
+   SNMP / CAN come from the controller's own lines only. Ethernet the controller's lines do not show may come from a
+   module that has it (Khoa 2026-11-20): leave it `unclear`, the code adds the module with the note "Ethernet nằm trên
+   mô-đun <model>, không phải trên bộ điều khiển".
+   A BMS connection is `met` when a controller line says BMS / building management, or Modbus, BACnet or SNMP: then
+   write in `note` "BMS qua Modbus/SNMP, cần NCC xác nhận." (Khoa Q3). 4G / 5G / GSM / SMS / Internet / Ethernet that only a
+   module gives: leave the part `unclear` and do not add the module yourself; the code pairs the controller with a
+   module its maker's documents name (`controller.modules`, `viaModule`, label "Mô-đun chọn theo tài liệu hãng, NCC
+   chưa chào") and may list other controllers of the same make with their modules (`controller.alternatives`,
+   "Phương án khác đạt tương đương": from the controller's line, the other lines its suppliers offer, and the maker's
+   own datasheets). In `summary`, `why` and `gaps` never write that a supplier offers a module or that a part is met
+   through one: no supplier has offered one.
+   catalog.md section "Bộ điều khiển theo datasheet hãng (NCC chưa chào)" (Khoa 2026-11-20) lists the other controllers of
+   those makes that only the maker's datasheet gives, each with its kind as the datasheet writes it (tự động khi mất lưới
+   (AMF) / chỉ tự khởi động / hòa đồng bộ; every controller title in controllers.md carries it too). When the HSMT has an ATS,
+   "chuyển nguồn tự động" or "khi mất điện lưới", only an AMF controller fits that requirement. Never write a controller of
+   that section as offered by a supplier: wherever you name one, say "Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào".
+   The main controller is the LOWEST of its make that meets the HSMT (Khoa 2026-11-20, "2"): among the controllers the
+   configuration's suppliers offer and those of that section, of the make the configuration's supplier offers, take the
+   lowest one whose datasheet meets every controller requirement as well as the one offered, and check EVERY controller
+   requirement on that controller's datasheet (controllers.md), as for any controller. The HSMT has an ATS / "chuyển nguồn
+   tự động" / "khi mất điện lưới" → an AMF one; the HSMT asks for synchronising / parallel running ("hòa đồng bộ", "chạy
+   song song") → keep a synchronising one; otherwise a synchronising one may go down to an AMF or auto start one (a single
+   set with an ATS: DSE8610 → DSE7320). Exception (Khoa, same answer): when the controller offered meets fewer than half of
+   the communication parts (DSE6120: 3 of 7), do not go lower; look for one of the same make that meets more. When no
+   supplier of the configuration offers the controller you choose, write it as `controller: { make, model, src: { kind:
+   "maker", supplierId: <the controller maker's id>, n: <its datasheet's n> } }` (the "supplierId, n" of its title in
+   controllers.md; the code labels it "Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào" and asks the supplier for its
+   origin, CO), and name the controller the supplier offers in `gaps` ("NCC <id> chào <model>"); the code lists it under
+   "Phương án khác". Never write such a controller in `suppliers[].hasController`.
    When the HSMT asks for a controller, a configuration with no `controller` counts as `not_met` on the controller
    (the code adds that check, Khoa 2026-11-02): give each configuration the controller its row or its supplier offers.
    "Đồng bộ thương hiệu" (Khoa 2026-11-06): when input.md has that section, the HSMT wants at least N of the engine,
@@ -222,10 +269,12 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    another make that meets the HSMT better.
    Perkins, Volvo Penta, Cummins and Mitsubishi: ONE configuration each, the one that meets the HSMT best (Khoa,
    2026-11-17; the code drops a second). Give the place it frees to another make of the catalog, so the list still has up to 8.
+   Baudouin: up to THREE configurations (Khoa, 2026-11-20; the code drops a fourth): when three different Baudouin
+   models fit, or two models with two controllers worth comparing, give them each as its own configuration.
    Đặc thù hãng động cơ (Khoa, 2026-11-18; input.md has a section "Đặc thù hãng động cơ" when it applies): the HSMT's
    engine requirements name a technology of one engine make (E-TVCS of Kubota, XPI of Cummins, ACERT of Caterpillar…).
    Then suggest ONLY engines of that make (the code drops any other make, and one of no known make), and the ceiling of 2
-   (or 1) per make does not hold for it: give every model of that make that fits. "… hoặc tương đương" next to the term
+   (or 1, or 3) per make does not hold for it: give every model of that make that fits. "… hoặc tương đương" next to the term
    does not limit the make. Versions of one engine (D1105 / D1105-BG / D1105-E2BG / -CHN / -CHN-1: the same code with a
    version suffix; not G3 / G4 or TAG2A / TAG3A, which are other ratings) are one choice: when their checks read the same
    the code keeps the best ranked only, and when they differ it keeps only the version that meets the HSMT; give the other
@@ -339,4 +388,6 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
   asking. The code adds questions of its own too; do not change any check's status because of them.
 - `make`: only when a source states it (catalog.md shows the make and where it comes from); otherwise leave it empty.
 - `line` is the catalog row exactly as in catalog.md. `genset` only when the engine and alternator come from one row.
+- `alternator.src` may also be `{ "kind": "maker", "supplierId": "", "n": 1012 }`, copied from "Đầu phát theo datasheet
+  hãng" in catalog.md (see step 2); `check` drops it when the list does not have it or the row names an alternator.
 - `conversions`: only when a value is converted; leave it out otherwise.

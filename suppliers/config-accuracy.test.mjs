@@ -382,7 +382,45 @@ test("catalog.md lists the controllers' datasheet lines", () => {
   assert.ok(part("DSE7310 MKII —").includes("3 phase generator sensing") && !part("DSE7310 MKII —").includes("Automatic start and stopping"));
 });
 
-test("SmartGen: a series written HGM6110N/6120N..., 'models: text' lines and wrapped sentences go to the right models", () => {
+test("catalog.md: controllers of the same make only the maker's datasheet gives, with their kind (bdk-amf, Khoa 20/11/2026)", () => {
+  const b = { ...sups[1], controllers: [{ brand: "Deep Sea", model: "DSE7320", text: "DSE7320", line: "Controller: Deep Sea DSE7320", src: [3001] }] };
+  const dse2 = { ...dse, specTables: [...dse.specTables, { n: 1003, title: "Datasheet: DSE7410 MKII Auto Start & DSE7420 MKII Auto Mains (Utility) Failure", header: [],
+    rows: ["The DSE7410 MKII is an Auto Start Control Module and the DSE7420 MKII is an Auto Mains (Utility) Failure Control Module", "| • | Automatic start and stopping of generator and transfer of load"] }] };
+  const list = [sups[0], b, sups[2], dse2];
+  const { md, ctlMd } = catalogMd(C.build(list), { value: 250, unit: "kVA" }, hintsOf(hsmt), { suppliers: list, hsmtText: "Bộ điều khiển kết hợp với tủ ATS" });
+  const sec = md.split("## Bộ điều khiển theo datasheet hãng (NCC chưa chào)")[1]?.split("\n## ")[0] || "";
+  assert.match(sec, /- DSE7420 MKII \(Deep Sea\) — loại theo datasheet hãng: tự động khi mất lưới \(AMF\) — supplierId: dse, n: 1003/);
+  assert.match(sec, /- DSE7410 MKII \(Deep Sea\) — loại theo datasheet hãng: chỉ tự khởi động/);
+  assert.match(sec, /HSMT có ATS/);
+  assert.ok(!/- DSE7320/.test(sec), "DSE7320 đã có ở trên, không liệt kê lại");
+  assert.match(ctlMd, /### DSE7420 MKII — supplierId: dse, n: 1003 — loại theo datasheet hãng: tự động khi mất lưới \(AMF\)/);
+});
+
+test("a main controller from its maker's datasheet (src.kind maker): no source problem, labelled, origin to confirm (bdk-amf)", () => {
+  const r = ctlConfig("DSE7320 MKII", [{ ...amf }]);
+  r.requirements.push({ item: "Xuất xứ bộ điều khiển", requirement: "G7", quote: "Bộ điều khiển Deep Sea", part: "controller", level: "core", code: "ctl_origin" });
+  r.configs[0].controller.src = { kind: "maker", supplierId: "dse", n: 1001 };
+  r.configs[0].checks.push({ item: "Xuất xứ bộ điều khiển", hsmtQuote: "Bộ điều khiển Deep Sea", offered: "UK", sourceQuote: "Automatic start and stopping of generator", part: "controller", status: "met" });
+  const run = (x) => check(x, { hsmtText: hsmt, suppliers: [...sups, dse], readWeb: () => null, origin: "all" });
+  const { problems, result } = run(r), c = result.configs[0];
+  assert.deepEqual(problems, []);
+  assert.equal(c.controller.fromMaker, true);
+  assert.equal(c.controller.label, "Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào");
+  assert.equal(c.checks.find((x) => /AMF/.test(x.item)).status, "met", JSON.stringify(c.checks.map((x) => [x.item, x.status])));
+  const o = c.checks.find((x) => x.item === "Xuất xứ bộ điều khiển");
+  assert.equal(o.status, "confirm");
+  assert.match(o.note, /cần NCC xác nhận xuất xứ \(CO\)/);
+  // Run again: the same.
+  const again = run(JSON.parse(JSON.stringify(result))).result.configs[0];
+  assert.equal(JSON.stringify(again.controller), JSON.stringify(c.controller));
+  assert.equal(again.checks.find((x) => x.item === "Xuất xứ bộ điều khiển").status, "confirm");
+  // A model the maker's table does not have is a problem.
+  const bad = ctlConfig("DSE8610 MKII", [{ ...amf }]);
+  bad.configs[0].controller.src = { kind: "maker", supplierId: "dse", n: 1001 };
+  assert.ok(run(bad).problems.some((p) => /model DSE8610 MKII không có trong nguồn/.test(p)));
+});
+
+test("SmartGen: a series written HGM6110N/6120N...,'models: text' lines and wrapped sentences go to the right models", () => {
   const sg = { id: "sg", role: "controller_maker", specTables: [{ n: 1001, title: "Datasheet: HGM6100N SERIES (HGM6110N/6120N/6110NC/6120NC)", header: [], rows: [
     "HGM6100N SERIES",
     "(HGM6110N/6120N/6110NC/6120NC)",

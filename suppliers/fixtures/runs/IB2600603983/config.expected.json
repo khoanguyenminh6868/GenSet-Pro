@@ -103,29 +103,6 @@
   },
   {
    "rank": 4,
-   "engine": "Perkins 4006-23TAG2A",
-   "alternator": "Stamford S5L1D-H41",
-   "controller": "Deep Sea DSE8610",
-   "named": null,
-   "suppliers": [
-    "uleengen:103",
-    "fdk-energy:108",
-    "koten-power:4014"
-   ],
-   "checks": {
-    "genset": "3/0/9/9",
-    "engine": "6/1/7/0",
-    "alternator": "0/0/7/3",
-    "controller": "2/0/6/0"
-   },
-   "unverifiedChecks": 0,
-   "notMet": [
-    "Tỷ số nén"
-   ],
-   "lossWarn": []
-  },
-  {
-   "rank": 5,
    "engine": "Cummins QSK23-G2",
    "alternator": "Stamford S5L1D-H41",
    "controller": "Deep Sea DSE7320",
@@ -139,6 +116,29 @@
     "genset": "7/0/9/5",
     "engine": "8/1/5/0",
     "alternator": "5/0/2/3",
+    "controller": "2/0/6/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [
+    "Tỷ số nén"
+   ],
+   "lossWarn": []
+  },
+  {
+   "rank": 5,
+   "engine": "Perkins 4006-23TAG2A",
+   "alternator": "Stamford S5L1D-H41",
+   "controller": "Deep Sea DSE8610",
+   "named": null,
+   "suppliers": [
+    "uleengen:103",
+    "fdk-energy:108",
+    "koten-power:4014"
+   ],
+   "checks": {
+    "genset": "3/0/9/9",
+    "engine": "6/1/7/0",
+    "alternator": "0/0/7/3",
     "controller": "2/0/6/0"
    },
    "unverifiedChecks": 0,
