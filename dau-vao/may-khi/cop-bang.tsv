@@ -1,0 +1,41 @@
+ncc	n	ti	dong	banghi	cot-COP(tieu-de)	con-cot-prime/standby	doc-ra-prime	doc-ra-standby	lop-may-khi	dong-mau
+agg-fuzhou	115	14	23	23	COP (kVA/kW)	không	23	0	khi	| DC260G6-NG | 260/208 | LY13-G280 | AGG
+agg-fuzhou	116	15	11	11	COP (kVA/kW)	không	11	0	khi	| CU375G6-NG | 375/300 | K19N-G2 | Cummins
+agg-fuzhou	117	16	6	6	COP (kVA/kW)	không	6	0	khi	| P1250G5-NG | 1250/1000 | 4016-61TRS2 | Perkins
+agg-fuzhou	118	17	2	2	COP (kVA/kW)	không	2	0	khi	| S400G6-NG | 400/320 | OC16 071A 02-82 | Scania
+excel-power-ningde	105	4	13	13	Continuous output	có	0	13		
+excel-power-ningde	113	12	29	29	Continuous output	có	0	29		
+googol	101	1	5	5	Continuous power （KW)	không	0	0	khi	
+googol	102	3	6	6	Continuous power （KW)	không	0	0	khi	
+mhiet	102	4	10	10	Data Center Continuous Power	không	0	0		
+mhiet	102	5	7	7	Data Center Continuous Power	không	0	0		
+mhiet	102	6	6	6	Data Center Continuous Power	không	0	0		
+mhiet	102	7	6	6	Data Center Continuous Power	không	0	0		
+penlucky	108	6	14	48	Continuous power/ KW	không	48	0		| PLWM500X | 500 | 400 | X6170ZCD556-5 | LSA 50.2 M6 | Mechanical /electronic | 3728*1406*2004 | view
+perkins	5001	127	5	5	COP kWm	có	0	0		
+perkins	5001	129	8	8	COP kWm	có	0	0		
+perkins	5001	137	9	9	COP kWm	có	0	0		
+perkins	5001	139	10	10	COP kWm	có	0	0		
+perkins	5001	141	6	6	COP kWm	có	0	0		
+perkins	5001	143	2	2	COP kWm	có	0	0		
+perkins	5001	145	4	4	COP kWm	có	0	0		
+tide-power	2003	29	75	1	Model       Model                 (COP) 	có	0	0	khi	
+weichai-heavy-machinery	102	1	2	2	Continuous Power/Speed (kWm/rpm)	không	0	0		
+weichai-heavy-machinery	103	2	2	2	Continuous Power/Speed (kWm/rpm)	không	0	0		
+weichai-heavy-machinery	104	3	2	2	Continuous Power (kVA/kW)	có	0	0	khi	
+weichai-heavy-machinery	105	4	2	2	Continuous Power (kVA/kW)	có	0	0	khi	
+weichai-heavy-machinery	112	11	4	4	Continuous Power (kVA/kW)	có	0	0	khi	
+weichai-heavy-machinery	113	12	2	2	Continuous Power (kVA/kW)	có	0	0	khi	
+weichai-heavy-machinery	120	18	3	3	持续功率 / 转速(kWm/rpm)	không	0	0		
+weichai-heavy-machinery	121	19	3	3	持续功率 / 转速(kWm/rpm)	không	0	0		
+weichai-power	111	10	2	2	Continuous Power/Speed (kWm/rpm)	không	0	0		
+weichai-power	125	19	4	4	Continuous Power (kVA/kW)	có	0	0	khi	
+weichai-power	126	20	2	2	Continuous Power (kVA/kW)	có	0	0	khi	
+weichai-power	127	21	2	2	Continuous Power (kVA/kW)	có	0	0	khi	
+weichai-power	128	22	2	2	Continuous Power (kVA/kW)	có	0	0	khi	
+weichai-power	129	23	2	2	Continuous Power/Speed (kWm/rpm)	không	0	0		
+weiman-fujian	102	1	20	20	COP/Prime	có	20	20		
+zichai	110	5	6	6	（kW） Continuous output	không	0	0		
+zichai	113	6	13	13	（kW） Continuous output	không	0	0		
+zichai	114	7	15	15	（kW） Continuous output	không	0	0		
+zichai	115	8	14	14	（kW） Continuous output	không	0	0		

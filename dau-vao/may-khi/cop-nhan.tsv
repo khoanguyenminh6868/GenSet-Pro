@@ -1,0 +1,17 @@
+ncc	n	ti	dong	dong-COP	banghi	doc-prime
+endress-stromerzeuger	111	8	10	| Continuous output [kVA/kW] | 100.0/80.0	0	0
+endress-stromerzeuger	115	12	13	| Continuous Power 1~ [kVA/kW] | 3.0/3.0	1	0
+endress-stromerzeuger	116	13	13	| Continuous Power 1~ [kVA/kW] | 1.8/1.8	1	0
+endress-stromerzeuger	121	18	10	| Continuous output [kVA/kW] | 80.0/64.0	0	0
+endress-stromerzeuger	122	19	15	| Continuous Power 1~ [kVA/kW] | 5.5/5.5	1	0
+endress-stromerzeuger	131	28	10	| Continuous output [kVA/kW] | 60.0/48.0	0	0
+endress-stromerzeuger	132	29	16	| Continuous Power 1~ [kVA/kW] | 3.0/3.0	1	0
+endress-stromerzeuger	138	35	16	| Continuous Power 1~ [kVA/kW] | 1.8/1.8	1	0
+endress-stromerzeuger	152	49	8	| Continuous output [kVA/kW] | 40.0/32.0	0	0
+endress-stromerzeuger	153	50	8	| Continuous output [kVA/kW] | 22.0/17.6	0	0
+endress-stromerzeuger	154	51	9	| Continuous Power 1~ [kVA/kW] | 7.0/7.0	1	0
+gtl-power	106	5	36	| Continuous Power | kVA/kW | 30/24 | 40/32 | 50/40 | 75/60 	0	0
+hosem-power	112	10	20	| Continuous Power | kVA | 200	1	1
+zichai	101	0	30	Continuous power: 588kW～2426kW	0	0
+zichai	118	10	4	Continuous power: 1213 kW	0	0
+tổng bảng nhãn có COP không prime/standby: 15

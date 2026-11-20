@@ -1,0 +1,58 @@
+{
+ "tong": {
+  "luot": 1093,
+  "loi": 0,
+  "dongTop": 31208,
+  "dongAll": 1094247
+ },
+ "khi": {
+  "all": 11121,
+  "allLuot": 687,
+  "allGoi": 583,
+  "allDongRieng": 499,
+  "top": 140,
+  "topLuot": 78,
+  "topGoi": 74,
+  "topDongRieng": 48
+ },
+ "xang": {
+  "all": 583,
+  "allLuot": 128,
+  "allGoi": 112,
+  "allDongRieng": 10,
+  "top": 60,
+  "topLuot": 40,
+  "topGoi": 40,
+  "topDongRieng": 5
+ },
+ "xang_khi": {
+  "all": 164,
+  "allLuot": 85,
+  "allGoi": 78,
+  "allDongRieng": 8,
+  "top": 21,
+  "topLuot": 21,
+  "topGoi": 21,
+  "topDongRieng": 3
+ },
+ "khong_ro": {
+  "all": 1365,
+  "allLuot": 665,
+  "allGoi": 552,
+  "allDongRieng": 37,
+  "top": 27,
+  "topLuot": 26,
+  "topGoi": 23,
+  "topDongRieng": 7
+ },
+ "diesel_nham": {
+  "all": 3931,
+  "allLuot": 744,
+  "allGoi": 603,
+  "allDongRieng": 168,
+  "top": 97,
+  "topLuot": 68,
+  "topGoi": 64,
+  "topDongRieng": 18
+ }
+}

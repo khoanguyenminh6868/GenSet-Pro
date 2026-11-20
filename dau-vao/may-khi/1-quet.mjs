@@ -34,7 +34,8 @@ for (const s of sups) {
     }
     const fv = []; { const tx = `${where.header}\n${where.rows}`; FUELV.lastIndex = 0; let m; while ((m = FUELV.exec(tx)) && fv.length < 6) fv.push(m[1].trim().slice(0, 30)); }
     if (fv.length) sig.fuelv = fv;
-    const ng = rows.filter((l) => /-(NG|LPG|BG)$/i.test((C.cellsOf(l)[0] || "").trim()) && /\d/.test(C.cellsOf(l)[0] || ""));
+    // ô model tổ máy đuôi -NG / *7NG / -LPG / -BG (có số), hoặc ô động cơ Baudouin dạng ...N0/5 (đuôi N0 = khí)
+    const ng = rows.filter((l) => { const cs = C.cellsOf(l); return (/(-|[0-9])(NG|LPG|BG)[0-9]?$/i.test((cs[0] || "").trim()) && /\d/.test(cs[0] || "")) || cs.some((c) => /^[0-9A-Z.]+N0\/[56]$/.test(c.trim())); });
     if (ng.length) sig.ng = { n: ng.length, ex: C.cellsOf(ng[0])[0] };
     const url = urlOf(s.id, t.n);
     if (/gas|ranqi|biogas|lpg|natural|petrol|gasoline|methane/i.test(url) && !/gasket|vegas/i.test(url)) sig.url = url;
