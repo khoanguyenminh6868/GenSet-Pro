@@ -2,7 +2,16 @@
 
 Phiên điều phối: `session_011tAj4Mp31GbgmLRtLgBxSA`. Không sửa code. Script + đầu ra: `dieu-phoi\dau-vao\ma-dong-co-trung\`.
 
-## Câu hỏi cần Khoa quyết
+## Khoa đã quyết (20/11/2026, qua phiên điều phối; nguyên văn "1. b) 2. để riêng 3. gộp 4. ok, làm sau")
+
+1. Ô hai mã → TÁCH hai bản ghi (kể cả "6M33G8D3/5 (6M33G825/5)"); phần trong ngoặc là mã nội bộ NCC không khoá nào khác dùng thì giữ mã ngoài ngoặc.
+2. Perkins " L": để riêng.
+3. Derate / Switchable: gộp vào mã gốc.
+4. `madeAt` đọc India / UK: làm sau, không thuộc đợt này.
+
+Bước 2: PR 1 = lớp E + C1 + C2 + D + F1 ở `tidyModel`; PR 2 = lớp A/B tách ô; PR 3 = lớp G (`keyOf` bỏ ngoặc), sau PR 2. Mỗi PR draft, xếp cuối hàng chờ `web/catalog.js`.
+
+## Câu hỏi đã trình Khoa
 
 1. **Hai mã một ô "X (Y)" / "X / Y" (lớp A/B, 138 khoá động cơ)**: tách ô thành HAI bản ghi (mỗi mã một khoá, dòng NCC đếm cho cả hai), hay gán vào MỘT mã? Đề xuất: tách hai bản ghi, nhưng chỉ khi cả hai phần đều là mã động cơ đã có trong danh mục; khi một phần là mã nội bộ NCC / mã lạ (G45E1, QC50/60E, R1J01, 2V95...) thì giữ mã đầu, bỏ phần trong ngoặc. Ca gốc kaihua n119 "6M33G8D3/5 (6M33G825/5)": NCC tự ghi hai mã là một; nguồn hãng (`baudouin.json`) không có câu nào nói 6M33G8D3/5 = 6M33G825/5. Khoa chọn: (a) gán về một mã (mã nào?), (b) tách hai bản ghi, (c) để nguyên?
 2. **Hậu tố " L" của Perkins** (2206C-E13TAG2 L, 2806A-E18TAG2 L..., 28 khoá, 143 dòng, 17 NCC — gồm sr-genset n2004 trong brief): KHÔNG nguồn nào trong `suppliers/sources` giải thích "L"; nguồn hãng `perkins/5001.md` chỉ có mã không "L". Gộp vào mã không "L" khi chưa có nguồn hay để riêng? Đề xuất: để riêng tới khi có nguồn (không suy ra).
