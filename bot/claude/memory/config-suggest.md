@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-20T05:13:20.197Z
+  modified: 2026-11-20T06:22:19.125Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Code xếp sẵn 30 dòng ứng viên; mọi số/câu trích phải có nguyên văn trong nguồn, sai → "Đạt" thành "Chưa rõ". ~6–11 phút, ~3 USD/gói. Yêu cầu theo bộ mã cố định `suppliers/reqcodes.mjs` (thêm mã: dòng `R(...)` đúng thứ tự + test; tăng `REQ_VERSION`).
@@ -81,7 +81,7 @@ Cách thử, lệnh và bẫy code: `suppliers/CLAUDE.md` trong repo; bản nghi
 ## IB2600603983: đáp án đúng và 5 việc Khoa duyệt (20/11/2026)
 Khoa nêu cấu hình đúng: Baudouin 6M31G825/5 + Leroy-Somer LSA 49.3 M8, AREP + AVR D350 (hoặc PMG + D350; ngắn mạch 300% (3 In) / 10 s) + DSE7320 MKII kèm mô-đun DSE890 MKII (4G / Ethernet Gateway). Dùng làm ca kiểm cho các việc dưới. Khoa quyết:
 - Đầu phát: "miễn sao đạt yêu cầu của hsmt thì cứ gợi ý" → không cần NCC ghi đầu phát cùng dòng tổ máy; chọn theo datasheet hãng (trước đó chỉ lấy đầu phát ghi cùng dòng).
-- Tỉ số nén HSMT ghi trơ ("14 : 01"): "sửa luật để kiểm tra" (em trình: ghi trơ = số chính xác, nguồn ghi khác thì không đạt ở bước chấm; bước chọn ứng viên chưa hỏi). Khác số xi lanh (ghi trơ chỉ chính xác ở bước chọn ứng viên, Khoa 17/11).
+- Tỉ số nén HSMT ghi trơ ("14 : 01"): "sửa luật để kiểm tra" (em trình: ghi trơ = số chính xác, nguồn ghi khác thì không đạt ở bước chấm; đã merge #981). Khoa chốt 20/11/2026: KHÔNG lọc ở bước chọn ứng viên (đo: sẽ loại 1.231/2.733 dòng top 30 ở 79/85 gói vì HSMT chép số của một model); 14:1 ↔ 14,1:1 coi là cùng số ("giữ như đang làm", `roundCompat` lệch ≤ 1 %), khác cách so chặt của dung tích. Khác số xi lanh (ghi trơ chỉ chính xác ở bước chọn ứng viên, Khoa 17/11).
 - Một động cơ ghi hai mã ("6M33G8D3/5 (6M33G825/5)" chiếm hai chỗ của hãng): "gộp đi, cần rà soát lại tất cả các dòng nào giống nhau của tất cả các nhà cung cấp".
 - Bổ sung dữ liệu hãng Baudouin cho mọi mã (nguồn baudouin.com); bộ điều khiển kèm mô-đun truyền thông: làm.
 Phân tích: `genbid-work\dieu-phoi\dau-vao\ib2600603983\phan-tich.md`; tiến độ ở sổ điều phối.
