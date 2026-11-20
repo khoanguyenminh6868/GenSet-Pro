@@ -20,6 +20,14 @@ Mục "Tổ máy (bảng không ghi mã động cơ) · N model" sau động cơ
 ## Nhãn COP (đề xuất, chưa đổi)
 #958 dùng `rated` cho Continuous / COP (quy ước `fromSupplier`: rated = không ghi prime/standby, web "Không ghi loại"); #959 `gensetsOf` dùng `unrated`, `rated` chỉ khi nguồn ghi "Rated". Đề xuất: theo `fromSupplier`, gộp `unrated` của `gensetsOf` vào `rated`; muốn giữ "nguồn ghi chữ Rated" thì trường riêng. Chờ chốt.
 
+## Vòng 2 (điều phối 20/11/2026: gộp `unrated` → `rated`, nhãn dùng lại hàm sẵn có)
+- SHA `0124e6f5aefc887d84a7ca6c5577f2816470300a` (commit a00c4410 + gộp main 54d4309f, main chỉ đổi `bot/claude/memory/config-suggest.md`).
+- `web/catalog.js`: 3 bố cục `googolGas` / `kangwo` / `vpower` đổi `unrated` → `rated`, vòng đọc mức chỉ còn prime / standby / rated, chú thích ghi quy ước. `suppliers/catalog-c.test.mjs` (3 ca), `suppliers/spec-diff.mjs` (`pw`) bỏ `unrated`. grep toàn repo (js / mjs / html / md / json, trừ node_modules): còn `unrated` chỉ ở chú thích "no separate `unrated`" và câu "bỏ mức `unrated` riêng" trong web/CLAUDE.md.
+- Nhãn mức trên màn hình: DÙNG LẠI `CAT_RATING` (index.html, bảng "Các dòng bảng ghi model này" của màn Danh mục: `${CAT_RATING[r]}: <b>${catPow(p)}</b>`), cùng dạng "Nhãn: kVA / kW"; khoảng min–max bằng `catRange` (như bảng model của hồ sơ NCC). Bảng "Dòng máy phân phối" của hồ sơ NCC dùng `fmtPower` (chữ "prime" / "standby" tiếng Anh, `rated` không nhãn) — không chọn vì không có nhãn tiếng Việt và không ghi được mức "không ghi loại". Bỏ `SUP_GS_LEVEL` tự đặt.
+- `cop.mjs` (dau-vao/catalog-c): build() gốc main ↔ nhánh: engines 6.889 / alternators 2.704 / controllers 187 GIỐNG; gensets 845 GIỐNG sau khi đổi khoá `unrated` → `rated` ở bản gốc (54 dòng đổi khoá, 0 dòng có cả hai); nhánh 0 `unrated`.
+- `node --test suppliers/*.test.mjs` 1.194/0; `web/test/*.test.mjs` 161/0; `quality --check` không xấu đi; Playwright cả bộ 133 + 1 lỗi `files.spec.mjs` (Đối chiếu TLKT, tải PDF tiếng Anh) khi chạy cả bộ, chạy lại riêng 7/7 → chập chờn do tải máy, không liên quan.
+- Ảnh chụp lại (đè ảnh vòng 1): zc-power "Dự phòng (standby): 2,5 kW · Không ghi loại: 2 kW"; googol "Không ghi loại: 1.000 kVA / 800 kW"; superwatt "Liên tục (prime): 625 kVA / 500 kW · Dự phòng (standby): 688 kVA / 550 kW".
+
 ## Rủi ro, quay lui
 - Teksan 498 model: mục đóng sẵn, vẽ khi mở (một bảng ~500 dòng, như mục động cơ lớn).
 - Quay lui: revert PR (một hàm + một chỗ gọi).

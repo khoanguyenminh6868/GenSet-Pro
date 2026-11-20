@@ -5,7 +5,7 @@ import path from "node:path";
 import { pathToFileURL } from "node:url";
 
 const root = path.resolve(process.argv[2] || ".");
-const out = process.argv[3] || path.join(path.dirname(new URL(import.meta.url).pathname.replace(/^\/([A-Z]:)/, "$1")), "kho.json");
+const out = process.argv[3] || "kho.json";
 const CB = await import(pathToFileURL(path.join(root, "suppliers", "config-bot.mjs")).href);
 const CAT = globalThis.GenbidCatalog;
 const cnDir = path.join(root, "suppliers", "cn");

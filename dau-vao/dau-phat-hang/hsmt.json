@@ -1,0 +1,11257 @@
+{
+ "pkgs": 1298,
+ "withAlt": 849,
+ "codes": [
+  [
+   "alt_type",
+   535
+  ],
+  [
+   "alt_power",
+   498
+  ],
+  [
+   "alt_insulation",
+   491
+  ],
+  [
+   "alt_avr",
+   370
+  ],
+  [
+   "alt_ip",
+   366
+  ],
+  [
+   "alt_make",
+   319
+  ],
+  [
+   "voltage",
+   317
+  ],
+  [
+   "alt_vreg",
+   312
+  ],
+  [
+   "other",
+   223
+  ],
+  [
+   "phases",
+   122
+  ],
+  [
+   "frequency",
+   113
+  ],
+  [
+   "ctl_protection",
+   98
+  ],
+  [
+   "alt_standard",
+   97
+  ],
+  [
+   "speed",
+   91
+  ],
+  [
+   "alt_thd",
+   89
+  ],
+  [
+   "alt_cooling",
+   85
+  ],
+  [
+   "overload",
+   73
+  ],
+  [
+   "alt_efficiency",
+   73
+  ],
+  [
+   "alt_origin",
+   64
+  ],
+  [
+   "alt_bearing",
+   46
+  ],
+  [
+   "alt_model",
+   40
+  ],
+  [
+   "alt_winding",
+   36
+  ],
+  [
+   "alt_poles",
+   35
+  ],
+  [
+   "freq_regulation",
+   35
+  ],
+  [
+   "alt_short_circuit",
+   30
+  ],
+  [
+   "alt_excitation",
+   29
+  ],
+  [
+   "alt_pitch",
+   20
+  ],
+  [
+   "genset_type",
+   11
+  ],
+  [
+   "standards",
+   9
+  ],
+  [
+   "battery",
+   8
+  ],
+  [
+   "ctl_measure",
+   7
+  ],
+  [
+   "ambient",
+   7
+  ],
+  [
+   "ctl_parallel",
+   5
+  ],
+  [
+   "ctl_start_amf",
+   4
+  ],
+  [
+   "power_factor",
+   3
+  ],
+  [
+   "power_prime",
+   3
+  ],
+  [
+   "current",
+   2
+  ],
+  [
+   "weight",
+   2
+  ],
+  [
+   "breaker",
+   2
+  ],
+  [
+   "dimensions",
+   2
+  ],
+  [
+   "emission",
+   2
+  ],
+  [
+   "governor",
+   1
+  ],
+  [
+   "genset_origin",
+   1
+  ],
+  [
+   "power_standby",
+   1
+  ],
+  [
+   "ctl_alarm_log",
+   1
+  ],
+  [
+   "canopy",
+   1
+  ],
+  [
+   "ctl_make",
+   1
+  ],
+  [
+   "engine_make",
+   1
+  ],
+  [
+   "air_filter",
+   1
+  ],
+  [
+   "fuel_consumption",
+   1
+  ],
+  [
+   "noise",
+   1
+  ],
+  [
+   "ctl_display_lang",
+   1
+  ],
+  [
+   "fuel_system",
+   1
+  ],
+  [
+   "iso8528_class",
+   1
+  ]
+ ],
+ "hit": {
+  "kva": 500,
+  "insH": 619,
+  "insF": 11,
+  "pmg": 67,
+  "arep": 16,
+  "pmgOrArep": 68,
+  "selfExc": 360,
+  "sc300": 41,
+  "vreg": {
+   "n": 245,
+   "≤0.25": 3,
+   "≤0.5": 45,
+   "≤1": 181,
+   "≤1.5": 3,
+   ">1.5": 13
+  },
+  "makeNamed": 59,
+  "makeNamedEq": 30,
+  "makes": {
+   "stamford": 24,
+   "mecc alte": 12,
+   "leroy somer": 18,
+   "marathon": 2,
+   "leroysomer": 5,
+   "sincro": 6,
+   "linz": 4,
+   "meccalte": 1,
+   "avk": 1,
+   "leroy-somer": 1
+  },
+  "avrModel": 18,
+  "brushless": 580
+ },
+ "altOrigin": {
+  "origin": 20,
+  "brand": 7
+ },
+ "detail": [
+  {
+   "key": "DA-mvqhhehr",
+   "codes": [
+    "alt_power",
+    "alt_type",
+    "other",
+    "alt_ip",
+    "governor"
+   ],
+   "ins": "H",
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2200001635",
+   "codes": [
+    "alt_type",
+    "alt_insulation"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2200004914",
+   "codes": [
+    "alt_power",
+    "phases",
+    "voltage",
+    "frequency",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2200006257",
+   "codes": [
+    "alt_power",
+    "alt_ip",
+    "genset_type",
+    "alt_avr",
+    "frequency",
+    "voltage"
+   ],
+   "kva": true,
+   "self": true
+  },
+  {
+   "key": "IB2200008211",
+   "codes": [
+    "alt_type",
+    "alt_standard",
+    "alt_ip",
+    "alt_power",
+    "overload",
+    "alt_avr",
+    "alt_vreg",
+    "alt_thd"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2200008717",
+   "codes": [
+    "alt_type",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "alt_avr",
+    "alt_bearing",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "altOrigin": "origin"
+  },
+  {
+   "key": "IB2200011725",
+   "codes": [
+    "alt_make",
+    "alt_type"
+   ]
+  },
+  {
+   "key": "IB2200012797",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_power",
+    "voltage",
+    "phases",
+    "alt_vreg",
+    "frequency",
+    "overload",
+    "ctl_protection",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2200012854",
+   "codes": [
+    "alt_power",
+    "alt_insulation",
+    "frequency",
+    "ctl_protection"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2200012873",
+   "codes": [
+    "alt_avr",
+    "battery"
+   ]
+  },
+  {
+   "key": "IB2200015404",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_type",
+    "alt_vreg",
+    "alt_insulation",
+    "other",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2200015953",
+   "codes": [
+    "other",
+    "alt_standard",
+    "alt_type",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2200016199",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_power",
+    "voltage",
+    "alt_vreg",
+    "frequency",
+    "alt_avr",
+    "alt_bearing",
+    "alt_ip",
+    "alt_insulation",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2200016981",
+   "codes": [
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2200018828",
+   "codes": [
+    "alt_type",
+    "alt_avr",
+    "voltage",
+    "frequency",
+    "alt_ip",
+    "alt_insulation",
+    "alt_thd",
+    "alt_short_circuit"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2200019427",
+   "codes": [
+    "alt_origin",
+    "alt_power",
+    "phases",
+    "voltage",
+    "alt_type",
+    "alt_avr",
+    "alt_ip",
+    "alt_insulation",
+    "alt_thd"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "altOrigin": "origin"
+  },
+  {
+   "key": "IB2200020538",
+   "codes": [
+    "alt_origin",
+    "other",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "alt_short_circuit",
+    "alt_thd",
+    "alt_type",
+    "alt_standard"
+   ],
+   "ins": "H",
+   "self": true,
+   "sc": true
+  },
+  {
+   "key": "IB2200020589",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_power",
+    "alt_type",
+    "alt_insulation",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2200021336",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "speed",
+    "alt_standard"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2200022333",
+   "codes": [
+    "alt_origin",
+    "alt_power",
+    "alt_avr",
+    "alt_vreg",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "sc": true
+  },
+  {
+   "key": "IB2200029877",
+   "codes": [
+    "other",
+    "alt_power",
+    "voltage",
+    "alt_vreg",
+    "ctl_protection",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2200029921",
+   "codes": [
+    "voltage",
+    "alt_power",
+    "alt_vreg",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2200029952",
+   "codes": [
+    "other",
+    "alt_power",
+    "alt_vreg",
+    "ctl_protection",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2200029975",
+   "codes": [
+    "alt_type"
+   ]
+  },
+  {
+   "key": "IB2200030059",
+   "codes": [
+    "alt_power",
+    "voltage",
+    "alt_type",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2200030282",
+   "codes": [
+    "alt_poles",
+    "alt_bearing",
+    "alt_type",
+    "alt_ip",
+    "alt_insulation",
+    "other",
+    "alt_avr"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2200030829",
+   "codes": [
+    "alt_insulation"
+   ]
+  },
+  {
+   "key": "IB2200031154",
+   "codes": [
+    "alt_type",
+    "alt_standard",
+    "alt_ip",
+    "alt_power",
+    "overload",
+    "alt_avr",
+    "alt_vreg",
+    "alt_thd"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2200032133",
+   "codes": [
+    "standards",
+    "alt_avr",
+    "alt_power",
+    "voltage",
+    "alt_type",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_insulation",
+    "alt_thd",
+    "speed",
+    "alt_efficiency",
+    "alt_make"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2200035219",
+   "codes": [
+    "alt_power",
+    "voltage",
+    "current",
+    "phases",
+    "frequency",
+    "speed",
+    "alt_insulation",
+    "alt_type",
+    "alt_winding"
+   ],
+   "kva": true,
+   "ins": "F",
+   "self": true
+  },
+  {
+   "key": "IB2200036847",
+   "codes": [
+    "alt_make",
+    "alt_model",
+    "other",
+    "alt_power",
+    "frequency",
+    "phases",
+    "voltage",
+    "speed",
+    "alt_insulation",
+    "alt_avr"
+   ],
+   "ins": "H",
+   "makes": [
+    "stamford"
+   ]
+  },
+  {
+   "key": "IB2200038691",
+   "codes": [
+    "standards",
+    "alt_ip"
+   ]
+  },
+  {
+   "key": "IB2200038751",
+   "codes": [
+    "alt_type",
+    "alt_avr",
+    "alt_power",
+    "voltage"
+   ],
+   "kva": true,
+   "self": true
+  },
+  {
+   "key": "IB2200039869",
+   "codes": [
+    "other",
+    "alt_type",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "alt_avr",
+    "alt_bearing",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2200040782",
+   "codes": [
+    "alt_insulation",
+    "alt_type"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2200042292",
+   "codes": [
+    "battery",
+    "alt_cooling"
+   ]
+  },
+  {
+   "key": "IB2200043097",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_power",
+    "voltage",
+    "phases",
+    "alt_vreg",
+    "frequency",
+    "overload",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2200043601",
+   "codes": [
+    "alt_type"
+   ]
+  },
+  {
+   "key": "IB2200043616",
+   "codes": [
+    "alt_make"
+   ],
+   "makes": [
+    "mecc alte"
+   ]
+  },
+  {
+   "key": "IB2200046063",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2200049662",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_standard",
+    "alt_insulation",
+    "other",
+    "alt_avr",
+    "alt_ip",
+    "alt_thd",
+    "alt_vreg"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2200050164",
+   "codes": [
+    "alt_type"
+   ]
+  },
+  {
+   "key": "IB2200052056",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "ctl_protection",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2200052323",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2200052716",
+   "codes": [
+    "alt_make",
+    "frequency",
+    "alt_poles",
+    "alt_avr",
+    "phases",
+    "alt_power",
+    "voltage"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2200053768",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_vreg",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2200058001",
+   "codes": [
+    "other"
+   ]
+  },
+  {
+   "key": "IB2200060818",
+   "codes": [
+    "alt_type",
+    "alt_standard",
+    "alt_ip",
+    "alt_power",
+    "overload",
+    "alt_avr",
+    "alt_vreg",
+    "alt_thd"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2200062073",
+   "codes": [
+    "alt_vreg",
+    "alt_power",
+    "alt_make"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2200062524",
+   "codes": [
+    "alt_power",
+    "voltage",
+    "current",
+    "phases",
+    "frequency",
+    "speed",
+    "alt_insulation",
+    "alt_type",
+    "alt_winding"
+   ],
+   "kva": true,
+   "ins": "F",
+   "self": true
+  },
+  {
+   "key": "IB2200063730",
+   "codes": [
+    "other"
+   ]
+  },
+  {
+   "key": "IB2200063776",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "voltage",
+    "alt_poles",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "other",
+    "alt_insulation",
+    "alt_ip",
+    "ctl_protection"
+   ],
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2200064629",
+   "codes": [
+    "alt_power"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2200065274",
+   "codes": [
+    "alt_power",
+    "standards",
+    "alt_standard",
+    "voltage",
+    "alt_type",
+    "alt_ip",
+    "alt_insulation",
+    "speed"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2200065469",
+   "codes": [
+    "alt_make",
+    "other",
+    "voltage",
+    "phases",
+    "alt_type",
+    "alt_power",
+    "frequency",
+    "alt_insulation",
+    "alt_vreg",
+    "speed",
+    "ctl_measure"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2200067367",
+   "codes": [
+    "alt_power",
+    "alt_avr",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2200067764",
+   "codes": [
+    "alt_model",
+    "alt_type",
+    "phases",
+    "alt_ip",
+    "alt_avr"
+   ]
+  },
+  {
+   "key": "IB2200068759",
+   "codes": [
+    "alt_vreg"
+   ],
+   "ins": "H",
+   "sc": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2200068912",
+   "codes": [
+    "alt_origin"
+   ]
+  },
+  {
+   "key": "IB2200069185",
+   "codes": [
+    "alt_make",
+    "alt_type"
+   ],
+   "ins": "H",
+   "self": true,
+   "makes": [
+    "mecc alte"
+   ]
+  },
+  {
+   "key": "IB2200069368",
+   "codes": [
+    "alt_make",
+    "alt_vreg"
+   ],
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2200071778",
+   "codes": [
+    "alt_poles",
+    "alt_power",
+    "voltage",
+    "alt_ip",
+    "alt_insulation",
+    "alt_vreg",
+    "speed",
+    "alt_type",
+    "alt_thd",
+    "other"
+   ],
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2200073279",
+   "codes": [
+    "alt_make"
+   ],
+   "altOrigin": "origin"
+  },
+  {
+   "key": "IB2200074392",
+   "codes": [
+    "alt_make",
+    "alt_origin",
+    "alt_type",
+    "alt_power",
+    "alt_avr",
+    "alt_ip"
+   ],
+   "kva": true,
+   "self": true
+  },
+  {
+   "key": "IB2200075467",
+   "codes": [
+    "alt_make"
+   ]
+  },
+  {
+   "key": "IB2200079244",
+   "codes": [
+    "other"
+   ]
+  },
+  {
+   "key": "IB2200082761",
+   "codes": [
+    "alt_type"
+   ]
+  },
+  {
+   "key": "IB2200083057",
+   "codes": [
+    "alt_type",
+    "voltage",
+    "alt_power",
+    "alt_ip",
+    "alt_insulation",
+    "alt_avr",
+    "alt_short_circuit",
+    "overload",
+    "alt_standard",
+    "alt_thd",
+    "frequency",
+    "alt_cooling",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "sc": true,
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2200084263",
+   "codes": [
+    "alt_make"
+   ]
+  },
+  {
+   "key": "IB2200086314",
+   "codes": [
+    "alt_power",
+    "voltage",
+    "alt_vreg",
+    "genset_type",
+    "alt_type",
+    "alt_insulation",
+    "alt_make"
+   ],
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2200087789",
+   "codes": [
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2200092179",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "alt_short_circuit",
+    "alt_vreg",
+    "other"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2200093803",
+   "codes": [
+    "alt_power",
+    "alt_make",
+    "voltage",
+    "alt_poles",
+    "frequency",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "other",
+    "alt_insulation",
+    "alt_ip",
+    "ctl_protection"
+   ],
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2200093814",
+   "codes": [
+    "alt_power",
+    "alt_avr",
+    "ctl_protection"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2200094892",
+   "codes": [
+    "alt_avr"
+   ]
+  },
+  {
+   "key": "IB2200097596",
+   "codes": [
+    "alt_make"
+   ],
+   "makes": [
+    "leroy somer"
+   ]
+  },
+  {
+   "key": "IB2200100465",
+   "codes": [
+    "alt_power",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2200100977",
+   "codes": [
+    "alt_standard",
+    "alt_make",
+    "alt_type",
+    "speed",
+    "alt_cooling",
+    "voltage",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "ins": "H",
+   "makes": [
+    "leroy somer"
+   ]
+  },
+  {
+   "key": "IB2200101576",
+   "codes": [
+    "standards",
+    "alt_avr",
+    "alt_power",
+    "voltage",
+    "alt_type",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_insulation",
+    "alt_thd",
+    "speed",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2200104478",
+   "codes": [
+    "alt_excitation",
+    "alt_standard",
+    "voltage",
+    "alt_avr",
+    "alt_insulation",
+    "other"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2200106999",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_insulation",
+    "alt_standard"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300000242",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "voltage",
+    "alt_insulation",
+    "alt_ip",
+    "alt_cooling",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300000347",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_insulation"
+   ],
+   "ins": "H",
+   "makes": [
+    "stamford"
+   ]
+  },
+  {
+   "key": "IB2300000816",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300002060",
+   "codes": [
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2300002907",
+   "codes": [
+    "alt_excitation",
+    "alt_avr"
+   ],
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2300005377",
+   "codes": [
+    "alt_standard",
+    "other",
+    "alt_type",
+    "alt_avr",
+    "ctl_protection",
+    "voltage",
+    "alt_short_circuit",
+    "ctl_start_amf",
+    "alt_ip",
+    "alt_insulation",
+    "alt_thd",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG",
+   "sc": true
+  },
+  {
+   "key": "IB2300008330",
+   "codes": [
+    "other"
+   ]
+  },
+  {
+   "key": "IB2300008811",
+   "codes": [
+    "alt_type",
+    "alt_winding"
+   ]
+  },
+  {
+   "key": "IB2300008812",
+   "codes": [
+    "alt_type"
+   ]
+  },
+  {
+   "key": "IB2300010852",
+   "codes": [
+    "alt_origin",
+    "other",
+    "alt_power",
+    "alt_short_circuit"
+   ],
+   "kva": true,
+   "sc": true
+  },
+  {
+   "key": "IB2300011564",
+   "codes": [
+    "alt_winding",
+    "alt_avr"
+   ]
+  },
+  {
+   "key": "IB2300013484",
+   "codes": [
+    "alt_power",
+    "voltage",
+    "alt_avr",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2300016146",
+   "codes": [
+    "alt_winding"
+   ]
+  },
+  {
+   "key": "IB2300018261",
+   "codes": [
+    "alt_origin",
+    "alt_type",
+    "alt_standard",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "alt_short_circuit",
+    "alt_vreg",
+    "other"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2300020482",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_ip",
+    "alt_insulation",
+    "overload"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300022380",
+   "codes": [
+    "ctl_protection",
+    "voltage",
+    "freq_regulation",
+    "alt_vreg",
+    "alt_type",
+    "alt_insulation",
+    "alt_thd"
+   ],
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2300022940",
+   "codes": [
+    "alt_power",
+    "phases",
+    "alt_poles",
+    "voltage",
+    "alt_bearing",
+    "frequency",
+    "other",
+    "alt_type",
+    "alt_avr",
+    "alt_pitch",
+    "alt_vreg",
+    "alt_ip",
+    "alt_insulation",
+    "alt_thd"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300023194",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "voltage",
+    "alt_insulation",
+    "other"
+   ],
+   "kva": true,
+   "ins": "H",
+   "makes": [
+    "leroy somer"
+   ]
+  },
+  {
+   "key": "IB2300025731",
+   "codes": [
+    "alt_make"
+   ],
+   "makes": [
+    "marathon"
+   ]
+  },
+  {
+   "key": "IB2300026252",
+   "codes": [
+    "alt_type",
+    "voltage",
+    "alt_power",
+    "frequency",
+    "freq_regulation",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300027083",
+   "codes": [
+    "alt_make"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300027136",
+   "codes": [
+    "other"
+   ]
+  },
+  {
+   "key": "IB2300030459",
+   "codes": [
+    "alt_model"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2300030889",
+   "codes": [
+    "alt_type",
+    "alt_insulation",
+    "alt_standard",
+    "alt_avr"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300031444",
+   "codes": [
+    "alt_origin",
+    "alt_make",
+    "phases",
+    "alt_type",
+    "alt_avr",
+    "alt_power",
+    "voltage",
+    "frequency",
+    "alt_insulation",
+    "alt_ip",
+    "alt_vreg",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300031541",
+   "codes": [
+    "alt_standard",
+    "alt_make",
+    "alt_type",
+    "speed",
+    "alt_cooling",
+    "voltage",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "ins": "H",
+   "makes": [
+    "leroy somer"
+   ]
+  },
+  {
+   "key": "IB2300032777",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "alt_avr"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2300036510",
+   "codes": [
+    "alt_model",
+    "alt_power",
+    "voltage",
+    "speed",
+    "weight",
+    "other"
+   ]
+  },
+  {
+   "key": "IB2300036584",
+   "codes": [
+    "other"
+   ]
+  },
+  {
+   "key": "IB2300042675",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_ip",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300042764",
+   "codes": [
+    "alt_model"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2300046166",
+   "codes": [
+    "alt_power",
+    "alt_type"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2300046231",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_insulation",
+    "alt_ip",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300046353",
+   "codes": [
+    "phases",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300048642",
+   "codes": [
+    "alt_type",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "alt_avr",
+    "alt_bearing",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300048778",
+   "codes": [
+    "genset_type",
+    "alt_power",
+    "alt_poles",
+    "voltage",
+    "alt_ip",
+    "alt_insulation",
+    "speed",
+    "alt_type",
+    "alt_thd"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300054067",
+   "codes": [
+    "voltage",
+    "alt_power",
+    "frequency",
+    "alt_cooling",
+    "alt_insulation",
+    "alt_type",
+    "alt_avr",
+    "alt_ip",
+    "alt_standard"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG",
+   "self": true
+  },
+  {
+   "key": "IB2300057123",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_ip",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300062472",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_power",
+    "voltage",
+    "alt_vreg",
+    "alt_avr",
+    "alt_ip",
+    "alt_type",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300064290",
+   "codes": [
+    "alt_type",
+    "alt_insulation",
+    "alt_avr",
+    "other"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2300065310",
+   "codes": [
+    "alt_standard",
+    "alt_type",
+    "voltage",
+    "alt_avr",
+    "other",
+    "alt_ip",
+    "alt_insulation"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300065474",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "ctl_protection",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "alt_efficiency",
+    "overload",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300067312",
+   "codes": [
+    "voltage",
+    "alt_power",
+    "ctl_protection"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300067330",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_vreg",
+    "overload",
+    "alt_type",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300067463",
+   "codes": [
+    "other",
+    "battery"
+   ]
+  },
+  {
+   "key": "IB2300073418",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_avr",
+    "alt_vreg",
+    "alt_ip",
+    "alt_insulation",
+    "alt_thd",
+    "alt_efficiency",
+    "alt_standard"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2300074496",
+   "codes": [
+    "alt_type",
+    "voltage",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "speed",
+    "frequency"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300077135",
+   "codes": [
+    "alt_type",
+    "ctl_protection",
+    "alt_power",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "other"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG+AREP",
+   "self": true,
+   "sc": true,
+   "vreg": 0.25
+  },
+  {
+   "key": "IB2300078874",
+   "codes": [
+    "voltage",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "alt_standard",
+    "other"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2300080302",
+   "codes": [
+    "genset_origin",
+    "power_standby",
+    "frequency",
+    "voltage",
+    "alt_poles",
+    "alt_type",
+    "alt_avr",
+    "alt_ip",
+    "alt_insulation",
+    "other"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG",
+   "self": true,
+   "altOrigin": "origin"
+  },
+  {
+   "key": "IB2300083282",
+   "codes": [
+    "alt_model"
+   ]
+  },
+  {
+   "key": "IB2300083611",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_avr",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_bearing",
+    "alt_insulation",
+    "alt_ip",
+    "alt_efficiency",
+    "alt_make"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300083662",
+   "codes": [
+    "alt_insulation",
+    "alt_efficiency"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2300087393",
+   "codes": [
+    "other",
+    "phases",
+    "speed",
+    "ctl_protection",
+    "alt_insulation",
+    "alt_type"
+   ],
+   "ins": "H",
+   "sc": true
+  },
+  {
+   "key": "IB2300088930",
+   "codes": [
+    "voltage",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300088957",
+   "codes": [
+    "alt_avr",
+    "alt_vreg",
+    "alt_ip"
+   ],
+   "vreg": 1
+  },
+  {
+   "key": "IB2300089150",
+   "codes": [
+    "alt_type",
+    "alt_avr",
+    "alt_standard",
+    "alt_power",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_cooling",
+    "alt_ip",
+    "alt_insulation",
+    "overload"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 2
+  },
+  {
+   "key": "IB2300089882",
+   "codes": [
+    "other",
+    "alt_type",
+    "alt_power",
+    "voltage",
+    "frequency",
+    "alt_vreg",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2300092659",
+   "codes": [
+    "alt_type",
+    "alt_standard",
+    "frequency",
+    "alt_avr",
+    "alt_vreg",
+    "alt_power",
+    "alt_ip",
+    "alt_insulation",
+    "alt_thd",
+    "alt_efficiency"
+   ],
+   "ins": "H",
+   "exc": "PMG",
+   "vreg": 0.25
+  },
+  {
+   "key": "IB2300093791",
+   "codes": [
+    "other"
+   ]
+  },
+  {
+   "key": "IB2300094137",
+   "codes": [
+    "alt_origin",
+    "alt_type",
+    "alt_standard",
+    "other"
+   ],
+   "self": true
+  },
+  {
+   "key": "IB2300096122",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300098387",
+   "codes": [
+    "alt_standard",
+    "alt_avr",
+    "alt_vreg",
+    "other"
+   ],
+   "vreg": 1
+  },
+  {
+   "key": "IB2300100202",
+   "codes": [
+    "alt_model"
+   ]
+  },
+  {
+   "key": "IB2300100347",
+   "codes": [
+    "other"
+   ],
+   "makes": [
+    "leroysomer"
+   ]
+  },
+  {
+   "key": "IB2300102941",
+   "codes": [
+    "phases"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300107769",
+   "codes": [
+    "frequency",
+    "alt_type",
+    "alt_power",
+    "voltage",
+    "phases",
+    "alt_avr"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2300108940",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_vreg",
+    "alt_ip",
+    "overload",
+    "alt_power"
+   ],
+   "kva": true,
+   "self": true
+  },
+  {
+   "key": "IB2300111427",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "phases",
+    "alt_avr"
+   ]
+  },
+  {
+   "key": "IB2300114249",
+   "codes": [
+    "alt_avr"
+   ]
+  },
+  {
+   "key": "IB2300116009",
+   "codes": [
+    "alt_poles",
+    "alt_power",
+    "alt_winding",
+    "alt_insulation",
+    "alt_ip",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300116904",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_power",
+    "voltage",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "makes": [
+    "sincro",
+    "linz",
+    "mecc alte"
+   ]
+  },
+  {
+   "key": "IB2300119201",
+   "codes": [
+    "alt_avr",
+    "other"
+   ]
+  },
+  {
+   "key": "IB2300119452",
+   "codes": [
+    "voltage",
+    "alt_power",
+    "phases",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "ctl_protection"
+   ],
+   "kva": true,
+   "ins": "F",
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2300119789",
+   "codes": [
+    "alt_model",
+    "phases",
+    "frequency",
+    "voltage",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2300120176",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_power",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300123990",
+   "codes": [
+    "alt_model",
+    "alt_power",
+    "phases",
+    "alt_avr",
+    "alt_ip",
+    "alt_insulation",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300127113",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "phases",
+    "alt_poles",
+    "voltage",
+    "frequency",
+    "alt_type",
+    "alt_avr",
+    "alt_ip",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300130364",
+   "codes": [
+    "alt_power"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2300131187",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_thd",
+    "alt_insulation",
+    "alt_ip",
+    "alt_bearing",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 2.5
+  },
+  {
+   "key": "IB2300131371",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300133361",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "ctl_protection",
+    "alt_type",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300134568",
+   "codes": [
+    "other",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "speed",
+    "alt_power"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300134577",
+   "codes": [
+    "other",
+    "alt_origin",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_thd",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 2.5
+  },
+  {
+   "key": "IB2300135189",
+   "codes": [
+    "alt_make"
+   ]
+  },
+  {
+   "key": "IB2300135650",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_thd",
+    "alt_insulation",
+    "alt_ip",
+    "alt_bearing",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 2.5
+  },
+  {
+   "key": "IB2300136320",
+   "codes": [
+    "other",
+    "alt_make",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_thd",
+    "alt_insulation",
+    "alt_winding",
+    "alt_ip",
+    "alt_bearing",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 2.5
+  },
+  {
+   "key": "IB2300139580",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_thd",
+    "alt_insulation",
+    "alt_ip",
+    "alt_bearing",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 2.5
+  },
+  {
+   "key": "IB2300141947",
+   "codes": [
+    "alt_model"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2300144357",
+   "codes": [
+    "alt_type"
+   ]
+  },
+  {
+   "key": "IB2300146335",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_power",
+    "alt_ip",
+    "alt_insulation",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300146729",
+   "codes": [
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "phases"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300147640",
+   "codes": [
+    "alt_power"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300147913",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_standard",
+    "alt_power",
+    "voltage",
+    "other",
+    "alt_insulation",
+    "alt_ip",
+    "alt_short_circuit",
+    "alt_cooling",
+    "alt_thd",
+    "alt_efficiency",
+    "ctl_start_amf"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300153051",
+   "codes": [
+    "alt_model",
+    "alt_power",
+    "phases",
+    "alt_avr",
+    "alt_insulation",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300158312",
+   "codes": [
+    "breaker",
+    "alt_type",
+    "phases",
+    "alt_power",
+    "voltage",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2300158982",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "phases",
+    "frequency",
+    "voltage",
+    "genset_type",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "overload"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG",
+   "self": true,
+   "makes": [
+    "stamford"
+   ]
+  },
+  {
+   "key": "IB2300159650",
+   "codes": [
+    "alt_make"
+   ],
+   "makes": [
+    "leroy somer"
+   ]
+  },
+  {
+   "key": "IB2300163186",
+   "codes": [
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300163844",
+   "codes": [
+    "alt_power",
+    "alt_avr",
+    "alt_standard",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300165112",
+   "codes": [
+    "alt_type",
+    "alt_insulation",
+    "alt_standard",
+    "alt_avr"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300165131",
+   "codes": [
+    "alt_make",
+    "alt_excitation",
+    "alt_ip",
+    "phases",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation",
+    "alt_type"
+   ],
+   "ins": "H",
+   "exc": "PMG",
+   "makes": [
+    "leroy somer"
+   ]
+  },
+  {
+   "key": "IB2300173662",
+   "codes": [
+    "alt_winding"
+   ]
+  },
+  {
+   "key": "IB2300177056",
+   "codes": [
+    "alt_power",
+    "alt_avr"
+   ]
+  },
+  {
+   "key": "IB2300178837",
+   "codes": [
+    "alt_power",
+    "voltage",
+    "alt_avr",
+    "alt_type",
+    "alt_insulation",
+    "alt_make"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300179052",
+   "codes": [
+    "alt_power",
+    "voltage",
+    "alt_efficiency",
+    "alt_type",
+    "alt_insulation",
+    "alt_standard"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300185860",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "frequency",
+    "phases",
+    "voltage",
+    "speed",
+    "alt_insulation",
+    "alt_avr"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2300188511",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "voltage",
+    "alt_vreg",
+    "alt_avr",
+    "alt_power",
+    "alt_thd",
+    "ctl_protection"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2300190927",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_type",
+    "alt_power",
+    "alt_insulation",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2300191244",
+   "codes": [
+    "alt_make",
+    "alt_model",
+    "alt_origin",
+    "alt_standard",
+    "alt_type",
+    "voltage",
+    "power_factor",
+    "alt_insulation",
+    "alt_ip",
+    "alt_vreg",
+    "ctl_protection",
+    "alt_avr",
+    "alt_cooling",
+    "alt_efficiency"
+   ],
+   "ins": "H",
+   "self": true,
+   "sc": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300191898",
+   "codes": [
+    "alt_make",
+    "ctl_protection",
+    "voltage",
+    "alt_type",
+    "battery"
+   ]
+  },
+  {
+   "key": "IB2300192935",
+   "codes": [
+    "alt_type",
+    "alt_insulation",
+    "battery"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2300193337",
+   "codes": [
+    "alt_power",
+    "other",
+    "alt_type",
+    "voltage",
+    "alt_insulation",
+    "speed",
+    "alt_vreg",
+    "overload"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1,
+   "makes": [
+    "sincro"
+   ]
+  },
+  {
+   "key": "IB2300194512",
+   "codes": [
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "ctl_protection"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300198163",
+   "codes": [
+    "alt_make",
+    "alt_ip"
+   ],
+   "makes": [
+    "mecc alte"
+   ]
+  },
+  {
+   "key": "IB2300198424",
+   "codes": [
+    "voltage",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300201430",
+   "codes": [
+    "other",
+    "alt_type",
+    "voltage",
+    "frequency",
+    "alt_power",
+    "speed",
+    "alt_avr",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_insulation",
+    "alt_ip",
+    "alt_cooling",
+    "overload"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1,
+   "makes": [
+    "leroysomer"
+   ]
+  },
+  {
+   "key": "IB2300204696",
+   "codes": [
+    "alt_origin",
+    "alt_type",
+    "alt_insulation",
+    "voltage",
+    "other"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300204857",
+   "codes": [
+    "alt_type",
+    "alt_insulation",
+    "alt_short_circuit",
+    "alt_ip",
+    "voltage",
+    "alt_power",
+    "alt_vreg",
+    "alt_avr",
+    "ctl_protection",
+    "alt_cooling",
+    "alt_standard"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300208535",
+   "codes": [
+    "alt_make",
+    "ctl_protection",
+    "alt_power",
+    "alt_type",
+    "battery"
+   ]
+  },
+  {
+   "key": "IB2300212821",
+   "codes": [
+    "alt_make",
+    "alt_origin",
+    "other",
+    "alt_type",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300213223",
+   "codes": [
+    "alt_power",
+    "alt_avr",
+    "other"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300214975",
+   "codes": [
+    "phases",
+    "alt_type",
+    "alt_avr",
+    "alt_power",
+    "voltage",
+    "frequency",
+    "alt_insulation",
+    "alt_ip",
+    "alt_vreg",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300215868",
+   "codes": [
+    "alt_make",
+    "alt_ip",
+    "alt_winding",
+    "alt_thd"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2300216508",
+   "codes": [
+    "alt_avr"
+   ]
+  },
+  {
+   "key": "IB2300217401",
+   "codes": [
+    "alt_power",
+    "alt_avr"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2300217672",
+   "codes": [
+    "alt_type",
+    "alt_avr",
+    "alt_power",
+    "voltage",
+    "phases",
+    "alt_vreg",
+    "frequency",
+    "alt_ip",
+    "alt_insulation",
+    "ctl_alarm_log"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2300220302",
+   "codes": [
+    "alt_make",
+    "alt_origin",
+    "alt_type",
+    "alt_insulation",
+    "alt_power",
+    "voltage",
+    "other",
+    "alt_ip",
+    "alt_avr",
+    "alt_vreg",
+    "alt_standard",
+    "alt_thd",
+    "battery"
+   ],
+   "ins": "H",
+   "makes": [
+    "sincro"
+   ],
+   "altOrigin": "origin"
+  },
+  {
+   "key": "IB2300220876",
+   "codes": [
+    "alt_type",
+    "voltage",
+    "alt_power",
+    "frequency",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300222010",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_insulation",
+    "alt_ip",
+    "canopy",
+    "alt_bearing",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300223728",
+   "codes": [
+    "other",
+    "alt_make",
+    "alt_type",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300225452",
+   "codes": [
+    "alt_power",
+    "phases",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300228168",
+   "codes": [
+    "other"
+   ]
+  },
+  {
+   "key": "IB2300229145",
+   "codes": [
+    "alt_origin"
+   ]
+  },
+  {
+   "key": "IB2300230061",
+   "codes": [
+    "alt_type",
+    "alt_avr",
+    "voltage",
+    "alt_insulation",
+    "alt_ip",
+    "other",
+    "alt_thd",
+    "ctl_protection",
+    "speed",
+    "alt_efficiency"
+   ],
+   "ins": "H",
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2300230755",
+   "codes": [
+    "other",
+    "alt_type",
+    "alt_vreg",
+    "alt_power",
+    "alt_avr",
+    "alt_bearing",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300230850",
+   "codes": [
+    "alt_type"
+   ]
+  },
+  {
+   "key": "IB2300230878",
+   "codes": [
+    "alt_origin",
+    "alt_type",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2300231276",
+   "codes": [
+    "voltage",
+    "alt_avr",
+    "alt_insulation",
+    "alt_standard"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2300231319",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300232850",
+   "codes": [
+    "alt_power",
+    "alt_avr",
+    "alt_type",
+    "alt_ip",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300233670",
+   "codes": [
+    "alt_insulation",
+    "alt_standard",
+    "alt_power",
+    "alt_ip",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "sc": true
+  },
+  {
+   "key": "IB2300233873",
+   "codes": [
+    "voltage"
+   ]
+  },
+  {
+   "key": "IB2300234954",
+   "codes": [
+    "ctl_make"
+   ]
+  },
+  {
+   "key": "IB2300236144",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "voltage",
+    "frequency",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "alt_cooling",
+    "alt_thd",
+    "alt_efficiency",
+    "ctl_protection",
+    "alt_short_circuit"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "sc": true
+  },
+  {
+   "key": "IB2300236743",
+   "codes": [
+    "alt_make",
+    "alt_avr",
+    "voltage",
+    "alt_power",
+    "overload",
+    "alt_insulation",
+    "alt_ip",
+    "alt_vreg",
+    "alt_bearing"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300238745",
+   "codes": [
+    "voltage",
+    "alt_avr",
+    "alt_insulation",
+    "alt_vreg",
+    "alt_make"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2300239791",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_power",
+    "phases",
+    "alt_poles",
+    "voltage",
+    "alt_ip",
+    "alt_insulation",
+    "alt_vreg",
+    "speed",
+    "alt_avr"
+   ],
+   "ins": "H",
+   "self": true,
+   "vreg": 1.5
+  },
+  {
+   "key": "IB2300242385",
+   "codes": [
+    "alt_avr"
+   ]
+  },
+  {
+   "key": "IB2300243166",
+   "codes": [
+    "alt_make"
+   ],
+   "makes": [
+    "leroy somer"
+   ]
+  },
+  {
+   "key": "IB2300243355",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "alt_thd",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300245556",
+   "codes": [
+    "alt_vreg",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300245748",
+   "codes": [
+    "alt_vreg",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300247709",
+   "codes": [
+    "alt_make",
+    "alt_model",
+    "alt_insulation",
+    "alt_ip",
+    "alt_avr"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2300248981",
+   "codes": [
+    "alt_power",
+    "alt_make",
+    "alt_poles",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "other",
+    "alt_insulation",
+    "alt_ip",
+    "ctl_protection"
+   ],
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300249535",
+   "codes": [
+    "other",
+    "alt_make",
+    "alt_type",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300252125",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_poles",
+    "voltage",
+    "alt_avr",
+    "overload",
+    "alt_vreg",
+    "alt_ip",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2300252803",
+   "codes": [
+    "alt_make"
+   ],
+   "makes": [
+    "stamford"
+   ]
+  },
+  {
+   "key": "IB2300253227",
+   "codes": [
+    "alt_type",
+    "voltage",
+    "alt_avr",
+    "phases",
+    "alt_power",
+    "other",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300253626",
+   "codes": [
+    "alt_power",
+    "phases",
+    "voltage",
+    "alt_type"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2300254479",
+   "codes": [
+    "alt_type",
+    "alt_avr",
+    "alt_winding",
+    "voltage",
+    "ctl_parallel",
+    "alt_insulation",
+    "alt_ip",
+    "alt_thd",
+    "other",
+    "alt_short_circuit",
+    "speed",
+    "ctl_protection",
+    "alt_power",
+    "alt_standard"
+   ],
+   "ins": "H",
+   "exc": "PMG",
+   "sc": true
+  },
+  {
+   "key": "IB2300254910",
+   "codes": [
+    "other",
+    "alt_make",
+    "alt_power",
+    "alt_type",
+    "alt_ip",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300255495",
+   "codes": [
+    "alt_type"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2300255930",
+   "codes": [
+    "other",
+    "alt_make",
+    "alt_type",
+    "alt_power",
+    "speed",
+    "voltage",
+    "alt_vreg",
+    "frequency",
+    "alt_avr",
+    "alt_ip",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300260615",
+   "codes": [
+    "alt_make",
+    "other",
+    "voltage",
+    "alt_avr",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "ins": "H",
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2300262487",
+   "codes": [
+    "alt_make"
+   ],
+   "makes": [
+    "stamford"
+   ]
+  },
+  {
+   "key": "IB2300262532",
+   "codes": [
+    "alt_ip",
+    "alt_vreg",
+    "alt_insulation"
+   ],
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2300263484",
+   "codes": [
+    "alt_make"
+   ],
+   "makes": [
+    "stamford"
+   ]
+  },
+  {
+   "key": "IB2300265021",
+   "codes": [
+    "phases",
+    "alt_make",
+    "alt_type",
+    "alt_insulation",
+    "alt_vreg",
+    "overload"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2300265210",
+   "codes": [
+    "alt_winding"
+   ]
+  },
+  {
+   "key": "IB2300266461",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_type",
+    "alt_power",
+    "voltage",
+    "alt_avr",
+    "alt_vreg",
+    "speed",
+    "power_prime",
+    "alt_bearing",
+    "alt_ip",
+    "alt_insulation",
+    "engine_make"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1,
+   "altOrigin": "origin"
+  },
+  {
+   "key": "IB2300268389",
+   "codes": [
+    "alt_vreg"
+   ],
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2300268623",
+   "codes": [
+    "other",
+    "alt_type",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300269124",
+   "codes": [
+    "alt_vreg"
+   ],
+   "kva": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300273061",
+   "codes": [
+    "alt_insulation",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2300274793",
+   "codes": [
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2300275509",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "frequency",
+    "voltage",
+    "alt_ip",
+    "alt_avr",
+    "alt_insulation",
+    "air_filter"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300275764",
+   "codes": [
+    "alt_make",
+    "alt_insulation"
+   ],
+   "ins": "H",
+   "self": true,
+   "makes": [
+    "stamford"
+   ]
+  },
+  {
+   "key": "IB2300276270",
+   "codes": [
+    "other"
+   ]
+  },
+  {
+   "key": "IB2300277166",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_insulation",
+    "alt_power",
+    "alt_ip",
+    "voltage",
+    "speed",
+    "alt_standard"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300278513",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_insulation",
+    "alt_vreg",
+    "alt_make"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2300278731",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "voltage",
+    "alt_bearing",
+    "other",
+    "alt_type",
+    "ctl_protection",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300281362",
+   "codes": [
+    "alt_type",
+    "voltage",
+    "alt_power",
+    "frequency",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300284871",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_power",
+    "alt_vreg",
+    "frequency",
+    "alt_thd",
+    "alt_ip",
+    "alt_insulation",
+    "overload",
+    "alt_avr",
+    "alt_standard"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2300285618",
+   "codes": [
+    "alt_standard",
+    "voltage",
+    "alt_insulation",
+    "overload",
+    "alt_pitch",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_ip",
+    "alt_thd"
+   ],
+   "ins": "H",
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2300288169",
+   "codes": [
+    "alt_type",
+    "voltage",
+    "alt_power",
+    "frequency",
+    "alt_vreg",
+    "alt_insulation",
+    "phases",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2300290906",
+   "codes": [
+    "other"
+   ]
+  },
+  {
+   "key": "IB2300291304",
+   "codes": [
+    "alt_vreg"
+   ],
+   "ins": "H",
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2300292168",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip",
+    "alt_bearing",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1,
+   "altOrigin": "origin"
+  },
+  {
+   "key": "IB2300293049",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_type",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300293753",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_standard"
+   ],
+   "self": true
+  },
+  {
+   "key": "IB2300298164",
+   "codes": [
+    "alt_type"
+   ],
+   "self": true
+  },
+  {
+   "key": "IB2300299959",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "ctl_protection",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip",
+    "other"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300301190",
+   "codes": [
+    "alt_avr"
+   ]
+  },
+  {
+   "key": "IB2300301211",
+   "codes": [
+    "alt_make",
+    "alt_model"
+   ],
+   "makes": [
+    "stamford"
+   ]
+  },
+  {
+   "key": "IB2300301452",
+   "codes": [
+    "alt_model",
+    "alt_power",
+    "phases",
+    "alt_avr",
+    "alt_ip",
+    "alt_insulation",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "makes": [
+    "leroy somer"
+   ]
+  },
+  {
+   "key": "IB2300305099",
+   "codes": [
+    "alt_type",
+    "other",
+    "alt_power",
+    "voltage",
+    "frequency",
+    "alt_vreg",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300305247",
+   "codes": [
+    "other",
+    "alt_power",
+    "voltage",
+    "frequency",
+    "phases",
+    "alt_poles",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip",
+    "alt_avr",
+    "alt_vreg",
+    "speed",
+    "dimensions"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300305484",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "voltage",
+    "speed",
+    "frequency",
+    "alt_insulation",
+    "freq_regulation",
+    "alt_ip",
+    "ctl_protection",
+    "overload"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300305914",
+   "codes": [
+    "other",
+    "alt_type",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300307974",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_insulation",
+    "alt_power",
+    "alt_ip",
+    "voltage",
+    "speed",
+    "alt_standard"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300308988",
+   "codes": [
+    "alt_model",
+    "alt_type",
+    "alt_power",
+    "phases",
+    "alt_insulation",
+    "alt_ip",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300312776",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_vreg",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300315082",
+   "codes": [
+    "alt_power",
+    "alt_type",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_standard"
+   ],
+   "ins": "H",
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2300321317",
+   "codes": [
+    "alt_power",
+    "alt_poles",
+    "voltage",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300324220",
+   "codes": [
+    "alt_insulation"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2300325153",
+   "codes": [
+    "voltage",
+    "alt_power",
+    "frequency",
+    "alt_cooling",
+    "genset_type",
+    "alt_insulation",
+    "alt_type",
+    "alt_avr",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG",
+   "self": true
+  },
+  {
+   "key": "IB2300327096",
+   "codes": [
+    "alt_make"
+   ]
+  },
+  {
+   "key": "IB2300329776",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_vreg",
+    "overload",
+    "alt_type",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300331197",
+   "codes": [
+    "fuel_consumption"
+   ]
+  },
+  {
+   "key": "IB2300331398",
+   "codes": [
+    "alt_make"
+   ],
+   "makes": [
+    "leroy somer"
+   ]
+  },
+  {
+   "key": "IB2300335088",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_vreg",
+    "alt_type",
+    "alt_insulation",
+    "alt_efficiency",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300335255",
+   "codes": [
+    "alt_make",
+    "alt_bearing",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300335322",
+   "codes": [
+    "other",
+    "voltage",
+    "phases",
+    "alt_type",
+    "alt_power",
+    "frequency",
+    "alt_insulation",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_avr",
+    "speed"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2300335607",
+   "codes": [
+    "alt_type"
+   ]
+  },
+  {
+   "key": "IB2300336709",
+   "codes": [
+    "alt_avr"
+   ]
+  },
+  {
+   "key": "IB2300337008",
+   "codes": [
+    "other"
+   ]
+  },
+  {
+   "key": "IB2300340070",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300340114",
+   "codes": [
+    "alt_insulation",
+    "voltage",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "other",
+    "alt_standard"
+   ],
+   "ins": "H",
+   "sc": true
+  },
+  {
+   "key": "IB2300340671",
+   "codes": [
+    "alt_model",
+    "alt_type",
+    "alt_power",
+    "alt_ip",
+    "alt_insulation",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300340905",
+   "codes": [
+    "alt_standard",
+    "alt_excitation",
+    "voltage",
+    "frequency",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "ins": "H",
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2300343208",
+   "codes": [
+    "standards",
+    "alt_make",
+    "other",
+    "voltage",
+    "alt_avr",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "ins": "H",
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2300343668",
+   "codes": [
+    "alt_make",
+    "other",
+    "voltage",
+    "alt_vreg",
+    "phases",
+    "frequency",
+    "alt_power",
+    "overload",
+    "speed",
+    "alt_insulation",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300343943",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "frequency",
+    "alt_avr",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300346506",
+   "codes": [
+    "alt_type",
+    "alt_avr",
+    "other"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300347693",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_avr",
+    "alt_cooling",
+    "alt_insulation",
+    "alt_ip",
+    "other",
+    "alt_efficiency",
+    "alt_short_circuit"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "sc": true
+  },
+  {
+   "key": "IB2300349086",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_type",
+    "alt_power",
+    "alt_avr",
+    "alt_ip"
+   ],
+   "kva": true,
+   "self": true
+  },
+  {
+   "key": "IB2300349583",
+   "codes": [
+    "alt_power",
+    "alt_type",
+    "alt_vreg",
+    "alt_ip",
+    "alt_insulation",
+    "overload"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300356137",
+   "codes": [
+    "voltage",
+    "frequency",
+    "alt_power",
+    "alt_vreg",
+    "alt_avr",
+    "alt_type"
+   ],
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2300356147",
+   "codes": [
+    "genset_type",
+    "alt_power",
+    "voltage",
+    "frequency",
+    "alt_vreg",
+    "alt_avr",
+    "alt_type"
+   ],
+   "kva": true,
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2300356962",
+   "codes": [
+    "frequency",
+    "voltage",
+    "alt_vreg",
+    "alt_avr"
+   ],
+   "vreg": 1
+  },
+  {
+   "key": "IB2300359120",
+   "codes": [
+    "other",
+    "alt_type",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "speed",
+    "alt_standard"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300360864",
+   "codes": [
+    "alt_power",
+    "voltage",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300363513",
+   "codes": [
+    "alt_power",
+    "voltage",
+    "alt_poles",
+    "frequency",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300363623",
+   "codes": [
+    "phases",
+    "alt_insulation",
+    "voltage",
+    "alt_ip"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2300364488",
+   "codes": [
+    "alt_type",
+    "alt_vreg",
+    "alt_avr",
+    "ctl_protection",
+    "alt_thd"
+   ],
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300364915",
+   "codes": [
+    "phases",
+    "alt_avr",
+    "alt_power",
+    "alt_insulation",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300367847",
+   "codes": [
+    "other",
+    "alt_avr",
+    "alt_type"
+   ]
+  },
+  {
+   "key": "IB2300368256",
+   "codes": [
+    "alt_type"
+   ],
+   "self": true
+  },
+  {
+   "key": "IB2300369012",
+   "codes": [
+    "power_prime"
+   ],
+   "kva": true,
+   "altOrigin": "origin"
+  },
+  {
+   "key": "IB2300370623",
+   "codes": [
+    "phases",
+    "alt_power",
+    "other",
+    "alt_ip",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2300374375",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_power",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_cooling",
+    "alt_ip",
+    "alt_insulation",
+    "overload",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2300379728",
+   "codes": [
+    "alt_make",
+    "alt_avr"
+   ]
+  },
+  {
+   "key": "IB2300388821",
+   "codes": [
+    "alt_model",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip",
+    "alt_avr"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2300389043",
+   "codes": [
+    "alt_type",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2400008052",
+   "codes": [
+    "alt_make"
+   ],
+   "makes": [
+    "stamford"
+   ]
+  },
+  {
+   "key": "IB2400011202",
+   "codes": [
+    "alt_make",
+    "alt_type"
+   ],
+   "ins": "H",
+   "makes": [
+    "stamford"
+   ]
+  },
+  {
+   "key": "IB2400026437",
+   "codes": [
+    "alt_avr",
+    "alt_power",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400027592",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_standard",
+    "alt_avr",
+    "alt_type",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400027657",
+   "codes": [
+    "speed",
+    "alt_poles",
+    "frequency",
+    "alt_ip",
+    "alt_insulation",
+    "alt_thd"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400029771",
+   "codes": [
+    "alt_type",
+    "alt_insulation"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400030247",
+   "codes": [
+    "genset_type"
+   ]
+  },
+  {
+   "key": "IB2400030643",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_insulation",
+    "alt_avr",
+    "alt_ip"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400031211",
+   "codes": [
+    "alt_type",
+    "alt_avr",
+    "alt_insulation"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400032584",
+   "codes": [
+    "alt_power",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400037458",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_type",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400043707",
+   "codes": [
+    "alt_power",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400052694",
+   "codes": [
+    "alt_avr",
+    "alt_origin",
+    "alt_power"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2400054276",
+   "codes": [
+    "alt_model",
+    "alt_type",
+    "alt_power",
+    "phases",
+    "alt_insulation",
+    "alt_ip",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400058421",
+   "codes": [
+    "other"
+   ],
+   "makes": [
+    "leroysomer"
+   ]
+  },
+  {
+   "key": "IB2400058723",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "voltage",
+    "alt_avr",
+    "alt_insulation",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "altOrigin": "origin"
+  },
+  {
+   "key": "IB2400060910",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_vreg",
+    "alt_ip",
+    "alt_insulation",
+    "overload"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400061965",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_thd",
+    "alt_insulation",
+    "alt_ip",
+    "alt_bearing",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 2.5
+  },
+  {
+   "key": "IB2400062394",
+   "codes": [
+    "alt_type"
+   ],
+   "kva": true,
+   "self": true
+  },
+  {
+   "key": "IB2400062449",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_thd",
+    "alt_insulation",
+    "alt_ip",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 2.5
+  },
+  {
+   "key": "IB2400063033",
+   "codes": [
+    "alt_origin",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "alt_type",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400064139",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_thd",
+    "alt_insulation",
+    "alt_ip",
+    "alt_bearing",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 2.5
+  },
+  {
+   "key": "IB2400064176",
+   "codes": [
+    "alt_type",
+    "alt_insulation"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400065926",
+   "codes": [
+    "alt_type",
+    "voltage",
+    "phases",
+    "alt_power",
+    "speed",
+    "alt_insulation",
+    "alt_ip",
+    "alt_efficiency",
+    "other",
+    "alt_short_circuit"
+   ],
+   "kva": true,
+   "ins": "H",
+   "sc": true
+  },
+  {
+   "key": "IB2400067035",
+   "codes": [
+    "alt_type"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400067509",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_type",
+    "alt_power",
+    "speed",
+    "voltage",
+    "alt_vreg",
+    "frequency",
+    "alt_avr",
+    "alt_ip",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400073077",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_avr"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400073761",
+   "codes": [
+    "other",
+    "alt_cooling"
+   ]
+  },
+  {
+   "key": "IB2400073944",
+   "codes": [
+    "alt_type",
+    "alt_avr",
+    "other",
+    "alt_ip",
+    "ctl_protection"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400078017",
+   "codes": [
+    "other"
+   ]
+  },
+  {
+   "key": "IB2400078716",
+   "codes": [
+    "alt_power"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2400079896",
+   "codes": [
+    "alt_make"
+   ],
+   "makes": [
+    "stamford"
+   ]
+  },
+  {
+   "key": "IB2400085846",
+   "codes": [
+    "phases"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400090868",
+   "codes": [
+    "alt_model",
+    "alt_type",
+    "alt_power",
+    "phases",
+    "alt_insulation",
+    "alt_ip",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400093765",
+   "codes": [
+    "voltage"
+   ]
+  },
+  {
+   "key": "IB2400095756",
+   "codes": [
+    "alt_power"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400099464",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400100405",
+   "codes": [
+    "alt_model",
+    "alt_excitation",
+    "alt_power",
+    "voltage",
+    "alt_avr",
+    "alt_insulation",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG",
+   "sc": true,
+   "makes": [
+    "stamford"
+   ]
+  },
+  {
+   "key": "IB2400101681",
+   "codes": [
+    "alt_type",
+    "alt_origin"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2400103308",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_power",
+    "voltage",
+    "phases",
+    "alt_vreg",
+    "freq_regulation",
+    "overload",
+    "ctl_protection",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400104800",
+   "codes": [
+    "alt_standard",
+    "alt_type",
+    "voltage",
+    "frequency",
+    "phases",
+    "alt_power",
+    "alt_insulation",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H",
+   "altOrigin": "origin"
+  },
+  {
+   "key": "IB2400105724",
+   "codes": [
+    "other"
+   ]
+  },
+  {
+   "key": "IB2400111485",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_power",
+    "alt_vreg",
+    "frequency",
+    "other",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1,
+   "makes": [
+    "leroysomer",
+    "mecc alte"
+   ]
+  },
+  {
+   "key": "IB2400111737",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400111794",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "ctl_protection",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400111929",
+   "codes": [
+    "alt_power",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400113875",
+   "codes": [
+    "other",
+    "phases",
+    "speed",
+    "alt_type"
+   ],
+   "self": true
+  },
+  {
+   "key": "IB2400114476",
+   "codes": [
+    "phases"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400116021",
+   "codes": [
+    "alt_make"
+   ],
+   "makes": [
+    "mecc alte"
+   ]
+  },
+  {
+   "key": "IB2400116787",
+   "codes": [
+    "phases"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400120387",
+   "codes": [
+    "alt_power",
+    "alt_insulation",
+    "phases"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400122312",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_power",
+    "voltage",
+    "alt_ip",
+    "alt_insulation",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400122639",
+   "codes": [
+    "alt_winding"
+   ]
+  },
+  {
+   "key": "IB2400122841",
+   "codes": [
+    "alt_type",
+    "alt_insulation"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400124150",
+   "codes": [
+    "other",
+    "alt_make",
+    "alt_power",
+    "alt_standard",
+    "alt_type",
+    "speed",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "alt_avr",
+    "alt_cooling",
+    "ambient",
+    "alt_efficiency",
+    "alt_vreg",
+    "alt_thd",
+    "alt_excitation",
+    "phases"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG",
+   "self": true,
+   "sc": true
+  },
+  {
+   "key": "IB2400124734",
+   "codes": [
+    "alt_make",
+    "alt_origin",
+    "other",
+    "alt_power",
+    "voltage",
+    "phases",
+    "alt_vreg",
+    "frequency",
+    "overload",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400125924",
+   "codes": [
+    "voltage",
+    "alt_power",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400127023",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "overload",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400129388",
+   "codes": [
+    "alt_power"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400131610",
+   "codes": [
+    "alt_standard",
+    "alt_type",
+    "alt_power",
+    "other",
+    "frequency",
+    "alt_vreg",
+    "voltage",
+    "alt_insulation",
+    "alt_winding",
+    "noise"
+   ],
+   "ins": "H",
+   "self": true,
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2400133175",
+   "codes": [
+    "alt_power",
+    "alt_vreg",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400133835",
+   "codes": [
+    "alt_type"
+   ]
+  },
+  {
+   "key": "IB2400133990",
+   "codes": [
+    "alt_model",
+    "alt_power",
+    "alt_make"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2400134652",
+   "codes": [
+    "alt_power",
+    "alt_insulation",
+    "voltage",
+    "alt_type",
+    "alt_vreg",
+    "ctl_start_amf"
+   ],
+   "kva": true,
+   "ins": "H",
+   "sc": true
+  },
+  {
+   "key": "IB2400141856",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "speed",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "alt_avr",
+    "alt_cooling",
+    "other",
+    "alt_thd",
+    "alt_excitation",
+    "alt_standard",
+    "alt_origin"
+   ],
+   "ins": "H",
+   "exc": "PMG",
+   "self": true,
+   "makes": [
+    "leroy somer"
+   ]
+  },
+  {
+   "key": "IB2400142224",
+   "codes": [
+    "alt_type"
+   ]
+  },
+  {
+   "key": "IB2400144224",
+   "codes": [
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_insulation",
+    "alt_ip",
+    "alt_cooling",
+    "alt_make"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400145438",
+   "codes": [
+    "alt_insulation",
+    "alt_power",
+    "alt_type",
+    "alt_thd"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400146806",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_vreg",
+    "alt_ip",
+    "alt_insulation",
+    "overload"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400150394",
+   "codes": [
+    "alt_winding",
+    "alt_avr"
+   ]
+  },
+  {
+   "key": "IB2400152304",
+   "codes": [
+    "phases",
+    "alt_avr",
+    "alt_standard",
+    "alt_power",
+    "alt_ip",
+    "alt_type",
+    "alt_vreg",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400153322",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "phases",
+    "alt_power",
+    "alt_vreg",
+    "overload",
+    "ctl_protection",
+    "alt_type",
+    "alt_insulation"
+   ],
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400155713",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "phases",
+    "alt_avr"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2400156683",
+   "codes": [
+    "alt_model",
+    "alt_insulation",
+    "voltage",
+    "speed",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "other",
+    "alt_standard"
+   ],
+   "ins": "H",
+   "sc": true
+  },
+  {
+   "key": "IB2400159050",
+   "codes": [
+    "other"
+   ]
+  },
+  {
+   "key": "IB2400159665",
+   "codes": [
+    "alt_power",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400162597",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_type",
+    "alt_power",
+    "alt_insulation",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2400164837",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_type",
+    "speed",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "alt_avr",
+    "other",
+    "alt_standard",
+    "alt_vreg",
+    "alt_thd"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400172565",
+   "codes": [
+    "alt_type"
+   ]
+  },
+  {
+   "key": "IB2400178328",
+   "codes": [
+    "alt_excitation"
+   ],
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2400180911",
+   "codes": [
+    "alt_make",
+    "alt_origin",
+    "other",
+    "alt_power",
+    "voltage",
+    "phases",
+    "alt_vreg",
+    "frequency",
+    "overload",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400182235",
+   "codes": [
+    "alt_power",
+    "voltage",
+    "alt_vreg",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip",
+    "ctl_protection",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400185291",
+   "codes": [
+    "alt_type",
+    "alt_avr",
+    "alt_power",
+    "voltage",
+    "frequency",
+    "alt_insulation",
+    "freq_regulation",
+    "alt_ip",
+    "ctl_protection",
+    "overload"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400186078",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "voltage",
+    "alt_insulation",
+    "alt_ip",
+    "alt_make"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400186998",
+   "codes": [
+    "alt_make",
+    "other"
+   ],
+   "makes": [
+    "meccalte"
+   ]
+  },
+  {
+   "key": "IB2400188399",
+   "codes": [
+    "other",
+    "alt_avr"
+   ]
+  },
+  {
+   "key": "IB2400191578",
+   "codes": [
+    "alt_make",
+    "alt_vreg",
+    "alt_power",
+    "overload",
+    "alt_type",
+    "alt_insulation",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400191798",
+   "codes": [
+    "alt_origin",
+    "alt_standard",
+    "alt_type",
+    "voltage",
+    "alt_insulation",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H",
+   "altOrigin": "origin"
+  },
+  {
+   "key": "IB2400198330",
+   "codes": [
+    "alt_avr"
+   ]
+  },
+  {
+   "key": "IB2400201825",
+   "codes": [
+    "alt_vreg",
+    "other"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "sc": true,
+   "vreg": 1.5
+  },
+  {
+   "key": "IB2400202566",
+   "codes": [
+    "speed",
+    "alt_poles",
+    "frequency",
+    "ctl_parallel",
+    "alt_ip",
+    "alt_insulation",
+    "alt_thd"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400206842",
+   "codes": [
+    "alt_type"
+   ]
+  },
+  {
+   "key": "IB2400208175",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "voltage",
+    "ctl_protection"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400216393",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "phases",
+    "alt_vreg",
+    "alt_poles",
+    "alt_avr",
+    "alt_ip",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400216847",
+   "codes": [
+    "voltage",
+    "alt_power",
+    "alt_avr",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "F",
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2400218348",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "voltage",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400224240",
+   "codes": [
+    "alt_type",
+    "alt_avr",
+    "ctl_measure"
+   ]
+  },
+  {
+   "key": "IB2400224420",
+   "codes": [
+    "alt_origin",
+    "other",
+    "alt_type",
+    "alt_power",
+    "voltage",
+    "overload",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "makes": [
+    "sincro",
+    "linz",
+    "mecc alte"
+   ]
+  },
+  {
+   "key": "IB2400226406",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "speed"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400228754",
+   "codes": [
+    "voltage"
+   ]
+  },
+  {
+   "key": "IB2400229394",
+   "codes": [
+    "alt_excitation"
+   ],
+   "ins": "H",
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2400232269",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_power",
+    "voltage",
+    "alt_avr",
+    "alt_ip",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400233711",
+   "codes": [
+    "alt_make"
+   ],
+   "makes": [
+    "stamford"
+   ]
+  },
+  {
+   "key": "IB2400234459",
+   "codes": [
+    "alt_avr"
+   ]
+  },
+  {
+   "key": "IB2400236068",
+   "codes": [
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400237184",
+   "codes": [
+    "alt_type"
+   ]
+  },
+  {
+   "key": "IB2400238472",
+   "codes": [
+    "alt_insulation",
+    "alt_type",
+    "alt_avr"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400238834",
+   "codes": [
+    "alt_make",
+    "alt_winding",
+    "alt_thd"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400248480",
+   "codes": [
+    "alt_power"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2400249622",
+   "codes": [
+    "alt_ip",
+    "alt_vreg",
+    "other"
+   ],
+   "ins": "H",
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2400253176",
+   "codes": [
+    "other"
+   ]
+  },
+  {
+   "key": "IB2400254417",
+   "codes": [
+    "alt_excitation",
+    "phases",
+    "frequency",
+    "alt_avr"
+   ],
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2400255232",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_thd",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 2.5
+  },
+  {
+   "key": "IB2400257256",
+   "codes": [
+    "alt_origin",
+    "alt_power",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400257900",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "speed",
+    "alt_vreg",
+    "other",
+    "alt_excitation",
+    "phases",
+    "alt_standard"
+   ],
+   "ins": "H",
+   "exc": "PMG+AREP",
+   "self": true,
+   "sc": true
+  },
+  {
+   "key": "IB2400265203",
+   "codes": [
+    "alt_type",
+    "alt_vreg",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 2.5
+  },
+  {
+   "key": "IB2400265303",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "overload",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400267274",
+   "codes": [
+    "alt_model",
+    "alt_power"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2400268013",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_thd",
+    "alt_insulation",
+    "alt_ip",
+    "alt_bearing",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 2.5
+  },
+  {
+   "key": "IB2400268027",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_thd",
+    "alt_insulation",
+    "alt_ip",
+    "alt_bearing",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 2.5
+  },
+  {
+   "key": "IB2400270154",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "ctl_protection",
+    "alt_short_circuit"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "sc": true
+  },
+  {
+   "key": "IB2400275648",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "altOrigin": "brand"
+  },
+  {
+   "key": "IB2400281588",
+   "codes": [
+    "alt_power",
+    "other"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2400281653",
+   "codes": [
+    "alt_power"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2400282042",
+   "codes": [
+    "alt_power",
+    "voltage",
+    "alt_type",
+    "alt_insulation",
+    "alt_efficiency"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400291063",
+   "codes": [
+    "other",
+    "alt_type",
+    "voltage",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "alt_bearing"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400295710",
+   "codes": [
+    "other"
+   ]
+  },
+  {
+   "key": "IB2400296884",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_power",
+    "alt_vreg",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400298819",
+   "codes": [
+    "alt_vreg",
+    "alt_power",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400299108",
+   "codes": [
+    "alt_power"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400302943",
+   "codes": [
+    "alt_vreg",
+    "phases",
+    "alt_standard",
+    "alt_type",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2400303471",
+   "codes": [
+    "alt_power",
+    "voltage",
+    "alt_vreg",
+    "frequency",
+    "other",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2400311120",
+   "codes": [
+    "phases"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400311289",
+   "codes": [
+    "alt_power",
+    "voltage",
+    "alt_insulation",
+    "other"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400311574",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_type",
+    "alt_power",
+    "speed",
+    "voltage",
+    "alt_vreg",
+    "frequency",
+    "alt_avr",
+    "alt_ip",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400313213",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400313681",
+   "codes": [
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400315025",
+   "codes": [
+    "alt_insulation"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400316516",
+   "codes": [
+    "alt_insulation"
+   ]
+  },
+  {
+   "key": "IB2400325367",
+   "codes": [
+    "alt_power",
+    "voltage",
+    "phases",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip",
+    "ctl_protection"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2400330411",
+   "codes": [
+    "alt_insulation"
+   ]
+  },
+  {
+   "key": "IB2400333602",
+   "codes": [
+    "alt_origin",
+    "alt_standard",
+    "alt_type",
+    "voltage",
+    "frequency",
+    "phases",
+    "alt_power",
+    "alt_insulation",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H",
+   "altOrigin": "origin"
+  },
+  {
+   "key": "IB2400333932",
+   "codes": [
+    "alt_excitation",
+    "alt_power",
+    "voltage",
+    "alt_avr",
+    "alt_ip",
+    "alt_insulation",
+    "ctl_protection"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG",
+   "sc": true
+  },
+  {
+   "key": "IB2400335311",
+   "codes": [
+    "emission"
+   ]
+  },
+  {
+   "key": "IB2400337082",
+   "codes": [
+    "alt_make"
+   ],
+   "makes": [
+    "stamford"
+   ]
+  },
+  {
+   "key": "IB2400337979",
+   "codes": [
+    "other"
+   ]
+  },
+  {
+   "key": "IB2400339967",
+   "codes": [
+    "alt_poles",
+    "alt_power",
+    "voltage",
+    "alt_ip",
+    "alt_insulation",
+    "alt_vreg",
+    "speed",
+    "alt_type",
+    "alt_thd",
+    "other"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400352866",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "other"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400355321",
+   "codes": [
+    "alt_type",
+    "alt_vreg",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400355810",
+   "codes": [
+    "alt_type",
+    "speed",
+    "alt_ip",
+    "alt_insulation",
+    "alt_thd",
+    "other",
+    "alt_avr",
+    "ctl_parallel"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400355977",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_type",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400356423",
+   "codes": [
+    "alt_power",
+    "alt_type",
+    "voltage",
+    "frequency",
+    "overload",
+    "alt_insulation",
+    "alt_ip",
+    "alt_bearing",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400362458",
+   "codes": [
+    "alt_origin",
+    "other",
+    "alt_power",
+    "alt_vreg",
+    "overload",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "alt_make"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400365165",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400365763",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "power_factor",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "other"
+   ],
+   "ins": "H",
+   "makes": [
+    "mecc alte"
+   ]
+  },
+  {
+   "key": "IB2400367041",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_type",
+    "alt_insulation",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2400367398",
+   "codes": [
+    "phases",
+    "alt_model",
+    "voltage",
+    "alt_insulation",
+    "alt_ip",
+    "alt_type"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400367420",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "voltage",
+    "phases",
+    "frequency",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_avr",
+    "ctl_protection",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "alt_thd"
+   ],
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400371783",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "speed",
+    "other",
+    "alt_insulation",
+    "ctl_protection",
+    "voltage",
+    "alt_avr",
+    "overload",
+    "alt_cooling",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400375383",
+   "codes": [
+    "voltage",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400377239",
+   "codes": [
+    "other",
+    "alt_type",
+    "alt_insulation"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400377756",
+   "codes": [
+    "alt_standard",
+    "alt_power",
+    "alt_ip",
+    "alt_insulation",
+    "alt_avr",
+    "other",
+    "alt_thd",
+    "alt_short_circuit",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400378609",
+   "codes": [
+    "alt_type",
+    "voltage",
+    "alt_power",
+    "frequency",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400382139",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_type",
+    "alt_power",
+    "speed",
+    "voltage",
+    "alt_vreg",
+    "frequency",
+    "alt_avr",
+    "alt_ip",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400384429",
+   "codes": [
+    "alt_power",
+    "phases",
+    "voltage",
+    "alt_vreg",
+    "alt_type",
+    "alt_insulation"
+   ],
+   "ins": "F",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400385050",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_avr",
+    "speed",
+    "alt_power",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "F",
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2400389666",
+   "codes": [
+    "alt_origin",
+    "voltage",
+    "alt_type",
+    "alt_avr",
+    "alt_power",
+    "phases",
+    "other",
+    "alt_ip"
+   ]
+  },
+  {
+   "key": "IB2400389856",
+   "codes": [
+    "alt_type",
+    "alt_power"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG+AREP",
+   "makes": [
+    "leroy somer"
+   ]
+  },
+  {
+   "key": "IB2400390611",
+   "codes": [
+    "alt_make"
+   ]
+  },
+  {
+   "key": "IB2400410218",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_power",
+    "voltage",
+    "phases",
+    "frequency",
+    "overload",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400416979",
+   "codes": [
+    "frequency",
+    "speed",
+    "phases",
+    "alt_power",
+    "alt_ip",
+    "alt_type",
+    "alt_insulation",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400422974",
+   "codes": [
+    "alt_winding"
+   ]
+  },
+  {
+   "key": "IB2400424576",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_standard",
+    "alt_type",
+    "speed",
+    "alt_pitch",
+    "other",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "alt_avr",
+    "frequency",
+    "alt_thd",
+    "ctl_protection",
+    "alt_winding",
+    "alt_excitation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG+AREP",
+   "self": true
+  },
+  {
+   "key": "IB2400426562",
+   "codes": [
+    "phases"
+   ]
+  },
+  {
+   "key": "IB2400427929",
+   "codes": [
+    "alt_type",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400428063",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_type",
+    "alt_vreg",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400428936",
+   "codes": [
+    "other",
+    "voltage",
+    "alt_power",
+    "speed",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "ctl_protection",
+    "alt_vreg",
+    "breaker"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400429380",
+   "codes": [
+    "alt_power",
+    "alt_vreg",
+    "alt_make"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2400429887",
+   "codes": [
+    "alt_origin",
+    "alt_power",
+    "voltage",
+    "overload",
+    "alt_type",
+    "alt_insulation",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400432065",
+   "codes": [
+    "alt_make"
+   ],
+   "makes": [
+    "stamford"
+   ]
+  },
+  {
+   "key": "IB2400433961",
+   "codes": [
+    "alt_ip",
+    "alt_insulation",
+    "speed",
+    "alt_power",
+    "alt_vreg",
+    "ctl_protection",
+    "voltage",
+    "phases",
+    "alt_type",
+    "alt_avr",
+    "alt_winding",
+    "alt_pitch",
+    "alt_thd"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "sc": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400434949",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400436205",
+   "codes": [
+    "other",
+    "alt_type"
+   ]
+  },
+  {
+   "key": "IB2400438227",
+   "codes": [
+    "alt_model",
+    "alt_type",
+    "voltage",
+    "phases",
+    "frequency",
+    "alt_insulation",
+    "alt_ip",
+    "alt_avr"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400439995",
+   "codes": [
+    "alt_vreg",
+    "alt_power",
+    "voltage",
+    "speed",
+    "phases",
+    "alt_ip",
+    "alt_insulation",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400440222",
+   "codes": [
+    "alt_model",
+    "alt_type",
+    "voltage",
+    "alt_avr",
+    "phases",
+    "alt_power",
+    "other",
+    "alt_ip"
+   ]
+  },
+  {
+   "key": "IB2400440257",
+   "codes": [
+    "alt_make",
+    "alt_origin",
+    "alt_power",
+    "alt_type",
+    "speed",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "alt_avr",
+    "other",
+    "alt_standard",
+    "alt_vreg",
+    "alt_thd"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400440445",
+   "codes": [
+    "alt_model",
+    "alt_power",
+    "other",
+    "alt_ip",
+    "alt_avr"
+   ],
+   "ins": "H",
+   "makes": [
+    "leroy somer"
+   ]
+  },
+  {
+   "key": "IB2400440704",
+   "codes": [
+    "alt_power"
+   ]
+  },
+  {
+   "key": "IB2400440994",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_standard",
+    "alt_type",
+    "speed",
+    "alt_pitch",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "alt_avr",
+    "alt_excitation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG+AREP",
+   "self": true
+  },
+  {
+   "key": "IB2400444280",
+   "codes": [
+    "alt_make",
+    "phases",
+    "frequency",
+    "voltage",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_bearing",
+    "alt_insulation",
+    "alt_ip",
+    "alt_power"
+   ],
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2400446772",
+   "codes": [
+    "other",
+    "voltage",
+    "alt_power",
+    "alt_insulation",
+    "alt_efficiency",
+    "overload"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400448320",
+   "codes": [
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400453053",
+   "codes": [
+    "alt_excitation",
+    "speed",
+    "alt_ip",
+    "alt_insulation",
+    "alt_thd",
+    "alt_power",
+    "other",
+    "genset_type",
+    "alt_avr",
+    "alt_type",
+    "alt_short_circuit",
+    "voltage"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG",
+   "self": true,
+   "sc": true
+  },
+  {
+   "key": "IB2400453359",
+   "codes": [
+    "alt_type",
+    "alt_vreg",
+    "alt_power",
+    "alt_avr",
+    "alt_bearing",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400457172",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "overload",
+    "alt_type",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400459339",
+   "codes": [
+    "alt_power"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400466201",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_standard",
+    "alt_type",
+    "speed",
+    "alt_pitch",
+    "other",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "alt_avr",
+    "frequency",
+    "alt_thd",
+    "ctl_protection",
+    "alt_winding",
+    "ambient",
+    "alt_excitation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG+AREP",
+   "self": true
+  },
+  {
+   "key": "IB2400470242",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_standard",
+    "voltage",
+    "frequency",
+    "alt_power",
+    "phases",
+    "alt_ip",
+    "alt_insulation",
+    "alt_avr",
+    "other",
+    "alt_thd",
+    "speed",
+    "alt_short_circuit"
+   ],
+   "ins": "H",
+   "altOrigin": "brand"
+  },
+  {
+   "key": "IB2400473260",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_power",
+    "ctl_protection",
+    "alt_type",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400475109",
+   "codes": [
+    "alt_origin",
+    "ctl_protection",
+    "alt_poles",
+    "alt_ip",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "vreg": 0.25,
+   "altOrigin": "origin"
+  },
+  {
+   "key": "IB2400475145",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_type",
+    "alt_power",
+    "voltage",
+    "alt_vreg",
+    "alt_avr",
+    "alt_ip",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400481114",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "voltage",
+    "phases",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip",
+    "ctl_protection"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2400481610",
+   "codes": [
+    "other",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "ctl_protection",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400482148",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_insulation",
+    "alt_avr",
+    "alt_pitch",
+    "alt_standard",
+    "alt_power"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG+AREP",
+   "self": true
+  },
+  {
+   "key": "IB2400482562",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "speed",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "alt_avr",
+    "other",
+    "alt_standard",
+    "alt_vreg",
+    "alt_thd"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400484488",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "speed",
+    "alt_insulation",
+    "alt_ip",
+    "other",
+    "voltage",
+    "alt_thd",
+    "overload",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400487460",
+   "codes": [
+    "alt_power",
+    "phases"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400487645",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "ctl_protection",
+    "alt_type"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400489270",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_type",
+    "speed",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "alt_avr",
+    "other",
+    "alt_standard",
+    "alt_vreg",
+    "alt_thd"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400489361",
+   "codes": [
+    "voltage",
+    "phases",
+    "alt_insulation",
+    "alt_avr"
+   ]
+  },
+  {
+   "key": "IB2400491226",
+   "codes": [
+    "alt_vreg"
+   ],
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2400493077",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "speed",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400493882",
+   "codes": [
+    "other"
+   ]
+  },
+  {
+   "key": "IB2400494037",
+   "codes": [
+    "phases",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400495088",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "voltage",
+    "alt_vreg",
+    "frequency",
+    "alt_efficiency",
+    "alt_cooling",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400495407",
+   "codes": [
+    "alt_origin",
+    "other",
+    "alt_power",
+    "alt_vreg",
+    "overload",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400495696",
+   "codes": [
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400496799",
+   "codes": [
+    "alt_model",
+    "voltage",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "alt_efficiency",
+    "alt_short_circuit",
+    "alt_vreg",
+    "alt_avr",
+    "ctl_protection",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2400497000",
+   "codes": [
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400497572",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_power",
+    "alt_vreg",
+    "alt_ip",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400503492",
+   "codes": [
+    "alt_origin",
+    "alt_standard",
+    "phases",
+    "frequency",
+    "voltage",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_bearing",
+    "alt_insulation",
+    "alt_ip",
+    "alt_power"
+   ],
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2400508791",
+   "codes": [
+    "alt_power",
+    "alt_avr"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2400509473",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_standard",
+    "alt_type",
+    "speed",
+    "alt_pitch",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "alt_avr",
+    "frequency",
+    "alt_thd",
+    "alt_efficiency",
+    "alt_winding",
+    "other"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG+AREP",
+   "self": true
+  },
+  {
+   "key": "IB2400513782",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "alt_avr",
+    "alt_bearing",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400514548",
+   "codes": [
+    "alt_power",
+    "phases",
+    "voltage",
+    "frequency"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2400514819",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "ctl_protection",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400517601",
+   "codes": [
+    "alt_type"
+   ],
+   "self": true
+  },
+  {
+   "key": "IB2400529458",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_vreg",
+    "ctl_protection",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip",
+    "overload",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400531851",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_type",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "overload",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "speed",
+    "frequency",
+    "freq_regulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400533348",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_standard",
+    "alt_type",
+    "speed",
+    "alt_pitch",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "alt_avr",
+    "frequency",
+    "alt_thd",
+    "ctl_protection",
+    "alt_winding",
+    "ambient",
+    "other",
+    "alt_excitation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG+AREP",
+   "self": true
+  },
+  {
+   "key": "IB2400533611",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "speed",
+    "alt_avr",
+    "overload",
+    "frequency",
+    "alt_cooling",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2400537621",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_standard",
+    "alt_type",
+    "speed",
+    "alt_pitch",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "alt_avr",
+    "alt_excitation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG+AREP",
+   "self": true
+  },
+  {
+   "key": "IB2400540865",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_standard",
+    "alt_type",
+    "speed",
+    "alt_pitch",
+    "other",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "alt_avr",
+    "frequency",
+    "alt_thd",
+    "ctl_protection",
+    "alt_winding",
+    "ambient",
+    "alt_excitation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG+AREP",
+   "self": true
+  },
+  {
+   "key": "IB2400541628",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_standard",
+    "alt_type",
+    "speed",
+    "alt_pitch",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "alt_avr",
+    "frequency",
+    "alt_thd",
+    "ctl_protection",
+    "ambient",
+    "other",
+    "alt_excitation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG+AREP",
+   "self": true
+  },
+  {
+   "key": "IB2400542354",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_type",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "overload",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "speed",
+    "frequency",
+    "freq_regulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400545050",
+   "codes": [
+    "alt_make",
+    "alt_avr",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2400546306",
+   "codes": [
+    "alt_make",
+    "alt_vreg",
+    "alt_thd",
+    "other",
+    "ctl_measure",
+    "ctl_protection"
+   ],
+   "vreg": 1,
+   "altOrigin": "brand"
+  },
+  {
+   "key": "IB2400551129",
+   "codes": [
+    "other",
+    "voltage",
+    "alt_power",
+    "speed",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "ctl_protection",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400558775",
+   "codes": [
+    "other",
+    "alt_power",
+    "alt_insulation",
+    "voltage",
+    "alt_vreg",
+    "alt_type",
+    "alt_ip",
+    "alt_avr",
+    "alt_short_circuit",
+    "ctl_start_amf",
+    "speed",
+    "alt_thd"
+   ],
+   "kva": true,
+   "ins": "H",
+   "sc": true
+  },
+  {
+   "key": "IB2400560277",
+   "codes": [
+    "alt_power",
+    "voltage",
+    "phases",
+    "alt_poles",
+    "alt_avr",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2400560854",
+   "codes": [
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2400560982",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_power",
+    "alt_type",
+    "alt_insulation",
+    "alt_efficiency",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400561834",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_vreg",
+    "ctl_protection",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip",
+    "overload",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400562787",
+   "codes": [
+    "alt_make",
+    "alt_avr",
+    "voltage",
+    "phases",
+    "frequency",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "ins": "H",
+   "makes": [
+    "leroy somer"
+   ]
+  },
+  {
+   "key": "IB2400563426",
+   "codes": [
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400564384",
+   "codes": [
+    "standards",
+    "alt_make",
+    "other",
+    "voltage",
+    "alt_avr",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_insulation",
+    "alt_ip",
+    "battery"
+   ],
+   "ins": "H",
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2400573523",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_avr",
+    "alt_power",
+    "voltage",
+    "alt_insulation",
+    "alt_ip",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2400573714",
+   "codes": [
+    "alt_origin"
+   ]
+  },
+  {
+   "key": "IB2400577658",
+   "codes": [
+    "alt_power",
+    "alt_type",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_standard"
+   ],
+   "ins": "H",
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2400587900",
+   "codes": [
+    "ctl_protection",
+    "voltage",
+    "freq_regulation",
+    "alt_vreg",
+    "alt_type",
+    "alt_insulation",
+    "alt_thd"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2400588970",
+   "codes": [
+    "alt_make",
+    "other",
+    "voltage",
+    "alt_type",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "ins": "H",
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2400589278",
+   "codes": [
+    "alt_insulation",
+    "alt_avr",
+    "alt_bearing"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400592848",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_type",
+    "alt_insulation",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400595350",
+   "codes": [
+    "alt_power",
+    "voltage",
+    "frequency",
+    "alt_vreg",
+    "alt_avr",
+    "alt_type"
+   ],
+   "kva": true,
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2400596787",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_power",
+    "speed",
+    "alt_avr",
+    "overload",
+    "frequency",
+    "alt_cooling",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "ins": "H",
+   "self": true,
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2400602840",
+   "codes": [
+    "alt_vreg",
+    "alt_insulation"
+   ],
+   "ins": "H",
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2400606080",
+   "codes": [
+    "alt_type",
+    "voltage",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2400607862",
+   "codes": [
+    "alt_insulation",
+    "alt_avr"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2400615261",
+   "codes": [
+    "alt_avr"
+   ]
+  },
+  {
+   "key": "IB2400617546",
+   "codes": [
+    "alt_type",
+    "speed",
+    "alt_ip",
+    "alt_insulation",
+    "alt_thd",
+    "other",
+    "frequency",
+    "alt_avr",
+    "ctl_parallel",
+    "alt_short_circuit"
+   ],
+   "ins": "H",
+   "self": true,
+   "sc": true
+  },
+  {
+   "key": "IB2500001551",
+   "codes": [
+    "alt_make",
+    "other",
+    "voltage",
+    "alt_type",
+    "alt_avr",
+    "alt_power",
+    "phases",
+    "alt_ip"
+   ]
+  },
+  {
+   "key": "IB2500008885",
+   "codes": [
+    "alt_type",
+    "alt_avr",
+    "alt_winding",
+    "voltage",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "ins": "H",
+   "exc": "PMG",
+   "self": true
+  },
+  {
+   "key": "IB2500017038",
+   "codes": [
+    "alt_power",
+    "alt_poles",
+    "alt_vreg",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2500020231",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_vreg",
+    "alt_thd",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG",
+   "self": true,
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2500031588",
+   "codes": [
+    "alt_make",
+    "alt_avr",
+    "alt_power",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2500039578",
+   "codes": [
+    "alt_type",
+    "alt_avr",
+    "alt_power"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2500042107",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_type",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2500046731",
+   "codes": [
+    "alt_make"
+   ]
+  },
+  {
+   "key": "IB2500056085",
+   "codes": [
+    "alt_type",
+    "voltage",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "alt_make"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2500057816",
+   "codes": [
+    "alt_power",
+    "alt_ip",
+    "phases"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2500061368",
+   "codes": [
+    "alt_vreg"
+   ],
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2500067556",
+   "codes": [
+    "alt_power",
+    "phases",
+    "voltage",
+    "frequency"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2500068145",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation",
+    "alt_thd"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2500073242",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_type",
+    "alt_avr",
+    "alt_power",
+    "phases",
+    "other",
+    "alt_ip"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2500076938",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_vreg",
+    "alt_type",
+    "alt_insulation",
+    "ctl_protection",
+    "alt_ip"
+   ],
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2500084609",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_vreg",
+    "alt_ip",
+    "alt_efficiency",
+    "phases"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2500088417",
+   "codes": [
+    "alt_make"
+   ]
+  },
+  {
+   "key": "IB2500089757",
+   "codes": [
+    "alt_avr",
+    "alt_power",
+    "voltage"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "altOrigin": "origin"
+  },
+  {
+   "key": "IB2500092506",
+   "codes": [
+    "voltage",
+    "alt_power",
+    "phases",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "ctl_protection"
+   ],
+   "kva": true,
+   "ins": "F",
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2500100004",
+   "codes": [
+    "alt_avr"
+   ]
+  },
+  {
+   "key": "IB2500102600",
+   "codes": [
+    "alt_excitation",
+    "alt_power",
+    "voltage",
+    "alt_avr",
+    "alt_efficiency",
+    "alt_thd"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG",
+   "sc": true
+  },
+  {
+   "key": "IB2500110812",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "voltage",
+    "alt_poles",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "other",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500110816",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_poles",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "other",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500114642",
+   "codes": [
+    "phases",
+    "alt_make"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "makes": [
+    "leroy somer"
+   ]
+  },
+  {
+   "key": "IB2500118115",
+   "codes": [
+    "alt_poles",
+    "alt_power",
+    "voltage",
+    "alt_ip",
+    "alt_insulation",
+    "alt_vreg",
+    "alt_type",
+    "alt_thd",
+    "other"
+   ],
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2500118275",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_power",
+    "ctl_protection",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500118283",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "overload",
+    "alt_type",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2500118294",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "overload",
+    "alt_type",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2500124299",
+   "codes": [
+    "alt_model",
+    "voltage",
+    "frequency",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2500125567",
+   "codes": [
+    "alt_insulation",
+    "alt_type",
+    "alt_vreg"
+   ],
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2500129189",
+   "codes": [
+    "other",
+    "alt_type",
+    "alt_power",
+    "voltage",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip",
+    "overload",
+    "alt_efficiency",
+    "frequency",
+    "phases",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2500129768",
+   "codes": [
+    "alt_avr",
+    "alt_type"
+   ]
+  },
+  {
+   "key": "IB2500137071",
+   "codes": [
+    "alt_model",
+    "other"
+   ]
+  },
+  {
+   "key": "IB2500140418",
+   "codes": [
+    "alt_origin",
+    "alt_power",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2500141185",
+   "codes": [
+    "alt_avr",
+    "ctl_measure"
+   ]
+  },
+  {
+   "key": "IB2500144659",
+   "codes": [
+    "frequency",
+    "alt_power",
+    "voltage",
+    "other",
+    "speed",
+    "phases",
+    "power_factor",
+    "alt_type",
+    "weight",
+    "dimensions"
+   ],
+   "kva": true,
+   "self": true
+  },
+  {
+   "key": "IB2500147632",
+   "codes": [
+    "alt_avr"
+   ]
+  },
+  {
+   "key": "IB2500152619",
+   "codes": [
+    "alt_make",
+    "alt_cooling"
+   ],
+   "makes": [
+    "stamford"
+   ]
+  },
+  {
+   "key": "IB2500152724",
+   "codes": [
+    "alt_power",
+    "alt_avr"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2500156054",
+   "codes": [
+    "alt_winding"
+   ]
+  },
+  {
+   "key": "IB2500159012",
+   "codes": [
+    "alt_standard",
+    "alt_type",
+    "voltage",
+    "frequency",
+    "phases",
+    "alt_power",
+    "alt_insulation",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H",
+   "altOrigin": "origin"
+  },
+  {
+   "key": "IB2500161081",
+   "codes": [
+    "alt_type"
+   ]
+  },
+  {
+   "key": "IB2500173388",
+   "codes": [
+    "alt_type"
+   ]
+  },
+  {
+   "key": "IB2500177469",
+   "codes": [
+    "genset_type"
+   ]
+  },
+  {
+   "key": "IB2500177769",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_standard",
+    "alt_power",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2500187868",
+   "codes": [
+    "alt_power",
+    "other",
+    "alt_avr",
+    "voltage",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip",
+    "alt_vreg",
+    "speed"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2500189560",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_power",
+    "ctl_protection",
+    "alt_type",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500189675",
+   "codes": [
+    "other",
+    "alt_type",
+    "voltage",
+    "alt_power",
+    "alt_vreg",
+    "alt_short_circuit",
+    "alt_insulation",
+    "alt_ip",
+    "alt_model"
+   ],
+   "ins": "H",
+   "exc": "PMG+AREP",
+   "self": true,
+   "sc": true,
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2500189935",
+   "codes": [
+    "alt_origin",
+    "voltage",
+    "alt_power",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500198459",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_power",
+    "ctl_protection",
+    "alt_type",
+    "alt_efficiency",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500198948",
+   "codes": [
+    "alt_make",
+    "alt_ip",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_pitch",
+    "alt_thd"
+   ],
+   "ins": "H",
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2500203377",
+   "codes": [
+    "alt_avr"
+   ]
+  },
+  {
+   "key": "IB2500206907",
+   "codes": [
+    "alt_type",
+    "alt_avr",
+    "other",
+    "frequency",
+    "alt_power",
+    "alt_efficiency",
+    "alt_cooling",
+    "alt_short_circuit",
+    "phases",
+    "alt_insulation",
+    "overload",
+    "alt_thd",
+    "alt_winding",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500211376",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_vreg",
+    "alt_cooling",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2500219677",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_power",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2500222084",
+   "codes": [
+    "alt_insulation",
+    "alt_avr",
+    "alt_ip"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2500235727",
+   "codes": [
+    "alt_make",
+    "ctl_display_lang",
+    "alt_power",
+    "alt_standard",
+    "alt_type",
+    "speed",
+    "alt_pitch",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "alt_avr",
+    "frequency",
+    "alt_thd",
+    "ctl_protection",
+    "alt_winding",
+    "ambient",
+    "other",
+    "alt_excitation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG+AREP",
+   "self": true
+  },
+  {
+   "key": "IB2500239478",
+   "codes": [
+    "voltage"
+   ]
+  },
+  {
+   "key": "IB2500246452",
+   "codes": [
+    "ctl_protection"
+   ]
+  },
+  {
+   "key": "IB2500249901",
+   "codes": [
+    "standards",
+    "alt_origin",
+    "voltage",
+    "alt_avr",
+    "alt_insulation"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2500249932",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_type",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2500257276",
+   "codes": [
+    "alt_insulation"
+   ]
+  },
+  {
+   "key": "IB2500261097",
+   "codes": [
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500268545",
+   "codes": [
+    "alt_insulation",
+    "alt_power",
+    "voltage",
+    "alt_avr",
+    "alt_ip",
+    "alt_type",
+    "alt_vreg",
+    "alt_efficiency",
+    "alt_thd",
+    "other"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2500271331",
+   "codes": [
+    "alt_make",
+    "phases",
+    "alt_power"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500271735",
+   "codes": [
+    "alt_make"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2500279384",
+   "codes": [
+    "alt_origin",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_thd",
+    "alt_insulation",
+    "alt_ip",
+    "alt_bearing",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500280002",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_type",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500280916",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_thd",
+    "alt_insulation",
+    "alt_ip",
+    "alt_bearing",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500281552",
+   "codes": [
+    "alt_make",
+    "alt_standard",
+    "alt_power"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2500287209",
+   "codes": [
+    "alt_make",
+    "alt_avr",
+    "alt_power",
+    "alt_vreg",
+    "overload",
+    "alt_cooling",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 0.5,
+   "altOrigin": "brand"
+  },
+  {
+   "key": "IB2500291421",
+   "codes": [
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "phases"
+   ],
+   "kva": true,
+   "ins": "F"
+  },
+  {
+   "key": "IB2500302333",
+   "codes": [
+    "alt_origin",
+    "alt_type",
+    "speed",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "alt_avr",
+    "alt_cooling",
+    "ambient",
+    "other",
+    "alt_efficiency",
+    "alt_thd",
+    "alt_excitation",
+    "alt_standard"
+   ],
+   "ins": "H",
+   "exc": "PMG",
+   "self": true
+  },
+  {
+   "key": "IB2500305519",
+   "codes": [
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "makes": [
+    "avk"
+   ]
+  },
+  {
+   "key": "IB2500310648",
+   "codes": [
+    "speed"
+   ]
+  },
+  {
+   "key": "IB2500311404",
+   "codes": [
+    "ctl_measure"
+   ]
+  },
+  {
+   "key": "IB2500314001",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "voltage",
+    "alt_type",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500314401",
+   "codes": [
+    "phases",
+    "alt_avr",
+    "alt_power",
+    "voltage",
+    "alt_insulation",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500320544",
+   "codes": [
+    "alt_type",
+    "alt_standard",
+    "ctl_protection",
+    "voltage",
+    "alt_power",
+    "alt_ip",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_efficiency",
+    "alt_avr"
+   ],
+   "ins": "H",
+   "exc": "PMG",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2500323621",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_vreg",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500327119",
+   "codes": [
+    "alt_vreg"
+   ],
+   "ins": "H",
+   "self": true,
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2500336823",
+   "codes": [
+    "alt_type",
+    "alt_vreg",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2500337345",
+   "codes": [
+    "phases",
+    "alt_vreg",
+    "alt_make"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2500337925",
+   "codes": [
+    "phases"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2500342833",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_power",
+    "alt_type",
+    "alt_insulation",
+    "alt_efficiency",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500344166",
+   "codes": [
+    "alt_avr"
+   ]
+  },
+  {
+   "key": "IB2500344346",
+   "codes": [
+    "alt_excitation",
+    "alt_standard",
+    "ctl_protection",
+    "voltage",
+    "alt_power",
+    "alt_ip",
+    "alt_vreg",
+    "alt_type",
+    "alt_insulation",
+    "alt_efficiency",
+    "other"
+   ],
+   "ins": "H",
+   "exc": "PMG",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2500360231",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "voltage",
+    "alt_avr",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "F",
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2500360458",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "voltage",
+    "alt_poles",
+    "frequency",
+    "alt_avr",
+    "alt_power",
+    "alt_ip",
+    "alt_vreg"
+   ],
+   "self": true,
+   "vreg": 1,
+   "makes": [
+    "mecc alte",
+    "leroy somer",
+    "stamford"
+   ],
+   "altOrigin": "brand"
+  },
+  {
+   "key": "IB2500363177",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_insulation",
+    "alt_ip",
+    "alt_bearing",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2500363403",
+   "codes": [
+    "alt_type"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2500364714",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "phases",
+    "alt_pitch",
+    "other",
+    "voltage",
+    "frequency",
+    "alt_cooling",
+    "alt_vreg",
+    "alt_ip",
+    "alt_efficiency",
+    "alt_insulation",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG",
+   "self": true
+  },
+  {
+   "key": "IB2500371475",
+   "codes": [
+    "alt_make",
+    "alt_origin",
+    "other",
+    "alt_type",
+    "phases",
+    "voltage",
+    "frequency",
+    "alt_power",
+    "alt_ip",
+    "alt_insulation",
+    "alt_efficiency",
+    "alt_short_circuit"
+   ],
+   "kva": true,
+   "ins": "H",
+   "sc": true
+  },
+  {
+   "key": "IB2500371581",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "phases",
+    "voltage",
+    "alt_power",
+    "alt_ip",
+    "alt_insulation",
+    "alt_efficiency",
+    "alt_short_circuit"
+   ],
+   "kva": true,
+   "ins": "H",
+   "sc": true
+  },
+  {
+   "key": "IB2500372309",
+   "codes": [
+    "alt_make",
+    "alt_avr"
+   ],
+   "self": true
+  },
+  {
+   "key": "IB2500376934",
+   "codes": [
+    "alt_make",
+    "other",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "overload",
+    "ctl_protection",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2500380933",
+   "codes": [
+    "alt_make",
+    "alt_model"
+   ],
+   "makes": [
+    "stamford"
+   ]
+  },
+  {
+   "key": "IB2500381511",
+   "codes": [
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2500385135",
+   "codes": [
+    "alt_power"
+   ],
+   "kva": true
+  },
+  {
+   "key": "IB2500386455",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "voltage",
+    "alt_type",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500386628",
+   "codes": [
+    "alt_origin",
+    "voltage",
+    "alt_insulation",
+    "other"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2500390999",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "overload",
+    "alt_type",
+    "alt_insulation",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500394492",
+   "codes": [
+    "alt_power",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2500400828",
+   "codes": [
+    "alt_type",
+    "alt_insulation"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2500402318",
+   "codes": [
+    "other",
+    "alt_type",
+    "alt_avr",
+    "alt_winding",
+    "voltage",
+    "alt_insulation",
+    "alt_ip",
+    "ctl_protection"
+   ],
+   "ins": "H",
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2500403212",
+   "codes": [
+    "voltage",
+    "alt_power",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2500403535",
+   "codes": [
+    "alt_power",
+    "alt_type",
+    "alt_thd",
+    "ctl_protection",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2500405459",
+   "codes": [
+    "ctl_protection",
+    "alt_make",
+    "alt_standard",
+    "alt_bearing",
+    "alt_power",
+    "voltage",
+    "alt_vreg",
+    "frequency",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2500410768",
+   "codes": [
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "altOrigin": "origin"
+  },
+  {
+   "key": "IB2500410852",
+   "codes": [
+    "other"
+   ]
+  },
+  {
+   "key": "IB2500415487",
+   "codes": [
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2500416364",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_power",
+    "alt_vreg",
+    "ctl_protection",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2500419471",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_power",
+    "alt_type",
+    "alt_insulation",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500422009",
+   "codes": [
+    "alt_make",
+    "phases",
+    "alt_power",
+    "overload",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500432527",
+   "codes": [
+    "alt_origin",
+    "other",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_bearing",
+    "alt_insulation",
+    "alt_ip",
+    "speed",
+    "overload",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_thd",
+    "alt_standard",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "sc": true,
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2500435184",
+   "codes": [
+    "emission"
+   ]
+  },
+  {
+   "key": "IB2500438703",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "phases",
+    "voltage",
+    "alt_power",
+    "alt_ip",
+    "alt_insulation",
+    "alt_efficiency",
+    "ctl_protection"
+   ],
+   "kva": true,
+   "ins": "H",
+   "sc": true
+  },
+  {
+   "key": "IB2500442970",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2500445635",
+   "codes": [
+    "other",
+    "alt_make",
+    "alt_type",
+    "alt_pitch",
+    "alt_bearing",
+    "alt_power",
+    "voltage",
+    "frequency",
+    "alt_insulation",
+    "alt_ip",
+    "alt_avr",
+    "alt_standard"
+   ],
+   "ins": "H",
+   "self": true,
+   "makes": [
+    "stamford"
+   ]
+  },
+  {
+   "key": "IB2500447006",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_cooling",
+    "alt_insulation",
+    "alt_ip",
+    "alt_thd",
+    "frequency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500448140",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip",
+    "ctl_protection"
+   ],
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2500456429",
+   "codes": [
+    "alt_power"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2500459891",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "frequency",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "alt_short_circuit",
+    "alt_vreg",
+    "alt_avr",
+    "ctl_protection",
+    "alt_cooling"
+   ],
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2500460613",
+   "codes": [
+    "alt_type",
+    "alt_power"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500462306",
+   "codes": [
+    "alt_make",
+    "alt_excitation",
+    "alt_type",
+    "alt_avr",
+    "alt_winding",
+    "voltage",
+    "ctl_parallel",
+    "alt_insulation",
+    "alt_ip",
+    "alt_thd",
+    "ctl_protection"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG",
+   "altOrigin": "origin"
+  },
+  {
+   "key": "IB2500464050",
+   "codes": [
+    "alt_type",
+    "alt_poles",
+    "phases",
+    "alt_bearing",
+    "alt_power",
+    "voltage",
+    "alt_vreg",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2500465111",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_insulation",
+    "alt_ip",
+    "alt_bearing",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2500471911",
+   "codes": [
+    "alt_make",
+    "other",
+    "voltage",
+    "alt_power",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip",
+    "ctl_protection",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500473200",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_origin",
+    "voltage",
+    "speed",
+    "alt_avr",
+    "overload",
+    "frequency",
+    "alt_cooling",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "ins": "H",
+   "self": true,
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2500474495",
+   "codes": [
+    "alt_type",
+    "alt_poles",
+    "alt_insulation",
+    "alt_ip",
+    "alt_power",
+    "alt_short_circuit",
+    "alt_avr"
+   ],
+   "ins": "H",
+   "sc": true
+  },
+  {
+   "key": "IB2500474803",
+   "codes": [
+    "alt_standard",
+    "alt_type",
+    "voltage",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "alt_thd",
+    "other",
+    "speed",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2500476713",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_power",
+    "alt_vreg",
+    "freq_regulation",
+    "overload",
+    "ctl_protection",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2500480924",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_power",
+    "overload",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500483608",
+   "codes": [
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2500498271",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "ctl_protection",
+    "alt_type",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500498331",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_insulation",
+    "alt_ip",
+    "alt_bearing",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2500500319",
+   "codes": [
+    "alt_power",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "alt_make"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500503506",
+   "codes": [
+    "alt_make"
+   ],
+   "makes": [
+    "stamford"
+   ]
+  },
+  {
+   "key": "IB2500508341",
+   "codes": [
+    "alt_make",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500512614",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_vreg",
+    "alt_ip",
+    "alt_insulation",
+    "overload"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2500514971",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_cooling",
+    "alt_insulation",
+    "alt_ip",
+    "alt_thd",
+    "frequency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500531255",
+   "codes": [
+    "alt_power",
+    "alt_type",
+    "alt_efficiency",
+    "alt_make"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500532997",
+   "codes": [
+    "alt_make",
+    "alt_vreg",
+    "alt_power",
+    "ctl_protection",
+    "alt_type",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1.5
+  },
+  {
+   "key": "IB2500533266",
+   "codes": [
+    "alt_make",
+    "alt_origin",
+    "alt_standard",
+    "alt_power",
+    "alt_vreg",
+    "overload",
+    "alt_efficiency",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1,
+   "makes": [
+    "stamford",
+    "leroy-somer",
+    "mecc alte"
+   ]
+  },
+  {
+   "key": "IB2500536474",
+   "codes": [
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "overload",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1,
+   "altOrigin": "brand"
+  },
+  {
+   "key": "IB2500541094",
+   "codes": [
+    "other",
+    "alt_origin",
+    "alt_type",
+    "voltage",
+    "alt_ip",
+    "alt_insulation"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500553750",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "frequency",
+    "alt_type",
+    "alt_ip",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "altOrigin": "origin"
+  },
+  {
+   "key": "IB2500570880",
+   "codes": [
+    "alt_make",
+    "alt_bearing",
+    "alt_power",
+    "alt_vreg",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2500571943",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_power",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500573995",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_power",
+    "ctl_protection",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2500597081",
+   "codes": [
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2500598824",
+   "codes": [
+    "alt_origin",
+    "alt_type",
+    "alt_power",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "makes": [
+    "sincro",
+    "linz",
+    "mecc alte"
+   ]
+  },
+  {
+   "key": "IB2500600028",
+   "codes": [
+    "alt_model"
+   ]
+  },
+  {
+   "key": "IB2500611943",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_vreg",
+    "alt_ip",
+    "alt_insulation"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2500617934",
+   "codes": [
+    "alt_winding"
+   ]
+  },
+  {
+   "key": "IB2500626302",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "frequency",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "alt_efficiency",
+    "alt_vreg",
+    "alt_avr",
+    "ctl_protection"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2600020985",
+   "codes": [
+    "alt_type",
+    "alt_ip",
+    "alt_insulation",
+    "alt_pitch",
+    "alt_winding",
+    "alt_vreg",
+    "alt_power",
+    "overload",
+    "alt_origin"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1,
+   "altOrigin": "origin"
+  },
+  {
+   "key": "IB2600021464",
+   "codes": [
+    "alt_model",
+    "alt_type",
+    "voltage",
+    "alt_power",
+    "alt_insulation",
+    "other",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2600027562",
+   "codes": [
+    "alt_standard",
+    "alt_power",
+    "alt_type",
+    "alt_make"
+   ],
+   "ins": "H",
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2600027651",
+   "codes": [
+    "alt_origin",
+    "alt_type",
+    "alt_power",
+    "alt_insulation",
+    "other"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "makes": [
+    "sincro",
+    "linz",
+    "mecc alte"
+   ]
+  },
+  {
+   "key": "IB2600046158",
+   "codes": [
+    "alt_origin",
+    "alt_type",
+    "alt_standard",
+    "alt_power",
+    "voltage"
+   ],
+   "kva": true,
+   "self": true
+  },
+  {
+   "key": "IB2600072892",
+   "codes": [
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "other",
+    "frequency",
+    "alt_power",
+    "alt_efficiency",
+    "alt_cooling",
+    "alt_short_circuit",
+    "phases",
+    "alt_insulation",
+    "overload",
+    "alt_thd",
+    "alt_winding",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2600075436",
+   "codes": [
+    "alt_power",
+    "alt_poles",
+    "alt_vreg",
+    "ctl_protection"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2600089010",
+   "codes": [
+    "other"
+   ]
+  },
+  {
+   "key": "IB2600092758",
+   "codes": [
+    "alt_origin",
+    "alt_type",
+    "alt_ip",
+    "alt_insulation",
+    "alt_pitch",
+    "alt_winding",
+    "alt_vreg",
+    "alt_power",
+    "overload",
+    "ctl_protection"
+   ],
+   "ins": "H",
+   "sc": true,
+   "vreg": 1,
+   "altOrigin": "origin"
+  },
+  {
+   "key": "IB2600098464",
+   "codes": [
+    "alt_power",
+    "alt_make",
+    "voltage",
+    "alt_type",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 0.8
+  },
+  {
+   "key": "IB2600112737",
+   "codes": [
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2600115755",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "phases",
+    "voltage",
+    "alt_insulation",
+    "alt_avr"
+   ],
+   "ins": "H",
+   "makes": [
+    "stamford"
+   ]
+  },
+  {
+   "key": "IB2600116950",
+   "codes": [
+    "other",
+    "alt_type",
+    "alt_insulation",
+    "alt_standard"
+   ],
+   "ins": "F"
+  },
+  {
+   "key": "IB2600118095",
+   "codes": [
+    "alt_type",
+    "alt_insulation"
+   ],
+   "ins": "F"
+  },
+  {
+   "key": "IB2600128010",
+   "codes": [
+    "alt_vreg"
+   ],
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2600137932",
+   "codes": [
+    "alt_make",
+    "fuel_system"
+   ]
+  },
+  {
+   "key": "IB2600164177",
+   "codes": [
+    "alt_make",
+    "alt_ip",
+    "alt_vreg",
+    "alt_pitch"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2600184587",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_type",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2600184876",
+   "codes": [
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_insulation",
+    "alt_ip",
+    "alt_bearing",
+    "alt_cooling",
+    "alt_make"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2600188772",
+   "codes": [
+    "alt_origin",
+    "alt_power",
+    "other",
+    "alt_type",
+    "alt_vreg",
+    "alt_efficiency",
+    "alt_standard",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2600192365",
+   "codes": [
+    "other",
+    "alt_power",
+    "alt_excitation",
+    "genset_type",
+    "alt_cooling",
+    "voltage",
+    "alt_vreg",
+    "alt_short_circuit",
+    "alt_insulation",
+    "alt_avr",
+    "alt_type",
+    "speed"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG",
+   "self": true,
+   "sc": true,
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2600194231",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "other",
+    "alt_short_circuit",
+    "alt_avr"
+   ],
+   "exc": "PMG",
+   "sc": true
+  },
+  {
+   "key": "IB2600217137",
+   "codes": [
+    "alt_poles",
+    "alt_type"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2600219527",
+   "codes": [
+    "alt_power",
+    "alt_insulation",
+    "alt_type",
+    "alt_standard",
+    "alt_make",
+    "alt_vreg"
+   ],
+   "ins": "H",
+   "exc": "PMG",
+   "sc": true,
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2600225281",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "freq_regulation",
+    "alt_insulation",
+    "alt_ip",
+    "alt_bearing",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2600229874",
+   "codes": [
+    "alt_insulation",
+    "alt_type",
+    "alt_avr",
+    "other"
+   ],
+   "ins": "H",
+   "sc": true
+  },
+  {
+   "key": "IB2600243028",
+   "codes": [
+    "alt_origin",
+    "alt_model",
+    "alt_type",
+    "phases",
+    "voltage",
+    "frequency",
+    "alt_power",
+    "alt_ip",
+    "alt_insulation"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2600245065",
+   "codes": [
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2600245437",
+   "codes": [
+    "genset_type",
+    "alt_vreg"
+   ]
+  },
+  {
+   "key": "IB2600248328",
+   "codes": [
+    "alt_type"
+   ],
+   "self": true
+  },
+  {
+   "key": "IB2600252022",
+   "codes": [
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "phases"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2600252436",
+   "codes": [
+    "alt_power",
+    "alt_type"
+   ],
+   "kva": true,
+   "exc": "PMG",
+   "self": true
+  },
+  {
+   "key": "IB2600253287",
+   "codes": [
+    "alt_type"
+   ],
+   "exc": "PMG",
+   "self": true
+  },
+  {
+   "key": "IB2600257552",
+   "codes": [
+    "alt_type"
+   ]
+  },
+  {
+   "key": "IB2600260970",
+   "codes": [
+    "other",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip",
+    "alt_bearing",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2600278676",
+   "codes": [
+    "other",
+    "alt_make",
+    "phases",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_efficiency"
+   ],
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2600280799",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_power",
+    "voltage",
+    "phases",
+    "alt_vreg",
+    "frequency",
+    "freq_regulation",
+    "overload",
+    "ctl_protection",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2600282153",
+   "codes": [
+    "ctl_protection"
+   ]
+  },
+  {
+   "key": "IB2600307179",
+   "codes": [
+    "alt_make",
+    "voltage",
+    "alt_power",
+    "ctl_protection",
+    "alt_type",
+    "alt_insulation",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2600308125",
+   "codes": [
+    "alt_make",
+    "alt_standard",
+    "alt_type",
+    "voltage",
+    "alt_power",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip",
+    "overload"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2600309163",
+   "codes": [
+    "alt_model",
+    "alt_make",
+    "alt_origin",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip",
+    "alt_power",
+    "other"
+   ],
+   "kva": true,
+   "ins": "H",
+   "altOrigin": "brand"
+  },
+  {
+   "key": "IB2600313010",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "phases",
+    "speed",
+    "other",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "alt_standard",
+    "alt_thd",
+    "alt_avr",
+    "alt_efficiency",
+    "alt_excitation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2600315904",
+   "codes": [
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_origin"
+   ],
+   "ins": "H",
+   "sc": true
+  },
+  {
+   "key": "IB2600325773",
+   "codes": [
+    "alt_standard",
+    "alt_excitation",
+    "voltage",
+    "alt_power",
+    "alt_insulation",
+    "alt_vreg",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG",
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2600327742",
+   "codes": [
+    "alt_make"
+   ]
+  },
+  {
+   "key": "IB2600327799",
+   "codes": [
+    "alt_power",
+    "voltage",
+    "alt_avr",
+    "alt_insulation",
+    "alt_origin"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2600334541",
+   "codes": [
+    "alt_vreg",
+    "other"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2600337362",
+   "codes": [
+    "alt_make",
+    "alt_origin",
+    "alt_type",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "alt_efficiency",
+    "other",
+    "alt_ip",
+    "alt_insulation"
+   ],
+   "ins": "H",
+   "vreg": 0.5,
+   "makes": [
+    "stamford",
+    "leroysomer",
+    "marathon"
+   ]
+  },
+  {
+   "key": "IB2600341462",
+   "codes": [
+    "alt_standard",
+    "alt_vreg"
+   ],
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2600347583",
+   "codes": [
+    "alt_type",
+    "alt_insulation",
+    "alt_avr",
+    "alt_thd"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2600350175",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_type",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2600350338",
+   "codes": [
+    "alt_insulation",
+    "alt_type",
+    "alt_vreg",
+    "alt_ip",
+    "voltage"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2600354007",
+   "codes": [
+    "alt_make"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2600365013",
+   "codes": [
+    "alt_type",
+    "phases",
+    "alt_poles",
+    "alt_avr",
+    "alt_ip",
+    "alt_insulation",
+    "other",
+    "alt_vreg",
+    "alt_make"
+   ],
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2600374560",
+   "codes": [
+    "alt_type",
+    "alt_insulation"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2600392438",
+   "codes": [
+    "other",
+    "phases",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_efficiency"
+   ],
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2600395994",
+   "codes": [
+    "standards",
+    "alt_type",
+    "alt_power",
+    "speed",
+    "voltage",
+    "alt_vreg",
+    "frequency",
+    "alt_avr",
+    "alt_ip",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG+AREP",
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2600418114",
+   "codes": [
+    "alt_origin",
+    "other",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_bearing",
+    "alt_insulation",
+    "alt_ip",
+    "speed",
+    "overload",
+    "alt_vreg",
+    "alt_thd",
+    "alt_cooling",
+    "alt_standard"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2600419125",
+   "codes": [
+    "alt_power",
+    "other",
+    "alt_type",
+    "alt_vreg",
+    "alt_efficiency",
+    "alt_standard",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2600429093",
+   "codes": [
+    "alt_avr",
+    "alt_power",
+    "alt_poles",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2600434462",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_vreg",
+    "ctl_protection"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2600438484",
+   "codes": [
+    "alt_model",
+    "alt_type",
+    "alt_insulation",
+    "alt_origin"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2600448676",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "voltage",
+    "alt_power",
+    "alt_insulation",
+    "alt_vreg",
+    "alt_cooling",
+    "ctl_measure"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2600450087",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "alt_model"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2600450900",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "standards"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2600458465",
+   "codes": [
+    "alt_type"
+   ]
+  },
+  {
+   "key": "IB2600464766",
+   "codes": [
+    "alt_insulation",
+    "alt_winding"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2600465110",
+   "codes": [
+    "alt_origin",
+    "phases",
+    "voltage",
+    "freq_regulation",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "alt_bearing"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2600465194",
+   "codes": [
+    "alt_excitation",
+    "voltage",
+    "other",
+    "alt_power",
+    "alt_insulation",
+    "alt_avr",
+    "alt_ip",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG",
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2600470479",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_insulation",
+    "alt_ip",
+    "voltage",
+    "frequency",
+    "speed",
+    "alt_avr"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2600472762",
+   "codes": [
+    "alt_standard",
+    "alt_make",
+    "alt_type",
+    "alt_poles",
+    "phases",
+    "alt_bearing",
+    "alt_power",
+    "voltage",
+    "alt_vreg",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2600477305",
+   "codes": [
+    "alt_origin",
+    "voltage",
+    "alt_vreg",
+    "alt_power",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2600478079",
+   "codes": [
+    "other",
+    "alt_vreg"
+   ],
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2600483082",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_power",
+    "alt_avr",
+    "alt_insulation"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2600487332",
+   "codes": [
+    "alt_make"
+   ],
+   "makes": [
+    "stamford"
+   ]
+  },
+  {
+   "key": "IB2600490077",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip",
+    "speed"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2600507094",
+   "codes": [
+    "other",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_vreg",
+    "alt_insulation",
+    "alt_ip",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2600511162",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "alt_poles",
+    "voltage",
+    "phases",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "ctl_protection"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG"
+  },
+  {
+   "key": "IB2600511196",
+   "codes": [
+    "alt_type",
+    "alt_power",
+    "alt_avr",
+    "alt_bearing",
+    "alt_insulation",
+    "alt_ip",
+    "speed",
+    "overload",
+    "alt_vreg"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2600513216",
+   "codes": [
+    "alt_type"
+   ],
+   "self": true
+  },
+  {
+   "key": "IB2600549116",
+   "codes": [
+    "ctl_protection",
+    "alt_power",
+    "freq_regulation",
+    "alt_vreg",
+    "alt_type",
+    "alt_insulation",
+    "alt_thd"
+   ],
+   "kva": true,
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2600552343",
+   "codes": [
+    "alt_avr",
+    "alt_type",
+    "alt_insulation",
+    "alt_ip"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2600561204",
+   "codes": [
+    "iso8528_class"
+   ]
+  },
+  {
+   "key": "IB2600562009",
+   "codes": [
+    "alt_type",
+    "alt_winding"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2600565238",
+   "codes": [
+    "alt_avr",
+    "alt_insulation",
+    "alt_standard",
+    "alt_pitch",
+    "alt_winding",
+    "other",
+    "ctl_protection"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2600570050",
+   "codes": [
+    "alt_origin",
+    "voltage",
+    "alt_power",
+    "alt_type",
+    "alt_avr",
+    "alt_insulation",
+    "alt_ip",
+    "alt_cooling"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2600572967",
+   "codes": [
+    "alt_make",
+    "alt_type"
+   ],
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2600573539",
+   "codes": [
+    "alt_make",
+    "alt_ip",
+    "alt_type",
+    "alt_vreg",
+    "alt_power",
+    "overload",
+    "alt_winding"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "PMG",
+   "self": true,
+   "vreg": 1
+  },
+  {
+   "key": "IB2600573599",
+   "codes": [
+    "power_prime"
+   ]
+  },
+  {
+   "key": "IB2600574589",
+   "codes": [
+    "alt_type"
+   ],
+   "ins": "H",
+   "exc": "PMG",
+   "self": true
+  },
+  {
+   "key": "IB2600576085",
+   "codes": [
+    "alt_origin"
+   ]
+  },
+  {
+   "key": "IB2600581294",
+   "codes": [
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2600581344",
+   "codes": [
+    "alt_origin"
+   ]
+  },
+  {
+   "key": "IB2600581977",
+   "codes": [
+    "alt_model",
+    "alt_type",
+    "alt_power",
+    "alt_insulation",
+    "alt_vreg",
+    "alt_cooling",
+    "ctl_measure"
+   ],
+   "ins": "H",
+   "vreg": 1
+  },
+  {
+   "key": "IB2600586587",
+   "codes": [
+    "alt_type",
+    "alt_insulation",
+    "alt_avr"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2600587429",
+   "codes": [
+    "alt_make",
+    "alt_type",
+    "frequency",
+    "speed",
+    "alt_power",
+    "phases",
+    "voltage",
+    "alt_insulation",
+    "alt_ip",
+    "alt_efficiency"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2600588204",
+   "codes": [
+    "alt_power",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true
+  },
+  {
+   "key": "IB2600592658",
+   "codes": [
+    "alt_make"
+   ],
+   "makes": [
+    "leroy somer"
+   ]
+  },
+  {
+   "key": "IB2600592684",
+   "codes": [
+    "alt_make"
+   ],
+   "kva": true,
+   "ins": "H",
+   "exc": "AREP",
+   "makes": [
+    "leroy somer"
+   ]
+  },
+  {
+   "key": "IB2600594596",
+   "codes": [
+    "alt_vreg"
+   ],
+   "ins": "H",
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2600595853",
+   "codes": [
+    "alt_make"
+   ],
+   "makes": [
+    "leroy somer"
+   ]
+  },
+  {
+   "key": "IB2600601812",
+   "codes": [
+    "other",
+    "voltage",
+    "alt_type",
+    "alt_power",
+    "frequency",
+    "speed"
+   ],
+   "kva": true,
+   "self": true
+  },
+  {
+   "key": "IB2600602880",
+   "codes": [
+    "alt_make",
+    "alt_power",
+    "ctl_protection"
+   ],
+   "kva": true,
+   "ins": "H"
+  },
+  {
+   "key": "IB2600603983",
+   "codes": [
+    "alt_origin",
+    "alt_standard",
+    "voltage",
+    "alt_type",
+    "alt_power",
+    "frequency",
+    "other",
+    "alt_vreg",
+    "alt_short_circuit",
+    "ctl_protection"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "sc": true,
+   "vreg": 0.5
+  },
+  {
+   "key": "IB2600609805",
+   "codes": [
+    "alt_make",
+    "alt_insulation",
+    "ctl_protection"
+   ],
+   "ins": "H"
+  },
+  {
+   "key": "IB2600612866",
+   "codes": [
+    "alt_make",
+    "other",
+    "alt_vreg",
+    "alt_power",
+    "ctl_protection",
+    "alt_type"
+   ],
+   "kva": true,
+   "ins": "H",
+   "self": true,
+   "vreg": 1
+  }
+ ]
+}
