@@ -36,3 +36,18 @@ test("không đổi: bảng KHÔNG có tiêu đề động cơ, hoặc dòng có
   const two = sup("x-power", [{ n: 2, title: "t", header: ["| Model | Power | Engine Model | Fuel"], rows: ["| X-220 | 220 | P126TI | UCI274G | 40"] }]);
   assert.ok(!engines(two).some((x) => x.model === "P126TI"), "hai mã dạng đầu phát trên dòng: không đoán");
 });
+
+test("keyOf Doosan P: hậu tố '11' / 'Il' gõ sai của '-II' gộp (P126TI-11, P222LE-11, P126TI-Il); '-1' / '-2' / '-I' / hãng khác giữ nguyên", () => {
+  const k = (m) => C.keyOf(m);
+  assert.equal(k("P126TI-11"), k("P126TI-II"));
+  assert.equal(k("P126TI-Il"), k("P126TI-II"));
+  assert.equal(k("P222LE-11"), k("P222LE-II"));
+  assert.equal(k("P158LE-Ⅰ"), k("P158LE-I"));
+  assert.equal(k("P126TI- Ⅱ"), k("P126TI-II"));
+  assert.notEqual(k("P222LE-2"), k("P222LE-II"));
+  assert.notEqual(k("P126TI-2"), k("P126TI-II"));
+  assert.notEqual(k("P158LE-1"), k("P158LE-I"));
+  assert.notEqual(k("P126TI"), k("P126TI-II"));
+  assert.equal(k("QSB6.7-11"), "QSB6711", "hãng khác không bị đụng");
+  assert.equal(k("S4L2-11"), "S4L211");
+});
