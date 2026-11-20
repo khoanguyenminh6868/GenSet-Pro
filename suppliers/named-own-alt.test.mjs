@@ -10,16 +10,14 @@ const C = globalThis.GenbidCatalog;
 const real = (id) => JSON.parse(fs.readFileSync(new URL(`./cn/${id}.json`, import.meta.url), "utf8"));
 const H = (s) => hintsOf(`Chương V. Yêu cầu kỹ thuật\n${s}`);
 
-test("named(): trọn token, viết rời hay dính dấu đều nhận; chuỗi con giữa token thì không", () => {
+test("named(): chặn HẸP: mã đầu phát tự gắn nhãn (EL) phải khớp trọn token; model khác giữ chuỗi con như main", () => {
   assert.equal(named(H("Đầu phát: Model: 224D, loại không chổi than"), "EL 224D"), false);  // IB2300027083 kiểu này
+  assert.equal(named(H("Đầu phát: Model: 184J, máy phát"), "EL184J"), false);
+  assert.equal(named(H("Đầu phát Eastern Lion EL 224D"), "EL 224D"), true);       // nêu đích danh thật vẫn nhận
   assert.equal(named(H("Đầu phát Stamford HCI 544 D hoặc tương đương"), "HCI544D"), true);
-  assert.equal(named(H("Động cơ Cummins 6BT5.9-G2"), "6BT5.9-G2"), true);
-  assert.equal(named(H("Động cơ Cummins 6BT5.9-G2"), "6BT5.9G2"), true);
-  assert.equal(named(H("Động cơ Cummins 4BTA3.9-G11"), "4BTA3.9-G1"), false);   // G1 ≠ G11
-  assert.equal(named(H("Động cơ Cummins 6BT5.9-G2"), "6BT5.9-G"), false);      // model cụt của catalog: không nêu đích danh
-  assert.equal(named(H("Ắc quy khởi động 12VDC/24VDC"), "DC 24V"), false);
-  assert.equal(named(H("Điện áp 220/380V, 50Hz"), "V2203"), false);
-  assert.equal(named(H("Cầu dao ACB 2500A 4P"), "B2500"), false);
+  // model khác: y như main (chuỗi con của chữ dồn), việc trọn token cho mọi hãng là PR riêng
+  assert.equal(named(H("Động cơ Cummins 6BT5.9-G2"), "6BT5.9-G"), true);
+  assert.equal(named(H("Ắc quy khởi động 12VDC/24VDC"), "DC 24V"), true);
   // hints dựng tay không có `bounds`: như cũ (chuỗi con)
   assert.equal(named({ text: "model224d" }, "EL224D"), true);
 });

@@ -1403,13 +1403,15 @@ export const litres = (v) => {
   if (unit) return n;
   return n <= 100 ? n : n > 130 ? n / 1000 : null;
 };
-// A model the HSMT writes: its squashed code as whole tokens of the HSMT ("Stamford HCI 544 D" names HCI544D; "Model: 224D"
-// does not name EL224D, "QSK60-G4" does not name QSK60G). Hints without `bounds` (built by hand) keep the substring test.
+// A model the HSMT writes: its squashed code inside the squashed HSMT. NARROW guard (#969, điều phối 20/11/2026): a code of
+// an OWN_BRAND_ALTS alternator ("EL 224D") must match whole tokens of the HSMT ("Model: 224D" squashed to "model224d" held
+// "el224d": 8 runs of the top 30 gave eastern-lion rows +80 "đầu phát HSMT nêu"). Every other model keeps the substring
+// test (whole-token matching for all makes is its own PR). Hints without `bounds` (built by hand) keep the substring test.
 export const named = (hints, model) => {
   const k = squashOf(model);
   if (k.length < 5) return false;
   const b = hints.bounds;
-  if (!b) return hints.text.includes(k);
+  if (!b || !OWN_BRAND_ALTS.some((x) => x.code.test(String(model).trim()))) return hints.text.includes(k);
   for (let i = hints.text.indexOf(k); i >= 0; i = hints.text.indexOf(k, i + 1)) if (b[i] & 1 && b[i + k.length] & 2) return true;
   return false;
 };
