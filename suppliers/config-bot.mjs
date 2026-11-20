@@ -1472,6 +1472,25 @@ const PER_ENGINE = 3, PER_NAMED_ENGINE = 8, PER_SUPPLIER = 4, CN_ROWS = 12, MAKE
 // of 30 rows (IB2600592658, 2880: 30 Cummins). When the HSMT names no engine make or model, a make has at most MAKE_CAP
 // of the rows; what the ceiling leaves empty is filled with the best-scored rows left, whatever their make.
 export const MAKE_CAP = 10;
+// Hai luật điểm của bước chọn ứng viên (Khoa duyệt 20/11/2026 "làm cả A và B"); `GENBID_CAND_A=0` / `GENBID_CAND_B=0` tắt
+// từng luật (y như trước), mặc định bật.
+const candRuleOn = (k) => String(process.env[`GENBID_CAND_${k}`] ?? "1").trim() !== "0";
+// Luật A: động cơ có datasheet của CHÍNH hãng động cơ. Chặt: một fact của model (modelFacts) mang `sheet` (bảng của NCC
+// `role: engine_maker` có tiêu đề ghi đúng một mã là model này, hoặc dòng bảng của chính NCC đó ghi đúng mã model; không
+// tính bảng "Datasheet: …" của hãng tổ máy / NCC lắp ráp, không tính tờ của khung máy chia cho các model của khung) hoặc
+// `maker` (công suất động cơ do NCC engine_maker ghi), VÀ NCC đó là hãng của động cơ: một hãng của `e.make` có trong
+// tên / thương hiệu / id của NCC (weichai-power ghi thương hiệu "Baudouin", dcec "Cummins", perkins "Perkins"). NCC
+// engine_maker ghi động cơ hãng khác, hay động cơ chưa rõ hãng: không tính. → id các NCC đó (rỗng: không có).
+export function engineMakerSheets(e, ef, sup) {
+  const makes = String(e?.make || "").split(" / ").map((m) => m.trim().toLowerCase()).filter(Boolean);
+  if (!makes.length) return [];
+  const ofMake = (s) => {
+    if (s?.role !== "engine_maker") return false;
+    const names = [supplierFamily(s, true), s.names?.en, ...(s.names?.brands || []), s.id].filter(Boolean).map((x) => String(x).toLowerCase().replace(/[-_]+/g, " "));
+    return makes.some((m) => names.some((n) => n.includes(m)));
+  };
+  return [...new Set((ef || []).filter((f) => (f.sheet || f.maker) && ofMake(sup.get(f.supplierId))).map((f) => f.supplierId))];
+}
 // The make of a genset maker for Đồng bộ thương hiệu (syncCheck): a supplier that is no distributor, whose name or id is
 // of a make (web/bidprice.js familyOf). A Chinese company whose name carries a foreign make ("… Cummins Power …") is an
 // assembler, not that maker: null, as is an assembler whose name is no make (cgm-italia).
@@ -1545,7 +1564,7 @@ export function altOf(alts, cell) {
 }
 export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30, sync = null, keep = null, makeCap = MAKE_CAP, patches = true, blocked = null } = {}) {
   const hints = plausible(hints0, cap), sup = new Map(suppliers.map((s) => [s.id, s])), alts = new Map((cat.alternators || []).map((a) => [a.key, a])), rowsMap = normRowsOf(suppliers);
-  const band = bandOf(cap);
+  const band = bandOf(cap), ruleA = candRuleOn("A"), ruleB = candRuleOn("B");
   const near = (u) => !cap || Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * band.low && p[cap.unit] <= cap.value * band.high + 1e-9);
   // `dropped`: the rows a minimum of the HSMT rules out (left out of the candidates), with the reasons.
   const rows = [], dropped = [];
@@ -1628,6 +1647,8 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       }
       // A controller with its maker's datasheet: its functions can be checked against the HSMT.
       if (offers.some((c) => c.model && factsFor(facts, "controller", c.model).length)) { score += 40; why.push("bộ điều khiển có datasheet hãng"); }
+      // Luật A (Khoa 20/11/2026): động cơ có datasheet của chính hãng động cơ (engineMakerSheets), cùng mức 40 điểm.
+      if (ruleA && engineMakerSheets(e, ef, sup).length) { score += 40; why.push("động cơ có datasheet hãng"); }
       score += 8 * Math.min(eKeys.size, 8);
       // Below a minimum of the HSMT by every source that gives the figure (an engine no source gives it for is not).
       const srcOf = {}, NORM = specNormOn(), ND = specNormOn("disp"), NC = specNormOn("other"), NF = specNormOn("fuel"), normSkip = [];
@@ -1763,14 +1784,24 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
   // `free` ignores the ceiling (the last fill).
   const capOn = makeCap > 0 && !hints.engineMakes.length && !rows.some((r) => r.named), perMake = new Map();
   const makeOf = (r) => (r.e.make || "?").split(" / ")[0];
-  const pick = (list, n, { exempt = false, free = false } = {}) => {
-    for (const r of list) {
-      if (out.length >= n) break;
-      const k = choiceKey(r);
-      if (seen.has(k) || (perEngine.get(r.e.key) || 0) >= (r.named ? PER_NAMED_ENGINE : PER_ENGINE) || (perSupplier.get(r.u.supplierId) || 0) >= PER_SUPPLIER) continue;
-      if (capOn && !exempt && !free && (perMake.get(makeOf(r)) || 0) >= makeCap) continue;
-      if (!exempt) add(perMake, makeOf(r));
-      seen.add(k); add(perEngine, r.e.key); add(perSupplier, r.u.supplierId); out.push(r);
+  const open = (r, exempt, free) => !seen.has(choiceKey(r)) && (perEngine.get(r.e.key) || 0) < (r.named ? PER_NAMED_ENGINE : PER_ENGINE) && (perSupplier.get(r.u.supplierId) || 0) < PER_SUPPLIER
+    && !(capOn && !exempt && !free && (perMake.get(makeOf(r)) || 0) >= makeCap);
+  const take = (r, exempt) => { if (!exempt) add(perMake, makeOf(r)); seen.add(choiceKey(r)); add(perEngine, r.e.key); add(perSupplier, r.u.supplierId); out.push(r); };
+  // Luật B (`models`, Khoa 20/11/2026): chỗ của một hãng động cơ chia cho các MODEL khác nhau trước. Một dòng của model đã
+  // có k dòng được chọn chờ, khi hãng đó (có hãng; dòng không rõ hãng không xét) còn dòng mở (`open`) điểm > 0 của model
+  // mới có ít hơn k dòng; hết model như vậy thì tới dòng thứ hai của cùng model. Xét lại sau mỗi dòng chọn (trần mỗi NCC /
+  // mỗi động cơ / mỗi hãng có thể đóng dòng của model chưa có chỗ). Không `models`: theo thứ tự danh sách như trước.
+  const pick = (list, n, { exempt = false, free = false, models = false } = {}) => {
+    if (!(models && ruleB)) {
+      for (const r of list) { if (out.length >= n) break; if (open(r, exempt, free)) take(r, exempt); }
+      return;
+    }
+    while (out.length < n) {
+      const avail = list.filter((r) => open(r, exempt, free)), least = new Map();
+      for (const r of avail) if (r.e.make && r.score > 0) { const m = makeOf(r), c = perEngine.get(r.e.key) || 0; if (!least.has(m) || c < least.get(m)) least.set(m, c); }
+      const r = avail.find((x) => !x.e.make || (perEngine.get(x.e.key) || 0) <= (least.get(makeOf(x)) ?? Infinity));
+      if (!r) break;
+      take(r, exempt);
     }
   };
   // The prime output (standby ÷ 1.1 when only that is given), in steps of 5% above the HSMT's size; a row below the
@@ -1814,12 +1845,16 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
     // Within a make, the size nearest the HSMT's first (gap, in steps of 5%), then the score: Baudouin's 12M26G900/5
     // (815 kVA) had more figures than 6M31G825/5 (750 kVA) for 700 kVA.
     for (const list of [...byMake.values()].sort((a, b) => b[0].score - a[0].score)) {
-      const engines = new Set();
-      const mine = [...list].sort((x, y) => gap(x) - gap(y) || y.score - x.score).filter((r) => !engines.has(r.e.key) && engines.add(r.e.key));
-      pick(mine, Math.min(max, out.length + MAKE_ROWS));
+      const engines = new Set(), sorted = [...list].sort((x, y) => gap(x) - gap(y) || y.score - x.score);
+      // Luật B: mọi dòng của hãng, model khác nhau trước rồi tới dòng thứ hai của cùng model (hãng ít model hơn MAKE_ROWS
+      // nay vẫn đủ chỗ); tắt B: mỗi động cơ một dòng như trước.
+      if (ruleB) pick(sorted, Math.min(max, out.length + MAKE_ROWS), { models: true });
+      else pick(sorted.filter((r) => !engines.has(r.e.key) && engines.add(r.e.key)), Math.min(max, out.length + MAKE_ROWS));
     }
   }
-  pick(rows, max);
+  // Luật B ở lượt lấp chung khi có trần mỗi hãng (`capOn`: HSMT không nêu hãng / model động cơ). 12 dòng hãng TQ
+  // (`CN_ROWS`) KHÔNG áp: đó là chỗ của cả nhóm hãng, không phải của một hãng (chờ Khoa quyết).
+  pick(rows, max, { models: capOn });
   if (out.length < max) pick(rows, max, { free: true });
   // The rows of the configurations the last run chose (Khoa 2026-11-12: `keep`, the supplierId + engine key of each, from
   // prevResult) stay among the rows for every tender, not only for Đồng bộ: a configuration that still passes the hard
