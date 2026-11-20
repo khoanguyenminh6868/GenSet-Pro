@@ -1,0 +1,246 @@
+phan	model	khoa	truong	yingtai	thang-cu	phieu-cu	so-NCC-khac	thang-moi	danh-gia
+so	X2.5G2	X25G2	cyl	3		{"3":1}	1		trùng chữ với NCC khác
+so	X2.5G2	X25G2	bore	91.4X127			0		chỉ yingtai ghi
+so	X2.5G2	X25G2	disp	2.5			0		chỉ yingtai ghi
+so	X2.5G2	X25G2	compr	18.5:1			0		chỉ yingtai ghi
+so	X3.3G1	X33G1	cyl	4		{"4":1}	1		trùng chữ với NCC khác
+so	X3.3G1	X33G1	bore	91.4X127			0		chỉ yingtai ghi
+so	X3.3G1	X33G1	disp	3.3			0		chỉ yingtai ghi
+so	X3.3G1	X33G1	compr	18.5:1			0		chỉ yingtai ghi
+so	S3.8G4	S38G4	cyl	4		{"4":1}	1		trùng chữ với NCC khác
+so	S3.8G4	S38G4	bore	97X128			0		chỉ yingtai ghi
+so	S3.8G4	S38G4	disp	3.8			0		chỉ yingtai ghi
+so	S3.8G4	S38G4	compr	17.5:1			0		chỉ yingtai ghi
+so	4BT3.3 G3	4BT33G3	cyl	4			0		chỉ yingtai ghi
+so	4BT3.3 G3	4BT33G3	bore	95X115			0		chỉ yingtai ghi
+so	4BT3.3 G3	4BT33G3	disp	3.3			0		chỉ yingtai ghi
+so	4BT3.3 G3	4BT33G3	compr	18.0:1			0		chỉ yingtai ghi
+so	S3.8G6	S38G6	cyl	4			0		chỉ yingtai ghi
+so	S3.8G6	S38G6	bore	97X128			0		chỉ yingtai ghi
+so	S3.8G6	S38G6	disp	3.8			0		chỉ yingtai ghi
+so	S3.8G6	S38G6	compr	17.5:1			0		chỉ yingtai ghi
+so	S3.8G7	S38G7	cyl	4			0		chỉ yingtai ghi
+so	S3.8G7	S38G7	bore	97X128			0		chỉ yingtai ghi
+so	S3.8G7	S38G7	disp	3.8			0		chỉ yingtai ghi
+so	S3.8G7	S38G7	compr	17.5:1			0		chỉ yingtai ghi
+so	QSB5G3	QSB5G3	cyl	4		{}	1		trùng chữ với NCC khác
+so	QSB5G3	QSB5G3	bore	107X124		{"107x124mm":1}	1		KHÁC mọi NCC khác
+so	QSB5G3	QSB5G3	disp	4.5		{}	1		trùng chữ với NCC khác
+so	QSB5G3	QSB5G3	compr	17.3:1		{"17.3:1":1}	1		trùng chữ với NCC khác
+so	QSB5G4	QSB5G4	cyl	4		{}	1		trùng chữ với NCC khác
+so	QSB5G4	QSB5G4	bore	107X124		{"107x124mm":1}	1		KHÁC mọi NCC khác
+so	QSB5G4	QSB5G4	disp	4.5		{}	1		trùng chữ với NCC khác
+so	QSB5G4	QSB5G4	compr	17.3:1		{"17.3:1":1}	1		trùng chữ với NCC khác
+so	QSB5G5	QSB5G5	cyl	4		{}	1		trùng chữ với NCC khác
+so	QSB5G5	QSB5G5	bore	107X124		{"107x124mm":1}	1		KHÁC mọi NCC khác
+so	QSB5G5	QSB5G5	disp	4.5		{}	1		trùng chữ với NCC khác
+so	QSB5G5	QSB5G5	compr	17.3:1		{"17.3:1":1}	1		trùng chữ với NCC khác
+so	QSB5G6	QSB5G6	cyl	4		{}	1		trùng chữ với NCC khác
+so	QSB5G6	QSB5G6	bore	107X124		{"107x124mm":1}	1		KHÁC mọi NCC khác
+so	QSB5G6	QSB5G6	disp	4.5		{}	1		trùng chữ với NCC khác
+so	QSB5G6	QSB5G6	compr	17.3:1		{"17.3:1":1}	1		trùng chữ với NCC khác
+so	QSB7G3	QSB7G3	cyl	6		{}	1		trùng chữ với NCC khác
+so	QSB7G3	QSB7G3	bore	107X124		{"107x124mm":1}	1		KHÁC mọi NCC khác
+so	QSB7G3	QSB7G3	disp	6.7		{}	1		trùng chữ với NCC khác
+so	QSB7G3	QSB7G3	compr	17.2:1		{"17.3:1":1}	1		KHÁC mọi NCC khác
+so	QSB7G4	QSB7G4	cyl	6		{}	1		trùng chữ với NCC khác
+so	QSB7G4	QSB7G4	bore	107X124		{"107x124mm":1}	1		KHÁC mọi NCC khác
+so	QSB7G4	QSB7G4	disp	6.7		{}	1		trùng chữ với NCC khác
+so	QSB7G4	QSB7G4	compr	17.2:1		{"17.3:1":1}	1		KHÁC mọi NCC khác
+so	QSB7G5	QSB7G5	cyl	6		{"6l":1}	2		trùng chữ với NCC khác
+so	QSB7G5	QSB7G5	bore	107X124		{"107x124mm":1}	1		KHÁC mọi NCC khác
+so	QSB7G5	QSB7G5	disp	6.7		{}	1		trùng chữ với NCC khác
+so	QSB7G5	QSB7G5	compr	17.2:1		{"17.3:1":1}	1		KHÁC mọi NCC khác
+so	QSL9G2	QSL9G2	cyl	6		{"6":1}	2		trùng chữ với NCC khác
+so	QSL9G2	QSL9G2	bore	114X145		{"114x145mm":1,"114×145":1}	2		KHÁC mọi NCC khác
+so	QSL9G2	QSL9G2	disp	8.8		{"8.8l":1}	2		KHÁC mọi NCC khác
+so	QSL9G2	QSL9G2	compr	17.8:1		{"17.8:1":2}	2	17.8:1	trùng chữ với NCC khác | THẮNG ĐỔI
+so	QSL9G3	QSL9G3	cyl	6		{"6":1,"6l":1}	3		trùng chữ với NCC khác
+so	QSL9G3	QSL9G3	bore	114X145		{"114x145mm":1,"114×145":1}	2		KHÁC mọi NCC khác
+so	QSL9G3	QSL9G3	disp	8.8		{"8.8l":1}	2		KHÁC mọi NCC khác
+so	QSL9G3	QSL9G3	compr	17.8:1		{"17.8:1":1,"16.8:1":1}	2		trùng chữ với NCC khác
+so	QSL9G4	QSL9G4	cyl	6		{}	1		trùng chữ với NCC khác
+so	QSL9G4	QSL9G4	bore	114X145		{"114x145mm":1}	1		KHÁC mọi NCC khác
+so	QSL9G4	QSL9G4	disp	8.8		{}	1		KHÁC mọi NCC khác
+so	QSL9G4	QSL9G4	compr	17.8:1		{"17.8:1":1}	1		trùng chữ với NCC khác
+so	QSL9G5	QSL9G5	cyl	6		{"6":1,"6l":1}	3		trùng chữ với NCC khác
+so	QSL9G5	QSL9G5	bore	114X145		{"114×145":1}	2		KHÁC mọi NCC khác
+so	QSL9G5	QSL9G5	disp	8.8		{}	1		KHÁC mọi NCC khác
+so	QSL9G7	QSL9G7	cyl	6		{"6l":1}	1		KHÁC mọi NCC khác
+so	QSL9G7	QSL9G7	bore	114X145			0		chỉ yingtai ghi
+so	QSL9G7	QSL9G7	compr	16.1:1			0		chỉ yingtai ghi
+so	NT855G6	NT855G6	cyl	6			0		chỉ yingtai ghi
+so	NT855G6	NT855G6	bore	140X152			0		chỉ yingtai ghi
+so	NT855G6	NT855G6	disp	14			0		chỉ yingtai ghi
+so	NT855G6	NT855G6	compr	14.0:1			0		chỉ yingtai ghi
+so	NTA855G4	NTA855G4	cyl	6		{"6":15,"6l":7}	22		trùng chữ với NCC khác
+so	NTA855G4	NTA855G4	bore	140X152		{"140":2,"140x152":1,"140×152":1,"140/152":1,"140*152":4}	9		trùng chữ với NCC khác
+so	NTA855G4	NTA855G4	disp	14	14	{"13":1,"14":12,"14.0":3}	16	14	trùng chữ với NCC khác
+so	NTA855G4	NTA855G4	compr	14.0:1		{"14.0:1":2,"14:1":2}	4		trùng chữ với NCC khác
+so	NTA855G7	NTA855G7	cyl	6		{"6":1}	0		chỉ yingtai ghi
+so	NTA855G7	NTA855G7	bore	140X152			0		chỉ yingtai ghi
+so	NTA855G7	NTA855G7	disp	14			0		chỉ yingtai ghi
+so	NTA855G7	NTA855G7	compr	14.0:1			0		chỉ yingtai ghi
+so	QSX15G4	QSX15G4	cyl	6		{"6l":1}	2		trùng chữ với NCC khác
+so	QSX15G4	QSX15G4	bore	137X169		{"137x169mm":1}	1		KHÁC mọi NCC khác
+so	QSX15G4	QSX15G4	disp	15		{}	1		trùng chữ với NCC khác
+so	QSX15G4	QSX15G4	compr	17.0:1		{"14:1":1}	1		KHÁC mọi NCC khác
+so	QSX15G13	QSX15G13	cyl	6			0		chỉ yingtai ghi
+so	QSX15G13	QSX15G13	bore	137X169			0		chỉ yingtai ghi
+so	QSX15G13	QSX15G13	disp	14.9			0		chỉ yingtai ghi
+so	QSX15G13	QSX15G13	compr	17.2:1			0		chỉ yingtai ghi
+so	QSX15G6	QSX15G6	cyl	6		{"6":1,"6l":1}	3		trùng chữ với NCC khác
+so	QSX15G6	QSX15G6	bore	137X169		{"137x169mm":1,"137×169":1}	2		KHÁC mọi NCC khác
+so	QSX15G6	QSX15G6	disp	15		{}	1		trùng chữ với NCC khác
+so	QSX15G6	QSX15G6	compr	17.0:1		{"14:1":1,"17:1":1}	2		KHÁC mọi NCC khác
+so	QSX15G8	QSX15G8	cyl	6		{"6":1,"6l":1}	3		trùng chữ với NCC khác
+so	QSX15G8	QSX15G8	bore	137X169		{"137x169mm":1,"137×169":1}	2		KHÁC mọi NCC khác
+so	QSX15G8	QSX15G8	disp	15		{}	1		trùng chữ với NCC khác
+so	QSX15G8	QSX15G8	compr	17.0:1		{"14:1":1,"17:1":1}	2		KHÁC mọi NCC khác
+so	QSX15G16	QSX15G16	cyl	6			0		chỉ yingtai ghi
+so	QSX15G16	QSX15G16	bore	137X169			0		chỉ yingtai ghi
+so	QSX15G16	QSX15G16	disp	15			0		chỉ yingtai ghi
+so	QSX15G16	QSX15G16	compr	17.2:1			0		chỉ yingtai ghi
+so	KTA19G3	KTA19G3	cyl	6		{"6":21,"6l":8,"6cylinders,in-line":1}	30		trùng chữ với NCC khác
+so	KTA19G3	KTA19G3	bore	159X159	159*159	{"159":2,"159×159":1,"159*159":9,"159/159":2,"159mmx159mm":1}	16	159*159	trùng chữ với NCC khác
+so	KTA19G3	KTA19G3	disp	18.9		{"19":7,"18.9":9,"19l":1}	22		trùng chữ với NCC khác
+so	KTA19G3	KTA19G3	compr	13.9:1	13.9:1	{"13.9:1":5}	5	13.9:1	trùng chữ với NCC khác
+so	KTA19G4	KTA19G4	cyl	6	6	{"6":18,"6l":5}	23	6	trùng chữ với NCC khác
+so	KTA19G4	KTA19G4	disp	18.9		{"19":5,"18.9":5}	14		trùng chữ với NCC khác
+so	KTA19G4	KTA19G4	compr	13.9:1	13.9:1	{"13.9:1":5}	5	13.9:1	trùng chữ với NCC khác
+so	VTA28G5	VTA28G5	cyl	12		{"12":1,"12v":1}	3		trùng chữ với NCC khác
+so	VTA28G5	VTA28G5	bore	140X152		{"140×152mm":1,"140×152":1}	2		KHÁC mọi NCC khác
+so	VTA28G5	VTA28G5	disp	28		{"28":1}	2		trùng chữ với NCC khác
+so	VTA28G5	VTA28G5	compr	13.1:1		{"13.1:1":1}	1		trùng chữ với NCC khác
+so	QSK19G4	QSK19G4	cyl	6		{"6":11,"6l":4,"v12":1}	17	6	trùng chữ với NCC khác | THẮNG ĐỔI
+so	QSK19G4	QSK19G4	bore	159x159	159*159	{"159x159mm":1,"159x159":1,"159×159":1,"159*159":3,"159/159":1}	7		trùng chữ với NCC khác | THẮNG ĐỔI
+so	QSK19G4	QSK19G4	disp	18.9		{"19":4,"18.9":3}	8		trùng chữ với NCC khác
+so	QSK19G4	QSK19G4	compr	15.0:1	15.0:1	{"15.0:1":3}	3	15.0:1	trùng chữ với NCC khác
+so	VTA28G6	VTA28G6	cyl	12		{"12":1,"12v":1}	3		trùng chữ với NCC khác
+so	VTA28G6	VTA28G6	bore	140X152		{"140mm×152mm":1,"140×152":1}	2		KHÁC mọi NCC khác
+so	VTA28G6	VTA28G6	disp	28		{"28":1}	2		trùng chữ với NCC khác
+so	VTA28G6	VTA28G6	compr	13.1:1		{"13.1:1":2}	2	13.1:1	trùng chữ với NCC khác | THẮNG ĐỔI
+so	QSK23G2	QSK23G2	cyl	6		{"6":1,"6l":1}	3		trùng chữ với NCC khác
+so	QSK23G2	QSK23G2	bore	170x170		{"170x170mm":1,"170×170":1}	2		KHÁC mọi NCC khác
+so	QSK23G2	QSK23G2	disp	23.2		{}	1		KHÁC mọi NCC khác
+so	QSK23G2	QSK23G2	compr	16.0:1		{"16.0:1":1}	1		trùng chữ với NCC khác
+so	QSK23G8	QSK23G8	cyl	6			0		chỉ yingtai ghi
+so	QSK23G8	QSK23G8	bore	170x170			0		chỉ yingtai ghi
+so	QSK23G8	QSK23G8	disp	23.2			0		chỉ yingtai ghi
+so	QSK23G8	QSK23G8	compr	16.0:1			0		chỉ yingtai ghi
+so	QSK23G3	QSK23G3	cyl	6		{"6":1,"6l":1}	3		trùng chữ với NCC khác
+so	QSK23G3	QSK23G3	bore	170x170		{"170x170mm":1,"170×170":1}	2		KHÁC mọi NCC khác
+so	QSK23G3	QSK23G3	disp	23.2		{}	1		KHÁC mọi NCC khác
+so	QSK23G3	QSK23G3	compr	16.0:1		{"16.0:1":2}	2	16.0:1	trùng chữ với NCC khác | THẮNG ĐỔI
+so	QSK23G9	QSK23G9	cyl	6			0		chỉ yingtai ghi
+so	QSK23G9	QSK23G9	bore	170x170			0		chỉ yingtai ghi
+so	QSK23G9	QSK23G9	disp	23.2			0		chỉ yingtai ghi
+so	QSK23G9	QSK23G9	compr	16.0:1			0		chỉ yingtai ghi
+so	QST30G3	QST30G3	cyl	12		{"12":1,"12v":1}	3		trùng chữ với NCC khác
+so	QST30G3	QST30G3	bore	140X165		{"140.0mm×165.1":1,"140×165":1}	2		KHÁC mọi NCC khác
+so	QST30G3	QST30G3	disp	30.5		{}	1		trùng chữ với NCC khác
+so	QST30G3	QST30G3	compr	14.0:1		{"14.0:1":1}	1		trùng chữ với NCC khác
+so	KTA38G3	KTA38G3	cyl	12		{"12":1}	2		trùng chữ với NCC khác
+so	KTA38G3	KTA38G3	bore	159x159		{"159":1,"159x159mm":1}	2		KHÁC mọi NCC khác
+so	KTA38G3	KTA38G3	disp	37.8		{}	1		trùng chữ với NCC khác
+so	KTA38G3	KTA38G3	compr	13.9:1		{"13.9:1":1}	1		trùng chữ với NCC khác
+so	QST30G4	QST30G4	cyl	12		{"12":1,"12v":1}	3		trùng chữ với NCC khác
+so	QST30G4	QST30G4	bore	140X165		{"140mm×165mm":1,"140×165":1}	2		KHÁC mọi NCC khác
+so	QST30G4	QST30G4	disp	30.5		{}	1		trùng chữ với NCC khác
+so	QST30G4	QST30G4	compr	14.0:1		{"14.0:1":1}	1		trùng chữ với NCC khác
+so	KTA38G5	KTA38G5	cyl	12	12	{"12":22,"12v":7,"12-cylinder,60°vee":1,"12l":1,"v12":1}	32	12	trùng chữ với NCC khác
+so	KTA38G5	KTA38G5	bore	159x159	159*159	{"159":1,"159x159mm":2,"159x159":1,"159×159":2,"159*159":6,"159/159":2,"159×159mm":1}	15	159*159	trùng chữ với NCC khác
+so	KTA38G5	KTA38G5	disp	37.8		{"38":8,"37.8":11,"37.8l":1}	22		trùng chữ với NCC khác
+so	KTA38G5	KTA38G5	compr	13.9:1		{"13.9:1":3,"14.5:1":3}	6		trùng chữ với NCC khác
+so	KAT38G9	KAT38G9	cyl	12			0		chỉ yingtai ghi
+so	KAT38G9	KAT38G9	bore	159x159			0		chỉ yingtai ghi
+so	KAT38G9	KAT38G9	disp	37.8			0		chỉ yingtai ghi
+so	KAT38G9	KAT38G9	compr	13.9:1			0		chỉ yingtai ghi
+so	QSK38G2	QSK38G2	cyl	12	12	{"12":5,"v12":1}	6	12	trùng chữ với NCC khác
+so	QSK38G2	QSK38G2	bore	159x159		{"159x159mm":1,"159×159":1,"159*159":2}	4		KHÁC mọi NCC khác
+so	QSK38G2	QSK38G2	disp	37.7		{"38":1}	2		KHÁC mọi NCC khác
+so	QSK38G2	QSK38G2	compr	15.0:1		{"15.0:1":1,"15:1":1,"14.5:1":1}	3		trùng chữ với NCC khác
+so	QSK38G3	QSK38G3	cyl	12		{"16":1}	2		trùng chữ với NCC khác
+so	QSK38G3	QSK38G3	bore	159x159		{"159x159mm":1,"159×159":1}	2		KHÁC mọi NCC khác
+so	QSK38G3	QSK38G3	disp	37.7		{}	1		KHÁC mọi NCC khác
+so	QSK38G3	QSK38G3	compr	15.0:1		{"15:1":1}	1		KHÁC mọi NCC khác
+so	QSK38G5	QSK38G5	cyl	12		{"12":7,"16":1,"12v":4,"v16":1}	15		trùng chữ với NCC khác
+so	QSK38G5	QSK38G5	bore	159x159	159*159	{"159×159":1,"159*159":3}	4	159*159	KHÁC mọi NCC khác
+so	QSK38G5	QSK38G5	disp	37.7		{"38":5,"37.7":3}	8		trùng chữ với NCC khác
+so	QSK38G5	QSK38G5	compr	15.0:1		{"15:1":1}	1		KHÁC mọi NCC khác
+so	KTA50G3	KTA50G3	cyl	16		{"12":3,"16":13,"16v":8,"v16":2,"16-cylinder,60°vee":1,"16l":1}	32		trùng chữ với NCC khác
+so	KTA50G3	KTA50G3	bore	159x159	159*159	{"159":1,"159x159":1,"159×159":1,"159*159":10,"159/159":2,"159×159mm":1}	16	159*159	trùng chữ với NCC khác
+so	KTA50G3	KTA50G3	disp	50.3		{"50":10,"50.3":7,"50.3l":1,"50.8":1,"37.8":1}	24		trùng chữ với NCC khác
+so	KTA50G3	KTA50G3	compr	13.9:1	13.9:1	{"13.9:1":8}	8	13.9:1	trùng chữ với NCC khác
+so	KTA50G8	KTA50G8	cyl	16		{"12":2,"16":17,"16v":8,"v16":2,"16l":1}	31		trùng chữ với NCC khác
+so	KTA50G8	KTA50G8	bore	159x159	159*159	{"159":1,"108/130":1,"159x159":1,"159×159":2,"159*159":7,"159/159":2}	14	159*159	trùng chữ với NCC khác
+so	KTA50G8	KTA50G8	disp	50.3		{"50":8,"50.3":13,"50.3l":1,"37.8":1}	23		trùng chữ với NCC khác
+so	KTA50G8	KTA50G8	compr	14.9:1	14.9:1	{"13.9:1":1,"14.9:1":4}	5	14.9:1	trùng chữ với NCC khác
+so	QSK50G3	QSK50G3	cyl	16		{}	1		trùng chữ với NCC khác
+so	QSK50G3	QSK50G3	bore	159x159		{"159x159mm":1}	1		KHÁC mọi NCC khác
+so	QSK50G3	QSK50G3	disp	50.3		{}	1		trùng chữ với NCC khác
+so	QSK50G3	QSK50G3	compr	15.0:1		{"13.9:1":1}	1		KHÁC mọi NCC khác
+so	KTA50GS8	KTA50GS8	cyl	16	16	{"12":1,"16":20,"16v":6,"v16":2,"16l":1}	29	16	trùng chữ với NCC khác
+so	KTA50GS8	KTA50GS8	bore	159x159	159*159	{"159x159mm":1,"159x159":1,"159×159":2,"159*159":8,"159/159":1}	13	159*159	trùng chữ với NCC khác
+so	KTA50GS8	KTA50GS8	disp	50.3		{"50":8,"50.3":9,"37.8":2}	21		trùng chữ với NCC khác
+so	KTA50GS8	KTA50GS8	compr	14.9:1	14.9:1	{"15:1":1,"13.9:1":1,"14.9:1":4}	6	14.9:1	trùng chữ với NCC khác
+so	QSK50G4	QSK50G4	cyl	16		{"16":2,"16v":1}	3		trùng chữ với NCC khác
+so	QSK50G4	QSK50G4	bore	159x159		{"159x159mm":1,"159×159":1}	2		KHÁC mọi NCC khác
+so	QSK50G4	QSK50G4	disp	50.3		{"50":1}	2		trùng chữ với NCC khác
+so	QSK50G4	QSK50G4	compr	15.0:1		{"13.9:1":1,"15:1":1}	2		KHÁC mọi NCC khác
+so	QSK50G7	QSK50G7	cyl	16		{"16":2,"16v":3}	4		trùng chữ với NCC khác
+so	QSK50G7	QSK50G7	bore	159x159		{"159":1,"159×159":1}	2		KHÁC mọi NCC khác
+so	QSK50G7	QSK50G7	disp	50.3		{"50":1,"50.3l":1}	3		trùng chữ với NCC khác
+so	QSK50G7	QSK50G7	compr	15.0:1			0		chỉ yingtai ghi
+so	QSK60G3	QSK60G3	cyl	16		{"16":5,"16v":2}	7		trùng chữ với NCC khác
+so	QSK60G3	QSK60G3	bore	159x190		{"159mm×190mm":1,"159×190":1}	3		KHÁC mọi NCC khác
+so	QSK60G3	QSK60G3	disp	60.2		{"60":2,"50.3":2,"60.2":1}	6		trùng chữ với NCC khác
+so	QSK60G3	QSK60G3	compr	14.5:1		{"14.5:1":1}	1		trùng chữ với NCC khác
+so	QSK60G7	QSK60G7	cyl	16		{"16":1,"16v":1}	2		trùng chữ với NCC khác
+so	QSK60G7	QSK60G7	bore	159X190		{"159×190":1}	1		KHÁC mọi NCC khác
+so	QSK60G7	QSK60G7	disp	60.2			0		chỉ yingtai ghi
+so	QSK60G7	QSK60G7	compr	16.2:1		{"14.5:1":1}	1		KHÁC mọi NCC khác
+so	QSK60G13	QSK60G13	cyl	16		{"16":2}	1		trùng chữ với NCC khác
+so	QSK60G13	QSK60G13	bore	159x190			0		chỉ yingtai ghi
+so	QSK60G13	QSK60G13	disp	60.2		{"50.3":1}	1		KHÁC mọi NCC khác
+so	QSK60G13	QSK60G13	compr	14.5:1			0		chỉ yingtai ghi
+so	QSK60G4	QSK60G4	cyl	16		{"16":5,"16v":2}	7		trùng chữ với NCC khác
+so	QSK60G4	QSK60G4	bore	159x190		{"159x190mm":1,"159*190":1}	2		KHÁC mọi NCC khác
+so	QSK60G4	QSK60G4	disp	60.2		{"60":2,"50.3":2,"60.2":1,"60.2l":1}	7		trùng chữ với NCC khác
+so	QSK60G4	QSK60G4	compr	14.5:1		{"14.5:1":1}	1		trùng chữ với NCC khác
+so	QSK60G21	QSK60G21	cyl	16		{"12":1,"16":1,"16v":2}	4		trùng chữ với NCC khác
+so	QSK60G21	QSK60G21	bore	159X190			0		chỉ yingtai ghi
+so	QSK60G21	QSK60G21	disp	60.2		{"50":1,"60":1,"60.2l":1}	3		KHÁC mọi NCC khác
+so	QSK60G21	QSK60G21	compr	14.5:1			0		chỉ yingtai ghi
+so	QSK78G18	QSK78G18	cyl	18		{"18":1}	2		trùng chữ với NCC khác
+so	QSK78G18	QSK78G18	bore	170×190		{"170mm×190mm":1,"170×190":1}	2		trùng chữ với NCC khác
+so	QSK78G18	QSK78G18	disp	77.6		{}	1		trùng chữ với NCC khác
+so	QSK78G18	QSK78G18	compr	15.5:1		{"15.5:1":2}	2	15.5:1	trùng chữ với NCC khác | THẮNG ĐỔI
+so	QSK78G9	QSK78G9	cyl	18		{"18":1}	2		trùng chữ với NCC khác
+so	QSK78G9	QSK78G9	bore	170X190		{"170mm×190mm":1,"170×190":1}	2		KHÁC mọi NCC khác
+so	QSK78G9	QSK78G9	disp	77.6		{}	1		KHÁC mọi NCC khác
+so	QSK78G9	QSK78G9	compr	15.5:1		{"15.5:1":2}	2	15.5:1	trùng chữ với NCC khác | THẮNG ĐỔI
+thang-doi	QSK19-G4	QSK19G4	cyl			{"6":11,"6l":4,"v12":1}		6	{"6":13,"6l":4,"v12":1}
+thang-doi	QSK19-G4	QSK19G4	bore		159*159	{"159x159mm":1,"159x159":1,"159×159":1,"159*159":3,"159/159":1}			{"159x159mm":1,"159x159":2,"159×159":1,"159*159":3,"159/159":1}
+thang-doi	QSK23-G3	QSK23G3	compr			{"16.0:1":2}		16.0:1	{"16.0:1":3}
+thang-doi	VTA28-G6	VTA28G6	compr			{"13.1:1":2}		13.1:1	{"13.1:1":3}
+thang-doi	QSK78-G9	QSK78G9	compr			{"15.5:1":2}		15.5:1	{"15.5:1":3}
+thang-doi	QSL9-G2	QSL9G2	compr			{"17.8:1":2}		17.8:1	{"17.8:1":3}
+thang-doi	QSK78-G18	QSK78G18	compr			{"15.5:1":2}		15.5:1	{"15.5:1":3}
+huatai	WD129TAD23	200GF	kW tên 200	dòng điện 362 ↔ 360.8	lệch 0.32%	engPower 259 (×1.29)	ĐỔI	cũ null	| 200GF | 135/320 | 362 | WD129TAD23 | 259 | 6缸直列 | 198 | 24 | 2700×900×1400 | 1900
+huatai	WD135TAD28	250GF	kW tên 250	dòng điện 452.5 ↔ 451.1	lệch 0.32%	engPower 308 (×1.23)	ĐỔI	cũ null	| 250GF | 138/150 | 452.5 | WD135TAD28 | 308 | 6缸直列 | 198 | 24 | 2700×900×1400 | 2000
+huatai	WD145TAD30	300GF	kW tên 300	dòng điện 543 ↔ 541.3	lệch 0.32%	engPower 340 (×1.13)	ĐỔI	cũ null	| 300GF | 138/160 | 543 | WD145TAD30 | 340 | 6缸直列 | 198 | 24 | 2800×900×1500 | 2200
+huatai	WD145TAD33L	320GF	kW tên 320	dòng điện 579.2 ↔ 577.4	lệch 0.32%	engPower 373 (×1.17)	ĐỔI	cũ null	| 320GF | 138/160 | 579.2 | WD145TAD33L | 373 | 6缸直列 | 198 | 30 | 2900×1100×1600 | 2500
+huatai	WD145TAD35	350GF	kW tên 350	dòng điện 633.5 ↔ 631.5	lệch 0.32%	engPower 388 (×1.11)	ĐỔI	cũ null	| 350GF | 138/160 | 633.5 | WD145TAD35 | 388 | 6缸直列 | 198 | 50 | 3200×1350×1800 | 3300
+huatai	WD269TAD38	400GF	kW tên 400	dòng điện 724 ↔ 721.7	lệch 0.32%	engPower 420 (×1.05)	ĐỔI	cũ null	| 400GF | 138/150 | 724 | WD269TAD38 | 420 | 12缸V型 | 198 | 50 | 3200×1350×1800 | 3300
+huatai	WD269TAD41	400GF	kW tên 400	dòng điện 724 ↔ 721.7	lệch 0.32%	engPower 460 (×1.15)	ĐỔI	cũ null	| 400GF | 138/150 | 724 | WD269TAD41 | 460 | 12缸V型 | 198 | 50 | 3400×1400×1850 | 3600
+huatai	WD269TAD45	450GF	kW tên 450	dòng điện 814.5 ↔ 811.9	lệch 0.32%	engPower 512 (×1.14)	ĐỔI	cũ null	| 450GF | 138/150 | 814.5 | WD269TAD45 | 512 | 12缸V型 | 198 | 50 | 3600×1400×1850 | 3800
+huatai	WD269TAD48	500GF	kW tên 500	dòng điện 905 ↔ 902.1	lệch 0.32%	engPower 530 (×1.06)	ĐỔI	cũ null	| 500GF | 138/150 | 905 | WD269TAD48 | 530 | 12缸V型 | 198 | 55 | 3600×1400×1850 | 3800
+huatai	WD269TAD50	500GF	kW tên 500	dòng điện 905 ↔ 902.1	lệch 0.32%	engPower 556 (×1.11)	ĐỔI	cũ null	| 500GF | 138/150 | 905 | WD269TAD50 | 556 | 12缸V型 | 198 | 55 | 3650×1500×1900 | 4500
+huatai	WD269TAD56	500GF	kW tên 500	dòng điện 905 ↔ 902.1	lệch 0.32%	engPower 618 (×1.24)	ĐỔI	cũ null	| 500GF | 138/150 | 905 | WD269TAD56 | 618 | 12缸V型 | 198 | 55 | 3800×1800×2100 | 4550
+huatai	WD287TAD61L	600GF	kW tên 600	dòng điện 1086 ↔ 1082.5	lệch 0.32%	engPower 680 (×1.13)	ĐỔI	cũ null	| 600GF | 138/160 | 1086 | WD287TAD61L | 680 | 12缸V型 | 198 | 55 | 3800×1800×2100 | 4550
+huatai	WD305TAD68	700GF	kW tên 700	dòng điện 1267 ↔ 1263.0	lệch 0.32%	engPower 750 (×1.07)	ĐỔI	cũ null	| 700GF | 140/165 | 1267 | WD305TAD68 | 750 | 12缸V型 | 196 | 55 | 3800×1800×2100 | 4550
+huatai	WD327TAD78	800GF	kW tên 800	dòng điện 1448 ↔ 1443.4	lệch 0.32%	engPower 858 (×1.07)	ĐỔI	cũ null	| 800GF | 140/165 | 1448 | WD327TAD78 | 858 | 12缸V型 | 196 | 60 | 3900×1850×2100 | 5000
+huatai	WD327TAD82	850GF	kW tên 850	dòng điện 1538.5 ↔ 1533.6	lệch 0.32%	engPower 902 (×1.06)	ĐỔI	cũ null	| 850GF | 140/165 | 1538.5 | WD327TAD82 | 902 | 12缸V型 | 196 | 60 | 3900×1850×2100 | 5000
+huatai	WD327TAD88	900GF	kW tên 900	dòng điện 1629 ↔ 1623.8	lệch 0.32%	engPower 970 (×1.08)	ĐỔI	cũ null	| 900GF | 145/165 | 1629 | WD327TAD88 | 970 | 12缸V型 | 196 | 65 | 4000×2000×2200 | 5500
+huatai	WD327TAD92	1000GF	kW tên 1000	dòng điện 1810 ↔ 1804.2	lệch 0.32%	engPower 1012 (×1.01)	ĐỔI	cũ null	| 1000GF | 145/165 | 1810 | WD327TAD92 | 1012 | 12缸V型 | 196 | 65 | 4500×2100×2300 | 6000

@@ -56,6 +56,20 @@ và n132 "…Silent Gasoline Twin-cylinder Generator": `fuel = gasoline`, fuelFr
 Quan sát phụ (không thuộc PR này, chưa kiểm): ở gốc các dòng này lên điểm 89–169 với công suất đọc "85/106 kVA" (có thể là 8.5/10.6 thiếu dấu thập phân)
 nên mới vào top của gói 14 kW; xin điều phối cho biết có mở việc riêng không.
 
+## Việc sau (ghi 20/11/2026, chưa sửa): victory LT620 "85/106 kVA"
+
+Đã mở nguồn (victory-generator n130 "8.5KW~10.5KW Gasoline Twin-cylinder Generator", n132 "…Silent…", URL victorygenerator.com/victory/8.5kw-10.5kw-silent-gasoline-twin-cylinder-generator.html): ô ghi `Rated.AC output (KVA) | 8.5 | 10.6` và `9.5 | 11.9`
+(Max 9.5/11.9 và 10.5/13.1); Rated Output của động cơ "17HP (12.5KW)", Max "20HP (14.7KW)". Bản ghi `fromSupplier` đọc ĐÚNG `rated kVA` 8.5 / 10.6 / 9.5 / 11.9.
+"85/106" chỉ là chữ trong khoá dòng (`keyOf` bỏ dấu chấm), KHÔNG phải công suất đọc sai → giả thuyết "mất dấu thập phân" bị bác.
+Còn lại chưa rõ: vì sao các dòng 8.5–11.9 kVA vẫn lọt top (điểm 89–169) ở IB2200012797 (HSMT ≥ 14 kW, ~17.5 kVA): chưa tra (có thể dải công suất `near` hoặc lấy kW động cơ 12.5 / 14.7); nếu muốn biết, mở việc riêng.
+
+## Gộp main #968/#974 (20/11/2026)
+
+khi-fuel-1 `ca56dcce`, khi-fuel-2 `b84feda9` (gộp origin/main d70bdf45; xung đột chỉ ở `web/CLAUDE.md`, giữ cả hai mục). Test 1362 / 1369 xanh.
+So với c70ce420 bằng `4-so-hai-ban.mjs` (cây mã làm tham số; ra `4-hai-ban-c70ce420.json` và `4-hai-ban-b84feda9.json`): `diff` ra GIỐNG HỆT — md5 `build(cn)` engines /
+alternators / controllers, md5 `fuel` / `fuelFrom` / `fuelWhy` của 694 uses có fuel, và với 6 fixture `suppliers/fixtures/runs` (NCC đóng băng): md5 build + md5 top / all / số dropped của `candidates`.
+Khác biệt duy nhất của hai cây là phần `gensets` / `rated` của #968 (ngoài phạm vi so).
+
 ## Kết luận
 
 Không phát hiện lỗi; không có commit mới ở khi-fuel-1 / khi-fuel-2 (c70ce420 giữ nguyên).

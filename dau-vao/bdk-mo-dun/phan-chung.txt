@@ -1,0 +1,9 @@
+# controllers: 187 → 187; thêm 0, mất 0, đổi 0
+# engines: 6889 → 6889; thêm 0, mất 0, đổi 0
+# alternators: 2704 → 2704; thêm 0, mất 0, đổi 0
+# facts: 4330 → 4334; thêm 4, mất 0, đổi 0
+  + controller:INTELILITE
+  + controller:DSE8680
+  + controller:DSE6010
+  + controller:DSE6020
+KHÁC: 4 khoá

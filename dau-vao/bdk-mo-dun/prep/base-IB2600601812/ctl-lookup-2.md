@@ -1,0 +1,47 @@
+## HGM6120N
+- F1: { "supplierId": "smartgen", "n": 1001, "line": "| Insulation Intensity | Apply AC2.2kV voltage between high voltage terminal and low voltage" }
+- F2: { "supplierId": "smartgen", "n": 1001, "line": "functions of over/under voltage, over/under frequency, over current and over power;" }
+- F4: { "supplierId": "smartgen", "n": 1001, "line": "data (such as water temperature, oil pressure, speed and fuel consumption, etc.) but also can" }
+- F5: { "supplierId": "smartgen", "n": 1001, "line": "of low oil pressure, high temperature, under speed, failed to charge and Aux. input (be configured)" }
+- F6: { "supplierId": "smartgen", "n": 1001, "line": "speed running. If there is high temperature, low oil pressure, over speed and abnormal voltage" }
+- F7: { "supplierId": "smartgen", "n": 1001, "line": "| Battery Voltage (VB) | V" }
+- F8: { "supplierId": "smartgen", "n": 1001, "line": "|  | Event log, real-time clock, scheduled start & stop function (can be set as start unit once a" }
+- F9: { "supplierId": "smartgen", "n": 1001, "line": "Accumulated running hours" }
+- F10: { "supplierId": "smartgen", "n": 1001, "line": "| Power factor | PF" }
+- F11: { "supplierId": "smartgen", "n": 1001, "line": "Each and total active power kW" }
+- F12: { "supplierId": "smartgen", "n": 1001, "line": " Can measure and display 3 phase voltage, 3 phase current, frequency, power parameter of" }
+- F13: { "supplierId": "smartgen", "n": 1001, "line": " Can measure and display 3 phase voltage, 3 phase current, frequency, power parameter of" }
+- F14: { "supplierId": "smartgen", "n": 1001, "line": " Can measure and display 3 phase voltage, 3 phase current, frequency, power parameter of" }
+- F15: { "supplierId": "smartgen", "n": 1001, "line": "from front panel or use USB interface (or RS485 interface) to adjust via PC. It can be widely used in all" }
+- F16: { "supplierId": "smartgen", "n": 1001, "line": "(HGM6110N/6120N/6110NC/6120NC/6110CAN/6120CAN)" }
+- F17: { "supplierId": "smartgen", "n": 1001, "line": "| monitoring and mains/generator automatic switching control (AMF), especially | suitable for" }
+- F18: { "supplierId": "smartgen", "n": 1001, "line": "2) HGM6110: When “remote start” input is active, it enters into “Start Delay”." }
+- F19: { "supplierId": "smartgen", "n": 1001, "line": "Fixed LCD contrast ratio description;" }
+- F20: { "supplierId": "smartgen", "n": 1001, "line": "| 2 | DC input B+ | 2.5mm2 | over 30m, better to double wires in parallel. Max. 20A" }
+- F21: { "supplierId": "smartgen", "n": 1001, "line": "| Fuel level (FL) | %" }
+- F22: { "supplierId": "smartgen", "n": 1001, "line": "USER MANUAL" }
+- không thấy dòng nào: F3
+
+## HGM6120
+- F1: { "supplierId": "smartgen", "n": 1001, "line": "| Insulation Intensity | Apply AC2.2kV voltage between high voltage terminal and low voltage" } (datasheet HGM6120N: cần xác nhận đời)
+- F2: { "supplierId": "smartgen", "n": 1001, "line": "functions of over/under voltage, over/under frequency, over current and over power;" } (datasheet HGM6120N: cần xác nhận đời)
+- F4: { "supplierId": "smartgen", "n": 1001, "line": "data (such as water temperature, oil pressure, speed and fuel consumption, etc.) but also can" } (datasheet HGM6120N: cần xác nhận đời)
+- F5: { "supplierId": "smartgen", "n": 1001, "line": "of low oil pressure, high temperature, under speed, failed to charge and Aux. input (be configured)" } (datasheet HGM6120N: cần xác nhận đời)
+- F6: { "supplierId": "smartgen", "n": 1001, "line": "speed running. If there is high temperature, low oil pressure, over speed and abnormal voltage" } (datasheet HGM6120N: cần xác nhận đời)
+- F7: { "supplierId": "smartgen", "n": 1001, "line": "| Battery Voltage (VB) | V" } (datasheet HGM6120N: cần xác nhận đời)
+- F8: { "supplierId": "smartgen", "n": 1001, "line": "|  | Event log, real-time clock, scheduled start & stop function (can be set as start unit once a" } (datasheet HGM6120N: cần xác nhận đời)
+- F9: { "supplierId": "smartgen", "n": 1001, "line": "Accumulated running hours" } (datasheet HGM6120N: cần xác nhận đời)
+- F10: { "supplierId": "smartgen", "n": 1001, "line": "| Power factor | PF" } (datasheet HGM6120N: cần xác nhận đời)
+- F11: { "supplierId": "smartgen", "n": 1001, "line": "Each and total active power kW" } (datasheet HGM6120N: cần xác nhận đời)
+- F12: { "supplierId": "smartgen", "n": 1001, "line": " Can measure and display 3 phase voltage, 3 phase current, frequency, power parameter of" } (datasheet HGM6120N: cần xác nhận đời)
+- F13: { "supplierId": "smartgen", "n": 1001, "line": " Can measure and display 3 phase voltage, 3 phase current, frequency, power parameter of" } (datasheet HGM6120N: cần xác nhận đời)
+- F14: { "supplierId": "smartgen", "n": 1001, "line": " Can measure and display 3 phase voltage, 3 phase current, frequency, power parameter of" } (datasheet HGM6120N: cần xác nhận đời)
+- F15: { "supplierId": "smartgen", "n": 1001, "line": "from front panel or use USB interface (or RS485 interface) to adjust via PC. It can be widely used in all" } (datasheet HGM6120N: cần xác nhận đời)
+- F16: { "supplierId": "smartgen", "n": 1001, "line": "(HGM6110N/6120N/6110NC/6120NC/6110CAN/6120CAN)" } (datasheet HGM6120N: cần xác nhận đời)
+- F17: { "supplierId": "smartgen", "n": 1001, "line": "| monitoring and mains/generator automatic switching control (AMF), especially | suitable for" } (datasheet HGM6120N: cần xác nhận đời)
+- F18: { "supplierId": "smartgen", "n": 1001, "line": "2) HGM6110: When “remote start” input is active, it enters into “Start Delay”." } (datasheet HGM6120N: cần xác nhận đời)
+- F19: { "supplierId": "smartgen", "n": 1001, "line": "Fixed LCD contrast ratio description;" } (datasheet HGM6120N: cần xác nhận đời)
+- F20: { "supplierId": "smartgen", "n": 1001, "line": "| 2 | DC input B+ | 2.5mm2 | over 30m, better to double wires in parallel. Max. 20A" } (datasheet HGM6120N: cần xác nhận đời)
+- F21: { "supplierId": "smartgen", "n": 1001, "line": "| Fuel level (FL) | %" } (datasheet HGM6120N: cần xác nhận đời)
+- F22: { "supplierId": "smartgen", "n": 1001, "line": "USER MANUAL" } (datasheet HGM6120N: cần xác nhận đời)
+- không thấy dòng nào: F3

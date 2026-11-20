@@ -1,0 +1,315 @@
+## Phần kỹ thuật của HSMT
+--- Tệp: 3. QĐ phê duyệt PA-DT mua sam TB 2027.pdf ---
+TỔNG CÔNG TY                        CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+  ĐIỆN LỰC MIỀN TRUNG                             Độc lập - Tự do - Hạnh phúc
+CÔNG TY ĐIỆN LỰC ĐẮK LẮK
+                                             Đắk
+                                             Đắk Lắk,
+                                                 Lắk, ngày
+                                                      ngày 10 tháng 9 năm 2026
+       Số:
+       Số:10821/QĐ-ĐLPC
+
+                               QUYẾT ĐỊNH
+                    Về việc phê duyệt Phương án-dự toán
+            Dự án: Mua sắm thiết bị phục vụ SXKD ĐLPC năm 2027
+
+
+                  GIÁM ĐỐC CÔNG TY ĐIỆN LỰC ĐẮK LẮK
+
+
+     Căn cứ Luật Đấu thầu số 22/2023/QH15 ngày 23/6/2023 được sửa đổi bổ sung tại
+Luật số 57/2024/QH15 ngày 29/11/2024 và Luật số 90/2025/QH15 ngày 25/6/2025;
+      Căn cứ Nghị định số 214/2025/NÐ-CP ngày 04/8/2025 của Chính phủ về Quy định
+chi tiết một số điều và biện pháp thi hành Luật Đấu thầu về lựa chọn nhà thầu;
+      Căn cứ Thông tư 79/2025/TT-BTC ngày 04-08-2025 của Bộ Tài chính hướng dẫn
+việc cung cấp, đăng tải thông tin về lựa chọn nhà thầu và mẫu hồ sơ đấu thầu trên Hệ
+thống mạng đấu thầu quốc gia;
+     Căn cứ Quyết định số 252/QĐ-HĐTV ngày 15/04/2026 của Hội đồng thành viên
+Tổng công ty Điện lực miền Trung về việc ban hành Quy chế phân cấp của EVNCPC;
+     Căn cứ Quyết định số 2632/QĐ-EVNCPC ngày 04/5/2026 của Tổng công ty Điện
+lực miền Trung về việc ban hành Quy định phân cấp của Tổng giám đốc EVNCPC cho
+người đứng đầu các đơn vị trực thuộc EVNCPC;
+     Căn cứ Quyết định số 4016/QĐ-EVNCPC ngày 30/6/2026 của Tổng công ty Điện
+lực miền Trung về việc tạm giao kế hoạch ĐTXD năm 2027 – ĐLPC;
+     Căn cứ Quyết định số 7720/QĐ-ĐLPC ngày 01/7/2026 của Công ty Điện lực Đắk
+Lắk về việc tạm giao nhiệm vụ điều hành quản lý dự án các công trình ĐTXD ĐLPC
+năm 2027;
+     Căn cứ Quyết định số 7879/QĐ-ĐLPC ngày 06/7/2026 của Giám đốc Công ty Điện
+lực Đắk Lắk về việc phê duyệt Tổng tiến độ các công trình đầu tư xây dựng tỉnh Đắk Lắk
+năm 2027;
+   Căn cứ Phương án kỹ thuật – dự toán dự án: Mua sắm thiết bị phục vụ SXKD
+ĐLPC năm 2027 do Công ty Điện lực Đắk Lắk lập tháng 9 năm 2026;
+     Căn cứ Báo cáo thẩm định số 947/ĐT ngày 09/9/2026 của các thành viên tham gia
+thẩm định về việc Báo cáo thẩm định Phương án - dự toán dự án: Mua sắm thiết bị phục
+vụ SXKD ĐLPC năm 2027;
+     Theo đề nghị tại Tờ trình số 10749/TTr-ĐLPC ngày 09/9/2026 của Công ty Điện
+lực Đắk Lắk về việc thẩm định, phê duyệt Phương án - dự toán dự án: Mua sắm thiết bị
+phục vụ SXKD ĐLPC năm 2027;
+     Theo đề nghị của Trưởng phòng Quản lý Đầu tư.
+                                    QUYẾT ĐỊNH:
+
+   Điều 1. Phê duyệt Phương án - dự toán dự án: Mua sắm thiết bị phục vụ SXKD
+ĐLPC năm 2027, với nội dung chính như sau:
+       1. Tên dự án: Mua sắm thiết bị phục vụ SXKD ĐLPC năm 2027;
+       2. Quy mô mua sắm thiết bị:
+  TT                        Tên thiết bị                     Đơn vị tính    Số lượng
+   1     Camera nhiệt ống kính tầm xa                             Bộ            01
+         Máy quay chuyên nghiệp Sony PXW-Z200 +
+         Chân máy quay Libec TH-Z Tripod + Thẻ nhớ
+   2                                                              Bộ            01
+         CFexpress Lexar Professional 160GB Type A
+         GOLD Series LCAGOLD160G-RNENG
+   3     Máy photocopy Canon iR 2925i (3 trong 1)                 Bộ            01
+   4      Máy phát điện 100kVA                                      Bộ           01
+       3. Dự toán chi phí mua sắm:                           904.636.424 đồng.
+       Trong đó:        Chi phí mua sắm thiết bị (sau thuế): 861.558.499 đồng.
+                        Chi phí dự phòng:                       43.077.925 đồng.
+       4. Nguồ n vố n: ĐTPT Công ty mẹ;
+                              ̣ Năm 2027;
+       5. Thời gian thực hiên:
+       6. Yêu cầu kỹ thuật thiết bị: Theo Phương án kỹ thuật – dự toán kèm theo.
+      Điều 2. Ban Quản lý dự án ĐTXD Công ty Điện lực Đắk Lắk chịu trách nhiệm
+triển khai các bước tiếp theo đảm bảo tuân thủ các quy định hiện hành.
+     Điều 3. Quyết định này có hiệu lực thi hành kể từ ngày ký. Trưởng các Phòng, Ban
+thuộc Công ty có liên quan căn cứ quyết định thi hành./.
+
+ Nơi nhận:                                                     GIÁM ĐỐC
+ - PGĐ ĐTXD, PGĐ ĐT (để chỉ đạo);
+ - QLDA (phối hợp);
+ - Lưu: VT, ĐT.
+
+
+
+
+                                                            Trần Văn Thuận
+
+--- Tệp: 3. QD-PD-KHLCNT mua sắm thiết bị 2027.pdf ---
+TỔNG CÔNG TY                        CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+  ĐIỆN LỰC MIỀN TRUNG                             Độc lập - Tự do - Hạnh phúc
+CÔNG TY ĐIỆN LỰC ĐẮK LẮK
+                                             Đắk
+                                             Đắk Lắk,
+                                                 Lắk, ngày
+                                                      ngày 04 tháng 10 năm 2026
+       Số:
+       Số:11840/QĐ-ĐLPC
+
+                                 QUYẾT ĐỊNH
+                  Về việc phê duyệt kế hoạch lựa chọn nhà thầu
+          Dự án: Mua sắm thiết bị phục vụ SXKD ĐLPC năm 2027
+                  GIÁM ĐỐC CÔNG TY ĐIỆN LỰC ĐẮK LẮK
+
+     Căn cứ Luật Đấu thầu số 22/2023/QH15 ngày 23/6/2023 được sửa đổi bổ sung tại
+Luật số 57/2024/QH15 ngày 29/11/2024 và Luật số 90/2025/QH15 ngày 25/6/2025;
+      Căn cứ Nghị định số 214/2025/NÐ-CP ngày 04/8/2025 của Chính phủ về Quy định
+chi tiết một số điều và biện pháp thi hành Luật Đấu thầu về lựa chọn nhà thầu;
+     Căn cứ Nghị định số 349/2026/NĐ-CP ngày 09/9/2026 của Chính phủ sửa đổi, bổ
+sung một số điều của các Nghị định quy định chi tiết một số điều và biện pháp thi hành
+Luật Đấu thầu về lựa chọn nhà thầu;
+      Căn cứ Thông tư 79/2025/TT-BTC ngày 04-08-2025 của Bộ Tài chính hướng dẫn
+việc cung cấp, đăng tải thông tin về lựa chọn nhà thầu và mẫu hồ sơ đấu thầu trên Hệ
+thống mạng đấu thầu quốc gia;
+     Căn cứ Quyết định số 252/QĐ-HĐTV ngày 15/04/2026 của Hội đồng thành viên
+Tổng công ty Điện lực miền Trung về việc ban hành Quy chế phân cấp của EVNCPC;
+     Căn cứ Quyết định số 2632/QĐ-EVNCPC ngày 04/5/2026 của Tổng công ty Điện
+lực miền Trung về việc ban hành Quy định phân cấp của Tổng giám đốc EVNCPC cho
+người đứng đầu các đơn vị trực thuộc EVNCPC;
+     Căn cứ Quyết định số 243/QĐ-HĐTV ngày 14/4/2026 của Hội đồng thành viên
+Tổng công ty Điện lực miền Trung về việc ban hành quy chế mua sắm trong Tổng công
+ty Điện lực miền Trung;
+     Căn cứ Quyết định số 4016/QĐ-EVNCPC ngày 30/6/2026 của Tổng công ty Điện
+lực miền Trung về việc tạm giao kế hoạch ĐTXD năm 2027 – ĐLPC;
+     Căn cứ Quyết định số 7720/QĐ-ĐLPC ngày 01/7/2026 của Công ty Điện lực Đắk
+Lắk về việc tạm giao nhiệm vụ điều hành quản lý dự án các công trình ĐTXD ĐLPC
+năm 2027;
+     Căn cứ Quyết định số 7879/QĐ-ĐLPC ngày 06/7/2026 của Giám đốc Công ty Điện
+lực Đắk Lắk về việc phê duyệt Tổng tiến độ các công trình đầu tư xây dựng tỉnh Đắk Lắk
+năm 2027;
+     Căn cứ Quyết định số 10821/QĐ-ĐLPC ngày 10/9/2026 của Công ty Điện lực Đắk
+Lắk về việc phê duyệt phương án - dự toán Mua sắm thiết bị phục vụ SXKD ĐLPC năm
+2027;
+     Căn cứ Báo cáo thẩm định số 1024/ĐT ngày 02/10/2026 của Công ty Điện lực Đắk
+Lắk về việc thẩm định kế hoạch lựa chọn nhà thầu dự án: Mua sắm thiết bị phục vụ
+SXKD ĐLPC năm 2027;
+     Theo đề nghị tại Tờ trình số 1286/QLDA ngày 30/9/2026 của Ban Quản lý dự án
+đầu tư xây dựng về việc phê duyệt kế hoạch nhà thầu dự án: Mua sắm thiết bị phục vụ
+SXKD ĐLPC năm 2027;
+     Theo đề nghị của Trưởng phòng Quản lý Đầu tư.
+
+                                    QUYẾT ĐỊNH:
+
+   Điều 1. Phê duyệt kế hoạch lựa chọn nhà thầu dự án: Mua sắm thiết bị phục vụ
+SXKD ĐLPC năm 2027, với nội dung chi tiết theo phụ lục đính kèm.
+     Điều 2. Quyết định này có hiệu lực thi hành kể từ ngày ký. Trưởng các Phòng, Ban
+thuộc Công ty có liên quan căn cứ quyết định thi hành./.
+
+
+ Nơi nhận:                                                  GIÁM ĐỐC
+ - PGĐ ĐTXD, PGĐ ĐT (để chỉ đạo);
+ - QLDA (phối hợp);
+ - Lưu: VT, ĐT.
+
+
+
+
+                                                         Trần Văn Thuận
+                                                        Phụ lục
+                 BẢNG TỔNG HỢP PHẦN CÔNG VIỆC THUỘC KẾ HOẠCH LỰA CHỌN NHÀ THẦU
+                   (Kèm theo Quyết định số: … ngày … tháng 10 năm 2026 của Công ty Điện lực Đắk Lắk)
+
+
+
+                                                                             Hình                Thời                       Thời
+                                                                                     Phương
+                                                                             thức                gian                       gian
+                                                                                     thức lựa         Thời gian Loại
+                                                                   Nguồn      lựa                  tổ                       thực     Tùy
+                                                    Giá gói thầu                       chọn            bắt đầu  hợp
+                      Tên gói thầu                                  vốn      chọn                chức                       hiện    chọn
+     Tên                                                                                nhà            tổ chức đồng
+TT                                                                            nhà                 lựa                        gói    mua
+     chủ                                                                               thầu           lựa chọn
+                                                                             thầu                chọn                       thầu    thêm
+     đầu                                                                                              nhà thầu
+                                                                                                  nhà
+      tư
+                                                                                                 thầu
+                          Tóm tắt công việc chính
+           Tên gói thầu
+                               của gói thầu
+                                                                             Chào
+             Gói thầu
+                           Cung cấp 01 máy phát                                giá                                 Theo
+           01/TB.2027:                                              ĐTPT             Một giai     Tối
+                            điện 100kVA hãng                                  trực                         Quý      đơn      90     Không
+1            Cung cấp                               466.000.000    Công ty           đoạn một    đa 60
+                           Huyndai/Trung Quốc                                tuyến                       IV/2026   giá cố   ngày   áp dụng
+             máy phát                                                mẹ              túi hồ sơ   ngày
+                                                                               rút                                  định
+           điện 100kVA
+     Công                                                                     gọn
+       ty   Gói thầu                                                         Chào
+                        Cung cấp 01 camera
+     Điện 02/TB.2027:                                                          giá                                 Theo
+                       nhiệt ống kính tầm xa                        ĐTPT             Một giai     Tối
+      lực  Cung cấp                                                           trực                         Quý      đơn      90     Không
+2                            nhãn hiệu              113.080.000    Công ty           đoạn một    đa 60
+     Đắk Camera nhiệt                                                        tuyến                       IV/2026   giá cố   ngày   áp dụng
+                        HIKMICRO/Trung                               mẹ              túi hồ sơ   ngày
+     Lắk ống kính tầm                                                          rút                                  định
+                               Quốc
+              xa                                                              gọn
+          Gói thầu số Cung cấp 01 Máy quay                                   Chào                                  Theo
+                                                                    ĐTPT             Một giai     Tối
+          03/TB.2027:   chuyên nghiệp Sony                                     giá                         Quý      đơn      90     Không
+3                                                                  Công ty           đoạn một    đa 60
+           Cung cấp   PXW-Z200 + Chân máy           241.342.750               trực                       IV/2026   giá cố   ngày   áp dụng
+                                                                     mẹ              túi hồ sơ   ngày
+           máy quay quay Libec TH-Z Tripod                                   tuyến                                  định
+               phim và máy    + Thẻ nhớ CFexpress                            rút
+                photocopy       Lexar Professional                           gọn
+                             160GB Type A GOLD
+                            Series LCAGOLD160G-
+                               RNENG và 01 Máy
+                               photocopy Canon iR
+                                 2925i (3 trong 1)
+                 Tổng giá gói thầu                 820.422.750
+
+Ghi chú:      - Giá gói thầu được lập trên cơ sở dự toán thuế GTGT 10%. Trong quá trình lựa chọn nhà thầu, ký hợp đồng, Chủ đầu tư thực
+hiện theo chính sách thuế GTGT hiện hành;
+              - Thời gian thực hiện gói thầu (Thời gian thực hiện các công việc của hợp đồng): Tính từ ngày hợp đồng có hiệu lực đến ngày
+       nghiệm thu bàn giao hoàn thành gói thầu (bao gồm cả dịch vụ liên quan nếu có), không bao gồm thời gian hoàn thành nghĩa vụ bảo
+       hành, trong đó thời gian giao hàng như bảng trên.
+
+--- Thông báo mời thầu ---
+Thông tin cơ bản
+Mã E-TBMT
+IB2600601812
+Ngày đăng tải
+09/11/2026 08:12
+Phiên bản thay đổi
+00
+Trạng thái
+Đã đăng tải
+Thông tin chung của KHLCNT
+Mã KHLCNT
+PL2600334705
+Phân loại KHLCNT
+Chi đầu tư phát triển
+Tên dự án/dự toán mua sắm
+Mua sắm thiết bị phục vụ SXKD ĐLPC năm 2027
+Thông tin gói thầu
+Tên gói thầu
+Gói thầu 01/TB.2027: Cung cấp máy phát điện 100kVA
+Chủ đầu tư
+CÔNG TY ĐIỆN LỰC ĐẮK LẮK - CHI NHÁNH TỔNG CÔNG TY ĐIỆN LỰC MIỀN TRUNG
+Chi tiết nguồn vốn
+ĐTPT của Tổng công ty Điện lực miền Trung
+Lĩnh vực
+Hàng hóa
+Hình thức LCNT
+Chào giá trực tuyến theo quy trình rút gọn
+Loại hợp đồng
+Đơn giá cố định
+Địa điểm thực hiện gói thầu
+Phường Buôn Ma Thuột, Tỉnh Đắk Lắk
+Thời gian thực hiện gói thầu
+90 Ngày
+Thông tin chào giá
+Thời điểm bắt đầu chào giá trực tuyến
+13/11/2026 08:00
+Thời điểm kết thúc chào giá trực tuyến
+16/11/2026 10:00
+Giá trần
+466.000.000 VND
+Bước giá
+1.300.000 VND
+Hiệu lực của đơn dự thầu
+60 ngày
+Phạm vi cung cấp
+Mẫu số 02B. PHẠM VI CUNG CẤP HÀNG HÓA (áp dụng đối với loại hợp đồng theo đơn giá)
+Xuất Excel
+STT	Danh mục hàng hóa	Đơn vị tính	Khối lượng	Ký mã hiệu	Nhãn hiệu	Hãng sản xuất	Xuất xứ của hàng hóa	Năm sản xuất	Thông số kỹ thuật	Địa điểm dự án	Ngày giao hàng sớm nhất	Ngày giao hàng muộn nhất	Yêu cầu khác
+1	Máy phát điện 100kVA	Bộ	1	DHY110K SE	Huyndai	Huyndai	Trung Quốc hoặc tương đương	Từ 2026 trở về sau	I Thông số kỹ thuật chung tổ máy phát điện 1 Loại máy Máy phát điện diesel có vỏ giảm âm, công suất 100kVA, 03 pha 2 Nước sản xuất Trung Quốc hoặc tương đương 3 Nhà sản xuất Huyndai 4 Mã hiệu DHY110K SE 5 Tình trạng Mới 100% 6 Công suất liên tục ≥ 100 kVA 7 Công suất tối đa ≥ 110 kVA 8 Hệ số công suất ≥ 0,8 9 Điện áp định mức 380V/220V 10 Tốc độ vòng quay ≤ 1500 vòng/phút 11 Tần số 50Hz 12 Điều chỉnh công suất khi thay đổi tải Tự động điều chỉnh 13 Tiêu hao nhiên liệu ở mức 100% tải ≤ 25 lít/giờ 14 Tiêu hao nhiên liệu ở mức 50% tải ≤ 15 lít/giờ 15 Khả năng quá tải 10% tải trong vòng 01 giờ cho mỗi 24 giờ vận hành liên tục 16 Khung bệ máy Được xử lý bề mặt bằng hóa chất để tránh ôxy hóa và sơn tĩnh điện 17 Nhiên liệu sử dụng Dầu Diezel 18 Thời gian chạy liên tục Không hạn chế 19 Dung tích bình nhiên liệu ≥ 170 lít 20 Kích thước (DxRxC) (mm) Nêu cụ thể 21 Trọng lượng tổ hợp máy phát điện (kg) Nêu cụ thể II Thông số kỹ thuật động cơ: 1 Nước sản xuất Nêu cụ thể 2 Nhà sản xuất Nêu cụ thể 3 Mã hiệu Nêu cụ thể 4 Tình trạng Mới 100% 5 Năm sản xuất Nêu cụ thể 6 Công suất liên tục ≥ 100 kVA/80kW 7 Công suất tối đa ≥ 110 kVA/88kW 8 Loại động cơ Diesel 4 kỳ 9 Hệ thống nhiên liệu Bơm phun trực tiếp, điều khiển bằng điện tử 10 Kiểu điều tốc Điện tử 11 Số xy lanh Nêu cụ thể 12 Tốc độ quay ≤ 1500 vòng/phút 13 Tỉ số nén Nêu cụ thể 14 Hành trình xilanh Nêu cụ thể 15 Tiêu chuẩn khí thải Phù hợp với điều kiện của Việt Nam 16 Hệ thống nạp khí Turbo tăng áp 17 Hệ thống khởi động Bằng môtơ khởi động, kèm theo ắc quy 18 Hệ thống làm mát Làm mát cưỡng bức tuần hoàn bằng két nước, kết hợp với quạt gió 19 Độ ồn cách 7 mét (không vật chắn) ≤ 70±5dB III Thông số kỹ thuật đầu phát điện 1 Nước sản xuất Nêu cụ thể 2 Nhà sản xuất Nêu cụ thể 3 Mã hiệu Nêu cụ thể 4 Tình trạng Mới 100% 5 Năm sản xuất Nêu cụ thể 6 Điện áp 380V/220V 7 Số pha - số dây 3 pha - 4 dây 8 Kiểu đầu phát Xoay chiều, từ trường quay, không chổi than, tự động kích từ, tự động điều chỉnh điện áp 9 Công suất liên tục ≥ 100 kVA 10 Tần số định mức 50 Hz 11 Cấp cách điện Cấp H 12 Dao động điện áp ≤ ± 1% Uđm 13 Số vòng quay ≤ 1500 vòng/phút	Số 53 Trần Quý Cáp - Phường Buôn Ma Thuột-tỉnh Đắk Lắk	30	90	IV Thông số kỹ thuật bộ điều khiển 1 Nước sản xuất Nêu cụ thể 2 Nhà sản xuất Nêu cụ thể 3 Mã hiệu Nêu cụ thể 4 Tình trạng Mới 100%. Bảng điều khiển được bố trí thuận lợi, ở nơi dể thấy, dể nhìn, dể thao tác. Tất cả hệ thống chỉ thị, cảnh báo trên bảng điều khiển rõ ràng, chính xác; thiết kế gắn trên máy phát, có đèn chiếu sáng. 5 Năm sản xuất Nêu cụ thể 6 Nguyên lý điều khiển Kỹ thuật số 7 Chức năng điều khiển: + Kết hợp được với tủ ATS. + Khởi động máy và tắt máy. + Dừng máy khẩn cấp. + Chọn lựa các chế độ làm việc; điều khiển trạng thái và lập trình. + Chức năng điều khiển từ xa qua cổng Internet/5G, điều khiển đóng mở máy và đọc được các thông số như trên màn hình của bộ điều khiển . 8 Chức năng do lường, hiển thị các thông số máy và chức năng bảo vệ 1. Đo lường Thông số chung: + Số giờ vận hành máy. + Số lần khởi động máy. + Nhật ký lỗi. Thông số đầu phát: + Công suất tác dụng, công suất biểu kiến. + Điện áp các pha. + Dòng điện các pha. + Hệ số công suất. + Tần số. Thông số động cơ: + Tốc độ động cơ. + Nhiệt độ nước làm mát. + Điện áp ắc quy. + Nhiệt độ, Áp suất bôi trơn. + Mức nhiên liệu trong thùng chứa. 2. Bảo vệ + Quá tải. + Ngắn mạch. + Điện áp cao/thấp. + Quá dòng. + Phát ngược công suất. + Nhiệt độ nước làm mát quá cao. + Áp lực dầu nhớt thấp dưới mức cho phép. + Vượt tốc. + Tần số quá cao/quá thấp cho phép. + Điện áp quá cao/quá thấp cho phép. + Mức nhiên liệu thấp/ Hết nhiên liệu. + Sai lệch điện áp AC giữa các pha quá lớn. 9 Các cổng giao tiếp + Cổng kết nối với hệ thống kiểm soát từ xa. + Cổng kết nối USB. + Cổng cho phép liên kết và đọc dữ liệu trực tiếp từ động cơ. V Vỏ giảm âm 1 Nước sản xuất Nêu cụ thể 2 Nhà sản xuất Nêu cụ thể 3 Mã hiệu Nêu cụ thể 4 Năm sản xuất Nêu cụ thể 5 Vật liệu chế tạo Thép dày ≥ 2mm, sơn tĩnh điện 6 Các lỗ thông hơi Được ngăn bằng lưới để chống chuột, rắn v.v. thâm nhập vào thùng máy 7 Vật liệu cách âm Vật liệu chống cháy, dày 20 ÷ 50mm 8 Sơn thùng cách âm Sơn tĩnh diện 9 Móc cẩu để cẩu tổ máy Có VI Tủ chuyển đổi nguồn tự động (ATS) 1 Nước sản xuất Nêu cụ thể 2 Nhà sản xuất Nêu cụ thể 3 Năm sản xuất Nêu cụ thể 4 Mã hiệu Nêu cụ thể 5 Dòng tải định mức ≥ 150A 6 Điện áp - tần số làm việc 220/380V - 50 Hz 7 Nguyên lý điều khiển Kỹ thuật số 8 Chế độ vận hành Tự động hoặc bằng tay 9 Cấu tạo Đặt trong hộp kim loại. 10 Tính đồng bộ Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển của máy phát điện và có đầu chờ để đấu nối với điện lưới và phụ tải. 11 Bộ ATS có chức năng tự động khởi động máy phát và đóng điện cấp tải trong trường hợp mất điện lưới cấp điện cho các phụ tải Có VII Phụ kiện kèm theo máy 1 Bình ắc quy (bao gồm dây và cọc) Có 2 Bộ giảm âm và bồn nhiên liệu Có VIII Thời gian bảo hành ≥ 12 tháng.Ghi chú: Do chưa xác định rõ ràng được mức thuế GTGT cụ thể trong giai đoạn LCNT. Chủ đầu tư tạm xác định mức thuế suất GTGT là 10%, yêu cầu các nhà thầu tính toán và chào thầu với mức thuế GTGT là 10%. Chủ đầu tư sẽ tính toán giá chào thầu tương ứng với mức thuế GTGT là 10% để làm cơ sở đánh giá thầu và ký hợp đồng.
+Chi phí dự phòng (%) 0
+
+Thời điểm kết thúc chào giá trực tuyến
+
+10:00
+
+16/11/2026
+
+Thời gian còn lại
+
+6 ngày 23 giờ 48 phút 50 giây
+
+ Quay trở lại
+Các trang liên quan
+Cổng Dịch vụ công quốc gia
+Cổng thông tin điện tử Bộ Tài chính
+Liên kết nhanh
+Thông báo
+Tin tức
+Hướng dẫn
+Đào tạo
+Địa chỉ:
+
+Cục Quản lý đấu thầu:
+Tầng 1, Tòa nhà Cục Quản lý đấu thầu, Số 4, Ngõ Hàng Chuối 1, phố Hàng Chuối, Phường Hai Bà Trưng, Hà Nội.
+
+Trung tâm Đấu thầu qua mạng quốc gia:
+Tầng 6, Tòa nhà Cục Quản lý đấu thầu, Số 4, Ngõ Hàng Chuối 1, phố Hàng Chuối, Phường Hai Bà Trưng, Hà Nội.
+
+Liên hệ
+Tổng đài: 19006126
+Email: hotro@muasamcong.gov.vn
+f
+Zalo Official Account
+
+© 2022 Trung tâm Đấu thầu qua mạng quốc gia. Cục Quản lý đấu thầu. Bộ Tài chính.
+
+### Danh mục hàng hóa (tab Thông tin chung)
+STT	Danh mục hàng hóa	Đơn vị tính	Khối lượng	Ký mã hiệu	Nhãn hiệu	Hãng sản xuất	Xuất xứ của hàng hóa	Năm sản xuất	Thông số kỹ thuật	Địa điểm dự án	Ngày giao hàng sớm nhất	Ngày giao hàng muộn nhất	Yêu cầu khác
+1	Máy phát điện 100kVA	Bộ	1	DHY110K SE	Huyndai	Huyndai	Trung Quốc hoặc tương đương	Từ 2026 trở về sau	I Thông số kỹ thuật chung tổ máy phát điện 1 Loại máy Máy phát điện diesel có vỏ giảm âm, công suất 100kVA, 03 pha 2 Nước sản xuất Trung Quốc hoặc tương đương 3 Nhà sản xuất Huyndai 4 Mã hiệu DHY110K SE 5 Tình trạng Mới 100% 6 Công suất liên tục ≥ 100 kVA 7 Công suất tối đa ≥ 110 kVA 8 Hệ số công suất ≥ 0,8 9 Điện áp định mức 380V/220V 10 Tốc độ vòng quay ≤ 1500 vòng/phút 11 Tần số 50Hz 12 Điều chỉnh công suất khi thay đổi tải Tự động điều chỉnh 13 Tiêu hao nhiên liệu ở mức 100% tải ≤ 25 lít/giờ 14 Tiêu hao nhiên liệu ở mức 50% tải ≤ 15 lít/giờ 15 Khả năng quá tải 10% tải trong vòng 01 giờ cho mỗi 24 giờ vận hành liên tục 16 Khung bệ máy Được xử lý bề mặt bằng hóa chất để tránh ôxy hóa và sơn tĩnh điện 17 Nhiên liệu sử dụng Dầu Diezel 18 Thời gian chạy liên tục Không hạn chế 19 Dung tích bình nhiên liệu ≥ 170 lít 20 Kích thước (DxRxC) (mm) Nêu cụ thể 21 Trọng lượng tổ hợp máy phát điện (kg) Nêu cụ thể II Thông số kỹ thuật động cơ: 1 Nước sản xuất Nêu cụ thể 2 Nhà sản xuất Nêu cụ thể 3 Mã hiệu Nêu cụ thể 4 Tình trạng Mới 100% 5 Năm sản xuất Nêu cụ thể 6 Công suất liên tục ≥ 100 kVA/80kW 7 Công suất tối đa ≥ 110 kVA/88kW 8 Loại động cơ Diesel 4 kỳ 9 Hệ thống nhiên liệu Bơm phun trực tiếp, điều khiển bằng điện tử 10 Kiểu điều tốc Điện tử 11 Số xy lanh Nêu cụ thể 12 Tốc độ quay ≤ 1500 vòng/phút 13 Tỉ số nén Nêu cụ thể 14 Hành trình xilanh Nêu cụ thể 15 Tiêu chuẩn khí thải Phù hợp với điều kiện của Việt Nam 16 Hệ thống nạp khí Turbo tăng áp 17 Hệ thống khởi động Bằng môtơ khởi động, kèm theo ắc quy 18 Hệ thống làm mát Làm mát cưỡng bức tuần hoàn bằng két nước, kết hợp với quạt gió 19 Độ ồn cách 7 mét (không vật chắn) ≤ 70±5dB III Thông số kỹ thuật đầu phát điện 1 Nước sản xuất Nêu cụ thể 2 Nhà sản xuất Nêu cụ thể 3 Mã hiệu Nêu cụ thể 4 Tình trạng Mới 100% 5 Năm sản xuất Nêu cụ thể 6 Điện áp 380V/220V 7 Số pha - số dây 3 pha - 4 dây 8 Kiểu đầu phát Xoay chiều, từ trường quay, không chổi than, tự động kích từ, tự động điều chỉnh điện áp 9 Công suất liên tục ≥ 100 kVA 10 Tần số định mức 50 Hz 11 Cấp cách điện Cấp H 12 Dao động điện áp ≤ ± 1% Uđm 13 Số vòng quay ≤ 1500 vòng/phút	Số 53 Trần Quý Cáp - Phường Buôn Ma Thuột-tỉnh Đắk Lắk	30	90	IV Thông số kỹ thuật bộ điều khiển 1 Nước sản xuất Nêu cụ thể 2 Nhà sản xuất Nêu cụ thể 3 Mã hiệu Nêu cụ thể 4 Tình trạng Mới 100%. Bảng điều khiển được bố trí thuận lợi, ở nơi dể thấy, dể nhìn, dể thao tác. Tất cả hệ thống chỉ thị, cảnh báo trên bảng điều khiển rõ ràng, chính xác; thiết kế gắn trên máy phát, có đèn chiếu sáng. 5 Năm sản xuất Nêu cụ thể 6 Nguyên lý điều khiển Kỹ thuật số 7 Chức năng điều khiển: + Kết hợp được với tủ ATS. + Khởi động máy và tắt máy. + Dừng máy khẩn cấp. + Chọn lựa các chế độ làm việc; điều khiển trạng thái và lập trình. + Chức năng điều khiển từ xa qua cổng Internet/5G, điều khiển đóng mở máy và đọc được các thông số như trên màn hình của bộ điều khiển . 8 Chức năng do lường, hiển thị các thông số máy và chức năng bảo vệ 1. Đo lường Thông số chung: + Số giờ vận hành máy. + Số lần khởi động máy. + Nhật ký lỗi. Thông số đầu phát: + Công suất tác dụng, công suất biểu kiến. + Điện áp các pha. + Dòng điện các pha. + Hệ số công suất. + Tần số. Thông số động cơ: + Tốc độ động cơ. + Nhiệt độ nước làm mát. + Điện áp ắc quy. + Nhiệt độ, Áp suất bôi trơn. + Mức nhiên liệu trong thùng chứa. 2. Bảo vệ + Quá tải. + Ngắn mạch. + Điện áp cao/thấp. + Quá dòng. + Phát ngược công suất. + Nhiệt độ nước làm mát quá cao. + Áp lực dầu nhớt thấp dưới mức cho phép. + Vượt tốc. + Tần số quá cao/quá thấp cho phép. + Điện áp quá cao/quá thấp cho phép. + Mức nhiên liệu thấp/ Hết nhiên liệu. + Sai lệch điện áp AC giữa các pha quá lớn. 9 Các cổng giao tiếp + Cổng kết nối với hệ thống kiểm soát từ xa. + Cổng kết nối USB. + Cổng cho phép liên kết và đọc dữ liệu trực tiếp từ động cơ. V Vỏ giảm âm 1 Nước sản xuất Nêu cụ thể 2 Nhà sản xuất Nêu cụ thể 3 Mã hiệu Nêu cụ thể 4 Năm sản xuất Nêu cụ thể 5 Vật liệu chế tạo Thép dày ≥ 2mm, sơn tĩnh điện 6 Các lỗ thông hơi Được ngăn bằng lưới để chống chuột, rắn v.v. thâm nhập vào thùng máy 7 Vật liệu cách âm Vật liệu chống cháy, dày 20 ÷ 50mm 8 Sơn thùng cách âm Sơn tĩnh diện 9 Móc cẩu để cẩu tổ máy Có VI Tủ chuyển đổi nguồn tự động (ATS) 1 Nước sản xuất Nêu cụ thể 2 Nhà sản xuất Nêu cụ thể 3 Năm sản xuất Nêu cụ thể 4 Mã hiệu Nêu cụ thể 5 Dòng tải định mức ≥ 150A 6 Điện áp - tần số làm việc 220/380V - 50 Hz 7 Nguyên lý điều khiển Kỹ thuật số 8 Chế độ vận hành Tự động hoặc bằng tay 9 Cấu tạo Đặt trong hộp kim loại. 10 Tính đồng bộ Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển của máy phát điện và có đầu chờ để đấu nối với điện lưới và phụ tải. 11 Bộ ATS có chức năng tự động khởi động máy phát và đóng điện cấp tải trong trường hợp mất điện lưới cấp điện cho các phụ tải Có VII Phụ kiện kèm theo máy 1 Bình ắc quy (bao gồm dây và cọc) Có 2 Bộ giảm âm và bồn nhiên liệu Có VIII Thời gian bảo hành ≥ 12 tháng.Ghi chú: Do chưa xác định rõ ràng được mức thuế GTGT cụ thể trong giai đoạn LCNT. Chủ đầu tư tạm xác định mức thuế suất GTGT là 10%, yêu cầu các nhà thầu tính toán và chào thầu với mức thuế GTGT là 10%. Chủ đầu tư sẽ tính toán giá chào thầu tương ứng với mức thuế GTGT là 10% để làm cơ sở đánh giá thầu và ký hợp đồng.
+Chi phí dự phòng (%) 0

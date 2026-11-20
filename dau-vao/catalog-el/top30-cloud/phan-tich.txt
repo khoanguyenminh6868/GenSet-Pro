@@ -1,0 +1,37 @@
+(1) cặp EL (cùng dòng, khác trường đầu phát): 994 khoá-dòng; lượt-cặp 34005; điểm bằng 22805, tăng 11200, giảm 0; lượt số bản khác 0; lượt có >1 bản 0
+    phân bố chênh điểm (mới − cũ): [[0,22805],[40,11108],[120,92]]
+(2) rời all 330 khoá, vào all 304; rời không có khoá vào cùng dòng: 26
+    22× eastern-lion-fuan|EL404C|||GF/GFSWL640|640|800|711|889|12V系列WLV780|780KW|EL404C|640|SMARTGEN6120
+    22× eastern-lion-fuan|EL404C|||GF/GFSWL640|640|800|711|889|12V系列WLV826|826KW|EL404C|640|SMARTGEN6120
+    33× eastern-lion-fuan|EL354H|||GF/GFSWL600|600|750|667|834|12V系列WLV720|720KW|EL354H|600|SMARTGEN6120
+    17× eastern-lion-fuan|EL404D|||GF/GFSWL728|728|910|809|1011|12V系列WLV886|886KW|EL404D|728|SMARTGEN6120
+    17× eastern-lion-fuan|EL404D|||GF/GFSWL728|728|910|809|1011|12V系列WLV956|956KW|EL404D|728|SMARTGEN6120
+    17× eastern-lion-fuan|EL404D|||GF/GFSWL728|728|910|809|1011|12V系列WLV1020|1020KW|EL404D|728|SMARTGEN6120
+    17× eastern-lion-fuan|EL404D|||GF/GFSWL728|728|910|809|1011|12V系列WLV1100四气门|1100KW|EL404D|728|SMARTGEN6120
+    74× eastern-lion-fuan|EL314D|||GF/GFSWL236|236|295|262|328|G128系列WLG308|308KW|EL314D|236|SMARTGEN6120
+    36× eastern-lion-fuan|EL314E|||GF/GFSWL260|260|325|289|361|G128系列WLG330|330KW|EL314E|260|SMARTGEN6120
+    31× eastern-lion-fuan|EL314F|||GF/GFSWL304|304|380|338|423|G128系列WLG375|375KW|EL314F|304|SMARTGEN6120
+    36× eastern-lion-fuan|EL274H|RUIFEN6120||GFSW222|160|200|178|222|6126ZLD新|215|EL274H|160|RUIFEN6120
+    49× eastern-lion-fuan|EL274J|RUIFEN6120||GFSW250|180|225|200|250|6126ZLD新|215|EL274J|184|RUIFEN6120
+    36× eastern-lion-fuan|EL274H|||GF/GFSWL160|160|200|178|223|D114系列WLD206|206KW|EL274H|160|SMARTGEN6120
+    51× eastern-lion-fuan|EL274J|||GF/GFSWL184|184|230|204|255|D114系列WLD227|227KW|EL274J|184|SMARTGEN6120
+    69× eastern-lion-fuan|EL274K|RUIFEN6120||GFSW278|200|250|222|278|6126ZLD1新|260|EL274K|200|RUIFEN6120
+    69× eastern-lion-fuan|EL274K|||GF/GFSWL200|200|250|222|278|D114系列WLD263|263KW|EL274K|200|SMARTGEN6120
+    51× eastern-lion-fuan|EL354C|||GF/GFSWL360|360|450|400|500|G128系列WLG450|450KW|EL354C|360|SMARTGEN6120
+    51× eastern-lion-fuan|EL354C|||GF/GFSWL360|360|450|400|500|12V系列WLV450|450KW|EL354C|360|SMARTGEN6120
+    46× eastern-lion-fuan|EL224E|RUIFEN6120||GF/GFSHC67|48|60|53|67|4105ZD(小泵)|56|EL224E|48|RUIFEN6120
+    51× eastern-lion-fuan|EL354D|||GF/GFSWL400|400|500|444|555|12V系列WLV510|510KW|EL354D|400|SMARTGEN6120
+    50× eastern-lion-fuan|EL354ES|||GF/GFSWL440|440|550|489|611|12V系列WLV565|565KW|EL354ES|440|SMARTGEN6120
+    51× eastern-lion-fuan|EL274F|||GF/GFSWL128|128|160|142|178|D114系列WLD171|171KW|EL274F|128|SMARTGEN6120
+    21× eastern-lion-fuan|EL354FS|||GF/GFSWL500|500|625|556|695|12V系列WLV610|610KW|EL354FS|500|SMARTGEN6120
+    21× eastern-lion-fuan|EL354FS|||GF/GFSWL500|500|625|556|695|12V系列WLV630|630KW|EL354FS|500|SMARTGEN6120
+    10× eastern-lion-fuan|EL404E|||GF/GFSWL800|800|1000|889|1111|12V系列WLV1200四气门|1200KW|EL404E|800|SMARTGEN6120
+    24× eastern-lion-fuan|EL354G|||GF/GFSWL550|550|6875|611|764|12V系列WLV680|680KW|EL354G|550|SMARTGEN6120
+    vào không có khoá rời cùng dòng: 0
+(3) ra top 260 khoá, vào top 97; dòng EL trong top: gốc 677 → nhánh 1199 (tổng mọi lượt)
+    lượt có khoá NCC khác ra top: EL vào thêm 341, không 3
+    NCC ra top (lượt-khoá): [["acepow-fuan",98],["uleengen",89],["tecgen-fujian",84],["jet-power",59],["gordon-power",40],["sanq-power",24],["rcg-power",20],["comappower",20],["elitech-power",18],["wintpower",17],["longkai-power",12],["kaihua-genset",10],["victory-generator",10],["minsun-motor",8],["bobig-power",8],["penlucky",7],["fdk-energy",6],["huaquan-power",5],["voltgent",4],["rise-power",4],["powerzoo",3],["gb-power",3],["dingbo",3],["genlitec",2],["westinpower",2],["byc-power",2],["ettes-power",2],["ade-power",2],["koten-power",2],["huachai-deutz",2],["landtop-fuzhou",1],["xingguang-jiangsu",1],["sunny-weifang",1],["plus-power",1],["superwatt-power",1],["yihua-fujian",1],["yongcai-elecmama",1],["hosem-power",1],["kaichen-jiangsu",1],["jianghao-genset",1],["stone-power",1]]
+    NCC vào top (lượt-khoá): [["eastern-lion-fuan",590],["uleengen",18],["acepow-fuan",16],["wintpower",5],["fdk-energy",5],["sanq-power",4],["jet-power",3],["tecgen-fujian",2],["elitech-power",1],["longkai-power",1]]
+    khoá EL ra top 45, trong đó có cặp (cùng dòng, đầu phát mới) vào top: 23
+(4) khoá NCC khác rời all: 0, vào all: 0
+    khoá NCC khác ra top 215 (lượt 577), vào top 24 (lượt 55)

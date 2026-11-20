@@ -1,0 +1,46 @@
+{
+ "build(cn)": {
+  "engines": "c1903b1c6a777fc2f8199bae128fb04f",
+  "alternators": "ecc47728a134ad50a909ea64d25f2119",
+  "controllers": "c04f065402e3b4eb5de220fe8563165d"
+ },
+ "build(cn).fuelUses": "26b28bb44bc9fdc7543c4610941d8e71",
+ "build(cn).nFuel": 694,
+ "fixture IB2600586587 build": {
+  "engines": "73501822e8289b617c57682684cff0a6",
+  "alternators": "41000d20c23439a547cd6c167584842a",
+  "controllers": "3fe458b251d28e93fcdde128a9376f5e"
+ },
+ "fixture IB2600586587 candidates 160kVA": "993fd5d37581a99711221ca3d9ca42a9",
+ "fixture IB2600586587 candidates 160kVA n": "top 29, all 44, dropped 13",
+ "fixture IB2600592684 build": {
+  "engines": "26b2e31c440f967eec89683856297534",
+  "alternators": "361ab6a416e2e6eb310b775165c0f13e",
+  "controllers": "979c69af4edf9ed7f616ed93b746b1f5"
+ },
+ "fixture IB2600592684 candidates 30kVA": "9d2894fcdc450ff1d63f1aba3f906815",
+ "fixture IB2600592684 candidates 30kVA n": "top 19, all 29, dropped 5",
+ "fixture IB2600592684 candidates 500kVA": "73e1733333f72fd4a6ecea4b93dd64d2",
+ "fixture IB2600592684 candidates 500kVA n": "top 11, all 18, dropped 0",
+ "fixture IB2600594596 build": {
+  "engines": "d75d8c82e95658ad7a605ae67746e0a4",
+  "alternators": "8e6fb8c68dca32ab168c23e3bc52136b",
+  "controllers": "cf785b5fb44dbd4888b72ef384981331"
+ },
+ "fixture IB2600594596 candidates 300kVA": "51dc8dc9a631a96136f9fe458804a2b8",
+ "fixture IB2600594596 candidates 300kVA n": "top 26, all 56, dropped 0",
+ "fixture IB2600601812 build": {
+  "engines": "72910ec49366fd85dbc696b38f12e0ed",
+  "alternators": "7aeb77b5d91e2db7fc599b4cede1588e",
+  "controllers": "1eb2db3ad67b2b19696550db25588ba3"
+ },
+ "fixture IB2600601812 candidates 100kVA": "e1532934c3934e249de1ec881f99c791",
+ "fixture IB2600601812 candidates 100kVA n": "top 30, all 62, dropped 7",
+ "fixture IB2600603983 build": {
+  "engines": "6a4fafab77f30a32bd0289e10f582510",
+  "alternators": "efb1e6dc8b25c699a174b4614b2cdce7",
+  "controllers": "1c1d1b8d884daad5695da778ce571247"
+ },
+ "fixture IB2600603983 candidates 700kVA": "ddde3c8cca7a09ee8a237892e70db19a",
+ "fixture IB2600603983 candidates 700kVA n": "top 30, all 87, dropped 46"
+}

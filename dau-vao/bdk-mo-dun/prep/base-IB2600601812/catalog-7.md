@@ -1,0 +1,102 @@
+## Tiêu đề bảng (header của mỗi bảng supplierId n, dùng được cho sourceQuote)
+
+- hyundai-power-products n 5001: | Genset Model | Prime Power | Standby Power | Engine Model | Alternator Model | Control System
+- stone-power n 106: | GENSET MODEL | Output(kW) | Output(kVA) | Engine | Alternator Model | Standby | Prime | Standby | Prime | Cummins | Stamford | Marathon | Wattek
+- fdk-energy n 103: | | Genset Model | Standby Power | Prime Power | Engine Model | Engine Original | Alternator Model | Details | Download PDF
+- jet-power n 129: | 400V / 50Hz / 1500RPM | Perkins Diesel Engine | Alternator | Open type | Soundproof type | Standby output | Prime Output | Model | No. of Cylinder | Bore x stroke | Displacement | Fuel Consumption | STAMFORD | Packing (mm) | Weight | Packing (mm) | Weight | KVA | KW | KVA | KW | （MM) | (L) | (L/H) @ Full Load | (L x W x H) | Kg | (L x W x H) | Kg
+- koten-power n 5001: | Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator
+- stone-power n 107: | Genset Model | Genset Power(kW) | Genset Capacity(kVA) | Engine Model | Alternator | Standby | Prime | Standby | Prime | (Cummins) | Stamford | Marathon | Wattek
+- uleengen n 101: | Genset Model | 50HZ | Diesel Engine | Alternator | Overall Size(mm) | Gross Weight(kg) | Power(kW) | Power(kVA) | Model | Rated Power(kW) | No. of Cylinder | Bore xStroke(mm) | Displacement(L) | Rated Fuel Consumption(L/h) | Model
+- fdk-energy n 102: | | Genset Model | Standby Power | Prime Power | Engine Model | Engine Original | Alternator Model | Details | Download PDF
+- wintpower n 107: | Genset Model | 50HZ PF=0.8 400/230V 3Phase 4Wire | Engine Model | Stamford Alternator | Leroy Somer Alternator | Wintpower Alternator | Prime Power | Standby Power | KW/KVA | KW/KVA
+- fdk-energy n 108: | | Genset Model | Standby Power | Prime Power | Engine Model | Engine Original | Alternator Model | Details | Download PDF
+- uleengen n 123: | Genset Model | 50HZ | Diesel Engine | Alternator | Overall Size(mm) | Gross Weight (kg) | Power (kW) | Power (kVA) | Model | Rated Power (kW) | No. of Cylinder | Bore xStroke (mm) | Displacement (L) | Rated Fuel Consumption (L/h) | Model
+- uleengen n 135: | Genset Model | 50HZ | Diesel Engine | Alternator | Overall Size open frame type(mm) | Gross Weight(kg) | Power(kW) | Power(kVA) | Model | Rated Power(kW) | No. of Cylinder | Bore xStroke(mm) | Displacement(L) | Rated Fuel Consumption(L/h) | Model
+- jet-power n 132: | Model | 400V / 50Hz / 1500RPM | VOLVO PENTA DIESEL ENGINE | Alternator | Standby Power | Prime Power | Engine | No. of Cylinders | Bore / Stroke | Displacement (L) | Governing Type | Compression Ratio | Stamford | kVA | kW | kVA | kW | （MM) | (L)
+- longkai-power n 108: | GENSET MODEL | ESP | PRP | ENGINE TYPE | ALTERNATOR | DIMENSION | DATASHEET | KW | KVA | KW | KVA | Longkai | Leroy Sommer | OPEN TYPE | SILENT TYPE
+- kaihua-genset n 119: | HICHAIPOWER Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension mm Open Type | Soundproof Type | Data PDF
+- uleengen n 104: | Genset Model | 50HZ | Diesel Engine | Alternator | Overall Size(mm) | Gross Weight(kg) | Power (kW) | Power (kVA) | Model | Engine brand | Rated Power(kW) | No. of Cylinder | Bore xStroke(mm) | Displacement (L) | Rated Fuel Consumption (L/h) | Model
+- bobig-power n 111: | Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Alternator(50hz/1500rpm) | Size | Model | Gensets power(KW/KVA ) | Engine model | Engine power/kw | BOBIG | Open type (MM) | sounproof type (MM) | Prime | Standby | Prime
+- bobig-power n 170: | Gensets | | Technical Data of Diesel Engine(50hz/1500rpm) | Alternator(50hz/1500rpm) | Size | Model | Gensets power(KW/KVA) | Engine model | Engine power(kw) | BOBIG | Open type (MM) | sounproof type (MM) | Prime | Standby | Prime
+- jet-power n 136: | Model | 400V / 50Hz / 1500RPM | SDEC Diesel Engine | Alternator | Standby output | Prime Output | Model | Engine type | Displacement | Bore×Stroke | Brushless | KVA | KW | KVA | KW | No. of Cylinder | Governor | (L) | (MM)
+- bobig-power n 101: | l | Gensets power(KW/KVA) | Engine model | Engine power/kw | BOBIG | Open type (MM) | sounproof type (MM) | Prime | Standby | Prime
+- rise-power n 120: | Model | Power (kw/kVA) | Engine Model | Alternator Model | Dimension | Weight | Prime | Standby | Open Type | Sound Proof | Open Type | Sound Proof
+- jet-power n 116: | Model | 400V / 50Hz / 1500RPM | Chinese Diesel Engine | Alternator | Standby Output | Prime Output | Model | Engine type | Displacement | Bore×Stroke | Brushless type | KVA | KW | KVA | KW | No. of Cylinder | Governor | (L) | (MM)
+- acepow-fuan n 129: | GENSET | Alternator | Engine Model | Model | Frequ ency | Phase | Genset power(KW) | Genset power(KVA) | Model | Model | Rated | Standby | Rated | Standby
+- wintpower n 147: | Gensets model | Power output(KVA) | Power output (KW) | Cummins Engine Model | Leroy Somer Alternator | Prime Power | Standby Power | Prime Power | Standby Power
+- eastern-lion-fuan n 108: | | Genset Specification 400/230V 50HZ | Engine | Brushless Alternator | Controller | Datasheet | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller | Datasheet
+- acepow-fuan n 154: | Model | 50Hz , 1500rpm,400V/230V | Engine Model | Engine | Alternator Model | Genset | Prime Power | Standby Power | Prime Power | Standby Power | KWe | KVA | KWe | KVA | KWm | KWm
+- koten-power n 4014: | Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator
+- bobig-power n 125: | Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Alternator (50hz/1500rpm) | Size | Model | Gensets power(KW/KVA) | Engine model | Engine power/kw | BOBIG | Open type (MM) | sounproof type (MM) | Prime | Standby | Prime
+- eastern-lion-fuan n 111: | | Genset Specification 400/230V 50HZ | Engine | Brushless Alternator | Controller | Datasheet | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller | Datasheet
+- hosem-power n 125: | Model | Prime Power (KVA/KW) | Standby Power(KVA/KW) | Engine Model | Dimension(MM) | Weight(KG)
+- longkai-power n 121: | GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet | KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)
+- minsun-motor n 102: | MODEL | Rated Power | Cummins Engine | Minsun Alternator | KVA | KW
+- penlucky n 102: | | Penlucky Model | Standby kVA | Prime kVA | Engine Model | Alternator Stamford | Dimension mm Open Type | Soundproof Type | Data PDF
+- bobig-power n 113: | Gensets | | Technical Data of Diesel Engine(50hz/1500rpm) | Alternator(50hz/1500rpm) | Size | Model | Gensets power(KW/KVA) | Engine model | Engine power(kw) | BOBIG | Open type (MM) | sounproof type (MM) | Prime | Standby | Prime
+- jet-power n 135: | Model | 400V / 50Hz / 1500RPM | WEICHAI Diesel Engine | Alternator | Standby output | Prime Output | Model | No. of Cylinder | Governor | Bore×Stroke | Displacement | Fuel consumption @100% Load（L/h） | Brushless | KVA | KW | KVA | KW | (MM) | (L)
+- penlucky n 103: | | Penlucky Model | Standby kVA | Prime kVA | Engine Model | Alternator Leroy-Somer | Dimension mm Open Type | Soundproof Type | Data PDF
+- elitech-power n 1001: | | Genset Model | Engine Brand | Prime Power | Standby Power | Engine Model | Freq. | Phase | Specification Download | SEO ID
+- sr-genset n 2002: | Standby | Prime | Engine | Alternator | Open Type Dimension | Silent Type Dimension | kVA | kW | kVA | kW | Model | Gov | Stamford | Leroy Somer | SRGENSET
+- aosif n 101: | Prime Power | Standby Power | Engine Model | Fuel Consumption | Cylinder | Displacement | KVA/KW | KVA/KW | | L/h
+- deman-power n 2015: Genset Model  Standby Power  Prime Power          Engine Model       No. of     Details
+- kaihua-genset n 113: | Genset Model | Standby Power | Prime Power | Engine Model | Dimension(mm) | Weight(kg) | KVA | KVA
+- mecca-power n 5001: | Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator
+- landtop-fuzhou n 121: | Genset Model | Genset Standby Power | Genset Prime Power | Governor Type | Emission Standard | Engine Model | Alternator Model | KVA | KW | KVA | KW
+- rcg-power n 107: | | Model | Prime Power | Standby Power | Engine | Alternator | Download
+- keliang-fuan n 107: | Gensets | Technical Data of Diesel Engine(50hz/1500rpm) | Alternator | Size & Weight | Model | Gensets power(KW/KVA) | Engine model | Engine power(kw) | Fuel consumption | Cylinder*Bore*Stroke | Displacement(L) | Compr-ession Ratio | Asp. | WANTONG | Rated Voltage(V) | Open Type Size(mm) | Weight(KG) | Silent Type Size(mm) | Weight(KG) | Prime | Standby | Prime | Standby | G/kw.h | L/h | (Qty*mm*mm)
+- agestar n 101: | Model | Specification 50HZ 400-230V | General specifications | Alternator | Dimensions | Weight | ESP | PRP | Engine type | Consumption 100% | Gov | MODEL | KVA | KW | KVA | KW | L/H | mm | kg
+- rcg-power n 124: | | 型号 | 主电源 | 备用电源 | 发动机 | 交流发电机 | 下载
+- comappower n 108: | | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data
+- rise-power n 111: | Model | Prime Power | Standby Power | Engine | Cylinders | Displacement (L) | Fuel Consumption(L/h) | Open Version | Soundproofed Version | kVA | kW | kVA | kW | L*W*H(mm) | Weight (kg) | L*W*H(mm) | Weight (kg)
+- app-power-anpu n 5001: | Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator
+- rcg-power n 112: | | Model | Prime Power | Standby Power | Engine | Alternator | Download
+- comappower n 105: | | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data
+- voltgent n 110: | Genset Model | Standby Power (kVA) | Standby Power (kW) | Prime Power (kVA) | Prime Power (kW) | Engine Brand | Engine Model | Data Sheet
+- dingbo n 108: | Generator Model | PRP KW/KVA | EPS KW/KVA | Engine Model | Alternator Model | Dimension (mm) | Weight (kg)
+- comappower n 107: | | Genset Model | Standby power | /kw | Prime power | /kw | Engine Model | NO. of Cylinder | Detail Data
+- kaihua-genset n 103: | Genset Model | Standby Power | Prime power | Engine Model | Dimention | Weight | KVA | KW | KVA | KW | mm | KG
+- kingway-power n 126: | KVA | KWKVA | KW | | | | | Genset Model | ESP | PRP | Fuel Cons L/H(75%) | OPEN L*W*H (mm) | CLIENT L*W*H (mm) | Engine Model
+- wintpower n 141: | Genset Model | 50HZ PF=0.8 400/230V 3Phase 4Wire | Engine Model | cyl | displacement | Battery Vol. | Max power | Governor | Open Type Dimension | Standby Power | Prime Power | Cons 100% ( L/H ) | KVA/KW | KVA/KW | L | V | KW | | L×W×H ( MM ) | Weight KG
+- rise-power n 107: | Model | Prime Power | Standby Power | Engine | Cylinders | Displacement (L) | Fuel Consumption(L/h) | Oil Consumption(g/kWh) | Lube Capacity(L) | Coolant Capacity(L) | Dimensions | kVA | kW | kVA | kW | L*W*H(mm) | Weight (kg)
+- victory-generator n 108: | Genset Model | Frequency (Hz) | Prime Power | Standby Power | Engine Model | Cylinder | Displacement (L) | Dimensions (mm) | Weight (kg) | KW | KVA | KW | KVA
+- wintpower n 145: | Genset Model | 50HZ PF=0.8 400/230V 3Phase 4Wire | Engine Model | cyl | displacement | Exhaust Gas Temp. | Battery Vol. | Max power | Governor | Open Type Dimension | Standby Power | Prime Power | Cons 100% ( L/H ) | KVA/KW | KVA/KW | L | ºC | V | KW | | L×W×H ( MM ) | Weight KG
+- rcg-power n 101: | | Model | Prime Power | Standby Power | Engine | Alternator | Download
+- kaichen-jiangsu n 5001: | Genset model | Prime kW | Prime kVA | Standby kW | Standby kVA | Engine model | Alternator
+- victory-generator n 110: | Model | Frequency | Prime Power | Standby Power | Engine Model | Full-Load Diesel Consumption (L/H) | Displacement (L) | Cylinders & arrangement | Governor Type | Open Type | Silent Type | HZ | kW | kVA | kW | kVA | Dimension L*W*H (mm) | Weight (KG) | Dimension L*W*H (mm) | Weight (KG)
+- long-gen n 110: | Model | Prime Power | Standby Power | Engine | Alternator | Dimension& Weight | | KW | kVA | KW | kVA | Cummins | Stamford | Longen | L*M*H(mm)(open) | KG(open) | L*M*H(mm) (silent) | KG(silent) | download
+- victory-generator n 106: | Genset Model | Frequency (HZ) | Prime Power | Standby Power | Engine Model | Full-Load Fuel Consumption (L/H) | CYCLINDER | Generator Set | KW | KVA | KW | KVA | MEASUREMENT/ L*W*H (mm) | WEIGHT (kg)
+- walter-yangzhou n 105: | GensetModel | Power（kVA） | EngineBrand | Engine Model | Dimension(MM)L*W*H | Standby | Prime
+- previa-ningde n 106: | GENSET MODEL | ESP | PRP | Engine type | Dimension | KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)
+- eastern-lion-fuan n 144: | | Genset Specification 400/230V 50HZ | Engine | Brushless Alternator | Controller | Datasheet | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller | Datasheet
+- kaichen-jiangsu n 5002: | Prime kW | Prime kVA | Standby kW | Standby kVA | Size | Engine make | Engine model | Alternator make | Alternator | Controller | Type | L*W*H (mm) | Weight (kg) | Battery | Fuel tank
+- kachai-hangzhou n 2010: | Diesel Generator Model | Generator Specification | Engine Specifcation | Alternator Specifcation | Open Type | Silent Type | Power(KVA) ( KVA) | Power(KW) ( KW) | Engine | | KACHAI | Stamford | Dimension | Weight | Dimension | Weight | Prime | Standby | Prime | Standby | Model | Model | Model | L×W×H(mm) * * ( mm) | (kg) | L×W×H(mm) * * ( mm) | (kg)
+- longkai-power n 128: | GENSET MODEL | ESP | PRP | Engine type | Dimension | Datasheet | KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)
+- xingguang-jiangsu n 122: | GensetModel | Power（kVA） | EngineBrand | EngineModel | Specifications | Standby | Prime
+- previa-ningde n 113: | GENSET MODEL | ESP | PRP | Engine type | Dimension | KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)
+- pengpai-yangzhou n 130: | | 机组型号 | 输出功率 (KW/KVA) | 柴油机品牌 | 柴油机型号 | 缸数 | 排量 (L) | 润滑油容量(L) | 燃油消耗 (g/kw.h) | 外形尺寸(L×W×H) | 机组重量(KG)
+- walter-yangzhou n 109: | Genset Model | Standby Power | Prime Power | Engine Model | Dimension(MM)L*W*H | KVA | KW | KVA | KW
+- previa-ningde n 102: | GENSET MODEL | ESP | PRP | Engine type | Dimension | KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)
+- previa-ningde n 101: | GENSET MODEL | ESP | PRP | Engine type | Dimension | KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)
+- taihai-taizhou n 109: | 机组型号 | 输出功率(kw) | 电流(A) | 柴油机型号 | 缸数 | 缸径*行程（mm） | 排气量 (L) | 润滑油容量 （L） | 燃油消耗率 g/kw.h | 机组尺寸mm L×W×H | 机组重量 kg | KW | KVA
+- walter-yangzhou n 110: | Genset Model | Standby Power | Prime Power | Engine Model | L*W*H (mm) | KVA | KW | KVA | KW
+- excel-power-ningde n 118: | Genset Model | 50Hz,400/230V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dimension (L×W×H) mm | Download | Prime Power (KW/KVA) | Standby Power (KW/KVA) | Open type | silent type
+- previa-ningde n 105: | GENSET MODEL | ESP | PRP | Engine type | Dimension | KVA | KW | KVA | KW | Open type (mm) | Silent type(mm)
+- vantek-jiangsu n 105: | 型号 | 额定功率 (KVA/KW) | 备用功率 (KVA/KW) | 柴油机型号 | 机组尺寸 (MM) | 重量 (KG)
+- victory-generator n 115: | Genset model | Frequency | Prime Power | Standby Power | Engine model | Fuel comsuption | Lube comsuption | Open type | Silent Type | KW | KVA | KW | KVA | g/kw.h | g/kw.h | Dimension (mm) | Weight (kg) | Dimension (mm) | Weight (kg)
+- xinzhengfa n 108: | 机组型号 | 输出功率 | 额定电流A | 频率/转速 Hz/RPM | 柴油机型号 | 机组外型尺寸(L × B × H)mm | 机组重量Kg | KVA | KW
+- excel-power-ningde n 112: | Genset Model | 50Hz,400/230V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dimension | Download | Prime Power (KW/KVA) | Standby Power (KW/KVA) | OPEN | SILENT
+- eastern-lion-fuan n 172: | | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller
+- lees-power n 112: | Model | Standby KVA | Prime KVA | Standby KW | Prime KW | Engine | Specifications
+- walter-yangzhou n 108: | Genset Model | Standby Power | Prime Power | Engine Model | Dimension(MM)L*W*H | KVA | KW | KVA | KW
+- xinzhengfa n 106: | 机组型号 Gensets Model | 输出功率 Output Power | 柴油机型号 Engine Model | 机组外形尺寸 Gensets Overall Dimensions | 重量 Weight | 凯通牌 Defeng Trademark | 千瓦/千伏安 kW/kVA | 长*宽*高mm L * W * H mm | 千克 Kg
+- yanan-power n 106: | Genset Model | Standby power | Prime power | Engine Model | NO.of Cylinder | Detail Data
+- yingtai-jiangsu n 106: | 机组型号 Genset Model | 主用功率（主用） | 备用功率（备用） | 电流（主用）Power(A) | 电流（备用）Power(A) | 净重 Net Weight (kg) | 外形尺寸 Overall Dimensions L*W*H(m) | 品牌 Brand | 发动机型号 Engine Type | KW | KVA | KW | KVA
+- excel-power-ningde n 103: | Genset Model | 50Hz,400/230V,3-Phase | Engine Model | Fuel consumption (L/h) 100% | Dimension | Download | Prime Power (KW/KVA) | Standby Power (KW/KVA) | OPEN | SILENT
+- jet-power n 134: | Model | 400V / 50Hz / 1500RPM | FAWDE Diesel Engine | Alternator | Open type | Soundproof type | Standby | Prime | Model | Engine type | Displacement | Bore×Stroke | JET POWER BRAND | Packing (mm) | Weight | Packing (mm) | Weight | KVA | KW | KVA | KW | No. of Cylinder | Governor | (L) | (MM) | BRUSHLESS TYPE | (L x W x H) | Kg | (L x W x H) | Kg
+- mamo-power n 110: | GENSET MODL | PRIME POWER | PRIME POWER | STANDBY POWER | STANDBY POWER | ENGINE MODEL | EMISSION STANDARD | OPEN | SOUNDPROOF | (KW) | (KVA) | (KW) | (KVA)
+- suneco-linyi n 102: | Genset Model | Standby power | Prime power | Engine Model | NO. of Cylinder | Detail Data
+- minsun-motor n 101: | MODEL | Rated Power | Perkins Engine | Minsun Alternator | KVA | KW
+- jianghao-genset n 109: | Model | Output KVA | Power KW | Engine model | Cylinder NO. | Bore*Stroke mm | displace - ment (L) | Lubricating Capacity (L) | Fuel Consumption g/kw.h | Dimension (L×W×H) mm | Weight (kg)
+- yanan-power n 101: | Genset Model | Standby power | Prime power | Engine Model | NO. of Cylinder | Detail Data
+

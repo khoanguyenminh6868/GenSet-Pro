@@ -1,0 +1,22 @@
+{
+ "danhMuc": {
+  "DEIF | AGC150 | key=AGC150": 0,
+  "DEIF | SGC-420 | key=SGC420": 0,
+  "DEIF | AGC | key=AGC": 0,
+  "Datakom | DKG-116 | key=DKG116": 0,
+  "Datakom | DKG-309 | key=DKG309": 0,
+  "SICES | DST4602Evolution | key=DST4602EVOLUTION": 0,
+  "Woodward | easYgen-1800 | key=EASYGEN1800": 0,
+  "Woodward | easYgen-3500XT | key=EASYGEN3500XT": 0,
+  "SICES | GC310 | key=GC310": 0,
+  "SICES | GC315Plus | key=GC315PLUS": 0,
+  "SICES | GC350 | key=GC350": 0,
+  "SICES | GC400 | key=GC400": 0,
+  "SICES | GC500Plus | key=GC500PLUS": 0,
+  "SICES | GC600 | key=GC600": 0,
+  "DEIF | DEIF (không ghi model) | key=BRAND:DEIF": 0,
+  "Datakom | Datakom (không ghi model) | key=BRAND:DATAKOM": 0,
+  "Woodward | Woodward (không ghi model) | key=BRAND:WOODWARD": 0
+ },
+ "ngoaiDanhMuc": {}
+}

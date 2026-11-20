@@ -1,0 +1,98 @@
+{
+ "IB2600592658": {
+  "summary": {
+   "problems": 10,
+   "requirements": 12,
+   "unverifiedRequirements": 0,
+   "brandSync": null,
+   "named": null,
+   "clarifyByCode": [],
+   "missingCodes": [],
+   "message": null,
+   "configs": [
+    {
+     "rank": 1,
+     "engine": "Cummins QSZ13-G3",
+     "alternator": "Leroy Somer TAL-A473-C",
+     "controller": null,
+     "named": null,
+     "suppliers": [
+      "depco-power:2001"
+     ],
+     "checks": {
+      "genset": "0/0/5/2",
+      "engine": "0/0/2/0",
+      "alternator": "0/0/3/0"
+     },
+     "unverifiedChecks": 7,
+     "notMet": [],
+     "lossWarn": []
+    }
+   ]
+  },
+  "alt": [
+   {
+    "rank": 1,
+    "alt": "TAL-A473-C",
+    "checks": [
+     "Hãng đầu phát: unclear (Leroy Somer là một trong các hãng đầu phát tùy chọn)",
+     "Model đầu phát: unclear (TAL-A473-C nằm trong danh sách model tùy chọn)",
+     "Xuất xứ đầu phát: unclear (Trang không ghi nơi sản xuất đầu phát)"
+    ]
+   }
+  ]
+ },
+ "IB2600595853": {
+  "summary": {
+   "problems": 10,
+   "requirements": 12,
+   "unverifiedRequirements": 0,
+   "brandSync": null,
+   "named": {
+    "make": "Cummins",
+    "models": [],
+    "found": false,
+    "equivalent": false,
+    "warn": true
+   },
+   "clarifyByCode": [
+    "Hãng sản xuất tổ máy"
+   ],
+   "missingCodes": [],
+   "message": null,
+   "configs": [
+    {
+     "rank": 1,
+     "engine": "Cummins QSZ13-G3",
+     "alternator": "Leroy Somer TAL-A473-C",
+     "controller": null,
+     "named": "equivalent",
+     "suppliers": [
+      "depco-power:2002"
+     ],
+     "checks": {
+      "genset": "0/1/5/2",
+      "engine": "0/0/1/0",
+      "alternator": "0/0/1/0",
+      "controller": "0/1/2/0"
+     },
+     "unverifiedChecks": 7,
+     "notMet": [
+      "Bộ điều khiển của cấu hình",
+      "Bồn nhiên liệu"
+     ],
+     "lossWarn": []
+    }
+   ]
+  },
+  "alt": [
+   {
+    "rank": 1,
+    "alt": "TAL-A473-C",
+    "checks": [
+     "Hãng đầu phát: unclear (TAL-A473-C (một trong các tùy chọn, hãng Leroy Somer))"
+    ]
+   }
+  ]
+ }
+}
