@@ -35,11 +35,16 @@ Bản in đầy đủ: `cand-truoc.txt` / `cand-sau.txt`; 30 dòng hai bên: `ib
 
 Lưu ý: trên main hiện tại, 6M31G825/5 voltgent n110 đã có **222 điểm, hạng #17, ĐÃ trong 30 dòng**, không phải 190 / hạng 141. Phần 32 điểm hơn đến từ 4 khoá thông số của tờ hãng `baudouin` n1021 (bore, disp, cooling, asp, compr, gov), có lẽ chưa có trong `suppliers.json` của lần đo trước.
 - **Sau A + B**: 6M31G825/5 voltgent **262 điểm (222 + 40, A từ NCC `baudouin`), hạng #8**. Mục tiêu đạt mà không vá riêng cho gói.
-- Dòng vào / ra (trước → sau):
-  - **Do A** (+40 cho động cơ có tờ hãng: Volvo Penta TWD1645GE / TWD1744GE từ `volvo-penta`; Baudouin 6M33G825/5, 6M31G825/5, 6M31G900/5 từ `weichai-power` / `baudouin`). Vào: Volvo Penta TWD1744GE jet-power, Volvo Penta TWD1653GE rcg-power. Ra: Perkins 4006-23TAG2A koten-power và uleengen UP750GF, Perkins 4006-23TAG3A uleengen UP800GF và voltgent P900-1. Các động cơ Perkins 4006 không có tờ hãng trong `perkins`, nên tụt so với dòng +40.
-  - **Do B** (Baudouin được chia theo model ở lượt lấp chung). Vào: Baudouin 6M31G900/5 voltgent, Baudouin "6M33G8D3/5 (6M33G825/5)" kaihua (mã trùng, phiên catalog đang sửa). Ra: Mitsubishi S6R2-PTAA stone-power, S6R2-PTAA-C fdk-energy.
-  - **Do B** (Perkins / Cummins chia theo model). Vào: Perkins 2806A-E18TTAG5 voltgent, Cummins QSK23-G3 fdk-energy.
-  - Số model khác nhau trong 30 dòng tăng.
+- Dòng vào / ra, A+B so với main (6 vào, 6 ra; trong ngoặc: bật riêng luật nào đã cho kết quả đó):
+  - VÀO Volvo Penta TWD1744GE jet-power (A riêng, B riêng). Có A vì `volvo-penta` có tờ hãng.
+  - VÀO Volvo Penta TWD1653GE rcg-power (B riêng).
+  - VÀO Cummins QSK23-G3 fdk-energy (B riêng).
+  - VÀO Perkins 2806A-E18TTAG5 voltgent (B riêng).
+  - VÀO Baudouin "6M33G8D3/5 (6M33G825/5)" kaihua (B riêng; mã trùng, phiên catalog đang sửa).
+  - VÀO Baudouin 6M31G900/5 voltgent (chỉ khi A+B: A nâng lên 223, B chia chỗ Baudouin theo model).
+  - RA Perkins 4006-23TAG2A koten-power, 4006-23TAG3A uleengen UP800GF, 4006-23TAG3A voltgent P900-1, Mitsubishi S6R2-PTAA stone-power (A riêng, B riêng). Perkins 4006 không có tờ hãng trong `perkins` nên tụt dưới các dòng +40; B thay dòng thứ 2–3 của cùng model.
+  - RA Perkins 4006-23TAG2A uleengen UP750GF, Mitsubishi S6R2-PTAA-C fdk-energy (B riêng).
+  - Chỉ A còn đưa vào Baudouin 6M33G825/5 rcg-power và hai dòng Volvo Penta TWD1645GE sr-genset; khi A+B, B thay chúng bằng model khác cùng hãng.
 - Baudouin trong 30 dòng: trước 3 (6M33G825/5, 6M33G750/5, 6M31G825/5); sau 5 (thêm 6M31G900/5, 6M33G8D3/5 (6M33G825/5)).
 
 ## Đo MẪU (không phải toàn bộ)
