@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-18T11:25:00.526Z
+  modified: 2026-11-20T00:46:48.240Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Code xếp sẵn 30 dòng ứng viên; mọi số/câu trích phải có nguyên văn trong nguồn, sai → "Đạt" thành "Chưa rõ". ~6–11 phút, ~3 USD/gói. Yêu cầu theo bộ mã cố định `suppliers/reqcodes.mjs` (thêm mã: dòng `R(...)` đúng thứ tự + test; tăng `REQ_VERSION`).
@@ -73,6 +73,10 @@ metadata:
 "Chưa rõ" còn lại chủ yếu do thiếu dữ liệu (đầu phát TQ, tiêu hao/quá tải tổ máy TQ, số pha, kWm hãng động cơ theo tốc độ — Perkins và Cummins đuôi -G2 thiếu) → muốn hơn phải xin catalog NCC ([[supplier-db]]). Dữ liệu NCC ở nước G7 mỏng, agent phải tìm internet. LSA đời ngừng, InteliLite NT AMF20/25, MRS10 chưa có datasheet. Kho ghi nhớ "đã tìm không ra": `genbid-work\web-memo\negative.json` (90 ngày).
 
 Cách thử, lệnh và bẫy code: `suppliers/CLAUDE.md` trong repo; bản nghiệm thu từng đợt: `genbid-work\dieu-phoi\nghiem-thu\`. Liên quan [[bidprice-suggest]], [[quy-tac-luong]].
+
+## Nhiên liệu và tổ máy không mã động cơ (Khoa 20/11/2026)
+- Máy khí / xăng: đo 20/11 thấy lọt top 30 ở 114 gói (westinpower MAN khí hạng 1 ở 9 lượt). Khoa chốt: catalog có trường nhiên liệu (chỉ ghi khi bảng hoặc tên trang ghi rõ; tên trang CÓ dùng; không đủ dấu hiệu thì để trống, không coi là diesel); Gợi ý thêm bước kiểm nhiên liệu; HSMT KHÔNG nêu nhiên liệu → coi là gói diesel (loại khí / xăng / xăng + LPG). "COP / Continuous" không là prime.
+- Bảng tổ máy không mã động cơ (46 bảng, 1.753 dòng): "PA1 trước" = lưu + hiện ở hồ sơ NCC, CHƯA nối Gợi ý; nối (chỉ khi HSMT không đòi thông số động cơ) quyết sau khi Khoa xem hồ sơ NCC. Không nối kiểu "trừ điểm" (thiếu dữ liệu không được lợi hơn có dữ liệu).
 
 ## Số đông dung tích: làm tròn (Khoa 19/11/2026)
 Số đông chỉ áp cho dung tích (và số xi lanh), áp cả trần, hãng động cơ không gộp. Về làm tròn: nguồn chỉ ghi số làm tròn mà HSMT đòi số chính xác hơn (Y490D 2,67 ↔ ≥ 2,672) → "không giữ" (loại); số chính xác của nguồn không đạt, chỉ số làm tròn đạt (8,27 / 8,3 ↔ ≥ 8,3) → "loại". Tức so chặt bằng số chính xác nhất của nhóm thắng, không nới khoảng làm tròn. Cũng 19/11 Khoa bảo BỎ: nới luật tần số thứ hai, đổi thứ tự / trần CN_ROWS ↔ PER_SUPPLIER. Ngoại lệ dữ liệu sai của một vài dòng: sửa riêng dòng đó (`ROW_EXCEPTIONS`), không đổi luật.
