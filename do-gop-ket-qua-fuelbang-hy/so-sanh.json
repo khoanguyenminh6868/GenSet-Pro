@@ -1,0 +1,31 @@
+{
+ "a": {
+  "luot": 1093,
+  "giongGoc": 478,
+  "khacGoc": 615,
+  "doiTop": 4,
+  "doiTapTop": 4,
+  "doiThuTuTop": 0,
+  "doiHang1": 0,
+  "chiKhacDiemTop": 0,
+  "khacCacConLai": 611,
+  "loi": 0,
+  "thieuKey": 0
+ },
+ "b": {
+  "luot": 1093,
+  "giongGoc": 552,
+  "khacGoc": 541,
+  "doiTop": 70,
+  "doiTapTop": 53,
+  "doiThuTuTop": 17,
+  "doiHang1": 2,
+  "chiKhacDiemTop": 2,
+  "khacCacConLai": 469,
+  "loi": 0,
+  "thieuKey": 0
+ },
+ "goc": {
+  "luot": 1093
+ }
+}
