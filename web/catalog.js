@@ -936,8 +936,35 @@
   // "Standard Land-based Generator Set" pages of "…*7NG" rows whose title and URL say nothing of fuel; the page's breadcrumb
   // "Products & Businesses / Energy & Power / Generator Set / Overseas Gas" and its image names "16M33NG-机组燃气-1.png" do
   // (live pages read 20/11/2026, all four; also in sources/weichai-power/<n>.md). Level T: the page's category.
-  const FUEL_PAGES = [{ supplierId: "weichai-power", ns: [125, 126, 127, 128], fuel: "gas", why: 'trang ghi đường dẫn "Generator Set / Overseas Gas" và ảnh "机组燃气" (đọc trang sống 20/11/2026)' }];
-  const fuelPage = (id, n) => { const p = FUEL_PAGES.find((x) => x.supplierId === id && x.ns.includes(n)); return p ? { fuel: p.fuel, from: "T", why: p.why } : null; };
+  // Nhiên liệu theo bảng (Khoa 20/11/2026, câu 3 / 4X / 5 của catalog-nhom-con-lai-de-xuat.md), same list:
+  // - jianghao-genset n104 (b4 + b5, "JHRQ-…"): the page's note ① right under both tables says the sets run on natural gas,
+  //   oil field gas, bio-gas… (sources/jianghao-genset/104.md); the "FuelCon. (L)" column and the "Gas Generator" title alone
+  //   were not enough (`litre`). Level T: the page's own words outside the saved table.
+  // - simpson-power n124: the page names no fuel ("SIMPSON-GasGenerators" is a name); only the rows whose ENGINE is a Honda
+  //   GX390 / GX630 / GX690 get gasoline, from the engine maker's datasheet (engines.honda.com, Fuel "Unleaded 86 octane or
+  //   higher", read 20/11/2026). Level D = "datasheet hãng động cơ". The ZS… and "31HP" / "35HP" rows stay without fuel.
+  // - zc-power n109 b11 / b12 (GENSET_TABLES, `part: "genset"`: read by gensetsOf, not fromSupplier): page title
+  //   "Gasoline Generators". The other genset tables get no fuel (gensetsOf writes none by itself).
+  // `engines`: model key -> the datasheet URL (a row of another engine gets nothing); `header`: the table's first header line
+  // verbatim (the source changes its header -> no fuel, like ROW_EXCEPTIONS / GENSET_TABLES).
+  const HONDA_GX = 'datasheet hãng động cơ Honda %M ghi Fuel "Unleaded 86 octane or higher" (%U, đọc 20/11/2026)';
+  const FUEL_PAGES = [
+    { supplierId: "weichai-power", ns: [125, 126, 127, 128], fuel: "gas", why: 'trang ghi đường dẫn "Generator Set / Overseas Gas" và ảnh "机组燃气" (đọc trang sống 20/11/2026)' },
+    { supplierId: "jianghao-genset", ns: [104], fuel: "gas", why: 'trang ghi ngay dưới hai bảng "①The above generators can be used natural gas, oil filed gas, bio-gas…" (tệp nguồn lưu 13–14/11/2026)' },
+    { supplierId: "simpson-power", ns: [124], from: "D", fuel: "gasoline", header: "| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长×宽×高) | 机 组 数 据",
+      engines: { GX390: "https://engines.honda.com/models/model-detail/x-large-gx", GX630: "https://engines.honda.com/models/model-detail/v-twin-horizontal", GX690: "https://engines.honda.com/models/model-detail/v-twin-horizontal" }, why: HONDA_GX },
+    { supplierId: "zc-power", ns: [109], part: "genset", fuel: "gasoline", why: 'tên trang "Gasoline Generators | Factory-Direct Prices | ZC Power"' },
+  ];
+  // The fuel of record `o` (of `fromSupplier`, or `part` "genset" = of `gensetsOf`) by FUEL_PAGES, or null.
+  // `h0`: the first header line of the SAVED table (s.specTables, before tidyTable joins the spaces between Han characters).
+  const fuelPage = (id, o, h0, part = "row") => {
+    const p = FUEL_PAGES.find((x) => x.supplierId === id && x.ns.includes(+o.n) && (x.part || "row") === part);
+    if (!p) return null;
+    if (p.header != null && String(h0 ?? "").trim() !== p.header) return null;
+    if (!p.engines) return { fuel: p.fuel, from: p.from || "T", why: p.why };
+    const m = o.kind === "engine" && Object.keys(p.engines).find((k) => keyOf(k) === keyOf(o.model));
+    return m ? { fuel: p.fuel, from: p.from || "T", why: p.why.replace("%M", m).replace("%U", p.engines[m]) } : null;
+  };
   // A table's gas set (its header rows are not read): the same signs, no row, the page's URL when known.
   const gasTable = (t, lines, url) => { const f = fuelFrom(fuelSigns({ title: t.title, header: [], rows: lines }, url), null); return !!f && (f.fuel === "gas" || f.fuel === "dual") || GAS_WORD.test(`${t.title || ""} ${lines.join(" ")}`) || lines.some((l) => /-NG$/i.test(cellsOf(l)[0] || "")); };
   function tidyTable(t, note = () => {}, url = "") {
@@ -1460,7 +1487,7 @@
     const fuelSg = new Map();
     for (const o of out) {
       if (!fuelSg.has(o.table)) { const t0 = s.specTables[o.table]; fuelSg.set(o.table, fuelSigns(t0, ((s.sources || []).find((x) => x.n === t0.n) || {}).url || "")); }
-      const f = fuelFrom(fuelSg.get(o.table), o.line || `| ${o.genset || ""}`) || fuelPage(s.id, o.n);
+      const f = fuelFrom(fuelSg.get(o.table), o.line || `| ${o.genset || ""}`) || fuelPage(s.id, o, s.specTables[o.table]?.header?.[0]);
       if (f) { o.fuel = f.fuel; o.fuelFrom = f.from; o.fuelWhy = f.why; }
     }
     return mergeRepeats(rowExceptions(s, out, note));
@@ -1497,6 +1524,35 @@
       ["fukangsi-yangzhou", 2001, "FKS-C20", "| FKS-C20 | 20/25 | 东风康明斯 | 4B3.9-G1 | 4 | 3.92 | 9 | ≤210 | 1600*800*1300 | 5500"],
       ["pengpai-yangzhou", 125, "PPDL-C20", "| PPDL-C20 | 20/25 | 东风康明斯 | 4B3.9-G1 | 4 | 3.92 | 9 | ≤210 | 1600*800*1300 | 5500"]].map(([supplierId, n, genset, line]) => (
       { supplierId, n, genset, line, act: "dropspec", keys: ["weight"], khoa: "Khoa 19/11/2026", why: "nguồn ghi khối lượng không hợp công suất của dòng (1.440 kg cho 1.600 kW, 5.500 kg cho 20 kW): bỏ riêng khối lượng, giữ phần còn lại của dòng" })),
+    // dropspec, Khoa 20/11/2026 ("9 dòng loại": the source itself writes a wrong figure; the live page was re-read the same day and
+    // equals the saved page word for word, so it is the source, not the reader). No replacement figure is written: the source gives none.
+    // aoke-yangzhou n129: 排量(L) "108" / "105" on 250 kW sets (the same table writes "14" and "12.88" for its other engines).
+    ...[["AOKE-C280", "| AOKE-C280 | 250KW | 280KW | 重庆康明斯 | MTAA11-G3 | 6 | 108 | 39 | 200 | 3100*1300*1760 | 3200 | | 详细参数"],
+      ["AOKE-M275", "| AOKE-M275 | 250KW | 275KW | 奔驰 | 6R1600G20F | 6 | 105 | 43 | 200 | 2900*1150*1650 | 2620 | | 详细参数"]].map(([genset, line]) => (
+      { supplierId: "aoke-yangzhou", n: 129, genset, line, act: "dropspec", keys: ["disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi dung tích 108 / 105 L cho tổ máy 250 kW (bảng cùng trang ghi 14 và 12.88 L cho động cơ khác): bỏ riêng dung tích" })),
+    // jlmech-wuhan n103 JL-1000GF: "458" L (160×190 mm × 12 xi lanh); the next row of the table, JL-1200GF, writes 45.8 for the same engine size.
+    { supplierId: "jlmech-wuhan", n: 103, genset: "JL-1000GF", line: "| JL-1000GF | 1000 | 1250 | 1800 | 4012-46TWG2A | 12 | 160*190 | 458 | 177 | 212 | 4950*2200*2550 | 8500", act: "dropspec", keys: ["disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi dung tích 458 L (dòng kế ghi 45.8 L cho cùng cỡ động cơ): bỏ riêng dung tích, không đọc là 45.8" },
+    // jlmech-wuhan n104 JL-180GF / JL-220GF: the Size cell has lost its "*" ("30001030*1550", "31001100*1750").
+    ...[["JL-180GF", "| JL-180GF | 180 | 225 | 324 | YC6MK285L-D20 | 6 | 123*145 | 10.33 | 28 | 195 | 30001030*1550 | 2600"],
+      ["JL-220GF", "| JL-220GF | 220 | 275 | 396 | Y06MK350L-D20 | 6 | 123*145 | 10.33 | 28 | 195 | 31001100*1750 | 2800"]].map(([genset, line]) => (
+      { supplierId: "jlmech-wuhan", n: 104, genset, line, act: "dropspec", keys: ["dims"], khoa: "Khoa 20/11/2026", why: "ô kích thước mất dấu * (30001030*1550): bỏ riêng kích thước, không tự tách số" })),
+    // aosif n123 AW1000 (8M33D979E201): "12V | 31.8"; the same table writes 8V / 26.1 for 8M33D845E201 (AW875). Same figures as AW1125 (PR catalog-b2-aosif).
+    { supplierId: "aosif", n: 123, genset: "AW1000", line: "| AW1000 | 900/720 | 1000/800 | 8M33D979E201 | 205.4 | 12V | 31.8 |", act: "dropspec", keys: ["cyl", "disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi 12V / 31,8 L cho động cơ 8M33 (cùng bảng ghi 8V / 26,1 L cho 8M33D845E201): bỏ riêng số xi lanh và dung tích" },
+    // cameo-power n107 SC-70YC (column of a table written across): Engine Power 35/41 kW under a 64/70 kW set (the two other columns repeat the set's power).
+    { supplierId: "cameo-power", n: 107, genset: "SC-70YC", line: "| Engine Power(kw) (prime/standby) | 50/55 | 55/60 | 35/41", act: "dropspec", keys: ["engPower"], khoa: "Khoa 20/11/2026", why: "nguồn ghi công suất động cơ 35/41 kW nhỏ hơn tổ máy 64/70 kW: bỏ riêng công suất động cơ" },
+    // jiangchai-xuzhou n107 J20B400M (6M33D506E310): current "7200" A for a 450 kVA set (neighbours: 846 A for 520 kVA).
+    { supplierId: "jiangchai-xuzhou", n: 107, genset: "J20B400M", line: "| J20B400M | 400 | 450 | 潍柴博杜安 | 6M33D506E310 | 7200 | 88 | 3.673*1.5*1.95 | 4500 | 详细", act: "dropspec", keys: ["current"], khoa: "Khoa 20/11/2026", why: "nguồn ghi dòng điện 7200 A cho tổ máy 450 kVA (dòng kế 846 A cho 520 kVA): bỏ riêng dòng điện" },
+    // mingbang-mbkl n125 MB-V480 (TAD1642GE): "4 | 4.4" for a 480 kW set; the table gives 4 cylinders even for its 6.0 L row (TWD1643GE, 100×127), and
+    // aoke-yangzhou writes TAD1642GE as 6 cylinders / 16.12 L. Bore × stroke stays (Khoa 20/11/2026: cyl + disp only).
+    { supplierId: "mingbang-mbkl", n: 125, genset: "MB-V480", line: "| 14 | MB-V480 | 600 | 480 | 660 | 528 | TAD1642GE | 4 | 4.4 | 105*127 | 118.4 | 4700×2100×2600", act: "dropspec", keys: ["cyl", "disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi 4 xi lanh / 4,4 L cho tổ máy 480 kW (nguồn khác ghi 6 / 16,12 L): bỏ riêng số xi lanh và dung tích" },
+    // westinpower n1064 TP880L (a PDF table written down the page): "Rated rotation speed 1191 r/min"; the same PDF writes "Engine speed Rated 1500 RPM" on page 2.
+    { supplierId: "westinpower", n: 1064, genset: "TP880L", line: "| Rated rotation speed | r/min | 1191", act: "dropspec", keys: ["speed"], khoa: "Khoa 20/11/2026", why: "nguồn ghi tốc độ 1191 v/p (trang 2 cùng PDF ghi 1500 RPM): bỏ riêng tốc độ, không lấy số trang 2 thay" },
+    // huipu-power n105 HP-P1330 / n106 HP-V280, HP-V400 (Khoa duyệt 20/11/2026, cùng kiểu "458" của jlmech):
+    // "Swept volume(L)" 458 (160×190 mm × 12 xi lanh; dòng HP-P1113 cùng bảng ghi 45.8 cho 4012-46TWG2A) và 1278 (131×158 mm × 6 xi lanh).
+    ...[[105, "HP-P1330", "| HP-P1330 | 1200 | 1330 | 4012-46TAG2A | 12 | 160*190 | 458 | 301 | 501 | 177.1 | 4980*2200*2520 | 10200"],
+      [106, "HP-V280", "| HP-V280 | 280 | 280 | TAD1341GE | 6 | 131*158 | 1278 | 65.4 | 148 | 36 | 3050*1114*1391 | 2420"],
+      [106, "HP-V400", "| HP-V400 | 360 | 400 | TAD1345GE | 6 | 131*158 | 1278 | 96.8 | 210 | 36 | 3210*1114*1600 | 2750"]].map(([n, genset, line]) => (
+      { supplierId: "huipu-power", n, genset, line, act: "dropspec", keys: ["disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi dung tích 458 / 1278 L (cùng cỡ động cơ ở dòng khác của trang ghi 45.8): bỏ riêng dung tích" })),
   ];
   function rowExceptions(s, list, note) {
     const ex = ROW_EXCEPTIONS.filter((x) => x.supplierId === s.id);
@@ -2048,7 +2104,11 @@
         else if (hEng.length === 1) addMake(makes, hEng[0], "tiêu đề cột");
         else if (tEng.length === 1) addMake(makes, tEng[0], "tên trang");
         else if (s.role === "engine_maker" && ownBrand.length === 1) addMake(makes, ownBrand[0], "hãng sản xuất");
-        out.push({ supplierId: s.id, n: t.n, table: ti, title, row: ri, line, header: t.header || [], kind: "genset", model, power: Object.keys(power).length ? power : null, freq, specs, makes });
+        const o = { supplierId: s.id, n: t.n, table: ti, title, row: ri, line, header: t.header || [], kind: "genset", model, power: Object.keys(power).length ? power : null, freq, specs, makes };
+        // Fuel only from the FUEL_PAGES list (zc-power n109): a genset table's own signs are not read here.
+        const f = fuelPage(s.id, o, s.specTables[ti]?.header?.[0], "genset");
+        if (f) { o.fuel = f.fuel; o.fuelFrom = f.from; o.fuelWhy = f.why; }
+        out.push(o);
       });
     });
     return out;
