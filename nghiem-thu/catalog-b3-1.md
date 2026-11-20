@@ -200,3 +200,73 @@ Cách đếm: `genbid-test\b3\e2.mjs` (vá trong bộ nhớ `makesFor` của `we
 Lưu ý: PR này làm rộng hơn 3 dòng zhengchi điều phối nêu (288 bản ghi ở ~35 NCC, tất cả mã Doosan trước đó bị bỏ vì bảng không có cột đầu phát). Mọi bản ghi đều là mã `DOOSAN_P` dưới cột động cơ; chưa soát tay từng dòng, cần soát khi làm PR riêng (đo cloud / quality sau).
 **Đối chiếu trang hãng:** "P126TI-II" có trang chính hãng HD Hyundai Infracore (HD Hyundai Engine): https://www.hd-hyundaiengine.com/en/engine/generator-detail/14 ("An 11-liter engine (maximum output: 342 kWm) for an inline, six-cylinder, turbo/intercooler generator" — mô tả công cụ tìm kiếm, em chưa mở cả trang). Catalog "Doosan Diesel Engine Series for Generator" (7–995 kW) của HD Hyundai Infracore đăng ở pdf.directindustry.com/pdf/hd-hyundai-infracore/doosan-diesel-engine-series-generator/26469-953489.html (chưa mở PDF kiểm từng mã). P086TI chỉ thấy qua trang không chính hãng (scribd "PU086TI"), P158LE chưa kiểm riêng → KHÔNG khẳng định cho P086TI / P158LE; hậu tố "-11", "-1", "-I" của zhengchi / NCC khác không có trong tên hãng (hãng ghi "P126TI-II"), nên "P126TI-11" là cách viết của NCC.
 **ZCDL-Q363 (n112):** nguồn `suppliers/sources/zhengchi-power/128.md:145` ghi nguyên văn `| 330KW | 363KW | 乾能 | ZCDL-Q363 | 653.4 | 50Hz | … | 6 | 14.6 | 3130×1115×1850 | 3000`; ô 柴油机型号 = "653.4" (số, không là mã; dòng Q396 liền trên ghi "12V135AZLD-1"). Không thấy mã động cơ ở nơi nào khác trong nguồn zhengchi cho Q363. Đề xuất: để nguyên (không bản ghi động cơ, đã là hành vi đúng của `isCode`), không đoán mã từ Q396. Chưa sửa.
+
+
+---
+## Top 30 cloud bản (e) (đo của điều phối main 091b5c26 ↔ 5a513b4b, `dau-vao\catalog-b3\top30-cloud-e\`; em phân tích 20/11, chưa đẩy commit)
+Số điều phối: 973 / 1.093 lượt giống (trước (e): 770); 56 lượt khác tập ứng viên; 483 khoá rời / 441 khoá vào; 66 lượt đổi top (24 đổi tập). Script em: `genbid-test\b3\e3.cjs`, `e4.mjs`, `e5.cjs`, `e6.cjs`, `e7.cjs`, `e9.cjs`; chạy lại `candidates` một lượt hai bản: `dogop1.mjs` (ONLY=IB2400073761) → `out\e1-main.json`, `out\e1-nhanh.json`.
+
+### (1) 40 khoá NCC KHÁC rời `all` — đều là luật tần số, và đều ở MỘT lượt
+Cả 40 khoá nằm ở một lượt **IB2400073761#0**; không NCC nào khác. Chạy lại `candidates` đúng lượt đó ở hai bản (dogop1): bản main KHÔNG loại dòng nào của 6 động cơ dưới đây bằng `freq`; bản nhánh loại đúng **40** dòng với `ruled = freq` (`config-bot.mjs` 1654–1658: `hints.freq && !u.freq`, mọi dòng có tần số của động cơ ghi một tần số khác HSMT, ≥ 2 dòng → trừ 600). Đây là cùng 40 dòng của lớp L3 ở mục "Top 30" trước (TAD734GE 31, YCA08350D30 4, WP7D264E310 2, TAD733GE 1, KP9D310D2 1, WD129TAD25 1); (e) không đổi gì ở lớp này.
+Cơ chế (đếm bằng `build()`): mỗi động cơ ở main chỉ có **1** dòng có tần số (50 Hz) → luật cần ≥ 2 nên không chạy; ở nhánh dòng zhengchi mang MÃ ĐỘNG CƠ THẬT thêm dòng thứ hai 50 Hz → luật chạy. Dòng zhengchi đó KHÔNG "chiếm chỗ" trong top (không dòng zhengchi nào vào top); nó chỉ thêm một dòng có tần số:
+| động cơ | dòng có tần số ở main → nhánh | dòng zhengchi thêm | số khoá NCC khác rời |
+|---|---|---|---|
+| TAD734GE | 50:1 → 50:2 | n135 ZCDL-V219 (50Hz) | 31 |
+| YCA08350D30 | 50:1 → 50:2 | n135 ZCDL-Y235 (50Hz) | 4 |
+| WP7D264E310 | 0 → 50:2 | n134 + n135 ZCDL-W220 (50Hz) | 2 |
+| TAD733GE | 50:1, 60:1 → 50:2, 60:1 | n136 ZCDL-V179 (50Hz) | 1 |
+| KP9D310D2 | 50:1 → 50:2 | n135 ZCDL-K200 (50Hz) | 1 |
+| WD129TAD25 | 50:1 → 50:2 | n133 ZCDL-X260 (50Hz) | 1 |
+Lưu ý chưa giải thích hết: TAD733GE ở `build()` của em có CẢ dòng 60 Hz nên luật lẽ ra không chạy, nhưng chạy `candidates` thật vẫn ghi `freq` cho dòng xingguang-jiangsu|TAD733GE (`e.uses` trong config-bot có thể đã lọc theo xuất xứ / đồng bộ khác `build()` thô). Tần số HSMT của lượt em chưa đọc từ bidhist (chỉ biết nó khác 50 vì TAD734GE chỉ có dòng 50 Hz mà bị loại).
+Danh sách ĐỦ 40 khoá (lượt | NCC | động cơ | điểm ở bản gốc), tất cả IB2400073761#0:
+1. IB2400073761#0 | dingbo | TAD734GE | điểm 257
+2. IB2400073761#0 | fdk-energy | YCA08350D30 | điểm 245
+3. IB2400073761#0 | sr-genset | TAD734GE | điểm 223
+4. IB2400073761#0 | sr-genset | TAD734GE | điểm 220
+5. IB2400073761#0 | rcg-power | TAD734GE | điểm 213
+6. IB2400073761#0 | rcg-power | TAD734GE | điểm 207
+7. IB2400073761#0 | comappower | TAD734GE | điểm 205
+8. IB2400073761#0 | kaihua-genset | TAD734GE | điểm 205
+9. IB2400073761#0 | kaihua-genset | TAD734GE | điểm 205
+10. IB2400073761#0 | rcg-power | YCA08350D30 | điểm 205
+11. IB2400073761#0 | comappower | TAD734GE | điểm 203
+12. IB2400073761#0 | xingguang-jiangsu | TAD733GE | điểm 165
+13. IB2400073761#0 | jianghao-genset | TAD734GE | điểm 165
+14. IB2400073761#0 | mingbang-mbkl | TAD734GE | điểm 165
+15. IB2400073761#0 | world-power-fuzhou | TAD734GE | điểm 165
+16. IB2400073761#0 | xingguang-jiangsu | TAD734GE | điểm 165
+17. IB2400073761#0 | xingguang-jiangsu | TAD734GE | điểm 165
+18. IB2400073761#0 | yunding-jiangsu | YCA08350D30 | điểm 165
+19. IB2400073761#0 | jianghao-genset | TAD734GE | điểm 155
+20. IB2400073761#0 | meao-jiangsu | TAD734GE | điểm 155
+21. IB2400073761#0 | yunding-jiangsu | WP7D264E310 | điểm 155
+22. IB2400073761#0 | eastern-lion-fuan | KP9D310D2 | điểm 145
+23. IB2400073761#0 | app-power-anpu | TAD734GE | điểm 115
+24. IB2400073761#0 | bdadl-shanghai | TAD734GE | điểm 115
+25. IB2400073761#0 | fukangsi-yangzhou | TAD734GE | điểm 115
+26. IB2400073761#0 | haifeng-taizhou | TAD734GE | điểm 115
+27. IB2400073761#0 | huadong-yangzhou | TAD734GE | điểm 115
+28. IB2400073761#0 | kangwo-guangdong | TAD734GE | điểm 115
+29. IB2400073761#0 | liangzi-yangzhou | TAD734GE | điểm 115
+30. IB2400073761#0 | pengpai-yangzhou | TAD734GE | điểm 115
+31. IB2400073761#0 | pengpai-yangzhou | TAD734GE | điểm 115
+32. IB2400073761#0 | taihai-taizhou | TAD734GE | điểm 115
+33. IB2400073761#0 | walter-yangzhou | TAD734GE | điểm 115
+34. IB2400073761#0 | walter-yangzhou | TAD734GE | điểm 115
+35. IB2400073761#0 | app-power-anpu | YCA08350D30 | điểm 115
+36. IB2400073761#0 | app-power-anpu | WP7D264E310 | điểm 115
+37. IB2400073761#0 | vantek-jiangsu | TAD734GE | điểm 113
+38. IB2400073761#0 | vantek-jiangsu | TAD734GE | điểm 112
+39. IB2400073761#0 | shengfeng-fuan | WD129TAD25 | điểm 107
+40. IB2400073761#0 | kangwo-guangdong | TAD734GE | điểm 105
+
+### (2) 441 khoá VÀO
+Toàn bộ 441 khoá vào (1.197 lượt-khoá) là **zhengchi-power**; không khoá nào của NCC khác (em đối chiếu từng khoá: 0 không phải zhengchi). Cả 441 khoá có tên động cơ (phần thứ hai của khoá) đúng bằng ô NGAY SAU mã tổ máy ZCDL… trong dòng nguồn (441 / 441, 0 lệch): đúng cột 柴油机型号, không lấy mã tổ máy làm động cơ.
+### (3) 24 lượt đổi tập top (ra / vào)
+- **Không dòng zhengchi nào VÀO top** ở cả 24 lượt (đếm số khoá zhengchi trong top gốc / nhánh: 0 / 0, trừ IB2600219527#0: 1 / 0). Vậy không có dòng zhengchi mới cần soát mã động cơ / công suất ở top.
+- 1 lượt có zhengchi RA: **IB2600219527#0**: ra `zhengchi-power|ZCDLD100` @71 (dòng nguồn n143 `| 90KW | 100KW | 斗山 | ZCDL-D100 | D1146T | …`: mã tổ máy bị đọc làm động cơ ở bản gốc), vào `long-gen|WHI224G` @127. Ở nhánh dòng đó thành khoá `zhengchi-power|D1146T` @119 (động cơ D1146T đúng cột, công suất 90 / 100 KW giữ như nguồn) nên không còn trong top (top 30 nay lấy dòng 127 trước 119). Đúng kỳ vọng.
+- 23 lượt còn lại là dòng NCC khác đổi chỗ, điểm KHÔNG đổi ở mọi dòng (đã kiểm: cùng khoá, cùng điểm ở `all` hai bản), chỉ thứ hạng trong `all` xê dịch vài bậc vì các dòng zhengchi khoá ZCDL… (hạng đầu) nay là khoá động cơ thật:
+  - **jet-power TAD751GE @276 ra, jet-power WP6D132E200 @269 vào**: 13 lượt (IB2300046166#0, 2300111838#0, 2300134577#2, 2300136367#0, 2300190927#1, 2300220257#0, 2300340274#0, 2400043707#1, 2400062394#2, 2400515309#0, 2400566322#0, 2500015269#0, 2500061368#0). TAD751GE ở cùng hạng #63 / điểm 276 hai bản; WP6D132E200 (Weichai, xuất xứ cn) từ #98 lên #93. Top 30 gốc có 13 dòng hãng Trung Quốc, nhánh 14 (đo ở lượt IB2300046166#0: Volvo Penta 1 → 0, Weichai 3 → 4): một dòng cn thêm một chỗ (đúng cơ chế `CN_ROWS = 12` giữ chỗ cho hãng Trung Quốc, `config-bot.mjs` ~1706) nên dòng hãng ngoại (Volvo 276) mất chỗ cuối cho dòng cn 269. Em CHƯA chạy từng bước `pick` để chỉ ra đúng dòng nào chiếm chỗ cn; kết luận trên dựa vào hạng và số dòng cn trong top.
+  - **sanq-power 1106A70TAG4 / tecgen-fujian 1106A70TAG3 ra, sanq-power 1106A70TAG3 / hosem-power 1106A70TAG4 @272 vào**: 8 lượt (IB2200023019#0, 2200023806#0, 2300163186#3, 2300204857#0, 2300293753#2, 2300329118#0, 2400032948#1; và IB2300220302#0 biến thể @484/@481: ra sanq 1106A70TAG4 + wintpower 1106A70TAG3, vào sanq 1106A70TAG3 + uleengen 1106A70TAG4). Điểm bằng nhau (284 / 284); hạng đổi vài bậc (sanq TAG4 #22 → #32, tecgen TAG3 #34 → #24…): chênh bằng thứ tự bằng điểm trong `all`, kèm giới hạn `PER_ENGINE = 3` / `PER_SUPPLIER = 4`.
+  - IB2200084263#0: ra uleengen WP10D264E200 @475, vào voltgent 1506AE88TAG3 @475 (hạng #71 → #74 và #76 → #73, điểm bằng nhau). IB2500410852#0: ra eastern-lion YC6MK350LD20 @269, vào dingbo 1506AE88TAG3 @269 (#87 → #89, #90 → #83, điểm bằng nhau).
+  Chưa có dòng nào trong 23 lượt này có điểm đổi; mọi đổi tập là đổi thứ tự trong cùng điểm / giữ chỗ cn.
