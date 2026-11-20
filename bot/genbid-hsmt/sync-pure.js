@@ -988,7 +988,18 @@ const withNormHighlights = (result) => [...(Array.isArray(result?.highlights) ? 
 // ---------- archives (.rar, .zip, .7z) the bot unpacks to read (archiveText of genbid-sync.js; Publish 19/11/2026) ----------
 // An archive is listed before it is unpacked: more entries or more bytes than this, or an entry that would land outside the
 // folder, and it is not unpacked at all (a reason is noted). files / depth: documents read inside, archives inside archives.
-const ARCHIVE_LIMITS = { entries: 500, bytes: 1024 ** 3, files: 30, depth: 1 };
+// files was 30 (since the first import of the bot, no reason recorded): a tender with 42 and one with 48 files lost their last
+// 12 and 18 (IB2500441397, IB2600576655, 20/11/2026). Now equal to entries: the listing refusal above is the guard against a
+// bomb, so every file of an archive that may be unpacked is read. What is read first: archiveOrder.
+const ARCHIVE_LIMITS = { entries: 500, bytes: 1024 ** 3, files: 500, depth: 1 };
+// Order to read the files of an archive: files that already carry text (.docx .xlsx .doc .pdf with a text layer, nested
+// archives) first, scans and pictures (OCR, slow) after, so that whatever stops the reading late costs scans, not text.
+// items: [{ p: path, scan: bool }]. Stable: names keep their order inside each group.
+const archiveOrder = (items) => [...items.filter((i) => !i.scan), ...items.filter((i) => i.scan)];
+// readNote of an OCR that failed and left no text: "OCR lỗi (<what the OCR said, short>), chưa đọc".
+const ocrFailNote = (err) => `OCR lỗi${String(err || "").trim() ? ` (${String(err).trim().replace(/\s+/g, " ").slice(0, 100)})` : ""}, chưa đọc`;
+// Names of the files not read when an archive holds more than limit.files: "a, b, c ... (+N)".
+const unreadList = (names, max = 8) => names.slice(0, max).join(", ") + (names.length > max ? ` ... (+${names.length - max})` : "");
 // An entry name that would be written outside the folder: absolute ("/x", "C:\x", "\\srv\x") or with a ".." part.
 const unsafeEntry = (name) => { const n = String(name || "").replace(/\\/g, "/"); return n.startsWith("/") || /^[a-z]:/i.test(n) || n.split("/").includes(".."); };
 // `unrar lt -p-` (technical list): blocks of "Name: <name>", "Type: File|Directory|...", "Size: <bytes>".
@@ -1031,6 +1042,14 @@ function tarFail(status, stderr) {
   const l = s.split(/\r?\n/).map((x) => x.replace(/^tar(\.exe)?:\s*/i, "").trim()).find(Boolean);
   return `tệp nén hỏng hoặc không đọc được${l ? ` (${l.slice(0, 120)})` : ""}`;
 }
+// bsdtar cannot decrypt a ZIP with AES-encrypted contents: it lists the entries, then writes files of NUL bytes without an error
+// (found in the Sandbox trial 2026-11-20). A file whose first 64 KB are all NUL is not a readable document: archiveText drops
+// it and notes "có mật khẩu". `head` is the first bytes of the file, `size` its full size.
+function isNulFile(head, size) {
+  if (!size || !head || !head.length) return false;
+  for (let i = 0; i < head.length; i++) if (head[i] !== 0) return false;
+  return true;
+}
 // A PDF read without OCR (Publish): left for OCR at Phân tích when it has 5+ pages and 30%+ of them nearly empty (scans),
 // when its text layer is a broken font (garbled, ocr-pdf.js), or when it gives almost nothing. pdftotext ends every page
 // with a form feed. Same rule as Get-FileText of Publish-GenBidHsmt.ps1, plus the "almost nothing" case.
@@ -1068,6 +1087,6 @@ module.exports = {
   capCompare, SPEC_COMP, specComp, sameItems, reqNear, itemBare, specTwin, specsMerge, specsEmpty, partHead,
   askCut, askTrace, normTxt, numsOf, sourceOf, found, nearby, scoreItems, checkSupplier, SELF_KINDS,
   SELF_STATUS, subSections, SELF_AS, selfCheckItems, checkSelfChecks, checkResult,
-  ARCHIVE_LIMITS, unsafeEntry, unrarList, tarList, archiveRefusal, UNRAR_EXIT, unrarFail, tarFail, pdfNeedsOcr,
+  ARCHIVE_LIMITS, archiveOrder, unreadList, ocrFailNote, unsafeEntry, unrarList, tarList, archiveRefusal, UNRAR_EXIT, unrarFail, tarFail, isNulFile, pdfNeedsOcr,
   WRITE_BATCH, batchRows,
 };

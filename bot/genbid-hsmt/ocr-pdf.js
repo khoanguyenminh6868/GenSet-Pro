@@ -27,6 +27,19 @@ const popplerBin = () => {
   return "";
 };
 
+// A page of 4915 x 2326 pt (68 x 32 inch, a drawing, IB2600576655 e46) is 138 million pixels at 250 dpi: native Tesseract
+// gave nothing (null) on it, the PNG fallback of tesseract.js then died with "libpng error: Read Error", and the page
+// gave no text, silently (20/11/2026). Other drawings of the same zip up to 170 million pixels were read fine at 250 dpi,
+// so 250 stays the first try for every page; only when native Tesseract gave nothing the page is rendered again at a
+// dpi that keeps the image within RETRY_PIXELS (50 million: e46 at 150 dpi = 49.6 million pixels, read by native
+// Tesseract, 7628 characters) and read with a longer time limit (RETRY_MS).
+const OCR_DPI = 250, RETRY_PIXELS = 50e6, RETRY_MS = 1200e3;
+function renderDpi(widthPt, heightPt, dpi = OCR_DPI, maxPixels = RETRY_PIXELS) {
+  if (!(widthPt > 0 && heightPt > 0)) return dpi;
+  const px = (widthPt / 72 * dpi) * (heightPt / 72 * dpi);
+  return px <= maxPixels ? dpi : Math.max(72, Math.floor(dpi * Math.sqrt(maxPixels / px)));
+}
+
 // A text layer that is not readable Vietnamese (Khoa, 2026-11-04: 17 of 969 PDFs): a broken font ("3456ÿ89ÿ ÿ",
 // IB2500127205), an old TCVN3/VNI font ("Yªu cÇu kü thuËt") or mangled letters ("Phân 2. YEU CAU YE 1(2 THUJT",
 // IB2500302333). Such a page has almost none of the common Vietnamese words, with or without their marks; it is read
@@ -103,11 +116,11 @@ async function ocrFile(file, max = 300, find = 0, opts = {}) {
   const ocrJs = async (img) => { worker ||= await createWorker("vie+eng", 1, { cachePath: CACHE }); return (await worker.recognize(img)).data.text; };
   // Native Tesseract's text, or null when it is missing, fails or reads nothing. dpi: the resolution of a PGM, which carries
   // none (a PNG of pdftoppm does): given, the text is the same as from the PNG, letter for letter (checked 2026-11-16).
-  const native = (img, dpi) => {
+  const native = (img, dpi, timeout = 300e3) => {
     if (!NATIVE) return null;
     // Two OCR runs share the 4 cores: two threads each.
     const r = cp.spawnSync(NATIVE, [img, "stdout", "-l", "vie+eng", "--oem", "1", "--psm", "4", ...(dpi ? ["--dpi", String(dpi)] : []), "--tessdata-dir", TESSDATA],
-      { encoding: "utf8", maxBuffer: 64 << 20, timeout: 300e3, env: { ...process.env, OMP_THREAD_LIMIT: "2" }, windowsHide: true });
+      { encoding: "utf8", maxBuffer: 64 << 20, timeout, env: { ...process.env, OMP_THREAD_LIMIT: "2" }, windowsHide: true });
     return r.status === 0 && (r.stdout || "").trim() ? r.stdout : null;
   };
   const ocr = async (img) => native(img) ?? ocrJs(img);
@@ -145,6 +158,7 @@ async function ocrFile(file, max = 300, find = 0, opts = {}) {
         let { from, to } = NATIVE ? chapterRange(scanned, head) : { from: 0, to: 0 };
         if (from) { to ||= pages.length; scanned = scanned.filter((n) => n >= from && n <= to); process.stderr.write(`CHUONG5 ${from}-${to}\n`); }
       }
+      if (scanned.length > max && (find || !opts.locate)) process.stderr.write(`CAPPED ${max}/${scanned.length}\n`); // pages beyond max are not read: said, not silent
       scanned = scanned.slice(0, find || !opts.locate ? max : scanned.length);
       process.stderr.write(`SCAN ${scanned.length}/${pages.length}\n`); // early: a killed run still tells it is a scan
       const cacheF = (pre, n) => (opts.cache ? path.join(opts.cache, `${pre}${n}.txt`) : "");
@@ -177,6 +191,12 @@ async function ocrFile(file, max = 300, find = 0, opts = {}) {
         scanned = scanned.filter((n) => want.has(n)).slice(0, max);
         for (const n of scanned) pages[n - 1] = "";
       }
+      // Resolution for the second try of a page native Tesseract gave nothing for (see RETRY_PIXELS). The size comes from
+      // pdfinfo (points); unknown → 250 (no lower try).
+      const retryDpi = (n) => {
+        const m = String(cp.spawnSync(exe("pdfinfo"), ["-f", String(n), "-l", String(n), plain], { encoding: "utf8", timeout: 60e3 }).stdout || "").match(/Page\s+\d+\s+size:\s*([\d.]+)\s*x\s*([\d.]+)/);
+        return m ? renderDpi(Number(m[1]), Number(m[2])) : OCR_DPI;
+      };
       let osdTries = 0, osdRotated = 0;
       for (const n of scanned) {
         const c = cached("p", n);
@@ -185,8 +205,8 @@ async function ocrFile(file, max = 300, find = 0, opts = {}) {
         // The page as a PGM for native Tesseract (Khoa, 2026-11-16): no PNG compression, which took up to 80 s a page on a
         // scan with a 72 ppi image (a page of 1412×1996 pt is 34 million pixels at 250 dpi). tesseract.js (the fallback)
         // gets a PNG as before.
-        const render = (png) => {
-          cp.spawnSync(exe("pdftoppm"), ["-r", "250", "-gray", ...(png ? ["-png"] : []), "-f", String(n), "-l", String(n), plain, path.join(tmp, "p")], { timeout: 120e3 });
+        const render = (png, dpi = OCR_DPI) => {
+          cp.spawnSync(exe("pdftoppm"), ["-r", String(dpi), "-gray", ...(png ? ["-png"] : []), "-f", String(n), "-l", String(n), plain, path.join(tmp, "p")], { timeout: 120e3 });
           const f = fs.readdirSync(tmp).find((x) => x.startsWith("p") && x.endsWith(png ? ".png" : ".pgm"));
           return f ? path.join(tmp, f) : "";
         };
@@ -194,8 +214,16 @@ async function ocrFile(file, max = 300, find = 0, opts = {}) {
         if (NATIVE) {
           const img = render(false);
           if (!img) continue;
-          text = native(img, 250);
+          text = native(img, OCR_DPI);
           fs.rmSync(img);
+          if (text === null) {
+            const d = retryDpi(n);
+            if (d < OCR_DPI) {
+              process.stderr.write(`DPI ${n} ${d} (lần thứ hai, ảnh nhỏ hơn)\n`);
+              const img2 = render(false, d);
+              if (img2) { text = native(img2, d, RETRY_MS); fs.rmSync(img2); }
+            }
+          }
         }
         if (text === null) {
           const img = render(true);
@@ -233,7 +261,7 @@ async function ocrFile(file, max = 300, find = 0, opts = {}) {
     return { text: pages.join("\f"), ocr: scanned.length, pages: pages.length, partial };
   } finally { await worker?.terminate(); }
 }
-module.exports = { ocrFile, garbled, legible, rotatePgm, scanPages, chapterRange, plainOcr, MIN_CHARS };
+module.exports = { ocrFile, renderDpi, OCR_DPI, RETRY_PIXELS, garbled, legible, rotatePgm, scanPages, chapterRange, plainOcr, MIN_CHARS };
 
 if (require.main === module) {
   const args = process.argv.slice(2), val = (k) => { const i = args.indexOf(k); return i >= 0 ? args[i + 1] : undefined; };

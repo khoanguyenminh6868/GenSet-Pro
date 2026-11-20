@@ -49,7 +49,7 @@ test("archiveRefusal: đường dẫn thoát thư mục, quá số mục, quá d
   assert.match(P.archiveRefusal([{ name: "bomb.bin", size: 2 * 1048576 }], { ...lim, bytes: 1048576 }), /2 MB, quá giới hạn 1 MB/);
   assert.equal(P.archiveRefusal([{ name: "a", size: 50 }, { name: "b", size: 50 }], lim), "");
   assert.equal(P.archiveRefusal([]), "");
-  assert.deepEqual(P.ARCHIVE_LIMITS, { entries: 500, bytes: 1024 ** 3, files: 30, depth: 1 });
+  assert.deepEqual(P.ARCHIVE_LIMITS, { entries: 500, bytes: 1024 ** 3, files: 500, depth: 1 });
 });
 test("unrarFail: 0 không lỗi; 1 tệp nén thiếu/hỏng một phần; 11 mật khẩu, 3 sai CRC, quá thời gian, mã lạ", () => {
   assert.equal(P.unrarFail(0), "");
@@ -74,4 +74,12 @@ test("pdfNeedsOcr: ≥5 trang với ≥30% trang trống, chữ hỏng font, hay
   assert.equal(P.pdfNeedsOcr([good, good, good, good, ""].map(page).join("")), false); // 1/5 = 20%
   assert.equal(P.pdfNeedsOcr(page("") + page("  ")), true); // 2 trang scan: không có chữ
   assert.equal(P.pdfNeedsOcr(page(good), () => true), true); // hỏng font (garbled của ocr-pdf.js)
+});
+
+test("isNulFile: tệp bsdtar ghi toàn byte NUL (ZIP mã hoá AES) không phải tài liệu đọc được", () => {
+  assert.equal(P.isNulFile(Buffer.alloc(21), 21), true);
+  assert.equal(P.isNulFile(Buffer.alloc(65536), 3000000), true);
+  assert.equal(P.isNulFile(Buffer.from("--- a ---\nchữ"), 14), false);
+  assert.equal(P.isNulFile(Buffer.concat([Buffer.alloc(100), Buffer.from("x")]), 101), false);
+  assert.equal(P.isNulFile(Buffer.alloc(0), 0), false); // tệp rỗng thật: không đổi hành vi
 });

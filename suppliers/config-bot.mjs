@@ -938,6 +938,27 @@ export function layoutOf(value) {
   if (/^\s*\d{1,2}\s*[.\-]?\s*L\s*$|^\s*L\s*-?\s*\d{1,2}\s*$|\bDiesel\s*L\b/i.test(s)) return "inline";
   return null;
 }
+// The fuel of the genset the HSMT asks (Khoa 20/11/2026, máy khí bước 2): "diesel" | "gas" | "gasoline" | null.
+//  - one kind named → that kind; a HSMT that names none → "diesel" (a generator tender is diesel unless it says otherwise);
+//  - two kinds or more (a maintenance package of petrol and diesel sets, a menu of choices) → null: no rule, nothing dropped.
+// Only the words that name the FUEL of the set: "khí tự nhiên" alone is "hút khí tự nhiên" (a naturally aspirated engine),
+// and "xăng dầu" is a petrol station; "dầu DO" / "diesel" in spare parts lists name diesel too, which only matters beside another kind.
+const FUEL_GAS_H = /khí\s*thiên\s*nhiên|\bbio-?gas\b|khí\s*sinh\s*học|khí\s*hóa\s*lỏng|\bLPG\b|\bCNG\b|\bLNG\b|natural\s*gas|nhiên\s*liệu\s*(?:sử\s*dụng\s*)?(?:là\s*|:\s*|bằng\s*)(?:khí|gas)(?![a-zà-ỹ])(?!\s*(?:thải|nạp|nén|đốt|hậu|quyển|xả|hút|gió))|(?:chạy|dùng|sử\s*dụng)\s*(?:nhiên\s*liệu\s*)?(?:bằng\s*)?(?:khí|gas)(?![a-zà-ỹ])(?!\s*(?:thải|nạp|nén|đốt|hậu|quyển|xả|hút|gió))|(?<!liên\s*)động\s*cơ\s*(?:chạy\s*)?(?:bằng\s*)?(?:khí|gas)(?![a-zà-ỹ])(?!\s*(?:thải|nạp|nén|đốt|hậu|quyển|xả|hút|gió))|\bgas\s+(?:engine|generator|genset)/i;
+const FUEL_GASOLINE_H = /(?:chạy|dùng|sử\s*dụng)\s*(?:nhiên\s*liệu\s*)?(?:bằng\s*)?xăng(?![a-zà-ỹ])(?!\s*dầu)|(?:động\s*cơ|máy|nhiên\s*liệu(?:\s*sử\s*dụng)?)\s*(?:là\s*|:\s*|bằng\s*)?xăng(?![a-zà-ỹ])(?!\s*dầu)|nhiên\s*liệu[^.\n]{0,40}(?:hoặc|và|\/|,)\s*xăng(?![a-zà-ỹ])(?!\s*dầu)|\bgasoline\b|\bpetrol\b/i;
+const FUEL_DIESEL_H = /\bdi[ee]?zel\b|\bdiesel\b|\bdầu\s*(?:diesel|do)\b|động\s*cơ\s*(?:chạy\s*)?dầu\b|chạy\s*dầu\b/i;
+export function fuelOfHsmt(text) {
+  const t = String(text || "").normalize("NFC"), kinds = [];
+  const g = t.match(FUEL_GAS_H), x = t.match(FUEL_GASOLINE_H), d = t.match(FUEL_DIESEL_H);
+  if (g) kinds.push(["gas", g[0]]);
+  if (x) kinds.push(["gasoline", x[0]]);
+  if (d) kinds.push(["diesel", d[0]]);
+  if (kinds.length > 1) return { fuel: null, stated: true, why: `HSMT nêu nhiều loại nhiên liệu (${kinds.map((k) => k[1]).join("; ")})` };
+  if (kinds.length === 1) return { fuel: kinds[0][0], stated: true, why: kinds[0][1] };
+  return { fuel: "diesel", stated: false, why: "HSMT không nêu nhiên liệu, coi là diesel" };
+}
+// A catalog use (`u.fuel` "gas" / "gasoline" / "dual", written only when the page says it) against the fuel the HSMT asks:
+// true when it is the wrong one; a use with no fuel is never wrong (empty is not diesel).
+export const fuelOff = (want, useFuel) => !!want && !!useFuel && !(want === "gas" ? useFuel === "gas" || useFuel === "dual" : want === "gasoline" ? useFuel === "gasoline" || useFuel === "dual" : false);
 export function hintsOf(text, extra = "", sizing = null) {
   const t = `${technicalPart(text)}\n${String(extra ?? "").normalize("NFC")}`;
   const names = (list) => list.filter(([re]) => re.test(t)).map(([, n]) => n);
@@ -953,7 +974,7 @@ export function hintsOf(text, extra = "", sizing = null) {
   const engineMakes = names(CAT.ENGINE_BRANDS);
   for (const m of [trait.engineMake, ...trait.unused.filter((u) => u.equivalent && u.at === "engine").map((u) => u.makeName)]) if (m && !engineMakes.includes(m)) engineMakes.push(m);
   return { engineMakes, trait, altMakes: names(CAT.ALT_BRANDS), ctrlMakes: ctrl, ctrlModels: CAT.controllersIn(t).filter((c) => c.model).map((c) => CAT.keyOf(c.model)),
-    freq: f50 && !f60 ? 50 : f60 && !f50 ? 60 : null, cylLayout: cylLayoutOf(t), madeRule: partOriginOfHsmt(text), text: squashOf(t), ...engineMins(t), ...(sized ? sized.mins : {}), ...(sized?.note ? { sizeNote: sized.note } : {}) };
+    freq: f50 && !f60 ? 50 : f60 && !f50 ? 60 : null, cylLayout: cylLayoutOf(t), fuel: fuelOfHsmt(technicalPart(text)).fuel, madeRule: partOriginOfHsmt(text), text: squashOf(t), ...engineMins(t), ...comprOf(t), ...(sized ? sized.mins : {}), ...(sized?.note ? { sizeNote: sized.note } : {}) };
 }
 // The engine minimums the HSMT states ("Dung tích xy lanh ≥ 11,05 L", "Tối thiểu 06 xi lanh"), one value each: a tender
 // of several gensets that gives two values is left alone. candidates() ranks an engine a source shows below them lower
@@ -1020,6 +1041,65 @@ function inlineCyl(line) {
   const all = [...line.matchAll(/(?<![\d×*\/-]\s?)(?<![\p{L}\d.,]|\bx\s?)0?(\d{1,2})\s*(?:xi|xy)[\s-]?lanh/giu)]
     .filter((m) => !/(?:đ[ườu]*ng k[ií]nh|h[àa]nh tr[ìi]nh|dung t[íi]ch|bore|stroke)[^\d]{0,15}$/i.test(line.slice(Math.max(0, m.index - 30), m.index)));
   return all.length && all.every((m) => m[1] === all[0][1]) ? all[0] : null;
+}
+// ---------- Tỉ số nén HSMT ghi trơ = số chính xác (Khoa 20/11/2026, IB2600603983: "sửa luật để kiểm tra tỉ số nén nếu hsmt
+// ghi trơ") ----------
+// Each line of the HSMT that gives the compression ratio: { x, kind, line }. kind "exact" = the figure alone ("14 : 01",
+// "Tỷ số nén | 17.3:1", "Tỉ số nén: 16:1"), "min" (≥ > tối thiểu…), "max" (≤ < tối đa…), "band" (two figures, khoảng, ±,
+// ~), "ref" (the engine of goods for reference: "tham khảo", "tương đương", "tương tự" on that line or the one around it).
+// "Nêu cụ thể" / "Ghi rõ" / "Theo tiêu chuẩn nhà sản xuất" give no figure and no entry. The value is the label's own cell,
+// else the next line when it is only that value (a table cell wrapped: "Tỉ số nén" / "≥ 20:1"). Figures out of 5–30
+// (OCR "175:1") are not read.
+// Not a "compression ratio limiter" (IB2300270603 writes "Compression ration limiter : 20:1"), a part, not the ratio.
+const COMPR_LABEL = /t[ỉỷiy]\s*s[ốo]\s*n[ée]n|compression\s*ration?\b(?!\s*limiter)/i;
+const COMPR_FIG = String.raw`(\d{1,2}(?:[.,]\d{1,2})?)`;
+const COMPR_VAL = new RegExp(String.raw`^[\s|:.\-–(]*(?:l[àa]\s+)?(≥|>=|>|≤|<=|<|t[ốo]i\s*thi[ểe]u|t[ốo]i\s*đa|kho[ảa]ng|~|±)?\s*[:(]?\s*${COMPR_FIG}(?:\s*:\s*0?1)?(?![\d.,])`, "i");
+// The value alone on the next line: with its sign, its ":1" or a decimal part (a bare "5" there is the next row's number).
+const COMPR_NEXT = new RegExp(String.raw`^[\s|:.\-–(]*(?:≥|>=|>|≤|<=|<|t[ốo]i\s*thi[ểe]u|t[ốo]i\s*đa|kho[ảa]ng|~|±)\s*[:(|]?\s*\d|^[\s|:.\-–(]*\d{1,2}(?:[.,]\d{1,2})?\s*:\s*0?1(?![\d.,])|^[\s|:.\-–(]*\d{1,2}[.,]\d{1,2}(?![\d.,])`, "i");
+const COMPR_MIN = /≥|>|t[ốo]i\s*thi|ho[ặa]c\s*(t[ốo]t|cao|l[ớo]n)\s*h[ơo]n|tr[ởo]\s*l[êe]n|\bmin/i, COMPR_MAX = /≤|<|t[ốo]i\s*đa|\bmax/i;
+export function comprLines(t) {
+  const L = withoutOtherEquipment(unflatten(t)).split("\n").map((l) => l.replace(/[ \t ]{2,}/g, " ")), out = [];
+  L.forEach((line, i) => {
+    const m = line.match(COMPR_LABEL);
+    if (!m) return;
+    let cell = line.slice(m.index + m[0].length).replace(/^\s*\((?:C|yêu cầu tối thiểu)\)\s*\)?/i, (s) => (/t[ốo]i\s*thi/i.test(s) ? " tối thiểu " : " "));
+    // The label alone: the value on the next line, when that line is the value and nothing else of a row.
+    // A sign left on the label's line ("Tỷ số nén: ≥" / "17:1") stays with the figure.
+    if (!/\d/.test(cell) && !/n[êe]u|ghi\s*r[õo]|theo/i.test(cell) && COMPR_NEXT.test(L[i + 1] || "") && !/[a-zà-ỹ]{4}/i.test(String(L[i + 1]).replace(/t[ốo]i\s*(thi[ểe]u|đa)|kho[ảa]ng|đ[ạa]t|kh[ôo]ng|b[ắa]t\s*bu[ộo]c|ho[ặa]c|t[ốo]t|h[ơo]n/gi, ""))) cell = ` ${(cell.match(/≥|>=|>|≤|<=|<|t[ốo]i\s*thi[ểe]u|t[ốo]i\s*đa/i) || [""])[0]} ${L[i + 1]}`;
+    const v = cell.match(COMPR_VAL);
+    // "≥ | 18.5:1" (a table cell of the sign, then the figure).
+    const v2 = !v && cell.match(new RegExp(String.raw`^[\s|:]*(≥|>=|>|≤|<=|<)\s*\|?\s*${COMPR_FIG}\s*:\s*0?1(?![\d.,])`, "i"));
+    const hit = v || v2;
+    if (!hit) {
+      // A ratio further on in the cell ("Tỷ số nén (C) | ≥16,0:1", "tỷ số nén 17:1, dung tích …").
+      const r = cell.match(new RegExp(String.raw`^[^\d\n]{0,25}?(≥|>=|>|≤|<=|<|t[ốo]i\s*thi[ểe]u|t[ốo]i\s*đa)?\s*${COMPR_FIG}\s*:\s*0?1(?![\d.,])`, "i"));
+      if (!r) return;
+      return push(r[1], r[2], cell, i);
+    }
+    push(hit[1], hit[2], cell, i);
+  });
+  function push(sign, fig, cell, i) {
+    const x = Number(String(fig).replace(",", "."));
+    if (!(x >= 5 && x <= 30)) return;
+    const s = String(sign || "").toLowerCase(), around = `${L[i - 1] || ""} ${L[i]} ${L[i + 1] || ""}`;
+    // The words before the figure and just after it, up to the end of its cell ("17,1:1 hoặc tốt hơn"), not the next
+    // figure of the line ("Tỷ số nén: 16.8; Dung tích xilanh (L): > 10.34").
+    const at = cell.indexOf(fig), pre = `${s} ${cell.slice(0, Math.max(0, at))}`, post = cell.slice(at + fig.length).split(/[|;]/)[0].slice(0, 30);
+    // Two ratios in the cell ("≥ 13:1 và ≤ 18:1"), or a band word.
+    const two = (cell.split(/[;]/)[0].match(/\d{1,2}(?:[.,]\d{1,2})?\s*:\s*0?1(?![\d.,])/g) || []).length > 1;
+    const kind = /tham\s*kh[ảa]o|t[ươ]+ng\s*(đ[ươ]+ng|t[ựu])/i.test(around) ? "ref"
+      : two || /kho[ảa]ng|~|±|đ[ếe]n|\bt[ừu]\b/i.test(`${pre} ${post}`) ? "band"
+      : COMPR_MIN.test(`${pre} ${post}`) ? "min" : COMPR_MAX.test(`${pre} ${post}`) ? "max" : "exact";
+    out.push({ x, kind, line: L[i].trim() });
+  }
+  return out;
+}
+// The HSMT's compression ratio for the hints: `compr` the one figure all its lines give (null when none or two), and
+// `comprExact` when every such line gives it bare (kind "exact"): the ratio is then the one asked, not a least or a most.
+export function comprOf(t) {
+  const list = comprLines(t), xs = [...new Set(list.map((c) => c.x))];
+  const compr = xs.length === 1 ? xs[0] : null;
+  return { compr, comprExact: compr != null && list.every((c) => c.kind === "exact") };
 }
 export function engineMins(t) {
   const { disp, dmax, cyl, cylBare } = engineLists(t), one = (list) => (new Set(list).size === 1 ? list[0] : null);
@@ -1649,6 +1729,10 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         const lay = own.length ? own : Object.keys(bySup).filter((k) => bySup[k].size >= 2);
         if (lay.length && lay.every((x) => x !== hints.cylLayout)) { score -= 600; ruled.push("layout"); why.push(`xi lanh ${lay[0] === "v" ? "chữ V" : "thẳng hàng"}, HSMT yêu cầu ${hints.cylLayout === "v" ? "chữ V" : "thẳng hàng"}`); }
       }
+      // The row's fuel against the HSMT's (Khoa 20/11/2026): a row whose page says gas / gasoline is dropped for a diesel
+      // HSMT (one that names none counts as diesel), a gasoline row for a gas HSMT and the other way round; dual (gasoline
+      // + LPG / gas) suits both. A row with no fuel written stays. `u.fuel` is written by web/catalog.js (fuelOf).
+      if (fuelOff(hints.fuel, u.fuel)) { score -= 600; ruled.push("fuel"); why.push(`nhiên liệu ${u.fuel === "gas" ? "khí" : u.fuel === "gasoline" ? "xăng" : "xăng / khí"} (${u.fuelWhy || "bảng nguồn"}), HSMT ${hints.fuel === "diesel" ? "diesel" : hints.fuel === "gas" ? "khí" : "xăng"}`); }
       // An engine of the other frequency (Khoa, 2026-11-17: Baudouin 6M33G660/6 and 6M33G633/6, the 1800 rpm / 60 Hz
       // versions, held two of Baudouin's three places for a 50 Hz tender; their rows in tables that name no frequency
       // passed the frequency filter above): every row of the engine that names a frequency names the other one, two
@@ -2472,6 +2556,8 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   // Đồng bộ thương hiệu (Khoa, 2026-11-06): read from the HSMT by code, one requirement of the code's own in place of
   // any the agent wrote about it; its check is written below from the makes, never by the agent.
   const sync = BP.brandSyncOf(hsmtText);
+  // Tỉ số nén HSMT ghi trơ (Khoa 20/11/2026): the code's own reading of the HSMT, for makerSheetChecks / comprChecks.
+  const hsmtCompr = comprOf(technicalPart(hsmtText || ""));
   result.requirements = (result.requirements || []).filter((r) => !isSyncItem(r.item));
   if (sync) {
     result.requirements.unshift({ item: SYNC_ITEM, requirement: syncText(sync), quote: sync.quote, part: "genset", level: "core", byCode: true, sync: { need: sync.need, parts: sync.parts } });
@@ -2897,10 +2983,24 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
       });
       c.checks = [...out, ...c.checks];
     }
+    // (6) Fuel (Khoa 20/11/2026): a configuration whose catalog rows (the c.suppliers lines) say gas / gasoline for a diesel
+    // HSMT (or the other way round) is "không đạt" at the engine, ranked after, still shown; a row with no fuel written says
+    // nothing. Only rows of the catalog: the code writes nothing about an engine found on the internet.
+    c.checks = (c.checks || []).filter((x) => !x?.fuelRule);
+    {
+      const fh = fuelOfHsmt(technicalPart(hsmtText || ""));
+      const bad = fh.fuel ? (c.suppliers || []).filter((s) => !s.unverified).map((s) => rows.get(`${s.supplierId}|${Number(s.n)}|${CAT.keyOf(s.line || "")}`)).filter((u) => fuelOff(fh.fuel, u?.fuel)) : [];
+      if (bad.length) {
+        const kind = (f) => (f === "gas" ? "khí" : f === "gasoline" ? "xăng" : "xăng / khí"), want = fh.fuel === "diesel" ? "diesel" : kind(fh.fuel);
+        const u = bad[0];
+        c.checks.unshift({ item: "Nhiên liệu (HSMT)", requirement: `Nhiên liệu của tổ máy: ${want} (${fh.why})`, hsmtQuote: fh.stated ? fh.why : "", offered: `Dòng bảng của ${u.supplierId} ghi ${kind(u.fuel)}`, part: "engine", level: "core", byCode: true, fuelRule: true, status: "not_met", note: `Code ghi: dòng catalog ${u.supplierId} [${u.n}] ${u.fuelWhy || ""} (mức ${u.fuelFrom || "?"}); HSMT ${fh.stated ? "nêu" : "không nêu nhiên liệu nên coi là"} ${want}.` });
+      }
+    }
     confirmChecks(c, result.requirements || []);
     vregChecks(c, result.requirements || [], factsOf(c, "alternator"));
     altAttrChecks(c, result.requirements || [], altAttrs, factsOf(c, "alternator"));
-    makerSheetChecks(c, result.requirements || [], { engine: factsOf(c, "engine"), alternator: factsOf(c, "alternator") });
+    makerSheetChecks(c, result.requirements || [], { engine: factsOf(c, "engine"), alternator: factsOf(c, "alternator") }, { hsmtCompr });
+    comprChecks(c, result.requirements || [], factsOf(c, "engine"), { hsmtCompr });
     khoaRules(c, result.requirements || [], row, { origin });
     originChecks(c, result, origin, sup);
     madeChecks(c, result.requirements || [], row, built);
@@ -4042,8 +4142,12 @@ const limOf = (req, drop = null) => { const v = [...new Set(figsOf(drop ? String
 const bound = (v, lim, req, bigger = true) => (v == null || lim == null ? null : ceilOf(req) ? v <= lim : floorOf(req) || bigger ? v >= lim : null);
 // Each: (the maker's value, the HSMT requirement) → true met, false not met, null not compared.
 const SHEET_CMP = {
-  // A design value (not "the more the better"): compared only under ≤ / ≥.
-  compression: (v, req) => (ceilOf(req) || floorOf(req) ? bound(figsOf(v)[0], limOf(req, /:\s*1\b/g), req, false) : null),
+  // A design value (not "the more the better"): compared under ≤ / ≥; a ratio the HSMT gives bare (comprExactOf) is the
+  // exact one (Khoa 20/11/2026): the same figure, or one only rounded otherwise (roundCompat), met, another not met.
+  compression: (v, req, exact = null) => {
+    if (exact != null) { const x = comprFig(v); return x == null ? null : sameCompr(x, exact); }
+    return ceilOf(req) || floorOf(req) ? bound(figsOf(v)[0], limOf(req, /:\s*1\b/g), req, false) : null;
+  },
   displacement: (v, req) => { const n = figsOf(v)[0], cc = /cc|ml|cm3|cm³/i.test(v); return bound(n == null ? null : cc ? n / 1000 : n, limOf(req), req); },
   // The count only: a requirement that also asks the arrangement (thẳng hàng, chữ V) is not compared.
   cylinders: (v, req) => (/th[ẳa]ng\s*h[àa]ng|ch[ữu]\s*V|in-?\s*line|\bV\s?-?\d|\bL\s?\d/i.test(req) ? null : bound(figsOf(v)[0], limOf(req), req)),
@@ -4057,8 +4161,9 @@ const SHEET_CMP = {
   alt_efficiency: (v, req) => (/%/.test(req) ? bound(figsOf(v)[0], limOf(req), req) : null),
 };
 const PART_OF_CODE = (code) => (code.startsWith("alt_") ? "alternator" : "engine");
-export function makerSheetChecks(c, reqs, facts = {}) {
+export function makerSheetChecks(c, reqs, facts = {}, { hsmtCompr = null } = {}) {
   for (const r of reqs) {
+    const exact = r.code === "compression" ? comprExactOf(r, hsmtCompr) : null;
     const key = SHEET_KEY[r.code], part = key && PART_OF_CODE(r.code);
     if (!key || r.byCode || (r.part && r.part !== part) || !c[part]?.model) continue;
     const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
@@ -4080,7 +4185,7 @@ export function makerSheetChecks(c, reqs, facts = {}) {
       if (ns.some((n) => !n.ok || NK[0](n.r) == null)) continue;
       vals = ns.map((n) => String(NK[0](n.r)));
     }
-    const v = vals.map((val) => SHEET_CMP[r.code](val, r.requirement || ""));
+    const v = vals.map((val) => SHEET_CMP[r.code](val, r.requirement || "", exact));
     if (v.some((b) => b == null) || new Set(v).size !== 1) continue;
     // A supplier of this very configuration (its rows' src, or among its suppliers) is one that writes otherwise: what it
     // delivers may be that other build (acepow-fuan offers WP10D320E200 both "Mechanically" and "Electronic"), so the
@@ -4095,7 +4200,56 @@ export function makerSheetChecks(c, reqs, facts = {}) {
     const f = sheets[0], ids = [...new Set(others.map((g) => g.supplierId))];
     putCheck(c, x, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: f.value, sourceQuote: f.line, factSrc: { supplierId: f.supplierId, n: f.n, line: f.line },
       part, level: r.level === "option" ? "option" : "core", status: v[0] ? "met" : "not_met", byCode: true, rule: "to-hang", makerOver: ids,
-      note: `Code ghi: các nguồn ghi khác nhau; theo tờ thông số hãng (${f.supplierId} [${f.n}]); trang nhà lắp ráp ${ids.join(", ")} ghi khác.` });
+      note: `Code ghi: các nguồn ghi khác nhau; theo tờ thông số hãng (${f.supplierId} [${f.n}]); trang nhà lắp ráp ${ids.join(", ")} ghi khác.${exact != null ? ` ${COMPR_EXACT_NOTE(exact)}` : ""}` });
+    if (x) delete x.conflict;
+  }
+  return c;
+}
+// ---------- Tỉ số nén ghi trơ = số chính xác, ở bước chấm (Khoa 20/11/2026) ----------
+// The figure x of a compression value ("16.0:1", "16,5 : 1", "17", "14 : 01"), else null (two figures, words).
+export function comprFig(v) {
+  // The "1" of each ":1" dropped, the value must hold one figure only ("18.2–18.3:1", "16.5 / 17" are not one ratio).
+  const s = String(v ?? "").replace(/(\d),(\d)/g, "$1.$2").replace(/(\d)\s*:\s*0?1(?![\d.])/g, "$1 ");
+  const n = [...new Set((s.match(/\d+(?:\.\d+)?/g) || []).map(Number))];
+  return n.length === 1 && n[0] >= 5 && n[0] <= 30 ? n[0] : null;
+}
+// The same figure, or one only rounded otherwise (14 / 14.0; 14 / 14.1 by roundCompat: the longer one rounds to the other
+// and is within 1%). 13.6, 13.9 or 14.5 against 14 differ.
+export const sameCompr = (a, b) => a === b || roundCompat(a, b);
+const COMPR_EXACT_NOTE = (x) => `HSMT ghi tỉ số nén ${figVi(x)}:1 không kèm ≥ / ≤ / khoảng nên là số chính xác (Khoa 20/11/2026).`;
+// The exact ratio a compression requirement asks: its requirement and quote give one figure bare (no ≥ / ≤ / tối thiểu /
+// tối đa / khoảng / ± / "hoặc tốt hơn" / "nêu cụ thể") AND the code's own reading of the HSMT (comprOf: every line that
+// gives it gives it bare, one figure) gives that same figure. Else null: the rule of a bare design figure stays (unclear).
+export function comprExactOf(r, hsmtCompr) {
+  if (!r || r.code !== "compression" || !hsmtCompr?.comprExact || hsmtCompr.compr == null) return null;
+  const t = `${r.requirement || ""} ${rowNoOff(r.quote || "")}`;
+  if (/[≥≤<>±~]|t[ốo]i\s*(thi[ểe]u|đa)|kho[ảa]ng|ho[ặa]c|tr[ởo]\s*l[êe]n|n[êe]u|ghi\s*r[õo]|tham\s*kh[ảa]o|t[ươ]+ng\s*(đ[ươ]+ng|t[ựu])|\bmin|\bmax/i.test(t)) return null;
+  const xs = [r.requirement, rowNoOff(r.quote || "").replace(COMPR_LABEL, " ")].map((s) => comprFig(String(s || "").replace(/^[^\d]*/, ""))).filter((x) => x != null);
+  return xs.length && xs.every((x) => sameCompr(x, hsmtCompr.compr)) ? hsmtCompr.compr : null;
+}
+// A configuration whose engine's every source gives a ratio other than the exact one → not met. Only a check "unclear"
+// (or none) of a configuration with a catalog engine changes (a check met / not met by the agent or byCode stays). The
+// sources: the engine model's facts (every supplier row and maker sheet naming it). Left as it is (unclear) when no
+// source gives the ratio, when one gives a value the code cannot read, when the sources disagree among themselves
+// (values not all one figure up to rounding: never the majority; exactly one maker sheet is makerSheetChecks'), or when
+// the value is the HSMT's (up to rounding).
+export function comprChecks(c, reqs, facts = [], { hsmtCompr = null } = {}) {
+  for (const r of reqs) {
+    const exact = comprExactOf(r, hsmtCompr);
+    if (exact == null || r.byCode || (r.part && r.part !== "engine") || !c.engine?.model) continue;
+    const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
+    if (x && (x.status !== "unclear" || x.byCode || x.version || x.parts?.length)) continue;
+    const list = facts.filter((f) => f.key === "compr");
+    if (!list.length) continue;
+    const xs = list.map((f) => comprFig(f.value));
+    if (xs.some((v) => v == null)) continue;
+    const vals = [...new Set(xs)];
+    if (vals.some((a) => vals.some((b) => !sameCompr(a, b)))) continue;
+    if (vals.some((v) => sameCompr(v, exact))) continue;
+    const f = list[0], shown = [...new Set(list.map((g) => String(g.value).trim()))].join(" / ");
+    putCheck(c, x, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: shown, sourceQuote: f.line, factSrc: { supplierId: f.supplierId, n: f.n, line: f.line },
+      part: "engine", level: r.level === "option" ? "option" : "core", status: "not_met", byCode: true, rule: "ti-so-nen",
+      note: `Code ghi: ${COMPR_EXACT_NOTE(exact)} Mọi nguồn của động cơ ${c.engine.model} ghi ${shown} (${[...new Set(list.map((g) => g.supplierId))].join(", ")}).` });
     if (x) delete x.conflict;
   }
   return c;
