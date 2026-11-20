@@ -936,8 +936,35 @@
   // "Standard Land-based Generator Set" pages of "…*7NG" rows whose title and URL say nothing of fuel; the page's breadcrumb
   // "Products & Businesses / Energy & Power / Generator Set / Overseas Gas" and its image names "16M33NG-机组燃气-1.png" do
   // (live pages read 20/11/2026, all four; also in sources/weichai-power/<n>.md). Level T: the page's category.
-  const FUEL_PAGES = [{ supplierId: "weichai-power", ns: [125, 126, 127, 128], fuel: "gas", why: 'trang ghi đường dẫn "Generator Set / Overseas Gas" và ảnh "机组燃气" (đọc trang sống 20/11/2026)' }];
-  const fuelPage = (id, n) => { const p = FUEL_PAGES.find((x) => x.supplierId === id && x.ns.includes(n)); return p ? { fuel: p.fuel, from: "T", why: p.why } : null; };
+  // Nhiên liệu theo bảng (Khoa 20/11/2026, câu 3 / 4X / 5 của catalog-nhom-con-lai-de-xuat.md), same list:
+  // - jianghao-genset n104 (b4 + b5, "JHRQ-…"): the page's note ① right under both tables says the sets run on natural gas,
+  //   oil field gas, bio-gas… (sources/jianghao-genset/104.md); the "FuelCon. (L)" column and the "Gas Generator" title alone
+  //   were not enough (`litre`). Level T: the page's own words outside the saved table.
+  // - simpson-power n124: the page names no fuel ("SIMPSON-GasGenerators" is a name); only the rows whose ENGINE is a Honda
+  //   GX390 / GX630 / GX690 get gasoline, from the engine maker's datasheet (engines.honda.com, Fuel "Unleaded 86 octane or
+  //   higher", read 20/11/2026). Level D = "datasheet hãng động cơ". The ZS… and "31HP" / "35HP" rows stay without fuel.
+  // - zc-power n109 b11 / b12 (GENSET_TABLES, `part: "genset"`: read by gensetsOf, not fromSupplier): page title
+  //   "Gasoline Generators". The other genset tables get no fuel (gensetsOf writes none by itself).
+  // `engines`: model key -> the datasheet URL (a row of another engine gets nothing); `header`: the table's first header line
+  // verbatim (the source changes its header -> no fuel, like ROW_EXCEPTIONS / GENSET_TABLES).
+  const HONDA_GX = 'datasheet hãng động cơ Honda %M ghi Fuel "Unleaded 86 octane or higher" (%U, đọc 20/11/2026)';
+  const FUEL_PAGES = [
+    { supplierId: "weichai-power", ns: [125, 126, 127, 128], fuel: "gas", why: 'trang ghi đường dẫn "Generator Set / Overseas Gas" và ảnh "机组燃气" (đọc trang sống 20/11/2026)' },
+    { supplierId: "jianghao-genset", ns: [104], fuel: "gas", why: 'trang ghi ngay dưới hai bảng "①The above generators can be used natural gas, oil filed gas, bio-gas…" (tệp nguồn lưu 13–14/11/2026)' },
+    { supplierId: "simpson-power", ns: [124], from: "D", fuel: "gasoline", header: "| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长×宽×高) | 机 组 数 据",
+      engines: { GX390: "https://engines.honda.com/models/model-detail/x-large-gx", GX630: "https://engines.honda.com/models/model-detail/v-twin-horizontal", GX690: "https://engines.honda.com/models/model-detail/v-twin-horizontal" }, why: HONDA_GX },
+    { supplierId: "zc-power", ns: [109], part: "genset", fuel: "gasoline", why: 'tên trang "Gasoline Generators | Factory-Direct Prices | ZC Power"' },
+  ];
+  // The fuel of record `o` (of `fromSupplier`, or `part` "genset" = of `gensetsOf`) by FUEL_PAGES, or null.
+  // `h0`: the first header line of the SAVED table (s.specTables, before tidyTable joins the spaces between Han characters).
+  const fuelPage = (id, o, h0, part = "row") => {
+    const p = FUEL_PAGES.find((x) => x.supplierId === id && x.ns.includes(+o.n) && (x.part || "row") === part);
+    if (!p) return null;
+    if (p.header != null && String(h0 ?? "").trim() !== p.header) return null;
+    if (!p.engines) return { fuel: p.fuel, from: p.from || "T", why: p.why };
+    const m = o.kind === "engine" && Object.keys(p.engines).find((k) => keyOf(k) === keyOf(o.model));
+    return m ? { fuel: p.fuel, from: p.from || "T", why: p.why.replace("%M", m).replace("%U", p.engines[m]) } : null;
+  };
   // A table's gas set (its header rows are not read): the same signs, no row, the page's URL when known.
   const gasTable = (t, lines, url) => { const f = fuelFrom(fuelSigns({ title: t.title, header: [], rows: lines }, url), null); return !!f && (f.fuel === "gas" || f.fuel === "dual") || GAS_WORD.test(`${t.title || ""} ${lines.join(" ")}`) || lines.some((l) => /-NG$/i.test(cellsOf(l)[0] || "")); };
   function tidyTable(t, note = () => {}, url = "") {
@@ -1461,7 +1488,7 @@
     const fuelSg = new Map();
     for (const o of out) {
       if (!fuelSg.has(o.table)) { const t0 = s.specTables[o.table]; fuelSg.set(o.table, fuelSigns(t0, ((s.sources || []).find((x) => x.n === t0.n) || {}).url || "")); }
-      const f = fuelFrom(fuelSg.get(o.table), o.line || `| ${o.genset || ""}`) || fuelPage(s.id, o.n);
+      const f = fuelFrom(fuelSg.get(o.table), o.line || `| ${o.genset || ""}`) || fuelPage(s.id, o, s.specTables[o.table]?.header?.[0]);
       if (f) { o.fuel = f.fuel; o.fuelFrom = f.from; o.fuelWhy = f.why; }
     }
     return mergeRepeats(rowExceptions(s, out, note));
@@ -2158,7 +2185,11 @@
         else if (hEng.length === 1) addMake(makes, hEng[0], "tiêu đề cột");
         else if (tEng.length === 1) addMake(makes, tEng[0], "tên trang");
         else if (s.role === "engine_maker" && ownBrand.length === 1) addMake(makes, ownBrand[0], "hãng sản xuất");
-        out.push({ supplierId: s.id, n: t.n, table: ti, title, row: ri, line, header: t.header || [], kind: "genset", model, power: Object.keys(power).length ? power : null, freq, specs, makes });
+        const o = { supplierId: s.id, n: t.n, table: ti, title, row: ri, line, header: t.header || [], kind: "genset", model, power: Object.keys(power).length ? power : null, freq, specs, makes };
+        // Fuel only from the FUEL_PAGES list (zc-power n109): a genset table's own signs are not read here.
+        const f = fuelPage(s.id, o, s.specTables[ti]?.header?.[0], "genset");
+        if (f) { o.fuel = f.fuel; o.fuelFrom = f.from; o.fuelWhy = f.why; }
+        out.push(o);
       });
     });
     return out;

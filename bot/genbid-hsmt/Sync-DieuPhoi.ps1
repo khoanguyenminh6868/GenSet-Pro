@@ -37,9 +37,12 @@ function G {
     $eap = $ErrorActionPreference; $ErrorActionPreference = 'Continue'
     try { & git.exe -C $Dir -c core.quotepath=false @args 2>&1 | ForEach-Object { "$_" } } finally { $ErrorActionPreference = $eap }
 }
-function Conflicted { @(Get-ChildItem $Dir -Recurse -File -Include *.md, *.txt, *.json, *.csv -ErrorAction SilentlyContinue |
-    Where-Object { $_.FullName -notmatch '\\\.git\\' -and (Select-String -Path $_.FullName -Pattern '^<<<<<<< ' -Quiet) } |
-    ForEach-Object { $_.FullName.Substring($Dir.Length + 1) }) }
+# Tệp còn dấu xung đột. Hỏi git (tệp git theo dõi + tệp mới chưa bị .gitignore) thay vì tự đọc mọi tệp: thư mục đo
+# (dau-vao\...\gop-*.json, đã .gitignore vì > 20 MB) lên tới 5 GB chữ, Select-String quét cả giờ và giữ khoá suốt lúc
+# đó, mọi lượt khác "bỏ lượt" (20/11/2026: sổ không lên GitHub gần một giờ).
+function Conflicted { @(G grep -l --untracked -I -e '^<<<<<<< ' -- '*.md' '*.txt' '*.json' '*.csv' |
+    Where-Object { $_ -and (Test-Path -LiteralPath (Join-Path $Dir ($_ -replace '/', '\'))) } |
+    ForEach-Object { $_ -replace '/', '\' }) }
 
 # conhost --headless: powershell -WindowStyle Hidden vẫn nháy cửa sổ console mỗi lần chạy (Khoa 17/11/2026 không muốn thấy).
 $act = New-ScheduledTaskAction -Execute 'conhost.exe' -WorkingDirectory $Root `
