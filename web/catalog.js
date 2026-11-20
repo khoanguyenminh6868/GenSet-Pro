@@ -76,6 +76,10 @@
   const STROKE_VAL = /\b(4|four|2|two)[\s-]*(stroke|cycle)|[四二42]\s*冲程/i;
   const GENSET_LBL =/genset|gen-set|generator\s*set|机组/i;
   const PRIME = /prime|\bprp\b|continuous|\bcop\b|常用|主用|liên tục/i;
+  // The words that make a figure PRIME (PRP). Continuous / COP is another rating, neither prime nor standby (Khoa 20/11/2026,
+  // the rule RATE_OTHER below already has; agg-fuzhou n115-118 "COP (kVA/kW)" and hosem-power n112 "Continuous Power" were
+  // read as prime). PRIME above stays for "does the label name some rating" and for the HSMT side.
+  const PRIME_RATE = /prime|\bprp\b|常用|主用/i;
   const STANDBY = /standby|stand[\s-]by|\besp\b|\bltp\b|backup|备用|dự phòng|max(imum)?\s*power/i;
   // Engine makes from outside China (Khoa, 2026-10-29: "Xuất xứ: Trung Quốc" in Gợi ý cấu hình leaves them out).
   // A foreign make built under licence in China (Dongfeng / Chongqing Cummins...) still counts as foreign.
@@ -294,8 +298,8 @@
       const [x, y] = pairs[0].kVA >= pairs[1].kVA ? pairs : [pairs[1], pairs[0]];
       return { standby: x, prime: y };
     }
-    const p = PRIME.test(headerText), s = STANDBY.test(headerText);
-    return p && !s ? { prime: pairs[0] } : s && !p ? { standby: pairs[0] } : { rated: pairs[0] };
+    const p = PRIME_RATE.test(headerText), s = STANDBY.test(headerText), o = /continuous|\bcop\b|liên tục/i.test(headerText);
+    return p && !s ? { prime: pairs[0] } : s && !p && !o ? { standby: pairs[0] } : { rated: pairs[0] };
   }
   // The outputs of a genset row read by its column titles (Khoa 2026-11-17: every table checked, 574 records had a pair
   // made of two cells that are no pair). powersIn pairs neighbouring numbers by their ratio alone, so it made a kVA / kW pair of
@@ -716,7 +720,7 @@
       else if (ALT_LBL.test(L) && !/power|output|efficien|insulat|protect|voltage|regulat|excit|bearing|winding|pitch|temp|speed|frequency|cool/i.test(L)) vals.forEach((v, j) => /\d/.test(v) && put(j, "alternator", v)); // a model has a digit: "| Alternator | Control system" is two headings
       // "Starting power: 1,4 kW" is the starter motor's, a heater's or a charger's power is its own: not the genset's.
       else if (/power|output|capacity|rating|功率|công suất/i.test(L) && !/factor|engine|消耗|consum|start|heater|charg|battery|启动|起动|加热|充电/i.test(L)) {
-        const kind = PRIME.test(L) ? "prime" : STANDBY.test(L) ? "standby" : "rated";
+        const kind = PRIME_RATE.test(L) ? "prime" : STANDBY.test(L) ? "standby" : "rated";
         vals.forEach((v, j) => {
           const both = String(v).match(/(\d+(?:[.,]\d+)?)\s*(kva|kw)\s*[/／]\s*(\d+(?:[.,]\d+)?)\s*(kva|kw)/i);
           if (both) {
@@ -831,8 +835,112 @@
     return { at };
   }
   const GAS_WORD = /燃气|沼气|天然气|natural\s*gas|\bgas\s+(gen|engine|set)|\bbiogas\b|\bLPG\b|\bCNG\b/i;
-  const gasTable = (t, lines) => GAS_WORD.test(`${t.title || ""} ${lines.join(" ")}`) || lines.some((l) => /-NG$/i.test(cellsOf(l)[0] || ""));
-  function tidyTable(t, note = () => {}) {
+  // ---- Fuel of a table and of its rows (may-khi-2, Khoa 20/11/2026) --------------------------------------------------
+  // The catalog has no fuel in its tables: a record gets `fuel` ("gas" | "gasoline" | "dual" = gasoline + LPG / gas),
+  // `fuelFrom` (the strength of the sign) and `fuelWhy` (the words read) ONLY when the page itself says it; no sign =
+  // no field (empty is NOT diesel: "not written" is not "written diesel"). Signs, strongest first (may-khi-1.md section 4):
+  //   B  the table itself (a fuel label cell with its value, any cell / title of the table naming a gas or gasoline word);
+  //   M  the ROW's own model code ends in -NG / *7NG, together with a title or URL that says gas (agg-fuzhou, penlucky,
+  //      weichai-heavy-machinery);
+  //   T  the page's name (title, or URL path) says gas / gasoline for the product.
+  // NOT a sign: a word of a menu or slogan (a title that names diesel AND gas: "Diesel Generator Set | Gas Generator Set",
+  // "提供柴油、燃气发电机组"; the word diesel inside a company's name does not count), a unit m3/h alone (coolant flow), an
+  // engine code alone (K19N, N0/5), the bare word "Gas" glued to a name (SIMPSON-GasGenerators: gasoline?), a gas STORAGE
+  // tank, the company's name. A page title that says gas whose table gives the fuel use in litres is no gas set (jianghao).
+  // Two kinds in the signs (gas + gasoline) = "dual"; any diesel word beside a gas / gasoline word in one source = mixed
+  // = no fuel. Pure function of the table, its URL and a row: the same rule is used by gasTable (header rows of a gas table).
+  const F_GAS = /燃气|燃氣|沼气|天然气|液化气|煤层气|natural[\s-]*gas|bio-?gas|\bLPG\b|\bCNG\b|\bLNG\b|landfill[\s-]gas|methane|\bmetano\b|\bGPL\b|\blp[\s-]?gas\b|syngas|khí thiên nhiên|khí tự nhiên|khí sinh học|\bgas[\s-]+(?:gen\w*|engines?|sets?\b|powered|fired)|\bgas\s*\(\s*lpg/gi;
+  const F_GAS_NOT = /^\s*(?:storage|holder|tank|digester|purif|desulph|booster|membrane|pipeline)/i;
+  const F_GASOLINE = /gasoline|\bpetrol\b|汽油|xăng|\bbenzina\b|gasolina/i;
+  const F_DIESEL = /diesel|柴油|gasoil|gasóleo|gasolio|gazole/i;
+  const F_COMPANY = /\bco\.?,?\s*ltd|\blimited\b|\bcompany\b|\bcorp(?:oration)?\b|\binc\.|有限公司|公司|集团/i;
+  const F_LITRE = /fuel\s*con[a-z.]*\s*[(（\[]?\s*(?:l|lit(?:re|er)s?|升)\b|(?:l|litres?|liters?)\s*\/\s*h\b|升\s*\/\s*(?:时|小时)/i;
+  const F_RANK = { B: 3, M: 2, T: 1 };
+  function fuelKinds(text, { company = false } = {}) {
+    const r = {};
+    for (const seg of company ? String(text).split(/\s+[|–—-]\s+|\s*\|\s*|(?<=[a-z)])-(?=[A-Z])|[-－—](?=[一-鿿A-Z])/) : [String(text)]) {
+      for (const m of seg.matchAll(F_GAS)) { if (!F_GAS_NOT.test(seg.slice(m.index + m[0].length, m.index + m[0].length + 20))) { r.gas = r.gas || m[0].trim(); break; } r.tank = true; }
+      const g = seg.match(F_GASOLINE); if (g) r.gasoline = r.gasoline || g[0];
+      const d = seg.match(F_DIESEL); if (d && !(company && F_COMPANY.test(seg))) r.diesel = r.diesel || d[0];
+    }
+    return r;
+  }
+  // "Fuel Type | Natural gas/Biogas", "燃料 | 汽油", "燃料 | NG": the fuel label's value cell(s).
+  const FUEL_LABEL = /^(?:fuel(?:\s*type)?|type\s*of\s*fuel|燃料(?:种类|类型)?|燃气种类|nhiên liệu|carburante\s*fuel|combustible)\s*[:：]?$/i;
+  function fuelCells(lines) {
+    const r = {};
+    for (const l of lines) {
+      const cs = cellsOf(l);
+      for (let i = 0; i + 1 < cs.length; i++) {
+        if (!FUEL_LABEL.test(cs[i].trim())) continue;
+        const v = cs.slice(i + 1).join(" ");
+        const k = fuelKinds(v);
+        if (k.gas) r.gas = r.gas || `${cs[i].trim()} | ${v.trim().slice(0, 40)}`;
+        else if (/^\s*(?:NG|LNG|CNG)\s*$/.test(cs[i + 1])) r.gas = r.gas || `${cs[i].trim()} | ${cs[i + 1].trim()}`;
+        if (k.gasoline) r.gasoline = r.gasoline || `${cs[i].trim()} | ${v.trim().slice(0, 40)}`;
+        if (k.diesel) r.diesel = r.diesel || `${cs[i].trim()} | ${v.trim().slice(0, 40)}`;
+        break;
+      }
+    }
+    return r;
+  }
+  // The model code of a gas set written by the row itself: "DC260G6-NG", "PG…*7NG", "…-LPG", "…-BG1".
+  const NG_MODEL = /(?:-|[0-9*])(?:NG|LPG|BG)[0-9]?$/i;
+  const rowNg = (line) => { const c = cellsOf(line)[0] || ""; return NG_MODEL.test(c.trim()) && /\d/.test(c) ? c.trim() : null; };
+  const urlText = (url) => String(url || "").replace(/^[a-z]+:\/\/[^/]+/i, "").replace(/[-_/.+%=&?]+/g, " ");
+  // The sign of a table, before the row: { B, T, M? } each a { gas?, gasoline?, diesel? } of the words read.
+  function fuelSigns(t, url) {
+    const lines = [...(t.header || []), ...(t.rows || [])];
+    const text = lines.join("\n");
+    const body = fuelKinds(text), cells = fuelCells(lines);
+    const B = { ...body };
+    for (const k of ["gas", "gasoline", "diesel"]) if (cells[k]) B[k] = cells[k];
+    const T = fuelKinds(String(t.title || ""), { company: true });
+    const U = fuelKinds(urlText(url));
+    const litre = F_LITRE.test(text);
+    return { B, T, U, litre, lines };
+  }
+  // Combine the signs for one row (`line`; null = the table, no row): { fuel, from, why } or null.
+  function fuelFrom(sg, line) {
+    const src = []; // [level, kinds, words]
+    const add = (level, k, label) => { if (k.gas || k.gasoline) src.push({ level, k, label }); };
+    add("B", sg.B, "bảng");
+    const ng = line == null ? null : rowNg(line);
+    // A title about a gas STORAGE tank ("Biogas Storage Tank", kingway n117) says nothing of the table's product, nor does the URL.
+    const tank = !!sg.T.tank;
+    const gasPage = !tank && (sg.T.gas || sg.U.gas) && !sg.T.diesel && !sg.U.diesel;
+    if (ng && gasPage) add("M", { gas: `${ng} + ${sg.U.gas ? "URL" : "tên trang"}: ${sg.T.gas || sg.U.gas}` }, "mã model");
+    // title / URL (T): not when the page's own words mix diesel in, nor a gas title over a litre fuel use.
+    const tk = {}, uk = {};
+    for (const [k, from] of [[tk, sg.T], [uk, sg.U]]) {
+      if (from.diesel) continue;
+      if (from.gas && !sg.litre && !tank) k.gas = from.gas;
+      if (from.gasoline) k.gasoline = from.gasoline;
+    }
+    add("T", tk, "tên trang"); add("T", uk, "URL");
+    if (!src.length) return null;
+    // diesel named beside gas / gasoline, in the same source or in another one of the page (a "Diesel Twin-cylinder" title over a
+    // "Gasoline" row of another product): mixed, no fuel.
+    if ([sg.B, sg.T, sg.U].some((k) => k.diesel)) return null;
+    const kinds = {}; // kind -> strongest level + words
+    for (const s of src) for (const kd of ["gas", "gasoline"]) if (s.k[kd] && (!kinds[kd] || F_RANK[s.level] > F_RANK[kinds[kd].level])) kinds[kd] = { level: s.level, words: s.k[kd], label: s.label };
+    const ks = Object.keys(kinds);
+    if (!ks.length) return null;
+    const fuel = ks.length === 2 ? "dual" : ks[0];
+    const from = ks.map((kd) => kinds[kd].level).sort((a, b) => F_RANK[a] - F_RANK[b])[0]; // the weakest of the kinds it rests on
+    const why = ks.map((kd) => `${kinds[kd].label} ghi "${String(kinds[kd].words).slice(0, 60)}"`).join("; ");
+    return { fuel, from, why };
+  }
+  // The fuel a PAGE states that the saved table does not carry (list written by hand, like ROW_EXCEPTIONS; only the page's
+  // OWN words, read on the live page, never another supplier's page of the same look): weichai-power n125–128 are
+  // "Standard Land-based Generator Set" pages of "…*7NG" rows whose title and URL say nothing of fuel; the page's breadcrumb
+  // "Products & Businesses / Energy & Power / Generator Set / Overseas Gas" and its image names "16M33NG-机组燃气-1.png" do
+  // (live pages read 20/11/2026, all four; also in sources/weichai-power/<n>.md). Level T: the page's category.
+  const FUEL_PAGES = [{ supplierId: "weichai-power", ns: [125, 126, 127, 128], fuel: "gas", why: 'trang ghi đường dẫn "Generator Set / Overseas Gas" và ảnh "机组燃气" (đọc trang sống 20/11/2026)' }];
+  const fuelPage = (id, n) => { const p = FUEL_PAGES.find((x) => x.supplierId === id && x.ns.includes(n)); return p ? { fuel: p.fuel, from: "T", why: p.why } : null; };
+  // A table's gas set (its header rows are not read): the same signs, no row, the page's URL when known.
+  const gasTable = (t, lines, url) => { const f = fuelFrom(fuelSigns({ title: t.title, header: [], rows: lines }, url), null); return !!f && (f.fuel === "gas" || f.fuel === "dual") || GAS_WORD.test(`${t.title || ""} ${lines.join(" ")}`) || lines.some((l) => /-NG$/i.test(cellsOf(l)[0] || "")); };
+  function tidyTable(t, note = () => {}, url = "") {
     let header = t.header || [], rows = t.rows || [], changed = false;
     if (header.some((h) => /[一-鿿] +[一-鿿]/.test(h))) { header = header.map((h) => h.replace(HAN_SP, "$1")); changed = true; }
     const st = !header.length && stuckHeader(rows);
@@ -842,7 +950,7 @@
     // A gas set's table ("DC330G6-NG", agg-fuzhou n115 / n116 on the natural-gas pages): the catalog has no fuel yet, so
     // its rows in the header are not added as if diesel (điều phối 19/11/2026: "thà thiếu"; the table's own rows stay as
     // before, a fuel rule is a task of its own).
-    else if (hr && gasTable(t, [...header, ...rows])) note("bảng máy khí: dòng máy trong tiêu đề không đọc thêm", header[hr.at]);
+    else if (hr && gasTable(t, [...header, ...rows], url)) note("bảng máy khí: dòng máy trong tiêu đề không đọc thêm", header[hr.at]);
     else if (hr) { rows = [...rows, ...header.slice(hr.at)]; header = header.slice(0, hr.at); changed = true; }
     return changed ? { ...t, header, rows } : t;
   }
@@ -1146,7 +1254,8 @@
     const note = notes ? (t, ti, row, reason, detail) => notes.push({ supplierId: s.id, n: t.n, table: ti, title: String(t.title || ""), row, reason, detail: detail == null ? null : String(detail).slice(0, 200) }) : () => {};
     const ownBrand = (list) => brandIn([s.names?.en, ...(s.names?.brands || [])].join(" "), list);
     (s.specTables || []).forEach((t0, ti) => {
-      const t = tidyTable(t0, (reason, detail) => note(t0, ti, null, reason, detail));
+      const url = ((s.sources || []).find((x) => x.n === t0.n) || {}).url || "";
+      const t = tidyTable(t0, (reason, detail) => note(t0, ti, null, reason, detail), url);
       const headerText = (t.header || []).join(" ");
       const title = String(t.title || "");
       const titleHead = title.split(/\s[|–-]\s|\|/)[0];
@@ -1366,6 +1475,13 @@
         break;
       }
     }
+    // Fuel of each record (may-khi-2): from its table's signs and its own row; kept on the record, so it reaches `uses` of build().
+    const fuelSg = new Map();
+    for (const o of out) {
+      if (!fuelSg.has(o.table)) { const t0 = s.specTables[o.table]; fuelSg.set(o.table, fuelSigns(t0, ((s.sources || []).find((x) => x.n === t0.n) || {}).url || "")); }
+      const f = fuelFrom(fuelSg.get(o.table), o.line || `| ${o.genset || ""}`) || fuelPage(s.id, o.n);
+      if (f) { o.fuel = f.fuel; o.fuelFrom = f.from; o.fuelWhy = f.why; }
+    }
     return mergeRepeats(namedPower(s, rowExceptions(s, out, note), note));
   }
   // Engine tables Khoa listed one by one (catalog nhóm 3, câu 6 = C, Khoa 20/11/2026): an engine maker's figures on a genset
@@ -1475,6 +1591,7 @@
       if (!f.freq && o.freq) f.freq = o.freq;
       if (!f.other && o.other) f.other = o.other;
       if (o.own) f.own = true;
+      if (f.fuel !== o.fuel) { delete f.fuel; delete f.fuelFrom; delete f.fuelWhy; } // the same row, two tables saying different fuels: none
       (f.also = f.also || []).push({ n: o.n, table: o.table, row: o.row, title: o.title });
     }
     return out;
@@ -1503,7 +1620,7 @@
     if (p.standby && p.prime) {
       const models = (models0 || []).filter(isCode).map(keyOf);
       const named = cellPerLine(t) || models.some((k) => keyOf(`${line || ""}`).includes(k) || keyOf(head).includes(k));
-      if (!(PRIME.test(head) && STANDBY.test(head) && named)) return null;
+      if (!(PRIME_RATE.test(head) && STANDBY.test(head) && named)) return null;
     }
     const hit = Object.entries(p).filter(([, v]) => v[pw.unit] === pw.min).map(([k]) => k);
     return hit.length && (pw.rating === "unspecified" || hit.includes(pw.rating)) ? p : null;
@@ -2470,7 +2587,9 @@
     return { votes, win: winOf(new Map([...votes].map(([v, ss]) => [v, ss.length]))), split, dropped };
   }
 
-  const api = { build, builder, tally, partsIn, fromSupplier, gensetsOf, GENSET_TABLES, unread, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, powersIn, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, madeAt, madeIn, useManufacturing, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS };
+  // fuelOf(table, url, line?): { fuel, from, why } or null (the rule of the section "Fuel of a table and of its rows").
+  const fuelOf = (t, url, line = null) => fuelFrom(fuelSigns(t, url), line);
+  const api = { build, builder, fuelOf, tally, partsIn, fromSupplier, gensetsOf, GENSET_TABLES, unread, linePower,prime: (s) => { if (s && typeof s === "object") rowsOf(s); }, needsOf, suggest, isCode, powersIn, cellsOf, keyOf, specKey, headingOf, originOf, originIn, groupOf, groupIn, brandOf, madeOf, madeAt, madeIn, useManufacturing, controllersIn, SPEC, ENGINE_BRANDS, ALT_BRANDS, FOREIGN_ENGINE, ENGINE_COUNTRY, NO_GROUP, COUNTRY_GROUP, CONTROLLERS };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.GenbidCatalog = api;
 })(typeof window !== "undefined" ? window : globalThis);
