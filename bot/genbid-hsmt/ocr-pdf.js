@@ -145,6 +145,7 @@ async function ocrFile(file, max = 300, find = 0, opts = {}) {
         let { from, to } = NATIVE ? chapterRange(scanned, head) : { from: 0, to: 0 };
         if (from) { to ||= pages.length; scanned = scanned.filter((n) => n >= from && n <= to); process.stderr.write(`CHUONG5 ${from}-${to}\n`); }
       }
+      if (scanned.length > max && (find || !opts.locate)) process.stderr.write(`CAPPED ${max}/${scanned.length}\n`); // pages beyond max are not read: said, not silent
       scanned = scanned.slice(0, find || !opts.locate ? max : scanned.length);
       process.stderr.write(`SCAN ${scanned.length}/${pages.length}\n`); // early: a killed run still tells it is a scan
       const cacheF = (pre, n) => (opts.cache ? path.join(opts.cache, `${pre}${n}.txt`) : "");
