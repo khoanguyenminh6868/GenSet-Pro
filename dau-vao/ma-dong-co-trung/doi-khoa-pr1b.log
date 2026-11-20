@@ -1,0 +1,37 @@
+dòng đổi khoá: 447; dòng chỉ có ở gốc: 0, chỉ ở nhánh: 0
+khoá mất: 346 (động cơ 346); khoá mới: 31 engines|JET444D, engines|WD129TAD2310, engines|WD129TAD2510, engines|WD135TAD2810, engines|WD145TAD3010, engines|WD145TAD3310, engines|WD145TAD3510, engines|WD269TAD3810, engines|WD269TAD4110, engines|WD269TAD4310
+khoá đích: 263; số dòng không khớp: 0; khoá đích đổi hãng: 2
+  engines|JET444D	0	2	2	đúng	(chưa có)	Doosan
+  engines|WD129TAD2310	0	2	2	đúng	(chưa có)	
+  engines|WD129TAD2510	0	2	2	đúng	(chưa có)	
+  engines|WD135TAD2810	0	2	2	đúng	(chưa có)	
+  engines|WD145TAD3010	0	2	2	đúng	(chưa có)	
+  engines|WD145TAD3310	0	2	2	đúng	(chưa có)	
+  engines|WD145TAD3510	0	2	2	đúng	(chưa có)	
+  engines|WD269TAD3810	0	2	2	đúng	(chưa có)	
+  engines|WD269TAD4110	0	2	2	đúng	(chưa có)	
+  engines|WD269TAD4310	0	2	2	đúng	(chưa có)	
+  engines|WD269TAD4510	0	2	2	đúng	(chưa có)	
+  engines|WD269TAD4810	0	2	2	đúng	(chưa có)	
+  engines|WD269TAD5010	0	2	2	đúng	(chưa có)	
+  engines|WD269TAD5610	0	2	2	đúng	(chưa có)	
+  engines|WD287TAD5810	0	2	2	đúng	(chưa có)	
+  engines|WD287TAD61L10	0	2	2	đúng	(chưa có)	
+  engines|WD327TAD6810	0	2	2	đúng	(chưa có)	
+  engines|WD327TAD7810	0	2	2	đúng	(chưa có)	
+  engines|WD327TAD8210	0	2	2	đúng	(chưa có)	
+  engines|4045HFG20	0	1	1	đúng	(chưa có)	John Deere
+  engines|4DX2250D	9	11	2	đúng	FAWDE / Xichai	FAWDE
+  engines|4DX2365D	7	9	2	đúng	FAWDE / Xichai	FAWDE
+  engines|CA6DL124	0	1	1	đúng	(chưa có)	FAWDE
+  engines|D905E2BGCHN1	0	1	1	đúng	(chưa có)	Kubota
+  engines|P126TIII/P126TI	0	1	1	đúng	(chưa có)	Hyundai
+  engines|JET274F	0	1	1	đúng	(chưa có)	Doosan
+  engines|JET274H	0	1	1	đúng	(chưa có)	Doosan
+  engines|JET274K	0	1	1	đúng	(chưa có)	Doosan
+  engines|JET444F	0	1	1	đúng	(chưa có)	Doosan
+  engines|JET444FS	0	1	1	đúng	(chưa có)	Doosan
+  engines|ZH6105AZLD	0	1	1	đúng	(chưa có)	Ricardo
+  engines|ZH6105IZLD	0	1	1	đúng	(chưa có)	Ricardo
+  engines|ZH6105ZLD	0	1	1	đúng	(chưa có)	Ricardo
+exit 0
