@@ -1,26 +1,29 @@
 {
  "partial": true,
  "all": {
-  "runs": 25,
-  "anyRuns": 9,
-  "aliasInTop": 24
+  "runs": 50,
+  "anyRuns": 16,
+  "aliasInTop": 58
  },
  "res": {
   "X-hau-to-ma (khac dong co / hau to cong suat)": {
-   "runs": 5,
-   "slots": 8,
+   "runs": 7,
+   "slots": 18,
    "samples": [
     "IB2300042675 250 kVA: #14 P126TI (uleengen n5001) + #16 P126TI (rise-power n120) + #18 P126TI-II (rise-power n120) + #21 P126TI (rcg-power n113)",
     "IB2300083662 200 kVA: #22 BF6M1013FC-G3 (acepow-fuan n137) + #23 BF6M1013FC-G2 (acepow-fuan n137)",
     "IB2300147640 200 kVA: #22 BF6M1013FC-G3 (acepow-fuan n137) + #23 BF6M1013FC-G2 (acepow-fuan n137)",
     "IB2300305099 250 kVA: #18 DC09 320A 02 61 (kaihua-genset n114) + #21 DC09 072A 02-11 (voltgent n107)",
-    "IB2300340905 100 kVA: #17 BF4M1013EC (uleengen n104) + #26 BF4M1013EC-G1 (acepow-fuan n137)"
+    "IB2300340905 100 kVA: #17 BF4M1013EC (uleengen n104) + #26 BF4M1013EC-G1 (acepow-fuan n137)",
+    "IB2400298819 250 kVA: #15 P126TI (uleengen n5001) + #16 P126TI (rise-power n120) + #18 P126TI-II (rise-power n120) + #21 P126TI (rcg-power n113)"
    ]
   },
   "F2-chu-chua-ro-nghia": {
-   "runs": 0,
-   "slots": 0,
-   "samples": []
+   "runs": 1,
+   "slots": 1,
+   "samples": [
+    "IB2400186078 12 kVA: #1 S4L2 (depco-power n2261) + #2 S4L2 (geko-gemmingen n2005) + #3 S4L2 SD (tecnogen n2005)"
+   ]
   },
   "AB-hai-ma-mot-o (gach)": {
    "runs": 0,
@@ -43,13 +46,15 @@
    "samples": []
   },
   "C-cong-suat-dinh-ma": {
-   "runs": 4,
-   "slots": 5,
+   "runs": 9,
+   "slots": 10,
    "samples": [
     "IB2200052716 10 kVA: #7 YD385D (tecgen-fujian n131) + #12 YD385D (tecgen-fujian n129) + #14 YD385D (acepow-fuan n114) + #23 YD385D/11KW (jet-power n124)",
     "IB2200052716 15 kVA: #7 YD480D (tecgen-fujian n129) + #30 YD480D/14KW (jet-power n124)",
     "IB2300131187 12 kVA: #8 YD480D (acepow-fuan n114) + #15 YD480D (tecgen-fujian n129) + #27 YD480D (gordon-power n104) + #28 YD480D/14KW (jet-power n124)",
-    "IB2300171891 11 kVA: #6 YD385D (tecgen-fujian n129) + #7 YD385D (tecgen-fujian n131) + #9 YD385D (acepow-fuan n114) + #26 YD385D/13KW (jet-power n123) + #27 YD385D/11KW (jet-power n124)"
+    "IB2300171891 11 kVA: #6 YD385D (tecgen-fujian n129) + #7 YD385D (tecgen-fujian n131) + #9 YD385D (acepow-fuan n114) + #26 YD385D/13KW (jet-power n123) + #27 YD385D/11KW (jet-power n124)",
+    "IB2400116787 12 kVA: #9 YD480D (acepow-fuan n114) + #16 YD480D (tecgen-fujian n129) + #28 YD480D (gordon-power n104) + #29 YD480D/14KW (jet-power n124)",
+    "IB2400144224 12 kVA: #7 YD385D (acepow-fuan n114) + #8 YD385D (tecgen-fujian n129) + #10 YD385D (uleengen n129) + #25 YD385D/11KW (jet-power n124)"
    ]
   },
   "E-ten-hang-dinh-ma": {
