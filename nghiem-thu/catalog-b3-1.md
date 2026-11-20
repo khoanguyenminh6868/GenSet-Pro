@@ -179,3 +179,13 @@ Chưa mô phỏng: tác động của (b)–(d) lên điểm xuất xứ / G7 / 
 2. (d2) Weichai↔Ricardo: nguồn chính hãng KHÔNG xác nhận (không rõ) → không thêm cặp trừ khi Khoa nói rõ.
 3. (b) / (c): chọn có thể làm không cần xác nhận hãng, bằng đếm ở bảng trên.
 Em giữ worktree `wt-catalog-b3`, PR #954 DRAFT, không sửa thêm gì.
+
+
+### (3e) Phương án (e) — phiếu hãng từ ô 品牌 của bảng zhengchi 整机编号 tính ở MỨC TÊN TRANG (điều phối yêu cầu 20/11; chưa sửa code PR)
+Cách đếm: `genbid-test\b3\e2.mjs` (vá trong bộ nhớ `makesFor` của `web/catalog.js`: với `s.id === "zhengchi-power"` và tiêu đề cột có 整机编号, cả hai nhánh `cell.length === 1` và `row.length === 1` trả mức "tên trang" thay vì "dòng bảng"). Lưu ý bẫy: vá MỖI nhánh `cell` thì KHÔNG đổi gì (0 động cơ khác nhánh hiện tại) vì zhengchi đi nhánh `row` (ô 品牌 nằm trong rowText, `brandCell` không truyền) — phải vá cả hai. So `build()` gốc (abb28c67) ↔ (e) trên TOÀN BỘ động cơ có ở hai bên (so chuỗi tên hãng).
+- Động cơ khác gốc trên toàn bộ `build()`: **1** — 12M33D1450E310: Weichai → Baudouin/Weichai (gốc chỉ có phiếu tên trang của chính zhengchi "ZCDL-W1320 品牌=1320→Weichai"; nay thêm phiếu tên trang 博杜安 → Baudouin; hai tên cùng mức nên hiện cả hai, `SAME_MAKER` coi là cùng hãng). Ngoài 22 động cơ: **không có** động cơ nào đổi.
+- Dòng-lượt về như gốc: **3.828 / 3.828**. Động cơ khác nhánh hiện tại: 22 (cả 22 trả về gốc).
+- 22 động cơ: Mitsubishi S12R-PTA2-C / S16R-PTA-C / S16R-PTA2-C → Mitsubishi (có lại); Ricardo R4105ZD / R6105ZD / R6105AZLD / R6108ZLD → Ricardo (không còn xung đột); WP6D132E200, WP4D108E200 → Weichai (Deutz bị bỏ); 12M26D902E200, 6M33D670E200, 16M33D1680E310, 12M55D2210E310 → Weichai; WD269TAD56, WD327TAD88, WD327TAD82, WD129TAD25 → Wudong/Wudong; WD287TAD61L, WD129TD17 → Wudong; WD129D11, WD150D15 → (chưa rõ) như gốc.
+- 18 động cơ mà zhengchi là phiếu duy nhất: 16 vẫn có hãng (HBKMS171Z/227Z/780Z/840Z, JSQSK60D8 = Cummins; TCR300/500/550/600/700/750/780/890 = Tongchai; WEWP12ZLD/WEWP13ZLD = Weichai; YC4D55ZD20 = Yuchai) vì mức tên trang vẫn đủ khi không có phiếu cao hơn; chỉ WD129D11 và WD150D15 mất FAWDE (về "chưa rõ" như gốc, mất +60 hãng ở 194 dòng-lượt so với nhánh hiện tại, bằng gốc).
+- 7 động cơ (1b): R6105AZLD, R6108ZLD, R4105ZD, R6105ZD → Ricardo (`makeConflict` false); S16R-PTAA2-C, S16R2-PTAW-C → Mitsubishi và 1104D-E44TAG2 → Perkins, như trước.
+- Chưa mô phỏng: xuất xứ / G7 / luật tần số ngoài hãng, top 30 (cần đo cloud). So với (b): (e) không làm mất hãng của 16/18 động cơ duy nhất-zhengchi, chỉ mất 2 (WD).
