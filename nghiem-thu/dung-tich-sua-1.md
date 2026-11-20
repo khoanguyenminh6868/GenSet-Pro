@@ -88,8 +88,6 @@ Cơ chế: động cơ không có giá trị thắng thì đạt trần `maxDisp
 |---|---|---|---|---|
 | IB2200032133 (500) | 6 xi lanh, ≤12,5 L, ≤130×155 | TAD1345GE 6 dòng | 4,4 → còn 12,78 > 12,5 | Có: 12,78 L > 12,5 |
 | IB2300288169 (400) | "6 xilanh", <12,7 L | TAD1345GE 16 dòng | 4,4 → 12,78 > 12,7 | Có (sát ngưỡng 0,08 L) |
-| IB2400236068#1 (500) | ≤12,5 L | TWD1643GE 11 dòng | 6,0 → 16,12 | Có |
-| IB2400236068#0 | các dòng top là 500–550 kVA (trần 12,5 L như #1) | TAD1345GE 6 dòng | 4,4 → 12,78 | Có nếu trần 12,5 (suy từ dòng top, chưa soát lại chữ trần của #0) |
 | IB2500314401 (350) | 6 xi lanh, ≤9,84 L, ≥118×150 | TAD1343GE 22, TAD1344GE 14 dòng | 4,4 → 12,78 / 12,13 | Có |
 | IB2300215868 (250) | ≥6 xi lanh, ≤108×125, ≤6,8 L | TAD1341GE 2 dòng | 3,3 → 12,78 | Có |
 | IB2400481114 | ≤8 L, 6 xi lanh | TAD1341GE 1 dòng | 3,3 → 12,78 | Có |
@@ -99,3 +97,15 @@ Mingbang n125 "vào": theo khoá dòng (`all`), các dòng này đã ở top 30 
 Chồng #957: huipu "1278" (HP-V280 / V400) và MB-V480 đã `dropspec` ở main nhờ #957; bản gốc b8752924 trước #957 nên còn phiếu 1278 của TAD1345GE; phần chồng này không do #992.
 Còn mở: 9,36 L của TAD1341/1342/1351GE vẫn thắng ở nhánh này (đã xử trong `tad1341-9-36`, chưa PR); #0 và 1 dòng TAD1641GE như bảng.
 Bảng đo khác: gốc cloud 08:19Z, tôi chạy lại bằng bidhist 20/11 12:30 nên có thể lệch vài dòng.
+
+### 8b. Hai điểm điều phối hỏi lại (đọc chữ HSMT trong `doc-cache\bidhist.json` 20/11 12:30; script `one.mjs` chạy `candidates` trên gốc b8752924 và nhánh 95a02064)
+**IB2400236068 có HAI cỡ, và tôi đã gán nhầm trần ở bảng trên** (dòng #1 ghi 500 kVA / ≤12,5 L là sai; dòng #0 "suy từ top" cũng bỏ). `sizesOf` → [500 kVA, 660 kVA]; #0 = 500 kVA, #1 = 660 kVA. Chữ HSMT:
+- 500 kVA ("Máy 500 kVA: Động cơ - kích thước, công suất"): 6 xy lanh xếp thẳng; đường kính ≤ 130 mm; khoảng chạy ≤ 157 mm; **tổng dung tích ≤ 12.5 L**; tỷ số nén ≥ 15.8:1; ≥ 444 bkW.
+- 660 kVA: 6 xy lanh xếp thẳng; đường kính ≤ 137 mm; khoảng chạy ≤ 171 mm; **tổng dung tích ≤ 15.2 L**; ≥ 621 bkW.
+- `hintsOf` đọc đúng: #0 `maxDisp=12.5, minCyl=6, cylExact`; #1 `maxDisp=15.2, minCyl=6, cylExact` (cả gốc lẫn nhánh).
+- **#0 (500 kVA, trần 12,5)**: TAD1345GE(B) bị loại `ruled: maxDisp` (agg-fuzhou ×4, cgm-italia, jet-power, kangwo-guangdong, lees-power ×2, long-gen ×2, …): còn 12,78 L > 12,5 × 1,005. Đúng Volvo (D13 12,78 L). Ở gốc chúng lọt vì mingbang ghi 4,4 L.
+- **#1 (660 kVA, trần 15,2)**: TWD1643GE bị loại `maxDisp`: 16,12 L > 15,2. Đúng Volvo.
+- Ghi chú ngoài phạm vi PR: ở #0 các dòng sanq-power "TAD1650GE(1345GE)", "TAD1651GE(1641GE)", "TAD1652GE(1642GE)" (khoá động cơ có chú thích trong ngoặc) vẫn lọt trần 12,5 L và đứng top: không có số dung tích để loại, nhóm khác với khoá TAD1345GE / TAD1641GE; không do #992 gây ra, chưa xử lý.
+
+**TAD1641GE lệch 1 dòng (21 ↔ 22), IB2600217137#0** (HSMT 130×163, 13,0 L, 6 xi lanh, luật `cyl`): dòng đó là `mingbang-mbkl | TAD1641GE | MB-V400 | 500 kVA | 4 | 4.4 | 105*127` (n125, số 13). Gốc: dòng KHÔNG bị loại, điểm 373 (ở `all`). Nhánh: bị loại `ruled: cyl`. Lý do: luật `cyl` (HSMT ghi trơ 6 = chính xác) xét ô của chính dòng trước, và NGUỒN MÂU THUẪN thì không xét; ở gốc ô của dòng ghi "4" còn các NCC khác ghi 6 nên bị coi là mâu thuẫn và dòng được giữ. #992 bỏ `cyl` sai của dòng (mingbang n125 `dropspec` cyl + disp) nên chỉ còn các nguồn khác, thống nhất 6 → luật loại dòng. Hướng đúng (TAD1641GE là 6 xi lanh thẳng hàng); 21 dòng kia đã bị loại ở cả hai bản.
+CI 95a02064: server, spec-diff, suppliers, web đều pass (Vercel bỏ qua do Ignored Build Step).
