@@ -86,3 +86,20 @@ Bổ sung tìm được khi quét (cùng bảng họ jlmech, cùng cơ chế l�
 - 3 mẫu đối chiếu nguồn (trang sống 20/11): aoke catid=69 `<td> 108</td>` cột 排量(L); jlmech n103 `458&nbsp;` cột Displacement (L), dòng kế 45.8; westin TP880L.pdf "Rated rotation speed 1191" vs "Engine speed Rated 1500 RPM" trang 2.
 - Rủi ro: ngoại lệ khớp chữ dòng nguyên văn, cào lại đổi chữ thì tự hết; quay lui = revert PR. #953 (aosif AW1125) sửa cùng chỗ cuối `ROW_EXCEPTIONS` nên có xung đột nhẹ khi merge. Chưa đo top 30 (điều phối đo cloud).
 - Chưa kiểm được: khoá dòng với bảng ngang của cameo / westin đã chạy (test ca 5, 8 đạt) nhưng chưa thử sau khi cào lại; chưa chạy CI của GitHub.
+
+---
+# Top 30 cloud: giải thích 28 khoá đổi (20/11, PR #957)
+Cách đo: `do-gop-k` trên 227 lượt cloud ở bản gốc (`k-goc.json`, bidhist 17/11); bản nhánh chỉ chạy được 9 lượt đại diện (`k-nhanh-small.json`, bidhist 20/11 05:30Z) vì chạy đủ mất ~7.000 s/lần và đã bị dừng. **Độ phủ nhánh chưa đủ**, và hai lần chạy khác bidhist: kết luận dưới là theo từng khoá, không phải đối chiếu toàn bộ.
+
+## VÀO (10 khoá): ở bản gốc đều `loại:rowflag`, nay không còn cờ nên thành ứng viên (đúng thiết kế dropspec)
+- jlmech Y06MK350LD20 (65 lượt), YC6MK285LD20 (29), 401246TWG2A (10); mingbang TAD1642GE (48); westinpower 400623TAG3A (15); jiangchai 6M33D506E310 (2); cameo YC4D105D34, aoke MTAA11G3, aoke 6R1600G20F (1 lượt mỗi khoá).
+- aosif AW1000: 6 lượt trước bị loại cyl/layout/disp/maxDisp vì "12V / 31,8" sai; nay bỏ hai số đó nên trở lại; thêm 20 lượt chỉ đổi điểm (vd 168 → 152, westin 229).
+
+## RỜI (17 khoá): nhánh ghi `loại:disp`; không khoá nào có giá trị cũ đúng
+- 6R1600G20F (ettes, kaihua ×3, xingguang, haifeng, taihai, weiman, yingtai; meao "không thấy" ở nhánh, chưa giải thích được): HSMT IB2300018261 đòi dung tích >11,05 L. Trước đây {aoke 105, jinjia 10,52} không có `win` nên qua nhờ 105 (sai). Nay còn 10,52 → loại, ĐÚNG: MTU 6R1600 = 6 × 1,75 = 10,5 L (122×150), khớp tài liệu hãng MTU và comaizr 10,521 L.
+- TAD1345GE (kaichen, jianghao, vantek ×2, walter): HSMT IB2200049662 đòi ≥19 L, IB2500364714 ≥18,8 L. Trước nhờ "1278" của huipu (thực là 12,78 L) nên qua; nay {12,78; 16,12; 4,4} < 19 → loại, ĐÚNG (Volvo Penta: 6 xi lanh thẳng hàng, 131×158, 12,78 L).
+- TAD1341GE (jianghao, vantek): IB2300127113 ≥14 L, thực 12,78 L → loại, đúng.
+- Kết luận: 0 khoá bị loại sai (không có hồi quy). Top 30 của mẫu 9 lượt chỉ đổi ở IB2300018261#0 (ettes 6R1600G20F ra, stone-power NTA855G2A vào).
+
+## Lỗi có sẵn, KHÔNG do PR (không sửa ở đây)
+- mingbang vẫn ghi TAD1345GE / TAD1341GE là 4 xi lanh 3,3–4,4 L (14 dòng khác của bảng chưa bỏ); "9,36" thắng phiếu cho TAD1341GE (bảng chép từ TAD941GE).

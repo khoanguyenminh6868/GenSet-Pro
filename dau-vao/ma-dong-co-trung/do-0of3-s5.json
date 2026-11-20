@@ -1,9 +1,8 @@
 {
- "partial": true,
  "all": {
-  "runs": 50,
-  "anyRuns": 16,
-  "aliasInTop": 58
+  "runs": 70,
+  "anyRuns": 23,
+  "aliasInTop": 91
  },
  "res": {
   "X-hau-to-ma (khac dong co / hau to cong suat)": {
@@ -19,10 +18,12 @@
    ]
   },
   "F2-chu-chua-ro-nghia": {
-   "runs": 1,
-   "slots": 1,
+   "runs": 3,
+   "slots": 3,
    "samples": [
-    "IB2400186078 12 kVA: #1 S4L2 (depco-power n2261) + #2 S4L2 (geko-gemmingen n2005) + #3 S4L2 SD (tecnogen n2005)"
+    "IB2400186078 12 kVA: #1 S4L2 (depco-power n2261) + #2 S4L2 (geko-gemmingen n2005) + #3 S4L2 SD (tecnogen n2005)",
+    "IB2500498331 12 kVA: #16 S4L2 (geko-gemmingen n2005) + #21 S4L2 SD (tecnogen n2005)",
+    "IB2500571943 12 kVA: #1 S4L2 (geko-gemmingen n2005) + #2 S4L2 SD (tecnogen n2005)"
    ]
   },
   "AB-hai-ma-mot-o (gach)": {
@@ -31,14 +32,20 @@
    "samples": []
   },
   "AB-hai-ma-mot-o (ngoac)": {
-   "runs": 0,
-   "slots": 0,
-   "samples": []
+   "runs": 1,
+   "slots": 1,
+   "samples": [
+    "IB2600487332 100 kVA: #11 6BT5.9-G2 (stone-power n106) + #12 6BT5.9-G2 (fdk-energy n1007) + #13 6BT5.9-G2 (koten-power n5001) + #23 6BT5.9-G2 (QC86/100E) (sr-genset n2002)"
+   ]
   },
   "F1-chu-mo-ta": {
-   "runs": 0,
-   "slots": 0,
-   "samples": []
+   "runs": 3,
+   "slots": 7,
+   "samples": [
+    "IB2500405459 750 kVA: #7 4006-23TAG3A (allam-power n2011) + #8 4006-23TAG3A (genmac n2025) + #17 4006-23TAG3A (fg-wilson n2005) + #24 4006-23TAG3A Derate (aj-power n104)",
+    "IB2500498331 12 kVA: #2 403A-15G1 (genmac n2004) + #10 403A-15G1 (agg-power n2029) + #11 403A-15G1 (tecnogen n2001) + #22 403A-15G1 Derate (aj-power n101) || #4 403A-15G2 (genmac n2005) + #14 403A-15G2 (cgm-italia n101) + #15 403A-15G2 (tecnogen n2001) + #23 403A-15G2 Derate (aj-power n101) || #13 404D-22G (fg-wilson n2008) + #24 404D-22G Derate (aj-power n101)",
+    "IB2500571943 12 kVA: #4 403A-15G1 (genmac n2004) + #12 403A-15G1 (agg-power n2029) + #13 403A-15G1 (tecnogen n2001) + #23 403A-15G1 Derate (aj-power n101) || #6 403A-15G2 (genmac n2005) + #16 403A-15G2 (cgm-italia n101) + #17 403A-15G2 (tecnogen n2001) + #25 403A-15G2 Derate (aj-power n101) || #15 404D-22G (fg-wilson n2008) + #26 404D-22G Derate (aj-power n101)"
+   ]
   },
   "D-noi-san-xuat": {
    "runs": 0,
@@ -46,8 +53,8 @@
    "samples": []
   },
   "C-cong-suat-dinh-ma": {
-   "runs": 9,
-   "slots": 10,
+   "runs": 12,
+   "slots": 15,
    "samples": [
     "IB2200052716 10 kVA: #7 YD385D (tecgen-fujian n131) + #12 YD385D (tecgen-fujian n129) + #14 YD385D (acepow-fuan n114) + #23 YD385D/11KW (jet-power n124)",
     "IB2200052716 15 kVA: #7 YD480D (tecgen-fujian n129) + #30 YD480D/14KW (jet-power n124)",

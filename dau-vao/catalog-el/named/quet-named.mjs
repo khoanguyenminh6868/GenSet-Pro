@@ -22,6 +22,7 @@ for (const [kind, list] of [["engine", cat.engines], ["alternator", cat.alternat
 console.error(`gói ${hist.length}, model ${models.size}`);
 const lines = ["gói\tmodel squash\tvai:model\tcũ\tmới\tngữ cảnh (token quanh chỗ khớp)"];
 let lost = 0, gained = 0, both = 0;
+const kept = ["gói\tmodel squash\tvai:model (vẫn nêu đích danh)"];
 const byModel = {};
 for (const d of hist) {
   const h = B.hintsOf(d.config.text, "");
@@ -29,7 +30,7 @@ for (const d of hist) {
   for (const [k, names] of models) {
     if (!h.text.includes(k)) continue; // cũ = false thì mới cũng false
     const nw = B.named(h, k);
-    if (nw) { both++; continue; }
+    if (nw) { both++; kept.push([d.notifyNo, k, [...names].join(",")].join("\t")); continue; }
     lost++;
     // ngữ cảnh: token chứa chỗ khớp đầu tiên ± 2 token
     let pos = h.text.indexOf(k), acc = 0, ti = 0;
@@ -40,5 +41,6 @@ for (const d of hist) {
   }
 }
 fs.writeFileSync(OUT, lines.join("\n") + "\n");
+fs.writeFileSync(OUT.replace(/\.tsv$/, "-giu.tsv"), kept.join("\n") + "\n");
 console.log(`cặp (gói, model) cũ khớp: ${both + lost}; mới vẫn khớp ${both}; mất ${lost}; mới thêm ${gained} (không thể: mới ⊂ cũ)`);
 for (const [m, n] of Object.entries(byModel).sort((a, b) => b[1] - a[1])) console.log(" ", n, m);

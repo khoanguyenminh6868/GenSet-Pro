@@ -40,7 +40,26 @@ Cách quét (`1-quet.mjs`): với mỗi khoá, tách tên theo dấu cách, ngo�
 
 ## (3) Hệ quả trên top 30
 
-(điền sau khi `3-do.mjs` chạy xong)
+**ĐO TRÊN MẪU, phần cả kho là ƯỚC TÍNH.** Bước ứng viên (`candidates`, mã main 1e712e19) chạy ~25 s/lượt nên cả 928 gói (~1 070 lượt) mất ~7 giờ; đã đo mẫu 1/5 số gói (gói thứ 0, 5, 10… trong `doc-cache\bidhist.json`, lọc như `noi-chuan-hoa-1/do-ung-vien.mjs`): **214 lượt** (`3-do.mjs 0..2 3 5`, gộp ở `do-mau-s5.json`). NCC: `doc-cache\supplier.json` 18/11.
+
+Cách đếm: một lượt "dính" một lớp khi top 30 có ≥ 2 khoá KHÁC NHAU của cùng một nhóm (khoá thừa + khoá đích); "chỗ thừa" = số dòng top 30 mang khoá thừa trong nhóm đó.
+
+| Lớp | Lượt dính (mẫu 214) | Chỗ thừa (mẫu) | Ước tính cả kho (×5) | Ví dụ (mẫu) |
+|---|---|---|---|---|
+| C1 công suất dính mã | 48 (22%) | 55 | ~240 lượt / ~275 chỗ | IB2300171891 11 kVA: #6 YD385D (tecgen n129) + … + #26 "YD385D/13KW" + #27 "YD385D/11KW" (jet-power n123/n124) |
+| F1 Derate / Switchable | 8 | 20 | ~40 / ~100 | IB2500405459 750 kVA: #7 4006-23TAG3A (allam) + … + #24 "4006-23TAG3A Derate" (aj-power n104) |
+| F2 chưa rõ nghĩa | 10 | 19 | ~50 / ~95 | IB2500571943 12 kVA: #1 S4L2 (geko) + #2 "S4L2 SD" (tecnogen n2005) (chưa rõ có cùng động cơ không) |
+| A hai mã, ngoặc | 3 | 4 | ~15 / ~20 | IB2300194512 750 kVA: #9 6M33G825/5 (longkai n108) + #12 "6M33G8D3/5 (6M33G825/5)" (kaihua n119) + #22 6M33G825/5 (weichai-heavy-machinery); IB2600465194 4000 kVA: #3 "20V4000G44S(3B)" (comappower) + #11 20V4000G44S (agg) + #12 "20V4000G44S(3B) 20V4000G94S(3D)" (yanan) |
+| B hai mã, gạch | 2 | 2 | ~10 / ~10 | IB2300296794 20 kVA: 404A-22G1 ×3 + 404D-22G ×3 + #14 "404A-22G1/ 404D-22G" (victory) |
+| D nơi sản xuất | 1 | 1 | ~5 / ~5 | IB2300194512 750 kVA: #4 4006-23TAG2A (fdk n108) + #13 "India 4006-23TAG2A" (kaihua n122) |
+| E tên hãng dính | 1 | 1 | ~5 / ~5 | IB2300296794 20 kVA: 404D-22G ×3 + #13 "404D-22G PERKINS" (superwatt n119) |
+| C2 số dính mã | 0 | 0 | 0 (ít, không thấy trong mẫu) | — |
+| G chỉ khác ngoặc | 0 | 0 | 0 (không thấy trong mẫu) | — |
+| X hậu tố mã (KHÔNG phải trùng) | 12 | 32 | — | IB2200005800 320 kVA: P126TI-II + P126TI (Doosan hai đời) — không gộp |
+
+- Lượt có ít nhất một lớp A–G dính: **61 đến 73 / 214** (29–34%; các lớp có thể trùng lượt; 73 là số lượt dính bất kỳ lớp nào kể cả X). Ước tính cả kho: ~300–370 lượt.
+- **IB2600603983** (không có trong `doc-cache\bidhist.json`; lấy từ `dau-vao\ib2600603983\cand-out.txt`, cùng mã main): 1 chỗ thừa lớp A — #18 "6M33G8D3/5 (6M33G825/5)" (kaihua n119, 213 điểm) cạnh #13 6M33G825/5 (longkai n108, 238). Ô này chiếm chỗ thứ 3 trong `MAKE_ROWS = 3` của Baudouin → dòng tốt nhất của 6M31G825/5 (voltgent n110, 190 điểm) không vào. Gộp riêng ca này chưa đủ để 6M31G825/5 vào top 30 (hạng thô 141; phần còn lại là thiếu dữ liệu, xem `phan-tich.md`), nhưng giải phóng một chỗ Baudouin.
+- Đọc kết quả: lớp gây trùng nhiều nhất là C1 (jet-power, mecca-power, weiman-fujian ghi "mã/công suất"), sửa an toàn nhất (bỏ "/<số>KW" ở bước đọc ô). Lớp A (ca gốc) hiếm (~1,4% lượt) nhưng rơi đúng vào các gói lớn.
 
 ## (4) Phương án sửa từng lớp
 
@@ -61,7 +80,7 @@ Thứ tự đề xuất: E, C, D, F1 (ở `tidyModel`, chắc cùng động cơ)
 
 - `1-quet.mjs [web|repo]` → `quet-*.json/txt`: mọi khoá nghi trùng.
 - `2-lop.mjs [web|repo]` → `lop-*.json/tsv`, `tong-hop.txt`: phân lớp.
-- `3-do.mjs` → `do.json/txt`: top 30 trên mọi gói doc-cache.
+- `3-do.mjs [shard số-shard bước]` → `do-<shard>of<n>-s<bước>.json/txt`: top 30 trên gói doc-cache (đã chạy `0..2 3 5`, gộp `do-mau-s5.json`; chạy đủ `3-do.mjs` không đối số ~7 giờ).
 - `4-madeat.mjs` → `madeat.tsv`: nơi sản xuất từng dòng trước / sau gộp.
 
 ## Chưa kiểm
