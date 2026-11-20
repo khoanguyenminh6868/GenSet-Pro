@@ -134,7 +134,8 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    engine and an alternator that appear together in the same genset row (a real configuration a manufacturer sells).
    Alternator from its maker's datasheet (Khoa 2026-11-20: "miễn sao đạt yêu cầu của hsmt thì cứ gợi ý"): catalog.md
    section "Đầu phát theo datasheet hãng (NCC chưa chào)" lists the models of the alternator makers' own sheets that the
-   code found to meet the HSMT (kVA at the continuous column, not standby). Take one of them ONLY when the configuration's
+   code found to meet the HSMT (kVA at the continuous column, not standby; when the HSMT's site is above 40 °C / 1 000 m,
+   after the maker's own derating where its sources give one). Take one of them ONLY when the configuration's
    row names no alternator; a row that names an alternator keeps it (the code itself replaces one whose maker sheet shows
    it below the kVA needed, and keeps one the system has no figures for). Write `alternator` as { "model", "make", "src" }
    with `src` copied from that section ({ "kind": "maker", "supplierId", "n" }); do not search the internet for this and
