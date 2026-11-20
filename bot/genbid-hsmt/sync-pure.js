@@ -996,6 +996,8 @@ const ARCHIVE_LIMITS = { entries: 500, bytes: 1024 ** 3, files: 500, depth: 1 };
 // archives) first, scans and pictures (OCR, slow) after, so that whatever stops the reading late costs scans, not text.
 // items: [{ p: path, scan: bool }]. Stable: names keep their order inside each group.
 const archiveOrder = (items) => [...items.filter((i) => !i.scan), ...items.filter((i) => i.scan)];
+// readNote of an OCR that failed and left no text: "OCR lỗi (<what the OCR said, short>), chưa đọc".
+const ocrFailNote = (err) => `OCR lỗi${String(err || "").trim() ? ` (${String(err).trim().replace(/\s+/g, " ").slice(0, 100)})` : ""}, chưa đọc`;
 // Names of the files not read when an archive holds more than limit.files: "a, b, c ... (+N)".
 const unreadList = (names, max = 8) => names.slice(0, max).join(", ") + (names.length > max ? ` ... (+${names.length - max})` : "");
 // An entry name that would be written outside the folder: absolute ("/x", "C:\x", "\\srv\x") or with a ".." part.
@@ -1085,6 +1087,6 @@ module.exports = {
   capCompare, SPEC_COMP, specComp, sameItems, reqNear, itemBare, specTwin, specsMerge, specsEmpty, partHead,
   askCut, askTrace, normTxt, numsOf, sourceOf, found, nearby, scoreItems, checkSupplier, SELF_KINDS,
   SELF_STATUS, subSections, SELF_AS, selfCheckItems, checkSelfChecks, checkResult,
-  ARCHIVE_LIMITS, archiveOrder, unreadList, unsafeEntry, unrarList, tarList, archiveRefusal, UNRAR_EXIT, unrarFail, tarFail, isNulFile, pdfNeedsOcr,
+  ARCHIVE_LIMITS, archiveOrder, unreadList, ocrFailNote, unsafeEntry, unrarList, tarList, archiveRefusal, UNRAR_EXIT, unrarFail, tarFail, isNulFile, pdfNeedsOcr,
   WRITE_BATCH, batchRows,
 };

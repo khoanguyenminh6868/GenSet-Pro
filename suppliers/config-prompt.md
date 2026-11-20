@@ -149,8 +149,12 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    A bare figure of the HSMT (no ≥ / ≤ / "tối thiểu" / "tối đa", e.g. "Dung tích xi lanh 11.051 L") (Khoa, 2026-11-03):
    for a figure where more is better (power, displacement, cylinders, tank, battery Ah, insulation class, IP, hours...)
    it is the least accepted: a value at or above it is `met`, below it `not_met`. For a figure with no better side (bore,
-   stroke, dimensions, weight, compression ratio, a speed or voltage of a design) a different value is `unclear`, with
+   stroke, dimensions, weight, a speed or voltage of a design) a different value is `unclear`, with
    the offered value in `offered` and a `note` saying it differs from the HSMT, never `not_met`; the same value is `met`.
+   Except the compression ratio (Khoa, 2026-11-20): a bare ratio ("Tỉ số nén | 14 : 01") is the exact one asked. Every
+   source of the engine giving another ratio (13,6:1 / 16:1 against 14:1) is `not_met`; a value only rounded otherwise
+   (14,0:1, 14,1:1 against 14:1) is the same; sources that disagree among themselves, or none, stay `unclear`. The code
+   checks this too and writes the `not_met`. A ratio with ≥ / ≤ is compared as a least / a most, as before.
    An engine or alternator figure (cylinders, displacement, bore, governor, aspiration, emission, insulation, IP, AVR...)
    that the configuration's own row does not give may be taken from "Thông số theo model" of that same model: copy its
    `factSrc` into the check, set `part` to `engine` or `alternator`, and quote `sourceQuote` from that factSrc line.
