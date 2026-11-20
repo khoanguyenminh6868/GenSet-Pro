@@ -1,0 +1,15 @@
+diff --git a/suppliers/ctl-module.mjs b/suppliers/ctl-module.mjs
+index dfd3193f..90c07ccd 100644
+--- a/suppliers/ctl-module.mjs
++++ b/suppliers/ctl-module.mjs
+@@ -215,4 +215,9 @@ export function bestPair(names = [], ctlFacts = [], compat = [], modFacts = new
+   return { ...cur, modules: chosen.filter((x) => used.has(x.m.model)).map((x) => ({ model: x.m.model, make: x.m.make, ...(x.m.order ? { order: x.m.order } : {}) })) };
+ }
+ // The line of Q1: "Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (đạt 5/7 ...)".
+-export const altLineOf = (alts = []) => (alts.length ? `Phương án khác đạt tương đương: ${alts.map((a) => `${[a.model, ...a.modules.map((m) => m.model)].join(" + ")} (truyền thông: code dò datasheet đạt ${a.met}/${a.total}${a.unclear.length ? `, chưa rõ: ${a.unclear.join(", ")}` : ""})`).join("; ")}` : "");
++export const altLineOf = (alts = []) => (alts.length ? `Phương án khác đạt tương đương: ${alts.map((a) => `${[a.model, ...a.modules.map((m) => m.model)].join(" + ")} (${a.notOffered ? `${CTL_ALT_LABEL}; ` : ""}truyền thông: code dò datasheet đạt ${a.met}/${a.total}${a.unclear.length ? `, chưa rõ: ${a.unclear.join(", ")}` : ""})`).join("; ")}` : "");
++// A controller of the alternatives that the configuration's suppliers do not offer (maker's datasheet only).
++export const CTL_ALT_LABEL = "Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào";
++// The step of a controller in its maker's range, for equal scores only: the Deep Sea number (DSE4520 < DSE6120 < DSE7320 <
++// DSE7420 < DSE8610). A controller without one (ComAp, SmartGen names) keeps its place (Infinity, the sort is stable).
++export const ctlStep = (model) => { const m = String(model || "").match(/\bDSE\s?(\d{4})\b/i); return m ? Number(m[1]) : Infinity; };

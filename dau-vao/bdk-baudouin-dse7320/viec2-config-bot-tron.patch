@@ -1,0 +1,70 @@
+diff --git a/suppliers/config-bot.mjs b/suppliers/config-bot.mjs
+index 4f02132f..df144a40 100644
+--- a/suppliers/config-bot.mjs
++++ b/suppliers/config-bot.mjs
+@@ -1895,7 +1895,12 @@ export const MAX_CONFIGS = 8, PER_MAKE_CONFIGS = 2;
+ // Cummins too (Khoa, 2026-11-17, same tender: QSK23-G2 and QSK19-G20 at ranks 1 and 3).
+ // Mitsubishi too (Khoa, 2026-11-17).
+ export const ONE_CONFIG_MAKES = ["perkins", "volvo penta", "cummins", "mitsubishi"];
+-export const perMakeConfigs = (make) => (ONE_CONFIG_MAKES.includes(String(make || "").split("/")[0].trim().toLowerCase()) ? 1 : PER_MAKE_CONFIGS);
++// Baudouin: 3 configurations (Khoa 20/11/2026, IB2600603983: "Sửa lại luật để Baudouin được 3 cấu hình").
++export const THREE_CONFIG_MAKES = ["baudouin"];
++export const perMakeConfigs = (make) => {
++  const mk = String(make || "").split("/")[0].trim().toLowerCase();
++  return ONE_CONFIG_MAKES.includes(mk) ? 1 : THREE_CONFIG_MAKES.includes(mk) ? 3 : PER_MAKE_CONFIGS;
++};
+ // A configuration whose controller (engine, alternator) is that of an earlier one may leave out the checks of that
+ // part: the code copies them: a check read from the model's figures (factSrc), one whose quote is also in this
+ // configuration's own source of that part, and a controller function no source states. Each copy is then checked
+@@ -2621,16 +2626,36 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
+     const mainList = factsOf(c, "controller");
+     const floor = Math.max(1, (mainList.length ? CM.bestPair(names, mainList, compatOf(ctlModelOf(c.controller), mainList), modFacts).met : 0) - 1);
+     const seen = new Set(), alts = [];
+-    for (const x of CAT.controllersIn(c.controller.src?.line || "").filter((y) => y.model && (!brand || norm(y.brand) === norm(brand)))) {
++    const tryAlt = (x, notOffered, offeredBy) => {
+       const k = CAT.keyOf(x.model);
+-      if (seen.has(k) || mainKeys.has(k)) continue;
++      if (seen.has(k) || mainKeys.has(k)) return;
+       seen.add(k);
+       const list = factsFor(facts, "controller", x.model);
+-      if (!list.length || list.some((f) => mainKeys.has(CAT.keyOf(f.sheetModel || "")))) continue;
++      if (!list.length || list.some((f) => mainKeys.has(CAT.keyOf(f.sheetModel || "")))) return;
+       const bp = CM.bestPair(names, list, compatOf(x.model, list), modFacts), sheets = [...new Set(list.map((f) => f.version || f.sheetModel).filter(Boolean))];
+-      if (bp.met >= floor) alts.push({ model: sheets.length === 1 ? sheets[0] : x.model, offeredAs: x.model, make: x.brand, ...bp, parts: undefined });
++      const model = sheets.length === 1 ? sheets[0] : x.model;
++      if (notOffered && seen.has(`sheet:${CAT.keyOf(model)}`)) return;
++      seen.add(`sheet:${CAT.keyOf(model)}`);
++      if (bp.met >= floor) alts.push({ model, ...(notOffered ? { notOffered: true, label: CM.CTL_ALT_LABEL } : { offeredAs: x.model, ...(offeredBy ? { offeredBy } : {}) }), make: x.brand, ...bp, parts: undefined });
++    };
++    for (const x of CAT.controllersIn(c.controller.src?.line || "").filter((y) => y.model && (!brand || norm(y.brand) === norm(brand)))) tryAlt(x, false);
++    // Then those another line of the configuration's suppliers offers (the record's `controllers`; điều phối 20/11/2026).
++    for (const s of c.suppliers || []) for (const o of sup.get(s.supplierId)?.controllers || []) {
++      for (const x of CAT.controllersIn(o.line || o.model || "").filter((y) => y.model && CAT.keyOf(y.model) === CAT.keyOf(o.model || "") && (!brand || norm(y.brand) === norm(brand)))) tryAlt(x, false, s.supplierId);
++    }
++    // Khoa 20/11/2026 ("DSE7320 vẫn chưa vào", IB2600603983): the configuration's suppliers may offer no other controller
++    // (Baudouin 6M31G825/5: voltgent writes DSE7420 on a Perkins row, agg-fuzhou and weichai-heavy-machinery none). The other
++    // controllers of the same make with a datasheet of the controller maker (controller_maker) are scored the same way and
++    // shown as "Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào", like a module the code adds (Q4).
++    if (brand) for (const k of [...facts.keys()].filter((y) => y.startsWith("controller:")).sort()) {
++      const own = facts.get(k).filter((f) => sup.get(f.supplierId)?.role === "controller_maker");
++      if (!own.length) continue;
++      const x = CAT.controllersIn(own[0].sheetModel || k.slice(11)).find((y) => y.model && norm(y.brand) === norm(brand));
++      if (x) tryAlt(x, true);
+     }
+-    alts.sort((a, b) => b.met - a.met);
++    // Equal score: the supplier's own offer first, then the lower step of the maker's range (CM.ctlStep: DSE7320 before
++    // DSE7420 / DSE8610; điều phối 20/11/2026, inferred from Khoa's answer for IB2600603983, not yet Khoa's rule).
++    alts.sort((a, b) => b.met - a.met || (a.notOffered ? 1 : 0) - (b.notOffered ? 1 : 0) || CM.ctlStep(a.model) - CM.ctlStep(b.model));
+     if (!alts.length) return;
+     c.controller.alternatives = alts.slice(0, 2).map(({ parts, ...a }) => a);
+     c.controller.altLine = CM.altLineOf(c.controller.alternatives);
+@@ -5001,7 +5026,8 @@ export function rankConfigs(result) {
+       if (!first.controller?.model && c.controller?.model) first.controller = c.controller;
+       return false;
+     }
+-    // At most 2 per engine make (Khoa, 2026-11-11), so another make gets the place of a third.
++    // At most 2 per engine make (Khoa, 2026-11-11), so another make gets the place of a third (perMakeConfigs: 1 for
++    // ONE_CONFIG_MAKES, 3 for Baudouin).
+     const mk = String(c.engine?.make || "").split("/")[0].trim().toLowerCase();
+     // A configuration kept from Tìm NCC (keepFound) is outside that limit: Khoa wants it back, whatever else the run found.
+     // So is the make of an engine term the HSMT gives (Đặc thù hãng động cơ, Khoa 18/11/2026: "chỉ gợi ý hãng đó và bỏ

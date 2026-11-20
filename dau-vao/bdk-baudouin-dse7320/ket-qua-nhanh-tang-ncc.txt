@@ -1,0 +1,18 @@
+1 Cummins QSK19-G20 | DSE7420 DSE890 MKII 
+    Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE7410 MKII + DSE890 MKII (truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa)
+2 Mitsubishi S6R2-PTAA-C | DSE8610 DSE890 MKII 
+    Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE7310 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa)
+3 Baudouin 6M31G825/5 | DSE7420 DSE890 MKII 
+    Phương án khác đạt tương đương: DSE7410 MKII + DSE890 MKII (truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE7310 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa)
+4 Scania DC16 078A 02-43 | Deep Sea 8610 DSE890 MKII 
+    Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE7410 MKII + DSE890 MKII (truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa)
+5 Perkins 4006-23TAG2A | DSE8610 DSE890 MKII 
+    Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE7420 MKII + DSE890 MKII (truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa)
+6 Baudouin 6M33G825/5 | DSE6120 DSE890 MKII 
+    Phương án khác đạt tương đương: DSE7310 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE7320 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa)
+
+real	1m55.764s
+user	0m0.062s
+sys	0m0.108s
+
+[exited with code 0]
