@@ -97,3 +97,85 @@ Dòng NCC khác rời top mà điểm KHÔNG đổi (50 dòng, ví dụ IB220002
 2. Weichai ↔ Ricardo cho R4105 / R6105 / R6108 (Kofo↔Ricardo đã có): thêm cặp `["Weichai","Ricardo"]` trả hãng cho 1.930 dòng-lượt; cần trang chính hãng Weichai nói động cơ R-series là Weichai-Ricardo.
 3. Giữ nguyên các lớp còn lại (WD → FAWDE: ô 品牌 của zhengchi ghi 锡柴 cho động cơ WD, nguồn khác chỉ mức tên trang; luật tần số: 40 dòng, đúng luật).
 Nếu Khoa không muốn đổi `SAME_MAKER`, tác động ròng của PR là: 3.437 dòng-lượt −60 và 156 dòng-lượt −360 (tổng 3.593 mất điểm), 194 dòng-lượt +60, 41 dòng đổi tập, 131 lượt đổi top (92 đổi tập). Em chưa sửa code.
+
+
+---
+## Hãng (20/11, chỉ đọc + tra web công khai; CHƯA sửa code)
+Yêu cầu điều phối: (1) bảng đủ 22 động cơ đổi hãng + 7 động cơ zhengchi ghi hãng khác NCC khác; (2) nguồn chính hãng; (3) đếm các phương án. Số liệu: `build()` gốc (abb28c67) ↔ nhánh (9c7846e1), script `genbid-test\b3\h1.mjs`, `d7.mjs`, `sim.mjs`, `tab.mjs`; "dòng-lượt" = số dòng-lượt trong `all` của đo cloud (`top30-cloud`) đổi điểm vì động cơ đó.
+
+### (1a) Bảng ĐỦ 22 động cơ đổi hãng (`e.make`)
+"Phiếu" = tên hãng → các NCC bỏ phiếu ở MỨC CAO NHẤT của động cơ đó (`keptMakes`: ≥ 3 NCC và gấp ≥ 3× tên khác thì thắng, không thì "chưa rõ"; mức: dòng bảng > tiêu đề cột / hãng tự SX > tên trang). Cột zhengchi: ô 品牌 nguyên văn của dòng bảng zhengchi (bảng số n, mã tổ máy) và phiếu nó thành. Dòng-lượt: `N×−60` = N dòng-lượt mất 60 điểm; `×60` = được 60; `×−gốc` / `×+nhánh` = chỉ có ở một bên (luật tần số). 0 = động cơ không có dòng nào trong `all` đổi điểm.
+
+| # | động cơ | hãng gốc → nhánh | phiếu gốc (mức cao nhất) | phiếu nhánh | zhengchi 品牌 nguyên văn (bảng n, mã tổ máy) | dòng-lượt đổi |
+|--:|---|---|---|---|---|---|
+| 1 | WP6D132E200 | Weichai → Weichai/Deutz | [dòng bảng] Weichai 9: bdadl-shanghai, depco-power, elitech-power, fdk-energy, fukangsi-yangzhou, jiangchai-xuzhou, liangzi-yangzhou, pengpai-yangzhou, uleengen | [dòng bảng] Weichai 9: bdadl-shanghai, depco-power, elitech-power, fdk-energy, fukangsi-yangzhou, jiangchai-xuzhou, liangzi-yangzhou, pengpai-yangzhou, uleengen; Deutz 1: zhengchi-power | n143 ZCDL-H110 品牌="道依茨"→Deutz/dòng bảng | 0 |
+| 2 | S16R-PTA-C | Mitsubishi → (chưa rõ) | [dòng bảng] Mitsubishi 5: fdk-energy, powerlink-shanghai, voltgent, walter-yangzhou, xingguang-jiangsu; SDEC 1: jiangchai-xuzhou | [dòng bảng] Mitsubishi 5: fdk-energy, powerlink-shanghai, voltgent, walter-yangzhou, xingguang-jiangsu; SDEC 2: jiangchai-xuzhou, zhengchi-power | n110 Z22S1500 品牌="上柴"→SDEC/dòng bảng; n112 ZCDL-S1500 品牌="上柴"→SDEC/dòng bảng; n161 ZCDL-S1450 品牌="1450"→SDEC/tên trang | 603×-60, 42×-360 |
+| 3 | S12R-PTA2-C | Mitsubishi → (chưa rõ) | [dòng bảng] Mitsubishi 5: aosif, fdk-energy, voltgent, walter-yangzhou, xingguang-jiangsu; SDEC 1: jiangchai-xuzhou | [dòng bảng] Mitsubishi 5: aosif, fdk-energy, voltgent, walter-yangzhou, xingguang-jiangsu; SDEC 2: jiangchai-xuzhou, zhengchi-power | n115 ZCDL-S1165 品牌="上柴"→SDEC/dòng bảng; n161 ZCDL-S1160 品牌="1160"→SDEC/tên trang | 636×-60, 77×-360 |
+| 4 | S16R-PTA2-C | Mitsubishi → (chưa rõ) | [dòng bảng] Mitsubishi 4: fdk-energy, voltgent, walter-yangzhou, xingguang-jiangsu; SDEC 1: jiangchai-xuzhou | [dòng bảng] Mitsubishi 4: fdk-energy, voltgent, walter-yangzhou, xingguang-jiangsu; SDEC 2: jiangchai-xuzhou, zhengchi-power | n109 ZCDL-S1600 品牌="上柴"→SDEC/dòng bảng; n161 ZCDL-S1600 品牌="1600"→SDEC/tên trang | 268×-60, 37×-360 |
+| 5 | 12M26D902E200 | Weichai → Weichai/Baudouin | [dòng bảng] Weichai 3: depco-power, elitech-power, kc-generatorset | [dòng bảng] Weichai 3: depco-power, elitech-power, kc-generatorset; Baudouin 1: zhengchi-power | n119 ZCDL-B800 品牌="博杜安"→Baudouin/dòng bảng; n162 ZCDL-W792 品牌="792"→Weichai/tên trang; n162 ZCDL-W880 品牌="880"→Weichai/tên trang | 0 |
+| 6 | 6M33D670E200 | Weichai → Weichai/Baudouin | [dòng bảng] Weichai 3: depco-power, elitech-power, fdk-energy | [dòng bảng] Weichai 3: depco-power, elitech-power, fdk-energy; Baudouin 1: zhengchi-power | n123 ZCDL-B600 品牌="博杜安"→Baudouin/dòng bảng | 0 |
+| 7 | 16M33D1680E310 | Weichai → Weichai/Baudouin | [dòng bảng] Weichai 2: elitech-power, fdk-energy | [dòng bảng] Weichai 2: elitech-power, fdk-energy; Baudouin 1: zhengchi-power | n110 Z22B1520 品牌="博杜安"→Baudouin/dòng bảng; n162 ZCDL-W1520 品牌="1520"→Weichai/tên trang | 0 |
+| 8 | 12M55D2210E310 | Weichai → Baudouin | [tiêu đề cột] Weichai 2: jet-power, yunding-jiangsu | [dòng bảng] Baudouin 1: zhengchi-power | n105 ZCDL-B2000 品牌="博杜安"→Baudouin/dòng bảng; n162 ZCDL-W2000 品牌="2000"→Weichai/tên trang | 0 |
+| 9 | R6105AZLD | Ricardo → (chưa rõ) | [dòng bảng] Ricardo 2: elitech-power, kaichen-jiangsu | [dòng bảng] Ricardo 2: elitech-power, kaichen-jiangsu; Weichai 1: zhengchi-power | n142 ZCDL-W110 品牌="潍柴"→Weichai/dòng bảng | 691×-60 |
+| 10 | R4105ZD | Ricardo → (chưa rõ) | [dòng bảng] Ricardo 1: kaichen-jiangsu | [dòng bảng] Ricardo 1: kaichen-jiangsu; Weichai 1: zhengchi-power | n152 ZCDL-W51 品牌="潍柴"→Weichai/dòng bảng | 476×-60 |
+| 11 | R6105ZD | Ricardo → (chưa rõ) | [dòng bảng] Ricardo 1: kaichen-jiangsu | [dòng bảng] Ricardo 1: kaichen-jiangsu; Weichai 1: zhengchi-power | n147 ZCDL-W76 品牌="潍柴"→Weichai/dòng bảng | 421×-60 |
+| 12 | WD269TAD56 | Wudong/Wudong → FAWDE | [tiêu đề cột] Wudong 2: shengfeng-fuan, xingguang-jiangsu | [dòng bảng] FAWDE 1: zhengchi-power | n124 ZCDL-X560 品牌="锡柴"→FAWDE/dòng bảng | 0 |
+| 13 | WP4D108E200 | Weichai → Weichai/Deutz | [dòng bảng] Weichai 4: bdadl-shanghai, fukangsi-yangzhou, liangzi-yangzhou, pengpai-yangzhou | [dòng bảng] Weichai 4: bdadl-shanghai, fukangsi-yangzhou, liangzi-yangzhou, pengpai-yangzhou; Deutz 1: zhengchi-power | n146 ZCDL-H90 品牌="道依茨"→Deutz/dòng bảng | 0 |
+| 14 | WD287TAD61L | Wudong → FAWDE | [tiêu đề cột] Wudong 2: shengfeng-fuan, xingguang-jiangsu | [dòng bảng] FAWDE 1: zhengchi-power | n123 ZCDL-X610 品牌="锡柴"→FAWDE/dòng bảng | 0 |
+| 15 | WD327TAD88 | Wudong/Wudong → FAWDE | [tiêu đề cột] Wudong 1: xingguang-jiangsu | [dòng bảng] FAWDE 1: zhengchi-power | n117 ZCDL-X880 品牌="锡柴"→FAWDE/dòng bảng; n118 ZCDL-X880 品牌="锡柴"→FAWDE/dòng bảng | 0 |
+| 16 | WD129TD17 | Wudong → FAWDE | [tiêu đề cột] Wudong 1: shengfeng-fuan | [dòng bảng] FAWDE 1: zhengchi-power | n136 ZCDL-X175 品牌="锡柴"→FAWDE/dòng bảng | 0 |
+| 17 | WD327TAD82 | Wudong/Wudong → FAWDE | [tiêu đề cột] Wudong 1: xingguang-jiangsu | [dòng bảng] FAWDE 1: zhengchi-power | n120 ZCDL-X820 品牌="锡柴"→FAWDE/dòng bảng | 0 |
+| 18 | WD129D11 | (chưa rõ) → FAWDE | [tên trang] Cummins 1: sanq-power; Wudong 2: taihai-taizhou, wintpower | [dòng bảng] FAWDE 1: zhengchi-power | n142 ZCDL-X110 品牌="锡柴"→FAWDE/dòng bảng | 62×60 |
+| 19 | WD129TAD25 | Wudong/Wudong → FAWDE | [tiêu đề cột] Wudong 1: shengfeng-fuan | [dòng bảng] FAWDE 1: zhengchi-power | n133 ZCDL-X260 品牌="锡柴"→FAWDE/dòng bảng | 1×-gốc |
+| 20 | WD150D15 | (chưa rõ) → FAWDE | [tên trang] Cummins 1: sanq-power; Wudong 2: taihai-taizhou, wintpower | [dòng bảng] FAWDE 1: zhengchi-power | n139 ZCDL-X140 品牌="锡柴"→FAWDE/dòng bảng | 132×60 |
+| 21 | R6108ZLD | Ricardo → (chưa rõ) | [dòng bảng] Ricardo 1: elitech-power | [dòng bảng] Ricardo 1: elitech-power; Weichai 1: zhengchi-power | n138 ZCDL-W150 品牌="潍柴"→Weichai/dòng bảng | 342×-60 |
+| 22 | 12M33D1450E310 | Weichai → Baudouin | [tên trang] Weichai 1: zhengchi-power | [dòng bảng] Baudouin 1: zhengchi-power | n112 ZCDL-B1320 品牌="博杜安"→Baudouin/dòng bảng; n162 ZCDL-W1320 品牌="1320"→Weichai/tên trang | 1×+nhánh |
+
+Tổng dòng-lượt đổi điểm từ 22 động cơ này: R-series 1.930 (−60) + S12R/S16R 1.663 (−60; 156 trong đó −360) + WD 194 (+60) + 40 chỉ gốc + 1 chỉ nhánh (khớp mục "Top 30"). Lưu ý bảng trên: R4105ZD, R6105ZD chỉ có 1 phiếu Ricardo (kaichen-jiangsu); R6105AZLD 2; R6108ZLD 1 (elitech-power) — nên chỉ cần MỘT phiếu zhengchi là hãng đổi thành "chưa rõ" (ngưỡng ≥ 3 NCC không đạt ở cả hai phía; xem (3)).
+
+### (1b) 7 động cơ zhengchi ghi hãng KHÁC các NCC khác (295 − 288)
+Mức dòng bảng, phiếu NCC khác ↔ zhengchi (nguyên văn 品牌):
+| động cơ | NCC khác (dòng bảng) | zhengchi 品牌 | hãng sau đổi |
+|---|---|---|---|
+| R6105AZLD | Ricardo: elitech, kaichen-jiangsu | n142 潍柴 | chưa rõ (trong 22) |
+| R6108ZLD | Ricardo: elitech | n138 潍柴 | chưa rõ (trong 22) |
+| R4105ZD | Ricardo: kaichen-jiangsu | n152 潍柴 | chưa rõ (trong 22) |
+| R6105ZD | Ricardo: kaichen-jiangsu | n147 潍柴 | chưa rõ (trong 22) |
+| S16R-PTAA2-C | Mitsubishi: fdk, powerlink, voltgent, walter-yangzhou, xingguang-jiangsu | n110 ZCDL-S1680 上柴 (n161 ZCDL-S1720 ô này là "1720", lệch cột → mức tên trang) | Mitsubishi (5 ≥ 3×1: giữ) |
+| S16R2-PTAW-C | Mitsubishi: fdk, voltgent, xingguang-jiangsu | n106, n108 ZCDL-S1960 上柴 (cùng một NCC = 1 phiếu) | Mitsubishi (3 ≥ 3×1: giữ) |
+| 1104D-E44TAG2 | Perkins: comler, nenjo, uleengen, xingguang-jiangsu | n145 ZCDL-P88 康明斯 | Perkins (4 ≥ 3×1: giữ) |
+Vậy trong 7 chỉ 4 (R-series) đổi hãng; 3 còn lại zhengchi bất đồng nhưng ngưỡng vẫn giữ hãng. Hai nhóm còn lại của 22 (S12R-PTA2-C, S16R-PTA-C, S16R-PTA2-C: Mitsubishi vs SDEC) zhengchi KHÔNG bất đồng với "đa số": jiangchai-xuzhou đã ghi SDEC ở dòng bảng, zhengchi thêm phiếu thứ hai cho SDEC (上柴) làm tỉ lệ 4–5 : 2 < 3× nên hãng thành "chưa rõ" (S12R/S16R: một phiếu zhengchi đủ lật). Các động cơ 12M / 16M33 (博杜安 → Baudouin) và WP (道依茨 → Deutz) zhengchi ghi tên khác NCC khác nhưng `SAME_MAKER` (Baudouin↔Weichai, Weichai↔Deutz) coi cùng hãng nên tính là khớp; nhóm WD (锡柴 → FAWDE) NCC khác chỉ ở mức thấp hơn (tên trang / tiêu đề cột) nên không phải "bất đồng" cùng mức.
+
+### (2) Nguồn chính hãng (tra 20/11/2026; trích nguyên văn ngắn)
+**S12R / S16R bản Thượng Hải — 上海菱重 (SME) là ai, "上柴" của zhengchi có chỉ SME không**
+- MHI (Mitsubishi Heavy Industries), thông cáo 2013-12-20, https://www.mhi.com/jp/news/1312205464.html : "上海菱重発動機有限公司（Shanghai MHI Engine Co., Ltd.…）" là công ty sản xuất–bán động cơ diesel thành lập cùng "上海柴油机股份有限公司（Shanghai Diesel Engine Co., Ltd.）"; "当社と上海ディーゼルの折半出資により設立" (hai bên góp vốn 50 / 50); sản phẩm đầu: động cơ "S12R－PTA－C" 1.190 kW 1500 vòng/phút; "当社がライセンス供与する出力500～1,600kWのディーゼルエンジン" (động cơ 500–1.600 kW do MHI cấp licence).
+- Kết luận chỉ từ nguồn này: SME là liên doanh 50/50 giữa MHI và Shanghai Diesel (上柴); nó là CÔNG TY RIÊNG, không phải "SDEC" tự sản xuất, cũng không phải "Mitsubishi" thuần. Nguồn không nói "SDEC và Mitsubishi là một hãng".
+- zhengchi (https://www.zcdl.com.cn/index.php?m=content&c=index&a=lists&catid=41, mở sống 20/11): trang "上柴发电机热销型谱" liệt kê CẢ động cơ SC4H… / SC7H… / SC9D… / SC13G… / SC25G… / SC27G… / SC33W… (dòng riêng của SDEC) LẪN S6R2-PTAA-C, S12R-PTA-C, S12R-PTA2-C, S12R-PTAA2-C, S16R-PTA-C, S16R-PTA2-C, S16R-PTAA2-C (ZCDL-S640 … ZCDL-S1720), với khối thông số "品牌：上柴 … 类型：国产品牌". Vậy "上柴" ở zhengchi là nhãn của CẢ DANH MỤC (SDEC + dòng licence Mitsubishi), KHÔNG chỉ SME; không có ô nào ghi "上海菱重" trong bảng zhengchi.
+- Các NCC khác tự ghi "上海菱重" ở ô 柴油机品牌 (bdadl-shanghai, fukangsi, pengpai: `BDA-LZ1750 | 1600/1750 | 上海菱重 | S16R-PTAA2-C`), và mô tả "上海菱重发动机有限公司是由上海柴油机股份有限公司和日本三菱重工业株式会社共同组建的合资公司" (trang NCC: baifapower.cn/about_44, chntec.com.cn, lnsc.cn — KHÔNG phải nguồn chính hãng, chỉ khớp với MHI).
+- Tóm lại cho Khoa: nguồn chính hãng nói đây là liên doanh MHI–Shanghai Diesel 50/50. "Cùng một nhà sản xuất" (SAME_MAKER Mitsubishi↔SDEC) là suy ra, nguồn không nói thẳng.
+
+**R4105 / R6105 / R6108 — "潍柴" của zhengchi chỉ Weichai Power hay nhà máy Weifang Ricardo / Huafeng**
+- https://www.zcdl.com.cn/index.php?m=content&c=index&a=lists&catid=39 (mở sống 20/11): "潍柴系列热销型谱" gộp: WP2.1D18E2 … WP13D385E200 (WP), 6M26D… / 12M26D… (M26 / M33), PHF4056ZD1 … PHF6132ZLD1, K4100D5-1 / K4102D3-1, R6113ZLD1, D226B-3D, 495D10-1 — nhiều tiền tố khác nhau trong cùng một danh mục tên "潍柴". Vậy "潍柴" ở zhengchi là nhãn của cả danh mục gồm nhiều tiền tố động cơ khác nhau, không cho biết từng động cơ do Weichai Power hay nhà máy khác sản xuất.
+- https://www.ricardoengines.com/ : tiêu đề trang "Weifang Ricardo Diesel Engine", "We are factory. We have 10 years experience of engine manufacture." (không có chữ "Weichai").
+- https://www.powerhf.com/ : "华丰动力股份有限公司前身创始于1920年，原名为潍县华丰机器厂" (Huafeng, Duy Phường). Trang chủ không nhắc Weichai Power hay Ricardo.
+- https://www.weichaipower.com/ (tra tên công ty / sản phẩm phát điện): không thấy dòng R4105 / R6105 / R6108 trong các trang đã mở.
+- KẾT LUẬN: quan hệ "R-series Weifang Ricardo / Huafeng" ↔ "Weichai Power" — **không rõ** theo nguồn chính hãng đã tra (không có trang nào nói cùng một hãng, cũng không có trang nào nói khác). Em KHÔNG suy ra.
+
+**Các nhóm còn lại** (không đòi nguồn mới, chỉ ghi): WD → FAWDE (zhengchi 锡柴, mức dòng bảng; NCC khác chỉ mức tên trang / tiêu đề cột Wudong / Cummins); 12M / 16M33 → Baudouin (zhengchi 博杜安); WP → Deutz (zhengchi 道依茨). `SAME_MAKER` hiện có Baudouin↔Weichai và Weichai↔Deutz, nên "Weichai/Baudouin", "Weichai/Deutz" vẫn là Weichai.
+
+### (3) Ước lượng các phương án (đếm thật bằng `sim.mjs` trên `build()`; "về như gốc" = hãng có/không có và tên gốc ⊆ tên mới; tổng 3.828 dòng-lượt của 22 động cơ)
+| phương án | động cơ khác gốc | dòng-lượt về như gốc | động cơ khác nhánh hiện tại | ghi chú |
+|---|--:|--:|--:|---|
+| (a) giữ luật, chấp nhận | 22 (7 mất hãng, 2 được hãng) | 39 / 3.828 | 0 | −3.593 điểm-lượt như mục Top 30 |
+| (b) bỏ cột 品牌 của bảng 整机编号 làm phiếu hãng (thêm "make" vào `TABLE_DROPS`) | 0 | 3.828 / 3.828 | 38 | 18 động cơ CÓ hãng ở nhánh mà MẤT hãng khi bỏ (WD129D11, WD150D15 = FAWDE; HBKMS171Z/227Z/780Z/840Z, JSQSK60D8 = Cummins; TCR300/500/550/600/700/750/780/890 = Tongchai; WEWP12ZLD/WEWP13ZLD = Weichai; YC4D55ZD20 = Yuchai): 29 dòng-lượt zhengchi (12 động cơ) trong `all` nhánh cloud sẽ mất `+60` hãng |
+| (c) chỉ bỏ phiếu hãng của zhengchi ở 7 động cơ ghi khác NCC khác | 18 | 1.969 / 3.828 | 4 | trả lại 4 R-series (1.930) + 39; S12R/S16R (1.663) và WD (194) vẫn đổi |
+| (d1) SAME_MAKER Mitsubishi↔SDEC | — | 1.702 / 3.828 | — | trả S12R/S16R (+39) |
+| (d2) SAME_MAKER Weichai↔Ricardo | — | 1.969 / 3.828 | — | trả R-series (+39) |
+| (d3) cả d1 + d2 | — | 3.632 / 3.828 | 14 | 4 động cơ được hãng, 0 mất; còn lại 194 = WD (FAWDE) |
+Chưa mô phỏng: tác động của (b)–(d) lên điểm xuất xứ / G7 / luật tần số ngoài hãng và lên top 30 (cần đo cloud lại). Lưu ý riêng: (b) bỏ phiếu hãng của zhengchi ở MỌI bảng 整机编号 — kể cả nơi zhengchi là NCC duy nhất có phiếu hãng (18 động cơ ở trên), nên mất thông tin đúng; (c) giữ các phiếu đúng nhưng chỉ sửa 4 động cơ.
+
+### Việc chờ Khoa (em chưa làm)
+1. (d1) Mitsubishi↔SDEC: nguồn chính hãng (MHI) nói liên doanh 50/50 chứ không nói "một hãng" → có coi là SAME_MAKER không? Cần Khoa quyết (dựa vào nguồn, không suy ra).
+2. (d2) Weichai↔Ricardo: nguồn chính hãng KHÔNG xác nhận (không rõ) → không thêm cặp trừ khi Khoa nói rõ.
+3. (b) / (c): chọn có thể làm không cần xác nhận hãng, bằng đếm ở bảng trên.
+Em giữ worktree `wt-catalog-b3`, PR #954 DRAFT, không sửa thêm gì.
