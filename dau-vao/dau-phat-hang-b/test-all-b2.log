@@ -6265,3 +6265,122 @@ ok 1248 - specsMerge: not merged when in doubt — machine sizes, engine vs alte
   ---
   duration_ms: 1.3494
   ...
+# Subtest: supexcl: chỉ on===true được tính; supdeleted: mọi doc
+ok 1249 - supexcl: chỉ on===true được tính; supdeleted: mọi doc
+  ---
+  duration_ms: 3.1541
+  ...
+# Subtest: bỏ loại trừ rồi thì NCC quay lại
+ok 1250 - bỏ loại trừ rồi thì NCC quay lại
+  ---
+  duration_ms: 1.6742
+  ...
+# Subtest: không đọc được → ok=false, danh sách rỗng
+ok 1251 - không đọc được → ok=false, danh sách rỗng
+  ---
+  duration_ms: 0.9329
+  ...
+# Subtest: gaps: danh sách đọc được → báo cáo không có cảnh báo
+ok 1252 - gaps: danh sách đọc được → báo cáo không có cảnh báo
+  ---
+  duration_ms: 233303.5902
+  ...
+# Subtest: gaps: không đọc được danh sách → vẫn ra báo cáo, có cảnh báo, không gửi specreq
+ok 1253 - gaps: không đọc được danh sách → vẫn ra báo cáo, có cảnh báo, không gửi specreq
+  ---
+  duration_ms: 224942.2178
+  ...
+# Subtest: page table: the JSON given to createElement(Specifications, …)
+ok 1254 - page table: the JSON given to createElement(Specifications, …)
+  ---
+  duration_ms: 4.6337
+  ...
+# Subtest: power: a figure is written only when the page gives the same kWm, kWe and kVA
+ok 1255 - power: a figure is written only when the page gives the same kWm, kWe and kVA
+  ---
+  duration_ms: 2.0634
+  ...
+# Subtest: shared lines: bore × stroke, displacement, weight
+ok 1256 - shared lines: bore × stroke, displacement, weight
+  ---
+  duration_ms: 1.7896
+  ...
+# Subtest: fuel: models × speeds of the table, one figure per column, right column text left out
+ok 1257 - fuel: models × speeds of the table, one figure per column, right column text left out
+  ---
+  duration_ms: 5.35
+  ...
+# Subtest: bulletin: one table per model, each figure from its source line
+ok 1258 - bulletin: one table per model, each figure from its source line
+  ---
+  duration_ms: 2.589
+  ...
+# Subtest: traceOf: searches, each URL of a loop with its status, a saved page; a refused call is no fetch
+ok 1259 - traceOf: searches, each URL of a loop with its status, a saved page; a refused call is no fetch
+  ---
+  duration_ms: 5.5811
+  ...
+# Subtest: official domain: the maker's own site (and its tier A hosts), never a reseller, a CDN or another maker
+ok 1260 - official domain: the maker's own site (and its tier A hosts), never a reseller, a CDN or another maker
+  ---
+  duration_ms: 3.5961
+  ...
+# Subtest: catalogRecords: each new source gets `official` from code, whatever tier the agent wrote
+ok 1261 - catalogRecords: each new source gets `official` from code, whatever tier the agent wrote
+  ---
+  duration_ms: 9.1373
+  ...
+# Subtest: catalog.md: a figure found on the internet says whether its page is the maker's; the figure is used as before
+ok 1262 - catalog.md: a figure found on the internet says whether its page is the maker's; the figure is used as before
+  ---
+  duration_ms: 500.4645
+  ...
+# Subtest: recordNegatives: kept only with a trace in the log, the run's model key to key, blocked only with 401/403/429
+ok 1263 - recordNegatives: kept only with a trace in the log, the run's model key to key, blocked only with 401/403/429
+  ---
+  duration_ms: 2.6434
+  ...
+# Subtest: 90 days, then gone; the store keeps its size; forget by model
+ok 1264 - 90 days, then gone; the store keeps its size; forget by model
+  ---
+  duration_ms: 47.9291
+  ...
+# Subtest: catalog.md section: not found → do not search again, unclear as when silent; blocked → never try again
+ok 1265 - catalog.md section: not found → do not search again, unclear as when silent; blocked → never try again
+  ---
+  duration_ms: 2.3215
+  ...
+# Subtest: recordSearched (answer): takes result.searched out, keeps what the log shows, models of catalog.md and of the configurations
+ok 1266 - recordSearched (answer): takes result.searched out, keeps what the log shows, models of catalog.md and of the configurations
+  ---
+  duration_ms: 27.2011
+  ...
+# Subtest: runModels: the candidate rows' engines, alternators, gensets and controllers once each
+ok 1267 - runModels: the candidate rows' engines, alternators, gensets and controllers once each
+  ---
+  duration_ms: 0.7232
+  ...
+# Subtest: a later run reads the saved page again through check(): an internet figure added to the catalog is quoted by factSrc
+ok 1268 - a later run reads the saved page again through check(): an internet figure added to the catalog is quoted by factSrc
+  ---
+  duration_ms: 48.5164
+  ...
+# Subtest: what "source": a model the HSMT names (not a candidate) is kept with the run origin; same origin only
+ok 1269 - what "source": a model the HSMT names (not a candidate) is kept with the run origin; same origin only
+  ---
+  duration_ms: 55.9383
+  ...
+# Subtest: what "source": still needs the trace, not_found only, and a model the HSMT names
+ok 1270 - what "source": still needs the trace, not_found only, and a model the HSMT names
+  ---
+  duration_ms: 1.1445
+  ...
+1..1270
+# tests 1270
+# suites 0
+# pass 1270
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 670174.8805
