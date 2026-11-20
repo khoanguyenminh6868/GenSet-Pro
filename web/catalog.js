@@ -1381,6 +1381,29 @@
       ["fukangsi-yangzhou", 2001, "FKS-C20", "| FKS-C20 | 20/25 | 东风康明斯 | 4B3.9-G1 | 4 | 3.92 | 9 | ≤210 | 1600*800*1300 | 5500"],
       ["pengpai-yangzhou", 125, "PPDL-C20", "| PPDL-C20 | 20/25 | 东风康明斯 | 4B3.9-G1 | 4 | 3.92 | 9 | ≤210 | 1600*800*1300 | 5500"]].map(([supplierId, n, genset, line]) => (
       { supplierId, n, genset, line, act: "dropspec", keys: ["weight"], khoa: "Khoa 19/11/2026", why: "nguồn ghi khối lượng không hợp công suất của dòng (1.440 kg cho 1.600 kW, 5.500 kg cho 20 kW): bỏ riêng khối lượng, giữ phần còn lại của dòng" })),
+    // dropspec, Khoa 20/11/2026 ("9 dòng loại": the source itself writes a wrong figure; the live page was re-read the same day and
+    // equals the saved page word for word, so it is the source, not the reader). No replacement figure is written: the source gives none.
+    // aoke-yangzhou n129: 排量(L) "108" / "105" on 250 kW sets (the same table writes "14" and "12.88" for its other engines).
+    ...[["AOKE-C280", "| AOKE-C280 | 250KW | 280KW | 重庆康明斯 | MTAA11-G3 | 6 | 108 | 39 | 200 | 3100*1300*1760 | 3200 | | 详细参数"],
+      ["AOKE-M275", "| AOKE-M275 | 250KW | 275KW | 奔驰 | 6R1600G20F | 6 | 105 | 43 | 200 | 2900*1150*1650 | 2620 | | 详细参数"]].map(([genset, line]) => (
+      { supplierId: "aoke-yangzhou", n: 129, genset, line, act: "dropspec", keys: ["disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi dung tích 108 / 105 L cho tổ máy 250 kW (bảng cùng trang ghi 14 và 12.88 L cho động cơ khác): bỏ riêng dung tích" })),
+    // jlmech-wuhan n103 JL-1000GF: "458" L (160×190 mm × 12 xi lanh); the next row of the table, JL-1200GF, writes 45.8 for the same engine size.
+    { supplierId: "jlmech-wuhan", n: 103, genset: "JL-1000GF", line: "| JL-1000GF | 1000 | 1250 | 1800 | 4012-46TWG2A | 12 | 160*190 | 458 | 177 | 212 | 4950*2200*2550 | 8500", act: "dropspec", keys: ["disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi dung tích 458 L (dòng kế ghi 45.8 L cho cùng cỡ động cơ): bỏ riêng dung tích, không đọc là 45.8" },
+    // jlmech-wuhan n104 JL-180GF / JL-220GF: the Size cell has lost its "*" ("30001030*1550", "31001100*1750").
+    ...[["JL-180GF", "| JL-180GF | 180 | 225 | 324 | YC6MK285L-D20 | 6 | 123*145 | 10.33 | 28 | 195 | 30001030*1550 | 2600"],
+      ["JL-220GF", "| JL-220GF | 220 | 275 | 396 | Y06MK350L-D20 | 6 | 123*145 | 10.33 | 28 | 195 | 31001100*1750 | 2800"]].map(([genset, line]) => (
+      { supplierId: "jlmech-wuhan", n: 104, genset, line, act: "dropspec", keys: ["dims"], khoa: "Khoa 20/11/2026", why: "ô kích thước mất dấu * (30001030*1550): bỏ riêng kích thước, không tự tách số" })),
+    // aosif n123 AW1000 (8M33D979E201): "12V | 31.8"; the same table writes 8V / 26.1 for 8M33D845E201 (AW875). Same figures as AW1125 (PR catalog-b2-aosif).
+    { supplierId: "aosif", n: 123, genset: "AW1000", line: "| AW1000 | 900/720 | 1000/800 | 8M33D979E201 | 205.4 | 12V | 31.8 |", act: "dropspec", keys: ["cyl", "disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi 12V / 31,8 L cho động cơ 8M33 (cùng bảng ghi 8V / 26,1 L cho 8M33D845E201): bỏ riêng số xi lanh và dung tích" },
+    // cameo-power n107 SC-70YC (column of a table written across): Engine Power 35/41 kW under a 64/70 kW set (the two other columns repeat the set's power).
+    { supplierId: "cameo-power", n: 107, genset: "SC-70YC", line: "| Engine Power(kw) (prime/standby) | 50/55 | 55/60 | 35/41", act: "dropspec", keys: ["engPower"], khoa: "Khoa 20/11/2026", why: "nguồn ghi công suất động cơ 35/41 kW nhỏ hơn tổ máy 64/70 kW: bỏ riêng công suất động cơ" },
+    // jiangchai-xuzhou n107 J20B400M (6M33D506E310): current "7200" A for a 450 kVA set (neighbours: 846 A for 520 kVA).
+    { supplierId: "jiangchai-xuzhou", n: 107, genset: "J20B400M", line: "| J20B400M | 400 | 450 | 潍柴博杜安 | 6M33D506E310 | 7200 | 88 | 3.673*1.5*1.95 | 4500 | 详细", act: "dropspec", keys: ["current"], khoa: "Khoa 20/11/2026", why: "nguồn ghi dòng điện 7200 A cho tổ máy 450 kVA (dòng kế 846 A cho 520 kVA): bỏ riêng dòng điện" },
+    // mingbang-mbkl n125 MB-V480 (TAD1642GE): "4 | 4.4" for a 480 kW set; the table gives 4 cylinders even for its 6.0 L row (TWD1643GE, 100×127), and
+    // aoke-yangzhou writes TAD1642GE as 6 cylinders / 16.12 L. Bore × stroke stays (Khoa 20/11/2026: cyl + disp only).
+    { supplierId: "mingbang-mbkl", n: 125, genset: "MB-V480", line: "| 14 | MB-V480 | 600 | 480 | 660 | 528 | TAD1642GE | 4 | 4.4 | 105*127 | 118.4 | 4700×2100×2600", act: "dropspec", keys: ["cyl", "disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi 4 xi lanh / 4,4 L cho tổ máy 480 kW (nguồn khác ghi 6 / 16,12 L): bỏ riêng số xi lanh và dung tích" },
+    // westinpower n1064 TP880L (a PDF table written down the page): "Rated rotation speed 1191 r/min"; the same PDF writes "Engine speed Rated 1500 RPM" on page 2.
+    { supplierId: "westinpower", n: 1064, genset: "TP880L", line: "| Rated rotation speed | r/min | 1191", act: "dropspec", keys: ["speed"], khoa: "Khoa 20/11/2026", why: "nguồn ghi tốc độ 1191 v/p (trang 2 cùng PDF ghi 1500 RPM): bỏ riêng tốc độ, không lấy số trang 2 thay" },
   ];
   function rowExceptions(s, list, note) {
     const ex = ROW_EXCEPTIONS.filter((x) => x.supplierId === s.id);
