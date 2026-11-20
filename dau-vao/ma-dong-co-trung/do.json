@@ -1,0 +1,71 @@
+{
+ "partial": true,
+ "all": {
+  "runs": 25,
+  "anyRuns": 11,
+  "aliasInTop": 47
+ },
+ "res": {
+  "X-hau-to-ma (khac dong co / hau to cong suat)": {
+   "runs": 1,
+   "slots": 3,
+   "samples": [
+    "IB2200005800 320 kVA: #1 P126TI-II (rise-power n120) + #2 P126TI (rise-power n120) + #6 P126TI-II (rcg-power n113) + #8 P126TI-II (rcg-power n113) + #20 P126TI (depco-power n2106) + #21 P126TI (genlitec n161)"
+   ]
+  },
+  "F2-chu-chua-ro-nghia": {
+   "runs": 0,
+   "slots": 0,
+   "samples": []
+  },
+  "AB-hai-ma-mot-o (gach)": {
+   "runs": 0,
+   "slots": 0,
+   "samples": []
+  },
+  "AB-hai-ma-mot-o (ngoac)": {
+   "runs": 1,
+   "slots": 1,
+   "samples": [
+    "IB2200006257 5 kVA: #20 186FA(E) (zc-power n105) + #25 186FA (kangwo-guangdong n110)"
+   ]
+  },
+  "F1-chu-mo-ta": {
+   "runs": 0,
+   "slots": 0,
+   "samples": []
+  },
+  "D-noi-san-xuat": {
+   "runs": 0,
+   "slots": 0,
+   "samples": []
+  },
+  "C-cong-suat-dinh-ma": {
+   "runs": 9,
+   "slots": 10,
+   "samples": [
+    "IB2200005266 10 kVA: #3 3TNV88-GGE (wintpower n144) + #4 3TNV88-GGE (acepow-fuan n153) + #5 3TNV88-GGE/12.2KW (jet-power n130) + #12 3TNV88-GGE (voltgent n112)",
+    "IB2200008211 102 kVA: #6 CA6DF2D-14D (wintpower n107) + #27 CA6DF2D-14D/96KW (jet-power n134)",
+    "IB2200008717 12 kVA: #9 YD480D (acepow-fuan n114) + #16 YD480D (tecgen-fujian n129) + #28 YD480D (minsun-motor n118) + #29 YD480D/14KW (jet-power n124)",
+    "IB2200012797 8.5 kVA: #11 YD385D (tecgen-fujian n131) + #13 YD385D (tecgen-fujian n129) + #14 YD385D (acepow-fuan n114) + #20 YD385D/11KW (jet-power n124)",
+    "IB2200012797 11 kVA: #1 YD480D (acepow-fuan n114) + #3 YD480D (tecgen-fujian n129) + #12 YD480D (minsun-motor n118) + #15 YD480D/14KW (jet-power n124) || #10 3TNV88-GGE (wintpower n144) + #18 3TNV88-GGE (acepow-fuan n153) + #20 3TNV88-GGE/12.2KW (jet-power n130)",
+    "IB2200015404 15 kVA: #4 YD480D (tecgen-fujian n129) + #27 YD480D/14KW (jet-power n124)"
+   ]
+  },
+  "E-ten-hang-dinh-ma": {
+   "runs": 0,
+   "slots": 0,
+   "samples": []
+  },
+  "C-so-dinh-ma": {
+   "runs": 0,
+   "slots": 0,
+   "samples": []
+  },
+  "G-ngoac-quanh-hau-to": {
+   "runs": 0,
+   "slots": 0,
+   "samples": []
+  }
+ }
+}

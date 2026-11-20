@@ -23,7 +23,7 @@ Script đo + đầu ra: `genbid-work\dieu-phoi\dau-vao\bdk-4-hang\` (`dem-bdk.mj
 | SICES | 1002 | GC315 (Plus / Link) | meccalte.com/downloads/MAU7134_GC315_Controller_Datasheet_3_WEB.pdf | AMF, USB, RS232, RS485 Modbus RTU, Ethernet Modbus TCP, GPRS |
 | SICES | 1003 | GC315 / GC400 (sách kỹ thuật) | meccalte.com/downloads/EAAM045629EN.pdf | |
 
-Ghi chú nguồn SICES: `sices.eu` không có datasheet bộ điều khiển (trang tải xuống dựng bằng JS, chỉ thấy panel / bơm nhiên liệu). Ba tệp lấy từ **meccalte.com** (Mecc Alte, chủ sở hữu SICES theo nguồn 6001 đã lưu). Đây là điểm cần phiên điều phối quyết có nhận là "chính hãng" không.
+Ghi chú nguồn SICES: `sices.eu` không có datasheet bộ điều khiển (trang tải xuống dựng bằng JS, chỉ thấy panel / bơm nhiên liệu). Ba tệp lấy từ **meccalte.com** (Mecc Alte, chủ sở hữu SICES theo nguồn 6001 đã lưu). Đã chốt: Khoa 20/11/2026 "meccalte.com là nguồn chính hãng" (do phiên điều phối chuyển lại; câu đã ghi vào `suppliers/CLAUDE.md`, commit 2c788bb7).
 Tên URL lấy từ kết quả tìm kiếm / trang tài liệu của hãng, không đoán. Chức năng ở cột cuối đọc nhanh từ chữ nguồn, chưa bóc từng dòng (modelFacts tự gắn cả dòng).
 
 ## Lệnh đã chạy + kết quả
@@ -54,7 +54,7 @@ Cách gắn: tiêu đề bảng do `maker-datasheets.mjs` tự chọn sai ở nh
 ## Rủi ro / quay lui
 - Sửa tay tiêu đề bảng: đổi chữ chỉ trong tiêu đề, không ở dòng thông số; revert = bỏ commit.
 - Datakom 309 / 307 là sách hướng dẫn (700 dòng đầu), không phải datasheet; chức năng truyền thông có nhưng lẫn mô tả cài đặt. `sources/sices/1003.md` rất dài (11 nghìn dòng).
-- Nhận meccalte.com cho SICES: nếu không chấp nhận, bỏ 3 bảng của `sices` (cn + datasheets + sources) bằng `git revert` phần SICES.
+- Nguồn meccalte.com cho SICES đã được Khoa chốt là chính hãng (20/11/2026), không còn rủi ro về nguồn.
 - Bảng chưa đọc được bởi bộ đọc `catalog.js` cho SICES, easYgen-…XT: cần việc riêng sửa `controllersIn` (không làm ở đây).
 
 ## Việc chưa kiểm được
@@ -65,3 +65,4 @@ Cách gắn: tiêu đề bảng do `maker-datasheets.mjs` tự chọn sai ở nh
 ## Cần ghi nhớ
 - Bẫy mới (đã đưa vào `suppliers/CLAUDE.md` trong PR): `maker-datasheets.mjs` chọn tiêu đề sai cho datasheet DEIF / Woodward, phải sửa tay trong `datasheets/<id>.json` trước `merge-specs`; `controllersIn` DEIF / Woodward cần chữ tên hãng ngay trong dòng tiêu đề.
 - Việc đề xuất: thêm SICES vào `CONTROLLERS` của `catalog.js` và sửa hậu tố XT của easYgen; tìm tiếp datasheet các model còn thiếu.
+- Việc còn lại (ngoài PR này, hàng chờ catalog do phiên khác giữ): thêm mục SICES vào `CONTROLLERS` của `web/catalog.js` để bảng SICES gắn được cho GC310 / GC315Plus / GC350 / GC400 / GC500Plus / GC600 / DST4602Evolution; sửa hậu tố XT của easYgen.
