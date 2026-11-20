@@ -1502,9 +1502,11 @@ const PER_ENGINE = 3, PER_NAMED_ENGINE = 8, PER_SUPPLIER = 4, CN_ROWS = 12, MAKE
 // of 30 rows (IB2600592658, 2880: 30 Cummins). When the HSMT names no engine make or model, a make has at most MAKE_CAP
 // of the rows; what the ceiling leaves empty is filled with the best-scored rows left, whatever their make.
 export const MAKE_CAP = 10;
-// Hai luật điểm của bước chọn ứng viên (Khoa duyệt 20/11/2026 "làm cả A và B"); `GENBID_CAND_A=0` / `GENBID_CAND_B=0` tắt
-// từng luật (y như trước), mặc định bật.
-const candRuleOn = (k) => String(process.env[`GENBID_CAND_${k}`] ?? "1").trim() !== "0";
+// Hai luật điểm của bước chọn ứng viên (Khoa duyệt 20/11/2026 "làm cả A và B"). Sau đo mẫu (A đổi top 30 theo độ phủ
+// tờ hãng trong cn/, không theo chất lượng động cơ) Khoa 20/11/2026: "đo lại B xem như thế nào rồi tính tiếp, áp luôn cho
+// các hãng trung quốc" → B MẶC ĐỊNH BẬT (`GENBID_CAND_B=0` tắt); A MẶC ĐỊNH TẮT, Khoa CHƯA duyệt bật (`GENBID_CAND_A=1` để đo).
+const CAND_DEFAULT = { A: "0", B: "1" };
+const candRuleOn = (k) => { const v = String(process.env[`GENBID_CAND_${k}`] ?? "").trim() || CAND_DEFAULT[k]; return v !== "0"; };
 // Luật A: động cơ có datasheet của CHÍNH hãng động cơ. Chặt: một fact của model (modelFacts) mang `sheet` (bảng của NCC
 // `role: engine_maker` có tiêu đề ghi đúng một mã là model này, hoặc dòng bảng của chính NCC đó ghi đúng mã model; không
 // tính bảng "Datasheet: …" của hãng tổ máy / NCC lắp ráp, không tính tờ của khung máy chia cho các model của khung) hoặc
@@ -1677,7 +1679,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       }
       // A controller with its maker's datasheet: its functions can be checked against the HSMT.
       if (offers.some((c) => c.model && factsFor(facts, "controller", c.model).length)) { score += 40; why.push("bộ điều khiển có datasheet hãng"); }
-      // Luật A (Khoa 20/11/2026): động cơ có datasheet của chính hãng động cơ (engineMakerSheets), cùng mức 40 điểm.
+      // Luật A: động cơ có datasheet của chính hãng động cơ (engineMakerSheets), 40 điểm. MẶC ĐỊNH TẮT (candRuleOn).
       if (ruleA && engineMakerSheets(e, ef, sup).length) { score += 40; why.push("động cơ có datasheet hãng"); }
       score += 8 * Math.min(eKeys.size, 8);
       // Below a minimum of the HSMT by every source that gives the figure (an engine no source gives it for is not).
@@ -1864,7 +1866,9 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
   // No origin required (no G7 / G20 in the HSMT): Chinese makes keep CN_ROWS of the rows (Khoa, 2026-11-05: a Chinese
   // configuration that meets the HSMT better goes first, so it must be among the suggestions). Foreign engines have
   // more datasheet figures and would otherwise fill the rows. Not when the HSMT names an engine make or model.
-  if (patches && origin === "all" && !hints.engineMakes.length && !rows.some((r) => r.named)) pick(rows.filter((r) => CAT.originOf(r.e) === "cn"), Math.min(CN_ROWS, max));
+  // Luật B cũng áp ở đây (Khoa 20/11/2026 "áp luôn cho các hãng trung quốc"): trong 12 chỗ, mỗi hãng TQ chia cho các
+  // model của nó trước (SDEC SC9D340D2 từng chiếm 3 chỗ).
+  if (patches && origin === "all" && !hints.engineMakes.length && !rows.some((r) => r.named)) pick(rows.filter((r) => CAT.originOf(r.e) === "cn"), Math.min(CN_ROWS, max), { models: true });
   // G7 / G20 asked, no make named (Khoa, 2026-11-11, IB2600603983): every make of the group with a fitting row keeps
   // MAKE_ROWS rows of different engines, best make first. Cummins and Perkins have the most datasheet figures and filled
   // the 30 rows; Baudouin 6M31G825/5 (750 kVA prime, offered by four suppliers) stood 361st. A row the HSMT rules out
@@ -1885,8 +1889,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       else pick(sorted.filter((r) => !engines.has(r.e.key) && engines.add(r.e.key)), Math.min(max, out.length + MAKE_ROWS));
     }
   }
-  // Luật B ở lượt lấp chung khi có trần mỗi hãng (`capOn`: HSMT không nêu hãng / model động cơ). 12 dòng hãng TQ
-  // (`CN_ROWS`) KHÔNG áp: đó là chỗ của cả nhóm hãng, không phải của một hãng (chờ Khoa quyết).
+  // Luật B ở lượt lấp chung khi có trần mỗi hãng (`capOn`: HSMT không nêu hãng / model động cơ).
   pick(rows, max, { models: capOn });
   if (out.length < max) pick(rows, max, { free: true });
   // The rows of the configurations the last run chose (Khoa 2026-11-12: `keep`, the supplierId + engine key of each, from

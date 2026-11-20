@@ -1,6 +1,7 @@
 // node --test suppliers/*.test.mjs — hai luật điểm ở bước chọn ứng viên (Khoa duyệt 20/11/2026 "làm cả A và B").
 // A: +40 cho dòng mà động cơ có datasheet của chính hãng động cơ (engineMakerSheets). B: chỗ của một hãng động cơ chia cho
-// các model khác nhau trước, rồi mới tới dòng thứ hai của cùng model. GENBID_CAND_A / GENBID_CAND_B = "0" tắt từng luật.
+// các model khác nhau trước, rồi mới tới dòng thứ hai của cùng model, cả trong 12 chỗ hãng TQ. Khoa 20/11/2026: B mặc định bật
+// (GENBID_CAND_B=0 tắt), A mặc định TẮT (chưa duyệt bật; GENBID_CAND_A=1 để đo).
 import test from "node:test";
 import assert from "node:assert/strict";
 import { candidates, hintsOf, engineMakerSheets, modelFacts } from "./config-bot.mjs";
@@ -13,7 +14,7 @@ const cap = { value: 400, unit: "kVA" };
 const run = (list, o = {}, hints = free()) => candidates(C.build(list), cap, hints, { suppliers: list, patches: false, ...o });
 const withEnv = (env, fn) => {
   const old = Object.fromEntries(Object.keys(env).map((k) => [k, process.env[k]]));
-  Object.assign(process.env, env);
+  for (const [k, v] of Object.entries(env)) if (v === undefined) delete process.env[k]; else process.env[k] = v;
   try { return fn(); } finally { for (const [k, v] of Object.entries(old)) if (v === undefined) delete process.env[k]; else process.env[k] = v; }
 };
 // A datasheet table of one engine model (no header: modelFacts reads it as the model's facts).
@@ -23,16 +24,23 @@ const assembler = set("asm1", "Cummins", ["| A-400 | 420 | 336 | KTA19-G3 |"]);
 const rowOf = (r) => r.all.find((x) => x.u.supplierId === "asm1" && x.e.model === "KTA19-G3");
 
 test("A: an engine with its own maker's datasheet (engine_maker of that make, table titled with its exact code) gets 40 points", () => {
-  const base = withEnv({ GENBID_CAND_A: "0" }, () => rowOf(run([assembler, cumMaker()])));
-  const on = rowOf(run([assembler, cumMaker()]));
+  const base = rowOf(run([assembler, cumMaker()]));
+  const on = withEnv({ GENBID_CAND_A: "1" }, () => rowOf(run([assembler, cumMaker()])));
   assert.equal(on.score - base.score, 40);
   assert.ok(on.why.includes("động cơ có datasheet hãng"), on.why.join("; "));
   assert.ok(!base.why.includes("động cơ có datasheet hãng"));
 });
 
+test("A is off by default (Khoa 20/11/2026: not approved to switch on); GENBID_CAND_A=0 is off too", () => {
+  for (const env of [{}, { GENBID_CAND_A: "0" }, { GENBID_CAND_A: "" }]) {
+    const r = withEnv({ GENBID_CAND_A: undefined, ...env }, () => rowOf(run([assembler, cumMaker()])));
+    assert.ok(!r.why.includes("động cơ có datasheet hãng"), JSON.stringify(env));
+  }
+});
+
 test("A: the same figures from an assembler's page (\"Datasheet: …\" of a genset maker) do not count", () => {
   const copy = sheet("asm2", { names: { en: "Some Genset Co" } }, "Datasheet: KTA19-G3");
-  const r = rowOf(run([assembler, copy]));
+  const r = withEnv({ GENBID_CAND_A: "1" }, () => rowOf(run([assembler, copy])));
   assert.ok(!r.why.includes("động cơ có datasheet hãng"), r.why.join("; "));
   // ... though its figures are facts of the engine (they still score as figures, as before).
   const ef = modelFacts(C.build([assembler, copy]), [assembler, copy]).get(`engine:${C.keyOf("KTA19-G3")}`) || [];
@@ -41,7 +49,7 @@ test("A: the same figures from an assembler's page (\"Datasheet: …\" of a gens
 
 test("A: an engine maker's sheet of another make's engine, or of an engine of no make, does not count", () => {
   const other = sheet("yc-x", { role: "engine_maker", names: { en: "Guangxi Yuchai Machinery", brands: ["Yuchai"] } });
-  assert.ok(!rowOf(run([assembler, other])).why.includes("động cơ có datasheet hãng"));
+  assert.ok(!withEnv({ GENBID_CAND_A: "1" }, () => rowOf(run([assembler, other]))).why.includes("động cơ có datasheet hãng"));
   const e = { make: null, model: "KTA19-G3" }, sup = new Map([["dcec-x", cumMaker()]]);
   assert.deepEqual(engineMakerSheets(e, [{ key: "disp", supplierId: "dcec-x", sheet: true }], sup), []);
   assert.deepEqual(engineMakerSheets({ make: "Cummins" }, [{ key: "disp", supplierId: "dcec-x", sheet: true }], sup), ["dcec-x"]);
@@ -50,7 +58,7 @@ test("A: an engine maker's sheet of another make's engine, or of an engine of no
 });
 
 test("A: a maker's sheet naming two models in its title gives neither", () => {
-  const r = rowOf(run([assembler, cumMaker("KTA19-G3 / KTA19-G4 engine datasheet")]));
+  const r = withEnv({ GENBID_CAND_A: "1" }, () => rowOf(run([assembler, cumMaker("KTA19-G3 / KTA19-G4 engine datasheet")])));
   assert.ok(!r.why.includes("động cơ có datasheet hãng"));
 });
 
@@ -99,4 +107,15 @@ test("B: with G7 / EU asked, a make with fewer models than MAKE_ROWS fills its p
   const on = run(list, o).top, off = withEnv({ GENBID_CAND_B: "0" }, () => run(list, o).top);
   assert.equal(models(on, "Cummins").length, 3);
   assert.equal(models(off, "Cummins").length, 1);
+});
+
+test("B in the 12 places of Chinese makes (CN_ROWS, Khoa 20/11/2026 \"áp luôn cho các hãng trung quốc\"): a Chinese make's models first", () => {
+  const list = [
+    set("w1", "Weichai", ["| W1 | 420 | 336 | WP13D405E200 |"], "high"), set("w2", "Weichai", ["| W2 | 420 | 336 | WP13D405E200 |"], "high"),
+    set("w3", "Weichai", ["| W3 | 420 | 336 | WP13D405E200 |"], "high"), set("w4", "Weichai", ["| W4 | 420 | 336 | WP13D385E200 |"], "low"),
+  ];
+  const o = { max: 2, makeCap: 0, patches: true, origin: "all" };
+  const on = run(list, o).top, off = withEnv({ GENBID_CAND_B: "0" }, () => run(list, o).top);
+  assert.deepEqual(models(off, "Weichai"), ["WP13D405E200", "WP13D405E200"]);
+  assert.deepEqual(models(on, "Weichai").sort(), ["WP13D385E200", "WP13D405E200"]);
 });
