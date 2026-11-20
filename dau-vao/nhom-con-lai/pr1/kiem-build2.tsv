@@ -1,0 +1,150 @@
+vai	khoa	truong-doi-ngoai-uses	uses-NCC-khac-doi	uses-EL-cu	uses-EL-moi	chi-tiet
+engines	YND485D		không	4	4	
+engines	YD385D		không	4	4	
+engines	YD480D		không	4	4	
+engines	YD380D		không	4	4	
+engines	YSD490D		không	4	4	
+engines	Y4102D		không	4	4	
+engines	Y4105ZLD		không	4	4	
+engines	Y4100D		không	4	4	
+engines	Y495D		không	4	4	
+engines	YD4EZLD		không	4	4	
+engines	Y4105D		không	4	4	
+engines	Y4102ZLD		không	4	4	
+engines	Y4102ZD		không	4	4	
+engines	Y490D		không	4	4	
+engines	K4100D		không	10	10	
+engines	R6105AZLD		không	6	6	
+engines	R6105IZLD		không	10	10	
+engines	R4105ZD		không	6	6	
+engines	R6105ZD		không	2	2	
+engines	K4100ZD		không	6	6	
+engines	N4105ZLDS		không	2	2	
+engines	6126A260DE		không	2	2	
+engines	R6105ZDS		không	2	2	
+engines	R6105AZLDS		không	2	2	
+engines	R6105BZLDS		không	2	2	
+engines	N4105ZDS		không	2	2	
+engines	N4105DS38		không	2	2	
+engines	612642DE		không	2	2	
+engines	WT12D308E		không	2	2	
+engines	R6105ZLDS		không	2	2	
+engines	N4105ZLD		không	2	2	
+engines	ZH4105ZD		không	10	10	
+engines	R6110ZLDS		không	2	2	
+engines	612668DE		không	2	2	
+engines	WT13360DE		không	2	2	
+engines	WT13A390DE		không	2	2	
+engines	R4105ZLD		không	4	4	
+engines	K4102ZD		không	4	4	
+engines	N4105ZD		không	2	2	
+engines	ZH4105ZLD		không	6	6	
+engines	N4105DS46		không	2	2	
+engines	R6105AZD		không	4	4	
+engines	R6108IZLD		không	4	4	
+engines	K4102D		không	4	4	
+engines	618ZLD		không	2	2	
+engines	K4100DS	specs	không	10	10	specs: [{"key":"engPower","vi":"Công suất động cơ","scope":"engine","values":[{"value":"30.1","label":"Engine power (kW)","rows":8,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"engPower","vi":"Công suất động cơ","scope":"engine","values":[{"value":"30.1","label":"Engine power (kW)","rows":8,"suppliers":["eastern-lion-fuan"]}]}
+engines	YN48GBZ		không	8	8	
+engines	YN25GB		không	6	6	
+engines	R6108ZLD		không	6	6	
+engines	YN38GBZ		không	6	6	
+engines	YN27GB		không	4	4	
+engines	YN38GB		không	4	4	
+engines	WT13330DE		không	2	2	
+engines	ZH4100D		không	4	4	
+engines	4105D		không	2	2	
+engines	WP10275DE		không	2	2	
+engines	K4100ZDS		không	2	2	
+engines	R4108IZLD		không	4	4	
+engines	ZH4102D		không	2	2	
+engines	4100ZD		không	2	2	
+engines	R4105AZLD		không	4	4	
+engines	YN36GB		không	4	4	
+engines	N4105D		không	2	2	
+engines	6105IZLD		không	2	2	
+engines	6105ZD		không	2	2	
+engines	YN27GBZ		không	2	2	
+engines	ZH4100ZD		không	2	2	
+engines	ZH4102ZD		không	2	2	
+engines	R9768D		không	4	4	
+engines	R9768D1		không	4	4	
+engines	ZH4105D		không	2	2	
+engines	K4102DS		không	2	2	
+engines	2110D		không	2	2	
+engines	490D		không	2	2	
+engines	618AZLD		không	2	2	
+engines	(YD4KD)YD485D		không	4	4	
+engines	R11D		không	4	4	
+engines	R11D1		không	4	4	
+engines	WD618		không	4	4	
+engines	2105D		không	2	2	
+engines	4100AZLD		không	2	2	
+engines	4105AZLD		không	2	2	
+engines	490ZD		không	2	2	
+engines	6105AZD		không	2	2	
+engines	6110ZLD		không	2	2	
+engines	6113ZLD		không	2	2	
+engines	6126ZLD1		không	2	2	
+engines	6126ZLD2		không	2	2	
+alternators	EL224E	freq,specs,kva,kw	không	16	42	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":16,"suppliers":["eastern-lion-fuan"]}] → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"RUIFEN6120","label":"Controller","rows":24,"suppliers":["eastern-lion-fuan"]},{"v || kva: [58,70] → [55,73] || kw: [46,56] → [44,59]
+alternators	EL184G	freq,specs,kva,kw	không	12	38	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":12,"suppliers":["eastern-lion-fuan"]}] → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"RUIFEN6120","label":"Controller","rows":24,"suppliers":["eastern-lion-fuan"]},{"v || kva: [30,37] → [30,39] || kw: [24,29] → [24,31]
+alternators	EL274C	freq,specs,kva,kw	không	30	38	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":30,"suppliers":["eastern-lion-fuan"]}] → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":30,"suppliers":["eastern-lion-fuan"]}, || kva: [94,111] → [94,120] || kw: [75,89] → [75,96]
+alternators	EL274K	names,freq,specs,kva,kw	không	26	38	names: ["EL 274K"] → ["EL 274K","EL 274k"] || freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":26,"suppliers":["eastern-lion-fuan"]}] → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":28,"suppliers":["eastern-lion-fuan"]}, || kva: [250,278] → [250,300] || kw: [200,222] → [200,240]
+alternators	EL274F	freq,specs,kva,kw	không	22	36	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":20,"suppliers":["eastern-lion-fuan"]}, → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":22,"suppliers":["eastern-lion-fuan"]}, || kva: [150,181] → [150,192] || kw: [120,144] → [120,153.6]
+alternators	EL224G	freq,specs,kva,kw	không	18	34	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":18,"suppliers":["eastern-lion-fuan"]}] → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":18,"suppliers":["eastern-lion-fuan"]}, || kva: [80,95] → [80,104] || kw: [64,76] → [64,83]
+alternators	EL224F	freq,specs,kva,kw	không	16	32	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":16,"suppliers":["eastern-lion-fuan"]}] → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":16,"suppliers":["eastern-lion-fuan"]}, || kva: [65,81] → [63,87] || kw: [52,64] → [50,69.6]
+alternators	EL314E	freq,specs,kva,kw	không	20	32	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":18,"suppliers":["eastern-lion-fuan"]}, → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":20,"suppliers":["eastern-lion-fuan"]}, || kva: [313,361] → [313,390] || kw: [250,289] → [250,312]
+alternators	EL274J	freq,specs,kva,kw	không	18	30	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":16,"suppliers":["eastern-lion-fuan"]}, → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":18,"suppliers":["eastern-lion-fuan"]}, || kva: [225,256] → [225,276] || kw: [180,204] → [180,220.8]
+alternators	EL354C	freq,specs,kva,kw	không	24	30	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":24,"suppliers":["eastern-lion-fuan"]}] → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":28,"suppliers":["eastern-lion-fuan"]}] || kva: [450,506] → [450,540] || kw: [360,404] → [360,432]
+alternators	EL314D	freq,specs,kva,kw	không	16	28	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":14,"suppliers":["eastern-lion-fuan"]}, → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":16,"suppliers":["eastern-lion-fuan"]}, || kva: [275,333] → [275,354] || kw: [220,267] → [220,283.2]
+alternators	EL274H	freq,specs,kva,kw	không	18	26	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":16,"suppliers":["eastern-lion-fuan"]}, → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":18,"suppliers":["eastern-lion-fuan"]}, || kva: [200,223] → [188,240] || kw: [160,178] → [150,192]
+alternators	EL354D	freq,specs,kva,kw	không	22	26	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":20,"suppliers":["eastern-lion-fuan"]}, → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":22,"suppliers":["eastern-lion-fuan"]}, || kva: [500,556] → [500,600] || kw: [400,444] → [400,480]
+alternators	EL184E	freq,specs,kva,kw	không	10	24	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":10,"suppliers":["eastern-lion-fuan"]}] → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"RUIFEN6120","label":"Controller","rows":12,"suppliers":["eastern-lion-fuan"]},{"v || kva: [20,22] → [18,28] || kw: [16,18] → [14,22]
+alternators	EL184F	freq,specs,kva,kw	không	10	24	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":10,"suppliers":["eastern-lion-fuan"]}] → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"RUIFEN6120","label":"Controller","rows":12,"suppliers":["eastern-lion-fuan"]},{"v || kva: [25,31] → [24,33] || kw: [20,24] → [19,26.4]
+alternators	EL184H	freq,specs,kva,kw	không	8	24	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":8,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"RUIFEN6120","label":"Controller","rows":14,"suppliers":["eastern-lion-fuan"]},{"v || kva: [38,42] → [33,45] || kw: [30,33] → [26,36]
+alternators	EL224D	freq,specs,kva,kw	không	8	24	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":8,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"RUIFEN6120","label":"Controller","rows":14,"suppliers":["eastern-lion-fuan"]},{"v || kva: [50,56] → [48,62] || kw: [40,44] → [38,50]
+alternators	EL274E	freq,specs,kva,kw	không	16	24	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":16,"suppliers":["eastern-lion-fuan"]}] → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":16,"suppliers":["eastern-lion-fuan"]}, || kva: [135,159] → [135,168] || kw: [108,127] → [108,134.4]
+alternators	EL314G	freq,kva,kw	không	22	24	freq: [50] → [50,60] || kva: [400,445] → [400,480] || kw: [320,356] → [320,384]
+alternators	EL224C	freq,specs,kva,kw	không	6	22	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":6,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"RUIFEN6120","label":"Controller","rows":14,"suppliers":["eastern-lion-fuan"]},{"v || kva: [43,50] → [40,51] || kw: [34,40] → [32,40.8]
+alternators	EL274D	freq,specs,kva,kw	không	12	22	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":12,"suppliers":["eastern-lion-fuan"]}] → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":12,"suppliers":["eastern-lion-fuan"]}, || kva: [115,139] → [115,144] || kw: [92,111] → [92,115.2]
+alternators	EL274G	freq,specs,kva,kw	không	16	22	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":16,"suppliers":["eastern-lion-fuan"]}] → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":16,"suppliers":["eastern-lion-fuan"]}, || kva: [175,202] → [175,218.4] || kw: [140,162] → [140,174.7]
+alternators	EL314F	freq,specs,kva,kw	không	14	22	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":14,"suppliers":["eastern-lion-fuan"]}] → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":16,"suppliers":["eastern-lion-fuan"]}, || kva: [375,423] → [375,456] || kw: [300,338] → [300,364.8]
+alternators	EL314FS	freq,specs,kva,kw	không	18	22	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":18,"suppliers":["eastern-lion-fuan"]}] → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":18,"suppliers":["eastern-lion-fuan"]}, || kva: [350,389] → [350,420] || kw: [280,311] → [280,336]
+alternators	EL404C	freq,specs,kva,kw	không	16	22	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":16,"suppliers":["eastern-lion-fuan"]}] → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":20,"suppliers":["eastern-lion-fuan"]}] || kva: [800,889] → [800,960] || kw: [640,711] → [640,768]
+alternators	EL404D	freq,specs,kva,kw	không	12	22	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":10,"suppliers":["eastern-lion-fuan"]}, → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":18,"suppliers":["eastern-lion-fuan"]}, || kva: [800,1011] → [800,1092] || kw: [640,809] → [640,873.6]
+alternators	EL354FS	freq,specs,kva,kw	không	14	20	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":14,"suppliers":["eastern-lion-fuan"]}] → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":18,"suppliers":["eastern-lion-fuan"]}] || kva: [618,695] → [618,750] || kw: [494,556] → [494,600]
+alternators	EL184J	freq,specs,kva,kw	không	6	16	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":6,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"RUIFEN6120","label":"Controller","rows":8,"suppliers":["eastern-lion-fuan"]},{"va || kva: [40,44] → [40,49] || kw: [32,36] → [32,39]
+alternators	EL354E	freq,kva,kw	không	14	16	freq: [50] → [50,60] || kva: [563,667] → [563,720] || kw: [450,533] → [450,576]
+alternators	EL354H	freq,specs,kva,kw	không	12	16	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":12,"suppliers":["eastern-lion-fuan"]}] → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":14,"suppliers":["eastern-lion-fuan"]}] || kva: [728,834] → [728,900] || kw: [582,667] → [582,720]
+alternators	EL164D	freq,specs,kva,kw	không	4	14	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":4,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"RUIFEN6120","label":"Controller","rows":8,"suppliers":["eastern-lion-fuan"]},{"va || kva: [15,17] → [15,19.2] || kw: [12,13] → [12,15.4]
+alternators	EL404E	freq,specs,kva,kw	không	10	14	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":10,"suppliers":["eastern-lion-fuan"]}] → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":12,"suppliers":["eastern-lion-fuan"]}] || kva: [1000,1111] → [1000,1200] || kw: [800,889] → [800,960]
+alternators	EL404G	freq	không	12	14	freq: [50] → [50,60]
+alternators	EL164C	names,freq,specs,kva,kw	không	4	12	names: ["El 164C"] → ["El 164C","EL 164C"] || freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":4,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"RUIFEN6120","label":"Controller","rows":6,"suppliers":["eastern-lion-fuan"]},{"va || kva: [13,14] → [11,16.2] || kw: [10,12] → [9,13]
+alternators	EL354ES	freq,specs,kva,kw	không	8	12	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":8,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":10,"suppliers":["eastern-lion-fuan"]}] || kva: [525,611] → [525,660] || kw: [420,489] → [420,528]
+alternators	EL354F	freq,kva,kw	không	10	12	freq: [50] → [50,60] || kva: [650,745] → [650,804] || kw: [520,596] → [520,643.2]
+alternators	EL404F	freq,kva,kw	không	10	12	freq: [50] → [50,60] || kva: [1000,1256] → [1000,1356] || kw: [800,1004] → [800,1084.8]
+alternators	ELS224E	specs,kva,kw	không	4	12	specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":4,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"RUIFEN6120","label":"Controller","rows":8,"suppliers":["eastern-lion-fuan"]},{"va || kva: [66,81] → [58,81] || kw: [53,64] → [48,64]
+alternators	EL354G	freq,specs,kva,kw	không	6	10	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":6,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":8,"suppliers":["eastern-lion-fuan"]}]} || kva: [688,764] → [687.5,825] || kw: [550,611] → [550,660]
+alternators	ELS184G	specs,kw	không	6	10	specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":6,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":6,"suppliers":["eastern-lion-fuan"]},{ || kw: [27,31] → [27,32]
+alternators	EL314C	freq,kva,kw	không	6	8	freq: [50] → [50,60] || kva: [250,278] → [250,300] || kw: [200,222] → [200,240]
+alternators	EL404I	freq,kva,kw	không	6	8	freq: [50] → [50,60] || kva: [1475,1722] → [1475,1860] || kw: [1180,1378] → [1180,1488]
+alternators	ELS224F	specs	không	4	8	specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":4,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":4,"suppliers":["eastern-lion-fuan"]},{
+alternators	ELS274D	specs	không	6	8	specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":6,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":6,"suppliers":["eastern-lion-fuan"]},{
+alternators	ELS274E	specs,kva,kw	không	6	8	specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":6,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":6,"suppliers":["eastern-lion-fuan"]},{ || kva: [150,178] → [145,178] || kw: [120,142] → [116,142]
+alternators	ELS274F	specs	không	4	8	specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":4,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":4,"suppliers":["eastern-lion-fuan"]},{
+alternators	ELS314D	specs	không	6	8	specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":6,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":6,"suppliers":["eastern-lion-fuan"]},{
+alternators	EL164B	freq,specs,kva,kw	không	2	6	freq: [50] → [50,60] || specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":2,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":2,"suppliers":["eastern-lion-fuan"]},{ || kva: [9,10] → [9,13.2] || kw: [7.2,8] → [7.2,10.6]
+alternators	EL404H	freq,kva,kw	không	4	6	freq: [50] → [50,60] || kva: [1250,1528] → [1250,1680] || kw: [1000,1222] → [1000,1344]
+alternators	EL504F	freq,kva,kw	không	4	6	freq: [50] → [50,60] || kva: [2000,2222] → [2000,2496] || kw: [1600,1778] → [1600,1996.8]
+alternators	ELS184E	specs,kva,kw	không	2	6	specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":2,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"RUIFEN6120","label":"Controller","rows":4,"suppliers":["eastern-lion-fuan"]},{"va || kva: [25,28] → [19,28] || kw: [20,22] → [16,22]
+alternators	ELS184J	specs,kva,kw	không	2	6	specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":2,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"RUIFEN6120","label":"Controller","rows":4,"suppliers":["eastern-lion-fuan"]},{"va || kva: [44,49] → [44,50] || kw: [35,39] → [35,42]
+alternators	ELS224D	specs,kva,kw	không	2	6	specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":2,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"RUIFEN6120","label":"Controller","rows":4,"suppliers":["eastern-lion-fuan"]},{"va || kva: [60,67] → [50,67] || kw: [48,53] → [42,53]
+alternators	ELS224G	specs,kva,kw	không	2	6	specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":2,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"RUIFEN6120","label":"Controller","rows":4,"suppliers":["eastern-lion-fuan"]},{"va || kva: [90,100] → [90,104] || kw: [72,80] → [72,83]
+alternators	EL504D	freq,kva,kw	không	2	4	freq: [50] → [50,60] || kva: [1710,1900] → [1650,1980] || kw: [1368,1520] → [1320,1584]
+alternators	EL504E	freq,kva,kw	không	2	4	freq: [50] → [50,60] || kva: [1850,2056] → [1850,2280] || kw: [1480,1644] → [1480,1824]
+alternators	EL504G	freq,kva,kw	không	2	4	freq: [50] → [50,60] || kva: [2250,2500] → [2200,2640] || kw: [1800,2000] → [1760,2112]
+alternators	ELS224C	specs,kva,kw	không	2	4	specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":2,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"RUIFEN6120","label":"Controller","rows":2,"suppliers":["eastern-lion-fuan"]},{"va || kva: [51,57] → [46,57] || kw: [41,46] → [37,46]
+alternators	ELS274H	specs,kva,kw	không	2	4	specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":2,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":2,"suppliers":["eastern-lion-fuan"]},{ || kva: [213,237] → [213,244] || kw: [170,189] → [170,196]
+alternators	ELS274J	specs	không	2	4	specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":2,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":2,"suppliers":["eastern-lion-fuan"]},{
+alternators	ELS314F	specs,kva,kw	không	2	4	specs: [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":2,"suppliers":["eastern-lion-fuan"]}]} → [{"key":"controller","vi":"Bộ điều khiển","scope":"genset","values":[{"value":"Smartgen 6120","label":"Controller","rows":2,"suppliers":["eastern-lion-fuan"]},{ || kva: [400,444] → [400,464] || kw: [320,356] → [320,371]

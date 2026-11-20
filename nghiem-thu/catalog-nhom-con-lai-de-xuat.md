@@ -5,6 +5,8 @@ Việc CHỈ ĐỌC (Khoa 20/11: "tìm phương án xử lý"): không sửa mã
 ## KHOA ĐÃ TRẢ LỜI (20/11/2026, qua điều phối)
 1 = **B** (EL / ELS + 3 số là mã đầu phát, CHỈ danh sách bảng eastern-lion) · 2 = **tìm cách đọc bản ghi** (n156 → bản ghi đầu phát: thiết kế đường đọc rồi làm) · 3 = **có** (jianghao n104 → khí; làm sau khi #958 + #963 merge) · 4 = **C** (tìm datasheet 6 động cơ simpson: `simpson-n124-nhien-lieu.md`) · 5 = **chưa quyết** (Khoa hỏi thêm về C) · 6 = **C** (chỉ yingtai n101 / n2003) · 7 = **C** (huatai n111: "额定功率" → công suất động cơ VÀ công suất tổ máy từ tên "NNNGF").
 
+**Khoa quyết thêm (20/11/2026, qua điều phối):** câu 4 → **X**: simpson n124 gán xăng cho 7 dòng động cơ Honda GX390 / GX630 / GX690 theo datasheet hãng động cơ (mức bằng chứng mới "datasheet hãng động cơ": ghi `fuelFrom` / `fuelWhy` + URL engines.honda.com, xem `simpson-n124-nhien-lieu.md`); 3 dòng ZS và 4 dòng "NNHP" để "không rõ". Câu 5 → **cách ở giữa**: chỉ gắn xăng cho zc-power n109 b11 / b12 (9 dòng, đã trong `GENSET_TABLES`); 10 bảng tổ máy xăng dạng dọc còn lại KHÔNG đọc bây giờ → mục "Phạm vi việc (D) bảng dọc" cuối tệp. Câu 3 + 4X + 5 làm chung MỘT PR "nhiên liệu theo bảng", SAU khi #958 + #963 merge.
+
 ## Câu hỏi cho Khoa (mỗi câu một chữ)
 
 1. **eastern-lion:** "EL 164D" / "ELS 184F" là mã ĐẦU PHÁT của chính NCC (cột "Alternator model", trang "EL Series Brushless Alternator"); "RUIFEN6120" là BỘ ĐIỀU KHIỂN (cột "Controller"). Không phải mã động cơ, không phải mã tổ máy, không phải tên hãng (đã mở lại trang sống 20/11). Đọc "EL/ELS + 3 số" làm mã đầu phát? **A** thêm mẫu vào `ALT_CODE` (khuyến nghị) · **B** chỉ cho danh sách bảng eastern-lion · **C** để nguyên.
@@ -323,4 +325,8 @@ Thứ tự đề xuất: chờ #954, #957, #958, #959 merge rồi mới mở PR 
 - eastern-lion: EL / ELS = đầu phát của chính NCC; RUIFEN6120 = bộ điều khiển (trang sống 20/11). 26 bản ghi động cơ "EL…" và 4 bản ghi đầu phát "RUIFEN6120" đang sai vai (0 lần top).
 - jianghao n104 có câu nguồn ghi khí (chờ Khoa câu 3); simpson n124 không nguồn nào ghi nhiên liệu.
 - huatai n111: không khoá nào trong 17 có `engPower`; "额定功率" ở 121 bảng là công suất tổ máy → không nới mẫu chung.
-- Chờ Khoa 7 câu ở đầu tệp.
+- Khoa đã trả lời 7 câu (đầu tệp).
+
+## Phạm vi việc (D) bảng dọc: 10 bảng tổ máy xăng chưa đọc (Khoa 20/11/2026, câu 5)
+Không đọc bây giờ; khi làm việc (D) bảng dọc thì đọc các bảng này (số dòng trong ngoặc, lớp 2b-XTM ở mục 2.2, tiêu đề + dòng mẫu trong `bang-day-du.tsv`):
+bison-zhejiang n114/b16 (14), n114/b17 (14), n114/b18 (13); endress-stromerzeuger n102/b0 (11); gordon-power n105/b7 (15); grupel n103/b1 (2), n107/b3 (2); kena-chongqing n108/b2 (8); kigerpower n2010/b9 (18); zc-power n110/b13 (13). (zc-power n109/b11, n109/b12 đi PR "nhiên liệu theo bảng".)

@@ -1,0 +1,1657 @@
+bản ghi cũ 60073, mới 60497 | khác 308 | chỉ cũ 26, chỉ mới 450 | bảng có đổi 19
+{"other":308,"controller thêm":6,"model":4,"engPower đổi":4}
+
+[eastern-lion-fuan n114 bảng 18] ×53
+  H: | | Genset Specification 400/230V 50HZ | Engine | Brushless Alternator | Controller | Datasheet
+  H: | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller | Datasheet
+    0 | GF/GFS-HC18 | 13 | 16 | 14 | 18 | 2105D | 18.7 | EL 164D | 12.8 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 164D
+    0 | GF/GFS-HC18 | 13 | 16 | 14 | 18 | 2105D | 18.7 | EL 164D | 12.8 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 164D
+    1 | GF/GFS-HC26 | 18 | 23 | 20 | 26 | 2110D | 20 | EL 184E | 18 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184E
+    1 | GF/GFS-HC26 | 18 | 23 | 20 | 26 | 2110D | 20 | EL 184E | 18 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184E
+    2 | GF/GFS-HC31 | 22 | 28 | 24 | 31 | 490D | 24 | EL 184F | 22 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184F
+    2 | GF/GFS-HC31 | 22 | 28 | 24 | 31 | 490D | 24 | EL 184F | 22 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184F
+    3 | GF/GFS-HC34 | 25 | 31 | 28 | 34 | 490ZD | 33 | EL 184G | 25 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184G
+    3 | GF/GFS-HC34 | 25 | 31 | 28 | 34 | 490ZD | 33 | EL 184G | 25 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184G
+    4 | GF/GFS-HC34 | 25 | 31 | 28 | 34 | ZH4100D | 30.1 | EL 184G | 25 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184G
+    4 | GF/GFS-HC34 | 25 | 31 | 28 | 34 | ZH4100D | 30.1 | EL 184G | 25 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184G
+    5 | GF/GFS-HC44 | 32 | 40 | 36 | 44 | ZH4100ZD | 41 | EL 184J | 32 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184J
+    5 | GF/GFS-HC44 | 32 | 40 | 36 | 44 | ZH4100ZD | 41 | EL 184J | 32 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184J
+    6 | GF/GFS-HC42 | 30 | 38 | 33 | 42 | ZH4102D | 33 | EL 184H | 30 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184H
+    6 | GF/GFS-HC42 | 30 | 38 | 33 | 42 | ZH4102D | 33 | EL 184H | 30 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184H
+    7 | GF/GFS-HC48 | 34 | 43 | 38 | 48 | ZH4102ZD | 44 | EL 224C | 34 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224C
+    7 | GF/GFS-HC48 | 34 | 43 | 38 | 48 | ZH4102ZD | 44 | EL 224C | 34 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224C
+    8 | GF/GFS-HC42 | 30 | 38 | 33 | 42 | ZH4105D | 36 | EL 184H | 30 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184H
+    8 | GF/GFS-HC42 | 30 | 38 | 33 | 42 | ZH4105D | 36 | EL 184H | 30 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184H
+    9 | GF/GFS-HC56 | 40 | 50 | 44 | 56 | ZH4105ZD | 52 | EL 224D | 40 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224D
+    9 | GF/GFS-HC56 | 40 | 50 | 44 | 56 | ZH4105ZD | 52 | EL 224D | 40 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224D
+   10 | GF/GFS-HC48 | 34 | 43 | 38 | 48 | N4105D | 42 | EL 224C | 34 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224C
+   10 | GF/GFS-HC48 | 34 | 43 | 38 | 48 | N4105D | 42 | EL 224C | 34 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224C
+   11 | GF/GFS-HC67 | 48 | 60 | 53 | 67 | N4105ZD | 56 | EL 224E | 48 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224E
+   11 | GF/GFS-HC67 | 48 | 60 | 53 | 67 | N4105ZD | 56 | EL 224E | 48 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224E
+   12 | GF/GFS-HC67 | 48 | 60 | 53 | 67 | N4105ZLD | 66 | EL 224E | 48 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224E
+   12 | GF/GFS-HC67 | 48 | 60 | 53 | 67 | N4105ZLD | 66 | EL 224E | 48 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224E
+   13 | GF/GFS-HC48 | 34 | 43 | 38 | 48 | 4105D | 42 | EL 224C | 34 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224C
+   13 | GF/GFS-HC48 | 34 | 43 | 38 | 48 | 4105D | 42 | EL 224C | 34 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224C
+   14 | GF/GFS-HC67 | 48 | 60 | 53 | 67 | 4105ZD(小泵） | 56 | EL 224E | 48 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224E
+   15 | GF/GFS-HC81 | 58 | 73 | 64 | 81 | 4105AZLD | 66 | EL 224F | 58 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224F
+   15 | GF/GFS-HC81 | 58 | 73 | 64 | 81 | 4105AZLD | 66 | EL 224F | 58 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224F
+   16 | GF/GFS-HC81 | 58 | 73 | 64 | 81 | 4100ZD | 75 | EL 224F | 58 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224F
+   16 | GF/GFS-HC81 | 58 | 73 | 64 | 81 | 4100ZD | 75 | EL 224F | 58 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224F
+   17 | GF/GFS-HC94 | 68 | 85 | 76 | 94 | 4100AZLD | 84 | EL 224G | 68 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224G
+   17 | GF/GFS-HC94 | 68 | 85 | 76 | 94 | 4100AZLD | 84 | EL 224G | 68 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224G
+   18 | GF/GFS-HC94 | 68 | 85 | 76 | 94 | 6105ZD | 84 | EL 224G | 68 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224G
+   18 | GF/GFS-HC94 | 68 | 85 | 76 | 94 | 6105ZD | 84 | EL 224G | 68 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224G
+   19 | GF/GFS-HC111 | 80 | 100 | 89 | 111 | 6105AZD | 101 | EL 274C | 80 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274C
+   19 | GF/GFS-HC111 | 80 | 100 | 89 | 111 | 6105AZD | 101 | EL 274C | 80 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274C
+   20 | GF/GFS-HC156 | 112 | 140 | 124 | 156 | 6105IZLD | 132 | EL 274E | 112 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274E
+   20 | GF/GFS-HC156 | 112 | 140 | 124 | 156 | 6105IZLD | 132 | EL 274E | 112 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274E
+   21 | GF/GFS-HC178 | 128 | 160 | 142 | 178 | 6110ZLD | 160 | EL 274F | 128 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274F
+   21 | GF/GFS-HC178 | 128 | 160 | 142 | 178 | 6110ZLD | 160 | EL 274F | 128 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274F
+   22 | GF/GFS-HC178 | 128 | 160 | 142 | 178 | 6113ZLD | 165 | EL 274F | 128 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274F
+   22 | GF/GFS-HC178 | 128 | 160 | 142 | 178 | 6113ZLD | 165 | EL 274F | 128 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274F
+   23 | GF/GFS-HC256 | 184 | 230 | 204 | 256 | 6126ZLD-1 | 235 | EL 274J | 184 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274J
+   23 | GF/GFS-HC256 | 184 | 230 | 204 | 256 | 6126ZLD-1 | 235 | EL 274J | 184 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274J
+   24 | GF/GFS-HC278 | 200 | 250 | 222 | 278 | 6126ZLD-2 | 265 | EL 274K | 200 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274K
+   24 | GF/GFS-HC278 | 200 | 250 | 222 | 278 | 6126ZLD-2 | 265 | EL 274K | 200 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274K
+   25 | GF/GFS-HC328 | 236 | 295 | 262 | 328 | 618ZLD | 308 | EL 314D | 236 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 314D
+   25 | GF/GFS-HC328 | 236 | 295 | 262 | 328 | 618ZLD | 308 | EL 314D | 236 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 314D
+   26 | GF/GFS-HC361 | 260 | 325 | 289 | 361 | 618AZLD | 320 | EL 314E | 260 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 314E
+   26 | GF/GFS-HC361 | 260 | 325 | 289 | 361 | 618AZLD | 320 | EL 314E | 260 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 314E
+
+[eastern-lion-fuan n115 bảng 20] ×42
+  H: | | Genset Specification 400/230V 50HZ | Engine | Brushless Alternator | Controller | Datasheet
+  H: | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller | Datasheet
+    0 | GF/GFS-YX22 | 22 | 28 | 24 | 31 | K4100D | 30.1KW/1500转 | EL 184F | 22 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184F
+    0 | GF/GFS-YX22 | 22 | 28 | 24 | 31 | K4100D | 30.1KW/1500转 | EL 184F | 22 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184F
+    1 | GF/GFS-YX25 | 25 | 31 | 28 | 34 | K4100D | 30.1KW/1500转 | EL 184G | 25 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184G
+    1 | GF/GFS-YX25 | 25 | 31 | 28 | 34 | K4100D | 30.1KW/1500转 | EL 184G | 25 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184G
+    2 | GF/GFS-YX32 | 32 | 40 | 36 | 44 | K4100ZD | 40KW/1500转 | EL 184J | 32 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184J
+    2 | GF/GFS-YX32 | 32 | 40 | 36 | 44 | K4100ZD | 40KW/1500转 | EL 184J | 32 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184J
+    3 | GF/GFS-YX30 | 30 | 38 | 33 | 42 | K4102D | 36KW/1500转 | EL 184H | 30 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184H
+    3 | GF/GFS-YX30 | 30 | 38 | 33 | 42 | K4102D | 36KW/1500转 | EL 184H | 30 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184H
+    4 | GF/GFS-YX34 | 34 | 43 | 38 | 48 | K4102ZD | 42KW/1500转 | EL 224C | 34 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224C
+    4 | GF/GFS-YX34 | 34 | 43 | 38 | 48 | K4102ZD | 42KW/1500转 | EL 224C | 34 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224C
+    5 | GF/GFS-YX40 | 40 | 50 | 44 | 56 | ZH4105ZD | 50KW/1500转 | EL 224D | 40 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224D
+    5 | GF/GFS-YX40 | 40 | 50 | 44 | 56 | ZH4105ZD | 50KW/1500转 | EL 224D | 40 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224D
+    6 | GF/GFS-YX48 | 48 | 60 | 53 | 67 | ZH4105ZLD | 56KW/1500转 | EL 224E | 48 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224E
+    6 | GF/GFS-YX48 | 48 | 60 | 53 | 67 | ZH4105ZLD | 56KW/1500转 | EL 224E | 48 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224E
+    7 | GF/GFS-YX50 | 50 | 63 | 56 | 70 | R4105ZD | 56KW/1500转 | EL 224E | 48 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224E
+    7 | GF/GFS-YX50 | 50 | 63 | 56 | 70 | R4105ZD | 56KW/1500转 | EL 224E | 48 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224E
+    8 | GF/GFS-YX58 | 58 | 73 | 64 | 81 | R4105ZLD | 66KW/1500转 | EL 224F | 58 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224F
+    8 | GF/GFS-YX58 | 58 | 73 | 64 | 81 | R4105ZLD | 66KW/1500转 | EL 224F | 58 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224F
+    9 | GF/GFS-YX60 | 60 | 75 | 67 | 83 | R4105AZLD | 66KW/1500转 | EL 224F | 58 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224F
+    9 | GF/GFS-YX60 | 60 | 75 | 67 | 83 | R4105AZLD | 66KW/1500转 | EL 224F | 58 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224F
+   10 | GF/GFS-YX68 | 68 | 85 | 76 | 94 | R4108IZLD | 84KW/1500转 | EL 224G | 68 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224G
+   10 | GF/GFS-YX68 | 68 | 85 | 76 | 94 | R4108IZLD | 84KW/1500转 | EL 224G | 68 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224G
+   11 | GF/GFS-YX68I | 68 | 85 | 76 | 94 | R6105AZD | 84KW/1500转 | EL 224G | 68 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224G
+   11 | GF/GFS-YX68I | 68 | 85 | 76 | 94 | R6105AZD | 84KW/1500转 | EL 224G | 68 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224G
+   12 | GF/GFS-YX96 | 96 | 120 | 107 | 133 | R6105AZLD | 121KW/1500转 | EL 274D | 96 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274D
+   12 | GF/GFS-YX96 | 96 | 120 | 107 | 133 | R6105AZLD | 121KW/1500转 | EL 274D | 96 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274D
+   13 | GF/GFS-YX112 | 112 | 140 | 124 | 156 | R6105IZLD | 132KW/1500转 | EL 274E | 112 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274E
+   13 | GF/GFS-YX112 | 112 | 140 | 124 | 156 | R6105IZLD | 132KW/1500转 | EL 274E | 112 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274E
+   14 | GF/GFS-YX120 | 120 | 150 | 133 | 167 | R6105IZLD | 132KW/1500转 | EL 274F | 128 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274F
+   14 | GF/GFS-YX120 | 120 | 150 | 133 | 167 | R6105IZLD | 132KW/1500转 | EL 274F | 128 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274F
+   15 | GF/GFS-YX145 | 145 | 181 | 161 | 201 | R6108IZLD | 160KW/1500转 | EL 274G | 145.6 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274G
+   15 | GF/GFS-YX145 | 145 | 181 | 161 | 201 | R6108IZLD | 160KW/1500转 | EL 274G | 145.6 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274G
+   16 | GF/GFS-YX145I | 145 | 181 | 161 | 201 | R6108ZLD | 170KW/1500转 | EL 274G | 145.6 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274G
+   16 | GF/GFS-YX145I | 145 | 181 | 161 | 201 | R6108ZLD | 170KW/1500转 | EL 274G | 145.6 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274G
+   17 | GF/GFS-YX184 | 184 | 230 | 204 | 256 | R9768D | 215KW/1500转 | EL 274J | 184 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274J
+   17 | GF/GFS-YX184 | 184 | 230 | 204 | 256 | R9768D | 215KW/1500转 | EL 274J | 184 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274J
+   18 | GF/GFS-YX200 | 200 | 250 | 222 | 278 | R9768D-1 | 245KW/1500转 | EL 274K | 200 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274K
+   18 | GF/GFS-YX200 | 200 | 250 | 222 | 278 | R9768D-1 | 245KW/1500转 | EL 274K | 200 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274K
+   19 | GF/GFS-YX260 | 260 | 325 | 289 | 361 | R11D | 308KW/1500转 | EL 314E | 260 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 314E
+   19 | GF/GFS-YX260 | 260 | 325 | 289 | 361 | R11D | 308KW/1500转 | EL 314E | 260 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 314E
+   20 | GF/GFS-YX304 | 304 | 380 | 338 | 422 | R11D-1 | 405KW/1500转 | EL 314F | 304 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 314F
+   20 | GF/GFS-YX304 | 304 | 380 | 338 | 422 | R11D-1 | 405KW/1500转 | EL 314F | 304 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 314F
+
+[eastern-lion-fuan n116 bảng 21] ×48
+  H: | | Genset Specification 400/230V 50HZ | Engine | Brushless Alternator | Controller | Datasheet
+  H: | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller | Datasheet
+    0 | GF/GFS-KF10 | 10 | 13 | 11 | 14 | K4100DS | 30.1 | EL 164C | 10.8KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 164C; controller: ∅ → RUIFEN6120
+    0 | GF/GFS-KF10 | 10 | 13 | 11 | 14 | K4100DS | 30.1 | EL 164C | 10.8KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 164C
+    1 | GF/GFS-KF12 | 12 | 15 | 13 | 17 | K4100DS | 30.1 | EL 164D | 12.8KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 164D; controller: ∅ → RUIFEN6120
+    1 | GF/GFS-KF12 | 12 | 15 | 13 | 17 | K4100DS | 30.1 | EL 164D | 12.8KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 164D
+    2 | GF/GFS-KF18 | 18 | 23 | 20 | 26 | K4100DS | 30.1 | EL 184E | 18KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184E
+    2 | GF/GFS-KF18 | 18 | 23 | 20 | 26 | K4100DS | 30.1 | EL 184E | 18KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184E
+    3 | GF/GFS-KF22 | 22 | 28 | 24 | 31 | K4100DS | 30.1 | EL 184F | 22KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184F
+    3 | GF/GFS-KF22 | 22 | 28 | 24 | 31 | K4100DS | 30.1 | EL 184F | 22KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184F
+    4 | GF/GFS-KF24 | 24 | 30 | 27 | 33 | K4100DS | 30.1 | EL 184G | 25KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184G
+    4 | GF/GFS-KF24 | 24 | 30 | 27 | 33 | K4100DS | 30.1 | EL 184G | 25KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184G
+    5 | GF/GFS-KF33 | 34 | 43 | 38 | 48 | K4100ZDS | 42 | EL 224C | 34KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224C
+    5 | GF/GFS-KF33 | 34 | 43 | 38 | 48 | K4100ZDS | 42 | EL 224C | 34KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224C
+    6 | GF/GFS-KF25 | 25 | 31 | 28 | 34 | K4102DS | 33 | EL 184G | 25KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184G
+    6 | GF/GFS-KF25 | 25 | 31 | 28 | 34 | K4102DS | 33 | EL 184G | 25KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184G
+    7 | GF/GFS-KF30 | 30 | 38 | 33 | 42 | N4105DS-38 | 38 | EL 184H | 30KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184H
+    7 | GF/GFS-KF30 | 30 | 38 | 33 | 42 | N4105DS-38 | 38 | EL 184H | 30KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184H
+    8 | GF/GFS-KF36 | 40 | 50 | 44 | 56 | N4105DS-46 | 46 | EL 224D | 40KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224D
+    8 | GF/GFS-KF36 | 40 | 50 | 44 | 56 | N4105DS-46 | 46 | EL 224D | 40KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224D
+    9 | GF/GFS-KF48 | 48 | 60 | 53 | 67 | N4105ZDS | 56 | EL 224E | 48KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224E
+    9 | GF/GFS-KF48 | 48 | 60 | 53 | 67 | N4105ZDS | 56 | EL 224E | 48KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224E
+   10 | GF/GFS-KF58 | 58 | 73 | 64 | 81 | N4105ZLDS | 66 | EL 224F | 58KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224F
+   10 | GF/GFS-KF58 | 58 | 73 | 64 | 81 | N4105ZLDS | 66 | EL 224F | 58KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224F
+   11 | GF/GFS-KF68 | 68 | 85 | 76 | 94 | R6105ZDS | 84 | EL 224G | 68KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224G
+   11 | GF/GFS-KF68 | 68 | 85 | 76 | 94 | R6105ZDS | 84 | EL 224G | 68KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224G
+   12 | GF/GFS-KF80 | 80 | 100 | 89 | 111 | R6105ZLDS | 100 | EL 274C | 80KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274C
+   12 | GF/GFS-KF80 | 80 | 100 | 89 | 111 | R6105ZLDS | 100 | EL 274C | 80KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274C
+   13 | GF/GFS-KF96 | 96 | 120 | 107 | 133 | R6105AZLDS | 121 | EL 274D | 96KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274D
+   13 | GF/GFS-KF96 | 96 | 120 | 107 | 133 | R6105AZLDS | 121 | EL 274D | 96KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274D
+   14 | GF/GFS-KF100 | 100 | 125 | 111 | 139 | R6105BZLDS | 132 | EL 274D | 96KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274D
+   14 | GF/GFS-KF100 | 100 | 125 | 111 | 139 | R6105BZLDS | 132 | EL 274D | 96KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274D
+   15 | GF/GFS-KF128 | 128 | 160 | 142 | 178 | R6110ZLDS | 170 | EL 274F | 128KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274F
+   15 | GF/GFS-KF128 | 128 | 160 | 142 | 178 | R6110ZLDS | 170 | EL 274F | 128KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274F
+   16 | GF/GFS-KF150 | 150 | 188 | 167 | 209 | 6126-68DE | 187 | EL 274H | 160KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274H
+   16 | GF/GFS-KF150 | 150 | 188 | 167 | 209 | 6126-68DE | 187 | EL 274H | 160KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274H
+   17 | GF/GFS-KF184 | 184 | 230 | 204 | 256 | 6126-42DE | 231 | EL 274J | 184KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274J
+   17 | GF/GFS-KF184 | 184 | 230 | 204 | 256 | 6126-42DE | 231 | EL 274J | 184KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274J
+   18 | GF/GFS-KF200 | 200 | 250 | 222 | 278 | 6126A-260DE | 250 | EL 274k | 200KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274k
+   18 | GF/GFS-KF200 | 200 | 250 | 222 | 278 | 6126A-260DE | 250 | EL 274k | 200KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274k
+   19 | GF/GFS-KF220 | 220 | 275 | 244 | 306 | WP10-275DE | 275 | EL 314D | 236KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 314D
+   19 | GF/GFS-KF220 | 220 | 275 | 244 | 306 | WP10-275DE | 275 | EL 314D | 236KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 314D
+   20 | GF/GFS-KF236 | 236 | 295 | 262 | 328 | WT12D-308E | 308 | EL 314D | 236KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 314D
+   20 | GF/GFS-KF236 | 236 | 295 | 262 | 328 | WT12D-308E | 308 | EL 314D | 236KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 314D
+   21 | GF/GFS-KF260 | 260 | 325 | 289 | 361 | WT13-330DE | 330 | EL 314E | 260KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 314E
+   21 | GF/GFS-KF260 | 260 | 325 | 289 | 361 | WT13-330DE | 330 | EL 314E | 260KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 314E
+   22 | GF/GFS-KF280 | 280 | 350 | 311 | 389 | WT13-360DE | 360 | EL 314FS | 280KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 314FS
+   22 | GF/GFS-KF280 | 280 | 350 | 311 | 389 | WT13-360DE | 360 | EL 314FS | 280KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 314FS
+   23 | GF/GFS-KF304 | 304 | 380 | 338 | 422 | WT13A-390DE | 390 | EL 314F | 304KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 314F
+   23 | GF/GFS-KF304 | 304 | 380 | 338 | 422 | WT13A-390DE | 390 | EL 314F | 304KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 314F
+
+[eastern-lion-fuan n117 bảng 23] ×40
+  H: | | Genset Specification 400/230V 60HZ | Engine | Brushless Alternator | Controller | Datasheet
+  H: | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller | Datasheet
+    0 | GF/GFS-YX33 | 24 | 30 | 27 | 33 | K4100D | 36.1 | ELS 184F | 24.2 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 184F
+    0 | GF/GFS-YX33 | 24 | 30 | 27 | 33 | K4100D | 36.1 | ELS 184F | 24.2 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 184F
+    1 | GF/GFS-YX39 | 28 | 35 | 31 | 39 | K4100D | 36.1 | ELS 184G | 27.5 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 184G
+    1 | GF/GFS-YX39 | 28 | 35 | 31 | 39 | K4100D | 36.1 | ELS 184G | 27.5 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 184G
+    2 | GF/GFS-YX49 | 35 | 44 | 39 | 49 | K4100ZD | 48.0 | ELS 184J | 35.2 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 184J
+    2 | GF/GFS-YX49 | 35 | 44 | 39 | 49 | K4100ZD | 48.0 | ELS 184J | 35.2 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 184J
+    3 | GF/GFS-YX46 | 33 | 41 | 37 | 46 | K4102D | 43.2 | ELS 184H | 33 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 184H
+    3 | GF/GFS-YX46 | 33 | 41 | 37 | 46 | K4102D | 43.2 | ELS 184H | 33 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 184H
+    4 | GF/GFS-YX51 | 37 | 46 | 41 | 51 | K4102ZD | 50.4 | ELS 224C | 37.4 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 224C
+    4 | GF/GFS-YX51 | 37 | 46 | 41 | 51 | K4102ZD | 50.4 | ELS 224C | 37.4 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 224C
+    5 | GF/GFS-YX61 | 44 | 55 | 49 | 61 | ZH4105ZD | 60.0 | ELS 224D | 44 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 224D
+    5 | GF/GFS-YX61 | 44 | 55 | 49 | 61 | ZH4105ZD | 60.0 | ELS 224D | 44 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 224D
+    6 | GF/GFS-YX73 | 53 | 66 | 59 | 73 | ZH4105ZLD | 67.2 | ELS 224E | 52.8 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 224E
+    6 | GF/GFS-YX73 | 53 | 66 | 59 | 73 | ZH4105ZLD | 67.2 | ELS 224E | 52.8 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 224E
+    7 | GF/GFS-YX73 | 53 | 66 | 59 | 73 | R4105ZD | 67.2 | ELS 224E | 52.8 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 224E
+    7 | GF/GFS-YX73 | 53 | 66 | 59 | 73 | R4105ZD | 67.2 | ELS 224E | 52.8 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 224E
+    8 | GF/GFS-YX89 | 64 | 80 | 71 | 89 | R4105ZLD | 79.2 | ELS 224F | 63.8 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 224F
+    8 | GF/GFS-YX89 | 64 | 80 | 71 | 89 | R4105ZLD | 79.2 | ELS 224F | 63.8 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 224F
+    9 | GF/GFS-YX89 | 64 | 80 | 71 | 89 | R4105AZLD | 79.2 | ELS 224F | 63.8 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 224F
+    9 | GF/GFS-YX89 | 64 | 80 | 71 | 89 | R4105AZLD | 79.2 | ELS 224F | 63.8 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 224F
+   10 | GF/GFS-YX104 | 75 | 94 | 83 | 104 | R4108IZLD | 100.8 | ELS 224G | 74.8 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 224G
+   10 | GF/GFS-YX104 | 75 | 94 | 83 | 104 | R4108IZLD | 100.8 | ELS 224G | 74.8 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 224G
+   11 | GF/GFS-YX104 | 75 | 94 | 83 | 104 | R6105AZD | 92.4 | ELS 224G | 74.8 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 224G
+   11 | GF/GFS-YX104 | 75 | 94 | 83 | 104 | R6105AZD | 92.4 | ELS 224G | 74.8 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 224G
+   12 | GF/GFS-YX148 | 106 | 133 | 118 | 148 | R6105AZLD | 133.1 | ELS 274D | 105.6 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 274D
+   12 | GF/GFS-YX148 | 106 | 133 | 118 | 148 | R6105AZLD | 133.1 | ELS 274D | 105.6 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 274D
+   13 | GF/GFS-YX161 | 116 | 145 | 129 | 161 | R6105IZLD | 145.2 | ELS 274E | 123.2 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 274E
+   13 | GF/GFS-YX161 | 116 | 145 | 129 | 161 | R6105IZLD | 145.2 | ELS 274E | 123.2 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 274E
+   15 | GF/GFS-YX194 | 140 | 175 | 156 | 194 | R6108IZLD | 176.0 | ELS 274F | 140.8 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 274F
+   15 | GF/GFS-YX194 | 140 | 175 | 156 | 194 | R6108IZLD | 176.0 | ELS 274F | 140.8 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 274F
+   16 | GF/GFS-YX194 | 140 | 175 | 156 | 194 | R6108ZLD | 187.0 | ELS 274F | 140.8 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 274F
+   16 | GF/GFS-YX194 | 140 | 175 | 156 | 194 | R6108ZLD | 187.0 | ELS 274F | 140.8 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 274F
+   17 | GF/GFS-YX244 | 176 | 220 | 196 | 244 | R9768D | 236.5 | ELS 274H | 176 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 274H
+   17 | GF/GFS-YX244 | 176 | 220 | 196 | 244 | R9768D | 236.5 | ELS 274H | 176 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 274H
+   18 | GF/GFS-YX278 | 200 | 250 | 222 | 278 | R9768D-1 | 269.5 | ELS 274J | 202.4 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 274J
+   18 | GF/GFS-YX278 | 200 | 250 | 222 | 278 | R9768D-1 | 269.5 | ELS 274J | 202.4 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 274J
+   19 | GF/GFS-YX361 | 260 | 325 | 289 | 361 | R11D | 338.8 | ELS 314D | 259.6 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 314D
+   19 | GF/GFS-YX361 | 260 | 325 | 289 | 361 | R11D | 338.8 | ELS 314D | 259.6 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 314D
+   20 | GF/GFS-YX464 | 334 | 418 | 371 | 464 | R11D-1 | 445.5 | ELS 314F | 334.4 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 314F
+   20 | GF/GFS-YX464 | 334 | 418 | 371 | 464 | R11D-1 | 445.5 | ELS 314F | 334.4 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 314F
+
+[eastern-lion-fuan n122 bảng 28] ×30
+  H: | | Genset Specification 400/230V 60HZ | Engine | Brushless Alternator | Controller | Datasheet
+  H: | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller | Datasheet
+    0 | GF/GFS-YD13 | 10 | 12 | 11 | 13 | YD380D | 12 | ELS 164B | 9.7 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 164B
+    0 | GF/GFS-YD13 | 10 | 12 | 11 | 13 | YD380D | 12 | ELS 164B | 9.7 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 164B
+    1 | GF/GFS-YD16 | 12 | 14 | 13 | 16 | YD385D | 14 | ELS 164C | 11.9 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 164C
+    1 | GF/GFS-YD16 | 12 | 14 | 13 | 16 | YD385D | 14 | ELS 164C | 11.9 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 164C
+    2 | GF/GFS-YD17 | 13 | 16 | 14 | 17 | YD480D | 17 | ELS 164C | 11.9 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 164C
+    2 | GF/GFS-YD17 | 13 | 16 | 14 | 17 | YD480D | 17 | ELS 164C | 11.9 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 164C
+    3 | GF/GFS-YD18 | 14 | 17 | 15 | 18 | (YD4KD) YD485D | 18 | ELS 164D | 14.1 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 164D
+    3 | GF/GFS-YD18 | 14 | 17 | 15 | 18 | (YD4KD) YD485D | 18 | ELS 164D | 14.1 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 164D
+    4 | GF/GFS-YD22 | 16 | 19 | 18 | 22 | YND485D | 20 | ELS 184E | 19.8 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 184E
+    4 | GF/GFS-YD22 | 16 | 19 | 18 | 22 | YND485D | 20 | ELS 184E | 19.8 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 184E
+    5 | GF/GFS-YD24 | 18 | 22 | 20 | 24 | YSD490D | 23 | ELS 184E | 19.8 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 184E
+    5 | GF/GFS-YD24 | 18 | 22 | 20 | 24 | YSD490D | 23 | ELS 184E | 19.8 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 184E
+    6 | GF/GFS-YD29 | 22 | 26 | 24 | 29 | Y490D | 28 | ELS 184F | 24.2 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 184F
+    6 | GF/GFS-YD29 | 22 | 26 | 24 | 29 | Y490D | 28 | ELS 184F | 24.2 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 184F
+    7 | GF/GFS-YD31 | 24 | 29 | 26 | 31 | Y495D | 30 | ELS 184F | 24.2 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 184F
+    7 | GF/GFS-YD31 | 24 | 29 | 26 | 31 | Y495D | 30 | ELS 184F | 24.2 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 184F
+    8 | GF/GFS-YD38 | 29 | 35 | 32 | 38 | Y4100D | 36 | ELS 184G | 27.5 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 184G
+    8 | GF/GFS-YD38 | 29 | 35 | 32 | 38 | Y4100D | 36 | ELS 184G | 27.5 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 184G
+    9 | GF/GFS-YD42 | 32 | 38 | 35 | 42 | Y4102D | 40 | ELS 184H | 33 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 184H
+    9 | GF/GFS-YD42 | 32 | 38 | 35 | 42 | Y4102D | 40 | ELS 184H | 33 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 184H
+   10 | GF/GFS-YD48 | 36 | 43 | 40 | 48 | Y4105D | 45 | ELS 184H | 33 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 184H
+   10 | GF/GFS-YD48 | 36 | 43 | 40 | 48 | Y4105D | 45 | ELS 184H | 33 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 184H
+   11 | GF/GFS-YD50 | 38 | 46 | 42 | 50 | Y4102ZD | 48 | ELS 184J | 35.2 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 184J
+   11 | GF/GFS-YD50 | 38 | 46 | 42 | 50 | Y4102ZD | 48 | ELS 184J | 35.2 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 184J
+   12 | GF/GFS-YD55 | 42 | 50 | 46 | 55 | Y4102ZLD | 53 | ELS 224D | 44 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 224D
+   12 | GF/GFS-YD55 | 42 | 50 | 46 | 55 | Y4102ZLD | 53 | ELS 224D | 44 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 224D
+   13 | GF/GFS-YD64 | 48 | 58 | 53 | 64 | Y4105ZLD | 60 | ELS 224E | 52.8 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 224E
+   13 | GF/GFS-YD64 | 48 | 58 | 53 | 64 | Y4105ZLD | 60 | ELS 224E | 52.8 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 224E
+   14 | GF/GFS-YD71 | 54 | 65 | 59 | 71 | YD4EZLD | 68 | ELS 224E | 52.8 | RUIFEN6120 | Detail
+        ⇒ other: null → ELS 224E
+   14 | GF/GFS-YD71 | 54 | 65 | 59 | 71 | YD4EZLD | 68 | ELS 224E | 52.8 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator ELS 224E
+
+[eastern-lion-fuan n126 bảng 32] ×54
+  H: | | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller
+    0 | GF/GFS-HC18 | 13 | 16 | 14 | 18 | 2105D | 18.7 | EL 164D | 12.8 | RUIFEN6120
+        ⇒ other: null → EL 164D
+    0 | GF/GFS-HC18 | 13 | 16 | 14 | 18 | 2105D | 18.7 | EL 164D | 12.8 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 164D
+    1 | GF/GFS-HC26 | 18 | 23 | 20 | 26 | 2110D | 20 | EL 184E | 18 | RUIFEN6120
+        ⇒ other: null → EL 184E
+    1 | GF/GFS-HC26 | 18 | 23 | 20 | 26 | 2110D | 20 | EL 184E | 18 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184E
+    2 | GF/GFS-HC31 | 22 | 28 | 24 | 31 | 490D | 24 | EL 184F | 22 | RUIFEN6120
+        ⇒ other: null → EL 184F
+    2 | GF/GFS-HC31 | 22 | 28 | 24 | 31 | 490D | 24 | EL 184F | 22 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184F
+    3 | GF/GFS-HC34 | 25 | 31 | 28 | 34 | 490ZD | 33 | EL 184G | 25 | RUIFEN6120
+        ⇒ other: null → EL 184G
+    3 | GF/GFS-HC34 | 25 | 31 | 28 | 34 | 490ZD | 33 | EL 184G | 25 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184G
+    4 | GF/GFS-HC34 | 25 | 31 | 28 | 34 | ZH4100D | 30.1 | EL 184G | 25 | RUIFEN6120
+        ⇒ other: null → EL 184G
+    4 | GF/GFS-HC34 | 25 | 31 | 28 | 34 | ZH4100D | 30.1 | EL 184G | 25 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184G
+    5 | GF/GFS-HC44 | 32 | 40 | 36 | 44 | ZH4100ZD | 41 | EL 184J | 32 | RUIFEN6120
+        ⇒ other: null → EL 184J
+    5 | GF/GFS-HC44 | 32 | 40 | 36 | 44 | ZH4100ZD | 41 | EL 184J | 32 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184J
+    6 | GF/GFS-HC42 | 30 | 38 | 33 | 42 | ZH4102D | 33 | EL 184H | 30 | RUIFEN6120
+        ⇒ other: null → EL 184H
+    6 | GF/GFS-HC42 | 30 | 38 | 33 | 42 | ZH4102D | 33 | EL 184H | 30 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184H
+    7 | GF/GFS-HC48 | 34 | 43 | 38 | 48 | ZH4102ZD | 44 | EL 224C | 34 | RUIFEN6120
+        ⇒ other: null → EL 224C
+    7 | GF/GFS-HC48 | 34 | 43 | 38 | 48 | ZH4102ZD | 44 | EL 224C | 34 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224C
+    8 | GF/GFS-HC42 | 30 | 38 | 33 | 42 | ZH4105D | 36 | EL 184H | 30 | RUIFEN6120
+        ⇒ other: null → EL 184H
+    8 | GF/GFS-HC42 | 30 | 38 | 33 | 42 | ZH4105D | 36 | EL 184H | 30 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184H
+    9 | GF/GFS-HC56 | 40 | 50 | 44 | 56 | ZH4105ZD | 52 | EL 224D | 40 | RUIFEN6120
+        ⇒ other: null → EL 224D
+    9 | GF/GFS-HC56 | 40 | 50 | 44 | 56 | ZH4105ZD | 52 | EL 224D | 40 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224D
+   10 | GF/GFS-HC48 | 34 | 43 | 38 | 48 | N4105D | 42 | EL 224C | 34 | RUIFEN6120
+        ⇒ other: null → EL 224C
+   10 | GF/GFS-HC48 | 34 | 43 | 38 | 48 | N4105D | 42 | EL 224C | 34 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224C
+   11 | GF/GFS-HC67 | 48 | 60 | 53 | 67 | N4105ZD | 56 | EL 224E | 48 | RUIFEN6120
+        ⇒ other: null → EL 224E
+   11 | GF/GFS-HC67 | 48 | 60 | 53 | 67 | N4105ZD | 56 | EL 224E | 48 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224E
+   12 | GF/GFS-HC67 | 48 | 60 | 53 | 67 | N4105ZLD | 66 | EL 224E | 48 | RUIFEN6120
+        ⇒ other: null → EL 224E
+   12 | GF/GFS-HC67 | 48 | 60 | 53 | 67 | N4105ZLD | 66 | EL 224E | 48 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224E
+   13 | GF/GFS-HC48 | 34 | 43 | 38 | 48 | 4105D | 42 | EL 224C | 34 | RUIFEN6120
+        ⇒ other: null → EL 224C
+   13 | GF/GFS-HC48 | 34 | 43 | 38 | 48 | 4105D | 42 | EL 224C | 34 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224C
+   14 | GF/GFS-HC67 | 48 | 60 | 53 | 67 | 4105ZD(小泵） | 56 | EL 224E | 48 | RUIFEN6120
+        ⇒ MẤT bản ghi engine EL 224E
+   14 | GF/GFS-HC67 | 48 | 60 | 53 | 67 | 4105ZD(小泵） | 56 | EL 224E | 48 | RUIFEN6120
+        ⇒ model: RUIFEN6120 → EL 224E; other: EL 224E → null; engPower: 48 → 56; controller: ∅ → RUIFEN6120
+   15 | GF/GFS-HC81 | 58 | 73 | 64 | 81 | 4105AZLD | 66 | EL 224F | 58 | RUIFEN6120
+        ⇒ other: null → EL 224F
+   15 | GF/GFS-HC81 | 58 | 73 | 64 | 81 | 4105AZLD | 66 | EL 224F | 58 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224F
+   16 | GF/GFS-HC81 | 58 | 73 | 64 | 81 | 4100ZD | 75 | EL 224F | 58 | RUIFEN6120
+        ⇒ other: null → EL 224F
+   16 | GF/GFS-HC81 | 58 | 73 | 64 | 81 | 4100ZD | 75 | EL 224F | 58 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224F
+   17 | GF/GFS-HC94 | 68 | 85 | 76 | 94 | 4100AZLD | 84 | EL 224G | 68 | RUIFEN6120
+        ⇒ other: null → EL 224G
+   17 | GF/GFS-HC94 | 68 | 85 | 76 | 94 | 4100AZLD | 84 | EL 224G | 68 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224G
+   18 | GF/GFS-HC94 | 68 | 85 | 76 | 94 | 6105ZD | 84 | EL 224G | 68 | RUIFEN6120
+        ⇒ other: null → EL 224G
+   18 | GF/GFS-HC94 | 68 | 85 | 76 | 94 | 6105ZD | 84 | EL 224G | 68 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224G
+   19 | GF/GFS-HC111 | 80 | 100 | 89 | 111 | 6105AZD | 101 | EL 274C | 80 | RUIFEN6120
+        ⇒ other: null → EL 274C
+   19 | GF/GFS-HC111 | 80 | 100 | 89 | 111 | 6105AZD | 101 | EL 274C | 80 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274C
+   20 | GF/GFS-HC156 | 112 | 140 | 124 | 156 | 6105IZLD | 132 | EL 274E | 112 | RUIFEN6120
+        ⇒ other: null → EL 274E
+   20 | GF/GFS-HC156 | 112 | 140 | 124 | 156 | 6105IZLD | 132 | EL 274E | 112 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274E
+   21 | GF/GFS-HC178 | 128 | 160 | 142 | 178 | 6110ZLD | 160 | EL 274F | 128 | RUIFEN6120
+        ⇒ other: null → EL 274F
+   21 | GF/GFS-HC178 | 128 | 160 | 142 | 178 | 6110ZLD | 160 | EL 274F | 128 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274F
+   22 | GF/GFS-HC178 | 128 | 160 | 142 | 178 | 6113ZLD | 165 | EL 274F | 128 | RUIFEN6120
+        ⇒ other: null → EL 274F
+   22 | GF/GFS-HC178 | 128 | 160 | 142 | 178 | 6113ZLD | 165 | EL 274F | 128 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274F
+   23 | GF/GFS-HC256 | 184 | 230 | 204 | 256 | 6126ZLD-1 | 235 | EL 274J | 184 | RUIFEN6120
+        ⇒ other: null → EL 274J
+   23 | GF/GFS-HC256 | 184 | 230 | 204 | 256 | 6126ZLD-1 | 235 | EL 274J | 184 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274J
+   24 | GF/GFS-HC278 | 200 | 250 | 222 | 278 | 6126ZLD-2 | 265 | EL 274K | 200 | RUIFEN6120
+        ⇒ other: null → EL 274K
+   24 | GF/GFS-HC278 | 200 | 250 | 222 | 278 | 6126ZLD-2 | 265 | EL 274K | 200 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274K
+   25 | GF/GFS-HC328 | 236 | 295 | 262 | 328 | 618ZLD | 308 | EL 314D | 236 | RUIFEN6120
+        ⇒ other: null → EL 314D
+   25 | GF/GFS-HC328 | 236 | 295 | 262 | 328 | 618ZLD | 308 | EL 314D | 236 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 314D
+   26 | GF/GFS-HC361 | 260 | 325 | 289 | 361 | 618AZLD | 320 | EL 314E | 260 | RUIFEN6120
+        ⇒ other: null → EL 314E
+   26 | GF/GFS-HC361 | 260 | 325 | 289 | 361 | 618AZLD | 320 | EL 314E | 260 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 314E
+
+[eastern-lion-fuan n128 bảng 34] ×48
+  H: | | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller
+    0 | GF/GFS-KF10 | 10 | 13 | 11 | 14 | K4100DS | 30.1 | EL 164C | 10.8KW | RUIFEN6120
+        ⇒ other: null → EL 164C
+    0 | GF/GFS-KF10 | 10 | 13 | 11 | 14 | K4100DS | 30.1 | EL 164C | 10.8KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 164C
+    1 | GF/GFS-KF12 | 12 | 15 | 13 | 17 | K4100DS | 30.1 | EL 164D | 12.8KW | RUIFEN6120
+        ⇒ other: null → EL 164D
+    1 | GF/GFS-KF12 | 12 | 15 | 13 | 17 | K4100DS | 30.1 | EL 164D | 12.8KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 164D
+    2 | GF/GFS-KF18 | 18 | 23 | 20 | 26 | K4100DS | 30.1 | EL 184E | 18KW | RUIFEN6120
+        ⇒ other: null → EL 184E
+    2 | GF/GFS-KF18 | 18 | 23 | 20 | 26 | K4100DS | 30.1 | EL 184E | 18KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184E
+    3 | GF/GFS-KF22 | 22 | 28 | 24 | 31 | K4100DS | 30.1 | EL 184F | 22KW | RUIFEN6120
+        ⇒ other: null → EL 184F
+    3 | GF/GFS-KF22 | 22 | 28 | 24 | 31 | K4100DS | 30.1 | EL 184F | 22KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184F
+    4 | GF/GFS-KF24 | 24 | 30 | 27 | 33 | K4100DS | 30.1 | EL 184G | 25KW | RUIFEN6120
+        ⇒ other: null → EL 184G
+    4 | GF/GFS-KF24 | 24 | 30 | 27 | 33 | K4100DS | 30.1 | EL 184G | 25KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184G
+    5 | GF/GFS-KF33 | 34 | 43 | 38 | 48 | K4100ZDS | 42 | EL 224C | 34KW | RUIFEN6120
+        ⇒ other: null → EL 224C
+    5 | GF/GFS-KF33 | 34 | 43 | 38 | 48 | K4100ZDS | 42 | EL 224C | 34KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224C
+    6 | GF/GFS-KF25 | 25 | 31 | 28 | 34 | K4102DS | 33 | EL 184G | 25KW | RUIFEN6120
+        ⇒ other: null → EL 184G
+    6 | GF/GFS-KF25 | 25 | 31 | 28 | 34 | K4102DS | 33 | EL 184G | 25KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184G
+    7 | GF/GFS-KF30 | 30 | 38 | 33 | 42 | N4105DS-38 | 38 | EL 184H | 30KW | RUIFEN6120
+        ⇒ other: null → EL 184H
+    7 | GF/GFS-KF30 | 30 | 38 | 33 | 42 | N4105DS-38 | 38 | EL 184H | 30KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184H
+    8 | GF/GFS-KF36 | 40 | 50 | 44 | 56 | N4105DS-46 | 46 | EL 224D | 40KW | RUIFEN6120
+        ⇒ other: null → EL 224D
+    8 | GF/GFS-KF36 | 40 | 50 | 44 | 56 | N4105DS-46 | 46 | EL 224D | 40KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224D
+    9 | GF/GFS-KF48 | 48 | 60 | 53 | 67 | N4105ZDS | 56 | EL 224E | 48KW | RUIFEN6120
+        ⇒ other: null → EL 224E
+    9 | GF/GFS-KF48 | 48 | 60 | 53 | 67 | N4105ZDS | 56 | EL 224E | 48KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224E
+   10 | GF/GFS-KF58 | 58 | 73 | 64 | 81 | N4105ZLDS | 66 | EL 224F | 58KW | RUIFEN6120
+        ⇒ other: null → EL 224F
+   10 | GF/GFS-KF58 | 58 | 73 | 64 | 81 | N4105ZLDS | 66 | EL 224F | 58KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224F
+   11 | GF/GFS-KF68 | 68 | 85 | 76 | 94 | R6105ZDS | 84 | EL 224G | 68KW | RUIFEN6120
+        ⇒ other: null → EL 224G
+   11 | GF/GFS-KF68 | 68 | 85 | 76 | 94 | R6105ZDS | 84 | EL 224G | 68KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224G
+   12 | GF/GFS-KF80 | 80 | 100 | 89 | 111 | R6105ZLDS | 100 | EL 274C | 80KW | RUIFEN6120
+        ⇒ other: null → EL 274C
+   12 | GF/GFS-KF80 | 80 | 100 | 89 | 111 | R6105ZLDS | 100 | EL 274C | 80KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274C
+   13 | GF/GFS-KF96 | 96 | 120 | 107 | 133 | R6105AZLDS | 121 | EL 274D | 96KW | RUIFEN6120
+        ⇒ other: null → EL 274D
+   13 | GF/GFS-KF96 | 96 | 120 | 107 | 133 | R6105AZLDS | 121 | EL 274D | 96KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274D
+   14 | GF/GFS-KF100 | 100 | 125 | 111 | 139 | R6105BZLDS | 132 | EL 274D | 96KW | RUIFEN6120
+        ⇒ other: null → EL 274D
+   14 | GF/GFS-KF100 | 100 | 125 | 111 | 139 | R6105BZLDS | 132 | EL 274D | 96KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274D
+   15 | GF/GFS-KF128 | 128 | 160 | 142 | 178 | R6110ZLDS | 170 | EL 274F | 128KW | RUIFEN6120
+        ⇒ other: null → EL 274F
+   15 | GF/GFS-KF128 | 128 | 160 | 142 | 178 | R6110ZLDS | 170 | EL 274F | 128KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274F
+   16 | GF/GFS-KF150 | 150 | 188 | 167 | 209 | 6126-68DE | 187 | EL 274H | 160KW | RUIFEN6120
+        ⇒ other: null → EL 274H
+   16 | GF/GFS-KF150 | 150 | 188 | 167 | 209 | 6126-68DE | 187 | EL 274H | 160KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274H
+   17 | GF/GFS-KF184 | 184 | 230 | 204 | 256 | 6126-42DE | 231 | EL 274J | 184KW | RUIFEN6120
+        ⇒ other: null → EL 274J
+   17 | GF/GFS-KF184 | 184 | 230 | 204 | 256 | 6126-42DE | 231 | EL 274J | 184KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274J
+   18 | GF/GFS-KF200 | 200 | 250 | 222 | 278 | 6126A-260DE | 250 | EL 274k | 200KW | RUIFEN6120
+        ⇒ other: null → EL 274k
+   18 | GF/GFS-KF200 | 200 | 250 | 222 | 278 | 6126A-260DE | 250 | EL 274k | 200KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274k
+   19 | GF/GFS-KF220 | 220 | 275 | 244 | 306 | WP10-275DE | 275 | EL 314D | 236KW | RUIFEN6120
+        ⇒ other: null → EL 314D
+   19 | GF/GFS-KF220 | 220 | 275 | 244 | 306 | WP10-275DE | 275 | EL 314D | 236KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 314D
+   20 | GF/GFS-KF236 | 236 | 295 | 262 | 328 | WT12D-308E | 308 | EL 314D | 236KW | RUIFEN6120
+        ⇒ other: null → EL 314D
+   20 | GF/GFS-KF236 | 236 | 295 | 262 | 328 | WT12D-308E | 308 | EL 314D | 236KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 314D
+   21 | GF/GFS-KF260 | 260 | 325 | 289 | 361 | WT13-330DE | 330 | EL 314E | 260KW | RUIFEN6120
+        ⇒ other: null → EL 314E
+   21 | GF/GFS-KF260 | 260 | 325 | 289 | 361 | WT13-330DE | 330 | EL 314E | 260KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 314E
+   22 | GF/GFS-KF280 | 280 | 350 | 311 | 389 | WT13-360DE | 360 | EL 314FS | 280KW | RUIFEN6120
+        ⇒ other: null → EL 314FS
+   22 | GF/GFS-KF280 | 280 | 350 | 311 | 389 | WT13-360DE | 360 | EL 314FS | 280KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 314FS
+   23 | GF/GFS-KF304 | 304 | 380 | 338 | 422 | WT13A-390DE | 390 | EL 314F | 304KW | RUIFEN6120
+        ⇒ other: null → EL 314F
+   23 | GF/GFS-KF304 | 304 | 380 | 338 | 422 | WT13A-390DE | 390 | EL 314F | 304KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 314F
+
+[eastern-lion-fuan n129 bảng 35] ×34
+  H: | | Genset Specification 400/230V 50HZ | Engine | Brushless Alternator | Controller | Datasheet
+  H: | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller | Datasheet
+    0 | GF/GFS-YN12 | 12 | 15 | 13 | 17 | YN25GB | 18kw/1500 | EL 164D | 12.8kw | RUIFEN6120 | Detail
+        ⇒ other: null → EL 164D
+    0 | GF/GFS-YN12 | 12 | 15 | 13 | 17 | YN25GB | 18kw/1500 | EL 164D | 12.8kw | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 164D
+    1 | GF/GFS-YN16 | 16 | 20 | 18 | 22 | YN25GB | 21kw/1500 | EL 184E | 18kw | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184E
+    1 | GF/GFS-YN16 | 16 | 20 | 18 | 22 | YN25GB | 21kw/1500 | EL 184E | 18kw | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184E
+    2 | GF/GFS-YN20 | 20 | 25 | 22 | 28 | YN25GB | 23kw/1800 | EL 184E | 18kw | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184E
+    2 | GF/GFS-YN20 | 20 | 25 | 22 | 28 | YN25GB | 23kw/1800 | EL 184E | 18kw | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184E
+    3 | GF/GFS-YN20 | 20 | 25 | 22 | 28 | YN27GB | 25kw/1500 | EL 184F | 22kw | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184F
+    3 | GF/GFS-YN20 | 20 | 25 | 22 | 28 | YN27GB | 25kw/1500 | EL 184F | 22kw | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184F
+    4 | GF/GFS-YN26 | 26 | 33 | 29 | 37 | YN27GB | 30kw/1800 | EL 184G | 25kw | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184G
+    4 | GF/GFS-YN26 | 26 | 33 | 29 | 37 | YN27GB | 30kw/1800 | EL 184G | 25kw | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184G
+    5 | GF/GFS-YN25I | 25 | 31 | 28 | 34 | YN27GBZ | 30kw/1500 | EL 184G | 25kw | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184G
+    5 | GF/GFS-YN25I | 25 | 31 | 28 | 34 | YN27GBZ | 30kw/1500 | EL 184G | 25kw | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184G
+    6 | GF/GFS-YN25II | 25 | 31 | 28 | 34 | YN36GB | 30kw/1500 | EL 184G | 25kw | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184G
+    6 | GF/GFS-YN25II | 25 | 31 | 28 | 34 | YN36GB | 30kw/1500 | EL 184G | 25kw | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184G
+    7 | GF/GFS-YN28 | 28 | 35 | 31 | 39 | YN36GB | 33kw/1800 | EL 184G | 25kw | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184G
+    7 | GF/GFS-YN28 | 28 | 35 | 31 | 39 | YN36GB | 33kw/1800 | EL 184G | 25kw | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184G
+    8 | GF/GFS-YN30 | 30 | 38 | 33 | 42 | YN38GB | 36kw/1500 | EL 184H | 30kw | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184H
+    8 | GF/GFS-YN30 | 30 | 38 | 33 | 42 | YN38GB | 36kw/1500 | EL 184H | 30kw | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184H
+    9 | GF/GFS-YN35 | 35 | 44 | 39 | 49 | YN38GB | 40kw/1800 | EL 184J | 32kw | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184J
+    9 | GF/GFS-YN35 | 35 | 44 | 39 | 49 | YN38GB | 40kw/1800 | EL 184J | 32kw | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184J
+   10 | GF/GFS-YN34 | 34 | 43 | 38 | 48 | YN38GBZ | 48kw/1500 | EL 224C | 34kw | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224C
+   10 | GF/GFS-YN34 | 34 | 43 | 38 | 48 | YN38GBZ | 48kw/1500 | EL 224C | 34kw | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224C
+   11 | GF/GFS-YN45 | 45 | 56 | 50 | 62 | YN38GBZ | 53kw/1800 | EL 224D | 40kw | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224D
+   11 | GF/GFS-YN45 | 45 | 56 | 50 | 62 | YN38GBZ | 53kw/1800 | EL 224D | 40kw | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224D
+   12 | GF/GFS-YN40I | 40 | 50 | 44 | 56 | YN38GBZ | 50kw/1500 | EL 224D | 40kw | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224D
+   12 | GF/GFS-YN40I | 40 | 50 | 44 | 56 | YN38GBZ | 50kw/1500 | EL 224D | 40kw | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224D
+   13 | GF/GFS-YN48 | 48 | 60 | 53 | 67 | YN48GBZ | 60kw/1500 | EL 224E | 48kw | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224E
+   13 | GF/GFS-YN48 | 48 | 60 | 53 | 67 | YN48GBZ | 60kw/1500 | EL 224E | 48kw | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224E
+   14 | GF/GFS-YN53 | 53 | 66 | 59 | 73 | YN48GBZ | 66kw/1800 | EL 224E | 48kw | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224E
+   14 | GF/GFS-YN53 | 53 | 66 | 59 | 73 | YN48GBZ | 66kw/1800 | EL 224E | 48kw | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224E
+   15 | GF/GFS-YN60 | 60 | 75 | 67 | 83 | YN48GBZ | 77kw/1500 | EL 224F | 58kw | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224F
+   15 | GF/GFS-YN60 | 60 | 75 | 67 | 83 | YN48GBZ | 77kw/1500 | EL 224F | 58kw | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224F
+   16 | GF/GFS-YN75 | 75 | 94 | 83 | 104 | YN48GBZ | 85kw/1800 | EL 224G | 68kw | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224G
+   16 | GF/GFS-YN75 | 75 | 94 | 83 | 104 | YN48GBZ | 85kw/1800 | EL 224G | 68kw | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224G
+
+[eastern-lion-fuan n133 bảng 37] ×42
+  H: | | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller
+    0 | GF/GFS-YX22 | 22 | 28 | 24 | 31 | K4100D | 30.1KW/1500转 | EL 184F | 22 | RUIFEN6120
+        ⇒ other: null → EL 184F
+    0 | GF/GFS-YX22 | 22 | 28 | 24 | 31 | K4100D | 30.1KW/1500转 | EL 184F | 22 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184F
+    1 | GF/GFS-YX25 | 25 | 31 | 28 | 34 | K4100D | 30.1KW/1500转 | EL 184G | 25 | RUIFEN6120
+        ⇒ other: null → EL 184G
+    1 | GF/GFS-YX25 | 25 | 31 | 28 | 34 | K4100D | 30.1KW/1500转 | EL 184G | 25 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184G
+    2 | GF/GFS-YX32 | 32 | 40 | 36 | 44 | K4100ZD | 40KW/1500转 | EL 184J | 32 | RUIFEN6120
+        ⇒ other: null → EL 184J
+    2 | GF/GFS-YX32 | 32 | 40 | 36 | 44 | K4100ZD | 40KW/1500转 | EL 184J | 32 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184J
+    3 | GF/GFS-YX30 | 30 | 38 | 33 | 42 | K4102D | 36KW/1500转 | EL 184H | 30 | RUIFEN6120
+        ⇒ other: null → EL 184H
+    3 | GF/GFS-YX30 | 30 | 38 | 33 | 42 | K4102D | 36KW/1500转 | EL 184H | 30 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184H
+    4 | GF/GFS-YX34 | 34 | 43 | 38 | 48 | K4102ZD | 42KW/1500转 | EL 224C | 34 | RUIFEN6120
+        ⇒ other: null → EL 224C
+    4 | GF/GFS-YX34 | 34 | 43 | 38 | 48 | K4102ZD | 42KW/1500转 | EL 224C | 34 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224C
+    5 | GF/GFS-YX40 | 40 | 50 | 44 | 56 | ZH4105ZD | 50KW/1500转 | EL 224D | 40 | RUIFEN6120
+        ⇒ other: null → EL 224D
+    5 | GF/GFS-YX40 | 40 | 50 | 44 | 56 | ZH4105ZD | 50KW/1500转 | EL 224D | 40 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224D
+    6 | GF/GFS-YX48 | 48 | 60 | 53 | 67 | ZH4105ZLD | 56KW/1500转 | EL 224E | 48 | RUIFEN6120
+        ⇒ other: null → EL 224E
+    6 | GF/GFS-YX48 | 48 | 60 | 53 | 67 | ZH4105ZLD | 56KW/1500转 | EL 224E | 48 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224E
+    7 | GF/GFS-YX50 | 50 | 63 | 56 | 70 | R4105ZD | 56KW/1500转 | EL 224E | 48 | RUIFEN6120
+        ⇒ other: null → EL 224E
+    7 | GF/GFS-YX50 | 50 | 63 | 56 | 70 | R4105ZD | 56KW/1500转 | EL 224E | 48 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224E
+    8 | GF/GFS-YX58 | 58 | 73 | 64 | 81 | R4105ZLD | 66KW/1500转 | EL 224F | 58 | RUIFEN6120
+        ⇒ other: null → EL 224F
+    8 | GF/GFS-YX58 | 58 | 73 | 64 | 81 | R4105ZLD | 66KW/1500转 | EL 224F | 58 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224F
+    9 | GF/GFS-YX60 | 60 | 75 | 67 | 83 | R4105AZLD | 66KW/1500转 | EL 224F | 58 | RUIFEN6120
+        ⇒ other: null → EL 224F
+    9 | GF/GFS-YX60 | 60 | 75 | 67 | 83 | R4105AZLD | 66KW/1500转 | EL 224F | 58 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224F
+   10 | GF/GFS-YX68 | 68 | 85 | 76 | 94 | R4108IZLD | 84KW/1500转 | EL 224G | 68 | RUIFEN6120
+        ⇒ other: null → EL 224G
+   10 | GF/GFS-YX68 | 68 | 85 | 76 | 94 | R4108IZLD | 84KW/1500转 | EL 224G | 68 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224G
+   11 | GF/GFS-YX68I | 68 | 85 | 76 | 94 | R6105AZD | 84KW/1500转 | EL 224G | 68 | RUIFEN6120
+        ⇒ other: null → EL 224G
+   11 | GF/GFS-YX68I | 68 | 85 | 76 | 94 | R6105AZD | 84KW/1500转 | EL 224G | 68 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224G
+   12 | GF/GFS-YX96 | 96 | 120 | 107 | 133 | R6105AZLD | 121KW/1500转 | EL 274D | 96 | RUIFEN6120
+        ⇒ other: null → EL 274D
+   12 | GF/GFS-YX96 | 96 | 120 | 107 | 133 | R6105AZLD | 121KW/1500转 | EL 274D | 96 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274D
+   13 | GF/GFS-YX112 | 112 | 140 | 124 | 156 | R6105IZLD | 132KW/1500转 | EL 274E | 112 | RUIFEN6120
+        ⇒ other: null → EL 274E
+   13 | GF/GFS-YX112 | 112 | 140 | 124 | 156 | R6105IZLD | 132KW/1500转 | EL 274E | 112 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274E
+   14 | GF/GFS-YX120 | 120 | 150 | 133 | 167 | R6105IZLD | 132KW/1500转 | EL 274F | 128 | RUIFEN6120
+        ⇒ other: null → EL 274F
+   14 | GF/GFS-YX120 | 120 | 150 | 133 | 167 | R6105IZLD | 132KW/1500转 | EL 274F | 128 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274F
+   15 | GF/GFS-YX145 | 145 | 181 | 161 | 201 | R6108IZLD | 160KW/1500转 | EL 274G | 145.6 | RUIFEN6120
+        ⇒ other: null → EL 274G
+   15 | GF/GFS-YX145 | 145 | 181 | 161 | 201 | R6108IZLD | 160KW/1500转 | EL 274G | 145.6 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274G
+   16 | GF/GFS-YX145I | 145 | 181 | 161 | 201 | R6108ZLD | 170KW/1500转 | EL 274G | 145.6 | RUIFEN6120
+        ⇒ other: null → EL 274G
+   16 | GF/GFS-YX145I | 145 | 181 | 161 | 201 | R6108ZLD | 170KW/1500转 | EL 274G | 145.6 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274G
+   17 | GF/GFS-YX184 | 184 | 230 | 204 | 256 | R9768D | 215KW/1500转 | EL 274J | 184 | RUIFEN6120
+        ⇒ other: null → EL 274J
+   17 | GF/GFS-YX184 | 184 | 230 | 204 | 256 | R9768D | 215KW/1500转 | EL 274J | 184 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274J
+   18 | GF/GFS-YX200 | 200 | 250 | 222 | 278 | R9768D-1 | 245KW/1500转 | EL 274K | 200 | RUIFEN6120
+        ⇒ other: null → EL 274K
+   18 | GF/GFS-YX200 | 200 | 250 | 222 | 278 | R9768D-1 | 245KW/1500转 | EL 274K | 200 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274K
+   19 | GF/GFS-YX260 | 260 | 325 | 289 | 361 | R11D | 308KW/1500转 | EL 314E | 260 | RUIFEN6120
+        ⇒ other: null → EL 314E
+   19 | GF/GFS-YX260 | 260 | 325 | 289 | 361 | R11D | 308KW/1500转 | EL 314E | 260 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 314E
+   20 | GF/GFS-YX304 | 304 | 380 | 338 | 422 | R11D-1 | 405KW/1500转 | EL 314F | 304 | RUIFEN6120
+        ⇒ other: null → EL 314F
+   20 | GF/GFS-YX304 | 304 | 380 | 338 | 422 | R11D-1 | 405KW/1500转 | EL 314F | 304 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 314F
+
+[eastern-lion-fuan n139 bảng 40] ×34
+  H: | | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller
+    0 | GF/GFS-YN12 | 12 | 15 | 13 | 17 | YN25GB | 18kw/1500 | EL 164D | 12.8kw | RUIFEN6120
+        ⇒ other: null → EL 164D
+    0 | GF/GFS-YN12 | 12 | 15 | 13 | 17 | YN25GB | 18kw/1500 | EL 164D | 12.8kw | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 164D
+    1 | GF/GFS-YN16 | 16 | 20 | 18 | 22 | YN25GB | 21kw/1500 | EL 184E | 18kw | RUIFEN6120
+        ⇒ other: null → EL 184E
+    1 | GF/GFS-YN16 | 16 | 20 | 18 | 22 | YN25GB | 21kw/1500 | EL 184E | 18kw | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184E
+    2 | GF/GFS-YN20 | 20 | 25 | 22 | 28 | YN25GB | 23kw/1800 | EL 184E | 18kw | RUIFEN6120
+        ⇒ other: null → EL 184E
+    2 | GF/GFS-YN20 | 20 | 25 | 22 | 28 | YN25GB | 23kw/1800 | EL 184E | 18kw | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184E
+    3 | GF/GFS-YN20 | 20 | 25 | 22 | 28 | YN27GB | 25kw/1500 | EL 184F | 22kw | RUIFEN6120
+        ⇒ other: null → EL 184F
+    3 | GF/GFS-YN20 | 20 | 25 | 22 | 28 | YN27GB | 25kw/1500 | EL 184F | 22kw | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184F
+    4 | GF/GFS-YN26 | 26 | 33 | 29 | 37 | YN27GB | 30kw/1800 | EL 184G | 25kw | RUIFEN6120
+        ⇒ other: null → EL 184G
+    4 | GF/GFS-YN26 | 26 | 33 | 29 | 37 | YN27GB | 30kw/1800 | EL 184G | 25kw | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184G
+    5 | GF/GFS-YN25I | 25 | 31 | 28 | 34 | YN27GBZ | 30kw/1500 | EL 184G | 25kw | RUIFEN6120
+        ⇒ other: null → EL 184G
+    5 | GF/GFS-YN25I | 25 | 31 | 28 | 34 | YN27GBZ | 30kw/1500 | EL 184G | 25kw | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184G
+    6 | GF/GFS-YN25II | 25 | 31 | 28 | 34 | YN36GB | 30kw/1500 | EL 184G | 25kw | RUIFEN6120
+        ⇒ other: null → EL 184G
+    6 | GF/GFS-YN25II | 25 | 31 | 28 | 34 | YN36GB | 30kw/1500 | EL 184G | 25kw | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184G
+    7 | GF/GFS-YN28 | 28 | 35 | 31 | 39 | YN36GB | 33kw/1800 | EL 184G | 25kw | RUIFEN6120
+        ⇒ other: null → EL 184G
+    7 | GF/GFS-YN28 | 28 | 35 | 31 | 39 | YN36GB | 33kw/1800 | EL 184G | 25kw | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184G
+    8 | GF/GFS-YN30 | 30 | 38 | 33 | 42 | YN38GB | 36kw/1500 | EL 184H | 30kw | RUIFEN6120
+        ⇒ other: null → EL 184H
+    8 | GF/GFS-YN30 | 30 | 38 | 33 | 42 | YN38GB | 36kw/1500 | EL 184H | 30kw | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184H
+    9 | GF/GFS-YN35 | 35 | 44 | 39 | 49 | YN38GB | 40kw/1800 | EL 184J | 32kw | RUIFEN6120
+        ⇒ other: null → EL 184J
+    9 | GF/GFS-YN35 | 35 | 44 | 39 | 49 | YN38GB | 40kw/1800 | EL 184J | 32kw | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184J
+   10 | GF/GFS-YN34 | 34 | 43 | 38 | 48 | YN38GBZ | 48kw/1500 | EL 224C | 34kw | RUIFEN6120
+        ⇒ other: null → EL 224C
+   10 | GF/GFS-YN34 | 34 | 43 | 38 | 48 | YN38GBZ | 48kw/1500 | EL 224C | 34kw | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224C
+   11 | GF/GFS-YN45 | 45 | 56 | 50 | 62 | YN38GBZ | 53kw/1800 | EL 224D | 40kw | RUIFEN6120
+        ⇒ other: null → EL 224D
+   11 | GF/GFS-YN45 | 45 | 56 | 50 | 62 | YN38GBZ | 53kw/1800 | EL 224D | 40kw | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224D
+   12 | GF/GFS-YN40I | 40 | 50 | 44 | 56 | YN38GBZ | 50kw/1500 | EL 224D | 40kw | RUIFEN6120
+        ⇒ other: null → EL 224D
+   12 | GF/GFS-YN40I | 40 | 50 | 44 | 56 | YN38GBZ | 50kw/1500 | EL 224D | 40kw | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224D
+   13 | GF/GFS-YN48 | 48 | 60 | 53 | 67 | YN48GBZ | 60kw/1500 | EL 224E | 48kw | RUIFEN6120
+        ⇒ other: null → EL 224E
+   13 | GF/GFS-YN48 | 48 | 60 | 53 | 67 | YN48GBZ | 60kw/1500 | EL 224E | 48kw | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224E
+   14 | GF/GFS-YN53 | 53 | 66 | 59 | 73 | YN48GBZ | 66kw/1800 | EL 224E | 48kw | RUIFEN6120
+        ⇒ other: null → EL 224E
+   14 | GF/GFS-YN53 | 53 | 66 | 59 | 73 | YN48GBZ | 66kw/1800 | EL 224E | 48kw | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224E
+   15 | GF/GFS-YN60 | 60 | 75 | 67 | 83 | YN48GBZ | 77kw/1500 | EL 224F | 58kw | RUIFEN6120
+        ⇒ other: null → EL 224F
+   15 | GF/GFS-YN60 | 60 | 75 | 67 | 83 | YN48GBZ | 77kw/1500 | EL 224F | 58kw | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224F
+   16 | GF/GFS-YN75 | 75 | 94 | 83 | 104 | YN48GBZ | 85kw/1800 | EL 224G | 68kw | RUIFEN6120
+        ⇒ other: null → EL 224G
+   16 | GF/GFS-YN75 | 75 | 94 | 83 | 104 | YN48GBZ | 85kw/1800 | EL 224G | 68kw | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224G
+
+[eastern-lion-fuan n141 bảng 42] ×30
+  H: | | Genset Specification 400/230V 50HZ | Engine | Brushless Alternator | Controller | Datasheet
+  H: | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller | Datasheet
+    0 | GF/GFS-YD8 | 8kw | 10kva | 9kw | 11kva | YD380D | 10KW | EL 164B | 8.8KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 164B
+    0 | GF/GFS-YD8 | 8kw | 10kva | 9kw | 11kva | YD380D | 10KW | EL 164B | 8.8KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 164B
+    1 | GF/GFS-YD9 | 9kw | 11kva | 10kw | 12kva | YD385D | 12KW | EL 164C | 10.8KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 164C
+    1 | GF/GFS-YD9 | 9kw | 11kva | 10kw | 12kva | YD385D | 12KW | EL 164C | 10.8KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 164C
+    2 | GF/GFS-YD10 | 10kw | 13kva | 11kw | 14kva | YD480D | 14KW | EL 164C | 10.8KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 164C
+    2 | GF/GFS-YD10 | 10kw | 13kva | 11kw | 14kva | YD480D | 14KW | EL 164C | 10.8KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 164C
+    3 | GF/GFS-YD12 | 12kw | 15kva | 13kw | 17kva | (YD4KD) YD485D | 15KW | EL 164D | 12.8KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 164D
+    3 | GF/GFS-YD12 | 12kw | 15kva | 13kw | 17kva | (YD4KD) YD485D | 15KW | EL 164D | 12.8KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 164D
+    4 | GF/GFS-YD14 | 14kw | 18kva | 16kw | 20kva | YND485D | 17KW | EL 184E | 18KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184E
+    4 | GF/GFS-YD14 | 14kw | 18kva | 16kw | 20kva | YND485D | 17KW | EL 184E | 18KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184E
+    5 | GF/GFS-YD16 | 16kw | 20kva | 18kw | 22kva | YSD490D | 21KW | EL 184E | 18KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184E
+    5 | GF/GFS-YD16 | 16kw | 20kva | 18kw | 22kva | YSD490D | 21KW | EL 184E | 18KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184E
+    6 | GF/GFS-YD19 | 19kw | 24kva | 21kw | 27kva | Y490D | 24KW | EL 184F | 22KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184F
+    6 | GF/GFS-YD19 | 19kw | 24kva | 21kw | 27kva | Y490D | 24KW | EL 184F | 22KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184F
+    7 | GF/GFS-YD22 | 22kw | 25kva | 22kw | 28kva | Y495D | 27KW | EL 184F | 22KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184F
+    7 | GF/GFS-YD22 | 22kw | 25kva | 22kw | 28kva | Y495D | 27KW | EL 184F | 22KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184F
+    8 | GF/GFS-YD24 | 24kw | 30kva | 27kw | 33kva | Y4100D | 30KW | EL 184G | 25KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184G
+    8 | GF/GFS-YD24 | 24kw | 30kva | 27kw | 33kva | Y4100D | 30KW | EL 184G | 25KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184G
+    9 | GF/GFS-YD26 | 26kw | 33kva | 29kw | 37kva | Y4102D | 33KW | EL 184H | 30KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184H
+    9 | GF/GFS-YD26 | 26kw | 33kva | 29kw | 37kva | Y4102D | 33KW | EL 184H | 30KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184H
+   10 | GF/GFS-YD30 | 30kw | 38kva | 33kw | 42kva | Y4105D | 38KW | EL 184H | 30KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184H
+   10 | GF/GFS-YD30 | 30kw | 38kva | 33kw | 42kva | Y4105D | 38KW | EL 184H | 30KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184H
+   11 | GF/GFS-YD32 | 32kw | 40kva | 36kw | 44kva | Y4102ZD | 40KW | EL 224C | 34KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224C
+   11 | GF/GFS-YD32 | 32kw | 40kva | 36kw | 44kva | Y4102ZD | 40KW | EL 224C | 34KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224C
+   12 | GF/GFS-YD38 | 38kw | 48kva | 42kw | 53kva | Y4102ZLD | 48KW | EL 224D | 40KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224D
+   12 | GF/GFS-YD38 | 38kw | 48kva | 42kw | 53kva | Y4102ZLD | 48KW | EL 224D | 40KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224D
+   13 | GF/GFS-YD44 | 44kw | 55kva | 49kw | 61kva | Y4105ZLD | 55KW | EL 224E | 48KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224E
+   13 | GF/GFS-YD44 | 44kw | 55kva | 49kw | 61kva | Y4105ZLD | 55KW | EL 224E | 48KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224E
+   14 | GF/GFS-YD50 | 50kw | 63kva | 56kw | 70kva | YD4EZLD | 63KW | EL 224F | 58KW | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224F
+   14 | GF/GFS-YD50 | 50kw | 63kva | 56kw | 70kva | YD4EZLD | 63KW | EL 224F | 58KW | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224F
+
+[eastern-lion-fuan n142 bảng 44] ×22
+  H: | | Genset Specification 400/230V 50HZ | Engine | Brushless Alternator | Controller | Datasheet
+  H: | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller | Datasheet
+    0 | GF/GFS-WL128 | 128 | 160 | 142 | 178 | D114系列WLD171 | 171KW | EL 274F | 128 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274F
+    1 | GF/GFS-WL160 | 160 | 200 | 178 | 223 | D114系列WLD206 | 206KW | EL 274H | 160 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274H
+    2 | GF/GFS-WL184 | 184 | 230 | 204 | 255 | D114系列WLD227 | 227KW | EL 274J | 184 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274J
+    3 | GF/GFS-WL200 | 200 | 250 | 222 | 278 | D114系列WLD263 | 263KW | EL 274K | 200 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274K
+    4 | GF/GFS-WL236 | 236 | 295 | 262 | 328 | G128系列WLG308 | 308KW | EL 314D | 236 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 314D
+    5 | GF/GFS-WL260 | 260 | 325 | 289 | 361 | G128系列WLG330 | 330KW | EL 314E | 260 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 314E
+    6 | GF/GFS-WL304 | 304 | 380 | 338 | 423 | G128系列WLG375 | 375KW | EL 314F | 304 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 314F
+    7 | GF/GFS-WL360 | 360 | 450 | 400 | 500 | G128系列WLG450 | 450KW | EL 354C | 360 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 354C
+    8 | GF/GFS-WL360 | 360 | 450 | 400 | 500 | 12V系列WLV450 | 450KW | EL 354C | 360 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 354C
+    9 | GF/GFS-WL400 | 400 | 500 | 444 | 555 | 12V系列WLV510 | 510KW | EL 354D | 400 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 354D
+   10 | GF/GFS-WL440 | 440 | 550 | 489 | 611 | 12V系列WLV565 | 565KW | EL 354ES | 440 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 354ES
+   11 | GF/GFS-WL500 | 500 | 625 | 556 | 695 | 12V系列WLV610 | 610KW | EL 354FS | 500 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 354FS
+   12 | GF/GFS-WL500 | 500 | 625 | 556 | 695 | 12V系列WLV630 | 630KW | EL 354FS | 500 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 354FS
+   13 | GF/GFS-WL550 | 550 | 687.5 | 611 | 764 | 12V系列WLV680 | 680KW | EL 354G | 550 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 354G
+   14 | GF/GFS-WL600 | 600 | 750 | 667 | 834 | 12V系列WLV720 | 720KW | EL 354H | 600 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 354H
+   15 | GF/GFS-WL640 | 640 | 800 | 711 | 889 | 12V系列WLV780 | 780KW | EL 404C | 640 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 404C
+   16 | GF/GFS-WL640 | 640 | 800 | 711 | 889 | 12V系列WLV826 | 826KW | EL 404C | 640 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 404C
+   17 | GF/GFS-WL728 | 728 | 910 | 809 | 1011 | 12V系列WLV886 | 886KW | EL 404D | 728 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 404D
+   18 | GF/GFS-WL728 | 728 | 910 | 809 | 1011 | 12V系列WLV956 | 956KW | EL 404D | 728 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 404D
+   19 | GF/GFS-WL728 | 728 | 910 | 809 | 1011 | 12V系列WLV1020 | 1020KW | EL 404D | 728 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 404D
+   20 | GF/GFS-WL728 | 728 | 910 | 809 | 1011 | 12V系列WLV1100四气门 | 1100KW | EL 404D | 728 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 404D
+   21 | GF/GFS-WL800 | 800 | 1000 | 889 | 1111 | 12V系列WLV1200四气门 | 1200KW | EL 404E | 800 | Smartgen 6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 404E
+
+[eastern-lion-fuan n144 bảng 48] ×31
+  H: | | Genset Specification 400/230V 50HZ | Engine | Brushless Alternator | Controller | Datasheet
+  H: | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller | Datasheet
+    0 | GFS-W33 | 24 | 30 | 27 | 33 | K4100D | 30.1 | EL 184G | 25 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184G
+    0 | GFS-W33 | 24 | 30 | 27 | 33 | K4100D | 30.1 | EL 184G | 25 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184G
+    1 | GFS-W33 | 24 | 30 | 27 | 33 | ZH4100D | 30.1 | EL 184G | 25 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184G
+    1 | GFS-W33 | 24 | 30 | 27 | 33 | ZH4100D | 30.1 | EL 184G | 25 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184G
+    2 | GFS-W44 | 32 | 40 | 36 | 44 | K4100ZD | 41 | EL 184J | 32 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 184J
+    2 | GFS-W44 | 32 | 40 | 36 | 44 | K4100ZD | 41 | EL 184J | 32 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 184J
+    3 | GFS-W56 | 40 | 50 | 44 | 56 | ZH4105ZD | 56 | EL 224D | 40 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224D
+    3 | GFS-W56 | 40 | 50 | 44 | 56 | ZH4105ZD | 56 | EL 224D | 40 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224D
+    4 | GFS-W67 | 48 | 60 | 53 | 67 | ZH4105ZD | 56 | EL 224E | 48 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224E
+    4 | GFS-W67 | 48 | 60 | 53 | 67 | ZH4105ZD | 56 | EL 224E | 48 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224E
+    5 | GFS-W67 | 48 | 60 | 53 | 67 | ZH4105ZLD | 56 | EL 224E | 48 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224E
+    5 | GFS-W67 | 48 | 60 | 53 | 67 | ZH4105ZLD | 56 | EL 224E | 48 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224E
+    6 | GFS-W67 | 48 | 60 | 53 | 67 | R4105ZD | 56 | EL 224E | 48 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224E
+    6 | GFS-W67 | 48 | 60 | 53 | 67 | R4105ZD | 56 | EL 224E | 48 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224E
+    7 | GFS-W94 | 68 | 85 | 76 | 94 | R6105ZD | 84 | EL 224G | 68 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 224G
+    7 | GFS-W94 | 68 | 85 | 76 | 94 | R6105ZD | 84 | EL 224G | 68 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 224G
+    8 | GFS-W111 | 80 | 100 | 89 | 111 | R6105AZLD | 110 | EL 274C | 80 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274C
+    8 | GFS-W111 | 80 | 100 | 89 | 111 | R6105AZLD | 110 | EL 274C | 80 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274C
+    9 | GFS-W139 | 100 | 125 | 111 | 139 | R6105IZLD | 132 | EL 274D | 96 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274D
+    9 | GFS-W139 | 100 | 125 | 111 | 139 | R6105IZLD | 132 | EL 274D | 96 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274D
+   10 | GFS-W153 | 110 | 138 | 122 | 153 | R6105IZLD | 132 | EL 274E | 112 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274E
+   10 | GFS-W153 | 110 | 138 | 122 | 153 | R6105IZLD | 132 | EL 274E | 112 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274E
+   12 | GFS-W178 | 128 | 160 | 142 | 178 | R6108ZLD | 155 | EL 274F | 128 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 274F
+   12 | GFS-W178 | 128 | 160 | 142 | 178 | R6108ZLD | 155 | EL 274F | 128 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274F
+   14 | GFS-W222 | 160 | 200 | 178 | 222 | 6126ZLD新 | 215 | EL 274H | 160 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274H
+   15 | GFS-W250 | 180 | 225 | 200 | 250 | 6126ZLD新 | 215 | EL 274J | 184 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274J
+   16 | GFS-W278 | 200 | 250 | 222 | 278 | 6126ZLD-1新 | 260 | EL 274K | 200 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 274K
+   17 | GFS-W328 | 236 | 295 | 262 | 328 | WD618 | 308 | EL 314D | 236 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 314D
+   17 | GFS-W328 | 236 | 295 | 262 | 328 | WD618 | 308 | EL 314D | 236 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 314D
+   18 | GFS-W361 | 260 | 325 | 289 | 361 | WD618 | 308 | EL 314E | 260 | RUIFEN6120 | Detail
+        ⇒ other: null → EL 314E
+   18 | GFS-W361 | 260 | 325 | 289 | 361 | WD618 | 308 | EL 314E | 260 | RUIFEN6120 | Detail
+        ⇒ THÊM bản ghi alternator EL 314E
+
+[eastern-lion-fuan n146 bảng 51] ×30
+  H: | | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller
+    0 | GF/GFS-YD8 | 8kw | 10kva | 9kw | 11kva | YD380D | 10KW | EL 164B | 8.8KW | RUIFEN6120
+        ⇒ other: null → EL 164B
+    0 | GF/GFS-YD8 | 8kw | 10kva | 9kw | 11kva | YD380D | 10KW | EL 164B | 8.8KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 164B
+    1 | GF/GFS-YD9 | 9kw | 11kva | 10kw | 12kva | YD385D | 12KW | EL 164C | 10.8KW | RUIFEN6120
+        ⇒ other: null → EL 164C
+    1 | GF/GFS-YD9 | 9kw | 11kva | 10kw | 12kva | YD385D | 12KW | EL 164C | 10.8KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 164C
+    2 | GF/GFS-YD10 | 10kw | 13kva | 11kw | 14kva | YD480D | 14KW | EL 164C | 10.8KW | RUIFEN6120
+        ⇒ other: null → EL 164C
+    2 | GF/GFS-YD10 | 10kw | 13kva | 11kw | 14kva | YD480D | 14KW | EL 164C | 10.8KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 164C
+    3 | GF/GFS-YD12 | 12kw | 15kva | 13kw | 17kva | (YD4KD) YD485D | 15KW | EL 164D | 12.8KW | RUIFEN6120
+        ⇒ other: null → EL 164D
+    3 | GF/GFS-YD12 | 12kw | 15kva | 13kw | 17kva | (YD4KD) YD485D | 15KW | EL 164D | 12.8KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 164D
+    4 | GF/GFS-YD14 | 14kw | 18kva | 16kw | 20kva | YND485D | 17KW | EL 184E | 18KW | RUIFEN6120
+        ⇒ other: null → EL 184E
+    4 | GF/GFS-YD14 | 14kw | 18kva | 16kw | 20kva | YND485D | 17KW | EL 184E | 18KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184E
+    5 | GF/GFS-YD16 | 16kw | 20kva | 18kw | 22kva | YSD490D | 21KW | EL 184E | 18KW | RUIFEN6120
+        ⇒ other: null → EL 184E
+    5 | GF/GFS-YD16 | 16kw | 20kva | 18kw | 22kva | YSD490D | 21KW | EL 184E | 18KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184E
+    6 | GF/GFS-YD19 | 19kw | 24kva | 21kw | 27kva | Y490D | 24KW | EL 184F | 22KW | RUIFEN6120
+        ⇒ other: null → EL 184F
+    6 | GF/GFS-YD19 | 19kw | 24kva | 21kw | 27kva | Y490D | 24KW | EL 184F | 22KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184F
+    7 | GF/GFS-YD22 | 22kw | 25kva | 22kw | 28kva | Y495D | 27KW | EL 184F | 22KW | RUIFEN6120
+        ⇒ other: null → EL 184F
+    7 | GF/GFS-YD22 | 22kw | 25kva | 22kw | 28kva | Y495D | 27KW | EL 184F | 22KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184F
+    8 | GF/GFS-YD24 | 24kw | 30kva | 27kw | 33kva | Y4100D | 30KW | EL 184G | 25KW | RUIFEN6120
+        ⇒ other: null → EL 184G
+    8 | GF/GFS-YD24 | 24kw | 30kva | 27kw | 33kva | Y4100D | 30KW | EL 184G | 25KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184G
+    9 | GF/GFS-YD26 | 26kw | 33kva | 29kw | 37kva | Y4102D | 33KW | EL 184H | 30KW | RUIFEN6120
+        ⇒ other: null → EL 184H
+    9 | GF/GFS-YD26 | 26kw | 33kva | 29kw | 37kva | Y4102D | 33KW | EL 184H | 30KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184H
+   10 | GF/GFS-YD30 | 30kw | 38kva | 33kw | 42kva | Y4105D | 38KW | EL 184H | 30KW | RUIFEN6120
+        ⇒ other: null → EL 184H
+   10 | GF/GFS-YD30 | 30kw | 38kva | 33kw | 42kva | Y4105D | 38KW | EL 184H | 30KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184H
+   11 | GF/GFS-YD32 | 32kw | 40kva | 36kw | 44kva | Y4102ZD | 40KW | EL 224C | 34KW | RUIFEN6120
+        ⇒ other: null → EL 224C
+   11 | GF/GFS-YD32 | 32kw | 40kva | 36kw | 44kva | Y4102ZD | 40KW | EL 224C | 34KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224C
+   12 | GF/GFS-YD38 | 38kw | 48kva | 42kw | 53kva | Y4102ZLD | 48KW | EL 224D | 40KW | RUIFEN6120
+        ⇒ other: null → EL 224D
+   12 | GF/GFS-YD38 | 38kw | 48kva | 42kw | 53kva | Y4102ZLD | 48KW | EL 224D | 40KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224D
+   13 | GF/GFS-YD44 | 44kw | 55kva | 49kw | 61kva | Y4105ZLD | 55KW | EL 224E | 48KW | RUIFEN6120
+        ⇒ other: null → EL 224E
+   13 | GF/GFS-YD44 | 44kw | 55kva | 49kw | 61kva | Y4105ZLD | 55KW | EL 224E | 48KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224E
+   14 | GF/GFS-YD50 | 50kw | 63kva | 56kw | 70kva | YD4EZLD | 63KW | EL 224F | 58KW | RUIFEN6120
+        ⇒ other: null → EL 224F
+   14 | GF/GFS-YD50 | 50kw | 63kva | 56kw | 70kva | YD4EZLD | 63KW | EL 224F | 58KW | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224F
+
+[eastern-lion-fuan n147 bảng 52] ×44
+  H: | | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller
+    0 | GF/GFS-WL128 | 128 | 160 | 142 | 178 | D114系列WLD171 | 171KW | EL 274F | 128 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 274F
+    0 | GF/GFS-WL128 | 128 | 160 | 142 | 178 | D114系列WLD171 | 171KW | EL 274F | 128 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 274F
+    1 | GF/GFS-WL160 | 160 | 200 | 178 | 223 | D114系列WLD206 | 206KW | EL 274H | 160 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 274H
+    1 | GF/GFS-WL160 | 160 | 200 | 178 | 223 | D114系列WLD206 | 206KW | EL 274H | 160 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 274H
+    2 | GF/GFS-WL184 | 184 | 230 | 204 | 255 | D114系列WLD227 | 227KW | EL 274J | 184 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 274J
+    2 | GF/GFS-WL184 | 184 | 230 | 204 | 255 | D114系列WLD227 | 227KW | EL 274J | 184 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 274J
+    3 | GF/GFS-WL200 | 200 | 250 | 222 | 278 | D114系列WLD263 | 263KW | EL 274K | 200 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 274K
+    3 | GF/GFS-WL200 | 200 | 250 | 222 | 278 | D114系列WLD263 | 263KW | EL 274K | 200 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 274K
+    4 | GF/GFS-WL236 | 236 | 295 | 262 | 328 | G128系列WLG308 | 308KW | EL 314D | 236 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 314D
+    4 | GF/GFS-WL236 | 236 | 295 | 262 | 328 | G128系列WLG308 | 308KW | EL 314D | 236 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 314D
+    5 | GF/GFS-WL260 | 260 | 325 | 289 | 361 | G128系列WLG330 | 330KW | EL 314E | 260 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 314E
+    5 | GF/GFS-WL260 | 260 | 325 | 289 | 361 | G128系列WLG330 | 330KW | EL 314E | 260 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 314E
+    6 | GF/GFS-WL304 | 304 | 380 | 338 | 423 | G128系列WLG375 | 375KW | EL 314F | 304 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 314F
+    6 | GF/GFS-WL304 | 304 | 380 | 338 | 423 | G128系列WLG375 | 375KW | EL 314F | 304 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 314F
+    7 | GF/GFS-WL360 | 360 | 450 | 400 | 500 | G128系列WLG450 | 450KW | EL 354C | 360 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 354C
+    7 | GF/GFS-WL360 | 360 | 450 | 400 | 500 | G128系列WLG450 | 450KW | EL 354C | 360 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 354C
+    8 | GF/GFS-WL360 | 360 | 450 | 400 | 500 | 12V系列WLV450 | 450KW | EL 354C | 360 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 354C
+    8 | GF/GFS-WL360 | 360 | 450 | 400 | 500 | 12V系列WLV450 | 450KW | EL 354C | 360 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 354C
+    9 | GF/GFS-WL400 | 400 | 500 | 444 | 555 | 12V系列WLV510 | 510KW | EL 354D | 400 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 354D
+    9 | GF/GFS-WL400 | 400 | 500 | 444 | 555 | 12V系列WLV510 | 510KW | EL 354D | 400 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 354D
+   10 | GF/GFS-WL440 | 440 | 550 | 489 | 611 | 12V系列WLV565 | 565KW | EL 354ES | 440 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 354ES
+   10 | GF/GFS-WL440 | 440 | 550 | 489 | 611 | 12V系列WLV565 | 565KW | EL 354ES | 440 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 354ES
+   11 | GF/GFS-WL500 | 500 | 625 | 556 | 695 | 12V系列WLV610 | 610KW | EL 354FS | 500 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 354FS
+   11 | GF/GFS-WL500 | 500 | 625 | 556 | 695 | 12V系列WLV610 | 610KW | EL 354FS | 500 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 354FS
+   12 | GF/GFS-WL500 | 500 | 625 | 556 | 695 | 12V系列WLV630 | 630KW | EL 354FS | 500 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 354FS
+   12 | GF/GFS-WL500 | 500 | 625 | 556 | 695 | 12V系列WLV630 | 630KW | EL 354FS | 500 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 354FS
+   13 | GF/GFS-WL550 | 550 | 687.5 | 611 | 764 | 12V系列WLV680 | 680KW | EL 354G | 550 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 354G
+   13 | GF/GFS-WL550 | 550 | 687.5 | 611 | 764 | 12V系列WLV680 | 680KW | EL 354G | 550 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 354G
+   14 | GF/GFS-WL600 | 600 | 750 | 667 | 834 | 12V系列WLV720 | 720KW | EL 354H | 600 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 354H
+   14 | GF/GFS-WL600 | 600 | 750 | 667 | 834 | 12V系列WLV720 | 720KW | EL 354H | 600 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 354H
+   15 | GF/GFS-WL640 | 640 | 800 | 711 | 889 | 12V系列WLV780 | 780KW | EL 404C | 640 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 404C
+   15 | GF/GFS-WL640 | 640 | 800 | 711 | 889 | 12V系列WLV780 | 780KW | EL 404C | 640 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 404C
+   16 | GF/GFS-WL640 | 640 | 800 | 711 | 889 | 12V系列WLV826 | 826KW | EL 404C | 640 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 404C
+   16 | GF/GFS-WL640 | 640 | 800 | 711 | 889 | 12V系列WLV826 | 826KW | EL 404C | 640 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 404C
+   17 | GF/GFS-WL728 | 728 | 910 | 809 | 1011 | 12V系列WLV886 | 886KW | EL 404D | 728 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 404D
+   17 | GF/GFS-WL728 | 728 | 910 | 809 | 1011 | 12V系列WLV886 | 886KW | EL 404D | 728 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 404D
+   18 | GF/GFS-WL728 | 728 | 910 | 809 | 1011 | 12V系列WLV956 | 956KW | EL 404D | 728 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 404D
+   18 | GF/GFS-WL728 | 728 | 910 | 809 | 1011 | 12V系列WLV956 | 956KW | EL 404D | 728 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 404D
+   19 | GF/GFS-WL728 | 728 | 910 | 809 | 1011 | 12V系列WLV1020 | 1020KW | EL 404D | 728 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 404D
+   19 | GF/GFS-WL728 | 728 | 910 | 809 | 1011 | 12V系列WLV1020 | 1020KW | EL 404D | 728 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 404D
+   20 | GF/GFS-WL728 | 728 | 910 | 809 | 1011 | 12V系列WLV1100四气门 | 1100KW | EL 404D | 728 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 404D
+   20 | GF/GFS-WL728 | 728 | 910 | 809 | 1011 | 12V系列WLV1100四气门 | 1100KW | EL 404D | 728 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 404D
+   21 | GF/GFS-WL800 | 800 | 1000 | 889 | 1111 | 12V系列WLV1200四气门 | 1200KW | EL 404E | 800 | Smartgen 6120
+        ⇒ MẤT bản ghi engine EL 404E
+   21 | GF/GFS-WL800 | 800 | 1000 | 889 | 1111 | 12V系列WLV1200四气门 | 1200KW | EL 404E | 800 | Smartgen 6120
+        ⇒ THÊM bản ghi alternator EL 404E
+
+[eastern-lion-fuan n149 bảng 54] ×34
+  H: | | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller
+    0 | GFS-W33 | 24 | 30 | 27 | 33 | K4100D | 30.1 | EL 184G | 25 | RUIFEN6120
+        ⇒ other: null → EL 184G
+    0 | GFS-W33 | 24 | 30 | 27 | 33 | K4100D | 30.1 | EL 184G | 25 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184G
+    1 | GFS-W33 | 24 | 30 | 27 | 33 | ZH4100D | 30.1 | EL 184G | 25 | RUIFEN6120
+        ⇒ other: null → EL 184G
+    1 | GFS-W33 | 24 | 30 | 27 | 33 | ZH4100D | 30.1 | EL 184G | 25 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184G
+    2 | GFS-W44 | 32 | 40 | 36 | 44 | K4100ZD | 41 | EL 184J | 32 | RUIFEN6120
+        ⇒ other: null → EL 184J
+    2 | GFS-W44 | 32 | 40 | 36 | 44 | K4100ZD | 41 | EL 184J | 32 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 184J
+    3 | GFS-W56 | 40 | 50 | 44 | 56 | ZH4105ZD | 56 | EL 224D | 40 | RUIFEN6120
+        ⇒ other: null → EL 224D
+    3 | GFS-W56 | 40 | 50 | 44 | 56 | ZH4105ZD | 56 | EL 224D | 40 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224D
+    4 | GFS-W67 | 48 | 60 | 53 | 67 | ZH4105ZD | 56 | EL 224E | 48 | RUIFEN6120
+        ⇒ other: null → EL 224E
+    4 | GFS-W67 | 48 | 60 | 53 | 67 | ZH4105ZD | 56 | EL 224E | 48 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224E
+    5 | GFS-W67 | 48 | 60 | 53 | 67 | ZH4105ZLD | 56 | EL 224E | 48 | RUIFEN6120
+        ⇒ other: null → EL 224E
+    5 | GFS-W67 | 48 | 60 | 53 | 67 | ZH4105ZLD | 56 | EL 224E | 48 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224E
+    6 | GFS-W67 | 48 | 60 | 53 | 67 | R4105ZD | 56 | EL 224E | 48 | RUIFEN6120
+        ⇒ other: null → EL 224E
+    6 | GFS-W67 | 48 | 60 | 53 | 67 | R4105ZD | 56 | EL 224E | 48 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224E
+    7 | GFS-W94 | 68 | 85 | 76 | 94 | R6105ZD | 84 | EL 224G | 68 | RUIFEN6120
+        ⇒ other: null → EL 224G
+    7 | GFS-W94 | 68 | 85 | 76 | 94 | R6105ZD | 84 | EL 224G | 68 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 224G
+    8 | GFS-W111 | 80 | 100 | 89 | 111 | R6105AZLD | 110 | EL 274C | 80 | RUIFEN6120
+        ⇒ other: null → EL 274C
+    8 | GFS-W111 | 80 | 100 | 89 | 111 | R6105AZLD | 110 | EL 274C | 80 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274C
+    9 | GFS-W139 | 100 | 125 | 111 | 139 | R6105IZLD | 132 | EL 274D | 96 | RUIFEN6120
+        ⇒ other: null → EL 274D
+    9 | GFS-W139 | 100 | 125 | 111 | 139 | R6105IZLD | 132 | EL 274D | 96 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274D
+   10 | GFS-W153 | 110 | 138 | 122 | 153 | R6105IZLD | 132 | EL 274E | 112 | RUIFEN6120
+        ⇒ other: null → EL 274E
+   10 | GFS-W153 | 110 | 138 | 122 | 153 | R6105IZLD | 132 | EL 274E | 112 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274E
+   12 | GFS-W178 | 128 | 160 | 142 | 178 | R6108ZLD | 155 | EL 274F | 128 | RUIFEN6120
+        ⇒ other: null → EL 274F
+   12 | GFS-W178 | 128 | 160 | 142 | 178 | R6108ZLD | 155 | EL 274F | 128 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 274F
+   14 | GFS-W222 | 160 | 200 | 178 | 222 | 6126ZLD新 | 215 | EL 274H | 160 | RUIFEN6120
+        ⇒ MẤT bản ghi engine EL 274H
+   14 | GFS-W222 | 160 | 200 | 178 | 222 | 6126ZLD新 | 215 | EL 274H | 160 | RUIFEN6120
+        ⇒ model: RUIFEN6120 → EL 274H; other: EL 274H → null; engPower: 160 → 215; controller: ∅ → RUIFEN6120
+   15 | GFS-W250 | 180 | 225 | 200 | 250 | 6126ZLD新 | 215 | EL 274J | 184 | RUIFEN6120
+        ⇒ MẤT bản ghi engine EL 274J
+   15 | GFS-W250 | 180 | 225 | 200 | 250 | 6126ZLD新 | 215 | EL 274J | 184 | RUIFEN6120
+        ⇒ model: RUIFEN6120 → EL 274J; other: EL 274J → null; engPower: 184 → 215; controller: ∅ → RUIFEN6120
+   16 | GFS-W278 | 200 | 250 | 222 | 278 | 6126ZLD-1新 | 260 | EL 274K | 200 | RUIFEN6120
+        ⇒ MẤT bản ghi engine EL 274K
+   16 | GFS-W278 | 200 | 250 | 222 | 278 | 6126ZLD-1新 | 260 | EL 274K | 200 | RUIFEN6120
+        ⇒ model: RUIFEN6120 → EL 274K; other: EL 274K → null; engPower: 200 → 260; controller: ∅ → RUIFEN6120
+   17 | GFS-W328 | 236 | 295 | 262 | 328 | WD618 | 308 | EL 314D | 236 | RUIFEN6120
+        ⇒ other: null → EL 314D
+   17 | GFS-W328 | 236 | 295 | 262 | 328 | WD618 | 308 | EL 314D | 236 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 314D
+   18 | GFS-W361 | 260 | 325 | 289 | 361 | WD618 | 308 | EL 314E | 260 | RUIFEN6120
+        ⇒ other: null → EL 314E
+   18 | GFS-W361 | 260 | 325 | 289 | 361 | WD618 | 308 | EL 314E | 260 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator EL 314E
+
+[eastern-lion-fuan n151 bảng 56] ×30
+  H: | | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller
+    0 | GF/GFS-YD13 | 10 | 12 | 11 | 13 | YD380D | 12 | ELS 164B | 9.7 | RUIFEN6120
+        ⇒ other: null → ELS 164B
+    0 | GF/GFS-YD13 | 10 | 12 | 11 | 13 | YD380D | 12 | ELS 164B | 9.7 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 164B
+    1 | GF/GFS-YD16 | 12 | 14 | 13 | 16 | YD385D | 14 | ELS 164C | 11.9 | RUIFEN6120
+        ⇒ other: null → ELS 164C
+    1 | GF/GFS-YD16 | 12 | 14 | 13 | 16 | YD385D | 14 | ELS 164C | 11.9 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 164C
+    2 | GF/GFS-YD17 | 13 | 16 | 14 | 17 | YD480D | 17 | ELS 164C | 11.9 | RUIFEN6120
+        ⇒ other: null → ELS 164C
+    2 | GF/GFS-YD17 | 13 | 16 | 14 | 17 | YD480D | 17 | ELS 164C | 11.9 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 164C
+    3 | GF/GFS-YD18 | 14 | 17 | 15 | 18 | (YD4KD) YD485D | 18 | ELS 164D | 14.1 | RUIFEN6120
+        ⇒ other: null → ELS 164D
+    3 | GF/GFS-YD18 | 14 | 17 | 15 | 18 | (YD4KD) YD485D | 18 | ELS 164D | 14.1 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 164D
+    4 | GF/GFS-YD22 | 16 | 19 | 18 | 22 | YND485D | 20 | ELS 184E | 19.8 | RUIFEN6120
+        ⇒ other: null → ELS 184E
+    4 | GF/GFS-YD22 | 16 | 19 | 18 | 22 | YND485D | 20 | ELS 184E | 19.8 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 184E
+    5 | GF/GFS-YD24 | 18 | 22 | 20 | 24 | YSD490D | 23 | ELS 184E | 19.8 | RUIFEN6120
+        ⇒ other: null → ELS 184E
+    5 | GF/GFS-YD24 | 18 | 22 | 20 | 24 | YSD490D | 23 | ELS 184E | 19.8 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 184E
+    6 | GF/GFS-YD29 | 22 | 26 | 24 | 29 | Y490D | 28 | ELS 184F | 24.2 | RUIFEN6120
+        ⇒ other: null → ELS 184F
+    6 | GF/GFS-YD29 | 22 | 26 | 24 | 29 | Y490D | 28 | ELS 184F | 24.2 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 184F
+    7 | GF/GFS-YD31 | 24 | 29 | 26 | 31 | Y495D | 30 | ELS 184F | 24.2 | RUIFEN6120
+        ⇒ other: null → ELS 184F
+    7 | GF/GFS-YD31 | 24 | 29 | 26 | 31 | Y495D | 30 | ELS 184F | 24.2 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 184F
+    8 | GF/GFS-YD38 | 29 | 35 | 32 | 38 | Y4100D | 36 | ELS 184G | 27.5 | RUIFEN6120
+        ⇒ other: null → ELS 184G
+    8 | GF/GFS-YD38 | 29 | 35 | 32 | 38 | Y4100D | 36 | ELS 184G | 27.5 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 184G
+    9 | GF/GFS-YD42 | 32 | 38 | 35 | 42 | Y4102D | 40 | ELS 184H | 33 | RUIFEN6120
+        ⇒ other: null → ELS 184H
+    9 | GF/GFS-YD42 | 32 | 38 | 35 | 42 | Y4102D | 40 | ELS 184H | 33 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 184H
+   10 | GF/GFS-YD48 | 36 | 43 | 40 | 48 | Y4105D | 45 | ELS 184H | 33 | RUIFEN6120
+        ⇒ other: null → ELS 184H
+   10 | GF/GFS-YD48 | 36 | 43 | 40 | 48 | Y4105D | 45 | ELS 184H | 33 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 184H
+   11 | GF/GFS-YD50 | 38 | 46 | 42 | 50 | Y4102ZD | 48 | ELS 184J | 35.2 | RUIFEN6120
+        ⇒ other: null → ELS 184J
+   11 | GF/GFS-YD50 | 38 | 46 | 42 | 50 | Y4102ZD | 48 | ELS 184J | 35.2 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 184J
+   12 | GF/GFS-YD55 | 42 | 50 | 46 | 55 | Y4102ZLD | 53 | ELS 224D | 44 | RUIFEN6120
+        ⇒ other: null → ELS 224D
+   12 | GF/GFS-YD55 | 42 | 50 | 46 | 55 | Y4102ZLD | 53 | ELS 224D | 44 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 224D
+   13 | GF/GFS-YD64 | 48 | 58 | 53 | 64 | Y4105ZLD | 60 | ELS 224E | 52.8 | RUIFEN6120
+        ⇒ other: null → ELS 224E
+   13 | GF/GFS-YD64 | 48 | 58 | 53 | 64 | Y4105ZLD | 60 | ELS 224E | 52.8 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 224E
+   14 | GF/GFS-YD71 | 54 | 65 | 59 | 71 | YD4EZLD | 68 | ELS 224E | 52.8 | RUIFEN6120
+        ⇒ other: null → ELS 224E
+   14 | GF/GFS-YD71 | 54 | 65 | 59 | 71 | YD4EZLD | 68 | ELS 224E | 52.8 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 224E
+
+[eastern-lion-fuan n152 bảng 57] ×40
+  H: | | Model | Prime power (kW) | Prime power (kVA) | Standby power (kW) | Standby power (kVA) | Engine model | Engine power (kW) | Alternator model | Alternator power (kW) | Controller
+    0 | GF/GFS-YX33 | 24 | 30 | 27 | 33 | K4100D | 36.1 | ELS 184F | 24.2 | RUIFEN6120
+        ⇒ other: null → ELS 184F
+    0 | GF/GFS-YX33 | 24 | 30 | 27 | 33 | K4100D | 36.1 | ELS 184F | 24.2 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 184F
+    1 | GF/GFS-YX39 | 28 | 35 | 31 | 39 | K4100D | 36.1 | ELS 184G | 27.5 | RUIFEN6120
+        ⇒ other: null → ELS 184G
+    1 | GF/GFS-YX39 | 28 | 35 | 31 | 39 | K4100D | 36.1 | ELS 184G | 27.5 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 184G
+    2 | GF/GFS-YX49 | 35 | 44 | 39 | 49 | K4100ZD | 48.0 | ELS 184J | 35.2 | RUIFEN6120
+        ⇒ other: null → ELS 184J
+    2 | GF/GFS-YX49 | 35 | 44 | 39 | 49 | K4100ZD | 48.0 | ELS 184J | 35.2 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 184J
+    3 | GF/GFS-YX46 | 33 | 41 | 37 | 46 | K4102D | 43.2 | ELS 184H | 33 | RUIFEN6120
+        ⇒ other: null → ELS 184H
+    3 | GF/GFS-YX46 | 33 | 41 | 37 | 46 | K4102D | 43.2 | ELS 184H | 33 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 184H
+    4 | GF/GFS-YX51 | 37 | 46 | 41 | 51 | K4102ZD | 50.4 | ELS 224C | 37.4 | RUIFEN6120
+        ⇒ other: null → ELS 224C
+    4 | GF/GFS-YX51 | 37 | 46 | 41 | 51 | K4102ZD | 50.4 | ELS 224C | 37.4 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 224C
+    5 | GF/GFS-YX61 | 44 | 55 | 49 | 61 | ZH4105ZD | 60.0 | ELS 224D | 44 | RUIFEN6120
+        ⇒ other: null → ELS 224D
+    5 | GF/GFS-YX61 | 44 | 55 | 49 | 61 | ZH4105ZD | 60.0 | ELS 224D | 44 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 224D
+    6 | GF/GFS-YX73 | 53 | 66 | 59 | 73 | ZH4105ZLD | 67.2 | ELS 224E | 52.8 | RUIFEN6120
+        ⇒ other: null → ELS 224E
+    6 | GF/GFS-YX73 | 53 | 66 | 59 | 73 | ZH4105ZLD | 67.2 | ELS 224E | 52.8 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 224E
+    7 | GF/GFS-YX73 | 53 | 66 | 59 | 73 | R4105ZD | 67.2 | ELS 224E | 52.8 | RUIFEN6120
+        ⇒ other: null → ELS 224E
+    7 | GF/GFS-YX73 | 53 | 66 | 59 | 73 | R4105ZD | 67.2 | ELS 224E | 52.8 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 224E
+    8 | GF/GFS-YX89 | 64 | 80 | 71 | 89 | R4105ZLD | 79.2 | ELS 224F | 63.8 | RUIFEN6120
+        ⇒ other: null → ELS 224F
+    8 | GF/GFS-YX89 | 64 | 80 | 71 | 89 | R4105ZLD | 79.2 | ELS 224F | 63.8 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 224F
+    9 | GF/GFS-YX89 | 64 | 80 | 71 | 89 | R4105AZLD | 79.2 | ELS 224F | 63.8 | RUIFEN6120
+        ⇒ other: null → ELS 224F
+    9 | GF/GFS-YX89 | 64 | 80 | 71 | 89 | R4105AZLD | 79.2 | ELS 224F | 63.8 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 224F
+   10 | GF/GFS-YX104 | 75 | 94 | 83 | 104 | R4108IZLD | 100.8 | ELS 224G | 74.8 | RUIFEN6120
+        ⇒ other: null → ELS 224G
+   10 | GF/GFS-YX104 | 75 | 94 | 83 | 104 | R4108IZLD | 100.8 | ELS 224G | 74.8 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 224G
+   11 | GF/GFS-YX104 | 75 | 94 | 83 | 104 | R6105AZD | 92.4 | ELS 224G | 74.8 | RUIFEN6120
+        ⇒ other: null → ELS 224G
+   11 | GF/GFS-YX104 | 75 | 94 | 83 | 104 | R6105AZD | 92.4 | ELS 224G | 74.8 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 224G
+   12 | GF/GFS-YX148 | 106 | 133 | 118 | 148 | R6105AZLD | 133.1 | ELS 274D | 105.6 | RUIFEN6120
+        ⇒ other: null → ELS 274D
+   12 | GF/GFS-YX148 | 106 | 133 | 118 | 148 | R6105AZLD | 133.1 | ELS 274D | 105.6 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 274D
+   13 | GF/GFS-YX161 | 116 | 145 | 129 | 161 | R6105IZLD | 145.2 | ELS 274E | 123.2 | RUIFEN6120
+        ⇒ other: null → ELS 274E
+   13 | GF/GFS-YX161 | 116 | 145 | 129 | 161 | R6105IZLD | 145.2 | ELS 274E | 123.2 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 274E
+   15 | GF/GFS-YX194 | 140 | 175 | 156 | 194 | R6108IZLD | 176.0 | ELS 274F | 140.8 | RUIFEN6120
+        ⇒ other: null → ELS 274F
+   15 | GF/GFS-YX194 | 140 | 175 | 156 | 194 | R6108IZLD | 176.0 | ELS 274F | 140.8 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 274F
+   16 | GF/GFS-YX194 | 140 | 175 | 156 | 194 | R6108ZLD | 187.0 | ELS 274F | 140.8 | RUIFEN6120
+        ⇒ other: null → ELS 274F
+   16 | GF/GFS-YX194 | 140 | 175 | 156 | 194 | R6108ZLD | 187.0 | ELS 274F | 140.8 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 274F
+   17 | GF/GFS-YX244 | 176 | 220 | 196 | 244 | R9768D | 236.5 | ELS 274H | 176 | RUIFEN6120
+        ⇒ other: null → ELS 274H
+   17 | GF/GFS-YX244 | 176 | 220 | 196 | 244 | R9768D | 236.5 | ELS 274H | 176 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 274H
+   18 | GF/GFS-YX278 | 200 | 250 | 222 | 278 | R9768D-1 | 269.5 | ELS 274J | 202.4 | RUIFEN6120
+        ⇒ other: null → ELS 274J
+   18 | GF/GFS-YX278 | 200 | 250 | 222 | 278 | R9768D-1 | 269.5 | ELS 274J | 202.4 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 274J
+   19 | GF/GFS-YX361 | 260 | 325 | 289 | 361 | R11D | 338.8 | ELS 314D | 259.6 | RUIFEN6120
+        ⇒ other: null → ELS 314D
+   19 | GF/GFS-YX361 | 260 | 325 | 289 | 361 | R11D | 338.8 | ELS 314D | 259.6 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 314D
+   20 | GF/GFS-YX464 | 334 | 418 | 371 | 464 | R11D-1 | 445.5 | ELS 314F | 334.4 | RUIFEN6120
+        ⇒ other: null → ELS 314F
+   20 | GF/GFS-YX464 | 334 | 418 | 371 | 464 | R11D-1 | 445.5 | ELS 314F | 334.4 | RUIFEN6120
+        ⇒ THÊM bản ghi alternator ELS 314F
+
+[eastern-lion-fuan n156 bảng 60] ×98
+  H: | | Model | 50Hz Output (kW) | 50Hz Output (kVA) | 60Hz Output (kW) | 60Hz Output (kVA) | SAE Size | Core Length (mm)
+    0 | EL 164A | 6.5 | 8.1 | 7.8 | 9.7 | 4#7.5 | 65
+        ⇒ THÊM bản ghi alternator EL 164A
+    0 | EL 164A | 6.5 | 8.1 | 7.8 | 9.7 | 4#7.5 | 65
+        ⇒ THÊM bản ghi alternator EL 164A
+    1 | EL 164B | 8.8 | 11 | 10.6 | 13.2 | 80 |
+        ⇒ THÊM bản ghi alternator EL 164B
+    1 | EL 164B | 8.8 | 11 | 10.6 | 13.2 | 80 |
+        ⇒ THÊM bản ghi alternator EL 164B
+    2 | El 164C | 10.8 | 13.5 | 13 | 16.2 | 100 |
+        ⇒ THÊM bản ghi alternator El 164C
+    2 | El 164C | 10.8 | 13.5 | 13 | 16.2 | 100 |
+        ⇒ THÊM bản ghi alternator El 164C
+    3 | EL 164D | 12.8 | 16 | 15.4 | 19.2 | 115 |
+        ⇒ THÊM bản ghi alternator EL 164D
+    3 | EL 164D | 12.8 | 16 | 15.4 | 19.2 | 115 |
+        ⇒ THÊM bản ghi alternator EL 164D
+    4 | EL 184E | 18 | 22.5 | 21.6 | 27 | 3#11.5 | 150
+        ⇒ THÊM bản ghi alternator EL 184E
+    4 | EL 184E | 18 | 22.5 | 21.6 | 27 | 3#11.5 | 150
+        ⇒ THÊM bản ghi alternator EL 184E
+    5 | EL 184F | 22 | 27.5 | 26.4 | 33 | 190 |
+        ⇒ THÊM bản ghi alternator EL 184F
+    5 | EL 184F | 22 | 27.5 | 26.4 | 33 | 190 |
+        ⇒ THÊM bản ghi alternator EL 184F
+    6 | EL 184G | 25 | 31.3 | 30 | 37.6 | 230 |
+        ⇒ THÊM bản ghi alternator EL 184G
+    6 | EL 184G | 25 | 31.3 | 30 | 37.6 | 230 |
+        ⇒ THÊM bản ghi alternator EL 184G
+    7 | EL 184H | 30 | 37.5 | 36 | 45 | 255 |
+        ⇒ THÊM bản ghi alternator EL 184H
+    7 | EL 184H | 30 | 37.5 | 36 | 45 | 255 |
+        ⇒ THÊM bản ghi alternator EL 184H
+    8 | EL 184J | 32 | 40 | 38.4 | 48 | 285 |
+        ⇒ THÊM bản ghi alternator EL 184J
+    8 | EL 184J | 32 | 40 | 38.4 | 48 | 285 |
+        ⇒ THÊM bản ghi alternator EL 184J
+    9 | EL 224C | 34 | 42.5 | 40.8 | 51 | 3#11.5 | 115
+        ⇒ THÊM bản ghi alternator EL 224C
+    9 | EL 224C | 34 | 42.5 | 40.8 | 51 | 3#11.5 | 115
+        ⇒ THÊM bản ghi alternator EL 224C
+   10 | EL 224D | 40 | 50 | 48 | 60 | 140 |
+        ⇒ THÊM bản ghi alternator EL 224D
+   10 | EL 224D | 40 | 50 | 48 | 60 | 140 |
+        ⇒ THÊM bản ghi alternator EL 224D
+   11 | EL 224E | 48 | 60 | 57.6 | 72 | 160 |
+        ⇒ THÊM bản ghi alternator EL 224E
+   11 | EL 224E | 48 | 60 | 57.6 | 72 | 160 |
+        ⇒ THÊM bản ghi alternator EL 224E
+   12 | EL 224F | 58 | 72.5 | 69.6 | 87 | 215 |
+        ⇒ THÊM bản ghi alternator EL 224F
+   12 | EL 224F | 58 | 72.5 | 69.6 | 87 | 215 |
+        ⇒ THÊM bản ghi alternator EL 224F
+   13 | EL 224GS | 64 | 80 | 76.8 | 96 | 275 |
+        ⇒ THÊM bản ghi alternator EL 224GS
+   13 | EL 224GS | 64 | 80 | 76.8 | 96 | 275 |
+        ⇒ THÊM bản ghi alternator EL 224GS
+   14 | EL 224G | 68 | 85 | 81.6 | 102 | 265 |
+        ⇒ THÊM bản ghi alternator EL 224G
+   14 | EL 224G | 68 | 85 | 81.6 | 102 | 265 |
+        ⇒ THÊM bản ghi alternator EL 224G
+   15 | EL 274C | 80 | 100 | 96 | 120 | 2#11.5 | 145
+        ⇒ THÊM bản ghi alternator EL 274C
+   15 | EL 274C | 80 | 100 | 96 | 120 | 2#11.5 | 145
+        ⇒ THÊM bản ghi alternator EL 274C
+   16 | EL 274D | 96 | 120 | 115.2 | 144 | 185 |
+        ⇒ THÊM bản ghi alternator EL 274D
+   16 | EL 274D | 96 | 120 | 115.2 | 144 | 185 |
+        ⇒ THÊM bản ghi alternator EL 274D
+   17 | EL 274E | 112 | 140 | 134.4 | 168 | 205 |
+        ⇒ THÊM bản ghi alternator EL 274E
+   17 | EL 274E | 112 | 140 | 134.4 | 168 | 205 |
+        ⇒ THÊM bản ghi alternator EL 274E
+   18 | EL 274F | 128 | 160 | 153.6 | 192 | 255 |
+        ⇒ THÊM bản ghi alternator EL 274F
+   18 | EL 274F | 128 | 160 | 153.6 | 192 | 255 |
+        ⇒ THÊM bản ghi alternator EL 274F
+   19 | EL 274G | 145.6 | 182 | 174.7 | 218.4 | 1#14 | 295
+        ⇒ THÊM bản ghi alternator EL 274G
+   19 | EL 274G | 145.6 | 182 | 174.7 | 218.4 | 1#14 | 295
+        ⇒ THÊM bản ghi alternator EL 274G
+   20 | EL 274H | 160 | 200 | 192 | 240 | 340 |
+        ⇒ THÊM bản ghi alternator EL 274H
+   20 | EL 274H | 160 | 200 | 192 | 240 | 340 |
+        ⇒ THÊM bản ghi alternator EL 274H
+   21 | EL 274J | 184 | 230 | 220.8 | 276 | 370 |
+        ⇒ THÊM bản ghi alternator EL 274J
+   21 | EL 274J | 184 | 230 | 220.8 | 276 | 370 |
+        ⇒ THÊM bản ghi alternator EL 274J
+   22 | EL 274K | 200 | 250 | 240 | 300 | 400 |
+        ⇒ THÊM bản ghi alternator EL 274K
+   22 | EL 274K | 200 | 250 | 240 | 300 | 400 |
+        ⇒ THÊM bản ghi alternator EL 274K
+   23 | EL 314C | 200 | 250 | 240 | 300 | | 240
+        ⇒ THÊM bản ghi alternator EL 314C
+   23 | EL 314C | 200 | 250 | 240 | 300 | | 240
+        ⇒ THÊM bản ghi alternator EL 314C
+   24 | EL 314D | 236 | 295 | 283.2 | 354 | | 300
+        ⇒ THÊM bản ghi alternator EL 314D
+   24 | EL 314D | 236 | 295 | 283.2 | 354 | | 300
+        ⇒ THÊM bản ghi alternator EL 314D
+   25 | EL 314E | 260 | 325 | 312 | 390 | | 330
+        ⇒ THÊM bản ghi alternator EL 314E
+   25 | EL 314E | 260 | 325 | 312 | 390 | | 330
+        ⇒ THÊM bản ghi alternator EL 314E
+   26 | EL 314FS | 280 | 350 | 336 | 420 | | 375
+        ⇒ THÊM bản ghi alternator EL 314FS
+   26 | EL 314FS | 280 | 350 | 336 | 420 | | 375
+        ⇒ THÊM bản ghi alternator EL 314FS
+   27 | EL 314F | 304 | 380 | 364.8 | 456 | | 400
+        ⇒ THÊM bản ghi alternator EL 314F
+   27 | EL 314F | 304 | 380 | 364.8 | 456 | | 400
+        ⇒ THÊM bản ghi alternator EL 314F
+   28 | EL 314G | 320 | 400 | 384 | 480 | | 450
+        ⇒ THÊM bản ghi alternator EL 314G
+   28 | EL 314G | 320 | 400 | 384 | 480 | | 450
+        ⇒ THÊM bản ghi alternator EL 314G
+   29 | EL 354C | 360 | 450 | 432 | 540 | | 310
+        ⇒ THÊM bản ghi alternator EL 354C
+   29 | EL 354C | 360 | 450 | 432 | 540 | | 310
+        ⇒ THÊM bản ghi alternator EL 354C
+   30 | EL 354D | 400 | 500 | 480 | 600 | | 345
+        ⇒ THÊM bản ghi alternator EL 354D
+   30 | EL 354D | 400 | 500 | 480 | 600 | | 345
+        ⇒ THÊM bản ghi alternator EL 354D
+   31 | EL 354ES | 440 | 550 | 528 | 660 | | 385
+        ⇒ THÊM bản ghi alternator EL 354ES
+   31 | EL 354ES | 440 | 550 | 528 | 660 | | 385
+        ⇒ THÊM bản ghi alternator EL 354ES
+   32 | EL 354E | 480 | 600 | 576 | 720 | | 440
+        ⇒ THÊM bản ghi alternator EL 354E
+   32 | EL 354E | 480 | 600 | 576 | 720 | | 440
+        ⇒ THÊM bản ghi alternator EL 354E
+   33 | EL 354FS | 500 | 625 | 600 | 750 | | 440
+        ⇒ THÊM bản ghi alternator EL 354FS
+   33 | EL 354FS | 500 | 625 | 600 | 750 | | 440
+        ⇒ THÊM bản ghi alternator EL 354FS
+   34 | EL 354F | 536 | 670 | 643.2 | 804 | | 575
+        ⇒ THÊM bản ghi alternator EL 354F
+   34 | EL 354F | 536 | 670 | 643.2 | 804 | | 575
+        ⇒ THÊM bản ghi alternator EL 354F
+   35 | EL 354G | 550 | 687.5 | 660 | 825 | | 515
+        ⇒ THÊM bản ghi alternator EL 354G
+   35 | EL 354G | 550 | 687.5 | 660 | 825 | | 515
+        ⇒ THÊM bản ghi alternator EL 354G
+   36 | EL 354H | 600 | 750 | 720 | 900 | | 530
+        ⇒ THÊM bản ghi alternator EL 354H
+   36 | EL 354H | 600 | 750 | 720 | 900 | | 530
+        ⇒ THÊM bản ghi alternator EL 354H
+   37 | EL 404B | 600 | 750 | 720 | 900 | | 300
+        ⇒ THÊM bản ghi alternator EL 404B
+   37 | EL 404B | 600 | 750 | 720 | 900 | | 300
+        ⇒ THÊM bản ghi alternator EL 404B
+   38 | EL 404C | 640 | 800 | 768 | 960 | | 335
+        ⇒ THÊM bản ghi alternator EL 404C
+   38 | EL 404C | 640 | 800 | 768 | 960 | | 335
+        ⇒ THÊM bản ghi alternator EL 404C
+   39 | EL 404D | 728 | 910 | 873.6 | 1092 | | 365
+        ⇒ THÊM bản ghi alternator EL 404D
+   39 | EL 404D | 728 | 910 | 873.6 | 1092 | | 365
+        ⇒ THÊM bản ghi alternator EL 404D
+   40 | EL 404E | 800 | 1000 | 960 | 1200 | | 400
+        ⇒ THÊM bản ghi alternator EL 404E
+   40 | EL 404E | 800 | 1000 | 960 | 1200 | | 400
+        ⇒ THÊM bản ghi alternator EL 404E
+   41 | EL 404F | 904 | 1130 | 1084.8 | 1356 | | 480
+        ⇒ THÊM bản ghi alternator EL 404F
+   41 | EL 404F | 904 | 1130 | 1084.8 | 1356 | | 480
+        ⇒ THÊM bản ghi alternator EL 404F
+   42 | EL 404G | 1000 | 1250 | 1200 | 1500 | | 600
+        ⇒ THÊM bản ghi alternator EL 404G
+   42 | EL 404G | 1000 | 1250 | 1200 | 1500 | | 600
+        ⇒ THÊM bản ghi alternator EL 404G
+   43 | EL 404H | 1120 | 1400 | 1344 | 1680 | | 680
+        ⇒ THÊM bản ghi alternator EL 404H
+   43 | EL 404H | 1120 | 1400 | 1344 | 1680 | | 680
+        ⇒ THÊM bản ghi alternator EL 404H
+   44 | EL 404I | 1240 | 1550 | 1488 | 1860 | | 800
+        ⇒ THÊM bản ghi alternator EL 404I
+   44 | EL 404I | 1240 | 1550 | 1488 | 1860 | | 800
+        ⇒ THÊM bản ghi alternator EL 404I
+   45 | EL 504D | 1320 | 1650 | 1584 | 1980 | |
+        ⇒ THÊM bản ghi alternator EL 504D
+   45 | EL 504D | 1320 | 1650 | 1584 | 1980 | |
+        ⇒ THÊM bản ghi alternator EL 504D
+   46 | EL 504E | 1520 | 1900 | 1824 | 2280 | |
+        ⇒ THÊM bản ghi alternator EL 504E
+   46 | EL 504E | 1520 | 1900 | 1824 | 2280 | |
+        ⇒ THÊM bản ghi alternator EL 504E
+   47 | EL 504F | 1664 | 2080 | 1996.8 | 2496 | |
+        ⇒ THÊM bản ghi alternator EL 504F
+   47 | EL 504F | 1664 | 2080 | 1996.8 | 2496 | |
+        ⇒ THÊM bản ghi alternator EL 504F
+   48 | EL 504G | 1760 | 2200 | 2112 | 2640 | |
+        ⇒ THÊM bản ghi alternator EL 504G
+   48 | EL 504G | 1760 | 2200 | 2112 | 2640 | |
+        ⇒ THÊM bản ghi alternator EL 504G
+
+==== tự kiểm số (verSpec) ====
+(!) [eastern-lion-fuan n116 bảng 21 controller] dòng 0: ∅ → RUIFEN6120 (nhãn "Controller") | {"prime":{"kW":10,"kVA":13},"standby":{"kW":11,"kVA":14}} | | GF/GFS-KF10 | 10 | 13 | 11 | 14 | K4100DS | 30.1 | EL 164C | 10.8KW | RUIFEN6120 | Detail
+(!) [eastern-lion-fuan n116 bảng 21 controller] dòng 1: ∅ → RUIFEN6120 (nhãn "Controller") | {"prime":{"kW":12,"kVA":15},"standby":{"kW":13,"kVA":17}} | | GF/GFS-KF12 | 12 | 15 | 13 | 17 | K4100DS | 30.1 | EL 164D | 12.8KW | RUIFEN6120 | Detail
+(!) [eastern-lion-fuan n126 bảng 32 engPower] dòng 14: 48 → 56 (nhãn "Engine power (kW)") | {"prime":{"kW":48,"kVA":60},"standby":{"kW":53,"kVA":67}} | | GF/GFS-HC67 | 48 | 60 | 53 | 67 | 4105ZD(小泵） | 56 | EL 224E | 48 | RUIFEN6120
+(!) [eastern-lion-fuan n126 bảng 32 controller] dòng 14: ∅ → RUIFEN6120 (nhãn "Controller") | {"prime":{"kW":48,"kVA":60},"standby":{"kW":53,"kVA":67}} | | GF/GFS-HC67 | 48 | 60 | 53 | 67 | 4105ZD(小泵） | 56 | EL 224E | 48 | RUIFEN6120
+(!) [eastern-lion-fuan n149 bảng 54 engPower] dòng 14: 160 → 215 (nhãn "Engine power (kW)") | {"prime":{"kW":160,"kVA":200},"standby":{"kW":178,"kVA":222}} | | GFS-W222 | 160 | 200 | 178 | 222 | 6126ZLD新 | 215 | EL 274H | 160 | RUIFEN6120
+(!) [eastern-lion-fuan n149 bảng 54 controller] dòng 14: ∅ → RUIFEN6120 (nhãn "Controller") | {"prime":{"kW":160,"kVA":200},"standby":{"kW":178,"kVA":222}} | | GFS-W222 | 160 | 200 | 178 | 222 | 6126ZLD新 | 215 | EL 274H | 160 | RUIFEN6120
+(!) [eastern-lion-fuan n149 bảng 54 engPower] dòng 15: 184 → 215 (nhãn "Engine power (kW)") | {"prime":{"kW":180,"kVA":225},"standby":{"kW":200,"kVA":250}} | | GFS-W250 | 180 | 225 | 200 | 250 | 6126ZLD新 | 215 | EL 274J | 184 | RUIFEN6120
+(!) [eastern-lion-fuan n149 bảng 54 controller] dòng 15: ∅ → RUIFEN6120 (nhãn "Controller") | {"prime":{"kW":180,"kVA":225},"standby":{"kW":200,"kVA":250}} | | GFS-W250 | 180 | 225 | 200 | 250 | 6126ZLD新 | 215 | EL 274J | 184 | RUIFEN6120
+(!) [eastern-lion-fuan n149 bảng 54 engPower] dòng 16: 200 → 260 (nhãn "Engine power (kW)") | {"prime":{"kW":200,"kVA":250},"standby":{"kW":222,"kVA":278}} | | GFS-W278 | 200 | 250 | 222 | 278 | 6126ZLD-1新 | 260 | EL 274K | 200 | RUIFEN6120
+(!) [eastern-lion-fuan n149 bảng 54 controller] dòng 16: ∅ → RUIFEN6120 (nhãn "Controller") | {"prime":{"kW":200,"kVA":250},"standby":{"kW":222,"kVA":278}} | | GFS-W278 | 200 | 250 | 222 | 278 | 6126ZLD-1新 | 260 | EL 274K | 200 | RUIFEN6120
+
+6  controller thêm: mới không kiểm được
+4  engPower đổi: mới tự xác nhận, cũ cũng hợp lệ
+
+cần soát tay: 10
+
+==== tổ máy (gensetsOf) ====
+bản ghi cũ 1700, mới 1700 | khác 0 | chỉ cũ 0, chỉ mới 0 | bảng có đổi 0
+{}
