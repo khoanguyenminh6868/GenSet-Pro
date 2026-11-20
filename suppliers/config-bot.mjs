@@ -959,12 +959,22 @@ export function fuelOfHsmt(text) {
 // A catalog use (`u.fuel` "gas" / "gasoline" / "dual", written only when the page says it) against the fuel the HSMT asks:
 // true when it is the wrong one; a use with no fuel is never wrong (empty is not diesel).
 export const fuelOff = (want, useFuel) => !!want && !!useFuel && !(want === "gas" ? useFuel === "gas" || useFuel === "dual" : want === "gasoline" ? useFuel === "gasoline" || useFuel === "dual" : false);
+// The frequency the HSMT binds the set to: 50 or 60 when only that one is written, null when none or both (no constraint).
+// Both include the pairs written with one "Hz" ("50 & 60hz", "50/60Hz", "50 / 60Hz", "50-60Hz", "50 hoặc 60 Hz", "50Hz-60"):
+// `\b50\s?hz\b` alone read "50 & 60hz" as 60 Hz and the rows of an engine written only at 50 Hz were ruled out (2 rows with a
+// frequency are enough, `ruled: freq`; Khoa 20/11/2026, IB2400073761 "Tần số: 50 & 60hz"). A pair needs a "Hz" on one side and
+// no unit / second figure after the second number ("380V-50Hz-60/66 kVA" is 60 kVA, not 60 Hz).
+const FREQ_PAIR = /(?<![\d.,])(?:50|60)\s*(?:hz|hertz)?\s*(?:\/|&|-|–|—|÷|,|;|~|hoặc|hay|và|or|and|đến|to)\s*(?:50|60)(?![\d])(?!\s*(?:\/\s*\d|kva|kw|kvar|va\b|a\b|v\b|%))\s*(?:hz|hertz)?/gi;
+export function freqOfHsmt(t) {
+  let f50 = /\b50\s?hz\b/i.test(t), f60 = /\b60\s?hz\b/i.test(t);
+  for (const m of String(t).matchAll(FREQ_PAIR)) if (/hz|hertz/i.test(m[0])) f50 = f60 = true;
+  return f50 && !f60 ? 50 : f60 && !f50 ? 60 : null;
+}
 export function hintsOf(text, extra = "", sizing = null) {
   const t = `${technicalPart(text)}\n${String(extra ?? "").normalize("NFC")}`;
   const names = (list) => list.filter(([re]) => re.test(t)).map(([, n]) => n);
   const ctrl = CAT.CONTROLLERS.filter((c) => c.word.test(t)).map((c) => c.brand);
   for (const c of CAT.controllersIn(t)) if (!ctrl.includes(c.brand)) ctrl.push(c.brand);
-  const f50 = /\b50\s?hz\b/i.test(t), f60 = /\b60\s?hz\b/i.test(t);
   const sized = sizing?.sizes?.length > 1 ? minsForSize(technicalPart(text), sizing.size, sizing.sizes, extra) : null;
   // Đặc thù hãng động cơ (Khoa 18/11/2026, engine-traits.mjs): a term of one engine make in the HSMT's engine requirements
   // (E-TVCS → Kubota) → only that make (rule 1, candidates / check / rankConfigs); written with "hoặc tương đương" → that
@@ -974,7 +984,7 @@ export function hintsOf(text, extra = "", sizing = null) {
   const engineMakes = names(CAT.ENGINE_BRANDS);
   for (const m of [trait.engineMake, ...trait.unused.filter((u) => u.equivalent && u.at === "engine").map((u) => u.makeName)]) if (m && !engineMakes.includes(m)) engineMakes.push(m);
   return { engineMakes, trait, altMakes: names(CAT.ALT_BRANDS), ctrlMakes: ctrl, ctrlModels: CAT.controllersIn(t).filter((c) => c.model).map((c) => CAT.keyOf(c.model)),
-    freq: f50 && !f60 ? 50 : f60 && !f50 ? 60 : null, cylLayout: cylLayoutOf(t), fuel: fuelOfHsmt(technicalPart(text)).fuel, madeRule: partOriginOfHsmt(text), text: squashOf(t), ...engineMins(t), ...comprOf(t), ...(sized ? sized.mins : {}), ...(sized?.note ? { sizeNote: sized.note } : {}) };
+    freq: freqOfHsmt(t), cylLayout: cylLayoutOf(t), fuel: fuelOfHsmt(technicalPart(text)).fuel, madeRule: partOriginOfHsmt(text), text: squashOf(t), ...engineMins(t), ...comprOf(t), ...(sized ? sized.mins : {}), ...(sized?.note ? { sizeNote: sized.note } : {}) };
 }
 // The engine minimums the HSMT states ("Dung tích xy lanh ≥ 11,05 L", "Tối thiểu 06 xi lanh"), one value each: a tender
 // of several gensets that gives two values is left alone. candidates() ranks an engine a source shows below them lower
