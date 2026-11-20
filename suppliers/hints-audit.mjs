@@ -1,7 +1,7 @@
 // Soát ngưỡng HSMT do code đọc (Khoa, 2026-11-17, sau IB2600603983: 113 L/h của dòng 70% tải bị đọc thành mức 100% tải).
 // hintsOf() của config-bot.mjs tìm nhãn quanh con số trong chữ HSMT; bảng PDF xuống dòng lạ thì gán nhầm và dòng ứng
 // viên bị loại im lặng. Công cụ này so từng ngưỡng code đọc (tiêu hao 100 / 75 / 50% tải, công suất liên tục, số xi
-// lanh) với đúng ngưỡng đó trong Phân tích của gói (analysis.technicalSpecs, generatorSets: do agent đọc cả văn bản)
+// lanh, tỉ số nén và việc ghi trơ / có dấu) với đúng ngưỡng đó trong Phân tích của gói (analysis.technicalSpecs, generatorSets: do agent đọc cả văn bản)
 // và in gói nào lệch. Không gọi agent, không ghi gì lên web.
 //
 //   node suppliers/hints-audit.mjs --texts <thư mục>      mỗi gói một thư mục con <TBMT>\text.txt (genbid-work\specs)
@@ -47,6 +47,19 @@ export function analysisCyl(specs = []) {
   return [...out].filter((n) => n >= 1 && n <= 24);
 }
 const same = (a, b) => Math.abs(a - b) <= Math.max(Math.abs(a), Math.abs(b)) * 0.005;
+// Tỉ số nén Phân tích ghi: { x, sign } của mỗi dòng (sign: ≥ / ≤ / "" trơ). Khoa 20/11/2026: HSMT ghi trơ là số chính xác.
+export function analysisCompr(specs = []) {
+  const out = [];
+  for (const s of specs) {
+    const LBL = /t[ỉỷiy]\s*s[ốo]\s*n[ée]n|compression\s*ratio/i, item = String(s.item || ""), req = String(s.requirement || "").replace(/(\d),(\d)/g, "$1.$2");
+    // The figure right after the label in the requirement, else (the label is the item) at the start of the requirement.
+    const at = req.match(LBL), tail = at ? req.slice(at.index + at[0].length) : LBL.test(item) ? req : null;
+    if (tail == null) continue;
+    const m = tail.match(/^[\s:|\-(]*(?:l[àa]\s+)?(≥|>=|>|≤|<=|<|t[ốo]i\s*thi[ểe]u|t[ốo]i\s*đa)?\s*\(?\s*(\d{1,2}(?:\.\d{1,2})?)\s*(?::\s*0?1)?(?![\d.])/i);
+    if (m && Number(m[2]) >= 5 && Number(m[2]) <= 30) out.push({ x: Number(m[2]), sign: m[1] ? (/≥|>|thi/i.test(m[1]) ? "min" : "max") : "" });
+  }
+  return out;
+}
 
 // hints: của hintsOf(); result: analysis.result. Trả [{ field, level, code, analysis, why }].
 export function auditHints(hints = {}, result = {}) {
@@ -75,6 +88,11 @@ export function auditHints(hints = {}, result = {}) {
   const cyl = analysisCyl(specs);
   if (hints.minCyl != null && cyl.length && !cyl.includes(hints.minCyl)) out.push({ field: "minCyl", level: "lech", code: hints.minCyl, analysis: cyl, why: `Phân tích ghi ${cyl.join(" / ")} xi lanh` });
   else if (hints.minCyl == null && cyl.length === 1) out.push({ field: "minCyl", level: "thieu", code: null, analysis: cyl, why: `Phân tích ghi ${cyl[0]} xi lanh, code không đọc ra` });
+  // Tỉ số nén: số khác, hoặc code đọc "trơ" (comprExact, sẽ chấm không đạt cấu hình ghi số khác) mà Phân tích ghi có dấu.
+  const cr = analysisCompr(specs);
+  if (hints.compr != null && cr.length && !cr.some((a) => same(a.x, hints.compr))) out.push({ field: "compr", level: "lech", code: hints.compr, analysis: cr, why: `Phân tích ghi tỉ số nén ${cr.map((a) => a.x).join(" / ")}` });
+  else if (hints.comprExact && cr.some((a) => a.sign)) out.push({ field: "comprExact", level: "lech", code: hints.compr, analysis: cr, why: "code đọc tỉ số nén ghi trơ, Phân tích ghi có dấu" });
+  else if (hints.compr == null && cr.length === 1) out.push({ field: "compr", level: "thieu", code: null, analysis: cr, why: `Phân tích ghi tỉ số nén ${cr[0].sign === "min" ? "≥ " : cr[0].sign === "max" ? "≤ " : ""}${cr[0].x}, code không đọc ra` });
   return out;
 }
 
