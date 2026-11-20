@@ -49,14 +49,15 @@ test("fixspec hết hiệu lực khi chữ dòng nguồn đổi (cào lại); s�
   assert.equal(hit.length, 1, "chỉ JL-350GF của n102 còn khớp");
 });
 
-test("mingbang n125: 7 dòng Volvo TAD13xx / TAD16xx / TWD1643GE bỏ xi lanh + dung tích, giữ bore; dòng 1–7 và V480 chưa đụng", () => {
+test("mingbang n125: 7 dòng Volvo TAD13xx / TAD16xx / TWD1643GE bỏ xi lanh + dung tích, giữ bore; dòng 1–7 chưa đụng; V480 do #957", () => {
   const e = eng("mingbang-mbkl", 125);
   for (const g of ["MB-V252", "MB-V280", "MB-V300", "MB-V320", "MB-V360", "MB-V400", "MB-V500"]) {
     const r = e.find((x) => x.genset === g);
     assert.equal(spec(r, "cyl"), undefined, g); assert.equal(spec(r, "disp"), undefined, g);
     assert.equal(spec(r, "bore") != null, true, g);
   }
-  for (const g of ["MB-V68", "MB-V120", "MB-V160", "MB-V480"]) assert.equal(spec(e.find((x) => x.genset === g), "cyl"), "4", g);
+  for (const g of ["MB-V68", "MB-V120", "MB-V160"]) assert.equal(spec(e.find((x) => x.genset === g), "cyl"), "4", g);
+  assert.equal(spec(e.find((x) => x.genset === "MB-V480"), "cyl"), undefined, "MB-V480 do PR #957");
 });
 
 test("cổng dung tích: 105.56 L của YC16VC (frs, tellhow, waeta, yunding) và 108 L của honny QTA20V vào; 108 trên tổ máy 250 kW (zhengchi MTAA11-G3) không vào", () => {
