@@ -1,0 +1,58 @@
+IB2600601812 #1 HY4A140Z-D25 | AMF9 | khác: alternatives,altLine 
+  gốc : - 
+  nhánh: Phương án khác đạt tương đương: InteliGen 1000 (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; truyền thông: code dò datasheet đạt 1/4, chưa rõ: Điều khiển từ xa qua cổng Internet/5G, Cổng kết nối với hệ thống kiểm soát từ xa, Cổng đọc dữ liệu trực tiếp từ động cơ); InteliGen 4 (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; truyền thông: code dò datasheet đạt 1/4, chưa rõ: Điều khiể
+IB2600601812 #2 YC4D140-D31 | HGM6120CAN | khác: alternatives,altLine 
+  gốc : - 
+  nhánh: Phương án khác đạt tương đương: HGM6110N (NCC fdk-energy chào; truyền thông: code dò datasheet đạt 1/4, chưa rõ: Điều khiển từ xa qua cổng Internet/5G, Cổng kết nối với hệ thống kiểm soát từ xa, Cổng đọc dữ liệu trực tiếp từ động cơ); HGM6110NC (NCC fdk-energy chào; truyền thông: code dò datasheet đạt 1/4, chưa rõ: Điều khiển từ xa qua cổng Internet/5G, Cổng kết nối với hệ thống kiểm soát từ xa, C
+IB2600601812 #3 4HTAA4.3-G34 | HGM6120CAN | khác: alternatives,altLine 
+  gốc : - 
+  nhánh: Phương án khác đạt tương đương: HGM6110N (NCC fdk-energy chào; truyền thông: code dò datasheet đạt 1/4, chưa rõ: Điều khiển từ xa qua cổng Internet/5G, Cổng kết nối với hệ thống kiểm soát từ xa, Cổng đọc dữ liệu trực tiếp từ động cơ); HGM6110NC (NCC fdk-energy chào; truyền thông: code dò datasheet đạt 1/4, chưa rõ: Điều khiển từ xa qua cổng Internet/5G, Cổng kết nối với hệ thống kiểm soát từ xa, C
+IB2600601812 #4 1104C-44TAG2 | AMF25 | khác: alternatives,altLine 
+  gốc : - 
+  nhánh: Phương án khác đạt tương đương: InteliLite 4 AMF20 (NCC tecgen-fujian chào; truyền thông: code dò datasheet đạt 1/4, chưa rõ: Điều khiển từ xa qua cổng Internet/5G, Cổng kết nối với hệ thống kiểm soát từ xa, Cổng đọc dữ liệu trực tiếp từ động cơ); InteliGen (NCC fdk-energy chào; truyền thông: code dò datasheet đạt 1/4, chưa rõ: Điều khiển từ xa qua cổng Internet/5G, Cổng kết nối với hệ thống kiểm 
+IB2600601812 #5 6BT5.9-G2 | DSE7320 | khác: alternatives,altLine 
+  gốc : Phương án khác đạt tương đương: DSE6120 MKIII (truyền thông: code dò datasheet đạt 1/4, chưa rõ: Điều khiển từ xa qua cổng Internet/5G, Cổng kết nối với hệ thống kiểm soát từ xa, Cổng đọc dữ liệu trực tiếp từ động cơ) 
+  nhánh: Phương án khác đạt tương đương: DSE6020 MKII (NCC uleengen chào; truyền thông: code dò datasheet đạt 1/4, chưa rõ: Điều khiển từ xa qua cổng Internet/5G, Cổng kết nối với hệ thống kiểm soát từ xa, Cổng đọc dữ liệu trực tiếp từ động cơ); DSE6120 MKIII (NCC uleengen chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 1/4, chưa rõ: Điều khiển từ xa qua cổng Inter
+IB2600601812 #6 TAD551GE | DSE7320 | khác: alternatives,altLine 
+  gốc : Phương án khác đạt tương đương: DSE6020 MKII (truyền thông: code dò datasheet đạt 1/4, chưa rõ: Điều khiển từ xa qua cổng Internet/5G, Cổng kết nối với hệ thống kiểm soát từ xa, Cổng đọc dữ liệu trực tiếp từ động cơ) 
+  nhánh: Phương án khác đạt tương đương: DSE6020 MKII (NCC jet-power chào; truyền thông: code dò datasheet đạt 1/4, chưa rõ: Điều khiển từ xa qua cổng Internet/5G, Cổng kết nối với hệ thống kiểm soát từ xa, Cổng đọc dữ liệu trực tiếp từ động cơ); DSE4520 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 1/4, chưa 
+IB2600603983 #1 6M31G825/5 | DSE7420 | khác: alternatives,altLine 
+  gốc : - 
+  nhánh: Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE8620 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: 
+IB2600603983 #2 S6R2-PTAA-C | DSE7320 | khác: alternatives,altLine 
+  gốc : - 
+  nhánh: Phương án khác đạt tương đương: DSE7420 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE8620 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: 
+IB2600603983 #3 12V2000G63 | DSE8610 | khác: alternatives,altLine 
+  gốc : - 
+  nhánh: Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (NCC rise-power chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE7420 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 6/7, chưa r
+IB2600603983 #4 QSK23-G2 | Deepsea 7320 | khác: alternatives,altLine 
+  gốc : - 
+  nhánh: Phương án khác đạt tương đương: DSE7420 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE8620 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: 
+IB2600603983 #5 4006-23TAG2A | DSE7420 | khác: alternatives,altLine 
+  gốc : Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE8610 MKII + DSE890 MKII (truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa) 
+  nhánh: Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (NCC uleengen chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE8620 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 6/7, chưa rõ:
+IB2600603983 #6 TWD1744GE | DSE7320 | khác: alternatives,altLine 
+  gốc : - 
+  nhánh: Phương án khác đạt tương đương: DSE7420 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE8620 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: 
+IB2600603983 #7 6M33G825/5 | DSE6120 | khác: alternatives,altLine 
+  gốc : - 
+  nhánh: Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE7420 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: 
+IB2600612866 #1 D1105 | AMF25 | khác: alternatives,altLine 
+  gốc : - 
+  nhánh: Phương án khác đạt tương đương: InteliGen 1000 (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; truyền thông: code dò datasheet đạt 2/3, chưa rõ: Phần mềm PC tải miễn phí từ website hãng); InteliGen 4 + CM2-4G-GPS (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; truyền thông: code dò datasheet đạt 2/3, chưa rõ: Phần mềm PC tải miễn phí từ website hãng)
+IB2600613475 #1 403A-15G2 | Deepsea 7320 | khác: alternatives,altLine 
+  gốc : - 
+  nhánh: Phương án khác đạt tương đương: DSE7420 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 2/2); DSE8620 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 2/2)
+IB2600613475 #2 4DW81-23D | DSE7320 | khác: alternatives,altLine 
+  gốc : Phương án khác đạt tương đương: DSE8610 MKII + DSE890 MKII (truyền thông: code dò datasheet đạt 2/2); DSE6120 MKIII + DSE890 MKII (truyền thông: code dò datasheet đạt 1/2, chưa rõ: Modbus RTU RS485) 
+  nhánh: Phương án khác đạt tương đương: DSE7420 MKII + DSE890 MKII (NCC uleengen chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 2/2); DSE8620 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 2/2)
+IB2600613475 #3 4TNV88-GGE | DSE7320 | khác: alternatives,altLine 
+  gốc : Phương án khác đạt tương đương: DSE8610 MKII + DSE890 MKII (truyền thông: code dò datasheet đạt 2/2); DSE6120 MKIII + DSE890 MKII (truyền thông: code dò datasheet đạt 1/2, chưa rõ: Modbus RTU RS485) 
+  nhánh: Phương án khác đạt tương đương: DSE7420 MKII + DSE890 MKII (NCC hosem-power chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 2/2); DSE8620 MKII + DSE890 MKII (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; tự động khi mất lưới (AMF) theo datasheet hãng; truyền thông: code dò datasheet đạt 2/2)
+IB2600613475 #4 4Z2.3-G21 | HGM6120N | khác: alternatives,altLine 
+  gốc : - 
+  nhánh: Phương án khác đạt tương đương: HGM9510 (NCC kaihua-genset chào; truyền thông: code dò datasheet đạt 2/2); HGM6120UC (NCC kaihua-genset chào; truyền thông: code dò datasheet đạt 1/2, chưa rõ: Tin nhắn SMS)
+IB2600613475 #5 YND485D | HGM6120N | khác: alternatives,altLine 
+  gốc : - 
+  nhánh: Phương án khác đạt tương đương: HGM9510 (Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào; truyền thông: code dò datasheet đạt 2/2); HGM6110N (NCC acepow-fuan chào; truyền thông: code dò datasheet đạt 1/2, chưa rõ: Tin nhắn SMS)
+lượt 17 cấu hình đổi 19 đổi bộ chính 0
