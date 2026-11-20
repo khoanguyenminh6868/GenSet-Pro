@@ -1,0 +1,156 @@
+TAP version 13
+# Subtest: prepDir: input.md chia phần, read-order.json, TASK.md có cách đọc (chạy lại không nhân đôi)
+ok 1 - prepDir: input.md chia phần, read-order.json, TASK.md có cách đọc (chạy lại không nhân đôi)
+  ---
+  duration_ms: 114.6429
+  ...
+# Subtest: prepDir: input.md ngắn → một tệp; không có input.md → []
+ok 2 - prepDir: input.md ngắn → một tệp; không có input.md → []
+  ---
+  duration_ms: 12.8146
+  ...
+# Subtest: guardDirs: hai thư mục một lượt — chỉ tính Read trong thư mục của gói
+ok 3 - guardDirs: hai thư mục một lượt — chỉ tính Read trong thư mục của gói
+  ---
+  duration_ms: 237.2429
+  ...
+# Subtest: guardDirs: đường dẫn kiểu Windows, khác hoa thường vẫn tính
+ok 4 - guardDirs: đường dẫn kiểu Windows, khác hoa thường vẫn tính
+  ---
+  duration_ms: 39.8087
+  ...
+# Subtest: guardDirs: không đọc gì / Read ở thư mục khác → đọc thiếu; lượt dừng nhưng đọc đủ → giữ kết quả, có ghi chú
+ok 5 - guardDirs: không đọc gì / Read ở thư mục khác → đọc thiếu; lượt dừng nhưng đọc đủ → giữ kết quả, có ghi chú
+  ---
+  duration_ms: 31.2425
+  ...
+# Subtest: guardDirs: thư mục không có read-order.json (lượt cũ) bị bỏ qua
+ok 6 - guardDirs: thư mục không có read-order.json (lượt cũ) bị bỏ qua
+  ---
+  duration_ms: 1.2411
+  ...
+# Subtest: guardDirs: đường dẫn tương đối nối với thư mục chạy (--cwd, hoặc dòng init của log)
+ok 7 - guardDirs: đường dẫn tương đối nối với thư mục chạy (--cwd, hoặc dòng init của log)
+  ---
+  duration_ms: 55.5509
+  ...
+# Subtest: splitForRead: every part under the limit, at headings first, the parts together are the text word for word
+ok 8 - splitForRead: every part under the limit, at headings first, the parts together are the text word for word
+  ---
+  duration_ms: 10.9841
+  ...
+# Subtest: writeForRead: the whole file stays for the code and grep, the parts are written only when needed, old parts go
+ok 9 - writeForRead: the whole file stays for the code and grep, the parts are written only when needed, old parts go
+  ---
+  duration_ms: 22.291
+  ...
+# Subtest: agentInput: the instructions in the message, then the files in order; no 'read prompt.md'
+ok 10 - agentInput: the instructions in the message, then the files in order; no 'read prompt.md'
+  ---
+  duration_ms: 8.3028
+  ...
+# Subtest: ctlLineFor: the hint's search (module specs left out, words in their order)
+ok 11 - ctlLineFor: the hint's search (module specs left out, words in their order)
+  ---
+  duration_ms: 1.0715
+  ...
+# Subtest: ctlLookupMd: the HSMT's controller functions × each datasheet, the line with its factSrc or none
+ok 12 - ctlLookupMd: the HSMT's controller functions × each datasheet, the line with its factSrc or none
+  ---
+  duration_ms: 5.6406
+  ...
+# Subtest: fixNotes: one note per kind of problem, and the numbers of each quote a 'số' problem is about
+ok 13 - fixNotes: one note per kind of problem, and the numbers of each quote a 'số' problem is about
+  ---
+  duration_ms: 1.7081
+  ...
+# Subtest: altOf: ô trơ, ô kèm hãng, ô kèm hãng có gạch nối
+ok 14 - altOf: ô trơ, ô kèm hãng, ô kèm hãng có gạch nối
+  ---
+  duration_ms: 2.5342
+  ...
+# Subtest: altOf: không đoán — hãng lạ hay mã không có trong danh mục thì null
+ok 15 - altOf: không đoán — hãng lạ hay mã không có trong danh mục thì null
+  ---
+  duration_ms: 0.4903
+  ...
+# Subtest: danh mục có đầu phát S5L1D-C41 từ dòng của cả hai NCC
+ok 16 - danh mục có đầu phát S5L1D-C41 từ dòng của cả hai NCC
+  ---
+  duration_ms: 0.3337
+  ...
+# Subtest: FG Wilson: ô đầu phát 'FG Wilson FGL70030' cho bản ghi đầu phát FGL70030, hãng FG Wilson
+ok 17 - FG Wilson: ô đầu phát 'FG Wilson FGL70030' cho bản ghi đầu phát FGL70030, hãng FG Wilson
+  ---
+  duration_ms: 46.4894
+  ...
+# Subtest: FG Wilson: ô hãng riêng 'Alternator Make | FG Wilson' gắn hãng cho đầu phát FGL70030
+ok 18 - FG Wilson: ô hãng riêng 'Alternator Make | FG Wilson' gắn hãng cho đầu phát FGL70030
+  ---
+  duration_ms: 2.7581
+  ...
+# Subtest: FG Wilson chỉ đọc ở ô của đầu phát: tên trang / dòng có 'FG Wilson' không gán hãng cho đầu phát không ghi hãng
+ok 19 - FG Wilson chỉ đọc ở ô của đầu phát: tên trang / dòng có 'FG Wilson' không gán hãng cho đầu phát không ghi hãng
+  ---
+  duration_ms: 2.1202
+  ...
+# Subtest: hai hãng: mỗi model gắn đúng hãng đứng cạnh nó (generatordieselchina n114)
+ok 20 - hai hãng: mỗi model gắn đúng hãng đứng cạnh nó (generatordieselchina n114)
+  ---
+  duration_ms: 3.1355
+  ...
+# Subtest: hai hãng: model Leroy-Somer có dấu cách ('LSA 52.3 L12', n101) đọc nguyên văn, đúng hãng
+ok 21 - hai hãng: model Leroy-Somer có dấu cách ('LSA 52.3 L12', n101) đọc nguyên văn, đúng hãng
+  ---
+  duration_ms: 1.9487
+  ...
+# Subtest: không đoán: danh sách hãng không kèm model, hay hai mã không hãng thì KHÔNG tách
+ok 22 - không đoán: danh sách hãng không kèm model, hay hai mã không hãng thì KHÔNG tách
+  ---
+  duration_ms: 3.1129
+  ...
+# Subtest: altOf: 'FG Wilson FGL70030' → đầu phát FGL70030, hãng FG Wilson (như catalog đọc ô)
+ok 23 - altOf: 'FG Wilson FGL70030' → đầu phát FGL70030, hãng FG Wilson (như catalog đọc ô)
+  ---
+  duration_ms: 4.2245
+  ...
+# Subtest: altOf: hãng hai từ 'Leroy Somer LL5114H' → LL5114H
+ok 24 - altOf: hãng hai từ 'Leroy Somer LL5114H' → LL5114H
+  ---
+  duration_ms: 0.3696
+  ...
+# Subtest: altOf: không đoán — hãng lạ, mã không có, hãng một từ + mã có dấu cách, hai hãng trong một ô
+ok 25 - altOf: không đoán — hãng lạ, mã không có, hãng một từ + mã có dấu cách, hai hãng trong một ô
+  ---
+  duration_ms: 0.4081
+  ...
+# Subtest: aiUse: Cấu hình hệ thống đặt gói tháng cho config/bidprice; còn lại API
+ok 26 - aiUse: Cấu hình hệ thống đặt gói tháng cho config/bidprice; còn lại API
+  ---
+  duration_ms: 2.4674
+  ...
+# Subtest: costOf reads the result line whatever its key order, with the [Ns] prefix
+ok 27 - costOf reads the result line whatever its key order, with the [Ns] prefix
+  ---
+  duration_ms: 0.5397
+  ...
+# Subtest: costOf: old key order, no prefix
+ok 28 - costOf: old key order, no prefix
+  ---
+  duration_ms: 0.2866
+  ...
+# Subtest: costOf: plain --output-format json
+ok 29 - costOf: plain --output-format json
+  ---
+  duration_ms: 0.8016
+  ...
+# Subtest: costOf: last result wins; none or garbage gives null
+ok 30 - costOf: last result wins; none or garbage gives null
+  ---
+  duration_ms: 0.3811
+  ...
+# Subtest: meterLog: ghi phần tăng ≥ 0,05 USD trong lúc chạy, lần cuối ghi đúng tới total_cost_usd
+ok 31 - meterLog: ghi phần tăng ≥ 0,05 USD trong lúc chạy, lần cuối ghi đúng tới total_cost_usd
+  ---
+  duration_ms: 27.3042
+  ...
