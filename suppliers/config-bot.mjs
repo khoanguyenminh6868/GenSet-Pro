@@ -41,6 +41,7 @@ import { specSkip } from "./spec-skip.mjs";
 import { useBot as rowFlagsUse, blockedRows, lineKey } from "./row-flags-lib.mjs";
 import * as ET from "./engine-traits.mjs";
 import { variantFamily } from "./engine-variant.mjs";
+import * as CM from "./ctl-module.mjs";
 
 const ROOT = path.dirname(fileURLToPath(import.meta.url));
 const SCRIPT = fileURLToPath(import.meta.url);
@@ -2567,6 +2568,34 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     return !!e?.make && e.make.split(" / ").some((m) => norm(m) === norm(p.make));
   };
   const factsOf = (c, part) => (["engine", "alternator", "controller"].includes(part) && c[part]?.model ? factsFor(facts, part, part === "controller" ? ctlModelOf(c.controller) : c[part].model) : []);
+  // Bộ điều khiển + mô-đun truyền thông (bdk-mo-dun PR 2, Khoa 20/11/2026; ctl-module.mjs): the modules' facts, and the modules
+  // a controller (its facts) may take.
+  const modFacts = CM.moduleFacts(suppliers);
+  const compatOf = (model, list) => CM.compatModules(list, new Set([CAT.keyOf(model || ""), ...list.map((f) => CAT.keyOf(f.sheetModel || ""))].filter(Boolean)), modFacts, ctlKeys);
+  // Q1 (Khoa 20/11/2026: "Ok cho khuyến nghị"): the other controllers of the same make that the configuration's controller
+  // line offers ("Deepsea DSE7320, DSE7420, DSE6120..."), each with a datasheet, scored with its best modules by code on the
+  // HSMT's communication parts; those with no "không đạt" (code never writes one) and at least one part met, best 2 first.
+  const ctlAlternatives = (c, reqs) => {
+    delete c.controller.alternatives; delete c.controller.altLine;
+    const names = reqs.filter((r) => r.code === "ctl_comm" && r.part === "controller").flatMap((r) => (r.parts?.length ? r.parts.map((p) => p.item) : [r.item])).filter(Boolean);
+    if (!names.length) return;
+    const main = CAT.keyOf(ctlModelOf(c.controller)), mainKeys = new Set([main, ...factsOf(c, "controller").map((f) => CAT.keyOf(f.sheetModel || ""))]);
+    const brand = CAT.controllersIn(ctlModelOf(c.controller)).find((x) => x.model)?.brand || c.controller.make;
+    const seen = new Set(), alts = [];
+    for (const x of CAT.controllersIn(c.controller.src?.line || "").filter((y) => y.model && (!brand || norm(y.brand) === norm(brand)))) {
+      const k = CAT.keyOf(x.model);
+      if (seen.has(k) || mainKeys.has(k)) continue;
+      seen.add(k);
+      const list = factsFor(facts, "controller", x.model);
+      if (!list.length || list.some((f) => mainKeys.has(CAT.keyOf(f.sheetModel || "")))) continue;
+      const bp = CM.bestPair(names, list, compatOf(x.model, list), modFacts), sheets = [...new Set(list.map((f) => f.version || f.sheetModel).filter(Boolean))];
+      if (bp.met) alts.push({ model: sheets.length === 1 ? sheets[0] : x.model, offeredAs: x.model, make: x.brand, ...bp, parts: undefined });
+    }
+    alts.sort((a, b) => b.met - a.met);
+    if (!alts.length) return;
+    c.controller.alternatives = alts.slice(0, 2).map(({ parts, ...a }) => a);
+    c.controller.altLine = CM.altLineOf(c.controller.alternatives);
+  };
   // Đồng bộ thương hiệu (Khoa, 2026-11-06): read from the HSMT by code, one requirement of the code's own in place of
   // any the agent wrote about it; its check is written below from the makes, never by the agent.
   const sync = BP.brandSyncOf(hsmtText);
@@ -2808,6 +2837,9 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     // A grouped requirement (the controller's protections, measurements...: Khoa 2026-11-03) has one part per function;
     // each part is checked here like a check of its own, then the group is put back together.
     const groups = new Set();
+    // A part the code changed in an earlier check of this result (commWords / commModules) is the agent's answer again.
+    for (const x of c.checks || []) { CM.commRestore(x); for (const p of x.parts || []) CM.commRestore(p); }
+    const isComm = (x) => x.part === "controller" && (reqs.get(norm(x.group ? x.group.item : x.item))?.code || x.code) === "ctl_comm";
     c.checks = (c.checks || []).flatMap((x) => {
       // Every function the requirement lists is a part of its check: one the agent left out is "unclear", so a group
       // checked on 7 of its 10 functions is not "met".
@@ -2921,12 +2953,21 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
         if (x.status === "met") { x.status = "unclear"; x.note = [x.note, `Code chưa tìm thấy nguyên văn (${reasons.join(", ")}) nên chưa tính là đạt.`].filter(Boolean).join(" "); }
         problems.push(`#${c.rank} ${x.item}: ${reasons.join(", ")}`);
       }
+      // Truyền thông (Q5, Khoa 20/11/2026): a part that names 4G / Ethernet / BMS... is met only when its quote says it.
+      if (isComm(x)) CM.commWords(x, factsOf(c, "controller"));
       // An "unclear" whose source has a line about it: the agent wrote "Nguồn không ghi" for the event log of a DSE8610
       // whose datasheet says "The event log records 250 events" (2026-11-03). The code does not judge the line; it
       // names it, the agent reads it (check prints it) and the web shows it.
       const h = x.status === "unclear" && !x.byCode && hintFor(c, x);
       if (h) { x.hint = h; hints.push(`#${c.rank} ${x.item}: ${h.where} có dòng: ${JSON.stringify(h.line)}${h.factSrc ? ` — factSrc ${JSON.stringify(h.factSrc)}` : ""}`); }
     }
+    // Q4: the modules (NCC chưa chào) that make the configuration's communication parts met; Q1: the other controllers the
+    // supplier's line offers, each with its best modules, as "Phương án khác đạt tương đương".
+    if (c.controller?.model) {
+      const ctlF = factsOf(c, "controller");
+      CM.commModules(c, c.checks.filter(isComm), ctlF, compatOf(ctlModelOf(c.controller), ctlF), modFacts);
+      ctlAlternatives(c, result.requirements || []);
+    } else if (c.controller) { delete c.controller.modules; delete c.controller.alternatives; delete c.controller.altLine; }
     if (groups.size) c.checks = c.checks.flatMap((x) => {
       if (!x.group) return [x];
       const g = x.group, parts = c.checks.filter((y) => y.group === g);
@@ -4837,7 +4878,9 @@ export function rankConfigs(result) {
   // The genset the HSMT names first (named-genset.mjs: its model, then its make), then the equivalents; nothing changes
   // for a tender that names none (no result.named).
   const nr = (c) => (result.named ? NG.namedRank(c) : 0);
-  list.sort((x, y) => nr(x.c) - nr(y.c) || cmp(x.s, y.s) || cnOf(x.c) - cnOf(y.c) || wonOf(y.c) - wonOf(x.c) || (x.c.rank ?? x.i) - (y.c.rank ?? y.i) || x.i - y.i);
+  // Same score: a controller without a module the code added before one with it (bdk-mo-dun PR 2, Khoa 20/11/2026).
+  const modOf = (c) => (c.controller?.modules?.length ? 1 : 0);
+  list.sort((x, y) => nr(x.c) - nr(y.c) || cmp(x.s, y.s) || modOf(x.c) - modOf(y.c) || cnOf(x.c) - cnOf(y.c) || wonOf(y.c) - wonOf(x.c) || (x.c.rank ?? x.i) - (y.c.rank ?? y.i) || x.i - y.i);
   list = variantRule(list);
   // One configuration per engine + alternator + controller (2026-11-06 audit: a run gave five rows of one 6BTAA5.9-G12,
   // one supplier each): a later row of the same models (or with no controller of its own) hands its suppliers to the
