@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-20T11:29:51.835Z
+  modified: 2026-11-20T13:32:27.298Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Code xếp sẵn 30 dòng ứng viên; mọi số/câu trích phải có nguyên văn trong nguồn, sai → "Đạt" thành "Chưa rõ". ~6–11 phút, ~3 USD/gói. Yêu cầu theo bộ mã cố định `suppliers/reqcodes.mjs` (thêm mã: dòng `R(...)` đúng thứ tự + test; tăng `REQ_VERSION`).
@@ -115,3 +115,5 @@ Kết quả phải ghi rõ "đầu phát chọn theo datasheet hãng, NCC chưa 
 
 ## Số đông dung tích: làm tròn (Khoa 19/11/2026)
 Số đông chỉ áp cho dung tích (và số xi lanh), áp cả trần, hãng động cơ không gộp. Về làm tròn: nguồn chỉ ghi số làm tròn mà HSMT đòi số chính xác hơn (Y490D 2,67 ↔ ≥ 2,672) → "không giữ" (loại); số chính xác của nguồn không đạt, chỉ số làm tròn đạt (8,27 / 8,3 ↔ ≥ 8,3) → "loại". Tức so chặt bằng số chính xác nhất của nhóm thắng, không nới khoảng làm tròn. Cũng 19/11 Khoa bảo BỎ: nới luật tần số thứ hai, đổi thứ tự / trần CN_ROWS ↔ PER_SUPPLIER. Ngoại lệ dữ liệu sai của một vài dòng: sửa riêng dòng đó (`ROW_EXCEPTIONS`), không đổi luật.
+
+Khoa 20/11/2026 (sau số đo "chỉ B" của #996: 765/1.093 lượt đổi tập dòng, 1.273/5.465 vị trí hạng 1–5 cũ bị đẩy khỏi top 30): "Sửa luật B rồi chạy lại" theo hướng điều phối đề nghị là luôn giữ 5 dòng hạng 1–5 cũ, B chỉ chia chỗ từ hạng 6; đo lại rồi trình Khoa, chưa merge. Cùng ngày, gói IB2600603983 sau #1003 vẫn ra DSE7420 cho Baudouin 6M31G825/5: "Sửa lại luật để Baudouin được 3 cấu hình" (trần mỗi hãng động cơ: Baudouin 3, hãng khác giữ như cũ). Việc ưu tiên bộ điều khiển bậc thấp hơn khi ngang điểm (DSE7320 trước DSE7420) là suy luận của điều phối từ đáp án của Khoa, CHƯA phải lời Khoa.
