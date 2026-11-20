@@ -1,0 +1,344 @@
+lượt: 114 (lỗi 0); gói: 91
+top 30 đổi tập dòng: A 81, B 86, A+B 100
+A+B đổi tập hoặc thứ tự: 107
+theo xuất xứ [lượt, đổi]: {"all":[95,86],"g20":[5,5],"g7eu":[10,7],"g7":[4,2]}
+dòng vào 846, ra 844; dòng top 30 (A+B) có "động cơ có datasheet hãng": 757/3310
+hãng vào: Weichai 97, Cummins 92, Baudouin 83, SDEC 74, Deutz 69, Perkins 61, Ricardo 55, Doosan / Hyundai 38, YTO 35, Yanmar 33, Quanchai 30, Kubota 25
+hãng ra: Cummins 245, Perkins 241, Yangdong 65, Yanmar 59, Yuchai 58, Weichai 36, SDEC 33, FAWDE 16, Baudouin 14, Deutz 13, Mitsubishi 11, Volvo Penta 10
+số model động cơ khác nhau trung bình trong top 30: off 17.6, A 17.8, B 22.8, A+B 22.8
+
+== 10 lượt đổi nhiều nhất (A+B so với main) ==
+
+IB2500198948#0 | all | 250 kVA | đổi 19 dòng (chỉ A: 20, chỉ B: 8)
+   VÀO SDEC SC9D340D2 | fdk-energy | 313đ +A
+   VÀO SDEC SC9D340D2 | longkai-power | 310đ +A
+   VÀO Weichai WP10D264E200 | bobig-power | 309đ +A
+   VÀO Weichai WP10D264E200 | jet-power | 309đ +A
+   VÀO YTO YM6H4LF-D | acepow-fuan | 309đ +A
+   VÀO SDEC SC10E380D2 | longkai-power | 308đ +A
+   VÀO SDEC SC9D340D2 | bobig-power | 301đ +A
+   VÀO Weichai WP10D264E201 | jet-power | 301đ +A
+   VÀO Deutz BF6M1015C-LA G1A | uleengen | 301đ +A
+   VÀO Hyundai / Doosan P126TI | uleengen | 301đ +A
+   VÀO Volvo Penta TAD841GE | jet-power | 293đ +A
+   VÀO SDEC SC12E460D2 | jet-power | 289đ +A
+   VÀO Weichai WP10D320E200 | uleengen | 289đ +A
+   VÀO Deutz BF6M1015C-LA G3A | uleengen | 289đ +A
+   VÀO Cummins 6LTAA8.9-G3 | fdk-energy | 287đ
+   VÀO Cummins NT855-GA | fdk-energy | 287đ
+   VÀO Baudouin 6M12G8D3/5 | rcg-power | 287đ +A
+   VÀO Weichai WP10D238E200 | penlucky | 281đ +A
+   VÀO Wudong WD129TAD23 | wintpower | 277đ +A
+   RA  Cummins NT855-GA | sanq-power | 287đ
+   RA  Yuchai YC6MK350L-D20 | huali-shandong | 284đ
+   RA  Cummins NT855-GA | stone-power | 284đ
+   RA  Cummins 6LTAA8.9-G2 | jet-power | 281đ
+   RA  Weichai WP10D264E200 | fdk-energy | 281đ
+   RA  Yuchai YC6MK350L-D20 | fdk-energy | 281đ
+   RA  Yuchai YC6MK350-D30 | fdk-energy | 281đ
+   RA  Volvo Penta TAD754GE | jet-power | 279đ
+   RA  Weichai WP10D264E200 | longkai-power | 278đ
+   RA  Cummins 6LTAA8.9-G3 | longkai-power | 278đ
+   RA  Cummins NT855-GA | stone-power | 278đ
+   RA  Perkins 1206A-E70TTAG3 | uleengen | 278đ
+   RA  Cummins MTA11-G2 | longkai-power | 278đ
+   RA  Perkins 1506A-E88TAG3 | voltgent | 275đ
+   RA  Baudouin 6M16G275/5 | kaihua-genset | 273đ
+   RA  Perkins 1506A-E88TAG3 | uleengen | 272đ
+   RA  Cummins 6LTAA8.9-G3 | jet-power | 271đ
+   RA  Cummins 6LTAA8.9-G2 | bobig-power | 269đ
+   RA  SDEC SC9D310D2 | dingbo | 269đ
+
+IB2300356827#0 | all | 250 kVA | đổi 17 dòng (chỉ A: 17, chỉ B: 9)
+   VÀO Doosan / Hyundai DP086LA | sanq-power | 316đ +A
+   VÀO Weichai WP10D238E200 | fdk-energy | 309đ +A
+   VÀO Weichai WP10D238E200 | fdk-energy | 309đ +A
+   VÀO YTO YM6H4LF-D | acepow-fuan | 309đ +A
+   VÀO SDEC SC10E380D2 | longkai-power | 308đ +A
+   VÀO SDEC SC9D340D2 | bobig-power | 301đ +A
+   VÀO Weichai WP10D238E201 | jet-power | 301đ +A
+   VÀO Deutz BF6M1015C-LA G1A | uleengen | 301đ +A
+   VÀO Weichai WP10D264E201 | jet-power | 301đ +A
+   VÀO Doosan / Hyundai P086TI | rise-power | 301đ +A
+   VÀO Hyundai / Doosan P126TI | uleengen | 301đ +A
+   VÀO Volvo Penta TAD841GE | jet-power | 293đ +A
+   VÀO SDEC SC12E460D2 | jet-power | 289đ +A
+   VÀO Weichai WP10D320E200 | uleengen | 289đ +A
+   VÀO Baudouin 6M12G8D3/5 | rcg-power | 287đ +A
+   VÀO Baudouin 6M12G6D3/5 | rcg-power | 284đ +A
+   VÀO Wudong WD129TAD23 | wintpower | 277đ +A
+   RA  Cummins 6LTAA8.9-G2 | sanq-power | 287đ
+   RA  Cummins 6LTAA8.9-G2 | uleengen | 284đ
+   RA  Cummins NT855-GA | stone-power | 284đ
+   RA  Yuchai YC6MK350L-D20 | fdk-energy | 281đ
+   RA  Yuchai YC6MK350L-D20 | wintpower | 281đ
+   RA  Yuchai YC6MK350-D30 | fdk-energy | 281đ
+   RA  Volvo Penta TAD754GE | jet-power | 279đ
+   RA  Cummins 6LTAA8.9-G3 | longkai-power | 278đ
+   RA  Cummins NT855-GA | stone-power | 278đ
+   RA  Perkins 1206A-E70TTAG3 | uleengen | 278đ
+   RA  Perkins 1506A-E88TAG3 | voltgent | 275đ
+   RA  Cummins NTA855-G1A | yongcai-elecmama | 274đ
+   RA  Baudouin 6M16G275/5 | kaihua-genset | 273đ
+   RA  Perkins 1506A-E88TAG3 | uleengen | 272đ
+   RA  Cummins 6LTAA8.9-G3 | jet-power | 271đ
+   RA  SDEC SC9D310D2 | dingbo | 269đ
+   RA  SDEC SC9D310D2 | jet-power | 269đ
+
+IB2500331496#0 | all | 250 kVA | đổi 17 dòng (chỉ A: 17, chỉ B: 10)
+   VÀO Doosan / Hyundai DP086LA | sanq-power | 316đ +A
+   VÀO Weichai WP10D238E200 | fdk-energy | 309đ +A
+   VÀO Weichai WP10D238E200 | fdk-energy | 309đ +A
+   VÀO YTO YM6H4LF-D | acepow-fuan | 309đ +A
+   VÀO SDEC SC10E380D2 | longkai-power | 308đ +A
+   VÀO SDEC SC9D340D2 | bobig-power | 301đ +A
+   VÀO Deutz BF6M1015C-LA G1A | uleengen | 301đ +A
+   VÀO Doosan / Hyundai P086TI | rise-power | 301đ +A
+   VÀO Hyundai / Doosan P126TI | uleengen | 301đ +A
+   VÀO Volvo Penta TAD841GE | jet-power | 293đ +A
+   VÀO SDEC SC12E460D2 | jet-power | 289đ +A
+   VÀO Weichai WP10D320E200 | uleengen | 289đ +A
+   VÀO Baudouin 6M12G8D3/5 | rcg-power | 287đ +A
+   VÀO Volvo Penta TAD852GE | jet-power | 286đ +A
+   VÀO Baudouin 6M12G6D3/5 | rcg-power | 284đ +A
+   VÀO SDEC 6ETAA11.8-G22 | jet-power | 281đ +A
+   VÀO Wudong WD129TAD23 | wintpower | 277đ +A
+   RA  Cummins 6LTAA8.9-G2 | sanq-power | 287đ
+   RA  Cummins NT855-GA | stone-power | 284đ
+   RA  Yuchai YC6MK350L-D20 | fdk-energy | 281đ
+   RA  Yuchai YC6MK350L-D20 | wintpower | 281đ
+   RA  Yuchai YC6MK350-D30 | fdk-energy | 281đ
+   RA  Volvo Penta TAD754GE | jet-power | 279đ
+   RA  Cummins 6LTAA8.9-G2 | longkai-power | 278đ
+   RA  Cummins NT855-GA | stone-power | 278đ
+   RA  Perkins 1206A-E70TTAG3 | uleengen | 278đ
+   RA  Perkins 1506A-E88TAG3 | voltgent | 275đ
+   RA  Cummins NTA855-G1A | yongcai-elecmama | 274đ
+   RA  Baudouin 6M16G275/5 | kaihua-genset | 273đ
+   RA  SDEC SC9D310D2 | dingbo | 269đ
+   RA  Cummins NTA855-G1A | stone-power | 269đ
+   RA  Cummins 6LTAA8.9-G3 | acepow-fuan | 269đ
+   RA  SDEC SC9D310D2 | jet-power | 269đ
+   RA  Weichai WP10D238E200 | jet-power | 269đ
+
+IB2400064139#0 | all | 20 kVA | đổi 15 dòng (chỉ A: 11, chỉ B: 10)
+   VÀO Perkins 404D-22TG | uleengen | 296đ +A
+   VÀO Ricardo K4100D | jet-power | 286đ +A
+   VÀO Cummins 4B3.9-G11 | fdk-energy | 281đ
+   VÀO Baudouin 4M08G4D3/5 | rcg-power | 281đ +A
+   VÀO Baudouin 4M08G2D3/5 | rcg-power | 281đ +A
+   VÀO Quanchai QC490D | wintpower | 277đ +A
+   VÀO Quanchai QC490D | yongcai-elecmama | 277đ +A
+   VÀO Ricardo K4100D | jet-power | 276đ +A
+   VÀO Deutz BFM3-G1 | acepow-fuan | 261đ
+   VÀO Deutz F3L912D | victory-generator | 261đ +A
+   VÀO Kubota V2203 | wintpower | 259đ
+   VÀO Cummins 4B3.9-G1 | fdk-energy | 256đ
+   VÀO Yangdong Y490D | tecgen-fujian | 254đ
+   VÀO Baudouin 4M06G20/5 | longkai-power | 253đ
+   VÀO Ricardo 495D | sunny-weifang | 252đ +A
+   RA  Perkins 404A-22G1 | fdk-energy | 281đ
+   RA  Perkins 404A-22G1 | kaihua-genset | 281đ
+   RA  Cummins 4B3.9-G2 | longkai-power | 278đ
+   RA  Yanmar 4TNV84T-GGE | wintpower | 275đ
+   RA  Cummins 4B3.9-G11 | longkai-power | 272đ
+   RA  Yangdong YSD490D | acepow-fuan | 269đ
+   RA  Yangdong YSD490D | tecgen-fujian | 269đ
+   RA  FAWDE 4DW91-29D | uleengen | 269đ
+   RA  Yuchai YC4V35-D20 | fdk-energy | 269đ
+   RA  Perkins 404D-22G | eastern-lion-fuan | 269đ
+   RA  Perkins 403A-15G2 | kaihua-genset | 269đ
+   RA  Cummins 4B3.9-G11 | acepow-fuan | 269đ
+   RA  Cummins 4B3.9-G11 | bobig-power | 269đ
+   RA  Weichai WP2.3D25E200 | longkai-power | 265đ
+   RA  Perkins 404D-22G | kaihua-genset | 261đ
+
+IB2400377239#0 | all | 400 kVA | đổi 15 dòng (chỉ A: 13, chỉ B: 6)
+   VÀO Doosan / Hyundai DP126LB | jet-power | 321đ +A
+   VÀO Volvo Penta TAD1355GE | jet-power | 318đ +A
+   VÀO SDEC SC13E550D2 | fdk-energy | 309đ +A
+   VÀO SDEC SC25G610D2 | fdk-energy | 308đ +A
+   VÀO Weichai WP13D405E200 | acepow-fuan | 306đ +A
+   VÀO SDEC 6ETAA12.8-G31 | longkai-power | 305đ +A
+   VÀO Doosan / Hyundai P158LE | rise-power | 304đ +A
+   VÀO SDEC 6ETAA12.8-G22 | jet-power | 301đ +A
+   VÀO Volvo Penta TAD1650GE | dingbo | 299đ +A
+   VÀO Deutz BF6M1015CP-LA | uleengen | 297đ +A
+   VÀO Cummins QSNT-G3 | sanq-power | 278đ
+   VÀO Volvo Penta TAD1343GE-B | rcg-power | 278đ +A
+   VÀO Wudong WD269TAD41 | wintpower | 276đ +A
+   VÀO Cummins KTA19-G2 | stone-power | 275đ
+   VÀO Cummins KTA19-G3 | stone-power | 274đ
+   RA  Perkins 2206C-E13TAG3 | sanq-power | 284đ
+   RA  Weichai WP13D385E200 | fdk-energy | 281đ
+   RA  Yuchai YC6K520-D30 | fdk-energy | 281đ
+   RA  Cummins 6ZTAA13-G2 | jet-power | 281đ
+   RA  Cummins QSNT-G3 | jet-power | 281đ
+   RA  Cummins NTAA855-G7A | stone-power | 278đ
+   RA  Cummins NTAA855-G7A | yongcai-elecmama | 278đ
+   RA  Cummins 6ZTAA13-G2 | koten-power | 278đ
+   RA  Perkins 2206C-E13TAG3 | uleengen | 278đ
+   RA  Weichai WP13D385E200 | jet-power | 269đ
+   RA  Yuchai YC6K520-D30 | eastern-lion-fuan | 269đ
+   RA  Weichai WP13D440E310 | longkai-power | 269đ
+   RA  Volvo Penta TAD1355GE | dingbo | 269đ
+   RA  YTO YM6S9LF-D | acepow-fuan | 269đ
+   RA  YTO YM6S9LF-DA | acepow-fuan | 269đ
+
+IB2200023019#0 | all | 200 kVA | đổi 15 dòng (chỉ A: 13, chỉ B: 10)
+   VÀO Cummins QSB6.7-G4 | fdk-energy | 324đ +A
+   VÀO Doosan / Hyundai DP086LA | sanq-power | 316đ +A
+   VÀO SDEC SC7H230D2 | dingbo | 309đ +A
+   VÀO Weichai WP10D238E200 | longkai-power | 303đ +A
+   VÀO Doosan / Hyundai P086TI | rise-power | 301đ +A
+   VÀO Weichai WP10D238E200 | bobig-power | 296đ +A
+   VÀO YTO YM6H4LF-D | acepow-fuan | 296đ +A
+   VÀO Weichai WP10D238E201 | jet-power | 288đ +A
+   VÀO Volvo Penta TAD840GE-B | jet-power | 285đ +A
+   VÀO Cummins 6CTA8.3-G2 | fdk-energy | 284đ
+   VÀO Cummins 6CTA8.3-G1 | sanq-power | 284đ
+   VÀO Deutz BF6M1013FC-G3 | uleengen | 271đ
+   VÀO Yuchai YC6A245L-D21 | wintpower | 269đ
+   VÀO Deutz BF6M1013FC-G2 | acepow-fuan | 269đ
+   VÀO Yuchai YC6A275-D30 | eastern-lion-fuan | 269đ
+   RA  Cummins 6CTA8.3-G2 | hosem-power | 284đ
+   RA  Cummins 6CTA8.3-G2 | sanq-power | 284đ
+   RA  Cummins 6CTA8.3-G2 | stone-power | 284đ
+   RA  Cummins 6CTAA8.3-G2 | stone-power | 284đ
+   RA  Cummins 6CTAA8.3-G2 | stone-power | 284đ
+   RA  Perkins 1106A-70TAG4 | tecgen-fujian | 284đ
+   RA  Perkins 1106A-70TAG4 | uleengen | 284đ
+   RA  Perkins 1106A-70TAG3 | sanq-power | 284đ
+   RA  Perkins 1106A-70TAG3 | tecgen-fujian | 284đ
+   RA  Cummins 6CTA8.3-G1 | stone-power | 284đ
+   RA  SDEC SC8D280D2 | fdk-energy | 281đ
+   RA  Yuchai YC6A245L-D21 | fdk-energy | 281đ
+   RA  Weichai WP6D167E200 | longkai-power | 278đ
+   RA  Volvo Penta TAD752GE | jet-power | 276đ
+   RA  SDEC SC8D280D2 | bobig-power | 269đ
+
+IB2300064290#0 | all | 160 kVA | đổi 15 dòng (chỉ A: 13, chỉ B: 10)
+   VÀO Cummins QSB6.7-G3 | fdk-energy | 324đ +A
+   VÀO Cummins QSB6.7-G4 | fdk-energy | 306đ +A
+   VÀO SDEC SC7H250D2 | fdk-energy | 303đ +A
+   VÀO SDEC SC7H250D2 | longkai-power | 301đ +A
+   VÀO SDEC SC7H250D2 | jet-power | 296đ +A
+   VÀO SDEC SC7H230D2 | dingbo | 292đ +A
+   VÀO Weichai WP10D200E200 | jet-power | 292đ +A
+   VÀO Weichai WP10D200E200 | bobig-power | 291đ +A
+   VÀO Cummins 6CTA8.3-G1 | sanq-power | 284đ
+   VÀO Baudouin 4M12G4D3/5 | rcg-power | 284đ +A
+   VÀO Doosan / Hyundai P086TI | uleengen | 283đ +A
+   VÀO Doosan / Hyundai DP086TA | sanq-power | 276đ
+   VÀO Yuchai YC6A205-D30 | dingbo | 269đ
+   VÀO Weichai WP6D158E201 | aosif | 269đ +A
+   VÀO Cummins QSB5.9-G33 | aosif | 269đ +A
+   RA  Perkins 1106A-70TAG2 | sanq-power | 284đ
+   RA  Cummins 6BTAA5.9-G12 | sanq-power | 284đ
+   RA  Cummins 6BTAA5.9-G12 | stone-power | 284đ
+   RA  Perkins 1106A-70TAG3 | jet-power | 284đ
+   RA  Yuchai YC6B205L-D20 | fdk-energy | 281đ
+   RA  Yuchai YC6A205-D30 | fdk-energy | 281đ
+   RA  SDEC SC7H205D2 | fdk-energy | 281đ
+   RA  Cummins QSB6.7-G3 | longkai-power | 278đ
+   RA  Volvo Penta TAD751GE | jet-power | 276đ
+   RA  Cummins 6CTA8.3-G2 | stone-power | 271đ
+   RA  Cummins 6CTA8.3-G2 | uleengen | 271đ
+   RA  Perkins 1106A-70TAG3 | uleengen | 271đ
+   RA  Cummins 6CTA8.3-G1 | stone-power | 271đ
+   RA  Cummins 6BTAA5.9-G2 | bobig-power | 269đ
+   RA  Perkins 1106A-70TAG2 | bobig-power | 269đ
+
+IB2300190927#1 | all | 150 kVA | đổi 15 dòng (chỉ A: 9, chỉ B: 10)
+   VÀO Cummins QSB6.7-G3 | fdk-energy | 324đ +A
+   VÀO Weichai WP6D132E200 | jet-power | 309đ +A
+   VÀO SDEC SC7H230D2 | longkai-power | 305đ +A
+   VÀO SDEC SC7H230D2 | jet-power | 302đ +A
+   VÀO Cummins QSB6.7-G4 | longkai-power | 298đ +A
+   VÀO SDEC SC7H250D2 | jet-power | 289đ +A
+   VÀO Baudouin 4M12G4D3/5 | rcg-power | 284đ +A
+   VÀO Cummins 6CTA8.3-G2 | sanq-power | 277đ
+   VÀO Cummins 6CTA8.3-G1 | sanq-power | 277đ
+   VÀO Doosan / Hyundai DP086TA | sanq-power | 276đ
+   VÀO Cummins QSB5.9-G3 | hosem-power | 269đ +A
+   VÀO Yuchai YC4A190-D30 | eastern-lion-fuan | 269đ
+   VÀO Weichai WP6D132E201 | gordon-power | 269đ +A
+   VÀO Doosan / Hyundai D1146T | rise-power | 269đ
+   VÀO Weichai WP6D158E201 | aosif | 269đ +A
+   RA  Cummins 6BTAA5.9-G2 | sanq-power | 284đ
+   RA  Cummins 6BTAA5.9-G2 | stone-power | 284đ
+   RA  Perkins 1106A-70TAG2 | sanq-power | 284đ
+   RA  Perkins 1106A-70TAG2 | uleengen | 284đ
+   RA  Cummins 6BTAA5.9-G12 | sanq-power | 284đ
+   RA  Cummins 6BTAA5.9-G12 | stone-power | 284đ
+   RA  Perkins 1106A-70TG1 | jet-power | 284đ
+   RA  Yuchai YC4A190-D30 | fdk-energy | 281đ
+   RA  Cummins QSB6.7-G3 | longkai-power | 278đ
+   RA  Perkins 1106A-70TAG3 | jet-power | 277đ
+   RA  Volvo Penta TAD751GE | jet-power | 276đ
+   RA  Yuchai YC6B205L-D20 | dingbo | 269đ
+   RA  Cummins 6BTA5.9-G2 | bobig-power | 269đ
+   RA  Perkins 1106A-70TG1 | eastern-lion-fuan | 269đ
+   RA  Yuchai YC6A205-D30 | dingbo | 269đ
+
+IB2400393855#0 | all | 1000 kVA | đổi 15 dòng (chỉ A: 11, chỉ B: 10)
+   VÀO Baudouin 8M33G1100/5 | longkai-power | 311đ +A
+   VÀO SDEC 6WTAA35-G31 | fdk-energy | 309đ +A
+   VÀO SDEC 6KTAA25-G321 | fdk-energy | 309đ +A
+   VÀO Baudouin 12M33G1250/5 | longkai-power | 298đ +A
+   VÀO Baudouin 12M26G1000/6 | longkai-power | 295đ +A
+   VÀO Weichai 12M33D1108E200 | uleengen | 271đ
+   VÀO SDEC 6KTAA25-G321 | kaihua-genset | 269đ +A
+   VÀO Mitsubishi S12H-PTA | stone-power | 269đ
+   VÀO Baudouin 12M26G900/6 | voltgent | 261đ +A
+   VÀO SDEC 6WTAA35-G310 | voltgent | 259đ +A
+   VÀO SDEC 6WTAA35-G310 | kaichen-jiangsu | 256đ +A
+   VÀO Perkins 4008-30TAG3 | bobig-power | 256đ
+   VÀO Weichai 12M26D1012E201 | kaihua-genset | 255đ
+   VÀO Cummins QST30-G4 | sanq-power | 253đ
+   VÀO Weichai 8M33D975E310 | uleengen | 252đ
+   RA  Perkins 4008TAG2 | uleengen | 284đ
+   RA  Yuchai YC6TH1320-D31 | fdk-energy | 281đ
+   RA  Yuchai YC12VTD1350-D30 | fdk-energy | 281đ
+   RA  Perkins 4008TAG2 | uleengen | 281đ
+   RA  Baudouin 12M26G1100/5 | longkai-power | 279đ
+   RA  Cummins KTA38-G5 | huali-shandong | 278đ
+   RA  Cummins KTA38-G5 | longkai-power | 278đ
+   RA  Weichai 12M26D968E200 | longkai-power | 278đ
+   RA  SDEC 6WTAA35-G31 | jet-power | 269đ
+   RA  Cummins KTA38-G2A | bobig-power | 269đ
+   RA  Cummins KTA38-G2A | eastern-lion-fuan | 269đ
+   RA  Perkins 4008TAG2A | bobig-power | 269đ
+   RA  Perkins 4008TAG2A | dingbo | 269đ
+   RA  Yuchai YC6C1320-D31 | dingbo | 245đ
+   RA  Yuchai YC6C1320-D31 | eastern-lion-fuan | 245đ
+
+IB2300135189#0 | all | 30 kVA | đổi 14 dòng (chỉ A: 6, chỉ B: 11)
+   VÀO Ricardo K4100D | jet-power | 301đ +A
+   VÀO Ricardo K4100D | uleengen | 301đ +A
+   VÀO Weichai WP2.3D33E200 | fdk-energy | 281đ
+   VÀO Baudouin 4M08G8D3/5 | rcg-power | 281đ +A
+   VÀO Ricardo 495D | sunny-weifang | 277đ +A
+   VÀO Kubota V3300 | wintpower | 262đ
+   VÀO Deutz BFM3-G2 | acepow-fuan | 261đ
+   VÀO Deutz F4L912D | victory-generator | 261đ +A
+   VÀO Baudouin 4M06G35/5 | longkai-power | 257đ
+   VÀO Baudouin 4M08G10D3/5 | rcg-power | 257đ +A
+   VÀO Yangdong Y4105D | tecgen-fujian | 256đ
+   VÀO Weichai WP2.3D40E200 | longkai-power | 253đ
+   VÀO SDEC 4Z3.0-G21 | jet-power | 253đ
+   VÀO SDEC 4Z3.2-G21 | jet-power | 249đ
+   RA  Cummins 4B3.9-G2 | stone-power | 278đ
+   RA  Cummins 4BT3.9-G1 | sanq-power | 278đ
+   RA  Perkins 404D-22TG | sanq-power | 278đ
+   RA  Yanmar 4TNV98-GGE | sanq-power | 272đ
+   RA  Weichai WP2.3D33E200 | bobig-power | 269đ
+   RA  Yangdong Y4100D | tecgen-fujian | 269đ
+   RA  Yuchai YC4V45Z-D20 | fdk-energy | 269đ
+   RA  Cummins 4B3.9-G2 | acepow-fuan | 269đ
+   RA  Cummins 4B3.9-G1 | acepow-fuan | 269đ
+   RA  Cummins 4B3.9-G1 | eastern-lion-fuan | 269đ
+   RA  Perkins 404D-22TG | jet-power | 269đ
+   RA  Cummins 4B3.9-G12 | longkai-power | 266đ
+   RA  Yangdong Y4102D | tecgen-fujian | 266đ
+   RA  Yangdong Y4102D | tecgen-fujian | 266đ

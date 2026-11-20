@@ -1,0 +1,42 @@
+// Chạy lại đúng bước xếp ứng viên của prep (chỉ đọc), in điểm và thứ hạng của từng dòng.
+import fs from "node:fs";
+import path from "node:path";
+import { pathToFileURL } from "node:url";
+const root = process.argv[3] || "C:/Projects/GenSet Pro/GenSet-Pro";
+const B = await import(pathToFileURL(`${root}/suppliers/config-bot.mjs`).href);
+const CAT = globalThis.GenbidCatalog;
+const s = process.argv[2], key = "IB2600603983";
+const all = JSON.parse(fs.readFileSync(path.join(s, "prep/suppliers.json"), "utf8"));
+const { parts, text } = await B.hsmtTextOf(key);
+const hints = B.hintsOf(text, "");
+const cap = { value: 700, unit: "kVA" };
+const auto = B.originOfHsmt(parts.join("")), origin = auto?.origin || "all";
+const full = CAT.build(all), cn = B.cnSuppliers(all), partsOnly = B.partsOnlyOf(origin, parts.join("")), brand = auto?.basis === "brand" && !partsOnly;
+const grp = B.groupSuppliers(all, origin, false, partsOnly, brand);
+const cat = { ...full, engines: B.byOrigin(full.engines, origin, cn, grp) };
+const facts = grp ? B.modelFacts({ ...full, engines: B.byOrigin(full.engines, origin, cn) }, all) : B.modelFacts(cat, all);
+console.log("origin:", origin, "| auto:", JSON.stringify(auto), "| partsOnly:", partsOnly, "| brand:", brand, "| grp:", grp ? grp.size : null);
+const h = { ...hints }; delete h.text;
+console.log("hints:", JSON.stringify(h, (k, v) => (v instanceof Set ? [...v] : v)).slice(0, 2500));
+const { top, all: rows, dropped } = B.candidates(cat, cap, hints, { suppliers: all, origin, cn, facts });
+console.log(`\nứng viên: ${top.length} / ${rows.length} dòng qua lọc, ${dropped.length} dòng bị loại`);
+const rankOf = new Map(rows.map((r, i) => [r, i + 1]));
+const one = (r, tag) => `${tag} điểm ${r.score} | ${r.e.make || "?"} ${r.e.model} | ${r.u.supplierId} n${r.u.n} ${r.u.genset || ""} | prime ${JSON.stringify(r.u.power?.prime || null)} sb ${JSON.stringify(r.u.power?.standby || null)} | ĐP ${r.a ? `${r.a.make || "?"} ${r.a.model}` : r.u.other || "-"} | BĐK ${(r.offers || []).map((c) => c.model || c.brand).slice(0, 3).join(",") || "-"}\n      vì: ${r.why.join("; ")}`;
+console.log("\n== 30 DÒNG CHỌN ==");
+top.forEach((r, i) => console.log(one(r, `#${i + 1} (hạng thô ${rankOf.get(r)})`)));
+console.log("\n== MỌI DÒNG BAUDOUIN (qua lọc) ==");
+rows.filter((r) => /baudouin/i.test(r.e.make || "") || /^(6|8|12)M(26|31|33)/i.test(r.e.model)).forEach((r) => console.log(one(r, `${top.includes(r) ? "CHỌN" : "ngoài"} hạng thô ${rankOf.get(r)}`)));
+console.log("\n== DÒNG 6M31 / Baudouin BỊ LOẠI ==");
+dropped.filter((d) => /baudouin/i.test(d.e.make || "") || /6M31/i.test(d.e.model)).forEach((d) => console.log(`  ${d.e.model} | ${d.u.supplierId} n${d.u.n} | ${d.ruled.join(",")} | ${JSON.stringify(d.src).slice(0, 200)}`));
+console.log("\n== 6M31G825/5 trong danh mục đầy đủ (trước lọc xuất xứ / dải công suất) ==");
+for (const e of full.engines.filter((e) => /6M31G825/i.test(e.model))) {
+  console.log(`động cơ ${e.model} | make ${e.make} | makesAll ${JSON.stringify(e.makesAll || e.makes)} | uses ${e.uses.length}`);
+  for (const u of e.uses) console.log(`   ${u.supplierId} n${u.n} | genset ${u.genset} | freq ${u.freq} | power ${JSON.stringify(u.power)} | other ${u.other} | line ${String(u.line || (u.lines?.rows || []).join(" ; ")).slice(0, 200)}`);
+  const ef = facts.get(`engine:${e.key}`) || [];
+  console.log("   facts:", ef.map((f) => `${f.key}=${f.value} (${f.supplierId})`).join(" | "));
+  console.log("   còn trong cat sau lọc xuất xứ:", cat.engines.some((x) => x.key === e.key), "| uses:", cat.engines.find((x) => x.key === e.key)?.uses.map((u) => u.supplierId).join(","));
+}
+console.log("\n== Đầu phát LSA 49.3 M8 trong danh mục ==");
+for (const a of full.alternators.filter((a) => /49\.?3 ?M8/i.test(a.model))) console.log(`${a.make} ${a.model} | key ${a.key} | facts: ${(facts.get(`alternator:${a.key}`) || []).map((f) => `${f.key}=${String(f.value).slice(0, 40)}`).join(" | ")}`);
+console.log("\n== Bộ điều khiển trong danh mục (7320 / 7420 / 890) ==");
+for (const c of (full.controllers || []).filter((c) => /7320|7420|890/.test(c.model || ""))) console.log(`${c.brand || c.make} ${c.model} | NCC ${(c.uses || c.suppliers || []).length} | datasheet: ${B.modelFacts ? (facts.get(`controller:${CAT.keyOf(c.model)}`) || []).length : "?"} dòng`);
