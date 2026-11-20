@@ -77,3 +77,12 @@ Bổ sung tìm được khi quét (cùng bảng họ jlmech, cùng cơ chế l�
 
 ## Chưa kiểm được
 - Lý do reader bỏ "392" của yunding; khoá dòng `dropspec` cho bảng ngang của cameo; số liệu 14 dòng còn lại bảng mingbang V; PDF fdk / westin chỉ đọc bằng pdftotext (không so ảnh trang).
+
+---
+# Bước 2 (20/11, Khoa duyệt qua điều phối): PR dropspec (13 dòng: 10 + huipu 3)
+- PR draft: https://github.com/khoanguyenminh6868/GenSet-Pro/pull/957 (nhánh `dropspec-2`, SHA đầu nhánh 661a78a2 sau khi gộp origin/main 79e9b175). 3 commit: (1) 10 dòng (aoke ×2, jlmech ×3, aosif AW1000, cameo, jiangchai, mingbang, westin) (2) huipu ×3 (điều phối cho thêm, chưa hỏi Khoa riêng) (3) `web/CLAUDE.md`.
+- Tệp đổi: `web/catalog.js` (ROW_EXCEPTIONS), `suppliers/dropspec-2.test.mjs` (10 ca), `web/CLAUDE.md`.
+- Kiểm (đầu ra thật): `node suppliers/spec-diff.mjs git:a52179ee .` → bản ghi 60.073 → 60.073, khác 13 (disp bỏ 8, cyl bỏ 2, engPower 1, current 1, dims 2, speed 1), chỉ cũ 0, chỉ mới 0, đảo vai 0 → 0, "ngoại lệ theo dòng" 14 → 27. `row-flags --json`: 158 dòng cờ / 16 loại → 146 / 4 loại (hết cờ đúng 12 dòng; còn depco, fdk ×2, yongcai). `node --test suppliers/*.test.mjs` 1191/1191; `web/test/*.test.mjs` 161/161; `quality --check` không chỉ số nào xấu đi.
+- 3 mẫu đối chiếu nguồn (trang sống 20/11): aoke catid=69 `<td> 108</td>` cột 排量(L); jlmech n103 `458&nbsp;` cột Displacement (L), dòng kế 45.8; westin TP880L.pdf "Rated rotation speed 1191" vs "Engine speed Rated 1500 RPM" trang 2.
+- Rủi ro: ngoại lệ khớp chữ dòng nguyên văn, cào lại đổi chữ thì tự hết; quay lui = revert PR. #953 (aosif AW1125) sửa cùng chỗ cuối `ROW_EXCEPTIONS` nên có xung đột nhẹ khi merge. Chưa đo top 30 (điều phối đo cloud).
+- Chưa kiểm được: khoá dòng với bảng ngang của cameo / westin đã chạy (test ca 5, 8 đạt) nhưng chưa thử sau khi cào lại; chưa chạy CI của GitHub.
