@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-20T00:46:48.240Z
+  modified: 2026-11-20T04:20:33.168Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Code xếp sẵn 30 dòng ứng viên; mọi số/câu trích phải có nguyên văn trong nguồn, sai → "Đạt" thành "Chưa rõ". ~6–11 phút, ~3 USD/gói. Yêu cầu theo bộ mã cố định `suppliers/reqcodes.mjs` (thêm mã: dòng `R(...)` đúng thứ tự + test; tăng `REQ_VERSION`).
@@ -77,6 +77,24 @@ Cách thử, lệnh và bẫy code: `suppliers/CLAUDE.md` trong repo; bản nghi
 ## Nhiên liệu và tổ máy không mã động cơ (Khoa 20/11/2026)
 - Máy khí / xăng: đo 20/11 thấy lọt top 30 ở 114 gói (westinpower MAN khí hạng 1 ở 9 lượt). Khoa chốt: catalog có trường nhiên liệu (chỉ ghi khi bảng hoặc tên trang ghi rõ; tên trang CÓ dùng; không đủ dấu hiệu thì để trống, không coi là diesel); Gợi ý thêm bước kiểm nhiên liệu; HSMT KHÔNG nêu nhiên liệu → coi là gói diesel (loại khí / xăng / xăng + LPG). "COP / Continuous" không là prime.
 - Bảng tổ máy không mã động cơ (46 bảng, 1.753 dòng): "PA1 trước" = lưu + hiện ở hồ sơ NCC, CHƯA nối Gợi ý; nối (chỉ khi HSMT không đòi thông số động cơ) quyết sau khi Khoa xem hồ sơ NCC. Không nối kiểu "trừ điểm" (thiếu dữ liệu không được lợi hơn có dữ liệu).
+
+## IB2600603983: đáp án đúng và 5 việc Khoa duyệt (20/11/2026)
+Khoa nêu cấu hình đúng: Baudouin 6M31G825/5 + Leroy-Somer LSA 49.3 M8, AREP + AVR D350 (hoặc PMG + D350; ngắn mạch 300% (3 In) / 10 s) + DSE7320 MKII kèm mô-đun DSE890 MKII (4G / Ethernet Gateway). Dùng làm ca kiểm cho các việc dưới. Khoa quyết:
+- Đầu phát: "miễn sao đạt yêu cầu của hsmt thì cứ gợi ý" → không cần NCC ghi đầu phát cùng dòng tổ máy; chọn theo datasheet hãng (trước đó chỉ lấy đầu phát ghi cùng dòng).
+- Tỉ số nén HSMT ghi trơ ("14 : 01"): "sửa luật để kiểm tra" (em trình: ghi trơ = số chính xác, nguồn ghi khác thì không đạt ở bước chấm; bước chọn ứng viên chưa hỏi). Khác số xi lanh (ghi trơ chỉ chính xác ở bước chọn ứng viên, Khoa 17/11).
+- Một động cơ ghi hai mã ("6M33G8D3/5 (6M33G825/5)" chiếm hai chỗ của hãng): "gộp đi, cần rà soát lại tất cả các dòng nào giống nhau của tất cả các nhà cung cấp".
+- Bổ sung dữ liệu hãng Baudouin cho mọi mã (nguồn baudouin.com); bộ điều khiển kèm mô-đun truyền thông: làm.
+Phân tích: `genbid-work\dieu-phoi\dau-vao\ib2600603983\phan-tich.md`; tiến độ ở sổ điều phối.
+
+**Đầu phát chọn theo datasheet hãng: Khoa trả lời 7 câu (20/11/2026, đề xuất `nghiem-thu\dau-phat-hang-de-xuat.md`):**
+1. NCC ghi đầu phát mà KHÔNG đạt (M6 730 kVA < 750) → "Đề xuất M8": thay bằng đầu phát hãng đạt, ghi rõ NCC chào gì và vì sao không đạt.
+2. NCC ghi đầu phát mà hệ thống không có số liệu → "Giữ" đầu phát NCC chào; chỉ thay khi chứng minh được không đạt.
+3. So kVA ở "cột chạy liên tục" (Continuous, cấp H / 125 K / 40 °C, đúng tần số, 3 pha; không dùng cột Standby). Phần còn lại của khuyến nghị (số nhỏ nhất trong các điện áp HSMT nêu, model nhỏ nhất đạt, ≤ 130 % mức cần, tối đa 2 model mỗi hãng) Khoa không nói riêng: em coi là theo khuyến nghị.
+4. "Ok": xuất xứ theo nơi sản xuất mặc định của hãng (Leroy-Somer Pháp, Stamford Anh, Mecc Alte Ý); HSMT đòi thương hiệu → đạt; đòi nơi sản xuất → chưa rõ, "cần xác nhận nơi sản xuất đầu phát".
+5. "Ok": không phạt điểm cấu hình dùng đầu phát chọn theo datasheet hãng.
+6. "Ok": bổ sung dữ liệu Mecc Alte (ECO / NPE) + Stamford trên 750 kVA sau, bằng Firecrawl; Marathon để lại.
+7. "Nếu không ghi tương đương thì chỉ chọn hãng đó" (HSMT nêu đích danh hãng đầu phát). Có "tương đương" → thêm hãng khác xếp sau, và HSMT đòi đồng bộ thương hiệu thì không dùng đầu phát khác hãng tổ máy: là khuyến nghị, Khoa không nhắc riêng.
+Kết quả phải ghi rõ "đầu phát chọn theo datasheet hãng, NCC chưa chào" ([[khong-viet-au]]).
 
 ## Số đông dung tích: làm tròn (Khoa 19/11/2026)
 Số đông chỉ áp cho dung tích (và số xi lanh), áp cả trần, hãng động cơ không gộp. Về làm tròn: nguồn chỉ ghi số làm tròn mà HSMT đòi số chính xác hơn (Y490D 2,67 ↔ ≥ 2,672) → "không giữ" (loại); số chính xác của nguồn không đạt, chỉ số làm tròn đạt (8,27 / 8,3 ↔ ≥ 8,3) → "loại". Tức so chặt bằng số chính xác nhất của nhóm thắng, không nới khoảng làm tròn. Cũng 19/11 Khoa bảo BỎ: nới luật tần số thứ hai, đổi thứ tự / trần CN_ROWS ↔ PER_SUPPLIER. Ngoại lệ dữ liệu sai của một vài dòng: sửa riêng dòng đó (`ROW_EXCEPTIONS`), không đổi luật.
