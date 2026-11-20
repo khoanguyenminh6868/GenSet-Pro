@@ -1554,7 +1554,13 @@
       ["KTA19G4", "| KTA19G4 | 448 | 504 | 6 | 159X160 | 18.9 | 13.9:1 | 72 | 213 | 107 | 电调 | 95 | N/A", ["bore"], "nguồn ghi 159X160, Cummins ghi 159 × 159 mm"],
       ["QSL9G5", "| QSL9G5 | 268 | 310 | 6 | 114X145 | 8.8 | 17.8:1 | 24 | 199 | 63 | 电喷 | 28.5 | N/A", ["compr"], "nguồn ghi 17.8:1, Cummins ghi 16.8:1"],
       ["QSL9G7", "| QSL9G7 | 271 | 300 | 6 | 114X145 | 8.8 | 16.1:1 | 24 | 214 | 70 | 电喷 | 28.5 | 国三", ["disp"], "nguồn ghi 8.8 L, Cummins ghi 8.9 L cho QSL9 G7"],
-    ].map(([model, line, keys, why]) => ({ supplierId: "yingtai-jiangsu", n, model, line, act: "dropspec", keys, khoa: "điều phối 20/11/2026 (cách #952 / #957)", why: `${why}: bỏ riêng số đó, giữ dòng` }))),
+      // Khoa 20/11/2026 (catalog-hy-2.md câu 1, 2): compression ratios the Cummins sheets found do not confirm. QSL9 G2–G4:
+      // 17.8:1 is the QSL9-G5 figure the source repeats down the family (G5 itself is 16.8:1); QSK60G7: 16.2:1 no Cummins sheet gives.
+      ["QSL9G2", "| QSL9G2 | 206 | 239 | 6 | 114X145 | 8.8 | 17.8:1 | 24 | 220 | 62 | 电喷 | 28.5 | 国三", ["compr"], "nguồn ghi 17.8:1, sheet Cummins không xác nhận", "Khoa 20/11/2026"],
+      ["QSL9G3", "| QSL9G3 | 227 | 257 | 6 | 114X145 | 8.8 | 17.8:1 | 24 | 221 | 59 | 电喷 | 28.5 | 国三", ["compr"], "nguồn ghi 17.8:1, sheet Cummins không xác nhận", "Khoa 20/11/2026"],
+      ["QSL9G4", "| QSL9G4 | 245 | 279 | 6 | 114X145 | 8.8 | 17.8:1 | 24 | 214 | 61 | 电喷 | 28.5 | 国三", ["compr"], "nguồn ghi 17.8:1, sheet Cummins không xác nhận", "Khoa 20/11/2026"],
+      ["QSK60G7", "| QSK60G7 | 1615 | 1790 | 16 | 159X190 | 60.2 | 16.2:1 | 280 | 197 | 380 | 电喷 | 541 | N/A", ["compr"], "nguồn ghi 16.2:1, sheet Cummins không xác nhận", "Khoa 20/11/2026"],
+    ].map(([model, line, keys, why, khoa]) => ({ supplierId: "yingtai-jiangsu", n, model, line, act: "dropspec", keys, khoa: khoa || "điều phối 20/11/2026 (cách #952 / #957)", why: `${why}: bỏ riêng số đó, giữ dòng` }))),
   ];
   function rowExceptions(s, list, note) {
     const ex = ROW_EXCEPTIONS.filter((x) => x.supplierId === s.id);
