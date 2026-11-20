@@ -4,7 +4,7 @@
 // web = genbid-work/doc-cache/supplier.json (bản web 18/11, bộ gợi ý dùng); repo = GenSet-Pro/suppliers/cn/*.json (main).
 import fs from "node:fs";
 import path from "node:path";
-import { pathToFileURL } from "node:url";
+import { pathToFileURL, fileURLToPath } from "node:url";
 const SRC = process.argv[2] || "web";
 const WT = "C:/Projects/GenSet Pro/GenSet-Pro";
 await import(pathToFileURL(`${WT}/suppliers/config-bot.mjs`).href);
