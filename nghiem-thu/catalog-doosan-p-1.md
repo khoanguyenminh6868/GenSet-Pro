@@ -25,8 +25,8 @@ Chữ viết của NCC GIỮ NGUYÊN, không gộp: "P126TI-11" (3), "P126TI-Il"
 Chưa đo top 30 (cloud); đề xuất điều phối đo `do-gop.mjs` main 66cc1008 ↔ nhánh: kỳ vọng đổi chủ yếu ở lượt có Doosan trong nhóm hãng G20 / `MAKE_ROWS`.
 
 ## Kiểm
-- `node --test web/test/*.test.mjs suppliers/*.test.mjs`: xem dòng cuối (điền khi xong).
-- `quality.mjs --check`: xem dòng cuối.
+- `node --test web/test/*.test.mjs suppliers/*.test.mjs`: 1460 / 1460 đạt.
+- `quality.mjs --check`: "không chỉ số nào xấu đi quá ngưỡng".
 - Mã `ZCDL-Q363` (zhengchi n112, "653.4" ở ô 柴油机型号, không là mã) vẫn KHÔNG đọc: đúng như đã đề xuất, không đoán mã từ dòng Q396.
 
 ## Cần ghi nhớ / đề xuất (CHƯA làm)
