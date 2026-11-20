@@ -18,9 +18,10 @@ test("aoke n129: dung tích 108 / 105 bỏ; dòng kế (NTA855 14, SC13G 12.88) 
   assert.equal(spec(e.find((r) => r.model === "SC13G420D2"), "disp"), "12.88");
 });
 
-test("jlmech n103 JL-1000GF: dung tích 458 bỏ; JL-1200GF kế bên giữ 45.8", () => {
+test("jlmech n103 JL-1000GF: dung tích 458 sửa thành 45.8 (fixspec, mang dấu đã sửa); JL-1200GF kế bên giữ 45.8", () => {
   const e = eng("jlmech-wuhan", 103);
-  assert.equal(spec(e.find((r) => r.genset === "JL-1000GF"), "disp"), undefined);
+  assert.equal(spec(e.find((r) => r.genset === "JL-1000GF"), "disp"), "45.8");
+  assert.equal(e.find((r) => r.genset === "JL-1000GF").fixed[0].from, "458");
   assert.equal(spec(e.find((r) => r.genset === "JL-1000GF"), "cyl"), "12");
   assert.equal(spec(e.find((r) => r.genset === "JL-1200GF"), "disp"), "45.8");
 });
@@ -86,10 +87,10 @@ test("mọi ngoại lệ nhóm này ghi note đúng bảng; chữ dòng nguồn 
   assert.equal(spec(e[0], "disp") != null, true);
 });
 
-test("huipu n105 HP-P1330, n106 HP-V280 / HP-V400: dung tích 458 / 1278 bỏ; HP-P1113 kế bên giữ 45.8", () => {
+test("huipu n105 HP-P1330 458 → 45.8, n106 HP-V280 / HP-V400 1278 → 12.78 (fixspec); HP-P1113 kế bên giữ 45.8", () => {
   const p = eng("huipu-power", 105), v = eng("huipu-power", 106);
-  assert.equal(spec(p.find((r) => r.genset === "HP-P1330"), "disp"), undefined);
+  assert.equal(spec(p.find((r) => r.genset === "HP-P1330"), "disp"), "45.8");
   assert.equal(spec(p.find((r) => r.genset === "HP-P1330"), "cyl"), "12");
   assert.equal(spec(p.find((r) => r.genset === "HP-P1113"), "disp"), "45.8");
-  for (const g of ["HP-V280", "HP-V400"]) assert.equal(spec(v.find((r) => r.genset === g), "disp"), undefined, g);
+  for (const g of ["HP-V280", "HP-V400"]) assert.equal(spec(v.find((r) => r.genset === g), "disp"), "12.78", g);
 });

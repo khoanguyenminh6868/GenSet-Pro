@@ -1714,7 +1714,9 @@
       ["AOKE-M275", "| AOKE-M275 | 250KW | 275KW | 奔驰 | 6R1600G20F | 6 | 105 | 43 | 200 | 2900*1150*1650 | 2620 | | 详细参数"]].map(([genset, line]) => (
       { supplierId: "aoke-yangzhou", n: 129, genset, line, act: "dropspec", keys: ["disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi dung tích 108 / 105 L cho tổ máy 250 kW (bảng cùng trang ghi 14 và 12.88 L cho động cơ khác): bỏ riêng dung tích" })),
     // jlmech-wuhan n103 JL-1000GF: "458" L (160×190 mm × 12 xi lanh); the next row of the table, JL-1200GF, writes 45.8 for the same engine size.
-    { supplierId: "jlmech-wuhan", n: 103, genset: "JL-1000GF", line: "| JL-1000GF | 1000 | 1250 | 1800 | 4012-46TWG2A | 12 | 160*190 | 458 | 177 | 212 | 4950*2200*2550 | 8500", act: "dropspec", keys: ["disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi dung tích 458 L (dòng kế ghi 45.8 L cho cùng cỡ động cơ): bỏ riêng dung tích, không đọc là 45.8" },
+    // (doosan-hau-to PR, điều phối 20/11/2026: now `fixspec` 458 → 45.8; (a) 160×190×12 = 45.84 L, (b) 4012-46TWG2A: 21 NCC khác ghi 45.8 / 45.84 / 45.842.)
+    { supplierId: "jlmech-wuhan", n: 103, genset: "JL-1000GF", line: "| JL-1000GF | 1000 | 1250 | 1800 | 4012-46TWG2A | 12 | 160*190 | 458 | 177 | 212 | 4950*2200*2550 | 8500", act: "fixspec", khoa: "Khoa 20/11/2026",
+      fixes: [{ key: "disp", from: "458", to: "45.8", why: "12 | 160*190 → 45.84 L (lệch 0,1 %); 4012-46TWG2A ở 21 NCC khác ghi 45.8 / 45.84 / 45.842", src: "hình học dòng: 160×190×12 xi lanh = 45.84 L" }], why: "mất dấu chấm: 458 → 45.8" },
     // jlmech-wuhan n104 JL-180GF / JL-220GF: the Size cell has lost its "*" ("30001030*1550", "31001100*1750").
     ...[["JL-180GF", "| JL-180GF | 180 | 225 | 324 | YC6MK285L-D20 | 6 | 123*145 | 10.33 | 28 | 195 | 30001030*1550 | 2600"],
       ["JL-220GF", "| JL-220GF | 220 | 275 | 396 | Y06MK350L-D20 | 6 | 123*145 | 10.33 | 28 | 195 | 31001100*1750 | 2800"]].map(([genset, line]) => (
@@ -1755,10 +1757,12 @@
     { supplierId: "westinpower", n: 1064, genset: "TP880L", line: "| Rated rotation speed | r/min | 1191", act: "dropspec", keys: ["speed"], khoa: "Khoa 20/11/2026", why: "nguồn ghi tốc độ 1191 v/p (trang 2 cùng PDF ghi 1500 RPM): bỏ riêng tốc độ, không lấy số trang 2 thay" },
     // huipu-power n105 HP-P1330 / n106 HP-V280, HP-V400 (Khoa duyệt 20/11/2026, cùng kiểu "458" của jlmech):
     // "Swept volume(L)" 458 (160×190 mm × 12 xi lanh; dòng HP-P1113 cùng bảng ghi 45.8 cho 4012-46TWG2A) và 1278 (131×158 mm × 6 xi lanh).
-    ...[[105, "HP-P1330", "| HP-P1330 | 1200 | 1330 | 4012-46TAG2A | 12 | 160*190 | 458 | 301 | 501 | 177.1 | 4980*2200*2520 | 10200"],
-      [106, "HP-V280", "| HP-V280 | 280 | 280 | TAD1341GE | 6 | 131*158 | 1278 | 65.4 | 148 | 36 | 3050*1114*1391 | 2420"],
-      [106, "HP-V400", "| HP-V400 | 360 | 400 | TAD1345GE | 6 | 131*158 | 1278 | 96.8 | 210 | 36 | 3210*1114*1600 | 2750"]].map(([n, genset, line]) => (
-      { supplierId: "huipu-power", n, genset, line, act: "dropspec", keys: ["disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi dung tích 458 / 1278 L (cùng cỡ động cơ ở dòng khác của trang ghi 45.8): bỏ riêng dung tích" })),
+    // doosan-hau-to PR (điều phối 20/11/2026): `fixspec` (a) 160×190×12 = 45.84 L, 131×158×6 = 12.78 L của chính dòng; (b) 4012-46TAG2A: 20 NCC khác
+    // ghi 45.8 / 45.84 / 45.842; TAD1341GE-B và TAD1345GE: Volvo Penta ghi 12.78 L (suppliers/sources/volvo-penta/1010.md, 1011.md), TAD1345GE thêm 5 NCC.
+    ...[[105, "HP-P1330", "| HP-P1330 | 1200 | 1330 | 4012-46TAG2A | 12 | 160*190 | 458 | 301 | 501 | 177.1 | 4980*2200*2520 | 10200", "458", "45.8", "12 | 160*190 → 45.84 L (lệch 0,1 %); 4012-46TAG2A ở 21 NCC khác ghi 45.8 / 45.84 / 45.842", "hình học dòng: 160×190×12 xi lanh = 45.84 L"],
+      [106, "HP-V280", "| HP-V280 | 280 | 280 | TAD1341GE | 6 | 131*158 | 1278 | 65.4 | 148 | 36 | 3050*1114*1391 | 2420", "1278", "12.78", "6 | 131*158 → 12.78 L (lệch 0 %); Volvo Penta bulletin TAD1341GE-B: Displacement 12.78 l", "hình học dòng: 131×158×6 xi lanh = 12.78 L; volvo-penta/1010.md"],
+      [106, "HP-V400", "| HP-V400 | 360 | 400 | TAD1345GE | 6 | 131*158 | 1278 | 96.8 | 210 | 36 | 3210*1114*1600 | 2750", "1278", "12.78", "6 | 131*158 → 12.78 L (lệch 0 %); Volvo Penta bulletin TAD1344GE / TAD1345GE: 12.78 l; aoke, bdadl, fukangsi, lees, pengpai ghi 12.78", "hình học dòng: 131×158×6 xi lanh = 12.78 L; volvo-penta/1011.md"]]
+      .map(([n, genset, line, from, to, why, src]) => ({ supplierId: "huipu-power", n, genset, line, act: "fixspec", fixes: [{ key: "disp", from, to, why, src }], khoa: "Khoa 20/11/2026", why: `mất dấu chấm: ${from} → ${to}` })),
     // green-power n115 (bảng bỏ sót, ENGINE_CELL_TABLES) GP1000 A/M: "12V 1600 G31F | E | 16" — "12V" is 12 cylinders (MTU 12V 1600
     // spec: "Cylinder configuration 12 V"); as the only cylinder source of 12V1600G31F, the 16 ruled out mecca / lees rows for
     // HSMTs asking 12 (top 30 cloud #967). Candidate for `fixspec` (cyl = 12) once that mechanism lands.
@@ -2143,7 +2147,11 @@
   // "^" (baifa, aosif, mecca, landtop, Weichai's own sheets…): no source found says what it means. Khoa 19/11/2026 did not
   // know either and kept the merge; it rests on no source. Merging also brings one supplier's wrong figures to the others'
   // rows: aosif "8M33D1012E311^" 12V / 31,8 L against 8 cyl / 26,14 L (waeta, wiseke) → no majority (catalog-b-1.md).
-  const keyOf = (m) => String(m).normalize("NFKC").toUpperCase().replace(/[\s\-_.·–—]/g, "").replace(/[*†‡^×]+$/, "");
+  // Doosan P-engine only (DOOSAN_P: P126TI / P222LE…): the suffix "II" typed "11" or "Il" ("P126TI-11", "P222LE-11", "P126TI-Il")
+  // is the same engine as "-II" (Khoa duyệt 20/11/2026). NFKC already makes "-Ⅰ" / "-Ⅱ" "-I" / "-II". "-1" / "-2" stay apart
+  // ("P222LE-2", "P126TI-2" of huatai n108 are not "-II"); no other maker's code is touched.
+  const DOOSAN_II = /^(P\d{3}(?:TI|LE))(?:11|IL)$/;
+  const keyOf = (m) => String(m).normalize("NFKC").toUpperCase().replace(/[\s\-_.·–—]/g, "").replace(/[*†‡^×]+$/, "").replace(DOOSAN_II, "$1II");
   const MARK_TAIL = /\s*[*＊†‡★☆^×]+$/;
   // A mark a supplier's note gives a meaning that tells the model apart (catalog-b, not merged with the bare model): ettes-power
   // n146 "Models with mark of "★" means the engine made by Perkins China, other models are made in UK" (the place of
