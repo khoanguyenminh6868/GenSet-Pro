@@ -12,3 +12,23 @@
 - Kiểm: `node --test bot/test/*.test.mjs` → pass 149, fail 0; `node --check genbid-sync.js` ok.
 - Chưa kiểm: chạy trên ZIP AES thật (máy này không có 7z; sandbox thử đã xoá). Cách kiểm sau merge: tạo `7z a -pX -mem=AES256 pw.zip a.txt`, `node genbid-sync.js publish-text --file pw.zip ...` → kỳ vọng `chars 0`, ghi chú "có mật khẩu".
 - Không tự merge, không chép sang `genbid-hsmt\`. Quay lui: revert PR.
+
+## Cập nhật: push thử ĐÃ chạy (Khoa xác nhận trong chat, 20/11/2026)
+- Commit `8f80bdb2` trên `hsmt-inbox` (thêm `\n` cuối `inbox/IB2600599032/release.json`), push thường, không workflow_dispatch.
+- Action `hsmt inbox`: success. Log: `Tenders: IB2600599032` → `IB2600599032: already on the web from the bot (2 files), text kept`.
+- So web trước/sau (`genbid-work\thu-sandbox\truoc-…json`, `sau-…json`): `hsmt` giống từng ký tự, 2 chunk `hsmttext` giống từng ký tự; chỉ `hsmtreq.doneAt` đổi (2026-11-14T16:25:10Z → 2026-11-20T01:51:52Z).
+- Kết luận B: ĐẠT trên Action thật. #947 giữ chữ bot khi push thường.
+
+## Kiểm #961 trên Windows (20/11/2026, `genbid-test\zipnul\`, không ghi web)
+- Máy không có 7z và WinRAR `Rar.exe` không có `-afzip`: tạo ZIP AES-256 (WinZip AE-2) bằng `mk-aes-zip.mjs` (Node crypto) với `a.txt` + `c.docx` (01.docx của IB2600599817), mật khẩu thử. `C:\Windows\System32\tar.exe -tvf` liệt kê 2 tệp (đọc được như ZIP mã hoá thật).
+- **Khác Linux:** tar.exe (bsdtar Windows) KHÔNG ghi NUL; nó dừng "Couldn't read passphrase" (mã 1) và để tệp 0 byte. Mã main đã ghi "có mật khẩu" nhưng thêm "đọc 1 tệp giải nén được" (tệp rỗng). Sửa thêm ở #961 (commit mới): bỏ cả tệp 0 byte khi lý do là mật khẩu.
+- Đầu ra thật, mã main `86203cd4` so nhánh #961:
+```
+[main pw.zip]  {"chars":0,"notes":["pw.zip: có mật khẩu, đọc 1 tệp giải nén được"]}
+[#961 pw.zip]  {"chars":0,"notes":["pw.zip: có mật khẩu"]}
+[main 02.rar]  chars 109178   [#961 02.rar] chars 109178   (chữ GIỐNG từng byte, cmp)
+[main 01.zip]  chars 9722     [#961 01.zip] chars 9722     (chữ GIỐNG từng byte, cmp)
+```
+(9722 trên Windows; 9757 ở sandbox Linux là cách đếm khác của cùng chữ, không liên quan #961.)
+- `node --test bot/test/*.test.mjs`: pass 149, fail 0.
+- Chưa kiểm trên Windows: ZIP AES do 7z thật tạo (dùng bản tự tạo đúng định dạng). Nhánh NUL (Linux bsdtar) đã thấy ở sandbox, test đơn vị `isNulFile`; chưa chạy lại trên sandbox sau sửa.
