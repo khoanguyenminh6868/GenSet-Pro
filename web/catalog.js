@@ -1358,7 +1358,25 @@
         break;
       }
     }
-    return mergeRepeats(rowExceptions(s, out, note));
+    return mergeRepeats(tableDrops(s, rowExceptions(s, out, note), note));
+  }
+  // Spec keys of a whole table form left out (catalog-b3, Khoa 20/11/2026), an explicit list, not a rule: matched by supplier
+  // AND a title in the table's header. zhengchi-power's tables of "整机编号" (n102+): the "缸数 | 排量(L)" columns disagree with
+  // the other suppliers' figures for the same engine (displacement 164 of 321 models, cylinders 57 of 373: WP2.3D25E200
+  // "6 | 8.2" against 4 cylinders, 2.3 L), so the figures are not taken for the engine. Everything else of the rows is read
+  // as before. The n101 table ("机组型号") is not listed.
+  const TABLE_DROPS = [
+    { supplierId: "zhengchi-power", title: /整机编号/, keys: ["cyl", "disp"], khoa: "Khoa 20/11/2026", why: "cột 缸数 / 排量 của bảng lệch số của NCC khác cho cùng động cơ (dung tích 164 / 321 model)" },
+  ];
+  function tableDrops(s, list, note) {
+    const ds = TABLE_DROPS.filter((x) => x.supplierId === s.id);
+    if (!ds.length) return list;
+    return list.map((o) => {
+      const d = ds.find((x) => (o.header || []).some((h) => x.title.test(h)));
+      if (!d || !(o.specs || []).some((sp) => d.keys.includes(sp.key))) return o;
+      note({ n: o.n, title: o.title }, o.table, o.row ?? null, "bỏ thông số theo bảng", `${d.keys.join(", ")}: ${d.khoa}, ${d.why}`);
+      return { ...o, specs: o.specs.filter((sp) => !d.keys.includes(sp.key)) };
+    });
   }
   // Rows Khoa decided one by one (not a rule: no other row changes). A record is hit only when supplier, source n,
   // genset model AND the source line, word for word, all match, so an exception lapses by itself when the source is

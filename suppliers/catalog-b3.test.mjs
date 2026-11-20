@@ -26,6 +26,19 @@ test("zhengchi n110: 整机编号 (cột 3) là model tổ máy, 柴油机型号
   assert.ok(!r.some((x) => /^ZCDL/.test(x.model)));
 });
 
+test("zhengchi bảng 整机编号: bỏ cyl + disp (Khoa 20/11/2026), giữ thông số khác; bảng n101 (机组型号) giữ cyl", () => {
+  const notes = [];
+  const r = recs(zc(["| 21KW | 23KW | 潍柴 | ZCDL-W23 | WP2.3D25E200 | 50Hz | 230/400 | 6.3/10.5 | 155g/kw.h | 三相四线 | 6 | 8.2 | 1300×550×900 | 500 | 更多"]), "engine", notes);
+  assert.equal(r.length, 1);
+  const keys = r[0].specs.map((x) => x.key);
+  assert.ok(!keys.includes("cyl") && !keys.includes("disp"));
+  assert.ok(keys.includes("weight"));
+  assert.ok(notes.some((n) => n.reason === "bỏ thông số theo bảng"));
+  const t101 = sup("zhengchi-power", [{ n: 101, title: "沃尔沃发电机", header: ["| | 机组型号 | 输出功率(KW) | 电流 | 柴油机型号 | 缸数 | 缸径×行程 | 排气量 | 燃油消耗率 | 机组尺寸mm | 机组重量 | 电压(V) | 频率 | 输出 | 详细参数", "| 主用 | 备用"],
+    rows: ["| ZCDL-V75 | 70 | 75 | 126A | TAD550GE | 4 | 108*130 | 4.76L | 190g/kw.h | 2188*566*1300 | 1256kg | 220/380 | 50Hz | 三相四线 | 详细参数"] }]);
+  assert.ok(recs(t101, "engine")[0].specs.some((x) => x.key === "cyl"));
+});
+
 test("zhengchi: dòng có ô động cơ viết dấu '－' toàn chiều rộng không là mã → không có bản ghi động cơ (không lấy mã tổ máy thay)", () => {
   const s = zc(["| 1200KW | 1345KW | 玉柴 | ZCDL-Y1345 | YC12VTD2000－D30 | 50Hz | 230/400 | 6.3/10.5 | 213g/kw.h | 三相四线 | 12 | 57.25 | 6100×2600×3100 | 12000 | 更多"]);
   assert.equal(recs(s, "engine").length, 0);
