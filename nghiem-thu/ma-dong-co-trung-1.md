@@ -2,6 +2,17 @@
 
 **Kết luận:** PR DRAFT https://github.com/khoanguyenminh6868/GenSet-Pro/pull/998, nhánh `ma-dong-co-trung-1`, commit `9c80eada`. Làm trên origin/main `cf0b0448`. PR xếp CUỐI hàng chờ `web/catalog.js`: trước khi merge phải gộp main mới vào nhánh và đo lại. Không tự merge.
 
+## Đo lại sau khi gộp main `97cce88c` (head `cc38bda8`, 20/11/2026)
+- Merge chỉ xung đột ở `web/CLAUDE.md`: đã giữ phần của cả hai bên.
+- `5-doi-khoa.mjs` (log `doi-khoa-pr1b.log`; danh sách ở `doi-khoa-pr1b.tsv` / `khoa-dich-pr1b.tsv`):
+  - Khoá động cơ: 6562 → 6247.
+  - 447 dòng đổi khoá; 0 dòng mất, 0 dòng thêm.
+  - 263 khoá đích, 0 lệch số dòng.
+  - 2 khoá đổi hãng, như lần đo trước.
+- spec-diff `git:97cce88c --gate`: đảo vai 0 → 0, exit 0.
+- `quality --check`: đạt.
+- Test: 1337 + 148 + 11 pass (log `test-pr1b.log`).
+
 ## Tệp đã đổi
 - `web/catalog.js`:
   - thêm `engineCode()` + `ENGINE_TRIM`, `MAKE_WORD`, `PLANT_SLASH`, `engineMakeWord`;
