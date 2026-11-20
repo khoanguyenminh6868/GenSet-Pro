@@ -1404,12 +1404,12 @@
     { supplierId: "mingbang-mbkl", n: 125, genset: "MB-V480", line: "| 14 | MB-V480 | 600 | 480 | 660 | 528 | TAD1642GE | 4 | 4.4 | 105*127 | 118.4 | 4700×2100×2600", act: "dropspec", keys: ["cyl", "disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi 4 xi lanh / 4,4 L cho tổ máy 480 kW (nguồn khác ghi 6 / 16,12 L): bỏ riêng số xi lanh và dung tích" },
     // westinpower n1064 TP880L (a PDF table written down the page): "Rated rotation speed 1191 r/min"; the same PDF writes "Engine speed Rated 1500 RPM" on page 2.
     { supplierId: "westinpower", n: 1064, genset: "TP880L", line: "| Rated rotation speed | r/min | 1191", act: "dropspec", keys: ["speed"], khoa: "Khoa 20/11/2026", why: "nguồn ghi tốc độ 1191 v/p (trang 2 cùng PDF ghi 1500 RPM): bỏ riêng tốc độ, không lấy số trang 2 thay" },
-    // huipu-power n105 HP-P1330 / n106 HP-V280, HP-V400 (điều phối cho thêm 20/11/2026, cùng kiểu "458" của jlmech; chưa hỏi Khoa riêng):
+    // huipu-power n105 HP-P1330 / n106 HP-V280, HP-V400 (Khoa duyệt 20/11/2026, cùng kiểu "458" của jlmech):
     // "Swept volume(L)" 458 (160×190 mm × 12 xi lanh; dòng HP-P1113 cùng bảng ghi 45.8 cho 4012-46TWG2A) và 1278 (131×158 mm × 6 xi lanh).
     ...[[105, "HP-P1330", "| HP-P1330 | 1200 | 1330 | 4012-46TAG2A | 12 | 160*190 | 458 | 301 | 501 | 177.1 | 4980*2200*2520 | 10200"],
       [106, "HP-V280", "| HP-V280 | 280 | 280 | TAD1341GE | 6 | 131*158 | 1278 | 65.4 | 148 | 36 | 3050*1114*1391 | 2420"],
       [106, "HP-V400", "| HP-V400 | 360 | 400 | TAD1345GE | 6 | 131*158 | 1278 | 96.8 | 210 | 36 | 3210*1114*1600 | 2750"]].map(([n, genset, line]) => (
-      { supplierId: "huipu-power", n, genset, line, act: "dropspec", keys: ["disp"], khoa: "điều phối 20/11/2026 (chưa hỏi Khoa riêng)", why: "nguồn ghi dung tích 458 / 1278 L (cùng cỡ động cơ ở dòng khác của trang ghi 45.8): bỏ riêng dung tích" })),
+      { supplierId: "huipu-power", n, genset, line, act: "dropspec", keys: ["disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi dung tích 458 / 1278 L (cùng cỡ động cơ ở dòng khác của trang ghi 45.8): bỏ riêng dung tích" })),
   ];
   function rowExceptions(s, list, note) {
     const ex = ROW_EXCEPTIONS.filter((x) => x.supplierId === s.id);
