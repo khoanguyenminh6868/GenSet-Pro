@@ -1502,6 +1502,10 @@
           // nothing else was taken as the engine, under an engine title: it is the engine; another alternator-shaped code of the row
           // ("274G") is the alternator (green-power n108 "MOTORE ENGINE", the alternator makers are columns of the header; uleengen
           // n5001 "Engine model | Alternator"; lech-cot-11).
+          // A table with no alternator column never set `ai` (only `hasAltCol` does), so its lone Doosan "P126TI" never reached the rule
+          // below and the row had no engine record (catalog-doosan-p, Khoa 20/11/2026: 288 rows, 40 tables): one alternator-shaped code
+          // of the row, Doosan-shaped, under an engine title with nothing else taken as the engine.
+          if (hasEngineCol && ei < 0 && ai < 0 && alt.length === 1 && DOOSAN_P.test(cells[alt[0]].trim())) ai = alt[0];
           if (hasEngineCol && ei < 0 && ai >= 0 && DOOSAN_P.test(cells[ai].trim())) { const dp = ai; ei = dp; ai = rest.find((i) => i !== dp && (ALT_CODE.test(cells[i]) || (hasAltCol && FRAME_ALT.test(cells[i].trim())))) ?? -1; }
           if (!hasAltCol && alt.length && hasEngineCol && ei >= 0) ai = alt.find((i) => i > ei) ?? alt.find((i) => i < ei && BC_ALT.test(cells[i].trim())) ?? -1; // (acepow "| APW-10.5 | … | BC164C | 10.8 | 12 | Y480BD": no title for the alternator, its BC1xx code stands before the engine; lech-cot-8) only after the engine: one before it, under no title, may be a Doosan "P158LE" or a Mitsubishi "S4L2" (tried 18/11/2026: 6 suppliers got engines as alternators)
           // The header names both, the alternator's title before the engine's ("| Alternator | Engine model", acepow;
