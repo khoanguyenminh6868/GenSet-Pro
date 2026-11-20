@@ -931,6 +931,13 @@
     const why = ks.map((kd) => `${kinds[kd].label} ghi "${String(kinds[kd].words).slice(0, 60)}"`).join("; ");
     return { fuel, from, why };
   }
+  // The fuel a PAGE states that the saved table does not carry (list written by hand, like ROW_EXCEPTIONS; only the page's
+  // OWN words, read on the live page, never another supplier's page of the same look): weichai-power n125–128 are
+  // "Standard Land-based Generator Set" pages of "…*7NG" rows whose title and URL say nothing of fuel; the page's breadcrumb
+  // "Products & Businesses / Energy & Power / Generator Set / Overseas Gas" and its image names "16M33NG-机组燃气-1.png" do
+  // (live pages read 20/11/2026, all four; also in sources/weichai-power/<n>.md). Level T: the page's category.
+  const FUEL_PAGES = [{ supplierId: "weichai-power", ns: [125, 126, 127, 128], fuel: "gas", why: 'trang ghi đường dẫn "Generator Set / Overseas Gas" và ảnh "机组燃气" (đọc trang sống 20/11/2026)' }];
+  const fuelPage = (id, n) => { const p = FUEL_PAGES.find((x) => x.supplierId === id && x.ns.includes(n)); return p ? { fuel: p.fuel, from: "T", why: p.why } : null; };
   // A table's gas set (its header rows are not read): the same signs, no row, the page's URL when known.
   const gasTable = (t, lines, url) => { const f = fuelFrom(fuelSigns({ title: t.title, header: [], rows: lines }, url), null); return !!f && (f.fuel === "gas" || f.fuel === "dual") || GAS_WORD.test(`${t.title || ""} ${lines.join(" ")}`) || lines.some((l) => /-NG$/i.test(cellsOf(l)[0] || "")); };
   function tidyTable(t, note = () => {}, url = "") {
@@ -1453,7 +1460,7 @@
     const fuelSg = new Map();
     for (const o of out) {
       if (!fuelSg.has(o.table)) { const t0 = s.specTables[o.table]; fuelSg.set(o.table, fuelSigns(t0, ((s.sources || []).find((x) => x.n === t0.n) || {}).url || "")); }
-      const f = fuelFrom(fuelSg.get(o.table), o.line || `| ${o.genset || ""}`);
+      const f = fuelFrom(fuelSg.get(o.table), o.line || `| ${o.genset || ""}`) || fuelPage(s.id, o.n);
       if (f) { o.fuel = f.fuel; o.fuelFrom = f.from; o.fuelWhy = f.why; }
     }
     return mergeRepeats(rowExceptions(s, out, note));

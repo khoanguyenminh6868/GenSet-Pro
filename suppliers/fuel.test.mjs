@@ -59,7 +59,6 @@ test("không ghi: menu / khẩu hiệu / đơn vị / chữ mơ hồ / mâu thu�
     ["kingway-power", 117],                                       // bể chứa khí sinh học
     ["man-engines", 104],                                         // "diesel and gas engines" trộn
     ["penlucky", 102],                                            // URL diesel; chỉ mã động cơ K38N
-    ["weichai-power", 125],                                       // -NG + N0/5 nhưng không tiêu đề / URL khí
   ]) {
     const rs = rec(id, n);
     assert.ok(rs.length, `${id} n${n} có bản ghi`);
@@ -69,6 +68,17 @@ test("không ghi: menu / khẩu hiệu / đơn vị / chữ mơ hồ / mâu thu�
   assert.equal(C.fuelOf(t("Gas Powered Storage Tank | Biogas Storage Tank"), ""), null);
   assert.equal(C.fuelOf(t("Coolant flow 80 m3/h diesel"), ""), null);
   assert.equal(C.fuelOf(t("TAIZHOU KAIHUA DIESEL GENERATOR SETS CO. LTD - Gas Generator"), "").fuel, "gas"); // diesel trong TÊN CÔNG TY không tính
+});
+
+test("weichai-power n125–128: tiêu đề / URL không ghi khí, nhưng đường dẫn của CHÍNH trang (\"Generator Set / Overseas Gas\") có → T (FUEL_PAGES)", () => {
+  for (const n of [125, 126, 127, 128]) {
+    const rs = rec("weichai-power", n);
+    assert.ok(rs.length, `n${n}`);
+    for (const r of rs) { assert.equal(r.fuel, "gas"); assert.equal(r.fuelFrom, "T"); assert.match(r.fuelWhy, /Overseas Gas/); }
+  }
+  // chỉ bảng đã soát trang: bảng khác của NCC không bị gán
+  const other = C.fromSupplier(real("weichai-power")).filter((r) => ![125, 126, 127, 128].includes(r.n));
+  assert.ok(other.length && other.every((r) => r.fuel === undefined));
 });
 
 test("fuel đi tới uses của build() ở mức DÒNG", () => {
