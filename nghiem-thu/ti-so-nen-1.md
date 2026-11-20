@@ -62,8 +62,20 @@ Số đếm trên `technicalPart` (phần code thật sự đọc, cả `hintsOf
 Thứ hạng đổi chỉ do ba cấu hình có thêm 1 "không đạt" ở động cơ (tiêu chí xếp hạng đầu); các cấu hình còn lại giữ thứ tự tương đối.
 - Fixture `regress-config` IB2600603983 (dữ liệu NCC đóng băng 17/11): Perkins và Cummins → không đạt "Tỷ số nén", xuống hạng 4–5; Volvo TWD1744GE trong fixture không có nguồn tỉ số nén (tờ volvo-penta [1016] vào sau) nên giữ "chưa rõ". Volvo / S6R2 / Baudouin 6M33 lên hạng 1–3.
 
-### (4) Bước chọn ứng viên: CHƯA XONG
-Không sửa `candidates`. Script đếm `do4.mjs` (scratch của phiên, chạy `candidates` cho mọi gói lịch sử có `comprExact` trên bidhist chụp 18/11, đếm dòng qua lọc / top 30 có động cơ mà mọi nguồn ghi số khác) đã chạy > 80 phút chưa ra; sẽ bổ sung vào tệp này nếu xong trong phiên. Ước tính (KHÔNG đo): ở IB2600603983 các dòng Perkins 4006-23TAG2A, Cummins QSK23-G2, Volvo TWD1744GE trong top 30 sẽ bị loại.
+### (4) Bước chọn ứng viên: CHỈ ĐẾM (đo), không sửa `candidates`
+Script `do4.mjs`: mọi gói máy phát (cung cấp) trong `doc-cache\bidhist.json` chụp 20/11 (dữ liệu 18/11; chữ là Chương V) có `comprExact` trên `technicalPart`; chạy `candidates` như `prep` (mã 2dfdcd2c, `suppliers/cn` cùng commit, rowflags tự tính), phân loại từng dòng theo cùng luật `comprChecks`. 85 gói / 93 lượt (gói nhiều cỡ), 0 lỗi, 6.519 s. IB2600603983 không có trong bản chụp bidhist (gói đang mở).
+
+| Động cơ của dòng | Dòng qua lọc (all) | Dòng top 30 |
+|---|---|---|
+| Mọi nguồn một số = số HSMT | 5.863 | 333 |
+| **Mọi nguồn một số ≠ số HSMT (sẽ loại)** | **30.962** | **1.231** |
+| Nguồn mâu thuẫn, có số = HSMT | 4.134 | 118 |
+| Nguồn mâu thuẫn, đều ≠ HSMT | 9.816 | 261 |
+| Không nguồn nào ghi | 38.678 | 744 |
+| Có giá trị không đọc được | 2.062 | 46 |
+| Tổng | 91.515 | 2.733 |
+
+Nếu lọc: loại 1.231 / 2.733 dòng top 30 (45 %) ở 79 / 85 gói; 30.962 dòng qua lọc ở 81 gói. Nhiều nhất: IB2300087393, IB2300305484, IB2400185291 (16,5:1) mất 29 / 30 dòng; IB2600478079 (17,6:1) 28 / 30. Động cơ hay bị loại nhất (số lượt): 2206A-E13TAG2 ×17, NT855-GA ×16, 2806C-E18TAG1A ×15, NTAA855-G7 ×15, SC12E460D2 ×14, SC9D340D2 ×13, D1146T ×12, TAD1345GE ×12. Lý do: HSMT chép tỉ số nén của MỘT model nên hầu hết động cơ khác ghi số khác; dòng "không nguồn nào ghi" (744) sẽ được đẩy lên thay. Ghi chú: lượt đếm chạy với mã trước khi sửa nhãn "ration limiter" (dòng đó ngoài `technicalPart`, không ảnh hưởng số).
 
 ## 3 mẫu đối chiếu nguồn gốc
 1. Perkins 4006-23TAG2A — fdk-energy [1103] https://fdkenergy.com/wp-content/uploads/2026/03/P825-H1.pdf: "| Compression Ratio | 13.6:1". HSMT IB2600603983: "14    Tỉ số nén    14 : 01".
@@ -78,11 +90,10 @@ Không sửa `candidates`. Script đếm `do4.mjs` (scratch của phiên, chạy
 - Quay lui: revert PR #981 (một squash commit); hoặc bỏ dòng gọi `comprChecks` và tham số `{ hsmtCompr }` trong `check`.
 
 ## Chưa kiểm được
-- (4) số dòng / gói bị loại ở bước ứng viên (đang chạy).
 - Chưa chạy một lượt Gợi ý thật (agent) với prompt mới.
 - 4 gói trơ code không đọc ra (số nguyên trơ ở dòng sau).
 
 ## Cần ghi nhớ
 - Khoa 20/11/2026: tỉ số nén HSMT ghi trơ = số chính xác ở bước chấm (PR #981). Cùng số đến độ làm tròn theo `roundCompat` (em chọn; 1 ca trên 12 kết quả lưu, không đổi kết quả) — cần Khoa xác nhận nếu muốn so chặt.
-- Cần Khoa quyết: có lọc ở bước chọn ứng viên không (chờ số đếm (4)).
+- Cần Khoa quyết: có lọc ở bước chọn ứng viên không — nếu lọc, 45 % dòng top 30 ở 79 / 85 gói ghi trơ bị loại (số ở mục (4)); dòng không có tỉ số nén sẽ chiếm chỗ.
 - Worktree `wt-ti-so-nen-goc` (detached 1e712e19) chỉ để đo; gỡ khi xong.
