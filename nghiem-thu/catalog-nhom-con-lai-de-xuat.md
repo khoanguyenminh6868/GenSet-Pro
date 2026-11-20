@@ -2,6 +2,9 @@
 
 Việc CHỈ ĐỌC (Khoa 20/11: "tìm phương án xử lý"): không sửa mã, không PR, không ghi web. Đo trên `origin/main` **389935b3** bằng `fromSupplier` THẬT của `web/catalog.js` chạy trên toàn bộ `suppliers/cn` (9.812 bảng, 65.916 bản ghi). `suppliers/cn`, `web/catalog.js`, `suppliers/config-bot.mjs` không đổi từ 79e9b175 (`git diff --stat` rỗng) nên số top 30 lấy từ lượt đo cloud gốc `dau-vao\catalog-c\top30-cloud\gop-goc.json.gz` (79e9b175, 1.093 lượt, 928 gói) là số của main hiện tại. Script + bảng đủ: `dau-vao\nhom-con-lai\` (mục cuối).
 
+## KHOA ĐÃ TRẢ LỜI (20/11/2026, qua điều phối)
+1 = **B** (EL / ELS + 3 số là mã đầu phát, CHỈ danh sách bảng eastern-lion) · 2 = **tìm cách đọc bản ghi** (n156 → bản ghi đầu phát: thiết kế đường đọc rồi làm) · 3 = **có** (jianghao n104 → khí; làm sau khi #958 + #963 merge) · 4 = **C** (tìm datasheet 6 động cơ simpson: `simpson-n124-nhien-lieu.md`) · 5 = **chưa quyết** (Khoa hỏi thêm về C) · 6 = **C** (chỉ yingtai n101 / n2003) · 7 = **C** (huatai n111: "额定功率" → công suất động cơ VÀ công suất tổ máy từ tên "NNNGF").
+
 ## Câu hỏi cho Khoa (mỗi câu một chữ)
 
 1. **eastern-lion:** "EL 164D" / "ELS 184F" là mã ĐẦU PHÁT của chính NCC (cột "Alternator model", trang "EL Series Brushless Alternator"); "RUIFEN6120" là BỘ ĐIỀU KHIỂN (cột "Controller"). Không phải mã động cơ, không phải mã tổ máy, không phải tên hãng (đã mở lại trang sống 20/11). Đọc "EL/ELS + 3 số" làm mã đầu phát? **A** thêm mẫu vào `ALT_CODE` (khuyến nghị) · **B** chỉ cho danh sách bảng eastern-lion · **C** để nguyên.
