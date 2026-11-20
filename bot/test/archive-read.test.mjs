@@ -75,3 +75,11 @@ test("pdfNeedsOcr: ≥5 trang với ≥30% trang trống, chữ hỏng font, hay
   assert.equal(P.pdfNeedsOcr(page("") + page("  ")), true); // 2 trang scan: không có chữ
   assert.equal(P.pdfNeedsOcr(page(good), () => true), true); // hỏng font (garbled của ocr-pdf.js)
 });
+
+test("isNulFile: tệp bsdtar ghi toàn byte NUL (ZIP mã hoá AES) không phải tài liệu đọc được", () => {
+  assert.equal(P.isNulFile(Buffer.alloc(21), 21), true);
+  assert.equal(P.isNulFile(Buffer.alloc(65536), 3000000), true);
+  assert.equal(P.isNulFile(Buffer.from("--- a ---\nchữ"), 14), false);
+  assert.equal(P.isNulFile(Buffer.concat([Buffer.alloc(100), Buffer.from("x")]), 101), false);
+  assert.equal(P.isNulFile(Buffer.alloc(0), 0), false); // tệp rỗng thật: không đổi hành vi
+});

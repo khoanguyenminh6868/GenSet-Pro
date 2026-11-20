@@ -1040,6 +1040,14 @@ function tarFail(status, stderr) {
   const l = s.split(/\r?\n/).map((x) => x.replace(/^tar(\.exe)?:\s*/i, "").trim()).find(Boolean);
   return `tệp nén hỏng hoặc không đọc được${l ? ` (${l.slice(0, 120)})` : ""}`;
 }
+// bsdtar cannot decrypt a ZIP with AES-encrypted contents: it lists the entries, then writes files of NUL bytes without an error
+// (found in the Sandbox trial 2026-11-20). A file whose first 64 KB are all NUL is not a readable document: archiveText drops
+// it and notes "có mật khẩu". `head` is the first bytes of the file, `size` its full size.
+function isNulFile(head, size) {
+  if (!size || !head || !head.length) return false;
+  for (let i = 0; i < head.length; i++) if (head[i] !== 0) return false;
+  return true;
+}
 // A PDF read without OCR (Publish): left for OCR at Phân tích when it has 5+ pages and 30%+ of them nearly empty (scans),
 // when its text layer is a broken font (garbled, ocr-pdf.js), or when it gives almost nothing. pdftotext ends every page
 // with a form feed. Same rule as Get-FileText of Publish-GenBidHsmt.ps1, plus the "almost nothing" case.
@@ -1077,6 +1085,6 @@ module.exports = {
   capCompare, SPEC_COMP, specComp, sameItems, reqNear, itemBare, specTwin, specsMerge, specsEmpty, partHead,
   askCut, askTrace, normTxt, numsOf, sourceOf, found, nearby, scoreItems, checkSupplier, SELF_KINDS,
   SELF_STATUS, subSections, SELF_AS, selfCheckItems, checkSelfChecks, checkResult,
-  ARCHIVE_LIMITS, archiveOrder, unreadList, unsafeEntry, unrarList, tarList, archiveRefusal, UNRAR_EXIT, unrarFail, tarFail, pdfNeedsOcr,
+  ARCHIVE_LIMITS, archiveOrder, unreadList, unsafeEntry, unrarList, tarList, archiveRefusal, UNRAR_EXIT, unrarFail, tarFail, isNulFile, pdfNeedsOcr,
   WRITE_BATCH, batchRows,
 };

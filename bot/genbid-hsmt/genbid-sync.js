@@ -54,7 +54,7 @@ const {
   GOODS_MAX, WEBFORM_MAX, KEEP, splitSections, technicalOfIII, trimHsmt, compact, headCut, noticeBody,
   densestCut, SPECS_PART_OVERLAP, SPECS_PARTS_MAX, partsOf, specsMerge, specsEmpty, partHead, askCut, askTrace,
   checkResult, feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF, spendMeter, searchTermsOf, mergeFound, isGpkd,
-  ARCHIVE_LIMITS, archiveOrder, unreadList, unrarList, tarList, archiveRefusal, unrarFail, tarFail, pdfNeedsOcr, batchRows,
+  ARCHIVE_LIMITS, archiveOrder, unreadList, unrarList, tarList, archiveRefusal, unrarFail, tarFail, isNulFile, pdfNeedsOcr, batchRows,
 } = require("./sync-pure.js");
 
 // ---------- web (Vercel) ----------
@@ -1432,7 +1432,16 @@ function archiveText(f, depth = 0, name = path.basename(f)) {
       if (e.isSymbolicLink() || !inside(p)) { links++; return []; }
       return e.isDirectory() ? walk(p) : e.isFile() ? [p] : [];
     });
-    const all = walk(out);
+    // A ZIP with AES-encrypted contents comes out of bsdtar as files of NUL bytes, without an error: not read, noted as a password.
+    let nul = 0;
+    const all = walk(out).filter((p) => {
+      let head = Buffer.alloc(0); const size = fs.statSync(p).size;
+      if (size) { const fd = fs.openSync(p, "r"); try { head = Buffer.alloc(Math.min(size, 65536)); fs.readSync(fd, head, 0, head.length, 0); } finally { fs.closeSync(fd); } }
+      // Windows tar.exe stops at an encrypted entry with "passphrase" and leaves it as an EMPTY file: not a file read either.
+      if (!isNulFile(head, size) && !(size === 0 && why === "có mật khẩu")) return true;
+      nul++; return false;
+    });
+    if (nul && !why) why = "có mật khẩu";
     if (why) readNote(name, why + (all.length ? `, đọc ${all.length} tệp giải nén được` : ""));
     if (links) readNote(name, `bỏ qua ${links} liên kết trong tệp nén`);
     // Files with text first, scans (OCR) after (archiveOrder); the files cut by the limit are named.
