@@ -250,10 +250,12 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    another make that meets the HSMT better.
    Perkins, Volvo Penta, Cummins and Mitsubishi: ONE configuration each, the one that meets the HSMT best (Khoa,
    2026-11-17; the code drops a second). Give the place it frees to another make of the catalog, so the list still has up to 8.
+   Baudouin: up to THREE configurations (Khoa, 2026-11-20; the code drops a fourth): when three different Baudouin
+   models fit, or two models with two controllers worth comparing, give them each as its own configuration.
    Đặc thù hãng động cơ (Khoa, 2026-11-18; input.md has a section "Đặc thù hãng động cơ" when it applies): the HSMT's
    engine requirements name a technology of one engine make (E-TVCS of Kubota, XPI of Cummins, ACERT of Caterpillar…).
    Then suggest ONLY engines of that make (the code drops any other make, and one of no known make), and the ceiling of 2
-   (or 1) per make does not hold for it: give every model of that make that fits. "… hoặc tương đương" next to the term
+   (or 1, or 3) per make does not hold for it: give every model of that make that fits. "… hoặc tương đương" next to the term
    does not limit the make. Versions of one engine (D1105 / D1105-BG / D1105-E2BG / -CHN / -CHN-1: the same code with a
    version suffix; not G3 / G4 or TAG2A / TAG3A, which are other ratings) are one choice: when their checks read the same
    the code keeps the best ranked only, and when they differ it keeps only the version that meets the HSMT; give the other
