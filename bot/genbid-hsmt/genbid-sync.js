@@ -54,7 +54,7 @@ const {
   GOODS_MAX, WEBFORM_MAX, KEEP, splitSections, technicalOfIII, trimHsmt, compact, headCut, noticeBody,
   densestCut, SPECS_PART_OVERLAP, SPECS_PARTS_MAX, partsOf, specsMerge, specsEmpty, partHead, askCut, askTrace,
   checkResult, feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF, spendMeter, searchTermsOf, mergeFound, isGpkd,
-  ARCHIVE_LIMITS, archiveOrder, unreadList, unrarList, tarList, archiveRefusal, unrarFail, tarFail, isNulFile, pdfNeedsOcr, batchRows,
+  ARCHIVE_LIMITS, archiveOrder, unreadList, ocrFailNote, unrarList, tarList, archiveRefusal, unrarFail, tarFail, isNulFile, pdfNeedsOcr, batchRows,
 } = require("./sync-pure.js");
 
 // ---------- web (Vercel) ----------
@@ -1332,8 +1332,12 @@ function ocrText(f, find = 0, name = path.basename(f)) {
   if (cap) readNote(name, `chỉ OCR ${cap[1]} trong ${cap[2]} trang scan (trần OCR mỗi tệp), ${cap[2] - cap[1]} trang cuối chưa đọc`);
   if (r.status == null && !n) readNote(name, "OCR quá thời gian (180 phút), chưa đọc");
   if (r.status === 0) return r.stdout || "";
-  log(`    OCR lỗi (${path.basename(f)}): ${ocrErr(r.stderr || r.error?.message || "")}`);
-  return path.extname(f).toLowerCase() === ".pdf" ? cp.spawnSync(pdftotext(), ["-layout", "-enc", "UTF-8", f, "-"], { encoding: "utf8", maxBuffer: 256 << 20 }).stdout || "" : "";
+  const err = ocrErr(r.stderr || r.error?.message || "");
+  log(`    OCR lỗi (${path.basename(f)}): ${err}`);
+  const t = path.extname(f).toLowerCase() === ".pdf" ? cp.spawnSync(pdftotext(), ["-layout", "-enc", "UTF-8", f, "-"], { encoding: "utf8", maxBuffer: 256 << 20 }).stdout || "" : "";
+  // Not silent any more (IB2600576655 e46, 20/11/2026): an OCR that failed and left nothing says so in the readNote.
+  if (t.replace(/\s/g, "").length <= 40) readNote(name, ocrFailNote(err));
+  return t;
 }
 // How fileText reads (reset by the caller): noOcr (Publish, `publish-text`): PDFs through pdftotext only, scans and pictures
 // listed in needOcr instead of read (OCR waits for Phân tích, ocrHsmt); notes: why something was not read (password,
@@ -1458,6 +1462,8 @@ function archiveText(f, depth = 0, name = path.basename(f)) {
     return ordered.slice(0, ARCHIVE_LIMITS.files).map((p) => {
       const inner = `${name}/${path.relative(out, p).replace(/\\/g, "/")}`;
       const t = ARCHIVE_EXT.includes(path.extname(p).toLowerCase()) ? archiveText(p, depth + 1, inner) : fileText(p, undefined, inner);
+      // A file inside that gave no text and said nothing why (not a scan left for OCR, no note of its own): named.
+      if (!t.trim() && !READ.needOcr.includes(inner) && !READ.notes.some((x) => x.startsWith(inner + ":"))) readNote(inner, "không ra chữ");
       return t.trim() ? `--- ${path.relative(out, p)} ---\n${t.trim()}` : "";
     }).filter(Boolean).join("\n\n");
   } finally { fs.rmSync(tmp, { recursive: true, force: true }); }

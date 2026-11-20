@@ -17,61 +17,6 @@
  "configs": [
   {
    "rank": 1,
-   "engine": "Perkins 4006-23TAG2A",
-   "alternator": "Stamford S5L1D-H41",
-   "controller": "Deep Sea DSE8610",
-   "named": null,
-   "suppliers": [
-    "uleengen:103",
-    "fdk-energy:108",
-    "koten-power:4014"
-   ],
-   "checks": {
-    "genset": "3/0/9/9",
-    "engine": "6/0/8/0",
-    "alternator": "0/0/7/3",
-    "controller": "2/0/6/0"
-   },
-   "unverifiedChecks": 0,
-   "notMet": [],
-   "lossWarn": [
-    "ctl_protection:unclear",
-    "fuel_consumption_50:unclear",
-    "emission:unclear",
-    "alt_standard:document",
-    "alt_power:unclear",
-    "ctl_display_lang:unclear"
-   ]
-  },
-  {
-   "rank": 2,
-   "engine": "Cummins QSK23-G2",
-   "alternator": "Stamford S5L1D-H41",
-   "controller": "Deep Sea DSE7320",
-   "named": null,
-   "suppliers": [
-    "fdk-energy:1028",
-    "huadong-yangzhou:103",
-    "yanfa-yancheng:107"
-   ],
-   "checks": {
-    "genset": "7/0/9/5",
-    "engine": "8/0/6/0",
-    "alternator": "5/0/2/3",
-    "controller": "2/0/6/0"
-   },
-   "unverifiedChecks": 0,
-   "notMet": [],
-   "lossWarn": [
-    "ctl_protection:unclear",
-    "fuel_consumption_50:unclear",
-    "emission:unclear",
-    "alt_standard:document",
-    "ctl_display_lang:unclear"
-   ]
-  },
-  {
-   "rank": 3,
    "engine": "Volvo Penta TWD1744GE",
    "alternator": "Mecc Alte ECO40 VL4C",
    "controller": "Deep Sea DSE7320",
@@ -99,7 +44,7 @@
    ]
   },
   {
-   "rank": 4,
+   "rank": 2,
    "engine": "Mitsubishi S6R2-PTAA",
    "alternator": "Stamford Stamford S5L1D-H41",
    "controller": "Deep Sea DSE7320",
@@ -117,10 +62,17 @@
    },
    "unverifiedChecks": 0,
    "notMet": [],
-   "lossWarn": []
+   "lossWarn": [
+    "ctl_protection:unclear",
+    "fuel_consumption_50:unclear",
+    "emission:unclear",
+    "alt_standard:document",
+    "alt_power:unclear",
+    "ctl_display_lang:unclear"
+   ]
   },
   {
-   "rank": 5,
+   "rank": 3,
    "engine": "Baudouin 6M33G825/5",
    "alternator": "Leroy-Somer LSA49.3 M65",
    "controller": "Deep Sea DSE6120",
@@ -139,6 +91,59 @@
    "unverifiedChecks": 0,
    "notMet": [
     "Kích thước"
+   ],
+   "lossWarn": [
+    "ctl_protection:unclear",
+    "fuel_consumption_50:unclear",
+    "emission:unclear",
+    "alt_standard:document",
+    "alt_power:unclear",
+    "ctl_display_lang:order"
+   ]
+  },
+  {
+   "rank": 4,
+   "engine": "Perkins 4006-23TAG2A",
+   "alternator": "Stamford S5L1D-H41",
+   "controller": "Deep Sea DSE8610",
+   "named": null,
+   "suppliers": [
+    "uleengen:103",
+    "fdk-energy:108",
+    "koten-power:4014"
+   ],
+   "checks": {
+    "genset": "3/0/9/9",
+    "engine": "6/1/7/0",
+    "alternator": "0/0/7/3",
+    "controller": "2/0/6/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [
+    "Tỷ số nén"
+   ],
+   "lossWarn": []
+  },
+  {
+   "rank": 5,
+   "engine": "Cummins QSK23-G2",
+   "alternator": "Stamford S5L1D-H41",
+   "controller": "Deep Sea DSE7320",
+   "named": null,
+   "suppliers": [
+    "fdk-energy:1028",
+    "huadong-yangzhou:103",
+    "yanfa-yancheng:107"
+   ],
+   "checks": {
+    "genset": "7/0/9/5",
+    "engine": "8/1/5/0",
+    "alternator": "5/0/2/3",
+    "controller": "2/0/6/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [
+    "Tỷ số nén"
    ],
    "lossWarn": []
   }
