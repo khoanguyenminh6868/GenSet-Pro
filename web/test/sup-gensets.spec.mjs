@@ -31,8 +31,8 @@ test("hồ sơ NCC: mục tổ máy với prime / standby / tần số / hãng, 
   await expect(rows).toHaveCount(7);
   const row = (m) => rows.filter({ has: page.locator("td:first-child", { hasText: new RegExp(`^${m}$`) }) });
   const sc688 = row("SC688");
-  await expect(sc688).toContainText("625 kVA / 500 kW prime");
-  await expect(sc688).toContainText("688 kVA / 550 kW standby");
+  await expect(sc688).toContainText("Liên tục (prime): 625 kVA / 500 kW");
+  await expect(sc688).toContainText("Dự phòng (standby): 688 kVA / 550 kW");
   await expect(sc688).toContainText("50 Hz");
   await expect(sc688).toContainText("Cummins");
   await expect(row("SC688X")).toContainText("60 Hz");

@@ -3737,18 +3737,17 @@ function supModelsHtml(s) {
   return h`<div id="supModels"><h4>Động cơ, đầu phát và bộ điều khiển</h4>${raw(body || '<div class="muted small">Chưa có: bảng thông số của nhà cung cấp này không ghi model động cơ hay đầu phát.</div>')}</div>`;
 }
 // Tổ máy của bảng không ghi mã động cơ (catalog.js gensetsOf / build().gensets; việc C PR 2, Khoa 20/11/2026 "PA1 trước"):
-// chỉ hiện ở hồ sơ NCC, Gợi ý cấu hình không đọc. Mỗi mức công suất như bảng nguồn ghi: prime / standby, "rated" khi nguồn
-// ghi "Rated Power", "unrated" khi nguồn không ghi mức (Continuous, kWe...). Không câu trích, không dòng nguồn (SHOW_SRC).
-const SUP_GS_LEVEL = [["prime", "prime"], ["standby", "standby"], ["rated", "rated"], ["unrated", "không ghi mức"]];
+// chỉ hiện ở hồ sơ NCC, Gợi ý cấu hình không đọc. Mức công suất ghi như bảng "Các dòng bảng ghi model này" của Danh mục
+// (nhãn CAT_RATING, "kVA / kW" như catPow; "rated" = nguồn không ghi prime / standby). Không câu trích, không dòng nguồn (SHOW_SRC).
 function supGensetsPart(cat, s) {
   const ms = (cat.gensets || []).filter((e) => e.suppliers.includes(s.id));
   if (!ms.length) return "";
   const range = (vs, u) => catRange(vs.length ? [Math.min(...vs), Math.max(...vs)] : null, u);
-  const power = (e) => SUP_GS_LEVEL.map(([k, label]) => {
+  const power = (e) => Object.keys(CAT_RATING).map((k) => {
     const kva = [], kw = [];
     for (const u of e.uses) { const p = u.power?.[k]; if (p?.kVA) kva.push(p.kVA); if (p?.kW) kw.push(p.kW); }
     const r = [range(kva, "kVA"), range(kw, "kW")].filter(Boolean).join(" / ");
-    return r ? h`<div>${r} <span class="muted">${label}</span></div>` : "";
+    return r ? h`<div>${CAT_RATING[k]}: <b>${r}</b></div>` : "";
   }).join("") || '<span class="muted">bảng không ghi công suất</span>';
   const open = ms.length <= 15, lazy = open ? "" : "m" + supLazy.push("");
   const table = h`<div class="muted small">Bảng của nhà cung cấp ghi tổ máy mà không ghi mã động cơ: chỉ để xem, Gợi ý cấu hình chưa dùng.</div><div class="tablewrap"><table class="suptable supcards"><thead><tr><th>Tổ máy</th><th>Công suất</th><th>Tần số</th><th>Hãng động cơ</th><th>Số dòng</th></tr></thead><tbody>${raw(ms.map((e) => h`<tr>
