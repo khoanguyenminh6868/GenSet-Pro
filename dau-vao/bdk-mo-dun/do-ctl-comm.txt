@@ -1,0 +1,79 @@
+# (A) Phân tích đã lưu: 1298 gói có technicalSpecs, 505 gói có dòng mã ctl_comm
+- 4G/GSM/GPRS/SMS: 77 gói
+- Internet/web/IoT/cloud: 71 gói
+- Ethernet/LAN/TCP: 61 gói
+- RS485: 239 gói
+- RS232: 81 gói
+- USB: 225 gói
+- Modbus: 168 gói
+- SNMP: 15 gói
+- BMS/SCADA: 40 gói
+- CAN/J1939: 20 gói
+- Giám sát / điều khiển từ xa (chung): 222 gói
+- 4G hoặc Internet: 113 gói; 4G / Internet / Ethernet (một trong ba): 149 gói
+- ví dụ 4G: DA-mvqhhehr, IB2200008717, IB2200016199, IB2200065274, IB2200087789, IB2300002060, IB2300022940, IB2300026252, IB2300048642, IB2300067312, IB2300222010, IB2300273061, IB2300274793, IB2300278513, IB2300292168
+- ví dụ Internet: DA-mvqhhehr, IB2200012873, IB2200020538, IB2200053768, IB2200087789, IB2300002060, IB2300005377, IB2300022940, IB2300035759, IB2300116904, IB2300216508, IB2300273061, IB2300274793, IB2300278513, IB2300296794
+
+# (B) Chữ HSMT genbid-work\specs: 1499 gói (dòng < 400 ký tự có từ của ctl_comm; HSMT cả bộ nên có dòng ngoài bộ điều khiển)
+- 4G/GSM/GPRS/SMS: 124 gói
+- Internet/web/IoT/cloud: 49 gói
+- Ethernet/LAN/TCP: 107 gói
+- RS485: 260 gói
+- RS232: 92 gói
+- USB: 279 gói
+- Modbus: 192 gói
+- SNMP: 35 gói
+- BMS/SCADA: 31 gói
+- CAN/J1939: 21 gói
+- Giám sát / điều khiển từ xa (chung): 92 gói
+
+# (C) configmatch đã lưu (bản chụp doc-cache, 16 gói)
+- IB2600574589: không có yêu cầu ctl_comm
+- IB2600581294: không có yêu cầu ctl_comm
+- IB2600581977: không có yêu cầu ctl_comm
+- IB2600586587: không có yêu cầu ctl_comm
+- IB2600592658: không có yêu cầu ctl_comm
+- IB2600592684: không có yêu cầu ctl_comm
+- IB2600594596: không có yêu cầu ctl_comm
+- IB2600595853: không có yêu cầu ctl_comm
+- IB2600599817: không có yêu cầu ctl_comm
+- IB2600601812: yêu cầu ctl_comm, phần: Điều khiển từ xa qua cổng Internet/5G; Cổng kết nối với hệ thống kiểm soát từ xa; Cổng kết nối USB; Cổng đọc dữ liệu trực tiếp từ động cơ
+    HY4A140Z-D25 | AMF9: met Đạt 4/4
+    YC4D140-D31 | HGM6120CAN: unclear Đạt 2/4 | chưa đạt: Điều khiển từ xa qua cổng Internet/5G=unclear, Cổng kết nối với hệ thống kiểm soát từ xa=unclear
+    4HTAA4.3-G34 | HGM6120CAN: unclear Đạt 2/4 | chưa đạt: Điều khiển từ xa qua cổng Internet/5G=unclear, Cổng kết nối với hệ thống kiểm soát từ xa=unclear
+    1104C-44TAG2 | AMF25: met Đạt 4/4
+    6BT5.9-G2 | DSE7320: met Đạt 4/4
+    TAD551GE | DSE7320: met Đạt 4/4
+- IB2600602880: yêu cầu ctl_comm, phần: Kết nối với tủ ATS; Kết nối với máy tính (PC)
+    6BTAA5.9-G12 | DSE6120: met Đạt 2/2
+- IB2600603983: yêu cầu ctl_comm, phần: Điều khiển từ xa qua cổng Internet/4G; Cổng kết nối với hệ thống kiểm soát từ xa; RS232; RS485; Ethernet; BMS; USB
+    4006-23TAG2A | DSE7420: unclear Đạt 5/7 | chưa đạt: Điều khiển từ xa qua cổng Internet/4G=unclear, BMS=unclear
+    QSK23-G2 | Deepsea 7320: unclear Đạt 3/7 | chưa đạt: Điều khiển từ xa qua cổng Internet/4G=unclear, Cổng kết nối với hệ thống kiểm soát từ xa=unclear, Ethernet=unclear, BMS=unclear
+    6M31G825/5 | DSE7420: unclear Đạt 5/7 | chưa đạt: Điều khiển từ xa qua cổng Internet/4G=unclear, BMS=unclear
+    TWD1744GE | DSE7320: unclear Đạt 3/7 | chưa đạt: Điều khiển từ xa qua cổng Internet/4G=unclear, Cổng kết nối với hệ thống kiểm soát từ xa=unclear, Ethernet=unclear, BMS=unclear
+    S6R2-PTAA-C | DSE7320: unclear Đạt 3/7 | chưa đạt: Điều khiển từ xa qua cổng Internet/4G=unclear, Cổng kết nối với hệ thống kiểm soát từ xa=unclear, Ethernet=unclear, BMS=unclear
+    12V2000G63 | DSE8610: unclear Đạt 5/7 | chưa đạt: Điều khiển từ xa qua cổng Internet/4G=unclear, BMS=unclear
+    6M33G825/5 | DSE6120: unclear Đạt 1/7 | chưa đạt: Điều khiển từ xa qua cổng Internet/4G=unclear, Cổng kết nối với hệ thống kiểm soát từ xa=unclear, RS232=unclear, RS485=unclear, Ethernet=unclear, BMS=unclear
+    12V1600G11F | (không BĐK): unclear Đạt 0/7 | chưa đạt: Điều khiển từ xa qua cổng Internet/4G=unclear, Cổng kết nối với hệ thống kiểm soát từ xa=unclear, RS232=unclear, RS485=unclear, Ethernet=unclear, BMS=unclear, USB=unclear
+- IB2600604739: không có yêu cầu ctl_comm
+- IB2600607539: không có yêu cầu ctl_comm
+- IB2600609805: yêu cầu ctl_comm, phần: Kết nối với tủ ATS; Kết nối với máy tính (PC)
+    6BTAA5.9-G12 | DSE6120MK3: không có check
+    6BTAA5.9-G12 | DSE6120: met Đạt 2/2
+    6BTAA5.9-G12 | DSE6120: met Đạt 2/2
+- IB2600612866: yêu cầu ctl_comm, phần: Cổng USB kết nối máy tính; Cổng RS485 giám sát từ xa qua Internet; Phần mềm PC tải miễn phí từ website hãng
+    CAT C1.1 | DSE7320: unclear Đạt 2/3 | chưa đạt: Phần mềm PC tải miễn phí từ website hãng=unclear
+    D1105 | AMF25: unclear Đạt 2/3 | chưa đạt: Phần mềm PC tải miễn phí từ website hãng=unclear
+    V2203-K3A | InteliLite 4 MRS16: unclear Đạt 2/3 | chưa đạt: Phần mềm PC tải miễn phí từ website hãng=unclear
+    403A-11G1 | DSE7320: unclear Đạt 2/3 | chưa đạt: Phần mềm PC tải miễn phí từ website hãng=unclear
+    3TNV76-GGE | AMF25: unclear Đạt 2/3 | chưa đạt: Phần mềm PC tải miễn phí từ website hãng=unclear
+
+## Tổng (C): 23 cấu hình, 22 có check ctl_comm. Phần chưa đạt theo chức năng con:
+- unclear 4G/GSM/GPRS/SMS,Internet/web/IoT/cloud,Giám sát / điều khiển từ xa (chung): 10
+- unclear BMS/SCADA: 8
+- unclear Giám sát / điều khiển từ xa (chung): 7
+- unclear Ethernet/LAN/TCP: 5
+- unclear Phần mềm PC tải miễn phí từ website hãng: 5
+- unclear RS232: 2
+- unclear RS485: 2
+- unclear USB: 1

@@ -23,6 +23,7 @@ const SUB = [
   ["CAN/J1939", /\bCAN\b|J1939/i],
   ["Giám sát / điều khiển từ xa (chung)", /t[ừu]\s*xa|remote/i],
 ];
+const COMM_RE = RC.CODE_BY.get("ctl_comm").words;
 const subsOf = (t) => SUB.filter(([, re]) => re.test(t)).map(([n]) => n);
 const out = [];
 // (A)
@@ -33,7 +34,7 @@ for (const [k, doc] of Object.entries(A)) {
   const ts = (doc?.d || doc?.data || doc)?.result?.technicalSpecs || [];
   if (!ts.length) continue;
   total++;
-  const lines = ts.filter((t) => RC.codesIn(`${t.item || ""}: ${t.requirement || ""} ${t.quote || ""}`).includes("ctl_comm"));
+  const lines = ts.filter((t) => COMM_RE.test(`${t.item || ""}: ${t.requirement || ""} ${t.quote || ""}`) && RC.codesIn(`${t.item || ""}: ${t.requirement || ""} ${t.quote || ""}`).some((c) => c.code === "ctl_comm"));
   if (!lines.length) continue;
   withComm++;
   const subs = new Set(lines.flatMap((t) => subsOf(`${t.item || ""} ${t.requirement || ""} ${t.quote || ""}`)));
@@ -53,7 +54,8 @@ for (const k of fs.readdirSync(S)) {
   const f = path.join(S, k, "text.txt");
   if (!fs.existsSync(f)) continue;
   nB++;
-  const lines = String(fs.readFileSync(f, "utf8")).split("\n").filter((l) => l.length < 400 && RC.codesIn(l).includes("ctl_comm"));
+  // Lọc nhanh bằng chính regex của mã ctl_comm (codesIn chạy mọi mã trên mọi dòng: hàng giờ cho 1.507 HSMT).
+  const lines = String(fs.readFileSync(f, "utf8")).split("\n").filter((l) => l.length < 400 && COMM_RE.test(l));
   const subs = new Set(lines.flatMap(subsOf));
   for (const s of subs) cntB.set(s, (cntB.get(s) || 0) + 1);
 }

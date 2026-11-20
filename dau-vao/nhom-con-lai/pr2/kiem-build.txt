@@ -1,0 +1,22 @@
+  'EL 164A 50 Hz trang 6.5/8.1 bản ghi undefined',
+  'EL 164A 60 Hz trang 7.8/9.7 bản ghi undefined',
+  'EL 164B 50 Hz trang 8.8/11 bản ghi undefined',
+  'EL 164B 60 Hz trang 10.6/13.2 bản ghi undefined',
+  'El 164C 50 Hz trang 10.8/13.5 bản ghi undefined'
+]
+(b) engines: 6889 → 6893 | thêm 4 KAT38G9 NT855G6 QSX15G13 QSX15G16 | mất 0  | đổi 69
+    khoá đổi có NCC khác dùng: 69 KTA50G3 KTA38G5 KTA19G3 KTA50G8 KTA50GS8 KTA19G4 NTA855G4 QSK19G4 QSK38G5 QSK60G4 QSK60G3 QSK23G3 QSK38G2 VTA28G5 QSX15G8 QST30G4 QSK50G7 QSL9G5 QSK50G4 QST30G3
+      KTA50G3: trường đổi uses,specs; NCC ade-power,agestar,agg-fuzhou,agg-power,aoke-yangzhou,aosif,app-power-anpu,bdadl-shanghai,bobig-power,bspower-guangdong,cgm-italia,chuangyuan-zhongshan,comappower,deman-power,depco-power,dingbo,eastern-lion-fuan,ettes-power,excel-power-ningde,fdk-energy,fengmao-weifang,frs-shenyang,fukangsi-yangzhou,gb-power,generatordieselchina,green-power-generators
+      KTA38G5: trường đổi uses,suppliers,specs; NCC agestar,agg-fuzhou,agg-power,aoke-yangzhou,aosif,app-power-anpu,bdadl-shanghai,bobig-power,bspower-guangdong,chuangyuan-zhongshan,comappower,cooltech-shanghai,deman-power,depco-power,dingbo,eastern-lion-fuan,ettes-power,excel-power-ningde,fdk-energy,fengmao-weifang,frs-shenyang,fukangsi-yangzhou,gb-power,generatordieselchina,genesal-energy,
+      KTA19G3: trường đổi uses,suppliers,specs; NCC agestar,agg-fuzhou,aoke-yangzhou,aosif,app-power-anpu,bdadl-shanghai,bobig-power,bspower-guangdong,chuangyuan-zhongshan,comappower,deman-power,depco-power,eastern-lion-fuan,ettes-power,excel-power-ningde,fdk-energy,frs-shenyang,fukangsi-yangzhou,gb-power,generatordieselchina,gtl-power,haifeng-taizhou,hengke-jiangsu,hosem-power,huadong-yangz
+      KTA50G8: trường đổi uses,specs; NCC ade-power,agestar,agg-fuzhou,agg-power,aoke-yangzhou,aosif,app-power-anpu,bdadl-shanghai,biao-xiamen,bobig-power,bspower-guangdong,chuangyuan-zhongshan,comappower,deman-power,depco-power,dingbo,eastern-lion-fuan,ettes-power,fdk-energy,fengmao-weifang,frs-shenyang,fudiankang-hunan,fukangsi-yangzhou,gb-power,generatordieselchina,gtl-power,haifeng-taizh
+      KTA50GS8: trường đổi uses,specs; NCC ade-power,agestar,agg-fuzhou,agg-power,aoke-yangzhou,aosif,app-power-anpu,bdadl-shanghai,bobig-power,cgm-italia,chuangyuan-zhongshan,comappower,deman-power,depco-power,dingbo,eastern-lion-fuan,ettes-power,fdk-energy,frs-shenyang,fukangsi-yangzhou,gb-power,generatordieselchina,green-power-generators,gtl-power,hosem-power,huadong-yangzhou,huipu-power,
+      KTA19G4: trường đổi uses,suppliers,specs; NCC agestar,agg-fuzhou,aosif,app-power-anpu,bdadl-shanghai,chuangyuan-zhongshan,comappower,deman-power,depco-power,eastern-lion-fuan,ettes-power,fdk-energy,fengmao-weifang,fukangsi-yangzhou,gb-power,generatordieselchina,gtl-power,haifeng-taizhou,hechai-changzhou,hosem-power,huadong-yangzhou,huayuan-weifang,huipu-power,jiangchai-xuzhou,jinlongte
+      NTA855G4: trường đổi uses,suppliers,specs; NCC agestar,agg-power,aosif,app-power-anpu,bdadl-shanghai,chuangyuan-zhongshan,deman-power,depco-power,eastern-lion-fuan,ettes-power,fdk-energy,fukangsi-yangzhou,generatordieselchina,gtl-power,haifeng-taizhou,hosem-power,jiangchai-xuzhou,jinjia-power,jinlongteng-fujian,kachai-hangzhou,kaichen-jiangsu,keliang-fuan,koten-power,landtop-fuzhou,leg
+      QSK19G4: trường đổi uses,suppliers,specs; NCC agg-fuzhou,agg-power,aosif,app-power-anpu,baifa-power,bobig-power,comappower,deman-power,depco-power,dingbo,eastern-lion-fuan,ettes-power,excel-power-ningde,fdk-energy,frs-shenyang,fukangsi-yangzhou,generatordieselchina,haifeng-taizhou,jet-power,jiangchai-xuzhou,jinjia-power,kachai-hangzhou,kaichen-jiangsu,koten-power,lees-power,legapower,l
+(b) alternators: 2704 → 2704 | thêm 0  | mất 0  | đổi 0
+    khoá đổi có NCC khác dùng: 0 
+(b) controllers: 187 → 187 | thêm 0  | mất 0  | đổi 0
+    md5 c04f065402e3b4eb5de220fe8563165d → c04f065402e3b4eb5de220fe8563165d
+    khoá đầu phát EL / ELS: 79; khoá có NCC khác ngoài eastern-lion: 0
+    khoá EL chỉ có ở n156 (không dòng tổ máy nào dùng): 0 
