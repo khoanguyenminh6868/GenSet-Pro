@@ -1,0 +1,36 @@
+## IB2600581977
+  lặp lại: gốc KHÁC, nhánh KHÁC
+## IB2600601812
+  lặp lại: gốc KHÁC, nhánh KHÁC
+## IB2600602880
+  lặp lại: gốc KHÁC, nhánh KHÁC
+## IB2600603983
+  lặp lại: gốc KHÁC, nhánh KHÁC
+  THỨ TỰ: gốc [6M31G825/5 | LSA 49.3 M8 | DSE7420 ; S6R2-PTAA-C | S5L1D-H41 | DSE7320 ; 12V2000G63 | LSA 49.3 M8 | DSE8610 ; 4006-23TAG2A | S5L1D-H41 | DSE7420 ; QSK23-G2 | LSA 49.3 M8 | Deepsea 7320 ; TWD1744GE | ECO40 VL4C | DSE7320 ; 6M33G825/5 | LSA49.3 M65 | DSE6120 ; 12V1600G11F | LSA 49.3 M8 | null] → nhánh [6M31G825/5 | LSA 49.3 M8 | DSE7420 ; S6R2-PTAA-C | S5L1D-H41 | DSE7320 ; 12V2000G63 | LSA 49.3 M8 | DSE8610 ; QSK23-G2 | LSA 49.3 M8 | Deepsea 7320 ; 4006-23TAG2A | S5L1D-H41 | DSE7420 ; TWD1744GE | ECO40 VL4C | DSE7320 ; 6M33G825/5 | LSA49.3 M65 | DSE6120 ; 12V1600G11F | LSA 49.3 M8 | null]
+  #2 S6R2-PTAA-C | S5L1D-H41 | DSE7320
+    điểm [0,0,0,40,12,0,2] → [0,0,0,39,12,0,2]
+      Truyền thông, giám sát từ xa › Ethernet: unclear → met :: Qua mô-đun DSE890 MKII (mã 0890-04): Ethernet (DSE890 MKII) | Mô-đun chọn theo tài liệu hãng, NCC chưa chào. Ethernet nằm trên mô-đun DSE890 MKII, không phải trên bộ điều khiển. | via DSE890 MKII
+    mô-đun: DSE890 MKII (4G, Internet, Ethernet)
+  #4 QSK23-G2 | LSA 49.3 M8 | Deepsea 7320
+    điểm [1,0,0,38,6,0,2] → [1,0,0,37,6,0,2]
+      Truyền thông, giám sát từ xa › Ethernet: unclear → met :: Qua mô-đun DSE890 MKII (mã 0890-04): Ethernet (DSE890 MKII) | Mô-đun chọn theo tài liệu hãng, NCC chưa chào. Ethernet nằm trên mô-đun DSE890 MKII, không phải trên bộ điều khiển. | via DSE890 MKII
+    mô-đun: DSE890 MKII (4G, Internet, Ethernet)
+  #5 4006-23TAG2A | S5L1D-H41 | DSE7420
+    phương án khác: [Phương án khác đạt tương đương: DSE8610 MKII + DSE890 MKII (truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE7320 MKII + DSE890 MKII (truyền thông: code dò datasheet đạt 5/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa, Ethernet)] → [Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE8610 MKII + DSE890 MKII (truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa)]
+  #6 TWD1744GE | ECO40 VL4C | DSE7320
+    điểm [1,0,0,39,11,0,2] → [1,0,0,38,11,0,2]
+      Truyền thông, giám sát từ xa › Ethernet: unclear → met :: Qua mô-đun DSE890 MKII (mã 0890-04): Ethernet (DSE890 MKII) | Mô-đun chọn theo tài liệu hãng, NCC chưa chào. Ethernet nằm trên mô-đun DSE890 MKII, không phải trên bộ điều khiển. | via DSE890 MKII
+    mô-đun: DSE890 MKII (4G, Internet, Ethernet)
+    phương án khác: [Phương án khác đạt tương đương: DSE6020 MKII + DSE890 MKII (truyền thông: code dò datasheet đạt 2/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa, RS232, RS485, Ethernet, BMS)] → [—]
+  #7 6M33G825/5 | LSA49.3 M65 | DSE6120
+    điểm [1,0,0,44,13,1,2] → [1,0,0,43,13,1,2]
+      Truyền thông, giám sát từ xa › Ethernet: unclear → met :: Qua mô-đun DSE890 MKII (mã 0890-04): Ethernet (DSE890 MKII) | Mô-đun chọn theo tài liệu hãng, NCC chưa chào. Ethernet nằm trên mô-đun DSE890 MKII, không phải trên bộ điều khiển. | via DSE890 MKII
+    mô-đun: DSE890 MKII (4G, Internet, Ethernet)
+## IB2600609805
+  lặp lại: gốc KHÁC, nhánh KHÁC
+## IB2600612866
+  lặp lại: gốc KHÁC, nhánh KHÁC
+## IB2600613475
+  lặp lại: gốc KHÁC, nhánh KHÁC
+
+# Gói có thay đổi: 7/17
