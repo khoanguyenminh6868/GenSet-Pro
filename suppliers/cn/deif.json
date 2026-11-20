@@ -2,7 +2,7 @@
   "id": "deif",
   "country": "DK",
   "role": "controller_maker",
-  "status": "incomplete",
+  "status": "partial",
   "names": {
     "en": "DEIF A/S",
     "zh": null,
@@ -141,8 +141,7 @@
   "missing": [
     "năm thành lập",
     "trụ sở",
-    "dải công suất (bộ điều khiển không có)",
-    "thông số bộ điều khiển"
+    "dải công suất (bộ điều khiển không có)"
   ],
   "confidence": "medium",
   "checkedAt": "2026-11-17",
