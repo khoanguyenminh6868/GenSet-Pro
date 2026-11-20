@@ -20,7 +20,7 @@ Lệnh: `node audit.mjs <worktree> <baudouin.json>` (script ở scratchpad `...\
 - 10 lượt đã hết đổi hoàn toàn: IB2200032133, IB2300194512, IB2300260615, IB2300343668, IB2400236068, IB2400546306, IB2500314401, IB2500394492#0, IB2500394492#1, IB2600511196 (đều do bảng /6 f50: kaihua WP13D510E311 → 6M21G400/6, longkai 12M26G1000/5 → 12M26G800/6, koten/voltgent 6M16G308/6 vào, …).
 - 11 lượt còn đổi (đo cục bộ, nguyên nhân KHÁC lỗi tần số):
   1. IB2400313213#0, IB2600184587#0: kaihua-genset 20M33G2200/6 RỜI (điểm gốc 241), rcg-power QSK60G23 vào. Hệ quả ĐÚNG: 20M33G2200/6 nay được biết là máy 60 Hz (trang baudouin 20M33), gói đòi 50 Hz nên bị luật (2) loại như mong muốn.
-  2. IB2200073279#0, IB2300080302#0, IB2400446772#0, IB2500249901#0, IB2500400828#0 (cgm-italia 12M26G2D0/S vào, cgm 400830TAG3 / 12M33G1250/5 / saudi-diesel S12RPTAR1 ra): điểm dòng cgm-italia 12M26G2D0/S từ 15 lên 75 (gói IB2200073279). Cộng thêm đồng loạt +60 đúng bằng cách tính trong IB2400104800#0 (6M16G2D5/S 11 → 71). Em CHƯA lần ra từng thành phần điểm (suy từ số), nghi là hãng Baudouin của động cơ nay được hồ sơ hãng xác nhận. Cần phiên điều phối hoặc phiên khác xác nhận bằng `candidates` có in `reasons`; coi là "chưa giải thích hết, không phải lỗi tần số".
+  2. IB2200073279#0, IB2300080302#0, IB2400446772#0, IB2500249901#0, IB2500400828#0 (cgm-italia 12M26G2D0/S vào, cgm 400830TAG3 / 12M33G1250/5 / saudi-diesel S12RPTAR1 ra): điểm dòng cgm-italia 12M26G2D0/S từ 15 lên 75 (gói IB2200073279). Cộng thêm đồng loạt +60 đúng bằng cách tính trong IB2400104800#0 (6M16G2D5/S 11 → 71). Nguyên nhân (điều phối xác nhận bằng `eng.mjs`): dòng `if (e.make) score += 60` của `candidates`; ở gốc động cơ 12M26G2D0/S "hãng null", ở nhánh "hãng Baudouin" nhờ dòng của hồ sơ hãng baudouin. Hệ quả ĐÚNG, không phải lỗi tần số (em chỉ suy từ con số +60, điều phối lần ra dòng mã).
   3. IB2400104800#0: cgm-italia 6M21G2D0/S ra, 6M16G2D5/S (V300B, V313B) vào: cùng +60 như mục 2.
   4. IB2400208175#0, IB2400475109#0, IB2400560277#0: cùng tập 30 dòng, chỉ đổi thứ tự ở các hạng 6–8 / 12–14 / 24–25 (điểm bằng nhau).
 - Chưa làm: đo cloud toàn bộ 1.093 lượt (điều phối giao lại); chưa chạy `config-bot prep` thật.
@@ -50,7 +50,7 @@ Lệnh: `node audit.mjs <worktree> <baudouin.json>` (script ở scratchpad `...\
 ## Việc chưa làm được / cần quyết
 1. Đo cloud toàn bộ sau sửa.
 2. Việc sửa bộ đọc (một việc riêng): (a) Engine Data theo dòng máy → mọi model cùng nguồn; (b) nhãn "N° of Cylinders / Valves"; (c) tiêu hao theo model của hãng động cơ, chọn cột L/hr.
-3. Mục 3.2 chưa giải thích hết.
+3. (Đã xong) mục 3.2: là `score += 60` khi động cơ có hãng, hệ quả đúng.
 
 ## Cần ghi nhớ
 - Bẫy crawler: `tablesOf` làm rơi các dòng tiêu đề bảng con (Baudouin DCP) và để dòng nhãn "| 50Hz" vào `header`, các đoạn sau vào `rows` → mọi dòng đọc tần số của đoạn đầu. Sau crawl phải kiểm `uses[].freq` bằng `audit.mjs`.

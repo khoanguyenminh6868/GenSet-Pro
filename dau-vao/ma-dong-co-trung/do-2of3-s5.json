@@ -1,29 +1,33 @@
 {
  "partial": true,
  "all": {
-  "runs": 25,
-  "anyRuns": 12,
-  "aliasInTop": 45
+  "runs": 50,
+  "anyRuns": 20,
+  "aliasInTop": 86
  },
  "res": {
   "X-hau-to-ma (khac dong co / hau to cong suat)": {
-   "runs": 1,
-   "slots": 3,
+   "runs": 2,
+   "slots": 6,
    "samples": [
-    "IB2300194512 750 kVA: #17 DC16 078A 02-43 (kaihua-genset n114) + #18 DC16 078A 02-44 (voltgent n107) + #24 DC16 078A 02-45 (mpmc-powertech n124)"
+    "IB2300194512 750 kVA: #17 DC16 078A 02-43 (kaihua-genset n114) + #18 DC16 078A 02-44 (voltgent n107) + #24 DC16 078A 02-45 (mpmc-powertech n124)",
+    "IB2400429887 250 kVA: #15 DC09 072A (energy-gruppi n2006) + #26 DC09 072A 02-12 (coelmo n2007) + #27 DC09 320A (scania-engines n2002)"
    ]
   },
   "F2-chu-chua-ro-nghia": {
-   "runs": 1,
-   "slots": 9,
+   "runs": 2,
+   "slots": 11,
    "samples": [
-    "IB2300031541 500 kVA: #1 2506C-E15TAG2 (gb-power n1024) + #2 2506C-E15TAG2 (huali-shandong n2008) + #3 2506C-E15TAG2 (fdk-energy n103) + #4 2506C-E15TAG2 (kaihua-genset n122) + #5 2506C-E15TAG2 (uleengen n103) + #6 2506C-E15TAG2 (long-gen n109) + #7 2506C-E15TAG2 (bobig-power n125) + #8 2506C-E15TAG2 (dingbo n108) + #9 2506C-E15TAG2 L (rcg-power n104) + #10 2506C-E15TAG2 L (sr-genset n2004) + #19 2506C-E15TAG2 L (eastern-lion-fuan n111) || #11 2506C-E15TAG1 (gb-power n1023) + #12 2506C-E15TAG1 (kaihua-genset n122) + #21 2506C-E15TAG1 (comappower n103) + #29 2506C-E15TAG1 L (sr-genset n2004) || #13 2806C-E18TAG1A L (rcg-power n104) + #14 2806C-E18TAG1A (fdk-energy n103) + #15 2806C-E18TAG1A (bobig-power n125) + #17 2806C-E18TAG1A (long-gen n109) + #24 2806C-E18TAG1A L (eastern-lion-fuan n111) + #30 2806C-E18TAG1A L (rcg-power n104) || #18 2506D-E15TAG2 (long-gen n109) + #20 2506D-E15TAG2 L (eastern-lion-fuan n111) + #26 2506D-E15TAG2 L (sr-genset n2009)"
+    "IB2300031541 500 kVA: #1 2506C-E15TAG2 (gb-power n1024) + #2 2506C-E15TAG2 (huali-shandong n2008) + #3 2506C-E15TAG2 (fdk-energy n103) + #4 2506C-E15TAG2 (kaihua-genset n122) + #5 2506C-E15TAG2 (uleengen n103) + #6 2506C-E15TAG2 (long-gen n109) + #7 2506C-E15TAG2 (bobig-power n125) + #8 2506C-E15TAG2 (dingbo n108) + #9 2506C-E15TAG2 L (rcg-power n104) + #10 2506C-E15TAG2 L (sr-genset n2004) + #19 2506C-E15TAG2 L (eastern-lion-fuan n111) || #11 2506C-E15TAG1 (gb-power n1023) + #12 2506C-E15TAG1 (kaihua-genset n122) + #21 2506C-E15TAG1 (comappower n103) + #29 2506C-E15TAG1 L (sr-genset n2004) || #13 2806C-E18TAG1A L (rcg-power n104) + #14 2806C-E18TAG1A (fdk-energy n103) + #15 2806C-E18TAG1A (bobig-power n125) + #17 2806C-E18TAG1A (long-gen n109) + #24 2806C-E18TAG1A L (eastern-lion-fuan n111) + #30 2806C-E18TAG1A L (rcg-power n104) || #18 2506D-E15TAG2 (long-gen n109) + #20 2506D-E15TAG2 L (eastern-lion-fuan n111) + #26 2506D-E15TAG2 L (sr-genset n2009)",
+    "IB2300296794 20 kVA: #4 404D-22G (kaihua-genset n122) + #9 404D-22G (comappower n103) + #10 404D-22G (elitech-power n1001) + #11 404D-22G L (sr-genset n2009) + #17 404D-22G L (yunding-jiangsu n2002)"
    ]
   },
   "AB-hai-ma-mot-o (gach)": {
-   "runs": 0,
-   "slots": 0,
-   "samples": []
+   "runs": 1,
+   "slots": 1,
+   "samples": [
+    "IB2300296794 20 kVA: #1 404A-22G1 (fdk-energy n103) + #2 404A-22G1 (kaihua-genset n122) + #3 404A-22G1 (uleengen n107) + #4 404D-22G (kaihua-genset n122) + #9 404D-22G (comappower n103) + #10 404D-22G (elitech-power n1001) + #14 404A-22G1/ 404D-22G (victory-generator n112)"
+   ]
   },
   "AB-hai-ma-mot-o (ngoac)": {
    "runs": 1,
@@ -45,8 +49,8 @@
    ]
   },
   "C-cong-suat-dinh-ma": {
-   "runs": 10,
-   "slots": 10,
+   "runs": 16,
+   "slots": 17,
    "samples": [
     "IB2200008211 102 kVA: #6 CA6DF2D-14D (wintpower n107) + #27 CA6DF2D-14D/96KW (jet-power n134)",
     "IB2200031154 102 kVA: #6 CA6DF2D-14D (wintpower n107) + #27 CA6DF2D-14D/96KW (jet-power n134)",
@@ -57,9 +61,11 @@
    ]
   },
   "E-ten-hang-dinh-ma": {
-   "runs": 0,
-   "slots": 0,
-   "samples": []
+   "runs": 1,
+   "slots": 1,
+   "samples": [
+    "IB2300296794 20 kVA: #4 404D-22G (kaihua-genset n122) + #9 404D-22G (comappower n103) + #10 404D-22G (elitech-power n1001) + #13 404D-22G PERKINS (superwatt-swt n119)"
+   ]
   },
   "C-so-dinh-ma": {
    "runs": 0,

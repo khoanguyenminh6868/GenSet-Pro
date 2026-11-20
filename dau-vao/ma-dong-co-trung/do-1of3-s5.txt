@@ -1,0 +1,35 @@
+lượt chạy: 70; lượt có ≥1 động cơ chiếm ≥2 chỗ vì khoá trùng (mọi lớp): 20; số chỗ top 30 do khoá thừa (mọi lớp, kể cả khi khoá đích không có mặt): 118
+
+## X-hau-to-ma (khac dong co / hau to cong suat): 2 lượt, 6 chỗ thừa
+  IB2400104800 300 kVA: #14 DC9 072A (cps-generators n2012) + #22 DC9 072A 02-13 (aj-power n103)
+  IB2500159012 500 kVA: #14 DC13 072A (cps-generators n2013) + #21 DC13 072A (genesal-energy n2009) + #22 DC13 072A 02-14 (aj-power n103) + #28 DC13 507A (scania-engines n2008) + #29 DC13 506A (scania-engines n2005)
+
+## F2-chu-chua-ro-nghia: 3 lượt, 3 chỗ thừa
+  IB2400514819 12 kVA: #1 S4L2 (geko-gemmingen n2005) + #2 S4L2 SD (tecnogen n2005)
+  IB2500419471 12 kVA: #1 S4L2 (geko-gemmingen n2005) + #2 S4L2 SD (tecnogen n2005)
+  IB2500471911 12 kVA: #1 S4L2 (geko-gemmingen n2005) + #2 S4L2 SD (tecnogen n2005)
+
+## AB-hai-ma-mot-o (gach): 0 lượt, 0 chỗ thừa
+
+## AB-hai-ma-mot-o (ngoac): 0 lượt, 0 chỗ thừa
+
+## F1-chu-mo-ta: 3 lượt, 7 chỗ thừa
+  IB2400514819 12 kVA: #4 403A-15G1 (genmac n2004) + #12 403A-15G1 (agg-power n2029) + #13 403A-15G1 (tecnogen n2001) + #22 403A-15G1 Derate (aj-power n101) || #6 403A-15G2 (genmac n2005) + #16 403A-15G2 (cgm-italia n101) + #17 403A-15G2 (tecnogen n2001) + #23 403A-15G2 Derate (aj-power n101) || #15 404D-22G (fg-wilson n2008) + #24 404D-22G Derate (aj-power n101)
+  IB2500419471 12 kVA: #4 403A-15G1 (genmac n2004) + #12 403A-15G1 (agg-power n2029) + #13 403A-15G1 (tecnogen n2001) + #23 403A-15G1 Derate (aj-power n101) || #6 403A-15G2 (genmac n2005) + #16 403A-15G2 (cgm-italia n101) + #17 403A-15G2 (tecnogen n2001) + #25 403A-15G2 Derate (aj-power n101) || #15 404D-22G (fg-wilson n2008) + #26 404D-22G Derate (aj-power n101)
+  IB2500512614 22 kVA: #12 404A-22G1 (coelmo n2014) + #25 404A-22G1 Derate (aj-power n101)
+
+## D-noi-san-xuat: 0 lượt, 0 chỗ thừa
+
+## C-cong-suat-dinh-ma: 14 lượt, 17 chỗ thừa
+  IB2200016199 8.5 kVA: #12 YD385D (tecgen-fujian n131) + #14 YD385D (tecgen-fujian n129) + #15 YD385D (acepow-fuan n114) + #22 YD385D/11KW (jet-power n124)
+  IB2200016199 12 kVA: #9 YD480D (acepow-fuan n114) + #16 YD480D (tecgen-fujian n129) + #28 YD480D (minsun-motor n118) + #30 YD480D/14KW (jet-power n124)
+  IB2200029921 8.5 kVA: #19 YD380D/10KW (mecca-power n105) + #26 YD380D/12KW (mecca-power n105)
+  IB2200043097 12 kVA: #1 YD480D (acepow-fuan n114) + #2 YD480D (tecgen-fujian n129) + #14 YD480D (minsun-motor n118) + #15 YD480D/14KW (jet-power n124)
+  IB2300048642 12 kVA: #9 YD480D (acepow-fuan n114) + #16 YD480D (tecgen-fujian n129) + #28 YD480D (gordon-power n104) + #29 YD480D/14KW (jet-power n124)
+  IB2300067330 10.5 kVA: #4 YD385D (tecgen-fujian n131) + #6 YD385D (tecgen-fujian n129) + #9 YD385D (acepow-fuan n114) + #20 YD385D/11KW (jet-power n124)
+
+## E-ten-hang-dinh-ma: 0 lượt, 0 chỗ thừa
+
+## C-so-dinh-ma: 0 lượt, 0 chỗ thừa
+
+## G-ngoac-quanh-hau-to: 0 lượt, 0 chỗ thừa

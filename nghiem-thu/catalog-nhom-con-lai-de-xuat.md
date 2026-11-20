@@ -330,3 +330,6 @@ Thứ tự đề xuất: chờ #954, #957, #958, #959 merge rồi mới mở PR 
 ## Phạm vi việc (D) bảng dọc: 10 bảng tổ máy xăng chưa đọc (Khoa 20/11/2026, câu 5)
 Không đọc bây giờ; khi làm việc (D) bảng dọc thì đọc các bảng này (số dòng trong ngoặc, lớp 2b-XTM ở mục 2.2, tiêu đề + dòng mẫu trong `bang-day-du.tsv`):
 bison-zhejiang n114/b16 (14), n114/b17 (14), n114/b18 (13); endress-stromerzeuger n102/b0 (11); gordon-power n105/b7 (15); grupel n103/b1 (2), n107/b3 (2); kena-chongqing n108/b2 (8); kigerpower n2010/b9 (18); zc-power n110/b13 (13). (zc-power n109/b11, n109/b12 đi PR "nhiên liệu theo bảng".)
+
+## PR "nhiên liệu theo bảng" (20/11/2026): #982, SHA fdbda7f6 (gộp main 325be503)
+jianghao n104 29 bản ghi khí (T), simpson n124 7 bản ghi Honda GX xăng (mức D, URL engines.honda.com), zc-power n109 b11 / b12 9 tổ máy xăng (T). So 61.773 bản ghi fromSupplier + gensetsOf với main 2ed96b02: đổi đúng 45, chỉ `fuel*`. Test 1.377 pass. Đo: `dau-vao\nhom-con-lai\pr3\soat-fuel.mjs` → `soat-fuel.tsv`.

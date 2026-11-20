@@ -89,3 +89,8 @@ Dòng điện lệch đều +0,32 % (nguồn dùng 1,81 A/kW) ở cả 17 dòng;
 ## Chưa làm / ngoài phạm vi
 - Không sửa số nguồn gõ sai (KTA19G4 159X160): nếu Khoa muốn, thêm `dropspec` bore cho dòng đó.
 - Tiêu hao, khí thải của bảng yingtai chưa đọc (chưa duyệt).
+
+## Cập nhật 20/11/2026 (sau Khoa quyết câu 1, 2)
+- Commit c9fc3ed4: dropspec tỉ số nén QSL9G2 / G3 / G4 (17.8:1) và QSK60G7 (16.2:1), n101 + n2003, `khoa: "Khoa 20/11/2026"`. Test: 14 note "ngoại lệ theo dòng" cho yingtai.
+- Gộp main 325be503 → **SHA cuối ce676c1b** (đã đẩy). Test 1.381 pass / 0 fail. Soát lại (gốc 2ed96b02 ↔ nhánh): NCC khác đổi 0; huatai 17 đổi; yingtai 56 mới; số so: trùng NCC khác 107 (trước 110: 3 tỉ số nén QSL9 trùng số NCC khác đã bỏ), KHÁC 53, chỉ yingtai 57.
+- Câu 3 (QSK19G4 bore đếm theo chữ): mở việc riêng `win-dem-theo-so-de-xuat.md` sau khi ba PR xong.
