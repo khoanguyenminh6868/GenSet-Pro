@@ -214,5 +214,48 @@ export function bestPair(names = [], ctlFacts = [], compat = [], modFacts = new 
   const used = new Set(cur.modules);
   return { ...cur, modules: chosen.filter((x) => used.has(x.m.model)).map((x) => ({ model: x.m.model, make: x.m.make, ...(x.m.order ? { order: x.m.order } : {}) })) };
 }
+// ---------- Bộ điều khiển theo datasheet hãng, AMF, thay bộ chính (Khoa 20/11/2026, IB2600603983: "1. Có 2. Có 3. Có") ----------
+// A controller the configuration's suppliers do not offer, chosen from its maker's datasheet.
+export const CTL_ALT_LABEL = "Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào";
+// The kind of each Deep Sea controller as its maker's datasheet writes it: "amf" (auto mains (utility) failure), "sync"
+// (synchronising), "start" (auto start only). Read from the words right after the model in a line of a controller_maker's
+// table, up to the next model ("The DSE7310 MKII is an auto start control module and the DSE7320 MKII is an auto mains
+// (utility) failure control module"); words before the model are another's. A model read as two kinds takes amf, then sync
+// (DSE8610 MKII: "Synchronising Auto Start"). Only Deep Sea (DSE + 4 digits) for now; key = the number ("7320").
+const DSE_RE = /\bDSE\s?(\d{4})(?:\s?MK\s?I{1,3})?\b/gi;
+export function ctlKinds(suppliers = []) {
+  const votes = new Map();
+  for (const s of suppliers || []) {
+    if (s?.role !== "controller_maker") continue;
+    for (const t of s.specTables || []) for (const line of [t.title, ...(t.rows || [])]) {
+      const l = String(line || ""), hits = [...l.matchAll(DSE_RE)];
+      hits.forEach((h, i) => {
+        const seg = l.slice(h.index + h[0].length, i + 1 < hits.length ? hits[i + 1].index : l.length);
+        const k = /mains\W+(?:\(?utility\)?\W+)?failure|\bAMF\b/i.test(seg) ? "amf" : /synchroni[sz]/i.test(seg) ? "sync" : /auto\W+start/i.test(seg) ? "start" : null;
+        if (k) votes.set(h[1], new Set([...(votes.get(h[1]) || []), k]));
+      });
+    }
+  }
+  return new Map([...votes].map(([n, ks]) => [n, ["amf", "sync", "start"].find((k) => ks.has(k))]));
+}
+export const dseNum = (model) => String(model || "").match(/\bDSE\s?(\d{4})\b/i)?.[1] || null;
+export const KIND_VI = { amf: "tự động khi mất lưới (AMF)", sync: "hòa đồng bộ", start: "chỉ tự khởi động" };
+export const kindOf = (kinds, model) => kinds.get(dseNum(model)) || null;
+// The step of a Deep Sea controller in its maker's range, for the order of equal alternatives: the series, the first two
+// digits (61xx < 73xx < 74xx < 86xx). Inferred from the maker's numbering (DSE7320 MKII / DSE7420 MKII, DSE8610 MKII), not
+// written by the maker as an order; null for a controller with no such number.
+// SmartGen the same way (HGM6120 61 < HGM9510 95). ComAp by family word (InteliNano < InteliLite, its "AMF9 / AMF25 / MRS"
+// models < InteliGen < InteliSys): also inferred, from ComAp's own product line names. Steps compare within one make only.
+const COMAP_STEP = [[/intelinano/i, 1], [/intelilite|^\s*(?:amf|mrs)\s?\d+/i, 2], [/inteligen/i, 3], [/intelisys/i, 4]];
+export const ctlStep = (model) => {
+  const m = String(model || ""), n = dseNum(m) || m.match(/\bHGM\s?(\d{4})/i)?.[1];
+  if (n) return Math.floor(Number(n) / 100);
+  return COMAP_STEP.find(([re]) => re.test(m))?.[1] ?? null;
+};
+// The HSMT asks for a set that starts and takes the load when the mains fail (Khoa's 2nd answer): an ATS, "khi mất điện lưới".
+// The abbreviations in capitals only ("ats" / "amf" in lower case are other words).
+export const AMF_RE = /chuy[ểe]n\s+(?:đổi\s+)?ngu[ồo]n\s+t[ựu]\s+đ[ộo]ng|m[ấa]t\s+(?:đi[ệe]n\s+)?l[ưu][ớo]i|mains\s+failure/i, AMF_ABBR = /\bATS\b|\bAMF\b/;
+export const needsAmf = (text) => AMF_RE.test(String(text || "")) || AMF_ABBR.test(String(text || ""));
+
 // The line of Q1: "Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (đạt 5/7 ...)".
-export const altLineOf = (alts = []) => (alts.length ? `Phương án khác đạt tương đương: ${alts.map((a) => `${[a.model, ...a.modules.map((m) => m.model)].join(" + ")} (truyền thông: code dò datasheet đạt ${a.met}/${a.total}${a.unclear.length ? `, chưa rõ: ${a.unclear.join(", ")}` : ""})`).join("; ")}` : "");
+export const altLineOf = (alts = []) => (alts.length ? `Phương án khác đạt tương đương: ${alts.map((a) => `${[a.model, ...a.modules.map((m) => m.model)].join(" + ")} (${a.notOffered ? `${CTL_ALT_LABEL}; ` : a.offeredBy ? `NCC ${a.offeredBy} chào; ` : ""}${a.kind ? `${KIND_VI[a.kind]} theo datasheet hãng; ` : ""}truyền thông: code dò datasheet đạt ${a.met}/${a.total}${a.unclear.length ? `, chưa rõ: ${a.unclear.join(", ")}` : ""})`).join("; ")}` : "");
