@@ -97,3 +97,13 @@ Giải thích chung, soát tay hai lượt đầu và lượt cuối:
 1. **B có áp cho 12 chỗ hãng TQ (`CN_ROWS`) không?** Hiện KHÔNG áp, nên SDEC SC9D340D2 vẫn có thể chiếm 3 trong 12 chỗ. Khuyến nghị: **CÓ áp** (cùng tinh thần "model khác trước", trong nhóm TQ chia theo từng hãng). Việc này nhỏ: thêm `{ models: true }` vào lời gọi `pick` của `CN_ROWS` + 1 test.
 2. **A có nên tính cả độ phủ không?** A làm 100 / 114 lượt mẫu đổi và đẩy Cummins / Perkins / Yuchai xuống vì thiếu tờ hãng trong `cn/`, không vì động cơ kém. Khuyến nghị: giữ A như duyệt, đồng thời bổ sung tờ hãng Cummins / Perkins / Yuchai (việc dữ liệu). Nếu Khoa thấy top 30 lệch hẳn về TQ thì tắt A bằng `GENBID_CAND_A=0` tới khi đủ dữ liệu.
 3. **MAKE_ROWS: hãng chỉ có 1–2 model có nên lấy dòng thứ hai / ba của cùng model cho đủ 3 chỗ không?** Bản này: có, theo câu "hết model mới tới dòng thứ hai". Khuyến nghị: giữ.
+
+## Vòng 2 (20/11/2026 tối, theo Khoa: "đo lại B xem như thế nào rồi tính tiếp, áp luôn cho các hãng trung quốc")
+- Commit đầu nhánh **636b48e3** (đã gộp origin/main 66cc1008, có #997, #999).
+- B áp thêm ở 12 chỗ hãng TQ (`CN_ROWS`) + test. A giữ code nhưng MẶC ĐỊNH TẮT (`GENBID_CAND_A=1` để đo), ghi trong code và `suppliers/CLAUDE.md`. B mặc định bật (`GENBID_CAND_B=0` tắt).
+- `node --test suppliers/`: 1.305 / 1.305 qua.
+- IB2600603983, chỉ B (mặc định nhánh) so với main (B=0, y main): 6M31G825/5 voltgent 222đ, hạng **#15** (main #17), vẫn trong 30.
+  - Vào: Baudouin "6M33G8D3/5 (6M33G825/5)" kaihua, Cummins QSK23-G3 fdk-energy, Perkins 2806A-E18TAG2 L sr-genset, Perkins 2806A-E18TTAG5 voltgent, Volvo Penta TWD1653GE rcg-power, Volvo Penta TWD1744GE jet-power.
+  - Ra: Mitsubishi S6R2-PTAA stone-power, S6R2-PTAA-C fdk-energy M825/H1, Perkins 4006-23TAG2A koten-power và uleengen UP750GF, 4006-23TAG3A uleengen UP800GF và voltgent P900-1.
+  - Lý do: B thay dòng thứ 2–3 của cùng model (Perkins 4006, Mitsubishi S6R2) bằng model khác cùng hãng. Gói này G7/EU nên `CN_ROWS` không chạy; phần TQ chỉ thấy ở đo toàn bộ.
+- Số mẫu 1/10 ở trên là của code vòng 1 (B chưa áp `CN_ROWS`). Đo lại "chỉ B" toàn bộ: phiên cloud.
