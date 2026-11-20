@@ -63,3 +63,12 @@ Chỉ đổi cách đọc cột tổ máy khi tiêu đề nêu đích danh (`gen
 - zhengchi: cột 缸数 / 排量 không đáng tin (dung tích lệch 51 % so NCC khác) — chờ quyết A / B.
 - bẫy mới đề xuất ghi `web/CLAUDE.md` khi PR chốt: model tổ máy ở cột > 1 đọc theo tiêu đề `gensetCol`; `subline` của `titledPowers` chỉ khi `gi ≤ 1`.
 - U+FF0D (－) trong mã động cơ zhengchi (11 dòng): đề xuất coi là "-".
+
+---
+## CẬP NHẬT 20/11 (Khoa chọn B) — commit 2
+Điều phối chuyển quyết định: Khoa chọn B. `TABLE_DROPS` + `tableDrops` (catalog.js): danh sách tường minh, khớp NCC `zhengchi-power` + chữ tiêu đề "整机编号", bỏ `cyl` + `disp`, ghi "Khoa 20/11/2026" + lý do, note "bỏ thông số theo bảng". Bảng n101 (机组型号) KHÔNG bỏ: kiểm riêng, xi lanh 15 / 15 khớp NCC khác; cột "排气量" không đọc ra số disp. Bẫy ghi `web/CLAUDE.md`.
+Kiểm lại (đầu ra thật):
+- spec-diff abb28c67 ↔ nhánh: `{"model":514,"genset":514,"disp bỏ":512,"cyl bỏ":512,"voltage thêm":2,"fuel thêm":2,"weight thêm":2}`; bản ghi 60073 → 60062 (11 mất, 0 thêm); đảo vai 0 → 0; "cần soát tay 1026" = 512 × 2 số bỏ + 2 fuel thêm (đều dòng n132 bảng 31, nay chỉ voltage / fuel / weight; cyl / disp không còn). Thông số bỏ ở 512 bản ghi động cơ zhengchi, mọi bảng 整机编号 (n102–n160).
+- row-flags: 158 → 158 dòng, 0 thêm, 0 mất (5 dòng cylMaj mất + longkai +1 đã về như main).
+- `quality --check`: không chỉ số nào xấu đi. Không sửa baseline.
+- `node --test web/test/*.test.mjs suppliers/*.test.mjs`: 1346 / 1346 đạt (hai ca cand-disp tự xanh, không sửa).
