@@ -76,6 +76,26 @@ Không xét #953 (aosif AW1125) vì chưa merge. Vậy 4 dòng đủ điều ki�
 
 ## 7. Việc chưa làm / hạn chế
 - Câu 4 (TAD1341GE 9,36 L, 5 dòng bdadl n118 ×3 + fukangsi n2005 ×2): nhánh riêng, chưa làm.
-- Chưa đo top 30 cloud và bidhist (điều phối đo).
+- Top 30 cloud: xem mục 8.
 - Hanyang n107 ×4 chưa phủ bởi B3.
 - (a′) (3 dòng jianghao / bdadl / pengpai ở `absurdOf` dòng chỉ rated / standby): Khoa chưa quyết, không làm ở đây.
+
+## 8. Top 30 cloud (gốc b8752924 ↔ nhánh 282da8a9; 1.093 lượt: 1.003 giống, 90 khác, 6 đổi top 30)
+Chạy lại cục bộ gốc ↔ nhánh cho các lượt Volvo "rời trọn" (do-gop-k, bidhist 20/11 12:30; nhánh nay 95a02064, đã gộp #973 / #1004): lý do loại là `maxDisp` ở mọi lượt, riêng TAD1641GE là `cyl`.
+Cơ chế: động cơ không có giá trị thắng thì đạt trần `maxDisp` nếu BẤT KỲ giá trị dung tích nào ≤ trần. Mingbang n125 ghi 3,3 / 4,4 / 6,0 L (bảng chép của máy nhỏ) cho TAD1341–1345GE / TWD1643GE nên các dòng này lọt mọi trần. Bỏ số sai đi thì chỉ còn 12,78 / 12,13 / 16,12 L (đúng Volvo: D13 12,8 L, TAD1642GE 16,12 L, 144×165) và bị loại khi HSMT có trần thấp hơn.
+
+| Gói (kVA) | HSMT đòi | Động cơ rời | Trước → sau | Đúng datasheet Volvo? |
+|---|---|---|---|---|
+| IB2200032133 (500) | 6 xi lanh, ≤12,5 L, ≤130×155 | TAD1345GE 6 dòng | 4,4 → còn 12,78 > 12,5 | Có: 12,78 L > 12,5 |
+| IB2300288169 (400) | "6 xilanh", <12,7 L | TAD1345GE 16 dòng | 4,4 → 12,78 > 12,7 | Có (sát ngưỡng 0,08 L) |
+| IB2400236068#1 (500) | ≤12,5 L | TWD1643GE 11 dòng | 6,0 → 16,12 | Có |
+| IB2400236068#0 | các dòng top là 500–550 kVA (trần 12,5 L như #1) | TAD1345GE 6 dòng | 4,4 → 12,78 | Có nếu trần 12,5 (suy từ dòng top, chưa soát lại chữ trần của #0) |
+| IB2500314401 (350) | 6 xi lanh, ≤9,84 L, ≥118×150 | TAD1343GE 22, TAD1344GE 14 dòng | 4,4 → 12,78 / 12,13 | Có |
+| IB2300215868 (250) | ≥6 xi lanh, ≤108×125, ≤6,8 L | TAD1341GE 2 dòng | 3,3 → 12,78 | Có |
+| IB2400481114 | ≤8 L, 6 xi lanh | TAD1341GE 1 dòng | 3,3 → 12,78 | Có |
+| IB2600217137 (500) | 130×163, 13,0 L, 6 xi lanh | TAD1641GE (21 → 22 dòng rời, lệch 1 dòng chưa giải thích) | loại bằng `cyl` cả trước và sau | 16,12 L ≠ 13,0: loại đúng |
+
+Mingbang n125 "vào": theo khoá dòng (`all`), các dòng này đã ở top 30 của gốc với điểm cao nhờ số sai; sau sửa có lượt ở lại (vì không có trần dung tích) nên số "VÀO" của điều phối và đếm theo `all` của tôi khác nhau về cách tính khoá, không phải dòng mới xuất hiện.
+Chồng #957: huipu "1278" (HP-V280 / V400) và MB-V480 đã `dropspec` ở main nhờ #957; bản gốc b8752924 trước #957 nên còn phiếu 1278 của TAD1345GE; phần chồng này không do #992.
+Còn mở: 9,36 L của TAD1341/1342/1351GE vẫn thắng ở nhánh này (đã xử trong `tad1341-9-36`, chưa PR); #0 và 1 dòng TAD1641GE như bảng.
+Bảng đo khác: gốc cloud 08:19Z, tôi chạy lại bằng bidhist 20/11 12:30 nên có thể lệch vài dòng.

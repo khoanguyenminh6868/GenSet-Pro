@@ -1,0 +1,81 @@
+#1 6M31G825/5 | LSA 49.3 M8 | bộ điều khiển DSE7420 + DSE890 MKII (mã 0890-04, ghép theo datasheet bộ điều khiển n1003: | DSE890 MKII | DSEWebNet® Gateway | 0890-04)
+   điểm [0,0,0,39,8,0,2] → [0,0,0,39,8,0,2]
+   unclear (Đạt 6/7) → unclear (Đạt 6/7)
+     Điều khiển từ xa qua cổng Internet/4G: met → met (Qua mô-đun DSE890 MKII (mã 0890-04): 4G (DSE890 MKII), Internet (DSE890 MKII))
+     Cổng kết nối với hệ thống kiểm soát từ xa: met → met
+     RS232: met → met
+     RS485: met → met
+     Ethernet: met → met
+     BMS: unclear → unclear
+     USB: met → met
+#2 S6R2-PTAA-C | S5L1D-H41 | bộ điều khiển DSE7320 + DSE890 MKII (mã 0890-04, ghép theo datasheet bộ điều khiển n1001: | DSE890 MKII | DSEWebNet® Gateway | 0890-04)
+   điểm [0,0,0,40,12,0,2] → [0,0,0,39,12,0,2]
+   unclear (Đạt 4/7) → unclear (Đạt 5/7)
+     Điều khiển từ xa qua cổng Internet/4G: met → met (Qua mô-đun DSE890 MKII (mã 0890-04): 4G (DSE890 MKII), Internet (DSE890 MKII))
+     Cổng kết nối với hệ thống kiểm soát từ xa: unclear → unclear
+     RS232: met → met
+     RS485: met → met
+     Ethernet: unclear → met (Qua mô-đun DSE890 MKII (mã 0890-04): Ethernet (DSE890 MKII))
+     BMS: unclear → unclear
+     USB: met → met
+#3 12V2000G63 | LSA 49.3 M8 | bộ điều khiển DSE8610 + DSE890 MKII (mã 0890-04, ghép theo datasheet bộ điều khiển n1004: | DSE890 MKII | DSEWebNet® Gateway | 0890-04)
+   điểm [0,0,0,42,8,0,3] → [0,0,0,42,8,0,3]
+   unclear (Đạt 6/7) → unclear (Đạt 6/7)
+     Điều khiển từ xa qua cổng Internet/4G: met → met (Qua mô-đun DSE890 MKII (mã 0890-04): 4G (DSE890 MKII), Internet (DSE890 MKII))
+     Cổng kết nối với hệ thống kiểm soát từ xa: met → met
+     RS232: met → met
+     RS485: met → met
+     Ethernet: met → met
+     BMS: unclear → unclear
+     USB: met → met
+#4 QSK23-G2 | LSA 49.3 M8 | bộ điều khiển Deepsea 7320 + DSE890 MKII (mã 0890-04, ghép theo datasheet bộ điều khiển n1001: | DSE890 MKII | DSEWebNet® Gateway | 0890-04)
+   điểm [1,0,0,38,6,0,2] → [1,0,0,37,6,0,2]
+   unclear (Đạt 4/7) → unclear (Đạt 5/7)
+     Điều khiển từ xa qua cổng Internet/4G: met → met (Qua mô-đun DSE890 MKII (mã 0890-04): 4G (DSE890 MKII), Internet (DSE890 MKII))
+     Cổng kết nối với hệ thống kiểm soát từ xa: unclear → unclear
+     RS232: met → met
+     RS485: met → met
+     Ethernet: unclear → met (Qua mô-đun DSE890 MKII (mã 0890-04): Ethernet (DSE890 MKII))
+     BMS: unclear → unclear
+     USB: met → met
+#5 4006-23TAG2A | S5L1D-H41 | bộ điều khiển DSE7420 + DSE890 MKII (mã 0890-04, ghép theo datasheet bộ điều khiển n1003: | DSE890 MKII | DSEWebNet® Gateway | 0890-04)
+   điểm [1,0,0,37,11,0,3] → [1,0,0,37,11,0,3]
+   unclear (Đạt 6/7) → unclear (Đạt 6/7)
+     Điều khiển từ xa qua cổng Internet/4G: met → met (Qua mô-đun DSE890 MKII (mã 0890-04): 4G (DSE890 MKII), Internet (DSE890 MKII))
+     Cổng kết nối với hệ thống kiểm soát từ xa: met → met
+     RS232: met → met
+     RS485: met → met
+     Ethernet: met → met
+     BMS: unclear → unclear
+     USB: met → met
+   Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa); DSE8610 MKII + DSE890 MKII (truyền thông: code dò datasheet đạt 6/7, chưa rõ: Cổng kết nối với hệ thống kiểm soát từ xa)
+#6 TWD1744GE | ECO40 VL4C | bộ điều khiển DSE7320 + DSE890 MKII (mã 0890-04, ghép theo datasheet bộ điều khiển n1001: | DSE890 MKII | DSEWebNet® Gateway | 0890-04)
+   điểm [1,0,0,39,11,0,2] → [1,0,0,38,11,0,2]
+   unclear (Đạt 4/7) → unclear (Đạt 5/7)
+     Điều khiển từ xa qua cổng Internet/4G: met → met (Qua mô-đun DSE890 MKII (mã 0890-04): 4G (DSE890 MKII), Internet (DSE890 MKII))
+     Cổng kết nối với hệ thống kiểm soát từ xa: unclear → unclear
+     RS232: met → met
+     RS485: met → met
+     Ethernet: unclear → met (Qua mô-đun DSE890 MKII (mã 0890-04): Ethernet (DSE890 MKII))
+     BMS: unclear → unclear
+     USB: met → met
+#7 6M33G825/5 | LSA49.3 M65 | bộ điều khiển DSE6120 + DSE890 MKII (mã 0890-04, ghép theo datasheet bộ điều khiển n1002: | DSE890 MKII | DSEWebNet® / IoT Gateway - 4G (GSM/Ethernet) | 0890-04)
+   điểm [1,0,0,44,13,1,2] → [1,0,0,43,13,1,2]
+   unclear (Đạt 2/7) → unclear (Đạt 3/7)
+     Điều khiển từ xa qua cổng Internet/4G: met → met (Qua mô-đun DSE890 MKII (mã 0890-04): 4G (DSE890 MKII), Internet (DSE890 MKII))
+     Cổng kết nối với hệ thống kiểm soát từ xa: unclear → unclear
+     RS232: unclear → unclear
+     RS485: unclear → unclear
+     Ethernet: unclear → met (Qua mô-đun DSE890 MKII (mã 0890-04): Ethernet (DSE890 MKII))
+     BMS: unclear → unclear
+     USB: met → met
+#8 12V1600G11F | LSA 49.3 M8 | bộ điều khiển null
+   điểm [1,0,0,55,7,0,1] → [1,0,0,55,7,0,1]
+   unclear (Đạt 0/7) → unclear (Đạt 0/7)
+     Điều khiển từ xa qua cổng Internet/4G: unclear → unclear
+     Cổng kết nối với hệ thống kiểm soát từ xa: unclear → unclear
+     RS232: unclear → unclear
+     RS485: unclear → unclear
+     Ethernet: unclear → unclear
+     BMS: unclear → unclear
+     USB: unclear → unclear
