@@ -1,6 +1,6 @@
 # Nghiệm thu PR 2 — huatai n111 (7C) + yingtai n101 / n2003 (6C) (20/11/2026)
 
-Nhánh `catalog-hy`, đã gộp main 59f3369e (#968). Quyết định: Khoa 20/11/2026 câu 6 = C, câu 7 = C (`catalog-nhom-con-lai-de-xuat.md`). Đo trong `dau-vao\nhom-con-lai\pr2\`.
+PR nháp #973, nhánh `catalog-hy`, SHA **32934948** (đã gộp main 59f3369e (#968); test sau gộp 1.359 / 1.359; `soat-hy` trên 59f3369e y như dưới). Quyết định: Khoa 20/11/2026 câu 6 = C, câu 7 = C (`catalog-nhom-con-lai-de-xuat.md`). Đo trong `dau-vao\nhom-con-lai\pr2\`.
 
 ## Thay đổi (`web/catalog.js`)
 - `NAMED_POWER` (chỉ huatai n111, khoá NCC + n + dòng tiêu đề đầu nguyên văn): công suất tổ máy = số trong tên "NNNGF", mức `rated` (nguồn không ghi mức; cùng quy ước #968 "số không ghi prime / standby là `rated`"), bản ghi mang `powerFrom: "tên tổ máy"`; `engPower` = ô "额定功率 power (KW)" dưới "柴油机参数". Bỏ 3 ngoại lệ nopower 700/800/850GF của catalog-b (cả bảng đã theo tên).
