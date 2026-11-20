@@ -50,6 +50,16 @@ test("yingtai bảng động cơ: ô hãng ở dòng đầu bỏ đi, '/' không
   assert.equal(C.fromSupplier(sup("ncc-khac", [YT])).length, 0, "NCC khác: đọc như cũ");
 });
 
+test("yingtai: số Cummins ghi khác bị bỏ riêng (dropspec theo model), phần còn lại của dòng giữ", () => {
+  const notes = [];
+  const y = C.fromSupplier(real("yingtai-jiangsu"), notes).filter((o) => o.kind === "engine" && ((o.n === 101 && o.table === 1) || o.n === 2003));
+  const m = (k) => y.find((o) => o.model === k);
+  assert.deepEqual([spec(m("KTA19G4"), "bore"), spec(m("KTA19G4"), "disp")], [[], ["18.9"]]);
+  assert.deepEqual([spec(m("QSL9G5"), "compr"), spec(m("QSL9G5"), "disp")], [[], ["8.8"]]);
+  assert.deepEqual([spec(m("QSL9G7"), "disp"), spec(m("QSL9G7"), "compr")], [[], ["16.1:1"]]);
+  assert.equal(notes.filter((n) => n.supplierId === "yingtai-jiangsu" && n.reason === "ngoại lệ theo dòng").length, 6);
+});
+
 test("hồ sơ thật: huatai n111 17 bản ghi có công suất theo tên; yingtai 56 bản ghi động cơ (n2003 gộp vào n101 qua also)", () => {
   const h = C.fromSupplier(real("huatai-yangzhou")).filter((o) => o.n === 111);
   assert.equal(h.length, 17);

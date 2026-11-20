@@ -1430,6 +1430,15 @@
       ["fukangsi-yangzhou", 2001, "FKS-C20", "| FKS-C20 | 20/25 | 东风康明斯 | 4B3.9-G1 | 4 | 3.92 | 9 | ≤210 | 1600*800*1300 | 5500"],
       ["pengpai-yangzhou", 125, "PPDL-C20", "| PPDL-C20 | 20/25 | 东风康明斯 | 4B3.9-G1 | 4 | 3.92 | 9 | ≤210 | 1600*800*1300 | 5500"]].map(([supplierId, n, genset, line]) => (
       { supplierId, n, genset, line, act: "dropspec", keys: ["weight"], khoa: "Khoa 19/11/2026", why: "nguồn ghi khối lượng không hợp công suất của dòng (1.440 kg cho 1.600 kW, 5.500 kg cho 20 kW): bỏ riêng khối lượng, giữ phần còn lại của dòng" })),
+    // yingtai's Cummins engine table (ENGINE_TABLES, no genset in the row: matched by `model`), n101 and n2003 (the same rows,
+    // `mergeRepeats` would put a figure back): figures Cummins' own sheets give otherwise (catalog-hy-2.md, 20/11/2026).
+    // KTA19-G4: Bore / Stroke 159 / 159 mm (cummins.com KTA19-G4 Coolpac sheet); QSL9-G5: compression ratio 16.8:1 (cummins.com
+    // C300D2R data sheet, engine QSL9-G5); QSL9 G7: displacement 8.9 L (cummins.com "QSL9 G7 & G2").
+    ...[101, 2003].flatMap((n) => [
+      ["KTA19G4", "| KTA19G4 | 448 | 504 | 6 | 159X160 | 18.9 | 13.9:1 | 72 | 213 | 107 | 电调 | 95 | N/A", ["bore"], "nguồn ghi 159X160, Cummins ghi 159 × 159 mm"],
+      ["QSL9G5", "| QSL9G5 | 268 | 310 | 6 | 114X145 | 8.8 | 17.8:1 | 24 | 199 | 63 | 电喷 | 28.5 | N/A", ["compr"], "nguồn ghi 17.8:1, Cummins ghi 16.8:1"],
+      ["QSL9G7", "| QSL9G7 | 271 | 300 | 6 | 114X145 | 8.8 | 16.1:1 | 24 | 214 | 70 | 电喷 | 28.5 | 国三", ["disp"], "nguồn ghi 8.8 L, Cummins ghi 8.9 L cho QSL9 G7"],
+    ].map(([model, line, keys, why]) => ({ supplierId: "yingtai-jiangsu", n, model, line, act: "dropspec", keys, khoa: "điều phối 20/11/2026 (cách #952 / #957)", why: `${why}: bỏ riêng số đó, giữ dòng` }))),
   ];
   function rowExceptions(s, list, note) {
     const ex = ROW_EXCEPTIONS.filter((x) => x.supplierId === s.id);
@@ -1437,7 +1446,7 @@
     const out = [];
     for (const o of list) {
       const lines = [o.line, ...(o.lines?.header || []), ...(o.lines?.rows || [])].filter((x) => x != null).map((x) => String(x).trim());
-      const x = ex.find((x) => x.n === o.n && o.genset && keyOf(o.genset) === keyOf(x.genset) && lines.includes(x.line.trim()));
+      const x = ex.find((x) => x.n === o.n && (x.genset ? o.genset && keyOf(o.genset) === keyOf(x.genset) : o.kind === "engine" && keyOf(o.model) === keyOf(x.model)) && lines.includes(x.line.trim()));
       if (!x) { out.push(o); continue; }
       note({ n: o.n, title: o.title }, o.table, o.row ?? null, "ngoại lệ theo dòng", `${x.act}: ${x.khoa}, ${x.why}`);
       if (x.act === "nopower") out.push({ ...o, power: null });
