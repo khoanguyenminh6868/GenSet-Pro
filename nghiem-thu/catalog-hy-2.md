@@ -37,7 +37,7 @@ Sau dropspec (KTA19G4 bore, QSL9G5 compr, QSL9G7 disp; ở cả n101 và n2003):
 
 **Cơ chế QSK19G4 bore:** `tally` của `catalog.js` đếm phiếu theo CHỮ đã gộp hoa thường / dấu cách (`vk`), thắng khi ≥ 3 NCC và gấp ≥ 3 lần mỗi giá trị khác. "159*159" 3 NCC; yingtai thêm "159x159" thành 2 NCC → 3 < 3 × 2 → không thắng. Số không đổi (cùng 159 × 159), chỉ cách viết chia phiếu. Không phải lỗi luật số đông mà là cách đếm theo chữ đã ghi trong suppliers/CLAUDE.md ("đếm theo CHỮ … QSK19-G4 không có `win`"); config-bot `majorityOf` đếm theo SỐ qua lớp chuẩn hoá nên Gợi ý không đổi. Chưa sửa.
 
-PR nháp #973, nhánh `catalog-hy`, SHA **32934948** (đã gộp main 59f3369e (#968); test sau gộp 1.359 / 1.359; `soat-hy` trên 59f3369e y như dưới). Quyết định: Khoa 20/11/2026 câu 6 = C, câu 7 = C (`catalog-nhom-con-lai-de-xuat.md`). Đo trong `dau-vao\nhom-con-lai\pr2\`.
+PR nháp #973, nhánh `catalog-hy`, SHA **588709fe** (commit riêng dropspec 3 số Cummins trên 32934948; test 1.360 / 1.360; NCC khác đổi 0) (đã gộp main 59f3369e (#968); test sau gộp 1.359 / 1.359; `soat-hy` trên 59f3369e y như dưới). Quyết định: Khoa 20/11/2026 câu 6 = C, câu 7 = C (`catalog-nhom-con-lai-de-xuat.md`). Đo trong `dau-vao\nhom-con-lai\pr2\`.
 
 ## Thay đổi (`web/catalog.js`)
 - `NAMED_POWER` (chỉ huatai n111, khoá NCC + n + dòng tiêu đề đầu nguyên văn): công suất tổ máy = số trong tên "NNNGF", mức `rated` (nguồn không ghi mức; cùng quy ước #968 "số không ghi prime / standby là `rated`"), bản ghi mang `powerFrom: "tên tổ máy"`; `engPower` = ô "额定功率 power (KW)" dưới "柴油机参数". Bỏ 3 ngoại lệ nopower 700/800/850GF của catalog-b (cả bảng đã theo tên).
