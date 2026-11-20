@@ -1506,6 +1506,8 @@ export const MAKE_CAP = 10;
 // tờ hãng trong cn/, không theo chất lượng động cơ) Khoa 20/11/2026: "đo lại B xem như thế nào rồi tính tiếp, áp luôn cho
 // các hãng trung quốc" → B MẶC ĐỊNH BẬT (`GENBID_CAND_B=0` tắt); A MẶC ĐỊNH TẮT, Khoa CHƯA duyệt bật (`GENBID_CAND_A=1` để đo).
 const CAND_DEFAULT = { A: "0", B: "1" };
+// Luật B không đụng 5 dòng đầu của xếp hạng cũ (B tắt): Khoa 20/11/2026 "Sửa luật B rồi chạy lại".
+const PIN_TOP = 5;
 const candRuleOn = (k) => { const v = String(process.env[`GENBID_CAND_${k}`] ?? "").trim() || CAND_DEFAULT[k]; return v !== "0"; };
 // Luật A: động cơ có datasheet của CHÍNH hãng động cơ. Chặt: một fact của model (modelFacts) mang `sheet` (bảng của NCC
 // `role: engine_maker` có tiêu đề ghi đúng một mã là model này, hoặc dòng bảng của chính NCC đó ghi đúng mã model; không
@@ -1594,7 +1596,7 @@ export function altOf(alts, cell) {
   }
   return null;
 }
-export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30, sync = null, keep = null, makeCap = MAKE_CAP, patches = true, blocked = null } = {}) {
+export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30, sync = null, keep = null, makeCap = MAKE_CAP, patches = true, blocked = null, pinTop = PIN_TOP } = {}) {
   const hints = plausible(hints0, cap), sup = new Map(suppliers.map((s) => [s.id, s])), alts = new Map((cat.alternators || []).map((a) => [a.key, a])), rowsMap = normRowsOf(suppliers);
   const band = bandOf(cap), ruleA = candRuleOn("A"), ruleB = candRuleOn("B");
   const near = (u) => !cap || Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * band.low && p[cap.unit] <= cap.value * band.high + 1e-9);
@@ -1812,6 +1814,10 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
     }
   }
   rows.sort((x, y) => y.score - x.score);
+  // Chọn dòng hai lần khi luật B bật (Khoa 20/11/2026, đo cloud: B đẩy cả dòng hạng 1 cũ khỏi 30 dòng): `choose(false)` là
+  // xếp hạng cũ; `choose(true, 5 dòng đầu của nó)` giữ 5 dòng đó ở hạng 1–5 (vẫn tính vào trần mỗi động cơ / NCC / hãng),
+  // luật B chỉ chia các chỗ từ hạng 6. Thân `choose` không thụt lề thêm để diff gọn.
+  const choose = (ruleB, pinned = []) => {
   const perEngine = new Map(), perSupplier = new Map(), seen = new Set(), out = [];
   const add = (m, k) => m.set(k, (m.get(k) || 0) + 1);
   // The ceiling per make: not when the HSMT names an engine make or model; a make "A / B" counts for A, a row of no make
@@ -1841,6 +1847,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
   };
   // The prime output (standby ÷ 1.1 when only that is given), in steps of 5% above the HSMT's size; a row below the
   // size, or that gives neither, last.
+  for (const r of pinned) take(r, false);
   const gap = (r) => {
     const p = r.u.power || {}, pr = p.prime?.[cap?.unit] ?? (p.standby?.[cap?.unit] != null ? p.standby[cap.unit] / 1.1 : null);
     return !cap ? 0 : pr == null ? 50 : pr < cap.value * 0.995 ? 99 : Math.round(20 * (pr / cap.value - 1));
@@ -1906,8 +1913,12 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       out.splice(out.indexOf(gone), 1, r); have.add(pairOf(r));
     }
   }
-  out.sort((x, y) => y.score - x.score);
-  return { top: out, all: rows, dropped };
+  const pin = new Map(pinned.map((r, i) => [r, i]));
+  out.sort((x, y) => (pin.get(x) ?? pinTop) - (pin.get(y) ?? pinTop) || y.score - x.score);
+  return out;
+  };
+  const old = choose(false);
+  return { top: ruleB ? choose(true, old.slice(0, pinTop)) : old, all: rows, dropped };
 }
 // The rows of the configurations a result chose (candidates `keep`): supplierId + engine key of each supplier and of
 // the engine's catalog source.

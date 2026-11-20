@@ -62,6 +62,8 @@ test("A: a maker's sheet naming two models in its title gives neither", () => {
   assert.ok(!r.why.includes("động cơ có datasheet hãng"));
 });
 
+// The B tests below pass `pinTop: 0` (no rows of the old top 5 held): their few places would all be ranks 1-5. The test of
+// the held top 5 is "B keeps the top 5 …".
 // B. Make X (Cummins): engine KTA19-G3 offered by three suppliers with high confidence, engine NTA855-G2A by one with
 // low; make Y (Yuchai) fills the rest.
 const B = () => [
@@ -74,13 +76,13 @@ const B = () => [
 const models = (top, mk) => top.filter((r) => (r.e.make || "").startsWith(mk)).map((r) => r.e.model);
 
 test("B: a make's places go to its different models first, then to a second row of the same model", () => {
-  const off = withEnv({ GENBID_CAND_B: "0" }, () => run(B(), { max: 4, makeCap: 2 }).top);
+  const off = withEnv({ GENBID_CAND_B: "0" }, () => run(B(), { max: 4, makeCap: 2, pinTop: 0 }).top);
   assert.deepEqual(models(off, "Cummins"), ["KTA19-G3", "KTA19-G3"]);
-  const on = run(B(), { max: 4, makeCap: 2 }).top;
+  const on = run(B(), { max: 4, makeCap: 2, pinTop: 0 }).top;
   assert.deepEqual(models(on, "Cummins").sort(), ["KTA19-G3", "NTA855-G2A"]);
   assert.equal(models(on, "Yuchai").length, 2);
   // Once every model has a row, a second row of a model comes in.
-  const more = run(B(), { max: 5, makeCap: 3 }).top;
+  const more = run(B(), { max: 5, makeCap: 3, pinTop: 0 }).top;
   assert.deepEqual(models(more, "Cummins").sort(), ["KTA19-G3", "KTA19-G3", "NTA855-G2A"]);
 });
 
@@ -103,10 +105,22 @@ test("B: with G7 / EU asked, a make with fewer models than MAKE_ROWS fills its p
     set("p1", "Perkins", ["| P1 | 420 | 336 | 2206C-E13TAG2 |", "| P2 | 420 | 336 | 2206C-E13TAG3 |", "| P3 | 420 | 336 | 2506C-E15TAG1 |"], "low"),
     set("c1", "Cummins", ["| C1 | 420 | 336 | KTA19-G3 |"], "high"), set("c2", "Cummins", ["| C2 | 420 | 336 | KTA19-G3 |"], "high"), set("c3", "Cummins", ["| C3 | 420 | 336 | KTA19-G3 |"], "high"),
   ];
-  const o = { max: 4, makeCap: 0, patches: true, origin: "g7eu" };
+  const o = { max: 4, makeCap: 0, patches: true, origin: "g7eu", pinTop: 0 };
   const on = run(list, o).top, off = withEnv({ GENBID_CAND_B: "0" }, () => run(list, o).top);
   assert.equal(models(on, "Cummins").length, 3);
   assert.equal(models(off, "Cummins").length, 1);
+});
+
+test("B keeps the top 5 of the old ranking (B off) at ranks 1-5 (Khoa 20/11/2026 \"Sửa luật B rồi chạy lại\")", () => {
+  const ids = (top) => top.slice(0, 5).map((r) => `${r.u.supplierId}|${r.e.key}`);
+  const cases = [
+    [B(), { max: 4, makeCap: 2 }], [B(), { max: 5, makeCap: 3 }],
+    [[...B(), set("w1", "Weichai", ["| W1 | 420 | 336 | WP13D405E200 |"], "high"), set("w4", "Weichai", ["| W4 | 420 | 336 | WP13D385E200 |"], "low")], { max: 6, makeCap: 0, patches: true, origin: "all" }],
+  ];
+  for (const [list, o] of cases) {
+    const off = withEnv({ GENBID_CAND_B: "0" }, () => run(list, o).top), on = run(list, o).top;
+    assert.deepEqual(ids(on), ids(off), JSON.stringify(o));
+  }
 });
 
 test("B in the 12 places of Chinese makes (CN_ROWS, Khoa 20/11/2026 \"áp luôn cho các hãng trung quốc\"): a Chinese make's models first", () => {
@@ -114,7 +128,7 @@ test("B in the 12 places of Chinese makes (CN_ROWS, Khoa 20/11/2026 \"áp luôn 
     set("w1", "Weichai", ["| W1 | 420 | 336 | WP13D405E200 |"], "high"), set("w2", "Weichai", ["| W2 | 420 | 336 | WP13D405E200 |"], "high"),
     set("w3", "Weichai", ["| W3 | 420 | 336 | WP13D405E200 |"], "high"), set("w4", "Weichai", ["| W4 | 420 | 336 | WP13D385E200 |"], "low"),
   ];
-  const o = { max: 2, makeCap: 0, patches: true, origin: "all" };
+  const o = { max: 2, makeCap: 0, patches: true, origin: "all", pinTop: 0 };
   const on = run(list, o).top, off = withEnv({ GENBID_CAND_B: "0" }, () => run(list, o).top);
   assert.deepEqual(models(off, "Weichai"), ["WP13D405E200", "WP13D405E200"]);
   assert.deepEqual(models(on, "Weichai").sort(), ["WP13D385E200", "WP13D405E200"]);
