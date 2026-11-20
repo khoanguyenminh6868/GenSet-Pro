@@ -1,0 +1,14 @@
+node:fs:2368
+    return binding.writeFileUtf8(
+                   ^
+
+Error: ENOENT: no such file or directory, open 'C:\Projects\GenSet%20Pro\genbid-work\dieu-phoi\dau-vao\ma-dong-co-trung\quet-web.json'
+    at Object.writeFileSync (node:fs:2368:20)
+    at file:///C:/Projects/GenSet%20Pro/genbid-work/dieu-phoi/dau-vao/ma-dong-co-trung/1-quet.mjs:47:4 {
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Projects\\GenSet%20Pro\\genbid-work\\dieu-phoi\\dau-vao\\ma-dong-co-trung\\quet-web.json'
+}
+
+Node.js v20.17.0

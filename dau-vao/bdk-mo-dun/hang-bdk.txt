@@ -1,0 +1,163 @@
+
+# deep-sea-electronics (role controller_maker) — 11 bảng, 14 nguồn
+## n1001 "Datasheet: | DSE7310 MKII Auto Start & DSE7320 MKII | Auto" — 246 dòng, 3 dòng truyền thông
+   demanding industry requirements. The extensive list of features includes enhanced event and performance monitoring, remote communications & PLC
+   DSEWebNet®
+   | DSE890 MKII | DSEWebNet® Gateway | 0890-04
+## n1002 "Datasheet: | DSE6110 MKIII Auto Start | & DSE6120 MKIII" — 249 dòng, 3 dòng truyền thông
+   DSEWebNet®
+   | DSE890 MKII | DSEWebNet® / IoT Gateway - 4G (GSM/Ethernet) | 0890-04
+   | DSE891 MKII | DSEWebNet® / IoT Gateway - Ethernet Only | 0891-04
+## n1003 "Datasheet: | DSE7410 MKII Auto Start & DSE7420 MKII | Auto" — 259 dòng, 7 dòng truyền thông
+   The modules include USB, RS232, RS485 and Ethernet ports as well as dedicated DSENet® terminals for system expansion.
+   The comprehensive list of features includes enhanced event and performance monitoring, remote communications & PLC functionality. Dual mutual
+   The modules also feature SNMP functionality for connection to SNMP systems. The modules can be easily configured using the DSE Configuration
+   | • | Integrated Ethernet port providing Modbus TCP, SNMP v2c and in
+   | Ethernet | 1 10/100 Ethernet Port
+   DSEWebNet®
+   | DSE890 MKII | DSEWebNet® Gateway | 0890-04
+## n1004 "Datasheet: | DSE8610 MKII Synchronising & Load Sharing | Auto" — 253 dòng, 5 dòng truyền thông
+   | • | Integrated Ethernet port providing Modbus TCP and SNMP v2c
+   | Ethernet | 1 10/100 Ethernet Port
+   DSEWebNet®
+   | DSE890 MKII | DSEWebNet® Gateway | 0890-04
+   | Remote Monitoring | Control
+## n1005 "Datasheet: | DSE8660 MKII Auto Transfer Switch & Mains | (Utility)" — 223 dòng, 6 dòng truyền thông
+   and SMS messaging. Comprehensive communications are also available via RS232, RS485 & Ethernet for remote PC control and monitoring to allow
+   | • | Integrated Ethernet port providing Modbus TCP and SNMP v2.0
+   | Ethernet | 1 10/100 Ethernet Port
+   DSEWebNet®
+   | DSE890 MKII | DSEWebNet® Gateway | 0890-04
+   | DSE891 MKII | DSEWebNet® / IoT Gateway - Ethernet Only | 0891-04
+## n1006 "Datasheet: DSE3110 Manual & Auto Start Control Module" — 161 dòng, 0 dòng truyền thông
+## n1007 "Datasheet: DSEGenset | DSE6010/20 MKII | ENVIRONMENTAL TESTING STANDARDS" — 183 dòng, 0 dòng truyền thông
+## n1008 "Datasheet: DSEGenset® | DSE4520 MKII | SPECIFICATIONS" — 189 dòng, 0 dòng truyền thông
+## n1009 "Datasheet: DSEGenset | DSE4610/20 | ENVIRONMENTAL TESTING STANDARDS" — 170 dòng, 0 dòng truyền thông
+## n1010 "Datasheet: DSEGenset® | DSE8620 MKII | SPECIFICATIONS" — 177 dòng, 3 dòng truyền thông
+   | • Ethernet communication, provides | Configurable as:
+   | USB, RS232, RS485 & Ethernet | various DSE software applications | • DSE2131 Ratio-metric Input | 0 V to 10 V DC
+   | Failure Control Module suitable for | and Ethernet for remote PC control
+## n1011 "Datasheet: DSEGenset | DSE7210/20 | ENVIRONMENTAL TESTING STANDARDS" — 172 dòng, 0 dòng truyền thông
+  controllers[]: DSE3110; DSE4520 MKII; DSE6020 MKII; DSE6110; DSE6110 MKIII; DSE6120; DSE6120 MKIII; DSE7310; DSE7310 MKII; DSE7320; DSE7320 MKII; DSE7410; DSE7410 MKII; DSE7420; DSE7420 MKII; DSE8003 MKII; DSE8610; DSE8610 MKII; DSE8660; DSE8660 MKII; DSE8680
+
+# comap (role controller_maker) — 12 bảng, 13 nguồn
+## n1001 "Datasheet: InteliLite 4 AMF 25" — 188 dòng, 9 dòng truyền thông
+   | Full control with fast and reliable remote communication support | Alternative configurations for genset with variable voltage and frequency
+   | Extendable options including 4G/GPS, Ethernet and RS485/RS232 | Available in low temperature version (order code: IL4AMF25BLA)
+   | Support of Modbus RTU/TCP, SNMP v1/v2c/v3 (SNMPv3 traps not | supported),
+   Monitoring via WebSupervisor, InteliSCADA, InteliConfig, active SMS and e-mails
+   2 slots for extension plug-in modules (more binary I/Os, 4G & GPS, Ethernet, RS232
+   | Protocols | SNMP v1/v2c/v3
+   | CM-RS232-485 | Dual port (RS232 & RS485) plug-in communication
+   | CM2-4G-GPS | 4G & GPS plug-in communication module | CM24GGPSXBX
+   | CM3-Ethernet | Internet / Ethernet plug-in communication module | CM3ETHERXBX
+## n1002 "Datasheet: InteliLite 4 AMF 20" — 175 dòng, 9 dòng truyền thông
+   | Full control with fast and reliable remote communication support | Tool for quick and organized configuration cloning in large production facilities
+   Extendable options including 4G/GPS, Ethernet and RS485/RS232
+   | Support of Modbus RTU/TCP, SNMP v1/v2c/v3 (SNMPv3 traps not | supported),
+   | Monitoring via WebSupervisor, InteliSCADA, InteliConfig, | active
+   2 slots for extension plug-in modules (more binary I/Os, 4G & GPS, Ethernet, RS232
+   | Protocols | SNMP v1/v2c/v3
+   | CM-RS232-485 | Dual port (RS232 & RS485) plug-in communication
+   | CM2-4G-GPS | 4G & GPS plug-in communication module | CM24GGPSXBX
+   | CM3-Ethernet | Internet / Ethernet plug-in communication module | CM3ETHERXBX
+## n1003 "Datasheet: InteliLite 4 MRS 16" — 190 dòng, 9 dòng truyền thông
+   | Full control with fast and reliable remote communication support | Tool for quick and organized configuration cloning in large production facilities
+   | Extendable options including 4G/GPS, Ethernet and RS485/RS232 | Application overview
+   | Support of Modbus RTU/TCP, SNMP v1/v2c/v3 (SNMPv3 traps not | supported),
+   | Monitoring via WebSupervisor, InteliSCADA, InteliConfig, | active
+   2 slots for extension plug-in modules (more binary I/Os, 4G & GPS, Ethernet, RS232
+   | Protocols | SNMP v1/v2c/v3
+   | CM-RS232-485 | Dual port (RS232 & RS485) plug-in communication
+   | CM2-4G-GPS | 4G & GPS plug-in communication module | CM24GGPSXBX
+   | CM3-Ethernet | Internet / Ethernet plug-in communication module | CM3ETHERXBX
+## n1004 "Datasheet: InteliGen NT" — 171 dòng, 1 dòng truyền thông
+   | InternetBridge-NT | Multiple Internet connections (PC and Modbus) to all controllers on CAN2 or RS485
+## n1005 "Datasheet: | | InteliGen NTC Datasheet | | Related HW ver: 2.0 | | Related SW ver: 3.3.0 | | Date of issue: 6/13/2023" — 170 dòng, 1 dòng truyền thông
+   | InternetBridge-NT | Multiple Internet connections (PC and Modbus) to all controllers on CAN2 or RS485
+## n1006 "Datasheet: InteliGen NT" — 218 dòng, 1 dòng truyền thông
+   | InteliBridge-NT | Multiple Internet connections(PCand Modbus)to allcontrollerson CAN2 orRS485
+## n1007 "Datasheet: InteliGen NTC" — 202 dòng, 4 dòng truyền thông
+   GPS and AirGate support and more
+   | Ethernet port | LAN/Internet, Modbus TCP,
+   | continuous current | AirGate
+   | IB-NT | Communication Module with Cellular/Ethernet Connection
+## n1008 "Datasheet: InteliGen 500 G2" — 219 dòng, 10 dòng truyền thông
+   | Great flexibility and wide range of applications support | AirGate 2.0 for easy connection to your equipment remotely,
+   | and easy extendability using SW key features | WebSupervisor—the cloud-based tool for fleet management
+   | In-built USB host/device, CAN, RS485 and Ethernet ports | parameters
+   | Modbus RTU/TCP, SNMP v1, v2c and v3, J1939 | Compatible load/Var sharing and power management with
+   | Requirements of ISA 62443 level 2-3 by design | Slots for plug-in modules for 4G and GPS, additional Ethernet port,
+   | Ethernet | 10/100 Mbit
+   | Operating conditions | Protocols | SNMP v1/v2c/v3
+   | CM-RS232-485 | Dual port interface | CM223248XBX
+   | CM2-4G-GPS | 4G & GPS plug-in communication module | CM24GGPSXBX
+   | CM3-Ethernet | Internet / Ethernet plug-in communication module | CM3ETHERXBX
+## n1009 "Datasheet: InteliGen4 200" — 199 dòng, 9 dòng truyền thông
+   | Great flexibility to fit all application needs | Slots for plug-in modules for 4G and GPS, additional Ethernet port,
+   | Plug-in modules for ethernet and 4G connectivity | controller
+   | Modbus RTU/TCP, SNMP v1, v2c and v3, J1939 | Event-based and fully configurable history for fast and easy
+   AirGate 2.0 for easy connection to your equipment remotely,
+   WebSupervisorcloud-based tool for fleet management
+   | Protocols | SNMP v1/v2c/v3
+   | CM-RS232-485 | Dual port interface | CM223248XBX
+   | CM2-4G-GPS | 4G & GPS plug-in communication module | CM24GGPSXBX
+   | CM3-Ethernet | Internet / Ethernet plug-in communication module | CM3ETHERXBX
+## n1011 "Datasheet: InteliLite 4 AMF 8" — 175 dòng, 9 dòng truyền thông
+   | Full control with fast and reliable remote communication support | Tool for quick and organized configuration cloning in large production facilities
+   Extendable options including 4G/GPS, Ethernet and RS485/RS232
+   | Support of Modbus RTU/TCP, SNMP v1/v2c/v3 (SNMPv3 traps not | supported),
+   | Monitoring via WebSupervisor, InteliSCADA, InteliConfig, | active
+   1 slot for extension plug-in module (more binary I/Os, 4G & GPS, Ethernet, RS232 &
+   | Protocols | SNMP v1/v2c/v3
+   | CM-RS232-485 | Dual port (RS232 & RS485) plug-in communication
+   | CM2-4G-GPS | 4G & GPS plug-in communication module | CM24GGPSXBX
+   | CM3-Ethernet | Internet / Ethernet plug-in communication module | CM3ETHERXBX
+## n1012 "Datasheet: InteliLite 4 AMF 9" — 183 dòng, 9 dòng truyền thông
+   | Full control with fast and reliable remote communication support | Tool for quick and organized configuration cloning in large production facilities
+   Extendable options including 4G/GPS, Ethernet and RS485/RS232
+   | Support of Modbus RTU/TCP, SNMP v1/v2c/v3 (SNMPv3 traps not | supported),
+   | Monitoring via WebSupervisor, InteliSCADA, InteliConfig, | active
+   1 slot for extension plug-in module (more binary I/Os, 4G & GPS, Ethernet, RS232 &
+   | Protocols | SNMP v1/v2c/v3
+   | CM-RS232-485 | Dual port (RS232 & RS485) plug-in communication
+   | CM2-4G-GPS | 4G & GPS plug-in communication module | CM24GGPSXBX
+   | CM3-Ethernet | Internet / Ethernet plug-in communication module | CM3ETHERXBX
+## n1013 "Datasheet: InteliGen 1000" — 280 dòng, 15 dòng truyền thông
+   | USB, 4 CAN ports, 3 ethernet ports, RS485 | Remote connection and monitoring
+   | Modbus Client/Server over RTU/TCP, SNMP v1, v2c | AirGate 2.0—easy connection to your equipment
+   | Cyber security by design to protect your business | WebSupervisior—the cloud-based tool for fleet
+   | Protocols | SNMP v1/v2c/v3
+   | CM-4G-GPS | An easy-to-use and efficient solution for connecting controllers online via 4G. | CM24GGPSXBX
+   | CM-RS232-485 | Communication module for integration of controllers into a local monitoring system. | CM223248XBX
+   | CM-EICC | Communication module for Intercontroller Communication over the Ethernet. | CM3ETHERICC
+   | InteliGateway | 100
+   | A communication gateway for connection of multiple Modbus devices to | CM2GW100BAB
+   WebSupervisor and InteliScada monitoring systems.
+   | InteliGateway | 101 | Similar as InteliGateway 100 with 4G cellular connectivity and GNSS capability. | CM2GW101BAB
+   | InteliGateway | 300
+   | A communication gateway for connection of multiple Modbus devices to | CM2GW300BAB
+   WebSupervisor and InteliScada monitoring systems and to ComAp controllers.
+   | InteliGateway | 301 | Similar as InteliGateway 300 with 4G cellular connectivity and GNSS capability. | CM2GW301BAB
+  controllers[]: InteliLite 4; InteliLite 4 AMF20; InteliLite 4 AMF25; InteliLite 4 MRS16
+
+# smartgen (role controller_maker) — 3 bảng, 3 nguồn
+## n1001 "Datasheet: HGM6100N SERIES (HGM6110N/6120N/6110NC/6120NC/6110CAN/6120CAN)" — 700 dòng, 1 dòng truyền thông
+   measurement and remote communication). The controller uses LCD display, optional language
+## n1002 "Datasheet: HGM6100U SERIES (HGM6110U/6110UC/6120U/6120UC)" — 700 dòng, 1 dòng truyền thông
+   “remote” (remote control, remote measure and remote communication). The controller
+## n1003 "Datasheet: HGM9510" — 699 dòng, 4 dòng truyền thông
+   remote measurement and remote communication function. It fits with LCD display, optional Chinese,
+   | ETHERNET | ●
+   | GSM | ●
+   |  | RS485 communication port enables remote control, remote measuring, remote communication via
+  controllers[]: HGM6100CAN; HGM6100N; HGM6100U; HGM6110; HGM6110CAN; HGM6110N; HGM6110NC; HGM6110U; HGM6110UC; HGM6120; HGM6120CAN; HGM6120N; HGM6120NC; HGM6120U; HGM6120UC; HGM9210; HGM9220; HGM9310; HGM9320; HGM9410; HGM9420; HGM9500; HGM9510; HGM9520; HGM9610; HGM9620
+
+# deif (role controller_maker) — 0 bảng, 2 nguồn
+
+# woodward (role controller_maker) — 0 bảng, 1 nguồn
+
+# datakom (role controller_maker) — 0 bảng, 2 nguồn
+
+# sices (role controller_maker) — 0 bảng, 5 nguồn
+  controllers[]: GC315Plus; GC310; GC350; GC500Plus; DST4602Evolution; GC600; GC400
