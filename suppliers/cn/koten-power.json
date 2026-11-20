@@ -1179,6 +1179,19 @@
         "Generator"
       ],
       "file": "sources/koten-power/1027.md"
+    },
+    {
+      "n": 1028,
+      "url": "https://github.com/khoanguyenminh6868/GenSet-Pro/releases/download/datasheets-upload/koten-kb700d5-700kva-datasheet.pdf",
+      "accessedAt": "2026-11-20",
+      "tier": "A",
+      "quote": [
+        "| Genset Model | KB700D5",
+        "| Engine Model | Baudouin 6M33G825/5",
+        "| Engine model | 6M33G8D3/5",
+        "From: PDF do Khoa cung cấp 20/11/2026 (tờ tổ máy KB700D5 50 Hz của Koten, đặt trên release datasheets-upload)"
+      ],
+      "file": "sources/koten-power/1028.md"
     }
   ],
   "confidence": "medium",
@@ -3545,6 +3558,61 @@
         "| Governor | Mechanical",
         "| Voltage regulator | A.V.R",
         "| Start motor | 12V"
+      ]
+    },
+    {
+      "n": 1028,
+      "title": "Datasheet: KB700D5",
+      "header": [],
+      "rows": [
+        "| Genset Model | KB700D5",
+        "| Frequency | 50Hz",
+        "| Voltage | 380V",
+        "| PRP | 560KW/700KVA",
+        "| ESP | 616KW/770KVA",
+        "| Phase | 3-PH",
+        "| Speed | 1500rpm",
+        "| Power Factor | 0.8",
+        "| Fuel Tank Capacity | 8hrs",
+        "| Engine Model | Baudouin 6M33G825/5",
+        "| Alternator | Leroysomer LSA49.3 M65",
+        "| Controller | Deepsea DSE7320",
+        "| Length (L) | mm | 3800 | 5600",
+        "| Width (W] | mm | 1600 | 1830",
+        "| Height (H) | mm | 2205 | 2500",
+        "| Dry weight | kgs | 4523 | 6526",
+        "| Engine brand | Baudouin",
+        "| Prime engine power output | 675kW",
+        "| Engine model | 6M33G8D3/5",
+        "| Speed governor | ECU",
+        "| Displacement | 19.6L",
+        "| Coolant capacity | 159.0L",
+        "| No. of cyl / arrangement | 6 L",
+        "| Lubrication capacity | 64.0L",
+        "| Bore | 150mm",
+        "| Start type | Electrical",
+        "| Stroke | 185mm",
+        "| Consumption 100% @ load ESP | 174L/H",
+        "| Compression ratio | 15.0:1",
+        "| Consumption 100% @ load PRP | 155L/H",
+        "| Engine speed | 1500rpm",
+        "| Consumption 75% @ load PRP | 111L/H",
+        "| Aspiration | Turbo, intercooling",
+        "| Consumption 50% @ load PRP | 77L/H",
+        "| Number of phase | 3",
+        "| Winding Pitch | 2/3",
+        "| Power factor (Cos Phi) | 0.8",
+        "| IP rating | IP23",
+        "| Poles | 4",
+        "| Excitation system | Self-excited",
+        "| Winding Connections | Star-serie",
+        "| Bearing | Single bearing",
+        "| Terminals | 6 or 12",
+        "| Coating | Vacuum impregnation",
+        "| Insulation | Class H",
+        "| Voltage regulator | A.V.R",
+        "| Couping | Flexible disc",
+        "| Type | Brushless"
       ]
     },
     {
