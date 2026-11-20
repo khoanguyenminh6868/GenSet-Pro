@@ -914,6 +914,15 @@ export function factConflicts(list) {
 // code ranks the genset rows first and the agent reads the best ones with every figure gathered. Engine and controller
 // weigh more than the alternator (Khoa, 2026-11-02).
 const squashOf = (s) => norm(s).replace(/[^a-z0-9]/g, "");
+// The squashed text (`text`, = squashOf) and where its tokens (runs of [a-z0-9] in the text) start and end (`bounds`: bit 1 =
+// a token starts at this index of `text`, bit 2 = one ends just before it), for `named`.
+function squashTokens(s) {
+  const toks = norm(s).match(/[a-z0-9]+/g) || [];
+  const text = toks.join(""), bounds = new Uint8Array(text.length + 1);
+  let i = 0;
+  for (const k of toks) { bounds[i] |= 1; i += k.length; bounds[i] |= 2; }
+  return { text, bounds };
+}
 // `sizing` ({ size, sizes }, sizesOf): the run of one size of a tender of several sizes: the minimums of that size's own block.
 // The cylinder arrangement (Khoa, 2026-11-17, IB2600603983: "6 xy lanh, bố trí thẳng hàng" and the nine Cummins rows of
 // the candidates were KTA38, 12 cylinders in V, which the agent then turned down; QSK23-G2, in line, stood 127th).
@@ -974,7 +983,7 @@ export function hintsOf(text, extra = "", sizing = null) {
   const engineMakes = names(CAT.ENGINE_BRANDS);
   for (const m of [trait.engineMake, ...trait.unused.filter((u) => u.equivalent && u.at === "engine").map((u) => u.makeName)]) if (m && !engineMakes.includes(m)) engineMakes.push(m);
   return { engineMakes, trait, altMakes: names(CAT.ALT_BRANDS), ctrlMakes: ctrl, ctrlModels: CAT.controllersIn(t).filter((c) => c.model).map((c) => CAT.keyOf(c.model)),
-    freq: f50 && !f60 ? 50 : f60 && !f50 ? 60 : null, cylLayout: cylLayoutOf(t), fuel: fuelOfHsmt(technicalPart(text)).fuel, madeRule: partOriginOfHsmt(text), text: squashOf(t), ...engineMins(t), ...comprOf(t), ...(sized ? sized.mins : {}), ...(sized?.note ? { sizeNote: sized.note } : {}) };
+    freq: f50 && !f60 ? 50 : f60 && !f50 ? 60 : null, cylLayout: cylLayoutOf(t), fuel: fuelOfHsmt(technicalPart(text)).fuel, madeRule: partOriginOfHsmt(text), ...squashTokens(t),...engineMins(t), ...comprOf(t), ...(sized ? sized.mins : {}), ...(sized?.note ? { sizeNote: sized.note } : {}) };
 }
 // The engine minimums the HSMT states ("Dung tích xy lanh ≥ 11,05 L", "Tối thiểu 06 xi lanh"), one value each: a tender
 // of several gensets that gives two values is left alone. candidates() ranks an engine a source shows below them lower
@@ -1452,7 +1461,20 @@ export const litres = (v) => {
   if (unit) return n;
   return n <= 100 ? n : n > 130 ? n / 1000 : null;
 };
-const named = (hints, model) => { const k = squashOf(model); return k.length >= 5 && hints.text.includes(k); };
+// A model the HSMT writes (engine `isNamed`, alternator +80): its squashed code must match WHOLE tokens of the HSMT
+// (named-token, 20/11/2026). The squashed text drops every boundary, so the substring test matched across words:
+// "Model: 224D" held "el224d", "12VDC/24VDC" "dc24v", "220/380V" "v2203", "ACB 2500A" "b2500" (scan of the local bidhist,
+// 928 tenders × 9,298 models: 185 pairs → 104 on whole tokens). Hints without `bounds` (built by hand) keep the substring test.
+// A model the catalog writes CUT SHORT of the HSMT's model ("6BT5.9-G" where the HSMT names "6BT5.9-G2", "KTA50G" for
+// "KTA50-G8", "4105D" in "HY4105D", 28 pairs of the scan) is NOT named either (khoa: "Khoa 20/11/2026").
+export const named = (hints, model) => {
+  const k = squashOf(model);
+  if (k.length < 5) return false;
+  const b = hints.bounds;
+  if (!b) return hints.text.includes(k);
+  for (let i = hints.text.indexOf(k); i >= 0; i = hints.text.indexOf(k, i + 1)) if (b[i] & 1 && b[i + k.length] & 2) return true;
+  return false;
+};
 const CONF = { high: 30, medium: 15 };
 // A supplier offering one engine with one alternator is one choice, however many gensets, pages or tables name it.
 const choiceKey = (r) => `${r.u.supplierId}\n${r.e.key}\n${r.a?.key || squashOf(r.u.other || "")}`;
