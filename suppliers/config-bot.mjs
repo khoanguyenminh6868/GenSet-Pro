@@ -1050,6 +1050,9 @@ const tankNear = (cell) => { const m = cell.match(DISP_LABEL) || cell.match(/(?:
 const DISP_BARE = /^(?:.*\s)?(?:t[ổo]ng\s+)?dung t[íi]ch\s*(?::|≥|≤|<|>|\d|$)/i, ENGINE_LINES = /(?:xi|xy)[\s-]?lanh|piston|h[àa]nh tr[ìi]nh|đ[ườu]*ng k[ií]nh|t[ỷy] s[ốo] n[ée]n|compression|\bbore\b|\bstroke\b/i;
 // The label of the count of cylinders ("Số xi lanh", "Số xy-lanh", "Số lượng xi lanh", "Số cylinder", "Number of cylinders").
 const CYL_LABEL = /(?:s[ốo]\s*(?:l[ưu][ợo]ng\s*)?(?:xi|xy)[\s-]*lanh|s[ốo]\s*cylind(?:er|re)s?|number\s+of\s+cylinders?)/i;
+// A figure that is the engine's number of strokes ("4 kỳ", "4 thì", "4 kì", "4-stroke", "4 cycle"), not a count of cylinders
+// (cyl-ky 20/11/2026): a lookahead put right after the figure.
+const NOT_STROKE = String.raw`(?!\s*-?\s*(?:k[ỳìyi]|th[ìi]|stroke|cycle)(?![a-zà-ỹ]))`;
 // "Động cơ diesel 4 thì, 6 xy lanh, thẳng hàng" / "Kiểu: 6 xylanh, 4 thì": the count inside a line that describes the engine.
 // Not after a bore, a stroke or a displacement, not a line of choices ("6 hoặc 8 xi lanh"), nor another vehicle's engine.
 function inlineCyl(line) {
@@ -1172,10 +1175,12 @@ export function engineLists(t) {
     // "Số xy lanh, kiểu bố trí" | "≥ 3 thẳng hàng"); "Động cơ 4 thì, 6 xy lanh, thẳng hàng" inside a line.
     const c = cell.match(/(?:≥|>=|tối thiểu|ít nhất)\s*:?\s*0?(\d{1,2})\s*(?:xi|xy)[\s-]?lanh/i)
       // Not a row number before the sign ("Số lượng xi lanh của" / "2 ≥ 16 (*)", IB2300015080: the 16 is read below).
-      || cell.match(new RegExp(CYL_LABEL.source + String.raw`[^\d\n]{0,30}?(?<![\d.,])0?(\d{1,2})(?![.,]?\d)(?!\s*(?:≥|>|≤|<|tối))\s*(?:(?:xi|xy)[\s-]?(?:lanh)?|\/?\s*[LV]\b|\b)`, "i"))
+      // Not the number of strokes ("Số xy lanh: Động cơ Diesel 4 kỳ, 6 xy lanh", IB2600217137: the 4 of "4 kỳ" read as 4
+      // cylinders, cyl-ky 20/11/2026): NOT_STROKE.
+      || cell.match(new RegExp(CYL_LABEL.source + String.raw`[^\d\n]{0,30}?(?<![\d.,])0?(\d{1,2})(?![.,]?\d)(?!\s*(?:≥|>|≤|<|tối))` + NOT_STROKE + String.raw`\s*(?:(?:xi|xy)[\s-]?(?:lanh)?|\/?\s*[LV]\b|\b)`, "i"))
       || line.match(/^\s*[-+•]?\s*0?(\d{1,2})\s*(?:xi|xy)[\s-]?lanh/i)
       // The label alone on the line above, then a least and nothing but words of the layout or of the grading (no other figure).
-      || (CYL_LABEL.test(prev) && !new RegExp(CYL_LABEL.source + String.raw`[^\n]*\d`, "i").test(prev) && line.match(/^\s*(?:\d{1,2}(?:\.\d{1,2})*\.?\s+)?(?:≥|>=|>|tối thiểu)\s*0?(\d{1,2})(?![\d.,])[^\d]*$/i))
+      || (CYL_LABEL.test(prev) && !new RegExp(CYL_LABEL.source + String.raw`[^\n]*\d`, "i").test(prev) && line.match(new RegExp(String.raw`^\s*(?:\d{1,2}(?:\.\d{1,2})*\.?\s+)?(?:≥|>=|>|tối thiểu)\s*0?(\d{1,2})(?![\d.,])` + NOT_STROKE + String.raw`[^\d]*$`, "i")))
       || inlineCyl(line);
     if (c && Number(c[1]) >= 1 && Number(c[1]) <= 20) {
       cyl.push(Number(c[1]));
