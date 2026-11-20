@@ -102,7 +102,8 @@ test("acepow n127: hai mã đầu phát không hãng ('UC274D / UCI274D') → kh
   assert.ok(notes.some((n) => n.reason === "một ô ghi hai mã" && n.detail === "UC274D / UCI274D"));
 });
 
-test("huatai n111: ba dòng '140/165' (đường kính / hành trình dưới nhãn công suất) → ngoại lệ nopower; dòng khác không đổi", () => {
+// Khoa 20/11/2026 (câu 7 = C): cả bảng lấy công suất tổ máy từ tên "NNNGF" (NAMED_POWER), không còn ngoại lệ nopower.
+test("huatai n111: ba dòng '140/165' (đường kính / hành trình dưới nhãn công suất) → công suất theo tên, không theo ô '140/165'", () => {
   const s = sup("huatai-yangzhou", [{ n: 111, title: "无锡动力系列柴油发电机组-扬州华泰电气有限公司",
     header: ["| 组型号Type of set | 输出功率 Power of output (KW/KVA) | 额定电流Rated current (A) | 柴油机参数 Parameters of set | 机组尺寸及重量 Size and weight of machine set",
       "| 型号 Type | 额定功率 power (KW) | 缸数及类型Numbers& Type of cylinder | 燃油消耗 (g/kw.h)Consumption of fuel(g/kw.h) | 机油容量 Oil capacity (L) | 长×宽×高 Length Width Height (MM) | 净重 Net Weight (kg)"],
@@ -111,9 +112,6 @@ test("huatai n111: ba dòng '140/165' (đường kính / hành trình dưới nh
       "| 850GF | 140/165 | 1538.5 | WD327TAD82 | 902 | 12缸V型 | 196 | 60 | 3900×1850×2100 | 5000"] }]);
   const notes = [];
   const e = recs(s, "engine", notes);
-  assert.deepEqual(e.map((r) => [r.model, r.power]), [["WD305TAD68", null], ["WD327TAD78", null], ["WD327TAD82", null]]);
-  assert.equal(notes.filter((n) => n.reason === "ngoại lệ theo dòng").length, 3);
-  // chữ dòng khác một ký tự thì ngoại lệ không áp (nguồn cào lại)
-  const t2 = { ...s, specTables: [{ ...s.specTables[0], rows: ["| 700GF | 140/165 | 1267 | WD305TAD68 | 750 | 12缸V型 | 196 | 55 | 3800×1800×2100 | 4551"] }] };
-  assert.notEqual(recs(t2, "engine")[0].power, null);
+  assert.deepEqual(e.map((r) => [r.model, r.power]), [["WD305TAD68", { rated: { kW: 700 } }], ["WD327TAD78", { rated: { kW: 800 } }], ["WD327TAD82", { rated: { kW: 850 } }]]);
+  assert.equal(notes.filter((n) => n.reason === "ngoại lệ theo dòng").length, 0);
 });

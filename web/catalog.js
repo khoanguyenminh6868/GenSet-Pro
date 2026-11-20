@@ -62,6 +62,22 @@
   const SCANIA_CODE = /^[DO]C\s?\d{1,2}\s\d{2,3}[A-Z]\s\d{2}[\s-]\d{2}$/i;
   const DOOSAN_P = /^P\d{3}(?:TI|LE)\b/i; // Doosan engines that look like an alternator's P-frame ALT_CODE
   const FRAME_ALT =/^(16|18|22|27|31|35)4[A-Z]{1,2}$/;
+  // An alternator maker's own codes, only in the tables listed (catalog-nhom-con-lai, Khoa 20/11/2026 câu 1 = B: an explicit
+  // list, not a rule, so not in ALT_CODE). eastern-lion writes its alternator "EL 164D" / "ELS 184F" (60 Hz) under "Alternator
+  // model" and its controller "RUIFEN6120" after it: "the one code after the engine" found two codes and took none (15 tables),
+  // and where the engine cell is Chinese ("D114系列WLD171", "4105ZD(小泵）") the EL code was read as the ENGINE and RUIFEN6120
+  // as the alternator (n126 / n147 / n149). Matched by supplier + n + a header naming "Alternator model".
+  const OWN_ALT = [
+    { supplierId: "eastern-lion-fuan", n: [114, 115, 116, 117, 122, 126, 128, 129, 133, 139, 141, 142, 144, 146, 147, 149, 151, 152], code: /^ELS?\s?\d{3}[A-Z]{0,2}$/i, khoa: "Khoa 20/11/2026" },
+  ];
+  // An alternator maker's own range table, read as alternator records with the output the maker gives at each frequency
+  // (catalog-nhom-con-lai, Khoa 20/11/2026 câu 2): an explicit list (supplier + n + the first header line word for word; a
+  // re-crawl that changes the header lapses the entry, noted), each entry names its cells. Level `rated`: the maker's
+  // "Output" of the alternator, neither a prime nor a standby of a set. Two records per row, one per frequency.
+  const ALT_TABLES = [
+    { supplierId: "eastern-lion-fuan", n: 156, header: "| | Model | 50Hz Output (kW) | 50Hz Output (kVA) | 60Hz Output (kW) | 60Hz Output (kVA) | SAE Size | Core Length (mm)",
+      code: /^ELS?\s?\d{3}[A-Z]{0,2}$/i, model: 0, out: [{ freq: 50, kW: 1, kVA: 2 }, { freq: 60, kW: 3, kVA: 4 }], khoa: "Khoa 20/11/2026" },
+  ];
   // Series codes of Chinese alternator makers (Nianfeng NFS, Bobig BW, Jet-Power JET, Wintpower WT): such a model is not
   // the Stamford that the column title or page title of the table names ("Stamford UCDI274J" rows above, "with stamford
   // alternator" title): 2026-11-03 regression run showed "NIANFENG NFS5-G (Stamford)", "BW-404B (Stamford)".
@@ -491,7 +507,8 @@
       // outputs, right after the model.
       const tm = h.slice(0, tp).findIndex((x) => /model|型号|机组|^\s*type\s*$|set\s*type/i.test(x));
       let p0;
-      const subline = gi >= 0 && tm < 0 && tp === 0;
+      // (gi > 1: the genset code is in a column after the outputs, "功率 | 备用功率 | 品牌 | 整机编号", zhengchi; they are not "right after the model")
+      const subline = gi >= 0 && gi <= 1 && tm < 0 && tp === 0;
       if (gi >= 0 && tm >= 0) p0 = tp + gi - tm;
       else if (subline) p0 = gi + 1;
       else if (!h[0] && h.length === cells.length + 1) p0 = tp - 1;
@@ -1292,13 +1309,30 @@
       const hEng = brandIn(headerText, ENGINE_BRANDS), hAlt = brandIn(headerText, ALT_BRANDS);
       const tEng = brandIn(titleHead, ENGINE_BRANDS), tAlt = brandIn(titleHead, ALT_BRANDS);
       const base = { supplierId: s.id, n: t.n, table: ti, title };
+      const altT = ALT_TABLES.find((x) => x.supplierId === s.id && x.n === +t.n);
+      if (altT) {
+        if (String((t.header || [])[0] || "").trim() !== altT.header) { note(t, ti, null, "bảng đầu phát trong danh sách đổi tiêu đề: không đọc", (t.header || [])[0] || ""); return; }
+        t.rows.forEach((line, ri) => {
+          const cells = cellsOf(line), model = (cells[altT.model] || "").trim();
+          if (!altT.code.test(model)) { note(t, ti, ri, "dòng bảng đầu phát không có model", line); return; }
+          for (const o of altT.out) {
+            const kW = +cells[o.kW], kVA = +cells[o.kVA];
+            // kW / kVA of the alternator at that frequency must fit (0.75–0.86, or 0.8 rounded); otherwise left out, noted.
+            const p = kW > 0 && kVA > 0 && kVA > kW ? fitPair(kVA, kW) : null;
+            if (!p) { note(t, ti, ri, "công suất đầu phát không đọc được", `${o.freq} Hz: ${cells[o.kW]} / ${cells[o.kVA]}`); continue; }
+            out.push({ ...base, row: ri, line, kind: "alternator", model, genset: null, power: { rated: { kW: p.kW, kVA: p.kVA } }, freq: o.freq, specs: [], makes: [], other: null, own: true, header: t.header || [] });
+          }
+        });
+        return;
+      }
       const makesFor = (kind, rowText, brandCell, model = "") => {
         const list = kind === "engine" ? ENGINE_BRANDS : ALT_BRANDS, makes = [];
         const cell = brandCell ? brandIn(brandCell, kind === "engine" ? list : ALT_CELL_BRANDS) : [];
         const row = brandIn(rowText, list), hdr = kind === "engine" ? hEng : hAlt, ttl = kind === "engine" ? tEng : tAlt;
         const own = kind === "alternator" ? brandIn(model, [FG_WILSON]) : []; // FG Wilson written in the alternator's own cell
-        if (cell.length === 1) addMake(makes, cell[0], "dòng bảng");
-        else if (row.length === 1) addMake(makes, row[0], "dòng bảng");
+        const rowLevel = MAKE_LEVEL_LOW.some((x) => x.supplierId === s.id && x.title.test(headerText)) ? "tên trang" : "dòng bảng";
+        if (cell.length === 1) addMake(makes, cell[0], rowLevel);
+        else if (row.length === 1) addMake(makes, row[0], rowLevel);
         else if (own.length === 1) addMake(makes, own[0], "dòng bảng");
         else if (kind === "alternator" && CN_ALT_CODE.test(String(model).trim())) return makes;
         else if (hdr.length === 1) addMake(makes, hdr[0], "tiêu đề cột");
@@ -1306,6 +1340,25 @@
         else if (s.role === (kind === "engine" ? "engine_maker" : "alternator_maker")) { const o = ownBrand(list); if (o.length === 1) addMake(makes, o[0], "hãng sản xuất"); }
         return makes;
       };
+      // An engine table on Khoa's list (ENGINE_TABLES): each row gives one engine record with the figures its entry names,
+      // no genset power (so never a candidate row; its figures go with the engine's key).
+      const engT = ENGINE_TABLES.find((x) => x.supplierId === s.id && x.n.includes(+t.n) && String(t0.header?.[0] ?? "").trim() === x.header);
+      if (engT) {
+        t.rows.forEach((line, ri) => {
+          const cells = cellsOf(line);
+          const brand = cells.length === engT.cells + 1 && engT.brand.test(cells[0]) ? cells.shift() : null;
+          if (cells.length !== engT.cells) { note(t, ti, ri, "dòng bảng động cơ sai số ô", line); return; }
+          const model = String(cells[engT.model]).trim();
+          if (!isCode(model)) { note(t, ti, ri, "dòng bảng động cơ không có model", line); return; }
+          const specs = [];
+          for (const [key, i, label] of engT.specs) {
+            const v = String(cells[i] ?? "").trim();
+            if (v && SPEC[key].ok.test(v)) specs.push({ key, label, value: v });
+          }
+          out.push({ ...base, row: ri, line, header: t.header || [], kind: "engine", model, genset: null, power: null, freq: null, specs, makes: makesFor("engine", line, brand), other: null });
+        });
+        return;
+      }
       const sec = isLabelTable(t) ? null : sectionSheet(t);
       if (sec || isLabelTable(t)) {
         // A page that lists several gensets one after the other ("Genset Model：SC700GFK" ... "Genset Model：SC85GFK",
@@ -1373,6 +1426,8 @@
       }
       const hasEngineCol = ENGINE_LBL.test(headerText) || hEng.length > 0 || (s.role === "engine_maker" && !GENSET_LBL.test(headerText + " " + title));
       const hasAltCol = ALT_LBL.test(headerText) || hAlt.length > 0;
+      const ownAlt = hasAltCol && /alternator\s*model/i.test(headerText) ? OWN_ALT.find((x) => x.supplierId === s.id && x.n.includes(+t.n))?.code || null : null;
+      const own = (c) => !!ownAlt && ownAlt.test(String(c).trim());
       // An engine maker's own engine table: the first cell of each row is the engine.
       const engineTable = s.role === "engine_maker" && !GENSET_LBL.test(headerText) && !/genset|generator set|机组/i.test(cellsOf(t.header?.[0] || "")[0] || "");
       const altFirst = (t.header || []).map(cellsOf).some((h) => {
@@ -1384,6 +1439,16 @@
       const engCol = (n) => {
         const js = new Set();
         for (const h of (t.header || []).map(cellsOf)) if (h.length === n) h.forEach((x, i) => engTitle(x) && js.add(i));
+        return js.size === 1 ? [...js][0] : -1;
+      };
+      // The one column the header titles as the genset's own model / number ("整机编号", "整机型号", "机组型号", "Genset model"),
+      // in a header row with as many cells as the row: -1 when no such row, or two. Used only when the genset's code is the
+      // row's FIRST code, in a column after the second (zhengchi n102-120: "功率 | 备用功率 | 品牌 | 整机编号 | 柴油机型号" put the
+      // genset code at 3, so it was read as the engine and the real engine model (柴油机型号) was lost; catalog-b3).
+      const GEN_TITLE = /^(整机|机组|发电机组|成套机组)\s*(型号|编号|代号)$|^(genset|generator\s*set)\s*model$/i;
+      const gensetCol = (n) => {
+        const js = new Set();
+        for (const h of (t.header || []).map(cellsOf)) if (h.length === n) h.forEach((x, i) => GEN_TITLE.test(x.trim()) && js.add(i));
         return js.size === 1 ? [...js][0] : -1;
       };
       t.rows.forEach((line, ri) => {
@@ -1398,7 +1463,13 @@
         const raw = cellsOf(line).map((c) => c.replace(/\s+made in [a-z ]+$|\s*[（][^）]*[）]\s*$/i, "").replace(/^(\S+)\s+CONTACT$/, "$1").trim());
         // A make in Chinese, "&", then the code ("沃尔沃 & TAD530GE", "斯坦福 & UCI224G", rcg-power n124): the code alone is the
         // cell's model; the make stays in the row's text for makesFor (catalog-bang-r1).
-        const cells = raw.map((c) => c.replace(/^[一-鿿]{1,8}\s*&\s*(?=\S*\d\S*$)/, ""));
+        const cells = raw.map((c) => c.replace(/^[一-鿿]{1,8}\s*&\s*(?=\S*\d\S*$)/, "")).map((c) => {
+          // Full-width hyphen U+FF0D inside a code cell, read as "-" (catalog-b3, Khoa 20/11/2026): an explicit supplier list, and
+          // only a cell that is ONE code "YC12VTD2000－D30" (letters / digits either side), nothing else of the row or table.
+          if (!DASH_FIX.some((x) => x.supplierId === s.id) || !/^[A-Za-z0-9.]+－[A-Za-z0-9.]+$/.test(c)) return c;
+          note(t, ti, ri, "ô mã viết dấu － toàn chiều rộng, đọc như '-'", c);
+          return c.replace("－", "-");
+        });
         // A kVA / kW misread with a look-alike letter ("3S0", "312.S" in vantek) is a figure, not a model (ocrFig).
         const codes = cells.map((c, i) => (!ocrFig(cells, i) && (isCode(c) || brandedCode(c, ENGINE_BRANDS) || brandedCode(c, ALT_BRANDS)) ? i : -1)).filter((i) => i >= 0);
         if (!codes.length) return;
@@ -1418,11 +1489,14 @@
         let gi = -1, ei = -1, ai = -1;
         if (engineTable) ei = codes[0];
         else {
-          gi = codes[0] === 0 || codes[0] === 1 ? codes[0] : -1;
+          gi = codes[0] === 0 || codes[0] === 1 || (codes[0] > 1 && codes[0] === gensetCol(cells.length)) ? codes[0] : -1;
           const rest = codes.filter((i) => i !== gi);
-          const alt = rest.filter((i) => ALT_CODE.test(cells[i]) || (hasAltCol && FRAME_ALT.test(cells[i].trim())));
+          const alt = rest.filter((i) => ALT_CODE.test(cells[i]) || (hasAltCol && FRAME_ALT.test(cells[i].trim())) || own(cells[i]));
           if (hasAltCol && alt.length) ai = alt[0];
-          if (hasEngineCol) ei = rest.find((i) => i !== ai && !ALT_CODE.test(cells[i]) && !(hasAltCol && FRAME_ALT.test(cells[i].trim()))) ?? -1;
+          if (hasEngineCol) ei = rest.find((i) => i !== ai && !ALT_CODE.test(cells[i]) && !(hasAltCol && FRAME_ALT.test(cells[i].trim())) && !own(cells[i])) ?? -1;
+          // OWN_ALT tables put the engine BEFORE the alternator: a code after the maker's alternator is the controller
+          // ("RUIFEN6120"), the row's engine cell was no code ("D114系列WLD171").
+          if (ownAlt && ai >= 0 && ei > ai) { note(t, ti, ri, "ô động cơ không đọc được, mã ở cột khác", `${cells[ei]} sau đầu phát ${cells[ai]}`); ei = -1; }
           if (hasAltCol && ai < 0 && ei >= 0) { const after = rest.filter((i) => i > ei); if (after.length === 1) ai = after[0]; }
           // A code of the row after the genset is a Doosan "P086TI" / "P126TI II" / "P158LE" (shaped like a Stamford P-frame) and
           // nothing else was taken as the engine, under an engine title: it is the engine; another alternator-shaped code of the row
@@ -1450,7 +1524,7 @@
               note(t, ti, ri, "ô động cơ không đọc được, mã ở cột khác", `${ce} | ${cells[ei]}`);
               // An alternator taken only as "the one code after the engine" lost what placed it (eastern-lion: the controller
               // "RUIFEN6120" after "EL 224E"); one shaped like an alternator's code stays.
-              if (ai > ei && !ALT_CODE.test(cells[ai]) && !(hasAltCol && FRAME_ALT.test(cells[ai].trim()))) ai = -1;
+              if (ai > ei && !ALT_CODE.test(cells[ai]) && !(hasAltCol && FRAME_ALT.test(cells[ai].trim())) && !own(cells[ai])) ai = -1;
               ei = -1;
             }
           }
@@ -1485,6 +1559,7 @@
         break;
       }
     }
+    out.push(...listedEngineRows(s, out, note));
     // Fuel of each record (may-khi-2): from its table's signs and its own row; kept on the record, so it reaches `uses` of build().
     const fuelSg = new Map();
     for (const o of out) {
@@ -1492,7 +1567,73 @@
       const f = fuelFrom(fuelSg.get(o.table), o.line || `| ${o.genset || ""}`) || fuelPage(s.id, o, s.specTables[o.table]?.header?.[0]);
       if (f) { o.fuel = f.fuel; o.fuelFrom = f.from; o.fuelWhy = f.why; }
     }
-    return mergeRepeats(rowExceptions(s, out, note));
+    return mergeRepeats(namedPower(s, tableDrops(s, rowExceptions(s, out, note), note), note));
+  }
+  // Engine tables Khoa listed one by one (catalog nhóm 3, câu 6 = C, Khoa 20/11/2026): an engine maker's figures on a genset
+  // supplier's page, no genset in the row. Keyed by supplier + n + the FIRST header line word for word (a re-crawl that
+  // changes it lapses the entry: the table is then read the common way). `cells`: cells of a row; a row with one more cell
+  // whose first cell is the brand (`brand`, only the first row: "进口 康明斯 Import Cummins") drops that cell. `specs`:
+  // [key, cell, label as the source writes it]; a cell that is not a figure ("/") is left out.
+  const ENGINE_TABLES = [
+    { supplierId: "yingtai-jiangsu", n: [101, 2003], khoa: "Khoa 20/11/2026",
+      header: "| 品 牌 Br and | 发 动 机 型 号 En g ine Ty pe | 功 率 (主用) Power (KW) | 功率 (备用) Po wer (KW) | 缸 数 No Of Cylin ders | 缸径 *行程 Bore /Strokse (MM) | 排 气 量 Exha ust Csp acity (L) | 压 缩 比 Com pression Ratio | 机 油 容 量 Lubri cating Cap acity (L) | 燃油耗 Fuel Consu mptio (G / KW.H) | 燃油消耗率 Fuel Con sum ptio (L/H) | 调 速方式 Type Of Gov ernor | 冷却液容量 Liquid coo lind ca paci ty | 排放等级 Emiss ion l eveis",
+      cells: 13, brand: /康明斯|cummins/i, model: 0,
+      specs: [["engPower", 1, "功率(主用) Power (KW)"], ["engPower", 2, "功率(备用) Power (KW)"], ["cyl", 3, "缸数 No Of Cylinders"], ["bore", 4, "缸径*行程 Bore/Stroke (MM)"], ["disp", 5, "排气量 Exhaust Capacity (L)"], ["compr", 6, "压缩比 Compression Ratio"]] },
+  ];
+  // Genset power from the set's NAME, for tables Khoa listed (câu 7 = C, Khoa 20/11/2026), and the engine's output from a
+  // named cell. huatai n111: "输出功率 (KW/KVA)" holds the engine's bore / stroke ("140/165"), no cell gives the set's power;
+  // "200GF" … "1000GF" is the set's kW (each row's current is that kW at 400 V, cos φ 0.8; 167 / 167 "NNNGF" rows of huatai's
+  // other tables read the same kW), the level is not written → `rated`. Keyed by supplier + n + first header line word for
+  // word; every record of the table whose genset is "<kW>GF" and whose `engCell` is its engine model.
+  const NAMED_POWER = [
+    { supplierId: "huatai-yangzhou", n: 111, khoa: "Khoa 20/11/2026", name: /^(\d{2,4})GF$/i,
+      header: "| 组型号Type of set | 输出功率 Power of output (KW/KVA) | 额定电流Rated current (A) | 柴油机参数 Parameters of set | 机组尺寸及重量 Size and weight of machine set",
+      engCell: 3, engPower: [4, "柴油机参数 额定功率 power (KW)"] },
+  ];
+  function namedPower(s, list, note) {
+    const ex = NAMED_POWER.filter((x) => x.supplierId === s.id);
+    if (!ex.length) return list;
+    return list.map((o) => {
+      const x = ex.find((x) => x.n === o.n && String(o.header?.[0] ?? "").trim() === x.header);
+      if (!x || o.kind !== "engine") return o;
+      const m = String(o.genset || "").trim().match(x.name), cells = cellsOf(o.line || "");
+      if (!m || String(cells[x.engCell] ?? "").trim() !== String(o.model).trim()) { note({ n: o.n, title: o.title }, o.table, o.row ?? null, "công suất theo tên không áp", o.genset); return o; }
+      const ep = String(cells[x.engPower[0]] ?? "").trim();
+      const specs = (o.specs || []).filter((sp) => sp.key !== "engPower");
+      if (/^\d+(\.\d+)?$/.test(ep)) specs.push({ key: "engPower", label: x.engPower[1], value: ep });
+      return { ...o, power: { rated: { kW: +m[1] } }, specs, powerFrom: "tên tổ máy" };
+    });
+  }
+  // Spec keys of a whole table form left out (catalog-b3, Khoa 20/11/2026), an explicit list, not a rule: matched by supplier
+  // AND a title in the table's header. zhengchi-power's tables of "整机编号" (n102+): the "缸数 | 排量(L)" columns disagree with
+  // the other suppliers' figures for the same engine (displacement 164 of 321 models, cylinders 57 of 373: WP2.3D25E200
+  // "6 | 8.2" against 4 cylinders, 2.3 L), so the figures are not taken for the engine. Everything else of the rows is read
+  // as before. The n101 table ("机组型号") is not listed.
+  // Make written in the rows of a whole table form counts at the LOWEST level ("tên trang") instead of "dòng bảng"
+  // (catalog-b3, Khoa 20/11/2026), an explicit list: matched by supplier AND a title in the table's header. zhengchi-power's
+  // "整机编号" tables put the BRAND OF A WHOLE CATALOGUE CATEGORY in the "品牌" cell ("上柴" covers SDEC's own SC-series and the
+  // licensed Mitsubishi S12R / S16R; "潍柴" covers WP, M26 / M33, PHF, K41xx, R61xx, D226B, 495D), so it is not the maker of
+  // each engine. At row level that one vote turned Mitsubishi / Ricardo / Wudong engines of other suppliers to "chưa rõ" or to
+  // another make (22 engines, 3,828 row-turns). As a page-level vote it still names the make where nothing higher exists.
+  // Suppliers whose code cells may carry U+FF0D (full-width hyphen) as the hyphen (catalog-b3, Khoa 20/11/2026). Only zhengchi-power
+  // (4 rows: n112 / n113 / n114 / n116 "YC12VTD…－D30"); aosif, jiangchai-xuzhou, walter-yangzhou, westinpower write the same in
+  // their own codes and are NOT listed (not approved).
+  const DASH_FIX = [{ supplierId: "zhengchi-power", khoa: "Khoa 20/11/2026" }];
+  const MAKE_LEVEL_LOW = [
+    { supplierId: "zhengchi-power", title: /整机编号/, khoa: "Khoa 20/11/2026", why: "ô 品牌 là nhãn của cả danh mục (上柴 gồm SC-series lẫn S12R / S16R; 潍柴 gồm WP, M26, PHF, K41xx, R61xx...)" },
+  ];
+  const TABLE_DROPS = [
+    { supplierId: "zhengchi-power", title: /整机编号/, keys: ["cyl", "disp"], khoa: "Khoa 20/11/2026", why: "cột 缸数 / 排量 của bảng lệch số của NCC khác cho cùng động cơ (dung tích 164 / 321 model)" },
+  ];
+  function tableDrops(s, list, note) {
+    const ds = TABLE_DROPS.filter((x) => x.supplierId === s.id);
+    if (!ds.length) return list;
+    return list.map((o) => {
+      const d = ds.find((x) => (o.header || []).some((h) => x.title.test(h)));
+      if (!d || !(o.specs || []).some((sp) => d.keys.includes(sp.key))) return o;
+      note({ n: o.n, title: o.title }, o.table, o.row ?? null, "bỏ thông số theo bảng", `${d.keys.join(", ")}: ${d.khoa}, ${d.why}`);
+      return { ...o, specs: o.specs.filter((sp) => !d.keys.includes(sp.key)) };
+    });
   }
   // Rows Khoa decided one by one (not a rule: no other row changes). A record is hit only when supplier, source n,
   // genset model AND the source line, word for word, all match, so an exception lapses by itself when the source is
@@ -1506,13 +1647,8 @@
       "| KH-364GF | 360 | 288 | 455 | 364 | OC16 071A 02-83 | 5200*2100*2390 | 5300",
       "| KH-316GF | 349 | 279 | 395 | 316 | OC16 071A 02-91 | 5200*2100*2390 | 5300"].map((line) => (
       { supplierId: "kaihua-genset", n: 114, genset: line.split("|")[1].trim(), line, act: "nopower", khoa: "Khoa 19/11/2026", why: "nguồn ghi Standby nhỏ hơn Prime (hai mức tự mâu thuẫn): để trống công suất, không ghép theo độ lớn" })),
-    // huatai-yangzhou n111 (catalog-b): the page puts "140/165" under "输出功率 Power of output (KW/KVA)"; it is the engine's bore /
-    // stroke in mm (wudong-wuxi gives 145×165 for WD327TAD78 / 82), not the set's kW / kVA (the row's 1267–1538.5 A is a 700–850 kW
-    // set). The other 14 rows of the table ("138/150", "145/165"…) already give no power (the pair fails kW / kVA).
-    ...["| 700GF | 140/165 | 1267 | WD305TAD68 | 750 | 12缸V型 | 196 | 55 | 3800×1800×2100 | 4550",
-      "| 800GF | 140/165 | 1448 | WD327TAD78 | 858 | 12缸V型 | 196 | 60 | 3900×1850×2100 | 5000",
-      "| 850GF | 140/165 | 1538.5 | WD327TAD82 | 902 | 12缸V型 | 196 | 60 | 3900×1850×2100 | 5000"].map((line) => (
-      { supplierId: "huatai-yangzhou", n: 111, genset: line.split("|")[1].trim(), line, act: "nopower", khoa: "Khoa 19/11/2026", why: "nguồn ghi đường kính / hành trình xi lanh (140/165 mm) dưới nhãn công suất: để trống công suất" })),
+    // huatai-yangzhou n111 700/800/850GF ("140/165", the engine's bore / stroke under the output title, catalog-b nopower
+    // 19/11/2026): the whole table now takes the set's power from its name (NAMED_POWER, Khoa 20/11/2026).
     // mpmc MS530-2: "Standby Power: 553kVA/530kW" under "Prime Power: 602kVA" and the label table's "663kVA / 530kW".
     { supplierId: "mpmc-powertech", n: 114, genset: "MS530-2", line: "Standby Power: 553kVA/530kW", act: "drop", khoa: "Khoa 19/11/2026", why: "nguồn tự mâu thuẫn (standby 553 kVA và 663 kVA, nhỏ hơn prime 602 kVA): bỏ dòng" },
     // `dropspec` (catalog-b2): the row stays, only the listed spec keys of the row are left out (the source gets ONE figure
@@ -1552,6 +1688,21 @@
       "| 13 | MB-V400 | 500 | 400 | 550 | 440 | TAD1641GE | 4 | 4.4 | 105*127 | 91.9 | 4500×2100×2600",
       "| 15 | MB-V500 | 625 | 500 | 688 | 550 | TWD1643GE | 4 | 6.0 | 100*127 | 69.9 | 4700×2100×2600"].map((line) => (
       { supplierId: "mingbang-mbkl", n: 125, genset: line.split("|")[2].trim(), line, act: "dropspec", keys: ["cyl", "disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi 4 xi lanh và dung tích 3,3–6,0 L cho động cơ Volvo Penta 6 xi lanh 12,8–16,1 L (bore / stroke của dòng cũng sai nên không đủ căn cứ sửa): bỏ xi lanh và dung tích" })),
+    // yingtai's Cummins engine table (ENGINE_TABLES, no genset in the row: matched by `model`), n101 and n2003 (the same rows,
+    // `mergeRepeats` would put a figure back): figures Cummins' own sheets give otherwise (catalog-hy-2.md, 20/11/2026).
+    // KTA19-G4: Bore / Stroke 159 / 159 mm (cummins.com KTA19-G4 Coolpac sheet); QSL9-G5: compression ratio 16.8:1 (cummins.com
+    // C300D2R data sheet, engine QSL9-G5); QSL9 G7: displacement 8.9 L (cummins.com "QSL9 G7 & G2").
+    ...[101, 2003].flatMap((n) => [
+      ["KTA19G4", "| KTA19G4 | 448 | 504 | 6 | 159X160 | 18.9 | 13.9:1 | 72 | 213 | 107 | 电调 | 95 | N/A", ["bore"], "nguồn ghi 159X160, Cummins ghi 159 × 159 mm"],
+      ["QSL9G5", "| QSL9G5 | 268 | 310 | 6 | 114X145 | 8.8 | 17.8:1 | 24 | 199 | 63 | 电喷 | 28.5 | N/A", ["compr"], "nguồn ghi 17.8:1, Cummins ghi 16.8:1"],
+      ["QSL9G7", "| QSL9G7 | 271 | 300 | 6 | 114X145 | 8.8 | 16.1:1 | 24 | 214 | 70 | 电喷 | 28.5 | 国三", ["disp"], "nguồn ghi 8.8 L, Cummins ghi 8.9 L cho QSL9 G7"],
+      // Khoa 20/11/2026 (catalog-hy-2.md câu 1, 2): compression ratios the Cummins sheets found do not confirm. QSL9 G2–G4:
+      // 17.8:1 is the QSL9-G5 figure the source repeats down the family (G5 itself is 16.8:1); QSK60G7: 16.2:1 no Cummins sheet gives.
+      ["QSL9G2", "| QSL9G2 | 206 | 239 | 6 | 114X145 | 8.8 | 17.8:1 | 24 | 220 | 62 | 电喷 | 28.5 | 国三", ["compr"], "nguồn ghi 17.8:1, sheet Cummins không xác nhận", "Khoa 20/11/2026"],
+      ["QSL9G3", "| QSL9G3 | 227 | 257 | 6 | 114X145 | 8.8 | 17.8:1 | 24 | 221 | 59 | 电喷 | 28.5 | 国三", ["compr"], "nguồn ghi 17.8:1, sheet Cummins không xác nhận", "Khoa 20/11/2026"],
+      ["QSL9G4", "| QSL9G4 | 245 | 279 | 6 | 114X145 | 8.8 | 17.8:1 | 24 | 214 | 61 | 电喷 | 28.5 | 国三", ["compr"], "nguồn ghi 17.8:1, sheet Cummins không xác nhận", "Khoa 20/11/2026"],
+      ["QSK60G7", "| QSK60G7 | 1615 | 1790 | 16 | 159X190 | 60.2 | 16.2:1 | 280 | 197 | 380 | 电喷 | 541 | N/A", ["compr"], "nguồn ghi 16.2:1, sheet Cummins không xác nhận", "Khoa 20/11/2026"],
+    ].map(([model, line, keys, why, khoa]) => ({ supplierId: "yingtai-jiangsu", n, model, line, act: "dropspec", keys, khoa: khoa || "điều phối 20/11/2026 (cách #952 / #957)", why: `${why}: bỏ riêng số đó, giữ dòng` }))),
     // dropspec, Khoa 20/11/2026 ("9 dòng loại": the source itself writes a wrong figure; the live page was re-read the same day and
     // equals the saved page word for word, so it is the source, not the reader). No replacement figure is written: the source gives none.
     // aoke-yangzhou n129: 排量(L) "108" / "105" on 250 kW sets (the same table writes "14" and "12.88" for its other engines).
@@ -1581,6 +1732,10 @@
       [106, "HP-V280", "| HP-V280 | 280 | 280 | TAD1341GE | 6 | 131*158 | 1278 | 65.4 | 148 | 36 | 3050*1114*1391 | 2420"],
       [106, "HP-V400", "| HP-V400 | 360 | 400 | TAD1345GE | 6 | 131*158 | 1278 | 96.8 | 210 | 36 | 3210*1114*1600 | 2750"]].map(([n, genset, line]) => (
       { supplierId: "huipu-power", n, genset, line, act: "dropspec", keys: ["disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi dung tích 458 / 1278 L (cùng cỡ động cơ ở dòng khác của trang ghi 45.8): bỏ riêng dung tích" })),
+    // green-power n115 (bảng bỏ sót, ENGINE_CELL_TABLES) GP1000 A/M: "12V 1600 G31F | E | 16" — "12V" is 12 cylinders (MTU 12V 1600
+    // spec: "Cylinder configuration 12 V"); as the only cylinder source of 12V1600G31F, the 16 ruled out mecca / lees rows for
+    // HSMTs asking 12 (top 30 cloud #967). Candidate for `fixspec` (cyl = 12) once that mechanism lands.
+    { supplierId: "green-power-generators", n: 115, genset: "GP1000 A/M", line: "| GP1000 A/M | O | 910 | 1005 | 12V 1600 G31F | E | 16 | 139 | 450 | 4450 | 1910 | 2250 | 6250 | | | |", act: "dropspec", keys: ["cyl"], khoa: "điều phối 20/11/2026", why: "nguồn ghi 16 xi lanh cho MTU 12V 1600 G31F (mã 12V và tài liệu MTU: 12 xi lanh): bỏ riêng số xi lanh" },
   ];
   function rowExceptions(s, list, note) {
     const ex = ROW_EXCEPTIONS.filter((x) => x.supplierId === s.id);
@@ -1588,7 +1743,7 @@
     const out = [];
     for (const o of list) {
       const lines = [o.line, ...(o.lines?.header || []), ...(o.lines?.rows || [])].filter((x) => x != null).map((x) => String(x).trim());
-      const x = ex.find((x) => x.n === o.n && o.genset && keyOf(o.genset) === keyOf(x.genset) && lines.includes(x.line.trim()));
+      const x = ex.find((x) => x.n === o.n && (x.genset ? o.genset && keyOf(o.genset) === keyOf(x.genset) : o.kind === "engine" && keyOf(o.model) === keyOf(x.model)) && lines.includes(x.line.trim()));
       if (!x) { out.push(o); continue; }
       note({ n: o.n, title: o.title }, o.table, o.row ?? null, "ngoại lệ theo dòng", `${x.act}: ${x.khoa}, ${x.why}`);
       if (x.act === "nopower") out.push({ ...o, power: null });
@@ -1631,6 +1786,82 @@
       if (f.fuel !== o.fuel) { delete f.fuel; delete f.fuelFrom; delete f.fuelWhy; } // the same row, two tables saying different fuels: none
       (f.also = f.also || []).push({ n: o.n, table: o.table, row: o.row, title: o.title });
     }
+    return out;
+  }
+  // Genset tables whose engine cell IS an engine model, written so that isCode does not take it (bảng bỏ sót, Khoa duyệt
+  // 20/11/2026; catalog-c-de-xuat.md 1.1 lớp X): MTU "12V 1600 G10F" (spaces), Kohler "KDW 702 (M)" / "KSD 1403 TCA", Scania
+  // "OC16 071A 02 81 (E)", "MTU 8V4000 GS/L32". A list checked by hand, not a rule: a rule taking spaced codes would reach
+  // every table (the 4 tables were found among 82 by hand). A table is read only when supplier, n AND its first header line,
+  // word for word, match (a re-crawled page with another header lapses, noted). Each layout names the cells (cellsOf of the
+  // row): model (the genset), engine, power levels { kVA | kW: cell }, specs [key, cell, label as the header writes it];
+  // `freq` from the header ("kVA - 50 Hz"); `cells`: the cell counts of a row with an engine. A row of another count (the
+  // silent version "GP610 SM/M | S | 370 | 5000 | …", lees' unnamed "800 | 43.0 | …" rows) names no engine: left out, noted.
+  // An engine cell's trailing "(M)" / "(E)" repeats the governor column "REG" (M / E) of the same row and is not part of the
+  // code; a make written before the code ("MTU 8V4000 GS/L32") is the make, not the model. No power level in the title
+  // ("Electrical Power KW", lees) is "rated", as titledPowers reads one. The records are the same as a table row's (kind
+  // "engine", genset, power, freq, specs, makes, other: null).
+  const ENGINE_CELL_TABLES = [
+    { supplierId: "green-power-generators", n: [115], header: "| | MODELLO MODEL | TIPO TYPE | POTENZA POWER | MOTORE ENGINE | SERBATOIO TANK | DIMENSIONI DIMENSIONS | PESO WEIGHT | DOWNLOAD",
+      cells: [13, 16], model: 0, engine: 4, freq: 50, prime: { kVA: 2 }, standby: { kVA: 3 },
+      specs: [["cyl", 6, "CIL. N."], ["fuel75", 7, "CONSUMO AL 75% PRP CONSUMPTION AT 75% PRP L/h"], ["tank", 8, "SERBATOIO TANK L"], ["weight", 12, "PESO WEIGHT kg"]] },
+    { supplierId: "green-power-generators", n: [117], header: "| | MODELLO MODEL | TIPO TYPE | POTENZA POWER | MOTORE ENGINE | | SERBATOIO TANK | DIMENSIONI DIMENSIONS | PESO WEIGHT | DOWNLOAD",
+      cells: [15, 18], model: 0, engine: 4, freq: 50, prime: { kVA: 2 }, standby: { kVA: 3 },
+      specs: [["cyl", 6, "CIL. N."], ["fuel75", 7, "CONSUMO AL 75% PRP CONSUMPTION AT 75% PRP L/h"], ["emission", 8, "EMISSIONI EMISSIONS"], ["tank", 9, "SERBATOIO TANK DIESEL L"], ["weight", 14, "PESO WEIGHT kg"]] },
+    { supplierId: "green-power-generators", n: [126], header: "| | MODELLO MODEL | TIPO TYPE | POTENZA POWER | MOTORE ENGINE | DOWNLOAD",
+      cells: [10, 13], model: 0, engine: 6, freq: 50, prime: { kVA: 2 }, standby: { kVA: 3 }, specs: [["cyl", 9, "CIL. N."]] },
+    { supplierId: "lees-power", n: [133], header: "| Model | Electrical Power KW | Efficiency (%) | Nox mg/m3 | Dimensions L×W×H (mm) | Weight (kg) | Specifications",
+      cells: [10], model: 0, engine: 1, rated: { kW: 2 }, specs: [["dims", 7, "Dimensions L×W×H (mm)"], ["weight", 8, "Weight (kg)"]] },
+  ].map((x) => ({ checked: "20/11/2026", ...x }));
+  function listedEngineRows(s, already, note) {
+    const lays = ENGINE_CELL_TABLES.filter((x) => x.supplierId === s.id), out = [];
+    if (!lays.length) return out;
+    const tables = s.specTables || [];
+    for (const x of lays) for (const n of x.n) if (!tables.some((t) => t.n === n && String((t.header || [])[0] ?? "") === x.header)) {
+      const ti = tables.findIndex((t) => t.n === n);
+      note(ti >= 0 ? tables[ti] : { n, title: "" }, ti >= 0 ? ti : null, null, "bảng có mã động cơ trong danh sách đổi tiêu đề: không đọc", ti >= 0 ? (tables[ti].header || [])[0] : "không còn bảng nào của nguồn này");
+    }
+    const ownBrand = brandIn([s.names?.en, ...(s.names?.brands || [])].join(" "), ENGINE_BRANDS);
+    tables.forEach((t, ti) => {
+      const lay = lays.find((x) => x.n.includes(t.n) && String((t.header || [])[0] ?? "") === x.header);
+      if (!lay) return;
+      // The table read by the general way after all (a later change of isCode): it is not read twice.
+      if (already.some((o) => o.n === t.n && o.table === ti)) { note(t, ti, null, "bảng có mã động cơ trong danh sách đã được đọc chung: bỏ danh sách", null); return; }
+      const title = String(t.title || ""), headerText = (t.header || []).join(" ");
+      const hEng = brandIn(headerText, ENGINE_BRANDS), tEng = brandIn(title.split(/\s[|–-]\s|\|/)[0], ENGINE_BRANDS);
+      (t.rows || []).forEach((line, ri) => {
+        const cells = cellsOf(line);
+        if (!lay.cells.includes(cells.length)) { note(t, ti, ri, "dòng không ghi động cơ (bảng có mã động cơ trong danh sách): không đọc", line); return; }
+        const genset = String(cells[lay.model] || "").trim(), cell = String(cells[lay.engine] || "").trim();
+        const code = cell.replace(/\s*\([A-Z]\)$/, "");
+        const lead = brandIn(code.split(/\s+/)[0], ENGINE_BRANDS);
+        const model = lead.length === 1 && /\s/.test(code) ? code.replace(/^\S+\s+/, "") : code;
+        if (!/\d/.test(model) || !/\d/.test(genset) || keyOf(model).length < 3) { note(t, ti, ri, "ô động cơ / model không đọc được (bảng có mã động cơ trong danh sách)", line); return; }
+        const power = {};
+        for (const lv of ["prime", "standby", "rated"]) for (const [u, i] of Object.entries(lay[lv] || {})) {
+          const c = String(cells[i] ?? "").trim();
+          if (/^(?:|[-–—/]+|n\.?a\.?)$/i.test(c)) continue;
+          if (!/^\d+(?:\.\d+)?$/.test(c)) { note(t, ti, ri, `công suất ${lv} không đọc được: để trống`, c); continue; }
+          (power[lv] ||= {})[u] = Number(c);
+        }
+        if (power.prime && power.standby && Object.keys(power.prime).some((u) => power.standby[u] != null && power.prime[u] > power.standby[u])) {
+          note(t, ti, ri, "prime lớn hơn standby: để trống cả hai", line); delete power.prime; delete power.standby;
+        }
+        const specs = [];
+        for (const [key, i, label] of lay.specs || []) {
+          const v = specVal(cells[i]);
+          if (!v || /^(?:[-–—/]+|n\.?a\.?)$/i.test(v)) continue;
+          if (!specFits(key, v)) { note(t, ti, ri, "thông số không đúng dạng: để trống", `${key}=${v}`); continue; }
+          specs.push({ key, label, value: v });
+        }
+        const makes = [], row = brandIn(line, ENGINE_BRANDS);
+        if (row.length === 1) addMake(makes, row[0], "dòng bảng");
+        else if (hEng.length === 1) addMake(makes, hEng[0], "tiêu đề cột");
+        else if (tEng.length === 1) addMake(makes, tEng[0], "tên trang");
+        else if (s.role === "engine_maker" && ownBrand.length === 1) addMake(makes, ownBrand[0], "hãng sản xuất");
+        out.push({ supplierId: s.id, n: t.n, table: ti, title, row: ri, line, genset, power: Object.keys(power).length ? power : null, freq: lay.freq || null, header: t.header || [],
+          specs: saneSpecs(specs, Object.keys(power).length ? power : null, (x) => note(t, ti, ri, "số vô lý so với công suất", `${x.key}=${x.value}`)), kind: "engine", model, makes, other: null, own: false });
+      });
+    });
     return out;
   }
   const numbersOf = (s) => (String(s).replace(/(\d),(\d)/g, "$1.$2").match(/\d+(?:\.\d+)?/g) || []).map(Number);
