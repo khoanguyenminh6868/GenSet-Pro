@@ -31,3 +31,6 @@ Cách làm không sửa mã bot: hiện không có cách chọn tệp / sheet ch
 ## Còn lại để làm khi Khoa quyết
 - Chạy thật một lần (đường nào), ghi thời gian, chi phí (`total_cost_usd` trong log stream-json; gói tháng không có sổ API), đối chiếu vài mục với chữ HSMT, lỗi nếu có.
 - Phân tích hiện không biết tên gói / chủ đầu tư / giá: không có `notice` trên web cho IB2500441397.
+
+## Quyết định (Khoa, 20/11/2026, qua điều phối)
+VIỆC 2 (Phân tích thử IB2500441397) BỎ: không gọi model, không mở PR chọn sheet. Số đo ở trên giữ làm tham khảo. Ghi nhớ: `trimHsmt` không cắt được sheet xlsx định mức (dòng "CHƯƠNG I/II/III" bị coi là chương HSMT); gói chỉ có tệp nén lớn kiểu này sẽ bị gắn AGENT (> 450.000 ký tự).
