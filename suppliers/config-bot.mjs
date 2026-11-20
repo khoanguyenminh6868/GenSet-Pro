@@ -3708,6 +3708,16 @@ export function contKva(list = [], need = {}) {
 // A point the sheet states against the need (class, excitation, voltage regulation, origin outside the group) leaves the
 // model out; a point the sheet does not state stays in `unknown`. `all`: no limit per make / in all (check, to verify an
 // agent's pick). `engineFamily`: under a brand sync that asks the alternator, only the engine's family.
+// Where a maker-sheet alternator is made: the sheet of a plant the supplier record is (leroy-somer-fuzhou: the Fuzhou
+// plant, Khoa 20/11/2026 "ok") → that country; else the make's default (CAT.madeIn). `brand`: the make's own country, for
+// an HSMT that asks the brand (nhãn hiệu). { at, brand, why }.
+const MAKER_PLANT = { "leroy-somer-fuzhou": { at: "CN", why: "tờ của nhà máy Phúc Châu (leroy-somer-fuzhou)" } };
+export function makerMadeOf(supplierId, make, model) {
+  const def = CAT.madeIn("alternator", [make], [""], model), plant = MAKER_PLANT[supplierId];
+  return plant ? { at: plant.at, brand: def.at, why: plant.why } : { at: def.at, brand: def.at, why: `mặc định theo hãng ${make}` };
+}
+// A place a country requirement names ("Trung Quốc", "China"), against a country code.
+const countryNamed = (t, at) => !!at && at !== "?" && (norm(t).includes(norm(madeVi(at))) || (at === "CN" && /trung\s*qu[ốo]c|\bchina\b|\bPRC\b/i.test(t)));
 export function makerAlts(suppliers, RT, need, { all = false, engineFamily = null } = {}) {
   if (!need?.kva || !need.hz || !RT?.alt) return [];
   const sup = new Map((suppliers || []).map((s) => [s.id, s])), groups = new Map(), seen = new Set();
@@ -3734,8 +3744,9 @@ export function makerAlts(suppliers, RT, need, { all = false, engineFamily = nul
     if (need.sc && !sc) unknown.push("ngắn mạch 300 % / 10 s");
     if (need.vreg != null && vr && Math.min(...vr.value) > need.vreg) continue;
     if (need.vreg != null && !vr) unknown.push(`ổn định điện áp ±${pctVi(need.vreg)} %`);
-    const made = CAT.madeIn("alternator", [make], [""], x0.model);
-    if (need.origin && made.at !== "?" && !CAT.COUNTRY_GROUP[need.origin.grp].includes(made.at)) continue;
+    // The HSMT's group against the brand's country when it asks the brand, against the place of making otherwise.
+    const made = makerMadeOf(x0.supplierId, make, x0.model), mAt = need.origin?.basis === "brand" ? made.brand : made.at;
+    if (need.origin && mAt !== "?" && !CAT.COUNTRY_GROUP[need.origin.grp].includes(mAt)) continue;
     const named = need.makes.includes(make);
     if (need.makes.length && !need.equivalent && !named) continue;
     if (engineFamily && BP.familyOf(make) !== engineFamily) continue;
@@ -3785,7 +3796,8 @@ export function makerAltMd(list, need) {
     if (said.length) out.push(`- tờ hãng ghi: ${said.join("; ")}`);
     if (m.options.length) out.push(`- tuỳ chọn: ${m.options.map((o) => `${o.what} ${o.value}`).join("; ")}`);
     if (m.unknown.length) out.push(`- tờ hãng không ghi: ${m.unknown.join("; ")}`);
-    out.push(`- nơi sản xuất mặc định của hãng: ${m.made.at === "?" ? "chưa rõ" : madeVi(m.made.at)}`, "");
+    out.push(m.made.at !== m.made.brand ? `- nơi sản xuất: ${madeVi(m.made.at)} (${m.made.why}); thương hiệu ${m.make}: ${m.made.brand === "?" ? "chưa rõ" : madeVi(m.made.brand)}`
+      : `- nơi sản xuất mặc định của hãng: ${m.made.at === "?" ? "chưa rõ" : madeVi(m.made.at)}`, "");
   }
   return out.join("\n");
 }
@@ -3872,30 +3884,40 @@ export function makerAltChecks(c, reqs = [], need = null) {
   for (const q of reqs.filter((x) => x.code === "alt_model" && !x.byCode)) {
     const o = own(q), k = CAT.keyOf(reqTxt(q));
     if (!o || !k) continue;
-    const same = k.includes(CAT.keyOf(p.model));
-    putCheck(c, o.x, { ...base(q), offered: `${p.model} (${p.make}, chọn theo datasheet hãng, NCC chưa chào)`, status: same ? "met" : "unclear",
-      note: same ? "Code ghi: đúng model HSMT nêu, có trong datasheet hãng." : `Code ghi: HSMT nêu model ${q.requirement || q.quote}; đầu phát chọn theo datasheet hãng là ${p.model} (cùng mức kVA), không phải model đó: cần xem HSMT có nhận model khác cùng hãng.` });
+    // Khoa 20/11/2026: "cho đạt khi có 'hoặc tương đương'".
+    const same = k.includes(CAT.keyOf(p.model)), eq = /t[ưu]ơng\s*đ[ưu]ơng|equivalent/i.test(reqTxt(q));
+    const why = `đầu phát chọn theo datasheet hãng là ${p.model} (cùng hãng ${p.make}, ${fmt(p.kva)} kVA ${p.rating || ""}, đạt mức kVA HSMT)`;
+    putCheck(c, o.x, { ...base(q), offered: `${p.model} (${p.make}, chọn theo datasheet hãng, NCC chưa chào)`, status: same || eq ? "met" : "unclear",
+      note: same ? "Code ghi: đúng model HSMT nêu, có trong datasheet hãng."
+        : eq ? `Code ghi: HSMT nêu model "${q.requirement || q.quote}" (có "tương đương"); ${why}, thay cho model HSMT nêu vì model đó không có trong danh sách code lọc (không có trong datasheet hãng đã lưu hoặc không đạt điều kiện lọc).`
+        : `Code ghi: HSMT nêu model "${q.requirement || q.quote}" (không ghi "tương đương"); ${why}, không phải model đó: cần xem HSMT có nhận model khác cùng hãng.` });
   }
   for (const q of reqs.filter((x) => x.code === "alt_origin" && !x.byCode)) {
     const t = reqTxt(q);
+    // A plant's sheet (MAKER_PLANT) says where it is made; otherwise the make's default place, not proven (decision 4).
+    const made = makerMadeOf(p.src?.supplierId, p.make, p.model), plant = !!MAKER_PLANT[p.src?.supplierId];
+    const where = made.at === "?" ? `hãng ${p.make}` : plant ? `hãng ${p.make}, sản xuất tại ${madeVi(made.at)} (${made.why})` : `hãng ${p.make}, sản xuất mặc định tại ${madeVi(made.at)}`;
     if (!/\bG\s?-?(7|20)\b/.test(t)) {
-      // A country the HSMT names, not a group: the maker's default place of making is not proven to be it (decision 4).
-      const o = own(q), made = CAT.madeIn("alternator", [p.make], [""], p.model);
-      if (o && t.trim()) putCheck(c, o.x, { ...base(q), offered: `Đầu phát ${p.model} (hãng ${p.make}${made.at !== "?" ? `, sản xuất mặc định tại ${madeVi(made.at)}` : ""})`, status: "confirm", confirm: "document",
-        note: `Cần xác nhận nơi sản xuất đầu phát (CO): đầu phát chọn theo datasheet hãng, NCC chưa chào; HSMT ghi xuất xứ "${q.requirement || q.quote}".` });
+      // A country the HSMT names, not a group: met when the plant's sheet is of that country, else to be confirmed (CO).
+      const o = own(q);
+      if (!o || !t.trim()) continue;
+      const ok = plant && countryNamed(t, made.at);
+      putCheck(c, o.x, { ...base(q), offered: `Đầu phát ${p.model} (${where})`, status: ok ? "met" : "confirm", ...(ok ? {} : { confirm: "document" }),
+        note: ok ? `Code ghi: ${where}; HSMT ghi xuất xứ "${q.requirement || q.quote}"; đầu phát chọn theo datasheet hãng, NCC chưa chào.`
+          : `Cần xác nhận nơi sản xuất đầu phát (CO): đầu phát chọn theo datasheet hãng, NCC chưa chào; ${where}; HSMT ghi xuất xứ "${q.requirement || q.quote}".` });
       continue;
     }
     const basis = madeBasisOf(q.quote) || madeBasisOf(q.requirement), grp = `${/\bG\s?-?20\b/.test(t) ? "g20" : "g7"}${EU_W.test(t) ? "eu" : ""}`;
-    const made = CAT.madeIn("alternator", [p.make], [""], p.model), inG = made.at !== "?" && CAT.COUNTRY_GROUP[grp].includes(made.at);
-    if (!basis || made.at === "?") continue;
+    // The brand asked → the make's own country; the place asked → where it is made (a plant's sheet: known).
+    const at = basis === "brand" ? made.brand : made.at, inG = at !== "?" && CAT.COUNTRY_GROUP[grp].includes(at);
+    if (!basis || at === "?") continue;
     const x = (c.checks || []).find((y) => norm(y.item) === norm(q.item));
     if (x && x.byCode && x.rule !== "dau-phat-hang" && x.rule !== "noi-san-xuat") continue;
-    const at = `hãng ${p.make}, sản xuất mặc định tại ${madeVi(made.at)}`;
     const status = !inG ? "not_met" : basis === "brand" ? "met" : "confirm";
-    putCheck(c, x, { item: q.item, requirement: q.requirement || "", hsmtQuote: q.quote || "", offered: `Đầu phát ${p.model} (${at})`, part: "alternator", level: q.level === "option" ? "option" : "core", status, byCode: true, rule: "dau-phat-hang",
+    putCheck(c, x, { item: q.item, requirement: q.requirement || "", hsmtQuote: q.quote || "", offered: `Đầu phát ${p.model} (${where})`, part: "alternator", level: q.level === "option" ? "option" : "core", status, byCode: true, rule: "dau-phat-hang",
       ...(status === "confirm" ? { confirm: "document" } : {}),
-      note: status === "confirm" ? `Cần xác nhận nơi sản xuất đầu phát (CO): đầu phát chọn theo datasheet hãng, NCC chưa chào; ${at}; HSMT đòi nơi sản xuất ${GROUP_NAME[grp]}.`
-        : status === "met" ? `Code ghi: thương hiệu ${p.make} (${madeVi(made.at)}) thuộc nhóm ${GROUP_NAME[grp]}; đầu phát chọn theo datasheet hãng, NCC chưa chào.` : `Code ghi: ${at}, ngoài nhóm ${GROUP_NAME[grp]}.` });
+      note: status === "confirm" ? `Cần xác nhận nơi sản xuất đầu phát (CO): đầu phát chọn theo datasheet hãng, NCC chưa chào; ${where}; HSMT đòi nơi sản xuất ${GROUP_NAME[grp]}.`
+        : status === "met" ? `Code ghi: thương hiệu ${p.make} (${madeVi(made.brand)}) thuộc nhóm ${GROUP_NAME[grp]}; đầu phát chọn theo datasheet hãng, NCC chưa chào.` : `Code ghi: ${basis === "brand" ? `thương hiệu ${p.make} (${madeVi(at)})` : where}, ngoài nhóm ${GROUP_NAME[grp]}.` });
   }
   return c;
 }
@@ -4822,6 +4844,11 @@ export function rankConfigs(result) {
   // first and goes; and at most 3 rows per engine, so several engines are shown.
   const traitMk = String(result.engineTrait?.make || "").trim().toLowerCase();
   const seen = new Map(), perEngine = new Map(), perMake = new Map(), ctlKey = (c) => (c.controller?.model ? CAT.keyOf(ctlModelOf(c.controller) || c.controller.model) : "");
+  // The same engine with the alternator a supplier offers and with one of the maker's sheets (fromMaker, dau-phat-hang B;
+  // Khoa 20/11/2026: "vì sao không thể giữ lại cả 2 cấu hình nếu phù hợp?"): one place of the per-make ceiling, the later
+  // one shown right under the earlier. Nothing is added: the configurations were already cut to MAX_CONFIGS in check.
+  const kept = [], pairOf = new Map();
+  const offered = (c) => !!c.alternator?.model && !c.alternator.fromMaker;
   list = list.filter(({ c }) => {
     const ek = CAT.keyOf(c.engine?.model || ""), k = `${ek}|${CAT.keyOf(c.alternator?.model || "")}`;
     if (!ek) return true;
@@ -4837,13 +4864,21 @@ export function rankConfigs(result) {
     // A configuration kept from Tìm NCC (keepFound) is outside that limit: Khoa wants it back, whatever else the run found.
     // So is the make of an engine term the HSMT gives (Đặc thù hãng động cơ, Khoa 18/11/2026: "chỉ gợi ý hãng đó và bỏ
     // trần 2 cấu hình cho hãng đó"; check has already left only that make).
-    if (mk && mk !== traitMk && !c.keptFind && !c.named && (perMake.get(mk) || 0) >= perMakeConfigs(mk)) return false;
+    const mate = (c.alternator?.fromMaker || offered(c)) && kept.find((o) => !pairOf.has(o) && ![...pairOf.values()].includes(o) && CAT.keyOf(o.engine?.model || "") === ek && (c.alternator?.fromMaker ? offered(o) : !!o.alternator?.fromMaker));
+    if (!mate && mk && mk !== traitMk && !c.keptFind && !c.named && (perMake.get(mk) || 0) >= perMakeConfigs(mk)) return false;
     seen.set(k, [...(seen.get(k) || []), c]);
     perEngine.set(ek, (perEngine.get(ek) || 0) + 1);
     if (perEngine.get(ek) > 3) return false;
-    if (mk && !c.keptFind) perMake.set(mk, (perMake.get(mk) || 0) + 1);
+    if (mate) pairOf.set(c, mate);
+    else if (mk && !c.keptFind) perMake.set(mk, (perMake.get(mk) || 0) + 1);
+    kept.push(c);
     return true;
   });
+  // The second of a pair right under the first.
+  for (const [c, mate] of pairOf) {
+    const from = list.findIndex((x) => x.c === c), item = list.splice(from, 1)[0];
+    list.splice(list.findIndex((x) => x.c === mate) + 1, 0, item);
+  }
   result.configs = list.map(({ c }, i) => {
     // Suppliers: one offering both the engine (its checked row names it) and the controller first, then one whose
     // row names the engine, then the genset row's own supplier, one whose row names the alternator, then the agent's

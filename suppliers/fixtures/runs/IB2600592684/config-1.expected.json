@@ -45,6 +45,29 @@
   },
   {
    "rank": 2,
+   "engine": "Cummins 4B3.9-G12",
+   "alternator": "Stamford S0L2-P1",
+   "controller": "Deep Sea DSE7320",
+   "named": "equivalent",
+   "suppliers": [
+    "fdk-energy:108",
+    "long-gen:110",
+    "mecca-power:101"
+   ],
+   "checks": {
+    "genset": "3/0/4/7",
+    "engine": "7/0/6/0",
+    "alternator": "2/0/6/0",
+    "controller": "4/0/1/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [],
+   "lossWarn": [
+    "alt_power:unclear"
+   ]
+  },
+  {
+   "rank": 3,
    "engine": "FAWDE 4DW93-42D-YFD10W",
    "alternator": "Leroy-Somer TAL-A42-E",
    "controller": "Deep Sea DSE6120",
@@ -63,7 +86,7 @@
    "lossWarn": []
   },
   {
-   "rank": 3,
+   "rank": 4,
    "engine": "FAWDE 4DX21-45D-YFD10W",
    "alternator": "Leroy-Somer TAL-A42-E",
    "controller": "Deep Sea DSE6120",
@@ -82,7 +105,7 @@
    "lossWarn": []
   },
   {
-   "rank": 4,
+   "rank": 5,
    "engine": "Yuchai YCV2.5T45-G20",
    "alternator": "184GS",
    "controller": "SmartGen HGM6110",
@@ -101,7 +124,7 @@
    "lossWarn": []
   },
   {
-   "rank": 5,
+   "rank": 6,
    "engine": "Hyundai DM01VP",
    "alternator": "Leroy-Somer TAL-A42-C",
    "controller": "Deep Sea DSE6020",

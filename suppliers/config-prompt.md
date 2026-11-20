@@ -140,7 +140,9 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    with `src` copied from that section ({ "kind": "maker", "supplierId", "n" }); do not search the internet for this and
    do not write alternator checks for it (the code writes them from the sheet). Never write it as if the supplier offered
    it: `summary`, `why` and `gaps` say "đầu phát chọn theo datasheet hãng, nhà cung cấp chưa chào". A configuration
-   without an alternator is still a suggestion when the rest meets the HSMT.
+   without an alternator is still a suggestion when the rest meets the HSMT. Two configurations of the same engine, one
+   with the alternator a supplier offers and one with an alternator from this section, both stay (Khoa 2026-11-20):
+   they take one place of the per-make limit, the later one right under the earlier.
    Write each model's checks once (Khoa 2026-11-03): in a configuration whose controller is the controller of an
    earlier configuration, leave out the controller checks; whose engine (alternator) is that of an earlier one, leave
    out the checks taken from "Thông số theo model" (`factSrc`). The code copies them from the earlier configuration

@@ -7,7 +7,7 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { primeKvaOf, altNeedOf, makerAlts, makerAltsOf, makerAltFix, makerAltChecks, contKva, sourceRatings, ratingsFor, altAttrChecks, altKvaOf } from "./config-bot.mjs";
+import { primeKvaOf, altNeedOf, makerAlts, makerAltsOf, makerAltFix, makerAltChecks, contKva, sourceRatings, ratingsFor, altAttrChecks, altKvaOf, rankConfigs } from "./config-bot.mjs";
 
 const CAT = globalThis.GenbidCatalog;
 const here = path.dirname(fileURLToPath(import.meta.url));
@@ -53,7 +53,7 @@ test("makerAlts IB2600603983: LSA 49.3 M8 (820 kVA cột H 125 K / 40 °C, AREP 
   assert.equal(m8.kva, 820); assert.equal(m8.make, "Leroy-Somer"); assert.equal(m8.supplierId, "leroy-somer-fuzhou"); assert.equal(m8.n, 1012);
   assert.deepEqual(m8.options.map((o) => `${o.what} ${o.value}`), ["Kích từ AREP / PMG", "AVR D350"]);
   assert.deepEqual(m8.unknown, []);
-  assert.equal(m8.made.at, "FR");
+  assert.equal(m8.made.at, "CN"); assert.equal(m8.made.brand, "FR");
   assert.ok(m8.lines.includes("| LSA 49.3 M8 | kVA | 820 | 820 | 820 | 810 | 760 | 760 | 760 | 710 | 910 | 910 | 910 | 885 | 945 | 945 | 945 | 925"));
   // Without the 300 % asked, TAL-A49-B (750 kVA) is the smallest that meets, but it states its short circuit as no figure
   // the HSMT asks here, so with it asked it is out.
@@ -147,9 +147,9 @@ test("makerAltChecks: công suất cột liên tục (45 °C → chưa rõ, cầ
   assert.equal(cool.status, "met");
   const og = c.checks.find((x) => x.item === "Xuất xứ đầu phát");
   assert.equal(og.status, "met"); assert.match(og.note, /NCC chưa chào/);
-  // A place asked (not a brand): to be confirmed with the CO.
+  // A place asked (not a brand): the Fuzhou plant's sheet is made in China, outside G7.
   const place = makerAltChecks({ ...result.configs[0], checks: [] }, [{ code: "alt_origin", item: "Xuất xứ đầu phát", requirement: "Nước sản xuất: thuộc G7", quote: "Nước sản xuất: G7", level: "core" }], need).checks[0];
-  assert.equal(place.status, "confirm"); assert.match(place.note, /Cần xác nhận nơi sản xuất đầu phát/);
+  assert.equal(place.status, "not_met"); assert.match(place.note, /Trung Quốc \(tờ của nhà máy Phúc Châu/);
 });
 
 test("makerAltChecks: hãng HSMT nêu → đạt; model HSMT nêu: đúng → đạt, khác → chưa rõ; xuất xứ một nước → confirm CO", () => {
@@ -160,9 +160,14 @@ test("makerAltChecks: hãng HSMT nêu → đạt; model HSMT nêu: đúng → đ
     { code: "alt_origin", item: "Xuất xứ đầu phát", requirement: "Trung Quốc", level: "core" },
   ];
   const n = { ...need, makes: ["Leroy-Somer"] }, st = (c) => Object.fromEntries(c.checks.map((x) => [x.item, x.status]));
-  assert.deepEqual(st(makerAltChecks({ ...result.configs[0], checks: [] }, reqs, n)), { "Hãng đầu phát": "met", "Model đầu phát": "met", "Xuất xứ đầu phát": "confirm" });
+  // The Fuzhou plant's sheet (Khoa 20/11/2026): made in China → "Trung Quốc" met; another country → to be confirmed (CO).
+  assert.deepEqual(st(makerAltChecks({ ...result.configs[0], checks: [] }, reqs, n)), { "Hãng đầu phát": "met", "Model đầu phát": "met", "Xuất xứ đầu phát": "met" });
+  assert.equal(makerAltChecks({ ...result.configs[0], checks: [] }, [{ ...reqs[2], requirement: "Ý" }], n).checks[0].status, "confirm");
+  // Another model of the make: not concluded without "tương đương", met with it (Khoa 20/11/2026).
   const other = makerAltChecks({ ...result.configs[0], checks: [] }, [{ ...reqs[1], requirement: "TAL-A44-J" }], n).checks[0];
   assert.equal(other.status, "unclear"); assert.match(other.note, /TAL-A44-J/);
+  const eq = makerAltChecks({ ...result.configs[0], checks: [] }, [{ ...reqs[1], requirement: "TAL-A44-J hoặc tương đương" }], n).checks[0];
+  assert.equal(eq.status, "met"); assert.match(eq.note, /"TAL-A44-J hoặc tương đương" \(có "tương đương"\); đầu phát chọn theo datasheet hãng là LSA 49.3 M8/);
   // A make the HSMT does not name: no check written.
   assert.equal(makerAltChecks({ ...result.configs[0], checks: [] }, [reqs[0]], { ...need, makes: ["Stamford"] }).checks.length, 0);
 });
@@ -209,4 +214,18 @@ test("altKvaOf: ô '1 025' là một số (không tách 1 và 25)", () => {
   const m = altKvaOf([{ id: "ls", specTables: [{ n: 1012, rows: ["| LSA 49.3 M8 | kVA | 815 | 890 | 940 | 1 025 | 735 | 805 | 850 | 925 | 865 | 945 | 1 000 | 1 090 | 895 | 980 | 1 040 | 1 130"] }] }], built);
   const v = m.get(CAT.keyOf("LSA 49.3 M8"))[0].values;
   assert.ok(v.includes(1025) && v.includes(1130) && !v.includes(25) && !v.includes(1));
+});
+
+test("rankConfigs: cùng động cơ, đầu phát NCC chào + đầu phát hãng → một chỗ của trần mỗi hãng, bản sau đứng ngay dưới", () => {
+  const cfg = (rank, make, model, alt) => ({ rank, engine: { make, model }, alternator: alt, controller: { model: "DSE6120" }, checks: [], suppliers: [] });
+  const result = { requirements: [], configs: [
+    cfg(1, "Cummins", "4B3.9-G12", { model: "TAL-A42-E", make: "Leroy-Somer", fromMaker: true }),
+    cfg(2, "Yuchai", "YCV2.5T45-G20", { model: "184GS" }),
+    cfg(3, "Cummins", "4B3.9-G12", { model: "S0L2-P1", make: "Stamford" }),
+    cfg(4, "Cummins", "6BTAA5.9-G12", { model: "UCI274C" }),
+  ] };
+  const out = rankConfigs(result).configs.map((c) => `${c.engine.model} | ${c.alternator.model}`);
+  // Khoa 20/11/2026 (câu 1): both of the pair stay; Cummins' ceiling (1) still leaves out the other Cummins engine.
+  // Same score: the Chinese make (Yuchai) first, an older rule.
+  assert.deepEqual(out, ["YCV2.5T45-G20 | 184GS", "4B3.9-G12 | TAL-A42-E", "4B3.9-G12 | S0L2-P1"]);
 });
