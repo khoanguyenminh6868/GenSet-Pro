@@ -62,6 +62,22 @@
   const SCANIA_CODE = /^[DO]C\s?\d{1,2}\s\d{2,3}[A-Z]\s\d{2}[\s-]\d{2}$/i;
   const DOOSAN_P = /^P\d{3}(?:TI|LE)\b/i; // Doosan engines that look like an alternator's P-frame ALT_CODE
   const FRAME_ALT =/^(16|18|22|27|31|35)4[A-Z]{1,2}$/;
+  // An alternator maker's own codes, only in the tables listed (catalog-nhom-con-lai, Khoa 20/11/2026 câu 1 = B: an explicit
+  // list, not a rule, so not in ALT_CODE). eastern-lion writes its alternator "EL 164D" / "ELS 184F" (60 Hz) under "Alternator
+  // model" and its controller "RUIFEN6120" after it: "the one code after the engine" found two codes and took none (15 tables),
+  // and where the engine cell is Chinese ("D114系列WLD171", "4105ZD(小泵）") the EL code was read as the ENGINE and RUIFEN6120
+  // as the alternator (n126 / n147 / n149). Matched by supplier + n + a header naming "Alternator model".
+  const OWN_ALT = [
+    { supplierId: "eastern-lion-fuan", n: [114, 115, 116, 117, 122, 126, 128, 129, 133, 139, 141, 142, 144, 146, 147, 149, 151, 152], code: /^ELS?\s?\d{3}[A-Z]{0,2}$/i, khoa: "Khoa 20/11/2026" },
+  ];
+  // An alternator maker's own range table, read as alternator records with the output the maker gives at each frequency
+  // (catalog-nhom-con-lai, Khoa 20/11/2026 câu 2): an explicit list (supplier + n + the first header line word for word; a
+  // re-crawl that changes the header lapses the entry, noted), each entry names its cells. Level `rated`: the maker's
+  // "Output" of the alternator, neither a prime nor a standby of a set. Two records per row, one per frequency.
+  const ALT_TABLES = [
+    { supplierId: "eastern-lion-fuan", n: 156, header: "| | Model | 50Hz Output (kW) | 50Hz Output (kVA) | 60Hz Output (kW) | 60Hz Output (kVA) | SAE Size | Core Length (mm)",
+      code: /^ELS?\s?\d{3}[A-Z]{0,2}$/i, model: 0, out: [{ freq: 50, kW: 1, kVA: 2 }, { freq: 60, kW: 3, kVA: 4 }], khoa: "Khoa 20/11/2026" },
+  ];
   // Series codes of Chinese alternator makers (Nianfeng NFS, Bobig BW, Jet-Power JET, Wintpower WT): such a model is not
   // the Stamford that the column title or page title of the table names ("Stamford UCDI274J" rows above, "with stamford
   // alternator" title): 2026-11-03 regression run showed "NIANFENG NFS5-G (Stamford)", "BW-404B (Stamford)".
@@ -1290,6 +1306,22 @@
       const hEng = brandIn(headerText, ENGINE_BRANDS), hAlt = brandIn(headerText, ALT_BRANDS);
       const tEng = brandIn(titleHead, ENGINE_BRANDS), tAlt = brandIn(titleHead, ALT_BRANDS);
       const base = { supplierId: s.id, n: t.n, table: ti, title };
+      const altT = ALT_TABLES.find((x) => x.supplierId === s.id && x.n === +t.n);
+      if (altT) {
+        if (String((t.header || [])[0] || "").trim() !== altT.header) { note(t, ti, null, "bảng đầu phát trong danh sách đổi tiêu đề: không đọc", (t.header || [])[0] || ""); return; }
+        t.rows.forEach((line, ri) => {
+          const cells = cellsOf(line), model = (cells[altT.model] || "").trim();
+          if (!altT.code.test(model)) { note(t, ti, ri, "dòng bảng đầu phát không có model", line); return; }
+          for (const o of altT.out) {
+            const kW = +cells[o.kW], kVA = +cells[o.kVA];
+            // kW / kVA of the alternator at that frequency must fit (0.75–0.86, or 0.8 rounded); otherwise left out, noted.
+            const p = kW > 0 && kVA > 0 && kVA > kW ? fitPair(kVA, kW) : null;
+            if (!p) { note(t, ti, ri, "công suất đầu phát không đọc được", `${o.freq} Hz: ${cells[o.kW]} / ${cells[o.kVA]}`); continue; }
+            out.push({ ...base, row: ri, line, kind: "alternator", model, genset: null, power: { rated: { kW: p.kW, kVA: p.kVA } }, freq: o.freq, specs: [], makes: [], other: null, own: true, header: t.header || [] });
+          }
+        });
+        return;
+      }
       const makesFor = (kind, rowText, brandCell, model = "") => {
         const list = kind === "engine" ? ENGINE_BRANDS : ALT_BRANDS, makes = [];
         const cell = brandCell ? brandIn(brandCell, kind === "engine" ? list : ALT_CELL_BRANDS) : [];
@@ -1371,6 +1403,8 @@
       }
       const hasEngineCol = ENGINE_LBL.test(headerText) || hEng.length > 0 || (s.role === "engine_maker" && !GENSET_LBL.test(headerText + " " + title));
       const hasAltCol = ALT_LBL.test(headerText) || hAlt.length > 0;
+      const ownAlt = hasAltCol && /alternator\s*model/i.test(headerText) ? OWN_ALT.find((x) => x.supplierId === s.id && x.n.includes(+t.n))?.code || null : null;
+      const own = (c) => !!ownAlt && ownAlt.test(String(c).trim());
       // An engine maker's own engine table: the first cell of each row is the engine.
       const engineTable = s.role === "engine_maker" && !GENSET_LBL.test(headerText) && !/genset|generator set|机组/i.test(cellsOf(t.header?.[0] || "")[0] || "");
       const altFirst = (t.header || []).map(cellsOf).some((h) => {
@@ -1418,9 +1452,12 @@
         else {
           gi = codes[0] === 0 || codes[0] === 1 ? codes[0] : -1;
           const rest = codes.filter((i) => i !== gi);
-          const alt = rest.filter((i) => ALT_CODE.test(cells[i]) || (hasAltCol && FRAME_ALT.test(cells[i].trim())));
+          const alt = rest.filter((i) => ALT_CODE.test(cells[i]) || (hasAltCol && FRAME_ALT.test(cells[i].trim())) || own(cells[i]));
           if (hasAltCol && alt.length) ai = alt[0];
-          if (hasEngineCol) ei = rest.find((i) => i !== ai && !ALT_CODE.test(cells[i]) && !(hasAltCol && FRAME_ALT.test(cells[i].trim()))) ?? -1;
+          if (hasEngineCol) ei = rest.find((i) => i !== ai && !ALT_CODE.test(cells[i]) && !(hasAltCol && FRAME_ALT.test(cells[i].trim())) && !own(cells[i])) ?? -1;
+          // OWN_ALT tables put the engine BEFORE the alternator: a code after the maker's alternator is the controller
+          // ("RUIFEN6120"), the row's engine cell was no code ("D114系列WLD171").
+          if (ownAlt && ai >= 0 && ei > ai) { note(t, ti, ri, "ô động cơ không đọc được, mã ở cột khác", `${cells[ei]} sau đầu phát ${cells[ai]}`); ei = -1; }
           if (hasAltCol && ai < 0 && ei >= 0) { const after = rest.filter((i) => i > ei); if (after.length === 1) ai = after[0]; }
           // A code of the row after the genset is a Doosan "P086TI" / "P126TI II" / "P158LE" (shaped like a Stamford P-frame) and
           // nothing else was taken as the engine, under an engine title: it is the engine; another alternator-shaped code of the row
@@ -1448,7 +1485,7 @@
               note(t, ti, ri, "ô động cơ không đọc được, mã ở cột khác", `${ce} | ${cells[ei]}`);
               // An alternator taken only as "the one code after the engine" lost what placed it (eastern-lion: the controller
               // "RUIFEN6120" after "EL 224E"); one shaped like an alternator's code stays.
-              if (ai > ei && !ALT_CODE.test(cells[ai]) && !(hasAltCol && FRAME_ALT.test(cells[ai].trim()))) ai = -1;
+              if (ai > ei && !ALT_CODE.test(cells[ai]) && !(hasAltCol && FRAME_ALT.test(cells[ai].trim())) && !own(cells[ai])) ai = -1;
               ei = -1;
             }
           }
