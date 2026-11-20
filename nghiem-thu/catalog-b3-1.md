@@ -72,3 +72,28 @@ Kiểm lại (đầu ra thật):
 - row-flags: 158 → 158 dòng, 0 thêm, 0 mất (5 dòng cylMaj mất + longkai +1 đã về như main).
 - `quality --check`: không chỉ số nào xấu đi. Không sửa baseline.
 - `node --test web/test/*.test.mjs suppliers/*.test.mjs`: 1346 / 1346 đạt (hai ca cand-disp tự xanh, không sửa).
+
+---
+## Top 30 (đo cloud a52179ee ↔ 19dbcb42, phân tích 20/11; chưa sửa code)
+Dữ liệu: `dau-vao\catalog-b3\top30-cloud\gop-goc/nhanh.json.gz`. Script em: `genbid-test\b3\chk.cjs` (so MỌI dòng-lượt của `all` theo đa tập khoá@điểm), `bld.mjs` (so `build()` gốc ↔ nhánh theo từng động cơ), `cls.cjs`, `top.cjs`, `dogop1.mjs` (chạy `candidates` hai lượt IB2400073761, IB2600337362 gốc ↔ nhánh).
+### Phân loại MỌI dòng-lượt (không phải cặp khoá zhengchi): 3.828 = 3.787 đổi điểm + 40 chỉ gốc + 1 chỉ nhánh; 0 dòng không giải thích được
+Mọi dòng đổi điểm đều thuộc một động cơ mà `build()` đổi HÃNG (`e.make`); `candidates` dòng 1503 `if (e.make) score += 60` và 300 "hãng động cơ HSMT nêu" (`makeNamed`).
+| lớp | dòng-lượt | điểm | động cơ | nguyên nhân |
+|---|--:|---|---|---|
+| L2a hãng → chưa rõ, nhóm Ricardo 4105 / 6105 / 6108 | 1.930 (R6105AZLD 691, R4105ZD 476, R6105ZD 421, R6108ZLD 342) | −60 | 4 | zhengchi ghi 潍柴 (Weichai) ở ô 品牌 (mức "dòng bảng", cao nhất) cạnh Ricardo của elitech / ...; hai tên không cùng hãng (`SAME_MAKER` chỉ có Kofo↔Ricardo, Weichai↔Deutz / Baudouin) và Ricardo không còn ≥ 3× → chưa rõ hãng |
+| L2b hãng → chưa rõ, nhóm Mitsubishi S12R / S16R | 1.663 (S12RPTA2C 713, S16RPTAC 645, S16RPTA2C 305), trong đó 156 dòng −360 (HSMT nêu hãng Mitsubishi: mất 300 + 60) | −60 / −360 | 3 | zhengchi ghi 上柴 (SDEC) ở ô 品牌 thành phiếu thứ hai cho SDEC (cùng jiangchai-xuzhou): Mitsubishi 5 NCC < 3 × 2 (trước: 5 > 3 × 1) → chưa rõ. Chênh MỘT phiếu |
+| L2c chưa rõ → có hãng | 194 (WD150D15 132, WD129D11 62) | +60 | 2 | zhengchi ghi 锡柴 (FAWDE) ở dòng bảng; nguồn khác chỉ ở mức tên trang (Cummins, Wudong): FAWDE thành hãng duy nhất ở mức cao nhất |
+| L3 luật tần số | 40 chỉ gốc (+1 chỉ nhánh: cùng lớp đổi hãng) | dòng biến mất | TAD734GE 31, YCA08350D30 4, WP7D264E310 2, TAD733GE 1, KP9D310D2 1, WD129TAD25 1; lượt IB2400073761 (HSMT 60 Hz?) | `ruled: freq` (luật Khoa 17/11 "động cơ mà mọi dòng ghi tần số đều ghi tần số kia, ≥ 2 dòng → loại dòng không ghi tần số"): zhengchi thêm dòng ghi "50Hz" nên động cơ đủ 2 dòng ghi tần số, mọi dòng đều 50 Hz. Xác nhận bằng chạy `candidates` hai bên: 40 / 40 dòng gone đều `freq` ở nhánh, 0 ở gốc |
+Số động cơ đổi hãng: 22 (`build()` 827 động cơ có khác biệt; 351 động cơ "ZCDL-…" giả biến mất, số NCC / kW của động cơ thật đổi theo); cả 22 đều có phiếu zhengchi: Ricardo → chưa rõ (4), Mitsubishi → chưa rõ (3), Wudong → FAWDE (4 + 2 + 2), Weichai → Weichai/Deutz / Baudouin / Baudouin (2 + 2 + 2 + 1)...
+Phiếu hãng của zhengchi đáng tin: ô 品牌 khớp hãng các NCC khác (mức dòng bảng, `SAME_MAKER` tính cùng hãng) ở **288 / 295** động cơ có cả hai; lệch 7: Weichai ≠ Ricardo (4: R4105ZD, R6105ZD, R6105AZLD, R6108ZLD), SDEC ≠ Mitsubishi (2: S16RPTAA2C, S16R2PTAWC), Cummins ≠ Perkins (1: 1104DE44TAG2).
+### Lớp L1 — dòng zhengchi (1.320 dòng gốc ↔ 1.374 dòng nhánh; 436 cặp khoá): ĐÚNG
+Mã ZCDL → động cơ thật là chủ ý. Điểm đổi của cặp = `8 × min(số khoá thông số của động cơ, 8)` (dòng 1541) đổi (động cơ thật có thêm khoá của NCC khác, tối đa +64; B bỏ cyl + disp: −16) cộng 60 khi hãng động cơ thật khác (`e.make`).
+### Hiệu ứng lan (lượt top đổi = 131: 39 chỉ đổi thứ tự bằng điểm, 92 đổi tập)
+Dòng NCC khác rời top mà điểm KHÔNG đổi (50 dòng, ví dụ IB2200021336: longkai QSB59G3 274, sanq 1106A70TG1 271, kaihua 6M11G150/5 261 / 252, rise TD226B6D 261 rời, thay bằng 247 / 245 / 244): do chỗ giữ `CN_ROWS` (12 dòng hãng Trung Quốc) và giới hạn mỗi NCC / động cơ đổi theo các dòng L2 vừa mất 60 điểm (jet-power R6105AZLD 269 → 209), không phải zhengchi chen vào (0 / 50 có dòng zhengchi cùng động cơ trong top nhánh). Đây là hệ quả của L2, không phải lớp riêng.
+### Kết luận (1)(2)
+- Không lớp nào do dữ liệu zhengchi "làm bẩn" hãng / facts: phiếu hãng khớp 97,6 %; cyl / disp (cột kém) đã bỏ bằng B. Mọi chênh điểm là luật hiện hành (`keptMakes` ngưỡng ≥ 3 NCC và gấp ≥ 3×; luật tần số; 60 / 300 điểm theo `e.make`) áp với một phiếu thật mới. Điểm yếu là ngưỡng: MỘT phiếu (zhengchi) làm Mitsubishi S12R / S16R rơi khỏi "Mitsubishi" dù 5 NCC ghi Mitsubishi.
+### Đề xuất / câu hỏi cho Khoa (CHƯA làm, cần nguồn chính hãng, không suy ra)
+1. Mitsubishi ↔ SDEC cho S12R-PTA2-C / S16R-PTA-C / S16R-PTAA2-C (nguồn ghi 上柴 hay 上海菱重 / 三菱): có cùng một hãng không? Nếu thêm `["Mitsubishi","SDEC"]` vào `SAME_MAKER` thì trả lại hãng cho 1.663 dòng-lượt (kể cả 156 dòng +360 khi HSMT nêu Mitsubishi); phải có trang chính hãng (sdeciepower.com Khoa đã nhận là nguồn chính hãng) nói SDEC sản xuất / lắp động cơ Mitsubishi theo giấy phép, vì "không suy ra".
+2. Weichai ↔ Ricardo cho R4105 / R6105 / R6108 (Kofo↔Ricardo đã có): thêm cặp `["Weichai","Ricardo"]` trả hãng cho 1.930 dòng-lượt; cần trang chính hãng Weichai nói động cơ R-series là Weichai-Ricardo.
+3. Giữ nguyên các lớp còn lại (WD → FAWDE: ô 品牌 của zhengchi ghi 锡柴 cho động cơ WD, nguồn khác chỉ mức tên trang; luật tần số: 40 dòng, đúng luật).
+Nếu Khoa không muốn đổi `SAME_MAKER`, tác động ròng của PR là: 3.437 dòng-lượt −60 và 156 dòng-lượt −360 (tổng 3.593 mất điểm), 194 dòng-lượt +60, 41 dòng đổi tập, 131 lượt đổi top (92 đổi tập). Em chưa sửa code.
