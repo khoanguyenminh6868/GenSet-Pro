@@ -84,3 +84,11 @@ test("mọi ngoại lệ nhóm này ghi note đúng bảng; chữ dòng nguồn 
   const e = C.fromSupplier(s, []).filter((r) => r.kind === "engine" && r.n === 129 && r.model === "MTAA11-G3");
   assert.equal(spec(e[0], "disp") != null, true);
 });
+
+test("huipu n105 HP-P1330, n106 HP-V280 / HP-V400: dung tích 458 / 1278 bỏ; HP-P1113 kế bên giữ 45.8", () => {
+  const p = eng("huipu-power", 105), v = eng("huipu-power", 106);
+  assert.equal(spec(p.find((r) => r.genset === "HP-P1330"), "disp"), undefined);
+  assert.equal(spec(p.find((r) => r.genset === "HP-P1330"), "cyl"), "12");
+  assert.equal(spec(p.find((r) => r.genset === "HP-P1113"), "disp"), "45.8");
+  for (const g of ["HP-V280", "HP-V400"]) assert.equal(spec(v.find((r) => r.genset === g), "disp"), undefined, g);
+});
