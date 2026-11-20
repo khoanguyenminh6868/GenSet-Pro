@@ -208,10 +208,12 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    BMS, Modbus, SNMP, CAN) is `met` only when the quoted line has that function's words. A module's line in the
    controller's datasheet ("| DSE890 MKII | DSEWebNet® Gateway | 0890-04"), a line of extendable options ("Extendable
    options including 4G/GPS, Ethernet…") and a module's own datasheet are NOT the controller's words: do not quote them
-   for the controller. "web" alone, DSEWebNet and WebSupervisor are not Internet. Ethernet / RS485 / RS232 / USB / BMS /
-   Modbus / SNMP / CAN come from the controller's own lines only (a gateway's Ethernet port is not the controller's).
+   for the controller. "web" alone, DSEWebNet and WebSupervisor are not Internet. RS485 / RS232 / USB / BMS / Modbus /
+   SNMP / CAN come from the controller's own lines only. Ethernet the controller's lines do not show may come from a
+   module that has it (Khoa 2026-11-20): leave it `unclear`, the code adds the module with the note "Ethernet nằm trên
+   mô-đun <model>, không phải trên bộ điều khiển".
    A BMS connection is `met` when a controller line says BMS / building management, or Modbus, BACnet or SNMP: then
-   write in `note` "BMS qua Modbus/SNMP, cần NCC xác nhận." (Khoa Q3). 4G / 5G / GSM / SMS / Internet that only a
+   write in `note` "BMS qua Modbus/SNMP, cần NCC xác nhận." (Khoa Q3). 4G / 5G / GSM / SMS / Internet / Ethernet that only a
    module gives: leave the part `unclear` and do not add the module yourself; the code pairs the controller with a
    module its maker's documents name (`controller.modules`, `viaModule`, label "Mô-đun chọn theo tài liệu hãng, NCC
    chưa chào") and may list other controllers of the same make on the controller's line with their modules

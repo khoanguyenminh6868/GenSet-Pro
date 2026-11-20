@@ -32,8 +32,9 @@ test("compat: DSE7320 MKII's datasheet names DSE890 MKII; DSE891's sheet does no
   assert.ok(comp.some((x) => x.m.key === "DSE890MKII" && x.compat.n === 1001));
   const m891 = CM.COMM_MODULES.find((m) => m.key === "DSE891MKII");
   assert.ok(!(mf.get("DSE891MKII") || []).some((f) => CM.modShows(f.line, sub("5G"), m891)));
-  // Q2: no module gives the controller's Ethernet.
-  assert.ok(!(mf.get("DSE890MKII") || []).some((f) => CM.modShows(f.line, sub("Ethernet"), CM.COMM_MODULES[0])));
+  // Ethernet of the module counts (Khoa 20/11/2026 "có"): its name line "4G (GSM/Ethernet)"; an optional extension does not.
+  assert.ok((mf.get("DSE890MKII") || []).some((f) => CM.modShows(f.line, sub("Ethernet"), CM.COMM_MODULES[0])));
+  assert.equal(CM.modShows("| DSE890 MKII | Extendable options including Ethernet", sub("Ethernet"), CM.COMM_MODULES[0]), null);
 });
 
 test("commWords (Q5): a module's name line is no proof of the controller's Internet / 5G", () => {
@@ -69,20 +70,23 @@ const result = (model, statuses) => ({
 });
 const run = (r) => check(r, { hsmtText: hsmt, suppliers: sups, readWeb: () => null, origin: "all" });
 
-test("check (Q4): DSE7320 + DSE890 MKII added by code for Internet/4G; Ethernet stays unclear (Q2); run again = same", () => {
+test("check (Q4): DSE7320 + DSE890 MKII added by code for Internet/4G and Ethernet (on the module, with its note); run again = same", () => {
   const r = result("DSE7320", { RS232: { status: "met", offered: "RS232", sourceQuote: "| RS232 | 1 Modbus RTU Port", factSrc: { supplierId: "deep-sea-electronics", n: 1001, line: "| RS232 | 1 Modbus RTU Port" } } });
   const out = run(r).result, c = out.configs[0], g = c.checks.find((x) => x.item === "Truyền thông, giám sát từ xa");
   const p = (n) => g.parts.find((x) => x.item === n);
   assert.equal(p("Điều khiển từ xa qua cổng Internet/4G").status, "met");
   assert.deepEqual(p("Điều khiển từ xa qua cổng Internet/4G").viaModule, ["DSE890 MKII"]);
   assert.match(p("Điều khiển từ xa qua cổng Internet/4G").note, /Mô-đun chọn theo tài liệu hãng, NCC chưa chào/);
-  assert.equal(p("Ethernet").status, "unclear");
+  assert.equal(p("Ethernet").status, "met");
+  assert.deepEqual(p("Ethernet").viaModule, ["DSE890 MKII"]);
+  assert.match(p("Ethernet").note, /Ethernet nằm trên mô-đun DSE890 MKII, không phải trên bộ điều khiển/);
+  assert.equal(p("RS485").viaModule, undefined);
   assert.equal(p("RS232").status, "met", JSON.stringify(p("RS232")));
   assert.equal(c.controller.modules.length, 1);
   assert.equal(c.controller.modules[0].model, "DSE890 MKII");
   assert.equal(c.controller.modules[0].order, "0890-04");
   assert.equal(c.controller.modules[0].offeredBy, null);
-  assert.deepEqual(c.controller.modules[0].why, ["4G", "Internet"]);
+  assert.deepEqual(c.controller.modules[0].why, ["4G", "Internet", "Ethernet"]);
   // Run again on the saved result: the same modules, alternatives and parts (the "cần xác nhận đời" note and the supplier gap
   // repeat on every run already on main: not this code's).
   const snap = (cc) => JSON.stringify({ ctl: cc.controller, parts: cc.checks[0].parts.map(({ note, ...p }) => (p.viaModule || p.wordsMissing ? { ...p, note } : p)) });
