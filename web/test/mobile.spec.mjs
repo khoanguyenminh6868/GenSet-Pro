@@ -195,6 +195,34 @@ test.describe("bảng rộng hơn màn hình", () => {
   });
 });
 
+test.describe("Đối chiếu HSDT: kết quả một cột", () => {
+  const PREP = "IB2699000103"; // gói Chuẩn bị HSDT
+  const result = { verdict: "at_risk", overallScore: 64, summary: "BỊA",
+    items: [{ requirement: "Bảo hành ≥ 12 tháng (BỊA)", offered: "—", status: "missing", critical: true, note: "Chưa có cam kết bảo hành trong hồ sơ (BỊA)" },
+      { requirement: "Công suất liên tục ≥ 400 kVA (BỊA)", offered: "400 kVA prime, động cơ Perkins 2806A-E18TAG2 (BỊA)", status: "met", note: "" }],
+    recommendations: [], missingDocuments: [] };
+  test.use({ patch: { colls: { hsmt: { [PREP]: { files: [{ name: "E-HSMT (BỊA).pdf", size: 1 }] } }, compare: { [PREP]: { at: "2026-11-10T02:00:00.000Z", result } } } } });
+
+  test("mỗi yêu cầu một thẻ, các ô xếp dọc có nhãn, không cuộn ngang", async ({ page }) => {
+    await openApp(page, "#goi/" + PREP);
+    await openTab(page, "compare");
+    const tbl = page.locator("#cmOut table.cmcards");
+    await expect(tbl.locator("tbody tr")).toHaveCount(2);
+    await expect(tbl.locator("thead")).toBeHidden();
+    const tds = await tbl.locator("tbody tr").first().locator("td").evaluateAll((els) => els.map((e) => {
+      const r = e.getBoundingClientRect();
+      return { x: Math.round(r.left), top: r.top, label: getComputedStyle(e, "::before").content };
+    }));
+    // Một cột: mọi ô cùng mép trái, ô sau nằm dưới ô trước.
+    expect(new Set(tds.map((t) => t.x)).size).toBe(1);
+    for (let i = 1; i < tds.length; i++) expect(tds[i].top).toBeGreaterThan(tds[i - 1].top);
+    expect(tds.slice(1).map((t) => t.label)).toEqual(['"Hồ sơ đáp ứng: "', '"Kết quả: "', '"Ghi chú: "']);
+    const wrap = page.locator("#cmOut .tablewrap");
+    expect(await wrap.evaluate((w) => w.scrollWidth - w.clientWidth)).toBeLessThanOrEqual(1);
+    await noPageOverflow(page, "Đối chiếu HSDT");
+  });
+});
+
 test("màn Nhà cung cấp (danh sách, chi tiết) trên điện thoại: không tràn ngang", async ({ page }) => {
   await openApp(page);
   await page.locator("#supBtn").tap();

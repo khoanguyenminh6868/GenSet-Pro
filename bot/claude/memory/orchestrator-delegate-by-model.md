@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: feedback
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-19T18:54:38.142Z
+  modified: 2026-11-20T01:48:47.848Z
 ---
 
 Phiên chính đóng vai kỹ sư trưởng + điều phối (business, sales, kỹ thuật): phân rã, viết brief, kiểm kết quả, quyết định. Việc thực thi giao session khác với model theo độ khó.
@@ -26,3 +26,4 @@ Khoa 18/11/2026 nhắc lại ("vì sao em không điều phối cho các model k
 
 - **Đo top 30 trên cloud** (Khoa 19/11/2026 "ok, làm thử đi", thử đạt): thay cho đo trên máy. Phiên con Sonnet tạo với `environment_id: env_01J7VDMwjMHp9EmsKKDVA2k2` (GenSet-Cloud) + `source_url` repo; chạy `NODE_USE_ENV_PROXY=1 node suppliers/do-gop.mjs` cho từng commit (~35 phút / lượt, chạy song song được), đẩy kết quả nén lên nhánh `...-ket-qua` (chỉ số thông báo, khoá dòng, điểm: repo public, không đẩy bidhist). Phiên cloud không đọc ổ C:, không nhắn về được → brief tự đủ, điều phối fetch nhánh về rồi so ĐA TẬP. Không so với tệp gop cũ trên máy (bidhist khác ngày).
 - **Xem phiên con đang làm gì** (bẫy 19/11/2026): KHÔNG gọi `list_events` với `kinds: ["assistant"]` và limit lớn (đổ cả transcript, hàng chục nghìn token, làm phiên điều phối phải compact). Dùng `get_session` (status_bucket), xem tệp nghiệm thu / log nó ghi, tiến trình trên máy; cần thì nhắn hỏi, nó trả ≤5 dòng. So kết quả đo: đếm theo LẦN và theo KHOÁ KHÁC NHAU ra số khác nhau, ghi rõ đang đếm kiểu nào trước khi bảo phiên con sai.
+- **Bẫy 20/11/2026**: (1) `list_sessions children:true` limit lớn và hàng loạt `archive_session` cũng trả JSON rất dài: liệt kê limit nhỏ, lưu trữ từng đợt ít phiên. (2) Thư mục làm việc của PowerShell bền giữa các lệnh: sau khi `cd` vào clone sổ `dieu-phoi`, lệnh git chạy NHẦM trong clone sổ (từng tạo nhầm worktree + nhánh ở đó) → luôn `cd "C:\Projects\GenSet Pro\GenSet-Pro"` trước lệnh git; checkout chính chỉ fetch `main`, nhánh khác dùng `git fetch origin <nhánh>` + `FETCH_HEAD`. (3) Ghi sổ NGAY sau mỗi quyết định của Khoa và mỗi lần merge, không gom (Khoa hỏi 20/11: compact tự động không báo trước, sổ từng chậm 6 mục). (4) Bot Windows tắt mà không rõ ai tắt: thường là Khoa tắt tay, KHÔNG tự bật, việc đọc lại / đo chạy lệnh tay.

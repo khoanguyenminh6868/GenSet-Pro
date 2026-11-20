@@ -54,7 +54,7 @@ const {
   GOODS_MAX, WEBFORM_MAX, KEEP, splitSections, technicalOfIII, trimHsmt, compact, headCut, noticeBody,
   densestCut, SPECS_PART_OVERLAP, SPECS_PARTS_MAX, partsOf, specsMerge, specsEmpty, partHead, askCut, askTrace,
   checkResult, feedMerge, autoConfigSkip, apiBudgetOf, aiUseOf, AI_TASK_OF, spendMeter, searchTermsOf, mergeFound, isGpkd,
-  ARCHIVE_LIMITS, unrarList, tarList, archiveRefusal, unrarFail, tarFail, pdfNeedsOcr, batchRows,
+  ARCHIVE_LIMITS, archiveOrder, unreadList, unrarList, tarList, archiveRefusal, unrarFail, tarFail, pdfNeedsOcr, batchRows,
 } = require("./sync-pure.js");
 
 // ---------- web (Vercel) ----------
@@ -1321,11 +1321,16 @@ let ocrPages = 0; // pages read by OCR in this run (ocrHsmt reports them per fil
 // The line of a crash that says what went wrong (the last line of a Node crash is only "Node.js v20...").
 const ocrErr = (s) => { const l = String(s).trim().split(/\r?\n/); return (l.find((x) => /error|ENOENT|EBUSY|heap|memory/i.test(x)) || l.pop() || "").trim().slice(0, 200); };
 // find: a scan with more scanned pages than this is searched for chapter V, and only that chapter read (ocr-pdf.js).
-function ocrText(f, find = 0) {
+function ocrText(f, find = 0, name = path.basename(f)) {
+  const t0 = Date.now();
   const r = cp.spawnSync(process.execPath, [path.join(KIT, "ocr-pdf.js"), f, "--find", String(find)], { encoding: "utf8", maxBuffer: 256 << 20, timeout: 180 * 60e3 });
   const n = Number(((r.stderr || "").match(/OCR (\d+)\//) || [])[1] || 0);
   ocrPages += n;
-  if (n) log(`    OCR ${n} trang: ${path.basename(f)}`);
+  if (n) log(`    OCR ${n} trang (${Math.round((Date.now() - t0) / 1000)} s): ${path.basename(f)}`);
+  // ocr-pdf.js reads at most 300 scanned pages of a file: the rest is said, in the file's readNote.
+  const cap = (r.stderr || "").match(/CAPPED (\d+)\/(\d+)/);
+  if (cap) readNote(name, `chỉ OCR ${cap[1]} trong ${cap[2]} trang scan (trần OCR mỗi tệp), ${cap[2] - cap[1]} trang cuối chưa đọc`);
+  if (r.status == null && !n) readNote(name, "OCR quá thời gian (180 phút), chưa đọc");
   if (r.status === 0) return r.stdout || "";
   log(`    OCR lỗi (${path.basename(f)}): ${ocrErr(r.stderr || r.error?.message || "")}`);
   return path.extname(f).toLowerCase() === ".pdf" ? cp.spawnSync(pdftotext(), ["-layout", "-enc", "UTF-8", f, "-"], { encoding: "utf8", maxBuffer: 256 << 20 }).stdout || "" : "";
@@ -1345,7 +1350,7 @@ function fileText(f, find, name = path.basename(f)) {
   const ext = path.extname(f).toLowerCase();
   try {
     if ((ext === ".pdf" || IMG_EXT.includes(ext)) && READ.noOcr) return pdfNoOcr(f, name);
-    if (ext === ".pdf" || IMG_EXT.includes(ext)) return ocrText(f, find);
+    if (ext === ".pdf" || IMG_EXT.includes(ext)) return ocrText(f, find, name);
     if (ext === ".docx" || ext === ".xlsx") {
       // Windows tar.exe cannot open a path with Vietnamese letters: read a copy under a plain name.
       const plain = path.join(os.tmpdir(), `genbid-${process.pid}-${Date.now()}${ext}`);
@@ -1430,8 +1435,18 @@ function archiveText(f, depth = 0, name = path.basename(f)) {
     const all = walk(out);
     if (why) readNote(name, why + (all.length ? `, đọc ${all.length} tệp giải nén được` : ""));
     if (links) readNote(name, `bỏ qua ${links} liên kết trong tệp nén`);
-    if (all.length > ARCHIVE_LIMITS.files) readNote(name, `có ${all.length} tệp, chỉ đọc ${ARCHIVE_LIMITS.files} tệp đầu`);
-    return all.slice(0, ARCHIVE_LIMITS.files).map((p) => {
+    // Files with text first, scans (OCR) after (archiveOrder); the files cut by the limit are named.
+    const scan = (p) => {
+      const e = path.extname(p).toLowerCase();
+      if (IMG_EXT.includes(e)) return true;
+      if (e !== ".pdf") return false;
+      const t = cp.spawnSync(pdftotext(), ["-layout", "-enc", "UTF-8", p, "-"], { encoding: "utf8", maxBuffer: 256 << 20, timeout: 300e3 }).stdout || "";
+      return pdfNeedsOcr(t, require("./ocr-pdf.js").garbled);
+    };
+    const ordered = archiveOrder(all.map((p) => ({ p, scan: scan(p) }))).map((i) => i.p);
+    const rel = (p) => path.relative(out, p);
+    if (ordered.length > ARCHIVE_LIMITS.files) readNote(name, `có ${ordered.length} tệp, chỉ đọc ${ARCHIVE_LIMITS.files} tệp (đọc tệp có chữ trước); chưa đọc: ${unreadList(ordered.slice(ARCHIVE_LIMITS.files).map(rel))}`);
+    return ordered.slice(0, ARCHIVE_LIMITS.files).map((p) => {
       const inner = `${name}/${path.relative(out, p).replace(/\\/g, "/")}`;
       const t = ARCHIVE_EXT.includes(path.extname(p).toLowerCase()) ? archiveText(p, depth + 1, inner) : fileText(p, undefined, inner);
       return t.trim() ? `--- ${path.relative(out, p)} ---\n${t.trim()}` : "";
