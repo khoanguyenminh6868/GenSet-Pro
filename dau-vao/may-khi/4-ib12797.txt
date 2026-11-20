@@ -1,0 +1,23 @@
+IB2200012797#0 | bidName: Cung cấp và lắp đặt máy phát điện | fuelOfHsmt: {"fuel":"diesel","stated":true,"why":"chạy dầu"}
+LT620 rows gốc: 8, còn ở nhánh: 0
+169	victory-generator|LT620|VT11000S||GENERATOR|MODEL:|VT11000S|VT11000S3|	fuel=gasoline/B	bảng ghi "Gasoline"	n=132 8.5KW~10.5KW Silent Gasoline Twin-cylinder Generator	LOẠI
+157	victory-generator|LT620|VT11000S||GENERATOR|MODEL:|VT11000S|VT11000S3|	fuel=gasoline/B	bảng ghi "Gasoline"	n=132 8.5KW~10.5KW Silent Gasoline Twin-cylinder Generator	LOẠI
+144	victory-generator|LT620|VT11000S3||GENERATOR|MODEL:|VT11000S|VT11000S3	fuel=gasoline/B	bảng ghi "Gasoline"	n=132 8.5KW~10.5KW Silent Gasoline Twin-cylinder Generator	LOẠI
+129	victory-generator|LT620|||MODEL:|VT11000ME|VT11000ME3|FREQUENCY(HZ)|50	fuel=gasoline/B	bảng ghi "gasoline"	n=130 8.5KW~10.5KW Gasoline Twin-cylinder Generator	LOẠI
+129	victory-generator|LT620|VT11000S3||GENERATOR|MODEL:|VT11000S|VT11000S3	fuel=gasoline/B	bảng ghi "Gasoline"	n=132 8.5KW~10.5KW Silent Gasoline Twin-cylinder Generator	LOẠI
+117	victory-generator|LT620|||MODEL:|VT11000ME|VT11000ME|FREQUENCY(HZ)|60|	fuel=gasoline/B	bảng ghi "gasoline"	n=130 8.5KW~10.5KW Gasoline Twin-cylinder Generator	LOẠI
+104	victory-generator|LT620|||MODEL:|VT11000ME|VT11000ME3|FREQUENCY(HZ)|50	fuel=gasoline/B	bảng ghi "gasoline"	n=130 8.5KW~10.5KW Gasoline Twin-cylinder Generator	LOẠI
+89	victory-generator|LT620|||MODEL:|VT11000ME|VT11000ME|FREQUENCY(HZ)|60|	fuel=gasoline/B	bảng ghi "gasoline"	n=130 8.5KW~10.5KW Gasoline Twin-cylinder Generator	LOẠI
+--- trích HSMT ---
+Tổ máy phát điện: Loại máy: Máy phát điện chạy dầu Diesel mới 100%, có vỏ chống ồn đồng bộ, vận hành bằng phím bấm mề
+Tổ máy phát điện: Thùng nhiên liệu: Bằng thép, gắn liền bên trong vỏ cách âm (không gắn dưới đ
+ế máy); vị trí tiếp nhiên liệu trên nóc máy và không cao hơn nóc máy; bình nhiên liệu có k
+Tổ máy phát điện: Tiêu thụ nhiên liệu 100% tải liên tục: ≤ 3,5 L/h
+Tổ máy phát điện: Tiêu thụ nhiên liệu 75% tải liên tục: ≤ 2,8 L/h
+Động cơ: Xuất xứ/Thương hiệu: Nhà thầu đề xuất; thương hiệu thuộc c
+Động cơ: Công suất liên tục: ≥ 14kW ở ~1500 vòng/phút
+Động cơ: Công suất tối đa: ≥ 15.5kW ở ~1500 vòng/phút
+Động cơ: Công suất mô tơ khởi động: ≥ 12V (như văn bản ghi)
+Động cơ: Công suất máy phát sạc ắc quy: ≥ 12V- 45A
+Tổ máy phát điện: Dung tích thùng nhiên liệu: ≥ 50 lít
+Động cơ: Năm sản xuất: 2021 trở lại đây

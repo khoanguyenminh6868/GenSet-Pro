@@ -1,6 +1,6 @@
 # Nghiệm thu PR 1 — eastern-lion EL / ELS là đầu phát + đọc n156 "EL Series" (20/11/2026)
 
-PR nháp #969 (`catalog-el`, SHA da6879e9), gốc origin/main 1e712e19. Quyết định: Khoa 20/11/2026 câu 1 = B, câu 2 (xem `catalog-nhom-con-lai-de-xuat.md`).
+PR nháp #969 (`catalog-el`, SHA da6879e9, gốc origin/main 1e712e19; gộp main 59f3369e (#968) → **da57a515**: xung đột chỉ ở `web/CLAUDE.md` (giữ cả hai), `soat-el` lại trên 59f3369e: NCC khác đổi 0, eastern-lion y như dưới; test 1.361 / 1.361). Quyết định: Khoa 20/11/2026 câu 1 = B, câu 2 (xem `catalog-nhom-con-lai-de-xuat.md`).
 
 ## Kết quả đo (thư mục `dau-vao\nhom-con-lai\pr1\`)
 | Kiểm | Kết quả |

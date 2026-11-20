@@ -1,0 +1,33 @@
+khoá loại (cặp khoá×lượt): 11563; khoá khác nhau: 520; BUG?: 0
+== theo ô (rowFuel @ HSMT) ==
+11039	gas @ diesel
+394	gasoline @ diesel
+123	dual @ diesel
+7	gas @ gasoline
+== theo NCC (khoá / lượt, fuelFrom, rowFuel) ==
+westinpower	71/2067	from=[["T",2067]]	fuel=[["gas",2067]]
+agg-fuzhou	42/1308	from=[["M",1308]]	fuel=[["gas",1308]]
+aosif	82/953	from=[["B",953]]	fuel=[["gas",953]]
+yingtai-jiangsu	31/871	from=[["T",871]]	fuel=[["gas",871]]
+rise-power	20/826	from=[["T",826]]	fuel=[["gas",826]]
+victory-generator	23/816	from=[["T",441],["B",375]]	fuel=[["gas",342],["gasoline",375],["dual",99]]
+taihai-taizhou	25/774	from=[["B",774]]	fuel=[["gas",774]]
+weiman-fujian	19/756	from=[["T",756]]	fuel=[["gas",756]]
+penlucky	21/685	from=[["M",685]]	fuel=[["gas",685]]
+kaihua-genset	19/667	from=[["T",667]]	fuel=[["gas",667]]
+huayuan-weifang	19/614	from=[["B",614]]	fuel=[["gas",614]]
+naipute-weifang	14/485	from=[["B",353],["T",132]]	fuel=[["gas",485]]
+simpson-power	10/405	from=[["T",405]]	fuel=[["gas",405]]
+ettes-power	97/187	from=[["T",187]]	fuel=[["gas",187]]
+ronsun-power	3/50	from=[["B",24],["T",26]]	fuel=[["gas",50]]
+power-hf	8/27	from=[["T",27]]	fuel=[["gas",27]]
+slong-power	4/24	from=[["T",24]]	fuel=[["dual",24]]
+cameo-power	3/14	from=[["B",14]]	fuel=[["gasoline",14]]
+jichai-huanneng	1/13	from=[["T",13]]	fuel=[["gas",13]]
+tide-power	1/10	from=[["B",10]]	fuel=[["gas",10]]
+kigerpower	1/5	from=[["T",5]]	fuel=[["gasoline",5]]
+mwm	4/4	from=[["B",4]]	fuel=[["gas",4]]
+innio-jenbacher	1/1	from=[["B",1]]	fuel=[["gas",1]]
+xinshengan-shandong	1/1	from=[["T",1]]	fuel=[["gas",1]]
+== vào top: 193 (khoá khác nhau 134) ==
+193	(trống) @ diesel
