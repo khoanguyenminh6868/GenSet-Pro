@@ -1420,7 +1420,7 @@ const COLS = [
     return h`<span class="stage st-${shownStage(t).key}">${shownStage(t).label}</span>${raw(btns ? `<div class="stepbtns">${btns}</div>` : "")}${raw(ai ? `<div class="aline">${ai}</div>` : "")}`; } },
   { k: "loc", label: "Địa điểm", pick: true, cls: "locc", val: (t) => locOf(t), cell: (t) => h`${locOf(t) || "—"}` + mNote(t) },
 ];
-const COLW = { no: "13.8%", name: "32.2%", offerer: "18%", cap: "13%", stage: "12%", loc: "11%" };
+const COLW = { no: "14.2%", name: "31.8%", offerer: "18%", cap: "13%", stage: "12%", loc: "11%" };
 const colText = (c, t) => (c.text ? c.text(t) : String(c.val(t) ?? ""));
 function passFilters(t) {
   if (!inTab(t)) return false;
