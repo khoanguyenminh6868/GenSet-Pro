@@ -1,16 +1,17 @@
 {
  "partial": true,
  "all": {
-  "runs": 25,
-  "anyRuns": 11,
-  "aliasInTop": 47
+  "runs": 50,
+  "anyRuns": 17,
+  "aliasInTop": 77
  },
  "res": {
   "X-hau-to-ma (khac dong co / hau to cong suat)": {
-   "runs": 1,
-   "slots": 3,
+   "runs": 2,
+   "slots": 9,
    "samples": [
-    "IB2200005800 320 kVA: #1 P126TI-II (rise-power n120) + #2 P126TI (rise-power n120) + #6 P126TI-II (rcg-power n113) + #8 P126TI-II (rcg-power n113) + #20 P126TI (depco-power n2106) + #21 P126TI (genlitec n161)"
+    "IB2200005800 320 kVA: #1 P126TI-II (rise-power n120) + #2 P126TI (rise-power n120) + #6 P126TI-II (rcg-power n113) + #8 P126TI-II (rcg-power n113) + #20 P126TI (depco-power n2106) + #21 P126TI (genlitec n161)",
+    "IB2200020538 500 kVA: #11 DC13 072A (cps-generators n2013) + #22 DC13 072A (genesal-energy n2009) + #26 DC13 072A 02-14 (aj-power n103) || #28 DC16 093A 02-52 (aj-power n103) + #29 DC16 320A 02-62 (visa-gensets n103) + #30 DC16 320A 02-63 (visa-gensets n103)"
    ]
   },
   "F2-chu-chua-ro-nghia": {
@@ -41,8 +42,8 @@
    "samples": []
   },
   "C-cong-suat-dinh-ma": {
-   "runs": 9,
-   "slots": 10,
+   "runs": 14,
+   "slots": 17,
    "samples": [
     "IB2200005266 10 kVA: #3 3TNV88-GGE (wintpower n144) + #4 3TNV88-GGE (acepow-fuan n153) + #5 3TNV88-GGE/12.2KW (jet-power n130) + #12 3TNV88-GGE (voltgent n112)",
     "IB2200008211 102 kVA: #6 CA6DF2D-14D (wintpower n107) + #27 CA6DF2D-14D/96KW (jet-power n134)",

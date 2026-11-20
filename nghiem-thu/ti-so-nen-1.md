@@ -39,7 +39,9 @@ Brief: phiên điều phối `session_011tAj4Mp31GbgmLRtLgBxSA`. Khoa duyệt 20
 | Hai số khác nhau / khoảng | 34 |
 | Không có số ("Nêu cụ thể", "Theo tiêu chuẩn nhà sản xuất", "Nhà thầu đề xuất"…) | 42 |
 
-Theo dòng: 115 trơ, 325 tối thiểu, 45 tối đa, 3 khoảng, 4 tham khảo. Soát tay danh sách 102 gói trơ: đúng dạng trơ; một gói (IB2400014133) là mô tả máy hiện hữu của gói bảo trì Wartsila (Gợi ý không chạy gói loại này). `hints-audit` 0 gói code đọc trơ mà Phân tích ghi có dấu. 4 gói trơ code KHÔNG đọc ra (số nguyên một mình ở dòng sau, vd IB2300123990 "Tỷ số nén" / "17"): luật không áp, giữ như cũ.
+Theo dòng: 115 trơ, 325 tối thiểu, 45 tối đa, 3 khoảng, 4 tham khảo.
+
+Số đếm trên `technicalPart` (phần code thật sự đọc, cả `hintsOf` lẫn `check`): 102 gói / 115 dòng trơ, trước và sau sửa nhãn. Trên CẢ chữ HSMT (cách điều phối đếm): 103 gói / 117 dòng ở 8f588e3d → 102 gói / 116 dòng ở 3c73023c; khác biệt duy nhất là IB2300270603 (" Compression ration limiter : 20:1", HSMT gõ "ration") — đã sửa `COMPR_LABEL` (`compression\s*ration?\b(?!\s*limiter)`), thêm ca test; dòng này nằm ngoài phần kỹ thuật nên kết quả chấm của gói đó không đổi. Soát tay danh sách 102 gói trơ: đúng dạng trơ; một gói (IB2400014133) là mô tả máy hiện hữu của gói bảo trì Wartsila (Gợi ý không chạy gói loại này). `hints-audit` 0 gói code đọc trơ mà Phân tích ghi có dấu. 4 gói trơ code KHÔNG đọc ra (số nguyên một mình ở dòng sau, vd IB2300123990 "Tỷ số nén" / "17"): luật không áp, giữ như cũ.
 
 ### (2) Bước chấm: xong (xem "Luật đã làm").
 
