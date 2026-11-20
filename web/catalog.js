@@ -1272,7 +1272,13 @@
         const raw = cellsOf(line).map((c) => c.replace(/\s+made in [a-z ]+$|\s*[（][^）]*[）]\s*$/i, "").replace(/^(\S+)\s+CONTACT$/, "$1").trim());
         // A make in Chinese, "&", then the code ("沃尔沃 & TAD530GE", "斯坦福 & UCI224G", rcg-power n124): the code alone is the
         // cell's model; the make stays in the row's text for makesFor (catalog-bang-r1).
-        const cells = raw.map((c) => c.replace(/^[一-鿿]{1,8}\s*&\s*(?=\S*\d\S*$)/, ""));
+        const cells = raw.map((c) => c.replace(/^[一-鿿]{1,8}\s*&\s*(?=\S*\d\S*$)/, "")).map((c) => {
+          // Full-width hyphen U+FF0D inside a code cell, read as "-" (catalog-b3, Khoa 20/11/2026): an explicit supplier list, and
+          // only a cell that is ONE code "YC12VTD2000－D30" (letters / digits either side), nothing else of the row or table.
+          if (!DASH_FIX.some((x) => x.supplierId === s.id) || !/^[A-Za-z0-9.]+－[A-Za-z0-9.]+$/.test(c)) return c;
+          note(t, ti, ri, "ô mã viết dấu － toàn chiều rộng, đọc như '-'", c);
+          return c.replace("－", "-");
+        });
         // A kVA / kW misread with a look-alike letter ("3S0", "312.S" in vantek) is a figure, not a model (ocrFig).
         const codes = cells.map((c, i) => (!ocrFig(cells, i) && (isCode(c) || brandedCode(c, ENGINE_BRANDS) || brandedCode(c, ALT_BRANDS)) ? i : -1)).filter((i) => i >= 0);
         if (!codes.length) return;
@@ -1372,6 +1378,10 @@
   // licensed Mitsubishi S12R / S16R; "潍柴" covers WP, M26 / M33, PHF, K41xx, R61xx, D226B, 495D), so it is not the maker of
   // each engine. At row level that one vote turned Mitsubishi / Ricardo / Wudong engines of other suppliers to "chưa rõ" or to
   // another make (22 engines, 3,828 row-turns). As a page-level vote it still names the make where nothing higher exists.
+  // Suppliers whose code cells may carry U+FF0D (full-width hyphen) as the hyphen (catalog-b3, Khoa 20/11/2026). Only zhengchi-power
+  // (4 rows: n112 / n113 / n114 / n116 "YC12VTD…－D30"); aosif, jiangchai-xuzhou, walter-yangzhou, westinpower write the same in
+  // their own codes and are NOT listed (not approved).
+  const DASH_FIX = [{ supplierId: "zhengchi-power", khoa: "Khoa 20/11/2026" }];
   const MAKE_LEVEL_LOW = [
     { supplierId: "zhengchi-power", title: /整机编号/, khoa: "Khoa 20/11/2026", why: "ô 品牌 là nhãn của cả danh mục (上柴 gồm SC-series lẫn S12R / S16R; 潍柴 gồm WP, M26, PHF, K41xx, R61xx...)" },
   ];

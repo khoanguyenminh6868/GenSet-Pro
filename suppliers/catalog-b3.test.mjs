@@ -39,9 +39,16 @@ test("zhengchi bảng 整机编号: bỏ cyl + disp (Khoa 20/11/2026), giữ th�
   assert.ok(recs(t101, "engine")[0].specs.some((x) => x.key === "cyl"));
 });
 
-test("zhengchi: dòng có ô động cơ viết dấu '－' toàn chiều rộng không là mã → không có bản ghi động cơ (không lấy mã tổ máy thay)", () => {
-  const s = zc(["| 1200KW | 1345KW | 玉柴 | ZCDL-Y1345 | YC12VTD2000－D30 | 50Hz | 230/400 | 6.3/10.5 | 213g/kw.h | 三相四线 | 12 | 57.25 | 6100×2600×3100 | 12000 | 更多"]);
-  assert.equal(recs(s, "engine").length, 0);
+test("zhengchi: ô động cơ viết dấu '－' toàn chiều rộng (U+FF0D) đọc như '-' (Khoa 20/11/2026), chỉ NCC trong DASH_FIX", () => {
+  const row = ["| 1200KW | 1345KW | 玉柴 | ZCDL-Y1345 | YC12VTD2000－D30 | 50Hz | 230/400 | 6.3/10.5 | 213g/kw.h | 三相四线 | 12 | 57.25 | 6100×2600×3100 | 12000 | 更多"];
+  const notes = [];
+  const r = recs(zc(row), "engine", notes);
+  assert.deepEqual(r.map((x) => x.model), ["YC12VTD2000-D30"]);
+  assert.equal(r[0].genset, "ZCDL-Y1345");
+  assert.ok(notes.some((n) => /toàn chiều rộng/.test(n.reason)));
+  // NCC không có trong danh sách: không đổi (vẫn không đọc ra mã)
+  const o = recs(sup("aosif", [{ n: 112, title: "1500KW柴油发电机组 - 【官网】", header: ZC_HEADER, rows: row }]), "engine");
+  assert.ok(!o.some((x) => x.model === "YC12VTD2000-D30"));
 });
 
 test("mã tổ máy ở cột 0 / 1 như cũ (zhengchi n101: 机组型号 ở cột 1)", () => {
