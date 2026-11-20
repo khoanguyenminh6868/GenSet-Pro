@@ -1,0 +1,6 @@
+# bdk-mo-dun PR 2 — TẠM DỪNG (20/11/2026, theo điều phối: Khoa dừng tới 17:00)
+
+- Đang dở: worktree `wt-bdk-mo-dun-2` (nhánh `bdk-mo-dun-2`, từ origin/main 8b5184eb), CHƯA commit. Code mới `suppliers/ctl-module.mjs` (COMM_MODULES, moduleFacts, compat, commWords Q5, commModules Q4, bestPair/altLine Q1, BMS Q3) + gọi trong `check` của `config-bot.mjs` + tie-break "không mô-đun trước" trong `rankConfigs`; test `suppliers/ctl-module.test.mjs` 7/7 qua.
+- Đo gốc ↔ nhánh đang chạy nền: `genbid-work\dieu-phoi\dau-vao\bdk-mo-dun-2\check-all.mjs` → `goc.json` (worktree `wt-bdk2-base` = 8b5184eb) và `nhanh.json` (17 lượt, chạy check 2 lần để kiểm lặp lại). Chưa đọc kết quả.
+- Phát hiện +40: `cong40.mjs` / `cong40.txt` — hồ sơ deif / woodward / datakom có `status: "incomplete"` nên bot (prep, do-gop) bỏ → 0 fact; sices `partial` nhưng chưa có trong `CONTROLLERS`; và KHÔNG NCC nào trong danh mục chào model của 4 hãng (built.controllers rỗng cho 4 hãng). Cần Khoa / điều phối quyết đổi status (việc dữ liệu, ngoài PR này).
+- Bước kế: đọc goc/nhanh, viết `so-ab` liệt kê MỌI cấu hình đổi check / điểm / hạng; regress-config (UPDATE nếu đổi có chủ ý); ghi bẫy tiêu đề datasheet mô-đun vào `suppliers/CLAUDE.md`; `node --test suppliers/`; commit, PR draft, nghiệm thu đầy đủ, báo điều phối.

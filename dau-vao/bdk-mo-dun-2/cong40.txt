@@ -1,0 +1,20 @@
+# status hồ sơ 4 hãng: datakom=incomplete, deif=incomplete, sices=partial, woodward=incomplete
+# khoá fact 4 hãng như bot nạp (bỏ incomplete): 0
+# Khoá fact bộ điều khiển của 4 hãng: DKG309(700), DKG307(700), DKG116(75), AGC150(700), AGC200(700), SGC420(520), AGC4(700), EASYGEN1400(205), EASYGEN1600(218), EASYGEN1700(203), EASYGEN1800(218), EASYGEN3400(143), EASYGEN3500(149), EASYGEN3100(143), EASYGEN3200(1)
+# Bộ điều khiển 4 hãng NCC chào (built.controllers):
+# Model có datasheet mà không NCC nào chào đúng khoá:
+DKG309 (700 dòng): khoá NCC gần nhất -
+DKG307 (700 dòng): khoá NCC gần nhất -
+DKG116 (75 dòng): khoá NCC gần nhất -
+AGC150 (700 dòng): khoá NCC gần nhất -
+AGC200 (700 dòng): khoá NCC gần nhất -
+SGC420 (520 dòng): khoá NCC gần nhất -
+AGC4 (700 dòng): khoá NCC gần nhất -
+EASYGEN1400 (205 dòng): khoá NCC gần nhất -
+EASYGEN1600 (218 dòng): khoá NCC gần nhất -
+EASYGEN1700 (203 dòng): khoá NCC gần nhất -
+EASYGEN1800 (218 dòng): khoá NCC gần nhất -
+EASYGEN3400 (143 dòng): khoá NCC gần nhất -
+EASYGEN3500 (149 dòng): khoá NCC gần nhất -
+EASYGEN3100 (143 dòng): khoá NCC gần nhất -
+EASYGEN3200 (1 dòng): khoá NCC gần nhất -

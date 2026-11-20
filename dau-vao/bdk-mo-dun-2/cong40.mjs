@@ -8,7 +8,11 @@ const root = path.resolve(process.argv[2] || "."), CB = await import(pathToFileU
 const C = globalThis.GenbidCatalog;
 const cnDir = path.join(root, "suppliers", "cn");
 const sups = fs.readdirSync(cnDir).filter((f) => f.endsWith(".json")).map((f) => JSON.parse(fs.readFileSync(path.join(cnDir, f), "utf8"))).filter((s) => s.status !== "incomplete");
-const built = C.build(sups), facts = CB.modelFacts(built, sups);
+// Bot (prep, do-gop) bỏ hồ sơ status "incomplete"; ở đây facts tính CẢ hai cách để thấy chỗ mất.
+const all = fs.readdirSync(cnDir).filter((f) => f.endsWith(".json")).map((f) => JSON.parse(fs.readFileSync(path.join(cnDir, f), "utf8")));
+console.log("# status hồ sơ 4 hãng:", all.filter((s) => ["deif", "woodward", "datakom", "sices"].includes(s.id)).map((s) => `${s.id}=${s.status}`).join(", "));
+const built = C.build(sups), factsBot = CB.modelFacts(built, sups), facts = CB.modelFacts(built, all);
+console.log("# khoá fact 4 hãng như bot nạp (bỏ incomplete):", [...factsBot.keys()].filter((k) => k.startsWith("controller:") && ["deif", "woodward", "datakom", "sices"].includes(factsBot.get(k)[0].supplierId)).length);
 const BR = /deif|woodward|datakom|sices/i;
 const keys = [...facts.keys()].filter((k) => k.startsWith("controller:")).map((k) => [k, facts.get(k).length, facts.get(k)[0].supplierId]).filter(([, , s]) => ["deif", "woodward", "datakom", "sices"].includes(s));
 console.log("# Khoá fact bộ điều khiển của 4 hãng:", keys.map(([k, n]) => `${k.slice(11)}(${n})`).join(", "));
