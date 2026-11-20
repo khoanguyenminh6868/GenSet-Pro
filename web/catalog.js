@@ -1724,6 +1724,29 @@
     // mingbang-mbkl n125 MB-V480 (TAD1642GE): "4 | 4.4" for a 480 kW set; the table gives 4 cylinders even for its 6.0 L row (TWD1643GE, 100×127), and
     // aoke-yangzhou writes TAD1642GE as 6 cylinders / 16.12 L. Bore × stroke stays (Khoa 20/11/2026: cyl + disp only).
     { supplierId: "mingbang-mbkl", n: 125, genset: "MB-V480", line: "| 14 | MB-V480 | 600 | 480 | 660 | 528 | TAD1642GE | 4 | 4.4 | 105*127 | 118.4 | 4700×2100×2600", act: "dropspec", keys: ["cyl", "disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi 4 xi lanh / 4,4 L cho tổ máy 480 kW (nguồn khác ghi 6 / 16,12 L): bỏ riêng số xi lanh và dung tích" },
+    // [NHÁNH ĐO tad1341-9-36, chưa merge] TAD1341GE / TAD1342GE / TAD1351GE "9.36 L": 9.36 L = 6 x 120 x 138 is Volvo's TAD940GE / TAD941GE (zhengdian n109 gives
+    // it for those, huatai n103's own bore 120/138 too); Volvo D13 (TAD1341GE-B) is 12.8 L (TAD1345GE 12.78 L, volvopenta.com / Welland). One table copied
+    // by 6 suppliers (19 rows, repeated verbatim in other tables of liangzi, so both listed). The row has no bore x stroke of the D13, so only `dropspec` disp.
+    ...[["bdadl-shanghai", 118, "BDA-V250", "| BDA-V250 | 250/312.5 | 沃尔沃遍达 | TAD1341GE | 6 | 9.36 | 34 | ≤202 | 2900*1100*1600 | 2450"],
+      ["bdadl-shanghai", 118, "BDA-V250", "| BDA-V250 | 250/312.5 | 沃尔沃遍达 | TAD1342GE | 6 | 9.36 | 34 | ≤202 | 2900*1100*1600 | 2450"],
+      ["bdadl-shanghai", 118, "BDA-V270", "| BDA-V270 | 270/337.5 | 沃尔沃遍达 | TAD1351GE(欧三) | 6 | 9.36 | 34 | ≤192 | 2900*1100*1600 | 2400"],
+      ["fukangsi-yangzhou", 2005, "FKS-V250", "| FKS-V250 | 250/312.5 | 沃尔沃遍达 | TAD1341GE | 6 | 9.36 | 34 | ≤210 | 2900*1100*1600 | 2450"],
+      ["fukangsi-yangzhou", 2005, "FKS-V280", "| FKS-V280 | 280/350 | 沃尔沃遍达 | TAD1342GE | 6 | 9.36 | 34 | ≤210 | 2900*1100*1600 | 2450"],
+      ["huatai-yangzhou", 103, "260GF", "| 260GF | 260 | TAD1341GE | 6L | 120/138 | 9.36 | 34 | 2450 | 2900*1100*1600"],
+      ["liangzi-yangzhou", 115, "LZ- V260", "| LZ- V260 | 260/325 | 瑞典沃尔沃 | TAD1342GE | 6 L | 9.36 | 34 | ≤202 | 2900*1100*1600 | 2450 | 详细参数"],
+      ["liangzi-yangzhou", 116, "LZ- V250", "| LZ- V250 | 250/312.5 | 沃尔沃遍达 | TAD1341GE | 6 L | 9.36 | 34 | ≤202 | 2900*1100*1600 | 2450 | 详细参数"],
+      ["liangzi-yangzhou", 116, "LZ- V260", "| LZ- V260 | 260/325 | 沃尔沃遍达 | TAD1342GE | 6 L | 9.36 | 34 | ≤202 | 2900*1100*1600 | 2450 | 详细参数"],
+      ["liangzi-yangzhou", 116, "LZ- V250", "| LZ- V250 | 250/312.5 | 沃尔沃遍达 | TAD1351GE | 6 | 9.36 | 34 | ≤192 | 2900*1100*1600 | 2450 | 详细参数"],
+      ["liangzi-yangzhou", 142, "LZ- V260", "| LZ- V260 | 260/325 | 瑞典沃尔沃 | TAD1342GE | 6 L | 9.36 | 34 | ≤202 | 2900*1100*1600 | 2450 | 详细参数"],
+      ["liangzi-yangzhou", 143, "LZ- V250", "| LZ- V250 | 250/312.5 | 沃尔沃遍达 | TAD1341GE | 6 L | 9.36 | 34 | ≤202 | 2900*1100*1600 | 2450 | 详细参数"],
+      ["liangzi-yangzhou", 143, "LZ- V260", "| LZ- V260 | 260/325 | 沃尔沃遍达 | TAD1342GE | 6 L | 9.36 | 34 | ≤202 | 2900*1100*1600 | 2450 | 详细参数"],
+      ["liangzi-yangzhou", 143, "LZ- V250", "| LZ- V250 | 250/312.5 | 沃尔沃遍达 | TAD1351GE | 6 | 9.36 | 34 | ≤192 | 2900*1100*1600 | 2450 | 详细参数"],
+      ["pengpai-yangzhou", 117, "PPDL-V250", "| PPDL-V250 | 250/312.5 | 沃尔沃遍达 | TAD1341GE | 6 | 9.36 | 34 | ≤202 | 2900*1100*1600 | 2450"],
+      ["pengpai-yangzhou", 117, "PPDL-V250", "| PPDL-V250 | 250/312.5 | 沃尔沃遍达 | TAD1342GE | 6 | 9.36 | 34 | ≤202 | 2900*1100*1600 | 2450"],
+      ["pengpai-yangzhou", 117, "PPDL-V270", "| PPDL-V270 | 270/337.5 | 沃尔沃遍达 | TAD1351GE(欧三) | 6 | 9.36 | 34 | ≤192 | 2900*1100*1600 | 2400"],
+      ["pengpai-yangzhou", 126, "PPDL-V250", "| PPDL-V250 | 250/312.5 | 沃尔沃遍达 | TAD1341GE | 6 | 9.36 | 34 | ≤210 | 2900*1100*1600 | 2450"],
+      ["pengpai-yangzhou", 126, "PPDL-V280", "| PPDL-V280 | 280/350 | 沃尔沃遍达 | TAD1342GE | 6 | 9.36 | 34 | ≤210 | 2900*1100*1600 | 2450"]].map(([supplierId, n, genset, line]) => (
+      { supplierId, n, genset, line, act: "dropspec", keys: ["disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi 9.36 L (dung tích TAD940GE / TAD941GE) cho động cơ Volvo Penta D13 (12,8 L): bỏ riêng dung tích" })),
     // westinpower n1064 TP880L (a PDF table written down the page): "Rated rotation speed 1191 r/min"; the same PDF writes "Engine speed Rated 1500 RPM" on page 2.
     { supplierId: "westinpower", n: 1064, genset: "TP880L", line: "| Rated rotation speed | r/min | 1191", act: "dropspec", keys: ["speed"], khoa: "Khoa 20/11/2026", why: "nguồn ghi tốc độ 1191 v/p (trang 2 cùng PDF ghi 1500 RPM): bỏ riêng tốc độ, không lấy số trang 2 thay" },
     // huipu-power n105 HP-P1330 / n106 HP-V280, HP-V400 (Khoa duyệt 20/11/2026, cùng kiểu "458" của jlmech):
