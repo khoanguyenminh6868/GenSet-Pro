@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-20T06:35:56.968Z
+  modified: 2026-11-20T08:37:35.932Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Code xếp sẵn 30 dòng ứng viên; mọi số/câu trích phải có nguyên văn trong nguồn, sai → "Đạt" thành "Chưa rõ". ~6–11 phút, ~3 USD/gói. Yêu cầu theo bộ mã cố định `suppliers/reqcodes.mjs` (thêm mã: dòng `R(...)` đúng thứ tự + test; tăng `REQ_VERSION`).
@@ -81,6 +81,7 @@ Cách thử, lệnh và bẫy code: `suppliers/CLAUDE.md` trong repo; bản nghi
 ## IB2600603983: đáp án đúng và 5 việc Khoa duyệt (20/11/2026)
 Khoa nêu cấu hình đúng: Baudouin 6M31G825/5 + Leroy-Somer LSA 49.3 M8, AREP + AVR D350 (hoặc PMG + D350; ngắn mạch 300% (3 In) / 10 s) + DSE7320 MKII kèm mô-đun DSE890 MKII (4G / Ethernet Gateway). Dùng làm ca kiểm cho các việc dưới. Khoa quyết:
 - Đầu phát: "miễn sao đạt yêu cầu của hsmt thì cứ gợi ý" → không cần NCC ghi đầu phát cùng dòng tổ máy; chọn theo datasheet hãng (trước đó chỉ lấy đầu phát ghi cùng dòng).
+- Đầu phát tự gắn nhãn của NCC (eastern-lion "EL 164D" / "ELS 184F", `OWN_BRAND_ALTS`, #969): Khoa chốt (i) 20/11/2026 — MỌI dòng EL không +40 "tra được đầu phát", kể cả dòng đã có đầu phát từ trước; chấp nhận dòng eastern-lion trong top 30 từ 684 → 93 (đo cloud: 22.755 lượt-cặp −40). Bản ghi đầu phát vẫn lưu và hiện; HSMT nêu đích danh vẫn +80.
 - Tỉ số nén HSMT ghi trơ ("14 : 01"): "sửa luật để kiểm tra" (em trình: ghi trơ = số chính xác, nguồn ghi khác thì không đạt ở bước chấm; đã merge #981). Khoa chốt 20/11/2026: KHÔNG lọc ở bước chọn ứng viên (đo: sẽ loại 1.231/2.733 dòng top 30 ở 79/85 gói vì HSMT chép số của một model); 14:1 ↔ 14,1:1 coi là cùng số ("giữ như đang làm", `roundCompat` lệch ≤ 1 %), khác cách so chặt của dung tích. Khác số xi lanh (ghi trơ chỉ chính xác ở bước chọn ứng viên, Khoa 17/11).
 - Một động cơ ghi hai mã ("6M33G8D3/5 (6M33G825/5)" chiếm hai chỗ của hãng): "gộp đi, cần rà soát lại tất cả các dòng nào giống nhau của tất cả các nhà cung cấp".
 - Bổ sung dữ liệu hãng Baudouin cho mọi mã (nguồn baudouin.com); bộ điều khiển kèm mô-đun truyền thông: làm.
@@ -95,6 +96,10 @@ Phân tích: `genbid-work\dieu-phoi\dau-vao\ib2600603983\phan-tich.md`; tiến �
 6. "Ok": bổ sung dữ liệu Mecc Alte (ECO / NPE) + Stamford trên 750 kVA sau, bằng Firecrawl; Marathon để lại.
 7. "Nếu không ghi tương đương thì chỉ chọn hãng đó" (HSMT nêu đích danh hãng đầu phát). Có "tương đương" → thêm hãng khác xếp sau, và HSMT đòi đồng bộ thương hiệu thì không dùng đầu phát khác hãng tổ máy: là khuyến nghị, Khoa không nhắc riêng.
 Kết quả phải ghi rõ "đầu phát chọn theo datasheet hãng, NCC chưa chào" ([[khong-viet-au]]).
+
+**Đầu phát hãng PR B (#987): Khoa trả lời 4 câu (20/11/2026):** (1) cấu hình NCC chào bị cấu hình cùng động cơ + đầu phát hãng do code gắn đẩy ra vì trần mỗi hãng → Khoa: "vì sao không thể giữ lại cả 2 cấu hình nếu phù hợp?" (em hiểu: giữ cả hai, cặp cùng động cơ khác đầu phát tính một chỗ của trần); (2) Leroy-Somer trên tờ nhà máy Phúc Châu = sản xuất tại Trung Quốc ("ok"); Stamford trên tờ của stamford-avk-china cũng vậy (Khoa "ok", cùng ngày); (3) HSMT nêu model đầu phát kèm "hoặc tương đương" mà code chọn model khác đạt → check Model đạt; (4) suy giảm theo nhiệt độ (45 °C ↔ tờ 40 °C): tìm hệ số của hãng, không tìm được thì "chưa rõ".
+
+**Chọn ứng viên, Khoa 20/11/2026 "làm cả A và B"** (sau khi #971 merge mà 6M31G825/5 vẫn 190 điểm, ngoài 30): (A) +40 điểm cho dòng mà động cơ có datasheet của chính hãng động cơ; (B) chỗ của mỗi hãng chia cho các model động cơ khác nhau trước, rồi mới tới dòng thứ hai cùng model. Phương án "bỏ 40 điểm có đầu phát" em nêu nhưng Khoa không chọn.
 
 **Mã động cơ trùng: Khoa trả lời 4 câu (20/11/2026, đề xuất `nghiem-thu\ma-dong-co-trung-de-xuat.md`):** (1) ô hai mã "X (Y)" / "X / Y" → "b)": TÁCH hai bản ghi, dòng NCC tính cho cả hai mã (kể cả kaihua / koten "6M33G8D3/5 (6M33G825/5)"; phần "mã nội bộ NCC thì giữ mã ngoài ngoặc" là khuyến nghị của em đi kèm, Khoa không phản đối); (2) Perkins đuôi " L" → "để riêng" (chưa có nguồn giải thích); (3) "Derate" / "Switchable" → "gộp" vào mã gốc, dòng nguồn giữ chữ; (4) đọc "India" / "UK" trong ô động cơ làm nơi sản xuất → "ok, làm sau". Các lớp không cần hỏi (công suất dính mã, tên hãng dính mã, nơi sản xuất dính mã, khác mỗi ngoặc) sửa thẳng ở `web/catalog.js`.
 
