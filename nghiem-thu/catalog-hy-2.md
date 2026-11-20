@@ -94,3 +94,32 @@ Dòng điện lệch đều +0,32 % (nguồn dùng 1,81 A/kW) ở cả 17 dòng;
 - Commit c9fc3ed4: dropspec tỉ số nén QSL9G2 / G3 / G4 (17.8:1) và QSK60G7 (16.2:1), n101 + n2003, `khoa: "Khoa 20/11/2026"`. Test: 14 note "ngoại lệ theo dòng" cho yingtai.
 - Gộp main 325be503 → **SHA cuối ce676c1b** (đã đẩy). Test 1.381 pass / 0 fail. Soát lại (gốc 2ed96b02 ↔ nhánh): NCC khác đổi 0; huatai 17 đổi; yingtai 56 mới; số so: trùng NCC khác 107 (trước 110: 3 tỉ số nén QSL9 trùng số NCC khác đã bỏ), KHÁC 53, chỉ yingtai 57.
 - Câu 3 (QSK19G4 bore đếm theo chữ): mở việc riêng `win-dem-theo-so-de-xuat.md` sau khi ba PR xong.
+
+## Top 30 cloud (#973 ce676c1b ↔ gốc 325be503, 1.093 lượt; đo của điều phối `dau-vao\fuel-bang\top30-cloud\`)
+So ĐỦ đa tập (`so-du-b.mjs` → `so-du-b-dong.tsv` / `-khoa.tsv`): 386 lượt khác, 2.325 lượt-dòng khác. Rời all 217, vào 26, chỉ đổi điểm 2.082. Lý do lấy bằng cách chạy lại `candidates` cho mọi lượt khác ở cả gốc và nhánh (`do-ly-do.mjs`, bidhist máy 05:44Z, 0 lượt thiếu → `ly-do-goc.json` / `ly-do-b.json`).
+
+**Đổi điểm (2.082): đều tăng, do bản ghi động cơ yingtai mới** cho các mã Cummins trước đó thiếu số:
+- +8 × số loại thông số mới (`score += 8 × min(số khoá của động cơ, 8)`): S38G4/G6/G7, X25G2, X33G1, QSK23G9 thêm bore / compr / cyl / disp (+32); QSL9G7, QSK60G13/G21 +16; QSK50G7, QSK60G7 +8.
+- +60 khi động cơ có hãng (`if (e.make)`): QSK23G8, 4BT33G3 (+92 = 60 + 32). Thêm +300 ở lượt HSMT nêu hãng Cummins (+392).
+- NCC: sanq 658, yanfa 358, huadong 214, mecca 185, aosif 116, fdk 98, ade 76…, cùng các model trên.
+
+**Rời all (217 = đúng tổng của lý do bên dưới): mọi dòng rời do số yingtai làm dòng chạm mức HSMT**, và chỉ có MỘT nguồn (yingtai, `votes=1`, không có số đông):
+- cyl: X25G2 81, QSK23G9 24, QSK23G8 7, QSL9G5 5, S38G7 2.
+- disp: S38G7 24, X25G2 20, S38G6 16, X33G1 15, QSK23G9 8, QSK23G8 6, 4BT33G3 4, S38G4 1.
+- maxDisp: S38G4 8, QSK60G7 7, X33G1 4, S38G6 4, QSK23G9 4, QSK23G8 2.
+- NCC: sanq 86, yanfa 49, huadong 31, mecca 24, ade 11, cgm 6, tide 4, fdk 3, agg-fuzhou 1, cameo 1, xingguang 1.
+
+**Số yingtai đối chiếu datasheet Cummins: đều ĐÚNG**, nên không có dòng bị loại oan, không cần `dropspec` / `fixspec`:
+- X2.5-G2: 3 xi lanh, 91,4×127, 2,5 L (mart.cummins.com 0064190). Hình học: 2,50 L.
+- S3.8-G7: 4 xi lanh, 97×128, 3,8 L (cummins.com S38G7.pdf).
+- X3.3-G1: 4 xi lanh, 91,4×127, 3,3 L (cummins.com X3.3 Q Range, mart 0064192).
+- QSK23-G8: 6 xi lanh, 23 L (cummins.com QSK23-G8.pdf; G7 ghi 23,1). Yingtai 23,2 lệch 0,4 % so với hình học 170×170×6 = 23,15.
+- QSK60-G7: 16 xi lanh, 159×190, 60,2 L (cummins.com QSK60G7.pdf).
+- 4BT3.3-G3: 4 xi lanh, 95×115, 3,3 L (cummins.com 4bt33g5.pdf cùng khối; bản G3 đọc ở bản chép).
+- QSL9-G5: 6 xi lanh; HSMT ghi đúng 4 xi lanh. Số đông 6 (4 phiếu: aosif, fdk, legapower, yingtai).
+
+**Vào all (26):** 23 lượt-dòng huatai (WD145 / WD269 / WD287 / WD327, 17 dòng mới của huatai trở thành ứng viên), không dòng nào vào top. 3 lượt-dòng QSK60G13 (mecca, tecnogen, yanfa) không còn bị loại.
+
+**Top:** 70 lượt đổi top (53 đổi tập) là hệ quả của hai mục trên: dòng rời vì xi lanh / dung tích nhường chỗ, dòng được cộng điểm leo hạng. NCC có khoá đổi chỉ là các NCC bán mã Cummins kể trên và người được nhường chỗ.
+
+**Kết luận:** "NCC khác đổi 0" không đạt theo nghĩa đen, nhưng mọi thay đổi đều do số Cummins đúng, lần đầu có cho các mã này. Đề xuất GIỮ #973 như ce676c1b, không thêm commit.
