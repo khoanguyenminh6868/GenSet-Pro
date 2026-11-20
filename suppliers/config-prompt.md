@@ -132,6 +132,17 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    "Ứng viên". What matters most (Khoa, 2026-11-02): the engine and the controller, then the alternator and the genset
    as a whole, then the `option` requirements. Prefer an
    engine and an alternator that appear together in the same genset row (a real configuration a manufacturer sells).
+   Alternator from its maker's datasheet (Khoa 2026-11-20: "miễn sao đạt yêu cầu của hsmt thì cứ gợi ý"): catalog.md
+   section "Đầu phát theo datasheet hãng (NCC chưa chào)" lists the models of the alternator makers' own sheets that the
+   code found to meet the HSMT (kVA at the continuous column, not standby). Take one of them ONLY when the configuration's
+   row names no alternator; a row that names an alternator keeps it (the code itself replaces one whose maker sheet shows
+   it below the kVA needed, and keeps one the system has no figures for). Write `alternator` as { "model", "make", "src" }
+   with `src` copied from that section ({ "kind": "maker", "supplierId", "n" }); do not search the internet for this and
+   do not write alternator checks for it (the code writes them from the sheet). Never write it as if the supplier offered
+   it: `summary`, `why` and `gaps` say "đầu phát chọn theo datasheet hãng, nhà cung cấp chưa chào". A configuration
+   without an alternator is still a suggestion when the rest meets the HSMT. Two configurations of the same engine, one
+   with the alternator a supplier offers and one with an alternator from this section, both stay (Khoa 2026-11-20):
+   they take one place of the per-make limit, the later one right under the earlier.
    Write each model's checks once (Khoa 2026-11-03): in a configuration whose controller is the controller of an
    earlier configuration, leave out the controller checks; whose engine (alternator) is that of an earlier one, leave
    out the checks taken from "Thông số theo model" (`factSrc`). The code copies them from the earlier configuration
@@ -339,4 +350,6 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
   asking. The code adds questions of its own too; do not change any check's status because of them.
 - `make`: only when a source states it (catalog.md shows the make and where it comes from); otherwise leave it empty.
 - `line` is the catalog row exactly as in catalog.md. `genset` only when the engine and alternator come from one row.
+- `alternator.src` may also be `{ "kind": "maker", "supplierId": "", "n": 1012 }`, copied from "Đầu phát theo datasheet
+  hãng" in catalog.md (see step 2); `check` drops it when the list does not have it or the row names an alternator.
 - `conversions`: only when a value is converted; leave it out otherwise.
