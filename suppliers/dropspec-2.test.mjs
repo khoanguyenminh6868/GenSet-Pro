@@ -58,12 +58,13 @@ test("jiangchai n107 J20B400M (6M33D506E310): dòng điện 7200 bỏ; dòng cù
   assert.equal(spec(e.find((r) => r.model === "6M26D447E200"), "current"), "630");
 });
 
-test("mingbang n125 MB-V480: xi lanh + dung tích bỏ, đường kính × hành trình giữ; MB-V500 kế bên không đổi", () => {
+test("mingbang n125 MB-V480: xi lanh + dung tích bỏ, đường kính × hành trình giữ; MB-V500 cũng bỏ từ dung-tich-sua-1 (Khoa 20/11 \"ok bỏ\"), MB-V68 kế xa không đổi", () => {
   const e = eng("mingbang-mbkl", 125);
   const r = e.find((x) => x.genset === "MB-V480");
   assert.equal(spec(r, "cyl"), undefined); assert.equal(spec(r, "disp"), undefined);
   assert.equal(spec(r, "bore"), "105*127");
-  assert.equal(spec(e.find((x) => x.genset === "MB-V500"), "disp"), "6.0");
+  assert.equal(spec(e.find((x) => x.genset === "MB-V500"), "disp"), undefined);
+  assert.equal(spec(e.find((x) => x.genset === "MB-V68"), "disp"), "1.1");
 });
 
 test("westinpower n1064 TP880L: tốc độ 1191 bỏ; dòng điện 1299 và dung tích giữ", () => {

@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-20T08:37:35.932Z
+  modified: 2026-11-20T11:29:51.835Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Code xếp sẵn 30 dòng ứng viên; mọi số/câu trích phải có nguyên văn trong nguồn, sai → "Đạt" thành "Chưa rõ". ~6–11 phút, ~3 USD/gói. Yêu cầu theo bộ mã cố định `suppliers/reqcodes.mjs` (thêm mã: dòng `R(...)` đúng thứ tự + test; tăng `REQ_VERSION`).
@@ -99,7 +99,9 @@ Kết quả phải ghi rõ "đầu phát chọn theo datasheet hãng, NCC chưa 
 
 **Đầu phát hãng PR B (#987): Khoa trả lời 4 câu (20/11/2026):** (1) cấu hình NCC chào bị cấu hình cùng động cơ + đầu phát hãng do code gắn đẩy ra vì trần mỗi hãng → Khoa: "vì sao không thể giữ lại cả 2 cấu hình nếu phù hợp?" (em hiểu: giữ cả hai, cặp cùng động cơ khác đầu phát tính một chỗ của trần); (2) Leroy-Somer trên tờ nhà máy Phúc Châu = sản xuất tại Trung Quốc ("ok"); Stamford trên tờ của stamford-avk-china cũng vậy (Khoa "ok", cùng ngày); (3) HSMT nêu model đầu phát kèm "hoặc tương đương" mà code chọn model khác đạt → check Model đạt; (4) suy giảm theo nhiệt độ (45 °C ↔ tờ 40 °C): tìm hệ số của hãng, không tìm được thì "chưa rõ".
 
-**Chọn ứng viên, Khoa 20/11/2026 "làm cả A và B"** (sau khi #971 merge mà 6M31G825/5 vẫn 190 điểm, ngoài 30): (A) +40 điểm cho dòng mà động cơ có datasheet của chính hãng động cơ; (B) chỗ của mỗi hãng chia cho các model động cơ khác nhau trước, rồi mới tới dòng thứ hai cùng model. Phương án "bỏ 40 điểm có đầu phát" em nêu nhưng Khoa không chọn.
+**Chọn ứng viên, Khoa 20/11/2026 "làm cả A và B"** (sau khi #971 merge mà 6M31G825/5 vẫn 190 điểm, ngoài 30): (A) +40 điểm cho dòng mà động cơ có datasheet của chính hãng động cơ; (B) chỗ của mỗi hãng chia cho các model động cơ khác nhau trước, rồi mới tới dòng thứ hai cùng model. Phương án "bỏ 40 điểm có đầu phát" em nêu nhưng Khoa không chọn. **Khoa ĐỔI Ý cùng ngày** (sau khi em đính chính: số 190 điểm là SAI, đo lúc web chưa đăng dữ liệu; thật ra 222 điểm, hạng 17, đã trong 30): "đo lại B xem như thế nào rồi tính tiếp, áp luôn cho các hãng trung quốc" → chỉ B, áp cả nhóm `CN_ROWS`; A để TẮT mặc định (`GENBID_CAND_A=1` mới bật; A thưởng hãng mình cào được nhiều tờ: Weichai 137, Baudouin 1, Yuchai 0). PR #996 CHƯA merge: có số đo cloud toàn bộ thì trình Khoa, Khoa quyết mới merge. Bẫy đo: đặt `GENBID_LOCAL_SUPPLIERS=1` trong CHÍNH lệnh chạy `prep`, nếu không sẽ đọc dữ liệu web chưa đăng.
+- Khoa 20/11 "có": cổng Ethernet của mô-đun (DSE890 MKII) ĐƯỢC tính đạt mục "Ethernet" của HSMT, kèm ghi chú Ethernet nằm trên mô-đun (đổi câu 2 cũ: trước đó Ethernet chỉ lấy từ tờ bộ điều khiển nên IB2600603983 ra DSE7420 thay vì DSE7320 MKII + DSE890 MKII). RS232 / RS485 / USB / BMS vẫn chỉ từ bộ điều khiển.
+- BĐK ghép mô-đun (Khoa 20/11 "ok" cả ba): "phương án khác" lọc theo số phần yêu cầu truyền thông đạt; BMS để agent xử lý (prompt, PR 3); deif / woodward / datakom đổi status để vào danh mục.
 
 **Mã động cơ trùng: Khoa trả lời 4 câu (20/11/2026, đề xuất `nghiem-thu\ma-dong-co-trung-de-xuat.md`):** (1) ô hai mã "X (Y)" / "X / Y" → "b)": TÁCH hai bản ghi, dòng NCC tính cho cả hai mã (kể cả kaihua / koten "6M33G8D3/5 (6M33G825/5)"; phần "mã nội bộ NCC thì giữ mã ngoài ngoặc" là khuyến nghị của em đi kèm, Khoa không phản đối); (2) Perkins đuôi " L" → "để riêng" (chưa có nguồn giải thích); (3) "Derate" / "Switchable" → "gộp" vào mã gốc, dòng nguồn giữ chữ; (4) đọc "India" / "UK" trong ô động cơ làm nơi sản xuất → "ok, làm sau". Các lớp không cần hỏi (công suất dính mã, tên hãng dính mã, nơi sản xuất dính mã, khác mỗi ngoặc) sửa thẳng ở `web/catalog.js`.
 

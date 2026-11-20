@@ -2,7 +2,7 @@
   "id": "woodward",
   "country": "US",
   "role": "controller_maker",
-  "status": "incomplete",
+  "status": "partial",
   "names": {
     "en": "Woodward, Inc.",
     "zh": null,
@@ -101,8 +101,7 @@
   "missing": [
     "năm thành lập",
     "trụ sở",
-    "dải công suất (bộ điều khiển không có)",
-    "thông số bộ điều khiển"
+    "dải công suất (bộ điều khiển không có)"
   ],
   "confidence": "medium",
   "checkedAt": "2026-11-17",
