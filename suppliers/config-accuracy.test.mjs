@@ -382,7 +382,21 @@ test("catalog.md lists the controllers' datasheet lines", () => {
   assert.ok(part("DSE7310 MKII —").includes("3 phase generator sensing") && !part("DSE7310 MKII —").includes("Automatic start and stopping"));
 });
 
-test("SmartGen: a series written HGM6110N/6120N..., 'models: text' lines and wrapped sentences go to the right models", () => {
+test("catalog.md: controllers of the same make only the maker's datasheet gives, with their kind (bdk-amf, Khoa 20/11/2026)", () => {
+  const b = { ...sups[1], controllers: [{ brand: "Deep Sea", model: "DSE7320", text: "DSE7320", line: "Controller: Deep Sea DSE7320", src: [3001] }] };
+  const dse2 = { ...dse, specTables: [...dse.specTables, { n: 1003, title: "Datasheet: DSE7410 MKII Auto Start & DSE7420 MKII Auto Mains (Utility) Failure", header: [],
+    rows: ["The DSE7410 MKII is an Auto Start Control Module and the DSE7420 MKII is an Auto Mains (Utility) Failure Control Module", "| • | Automatic start and stopping of generator and transfer of load"] }] };
+  const list = [sups[0], b, sups[2], dse2];
+  const { md, ctlMd } = catalogMd(C.build(list), { value: 250, unit: "kVA" }, hintsOf(hsmt), { suppliers: list, hsmtText: "Bộ điều khiển kết hợp với tủ ATS" });
+  const sec = md.split("## Bộ điều khiển theo datasheet hãng (NCC chưa chào)")[1]?.split("\n## ")[0] || "";
+  assert.match(sec, /- DSE7420 MKII \(Deep Sea\) — loại theo datasheet hãng: tự động khi mất lưới \(AMF\) — supplierId: dse, n: 1003/);
+  assert.match(sec, /- DSE7410 MKII \(Deep Sea\) — loại theo datasheet hãng: chỉ tự khởi động/);
+  assert.match(sec, /HSMT có ATS/);
+  assert.ok(!/- DSE7320/.test(sec), "DSE7320 đã có ở trên, không liệt kê lại");
+  assert.match(ctlMd, /### DSE7420 MKII — supplierId: dse, n: 1003 — loại theo datasheet hãng: tự động khi mất lưới \(AMF\)/);
+});
+
+test("SmartGen: a series written HGM6110N/6120N...,'models: text' lines and wrapped sentences go to the right models", () => {
   const sg = { id: "sg", role: "controller_maker", specTables: [{ n: 1001, title: "Datasheet: HGM6100N SERIES (HGM6110N/6120N/6110NC/6120NC)", header: [], rows: [
     "HGM6100N SERIES",
     "(HGM6110N/6120N/6110NC/6120NC)",

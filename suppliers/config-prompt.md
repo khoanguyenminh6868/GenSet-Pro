@@ -216,9 +216,15 @@ and anything it cannot find is marked "chưa khớp nguồn" on the web.
    write in `note` "BMS qua Modbus/SNMP, cần NCC xác nhận." (Khoa Q3). 4G / 5G / GSM / SMS / Internet / Ethernet that only a
    module gives: leave the part `unclear` and do not add the module yourself; the code pairs the controller with a
    module its maker's documents name (`controller.modules`, `viaModule`, label "Mô-đun chọn theo tài liệu hãng, NCC
-   chưa chào") and may list other controllers of the same make on the controller's line with their modules
-   (`controller.alternatives`, "Phương án khác đạt tương đương"). In `summary`, `why` and `gaps` never write that a
-   supplier offers a module or that a part is met through one: no supplier has offered one.
+   chưa chào") and may list other controllers of the same make with their modules (`controller.alternatives`,
+   "Phương án khác đạt tương đương": from the controller's line, the other lines its suppliers offer, and the maker's
+   own datasheets). In `summary`, `why` and `gaps` never write that a supplier offers a module or that a part is met
+   through one: no supplier has offered one.
+   catalog.md section "Bộ điều khiển theo datasheet hãng (NCC chưa chào)" (Khoa 2026-11-20) lists the other controllers of
+   those makes that only the maker's datasheet gives, each with its kind as the datasheet writes it (tự động khi mất lưới
+   (AMF) / chỉ tự khởi động / hòa đồng bộ; every controller title in controllers.md carries it too). When the HSMT has an ATS,
+   "chuyển nguồn tự động" or "khi mất điện lưới", only an AMF controller fits that requirement. Never write a controller of
+   that section as offered by a supplier: wherever you name one, say "Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào".
    When the HSMT asks for a controller, a configuration with no `controller` counts as `not_met` on the controller
    (the code adds that check, Khoa 2026-11-02): give each configuration the controller its row or its supplier offers.
    "Đồng bộ thương hiệu" (Khoa 2026-11-06): when input.md has that section, the HSMT wants at least N of the engine,

@@ -239,25 +239,16 @@ export function ctlKinds(suppliers = []) {
   return new Map([...votes].map(([n, ks]) => [n, ["amf", "sync", "start"].find((k) => ks.has(k))]));
 }
 export const dseNum = (model) => String(model || "").match(/\bDSE\s?(\d{4})\b/i)?.[1] || null;
+export const KIND_VI = { amf: "tự động khi mất lưới (AMF)", sync: "hòa đồng bộ", start: "chỉ tự khởi động" };
 export const kindOf = (kinds, model) => kinds.get(dseNum(model)) || null;
-// The step of a Deep Sea controller in its maker's range, for "a lower step" (Khoa's 3rd answer): the series, the first two
+// The step of a Deep Sea controller in its maker's range, for the order of equal alternatives: the series, the first two
 // digits (61xx < 73xx < 74xx < 86xx). Inferred from the maker's numbering (DSE7320 MKII / DSE7420 MKII, DSE8610 MKII), not
 // written by the maker as an order; null for a controller with no such number.
 export const ctlStep = (model) => { const n = dseNum(model); return n ? Math.floor(Number(n) / 100) : null; };
 // The HSMT asks for a set that starts and takes the load when the mains fail (Khoa's 2nd answer): an ATS, "khi mất điện lưới".
-export const AMF_RE = /\bATS\b|chuy[ểe]n\s+(?:đổi\s+)?ngu[ồo]n\s+t[ựu]\s+đ[ộo]ng|m[ấa]t\s+(?:đi[ệe]n\s+)?l[ưu][ớo]i|\bAMF\b|mains\s+failure/i;
-export const needsAmf = (text) => AMF_RE.test(String(text || ""));
-// The HSMT asks for sets running in parallel: a synchronising controller must stay one.
-export const SYNC_RE = /h[òo][àa]\s+đ[ồo]ng\s+b[ộo]|ch[ạa]y\s+song\s+song|v[ậa]n\s+h[àa]nh\s+song\s+song|load\s?shar|synchroni[sz]/i;
-export const needsSync = (text) => SYNC_RE.test(String(text || ""));
-// Whether controller `kind` may stand in for one of `mainKind` under the HSMT: an AMF one when the HSMT asks for it; else the
-// same kind as the one offered (an AMF 7420 is not swapped for an auto start 7310), and never off a synchronising one when the
-// HSMT asks for parallel running. Unknown kinds: only when nothing is asked and the main's kind is unknown too.
-export function kindFits(kind, mainKind, { amf = false, sync = false } = {}) {
-  if (sync && mainKind === "sync") return kind === "sync";
-  if (amf) return kind === "amf";
-  return mainKind ? kind === mainKind : !kind;
-}
+// The abbreviations in capitals only ("ats" / "amf" in lower case are other words).
+export const AMF_RE = /chuy[ểe]n\s+(?:đổi\s+)?ngu[ồo]n\s+t[ựu]\s+đ[ộo]ng|m[ấa]t\s+(?:đi[ệe]n\s+)?l[ưu][ớo]i|mains\s+failure/i, AMF_ABBR = /\bATS\b|\bAMF\b/;
+export const needsAmf = (text) => AMF_RE.test(String(text || "")) || AMF_ABBR.test(String(text || ""));
 
 // The line of Q1: "Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (đạt 5/7 ...)".
-export const altLineOf = (alts = []) => (alts.length ? `Phương án khác đạt tương đương: ${alts.map((a) => `${[a.model, ...a.modules.map((m) => m.model)].join(" + ")} (${a.notOffered ? `${CTL_ALT_LABEL}; ` : a.offeredBy ? `NCC ${a.offeredBy} chào; ` : ""}truyền thông: code dò datasheet đạt ${a.met}/${a.total}${a.unclear.length ? `, chưa rõ: ${a.unclear.join(", ")}` : ""})`).join("; ")}` : "");
+export const altLineOf = (alts = []) => (alts.length ? `Phương án khác đạt tương đương: ${alts.map((a) => `${[a.model, ...a.modules.map((m) => m.model)].join(" + ")} (${a.notOffered ? `${CTL_ALT_LABEL}; ` : a.offeredBy ? `NCC ${a.offeredBy} chào; ` : ""}${a.kind ? `${KIND_VI[a.kind]} theo datasheet hãng; ` : ""}truyền thông: code dò datasheet đạt ${a.met}/${a.total}${a.unclear.length ? `, chưa rõ: ${a.unclear.join(", ")}` : ""})`).join("; ")}` : "");
