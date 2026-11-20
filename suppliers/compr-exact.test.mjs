@@ -33,6 +33,10 @@ test("comprLines: the bare ratio is exact; signs, bands, references and 'nêu c�
   // The next row's number alone ("| Tỷ số nén của | yêu cầu" / "5") is not a ratio; nor an OCR "175:1".
   assert.deepEqual(kinds("| Tỷ số nén của | yêu cầu | Tham chiếu tài\n5"), []);
   assert.deepEqual(kinds("6. | Tỷ số nén >175:1"), []);
+  // A limiter, not the ratio (IB2300270603, "ration" as the HSMT writes it).
+  assert.deepEqual(kinds(" Compression ration limiter : 20:1"), []);
+  assert.deepEqual(kinds("Compression ratio limiter : 20:1"), []);
+  assert.deepEqual(kinds("Compression ratio - 17:1"), ["exact:17"]);
 });
 
 test("comprOf / hintsOf: exact only when every line gives one figure bare", () => {

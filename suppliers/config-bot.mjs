@@ -1050,7 +1050,8 @@ function inlineCyl(line) {
 // "Nêu cụ thể" / "Ghi rõ" / "Theo tiêu chuẩn nhà sản xuất" give no figure and no entry. The value is the label's own cell,
 // else the next line when it is only that value (a table cell wrapped: "Tỉ số nén" / "≥ 20:1"). Figures out of 5–30
 // (OCR "175:1") are not read.
-const COMPR_LABEL = /t[ỉỷiy]\s*s[ốo]\s*n[ée]n|compression\s*ratio(?!\s*limiter)/i;
+// Not a "compression ratio limiter" (IB2300270603 writes "Compression ration limiter : 20:1"), a part, not the ratio.
+const COMPR_LABEL = /t[ỉỷiy]\s*s[ốo]\s*n[ée]n|compression\s*ration?\b(?!\s*limiter)/i;
 const COMPR_FIG = String.raw`(\d{1,2}(?:[.,]\d{1,2})?)`;
 const COMPR_VAL = new RegExp(String.raw`^[\s|:.\-–(]*(?:l[àa]\s+)?(≥|>=|>|≤|<=|<|t[ốo]i\s*thi[ểe]u|t[ốo]i\s*đa|kho[ảa]ng|~|±)?\s*[:(]?\s*${COMPR_FIG}(?:\s*:\s*0?1)?(?![\d.,])`, "i");
 // The value alone on the next line: with its sign, its ":1" or a decimal part (a bare "5" there is the next row's number).
