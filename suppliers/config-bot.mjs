@@ -2424,6 +2424,8 @@ const CTL_WORDS = [
   [/điện áp/i, /voltage (measurement|range|sensing)|(generator|mains|bus|phase).{0,20}voltage|\bVs?(L-?L|L-?N|ph-?ph|ph-?n)\b/i], [/dòng điện/i, /current (measurement|sensing|range)|\bCT\b|(generator|phase|load).{0,15}current/i], [/tần số|\bHz\b/i, /frequency/i],
   [/RS-?485/i, /RS-?485/i], [/RS-?232/i, /RS-?232/i], [/modbus/i, /modbus/i], [/USB/i, /USB/i], [/ethernet|TCP|mạng LAN/i, /ethernet|TCP/i],
   [/CAN|J1939|ECU/i, /J1939|CAN/i], [/GSM|SMS|GPRS/i, /GSM|SMS|GPRS/i], [/SNMP/i, /SNMP/i],
+  // BMS (bdk-mo-dun PR 3, Khoa Q3 20/11/2026): a line that says BMS, or the protocols a BMS reads it by (NCC to confirm).
+  [/\bBMS\b|building management|quản lý tòa nhà/i, /\bBMS\b|building management|modbus|bacnet|snmp/i],
   [/AMF|mất (điện )?lưới|ATS/i, /AMF|mains (\(utility\) )?fail|automatic mains/i], [/tự (động )?khởi động|auto start|(khởi động|start|dừng|stop) từ xa/i, /auto start|remote start/i],
   [/mật khẩu|password|PIN/i, /password|PIN\b|security/i], [/LCD|màn hình/i, /\bLCD\b|graphic display|display (size|type|resolution)/i], [/hòa đồng bộ|song song|paralle|đồng bộ/i, /synchron|load ?shar|parallel/i],
   [/(mức|thấp) nhiên liệu|nhiên liệu (thấp|mức)/i, /fuel level|low fuel/i], [/chế độ (hoạt động|vận hành|làm việc|điều khiển)|auto\s*\/\s*manual|manual\s*\/\s*auto|start\s*\/\s*stop/i, /\bmanual\b|\bauto\b mode|stop\/reset/i],
@@ -2607,12 +2609,17 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   // Q1 (Khoa 20/11/2026: "Ok cho khuyến nghị"): the other controllers of the same make that the configuration's controller
   // line offers ("Deepsea DSE7320, DSE7420, DSE6120..."), each with a datasheet, scored with its best modules by code on the
   // HSMT's communication parts; those with no "không đạt" (code never writes one) and at least one part met, best 2 first.
+  // bdk-mo-dun PR 3 (Khoa 20/11/2026 "ok"): only a pair that meets at least as many parts as the configuration's own
+  // controller with its best modules, scored the same way, less one (DSE7320 + DSE890 5/7 beside DSE7420 6/7 stays;
+  // DSE6120 1/4, DSE6020 + DSE890 2/7 go).
   const ctlAlternatives = (c, reqs) => {
     delete c.controller.alternatives; delete c.controller.altLine;
     const names = reqs.filter((r) => r.code === "ctl_comm" && r.part === "controller").flatMap((r) => (r.parts?.length ? r.parts.map((p) => p.item) : [r.item])).filter(Boolean);
     if (!names.length) return;
     const main = CAT.keyOf(ctlModelOf(c.controller)), mainKeys = new Set([main, ...factsOf(c, "controller").map((f) => CAT.keyOf(f.sheetModel || ""))]);
     const brand = CAT.controllersIn(ctlModelOf(c.controller)).find((x) => x.model)?.brand || c.controller.make;
+    const mainList = factsOf(c, "controller");
+    const floor = Math.max(1, (mainList.length ? CM.bestPair(names, mainList, compatOf(ctlModelOf(c.controller), mainList), modFacts).met : 0) - 1);
     const seen = new Set(), alts = [];
     for (const x of CAT.controllersIn(c.controller.src?.line || "").filter((y) => y.model && (!brand || norm(y.brand) === norm(brand)))) {
       const k = CAT.keyOf(x.model);
@@ -2621,7 +2628,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
       const list = factsFor(facts, "controller", x.model);
       if (!list.length || list.some((f) => mainKeys.has(CAT.keyOf(f.sheetModel || "")))) continue;
       const bp = CM.bestPair(names, list, compatOf(x.model, list), modFacts), sheets = [...new Set(list.map((f) => f.version || f.sheetModel).filter(Boolean))];
-      if (bp.met) alts.push({ model: sheets.length === 1 ? sheets[0] : x.model, offeredAs: x.model, make: x.brand, ...bp, parts: undefined });
+      if (bp.met >= floor) alts.push({ model: sheets.length === 1 ? sheets[0] : x.model, offeredAs: x.model, make: x.brand, ...bp, parts: undefined });
     }
     alts.sort((a, b) => b.met - a.met);
     if (!alts.length) return;

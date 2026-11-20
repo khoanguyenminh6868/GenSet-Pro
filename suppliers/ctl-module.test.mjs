@@ -96,6 +96,17 @@ test("check (Q1): DSE7420 offered; DSE7320 MKII + DSE890 MKII listed as the othe
   assert.match(c.controller.altLine, /^Phương án khác đạt tương đương: .*DSE7320 MKII \+ DSE890 MKII/);
 });
 
+test("check (Q1, PR 3): only pairs meeting at least the main pair's parts less one", () => {
+  const mainMet = (m) => { const l = ctl(m); return CM.bestPair(NAMES, l, CM.compatModules(l, new Set([C.keyOf(m), ...l.map((f) => C.keyOf(f.sheetModel || ""))]), mf), mf).met; };
+  for (const model of ["DSE7420", "DSE7320", "DSE6120"]) {
+    const c = run(result(model, {})).result.configs[0], floor = Math.max(1, mainMet(model) - 1);
+    for (const a of c.controller.alternatives || []) assert.ok(a.met >= floor, `${model}: ${a.model} ${a.met} < ${floor}`);
+  }
+  // DSE6120 MKIII (fewer ports) is not an alternative of DSE7420; DSE7320 MKII + DSE890 MKII still is (5/7 beside 6/7).
+  const c = run(result("DSE7420", {})).result.configs[0];
+  assert.ok(!(c.controller.alternatives || []).some((a) => /6120/.test(a.model)), JSON.stringify(c.controller.alternatives));
+});
+
 test("rankConfigs: same score, the configuration without a module first", () => {
   const a = { rank: 1, controller: { model: "X", modules: [{ model: "DSE890 MKII" }] }, checks: [{ item: "T", part: "controller", status: "met" }] };
   const b = { rank: 2, controller: { model: "Y" }, checks: [{ item: "T", part: "controller", status: "met" }] };
