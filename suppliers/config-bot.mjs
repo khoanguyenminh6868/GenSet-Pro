@@ -1047,7 +1047,15 @@ const DISP_W = /dung t[íi]ch|displacement/i, TANK_W = /bình|bồn|thùng|két|
 // The displacement of the engine, by its label (2026-11-12 audit: "Tổng dung tích làm mát ≥ 55 L" was read as the cylinders').
 // A label of a displacement that names neither the cylinders nor the engine is not read.
 const DISP_LABEL = /dung t[íi]ch\s*(?:t[ổo]ng\s*)?(?:c[ủu]a\s*)?(?:c[áa]c\s*)?(?:xi|xy|x)(?:[\s-]?lanh|-)|dung t[íi]ch[^\n]{0,30}?(?:xi|xy)[\s-]?lanh\b|dung t[íi]ch\s+(?:c[ủu]a\s+)?(?:[đd][ộo]ng c[ơo]|bu[ồo]ng [đd][ốo]t)|dung t[íi]ch\s*(?:piston|pit\s?t[ôo]ng)|dung t[íi]ch\s*x\s*l\s*nh|displacement|swept volume/i;
-const tankNear = (cell) => { const m = cell.match(DISP_LABEL) || cell.match(/(?:t[ổo]ng\s+)?dung t[íi]ch/i); return !!m && TANK_W.test(cell.slice(Math.max(0, m.index - 25), m.index + m[0].length + 25)); };
+// A bare "dung tích" in the clause of a tank, however far ("Thùng thép đặt trong vỏ cách âm, dung tích ≥ 55 lít", IB2300245748).
+const tankNear = (cell) => {
+  const m = cell.match(DISP_LABEL) || cell.match(/(?:t[ổo]ng\s+)?dung t[íi]ch/i);
+  if (!m) return false;
+  if (TANK_W.test(cell.slice(Math.max(0, m.index - 25), m.index + m[0].length + 25))) return true;
+  const bare = !/(?:xi|xy)[\s-]?lanh|displacement/i.test(cell.slice(m.index, m.index + m[0].length + 12));
+  // Only the words of a vessel: TANK_W also has "nước", "làm mát", "dầu", which an engine clause names ("làm mát bằng nước, ≥ 3 xi lanh, dung tích ≥ 2,3 lít").
+  return bare && /th[ùu]ng|b[ồo]n\b|b[ìi]nh\b|k[ée]t\b|\btank\b/i.test(cell.slice(Math.max(cell.lastIndexOf(";", m.index), cell.lastIndexOf(":", m.index), 0), m.index));
+};
 // "Tổng dung tích ≥ 19.6 lít" among the lines of the cylinders (bore, stroke, piston, compression ratio) is the engine's.
 const DISP_BARE = /^(?:.*\s)?(?:t[ổo]ng\s+)?dung t[íi]ch\s*(?::|≥|≤|<|>|\d|$)/i, ENGINE_LINES = /(?:xi|xy)[\s-]?lanh|piston|h[àa]nh tr[ìi]nh|đ[ườu]*ng k[ií]nh|t[ỷy] s[ốo] n[ée]n|compression|\bbore\b|\bstroke\b/i;
 // The label of the count of cylinders ("Số xi lanh", "Số xy-lanh", "Số lượng xi lanh", "Số cylinder", "Number of cylinders").
@@ -1192,7 +1200,8 @@ export function engineLists(t) {
       // An OCR slip of "tối thiểu" ("tối thiều 2 xi lanh") is a least too.
       // Nor the engine of goods "for reference" ("Loại động cơ: 4 thì 2 xi lanh" then "* Hàng hóa tương tự để nhà thầu tham
       // khảo", IB2400474549): a least, not the count that rules other engines out.
-      if (!AT_LEAST.test(cell) && !MAXIMUM.test(cell) && !/t[ốo]i\s*thi[ểềeế]u/i.test(cell) && !/tham\s*kh[ảa]o|t[ươ]+ng\s*t[ựu]/i.test(`${prev} ${cell} ${lines[i + 1] || ""}`) && !/(?<![-=])>\s*0?\d/.test(cell.slice(0, c.index + c[0].length))) cylBare.push(Number(c[1]));
+      // "Không ít hơn 1 xilanh", "không dưới 4 xi lanh" (IB2300305914) are a least too.
+      if (!AT_LEAST.test(cell) && !MAXIMUM.test(cell) && !/t[ốo]i\s*thi[ểềeế]u/i.test(cell) && !/kh[ôo]ng\s+(?:[íi]t\s+h[ơo]n|d[ưu][ớo]i)/i.test(cell) &&!/tham\s*kh[ảa]o|t[ươ]+ng\s*t[ựu]/i.test(`${prev} ${cell} ${lines[i + 1] || ""}`) && !/(?<![-=])>\s*0?\d/.test(cell.slice(0, c.index + c[0].length))) cylBare.push(Number(c[1]));
     }
   });
   return { disp, dmax, cyl, cylBare };
@@ -1221,6 +1230,7 @@ const CAP_LABELED = new RegExp(String.raw`(c[ôo]ng su[ấa]t\s+(?:li[êe]n t[�
 // Its first word is capitalised ("Máy phát", "Tổ máy", "Điều chuyển Máy"): "6 máy phát điện 12,5KVA" is a count in a list.
 const CAP_HEAD = /^\s*(?:(?:\d{1,2}(?:\.\d{1,2})*\.?|[IVX]{1,4}\.?|[a-hA-H][.)])\s*)?[-–:|*•+]?\s*((?:[^\d\n]{0,25}?\s)?(?:t[ổo]\s+)?m[áa]y\s+ph[áa]t\b)/i;
 const isHead = (line) => { const m = line.match(CAP_HEAD); return !!m && /^[^\p{L}\d]*\p{Lu}/u.test(m[1]); };
+const LINE_SIZE = new RegExp(String.raw`^\s*(?:(?:ph[ầa]n|m[ụu]c|h[ạa]ng\s+m[ụu]c)\s+[\dIVXA-Z]{1,4}\s*[-–:.]\s*)?(?:t[ổo]\s+)?m[áa]y(?:\s+ph[áa]t(?:\s+đi[ệe]n)?)?(?:\s+\d\s*pha)?\s+(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)(?:\s*\/\s*\d[\d.,]*)?\s*(kVA|kW)\b[^:\n]{0,24}?(?:\s-\s|:)`, "i");
 export function sizeBlocks(t, sizes) {
   const text = withoutOtherEquipment(unflatten(t)), L = text.split("\n"), ments = [], kwSizes = sizes.some((s) => s.cap?.unit === "kW");
   const engineBefore = (at) => ENGINE_W.test(text.slice(Math.max(0, at - 300), at).split("\n").slice(-2).join(" "));
@@ -1267,7 +1277,18 @@ export function sizeBlocks(t, sizes) {
     if (r && r.size === size && size >= 0) r.end = m.line; else runs.push({ size, start: m.line, end: m.line });
   }
   runs.forEach((r, i) => (r.to = i + 1 < runs.length ? runs[i + 1].start : L.length));
-  return { L, runs };
+  // A line that opens with the genset it is about ("Máy 12 kVA/1 pha: Động cơ - xi lanh: …", "Phần 1 - Máy 500 kVA: …", "Mục 2 - Máy
+  // 11 kVA/11 kW: …") belongs to that size wherever it stands: tables sorted by item put the lines of one size inside the block of
+  // another (IB2400114476: "≤ 1,826 lít" of 12 kVA read for 45 kVA). The size its figure is the prime of, else the standby of; one
+  // size only, else -1 (the line stays with its block).
+  const tags = L.map((l) => {
+    const m = l.match(LINE_SIZE);
+    if (!m || (m[2].toLowerCase() === "kw" && !kwSizes)) return -1;
+    const f = { kva: numOf(m[1]), unit: m[2].toLowerCase() }, hit = (kind) => sizes.flatMap((s, j) => (fits({ ...f, kind }, s) ? [j] : []));
+    const p = hit("prime"), list = p.length ? p : hit("standby");
+    return list.length === 1 ? list[0] : -1;
+  });
+  return { L, runs, tags };
 }
 const MIN_KEYS = ["minDisp", "maxDisp", "minCyl", "minPrime", "maxFuel", "maxFuel75", "maxFuel50"];
 // What a text gives: for each key whether it names the figure at all and the one value (null when it differs).
@@ -1281,9 +1302,10 @@ function minsRead(t) {
 // The minimums of the run of `size` among `sizes` (sizesOf) in the HSMT text `t`; `extra` (the requests added on the web)
 // is outside every block. `how` says per key where the figure came from: own, common, none (and why).
 export function minsForSize(t, size, sizes, extra = "") {
-  const { L, runs } = sizeBlocks(t, sizes), j = sizes.findIndex((s) => s === size || (s.cap?.unit === size.cap?.unit && s.cap?.value === size.cap?.value));
+  const { L, runs, tags } = sizeBlocks(t, sizes), j = sizes.findIndex((s) => s === size || (s.cap?.unit === size.cap?.unit && s.cap?.value === size.cap?.value));
   const join = (pick) => L.filter((_, i) => pick(runs.findIndex((r) => i >= r.start && i < r.to), i)).join("\n");
-  const own = join((r) => r >= 0 && runs[r].size === j), foreign = join((r) => r >= 0 && runs[r].size !== j), pre = join((r) => r < 0) + (extra ? `\n${extra}` : "");
+  // A line that names its genset goes with that size (sizeBlocks `tags`), whatever block it stands in.
+  const own = join((r, i) => (tags[i] >= 0 ? tags[i] === j : r >= 0 && runs[r].size === j)), foreign = join((r, i) => (tags[i] >= 0 ? tags[i] !== j : r >= 0 && runs[r].size !== j)), pre = join((r, i) => tags[i] < 0 && r < 0) + (extra ? `\n${extra}` : "");
   const a = minsRead(own), b = minsRead(foreign), c = minsRead(pre), mins = {}, how = {};
   // The engine minimums a tender repeats in the section of each size ("A / B / C Yêu cầu kỹ thuật đối với máy 8.5 / 10 / 12 kVA",
   // each with "Dung tích xilanh ≥ 2.3 lít", "Số xilanh ≥ 4"): a block whose statement of power the code did not take (the alternator's
@@ -1291,7 +1313,11 @@ export function minsForSize(t, size, sizes, extra = "") {
   // before. The size's own blocks give none; when at least two of the other blocks give the one same value and they are at least
   // half of the other blocks, it is the tender's common one ("agreed"). Not for a prime or a fuel limit (a figure of each size).
   // The blocks of one size count once (a figure shown twice for one machine is one statement, not an agreement).
-  const others = runs.map((r, i) => ({ id: r.size >= 0 ? `s${r.size}` : `b${i}`, r })).filter(({ r }) => r.size !== j).map(({ id, r }) => ({ id, m: minsRead(L.slice(r.start, r.to).join("\n")) }));
+  // Each block without the lines that name another genset; the lines that name a size outside its blocks count for that size.
+  const inRun = (r, i) => i >= r.start && i < r.to;
+  const moved = sizes.map((_, k) => (k === j ? "" : L.filter((_l, i) => tags[i] === k && !runs.some((r) => r.size === k && inRun(r, i))).join("\n")));
+  const others = [...runs.map((r, i) => ({ id: r.size >= 0 ? `s${r.size}` : `b${i}`, r })).filter(({ r }) => r.size !== j).map(({ id, r }) => ({ id, m: minsRead(L.filter((_l, i) => inRun(r, i) && (tags[i] < 0 || tags[i] === r.size)).join("\n")) })),
+    ...moved.flatMap((txt, k) => (txt ? [{ id: `s${k}`, m: minsRead(txt) }] : []))];
   const agreed = (k) => {
     const got = others.filter((o) => o.m[k].has), ids = (list) => new Set(list.map((o) => o.id)).size;
     return ids(got) >= 2 && ids(got) * 2 >= ids(others) && got.every((o) => o.m[k].v != null && o.m[k].v === got[0].m[k].v) ? got[0].m[k].v : null;
@@ -1425,6 +1451,15 @@ export function powerRead(t) {
     const tail = /(?:l[àa]|khi|m[ứu]c|t[ạa]i|[ởo])\s*$/i.test(rest) && le >= 0 ? ft.slice(le + 1).split("\n", 3).find((l) => /^\s*\d{2,3}\s*%\s*\)?\s*$/.test(l)) : null;
     const wrapped = tail ? rest + " " + tail.trim() : rest;
     const after = /\d{2,3}\s*%/.test(own) ? null : afterOne(wrapped);
+    // The load after the figure in the figure's own clause ("≤ 12 l/h tại 40 kW (100% tải); ≤ 9 l/h tại 30 kW (75% tải)",
+    // IB2400062394: the 9 took the 100% of the clause before it). Only when the clause gives no load before the figure, one
+    // load after it, and no other figure in L/h. A clause ends at ";" or at "," / "." before a space.
+    const ownClause = own.slice(Math.max(own.lastIndexOf(";"), own.lastIndexOf(", ")) + 1), clause = rest.split(/;|[,.](?:\s|$)/)[0];
+    const clauseLoads = [...clause.matchAll(/(\d{2,3})\s*%\s*\)?\s*(?:t[ảa]i|ph[ụu]\s*t[ảa]i|c[ôo]ng\s*su[ấa]t|cs\b|load|đ[ịi]nh\s*m[ứu]c)/gi)];
+    // Or the clause is nothing but the load: "≤ 3,2 L/h (75%)", "43.6 lít/giờ ở 75%" (not "(sai số 10%)").
+    const bareLoad = clause.match(/^\s*(?:\(\s*|(?:[ởo]|t[ạa]i|at|@)\s+)(\d{2,3})\s*%\s*\)?\s*$/i);
+    const clauseLoad = clauseLoads.length === 1 ? clauseLoads[0] : clauseLoads.length ? null : bareLoad;
+    const inClause = !after && clauseLoad && !/\d{2,3}\s*%/.test(ownClause) && (clause.match(/\d{2,3}\s*%/g) || []).length === 1 && !/l[íi]t\s*\/|\bl\s*\/\s*h/i.test(clause) ? clauseLoad : null;
     // The load on the line under the figure, after a few words ("Tiêu thụ nhiên liệu mức" / "14 ≤ 3,5 L/h" / "100% tải liên
     // tục", "Tiêu hao nhiên liệu" / "- ≤ 370 L/hr (Lít/giờ)" / "tại 75% công suất": hints-audit 2026-11-17). Only when the
     // figure's line gives no load, and the next line gives no other figure (it would be the next row's own load and limit).
@@ -1438,7 +1473,7 @@ export function powerRead(t) {
     // tục 16h(50% CS)" then "Tiêu hao nhiên liệu « 4,83 L/h (100% CS)", IB2500266050).
     const ownLabel = FUEL_LABEL.test(own) && bl && bl.index < tail60.length - own.length;
     const fromBefore = (bl && below && bl.index < labelAt) || ownLabel ? null : bl;
-    const load = after || under || (below && fromBefore && below[1] !== fromBefore[1] ? ["", "-1"] : below || fromBefore);
+    const load = after || inClause || under || (below && fromBefore && below[1] !== fromBefore[1] ? ["", "-1"] : below || fromBefore);
     fuel.push({ v: m.v ?? numOf(m[1]), load: load ? Number(load[1]) : /đầy tải|full load/i.test(before.slice(-60)) ? 100 : null });
   }
   const one = (list) => (new Set(list).size === 1 ? list[0] : null);
@@ -1616,7 +1651,7 @@ export function altOf(alts, cell) {
   }
   return null;
 }
-// ĐO THỬ (tach-mu-2, Khoa 21/11/2026 "thử cách 2"): catalog tách "X" và "X^" (không nguồn nào chú thích "^"). Chỉ để LOẠI ở `candidates`:
+// Luật đã duyệt (tach-mu-2, Khoa 21/11/2026 chọn M): catalog tách "X" và "X^" (không nguồn nào chú thích "^"). Chỉ để LOẠI ở `candidates`:
 // khoá không có số của một loại (xi lanh, dung tích, đường kính × hành trình) mượn số của khoá kia; khoá có số riêng giữ số riêng
 // (8M33D1012E311 không bị "12V / 31.8" của aosif ở khoá ^ kéo lại). Điểm thông số (`eKeys`) không mượn.
 const TWIN_KEYS = new Set(["cyl", "disp", "bore"]);
@@ -2225,11 +2260,15 @@ export function hsmtCommNames(hsmtText) {
 // and the answer is DSE7320 MKII + DSE890 MKII): each controller with a datasheet, per make, scored with its best modules
 // (CM.bestPair) on the communication functions the HSMT names; the kind the HSMT asks (AMF, synchronising) only; the lowest
 // step (CM.ctlStep, inferred from the names) among those meeting the most is marked. The agent still checks every function.
+// The kind of controller the HSMT asks for: "sync" (hòa đồng bộ, chạy song song), "amf" (CM.needsAmf) or null.
+export function ctlKindNeed(hsmtText) {
+  const tech = technicalPart(hsmtText || "") || String(hsmtText || "");
+  return /h[òo][àa]?\s+đ[ồo]ng\s+b[ộo]|ch[ạa]y\s+song\s+song|h[òo][àa]\s+l[ưu][ớo]i/i.test(tech) ? "sync" : CM.needsAmf(tech, { head: String(hsmtText || "").slice(0, 3000) }) ? "amf" : null;
+}
 export function lowestCtlMd(models, facts, suppliers, hsmtText, kinds) {
   const names = hsmtCommNames(hsmtText);
   if (!names.length || !models.length) return "";
-  const tech = technicalPart(hsmtText || "") || String(hsmtText || "");
-  const need = /h[òo][àa]?\s+đ[ồo]ng\s+b[ộo]|ch[ạa]y\s+song\s+song|h[òo][àa]\s+l[ưu][ớo]i/i.test(tech) ? "sync" : CM.needsAmf(tech, { head: String(hsmtText || "").slice(0, 3000) }) ? "amf" : null;
+  const need = ctlKindNeed(hsmtText);
   const modFacts = CM.moduleFacts(suppliers), byMake = new Map();
   for (const m of models) {
     const list = factsFor(facts, "controller", m), x = CAT.controllersIn(m).find((y) => y.model);
@@ -2778,8 +2817,8 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   const factsOf = (c, part) => (["engine", "alternator", "controller"].includes(part) && c[part]?.model ? factsFor(facts, part, part === "controller" ? ctlModelOf(c.controller) : c[part].model) : []);
   // Bộ điều khiển + mô-đun truyền thông (bdk-mo-dun PR 2, Khoa 20/11/2026; ctl-module.mjs): the modules' facts, and the modules
   // a controller (its facts) may take.
-  const modFacts = CM.moduleFacts(suppliers);
-  const compatOf = (model, list) => CM.compatModules(list, new Set([CAT.keyOf(model || ""), ...list.map((f) => CAT.keyOf(f.sheetModel || ""))].filter(Boolean)), modFacts, ctlKeys);
+  const modFacts = CM.moduleFacts(suppliers), ctlOptRows = CM.optionRows(suppliers);
+  const compatOf =(model, list) => CM.compatModules(list, new Set([CAT.keyOf(model || ""), ...list.map((f) => CAT.keyOf(f.sheetModel || ""))].filter(Boolean)), modFacts, ctlKeys);
   // Q1 (Khoa 20/11/2026: "Ok cho khuyến nghị"): the other controllers of the same make that the configuration's controller
   // line offers ("Deepsea DSE7320, DSE7420, DSE6120..."), each with a datasheet, scored with its best modules by code on the
   // HSMT's communication parts; those with no "không đạt" (code never writes one) and at least one part met, best 2 first.
@@ -2845,6 +2884,53 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     if (!alts.length) return;
     c.controller.alternatives = alts.slice(0, 2).map(({ parts, step: _s, ...a }) => a);
     c.controller.altLine = CM.altLineOf(c.controller.alternatives);
+  };
+  // Hai bản bộ điều khiển (Khoa 21/11/2026 "sửa theo phương án 2", every make): a configuration whose main controller comes from
+  // the maker's datasheet (no supplier of it offers that one) also shown with the controller a supplier of the same engine DOES
+  // offer: same make, the kind the HSMT asks, a datasheet, at least half of the communication parts with its best module
+  // (fewer: not kept, điều phối's proposal). The code writes the copy; the agent has not read that datasheet, so every
+  // controller check of the copy starts "chưa rõ" and only what the code can score is scored. When the configuration's genset
+  // row is of another supplier (IB2600603983 08:52Z: B825E5 of agg-fuzhou, DSE7420 of voltgent), the copy takes the genset of
+  // the offering supplier's own row, or none, and its genset checks start "chưa rõ" too: they were read on the other row.
+  const ctlNeed = ctlKindNeed(hsmtText);
+  const ctlTwinOf = (c) => {
+    if (!c.controller?.model || c.controller.src?.kind !== "maker" || sup.get(c.controller.src.supplierId)?.role !== "controller_maker" || !c.engine?.model) return null;
+    const ek = CAT.keyOf(c.engine.model), rowBy = new Map();
+    for (const u of (built.engines || []).find((e) => e.key === ek)?.uses || []) if (u.line && sup.has(u.supplierId) && !rowBy.has(u.supplierId)) rowBy.set(u.supplierId, u);
+    if (!rowBy.size) return null;
+    const own = (c.suppliers || []).map((s) => s.supplierId).filter((id) => rowBy.has(id));
+    const ids = [...new Set([...own, ...[...rowBy.keys()].sort()])], names = commNames(result.requirements || []);
+    const step = (a) => (a.step == null ? Infinity : a.step);
+    const cands = ctlCands({ ...c, suppliers: ids.map((supplierId) => ({ supplierId })) }, names);
+    const pick = cands.out
+      .filter((a) => !a.notOffered && a.offeredBy && (!ctlNeed || a.kind === ctlNeed) && (!names.length || a.met * 2 >= names.length))
+      .sort((a, b) => b.met - a.met || step(a) - step(b))[0];
+    if (!pick) return null;
+    const key = CAT.keyOf(pick.offeredAs), hasIt = (id) => (sup.get(id).controllers || []).find((x) => x.model && CAT.keyOf(x.model) === key);
+    const by = ids.filter(hasIt).slice(0, 3), o = hasIt(pick.offeredBy);
+    const note = `Bản bộ điều khiển NCC chào (${by.join(", ")}): chưa chấm hết trên datasheet ${pick.offeredAs}.`;
+    const blank = (x) => ({ item: x.item, status: "unclear", offered: "", note });
+    const t = structuredClone(c);
+    for (const k of ["rfq", "lossWarn", "won"]) delete t[k];
+    t.controller = { make: c.controller.make, model: pick.offeredAs, src: { kind: "controller", supplierId: pick.offeredBy, ...(o.src?.length ? { n: o.src[0] } : {}), line: o.line } };
+    t.suppliers = by.map((id) => (c.suppliers || []).find((s) => s.supplierId === id) ? structuredClone(c.suppliers.find((s) => s.supplierId === id)) : { supplierId: id, n: rowBy.get(id).n, line: rowBy.get(id).line, why: `Có dòng động cơ ${c.engine.model}, hồ sơ NCC chào ${pick.offeredAs}` });
+    const gsBy = c.genset?.model ? c.genset.src?.supplierId : null, otherRow = !!gsBy && !by.includes(gsBy);
+    if (otherRow) {
+      // Same engine AND alternator: a row naming another alternator is not this configuration's genset (makerAltFix would
+      // put that alternator in the copy; IB2600603983 08:52Z: kaihua-genset's Volvo row with HCI544FS1).
+      const u = rowBy.get(by[0]), ra = rowAltOf(u, built);
+      if (u.genset && (!ra || !c.alternator?.model || CAT.keyOf(ra.model) === CAT.keyOf(c.alternator.model))) t.genset = { model: u.genset, src: { kind: "catalog", supplierId: by[0], n: u.n, line: u.line } };
+      else delete t.genset;
+    }
+    const open = (x) => x.part === "controller" || (otherRow && x.part === "genset");
+    t.checks = (t.checks || []).filter((x) => !(otherRow && x.part === "genset" && x.byCode)).map((x) => (!open(x) ? x : { ...blank(x), ...(x.part === "genset" ? { note: `Bản bộ điều khiển NCC chào (${by.join(", ")}): chưa chấm trên dòng tổ máy của NCC này.` } : {}), requirement: x.requirement || "", hsmtQuote: x.hsmtQuote || "", part: x.part, level: x.level, ...(x.code ? { code: x.code } : {}), ...(x.parts?.length ? { parts: x.parts.map(blank) } : {}) }));
+    const onRow = norm(o.line).replace(/\s/g, "").includes(norm(c.engine.model).replace(/\s/g, ""));
+    const gap = `${pick.offeredBy} chào ${pick.offeredAs}${onRow ? "" : ` trong hồ sơ, dòng đó không ghi động cơ ${c.engine.model}: cần hỏi NCC có lắp cho động cơ này không`}.`;
+    const rest = Array.isArray(c.gaps) ? c.gaps.filter((g) => !/điều khiển|mô-đun/i.test(String(g))) : [];
+    t.gaps = [gap, ...rest];
+    t.rank = (c.rank ?? 0) + 0.5;
+    t.ctlTwin = { of: ctlModelOf(c.controller), by, ...(pick.met < (cands.mainPair?.met ?? 0) ? { weaker: true } : {}) };
+    return t;
   };
   // Đồng bộ thương hiệu (Khoa, 2026-11-06): read from the HSMT by code, one requirement of the code's own in place of
   // any the agent wrote about it; its check is written below from the makes, never by the agent.
@@ -3065,7 +3151,18 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   }
   // The genset the HSMT names is never the one cut by the limit: it goes before the equivalents (stable order otherwise).
   if (namedHere) { const nr = (c) => { const h = NG.namedHit(c, namedHere, namedCtx); return h === "model" ? 0 : h === "make" ? 1 : 2; }; result.configs = (result.configs || []).map((c, i) => [c, nr(c), i]).sort((x, y) => x[1] - y[1] || x[2] - y[2]).map(([c]) => c); }
-  result.configs = (result.configs || []).slice(0, MAX_CONFIGS);
+  // Hai bản bộ điều khiển: each copy right under its configuration, BEFORE the cut (Khoa was told a last make may be pushed
+  // out). An earlier check's copies go first, and one the agent already wrote (same engine, alternator, controller) is not doubled.
+  // A copy whose controller meets fewer communication parts than the main one (`weaker`) only takes a free place: it never
+  // pushes out a configuration the agent checked (IB2600603983 08:52Z: Volvo + DSE6120 4/7 pushed out Baudouin 6M33G825/5).
+  const twinBases = (result.configs || []).filter((c) => !c.ctlTwin);
+  const twinPairs = twinBases.map((c) => {
+    const t = ctlTwinOf(c), same = (o) => CAT.keyOf(o.engine?.model || "") === CAT.keyOf(t.engine.model) && CAT.keyOf(o.alternator?.model || "") === CAT.keyOf(t.alternator?.model || "") && CAT.keyOf(ctlModelOf(o.controller) || "") === CAT.keyOf(t.controller.model);
+    return { c, t: t && !twinBases.some(same) ? t : null };
+  });
+  let twinRoom = MAX_CONFIGS - twinBases.length - twinPairs.filter((p) => p.t && !p.t.ctlTwin.weaker).length;
+  result.configs = twinPairs.flatMap(({ c, t }) => (t && (!t.ctlTwin.weaker || twinRoom-- > 0) ? [c, t] : [c]));
+  result.configs = result.configs.slice(0, MAX_CONFIGS);
   for (const c of result.configs) for (const s of c.suppliers || []) if (s.why) s.why = plainWhy(s.why);
   copyModelChecks(result.configs, sourceText);
   // Kiểm tra tổ hợp (2026-11-10): what the HSMT says about site, overload, load step and load types, read once.
@@ -3226,8 +3323,19 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     // supplier's line offers, each with its best modules, as "Phương án khác đạt tương đương".
     if (c.controller?.model) {
       const ctlF = factsOf(c, "controller");
+      // The copy with the offered controller (ctlTwin): the agent read no datasheet of it, so a communication part whose every
+      // function is on that controller's own datasheet is met by code, quoting the line; the modules below do the rest.
+      if (c.ctlTwin) for (const x of c.checks.filter((y) => isComm(y) && y.status !== "met")) {
+        const e = CM.commEval(x.name || x.item, ctlF, []);
+        if (!e.subs.length || !e.per.every((p) => p.by)) continue;
+        const first = e.per[0], also = e.per.slice(1).map((p) => ({ sub: p.sub.k, supplierId: p.f.supplierId, n: p.f.n, line: p.line }));
+        Object.assign(x, { status: "met", byCode: true, offered: e.per.map((p) => p.sub.k).join(", "), sourceQuote: first.line, factSrc: { supplierId: first.f.supplierId, n: first.f.n, line: first.f.line }, note: `Code đọc trên datasheet ${c.controller.model}.`, ...(also.length ? { alsoQuotes: also } : {}) });
+        delete x.hint; delete x.unverified; delete x.wordsMissing;
+      }
       CM.commModules(c, c.checks.filter(isComm), ctlF, compatOf(ctlModelOf(c.controller), ctlF), modFacts);
       ctlAlternatives(c, result.requirements || []);
+      // A function the controller's manual lists as optional / configuration-dependent: "confirm" with the manual's line (bdk-manual-2).
+      CM.ctlOptions(c.checks.filter((y) => y.group && y.part === "controller"), ctlF, ctlOptRows);
     } else if (c.controller) { delete c.controller.modules; delete c.controller.alternatives; delete c.controller.altLine; }
     if (groups.size) c.checks = c.checks.flatMap((x) => {
       if (!x.group) return [x];
@@ -3239,7 +3347,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
       const st = (s) => g.parts.filter((p) => p.status === s).map((p) => p.item);
       g.status = st("not_met").length ? "not_met" : st("met").length === g.parts.length ? "met" : "unclear";
       g.offered = `Đạt ${st("met").length}/${g.parts.length}`;
-      g.note = [st("not_met").length && `Không đạt: ${st("not_met").join(", ")}.`, st("unclear").length && `Chưa rõ: ${st("unclear").join(", ")}.`].filter(Boolean).join(" ");
+      g.note = [st("not_met").length && `Không đạt: ${st("not_met").join(", ")}.`, st("unclear").length && `Chưa rõ: ${st("unclear").join(", ")}.`, st("confirm").length && `Cần NCC xác nhận: ${st("confirm").join(", ")}.`].filter(Boolean).join(" ");
       delete g.sourceQuote; delete g.factSrc;
       g.unverified = g.parts.some((p) => p.unverified) || undefined;
       if (g.hsmtQuote && !inHsmt(g.hsmtQuote)) {
@@ -3456,8 +3564,9 @@ export function scoreOf(c, reqs = []) {
     // A group of controller functions counts each function (2026-11-03 regression run: a controller meeting 4 of 30
     // ranked above one meeting 26 of 30, both being one "unclear" group).
     // "confirm" (chosen when ordering / a document to send: confirmChecks) is not an "unclear": the model is not in doubt.
+    // A function the manual lists as optional (ctlOption) still counts as unclear: whether this unit has it is the open point.
     for (const p of x.parts?.length ? x.parts.map((q) => ({ ...q, unverified: q.unverified || x.unverified })) : [x]) {
-      if (p.status === "not_met") n[g][0]++; else if (p.status !== "confirm" && (p.status !== "met" || p.unverified)) n[g][1]++;
+      if (p.status === "not_met") n[g][0]++; else if ((p.status !== "confirm" || p.ctlOption) && (p.status !== "met" || p.unverified)) n[g][1]++;
     }
   }
   for (const r of reqs) if (!seen.has(norm(r.item)) && !confirmKindOf(r)) n[groupOf(r)][1] += r.parts?.length || 1;
@@ -5315,7 +5424,11 @@ export function rankConfigs(result) {
     // A configuration kept from Tìm NCC (keepFound) is outside that limit: Khoa wants it back, whatever else the run found.
     // So is the make of an engine term the HSMT gives (Đặc thù hãng động cơ, Khoa 18/11/2026: "chỉ gợi ý hãng đó và bỏ
     // trần 2 cấu hình cho hãng đó"; check has already left only that make).
-    const mate = (c.alternator?.fromMaker || offered(c)) && kept.find((o) => !pairOf.has(o) && ![...pairOf.values()].includes(o) && CAT.keyOf(o.engine?.model || "") === ek && (c.alternator?.fromMaker ? offered(o) : !!o.alternator?.fromMaker));
+    // Hai bản bộ điều khiển (Khoa 21/11/2026): the copy with the controller a supplier offers and the configuration it was made
+    // from are one place too, whichever ranks first.
+    const twinOf = (a, b) => !!a.ctlTwin && CAT.keyOf(a.ctlTwin.of || "") === ctlKey(b);
+    const ctlMate = kept.find((o) => !pairOf.has(o) && ![...pairOf.values()].includes(o) && `${CAT.keyOf(o.engine?.model || "")}|${CAT.keyOf(o.alternator?.model || "")}` === k && (twinOf(c, o) || twinOf(o, c)));
+    const mate = ctlMate || ((c.alternator?.fromMaker || offered(c)) && kept.find((o) => !pairOf.has(o) && ![...pairOf.values()].includes(o) && CAT.keyOf(o.engine?.model || "") === ek && (c.alternator?.fromMaker ? offered(o) : !!o.alternator?.fromMaker)));
     if (!mate && mk && mk !== traitMk && !c.keptFind && !c.named && (perMake.get(mk) || 0) >= perMakeConfigs(mk)) return false;
     seen.set(k, [...(seen.get(k) || []), c]);
     perEngine.set(ek, (perEngine.get(ek) || 0) + 1);
@@ -5328,7 +5441,8 @@ export function rankConfigs(result) {
   // The second of a pair right under the first.
   for (const [c, mate] of pairOf) {
     const from = list.findIndex((x) => x.c === c), item = list.splice(from, 1)[0];
-    list.splice(list.findIndex((x) => x.c === mate) + 1, 0, item);
+    // Of the two controller versions, the one the agent checked (the lowest that meets the HSMT) stays above its copy.
+    list.splice(list.findIndex((x) => x.c === mate) + (mate.ctlTwin ? 0 : 1), 0, item);
   }
   result.configs = list.map(({ c }, i) => {
     // Suppliers: one offering both the engine (its checked row names it) and the controller first, then one whose

@@ -1,4 +1,4 @@
-// node --test suppliers/tach-mu-muon-so.test.mjs — ĐO THỬ tach-mu-2 (Khoa 21/11/2026 "thử cách 2"): catalog tách "X" / "X^",
+// node --test suppliers/tach-mu-muon-so.test.mjs — luật đã duyệt tach-mu-2 (Khoa 21/11/2026 chọn M): catalog tách "X" / "X^",
 // luật loại của `candidates` mượn số giữa hai khoá. Mọi ca đọc hồ sơ thật trong suppliers/cn.
 import test from "node:test";
 import assert from "node:assert/strict";
