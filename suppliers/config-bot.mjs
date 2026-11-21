@@ -1047,7 +1047,15 @@ const DISP_W = /dung t[íi]ch|displacement/i, TANK_W = /bình|bồn|thùng|két|
 // The displacement of the engine, by its label (2026-11-12 audit: "Tổng dung tích làm mát ≥ 55 L" was read as the cylinders').
 // A label of a displacement that names neither the cylinders nor the engine is not read.
 const DISP_LABEL = /dung t[íi]ch\s*(?:t[ổo]ng\s*)?(?:c[ủu]a\s*)?(?:c[áa]c\s*)?(?:xi|xy|x)(?:[\s-]?lanh|-)|dung t[íi]ch[^\n]{0,30}?(?:xi|xy)[\s-]?lanh\b|dung t[íi]ch\s+(?:c[ủu]a\s+)?(?:[đd][ộo]ng c[ơo]|bu[ồo]ng [đd][ốo]t)|dung t[íi]ch\s*(?:piston|pit\s?t[ôo]ng)|dung t[íi]ch\s*x\s*l\s*nh|displacement|swept volume/i;
-const tankNear = (cell) => { const m = cell.match(DISP_LABEL) || cell.match(/(?:t[ổo]ng\s+)?dung t[íi]ch/i); return !!m && TANK_W.test(cell.slice(Math.max(0, m.index - 25), m.index + m[0].length + 25)); };
+// A bare "dung tích" in the clause of a tank, however far ("Thùng thép đặt trong vỏ cách âm, dung tích ≥ 55 lít", IB2300245748).
+const tankNear = (cell) => {
+  const m = cell.match(DISP_LABEL) || cell.match(/(?:t[ổo]ng\s+)?dung t[íi]ch/i);
+  if (!m) return false;
+  if (TANK_W.test(cell.slice(Math.max(0, m.index - 25), m.index + m[0].length + 25))) return true;
+  const bare = !/(?:xi|xy)[\s-]?lanh|displacement/i.test(cell.slice(m.index, m.index + m[0].length + 12));
+  // Only the words of a vessel: TANK_W also has "nước", "làm mát", "dầu", which an engine clause names ("làm mát bằng nước, ≥ 3 xi lanh, dung tích ≥ 2,3 lít").
+  return bare && /th[ùu]ng|b[ồo]n\b|b[ìi]nh\b|k[ée]t\b|\btank\b/i.test(cell.slice(Math.max(cell.lastIndexOf(";", m.index), cell.lastIndexOf(":", m.index), 0), m.index));
+};
 // "Tổng dung tích ≥ 19.6 lít" among the lines of the cylinders (bore, stroke, piston, compression ratio) is the engine's.
 const DISP_BARE = /^(?:.*\s)?(?:t[ổo]ng\s+)?dung t[íi]ch\s*(?::|≥|≤|<|>|\d|$)/i, ENGINE_LINES = /(?:xi|xy)[\s-]?lanh|piston|h[àa]nh tr[ìi]nh|đ[ườu]*ng k[ií]nh|t[ỷy] s[ốo] n[ée]n|compression|\bbore\b|\bstroke\b/i;
 // The label of the count of cylinders ("Số xi lanh", "Số xy-lanh", "Số lượng xi lanh", "Số cylinder", "Number of cylinders").
@@ -1192,7 +1200,8 @@ export function engineLists(t) {
       // An OCR slip of "tối thiểu" ("tối thiều 2 xi lanh") is a least too.
       // Nor the engine of goods "for reference" ("Loại động cơ: 4 thì 2 xi lanh" then "* Hàng hóa tương tự để nhà thầu tham
       // khảo", IB2400474549): a least, not the count that rules other engines out.
-      if (!AT_LEAST.test(cell) && !MAXIMUM.test(cell) && !/t[ốo]i\s*thi[ểềeế]u/i.test(cell) && !/tham\s*kh[ảa]o|t[ươ]+ng\s*t[ựu]/i.test(`${prev} ${cell} ${lines[i + 1] || ""}`) && !/(?<![-=])>\s*0?\d/.test(cell.slice(0, c.index + c[0].length))) cylBare.push(Number(c[1]));
+      // "Không ít hơn 1 xilanh", "không dưới 4 xi lanh" (IB2300305914) are a least too.
+      if (!AT_LEAST.test(cell) && !MAXIMUM.test(cell) && !/t[ốo]i\s*thi[ểềeế]u/i.test(cell) && !/kh[ôo]ng\s+(?:[íi]t\s+h[ơo]n|d[ưu][ớo]i)/i.test(cell) &&!/tham\s*kh[ảa]o|t[ươ]+ng\s*t[ựu]/i.test(`${prev} ${cell} ${lines[i + 1] || ""}`) && !/(?<![-=])>\s*0?\d/.test(cell.slice(0, c.index + c[0].length))) cylBare.push(Number(c[1]));
     }
   });
   return { disp, dmax, cyl, cylBare };
@@ -1221,6 +1230,7 @@ const CAP_LABELED = new RegExp(String.raw`(c[ôo]ng su[ấa]t\s+(?:li[êe]n t[�
 // Its first word is capitalised ("Máy phát", "Tổ máy", "Điều chuyển Máy"): "6 máy phát điện 12,5KVA" is a count in a list.
 const CAP_HEAD = /^\s*(?:(?:\d{1,2}(?:\.\d{1,2})*\.?|[IVX]{1,4}\.?|[a-hA-H][.)])\s*)?[-–:|*•+]?\s*((?:[^\d\n]{0,25}?\s)?(?:t[ổo]\s+)?m[áa]y\s+ph[áa]t\b)/i;
 const isHead = (line) => { const m = line.match(CAP_HEAD); return !!m && /^[^\p{L}\d]*\p{Lu}/u.test(m[1]); };
+const LINE_SIZE = new RegExp(String.raw`^\s*(?:(?:ph[ầa]n|m[ụu]c|h[ạa]ng\s+m[ụu]c)\s+[\dIVXA-Z]{1,4}\s*[-–:.]\s*)?(?:t[ổo]\s+)?m[áa]y(?:\s+ph[áa]t(?:\s+đi[ệe]n)?)?(?:\s+\d\s*pha)?\s+(\d{1,3}(?:[.,]\d{3})+|\d{1,4}(?:[.,]\d+)?)(?:\s*\/\s*\d[\d.,]*)?\s*(kVA|kW)\b[^:\n]{0,24}?(?:\s-\s|:)`, "i");
 export function sizeBlocks(t, sizes) {
   const text = withoutOtherEquipment(unflatten(t)), L = text.split("\n"), ments = [], kwSizes = sizes.some((s) => s.cap?.unit === "kW");
   const engineBefore = (at) => ENGINE_W.test(text.slice(Math.max(0, at - 300), at).split("\n").slice(-2).join(" "));
@@ -1267,7 +1277,18 @@ export function sizeBlocks(t, sizes) {
     if (r && r.size === size && size >= 0) r.end = m.line; else runs.push({ size, start: m.line, end: m.line });
   }
   runs.forEach((r, i) => (r.to = i + 1 < runs.length ? runs[i + 1].start : L.length));
-  return { L, runs };
+  // A line that opens with the genset it is about ("Máy 12 kVA/1 pha: Động cơ - xi lanh: …", "Phần 1 - Máy 500 kVA: …", "Mục 2 - Máy
+  // 11 kVA/11 kW: …") belongs to that size wherever it stands: tables sorted by item put the lines of one size inside the block of
+  // another (IB2400114476: "≤ 1,826 lít" of 12 kVA read for 45 kVA). The size its figure is the prime of, else the standby of; one
+  // size only, else -1 (the line stays with its block).
+  const tags = L.map((l) => {
+    const m = l.match(LINE_SIZE);
+    if (!m || (m[2].toLowerCase() === "kw" && !kwSizes)) return -1;
+    const f = { kva: numOf(m[1]), unit: m[2].toLowerCase() }, hit = (kind) => sizes.flatMap((s, j) => (fits({ ...f, kind }, s) ? [j] : []));
+    const p = hit("prime"), list = p.length ? p : hit("standby");
+    return list.length === 1 ? list[0] : -1;
+  });
+  return { L, runs, tags };
 }
 const MIN_KEYS = ["minDisp", "maxDisp", "minCyl", "minPrime", "maxFuel", "maxFuel75", "maxFuel50"];
 // What a text gives: for each key whether it names the figure at all and the one value (null when it differs).
@@ -1281,9 +1302,10 @@ function minsRead(t) {
 // The minimums of the run of `size` among `sizes` (sizesOf) in the HSMT text `t`; `extra` (the requests added on the web)
 // is outside every block. `how` says per key where the figure came from: own, common, none (and why).
 export function minsForSize(t, size, sizes, extra = "") {
-  const { L, runs } = sizeBlocks(t, sizes), j = sizes.findIndex((s) => s === size || (s.cap?.unit === size.cap?.unit && s.cap?.value === size.cap?.value));
+  const { L, runs, tags } = sizeBlocks(t, sizes), j = sizes.findIndex((s) => s === size || (s.cap?.unit === size.cap?.unit && s.cap?.value === size.cap?.value));
   const join = (pick) => L.filter((_, i) => pick(runs.findIndex((r) => i >= r.start && i < r.to), i)).join("\n");
-  const own = join((r) => r >= 0 && runs[r].size === j), foreign = join((r) => r >= 0 && runs[r].size !== j), pre = join((r) => r < 0) + (extra ? `\n${extra}` : "");
+  // A line that names its genset goes with that size (sizeBlocks `tags`), whatever block it stands in.
+  const own = join((r, i) => (tags[i] >= 0 ? tags[i] === j : r >= 0 && runs[r].size === j)), foreign = join((r, i) => (tags[i] >= 0 ? tags[i] !== j : r >= 0 && runs[r].size !== j)), pre = join((r, i) => tags[i] < 0 && r < 0) + (extra ? `\n${extra}` : "");
   const a = minsRead(own), b = minsRead(foreign), c = minsRead(pre), mins = {}, how = {};
   // The engine minimums a tender repeats in the section of each size ("A / B / C Yêu cầu kỹ thuật đối với máy 8.5 / 10 / 12 kVA",
   // each with "Dung tích xilanh ≥ 2.3 lít", "Số xilanh ≥ 4"): a block whose statement of power the code did not take (the alternator's
@@ -1291,7 +1313,11 @@ export function minsForSize(t, size, sizes, extra = "") {
   // before. The size's own blocks give none; when at least two of the other blocks give the one same value and they are at least
   // half of the other blocks, it is the tender's common one ("agreed"). Not for a prime or a fuel limit (a figure of each size).
   // The blocks of one size count once (a figure shown twice for one machine is one statement, not an agreement).
-  const others = runs.map((r, i) => ({ id: r.size >= 0 ? `s${r.size}` : `b${i}`, r })).filter(({ r }) => r.size !== j).map(({ id, r }) => ({ id, m: minsRead(L.slice(r.start, r.to).join("\n")) }));
+  // Each block without the lines that name another genset; the lines that name a size outside its blocks count for that size.
+  const inRun = (r, i) => i >= r.start && i < r.to;
+  const moved = sizes.map((_, k) => (k === j ? "" : L.filter((_l, i) => tags[i] === k && !runs.some((r) => r.size === k && inRun(r, i))).join("\n")));
+  const others = [...runs.map((r, i) => ({ id: r.size >= 0 ? `s${r.size}` : `b${i}`, r })).filter(({ r }) => r.size !== j).map(({ id, r }) => ({ id, m: minsRead(L.filter((_l, i) => inRun(r, i) && (tags[i] < 0 || tags[i] === r.size)).join("\n")) })),
+    ...moved.flatMap((txt, k) => (txt ? [{ id: `s${k}`, m: minsRead(txt) }] : []))];
   const agreed = (k) => {
     const got = others.filter((o) => o.m[k].has), ids = (list) => new Set(list.map((o) => o.id)).size;
     return ids(got) >= 2 && ids(got) * 2 >= ids(others) && got.every((o) => o.m[k].v != null && o.m[k].v === got[0].m[k].v) ? got[0].m[k].v : null;
