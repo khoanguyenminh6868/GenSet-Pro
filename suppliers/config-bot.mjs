@@ -1451,6 +1451,15 @@ export function powerRead(t) {
     const tail = /(?:l[àa]|khi|m[ứu]c|t[ạa]i|[ởo])\s*$/i.test(rest) && le >= 0 ? ft.slice(le + 1).split("\n", 3).find((l) => /^\s*\d{2,3}\s*%\s*\)?\s*$/.test(l)) : null;
     const wrapped = tail ? rest + " " + tail.trim() : rest;
     const after = /\d{2,3}\s*%/.test(own) ? null : afterOne(wrapped);
+    // The load after the figure in the figure's own clause ("≤ 12 l/h tại 40 kW (100% tải); ≤ 9 l/h tại 30 kW (75% tải)",
+    // IB2400062394: the 9 took the 100% of the clause before it). Only when the clause gives no load before the figure, one
+    // load after it, and no other figure in L/h. A clause ends at ";" or at "," / "." before a space.
+    const ownClause = own.slice(Math.max(own.lastIndexOf(";"), own.lastIndexOf(", ")) + 1), clause = rest.split(/;|[,.](?:\s|$)/)[0];
+    const clauseLoads = [...clause.matchAll(/(\d{2,3})\s*%\s*\)?\s*(?:t[ảa]i|ph[ụu]\s*t[ảa]i|c[ôo]ng\s*su[ấa]t|cs\b|load|đ[ịi]nh\s*m[ứu]c)/gi)];
+    // Or the clause is nothing but the load: "≤ 3,2 L/h (75%)", "43.6 lít/giờ ở 75%" (not "(sai số 10%)").
+    const bareLoad = clause.match(/^\s*(?:\(\s*|(?:[ởo]|t[ạa]i|at|@)\s+)(\d{2,3})\s*%\s*\)?\s*$/i);
+    const clauseLoad = clauseLoads.length === 1 ? clauseLoads[0] : clauseLoads.length ? null : bareLoad;
+    const inClause = !after && clauseLoad && !/\d{2,3}\s*%/.test(ownClause) && (clause.match(/\d{2,3}\s*%/g) || []).length === 1 && !/l[íi]t\s*\/|\bl\s*\/\s*h/i.test(clause) ? clauseLoad : null;
     // The load on the line under the figure, after a few words ("Tiêu thụ nhiên liệu mức" / "14 ≤ 3,5 L/h" / "100% tải liên
     // tục", "Tiêu hao nhiên liệu" / "- ≤ 370 L/hr (Lít/giờ)" / "tại 75% công suất": hints-audit 2026-11-17). Only when the
     // figure's line gives no load, and the next line gives no other figure (it would be the next row's own load and limit).
@@ -1464,7 +1473,7 @@ export function powerRead(t) {
     // tục 16h(50% CS)" then "Tiêu hao nhiên liệu « 4,83 L/h (100% CS)", IB2500266050).
     const ownLabel = FUEL_LABEL.test(own) && bl && bl.index < tail60.length - own.length;
     const fromBefore = (bl && below && bl.index < labelAt) || ownLabel ? null : bl;
-    const load = after || under || (below && fromBefore && below[1] !== fromBefore[1] ? ["", "-1"] : below || fromBefore);
+    const load = after || inClause || under || (below && fromBefore && below[1] !== fromBefore[1] ? ["", "-1"] : below || fromBefore);
     fuel.push({ v: m.v ?? numOf(m[1]), load: load ? Number(load[1]) : /đầy tải|full load/i.test(before.slice(-60)) ? 100 : null });
   }
   const one = (list) => (new Set(list).size === 1 ? list[0] : null);
