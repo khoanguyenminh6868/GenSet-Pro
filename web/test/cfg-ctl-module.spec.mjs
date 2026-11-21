@@ -62,7 +62,7 @@ test.describe("có mô-đun và phương án khác", () => {
     });
     await expect(blk).not.toContainText("chưa có trong danh mục", { timeout: 60000 });
     await expect(blk.locator('a[data-catopen="controller"]')).toHaveText("DSE7420 MKII");
-    // Mô-đun mở hồ sơ hãng; không in link nguồn (SHOW_SRC = false).
+    // Mô-đun không có compat thì không có link gốc.
     await expect(page.locator("#dbody .cfgcard").first().locator('.cfgmod a[href*="example.test"]')).toHaveCount(0);
   });
 });
@@ -75,7 +75,7 @@ test.describe("đầu phát và mô-đun theo tài liệu hãng", () => {
   const supplier = { "deep-sea-electronics": { id: "deep-sea-electronics", names: { en: "Deep Sea Electronics" }, status: "partial", role: "controller_maker", sources: [] } };
   test.use({ patch: { colls: { configmatch: { [RICH]: doc }, supplier } } });
 
-  test("có link tới thông số / hồ sơ hãng, không in link PDF", async ({ page }) => {
+  test("có link tới thông số / hồ sơ hãng và link gốc của đầu phát", async ({ page }) => {
     await openApp(page, "#goi/" + RICH);
     await openTab(page, "config");
     const card = page.locator("#dbody .cfgcard").first();
@@ -83,6 +83,6 @@ test.describe("đầu phát và mô-đun theo tài liệu hãng", () => {
     await expect(alt).toHaveText("LSA 49.3 M8");
     await expect(alt).toHaveAttribute("data-catkey", "LSA493M8");
     await expect(card.locator('.cfgmod [data-supopen="deep-sea-electronics"]')).toHaveText("DSE890 MKII");
-    await expect(card.locator('a[href*="example.test"]')).toHaveCount(0);
+    await expect(card.locator('a[href="https://example.test/lsa.pdf"]')).toHaveCount(1);
   });
 });
