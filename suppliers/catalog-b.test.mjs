@@ -10,9 +10,9 @@ const sup = (id, tables) => ({ id, country: "CN", confidence: "high", role: "gen
 const recs = (s, kind, notes = []) => C.fromSupplier(s, notes).filter((r) => !kind || r.kind === kind);
 const names = (r) => (r.makes || []).map((m) => m.name);
 
-test("dấu chú thích cuối mã (^ ×) và gạch ngang dài là cùng model: khoá như mã trơn", () => {
-  for (const [a, b] of [["20M33G4D3/5^", "20M33G4D3/5"], ["8M33D1012E311^", "8M33D1012E311"], ["WP6D180E201^", "WP6D180E201"],
-    ["KTA50-G15×", "KTA50-G15"], ["QSNT-G4×", "QSNT-G4"], ["KTA50–G3", "KTA50-G3"], ["4135D—1", "4135D-1"], ["6CT8.3–GM115", "6CT8.3-GM115"],
+test("dấu chú thích cuối mã (×) và gạch ngang dài là cùng model: khoá như mã trơn; '^' giữ tách (Khoa 21/11/2026)", () => {
+  for (const [a, b] of [["20M33G4D3/5^", "20M33G4D3/5"], ["8M33D1012E311^", "8M33D1012E311"], ["WP6D180E201^", "WP6D180E201"]]) assert.notEqual(C.keyOf(a), C.keyOf(b), a);
+  for (const [a, b] of [["KTA50-G15×", "KTA50-G15"], ["QSNT-G4×", "QSNT-G4"], ["KTA50–G3", "KTA50-G3"], ["4135D—1", "4135D-1"], ["6CT8.3–GM115", "6CT8.3-GM115"],
     ["QSK19-G4*", "QSK19-G4"]]) assert.equal(C.keyOf(a), C.keyOf(b), a);
   // "*" giữa mã (frs-shenyang n106 "4HTAA4.3*G34", hàng xóm ghi "-G33" / "-G35") KHÔNG đổi: là lỗi gõ, sửa là đoán
   assert.notEqual(C.keyOf("4HTAA4.3*G34"), C.keyOf("4HTAA4.3-G34"));

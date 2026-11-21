@@ -15,6 +15,9 @@ const cells = (l) => String(l).split("|").map((c) => c.trim()).filter(Boolean);
 
 // ---------- Stamford / Wintpower ----------
 const ST_LABEL = { "kVA": "kVA", "kW": "kW", "Efficiency (%)": "eff" };
+// The star voltages of a frequency block: "Series Star (V)" (older sheets, anywhere in the line), or "| Star (V)" as the
+// line's first cell (S6L1D / S7L1D sheets 2017–2025; "Parallel Star (V)" is another line and is not this one).
+const ST_VOLTS = /Series Star \(V\)|^\|\s*Star \(V\)/;
 export function stamfordRatings(text) {
   const L = String(text).split("\n"), out = [];
   const first = (L.find((l, i) => i > 1 && l.trim()) || "").trim().split(/\s+/)[0];
@@ -34,7 +37,7 @@ export function stamfordRatings(text) {
     // Rises in the order the header gives them, and the duty written before each (Cont. / Standby; "C | nt. H" in a
     // Wintpower sheet the PDF cut).
     let j = i + 1, head = "";
-    while (j < L.length && !/Series Star/.test(L[j]) && j < i + 12) head += ` ${L[j++]}`;
+    while (j < L.length && !ST_VOLTS.test(L[j]) && j < i + 12) head += ` ${L[j++]}`;
     // Words the PDF cut across cells ("| St | andby", "| C | nt. H") are read with the cell bars and spaces taken out.
     const flatHead = head.replace(/[|\s]/g, "");
     const groups = [...flatHead.matchAll(/(\d{3}\/\d{2})°C/g)].map((m) => {
@@ -45,14 +48,18 @@ export function stamfordRatings(text) {
     const headLines = L.slice(i, j);
     // Each frequency block: its Series Star line, then kVA / kW / Efficiency rows (a row may run on over "| N/A" lines).
     for (let k = j; k < L.length && k < j + 60; k++) {
-      const m = L[k].match(/Series Star \(V\)/);
+      const m = L[k].match(ST_VOLTS);
       if (!m) { if (/^DIMENSIONS/.test(L[k])) break; continue; }
-      const hz = Number((`${L[k]} ${L[k + 1] || ""} ${L[k - 1] || ""}`.match(/\|\s*(50|60)\s*\|/) || [])[1]) || hzHead;
-      const volts = cells(L[k].slice(L[k].indexOf("Series Star (V)") + 15)).map(num);
-      if (!hz || !volts.length || volts.length % groups.length) continue;
-      const per = volts.length / groups.length, rows = {}, used = { volts: L[k] };
-      for (let r = k + 1; r < L.length && r < k + 40; r++) {
-        if (/Series Star|^DIMENSIONS/.test(L[r])) break;
+      // The voltages, and the run-on lines a sheet with an N/A column writes under them (S7L1D-K4: "| Star (V) | 380 | 400 |
+      // 415" then "| N/A | 380 | 400 | 415" ×3 and "N/A": the 440 V column of each group is N/A). Old sheets: one line.
+      let vtoks = cells(L[k].slice(m.index + m[0].length)), vEnd = k;
+      for (let q = k + 1; q < L.length && /^\|?\s*N\/A\b/.test(L[q].trim()); q++) { vtoks = vtoks.concat(cells(L[q]).flatMap((x) => x.split(/\s+/))); vEnd = q; }
+      const volts = vtoks.map((t) => (t === "N/A" ? null : num(t)));
+      const hz = Number((`${L[k]} ${L[vEnd + 1] || ""} ${L[k - 1] || ""}`.match(/\|\s*(50|60)\s*\|/) || [])[1]) || hzHead;
+      if (!hz || !volts.length || volts.length % groups.length || volts.some((v) => v !== null && !(v > 0))) continue;
+      const per = volts.length / groups.length, rows = {}, used = { volts: L.slice(k, vEnd + 1) };
+      for (let r = vEnd + 1; r < L.length && r < k + 40; r++) {
+        if (ST_VOLTS.test(L[r]) || /^DIMENSIONS/.test(L[r])) break;
         const c = cells(L[r]), label = ST_LABEL[c[0]];
         if (!label) continue;
         // The row and its run-on lines (those starting with N/A) up to the next label.
@@ -64,9 +71,9 @@ export function stamfordRatings(text) {
       if (!rows.kVA) continue;
       volts.forEach((v, c) => {
         const g = groups[Math.floor(c / per)], val = (k2) => (rows[k2] && rows[k2][c] !== "N/A" ? num(rows[k2][c]) : null);
-        if (val("kVA") == null) return;
+        if (v == null || val("kVA") == null) return;
         out.push({ part: "alternator", model, hz, duty: g.duty, rise: g.rise, phase: 3, volt: v, kVA: val("kVA"), kW: val("kW"), eff: val("eff"), pf: 0.8,
-          lines: [...headLines, used.volts, ...(used.kVA || []), ...(used.kW || []), ...(used.eff || [])] });
+          lines: [...headLines, ...used.volts, ...(used.kVA || []), ...(used.kW || []), ...(used.eff || [])] });
       });
     }
   });
@@ -233,6 +240,103 @@ function lsBlockOld(L, i) {
   return out;
 }
 
+// ---------- Mecc Alte (tờ dải ECP / ECO, meccalte.com dds/pdf; dau-phat-hang D2, 21/11/2026) ----------
+// "Ratings 50Hz" → "kVA / kW @ Temp. Rise / Ambient °C - 0.8 PF" → "| STANDBY-163/27 | STANDBY-150/40 | H-125/40 |
+// F-105/40 | B-80/40" → bốn dòng cách nối ("| Series Star Y | 380V | 400V …", "| Parallel Star YY | …", "| Series Delta Δ |
+// …", "| Parallel Delta ΔΔ | …"; ô dính nhau "760V 800V 830V 880V" tách theo dấu cách) → mỗi model một dòng "| ECO46 1S4 A |
+// kVA | …" và dòng "| kW | …" ngay sau. Số phẩy thập phân ("5,9"). Ô thiếu là "-" và PDF đẩy phần còn lại xuống các dòng
+// sau ("| ECP28 1VS4 C | kVA | 8,2 | 8,2 | 8,2" rồi "| - | 7,7 | 7,7 | 7,7"): ghép các dòng bắt đầu bằng "-" cho tới đủ ô.
+// Điện áp của mục = dòng SAO (Series Star Y hay Parallel Star YY) có MỌI điện áp trong 346–480 V (ECP: Series Star 380–440;
+// ECO43 / ECO46: Parallel Star 380–440, Series Star 760–880): HSMT hạ thế đọc theo dòng đó; tờ không có dòng như vậy thì bỏ
+// khối. Số ô của dòng kVA / kW phải bằng số điện áp, không thì bỏ model đó (không đoán cột). Chế độ: STANDBY → Standby, còn
+// lại (H-125/40, F-105/40, B-80/40) → "Cont." với `rise` "125/40°C" như tờ Stamford, `cls` = chữ cấp (H / F / B).
+const MA_CONN = /^\|\s*(Series Star Y|Parallel Star YY|Series Delta Δ|Parallel Delta ΔΔ)\s*\|/;
+const maNum = (t) => (t === "-" ? null : Number(t.replace(",", ".")));
+export function meccRatings(text) {
+  const L = String(text).split("\n"), out = [];
+  L.forEach((l, i) => {
+    const hm = l.trim().match(/^Ratings (50|60)\s?Hz$/);
+    if (!hm || !/^kVA \/ kW @ Temp\. Rise/.test((L[i + 1] || "").trim())) return;
+    const gl = L[i + 2] || "";
+    const groups = [...gl.matchAll(/\b(STANDBY|[HFB])-(\d{2,3})\/(\d{2})\b/g)].map((m) => ({ duty: m[1] === "STANDBY" ? "Standby" : "Cont.", rise: `${m[2]}/${m[3]}°C`, cls: m[1] === "STANDBY" ? null : m[1] }));
+    if (groups.length < 2 || gl.replace(/\b(STANDBY|[HFB])-\d{2,3}\/\d{2}\b/g, "").replace(/[|\s]/g, "")) return;
+    const conn = {}, connLines = [];
+    let k = i + 3;
+    for (; k < L.length && MA_CONN.test(L[k]); k++) {
+      const name = L[k].match(MA_CONN)[1], toks = cells(L[k]).slice(1).flatMap((x) => x.split(/\s+/));
+      if (!toks.every((t) => /^\d{2,4}V$/.test(t))) return;
+      conn[name] = toks.map((t) => Number(t.slice(0, -1)));
+      connLines.push(L[k]);
+    }
+    const star = ["Series Star Y", "Parallel Star YY"].find((s) => conn[s] && conn[s].every((v) => v >= 346 && v <= 480));
+    if (!star) return;
+    const volts = conn[star];
+    if (volts.length % groups.length) return;
+    const per = volts.length / groups.length, head = [l, L[i + 1], gl, ...connLines];
+    // Ô của một dòng nhãn và các dòng "-" nối tiếp.
+    const take = (r, first) => {
+      let toks = first, lines = [L[r]], q = r + 1;
+      for (; q < L.length && toks.length < volts.length && /^\|\s*-\s*(\||$)|^-$/.test(L[q].trim()); q++) { toks = toks.concat(L[q].trim() === "-" ? ["-"] : cells(L[q]).flatMap((x) => x.split(/\s+/))); lines.push(L[q]); }
+      return { toks, lines, next: q };
+    };
+    for (let r = k; r < L.length; r++) {
+      if (/^Ratings (50|60)\s?Hz$/.test(L[r].trim()) || /^Reactance/.test(L[r].trim())) break;
+      const c = cells(L[r]);
+      if (c.length < 3 || c[1] !== "kVA" || !/^EC[OP]\d+\b/.test(c[0])) continue;
+      const kva = take(r, c.slice(2).flatMap((x) => x.split(/\s+/)));
+      const kc = cells(L[kva.next] || "");
+      const kw = kc[0] === "kW" ? take(kva.next, kc.slice(1).flatMap((x) => x.split(/\s+/))) : null;
+      const okToks = (t) => t.length === volts.length && t.every((x) => x === "-" || /^\d+(,\d+)?$/.test(x));
+      if (!okToks(kva.toks)) continue;
+      const kwOk = kw && okToks(kw.toks);
+      volts.forEach((v, col) => {
+        const g = groups[Math.floor(col / per)], a = maNum(kva.toks[col]);
+        if (a == null) return;
+        out.push({ part: "alternator", model: c[0], hz: Number(hm[1]), duty: g.duty, rise: g.rise, cls: g.cls, phase: 3, volt: v, conn: star, kVA: a,
+          kW: kwOk ? maNum(kw.toks[col]) : null, eff: null, pf: 0.8, lines: [...head, ...kva.lines, ...(kwOk ? kw.lines : [])] });
+      });
+    }
+  });
+  return out;
+}
+
+// Hệ số suy giảm của tờ Mecc Alte ("Derating coefficients": hàng = độ cao "≤ 1000", "> 1000 ≤ 1500" …, cột = nhiệt độ môi
+// trường 25 / 40 / 45 … °C). Đọc nguyên bảng, mỗi ô kèm dòng tiêu đề + dòng của nó; số ô phải bằng số cột, không thì bỏ hàng.
+export function meccDerate(text) {
+  const L = String(text).split("\n");
+  const i = L.findIndex((l) => /^Derating coefficients\s*$/.test(l.trim()));
+  if (i < 0) return null;
+  const hi = L.slice(i + 1, i + 6).findIndex((l) => /Altitude \(meters\)/.test(l));
+  if (hi < 0) return null;
+  const headL = L[i + 1 + hi], temps = (headL.split("Altitude (meters)")[1].match(/\d+/g) || []).map(Number);
+  if (temps.length < 3) return null;
+  const rows = [];
+  for (let r = i + 2 + hi; r < L.length && r < i + 30; r++) {
+    const t = L[r].replace(/\|/g, " ").trim();
+    const m = t.match(/^(?:>\s*(\d+)\s*)?≤\s*(\d+)\s+((?:\d(?:\.\d+)?\s*)+)$/);
+    if (!m) { if (rows.length && t) break; continue; }
+    const f = m[3].trim().split(/\s+/).map(Number);
+    if (f.length !== temps.length) continue;
+    rows.push({ altFrom: m[1] ? Number(m[1]) : 0, altTo: Number(m[2]), factors: f, line: L[r] });
+  }
+  return rows.length ? { temps, rows, head: [L[i], headL] } : null;
+}
+
+// Thuộc tính chung của tờ dải Mecc Alte (mọi model của tờ): cách điện ("General characteristics" → "| Insulation class | H")
+// và ngắn mạch duy trì ("… capable of delivering a sustained short-circuit current of >300% for" + "up to 20 seconds.").
+// PMG là tuỳ chọn theo dải ("optionally available factory-fitted on ECP28, …") nên KHÔNG đọc kích từ: chưa rõ.
+export function meccSheetAttrs(text) {
+  const L = String(text).split("\n"), out = [];
+  const g = L.findIndex((l) => /^General characteristics\s*$/.test(l.trim()));
+  if (g < 0 || !/^EC[OP]\d+\b/.test((L[g - 1] || "").trim())) return out;
+  const ins = L.slice(g + 1, g + 20).find((l) => /^\|\s*Insulation class\s*\|\s*[BFH]\s*$/i.test(l.trim()));
+  if (ins) out.push({ key: "insulation", value: ins.trim().slice(-1).toUpperCase(), lines: [ins] });
+  const i = L.findIndex((l) => /capable of delivering a sustained short-circuit current of\s*>\s*300%\s*for\s*$/i.test(l.trim()));
+  const m = i >= 0 && (L[i + 1] || "").trim().match(/^up to (\d+) seconds\b/i);
+  if (m) out.push({ key: "sc300", value: { pct: 300, s: Number(m[1]), all: true }, lines: [L[i], L[i + 1]] });
+  return out;
+}
+
 // ---------- Cummins engine specification sheet ----------
 export function cumminsRatings(text) {
   const L = String(text).split("\n"), out = [];
@@ -348,4 +452,4 @@ export function lsSheetAttrs(text) {
   return out;
 }
 
-export const ratingsOf = (text) =>[...stamfordRatings(text), ...stamfordBookRatings(text), ...lsRatings(text), ...cumminsRatings(text)];
+export const ratingsOf = (text) =>[...stamfordRatings(text), ...stamfordBookRatings(text), ...lsRatings(text), ...cumminsRatings(text), ...meccRatings(text)];
