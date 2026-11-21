@@ -1495,6 +1495,16 @@ export const named = (hints, model) => {
 };
 const CONF = { high: 30, medium: 15 };
 // A supplier offering one engine with one alternator is one choice, however many gensets, pages or tables name it.
+// Plain code-unit order (no locale), so the tie order of `candidates` is the same on every machine.
+const cmpStr = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
+// FNV-1a, 32 bit, over the UTF-16 code units: a pure function of the string (no Math.random, no Node version or machine
+// dependence). Equal scores are told apart by the hash of the row's identity, so the order is fixed but follows neither the
+// walk of the catalog nor the alphabet (an alphabetical tie order favoured the suppliers named first: acepow-fuan 1.538 → 1.848 places).
+const fnv1a = (s) => { let h = 0x811c9dc5; for (let i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 0x01000193); } return h >>> 0; };
+// Doosan and Hyundai are one make for the group / ceiling of `candidates` (SAME_MAKER of catalog.js keeps both names on an
+// engine): the same engine is "Hyundai / Doosan" or "Doosan / Hyundai" by what the sources say, and the first name used to
+// put it in either group (P126TI, P086TII). Only the group label; `e.make` is not changed. Daewoo is folded in too (Khoa 21/11/2026 "có").
+const makeGroup = (m) => (m === "Hyundai" || m === "Daewoo" ? "Doosan" : m);
 const choiceKey = (r) => `${r.u.supplierId}\n${r.e.key}\n${r.a?.key || squashOf(r.u.other || "")}`;
 // Rows per engine (more for the engine the HSMT names) and per supplier, so other engines and suppliers get a place too.
 // Alternators a supplier sells under its OWN label (Khoa 20/11/2026, #969 "B"): an explicit list of supplier + the code of
@@ -1839,7 +1849,25 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(Object.keys(made).length ? { made } : {}), ...(NORM ? { normSkip } : {}) });
     }
   }
-  rows.sort((x, y) => y.score - x.score);
+  // The prime output (standby ÷ 1.1 when only that is given), in steps of 5% above the HSMT's size; a row below the
+  // size, or that gives neither, last.
+  const gap = (r) => {
+    const p = r.u.power || {}, pr = p.prime?.[cap?.unit] ?? (p.standby?.[cap?.unit] != null ? p.standby[cap.unit] / 1.1 : null);
+    return !cap ? 0 : pr == null ? 50 : pr < cap.value * 0.995 ? 99 : Math.round(20 * (pr / cap.value - 1));
+  };
+  // Rows of equal score keep a fixed order (thu-tu-hang, 2026-11-21): Array.sort is stable, so a tie used to stay in the
+  // order the catalog was walked, and any change in the catalog's engine / row order (a merged engine key, a new supplier)
+  // swapped two rows of the same score at the end of the top 30 (IB2400371783#0: stone-power NTA855G2 ↔ rise-power
+  // P126TIII, both 269). Tie order: nearest the HSMT's size (gap), then a hash of the row's identity (supplier, engine key,
+  // alternator): the same set of rows gives the same order whatever the order they were found in, and no supplier is
+  // favoured by its name (Khoa 21/11/2026: the alphabetical order of the first measure was biased). The score is untouched.
+  // Every sort of `candidates` that can meet a tie uses this order: `rows`, the Đồng bộ `order`, the make lists of MAKE_ROWS
+  // (the makes by their first row, the rows in a make), the `keep` replacement and the final `out`; `pick` and Luật B walk
+  // lists already in this order (filters, no re-sort).
+  // Hash of the row's identity (choiceKey), once per row; the last two keys only break a hash collision.
+  const hashes = new WeakMap(), hashOf = (r) => { let h = hashes.get(r); if (h === undefined) hashes.set(r, h = fnv1a(choiceKey(r))); return h; };
+  const rowOrder = (x, y) => y.score - x.score || gap(x) - gap(y) || hashOf(x) - hashOf(y) || cmpStr(choiceKey(x), choiceKey(y)) || cmpStr(String(x.u.other || ""), String(y.u.other || ""));
+  rows.sort(rowOrder);
   // Chọn dòng hai lần khi luật B bật (Khoa 20/11/2026, đo cloud: B đẩy cả dòng hạng 1 cũ khỏi 30 dòng): `choose(false)` là
   // xếp hạng cũ; `choose(true, 5 dòng đầu của nó)` giữ 5 dòng đó ở hạng 1–5 (vẫn tính vào trần mỗi động cơ / NCC / hãng),
   // luật B chỉ chia các chỗ từ hạng 6. Thân `choose` không thụt lề thêm để diff gọn.
@@ -1850,7 +1878,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
   // for "?". `exempt` rows (the places held for the genset makers of Đồng bộ) do not count and are never stopped;
   // `free` ignores the ceiling (the last fill).
   const capOn = makeCap > 0 && !hints.engineMakes.length && !rows.some((r) => r.named), perMake = new Map();
-  const makeOf = (r) => (r.e.make || "?").split(" / ")[0];
+  const makeOf = (r) => makeGroup((r.e.make || "?").split(" / ")[0]);
   const open = (r, exempt, free) => !seen.has(choiceKey(r)) && (perEngine.get(r.e.key) || 0) < (r.named ? PER_NAMED_ENGINE : PER_ENGINE) && (perSupplier.get(r.u.supplierId) || 0) < PER_SUPPLIER
     && !(capOn && !exempt && !free && (perMake.get(makeOf(r)) || 0) >= makeCap);
   const take = (r, exempt) => { if (!exempt) add(perMake, makeOf(r)); seen.add(choiceKey(r)); add(perEngine, r.e.key); add(perSupplier, r.u.supplierId); engSups.set(r.e.key, (engSups.get(r.e.key) || new Set()).add(r.u.supplierId)); out.push(r); };
@@ -1876,10 +1904,6 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
   // The prime output (standby ÷ 1.1 when only that is given), in steps of 5% above the HSMT's size; a row below the
   // size, or that gives neither, last.
   for (const r of pinned) take(r, false);
-  const gap = (r) => {
-    const p = r.u.power || {}, pr = p.prime?.[cap?.unit] ?? (p.standby?.[cap?.unit] != null ? p.standby[cap.unit] / 1.1 : null);
-    return !cap ? 0 : pr == null ? 50 : pr < cap.value * 0.995 ? 99 : Math.round(20 * (pr / cap.value - 1));
-  };
   // Đồng bộ thương hiệu asked (Khoa, 2026-11-12, IB2600594596): the rows of genset makers (gensetMakerOf, as syncCheck
   // reads them) keep SYNC_ROWS places, SYNC_PER_SUPPLIER engines a maker, the size nearest the HSMT's first. Their rows
   // name no alternator or controller datasheet and scored below every assembler's (Rehlko D440 / P158LE 165, the 30th
@@ -1889,7 +1913,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
   // One row of each maker first, then a second engine of each: the first measure gave all 6 places to three makers in
   // China with two rows each (Jet-Power, Bobig, Wintpower) and none to Rehlko, FG Wilson or Cummins at 300 kVA.
   if (sync) {
-    const order = (x, y) => gap(x) - gap(y) || y.score - x.score, bySup = new Map();
+    const order = (x, y) => gap(x) - gap(y) || rowOrder(x, y), bySup = new Map();
     for (const r of rows.filter((r) => r.maker && r.score > 0).sort(order)) {
       const list = bySup.get(r.u.supplierId) || [];
       if (list.length < SYNC_PER_SUPPLIER && !list.some((x) => x.e.key === r.e.key)) bySup.set(r.u.supplierId, [...list, r]);
@@ -1911,13 +1935,13 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
   if (patches && GROUP_ORIGIN.has(origin) && !hints.engineMakes.length && !rows.some((r) => r.named)) {
     const byMake = new Map();
     for (const r of rows) {
-      const m = (r.e.make || "").split(" / ")[0];
+      const m = makeGroup((r.e.make || "").split(" / ")[0]);
       if (m && r.score > 0) byMake.set(m, [...(byMake.get(m) || []), r]);
     }
     // Within a make, the size nearest the HSMT's first (gap, in steps of 5%), then the score: Baudouin's 12M26G900/5
     // (815 kVA) had more figures than 6M31G825/5 (750 kVA) for 700 kVA.
-    for (const list of [...byMake.values()].sort((a, b) => b[0].score - a[0].score)) {
-      const engines = new Set(), sorted = [...list].sort((x, y) => gap(x) - gap(y) || y.score - x.score);
+    for (const list of [...byMake.values()].sort((a, b) => rowOrder(a[0], b[0]))) {
+      const engines = new Set(), sorted = [...list].sort((x, y) => gap(x) - gap(y) || rowOrder(x, y));
       // Luật B: mọi dòng của hãng, model khác nhau trước rồi tới dòng thứ hai của cùng model (hãng ít model hơn MAKE_ROWS
       // nay vẫn đủ chỗ); tắt B: mỗi động cơ một dòng như trước.
       if (ruleB) pick(sorted, Math.min(max, out.length + MAKE_ROWS), { models: true });
@@ -1936,13 +1960,13 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
     const pairOf = (r) => `${r.u.supplierId}\n${r.e.key}`, kept = (r) => keep.has(pairOf(r)), have = new Set(out.map(pairOf));
     for (const r of rows.filter(kept)) {
       if (have.has(pairOf(r))) continue;
-      const gone = out.filter((x) => !held.has(x) && !kept(x)).sort((x, y) => x.score - y.score)[0];
+      const gone = out.filter((x) => !held.has(x) && !kept(x)).sort((x, y) => rowOrder(y, x))[0];
       if (!gone) break;
       out.splice(out.indexOf(gone), 1, r); have.add(pairOf(r));
     }
   }
   const pin = new Map(pinned.map((r, i) => [r, i]));
-  out.sort((x, y) => (pin.get(x) ?? pinTop) - (pin.get(y) ?? pinTop) || y.score - x.score);
+  out.sort((x, y) => (pin.get(x) ?? pinTop) - (pin.get(y) ?? pinTop) || rowOrder(x, y));
   return out;
   };
   const old = choose(false);
