@@ -77,7 +77,11 @@ https://www.deepseaelectronics.com/genset/manual-auto-start-control-modules/dse7
 
 Thứ tự đề xuất: E → A → C → D → B; F, G sau khi Khoa trả lời. Làm SAU khi #1022 xong vì cùng tệp.
 
-## Câu cần Khoa quyết
+## Khoa đã trả lời (21/11/2026, điều phối chuyển lời): "1. có 2. có 3. cho đạt theo thương hiệu"
+- Q1 CÓ, ghi rõ nguồn là động cơ / đầu phát. Q2 CÓ, bắt đầu DSE7320 MKII, chức năng tuỳ chọn → "cần xác nhận" (nhóm F: điều phối giao phiên riêng). Q3 ĐẠT THEO THƯƠNG HIỆU + ghi chú "nơi sản xuất cần CO"; chỉ khi hãng nguồn ghi (`keptMakes`) thuộc nhóm HSMT nêu, chưa rõ hãng vẫn chưa rõ; HSMT đòi NƠI SẢN XUẤT vẫn cần CO. Nhóm G phải soát tay, liệt kê hết mọi check xuất xứ đổi.
+- Thứ tự (điều phối): xong bo-doc-tieu-hao-3 trước; khi #1022 merge thì E → A → C → D → G → B, mỗi nhóm hoặc cụm nhỏ một PR draft, không merge.
+
+## Câu đã hỏi Khoa
 - **Q1.** Tổ máy dùng động cơ tờ hãng ghi Diesel, đầu phát ghi 50 Hz: có chấm "đạt" nhiên liệu và tần số của tổ máy không? Đề xuất: **có**, ghi rõ nguồn là động cơ / đầu phát.
 - **Q2.** Có lưu operator manual của BĐK vào nguồn không (bắt đầu từ DSE7320 MKII)? Đề xuất: **có**, chỉ chấm chức năng manual ghi là có sẵn, chức năng tuỳ chọn để "cần xác nhận".
 - **Q3.** HSMT đòi "Nhà sản xuất / nhãn hiệu thuộc G7, EU", động cơ Baudouin (thương hiệu Pháp; chú thích trong `catalog.js` ghi Weichai sản xuất Baudouin theo licence, chưa kiểm nguồn ngoài): chấm thế nào? Đề xuất: **"cần xác nhận"**, ghi "thương hiệu Pháp, nơi sản xuất cần CO"; không chấm đạt thẳng.
