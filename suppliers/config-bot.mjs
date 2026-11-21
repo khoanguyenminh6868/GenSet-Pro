@@ -4427,6 +4427,9 @@ export function clarifyOf(result, hsmtText, combo, problems = [], { scan = true 
   for (const x of result.clarify || []) {
     if (!x || x.by === "code") continue;
     if (!x.item || !inH(x.quoteA) || (x.quoteB && !inH(x.quoteB))) { problems.push(`Câu hỏi làm rõ HSMT "${String(x.item || "").slice(0, 60)}": câu trích không có trong HSMT, đã bỏ`); continue; }
+    // Trùng mục của code (IB2600603983 "Ổn định điện áp"): cùng tên mục VÀ chung ít nhất một câu trích thì giữ mục của code.
+    const qs = [x.quoteA, x.quoteB].filter(Boolean).map(norm);
+    if (out.some((y) => y.by === "code" && norm(y.item) === norm(x.item) && [y.quoteA, y.quoteB].some((q) => q && qs.includes(norm(q))))) continue;
     push({ item: String(x.item), quoteA: x.quoteA, ...(x.quoteB ? { quoteB: x.quoteB } : {}), why: String(x.why || ""), by: "agent" });
   }
   if (out.length) result.clarify = out; else delete result.clarify;
