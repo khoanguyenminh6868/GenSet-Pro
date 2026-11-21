@@ -295,9 +295,9 @@
     if (!f) return miss(r, "value");
     if (f.amb) return miss(r, "number");
     // One displacement in two units (S9 cc-129, 22/11/2026): "23.7 CU. IN. (390 CC)" (gillette): the whole cell is a figure in in³
-    // and a figure in cc, one in brackets. Read only when the two are the SAME volume (`sameVolume`): then the cc figure is read
-    // (an integer written in cc, l_from_cc as S8-1) and r.conv.same keeps the in³ figure. Two volumes that do not meet within
-    // rounding stay "ambiguous", not compared.
+    // and a figure in cc, one in brackets. Read only when the cc figure is the in³ figure converted and rounded (`sameVolume`): then
+    // the cc figure is read (l_from_cc as S8-1) and r.conv.same keeps the in³ figure. Otherwise nothing changes: unit, options and
+    // "ambiguous" are as before this rule (the unit is set to cc only after the check passed).
     const two = f.list && f.list.length === 2 ? sameVolume(V) : null;
     if (two) r.unit = "cc";
     else if (f.list || f.range) { r.options = f.list || f.range; return miss(r, "ambiguous"); }
@@ -318,8 +318,10 @@
     return r;
   }
   // "a CU. IN. (b CC)" / "b CC (a CU. IN.)", the whole cell (after NFKC: "in³" / "cm³" are "in3" / "cm3") → { in3: a, cc: b } when
-  // a in³ (l_from_cuin, × 1000) and b cc meet within half a unit of each one's last written digit; an integer's trailing zeros are
-  // not written digits ("390" is 385–395; 23.7 in³ is 387.6–389.2 cc). Else null.
+  // b is a in cc rounded: a in³ (l_from_cuin, × 1000, the figure as written, no widening of its own) lies within half a unit of b's
+  // last digit, and ONE trailing zero of an integer b of 3 digits or more counts as rounding to tens ("390" = 385–395, "1000" =
+  // 995–1005, "20" = 19.5–20.5). b must be an integer ≥ 20 (S8-1: else not a cc figure). 23.7 in³ = 388.4 cc → "390" yes; 30 in³ =
+  // 491.6 cc → "1000" no; 1 in³ = 16.4 cc → "20" no, "16" no (< 20). Else null: the cell stays "ambiguous" with its two options.
   const IN3_U = String.raw`(?:cu\.?\s*in\.?|in3|cubic\s*inch(?:es)?)`, CC_U = String.raw`(?:cc|ccm|cm3|ml)`, FIG = String.raw`(\d+(?:\.\d+)?)`;
   const IN3_CC = new RegExp(String.raw`^${FIG}\s*${IN3_U}\s*[(（]\s*${FIG}\s*${CC_U}\s*[)）]$`, "i");
   const CC_IN3 = new RegExp(String.raw`^${FIG}\s*${CC_U}\s*[(（]\s*${FIG}\s*${IN3_U}\s*[)）]$`, "i");
@@ -327,10 +329,11 @@
     const m1 = v.match(IN3_CC), m2 = m1 ? null : v.match(CC_IN3);
     if ((!m1 && !m2) || !conv()) return null;
     const [a, b] = m1 ? [m1[1], m1[2]] : [m2[2], m2[1]];
-    const half = (t) => (t.includes(".") ? 0.5 * 10 ** -t.split(".")[1].length : 0.5 * 10 ** (t.length - t.replace(/0+$/, "").length));
-    const cc = (x) => { const c = conv().compute({ formula: "l_from_cuin", inputs: [{ name: "V_in3", value: x }] }); return c.error ? NaN : c.value * 1000; };
-    const lo = cc(+a - half(a)), hi = cc(+a + half(a));
-    return hi >= +b - half(b) && lo <= +b + half(b) ? { in3: +a, cc: +b } : null;
+    if (b.includes(".") || +b < 20) return null;
+    const half = b.length >= 3 && b.endsWith("0") ? 5 : 0.5;
+    const c = conv().compute({ formula: "l_from_cuin", inputs: [{ name: "V_in3", value: +a }] });
+    if (c.error) return null;
+    return Math.abs(c.value * 1000 - +b) <= half ? { in3: +a, cc: +b } : null;
   }
 
   function bore(spec, ctx, r) {

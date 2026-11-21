@@ -280,17 +280,24 @@ test("cc → L (S8-1): l_from_cc chia 1000, đúng chữ số; mọi cách viế
   assert.equal(sc?.bad, false);
 });
 
-test("ô một dung tích hai đơn vị (S9 cc-129): in³ và cc cùng một thể tích trong sai số làm tròn → đọc số cc; khác thì ambiguous", () => {
-  // gillette n101 / n103 / n105 (giá trị lấy sau "1 CYLINDER, " của ô "ENGINE DISPLACEMENT"): 23.7 in³ = 388.4 cc (387.6–389.2), "390" = 385–395.
+test("ô một dung tích hai đơn vị (S9 cc-129): số cc là số in³ đổi ra rồi làm tròn → đọc số cc; khác thì ambiguous y như trước", () => {
+  // gillette n101 / n103 / n105 (giá trị lấy sau "1 CYLINDER, " của ô "ENGINE DISPLACEMENT"): 23.7 in³ = 388.4 cc trong "390" = 385–395
+  // (số nguyên ≥ 3 chữ số, MỘT số 0 cuối là làm tròn hàng chục); 41.97 in³ = 687.8 cc trong 687.5–688.5; 26.9 in³ = 440.8 cc trong 435–445.
   for (const [value, cc, in3] of [["23.7 CU. IN. (390 CC)", 390, 23.7], ["41.97 CU. IN. (688 CC)", 688, 41.97], ["26.9 CU. IN. (440 CC)", 440, 26.9], ["390 cc (23.7 cu. in.)", 390, 23.7], ["23.7 in³ (388 cm³)", 388, 23.7]]) {
     const r = SN.normalize({ key: "disp", label: "ENGINE DISPLACEMENT", value });
     assert.equal(r.unit, "L", value); assert.equal(r.num, cc / 1000, value); assert.deepEqual(r.missing, [], value);
     assert.deepEqual(r.conv, { formula: "l_from_cc", from: { num: cc, unit: "cc" }, same: { num: in3, unit: "in³" } }, value);
   }
-  // Hai thể tích khác nhau, số cc ghi chữ số thập phân "390.0" (389.95–390.05, ngoài 387.6–389.2), "/" thay ngoặc, ô có thêm chữ: không đọc.
-  for (const value of ["23.7 CU. IN. (440 CC)", "23.7 CU. IN. (390.0 CC)", "41.97 CU. IN. (683 CC)", "23.7 CU. IN. / 390 CC", "1 CYLINDER, 23.7 CU. IN. (390 CC)"]) {
+  // Hai thể tích KHÁC nhau (điều phối 22/11/2026: luật đầu nới cả số 0 cuối của số in³ / số cc nhiều chữ số 0 và nhận nhầm các ô này),
+  // số cc thập phân "390.0", số cc < 20, "/" thay ngoặc, ô có thêm chữ: không đọc; đơn vị, options, "ambiguous" y như trước luật.
+  for (const value of ["23.7 CU. IN. (440 CC)", "23.7 CU. IN. (390.0 CC)", "41.97 CU. IN. (683 CC)", "23.7 CU. IN. / 390 CC", "1 CYLINDER, 23.7 CU. IN. (390 CC)",
+    "30 CU. IN. (1000 CC)", "40 CU. IN. (700 CC)", "45 CU. IN. (700 CC)", "46 CU. IN. (700 CC)", "92 CU. IN. (1000 CC)", "20 CU. IN. (400 CC)", "30 CU. IN. (400 CC)",
+    "100 CU. IN. (2000 CC)", "200 CU. IN. (2000 CC)", "275 CU. IN. (5000 CC)", "330 CU. IN. (5000 CC)", "600 CU. IN. (10000 CC)", "900 CU. IN. (10000 CC)",
+    "1000 CU. IN. (10000 CC)", "1 CU. IN. (20 CC)", "1 CU. IN. (16 CC)"]) {
     const r = SN.normalize({ key: "disp", label: "ENGINE DISPLACEMENT", value });
-    assert.notEqual(r.unit, "L", value); assert.equal(r.num, undefined, value); assert.ok(r.missing.includes("ambiguous"), value);
+    assert.equal(r.unit, "in³", value); assert.equal(r.num, undefined, value); assert.equal(r.conv, undefined, value);
+    assert.ok(r.missing.includes("ambiguous"), value);
+    assert.deepEqual(r.options, value.match(/\d+(?:\.\d+)?/g).map(Number), value);
   }
 });
 
