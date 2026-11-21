@@ -127,6 +127,29 @@ Khoa chốt (qua điều phối): IB2300296794 không hạ, giữ 20 kVA; các c
 - So với `2b199862`: specs 18 / 1.880, bidhist 63 / 1.093 (`doi-6ca.tsv`). Theo trường: minPrime 43, minCyl 24, minDisp 21, maxFuel75 4, maxDisp 2. So với main: specs 20, bidhist 192 (`doi-nguong-cuoi.tsv`).
 - Test: 1395 + 148 + 11 pass. Top 30 chưa đo.
 
+## Đối chiếu đo cloud bản cuối (`b0f0dc2f` ↔ `ae205b52`, kết quả `do-gop-nguong-ket-qua` 165416cc; 21/11/2026)
+
+**Kết luận: 0 dòng oan ở top 30, nhưng còn 2 ngưỡng sai** (cùng kiểu mất ngưỡng, chưa sửa mã, chờ điều phối). Theo tiêu chí "0 oan + 0 ngưỡng sai" thì chưa đạt.
+
+- **Tái lập khớp cloud 192 / 192 lượt đổi ngưỡng** (cùng `all`, cùng `top`). 163 đổi tập; 29 không đổi (3 do `plausible` bỏ ngưỡng, 26 không dòng nào đổi trạng thái).
+- **27.338 dòng ra, 4.581 dòng vào: 100% quy về một ngưỡng đã đổi của đúng lượt** (0 dòng không giải thích). Danh sách: `giai-thich-163-luot.tsv`.
+- **193 dòng hạng 1–5 gốc ra khỏi top 30:** 176 bị loại, 17 bị đẩy, 0 oan (`giai-thich-top5-cuoi.txt`). Phần "đúng" so ngưỡng HSMT với số catalog đang dùng; không mở lại trang nguồn NCC của từng dòng.
+- **6 ca sai lần trước:** 5 ca hết. IB2300046353#1 mới hết một nửa: dung tích đã đúng, số xi lanh vẫn mất (ca 1 dưới đây). IB2300296794#0 giữ 20 kVA.
+- **Số của mọi ngưỡng đổi (374 trường):** 360 thấy nguyên văn trong dòng của đúng cỡ, 14 đã đọc tay (dung sai, "06 xi-lanh", "674 cc", dạng số khác): đúng.
+
+### 2 ngưỡng còn sai
+
+| # | Lượt | HSMT ghi | `b0f0dc2f` | main | Hệ quả so với ngưỡng đúng |
+|---|---|---|---|---|---|
+| 1 | IB2300046353#1 (20 kVA) | "4 xilanh thẳng hàng" (cùng ô có "công suất tối đa") | không có | 4 | 59 dòng lọt vào `all`; top 30 không đổi |
+| 2 | IB2300349583#0 (18 kVA) | "Tối thiểu (bắt buộc): ≤ 7,5 lít/giờ ở 100%, ≤ 5,5 lít/giờ ở 75%. Nâng cao (lựa chọn): ≤ 4,5 lít/giờ ở 75%" | 75%: không có | 75%: 4,5 (sai, lấy mức lựa chọn) | Đặt 5,5: không dòng nào đổi |
+
+Ca 1 là lỗi của bản sửa "tối đa": nhánh `MAXIMUM` chỉ đọc "≥ N xi lanh", bỏ qua số trơ. Ca 2 main cũng sai, bản này bỏ số sai nhưng chưa đọc được số đúng.
+
+Cần biết (không tính là sai):
+- IB2500385135#0: HSMT ghi "số xilanh ghi là 34 (nguyên văn)". Nhánh không đặt ngưỡng; main lấy 4 của cỡ khác.
+- IB2200020538#0: tiêu hao chỉ ghi theo mức điểm (4 điểm / 50 điểm). Nhánh không đặt ngưỡng; main đọc nhầm 110 thành mức 50%.
+
 ## Việc tiếp
-1. Điều phối giao đo cloud top 30 cho SHA cuối.
+1. Điều phối quyết 2 ca trên (sửa trong #1036 rồi đo lại, hay merge trước).
 2. Sau khi #1036 merge: gộp main vào #998, đo lại #998 toàn bộ.
