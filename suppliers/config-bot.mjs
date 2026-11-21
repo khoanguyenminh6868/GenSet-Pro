@@ -1495,6 +1495,10 @@ const CONF = { high: 30, medium: 15 };
 // A supplier offering one engine with one alternator is one choice, however many gensets, pages or tables name it.
 // Plain code-unit order (no locale), so the tie order of `candidates` is the same on every machine.
 const cmpStr = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
+// Doosan and Hyundai are one make for the group / ceiling of `candidates` (SAME_MAKER of catalog.js keeps both names on an
+// engine): the same engine is "Hyundai / Doosan" or "Doosan / Hyundai" by what the sources say, and the first name used to
+// put it in either group (P126TI, P086TII). Only the group label; `e.make` is not changed. Daewoo is not folded in (not asked).
+const makeGroup = (m) => (m === "Hyundai" ? "Doosan" : m);
 const choiceKey = (r) => `${r.u.supplierId}\n${r.e.key}\n${r.a?.key || squashOf(r.u.other || "")}`;
 // Rows per engine (more for the engine the HSMT names) and per supplier, so other engines and suppliers get a place too.
 // Alternators a supplier sells under its OWN label (Khoa 20/11/2026, #969 "B"): an explicit list of supplier + the code of
@@ -1814,7 +1818,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
   // for "?". `exempt` rows (the places held for the genset makers of Đồng bộ) do not count and are never stopped;
   // `free` ignores the ceiling (the last fill).
   const capOn = makeCap > 0 && !hints.engineMakes.length && !rows.some((r) => r.named), perMake = new Map();
-  const makeOf = (r) => (r.e.make || "?").split(" / ")[0];
+  const makeOf = (r) => makeGroup((r.e.make || "?").split(" / ")[0]);
   const pick = (list, n, { exempt = false, free = false } = {}) => {
     for (const r of list) {
       if (out.length >= n) break;
@@ -1854,7 +1858,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
   if (patches && GROUP_ORIGIN.has(origin) && !hints.engineMakes.length && !rows.some((r) => r.named)) {
     const byMake = new Map();
     for (const r of rows) {
-      const m = (r.e.make || "").split(" / ")[0];
+      const m = makeGroup((r.e.make || "").split(" / ")[0]);
       if (m && r.score > 0) byMake.set(m, [...(byMake.get(m) || []), r]);
     }
     // Within a make, the size nearest the HSMT's first (gap, in steps of 5%), then the score: Baudouin's 12M26G900/5
