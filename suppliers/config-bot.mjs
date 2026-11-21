@@ -996,7 +996,7 @@ export function hintsOf(text, extra = "", sizing = null) {
   const engineMakes = names(CAT.ENGINE_BRANDS);
   for (const m of [trait.engineMake, ...trait.unused.filter((u) => u.equivalent && u.at === "engine").map((u) => u.makeName)]) if (m && !engineMakes.includes(m)) engineMakes.push(m);
   return { engineMakes, trait, altMakes: names(CAT.ALT_BRANDS), ctrlMakes: ctrl, ctrlModels: CAT.controllersIn(t).filter((c) => c.model).map((c) => CAT.keyOf(c.model)),
-    freq: freqOfHsmt(t), cylLayout: cylLayoutOf(t), fuel: fuelOfHsmt(technicalPart(text)).fuel, madeRule: partOriginOfHsmt(text), ...squashTokens(t), ...engineMins(t), ...comprOf(t), ...(sized ? sized.mins : {}), ...(sized?.note ? { sizeNote: sized.note } : {}) };
+    freq: freqOfHsmt(t), cylLayout: cylLayoutOf(t), fuel: fuelOfHsmt(technicalPart(text)).fuel, madeRule: partOriginOfHsmt(text), ...squashTokens(t), ...engineMins(t), ...comprOf(t), ...(sized ? { multiSize: true, ...sized.mins } : {}), ...(sized?.note ? { sizeNote: sized.note } : {}) };
 }
 // The engine minimums the HSMT states ("Dung tích xy lanh ≥ 11,05 L", "Tối thiểu 06 xi lanh"), one value each: a tender
 // of several gensets that gives two values is left alone. candidates() ranks an engine a source shows below them lower
@@ -1880,6 +1880,19 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       }
       const byTwin = (ruled.includes("cyl") && borrowed.some((f) => f.key === "cyl")) || ((ruled.includes("disp") || ruled.includes("maxDisp")) && borrowed.some((f) => f.key === "disp" || f.key === "bore")) || (ruled.includes("freq") && twinUses.some((x) => x.freq));
       if (byTwin) why.push(`có dùng số của mã ${caretTwin(e.key)} (nguồn không chú thích "^")`);
+      // Tỉ số nén HSMT ghi trơ là số chính xác (Khoa 21/11/2026, IB2600603983: "cần phải khớp với yêu cầu của hsmt"): cùng
+      // một thước với bước chấm (comprOff). Nguồn không ghi / mâu thuẫn / không đọc được thì giữ dòng. Gói nhiều cỡ không
+      // xét: comprOf đọc cả HSMT, chưa biết con số thuộc cỡ nào.
+      if (hints.comprExact && hints.compr != null && !hints.multiSize) {
+        // Mã có tiền tố nước ("UK 4006-23TAG2A") là mã gốc do NCC ghi kèm nơi sản xuất: dùng số của mã gốc.
+        const sameKey = COMPR_SAME.get(e.key) || (placeInModel(e.model) ? CAT.keyOf(String(e.model).trim().replace(/^\S+\s+/, "")) : null);
+        const off = comprOff([...ef, ...(facts.get(`engine:${sameKey}`) || [])], hints.compr);
+        if (off) { score -= 600; ruled.push("compr"); why.push(`tỉ số nén ${[...new Set(off.map((f) => String(f.value).trim()))].join(" / ")}, HSMT ghi ${hints.compr}:1`); }
+      }
+      // NCC tự ghi nước sản xuất ngay trước mã động cơ ("India 4006-23TAG2A", kaihua n122; Khoa 21/11/2026): nước ngoài nhóm
+      // HSMT đòi thì loại. Không ghi thì không suy ra.
+      const placed = GROUP_ORIGIN.has(origin) && !madeOut ? placeInModel(e.model) : null;
+      if (placed && !CAT.COUNTRY_GROUP[origin].includes(placed)) { score -= 600; ruled.push("made"); why.push(`NCC ghi động cơ sản xuất tại ${madeVi(placed)}, HSMT đòi ${GROUP_NAME[origin]}`); }
       if (ruled.length && !isNamed) { dropped.push({ e, u, ruled, src: srcOf, ...(NORM ? { normSkip } : {}) }); continue; }
       rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(Object.keys(made).length ? { made } : {}), ...(NORM ? { normSkip } : {}) });
     }
@@ -5130,19 +5143,30 @@ export function comprExactOf(r, hsmtCompr) {
 // source gives the ratio, when one gives a value the code cannot read, when the sources disagree among themselves
 // (values not all one figure up to rounding: never the majority; exactly one maker sheet is makerSheetChecks'), or when
 // the value is the HSMT's (up to rounding).
+// The compression facts of an engine when they prove it is not the exact ratio, else null. One rule for the choice of
+// candidates and for the check.
+// Danh sách tường minh, không phải luật: tờ Koten KB700D5 (sources/koten-power/1028.md) ghi cùng một động cơ là
+// "Baudouin 6M33G825/5" và "6M33G8D3/5", tỉ số nén 15.0:1; kaihua ghi "6M33G8D3/5 (6M33G825/5)".
+export const COMPR_SAME = new Map([["6M33G8D3/5", "6M33G825/5"], ["6M33G8D3/5(6M33G825/5)", "6M33G825/5"]]);
+// Nước NCC ghi ngay trước mã động cơ. Chỉ hai tiền tố có thật trong suppliers/cn (kaihua n122, soát mọi mã 21/11/2026).
+export const placeInModel = (model) => (/^india\s+\S/i.test(String(model || "").trim()) ? "IN" : /^uk\s+\S/i.test(String(model || "").trim()) ? "GB" : null);
+export function comprOff(facts, exact) {
+  const list = (facts || []).filter((f) => f.key === "compr");
+  if (!list.length) return null;
+  const xs = list.map((f) => comprFig(f.value));
+  if (xs.some((v) => v == null)) return null;
+  const vals = [...new Set(xs)];
+  if (vals.some((a) => vals.some((b) => !sameCompr(a, b)))) return null;
+  return vals.some((v) => sameCompr(v, exact)) ? null : list;
+}
 export function comprChecks(c, reqs, facts = [], { hsmtCompr = null } = {}) {
   for (const r of reqs) {
     const exact = comprExactOf(r, hsmtCompr);
     if (exact == null || r.byCode || (r.part && r.part !== "engine") || !c.engine?.model) continue;
     const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
     if (x && (x.status !== "unclear" || x.byCode || x.version || x.parts?.length)) continue;
-    const list = facts.filter((f) => f.key === "compr");
-    if (!list.length) continue;
-    const xs = list.map((f) => comprFig(f.value));
-    if (xs.some((v) => v == null)) continue;
-    const vals = [...new Set(xs)];
-    if (vals.some((a) => vals.some((b) => !sameCompr(a, b)))) continue;
-    if (vals.some((v) => sameCompr(v, exact))) continue;
+    const list = comprOff(facts, exact);
+    if (!list) continue;
     const f = list[0], shown = [...new Set(list.map((g) => String(g.value).trim()))].join(" / ");
     putCheck(c, x, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: shown, sourceQuote: f.line, factSrc: { supplierId: f.supplierId, n: f.n, line: f.line },
       part: "engine", level: r.level === "option" ? "option" : "core", status: "not_met", byCode: true, rule: "ti-so-nen",
