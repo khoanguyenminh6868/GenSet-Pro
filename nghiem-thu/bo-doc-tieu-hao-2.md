@@ -16,7 +16,12 @@ Nhánh `fix/bo-doc-tieu-hao` (worktree `wt-tieu-hao`). Đo trong `dau-vao\bo-doc
 - `modelFacts` (`facts-*.tsv`): 0 fact mất, 639 fact thêm. Fact Baudouin theo dòng máy: 113 cặp model × nguồn khớp hình học, 0 lệch, 15 thiếu số; so NCC khác 204 khớp, 0 lệch, 174 không có NCC khác.
 - check-all 17 lượt, gốc 95ecba26 ↔ nhánh TRƯỚC khi gộp main (`so-all.txt`): 47 cấu hình, 46 giống hệt. Đổi duy nhất: IB2600603983 6M31G825/5, ba mục tiêu hao chưa rõ → đạt (156 / 113 / 77 L/h). Thứ tự cấu hình không đổi.
 
+## Quyết định sau khi mở PR (21/11/2026)
+- Khoa "2. Giữ đạt": 156 / 113 / 77 L/h giữ đạt; check đạt bằng số hãng động cơ ghi "Số của động cơ theo tờ hãng" + dung sai nếu tờ ghi (đã làm).
+- Điều phối duyệt 3 dropspec xi lanh longkai (đã báo Khoa; KHÔNG phải Khoa duyệt): n1158, n1159 "6 in line" (20 xi lanh theo aosif, hanyang-weifang, yunding-jiangsu); n1016 "12 in line" giữ dropspec vì KIỂU trái 8 NCC ghi V, số 12 đúng.
+- Việc riêng, CHƯA làm: n1158 ghi 19 L + 159*159 cho 20M33D2020E310 (bộ số của động cơ khác); đường kính × hành trình vẫn đang được đọc, cả zhengchi n162.
+
 ## Cần biết
-- Ba số bằng ĐÚNG ngưỡng HSMT, tờ hãng ghi dung sai ±5 %, và là số của ĐỘNG CƠ ở 100 / 75 / 50 % PRP, không phải số đo của tổ máy. Code chấm đạt và ghi rõ nguồn trong ghi chú; chưa có quyết định của Khoa về dung sai.
+- Ba số bằng ĐÚNG ngưỡng HSMT, tờ hãng ghi dung sai ±5 %, và là số của ĐỘNG CƠ ở 100 / 75 / 50 % PRP, không phải số đo của tổ máy.
 - Khoảng 1.000 số tiêu hao (chủ yếu longkai, lees) nay có đơn vị L/h nên `candidates` có thể loại dòng vượt ngưỡng: CHƯA đo top 30 (điều phối giao đo trên cloud).
 - Chưa sửa: tiêu đề hai tầng lệch cột (uleengen, mecca, legapower, weiman, keliang…; có dòng đọc nhầm công suất động cơ thành tiêu hao, lớp chuẩn hoá giữ "thiếu đơn vị"), bảng nhiều model cạnh nhau (changchai, yangdong), Spec Sheet dòng máy không liệt kê model (1008–1020).
