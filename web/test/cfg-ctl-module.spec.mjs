@@ -86,3 +86,24 @@ test.describe("đầu phát và mô-đun theo tài liệu hãng", () => {
     await expect(card.locator('a[href="https://example.test/lsa.pdf"]')).toHaveCount(1);
   });
 });
+
+// IB2600603983 11:44Z: NCC cùng động cơ chào chính bộ chính (hồ sơ không ghi đời); bản sinh hết chỗ thì ghi ở cấu hình gốc.
+test.describe("NCC có chào bộ chính, bản sinh hết chỗ", () => {
+  const c0 = cm.result.configs[0], label = "Theo tài liệu hãng; NCC ncc-thu chào DSE7320 (hồ sơ không ghi đời MKII, cần hỏi)";
+  const controller = { ...c0.controller, model: "DSE7320 MKII", make: "Deep Sea", src: { kind: "maker", supplierId: "deep-sea-electronics", n: 1001 }, fromMaker: true, label,
+    offeredMain: { by: ["ncc-thu"], model: "DSE7320", label },
+    offerNote: "Phương án khác, chưa thành cấu hình riêng vì đã đủ 8 cấu hình: DSE7420 (NCC voltgent chào)." };
+  const doc = { ...cm, result: { ...cm.result, configs: [{ ...c0, controller }, ...cm.result.configs.slice(1)] } };
+  test.use({ patch: { colls: { configmatch: { [RICH]: doc } } } });
+
+  test("chip đổi thành NCC có chào, nhãn nêu đời cần hỏi, dòng bản sinh hết chỗ", async ({ page }) => {
+    await openApp(page, "#goi/" + RICH);
+    await openTab(page, "config");
+    const card = page.locator("#dbody .cfgcard").first(), blk = card.locator(".cfgblk", { hasText: "Bộ điều khiển:" }).first();
+    const chip = blk.locator(".chip", { hasText: "NCC có chào, cần hỏi" });
+    await expect(chip).toHaveCount(1);
+    await expect(chip).toHaveAttribute("title", label);
+    await expect(blk).not.toContainText("NCC chưa chào");
+    await expect(card.locator(".cfgalt")).toContainText("đã đủ 8 cấu hình: DSE7420 (NCC voltgent chào)");
+  });
+});

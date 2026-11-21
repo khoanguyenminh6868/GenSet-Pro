@@ -103,6 +103,29 @@
   },
   {
    "rank": 4,
+   "engine": "Baudouin 6M33G825/5",
+   "alternator": "Leroy-Somer LSA49.3 M65",
+   "controller": "Deep Sea DSE7320 MKII",
+   "named": null,
+   "suppliers": [
+    "longkai-power:108",
+    "koten-power:4005",
+    "westinpower:108"
+   ],
+   "checks": {
+    "genset": "4/1/7/9",
+    "engine": "3/0/9/2",
+    "alternator": "1/0/7/2",
+    "controller": "1/0/6/1"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [
+    "Kích thước"
+   ],
+   "lossWarn": []
+  },
+  {
+   "rank": 5,
    "engine": "Cummins QSK23-G2",
    "alternator": "Stamford S5L1D-H41",
    "controller": "Deep Sea DSE7320",
@@ -125,7 +148,7 @@
    "lossWarn": []
   },
   {
-   "rank": 5,
+   "rank": 6,
    "engine": "Perkins 4006-23TAG2A",
    "alternator": "Stamford S5L1D-H41",
    "controller": "Deep Sea DSE8610",
@@ -140,6 +163,29 @@
     "engine": "6/1/7/0",
     "alternator": "0/0/7/3",
     "controller": "2/0/6/0"
+   },
+   "unverifiedChecks": 0,
+   "notMet": [
+    "Tỷ số nén"
+   ],
+   "lossWarn": []
+  },
+  {
+   "rank": 7,
+   "engine": "Perkins 4006-23TAG2A",
+   "alternator": "Stamford S5L1D-H41",
+   "controller": "Deep Sea DSE7320",
+   "named": null,
+   "suppliers": [
+    "uleengen:103",
+    "fdk-energy:108",
+    "koten-power:4014"
+   ],
+   "checks": {
+    "genset": "3/0/9/9",
+    "engine": "6/1/7/0",
+    "alternator": "0/0/7/3",
+    "controller": "1/0/6/1"
    },
    "unverifiedChecks": 0,
    "notMet": [
