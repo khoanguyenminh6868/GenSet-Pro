@@ -2873,18 +2873,20 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   // the maker's datasheet (no supplier of it offers that one) also shown with the controller a supplier of the same engine DOES
   // offer: same make, the kind the HSMT asks, a datasheet, at least half of the communication parts with its best module
   // (fewer: not kept, điều phối's proposal). The code writes the copy; the agent has not read that datasheet, so every
-  // controller check of the copy starts "chưa rõ" and only what the code can score is scored. A genset row of the
-  // configuration keeps the copy to that row's supplier.
+  // controller check of the copy starts "chưa rõ" and only what the code can score is scored. When the configuration's genset
+  // row is of another supplier (IB2600603983 08:52Z: B825E5 of agg-fuzhou, DSE7420 of voltgent), the copy takes the genset of
+  // the offering supplier's own row, or none, and its genset checks start "chưa rõ" too: they were read on the other row.
   const ctlNeed = ctlKindNeed(hsmtText);
   const ctlTwinOf = (c) => {
     if (!c.controller?.model || c.controller.src?.kind !== "maker" || sup.get(c.controller.src.supplierId)?.role !== "controller_maker" || !c.engine?.model) return null;
-    const ek = CAT.keyOf(c.engine.model), only = c.genset?.model ? c.genset.src?.supplierId : null, rowBy = new Map();
-    for (const u of (built.engines || []).find((e) => e.key === ek)?.uses || []) if (u.line && sup.has(u.supplierId) && !rowBy.has(u.supplierId) && (!only || u.supplierId === only)) rowBy.set(u.supplierId, u);
+    const ek = CAT.keyOf(c.engine.model), rowBy = new Map();
+    for (const u of (built.engines || []).find((e) => e.key === ek)?.uses || []) if (u.line && sup.has(u.supplierId) && !rowBy.has(u.supplierId)) rowBy.set(u.supplierId, u);
     if (!rowBy.size) return null;
     const own = (c.suppliers || []).map((s) => s.supplierId).filter((id) => rowBy.has(id));
     const ids = [...new Set([...own, ...[...rowBy.keys()].sort()])], names = commNames(result.requirements || []);
     const step = (a) => (a.step == null ? Infinity : a.step);
-    const pick = ctlCands({ ...c, suppliers: ids.map((supplierId) => ({ supplierId })) }, names).out
+    const cands = ctlCands({ ...c, suppliers: ids.map((supplierId) => ({ supplierId })) }, names);
+    const pick = cands.out
       .filter((a) => !a.notOffered && a.offeredBy && (!ctlNeed || a.kind === ctlNeed) && (!names.length || a.met * 2 >= names.length))
       .sort((a, b) => b.met - a.met || step(a) - step(b))[0];
     if (!pick) return null;
@@ -2896,13 +2898,22 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     for (const k of ["rfq", "lossWarn", "won"]) delete t[k];
     t.controller = { make: c.controller.make, model: pick.offeredAs, src: { kind: "controller", supplierId: pick.offeredBy, ...(o.src?.length ? { n: o.src[0] } : {}), line: o.line } };
     t.suppliers = by.map((id) => (c.suppliers || []).find((s) => s.supplierId === id) ? structuredClone(c.suppliers.find((s) => s.supplierId === id)) : { supplierId: id, n: rowBy.get(id).n, line: rowBy.get(id).line, why: `Có dòng động cơ ${c.engine.model}, hồ sơ NCC chào ${pick.offeredAs}` });
-    t.checks = (t.checks || []).map((x) => (x.part !== "controller" ? x : { ...blank(x), requirement: x.requirement || "", hsmtQuote: x.hsmtQuote || "", part: x.part, level: x.level, ...(x.code ? { code: x.code } : {}), ...(x.parts?.length ? { parts: x.parts.map(blank) } : {}) }));
+    const gsBy = c.genset?.model ? c.genset.src?.supplierId : null, otherRow = !!gsBy && !by.includes(gsBy);
+    if (otherRow) {
+      // Same engine AND alternator: a row naming another alternator is not this configuration's genset (makerAltFix would
+      // put that alternator in the copy; IB2600603983 08:52Z: kaihua-genset's Volvo row with HCI544FS1).
+      const u = rowBy.get(by[0]), ra = rowAltOf(u, built);
+      if (u.genset && (!ra || !c.alternator?.model || CAT.keyOf(ra.model) === CAT.keyOf(c.alternator.model))) t.genset = { model: u.genset, src: { kind: "catalog", supplierId: by[0], n: u.n, line: u.line } };
+      else delete t.genset;
+    }
+    const open = (x) => x.part === "controller" || (otherRow && x.part === "genset");
+    t.checks = (t.checks || []).filter((x) => !(otherRow && x.part === "genset" && x.byCode)).map((x) => (!open(x) ? x : { ...blank(x), ...(x.part === "genset" ? { note: `Bản bộ điều khiển NCC chào (${by.join(", ")}): chưa chấm trên dòng tổ máy của NCC này.` } : {}), requirement: x.requirement || "", hsmtQuote: x.hsmtQuote || "", part: x.part, level: x.level, ...(x.code ? { code: x.code } : {}), ...(x.parts?.length ? { parts: x.parts.map(blank) } : {}) }));
     const onRow = norm(o.line).replace(/\s/g, "").includes(norm(c.engine.model).replace(/\s/g, ""));
     const gap = `${pick.offeredBy} chào ${pick.offeredAs}${onRow ? "" : ` trong hồ sơ, dòng đó không ghi động cơ ${c.engine.model}: cần hỏi NCC có lắp cho động cơ này không`}.`;
     const rest = Array.isArray(c.gaps) ? c.gaps.filter((g) => !/điều khiển|mô-đun/i.test(String(g))) : [];
     t.gaps = [gap, ...rest];
     t.rank = (c.rank ?? 0) + 0.5;
-    t.ctlTwin = { of: ctlModelOf(c.controller), by };
+    t.ctlTwin = { of: ctlModelOf(c.controller), by, ...(pick.met < (cands.mainPair?.met ?? 0) ? { weaker: true } : {}) };
     return t;
   };
   // Đồng bộ thương hiệu (Khoa, 2026-11-06): read from the HSMT by code, one requirement of the code's own in place of
@@ -3126,10 +3137,15 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   if (namedHere) { const nr = (c) => { const h = NG.namedHit(c, namedHere, namedCtx); return h === "model" ? 0 : h === "make" ? 1 : 2; }; result.configs = (result.configs || []).map((c, i) => [c, nr(c), i]).sort((x, y) => x[1] - y[1] || x[2] - y[2]).map(([c]) => c); }
   // Hai bản bộ điều khiển: each copy right under its configuration, BEFORE the cut (Khoa was told a last make may be pushed
   // out). An earlier check's copies go first, and one the agent already wrote (same engine, alternator, controller) is not doubled.
-  result.configs = (result.configs || []).filter((c) => !c.ctlTwin).flatMap((c, _i, all) => {
+  // A copy whose controller meets fewer communication parts than the main one (`weaker`) only takes a free place: it never
+  // pushes out a configuration the agent checked (IB2600603983 08:52Z: Volvo + DSE6120 4/7 pushed out Baudouin 6M33G825/5).
+  const twinBases = (result.configs || []).filter((c) => !c.ctlTwin);
+  const twinPairs = twinBases.map((c) => {
     const t = ctlTwinOf(c), same = (o) => CAT.keyOf(o.engine?.model || "") === CAT.keyOf(t.engine.model) && CAT.keyOf(o.alternator?.model || "") === CAT.keyOf(t.alternator?.model || "") && CAT.keyOf(ctlModelOf(o.controller) || "") === CAT.keyOf(t.controller.model);
-    return t && !all.some(same) ? [c, t] : [c];
+    return { c, t: t && !twinBases.some(same) ? t : null };
   });
+  let twinRoom = MAX_CONFIGS - twinBases.length - twinPairs.filter((p) => p.t && !p.t.ctlTwin.weaker).length;
+  result.configs = twinPairs.flatMap(({ c, t }) => (t && (!t.ctlTwin.weaker || twinRoom-- > 0) ? [c, t] : [c]));
   result.configs = result.configs.slice(0, MAX_CONFIGS);
   for (const c of result.configs) for (const s of c.suppliers || []) if (s.why) s.why = plainWhy(s.why);
   copyModelChecks(result.configs, sourceText);
