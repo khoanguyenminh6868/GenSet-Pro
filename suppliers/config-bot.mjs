@@ -1651,16 +1651,29 @@ export function altOf(alts, cell) {
   }
   return null;
 }
+// Luật đã duyệt (tach-mu-2, Khoa 21/11/2026 chọn M): catalog tách "X" và "X^" (không nguồn nào chú thích "^"). Chỉ để LOẠI ở `candidates`:
+// khoá không có số của một loại (xi lanh, dung tích, đường kính × hành trình) mượn số của khoá kia; khoá có số riêng giữ số riêng
+// (8M33D1012E311 không bị "12V / 31.8" của aosif ở khoá ^ kéo lại). Điểm thông số (`eKeys`) không mượn.
+const TWIN_KEYS = new Set(["cyl", "disp", "bore"]);
+const caretTwin = (k) => (k.endsWith("^") ? k.slice(0, -1) : `${k}^`);
+function twinFacts(e, ef, facts) {
+  const twin = facts.get(`engine:${caretTwin(e.key)}`);
+  if (!twin?.length) return [];
+  const own = new Set([...ef, ...e.uses.flatMap((u) => u.specs || [])].map((f) => f.key));
+  return twin.filter((f) => TWIN_KEYS.has(f.key) && !own.has(f.key));
+}
 export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30, sync = null, keep = null, makeCap = MAKE_CAP, patches = true, blocked = null, pinTop = PIN_TOP } = {}) {
   const hints = plausible(hints0, cap), sup = new Map(suppliers.map((s) => [s.id, s])), alts = new Map((cat.alternators || []).map((a) => [a.key, a])), rowsMap = normRowsOf(suppliers);
   const band = bandOf(cap), ruleA = candRuleOn("A"), ruleB = candRuleOn("B");
   const near = (u) => !cap || Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * band.low && p[cap.unit] <= cap.value * band.high + 1e-9);
   // `dropped`: the rows a minimum of the HSMT rules out (left out of the candidates), with the reasons.
-  const rows = [], dropped = [];
+  const rows = [], dropped = [], engineByKey = new Map((cat.engines || []).map((x) => [x.key, x]));
   for (const e of cat.engines || []) {
     if (focus && !focus.has(e.key)) continue;
     const viaCn = origin === "cn" && CAT.originOf(e) === "other";
     const ef = facts.get(`engine:${e.key}`) || [], eKeys = new Set(ef.map((f) => f.key));
+    // Số dùng cho luật loại: của khoá + số mượn từ khoá X ↔ X^ (twinFacts).
+    const borrowed = twinFacts(e, ef, facts), rf = borrowed.length ? [...ef, ...borrowed] : ef, twinUses = engineByKey.get(caretTwin(e.key))?.uses || [];
     // Displacement voters of this engine (dispVoters), built once when a row needs them.
     let voters = null;
     const dispVoter = (s) => {
@@ -1753,7 +1766,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         // Dung tích: các số chỉ khác độ làm tròn là một phiếu (majorityRound), so ngưỡng bằng số chính xác nhất (dispExact).
         return key === "disp" ? majorityRound(figs) : majorityOf(figs);
       };
-      const below = (key, min, read) => { const all = [...ef, ...(u.specs || [])].filter((f) => f.key === key).map((f) => [f, read(f.value, f)]), fs = all.filter(([, x]) => x != null && x !== BLOCK), v = fs.map(([, x]) => x);
+      const below = (key, min, read) => { const all = [...rf, ...(u.specs || [])].filter((f) => f.key === key).map((f) => [f, read(f.value, f)]), fs = all.filter(([, x]) => x != null && x !== BLOCK), v = fs.map(([, x]) => x);
         const mj = min && MAJ_KEYS.has(key) ? majOf(all, key) : null;
         // Dung tích: so chặt bằng số chính xác nhất của nhóm thắng (DP222CB {21.9, 21.927} ↔ ≥ 21.927 đạt; Y490D 2.67 ↔ ≥ 2.672 loại).
         if (mj) { const x = mj.group ? dispExact(mj, "min") : mj.win, lo = x < min; if (lo) srcOf[key] = { n: v.length, win: mj.win, votes: mj.votes, ...(mj.group ? { group: mj.group, exact: x } : {}) }; return lo ? x : null; }
@@ -1761,7 +1774,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         const hit = min && v.length && !all.some(([, x]) => x === BLOCK) && v.every((x) => x < min); if (hit) srcOf[key] = { n: v.length, sources: new Set(fs.map(([f]) => `${f.supplierId ?? ""}#${f.n ?? ""}`)).size, ofRow: fs.filter(([f]) => (u.specs || []).includes(f)).length };
         return hit ? v[0] : null; };
       // No displacement given: bore × stroke × cylinders (web/conversions.js displacement), when the sources give them.
-      const given = [...ef, ...(u.specs || [])], bs = given.find((f) => f.key === "bore"), z = given.find((f) => f.key === "cyl");
+      const given = [...rf, ...(u.specs || [])], bs = given.find((f) => f.key === "bore"), z = given.find((f) => f.key === "cyl");
       const nbs = ND && bs && hints.minDisp && !given.some((f) => f.key === "disp") ? nfig(bs, { unit: "mm" }) : null, nz = ND && z && nbs ? nfig(z, {}) : null;
       const [b, st] = ND ? [nbs?.bore?.bore, nbs?.bore?.stroke] : bs ? numbersIn(bs.value) : [], n = ND ? nz?.count ?? null : z ? numbersIn(z.value)[0] : null;
       const calcL = !given.some((f) => f.key === "disp") && b > 50 && st > 50 && n ? Math.round(Math.PI / 4 * b * b * st * n / 1e4) / 100 : null;
@@ -1797,8 +1810,8 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         const cnt = (v) => { const m = String(v ?? "").match(/\d{1,2}/); return m ? Number(m[0]) : null; };
         const ownC = [...(u.specs || []).filter((f) => f.key === "cyl").map((f) => cnt(f.value)), ...(u.line ? CAT.cellsOf(u.line).filter((c) => /^\s*(?:\d{1,2}\s*[.\-]\s*[VL]|[VL]\s*-?\s*\d{1,2})\s*$/i.test(c)).map(cnt) : [])].filter((x) => x != null);
         // No cell of its own: the engine's count the suppliers agree on by the majority rule, when there is one.
-        const eMaj = ownC.length ? null : majOf(ef.filter((f) => f.key === "cyl").map((f) => [f, cylOf(f.value, f)]));
-        const cs = ownC.length ? ownC : eMaj ? [eMaj.win] : ef.filter((f) => f.key === "cyl").map((f) => cnt(f.value)).filter((x) => x != null);
+        const eMaj = ownC.length ? null : majOf(rf.filter((f) => f.key === "cyl").map((f) => [f, cylOf(f.value, f)]));
+        const cs = ownC.length ? ownC : eMaj ? [eMaj.win] : rf.filter((f) => f.key === "cyl").map((f) => cnt(f.value)).filter((x) => x != null);
         if (cs.length && cs.every((x) => x !== hints.minCyl)) { if (eMaj) srcOf.cyl = { win: eMaj.win, votes: eMaj.votes }; score -= 600; ruled.push("cyl"); why.push(`${cs[0]} xi lanh, HSMT ghi ${hints.minCyl} xi lanh${byMaj("cyl")}`); }
       }
       // The row's prime output (catalog.js reads it from the column titles) below the prime the HSMT asks for.
@@ -1861,9 +1874,12 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // passed the frequency filter above): every row of the engine that names a frequency names the other one, two
       // rows at least. An engine sold at both (KTA38-G2: 27 rows at 50 Hz, 22 at 60) is not touched.
       if (hints.freq && !u.freq) {
-        const known = e.uses.map((x) => x.freq).filter(Boolean);
+        // Dòng của cả "X" và "X^" (tach-mu-2): tách không làm mã mất dòng ghi tần số.
+        const known = [...e.uses, ...twinUses].map((x) => x.freq).filter(Boolean);
         if (known.length >= 2 && known.every((f) => f !== hints.freq)) { score -= 600; ruled.push("freq"); why.push(`động cơ chỉ có dòng ${known[0]} Hz, HSMT yêu cầu ${hints.freq} Hz`); }
       }
+      const byTwin = (ruled.includes("cyl") && borrowed.some((f) => f.key === "cyl")) || ((ruled.includes("disp") || ruled.includes("maxDisp")) && borrowed.some((f) => f.key === "disp" || f.key === "bore")) || (ruled.includes("freq") && twinUses.some((x) => x.freq));
+      if (byTwin) why.push(`có dùng số của mã ${caretTwin(e.key)} (nguồn không chú thích "^")`);
       if (ruled.length && !isNamed) { dropped.push({ e, u, ruled, src: srcOf, ...(NORM ? { normSkip } : {}) }); continue; }
       rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(Object.keys(made).length ? { made } : {}), ...(NORM ? { normSkip } : {}) });
     }
@@ -2873,18 +2889,20 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   // the maker's datasheet (no supplier of it offers that one) also shown with the controller a supplier of the same engine DOES
   // offer: same make, the kind the HSMT asks, a datasheet, at least half of the communication parts with its best module
   // (fewer: not kept, điều phối's proposal). The code writes the copy; the agent has not read that datasheet, so every
-  // controller check of the copy starts "chưa rõ" and only what the code can score is scored. A genset row of the
-  // configuration keeps the copy to that row's supplier.
+  // controller check of the copy starts "chưa rõ" and only what the code can score is scored. When the configuration's genset
+  // row is of another supplier (IB2600603983 08:52Z: B825E5 of agg-fuzhou, DSE7420 of voltgent), the copy takes the genset of
+  // the offering supplier's own row, or none, and its genset checks start "chưa rõ" too: they were read on the other row.
   const ctlNeed = ctlKindNeed(hsmtText);
   const ctlTwinOf = (c) => {
     if (!c.controller?.model || c.controller.src?.kind !== "maker" || sup.get(c.controller.src.supplierId)?.role !== "controller_maker" || !c.engine?.model) return null;
-    const ek = CAT.keyOf(c.engine.model), only = c.genset?.model ? c.genset.src?.supplierId : null, rowBy = new Map();
-    for (const u of (built.engines || []).find((e) => e.key === ek)?.uses || []) if (u.line && sup.has(u.supplierId) && !rowBy.has(u.supplierId) && (!only || u.supplierId === only)) rowBy.set(u.supplierId, u);
+    const ek = CAT.keyOf(c.engine.model), rowBy = new Map();
+    for (const u of (built.engines || []).find((e) => e.key === ek)?.uses || []) if (u.line && sup.has(u.supplierId) && !rowBy.has(u.supplierId)) rowBy.set(u.supplierId, u);
     if (!rowBy.size) return null;
     const own = (c.suppliers || []).map((s) => s.supplierId).filter((id) => rowBy.has(id));
     const ids = [...new Set([...own, ...[...rowBy.keys()].sort()])], names = commNames(result.requirements || []);
     const step = (a) => (a.step == null ? Infinity : a.step);
-    const pick = ctlCands({ ...c, suppliers: ids.map((supplierId) => ({ supplierId })) }, names).out
+    const cands = ctlCands({ ...c, suppliers: ids.map((supplierId) => ({ supplierId })) }, names);
+    const pick = cands.out
       .filter((a) => !a.notOffered && a.offeredBy && (!ctlNeed || a.kind === ctlNeed) && (!names.length || a.met * 2 >= names.length))
       .sort((a, b) => b.met - a.met || step(a) - step(b))[0];
     if (!pick) return null;
@@ -2896,13 +2914,22 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     for (const k of ["rfq", "lossWarn", "won"]) delete t[k];
     t.controller = { make: c.controller.make, model: pick.offeredAs, src: { kind: "controller", supplierId: pick.offeredBy, ...(o.src?.length ? { n: o.src[0] } : {}), line: o.line } };
     t.suppliers = by.map((id) => (c.suppliers || []).find((s) => s.supplierId === id) ? structuredClone(c.suppliers.find((s) => s.supplierId === id)) : { supplierId: id, n: rowBy.get(id).n, line: rowBy.get(id).line, why: `Có dòng động cơ ${c.engine.model}, hồ sơ NCC chào ${pick.offeredAs}` });
-    t.checks = (t.checks || []).map((x) => (x.part !== "controller" ? x : { ...blank(x), requirement: x.requirement || "", hsmtQuote: x.hsmtQuote || "", part: x.part, level: x.level, ...(x.code ? { code: x.code } : {}), ...(x.parts?.length ? { parts: x.parts.map(blank) } : {}) }));
+    const gsBy = c.genset?.model ? c.genset.src?.supplierId : null, otherRow = !!gsBy && !by.includes(gsBy);
+    if (otherRow) {
+      // Same engine AND alternator: a row naming another alternator is not this configuration's genset (makerAltFix would
+      // put that alternator in the copy; IB2600603983 08:52Z: kaihua-genset's Volvo row with HCI544FS1).
+      const u = rowBy.get(by[0]), ra = rowAltOf(u, built);
+      if (u.genset && (!ra || !c.alternator?.model || CAT.keyOf(ra.model) === CAT.keyOf(c.alternator.model))) t.genset = { model: u.genset, src: { kind: "catalog", supplierId: by[0], n: u.n, line: u.line } };
+      else delete t.genset;
+    }
+    const open = (x) => x.part === "controller" || (otherRow && x.part === "genset");
+    t.checks = (t.checks || []).filter((x) => !(otherRow && x.part === "genset" && x.byCode)).map((x) => (!open(x) ? x : { ...blank(x), ...(x.part === "genset" ? { note: `Bản bộ điều khiển NCC chào (${by.join(", ")}): chưa chấm trên dòng tổ máy của NCC này.` } : {}), requirement: x.requirement || "", hsmtQuote: x.hsmtQuote || "", part: x.part, level: x.level, ...(x.code ? { code: x.code } : {}), ...(x.parts?.length ? { parts: x.parts.map(blank) } : {}) }));
     const onRow = norm(o.line).replace(/\s/g, "").includes(norm(c.engine.model).replace(/\s/g, ""));
     const gap = `${pick.offeredBy} chào ${pick.offeredAs}${onRow ? "" : ` trong hồ sơ, dòng đó không ghi động cơ ${c.engine.model}: cần hỏi NCC có lắp cho động cơ này không`}.`;
     const rest = Array.isArray(c.gaps) ? c.gaps.filter((g) => !/điều khiển|mô-đun/i.test(String(g))) : [];
     t.gaps = [gap, ...rest];
     t.rank = (c.rank ?? 0) + 0.5;
-    t.ctlTwin = { of: ctlModelOf(c.controller), by };
+    t.ctlTwin = { of: ctlModelOf(c.controller), by, ...(pick.met < (cands.mainPair?.met ?? 0) ? { weaker: true } : {}) };
     return t;
   };
   // Đồng bộ thương hiệu (Khoa, 2026-11-06): read from the HSMT by code, one requirement of the code's own in place of
@@ -3126,10 +3153,15 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   if (namedHere) { const nr = (c) => { const h = NG.namedHit(c, namedHere, namedCtx); return h === "model" ? 0 : h === "make" ? 1 : 2; }; result.configs = (result.configs || []).map((c, i) => [c, nr(c), i]).sort((x, y) => x[1] - y[1] || x[2] - y[2]).map(([c]) => c); }
   // Hai bản bộ điều khiển: each copy right under its configuration, BEFORE the cut (Khoa was told a last make may be pushed
   // out). An earlier check's copies go first, and one the agent already wrote (same engine, alternator, controller) is not doubled.
-  result.configs = (result.configs || []).filter((c) => !c.ctlTwin).flatMap((c, _i, all) => {
+  // A copy whose controller meets fewer communication parts than the main one (`weaker`) only takes a free place: it never
+  // pushes out a configuration the agent checked (IB2600603983 08:52Z: Volvo + DSE6120 4/7 pushed out Baudouin 6M33G825/5).
+  const twinBases = (result.configs || []).filter((c) => !c.ctlTwin);
+  const twinPairs = twinBases.map((c) => {
     const t = ctlTwinOf(c), same = (o) => CAT.keyOf(o.engine?.model || "") === CAT.keyOf(t.engine.model) && CAT.keyOf(o.alternator?.model || "") === CAT.keyOf(t.alternator?.model || "") && CAT.keyOf(ctlModelOf(o.controller) || "") === CAT.keyOf(t.controller.model);
-    return t && !all.some(same) ? [c, t] : [c];
+    return { c, t: t && !twinBases.some(same) ? t : null };
   });
+  let twinRoom = MAX_CONFIGS - twinBases.length - twinPairs.filter((p) => p.t && !p.t.ctlTwin.weaker).length;
+  result.configs = twinPairs.flatMap(({ c, t }) => (t && (!t.ctlTwin.weaker || twinRoom-- > 0) ? [c, t] : [c]));
   result.configs = result.configs.slice(0, MAX_CONFIGS);
   for (const c of result.configs) for (const s of c.suppliers || []) if (s.why) s.why = plainWhy(s.why);
   copyModelChecks(result.configs, sourceText);
