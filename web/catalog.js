@@ -2106,6 +2106,8 @@
       const titled = !cs.slice(0, 8).some((c) => V_MODEL.test(c[0]) && c.slice(1).some((x) => isCode(x)));
       const say = (reason, detail) => note(t, ti, null, (titled ? "bảng dọc (model ở tiêu đề): " : "bảng dọc: ") + reason, detail);
       let tm = null;
+      // No title at all: nothing to name the genset, and no stage-2 note (the table is listed as unread as before).
+      if (titled && !String(t.title || "").trim()) return;
       if (titled) { tm = verticalTitleModel(t.title); if (tm.why) { say(tm.why, tm.detail || String(t.title || "")); return; } }
       const decComma = lines.some((l) => /\d,\d{1,2}(?![\d,])/.test(l));
       const models = new Map(), engines = new Map(), alts = new Map(), levels = { prime: [], standby: [] }, specs = [];
