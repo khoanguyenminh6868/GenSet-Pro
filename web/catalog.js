@@ -1598,6 +1598,7 @@
       }
     }
     out.push(...listedEngineRows(s, out, note));
+    out.push(...verticalRecords(s, out, note));
     // Fuel of each record (may-khi-2): from its table's signs and its own row; kept on the record, so it reaches `uses` of build().
     const fuelSg = new Map();
     for (const o of out) {
@@ -2031,6 +2032,156 @@
     { supplierId: "lees-power", n: [133], header: "| Model | Electrical Power KW | Efficiency (%) | Nox mg/m3 | Dimensions L×W×H (mm) | Weight (kg) | Specifications",
       cells: [10], model: 0, engine: 1, rated: { kW: 2 }, specs: [["dims", 7, "Dimensions L×W×H (mm)"], ["weight", 8, "Weight (kg)"]] },
   ].map((x) => ({ checked: "20/11/2026", ...x }));
+  // Vertical one-genset sheets, stage 1 (bang-doc-1, "bảng dọc" V1; chủ dự án 19–21/11/2026: "làm sao để đọc được thông số
+  // đúng là được, cần tìm cách ngăn chặn rủi ro"): a table of "label | value" lines about ONE genset whose own "Model" line
+  // names it, and that gave no record at all the other ways. Read only when ALL of these hold, else nothing (noted):
+  //   - the table gave no record (every table read before keeps what it gives: nothing of it changes);
+  //   - one genset model, from the "Model" / "Genset Model" / "Model Number" lines outside the engine's and the alternator's
+  //     parts (two models or more, or a "Model" line with two codes: a page of several products, left out);
+  //   - the model is not shaped like an engine's or an alternator's code (ALT_CODE, DOOSAN_P, FRAME_ALT), nor the table's own
+  //     engine / alternator code (suppliers/bang-doc-1.test.mjs also checks it against every engine / alternator of build());
+  //   - one engine code, from the engine's own line ("Engine Model | Y495D", "Engine Brand / Model | Yuchai YC16VC3300-D31",
+  //     "Model" under an "Engine" heading); brand words before it are the make. "or equivalent", "Series", "/" (choices):
+  //     no engine. No engine code, no record (records are an engine's or an alternator's; the genset's own name is `genset`);
+  //   - a prime or a standby output with its level written in its label, in the genset's part of the sheet (before the first
+  //     engine / alternator line or heading: dingbo's "Prime Power 354kW" under the engine model is the engine's), each
+  //     figure with its unit in the cell, a unit cell or the label; a level written twice with other figures (a page listing
+  //     products), kW and kVA that do not fit one set, prime above standby: that level / both left out. "Rated", "Power",
+  //     continuous, COP: no level, not read here. Neither level left: no record.
+  // Figures (specs) by their label (specKey), the same label read twice with other values: left out; in the engine's part
+  // only engine / genset figures, in the alternator's only alternator figures. Records carry `sheet: "bảng dọc"`.
+  const V_MODEL = /^(genset\s*model|generator\s*set\s*model|model|models?\s*(no\.?|number|#)|model\s*型号|型号|机组型号|modelo)$/i;
+  const V_ENGINE = /^((diesel\s*)?engine(\s*(model|type|brand\s*(&|and|\/)\s*model))?|发动机型号|柴油机型号|发动机|柴油机)$/i;
+  const V_ALT = /^(alternator(\s*(model|type|brand\s*(&|and|\/)\s*model))?|generator\s*model|发电机型号)$/i;
+  const V_BRAND = /^((engine|alternator)\s*)?(brand|make|manufacturer)$|^(发动机|柴油机|发电机)?(品牌|厂家)$/i;
+  const V_NOTPOW = /engine|motor|alternator|generator(?!\s*set)|gross|\bnet\b|kwm|continuous|\bcop\b|fuel|consum|current|factor|%|load|torque|speed|voltage|range|nodes/i;
+  function verticalCells(l) {
+    let c = cellsOf(l);
+    // "| Genset Model：SP28GFS", "| Noise(LP1m): 100dB(A)": label and value in one cell.
+    if (c.length === 1) { const m = c[0].match(/^([^:：]{2,60})[:：]\s*(.+)$/); if (m) c = [m[1].trim(), m[2].trim()]; }
+    return [String(c[0] || "").replace(/[:：\s]+$/, "").trim(), ...c.slice(1).map((x) => String(x).trim())];
+  }
+  // A part's code in a value cell: brand words, then one code ("CCEC Cummins NTA855-G2A", "PERKINS , 1106A－70TAG4"). Full-width
+  // characters are read by NFKC as keyOf does ("－" is "-"). Choices ("or equivalent", "Series", "a / b") are no code.
+  function verticalCode(v) {
+    const s = String(v || "").normalize("NFKC").trim();
+    if (!s || /\bor\b|equiv|series|optional|select|custom|[/／]|或|可选|cylinder|\bcyl\b|stroke|cool|diesel|gasoline|petrol|\bgas\b|turbo|in-?line|vertical/i.test(s)) return null;
+    const words = s.split(/[\s,，]+/).filter(Boolean);
+    let i = 0;
+    while (i < words.length - 1 && /^[a-z&.-]+$/i.test(words[i])) i++;
+    const code = words.slice(i).join(" ");
+    return isCode(code) ? { code, brand: words.slice(0, i).join(" ") } : null;
+  }
+  // The figures of one output cell: [{ kW?, kVA? }] or null when not read.
+  function verticalPower(label, vals, decComma) {
+    const fnum = (x) => (/^\d{1,3}(,\d{3})+$/.test(x) ? (decComma ? NaN : +x.replace(/,/g, "")) : +String(x).replace(",", "."));
+    const U = (u) => (/^kva$/i.test(u) ? "kVA" : "kW");
+    const unitCells = vals.filter((x) => /^(kva|kw)$/i.test(x)), figs = vals.filter((x) => !/^(kva|kw|kva\s*[/(]\s*kw\)?|kw\s*[/(]\s*kva\)?)$/i.test(x));
+    if (figs.length !== 1) return null;
+    const v = figs[0].replace(/\s+/g, " ").trim(), got = {};
+    const withUnit = [...v.matchAll(/(\d+(?:[.,]\d+)?)\s*(kva|kw)(?![a-z])/gi)];
+    if (withUnit.length && v.replace(/(\d+(?:[.,]\d+)?)\s*(kva|kw)(?![a-z])/gi, "").replace(/[\s,/，、]+/g, "") === "") {
+      for (const m of withUnit) { const u = U(m[2]), f = fnum(m[1]); if (got[u] != null || !(f > 0)) return null; got[u] = f; }
+      return got;
+    }
+    // Units in the order of a unit cell or the label ("kVA/kw | 200/160", "(kW/kVA) | 16/20", "kVA (kW) | 11.2 (11.2)").
+    const order = (unitCells.length === 1 ? unitCells[0] : "") || ((vals.find((x) => /^kva\s*[/(]\s*kw\)?$|^kw\s*[/(]\s*kva\)?$/i.test(x)) || "")) || ((label.match(/(kva|kw)\s*[/(]\s*(kva|kw)/i) || [])[0] || "");
+    const two = v.match(/^(\d+(?:[.,]\d+)?)\s*(?:\/|\(\s*)(\d+(?:[.,]\d+)?)\s*\)?$/);
+    const ord = order.match(/(kva|kw)\s*[/(]\s*(kva|kw)/i);
+    if (two && ord && U(ord[1]) !== U(ord[2])) { const a = fnum(two[1]), b = fnum(two[2]); if (!(a > 0 && b > 0)) return null; return { [U(ord[1])]: a, [U(ord[2])]: b }; }
+    const one = v.match(/^(\d+(?:[.,]\d+)?)$/);
+    const units = new Set([...unitCells, ...(label.match(/\b(kva|kw)\b/gi) || [])].map(U));
+    if (one && units.size === 1) { const f = fnum(one[1]); return f > 0 ? { [[...units][0]]: f } : null; }
+    return null;
+  }
+  function verticalRecords(s, already, note) {
+    const out = [], tables = s.specTables || [];
+    tables.forEach((t, ti) => {
+      if (!(t.rows || []).length || already.some((o) => o.table === ti)) return;
+      if (GENSET_TABLES.some((x) => x.supplierId === s.id && x.n.includes(t.n))) return;
+      const lines = [...(t.header || []), ...t.rows], cs = lines.map(verticalCells);
+      // One genset down the page: most lines a label and at most two values; not the dotted "Manufacturer……CUMMINS" kind.
+      if (cs.filter((c) => c.length <= 3).length < lines.length * 0.6 || lines.filter((l) => /[….]{5,}/.test(l)).length >= 3) return;
+      if (!cs.slice(0, 8).some((c) => V_MODEL.test(c[0]) && c.slice(1).some((x) => isCode(x)))) return;
+      const say = (reason, detail) => note(t, ti, null, "bảng dọc: " + reason, detail);
+      const decComma = lines.some((l) => /\d,\d{1,2}(?![\d,])/.test(l));
+      const models = new Map(), engines = new Map(), alts = new Map(), levels = { prime: [], standby: [] }, specs = [];
+      let part = null, partSeen = false, engBrand = null, multi = null;
+      cs.forEach((c, li) => {
+        if (c.length === 1) { const h = headingOf(c[0]); if (h !== undefined && h !== "keep") { part = h; if (h) partSeen = true; } return; }
+        const label = c[0], vals = c.slice(1).filter(Boolean);
+        if (!label || !vals.length) return;
+        const codes = vals.map(verticalCode).filter(Boolean);
+        if (V_MODEL.test(label) && !V_ENGINE.test(label)) {
+          if (codes.length > 1) { multi = lines[li]; return; }
+          if (!codes.length) return;
+          const to = part === "engine" ? engines : part === "alternator" ? alts : models;
+          to.set(keyOf(codes[0].code), codes[0]);
+          return;
+        }
+        // "| Engine | Specifications", "| ALTERNATOR | Specification": a heading written in two cells.
+        if (V_ENGINE.test(label)) { partSeen = true; if (codes.length === 1) engines.set(keyOf(codes[0].code), codes[0]); else if (!/\d/.test(vals.join(" "))) part = "engine"; return; }
+        if (V_ALT.test(label)) { partSeen = true; if (codes.length === 1) alts.set(keyOf(codes[0].code), codes[0]); else if (!/\d/.test(vals.join(" "))) part = "alternator"; return; }
+        if (part === "engine" && V_BRAND.test(label)) { engBrand = vals[0]; return; }
+        if (/^engine\s*(brand|make|manufacturer)$/i.test(label)) { engBrand = vals[0]; return; }
+        const lv = PRIME_RATE.test(label) ? "prime" : STANDBY.test(label) ? "standby" : null;
+        if (lv && !(PRIME_RATE.test(label) && STANDBY.test(label)) && !V_NOTPOW.test(label)) {
+          if (part || partSeen) return; // an output in the engine's or the alternator's part is theirs
+          const p = verticalPower(label, vals, decComma);
+          if (!p) { say("công suất có nhãn mức nhưng không đọc được số / đơn vị", lines[li]); return; }
+          levels[lv].push({ p, line: lines[li] });
+          return;
+        }
+        const sk = specKey(label);
+        if (!sk) return;
+        const scope = SPEC[sk].scope;
+        if (part === "alternator" ? scope !== "alternator" : part === "engine" ? scope === "alternator" : false) return;
+        const sv = vals.filter((x) => !UNIT_CELL.test(x)), val = specVal(sv[0]);
+        if (sv.length === 1 && val && specFits(sk, val)) specs.push({ key: sk, label, value: val });
+      });
+      const base = { supplierId: s.id, n: t.n, table: ti, title: String(t.title || "") };
+      if (multi) { say("một dòng Model ghi hai mã: trang nhiều sản phẩm", multi); return; }
+      if (models.size !== 1) { say(models.size ? "bảng ghi từ hai model tổ máy trở lên" : "không có model tổ máy", [...models.values()].map((x) => x.code).join(", ")); return; }
+      const [gk, g] = [...models][0];
+      if (engines.size !== 1) { say(engines.size ? "bảng ghi hai mã động cơ" : "không có mã động cơ", [...engines.values()].map((x) => x.code).join(", ")); return; }
+      const [ek, e] = [...engines][0];
+      const a = alts.size === 1 ? [...alts.values()][0] : null;
+      if (ALT_CODE.test(g.code) || DOOSAN_P.test(g.code) || FRAME_ALT.test(g.code) || gk === ek || (a && gk === keyOf(a.code)) || V_PART_MODELS.includes(gk)) { say("model tổ máy trùng / giống mã động cơ hoặc đầu phát", g.code); return; }
+      const power = {};
+      for (const lv of ["prime", "standby"]) {
+        const got = levels[lv];
+        if (!got.length) continue;
+        const same = got.every((x) => JSON.stringify(x.p) === JSON.stringify(got[0].p));
+        if (!same) { say(`công suất ${lv} ghi hai lần khác số`, got.map((x) => x.line).join(" ¦ ")); continue; }
+        const p = got[0].p;
+        if (p.kW != null && p.kVA != null) { const f = fitPair(p.kVA, p.kW); if (!f || f.kVA !== p.kVA) { say(`kW / kVA ${lv} không khớp một tổ máy`, got[0].line); continue; } }
+        power[lv] = p;
+      }
+      if (power.prime && power.standby && ["kW", "kVA"].some((u) => power.prime[u] != null && power.standby[u] != null && power.prime[u] > power.standby[u])) {
+        say("prime lớn hơn standby", JSON.stringify(power)); delete power.prime; delete power.standby;
+      }
+      if (!power.prime && !power.standby) { say("không có công suất prime / standby ghi rõ ở phần tổ máy", g.code); return; }
+      const seen = new Map();
+      for (const x of specs) { const k = x.key; if (!seen.has(k)) seen.set(k, x); else if (seen.get(k) && seen.get(k).value !== x.value) { say("thông số ghi hai lần khác số", `${k}: ${seen.get(k).value} / ${x.value}`); seen.set(k, null); } }
+      const sp = saneSpecs([...seen.values()].filter(Boolean), power, (x) => say("số vô lý so với công suất", `${x.key}=${x.value}`));
+      const freq = freqIn(lines.join(" "), true);
+      const titleHead = base.title.split(/\s[|–-]\s|\|/)[0];
+      const makesOf = (code, list, brandCell) => {
+        const ms = [], cell = brandIn(code.brand, list), b = brandIn(brandCell || "", list), ttl = brandIn(titleHead, list);
+        if (cell.length === 1) addMake(ms, cell[0], "dòng bảng");
+        else if (b.length === 1) addMake(ms, b[0], "dòng bảng");
+        else if (ttl.length === 1) addMake(ms, ttl[0], "tên trang");
+        return ms;
+      };
+      const common = { ...base, genset: g.code, power, freq, specs: sp, lines: { header: t.header || [], rows: t.rows }, sheet: "bảng dọc" };
+      out.push({ ...common, kind: "engine", model: e.code, makes: makesOf(e, ENGINE_BRANDS, engBrand), other: a ? a.code : null, specs: sp.filter((x) => SPEC[x.key].scope !== "alternator") });
+      if (a && !ALT_PREFIX.test(a.code)) out.push({ ...common, kind: "alternator", model: a.code, makes: makesOf(a, ALT_BRANDS, null), other: e.code, specs: sp.filter((x) => SPEC[x.key].scope !== "engine") });
+    });
+    return out;
+  }
+  // Genset models of vertical sheets that are an engine's or an alternator's code elsewhere in the catalog (bang-doc-1: the
+  // test checks every vertical record against build(); a model found there goes on this list).
+  const V_PART_MODELS = [];
   function listedEngineRows(s, already, note) {
     const lays = ENGINE_CELL_TABLES.filter((x) => x.supplierId === s.id), out = [];
     if (!lays.length) return out;
