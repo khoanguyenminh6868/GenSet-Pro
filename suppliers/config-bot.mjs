@@ -2946,44 +2946,117 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   // row is of another supplier (IB2600603983 08:52Z: B825E5 of agg-fuzhou, DSE7420 of voltgent), the copy takes the genset of
   // the offering supplier's own row, or none, and its genset checks start "chưa rõ" too: they were read on the other row.
   const ctlNeed = ctlKindNeed(hsmtText);
+  // The copy of c with another controller: its controller checks all "chưa rõ", its other checks as they are.
+  // `rowOf`: the offering supplier's engine row, when the copy leaves a genset row of another supplier.
+  const twinCopy = (c, { controller, suppliers, note, gap, by, rowOf: u = null, weaker = false }) => {
+    const blank = (x) => ({ item: x.item, status: "unclear", offered: "", note });
+    const t = structuredClone(c);
+    for (const k of ["rfq", "lossWarn", "won"]) delete t[k];
+    t.controller = controller;
+    t.suppliers = suppliers;
+    if (u) {
+      // Same engine AND alternator: a row naming another alternator is not this configuration's genset (makerAltFix would
+      // put that alternator in the copy; IB2600603983 08:52Z: kaihua-genset's Volvo row with HCI544FS1).
+      const ra = rowAltOf(u, built);
+      if (u.genset && (!ra || !c.alternator?.model || CAT.keyOf(ra.model) === CAT.keyOf(c.alternator.model))) t.genset = { model: u.genset, src: { kind: "catalog", supplierId: u.supplierId, n: u.n, line: u.line } };
+      else delete t.genset;
+    }
+    const open = (x) => x.part === "controller" || (!!u && x.part === "genset");
+    t.checks = (t.checks || []).filter((x) => !(u && x.part === "genset" && x.byCode)).map((x) => (!open(x) ? x : { ...blank(x), ...(x.part === "genset" ? { note: `Bản bộ điều khiển NCC chào (${by.join(", ")}): chưa chấm trên dòng tổ máy của NCC này.` } : {}), requirement: x.requirement || "", hsmtQuote: x.hsmtQuote || "", part: x.part, level: x.level, ...(x.code ? { code: x.code } : {}), ...(x.parts?.length ? { parts: x.parts.map(blank) } : {}) }));
+    t.gaps = [gap, ...(Array.isArray(c.gaps) ? c.gaps.filter((g) => !/điều khiển|mô-đun/i.test(String(g))) : [])];
+    t.rank = (c.rank ?? 0) + 0.5;
+    t.ctlTwin = { of: ctlModelOf(c.controller), by, ...(weaker ? { weaker: true } : {}) };
+    return t;
+  };
+  const engineRows = (c) => {
+    const rowBy = new Map();
+    for (const u of (built.engines || []).find((e) => e.key === CAT.keyOf(c.engine?.model || ""))?.uses || []) if (u.line && sup.has(u.supplierId) && !rowBy.has(u.supplierId)) rowBy.set(u.supplierId, u);
+    return rowBy;
+  };
+  const isMakerCtl = (c) => !!c.controller?.model && c.controller.src?.kind === "maker" && sup.get(c.controller.src.supplierId)?.role === "controller_maker" && !!c.engine?.model;
+  // The suppliers with a row of this engine whose record offers the main controller itself, its generation (MKII) aside.
+  const offersMain = (c, rowBy) => {
+    const mk = CM.ctlKey(ctlModelOf(c.controller));
+    return [...rowBy.keys()].sort().flatMap((id) => { const x = (sup.get(id).controllers || []).find((y) => y.model && CM.ctlKey(y.model) === mk); return x ? [{ id, model: x.model }] : []; });
+  };
+  // A main controller "from the maker's datasheet" that such a supplier does offer is not "NCC chưa chào" (IB2600603983 11:44Z:
+  // interpower-international lists DSE7320, the main one is DSE7320 MKII): name it, and ask when the record gives no generation.
+  const markOfferedMain = (c) => {
+    const list = isMakerCtl(c) ? offersMain(c, engineRows(c)) : [];
+    if (!list.length) { if (c.controller) delete c.controller.offeredMain; return; }
+    const main = ctlModelOf(c.controller), gen = String(main).match(/MK\s?I{1,3}\b/i)?.[0], noGen = !!gen && list.every((x) => !/MK\s?I{1,3}\b/i.test(x.model));
+    const by = list.slice(0, 3).map((x) => x.id);
+    c.controller.offeredMain = { by, model: list[0].model, label: `Theo tài liệu hãng; NCC ${by.join(", ")} chào ${list[0].model}${noGen ? ` (hồ sơ không ghi đời ${gen}, cần hỏi)` : ", cần hỏi NCC có lắp cho động cơ này không"}` };
+  };
   const ctlTwinOf = (c) => {
-    if (!c.controller?.model || c.controller.src?.kind !== "maker" || sup.get(c.controller.src.supplierId)?.role !== "controller_maker" || !c.engine?.model) return null;
-    const ek = CAT.keyOf(c.engine.model), rowBy = new Map();
-    for (const u of (built.engines || []).find((e) => e.key === ek)?.uses || []) if (u.line && sup.has(u.supplierId) && !rowBy.has(u.supplierId)) rowBy.set(u.supplierId, u);
+    if (!isMakerCtl(c)) return null;
+    const rowBy = engineRows(c);
     if (!rowBy.size) return null;
+    // A supplier that offers the main controller itself gives no weaker copy of it.
+    const hasMain = new Set(offersMain(c, rowBy).map((x) => x.id));
     const own = (c.suppliers || []).map((s) => s.supplierId).filter((id) => rowBy.has(id));
-    const ids = [...new Set([...own, ...[...rowBy.keys()].sort()])], names = commNames(result.requirements || []);
+    const ids = [...new Set([...own, ...[...rowBy.keys()].sort()])].filter((id) => !hasMain.has(id)), names = commNames(result.requirements || []);
+    if (!ids.length) return null;
     const step = (a) => (a.step == null ? Infinity : a.step);
     const cands = ctlCands({ ...c, suppliers: ids.map((supplierId) => ({ supplierId })) }, names);
-    const pick = cands.out
-      .filter((a) => !a.notOffered && a.offeredBy && (!ctlNeed || a.kind === ctlNeed) && (!names.length || a.met * 2 >= names.length))
+    // A supplier offering several controllers counts with one: the kind the HSMT asks, most communication parts, then the HIGHER
+    // step (điều phối 21/11/2026: a line "DSE4520 DSE6120 DSE7320 DSE8610" is not an offer of its lowest one).
+    const offered = cands.out.filter((a) => !a.notOffered && a.offeredBy && (!ctlNeed || a.kind === ctlNeed));
+    const lists = (id, a) => (sup.get(id).controllers || []).some((x) => x.model && CAT.keyOf(x.model) === CAT.keyOf(a.offeredAs));
+    const high = (a) => (a.step == null ? -Infinity : a.step);
+    const bestOf = (id) => offered.filter((a) => lists(id, a)).sort((a, b) => b.met - a.met || high(b) - high(a))[0];
+    const pick = offered
+      .filter((a) => ids.some((id) => bestOf(id) === a) && (!names.length || a.met * 2 >= names.length))
       .sort((a, b) => b.met - a.met || step(a) - step(b))[0];
     if (!pick) return null;
     const key = CAT.keyOf(pick.offeredAs), hasIt = (id) => (sup.get(id).controllers || []).find((x) => x.model && CAT.keyOf(x.model) === key);
     const by = ids.filter(hasIt).slice(0, 3), o = hasIt(pick.offeredBy);
-    const note = `Bản bộ điều khiển NCC chào (${by.join(", ")}): chưa chấm hết trên datasheet ${pick.offeredAs}.`;
-    const blank = (x) => ({ item: x.item, status: "unclear", offered: "", note });
-    const t = structuredClone(c);
-    for (const k of ["rfq", "lossWarn", "won"]) delete t[k];
-    t.controller = { make: c.controller.make, model: pick.offeredAs, src: { kind: "controller", supplierId: pick.offeredBy, ...(o.src?.length ? { n: o.src[0] } : {}), line: o.line } };
-    t.suppliers = by.map((id) => (c.suppliers || []).find((s) => s.supplierId === id) ? structuredClone(c.suppliers.find((s) => s.supplierId === id)) : { supplierId: id, n: rowBy.get(id).n, line: rowBy.get(id).line, why: `Có dòng động cơ ${c.engine.model}, hồ sơ NCC chào ${pick.offeredAs}` });
-    const gsBy = c.genset?.model ? c.genset.src?.supplierId : null, otherRow = !!gsBy && !by.includes(gsBy);
-    if (otherRow) {
-      // Same engine AND alternator: a row naming another alternator is not this configuration's genset (makerAltFix would
-      // put that alternator in the copy; IB2600603983 08:52Z: kaihua-genset's Volvo row with HCI544FS1).
-      const u = rowBy.get(by[0]), ra = rowAltOf(u, built);
-      if (u.genset && (!ra || !c.alternator?.model || CAT.keyOf(ra.model) === CAT.keyOf(c.alternator.model))) t.genset = { model: u.genset, src: { kind: "catalog", supplierId: by[0], n: u.n, line: u.line } };
-      else delete t.genset;
-    }
-    const open = (x) => x.part === "controller" || (otherRow && x.part === "genset");
-    t.checks = (t.checks || []).filter((x) => !(otherRow && x.part === "genset" && x.byCode)).map((x) => (!open(x) ? x : { ...blank(x), ...(x.part === "genset" ? { note: `Bản bộ điều khiển NCC chào (${by.join(", ")}): chưa chấm trên dòng tổ máy của NCC này.` } : {}), requirement: x.requirement || "", hsmtQuote: x.hsmtQuote || "", part: x.part, level: x.level, ...(x.code ? { code: x.code } : {}), ...(x.parts?.length ? { parts: x.parts.map(blank) } : {}) }));
     const onRow = norm(o.line).replace(/\s/g, "").includes(norm(c.engine.model).replace(/\s/g, ""));
-    const gap = `${pick.offeredBy} chào ${pick.offeredAs}${onRow ? "" : ` trong hồ sơ, dòng đó không ghi động cơ ${c.engine.model}: cần hỏi NCC có lắp cho động cơ này không`}.`;
-    const rest = Array.isArray(c.gaps) ? c.gaps.filter((g) => !/điều khiển|mô-đun/i.test(String(g))) : [];
-    t.gaps = [gap, ...rest];
-    t.rank = (c.rank ?? 0) + 0.5;
-    t.ctlTwin = { of: ctlModelOf(c.controller), by, ...(pick.met < (cands.mainPair?.met ?? 0) ? { weaker: true } : {}) };
-    return t;
+    const gsBy = c.genset?.model ? c.genset.src?.supplierId : null;
+    return twinCopy(c, {
+      rowOf: gsBy && !by.includes(gsBy) ? rowBy.get(by[0]) : null,
+      weaker: pick.met < (cands.mainPair?.met ?? 0),
+      controller: { make: c.controller.make, model: pick.offeredAs, src: { kind: "controller", supplierId: pick.offeredBy, ...(o.src?.length ? { n: o.src[0] } : {}), line: o.line } },
+      suppliers: by.map((id) => (c.suppliers || []).find((s) => s.supplierId === id) ? structuredClone(c.suppliers.find((s) => s.supplierId === id)) : { supplierId: id, n: rowBy.get(id).n, line: rowBy.get(id).line, why: `Có dòng động cơ ${c.engine.model}, hồ sơ NCC chào ${pick.offeredAs}` }),
+      note: `Bản bộ điều khiển NCC chào (${by.join(", ")}): chưa chấm hết trên datasheet ${pick.offeredAs}.`,
+      gap: `${pick.offeredBy} chào ${pick.offeredAs}${onRow ? "" : ` trong hồ sơ, dòng đó không ghi động cơ ${c.engine.model}: cần hỏi NCC có lắp cho động cơ này không`}.`,
+      by,
+    });
+  };
+  // Chiều ngược (Khoa 21/11/2026 "có"): the agent's main controller is one a supplier offers, and the lowest of that make that
+  // meets EVERY communication function of the HSMT with its best module (the table "Bộ điều khiển thấp nhất đủ yêu cầu theo
+  // code") is another one → the copy with that lowest controller, from the maker's datasheet ("NCC chưa chào") unless a
+  // supplier of the configuration offers it. No function list in the HSMT, no such table, no copy. The lowest one's kind
+  // must read as the HSMT asks (unread: no copy); a main controller that meets all at the same or a lower step, or whose
+  // step cannot be compared, stays alone.
+  const ctlLowTwinOf = (c) => {
+    if (!c.controller?.model || c.controller.src?.kind === "maker" || !c.engine?.model) return null;
+    const names = hsmtCommNames(hsmtText || "");
+    if (!names.length) return null;
+    const { out, mainPair } = ctlCands(c, names), step = (a) => (a.step == null ? Infinity : a.step);
+    const fits = (kind) => (ctlNeed === "sync" ? kind === "sync" : ctlNeed === "amf" ? !kind || kind === "amf" : true);
+    const pick = out.filter((a) => fits(a.kind) && a.met === names.length).sort((a, b) => step(a) - step(b) || (a.notOffered ? 1 : 0) - (b.notOffered ? 1 : 0))[0];
+    if (!pick || (ctlNeed && pick.kind !== ctlNeed)) return null;
+    const mainModel = ctlModelOf(c.controller), mainSheet = factsOf(c, "controller").find((f) => f.version)?.version || mainModel;
+    const mainStep = CM.ctlStep(mainSheet);
+    if (mainPair?.met === names.length && fits(CM.kindOf(ctlKinds, mainSheet) || CM.kindOf(ctlKinds, mainModel)) && (pick.step == null || mainStep == null || pick.step >= mainStep)) return null;
+    let src, model = pick.model, by = [];
+    if (pick.notOffered) {
+      const f = factsFor(facts, "controller", pick.model).find((x) => sup.get(x.supplierId)?.role === "controller_maker");
+      if (!f) return null;
+      src = { kind: "maker", supplierId: f.supplierId, n: f.n };
+    } else {
+      const o = (sup.get(pick.offeredBy)?.controllers || []).find((x) => x.model && CAT.keyOf(x.model) === CAT.keyOf(pick.offeredAs));
+      src = o ? { kind: "controller", supplierId: pick.offeredBy, ...(o.src?.length ? { n: o.src[0] } : {}), line: o.line } : { ...c.controller.src };
+      model = pick.offeredAs; by = [pick.offeredBy];
+    }
+    return twinCopy(c, {
+      controller: { make: c.controller.make, model, src },
+      suppliers: structuredClone(c.suppliers || []),
+      note: `Bản bộ điều khiển thấp nhất đủ yêu cầu theo code: chưa chấm hết trên datasheet ${model}.`,
+      gap: pick.notOffered ? `${model} là bộ thấp nhất đủ yêu cầu theo tài liệu hãng, NCC chưa chào; bản trên là ${mainModel} do NCC chào.` : `${pick.offeredBy} chào ${model}, bộ thấp nhất đủ yêu cầu; bản trên là ${mainModel}.`,
+      by,
+    });
   };
   // Đồng bộ thương hiệu (Khoa, 2026-11-06): read from the HSMT by code, one requirement of the code's own in place of
   // any the agent wrote about it; its check is written below from the makes, never by the agent.
@@ -3208,10 +3281,16 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   // out). An earlier check's copies go first, and one the agent already wrote (same engine, alternator, controller) is not doubled.
   // A copy whose controller meets fewer communication parts than the main one (`weaker`) only takes a free place: it never
   // pushes out a configuration the agent checked (IB2600603983 08:52Z: Volvo + DSE6120 4/7 pushed out Baudouin 6M33G825/5).
+  // One controller under two names (DSE7320 on a supplier's line, DSE7320 MKII on the maker's sheet) is the same one.
   const twinBases = (result.configs || []).filter((c) => !c.ctlTwin);
+  const ctlKeysOf = (m) => new Set([CAT.keyOf(m || ""), ...factsFor(facts, "controller", m || "").map((f) => CAT.keyOf(f.sheetModel || ""))].filter(Boolean));
   const twinPairs = twinBases.map((c) => {
-    const t = ctlTwinOf(c), same = (o) => CAT.keyOf(o.engine?.model || "") === CAT.keyOf(t.engine.model) && CAT.keyOf(o.alternator?.model || "") === CAT.keyOf(t.alternator?.model || "") && CAT.keyOf(ctlModelOf(o.controller) || "") === CAT.keyOf(t.controller.model);
-    return { c, t: t && !twinBases.some(same) ? t : null };
+    markOfferedMain(c);
+    const t = ctlTwinOf(c) || ctlLowTwinOf(c);
+    if (!t) return { c, t: null };
+    const tk = ctlKeysOf(t.controller.model);
+    const same = (o) => CAT.keyOf(o.engine?.model || "") === CAT.keyOf(t.engine.model) && CAT.keyOf(o.alternator?.model || "") === CAT.keyOf(t.alternator?.model || "") && !!o.controller?.model && [...ctlKeysOf(ctlModelOf(o.controller))].some((k) => tk.has(k));
+    return { c, t: twinBases.some(same) ? null : t };
   });
   let twinRoom = MAX_CONFIGS - twinBases.length - twinPairs.filter((p) => p.t && !p.t.ctlTwin.weaker).length;
   result.configs = twinPairs.flatMap(({ c, t }) => (t && (!t.ctlTwin.weaker || twinRoom-- > 0) ? [c, t] : [c]));
@@ -3228,7 +3307,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     // A main controller the agent chose from its maker's datasheet, which no supplier of the configuration offers
     // (bdk-amf, Khoa 20/11/2026 "2"): labelled as such by code; its source is that datasheet table (sourceText "maker").
     if (c.controller) {
-      if (c.controller.src?.kind === "maker" && sup.get(c.controller.src.supplierId)?.role === "controller_maker") { c.controller.fromMaker = true; c.controller.label = CM.CTL_ALT_LABEL; }
+      if (c.controller.src?.kind === "maker" && sup.get(c.controller.src.supplierId)?.role === "controller_maker") { c.controller.fromMaker = true; c.controller.label = c.controller.offeredMain?.label || CM.CTL_ALT_LABEL; }
       else { delete c.controller.fromMaker; if (c.controller.label === CM.CTL_ALT_LABEL) delete c.controller.label; }
     }
     for (const part of ["engine", "alternator", "genset", "controller"]) {
@@ -3236,7 +3315,9 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
       if (!p) continue;
       texts[part] = sourceText(p.src, p.model);
       if (!texts[part]) { p.unverified = true; problems.push(`#${c.rank} ${part} ${p.model}: không tìm thấy nguồn (${p.src?.kind || "?"})`); continue; }
-      if ((!p.fromMaker || part === "controller") && !texts[part].includes(norm(p.model).replace(/\s+/g, " ")) && !texts[part].replace(/\s/g, "").includes(norm(p.model).replace(/\s/g, ""))) { p.unverified = true; problems.push(`#${c.rank} ${part}: model ${p.model} không có trong nguồn`); }
+      // The code's copy names the controller as the catalog reads it (DSE7320), its supplier's line may write it otherwise ("Deepsea 7320").
+      const twinNamed = part === "controller" && !!c.ctlTwin && p.src?.kind === "controller" && CAT.controllersIn(p.src.line || "").some((x) => x.model && CAT.keyOf(x.model) === CAT.keyOf(p.model));
+      if (!twinNamed && (!p.fromMaker || part === "controller") && !texts[part].includes(norm(p.model).replace(/\s+/g, " ")) && !texts[part].replace(/\s/g, "").includes(norm(p.model).replace(/\s/g, ""))) { p.unverified = true; problems.push(`#${c.rank} ${part}: model ${p.model} không có trong nguồn`); }
       if (p.src?.kind === "internet" && p.src.quote && !texts[part].includes(norm(p.src.quote))) { p.unverified = true; problems.push(`#${c.rank} ${part}: câu trích web không có trong trang đã lưu`); }
       // A controller's make may come from its model code (DSE… is Deep Sea, HGM… SmartGen), as web/catalog.js reads it.
       const makeOfCode = part === "controller" && CAT.controllersIn(p.model).some((x) => x.model && x.brand === p.make);
@@ -3810,7 +3891,7 @@ export function rfqOf(c, reqs = []) {
   const ctl = c.controller;
   if (ctl?.model) {
     const ctlName = `${ctl.model}${ctl.make ? ` (${ctl.make})` : ""}`;
-    if (ctl.fromMaker) add({ part: "controller", item: `Bộ điều khiển ${ctl.model}`, requirement: "", kind: "model", status: "unclear", code: "ctl_model", why: CM.CTL_ALT_LABEL,
+    if (ctl.fromMaker) add({ part: "controller", item: `Bộ điều khiển ${ctl.model}`, requirement: "", kind: "model", status: "unclear", code: "ctl_model", why: ctl.offeredMain?.label || CM.CTL_ALT_LABEL,
       ask: `Xác nhận NCC cấp được bộ điều khiển ${ctlName}; nêu nước sản xuất, gửi CO` }, null);
     for (const m of (ctl.modules || []).filter((x) => !x.offeredBy)) {
       const order = m.order ? `, mã đặt hàng ${m.order}` : "";
