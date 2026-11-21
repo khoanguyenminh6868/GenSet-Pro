@@ -49,3 +49,14 @@ test("hồ sơ thật: 10 bảng / 229 dòng có cột Cylinder, 224 bản ghi �
   assert.equal(r.length, 224);
   for (const x of r) assert.equal(cylOf(x), x.line.split("|")[8].trim(), x.line);
 });
+
+test("S6-6: hai cột kWm 1500 / 1800 rpm là hai engPower khác nhãn; ô '--' không cho số; cm3 / Aspiration / Cons. 70% không đọc", () => {
+  const s = sup("tecnogen", [{ n: 2001, title: "Tecnogen Enermax (Perkins)", header: H,
+    rows: ["| PK17MSX | 16,5 | 15 | 20 | 18 | 403A-15G2 | M | 3 | 1496 | 13 | 16 | 2,9 | 3,5 | N | AUS7310-17 | ACP7320 | 65 | 75 | 150 | 80 | 125 | 590",
+      "| PK14MSX | 14,3 | 13 | -- | -- | 403A-15G1 | M | 3 | 1496 | 12 | -- | 2,6 | -- | N | AUS7310-17 | ACP7320 | 65 | 75 | 150 | 80 | 125 | 580"] }]);
+  const [a, b] = C.fromSupplier(s, []).filter((x) => x.kind === "engine");
+  const ep = (r) => r.specs.filter((x) => x.key === "engPower").map((x) => [x.label, x.value]);
+  assert.deepEqual(ep(a), [["kWm 1500 rpm", "13"], ["kWm 1800 rpm", "16"]]);
+  assert.deepEqual(ep(b), [["kWm 1500 rpm", "12"]]);
+  for (const r of [a, b]) assert.ok(!r.specs.some((x) => ["disp", "asp", "fuel", "fuel75", "fuel50"].includes(x.key)));
+});
