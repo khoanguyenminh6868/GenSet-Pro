@@ -57,7 +57,7 @@ test("không ghi: menu / khẩu hiệu / đơn vị / chữ mơ hồ / mâu thu�
     // trang vẫn không đủ; từ 20/11/2026 có nhiên liệu qua FUEL_PAGES (ca "nhiên liệu theo bảng" cuối tệp).
     ["victory-generator", 129], ["victory-generator", 133],       // "Diesel Twin-cylinder"; chữ xăng ở dòng khác
     ["kingway-power", 117],                                       // bể chứa khí sinh học
-    ["man-engines", 104],                                         // "diesel and gas engines" trộn
+    // man-engines n104 ("diesel and gas engines" trộn): từ 21/11/2026 chỉ dòng E3262 có nhiên liệu qua FUEL_PAGES (ca cuối tệp).
     ["penlucky", 102],                                            // URL diesel; chỉ mã động cơ K38N
   ]) {
     const rs = rec(id, n);
@@ -115,7 +115,10 @@ test("nhiên liệu theo bảng (Khoa 20/11/2026, FUEL_PAGES): jianghao n104 kh�
   const gx = sp.filter((r) => /^GX(390|630|690)$/.test(r.model));
   assert.equal(gx.length, 7);
   for (const r of gx) { assert.equal(r.fuel, "gasoline"); assert.equal(r.fuelFrom, "D"); assert.ok(r.fuelWhy.includes(r.model) && /engines\.honda\.com/.test(r.fuelWhy)); }
-  assert.ok(sp.filter((r) => !gx.includes(r)).every((r) => r.fuel === undefined));   // ZS168FA / ZS182F / ZS190F: không rõ
+  // ZS168FA / ZS182F / ZS190F: không rõ hãng và nhiên liệu; Khoa 21/11/2026 "loại cả bảng" → `dual` mức K, ghi rõ là quyết định, không là nguồn hãng
+  const rest = sp.filter((r) => !gx.includes(r));
+  assert.equal(rest.length, 3);
+  for (const r of rest) { assert.equal(r.fuel, "dual"); assert.equal(r.fuelFrom, "K"); assert.ok(/QUYẾT ĐỊNH của Khoa/.test(r.fuelWhy) && /không có nguồn hãng/.test(r.fuelWhy)); }
   const zc = C.gensetsOf(real("zc-power")).filter((r) => r.n === 109);
   assert.equal(zc.length, 9);
   assert.ok(zc.every((r) => r.fuel === "gasoline" && r.fuelFrom === "T"));
@@ -125,4 +128,25 @@ test("nhiên liệu theo bảng (Khoa 20/11/2026, FUEL_PAGES): jianghao n104 kh�
   const g = C.build([real("zc-power")]).gensets.filter((e) => e.uses.some((u) => u.n === 109));
   assert.equal(g.length, 9);
   assert.ok(g.every((e) => e.uses.every((u) => u.fuel === "gasoline")));
+});
+
+test("man-engines n104 (sua-so-le-1, điều phối 21/11/2026): chỉ dòng E3262 ghi khí (trang hãng MAN, mức D); 8 dòng D2676 / D2862 / D3872 để trống (catalog không có giá trị diesel tường minh)", () => {
+  const m = rec("man-engines", 104);
+  assert.equal(m.length, 9);
+  const e = m.filter((r) => r.model === "E3262");
+  assert.equal(e.length, 1);
+  assert.deepEqual([e[0].fuel, e[0].fuelFrom], ["gas", "D"]);
+  assert.ok(/E3262 naturally aspired engine with natural gas/.test(e[0].fuelWhy) && /man-motor-e3262/.test(e[0].fuelWhy));
+  assert.ok(m.filter((r) => r.model !== "E3262").every((r) => r.fuel === undefined));
+  // bảng khác của man-engines (n105: bảng khí tự ghi) không bị đổi bởi mục này
+  assert.ok(rec("man-engines", 105).every((r) => r.fuelWhy === undefined || !/datasheet hãng động cơ MAN/.test(r.fuelWhy)));
+});
+
+test("mwm n1007 / n1008 (sua-so-le-1, điều phối 21/11/2026): datasheet hãng TCG 3016 V16 ghi khí tự nhiên → mỗi bảng một bản ghi động cơ `gas` mức D", () => {
+  for (const n of [1007, 1008]) {
+    const m = rec("mwm", n);
+    assert.equal(m.length, 1, `n${n}`);
+    assert.deepEqual([m[0].kind, m[0].fuel, m[0].fuelFrom], ["engine", "gas", "D"], `n${n}`);
+    assert.ok(/MWM/.test(m[0].fuelWhy) && /gas-engine-tcg-3016/.test(m[0].fuelWhy), `n${n}`);
+  }
 });

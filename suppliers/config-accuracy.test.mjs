@@ -391,7 +391,7 @@ test("catalog.md: controllers of the same make only the maker's datasheet gives,
   const sec = md.split("## Bộ điều khiển theo datasheet hãng (NCC chưa chào)")[1]?.split("\n## ")[0] || "";
   assert.match(sec, /- DSE7420 MKII \(Deep Sea\) — loại theo datasheet hãng: tự động khi mất lưới \(AMF\) — supplierId: dse, n: 1003/);
   assert.match(sec, /- DSE7410 MKII \(Deep Sea\) — loại theo datasheet hãng: chỉ tự khởi động/);
-  assert.match(sec, /HSMT có ATS/);
+  assert.match(sec, /HSMT có bộ điều khiển phải giám sát lưới \/ điều khiển ATS/);
   assert.ok(!/- DSE7320/.test(sec), "DSE7320 đã có ở trên, không liệt kê lại");
   assert.match(ctlMd, /### DSE7420 MKII — supplierId: dse, n: 1003 — loại theo datasheet hãng: tự động khi mất lưới \(AMF\)/);
 });

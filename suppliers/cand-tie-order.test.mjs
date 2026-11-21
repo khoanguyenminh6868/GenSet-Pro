@@ -8,20 +8,24 @@ const H = "| Model | Prime kVA | Prime kW | Engine | Alternator | No. of Cylinde
 const sup = (id, rows) => ({ id, country: "CN", confidence: "high", specTables: [{ n: 101, title: "Gensets", header: [H], rows }] });
 const free = (text) => ({ ...hintsOf(`Chương V. Yêu cầu kỹ thuật\n${text}`), engineMakes: [], altMakes: [], ctrlMakes: [], ctrlModels: [] });
 const run = (list, kva = 700) => candidates(C.build(list), { value: kva, unit: "kVA" }, free("Số xi lanh: ≥ 6\n50 Hz"), { suppliers: list });
-const order = (r) => r.top.map((x) => `${x.u.supplierId}|${x.e.key}`);
+const order = (r) => r.all.map((x) => `${x.u.supplierId}|${x.e.key}`);
 
 // Dòng giống hệt nhau ở ba nhà cung cấp: điểm bằng nhau, thứ tự trước đây theo thứ tự duyệt danh mục.
 const same = (id) => sup(id, [`| m-1 | 750 | 600 | QSK23-G2 | S5L1D-H41 | 6 |`]);
-const list = [same("zeta"), same("alpha"), same("mid")];
+const names = ["acepow", "bobig", "cuman", "dingbo", "eagle", "fuan", "green", "hesheng"];
+const list = names.map(same);
 
-test("hoà điểm: đảo thứ tự nhà cung cấp trong danh sách không đổi thứ tự top; điểm bằng nhau thật", () => {
+test("hoà điểm: đảo thứ tự nhà cung cấp trong danh sách không đổi thứ tự top; thứ tự không theo chữ cái", () => {
   const r = run(list);
-  const scores = new Set(r.top.map((x) => x.score));
-  assert.equal(r.top.length, 3);
-  assert.equal(scores.size, 1, "ba dòng phải cùng điểm");
+  const scores = new Set(r.all.map((x) => x.score));
+  assert.equal(r.all.length, names.length);
+  assert.equal(scores.size, 1, "mọi dòng phải cùng điểm");
   const base = order(r);
-  assert.deepEqual(base.map((k) => k.split("|")[0]), ["alpha", "mid", "zeta"]);
-  for (const l of [[...list].reverse(), [list[1], list[2], list[0]], [list[2], list[0], list[1]]]) assert.deepEqual(order(run(l)), base);
+  const sups = base.map((k) => k.split("|")[0]);
+  assert.deepEqual([...sups].sort(), names);
+  assert.notDeepEqual(sups, names, "thứ tự theo số băm, không theo chữ cái");
+  const rot = (k) => [...list.slice(k), ...list.slice(0, k)];
+  for (const l of [[...list].reverse(), rot(3), rot(5)]) assert.deepEqual(order(run(l)), base);
 });
 
 test("điểm không đổi: top vẫn xếp điểm giảm dần", () => {

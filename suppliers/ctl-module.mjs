@@ -47,7 +47,15 @@ export const SUBS = [
   { k: "CAN", vi: /\bCAN\b|J1939/, src: /\bCAN(?:bus)?\b|J1939/, mod: false },
 ];
 export const subsOf = (name) => SUBS.filter((s) => s.vi.test(String(name || "")));
-export const BMS_NOTE = "BMS qua Modbus/SNMP, cần NCC xác nhận.";
+// A communication part that asks for remote monitoring / control and names no function ("Cổng kết nối với hệ thống kiểm soát
+// từ xa"; Khoa 2026-11-21 "Có"): met when the controller has RS485 / Modbus on its own lines, or Ethernet / 4G on its lines or
+// a module's. Not one tied to something else (dry contact, I/O, an app, a remote panel, a state "đang ở chế độ…").
+const REMOTE_WORDS = /(?:gi[áa]m\s+s[áa]t|ki[ểe]m\s+so[áa]t|đi[ềe]u\s+khi[ểe]n)(?:\s*(?:,|v[àa])\s*(?:gi[áa]m\s+s[áa]t|ki[ểe]m\s+so[áa]t|đi[ềe]u\s+khi[ểe]n))?\s+t[ừu]\s+xa|remote\s+(?:monitoring|control)/i;
+const REMOTE_OTHER = /t[ae]y\s+b[ấa]m|b[ảa]ng\s+đi[ềe]u\s+khi[ểe]n\s+t[ừu]|b[ộo]\s+đi[ềe]u\s+khi[ểe]n\s+t[ừu]|micro|nh[âa]n\s+c[ôo]ng|đi[ềe]u\s+h[òo]a|m[áa]y\s+in|remote\s+panel|d[ừu]ng\s+m[áa]y|kh[ởo]i\s+đ[ộo]ng|đ[óo]ng\s+m[ởo]|qua\s+c[ổồo]ng|th[ôo]ng\s+qua|ti[ếe]p\s+đi[ểe]m|dry\s+contact|\binput\b|\boutput\b|\bI\/O\b|smartphone|[ứu]ng\s+d[ụu]ng|ph[ầa]n\s+m[ềe]m|kh[ôo]ng\s+d[âa]y|\bHMI\b|m[àa]n\s+h[ìi]nh|(?<!\p{L})(?:đang|khi|t[ủu])(?!\p{L})|thi[ếe]t\s+b[ịi]|h[òo][àa]\s+đ[ồo]ng/iu;
+export const isRemoteGeneric = (name) => !subsOf(name).length && REMOTE_WORDS.test(String(name || "")) && !REMOTE_OTHER.test(String(name || ""));
+const REMOTE_PORTS = ["RS485", "Modbus", "Ethernet", "4G"].map((k) => SUBS.find((s) => s.k === k));
+export const REMOTE_NOTE = "Tính đạt theo cổng kết nối (RS485 / Modbus / Ethernet / 4G), Khoa 21/11/2026.";
+export const BMS_NOTE ="BMS qua Modbus/SNMP, cần NCC xác nhận.";
 export const MODULE_LABEL = "Mô-đun chọn theo tài liệu hãng, NCC chưa chào";
 export const ethNote = (models) => `Ethernet nằm trên mô-đun ${models.join(", ")}, không phải trên bộ điều khiển.`;
 
@@ -104,6 +112,12 @@ export function compatModules(ctlFacts = [], keys = new Set(), modFacts = new Ma
 // One part read by code: for each function it names, the controller's line, else (Q2) a module's line. `mods`: [{ m, facts }].
 // → { subs, per: [{ sub, by: "controller" | "module" | null, line, f, m, via }] }.
 export function commEval(name, ctlFacts = [], mods = []) {
+  if (isRemoteGeneric(name)) {
+    // Any one of the ports is enough; the controller's own line first, then a module's (Ethernet / 4G only).
+    for (const sub of REMOTE_PORTS) for (const f of ctlFacts) { const r = ctlShows(f.line, sub); if (r) return { subs: [sub], per: [{ sub, by: "controller", line: f.line, f, via: r.via }] }; }
+    for (const sub of REMOTE_PORTS) for (const { m, facts } of mods) for (const f of facts) { const r = modShows(f.line, sub, m); if (r) return { subs: [sub], per: [{ sub, by: "module", line: f.line, f, m, via: null }] }; }
+    return { subs: REMOTE_PORTS, per: REMOTE_PORTS.map((sub) => ({ sub, by: null })) };
+  }
   const subs = subsOf(name), per = [];
   for (const sub of subs) {
     let hit = null;
@@ -121,6 +135,19 @@ export function commEval(name, ctlFacts = [], mods = []) {
 // line), or on another line of the controller's own datasheet (kept in `alsoQuotes`). A function missing from both → the
 // part is "unclear" (a module may still make it met: commModules). A BMS met through a protocol gets the note of Q3.
 export function commWords(x, ctlFacts = []) {
+  // The same yardstick for every controller, whatever the agent wrote; a module may still turn it met (commModules).
+  if (isRemoteGeneric(x.name || x.item) && x.status !== "not_met") {
+    const hit = commEval(x.name || x.item, ctlFacts, []).per.find((p) => p.by);
+    stash(x);
+    if (hit) {
+      x.status = "met"; x.offered = `Có ${hit.sub.k}`; x.sourceQuote = hit.line;
+      x.factSrc = { supplierId: hit.f.supplierId, n: hit.f.n, line: hit.f.line }; x.note = REMOTE_NOTE;
+    } else {
+      x.status = "unclear"; x.offered = ""; delete x.sourceQuote; delete x.factSrc;
+      x.note = "Datasheet bộ điều khiển không ghi RS485 / Modbus / Ethernet / 4G.";
+    }
+    return;
+  }
   if (x.status !== "met") return;
   const subs = subsOf(x.name || x.item);
   if (!subs.length) return;
@@ -162,7 +189,7 @@ export function commModules(c, parts = [], ctlFacts = [], compat = [], modFacts 
   delete c.controller?.modules;
   if (!c.controller || !compat.length) return [];
   const cands = compat.map(({ m, compat }) => ({ m, compat, facts: modFacts.get(m.key) || [] })).filter((x) => x.facts.length);
-  const open = parts.filter((x) => x.status !== "met" && subsOf(x.name || x.item).length);
+  const open = parts.filter((x) => x.status !== "met" && (subsOf(x.name || x.item).length || isRemoteGeneric(x.name || x.item)));
   const turns = (mods) => open.filter((x) => { const e = commEval(x.name || x.item, ctlFacts, mods); return e.per.every((p) => p.by) && e.per.some((p) => p.by === "module"); });
   const chosen = [];
   for (let i = 0; i < 2; i++) {
@@ -187,7 +214,7 @@ export function commModules(c, parts = [], ctlFacts = [], compat = [], modFacts 
     if (!x.alsoQuotes.length) delete x.alsoQuotes;
     x.moduleNote = MODULE_LABEL;
     const eth = [...new Set(e.per.filter((p) => p.by === "module" && p.sub.modNote).map((p) => p.m.model))];
-    x.note = `${MODULE_LABEL}.${eth.length ? ` ${ethNote(eth)}` : ""}${e.per.some((p) => p.via) ? ` ${BMS_NOTE}` : ""}`;
+    x.note = `${MODULE_LABEL}.${eth.length ? ` ${ethNote(eth)}` : ""}${e.per.some((p) => p.via) ? ` ${BMS_NOTE}` : ""}${isRemoteGeneric(x.name || x.item) ? ` ${REMOTE_NOTE}` : ""}`;
     delete x.hint; delete x.unverified; delete x.wordsMissing;
   }
   const mods = chosen.filter((x) => used.has(x.m.key)).map(({ m, compat }) => ({ model: m.model, make: m.make, ...(m.order ? { order: m.order } : {}), compat, offeredBy: null, label: MODULE_LABEL,
@@ -217,30 +244,75 @@ export function bestPair(names = [], ctlFacts = [], compat = [], modFacts = new 
 // ---------- Bộ điều khiển theo datasheet hãng, AMF, thay bộ chính (Khoa 20/11/2026, IB2600603983: "1. Có 2. Có 3. Có") ----------
 // A controller the configuration's suppliers do not offer, chosen from its maker's datasheet.
 export const CTL_ALT_LABEL = "Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào";
-// The kind of each Deep Sea controller as its maker's datasheet writes it: "amf" (auto mains (utility) failure), "sync"
-// (synchronising), "start" (auto start only). Read from the words right after the model in a line of a controller_maker's
-// table, up to the next model ("The DSE7310 MKII is an auto start control module and the DSE7320 MKII is an auto mains
-// (utility) failure control module"); words before the model are another's. A model read as two kinds takes amf, then sync
-// (DSE8610 MKII: "Synchronising Auto Start"). Only Deep Sea (DSE + 4 digits) for now; key = the number ("7320").
-const DSE_RE = /\bDSE\s?(\d{4})(?:\s?MK\s?I{1,3})?\b/gi;
-export function ctlKinds(suppliers = []) {
-  const votes = new Map();
+// The kind of each controller as its maker's datasheet writes it: "amf" (auto mains (utility) failure), "sync"
+// (synchronising / paralleling), "start" (auto start only). Only from the lines of a controller_maker's tables, never from
+// the model's name. Three ways a datasheet writes it (bdk-loai, Khoa 20/11/2026 "2. Ok làm đi"):
+//  (a) the words right after a model in a line, up to the next model ("The DSE7310 MKII is an auto start control module
+//      and the DSE7320 MKII is an auto mains (utility) failure control module"; Woodward "easYgen-1800, advanced AMF
+//      controller"); words before the model are another's;
+//  (b) a line "models: what they are" and the lines it runs on to, up to the next such line (SmartGen "HGM6110N/6110NC/
+//      6110CAN: Automatic Start Module", "HGM6120N/6120NC/6120CAN: Based on HGM6110N/6110NC, it adds mains AC monitoring
+//      and mains/generator automatic switching control (AMF)");
+//  (c) a table of one model (its title names one): the phrases that say what the whole unit is (ComAp "3 applications in
+//      1 HW: AMF (Stand-by) – default", "Comprehensive paralleling gen-set controller"; Datakom "MAINS FAILURE UNIT").
+// A model read as two kinds takes amf, then sync (DSE8610 MKII "Synchronising Auto Start"; a paralleling unit with an AMF
+// mode can do AMF). `modelsIn(text)` → the controller models a text names (config-bot passes catalog.js controllersIn); the
+// default knows Deep Sea only. Keys: ctlKey (letters and digits, upper case, without the MK generation).
+export const ctlKey = (m) => String(m || "").toUpperCase().replace(/[^A-Z0-9]/g, "").replace(/MK(?:I{1,3}|\d)$/, "");
+const DSE_RE = /\bDSE\s?\d{4}(?:\s?MK\s?I{1,3})?\b/gi;
+const dseModels = (t) => [...String(t || "").matchAll(DSE_RE)].map((h) => h[0]);
+const SEG = (seg) => (/mains\W+(?:\(?utility\)?\W+)?failure|\bAMF\b|mains\/generator automatic switching/i.test(seg) ? "amf"
+  : /synchroni[sz]|paralleling/i.test(seg) ? "sync" : /auto(?:matic)?\W+start/i.test(seg) ? "start" : null);
+const UNIT = [["amf", /applications in 1 HW:\s*AMF\b|\bAMF\s+(?:unit|controller|genset controller)\b|mains failure unit|auto(?:matic)?\s+mains\s+(?:\(utility\)\s+)?failure\s+(?:control\s+)?(?:module|controller|unit)|automatic mains failure \(AMF\)/i],
+  ["sync", /paralleling\s+(?:gen-?set\s+)?(?:controller|control unit)|common paralleling|paralleling operations|parallel operation up to|synchronising\s+(?:&\s+load sharing\s+)?(?:auto start\s+)?control module|parallel\s+(?:\(with genset\)\s+)?controller|mains parallel|island parallel/i],
+  ["start", /applications in 1 HW:\s*MRS\b|automatic start module|auto start control module|remote\W+start\W+unit/i]];
+// "HGM6110N/6110NC/6110CAN:" → HGM6110N, HGM6110NC, HGM6110CAN.
+const COLON = /^\W*((?:HGM|DSE)\s?\d{4}[A-Z]*)((?:\/\d{4}[A-Z]*)*)\s*:\s*(.*)$/i;
+export function ctlKinds(suppliers = [], { modelsIn = dseModels } = {}) {
+  const votes = new Map(), vote = (m, k) => { const key = ctlKey(m); if (key && k) votes.set(key, new Set([...(votes.get(key) || []), k])); };
   for (const s of suppliers || []) {
     if (s?.role !== "controller_maker") continue;
-    for (const t of s.specTables || []) for (const line of [t.title, ...(t.rows || [])]) {
-      const l = String(line || ""), hits = [...l.matchAll(DSE_RE)];
-      hits.forEach((h, i) => {
-        const seg = l.slice(h.index + h[0].length, i + 1 < hits.length ? hits[i + 1].index : l.length);
-        const k = /mains\W+(?:\(?utility\)?\W+)?failure|\bAMF\b/i.test(seg) ? "amf" : /synchroni[sz]/i.test(seg) ? "sync" : /auto\W+start/i.test(seg) ? "start" : null;
-        if (k) votes.set(h[1], new Set([...(votes.get(h[1]) || []), k]));
+    for (const t of s.specTables || []) {
+      const rows = (t.rows || []).map((l) => String(l || "")), lines = [String(t.title || ""), ...rows], own = new Map();
+      // (a)
+      for (const l of lines) {
+        const hits = [];
+        for (const m of [...new Set(modelsIn(l))]) { let i = -1; while ((i = l.toUpperCase().indexOf(m.toUpperCase(), i + 1)) >= 0) hits.push({ m, i, e: i + m.length }); }
+        hits.sort((a, b) => a.i - b.i).forEach((h, j) => { const k = SEG(l.slice(h.e, j + 1 < hits.length ? hits[j + 1].i : l.length)); if (k) own.set(ctlKey(h.m), new Set([...(own.get(ctlKey(h.m)) || []), k])); });
+      }
+      // (b)
+      rows.forEach((l, i) => {
+        const c = l.match(COLON);
+        if (!c) return;
+        const pre = c[1].match(/^[A-Z]+/i)[0], models = [c[1], ...(c[2] ? c[2].split("/").filter(Boolean).map((x) => pre + x) : [])];
+        let seg = c[3];
+        for (let j = i + 1; j < Math.min(rows.length, i + 4) && !COLON.test(rows[j]); j++) seg += ` ${rows[j]}`;
+        const k = SEG(seg);
+        for (const m of models) if (k) own.set(ctlKey(m), new Set([...(own.get(ctlKey(m)) || []), k]));
       });
+      // (c)
+      // A table whose title names several models none of the lines above tells apart (Woodward easYgen-3400XT /
+      // 3500XT): the whole table's kind for each of them.
+      const titled = [...new Set(modelsIn(t.title).map(ctlKey))];
+      if (titled.length && titled.every((m) => !own.has(m))) {
+        const ks = new Set(UNIT.filter(([, re]) => rows.some((l) => re.test(l))).map(([k]) => k));
+        if (ks.size) for (const m of titled) own.set(m, ks);
+      }
+      for (const [m, ks] of own) for (const k of ks) vote(m, k);
     }
   }
   return new Map([...votes].map(([n, ks]) => [n, ["amf", "sync", "start"].find((k) => ks.has(k))]));
 }
 export const dseNum = (model) => String(model || "").match(/\bDSE\s?(\d{4})\b/i)?.[1] || null;
 export const KIND_VI = { amf: "tự động khi mất lưới (AMF)", sync: "hòa đồng bộ", start: "chỉ tự khởi động" };
-export const kindOf = (kinds, model) => kinds.get(dseNum(model)) || null;
+// The kind of `model`: its own key, else the one key it ends (a supplier's "AMF25" for ComAp's "InteliLite 4 AMF25").
+export const kindOf = (kinds, model) => {
+  const k = ctlKey(model);
+  if (!k) return null;
+  if (kinds.has(k)) return kinds.get(k);
+  const ends = k.length >= 4 ? [...kinds.keys()].filter((x) => x.endsWith(k)) : [];
+  return ends.length === 1 ? kinds.get(ends[0]) : null;
+};
 // The step of a Deep Sea controller in its maker's range, for the order of equal alternatives: the series, the first two
 // digits (61xx < 73xx < 74xx < 86xx). Inferred from the maker's numbering (DSE7320 MKII / DSE7420 MKII, DSE8610 MKII), not
 // written by the maker as an order; null for a controller with no such number.
@@ -252,10 +324,43 @@ export const ctlStep = (model) => {
   if (n) return Math.floor(Number(n) / 100);
   return COMAP_STEP.find(([re]) => re.test(m))?.[1] ?? null;
 };
-// The HSMT asks for a set that starts and takes the load when the mains fail (Khoa's 2nd answer): an ATS, "khi mất điện lưới".
-// The abbreviations in capitals only ("ats" / "amf" in lower case are other words).
+// The HSMT asks the GENSET CONTROLLER to watch the mains / drive the ATS / start when the mains fail (Khoa 20/11/2026,
+// "ATS: 1"; before: any ATS or "mất lưới" in the HSMT): (1) AMF / auto(matic) mains failure named outright; (2) an ATS,
+// "chuyển (đổi) nguồn tự động" or "mất (điện) lưới" on the line of a mention of the genset's controller ("bộ / bảng /
+// chức năng / module điều khiển", "controller"), on the line before it, or in the 8 lines after it until a numbered
+// heading ("6. Tủ chuyển đổi nguồn tự động (ATS):"): the controller's block of the HSMT ("Có tính năng kết nối với ATS"
+// under "Bộ điều khiển"). Not the ATS's own controller ("bộ điều khiển (của tủ) ATS"), not the controller as one item of a
+// list of parts ("Động cơ, đầu phát, bộ điều khiển, tủ chuyển đổi nguồn tự động ATS: sản xuất từ năm 2023"), not a panel
+// ("tủ điều khiển"). Not a tender for maintenance, repair or parts (its name in the HSMT's first lines). The abbreviations
+// in capitals only.
 export const AMF_RE = /chuy[ểe]n\s+(?:đổi\s+)?ngu[ồo]n\s+t[ựu]\s+đ[ộo]ng|m[ấa]t\s+(?:đi[ệe]n\s+)?l[ưu][ớo]i|mains\s+failure/i, AMF_ABBR = /\bATS\b|\bAMF\b/;
-export const needsAmf = (text) => AMF_RE.test(String(text || "")) || AMF_ABBR.test(String(text || ""));
+const AMF_NAMED = (l) => /\bAMF\b/.test(l) || /auto(?:matic)?\s+mains\s+(?:\(utility\)\s+)?failure/i.test(l);
+const CTL_WORD = /(?<!t[ủu]\s)(?:b[ộo]|b[ảa]ng|ch[ứu]c\s+n[ăa]ng|module|m[ôo]-?đun)\s+đi[ềe]u\s+khi[ểe]n(?!\s+(?:c[ủu]a\s+)?(?:t[ủu]\s+)?(?:ATS|chuy[ểe]n))(?!\s*(?:[,;]|v[àa]\s+t[ủu]\s))|\bcontroller\b(?!\s*(?:[,;]|v[àa]\s+t[ủu]\s))/i;
+const HEADING = /^\s*(?:\d+(?:\.\d+)*[.)]|[a-zđ]\)|[IVX]+\.)\s+\S/;
+// The tender's name starts with the work on an existing set ("Tên gói thầu: Gói thầu số 06: Sửa chữa máy phát điện…",
+// "Dịch vụ bảo trì", "Thay vật tư"); not "Mua sắm và lắp đặt máy phát điện thay thế", "Máy phát điện và thiết bị vật tư".
+const MAINT_TENDER = /g[óo]i\s+th[ầa]u\s*(?:(?:s[ốo]|th[ứu])\s*)?\d*\s*:\s*(?:g[óo]i\s+th[ầa]u\s*(?:(?:s[ốo]|th[ứu])\s*)?\d*\s*:\s*)?(?:\d{3,}\/\S+\s*)?(?:thi\s+c[ôo]ng\s+x[âa]y\s+d[ựu]ng\s+c[ôo]ng\s+tr[ìi]nh\s*)?["“]?\s*(?:cung\s+c[ấa]p\s+(?:d[ịi]ch\s+v[ụu]\s+)?(?:v[àa]\s+)?)?(?:d[ịi]ch\s+v[ụu]\s+)?(?:s[ửu]a\s+ch[ữu]a|b[ảa]o\s+d[ưu][ỡo]ng|b[ảa]o\s+tr[ìi]|thay\s+th[ếe](?![,\s]+(?:l[ắa]p\s+đ[ặa]t\s+)?m[áa]y\s+ph[áa]t)|thay\s+v[ậa]t\s+t[ưu]|đ[ạa]i\s+tu)/i;
+const OTHER_ITEM = /^\W*(?:\d+\W+)?(?:l[ắa]p\s+đ[ặa]t|chi\s+ph[íi]|v[ậa]n\s+chuy[ểe]n|t[ủu]\s|b[ộo]\s+s[ạa]c|d[âa]y\s|c[áa]p\s|ph[ụu]\s+ki[ệe]n|h[ưu][ớo]ng\s+d[ẫa]n|đ[àa]o\s+t[ạa]o)/i;
+export function amfWhy(text, { head = "" } = {}) {
+  const t = String(text || "");
+  if (MAINT_TENDER.test(head || t.slice(0, 3000))) return null;
+  // A table flattened into one long line holds many requirements: read it sentence by sentence (IB2600592658: "Lắp đặt máy
+  // phát điện, tủ ATS" in the same line as the controller's row).
+  const lines = t.split("\n").flatMap((l) => (l.length > 200 ? l.split(/\t|\s[-–•+]\s|;\s|\.\s/) : [l])), hit = (l) => AMF_RE.test(l) || AMF_ABBR.test(l);
+  let ctlAt = -99;
+  for (let i = 0; i < lines.length; i++) {
+    const l = lines[i];
+    if (AMF_NAMED(l)) return { why: "named", line: l.trim() };
+    // Work on the site, another item of the goods, or the ATS cabinet in a list of goods: not the controller's requirement.
+    if (OTHER_ITEM.test(l) || /t[ủu]\s+ATS\s*,|\bATS\)?\s+s[ảa]n\s+xu[ấa]t|^\W*b[ộo]\s+ATS\s+\d/i.test(l)) { ctlAt = -99; continue; }
+    if (CTL_WORD.test(l)) ctlAt = i;
+    else if (HEADING.test(l)) ctlAt = -99;
+    if (!hit(l)) continue;
+    if (i - ctlAt <= 8 || CTL_WORD.test(lines[i + 1] || "")) return { why: "controller", line: l.trim() };
+  }
+  return null;
+}
+export const needsAmf = (text, opts) => !!amfWhy(text, opts);
 
 // The line of Q1: "Phương án khác đạt tương đương: DSE7320 MKII + DSE890 MKII (đạt 5/7 ...)".
 export const altLineOf = (alts = []) => (alts.length ? `Phương án khác đạt tương đương: ${alts.map((a) => `${[a.model, ...a.modules.map((m) => m.model)].join(" + ")} (${a.notOffered ? `${CTL_ALT_LABEL}; ` : a.offeredBy ? `NCC ${a.offeredBy} chào; ` : ""}${a.kind ? `${KIND_VI[a.kind]} theo datasheet hãng; ` : ""}truyền thông: code dò datasheet đạt ${a.met}/${a.total}${a.unclear.length ? `, chưa rõ: ${a.unclear.join(", ")}` : ""})`).join("; ")}` : "");
