@@ -45,9 +45,9 @@ for (const s of sups) {
           : got.length > 0 || (r.header || []).some((h) => LH.test(h) && loadRe.test(h));
         if (ok || !lhLoad) continue;
         const why = !got.length ? "khong-co-so" : got.some((o) => o.n?.unit === "g/kWh") ? "lay-g/kWh" : got.some((o) => o.n?.missing?.includes("unit")) ? "khong-don-vi" : `khac:${got.map((o) => (o.n?.missing || []).join("+") || o.n?.unit).join(",")}`;
-        const role = s.role || "";
-        out.th.push([s.id, role, r.n, r.kind, r.model || "", r.genset || "", k, why, got.map((o) => `${o.x.label}=${o.x.value}`).join(" ; "), kv ? "nhan" : "dong", esc(kv ? text.join(" ¦ ") : r.line)].join("\t"));
-        bump("th", `${role}|${why}`);
+        const role = s.role || "", both = text.some((l) => GKWH.test(l)) ? "ca-hai" : "chi-L/h";
+        out.th.push([s.id, role, r.n, r.kind, r.model || "", r.genset || "", k, both, why, got.map((o) => `${o.x.label}=${o.x.value}`).join(" ; "), kv ? "nhan" : "dong", esc(kv ? text.join(" ¦ ") : r.line)].join("\t"));
+        bump("th", `${both}|${role}|${why}`);
       }
     }
     // Cylinder labels not read.
@@ -66,6 +66,9 @@ for (const s of sups) {
     if (t.header?.length) continue;
     const models = [...new Set(String(t.title || "").split(/[\s:–—|,/()]+/).filter((w) => C.isCode(w)).map((w) => C.keyOf(w)))];
     const isPart = (k, m) => (cat[k === "engine" ? "engines" : "alternators"] || []).some((e) => e.key === m);
+    // Only tables that give an engine constant / fuel ("| Cylinders 6" counts: label and figure in one cell).
+    const engRows = t.rows.filter((l) => { const c = C.cellsOf(l); return ["bore", "disp", "cyl", "compr", "fuel", "fuel75", "fuel50"].includes(C.specKey(c.length >= 2 ? c[0] : String(c[0]).replace(/[\d.,:：xX×*\s/()-]+$/, ""))); }).length;
+    if (!engRows) continue;
     if (models.length !== 1) { if (own === "engine" || /^Datasheet: /.test(t.title || "")) { out.fam.push([s.id, s.role || "", t.n, "tieu-de-khong-1-ma", models.join(","), esc(t.title)].join("\t")); bump("fam", `${s.id}|tieu-de-khong-1-ma`); } continue; }
     const kind = own || (/^Datasheet: /.test(t.title || "") ? ["alternator", "engine"].find((k) => isPart(k, models[0])) : null);
     if (!kind) continue;
@@ -79,7 +82,7 @@ for (const s of sups) {
   }
 }
 fs.mkdirSync(outDir, { recursive: true });
-fs.writeFileSync(path.join(outDir, "tieu-hao.tsv"), ["ncc\tvai\tn\tkind\tmodel\tgenset\tkhoa\tvi-sao\tdoc-duoc\tbang\tchu", ...out.th].join("\n") + "\n");
+fs.writeFileSync(path.join(outDir, "tieu-hao.tsv"), ["ncc\tvai\tn\tkind\tmodel\tgenset\tkhoa\tdon-vi\tvi-sao\tdoc-duoc\tbang\tchu", ...out.th].join("\n") + "\n");
 fs.writeFileSync(path.join(outDir, "xi-lanh.tsv"), ["ncc\tvai\tn\tmodel\tdong", ...out.cyl].join("\n") + "\n");
 fs.writeFileSync(path.join(outDir, "dong-may.tsv"), ["ncc\tvai\tn\tloai\tma\ttieu-de\tso-model-cung-tien-to\tmodel", ...out.fam].join("\n") + "\n");
 console.log("bản ghi", recs, "| tiêu hao", out.th.length, "| xi lanh", out.cyl.length, "| dòng máy", out.fam.length);

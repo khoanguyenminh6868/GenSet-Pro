@@ -1,0 +1,226 @@
+ncc	vai	n	model	dong
+baudouin	engine_maker	1021	6M31G825/5	| N° of Cylinders / Valves | 6 / 24
+changchai	engine_maker	2001	M403	| 气缸数/缸径X行程mm | 3-78X85
+changchai	engine_maker	2001	M403TC	| 气缸数/缸径X行程mm | 3-78X85
+changchai	engine_maker	2001	M403	| 气缸数/缸径X行程mm | 3-78X85
+changchai	engine_maker	2001	M403TC	| 气缸数/缸径X行程mm | 3-78X85
+changchai	engine_maker	2001	M403TCl	| 气缸数/缸径X行程mm | 3-78X85
+changchai	engine_maker	2002	ZN390	| 缸数-缸径×行程(mm | 3-90×95 | 4-85×95 | 4-90×100 | 4-95x100
+changchai	engine_maker	2002	ZN485	| 缸数-缸径×行程(mm | 3-90×95 | 4-85×95 | 4-90×100 | 4-95x100
+changchai	engine_maker	2002	7N490B	| 缸数-缸径×行程(mm | 3-90×95 | 4-85×95 | 4-90×100 | 4-95x100
+changchai	engine_maker	2002	4L68	| 缸数-缸径×行程(mm | 3-90×95 | 4-85×95 | 4-90×100 | 4-95x100
+changchai	engine_maker	2003	4G33	| 缸数-缸径x行程(mm) | 4-95×115 | 4-105×127
+changchai	engine_maker	2003	4G33TC	| 缸数-缸径x行程(mm) | 4-95×115 | 4-105×127
+changchai	engine_maker	2003	4G33TCl	| 缸数-缸径x行程(mm) | 4-95×115 | 4-105×127
+changchai	engine_maker	2003	4G33V16	| 缸数-缸径x行程(mm) | 4-95×115 | 4-105×127
+changchai	engine_maker	2003	4H11	| 缸数-缸径x行程(mm) | 4-95×115 | 4-105×127
+changchai	engine_maker	2003	4H11V16	| 缸数-缸径x行程(mm) | 4-95×115 | 4-105×127
+hosem-power	genset_oem	109	QSZ13-G3	| Cylinders | 6 Cylinder In Line
+hosem-power	genset_oem	134	DP158LD	| Cylinders | 6 Cylinder In Line
+jiuan-power	genset_oem	108	QSZ13-G2	| Cylinders | 6 (Inline, 4-stroke)
+kanpor-fuan	genset_oem	101	KTA50-G3	| 缸数 | QTY | 16 | 16 | 16 | 16
+kanpor-fuan	genset_oem	102	6LTAA8.9-G2	| 缸数 | QTY | 6 | 6 | 6 | 6 | 6
+kanpor-fuan	genset_oem	103	6BTA5.9-G2	| 缸数 | QTY | 6 | 6 | 6 | 6 | 6
+kanpor-fuan	genset_oem	104	4B3.9-G1	| 缸数 | QTY | 4 | 4 | 4 | 4 | 4
+kanpor-fuan	genset_oem	106	KTA38-GA	| 缸数 | QTY | 12 | 12 | 12 | 12 | 12
+kanpor-fuan	genset_oem	114	KTA19-G3A	| 缸数 | QTY | 6 | 6 | 6 | 6 | 6
+kanpor-fuan	genset_oem	120	BF6M1013EC	| 缸数 | QTY | 6 | 6 | 6 | 6
+kanpor-fuan	genset_oem	121	BF4M2012	| 缸数 | QTY | 4 | 4 | 4 | 4
+kanpor-fuan	genset_oem	122	BF6M1013FCG3	| 缸数 | QTY | 6 | 6 | 6 | 6
+lees-power	genset_oem	1119	12V4000G63	| 缸数 & 气缸排列 | 12缸V型水冷
+lees-power	genset_oem	1120	16V4000G63	| 缸数 & 气缸排列 | 16缸V型水冷
+lees-power	genset_oem	1121	20V4000G63L	| 缸数 & 气缸排列 | 20缸V型水冷
+lees-power	genset_oem	1165	TWD1645GE	| 缸数 & 气缸排列 | 6缸直列水冷
+lees-power	genset_oem	1191	P126TI-II	| 缸数 & 气缸排列 | 6缸直列水冷
+lees-power	genset_oem	1192	DP126LB	| 缸数 & 气缸排列 | 6缸直列水冷
+lees-power	genset_oem	1194	DP158LC	| 缸数 & 气缸排列 | 8缸V型水冷
+lees-power	genset_oem	1195	DP180LB	| 缸数 & 气缸排列 | 10缸V型水冷
+lees-power	genset_oem	1196	DP222LB	| 缸数 & 气缸排列 | 12缸V型水冷
+longkai-power	genset_oem	1001	SC4H95D2	| No. cylinders | 4 in line
+longkai-power	genset_oem	1002	SC4H115D2	| No. cylinders | 4 in line
+longkai-power	genset_oem	1003	SC4H160D2	| No. cylinders | 4 in line
+longkai-power	genset_oem	1004	SC4H180D2	| No. cylinders | 4 in line
+longkai-power	genset_oem	1005	SC7H220D2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1006	SC7H230D2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1007	SC7H250D2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1008	SC8D280D2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1009	SC9D310D2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1010	SC9D340D2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1011	SC10E380D2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1012	SC12E420D2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1013	SC13G420D2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1014	SC12E460D2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1015	SC15G500D2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1016	SC25G610D2	| No. cylinders | 12 in line
+longkai-power	genset_oem	1018	SC27G755D2	| No. cylinders | 26.6
+longkai-power	genset_oem	1021	SC33W990D2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1022	SC33G1150D2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1023	4HT4.3-G21	| No. cylinders | 4 in line
+longkai-power	genset_oem	1024	4HT4.3-G22	| No. cylinders | 4 in line
+longkai-power	genset_oem	1025	4HT4.3-G23	| No. cylinders | 4 in line
+longkai-power	genset_oem	1026	4HTAA4.3-G21	| No. cylinders | 4 in line
+longkai-power	genset_oem	1027	4HTAA4.3-G23	| No. cylinders | 4 in line
+longkai-power	genset_oem	1028	4HTAA4.3-G22	| No. cylinders | 4 in line
+longkai-power	genset_oem	1029	6HTAA6.5-G21	| No. cylinders | 6 in line
+longkai-power	genset_oem	1030	6HTAA6.5-G22	| No. cylinders | 6 in line
+longkai-power	genset_oem	1032	6DTAA8.9-G21	| No. cylinders | 6 in line
+longkai-power	genset_oem	1033	6DTAA8.9-G24	| No. cylinders | 6 in line
+longkai-power	genset_oem	1034	6DTAA8.9-G23	| No. cylinders | 6 in line
+longkai-power	genset_oem	1035	6ETAA11.8-G21	| No. cylinders | 6 in line
+longkai-power	genset_oem	1036	6ETAA11.8-G31	| No. cylinders | 6 in line
+longkai-power	genset_oem	1037	6ETAA12.8-G32	| No. cylinders | 6in line
+longkai-power	genset_oem	1038	6ETAA12.8-G31	| No. cylinders | 6 in line
+longkai-power	genset_oem	1039	6KTAA25-G36	| No. cylinders | 6 in line
+longkai-power	genset_oem	1040	6KTAA25-G35	| No. cylinders | 6 in line
+longkai-power	genset_oem	1041	6KTAA25-G34	| No. cylinders | 6in line
+longkai-power	genset_oem	1042	6KTAA25-G33	| No. cylinders | 6in line
+longkai-power	genset_oem	1043	6KTAA25-G32	| No. cylinders | 6in line
+longkai-power	genset_oem	1044	6KTAA25-G31	| No. cylinders | 6in line
+longkai-power	genset_oem	1045	6WTAA35-G32	| No. cylinders | 6in line
+longkai-power	genset_oem	1046	SC13E550D2	| No. cylinders | 6in line
+longkai-power	genset_oem	1047	4B3.9-G11	| No. cylinders | 4 in line
+longkai-power	genset_oem	1048	4B3.9-G1	| No. cylinders | 4 in line
+longkai-power	genset_oem	1049	4B3.9-G2	| No. cylinders | 4 in line
+longkai-power	genset_oem	1050	4B3.9-G12	| No. cylinders | 4 in line
+longkai-power	genset_oem	1051	4BT3.9-G1	| No. cylinders | 4 in line
+longkai-power	genset_oem	1052	4BT3.9-G2	| No. cylinders | 4 in line
+longkai-power	genset_oem	1053	QSB3.9-G2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1054	4BTA3.9-G2-58KW	| No. cylinders | 4 in line
+longkai-power	genset_oem	1055	4BTA3.9-G11	| No. cylinders | 4 in line
+longkai-power	genset_oem	1056	4BTA3.9-G11	| No. cylinders | 4 in line
+longkai-power	genset_oem	1057	QSB3.9-G3	| No. cylinders | 4 in line
+longkai-power	genset_oem	1058	4BTA3.9-G13	| No. cylinders | 4 in line
+longkai-power	genset_oem	1059	4BTA3.9-G13	| No. cylinders | 4 in line
+longkai-power	genset_oem	1060	6BT5.9-G2-86KW	| No. cylinders | 6 in line
+longkai-power	genset_oem	1061	6BT5.9-G1	| No. cylinders | 6 in line
+longkai-power	genset_oem	1062	6BT5.9-G2-96KW	| No. cylinders | 6 in line
+longkai-power	genset_oem	1063	6BT5.9-G2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1065	6BTAA5.9-G2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1066	QSB5.9-G3	| No. cylinders | 6 in line
+longkai-power	genset_oem	1068	6BTAA5.9-G12	| No. cylinders | 6 in line
+longkai-power	genset_oem	1069	QSB6.7-G3	| No. cylinders | 6 in line
+longkai-power	genset_oem	1070	QSB6.7-G4	| No. cylinders | 6 in line
+longkai-power	genset_oem	1071	6CTA8.3-G1	| No. cylinders | 6 in line
+longkai-power	genset_oem	1072	6CTA8.3-G2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1073	6CTAA8.3-G2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1075	6CTAA8.3-G9	| No. cylinders | 6 in line
+longkai-power	genset_oem	1076	MTA11-G2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1077	6LTAA8.9-G2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1078	6LTAA8.9-G3	| No. cylinders | 6 in line
+longkai-power	genset_oem	1079	QSNT-G6	| No. cylinders | 6 in line
+longkai-power	genset_oem	1081	6LTAA9.5-G3	| No. cylinders | 6 in line
+longkai-power	genset_oem	1083	6LTAA9.5-G1	| No. cylinders | 6 in line
+longkai-power	genset_oem	1085	QSM11-G2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1086	QSZ13-G6	| No. cylinders | 6 in line
+longkai-power	genset_oem	1087	6ZTAA13-G3	| No. cylinders | 6 in line
+longkai-power	genset_oem	1088	QSZ13-G7	| No. cylinders | 6 in line
+longkai-power	genset_oem	1089	QSNT-G3	| No. cylinders | 6 in line
+longkai-power	genset_oem	1090	6ZTAA13-G4	| No. cylinders | 6 in line
+longkai-power	genset_oem	1091	QSZ13-G2	| No. cylinders | 6 in line
+longkai-power	genset_oem	1092	QSNT-G4X	| No. cylinders | 6 in line
+longkai-power	genset_oem	1093	QSK19-G14	| No. cylinders | 6 in line
+longkai-power	genset_oem	1094	QSZ13-G5	| No. cylinders | 6 in line
+longkai-power	genset_oem	1095	QSZ13-G3	| No. cylinders | 6 in line
+longkai-power	genset_oem	1096	QSZ13-G10	| No. cylinders | 6 in line
+longkai-power	genset_oem	1097	QSK19-G13	| No. cylinders | 6 in line
+longkai-power	genset_oem	1098	KTAA19-G5	| No. cylinders | 6 in line
+longkai-power	genset_oem	1099	KTAA19-G6	| No. cylinders | 6 in line
+longkai-power	genset_oem	1100	QSK19-G12	| No. cylinders | 6 in line
+longkai-power	genset_oem	1101	KTA19-G8	| No. cylinders | 6 in line
+longkai-power	genset_oem	1106	KTA38-G1	| No. cylinders | "V" 12
+longkai-power	genset_oem	1123	WP2.3D25E200	| No. cylinders | 4 in line
+longkai-power	genset_oem	1124	WP2.3D33E200	| No. cylinders | 4 in line
+longkai-power	genset_oem	1125	WP2.3D40E200	| No. cylinders | 4 in line
+longkai-power	genset_oem	1126	WP2.3D48E200	| No. cylinders | 4 in line
+longkai-power	genset_oem	1127	WP4.1D66E200	| No. cylinders | 4 in line
+longkai-power	genset_oem	1128	WP4.1D80E200	| No. cylinders | 4 in line
+longkai-power	genset_oem	1129	WP4.1D100E200	| No. cylinders | 4 in line
+longkai-power	genset_oem	1130	WP6D132E200	| No. cylinders | 6 in line
+longkai-power	genset_oem	1131	WP6D152E200	| No. cylinders | 6 in line
+longkai-power	genset_oem	1132	WP6D167E200	| No. cylinders | 6 in line
+longkai-power	genset_oem	1133	WP10D200E200	| No. cylinders | 6 in line
+longkai-power	genset_oem	1134	WP10D238E200	| No. cylinders | 6 in line
+longkai-power	genset_oem	1135	WP10D264E200	| No. cylinders | 6 in line
+longkai-power	genset_oem	1136	WP10D320E200	| No. cylinders | 6 in line
+longkai-power	genset_oem	1137	WP12D317E200	| No. cylinders | 6 in line
+longkai-power	genset_oem	1138	WP13D385E200	| No. cylinders | 6 in line
+longkai-power	genset_oem	1139	WP13D405E200	| No. cylinders | 6 in line
+longkai-power	genset_oem	1140	WP13D440E310	| No. cylinders | 6 in line
+longkai-power	genset_oem	1141	WP13D490E310	| No. cylinders | 6 in line
+longkai-power	genset_oem	1142	6M26D484E200	| No. cylinders | 6 in line
+longkai-power	genset_oem	1143	6M33D572E200	| No. cylinders | 6 in line
+longkai-power	genset_oem	1145	6M33D670E200	| No. cylinders | 6 in line
+longkai-power	genset_oem	1158	20M33D2020E310	| No. cylinders | 6 in line
+longkai-power	genset_oem	1159	20M33D2210E310	| No. cylinders | 6 in line
+repower-gas	genset_oem	1001	12V190ZDT1-1	| No. of cylinder and | layout | 12-cylinder, 60°V type
+winco	genset_oem	1002	GC160	| ENGINE CYLINDERS | SINGLE | RECOMMENDED OIL(2) | 5W-30 SAE
+winco	genset_oem	1003	VANGUARD 3564	| ENGINE CYLINDERS | V-TWIN | RECOMMENDED OIL(2) | 5W-30 SAE
+xinhengxin-fujian	genset_oem	1001	KTA19-G4	| No.Cylinders | 6 in line
+xinhengxin-fujian	genset_oem	1003	KTA50-G3	| No.Cylinders | 16in "V"
+yangdong	engine_maker	109	YD380	| Number of cylinders | 3 | 4
+yangdong	engine_maker	109	YD385	| Number of cylinders | 3 | 4
+yangdong	engine_maker	109	YD480	| Number of cylinders | 3 | 4
+yangdong	engine_maker	109	YND485	| Number of cylinders | 3 | 4
+yangdong	engine_maker	109	YSD490	| Number of cylinders | 3 | 4
+yangdong	engine_maker	109	Y4100	| Number of cylinders | 3 | 4
+yangdong	engine_maker	109	Y4102	| Number of cylinders | 3 | 4
+yangdong	engine_maker	110	YD380D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	110	YD385D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	110	YD480D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	110	YND485D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	110	YSD490D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	110	Y490D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	110	Y495D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	110	Y4100D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	110	Y4102D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	110	Y4105D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	110	Y4110D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	110	Y4102ZLD	| Number of cylinders | 3 | 4
+yangdong	engine_maker	110	Y4105ZLD	| Number of cylinders | 3 | 4
+yangdong	engine_maker	110	YD4EZLD	| Number of cylinders | 3 | 4
+yangdong	engine_maker	110	Y4110ZLD	| Number of cylinders | 3 | 4
+yangdong	engine_maker	119	YD380D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	119	YD385D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	119	YD480D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	119	YND485D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	119	YSD490D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	119	Y490D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	119	Y495D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	119	Y4100D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	119	Y4102D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	119	Y4105D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	119	Y4110D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	119	Y4102ZLD	| Number of cylinders | 3 | 4
+yangdong	engine_maker	119	Y4105ZLD	| Number of cylinders | 3 | 4
+yangdong	engine_maker	119	YD4EZLD	| Number of cylinders | 3 | 4
+yangdong	engine_maker	119	Y4110ZLD	| Number of cylinders | 3 | 4
+yangdong	engine_maker	121	YD380D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	121	YD385D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	121	YD480D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	121	YND485D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	121	YSD490D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	121	Y490D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	121	Y495D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	121	Y4100D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	121	Y4102D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	121	Y4105D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	121	Y4110D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	121	Y4102ZLD	| Number of cylinders | 3 | 4
+yangdong	engine_maker	121	Y4105ZLD	| Number of cylinders | 3 | 4
+yangdong	engine_maker	121	YD4EZLD	| Number of cylinders | 3 | 4
+yangdong	engine_maker	121	Y4110ZLD	| Number of cylinders | 3 | 4
+yangdong	engine_maker	125	YD380D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	125	YD385D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	125	YD480D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	125	YND485D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	125	YSD490D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	125	Y490D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	125	Y495D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	125	Y4100D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	125	Y4102D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	125	Y4105D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	125	Y4110D	| Number of cylinders | 3 | 4
+yangdong	engine_maker	125	Y4102ZLD	| Number of cylinders | 3 | 4
+yangdong	engine_maker	125	Y4105ZLD	| Number of cylinders | 3 | 4
+yangdong	engine_maker	125	YD4EZLD	| Number of cylinders | 3 | 4
+yangdong	engine_maker	125	Y4110ZLD	| Number of cylinders | 3 | 4
