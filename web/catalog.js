@@ -2102,8 +2102,11 @@
       const lines = [...(t.header || []), ...t.rows], cs = lines.map(verticalCells);
       // One genset down the page: most lines a label and at most two values; not the dotted "Manufacturer……CUMMINS" kind.
       if (cs.filter((c) => c.length <= 3).length < lines.length * 0.6 || lines.filter((l) => /[….]{5,}/.test(l)).length >= 3) return;
-      if (!cs.slice(0, 8).some((c) => V_MODEL.test(c[0]) && c.slice(1).some((x) => isCode(x)))) return;
-      const say = (reason, detail) => note(t, ti, null, "bảng dọc: " + reason, detail);
+      // Stage 2 (bang-doc-2): no "Model" line at the top → the genset model can only come from the page title (V2 / V5 / F1).
+      const titled = !cs.slice(0, 8).some((c) => V_MODEL.test(c[0]) && c.slice(1).some((x) => isCode(x)));
+      const say = (reason, detail) => note(t, ti, null, (titled ? "bảng dọc (model ở tiêu đề): " : "bảng dọc: ") + reason, detail);
+      let tm = null;
+      if (titled) { tm = verticalTitleModel(t.title); if (tm.why) { say(tm.why, tm.detail || String(t.title || "")); return; } }
       const decComma = lines.some((l) => /\d,\d{1,2}(?![\d,])/.test(l));
       const models = new Map(), engines = new Map(), alts = new Map(), levels = { prime: [], standby: [] }, specs = [];
       let part = null, partSeen = false, engBrand = null, multi = null;
@@ -2141,6 +2144,8 @@
       });
       const base = { supplierId: s.id, n: t.n, table: ti, title: String(t.title || "") };
       if (multi) { say("một dòng Model ghi hai mã: trang nhiều sản phẩm", multi); return; }
+      // A sheet with its own "Model" line further down is not named by its title (two sources for one name): left out.
+      if (titled) { if (models.size) { say("bảng có dòng Model riêng, không lấy model ở tiêu đề", [...models.values()].map((x) => x.code).join(", ")); return; } models.set(keyOf(tm.code), { code: tm.code, brand: "" }); }
       if (models.size !== 1) { say(models.size ? "bảng ghi từ hai model tổ máy trở lên" : "không có model tổ máy", [...models.values()].map((x) => x.code).join(", ")); return; }
       const [gk, g] = [...models][0];
       if (engines.size !== 1) { say(engines.size ? "bảng ghi hai mã động cơ" : "không có mã động cơ", [...engines.values()].map((x) => x.code).join(", ")); return; }
@@ -2173,11 +2178,33 @@
         else if (ttl.length === 1) addMake(ms, ttl[0], "tên trang");
         return ms;
       };
-      const common = { ...base, genset: g.code, power, freq, specs: sp, lines: { header: t.header || [], rows: t.rows }, sheet: "bảng dọc" };
+      const common = { ...base, genset: g.code, power, freq, specs: sp, lines: { header: t.header || [], rows: t.rows }, sheet: "bảng dọc", ...(titled ? { gensetFrom: "tiêu đề trang" } : {}) };
       out.push({ ...common, kind: "engine", model: e.code, makes: makesOf(e, ENGINE_BRANDS, engBrand), other: a ? a.code : null, specs: sp.filter((x) => SPEC[x.key].scope !== "alternator") });
       if (a && !ALT_PREFIX.test(a.code)) out.push({ ...common, kind: "alternator", model: a.code, makes: makesOf(a, ALT_BRANDS, null), other: e.code, specs: sp.filter((x) => SPEC[x.key].scope !== "engine") });
     });
     return out;
+  }
+  // The genset model a page title names (bảng dọc chặng 2, chủ dự án 21/11/2026): exactly ONE code by isCode, else none
+  // ({ why }). Words of a product line ("Series", "系列", "Range", "from … to"): none (a line is not a model). A code with a
+  // power figure in it ("HJM12-600KW-Jiangsu", "100kVA-KACHAI"), a "/" (choices: "MYI182/184") or two codes: none (unclear).
+  // Power / unit figures alone ("220 kVA", "3KW") are no code and are passed over.
+  const V_TITLE_LINE = /\bseries\b|\bserie\b|系列|\brange\b|\bfrom\b.*\bto\b/i;
+  const V_TITLE_POW = /\d\s*(kva|kwe?|kwm|hp)(?![a-z])/i;
+  function verticalTitleModel(title) {
+    const s = String(title || "").normalize("NFKC").replace(/&#?x?[0-9a-f]+;|&[a-z]+;/gi, " ").replace(/\.(pdf|html?)\b/gi, " ").replace(/[®™©]/g, "");
+    if (!s.trim()) return { why: "không có tiêu đề" };
+    if (V_TITLE_LINE.test(s)) return { why: "tiêu đề nêu dòng sản phẩm / series, không phải một model" };
+    const words = s.split(/[\s|,，;；:：()（）\[\]【】<>「」"“”'‘’!?、。｜]+|[–—]|[　-鿿＀-￯]+/).map((w) => w.replace(/^[-.·_/]+|[-.·_/]+$/g, "")).filter(Boolean);
+    const codes = new Map(), unclear = [];
+    for (const w of words) {
+      if (!isCode(w)) continue;
+      if (/^\d+(\.\d+)?\s*(kva|kwe?|kwm|hp|ps|w|v|hz|rpm|a)$/i.test(w)) continue; // a figure with its unit, not a code
+      if (V_TITLE_POW.test(w) || /[/／]/.test(w)) { unclear.push(w); continue; }
+      codes.set(keyOf(w), w);
+    }
+    if (unclear.length) return { why: "tiêu đề có mã lẫn công suất / nhiều lựa chọn", detail: unclear.join(", ") };
+    if (codes.size !== 1) return { why: codes.size ? "tiêu đề ghi hai mã trở lên" : "tiêu đề không có mã" };
+    return { code: [...codes.values()][0] };
   }
   // Genset models of vertical sheets that are an engine's or an alternator's code elsewhere in the catalog (bang-doc-1: the
   // test checks every vertical record against build(); a model found there goes on this list).
