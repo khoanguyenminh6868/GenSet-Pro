@@ -885,6 +885,8 @@ export function sheetFacts(sh) {
 }
 // A controller as the agent wrote it ("6120" made by SmartGen, "Smartgen 6120") → the model web/catalog.js reads from the
 // same words (HGM6120), whose datasheet then counts (2026-11-03 regression run: such controllers checked 0 functions).
+// The controller models a text names, as catalog.js reads them (CM.ctlKinds).
+export const ctlModelsIn = (t) => CAT.controllersIn(String(t || "")).filter((x) => x.model).map((x) => x.model);
 export function ctlModelOf(p) {
   const m = String(p?.model || ""), found = (t) => CAT.controllersIn(t).filter((x) => x.model && CAT.keyOf(x.model).endsWith(CAT.keyOf(m).replace(/^\D+/, "")));
   const own = found(m), withMake = own.length ? own : found(`${p?.make || ""} ${m}`);
@@ -2028,7 +2030,7 @@ export function catalogMd(cat, cap, hints, opts = {}) {
   // with grep; catalog.md shows the first 15 lines of each.
   const ctlOut = [], printed = new Map(), head = "Thông số bộ điều khiển (datasheet của hãng; ghi factSrc với supplierId, n và line là dòng nguyên văn)";
   // bdk-amf (Khoa 20/11/2026): the kind of a controller as its maker's datasheet writes it (CM.ctlKinds), in each title.
-  const kinds = CM.ctlKinds(opts.suppliers || []), kindTag = (m) => { const k = CM.kindOf(kinds, m); return k ? ` — loại theo datasheet hãng: ${CM.KIND_VI[k]}` : ""; };
+  const kinds = CM.ctlKinds(opts.suppliers || [], { modelsIn: ctlModelsIn }), kindTag = (m) => { const k = CM.kindOf(kinds, m); return k ? ` — loại theo datasheet hãng: ${CM.KIND_VI[k]}` : ""; };
   // A controller's datasheet: the first 15 lines to catalog.md (`out`, when given), every line to controllers.md.
   const sheetMd = (m, out) => {
     if (!ctlOut.length) ctlOut.push(`# ${head}`, "");
@@ -2102,7 +2104,7 @@ export function catalogMd(cat, cap, hints, opts = {}) {
   }
   if (makerOnes.length) {
     out.push("", `## Bộ điều khiển theo datasheet hãng (NCC chưa chào) — ${makerOnes.length} model, toàn bộ dòng ở controllers.md`, "");
-    if (opts.hsmtText && CM.needsAmf(technicalPart(opts.hsmtText) || opts.hsmtText)) out.push("HSMT có ATS / chuyển nguồn tự động / mất điện lưới: loại tự động khi mất lưới (AMF) theo datasheet hãng.", "");
+    if (opts.hsmtText && CM.needsAmf(technicalPart(opts.hsmtText) || opts.hsmtText, { head: opts.hsmtText.slice(0, 3000) })) out.push("HSMT có bộ điều khiển phải giám sát lưới / điều khiển ATS / tự khởi động khi mất lưới: loại tự động khi mất lưới (AMF) theo datasheet hãng.", "");
     for (const x of makerOnes) {
       const f = factsFor(facts, "controller", x.model)[0];
       out.push(`- ${x.model} (${x.brand})${kindTag(x.model) || " — loại: datasheet hãng không ghi"} — supplierId: ${f.supplierId}, n: ${f.n}`);
@@ -2110,10 +2112,55 @@ export function catalogMd(cat, cap, hints, opts = {}) {
     }
     out.push("");
   }
+  const low = opts.hsmtText ? lowestCtlMd([...withSheet], facts, opts.suppliers || [], opts.hsmtText, kinds) : "";
+  if (low) out.push("", low);
   out.push("", controllersMd(cat.controllers || [], shown, withSheet));
   // The controller functions the HSMT names × the datasheets above (ctl-lookup.md), when prep gives the HSMT.
   const ctlLookup = opts.hsmtText ? ctlLookupMd(ctls, (m) => factsFor(facts, "controller", m), opts.hsmtText) : "";
   return { md: out.join("\n"), ctlMd: ctlOut.join("\n"), shown, top, ctlLookup };
+}
+// The communication functions the HSMT asks of the controller, read by code from its technical part (one name per function
+// of CM.SUBS: "4G", "Ethernet", "RS485"...): lines that name one and speak of communication / remote / a port.
+const COMM_LINE = /truy[ềe]n\s+th[ôo]ng|t[ừu]\s+xa|k[ếe]t\s+n[ốo]i|c[ổo]ng|giao\s+ti[ếe]p|gi[áa]m\s+s[áa]t|communicat|\bport|RS-?485|RS-?232|ethernet|\bUSB\b|\b4G\b|modbus/i;
+export function hsmtCommNames(hsmtText) {
+  const lines = (technicalPart(hsmtText || "") || String(hsmtText || "")).split("\n").filter((l) => COMM_LINE.test(l));
+  return CM.SUBS.filter((s) => lines.some((l) => s.vi.test(l))).map((s) => s.k);
+}
+// "Bộ thấp nhất đủ yêu cầu theo code" (điều phối 21/11/2026, IB2600603983: the agent kept DSE7420 MKII, reading "meets every
+// controller requirement" on the controller's own datasheet, while Khoa counts 4G / Internet / Ethernet of the module, Q2 / Q4,
+// and the answer is DSE7320 MKII + DSE890 MKII): each controller with a datasheet, per make, scored with its best modules
+// (CM.bestPair) on the communication functions the HSMT names; the kind the HSMT asks (AMF, synchronising) only; the lowest
+// step (CM.ctlStep, inferred from the names) among those meeting the most is marked. The agent still checks every function.
+export function lowestCtlMd(models, facts, suppliers, hsmtText, kinds) {
+  const names = hsmtCommNames(hsmtText);
+  if (!names.length || !models.length) return "";
+  const tech = technicalPart(hsmtText || "") || String(hsmtText || "");
+  const need = /h[òo][àa]?\s+đ[ồo]ng\s+b[ộo]|ch[ạa]y\s+song\s+song|h[òo][àa]\s+l[ưu][ớo]i/i.test(tech) ? "sync" : CM.needsAmf(tech, { head: String(hsmtText || "").slice(0, 3000) }) ? "amf" : null;
+  const modFacts = CM.moduleFacts(suppliers), byMake = new Map();
+  for (const m of models) {
+    const list = factsFor(facts, "controller", m), x = CAT.controllersIn(m).find((y) => y.model);
+    if (!list.length || !x) continue;
+    const sheet = list.find((f) => f.version)?.version || m, kind = CM.kindOf(kinds, sheet) || CM.kindOf(kinds, m);
+    if (need === "sync" ? kind !== "sync" : need === "amf" ? kind && kind !== "amf" : false) continue;
+    const keys = new Set([CAT.keyOf(m), ...list.map((f) => CAT.keyOf(f.sheetModel || ""))].filter(Boolean));
+    const bp = CM.bestPair(names, list, CM.compatModules(list, keys, modFacts, ctlKeys), modFacts);
+    const make = x.brand || "?", rows = byMake.get(make) || [];
+    if (!rows.some((r) => CAT.keyOf(r.model) === CAT.keyOf(sheet))) rows.push({ model: sheet, kind, step: CM.ctlStep(sheet), ...bp });
+    byMake.set(make, rows);
+  }
+  if (!byMake.size) return "";
+  const out = ["## Bộ điều khiển thấp nhất đủ yêu cầu theo code (mỗi hãng)", "",
+    `Code chấm mỗi bộ điều khiển có datasheet ở trên CÙNG mô-đun truyền thông tốt nhất của nó (4G / Internet / Ethernet lấy từ mô-đun được tính, như luật mô-đun) trên các chức năng truyền thông HSMT nêu: ${names.join(", ")}${need ? `; chỉ loại ${CM.KIND_VI[need]} vì HSMT đòi` : ""}. "← thấp nhất đủ" là bộ bậc thấp nhất (bậc suy từ tên model) trong các bộ đạt nhiều nhất của hãng. Chỉ là chỉ dẫn: vẫn chấm mọi yêu cầu bộ điều khiển trên datasheet.`, ""];
+  for (const [make, rows] of byMake) {
+    const best = Math.max(...rows.map((r) => r.met)), step = (r) => (r.step == null ? Infinity : r.step);
+    const pick = rows.filter((r) => r.met === best).sort((a, b) => step(a) - step(b))[0];
+    out.push(`### ${make}`);
+    for (const r of rows.sort((a, b) => step(a) - step(b) || b.met - a.met)) {
+      out.push(`- ${r.model}${r.modules.length ? ` + ${r.modules.map((y) => y.model).join(" + ")}` : ""}${r.kind ? ` (${CM.KIND_VI[r.kind]})` : ""}: đạt ${r.met}/${r.total}${r.unclear.length ? `, chưa rõ: ${r.unclear.join(", ")}` : ""}${r === pick ? (r.met === r.total ? " ← thấp nhất đủ" : " ← thấp nhất trong các bộ đạt nhiều nhất của hãng (chưa bộ nào đủ)") : ""}`);
+    }
+    out.push("");
+  }
+  return out.join("\n");
 }
 // Bộ điều khiển (Khoa, 2026-11-01): the controllers each supplier offers, with the line of its page or genset row that
 // names it; a configuration's controller and its "Bộ điều khiển" check quote one of these lines.
@@ -2651,7 +2698,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   // controller maker's own datasheets ("Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào"); (2) the HSMT asks for an ATS /
   // "khi mất điện lưới" → only an AMF controller, its kind read from the maker's datasheet (CM.ctlKinds). The code never
   // replaces the main controller (điều phối 20/11/2026, hướng B: the agent chooses and checks it).
-  const ctlKinds = CM.ctlKinds(suppliers), ctlAmf = CM.needsAmf(technicalPart(hsmtText || "") || hsmtText || "");
+  const ctlKinds = CM.ctlKinds(suppliers, { modelsIn: ctlModelsIn }), ctlAmf = CM.needsAmf(technicalPart(hsmtText || "") || hsmtText || "", { head: String(hsmtText || "").slice(0, 3000) });
   // The other controllers of c's make, each scored with its best modules: [{ model, make, kind, step, met, ..., offeredAs +
   // offeredBy | notOffered }], and the main controller's own pair.
   const ctlCands = (c, names) => {
