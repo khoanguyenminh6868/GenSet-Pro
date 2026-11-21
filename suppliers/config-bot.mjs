@@ -1954,7 +1954,12 @@ export const MAX_CONFIGS = 8, PER_MAKE_CONFIGS = 2;
 // Cummins too (Khoa, 2026-11-17, same tender: QSK23-G2 and QSK19-G20 at ranks 1 and 3).
 // Mitsubishi too (Khoa, 2026-11-17).
 export const ONE_CONFIG_MAKES = ["perkins", "volvo penta", "cummins", "mitsubishi"];
-export const perMakeConfigs = (make) => (ONE_CONFIG_MAKES.includes(String(make || "").split("/")[0].trim().toLowerCase()) ? 1 : PER_MAKE_CONFIGS);
+// Baudouin: 3 configurations (Khoa 20/11/2026, IB2600603983: "Sửa lại luật để Baudouin được 3 cấu hình").
+export const THREE_CONFIG_MAKES = ["baudouin"];
+export const perMakeConfigs = (make) => {
+  const mk = String(make || "").split("/")[0].trim().toLowerCase();
+  return ONE_CONFIG_MAKES.includes(mk) ? 1 : THREE_CONFIG_MAKES.includes(mk) ? 3 : PER_MAKE_CONFIGS;
+};
 // A configuration whose controller (engine, alternator) is that of an earlier one may leave out the checks of that
 // part: the code copies them: a check read from the model's figures (factSrc), one whose quote is also in this
 // configuration's own source of that part, and a controller function no source states. Each copy is then checked
@@ -2076,6 +2081,8 @@ export function catalogMd(cat, cap, hints, opts = {}) {
   // Every line goes to controllers.md (a datasheet runs to 250 lines, a SmartGen manual to 700): the agent searches it
   // with grep; catalog.md shows the first 15 lines of each.
   const ctlOut = [], printed = new Map(), head = "Thông số bộ điều khiển (datasheet của hãng; ghi factSrc với supplierId, n và line là dòng nguyên văn)";
+  // bdk-amf (Khoa 20/11/2026): the kind of a controller as its maker's datasheet writes it (CM.ctlKinds), in each title.
+  const kinds = CM.ctlKinds(opts.suppliers || []), kindTag = (m) => { const k = CM.kindOf(kinds, m); return k ? ` — loại theo datasheet hãng: ${CM.KIND_VI[k]}` : ""; };
   // A controller's datasheet: the first 15 lines to catalog.md (`out`, when given), every line to controllers.md.
   const sheetMd = (m, out) => {
     if (!ctlOut.length) ctlOut.push(`# ${head}`, "");
@@ -2084,7 +2091,7 @@ export function catalogMd(cat, cap, hints, opts = {}) {
       for (const f of list) by.set(`${f.supplierId}#${f.n}`, [...(by.get(`${f.supplierId}#${f.n}`) || []), f]);
       for (const [k, fs] of by) {
         const ver = fs[0].version ? ` — datasheet của ${fs[0].version} (nhà cung cấp ghi ${m}: cần xác nhận đời)` : "";
-        const title = `### ${m}${ver} — supplierId: ${fs[0].supplierId}, n: ${fs[0].n}`;
+        const title = `### ${m}${ver} — supplierId: ${fs[0].supplierId}, n: ${fs[0].n}${kindTag(fs[0].version || m)}`;
         // One model's lines are written once, even when two controllers above use them (DSE7320 and DSE7320 MKII);
         // two models of one datasheet (DSE7310 MKII, DSE7320 MKII) have lines of their own.
         const same = `${k}|${CAT.keyOf(fs[0].version || m)}`;
@@ -2135,6 +2142,27 @@ export function catalogMd(cat, cap, hints, opts = {}) {
   const withSheet = new Set(ctls);
   for (const e of (cat.controllers || []).filter((e) => e.uses.some((u) => shown.has(u.supplierId)))) {
     if (e.model && !withSheet.has(e.model) && hasSheet(e.model)) { sheetMd(e.model); withSheet.add(e.model); }
+  }
+  // bdk-amf (Khoa 20/11/2026 "1. Có"): every other controller of the same makes as above with a datasheet of its maker
+  // (controller_maker), which no supplier of the configuration may offer: listed with its kind, all its lines in controllers.md.
+  // A configuration that uses one writes it as "Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào".
+  const brands = new Set(ctls.flatMap((m) => CAT.controllersIn(m).filter((x) => x.model).map((x) => norm(x.brand))));
+  const makerOnes = [], covered = new Set([...withSheet].flatMap((m) => [CAT.keyOf(m), ...factsFor(facts, "controller", m).map((f) => CAT.keyOf(f.version || ""))]).filter(Boolean));
+  for (const k of [...facts.keys()].filter((y) => y.startsWith("controller:")).sort()) {
+    if (!facts.get(k).some((f) => (opts.suppliers || []).find((s) => s.id === f.supplierId)?.role === "controller_maker")) continue;
+    const sm = facts.get(k).find((f) => f.sheetModel)?.sheetModel || k.slice(11);
+    const x = CAT.controllersIn(sm).find((y) => y.model && CAT.keyOf(y.model) === k.slice(11) && brands.has(norm(y.brand)));
+    if (x && !withSheet.has(x.model) && !covered.has(CAT.keyOf(x.model)) && !makerOnes.some((y) => CAT.keyOf(y.model) === CAT.keyOf(x.model))) makerOnes.push(x);
+  }
+  if (makerOnes.length) {
+    out.push("", `## Bộ điều khiển theo datasheet hãng (NCC chưa chào) — ${makerOnes.length} model, toàn bộ dòng ở controllers.md`, "");
+    if (opts.hsmtText && CM.needsAmf(technicalPart(opts.hsmtText) || opts.hsmtText)) out.push("HSMT có ATS / chuyển nguồn tự động / mất điện lưới: loại tự động khi mất lưới (AMF) theo datasheet hãng.", "");
+    for (const x of makerOnes) {
+      const f = factsFor(facts, "controller", x.model)[0];
+      out.push(`- ${x.model} (${x.brand})${kindTag(x.model) || " — loại: datasheet hãng không ghi"} — supplierId: ${f.supplierId}, n: ${f.n}`);
+      sheetMd(x.model); withSheet.add(x.model);
+    }
+    out.push("");
   }
   out.push("", controllersMd(cat.controllers || [], shown, withSheet));
   // The controller functions the HSMT names × the datasheets above (ctl-lookup.md), when prep gives the HSMT.
@@ -2671,27 +2699,64 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   // bdk-mo-dun PR 3 (Khoa 20/11/2026 "ok"): only a pair that meets at least as many parts as the configuration's own
   // controller with its best modules, scored the same way, less one (DSE7320 + DSE890 5/7 beside DSE7420 6/7 stays;
   // DSE6120 1/4, DSE6020 + DSE890 2/7 go).
-  const ctlAlternatives = (c, reqs) => {
-    delete c.controller.alternatives; delete c.controller.altLine;
-    const names = reqs.filter((r) => r.code === "ctl_comm" && r.part === "controller").flatMap((r) => (r.parts?.length ? r.parts.map((p) => p.item) : [r.item])).filter(Boolean);
-    if (!names.length) return;
-    const main = CAT.keyOf(ctlModelOf(c.controller)), mainKeys = new Set([main, ...factsOf(c, "controller").map((f) => CAT.keyOf(f.sheetModel || ""))]);
+  const commNames = (reqs) => reqs.filter((r) => r.code === "ctl_comm" && r.part === "controller").flatMap((r) => (r.parts?.length ? r.parts.map((p) => p.item) : [r.item])).filter(Boolean);
+  // bdk-amf (Khoa 20/11/2026, IB2600603983, "1. Có 2. Có"): (1) the other controllers of the same make come from the
+  // configuration's controller line, then from the other lines its suppliers offer (the record's `controllers`), then from the
+  // controller maker's own datasheets ("Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào"); (2) the HSMT asks for an ATS /
+  // "khi mất điện lưới" → only an AMF controller, its kind read from the maker's datasheet (CM.ctlKinds). The code never
+  // replaces the main controller (điều phối 20/11/2026, hướng B: the agent chooses and checks it).
+  const ctlKinds = CM.ctlKinds(suppliers), ctlAmf = CM.needsAmf(technicalPart(hsmtText || "") || hsmtText || "");
+  // The other controllers of c's make, each scored with its best modules: [{ model, make, kind, step, met, ..., offeredAs +
+  // offeredBy | notOffered }], and the main controller's own pair.
+  const ctlCands = (c, names) => {
+    const mainList = factsOf(c, "controller"), main = CAT.keyOf(ctlModelOf(c.controller));
+    const mainKeys = new Set([main, ...mainList.map((f) => CAT.keyOf(f.sheetModel || ""))]);
     const brand = CAT.controllersIn(ctlModelOf(c.controller)).find((x) => x.model)?.brand || c.controller.make;
-    const mainList = factsOf(c, "controller");
-    const floor = Math.max(1, (mainList.length ? CM.bestPair(names, mainList, compatOf(ctlModelOf(c.controller), mainList), modFacts).met : 0) - 1);
-    const seen = new Set(), alts = [];
-    for (const x of CAT.controllersIn(c.controller.src?.line || "").filter((y) => y.model && (!brand || norm(y.brand) === norm(brand)))) {
+    const seen = new Set(), out = [];
+    const tryAlt = (x, how) => {
       const k = CAT.keyOf(x.model);
-      if (seen.has(k) || mainKeys.has(k)) continue;
+      if (seen.has(k) || mainKeys.has(k)) return;
       seen.add(k);
       const list = factsFor(facts, "controller", x.model);
-      if (!list.length || list.some((f) => mainKeys.has(CAT.keyOf(f.sheetModel || "")))) continue;
-      const bp = CM.bestPair(names, list, compatOf(x.model, list), modFacts), sheets = [...new Set(list.map((f) => f.version || f.sheetModel).filter(Boolean))];
-      if (bp.met >= floor) alts.push({ model: sheets.length === 1 ? sheets[0] : x.model, offeredAs: x.model, make: x.brand, ...bp, parts: undefined });
+      if (!list.length || list.some((f) => mainKeys.has(CAT.keyOf(f.sheetModel || "")))) return;
+      const sheets = [...new Set(list.map((f) => f.version || f.sheetModel).filter(Boolean))], model = sheets.length === 1 ? sheets[0] : x.model;
+      // One model once, whichever way it came first (DSE7320 on the line and DSE7320 MKII of the maker's datasheet).
+      if (seen.has(`sheet:${CAT.keyOf(model)}`)) return;
+      seen.add(`sheet:${CAT.keyOf(model)}`);
+      const bp = CM.bestPair(names, list, compatOf(x.model, list), modFacts);
+      out.push({ model, ...(how.notOffered ? { notOffered: true, label: CM.CTL_ALT_LABEL } : { offeredAs: x.model, ...(how.by ? { offeredBy: how.by } : {}) }), make: x.brand,
+        kind: CM.kindOf(ctlKinds, model), step: CM.ctlStep(model), ...bp, parts: undefined });
+    };
+    const same = (y) => y.model && (!brand || norm(y.brand) === norm(brand));
+    for (const x of CAT.controllersIn(c.controller.src?.line || "").filter(same)) tryAlt(x, { by: c.controller.src?.supplierId });
+    for (const s of c.suppliers || []) for (const o of sup.get(s.supplierId)?.controllers || []) {
+      for (const x of CAT.controllersIn(o.line || "").filter((y) => same(y) && CAT.keyOf(y.model) === CAT.keyOf(o.model || ""))) tryAlt(x, { by: s.supplierId });
     }
-    alts.sort((a, b) => b.met - a.met);
+    if (brand) for (const k of [...facts.keys()].filter((y) => y.startsWith("controller:")).sort()) {
+      if (!facts.get(k).some((f) => sup.get(f.supplierId)?.role === "controller_maker")) continue;
+      const sm = facts.get(k).find((f) => f.sheetModel)?.sheetModel || k.slice(11);
+      const x = CAT.controllersIn(sm).find((y) => same(y) && CAT.keyOf(y.model) === k.slice(11)) || CAT.controllersIn(sm).find(same);
+      if (x) tryAlt(x, { notOffered: true });
+    }
+    const mainPair = mainList.length ? CM.bestPair(names, mainList, compatOf(ctlModelOf(c.controller), mainList), modFacts) : null;
+    return { out, mainPair };
+  };
+  // Q1 + bdk-amf: "Phương án khác đạt tương đương", best 2: those meeting ≥ the main pair − 1 (and ≥ 1), AMF only when the HSMT
+  // asks for it (a controller whose kind the maker's datasheet does not give stays); more parts met first, then a supplier's
+  // offer, then the lower step (CM.ctlStep: DSE7320 before DSE7420; điều phối 20/11/2026, inferred, not Khoa's own words).
+  const ctlAlternatives = (c, reqs) => {
+    delete c.controller.alternatives; delete c.controller.altLine;
+    const names = commNames(reqs);
+    if (!names.length) return;
+    const { out, mainPair } = ctlCands(c, names), floor = Math.max(1, (mainPair?.met || 0) - 1);
+    const step = (a) => (a.step == null ? Infinity : a.step);
+    // Not a higher step than the main controller when it only equals it (điều phối 20/11/2026: DSE8620 / HGM9510 / InteliGen
+    // beside a DSE7320 / HGM6120 / AMF25 that does as well).
+    const mainStep = CM.ctlStep(ctlModelOf(c.controller)), up = (a) => a.step != null && mainStep != null && a.step > mainStep && a.met <= (mainPair?.met || 0);
+    const alts = out.filter((a) => a.met >= floor && !up(a) && (!ctlAmf || a.kind === "amf" || !a.kind))
+      .sort((a, b) => b.met - a.met || (a.notOffered ? 1 : 0) - (b.notOffered ? 1 : 0) || step(a) - step(b));
     if (!alts.length) return;
-    c.controller.alternatives = alts.slice(0, 2).map(({ parts, ...a }) => a);
+    c.controller.alternatives = alts.slice(0, 2).map(({ parts, step: _s, ...a }) => a);
     c.controller.altLine = CM.altLineOf(c.controller.alternatives);
   };
   // Đồng bộ thương hiệu (Khoa, 2026-11-06): read from the HSMT by code, one requirement of the code's own in place of
@@ -2782,6 +2847,11 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     }
     // An alternator from its maker's own sheet (makerAltFix): that saved sheet of the maker's record.
     if (src.kind === "maker") {
+      // A controller from its maker's datasheet (bdk-amf, Khoa 20/11/2026): that table of the controller maker's record.
+      if (sup.get(src.supplierId)?.role === "controller_maker") {
+        const t = (sup.get(src.supplierId).specTables || []).find((x) => x.n === Number(src.n));
+        return t ? norm([t.title, ...(t.header || []), ...t.rows].join(" \n ")) : null;
+      }
       const s = sup.get(src.supplierId), f = path.join(sourcesDir || path.join(ROOT, "sources"), String(src.supplierId), `${Number(src.n)}.md`);
       return s && (s.sources || []).some((x) => Number(x.n) === Number(src.n)) && fs.existsSync(f) ? norm(fs.readFileSync(f, "utf8")) : null;
     }
@@ -2918,12 +2988,18 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   const altNeed = makerAltFix(result, { suppliers, RT, built, rowOf, hsmtText, cap, sync, problems, sourcesDir });
   for (const c of result.configs) {
     const texts = {};
+    // A main controller the agent chose from its maker's datasheet, which no supplier of the configuration offers
+    // (bdk-amf, Khoa 20/11/2026 "2"): labelled as such by code; its source is that datasheet table (sourceText "maker").
+    if (c.controller) {
+      if (c.controller.src?.kind === "maker" && sup.get(c.controller.src.supplierId)?.role === "controller_maker") { c.controller.fromMaker = true; c.controller.label = CM.CTL_ALT_LABEL; }
+      else { delete c.controller.fromMaker; if (c.controller.label === CM.CTL_ALT_LABEL) delete c.controller.label; }
+    }
     for (const part of ["engine", "alternator", "genset", "controller"]) {
       const p = c[part];
       if (!p) continue;
       texts[part] = sourceText(p.src, p.model);
       if (!texts[part]) { p.unverified = true; problems.push(`#${c.rank} ${part} ${p.model}: không tìm thấy nguồn (${p.src?.kind || "?"})`); continue; }
-      if (!p.fromMaker && !texts[part].includes(norm(p.model).replace(/\s+/g, " ")) && !texts[part].replace(/\s/g, "").includes(norm(p.model).replace(/\s/g, ""))) { p.unverified = true; problems.push(`#${c.rank} ${part}: model ${p.model} không có trong nguồn`); }
+      if ((!p.fromMaker || part === "controller") && !texts[part].includes(norm(p.model).replace(/\s+/g, " ")) && !texts[part].replace(/\s/g, "").includes(norm(p.model).replace(/\s/g, ""))) { p.unverified = true; problems.push(`#${c.rank} ${part}: model ${p.model} không có trong nguồn`); }
       if (p.src?.kind === "internet" && p.src.quote && !texts[part].includes(norm(p.src.quote))) { p.unverified = true; problems.push(`#${c.rank} ${part}: câu trích web không có trong trang đã lưu`); }
       // A controller's make may come from its model code (DSE… is Deep Sea, HGM… SmartGen), as web/catalog.js reads it.
       const makeOfCode = part === "controller" && CAT.controllersIn(p.model).some((x) => x.model && x.brand === p.make);
@@ -3164,6 +3240,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
     khoaRules(c, result.requirements || [], row, { origin });
     originChecks(c, result, origin, sup);
     madeChecks(c, result.requirements || [], row, built);
+    makerCtlChecks(c, result.requirements || []);
     makerAltChecks(c, result.requirements || [], altNeed, { sourcesDir });
     if (namedHere) NG.brandLicensedChecks(c, result.requirements || [], namedHere, NG.namedHit(c, namedHere, namedCtx), (id) => sup.get(id));
     comboChecks(c, { combo, row: rowOf(c.genset?.src || c.engine?.src), engFacts: [...factsOf(c, "engine"), ...ratingsFor(RT.eng, c.engine?.model)], altFacts: factsOf(c, "alternator"), altRatings: ratingsFor(RT.alt, c.alternator?.model), altKva: c.alternator?.model ? altKva.get(CAT.keyOf(c.alternator.model)) || [] : [], reqs: result.requirements || [] });
@@ -4432,6 +4509,20 @@ const openCheck = (c, r) => {
   const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
   return !x ? { x: null } : x.status === "unclear" && !x.conflict && !x.version && !x.parts?.length ? { x } : null;
 };
+// A main controller chosen from its maker's datasheet (controller.fromMaker, bdk-amf, Khoa 20/11/2026 "2"): no supplier of the
+// configuration offers it, so its origin is a paper the supplier sends (CO), whatever the agent wrote.
+export function makerCtlChecks(c, reqs = []) {
+  if (!c.controller?.fromMaker) return c;
+  for (const r of reqs) {
+    if (r.code !== "ctl_origin" || r.byCode) continue;
+    const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
+    putCheck(c, x, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: `Bộ điều khiển ${c.controller.model}`, part: "controller",
+      level: r.level === "option" ? "option" : "core", status: "confirm", confirm: "document", byCode: true, rule: "bdk-hang",
+      note: `${CM.CTL_ALT_LABEL}: cần NCC xác nhận xuất xứ (CO) của bộ điều khiển.` });
+    if (x) { delete x.sourceQuote; delete x.factSrc; }
+  }
+  return c;
+}
 const putCheck = (c, x, check) => {
   if (x) { delete x.unverified; delete x.hint; x.was = x.was || x.status; Object.assign(x, check); } else c.checks = [...(c.checks || []), check];
 };
@@ -5060,7 +5151,8 @@ export function rankConfigs(result) {
       if (!first.controller?.model && c.controller?.model) first.controller = c.controller;
       return false;
     }
-    // At most 2 per engine make (Khoa, 2026-11-11), so another make gets the place of a third.
+    // At most 2 per engine make (Khoa, 2026-11-11), so another make gets the place of a third (perMakeConfigs: 1 for
+    // ONE_CONFIG_MAKES, 3 for Baudouin).
     const mk = String(c.engine?.make || "").split("/")[0].trim().toLowerCase();
     // A configuration kept from Tìm NCC (keepFound) is outside that limit: Khoa wants it back, whatever else the run found.
     // So is the make of an engine term the HSMT gives (Đặc thù hãng động cơ, Khoa 18/11/2026: "chỉ gợi ý hãng đó và bỏ
