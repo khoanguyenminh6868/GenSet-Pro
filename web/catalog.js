@@ -1318,6 +1318,11 @@
     if (s.role === "controller_maker") return out;
     const note = notes ? (t, ti, row, reason, detail) => notes.push({ supplierId: s.id, n: t.n, table: ti, title: String(t.title || ""), row, reason, detail: detail == null ? null : String(detail).slice(0, 200) }) : () => {};
     const ownBrand = (list) => brandIn([s.names?.en, ...(s.names?.brands || [])].join(" "), list);
+    // A LOOSE_TABLES entry whose page has no table with its header any more (re-crawled, header changed): read nothing, say so.
+    for (const x of LOOSE_TABLES) if (x.supplierId === s.id && !(s.specTables || []).some((t) => +t.n === x.n && String(t.header?.[0] ?? "").trim() === x.header)) {
+      const ti = (s.specTables || []).findIndex((t) => +t.n === x.n);
+      note(ti >= 0 ? s.specTables[ti] : { n: x.n, title: "" }, ti >= 0 ? ti : null, null, "bảng đầu phát / động cơ rời trong danh sách đổi tiêu đề: không đọc", ti >= 0 ? (s.specTables[ti].header || [])[0] : "không còn bảng nào của nguồn này");
+    }
     (s.specTables || []).forEach((t0, ti) => {
       const url = ((s.sources || []).find((x) => x.n === t0.n) || {}).url || "";
       const t = tidyTable(t0, (reason, detail) => note(t0, ti, null, reason, detail), url);
@@ -1328,6 +1333,9 @@
       const hEng = brandIn(headerText, ENGINE_BRANDS), hAlt = brandIn(headerText, ALT_BRANDS);
       const tEng = brandIn(titleHead, ENGINE_BRANDS), tAlt = brandIn(titleHead, ALT_BRANDS);
       const base = { supplierId: s.id, n: t.n, table: ti, title };
+      // A loose alternator / engine table on the list (LOOSE_TABLES, bang-roi-29): read by its entry only, then done.
+      const looseT = LOOSE_TABLES.find((x) => x.supplierId === s.id && x.n === +t0.n && String(t0.header?.[0] ?? "").trim() === x.header);
+      if (looseT) { out.push(...looseRows(s, looseT, t0, ti, (row, reason, detail) => note(t0, ti, row, reason, detail))); return; }
       const altT = ALT_TABLES.find((x) => x.supplierId === s.id && x.n === +t.n);
       if (altT) {
         if (String((t.header || [])[0] || "").trim() !== altT.header) { note(t, ti, null, "bảng đầu phát trong danh sách đổi tiêu đề: không đọc", (t.header || [])[0] || ""); return; }
@@ -1608,6 +1616,126 @@
       cells: 13, brand: /康明斯|cummins/i, model: 0,
       specs: [["engPower", 1, "功率(主用) Power (KW)"], ["engPower", 2, "功率(备用) Power (KW)"], ["cyl", 3, "缸数 No Of Cylinders"], ["bore", 4, "缸径*行程 Bore/Stroke (MM)"], ["disp", 5, "排气量 Exhaust Capacity (L)"], ["compr", 6, "压缩比 Compression Ratio"]] },
   ];
+  // Loose alternator and engine tables (bang-roi-29, chủ dự án 21/11/2026: "đọc cả 29 thành bản ghi đầu phát / động cơ"):
+  // an alternator maker's range table, or an engine table, on a page of its own (dau-vao-bang-roi/29-bang.md, lớp A / E).
+  // An explicit list checked by hand row by row, NOT a rule: supplier + n + the FIRST header line word for word (a re-crawl
+  // that changes it lapses the entry, noted). Each entry names its cells (cellsOf of the row, after `lead` is dropped):
+  //   kind: "alternator" | "engine"; rows: [first, last] row indexes read (a page holding two tables in one: keliang
+  //     n108 / n124 rows 0–11 are an OCR'd size drawing, the figures come again, clean, below); code: the model a row must
+  //     have (a garbled code like "STO7.5" / "7ZH-180AA4-7H", a repeated header line, "ST-7.5/8" two models: left out, noted).
+  //   out (alternator): one record per entry { level, freq | freqCell, kW, kVA, pair }: cell indexes; kW and kVA of one
+  //     record must fit (fitPair) and kW ≤ kVA, else the record is left out (noted). No kVA cell → kW only (single phase,
+  //     a table giving kW only). `rated` = the maker's "Output" / "Rated power" (as ALT_TABLES); the level is prime /
+  //     standby only where the header says so (nenjo "常用 Prime power" / "备用 Standby power", xinhengxin n118 "Prime").
+  //   specs (engine): [key, cell, label as the source writes it]; a value not of the key's shape is left out.
+  //   scope "supplier": the alternator is keyed `supplierId|keyOf(model)` in build(), so it never joins another supplier's
+  //     record of the same name: "STC-10", "ST-5", "TFW2-…", "TZH-…" are series names many Chinese factories use for
+  //     different machines (62 STC / ST keys already exist from 3 other suppliers). Only jet-power "JET…" and longkai
+  //     "LK…" (the supplier's own code, every existing record of the key is that supplier's) and the engines (an engine
+  //     maker's model: SDEC SC…, Cummins …-GM…, Changchai ZS…) join the common key.
+  //   nameKw (nenjo): the model's number is its 50 Hz prime kW ("HJI-6.5 | 6.5"); a row where it is not ("HJI-1420 | 1520")
+  //     is left out (which of the two is wrong is not known).
+  // A model written twice in one table with other figures (lanzhou "TZH-280S4-TH" 90 / 100 kW, nenjo "HJI-200") is left
+  // out both times (which row is right is not known); twice with the same figures is read twice (zhengdian variants).
+  // Not read: longkai n113 rows 56–111 (the voltages 208/416…240/480 V, no frequency written), xinhengxin n108 "Rate
+  // Capacity （KW）" (kVA figures under a kW title), weights / sizes / currents (genset-scope keys: they would show as the
+  // set's), torque, rise-power n131 cylinders / displacement (all 20 SDEC keys already carry rise-power's and ≥ 12 other
+  // suppliers' votes; "25.8" for SC27G755D2 / SC27G830D2 against 26.6 of 16 suppliers).
+  const LOOSE_TABLES = (() => {
+    const kw = (cell, level = "rated") => [{ level, kW: cell }];
+    const two = (kW1, kVA1, kW2, kVA2, level = "rated") => [{ level, freq: 50, kW: kW1, kVA: kVA1 }, { level, freq: 60, kW: kW2, kVA: kVA2 }];
+    const NJ = (n) => ({ supplierId: "nenjo-generator", n, kind: "alternator", scope: "supplier", header: "| High base | ModeL | KW | KW", lead: /中心高/, cells: [5], code: /^HJI-\d+(\.\d+)?$/, nameKw: true,
+      out: [{ level: "prime", freq: 50, kW: 1 }, { level: "standby", freq: 50, kW: 2 }, { level: "prime", freq: 60, kW: 3 }, { level: "standby", freq: 60, kW: 4 }] });
+    const SF = (n, header) => ({ supplierId: "shengfeng-fuan", n, kind: "alternator", scope: "supplier", header, cells: [5], code: /^TFW2-\d+$/, out: [{ level: "rated", kW: 1, kVA: 2 }] });
+    const PL = (n) => ({ supplierId: "penlucky", n, kind: "engine", header: "| Model | Rated power output (kW@RPM) | Peak torque (N.m@RPM) | Cylinders | Displacement (L) | Aspiration", cells: [6],
+      specs: [["engPower", 1, "Rated power output (kW@RPM)"], ["cyl", 3, "Cylinders"], ["disp", 4, "Displacement (L)"]] });
+    const KJ = (n) => ({ supplierId: "kangjin-power", n, kind: "engine", header: "| | Model | Rated Power (kW@rpm) | Max Torque (N·m@rpm)", cells: [3], specs: [["engPower", 1, "Rated Power (kW@rpm)"]] });
+    return [
+      { supplierId: "eastern-lion-fuan", n: 154, kind: "alternator", scope: "supplier", header: "| | Model | 50Hz Output (kW) | 50Hz Output (kVA) | 60Hz Output (kW) | 60Hz Output (kVA)", cells: [5], code: /^(STC|TZH)-\d+$/, out: two(1, 2, 3, 4) },
+      { supplierId: "gordon-power", n: 117, kind: "alternator", scope: "supplier", header: "| Model | Output | Current | Pole | Frq. | Speed", cells: [7], code: /^STC?-\d+(\.\d+)?$/, out: [{ level: "rated", kW: 1, kVA: 2, freqCell: 5 }] },
+      { supplierId: "jet-power", n: 119, kind: "alternator", header: "| MODEL | 3-PHASE 50Hz /380V-440V | 3-PHASE 60Hz / 416V-480V | PACKAGE | WEIGHT", cells: [7], code: /^JET\d{3}[A-Z]{1,2}\d?$/, out: two(2, 1, 4, 3) },
+      { supplierId: "keliang-fuan", n: 108, kind: "alternator", scope: "supplier", header: "| Model | Output | Installing dimensions | External dimensions", rows: [13, 24], code: /^STC-\d+(\.\d+)?$/, out: [{ level: "rated", kW: 1, kVA: 2 }] },
+      { supplierId: "keliang-fuan", n: 124, kind: "alternator", scope: "supplier", header: "| Model | Output (kW) | Installing Dimensions | External Dimensions", rows: [9, 18], code: /^ST-\d+(\.\d+)?$/, out: kw(1) },
+      { supplierId: "landtop-fuzhou", n: 114, kind: "alternator", scope: "supplier", header: "| Model | Rated Output (KW) | Current (A) | Voltage (V) | Rated Speed (r/min) | Frequency (Hz) | N,W (kg) | G.W (kg) | Size(cm) | 20″ PCS", cells: [8, 12], code: /^ST-\d+(\.\d+)?$/, out: kw(1) },
+      { supplierId: "landtop-fuzhou", n: 115, kind: "alternator", scope: "supplier", header: "| Model | Rated Output (KW) | Rated Capacity (Kva) | Rated Current (A) | Rated Speed (r/min) | Rated Voltage (V) | Frequency (Hz) | N,W (kg) | G.W (kg) | Size(cm) | 20″ PCS", cells: [8, 11], code: /^STC-\d+(\.\d+)?$/, out: [{ level: "rated", kW: 1, kVA: 2 }] },
+      { supplierId: "lanzhou-electric", n: 102, kind: "alternator", scope: "supplier", header: "| 型号 | 额定容量 KVA | 额定功率 KW | 额定电流 A | 额定转速 r/min | 效率 % | 重量 kg | 最大功率 KW | 型号 | 额定容量 KVA", cells: [8], code: /^TZH-\d{3}[A-Z]{1,2}\d-TH$/, out: [{ level: "rated", kW: 2, kVA: 1 }] },
+      { supplierId: "longkai-power", n: 113, kind: "alternator", header: "| Model | KW/3PH/50Hz | 1PH/50Hz | Dimension(cm) | Weight(kg) | PDF", rows: [1, 55], cells: [7], code: /^LK\d{3}[A-Z]{1,2}(\/S)?$/, out: [{ level: "rated", freq: 50, kW: 2 }] },
+      NJ(101), NJ(111),
+      { supplierId: "shengfeng-fuan", n: 104, kind: "alternator", scope: "supplier", header: "| 型号 | 额定功率 (kW) | 额定容量 (kVA) | 额定电流 (A) | 功率因数 (cos&Phi;) | 额定转速 (r/min)", cells: [4, 6], code: /^STC-\d+(\.\d+)?$/, out: [{ level: "rated", kW: 1, kVA: 2 }] },
+      SF(106, "| 型号 | 额定功率 (KW) | 额定功率 (KVA) | 频率 (HZ) | 电压 (v)"), SF(111, "| Model | Rated Power (KW) | Rated Capacity (KVA) | Fre. (HZ) | Voltage (v)"),
+      { supplierId: "xinhengxin-fujian", n: 108, kind: "alternator", scope: "supplier", header: "| MODEL | Rate Power （KW） | Rate Capacity （KW） | Fre. (Hz) | Voltage (V)", cells: [5], code: /^XHX-\d+(\.\d+)?$/, out: kw(1) },
+      { supplierId: "xinhengxin-fujian", n: 110, kind: "alternator", scope: "supplier", header: "| Model | Output | Current(A) | Voltage(V) | Rated P.F | No.of poles | Speed(r.p.m) | Volt.regulation", cells: [7, 11], code: /^ST-\d+(\.\d+)?$/, out: kw(1) },
+      { supplierId: "xinhengxin-fujian", n: 118, kind: "alternator", scope: "supplier", header: "| Model | Prime | Voltage | Current | No.of pole | Speed | Volt.regulation", cells: [6, 8], code: /^STC-\d+(\.\d+)?$/, out: [{ level: "prime", kW: 1, kVA: 2 }] },
+      { supplierId: "yihua-fujian", n: 105, kind: "alternator", scope: "supplier", header: "| Model | Rated Power (KW/KVA) | Rated Volt(V) | Rated Curr. (A) | Rated Speed (r/min) | Frequency (Hz) | Max.directly-starting Motor (kW)", cells: [7], code: /^TFX-\d+$/, out: [{ level: "rated", pair: 1, freqCell: 5 }] },
+      { supplierId: "yingtai-jiangsu", n: 115, kind: "alternator", scope: "supplier", header: "| 型号 | 容量KVA | 功率KW | 电压V | 电流A | 相数 | 频率HZ | 防护等级IP | 绝缘等级 | 调压率%", cells: [10], code: /^(STC\d+(\.\d+)?|ST-\d+)$/, out: [{ level: "rated", kW: 2, kVA: 1, freqCell: 6 }] },
+      { supplierId: "yingtai-jiangsu", n: 116, kind: "alternator", scope: "supplier", header: "| 型号 | 容量KVA | 功率KW | 电压V | 电流A | 相数 | 频率HZ | 防护等级IP | 绝缘等级 | 调压率%", cells: [10], code: /^YTW\d+(\.\d+)?$/, out: [{ level: "rated", kW: 2, kVA: 1, freqCell: 6 }] },
+      KJ(101), KJ(102), PL(116), PL(119), PL(120),
+      { supplierId: "rise-power", n: 131, kind: "engine", header: "| Model | Standby Power(kW) | Cylinders | Displacement (L) | Fuel Consumption(L/h) | Oil Consumption(g/kWh) | Lube Capacity(L) | Coolant Capacity(L) | Dimensions", cells: [10], specs: [["engPower", 1, "Standby Power(kW)"]] },
+      { supplierId: "zhengdian-zhengzhou", n: 103, kind: "engine", header: "| 产品型号 | 规格 | 功率 KW | 转速 r/min", cells: [4], code: /^Z[SL]\d{3,4}[A-Z\d]*$/, specs: [["engPower", 2, "功率 KW"], ["speed", 3, "转速 r/min"]] },
+    ].map((x) => ({ checked: "21/11/2026", ...x }));
+  })();
+  // The records of one LOOSE_TABLES table (raw rows of the stored table, as ENGINE_TABLES).
+  function looseRows(s, x, t, ti, note) {
+    const out = [], title = String(t.title || ""), rows = t.rows || [];
+    const base = { supplierId: s.id, n: t.n, table: ti, title, header: t.header || [], genset: null, other: null };
+    const tEng = brandIn(title.split(/\s[|–-]\s|\|/)[0], ENGINE_BRANDS);
+    const cellsAt = (line) => { const c = cellsOf(line); if (x.lead && x.lead.test(c[0] || "")) c.shift(); return c; };
+    const fig = (c) => { const v = String(c ?? "").trim(); return /^\d+(\.\d+)?$/.test(v) && +v > 0 ? +v : null; };
+    const read = (line) => {
+      const cells = cellsAt(line), model = String(cells[0] ?? "").trim();
+      if (x.cells && !x.cells.includes(cells.length)) return { bad: "dòng không đúng bố cục cột của bảng" };
+      if (x.code ? !x.code.test(model) : !isCode(model)) return { bad: "dòng không có model đọc được" };
+      if (x.kind === "engine") {
+        const specs = [];
+        for (const [key, i, label] of x.specs) { const v = String(cells[i] ?? "").trim(); if (v && SPEC[key].ok.test(v)) specs.push({ key, label, value: v }); }
+        return { model, specs, sig: specs.map((p) => `${p.key}=${p.value}`).join(";") };
+      }
+      if (x.nameKw && fig(cells[1]) !== +model.replace(/^\D+/, "")) return { bad: "số trong model khác công suất 50 Hz của dòng" };
+      const recs = [];
+      for (const o of x.out) {
+        let kW = null, kVA = null;
+        if (o.pair != null) { const p = String(cells[o.pair] ?? "").trim().split(/\s*\/\s*/); if (p.length === 2) { kW = fig(p[0]); kVA = fig(p[1]); } if (kW == null || kVA == null) { recs.push({ bad: String(cells[o.pair] ?? "") }); continue; } }
+        else { kW = fig(cells[o.kW]); kVA = o.kVA != null ? fig(cells[o.kVA]) : null; if (kW == null || (o.kVA != null && kVA == null)) { recs.push({ bad: `${cells[o.kW] ?? ""} / ${o.kVA != null ? cells[o.kVA] ?? "" : ""}`, skip: o.level === "standby" }); continue; } }
+        if (kVA != null && (kW > kVA || !fitPair(kVA, kW))) { recs.push({ bad: `${kW} kW / ${kVA} kVA` }); continue; }
+        let freq = o.freq || null;
+        if (o.freqCell != null) { const m = String(cells[o.freqCell] ?? "").trim().match(/^(50|60)\s*(?:hz)?$/i); freq = m ? +m[1] : null; }
+        recs.push({ level: o.level, freq, p: kVA != null ? { kW, kVA } : { kW } });
+      }
+      return { model, recs, sig: JSON.stringify(recs) };
+    };
+    const [r0, r1] = x.rows || [0, rows.length - 1];
+    const got = rows.map((line, ri) => (ri < r0 || ri > r1 ? null : read(line)));
+    // The same model twice with other figures, or two models that keyOf makes one ("STC-7.5" / "STC-75", "HJI-12.8" /
+    // "HJI-128": the dot is dropped) with other figures: neither row (they would join one record in build()).
+    const sigs = new Map(), names = new Map();
+    got.forEach((g) => { if (g && !g.bad) { const k = keyOf(g.model); sigs.set(k, [...(sigs.get(k) || []), g.sig]); names.set(k, new Set([...(names.get(k) || []), g.model.toUpperCase()])); } });
+    got.forEach((g, ri) => {
+      if (!g) return;
+      const line = rows[ri];
+      if (g.bad) { note(ri, g.bad, line); return; }
+      if (new Set(sigs.get(keyOf(g.model))).size > 1) { note(ri, names.get(keyOf(g.model)).size > 1 ? "hai model trùng khoá (keyOf bỏ dấu chấm), số khác nhau: không đọc" : "model ghi hai lần với số khác nhau: không đọc", line); return; }
+      const keyScope = x.scope === "supplier" ? { keyScope: "supplier" } : {};
+      if (x.kind === "engine") {
+        const makes = [];
+        if (tEng.length === 1) addMake(makes, tEng[0], "tên trang");
+        out.push({ ...base, row: ri, line, kind: "engine", model: g.model, power: null, freq: null, specs: g.specs, makes });
+        return;
+      }
+      // One record per frequency; the levels of one frequency go into one record.
+      const byFreq = new Map();
+      for (const r of g.recs) {
+        if (r.bad != null) { if (!r.skip) note(ri, "công suất đầu phát không đọc được", r.bad); continue; }
+        const k = r.freq || 0;
+        if (!byFreq.has(k)) byFreq.set(k, {});
+        byFreq.get(k)[r.level] = r.p;
+      }
+      for (const [f, power] of byFreq) {
+        if (power.prime && power.standby && power.prime.kW > power.standby.kW) { note(ri, "prime lớn hơn standby: để trống cả hai", line); continue; }
+        out.push({ ...base, ...keyScope, row: ri, line, kind: "alternator", model: g.model, power, freq: f || null, specs: [], makes: [], own: true });
+      }
+    });
+    return out;
+  }
   // Genset power from the set's NAME, for tables Khoa listed (câu 7 = C, Khoa 20/11/2026), and the engine's output from a
   // named cell. huatai n111: "输出功率 (KW/KVA)" holds the engine's bore / stroke ("140/165"), no cell gives the set's power;
   // "200GF" … "1000GF" is the set's kW (each row's current is that kW at 400 V, cos φ 0.8; 167 / 167 "NNNGF" rows of huatai's
@@ -2543,8 +2671,10 @@
       }
       rows.forEach((o, i) => {
         for (const c of ctrls[i]) addCtrl(s, c, { n: o.n, line: o.line, header: o.header, genset: o.genset, power: o.power, freq: o.freq, other: o.model, specs: [] });
-        const k = keyOf(o.model);
-        if (k.length < 3) return;
+        const k0 = keyOf(o.model);
+        if (k0.length < 3) return;
+        // A series name many factories use ("STC-10", LOOSE_TABLES scope "supplier"): keyed per supplier, never joined.
+        const k = o.keyScope === "supplier" ? `${o.supplierId}|${k0}` : k0;
         const m = maps[o.kind];
         let e = m.get(k);
         if (!e) { e = { key: k, kind: o.kind, model: o.model, names: new Set(), makes: [], uses: [], suppliers: new Set(), freq: new Set() }; m.set(k, e); }
