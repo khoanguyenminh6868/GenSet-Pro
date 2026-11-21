@@ -1606,16 +1606,29 @@ export function altOf(alts, cell) {
   }
   return null;
 }
+// ĐO THỬ (tach-mu-2, Khoa 21/11/2026 "thử cách 2"): catalog tách "X" và "X^" (không nguồn nào chú thích "^"). Chỉ để LOẠI ở `candidates`:
+// khoá không có số của một loại (xi lanh, dung tích, đường kính × hành trình) mượn số của khoá kia; khoá có số riêng giữ số riêng
+// (8M33D1012E311 không bị "12V / 31.8" của aosif ở khoá ^ kéo lại). Điểm thông số (`eKeys`) không mượn.
+const TWIN_KEYS = new Set(["cyl", "disp", "bore"]);
+const caretTwin = (k) => (k.endsWith("^") ? k.slice(0, -1) : `${k}^`);
+function twinFacts(e, ef, facts) {
+  const twin = facts.get(`engine:${caretTwin(e.key)}`);
+  if (!twin?.length) return [];
+  const own = new Set([...ef, ...e.uses.flatMap((u) => u.specs || [])].map((f) => f.key));
+  return twin.filter((f) => TWIN_KEYS.has(f.key) && !own.has(f.key));
+}
 export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30, sync = null, keep = null, makeCap = MAKE_CAP, patches = true, blocked = null, pinTop = PIN_TOP } = {}) {
   const hints = plausible(hints0, cap), sup = new Map(suppliers.map((s) => [s.id, s])), alts = new Map((cat.alternators || []).map((a) => [a.key, a])), rowsMap = normRowsOf(suppliers);
   const band = bandOf(cap), ruleA = candRuleOn("A"), ruleB = candRuleOn("B");
   const near = (u) => !cap || Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * band.low && p[cap.unit] <= cap.value * band.high + 1e-9);
   // `dropped`: the rows a minimum of the HSMT rules out (left out of the candidates), with the reasons.
-  const rows = [], dropped = [];
+  const rows = [], dropped = [], engineByKey = new Map((cat.engines || []).map((x) => [x.key, x]));
   for (const e of cat.engines || []) {
     if (focus && !focus.has(e.key)) continue;
     const viaCn = origin === "cn" && CAT.originOf(e) === "other";
     const ef = facts.get(`engine:${e.key}`) || [], eKeys = new Set(ef.map((f) => f.key));
+    // Số dùng cho luật loại: của khoá + số mượn từ khoá X ↔ X^ (twinFacts).
+    const borrowed = twinFacts(e, ef, facts), rf = borrowed.length ? [...ef, ...borrowed] : ef, twinUses = engineByKey.get(caretTwin(e.key))?.uses || [];
     // Displacement voters of this engine (dispVoters), built once when a row needs them.
     let voters = null;
     const dispVoter = (s) => {
@@ -1708,7 +1721,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         // Dung tích: các số chỉ khác độ làm tròn là một phiếu (majorityRound), so ngưỡng bằng số chính xác nhất (dispExact).
         return key === "disp" ? majorityRound(figs) : majorityOf(figs);
       };
-      const below = (key, min, read) => { const all = [...ef, ...(u.specs || [])].filter((f) => f.key === key).map((f) => [f, read(f.value, f)]), fs = all.filter(([, x]) => x != null && x !== BLOCK), v = fs.map(([, x]) => x);
+      const below = (key, min, read) => { const all = [...rf, ...(u.specs || [])].filter((f) => f.key === key).map((f) => [f, read(f.value, f)]), fs = all.filter(([, x]) => x != null && x !== BLOCK), v = fs.map(([, x]) => x);
         const mj = min && MAJ_KEYS.has(key) ? majOf(all, key) : null;
         // Dung tích: so chặt bằng số chính xác nhất của nhóm thắng (DP222CB {21.9, 21.927} ↔ ≥ 21.927 đạt; Y490D 2.67 ↔ ≥ 2.672 loại).
         if (mj) { const x = mj.group ? dispExact(mj, "min") : mj.win, lo = x < min; if (lo) srcOf[key] = { n: v.length, win: mj.win, votes: mj.votes, ...(mj.group ? { group: mj.group, exact: x } : {}) }; return lo ? x : null; }
@@ -1716,7 +1729,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         const hit = min && v.length && !all.some(([, x]) => x === BLOCK) && v.every((x) => x < min); if (hit) srcOf[key] = { n: v.length, sources: new Set(fs.map(([f]) => `${f.supplierId ?? ""}#${f.n ?? ""}`)).size, ofRow: fs.filter(([f]) => (u.specs || []).includes(f)).length };
         return hit ? v[0] : null; };
       // No displacement given: bore × stroke × cylinders (web/conversions.js displacement), when the sources give them.
-      const given = [...ef, ...(u.specs || [])], bs = given.find((f) => f.key === "bore"), z = given.find((f) => f.key === "cyl");
+      const given = [...rf, ...(u.specs || [])], bs = given.find((f) => f.key === "bore"), z = given.find((f) => f.key === "cyl");
       const nbs = ND && bs && hints.minDisp && !given.some((f) => f.key === "disp") ? nfig(bs, { unit: "mm" }) : null, nz = ND && z && nbs ? nfig(z, {}) : null;
       const [b, st] = ND ? [nbs?.bore?.bore, nbs?.bore?.stroke] : bs ? numbersIn(bs.value) : [], n = ND ? nz?.count ?? null : z ? numbersIn(z.value)[0] : null;
       const calcL = !given.some((f) => f.key === "disp") && b > 50 && st > 50 && n ? Math.round(Math.PI / 4 * b * b * st * n / 1e4) / 100 : null;
@@ -1752,8 +1765,8 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         const cnt = (v) => { const m = String(v ?? "").match(/\d{1,2}/); return m ? Number(m[0]) : null; };
         const ownC = [...(u.specs || []).filter((f) => f.key === "cyl").map((f) => cnt(f.value)), ...(u.line ? CAT.cellsOf(u.line).filter((c) => /^\s*(?:\d{1,2}\s*[.\-]\s*[VL]|[VL]\s*-?\s*\d{1,2})\s*$/i.test(c)).map(cnt) : [])].filter((x) => x != null);
         // No cell of its own: the engine's count the suppliers agree on by the majority rule, when there is one.
-        const eMaj = ownC.length ? null : majOf(ef.filter((f) => f.key === "cyl").map((f) => [f, cylOf(f.value, f)]));
-        const cs = ownC.length ? ownC : eMaj ? [eMaj.win] : ef.filter((f) => f.key === "cyl").map((f) => cnt(f.value)).filter((x) => x != null);
+        const eMaj = ownC.length ? null : majOf(rf.filter((f) => f.key === "cyl").map((f) => [f, cylOf(f.value, f)]));
+        const cs = ownC.length ? ownC : eMaj ? [eMaj.win] : rf.filter((f) => f.key === "cyl").map((f) => cnt(f.value)).filter((x) => x != null);
         if (cs.length && cs.every((x) => x !== hints.minCyl)) { if (eMaj) srcOf.cyl = { win: eMaj.win, votes: eMaj.votes }; score -= 600; ruled.push("cyl"); why.push(`${cs[0]} xi lanh, HSMT ghi ${hints.minCyl} xi lanh${byMaj("cyl")}`); }
       }
       // The row's prime output (catalog.js reads it from the column titles) below the prime the HSMT asks for.
@@ -1816,9 +1829,12 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // passed the frequency filter above): every row of the engine that names a frequency names the other one, two
       // rows at least. An engine sold at both (KTA38-G2: 27 rows at 50 Hz, 22 at 60) is not touched.
       if (hints.freq && !u.freq) {
-        const known = e.uses.map((x) => x.freq).filter(Boolean);
+        // Dòng của cả "X" và "X^" (tach-mu-2): tách không làm mã mất dòng ghi tần số.
+        const known = [...e.uses, ...twinUses].map((x) => x.freq).filter(Boolean);
         if (known.length >= 2 && known.every((f) => f !== hints.freq)) { score -= 600; ruled.push("freq"); why.push(`động cơ chỉ có dòng ${known[0]} Hz, HSMT yêu cầu ${hints.freq} Hz`); }
       }
+      const byTwin = (ruled.includes("cyl") && borrowed.some((f) => f.key === "cyl")) || ((ruled.includes("disp") || ruled.includes("maxDisp")) && borrowed.some((f) => f.key === "disp" || f.key === "bore")) || (ruled.includes("freq") && twinUses.some((x) => x.freq));
+      if (byTwin) why.push(`có dùng số của mã ${caretTwin(e.key)} (nguồn không chú thích "^")`);
       if (ruled.length && !isNamed) { dropped.push({ e, u, ruled, src: srcOf, ...(NORM ? { normSkip } : {}) }); continue; }
       rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(Object.keys(made).length ? { made } : {}), ...(NORM ? { normSkip } : {}) });
     }
