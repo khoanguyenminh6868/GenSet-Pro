@@ -96,14 +96,15 @@ test("TAD531GE: mất giá trị thắng (4,76 × 6 : 1,5 × 1 → bộ năm m�
   assert.equal(t.after, null);
 });
 
-test("TAD1351GE: giữ giá trị thắng 12,78 (fukangsi + pengpai gộp, còn 8 phiếu); dòng liangzi hết số 9,36 nên trần ≤ 11 lít không còn loại nó", () => {
+test("TAD1351GE: giữ giá trị thắng 12,78 (fukangsi + pengpai gộp, còn 9 phiếu từ S8-2); dòng liangzi hết số 9,36 nên trần ≤ 11 lít không còn loại nó", () => {
   const t = engine("TAD1351GE");
   // Từ #941: jinjia-power 3100×1150×1600 và victory-generator 3100*1150*1600, cùng 12,78 → một phiếu (đúng C6).
   assert.deepEqual(t.groups, [["fukangsi-yangzhou", "pengpai-yangzhou"], ["jinjia-power", "victory-generator"]]);
   assert.equal(t.before?.win, 12.78);
   // Đổi so với trước tad1341-9-36: phiếu lẻ 9,36 × 1 của liangzi (số của TAD941GE) đã bị bỏ ở nguồn (ROW_EXCEPTIONS `dropspec`), nên chỉ còn 12,78.
-  assert.deepEqual(t.after?.votes, { 12.78: 8 });
-  assert.deepEqual(t.before?.votes, { 12.78: 10 }, "từ #941 thêm phiếu jinjia-power");
+  // S8-2 (Khoa 22/11/2026): tecnogen n2003 VO353TSX** ghi "cm3 | 12780" = 12,78 L (l_from_cc) → thêm một phiếu 12,78.
+  assert.deepEqual(t.after?.votes, { 12.78: 9 });
+  assert.deepEqual(t.before?.votes, { 12.78: 11 }, "từ #941 thêm phiếu jinjia-power; S8-2 thêm phiếu tecnogen");
   const r = runOn(SUPS, 312.5, "Dung tích xi lanh: ≤ 11 lít\n50 Hz");
   // Trước: dòng LZ- V250 (9,36 L) bị loại `maxDisp` vì số đông 12,78 trội hơn số tự ghi của dòng. Nay dòng không ghi dung tích, nên bị loại theo
   // chính giá trị thắng 12,78 của động cơ (cùng lý do `maxDisp`, cùng kết quả, nhưng không còn dựa vào số sai 9,36).
