@@ -1,0 +1,16 @@
+TAD550GE(530GE) | TAD550GE disp 4.76×7 cyl 4×8 4L×1 | TAD530GE disp 4.76×5 1.1×1 cyl 4×12 4L×3 | n111 r0: engine:TAD550GE(530GE), alternator:UCI224G
+TAD551GE(531GE) | TAD551GE disp 4.76×8 cyl 4×10 4L×1 | TAD531GE disp 4.76×6 7.15×1 4.46×1 1.5×1 cyl 4×13 4L×3 6×1 | n111 r1: engine:TAD551GE(531GE), alternator:UCI274C
+TAD750GE(532GE) | TAD750GE disp 7.15×5 4.76×3 cyl 6×9 4×1 6L×1 | TAD532GE disp 4.76×6 2.2×1 cyl 4×12 4L×4 | n111 r2: engine:TAD750GE(532GE), alternator:UCI274E
+TAD751GE(731GE) | TAD751GE disp 7.15×6 cyl 6×8 6L×1 | TAD731GE disp 7.15×6 2.2×1 cyl 6×11 6L×3 4×1 6 L×1 | n111 r3: engine:TAD751GE(731GE), alternator:UCI274F
+TAD752GE(732GE) | TAD752GE disp 7.15×8 cyl 6×10 6L×1 | TAD732GE disp 7.15×7 cyl 6×12 6L×3 6 L×1 | n111 r4: engine:TAD752GE(732GE), alternator:UCI274G
+TAD753GE(733GE) | TAD753GE disp 7.15×8 cyl 6×10 6L×1 | TAD733GE disp 7.15×7 12.1×1 3.3×1 cyl 6×12 6L×3 4×1 6 L×1 | n111 r5: engine:TAD753GE(733GE), alternator:UCI274H
+TAD754GE(734GE) | TAD754GE disp 7.15×9 cyl 6×10 6 cylinder Diesel L×1 6L×1 | TAD734GE disp 7.15×7 12.1×1 3.3×1 cyl 6×12 6L×3 4×1 6 L×1 | n111 r6: engine:TAD754GE(734GE), alternator:UCDI274K
+TAD1351GE(1341GE) | TAD1351GE disp 12.78×10 cyl 6×12 6 cylinder Diesel L×1 6L×1 | TAD1341GE disp 12.78×2 cyl 6×7 6L×3 6 cylinder Diesel L×1 6 L×1 | n111 r7: engine:TAD1351GE(1341GE), alternator:HCI444ES
+TAD1352GE(1342GE) | TAD1352GE disp 12.78×9 cyl 6×12 6L×1 | TAD1342GE disp 12.78×3 cyl 6×7 6L×2 6 cylinder Diesel L×1 6 L×1 | n111 r8: engine:TAD1352GE(1342GE), alternator:HCI444E
+TAD1354GE(1343GE) | TAD1354GE disp 12.78×9 cyl 6×11 6L×1 | TAD1343GE disp 12.78×5 12.13×3 12.783×1 cyl 6×8 6L×3 6 cylinder Diesel L×1 6 L×1 | n111 r9: engine:TAD1354GE(1343GE), alternator:HCI444FS
+TAD1355GE(1344GE) | TAD1355GE disp 12.78×9 cyl 6×11 6L×1 | TAD1344GE disp 12.78×5 12.13×4 cyl 6×8 6L×3 6 cylinder Diesel L×1 6 L×1 | n111 r10: engine:TAD1355GE(1344GE), alternator:HCI444F
+TAD1650GE(1345GE) | TAD1650GE disp 16.12×8 12.78×2 cyl 6×11 6 cylinder Diesel L×1 6L×1 | TAD1345GE disp 12.78×6 16.12×2 cyl 6×8 6L×3 6 cylinder Diesel L×1 6 L×1 | n111 r11: engine:TAD1650GE(1345GE), alternator:HCI544C
+TAD1651GE(1641GE) | TAD1651GE disp 16.12×10 16.2×1 cyl 6×12 6 cylinder Diesel L×1 6L×1 | TAD1641GE disp 16.12×7 cyl 6×8 6L×3 6 cylinder Diesel L×1 6 L×1 | n111 r12: engine:TAD1651GE(1641GE), alternator:HCI544C
+TAD1652GE(1642GE) | TAD1652GE disp 16.12×2 cyl 6×2 | TAD1642GE disp 16.12×8 cyl 6×9 6L×3 6 cylinder Diesel L×1 6 L×1 | n111 r13: engine:TAD1652GE(1642GE), alternator:HCI544E
+TWD1653GE(1643GE) | TWD1653GE disp 16.12×11 cyl 6×12 6L×2 6 cylinder Diesel L×1 | TWD1643GE disp 16.12×6 cyl 6×8 6L×2 6 L×1 | n111 r14: engine:TWD1653GE(1643GE), alternator:HCI544FS
+bản ghi sanq dạng này: 30

@@ -1,0 +1,747 @@
+TBMT	co_bdk	trang_thai	vi_sao	dong	ten_goi
+IB2200003043	0	bỏ		máy phát điện công suất 800KVA, bộ tự động chuyển nguồn ATS; các phụ tải 	GÓI THẦU 
+IB2200003383	0	bỏ		tự động chuyển nguồn ATS; các phụ tải được cấp nguồn ưu tiên gồm: Khu bếp nấu, 	GÓI THẦU 
+IB2200004914	1	bỏ		Tài liệu kỹ thuật 2 Tủ chuyển nguồn tự động ATS 250A Quy cách: Tủ chuyển nguồn tự động ATS được lắp ráp tại Việt Nam, 	gói thầu 
+IB2200008211	0	bỏ		BỘ CHUYẾN NGUỒN TỰ ĐỘNG ATS 	gói thầu 
+IB2200008717	1	giữ	controller	đầu phát, bộ điều khiển và tủ ATS.	gói thầu 
+IB2200008927	0	bỏ		 + Đo điện trở cách điện cáp điện chính cấp nguồn cho bộ ATS. 	gói thầu: 
+IB2200011710	0	bỏ		động (ATS), cung cấp các tài liệu sau khi bàn giao hàng hóa: tài liệu kỹ thuật 	gói thầu 
+IB2200012797	0	giữ	named	Chức năng AMF	gói thầu 
+IB2200014769	1	bỏ		 phát điện 100kVA+tủ ATS. 	gói thầu 
+IB2200015404	1	giữ	controller	đầu phát, bộ điều khiển và tủ ATS.	gói thầu 
+IB2200015953	0	giữ	controller	thiểu 5A trên ATS hoặc máy	
+IB2200016199	1	giữ	controller	5 Chức năng điều khiển Điều khiển công tắc chuyển mạch ATS. Khi điện	gói thầu 
+IB2200016981	1	giữ	controller	Nhà thầu phải cung cấp đầy đủ catalog gốc (bằng tiếng Anh) và bản dịch tiếng Việt của nhà sản xuất, cho từng bộ phận của tổ máy phát điện: Động cơ, đầu phát, bộ điều khiển và tủ ATS.	gói thầu
+IB2200018116	1	bỏ		 ATS 100A 4 cực, có cuộn coil điều Number of Poles:4 	
+IB2200018828	1	giữ	controller	- Có tính năng kết nối với ATS (khởi động, tắt máy từ xa)	gói thầu 
+IB2200019427	1	bỏ		 + Dây tín hiệu: Tín hiệu tự động cho ATS. 	gói thầu 
+IB2200020538	1	giữ	named	3 Tính năng ATS/AMF 2 2	goi thau FTEL-2022-042 Cung cap va lap dat may phat dien 500kVA.pdf ---
+IB2200020589	0	giữ	named	Đạt Không đạt Sử dụng chức năng AMF (Automatic Mains Failure) với máy phát điện Mất điện, điều khiển máy phát đề nổ, tự động chuyển nguồn sang máy phát dự phòng dự phòng	gói thầu 
+IB2200021336	0	bỏ		 ATS yêu cầu cùng một hãng sản xuất để 	gói thầu 
+IB2200021767	0	bỏ		Tòa nhà Cục Công nghệ thông tin tại địa chỉ số 64 Nguyễn Chí Thanh, Đống Đa, Hà Nội đang sử dụng 02 máy phát điện hoạt động ở chế độ dự phòng trong trường hợp mất điện lưới, gồm: Máy phát Cummins C225	gói thầu
+IB2200022333	1	bỏ		 + Máy biến áp: Đầu tư 01 máy biến áp 750KVA và 01 máy phát điện dự phòng 400KVA cấp điện cho khu vực ưu tiên khi mất điện lưới; 	gói thầu 
+IB2200023806	0	bỏ		chuyển đổi nguồn tự động ATS kèm theo. 	gói thầu 
+IB2200026087	0	bỏ		Tủ ATS 600A-3 pha 380V/220V	gói thầu:
+IB2200029720	0	bỏ		Tủ ATS 80A	gói thầu - Dự án
+IB2200029877	0	giữ	named	- Chức năng AMF	gói thầu 
+IB2200029921	0	giữ	named	- Chức năng AMF	gói thầu 
+IB2200029952	0	giữ	named	- Chức năng AMF	gói thầu 
+IB2200030059	0	giữ	named	- Chức năng AMF	gói thầu 
+IB2200030282	0	bỏ		Automatic start and stop device for ATS connection	
+IB2200031154	0	bỏ		BỘ CHUYẾN NGUỒN TỰ ĐỘNG ATS 	gói thầu 
+IB2200032133	1	bỏ		Bước 4: Đấu nối cáp điện dự phòng vào máy phát điện dự phòng 500 KVA để cung cấp điện cho hệ thống headend khi mất điện lưới trong quá trình tháo máy phát điện 300 kVA hiện hữu. 	gói thầu
+IB2200035219	1	giữ	controller	- Bộ điều khiển ATS Controller	gói thầu
+IB2200035894	0	bỏ		11 Tủ ATS trọn bộ - Năm sản xuất: Không trước năm 2022; mới 100% 	gói thầu 
+IB2200037783	0	bỏ		 25 Tủ chuyển nguồn tự Phải có chất lượng sử dụng tương đương sản phẩm tủ ATS 	gói thầu: 
+IB2200038751	0	bỏ		- Điều kiện tự khởi động máy phát: Mất điện lưới; Mất 	gói thầu 
+IB2200039869	1	bỏ		Yêu cầu về hệ thống kết nối ATS 	gói thầu 
+IB2200040782	0	bỏ		 Tủ chuyển - ATS -4P-100A: 01 cái. 	gói thầu 
+IB2200042854	0	bỏ		thông qua tủ tự động chuyển nguồn ATS; 	gói thầu 
+IB2200042913	0	bỏ		 - Bảo dưỡng Tủ ATS -1, ATS-2: Kiểm tra vệ sinh, xử lý tiếp xúc, sửa lại chỗ bắt, lắp đặt đấu nối hoàn chỉnh 	gói thầu 
+IB2200043097	0	bỏ		 Máy có giao diện kết nối với bộ ATS 	gói thầu 
+IB2200043247	0	giữ	named	switch) , AMF(Automatic	goi thau va so E-TBMT (tren 
+IB2200043616	0	bỏ		2. Trang bị đồng bộ: Tủ ATS 400A. Xuất xứ: Italia	gói thầu
+IB2200046063	0	giữ	controller	Đạt Không đạt 3 Công suất liên tục ≥ 10.5 ±0,5 KVA Đạt Không đạt 4 Công suất tối đa ≥ 110%* công suất liện tục Đạt Không đạt 5 Điện áp/Tần số (danh đinh) 220-230V/50Hz Đạt Không đạt 6 Hệ số công suất 	gói thầu: Cung cấp và lắp đặt máy phát điện cho các trạm BTS năm 2022. 
+IB2200049662	0	giữ	controller	3 Bộ tủ tự động chuyển nguồn ồn + Bộ tủ tự động chuyển nguồn ATS	gói thầu 
+IB2200050164	0	bỏ		đến tủ đảo ATS)	gói thầu:
+IB2200052056	0	bỏ		- Mức nhiên liệu Đạt Không đạt 14 Tính năng đo lường hiển thị trên màn hình LCD các thông số của điện lưới khi kết nối với ATS - Điện áp điện lưới (V) 	gói thầu 
+IB2200052323	0	giữ	named	- Chức năng AMF	gói thầu 
+IB2200052444	0	bỏ		2 Tủ ATS Tủ chuyển nguồn tự động ATS 200A Tủ 1 	gói thầu 
+IB2200053768	1	giữ	controller	- Cài đặt được thời gian trễ khởi động máy phát điện (không khởi động máy phát điện ngay sau khi mất điện lưới hoặc điện lưới không ổn định): ít nhất từ 0.5 phút : 10 phút (Thời gian điều chỉnh được)	gói thầu 
+IB2200060447	0	bỏ		Xây dựng thang cáp 300mm đến tủ ATS : 	Gói thầu: ____________ [Ghi tên gói thầu] 
+IB2200060818	0	bỏ		BỘ CHUYẾN NGUỒN TỰ ĐỘNG ATS 	gói thầu 
+IB2200062073	0	giữ	named	- Sử dụng chức năng AMF (Automatic Mains Failure) với máy phát điện	gói thầu
+IB2200063776	1	giữ	named	7 Chức năng cài đặt trên bảng chính - AMF (Auto Mains Failure) X cầu	gói thầu 
+IB2200064629	1	giữ	named	điều khiển ComAp AMF 20: có báo	GÓI THẦU MUA SẮM HÀNG HÓA 
+IB2200065274	1	bỏ		 Tủ chuyển Chuyển đổi nguồn tự động 3 pha, 4 cực ≥ 1600A, phù hợp cơ chế 	gói thầu 
+IB2200065469	1	giữ	controller	Kết hợp được với tủ ATS	gói thầu 
+IB2200067764	0	bỏ		Tủ chuyển nguồn tự động 	
+IB2200068759	0	bỏ		-Bộ chuyển nguồn tự động ATS 400A	gói thầu
+IB2200069185	1	giữ	named	Loại AMF ( Auto mains failure control module) - 12/24VDC - MCB	gói thầu 
+IB2200069368	1	bỏ		kèm gồm: Vật tư dây điện, thi công lắp đặt, hệ thống tủ ATS, 	gói thầu 
+IB2200070120	0	bỏ		Máy phát điện Cummins 750kVA được đặt tại phòng máy phát điện Trạm chính (Power intake station) đưa vào khai thác từ năm 2012. Phục vụ công tác cấp điện dự phòng khi mất điện lưới cho các thiết bị phụ	gói thầu
+IB2200070865	0	bỏ		a, Trạm biến áp: 01 TBA Kioss 1000 kVA-22/0,4kV. Có hệ thống tủ RMU, tủ tổng, tủ tụ bù, tủ ATS.	gói thầu
+IB2200071778	0	bỏ		 Kết nối ATS kết nối ATS. 	gói thầu 
+IB2200073279	0	bỏ		đổi nguồn ATS, tủ điện đồng bộ. 	gói thầu 
+IB2200073368	0	bỏ		 thiết bị cụ thể sau: Tổ máy phát điện, Tủ chuyển nguồn tự động (ATS), Dây cáp điện, 	gói thầu 
+IB2200073825	0	bỏ		 10 Tủ ATS chuyển nguồn tự động 150A 3 pha, 3 cực đồng 	GÓI THẦU XL-02.pdf ---
+IB2200074959	0	bỏ		Kiểm tra chức năng chuyển đổi nguồn tự động.	gói thầu
+IB2200079244	1	bỏ		Tủ chuyển nguồn tự động 3 pha 4 cực .	gói thầu
+IB2200082109	0	bỏ		2 Tủ ATS 400A Loại tủ treo tường ngoài trời 	gói thầu 
+IB2200082761	0	bỏ		 Kiểm tra siết tiếp xúc hệ thống điện từ trạm biến áp tới tủ ATS, 	gói thầu: 
+IB2200083057	1	bỏ		 nguồn ATS 1250A từ điện lưới sang máy phát 	gói thầu 
+IB2200084263	0	bỏ		 2 Tủ ATS 400A 	gói thầu 
+IB2200086314	1	giữ	named	- Bộ điều khiển máy phát (AMF) cũng là bộ điều khiển ATS gắn	gói thầu: 
+IB2200087789	1	giữ	controller	Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển của máy phát điện và có đầu chờ để đấu nối với điện lưới và phụ tải.	gói thầu
+IB2200088091	0	bỏ		- Hiệu chỉnh tổng thời gian khởi động máy phát – hòa đồng bộ - chuyển đổi ATS phù hợp yêu cầu đổi nguồn điện tính từ khi nguồn điện chính bị mất đột ngột tránh tình trạng thời gian trễ kéo dài cấp điệ	gói thầu:
+IB2200091298	1	bỏ		Tủ chuyển nguồn tự động ATS 250A	gói thầu
+IB2200092179	1	bỏ		 - Điểu khiển chuyển nguồn tự động ATS. 	gói thầu 
+IB2200093803	1	bỏ		 Chức năng kết nối với ATS X 	gói thầu 
+IB2200093814	1	bỏ		 12x50KVAR ATS ACB 	gói thầu 
+IB2200095862	0	bỏ		 Chức năng chính của Tủ ATS là chuyển tải sang 	gói thầu 
+IB2200097596	0	bỏ		 2 Tủ ATS 400A 	gói thầu 
+IB2200098082	0	bỏ		 tự động tích hợp hệ thống ATS ( 	gói thầu 
+IB2200100465	1	bỏ		Máy phát điện dự phòng 75kVA - Tính Đồng Bộ Nhập khẩu đồng bộ nguyên chiếc : Động cơ, đầu phát, bảng điều khiển, vỏ chống ồn TỔ MÁY PHÁT: - Công suất liên tục (Kw/KVA) 60/75 - Công suất dự phòng (KW/K	gói thầu
+IB2200100977	0	bỏ		a tự động ATS 	gói thầu: 
+IB2200101576	1	bỏ		Bước 4: Đấu nối cáp điện dự phòng vào máy phát điện dự phòng 500 KVA để cung cấp điện cho hệ thống headend khi mất điện lưới trong quá trình tháo máy phát điện 300 kVA hiện hữu. 	gói thầu
+IB2200104478	1	bỏ		 Bộ chuyển nguồn tự động 	gói thầu 
+IB2200105676	0	bỏ		 ATS 1 ATS 2 	
+IB2200106999	0	bỏ		 ( thông qua ATS) 	gói thầu 
+IB2300000816	1	bỏ		7 bộ chuyển nguồn tự ATS để thực hiện điều khiển tắt/bật 	gói thầu: 
+IB2300002060	1	giữ	controller	Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển của máy phát điện và có đầu chờ để đấu nối với điện lưới và phụ tải.	GÓI THẦU
+IB2300005377	1	giữ	controller	+ Có tính năng kết nối với ATS (Khởi động,	gói thầu 
+IB2300006184	0	bỏ		Thay mạch điều khiển ATS	gói thầu
+IB2300008811	0	bỏ		Thay mạch điều khiển ATS	gói thầu
+IB2300008812	0	bỏ		Thay mạch điều khiển ATS	gói thầu
+IB2300010852	1	bỏ			gói thầu 
+IB2300013484	1	bỏ		 12x50KVAR ATS ACB 	gói thầu 
+IB2300014304	0	bỏ		Nhiệm vụ của gói thầu là cung cấp Máy phát điện Diesel dự phòng công suất 1250 kVA và Thiết bị ATS để cung cấp điện cho các cụm thiết bị ưu tiên trong nhà máy sản xuất của nhà máy sản xuất gạch Porcel	gói thầu.
+IB2300017270	1	bỏ		 Tủ ATS 600A 3P– Bộ + Chức năng cài đặt thời gian chuyển nguồn: 0- 	gói thầu 
+IB2300018261	1	giữ	controller	- Điều khiển chuyền nguôn tự động ATS.	
+IB2300020482	1	bỏ		- Tron bộ Cáp nối, cáp tiếp đất, tủ ATS và các phụ kiện khác. 	gói thầu 
+IB2300022380	1	giữ	controller	BỘ ATS 100 A	gói thầu
+IB2300022940	0	bỏ		- Có chức năng tự động phát hiện điện lưới lỗi để chạy máy tự động và tự động chuyển nguồn ATS bằng tay, tự động	gói thầu:
+IB2300026252	1	giữ	controller	- Tích hợp chức năng ATS (điều khiển): Có chức năng nhận biết sự cố điện lưới, điều khiển ATS, có cổng kết nối ATS	gói thầu:
+IB2300027083	1	bỏ		cho hệ thống trong trường hợp mất điện lưới, sử dụng bộ lưu điện UPS dự phòng 	gói thầu 
+IB2300029269	0	bỏ		ATS 100A 4 cực, có cuộn coil điều Number of Poles:4 	
+IB2300030889	1	giữ	controller	ATS)	gói thầu 
+IB2300031444	0	giữ	named	Bảng điều khiển kỹ thuật số, hiển thị bằng màn hình LCD, có chức năng AMF tự động khởi động máy phát khi có sự cố điện lưới, có khả năng kết nối với PC; Có đèn LED hiển thị trạng thái	gói thầu
+IB2300031541	1	bỏ		wdong ATS | _ Tình trạng: Mới 100%. 	gói thầu: 
+IB2300032777	0	bỏ		 + 05 tủ ATS tại các Trạm thu phí thuộc dự án BOT đường 768. 	gói thầu 
+IB2300035759	0	bỏ		+ Máy có giao diện kết nối với bộ ATS dé thực hiện điều khiển tắt/bật máy phát điện 	gói thầu 
+IB2300040208	0	bỏ		đến tủ đảo ATS)	gói thầu:
+IB2300042675	1	bỏ		THÔNG SỐ KỸ THUẬT BỘ CHUYỂN NGUỒN TỰ ĐỘNG ATS 4P-630A 	gói thầu 
+IB2300046166	0	giữ	controller	- Bộ chuyển nguồn tự động (ATS): ≥ 800 A;	gói thầu 
+IB2300046231	1	giữ	controller	đầu phát, bộ điều khiển và tủ ATS.	gói thầu 
+IB2300046353	1	giữ	controller	8 Chức năng điều khiển Điều khiển công tắc chuyển mạch ATS. Khi	gói thầu 
+IB2300048642	1	giữ	controller	Nhà thầu phải cung cấp đầy đủ catalog gốc (bằng tiếng Anh) và bản dịch tiếng Việt của nhà sản xuất, cho từng bộ phận của tổ máy phát điện: Động cơ, đầu phát, bộ điều khiển và tủ ATS.	gói thầu mà xác định mức độ yêu cầu đối với từng nội dung. Đối với các tiêu chí đánh giá tổng quát, chỉ sử dụng tiêu chí đạt, không đạt. Đối với các tiêu chí ch
+IB2300048778	0	bỏ		 ri5t noi ars KCt n6i ATS. 	
+IB2300059095	0	bỏ		VTHHT-NL-01 SỞ ĐỒ NGUYEN LY TU ĐIỆN ATS su 	gói thầu: 
+IB2300062472	1	giữ	controller	khi mất điện lưới hoặc điện lưới không ổn định): đáp ứng	gói thầu 
+IB2300064290	1	bỏ		 Bộ chuyển đổi nguồn ATS 	gói thầu 
+IB2300065310	1	bỏ		- Hệ ATS liên động dé chuyên đổi giữa máy phát và điện lưới. & 	
+IB2300065474	0	giữ	named	- Chức năng AMF	gói thầu
+IB2300067312	1	giữ	controller	bộ điều khiển và tủ ATS.	Gói thầu: Mua sắm và lắp đặt 16 máy phát điện 12KVA -1 pha. 
+IB2300067330	0	giữ	controller	ATS; không chổi than, tự động kích từ; đạt	gói thầu 
+IB2300067463	1	bỏ		 điện có chức năng điều khiển đóng cắt ATS 	gói thầu 
+IB2300073418	0	giữ	controller	là đoạn nối giữa két nước và hộp thoát gió Trọn bộ Phụ kiện: Giá đỡ ống thoát khói, giá đỡ hộp thoát gió, nón che mưa đầu ống khói Trọn bộ 3 Tủ ATS Tủ ATS 02 Tủ 1.3	gói thầu 
+IB2300074496	1	giữ	controller	V Yêu cầu về hệ thống kết nối ATS	gói thầu 
+IB2300077135	1	bỏ		- Kiểm tra lắp đặt cố định tuyến cáp điện đầu nối ATS với MCCB máy phát. 	gói thầu 
+IB2300083282	1	bỏ		Tổ máy phát điện (bao gồm tủ ATS)	
+IB2300083611	1	giữ	controller	8 Chức năng điều khiển Điều khiển công tắc chuyển mạch ATS. Khi	gói thầu 
+IB2300083662	0	giữ	named	+ Có chức năng tự động dò điện lưới (AMF), tự động chuyển đổi nguồn lưới và máy phát	GÓI THẦU:
+IB2300088930	1	giữ	controller	Nhà thầu phải cung cấp đầy đủ catalog gốc (bằng tiếng Anh) và bản dịch tiếng Việt của nhà sản xuất, cho từng bộ phận của tổ máy phát điện: Động cơ, đầu phát, bộ điều khiển và tủ ATS.	gói thầu
+IB2300088957	1	bỏ		 1 Kiểm tra hoạt động của ATS Hàng tuần 	gói thầu 
+IB2300089150	1	bỏ		 b) Yêu cầu đối với bộ ATS 	gói thầu 
+IB2300094137	0	bỏ		- Điều khiến chuyên nguồn tự động ATS. 	gói thầu 
+IB2300099851	0	bỏ		 1 Sửa chữa vệ sinh tủ ATS tủ thiết bị sau thời gian hoạt động lâu 	GÓI THẦU 
+IB2300100202	1	bỏ		chuyển nguồn tự động ATS); 	gói thầu 
+IB2300100347	1	bỏ		 - Tủ ATS 200A: Sản xuất mới năm 2023, đòng điện 	gói thầu 
+IB2300102941	1	giữ	controller	8 Chức năng điều khiển Điều khiển công tắc chuyển mạch ATS. Khi	gói thầu 
+IB2300106326	0	bỏ		tủ ATS: Tủ chuyển nguồn tự động CB630A 3 pha LS, Switch 630A GCDQCN 4 	gói thầu 
+IB2300108940	0	bỏ		BỘ CHUYỂN NGUỒN TỰ ĐỘNG (ATS) Kiểu Tự đứng hoặc treo tường Chế độ hoạt động Tự động và bằng tay Số cực ≥ 3 Điện áp hoạt động 220/380V- 50Hz Dòng định mức (A) ≥65 Các yêu cầu khác: 	
+IB2300111427	0	bỏ		- Cổng kết nối ATS: Có	gói thầu
+IB2300111838	0	bỏ		và cung cấp, lắp đặt tủ ATS, máy phát điện dự phòng 200kVA cho Đoàn Nghi lễ 	gói thầu 
+IB2300114249	0	bỏ		 8 Contactor 400A thay cho tủ ATS Cái 01 	gói thầu 
+IB2300116904	1	giữ	named	ATS(Automatic transfer switch), AMF(Automatic mains failure)	goi thau FTEL-2023-007 Cung cap va lap dat may phat dien diesel 8kVA (PMB).pdf ---
+IB2300117139	1	bỏ		9 ATS ATS 	gói thầu: 
+IB2300117998	0	bỏ		5 Tủ ATS 	gói thầu: 
+IB2300119201	0	bỏ		- Hiệu chỉnh tổng thời gian khởi động máy phát – hòa đồng bộ - chuyển đổi ATS phù hợp yêu cầu đổi nguồn điện tính từ khi nguồn điện chính bị mất đột ngột tránh tình trạng thời gian trễ kéo dài cấp điệ	gói thầu:
+IB2300120176	0	giữ	named	- Sử dụng chức năng AMF	gói thầu 
+IB2300123990	0	giữ	named	AMF	gói thầu
+IB2300126517	1	bỏ		 dây điều khiển của máy; Thay mới két nước làm mát, nước giải nhiệt; Thay mới tủ ATS và đầu Cos cáp 	gói thầu 
+IB2300127113	1	bỏ		4 Tủ ATS chuyển Thông số kỹ thuật: 	gói thầu 
+IB2300131371	0	giữ	named	+ Chức năng AMF	gói thầu 
+IB2300133361	0	giữ	named	- Sử dụng chức năng AMF (Automatic Mains Failure) với máy phát điện.	gói thầu
+IB2300133421	0	bỏ		 TỦ ĐIỆN MSB, ATS, 	gói thầu 
+IB2300134568	0	bỏ		chuyên nguôn ATS) 	gói thầu 
+IB2300135189	0	bỏ		2.1 | Tủ chuyển nguồn tự động 3 pha 4 cực	
+IB2300139360	0	bỏ		 1 Máy phát điện 3 pha có cổng kết nối với tủ ATS; bình nhiên liệu ≥130 lít 	gói thầu 
+IB2300144900	1	giữ	controller	có chức năng ATS, cảnh	gói thầu 
+IB2300146335	1	giữ	controller	+ Khi điện lưới có điện, tủ ATS có nhiệm vụ kết nối bộ điều khiển máy phát, phụ tải với nguồn điện chính và ngắt nguồn từ máy phát dự phòng và ngược lại	gói thầu
+IB2300147640	1	bỏ		 Tủ chuyển nguồn tự động ATS 	gói thầu 
+IB2300147913	1	giữ	controller	- Có tính năng kết nối với ATS (Khởi động, tắt máy từ xa)	gói thầu
+IB2300148471	0	bỏ		 * Kiểm tra tủ ATS (nếu có) 	gói thầu 
+IB2300153051	0	giữ	named	Bảng điều khiển: ComAp AMF 20 Báo cường độ dòng điện Có Báo tần số Có Báo điện áp các pha cả điện áp pha trung lập Có Báo hệ số công suất Có Tự động điều chỉnh mức nhiên liệu Có Báo áp suất dầu bôi tr	GÓI THẦU MUA SẮM HÀNG HÓA 
+IB2300159650	0	bỏ		 Bo chuyen doi nguon tu dong ATS 400A (Han Quoc hoac 	goi thau 
+IB2300162294	1	bỏ		 1.4.1 Lắp đặt tủ ATS -2000A 1,000 1 tủ 	gói thầu 
+IB2300163186	0	bỏ		ATS 	gói thầu 
+IB2300163844	0	giữ	controller	Bảng điều khiển tích hợp tính năng ATS	gói thầu
+IB2300164047	0	bỏ		Tủ điện treo tường ATS kích thước 800x600x200, tôn dày 1.2mm, sơn 	gói thầu 
+IB2300165112	1	giữ	controller	ATS)	gói thầu 
+IB2300165131	0	bỏ		 - Cổng kết nối ATS 	gói thầu: 
+IB2300165519	0	bỏ		 1 Máy phát điện 3 pha có cổng kết nối với tủ ATS; bình nhiên liệu ≥130 lít 	gói thầu 
+IB2300173662	0	bỏ		- Dây cáp điện phân phối và các điểm đấu nối (từ máy phát điện đến tủ đảo ATS)	gói thầu:
+IB2300178837	1	giữ	named	- Bộ điều khiển máy phát (AMF) cũng là bộ điều khiển ATS gắn ngay trên	gói thầu 
+IB2300179052	1	bỏ		 - Tủ chuyển nguồn ATS - 400A 	gói thầu: 
+IB2300180421	0	bỏ		Bảo dưỡng hệ thống tủ chuyển nguồn tự động nhà G (LV3, LV5) 	gói thầu:
+IB2300189145	0	bỏ		7 Tủ ATS Tự động - Thông số kỹ thuật, tính năng kỹ X 	GÓI THẦU 
+IB2300191898	1	bỏ		Máy phát điện có vỏ cách âm + Tủ ATS	gói thầu
+IB2300192935	1	bỏ		 51 Hệ thống tủ hạ thế ATS-01 400V - 2500A/100KA/s 	gói thầu 
+IB2300194512	1	bỏ		 Tủ chuyển nguồn tự động Sản xuất đồng bộ và đi kèm với máy phát điện 	gói thầu: 
+IB2300198424	1	giữ	controller	phát điện ngay sau khi mất điện lưới	gói thầu 
+IB2300201430	1	giữ	controller	- Bộ điều khiển có chế độ khởi động bằng tay và chế độ khởi động tự động khi mất nguồn lưới thông qua tín hiệu chuyển đổi nguồn của bộ ATS loại ATyS S 95034006 hiện tại của Công ty, đồng thời dừng máy	gói thầu số 1-ĐTPT-HH2023.docx ---
+IB2300204696	1	giữ	controller	Tích hợp tính năng giám sát qua mạng 4G với ATS	gói thầu
+IB2300204857	1	bỏ		tự động ATS	
+IB2300208535	1	bỏ		Máy phát điện có vỏ cách âm + Tủ ATS	gói thầu
+IB2300211053	0	bỏ		 kiểm tra các chế độ làm việc của máy phát điện, ATS 	gói thầu: 
+IB2300212042	1	giữ	controller	Chức năng điều khiển sự hoạt động của tủ ATS :	gói thầu
+IB2300212821	1	giữ	controller	3 Chức năng điều khiển Điều khiển công tắc chuyển mạch ATS. Khi	gói thầu 
+IB2300213223	0	bỏ		VIII TỦ CHUYỂN MẠCH TỰ ĐỘNG (ATS) 	
+IB2300215868	1	giữ	named	năng AMF, Nút dừng khẩn cấp.	gói thầu 
+IB2300216508	1	bỏ		TT Mô tả sản phẩm Đơn vị tính Số lượng I Chi cục Thuế Khu vực Bắc nghệ I A Trụ sở sử dụng máy: TX Hoàng Mai Tên máy: FUKA Công Suất: 60kva 1 Lọc dầu nhiên liệu Dolanson P763995 Cái 1 2 Lọc dầu bôi trơ	gói thầu: 
+IB2300217401	0	bỏ		- Tổ máy phát: Thương hiệu thuộc nhóm OECD; Nhà thầu cung cấp catalog được đăng trên website xác nhận từ hãng; Nhà thầu cung cấp thư ủy quyền của hãng; Năm sản xuất 2023; Nhiên liệu diesel; Công suất 	gói thầu
+IB2300218430	0	giữ	named	- Tín hiệu điều khiển: Tín hiệu AMF từ máy phát	gói thầu
+IB2300220302	0	bỏ		Chức năng giám sát điện lưới và kết nối với ATS bất kỳ	gói thầu
+IB2300220876	1	giữ	controller	- Tích hợp chức năng ATS (điều khiển): Có.	gói thầu:
+IB2300222010	1	giữ	controller	bộ điều khiển và tủ ATS.	gói thầu và số E-TBMT (rên „L2300222010..... 
+IB2300230061	1	giữ	controller	Có tính năng kết nối với ATS (Khởi động và tắt	gói thầu: 
+IB2300230755	1	giữ	controller	khiển động máy phát điện ngay sau khi mất điện lưới hoặc điện lưới	gói thầu 
+IB2300231319	0	bỏ		 Cổng kết nối ATS Có 	gói thầu 
+IB2300232850	0	bỏ		Máy phát điện 3 pha, công suất liên tục 12,5 kVA/50Hz kèm bộ chuyển đổi nguồn tự động ATS100A, nhập khẩu đồng bộ, máy chống ồn, nhiên liệu dầu diesel, máy có tích hợp bánh xe di chuyển 	gói thầu
+IB2300233670	1	giữ	controller	- Có chức năng giám sát điện lưới và kết nối với ATS bất kỳ	gói thầu 
+IB2300233873	1	giữ	named	Thay thé board màn hình điều | AMF; có chế độ chuyền	gói thầu: 30 ngày, 
+IB2300234954	1	giữ	named	Tủ ats chuyển nguồn tự động 3 pha 4 cực * Tiêu chuẩn lắp ráp: iso9001, iso14001* Kích thước vỏ tủ (mm): 700x500x250* Thiết bị đóng cắt: 250A* Dòng định mức: 250A* Chu kì đóng: ON-OFF-ON* Điều khiển: T	gói thầu
+IB2300236144	1	giữ	controller	Sau khi tổ máy phát điện sẵn sàng mang tải, sau khoảng thời gian trễ, ATS tự động chuyển đổi từ nguồn điện lưới sang nguồn tổ máy phát điện.	gói thầu 
+IB2300236743	1	giữ	controller	-Bộ tủ tự động chuyển nguồn ATS 1 pha, mới 100%	gói thầu
+IB2300237033	1	bỏ		 với bên ngoài khi mất điện lưới. 	gói thầu: 
+IB2300239791	0	bỏ		 Kết nối ATS Có giao diện kết nối ATS. 	
+IB2300243166	1	giữ	controller	Kết nối với tủ ATS	gói thầu 
+IB2300243355	1	giữ	controller	- Điểu khiển chuyển nguồn tự động ATS.	gói thầu để có thể đáp ứng tốt nhất các yêu cầu 
+IB2300244588	0	bỏ		 ATS 225A Chuang 	gói thầu mua máy phát điện dự phòng (1).pdf ---
+IB2300245556	0	giữ	controller	ATS) sản xuất từ năm 2023 trở về sau, máy phát điện mới 100% chưa qua sử dụng.	gói thầu 
+IB2300245748	0	giữ	controller	ATS) sản xuất từ năm 2023 trở về sau, máy phát điện mới 100% chưa qua sử dụng.	gói thầu 
+IB2300247840	0	bỏ		- Tên Gói thầu: Gói thầu số 1 Thuê máy phát điện và tủ hạ thế ATS cấp điện phục vụ Lễ 60 năm ngày thành lập tỉnh Quảng Ninh.	gói thầu
+IB2300248981	1	giữ	named	8 nguồn chính - AMF (Auto X	gói thầu 
+IB2300249323	0	bỏ		 - Dịch chuyển tủ phân phối điện TD1,TD2, tủ tụ bù , tủ ATS và máy phát điện 	gói thầu 
+IB2300252125	1	bỏ		ATS và phụ kiện. 	gói thầu 
+IB2300253227	0	bỏ		dự phòng 150KVA+ Bộ chuyển đổi ATS: 01 bộ; Máy phát điện dự phòng 	
+IB2300253626	1	bỏ		- Nhà thầu cam kết đảm bảo khi xảy ra mất điện lưới thì máy phát điện sẽ tự hoạt động cấp điện. Trường hợp sau khi xảy ra mất điện lưới mà máy phát điện không hoạt động thì trong vòng 60 phút Nhà thầu	GÓI THẦU PHI TƯ VẤN
+IB2300254479	1	giữ	named	Điều khiển bằng mô-đun AMF	gói thầu
+IB2300254910	1	giữ	controller	khởi động máy phát điện ngay sau khi mất điện lưới hoặc	gói thầu 
+IB2300255495	0	bỏ		- Tổ máy phát: Thương hiệu thuộc nhóm OECD; Nhà thầu cung cấp catalog được đăng trên website xác nhận từ hãng; Nhà thầu cung cấp thư ủy quyền của hãng; Năm sản xuất 2023; Nhiên liệu diesel; Công suất 	gói thầu
+IB2300255930	1	giữ	controller	đầu phát, bộ điều khiển và tủ ATS.	gói thầu 
+IB2300260615	1	giữ	controller	- Khi mất điện lưới tổ hợp máy phát có thể hoạt động trong 2 chế độ Automatic/Manual:	gói thầu
+IB2300260682	0	bỏ		hợp với ngăn ATS và của trạm biến áp đảm bảo hoạt động đồng bộ chính xác. 	gói thầu 
+IB2300262487	1	bỏ		 của tủ chuyển nguồn tự động ATS. 	gói thầu 
+IB2300265021	1	giữ	controller	Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển của máy phát điện và có đầu chờ để đấu nối với điện lưới và phụ tải.	gói thầu và số E-TBMT
+IB2300266461	1	giữ	controller	đầu phát, bộ điều khiển và tủ ATS.	gói thầu không có yêu cầu về nhân sự chủ chốt thì Bên mời 
+IB2300268389	1	bỏ		 - Mua và lắp đặt tủ ATS 1000A và ATS 600A; 	gói thầu 
+IB2300268623	0	bỏ		  Tủ chuyển nguồn tự động ATS: Mới 100% và sản 	gói thầu 
+IB2300269124	1	giữ	controller	- Chỉ thị ATS đóng mở lưới và máy phát; Nút dừng	gói thầu 
+IB2300270603	1	bỏ		 BS EN 60947-6 Chuyển đổi nguồn Tự động 	gói thầu MPD- DC Q9 HCM- 131023- gia thap nhat (final).docx ---
+IB2300273061	1	giữ	controller	- Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển của máy phát điện và có đầu chờ để đấu nối với điện lưới và phụ tải.	gói thầu
+IB2300274793	1	giữ	controller	Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển của máy phát điện và có đầu chờ để đấu nối với điện lưới và phụ tải.	gói thầu
+IB2300275764	1	giữ	named	The BC 5320 provides full AMF functionality with integrated mains monitoring	gói thầu
+IB2300277166	0	bỏ		16 Nút dừng khan cấp Nằm trên máy và trên ATS 	gói thầu 
+IB2300278513	1	giữ	controller	2. Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển của máy	gói thầu 
+IB2300280138	0	bỏ		 5 Tủ đóng cắt tự động hạ áp ATS 400A 3P Tủ 01 	gói thầu 
+IB2300280537	0	bỏ		điện lưới thông qua hệ thống tủ điện hạ thế chuyển nguồn tự động. 	
+IB2300281362	1	giữ	controller	- Tích hợp chức năng ATS (điều khiển): Có.	gói thầu:Trang bị máy phát điện cho Petrolimex-Cửa hàng 77 và Petrolimex-Cửa hàng 78;
+IB2300285618	0	bỏ		 + Dây điều khiển 18m nối từ máy đến ATS 	gói thầu 
+IB2300288169	0	bỏ		ATS Bộ chuyển nguồn tự động 4P 800A 	gói thầu mà xác định mức độ yêu cầu đối với từng 
+IB2300290906	0	bỏ		Tủ chuyển nguồn tự động ATS 160A, 3 pha 4 cực, (Phù hợp công suất máy phát)	gói thầu
+IB2300291304	0	giữ	named	nang AMF, Nut dirng khan cap. I	goi thAu 
+IB2300292168	1	giữ	controller	đầu phát, bộ điều khiển và tủ ATS.	gói thầu 
+IB2300293753	0	bỏ		 1 Máy phát điện 3 pha 10kVA (kèm tủ ATS) Chi tiết đính kèm 	goi thau Mua may phat dien 2023 - Chuong 5 sau hieu chinh (1).rar ---
+IB2300299959	0	bỏ		phát điện và ATS năm 2023 thuộc dự án: Đầu tư mua sắm máy phát điện loại 8,5 	gói thầu 
+IB2300301190	0	bỏ		4 Phần tủ chuyển đổi nguồn tự động (ATS) nếu có: 	gói thầu: 
+IB2300301452	1	bỏ		Cổng kết nối ATS: Có	gói thầu
+IB2300302952	0	bỏ		 - Kiểm tra tủ ATS, trong trường hợp aptomat, cầu chì, dây tín hiệu…có hỏng 	gói thầu: 
+IB2300305247	0	bỏ		Bộ chuyển đối nguồn tự động ATS - " 	gói thầu 
+IB2300305484	1	bỏ		 380V... và kèm ATS 	gói thầu 
+IB2300305914	0	bỏ		Cho phép mở rộng kết nối ATS khi cần thiết.	gói thầu
+IB2300307198	0	bỏ		 5 Tủ đóng cắt tự động hạ áp ATS 400A 3P Tủ 01 	gói thầu 
+IB2300307974	0	bỏ		16 Nút dừng khẩn cấp Nằm trên máy và trên ATS 	gói thầu: Cung cấp và lắp đặt máy phát điện 
+IB2300308025	0	bỏ		 - Tên dự án: Bảo trì tủ điện ATS 800A, tủ điện phân phối tổng, tủ tụ bù, 	gói thầu 
+IB2300308988	0	bỏ		Cổng kết nối ATS Có 	gói thầu 
+IB2300312776	1	giữ	controller	Máy có giao diện kết nối với bộ ATS để thực hiện điều khiển	gói thầu 
+IB2300315082	1	bỏ		Tủ chuyển nguồn tự động ATS 1.200A	gói thầu
+IB2300319854	0	bỏ		 Tủ chuyển Tủ chuyển nguồn tự động ATS 100A 3 pha bao gồm: 	gói thầu 
+IB2300321444	0	bỏ		chuyển đổi nguồn tự động (ATS). 	gói thầu 
+IB2300322971	0	bỏ		cho tủ ATS và 01 ATM 200A-600V đấu cho tụ bù. 	
+IB2300324220	0	bỏ		 * Đối với tủ ATS 250A 	
+IB2300329118	0	bỏ		6 | Ta ATS 	gói thầu: 
+IB2300329670	0	bỏ		TT Danh mục dịch vụ Mô tả dịch vụ Đơn vị tính Khối lượng I Văn phòng Cục Thuế tỉnh Thanh Hóa máy phát điện Vietgen 400Kva ( Perkins 2206A-E13TAG3 ) 1 Lọc nhiên liệu CH10931 + CH10930 (máy 400KVA) Kiểm	gói thầu: 
+IB2300329776	0	giữ	controller	ATS; không chổi than, tự động kích từ; đạt	gói thầu 
+IB2300331197	1	bỏ		126 Tủ điện ATS T4 	GÓI THẦU XL-01.pdf ---
+IB2300331398	1	bỏ		 Tủ chuyển đổi điện tự động (ATS) 400 	gói thầu 
+IB2300335088	0	giữ	named	- Chức năng AMF	gói thầu
+IB2300335255	1	giữ	controller	phận của tổ máy phát điện: Động cơ, đầu phát, bộ điều khiển và tủ ATS.	gói thầu 
+IB2300335322	1	bỏ		630A, 01 ngăn cầu dao kết hợp cầu chì 200A); 01 Tủ ATS 500V - 400A; 	gói thầu 
+IB2300335607	0	bỏ		4 Phần tủ chuyển đổi nguồn tự động (ATS) nếu có: 	gói thầu: 
+IB2300336709	0	bỏ		 29. Tủ chuyển nguồn ATS trọn bộ 1 Tủ 	gói thầu bảo trì máy phát điện.pdf ---
+IB2300340070	0	bỏ		 Cổng kết nối ATS Có 	gói thầu 
+IB2300340114	1	bỏ		 - Có tính năng kết nối với ATS (Khởi 	gói thầu 
+IB2300340671	0	bỏ		 nguồn ATS 	gói thầu 
+IB2300340905	0	bỏ		 máy phát điện với tủ ATS; Dầu 	gói thầu 
+IB2300343208	1	bỏ		 - Khi mất điện lưới tổ hợp máy phát có 	gói thầu 
+IB2300343668	1	giữ	controller	- Có Kết hợp được với tủ ATS	GÓI THẦU
+IB2300343943	1	bỏ		Tủ ATS chuyển nguồn tự động:	gói thầu
+IB2300344792	0	bỏ		0,4kV, hệ thống tủ chuyển nguồn ATS được vận chuyển lắp đặt tại nhà khách số 	
+IB2300347693	1	giữ	controller	Các thành phần chính của ATS bao gồm thiết bị	gói thầu 
+IB2300349583	0	bỏ		4 |ATS Loại 100A Bắt buộc 	gói thầu 
+IB2300356137	1	bỏ		hiện chưa có máy phát điện để dự phòng trong trường hợp bị mất lưới điện quốc 	gói thầu 
+IB2300356147	0	bỏ		Tủ chuyển nguồn tự động (ATS): 	
+IB2300356827	1	bỏ		 bộ điều khiển ATS, 	gói thầu 
+IB2300359120	0	bỏ		 1 Tổ máy chuyển nguồn ATS mới 100%, chưa qua 	gói thầu 
+IB2300360864	0	bỏ		 3 Tủ ATS 3 pha 450V- - Thông số kỹ thuật, tính năng kỹ X 	GÓI THẦU 
+IB2300363623	0	giữ	controller	- Có chức năng giám sát điện lưới và kết nối với ATS bat kỳ	gói thầu 
+IB2300364915	0	bỏ		1.Tủ chuyển nguồn tự động ATS: 01 tủ độc lập đạt tiêu chuẩn Iso:9001, Iso 14001	gói thầu
+IB2300366895	1	bỏ		Tủ chuyển nguồn ATS	gói thầu:
+IB2300366912	0	bỏ		6 lực, đầu nỗi tính hiệu ATS tự động điều Nhân công lặp đặt và đầu nối cấp động lực, dau 	GÓI THẦU XÂY LAP 
+IB2300368256	1	bỏ		Tủ chuyển đổi nguồn tự động 	gói thầu 
+IB2300370623	0	giữ	named	Bo mạch điều khiển: InteliLite AMF 20 Tích hợp bảng điều khiển máy phát.	gói thầu
+IB2300371456	1	bỏ		 + Ngõ kết nối ATS: Có 	gói thầu 
+IB2300371811	0	bỏ		Nguồn cấp cho UPS được lấy từ các tủ điện ATS. 	gói thầu: 
+IB2300374375	0	bỏ		Phím đóng cắt ATS cưỡng bức	gói thầu
+IB2300388821	1	bỏ		1.2 Tủ ATS 400A (Tủ tự động - Mã hiệu: nhà thầu đề xuất - Mã hiệu: nhà thầu đề xuất 	gói thầu 
+IB2300390432	1	giữ	named	- Chức năng AMF được tích hợp sẵn và Bộ điều khiển này bao gồm giao diện vận hành trực quan cho phép điều khiển bộ máy phát điện hoàn chỉnh cũng như đo lường hệ thống, thông báo lỗi, cấu hình và chẩn 	gói thầu.
+IB2400008052	1	bỏ		 Tủ ATS # 150A/4P, Tủ ATS ≥ 150A/4P, 	Gói thầu: Cung cấp và lắp đặt máy phát điện dự phòng 
+IB2400024056	1	bỏ		din 1 pha 15kVA + 01 tü ATS). 	
+IB2400026437	1	bỏ		 Tủ chuyển nguồn tự động: 	gói thầu 
+IB2400027592	1	bỏ		 mất điện lưới. 	gói thầu 
+IB2400030247	1	giữ	controller	+ Bộ chuyển đổi nguồn tự động (ATS) 100A (thiết bị tùy chọn ứng với công suất theo máy)	gói thầu
+IB2400030643	1	giữ	controller	22 |ATS ĐL-MF 4P | Bọ 1,0000 | 400A sử dụng Bộ điều khiển	gói thầu 
+IB2400031211	0	bỏ		 (ATS): Đảm bảo phù hợp với chức năng tự động của bộ ATS, 	gói thầu và số E-TBMT IB2400031211-01 
+IB2400031785	0	giữ	named	- Bộ iều khiển: EMKO TURKEY - TRANS AMF ho c	gói thầu 
+IB2400032584	0	bỏ		- Công kết nối ATS: Có 	gói thầu 
+IB2400032948	1	giữ	controller	Bộ điều khiển cho ATS |ngưỡng có thể cấu hình), chuyển chế độ	gói thầu và số E-TBMT (trên Hệ thống):
+IB2400033531	1	bỏ		 1 Thay mạch điều khiển ATS bộ 	gói thầu 
+IB2400033711	1	bỏ		 1 Thay mạch điều khiển ATS bộ 	gói thầu 
+IB2400036247	1	bỏ		 1 Thay mạch điều khiển ATS bộ 	gói thầu 
+IB2400037458	1	giữ	controller	- Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển	gói thầu 
+IB2400041536	0	bỏ		 c. Yêu cầu cho Tủ tự động ATS, phụ kiện vật tư và dịch vụ liên 	gói thầu: 
+IB2400043110	0	bỏ		- Đảm bảo cung cấp điện liên tục trong thời gian mất điện lưới. 	gói thầu: 
+IB2400043707	0	giữ	controller	- Bộ chuyển nguồn tự động (ATS): ≥ 250 A;	gói thầu 
+IB2400044943	0	bỏ		+ Máy có giao diện kết nối với bộ ATS dé thực hiện điều khiển tit/bat máy phát điện 	gói thầu 
+IB2400054276	0	bỏ		 - Cổng kết nối ATS Có 	gói thầu 
+IB2400058421	0	bỏ		Tủ ATS 160A, sản xuất tại Việt Nam	gói thầu
+IB2400060910	1	giữ	controller	Contactor hoặc bộ chuyển nguồn tự động tích hợp bộ điều khiển	gói thầu
+IB2400063033	0	bỏ		Viễn thông — ATS 1pha; 	gói thầu 
+IB2400067035	0	bỏ		 - Cổng kết nối ATS: Có. 	gói thầu 
+IB2400067156	1	bỏ		 Bộ điều khiển ATS cho 2 nguồn đến Bộ 1 	gói thầu 
+IB2400067509	1	giữ	controller	Điều khiển công tắc chuyển mạch ATS. Khi điện lưới	gói thầu 
+IB2400073944	1	bỏ		Tủ chuyển nguồn tự động (ATS)	gói thầu
+IB2400077583	0	bỏ		vào tủ ATS Tòa nhà. 	gói thầu 
+IB2400078716	1	giữ	controller	Bộ chuyển đổi nguồn tự động (ATS):	gói thầu
+IB2400079896	1	bỏ		 Tủ ATS ≥ 150A/4P, thiết bị đóng cắt có 	Gói thầu: Cung cấp và lắp đặt máy phát điện dự phòng 
+IB2400085846	0	bỏ		Tủ ACB và ATS Form 3B 	gói thầu 
+IB2400090868	0	bỏ		 - Cổng kết nối ATS Có 	gói thầu 
+IB2400093765	0	giữ	controller	- Kiểm tra tình trạng các thiết bị điều khiển và các chức năng của tủ ATS (nếu	gói thầu: 
+IB2400095756	0	bỏ		 496,5; có cổng ATS; Bình nhiên liệu (L): > 740l; Thời gian 	gói thầu 
+IB2400103308	0	giữ	controller	Điều khiển máy phát điện trên ATS và Đảm	gói thầu 
+IB2400104800	1	bỏ		B Tủ ATS 	
+IB2400111485	1	bỏ		220/250kVA có vỏ giảm âm + ATS. 	gói thầu 
+IB2400111737	1	giữ	controller	- Điều khiển công tắc chuyển mạch ATS	gói thầu
+IB2400111794	1	giữ	controller	phát điện khi có lắp ATS và khi chạy độc lập.	gói thầu 
+IB2400111929	1	giữ	controller	Nhà thầu phải cung cấp đầy đủ catalog gốc (bằng tiếng Anh) hoặc bản dịch tiếng Việt của nhà sản xuất, cho từng bộ phận của tổ máy phát điện: Động cơ, đầu phát, bộ điều khiển và tủ ATS.	gói thầu
+IB2400114476	1	giữ	controller	5. Chức năng điều khiển Điều khiển công tắc chuyển mạch ATS.	Gói thầu: Cung cấp, lắp đặt máy phát điện Diesel 12KVA/1Pha và 
+IB2400115378	0	bỏ		 Auto Mains FailureWebSupervisor, 	gói thầu 
+IB2400116021	1	bỏ		 183 Tủ ATS 3P- - Thông số kỹ thuật, tính năng kỹ thuật: Theo yêu cầu 	GÓI THẦU: 
+IB2400116787	1	giữ	named	- Sử dụng chức năng AMF (Automatic Mains Failure) với máy phát điện	gói thầu
+IB2400120387	0	bỏ		năng, thông số kỹ thuật đối với máy phát điện và tủ chuyển đổi nguồn tự động 	gói thầu 
+IB2400121273	1	bỏ		2 [Tủ ATS 65A/1 pha Bộ 19 	gói thầu 
+IB2400122312	1	bỏ		- Cổng kết nối ATS: Có	gói thầu
+IB2400124150	1	giữ	controller	Bảng điều khiển tích hợp tính Tích hợp tính năng kết nối ATS và kết nối	gói thầu 
+IB2400124734	0	bỏ		 Giao điện Máy có giao diện kết nối với bộ ATS để thực 	gói thầu 
+IB2400125924	0	giữ	controller	ATS) sản xuất từ năm 2024 trở về sau, máy phát điện mới 100% chưa qua sử dụng.	gói thầu 
+IB2400127023	0	giữ	controller	ATS) sản xuất từ năm 2024 trở về sau, máy phát điện mới 100% chưa qua sử dụng.	gói thầu 
+IB2400129388	0	bỏ		 496,5; có cổng ATS; Bình nhiên liệu (L): > 740l; Thời gian 	gói thầu 
+IB2400133175	1	giữ	controller	Điều khiển công tắc chuyển mạch ATS. Khi điện	gói thầu 
+IB2400133835	0	bỏ		 4 Phần tủ chuyển đổi nguồn tự động (ATS) nếu có: 	gói thầu: 
+IB2400133990	0	bỏ		 2 Tủ ATS 	gói thầu 
+IB2400134652	0	bỏ		+ Có chức năng giám sát điện lưới và kết nối với ATS bất kỳ. 	Gói thầu: Mua 03 máy phát điện. 
+IB2400139788	0	bỏ		 4 Tñ ATS kÌm ­u tiªn (T.ATS) 600V-1250A tñ 01 	gói thầu 
+IB2400141856	0	bỏ		13 Nút dừng khẩn cấp Nằm trên máy và trên ATS 	gói thầu 
+IB2400142224	0	bỏ		 Phần tủ chuyển đổi nguồn tự động (ATS) 	gói thầu: 
+IB2400144224	1	giữ	controller	bộ điều khiển và tủ ATS.	gói thầu 
+IB2400145438	1	giữ	controller	ATS.	gói thầu 
+IB2400146806	1	giữ	controller	Contactor hoặc bộ chuyển nguồn tự động tích hợp bộ điều khiển	gói thầu
+IB2400153322	0	bỏ		ATS 	gói thầu 
+IB2400155713	0	giữ	controller	+ Chạy máy tự động với chế độ ATS (tự hoạt động khi mất điện lưới và tắt máy khi có điện lưới trở lại);	GÓI THẦU
+IB2400156683	1	bỏ		- Máy phát điện bao gồm 01 tủ ATS có khả năng giám sát được từ xa 	gói thầu. 
+IB2400159665	1	giữ	controller	V | Yêu cầu về bộ tự động chuyển nguồn ATS	gói thầu 
+IB2400162597	1	giữ	controller	Sơ đồ tủ ATS và các linh kiện	gói thầu 
+IB2400164837	0	giữ	controller	nguồn ATS yêu cầu cùng một hãng sản xuất	gói thầu 
+IB2400172565	1	bỏ		Bộ điều khiển ATS kỹ thuật số	gói thầu
+IB2400180911	0	bỏ		 Giao điện Máy có giao diện kết nối với bộ ATS để thực 	gói thầu 
+IB2400182235	0	bỏ		 kết nối với ATS 	gói thầu 
+IB2400183459	1	bỏ		 - Bộ chuyển mạch ATS 3P -1250A kèm bộ 	gói thầu 
+IB2400185291	1	bỏ		380V... và kèm ATS 	gói thầu số 12.2023).pdf ---
+IB2400186078	0	bỏ		 Máy có sẵn giao diện kết nối với bộ ATS 	gói thầu và số E-TBMT (ứrên 
+IB2400186998	1	bỏ		TT Tên thiết bị ĐVT Khối lượng Nội dung công việc I KBNN ĐỊNH HOÁ (30KVA) CaPo 1 Lọc dầu Diesel 37208 Chiếc 1 Thay mới vật tư thiết bị, đảm bảo thiết bị hoạt động tốt 2 Lọc nhớt 32A40 Chiếc 1 Thay mới	gói thầu: 
+IB2400191578	1	giữ	named	- Sử dụng chức năng AMF (Automatic Mains	gói thầu 
+IB2400191798	1	bỏ		- Tên gói thầu: Cung cấp, lắp đặt máy phát điện dự phòng 350 KVA vỏ cách âm cách nhiệt, tủ đổi nguồn tự động ATS.	gói thầu
+IB2400198330	1	bỏ		Kiểm tra tủ ATS và các thiết bị bên trong.	gói thầu
+IB2400201825	1	giữ	controller	- Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển của	gói thầu 
+IB2400202566	1	giữ	controller	- Có tính năng kết nối v i ATS.	gói thầu 
+IB2400206003	1	bỏ		- Kiểm tra hệ thống chuyển đổi nguồn ATS 	gói thầu và số E-TBMT (trên _________________ 
+IB2400206842	1	bỏ		- Kiểm tra hệ thống chuyển đổi nguồn ATS 	gói thầu và số E-TBMT (trên _________________ 
+IB2400208175	1	giữ	controller	Chủng loại và chức năng Có tính năng kết nối với ATS (khởi động, tắt máy	gói thầu 
+IB2400210643	0	bỏ		suất 800kVA22(15)/0,4kV, 01 tủ hạ thế tổng, 01 tủ bù công suất phản kháng, 01 tủ hạ thế ưu tiên và 01 tủ chuyển nguồn tự động 	gói thầu XLDT-13 Kế hoạch lựa chọn nhà thầu đợt 2 điều chỉnh theo Quyết định số 1103/QĐ-BQP ngày 
+IB2400216393	0	bỏ		 2 Tủ chuyển nguồn tự ATS 630A - 4P CSQ 	gói thầu 
+IB2400218348	0	giữ	named	hình LCD, có chức năng AMF tự động khởi động	gói thầu 
+IB2400219443	0	bỏ		Tu ATS 	gói thầu 
+IB2400224179	0	bỏ		- Sơ đồ đấu nối máy phát điện có ATS: 	gói thầu và số E-TBMT (trên _________________ 
+IB2400224240	1	bỏ		- Kiểm tra hệ thống chuyển đổi nguồn ATS 	gói thầu và số E-TBMT (trên _________________ 
+IB2400224420	1	giữ	controller	ATS(Automatic transfer switch),	
+IB2400226406	0	giữ	named	- Chức năng AMF	gói thầu
+IB2400228754	0	bỏ		dong bộ 02 máy phát điện (02 module); 01 tủ ATS; 01 tủ cat lọc sét-MTS-PP 	gói thầu 
+IB2400229394	1	giữ	controller	Bộ điều khiển chuyên mạch tự động ATS - Thiết bị tương đương Bộ h	gói thầu 
+IB2400232269	1	bỏ		Quy mô dự án: Mua sắm và lắp đặt trọn gói 10 máy phát điện công suất 10KVA 1 pha (bao gồm tủ chuyển đổi nguồn ATS 100A – 1pha và chi phí vận chuyển, vật tư, nhân công lắp đặt).	gói thầu
+IB2400232891	0	bỏ		Máy phát điện dự phòng 3 pha công suất 380V/220V-100KVA, 50Hz (bao gồm vỏ chống ồn, tủ chuyển nguồn tự động ATS, chi phí vận chuyển, lắp đặt, hướng dẫn và vận hành thử, …)	gói thầu
+IB2400234459	0	bỏ		 - Cổng kết nối ATS: Có; 	gói thầu MS-01 thuộc dự án Mua sắm trang thiết bị cho CCCR) 
+IB2400236068	1	bỏ		5. Mục tiêu: Đảm bảo vận hành ổn định, an toàn cho các trạm xử lý nước thải mỏ và Hệ thống băng tải cấp than cho nhà máy tuyển Khe Chàm khi sự cố mất điện lưới xảy ra. Đáp ứng yêu cầu sản xuất kinh do	gói thầu:
+IB2400237184	1	bỏ		 Tủ chuyển nguồn tự động ATS 630A 3 pha 4 cực, Chân 	gói thầu 
+IB2400238834	1	giữ	named	phát điện: động, Chức năng AMF, Nút dừng khẩn cấp.	gói thầu 
+IB2400249622	1	giữ	named	phải, Đèn LED cảnh báo lỗi, Đèn LED chạy tại chế độ tự động, Đèn LED hiển trị trạng thái hoạt động, Chức năng AMF, Nút dừng khẩn cấp.	gói thầu
+IB2400257256	1	giữ	controller	3 - ON (Đóng/ mở nguồn điện ATS...) Đạt Không đạt	gói thầu 
+IB2400257900	1	bỏ		16 Nút dừng khan cấp Nam trên máy và trên ATS 	gói thầu 
+IB2400258097	0	bỏ		chống ồn trọn bộ. Kết nối với hệ thống điện lưới bằng tủ chuyển nguồn ATS 600A. 	gói thầu 
+IB2400258597	0	bỏ		kiểu chống ồn trọn bộ. Kết nối với hệ thống điện lưới bằng tủ chuyển nguồn ATS 	gói thầu 
+IB2400265303	0	giữ	named	- Chức năng AMF	gói thầu 
+IB2400267274	1	bỏ		b) Tủ ATS 60A	gói thầu
+IB2400270154	1	bỏ		-. Có giao diện kết nối với bộ ATS để thực 	gói thầu 
+IB2400275648	1	giữ	controller	Có tính năng về điều khiển và có sẵn bộ phận đấu nối với bộ điều khiển tự động ATS.	gói thầu
+IB2400282042	1	giữ	named	- Bộ điều khiển máy phát (AMF) cũng là bộ điều khiển ATS	gói thầu 
+IB2400285076	0	bỏ		 - ATS tủ chuyển nguồn tự động sử dụng bộ chuyển 	gói thầu 
+IB2400290181	1	bỏ		- Kiểm tra hệ thống chuyển đổi nguồn ATS 	gói thầu và số E-TBMT (trên _________________ 
+IB2400291063	1	giữ	controller	V | Yéu câu về bộ tự động chuyên nguồn ATS	gói thầu 
+IB2400295710	0	bỏ		- Đảm bảo cung cấp điện liên tục trong thời gian mất điện lưới. 	gói thầu cung cấp dịch vụ thuê các máy 
+IB2400296884	1	giữ	controller	Điều khiển công tắc chuyển mạch ATS	gói thầu
+IB2400298819	1	giữ	controller	Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển của máy phát điện và có đầu chờ để đấu nối với điện lưới và phụ tải.	gói thầu
+IB2400302943	1	bỏ		 ATS 600A 3 pha 3 - Điện áp điện đầu ra: 400/230V (Độ biến thiên ≤ ±1% từ không 	gói thầu 
+IB2400303471	1	bỏ		 thông qua tủ ATS. 	gói thầu 
+IB2400311120	1	giữ	controller	5. Chức năng điều khiển Điều khiển công tắc chuyển mạch ATS.	Gói thầu: Cung cấp, lắp đặt máy phát điện 12KVA/1pha, 30 KVA/1pha và 
+IB2400311289	1	bỏ		Bộ điều khiển ATS	gói thầu:
+IB2400311574	1	giữ	controller	Máy có giao diện kết nối với bộ ATS để thực hiện điều	gói thầu 
+IB2400313213	1	bỏ		- Quy mô gói thầu: trang bị và lắp đặt hệ thống máy phat điện, hệ thống tủ ATS, phân 	gói thầu 
+IB2400313681	1	giữ	controller	4 | Chức năng cài đặt bộ điều khiển | phát điện ngay sau khi mất điện lưới Ñ a	gói thầu 
+IB2400315025	0	bỏ		29 Khả năng kết Cho phép mở rộng kết nối ATS khi cần thiết. MRQ 	gói thầu 
+IB2400316516	0	bỏ		6 Tủ ATS 3P-400A cái 	Gói thầu TBA ngày 05.9.pdf ---
+IB2400317224	0	bỏ		+ Máy có giao diện kết nối với bộ ATS dé thực hiện điều khiển tat/bat máy phát điện khi 	gói thầu: 
+IB2400324041	0	bỏ		 + Đối với ATS điều khiển máy phát điện từ xa và Bộ nạp bù: Tối thiểu 12 tháng 	gói thầu và số E-TBMT (trên _________________ 
+IB2400325367	1	giữ	controller	- Kết nối: Kết nối với tủ ATS; Kết nối với máy tính (PC)	gói thầu 
+IB2400333602	1	bỏ		- Tên gói thầu: Cung cấp và lắp đặt Máy phát điện dự phòng, vỏ cách âm cách nhiệt, tủ đổi nguồn tự động ATS.	gói thầu
+IB2400339967	0	bỏ		 Kết nối ATS kết nối ATS. 	gói thầu: 
+IB2400342554	0	bỏ		phòng 250kVA+ATS để hệ thống quản lý, điều khiển hoạt động khi bị mất điện. 	gói thầu 
+IB2400344105	0	bỏ		 Tủ ats chuyển nguồn tự động 	gói thầu 
+IB2400348479	0	bỏ		Bộ chuyển nguồn ATS 3 pha 4 cực 600A - Chế độ chuyển đổi giữa 2 nguồn điện: Auto/manual- Điện áp hoạt động: AC 600V- Điện áp cuộn coil: AC 220V - DC 125V- Chuyển mạch tuần tự: A ↔ Neutral (off) ↔ B (O	
+IB2400352866	1	bỏ		bộ mới đến tủ ATS 03 	gói thầu: 
+IB2400355321	1	giữ	controller	Điều khiển công tắc chuyển mạch ATS	gói thầu
+IB2400356423	1	bỏ		 1. Tổ máy khiển và tủ tự động chuyển nguồn ATS đảm bảo tính 	gói thầu 
+IB2400362458	0	bỏ		 Giao diện kết nối bộ Máy có giao diện kết nối với bộ ATS để thực 	gói thầu 
+IB2400362865	0	bỏ		Cung cấp bản vẽ chỉ tiết về bố trí tổ máy phát điện, tủ chuyển nguồn tự động ATS, hệ thống 	
+IB2400365165	1	giữ	controller	- ON (Đóng/ mở nguồn điện ATS...)	gói thầu
+IB2400365763	1	bỏ		 tự động ATS 	gói thầu 
+IB2400367041	1	giữ	controller	2. Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển của máy phát điện và có đầu chờ để đấu nối với điện lưới và phụ tải.	gói thầu:
+IB2400367398	0	bỏ		 Tên gọi: Máy phát điện trọn bộ có vỏ cách âm và bộ ATS công suất 250KVA, Hệ 	Gói thầu: 
+IB2400371783	0	bỏ		 - Co kha nang ket noi vai cac thiet bi dieu khien ATS hop bo. 	
+IB2400373577	0	bỏ		Bảo trì tủ điện ATS và tủ Gia công 	gói thầu: 
+IB2400377239	0	bỏ		 - Bộ ATS 630A mới 100%; sản xuất từ năm 2023 trở về sau 	gói thầu 
+IB2400378609	1	giữ	controller	- Tích hợp chức năng ATS (điều khiển): Có.	gói thầu 
+IB2400382139	1	giữ	controller	Điều khiển công tắc chuyển mạch ATS	gói thầu
+IB2400389666	0	bỏ		 B Thông số tủ chuyển nguồn ATS 	gói thầu 
+IB2400389856	1	giữ	controller	+ Chức năng điều khiển chuyển nguồn tự động, khi mất	gói thầu 
+IB2400390611	0	bỏ		 - Tủ ATS 1000A. 	gói thầu 
+IB2400393855	1	bỏ		Tủ ATS 1600A	gói thầu
+IB2400410218	0	bỏ		 Giao điện Máy có giao diện kết nối với bộ ATS để thực hiện điều khiển 	gói thầu. 
+IB2400424576	1	giữ	controller	Bảng điều khiển tích hợp tính Tích hợp tính năng kết nối ATS và kết nối máy	gói thầu: Mua sắm máy phát điện 
+IB2400425513	1	bỏ		 điện, ATS trong vòng 02 ngày lịch (Thứ 7 và chủ nhật). 	gói thầu 
+IB2400427929	0	giữ	controller	+ Tất cả hàng hóa (máy phát điện bao gồm: động cơ, đầu phát, bảng điều khiển, ATS) sản xuất từ năm 2024 trở về sau, máy phát điện mới 100% chưa qua sử dụng.	gói thầu
+IB2400428063	1	giữ	controller	bộ điều khiển và tủ ATS.	gói thầu 
+IB2400428936	1	bỏ		 5. Tủ tự động chuyển nguồn ATS 160A 	gói thầu 
+IB2400429380	1	giữ	controller	- Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển của máy phát điện và có đầu chờ để đấu nối với điện lưới và phụ tải.	gói thầu
+IB2400429887	0	bỏ		Máy có giao diện kết nối với bộ ATS dé thực hiện 	gói thầu 
+IB2400432065	0	bỏ		 nhờ bộ tự động chuyển nguồn ATS. 	gói thầu 
+IB2400433961	1	giữ	named	+ Chức năng điều khiển AMF;	gói thầu 
+IB2400434949	1	giữ	controller	khi mất điện lưới hoặc điện lưới	gói thầu: 
+IB2400437426	0	bỏ		Bảo dưỡng hệ thống tủ chuyển nguồn tự động nhà G (LV3, LV5) 	gói thầu:
+IB2400438227	1	giữ	controller	- Kết nối với tủ chuyển nguồn tự động ATS.	gói thầu
+IB2400439995	1	giữ	controller	Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển của máy phát điện và có đầu chờ để đấu nối với điện lưới và phụ tải.	gói thầu
+IB2400440222	0	bỏ		kèm tủ ATS 250A. 	gói thầu 
+IB2400440257	0	giữ	controller	Máy phát điện bao gồm động cơ, đầu phát, bảng điều khiển và tủ tự động chuyển nguồn ATS yêu cầu cùng một hãng sản xuất để đảm bảo tính đồng bộ (toàn bộ thông số cung cấp rõ ràng trong hồ sơ chào thầu 	gói thầu
+IB2400440445	0	bỏ		Cong kết nối ATS Có 	
+IB2400440994	1	giữ	controller	Bảng điều khiển tích hợp tính Tích hợp tính năng kết nối ATS và kết nối	gói thầu 
+IB2400442989	0	bỏ		- Tên gói thầu: Máy phát điện 30 kVA; tủ ATS và các phụ kiện, dây nối. 	gói thầu 
+IB2400444280	1	giữ	controller	Cài đặt được thời gian trễ khởi động máy phát điện (không khởi động máy phát điện ngay sau khi mất điện lưới hoặc điện lưới không ổn định): ít nhất từ 0.5 phút : 10 phút (Thời gian điều chỉnh được)	gói thầu
+IB2400446772	1	bỏ		 - Tủ điện ATS 	gói thầu: 
+IB2400452091	0	bỏ		Bộ chuyển nguồn ATS 3 pha 4 cực 600A - Chế độ chuyển đổi giữa 2 nguồn điện: Auto/manual- Điện áp hoạt động: AC 600V- Điện áp cuộn coil: AC 220V - DC 125V- Chuyển mạch tuần tự: A ↔ Neutral (off) ↔ B (O	gói thầu:
+IB2400453053	1	giữ	controller	điều khiển như chức năng ATS,	gói thầu 
+IB2400453359	1	giữ	controller	Điều khiển công tắc chuyển mạch ATS	gói thầu
+IB2400457172	0	giữ	named	- Sử dụng chức năng AMF (Automatic	gói thầu 
+IB2400466201	1	giữ	controller	Bảng điều khiển tích hợp tính Tích hợp tính năng kết nối ATS và kết nối	gói thầu 
+IB2400470041	0	bỏ		--- E-01-104 Single Line Diagram ATS & SYNC Panel.pdf ---	
+IB2400470242	1	giữ	controller	Nút dừng khẩn cấp trên ATS	gói thầu 
+IB2400473260	0	bỏ		 kết nối với ATS 	gói thầu 
+IB2400475145	1	giữ	controller	Điều khiển công tắc chuyển mạch ATS. Khi điện lưới	gói thầu 
+IB2400481114	1	giữ	controller	Kết nối với tủ ATS	gói thầu 
+IB2400481610	0	giữ	controller	Điều khiển máy phát điện trên ATS và Đảm	gói thầu 
+IB2400482148	1	giữ	controller	Bảng điều khiển tích hợp tính Tích hợp tính năng kết nối ATS và kết nối	gói thầu 
+IB2400482562	1	giữ	controller	Bảng điều khiển tích hợp tính Tích hợp tính năng kết nối ATS và kết nối	gói thầu 
+IB2400484488	0	bỏ		 - Cd kha nang ket ndi vdi cac thiet bi dieu khien ATS hop bo. 	
+IB2400487460	1	giữ	named	- Chức năng AMF	
+IB2400487645	1	bỏ		ATS 	gói thầu 
+IB2400489270	1	giữ	controller	chuyển nguồn ATS yêu cầu cùng một	gói thầu 
+IB2400491226	1	bỏ		Tủ chuyển nguồn tự động ATS 630A 3 pha 4 cực, Chân giá đỡ tủ + Mái che bảo vệ đầy đủ thiết bị. Tủ nhập khẩu, lắp ráp hoàn thiện tại Việt Nam. Có khả năng giám sát qua mạng 4G, sử dụng app bằng Smartph	gói thầu
+IB2400493077	0	giữ	controller	ATS) sản xuất từ năm 2024 trở về sau, máy phát điện mới 100% chưa qua sử dụng.	gói thầu 
+IB2400494037	1	giữ	named	- Sử dụng chức năng AMF (Automatic Mains	gói thầu 
+IB2400495088	0	bỏ		 chuyển nguồn ATS 	gói thầu 
+IB2400495407	0	bỏ		 Máy có giao diện kết nối với bộ ATS để thực hiện 	gói thầu 
+IB2400495696	0	bỏ		E | Bộ chuyển nguồn tự động ATS 	gói thầu 
+IB2400496799	1	bỏ		 ATS 500A 	gói thầu 
+IB2400497000	1	giữ	controller	ATS) sản xuất từ năm 2024 trở về sau, máy phát điện mới 100% chưa qua sử	gói thầu: 
+IB2400497572	1	giữ	controller	Điều khiển công tắc chuyển mạch ATS	gói thầu
+IB2400503492	1	giữ	controller	- Điều khiển công tắc chuyển mạch ATS. Khi	gói thầu 
+IB2400509473	1	giữ	controller	Tích hợp tính năng kết nối ATS và kết nối máy	gói thầu 
+IB2400513782	1	giữ	controller	phát điện ngay sau khi mất điện lưới	gói thầu 
+IB2400514819	0	bỏ		 kết nối với ATS 	gói thầu 
+IB2400515309	1	bỏ		ATS 250KVA SA I} \ 	gói thầu 
+IB2400517601	1	giữ	named	AMF, màn hình LCD kết hợp đèn	gói thầu 
+IB2400528342	0	bỏ		điện, tủ điện ATS thuộc dự án Xây dựng mới hội trường biểu diễn kết hợp 08 phòng học đạt tiêu chuẩn của Trường Trung cấp 	gói thầu: 
+IB2400529458	0	giữ	named	- Chức năng AMF	gói thầu 
+IB2400531851	1	giữ	controller	- ON (Đóng/ mở nguồn điện ATS...)	gói thầu
+IB2400533348	1	giữ	controller	Bảng điều khiển tích hợp tính Tích hợp tính năng kết nối ATS và kết nối	gói thầu 
+IB2400533611	0	bỏ		 4 Tủ ATS điều khiển tự động 1000A Tủ 2 	gói thầu 
+IB2400537621	1	giữ	controller	Bảng điều khiển tích hợp tính năng ATS	gói thầu
+IB2400540865	1	giữ	controller	Bảng điều khiển tích hợp tính Tích hợp tính năng kết nối ATS và kết nối	gói thầu 
+IB2400541628	0	giữ	controller	Bảng điều khiển tích hợp tính năng ATS	gói thầu
+IB2400542354	1	giữ	controller	- ON (Đóng/ mở nguồn điện ATS...)	gói thầu
+IB2400545050	0	bỏ		 Tủ chuyển nguồn tự động ATS Dòng làm việc 630A-3P, 3 pha - 4 dây, tần số 50 Hz, 	gói thầu 
+IB2400546306	0	giữ	named	- Chức năng AMF	gói thầu 
+IB2400551129	1	bỏ		 5. Tủ tự động chuyển nguồn ATS 160A 	gói thầu 
+IB2400554981	1	giữ	controller	+ Đảm bảo giữ nguyên khả năng vận hành của máy phát điện khi có lắp ATS và khi chạy độc lập	gói thầu
+IB2400558775	1	giữ	controller	 Chức năng giám sát điện lưới, kết nối ATS bất ký	GÓI THAU: 
+IB2400560277	0	bỏ		Nhà thầu phải nêu đầy đủ ký mã hiệu, model, thương hiệu, hãng sản xuất, xuất xứ của máy phát điện và các thành phần chính cấu thành lên máy phát điện bao gồm: động cơ, đầu phát, bảng điều khiển, vỏ ch	gói thầu
+IB2400560854	1	giữ	controller	Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển của máy	gói thầu: 
+IB2400560982	0	giữ	named	- Chức năng AMF	gói thầu 
+IB2400560998	0	bỏ		nguồn điện được thực hiện bằng bộ tự động chuyển nguồn ATS. Chiếu sáng sân, đường 	gói thầu 
+IB2400561834	0	giữ	named	- Chức năng AMF	gói thầu 
+IB2400562787	1	giữ	controller	Dùng bộ điều khiển chuyên dụng tích hợp săn với ATS của các	gói thầu 
+IB2400563426	1	bỏ		Máy có khả năng kết nối với tủ ATS đóng ngắt tự động	gói thầu.
+IB2400564384	1	bỏ		 - Khi mất điện lưới tổ hợp máy phát có 	gói thầu 
+IB2400569060	1	bỏ		+ Nhà thầu cam kết khi xảy ra mất điện lưới thì máy phát điện sẽ tự động hoạt động và cấp điện. Trường hợp sau khi xảy ra mất điện lưới mà máy phát điện không hoạt động thì trong vòng 60 phút Nhà thầu	gói thầu:
+IB2400573523	0	giữ	named	_ có chức năng AMF tự động khởi động máy phat khi có sự	gói thầu 
+IB2400573714	1	bỏ		+ Chi phí trọn gói lắp đặt (bao gồm lắp đặt đấu nối từ tủ ATS đến tủ MSB), chạy thử (bao gồm tải giả), giám định thiết bị, hướng dẫn vận hành và nghiệm thu bàn giao đưa vào sử dụng.	gói thầu
+IB2400577658	0	bỏ		1.2. Tủ chuyển nguồn tự động ATS lắp 	Gói thầu: ____________ [ghi tên gói thầu] 
+IB2400587900	1	giữ	controller	ATS Switch	gói thầu
+IB2400588970	1	bỏ		Dây cáp nguồn đấu nối từ máy phát điện mới đến tủ ATS đặt tại phòng nguồn: CXV - 300mm² - (0,6/1kV)	gói thầu
+IB2400589702	0	bỏ		- Đảm bảo cung cấp điện liên tục trong thời gian mất điện lưới.	gói thầu
+IB2400592848	0	bỏ		Tính năng đo lường hiển thị trên màn hình LCD các thông số của điện lưới khi kết nối với ATS	
+IB2400595350	1	giữ	controller	+ Đảm bảo giữ nguyên khả năng vận hành của máy phát điện khi có lắp ATS và khi chạy độc lập	gói thầu
+IB2400596787	0	bỏ		 4 Tủ ATS điều khiển tự động 1000A Tủ 1 	gói thầu 
+IB2400602840	0	bỏ		 Tủ ATS 	gói thầu 
+IB2400606080	1	bỏ		 - Tên gói thầu: Trang bị máy phát điện 50KVA và ATS. 	gói thầu: Trang bị máy phát điện SOKVA và ATS 
+IB2400607862	1	bỏ		 điện, ATS trong vòng 02 ngày lịch (Thứ 7 và chủ nhật). 	gói thầu 
+IB2400615261	0	bỏ		 - Hiệu chỉnh tổng thời gian khởi động máy phát – hòa đồng bộ - chuyển đổi ATS 	gói thầu: 
+IB2400617546	1	bỏ		bật sáng khi mất điện lưới, thời 	gói thầu 
+IB2500008885	1	giữ	controller	Có tính năng kết nối với ATS	gói thầu
+IB2500017038	0	bỏ		01 Bộ chuyển đổi nguồn tự động (ATS): 	gói thầu
+IB2500020231	1	giữ	controller	- Điểu khiển chuyển nguồn tự động ATS.	gói thầu TB1.pdf ---
+IB2500021409	0	bỏ		điện, tủ điện ATS thuộc dự án Xây dựng mới hội trường biểu diễn kết hợp 08 phòng học đạt tiêu chuẩn của Trường Trung cấp 	gói thầu: 
+IB2500031588	1	giữ	controller	Kết hợp được với tủ ATS	GÓI THẦU. 
+IB2500039578	1	bỏ		 Tủ ATS ≥ 1000A và các phụ kiện lắp Số lượng 01 tủ: 2 lớp cánh, tôn dày 2mm, sơn 	GÓI THẦU 
+IB2500042107	1	giữ	controller	2. Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển của máy	GÓI THẦU: 
+IB2500049415	0	bỏ		- Đảm bảo cung cấp điện liên tục trong thời gian mất điện lưới. 	gói thầu 
+IB2500056085	1	giữ	controller	switch control module hoặc ATS Đáp ứng: 2 điểm;	gói thầu 
+IB2500061368	0	bỏ		đai nguyên kiện, công suất 150kVA, kèm theo tủ chuyên nguồn tự động (ATS); 	gói thầu 
+IB2500067386	1	bỏ		 - Bảo dưỡng Tủ ATS -1, ATS-2: Kiểm tra vệ sinh, xử lý tiếp xúc, sửa lại chỗ 	gói thầu: 
+IB2500076938	0	giữ	controller	Điều khiển máy phát điện trên ATS và Đảm	gói thầu 
+IB2500084609	1	giữ	named	AMF - 12/24VDC, Depsea hoặc tương đương	gói thầu
+IB2500088417	1	bỏ		3 Thay mới bộ điều khiển đóng ngắt tự dộng ATS tại tủ điện trung tâm 	gói thầu 
+IB2500089757	0	bỏ		 E Bộ chuyển nguồn tự động ATS 	gói thầu 
+IB2500100004	0	bỏ		4 Phần tủ chuyển đổi nguồn tự động (ATS) nếu có: 	gói thầu: 
+IB2500105058	0	bỏ		 - Đảm bảo cung cấp điện liên tục trong thời gian mất điện lưới. 	gói thầu: 
+IB2500114642	0	bỏ		 4. Bộ chuyển nguồn tự động (ATS): Có thể vận 	gói thầu 
+IB2500118115	0	bỏ		Kết nối ATS kết nối ATS. 	gói thầu 
+IB2500118275	0	giữ	controller	+ Tất cả hàng hóa (máy phát điện bao gồm: động cơ, đầu phát, bảng điều khiển, ATS) sản	gói thầu 
+IB2500118283	0	giữ	controller	+ Tất cả hàng hóa (máy phát điện bao gồm: động cơ, đầu phát, bảng điều khiển, ATS) sản	gói thầu 
+IB2500118294	0	giữ	controller	+ Tất cả hàng hóa (máy phát điện bao gồm: động cơ, đầu phát, bảng điều khiển, ATS) sản	gói thầu 
+IB2500124299	0	bỏ		 1.2 Tủ ATS - 400A Tủ 1 	gói thầu: 
+IB2500125567	1	giữ	controller	Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển của máy phát điện và có đầu chờ để đấu nối với điện lưới và phụ tải.	GÓI THẦU
+IB2500129189	1	bỏ		 2 Tủ chuyển nguồn tự động ATS Tự động chuyển đổi nguồn 3 pha, 220V/380V, 	gói thầu 
+IB2500129768	0	bỏ		 - Hiệu chỉnh tổng thời gian khởi động máy phát – hòa đồng bộ - chuyển đổi ATS 	gói thầu: 
+IB2500140418	1	giữ	controller	Máy có giao diện kết nối với bộ ATS để thực hiện điều khiển tắt/bật máy phát điện khi không có điện lưới hoặc điều khiển cưỡng bức từ xa	gói thầu 
+IB2500141185	1	bỏ		 - Kiểm tra hệ thống chuyển đổi nguồn ATS 	GÓI THẦU 
+IB2500143055	0	bỏ		 - ATS 1000A 3 pha 4 cực 	gói thầu 
+IB2500143599	1	bỏ		10 | Bảo dưỡng, thay thế vật tư tiêu hao, vệ sinh bảo trì toàn bộ máy phát, kiểm tra các chế độ làm việc của máy phát điện, ATS | máy | 1	
+IB2500144659	1	giữ	controller	sản xuất, cho từng bộ phận của tổ máy phát điện: Động cơ, đầu phát, bộ điều khiển và tủ ATS.	gói thầu 
+IB2500147632	1	bỏ		 - Kiểm tra hệ thống chuyển đổi nguồn ATS 	GÓI THẦU 
+IB2500152724	0	bỏ		 - Cổng kết nối ATS 	gói thầu 
+IB2500159012	1	bỏ		- Máy phát điện (gồm động cơ, đầu phát, bộ điều khiển, ATS, bệ - vỏ máy, phụ kiện trong máy) được lắp ráp tại Việt Nam hoặc nhập khẩu nguyên chiếc.	gói thầu
+IB2500161081	1	bỏ		 - Kiểm tra hệ thống chuyển đổi nguồn ATS: 	GÓI THẦU 
+IB2500161148	1	bỏ		 - Kiểm tra hệ thống chuyển đổi nguồn ATS 	GÓI THẦU 
+IB2500169052	1	bỏ		 - Kiểm tra hệ thống chuyển đổi nguồn ATS: 	GÓI THẦU 
+IB2500173388	1	bỏ		 - Kiểm tra hệ thống chuyển đổi nguồn ATS: 	GÓI THẦU 
+IB2500177469	0	bỏ		 BQ chuy6n d8i ngu8n tv deng ATS 07 	
+IB2500189560	0	giữ	named	- Sử dụng chức năng AMF (Automatic Mains Failure) với máy phát điện	gói thầu
+IB2500189935	0	bỏ		 - Tên gó thầu: Tr ng bị, lắp đặt ATS và máy phát đ ện 8,5KVA. 	
+IB2500198459	0	bỏ		 2 ATS 1 pha Bộ 22 	gói thầu 
+IB2500198948	1	giữ	named	phải, Đèn LED cảnh báo lỗi, Đèn LED chạy tại chế độ tự động, Đèn LED hiển trị trạng thái hoạt động, Chức năng AMF, Nút dừng khẩn cấp.	gói thầu
+IB2500203377	1	bỏ		 - Kiểm tra hệ thống chuyển đổi nguồn ATS: 	GÓI THẦU 
+IB2500206907	1	giữ	named	ATS: năng AMF.	gói thầu 
+IB2500211376	1	giữ	named	AMF - 12/24VDC, Depsea hoặc tương đương	gói thầu
+IB2500219677	1	giữ	controller	b. Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển	gói thầu 
+IB2500235727	1	giữ	controller	Bảng điều khiển tích hợp tính năng ATS	gói thầu
+IB2500239478	0	giữ	controller	- Kiểm tra tình trạng các thiết bị điều khiển và các chức năng của tủ ATS (nếu	gói thầu: 
+IB2500240059	1	bỏ		- Đầu nối điện: Kiểm tra toàn bộ các điểm đấu nối trong nhà máy nổ ( từ attomat tổng, cắt lọc sét, cầu dao đảo chiều, tủ ATS…) bằng súng đo nhiệt, đảm bảo không có đầu nối nào bị lỏng hoặc gỉ sét gây 	gói thầu:
+IB2500249901	1	giữ	controller	- Khi mất điện lưới tổ hợp máy phát có thể hoạt động trong 2 chế độ Automatic/Manual:	gói thầu: Mua sắm 04 máy phát điện dự phòng cho Tổng công ty Tân cảng Sài Gòn.
+IB2500249932	1	giữ	controller	Trọn bộ máy phát điện (bao gồm máy phát, động cơ diesel, thùng nhiên liệu, két nuóc làm mát, tủ bång điều khiển, bộ chuyển đổi nguồn tự động) phåi được lắp ráp hoàn chỉnh và thử nghiệm xuất xưởng tại 	gói thầu, dự án mua sắm: 
+IB2500261097	1	giữ	controller	B. Tủ chuyển nguồn tự động: 01 bộ	gói thầu
+IB2500271331	0	giữ	named	- Sử dụng chức năng AMF (Automatic	gói thầu và số E-TBMT (frên Hệ 
+IB2500271735	1	giữ	controller	Kết nối Kết nối với tủ ATS	gói thầu: 
+IB2500280002	0	bỏ		 ATS 	gói thầu 
+IB2500287209	0	giữ	named	- Sử dụng chức năng AMF (Automatic Mains Failure) với máy phát điện	gói thầu
+IB2500291421	1	bỏ		Tủ chuyển đổi điện tự động (ATS) 1250A – 4P (ngoài trời)	gói thầu
+IB2500302333	0	bỏ		 Nut dirng khn cp NAm trOn may và trOn ATS 	
+IB2500310648	1	giữ	controller	của ATS	gói thầu khác nhau. Chỉ được sử dụng mà không được sửa 
+IB2500314001	0	giữ	named	- Sử dụng chức năng AMF	gói thầu 
+IB2500318194	0	bỏ		triển khai cung cấp mới một tủ ATS (Automatic Transfer Switch) công suất phù hợp, 	gói thầu và số E-TBMT (trên Hệ IB…………. 
+IB2500320544	1	giữ	controller	Có tính năng kết nối với ATS (Khởi động, tắt máy từ xa)	gói thầu và số E-TBMT (trên Hệ thống):
+IB2500323621	1	giữ	controller	8 Chức năng điều khiển Điều khiển công tắc chuyển mạch ATS. Khi	gói thầu Mua sắm máy phát điện-1.pdf ---
+IB2500327119	1	giữ	named	phải, Đèn LED cảnh báo lỗi, Đèn LED chạy tại chế độ tự động, Đèn LED hiển trị trạng thái hoạt động, Chức năng AMF, Nút dừng khẩn cấp.	gói thầu
+IB2500330002	1	bỏ		 + 01 bộ ATS 3P-630A 	gói thầu mua sắm hàng hóa 
+IB2500336823	1	giữ	controller	- Tài liệu kỹ thuật, catalog gốc (bằng tiếng Anh), chỉ dẫn đường link và trang web của nhà sản xuất cho từng bộ phận của tổ máy phát điệsn: Động cơ, đầu phát, bộ điều khiển và tủ ATS.	gói thầu
+IB2500337345	1	giữ	controller	b. Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển	gói thầu 
+IB2500337925	1	bỏ		phát điện 12,5 kVA/1 pha, 05 bộ chuyển nguồn tự động ATS 100A/3 pha và 07 bộ chuyên 	gói thầu 
+IB2500342833	0	giữ	named	- Chức năng AMF	gói thầu
+IB2500344166	1	bỏ		1.1 Bảo trì 01 máy phát điện dự phòng (MF1) hiệu Caterpillar, công suất (CS) 1000KVA thuộc trạm điện Phụ Sản 1 (PS1) + 01 bồn chứa nhiên liệu nổi dung tích 1000 lít + 01 tủ điện chuyển đổi nguồn tự độ	gói thầu: 
+IB2500344346	1	giữ	controller	 Có tính năng kết nối với ATS (Khởi động, tắt	gói thầu và số E-TBMT (trên _________________ 
+IB2500360458	1	giữ	controller	Có tính năng kết nối với ATS.	gói thầu 
+IB2500363177	1	giữ	controller	bộ điều khiển và tủ ATS.	gói thầu 
+IB2500363403	1	bỏ		 - CCLD tủ điện ATS, chiều cao lắp đặt <2m 	GÓI THẦU 
+IB2500371475	1	giữ	controller	Chức năng điều khiển khởi động máy và điều khiển ATS khi điện lưới lỗi (hỗ trợ	gói thầu 
+IB2500371581	1	giữ	controller	Chức năng điều khiển động khởi động máy và điều khiển ATS khi điện lưới	gói thầu 
+IB2500372309	1	bỏ		- Tổ máy phát điện loại đồng bộ, trong đó động cơ, đầu phát, bộ điều khiển, khung vỏ máy, bộ chuyển nguồn tự động (ATS) được sản xuất đồng bộ cùng nhà sản xuất máy phát điện, nhằm đảm bảo tính tương t	gói thầu
+IB2500376934	0	giữ	controller	ATS) sản xuất từ năm 2024 trở về sau, máy phát điện mới 100% chưa qua sử dụng.	gói thầu 
+IB2500385135	0	bỏ		- Kết nối với ATS và máy tính (PC)	gói thầu
+IB2500386455	1	giữ	controller	Cài đặt được thời gian trễ khởi động máy phát điện (không khởi động máy phát điện ngay sau khi mất điện lưới hoặc điện lưới không ổn định): ít nhất từ 0,5 phút đến 10 phút (thời gian điều chỉnh được)	gói thầu 
+IB2500390999	0	bỏ		 ATS 	gói thầu 
+IB2500394492	1	bỏ		điện ngay sau khi mất điện lưới hoặc điện 	gói thầu 
+IB2500395874	1	bỏ		+ 01 bộ ATS 3P-630A	gói thầu
+IB2500400828	0	bỏ		 3/ Bộ chuyển nguồn tự động ATS 1600A (01 bộ): Dòng định 	gói thầu 
+IB2500402318	1	giữ	named	Điều khiển bằng mô-đun AMF	gói thầu
+IB2500403212	1	giữ	controller	Điều khiển công tắc chuyển mạch ATS	gói thầu
+IB2500403535	1	giữ	controller	ATS.	gói thầu 
+IB2500405459	1	giữ	named	Chức năng làm việc với bộ - Có chức năng AMF (tự	GÓI THẦU 
+IB2500410768	0	giữ	controller	máy phát điện, động cơ, đầu phát, bảng điều khiển và bộ chuyển nguồn tự động ATS thể	gói thầu 
+IB2500415487	1	giữ	controller	ATS) sản xuất từ năm 2025 trở về sau, máy phát điện mới 100% chưa qua sử dụng.	gói thầu 
+IB2500416364	1	bỏ		 - Tên dự án/dự án: Đầu tư mua sắm máy phát điện và ATS phục vụ lắp đặt mới 	gói thầu 
+IB2500419471	0	bỏ		 kết nối với ATS 	gói thầu 
+IB2500422009	1	giữ	named	- Sử dụng chức năng AMF (Automatic Mains	gói thầu 
+IB2500438703	1	giữ	controller	Chức năng điều khiển động khởi động máy và điều khiển ATS khi điện lưới	gói thầu 
+IB2500442970	1	giữ	controller	V Yêu cầu về bộ tự động chuyển nguồn ATS	gói thầu 
+IB2500447006	1	giữ	named	|_| Điều khiển Trans AMF - 12/24VDC	gói thầu: 
+IB2500448140	1	bỏ		 B |Tủ ATS 800A trọn bộ | Phù hợp theo hồ sơ thiết kế và tiêu 	gói thầu: 
+IB2500457653	0	bỏ		- Thay bộ ATS, kết nối tủ chuyển nguồn tự động và chạy thử.	gói thầu:
+IB2500459891	1	giữ	controller	Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển của máy phát điện và có đầu chờ để đấu nối với điện lưới và phụ tải.	gói thầu
+IB2500460613	1	giữ	controller	+ Tất cả hàng hóa (máy phát điện bao gồm: động cơ, đầu phát, bảng điều khiển, ATS) sản xuất từ tháng 1 năm 2025 trở về sau, máy phát điện mới 100% chưa qua sử dụng.	gói thầu
+IB2500462306	1	giữ	named	Điều khiển bằng mô-đun AMF	gói thầu 
+IB2500464050	0	bỏ		khiển ATS khi điện lưới lỗi. 	gói thầu: 
+IB2500465111	1	bỏ		 âm, ATS 100A-1P. 	gói thầu 
+IB2500471911	0	bỏ		Tính năng đo lường hiển thị trên màn hình LCD các thông số của điện lưới khi kết nối với ATS	
+IB2500473200	0	bỏ		Tủ chuyển nguồn tự động 	gói thầu 
+IB2500474495	1	giữ	controller	+ Bộ chuyển nguồn ATS ≥800A	gói thầu 
+IB2500474803	1	bỏ		 * Tủ ATS 800A 	gói thầu 
+IB2500476713	0	giữ	controller	+ Tất cả hàng hóa (máy phát điện bao gồm: động cơ, đầu phát, bảng điều khiển, ATS) sản xuất từ tháng 1 năm 2025 trở về sau, máy phát điện mới 100% chưa qua sử dụng.	gói thầu
+IB2500480924	0	giữ	controller	+ Tất cả hàng hóa (máy phát điện bao gồm: động cơ, đầu phát, bảng điều khiển, ATS) sản xuất từ năm 2025 trở về sau, máy phát điện mới 100% chưa qua sử dụng.	gói thầu
+IB2500483608	1	giữ	controller	Yêu cầu về bộ tự động chuyển nguồn ATS	gói thầu
+IB2500498271	0	giữ	controller	+ Tất cả hàng hóa (máy phát điện bao gồm: động cơ, đầu phát, bảng điều khiển, ATS) sản xuất từ tháng 01 năm 2025 trở về sau, máy phát điện mới 100% chưa qua sử dụng.	
+IB2500498331	1	bỏ		Nội dung gói thầu: Mua 30 máy phát điện chạy dầu 1 pha/12KVA, vỏ cách âm, ATS 100A-1P.	gói thầu
+IB2500500319	0	giữ	named	- Sử dụng chức năng AMF (Automatic Mains Failure) với máy phát điện	gói thầu
+IB2500512614	0	bỏ		BỘ CHUYỂN NGUỒN TỰ ĐỘNG (ATS) 	gói thầu 
+IB2500514971	1	giữ	named	| | Điều khiển Trans AMF - 12/24VDC	gói thầu: 
+IB2500515630	1	bỏ		 5 Tủ chuyển nguồn tự động ATS 400A Tủ 01 8 	gói thầu: 
+IB2500524888	1	bỏ		trạm biến áp kios 1000KVA – 22/0,4kV. Để cấp điện dự phòng khi mất điện lưới, 	gói thầu: 
+IB2500531255	0	giữ	controller	+ Tất cả hàng hóa (máy phát điện bao gồm: động cơ, đầu phát, bảng điều khiển, ATS) sản xuất từ tháng 01 năm 2025 trở về sau, máy phát điện mới 100% chưa qua sử dụng.	
+IB2500532997	0	giữ	named	- Sử dụng chức năng AMF (Automatic Mains Failure) với máy phát điện	gói thầu:
+IB2500536474	0	giữ	controller	+ Tất cả hàng hóa (Máy phát điện bao gồm: động cơ, đầu phát, bảng điều khiển, Tủ ATS) sản xuất từ năm 2025 trở về sau, Tổ máy phát điện mới 100% chưa qua sử dụng.	gói thầu:
+IB2500551987	1	giữ	controller	Bộ điều khiển ATS/ ATS	
+IB2500553750	1	bỏ		1./ Tủ ATS	gói thầu
+IB2500570880	0	giữ	named	- Có chức năng AMF (tựđộng phát hiện điện lưới lỗi để chạy máy tự động) và tự động chuyển nguồn ATS bằng tay, tự động	gói thầu:
+IB2500571943	1	giữ	controller	1pha (ATS 1pha 100A)	gói thầu 
+IB2500573995	1	giữ	named	- Sử dụng chức năng AMF (Automatic Mains	gói thầu 
+IB2500598824	1	giữ	controller	4 Tính năng ATS(Automatic transfer switch), 5 5 Tài liệu kỹ thuật bảng điều khiển	goi thau FTEL-2025-039 Cung cap va lap dat may phat dien cac loai (PMB).pdf ---
+IB2500600028	1	giữ	controller	2.1 Tủ chuyển nguồn ATS Tủ 1	gói thầu 
+IB2500611943	0	bỏ		Đấu nối máy phát điện vào tủ ATS.	gói thầu
+IB2500626302	1	bỏ		 - Dây cáp tín hiệu điều khiển ATS và cấp nguồn cho xạc tự 	gói thầu 
+IB2600006758	1	bỏ		- Cung cấp và lắp đặt máy phát điện chạy Diesel công suất 60K VA+tủ ATS 100A đồng 	GÓI THAU 
+IB2600020985	1	giữ	named	Tính năng AMF	gói thầu
+IB2600027651	1	giữ	controller	4 Tính năng ATS(Automatic transfer switch), 5 5 Tài liệu kỹ thuật bảng điều khiển	goi thau FTEL-2026-002 Cung cap va lap dat may phat dien cac loai (PMB).pdf ---
+IB2600041157	1	bỏ		Vận chuyển tủ ATS và tủ MSB (BV BNĐ) về kho 	gói thầu:
+IB2600046158	1	bỏ		chuyển nguồn tự động ATS cho: Nhà điều hành KCN; Cụm các TXL nước thải. 	gói thầu 
+IB2600072892	1	giữ	named	Tự động chuyển đổi nguồn lưới và máy phát chức năng AMF.	gói thầu
+IB2600075436	0	bỏ		 (ATS) 	gói thầu 
+IB2600083151	1	giữ	controller	Có tính năng kết nối với ATS.	Gói thầu: Cung cấp và lắp đặt máy phát điện 
+IB2600089010	0	bỏ		 - Tủ chuyển nguồn tự động ATS ≥ 160A 3 pha: 01 tủ Đáp ứng yêu cầu Không đáp ứng yêu cầu 	gói thầu 
+IB2600092758	1	giữ	named	Tính năng AMF	gói thầu
+IB2600098464	1	giữ	named	+ Bộ điều khiển AMF module + Bộ điều khiển AMF module	gói thầu 
+IB2600112737	0	bỏ		 (ATS) 	gói thầu 
+IB2600113066	0	bỏ		- Gói thầu nhằm tìm kiếm Nhà thầu có đủ năng lực kinh nghiệm thực hiện cung cấp Tủ ATS và dịch 	goi thau FTEL-2026-010 Thay the va lap dat tu ATS luan phien 2 may phat dien.pdf ---
+IB2600116950	1	giữ	controller	(ATS) và điều khiển tại chỗ.	gói thầu 
+IB2600128010	1	giữ	controller	+ Kết hợp được với tủ ATS.	GOI THAU MAY PHAT DIEN.docx ---
+IB2600134735	1	bỏ		V- Hệ thống chuyển nguồn ATS 	gói thầu 
+IB2600135744	0	bỏ		 TỦ ĐIỆN MSB, ATS, 	gói thầu 
+IB2600137973	0	bỏ		 MÁY PHÁT ĐIỆN, TỦ ATS 	
+IB2600164177	1	giữ	named	động (AUTO), Chức năng AMF, Nút dừng khẩn cấp.	gói thầu 
+IB2600173566	1	bỏ		 1.4 Vận chuyển tủ ATS và tủ MSB (BV BNĐ) về kho 1 Lô 	gói thầu: 
+IB2600184876	1	bỏ		 - Nội dung gói thầu: Trang bị mới 53 máy phát điện 12kVA-1 pha kèm tủ ATS 	gói thầu 
+IB2600185729	1	bỏ		V- Hệ thống chuyển nguồn ATS 	gói thầu 
+IB2600192365	1	bỏ		Tủ chuyển nguồn tự động (tủ ATS) 2500A	gói thầu
+IB2600194231	1	bỏ		- Các tủ điện chuyển đổi nguồn ATS, MTS và tủ phân phối điện đặt tại nhà	GÓI THAU: |
+IB2600199641	1	bỏ		 - Kiểm tra chức năng chuyển đổi nguồn tự động: Truy cập bộ điều khiển máy 	gói thầu: 
+IB2600210926	0	bỏ		ATS ELE TRUNG TAM KS TC-TS CAM RANH 	
+IB2600217137	1	giữ	controller	Bộ ATS: ATS 3P 800A – Vitzro hoặc tương đương	gói thầu
+IB2600225281	1	bỏ		Yêu cầu đối với tủ ATS	gói thầu
+IB2600243028	1	giữ	named	5 Chức năng AMF tự động khởi động máy phát khi điện	gói thầu: 
+IB2600245065	0	bỏ		- Cổng kết nối ATS: Có - Khởi động: Đề nổ 	gói thầu
+IB2600245437	1	bỏ		30 kVA/3 pha, 04 máy phát điện 60 kVA/3 pha, 04 bộ ATS 100A/3 pha và 04 bộ ATS	
+IB2600248328	0	giữ	controller	- Có tủ chuyển nguồn tự động ATS đồng bộ theo máy.	gói thầu
+IB2600252022	1	bỏ		Hệ thống ATS: 250A 	gói thầu
+IB2600252436	1	bỏ		- Quy mô đầu tư: Trang bị 01 máy phát điện 500kVA, ATS 1000A và thiết bị phụ trợ.	gói thầu
+IB2600253287	1	bỏ		- Có công kết nồi với tủ ATS đề thực hiện điều khiển	gói thầu
+IB2600257552	0	bỏ		 - Kiểm tra chức năng chuyển đổi nguồn tự động khi máy 	gói thầu: 
+IB2600260970	1	giữ	controller	Yêu cầu về bộ tự động chuyển nguồn ATS	gói thầu
+IB2600278676	1	bỏ		Thông tin về Dự án: Máy phát điện 80CSA + tủ chuyển nguồn tự động ATS 4P-150A.	gói thầu
+IB2600280799	0	giữ	controller	+ Tất cả hàng hóa (máy phát điện bao gồm: động cơ, đầu phát, bảng điều khiển, ATS)	gói thầu 
+IB2600282153	1	bỏ		 Bộ điều khiển ATS, kèm phụ kiện Bộ điều khiển ATS, kèm phụ kiện 	GÓI THẦU.pdf ---
+IB2600307179	1	giữ	controller	ATS) sản xuất từ tháng 1 năm 2026 trở về sau, máy phát điện mới 100% chưa qua sử	gói thầu 
+IB2600308125	1	giữ	controller	E. Tủ chuyển nguồn tự động ATS 630A	gói thầu 
+IB2600309163	1	giữ	controller	Bộ ATS có thể hoạt động thủ công, tự động và từ xa qua module tích hợp, trên băng tần	gói thầu: 
+IB2600313010	0	giữ	controller	Bảng điều khiển tích hợp Tích hợp tính năng kết nối ATS và kết nối máy tính điều khiển	gói thầu 
+IB2600315904	1	giữ	controller	- Từ tủ ATS đến bảng điều khiển hoặc các vị trí	gói thầu 
+IB2600325773	1	bỏ		 mất điện lưới và đóng các tủ đầu vào 	gói thầu 
+IB2600327799	0	bỏ		 động (ATS) 	gói thầu 
+IB2600334541	1	giữ	controller	2. Bộ ATS phải được đấu nối đồng bộ với phần động lực và bộ điều khiển	GOI THAU MAY PHAT DIEN-ghep file.pdf ---
+IB2600341462	1	giữ	controller	+ Kết hợp được với tủ ATS.	GÓI THẦU @ 
+IB2600347583	1	giữ	named	chức năng AMF, ghi nhớ lỗi. Bộ điều	gói thầu 
+IB2600350175	1	bỏ		 + Kết hợp được với tủ ATS. 	gói thầu 
+IB2600350338	1	bỏ		pha, đặt trong nhà, có vỏ chong ôn, nhiên liệu diesel và 01 tủ ATS 100A) thay thê 	gói thầu 
+IB2600374560	1	giữ	controller	B. Tủ ATS	gói thầu 
+IB2600392438	1	bỏ		Thông tin về Dự án: Máy phát điện 80CSA + tủ chuyển nguồn tự động ATS 4P-150A.	gói thầu
+IB2600395994	1	giữ	controller	- Máy tự khởi động khi có tín hiệu mất điện lưới qua tủ ATS.	gói thầu.
+IB2600412115	1	bỏ		 2 Tủ chuyển đổi nguồn tự động (tủ ATS) 250A 	
+IB2600424077	0	bỏ		LEE sš £5 |S= ATS 5S<4ar 2 |< 25 	gói thầu: 
+IB2600429093	1	giữ	controller	với ATS.	gói thầu.
+IB2600434462	1	giữ	controller	V Yêu cầu về bộ tự động chuyển nguồn ATS	gói thầu 
+IB2600438484	1	giữ	named	5 Chức năng AMF tự động khởi động máy phát khi điện	gói thầu: 
+IB2600450087	0	bỏ		A | Máy phát điện, tủ ATS 	gói thầu 
+IB2600450900	0	bỏ		A | Máy phát điện, tủ ATS 	gói thầu 
+IB2600464766	1	giữ	controller	Tự động (Auto qua tín hiệu ATS),	gói thầu và số E-TBMT (trên Hệ thống):
+IB2600465110	0	giữ	controller	+ Tất cả hàng hóa (máy phát điện bao gồm: động cơ, đầu phát, bảng điều khiển, ATS) được sản xuất trong vòng 12 tháng tính đến thời điểm đóng thầu, máy phát điện mới 100% chưa qua sử dụng.	gói thầu.
+IB2600465194	1	bỏ			gói thầu 
+IB2600470479	1	giữ	controller	- Bộ điều khiển kỹ thuật số, màn hình LCD.- Có chức năng hiển thị đầy đủ các thông số vận hành, cảnh báo lỗi và bảo vệ, dừng ngắt máy khi có sự cố.- Có khả năng giám sát hoặc mở rộng giám sát từ xa, k	gói thầu
+IB2600472762	0	bỏ		 khiển ATS khi điện lưới lỗi. 	gói thầu: 
+IB2600477305	1	giữ	controller	14 Thời gian đưa nguồn - Khi điện lưới hồi phục, bộ ATS ngay lập Đạt Không	gói thầu 
+IB2600478079	1	bỏ		 2 Tủ ATS 	gói thầu: 
+IB2600487332	0	bỏ		 a Tủ ATS tự động chuyển - Chế độ làm việc: Tự động - Thủ Công 	gói thầu 
+IB2600490077	1	bỏ		 tự động (tủ ATS) 250A, Cáp tín hiệu điều khiển ATS và 	
+IB2600507094	1	giữ	controller	Yêu cầu về bộ tự động chuyển nguồn ATS	gói thầu
+IB2600511162	1	giữ	controller	Trang bị giao diện kết nối với tủ ATS (ATS 1nterface) thông qua	gói thầu : Cung cấp máy phát điện 1500 KVA 
+IB2600549116	1	bỏ		 Tủ ATS chuyển thiểu 50.000 lần + Đóng ngắt bằng cơ khí: tối 	gói thầu 
+IB2600552343	0	giữ	named	+/ Chức năng AMF;	
+IB2600565238	1	bỏ		Có tính năng kết nối với ATS (khởi động, tắt máy từ xa)	gói thầu:
+IB2600570050	0	giữ	controller	+ Tất cả hàng hóa (máy phát điện bao gồm: động cơ, đầu phát, bảng điều khiển, ATS) được sản xuất trong vòng 12 tháng tính đến thời điểm đóng thầu, máy phát điện mới 100% chưa qua sử dụng.	gói thầu.
+IB2600587429	0	bỏ		Tủ chuyển đổi điện tự động (ATS)	Gói thầu: Gói 12: Cung cấp, lắp đặt thiết bị văn phòng, CNTT, hệ thống
+IB2600588204	0	giữ	controller	+ Tất cả hàng hóa (máy phát điện bao gồm: động cơ, đầu phát, bảng điều khiển,ATS) sản xuất từ tháng 1 năm 2026 trở về sau, máy phát điện mới 100% chưa qua sửdụng.	gói thầu và số E-TBMT (trên Hệ thống):
