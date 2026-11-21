@@ -20,5 +20,5 @@ for (const [run, e] of [...runs].sort((a, b) => b[1].rows.length - a[1].rows.len
 }
 const eng = (name) => Object.values(T.eng).find((x) => x.model === name);
 for (const m of ["20M33G2250/5", "WD145TAD35"]) { p(`\n== nguồn ${m}`); for (const f of eng(m)?.f || []) if (f.k === "cyl") p(`  ${f.s} n${f.n} ${f.v} sheet=${f.sheet} maker=${f.maker}`); for (const x of rows.filter((y) => y.model === m)) p("  loại:", x.run, x.sup, x.ruled.join(","), (x.why || []).filter((w) => /xi lanh|dung tích/.test(w)).join(" ; ").slice(0, 100)); }
-fs.writeFileSync(new URL("./soat-nguong.txt", import.meta.url), out.join("\n"));
+fs.writeFileSync("C:/Projects/GenSet Pro/genbid-work/doc-cache/soat-1022/soat-nguong.txt", out.join("\n"));
 console.log(out.join("\n").slice(0, 28000));

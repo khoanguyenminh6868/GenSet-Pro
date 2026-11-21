@@ -24,5 +24,5 @@ for (const [run, e] of runs) {
   if (flags.length) { bad++; p(`\n## ${run} cap ${cap}; ${e.rows.length} dòng; luật ${[...e.rules]}; cỡ trong HSMT ${sizes.slice(0, 8).join(",")}; top30: ${e.rows.filter((x) => x.top >= 0).length}`); flags.forEach((f) => p("  ", f)); p("   máy:", [...new Set(e.rows.map((x) => x.model))].slice(0, 6).join(", ")); const re = new RegExp(`[^.\\n]{0,40}${cap}\\s*k\\s*va[^.\\n]{0,40}(?:dung\\s*tích\\s*(?:xi|xy)|xi\\s*lanh|xy\\s*lanh)[^.\\n]{0,50}`, "gi"); const own = [...t.matchAll(re)].slice(0, 3).map((m) => m[0].replace(/\s+/g, " ")); p("   câu của đúng cỡ:", own.length ? own.join(" ¦ ") : "(không có)"); }
 }
 p(`\nLượt: ${runs.size} | HSMT nhiều cỡ: ${multi} | cần xem: ${bad}`);
-fs.writeFileSync(new URL("./soat-muc.txt", import.meta.url), out.join("\n"));
+fs.writeFileSync("C:/Projects/GenSet Pro/genbid-work/doc-cache/soat-1022/soat-muc.txt", out.join("\n"));
 console.log(out.join("\n").slice(0, 16000));
