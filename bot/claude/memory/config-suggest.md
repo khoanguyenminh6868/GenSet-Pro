@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 712171b8-1398-4e8a-b507-1e2692a83bce
-  modified: 2026-11-21T12:11:47.033Z
+  modified: 2026-11-21T12:21:24.415Z
 ---
 
 **Luồng:** web `configreq/<TBMT>` → `suppliers/config-bot.mjs run` (agent `claude -p` Opus theo `config-prompt.md`) → `check` kiểm bằng code → `configmatch/<TBMT>`. Code xếp sẵn 30 dòng ứng viên; mọi số/câu trích phải có nguyên văn trong nguồn, sai → "Đạt" thành "Chưa rõ". ~6–11 phút, ~3 USD/gói. Yêu cầu theo bộ mã cố định `suppliers/reqcodes.mjs` (thêm mã: dòng `R(...)` đúng thứ tự + test; tăng `REQ_VERSION`).
@@ -128,7 +128,7 @@ Khoa 21/11/2026 (đợt "fix luôn các lỗi đã phát hiện"), các quyết 
 - **ZS195** (#1037: tên trang sunny-weifang nói Weichai, zhengdian nói Changchai, ngang phiếu): Khoa 21/11/2026 "để trống" hãng, không tra tài liệu Changchai.
 - **Bảng dọc chặng 1** (#1045, 8 hàng rào đã trình Khoa 19/11): 434 bảng V1 chỉ ra 26 bản ghi; 236 bảng không có mã động cơ chỉ đọc được thành bản ghi tổ máy, mà tổ máy không nối Gợi ý (quyết định trên) → muốn thêm phải hỏi lại Khoa, đừng tự mở.
 - **Hai bản bộ điều khiển (#1039), Khoa chốt 21/11/2026**: (1) "ok làm theo đề xuất": bộ NCC chào đạt dưới nửa mục truyền thông thì KHÔNG sinh bản NCC chào; (3) "có": làm cả chiều ngược (agent chọn bộ NCC chào mà bộ thấp nhất đủ theo tài liệu hãng là bộ khác → code thêm bản tài liệu hãng).
-- **Bản "bộ NCC chào" chỉ sinh khi đã chấm được** (Khoa 21/11/2026 "ok", sau ca DSE4520 lọt vào IB2600603983 với 4 nhóm chức năng 0 điểm): phải chấm được các nhóm chức năng trên tài liệu hãng của chính bộ đó và không kém bộ chính ở nhóm yêu cầu chính; không thì chỉ ghi "Phương án khác". Luật ATS chỉ kiểm LOẠI bộ (AMF), không chứng minh đáp ứng HSMT. NCC đã chào chính bộ chính thì không sinh bản yếu hơn của NCC đó.
+- **Bản "bộ NCC chào": GIỮ luật cũ** (đúng loại HSMT đòi + ≥ nửa mục truyền thông; check chưa chấm để "chưa rõ"). Khoa 21/11/2026 từng "ok" điều kiện "chỉ sinh khi đã chấm được" rồi RÚT LẠI cùng ngày ("Đổi lại luật bộ NCC chào như cũ, nếu không sẽ mất DSE7420"): đừng đề xuất lại điều kiện đó khi chưa có manual của bộ NCC chào. Hai sửa giữ lại cho ca DSE4520 (điều phối quyết, đã báo Khoa): NCC chào đúng bộ chính thì không sinh bản của NCC đó mà ghi họ là bên chào; NCC chào nhiều bộ thì xét bộ tốt nhất. Luật ATS chỉ kiểm LOẠI bộ (AMF), không chứng minh đáp ứng HSMT.
 - **HSMT ghi hai số tiêu hao cùng một mức tải kiểu MRQ / RQ** (IB2500403535: 75 % tải ≤ 2,6 MRQ / ≤ 2,5 RQ): Khoa 21/11/2026 chọn "RQ" làm ngưỡng.
 - **HSMT tự ghi dung sai ngay sau ngưỡng** ("≥ 8,5 ± 0,5", "≤ 1,3 L ± 5 %"): Khoa 21/11/2026 "có": tính dung sai vào ngưỡng (nhận từ 8,0; nhận tới 1,365). Áp cho MỌI ngưỡng kể cả công suất ("≥ 400 kVA ± 5 %" nhận từ 380; Khoa: "nếu có +- % thì cứ áp"); ca chữ nguồn nghi là "+ 1 %" chứ không phải ± (IB2300296794) thì KHÔNG hạ.
 - **Máy lớn hơn công suất HSMT, tiêu hao 100 % tải của chính nó vượt ngưỡng HSMT** (#1022, 538 dòng): Khoa 21/11/2026 "loại như hiện tại"; KHÔNG quy tỉ lệ công suất (đó là ước lượng).
