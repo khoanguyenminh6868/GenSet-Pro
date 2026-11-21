@@ -12,5 +12,5 @@ for (const run of runs) {
   const kvaText = (d.config.kvas || []).map((k) => `${k.v} ${k.u}`).join(", "), found = B.sizesOf([kvaText, d.bidName], d.bidName);
   const t = B.technicalPart(d.config.text), r = B.minsForSize(t, found[+ri], found), { L, runs: bl, tags } = B.sizeBlocks(t, found);
   console.log(`\n=== ${run} cỡ ${found.map((s) => s.cap.value).join("/")} lượt ${found[+ri].cap.value} | minPrime ${JSON.stringify(r.mins.minPrime)} how ${r.how.minPrime} | khối ${bl.map((b) => `${b.size}:${b.start}-${b.to}`).join(" ")}`);
-  L.forEach((l, i) => { if (re.test(l)) console.log(`  d${i} tag ${tags[i]} khối ${bl.find((b) => i >= b.start && i < b.to)?.size ?? "ngoài"}: ${l.trim().slice(0, 150)}`); });
+  L.forEach((l, i) => { if (re.test(l)) console.log(`  d${i} tag ${tags[i]} khối ${bl.find((b) => i >= b.start && i < b.to)?.size ?? "ngoài"}: ${l.trim().slice(0, 340)}`); });
 }

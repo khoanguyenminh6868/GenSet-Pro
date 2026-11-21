@@ -82,8 +82,7 @@ H:IB2500403535#0	minCyl: 3 → null; maxFuel75: null → 2.5
 H:IB2500403535#1	minCyl: null → 3; maxFuel75: null → 3.5
 H:IB2500410768#0	maxFuel: null → 7.5
 H:IB2500410768#2	maxFuel: 7.5 → null
-H:IB2500460613#0	minCyl: null → 3
-H:IB2500460613#2	minDisp: 2.3 → null
+H:IB2500460613#0	minDisp: null → 1.8; minCyl: null → 3
 H:IB2500500319#1	minPrime: null → {"kVA":12}
 H:IB2500531255#0	minDisp: null → 2.3; minCyl: null → 4
 H:IB2500531255#1	minCyl: null → 4

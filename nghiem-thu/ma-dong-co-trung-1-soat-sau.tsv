@@ -1,0 +1,46 @@
+loại	mục	luật	dòng	lượt	ngưỡng	giá trị×số NCC
+một NCC ghi số	2806A-E18TTAG4	cyl	1	1	=12	6×1
+một NCC ghi số	2806A-E18TTAG5	cyl	2	2	≥12 =12	6×1
+một NCC ghi số	3TNV82A-GGE	cyl	8	8	=1 ≥4 =4	3×1
+một NCC ghi số	3TNV88-GGE	disp	241	20	≥2.5 ≥1.7 ≥2.54 ≥2.3 ≥2.156	1.642×1
+một NCC ghi số	4DW92-39D-HMS20W	disp	42	6	≥3.331 ≥3.568 ≥3.8 ≥2.672 ≥3.2	2.54 L×1
+một NCC ghi số	4DX21-53D-HMS20W	maxDisp	7	2	≤2.9 ≤2.3	3.86 L×1
+một NCC ghi số	4DX22-65D-HMS20W	disp	24	4	≥4.5 ≥4.2 ≥4.3 ≥4.329	3.86 L×1
+một NCC ghi số	4DX22-65D-HMS20W	maxDisp	6	1	≤1.826	3.86 L×1
+một NCC ghi số	4DX23-78D-HMS20W	disp	22	6	≥3.9 ≥4.33 ≥4.3 ≥4.087 ≥4.329	3.86 L×1
+một NCC ghi số	4TNV106-GGE	disp	11	1	≥4.5	4.412×1
+một NCC ghi số	4TNV106-GGE	maxDisp	11	1	≤1.826	4.412×1
+một NCC ghi số	4TNV84T-GGE	cyl	5	5	=3 =2	4×1
+một NCC ghi số	4TNV88-GGE	cyl	8	6	=3 =2	4×1
+một NCC ghi số	4TNV98-GGE	cyl	3	2	=2	4×1
+một NCC ghi số	CA6DL2-30	disp	40	8	≥9.726 ≥11.051 ≥8.9	8.57 L×1
+một NCC ghi số	CA6DL2-30	maxDisp	10	2	≤6.8 ≤8	8.57 L×1
+một NCC ghi số	CA6DM2-41D	disp	5	3	≥14 ≥11.051 ≥12.78	11.05 L×1
+một NCC ghi số	CA6DM2-41D	maxDisp	1	1	≤9.84	11.05 L×1
+một NCC ghi số	CA6DN1-45D	disp	6	2	≥14 ≥12.78	12.53 L×1
+một NCC ghi số	CA6DN1-45D	maxDisp	3	1	≤9.84	12.53 L×1
+một NCC ghi số	D1105-E2BG-CHN-1	disp	15	15	≥1.6 ≥2.1 ≥1.532 ≥2.15 ≥2	1.123×1
+một NCC ghi số	D1703-E2BG-CHN-1	disp	15	15	≥2.5 ≥1.7 ≥2.54 ≥2.3 ≥2.42	1.647×1
+một NCC ghi số	V1505-E2BG-CHN-1	disp	15	15	≥1.6 ≥2.5 ≥1.7 ≥2.156 ≥2.27	1.498×1
+một NCC ghi số	V2003-T-E2BG-CHN-1	disp	9	8	≥2.197 ≥2.54 ≥2.9 ≥2.5 ≥2.434	1.999×1
+một NCC ghi số	V2203-E2BG-CHN-1	disp	9	9	≥2.54 ≥2.9 ≥2.3 ≥2.42 ≥2.5	2.197×1
+một NCC ghi số	V2203-E2BG-CHN-1	maxDisp	2	2	≤1.83	2.197×1
+một NCC ghi số	V3300-E2BG2-CHN-1	disp	3	3	≥3.331 ≥3.568 ≥3.8	3.318×1
+một NCC ghi số	V3300-T-E2BG2-CHN-1	disp	4	4	≥3.331 ≥3.568 ≥3.8 ≥3.9	3.318×1
+một NCC ghi số	V3300-T-E2BG2-CHN-1	maxDisp	1	1	≤2.9	3.318×1
+một NCC ghi số	WD164TAD43	cyl	4	2	=8 ≥8	6×1
+một NCC ghi số	WD164TAD43	maxDisp	4	2	≤12.7 ≤9.84	16.4×1
+một NCC ghi số	WD164TAD45	maxDisp	6	3	≤12.5 ≤12.7	16.4×1
+một NCC ghi số	WD180TAD61	disp	14	7	≥19.6 ≥18.273 ≥26.6 ≥23.15	18×1
+một NCC ghi số	WD180TAD61	maxDisp	2	1	≤15.2	18×1
+một NCC ghi số	WD269TAD38	maxDisp	2	1	≤9.84	26.9×1
+một NCC ghi số	WD327TAD68	maxDisp	2	1	≤15.2	32.7×1
+một NCC ghi số	WJ65TD8	disp	2	1	≥6.494	6.49×1
+một NCC ghi số	WJ68TAD11	disp	2	1	≥6.871	6.75×1
+một NCC ghi số	WJ78TAD17	disp	2	1	≥8.3	7.82×1
+một NCC ghi số	WJ97TAD24	disp	4	2	≥11.051	10.09×1
+một NCC ghi số	Y490PD	cyl	3	2	=2	4×1
+một NCC ghi số	YD485D	cyl	16	6	=3 =2	L4×1
+một NCC ghi số	YD485D	disp	47	13	≥2.5 ≥2.197 ≥2.54 ≥2.3 ≥2.42	2.043×1
+một NCC ghi số	YD485D	maxDisp	21	7	≤1.826 ≤1.85	2.043×1
+chưa rõ ngưỡng	IB2500291421#1		13	1	disp=23.15:chua cyl=6:dung	
