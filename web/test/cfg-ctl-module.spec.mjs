@@ -50,11 +50,11 @@ test.describe("có mô-đun và phương án khác", () => {
   });
 
   test("danh mục thiếu model rồi bản nhà cung cấp mới về: bỏ chữ chưa có, hiện link", async ({ page }) => {
-    test.setTimeout(150000); // Danh mục dựng lúc trang rảnh, chậm khi chạy song song.
+    test.setTimeout(300000); // Danh mục dựng lúc trang rảnh (headless: 1 bước/giây, ~60 s), chậm khi chạy song song.
     await openApp(page, "#goi/" + RICH);
     await openTab(page, "config");
     const blk = page.locator("#dbody .cfgcard").first().locator(".cfgblk", { hasText: "Bộ điều khiển:" }).first();
-    await expect(blk).toContainText("chưa có trong danh mục", { timeout: 60000 });
+    await expect(blk).toContainText("chưa có trong danh mục", { timeout: 120000 });
     await page.evaluate(async () => {
       const db = await window.claude.use("db");
       await db.doc("supplier/deep-sea-electronics").set({ id: "deep-sea-electronics", names: { en: "Deep Sea Electronics" }, status: "partial", role: "controller_maker", sources: [{ n: 3001, url: "https://example.test/ds.pdf" }],
