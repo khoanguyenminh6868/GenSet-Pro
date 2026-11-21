@@ -1850,7 +1850,12 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
   // lists already in this order (filters, no re-sort).
   // Hash of the row's identity (choiceKey), once per row; the last two keys only break a hash collision.
   const hashes = new WeakMap(), hashOf = (r) => { let h = hashes.get(r); if (h === undefined) hashes.set(r, h = fnv1a(choiceKey(r))); return h; };
-  const rowOrder = (x, y) => y.score - x.score || gap(x) - gap(y) || hashOf(x) - hashOf(y) || cmpStr(choiceKey(x), choiceKey(y)) || cmpStr(String(x.u.other || ""), String(y.u.other || ""));
+  // ĐO THỬ (nhánh thu-tu-ly-do, chưa duyệt): hai tiêu chí có lý do chen giữa `gap` và băm. (1) hồ sơ NCC `status` "verified"
+  // (`sup.get(u.supplierId).status`, các giá trị: verified / partial) trước các hồ sơ khác; (2) số LOẠI thông số của chính dòng
+  // (`new Set(u.specs.map(key)).size`, không trần, khác `3 * min(.., 6)` trong điểm) nhiều hơn trước.
+  const verifiedOf = (r) => (sup.get(r.u.supplierId)?.status === "verified" ? 0 : 1);
+  const specN = (r) => new Set((r.u.specs || []).map((f) => f.key)).size;
+  const rowOrder = (x, y) => y.score - x.score || gap(x) - gap(y) || verifiedOf(x) - verifiedOf(y) || specN(y) - specN(x) || hashOf(x) - hashOf(y) || cmpStr(choiceKey(x), choiceKey(y)) || cmpStr(String(x.u.other || ""), String(y.u.other || ""));
   rows.sort(rowOrder);
   // Chọn dòng hai lần khi luật B bật (Khoa 20/11/2026, đo cloud: B đẩy cả dòng hạng 1 cũ khỏi 30 dòng): `choose(false)` là
   // xếp hạng cũ; `choose(true, 5 dòng đầu của nó)` giữ 5 dòng đó ở hạng 1–5 (vẫn tính vào trần mỗi động cơ / NCC / hãng),
