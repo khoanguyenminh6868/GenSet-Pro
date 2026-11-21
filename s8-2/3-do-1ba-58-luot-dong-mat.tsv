@@ -1,0 +1,590 @@
+lượt	NCC	khoá động cơ	luật	ngưỡng gói	số so	đường	lệch	phiếu nhánh (giá trị: NCC)
+IB2200004914#0	genmac	NEF67TM4	maxDisp	5.89	6.7	mọi nguồn	13.2521%	{"6.7": ["tecnogen"]}
+IB2200004914#0	genmac	NEF67TM4	maxDisp	5.89	6.7	mọi nguồn	13.2521%	{"6.7": ["tecnogen"]}
+IB2200004914#0	mase-generators	NEF67TM4	maxDisp	5.89	6.7	mọi nguồn	13.2521%	{"6.7": ["tecnogen"]}
+IB2200032133#0	agg-fuzhou	DC13072A0212	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2200032133#0	agg-fuzhou	DC13072A0212	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2200032133#0	agg-fuzhou	DC13072A0213	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2200032133#0	agg-fuzhou	DC13072A0213	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2200032133#0	agg-fuzhou	DC13072A0214	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2200032133#0	agg-fuzhou	DC13072A0214	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2200032133#0	agg-fuzhou	TAD1344GEB	maxDisp	12.5	12.78	số đông	1.7400%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2200032133#0	agg-fuzhou	TAD1344GEB	maxDisp	12.5	12.78	số đông	1.7400%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2200032133#0	agg-power	DC13072A0214	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2200032133#0	aj-power	DC13072A0213	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2200032133#0	aj-power	DC13072A0214	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2200032133#0	cgm-italia	DC13072A0214	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2200032133#0	coelmo	CURSOR16TE1W	maxDisp	12.5	15.9	mọi nguồn	26.7000%	{"15.9": ["tecnogen"]}
+IB2200032133#0	comappower	TAD1344GEB	maxDisp	12.5	12.78	số đông	1.7400%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2200032133#0	genmac	CURSOR16TE1W	maxDisp	12.5	15.9	mọi nguồn	26.7000%	{"15.9": ["tecnogen"]}
+IB2200032133#0	kaihua-genset	DC13072A0212	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2200032133#0	kaihua-genset	DC13072A0213	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2200032133#0	kaihua-genset	DC13072A0214	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2200032133#0	kaihua-genset	DC13072A0214	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2200032133#0	lees-power	TAD1344GEB	maxDisp	12.5	12.78	số đông	1.7400%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2200032133#0	long-gen	TAD1344GEB	maxDisp	12.5	12.78	số đông	1.7400%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2200032133#0	mecca-power	CURSOR16TE1W	maxDisp	12.5	15.9	mọi nguồn	26.7000%	{"15.9": ["tecnogen"]}
+IB2200032133#0	mecca-power	TAD1344GEB	maxDisp	12.5	12.78	số đông	1.7400%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2200032133#0	mpmc-powertech	DC13072A0214	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2200032133#0	voltgent	DC13072A0212	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2200032133#0	voltgent	DC13072A0213	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2200032133#0	voltgent	DC13072A0214	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2200032133#0	yanan-power	TAD1344GEB	maxDisp	12.5	12.78	số đông	1.7400%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2200049662#0	agg-fuzhou	DC13072A0214	minDisp	19	12.7	mọi nguồn	33.1579%	{"12.7": ["tecnogen"]}
+IB2200049662#0	agg-fuzhou	DC13072A0214	minDisp	19	12.7	mọi nguồn	33.1579%	{"12.7": ["tecnogen"]}
+IB2200049662#0	agg-power	DC13072A0214	minDisp	19	12.7	mọi nguồn	33.1579%	{"12.7": ["tecnogen"]}
+IB2200049662#0	aj-power	DC13072A0214	minDisp	19	12.7	mọi nguồn	33.1579%	{"12.7": ["tecnogen"]}
+IB2200049662#0	cgm-italia	DC13072A0214	minDisp	19	12.7	mọi nguồn	33.1579%	{"12.7": ["tecnogen"]}
+IB2200049662#0	coelmo	CURSOR16TE1W	minDisp	19	15.9	mọi nguồn	16.3158%	{"15.9": ["tecnogen"]}
+IB2200049662#0	genmac	CURSOR16TE1W	minDisp	19	15.9	mọi nguồn	16.3158%	{"15.9": ["tecnogen"]}
+IB2200049662#0	kaihua-genset	DC13072A0213	minDisp	19	12.7	mọi nguồn	33.1579%	{"12.7": ["tecnogen"]}
+IB2200049662#0	kaihua-genset	DC13072A0214	minDisp	19	12.7	mọi nguồn	33.1579%	{"12.7": ["tecnogen"]}
+IB2200049662#0	kaihua-genset	DC13072A0214	minDisp	19	12.7	mọi nguồn	33.1579%	{"12.7": ["tecnogen"]}
+IB2200049662#0	mecca-power	CURSOR16TE1W	minDisp	19	15.9	mọi nguồn	16.3158%	{"15.9": ["tecnogen"]}
+IB2200049662#0	mpmc-powertech	DC13072A0214	minDisp	19	12.7	mọi nguồn	33.1579%	{"12.7": ["tecnogen"]}
+IB2200049662#0	voltgent	DC13072A0214	minDisp	19	12.7	mọi nguồn	33.1579%	{"12.7": ["tecnogen"]}
+IB2200069185#0	aosif	QSB7G4	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2200069185#0	aosif	QSB7G4	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2200069185#0	huadong-yangzhou	QSB7G4	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2200069185#0	mecca-power	QSB7G4	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2200069185#0	sanq-power	QSB7G4	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2200069185#0	sanq-power	QSB7G4	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2200069185#0	yanfa-yancheng	QSB7G4	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2200082109#0	sr-genset	CURSOR87TE3F	minDisp	9.726	8.7	mọi nguồn	10.5490%	{"8.7": ["tecnogen"]}
+IB2300042675#0	sr-genset	CURSOR87TE3F	minDisp	11.051	8.7	mọi nguồn	21.2741%	{"8.7": ["tecnogen"]}
+IB2300127113#0	agg-fuzhou	DC13072A0211	minDisp	14	12.7	mọi nguồn	9.2857%	{"12.7": ["tecnogen"]}
+IB2300127113#0	agg-fuzhou	DC13072A0211	minDisp	14	12.7	mọi nguồn	9.2857%	{"12.7": ["tecnogen"]}
+IB2300127113#0	agg-fuzhou	DC13072A0211	minDisp	14	12.7	mọi nguồn	9.2857%	{"12.7": ["tecnogen"]}
+IB2300127113#0	agg-fuzhou	DC13072A0211	minDisp	14	12.7	mọi nguồn	9.2857%	{"12.7": ["tecnogen"]}
+IB2300127113#0	agg-fuzhou	DC13072A0212	minDisp	14	12.7	mọi nguồn	9.2857%	{"12.7": ["tecnogen"]}
+IB2300127113#0	agg-fuzhou	DC13072A0212	minDisp	14	12.7	mọi nguồn	9.2857%	{"12.7": ["tecnogen"]}
+IB2300127113#0	kaihua-genset	DC13071A0201	minDisp	14	12.7	mọi nguồn	9.2857%	{"12.7": ["tecnogen"]}
+IB2300127113#0	kaihua-genset	DC13071A0201	minDisp	14	12.7	mọi nguồn	9.2857%	{"12.7": ["tecnogen"]}
+IB2300127113#0	kaihua-genset	DC13071A0202	minDisp	14	12.7	mọi nguồn	9.2857%	{"12.7": ["tecnogen"]}
+IB2300127113#0	kaihua-genset	DC13072A0211	minDisp	14	12.7	mọi nguồn	9.2857%	{"12.7": ["tecnogen"]}
+IB2300127113#0	kaihua-genset	DC13072A0212	minDisp	14	12.7	mọi nguồn	9.2857%	{"12.7": ["tecnogen"]}
+IB2300127113#0	mecca-power	CURSOR13TE2A	minDisp	14	12.9	mọi nguồn	7.8571%	{"12.9": ["tecnogen"]}
+IB2300127113#0	mecca-power	CURSOR13TE2A	minDisp	14	12.9	mọi nguồn	7.8571%	{"12.9": ["tecnogen"]}
+IB2300127113#0	mecca-power	CURSOR13TE3A	minDisp	14	12.9	mọi nguồn	7.8571%	{"12.9": ["tecnogen"]}
+IB2300127113#0	mpmc-powertech	DC13071A0201	minDisp	14	12.7	mọi nguồn	9.2857%	{"12.7": ["tecnogen"]}
+IB2300127113#0	mpmc-powertech	DC13071A0202	minDisp	14	12.7	mọi nguồn	9.2857%	{"12.7": ["tecnogen"]}
+IB2300127113#0	mpmc-powertech	DC13072A0211	minDisp	14	12.7	mọi nguồn	9.2857%	{"12.7": ["tecnogen"]}
+IB2300127113#0	mpmc-powertech	DC13072A0212	minDisp	14	12.7	mọi nguồn	9.2857%	{"12.7": ["tecnogen"]}
+IB2300127113#0	sr-genset	CURSOR13TE2F	minDisp	14	12.88	mọi nguồn	8.0000%	{"12.88": ["tecnogen"]}
+IB2300127113#0	voltgent	DC13072A0211	minDisp	14	12.7	mọi nguồn	9.2857%	{"12.7": ["tecnogen"]}
+IB2300127113#0	voltgent	DC13072A0211	minDisp	14	12.7	mọi nguồn	9.2857%	{"12.7": ["tecnogen"]}
+IB2300127113#0	voltgent	DC13072A0212	minDisp	14	12.7	mọi nguồn	9.2857%	{"12.7": ["tecnogen"]}
+IB2300158982#0	aosif	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2300158982#0	fdk-energy	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2300158982#0	fdk-energy	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2300158982#0	huadong-yangzhou	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2300158982#0	legapower	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2300158982#0	mecca-power	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2300158982#0	mecca-power	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2300158982#0	sanq-power	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2300158982#0	sanq-power	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2300158982#0	sr-genset	CURSOR87TE3F	minDisp	8.9	8.7	mọi nguồn	2.2472%	{"8.7": ["tecnogen"]}
+IB2300158982#0	yanfa-yancheng	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2300158982#0	yanfa-yancheng	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2300215868#0	agg-fuzhou	DC09072A0211	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	agg-fuzhou	DC09072A0211	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	agg-fuzhou	DC09072A0211	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	agg-fuzhou	DC09072A0211	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	agg-fuzhou	DC09072A0212	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	agg-fuzhou	DC09072A0212	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	agg-fuzhou	DC09072A0213	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	agg-fuzhou	DC09072A0213	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	agg-power	DC09072A0212	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	agg-power	DC09072A0213	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	cgm-italia	DC09071A0201	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	cgm-italia	DC09071A0202	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	cgm-italia	DC09071A0203	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	cgm-italia	DC09072A0211	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	cgm-italia	DC09072A0212	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	cgm-italia	DC09072A0213	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	coelmo	DC09072A0212	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	kaihua-genset	DC09071A0201	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	kaihua-genset	DC09071A0201	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	kaihua-genset	DC09071A0202	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	kaihua-genset	DC09072A0211	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	kaihua-genset	DC09072A0211	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	kaihua-genset	DC09072A0212	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	mpmc-powertech	DC09071A0202	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	mpmc-powertech	DC09071A0203	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	mpmc-powertech	DC09072A0211	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	sr-genset	CURSOR87TE3F	maxDisp	6.8	8.7	mọi nguồn	27.4412%	{"8.7": ["tecnogen"]}
+IB2300215868#0	voltgent	DC09072A0211	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	voltgent	DC09072A0211	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	voltgent	DC09072A0212	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300215868#0	voltgent	DC09072A0213	maxDisp	6.8	9.3	mọi nguồn	36.2647%	{"9.3": ["tecnogen"]}
+IB2300220302#0	aosif	QSB7G4	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2300220302#0	aosif	QSB7G5	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2300220302#0	huadong-yangzhou	QSB7G5	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2300220302#0	legapower	QSB7G5	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2300220302#0	mecca-power	QSB7G4	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2300220302#0	mecca-power	QSB7G5	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2300220302#0	mecca-power	QSB7G5	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2300220302#0	sanq-power	QSB7G4	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2300220302#0	sanq-power	QSB7G4	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2300220302#0	sanq-power	QSB7G5	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2300220302#0	sanq-power	QSB7G5	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2300220302#0	yanfa-yancheng	QSB7G4	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2300220302#0	yanfa-yancheng	QSB7G4	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2300220302#0	yanfa-yancheng	QSB7G5	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2300220302#0	yanfa-yancheng	QSB7G5	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2300230061#0	genmac	NEF67TM4	maxDisp	5.9	6.7	mọi nguồn	13.0593%	{"6.7": ["tecnogen"]}
+IB2300230061#0	genmac	NEF67TM4	maxDisp	5.9	6.7	mọi nguồn	13.0593%	{"6.7": ["tecnogen"]}
+IB2300230061#0	mase-generators	NEF67TM4	maxDisp	5.9	6.7	mọi nguồn	13.0593%	{"6.7": ["tecnogen"]}
+IB2300278731#0	energy-gruppi	NEF45TM2A	minDisp	5.9	4.5	mọi nguồn	23.7288%	{"4.5": ["tecnogen"]}
+IB2300278731#0	genesal-energy	NEF45TM2A	minDisp	5.9	4.5	mọi nguồn	23.7288%	{"4.5": ["tecnogen"]}
+IB2300278731#0	genmac	NEF45TM3	minDisp	5.9	4.5	mọi nguồn	23.7288%	{"4.5": ["tecnogen"]}
+IB2300278731#0	mase-generators	NEF45TM2A	minDisp	5.9	4.5	mọi nguồn	23.7288%	{"4.5": ["tecnogen"]}
+IB2300288169#0	agg-fuzhou	TAD1342GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	agg-fuzhou	TAD1342GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	agg-fuzhou	TAD1343GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.3": ["bdadl-shanghai"]}
+IB2300288169#0	agg-fuzhou	TAD1343GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.3": ["bdadl-shanghai"]}
+IB2300288169#0	agg-fuzhou	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	agg-fuzhou	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	agg-fuzhou	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	agg-fuzhou	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	comappower	TAD1343GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.3": ["bdadl-shanghai"]}
+IB2300288169#0	comappower	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	comappower	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	jet-power	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	kaihua-genset	TAD1342GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	kaihua-genset	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	kaihua-genset	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	kangwo-guangdong	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	lees-power	TAD1342GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	lees-power	TAD1343GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.3": ["bdadl-shanghai"]}
+IB2300288169#0	lees-power	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	lees-power	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	long-gen	TAD1342GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	long-gen	TAD1343GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.3": ["bdadl-shanghai"]}
+IB2300288169#0	long-gen	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	long-gen	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	mecca-power	CURSOR13TE3A	maxDisp	12.7	12.9	mọi nguồn	1.0748%	{"12.9": ["tecnogen"]}
+IB2300288169#0	mecca-power	CURSOR13TE3A	maxDisp	12.7	12.9	mọi nguồn	1.0748%	{"12.9": ["tecnogen"]}
+IB2300288169#0	mecca-power	TAD1343GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.3": ["bdadl-shanghai"]}
+IB2300288169#0	mecca-power	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	mecca-power	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	rcg-power	TAD1343GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.3": ["bdadl-shanghai"]}
+IB2300288169#0	rcg-power	TAD1343GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.3": ["bdadl-shanghai"]}
+IB2300288169#0	rcg-power	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	rcg-power	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	sr-genset	CURSOR13TE2F	maxDisp	12.7	12.88	mọi nguồn	0.9173%	{"12.88": ["tecnogen"]}
+IB2300288169#0	sr-genset	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	walter-yangzhou	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	xingguang-jiangsu	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	yanan-power	TAD1342GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300288169#0	yanan-power	TAD1343GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.3": ["bdadl-shanghai"]}
+IB2300288169#0	yanan-power	TAD1344GEB	maxDisp	12.7	12.78	số đông	0.1299%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2300329776#0	cgm-italia	KDW1404	minDisp	1.64	1.372	mọi nguồn	16.3415%	{"1.372": ["tecnogen"]}
+IB2300335255#0	genesal-energy	NEF67TM7	minDisp	8	6.7	mọi nguồn	16.2500%	{"6.7": ["tecnogen"]}
+IB2300335255#0	genmac	NEF67TM7	minDisp	8	6.7	mọi nguồn	16.2500%	{"6.7": ["tecnogen"]}
+IB2300335255#0	mase-generators	NEF67TM7	minDisp	8	6.7	mọi nguồn	16.2500%	{"6.7": ["tecnogen"]}
+IB2300364915#0	agg-fuzhou	DC16093A0252	maxDisp	14.6	16.4	mọi nguồn	11.8288%	{"16.4": ["tecnogen"]}
+IB2300364915#0	agg-fuzhou	DC16093A0252	maxDisp	14.6	16.4	mọi nguồn	11.8288%	{"16.4": ["tecnogen"]}
+IB2300364915#0	agg-fuzhou	DC16093A0252	maxDisp	14.6	16.4	mọi nguồn	11.8288%	{"16.4": ["tecnogen"]}
+IB2300364915#0	agg-fuzhou	DC16093A0252	maxDisp	14.6	16.4	mọi nguồn	11.8288%	{"16.4": ["tecnogen"]}
+IB2300364915#0	aj-power	DC16093A0252	maxDisp	14.6	16.4	mọi nguồn	11.8288%	{"16.4": ["tecnogen"]}
+IB2300364915#0	cgm-italia	DC16071A0201	maxDisp	14.6	16.4	mọi nguồn	11.8288%	{"16.4": ["tecnogen"]}
+IB2300364915#0	cgm-italia	DC16071A0202	maxDisp	14.6	16.4	mọi nguồn	11.8288%	{"16.4": ["tecnogen"]}
+IB2300364915#0	cgm-italia	DC16093A0252	maxDisp	14.6	16.4	mọi nguồn	11.8288%	{"16.4": ["tecnogen"]}
+IB2300364915#0	cgm-italia	DC16093A0254	maxDisp	14.6	16.4	mọi nguồn	11.8288%	{"16.4": ["tecnogen"]}
+IB2300364915#0	coelmo	CURSOR16TE1W	maxDisp	14.6	15.9	mọi nguồn	8.4041%	{"15.9": ["tecnogen"]}
+IB2300364915#0	genmac	CURSOR16TE1W	maxDisp	14.6	15.9	mọi nguồn	8.4041%	{"15.9": ["tecnogen"]}
+IB2300364915#0	kaihua-genset	DC16071A0201	maxDisp	14.6	16.4	mọi nguồn	11.8288%	{"16.4": ["tecnogen"]}
+IB2300364915#0	kaihua-genset	DC16071A0202	maxDisp	14.6	16.4	mọi nguồn	11.8288%	{"16.4": ["tecnogen"]}
+IB2300364915#0	kaihua-genset	DC16093A0252	maxDisp	14.6	16.4	mọi nguồn	11.8288%	{"16.4": ["tecnogen"]}
+IB2300364915#0	mecca-power	CURSOR16TE1W	maxDisp	14.6	15.9	mọi nguồn	8.4041%	{"15.9": ["tecnogen"]}
+IB2300364915#0	mpmc-powertech	DC16071A0201	maxDisp	14.6	16.4	mọi nguồn	11.8288%	{"16.4": ["tecnogen"]}
+IB2300364915#0	mpmc-powertech	DC16071A0202	maxDisp	14.6	16.4	mọi nguồn	11.8288%	{"16.4": ["tecnogen"]}
+IB2300364915#0	mpmc-powertech	DC16093A0252	maxDisp	14.6	16.4	mọi nguồn	11.8288%	{"16.4": ["tecnogen"]}
+IB2400041536#0	agg-fuzhou	DC13072A0212	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2400041536#0	agg-fuzhou	DC13072A0212	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2400041536#0	agg-fuzhou	DC13072A0213	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2400041536#0	agg-fuzhou	DC13072A0213	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2400041536#0	kaihua-genset	DC13071A0201	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2400041536#0	kaihua-genset	DC13071A0202	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2400041536#0	kaihua-genset	DC13072A0211	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2400041536#0	kaihua-genset	DC13072A0212	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2400041536#0	kaihua-genset	DC13072A0212	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2400041536#0	kaihua-genset	DC13072A0213	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2400041536#0	mecca-power	CURSOR13TE3A	minDisp	13	12.9	mọi nguồn	0.7692%	{"12.9": ["tecnogen"]}
+IB2400041536#0	mecca-power	CURSOR13TE3A	minDisp	13	12.9	mọi nguồn	0.7692%	{"12.9": ["tecnogen"]}
+IB2400041536#0	mpmc-powertech	DC13071A0202	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2400041536#0	mpmc-powertech	DC13072A0212	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2400041536#0	voltgent	DC13072A0211	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2400041536#0	voltgent	DC13072A0212	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2400041536#0	voltgent	DC13072A0213	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2400164837#0	genmac	KDI2504M	minDisp	2.672	2.482	mọi nguồn	7.1108%	{"2.482": ["tecnogen"]}
+IB2400164837#0	jcb-power	KDI2504M	minDisp	2.672	2.482	mọi nguồn	7.1108%	{"2.482": ["tecnogen"]}
+IB2400216393#0	aosif	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2400216393#0	aosif	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2400216393#0	fdk-energy	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2400216393#0	fdk-energy	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2400216393#0	huadong-yangzhou	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2400216393#0	legapower	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2400216393#0	mecca-power	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2400216393#0	mecca-power	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2400216393#0	sanq-power	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2400216393#0	sanq-power	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2400216393#0	sr-genset	CURSOR87TE3F	minDisp	8.9	8.7	mọi nguồn	2.2472%	{"8.7": ["tecnogen"]}
+IB2400216393#0	yanfa-yancheng	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2400216393#0	yanfa-yancheng	QSL9G3	minDisp	8.9	8.8	số đông	1.1236%	{"8.9": ["aosif"], "8.8": ["fdk-energy", "tecnogen", "yingtai-jiangsu"]}
+IB2400236068#0	agg-fuzhou	DC13072A0212	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2400236068#0	agg-fuzhou	DC13072A0212	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2400236068#0	agg-fuzhou	DC13072A0213	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2400236068#0	agg-fuzhou	DC13072A0213	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2400236068#0	agg-fuzhou	DC13072A0214	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2400236068#0	agg-fuzhou	DC13072A0214	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2400236068#0	agg-fuzhou	TAD1344GEB	maxDisp	12.5	12.78	số đông	1.7400%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2400236068#0	agg-fuzhou	TAD1344GEB	maxDisp	12.5	12.78	số đông	1.7400%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2400236068#0	agg-power	DC13072A0214	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2400236068#0	aj-power	DC13072A0213	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2400236068#0	aj-power	DC13072A0214	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2400236068#0	cgm-italia	DC13072A0214	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2400236068#0	coelmo	CURSOR16TE1W	maxDisp	12.5	15.9	mọi nguồn	26.7000%	{"15.9": ["tecnogen"]}
+IB2400236068#0	comappower	TAD1344GEB	maxDisp	12.5	12.78	số đông	1.7400%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2400236068#0	genmac	CURSOR16TE1W	maxDisp	12.5	15.9	mọi nguồn	26.7000%	{"15.9": ["tecnogen"]}
+IB2400236068#0	kaihua-genset	DC13072A0212	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2400236068#0	kaihua-genset	DC13072A0213	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2400236068#0	kaihua-genset	DC13072A0214	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2400236068#0	kaihua-genset	DC13072A0214	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2400236068#0	lees-power	TAD1344GEB	maxDisp	12.5	12.78	số đông	1.7400%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2400236068#0	long-gen	TAD1344GEB	maxDisp	12.5	12.78	số đông	1.7400%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2400236068#0	mecca-power	CURSOR16TE1W	maxDisp	12.5	15.9	mọi nguồn	26.7000%	{"15.9": ["tecnogen"]}
+IB2400236068#0	mecca-power	TAD1344GEB	maxDisp	12.5	12.78	số đông	1.7400%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2400236068#0	mpmc-powertech	DC13072A0214	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2400236068#0	voltgent	DC13072A0212	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2400236068#0	voltgent	DC13072A0213	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2400236068#0	voltgent	DC13072A0214	maxDisp	12.5	12.7	mọi nguồn	1.1000%	{"12.7": ["tecnogen"]}
+IB2400236068#0	yanan-power	TAD1344GEB	maxDisp	12.5	12.78	số đông	1.7400%	{"12.78": ["tecnogen", "tellhow-power", "volvo-penta"], "12.1": ["bdadl-shanghai"]}
+IB2400236068#1	coelmo	CURSOR16TE1W	maxDisp	15.2	15.9	mọi nguồn	4.1053%	{"15.9": ["tecnogen"]}
+IB2400236068#1	mecca-power	CURSOR16TE1W	maxDisp	15.2	15.9	mọi nguồn	4.1053%	{"15.9": ["tecnogen"]}
+IB2400236068#1	mecca-power	CURSOR16TE1W	maxDisp	15.2	15.9	mọi nguồn	4.1053%	{"15.9": ["tecnogen"]}
+IB2400275648#1	genmac	KDI3404TM	minDisp	4.5	3.4	mọi nguồn	24.4444%	{"3.4": ["tecnogen"]}
+IB2400298819#0	sr-genset	CURSOR87TE3F	minDisp	11.051	8.7	mọi nguồn	21.2741%	{"8.7": ["tecnogen"]}
+IB2400299108#1	genmac	KDI3404TM	minDisp	3.5	3.4	mọi nguồn	2.8571%	{"3.4": ["tecnogen"]}
+IB2400299108#2	energy-gruppi	NEF45TM2A	minDisp	5.5	4.5	mọi nguồn	18.1818%	{"4.5": ["tecnogen"]}
+IB2400299108#2	genesal-energy	NEF45TM2A	minDisp	5.5	4.5	mọi nguồn	18.1818%	{"4.5": ["tecnogen"]}
+IB2400299108#2	genmac	NEF45TM3	minDisp	5.5	4.5	mọi nguồn	18.1818%	{"4.5": ["tecnogen"]}
+IB2400299108#2	mase-generators	NEF45TM2A	minDisp	5.5	4.5	mọi nguồn	18.1818%	{"4.5": ["tecnogen"]}
+IB2400317224#0	cgm-italia	KDW1404	minDisp	1.6	1.372	mọi nguồn	14.2500%	{"1.372": ["tecnogen"]}
+IB2400339967#0	cgm-italia	KDW1404	minDisp	2.2	1.372	mọi nguồn	37.6364%	{"1.372": ["tecnogen"]}
+IB2400362865#0	genmac	NEF67TM4	minDisp	7.01	6.7	mọi nguồn	4.4223%	{"6.7": ["tecnogen"]}
+IB2400375383#1	agg-fuzhou	DC09072A0211	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	agg-fuzhou	DC09072A0211	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	agg-fuzhou	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	agg-fuzhou	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	agg-fuzhou	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	agg-fuzhou	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	agg-fuzhou	DC09072A0213	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	agg-fuzhou	DC09072A0213	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	agg-fuzhou	DC09072A0213	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	agg-fuzhou	DC09072A0213	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	agg-fuzhou	DC09072A0214	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	agg-fuzhou	DC09072A0214	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	agg-power	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	agg-power	DC09072A0213	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	agg-power	DC09072A0214	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	aj-power	DC13072A0211	maxDisp	8.8	12.7	mọi nguồn	43.8182%	{"12.7": ["tecnogen"]}
+IB2400375383#1	cgm-italia	DC09071A0202	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	cgm-italia	DC09071A0203	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	cgm-italia	DC09071A0204	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	cgm-italia	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	cgm-italia	DC09072A0213	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	cgm-italia	DC09072A0214	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	genmac	CURSOR13TE2A	maxDisp	8.8	12.9	mọi nguồn	46.0909%	{"12.9": ["tecnogen"]}
+IB2400375383#1	kaihua-genset	DC09071A0202	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	kaihua-genset	DC09071A0203	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	kaihua-genset	DC09071A0203	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	kaihua-genset	DC09071A0204	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	kaihua-genset	DC09071A0204	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	kaihua-genset	DC09072A0211	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	kaihua-genset	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	kaihua-genset	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	kaihua-genset	DC09072A0213	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	kaihua-genset	DC09072A0213	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	kaihua-genset	DC09072A0214	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	mecca-power	CURSOR13TE2A	maxDisp	8.8	12.9	mọi nguồn	46.0909%	{"12.9": ["tecnogen"]}
+IB2400375383#1	mpmc-powertech	DC09071A0203	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	mpmc-powertech	DC09071A0204	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	mpmc-powertech	DC09072A0211	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	mpmc-powertech	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	mpmc-powertech	DC09072A0214	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	voltgent	DC09072A0211	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	voltgent	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	voltgent	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	voltgent	DC09072A0213	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	voltgent	DC09072A0213	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400375383#1	voltgent	DC09072A0214	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400439995#0	sr-genset	CURSOR87TE3F	minDisp	11.051	8.7	mọi nguồn	21.2741%	{"8.7": ["tecnogen"]}
+IB2400440257#0	genmac	KDI2504M	minDisp	2.672	2.482	mọi nguồn	7.1108%	{"2.482": ["tecnogen"]}
+IB2400440257#0	jcb-power	KDI2504M	minDisp	2.672	2.482	mọi nguồn	7.1108%	{"2.482": ["tecnogen"]}
+IB2400448320#1	agg-fuzhou	DC09072A0211	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	agg-fuzhou	DC09072A0211	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	agg-fuzhou	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	agg-fuzhou	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	agg-fuzhou	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	agg-fuzhou	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	agg-fuzhou	DC09072A0213	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	agg-fuzhou	DC09072A0213	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	agg-fuzhou	DC09072A0213	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	agg-fuzhou	DC09072A0213	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	agg-fuzhou	DC09072A0214	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	agg-fuzhou	DC09072A0214	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	agg-power	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	agg-power	DC09072A0213	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	agg-power	DC09072A0214	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	aj-power	DC13072A0211	maxDisp	8.8	12.7	mọi nguồn	43.8182%	{"12.7": ["tecnogen"]}
+IB2400448320#1	cgm-italia	DC09071A0202	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	cgm-italia	DC09071A0203	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	cgm-italia	DC09071A0204	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	cgm-italia	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	cgm-italia	DC09072A0213	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	cgm-italia	DC09072A0214	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	genmac	CURSOR13TE2A	maxDisp	8.8	12.9	mọi nguồn	46.0909%	{"12.9": ["tecnogen"]}
+IB2400448320#1	kaihua-genset	DC09071A0202	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	kaihua-genset	DC09071A0203	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	kaihua-genset	DC09071A0203	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	kaihua-genset	DC09071A0204	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	kaihua-genset	DC09071A0204	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	kaihua-genset	DC09072A0211	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	kaihua-genset	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	kaihua-genset	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	kaihua-genset	DC09072A0213	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	kaihua-genset	DC09072A0213	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	kaihua-genset	DC09072A0214	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	mecca-power	CURSOR13TE2A	maxDisp	8.8	12.9	mọi nguồn	46.0909%	{"12.9": ["tecnogen"]}
+IB2400448320#1	mpmc-powertech	DC09071A0203	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	mpmc-powertech	DC09071A0204	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	mpmc-powertech	DC09072A0211	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	mpmc-powertech	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	mpmc-powertech	DC09072A0214	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	voltgent	DC09072A0211	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	voltgent	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	voltgent	DC09072A0212	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	voltgent	DC09072A0213	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	voltgent	DC09072A0213	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400448320#1	voltgent	DC09072A0214	maxDisp	8.8	9.3	mọi nguồn	5.1818%	{"9.3": ["tecnogen"]}
+IB2400481114#0	sr-genset	CURSOR87TE3F	maxDisp	8	8.7	mọi nguồn	8.2500%	{"8.7": ["tecnogen"]}
+IB2400491226#0	genesal-energy	NEF67TM7	minDisp	7.47	6.7	mọi nguồn	10.3079%	{"6.7": ["tecnogen"]}
+IB2400491226#0	genmac	NEF67TM7	minDisp	7.47	6.7	mọi nguồn	10.3079%	{"6.7": ["tecnogen"]}
+IB2400491226#0	mase-generators	NEF67TM7	minDisp	7.47	6.7	mọi nguồn	10.3079%	{"6.7": ["tecnogen"]}
+IB2400503492#0	coelmo	CURSOR16TE1W	minDisp	19.6	15.9	mọi nguồn	18.8776%	{"15.9": ["tecnogen"]}
+IB2400503492#0	genmac	CURSOR16TE1W	minDisp	19.6	15.9	mọi nguồn	18.8776%	{"15.9": ["tecnogen"]}
+IB2400560277#0	genesal-energy	NEF67TM7	minDisp	8.8	6.7	mọi nguồn	23.8636%	{"6.7": ["tecnogen"]}
+IB2400560277#0	genmac	NEF67TM7	minDisp	8.8	6.7	mọi nguồn	23.8636%	{"6.7": ["tecnogen"]}
+IB2400560277#0	mase-generators	NEF67TM7	minDisp	8.8	6.7	mọi nguồn	23.8636%	{"6.7": ["tecnogen"]}
+IB2500017038#0	genmac	NEF67TM7	minDisp	8.8	6.7	mọi nguồn	23.8636%	{"6.7": ["tecnogen"]}
+IB2500017038#0	mase-generators	NEF67TM7	minDisp	8.8	6.7	mọi nguồn	23.8636%	{"6.7": ["tecnogen"]}
+IB2500271735#0	genesal-energy	NEF67TM7	minDisp	7.98	6.7	mọi nguồn	16.0401%	{"6.7": ["tecnogen"]}
+IB2500271735#0	genmac	NEF67TM7	minDisp	7.98	6.7	mọi nguồn	16.0401%	{"6.7": ["tecnogen"]}
+IB2500271735#0	mase-generators	NEF67TM7	minDisp	7.98	6.7	mọi nguồn	16.0401%	{"6.7": ["tecnogen"]}
+IB2500291421#1	mecca-power	CURSOR16TE1W	minDisp	23.15	15.9	mọi nguồn	31.3175%	{"15.9": ["tecnogen"]}
+IB2500291421#1	mecca-power	CURSOR16TE1W	minDisp	23.15	15.9	mọi nguồn	31.3175%	{"15.9": ["tecnogen"]}
+IB2500314401#0	agg-fuzhou	DC13072A0211	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	agg-fuzhou	DC13072A0211	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	agg-fuzhou	DC13072A0211	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	agg-fuzhou	DC13072A0211	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	agg-fuzhou	DC13072A0212	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	agg-fuzhou	DC13072A0212	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	agg-power	DC13072A0211	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	aj-power	DC13072A0211	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	aj-power	DC13072A0211	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	aj-power	DC13072A0212	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	aj-power	DC13072A0212	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	cgm-italia	DC13071A0201	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	cgm-italia	DC13072A0211	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	cgm-italia	DC13072A0212	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	genmac	CURSOR13TE2A	maxDisp	9.84	12.9	mọi nguồn	30.5976%	{"12.9": ["tecnogen"]}
+IB2500314401#0	genmac	CURSOR13TE2F	maxDisp	9.84	12.88	mọi nguồn	30.3943%	{"12.88": ["tecnogen"]}
+IB2500314401#0	genmac	CURSOR13TE3A	maxDisp	9.84	12.9	mọi nguồn	30.5976%	{"12.9": ["tecnogen"]}
+IB2500314401#0	kaihua-genset	DC13071A0201	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	kaihua-genset	DC13071A0201	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	kaihua-genset	DC13071A0202	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	kaihua-genset	DC13072A0211	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	kaihua-genset	DC13072A0212	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	mecca-power	CURSOR13TE2A	maxDisp	9.84	12.9	mọi nguồn	30.5976%	{"12.9": ["tecnogen"]}
+IB2500314401#0	mecca-power	CURSOR13TE2A	maxDisp	9.84	12.9	mọi nguồn	30.5976%	{"12.9": ["tecnogen"]}
+IB2500314401#0	mecca-power	CURSOR13TE3A	maxDisp	9.84	12.9	mọi nguồn	30.5976%	{"12.9": ["tecnogen"]}
+IB2500314401#0	mpmc-powertech	DC13071A0201	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	mpmc-powertech	DC13071A0202	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	mpmc-powertech	DC13072A0211	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	mpmc-powertech	DC13072A0212	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	sr-genset	CURSOR13TE2F	maxDisp	9.84	12.88	mọi nguồn	30.3943%	{"12.88": ["tecnogen"]}
+IB2500314401#0	voltgent	DC13072A0211	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	voltgent	DC13072A0211	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500314401#0	voltgent	DC13072A0212	maxDisp	9.84	12.7	mọi nguồn	28.5650%	{"12.7": ["tecnogen"]}
+IB2500364714#0	agg-fuzhou	DC13072A0214	minDisp	18.8	12.7	mọi nguồn	32.4468%	{"12.7": ["tecnogen"]}
+IB2500364714#0	agg-fuzhou	DC13072A0214	minDisp	18.8	12.7	mọi nguồn	32.4468%	{"12.7": ["tecnogen"]}
+IB2500364714#0	agg-power	DC13072A0214	minDisp	18.8	12.7	mọi nguồn	32.4468%	{"12.7": ["tecnogen"]}
+IB2500364714#0	aj-power	DC13072A0214	minDisp	18.8	12.7	mọi nguồn	32.4468%	{"12.7": ["tecnogen"]}
+IB2500364714#0	cgm-italia	DC13072A0214	minDisp	18.8	12.7	mọi nguồn	32.4468%	{"12.7": ["tecnogen"]}
+IB2500364714#0	coelmo	CURSOR16TE1W	minDisp	18.8	15.9	mọi nguồn	15.4255%	{"15.9": ["tecnogen"]}
+IB2500364714#0	genmac	CURSOR16TE1W	minDisp	18.8	15.9	mọi nguồn	15.4255%	{"15.9": ["tecnogen"]}
+IB2500364714#0	kaihua-genset	DC13072A0213	minDisp	18.8	12.7	mọi nguồn	32.4468%	{"12.7": ["tecnogen"]}
+IB2500364714#0	kaihua-genset	DC13072A0214	minDisp	18.8	12.7	mọi nguồn	32.4468%	{"12.7": ["tecnogen"]}
+IB2500364714#0	kaihua-genset	DC13072A0214	minDisp	18.8	12.7	mọi nguồn	32.4468%	{"12.7": ["tecnogen"]}
+IB2500364714#0	mecca-power	CURSOR16TE1W	minDisp	18.8	15.9	mọi nguồn	15.4255%	{"15.9": ["tecnogen"]}
+IB2500364714#0	mpmc-powertech	DC13072A0214	minDisp	18.8	12.7	mọi nguồn	32.4468%	{"12.7": ["tecnogen"]}
+IB2500364714#0	voltgent	DC13072A0214	minDisp	18.8	12.7	mọi nguồn	32.4468%	{"12.7": ["tecnogen"]}
+IB2500372309#0	agg-fuzhou	DC16078A0242	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	agg-fuzhou	DC16078A0242	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	agg-fuzhou	DC16078A0242	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	agg-fuzhou	DC16078A0242	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	agg-fuzhou	DC16078A0243	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	agg-fuzhou	DC16078A0243	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	agg-fuzhou	DC16078A0243	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	agg-fuzhou	DC16078A0243	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	agg-fuzhou	DC16078A0244	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	agg-fuzhou	DC16078A0244	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	agg-fuzhou	DC16078A0244	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	agg-fuzhou	DC16078A0244	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	agg-fuzhou	DC16093A0254	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	agg-fuzhou	DC16093A0254	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	agg-fuzhou	DC16093A0254	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	agg-fuzhou	DC16093A0254	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	agg-power	DC16093A0254	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	aj-power	DC16078A0243	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	aj-power	DC16093A0254	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	cgm-italia	DC16078A0242	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	cgm-italia	DC16078A0243	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	cgm-italia	DC16078A0244	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	cgm-italia	DC16093A0254	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	coelmo	DC16093A0254	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	kaihua-genset	DC16078A0242	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	kaihua-genset	DC16078A0243	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	kaihua-genset	DC16093A0254	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	mpmc-powertech	DC16078A0242	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	mpmc-powertech	DC16078A0243	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	mpmc-powertech	DC16093A0254	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	voltgent	DC16078A0242	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	voltgent	DC16078A0243	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	voltgent	DC16078A0243	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	voltgent	DC16078A0244	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	voltgent	DC16078A0244	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	voltgent	DC16093A0254	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500372309#0	voltgent	DC16093A0254	minDisp	25	16.4	mọi nguồn	34.4000%	{"16.4": ["tecnogen"]}
+IB2500386628#0	coelmo	CURSOR16TE1W	minDisp	18	15.9	mọi nguồn	11.6667%	{"15.9": ["tecnogen"]}
+IB2500386628#0	genmac	CURSOR16TE1W	minDisp	18	15.9	mọi nguồn	11.6667%	{"15.9": ["tecnogen"]}
+IB2500460613#0	cgm-italia	KDW1404	minDisp	1.8	1.372	mọi nguồn	23.7778%	{"1.372": ["tecnogen"]}
+IB2500464050#0	agg-fuzhou	DC16078A0244	minDisp	29.7	16.4	mọi nguồn	44.7811%	{"16.4": ["tecnogen"]}
+IB2500464050#0	agg-fuzhou	DC16078A0244	minDisp	29.7	16.4	mọi nguồn	44.7811%	{"16.4": ["tecnogen"]}
+IB2500464050#0	agg-fuzhou	DC16078A0244	minDisp	29.7	16.4	mọi nguồn	44.7811%	{"16.4": ["tecnogen"]}
+IB2500464050#0	agg-fuzhou	DC16078A0244	minDisp	29.7	16.4	mọi nguồn	44.7811%	{"16.4": ["tecnogen"]}
+IB2500464050#0	voltgent	DC16078A0244	minDisp	29.7	16.4	mọi nguồn	44.7811%	{"16.4": ["tecnogen"]}
+IB2500464050#0	voltgent	DC16078A0244	minDisp	29.7	16.4	mọi nguồn	44.7811%	{"16.4": ["tecnogen"]}
+IB2500471911#0	cgm-italia	KDW1404	minDisp	2.3	1.372	mọi nguồn	40.3478%	{"1.372": ["tecnogen"]}
+IB2500474803#0	agg-fuzhou	DC13072A0212	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2500474803#0	agg-fuzhou	DC13072A0212	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2500474803#0	agg-fuzhou	DC13072A0213	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2500474803#0	agg-fuzhou	DC13072A0213	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2500474803#0	agg-fuzhou	DC13072A0214	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2500474803#0	agg-fuzhou	DC13072A0214	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2500474803#0	kaihua-genset	DC13072A0212	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2500474803#0	kaihua-genset	DC13072A0213	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2500474803#0	kaihua-genset	DC13072A0214	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2500474803#0	kaihua-genset	DC13072A0214	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2500474803#0	mpmc-powertech	DC13072A0214	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2500474803#0	voltgent	DC13072A0212	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2500474803#0	voltgent	DC13072A0213	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2500474803#0	voltgent	DC13072A0214	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2500553750#0	genmac	NEF67TM7	minDisp	9.726	6.7	mọi nguồn	31.1125%	{"6.7": ["tecnogen"]}
+IB2500553750#0	mase-generators	NEF67TM7	minDisp	9.726	6.7	mọi nguồn	31.1125%	{"6.7": ["tecnogen"]}
+IB2500569560#0	agg-fuzhou	DC09072A0211	minDisp	11.051	9.3	mọi nguồn	15.8447%	{"9.3": ["tecnogen"]}
+IB2500569560#0	agg-fuzhou	DC09072A0211	minDisp	11.051	9.3	mọi nguồn	15.8447%	{"9.3": ["tecnogen"]}
+IB2500569560#0	agg-fuzhou	DC09072A0211	minDisp	11.051	9.3	mọi nguồn	15.8447%	{"9.3": ["tecnogen"]}
+IB2500569560#0	agg-fuzhou	DC09072A0211	minDisp	11.051	9.3	mọi nguồn	15.8447%	{"9.3": ["tecnogen"]}
+IB2500569560#0	agg-fuzhou	DC09072A0212	minDisp	11.051	9.3	mọi nguồn	15.8447%	{"9.3": ["tecnogen"]}
+IB2500569560#0	agg-fuzhou	DC09072A0212	minDisp	11.051	9.3	mọi nguồn	15.8447%	{"9.3": ["tecnogen"]}
+IB2500569560#0	agg-fuzhou	DC09072A0213	minDisp	11.051	9.3	mọi nguồn	15.8447%	{"9.3": ["tecnogen"]}
+IB2500569560#0	agg-fuzhou	DC09072A0213	minDisp	11.051	9.3	mọi nguồn	15.8447%	{"9.3": ["tecnogen"]}
+IB2500569560#0	kaihua-genset	DC09071A0201	minDisp	11.051	9.3	mọi nguồn	15.8447%	{"9.3": ["tecnogen"]}
+IB2500569560#0	kaihua-genset	DC09071A0201	minDisp	11.051	9.3	mọi nguồn	15.8447%	{"9.3": ["tecnogen"]}
+IB2500569560#0	kaihua-genset	DC09071A0202	minDisp	11.051	9.3	mọi nguồn	15.8447%	{"9.3": ["tecnogen"]}
+IB2500569560#0	kaihua-genset	DC09072A0211	minDisp	11.051	9.3	mọi nguồn	15.8447%	{"9.3": ["tecnogen"]}
+IB2500569560#0	kaihua-genset	DC09072A0211	minDisp	11.051	9.3	mọi nguồn	15.8447%	{"9.3": ["tecnogen"]}
+IB2500569560#0	kaihua-genset	DC09072A0212	minDisp	11.051	9.3	mọi nguồn	15.8447%	{"9.3": ["tecnogen"]}
+IB2500569560#0	mpmc-powertech	DC09071A0202	minDisp	11.051	9.3	mọi nguồn	15.8447%	{"9.3": ["tecnogen"]}
+IB2500569560#0	mpmc-powertech	DC09071A0203	minDisp	11.051	9.3	mọi nguồn	15.8447%	{"9.3": ["tecnogen"]}
+IB2500569560#0	mpmc-powertech	DC09072A0211	minDisp	11.051	9.3	mọi nguồn	15.8447%	{"9.3": ["tecnogen"]}
+IB2500569560#0	sr-genset	CURSOR87TE3F	minDisp	11.051	8.7	mọi nguồn	21.2741%	{"8.7": ["tecnogen"]}
+IB2500569560#0	voltgent	DC09072A0211	minDisp	11.051	9.3	mọi nguồn	15.8447%	{"9.3": ["tecnogen"]}
+IB2500569560#0	voltgent	DC09072A0211	minDisp	11.051	9.3	mọi nguồn	15.8447%	{"9.3": ["tecnogen"]}
+IB2500569560#0	voltgent	DC09072A0212	minDisp	11.051	9.3	mọi nguồn	15.8447%	{"9.3": ["tecnogen"]}
+IB2500569560#0	voltgent	DC09072A0213	minDisp	11.051	9.3	mọi nguồn	15.8447%	{"9.3": ["tecnogen"]}
+IB2500570880#0	agg-power	DC09072A0212	maxDisp	8.9	9.3	mọi nguồn	3.9944%	{"9.3": ["tecnogen"]}
+IB2500570880#0	agg-power	DC09072A0213	maxDisp	8.9	9.3	mọi nguồn	3.9944%	{"9.3": ["tecnogen"]}
+IB2500570880#0	cgm-italia	DC09071A0201	maxDisp	8.9	9.3	mọi nguồn	3.9944%	{"9.3": ["tecnogen"]}
+IB2500570880#0	cgm-italia	DC09071A0202	maxDisp	8.9	9.3	mọi nguồn	3.9944%	{"9.3": ["tecnogen"]}
+IB2500570880#0	cgm-italia	DC09071A0203	maxDisp	8.9	9.3	mọi nguồn	3.9944%	{"9.3": ["tecnogen"]}
+IB2500570880#0	cgm-italia	DC09072A0211	maxDisp	8.9	9.3	mọi nguồn	3.9944%	{"9.3": ["tecnogen"]}
+IB2500570880#0	cgm-italia	DC09072A0212	maxDisp	8.9	9.3	mọi nguồn	3.9944%	{"9.3": ["tecnogen"]}
+IB2500570880#0	cgm-italia	DC09072A0213	maxDisp	8.9	9.3	mọi nguồn	3.9944%	{"9.3": ["tecnogen"]}
+IB2500570880#0	coelmo	DC09072A0212	maxDisp	8.9	9.3	mọi nguồn	3.9944%	{"9.3": ["tecnogen"]}
+IB2500626302#0	agg-power	DC16093A0254	maxDisp	13	16.4	mọi nguồn	25.6538%	{"16.4": ["tecnogen"]}
+IB2500626302#0	aj-power	DC16093A0252	maxDisp	13	16.4	mọi nguồn	25.6538%	{"16.4": ["tecnogen"]}
+IB2500626302#0	aj-power	DC16093A0254	maxDisp	13	16.4	mọi nguồn	25.6538%	{"16.4": ["tecnogen"]}
+IB2500626302#0	cgm-italia	DC16071A0201	maxDisp	13	16.4	mọi nguồn	25.6538%	{"16.4": ["tecnogen"]}
+IB2500626302#0	cgm-italia	DC16071A0202	maxDisp	13	16.4	mọi nguồn	25.6538%	{"16.4": ["tecnogen"]}
+IB2500626302#0	cgm-italia	DC16078A0242	maxDisp	13	16.4	mọi nguồn	25.6538%	{"16.4": ["tecnogen"]}
+IB2500626302#0	cgm-italia	DC16093A0252	maxDisp	13	16.4	mọi nguồn	25.6538%	{"16.4": ["tecnogen"]}
+IB2500626302#0	cgm-italia	DC16093A0254	maxDisp	13	16.4	mọi nguồn	25.6538%	{"16.4": ["tecnogen"]}
+IB2500626302#0	cgm-italia	DC16093A0254	maxDisp	13	16.4	mọi nguồn	25.6538%	{"16.4": ["tecnogen"]}
+IB2500626302#0	cgm-italia	DC16093A0254	maxDisp	13	16.4	mọi nguồn	25.6538%	{"16.4": ["tecnogen"]}
+IB2500626302#0	coelmo	CURSOR16TE1W	maxDisp	13	15.9	mọi nguồn	21.8077%	{"15.9": ["tecnogen"]}
+IB2500626302#0	coelmo	DC16093A0254	maxDisp	13	16.4	mọi nguồn	25.6538%	{"16.4": ["tecnogen"]}
+IB2500626302#0	genmac	CURSOR16TE1W	maxDisp	13	15.9	mọi nguồn	21.8077%	{"15.9": ["tecnogen"]}
+IB2600075436#2	genmac	NEF67TM7	minDisp	8.8	6.7	mọi nguồn	23.8636%	{"6.7": ["tecnogen"]}
+IB2600075436#2	mase-generators	NEF67TM7	minDisp	8.8	6.7	mọi nguồn	23.8636%	{"6.7": ["tecnogen"]}
+IB2600112737#2	genmac	NEF67TM7	minDisp	8.8	6.7	mọi nguồn	23.8636%	{"6.7": ["tecnogen"]}
+IB2600112737#2	mase-generators	NEF67TM7	minDisp	8.8	6.7	mọi nguồn	23.8636%	{"6.7": ["tecnogen"]}
+IB2600217137#0	agg-fuzhou	DC13072A0214	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2600217137#0	agg-fuzhou	DC13072A0214	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2600217137#0	kaihua-genset	DC13072A0213	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2600217137#0	kaihua-genset	DC13072A0214	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2600217137#0	kaihua-genset	DC13072A0214	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2600217137#0	mpmc-powertech	DC13072A0214	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2600217137#0	voltgent	DC13072A0214	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2600308125#0	agg-power	DC13072A0211	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2600308125#0	aj-power	DC13072A0211	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2600308125#0	aj-power	DC13072A0211	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2600308125#0	aj-power	DC13072A0212	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2600308125#0	aj-power	DC13072A0212	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2600308125#0	cgm-italia	DC13071A0201	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2600308125#0	cgm-italia	DC13072A0211	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2600308125#0	cgm-italia	DC13072A0212	minDisp	13	12.7	mọi nguồn	2.3077%	{"12.7": ["tecnogen"]}
+IB2600308125#0	genmac	CURSOR13TE2A	minDisp	13	12.9	mọi nguồn	0.7692%	{"12.9": ["tecnogen"]}
+IB2600308125#0	genmac	CURSOR13TE2F	minDisp	13	12.88	mọi nguồn	0.9231%	{"12.88": ["tecnogen"]}
+IB2600308125#0	genmac	CURSOR13TE3A	minDisp	13	12.9	mọi nguồn	0.7692%	{"12.9": ["tecnogen"]}
+IB2600315904#0	agg-fuzhou	DC13072A0211	minDisp	12.78	12.7	mọi nguồn	0.6260%	{"12.7": ["tecnogen"]}
+IB2600315904#0	agg-fuzhou	DC13072A0211	minDisp	12.78	12.7	mọi nguồn	0.6260%	{"12.7": ["tecnogen"]}
+IB2600315904#0	agg-fuzhou	DC13072A0211	minDisp	12.78	12.7	mọi nguồn	0.6260%	{"12.7": ["tecnogen"]}
+IB2600315904#0	agg-fuzhou	DC13072A0211	minDisp	12.78	12.7	mọi nguồn	0.6260%	{"12.7": ["tecnogen"]}
+IB2600315904#0	agg-fuzhou	DC13072A0212	minDisp	12.78	12.7	mọi nguồn	0.6260%	{"12.7": ["tecnogen"]}
+IB2600315904#0	agg-fuzhou	DC13072A0212	minDisp	12.78	12.7	mọi nguồn	0.6260%	{"12.7": ["tecnogen"]}
+IB2600315904#0	kaihua-genset	DC13071A0201	minDisp	12.78	12.7	mọi nguồn	0.6260%	{"12.7": ["tecnogen"]}
+IB2600315904#0	kaihua-genset	DC13071A0201	minDisp	12.78	12.7	mọi nguồn	0.6260%	{"12.7": ["tecnogen"]}
+IB2600315904#0	kaihua-genset	DC13071A0202	minDisp	12.78	12.7	mọi nguồn	0.6260%	{"12.7": ["tecnogen"]}
+IB2600315904#0	kaihua-genset	DC13072A0211	minDisp	12.78	12.7	mọi nguồn	0.6260%	{"12.7": ["tecnogen"]}
+IB2600315904#0	kaihua-genset	DC13072A0211	minDisp	12.78	12.7	mọi nguồn	0.6260%	{"12.7": ["tecnogen"]}
+IB2600315904#0	kaihua-genset	DC13072A0212	minDisp	12.78	12.7	mọi nguồn	0.6260%	{"12.7": ["tecnogen"]}
+IB2600315904#0	mpmc-powertech	DC13071A0201	minDisp	12.78	12.7	mọi nguồn	0.6260%	{"12.7": ["tecnogen"]}
+IB2600315904#0	mpmc-powertech	DC13071A0202	minDisp	12.78	12.7	mọi nguồn	0.6260%	{"12.7": ["tecnogen"]}
+IB2600315904#0	mpmc-powertech	DC13072A0211	minDisp	12.78	12.7	mọi nguồn	0.6260%	{"12.7": ["tecnogen"]}
+IB2600315904#0	mpmc-powertech	DC13072A0212	minDisp	12.78	12.7	mọi nguồn	0.6260%	{"12.7": ["tecnogen"]}
+IB2600315904#0	voltgent	DC13072A0211	minDisp	12.78	12.7	mọi nguồn	0.6260%	{"12.7": ["tecnogen"]}
+IB2600315904#0	voltgent	DC13072A0211	minDisp	12.78	12.7	mọi nguồn	0.6260%	{"12.7": ["tecnogen"]}
+IB2600315904#0	voltgent	DC13072A0212	minDisp	12.78	12.7	mọi nguồn	0.6260%	{"12.7": ["tecnogen"]}
+IB2600327799#2	genmac	NEF67TM7	minDisp	8.8	6.7	mọi nguồn	23.8636%	{"6.7": ["tecnogen"]}
+IB2600327799#2	mase-generators	NEF67TM7	minDisp	8.8	6.7	mọi nguồn	23.8636%	{"6.7": ["tecnogen"]}
+IB2600464766#0	aosif	QSB7G4	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2600464766#0	aosif	QSB7G4	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2600464766#0	huadong-yangzhou	QSB7G4	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2600464766#0	mecca-power	QSB7G4	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2600464766#0	sanq-power	QSB7G4	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2600464766#0	sanq-power	QSB7G4	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}
+IB2600464766#0	yanfa-yancheng	QSB7G4	minDisp	6.7	6.69	số đông	0.1493%	{"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif", "tecnogen"]}

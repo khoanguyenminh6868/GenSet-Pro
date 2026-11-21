@@ -1,0 +1,260 @@
+lệch	khoá động cơ	luật / ngưỡng	số so (đường)	dòng / lượt	phiếu main
+0.01%	YC6TD840D31	minDisp 19.6	số 19.598 (số đông)	46 dòng / 1 lượt	phiếu {"19.59": ["bdadl-shanghai", "pengpai-yangzhou"], "19.6": ["fdk-energy", "frs-shenyang", "fukangsi-yangzhou", "hanyang-weifang", "pengpai-yangzhou", "supermaly", "superwatt-swt", "tellhow-power", "waeta-fujian", "yunding-jiangsu"], "19.598": ["liangzi-yangzhou"]}
+0.01%	YC6TD900D31	minDisp 19.6	số 19.598 (số đông)	40 dòng / 1 lượt	phiếu {"19.59": ["bdadl-shanghai", "pengpai-yangzhou"], "19.6": ["fdk-energy", "frs-shenyang", "fukangsi-yangzhou", "hanyang-weifang", "jinjia-power", "pengpai-yangzhou", "tellhow-power", "waeta-fujian", "yunding-jiangsu"], "19.598": ["liangzi-yangzhou"]}
+0.01%	YC6B130ZD20	minDisp 6.871	số 6.87 (mọi nguồn)	14 dòng / 1 lượt	phiếu {"6.35": ["jianghao-genset"], "6.87": ["waeta-fujian"]}
+0.01%	YC6B160ZD20	minDisp 6.871	số 6.87 (mọi nguồn)	12 dòng / 1 lượt	phiếu {"6.87": ["jianghao-genset", "waeta-fujian"]}
+0.02%	YC6MK420LD20	minDisp 10.34	số 10.338 (số đông)	159 dòng / 3 lượt	phiếu {"10.38": ["bdadl-shanghai", "pengpai-yangzhou"], "10.338": ["chenxing-weifang", "frs-shenyang"], "10.34": ["fdk-energy", "hanyang-weifang", "sanq-power", "waeta-fujian"], "10.33": ["fukangsi-yangzhou", "jinjia-power", "pengpai-yangzhou", "yunding-jiangsu"], "10.3": ["huatai-yangzhou"], "BLOCK": ["jlmech-wuhan"], "10.388": ["liangzi-yangzhou"], "9.8": ["mingbang-mbkl"]}
+0.02%	1104DE44TAG2	minDisp 4.4	số 4.399 (số đông)	11 dòng / 1 lượt	phiếu {"4.4": ["hanyang-weifang", "jianghao-genset", "jlmech-wuhan", "rise-power"], "4.399": ["legapower"], "4.41": ["yunding-jiangsu"]}
+0.03%	618AZLD1	minDisp 11.6	số 11.596 (mọi nguồn)	2 dòng / 1 lượt	phiếu {"11.596": ["jet-power"]}
+0.05%	YC6TD1000D31	minDisp 19.6	số 19.59 (số đông)	7 dòng / 1 lượt	phiếu {"19.59": ["bdadl-shanghai", "pengpai-yangzhou"], "19.6": ["fukangsi-yangzhou", "pengpai-yangzhou"]}
+0.06%	BF6M1013ECP	minDisp 7.15	số 7.146 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"7.146": ["weiman-fujian"]}
+0.06%	BF6M1013FCG2	minDisp 7.15	số 7.146 (số đông)	28 dòng / 1 lượt	phiếu {"7.15": ["depco-power", "legapower", "wintpower"], "7.146": ["kanpor-fuan", "legapower"], "7.14": ["waeta-fujian"]}
+0.06%	BF6M1013FCG3	minDisp 7.15	số 7.146 (số đông)	46 dòng / 1 lượt	phiếu {"7.15": ["depco-power", "legapower", "wintpower"], "7.146": ["kanpor-fuan", "legapower"], "7.14": ["waeta-fujian"]}
+0.06%	BF6M1013FCP1	minDisp 7.15	số 7.146 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"7.146": ["weiman-fujian"]}
+0.06%	S12RPTA1C	minDisp 49.03	số 49.0 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"49": ["aosif"]}
+0.06%	S12RPTA3C	minDisp 49.03	số 49.0 (mọi nguồn)	2 dòng / 1 lượt	phiếu {"49": ["aosif"]}
+0.06%	R6105ZD	minDisp 6.494	số 6.49 (mọi nguồn)	10 dòng / 1 lượt	phiếu {"6.49": ["huatai-yangzhou", "jet-power"]}
+0.06%	R6105ZD161	minDisp 6.494	số 6.49 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"6.49": ["liangzi-yangzhou"]}
+0.06%	WT10B231DE	minDisp 9.726	số 9.72 (mọi nguồn)	17 dòng / 3 lượt	phiếu {"9.72": ["waeta-fujian"]}
+0.06%	WT10B275DE	minDisp 9.726	số 9.72 (mọi nguồn)	10 dòng / 2 lượt	phiếu {"9.72": ["waeta-fujian"]}
+0.07%	C490BD	minDisp 2.672	số 2.67 (mọi nguồn)	2 dòng / 2 lượt	phiếu {"2.67": ["depco-power"]}
+0.07%	QC490D	minDisp 2.672	số 2.67 (mọi nguồn)	8 dòng / 2 lượt	phiếu {"2.67": ["quanchai"]}
+0.07%	Y490D	minDisp 2.672	số 2.67 (số đông)	48 dòng / 2 lượt	phiếu {"2.67": ["depco-power", "waeta-fujian", "wintpower", "yangdong"]}
+0.10%	CA6DM2J39D	minDisp 11.051	số 11.04 (mọi nguồn)	24 dòng / 4 lượt	phiếu {"11.04": ["depco-power", "waeta-fujian"]}
+0.10%	CA6DM2J41D	minDisp 11.051	số 11.04 (mọi nguồn)	19 dòng / 1 lượt	phiếu {"11.04": ["depco-power", "waeta-fujian"]}
+0.10%	CA6DM2J41D/300KW	minDisp 11.051	số 11.04 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"11.04": ["jet-power"]}
+0.10%	CA6DM2J42D	minDisp 11.051	số 11.04 (mọi nguồn)	8 dòng / 2 lượt	phiếu {"8.6": ["depco-power"], "11.04": ["waeta-fujian"]}
+0.10%	2206AE13TAG2	minDisp 12.513	số 12.5 (số đông)	7 dòng / 1 lượt	phiếu {"12.5": ["agestar", "gb-power", "genlitec", "legapower", "mingbang-mbkl", "rise-power"]}
+0.10%	2206AE13TAG3	minDisp 12.513	số 12.5 (số đông)	13 dòng / 1 lượt	phiếu {"12.5": ["agestar", "gb-power", "genlitec", "legapower", "weiman-fujian"]}
+0.10%	2206AE13TAG5	minDisp 12.513	số 12.5 (số đông)	6 dòng / 1 lượt	phiếu {"12.5": ["jianghao-genset", "legapower", "wintpower"]}
+0.10%	2206AE13TAG6	minDisp 12.513	số 12.5 (số đông)	11 dòng / 1 lượt	phiếu {"12.5": ["jianghao-genset", "lees-power", "legapower", "westinpower"]}
+0.10%	2206CE13TAG2	minDisp 12.513	số 12.5 (số đông)	40 dòng / 1 lượt	phiếu {"13": ["rise-power"], "12.5": ["aoke-yangzhou", "bdadl-shanghai", "depco-power", "fdk-energy", "frs-shenyang", "fukangsi-yangzhou", "hanyang-weifang", "huipu-power", "jinjia-power", "jiuan-power", "lees-power", "legapower", "pengpai-yangzhou", "waeta-fujian", "weiman-fujian", "wintpower"], "51.4": ["liangzi-yangzhou"]}
+0.10%	2206CE13TAG2L	minDisp 12.513	số 12.5 (mọi nguồn)	2 dòng / 1 lượt	phiếu {"12.5": ["yunding-jiangsu"]}
+0.10%	2206CE13TAG3	minDisp 12.513	số 12.5 (số đông)	68 dòng / 1 lượt	phiếu {"13": ["rise-power"], "12.5": ["bdadl-shanghai", "depco-power", "fdk-energy", "frs-shenyang", "fukangsi-yangzhou", "hanyang-weifang", "huipu-power", "jinjia-power", "jlmech-wuhan", "legapower", "liangzi-yangzhou", "pengpai-yangzhou", "waeta-fujian", "weiman-fujian", "wintpower"]}
+0.10%	2206CE13TAG3L	minDisp 12.513	số 12.5 (mọi nguồn)	6 dòng / 1 lượt	phiếu {"12.5": ["yunding-jiangsu"]}
+0.10%	2206CE14TAG3	minDisp 12.513	số 12.5 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"12.5": ["mingbang-mbkl"]}
+0.10%	2206DE13TAG2	minDisp 12.513	số 12.5 (số đông)	6 dòng / 1 lượt	phiếu {"12.5": ["jianghao-genset", "legapower", "rise-power", "wintpower"]}
+0.10%	2206DE13TAG3	minDisp 12.513	số 12.5 (số đông)	8 dòng / 1 lượt	phiếu {"12.5": ["hanyang-weifang", "jianghao-genset", "rise-power", "wintpower"]}
+0.10%	618ZLD	minDisp 12.513	số 12.5 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"11.596": ["jet-power"], "12.5": ["kena-chongqing"]}
+0.10%	CATC13	minDisp 12.513	số 12.5 (mọi nguồn)	2 dòng / 1 lượt	phiếu {"12.5": ["rise-power"]}
+0.10%	WP13D340E310	minDisp 12.513	số 12.5 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"12.5": ["fukangsi-yangzhou"]}
+0.11%	1506AE88TAG5	minDisp 8.82	số 8.81 (số đông)	63 dòng / 1 lượt	phiếu {"8.8": ["aoke-yangzhou", "depco-power", "fdk-energy", "fukangsi-yangzhou", "genlitec", "jianghao-genset", "jlmech-wuhan", "legapower", "pengpai-yangzhou", "rise-power", "waeta-fujian", "weiman-fujian", "westinpower", "wintpower"], "7.01": ["huipu-power"], "8.81": ["jinjia-power"]}
+0.12%	DP158LC/408KW	minDisp 14.618	số 14.6 (mọi nguồn)	2 dòng / 2 lượt	phiếu {"14.6": ["jet-power"]}
+0.12%	DP158LD/464KW	minDisp 14.618	số 14.6 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"14.6": ["jet-power"]}
+0.12%	DP222CBS	minDisp 21.927	số 21.9 (mọi nguồn)	3 dòng / 3 lượt	phiếu {"21.9": ["aosif"]}
+0.12%	DP222CCS	minDisp 21.927	số 21.9 (mọi nguồn)	3 dòng / 3 lượt	phiếu {"21.9": ["aosif"]}
+0.12%	DP222LB/604KW	minDisp 21.927	số 21.9 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"21.9": ["jet-power"]}
+0.12%	DP222LC/657KW	minDisp 21.927	số 21.9 (mọi nguồn)	3 dòng / 3 lượt	phiếu {"21.9": ["jet-power"]}
+0.12%	PTAA1340G3	minDisp 21.927	số 21.9 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"21.9": ["huipu-power"]}
+0.12%	PTAA1340G5	minDisp 21.927	số 21.9 (mọi nguồn)	3 dòng / 3 lượt	phiếu {"21.9": ["huipu-power"]}
+0.12%	PTAA890G1	minDisp 14.618	số 14.6 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"14.6": ["huipu-power"]}
+0.12%	S6B3PTA	minDisp 14.618	số 14.6 (mọi nguồn)	5 dòng / 1 lượt	phiếu {"14.6": ["depco-power", "wintpower"]}
+0.13%	TAD1342GE	maxDisp 12.7	số 12.78 (số đông)	5 dòng / 1 lượt	phiếu {"12.78": ["aoke-yangzhou", "huipu-power", "lees-power"]}
+0.13%	TAD1345GE	maxDisp 12.7	số 12.78 (số đông)	18 dòng / 1 lượt	phiếu {"12.78": ["aoke-yangzhou", "bdadl-shanghai", "fukangsi-yangzhou", "huipu-power", "lees-power", "pengpai-yangzhou"]}
+0.13%	TAD1345GEB	maxDisp 12.7	số 12.78 (mọi nguồn)	20 dòng / 1 lượt	phiếu {"12.78": ["tellhow-power", "volvo-penta"]}
+0.13%	TAD1346GE	maxDisp 12.7	số 12.78 (mọi nguồn)	2 dòng / 1 lượt	phiếu {"12.78": ["tellhow-power", "volvo-penta"]}
+0.13%	TAD1352GE	maxDisp 12.7	số 12.78 (số đông)	15 dòng / 1 lượt	phiếu {"12.78": ["bdadl-shanghai", "frs-shenyang", "fukangsi-yangzhou", "jet-power", "jinjia-power", "liangzi-yangzhou", "pengpai-yangzhou", "rise-power", "victory-generator", "volvo-penta"]}
+0.13%	TAD1353GE	maxDisp 12.7	số 12.78 (số đông)	3 dòng / 1 lượt	phiếu {"12.78": ["lees-power", "rise-power", "victory-generator"]}
+0.13%	TAD1354GE	maxDisp 12.7	số 12.78 (số đông)	22 dòng / 1 lượt	phiếu {"12.78": ["bdadl-shanghai", "frs-shenyang", "fukangsi-yangzhou", "jet-power", "jinjia-power", "pengpai-yangzhou", "rise-power", "tellhow-power", "victory-generator", "volvo-penta"]}
+0.13%	TAD1355GE	maxDisp 12.7	số 12.78 (số đông)	22 dòng / 1 lượt	phiếu {"12.78": ["bdadl-shanghai", "frs-shenyang", "fukangsi-yangzhou", "jet-power", "jinjia-power", "pengpai-yangzhou", "rise-power", "tellhow-power", "victory-generator", "volvo-penta"]}
+0.13%	403A15G1	minDisp 1.498	số 1.496 (số đông)	1 dòng / 1 lượt	phiếu {"1.496": ["agestar", "depco-power", "fdk-energy", "frs-shenyang", "genlitec", "jet-power", "weiman-fujian"], "1.5": ["aoke-yangzhou", "jinjia-power", "rise-power", "waeta-fujian"], "1.131": ["hanyang-weifang"], "2.2": ["huipu-power"]}
+0.13%	403D11G	minDisp 1.498	số 1.496 (mọi nguồn)	73 dòng / 1 lượt	phiếu {"1.131": ["depco-power", "gb-power", "genlitec", "hanyang-weifang", "weiman-fujian", "wintpower"], "1.496": ["hosem-power"], "1.1": ["jianghao-genset", "mingbang-mbkl", "rise-power", "waeta-fujian", "wintpower"]}
+0.13%	403D15G	minDisp 1.498	số 1.496 (số đông)	1 dòng / 1 lượt	phiếu {"1.5": ["aoke-yangzhou", "genlitec", "jianghao-genset", "mingbang-mbkl", "rise-power", "waeta-fujian", "wintpower"], "1.496": ["depco-power", "gb-power", "genlitec", "jlmech-wuhan", "weiman-fujian", "wintpower"], "2.2": ["hanyang-weifang"]}
+0.14%	V2203	minDisp 2.2	số 2.197 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"2.197": ["depco-power"]}
+0.14%	V2203E2BGCHN1/172KW	minDisp 2.2	số 2.197 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"2.197": ["jet-power"]}
+0.17%	4M06G55/5	minDisp 4.087	số 4.08 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"2.3": ["depco-power"], "4.08": ["waeta-fujian"]}
+0.23%	1506AE88TAG1	minDisp 8.82	số 8.8 (số đông)	1 dòng / 1 lượt	phiếu {"8.8": ["legapower", "rise-power", "weiman-fujian", "wintpower"]}
+0.23%	1506AE88TAG4	minDisp 8.82	số 8.8 (số đông)	4 dòng / 1 lượt	phiếu {"7.01": ["huipu-power"], "8.8": ["jinjia-power", "legapower", "rise-power", "wintpower"]}
+0.23%	1506AE88TAG5L	minDisp 8.82	số 8.8 (mọi nguồn)	2 dòng / 1 lượt	phiếu {"8.8": ["yunding-jiangsu"]}
+0.23%	CATC9	minDisp 8.82	số 8.8 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"8.8": ["rise-power"]}
+0.25%	6RT80176DE	minDisp 8	số 7.98 (mọi nguồn)	7 dòng / 1 lượt	phiếu {"7.82": ["jet-power"], "7.98": ["waeta-fujian"]}
+0.25%	6BG1ZL1	minDisp 5.9	số 5.885 (mọi nguồn)	25 dòng / 7 lượt	phiếu {"5.885": ["acepow-fuan"]}
+0.27%	WP10D238E350	minDisp 9.726	số 9.7 (mọi nguồn)	2 dòng / 2 lượt	phiếu {"9.7": ["fukangsi-yangzhou"]}
+0.28%	LR6M3LD	minDisp 7.15	số 7.13 (mọi nguồn)	3 dòng / 1 lượt	phiếu {"7.127": ["acepow-fuan"], "7.13": ["depco-power"], "6.87": ["depco-power"]}
+0.29%	6ETAA128G3101	maxDisp 12.7	số 12.8 (số đông)	2 dòng / 1 lượt	phiếu {"12.8": ["depco-power", "jet-power", "waeta-fujian"]}
+0.29%	6ETAA128G311	maxDisp 12.7	số 12.8 (mọi nguồn)	2 dòng / 1 lượt	phiếu {"12.8": ["depco-power"]}
+0.29%	6ETAA128G321	maxDisp 12.7	số 12.8 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"12.8": ["depco-power"]}
+0.29%	PTAA780G1	maxDisp 12.7	số 12.8 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"12.8": ["huipu-power"]}
+0.29%	PTAA780G3	maxDisp 12.7	số 12.8 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"12.8": ["huipu-power"]}
+0.29%	SC13E500D2	maxDisp 12.7	số 12.8 (số đông)	7 dòng / 1 lượt	phiếu {"12.8": ["jinjia-power", "waeta-fujian", "yunding-jiangsu"]}
+0.29%	SC13E550D2	maxDisp 12.7	số 12.8 (mọi nguồn)	10 dòng / 1 lượt	phiếu {"12.8": ["waeta-fujian", "yunding-jiangsu"]}
+0.32%	4TNV88GGE	minDisp 2.197	số 2.19 (mọi nguồn)	34 dòng / 4 lượt	phiếu {"2.19": ["depco-power"]}
+0.32%	4TNV88GGE/164KW	minDisp 2.197	số 2.19 (mọi nguồn)	4 dòng / 4 lượt	phiếu {"2.19": ["jet-power"]}
+0.33%	D11A	minDisp 11	số 10.964 (mọi nguồn)	12 dòng / 3 lượt	phiếu {"10.964": ["excel-power-ningde"]}
+0.33%	D11A1	minDisp 11	số 10.964 (mọi nguồn)	12 dòng / 3 lượt	phiếu {"10.964": ["excel-power-ningde"]}
+0.33%	D11A2	minDisp 11	số 10.964 (mọi nguồn)	9 dòng / 3 lượt	phiếu {"10.964": ["excel-power-ningde"]}
+0.33%	1106CP6TAG3	minDisp 6	số 5.98 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"5.98": ["jet-power"]}
+0.33%	1106CP6TAG4	minDisp 6	số 5.98 (mọi nguồn)	7 dòng / 1 lượt	phiếu {"5.98": ["jet-power"]}
+0.34%	K29G1210D	minDisp 29.7	số 29.6 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"29.6": ["jet-power"]}
+0.34%	TC283LW64	minDisp 29.7	số 29.6 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"28.3": ["bdadl-shanghai"], "29.6": ["liangzi-yangzhou"]}
+0.34%	TC296LM68	minDisp 29.7	số 29.6 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"29.6": ["bdadl-shanghai", "liangzi-yangzhou"]}
+0.34%	6BT59G1	minDisp 5.9	số 5.88 (số đông)	200 dòng / 5 lượt	phiếu {"5.9": ["aosif", "depco-power", "hanyang-weifang", "jinlongteng-fujian", "waeta-fujian", "weiman-fujian"], "5.88": ["bdadl-shanghai", "fukangsi-yangzhou", "liangzi-yangzhou", "mingbang-mbkl", "pengpai-yangzhou", "sunkings"]}
+0.34%	6BT59G2	minDisp 5.9	số 5.88 (số đông)	677 dòng / 8 lượt	phiếu {"5.9": ["agestar", "aoke-yangzhou", "aosif", "depco-power", "hanyang-weifang", "jianghao-genset", "jinjia-power", "jinlongteng-fujian", "legapower", "mingbang-mbkl", "rise-power", "victory-generator", "waeta-fujian", "weiman-fujian", "wintpower", "yunding-jiangsu"], "5.88": ["bdadl-shanghai", "fukangsi-yangzhou", "liangzi-yangzhou", "mingbang-mbkl", "pengpai-yangzhou", "sunkings"]}
+0.34%	6BTA59G2	minDisp 5.9	số 5.88 (số đông)	522 dòng / 9 lượt	phiếu {"5.9": ["agestar", "aoke-yangzhou", "aosif", "depco-power", "hanyang-weifang", "jianghao-genset", "jinjia-power", "jinlongteng-fujian", "kanpor-fuan", "legapower", "mingbang-mbkl", "rise-power", "tecgen-fujian", "victory-generator", "waeta-fujian", "weiman-fujian", "wintpower", "yunding-jiangsu"], "8.3": ["agestar"], "5.88": ["bdadl-shanghai", "fukangsi-yangzhou", "liangzi-yangzhou", "mingbang-mbkl", "pengpai-yangzhou"]}
+0.34%	6BTAA59G12	minDisp 5.9	số 5.88 (số đông)	482 dòng / 6 lượt	phiếu {"8.3": ["agestar"], "6.7": ["aosif"], "5.9": ["aosif", "depco-power", "genlitec", "hanyang-weifang", "jianghao-genset", "jinjia-power", "jinlongteng-fujian", "kanpor-fuan", "legapower", "mingbang-mbkl", "rise-power", "tecgen-fujian", "victory-generator", "waeta-fujian", "weiman-fujian", "wintpower", "yunding-jiangsu"], "5.88": ["bdadl-shanghai", "pengpai-yangzhou"]}
+0.34%	6BTAA59G2	minDisp 5.9	số 5.88 (số đông)	522 dòng / 10 lượt	phiếu {"5.9": ["agestar", "aoke-yangzhou", "aosif", "depco-power", "hanyang-weifang", "jianghao-genset", "jinjia-power", "jinlongteng-fujian", "kanpor-fuan", "legapower", "mingbang-mbkl", "rise-power", "victory-generator", "waeta-fujian", "weiman-fujian", "wintpower"], "8.3": ["agestar"], "5.88": ["bdadl-shanghai", "fukangsi-yangzhou", "liangzi-yangzhou", "mingbang-mbkl", "pengpai-yangzhou"]}
+0.34%	QSB59G2	minDisp 5.9	số 5.88 (số đông)	88 dòng / 5 lượt	phiếu {"5.9": ["bdadl-shanghai", "fukangsi-yangzhou", "hanyang-weifang", "pengpai-yangzhou", "victory-generator", "yunding-jiangsu"], "5.88": ["liangzi-yangzhou"]}
+0.34%	QSB59G3	minDisp 5.9	số 5.88 (số đông)	84 dòng / 9 lượt	phiếu {"5.88": ["bdadl-shanghai", "liangzi-yangzhou", "pengpai-yangzhou"], "5.9": ["bdadl-shanghai", "fukangsi-yangzhou", "hanyang-weifang", "pengpai-yangzhou", "victory-generator", "yunding-jiangsu"]}
+0.34%	YC6MJ480LD20	minDisp 11.8	số 11.76 (mọi nguồn)	3 dòng / 1 lượt	phiếu {"11.76": ["bdadl-shanghai", "frs-shenyang", "pengpai-yangzhou"], "11.726": ["chenxing-weifang", "liangzi-yangzhou"], "11.72": ["fukangsi-yangzhou", "huatai-yangzhou", "pengpai-yangzhou"], "11.73": ["jinjia-power", "sanq-power"], "10.3": ["mingbang-mbkl"]}
+0.34%	400623TAG2A	minDisp 23	số 22.921 (số đông)	2 dòng / 1 lượt	phiếu {"23": ["bdadl-shanghai", "frs-shenyang", "huipu-power", "liangzi-yangzhou", "pengpai-yangzhou", "rise-power", "waeta-fujian"], "22.921": ["agestar", "depco-power", "legapower", "weiman-fujian"], "22.9": ["aoke-yangzhou", "fukangsi-yangzhou", "hanyang-weifang", "jianghao-genset", "jinjia-power", "jlmech-wuhan", "mingbang-mbkl", "pengpai-yangzhou", "wintpower", "yunding-jiangsu"], "22.92": ["fdk-energy", "gb-power"]}
+0.34%	400623TAG3A	minDisp 23	số 22.921 (số đông)	8 dòng / 1 lượt	phiếu {"23": ["bdadl-shanghai", "frs-shenyang", "huipu-power", "pengpai-yangzhou", "rise-power", "waeta-fujian"], "22.921": ["agestar", "depco-power", "legapower", "weiman-fujian", "westinpower"], "22.9": ["aoke-yangzhou", "fukangsi-yangzhou", "genlitec", "hanyang-weifang", "jianghao-genset", "mingbang-mbkl", "pengpai-yangzhou", "wintpower", "yunding-jiangsu"], "22.92": ["depco-power", "fdk-energy", "jinjia-power", "liangzi-yangzhou"]}
+0.36%	Y4110ZLD	minDisp 4.5	số 4.484 (mọi nguồn)	4 dòng / 1 lượt	phiếu {"4.484": ["depco-power"], "4.3": ["lees-power", "waeta-fujian"], "4.1": ["wintpower"], "4.4": ["yangdong"]}
+0.36%	4TNV98	minDisp 3.331	số 3.319 (mọi nguồn)	7 dòng / 1 lượt	phiếu {"3.319": ["victory-generator"]}
+0.36%	4TNV98GGE/307KW	minDisp 3.331	số 3.319 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"3.319": ["jet-power"]}
+0.36%	4TNV98T	minDisp 3.331	số 3.319 (mọi nguồn)	4 dòng / 1 lượt	phiếu {"3.319": ["victory-generator"]}
+0.36%	4TNV98TGGE/377KW	minDisp 3.331	số 3.319 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"3.319": ["jet-power"]}
+0.36%	SC8D220D2	minDisp 8.3	số 8.27 (số đông)	7 dòng / 1 lượt	phiếu {"8.27": ["aoke-yangzhou", "rise-power", "wintpower"], "8.3": ["legapower"]}
+0.36%	SC8D250D2	minDisp 8.3	số 8.27 (mọi nguồn)	9 dòng / 2 lượt	phiếu {"8.27": ["wintpower"]}
+0.36%	SC8D280D2	minDisp 8.3	số 8.27 (số đông)	46 dòng / 2 lượt	phiếu {"8.27": ["bdadl-shanghai", "frs-shenyang", "huatai-yangzhou", "jet-power", "jiuan-power", "liangzi-yangzhou", "pengpai-yangzhou", "rise-power", "sanq-power", "victory-generator", "wintpower", "yunding-jiangsu"], "8.8": ["bdadl-shanghai", "hanyang-weifang"], "6.5": ["fukangsi-yangzhou", "pengpai-yangzhou"], "8.3": ["jinjia-power", "legapower", "waeta-fujian"], "BLOCK": ["jlmech-wuhan"]}
+0.39%	YC6MK380LD20	minDisp 10.34	số 10.3 (mọi nguồn)	3 dòng / 3 lượt	phiếu {"10.3": ["jianghao-genset"]}
+0.39%	YC6MK390LD20	minDisp 10.34	số 10.3 (mọi nguồn)	6 dòng / 3 lượt	phiếu {"10.3": ["huatai-yangzhou"]}
+0.39%	DP086LA	maxDisp 8	số 8.071 (số đông)	29 dòng / 1 lượt	phiếu {"8": ["waeta-fujian"], "8.1": ["aosif", "depco-power", "jianghao-genset"], "8.071": ["aosif", "legapower"], "8.074": ["depco-power"]}
+0.39%	DP086LA/201KW	maxDisp 8	số 8.071 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"8.071": ["jet-power"]}
+0.39%	P086TI	maxDisp 8	số 8.071 (số đông)	8 dòng / 1 lượt	phiếu {"8": ["waeta-fujian"], "8.071": ["aoke-yangzhou", "aosif", "wintpower"], "8.1": ["aosif", "depco-power", "jianghao-genset"], "8.074": ["depco-power"], "8.07": ["wintpower"]}
+0.39%	PO86TI	maxDisp 8	số 8.071 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"8.071": ["huatai-yangzhou"]}
+0.39%	4TNV98GGE	minDisp 3.331	số 3.318 (mọi nguồn)	19 dòng / 1 lượt	phiếu {"3.318": ["depco-power"]}
+0.39%	4TNV98TGGE	minDisp 3.331	số 3.318 (mọi nguồn)	7 dòng / 1 lượt	phiếu {"3.318": ["depco-power"]}
+0.39%	V3300	minDisp 3.331	số 3.318 (mọi nguồn)	7 dòng / 1 lượt	phiếu {"3.318": ["depco-power"]}
+0.39%	V3300E2BG2CHN1/263KW	minDisp 3.331	số 3.318 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"3.318": ["jet-power"]}
+0.39%	V3300T	minDisp 3.331	số 3.318 (mọi nguồn)	7 dòng / 1 lượt	phiếu {"3.318": ["depco-power"]}
+0.39%	V3300TE2BG2CHN1/321KW	minDisp 3.331	số 3.318 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"3.318": ["jet-power"]}
+0.40%	192F(E)	minDisp 0.5	số 0.498 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"0.498": ["zc-power"]}
+0.43%	4M06G44/5	minDisp 2.3	số 2.29 (số đông)	46 dòng / 4 lượt	phiếu {"2.3": ["depco-power", "westinpower"], "2.29": ["waeta-fujian"]}
+0.43%	WP23D30E201	minDisp 2.3	số 2.29 (số đông)	12 dòng / 4 lượt	phiếu {"2.3": ["aosif", "depco-power"], "2.29": ["waeta-fujian"]}
+0.43%	WP23D36E201	minDisp 2.3	số 2.29 (mọi nguồn)	8 dòng / 2 lượt	phiếu {"2.29": ["jianghao-genset"]}
+0.43%	WP23D47E201	minDisp 2.3	số 2.29 (số đông)	2 dòng / 2 lượt	phiếu {"2.3": ["aosif", "depco-power"], "2.29": ["jianghao-genset", "waeta-fujian"]}
+0.44%	6ETAA128G31	maxDisp 12.7	số 12.82 (số đông)	22 dòng / 1 lượt	phiếu {"12.8": ["bdadl-shanghai", "depco-power", "fukangsi-yangzhou", "jet-power", "liangzi-yangzhou", "pengpai-yangzhou", "waeta-fujian", "yunding-jiangsu"], "12.82": ["hanyang-weifang"]}
+0.44%	6ETAA128G32	maxDisp 12.7	số 12.82 (số đông)	28 dòng / 1 lượt	phiếu {"12.8": ["bdadl-shanghai", "depco-power", "fukangsi-yangzhou", "jet-power", "jinjia-power", "liangzi-yangzhou", "pengpai-yangzhou", "waeta-fujian", "yunding-jiangsu"], "12.82": ["hanyang-weifang"]}
+0.45%	4TNV88GGE	minDisp 2.2	số 2.19 (mọi nguồn)	4 dòng / 1 lượt	phiếu {"2.19": ["depco-power"]}
+0.45%	4TNV88GGE/164KW	minDisp 2.2	số 2.19 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"2.19": ["jet-power"]}
+0.46%	YC6K570D30	minDisp 13	số 12.94 (mọi nguồn)	5 dòng / 1 lượt	phiếu {"12.94": ["jinjia-power"]}
+0.46%	YC6K600D30	minDisp 13	số 12.94 (số đông)	42 dòng / 3 lượt	phiếu {"12.94": ["bdadl-shanghai", "fdk-energy", "frs-shenyang", "fukangsi-yangzhou", "hanyang-weifang", "liangzi-yangzhou", "pengpai-yangzhou", "waeta-fujian"]}
+0.46%	YC6K660D30	minDisp 13	số 12.94 (số đông)	22 dòng / 2 lượt	phiếu {"12.94": ["fdk-energy", "hanyang-weifang", "tellhow-power", "waeta-fujian", "yunding-jiangsu"]}
+0.48%	WP23D25E200	minDisp 2.3	số 2.289 (số đông)	33 dòng / 5 lượt	phiếu {"2.3": ["aosif", "depco-power", "hanyang-weifang", "liangzi-yangzhou"], "2.5": ["jet-power"], "2.289": ["jlmech-wuhan", "yunding-jiangsu"], "2.29": ["waeta-fujian"]}
+0.48%	WP23D33E200	minDisp 2.3	số 2.289 (số đông)	66 dòng / 2 lượt	phiếu {"2.3": ["aosif", "depco-power", "hanyang-weifang", "liangzi-yangzhou"], "2.289": ["huali-shandong", "jlmech-wuhan", "yunding-jiangsu"], "2.5": ["jet-power"], "2.29": ["waeta-fujian"]}
+0.48%	WP23D40E200	minDisp 2.3	số 2.289 (số đông)	58 dòng / 2 lượt	phiếu {"2.3": ["aosif", "bdadl-shanghai", "depco-power", "hanyang-weifang", "liangzi-yangzhou"], "2.5": ["jet-power"], "2.29": ["waeta-fujian"], "2.289": ["yunding-jiangsu"]}
+0.48%	WP23D48E200	minDisp 2.3	số 2.289 (số đông)	4 dòng / 2 lượt	phiếu {"2.3": ["aosif", "depco-power", "hanyang-weifang"], "3.12": ["bdadl-shanghai"], "2.5": ["jet-power"], "2.289": ["jiuan-power", "yunding-jiangsu"], "2.29": ["waeta-fujian"]}
+0.51%	QSK78G18	minDisp 78	số 77.6 (mọi nguồn)	10 dòng / 2 lượt	phiếu {"77.6": ["aosif", "yingtai-jiangsu"]}
+0.53%	K19NG4	minDisp 19	số 18.9 (mọi nguồn)	2 dòng / 1 lượt	phiếu {"18.9": ["aosif"]}
+0.53%	KTA19G2	minDisp 19	số 18.9 (số đông)	18 dòng / 1 lượt	phiếu {"13": ["agestar"], "14": ["bdadl-shanghai", "mingbang-mbkl"], "19": ["aosif", "jianghao-genset", "waeta-fujian"], "18.9": ["depco-power", "hosem-power", "jinlongteng-fujian", "legapower", "rise-power", "wintpower"], "14.5": ["jet-power"]}
+0.53%	KTA19G3	minDisp 19	số 18.9 (số đông)	86 dòng / 1 lượt	phiếu {"13": ["agestar"], "14": ["bdadl-shanghai"], "19": ["aosif", "bdadl-shanghai", "depco-power", "frs-shenyang", "fukangsi-yangzhou", "jianghao-genset", "jinjia-power", "legapower", "liangzi-yangzhou", "pengpai-yangzhou", "superwatt-swt", "victory-generator"], "18.9": ["agestar", "aoke-yangzhou", "aosif", "depco-power", "huipu-power", "jinlongteng-fujian", "legapower", "mingbang-mbkl", "rise-power", "sunkings", "tecgen-fujian", "weiman-fujian", "wintpower", "yingtai-jiangsu"]}
+0.53%	KTA19G3A	minDisp 19	số 18.9 (số đông)	107 dòng / 1 lượt	phiếu {"13": ["agestar"], "19": ["aosif", "bdadl-shanghai", "depco-power", "frs-shenyang", "fukangsi-yangzhou", "jianghao-genset", "jinjia-power", "jiuan-power", "legapower", "liangzi-yangzhou", "pengpai-yangzhou", "victory-generator", "waeta-fujian"], "18.9": ["aosif", "huipu-power", "jinlongteng-fujian", "kanpor-fuan", "legapower", "mingbang-mbkl", "rise-power", "weiman-fujian", "wintpower"]}
+0.53%	KTA19G4	minDisp 19	số 18.9 (số đông)	90 dòng / 1 lượt	phiếu {"13": ["agestar", "depco-power"], "19": ["aosif", "bdadl-shanghai", "depco-power", "fukangsi-yangzhou", "legapower", "liangzi-yangzhou", "pengpai-yangzhou", "waeta-fujian"], "18.9": ["agestar", "aosif", "huipu-power", "jinlongteng-fujian", "legapower", "mingbang-mbkl", "sunkings", "wintpower", "yingtai-jiangsu"]}
+0.53%	KTA19G8	minDisp 19	số 18.9 (số đông)	30 dòng / 1 lượt	phiếu {"19": ["aosif", "frs-shenyang", "fukangsi-yangzhou", "jinjia-power", "jiuan-power", "legapower", "pengpai-yangzhou", "victory-generator"], "18.9": ["bdadl-shanghai", "huipu-power", "jinlongteng-fujian", "liangzi-yangzhou", "pengpai-yangzhou", "rise-power", "wintpower"]}
+0.53%	KTAA19G5	minDisp 19	số 18.9 (số đông)	83 dòng / 1 lượt	phiếu {"19": ["aosif", "bdadl-shanghai", "depco-power", "fukangsi-yangzhou", "jianghao-genset", "legapower", "liangzi-yangzhou", "pengpai-yangzhou", "victory-generator", "waeta-fujian"], "18.9": ["agestar", "aoke-yangzhou", "huipu-power", "jinlongteng-fujian", "kanpor-fuan", "legapower", "mingbang-mbkl", "rise-power", "weiman-fujian", "wintpower"]}
+0.53%	KTAA19G6	minDisp 19	số 18.9 (số đông)	51 dòng / 1 lượt	phiếu {"19": ["aosif", "depco-power", "frs-shenyang", "jinjia-power", "legapower", "victory-generator", "waeta-fujian"], "18.9": ["agestar", "hosem-power", "huipu-power", "jinlongteng-fujian", "mingbang-mbkl", "rise-power", "sunkings", "wintpower"]}
+0.53%	KTAA19G6A	minDisp 19	số 18.9 (số đông)	1 dòng / 1 lượt	phiếu {"19": ["aosif", "bdadl-shanghai", "depco-power", "frs-shenyang", "fukangsi-yangzhou", "jianghao-genset", "jinjia-power", "legapower", "pengpai-yangzhou", "supermaly", "victory-generator", "waeta-fujian"], "18.9": ["agestar", "aoke-yangzhou", "huipu-power", "jinlongteng-fujian", "kanpor-fuan", "legapower", "liangzi-yangzhou", "mingbang-mbkl", "rise-power", "tecgen-fujian", "weiman-fujian", "wintpower"]}
+0.53%	KTAA19G7	minDisp 19	số 18.9 (số đông)	1 dòng / 1 lượt	phiếu {"19": ["aosif", "legapower"], "18.9": ["agestar", "depco-power", "sunkings", "wintpower"]}
+0.53%	KTAA19G8	minDisp 19	số 18.9 (mọi nguồn)	4 dòng / 1 lượt	phiếu {"18.9": ["mingbang-mbkl", "weiman-fujian"]}
+0.53%	M15G6	minDisp 19	số 18.9 (mọi nguồn)	4 dòng / 1 lượt	phiếu {"18.9": ["aosif"], "14.5": ["aosif"]}
+0.53%	QSK19G14	minDisp 19	số 18.9 (số đông)	11 dòng / 1 lượt	phiếu {"19": ["bdadl-shanghai", "frs-shenyang"], "18.9": ["aosif"]}
+0.53%	QSK19G4	minDisp 19	số 18.9 (số đông)	1 dòng / 1 lượt	phiếu {"19": ["aosif", "frs-shenyang", "jinjia-power", "victory-generator", "waeta-fujian"], "18.9": ["aosif", "depco-power", "fukangsi-yangzhou", "pengpai-yangzhou", "yingtai-jiangsu"]}
+0.53%	UK666G1	minDisp 19	số 18.9 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"18.9": ["biao-xiamen"]}
+0.53%	UK666G2	minDisp 19	số 18.9 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"18.9": ["biao-xiamen"]}
+0.53%	WTA19G3	minDisp 19	số 18.9 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"18.9": ["wintpower"]}
+0.57%	12V4000G21R	minDisp 49.03	số 48.75 (mọi nguồn)	14 dòng / 1 lượt	phiếu {"48.75": ["jinjia-power"], "48.7": ["wintpower"]}
+0.59%	YC6MJ500D30	minDisp 11.8	số 11.73 (số đông)	12 dòng / 1 lượt	phiếu {"11.73": ["fdk-energy", "hanyang-weifang", "tellhow-power", "waeta-fujian", "yunding-jiangsu"]}
+0.59%	YC6MJ515LD22	minDisp 11.8	số 11.73 (mọi nguồn)	4 dòng / 1 lượt	phiếu {"11.73": ["waeta-fujian"]}
+0.59%	YC6MJ540D30	minDisp 11.8	số 11.73 (số đông)	13 dòng / 1 lượt	phiếu {"11.73": ["fdk-energy", "hanyang-weifang", "tellhow-power", "waeta-fujian"]}
+0.59%	YC6MJ600D30	minDisp 11.8	số 11.73 (số đông)	14 dòng / 1 lượt	phiếu {"11.73": ["fdk-energy", "hanyang-weifang", "supermaly", "tellhow-power", "waeta-fujian", "yunding-jiangsu"]}
+0.59%	YC6MK500D32	minDisp 11.8	số 11.73 (mọi nguồn)	8 dòng / 1 lượt	phiếu {"10.34": ["tellhow-power"], "11.73": ["waeta-fujian"]}
+0.63%	YC6MJ500D21	minDisp 11.8	số 11.726 (mọi nguồn)	8 dòng / 1 lượt	phiếu {"11.726": ["liangzi-yangzhou"]}
+0.63%	YC6MJ500LD21	minDisp 11.8	số 11.726 (số đông)	15 dòng / 1 lượt	phiếu {"11.73": ["fdk-energy", "waeta-fujian", "yunding-jiangsu"], "11.76": ["frs-shenyang"], "11.726": ["hanyang-weifang"], "12.151": ["liangzi-yangzhou"]}
+0.64%	6LTAA89G	maxDisp 8.8	số 8.9 (mọi nguồn)	4 dòng / 2 lượt	phiếu {"8.9": ["huayuan-weifang"]}
+0.64%	6LTAA89G2	maxDisp 8.8	số 8.9 (số đông)	18 dòng / 2 lượt	phiếu {"14": ["agestar"], "8.9": ["agestar", "aosif", "bdadl-shanghai", "depco-power", "fukangsi-yangzhou", "hanyang-weifang", "hosem-power", "jianghao-genset", "jinjia-power", "jinlongteng-fujian", "jiuan-power", "kanpor-fuan", "legapower", "liangzi-yangzhou", "mingbang-mbkl", "pengpai-yangzhou", "rise-power", "victory-generator", "waeta-fujian", "weiman-fujian", "wintpower", "yunding-jiangsu"], "8.3": ["depco-power", "sunkings", "wintpower"]}
+0.64%	6LTAA89G3	maxDisp 8.8	số 8.9 (số đông)	90 dòng / 2 lượt	phiếu {"8.9": ["aosif", "bdadl-shanghai", "depco-power", "fukangsi-yangzhou", "hanyang-weifang", "jianghao-genset", "jinjia-power", "jinlongteng-fujian", "kanpor-fuan", "legapower", "mingbang-mbkl", "pengpai-yangzhou", "rise-power", "victory-generator", "waeta-fujian", "weiman-fujian", "wintpower", "yunding-jiangsu"], "9.9": ["bdadl-shanghai"]}
+0.64%	L9G18	maxDisp 8.8	số 8.9 (mọi nguồn)	6 dòng / 2 lượt	phiếu {"8.9": ["aosif"]}
+0.64%	L9G19	maxDisp 8.8	số 8.9 (mọi nguồn)	6 dòng / 2 lượt	phiếu {"8.9": ["aosif"]}
+0.64%	QSL89G30	maxDisp 8.8	số 8.9 (số đông)	24 dòng / 2 lượt	phiếu {"8.9": ["aosif", "voltgent", "yunding-jiangsu"]}
+0.64%	QSL89G33	maxDisp 8.8	số 8.9 (số đông)	20 dòng / 2 lượt	phiếu {"8.9": ["aosif", "voltgent", "yunding-jiangsu"]}
+0.64%	QSL89G4	maxDisp 8.8	số 8.9 (số đông)	2 dòng / 2 lượt	phiếu {"8.9": ["bdadl-shanghai", "fdk-energy", "fukangsi-yangzhou", "hanyang-weifang", "liangzi-yangzhou", "pengpai-yangzhou", "victory-generator", "yunding-jiangsu"]}
+0.64%	QSL9G7	maxDisp 8.8	số 8.9 (mọi nguồn)	14 dòng / 2 lượt	phiếu {"8.9": ["aosif"]}
+0.64%	QSM11G3	maxDisp 8.8	số 8.9 (mọi nguồn)	26 dòng / 2 lượt	phiếu {"10.8": ["aosif"], "8.9": ["voltgent"]}
+0.64%	WP12D353E200	maxDisp 8.8	số 8.9 (mọi nguồn)	12 dòng / 2 lượt	phiếu {"11.6": ["aosif"], "11.5": ["bdadl-shanghai"], "8.9": ["waeta-fujian"], "9.726": ["yunding-jiangsu"]}
+0.67%	4HT43G21	minDisp 4.329	số 4.3 (mọi nguồn)	5 dòng / 1 lượt	phiếu {"4.3": ["waeta-fujian"]}
+0.67%	4HTAA43G31	minDisp 4.329	số 4.3 (mọi nguồn)	6 dòng / 1 lượt	phiếu {"4.3": ["bdadl-shanghai", "fukangsi-yangzhou", "hanyang-weifang", "pengpai-yangzhou"]}
+0.67%	SC4H95D2	minDisp 4.329	số 4.3 (số đông)	4 dòng / 1 lượt	phiếu {"4.3": ["aoke-yangzhou", "bdadl-shanghai", "depco-power", "fdk-energy", "frs-shenyang", "fukangsi-yangzhou", "hanyang-weifang", "huatai-yangzhou", "jet-power", "jinjia-power", "legapower", "liangzi-yangzhou", "pengpai-yangzhou", "rise-power", "sanq-power", "victory-generator", "waeta-fujian", "wintpower", "yunding-jiangsu"], "BLOCK": ["jlmech-wuhan"]}
+0.67%	ZH4105ZD	minDisp 4.329	số 4.3 (mọi nguồn)	12 dòng / 1 lượt	phiếu {"4.3": ["hanyang-weifang"]}
+0.69%	4HT43G21	minDisp 4.33	số 4.3 (mọi nguồn)	9 dòng / 1 lượt	phiếu {"4.3": ["waeta-fujian"]}
+0.69%	4HT43G22	minDisp 4.33	số 4.3 (mọi nguồn)	9 dòng / 1 lượt	phiếu {"4.3": ["depco-power", "waeta-fujian"]}
+0.69%	4HTAA43G31	minDisp 4.33	số 4.3 (mọi nguồn)	4 dòng / 1 lượt	phiếu {"4.3": ["bdadl-shanghai", "fukangsi-yangzhou", "hanyang-weifang", "pengpai-yangzhou"]}
+0.69%	4HTAA43G32	minDisp 4.33	số 4.3 (mọi nguồn)	7 dòng / 1 lượt	phiếu {"4.3": ["bdadl-shanghai", "fukangsi-yangzhou", "hanyang-weifang", "pengpai-yangzhou"]}
+0.69%	SC4H95CF2	minDisp 4.33	số 4.3 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"4.3": ["rise-power"]}
+0.69%	SC4H95D2	minDisp 4.33	số 4.3 (số đông)	45 dòng / 1 lượt	phiếu {"4.3": ["aoke-yangzhou", "bdadl-shanghai", "depco-power", "fdk-energy", "frs-shenyang", "fukangsi-yangzhou", "hanyang-weifang", "huatai-yangzhou", "jet-power", "jinjia-power", "legapower", "liangzi-yangzhou", "pengpai-yangzhou", "rise-power", "sanq-power", "victory-generator", "waeta-fujian", "wintpower", "yunding-jiangsu"], "BLOCK": ["jlmech-wuhan"]}
+0.69%	ZH4105ZD	minDisp 4.33	số 4.3 (mọi nguồn)	5 dòng / 1 lượt	phiếu {"4.3": ["hanyang-weifang"]}
+0.74%	6M11G135/6	minDisp 6.8	số 6.75 (mọi nguồn)	6 dòng / 1 lượt	phiếu {"6.75": ["depco-power", "waeta-fujian"]}
+0.74%	6M11G160/6	minDisp 6.8	số 6.75 (mọi nguồn)	8 dòng / 1 lượt	phiếu {"6.75": ["depco-power", "waeta-fujian"]}
+0.74%	6M11G165/5	minDisp 6.8	số 6.75 (mọi nguồn)	18 dòng / 1 lượt	phiếu {"6.75": ["depco-power", "waeta-fujian"]}
+0.74%	6M11G176/6	minDisp 6.8	số 6.75 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"6.75": ["depco-power", "waeta-fujian"]}
+0.74%	6M11G188/5	minDisp 6.8	số 6.75 (mọi nguồn)	5 dòng / 1 lượt	phiếu {"6.75": ["depco-power"]}
+0.74%	R6105AZLD1	minDisp 6.8	số 6.75 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"6.75": ["aoke-yangzhou", "liangzi-yangzhou"]}
+0.74%	WP6CD152E200	minDisp 6.8	số 6.75 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"6.75": ["fengfa-taizhou", "kangwo-guangdong"]}
+0.74%	WP6D152E200	minDisp 6.8	số 6.75 (số đông)	31 dòng / 1 lượt	phiếu {"6.8": ["aosif"], "6.75": ["bdadl-shanghai", "depco-power", "fukangsi-yangzhou", "hanyang-weifang", "huipu-power", "jet-power", "liangzi-yangzhou", "pengpai-yangzhou", "waeta-fujian", "yunding-jiangsu"], "6.25": ["victory-generator"]}
+0.74%	WP6D152E310	minDisp 6.8	số 6.75 (số đông)	1 dòng / 1 lượt	phiếu {"6.75": ["fukangsi-yangzhou", "hanyang-weifang", "yunding-jiangsu"]}
+0.74%	WP6D158E201	minDisp 6.8	số 6.75 (số đông)	12 dòng / 1 lượt	phiếu {"6.8": ["aosif"], "6.75": ["depco-power", "jianghao-genset", "waeta-fujian"], "6.25": ["victory-generator"]}
+0.74%	WP6D167E200	minDisp 6.8	số 6.75 (số đông)	21 dòng / 1 lượt	phiếu {"6.8": ["aosif"], "6.75": ["depco-power", "hanyang-weifang", "waeta-fujian", "yunding-jiangsu"]}
+0.74%	WP6D180E201	minDisp 6.8	số 6.75 (số đông)	12 dòng / 1 lượt	phiếu {"6.8": ["aosif"], "6.75": ["depco-power", "jianghao-genset"], "6.25": ["victory-generator"]}
+0.74%	WP6D180E201^	minDisp 6.8	số 6.75 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"6.75": ["waeta-fujian"]}
+0.74%	B67CS4GT2	minDisp 6.75	số 6.7 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"6.7": ["aosif"]}
+0.74%	B67G17	minDisp 6.75	số 6.7 (mọi nguồn)	3 dòng / 1 lượt	phiếu {"6.7": ["aosif"]}
+0.74%	NEF67TM3AS500	minDisp 6.75	số 6.7 (mọi nguồn)	4 dòng / 1 lượt	phiếu {"6.7": ["depco-power"]}
+0.74%	NEF67TM4S500	minDisp 6.75	số 6.7 (mọi nguồn)	5 dòng / 1 lượt	phiếu {"6.7": ["depco-power"]}
+0.74%	QSB59G33	minDisp 6.75	số 6.7 (mọi nguồn)	9 dòng / 1 lượt	phiếu {"5.9": ["aosif", "voltgent", "yunding-jiangsu"], "6.7": ["aosif"]}
+0.74%	QSB67G3	minDisp 6.75	số 6.7 (số đông)	17 dòng / 1 lượt	phiếu {"6.7": ["bdadl-shanghai", "fukangsi-yangzhou", "hanyang-weifang", "liangzi-yangzhou", "pengpai-yangzhou", "victory-generator"]}
+0.74%	QSB67G4	minDisp 6.75	số 6.7 (số đông)	12 dòng / 1 lượt	phiếu {"6.7": ["bdadl-shanghai", "fukangsi-yangzhou", "hanyang-weifang", "liangzi-yangzhou", "pengpai-yangzhou", "victory-generator"]}
+0.74%	QSB7G2	minDisp 6.75	số 6.7 (mọi nguồn)	3 dòng / 1 lượt	phiếu {"6.7": ["aosif"]}
+0.74%	QSB7G3	minDisp 6.75	số 6.7 (mọi nguồn)	9 dòng / 1 lượt	phiếu {"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif"]}
+0.74%	QSB7G4	minDisp 6.75	số 6.7 (mọi nguồn)	7 dòng / 1 lượt	phiếu {"6.7": ["aosif", "yingtai-jiangsu"], "6.69": ["aosif"]}
+0.77%	CR13TE6WS550	minDisp 13	số 12.9 (mọi nguồn)	8 dòng / 3 lượt	phiếu {"12.9": ["depco-power"], "12.88": ["depco-power"]}
+0.77%	DPCDE883	minDisp 13	số 12.9 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"12.9": ["depco-power"]}
+0.78%	2806AE18TAG1A	minDisp 18.273	số 18.13 (số đông)	55 dòng / 3 lượt	phiếu {"18.1": ["agestar", "gb-power", "legapower", "mingbang-mbkl", "rise-power", "wintpower"], "18.13": ["legapower"]}
+0.78%	2806AE18TAG2	minDisp 18.273	số 18.13 (số đông)	232 dòng / 3 lượt	phiếu {"18": ["bdadl-shanghai", "pengpai-yangzhou", "rise-power"], "18.1": ["agestar", "fukangsi-yangzhou", "genlitec", "hanyang-weifang", "huipu-power", "jlmech-wuhan", "legapower", "liangzi-yangzhou", "mingbang-mbkl", "pengpai-yangzhou", "waeta-fujian", "weiman-fujian", "wintpower"], "18.13": ["fdk-energy", "frs-shenyang", "jinjia-power", "westinpower"]}
+0.78%	2806AE18TAG3	minDisp 18.273	số 18.13 (số đông)	9 dòng / 3 lượt	phiếu {"18.13": ["legapower"], "18.1": ["rise-power", "wintpower"]}
+0.78%	2806CE18TAG1A	minDisp 18.273	số 18.13 (số đông)	181 dòng / 3 lượt	phiếu {"18": ["bdadl-shanghai", "pengpai-yangzhou", "rise-power"], "18.13": ["depco-power", "fdk-energy", "lees-power", "westinpower"], "18.1": ["fukangsi-yangzhou", "hanyang-weifang", "huipu-power", "jinjia-power", "jlmech-wuhan", "legapower", "liangzi-yangzhou", "pengpai-yangzhou", "waeta-fujian", "weiman-fujian", "wintpower"]}
+0.78%	2806CE18TAG3	minDisp 18.273	số 18.13 (số đông)	31 dòng / 3 lượt	phiếu {"18.1": ["jianghao-genset", "mingbang-mbkl", "wintpower"], "18.13": ["lees-power", "legapower"]}
+0.78%	CATC18	minDisp 18.273	số 18.13 (mọi nguồn)	8 dòng / 3 lượt	phiếu {"18.13": ["rise-power"]}
+0.79%	D11A	minDisp 11.051	số 10.964 (mọi nguồn)	4 dòng / 1 lượt	phiếu {"10.964": ["excel-power-ningde"]}
+0.79%	D11A1	minDisp 11.051	số 10.964 (mọi nguồn)	4 dòng / 4 lượt	phiếu {"10.964": ["excel-power-ningde"]}
+0.79%	D11A2	minDisp 11.051	số 10.964 (mọi nguồn)	16 dòng / 4 lượt	phiếu {"10.964": ["excel-power-ningde"]}
+0.79%	F4L912D	minDisp 3.8	số 3.77 (mọi nguồn)	3 dòng / 1 lượt	phiếu {"3.77": ["victory-generator"]}
+0.79%	F4L912TD	minDisp 3.8	số 3.77 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"3.77": ["victory-generator"]}
+0.81%	M15G4	minDisp 14.618	số 14.5 (mọi nguồn)	4 dòng / 1 lượt	phiếu {"10.8": ["aosif"], "14.5": ["aosif"]}
+0.81%	M15G5	minDisp 14.618	số 14.5 (mọi nguồn)	9 dòng / 2 lượt	phiếu {"14.5": ["aosif"]}
+0.81%	M15G7	minDisp 14.618	số 14.5 (mọi nguồn)	22 dòng / 2 lượt	phiếu {"14.5": ["aosif"]}
+0.81%	M15G8	minDisp 14.618	số 14.5 (mọi nguồn)	11 dòng / 1 lượt	phiếu {"14.5": ["aosif"]}
+0.81%	WD145TAD35	minDisp 14.618	số 14.5 (mọi nguồn)	2 dòng / 1 lượt	phiếu {"14.5": ["liangzi-yangzhou", "wudong-wuxi"]}
+0.82%	4YT2320D	maxDisp 2.28	số 2.31 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"2.31": ["waeta-fujian"]}
+0.86%	1106CP6TAG2	maxDisp 5.9	số 5.98 (mọi nguồn)	7 dòng / 1 lượt	phiếu {"5.98": ["jet-power"]}
+0.86%	1106CP6TAG3	maxDisp 5.9	số 5.98 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"5.98": ["jet-power"]}
+0.88%	YM6H4LFD	minDisp 8.9	số 8.822 (số đông)	22 dòng / 2 lượt	phiếu {"8.82": ["acepow-fuan", "depco-power", "yto"], "8.822": ["depco-power"]}
+0.90%	1104C44TAG1	minDisp 4.45	số 4.41 (số đông)	1 dòng / 1 lượt	phiếu {"4.4": ["aoke-yangzhou", "depco-power", "hanyang-weifang", "legapower", "mingbang-mbkl", "wintpower"], "4.41": ["weiman-fujian"]}
+0.90%	1104C44TAG2	minDisp 4.45	số 4.41 (số đông)	25 dòng / 1 lượt	phiếu {"4.41": ["agestar", "legapower", "tecgen-fujian", "weiman-fujian", "yunding-jiangsu"], "4.4": ["aoke-yangzhou", "bdadl-shanghai", "depco-power", "fdk-energy", "frs-shenyang", "fukangsi-yangzhou", "genlitec", "hanyang-weifang", "huipu-power", "jet-power", "jinjia-power", "legapower", "mingbang-mbkl", "pengpai-yangzhou", "rise-power", "waeta-fujian", "westinpower", "wintpower"], "12.6": ["liangzi-yangzhou"]}
+0.90%	6DTAA89G22	minDisp 8.9	số 8.82 (mọi nguồn)	10 dòng / 2 lượt	phiếu {"8.82": ["depco-power"]}
+0.90%	SC9D310D2	minDisp 8.9	số 8.82 (số đông)	60 dòng / 2 lượt	phiếu {"8.8": ["aoke-yangzhou", "bdadl-shanghai", "hanyang-weifang"], "8.82": ["bdadl-shanghai", "depco-power", "frs-shenyang", "fukangsi-yangzhou", "huatai-yangzhou", "jet-power", "liangzi-yangzhou", "pengpai-yangzhou", "rise-power", "sanq-power", "victory-generator", "wintpower", "yunding-jiangsu"], "8.9": ["jinjia-power", "legapower", "waeta-fujian"], "BLOCK": ["jlmech-wuhan"]}
+0.92%	CR13TE6WS550	maxDisp 12.7	số 12.88 (mọi nguồn)	4 dòng / 1 lượt	phiếu {"12.9": ["depco-power"], "12.88": ["depco-power"]}
+0.92%	CURSOR13TE2AS551	maxDisp 12.7	số 12.88 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"12.88": ["depco-power"]}
+0.92%	CURSOR13TE3AS551	maxDisp 12.7	số 12.88 (mọi nguồn)	5 dòng / 1 lượt	phiếu {"12.88": ["depco-power"]}
+0.92%	CR13TE7WS550	minDisp 13	số 12.88 (mọi nguồn)	10 dòng / 2 lượt	phiếu {"12.88": ["depco-power"]}
+0.92%	CURSOR13TE2AS551	minDisp 13	số 12.88 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"12.88": ["depco-power"]}
+0.92%	CURSOR13TE3AS551	minDisp 13	số 12.88 (mọi nguồn)	5 dòng / 1 lượt	phiếu {"12.88": ["depco-power"]}
+0.93%	1103A33G	minDisp 3.331	số 3.3 (số đông)	109 dòng / 1 lượt	phiếu {"3.3": ["agestar", "aoke-yangzhou", "depco-power", "fdk-energy", "frs-shenyang", "fukangsi-yangzhou", "gb-power", "hanyang-weifang", "huipu-power", "jet-power", "jinjia-power", "jlmech-wuhan", "liangzi-yangzhou", "mingbang-mbkl", "pengpai-yangzhou", "rise-power", "waeta-fujian", "weiman-fujian", "westinpower", "wintpower", "yunding-jiangsu"], "2.216": ["depco-power"]}
+0.93%	1103A33G1	minDisp 3.331	số 3.3 (mọi nguồn)	2 dòng / 1 lượt	phiếu {"3.3": ["depco-power", "genlitec"]}
+0.93%	1103A33TG1	minDisp 3.331	số 3.3 (số đông)	11 dòng / 1 lượt	phiếu {"3.3": ["agestar", "aoke-yangzhou", "depco-power", "fdk-energy", "frs-shenyang", "fukangsi-yangzhou", "gb-power", "genlitec", "hanyang-weifang", "huipu-power", "jet-power", "jinjia-power", "jiuan-power", "liangzi-yangzhou", "mingbang-mbkl", "pengpai-yangzhou", "rise-power", "waeta-fujian", "weiman-fujian", "westinpower", "wintpower", "yunding-jiangsu"]}
+0.93%	1103C33G3	minDisp 3.331	số 3.3 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"3.3": ["mingbang-mbkl"]}
+0.93%	1103D33G2	minDisp 3.331	số 3.3 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"3.3": ["hanyang-weifang"]}
+0.93%	CATC33	minDisp 3.331	số 3.3 (mọi nguồn)	2 dòng / 1 lượt	phiếu {"3.3": ["rise-power"]}
+0.93%	X33G1	minDisp 3.331	số 3.3 (mọi nguồn)	4 dòng / 1 lượt	phiếu {"3.3": ["yingtai-jiangsu"]}
+0.93%	YT3B2D	minDisp 3.331	số 3.3 (mọi nguồn)	12 dòng / 1 lượt	phiếu {"3.3": ["acepow-fuan", "depco-power"], "3.12": ["depco-power"]}
+0.94%	4M08G10D3/5	minDisp 3.2	số 3.17 (mọi nguồn)	10 dòng / 1 lượt	phiếu {"3.17": ["voltgent"]}
+0.94%	4M08G8D3/5	minDisp 3.2	số 3.17 (mọi nguồn)	10 dòng / 1 lượt	phiếu {"3.17": ["voltgent"]}
+0.94%	A498BD	minDisp 3.2	số 3.17 (mọi nguồn)	5 dòng / 1 lượt	phiếu {"3.17": ["depco-power"]}
+0.94%	A498BZD	minDisp 3.2	số 3.17 (mọi nguồn)	2 dòng / 1 lượt	phiếu {"3.17": ["depco-power"]}
+0.94%	WP32D28E310	minDisp 3.2	số 3.17 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"3.17": ["hanyang-weifang", "yunding-jiangsu"]}
+0.94%	WP32D36E310	minDisp 3.2	số 3.17 (mọi nguồn)	1 dòng / 1 lượt	phiếu {"3.17": ["hanyang-weifang", "yunding-jiangsu"]}
+0.94%	WP32D44E310	minDisp 3.2	số 3.17 (mọi nguồn)	2 dòng / 1 lượt	phiếu {"3.1": ["bdadl-shanghai"], "3.17": ["hanyang-weifang", "yunding-jiangsu"]}
+0.95%	2806AE18TAG1	minDisp 18.273	số 18.1 (mọi nguồn)	9 dòng / 3 lượt	phiếu {"18.1": ["genlitec"]}
+0.95%	2806AE18TAG2L	minDisp 18.273	số 18.1 (mọi nguồn)	21 dòng / 3 lượt	phiếu {"18.1": ["yunding-jiangsu"]}
+0.95%	2806AE18TTAG4	minDisp 18.273	số 18.1 (số đông)	24 dòng / 3 lượt	phiếu {"18.1": ["genlitec", "hanyang-weifang", "yunding-jiangsu"]}
+0.95%	2806AE18TTAG5	minDisp 18.273	số 18.1 (số đông)	3 dòng / 1 lượt	phiếu {"18.1": ["genlitec", "hanyang-weifang", "yunding-jiangsu"]}
+0.95%	2806CE18TAG1AL	minDisp 18.273	số 18.1 (mọi nguồn)	23 dòng / 3 lượt	phiếu {"18.1": ["yunding-jiangsu"]}
+0.95%	2806DE18TAG1A	minDisp 18.273	số 18.1 (mọi nguồn)	8 dòng / 3 lượt	phiếu {"18.1": ["hanyang-weifang"]}
