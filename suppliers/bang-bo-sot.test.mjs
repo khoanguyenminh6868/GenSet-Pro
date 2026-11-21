@@ -73,11 +73,12 @@ test("nhiên liệu: lees n133 khí theo URL trang (mức T); green n115 MTU die
   assert.ok(m.length && m.every((r) => r.fuel === undefined));
 });
 
-test("ngoại lệ theo dòng: GP1000 A/M ghi 16 xi lanh cho '12V 1600 G31F' (12V = 12) → bỏ riêng cyl, dòng và số khác giữ; GP880 A/M không đổi", () => {
+test("ngoại lệ theo dòng: GP1000 A/M ghi 16 xi lanh cho '12V 1600 G31F' (12V = 12) → fixspec cyl 12 (sua-so-le-1), dòng và số khác giữ; GP880 A/M không đổi", () => {
   const notes = [];
   const e = engines(sup("green-power-generators", [{ ...MTU, rows: ["| GP880 A/M | O | 800 | 880 | 12V 1600 G21F | E | 12 | 123.6 | 450 | 4000 | 1500 | 2100 | 5350 | | | |",
     "| GP1000 A/M | O | 910 | 1005 | 12V 1600 G31F | E | 16 | 139 | 450 | 4450 | 1910 | 2250 | 6250 | | | |"] }]), notes);
-  assert.deepEqual(e.map((r) => [r.model, spec(r, "cyl"), spec(r, "weight")]), [["12V 1600 G21F", "12", "5350"], ["12V 1600 G31F", undefined, "6250"]]);
+  assert.deepEqual(e.map((r) => [r.model, spec(r, "cyl"), spec(r, "weight")]), [["12V 1600 G21F", "12", "5350"], ["12V 1600 G31F", "12", "6250"]]);
+  assert.deepEqual([e[1].fixed[0].key, e[1].fixed[0].from, e[1].fixed[0].to], ["cyl", "16", "12"]);
   assert.deepEqual(e[1].power, { prime: { kVA: 910 }, standby: { kVA: 1005 } });
   assert.ok(notes.some((x) => /ngoại lệ theo dòng/.test(x.reason) && /12V 1600 G31F/.test(x.detail)));
 });

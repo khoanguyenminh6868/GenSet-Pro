@@ -1765,8 +1765,22 @@
       .map(([n, genset, line, from, to, why, src]) => ({ supplierId: "huipu-power", n, genset, line, act: "fixspec", fixes: [{ key: "disp", from, to, why, src }], khoa: "Khoa 20/11/2026", why: `mất dấu chấm: ${from} → ${to}` })),
     // green-power n115 (bảng bỏ sót, ENGINE_CELL_TABLES) GP1000 A/M: "12V 1600 G31F | E | 16" — "12V" is 12 cylinders (MTU 12V 1600
     // spec: "Cylinder configuration 12 V"); as the only cylinder source of 12V1600G31F, the 16 ruled out mecca / lees rows for
-    // HSMTs asking 12 (top 30 cloud #967). Candidate for `fixspec` (cyl = 12) once that mechanism lands.
-    { supplierId: "green-power-generators", n: 115, genset: "GP1000 A/M", line: "| GP1000 A/M | O | 910 | 1005 | 12V 1600 G31F | E | 16 | 139 | 450 | 4450 | 1910 | 2250 | 6250 | | | |", act: "dropspec", keys: ["cyl"], khoa: "điều phối 20/11/2026", why: "nguồn ghi 16 xi lanh cho MTU 12V 1600 G31F (mã 12V và tài liệu MTU: 12 xi lanh): bỏ riêng số xi lanh" },
+    // HSMTs asking 12 (top 30 cloud #967). Now `fixspec` cyl 16 → 12 (sua-so-le-1, Khoa duyệt 21/11/2026 "fix"): the MTU sheet
+    // "Series 1600 Gx0 and Gx1" lists 12V 1600 G31F (806 kW, the same 806 kW the supplier's list gives) and says "Cylinder
+    // configuration 12 cyl" (opened 21/11/2026). The row has no bore x stroke, so (a) is replaced by the maker's own sheet.
+    { supplierId: "green-power-generators", n: 115, genset: "GP1000 A/M", line: "| GP1000 A/M | O | 910 | 1005 | 12V 1600 G31F | E | 16 | 139 | 450 | 4450 | 1910 | 2250 | 6250 | | | |", act: "fixspec", khoa: "Khoa 21/11/2026",
+      fixes: [{ key: "cyl", from: "16", to: "12", why: "mã 12V 1600 G31F; tài liệu MTU Series 1600 Gx0 / Gx1 ghi 12V 1600 G31F 806 kW, Cylinder configuration 12 cyl", src: "https://www.mtu-solutions.com/content/dam/mtu/products/power-generation/powergeneration-product-list-latest/3239091_MTU_Gendrive_spec_12V1600Gx0_Gx1_3B_A2A.pdf (mở 21/11/2026)" }], why: "nguồn ghi 16 xi lanh cho MTU 12V 1600 G31F: sửa thành 12 theo tài liệu hãng" },
+    // aosif n1079 (PDF datasheet "255705512637.pdf", engine QSL9-G5): the "Engine specification" block is the QSL9-G7 sheet's
+    // ("Model | QSL9-G7 | No. of cylinder | 4", bore 107x124, 6.69 L), so the 4 is not the QSL9-G5's; aosif n1078 (same sheet, 6 cylinders)
+    // and its AC330 / AC395 rows (6L) say 6. Only the cylinder count is dropped (Khoa 21/11/2026 "fix", `dropspec`, no figure written).
+    { supplierId: "aosif", n: 1079, model: "QSL9-G5", line: "| No. of cylinder | 4", act: "dropspec", keys: ["cyl"], khoa: "Khoa 21/11/2026", why: "datasheet QSL9-G5 chép khối động cơ của QSL9-G7 (ghi 4 xi lanh; cùng NCC ghi 6 cho QSL9-G5): bỏ riêng số xi lanh" },
+    // depco n2102 P158LE-1 (DPK-DD-441): "Cylinder 6 | Displacement 11.051" are the P126TI's figures; the same row's bore x stroke 128 X 142
+    // x 8 = 14.62 L, depco's own P158LE rows (n2101, n2182) say 8 / 14.618 / 14.62, and bdadl, fukangsi, jianghao, haifeng, taihai, huatai,
+    // wintpower, zhengdian, legapower ... write 8 cylinders and 14.618 L for P158LE-1: both (a) and (b) hold → `fixspec`.
+    { supplierId: "depco-power", n: 2102, genset: "DPK-DD-441", line: "| Governor | Electrical | Displacement(L) | 11.051", act: "fixspec", khoa: "Khoa 21/11/2026",
+      fixes: [{ key: "cyl", from: "6", to: "8", why: "P158LE-1 ở bdadl n133, fukangsi n2008, jianghao n106, haifeng n2006, taihai n105, huatai n108, wintpower n146 ghi 8 xi lanh; depco n2101 / n2182 (P158LE, cùng 128 X 142) ghi 8", src: "dòng khác của chính trang depco (n2101 / n2182) và NCC khác" },
+        { key: "disp", from: "11.051", to: "14.618", why: "8 | 128 X 142 → 14.62 L (lệch 0 %); P158LE-1 ghi 14.618 ở bdadl, fukangsi, jianghao, haifeng, taihai, huatai, wintpower; 11.051 là dung tích của P126TI", src: "hình học dòng: 128×142×8 xi lanh = 14.62 L" }],
+      why: "nguồn ghi 6 xi lanh / 11,051 L (số của P126TI) cho P158LE-1: sửa thành 8 / 14,618" },
   ];
   function rowExceptions(s, list, note) {
     const ex = ROW_EXCEPTIONS.filter((x) => x.supplierId === s.id);
