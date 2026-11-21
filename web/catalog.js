@@ -2142,19 +2142,19 @@
     if (win) return { makes: best.filter((m) => sameMaker(lead, m.name)), conflict: null };
     return { makes: [], conflict: names.map((n) => ({ name: n, suppliers: count(n) })) };
   }
-  // A trailing "*" / "†" / "^" / "×" is a footnote mark, not part of the model ("QSK19-G4*", baifa "20M33G4D3/5^", tellhow
-  // "KTA50-G15×"), and an en / em dash is a hyphen ("KTA50–G3", "4135D—1"): the model left alone stood apart from the same
-  // model of other suppliers and missed the majority rule (catalog-b). "★" is dropped by tidyModel, where the supplier is
-  // known (MARK_KEEP). O/0 and I/1 are NOT merged.
-  // "^" (baifa, aosif, mecca, landtop, Weichai's own sheets…): no source found says what it means. Khoa 19/11/2026 did not
-  // know either and kept the merge; it rests on no source. Merging also brings one supplier's wrong figures to the others'
-  // rows: aosif "8M33D1012E311^" 12V / 31,8 L against 8 cyl / 26,14 L (waeta, wiseke) → no majority (catalog-b-1.md).
+  // A trailing "*" / "†" / "×" is a footnote mark, not part of the model ("QSK19-G4*", tellhow "KTA50-G15×"), and an en / em
+  // dash is a hyphen ("KTA50–G3", "4135D—1"): the model left alone stood apart from the same model of other suppliers and
+  // missed the majority rule (catalog-b). "★" is dropped by tidyModel, where the supplier is known (MARK_KEEP). O/0 and I/1
+  // are NOT merged.
+  // "^" STAYS in the key (Khoa 21/11/2026 "tách ra", doc-ma-2): on Baudouin / Weichai codes (baifa, aosif, mecca, landtop,
+  // Weichai's own sheets…) no source says what it means, so "X^" is not known to be X. The merge of catalog-b also brought
+  // one supplier's wrong figures to the others' rows: aosif "8M33D1012E311^" 12V / 31,8 L against 8 cyl / 26,14 L.
   // Doosan P-engine only (DOOSAN_P: P126TI / P222LE…): the suffix "II" typed "11" or "Il" ("P126TI-11", "P222LE-11", "P126TI-Il")
   // is the same engine as "-II" (Khoa duyệt 20/11/2026). NFKC already makes "-Ⅰ" / "-Ⅱ" "-I" / "-II". "-1" / "-2" stay apart
   // ("P222LE-2", "P126TI-2" of huatai n108 are not "-II"); no other maker's code is touched.
   const DOOSAN_II = /^(P\d{3}(?:TI|LE))(?:11|IL)$/;
-  const keyOf = (m) => String(m).normalize("NFKC").toUpperCase().replace(/[\s\-_.·–—]/g, "").replace(/[*†‡^×]+$/, "").replace(DOOSAN_II, "$1II");
-  const MARK_TAIL = /\s*[*＊†‡★☆^×]+$/;
+  const keyOf = (m) => String(m).normalize("NFKC").toUpperCase().replace(/[\s\-_.·–—]/g, "").replace(/[*†‡×]+$/, "").replace(DOOSAN_II, "$1II");
+  const MARK_TAIL = /\s*[*＊†‡★☆×]+$/;
   // A mark a supplier's note gives a meaning that tells the model apart (catalog-b, not merged with the bare model): ettes-power
   // n146 "Models with mark of "★" means the engine made by Perkins China, other models are made in UK" (the place of
   // manufacture, which the row's own words do not say). Other suppliers' "★" (tellhow-power: "optional engines provided with
