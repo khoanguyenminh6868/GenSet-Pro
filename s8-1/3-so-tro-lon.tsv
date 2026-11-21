@@ -1,0 +1,54 @@
+NCC	n	vai	model	khoá	nhãn	ô nguyên văn	đơn vị đọc	unitFrom	missing	hiện xử
+honny-dongguan	101	engine	QTA20V-EG2950D	QTA20VEG2950D	排量 (A)	108			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+honny-dongguan	101	alternator	GP3000-4P	GP30004P	排量 (A)	108			unit	vai đầu phát: build() bỏ khoá disp
+honny-dongguan	101	engine	QTAA20V-EG3100	QTAA20VEG3100	排量 (A)	108			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+honny-dongguan	101	alternator	GP3125-4P	GP31254P	排量 (A)	108			unit	vai đầu phát: build() bỏ khoá disp
+honny-dongguan	101	engine	QTA20V-EG3100D	QTA20VEG3100D	排量 (A)	108			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+honny-dongguan	101	alternator	GP3125-4P	GP31254P	排量 (A)	108			unit	vai đầu phát: build() bỏ khoá disp
+honny-dongguan	101	engine	QTAA20V-EG3200	QTAA20VEG3200	排量 (A)	108			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+honny-dongguan	101	alternator	GP3250-4P	GP32504P	排量 (A)	108			unit	vai đầu phát: build() bỏ khoá disp
+honny-dongguan	101	engine	QTA20V-EG3200D	QTA20VEG3200D	排量 (A)	108			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+honny-dongguan	101	alternator	GP3250-4P	GP32504P	排量 (A)	108			unit	vai đầu phát: build() bỏ khoá disp
+honny-dongguan	101	engine	QTAA20V-EG3330	QTAA20VEG3330	排量 (A)	108			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+honny-dongguan	101	alternator	GP3500-4P	GP35004P	排量 (A)	108			unit	vai đầu phát: build() bỏ khoá disp
+honny-dongguan	101	engine	QTA20V-EG3330D	QTA20VEG3330D	排量 (A)	108			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+honny-dongguan	101	alternator	GP3500-4P	GP35004P	排量 (A)	108			unit	vai đầu phát: build() bỏ khoá disp
+honny-dongguan	101	engine	QTAA20V-EG3600	QTAA20VEG3600	排量 (A)	108			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+honny-dongguan	101	alternator	GP3750-4P	GP37504P	排量 (A)	108			unit	vai đầu phát: build() bỏ khoá disp
+honny-dongguan	101	engine	QTA20V-EG3600	QTA20VEG3600	排量 (A)	108			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+honny-dongguan	101	alternator	GP3750-4P	GP37504P	排量 (A)	108			unit	vai đầu phát: build() bỏ khoá disp
+honny-dongguan	102	engine	QTA20V-EG2950D	QTA20VEG2950D	排量 (A)	108			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+honny-dongguan	102	alternator	GPH-3000-4P	GPH30004P	排量 (A)	108			unit	vai đầu phát: build() bỏ khoá disp
+honny-dongguan	102	engine	QTAA20V-EG3100	QTAA20VEG3100	排量 (A)	108			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+honny-dongguan	102	alternator	GPH-3250-4P	GPH32504P	排量 (A)	108			unit	vai đầu phát: build() bỏ khoá disp
+honny-dongguan	102	engine	QTA20V-EG3100D	QTA20VEG3100D	排量 (A)	108			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+honny-dongguan	102	alternator	GPH-3250-4P	GPH32504P	排量 (A)	108			unit	vai đầu phát: build() bỏ khoá disp
+honny-dongguan	102	engine	QTAA20V-EG3200	QTAA20VEG3200	排量 (A)	108			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+honny-dongguan	102	alternator	GPH-3250-4P	GPH32504P	排量 (A)	108			unit	vai đầu phát: build() bỏ khoá disp
+honny-dongguan	102	engine	QTA20V-EG3200D	QTA20VEG3200D	排量 (A)	108			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+honny-dongguan	102	alternator	GPH-3250-4P	GPH32504P	排量 (A)	108			unit	vai đầu phát: build() bỏ khoá disp
+honny-dongguan	102	engine	QTAA20V-EG3330	QTAA20VEG3330	排量 (A)	108			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+honny-dongguan	102	alternator	GPH-3500-4P	GPH35004P	排量 (A)	108			unit	vai đầu phát: build() bỏ khoá disp
+honny-dongguan	102	engine	QTA20V-EG3330D	QTA20VEG3330D	排量 (A)	108			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+honny-dongguan	102	alternator	GPH-3500-4P	GPH35004P	排量 (A)	108			unit	vai đầu phát: build() bỏ khoá disp
+honny-dongguan	102	engine	QTAA20V-EG3600	QTAA20VEG3600	排量 (A)	108			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+honny-dongguan	102	alternator	GPH-3750-4P	GPH37504P	排量 (A)	108			unit	vai đầu phát: build() bỏ khoá disp
+honny-dongguan	102	engine	QTA20V-EG3600	QTA20VEG3600	排量 (A)	108			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+honny-dongguan	102	alternator	GPH-3750-4P	GPH37504P	排量 (A)	108			unit	vai đầu phát: build() bỏ khoá disp
+jlmech-wuhan	104	engine	YC16VC3000-D31	YC16VC3000D31	Displacement (mm)	105.6			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+jlmech-wuhan	104	engine	YC16VC3300-D31	YC16VC3300D31	Displacement (mm)	105.6			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+jlmech-wuhan	104	engine	YC16VC3600-D31	YC16VC3600D31	Displacement (mm)	105.6			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+tellhow-power	123	engine	YC16VC3000-D31	YC16VC3000D31	Displacement	105.56			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+tellhow-power	123	engine	YC16VC3300-D31	YC16VC3300D31	Displacement	105.56			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+tellhow-power	123	engine	YC16VC3600-D31	YC16VC3600D31	Displacement	105.56			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+tellhow-power	123	engine	YC16VC4000-D31	YC16VC4000D31	Displacement	105.56			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+tellhow-power	123	engine	YC16VC4200-D30	YC16VC4200D30	Displacement	105.56			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+tellhow-power	123	engine	YC16VC4500-D30	YC16VC4500D30	Displacement	105.56			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+tellhow-power	123	engine	YC16VC4900-D30	YC16VC4900D30	Displacement	105.56			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+tellhow-power	130	engine	YC16VC3000-D31	YC16VC3000D31	Displacement	105.56			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+tellhow-power	130	engine	YC16VC3300-D31	YC16VC3300D31	Displacement	105.56			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+tellhow-power	130	engine	YC16VC3600-D31	YC16VC3600D31	Displacement	105.56			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+tellhow-power	130	engine	YC16VC4000-D31	YC16VC4000D31	Displacement	105.56			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+tellhow-power	130	engine	YC16VC4200-D30	YC16VC4200D30	Displacement	105.56			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+tellhow-power	130	engine	YC16VC4500-D30	YC16VC4500D30	Displacement	105.56			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit
+tellhow-power	130	engine	YC16VC4900-D30	YC16VC4900D30	Displacement	105.56			unit	BLOCK (phiếu chống số thắng ở candidates) — missing unit

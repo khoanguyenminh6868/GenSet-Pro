@@ -1,0 +1,194 @@
+NCC	n	bảng (chỉ số)	tên bảng	vai	model	khoá	tổ máy	nhãn / tiêu đề cột	ô nguyên văn	trước	sau	bore×stroke của bản ghi	xi lanh của bản ghi	so hình học
+bison-zhejiang	101	0	Wholesale 3KW home backup diesel generator factory | BISON	engine	BS178F	BS178F	BS3500DSE	Displacement	296cc	296 cc	0.296 L	78*62		1 xi lanh 0.2963 L; tỉ số 0.999
+bison-zhejiang	102	1	Wholesale 7KW diesel engine generator factory | BISON	engine	BS198F	BS198F	BS10000DSE	Displacement	498cc	498 cc	0.498 L	98*75		1 xi lanh 0.5657 L; tỉ số 0.880 LỆCH (không khớp 1 hay 2 xi lanh ±5%)
+bison-zhejiang	104	3	purchase 6kw diesel powered generator from China factory | BISON	engine	BS192FB	BS192FB	BS8500DSE	Displacement	498cc	498 cc	0.498 L	92*75		1 xi lanh 0.4986 L; tỉ số 0.999
+bison-zhejiang	105	4	purchase air cooled 7kva diesel generator from China factory | BISON	engine	BS186FA	BS186FA	BS6000DCE	Displacement	418cc	418 cc	0.418 L	86*72		1 xi lanh 0.4182 L; tỉ số 0.999
+bison-zhejiang	107	6	Wholesale 4.5KW silent genset factory in China | BISON	engine	BS186FA	BS186FA	BS6500DSE	Displacement	418cc	418 cc	0.418 L	86*72		1 xi lanh 0.4182 L; tỉ số 0.999
+bison-zhejiang	109	8	Wholesale 5.5KW silent diesel generator factory | BISON	engine	BS188FA	BS188FA	BS7500DSE	Displacement	456cc	456 cc	0.456 L	88*75		1 xi lanh 0.4562 L; tỉ số 1.000
+bison-zhejiang	110	9	Wholesale 5kw diesel generator factory in China | BISON	engine	BS186FA	BS186FA	BS6500DSE	Displacement	418cc	418 cc	0.418 L	86*72		1 xi lanh 0.4182 L; tỉ số 0.999
+bison-zhejiang	113	15	Purchase 10 kva domestic diesel generator from China factory - BISON	engine	HP186FAE	HP186FAE	BS6500	Displacement(cc)	418	418 cc	0.418 L	86*72		1 xi lanh 0.4182 L; tỉ số 0.999
+bison-zhejiang	113	15	Purchase 10 kva domestic diesel generator from China factory - BISON	engine	HP188FAE	HP188FAE	BS7500	Displacement(cc)	456	456 cc	0.456 L	88*75		1 xi lanh 0.4562 L; tỉ số 1.000
+bison-zhejiang	113	15	Purchase 10 kva domestic diesel generator from China factory - BISON	engine	1100F	1100F	BS11000SE	Displacement(cc)	660	660 cc	0.66 L	100*84		1 xi lanh 0.6597 L; tỉ số 1.000
+bison-zhejiang	1003	36	Datasheet: View the gasoline generator Catalog	engine	BS170F	BS170F	1E45F	Displacement (cc)	171	171 cc	0.171 L	68*54		1 xi lanh 0.1961 L; tỉ số 0.872 LỆCH (không khớp 1 hay 2 xi lanh ±5%)
+cameo-power	101	0	China 5 Kva Diesel Generator Manufacturers Suppliers Factory - Best 5 Kva Diesel Generator	engine	CP188FE	CP188FE	CM8000C-DE	Displacement(CC)	456	456 cc	0.456 L			
+cameo-power	101	0	China 5 Kva Diesel Generator Manufacturers Suppliers Factory - Best 5 Kva Diesel Generator	engine	2V92	2V92	CM15000CE	Displacement(CC)	997	997 cc	0.997 L			
+cameo-power	101	0	China 5 Kva Diesel Generator Manufacturers Suppliers Factory - Best 5 Kva Diesel Generator	engine	CP188F	CP188F	CM8000C	Displacement(CC)	456	456 cc	0.456 L			
+cameo-power	102	1	China 5kva Diesel Generator Manufacturers Suppliers Factory - 5kva Diesel Generator Price	engine	CP188FE	CP188FE	CM8000C-DE	Displacement(CC)	456	456 cc	0.456 L			
+cameo-power	102	1	China 5kva Diesel Generator Manufacturers Suppliers Factory - 5kva Diesel Generator Price	engine	CP192FE	CP192FE	CM10000C-DE	Displacement(CC)	499	499 cc	0.499 L			
+cameo-power	102	1	China 5kva Diesel Generator Manufacturers Suppliers Factory - 5kva Diesel Generator Price	engine	CP195FE	CP195FE	CM12000C-DE	Displacement(CC)	531	531 cc	0.531 L			
+cameo-power	103	2	China 6kva Diesel Generator Manufacturers Suppliers Factory - 6kva Diesel Generator Price	engine	CP192FE	CP192FE	CM10000C-DE	Displacement(CC)	499	499 cc	0.499 L			
+cameo-power	103	2	China 6kva Diesel Generator Manufacturers Suppliers Factory - 6kva Diesel Generator Price	engine	CP195FE	CP195FE	CM12000C-DE	Displacement(CC)	531	531 cc	0.531 L			
+cameo-power	103	2	China 6kva Diesel Generator Manufacturers Suppliers Factory - 6kva Diesel Generator Price	engine	CP198FE	CP198FE	CM13000C-DE	Displacement(CC)	633	633 cc	0.633 L			
+cameo-power	104	3	China 5kw Diesel Generator Manufacturers Suppliers Factory - 5kw Diesel Generator for Sale	engine	CP188FE	CP188FE	CM8000C-DE	Displacement(CC)	456	456 cc	0.456 L			
+cameo-power	104	3	China 5kw Diesel Generator Manufacturers Suppliers Factory - 5kw Diesel Generator for Sale	engine	CP192FE	CP192FE	CM10000C-DE	Displacement(CC)	499	499 cc	0.499 L			
+cameo-power	104	3	China 5kw Diesel Generator Manufacturers Suppliers Factory - 5kw Diesel Generator for Sale	engine	CP195FE	CP195FE	CM12000C-DE	Displacement(CC)	531	531 cc	0.531 L			
+cameo-power	105	4	China 10kw Diesel Generator Manufacturers Suppliers Factory - 10kw Diesel Generator Price	engine	CP1105FE	CP1105FE	CM14000C-DE	Displacement(CC)	762	762 cc	0.762 L			
+cameo-power	105	4	China 10kw Diesel Generator Manufacturers Suppliers Factory - 10kw Diesel Generator Price	engine	2V92	2V92	CM15000C-DE	Displacement(CC)	997	997 cc	0.997 L			
+cameo-power	105	4	China 10kw Diesel Generator Manufacturers Suppliers Factory - 10kw Diesel Generator Price	engine	CP195FE	CP195FE	CM12000C-DE	Displacement(CC)	531	531 cc	0.531 L			
+cameo-power	124	14	China Best 8kw - 16kw 20kva Silent Diesel Generator Manufacturers Suppliers Factory	engine	CP1103FE	CP1103FE	CD10000S	Displacement (cc)	733	733 cc	0.733 L	103*88		1 xi lanh 0.7332 L; tỉ số 1.000
+cameo-power	124	14	China Best 8kw - 16kw 20kva Silent Diesel Generator Manufacturers Suppliers Factory	engine	2V88B	2V88B	CD12000S	Displacement (cc)	870	870 cc	0.87 L			
+cameo-power	124	14	China Best 8kw - 16kw 20kva Silent Diesel Generator Manufacturers Suppliers Factory	engine	292FE	292FE	CD14000S	Displacement (cc)	997	997 cc	0.997 L			
+cameo-power	124	14	China Best 8kw - 16kw 20kva Silent Diesel Generator Manufacturers Suppliers Factory	engine	294FE	294FE	CD15000S	Displacement (cc)	1069	1069 cc	1.069 L			
+cameo-power	124	14	China Best 8kw - 16kw 20kva Silent Diesel Generator Manufacturers Suppliers Factory	engine	2V98FE	2V98FE	CD18000S	Displacement (cc)	1326	1326 cc	1.326 L			
+cameo-power	126	15	7.5 Kva Diesel Generator - China 7.5 Kva Diesel Generator Manufacturers Suppliers Factory	engine	CP188F	CP188F	CP8000C/E	Displacement(CC)	456	456 cc	0.456 L			
+cameo-power	126	15	7.5 Kva Diesel Generator - China 7.5 Kva Diesel Generator Manufacturers Suppliers Factory	engine	CP192F	CP192F	CP10000C/E	Displacement(CC)	499	499 cc	0.499 L			
+cameo-power	126	15	7.5 Kva Diesel Generator - China 7.5 Kva Diesel Generator Manufacturers Suppliers Factory	engine	CP195F	CP195F	CP12000CE	Displacement(CC)	531	531 cc	0.531 L			
+cameo-power	127	16	10kw Gasoline Generator - China 10kw Gasoline Generator Manufacturers Suppliers Factory	engine	CP190F	CP190F	CMG7000S-B	Displacement(CC)	420	420 cc	0.42 L			
+cameo-power	127	16	10kw Gasoline Generator - China 10kw Gasoline Generator Manufacturers Suppliers Factory	engine	CP460	CP460	CMG9000S-B	Displacement(CC)	460	460 cc	0.46 L			
+cameo-power	127	16	10kw Gasoline Generator - China 10kw Gasoline Generator Manufacturers Suppliers Factory	engine	CP690	CP690	CMG13000SDE-B	Displacement(CC)	690	690 cc	0.69 L			
+endress-stromerzeuger	108	5	Endress Generators: Detail view	engine	Endress 175/E	ENDRESS175/E		Displacement [ccm]	171	171 cc	0.171 L			
+endress-stromerzeuger	109	6	Endress Generators: Detail view	alternator	ECP32 2S4 C	ECP322S4C	4BT3.9-G2	Displacement [ccm]	3900	3900 cc	3.9 L			
+endress-stromerzeuger	110	7	Endress Generators: Detail view	alternator	ECO28 VL/4C	ECO28VL/4C	4B3.9-G12	Displacement [ccm]	3900	3900 cc	3.9 L			
+endress-stromerzeuger	112	9	Endress Generators: Detail view	alternator	ECO 28 L4C	ECO28L4C	4B3.9-G11	Displacement [ccm]	3900	3900 cc	3.9 L			
+endress-stromerzeuger	113	10	Endress Generators: Detail view	alternator	ECP 28-M/4C	ECP28M/4C	4TNV88-GGE	Displacement [ccm]	2190	2190 cc	2.19 L			
+endress-stromerzeuger	114	11	Endress Generators: Detail view	alternator	ECP 28-M/4C	ECP28M/4C	4TNV88-BIGE	Displacement [ccm]	2190	2190 cc	2.19 L			
+endress-stromerzeuger	115	12	Endress Generators: Detail view	engine	Endress 175/E	ENDRESS175/E		Displacement [ccm]	171	171 cc	0.171 L			
+endress-stromerzeuger	116	13	Endress Generators: Detail view	engine	Endress 80i	ENDRESS80I		Displacement [ccm]	79	79 cc	0.079 L			
+endress-stromerzeuger	117	14	Endress Generators: Detail view	alternator	ECP 32-2M/4C	ECP322M/4C	F34TEVP01	Displacement [ccm]	3400	3400 cc	3.4 L			
+endress-stromerzeuger	118	15	Endress Generators: Detail view	alternator	ECP32-2S/4C	ECP322S/4C	4TNV98CT-IYE	Displacement [ccm]	3319	3319 cc	3.319 L			
+endress-stromerzeuger	119	16	Endress Generators: Detail view	alternator	ECP32 -1S4C	ECP321S4C	4TNV98C-IYE	Displacement [ccm]	3319	3319 cc	3.319 L			
+endress-stromerzeuger	120	17	Endress Generators: Detail view	alternator	ECP 28-2S/4C	ECP282S/4C	3TNV88-GGE	Displacement [ccm]	1642	1642 cc	1.642 L			
+endress-stromerzeuger	122	19	Endress Generators: Detail view	engine	Endress 300i	ENDRESS300I		Displacement [ccm]	302	302 cc	0.302 L			
+endress-stromerzeuger	124	21	Endress Generators: Detail view	alternator	ECP32 1S4C	ECP321S4C	4M08G10D3-5	Displacement [ccm]	3170	3170 cc	3.17 L			
+endress-stromerzeuger	125	22	Endress Generators: Detail view	alternator	ECP32-2S/4C	ECP322S/4C	4TNV98CT-IYE	Displacement [ccm]	3319	3319 cc	3.319 L			
+endress-stromerzeuger	132	29	Endress Generators: Detail view	engine	Endress 175/E	ENDRESS175/E		Displacement [ccm]	171	171 cc	0.171 L			
+endress-stromerzeuger	133	30	Endress Generators: Detail view	alternator	ECP28 M4C	ECP28M4C	4M08G4D3-5	Displacement [ccm]	3170	3170 cc	3.17 L			
+endress-stromerzeuger	134	31	Endress Generators: Detail view	alternator	ECP32 -1S4C	ECP321S4C	4TNV98C-IYE	Displacement [ccm]	3319	3319 cc	3.319 L			
+endress-stromerzeuger	136	33	Endress Generators: Detail view	alternator	ECP32 1S4C	ECP321S4C	4M08G10D3-5	Displacement [ccm]	3170	3170 cc	3.17 L			
+endress-stromerzeuger	138	35	Endress Generators: Detail view	engine	Endress 80i	ENDRESS80I		Displacement [ccm]	79	79 cc	0.079 L			
+endress-stromerzeuger	139	36	Endress Generators: Detail view	engine	Endress 80i	ENDRESS80I		Displacement [ccm]	79	79 cc	0.079 L			
+endress-stromerzeuger	140	37	Endress Generators: Detail view	alternator	ECP28 M4C	ECP28M4C	4M08G4D3-5	Displacement [ccm]	3170	3170 cc	3.17 L			
+endress-stromerzeuger	141	38	Endress Generators: Detail view	alternator	ECP 28-2S/4C	ECP282S/4C	3TNV88-GGE	Displacement [ccm]	1642	1642 cc	1.642 L			
+endress-stromerzeuger	144	41	Endress Generators: Detail view	alternator	ECP28 M4 C	ECP28M4C	4TNV88-BIPGE	Displacement [ccm]	2190	2190 cc	2.19 L			
+endress-stromerzeuger	147	44	Endress Generators: Detail view	alternator	ECO40 1L4 C	ECO401L4C	4TNV88-BIGE	Displacement [ccm]	2190	2190 cc	2.19 L			
+endress-stromerzeuger	148	45	Endress Generators: Detail view	alternator	ECP28-M4 C	ECP28M4C	4TNV88-BIPGE	Displacement [ccm]	2190	2190 cc	2.19 L			
+endress-stromerzeuger	149	46	Endress Generators: Detail view	alternator	ECO 28 L4C	ECO28L4C	4B3.9-G11	Displacement [ccm]	3900	3900 cc	3.9 L			
+endress-stromerzeuger	150	47	Endress Generators: Detail view	alternator	ECP32 1S4C	ECP321S4C	4M06G33/6	Displacement [ccm]	2300	2300 cc	2.3 L			
+endress-stromerzeuger	151	48	Endress Generators: Detail view	alternator	ECO28 VL/4C	ECO28VL/4C	4B3.9-G2	Displacement [ccm]	3900	3900 cc	3.9 L			
+endress-stromerzeuger	154	51	Endress Generators: Detail view	engine	Endress 420i	ENDRESS420I		Displacement [ccm]	420	420 cc	0.42 L			
+endress-stromerzeuger	1001	52	Endress Generators: Detail view	engine	2TNV70	2TNV70		Displacement [ccm]	570	570 cc	0.57 L			
+endress-stromerzeuger	1001	52	Endress Generators: Detail view	alternator	ECP34-2S/4A	ECP342S/4A		Displacement [ccm]	570	570 cc	0.57 L			
+endress-stromerzeuger	1002	53	Endress Generators: Detail view	engine	2TNV70	2TNV70		Displacement [ccm]	570	570 cc	0.57 L			
+endress-stromerzeuger	1004	55	Endress Generators: Detail view	engine	2TNV70	2TNV70		Displacement [ccm]	570	570 cc	0.57 L			
+endress-stromerzeuger	1005	56	Endress Generators: Detail view	engine	2TNV70	2TNV70		Displacement [ccm]	570	570 cc	0.57 L			
+endress-stromerzeuger	1006	57	Endress Generators: Detail view	engine	Endress 80i	ENDRESS80I		Displacement [ccm]	79	79 cc	0.079 L			
+endress-stromerzeuger	1007	58	Endress Generators: Detail view	engine	Endress 80i	ENDRESS80I		Displacement [ccm]	79	79 cc	0.079 L			
+endress-stromerzeuger	1008	59	Endress Generators: Detail view	engine	Endress 175/E	ENDRESS175/E		Displacement [ccm]	171	171 cc	0.171 L			
+endress-stromerzeuger	1009	60	Endress Generators: Detail view	engine	Endress 300i	ENDRESS300I		Displacement [ccm]	302	302 cc	0.302 L			
+endress-stromerzeuger	1010	61	Endress Generators: Detail view	engine	Endress 420i	ENDRESS420I		Displacement [ccm]	420	420 cc	0.42 L			
+endress-stromerzeuger	1011	62	Endress Generators: Detail view	engine	Endress 175/E	ENDRESS175/E		Displacement [ccm]	171	171 cc	0.171 L			
+endress-stromerzeuger	1012	63	Endress Generators: Detail view	alternator	ECP 28-2S/4C	ECP282S/4C	3TNV88-GGE	Displacement [ccm]	1642	1642 cc	1.642 L			
+endress-stromerzeuger	1013	64	Endress Generators: Detail view	alternator	ECP 28-M/4C	ECP28M/4C	4TNV88-GGE	Displacement [ccm]	2190	2190 cc	2.19 L			
+endress-stromerzeuger	1014	65	Endress Generators: Detail view	alternator	ECO 28 L4C	ECO28L4C	4B3.9-G11	Displacement [ccm]	3900	3900 cc	3.9 L			
+endress-stromerzeuger	1015	66	Endress Generators: Detail view	alternator	ECO28 VL/4C	ECO28VL/4C	4B3.9-G2	Displacement [ccm]	3900	3900 cc	3.9 L			
+endress-stromerzeuger	1016	67	Endress Generators: Detail view	alternator	ECO28 VL/4C	ECO28VL/4C	4B3.9-G12	Displacement [ccm]	3900	3900 cc	3.9 L			
+endress-stromerzeuger	1017	68	Endress Generators: Detail view	alternator	ECP32 2S4 C	ECP322S4C	4BT3.9-G2	Displacement [ccm]	3900	3900 cc	3.9 L			
+endress-stromerzeuger	1019	70	Endress Generators: Detail view	alternator	ECP32 -1S4C	ECP321S4C	4TNV98C-IYE	Displacement [ccm]	3319	3319 cc	3.319 L			
+endress-stromerzeuger	1020	71	Endress Generators: Detail view	alternator	ECP32-2S/4C	ECP322S/4C	4TNV98CT-IYE	Displacement [ccm]	3319	3319 cc	3.319 L			
+endress-stromerzeuger	1021	72	Endress Generators: Detail view	alternator	ECP 32-2M/4C	ECP322M/4C	F34TEVP01	Displacement [ccm]	3400	3400 cc	3.4 L			
+endress-stromerzeuger	1022	73	Endress Generators: Detail view	engine	Endress 80i	ENDRESS80I		Displacement [ccm]	79	79 cc	0.079 L			
+endress-stromerzeuger	1023	74	Endress Generators: Detail view	engine	Endress 175/E	ENDRESS175/E		Displacement [ccm]	171	171 cc	0.171 L			
+endress-stromerzeuger	1024	75	Endress Generators: Detail view	alternator	ECP 28-M/4C	ECP28M/4C	4TNV88-BIGE	Displacement [ccm]	2190	2190 cc	2.19 L			
+jet-power	109	8	9KVA to 18KVA Portable Diesel Generator Set | Jet Power Generator	engine	KD2V80G	KD2V80G	KDE12STA	Displacement (ml)	794	794 cc	0.794 L			
+jet-power	109	8	9KVA to 18KVA Portable Diesel Generator Set | Jet Power Generator	engine	2V92	2V92	JDE16000SE	Displacement (ml)	996	996 cc	0.996 L			
+jet-power	109	8	9KVA to 18KVA Portable Diesel Generator Set | Jet Power Generator	engine	2V95	2V95	JDE17000SE	Displacement (ml)	1247	1247 cc	1.247 L			
+jet-power	109	8	9KVA to 18KVA Portable Diesel Generator Set | Jet Power Generator	engine	2V100	2V100	JDE23000SE	Displacement (ml)	1382	1382 cc	1.382 L			
+mingbang-mbkl	102	1	China 8kw Silent Diesel Genset Manufacturers, Suppliers, Factory - 8kw Silent Diesel Genset Quotation - Mingbang	engine	192FB	192FB	MB6000EW	Displacement (cc)	238	238 cc	0.238 L			
+mingbang-mbkl	102	1	China 8kw Silent Diesel Genset Manufacturers, Suppliers, Factory - 8kw Silent Diesel Genset Quotation - Mingbang	engine	178F	178F	MB3500SE	Displacement (cc)	305	305 cc	0.305 L			
+mingbang-mbkl	102	1	China 8kw Silent Diesel Genset Manufacturers, Suppliers, Factory - 8kw Silent Diesel Genset Quotation - Mingbang	engine	186FA	186FA	MB6500SE	Displacement (cc)	418	418 cc	0.418 L			
+mingbang-mbkl	102	1	China 8kw Silent Diesel Genset Manufacturers, Suppliers, Factory - 8kw Silent Diesel Genset Quotation - Mingbang	engine	192FC	192FC	MB8000SE	Displacement (cc)	477	477 cc	0.477 L			
+mingbang-mbkl	102	1	China 8kw Silent Diesel Genset Manufacturers, Suppliers, Factory - 8kw Silent Diesel Genset Quotation - Mingbang	engine	198FA	198FA	MB11000E3	Displacement (cc)	498	498 cc	0.498 L			
+mingbang-mbkl	102	1	China 8kw Silent Diesel Genset Manufacturers, Suppliers, Factory - 8kw Silent Diesel Genset Quotation - Mingbang	engine	2V88	2V88	MB12000E	Displacement (cc)	870	870 cc	0.87 L			
+mingbang-mbkl	102	1	China 8kw Silent Diesel Genset Manufacturers, Suppliers, Factory - 8kw Silent Diesel Genset Quotation - Mingbang	engine	2V92F	2V92F	MB16000SE	Displacement (cc)	930	930 cc	0.93 L			
+slong-power	105	4	China 10KW Triple Fuel Silent Soundproof Gasoline LPG Gas Generator Manufacturers Factory - Yancheng Slong	engine	SL460	SL460	SL10000W-SE-TRI	Displacement (cc)	459	459 cc	0.459 L			
+slong-power	105	4	China 10KW Triple Fuel Silent Soundproof Gasoline LPG Gas Generator Manufacturers Factory - Yancheng Slong	engine	SL550	SL550	SL12000W-SE-TRI	Displacement (cc)	550	550 cc	0.55 L			
+slong-power	105	4	China 10KW Triple Fuel Silent Soundproof Gasoline LPG Gas Generator Manufacturers Factory - Yancheng Slong	engine	GB1000	GB1000	SL18000W-SE-TRI	Displacement (cc)	999	999 cc	0.999 L			
+slong-power	143	11	China Best Price LPG Generator 5kW To 20kW Models Available Manufacturers Factory - Yancheng Slong	engine	SL390	SL390	SL-JK5	Displacement (cc)	389	389 cc	0.389 L			
+slong-power	143	11	China Best Price LPG Generator 5kW To 20kW Models Available Manufacturers Factory - Yancheng Slong	engine	SL420	SL420	SL-JK6	Displacement (cc)	420	420 cc	0.42 L			
+slong-power	143	11	China Best Price LPG Generator 5kW To 20kW Models Available Manufacturers Factory - Yancheng Slong	engine	SL460	SL460	SL-JK8	Displacement (cc)	459	459 cc	0.459 L			
+slong-power	143	11	China Best Price LPG Generator 5kW To 20kW Models Available Manufacturers Factory - Yancheng Slong	engine	GB750	GB750	SL-JK12	Displacement (cc)	750	750 cc	0.75 L			
+slong-power	143	11	China Best Price LPG Generator 5kW To 20kW Models Available Manufacturers Factory - Yancheng Slong	engine	GB1000	GB1000	SL-JK17	Displacement (cc)	999	999 cc	0.999 L			
+slong-power	143	11	China Best Price LPG Generator 5kW To 20kW Models Available Manufacturers Factory - Yancheng Slong	engine	GB1000	GB1000	SL-JK18	Displacement (cc)	999	999 cc	0.999 L			
+victory-generator	118	25	2KW~10.5KW Gas(LPG) Portable Generator	engine	LPG210	LPG210		Displacement (cc)	208	208 cc	0.208 L	70*54		1 xi lanh 0.2078 L; tỉ số 1.001
+victory-generator	118	25	2KW~10.5KW Gas(LPG) Portable Generator	alternator	LPG2500	LPG2500		Displacement (cc)	208	208 cc	0.208 L	70*54		1 xi lanh 0.2078 L; tỉ số 1.001
+victory-generator	118	25	2KW~10.5KW Gas(LPG) Portable Generator	engine	LPG420	LPG420		Displacement (cc)	389	389 cc	0.389 L	90*66		1 xi lanh 0.4199 L; tỉ số 0.926 LỆCH (không khớp 1 hay 2 xi lanh ±5%)
+victory-generator	118	25	2KW~10.5KW Gas(LPG) Portable Generator	alternator	LPG6500	LPG6500		Displacement (cc)	389	389 cc	0.389 L	90*66		1 xi lanh 0.4199 L; tỉ số 0.926 LỆCH (không khớp 1 hay 2 xi lanh ±5%)
+victory-generator	118	25	2KW~10.5KW Gas(LPG) Portable Generator	engine	LPG620	LPG620		Displacement (cc)	614	614 cc	0.614 L	77*66		1 xi lanh 0.3073 L; tỉ số 1.998
+victory-generator	118	25	2KW~10.5KW Gas(LPG) Portable Generator	alternator	LPG11000	LPG11000		Displacement (cc)	614	614 cc	0.614 L	77*66		1 xi lanh 0.3073 L; tỉ số 1.998
+victory-generator	118	26	2KW~10.5KW Gas(LPG) Portable Generator	engine	LPG210	LPG210		Displacement (cc)	208	208 cc	0.208 L	70*54		1 xi lanh 0.2078 L; tỉ số 1.001
+victory-generator	118	26	2KW~10.5KW Gas(LPG) Portable Generator	alternator	LPG2500	LPG2500		Displacement (cc)	208	208 cc	0.208 L	70*54		1 xi lanh 0.2078 L; tỉ số 1.001
+victory-generator	118	26	2KW~10.5KW Gas(LPG) Portable Generator	engine	LPG420	LPG420		Displacement (cc)	389	389 cc	0.389 L	90*66		1 xi lanh 0.4199 L; tỉ số 0.926 LỆCH (không khớp 1 hay 2 xi lanh ±5%)
+victory-generator	118	26	2KW~10.5KW Gas(LPG) Portable Generator	alternator	LPG6500	LPG6500		Displacement (cc)	389	389 cc	0.389 L	90*66		1 xi lanh 0.4199 L; tỉ số 0.926 LỆCH (không khớp 1 hay 2 xi lanh ±5%)
+victory-generator	118	26	2KW~10.5KW Gas(LPG) Portable Generator	engine	LPG620	LPG620		Displacement (cc)	614	614 cc	0.614 L	77*66		1 xi lanh 0.3073 L; tỉ số 1.998
+victory-generator	118	26	2KW~10.5KW Gas(LPG) Portable Generator	alternator	LPG11000	LPG11000		Displacement (cc)	614	614 cc	0.614 L	77*66		1 xi lanh 0.3073 L; tỉ số 1.998
+victory-generator	119	27	2KW~8.8KW Gasoline Portable Generator	alternator	VT2500CL	VT2500CL		Displacement (cc)	208	208 cc	0.208 L	70*54		1 xi lanh 0.2078 L; tỉ số 1.001
+victory-generator	119	27	2KW~8.8KW Gasoline Portable Generator	alternator	VT3000CL	VT3000CL		Displacement (cc)	208	208 cc	0.208 L	70*54		1 xi lanh 0.2078 L; tỉ số 1.001
+victory-generator	119	27	2KW~8.8KW Gasoline Portable Generator	alternator	VT3800CL	VT3800CL		Displacement (cc)	223	223 cc	0.223 L	70*58		1 xi lanh 0.2232 L; tỉ số 0.999
+victory-generator	119	27	2KW~8.8KW Gasoline Portable Generator	alternator	VT5000CL	VT5000CL		Displacement (cc)	420	420 cc	0.42 L	90*66		1 xi lanh 0.4199 L; tỉ số 1.000
+victory-generator	119	27	2KW~8.8KW Gasoline Portable Generator	alternator	VT6500CL	VT6500CL		Displacement (cc)	420	420 cc	0.42 L	90*66		1 xi lanh 0.4199 L; tỉ số 1.000
+victory-generator	119	27	2KW~8.8KW Gasoline Portable Generator	alternator	VT7500CL	VT7500CL		Displacement (cc)	420	420 cc	0.42 L	90*66		1 xi lanh 0.4199 L; tỉ số 1.000
+victory-generator	119	27	2KW~8.8KW Gasoline Portable Generator	alternator	VT9000CL	VT9000CL		Displacement (cc)	458	458 cc	0.458 L	92*69		1 xi lanh 0.4587 L; tỉ số 0.999
+victory-generator	119	27	2KW~8.8KW Gasoline Portable Generator	alternator	VT10000CL	VT10000CL		Displacement (cc)	458	458 cc	0.458 L	92*69		1 xi lanh 0.4587 L; tỉ số 0.999
+victory-generator	119	28	2KW~8.8KW Gasoline Portable Generator	alternator	VT2500CL	VT2500CL		Displacement (cc)	208	208 cc	0.208 L	70*54		1 xi lanh 0.2078 L; tỉ số 1.001
+victory-generator	119	28	2KW~8.8KW Gasoline Portable Generator	alternator	VT3000CL	VT3000CL		Displacement (cc)	208	208 cc	0.208 L	70*54		1 xi lanh 0.2078 L; tỉ số 1.001
+victory-generator	119	28	2KW~8.8KW Gasoline Portable Generator	alternator	VT3800CL	VT3800CL		Displacement (cc)	223	223 cc	0.223 L	70*58		1 xi lanh 0.2232 L; tỉ số 0.999
+victory-generator	119	28	2KW~8.8KW Gasoline Portable Generator	alternator	VT5000CL	VT5000CL		Displacement (cc)	420	420 cc	0.42 L	90*66		1 xi lanh 0.4199 L; tỉ số 1.000
+victory-generator	119	28	2KW~8.8KW Gasoline Portable Generator	alternator	VT6500CL	VT6500CL		Displacement (cc)	420	420 cc	0.42 L	90*66		1 xi lanh 0.4199 L; tỉ số 1.000
+victory-generator	119	28	2KW~8.8KW Gasoline Portable Generator	alternator	VT7500CL	VT7500CL		Displacement (cc)	420	420 cc	0.42 L	90*66		1 xi lanh 0.4199 L; tỉ số 1.000
+victory-generator	119	28	2KW~8.8KW Gasoline Portable Generator	alternator	VT9000CL	VT9000CL		Displacement (cc)	458	458 cc	0.458 L	92*69		1 xi lanh 0.4587 L; tỉ số 0.999
+victory-generator	119	28	2KW~8.8KW Gasoline Portable Generator	alternator	VT10000CL	VT10000CL		Displacement (cc)	458	458 cc	0.458 L	92*69		1 xi lanh 0.4587 L; tỉ số 0.999
+victory-generator	120	29	2.7KW~6.6KW Silent Diesel Portable Generator	engine	LA178FG	LA178FG	VDG3600S	Displacement (cc)	296	296 cc	0.296 L	78*62		1 xi lanh 0.2963 L; tỉ số 0.999
+victory-generator	120	29	2.7KW~6.6KW Silent Diesel Portable Generator	engine	LA186FG	LA186FG	VDG5000S	Displacement (cc)	406	406 cc	0.406 L	86*70		1 xi lanh 0.4066 L; tỉ số 0.998
+victory-generator	120	29	2.7KW~6.6KW Silent Diesel Portable Generator	engine	LA186FAG	LA186FAG	VDG6000S	Displacement (cc)	418	418 cc	0.418 L	86*72		1 xi lanh 0.4182 L; tỉ số 0.999
+victory-generator	120	29	2.7KW~6.6KW Silent Diesel Portable Generator	engine	LA188FG	LA188FG	VDG6500S	Displacement (cc)	474	474 cc	0.474 L	88*78		1 xi lanh 0.4744 L; tỉ số 0.999
+victory-generator	120	29	2.7KW~6.6KW Silent Diesel Portable Generator	engine	LA188FG	LA188FG	VDG7500S	Displacement (cc)	474	474 cc	0.474 L	88*78		1 xi lanh 0.4744 L; tỉ số 0.999
+victory-generator	120	30	2.7KW~6.6KW Silent Diesel Portable Generator	engine	LA178FG	LA178FG	VDG3600S	Displacement (cc)	305	305 cc	0.305 L	78*62		1 xi lanh 0.2963 L; tỉ số 1.030
+victory-generator	120	30	2.7KW~6.6KW Silent Diesel Portable Generator	engine	LA186FG	LA186FG	VDG5000S	Displacement (cc)	406	406 cc	0.406 L	86*70		1 xi lanh 0.4066 L; tỉ số 0.998
+victory-generator	120	30	2.7KW~6.6KW Silent Diesel Portable Generator	engine	LA186FAG	LA186FAG	VDG6000S	Displacement (cc)	418	418 cc	0.418 L	86*72		1 xi lanh 0.4182 L; tỉ số 0.999
+victory-generator	120	30	2.7KW~6.6KW Silent Diesel Portable Generator	engine	LA188FG	LA188FG	VDG6500S	Displacement (cc)	474	474 cc	0.474 L	88*78		1 xi lanh 0.4744 L; tỉ số 0.999
+victory-generator	120	30	2.7KW~6.6KW Silent Diesel Portable Generator	engine	LA188FG	LA188FG	VDG7500S	Displacement (cc)	474	474 cc	0.474 L	88*78		1 xi lanh 0.4744 L; tỉ số 0.999
+victory-generator	121	32	1.7KW~6.5KW Diesel Portable Generator	engine	LA170FG	LA170FG	VDG2200CL	Displacement (cc)	211	211 cc	0.211 L	70*55		1 xi lanh 0.2117 L; tỉ số 0.997
+victory-generator	121	32	1.7KW~6.5KW Diesel Portable Generator	engine	LA178FG	LA178FG	VDG3600CL	Displacement (cc)	305	305 cc	0.305 L	78*62		1 xi lanh 0.2963 L; tỉ số 1.030
+victory-generator	121	32	1.7KW~6.5KW Diesel Portable Generator	engine	LA186FG	LA186FG	VDG5000CL	Displacement (cc)	406	406 cc	0.406 L	86*72		1 xi lanh 0.4182 L; tỉ số 0.971
+victory-generator	121	32	1.7KW~6.5KW Diesel Portable Generator	engine	LA186FAG	LA186FAG	VDG6000CL	Displacement (cc)	418	418 cc	0.418 L	86*75		1 xi lanh 0.4357 L; tỉ số 0.959
+victory-generator	121	32	1.7KW~6.5KW Diesel Portable Generator	engine	LA188FG	LA188FG	VDG6500CL	Displacement (cc)	456	456 cc	0.456 L	88*78		1 xi lanh 0.4744 L; tỉ số 0.961
+victory-generator	121	32	1.7KW~6.5KW Diesel Portable Generator	engine	LA188FG	LA188FG	VDG7500CL	Displacement (cc)	456	456 cc	0.456 L	88*78		1 xi lanh 0.4744 L; tỉ số 0.961
+victory-generator	129	43	10KW~11KW Silent Diesel Twin-cylinder Generator	engine	LA290	LA290		Displacement (cc)	954	954 cc	0.954 L	90*75		1 xi lanh 0.4771 L; tỉ số 1.999
+victory-generator	129	43	10KW~11KW Silent Diesel Twin-cylinder Generator	alternator	VDG12S	VDG12S		Displacement (cc)	954	954 cc	0.954 L	90*75		1 xi lanh 0.4771 L; tỉ số 1.999
+victory-generator	129	43	10KW~11KW Silent Diesel Twin-cylinder Generator	engine	LA290	LA290		Displacement (cc)	954	954 cc	0.954 L	90*75		1 xi lanh 0.4771 L; tỉ số 1.999
+victory-generator	129	43	10KW~11KW Silent Diesel Twin-cylinder Generator	alternator	VDG12S-3	VDG12S3		Displacement (cc)	954	954 cc	0.954 L	90*75		1 xi lanh 0.4771 L; tỉ số 1.999
+victory-generator	129	44	10KW~11KW Silent Diesel Twin-cylinder Generator	engine	LA290	LA290		Displacement (cc)	954	954 cc	0.954 L	90*75		1 xi lanh 0.4771 L; tỉ số 1.999
+victory-generator	129	44	10KW~11KW Silent Diesel Twin-cylinder Generator	alternator	VDG12S	VDG12S		Displacement (cc)	954	954 cc	0.954 L	90*75		1 xi lanh 0.4771 L; tỉ số 1.999
+victory-generator	129	44	10KW~11KW Silent Diesel Twin-cylinder Generator	engine	LA290	LA290		Displacement (cc)	954	954 cc	0.954 L	90*75		1 xi lanh 0.4771 L; tỉ số 1.999
+victory-generator	129	44	10KW~11KW Silent Diesel Twin-cylinder Generator	alternator	VDG12S-3	VDG12S3		Displacement (cc)	954	954 cc	0.954 L	90*75		1 xi lanh 0.4771 L; tỉ số 1.999
+victory-generator	130	45	8.5KW~10.5KW Gasoline Twin-cylinder Generator	engine	LT620	LT620	VT11000ME	Displacement (cc)	614	614 cc	0.614 L	77*66		1 xi lanh 0.3073 L; tỉ số 1.998
+victory-generator	130	45	8.5KW~10.5KW Gasoline Twin-cylinder Generator	engine	LT620	LT620	VT11000ME-3	Displacement (cc)	614	614 cc	0.614 L	77*66		1 xi lanh 0.3073 L; tỉ số 1.998
+victory-generator	130	46	8.5KW~10.5KW Gasoline Twin-cylinder Generator	engine	LT620	LT620	VT11000ME	Displacement (cc)	614	614 cc	0.614 L	77*66		1 xi lanh 0.3073 L; tỉ số 1.998
+victory-generator	130	46	8.5KW~10.5KW Gasoline Twin-cylinder Generator	engine	LT620	LT620	VT11000ME	Displacement (cc)	614	614 cc	0.614 L	77*66		1 xi lanh 0.3073 L; tỉ số 1.998
+victory-generator	131	47	4.5KW~6.6KW Silent Gasoline Portable Generator	engine	LT420	LT420		Displacement (cc)	420	420 cc	0.42 L	88*64		1 xi lanh 0.3893 L; tỉ số 1.079 LỆCH (không khớp 1 hay 2 xi lanh ±5%)
+victory-generator	131	47	4.5KW~6.6KW Silent Gasoline Portable Generator	alternator	VT6500S	VT6500S		Displacement (cc)	420	420 cc	0.42 L	88*64		1 xi lanh 0.3893 L; tỉ số 1.079 LỆCH (không khớp 1 hay 2 xi lanh ±5%)
+victory-generator	131	47	4.5KW~6.6KW Silent Gasoline Portable Generator	engine	LT420	LT420		Displacement (cc)	420	420 cc	0.42 L	90*66		1 xi lanh 0.4199 L; tỉ số 1.000
+victory-generator	131	47	4.5KW~6.6KW Silent Gasoline Portable Generator	alternator	VT7500S	VT7500S		Displacement (cc)	420	420 cc	0.42 L	90*66		1 xi lanh 0.4199 L; tỉ số 1.000
+victory-generator	131	48	4.5KW~6.6KW Silent Gasoline Portable Generator	engine	LT420	LT420		Displacement (cc)	420	420 cc	0.42 L	88*64		1 xi lanh 0.3893 L; tỉ số 1.079 LỆCH (không khớp 1 hay 2 xi lanh ±5%)
+victory-generator	131	48	4.5KW~6.6KW Silent Gasoline Portable Generator	alternator	VT6500S	VT6500S		Displacement (cc)	420	420 cc	0.42 L	88*64		1 xi lanh 0.3893 L; tỉ số 1.079 LỆCH (không khớp 1 hay 2 xi lanh ±5%)
+victory-generator	131	48	4.5KW~6.6KW Silent Gasoline Portable Generator	engine	LT420	LT420		Displacement (cc)	420	420 cc	0.42 L	90*66		1 xi lanh 0.4199 L; tỉ số 1.000
+victory-generator	131	48	4.5KW~6.6KW Silent Gasoline Portable Generator	alternator	VT7500S	VT7500S		Displacement (cc)	420	420 cc	0.42 L	90*66		1 xi lanh 0.4199 L; tỉ số 1.000
+victory-generator	132	49	8.5KW~10.5KW Silent Gasoline Twin-cylinder Generator	engine	LT620	LT620		Displacement (cc)	614	614 cc	0.614 L	77*66		1 xi lanh 0.3073 L; tỉ số 1.998
+victory-generator	132	49	8.5KW~10.5KW Silent Gasoline Twin-cylinder Generator	alternator	VT11000S	VT11000S		Displacement (cc)	614	614 cc	0.614 L	77*66		1 xi lanh 0.3073 L; tỉ số 1.998
+victory-generator	132	49	8.5KW~10.5KW Silent Gasoline Twin-cylinder Generator	engine	LT620	LT620		Displacement (cc)	614	614 cc	0.614 L	77*66		1 xi lanh 0.3073 L; tỉ số 1.998
+victory-generator	132	49	8.5KW~10.5KW Silent Gasoline Twin-cylinder Generator	alternator	VT11000S-3	VT11000S3		Displacement (cc)	614	614 cc	0.614 L	77*66		1 xi lanh 0.3073 L; tỉ số 1.998
+victory-generator	132	50	8.5KW~10.5KW Silent Gasoline Twin-cylinder Generator	engine	LT620	LT620		Displacement (cc)	614	614 cc	0.614 L	77*66		1 xi lanh 0.3073 L; tỉ số 1.998
+victory-generator	132	50	8.5KW~10.5KW Silent Gasoline Twin-cylinder Generator	alternator	VT11000S	VT11000S		Displacement (cc)	614	614 cc	0.614 L	77*66		1 xi lanh 0.3073 L; tỉ số 1.998
+victory-generator	132	50	8.5KW~10.5KW Silent Gasoline Twin-cylinder Generator	engine	LT620	LT620		Displacement (cc)	614	614 cc	0.614 L	77*66		1 xi lanh 0.3073 L; tỉ số 1.998
+victory-generator	132	50	8.5KW~10.5KW Silent Gasoline Twin-cylinder Generator	alternator	VT11000S-3	VT11000S3		Displacement (cc)	614	614 cc	0.614 L	77*66		1 xi lanh 0.3073 L; tỉ số 1.998
+victory-generator	133	51	10KW~11KW Diesel Twin-cylinder Generator	engine	LA290	LA290		Displacement (cc)	954	954 cc	0.954 L	90*75		1 xi lanh 0.4771 L; tỉ số 1.999
+victory-generator	133	51	10KW~11KW Diesel Twin-cylinder Generator	alternator	VDG12	VDG12		Displacement (cc)	954	954 cc	0.954 L	90*75		1 xi lanh 0.4771 L; tỉ số 1.999
+victory-generator	133	51	10KW~11KW Diesel Twin-cylinder Generator	engine	LA290	LA290		Displacement (cc)	954	954 cc	0.954 L	90*75		1 xi lanh 0.4771 L; tỉ số 1.999
+victory-generator	133	51	10KW~11KW Diesel Twin-cylinder Generator	alternator	VDG12-3	VDG123		Displacement (cc)	954	954 cc	0.954 L	90*75		1 xi lanh 0.4771 L; tỉ số 1.999
+victory-generator	133	52	10KW~11KW Diesel Twin-cylinder Generator	engine	LA290	LA290		Displacement (cc)	954	954 cc	0.954 L	90*75		1 xi lanh 0.4771 L; tỉ số 1.999
+victory-generator	133	52	10KW~11KW Diesel Twin-cylinder Generator	alternator	VDG12	VDG12		Displacement (cc)	954	954 cc	0.954 L	90*75		1 xi lanh 0.4771 L; tỉ số 1.999
+victory-generator	133	52	10KW~11KW Diesel Twin-cylinder Generator	engine	LA290	LA290		Displacement (cc)	954	954 cc	0.954 L	90*75		1 xi lanh 0.4771 L; tỉ số 1.999
+victory-generator	133	52	10KW~11KW Diesel Twin-cylinder Generator	alternator	VDG12-3	VDG123		Displacement (cc)	954	954 cc	0.954 L	90*75		1 xi lanh 0.4771 L; tỉ số 1.999
+zc-power	105	5	5-10 kW Single Cylinder Silent Diesel Generator | ZC Power	engine	186FA(E)	186FA(E)		Displacement	418 cc	418 cc	0.418 L	86 x 72 mm		1 xi lanh 0.4182 L; tỉ số 0.999
+zc-power	105	5	5-10 kW Single Cylinder Silent Diesel Generator | ZC Power	engine	192F(E)	192F(E)		Displacement	498 cc	498 cc	0.498 L	92 x 75 mm		1 xi lanh 0.4986 L; tỉ số 0.999
+zc-power	105	5	5-10 kW Single Cylinder Silent Diesel Generator | ZC Power	engine	1100F(E)	1100F(E)		Displacement	660 cc	660 cc	0.66 L	100 x 84 mm		1 xi lanh 0.6597 L; tỉ số 1.000
