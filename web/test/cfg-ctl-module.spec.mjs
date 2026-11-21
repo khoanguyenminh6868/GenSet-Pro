@@ -48,4 +48,41 @@ test.describe("có mô-đun và phương án khác", () => {
     // Các thẻ khác của cùng kết quả không có trường mới: không có dòng.
     await expect(page.locator("#dbody .cfgcard").nth(1).locator(".cfgmod, .cfgalt")).toHaveCount(0);
   });
+
+  test("danh mục thiếu model rồi bản nhà cung cấp mới về: bỏ chữ chưa có, hiện link", async ({ page }) => {
+    test.setTimeout(150000); // Danh mục dựng lúc trang rảnh, chậm khi chạy song song.
+    await openApp(page, "#goi/" + RICH);
+    await openTab(page, "config");
+    const blk = page.locator("#dbody .cfgcard").first().locator(".cfgblk", { hasText: "Bộ điều khiển:" }).first();
+    await expect(blk).toContainText("chưa có trong danh mục", { timeout: 60000 });
+    await page.evaluate(async () => {
+      const db = await window.claude.use("db");
+      await db.doc("supplier/deep-sea-electronics").set({ id: "deep-sea-electronics", names: { en: "Deep Sea Electronics" }, status: "partial", role: "controller_maker", sources: [{ n: 3001, url: "https://example.test/ds.pdf" }],
+        controllers: [{ brand: "Deep Sea", model: "DSE7420 MKII", text: "DSE7420 MKII", line: "| DSE7420 MKII", src: [3001] }] });
+    });
+    await expect(blk).not.toContainText("chưa có trong danh mục", { timeout: 60000 });
+    await expect(blk.locator('a[data-catopen="controller"]')).toHaveText("DSE7420 MKII");
+    // Mô-đun mở hồ sơ hãng; không in link nguồn (SHOW_SRC = false).
+    await expect(page.locator("#dbody .cfgcard").first().locator('.cfgmod a[href*="example.test"]')).toHaveCount(0);
+  });
+});
+
+test.describe("đầu phát và mô-đun theo tài liệu hãng", () => {
+  const c0 = cm.result.configs[0];
+  const alternator = { ...c0.alternator, model: "LSA 49.3 M8", make: "Leroy-Somer", fromMaker: true, src: { kind: "maker", supplierId: "leroy-somer-fuzhou", n: 1012, url: "https://example.test/lsa.pdf" } };
+  const controller = { ...c0.controller, modules: [{ model: "DSE890 MKII", make: "Deep Sea", order: "0890-04", compat: { supplierId: "deep-sea-electronics", n: 1001 }, offeredBy: null }] };
+  const doc = { ...cm, result: { ...cm.result, configs: [{ ...c0, alternator, controller }, ...cm.result.configs.slice(1)] } };
+  const supplier = { "deep-sea-electronics": { id: "deep-sea-electronics", names: { en: "Deep Sea Electronics" }, status: "partial", role: "controller_maker", sources: [] } };
+  test.use({ patch: { colls: { configmatch: { [RICH]: doc }, supplier } } });
+
+  test("có link tới thông số / hồ sơ hãng, không in link PDF", async ({ page }) => {
+    await openApp(page, "#goi/" + RICH);
+    await openTab(page, "config");
+    const card = page.locator("#dbody .cfgcard").first();
+    const alt = card.locator('a[data-catopen="alternator"]');
+    await expect(alt).toHaveText("LSA 49.3 M8");
+    await expect(alt).toHaveAttribute("data-catkey", "LSA493M8");
+    await expect(card.locator('.cfgmod [data-supopen="deep-sea-electronics"]')).toHaveText("DSE890 MKII");
+    await expect(card.locator('a[href*="example.test"]')).toHaveCount(0);
+  });
 });
