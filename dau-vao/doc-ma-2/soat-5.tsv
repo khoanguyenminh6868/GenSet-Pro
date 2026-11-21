@@ -1,0 +1,27 @@
+NCC	n	dòng	vai	model	dòng có mã	NCC khoá ^	cyl ^	disp ^	NCC khoá trơn	cyl trơn	disp trơn	dòng nguồn
+aosif	123	19	engine	8M33D1012E311^	có	2	12×1	31.8×1	7	8×2	26.14×1	| AW1125 | 1000/800 | 1125/900 | 8M33D1012E311^ | 218.9 | 12V | 31.8 |
+baifa-power	101	34	engine	8M33G6D3/5^	có	1	-	-	6	8×1	-	| BF-BD1100-3 | 1100 | 1000 | 8M33G6D3/5^ | | CHINA STAGE3 | CHINA
+baifa-power	101	42	engine	16M33G8D3/5^	có	1	-	-	6	16×1	-	| BF-BD2250-3 | 2250 | 2000 | 16M33G8D3/5^ | | CHINA STAGE3 | CHINA
+baifa-power	101	44	engine	20M33G4D3/5^	có	1	-	-	5	20×1	-	| BF-BD2500-3 | 2500 | 2250 | 20M33G4D3/5^ | | CHINA STAGE3 | CHINA
+baifa-power	101	47	engine	12M55G6D3/5^	có	1	-	-	5	12×1	-	| BF-BD3000-3 | 3000 | 2750 | 12M55G6D3/5^ | | CHINA STAGE3 | CHINA
+baifa-power	101	51	engine	16M55G6D3/5^	có	1	-	-	4	16×1	-	| BF-BD4100-3 | 4125 | 3750 | 16M55G6D3/5^ | | CHINA STAGE3 | CHINA
+baudouin	121	3	engine	12M55G3000/5^	có	1	-	-	7	12×2	-	| 12M55G3000/5^ | 2420 | 2700 | 2200 | 2750 | 3000 |
+baudouin	123	3	engine	16M55G4000/5^	có	1	-	-	8	16×2	-	| 16M55G4000/5^ | 3300 | 3600 | 3000 | 3750 | 3300 | 4125
+baudouin	1005	9	engine	6M31G1000/5^	có	3	6×2	-	3	-	-	| 6M31G1000/5^ | 800 | 880 | 720 | 900 | 800 | 1000
+baudouin	1005	22	engine	16M33G2250/5^	có	2	-	-	12	16×3	52.3×1	| 16M33G2250/5^ | 1800 | 1980 | 1600 | 2000 | 1800 | 2250
+baudouin	1005	25	engine	20M33G2750/5^	có	1	-	-	2	20×1	-	| 20M33G2750/5^ | 2210 | 2450 | 2000 | 2500 | 2200 | 2750
+baudouin	1005	28	engine	12M55G3000/5^	có	1	-	-	7	12×2	-	| 12M55G3000/5^ | 2420 | 2700 | 2200 | 2750 | 2400 | 3000
+baudouin	1006	13	engine	6M11G176/6^	có	1	-	-	11	6×4	6.75×2	| 6M11G176/6^ | 182 | 200 | 160 | 200 | 176 | 220
+chuangyuan-zhongshan	103	47	engine	8M33D975E310^	có	1	-	-	11	6×1 8×2	26.1×1 26.14×2	| 20 | 800 | 400 | 1500 | 0.8 | 50 | 4200*1800*2300 | 7200 | 8M33D975E310^ | 8/150/185 | 26.14
+chuangyuan-zhongshan	103	56	engine	16M33D1980E310^	có	2	-	-	14	12×1 16×5	52.3×5	| 29 | 1600 | 400 | 1500 | 0.8 | 50 | 5200*2100*2700 | 11500 | 16M33D1980E310^ | 16/150/185 | 52.3
+jet-power	112	10	engine	WP6D180E201^	có	2	6×1	6.75×1	15	4×1 6×6	6.8×1 6.75×2 6.25×1	| WP-188 | 188 | 150 | 181 | 145 | WP6D180E201^ | 6L | Electronic | 105*130 | 6.75 | 36.7 | JET274F
+landtop-fuzhou	122	38	engine	16M33G2250/5^	có	2	-	-	12	16×3	52.3×1	| LTP2269B | 2269 | 1815 | 2063 | 1650 | ECU | 16M33G2250/5^ | LTP454S -1650
+mecca-power	5001	23	engine	8M33G900/6^	có	2	-	-	7	8×3	26.14×1	| MC1125BD | 800 | 1000 | 900 | 1125 | 8M33G900/6^ |
+mecca-power	5001	34	engine	16M33D1980E310^	có	2	-	-	14	12×1 16×5	52.3×5	| MC2250WC | 1600 | 2000 | 1800 | 2250 | 16M33D1980E310^ |
+mecca-power	5001	23	engine	8M33D1012E311^	có	2	12×1	31.8×1	7	8×2	26.14×1	| MC1125WC | 800 | 1000 | 900 | 1125 | 8M33D1012E311^ |
+voltgent	110	68	engine	8M33G900/6^	có	2	-	-	7	8×3	26.14×1	| VB1050-6 | 1050 | 840 | 950 | 760 | Baudouin | 8M33G900/6^ | [EN] [RU] [ES] [PT]
+waeta-fujian	107	10	engine	WP6D180E201^	có	2	6×1	6.75×1	15	4×1 6×6	6.8×1 6.75×2 6.25×1	| WTA-W188 | 188 | 150 | / | / | WP6D180E201^ | 6 L | 6.75 | Wechai Series.xlsx
+weichai-heavy-machinery	106	3	engine	6M31G1000/5^	có	3	6×2	-	3	-	-	| WPG1000*7^ | 1500 | 1000/800 | / | 6M31G1000/5^ | 6 | 149×177 | Electronic control | Non-Road Emission Exempt
+weichai-heavy-machinery	106	7	engine	6M31G800/6^	có	2	6×2	-	2	-	-	| WPG800*76 | 1800 | 1000/800 | / | 6M31G800/6^ | 6 | 149×177 | Electronic control | Non-Road Emission Exempt
+weichai-power	134	3	engine	6M31G1000/5^	có	3	6×2	-	3	-	-	| WPG1000*7^ | 1500 | 1000/800 | / | 6M31G1000/5^ | 6 | 149×177 | Electronic control | Non-Road Emission Exempt
+weichai-power	134	7	engine	6M31G800/6^	có	2	6×2	-	2	-	-	| WPG800*76 | 1800 | 1000/800 | / | 6M31G800/6^ | 6 | 149×177 | Electronic control | Non-Road Emission Exempt

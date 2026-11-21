@@ -1,0 +1,9 @@
+file:///C:/Users/Khoa/AppData/Local/Temp/claude/d4c88f0a2fd88962/97fc563b-166f-4d37-bd3b-307c459bfe1d/scratchpad/goc/suppliers/quality.mjs:57
+    for (const o of C.fromSupplier(s)) {
+                      ^
+
+TypeError: Cannot read properties of undefined (reading 'fromSupplier')
+    at measure (file:///C:/Users/Khoa/AppData/Local/Temp/claude/d4c88f0a2fd88962/97fc563b-166f-4d37-bd3b-307c459bfe1d/scratchpad/goc/suppliers/quality.mjs:57:23)
+    at file:///C:/Users/Khoa/AppData/Local/Temp/claude/d4c88f0a2fd88962/97fc563b-166f-4d37-bd3b-307c459bfe1d/scratchpad/goc/suppliers/quality.mjs:187:13
+
+Node.js v20.17.0
