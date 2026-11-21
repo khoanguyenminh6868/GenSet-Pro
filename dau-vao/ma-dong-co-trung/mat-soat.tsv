@@ -1,0 +1,313 @@
+kết luận	model	luật	dòng	lượt	lượt có nguồn đạt	ngưỡng	giá trị×số NCC	dung tích tính từ bore×stroke×xi lanh	NCC ghi số đạt
+CO_NGUON_DAT	1103A-33G	maxDisp	1	1	1	≤2.9	3.3×18 ; 2.216×1 ; 3.3L×3	3.3/3.33	depco-power
+CO_NGUON_DAT	1104D-E44TAG2	disp	9	9	1	≥4.4 ≥5.9 ≥4.837 ≥5.7 ≥4.7	4.4×4 ; 4.399×1 ; 4.41×1	4.4	hanyang-weifang,jianghao-genset,jlmech-wuhan,rise-power,yunding-jiangsu
+CO_NGUON_DAT	1106A-70TG1	maxDisp	1	1	1	≤5.9	7.01×8 ; 6.6×2 ; 7.01L×2 ; 7.0×3 ; 7L×1 ; 7×3 ; 5.65×1 ; 12.6×1 ; 6×1	7.01/5.65	jinjia-power
+CO_NGUON_DAT	12M33D1500E310	disp	1	1	1	≥49.03	39.2×4 ; 52.3×1	39.23	bdadl-shanghai
+CO_NGUON_DAT	1506A-E88TAG5	maxDisp	3	2	1	≤6.8 ≤8	8.8×11 ; 8.8L×3 ; 7.01×1 ; 8.81×1	8.81/7.01	huipu-power
+CO_NGUON_DAT	16M33D1680E310	cyl	2	2	2	=12	16V×3 ; 12×1 ; 16×7 ; V 16×1 ; 16 V×1	87.54/52.31/50.51	bdadl-shanghai
+CO_NGUON_DAT	2206C-E13TAG2	disp	2	2	2	≥14 ≥12.78	12.5×14 ; 12.5 L×1 ; 12.5L×1 ; 51.4×1 ; 13×1	12.5	liangzi-yangzhou,rise-power
+CO_NGUON_DAT	2206C-E13TAG3	disp	4	4	2	≥12.513 ≥14 ≥14.618 ≥12.78	12.5×14 ; 12.5 L×1 ; 13×1	12.5	rise-power
+CO_NGUON_DAT	4006-23TAG3A	disp	16	5	1	≥78 ≥29.7 ≥29.6 ≥23 ≥30	22.921×4 ; 22.9×8 ; 23×5 ; 22.92×3 ; 22.92L×1 ; 22.9L×1 ; 23.0×1 ; 22.921L×1	22.92/30.56	bdadl-shanghai,frs-shenyang,huipu-power,pengpai-yangzhou,rise-power,waeta-fujian
+CO_NGUON_DAT	403A-15G1	cyl	6	6	6	≥4	3×10 ; 4×2 ; 3L×3 ; 3 L×1	2/1.5/2.22	depco-power,huipu-power
+CO_NGUON_DAT	403A-15G1	disp	9	9	3	≥2.5 ≥1.64 ≥1.6 ≥2.2 ≥2.3	1.496×6 ; 1.5×4 ; 1.496L×2 ; 1.131×1 ; 2.2×1	2/1.5/2.22	huipu-power
+CO_NGUON_DAT	403A-15G2	cyl	6	6	6	≥4	3×11 ; 4×2 ; 3L×2 ; 3 L×1	2/1.5/2.22	depco-power,huipu-power
+CO_NGUON_DAT	403A-15G2	disp	9	9	3	≥2.5 ≥1.64 ≥1.6 ≥2.2 ≥2.3	1.496×4 ; 1.496L×2 ; 1.131×1 ; 2.2×1 ; 1.49×2 ; 1.5×1	2/1.5/2.22	huipu-power
+CO_NGUON_DAT	403D-11G	cyl	19	19	16	=1 ≥4 =4 =2	3×10 ; 4×1 ; 3L×5 ; 3 L×1	1.51/1.13	depco-power
+CO_NGUON_DAT	4DW81-23D	maxDisp	147	7	7	≤1.826 ≤1.85	2.27×3 ; 1.532×1 ; 1.809×1	2.27/2.04/1.81	victory-generator
+CO_NGUON_DAT	6M33D633E200	cyl	6	6	5	=12 ≥10 =10	6L×1 ; 6×9 ; V 12×1 ; 6 L×1	19.62/37.88	longkai-power
+CO_NGUON_DAT	6M33D633E200	layout	5	5	5	v	6L×1 ; 6×9 ; V 12×1 ; 6 L×1	19.62/37.88	longkai-power
+CO_NGUON_DAT	6ZTAA13-G2	disp	5	2	1	≥14 ≥14.618	14×1 ; 13×13 ; 13.0L×1 ; 13.0×2 ; 13L×1	12.98	agestar
+CO_NGUON_DAT	CA6DF2-17D	cyl	13	1	1	=4	6×2 ; L6×1 ; 4 L×1	7.13	waeta-fujian
+CO_NGUON_DAT	CA6DF2D-14D	cyl	28	3	3	=4	6×2 ; L6×1 ; 4 L×1	7.13/6.56	waeta-fujian
+CO_NGUON_DAT	S16R2-PTAW-C	maxDisp	2	2	1	≤20 ≤66	79.9×4 ; 79.9L×1 ; 65.3×1 ; 79.9 L×1	79.9	jinjia-power
+CO_NGUON_DAT	WP10D264E200	maxDisp	3	3	3	≤9.5 ≤6.8 ≤8	9.726×7 ; 9.7×2 ; 9.72×1 ; 9.726L×1 ; 6.25×1 ; 9.73×1	9.73	victory-generator
+CO_NGUON_DAT	WP10D320E200	disp	5	5	4	≥10.34 ≥11 ≥12.78	9.7×2 ; 9.726×5 ; 12.5×1 ; 9.726L×1 ; 9.73×1	9.73/12.54	bdadl-shanghai
+CO_NGUON_DAT	WP13D385E200	maxDisp	1	1	1	≤9.84	12.5×3 ; 12.54×10 ; 12.54 L×1 ; 6.25×1	12.54/11.6	victory-generator
+CO_NGUON_DAT	WP2.3D25E200	disp	7	7	4	≥2.54 ≥2.9 ≥2.3 ≥2.42 ≥2.5	2.3×4 ; 2.5×1 ; 2.289×2 ; 2.29×1	2.29/2.54	aosif,depco-power,hanyang-weifang,jet-power,liangzi-yangzhou
+CO_NGUON_DAT	WP2.3D33E200	disp	17	14	4	≥2.54 ≥2.9 ≥3.331 ≥2.3 ≥3.568	2.3×4 ; 2.289 L×1 ; 2.5×1 ; 2.289×2 ; 2.29×1	2.29/3.86	aosif,depco-power,hanyang-weifang,jet-power,liangzi-yangzhou
+CO_NGUON_DAT	WP2.3D40E200	disp	7	7	2	≥3.331 ≥2.3 ≥3.8 ≥2.54 ≥2.4	2.3×5 ; 2.5×1 ; 2.29×1 ; 2.289×1	2.29/4.33	aosif,bdadl-shanghai,depco-power,hanyang-weifang,jet-power,liangzi-yangzhou
+CO_NGUON_DAT	WP4.1D66E200	disp	5	5	5	≥4.5 ≥4.33 ≥4.2 ≥4.3 ≥4.329	4.1×1 ; 4.8×1 ; 4.087×4 ; 4.087 L×1 ; 4.5×1 ; 4.08×1	4.09/4.5	bdadl-shanghai,jet-power
+CO_NGUON_DAT	WP4.1D80E200	cyl	2	2	2	≥6 =6	4L×2 ; 6×1 ; 4×10 ; 4 Inline×1 ; 4 L×1	4.09/4.5	bdadl-shanghai
+CO_NGUON_DAT	WP6D132E200	maxDisp	1	1	1	≤5.9	6.8×1 ; 6.75×9 ; 4.5×1 ; 6.25×1	6.75	bdadl-shanghai
+CO_NGUON_DAT	WP6D152E200	disp	3	3	1	≥8.3 ≥6.8 ≥6.87	6.8×1 ; 6.75×10 ; 6.25×1	9.73/6.75	aosif
+CO_NGUON_DAT	Y4100D	maxDisp	2	2	1	≤2.9 ≤2.3	3.707×2 ; 3.298×1 ; 2.54×1 ; 2.545×1 ; 3.7×1 ; 3.707 L×1	3.71/3.3/2.54	jinjia-power,victory-generator
+CO_NGUON_DAT	Y4105D	maxDisp	3	3	3	≤2.9 ≤1.826 ≤2.3	4.1×4 ; 4.08×1 ; 1.357 L×1	4.09/1.81	yongcai-elecmama
+CO_NGUON_DAT	YD380D	disp	66	19	3	≥1.6 ≥2.1 ≥1.7 ≥1.532 ≥2	1.357×2 ; 1.532×2 ; 1.35×1 ; 1.357 L×1	1.36/1.53	jinjia-power,victory-generator
+dung_mot_nguon	2806A-E18TTAG4	cyl	1	1	0	=12	6×1	18.13	
+dung_mot_nguon	2806A-E18TTAG5	cyl	2	2	0	≥12 =12	6×1	18.13	
+dung_mot_nguon	3TNV82A-GGE	cyl	8	8	0	=1 ≥4 =4	3×1	1.33	
+dung_mot_nguon	3TNV88-GGE	disp	241	20	0	≥2.5 ≥1.7 ≥2.54 ≥2.3 ≥2.156	1.642×1		
+dung_mot_nguon	4DW92-39D-HMS20W	disp	42	6	0	≥3.331 ≥3.568 ≥3.8 ≥2.672 ≥3.2	2.54 L×1		
+dung_mot_nguon	4DX21-53D-HMS20W	maxDisp	7	2	0	≤2.9 ≤2.3	3.86 L×1		
+dung_mot_nguon	4DX22-65D-HMS20W	disp	24	4	0	≥4.5 ≥4.2 ≥4.3 ≥4.329	3.86 L×1		
+dung_mot_nguon	4DX22-65D-HMS20W	maxDisp	6	1	0	≤1.826	3.86 L×1		
+dung_mot_nguon	4DX23-78D-HMS20W	disp	22	6	0	≥3.9 ≥4.33 ≥4.3 ≥4.087 ≥4.329	3.86 L×1		
+dung_mot_nguon	4TNV106-GGE	disp	11	1	0	≥4.5	4.412×1		
+dung_mot_nguon	4TNV106-GGE	maxDisp	11	1	0	≤1.826	4.412×1		
+dung_mot_nguon	4TNV84T-GGE	cyl	5	5	0	=3 =2	4×1	2	
+dung_mot_nguon	4TNV88-GGE	cyl	8	6	0	=3 =2	4×1	2.19	
+dung_mot_nguon	4TNV98-GGE	cyl	3	2	0	=2	4×1	3.32	
+dung_mot_nguon	CA6DL2-30	disp	40	8	0	≥9.726 ≥11.051 ≥8.9	8.57 L×1		
+dung_mot_nguon	CA6DL2-30	maxDisp	10	2	0	≤6.8 ≤8	8.57 L×1		
+dung_mot_nguon	CA6DM2-41D	disp	5	3	0	≥14 ≥11.051 ≥12.78	11.05 L×1		
+dung_mot_nguon	CA6DM2-41D	maxDisp	1	1	0	≤9.84	11.05 L×1		
+dung_mot_nguon	CA6DN1-45D	disp	6	2	0	≥14 ≥12.78	12.53 L×1		
+dung_mot_nguon	CA6DN1-45D	maxDisp	3	1	0	≤9.84	12.53 L×1		
+dung_mot_nguon	D1105-E2BG-CHN-1	disp	15	15	0	≥1.6 ≥2.1 ≥1.532 ≥2.15 ≥2	1.123×1		
+dung_mot_nguon	D1703-E2BG-CHN-1	disp	15	15	0	≥2.5 ≥1.7 ≥2.54 ≥2.3 ≥2.42	1.647×1		
+dung_mot_nguon	V1505-E2BG-CHN-1	disp	15	15	0	≥1.6 ≥2.5 ≥1.7 ≥2.156 ≥2.27	1.498×1		
+dung_mot_nguon	V2003-T-E2BG-CHN-1	disp	9	8	0	≥2.197 ≥2.54 ≥2.9 ≥2.5 ≥2.434	1.999×1		
+dung_mot_nguon	V2203-E2BG-CHN-1	disp	9	9	0	≥2.54 ≥2.9 ≥2.3 ≥2.42 ≥2.5	2.197×1		
+dung_mot_nguon	V2203-E2BG-CHN-1	maxDisp	2	2	0	≤1.83	2.197×1		
+dung_mot_nguon	V3300-E2BG2-CHN-1	disp	3	3	0	≥3.331 ≥3.568 ≥3.8	3.318×1		
+dung_mot_nguon	V3300-T-E2BG2-CHN-1	disp	4	4	0	≥3.331 ≥3.568 ≥3.8 ≥3.9	3.318×1		
+dung_mot_nguon	V3300-T-E2BG2-CHN-1	maxDisp	1	1	0	≤2.9	3.318×1		
+dung_mot_nguon	WD164TAD43	cyl	4	2	0	=8 ≥8	6×1		
+dung_mot_nguon	WD164TAD43	maxDisp	4	2	0	≤12.7 ≤9.84	16.4×1		
+dung_mot_nguon	WD164TAD45	maxDisp	6	3	0	≤12.5 ≤12.7	16.4×1		
+dung_mot_nguon	WD180TAD61	disp	14	7	0	≥19.6 ≥18.273 ≥26.6 ≥23.15	18×1		
+dung_mot_nguon	WD180TAD61	maxDisp	2	1	0	≤15.2	18×1		
+dung_mot_nguon	WD269TAD38	maxDisp	2	1	0	≤9.84	26.9×1	26.92	
+dung_mot_nguon	WD327TAD68	maxDisp	2	1	0	≤15.2	32.7×1		
+dung_mot_nguon	WJ65TD8	disp	2	1	0	≥6.494	6.49×1		
+dung_mot_nguon	WJ68TAD11	disp	2	1	0	≥6.871	6.75×1		
+dung_mot_nguon	WJ78TAD17	disp	2	1	0	≥8.3	7.82×1		
+dung_mot_nguon	WJ97TAD24	disp	4	2	0	≥11.051	10.09×1		
+dung_mot_nguon	Y490PD	cyl	3	2	0	=2	4×1		
+dung_mot_nguon	YD485D	cyl	16	6	0	=3 =2	L4×1	2.04	
+dung_mot_nguon	YD485D	disp	47	13	0	≥2.5 ≥2.197 ≥2.54 ≥2.3 ≥2.42	2.043×1	2.04	
+dung_mot_nguon	YD485D	maxDisp	21	7	0	≤1.826 ≤1.85	2.043×1	2.04	
+dung_nhieu_nguon	1103A-33G	cyl	36	23	0	=4 ≥4 =2	3×19 ; 3L×6 ; 3 L×2	3.3/3.33	
+dung_nhieu_nguon	1103A-33G	disp	7	4	0	≥3.331 ≥3.568 ≥3.8 ≥3.9	3.3×18 ; 2.216×1 ; 3.3L×3	3.3/3.33	
+dung_nhieu_nguon	1103A-33TG1	cyl	33	22	0	=4 ≥4	3×19 ; 3L×6 ; 3 Inline×1 ; 3 L×2	3.3	
+dung_nhieu_nguon	1103A-33TG1	disp	10	7	0	≥4.5 ≥4.2 ≥3.765 ≥4.3 ≥3.75	3.3×17 ; 3.3L×5	3.3	
+dung_nhieu_nguon	1103A-33TG1	maxDisp	3	2	0	≤1.826 ≤2.3	3.3×17 ; 3.3L×5	3.3	
+dung_nhieu_nguon	1103A-33TG2	cyl	22	17	0	=4 ≥4 ≥6 =6	3×18 ; 3L×4 ; 3 L×2	3.3	
+dung_nhieu_nguon	1103A-33TG2	disp	9	6	0	≥3.9 ≥4.33 ≥4.3 ≥4.087 ≥4.329	3.3×17 ; 3.3L×4	3.3	
+dung_nhieu_nguon	1104D-E44TAG1	cyl	2	2	0	=6	4×2 ; 4L×2	4.4	
+dung_nhieu_nguon	1104D-E44TAG1	disp	3	3	0	≥4.83 ≥6.494 ≥4.95	4.4×3 ; 4.41×1	4.4	
+dung_nhieu_nguon	1104D-E44TAG2	cyl	15	15	0	=6 ≥6	4×4 ; 4L×2	4.4	
+dung_nhieu_nguon	1106A-70TAG2	disp	1	1	0	≥8.3	7.01×14 ; 7.01L×2 ; 7L×1 ; 7×3 ; 7.0×1 ; 6×1	7.01	
+dung_nhieu_nguon	1106A-70TAG2	maxDisp	1	1	0	≤5.89	7.01×14 ; 7.01L×2 ; 7L×1 ; 7×3 ; 7.0×1 ; 6×1	7.01	
+dung_nhieu_nguon	1106A-70TAG3	disp	1	1	0	≥8.3	6×1 ; 7.01×13 ; 7.01L×3 ; 7L×1 ; 7×4 ; 7.0×1	7.01	
+dung_nhieu_nguon	1106D-E70TAG2	cyl	1	1	0	=4	6×5 ; 6L×2	7.01	
+dung_nhieu_nguon	1106D-E70TAG2	disp	1	1	0	≥8.07	7×2 ; 7.01×2	7.01	
+dung_nhieu_nguon	1106D-E70TAG2	maxDisp	1	1	0	≤5.9	7×2 ; 7.01×2	7.01	
+dung_nhieu_nguon	1106D-E70TAG3	disp	1	1	0	≥8.3	7×2 ; 7.01×2	7.01	
+dung_nhieu_nguon	1106D-E70TAG4	disp	1	1	0	≥8.3	7×2 ; 7.01×2	7.01	
+dung_nhieu_nguon	1106D-E70TAG4	maxDisp	1	1	0	≤5.89	7×2 ; 7.01×2	7.01	
+dung_nhieu_nguon	1206A-E70TTAG1	disp	6	6	0	≥7.15 ≥8.3 ≥7.98 ≥7.47 ≥8.8	7.01×3 ; 7×1 ; 7.0×1	7.01	
+dung_nhieu_nguon	1206A-E70TTAG2	disp	8	6	0	≥7.15 ≥8.3 ≥7.98 ≥7.47 ≥8.8	7.01×3 ; 7×2 ; 7.0×1	7.01	
+dung_nhieu_nguon	1206A-E70TTAG3	cyl	2	2	0	=4 =12	6×5 ; 6 Inline×1 ; 6 L×1	7.01	
+dung_nhieu_nguon	1206A-E70TTAG3	disp	8	8	0	≥9.726 ≥11.051 ≥8.9	7.01×3 ; 7×1 ; 7.01L×2 ; 7.0×1	7.01	
+dung_nhieu_nguon	1206A-E70TTAG3	layout	1	1	0	v	6×5 ; 6 Inline×1 ; 6 L×1	7.01	
+dung_nhieu_nguon	1206A-E70TTAG3	maxDisp	2	1	0	≤6.8	7.01×3 ; 7×1 ; 7.01L×2 ; 7.0×1	7.01	
+dung_nhieu_nguon	12M33D1210E200	disp	1	1	0	≥49.03	39.2×8 ; 31.8×2	39.23	
+dung_nhieu_nguon	12M33D1210E200	layout	2	2	0	inline	12V×3 ; 12×9 ; 10×1 ; V 12×1 ; 12 V×1	39.23	
+dung_nhieu_nguon	12M33D1320E200	disp	1	1	0	≥49.03	39.2×8	39.23/37.88	
+dung_nhieu_nguon	12M33D1320E200	layout	2	2	0	inline	12V×2 ; 12×9 ; 10×1 ; V 12×1 ; 12 V×1	39.23/37.88	
+dung_nhieu_nguon	12M33D1500E310	layout	2	2	0	inline	12V×1 ; 12×3 ; 12 V×1	39.23	
+dung_nhieu_nguon	12M55D2210E310	cyl	1	1	0	=16	12V×2 ; 12×8 ; V12×1	65.65/37.88	
+dung_nhieu_nguon	12M55D2210E310	maxDisp	1	1	0	≤20	65.7×1 ; 65.65×6	65.65/37.88	
+dung_nhieu_nguon	12M55D2450E310	cyl	5	5	0	=16	12V×2 ; 12×7 ; V12×1	65.65/37.88	
+dung_nhieu_nguon	12M55D2450E310	disp	1	1	0	≥78	65.7×1 ; 65.65×5	65.65/37.88	
+dung_nhieu_nguon	12M55D2700E310	cyl	5	5	0	=16	12V×1 ; 12×4 ; V12×1	65.65/37.88	
+dung_nhieu_nguon	12M55D2700E310	disp	1	1	0	≥78	65.7×1 ; 65.65×3	65.65/37.88	
+dung_nhieu_nguon	1506A-E88TAG3	cyl	2	2	0	=4 =12	6×12 ; 6L×3 ; 6 L×1	8.81/8.71	
+dung_nhieu_nguon	1506A-E88TAG3	disp	8	8	0	≥9.726 ≥11.051 ≥8.9	8.8×8 ; 8.8L×2 ; 8.7×1 ; 8.81×1	8.81/8.71	
+dung_nhieu_nguon	1506A-E88TAG3	layout	1	1	0	v	6×12 ; 6L×3 ; 6 L×1	8.81/8.71	
+dung_nhieu_nguon	1506A-E88TAG3	maxDisp	2	2	0	≤6.8 ≤8	8.8×8 ; 8.8L×2 ; 8.7×1 ; 8.81×1	8.81/8.71	
+dung_nhieu_nguon	1506A-E88TAG4	maxDisp	1	1	0	≤6.8	7.01×1 ; 8.8×4	8.81/7.01	
+dung_nhieu_nguon	1506A-E88TAG5	cyl	2	2	0	=4 =12	6×15 ; 6L×3 ; 6 L×1	8.81/7.01	
+dung_nhieu_nguon	1506A-E88TAG5	disp	15	14	0	≥9.726 ≥11.05 ≥11.051 ≥10.34 ≥8.9	8.8×11 ; 8.8L×3 ; 7.01×1 ; 8.81×1	8.81/7.01	
+dung_nhieu_nguon	1506A-E88TAG5	layout	1	1	0	v	6×15 ; 6L×3 ; 6 L×1	8.81/7.01	
+dung_nhieu_nguon	16M33D1530E310	cyl	2	2	0	=12	16V×2 ; 16×6 ; V 16×1	52.31/50.51	
+dung_nhieu_nguon	16M33D1580E310	cyl	2	2	0	=12	16×6 ; 16V×2 ; V 16×1 ; 16 V×1	87.54/52.31/50.51	
+dung_nhieu_nguon	16M33D1980E310	disp	1	1	0	≥61.123	52.3×5	52.31	
+dung_nhieu_nguon	16M33D1980E310	maxDisp	1	1	0	≤20	52.3×5	52.31	
+dung_nhieu_nguon	16M55D3600E310	cyl	1	1	0	=20	16V×1 ; 16×3 ; V16×1	87.54/50.51	
+dung_nhieu_nguon	1706A-E93TAG1	cyl	2	2	0	=4 =12	6×2 ; 6 Inline×1 ; 6 L×1	9.29	
+dung_nhieu_nguon	1706A-E93TAG1	disp	10	10	0	≥9.726 ≥11.05 ≥11.051 ≥9.7 ≥11	9.29×2 ; 9.3×2 ; 9.3L×1	9.29	
+dung_nhieu_nguon	1706A-E93TAG1	layout	1	1	0	v	6×2 ; 6 Inline×1 ; 6 L×1	9.29	
+dung_nhieu_nguon	1706A-E93TAG1	maxDisp	2	2	0	≤6.8 ≤8	9.29×2 ; 9.3×2 ; 9.3L×1	9.29	
+dung_nhieu_nguon	1706A-E93TAG2	disp	14	11	0	≥11.05 ≥14 ≥10.34 ≥9.7 ≥11.051	9.29×1 ; 9.29L×2 ; 9.3×1	9.29	
+dung_nhieu_nguon	2206A-E13TAG3	cyl	1	1	0	≥8	6L×3	12.5	
+dung_nhieu_nguon	2206A-E13TAG3	maxDisp	1	1	0	≤9.84	12.5×3 ; 12.5L×2	12.5	
+dung_nhieu_nguon	2206C-E13TAG2	maxDisp	1	1	0	≤9.84	12.5×14 ; 12.5 L×1 ; 12.5L×1 ; 51.4×1 ; 13×1	12.5	
+dung_nhieu_nguon	2206C-E13TAG3	cyl	2	2	0	=8 ≥8	6×17 ; 6L×4 ; 6 L×1	12.5	
+dung_nhieu_nguon	2206C-E13TAG3	layout	1	1	0	v	6×17 ; 6L×4 ; 6 L×1	12.5	
+dung_nhieu_nguon	2206C-E13TAG3	maxDisp	1	1	0	≤9.84	12.5×14 ; 12.5 L×1 ; 13×1	12.5	
+dung_nhieu_nguon	2506A-E15TAG1	cyl	1	1	0	≥8	6L×3	15.12	
+dung_nhieu_nguon	2506A-E15TAG2	disp	2	2	0	≥19 ≥18.8	15.2L×1 ; 15.2×1	15.12	
+dung_nhieu_nguon	2506A-E15TAG2	maxDisp	3	3	0	≤12.5 ≤14.6	15.2L×1 ; 15.2×1	15.12	
+dung_nhieu_nguon	2506C-E15TAG1	cyl	2	2	0	=8 ≥8	6×17 ; 6 cylinder Die×1 ; 6L×4 ; 6 L×1	15.12	
+dung_nhieu_nguon	2506C-E15TAG1	layout	1	1	0	v	6×17 ; 6 cylinder Die×1 ; 6L×4 ; 6 L×1	15.12	
+dung_nhieu_nguon	2506C-E15TAG1	maxDisp	1	1	0	≤12.7	15×11 ; 15L×2 ; 15.2L×1 ; 15.2×5 ; 15.0×1	15.12	
+dung_nhieu_nguon	2506C-E15TAG2	cyl	2	2	0	=8 ≥10	6×18 ; 6-cylinder, ve×1 ; 6L×4 ; 6 L×1	15.12	
+dung_nhieu_nguon	2506C-E15TAG2	disp	2	2	0	≥19 ≥18.8	15×10 ; 15L×2 ; 15.2 L×1 ; 15.2×5 ; 15.12×1 ; 15.0×1	15.12	
+dung_nhieu_nguon	2506C-E15TAG2	layout	1	1	0	v	6×18 ; 6-cylinder, ve×1 ; 6L×4 ; 6 L×1	15.12	
+dung_nhieu_nguon	2506C-E15TAG2	maxDisp	3	3	0	≤12.5 ≤14.6	15×10 ; 15L×2 ; 15.2 L×1 ; 15.2×5 ; 15.12×1 ; 15.0×1	15.12	
+dung_nhieu_nguon	2806A-E18TAG1A	disp	2	2	0	≥19 ≥18.8	18.1×5 ; 18.1L×1 ; 18.13×1	18.13	
+dung_nhieu_nguon	2806A-E18TAG1A	maxDisp	3	3	0	≤12.5 ≤14.6	18.1×5 ; 18.1L×1 ; 18.13×1	18.13	
+dung_nhieu_nguon	2806A-E18TAG2	cyl	15	7	0	=12 ≥10 =10	6×16 ; 6L×6 ; 6 L×1	18.13	
+dung_nhieu_nguon	2806A-E18TAG2	disp	20	9	0	≥19.6 ≥18.273 ≥26.6 ≥23.15 ≥25	18.1×12 ; 18×3 ; 18.13L×2 ; 18.13×2 ; 18.1L×1	18.13	
+dung_nhieu_nguon	2806A-E18TAG2	layout	13	6	0	v	6×16 ; 6L×6 ; 6 L×1	18.13	
+dung_nhieu_nguon	2806A-E18TAG2	maxDisp	2	1	0	≤15.2	18.1×12 ; 18×3 ; 18.13L×2 ; 18.13×2 ; 18.1L×1	18.13	
+dung_nhieu_nguon	2806A-E18TTAG4	disp	2	2	0	≥25 ≥26.6	18.1L×1 ; 18.1×2	18.13	
+dung_nhieu_nguon	2806A-E18TTAG4	maxDisp	1	1	0	≤15.2	18.1L×1 ; 18.1×2	18.13	
+dung_nhieu_nguon	2806A-E18TTAG5	disp	2	2	0	≥25 ≥26.6	18.1L×1 ; 18.1×2	18.13	
+dung_nhieu_nguon	2806A-E18TTAG5	maxDisp	1	1	0	≤15.2	18.1L×1 ; 18.1×2	18.13	
+dung_nhieu_nguon	2806C-E18TAG1A	cyl	8	8	0	=12 ≥10 =10 =8	6×16 ; 6 cylinder Die×1 ; 6L×4 ; 6 L×1	18.13	
+dung_nhieu_nguon	2806C-E18TAG1A	disp	9	9	0	≥19 ≥19.6 ≥18.273 ≥26.6 ≥23.15	18×3 ; 18.13×2 ; 18.13L×2 ; 18.1×11	18.13	
+dung_nhieu_nguon	2806C-E18TAG1A	layout	6	6	0	v	6×16 ; 6 cylinder Die×1 ; 6L×4 ; 6 L×1	18.13	
+dung_nhieu_nguon	2806C-E18TAG1A	maxDisp	4	4	0	≤12.5 ≤14.6 ≤15.2	18×3 ; 18.13×2 ; 18.13L×2 ; 18.1×11	18.13	
+dung_nhieu_nguon	4006-23TAG2A	cyl	50	10	0	≥12 =12 ≥16 =10	6×19 ; 6L×6 ; 6 L×1	22.92	
+dung_nhieu_nguon	4006-23TAG2A	disp	30	6	0	≥78 ≥26.6 ≥25 ≥29.7	22.921×4 ; 22.9×10 ; 23×6 ; 22.92L×2 ; 23.0×1	22.92	
+dung_nhieu_nguon	4006-23TAG2A	layout	40	8	0	v	6×19 ; 6L×6 ; 6 L×1	22.92	
+dung_nhieu_nguon	4006-23TAG2A	maxDisp	10	2	0	≤22 ≤15.2	22.921×4 ; 22.9×10 ; 23×6 ; 22.92L×2 ; 23.0×1	22.92	
+dung_nhieu_nguon	4006-23TAG3A	cyl	24	7	0	≥12 =12 ≥16	6×20 ; 8L×1 ; 6L×6 ; 6 L×1	22.92/30.56	
+dung_nhieu_nguon	4006-23TAG3A	layout	21	6	0	v	6×20 ; 8L×1 ; 6L×6 ; 6 L×1	22.92/30.56	
+dung_nhieu_nguon	4006-23TAG3A	maxDisp	5	2	0	≤22 ≤15.3	22.921×4 ; 22.9×8 ; 23×5 ; 22.92×3 ; 22.92L×1 ; 22.9L×1 ; 23.0×1 ; 22.921L×1	22.92/30.56	
+dung_nhieu_nguon	4008-30TAG3	cyl	8	4	0	=12	8×7 ; 8L×1 ; 8 L×1	30.56	
+dung_nhieu_nguon	4008-30TAG3	layout	12	6	0	v	8×7 ; 8L×1 ; 8 L×1	30.56	
+dung_nhieu_nguon	4008TAG2	cyl	15	5	0	=12	8×8 ; 8L×3 ; 8 L×1	30.56	
+dung_nhieu_nguon	4008TAG2	disp	3	1	0	≥31.8	30.56L×1 ; 30.6×2 ; 30.5×2 ; 30.561×1 ; 30.0×1 ; 30.561 L×1	30.56	
+dung_nhieu_nguon	4008TAG2	layout	18	6	0	v	8×8 ; 8L×3 ; 8 L×1	30.56	
+dung_nhieu_nguon	4008TAG2A	cyl	10	5	0	=12	8×14 ; 8V×2 ; 8L×3 ; 8 L×2	30.56	
+dung_nhieu_nguon	4008TAG2A	disp	2	1	0	≥31.8	30.561×5 ; 30.56×4 ; 30.5×4 ; 30.6×4 ; 30.0×1 ; 30.5L×1	30.56	
+dung_nhieu_nguon	4012-46TAG2A	disp	6	2	0	≥49.03 ≥49	45.842×6 ; 45.84×3 ; 45.84L×1 ; 45.8×9 ; 45.842L×2 ; 45.8 L×1 ; 46×1 ; 46.0×1	45.84	
+dung_nhieu_nguon	4012-46TAG2A	layout	6	2	0	inline	12×19 ; 12V×6 ; 12-cylinder, V×1 ; 12 V×1	45.84	
+dung_nhieu_nguon	4012-46TAG3A	cyl	5	1	0	=16	12×18 ; 12V×6 ; 12 V×1	45.84	
+dung_nhieu_nguon	4012-46TAG3A	disp	4	1	0	≥49	45.842×7 ; 45.84×4 ; 45.84L×1 ; 45.8×8 ; 45.842L×1 ; 46×1 ; 46.0×1	45.84	
+dung_nhieu_nguon	4012-46TWG2A	disp	3	1	0	≥49.03	45.842×6 ; 45.84×3 ; 45.84L×1 ; 45.8×9 ; 45.842L×2 ; 46×1 ; 46.0×1	45.84	
+dung_nhieu_nguon	4012-46TWG2A	layout	6	2	0	inline	12×19 ; 12V×6 ; 12 V×1	45.84	
+dung_nhieu_nguon	4016-61TRG3	disp	2	1	0	≥78	61.123×5 ; 61.12×5 ; 61.123L×3 ; 61.1×5 ; 61×1 ; 61.0×1	61.12	
+dung_nhieu_nguon	4016-61TRG3	maxDisp	2	1	0	≤20	61.123×5 ; 61.12×5 ; 61.123L×3 ; 61.1×5 ; 61×1 ; 61.0×1	61.12	
+dung_nhieu_nguon	4016TAG2A	maxDisp	2	1	0	≤20	61.123×6 ; 61.12×6 ; 61.123L×2 ; 61.123 L×1 ; 61.1×4 ; 61×1 ; 61.0×1	61.12	
+dung_nhieu_nguon	403D-11G	disp	22	21	0	≥1.6 ≥2.1 ≥1.7 ≥1.532 ≥2.15	1.131×5 ; 1.131L×2 ; 1.496×1 ; 1.1×5	1.51/1.13	
+dung_nhieu_nguon	403D-11G	layout	2	2	0	v	3×10 ; 4×1 ; 3L×5 ; 3 L×1	1.51/1.13	
+dung_nhieu_nguon	404A-22G1	disp	6	6	0	≥2.5 ≥2.3	2.216×6 ; 2.2×3 ; 2.216L×2 ; 2.22×1 ; 2.216 L×1	2.22	
+dung_nhieu_nguon	404D-22G	cyl	5	5	0	=3 =2	4×17 ; 4L×6 ; 4 L×1	2.22	
+dung_nhieu_nguon	404D-22G	disp	15	15	0	≥2.5 ≥2.54 ≥2.9 ≥2.3 ≥2.42	2.216×5 ; 2.2×10 ; 2.216L×1 ; 2.216 L×1	2.22	
+dung_nhieu_nguon	404D-22G	maxDisp	2	2	0	≤1.83	2.216×5 ; 2.2×10 ; 2.216L×1 ; 2.216 L×1	2.22	
+dung_nhieu_nguon	4DX21-45D	cyl	1	1	0	=2	4 L×1 ; 4×2		
+dung_nhieu_nguon	4DX22-50D	maxDisp	11	2	0	≤2.9 ≤2.3	3.86×1 ; 3.86 L×1		
+dung_nhieu_nguon	4DX23-65D	disp	21	4	0	≥4.5 ≥4.2 ≥4.3 ≥4.329	3.86×1 ; 3.86 L×1		
+dung_nhieu_nguon	4DX23-65D	maxDisp	5	1	0	≤1.826	3.86×1 ; 3.86 L×1		
+dung_nhieu_nguon	6M33D633E200	disp	4	4	0	≥26.6 ≥23.15	19.6×9	19.62/37.88	
+dung_nhieu_nguon	6M33D633E200	maxDisp	1	1	0	≤15.2	19.6×9	19.62/37.88	
+dung_nhieu_nguon	6M33D725E310	cyl	10	10	0	≥12 =12 ≥16 =10	6×5 ; 6 Inline×1 ; 6 L×1	19.62	
+dung_nhieu_nguon	6M33D725E310	disp	8	8	0	≥21.927 ≥78 ≥26.6 ≥25 ≥29.7	19.6×5 ; 19.6 L×1 ; 19.6L×1	19.62	
+dung_nhieu_nguon	6M33D725E310	layout	8	8	0	v	6×5 ; 6 Inline×1 ; 6 L×1	19.62	
+dung_nhieu_nguon	6M33D725E310	maxDisp	1	1	0	≤15.2	19.6×5 ; 19.6 L×1 ; 19.6L×1	19.62	
+dung_nhieu_nguon	6ZTAA13-G2	cyl	6	2	0	=8 ≥8	6L×6 ; 6×16 ; Inline 6-cylin×1 ; 6 L×1	12.98	
+dung_nhieu_nguon	6ZTAA13-G2	layout	3	1	0	v	6L×6 ; 6×16 ; Inline 6-cylin×1 ; 6 L×1	12.98	
+dung_nhieu_nguon	6ZTAA13-G2	maxDisp	7	4	0	≤12.5 ≤12.7 ≤9.84	14×1 ; 13×13 ; 13.0L×1 ; 13.0×2 ; 13L×1	12.98	
+dung_nhieu_nguon	8M33D800E200	cyl	7	7	0	≥12 =12 =6 ≥16	8V×1 ; 8×3 ; 8 L×1	26.15	
+dung_nhieu_nguon	8M33D800E200	disp	2	2	0	≥78 ≥29.7	26.1×2 ; 26.14×2	26.15	
+dung_nhieu_nguon	8M33D800E200	maxDisp	1	1	0	≤22	26.1×2 ; 26.14×2	26.15	
+dung_nhieu_nguon	8M33D890E200	cyl	9	9	0	=6 ≥12 =12 ≥16	8×3 ; 8 L×1	26.15	
+dung_nhieu_nguon	8M33D890E200	disp	1	1	0	≥31.8	26.14×2	26.15	
+dung_nhieu_nguon	8M33D890E200	maxDisp	1	1	0	≤22	26.14×2	26.15	
+dung_nhieu_nguon	CA4DF2-12D	cyl	1	1	0	≥6	4×2	4.75	
+dung_nhieu_nguon	CA6DF2-17D	layout	14	1	0	v	6×2 ; L6×1 ; 4 L×1	7.13	
+dung_nhieu_nguon	DP158LD	cyl	1	1	0	≥10	8×6 ; 8V×6 ; V8×1 ; 8L×2	14.62	
+dung_nhieu_nguon	DP222LC	cyl	1	1	0	≥16	12×5 ; 12V×6 ; V12×1 ; 12L×2	21.93	
+dung_nhieu_nguon	JE493DB-04	layout	4	2	0	v	L4×1 ; 4×1 ; 4 L×1	2.77	
+dung_nhieu_nguon	QSZ13-G10	cyl	2	2	0	=8 ≥10	6L×2 ; 6×8 ; 6 L×1	12.98	
+dung_nhieu_nguon	QSZ13-G10	disp	3	3	0	≥19 ≥14.618 ≥18.8	13×5 ; 13.0L×1 ; 13.0×1	12.98	
+dung_nhieu_nguon	QSZ13-G10	layout	1	1	0	v	6L×2 ; 6×8 ; 6 L×1	12.98	
+dung_nhieu_nguon	QSZ13-G10	maxDisp	2	2	0	≤12.5	13×5 ; 13.0L×1 ; 13.0×1	12.98	
+dung_nhieu_nguon	S16R-PTA2-C	maxDisp	1	1	0	≤20	65.4×4 ; 65.37L×1 ; 65.37×6 ; 65.3×1 ; 65.37 L×1	65.37	
+dung_nhieu_nguon	TWD1653GE	cyl	7	7	0	=12 ≥10 =10	6×12 ; 6L×2 ; 6 cylinder Die×1	16.12	
+dung_nhieu_nguon	TWD1653GE	disp	9	9	0	≥19.6 ≥18.273 ≥26.6 ≥23.15 ≥25	16.12×11	16.12	
+dung_nhieu_nguon	TWD1653GE	layout	6	6	0	v	6×12 ; 6L×2 ; 6 cylinder Die×1	16.12	
+dung_nhieu_nguon	TWD1653GE	maxDisp	1	1	0	≤15.2	16.12×11	16.12	
+dung_nhieu_nguon	WD129TAD25	cyl	4	2	0	=4 =12	6×2		
+dung_nhieu_nguon	WD129TAD25	maxDisp	8	4	0	≤9.5 ≤6.8 ≤11.051 ≤8	12.9×2 ; 25.8×1		
+dung_nhieu_nguon	WD135TAD28	cyl	4	2	0	=4 =12	6L×1 ; 6×3	13.46	
+dung_nhieu_nguon	WD135TAD28	maxDisp	8	4	0	≤9.5 ≤6.8 ≤11.051 ≤8	13.5×2 ; 25.8×1	13.46	
+dung_nhieu_nguon	WD145TAD30	cyl	4	2	0	=4 =12	6L×1 ; 6×5	14.36	
+dung_nhieu_nguon	WD145TAD30	maxDisp	8	4	0	≤9.5 ≤6.8 ≤11.051 ≤8	14.5×2 ; 26.8×1	14.36	
+dung_nhieu_nguon	WD145TAD35	maxDisp	2	1	0	≤9.84	14.5×2		
+dung_nhieu_nguon	WD269TAD38	cyl	22	11	0	=6	12×2	26.92	
+dung_nhieu_nguon	WD269TAD41	cyl	22	11	0	=6 =8	12V×1 ; 12×3		
+dung_nhieu_nguon	WD269TAD41	maxDisp	4	2	0	≤12.7 ≤9.84	26.9×3		
+dung_nhieu_nguon	WD269TAD43	cyl	28	14	0	=6 =8	12×4	26.92	
+dung_nhieu_nguon	WD269TAD43	maxDisp	8	4	0	≤12.5 ≤19 ≤12.7	26.9×2	26.92	
+dung_nhieu_nguon	WD269TAD45	cyl	28	14	0	=6 =8	12V×1 ; 12×1		
+dung_nhieu_nguon	WD269TAD45	maxDisp	8	4	0	≤12.5 ≤19 ≤12.7	26.9×2		
+dung_nhieu_nguon	WD269TAD48	cyl	28	14	0	=6 =8	12V×1 ; 12×2		
+dung_nhieu_nguon	WD269TAD48	maxDisp	8	4	0	≤12.5 ≤19 ≤12.7	26.9×3		
+dung_nhieu_nguon	WD269TAD50	cyl	30	15	0	=6 =8	12V×1 ; 12×4	26.92	
+dung_nhieu_nguon	WD269TAD50	maxDisp	10	5	0	≤12.5 ≤19 ≤14.6 ≤20	26.9×3	26.92	
+dung_nhieu_nguon	WD269TAD56	cyl	32	16	0	=6 =8	12×5 ; 12V×1	26.92	
+dung_nhieu_nguon	WD269TAD56	maxDisp	10	5	0	≤12.5 ≤19 ≤14.6 ≤20	26.9×4	26.92	
+dung_nhieu_nguon	WD287TAD58	cyl	38	19	0	=6 =10 =8	12×2		
+dung_nhieu_nguon	WD287TAD58	maxDisp	12	6	0	≤12.5 ≤19 ≤14.6 ≤15.2 ≤20	26.9×1 ; 28.7×1		
+dung_nhieu_nguon	WD287TAD61L	cyl	10	5	0	=10 =6	12×5 ; 12V×1	28.72	
+dung_nhieu_nguon	WD287TAD61L	maxDisp	2	1	0	≤15.2	28.7×3	28.72	
+dung_nhieu_nguon	WD327TAD73	cyl	10	5	0	=6 ≥16 =10	12×2		
+dung_nhieu_nguon	WD327TAD73	disp	2	1	0	≥78	32.7×2		
+dung_nhieu_nguon	WD327TAD73	maxDisp	4	2	0	≤22 ≤15.2	32.7×2		
+dung_nhieu_nguon	WD327TAD78	cyl	4	2	0	=6 ≥16	12V×1 ; 12×4	32.7	
+dung_nhieu_nguon	WD327TAD78	disp	2	1	0	≥78	32.7×3	32.7	
+dung_nhieu_nguon	WD327TAD78	maxDisp	2	1	0	≤22	32.7×3	32.7	
+dung_nhieu_nguon	WD327TAD82	cyl	4	2	0	=6 ≥16	12×3 ; 12V×1		
+dung_nhieu_nguon	WD327TAD82	disp	2	1	0	≥78	32.7×4		
+dung_nhieu_nguon	WD327TAD82	maxDisp	2	1	0	≤22	32.7×4		
+dung_nhieu_nguon	WD327TAD88	cyl	4	2	0	=6 ≥16	12×5 ; 12V×1	32.7	
+dung_nhieu_nguon	WD327TAD88	maxDisp	2	1	0	≤22	32.7×4	32.7	
+dung_nhieu_nguon	WD360TAD120	disp	2	1	0	≥49.03	35.9×2		
+dung_nhieu_nguon	WP10D264E200	cyl	2	2	0	=4 =12	6×17 ; 6L×1 ; 6 Inline×1 ; 6 L×1	9.73	
+dung_nhieu_nguon	WP10D264E200	disp	4	4	0	≥11.051	9.726×7 ; 9.7×2 ; 9.72×1 ; 9.726L×1 ; 6.25×1 ; 9.73×1	9.73	
+dung_nhieu_nguon	WP10D264E200	layout	1	1	0	v	6×17 ; 6L×1 ; 6 Inline×1 ; 6 L×1	9.73	
+dung_nhieu_nguon	WP12D353E200	disp	1	1	0	≥12.78	11.6×1 ; 11.5×1 ; 8.9×1 ; 9.726×1	11.6/9.73	
+dung_nhieu_nguon	WP13D385E200	disp	2	2	0	≥14 ≥12.78	12.5×3 ; 12.54×10 ; 12.54 L×1 ; 6.25×1	12.54/11.6	
+dung_nhieu_nguon	WP13D405E200	cyl	2	2	0	=8 ≥8	6×11 ; 6L×1 ; 6 L×1	12.54	
+dung_nhieu_nguon	WP13D405E200	disp	3	3	0	≥14 ≥14.618 ≥12.78	12.54×5 ; 12.5×1	12.54	
+dung_nhieu_nguon	WP13D405E200	layout	1	1	0	v	6×11 ; 6L×1 ; 6 L×1	12.54	
+dung_nhieu_nguon	WP13D405E200	maxDisp	1	1	0	≤9.84	12.54×5 ; 12.5×1	12.54	
+dung_nhieu_nguon	WP13D440E200	cyl	2	2	0	=8 ≥8	6×2 ; 6L×1	24.13	
+dung_nhieu_nguon	WP13D440E200	disp	2	2	0	≥14.618 ≥13	12.54×2	24.13	
+dung_nhieu_nguon	WP13D440E310	cyl	2	2	0	=8 ≥10	6×6 ; 6 L×1 ; 9×1	12.54/18.81	
+dung_nhieu_nguon	WP13D440E310	disp	5	5	0	≥19 ≥14.618 ≥18.8 ≥13	12.5×2 ; 12.54×4	12.54/18.81	
+dung_nhieu_nguon	WP13D490E310	cyl	2	2	0	=8 ≥10	6×6 ; 6 Inline×1 ; 6 L×1 ; 9×1	12.54/18.81	
+dung_nhieu_nguon	WP13D490E310	disp	5	5	0	≥19 ≥14.618 ≥18.8 ≥13	12.5×1 ; 12.54×3 ; 12.54L×1	12.54/18.81	
+dung_nhieu_nguon	WP13D490E310	layout	1	1	0	v	6×6 ; 6 Inline×1 ; 6 L×1 ; 9×1	12.54/18.81	
+dung_nhieu_nguon	WP2.3D25E200	cyl	5	5	0	=3 =2	4L×3 ; 4×8 ; 4 L×1	2.29/2.54	
+dung_nhieu_nguon	WP2.3D33E200	cyl	3	2	0	=2	4L×2 ; 4×10 ; 4 L×1	2.29/3.86	
+dung_nhieu_nguon	WP2.3D48E200	disp	4	4	0	≥4.5 ≥4.2 ≥3.765 ≥3.75	2.3×3 ; 3.12×1 ; 2.5×1 ; 2.289L×1 ; 2.29×1 ; 2.289×1	2.29/4.33	
+dung_nhieu_nguon	WP2.3D48E200	maxDisp	1	1	0	≤1.826	2.3×3 ; 3.12×1 ; 2.5×1 ; 2.289L×1 ; 2.29×1 ; 2.289×1	2.29/4.33	
+dung_nhieu_nguon	WP4.1D66E200	cyl	1	1	0	=6	4L×3 ; 4×11 ; 4 L×1	4.09/4.5	
+dung_nhieu_nguon	WP4.1D66E200	maxDisp	1	1	0	≤1.826	4.1×1 ; 4.8×1 ; 4.087×4 ; 4.087 L×1 ; 4.5×1 ; 4.08×1	4.09/4.5	
+dung_nhieu_nguon	WP4.1D80E200	disp	1	1	0	≥4.83	4.1×1 ; 4.8×1 ; 4.087×4 ; 4.5×1 ; 4.088L×1 ; 4.08×1	4.09/4.5	
+dung_nhieu_nguon	WP6D132E200	cyl	1	1	0	=4	6L×3 ; 6×16 ; 6 L×1	6.75	
+dung_nhieu_nguon	WP6D132E200	disp	2	2	0	≥8.07 ≥6.87	6.8×1 ; 6.75×9 ; 4.5×1 ; 6.25×1	6.75	
+dung_nhieu_nguon	WP6D152E200	maxDisp	1	1	0	≤5.9	6.8×1 ; 6.75×10 ; 6.25×1	9.73/6.75	
+dung_nhieu_nguon	WP7D264E310	cyl	2	2	0	=4 =12	6×5	7.48	
+dung_nhieu_nguon	WP7D264E310	disp	8	8	0	≥9.726 ≥11.051 ≥8.9	7.47×3	7.48	
+dung_nhieu_nguon	WP7D264E310	maxDisp	1	1	0	≤6.8	7.47×3	7.48	
+dung_nhieu_nguon	WX287TAD68	cyl	10	5	0	=10 =6	12×2		
+dung_nhieu_nguon	WX287TAD68	maxDisp	2	1	0	≤15.2	30.5×1 ; 28.7×1		
+dung_nhieu_nguon	Y4100D	cyl	1	1	0	=2	4×7 ; L4×1 ; 4L×2 ; 4 L×1	3.71/3.3/2.54	
+dung_nhieu_nguon	Y4100D	disp	3	2	0	≥3.765 ≥3.8	3.707×2 ; 3.298×1 ; 2.54×1 ; 2.545×1 ; 3.7×1 ; 3.707 L×1	3.71/3.3/2.54	
+dung_nhieu_nguon	Y4102ZLD	disp	8	4	0	≥4.5 ≥4.2 ≥4.3 ≥4.329	3.875×1 ; 3.87×1 ; 4.1×1 ; 3.857 L×1	3.86	
+dung_nhieu_nguon	Y4102ZLD	maxDisp	2	1	0	≤1.826	3.875×1 ; 3.87×1 ; 4.1×1 ; 3.857 L×1	3.86	
+dung_nhieu_nguon	Y4105D	disp	2	2	0	≥4.5 ≥4.2	4.1×4 ; 4.08×1 ; 1.357 L×1	4.09/1.81	
+dung_nhieu_nguon	Y4105ZLD	cyl	1	1	0	=6	4×7 ; L4×1 ; 4L×2 ; 4 L×1	4.09/3.86	
+dung_nhieu_nguon	Y4105ZLD	disp	1	1	0	≥4.33	4.1×3 ; 3.857×2 ; 4.08×1 ; 4.087 L×1	4.09/3.86	
+dung_nhieu_nguon	Y4110ZLD	cyl	4	2	0	=6	4×2 ; 4 L×1 ; 4L×1	4.49	
+dung_nhieu_nguon	Y4110ZLD	disp	6	3	0	≥4.83 ≥6.494 ≥4.95	4.484×1 ; 4.3×1 ; 4.1×1 ; 4.484 L×1	4.49	
+dung_nhieu_nguon	YD380D	cyl	24	19	0	=1 ≥4 =4 =2	3×9 ; 3L×2 ; 3 L×1	1.36/1.53	
+dung_nhieu_nguon	YD380D	layout	4	2	0	v	3×9 ; 3L×2 ; 3 L×1	1.36/1.53	
+dung_nhieu_nguon	YD385D	cyl	29	22	0	=1 ≥4 =2 =4	3×9 ; L3×1 ; 3L×2 ; 3 L×1	1.53	
+dung_nhieu_nguon	YD385D	disp	29	21	0	≥1.6 ≥2.5 ≥1.7 ≥2.54 ≥2.3	1.532×4 ; 1.53×2 ; 1.532 L×1	1.53	
+dung_nhieu_nguon	YD385D	layout	2	1	0	v	3×9 ; L3×1 ; 3L×2 ; 3 L×1	1.53	
+dung_nhieu_nguon	YD4EZLD	cyl	4	2	0	≥6 =6	4×7 ; 4L×2 ; 4 L×1	4.09/3.86	
+dung_nhieu_nguon	YD4EZLD	disp	1	1	0	≥4.33	4.1×2 ; 3.86×1 ; 3.857×1 ; 4.08×1 ; 4.087 L×1	4.09/3.86	
+dung_nhieu_nguon	YND485D	cyl	5	5	0	=3 =2	4×8 ; L4×1 ; 4L×2 ; 4 L×1	2.16/2.04	
+dung_nhieu_nguon	YND485D	disp	7	7	0	≥2.54 ≥2.3 ≥2.42 ≥2.5 ≥2.27	2.156×3 ; 2.043×1 ; 2.16×2 ; 2.156 L×1	2.16/2.04	
+dung_nhieu_nguon	YND485D	layout	1	1	0	v	4×8 ; L4×1 ; 4L×2 ; 4 L×1	2.16/2.04	
+dung_nhieu_nguon	YSD490D	cyl	5	5	0	=2 =3	4×8 ; L4×1 ; 4L×2 ; 4 L×1	2.54	
+dung_nhieu_nguon	YSD490D	disp	3	3	0	≥2.9 ≥2.672	2.54×4 ; 2.545×2 ; 2.54 L×1	2.54	

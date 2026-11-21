@@ -6690,3 +6690,937 @@ ok 1333 - bdadl n134 BDA-V360 (TAD1345GE-B): 16.1 L (số TAD1642GE) bỏ, 6 xi 
   ---
   duration_ms: 1029.2571
   ...
+# Subtest: supexcl: chỉ on===true được tính; supdeleted: mọi doc
+ok 1334 - supexcl: chỉ on===true được tính; supdeleted: mọi doc
+  ---
+  duration_ms: 3.0736
+  ...
+# Subtest: bỏ loại trừ rồi thì NCC quay lại
+ok 1335 - bỏ loại trừ rồi thì NCC quay lại
+  ---
+  duration_ms: 1.4675
+  ...
+# Subtest: không đọc được → ok=false, danh sách rỗng
+ok 1336 - không đọc được → ok=false, danh sách rỗng
+  ---
+  duration_ms: 0.8226
+  ...
+# Subtest: gaps: danh sách đọc được → báo cáo không có cảnh báo
+ok 1337 - gaps: danh sách đọc được → báo cáo không có cảnh báo
+  ---
+  duration_ms: 94719.4279
+  ...
+# Subtest: gaps: không đọc được danh sách → vẫn ra báo cáo, có cảnh báo, không gửi specreq
+ok 1338 - gaps: không đọc được danh sách → vẫn ra báo cáo, có cảnh báo, không gửi specreq
+  ---
+  duration_ms: 112666.7937
+  ...
+# Subtest: 9.36 L của TAD1341 / 1342 / 1351GE bỏ ở mọi dòng của 6 NCC, giữ số xi lanh
+ok 1339 - 9.36 L của TAD1341 / 1342 / 1351GE bỏ ở mọi dòng của 6 NCC, giữ số xi lanh
+  ---
+  duration_ms: 1215.5834
+  ...
+# Subtest: dòng kế bên giữ: fukangsi TAD1343GE 12.78
+ok 1340 - dòng kế bên giữ: fukangsi TAD1343GE 12.78
+  ---
+  duration_ms: 100.9356
+  ...
+# Subtest: page table: the JSON given to createElement(Specifications, …)
+ok 1341 - page table: the JSON given to createElement(Specifications, …)
+  ---
+  duration_ms: 10.0455
+  ...
+# Subtest: power: a figure is written only when the page gives the same kWm, kWe and kVA
+ok 1342 - power: a figure is written only when the page gives the same kWm, kWe and kVA
+  ---
+  duration_ms: 2.462
+  ...
+# Subtest: shared lines: bore × stroke, displacement, weight
+ok 1343 - shared lines: bore × stroke, displacement, weight
+  ---
+  duration_ms: 1.9862
+  ...
+# Subtest: fuel: models × speeds of the table, one figure per column, right column text left out
+ok 1344 - fuel: models × speeds of the table, one figure per column, right column text left out
+  ---
+  duration_ms: 3.2342
+  ...
+# Subtest: bulletin: one table per model, each figure from its source line
+ok 1345 - bulletin: one table per model, each figure from its source line
+  ---
+  duration_ms: 2.7821
+  ...
+# Subtest: traceOf: searches, each URL of a loop with its status, a saved page; a refused call is no fetch
+ok 1346 - traceOf: searches, each URL of a loop with its status, a saved page; a refused call is no fetch
+  ---
+  duration_ms: 7.0607
+  ...
+# Subtest: official domain: the maker's own site (and its tier A hosts), never a reseller, a CDN or another maker
+ok 1347 - official domain: the maker's own site (and its tier A hosts), never a reseller, a CDN or another maker
+  ---
+  duration_ms: 4.2654
+  ...
+# Subtest: catalogRecords: each new source gets `official` from code, whatever tier the agent wrote
+ok 1348 - catalogRecords: each new source gets `official` from code, whatever tier the agent wrote
+  ---
+  duration_ms: 7.5792
+  ...
+# Subtest: catalog.md: a figure found on the internet says whether its page is the maker's; the figure is used as before
+ok 1349 - catalog.md: a figure found on the internet says whether its page is the maker's; the figure is used as before
+  ---
+  duration_ms: 395.1809
+  ...
+# Subtest: recordNegatives: kept only with a trace in the log, the run's model key to key, blocked only with 401/403/429
+ok 1350 - recordNegatives: kept only with a trace in the log, the run's model key to key, blocked only with 401/403/429
+  ---
+  duration_ms: 2.9313
+  ...
+# Subtest: 90 days, then gone; the store keeps its size; forget by model
+ok 1351 - 90 days, then gone; the store keeps its size; forget by model
+  ---
+  duration_ms: 29.4317
+  ...
+# Subtest: catalog.md section: not found → do not search again, unclear as when silent; blocked → never try again
+ok 1352 - catalog.md section: not found → do not search again, unclear as when silent; blocked → never try again
+  ---
+  duration_ms: 2.3619
+  ...
+# Subtest: recordSearched (answer): takes result.searched out, keeps what the log shows, models of catalog.md and of the configurations
+ok 1353 - recordSearched (answer): takes result.searched out, keeps what the log shows, models of catalog.md and of the configurations
+  ---
+  duration_ms: 6.6314
+  ...
+# Subtest: runModels: the candidate rows' engines, alternators, gensets and controllers once each
+ok 1354 - runModels: the candidate rows' engines, alternators, gensets and controllers once each
+  ---
+  duration_ms: 0.7909
+  ...
+# Subtest: a later run reads the saved page again through check(): an internet figure added to the catalog is quoted by factSrc
+ok 1355 - a later run reads the saved page again through check(): an internet figure added to the catalog is quoted by factSrc
+  ---
+  duration_ms: 44.8877
+  ...
+# Subtest: what "source": a model the HSMT names (not a candidate) is kept with the run origin; same origin only
+ok 1356 - what "source": a model the HSMT names (not a candidate) is kept with the run origin; same origin only
+  ---
+  duration_ms: 11.2737
+  ...
+# Subtest: what "source": still needs the trace, not_found only, and a model the HSMT names
+ok 1357 - what "source": still needs the trace, not_found only, and a model the HSMT names
+  ---
+  duration_ms: 0.7206
+  ...
+# Subtest: dung sai ± không thành công suất (câu thật của IB2600612866)
+ok 1358 - dung sai ± không thành công suất (câu thật của IB2600612866)
+  ---
+  duration_ms: 29.3187
+  ...
+# Subtest: đọc tệp HSMT: lấy 8,5 chứ không lấy 0,5
+ok 1359 - đọc tệp HSMT: lấy 8,5 chứ không lấy 0,5
+  ---
+  duration_ms: 1.4414
+  ...
+# Subtest: fuel: "燃油消耗 (g/kw.h)" = "≤210"
+ok 1360 - fuel: "燃油消耗 (g/kw.h)" = "≤210"
+  ---
+  duration_ms: 7.0936
+  ...
+# Subtest: fuel: "Fuel Cons." = "192"
+ok 1361 - fuel: "Fuel Cons." = "192"
+  ---
+  duration_ms: 1.7156
+  ...
+# Subtest: fuel: "Fuel Consumption ESP" = "3,51 l/h"
+ok 1362 - fuel: "Fuel Consumption ESP" = "3,51 l/h"
+  ---
+  duration_ms: 0.6313
+  ...
+# Subtest: fuel: "Fuel consumption (L/h) 100%" = "2.67"
+ok 1363 - fuel: "Fuel consumption (L/h) 100%" = "2.67"
+  ---
+  duration_ms: 0.4813
+  ...
+# Subtest: fuel: "Fuel Consumption @Prime Power (L/H)" = "127"
+ok 1364 - fuel: "Fuel Consumption @Prime Power (L/H)" = "127"
+  ---
+  duration_ms: 0.4302
+  ...
+# Subtest: fuel: "燃气消耗量 (m3/kwh)" = "≤0.33"
+ok 1365 - fuel: "燃气消耗量 (m3/kwh)" = "≤0.33"
+  ---
+  duration_ms: 1.3215
+  ...
+# Subtest: fuel: "Consumption 100%" = "5.5"
+ok 1366 - fuel: "Consumption 100%" = "5.5"
+  ---
+  duration_ms: 2.0313
+  ...
+# Subtest: fuel: "Fuel Consumption" = "254"
+ok 1367 - fuel: "Fuel Consumption" = "254"
+  ---
+  duration_ms: 0.5246
+  ...
+# Subtest: fuel: "Fuel consumption @25/50/75/100% load" = "8.25/13.2/18.7/24.6"
+ok 1368 - fuel: "Fuel consumption @25/50/75/100% load" = "8.25/13.2/18.7/24.6"
+  ---
+  duration_ms: 0.9676
+  ...
+# Subtest: fuel: "最低燃油耗（g/kW.h）" = "198"
+ok 1369 - fuel: "最低燃油耗（g/kW.h）" = "198"
+  ---
+  duration_ms: 0.7888
+  ...
+# Subtest: fuel: "Gas consumption（Nm³/hr）" = "234.31"
+ok 1370 - fuel: "Gas consumption（Nm³/hr）" = "234.31"
+  ---
+  duration_ms: 0.5147
+  ...
+# Subtest: fuel: "燃油消耗率(lir/hr)" = "88"
+ok 1371 - fuel: "燃油消耗率(lir/hr)" = "88"
+  ---
+  duration_ms: 0.5177
+  ...
+# Subtest: fuel: "Cons 100% ( L/H )" = "180/225"
+ok 1372 - fuel: "Cons 100% ( L/H )" = "180/225"
+  ---
+  duration_ms: 0.687
+  ...
+# Subtest: fuel75: "Fuel Consumption 75 % PRP" = "2,50 l/h"
+ok 1373 - fuel75: "Fuel Consumption 75 % PRP" = "2,50 l/h"
+  ---
+  duration_ms: 0.9564
+  ...
+# Subtest: fuel75: "Fuel consumption75% (of the Prime Power)" = "56.8L"
+ok 1374 - fuel75: "Fuel consumption75% (of the Prime Power)" = "56.8L"
+  ---
+  duration_ms: 3.2043
+  ...
+# Subtest: fuel75: "75%Prime" = "17L/h"
+ok 1375 - fuel75: "75%Prime" = "17L/h"
+  ---
+  duration_ms: 0.5336
+  ...
+# Subtest: fuel75: "Fuel L/h @75% / @100%" = "11.9 / 15.8"
+ok 1376 - fuel75: "Fuel L/h @75% / @100%" = "11.9 / 15.8"
+  ---
+  duration_ms: 0.6855
+  ...
+# Subtest: fuel75: "燃油消耗" = "57.3"
+ok 1377 - fuel75: "燃油消耗" = "57.3"
+  ---
+  duration_ms: 0.4016
+  ...
+# Subtest: fuel75: "Running time @ 75% PRP" = "5"
+ok 1378 - fuel75: "Running time @ 75% PRP" = "5"
+  ---
+  duration_ms: 0.4566
+  ...
+# Subtest: fuel75: "Fuel consumption75% (of the Prime Power)" = "193g/kWh"
+ok 1379 - fuel75: "Fuel consumption75% (of the Prime Power)" = "193g/kWh"
+  ---
+  duration_ms: 0.4251
+  ...
+# Subtest: fuel50: "50%Prime" = "3.7L/h"
+ok 1380 - fuel50: "50%Prime" = "3.7L/h"
+  ---
+  duration_ms: 0.3126
+  ...
+# Subtest: fuel50: "50%Prime" = "0.216"
+ok 1381 - fuel50: "50%Prime" = "0.216"
+  ---
+  duration_ms: 0.2571
+  ...
+# Subtest: fuel50: "Fuel consumption at 50% Prime Power" = "0"
+ok 1382 - fuel50: "Fuel consumption at 50% Prime Power" = "0"
+  ---
+  duration_ms: 0.3543
+  ...
+# Subtest: fuel50: "Fuel consumption at 50% Prime Power" = "197.5"
+ok 1383 - fuel50: "Fuel consumption at 50% Prime Power" = "197.5"
+  ---
+  duration_ms: 0.2836
+  ...
+# Subtest: fuel50: "Consumption" = "17"
+ok 1384 - fuel50: "Consumption" = "17"
+  ---
+  duration_ms: 0.2292
+  ...
+# Subtest: noise: "Noise Level" = "≤72dB(A) @ 7m"
+ok 1385 - noise: "Noise Level" = "≤72dB(A) @ 7m"
+  ---
+  duration_ms: 2.696
+  ...
+# Subtest: noise: "Noise(LP1m)" = "100dB（A）"
+ok 1386 - noise: "Noise(LP1m)" = "100dB（A）"
+  ---
+  duration_ms: 1.4373
+  ...
+# Subtest: noise: "Noise Level" = "70dB"
+ok 1387 - noise: "Noise Level" = "70dB"
+  ---
+  duration_ms: 0.493
+  ...
+# Subtest: noise: "Noise Level for Soundproof Generator at 7M" = "75"
+ok 1388 - noise: "Noise Level for Soundproof Generator at 7M" = "75"
+  ---
+  duration_ms: 0.3732
+  ...
+# Subtest: noise: "噪音dB(A)" = "86 ≤69"
+ok 1389 - noise: "噪音dB(A)" = "86 ≤69"
+  ---
+  duration_ms: 0.9207
+  ...
+# Subtest: noise: "dB(A)" = "69"
+ok 1390 - noise: "dB(A)" = "69"
+  ---
+  duration_ms: 0.8523
+  ...
+# Subtest: noise: "Noise level (7m, dB)" = "68-72"
+ok 1391 - noise: "Noise level (7m, dB)" = "68-72"
+  ---
+  duration_ms: 0.4157
+  ...
+# Subtest: dims: "外形尺寸(L×W×H)" = "2900*1100*1600"
+ok 1392 - dims: "外形尺寸(L×W×H)" = "2900*1100*1600"
+  ---
+  duration_ms: 2.087
+  ...
+# Subtest: dims: "Dimension mm Open Type" = "1760*760*1380"
+ok 1393 - dims: "Dimension mm Open Type" = "1760*760*1380"
+  ---
+  duration_ms: 0.7515
+  ...
+# Subtest: dims: "开架机组 外形尺寸 L × W × H(mm)" = "3100×1020 ×1780"
+ok 1394 - dims: "开架机组 外形尺寸 L × W × H(mm)" = "3100×1020 ×1780"
+  ---
+  duration_ms: 0.5672
+  ...
+# Subtest: dims: "Dimensions" = "1900*800*1050"
+ok 1395 - dims: "Dimensions" = "1900*800*1050"
+  ---
+  duration_ms: 0.7957
+  ...
+# Subtest: dims: "Size" = "4500*1800*2745"
+ok 1396 - dims: "Size" = "4500*1800*2745"
+  ---
+  duration_ms: 0.2896
+  ...
+# Subtest: dims: "Size" = "3600*1500*2460"
+ok 1397 - dims: "Size" = "3600*1500*2460"
+  ---
+  duration_ms: 0.367
+  ...
+# Subtest: weight: "Weight" = "1250"
+ok 1398 - weight: "Weight" = "1250"
+  ---
+  duration_ms: 1.0059
+  ...
+# Subtest: dims: "L*M*H(mm)(open)" = "2000*800*1350"
+ok 1399 - dims: "L*M*H(mm)(open)" = "2000*800*1350"
+  ---
+  duration_ms: 0.2606
+  ...
+# Subtest: weight: "Gross Weight(kg)" = "700"
+ok 1400 - weight: "Gross Weight(kg)" = "700"
+  ---
+  duration_ms: 0.6696
+  ...
+# Subtest: weight: "毛重（kg）" = "800"
+ok 1401 - weight: "毛重（kg）" = "800"
+  ---
+  duration_ms: 0.5643
+  ...
+# Subtest: weight: "Weight" = "4100"
+ok 1402 - weight: "Weight" = "4100"
+  ---
+  duration_ms: 0.4609
+  ...
+# Subtest: weight: "净重 Net Weight (kg)" = "738"
+ok 1403 - weight: "净重 Net Weight (kg)" = "738"
+  ---
+  duration_ms: 0.2568
+  ...
+# Subtest: weight: "开架款重量" = "9500"
+ok 1404 - weight: "开架款重量" = "9500"
+  ---
+  duration_ms: 0.3669
+  ...
+# Subtest: weight: "Weight" = "630"
+ok 1405 - weight: "Weight" = "630"
+  ---
+  duration_ms: 0.4963
+  ...
+# Subtest: disp: "Displacement (L)" = "3.9"
+ok 1406 - disp: "Displacement (L)" = "3.9"
+  ---
+  duration_ms: 1.2132
+  ...
+# Subtest: disp: "Displacement" = "1,642 L"
+ok 1407 - disp: "Displacement" = "1,642 L"
+  ---
+  duration_ms: 0.8629
+  ...
+# Subtest: disp: "Displacement" = "1,116 L"
+ok 1408 - disp: "Displacement" = "1,116 L"
+  ---
+  duration_ms: 0.2406
+  ...
+# Subtest: fuel: "Fuel Consumption ESP" = "3,767 l/h"
+ok 1409 - fuel: "Fuel Consumption ESP" = "3,767 l/h"
+  ---
+  duration_ms: 0.3702
+  ...
+# Subtest: disp: "Displacement" = "0,667 L"
+ok 1410 - disp: "Displacement" = "0,667 L"
+  ---
+  duration_ms: 0.2315
+  ...
+# Subtest: weight: "Dry Weight" = "4,095kg"
+ok 1411 - weight: "Dry Weight" = "4,095kg"
+  ---
+  duration_ms: 0.2688
+  ...
+# Subtest: dims: "Dimension (L × W × H)" = "1,381 x 1,138 x 1,207 mm"
+ok 1412 - dims: "Dimension (L × W × H)" = "1,381 x 1,138 x 1,207 mm"
+  ---
+  duration_ms: 0.396
+  ...
+# Subtest: dims: "Dimensions (L×W×H)" = "4300 × 1600 × 2250mm / 4,300kg"
+ok 1413 - dims: "Dimensions (L×W×H)" = "4300 × 1600 × 2250mm / 4,300kg"
+  ---
+  duration_ms: 0.261
+  ...
+# Subtest: disp: "Displacement (cc)" = "418"
+ok 1414 - disp: "Displacement (cc)" = "418"
+  ---
+  duration_ms: 0.2548
+  ...
+# Subtest: disp: "Displacement" = "38"
+ok 1415 - disp: "Displacement" = "38"
+  ---
+  duration_ms: 0.8341
+  ...
+# Subtest: disp: "排量" = "7.146"
+ok 1416 - disp: "排量" = "7.146"
+  ---
+  duration_ms: 0.629
+  ...
+# Subtest: disp: "Displacement" = "1642"
+ok 1417 - disp: "Displacement" = "1642"
+  ---
+  duration_ms: 0.2696
+  ...
+# Subtest: disp: "Displacement" = "171"
+ok 1418 - disp: "Displacement" = "171"
+  ---
+  duration_ms: 0.1968
+  ...
+# Subtest: disp: "Displacement" = "1.6"
+ok 1419 - disp: "Displacement" = "1.6"
+  ---
+  duration_ms: 0.1967
+  ...
+# Subtest: disp: "Displacement (mm)" = "4.3"
+ok 1420 - disp: "Displacement (mm)" = "4.3"
+  ---
+  duration_ms: 0.3197
+  ...
+# Subtest: disp: "排量 (A)" = "14"
+ok 1421 - disp: "排量 (A)" = "14"
+  ---
+  duration_ms: 0.2425
+  ...
+# Subtest: disp: "Displacement [ccm]" = "171"
+ok 1422 - disp: "Displacement [ccm]" = "171"
+  ---
+  duration_ms: 0.1759
+  ...
+# Subtest: disp: "Displacement" = "6.44L"
+ok 1423 - disp: "Displacement" = "6.44L"
+  ---
+  duration_ms: 0.1821
+  ...
+# Subtest: disp: "排量(L)" = "8.2"
+ok 1424 - disp: "排量(L)" = "8.2"
+  ---
+  duration_ms: 0.1695
+  ...
+# Subtest: bore: "Bore and Stroke" = "88 x 90 mm"
+ok 1425 - bore: "Bore and Stroke" = "88 x 90 mm"
+  ---
+  duration_ms: 0.8819
+  ...
+# Subtest: bore: "缸径/行程 (mm)" = "190/215"
+ok 1426 - bore: "缸径/行程 (mm)" = "190/215"
+  ---
+  duration_ms: 0.6707
+  ...
+# Subtest: bore: "缸径 mm" = "159"
+ok 1427 - bore: "缸径 mm" = "159"
+  ---
+  duration_ms: 0.2572
+  ...
+# Subtest: bore: "Bore×Stroke" = "90×100"
+ok 1428 - bore: "Bore×Stroke" = "90×100"
+  ---
+  duration_ms: 0.4484
+  ...
+# Subtest: bore: "Bore / stroke" = "1200"
+ok 1429 - bore: "Bore / stroke" = "1200"
+  ---
+  duration_ms: 3.0909
+  ...
+# Subtest: bore: "Bore × Stroke" = "127mm × 165mm"
+ok 1430 - bore: "Bore × Stroke" = "127mm × 165mm"
+  ---
+  duration_ms: 0.3226
+  ...
+# Subtest: bore: "缸径/行程" = "102/120"
+ok 1431 - bore: "缸径/行程" = "102/120"
+  ---
+  duration_ms: 0.5423
+  ...
+# Subtest: bore: "Bore×Stroke" = "85×100"
+ok 1432 - bore: "Bore×Stroke" = "85×100"
+  ---
+  duration_ms: 0.4988
+  ...
+# Subtest: dims: "外形尺寸" = "1600*720*1200"
+ok 1433 - dims: "外形尺寸" = "1600*720*1200"
+  ---
+  duration_ms: 0.4878
+  ...
+# Subtest: disp: "Displacement" = "2.27"
+ok 1434 - disp: "Displacement" = "2.27"
+  ---
+  duration_ms: 1.7015
+  ...
+# Subtest: cyl: "缸数" = "6"
+ok 1435 - cyl: "缸数" = "6"
+  ---
+  duration_ms: 0.7607
+  ...
+# Subtest: cyl: "Cylinder" = "6L"
+ok 1436 - cyl: "Cylinder" = "6L"
+  ---
+  duration_ms: 0.3922
+  ...
+# Subtest: cyl: "Cylinder" = "12V"
+ok 1437 - cyl: "Cylinder" = "12V"
+  ---
+  duration_ms: 0.1657
+  ...
+# Subtest: cyl: "缸数" = "V20"
+ok 1438 - cyl: "缸数" = "V20"
+  ---
+  duration_ms: 0.1555
+  ...
+# Subtest: cyl: "Number of cylinders / arrangement" = "16 cyl / 60°V"
+ok 1439 - cyl: "Number of cylinders / arrangement" = "16 cyl / 60°V"
+  ---
+  duration_ms: 0.1652
+  ...
+# Subtest: cyl: "Cylinder Configuration" = "16-cylinder, 60° Vee"
+ok 1440 - cyl: "Cylinder Configuration" = "16-cylinder, 60° Vee"
+  ---
+  duration_ms: 0.1598
+  ...
+# Subtest: compr: "Compression Ratio" = "14:1"
+ok 1441 - compr: "Compression Ratio" = "14:1"
+  ---
+  duration_ms: 0.3901
+  ...
+# Subtest: compr: "Compression ratio" = "13.6: 1"
+ok 1442 - compr: "Compression ratio" = "13.6: 1"
+  ---
+  duration_ms: 0.234
+  ...
+# Subtest: compr: "Compression Ratio" = "18·2 :1"
+ok 1443 - compr: "Compression Ratio" = "18·2 :1"
+  ---
+  duration_ms: 0.1643
+  ...
+# Subtest: compr: "Compression Ratio" = "16.5：1"
+ok 1444 - compr: "Compression Ratio" = "16.5：1"
+  ---
+  duration_ms: 0.1747
+  ...
+# Subtest: compr: "Compression Ratio" = "14.0"
+ok 1445 - compr: "Compression Ratio" = "14.0"
+  ---
+  duration_ms: 0.2391
+  ...
+# Subtest: compr: "Compression Ratio" = "-"
+ok 1446 - compr: "Compression Ratio" = "-"
+  ---
+  duration_ms: 0.2301
+  ...
+# Subtest: speed: "Rated speed" = "1500 rpm"
+ok 1447 - speed: "Rated speed" = "1500 rpm"
+  ---
+  duration_ms: 0.7451
+  ...
+# Subtest: speed: "额定转速 (RPM)" = "1500"
+ok 1448 - speed: "额定转速 (RPM)" = "1500"
+  ---
+  duration_ms: 0.5293
+  ...
+# Subtest: speed: "Speed" = "1800"
+ok 1449 - speed: "Speed" = "1800"
+  ---
+  duration_ms: 0.2351
+  ...
+# Subtest: speed: "Rated Rotation Speed [rpm]" = "3000 3600"
+ok 1450 - speed: "Rated Rotation Speed [rpm]" = "3000 3600"
+  ---
+  duration_ms: 0.2197
+  ...
+# Subtest: speed: "kWm @ rpm 50Hz Standby" = "1,240 @ 1500"
+ok 1451 - speed: "kWm @ rpm 50Hz Standby" = "1,240 @ 1500"
+  ---
+  duration_ms: 0.1315
+  ...
+# Subtest: speed: "转速" = "1500"
+ok 1452 - speed: "转速" = "1500"
+  ---
+  duration_ms: 0.1743
+  ...
+# Subtest: speed: "Rated speed" = "1200 r/min"
+ok 1453 - speed: "Rated speed" = "1200 r/min"
+  ---
+  duration_ms: 0.1861
+  ...
+# Subtest: speed: "Rated rotation speed" = "1191"
+ok 1454 - speed: "Rated rotation speed" = "1191"
+  ---
+  duration_ms: 0.2025
+  ...
+# Subtest: voltage: "电压(V)" = "230/400"
+ok 1455 - voltage: "电压(V)" = "230/400"
+  ---
+  duration_ms: 1.8714
+  ...
+# Subtest: voltage: "Voltage" = "415/240V, 400/230V, 380/220V"
+ok 1456 - voltage: "Voltage" = "415/240V, 400/230V, 380/220V"
+  ---
+  duration_ms: 0.7977
+  ...
+# Subtest: voltage: "Voltage" = "380-415V"
+ok 1457 - voltage: "Voltage" = "380-415V"
+  ---
+  duration_ms: 0.243
+  ...
+# Subtest: voltage: "Fre/Volt HZ/V 频率 /电压" = "1000"
+ok 1458 - voltage: "Fre/Volt HZ/V 频率 /电压" = "1000"
+  ---
+  duration_ms: 0.2256
+  ...
+# Subtest: voltage: "Voltage" = "208/120; 220/127; 416/240;"
+ok 1459 - voltage: "Voltage" = "208/120; 220/127; 416/240;"
+  ---
+  duration_ms: 0.4425
+  ...
+# Subtest: voltage: "Voltage/" = "220V / 50Hz"
+ok 1460 - voltage: "Voltage/" = "220V / 50Hz"
+  ---
+  duration_ms: 0.206
+  ...
+# Subtest: voltage: "Rated Voltage" = "380V/400V/415V、10.5kv(Optional)"
+ok 1461 - voltage: "Rated Voltage" = "380V/400V/415V、10.5kv(Optional)"
+  ---
+  duration_ms: 0.9007
+  ...
+# Subtest: voltage: "Rated voltage line to line" = "400/230"
+ok 1462 - voltage: "Rated voltage line to line" = "400/230"
+  ---
+  duration_ms: 0.3198
+  ...
+# Subtest: phase: "Phases" = "3"
+ok 1463 - phase: "Phases" = "3"
+  ---
+  duration_ms: 1.1395
+  ...
+# Subtest: phase: "Phase" = "Three"
+ok 1464 - phase: "Phase" = "Three"
+  ---
+  duration_ms: 0.5005
+  ...
+# Subtest: phase: "Phase & Wire" = "3 Phase, 4 Wires"
+ok 1465 - phase: "Phase & Wire" = "3 Phase, 4 Wires"
+  ---
+  duration_ms: 0.2791
+  ...
+# Subtest: phase: "Phase" = "1-Phase , 3-Phase"
+ok 1466 - phase: "Phase" = "1-Phase , 3-Phase"
+  ---
+  duration_ms: 0.1625
+  ...
+# Subtest: phase: "Numbers of Wires" = "6 Wires"
+ok 1467 - phase: "Numbers of Wires" = "6 Wires"
+  ---
+  duration_ms: 0.2272
+  ...
+# Subtest: phase: "Frequency / Phase" = "50Hz/ Three phase"
+ok 1468 - phase: "Frequency / Phase" = "50Hz/ Three phase"
+  ---
+  duration_ms: 0.3046
+  ...
+# Subtest: phase: "50HZ PF=0.8 400/230V 3Phase 4Wire" = "3"
+ok 1469 - phase: "50HZ PF=0.8 400/230V 3Phase 4Wire" = "3"
+  ---
+  duration_ms: 0.2471
+  ...
+# Subtest: pf: "Factor (Cos Phi)" = "0.8"
+ok 1470 - pf: "Factor (Cos Phi)" = "0.8"
+  ---
+  duration_ms: 0.5626
+  ...
+# Subtest: pf: "Power Factor" = "0.8 lagging"
+ok 1471 - pf: "Power Factor" = "0.8 lagging"
+  ---
+  duration_ms: 0.2733
+  ...
+# Subtest: pf: "Power Factor" = "0.8 (Lagging)"
+ok 1472 - pf: "Power Factor" = "0.8 (Lagging)"
+  ---
+  duration_ms: 0.1566
+  ...
+# Subtest: pf: "Power Factor" = "COSΦ=0.8"
+ok 1473 - pf: "Power Factor" = "COSΦ=0.8"
+  ---
+  duration_ms: 0.3009
+  ...
+# Subtest: pf: "Power Factor" = "1.0"
+ok 1474 - pf: "Power Factor" = "1.0"
+  ---
+  duration_ms: 0.162
+  ...
+# Subtest: pf: "Power Factor" = "-"
+ok 1475 - pf: "Power Factor" = "-"
+  ---
+  duration_ms: 0.1333
+  ...
+# Subtest: pf: "Power factor" = "1(0.8)"
+ok 1476 - pf: "Power factor" = "1(0.8)"
+  ---
+  duration_ms: 0.178
+  ...
+# Subtest: pf: "Power factor" = "0.8（Lag）"
+ok 1477 - pf: "Power factor" = "0.8（Lag）"
+  ---
+  duration_ms: 0.2001
+  ...
+# Subtest: tank: "Fuel Tank" = "60 L"
+ok 1478 - tank: "Fuel Tank" = "60 L"
+  ---
+  duration_ms: 1.2597
+  ...
+# Subtest: tank: "Fuel Tank Capacity (L)" = "25"
+ok 1479 - tank: "Fuel Tank Capacity (L)" = "25"
+  ---
+  duration_ms: 0.941
+  ...
+# Subtest: tank: "Fuel tank capacity" = "780"
+ok 1480 - tank: "Fuel tank capacity" = "780"
+  ---
+  duration_ms: 0.4707
+  ...
+# Subtest: tank: "FuelTank (lt)" = "2 x 950"
+ok 1481 - tank: "FuelTank (lt)" = "2 x 950"
+  ---
+  duration_ms: 0.2481
+  ...
+# Subtest: tank: "Fuel tank" = "Capable of continuous use for over 10 hours"
+ok 1482 - tank: "Fuel tank" = "Capable of continuous use for over 10 hours"
+  ---
+  duration_ms: 0.2159
+  ...
+# Subtest: tank: "FUEL TANK GAL. (LITERS)" = "4.0 GAL. (15 L.) METAL FUEL TANK WITH GAUGE, TWIST-CAP, & SLOSH VALVE"
+ok 1483 - tank: "FUEL TANK GAL. (LITERS)" = "4.0 GAL. (15 L.) METAL FUEL TANK WITH GAUGE, TWIST-CAP, & SLOSH VALVE"
+  ---
+  duration_ms: 0.2162
+  ...
+# Subtest: tank: "Fuel Tank running hours:" = "8/10/12H"
+ok 1484 - tank: "Fuel Tank running hours:" = "8/10/12H"
+  ---
+  duration_ms: 0.1657
+  ...
+# Subtest: engPower: "Rated Engine Output" = "12,2kW prp ; 13,2kW standby"
+ok 1485 - engPower: "Rated Engine Output" = "12,2kW prp ; 13,2kW standby"
+  ---
+  duration_ms: 1.9989
+  ...
+# Subtest: engPower: "Engine power (kW)" = "36"
+ok 1486 - engPower: "Engine power (kW)" = "36"
+  ---
+  duration_ms: 0.8879
+  ...
+# Subtest: engPower: "Gross Engine Output — Prime" = "1,097 kWm at 1,500 rpm"
+ok 1487 - engPower: "Gross Engine Output — Prime" = "1,097 kWm at 1,500 rpm"
+  ---
+  duration_ms: 0.5743
+  ...
+# Subtest: engPower: "Engine power (kW)" = "30.1KW/1500转"
+ok 1488 - engPower: "Engine power (kW)" = "30.1KW/1500转"
+  ---
+  duration_ms: 0.6242
+  ...
+# Subtest: engPower: "Max Power (kW/Hp)" = "575/771"
+ok 1489 - engPower: "Max Power (kW/Hp)" = "575/771"
+  ---
+  duration_ms: 0.2907
+  ...
+# Subtest: engPower: "Prime power / Speed (KW/RPM)" = "340/1500"
+ok 1490 - engPower: "Prime power / Speed (KW/RPM)" = "340/1500"
+  ---
+  duration_ms: 0.2192
+  ...
+# Subtest: engPower: "Engine Power" = "96-105kw"
+ok 1491 - engPower: "Engine Power" = "96-105kw"
+  ---
+  duration_ms: 0.2451
+  ...
+# Subtest: engPower: "Engine Power" = "20/23"
+ok 1492 - engPower: "Engine Power" = "20/23"
+  ---
+  duration_ms: 0.3359
+  ...
+# Subtest: engPower: "柴油机额定功率/转速 Engine prime power （KW/rpm)" = "125/1500"
+ok 1493 - engPower: "柴油机额定功率/转速 Engine prime power （KW/rpm)" = "125/1500"
+  ---
+  duration_ms: 0.262
+  ...
+# Subtest: emission: "排放 Discharge" = "国Ⅱ"
+ok 1494 - emission: "排放 Discharge" = "国Ⅱ"
+  ---
+  duration_ms: 5.6573
+  ...
+# Subtest: emission: "Emission standards" = "T3"
+ok 1495 - emission: "Emission standards" = "T3"
+  ---
+  duration_ms: 1.1276
+  ...
+# Subtest: emission: "Emission standard" = "Non-Road Emission Exempt"
+ok 1496 - emission: "Emission standard" = "Non-Road Emission Exempt"
+  ---
+  duration_ms: 0.5149
+  ...
+# Subtest: emission: "Emission Standard" = "EU Stage II / EPA Tier 2"
+ok 1497 - emission: "Emission Standard" = "EU Stage II / EPA Tier 2"
+  ---
+  duration_ms: 0.4035
+  ...
+# Subtest: emission: "EU Emissions Level" = "V"
+ok 1498 - emission: "EU Emissions Level" = "V"
+  ---
+  duration_ms: 1.4448
+  ...
+# Subtest: emission: "Emission standards" = "CHINA STAGE"
+ok 1499 - emission: "Emission standards" = "CHINA STAGE"
+  ---
+  duration_ms: 0.3543
+  ...
+# Subtest: emission: "Emission Standards" = "CN III, EU III"
+ok 1500 - emission: "Emission Standards" = "CN III, EU III"
+  ---
+  duration_ms: 0.2767
+  ...
+# Subtest: emission: "EPA EMISSION LEVEL" = "Tier 4 Final"
+ok 1501 - emission: "EPA EMISSION LEVEL" = "Tier 4 Final"
+  ---
+  duration_ms: 0.2555
+  ...
+# Subtest: emission: "Emission level" = "Stage IIIA / Tier 3"
+ok 1502 - emission: "Emission level" = "Stage IIIA / Tier 3"
+  ---
+  duration_ms: 0.2522
+  ...
+# Subtest: mỗi mã có ít nhất 5 ca, và mỗi mã có ca ra missing
+ok 1503 - mỗi mã có ít nhất 5 ca, và mỗi mã có ca ra missing
+  ---
+  duration_ms: 0.6084
+  ...
+# Subtest: không đoán đơn vị theo độ lớn: 205 không thành g/kWh, 75 không thành dB, 1500 không thành rpm
+ok 1504 - không đoán đơn vị theo độ lớn: 205 không thành g/kWh, 75 không thành dB, 1500 không thành rpm
+  ---
+  duration_ms: 0.4958
+  ...
+# Subtest: quy đổi chỉ bằng web/conversions.js và giữ giá trị gốc (hp → kW)
+ok 1505 - quy đổi chỉ bằng web/conversions.js và giữ giá trị gốc (hp → kW)
+  ---
+  duration_ms: 0.6549
+  ...
+# Subtest: mã không thuộc lớp này → null; normalizeRecord lấy ngữ cảnh của bản ghi
+ok 1506 - mã không thuộc lớp này → null; normalizeRecord lấy ngữ cảnh của bản ghi
+  ---
+  duration_ms: 0.5191
+  ...
+# Subtest: cờ công suất tổ máy: chỉ 'rated' → thiếu chế độ; không tần số → thiếu freq; cách đọc không đổi
+ok 1507 - cờ công suất tổ máy: chỉ 'rated' → thiếu chế độ; không tần số → thiếu freq; cách đọc không đổi
+  ---
+  duration_ms: 0.2925
+  ...
+# Subtest: index.html có script ứng dụng (IIFE) để kiểm
+ok 1508 - index.html có script ứng dụng (IIFE) để kiểm
+  ---
+  duration_ms: 3.6636
+  ...
+# Subtest: không có hai khai báo function trùng tên ở cấp ngoài cùng của index.html
+ok 1509 - không có hai khai báo function trùng tên ở cấp ngoài cùng của index.html
+  ---
+  duration_ms: 6.8883
+  ...
+# Subtest: V8 dịch thân ứng dụng trong khối strict không báo tên khai báo trùng
+ok 1510 - V8 dịch thân ứng dụng trong khối strict không báo tên khai báo trùng
+  ---
+  duration_ms: 15.8405
+  ...
+# Subtest: ca phủ định: cách kiểm bắt được hàm trùng tên (cột 0 và V8)
+ok 1511 - ca phủ định: cách kiểm bắt được hàm trùng tên (cột 0 và V8)
+  ---
+  duration_ms: 35.3961
+  ...
+# Subtest: navSnap nhận ra các màn Nhà cung cấp / Nhà thầu / Danh mục và hộp thoại
+ok 1512 - navSnap nhận ra các màn Nhà cung cấp / Nhà thầu / Danh mục và hộp thoại
+  ---
+  duration_ms: 0.9045
+  ...
+# Subtest: mọi màn trong navSnap có trong navRestore
+ok 1513 - mọi màn trong navSnap có trong navRestore
+  ---
+  duration_ms: 0.4954
+  ...
+# Subtest: mọi trường navSnap ghi lại đều được navRestore dùng (trừ url, navSync dùng)
+ok 1514 - mọi trường navSnap ghi lại đều được navRestore dùng (trừ url, navSync dùng)
+  ---
+  duration_ms: 1.8591
+  ...
+# Subtest: mỗi màn mở bằng modal(mBanner(...)) có trong navSnap; còn lại Back đóng như hộp thoại (khoá hành vi)
+ok 1515 - mỗi màn mở bằng modal(mBanner(...)) có trong navSnap; còn lại Back đóng như hộp thoại (khoá hành vi)
+  ---
+  duration_ms: 0.9408
+  ...
+# Subtest: đổi URL bằng replaceState(history.state, …), không replaceState(null, …) (Back cần state của bước)
+ok 1516 - đổi URL bằng replaceState(history.state, …), không replaceState(null, …) (Back cần state của bước)
+  ---
+  duration_ms: 0.7755
+  ...
+# Subtest: SHOW_SRC = false và danh sách mặc định theo ngày đăng giảm dần
+ok 1517 - SHOW_SRC = false và danh sách mặc định theo ngày đăng giảm dần
+  ---
+  duration_ms: 0.6793
+  ...
+# Subtest: nhãn 'Công suất chưa xác nhận': chỉ hiển thị, nằm trong tiêu đề thẻ cấu hình, chỉ tính mục công suất tổ máy ở kết quả chưa rõ
+ok 1518 - nhãn 'Công suất chưa xác nhận': chỉ hiển thị, nằm trong tiêu đề thẻ cấu hình, chỉ tính mục công suất tổ máy ở kết quả chưa rõ
+  ---
+  duration_ms: 3.578
+  ...
+1..1518
+# tests 1518
+# suites 0
+# pass 1518
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 331130.3811

@@ -1,5 +1,7 @@
 Kết luận: sửa 2 / 6 mục. spec-diff 61.041 → 61.229 bản ghi: +188 (lỗi 2), 26 đổi model (lỗi 5), 0 mất, đảo vai 0 → 0; lỗi 1 và 4 đã hết trên main; lỗi 3 và 6 KHÔNG sửa (cần quyết); test 1496/1496.
 
+**Cập nhật 21/11 (điều phối đồng ý tách):** #1017 nay CHỈ còn lỗi 2, đầu nhánh **73b58c5d** (đã revert ab597617, gộp main a14b233e). spec-diff so main 04709819: 61.041 → 61.229, +188 (bdadl 94, pengpai 94), 0 đổi, 0 mất, đảo vai 0 → 0; test 1518/1518; `quality --check` đạt. Main a14b233e chỉ thêm `suppliers/cn/leroy-somer-fuzhou.json` so với 04709819 (không đổi mã đọc); spec-diff chưa chạy lại trên máy sau lần gộp đó, CI `spec-diff` của PR sẽ chạy. Tách `^` (lỗi 5) chuyển sang PR `tach-mu-2`, mọi số về lỗi 5 bên dưới là của bản trước.
+
 # doc-ma-2-1: đọc mã động cơ (S2, 21/11/2026)
 
 PR DRAFT: https://github.com/khoanguyenminh6868/GenSet-Pro/pull/1017 — nhánh `doc-ma-2`, đầu nhánh **ab5c5e07**, merge-base **95ecba26**. KHÔNG tự merge, không đo top 30, không đụng `genbid-hsmt\`, `ROW_EXCEPTIONS`, `config-bot.mjs`.

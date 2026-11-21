@@ -32,12 +32,10 @@ for (const [tag, dir, port, file] of [["truoc", oldT, 4333, "goc-2.json"], ["sau
   for (let i = 0; i < Math.min(n, 6); i++) texts.push((await blocks.nth(i).innerText()).replace(/\s+/g, " ").slice(0, 110));
   const links = await card.evaluate((c) => ({ alt: c.querySelectorAll('[data-catopen="alternator"]').length, ctl: c.querySelectorAll('[data-catopen="controller"]').length, mod: c.querySelectorAll(".cfgmod [data-supopen]").length }));
   const clarify = await page.locator("#dbody").innerText().then((t) => (t.match(/Ổn định điện áp/g) || []).length);
-  const top = await page.locator("#dbody .cfgcard").first().boundingBox();
   await card.scrollIntoViewIfNeeded();
   const b = await card.boundingBox();
   await page.screenshot({ path: path.join(here, `${tag}-link-2.png`), clip: { x: b.x, y: b.y, width: b.width, height: Math.min(b.height, 520) }, fullPage: true });
-  const body = await page.locator("#dbody").boundingBox();
-  await page.screenshot({ path: path.join(here, `${tag}-lam-ro.png`), clip: { x: body.x, y: Math.max(body.y, top.y - 420), width: body.width, height: 420 }, fullPage: true });
+  await page.locator("#dbody .cfgclarify").screenshot({ path: path.join(here, `${tag}-lam-ro.png`) });
   console.log(tag, JSON.stringify({ links, clarifyWords: clarify, errs }), "\n  " + texts.join("\n  "));
   await page.close(); server.close();
 }
