@@ -969,7 +969,24 @@
     { supplierId: "weichai-power", ns: [125, 126, 127, 128], fuel: "gas", why: 'trang ghi đường dẫn "Generator Set / Overseas Gas" và ảnh "机组燃气" (đọc trang sống 20/11/2026)' },
     { supplierId: "jianghao-genset", ns: [104], fuel: "gas", why: 'trang ghi ngay dưới hai bảng "①The above generators can be used natural gas, oil filed gas, bio-gas…" (tệp nguồn lưu 13–14/11/2026)' },
     { supplierId: "simpson-power", ns: [124], from: "D", fuel: "gasoline", header: "| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长×宽×高) | 机 组 数 据",
-      engines: { GX390: "https://engines.honda.com/models/model-detail/x-large-gx", GX630: "https://engines.honda.com/models/model-detail/v-twin-horizontal", GX690: "https://engines.honda.com/models/model-detail/v-twin-horizontal" }, why: HONDA_GX },
+      engines: { GX390: "https://engines.honda.com/models/model-detail/x-large-gx", GX630: "https://engines.honda.com/models/model-detail/v-twin-horizontal", GX690: "https://engines.honda.com/models/model-detail/v-twin-horizontal" }, why: HONDA_GX,
+      // The ZS168FA / ZS182F / ZS190F and "31HP" / "35HP" rows (no maker's page found, the page names no fuel): Khoa 21/11/2026
+      // "Simpson: loại cả bảng" = the whole table stays out of the diesel pack. NOT a fact from a source. The catalog has no
+      // "not diesel, kind unknown" value; `dual` (gasoline + gas) is the narrowest that `fuelOff` turns away from a diesel HSMT
+      // and lets through a gas / gasoline one. Level K = "quyết định của Khoa" (no maker, no page); `why` says so.
+      rest: { fuel: "dual", from: "K", why: "QUYẾT ĐỊNH của Khoa 21/11/2026 (không có nguồn hãng): cả bảng SIMPSON-GasGenerators không vào gói diesel; động cơ này không tìm được trang hãng nên loại nhiên liệu KHÔNG rõ, `dual` chỉ để loại khỏi HSMT diesel" } },
+    // man-engines n104 (marine auxiliary table, D2676 / D2862 / D3872 diesel + E3262 gas; the page names no fuel per row): only the E3262 row
+    // gets `gas`, from the maker's own E3262 page (opened 21/11/2026: "E3262 naturally aspired engine with natural gas"; "the E3262 LE232 for
+    // natural gas and the E3262 LE242 for biogas"). The 8 D-rows stay without fuel: the maker's PDF says "Fuel: DIN EN 590" (diesel), but the
+    // catalog has no explicit "diesel" value (`fuelOff` turns every row that has a fuel away from a diesel HSMT, so writing one would drop
+    // them from diesel packs): not invented here (điều phối 21/11/2026).
+    { supplierId: "man-engines", ns: [104], from: "D", fuel: "gas", header: "| Output kW 1) 50 Hz / 60 Hz | Engine model | Cylinders | Model | Displacement in litres",
+      engines: { E3262: "https://www.man.eu/engines/en/products/power-generation/gas/man-motor-e3262.html" }, why: 'datasheet hãng động cơ MAN %M ghi "E3262 naturally aspired engine with natural gas" (%U, đọc 21/11/2026)' },
+    // mwm n1007 / n1008 (datasheets "TCG 3016 V16", EN and CN, one engine record each; the supplier IS the engine maker): the saved table has no
+    // gas word, but the sheet itself (sources/mwm/1007.md line 55 "Natural gas applications 50 | Hz", line 74 "a minimum methane number of MN 80
+    // for natural gas"; 1008.md line 49 "天然气应用 50 Hz", line 68 "MN=80 的天然气"; `From:` …/gas-engine-tcg-3016/) says natural gas. Level D = the
+    // engine maker's own datasheet. `header: ""`: the saved tables have no header line (điều phối 21/11/2026, nhien-lieu-tieu-de-1.md).
+    { supplierId: "mwm", ns: [1007, 1008], from: "D", fuel: "gas", header: "", why: 'datasheet hãng MWM "TCG 3016 V16" ghi "Natural gas applications 50 Hz" và "a minimum methane number of MN 80 for natural gas" (n1008: "天然气应用 50 Hz"; From: mwm.net/en/gas-engines-gensets/gas-engine-tcg-3016/, tệp nguồn lưu 1007.md / 1008.md)' },
     { supplierId: "zc-power", ns: [109], part: "genset", fuel: "gasoline", why: 'tên trang "Gasoline Generators | Factory-Direct Prices | ZC Power"' },
   ];
   // The fuel of record `o` (of `fromSupplier`, or `part` "genset" = of `gensetsOf`) by FUEL_PAGES, or null.
@@ -980,7 +997,9 @@
     if (p.header != null && String(h0 ?? "").trim() !== p.header) return null;
     if (!p.engines) return { fuel: p.fuel, from: p.from || "T", why: p.why };
     const m = o.kind === "engine" && Object.keys(p.engines).find((k) => keyOf(k) === keyOf(o.model));
-    return m ? { fuel: p.fuel, from: p.from || "T", why: p.why.replace("%M", m).replace("%U", p.engines[m]) } : null;
+    if (m) return { fuel: p.fuel, from: p.from || "T", why: p.why.replace("%M", m).replace("%U", p.engines[m]) };
+    // `rest`: the other rows of the same table, by a decision, not by a source (simpson n124, Khoa 21/11/2026 "loại cả bảng").
+    return p.rest ? { fuel: p.rest.fuel, from: p.rest.from, why: p.rest.why } : null;
   };
   // A table's gas set (its header rows are not read): the same signs, no row, the page's URL when known.
   const gasTable = (t, lines, url) => { const f = fuelFrom(fuelSigns({ title: t.title, header: [], rows: lines }, url), null); return !!f && (f.fuel === "gas" || f.fuel === "dual") || GAS_WORD.test(`${t.title || ""} ${lines.join(" ")}`) || lines.some((l) => /-NG$/i.test(cellsOf(l)[0] || "")); };
@@ -1774,8 +1793,32 @@
       .map(([n, genset, line, from, to, why, src]) => ({ supplierId: "huipu-power", n, genset, line, act: "fixspec", fixes: [{ key: "disp", from, to, why, src }], khoa: "Khoa 20/11/2026", why: `mất dấu chấm: ${from} → ${to}` })),
     // green-power n115 (bảng bỏ sót, ENGINE_CELL_TABLES) GP1000 A/M: "12V 1600 G31F | E | 16" — "12V" is 12 cylinders (MTU 12V 1600
     // spec: "Cylinder configuration 12 V"); as the only cylinder source of 12V1600G31F, the 16 ruled out mecca / lees rows for
-    // HSMTs asking 12 (top 30 cloud #967). Candidate for `fixspec` (cyl = 12) once that mechanism lands.
-    { supplierId: "green-power-generators", n: 115, genset: "GP1000 A/M", line: "| GP1000 A/M | O | 910 | 1005 | 12V 1600 G31F | E | 16 | 139 | 450 | 4450 | 1910 | 2250 | 6250 | | | |", act: "dropspec", keys: ["cyl"], khoa: "điều phối 20/11/2026", why: "nguồn ghi 16 xi lanh cho MTU 12V 1600 G31F (mã 12V và tài liệu MTU: 12 xi lanh): bỏ riêng số xi lanh" },
+    // HSMTs asking 12 (top 30 cloud #967). Now `fixspec` cyl 16 → 12 (sua-so-le-1, Khoa duyệt 21/11/2026 "fix"): the MTU sheet
+    // "Series 1600 Gx0 and Gx1" lists 12V 1600 G31F (806 kW, the same 806 kW the supplier's list gives) and says "Cylinder
+    // configuration 12 cyl" (opened 21/11/2026). The row has no bore x stroke, so (a) is replaced by the maker's own sheet.
+    { supplierId: "green-power-generators", n: 115, genset: "GP1000 A/M", line: "| GP1000 A/M | O | 910 | 1005 | 12V 1600 G31F | E | 16 | 139 | 450 | 4450 | 1910 | 2250 | 6250 | | | |", act: "fixspec", khoa: "Khoa 21/11/2026",
+      fixes: [{ key: "cyl", from: "16", to: "12", why: "mã 12V 1600 G31F; tài liệu MTU Series 1600 Gx0 / Gx1 ghi 12V 1600 G31F 806 kW, Cylinder configuration 12 cyl", src: "https://www.mtu-solutions.com/content/dam/mtu/products/power-generation/powergeneration-product-list-latest/3239091_MTU_Gendrive_spec_12V1600Gx0_Gx1_3B_A2A.pdf (mở 21/11/2026)" }], why: "nguồn ghi 16 xi lanh cho MTU 12V 1600 G31F: sửa thành 12 theo tài liệu hãng" },
+    // aosif n1079 (PDF datasheet "255705512637.pdf", engine QSL9-G5): the "Engine specification" block is the QSL9-G7 sheet's
+    // ("Model | QSL9-G7 | No. of cylinder | 4", bore 107x124, 6.69 L), so the 4 is not the QSL9-G5's; aosif n1078 (same sheet, 6 cylinders)
+    // and its AC330 / AC395 rows (6L) say 6. The whole block's figures are dropped (cyl; điều phối 21/11/2026 added bore, disp, compr
+    // of the same block: 107x124 / 6.69 L / 17.3:1 are not the QSL9's 114x145 / 8.9 L); `dropspec`, no figure written.
+    { supplierId: "aosif", n: 1079, model: "QSL9-G5", line: "| No. of cylinder | 4", act: "dropspec", keys: ["cyl", "bore", "disp", "compr"], khoa: "Khoa 21/11/2026", why: "datasheet QSL9-G5 chép khối \"Engine specification\" của QSL9-G7 (4 xi lanh, 107x124, 6.69 L, 17.3:1; cùng NCC ghi 6 cho QSL9-G5): bỏ xi lanh, đường kính × hành trình, dung tích, tỉ số nén của khối đó" },
+    // depco n2102 P158LE-1 (DPK-DD-441): "Cylinder 6 | Displacement 11.051" are the P126TI's figures; the same row's bore x stroke 128 X 142
+    // x 8 = 14.62 L, depco's own P158LE rows (n2101, n2182) say 8 / 14.618 / 14.62, and bdadl, fukangsi, jianghao, haifeng, taihai, huatai,
+    // wintpower, zhengdian, legapower ... write 8 cylinders and 14.618 L for P158LE-1: both (a) and (b) hold → `fixspec`.
+    { supplierId: "depco-power", n: 2102, genset: "DPK-DD-441", line: "| Governor | Electrical | Displacement(L) | 11.051", act: "fixspec", khoa: "Khoa 21/11/2026",
+      fixes: [{ key: "cyl", from: "6", to: "8", why: "P158LE-1 ở bdadl n133, fukangsi n2008, jianghao n106, haifeng n2006, taihai n105, huatai n108, wintpower n146 ghi 8 xi lanh; depco n2101 / n2182 (P158LE, cùng 128 X 142) ghi 8", src: "dòng khác của chính trang depco (n2101 / n2182) và NCC khác" },
+        { key: "disp", from: "11.051", to: "14.618", why: "8 | 128 X 142 → 14.62 L (lệch 0 %); P158LE-1 ghi 14.618 ở bdadl, fukangsi, jianghao, haifeng, taihai, huatai, wintpower; 11.051 là dung tích của P126TI", src: "hình học dòng: 128×142×8 xi lanh = 14.62 L" }],
+      why: "nguồn ghi 6 xi lanh / 11,051 L (số của P126TI) cho P158LE-1: sửa thành 8 / 14,618" },
+    // TAD1345GE "16.12" L (huatai n103 360GF also "144/165"): 16.12 L = 6 x 144 x 165 is Volvo's TAD1642GE (aoke, bdadl, fukangsi, huipu, lees, pengpai give it for that
+    // engine); TAD1345GE is 131 x 158 x 6 = 12.78 L (Volvo Penta bulletin sources/volvo-penta/1011.md "12.78 liter, in-line 6 cylinder", haifeng / taihai / jianghao / huipu bore 131/158,
+    // aoke / bdadl / fukangsi / pengpai / lees 12.78). Only the keys that are wrong go (the 6 cylinders are right); no figure is written.
+    // liangzi repeats the row word for word in n141: `mergeRepeats` would put the figure back, so it is listed too (điều phối 21/11/2026).
+    { supplierId: "huatai-yangzhou", n: 103, genset: "360GF", line: "| 360GF | 360 | TAD1345GE | 6L | 144/165 | 16.12 | 48 | 3100 | 3200*1100*1800", act: "dropspec", keys: ["bore", "disp"], khoa: "điều phối 21/11/2026", why: "nguồn ghi 144/165 và 16,12 L (số của TAD1642GE) cho Volvo Penta TAD1345GE (131×158, 12,78 L): bỏ riêng đường kính × hành trình và dung tích, giữ 6 xi lanh" },
+    // bdadl n134 BDA-V360 (TAD1345GE-B): "16.1" L is the TAD1642GE's again (16.12 L); the only row of that engine in this supplier (điều phối 21/11/2026).
+    { supplierId: "bdadl-shanghai", n: 134, genset: "BDA-V360", line: "| BDA-V360 | 360/400 | 沃尔沃奔达 | TAD1345GE-B | 6 | 16.1 | 35 | ≤210 | 3200*1100*1800 | 3300", act: "dropspec", keys: ["disp"], khoa: "điều phối 21/11/2026", why: "nguồn ghi 16,1 L (số của TAD1642GE) cho Volvo Penta TAD1345GE-B (12,78 L): bỏ riêng dung tích, giữ 6 xi lanh" },
+    ...[[113, "瑞典沃尔沃"], [140, "沃尔沃遍达"], [141, "瑞典沃尔沃"]].map(([n, mk]) => (
+      { supplierId: "liangzi-yangzhou", n, genset: "LZ- V360", line: `| LZ- V360 | 360/450 | ${mk} | TAD1345GE | 6 L | 16.12 | 48 | ≤200 | 3200*1100*1200 | 3100 | 详细参数`, act: "dropspec", keys: ["disp"], khoa: "điều phối 21/11/2026", why: "nguồn ghi 16,12 L (số của TAD1642GE) cho Volvo Penta TAD1345GE (12,78 L): bỏ riêng dung tích, giữ 6 xi lanh" })),
   ];
   function rowExceptions(s, list, note) {
     const ex = ROW_EXCEPTIONS.filter((x) => x.supplierId === s.id);
@@ -2149,19 +2192,19 @@
     if (win) return { makes: best.filter((m) => sameMaker(lead, m.name)), conflict: null };
     return { makes: [], conflict: names.map((n) => ({ name: n, suppliers: count(n) })) };
   }
-  // A trailing "*" / "†" / "×" is a footnote mark, not part of the model ("QSK19-G4*", tellhow "KTA50-G15×"), and an en / em
-  // dash is a hyphen ("KTA50–G3", "4135D—1"): the model left alone stood apart from the same model of other suppliers and
-  // missed the majority rule (catalog-b). "★" is dropped by tidyModel, where the supplier is known (MARK_KEEP). O/0 and I/1
-  // are NOT merged.
-  // "^" STAYS in the key (Khoa 21/11/2026 "tách ra", doc-ma-2): on Baudouin / Weichai codes (baifa, aosif, mecca, landtop,
-  // Weichai's own sheets…) no source says what it means, so "X^" is not known to be X. The merge of catalog-b also brought
-  // one supplier's wrong figures to the others' rows: aosif "8M33D1012E311^" 12V / 31,8 L against 8 cyl / 26,14 L.
+  // A trailing "*" / "†" / "^" / "×" is a footnote mark, not part of the model ("QSK19-G4*", baifa "20M33G4D3/5^", tellhow
+  // "KTA50-G15×"), and an en / em dash is a hyphen ("KTA50–G3", "4135D—1"): the model left alone stood apart from the same
+  // model of other suppliers and missed the majority rule (catalog-b). "★" is dropped by tidyModel, where the supplier is
+  // known (MARK_KEEP). O/0 and I/1 are NOT merged.
+  // "^" (baifa, aosif, mecca, landtop, Weichai's own sheets…): no source found says what it means. Khoa 19/11/2026 did not
+  // know either and kept the merge; it rests on no source. Merging also brings one supplier's wrong figures to the others'
+  // rows: aosif "8M33D1012E311^" 12V / 31,8 L against 8 cyl / 26,14 L (waeta, wiseke) → no majority (catalog-b-1.md).
   // Doosan P-engine only (DOOSAN_P: P126TI / P222LE…): the suffix "II" typed "11" or "Il" ("P126TI-11", "P222LE-11", "P126TI-Il")
   // is the same engine as "-II" (Khoa duyệt 20/11/2026). NFKC already makes "-Ⅰ" / "-Ⅱ" "-I" / "-II". "-1" / "-2" stay apart
   // ("P222LE-2", "P126TI-2" of huatai n108 are not "-II"); no other maker's code is touched.
   const DOOSAN_II = /^(P\d{3}(?:TI|LE))(?:11|IL)$/;
-  const keyOf = (m) => String(m).normalize("NFKC").toUpperCase().replace(/[\s\-_.·–—]/g, "").replace(/[*†‡×]+$/, "").replace(DOOSAN_II, "$1II");
-  const MARK_TAIL = /\s*[*＊†‡★☆×]+$/;
+  const keyOf = (m) => String(m).normalize("NFKC").toUpperCase().replace(/[\s\-_.·–—]/g, "").replace(/[*†‡^×]+$/, "").replace(DOOSAN_II, "$1II");
+  const MARK_TAIL = /\s*[*＊†‡★☆^×]+$/;
   // A mark a supplier's note gives a meaning that tells the model apart (catalog-b, not merged with the bare model): ettes-power
   // n146 "Models with mark of "★" means the engine made by Perkins China, other models are made in UK" (the place of
   // manufacture, which the row's own words do not say). Other suppliers' "★" (tellhow-power: "optional engines provided with

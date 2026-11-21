@@ -30,7 +30,7 @@ import { fileURLToPath, pathToFileURL } from "node:url";
 import { norm } from "./verify.mjs";
 import { htmlToText } from "./crawl-specs.mjs";
 import { REQ_CODES, CODE_BY, OTHER as OTHER_CODE, codeOf, withCode, missingCodes, codesMd, kindOf, confirmKindOf, voltsIn, clausesOf } from "./reqcodes.mjs";
-import { ratingsOf, stamfordRatings, altSheetAttrs, lsSheetAttrs } from "./ratings.mjs";
+import { ratingsOf, stamfordRatings, altSheetAttrs, lsSheetAttrs, meccDerate, meccSheetAttrs } from "./ratings.mjs";
 import { apiMeter, switchToPlan, taskEnv } from "./api-budget.mjs";
 import * as MEMO from "./web-memo.mjs";
 import * as FC from "./firecrawl.mjs";
@@ -885,6 +885,8 @@ export function sheetFacts(sh) {
 }
 // A controller as the agent wrote it ("6120" made by SmartGen, "Smartgen 6120") → the model web/catalog.js reads from the
 // same words (HGM6120), whose datasheet then counts (2026-11-03 regression run: such controllers checked 0 functions).
+// The controller models a text names, as catalog.js reads them (CM.ctlKinds).
+export const ctlModelsIn = (t) => CAT.controllersIn(String(t || "")).filter((x) => x.model).map((x) => x.model);
 export function ctlModelOf(p) {
   const m = String(p?.model || ""), found = (t) => CAT.controllersIn(t).filter((x) => x.model && CAT.keyOf(x.model).endsWith(CAT.keyOf(m).replace(/^\D+/, "")));
   const own = found(m), withMake = own.length ? own : found(`${p?.make || ""} ${m}`);
@@ -1507,6 +1509,32 @@ const PER_ENGINE = 3, PER_NAMED_ENGINE = 8, PER_SUPPLIER = 4, CN_ROWS = 12, MAKE
 // of 30 rows (IB2600592658, 2880: 30 Cummins). When the HSMT names no engine make or model, a make has at most MAKE_CAP
 // of the rows; what the ceiling leaves empty is filled with the best-scored rows left, whatever their make.
 export const MAKE_CAP = 10;
+// Hai luật điểm của bước chọn ứng viên (Khoa duyệt 20/11/2026 "làm cả A và B"). Sau đo mẫu (A đổi top 30 theo độ phủ
+// tờ hãng trong cn/, không theo chất lượng động cơ) Khoa 20/11/2026: "đo lại B xem như thế nào rồi tính tiếp, áp luôn cho
+// các hãng trung quốc" → B MẶC ĐỊNH BẬT (`GENBID_CAND_B=0` tắt); A MẶC ĐỊNH TẮT, Khoa CHƯA duyệt bật (`GENBID_CAND_A=1` để đo).
+const CAND_DEFAULT = { A: "0", B: "1" };
+// Luật B không đụng 5 dòng đầu của xếp hạng cũ (B tắt): Khoa 20/11/2026 "Sửa luật B rồi chạy lại".
+const PIN_TOP = 5;
+// Luật B: một model chỉ nhường chỗ cho model khác của hãng khi đã có dòng của B_MIN_SUPPLIERS NCC KHÁC NHAU (Khoa 21/11/2026,
+// đo cloud lần 2: số NCC mỗi model trong top 30 tụt 3,03 → 1,92, 1.769 cặp lượt-model còn 1 NCC).
+const B_MIN_SUPPLIERS = 2;
+const candRuleOn = (k) => { const v = String(process.env[`GENBID_CAND_${k}`] ?? "").trim() || CAND_DEFAULT[k]; return v !== "0"; };
+// Luật A: động cơ có datasheet của CHÍNH hãng động cơ. Chặt: một fact của model (modelFacts) mang `sheet` (bảng của NCC
+// `role: engine_maker` có tiêu đề ghi đúng một mã là model này, hoặc dòng bảng của chính NCC đó ghi đúng mã model; không
+// tính bảng "Datasheet: …" của hãng tổ máy / NCC lắp ráp, không tính tờ của khung máy chia cho các model của khung) hoặc
+// `maker` (công suất động cơ do NCC engine_maker ghi), VÀ NCC đó là hãng của động cơ: một hãng của `e.make` có trong
+// tên / thương hiệu / id của NCC (weichai-power ghi thương hiệu "Baudouin", dcec "Cummins", perkins "Perkins"). NCC
+// engine_maker ghi động cơ hãng khác, hay động cơ chưa rõ hãng: không tính. → id các NCC đó (rỗng: không có).
+export function engineMakerSheets(e, ef, sup) {
+  const makes = String(e?.make || "").split(" / ").map((m) => m.trim().toLowerCase()).filter(Boolean);
+  if (!makes.length) return [];
+  const ofMake = (s) => {
+    if (s?.role !== "engine_maker") return false;
+    const names = [supplierFamily(s, true), s.names?.en, ...(s.names?.brands || []), s.id].filter(Boolean).map((x) => String(x).toLowerCase().replace(/[-_]+/g, " "));
+    return makes.some((m) => names.some((n) => n.includes(m)));
+  };
+  return [...new Set((ef || []).filter((f) => (f.sheet || f.maker) && ofMake(sup.get(f.supplierId))).map((f) => f.supplierId))];
+}
 // The make of a genset maker for Đồng bộ thương hiệu (syncCheck): a supplier that is no distributor, whose name or id is
 // of a make (web/bidprice.js familyOf). A Chinese company whose name carries a foreign make ("… Cummins Power …") is an
 // assembler, not that maker: null, as is an assembler whose name is no make (cgm-italia).
@@ -1578,9 +1606,9 @@ export function altOf(alts, cell) {
   }
   return null;
 }
-export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30, sync = null, keep = null, makeCap = MAKE_CAP, patches = true, blocked = null } = {}) {
+export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", cn = new Set(), facts = modelFacts(cat, suppliers), focus = null, max = 30, sync = null, keep = null, makeCap = MAKE_CAP, patches = true, blocked = null, pinTop = PIN_TOP } = {}) {
   const hints = plausible(hints0, cap), sup = new Map(suppliers.map((s) => [s.id, s])), alts = new Map((cat.alternators || []).map((a) => [a.key, a])), rowsMap = normRowsOf(suppliers);
-  const band = bandOf(cap);
+  const band = bandOf(cap), ruleA = candRuleOn("A"), ruleB = candRuleOn("B");
   const near = (u) => !cap || Object.values(u.power || {}).some((p) => p[cap.unit] != null && p[cap.unit] >= cap.value * band.low && p[cap.unit] <= cap.value * band.high + 1e-9);
   // `dropped`: the rows a minimum of the HSMT rules out (left out of the candidates), with the reasons.
   const rows = [], dropped = [];
@@ -1663,6 +1691,8 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       }
       // A controller with its maker's datasheet: its functions can be checked against the HSMT.
       if (offers.some((c) => c.model && factsFor(facts, "controller", c.model).length)) { score += 40; why.push("bộ điều khiển có datasheet hãng"); }
+      // Luật A: động cơ có datasheet của chính hãng động cơ (engineMakerSheets), 40 điểm. MẶC ĐỊNH TẮT (candRuleOn).
+      if (ruleA && engineMakerSheets(e, ef, sup).length) { score += 40; why.push("động cơ có datasheet hãng"); }
       score += 8 * Math.min(eKeys.size, 8);
       // Below a minimum of the HSMT by every source that gives the figure (an engine no source gives it for is not).
       const srcOf = {}, NORM = specNormOn(), ND = specNormOn("disp"), NC = specNormOn("other"), NF = specNormOn("fuel"), normSkip = [];
@@ -1794,25 +1824,42 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
     }
   }
   rows.sort((x, y) => y.score - x.score);
-  const perEngine = new Map(), perSupplier = new Map(), seen = new Set(), out = [];
+  // Chọn dòng hai lần khi luật B bật (Khoa 20/11/2026, đo cloud: B đẩy cả dòng hạng 1 cũ khỏi 30 dòng): `choose(false)` là
+  // xếp hạng cũ; `choose(true, 5 dòng đầu của nó)` giữ 5 dòng đó ở hạng 1–5 (vẫn tính vào trần mỗi động cơ / NCC / hãng),
+  // luật B chỉ chia các chỗ từ hạng 6. Thân `choose` không thụt lề thêm để diff gọn.
+  const choose = (ruleB, pinned = []) => {
+  const perEngine = new Map(), perSupplier = new Map(), seen = new Set(), out = [], engSups = new Map();
   const add = (m, k) => m.set(k, (m.get(k) || 0) + 1);
   // The ceiling per make: not when the HSMT names an engine make or model; a make "A / B" counts for A, a row of no make
   // for "?". `exempt` rows (the places held for the genset makers of Đồng bộ) do not count and are never stopped;
   // `free` ignores the ceiling (the last fill).
   const capOn = makeCap > 0 && !hints.engineMakes.length && !rows.some((r) => r.named), perMake = new Map();
   const makeOf = (r) => (r.e.make || "?").split(" / ")[0];
-  const pick = (list, n, { exempt = false, free = false } = {}) => {
-    for (const r of list) {
-      if (out.length >= n) break;
-      const k = choiceKey(r);
-      if (seen.has(k) || (perEngine.get(r.e.key) || 0) >= (r.named ? PER_NAMED_ENGINE : PER_ENGINE) || (perSupplier.get(r.u.supplierId) || 0) >= PER_SUPPLIER) continue;
-      if (capOn && !exempt && !free && (perMake.get(makeOf(r)) || 0) >= makeCap) continue;
-      if (!exempt) add(perMake, makeOf(r));
-      seen.add(k); add(perEngine, r.e.key); add(perSupplier, r.u.supplierId); out.push(r);
+  const open = (r, exempt, free) => !seen.has(choiceKey(r)) && (perEngine.get(r.e.key) || 0) < (r.named ? PER_NAMED_ENGINE : PER_ENGINE) && (perSupplier.get(r.u.supplierId) || 0) < PER_SUPPLIER
+    && !(capOn && !exempt && !free && (perMake.get(makeOf(r)) || 0) >= makeCap);
+  const take = (r, exempt) => { if (!exempt) add(perMake, makeOf(r)); seen.add(choiceKey(r)); add(perEngine, r.e.key); add(perSupplier, r.u.supplierId); engSups.set(r.e.key, (engSups.get(r.e.key) || new Set()).add(r.u.supplierId)); out.push(r); };
+  // Luật B (`models`, Khoa 20/11/2026): chỗ của một hãng động cơ chia cho các MODEL khác nhau trước. Một dòng của model đã
+  // có k dòng được chọn chờ, khi hãng đó (có hãng; dòng không rõ hãng không xét) còn dòng mở (`open`) điểm > 0 của model
+  // mới có ít hơn k dòng; hết model như vậy thì tới dòng thứ hai của cùng model. Xét lại sau mỗi dòng chọn (trần mỗi NCC /
+  // mỗi động cơ / mỗi hãng có thể đóng dòng của model chưa có chỗ). Không `models`: theo thứ tự danh sách như trước.
+  const pick = (list, n, { exempt = false, free = false, models = false } = {}) => {
+    if (!(models && ruleB)) {
+      for (const r of list) { if (out.length >= n) break; if (open(r, exempt, free)) take(r, exempt); }
+      return;
+    }
+    while (out.length < n) {
+      const avail = list.filter((r) => open(r, exempt, free)), least = new Map();
+      for (const r of avail) if (r.e.make && r.score > 0) { const m = makeOf(r), c = perEngine.get(r.e.key) || 0; if (!least.has(m) || c < least.get(m)) least.set(m, c); }
+      // Một model chưa đủ B_MIN_SUPPLIERS NCC nhận ngay dòng của NCC MỚI (dòng thứ hai của cùng NCC vẫn chờ như trên).
+      const fresh = (x) => { const s = engSups.get(x.e.key); return (s?.size || 0) < B_MIN_SUPPLIERS && !s?.has(x.u.supplierId); };
+      const r = avail.find((x) => !x.e.make || fresh(x) || (perEngine.get(x.e.key) || 0) <= (least.get(makeOf(x)) ?? Infinity));
+      if (!r) break;
+      take(r, exempt);
     }
   };
   // The prime output (standby ÷ 1.1 when only that is given), in steps of 5% above the HSMT's size; a row below the
   // size, or that gives neither, last.
+  for (const r of pinned) take(r, false);
   const gap = (r) => {
     const p = r.u.power || {}, pr = p.prime?.[cap?.unit] ?? (p.standby?.[cap?.unit] != null ? p.standby[cap.unit] / 1.1 : null);
     return !cap ? 0 : pr == null ? 50 : pr < cap.value * 0.995 ? 99 : Math.round(20 * (pr / cap.value - 1));
@@ -1838,7 +1885,9 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
   // No origin required (no G7 / G20 in the HSMT): Chinese makes keep CN_ROWS of the rows (Khoa, 2026-11-05: a Chinese
   // configuration that meets the HSMT better goes first, so it must be among the suggestions). Foreign engines have
   // more datasheet figures and would otherwise fill the rows. Not when the HSMT names an engine make or model.
-  if (patches && origin === "all" && !hints.engineMakes.length && !rows.some((r) => r.named)) pick(rows.filter((r) => CAT.originOf(r.e) === "cn"), Math.min(CN_ROWS, max));
+  // Luật B cũng áp ở đây (Khoa 20/11/2026 "áp luôn cho các hãng trung quốc"): trong 12 chỗ, mỗi hãng TQ chia cho các
+  // model của nó trước (SDEC SC9D340D2 từng chiếm 3 chỗ).
+  if (patches && origin === "all" && !hints.engineMakes.length && !rows.some((r) => r.named)) pick(rows.filter((r) => CAT.originOf(r.e) === "cn"), Math.min(CN_ROWS, max), { models: true });
   // G7 / G20 asked, no make named (Khoa, 2026-11-11, IB2600603983): every make of the group with a fitting row keeps
   // MAKE_ROWS rows of different engines, best make first. Cummins and Perkins have the most datasheet figures and filled
   // the 30 rows; Baudouin 6M31G825/5 (750 kVA prime, offered by four suppliers) stood 361st. A row the HSMT rules out
@@ -1852,12 +1901,15 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
     // Within a make, the size nearest the HSMT's first (gap, in steps of 5%), then the score: Baudouin's 12M26G900/5
     // (815 kVA) had more figures than 6M31G825/5 (750 kVA) for 700 kVA.
     for (const list of [...byMake.values()].sort((a, b) => b[0].score - a[0].score)) {
-      const engines = new Set();
-      const mine = [...list].sort((x, y) => gap(x) - gap(y) || y.score - x.score).filter((r) => !engines.has(r.e.key) && engines.add(r.e.key));
-      pick(mine, Math.min(max, out.length + MAKE_ROWS));
+      const engines = new Set(), sorted = [...list].sort((x, y) => gap(x) - gap(y) || y.score - x.score);
+      // Luật B: mọi dòng của hãng, model khác nhau trước rồi tới dòng thứ hai của cùng model (hãng ít model hơn MAKE_ROWS
+      // nay vẫn đủ chỗ); tắt B: mỗi động cơ một dòng như trước.
+      if (ruleB) pick(sorted, Math.min(max, out.length + MAKE_ROWS), { models: true });
+      else pick(sorted.filter((r) => !engines.has(r.e.key) && engines.add(r.e.key)), Math.min(max, out.length + MAKE_ROWS));
     }
   }
-  pick(rows, max);
+  // Luật B ở lượt lấp chung khi có trần mỗi hãng (`capOn`: HSMT không nêu hãng / model động cơ).
+  pick(rows, max, { models: capOn });
   if (out.length < max) pick(rows, max, { free: true });
   // The rows of the configurations the last run chose (Khoa 2026-11-12: `keep`, the supplierId + engine key of each, from
   // prevResult) stay among the rows for every tender, not only for Đồng bộ: a configuration that still passes the hard
@@ -1873,8 +1925,12 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       out.splice(out.indexOf(gone), 1, r); have.add(pairOf(r));
     }
   }
-  out.sort((x, y) => y.score - x.score);
-  return { top: out, all: rows, dropped };
+  const pin = new Map(pinned.map((r, i) => [r, i]));
+  out.sort((x, y) => (pin.get(x) ?? pinTop) - (pin.get(y) ?? pinTop) || y.score - x.score);
+  return out;
+  };
+  const old = choose(false);
+  return { top: ruleB ? choose(true, old.slice(0, pinTop)) : old, all: rows, dropped };
 }
 // The rows of the configurations a result chose (candidates `keep`): supplierId + engine key of each supplier and of
 // the engine's catalog source.
@@ -2028,7 +2084,7 @@ export function catalogMd(cat, cap, hints, opts = {}) {
   // with grep; catalog.md shows the first 15 lines of each.
   const ctlOut = [], printed = new Map(), head = "Thông số bộ điều khiển (datasheet của hãng; ghi factSrc với supplierId, n và line là dòng nguyên văn)";
   // bdk-amf (Khoa 20/11/2026): the kind of a controller as its maker's datasheet writes it (CM.ctlKinds), in each title.
-  const kinds = CM.ctlKinds(opts.suppliers || []), kindTag = (m) => { const k = CM.kindOf(kinds, m); return k ? ` — loại theo datasheet hãng: ${CM.KIND_VI[k]}` : ""; };
+  const kinds = CM.ctlKinds(opts.suppliers || [], { modelsIn: ctlModelsIn }), kindTag = (m) => { const k = CM.kindOf(kinds, m); return k ? ` — loại theo datasheet hãng: ${CM.KIND_VI[k]}` : ""; };
   // A controller's datasheet: the first 15 lines to catalog.md (`out`, when given), every line to controllers.md.
   const sheetMd = (m, out) => {
     if (!ctlOut.length) ctlOut.push(`# ${head}`, "");
@@ -2102,7 +2158,7 @@ export function catalogMd(cat, cap, hints, opts = {}) {
   }
   if (makerOnes.length) {
     out.push("", `## Bộ điều khiển theo datasheet hãng (NCC chưa chào) — ${makerOnes.length} model, toàn bộ dòng ở controllers.md`, "");
-    if (opts.hsmtText && CM.needsAmf(technicalPart(opts.hsmtText) || opts.hsmtText)) out.push("HSMT có ATS / chuyển nguồn tự động / mất điện lưới: loại tự động khi mất lưới (AMF) theo datasheet hãng.", "");
+    if (opts.hsmtText && CM.needsAmf(technicalPart(opts.hsmtText) || opts.hsmtText, { head: opts.hsmtText.slice(0, 3000) })) out.push("HSMT có bộ điều khiển phải giám sát lưới / điều khiển ATS / tự khởi động khi mất lưới: loại tự động khi mất lưới (AMF) theo datasheet hãng.", "");
     for (const x of makerOnes) {
       const f = factsFor(facts, "controller", x.model)[0];
       out.push(`- ${x.model} (${x.brand})${kindTag(x.model) || " — loại: datasheet hãng không ghi"} — supplierId: ${f.supplierId}, n: ${f.n}`);
@@ -2110,10 +2166,55 @@ export function catalogMd(cat, cap, hints, opts = {}) {
     }
     out.push("");
   }
+  const low = opts.hsmtText ? lowestCtlMd([...withSheet], facts, opts.suppliers || [], opts.hsmtText, kinds) : "";
+  if (low) out.push("", low);
   out.push("", controllersMd(cat.controllers || [], shown, withSheet));
   // The controller functions the HSMT names × the datasheets above (ctl-lookup.md), when prep gives the HSMT.
   const ctlLookup = opts.hsmtText ? ctlLookupMd(ctls, (m) => factsFor(facts, "controller", m), opts.hsmtText) : "";
   return { md: out.join("\n"), ctlMd: ctlOut.join("\n"), shown, top, ctlLookup };
+}
+// The communication functions the HSMT asks of the controller, read by code from its technical part (one name per function
+// of CM.SUBS: "4G", "Ethernet", "RS485"...): lines that name one and speak of communication / remote / a port.
+const COMM_LINE = /truy[ềe]n\s+th[ôo]ng|t[ừu]\s+xa|k[ếe]t\s+n[ốo]i|c[ổo]ng|giao\s+ti[ếe]p|gi[áa]m\s+s[áa]t|communicat|\bport|RS-?485|RS-?232|ethernet|\bUSB\b|\b4G\b|modbus/i;
+export function hsmtCommNames(hsmtText) {
+  const lines = (technicalPart(hsmtText || "") || String(hsmtText || "")).split("\n").filter((l) => COMM_LINE.test(l));
+  return CM.SUBS.filter((s) => lines.some((l) => s.vi.test(l))).map((s) => s.k);
+}
+// "Bộ thấp nhất đủ yêu cầu theo code" (điều phối 21/11/2026, IB2600603983: the agent kept DSE7420 MKII, reading "meets every
+// controller requirement" on the controller's own datasheet, while Khoa counts 4G / Internet / Ethernet of the module, Q2 / Q4,
+// and the answer is DSE7320 MKII + DSE890 MKII): each controller with a datasheet, per make, scored with its best modules
+// (CM.bestPair) on the communication functions the HSMT names; the kind the HSMT asks (AMF, synchronising) only; the lowest
+// step (CM.ctlStep, inferred from the names) among those meeting the most is marked. The agent still checks every function.
+export function lowestCtlMd(models, facts, suppliers, hsmtText, kinds) {
+  const names = hsmtCommNames(hsmtText);
+  if (!names.length || !models.length) return "";
+  const tech = technicalPart(hsmtText || "") || String(hsmtText || "");
+  const need = /h[òo][àa]?\s+đ[ồo]ng\s+b[ộo]|ch[ạa]y\s+song\s+song|h[òo][àa]\s+l[ưu][ớo]i/i.test(tech) ? "sync" : CM.needsAmf(tech, { head: String(hsmtText || "").slice(0, 3000) }) ? "amf" : null;
+  const modFacts = CM.moduleFacts(suppliers), byMake = new Map();
+  for (const m of models) {
+    const list = factsFor(facts, "controller", m), x = CAT.controllersIn(m).find((y) => y.model);
+    if (!list.length || !x) continue;
+    const sheet = list.find((f) => f.version)?.version || m, kind = CM.kindOf(kinds, sheet) || CM.kindOf(kinds, m);
+    if (need === "sync" ? kind !== "sync" : need === "amf" ? kind && kind !== "amf" : false) continue;
+    const keys = new Set([CAT.keyOf(m), ...list.map((f) => CAT.keyOf(f.sheetModel || ""))].filter(Boolean));
+    const bp = CM.bestPair(names, list, CM.compatModules(list, keys, modFacts, ctlKeys), modFacts);
+    const make = x.brand || "?", rows = byMake.get(make) || [];
+    if (!rows.some((r) => CAT.keyOf(r.model) === CAT.keyOf(sheet))) rows.push({ model: sheet, kind, step: CM.ctlStep(sheet), ...bp });
+    byMake.set(make, rows);
+  }
+  if (!byMake.size) return "";
+  const out = ["## Bộ điều khiển thấp nhất đủ yêu cầu theo code (mỗi hãng)", "",
+    `Code chấm mỗi bộ điều khiển có datasheet ở trên CÙNG mô-đun truyền thông tốt nhất của nó (4G / Internet / Ethernet lấy từ mô-đun được tính, như luật mô-đun) trên các chức năng truyền thông HSMT nêu: ${names.join(", ")}${need ? `; chỉ loại ${CM.KIND_VI[need]} vì HSMT đòi` : ""}. "← thấp nhất đủ" là bộ bậc thấp nhất (bậc suy từ tên model) trong các bộ đạt nhiều nhất của hãng. Chỉ là chỉ dẫn: vẫn chấm mọi yêu cầu bộ điều khiển trên datasheet.`, ""];
+  for (const [make, rows] of byMake) {
+    const best = Math.max(...rows.map((r) => r.met)), step = (r) => (r.step == null ? Infinity : r.step);
+    const pick = rows.filter((r) => r.met === best).sort((a, b) => step(a) - step(b))[0];
+    out.push(`### ${make}`);
+    for (const r of rows.sort((a, b) => step(a) - step(b) || b.met - a.met)) {
+      out.push(`- ${r.model}${r.modules.length ? ` + ${r.modules.map((y) => y.model).join(" + ")}` : ""}${r.kind ? ` (${CM.KIND_VI[r.kind]})` : ""}: đạt ${r.met}/${r.total}${r.unclear.length ? `, chưa rõ: ${r.unclear.join(", ")}` : ""}${r === pick ? (r.met === r.total ? " ← thấp nhất đủ" : " ← thấp nhất trong các bộ đạt nhiều nhất của hãng (chưa bộ nào đủ)") : ""}`);
+    }
+    out.push("");
+  }
+  return out.join("\n");
 }
 // Bộ điều khiển (Khoa, 2026-11-01): the controllers each supplier offers, with the line of its page or genset row that
 // names it; a configuration's controller and its "Bộ điều khiển" check quote one of these lines.
@@ -2651,7 +2752,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   // controller maker's own datasheets ("Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào"); (2) the HSMT asks for an ATS /
   // "khi mất điện lưới" → only an AMF controller, its kind read from the maker's datasheet (CM.ctlKinds). The code never
   // replaces the main controller (điều phối 20/11/2026, hướng B: the agent chooses and checks it).
-  const ctlKinds = CM.ctlKinds(suppliers), ctlAmf = CM.needsAmf(technicalPart(hsmtText || "") || hsmtText || "");
+  const ctlKinds = CM.ctlKinds(suppliers, { modelsIn: ctlModelsIn }), ctlAmf = CM.needsAmf(technicalPart(hsmtText || "") || hsmtText || "", { head: String(hsmtText || "").slice(0, 3000) });
   // The other controllers of c's make, each scored with its best modules: [{ model, make, kind, step, met, ..., offeredAs +
   // offeredBy | notOffered }], and the main controller's own pair.
   const ctlCands = (c, names) => {
@@ -3372,18 +3473,24 @@ export function madeChecks(c, reqs, row, built) {
     const list = part === "engine" ? built.engines : part === "alternator" ? built.alternators : built.controllers;
     const makes = String(p.make || (list || []).find((x) => x.key === CAT.keyOf(p.model))?.make || "").split(" / ").filter(Boolean);
     const own = p.src?.kind !== "internet" && row ? row : null;
-    const m = CAT.madeIn(part, makes, own ? [[own.line, ...(own.lines?.rows || [])].join(" \n "), (own.header || []).join(" "), own.title || ""] : [p.src?.quote || ""], p.model);
+    let m = CAT.madeIn(part, makes, own ? [[own.line, ...(own.lines?.rows || [])].join(" \n "), (own.header || []).join(" "), own.title || ""] : [p.src?.quote || ""], p.model);
+    // Stamford S4–S7 a supplier offers (Khoa 21/11/2026 "có"), the PLACE asked: the make's default (UK) proves nothing, the
+    // CO is asked. A place the row or the agent's own quote states still counts; a brand asked never comes here.
+    const isDefault = (w) => /^(hãng|mặc định)/.test(w || "");
+    const noDefault = part === "alternator" && makes.some((k) => /stamford/i.test(k)) && NO_PLANT["stamford-avk-china"].re.test(String(p.model).trim().replace(/^stamford\s+/i, ""));
+    if (noDefault && isDefault(m.why)) m = { at: "?", why: "" };
     const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
     const inG = m.at !== "?" && CAT.COUNTRY_GROUP[grp].includes(m.at);
     const status = m.at === "?" ? "confirm" : inG ? "met" : "not_met";
     // A not met / met the agent verified from a source of its own stays, unless the row says otherwise.
     const rowSays = !!m.why && !/^(hãng|mặc định)/.test(m.why);
-    if (x && !x.unverified && (x.status === "met" || x.status === "not_met") && !rowSays && x.sourceQuote && CAT.madeIn(part, makes, x.sourceQuote, p.model).at !== "?") continue;
+    const q = x?.sourceQuote ? CAT.madeIn(part, makes, x.sourceQuote, p.model) : null;
+    if (x && !x.unverified && (x.status === "met" || x.status === "not_met") && !rowSays && q && q.at !== "?" && !(noDefault && isDefault(q.why))) continue;
     const at = m.at === "?" ? "" : `sản xuất tại ${madeVi(m.at)}${/^(hãng|mặc định)/.test(m.why || "") ? ` (${m.why})` : ""}`;
     putCheck(c, x, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: [PART_VI[part], p.model, at].filter(Boolean).join(" "),
       ...(m.why && !/^(hãng|mặc định)/.test(m.why) ? { sourceQuote: m.why } : {}), part, level: r.level === "option" ? "option" : "core", status, byCode: true, rule: "noi-san-xuat",
       ...(status === "confirm" ? { confirm: "document" } : {}),
-      note: status === "confirm" ? `Cần xác nhận nơi sản xuất ${PART_VI[part].toLowerCase()} (CO): nguồn của cấu hình không ghi${m.why ? ` rõ (${m.why})` : ""}; HSMT đòi nơi sản xuất ${G}.`
+      note: status === "confirm" ? `Cần xác nhận nơi sản xuất ${PART_VI[part].toLowerCase()} (CO): nguồn của cấu hình không ghi${m.why ? ` rõ (${m.why})` : ""}${noDefault ? "; Stamford S4–S7 không lấy nơi mặc định của hãng (Khoa 21/11/2026)" : ""}; HSMT đòi nơi sản xuất ${G}.`
         : status === "met" ? `Code ghi: ${PART_VI[part].toLowerCase()} sản xuất tại ${madeVi(m.at)}, thuộc nhóm ${G}.` : `Code ghi: ${PART_VI[part].toLowerCase()} sản xuất tại ${madeVi(m.at)}, ngoài nhóm ${G} HSMT đòi.` });
   }
   return c;
@@ -3495,7 +3602,21 @@ export function rfqOf(c, reqs = []) {
   }
   // Questions of the combination checks (comboChecks: site, load types, load step) and of the origin (originChecks).
   for (const q of [...(c.comboAsk || []), ...(c.originAsk || [])]) add({ ...q, status: q.status === "confirm" ? "confirm" : "unclear", confirm: q.kind === "document" ? "document" : undefined }, null, { code: "" });
-  const order = { engine: 0, controller: 1, alternator: 2, genset: 3 }, po = (p) => order[p] ?? 4;
+  // A controller / module chosen from its maker's datasheet that no supplier of the configuration offers (controller.fromMaker,
+  // controller.modules offeredBy null; bdk-mo-dun-4, Khoa 20/11/2026): ask whether the supplier can supply it (model + order
+  // code) and its origin (CO), in tier 1 (make / model / origin).
+  const ctl = c.controller;
+  if (ctl?.model) {
+    const ctlName = `${ctl.model}${ctl.make ? ` (${ctl.make})` : ""}`;
+    if (ctl.fromMaker) add({ part: "controller", item: `Bộ điều khiển ${ctl.model}`, requirement: "", kind: "model", status: "unclear", code: "ctl_model", why: CM.CTL_ALT_LABEL,
+      ask: `Xác nhận NCC cấp được bộ điều khiển ${ctlName}; nêu nước sản xuất, gửi CO` }, null);
+    for (const m of (ctl.modules || []).filter((x) => !x.offeredBy)) {
+      const order = m.order ? `, mã đặt hàng ${m.order}` : "";
+      add({ part: "controller", item: `Mô-đun ${m.model}${order}`, requirement: m.why?.length ? `cho ${m.why.join(", ")}` : "", kind: "model", status: "unclear", code: "ctl_model", why: m.label || CM.MODULE_LABEL,
+        ask: `Xác nhận NCC cấp được mô-đun ${m.model}${m.make ? ` (${m.make})` : ""}${order} lắp kèm bộ điều khiển ${ctl.model}; nêu nước sản xuất, gửi CO` }, null);
+    }
+  }
+  const order ={ engine: 0, controller: 1, alternator: 2, genset: 3 }, po = (p) => order[p] ?? 4;
   const line = (q) => `${q.item}${q.requirement ? `: ${q.requirement}` : ""}${q.note ? ` (${q.note})` : ""}`;
   const out = [];
   const one = (q) => out.push({ tier: q.tier, part: q.part, of: what(q.part), item: q.item, requirement: q.requirement, kind: q.kind, status: q.status, ask: q.ask, ...(q.note ? { note: q.note } : {}) });
@@ -3768,6 +3889,10 @@ export function sourceRatings(suppliers, dir = path.join(ROOT, "sources")) {
       }
       if (lsa.length) for (const m of new Set(rs.filter((r) => r.part === "alternator" && /^(TAL|LSA)\b/i.test(r.model)).map((r) => r.model)))
         for (const k of keysOfModel(m)) for (const a of lsa) add(attr, k, { ...a, model: m, supplierId: s.id, n: src.n, url: src.url, range: true });
+      // A Mecc Alte range sheet (D2): insulation and sustained short circuit, of every model of its ratings.
+      const mca = meccSheetAttrs(text);
+      if (mca.length) for (const m of new Set(rs.filter((r) => r.part === "alternator" && /^EC[OP]\d/.test(r.model)).map((r) => r.model)))
+        for (const k of keysOfModel(m)) for (const a of mca) add(attr, k, { ...a, model: m, supplierId: s.id, n: src.n, url: src.url, range: true });
       for (const r of rs) {
         const x = { ...r, supplierId: s.id, n: src.n, url: src.url };
         if (r.part === "alternator") for (const k of keysOfModel(r.model)) add(alt, k, x);
@@ -3813,7 +3938,9 @@ export function altColumns(list, { hz, rating = "prime", reqs = [] } = {}) {
 export const makerAltOn = () => process.env.GENBID_MAKER_ALT !== "0";
 // The alternator makers whose own sheets (sources 1001–1999) are read. leroy-somer-fuzhou is filed with country CN, but
 // its sheets are the global leroy-somer.com ones, no line about the Fuzhou plant: Leroy-Somer's default place (France,
-// Khoa 16/11/2026) holds, as for any Leroy-Somer alternator whose source names no plant. mecc-alte: no ratings read yet (PR D).
+// Khoa 16/11/2026) holds, as for any Leroy-Somer alternator whose source names no plant. mecc-alte (dau-phat-hang D,
+// 21/11/2026): its range sheets ECP3 → ECO46 [1007–1016] (ratings.mjs meccRatings, H-125/40 column), no plant named on
+// them: Mecc Alte's default place (manufacturing[]: Khoa 16/11/2026, Italy).
 const MAKER_ALT_MAKE = { "leroy-somer-fuzhou": "Leroy-Somer", "stamford-avk-china": "Stamford", "mecc-alte": "Mecc Alte" };
 const MAKER_PER_MAKE = 2, MAKER_MAX = 6, MAKER_OVER = 1.3;
 const reqTxt = (r) => `${r?.requirement || ""} ${r?.quote || ""}`.normalize("NFC");
@@ -3864,7 +3991,9 @@ export function contKva(list = [], need = {}) {
   const atV = need.volts?.length ? sel.filter((x) => need.volts.includes(x.volt)) : [], use = atV.length ? atV : sel;
   const vs = [...new Set(use.map((x) => x.volt))].sort((a, b) => a - b), min = Math.min(...use.map((x) => x.kVA)), max = Math.max(...use.map((x) => x.kVA));
   const label = `Continuous cấp ${need.ins === "F" ? "F 105 K" : "H 125 K"} / 40 °C, ${need.hz} Hz, 3 pha, ${vs.join(" / ")} V`;
-  return { min, max, volts: vs, label, lines: use.find((x) => x.kVA === min).lines };
+  // `top`: the sheet of the largest figure (makerAltFix derates it for the site, D2).
+  const top = use.find((x) => x.kVA === max);
+  return { min, max, volts: vs, label, lines: use.find((x) => x.kVA === min).lines, top: { supplierId: top.supplierId, n: top.n, model: top.model } };
 }
 // The models of the alternator makers' sheets that meet `need`, best first: a make the HSMT names, then the smallest kVA.
 // A point the sheet states against the need (class, excitation, voltage regulation, origin outside the group) leaves the
@@ -3873,11 +4002,17 @@ export function contKva(list = [], need = {}) {
 // Where a maker-sheet alternator is made: the sheet of a plant the supplier record is (leroy-somer-fuzhou: the Fuzhou
 // plant, Khoa 20/11/2026 "ok") → that country; else the make's default (CAT.madeIn). `brand`: the make's own country, for
 // an HSMT that asks the brand (nhãn hiệu). { at, brand, why }.
-// stamford-avk-china: Khoa 20/11/2026 "1. ok" (the sheets of the Stamford plant in China, made in China as Fuzhou).
+// stamford-avk-china: Khoa 20/11/2026 "1. ok" (the sheets of the Stamford plant in China, made in China as Fuzhou), now
+// only for the frames outside S4–S7 (UCI / UCDI, PI, HCI). S4, S5, S6, S7 (S4L1D … S7L1D; dau-phat-hang D, Khoa 21/11/2026
+// "Stamford: làm 3 cho S6 / S7", then "2. Ghi chưa rõ" for S4 / S5): no place: their sheets are Stamford's global ones and
+// name no plant, the China page [1] names no range, and STAMFORD's page [6003] says the UK Stamford facility makes S4, S5,
+// S6 and S7 → "chưa rõ", the origin check asks the CO.
 const MAKER_PLANT = { "leroy-somer-fuzhou": { at: "CN", why: "tờ của nhà máy Phúc Châu (leroy-somer-fuzhou)" }, "stamford-avk-china": { at: "CN", why: "tờ của nhà máy Stamford ở Trung Quốc (stamford-avk-china)" } };
+const NO_PLANT = { "stamford-avk-china": { re: /^S[4-7]L\d/i, why: "tờ S4–S7 là tờ toàn cầu của Stamford, không ghi nhà máy (Khoa 21/11/2026: chưa rõ, cần NCC xác nhận CO)" } };
+export const makerPlantOf = (supplierId, model) => (NO_PLANT[supplierId]?.re.test(String(model || "").trim()) ? null : MAKER_PLANT[supplierId] || null);
 export function makerMadeOf(supplierId, make, model) {
-  const def = CAT.madeIn("alternator", [make], [""], model), plant = MAKER_PLANT[supplierId];
-  return plant ? { at: plant.at, brand: def.at, why: plant.why } : { at: def.at, brand: def.at, why: `mặc định theo hãng ${make}` };
+  const def = CAT.madeIn("alternator", [make], [""], model), plant = makerPlantOf(supplierId, model), none = !plant && NO_PLANT[supplierId]?.re.test(String(model || "").trim());
+  return plant ? { at: plant.at, brand: def.at, why: plant.why } : none ? { at: "?", brand: def.at, why: NO_PLANT[supplierId].why } : { at: def.at, brand: def.at, why: `mặc định theo hãng ${make}` };
 }
 // A place a country requirement names ("Trung Quốc", "China"), against a country code.
 const countryNamed = (t, at) => !!at && at !== "?" && (norm(t).includes(norm(madeVi(at))) || (at === "CN" && /trung\s*qu[ốo]c|\bchina\b|\bPRC\b/i.test(t)));
@@ -3915,6 +4050,8 @@ export function makerAlts(suppliers, RT, need, { all = false, engineFamily = nul
     // The HSMT's group against the brand's country when it asks the brand, against the place of making otherwise.
     const made = makerMadeOf(x0.supplierId, make, x0.model), mAt = need.origin?.basis === "brand" ? made.brand : made.at;
     if (need.origin && mAt !== "?" && !CAT.COUNTRY_GROUP[need.origin.grp].includes(mAt)) continue;
+    // Stamford S4–S7 (NO_PLANT): the place the HSMT asks is not known → stays, after the models that state every point.
+    if (need.origin && mAt === "?") unknown.push("nơi sản xuất (cần NCC xác nhận CO)");
     const named = need.makes.includes(make);
     if (need.makes.length && !need.equivalent && !named) continue;
     if (engineFamily && BP.familyOf(make) !== engineFamily) continue;
@@ -3949,7 +4086,7 @@ export function makerAlts(suppliers, RT, need, { all = false, engineFamily = nul
 // "LSA Rating Table" (leroy-somer-fuzhou [6003], class H row, altitude row). The column at the site's figure or the next
 // hotter / higher one; never between two columns (no interpolation). A point the source does not cover → null for it.
 // { f, parts: [{ what, factor, why, src: { supplierId, n, line } }], missing: [what] }, or null when the site is within.
-const DERATE_LS = { supplierId: "leroy-somer-fuzhou", n: 6003 };
+const DERATE_LS = { supplierId: "leroy-somer-fuzhou", n: 6003 }, DERATE_TAL = { supplierId: "leroy-somer-fuzhou", n: 6004 };
 const srcLines = (dir, supplierId, n) => { try { return fs.readFileSync(path.join(dir, supplierId, `${n}.md`), "utf8").split(/\r?\n/); } catch { return null; } };
 // "Ambient T °C   25   40   45 ..." → [25, 40, 45, ...] (a "1 000" cell is one figure: columns are 2+ spaces apart).
 const tableRow = (line) => line.replace(/^[^\d]*?(?=\d)/, "").split(/\s{2,}|\t/).map((x) => Number(x.replace(/\(\*\)/, "").replace(/\s/g, ""))).filter((x) => Number.isFinite(x));
@@ -3966,18 +4103,36 @@ export function makerDerate({ supplierId, n, model }, site, dir = path.join(ROOT
       parts.push({ what, factor: Number((1 - (pct / 100) * k).toFixed(4)), why: `${pct}% cho mỗi ${fmt(each)} ${unit} vượt ${fmt(base)} ${unit}: ${fmt(x)} ${unit} → ${k} × ${pct}%`, src: { supplierId, n, line: L[i].trim() } });
     };
     if (temp) temp > 60 ? missing.push("nhiệt độ") : step(/(\d+)%\s*for every\s*(\d+)\s*°C by which the operational ambient/i, /temperature\s+exceeds\s+40\s*°C/i, "nhiệt độ", temp, 40, "°C");
-    if (alt) step(/(\d+)%\s*for every\s*(\d+)\s*metres by which the operating altitude/i, /exceeds\s+1000\s+metres/i, "độ cao", alt, 1000, "m");
-  } else if (supplierId === "leroy-somer-fuzhou" && /^LSA\b/i.test(model || "")) {
-    const L = srcLines(dir, DERATE_LS.supplierId, DERATE_LS.n) || [];
+    // "metres" (older sheets) or "meters" (S6L1D / S7L1D sheets, D2).
+    if (alt) step(/(\d+)%\s*for every\s*(\d+)\s*met(?:re|er)s by which the operating altitude/i, /exceeds\s+1000\s+met(?:re|er)s/i, "độ cao", alt, 1000, "m");
+  } else if ((supplierId === "leroy-somer-fuzhou" && /^LSA\b/i.test(model || "")) || /^TAL\s?0\d{2,3}\b/i.test(String(model || "").trim())) {
+    // LSA: "LSA Rating Table" [6003]. TAL 040 … TAL 049 (dau-phat-hang D2, 21/11/2026): "TAL Rating Table" [6004], whose
+    // ratings name "TAL 040 … TAL 049" (any supplier's copy of a TAL 0xx sheet). TAL-A40 … TAL-A49 (the sheets
+    // leroy-somer-fuzhou [1001–1006]) are NOT named there: no factor (taking the TAL table for them would be inferred).
+    const from = /^LSA\b/i.test(model || "") ? DERATE_LS : DERATE_TAL, L = srcLines(dir, from.supplierId, from.n) || [];
     const pick = (headRe, rowRe, x, what) => {
       const h = L.findIndex((l) => headRe.test(l)), r = h >= 0 ? L.findIndex((l, j) => j > h && j <= h + 4 && rowRe.test(l)) : -1;
       const cols = h >= 0 ? tableRow(L[h]) : [], vals = r >= 0 ? tableRow(L[r]) : [];
       const j = cols.length && cols.length === vals.length ? cols.findIndex((c) => c >= x) : -1;
       if (j < 0) { missing.push(what); return; }
-      parts.push({ what, factor: vals[j], why: `cột ${fmt(cols[j])}${what === "nhiệt độ" ? " °C" : " m"} (${cols[j] === x ? "đúng mức HSMT" : `mốc ngay trên ${fmt(x)}`}, không nội suy)`, src: { ...DERATE_LS, line: `${L[h].trim().replace(/\s{2,}/g, " ")} | ${L[r].trim().replace(/\s{2,}/g, " ")}` } });
+      parts.push({ what, factor: vals[j], why: `cột ${fmt(cols[j])}${what === "nhiệt độ" ? " °C" : " m"} (${cols[j] === x ? "đúng mức HSMT" : `mốc ngay trên ${fmt(x)}`}, không nội suy)`, src: { ...from, line: `${L[h].trim().replace(/\s{2,}/g, " ")} | ${L[r].trim().replace(/\s{2,}/g, " ")}` } });
     };
-    if (temp) pick(/^Ambient T °C\b/, /^Class H\b/, temp, "nhiệt độ");
+    // "Ambient T °C" ([6003]) or "Ambient  T  °C" ([6004]: the PDF's spacing).
+    if (temp) pick(/^Ambient\s+T\s+°C\b/, /^Class H\b/, temp, "nhiệt độ");
     if (alt) pick(/^Altitude \(m\)/, /^Derating factor\b/, alt, "độ cao");
+  } else if (supplierId === "mecc-alte") {
+    // Mecc Alte (D2): the sheet's own "Derating coefficients" table (ratings.mjs meccDerate): ONE cell for the site, the row
+    // of its altitude (≤ 1000, > 1000 ≤ 1500 …) × the column of its temperature (25 / 40 / 45 … 70 °C), the column at the
+    // figure or the next hotter; a site within 40 °C reads the 40 °C column, within 1 000 m the ≤ 1000 row. No interpolation.
+    const t = srcLines(dir, supplierId, n), D = t && meccDerate(t.join("\n"));
+    const tc = D ? D.temps.findIndex((c) => c >= Math.max(40, site?.temp || 0)) : -1;
+    const row = D ? D.rows.find((r) => Math.max(1000, site?.alt || 0) <= r.altTo && (r.altFrom === 0 || Math.max(1000, site?.alt || 0) > r.altFrom)) : null;
+    if (!D || tc < 0 || !row) { if (temp) missing.push("nhiệt độ"); if (alt) missing.push("độ cao"); }
+    else {
+      const col = D.temps[tc], what = temp && alt ? "nhiệt độ và độ cao" : temp ? "nhiệt độ" : "độ cao";
+      parts.push({ what, factor: row.factors[tc], why: `bảng Derating coefficients: hàng độ cao ${row.altFrom ? `> ${fmt(row.altFrom)} ` : ""}≤ ${fmt(row.altTo)} m × cột ${col} °C (${temp && col !== temp ? `mốc ngay trên ${temp} °C, ` : ""}không nội suy)`,
+        src: { supplierId, n, line: `${D.head[1].trim()} | ${row.line.trim()}` } });
+    }
   } else {
     if (temp) missing.push("nhiệt độ");
     if (alt) missing.push("độ cao");
@@ -4004,11 +4159,11 @@ export function makerAltMd(list, need) {
   for (const m of list) {
     out.push(`### ${m.model} — hãng ${m.make}, ${fmt(m.kva)} kVA (${m.label})${m.derated ? `, ${figVi(m.derated, 1)} kVA sau suy giảm theo hiện trường HSMT (hệ số ${m.derate.f} của hãng)` : ""}${m.named ? " — hãng HSMT nêu" : ""}`,
       `- src: ${JSON.stringify({ kind: "maker", supplierId: m.supplierId, n: m.n })}`);
-    const a = m.attrs, said = [a.insulation && `cách điện cấp ${a.insulation.value}`, a.vreg && `ổn định điện áp ±${a.vreg.value.map(pctVi).join(" / ±")} %`, a.sc300 && `ngắn mạch 300 % / 10 s${a.sc300.value.all === false ? " (với kích từ AREP / PMG)" : ""}`].filter(Boolean);
+    const a = m.attrs, said = [a.insulation && `cách điện cấp ${a.insulation.value}`, a.vreg && `ổn định điện áp ±${a.vreg.value.map(pctVi).join(" / ±")} %`, a.sc300 && `ngắn mạch ${a.sc300.value.s > 10 ? `> 300 % / ${a.sc300.value.s}` : "300 % / 10"} s${a.sc300.value.all === false ? " (với kích từ AREP / PMG)" : ""}`].filter(Boolean);
     if (said.length) out.push(`- tờ hãng ghi: ${said.join("; ")}`);
     if (m.options.length) out.push(`- tuỳ chọn: ${m.options.map((o) => `${o.what} ${o.value}`).join("; ")}`);
     if (m.unknown.length) out.push(`- tờ hãng không ghi: ${m.unknown.join("; ")}`);
-    out.push(m.made.at !== m.made.brand ? `- nơi sản xuất: ${madeVi(m.made.at)} (${m.made.why}); thương hiệu ${m.make}: ${m.made.brand === "?" ? "chưa rõ" : madeVi(m.made.brand)}`
+    out.push(m.made.at !== m.made.brand ? `- nơi sản xuất: ${m.made.at === "?" ? "chưa rõ, cần NCC xác nhận CO" : madeVi(m.made.at)} (${m.made.why}); thương hiệu ${m.make}: ${m.made.brand === "?" ? "chưa rõ" : madeVi(m.made.brand)}`
       : `- nơi sản xuất mặc định của hãng: ${m.made.at === "?" ? "chưa rõ" : madeVi(m.made.at)}`, "");
   }
   return out.join("\n");
@@ -4028,7 +4183,16 @@ export function makerAltFix(result, { suppliers = [], RT, built, rowOf = () => n
   const syncAlt = !!sync?.parts?.includes("alternator");
   const recMake = (m) => (built.engines || []).find((x) => x.key === CAT.keyOf(m || ""))?.make || "";
   const list = (c) => (on ? makerAlts(suppliers, RT, need, { all: true, sourcesDir, engineFamily: syncAlt ? BP.familyOf(c.engine?.make, recMake(c.engine?.model), c.engine?.model) : null }) : []);
-  const below = (model) => { const col = contKva(ratingsFor(RT.alt, model), need); return need.kva && col && col.max < need.kva - 0.5 ? col : null; };
+  // An alternator a row names is "below" when its sheet's column is under the kVA needed; with a site above 40 °C / 1 000 m
+  // (D2, 21/11/2026), under it after the maker's derating of the sheet that gave the largest figure (makerDerate). No factor
+  // in the sources → the column as written (not proven below, the alternator stays).
+  const below = (model) => {
+    const col = contKva(ratingsFor(RT.alt, model), need);
+    if (!need.kva || !col) return null;
+    const dr = need.site && col.top ? makerDerate(col.top, need.site, sourcesDir) : null;
+    const max = dr?.f ? col.max * dr.f : col.max;
+    return max < need.kva - 0.5 ? { ...col, ...(dr?.f ? { derated: Number(max.toFixed(1)), derate: dr } : {}) } : null;
+  };
   let used = 0;
   for (const c of result.configs || []) {
     if (c.alternator?.fromMaker && c.alternator.byCode) c.alternator = c.alternator.was ? c.alternator.was : null;
@@ -4041,7 +4205,9 @@ export function makerAltFix(result, { suppliers = [], RT, built, rowOf = () => n
       c.gaps = [...(c.gaps || []), `Đầu phát ${m.model} (${m.make}) chọn theo datasheet hãng, NCC chưa chào${was ? ` (NCC chào ${was.model}: ${why})` : ""}: cần NCC xác nhận chào được đầu phát này và lắp ghép với động cơ ${c.engine?.model || ""} (mặt bích SAE, đĩa khớp nối, khung).`];
       used++;
     };
-    const why = (col) => `${fmt(col.max)} kVA ở cột ${col.label} < ${fmt(need.kva)} kVA cần`;
+    const why = (col) => col.derated != null
+      ? `${fmt(col.max)} kVA ở cột ${col.label} × hệ số suy giảm ${col.derate.f} của hãng theo hiện trường HSMT = ${figVi(col.derated, 1)} kVA < ${fmt(need.kva)} kVA cần`
+      : `${fmt(col.max)} kVA ở cột ${col.label} < ${fmt(need.kva)} kVA cần`;
     if (p?.src?.kind === "maker") {
       // The agent's pick from the list: kept when the list has it and the row allows it.
       const m = list(c).find((x) => x.supplierId === p.src.supplierId && CAT.keyOf(x.model) === CAT.keyOf(p.model || ""));
@@ -4117,8 +4283,8 @@ export function makerAltChecks(c, reqs = [], need = null, { sourcesDir } = {}) {
   for (const q of reqs.filter((x) => x.code === "alt_origin" && !x.byCode)) {
     const t = reqTxt(q);
     // A plant's sheet (MAKER_PLANT) says where it is made; otherwise the make's default place, not proven (decision 4).
-    const made = makerMadeOf(p.src?.supplierId, p.make, p.model), plant = !!MAKER_PLANT[p.src?.supplierId];
-    const where = made.at === "?" ? `hãng ${p.make}` : plant ? `hãng ${p.make}, sản xuất tại ${madeVi(made.at)} (${made.why})` : `hãng ${p.make}, sản xuất mặc định tại ${madeVi(made.at)}`;
+    const made = makerMadeOf(p.src?.supplierId, p.make, p.model), plant = !!makerPlantOf(p.src?.supplierId, p.model);
+    const where = made.at === "?" ? `hãng ${p.make}${made.why && !/^mặc định/.test(made.why) ? `, nơi sản xuất chưa rõ (${made.why})` : ""}` : plant ?`hãng ${p.make}, sản xuất tại ${madeVi(made.at)} (${made.why})` : `hãng ${p.make}, sản xuất mặc định tại ${madeVi(made.at)}`;
     if (!/\bG\s?-?(7|20)\b/.test(t)) {
       // A country the HSMT names, not a group: met when the plant's sheet is of that country, else to be confirmed (CO).
       const o = own(q);
@@ -4132,10 +4298,12 @@ export function makerAltChecks(c, reqs = [], need = null, { sourcesDir } = {}) {
     const basis = madeBasisOf(q.quote) || madeBasisOf(q.requirement), grp = `${/\bG\s?-?20\b/.test(t) ? "g20" : "g7"}${EU_W.test(t) ? "eu" : ""}`;
     // The brand asked → the make's own country; the place asked → where it is made (a plant's sheet: known).
     const at = basis === "brand" ? made.brand : made.at, inG = at !== "?" && CAT.COUNTRY_GROUP[grp].includes(at);
-    if (!basis || at === "?") continue;
+    // A sheet whose plant is unknown on purpose (NO_PLANT: Stamford S4–S7, Khoa 21/11/2026): the place asked → the CO.
+    const noPlace = basis && basis !== "brand" && at === "?" && !makerPlantOf(p.src?.supplierId, p.model) && !!NO_PLANT[p.src?.supplierId]?.re.test(String(p.model || "").trim());
+    if (!basis || (at === "?" && !noPlace)) continue;
     const x = (c.checks || []).find((y) => norm(y.item) === norm(q.item));
     if (x && x.byCode && x.rule !== "dau-phat-hang" && x.rule !== "noi-san-xuat") continue;
-    const status = !inG ? "not_met" : basis === "brand" ? "met" : "confirm";
+    const status = noPlace ? "confirm" : !inG ? "not_met" : basis === "brand" ? "met" : "confirm";
     putCheck(c, x, { item: q.item, requirement: q.requirement || "", hsmtQuote: q.quote || "", offered: `Đầu phát ${p.model} (${where})`, part: "alternator", level: q.level === "option" ? "option" : "core", status, byCode: true, rule: "dau-phat-hang",
       ...(status === "confirm" ? { confirm: "document" } : {}),
       note: status === "confirm" ? `Cần xác nhận nơi sản xuất đầu phát (CO): đầu phát chọn theo datasheet hãng, NCC chưa chào; ${where}; HSMT đòi nơi sản xuất ${GROUP_NAME[grp]}.`
@@ -4619,7 +4787,8 @@ export function altAttrChecks(c, reqs, attrs = [], facts = []) {
       // A Leroy-Somer range sheet ("Short-circuit current | 300% (3 IN) : 10s", lsSheetAttrs): met when every excitation
       // column states it; "-" under SHUNT (LSA 40–47.3) → with AREP / PMG, chosen when ordering.
       if (a?.range) {
-        if (a.value.all) met(r, o, a, "300% (3 IN) trong 10 giây (tờ hãng)");
+        // Mecc Alte (D2): "> 300% for up to 20 seconds" on every model of the range.
+        if (a.value.all) met(r, o, a, a.value.s > 10 ? `> 300% trong ${a.value.s} giây (tờ hãng)` : "300% (3 IN) trong 10 giây (tờ hãng)");
         else confirm(r, o, a, "300% (3 IN) trong 10 giây với kích từ AREP / PMG (tờ hãng)", "tờ hãng ghi ngắn mạch 300% (3 IN) trong 10 giây cho kích từ AREP / PMG, không cho SHUNT; chọn kích từ AREP / PMG khi đặt hàng.");
       } else if (a) confirm(r, o, a, "300% trong 10 giây (tờ hãng)", "tờ hãng ghi đạt ngắn mạch duy trì 300% trong 10 giây, đường cong ngắn mạch vẽ cho kích từ riêng (PMG); chọn hệ kích từ PMG khi đặt hàng.");
     } else if (r.code === "alt_excitation") {
