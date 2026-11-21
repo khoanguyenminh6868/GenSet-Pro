@@ -178,7 +178,44 @@ const CODE_FIELDS = ["status", "offered", "note", "sourceQuote", "factSrc"];
 function stash(x) { if (!x.codeWas) x.codeWas = Object.fromEntries(CODE_FIELDS.map((k) => [k, x[k] ?? null])); }
 export function commRestore(x) {
   if (x?.codeWas) { for (const k of CODE_FIELDS) { if (x.codeWas[k] == null) delete x[k]; else x[k] = x.codeWas[k]; } }
-  for (const k of ["codeWas", "viaModule", "wordsMissing", "alsoQuotes", "bmsVia", "moduleNote"]) delete x?.[k];
+  for (const k of ["codeWas", "viaModule", "wordsMissing", "alsoQuotes", "bmsVia", "moduleNote", "ctlOption"]) delete x?.[k];
+}
+
+// Chức năng manual ghi là TUỲ CHỌN / tuỳ cấu hình (bdk-manual-2, Khoa 21/11/2026: chỉ chấm đạt phần có sẵn, tuỳ chọn → "cần
+// xác nhận"). Danh sách tường minh, không phải luật: mỗi mục là một chức năng HSMT và ĐÚNG dòng nguyên văn nói chức năng đó ở
+// bảng "Options and configuration-dependent lines" cùng số nguồn với datasheet của bộ điều khiển. "Hết nhiên liệu", "sai lệch
+// điện áp giữa các pha", "lệch pha" không có ở đây: manual không nói đúng nghĩa đó nên giữ "chưa rõ".
+export const OPTION_TITLE = /^Options and configuration-dependent lines\b/;
+export const CTL_OPTION_FNS = [
+  { id: "oil_temp", vi: /nhiệt độ.{0,25}(?:dầu|nhớt|bôi trơn)/i, not: /nước|làm mát/i, line: "Oil Temperature*", has: ["Oil Pressure"],
+    offered: "Nhiệt độ dầu: tuỳ động cơ điện tử", note: "Áp suất dầu có sẵn; nhiệt độ dầu manual đánh dấu là tuỳ động cơ điện tử được hỗ trợ, cần NCC xác nhận." },
+  { id: "coolant_level", vi: /mức\s+(?:nước|chất|dung dịch)\s*làm mát/i, line: "Engine Coolant Level*",
+    offered: "Mức nước làm mát: tuỳ động cơ điện tử", note: "Manual chỉ ghi hiển thị mức nước làm mát, tuỳ động cơ điện tử được hỗ trợ; không ghi bảo vệ dừng máy theo mức nước. Cần NCC xác nhận." },
+  { id: "freq_adjust", vi: /(?:cài đặt|hiệu chỉnh|điều chỉnh).{0,20}tần số.{0,30}(?:điều tốc|governor)/i, line: "Frequency Adjust | 0.0 %",
+    offered: "Hiệu chỉnh tần số: tuỳ cấu hình", note: "Manual ghi thông số này khi máy đang chạy và nói có thể không có tuỳ cấu hình bộ điều khiển. Cần NCC xác nhận." },
+];
+export const ctlOptionFn = (name) => { const s = String(name || "").normalize("NFC"); return CTL_OPTION_FNS.find((f) => f.vi.test(s) && !f.not?.test(s)) || null; };
+// supplierId|n → the rows of its options table.
+export function optionRows(suppliers = []) {
+  const out = new Map();
+  for (const s of suppliers) if (s?.role === "controller_maker") for (const t of s.specTables || []) if (OPTION_TITLE.test(t.title || "")) out.set(`${s.id}|${t.n}`, t.rows || []);
+  return out;
+}
+// An "unclear" part naming one of those functions → "confirm", with the manual's line as its quote. Only from a sheet of this very
+// controller (a fact with `version` is another generation's sheet: the options of a MKII say nothing of a "DSE7320" unnamed).
+export function ctlOptions(parts = [], ctlFacts = [], rows = new Map()) {
+  const own = ctlFacts.filter((f) => !f.version), sheets = [...new Set(own.map((f) => `${f.supplierId}|${f.n}`))].filter((k) => rows.has(k));
+  if (!sheets.length) return;
+  for (const x of parts) {
+    if (x.status !== "unclear" || x.unverified || x.conflict || x.version || x.byCode) continue;
+    const fn = ctlOptionFn(x.name || x.item);
+    const key = fn && sheets.find((k) => rows.get(k).includes(fn.line) && (fn.has || []).every((l) => own.some((f) => `${f.supplierId}|${f.n}` === k && f.line === l)));
+    if (!key) continue;
+    const [supplierId, n] = [key.slice(0, key.lastIndexOf("|")), Number(key.slice(key.lastIndexOf("|") + 1))];
+    stash(x);
+    Object.assign(x, { status: "confirm", confirm: "order", ctlOption: fn.id, offered: fn.offered, sourceQuote: fn.line, factSrc: { supplierId, n, line: fn.line }, note: fn.note });
+    delete x.hint;
+  }
 }
 
 // Q4: the modules that make the configuration's not-met parts met. Parts: the ctl_comm parts of one configuration (already

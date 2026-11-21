@@ -2801,8 +2801,8 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
   const factsOf = (c, part) => (["engine", "alternator", "controller"].includes(part) && c[part]?.model ? factsFor(facts, part, part === "controller" ? ctlModelOf(c.controller) : c[part].model) : []);
   // Bộ điều khiển + mô-đun truyền thông (bdk-mo-dun PR 2, Khoa 20/11/2026; ctl-module.mjs): the modules' facts, and the modules
   // a controller (its facts) may take.
-  const modFacts = CM.moduleFacts(suppliers);
-  const compatOf = (model, list) => CM.compatModules(list, new Set([CAT.keyOf(model || ""), ...list.map((f) => CAT.keyOf(f.sheetModel || ""))].filter(Boolean)), modFacts, ctlKeys);
+  const modFacts = CM.moduleFacts(suppliers), ctlOptRows = CM.optionRows(suppliers);
+  const compatOf =(model, list) => CM.compatModules(list, new Set([CAT.keyOf(model || ""), ...list.map((f) => CAT.keyOf(f.sheetModel || ""))].filter(Boolean)), modFacts, ctlKeys);
   // Q1 (Khoa 20/11/2026: "Ok cho khuyến nghị"): the other controllers of the same make that the configuration's controller
   // line offers ("Deepsea DSE7320, DSE7420, DSE6120..."), each with a datasheet, scored with its best modules by code on the
   // HSMT's communication parts; those with no "không đạt" (code never writes one) and at least one part met, best 2 first.
@@ -3302,6 +3302,8 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
       }
       CM.commModules(c, c.checks.filter(isComm), ctlF, compatOf(ctlModelOf(c.controller), ctlF), modFacts);
       ctlAlternatives(c, result.requirements || []);
+      // A function the controller's manual lists as optional / configuration-dependent: "confirm" with the manual's line (bdk-manual-2).
+      CM.ctlOptions(c.checks.filter((y) => y.group && y.part === "controller"), ctlF, ctlOptRows);
     } else if (c.controller) { delete c.controller.modules; delete c.controller.alternatives; delete c.controller.altLine; }
     if (groups.size) c.checks = c.checks.flatMap((x) => {
       if (!x.group) return [x];
@@ -3313,7 +3315,7 @@ export function check(result, { hsmtText, suppliers, readWeb, origin, basis, siz
       const st = (s) => g.parts.filter((p) => p.status === s).map((p) => p.item);
       g.status = st("not_met").length ? "not_met" : st("met").length === g.parts.length ? "met" : "unclear";
       g.offered = `Đạt ${st("met").length}/${g.parts.length}`;
-      g.note = [st("not_met").length && `Không đạt: ${st("not_met").join(", ")}.`, st("unclear").length && `Chưa rõ: ${st("unclear").join(", ")}.`].filter(Boolean).join(" ");
+      g.note = [st("not_met").length && `Không đạt: ${st("not_met").join(", ")}.`, st("unclear").length && `Chưa rõ: ${st("unclear").join(", ")}.`, st("confirm").length && `Cần NCC xác nhận: ${st("confirm").join(", ")}.`].filter(Boolean).join(" ");
       delete g.sourceQuote; delete g.factSrc;
       g.unverified = g.parts.some((p) => p.unverified) || undefined;
       if (g.hsmtQuote && !inHsmt(g.hsmtQuote)) {
@@ -3530,8 +3532,9 @@ export function scoreOf(c, reqs = []) {
     // A group of controller functions counts each function (2026-11-03 regression run: a controller meeting 4 of 30
     // ranked above one meeting 26 of 30, both being one "unclear" group).
     // "confirm" (chosen when ordering / a document to send: confirmChecks) is not an "unclear": the model is not in doubt.
+    // A function the manual lists as optional (ctlOption) still counts as unclear: whether this unit has it is the open point.
     for (const p of x.parts?.length ? x.parts.map((q) => ({ ...q, unverified: q.unverified || x.unverified })) : [x]) {
-      if (p.status === "not_met") n[g][0]++; else if (p.status !== "confirm" && (p.status !== "met" || p.unverified)) n[g][1]++;
+      if (p.status === "not_met") n[g][0]++; else if ((p.status !== "confirm" || p.ctlOption) && (p.status !== "met" || p.unverified)) n[g][1]++;
     }
   }
   for (const r of reqs) if (!seen.has(norm(r.item)) && !confirmKindOf(r)) n[groupOf(r)][1] += r.parts?.length || 1;
