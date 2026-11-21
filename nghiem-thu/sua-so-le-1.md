@@ -57,3 +57,49 @@ CI GitHub: server, spec-diff, suppliers, web đều pass. `web` đỏ một lầ
 ## Cần ghi nhớ (cho điều phối)
 - ROW_EXCEPTIONS cho bản ghi từ PDF datasheet / bảng nhãn khớp qua `model` hoặc `genset` + một dòng nằm trong `lines.rows` (đã ghi vào `web/CLAUDE.md`).
 - Việc dở đề xuất: (a) aosif QSL9-G5 còn bore / disp / compr lấy từ khối QSL9-G7; (b) tecnogen KL45TSX (bộ đọc); (c) huatai n103 / liangzi n113 + n140 TAD1345GE 16,12 L (số của TAD1642GE).
+
+---
+
+# BỔ SUNG 21/11/2026 (điều phối thêm (a)–(d) vào cùng PR #1016; mỗi mục một commit)
+
+**Kết luận bổ sung: spec-diff so merge-base 95ecba26 = 6 bản ghi đổi thông số (đúng danh sách bên dưới, 0 khác); soat-fuel = 5 bản ghi đổi `fuel` (1 kingway, 1 man-engines, 3 simpson), 0 bản ghi `fuel` khác; test cục bộ 1.336 / 1.336 (chạy lại sau (d): xem dòng cuối). MTU đã tự mở PDF: "Cylinder configuration 12 cyl. - 90°V". Mục (c): không ghi "diesel" cho 8 dòng D vì cơ chế không có giá trị diesel tường minh (nêu bên dưới).**
+
+Commit (theo thứ tự): `2e46a386` (a) · `b709cea4` (b) · `80565aa6` (c) · `a938ee72` + `c3034a29` (d) · các commit ghi chú `web/CLAUDE.md`. Đầu nhánh: xem tin báo.
+
+## Số đo (đo, không ước tính)
+- `node suppliers/spec-diff.mjs git:95ecba26 .` (sau (a)(b)(c)): `bản ghi cũ 61041, mới 61041 | khác 6 | chỉ cũ 0, chỉ mới 0`; đảo vai 0 → 0. Liệt kê đủ:
+  1. `aosif n1079 bảng 177`: `cyl: 4 → ∅; bore: 107x124mm → ∅; disp: 6.69L → ∅; compr: 17.3:1 → ∅`
+  2. `depco-power n2102 bảng 106`: `cyl: 6 → 8; disp: 11.051 → 14.618`
+  3. `green-power-generators n115 bảng 16`: `cyl: ∅ → 12` (so với main: trước là dropspec rỗng)
+  4. `huatai-yangzhou n103 bảng 2`: `bore: 144/165 → ∅; disp: 16.12 → ∅`
+  5. `liangzi-yangzhou n113 bảng 12`: `disp: 16.12 → ∅`
+  6. `liangzi-yangzhou n140 bảng 26`: `disp: 16.12 → ∅`
+  (liangzi n141 chép nguyên văn dòng n113 → gộp vào bản ghi n113 như `also`, nên chỉ hiện 2 bản ghi liangzi; kiểm bằng test: không còn bản ghi TAD1345GE nào của liangzi có dung tích.)
+- `soat-fuel.mjs` (gốc ↔ nhánh, mọi NCC, `fromSupplier` + `gensetsOf`): `bản ghi 62741; đổi nhiên liệu 5`:
+  - `kingway-power n117 b12` (vai đầu phát "Kingway KAI250" / KGD250B): `-→gas/B`
+  - `man-engines n104 b4 dòng 8` (E3262): `-→gas/D`
+  - `simpson-power n124 b15` dòng 0, 1, 3 (ZS168FA, ZS182F, ZS190F): `-→dual/K`
+  (Cột "KHÁC NGOÀI NHIÊN LIỆU" của script trùng đúng 6 bản ghi thông số ở trên, không bản ghi nào khác.)
+
+## (a) aosif n1079 QSL9-G5
+`dropspec` keys cyl, bore, disp, compr. Khối "Engine specification" trong `cn/aosif.json` n1079 (dòng 8883–8896): `| Model | QSL9-G7`, `| No. of cylinder | 4`, `| Bore x Stroke | 107x124mm`, `| Displacement | 6.69L`, `| Compression ratio | 17.3:1`: cả khối là của dòng QSL9-G7 (aosif n1078 cùng QSL9-G5 ghi 6 xi lanh). Test `suppliers/sua-so-le-1.test.mjs`: bore, disp, compr, cyl rỗng; `current` 433A giữ.
+
+## (b) TAD1345GE ghi số của TAD1642GE
+- Nguồn từng dòng (mở từng dòng): huatai `suppliers/cn/huatai-yangzhou.json` dòng 248 `| 360GF | 360 | TAD1345GE | 6L | 144/165 | 16.12 | 48 | 3100 | 3200*1100*1800`; liangzi dòng 694 (n113), 1048 (n140, "沃尔沃遍达"), 1082 (n141): `| LZ- V360 | 360/450 | … | TAD1345GE | 6 L | 16.12 | 48 | ≤200 | …`.
+- Số sai: 16,12 L (và bore 144/165 của huatai) là số của TAD1642GE: aoke, bdadl, fukangsi, lees, pengpai, huipu ghi `TAD1642GE disp=16.12`, haifeng / huipu / jianghao / kangwo / lees ghi bore 144×165 cho TAD1642GE; TAD1345GE là 131×158 và 12,78 L (Volvo Penta bulletin `suppliers/sources/volvo-penta/1011.md`: "12.78 liter, in-line 6 cylinder"). Số xi lanh 6L / 6 L đúng → giữ. Chỉ bỏ khoá thật sự sai: huatai bore + disp, liangzi disp. Không ghi số thay.
+- Ngoài phạm vi, phát hiện thêm (CHƯA sửa): `bdadl-shanghai n134` TAD1345GE-B `cyl=6, disp=16.1` (cũng số TAD1642GE); mingbang n125 đã bỏ từ trước. Xin điều phối quyết có thêm `dropspec` cho bdadl n134 không.
+
+## (c) man-engines n104 (9 bản ghi)
+- Cơ chế: `FUEL_PAGES` mục `man-engines`, `engines: { E3262: <trang hãng> }`, mức D. Chỉ dòng E3262 ghi `gas`. Tự mở trang MAN (firecrawl scrape, 21/11/2026) `https://www.man.eu/engines/en/products/power-generation/gas/man-motor-e3262.html`: "E3262 naturally aspired engine with natural gas" và "Both the E3262 LE232 for natural gas and the E3262 LE242 for biogas and other special gases deliver 450 kWmech at 1,500 rpm (50 Hz)". (E3262 là động cơ khí; bản biogas cũng là khí → `gas`.) Các câu này lấy từ trang đã mở, không từ đoạn trích tìm kiếm.
+- 8 dòng D2676 / D2862 / D3872: ĐỂ TRỐNG. Cơ chế KHÔNG có giá trị `diesel` tường minh, và `fuelOff` (`config-bot.mjs`) trả TRUE cho HSMT diesel khi dòng có bất kỳ `fuel` nào (`want === "diesel"` → nhánh cuối `false`, `!false`) nên ghi "diesel" sẽ LOẠI chính các dòng diesel khỏi gói diesel. Không chế thêm. PDF hãng (marine-auxiliary-en.pdf tr. 16 / 22 / 28, "Fuel: DIN EN 590") không đọc lại ở lượt này (đã đọc ở nhien-lieu-4-bang.md); không dùng. Nếu muốn ghi diesel tường minh thì phải sửa `fuelOff` (S3).
+
+## (d) kingway-power n117 (Khoa 21/11 "Khí")
+- `FUEL_PAGES` mục `kingway-power`, `fuel: "gas"`, mức B, `header: ""` (bảng đã lưu không có dòng tiêu đề; trang được cào lại có thì mục tự hết hiệu lực). Chữ nguồn: `suppliers/sources/kingway-power/117.md` dòng 74 "| Engine Specifications" … dòng 83 `| Fuel | Biogas`; trang thuộc "Gas Generagtor Set > Biogas Generator Set". Bảng đã lưu trong `cn/kingway-power.json` n117 KHÔNG mang dòng Fuel / Compression ratio (chỉ có Model, Rated /Standby Power(KW), Cylinder Number, Bore x Stroke, Rated speed, Displacement, Voltage, Frequency): vì thế phải qua `FUEL_PAGES`, và `why` nói rõ.
+- Lưu ý bộ đọc (ngoài phạm vi): bản ghi duy nhất của n117 hiện là vai ĐẦU PHÁT "Kingway KAI250" (genset KGD250B) mang cả cyl / bore / disp của động cơ; không có bản ghi động cơ SC9D340D2 như `nhien-lieu-4-bang.md` mô tả. `fuel` gắn vào bản ghi duy nhất đó. Không có datasheet hãng SDEC đã xác nhận (xem nhien-lieu-4-bang.md mục 2), không dùng trang sdec-engine.com.
+
+## Căn cứ MTU (mục 3 trước): đã mở PDF
+`https://www.mtu-solutions.com/content/dam/mtu/products/power-generation/powergeneration-product-list-latest/3239091_MTU_Gendrive_spec_12V1600Gx0_Gx1_3B_A2A.pdf` (firecrawl scrape trực tiếp, 21/11/2026): bảng liệt kê `12V 1600 G31F | 806 (1081)`; dòng "Cylinder confi guration | 12 cyl. - 90°V | 12 cyl. - 90°V" (cột Gx0 / Gx1). Căn cứ `fixspec` 16 → 12 của green-power giờ là câu đọc trực tiếp từ tài liệu hãng.
+
+## Còn lại / cần ghi nhớ
+- bdadl n134 TAD1345GE-B 16,1 L (ở trên); bộ đọc n117 kingway (vai đầu phát, không bản ghi động cơ); `fuelOff` không có diesel tường minh (nếu cần ghi diesel cho 8 dòng man-engines D thì sửa ở config-bot).
+- Tecnogen KL45TSX: đã chuyển S2.
