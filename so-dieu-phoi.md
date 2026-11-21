@@ -7,6 +7,7 @@ Viết gọn lại 13/11/2026 (sáng, giờ VN). Cập nhật 16/11: #786 (nối
 ## Đang chạy
 | Việc | Session (id để báo về / hỏi) | Model | Chờ gì |
 |---|---|---|---|
+| Tra nhiên liệu 4 bảng "không rõ" (chỉ đọc; `nhien-lieu-4-bang.md`) | `session_011tAj4NtNjEjHiRjZzsTjnn` (giao 21/11) | Sonnet | nghiệm thu → trình Khoa |
 | S1 sửa số dòng lẻ (`ROW_EXCEPTIONS`; `wt-sua-so-le`, `sua-so-le-1.md`) | `session_011tAj4PKqvTNb6J1EujUBVg` (giao 21/11 01:22Z) | Sonnet | PR draft → điều phối kiểm + đo cloud |
 | S2 đọc mã (`web/catalog.js`; `wt-doc-ma-2`, `doc-ma-2-1.md`) | `session_011tAj4RJTNrRgrq7DGnUisk` | Opus | PR draft → kiểm + đo cloud; merge xong thì mở S4 |
 | S3 thứ tự + hãng (`config-bot.mjs`; `wt-thu-tu-hang`, `thu-tu-hang-1.md`) | `session_011tAj4Qxy7o1Prwh1naQT8a` | Sonnet | PR draft → kiểm + đo cloud |
@@ -25,6 +26,7 @@ Viết gọn lại 13/11/2026 (sáng, giờ VN). Cập nhật 16/11: #786 (nối
 
 ## Chờ Khoa
 - (21/11, KHOA QUYẾT) simpson n124: LOẠI CẢ BẢNG khỏi gói diesel (phương án L) → đã thêm vào PR S1 (commit riêng, 10 bản ghi đổi `fuel`). Khoa hỏi bảng dọc (D) làm chưa: CHƯA (chưa có bộ đọc bảng dọc; đang ở hàng chờ sau S4); điều phối đề xuất làm (D) sau S2 / S4, chờ Khoa nói. Còn chờ Khoa: 4 bảng nhiên liệu "không rõ" còn lại có tra không; trường nhiên liệu cho dòng tổ máy (đề xuất chưa cần); 2.605 dòng tổ máy ngoài 46 bảng (đề xuất chờ (D)).
+- (21/11, KHOA QUYẾT "có") (1) bộ đọc BẢNG DỌC (D) làm NGAY SAU S4 (thứ tự cùng `web/catalog.js`: S2 → S4 → (D)); xong (D) thì đếm lại 2.605 dòng tổ máy ngoài 46 bảng. (2) TRA 4 bảng nhiên liệu "không rõ" còn lại như simpson: đã giao (bảng "Đang chạy"), về thì trình Khoa lựa chọn từng bảng. Còn chờ Khoa: trường nhiên liệu cho dòng tổ máy (đề xuất chưa cần).
 - Chưa kiểm (không chặn): Phân tích gói 3,4 triệu ký tự (`trimHsmt`); Sandbox Ubuntu / `ingest.py` sau #946; IB2600576655 và IB2500441397 chỉ đọc 30 tệp đầu trong tệp nén (giới hạn Khoa bảo "chưa" đổi).
 
 ## Khoa đã bảo BỎ (đừng đề xuất lại)

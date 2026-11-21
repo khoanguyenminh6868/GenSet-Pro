@@ -1,0 +1,2290 @@
+107 | 6 | 0 | engine | NT855-GA | g=GF/GFS-C200 | o=ELS 274J | Cummins
+107 | 6 | 0 | alternator | ELS 274J | g=GF/GFS-C200 | o=NT855-GA | 
+107 | 6 | 1 | engine | NTA855-G1 | g=GF/GFS-C250 | o=ELS 314D | Cummins
+107 | 6 | 1 | alternator | ELS 314D | g=GF/GFS-C250 | o=NTA855-G1 | 
+107 | 6 | 2 | engine | NTA855-G1B | g=GF/GFS-C275 | o=ELS 314E | Cummins
+107 | 6 | 2 | alternator | ELS 314E | g=GF/GFS-C275 | o=NTA855-G1B | 
+107 | 6 | 3 | engine | NTA855-G2 | g=GF/GFS-C275 | o=ELS 314E | Cummins
+107 | 6 | 3 | alternator | ELS 314E | g=GF/GFS-C275 | o=NTA855-G2 | 
+107 | 6 | 4 | engine | NTA855-G3 | g=GF/GFS-C310 | o=ELS 314FS | Cummins
+107 | 6 | 4 | alternator | ELS 314FS | g=GF/GFS-C310 | o=NTA855-G3 | 
+107 | 6 | 5 | engine | KTA19-G2 | g=GF/GFS-C350 | o=ELS 314G | Cummins
+107 | 6 | 5 | alternator | ELS 314G | g=GF/GFS-C350 | o=KTA19-G2 | 
+107 | 6 | 6 | engine | KTA19-G3 | g=GF/GFS-C400 | o=ELS 354C | Cummins
+107 | 6 | 6 | alternator | ELS 354C | g=GF/GFS-C400 | o=KTA19-G3 | 
+107 | 6 | 7 | engine | KTA19-G3A | g=GF/GFS-C440 | o=ELS 354D | Cummins
+107 | 6 | 7 | alternator | ELS 354D | g=GF/GFS-C440 | o=KTA19-G3A | 
+107 | 6 | 8 | engine | KTA19-G4 | g=GF/GFS-C440 | o=ELS 354D | Cummins
+107 | 6 | 8 | alternator | ELS 354D | g=GF/GFS-C440 | o=KTA19-G4 | 
+107 | 6 | 9 | engine | KTAA19-G5 | g=GF/GFS-C470 | o=ELS 354ES | Cummins
+107 | 6 | 9 | alternator | ELS 354ES | g=GF/GFS-C470 | o=KTAA19-G5 | 
+107 | 6 | 10 | engine | KTAA19-G6A | g=GF/GFS-C540 | o=ELS 354FS | Cummins
+107 | 6 | 10 | alternator | ELS 354FS | g=GF/GFS-C540 | o=KTAA19-G6A | 
+107 | 6 | 11 | engine | QSK19-G4 | g=GF/GFS-C500 | o=ELS 354E | Cummins
+107 | 6 | 11 | alternator | ELS 354E | g=GF/GFS-C500 | o=QSK19-G4 | 
+107 | 6 | 12 | engine | QSK19-G5 | g=GF/GFS-C550 | o=ELS 354FS | Cummins
+107 | 6 | 12 | alternator | ELS 354FS | g=GF/GFS-C550 | o=QSK19-G5 | 
+107 | 6 | 13 | engine | KT38-G | g=GF/GFS-C600 | o=ELS 354G | Cummins
+107 | 6 | 13 | alternator | ELS 354G | g=GF/GFS-C600 | o=KT38-G | 
+107 | 6 | 14 | engine | KTA38-G1 | g=GF/GFS-C700 | o=ELS 404C | Cummins
+107 | 6 | 14 | alternator | ELS 404C | g=GF/GFS-C700 | o=KTA38-G1 | 
+107 | 6 | 15 | engine | KTA38-G2 | g=GF/GFS-C700 | o=ELS 404C | Cummins
+107 | 6 | 15 | alternator | ELS 404C | g=GF/GFS-C700 | o=KTA38-G2 | 
+107 | 6 | 16 | engine | KTA38-G2B | g=GF/GFS-C750 | o=ELS 404D | Cummins
+107 | 6 | 16 | alternator | ELS 404D | g=GF/GFS-C750 | o=KTA38-G2B | 
+107 | 6 | 17 | engine | KTA38-G2A | g=GF/GFS-C800 | o=ELS 404D | Cummins
+107 | 6 | 17 | alternator | ELS 404D | g=GF/GFS-C800 | o=KTA38-G2A | 
+107 | 6 | 18 | engine | KTA38-G9 | g=GF/GFS-C990 | o=ELS 404F | Cummins
+107 | 6 | 18 | alternator | ELS 404F | g=GF/GFS-C990 | o=KTA38-G9 | 
+107 | 6 | 19 | engine | QSK38-G4 | g=GF/GFS-C1100 | o=ELS 404G | Cummins
+107 | 6 | 19 | alternator | ELS 404G | g=GF/GFS-C1100 | o=QSK38-G4 | 
+107 | 6 | 20 | engine | QSK38-G5 | g=GF/GFS-C960 | o=ELS 404F | Cummins
+107 | 6 | 20 | alternator | ELS 404F | g=GF/GFS-C960 | o=QSK38-G5 | 
+107 | 6 | 21 | engine | KTA50-G3 | g=GF/GFS-C1100 | o=ELS 404G | Cummins
+107 | 6 | 21 | alternator | ELS 404G | g=GF/GFS-C1100 | o=KTA50-G3 | 
+108 | 7 | 0 | engine | 4B3.9-G1 | g=GFS-C22 | o=EL 184F | Cummins
+108 | 7 | 0 | alternator | EL 184F | g=GFS-C22 | o=4B3.9-G1 | 
+108 | 7 | 1 | engine | 4B3.9-G2 | g=GFS-C22I | o=EL 184F | Cummins
+108 | 7 | 1 | alternator | EL 184F | g=GFS-C22I | o=4B3.9-G2 | 
+108 | 7 | 2 | engine | 4BT3.9-G1 | g=GFS-C30 | o=EL 184H | Cummins
+108 | 7 | 2 | alternator | EL 184H | g=GFS-C30 | o=4BT3.9-G1 | 
+108 | 7 | 3 | engine | 4BT3.9-G1 | g=GFS-C32 | o=EL 184J | Cummins
+108 | 7 | 3 | alternator | EL 184J | g=GFS-C32 | o=4BT3.9-G1 | 
+108 | 7 | 4 | engine | 4BT3.9-G2 | g=GFS-C32I | o=EL 184J | Cummins
+108 | 7 | 4 | alternator | EL 184J | g=GFS-C32I | o=4BT3.9-G2 | 
+108 | 7 | 5 | engine | 4BTA3.9-G2 | g=GFS-C40 | o=EL 224D | Cummins
+108 | 7 | 5 | alternator | EL 224D | g=GFS-C40 | o=4BTA3.9-G2 | 
+108 | 7 | 6 | engine | 4BTA3.9-G2 | g=GFS-C48I | o=EL 224E | Cummins
+108 | 7 | 6 | alternator | EL 224E | g=GFS-C48I | o=4BTA3.9-G2 | 
+108 | 7 | 7 | engine | 4BTA3.9-G2 | g=GFS-C48 | o=EL 224E | Cummins
+108 | 7 | 7 | alternator | EL 224E | g=GFS-C48 | o=4BTA3.9-G2 | 
+108 | 7 | 8 | engine | 4BTA3.9-G11 | g=GFS-C58 | o=EL 224F | Cummins
+108 | 7 | 8 | alternator | EL 224F | g=GFS-C58 | o=4BTA3.9-G11 | 
+108 | 7 | 9 | engine | 6BT5.9-G1 | g=GFS-C68 | o=EL 224G | Cummins
+108 | 7 | 9 | alternator | EL 224G | g=GFS-C68 | o=6BT5.9-G1 | 
+108 | 7 | 10 | engine | 6BT5.9-G2 | g=GFS-C68Ⅰ | o=EL 224G | Cummins
+108 | 7 | 10 | alternator | EL 224G | g=GFS-C68Ⅰ | o=6BT5.9-G2 | 
+108 | 7 | 11 | engine | 6BT5.9-G2 | g=GFS-C80 | o=EL 274C | Cummins
+108 | 7 | 11 | alternator | EL 274C | g=GFS-C80 | o=6BT5.9-G2 | 
+108 | 7 | 12 | engine | 6BT5.9-G2 | g=GFS-C80 I | o=EL 274C | Cummins
+108 | 7 | 12 | alternator | EL 274C | g=GFS-C80 I | o=6BT5.9-G2 | 
+108 | 7 | 13 | engine | 6BTA5.9-G2 | g=GFS-C96 | o=EL 274D | Cummins
+108 | 7 | 13 | alternator | EL 274D | g=GFS-C96 | o=6BTA5.9-G2 | 
+108 | 7 | 14 | engine | 6BTAA5.9-G2 | g=GFS-C112 | o=EL 274E | Cummins
+108 | 7 | 14 | alternator | EL 274E | g=GFS-C112 | o=6BTAA5.9-G2 | 
+108 | 7 | 15 | engine | 6BTAA5.9-G12 | g=GFS-C128 | o=EL 274F | Cummins
+108 | 7 | 15 | alternator | EL 274F | g=GFS-C128 | o=6BTAA5.9-G12 | 
+108 | 7 | 16 | engine | 6CTA8.3-G1 | g=GFS-C145 | o=EL 274G | Cummins
+108 | 7 | 16 | alternator | EL 274G | g=GFS-C145 | o=6CTA8.3-G1 | 
+108 | 7 | 17 | engine | 6CTA8.3-G2 | g=GFS-C145Ⅰ | o=EL 274G | Cummins
+108 | 7 | 17 | alternator | EL 274G | g=GFS-C145Ⅰ | o=6CTA8.3-G2 | 
+108 | 7 | 18 | engine | 6CTAA8.3-G2 | g=GFS-C160 | o=EL 274H | Cummins
+108 | 7 | 18 | alternator | EL 274H | g=GFS-C160 | o=6CTAA8.3-G2 | 
+108 | 7 | 19 | engine | 6LTAA8.9-G2 | g=GFS-C200 | o=EL 274K | Cummins
+108 | 7 | 19 | alternator | EL 274K | g=GFS-C200 | o=6LTAA8.9-G2 | 
+108 | 7 | 20 | engine | 6LTAA8.9-G3 | g=GFS-C200I | o=EL 274K | Cummins
+108 | 7 | 20 | alternator | EL 274K | g=GFS-C200I | o=6LTAA8.9-G3 | 
+108 | 7 | 21 | engine | 6LTAA9.5-G3 | g=GFS-C220 | o=EL 314D | Cummins
+108 | 7 | 21 | alternator | EL 314D | g=GFS-C220 | o=6LTAA9.5-G3 | 
+108 | 7 | 22 | engine | 6LTAA9.5-G1 | g=GFS-C250 | o=EL 314E | Cummins
+108 | 7 | 22 | alternator | EL 314E | g=GFS-C250 | o=6LTAA9.5-G1 | 
+108 | 7 | 23 | engine | 6ZTAA13-G3 | g=GFS-C304 | o=EL 314F | Cummins
+108 | 7 | 23 | alternator | EL 314F | g=GFS-C304 | o=6ZTAA13-G3 | 
+108 | 7 | 24 | engine | 6ZTAA13-G2 | g=GFS-C320 | o=EL 314G | Cummins
+108 | 7 | 24 | alternator | EL 314G | g=GFS-C320 | o=6ZTAA13-G2 | 
+108 | 7 | 25 | engine | 6ZTAA13-G4 | g=GFS-C360 | o=EL 354C | Cummins
+108 | 7 | 25 | alternator | EL 354C | g=GFS-C360 | o=6ZTAA13-G4 | 
+108 | 7 | 26 | engine | QSZ13-G2 | g=GFS-C360Ⅰ | o=EL 354C | Cummins
+108 | 7 | 26 | alternator | EL 354C | g=GFS-C360Ⅰ | o=QSZ13-G2 | 
+108 | 7 | 27 | engine | QSZ13-G3 | g=GFS-C400 | o=EL 354D | Cummins
+108 | 7 | 27 | alternator | EL 354D | g=GFS-C400 | o=QSZ13-G3 | 
+108 | 7 | 28 | engine | QSZ13-G5 | g=GFS-C360Ⅱ | o=EL 354C | Cummins
+108 | 7 | 28 | alternator | EL 354C | g=GFS-C360Ⅱ | o=QSZ13-G5 | 
+108 | 7 | 29 | engine | QSB3.9-G2 | g=GFS-C58 | o=EL 224F | Cummins
+108 | 7 | 29 | alternator | EL 224F | g=GFS-C58 | o=QSB3.9-G2 | 
+108 | 7 | 30 | engine | QSB3.9-G3 | g=GFS-C68Ⅰ | o=EL 224G | Cummins
+108 | 7 | 30 | alternator | EL 224G | g=GFS-C68Ⅰ | o=QSB3.9-G3 | 
+108 | 7 | 31 | engine | QSB5.9-G2 | g=GFS-C80 | o=EL 274C | Cummins
+108 | 7 | 31 | alternator | EL 274C | g=GFS-C80 | o=QSB5.9-G2 | 
+108 | 7 | 32 | engine | QSB5.9-G3 | g=GFS-C96Ⅱ | o=EL 274D | Cummins
+108 | 7 | 32 | alternator | EL 274D | g=GFS-C96Ⅱ | o=QSB5.9-G3 | 
+108 | 7 | 33 | engine | QSB6.7-G3 | g=GFS-C128 | o=EL 274F | Cummins
+108 | 7 | 33 | alternator | EL 274F | g=GFS-C128 | o=QSB6.7-G3 | 
+108 | 7 | 34 | engine | QSB6.7-G4 | g=GFS-C145 | o=EL 274G | Cummins
+108 | 7 | 34 | alternator | EL 274G | g=GFS-C145 | o=QSB6.7-G4 | 
+108 | 7 | 35 | engine | QSL8.9-G2 | g=GFS-C184 | o=EL 274J | Cummins
+108 | 7 | 35 | alternator | EL 274J | g=GFS-C184 | o=QSL8.9-G2 | 
+108 | 7 | 36 | engine | QSL8.9-G3 | g=GFS-C200 | o=EL 274K | Cummins
+108 | 7 | 36 | alternator | EL 274K | g=GFS-C200 | o=QSL8.9-G3 | 
+108 | 7 | 37 | engine | QSL8.9-G4 | g=GFS-C200Ⅱ | o=EL 274K | Cummins
+108 | 7 | 37 | alternator | EL 274K | g=GFS-C200Ⅱ | o=QSL8.9-G4 | 
+108 | 7 | 38 | engine | QSZ13-G6 | g=GFS-C280 | o=EL 314FS | Cummins
+108 | 7 | 38 | alternator | EL 314FS | g=GFS-C280 | o=QSZ13-G6 | 
+108 | 7 | 39 | engine | QSZ13-G7 | g=GFS-C320Ⅰ | o=EL 314G | Cummins
+108 | 7 | 39 | alternator | EL 314G | g=GFS-C320Ⅰ | o=QSZ13-G7 | 
+109 | 9 | 0 | engine | WD129TAD23/1500 | g=GF/GFS-WX184 | o=EL 274J | 
+109 | 9 | 0 | alternator | EL 274J | g=GF/GFS-WX184 | o=WD129TAD23/1500 | 
+109 | 9 | 1 | engine | WD129TAD25/1500 | g=GF/GFS-WX200 | o=EL 274K | 
+109 | 9 | 1 | alternator | EL 274K | g=GF/GFS-WX200 | o=WD129TAD25/1500 | 
+109 | 9 | 2 | engine | WD135TAD28/1500 | g=GF/GFS-WX236 | o=EL 314D | 
+109 | 9 | 2 | alternator | EL 314D | g=GF/GFS-WX236 | o=WD135TAD28/1500 | 
+109 | 9 | 3 | engine | WD145TAD30/1500 | g=GF/GFS-WX236 | o=EL 314D | 
+109 | 9 | 3 | alternator | EL 314D | g=GF/GFS-WX236 | o=WD145TAD30/1500 | 
+109 | 9 | 4 | engine | WD145TAD33L/1500 | g=GF/GFS-WX260 | o=EL 314E | 
+109 | 9 | 4 | alternator | EL 314E | g=GF/GFS-WX260 | o=WD145TAD33L/1500 | 
+109 | 9 | 5 | engine | WD145TAD35/1500 | g=GF/GFS-WX280 | o=EL 314FS | 
+109 | 9 | 5 | alternator | EL 314FS | g=GF/GFS-WX280 | o=WD145TAD35/1500 | 
+109 | 9 | 6 | engine | WD269TAD38/1500 | g=GF/GFS-WX304 | o=EL 314F | 
+109 | 9 | 6 | alternator | EL 314F | g=GF/GFS-WX304 | o=WD269TAD38/1500 | 
+109 | 9 | 7 | engine | WD269TAD41/1500 | g=GF/GFS-WX320 | o=EL 314G | 
+109 | 9 | 7 | alternator | EL 314G | g=GF/GFS-WX320 | o=WD269TAD41/1500 | 
+109 | 9 | 8 | engine | WD269TAD43/1500 | g=GF/GFS-WX360 | o=EL 354C | 
+109 | 9 | 8 | alternator | EL 354C | g=GF/GFS-WX360 | o=WD269TAD43/1500 | 
+109 | 9 | 9 | engine | WD269TAD45/1500 | g=GF/GFS-WX360 | o=EL 354C | 
+109 | 9 | 9 | alternator | EL 354C | g=GF/GFS-WX360 | o=WD269TAD45/1500 | 
+109 | 9 | 10 | engine | WD269TAD48/1500 | g=GF/GFS-WX360 | o=EL 354C | 
+109 | 9 | 10 | alternator | EL 354C | g=GF/GFS-WX360 | o=WD269TAD48/1500 | 
+109 | 9 | 11 | engine | WD269TAD50/1500 | g=GF/GFS-WX400 | o=EL 354D | 
+109 | 9 | 11 | alternator | EL 354D | g=GF/GFS-WX400 | o=WD269TAD50/1500 | 
+109 | 9 | 12 | engine | WD269TAD56/1500 | g=GF/GFS-WX440 | o=EL 354ES | 
+109 | 9 | 12 | alternator | EL 354ES | g=GF/GFS-WX440 | o=WD269TAD56/1500 | 
+109 | 9 | 13 | engine | WD287TAD58/1500 | g=GF/GFS-WX480 | o=EL 354E | 
+109 | 9 | 13 | alternator | EL 354E | g=GF/GFS-WX480 | o=WD287TAD58/1500 | 
+109 | 9 | 14 | engine | WD287TAD61L/1500 | g=GF/GFS-WX500 | o=EL 354FS | 
+109 | 9 | 14 | alternator | EL 354FS | g=GF/GFS-WX500 | o=WD287TAD61L/1500 | 
+109 | 9 | 15 | engine | WX287TAD68/1500 | g=GF/GFS-WX536 | o=EL 354F | 
+109 | 9 | 15 | alternator | EL 354F | g=GF/GFS-WX536 | o=WX287TAD68/1500 | 
+109 | 9 | 16 | engine | WD164TAD43/1500 | g=GF/GFS-WX320 | o=EL 314G | 
+109 | 9 | 16 | alternator | EL 314G | g=GF/GFS-WX320 | o=WD164TAD43/1500 | 
+109 | 9 | 17 | engine | WD164TAD45/1500 | g=GF/GFS-WX360 | o=EL 354C | 
+109 | 9 | 17 | alternator | EL 354C | g=GF/GFS-WX360 | o=WD164TAD45/1500 | 
+109 | 9 | 18 | engine | WD180TAD61/1500 | g=GF/GFS-WX500 | o=EL 354FS | 
+109 | 9 | 18 | alternator | EL 354FS | g=GF/GFS-WX500 | o=WD180TAD61/1500 | 
+109 | 9 | 19 | engine | WD327TAD68/1500 | g=GF/GFS-WX536 | o=EL 354F | 
+109 | 9 | 19 | alternator | EL 354F | g=GF/GFS-WX536 | o=WD327TAD68/1500 | 
+109 | 9 | 20 | engine | WD327TAD73/1500 | g=GF/GFS-WX600 | o=EL 354H | 
+109 | 9 | 20 | alternator | EL 354H | g=GF/GFS-WX600 | o=WD327TAD73/1500 | 
+109 | 9 | 21 | engine | WD327TAD78/1500 | g=GF/GFS-WX640 | o=EL 404C | 
+109 | 9 | 21 | alternator | EL 404C | g=GF/GFS-WX640 | o=WD327TAD78/1500 | 
+109 | 9 | 22 | engine | WD327TAD82/1500 | g=GF/GFS-WX640 | o=EL 404C | 
+109 | 9 | 22 | alternator | EL 404C | g=GF/GFS-WX640 | o=WD327TAD82/1500 | 
+109 | 9 | 23 | engine | WD327TAD88/1500 | g=GF/GFS-WX728 | o=EL 404D | 
+109 | 9 | 23 | alternator | EL 404D | g=GF/GFS-WX728 | o=WD327TAD88/1500 | 
+109 | 9 | 24 | engine | WD327TAD100/1500 | g=GF/GFS-WX800 | o=EL 404E | 
+109 | 9 | 24 | alternator | EL 404E | g=GF/GFS-WX800 | o=WD327TAD100/1500 | 
+109 | 9 | 25 | engine | WD360TAD110/1500 | g=GF/GFS-WX904 | o=EL 404F | 
+109 | 9 | 25 | alternator | EL 404F | g=GF/GFS-WX904 | o=WD360TAD110/1500 | 
+109 | 9 | 26 | engine | WD360TAD120/1500 | g=GF/GFS-WX1000 | o=EL 404G | 
+109 | 9 | 26 | alternator | EL 404G | g=GF/GFS-WX1000 | o=WD360TAD120/1500 | 
+109 | 9 | 27 | engine | WJ43D6/1500 | g=GF/GFS-WX48 | o=EL 224E | 
+109 | 9 | 27 | alternator | EL 224E | g=GF/GFS-WX48 | o=WJ43D6/1500 | 
+109 | 9 | 28 | engine | WJ45TAD7/1500 | g=GF/GFS-WX58 | o=EL 224F | 
+109 | 9 | 28 | alternator | EL 224F | g=GF/GFS-WX58 | o=WJ45TAD7/1500 | 
+109 | 9 | 29 | engine | WJ65TD8/1500 | g=GF/GFS-WX68 | o=EL 224G | 
+109 | 9 | 29 | alternator | EL 224G | g=GF/GFS-WX68 | o=WJ65TD8/1500 | 
+109 | 9 | 30 | engine | WJ68TAD11/1500 | g=GF/GFS-WX80 | o=EL 274C | 
+109 | 9 | 30 | alternator | EL 274C | g=GF/GFS-WX80 | o=WJ68TAD11/1500 | 
+109 | 9 | 31 | engine | WJ78TAD17/1500 | g=GF/GFS-WX128 | o=EL 274F | 
+109 | 9 | 31 | alternator | EL 274F | g=GF/GFS-WX128 | o=WJ78TAD17/1500 | 
+109 | 9 | 32 | engine | WJ97TAD21/1500 | g=GF/GFS-WX160 | o=EL 274H | 
+109 | 9 | 32 | alternator | EL 274H | g=GF/GFS-WX160 | o=WJ97TAD21/1500 | 
+109 | 9 | 33 | engine | WJ97TAD24/1500 | g=GF/GFS-WX184 | o=EL 274J | 
+109 | 9 | 33 | alternator | EL 274J | g=GF/GFS-WX184 | o=WJ97TAD24/1500 | 
+109 | 9 | 34 | engine | WD129TAD23-10/1800 | g=GF/GFS-WX184 | o=EL 274J | 
+109 | 9 | 34 | alternator | EL 274J | g=GF/GFS-WX184 | o=WD129TAD23-10/1800 | 
+109 | 9 | 35 | engine | WD129TAD25-10/1800 | g=GF/GFS-WX200 | o=EL 274K | 
+109 | 9 | 35 | alternator | EL 274K | g=GF/GFS-WX200 | o=WD129TAD25-10/1800 | 
+109 | 9 | 36 | engine | WD135TAD28-10/1800 | g=GF/GFS-WX236 | o=EL 314D | 
+109 | 9 | 36 | alternator | EL 314D | g=GF/GFS-WX236 | o=WD135TAD28-10/1800 | 
+109 | 9 | 37 | engine | WD145TAD30-10/1800 | g=GF/GFS-WX260 | o=EL 314E | 
+109 | 9 | 37 | alternator | EL 314E | g=GF/GFS-WX260 | o=WD145TAD30-10/1800 | 
+109 | 9 | 38 | engine | WD145TAD33-10/1800 | g=GF/GFS-WX280 | o=EL 314FS | 
+109 | 9 | 38 | alternator | EL 314FS | g=GF/GFS-WX280 | o=WD145TAD33-10/1800 | 
+109 | 9 | 39 | engine | WD145TAD35-10/1800 | g=GF/GFS-WX280 | o=EL 314FS | 
+109 | 9 | 39 | alternator | EL 314FS | g=GF/GFS-WX280 | o=WD145TAD35-10/1800 | 
+109 | 9 | 40 | engine | WD269TAD38-10/1800 | g=GF/GFS-WX304 | o=EL 314F | 
+109 | 9 | 40 | alternator | EL 314F | g=GF/GFS-WX304 | o=WD269TAD38-10/1800 | 
+109 | 9 | 41 | engine | WD269TAD41-10/1800 | g=GF/GFS-WX360 | o=EL 354C | 
+109 | 9 | 41 | alternator | EL 354C | g=GF/GFS-WX360 | o=WD269TAD41-10/1800 | 
+109 | 9 | 42 | engine | WD269TAD43-10/1800 | g=GF/GFS-WX360 | o=EL 354C | 
+109 | 9 | 42 | alternator | EL 354C | g=GF/GFS-WX360 | o=WD269TAD43-10/1800 | 
+109 | 9 | 43 | engine | WD269TAD45-10/1800 | g=GF/GFS-WX400 | o=EL 354D | 
+109 | 9 | 43 | alternator | EL 354D | g=GF/GFS-WX400 | o=WD269TAD45-10/1800 | 
+109 | 9 | 44 | engine | WD269TAD48-10/1800 | g=GF/GFS-WX400 | o=EL 354D | 
+109 | 9 | 44 | alternator | EL 354D | g=GF/GFS-WX400 | o=WD269TAD48-10/1800 | 
+109 | 9 | 45 | engine | WD269TAD50-10/1800 | g=GF/GFS-WX440 | o=EL 354ES | 
+109 | 9 | 45 | alternator | EL 354ES | g=GF/GFS-WX440 | o=WD269TAD50-10/1800 | 
+109 | 9 | 46 | engine | WD269TAD56-10/1800 | g=GF/GFS-WX480 | o=EL 354E | 
+109 | 9 | 46 | alternator | EL 354E | g=GF/GFS-WX480 | o=WD269TAD56-10/1800 | 
+109 | 9 | 47 | engine | WD287TAD58-10/1800 | g=GF/GFS-WX500 | o=EL 354FS | 
+109 | 9 | 47 | alternator | EL 354FS | g=GF/GFS-WX500 | o=WD287TAD58-10/1800 | 
+109 | 9 | 48 | engine | WD287TAD61L-10/1800 | g=GF/GFS-WX536 | o=EL 354F | 
+109 | 9 | 48 | alternator | EL 354F | g=GF/GFS-WX536 | o=WD287TAD61L-10/1800 | 
+109 | 9 | 49 | engine | WD327TAD68-10/1800 | g=GF/GFS-WX550 | o=EL 354G | 
+109 | 9 | 49 | alternator | EL 354G | g=GF/GFS-WX550 | o=WD327TAD68-10/1800 | 
+109 | 9 | 50 | engine | WD327TAD78-10/1800 | g=GF/GFS-WX640 | o=EL 404C | 
+109 | 9 | 50 | alternator | EL 404C | g=GF/GFS-WX640 | o=WD327TAD78-10/1800 | 
+109 | 9 | 51 | engine | WD327TAD82-10/1800 | g=GF/GFS-WX640 | o=EL 404C | 
+109 | 9 | 51 | alternator | EL 404C | g=GF/GFS-WX640 | o=WD327TAD82-10/1800 | 
+110 | 11 | 0 | engine | YCD4H12D-20 | g=GF/GFS-YC12 | o=EL 164D | Yuchai
+110 | 11 | 0 | alternator | EL 164D | g=GF/GFS-YC12 | o=YCD4H12D-20 | 
+110 | 11 | 1 | engine | YC2108D | g=GF/GFS-YC16 | o=EL 184E | Yuchai
+110 | 11 | 1 | alternator | EL 184E | g=GF/GFS-YC16 | o=YC2108D | 
+110 | 11 | 2 | engine | YC2115D | g=GF/GFS-YC22 | o=EL 184F | Yuchai
+110 | 11 | 2 | alternator | EL 184F | g=GF/GFS-YC22 | o=YC2115D | 
+110 | 11 | 3 | engine | YC2115ZD | g=GF/GFS-YC25 | o=EL 184G | Yuchai
+110 | 11 | 3 | alternator | EL 184G | g=GF/GFS-YC25 | o=YC2115ZD | 
+110 | 11 | 4 | engine | YCD4M12D-50 | g=GF/GFS-YC32 | o=EL 184J | Yuchai
+110 | 11 | 4 | alternator | EL 184J | g=GF/GFS-YC32 | o=YCD4M12D-50 | 
+110 | 11 | 5 | engine | YC4D60-D21 | g=GF/GFS-YC34 | o=EL 224C | Yuchai
+110 | 11 | 5 | alternator | EL 224C | g=GF/GFS-YC34 | o=YC4D60-D21 | 
+110 | 11 | 6 | engine | YCD4J22D-65 | g=GF/GFS-YC40 | o=EL 224D | Yuchai
+110 | 11 | 6 | alternator | EL 224D | g=GF/GFS-YC40 | o=YCD4J22D-65 | 
+110 | 11 | 7 | engine | YC4D85Z-D20 | g=GF/GFS-YC48 | o=EL 224E | Yuchai
+110 | 11 | 7 | alternator | EL 224E | g=GF/GFS-YC48 | o=YC4D85Z-D20 | 
+110 | 11 | 8 | engine | YCD4Y22D-95 | g=GF/GFS-YC58 | o=EL 224F | Yuchai
+110 | 11 | 8 | alternator | EL 224F | g=GF/GFS-YC58 | o=YCD4Y22D-95 | 
+110 | 11 | 9 | engine | YCD4Y22D-110 | g=GF/GFS-YC68 | o=EL 224G | Yuchai
+110 | 11 | 9 | alternator | EL 224G | g=GF/GFS-YC68 | o=YCD4Y22D-110 | 
+110 | 11 | 10 | engine | YCD4Y32D-130 | g=GF/GFS-YC80 | o=EL 274C | Yuchai
+110 | 11 | 10 | alternator | EL 274C | g=GF/GFS-YC80 | o=YCD4Y32D-130 | 
+110 | 11 | 11 | engine | YC6B135Z-D20 | g=GF/GFS-YC80 | o=EL 274C | Yuchai
+110 | 11 | 11 | alternator | EL 274C | g=GF/GFS-YC80 | o=YC6B135Z-D20 | 
+110 | 11 | 12 | engine | YC6B155L-D21 | g=GF/GFS-YC92 | o=EL 274D | Yuchai
+110 | 11 | 12 | alternator | EL 274D | g=GF/GFS-YC92 | o=YC6B155L-D21 | 
+110 | 11 | 13 | engine | YC6B180L-D20 | g=GF/GFS-YC112 | o=EL 274E | Yuchai
+110 | 11 | 13 | alternator | EL 274E | g=GF/GFS-YC112 | o=YC6B180L-D20 | 
+110 | 11 | 14 | engine | YC6B205L-D20 | g=GF/GFS-YC128 | o=EL 274F | Yuchai
+110 | 11 | 14 | alternator | EL 274F | g=GF/GFS-YC128 | o=YC6B205L-D20 | 
+110 | 11 | 15 | engine | YC6A230L-D20 | g=GF/GFS-YC145.6 | o=EL 274G | Yuchai
+110 | 11 | 15 | alternator | EL 274G | g=GF/GFS-YC145.6 | o=YC6A230L-D20 | 
+110 | 11 | 16 | engine | YC6MK285L-D20 | g=GF/GFS-YC160 | o=EL 274H | Yuchai
+110 | 11 | 16 | alternator | EL 274H | g=GF/GFS-YC160 | o=YC6MK285L-D20 | 
+110 | 11 | 17 | engine | YC6MK350L-D20 | g=GF/GFS-YC200 | o=EL 274K | Yuchai
+110 | 11 | 17 | alternator | EL 274K | g=GF/GFS-YC200 | o=YC6MK350L-D20 | 
+110 | 11 | 18 | engine | YC6MK420L-D20 | g=GF/GFS-YC260 | o=EL 314E | Yuchai
+110 | 11 | 18 | alternator | EL 314E | g=GF/GFS-YC260 | o=YC6MK420L-D20 | 
+110 | 11 | 19 | engine | YC6MJ480L-D20 | g=GF/GFS-YC280 | o=EL 314FS | Yuchai
+110 | 11 | 19 | alternator | EL 314FS | g=GF/GFS-YC280 | o=YC6MJ480L-D20 | 
+110 | 11 | 20 | engine | YC6K500-D31 | g=GF/GFS-YC304 | o=EL 314F | Yuchai
+110 | 11 | 20 | alternator | EL 314F | g=GF/GFS-YC304 | o=YC6K500-D31 | 
+110 | 11 | 21 | engine | YC6K520-D30 | g=GF/GFS-YC320 | o=EL 314G | Yuchai
+110 | 11 | 21 | alternator | EL 314G | g=GF/GFS-YC320 | o=YC6K520-D30 | 
+110 | 11 | 22 | engine | YC6T600L-D22 | g=GF/GFS-YC360 | o=EL 354C | Yuchai
+110 | 11 | 22 | alternator | EL 354C | g=GF/GFS-YC360 | o=YC6T600L-D22 | 
+110 | 11 | 23 | engine | YC6T660L-D20 | g=GF/GFS-YC400 | o=EL 354D | Yuchai
+110 | 11 | 23 | alternator | EL 354D | g=GF/GFS-YC400 | o=YC6T660L-D20 | 
+110 | 11 | 24 | engine | YC6TD780L-D20 | g=GF/GFS-YC450 | o=EL 354E | Yuchai
+110 | 11 | 24 | alternator | EL 354E | g=GF/GFS-YC450 | o=YC6TD780L-D20 | 
+110 | 11 | 25 | engine | YC6TD840L-D20 | g=GF/GFS-YC500 | o=EL 354FS | Yuchai
+110 | 11 | 25 | alternator | EL 354FS | g=GF/GFS-YC500 | o=YC6TD840L-D20 | 
+110 | 11 | 26 | engine | YC6TD900-D31 | g=GF/GFS-YC550 | o=EL 354G | Yuchai
+110 | 11 | 26 | alternator | EL 354G | g=GF/GFS-YC550 | o=YC6TD900-D31 | 
+110 | 11 | 27 | engine | YC6TD1000-D31 | g=GF/GFS-YC600 | o=EL 354H | Yuchai
+110 | 11 | 27 | alternator | EL 354H | g=GF/GFS-YC600 | o=YC6TD1000-D31 | 
+110 | 11 | 28 | engine | YC6C1070L-D20 | g=GF/GFS-YC640 | o=EL 404C | Yuchai
+110 | 11 | 28 | alternator | EL 404C | g=GF/GFS-YC640 | o=YC6C1070L-D20 | 
+110 | 11 | 29 | engine | YC6C1220L-D20 | g=GF/GFS-YC728 | o=EL 404D | Yuchai
+110 | 11 | 29 | alternator | EL 404D | g=GF/GFS-YC728 | o=YC6C1220L-D20 | 
+110 | 11 | 30 | engine | YC6C1320L-D20 | g=GF/GFS-YC800 | o=EL 404E | Yuchai
+110 | 11 | 30 | alternator | EL 404E | g=GF/GFS-YC800 | o=YC6C1320L-D20 | 
+110 | 11 | 31 | engine | YC6C1520-D31 | g=GF/GFS-YC904 | o=EL 404F | Yuchai
+110 | 11 | 31 | alternator | EL 404F | g=GF/GFS-YC904 | o=YC6C1520-D31 | 
+110 | 11 | 32 | engine | 4D24G6 | g=GF/GFS-YC16 | o=EL 184E | Yuchai
+110 | 11 | 32 | alternator | EL 184E | g=GF/GFS-YC16 | o=4D24G6 | 
+110 | 11 | 33 | engine | 4D24G4/A | g=GF/GFS-YC16 | o=EL 184E | Yuchai
+110 | 11 | 33 | alternator | EL 184E | g=GF/GFS-YC16 | o=4D24G4/A | 
+110 | 11 | 34 | engine | 4D24G7 | g=GF/GFS-YC20 | o=EL 184F | Yuchai
+110 | 11 | 34 | alternator | EL 184F | g=GF/GFS-YC20 | o=4D24G7 | 
+110 | 11 | 35 | engine | 4D24G2/A | g=GF/GFS-YC20 | o=EL 184F | Yuchai
+110 | 11 | 35 | alternator | EL 184F | g=GF/GFS-YC20 | o=4D24G2/A | 
+110 | 11 | 36 | engine | 4D24TG2 | g=GF/GFS-YC25 | o=EL 184G | Yuchai
+110 | 11 | 36 | alternator | EL 184G | g=GF/GFS-YC25 | o=4D24TG2 | 
+110 | 11 | 37 | engine | 4D24TG2/A | g=GF/GFS-YC25 | o=EL 184G | Yuchai
+110 | 11 | 37 | alternator | EL 184G | g=GF/GFS-YC25 | o=4D24TG2/A | 
+110 | 11 | 38 | engine | 4D24TG0 | g=GF/GFS-YC30 | o=EL 184H | Yuchai
+110 | 11 | 38 | alternator | EL 184H | g=GF/GFS-YC30 | o=4D24TG0 | 
+110 | 11 | 39 | engine | 4D24TG0/A | g=GF/GFS-YC30 | o=EL 184H | Yuchai
+110 | 11 | 39 | alternator | EL 184H | g=GF/GFS-YC30 | o=4D24TG0/A | 
+110 | 11 | 40 | engine | YC4D105-D34 | g=GF/GFS-YC58 | o=EL 224F | Yuchai
+110 | 11 | 40 | alternator | EL 224F | g=GF/GFS-YC58 | o=YC4D105-D34 | 
+110 | 11 | 41 | engine | YC4A115-D30 | g=GF/GFS-YC68 | o=EL 224G | Yuchai
+110 | 11 | 41 | alternator | EL 224G | g=GF/GFS-YC68 | o=YC4A115-D30 | 
+110 | 11 | 42 | engine | YC4A140-D30 | g=GF/GFS-YC80 | o=EL 274C | Yuchai
+110 | 11 | 42 | alternator | EL 274C | g=GF/GFS-YC80 | o=YC4A140-D30 | 
+110 | 11 | 43 | engine | YC4A165-D30 | g=GF/GFS-YC96 | o=EL 274D | Yuchai
+110 | 11 | 43 | alternator | EL 274D | g=GF/GFS-YC96 | o=YC4A165-D30 | 
+110 | 11 | 44 | engine | YC4A190-D30 | g=GF/GFS-YC112 | o=EL 274E | Yuchai
+110 | 11 | 44 | alternator | EL 274E | g=GF/GFS-YC112 | o=YC4A190-D30 | 
+110 | 11 | 45 | engine | YC6A190-D30 | g=GF/GFS-YC112 | o=EL 274E | Yuchai
+110 | 11 | 45 | alternator | EL 274E | g=GF/GFS-YC112 | o=YC6A190-D30 | 
+110 | 11 | 46 | engine | YC6A205-D30 | g=GF/GFS-YC128 | o=EL 274F | Yuchai
+110 | 11 | 46 | alternator | EL 274F | g=GF/GFS-YC128 | o=YC6A205-D30 | 
+110 | 11 | 47 | engine | YC6A230-D30 | g=GF/GFS-YC140 | o=EL 274G | Yuchai
+110 | 11 | 47 | alternator | EL 274G | g=GF/GFS-YC140 | o=YC6A230-D30 | 
+110 | 11 | 48 | engine | YC6A275-D30 | g=GF/GFS-YC160 | o=EL 274H | Yuchai
+110 | 11 | 48 | alternator | EL 274H | g=GF/GFS-YC160 | o=YC6A275-D30 | 
+110 | 11 | 49 | engine | YC6MK350-D30 | g=GF/GFS-YC200 | o=EL 274K | Yuchai
+110 | 11 | 49 | alternator | EL 274K | g=GF/GFS-YC200 | o=YC6MK350-D30 | 
+110 | 11 | 50 | engine | YC6MK420-D30 | g=GF/GFS-YC250 | o=EL 314E | Yuchai
+110 | 11 | 50 | alternator | EL 314E | g=GF/GFS-YC250 | o=YC6MK420-D30 | 
+110 | 11 | 51 | engine | YC6T660-D31 | g=GF/GFS-YC400 | o=EL 354D | Yuchai
+110 | 11 | 51 | alternator | EL 354D | g=GF/GFS-YC400 | o=YC6T660-D31 | 
+110 | 11 | 52 | engine | YC6TD780-D31 | g=GF/GFS-YC440 | o=EL 354ES | Yuchai
+110 | 11 | 52 | alternator | EL 354ES | g=GF/GFS-YC440 | o=YC6TD780-D31 | 
+110 | 11 | 53 | engine | YC6TD840-D31 | g=GF/GFS-YC500 | o=EL 354FS | Yuchai
+110 | 11 | 53 | alternator | EL 354FS | g=GF/GFS-YC500 | o=YC6TD840-D31 | 
+110 | 11 | 54 | engine | YC6C1020-D31 | g=GF/GFS-YC600 | o=EL 354H | Yuchai
+110 | 11 | 54 | alternator | EL 354H | g=GF/GFS-YC600 | o=YC6C1020-D31 | 
+110 | 11 | 55 | engine | YC6C1070-D31 | g=GF/GFS-YC640 | o=EL 404C | Yuchai
+110 | 11 | 55 | alternator | EL 404C | g=GF/GFS-YC640 | o=YC6C1070-D31 | 
+110 | 11 | 56 | engine | YC6C1220-D31 | g=GF/GFS-YC728 | o=EL 404D | Yuchai
+110 | 11 | 56 | alternator | EL 404D | g=GF/GFS-YC728 | o=YC6C1220-D31 | 
+110 | 11 | 57 | engine | YC6C1320-D31 | g=GF/GFS-YC800 | o=EL 404E | Yuchai
+110 | 11 | 57 | alternator | EL 404E | g=GF/GFS-YC800 | o=YC6C1320-D31 | 
+110 | 11 | 58 | engine | YC12VC1680-D31 | g=GF/GFS-YC1000 | o=EL 404G | Yuchai
+110 | 11 | 58 | alternator | EL 404G | g=GF/GFS-YC1000 | o=YC12VC1680-D31 | 
+110 | 11 | 59 | engine | YC12VC2070-D31 | g=GF/GFS-YC1240 | o=EL 404I | Yuchai
+110 | 11 | 59 | alternator | EL 404I | g=GF/GFS-YC1240 | o=YC12VC2070-D31 | 
+111 | 12 | 0 | engine | 403A-15G1 | g=GFS-P14 | o=El 164C | Perkins
+111 | 12 | 0 | alternator | El 164C | g=GFS-P14 | o=403A-15G1 | 
+111 | 12 | 1 | engine | 403A-15G2 | g=GFS-P17 | o=EL 164D | Perkins
+111 | 12 | 1 | alternator | EL 164D | g=GFS-P17 | o=403A-15G2 | 
+111 | 12 | 2 | engine | 404A-22G1 | g=GFS-P22 | o=EL 184E | Perkins
+111 | 12 | 2 | alternator | EL 184E | g=GFS-P22 | o=404A-22G1 | 
+111 | 12 | 3 | engine | 403D-11G | g=GFS-P10 | o=EL 164B | Perkins
+111 | 12 | 3 | alternator | EL 164B | g=GFS-P10 | o=403D-11G | 
+111 | 12 | 4 | engine | 403D-15G | g=GFS-P14 | o=El 164C | Perkins
+111 | 12 | 4 | alternator | El 164C | g=GFS-P14 | o=403D-15G | 
+111 | 12 | 5 | engine | 404D-22G | g=GFS-P22 | o=EL 184E | Perkins
+111 | 12 | 5 | alternator | EL 184E | g=GFS-P22 | o=404D-22G | 
+111 | 12 | 6 | engine | 1104A-44TG1 | g=GFS-P72 | o=EL 224F | Perkins
+111 | 12 | 6 | alternator | EL 224F | g=GFS-P72 | o=1104A-44TG1 | 
+111 | 12 | 7 | engine | 1104A-44TG2 | g=GFS-P89 | o=EL 224G | Perkins
+111 | 12 | 7 | alternator | EL 224G | g=GFS-P89 | o=1104A-44TG2 | 
+111 | 12 | 8 | engine | 1104D-44TG2 | g=GFS-P67 | o=EL 224E | Perkins
+111 | 12 | 8 | alternator | EL 224E | g=GFS-P67 | o=1104D-44TG2 | 
+111 | 12 | 9 | engine | 1104C-44TAG1 | g=GFS-P89 | o=EL 224G | Perkins
+111 | 12 | 9 | alternator | EL 224G | g=GFS-P89 | o=1104C-44TAG1 | 
+111 | 12 | 10 | engine | 1104C-44TAG2 | g=GFS-P111 | o=EL 274C | Perkins
+111 | 12 | 10 | alternator | EL 274C | g=GFS-P111 | o=1104C-44TAG2 | 
+111 | 12 | 11 | engine | 1104D-E44TAG1 | g=GFS-P89 | o=EL 224G | Perkins
+111 | 12 | 11 | alternator | EL 224G | g=GFS-P89 | o=1104D-E44TAG1 | 
+111 | 12 | 12 | engine | 1104D-E44TAG2 | g=GFS-P111 | o=EL 274C | Perkins
+111 | 12 | 12 | alternator | EL 274C | g=GFS-P111 | o=1104D-E44TAG2 | 
+111 | 12 | 13 | engine | 1106A-70TG1 | g=GFS-P150 | o=EL 274E | Perkins
+111 | 12 | 13 | alternator | EL 274E | g=GFS-P150 | o=1106A-70TG1 | 
+111 | 12 | 14 | engine | 1106A-70TAG2 | g=GFS-P167 | o=EL 274F | Perkins
+111 | 12 | 14 | alternator | EL 274F | g=GFS-P167 | o=1106A-70TAG2 | 
+111 | 12 | 15 | engine | 1106A-70TAG3 | g=GFS-P200 | o=EL 274G | Perkins
+111 | 12 | 15 | alternator | EL 274G | g=GFS-P200 | o=1106A-70TAG3 | 
+111 | 12 | 16 | engine | 1106A-70TAG4 | g=GFS-P222 | o=EL 274H | Perkins
+111 | 12 | 16 | alternator | EL 274H | g=GFS-P222 | o=1106A-70TAG4 | 
+111 | 12 | 17 | engine | 1106D-E70TAG2 | g=GFS-P159 | o=EL 274E | Perkins
+111 | 12 | 17 | alternator | EL 274E | g=GFS-P159 | o=1106D-E70TAG2 | 
+111 | 12 | 18 | engine | 1106D-E70TAG3 | g=GFS-P167 | o=EL 274F | Perkins
+111 | 12 | 18 | alternator | EL 274F | g=GFS-P167 | o=1106D-E70TAG3 | 
+111 | 12 | 19 | engine | 1106D-E70TAG4 | g=GFS-P200 | o=EL 274G | Perkins
+111 | 12 | 19 | alternator | EL 274G | g=GFS-P200 | o=1106D-E70TAG4 | 
+111 | 12 | 20 | engine | 1103A-33G | g=GFS-P33 | o=EL 184G | Perkins
+111 | 12 | 20 | alternator | EL 184G | g=GFS-P33 | o=1103A-33G | 
+111 | 12 | 21 | engine | 1103A-33TG1 | g=GFS-P50 | o=EL 224C | Perkins
+111 | 12 | 21 | alternator | EL 224C | g=GFS-P50 | o=1103A-33TG1 | 
+111 | 12 | 22 | engine | 1103A-33TG2 | g=GFS-P67 | o=EL 224E | Perkins
+111 | 12 | 22 | alternator | EL 224E | g=GFS-P67 | o=1103A-33TG2 | 
+111 | 12 | 23 | engine | 1206A-E70TTAG1 | g=GFS-P222 | o=EL 274H | Perkins
+111 | 12 | 23 | alternator | EL 274H | g=GFS-P222 | o=1206A-E70TTAG1 | 
+111 | 12 | 24 | engine | 1206D-E70TTAG1 | g=GFS-P222 | o=EL 274H | Perkins
+111 | 12 | 24 | alternator | EL 274H | g=GFS-P222 | o=1206D-E70TTAG1 | 
+111 | 12 | 25 | engine | 1506A-E88TAG2 L | g=GFS-P256 | o=EL 274J | Perkins
+111 | 12 | 25 | alternator | EL 274J | g=GFS-P256 | o=1506A-E88TAG2 L | 
+111 | 12 | 26 | engine | 1206A-E70TTAG2 | g=GFS-P256 | o=EL 274J | Perkins
+111 | 12 | 26 | alternator | EL 274J | g=GFS-P256 | o=1206A-E70TTAG2 | 
+111 | 12 | 27 | engine | 1206D-E70TTAG2 | g=GFS-P256 | o=EL 274J | Perkins
+111 | 12 | 27 | alternator | EL 274J | g=GFS-P256 | o=1206D-E70TTAG2 | 
+111 | 12 | 28 | engine | 1506A-E88TAG3 L | g=GFS-P278 | o=EL 274K | Perkins
+111 | 12 | 28 | alternator | EL 274K | g=GFS-P278 | o=1506A-E88TAG3 L | 
+111 | 12 | 29 | engine | 1206A-E70TTAG3 | g=GFS-P278 | o=EL 274K | Perkins
+111 | 12 | 29 | alternator | EL 274K | g=GFS-P278 | o=1206A-E70TTAG3 | 
+111 | 12 | 30 | engine | 1206D-E70TTAG3 | g=GFS-P278 | o=EL 274K | Perkins
+111 | 12 | 30 | alternator | EL 274K | g=GFS-P278 | o=1206D-E70TTAG3 | 
+111 | 12 | 31 | engine | 1506A-E88TAG5 L | g=GFS-P333 | o=EL 314D | Perkins
+111 | 12 | 31 | alternator | EL 314D | g=GFS-P333 | o=1506A-E88TAG5 L | 
+111 | 12 | 32 | engine | 2206C-E13TAG2 L | g=GFS-P389 | o=EL 314FS | Perkins
+111 | 12 | 32 | alternator | EL 314FS | g=GFS-P389 | o=2206C-E13TAG2 L | 
+111 | 12 | 33 | engine | 2206C-E13TAG3 L | g=GFS-P444 | o=EL 314G | Perkins
+111 | 12 | 33 | alternator | EL 314G | g=GFS-P444 | o=2206C-E13TAG3 L | 
+111 | 12 | 34 | engine | 2506C-E15TAG1 L | g=GFS-P506 | o=EL 354C | Perkins
+111 | 12 | 34 | alternator | EL 354C | g=GFS-P506 | o=2506C-E15TAG1 L | 
+111 | 12 | 35 | engine | 2506C-E15TAG2 L | g=GFS-P556 | o=EL 354D | Perkins
+111 | 12 | 35 | alternator | EL 354D | g=GFS-P556 | o=2506C-E15TAG2 L | 
+111 | 12 | 36 | engine | 2806C-E18TAG1A L | g=GFS-P667 | o=EL 354E | Perkins
+111 | 12 | 36 | alternator | EL 354E | g=GFS-P667 | o=2806C-E18TAG1A L | 
+111 | 12 | 37 | engine | 2806A-E18TAG2 L | g=GFS-P722 | o=EL 354F | Perkins
+111 | 12 | 37 | alternator | EL 354F | g=GFS-P722 | o=2806A-E18TAG2 L | 
+111 | 12 | 38 | engine | 2206D-E13TAG3 L | g=GFS-P444 | o=EL 314G | Perkins
+111 | 12 | 38 | alternator | EL 314G | g=GFS-P444 | o=2206D-E13TAG3 L | 
+111 | 12 | 39 | engine | 2506D-E15TAG2 L | g=GFS-P556 | o=EL 354D | Perkins
+111 | 12 | 39 | alternator | EL 354D | g=GFS-P556 | o=2506D-E15TAG2 L | 
+111 | 12 | 40 | engine | 2806D-E18TAG1 L | g=GFS-P667 | o=EL 354E | Perkins
+111 | 12 | 40 | alternator | EL 354E | g=GFS-P667 | o=2806D-E18TAG1 L | 
+111 | 12 | 41 | engine | 4006-23TAG2A | g=GFS-P833 | o=EL 354H | Perkins
+111 | 12 | 41 | alternator | EL 354H | g=GFS-P833 | o=4006-23TAG2A | 
+111 | 12 | 42 | engine | 4006-23TAG3A | g=GFS-P889 | o=EL 404C | Perkins
+111 | 12 | 42 | alternator | EL 404C | g=GFS-P889 | o=4006-23TAG3A | 
+111 | 12 | 43 | engine | 4008TAG1A | g=GFS-P1000 | o=EL 404D | Perkins
+111 | 12 | 43 | alternator | EL 404D | g=GFS-P1000 | o=4008TAG1A | 
+111 | 12 | 44 | engine | 4008TAG2 | g=GFS-P1111 | o=EL 404E | Perkins
+111 | 12 | 44 | alternator | EL 404E | g=GFS-P1111 | o=4008TAG2 | 
+111 | 12 | 45 | engine | 4008-30TAG3 | g=GFS-P1250 | o=EL 404F | Perkins
+111 | 12 | 45 | alternator | EL 404F | g=GFS-P1250 | o=4008-30TAG3 | 
+111 | 12 | 46 | engine | 4012-46TWG2A | g=GFS-P1389 | o=EL 404G | Perkins
+111 | 12 | 46 | alternator | EL 404G | g=GFS-P1389 | o=4012-46TWG2A | 
+111 | 12 | 47 | engine | 4012-46TWG3A | g=GFS-P1500 | o=EL 404G | Perkins
+111 | 12 | 47 | alternator | EL 404G | g=GFS-P1500 | o=4012-46TWG3A | 
+111 | 12 | 48 | engine | 4012-46TAG2A | g=GFS-P1667 | o=EL 404I | Perkins
+111 | 12 | 48 | alternator | EL 404I | g=GFS-P1667 | o=4012-46TAG2A | 
+111 | 12 | 49 | engine | 4012-46TAG3A | g=GFS-P1900 | o=EL 504D | Perkins
+111 | 12 | 49 | alternator | EL 504D | g=GFS-P1900 | o=4012-46TAG3A | 
+111 | 12 | 50 | engine | 4016TAG1A | g=GFS-P2056 | o=EL 504E | Perkins
+111 | 12 | 50 | alternator | EL 504E | g=GFS-P2056 | o=4016TAG1A | 
+111 | 12 | 51 | engine | 4016TAG2A | g=GFS-P2222 | o=EL 504F | Perkins
+111 | 12 | 51 | alternator | EL 504F | g=GFS-P2222 | o=4016TAG2A | 
+111 | 12 | 52 | engine | 4016-61TRG2 | g=GFS-P2222 | o=EL 504F | Perkins
+111 | 12 | 52 | alternator | EL 504F | g=GFS-P2222 | o=4016-61TRG2 | 
+111 | 12 | 53 | engine | 4016-61TRG3 | g=GFS-P2500 | o=EL 504G | Perkins
+111 | 12 | 53 | alternator | EL 504G | g=GFS-P2500 | o=4016-61TRG3 | 
+112 | 14 | 0 | engine | MTA11-G2A | g=GF/GFS-C200 | o=EL 314C | Cummins
+112 | 14 | 0 | alternator | EL 314C | g=GF/GFS-C200 | o=MTA11-G2A | 
+112 | 14 | 1 | engine | MTAA11-G3 | g=GF/GFS-C250 | o=EL 314E | Cummins
+112 | 14 | 1 | alternator | EL 314E | g=GF/GFS-C250 | o=MTAA11-G3 | 
+112 | 14 | 2 | engine | MTA11-G2 | g=GF/GFS-C200 | o=EL 274K | Cummins
+112 | 14 | 2 | alternator | EL 274K | g=GF/GFS-C200 | o=MTA11-G2 | 
+112 | 14 | 3 | engine | NT855-GA | g=GF/GFS-C200I | o=EL 274K | Cummins
+112 | 14 | 3 | alternator | EL 274K | g=GF/GFS-C200I | o=NT855-GA | 
+112 | 14 | 4 | engine | NTA855-G1 | g=GF/GFS-C200 | o=EL 314C | Cummins
+112 | 14 | 4 | alternator | EL 314C | g=GF/GFS-C200 | o=NTA855-G1 | 
+112 | 14 | 5 | engine | NTA855-G1A | g=GF/GFS-C220 | o=EL 314D | Cummins
+112 | 14 | 5 | alternator | EL 314D | g=GF/GFS-C220 | o=NTA855-G1A | 
+112 | 14 | 6 | engine | NTA855-G1B | g=GF/GFS-C250 | o=EL 314E | Cummins
+112 | 14 | 6 | alternator | EL 314E | g=GF/GFS-C250 | o=NTA855-G1B | 
+112 | 14 | 7 | engine | NTA855-G2 | g=GF/GFS-C255 | o=EL 314E | Cummins
+112 | 14 | 7 | alternator | EL 314E | g=GF/GFS-C255 | o=NTA855-G2 | 
+112 | 14 | 8 | engine | NTA855-G2A | g=GF/GFS-C280 | o=EL 314FS | Cummins
+112 | 14 | 8 | alternator | EL 314FS | g=GF/GFS-C280 | o=NTA855-G2A | 
+112 | 14 | 9 | engine | QSNT-G3 | g=GF/GFS-C320 | o=EL 314G | Cummins
+112 | 14 | 9 | alternator | EL 314G | g=GF/GFS-C320 | o=QSNT-G3 | 
+112 | 14 | 10 | engine | NTA855-G4 | g=GF/GFS-C280 | o=EL 314FS | Cummins
+112 | 14 | 10 | alternator | EL 314FS | g=GF/GFS-C280 | o=NTA855-G4 | 
+112 | 14 | 11 | engine | NTAA855-G7 | g=GF/GFS-C300 | o=EL 314F | Cummins
+112 | 14 | 11 | alternator | EL 314F | g=GF/GFS-C300 | o=NTAA855-G7 | 
+112 | 14 | 12 | engine | NTAA855-G7A | g=GF/GFS-C320 | o=EL 314G | Cummins
+112 | 14 | 12 | alternator | EL 314G | g=GF/GFS-C320 | o=NTAA855-G7A | 
+112 | 14 | 13 | engine | KTA19-G2 | g=GF/GFS-C300 | o=EL 314F | Cummins
+112 | 14 | 13 | alternator | EL 314F | g=GF/GFS-C300 | o=KTA19-G2 | 
+112 | 14 | 14 | engine | KTA19-G3 | g=GF/GFS-C360 | o=EL 354C | Cummins
+112 | 14 | 14 | alternator | EL 354C | g=GF/GFS-C360 | o=KTA19-G3 | 
+112 | 14 | 15 | engine | KTA19-G3A | g=GF/GFS-C400 | o=EL 354D | Cummins
+112 | 14 | 15 | alternator | EL 354D | g=GF/GFS-C400 | o=KTA19-G3A | 
+112 | 14 | 16 | engine | KTA19-G4 | g=GF/GFS-C400 | o=EL 354D | Cummins
+112 | 14 | 16 | alternator | EL 354D | g=GF/GFS-C400 | o=KTA19-G4 | 
+112 | 14 | 17 | engine | KTAA19-G5 | g=GF/GFS-C420 | o=EL 354ES | Cummins
+112 | 14 | 17 | alternator | EL 354ES | g=GF/GFS-C420 | o=KTAA19-G5 | 
+112 | 14 | 18 | engine | KTAA19-G6 | g=GF/GFS-C460 | o=EL 354E | Cummins
+112 | 14 | 18 | alternator | EL 354E | g=GF/GFS-C460 | o=KTAA19-G6 | 
+112 | 14 | 19 | engine | KTAA19-G6A | g=GF/GFS-C494 | o=EL 354FS | Cummins
+112 | 14 | 19 | alternator | EL 354FS | g=GF/GFS-C494 | o=KTAA19-G6A | 
+112 | 14 | 20 | engine | KTA19-G8 | g=GF/GFS-C465 | o=EL 354E | Cummins
+112 | 14 | 20 | alternator | EL 354E | g=GF/GFS-C465 | o=KTA19-G8 | 
+112 | 14 | 21 | engine | QSK19-G4 | g=GF/GFS-C520 | o=EL 354F | Cummins
+112 | 14 | 21 | alternator | EL 354F | g=GF/GFS-C520 | o=QSK19-G4 | 
+112 | 14 | 22 | engine | KT38-G | g=GF/GFS-C500 | o=EL 354FS | Cummins
+112 | 14 | 22 | alternator | EL 354FS | g=GF/GFS-C500 | o=KT38-G | 
+112 | 14 | 23 | engine | KT38-GA | g=GF/GFS-C582 | o=EL 354H | Cummins
+112 | 14 | 23 | alternator | EL 354H | g=GF/GFS-C582 | o=KT38-GA | 
+112 | 14 | 24 | engine | KTA38-G1 | g=GF/GFS-C550 | o=EL 354G | Cummins
+112 | 14 | 24 | alternator | EL 354G | g=GF/GFS-C550 | o=KTA38-G1 | 
+112 | 14 | 25 | engine | KTA38-G2 | g=GF/GFS-C600 | o=EL 354H | Cummins
+112 | 14 | 25 | alternator | EL 354H | g=GF/GFS-C600 | o=KTA38-G2 | 
+112 | 14 | 26 | engine | KTA38-G2B | g=GF/GFS-C640 | o=EL 404C | Cummins
+112 | 14 | 26 | alternator | EL 404C | g=GF/GFS-C640 | o=KTA38-G2B | 
+112 | 14 | 27 | engine | KTA38-G2A | g=GF/GFS-C728 | o=EL 404D | Cummins
+112 | 14 | 27 | alternator | EL 404D | g=GF/GFS-C728 | o=KTA38-G2A | 
+112 | 14 | 28 | engine | KTA38-G5 | g=GF/GFS-C800 | o=EL 404E | Cummins
+112 | 14 | 28 | alternator | EL 404E | g=GF/GFS-C800 | o=KTA38-G5 | 
+112 | 14 | 29 | engine | KTA38-G9 | g=GF/GFS-C900 | o=EL 404F | Cummins
+112 | 14 | 29 | alternator | EL 404F | g=GF/GFS-C900 | o=KTA38-G9 | 
+112 | 14 | 30 | engine | QSK38-G5 | g=GF/GFS-C1000 | o=EL 404G | Cummins
+112 | 14 | 30 | alternator | EL 404G | g=GF/GFS-C1000 | o=QSK38-G5 | 
+112 | 14 | 31 | engine | KTA50-G3 | g=GF/GFS-C1000 | o=EL 404G | Cummins
+112 | 14 | 31 | alternator | EL 404G | g=GF/GFS-C1000 | o=KTA50-G3 | 
+112 | 14 | 32 | engine | KTA50-G8 | g=GF/GFS-C1100 | o=EL 404H | Cummins
+112 | 14 | 32 | alternator | EL 404H | g=GF/GFS-C1100 | o=KTA50-G8 | 
+112 | 14 | 33 | engine | KTA50-GS8 | g=GF/GFS-C1120 | o=EL 404I | Cummins
+112 | 14 | 33 | alternator | EL 404I | g=GF/GFS-C1120 | o=KTA50-GS8 | 
+113 | 16 | 0 | engine | 4B3.9-G11 | g=GFS-C20 | o=ELS 184E | Cummins
+113 | 16 | 0 | alternator | ELS 184E | g=GFS-C20 | o=4B3.9-G11 | 
+113 | 16 | 1 | engine | 4B3.9-G2 | g=GFS-C27 | o=ELS 184G | Cummins
+113 | 16 | 1 | alternator | ELS 184G | g=GFS-C27 | o=4B3.9-G2 | 
+113 | 16 | 2 | engine | 4B3.9-G12 | g=GFS-C28 | o=ELS 184G | Cummins
+113 | 16 | 2 | alternator | ELS 184G | g=GFS-C28 | o=4B3.9-G12 | 
+113 | 16 | 3 | engine | 4BT3.9-G2 | g=GFS-C35 | o=ELS 184J | Cummins
+113 | 16 | 3 | alternator | ELS 184J | g=GFS-C35 | o=4BT3.9-G2 | 
+113 | 16 | 4 | engine | 4BTA3.9-G2 | g=GFS-C53 | o=ELS 224E | Cummins
+113 | 16 | 4 | alternator | ELS 224E | g=GFS-C53 | o=4BTA3.9-G2 | 
+113 | 16 | 5 | engine | 4BTA3.9-G2 | g=GFS-C60 | o=ELS 224F | Cummins
+113 | 16 | 5 | alternator | ELS 224F | g=GFS-C60 | o=4BTA3.9-G2 | 
+113 | 16 | 6 | engine | 4BTA3.9-G11 | g=GFS-C72 | o=ELS 224G | Cummins
+113 | 16 | 6 | alternator | ELS 224G | g=GFS-C72 | o=4BTA3.9-G11 | 
+113 | 16 | 7 | engine | 6BT5.9-G2 | g=GFS-C90 | o=ELS 274C | Cummins
+113 | 16 | 7 | alternator | ELS 274C | g=GFS-C90 | o=6BT5.9-G2 | 
+113 | 16 | 8 | engine | 6BT5.9-G2 | g=GFS-C100 | o=ELS 274D | Cummins
+113 | 16 | 8 | alternator | ELS 274D | g=GFS-C100 | o=6BT5.9-G2 | 
+113 | 16 | 9 | engine | 6BTA5.9-G2 | g=GFS-C105 | o=ELS 274D | Cummins
+113 | 16 | 9 | alternator | ELS 274D | g=GFS-C105 | o=6BTA5.9-G2 | 
+113 | 16 | 10 | engine | 6BTAA5.9-G2 | g=GFS-C120 | o=ELS 274E | Cummins
+113 | 16 | 10 | alternator | ELS 274E | g=GFS-C120 | o=6BTAA5.9-G2 | 
+113 | 16 | 11 | engine | 6BTAA5.9-G12 | g=GFS-C135 | o=ELS 274F | Cummins
+113 | 16 | 11 | alternator | ELS 274F | g=GFS-C135 | o=6BTAA5.9-G12 | 
+113 | 16 | 12 | engine | 6CTA8.3-G2 | g=GFS-C150 | o=ELS 274G | Cummins
+113 | 16 | 12 | alternator | ELS 274G | g=GFS-C150 | o=6CTA8.3-G2 | 
+113 | 16 | 13 | engine | 6CTAA8.3-G2 | g=GFS-C170 | o=ELS 274H | Cummins
+113 | 16 | 13 | alternator | ELS 274H | g=GFS-C170 | o=6CTAA8.3-G2 | 
+113 | 16 | 14 | engine | 6LTAA8.9-G2 | g=GFS-C210 | o=ELS 274K | Cummins
+113 | 16 | 14 | alternator | ELS 274K | g=GFS-C210 | o=6LTAA8.9-G2 | 
+113 | 16 | 15 | engine | 6LTAA8.9-G3 | g=GFS-C220 | o=ELS 274K | Cummins
+113 | 16 | 15 | alternator | ELS 274K | g=GFS-C220 | o=6LTAA8.9-G3 | 
+113 | 16 | 16 | engine | 6LTAA9.5-G3 | g=GFS-C240 | o=ELS 314D | Cummins
+113 | 16 | 16 | alternator | ELS 314D | g=GFS-C240 | o=6LTAA9.5-G3 | 
+113 | 16 | 17 | engine | 6LTAA9.5-G1 | g=GFS-C260 | o=ELS 314D | Cummins
+113 | 16 | 17 | alternator | ELS 314D | g=GFS-C260 | o=6LTAA9.5-G1 | 
+113 | 16 | 18 | engine | 6ZTAA13-G3 | g=GFS-C306 | o=ELS 314FS | Cummins
+113 | 16 | 18 | alternator | ELS 314FS | g=GFS-C306 | o=6ZTAA13-G3 | 
+113 | 16 | 19 | engine | 6ZTAA13-G2 | g=GFS-C350 | o=ELS 314G | Cummins
+113 | 16 | 19 | alternator | ELS 314G | g=GFS-C350 | o=6ZTAA13-G2 | 
+113 | 16 | 20 | engine | 6ZTAA13-G4 | g=GFS-C350 | o=ELS 314G | Cummins
+113 | 16 | 20 | alternator | ELS 314G | g=GFS-C350 | o=6ZTAA13-G4 | 
+113 | 16 | 21 | engine | QSZ13-G2 | g=GFS-C350 | o=ELS 314G | Cummins
+113 | 16 | 21 | alternator | ELS 314G | g=GFS-C350 | o=QSZ13-G2 | 
+113 | 16 | 22 | engine | QSZ13-G3 | g=GFS-C400 | o=ELS 354C | Cummins
+113 | 16 | 22 | alternator | ELS 354C | g=GFS-C400 | o=QSZ13-G3 | 
+113 | 16 | 23 | engine | QSZ13-G5 | g=GFS-C390 | o=ELS 354C | Cummins
+113 | 16 | 23 | alternator | ELS 354C | g=GFS-C390 | o=QSZ13-G5 | 
+113 | 16 | 24 | engine | QSZ13-G6 | g=GFS-C320 | o=ELS 314F | Cummins
+113 | 16 | 24 | alternator | ELS 314F | g=GFS-C320 | o=QSZ13-G6 | 
+113 | 16 | 25 | engine | QSZ13-G7 | g=GFS-C350 | o=ELS 314G | Cummins
+113 | 16 | 25 | alternator | ELS 314G | g=GFS-C350 | o=QSZ13-G7 | 
+114 | 18 | 0 | engine | 2105D | g=GF/GFS-HC18 | o=EL 164D | Huachai
+114 | 18 | 0 | alternator | EL 164D | g=GF/GFS-HC18 | o=2105D | 
+114 | 18 | 1 | engine | 2110D | g=GF/GFS-HC26 | o=EL 184E | Huachai
+114 | 18 | 1 | alternator | EL 184E | g=GF/GFS-HC26 | o=2110D | 
+114 | 18 | 2 | engine | 490D | g=GF/GFS-HC31 | o=EL 184F | Huachai
+114 | 18 | 2 | alternator | EL 184F | g=GF/GFS-HC31 | o=490D | 
+114 | 18 | 3 | engine | 490ZD | g=GF/GFS-HC34 | o=EL 184G | Huachai
+114 | 18 | 3 | alternator | EL 184G | g=GF/GFS-HC34 | o=490ZD | 
+114 | 18 | 4 | engine | ZH4100D | g=GF/GFS-HC34 | o=EL 184G | Huachai
+114 | 18 | 4 | alternator | EL 184G | g=GF/GFS-HC34 | o=ZH4100D | 
+114 | 18 | 5 | engine | ZH4100ZD | g=GF/GFS-HC44 | o=EL 184J | Huachai
+114 | 18 | 5 | alternator | EL 184J | g=GF/GFS-HC44 | o=ZH4100ZD | 
+114 | 18 | 6 | engine | ZH4102D | g=GF/GFS-HC42 | o=EL 184H | Huachai
+114 | 18 | 6 | alternator | EL 184H | g=GF/GFS-HC42 | o=ZH4102D | 
+114 | 18 | 7 | engine | ZH4102ZD | g=GF/GFS-HC48 | o=EL 224C | Huachai
+114 | 18 | 7 | alternator | EL 224C | g=GF/GFS-HC48 | o=ZH4102ZD | 
+114 | 18 | 8 | engine | ZH4105D | g=GF/GFS-HC42 | o=EL 184H | Huachai
+114 | 18 | 8 | alternator | EL 184H | g=GF/GFS-HC42 | o=ZH4105D | 
+114 | 18 | 9 | engine | ZH4105ZD | g=GF/GFS-HC56 | o=EL 224D | Huachai
+114 | 18 | 9 | alternator | EL 224D | g=GF/GFS-HC56 | o=ZH4105ZD | 
+114 | 18 | 10 | engine | N4105D | g=GF/GFS-HC48 | o=EL 224C | Huachai
+114 | 18 | 10 | alternator | EL 224C | g=GF/GFS-HC48 | o=N4105D | 
+114 | 18 | 11 | engine | N4105ZD | g=GF/GFS-HC67 | o=EL 224E | Huachai
+114 | 18 | 11 | alternator | EL 224E | g=GF/GFS-HC67 | o=N4105ZD | 
+114 | 18 | 12 | engine | N4105ZLD | g=GF/GFS-HC67 | o=EL 224E | Huachai
+114 | 18 | 12 | alternator | EL 224E | g=GF/GFS-HC67 | o=N4105ZLD | 
+114 | 18 | 13 | engine | 4105D | g=GF/GFS-HC48 | o=EL 224C | Huachai
+114 | 18 | 13 | alternator | EL 224C | g=GF/GFS-HC48 | o=4105D | 
+114 | 18 | 14 | alternator | EL 224E | g=GF/GFS-HC67 | o= | 
+114 | 18 | 15 | engine | 4105AZLD | g=GF/GFS-HC81 | o=EL 224F | Huachai
+114 | 18 | 15 | alternator | EL 224F | g=GF/GFS-HC81 | o=4105AZLD | 
+114 | 18 | 16 | engine | 4100ZD | g=GF/GFS-HC81 | o=EL 224F | Huachai
+114 | 18 | 16 | alternator | EL 224F | g=GF/GFS-HC81 | o=4100ZD | 
+114 | 18 | 17 | engine | 4100AZLD | g=GF/GFS-HC94 | o=EL 224G | Huachai
+114 | 18 | 17 | alternator | EL 224G | g=GF/GFS-HC94 | o=4100AZLD | 
+114 | 18 | 18 | engine | 6105ZD | g=GF/GFS-HC94 | o=EL 224G | Huachai
+114 | 18 | 18 | alternator | EL 224G | g=GF/GFS-HC94 | o=6105ZD | 
+114 | 18 | 19 | engine | 6105AZD | g=GF/GFS-HC111 | o=EL 274C | Huachai
+114 | 18 | 19 | alternator | EL 274C | g=GF/GFS-HC111 | o=6105AZD | 
+114 | 18 | 20 | engine | 6105IZLD | g=GF/GFS-HC156 | o=EL 274E | Huachai
+114 | 18 | 20 | alternator | EL 274E | g=GF/GFS-HC156 | o=6105IZLD | 
+114 | 18 | 21 | engine | 6110ZLD | g=GF/GFS-HC178 | o=EL 274F | Huachai
+114 | 18 | 21 | alternator | EL 274F | g=GF/GFS-HC178 | o=6110ZLD | 
+114 | 18 | 22 | engine | 6113ZLD | g=GF/GFS-HC178 | o=EL 274F | Huachai
+114 | 18 | 22 | alternator | EL 274F | g=GF/GFS-HC178 | o=6113ZLD | 
+114 | 18 | 23 | engine | 6126ZLD-1 | g=GF/GFS-HC256 | o=EL 274J | Huachai
+114 | 18 | 23 | alternator | EL 274J | g=GF/GFS-HC256 | o=6126ZLD-1 | 
+114 | 18 | 24 | engine | 6126ZLD-2 | g=GF/GFS-HC278 | o=EL 274K | Huachai
+114 | 18 | 24 | alternator | EL 274K | g=GF/GFS-HC278 | o=6126ZLD-2 | 
+114 | 18 | 25 | engine | 618ZLD | g=GF/GFS-HC328 | o=EL 314D | Huachai
+114 | 18 | 25 | alternator | EL 314D | g=GF/GFS-HC328 | o=618ZLD | 
+114 | 18 | 26 | engine | 618AZLD | g=GF/GFS-HC361 | o=EL 314E | Huachai
+114 | 18 | 26 | alternator | EL 314E | g=GF/GFS-HC361 | o=618AZLD | 
+115 | 20 | 0 | engine | K4100D | g=GF/GFS-YX22 | o=EL 184F | 
+115 | 20 | 0 | alternator | EL 184F | g=GF/GFS-YX22 | o=K4100D | 
+115 | 20 | 1 | engine | K4100D | g=GF/GFS-YX25 | o=EL 184G | 
+115 | 20 | 1 | alternator | EL 184G | g=GF/GFS-YX25 | o=K4100D | 
+115 | 20 | 2 | engine | K4100ZD | g=GF/GFS-YX32 | o=EL 184J | 
+115 | 20 | 2 | alternator | EL 184J | g=GF/GFS-YX32 | o=K4100ZD | 
+115 | 20 | 3 | engine | K4102D | g=GF/GFS-YX30 | o=EL 184H | 
+115 | 20 | 3 | alternator | EL 184H | g=GF/GFS-YX30 | o=K4102D | 
+115 | 20 | 4 | engine | K4102ZD | g=GF/GFS-YX34 | o=EL 224C | 
+115 | 20 | 4 | alternator | EL 224C | g=GF/GFS-YX34 | o=K4102ZD | 
+115 | 20 | 5 | engine | ZH4105ZD | g=GF/GFS-YX40 | o=EL 224D | 
+115 | 20 | 5 | alternator | EL 224D | g=GF/GFS-YX40 | o=ZH4105ZD | 
+115 | 20 | 6 | engine | ZH4105ZLD | g=GF/GFS-YX48 | o=EL 224E | 
+115 | 20 | 6 | alternator | EL 224E | g=GF/GFS-YX48 | o=ZH4105ZLD | 
+115 | 20 | 7 | engine | R4105ZD | g=GF/GFS-YX50 | o=EL 224E | 
+115 | 20 | 7 | alternator | EL 224E | g=GF/GFS-YX50 | o=R4105ZD | 
+115 | 20 | 8 | engine | R4105ZLD | g=GF/GFS-YX58 | o=EL 224F | 
+115 | 20 | 8 | alternator | EL 224F | g=GF/GFS-YX58 | o=R4105ZLD | 
+115 | 20 | 9 | engine | R4105AZLD | g=GF/GFS-YX60 | o=EL 224F | 
+115 | 20 | 9 | alternator | EL 224F | g=GF/GFS-YX60 | o=R4105AZLD | 
+115 | 20 | 10 | engine | R4108IZLD | g=GF/GFS-YX68 | o=EL 224G | 
+115 | 20 | 10 | alternator | EL 224G | g=GF/GFS-YX68 | o=R4108IZLD | 
+115 | 20 | 11 | engine | R6105AZD | g=GF/GFS-YX68I | o=EL 224G | 
+115 | 20 | 11 | alternator | EL 224G | g=GF/GFS-YX68I | o=R6105AZD | 
+115 | 20 | 12 | engine | R6105AZLD | g=GF/GFS-YX96 | o=EL 274D | 
+115 | 20 | 12 | alternator | EL 274D | g=GF/GFS-YX96 | o=R6105AZLD | 
+115 | 20 | 13 | engine | R6105IZLD | g=GF/GFS-YX112 | o=EL 274E | 
+115 | 20 | 13 | alternator | EL 274E | g=GF/GFS-YX112 | o=R6105IZLD | 
+115 | 20 | 14 | engine | R6105IZLD | g=GF/GFS-YX120 | o=EL 274F | 
+115 | 20 | 14 | alternator | EL 274F | g=GF/GFS-YX120 | o=R6105IZLD | 
+115 | 20 | 15 | engine | R6108IZLD | g=GF/GFS-YX145 | o=EL 274G | 
+115 | 20 | 15 | alternator | EL 274G | g=GF/GFS-YX145 | o=R6108IZLD | 
+115 | 20 | 16 | engine | R6108ZLD | g=GF/GFS-YX145I | o=EL 274G | 
+115 | 20 | 16 | alternator | EL 274G | g=GF/GFS-YX145I | o=R6108ZLD | 
+115 | 20 | 17 | engine | R9768D | g=GF/GFS-YX184 | o=EL 274J | 
+115 | 20 | 17 | alternator | EL 274J | g=GF/GFS-YX184 | o=R9768D | 
+115 | 20 | 18 | engine | R9768D-1 | g=GF/GFS-YX200 | o=EL 274K | 
+115 | 20 | 18 | alternator | EL 274K | g=GF/GFS-YX200 | o=R9768D-1 | 
+115 | 20 | 19 | engine | R11D | g=GF/GFS-YX260 | o=EL 314E | 
+115 | 20 | 19 | alternator | EL 314E | g=GF/GFS-YX260 | o=R11D | 
+115 | 20 | 20 | engine | R11D-1 | g=GF/GFS-YX304 | o=EL 314F | 
+115 | 20 | 20 | alternator | EL 314F | g=GF/GFS-YX304 | o=R11D-1 | 
+116 | 21 | 0 | engine | K4100DS | g=GF/GFS-KF10 | o=EL 164C | Kofo
+116 | 21 | 0 | alternator | EL 164C | g=GF/GFS-KF10 | o=K4100DS | 
+116 | 21 | 1 | engine | K4100DS | g=GF/GFS-KF12 | o=EL 164D | Kofo
+116 | 21 | 1 | alternator | EL 164D | g=GF/GFS-KF12 | o=K4100DS | 
+116 | 21 | 2 | engine | K4100DS | g=GF/GFS-KF18 | o=EL 184E | Kofo
+116 | 21 | 2 | alternator | EL 184E | g=GF/GFS-KF18 | o=K4100DS | 
+116 | 21 | 3 | engine | K4100DS | g=GF/GFS-KF22 | o=EL 184F | Kofo
+116 | 21 | 3 | alternator | EL 184F | g=GF/GFS-KF22 | o=K4100DS | 
+116 | 21 | 4 | engine | K4100DS | g=GF/GFS-KF24 | o=EL 184G | Kofo
+116 | 21 | 4 | alternator | EL 184G | g=GF/GFS-KF24 | o=K4100DS | 
+116 | 21 | 5 | engine | K4100ZDS | g=GF/GFS-KF33 | o=EL 224C | Kofo
+116 | 21 | 5 | alternator | EL 224C | g=GF/GFS-KF33 | o=K4100ZDS | 
+116 | 21 | 6 | engine | K4102DS | g=GF/GFS-KF25 | o=EL 184G | Kofo
+116 | 21 | 6 | alternator | EL 184G | g=GF/GFS-KF25 | o=K4102DS | 
+116 | 21 | 7 | engine | N4105DS-38 | g=GF/GFS-KF30 | o=EL 184H | Kofo
+116 | 21 | 7 | alternator | EL 184H | g=GF/GFS-KF30 | o=N4105DS-38 | 
+116 | 21 | 8 | engine | N4105DS-46 | g=GF/GFS-KF36 | o=EL 224D | Kofo
+116 | 21 | 8 | alternator | EL 224D | g=GF/GFS-KF36 | o=N4105DS-46 | 
+116 | 21 | 9 | engine | N4105ZDS | g=GF/GFS-KF48 | o=EL 224E | Kofo
+116 | 21 | 9 | alternator | EL 224E | g=GF/GFS-KF48 | o=N4105ZDS | 
+116 | 21 | 10 | engine | N4105ZLDS | g=GF/GFS-KF58 | o=EL 224F | Kofo
+116 | 21 | 10 | alternator | EL 224F | g=GF/GFS-KF58 | o=N4105ZLDS | 
+116 | 21 | 11 | engine | R6105ZDS | g=GF/GFS-KF68 | o=EL 224G | Kofo
+116 | 21 | 11 | alternator | EL 224G | g=GF/GFS-KF68 | o=R6105ZDS | 
+116 | 21 | 12 | engine | R6105ZLDS | g=GF/GFS-KF80 | o=EL 274C | Kofo
+116 | 21 | 12 | alternator | EL 274C | g=GF/GFS-KF80 | o=R6105ZLDS | 
+116 | 21 | 13 | engine | R6105AZLDS | g=GF/GFS-KF96 | o=EL 274D | Kofo
+116 | 21 | 13 | alternator | EL 274D | g=GF/GFS-KF96 | o=R6105AZLDS | 
+116 | 21 | 14 | engine | R6105BZLDS | g=GF/GFS-KF100 | o=EL 274D | Kofo
+116 | 21 | 14 | alternator | EL 274D | g=GF/GFS-KF100 | o=R6105BZLDS | 
+116 | 21 | 15 | engine | R6110ZLDS | g=GF/GFS-KF128 | o=EL 274F | Kofo
+116 | 21 | 15 | alternator | EL 274F | g=GF/GFS-KF128 | o=R6110ZLDS | 
+116 | 21 | 16 | engine | 6126-68DE | g=GF/GFS-KF150 | o=EL 274H | Kofo
+116 | 21 | 16 | alternator | EL 274H | g=GF/GFS-KF150 | o=6126-68DE | 
+116 | 21 | 17 | engine | 6126-42DE | g=GF/GFS-KF184 | o=EL 274J | Kofo
+116 | 21 | 17 | alternator | EL 274J | g=GF/GFS-KF184 | o=6126-42DE | 
+116 | 21 | 18 | engine | 6126A-260DE | g=GF/GFS-KF200 | o=EL 274k | Kofo
+116 | 21 | 18 | alternator | EL 274k | g=GF/GFS-KF200 | o=6126A-260DE | 
+116 | 21 | 19 | engine | WP10-275DE | g=GF/GFS-KF220 | o=EL 314D | Kofo
+116 | 21 | 19 | alternator | EL 314D | g=GF/GFS-KF220 | o=WP10-275DE | 
+116 | 21 | 20 | engine | WT12D-308E | g=GF/GFS-KF236 | o=EL 314D | Kofo
+116 | 21 | 20 | alternator | EL 314D | g=GF/GFS-KF236 | o=WT12D-308E | 
+116 | 21 | 21 | engine | WT13-330DE | g=GF/GFS-KF260 | o=EL 314E | Kofo
+116 | 21 | 21 | alternator | EL 314E | g=GF/GFS-KF260 | o=WT13-330DE | 
+116 | 21 | 22 | engine | WT13-360DE | g=GF/GFS-KF280 | o=EL 314FS | Kofo
+116 | 21 | 22 | alternator | EL 314FS | g=GF/GFS-KF280 | o=WT13-360DE | 
+116 | 21 | 23 | engine | WT13A-390DE | g=GF/GFS-KF304 | o=EL 314F | Kofo
+116 | 21 | 23 | alternator | EL 314F | g=GF/GFS-KF304 | o=WT13A-390DE | 
+117 | 23 | 0 | engine | K4100D | g=GF/GFS-YX33 | o=ELS 184F | 
+117 | 23 | 0 | alternator | ELS 184F | g=GF/GFS-YX33 | o=K4100D | 
+117 | 23 | 1 | engine | K4100D | g=GF/GFS-YX39 | o=ELS 184G | 
+117 | 23 | 1 | alternator | ELS 184G | g=GF/GFS-YX39 | o=K4100D | 
+117 | 23 | 2 | engine | K4100ZD | g=GF/GFS-YX49 | o=ELS 184J | 
+117 | 23 | 2 | alternator | ELS 184J | g=GF/GFS-YX49 | o=K4100ZD | 
+117 | 23 | 3 | engine | K4102D | g=GF/GFS-YX46 | o=ELS 184H | 
+117 | 23 | 3 | alternator | ELS 184H | g=GF/GFS-YX46 | o=K4102D | 
+117 | 23 | 4 | engine | K4102ZD | g=GF/GFS-YX51 | o=ELS 224C | 
+117 | 23 | 4 | alternator | ELS 224C | g=GF/GFS-YX51 | o=K4102ZD | 
+117 | 23 | 5 | engine | ZH4105ZD | g=GF/GFS-YX61 | o=ELS 224D | 
+117 | 23 | 5 | alternator | ELS 224D | g=GF/GFS-YX61 | o=ZH4105ZD | 
+117 | 23 | 6 | engine | ZH4105ZLD | g=GF/GFS-YX73 | o=ELS 224E | 
+117 | 23 | 6 | alternator | ELS 224E | g=GF/GFS-YX73 | o=ZH4105ZLD | 
+117 | 23 | 7 | engine | R4105ZD | g=GF/GFS-YX73 | o=ELS 224E | 
+117 | 23 | 7 | alternator | ELS 224E | g=GF/GFS-YX73 | o=R4105ZD | 
+117 | 23 | 8 | engine | R4105ZLD | g=GF/GFS-YX89 | o=ELS 224F | 
+117 | 23 | 8 | alternator | ELS 224F | g=GF/GFS-YX89 | o=R4105ZLD | 
+117 | 23 | 9 | engine | R4105AZLD | g=GF/GFS-YX89 | o=ELS 224F | 
+117 | 23 | 9 | alternator | ELS 224F | g=GF/GFS-YX89 | o=R4105AZLD | 
+117 | 23 | 10 | engine | R4108IZLD | g=GF/GFS-YX104 | o=ELS 224G | 
+117 | 23 | 10 | alternator | ELS 224G | g=GF/GFS-YX104 | o=R4108IZLD | 
+117 | 23 | 11 | engine | R6105AZD | g=GF/GFS-YX104 | o=ELS 224G | 
+117 | 23 | 11 | alternator | ELS 224G | g=GF/GFS-YX104 | o=R6105AZD | 
+117 | 23 | 12 | engine | R6105AZLD | g=GF/GFS-YX148 | o=ELS 274D | 
+117 | 23 | 12 | alternator | ELS 274D | g=GF/GFS-YX148 | o=R6105AZLD | 
+117 | 23 | 13 | engine | R6105IZLD | g=GF/GFS-YX161 | o=ELS 274E | 
+117 | 23 | 13 | alternator | ELS 274E | g=GF/GFS-YX161 | o=R6105IZLD | 
+117 | 23 | 15 | engine | R6108IZLD | g=GF/GFS-YX194 | o=ELS 274F | 
+117 | 23 | 15 | alternator | ELS 274F | g=GF/GFS-YX194 | o=R6108IZLD | 
+117 | 23 | 16 | engine | R6108ZLD | g=GF/GFS-YX194 | o=ELS 274F | 
+117 | 23 | 16 | alternator | ELS 274F | g=GF/GFS-YX194 | o=R6108ZLD | 
+117 | 23 | 17 | engine | R9768D | g=GF/GFS-YX244 | o=ELS 274H | 
+117 | 23 | 17 | alternator | ELS 274H | g=GF/GFS-YX244 | o=R9768D | 
+117 | 23 | 18 | engine | R9768D-1 | g=GF/GFS-YX278 | o=ELS 274J | 
+117 | 23 | 18 | alternator | ELS 274J | g=GF/GFS-YX278 | o=R9768D-1 | 
+117 | 23 | 19 | engine | R11D | g=GF/GFS-YX361 | o=ELS 314D | 
+117 | 23 | 19 | alternator | ELS 314D | g=GF/GFS-YX361 | o=R11D | 
+117 | 23 | 20 | engine | R11D-1 | g=GF/GFS-YX464 | o=ELS 314F | 
+117 | 23 | 20 | alternator | ELS 314F | g=GF/GFS-YX464 | o=R11D-1 | 
+119 | 25 | 0 | engine | WD129TAD23/1500 | g=GF/GFS-WX184 | o=EL 274J | 
+119 | 25 | 0 | alternator | EL 274J | g=GF/GFS-WX184 | o=WD129TAD23/1500 | 
+119 | 25 | 1 | engine | WD129TAD25/1500 | g=GF/GFS-WX200 | o=EL 274K | 
+119 | 25 | 1 | alternator | EL 274K | g=GF/GFS-WX200 | o=WD129TAD25/1500 | 
+119 | 25 | 2 | engine | WD135TAD28/1500 | g=GF/GFS-WX236 | o=EL 314D | 
+119 | 25 | 2 | alternator | EL 314D | g=GF/GFS-WX236 | o=WD135TAD28/1500 | 
+119 | 25 | 3 | engine | WD145TAD30/1500 | g=GF/GFS-WX236 | o=EL 314D | 
+119 | 25 | 3 | alternator | EL 314D | g=GF/GFS-WX236 | o=WD145TAD30/1500 | 
+119 | 25 | 4 | engine | WD145TAD33L/1500 | g=GF/GFS-WX260 | o=EL 314E | 
+119 | 25 | 4 | alternator | EL 314E | g=GF/GFS-WX260 | o=WD145TAD33L/1500 | 
+119 | 25 | 5 | engine | WD145TAD35/1500 | g=GF/GFS-WX280 | o=EL 314FS | 
+119 | 25 | 5 | alternator | EL 314FS | g=GF/GFS-WX280 | o=WD145TAD35/1500 | 
+119 | 25 | 6 | engine | WD269TAD38/1500 | g=GF/GFS-WX304 | o=EL 314F | 
+119 | 25 | 6 | alternator | EL 314F | g=GF/GFS-WX304 | o=WD269TAD38/1500 | 
+119 | 25 | 7 | engine | WD269TAD41/1500 | g=GF/GFS-WX320 | o=EL 314G | 
+119 | 25 | 7 | alternator | EL 314G | g=GF/GFS-WX320 | o=WD269TAD41/1500 | 
+119 | 25 | 8 | engine | WD269TAD43/1500 | g=GF/GFS-WX360 | o=EL 354C | 
+119 | 25 | 8 | alternator | EL 354C | g=GF/GFS-WX360 | o=WD269TAD43/1500 | 
+119 | 25 | 9 | engine | WD269TAD45/1500 | g=GF/GFS-WX360 | o=EL 354C | 
+119 | 25 | 9 | alternator | EL 354C | g=GF/GFS-WX360 | o=WD269TAD45/1500 | 
+119 | 25 | 10 | engine | WD269TAD48/1500 | g=GF/GFS-WX360 | o=EL 354C | 
+119 | 25 | 10 | alternator | EL 354C | g=GF/GFS-WX360 | o=WD269TAD48/1500 | 
+119 | 25 | 11 | engine | WD269TAD50/1500 | g=GF/GFS-WX400 | o=EL 354D | 
+119 | 25 | 11 | alternator | EL 354D | g=GF/GFS-WX400 | o=WD269TAD50/1500 | 
+119 | 25 | 12 | engine | WD269TAD56/1500 | g=GF/GFS-WX440 | o=EL 354ES | 
+119 | 25 | 12 | alternator | EL 354ES | g=GF/GFS-WX440 | o=WD269TAD56/1500 | 
+119 | 25 | 13 | engine | WD287TAD58/1500 | g=GF/GFS-WX480 | o=EL 354E | 
+119 | 25 | 13 | alternator | EL 354E | g=GF/GFS-WX480 | o=WD287TAD58/1500 | 
+119 | 25 | 14 | engine | WD287TAD61L/1500 | g=GF/GFS-WX500 | o=EL 354FS | 
+119 | 25 | 14 | alternator | EL 354FS | g=GF/GFS-WX500 | o=WD287TAD61L/1500 | 
+119 | 25 | 15 | engine | WX287TAD68/1500 | g=GF/GFS-WX536 | o=EL 354F | 
+119 | 25 | 15 | alternator | EL 354F | g=GF/GFS-WX536 | o=WX287TAD68/1500 | 
+119 | 25 | 16 | engine | WD164TAD43/1500 | g=GF/GFS-WX320 | o=EL 314G | 
+119 | 25 | 16 | alternator | EL 314G | g=GF/GFS-WX320 | o=WD164TAD43/1500 | 
+119 | 25 | 17 | engine | WD164TAD45/1500 | g=GF/GFS-WX360 | o=EL 354C | 
+119 | 25 | 17 | alternator | EL 354C | g=GF/GFS-WX360 | o=WD164TAD45/1500 | 
+119 | 25 | 18 | engine | WD180TAD61/1500 | g=GF/GFS-WX500 | o=EL 354FS | 
+119 | 25 | 18 | alternator | EL 354FS | g=GF/GFS-WX500 | o=WD180TAD61/1500 | 
+119 | 25 | 19 | engine | WD327TAD68/1500 | g=GF/GFS-WX536 | o=EL 354F | 
+119 | 25 | 19 | alternator | EL 354F | g=GF/GFS-WX536 | o=WD327TAD68/1500 | 
+119 | 25 | 20 | engine | WD327TAD73/1500 | g=GF/GFS-WX600 | o=EL 354H | 
+119 | 25 | 20 | alternator | EL 354H | g=GF/GFS-WX600 | o=WD327TAD73/1500 | 
+119 | 25 | 21 | engine | WD327TAD78/1500 | g=GF/GFS-WX640 | o=EL 404C | 
+119 | 25 | 21 | alternator | EL 404C | g=GF/GFS-WX640 | o=WD327TAD78/1500 | 
+119 | 25 | 22 | engine | WD327TAD82/1500 | g=GF/GFS-WX640 | o=EL 404C | 
+119 | 25 | 22 | alternator | EL 404C | g=GF/GFS-WX640 | o=WD327TAD82/1500 | 
+119 | 25 | 23 | engine | WD327TAD88/1500 | g=GF/GFS-WX728 | o=EL 404D | 
+119 | 25 | 23 | alternator | EL 404D | g=GF/GFS-WX728 | o=WD327TAD88/1500 | 
+119 | 25 | 24 | engine | WD327TAD100/1500 | g=GF/GFS-WX800 | o=EL 404E | 
+119 | 25 | 24 | alternator | EL 404E | g=GF/GFS-WX800 | o=WD327TAD100/1500 | 
+119 | 25 | 25 | engine | WD360TAD110/1500 | g=GF/GFS-WX904 | o=EL 404F | 
+119 | 25 | 25 | alternator | EL 404F | g=GF/GFS-WX904 | o=WD360TAD110/1500 | 
+119 | 25 | 26 | engine | WD360TAD120/1500 | g=GF/GFS-WX1000 | o=EL 404G | 
+119 | 25 | 26 | alternator | EL 404G | g=GF/GFS-WX1000 | o=WD360TAD120/1500 | 
+119 | 25 | 27 | engine | WJ43D6/1500 | g=GF/GFS-WX48 | o=EL 224E | 
+119 | 25 | 27 | alternator | EL 224E | g=GF/GFS-WX48 | o=WJ43D6/1500 | 
+119 | 25 | 28 | engine | WJ45TAD7/1500 | g=GF/GFS-WX58 | o=EL 224F | 
+119 | 25 | 28 | alternator | EL 224F | g=GF/GFS-WX58 | o=WJ45TAD7/1500 | 
+119 | 25 | 29 | engine | WJ65TD8/1500 | g=GF/GFS-WX68 | o=EL 224G | 
+119 | 25 | 29 | alternator | EL 224G | g=GF/GFS-WX68 | o=WJ65TD8/1500 | 
+119 | 25 | 30 | engine | WJ68TAD11/1500 | g=GF/GFS-WX80 | o=EL 274C | 
+119 | 25 | 30 | alternator | EL 274C | g=GF/GFS-WX80 | o=WJ68TAD11/1500 | 
+119 | 25 | 31 | engine | WJ78TAD17/1500 | g=GF/GFS-WX128 | o=EL 274F | 
+119 | 25 | 31 | alternator | EL 274F | g=GF/GFS-WX128 | o=WJ78TAD17/1500 | 
+119 | 25 | 32 | engine | WJ97TAD21/1500 | g=GF/GFS-WX160 | o=EL 274H | 
+119 | 25 | 32 | alternator | EL 274H | g=GF/GFS-WX160 | o=WJ97TAD21/1500 | 
+119 | 25 | 33 | engine | WJ97TAD24/1500 | g=GF/GFS-WX184 | o=EL 274J | 
+119 | 25 | 33 | alternator | EL 274J | g=GF/GFS-WX184 | o=WJ97TAD24/1500 | 
+119 | 25 | 34 | engine | WD129TAD23-10/1800 | g=GF/GFS-WX184 | o=EL 274J | 
+119 | 25 | 34 | alternator | EL 274J | g=GF/GFS-WX184 | o=WD129TAD23-10/1800 | 
+119 | 25 | 35 | engine | WD129TAD25-10/1800 | g=GF/GFS-WX200 | o=EL 274K | 
+119 | 25 | 35 | alternator | EL 274K | g=GF/GFS-WX200 | o=WD129TAD25-10/1800 | 
+119 | 25 | 36 | engine | WD135TAD28-10/1800 | g=GF/GFS-WX236 | o=EL 314D | 
+119 | 25 | 36 | alternator | EL 314D | g=GF/GFS-WX236 | o=WD135TAD28-10/1800 | 
+119 | 25 | 37 | engine | WD145TAD30-10/1800 | g=GF/GFS-WX260 | o=EL 314E | 
+119 | 25 | 37 | alternator | EL 314E | g=GF/GFS-WX260 | o=WD145TAD30-10/1800 | 
+119 | 25 | 38 | engine | WD145TAD33-10/1800 | g=GF/GFS-WX280 | o=EL 314FS | 
+119 | 25 | 38 | alternator | EL 314FS | g=GF/GFS-WX280 | o=WD145TAD33-10/1800 | 
+119 | 25 | 39 | engine | WD145TAD35-10/1800 | g=GF/GFS-WX280 | o=EL 314FS | 
+119 | 25 | 39 | alternator | EL 314FS | g=GF/GFS-WX280 | o=WD145TAD35-10/1800 | 
+119 | 25 | 40 | engine | WD269TAD38-10/1800 | g=GF/GFS-WX304 | o=EL 314F | 
+119 | 25 | 40 | alternator | EL 314F | g=GF/GFS-WX304 | o=WD269TAD38-10/1800 | 
+119 | 25 | 41 | engine | WD269TAD41-10/1800 | g=GF/GFS-WX360 | o=EL 354C | 
+119 | 25 | 41 | alternator | EL 354C | g=GF/GFS-WX360 | o=WD269TAD41-10/1800 | 
+119 | 25 | 42 | engine | WD269TAD43-10/1800 | g=GF/GFS-WX360 | o=EL 354C | 
+119 | 25 | 42 | alternator | EL 354C | g=GF/GFS-WX360 | o=WD269TAD43-10/1800 | 
+119 | 25 | 43 | engine | WD269TAD45-10/1800 | g=GF/GFS-WX400 | o=EL 354D | 
+119 | 25 | 43 | alternator | EL 354D | g=GF/GFS-WX400 | o=WD269TAD45-10/1800 | 
+119 | 25 | 44 | engine | WD269TAD48-10/1800 | g=GF/GFS-WX400 | o=EL 354D | 
+119 | 25 | 44 | alternator | EL 354D | g=GF/GFS-WX400 | o=WD269TAD48-10/1800 | 
+119 | 25 | 45 | engine | WD269TAD50-10/1800 | g=GF/GFS-WX440 | o=EL 354ES | 
+119 | 25 | 45 | alternator | EL 354ES | g=GF/GFS-WX440 | o=WD269TAD50-10/1800 | 
+119 | 25 | 46 | engine | WD269TAD56-10/1800 | g=GF/GFS-WX480 | o=EL 354E | 
+119 | 25 | 46 | alternator | EL 354E | g=GF/GFS-WX480 | o=WD269TAD56-10/1800 | 
+119 | 25 | 47 | engine | WD287TAD58-10/1800 | g=GF/GFS-WX500 | o=EL 354FS | 
+119 | 25 | 47 | alternator | EL 354FS | g=GF/GFS-WX500 | o=WD287TAD58-10/1800 | 
+119 | 25 | 48 | engine | WD287TAD61L-10/1800 | g=GF/GFS-WX536 | o=EL 354F | 
+119 | 25 | 48 | alternator | EL 354F | g=GF/GFS-WX536 | o=WD287TAD61L-10/1800 | 
+119 | 25 | 49 | engine | WD327TAD68-10/1800 | g=GF/GFS-WX550 | o=EL 354G | 
+119 | 25 | 49 | alternator | EL 354G | g=GF/GFS-WX550 | o=WD327TAD68-10/1800 | 
+119 | 25 | 50 | engine | WD327TAD78-10/1800 | g=GF/GFS-WX640 | o=EL 404C | 
+119 | 25 | 50 | alternator | EL 404C | g=GF/GFS-WX640 | o=WD327TAD78-10/1800 | 
+119 | 25 | 51 | engine | WD327TAD82-10/1800 | g=GF/GFS-WX640 | o=EL 404C | 
+119 | 25 | 51 | alternator | EL 404C | g=GF/GFS-WX640 | o=WD327TAD82-10/1800 | 
+120 | 26 | 0 | engine | YCD4H12D-20 | g=GF/GFS-YC12 | o=EL 164D | Yuchai
+120 | 26 | 0 | alternator | EL 164D | g=GF/GFS-YC12 | o=YCD4H12D-20 | 
+120 | 26 | 1 | engine | YC2108D | g=GF/GFS-YC16 | o=EL 184E | Yuchai
+120 | 26 | 1 | alternator | EL 184E | g=GF/GFS-YC16 | o=YC2108D | 
+120 | 26 | 2 | engine | YC2115D | g=GF/GFS-YC22 | o=EL 184F | Yuchai
+120 | 26 | 2 | alternator | EL 184F | g=GF/GFS-YC22 | o=YC2115D | 
+120 | 26 | 3 | engine | YC2115ZD | g=GF/GFS-YC25 | o=EL 184G | Yuchai
+120 | 26 | 3 | alternator | EL 184G | g=GF/GFS-YC25 | o=YC2115ZD | 
+120 | 26 | 4 | engine | YCD4M12D-50 | g=GF/GFS-YC32 | o=EL 184J | Yuchai
+120 | 26 | 4 | alternator | EL 184J | g=GF/GFS-YC32 | o=YCD4M12D-50 | 
+120 | 26 | 5 | engine | YC4D60-D21 | g=GF/GFS-YC34 | o=EL 224C | Yuchai
+120 | 26 | 5 | alternator | EL 224C | g=GF/GFS-YC34 | o=YC4D60-D21 | 
+120 | 26 | 6 | engine | YCD4J22D-65 | g=GF/GFS-YC40 | o=EL 224D | Yuchai
+120 | 26 | 6 | alternator | EL 224D | g=GF/GFS-YC40 | o=YCD4J22D-65 | 
+120 | 26 | 7 | engine | YC4D85Z-D20 | g=GF/GFS-YC48 | o=EL 224E | Yuchai
+120 | 26 | 7 | alternator | EL 224E | g=GF/GFS-YC48 | o=YC4D85Z-D20 | 
+120 | 26 | 8 | engine | YCD4Y22D-95 | g=GF/GFS-YC58 | o=EL 224F | Yuchai
+120 | 26 | 8 | alternator | EL 224F | g=GF/GFS-YC58 | o=YCD4Y22D-95 | 
+120 | 26 | 9 | engine | YCD4Y22D-110 | g=GF/GFS-YC68 | o=EL 224G | Yuchai
+120 | 26 | 9 | alternator | EL 224G | g=GF/GFS-YC68 | o=YCD4Y22D-110 | 
+120 | 26 | 10 | engine | YCD4Y32D-130 | g=GF/GFS-YC80 | o=EL 274C | Yuchai
+120 | 26 | 10 | alternator | EL 274C | g=GF/GFS-YC80 | o=YCD4Y32D-130 | 
+120 | 26 | 11 | engine | YC6B135Z-D20 | g=GF/GFS-YC80 | o=EL 274C | Yuchai
+120 | 26 | 11 | alternator | EL 274C | g=GF/GFS-YC80 | o=YC6B135Z-D20 | 
+120 | 26 | 12 | engine | YC6B155L-D21 | g=GF/GFS-YC92 | o=EL 274D | Yuchai
+120 | 26 | 12 | alternator | EL 274D | g=GF/GFS-YC92 | o=YC6B155L-D21 | 
+120 | 26 | 13 | engine | YC6B180L-D20 | g=GF/GFS-YC112 | o=EL 274E | Yuchai
+120 | 26 | 13 | alternator | EL 274E | g=GF/GFS-YC112 | o=YC6B180L-D20 | 
+120 | 26 | 14 | engine | YC6B205L-D20 | g=GF/GFS-YC128 | o=EL 274F | Yuchai
+120 | 26 | 14 | alternator | EL 274F | g=GF/GFS-YC128 | o=YC6B205L-D20 | 
+120 | 26 | 15 | engine | YC6A230L-D20 | g=GF/GFS-YC145.6 | o=EL 274G | Yuchai
+120 | 26 | 15 | alternator | EL 274G | g=GF/GFS-YC145.6 | o=YC6A230L-D20 | 
+120 | 26 | 16 | engine | YC6MK285L-D20 | g=GF/GFS-YC160 | o=EL 274H | Yuchai
+120 | 26 | 16 | alternator | EL 274H | g=GF/GFS-YC160 | o=YC6MK285L-D20 | 
+120 | 26 | 17 | engine | YC6MK350L-D20 | g=GF/GFS-YC200 | o=EL 274K | Yuchai
+120 | 26 | 17 | alternator | EL 274K | g=GF/GFS-YC200 | o=YC6MK350L-D20 | 
+120 | 26 | 18 | engine | YC6MK420L-D20 | g=GF/GFS-YC260 | o=EL 314E | Yuchai
+120 | 26 | 18 | alternator | EL 314E | g=GF/GFS-YC260 | o=YC6MK420L-D20 | 
+120 | 26 | 19 | engine | YC6MJ480L-D20 | g=GF/GFS-YC280 | o=EL 314FS | Yuchai
+120 | 26 | 19 | alternator | EL 314FS | g=GF/GFS-YC280 | o=YC6MJ480L-D20 | 
+120 | 26 | 20 | engine | YC6K500-D31 | g=GF/GFS-YC304 | o=EL 314F | Yuchai
+120 | 26 | 20 | alternator | EL 314F | g=GF/GFS-YC304 | o=YC6K500-D31 | 
+120 | 26 | 21 | engine | YC6K520-D30 | g=GF/GFS-YC320 | o=EL 314G | Yuchai
+120 | 26 | 21 | alternator | EL 314G | g=GF/GFS-YC320 | o=YC6K520-D30 | 
+120 | 26 | 22 | engine | YC6T600L-D22 | g=GF/GFS-YC360 | o=EL 354C | Yuchai
+120 | 26 | 22 | alternator | EL 354C | g=GF/GFS-YC360 | o=YC6T600L-D22 | 
+120 | 26 | 23 | engine | YC6T660L-D20 | g=GF/GFS-YC400 | o=EL 354D | Yuchai
+120 | 26 | 23 | alternator | EL 354D | g=GF/GFS-YC400 | o=YC6T660L-D20 | 
+120 | 26 | 24 | engine | YC6TD780L-D20 | g=GF/GFS-YC450 | o=EL 354E | Yuchai
+120 | 26 | 24 | alternator | EL 354E | g=GF/GFS-YC450 | o=YC6TD780L-D20 | 
+120 | 26 | 25 | engine | YC6TD840L-D20 | g=GF/GFS-YC500 | o=EL 354FS | Yuchai
+120 | 26 | 25 | alternator | EL 354FS | g=GF/GFS-YC500 | o=YC6TD840L-D20 | 
+120 | 26 | 26 | engine | YC6TD900-D31 | g=GF/GFS-YC550 | o=EL 354G | Yuchai
+120 | 26 | 26 | alternator | EL 354G | g=GF/GFS-YC550 | o=YC6TD900-D31 | 
+120 | 26 | 27 | engine | YC6TD1000-D31 | g=GF/GFS-YC600 | o=EL 354H | Yuchai
+120 | 26 | 27 | alternator | EL 354H | g=GF/GFS-YC600 | o=YC6TD1000-D31 | 
+120 | 26 | 28 | engine | YC6C1070L-D20 | g=GF/GFS-YC640 | o=EL 404C | Yuchai
+120 | 26 | 28 | alternator | EL 404C | g=GF/GFS-YC640 | o=YC6C1070L-D20 | 
+120 | 26 | 29 | engine | YC6C1220L-D20 | g=GF/GFS-YC728 | o=EL 404D | Yuchai
+120 | 26 | 29 | alternator | EL 404D | g=GF/GFS-YC728 | o=YC6C1220L-D20 | 
+120 | 26 | 30 | engine | YC6C1320L-D20 | g=GF/GFS-YC800 | o=EL 404E | Yuchai
+120 | 26 | 30 | alternator | EL 404E | g=GF/GFS-YC800 | o=YC6C1320L-D20 | 
+120 | 26 | 31 | engine | YC6C1520-D31 | g=GF/GFS-YC904 | o=EL 404F | Yuchai
+120 | 26 | 31 | alternator | EL 404F | g=GF/GFS-YC904 | o=YC6C1520-D31 | 
+120 | 26 | 32 | engine | 4D24G6 | g=GF/GFS-YC16 | o=EL 184E | Yuchai
+120 | 26 | 32 | alternator | EL 184E | g=GF/GFS-YC16 | o=4D24G6 | 
+120 | 26 | 33 | engine | 4D24G4/A | g=GF/GFS-YC16 | o=EL 184E | Yuchai
+120 | 26 | 33 | alternator | EL 184E | g=GF/GFS-YC16 | o=4D24G4/A | 
+120 | 26 | 34 | engine | 4D24G7 | g=GF/GFS-YC20 | o=EL 184F | Yuchai
+120 | 26 | 34 | alternator | EL 184F | g=GF/GFS-YC20 | o=4D24G7 | 
+120 | 26 | 35 | engine | 4D24G2/A | g=GF/GFS-YC20 | o=EL 184F | Yuchai
+120 | 26 | 35 | alternator | EL 184F | g=GF/GFS-YC20 | o=4D24G2/A | 
+120 | 26 | 36 | engine | 4D24TG2 | g=GF/GFS-YC25 | o=EL 184G | Yuchai
+120 | 26 | 36 | alternator | EL 184G | g=GF/GFS-YC25 | o=4D24TG2 | 
+120 | 26 | 37 | engine | 4D24TG2/A | g=GF/GFS-YC25 | o=EL 184G | Yuchai
+120 | 26 | 37 | alternator | EL 184G | g=GF/GFS-YC25 | o=4D24TG2/A | 
+120 | 26 | 38 | engine | 4D24TG0 | g=GF/GFS-YC30 | o=EL 184H | Yuchai
+120 | 26 | 38 | alternator | EL 184H | g=GF/GFS-YC30 | o=4D24TG0 | 
+120 | 26 | 39 | engine | 4D24TG0/A | g=GF/GFS-YC30 | o=EL 184H | Yuchai
+120 | 26 | 39 | alternator | EL 184H | g=GF/GFS-YC30 | o=4D24TG0/A | 
+120 | 26 | 40 | engine | YC4D105-D34 | g=GF/GFS-YC58 | o=EL 224F | Yuchai
+120 | 26 | 40 | alternator | EL 224F | g=GF/GFS-YC58 | o=YC4D105-D34 | 
+120 | 26 | 41 | engine | YC4A115-D30 | g=GF/GFS-YC68 | o=EL 224G | Yuchai
+120 | 26 | 41 | alternator | EL 224G | g=GF/GFS-YC68 | o=YC4A115-D30 | 
+120 | 26 | 42 | engine | YC4A140-D30 | g=GF/GFS-YC80 | o=EL 274C | Yuchai
+120 | 26 | 42 | alternator | EL 274C | g=GF/GFS-YC80 | o=YC4A140-D30 | 
+120 | 26 | 43 | engine | YC4A165-D30 | g=GF/GFS-YC96 | o=EL 274D | Yuchai
+120 | 26 | 43 | alternator | EL 274D | g=GF/GFS-YC96 | o=YC4A165-D30 | 
+120 | 26 | 44 | engine | YC4A190-D30 | g=GF/GFS-YC112 | o=EL 274E | Yuchai
+120 | 26 | 44 | alternator | EL 274E | g=GF/GFS-YC112 | o=YC4A190-D30 | 
+120 | 26 | 45 | engine | YC6A190-D30 | g=GF/GFS-YC112 | o=EL 274E | Yuchai
+120 | 26 | 45 | alternator | EL 274E | g=GF/GFS-YC112 | o=YC6A190-D30 | 
+120 | 26 | 46 | engine | YC6A205-D30 | g=GF/GFS-YC128 | o=EL 274F | Yuchai
+120 | 26 | 46 | alternator | EL 274F | g=GF/GFS-YC128 | o=YC6A205-D30 | 
+120 | 26 | 47 | engine | YC6A230-D30 | g=GF/GFS-YC140 | o=EL 274G | Yuchai
+120 | 26 | 47 | alternator | EL 274G | g=GF/GFS-YC140 | o=YC6A230-D30 | 
+120 | 26 | 48 | engine | YC6A275-D30 | g=GF/GFS-YC160 | o=EL 274H | Yuchai
+120 | 26 | 48 | alternator | EL 274H | g=GF/GFS-YC160 | o=YC6A275-D30 | 
+120 | 26 | 49 | engine | YC6MK350-D30 | g=GF/GFS-YC200 | o=EL 274K | Yuchai
+120 | 26 | 49 | alternator | EL 274K | g=GF/GFS-YC200 | o=YC6MK350-D30 | 
+120 | 26 | 50 | engine | YC6MK420-D30 | g=GF/GFS-YC250 | o=EL 314E | Yuchai
+120 | 26 | 50 | alternator | EL 314E | g=GF/GFS-YC250 | o=YC6MK420-D30 | 
+120 | 26 | 51 | engine | YC6T660-D31 | g=GF/GFS-YC400 | o=EL 354D | Yuchai
+120 | 26 | 51 | alternator | EL 354D | g=GF/GFS-YC400 | o=YC6T660-D31 | 
+120 | 26 | 52 | engine | YC6TD780-D31 | g=GF/GFS-YC440 | o=EL 354ES | Yuchai
+120 | 26 | 52 | alternator | EL 354ES | g=GF/GFS-YC440 | o=YC6TD780-D31 | 
+120 | 26 | 53 | engine | YC6TD840-D31 | g=GF/GFS-YC500 | o=EL 354FS | Yuchai
+120 | 26 | 53 | alternator | EL 354FS | g=GF/GFS-YC500 | o=YC6TD840-D31 | 
+120 | 26 | 54 | engine | YC6C1020-D31 | g=GF/GFS-YC600 | o=EL 354H | Yuchai
+120 | 26 | 54 | alternator | EL 354H | g=GF/GFS-YC600 | o=YC6C1020-D31 | 
+120 | 26 | 55 | engine | YC6C1070-D31 | g=GF/GFS-YC640 | o=EL 404C | Yuchai
+120 | 26 | 55 | alternator | EL 404C | g=GF/GFS-YC640 | o=YC6C1070-D31 | 
+120 | 26 | 56 | engine | YC6C1220-D31 | g=GF/GFS-YC728 | o=EL 404D | Yuchai
+120 | 26 | 56 | alternator | EL 404D | g=GF/GFS-YC728 | o=YC6C1220-D31 | 
+120 | 26 | 57 | engine | YC6C1320-D31 | g=GF/GFS-YC800 | o=EL 404E | Yuchai
+120 | 26 | 57 | alternator | EL 404E | g=GF/GFS-YC800 | o=YC6C1320-D31 | 
+120 | 26 | 58 | engine | YC12VC1680-D31 | g=GF/GFS-YC1000 | o=EL 404G | Yuchai
+120 | 26 | 58 | alternator | EL 404G | g=GF/GFS-YC1000 | o=YC12VC1680-D31 | 
+120 | 26 | 59 | engine | YC12VC2070-D31 | g=GF/GFS-YC1240 | o=EL 404I | Yuchai
+120 | 26 | 59 | alternator | EL 404I | g=GF/GFS-YC1240 | o=YC12VC2070-D31 | 
+121 | 27 | 0 | engine | 403A-15G1 | g=GFS-P14 | o=El 164C | Perkins
+121 | 27 | 0 | alternator | El 164C | g=GFS-P14 | o=403A-15G1 | 
+121 | 27 | 1 | engine | 403A-15G2 | g=GFS-P17 | o=EL 164D | Perkins
+121 | 27 | 1 | alternator | EL 164D | g=GFS-P17 | o=403A-15G2 | 
+121 | 27 | 2 | engine | 404A-22G1 | g=GFS-P22 | o=EL 184E | Perkins
+121 | 27 | 2 | alternator | EL 184E | g=GFS-P22 | o=404A-22G1 | 
+121 | 27 | 3 | engine | 403D-11G | g=GFS-P10 | o=EL 164B | Perkins
+121 | 27 | 3 | alternator | EL 164B | g=GFS-P10 | o=403D-11G | 
+121 | 27 | 4 | engine | 403D-15G | g=GFS-P14 | o=El 164C | Perkins
+121 | 27 | 4 | alternator | El 164C | g=GFS-P14 | o=403D-15G | 
+121 | 27 | 5 | engine | 404D-22G | g=GFS-P22 | o=EL 184E | Perkins
+121 | 27 | 5 | alternator | EL 184E | g=GFS-P22 | o=404D-22G | 
+121 | 27 | 6 | engine | 1104A-44TG1 | g=GFS-P72 | o=EL 224F | Perkins
+121 | 27 | 6 | alternator | EL 224F | g=GFS-P72 | o=1104A-44TG1 | 
+121 | 27 | 7 | engine | 1104A-44TG2 | g=GFS-P89 | o=EL 224G | Perkins
+121 | 27 | 7 | alternator | EL 224G | g=GFS-P89 | o=1104A-44TG2 | 
+121 | 27 | 8 | engine | 1104D-44TG2 | g=GFS-P67 | o=EL 224E | Perkins
+121 | 27 | 8 | alternator | EL 224E | g=GFS-P67 | o=1104D-44TG2 | 
+121 | 27 | 9 | engine | 1104C-44TAG1 | g=GFS-P89 | o=EL 224G | Perkins
+121 | 27 | 9 | alternator | EL 224G | g=GFS-P89 | o=1104C-44TAG1 | 
+121 | 27 | 10 | engine | 1104C-44TAG2 | g=GFS-P111 | o=EL 274C | Perkins
+121 | 27 | 10 | alternator | EL 274C | g=GFS-P111 | o=1104C-44TAG2 | 
+121 | 27 | 11 | engine | 1104D-E44TAG1 | g=GFS-P89 | o=EL 224G | Perkins
+121 | 27 | 11 | alternator | EL 224G | g=GFS-P89 | o=1104D-E44TAG1 | 
+121 | 27 | 12 | engine | 1104D-E44TAG2 | g=GFS-P111 | o=EL 274C | Perkins
+121 | 27 | 12 | alternator | EL 274C | g=GFS-P111 | o=1104D-E44TAG2 | 
+121 | 27 | 13 | engine | 1106A-70TG1 | g=GFS-P150 | o=EL 274E | Perkins
+121 | 27 | 13 | alternator | EL 274E | g=GFS-P150 | o=1106A-70TG1 | 
+121 | 27 | 14 | engine | 1106A-70TAG2 | g=GFS-P167 | o=EL 274F | Perkins
+121 | 27 | 14 | alternator | EL 274F | g=GFS-P167 | o=1106A-70TAG2 | 
+121 | 27 | 15 | engine | 1106A-70TAG3 | g=GFS-P200 | o=EL 274G | Perkins
+121 | 27 | 15 | alternator | EL 274G | g=GFS-P200 | o=1106A-70TAG3 | 
+121 | 27 | 16 | engine | 1106A-70TAG4 | g=GFS-P222 | o=EL 274H | Perkins
+121 | 27 | 16 | alternator | EL 274H | g=GFS-P222 | o=1106A-70TAG4 | 
+121 | 27 | 17 | engine | 1106D-E70TAG2 | g=GFS-P159 | o=EL 274E | Perkins
+121 | 27 | 17 | alternator | EL 274E | g=GFS-P159 | o=1106D-E70TAG2 | 
+121 | 27 | 18 | engine | 1106D-E70TAG3 | g=GFS-P167 | o=EL 274F | Perkins
+121 | 27 | 18 | alternator | EL 274F | g=GFS-P167 | o=1106D-E70TAG3 | 
+121 | 27 | 19 | engine | 1106D-E70TAG4 | g=GFS-P200 | o=EL 274G | Perkins
+121 | 27 | 19 | alternator | EL 274G | g=GFS-P200 | o=1106D-E70TAG4 | 
+121 | 27 | 20 | engine | 1103A-33G | g=GFS-P33 | o=EL 184G | Perkins
+121 | 27 | 20 | alternator | EL 184G | g=GFS-P33 | o=1103A-33G | 
+121 | 27 | 21 | engine | 1103A-33TG1 | g=GFS-P50 | o=EL 224C | Perkins
+121 | 27 | 21 | alternator | EL 224C | g=GFS-P50 | o=1103A-33TG1 | 
+121 | 27 | 22 | engine | 1103A-33TG2 | g=GFS-P67 | o=EL 224E | Perkins
+121 | 27 | 22 | alternator | EL 224E | g=GFS-P67 | o=1103A-33TG2 | 
+121 | 27 | 23 | engine | 1206A-E70TTAG1 | g=GFS-P222 | o=EL 274H | Perkins
+121 | 27 | 23 | alternator | EL 274H | g=GFS-P222 | o=1206A-E70TTAG1 | 
+121 | 27 | 24 | engine | 1206D-E70TTAG1 | g=GFS-P222 | o=EL 274H | Perkins
+121 | 27 | 24 | alternator | EL 274H | g=GFS-P222 | o=1206D-E70TTAG1 | 
+121 | 27 | 25 | engine | 1506A-E88TAG2 L | g=GFS-P256 | o=EL 274J | Perkins
+121 | 27 | 25 | alternator | EL 274J | g=GFS-P256 | o=1506A-E88TAG2 L | 
+121 | 27 | 26 | engine | 1206A-E70TTAG2 | g=GFS-P256 | o=EL 274J | Perkins
+121 | 27 | 26 | alternator | EL 274J | g=GFS-P256 | o=1206A-E70TTAG2 | 
+121 | 27 | 27 | engine | 1206D-E70TTAG2 | g=GFS-P256 | o=EL 274J | Perkins
+121 | 27 | 27 | alternator | EL 274J | g=GFS-P256 | o=1206D-E70TTAG2 | 
+121 | 27 | 28 | engine | 1506A-E88TAG3 L | g=GFS-P278 | o=EL 274K | Perkins
+121 | 27 | 28 | alternator | EL 274K | g=GFS-P278 | o=1506A-E88TAG3 L | 
+121 | 27 | 29 | engine | 1206A-E70TTAG3 | g=GFS-P278 | o=EL 274K | Perkins
+121 | 27 | 29 | alternator | EL 274K | g=GFS-P278 | o=1206A-E70TTAG3 | 
+121 | 27 | 30 | engine | 1206D-E70TTAG3 | g=GFS-P278 | o=EL 274K | Perkins
+121 | 27 | 30 | alternator | EL 274K | g=GFS-P278 | o=1206D-E70TTAG3 | 
+121 | 27 | 31 | engine | 1506A-E88TAG5 L | g=GFS-P333 | o=EL 314D | Perkins
+121 | 27 | 31 | alternator | EL 314D | g=GFS-P333 | o=1506A-E88TAG5 L | 
+121 | 27 | 32 | engine | 2206C-E13TAG2 L | g=GFS-P389 | o=EL 314FS | Perkins
+121 | 27 | 32 | alternator | EL 314FS | g=GFS-P389 | o=2206C-E13TAG2 L | 
+121 | 27 | 33 | engine | 2206C-E13TAG3 L | g=GFS-P444 | o=EL 314G | Perkins
+121 | 27 | 33 | alternator | EL 314G | g=GFS-P444 | o=2206C-E13TAG3 L | 
+121 | 27 | 34 | engine | 2506C-E15TAG1 L | g=GFS-P506 | o=EL 354C | Perkins
+121 | 27 | 34 | alternator | EL 354C | g=GFS-P506 | o=2506C-E15TAG1 L | 
+121 | 27 | 35 | engine | 2506C-E15TAG2 L | g=GFS-P556 | o=EL 354D | Perkins
+121 | 27 | 35 | alternator | EL 354D | g=GFS-P556 | o=2506C-E15TAG2 L | 
+121 | 27 | 36 | engine | 2806C-E18TAG1A L | g=GFS-P667 | o=EL 354E | Perkins
+121 | 27 | 36 | alternator | EL 354E | g=GFS-P667 | o=2806C-E18TAG1A L | 
+121 | 27 | 37 | engine | 2806A-E18TAG2 L | g=GFS-P722 | o=EL 354F | Perkins
+121 | 27 | 37 | alternator | EL 354F | g=GFS-P722 | o=2806A-E18TAG2 L | 
+121 | 27 | 38 | engine | 2206D-E13TAG3 L | g=GFS-P444 | o=EL 314G | Perkins
+121 | 27 | 38 | alternator | EL 314G | g=GFS-P444 | o=2206D-E13TAG3 L | 
+121 | 27 | 39 | engine | 2506D-E15TAG2 L | g=GFS-P556 | o=EL 354D | Perkins
+121 | 27 | 39 | alternator | EL 354D | g=GFS-P556 | o=2506D-E15TAG2 L | 
+121 | 27 | 40 | engine | 2806D-E18TAG1 L | g=GFS-P667 | o=EL 354E | Perkins
+121 | 27 | 40 | alternator | EL 354E | g=GFS-P667 | o=2806D-E18TAG1 L | 
+121 | 27 | 41 | engine | 4006-23TAG2A | g=GFS-P833 | o=EL 354H | Perkins
+121 | 27 | 41 | alternator | EL 354H | g=GFS-P833 | o=4006-23TAG2A | 
+121 | 27 | 42 | engine | 4006-23TAG3A | g=GFS-P889 | o=EL 404C | Perkins
+121 | 27 | 42 | alternator | EL 404C | g=GFS-P889 | o=4006-23TAG3A | 
+121 | 27 | 43 | engine | 4008TAG1A | g=GFS-P1000 | o=EL 404D | Perkins
+121 | 27 | 43 | alternator | EL 404D | g=GFS-P1000 | o=4008TAG1A | 
+121 | 27 | 44 | engine | 4008TAG2 | g=GFS-P1111 | o=EL 404E | Perkins
+121 | 27 | 44 | alternator | EL 404E | g=GFS-P1111 | o=4008TAG2 | 
+121 | 27 | 45 | engine | 4008-30TAG3 | g=GFS-P1250 | o=EL 404F | Perkins
+121 | 27 | 45 | alternator | EL 404F | g=GFS-P1250 | o=4008-30TAG3 | 
+121 | 27 | 46 | engine | 4012-46TWG2A | g=GFS-P1389 | o=EL 404G | Perkins
+121 | 27 | 46 | alternator | EL 404G | g=GFS-P1389 | o=4012-46TWG2A | 
+121 | 27 | 47 | engine | 4012-46TWG3A | g=GFS-P1500 | o=EL 404G | Perkins
+121 | 27 | 47 | alternator | EL 404G | g=GFS-P1500 | o=4012-46TWG3A | 
+121 | 27 | 48 | engine | 4012-46TAG2A | g=GFS-P1667 | o=EL 404I | Perkins
+121 | 27 | 48 | alternator | EL 404I | g=GFS-P1667 | o=4012-46TAG2A | 
+121 | 27 | 49 | engine | 4012-46TAG3A | g=GFS-P1900 | o=EL 504D | Perkins
+121 | 27 | 49 | alternator | EL 504D | g=GFS-P1900 | o=4012-46TAG3A | 
+121 | 27 | 50 | engine | 4016TAG1A | g=GFS-P2056 | o=EL 504E | Perkins
+121 | 27 | 50 | alternator | EL 504E | g=GFS-P2056 | o=4016TAG1A | 
+121 | 27 | 51 | engine | 4016TAG2A | g=GFS-P2222 | o=EL 504F | Perkins
+121 | 27 | 51 | alternator | EL 504F | g=GFS-P2222 | o=4016TAG2A | 
+121 | 27 | 52 | engine | 4016-61TRG2 | g=GFS-P2222 | o=EL 504F | Perkins
+121 | 27 | 52 | alternator | EL 504F | g=GFS-P2222 | o=4016-61TRG2 | 
+121 | 27 | 53 | engine | 4016-61TRG3 | g=GFS-P2500 | o=EL 504G | Perkins
+121 | 27 | 53 | alternator | EL 504G | g=GFS-P2500 | o=4016-61TRG3 | 
+122 | 28 | 0 | engine | YD380D | g=GF/GFS-YD13 | o=ELS 164B | Yangdong
+122 | 28 | 0 | alternator | ELS 164B | g=GF/GFS-YD13 | o=YD380D | 
+122 | 28 | 1 | engine | YD385D | g=GF/GFS-YD16 | o=ELS 164C | Yangdong
+122 | 28 | 1 | alternator | ELS 164C | g=GF/GFS-YD16 | o=YD385D | 
+122 | 28 | 2 | engine | YD480D | g=GF/GFS-YD17 | o=ELS 164C | Yangdong
+122 | 28 | 2 | alternator | ELS 164C | g=GF/GFS-YD17 | o=YD480D | 
+122 | 28 | 3 | engine | (YD4KD) YD485D | g=GF/GFS-YD18 | o=ELS 164D | Yangdong
+122 | 28 | 3 | alternator | ELS 164D | g=GF/GFS-YD18 | o=(YD4KD) YD485D | 
+122 | 28 | 4 | engine | YND485D | g=GF/GFS-YD22 | o=ELS 184E | Yangdong
+122 | 28 | 4 | alternator | ELS 184E | g=GF/GFS-YD22 | o=YND485D | 
+122 | 28 | 5 | engine | YSD490D | g=GF/GFS-YD24 | o=ELS 184E | Yangdong
+122 | 28 | 5 | alternator | ELS 184E | g=GF/GFS-YD24 | o=YSD490D | 
+122 | 28 | 6 | engine | Y490D | g=GF/GFS-YD29 | o=ELS 184F | Yangdong
+122 | 28 | 6 | alternator | ELS 184F | g=GF/GFS-YD29 | o=Y490D | 
+122 | 28 | 7 | engine | Y495D | g=GF/GFS-YD31 | o=ELS 184F | Yangdong
+122 | 28 | 7 | alternator | ELS 184F | g=GF/GFS-YD31 | o=Y495D | 
+122 | 28 | 8 | engine | Y4100D | g=GF/GFS-YD38 | o=ELS 184G | Yangdong
+122 | 28 | 8 | alternator | ELS 184G | g=GF/GFS-YD38 | o=Y4100D | 
+122 | 28 | 9 | engine | Y4102D | g=GF/GFS-YD42 | o=ELS 184H | Yangdong
+122 | 28 | 9 | alternator | ELS 184H | g=GF/GFS-YD42 | o=Y4102D | 
+122 | 28 | 10 | engine | Y4105D | g=GF/GFS-YD48 | o=ELS 184H | Yangdong
+122 | 28 | 10 | alternator | ELS 184H | g=GF/GFS-YD48 | o=Y4105D | 
+122 | 28 | 11 | engine | Y4102ZD | g=GF/GFS-YD50 | o=ELS 184J | Yangdong
+122 | 28 | 11 | alternator | ELS 184J | g=GF/GFS-YD50 | o=Y4102ZD | 
+122 | 28 | 12 | engine | Y4102ZLD | g=GF/GFS-YD55 | o=ELS 224D | Yangdong
+122 | 28 | 12 | alternator | ELS 224D | g=GF/GFS-YD55 | o=Y4102ZLD | 
+122 | 28 | 13 | engine | Y4105ZLD | g=GF/GFS-YD64 | o=ELS 224E | Yangdong
+122 | 28 | 13 | alternator | ELS 224E | g=GF/GFS-YD64 | o=Y4105ZLD | 
+122 | 28 | 14 | engine | YD4EZLD | g=GF/GFS-YD71 | o=ELS 224E | Yangdong
+122 | 28 | 14 | alternator | ELS 224E | g=GF/GFS-YD71 | o=YD4EZLD | 
+123 | 30 | 0 | engine | 1003G | g=GF/GFS-LW38 | o=ELS 184G | Lovol
+123 | 30 | 0 | alternator | ELS 184G | g=GF/GFS-LW38 | o=1003G | 
+123 | 30 | 1 | engine | 1003TG | g=GF/GFS-LW67 | o=ELS 224D | Lovol
+123 | 30 | 1 | alternator | ELS 224D | g=GF/GFS-LW67 | o=1003TG | 
+123 | 30 | 2 | engine | 1004G | g=GF/GFS-LW57 | o=ELS 224C | Lovol
+123 | 30 | 2 | alternator | ELS 224C | g=GF/GFS-LW57 | o=1004G | 
+123 | 30 | 3 | engine | 1004TGIA | g=GF/GFS-LW81 | o=ELS 224E | Lovol
+123 | 30 | 3 | alternator | ELS 224E | g=GF/GFS-LW81 | o=1004TGIA | 
+123 | 30 | 4 | engine | 1004TG | g=GF/GFS-LW98 | o=ELS 224F | Lovol
+123 | 30 | 4 | alternator | ELS 224F | g=GF/GFS-LW98 | o=1004TG | 
+123 | 30 | 5 | engine | 1006TG1A | g=GF/GFS-LW126 | o=ELS 274C | Lovol
+123 | 30 | 5 | alternator | ELS 274C | g=GF/GFS-LW126 | o=1006TG1A | 
+123 | 30 | 6 | engine | 1006TG3A | g=GF/GFS-LW126 | o=ELS 274C | Lovol
+123 | 30 | 6 | alternator | ELS 274C | g=GF/GFS-LW126 | o=1006TG3A | 
+123 | 30 | 7 | engine | 1006TG2A | g=GF/GFS-LW133 | o=ELS 274C | Lovol
+123 | 30 | 7 | alternator | ELS 274C | g=GF/GFS-LW133 | o=1006TG2A | 
+123 | 30 | 8 | engine | 1006TAG1A | g=GF/GFS-LW153 | o=ELS 274D | Lovol
+123 | 30 | 8 | alternator | ELS 274D | g=GF/GFS-LW153 | o=1006TAG1A | 
+123 | 30 | 9 | engine | 1006TAG | g=GF/GFS-LW167 | o=ELS 274E | Lovol
+123 | 30 | 9 | alternator | ELS 274E | g=GF/GFS-LW167 | o=1006TAG | 
+123 | 30 | 10 | engine | 1106C-P6TAG2A | g=GF/GFS-LW178 | o=ELS 274E | Lovol
+123 | 30 | 10 | alternator | ELS 274E | g=GF/GFS-LW178 | o=1106C-P6TAG2A | 
+123 | 30 | 11 | engine | 1106C-P6TAG3A | g=GF/GFS-LW194 | o=ELS 274F | Lovol
+123 | 30 | 11 | alternator | ELS 274F | g=GF/GFS-LW194 | o=1106C-P6TAG3A | 
+123 | 30 | 12 | engine | 1106C-P6TAG4A | g=GF/GFS-LW222 | o=ELS 274G | Lovol
+123 | 30 | 12 | alternator | ELS 274G | g=GF/GFS-LW222 | o=1106C-P6TAG4A | 
+125 | 31 | 0 | engine | 4B3.9-G11 | g=GFS-C20 | o=ELS 184E | Cummins
+125 | 31 | 0 | alternator | ELS 184E | g=GFS-C20 | o=4B3.9-G11 | 
+125 | 31 | 1 | engine | 4B3.9-G2 | g=GFS-C27 | o=ELS 184G | Cummins
+125 | 31 | 1 | alternator | ELS 184G | g=GFS-C27 | o=4B3.9-G2 | 
+125 | 31 | 2 | engine | 4B3.9-G12 | g=GFS-C28 | o=ELS 184G | Cummins
+125 | 31 | 2 | alternator | ELS 184G | g=GFS-C28 | o=4B3.9-G12 | 
+125 | 31 | 3 | engine | 4BT3.9-G2 | g=GFS-C35 | o=ELS 184J | Cummins
+125 | 31 | 3 | alternator | ELS 184J | g=GFS-C35 | o=4BT3.9-G2 | 
+125 | 31 | 4 | engine | 4BTA3.9-G2 | g=GFS-C53 | o=ELS 224E | Cummins
+125 | 31 | 4 | alternator | ELS 224E | g=GFS-C53 | o=4BTA3.9-G2 | 
+125 | 31 | 5 | engine | 4BTA3.9-G2 | g=GFS-C60 | o=ELS 224F | Cummins
+125 | 31 | 5 | alternator | ELS 224F | g=GFS-C60 | o=4BTA3.9-G2 | 
+125 | 31 | 6 | engine | 4BTA3.9-G11 | g=GFS-C72 | o=ELS 224G | Cummins
+125 | 31 | 6 | alternator | ELS 224G | g=GFS-C72 | o=4BTA3.9-G11 | 
+125 | 31 | 7 | engine | 6BT5.9-G2 | g=GFS-C90 | o=ELS 274C | Cummins
+125 | 31 | 7 | alternator | ELS 274C | g=GFS-C90 | o=6BT5.9-G2 | 
+125 | 31 | 8 | engine | 6BT5.9-G2 | g=GFS-C100 | o=ELS 274D | Cummins
+125 | 31 | 8 | alternator | ELS 274D | g=GFS-C100 | o=6BT5.9-G2 | 
+125 | 31 | 9 | engine | 6BTA5.9-G2 | g=GFS-C105 | o=ELS 274D | Cummins
+125 | 31 | 9 | alternator | ELS 274D | g=GFS-C105 | o=6BTA5.9-G2 | 
+125 | 31 | 10 | engine | 6BTAA5.9-G2 | g=GFS-C120 | o=ELS 274E | Cummins
+125 | 31 | 10 | alternator | ELS 274E | g=GFS-C120 | o=6BTAA5.9-G2 | 
+125 | 31 | 11 | engine | 6BTAA5.9-G12 | g=GFS-C135 | o=ELS 274F | Cummins
+125 | 31 | 11 | alternator | ELS 274F | g=GFS-C135 | o=6BTAA5.9-G12 | 
+125 | 31 | 12 | engine | 6CTA8.3-G2 | g=GFS-C150 | o=ELS 274G | Cummins
+125 | 31 | 12 | alternator | ELS 274G | g=GFS-C150 | o=6CTA8.3-G2 | 
+125 | 31 | 13 | engine | 6CTAA8.3-G2 | g=GFS-C170 | o=ELS 274H | Cummins
+125 | 31 | 13 | alternator | ELS 274H | g=GFS-C170 | o=6CTAA8.3-G2 | 
+125 | 31 | 14 | engine | 6LTAA8.9-G2 | g=GFS-C210 | o=ELS 274K | Cummins
+125 | 31 | 14 | alternator | ELS 274K | g=GFS-C210 | o=6LTAA8.9-G2 | 
+125 | 31 | 15 | engine | 6LTAA8.9-G3 | g=GFS-C220 | o=ELS 274K | Cummins
+125 | 31 | 15 | alternator | ELS 274K | g=GFS-C220 | o=6LTAA8.9-G3 | 
+125 | 31 | 16 | engine | 6LTAA9.5-G3 | g=GFS-C240 | o=ELS 314D | Cummins
+125 | 31 | 16 | alternator | ELS 314D | g=GFS-C240 | o=6LTAA9.5-G3 | 
+125 | 31 | 17 | engine | 6LTAA9.5-G1 | g=GFS-C260 | o=ELS 314D | Cummins
+125 | 31 | 17 | alternator | ELS 314D | g=GFS-C260 | o=6LTAA9.5-G1 | 
+125 | 31 | 18 | engine | 6ZTAA13-G3 | g=GFS-C306 | o=ELS 314FS | Cummins
+125 | 31 | 18 | alternator | ELS 314FS | g=GFS-C306 | o=6ZTAA13-G3 | 
+125 | 31 | 19 | engine | 6ZTAA13-G2 | g=GFS-C350 | o=ELS 314G | Cummins
+125 | 31 | 19 | alternator | ELS 314G | g=GFS-C350 | o=6ZTAA13-G2 | 
+125 | 31 | 20 | engine | 6ZTAA13-G4 | g=GFS-C350 | o=ELS 314G | Cummins
+125 | 31 | 20 | alternator | ELS 314G | g=GFS-C350 | o=6ZTAA13-G4 | 
+125 | 31 | 21 | engine | QSZ13-G2 | g=GFS-C350 | o=ELS 314G | Cummins
+125 | 31 | 21 | alternator | ELS 314G | g=GFS-C350 | o=QSZ13-G2 | 
+125 | 31 | 22 | engine | QSZ13-G3 | g=GFS-C400 | o=ELS 354C | Cummins
+125 | 31 | 22 | alternator | ELS 354C | g=GFS-C400 | o=QSZ13-G3 | 
+125 | 31 | 23 | engine | QSZ13-G5 | g=GFS-C390 | o=ELS 354C | Cummins
+125 | 31 | 23 | alternator | ELS 354C | g=GFS-C390 | o=QSZ13-G5 | 
+125 | 31 | 24 | engine | QSZ13-G6 | g=GFS-C320 | o=ELS 314F | Cummins
+125 | 31 | 24 | alternator | ELS 314F | g=GFS-C320 | o=QSZ13-G6 | 
+125 | 31 | 25 | engine | QSZ13-G7 | g=GFS-C350 | o=ELS 314G | Cummins
+125 | 31 | 25 | alternator | ELS 314G | g=GFS-C350 | o=QSZ13-G7 | 
+126 | 32 | 0 | engine | 2105D | g=GF/GFS-HC18 | o=EL 164D | Huachai
+126 | 32 | 0 | alternator | EL 164D | g=GF/GFS-HC18 | o=2105D | 
+126 | 32 | 1 | engine | 2110D | g=GF/GFS-HC26 | o=EL 184E | Huachai
+126 | 32 | 1 | alternator | EL 184E | g=GF/GFS-HC26 | o=2110D | 
+126 | 32 | 2 | engine | 490D | g=GF/GFS-HC31 | o=EL 184F | Huachai
+126 | 32 | 2 | alternator | EL 184F | g=GF/GFS-HC31 | o=490D | 
+126 | 32 | 3 | engine | 490ZD | g=GF/GFS-HC34 | o=EL 184G | Huachai
+126 | 32 | 3 | alternator | EL 184G | g=GF/GFS-HC34 | o=490ZD | 
+126 | 32 | 4 | engine | ZH4100D | g=GF/GFS-HC34 | o=EL 184G | Huachai
+126 | 32 | 4 | alternator | EL 184G | g=GF/GFS-HC34 | o=ZH4100D | 
+126 | 32 | 5 | engine | ZH4100ZD | g=GF/GFS-HC44 | o=EL 184J | Huachai
+126 | 32 | 5 | alternator | EL 184J | g=GF/GFS-HC44 | o=ZH4100ZD | 
+126 | 32 | 6 | engine | ZH4102D | g=GF/GFS-HC42 | o=EL 184H | Huachai
+126 | 32 | 6 | alternator | EL 184H | g=GF/GFS-HC42 | o=ZH4102D | 
+126 | 32 | 7 | engine | ZH4102ZD | g=GF/GFS-HC48 | o=EL 224C | Huachai
+126 | 32 | 7 | alternator | EL 224C | g=GF/GFS-HC48 | o=ZH4102ZD | 
+126 | 32 | 8 | engine | ZH4105D | g=GF/GFS-HC42 | o=EL 184H | Huachai
+126 | 32 | 8 | alternator | EL 184H | g=GF/GFS-HC42 | o=ZH4105D | 
+126 | 32 | 9 | engine | ZH4105ZD | g=GF/GFS-HC56 | o=EL 224D | Huachai
+126 | 32 | 9 | alternator | EL 224D | g=GF/GFS-HC56 | o=ZH4105ZD | 
+126 | 32 | 10 | engine | N4105D | g=GF/GFS-HC48 | o=EL 224C | Huachai
+126 | 32 | 10 | alternator | EL 224C | g=GF/GFS-HC48 | o=N4105D | 
+126 | 32 | 11 | engine | N4105ZD | g=GF/GFS-HC67 | o=EL 224E | Huachai
+126 | 32 | 11 | alternator | EL 224E | g=GF/GFS-HC67 | o=N4105ZD | 
+126 | 32 | 12 | engine | N4105ZLD | g=GF/GFS-HC67 | o=EL 224E | Huachai
+126 | 32 | 12 | alternator | EL 224E | g=GF/GFS-HC67 | o=N4105ZLD | 
+126 | 32 | 13 | engine | 4105D | g=GF/GFS-HC48 | o=EL 224C | Huachai
+126 | 32 | 13 | alternator | EL 224C | g=GF/GFS-HC48 | o=4105D | 
+126 | 32 | 14 | alternator | EL 224E | g=GF/GFS-HC67 | o= | 
+126 | 32 | 15 | engine | 4105AZLD | g=GF/GFS-HC81 | o=EL 224F | Huachai
+126 | 32 | 15 | alternator | EL 224F | g=GF/GFS-HC81 | o=4105AZLD | 
+126 | 32 | 16 | engine | 4100ZD | g=GF/GFS-HC81 | o=EL 224F | Huachai
+126 | 32 | 16 | alternator | EL 224F | g=GF/GFS-HC81 | o=4100ZD | 
+126 | 32 | 17 | engine | 4100AZLD | g=GF/GFS-HC94 | o=EL 224G | Huachai
+126 | 32 | 17 | alternator | EL 224G | g=GF/GFS-HC94 | o=4100AZLD | 
+126 | 32 | 18 | engine | 6105ZD | g=GF/GFS-HC94 | o=EL 224G | Huachai
+126 | 32 | 18 | alternator | EL 224G | g=GF/GFS-HC94 | o=6105ZD | 
+126 | 32 | 19 | engine | 6105AZD | g=GF/GFS-HC111 | o=EL 274C | Huachai
+126 | 32 | 19 | alternator | EL 274C | g=GF/GFS-HC111 | o=6105AZD | 
+126 | 32 | 20 | engine | 6105IZLD | g=GF/GFS-HC156 | o=EL 274E | Huachai
+126 | 32 | 20 | alternator | EL 274E | g=GF/GFS-HC156 | o=6105IZLD | 
+126 | 32 | 21 | engine | 6110ZLD | g=GF/GFS-HC178 | o=EL 274F | Huachai
+126 | 32 | 21 | alternator | EL 274F | g=GF/GFS-HC178 | o=6110ZLD | 
+126 | 32 | 22 | engine | 6113ZLD | g=GF/GFS-HC178 | o=EL 274F | Huachai
+126 | 32 | 22 | alternator | EL 274F | g=GF/GFS-HC178 | o=6113ZLD | 
+126 | 32 | 23 | engine | 6126ZLD-1 | g=GF/GFS-HC256 | o=EL 274J | Huachai
+126 | 32 | 23 | alternator | EL 274J | g=GF/GFS-HC256 | o=6126ZLD-1 | 
+126 | 32 | 24 | engine | 6126ZLD-2 | g=GF/GFS-HC278 | o=EL 274K | Huachai
+126 | 32 | 24 | alternator | EL 274K | g=GF/GFS-HC278 | o=6126ZLD-2 | 
+126 | 32 | 25 | engine | 618ZLD | g=GF/GFS-HC328 | o=EL 314D | Huachai
+126 | 32 | 25 | alternator | EL 314D | g=GF/GFS-HC328 | o=618ZLD | 
+126 | 32 | 26 | engine | 618AZLD | g=GF/GFS-HC361 | o=EL 314E | Huachai
+126 | 32 | 26 | alternator | EL 314E | g=GF/GFS-HC361 | o=618AZLD | 
+127 | 33 | 0 | engine | KP8D220D2 | g=GFS-167K | o=EL 274F | 
+127 | 33 | 0 | alternator | EL 274F | g=GFS-167K | o=KP8D220D2 | 
+127 | 33 | 1 | engine | KP8D280D2 | g=GFS-222K | o=EL 274H | 
+127 | 33 | 1 | alternator | EL 274H | g=GFS-222K | o=KP8D280D2 | 
+127 | 33 | 2 | engine | KP9D310D2 | g=GFS-250K | o=EL 274J | 
+127 | 33 | 2 | alternator | EL 274J | g=GFS-250K | o=KP9D310D2 | 
+127 | 33 | 3 | engine | G128ZLD11 | g=GFS-306K | o=EL 314DS | 
+127 | 33 | 3 | alternator | EL 314DS | g=GFS-306K | o=G128ZLD11 | 
+127 | 33 | 4 | engine | G128ZLD11 | g=GFS-333K | o=EL 314D | 
+127 | 33 | 4 | alternator | EL 314D | g=GFS-333K | o=G128ZLD11 | 
+127 | 33 | 5 | engine | G128ZLD22 | g=GFS-361K | o=EL 314E | 
+127 | 33 | 5 | alternator | EL 314E | g=GFS-361K | o=G128ZLD22 | 
+127 | 33 | 6 | engine | KP425 | g=GFS-444K | o=EL 314G | 
+127 | 33 | 6 | alternator | EL 314G | g=GFS-444K | o=KP425 | 
+127 | 33 | 7 | engine | KP515 | g=GFS-556K | o=EL 354D | 
+127 | 33 | 7 | alternator | EL 354D | g=GFS-556K | o=KP515 | 
+127 | 33 | 8 | engine | KPV630 | g=GFS-750K | o=EL 354GS | 
+127 | 33 | 8 | alternator | EL 354GS | g=GFS-750K | o=KPV630 | 
+127 | 33 | 9 | engine | KPV780 | g=GFS-889K | o=EL 404D | 
+127 | 33 | 9 | alternator | EL 404D | g=GFS-889K | o=KPV780 | 
+127 | 33 | 10 | engine | KPV1100 | g=GFS-1111K | o=EL 404F | 
+127 | 33 | 10 | alternator | EL 404F | g=GFS-1111K | o=KPV1100 | 
+127 | 33 | 11 | engine | KPV4TDS | g=GFC-1839K | o=EL 404H | 
+127 | 33 | 11 | alternator | EL 404H | g=GFC-1839K | o=KPV4TDS | 
+128 | 34 | 0 | engine | K4100DS | g=GF/GFS-KF10 | o=EL 164C | Kofo
+128 | 34 | 0 | alternator | EL 164C | g=GF/GFS-KF10 | o=K4100DS | 
+128 | 34 | 1 | engine | K4100DS | g=GF/GFS-KF12 | o=EL 164D | Kofo
+128 | 34 | 1 | alternator | EL 164D | g=GF/GFS-KF12 | o=K4100DS | 
+128 | 34 | 2 | engine | K4100DS | g=GF/GFS-KF18 | o=EL 184E | Kofo
+128 | 34 | 2 | alternator | EL 184E | g=GF/GFS-KF18 | o=K4100DS | 
+128 | 34 | 3 | engine | K4100DS | g=GF/GFS-KF22 | o=EL 184F | Kofo
+128 | 34 | 3 | alternator | EL 184F | g=GF/GFS-KF22 | o=K4100DS | 
+128 | 34 | 4 | engine | K4100DS | g=GF/GFS-KF24 | o=EL 184G | Kofo
+128 | 34 | 4 | alternator | EL 184G | g=GF/GFS-KF24 | o=K4100DS | 
+128 | 34 | 5 | engine | K4100ZDS | g=GF/GFS-KF33 | o=EL 224C | Kofo
+128 | 34 | 5 | alternator | EL 224C | g=GF/GFS-KF33 | o=K4100ZDS | 
+128 | 34 | 6 | engine | K4102DS | g=GF/GFS-KF25 | o=EL 184G | Kofo
+128 | 34 | 6 | alternator | EL 184G | g=GF/GFS-KF25 | o=K4102DS | 
+128 | 34 | 7 | engine | N4105DS-38 | g=GF/GFS-KF30 | o=EL 184H | Kofo
+128 | 34 | 7 | alternator | EL 184H | g=GF/GFS-KF30 | o=N4105DS-38 | 
+128 | 34 | 8 | engine | N4105DS-46 | g=GF/GFS-KF36 | o=EL 224D | Kofo
+128 | 34 | 8 | alternator | EL 224D | g=GF/GFS-KF36 | o=N4105DS-46 | 
+128 | 34 | 9 | engine | N4105ZDS | g=GF/GFS-KF48 | o=EL 224E | Kofo
+128 | 34 | 9 | alternator | EL 224E | g=GF/GFS-KF48 | o=N4105ZDS | 
+128 | 34 | 10 | engine | N4105ZLDS | g=GF/GFS-KF58 | o=EL 224F | Kofo
+128 | 34 | 10 | alternator | EL 224F | g=GF/GFS-KF58 | o=N4105ZLDS | 
+128 | 34 | 11 | engine | R6105ZDS | g=GF/GFS-KF68 | o=EL 224G | Kofo
+128 | 34 | 11 | alternator | EL 224G | g=GF/GFS-KF68 | o=R6105ZDS | 
+128 | 34 | 12 | engine | R6105ZLDS | g=GF/GFS-KF80 | o=EL 274C | Kofo
+128 | 34 | 12 | alternator | EL 274C | g=GF/GFS-KF80 | o=R6105ZLDS | 
+128 | 34 | 13 | engine | R6105AZLDS | g=GF/GFS-KF96 | o=EL 274D | Kofo
+128 | 34 | 13 | alternator | EL 274D | g=GF/GFS-KF96 | o=R6105AZLDS | 
+128 | 34 | 14 | engine | R6105BZLDS | g=GF/GFS-KF100 | o=EL 274D | Kofo
+128 | 34 | 14 | alternator | EL 274D | g=GF/GFS-KF100 | o=R6105BZLDS | 
+128 | 34 | 15 | engine | R6110ZLDS | g=GF/GFS-KF128 | o=EL 274F | Kofo
+128 | 34 | 15 | alternator | EL 274F | g=GF/GFS-KF128 | o=R6110ZLDS | 
+128 | 34 | 16 | engine | 6126-68DE | g=GF/GFS-KF150 | o=EL 274H | Kofo
+128 | 34 | 16 | alternator | EL 274H | g=GF/GFS-KF150 | o=6126-68DE | 
+128 | 34 | 17 | engine | 6126-42DE | g=GF/GFS-KF184 | o=EL 274J | Kofo
+128 | 34 | 17 | alternator | EL 274J | g=GF/GFS-KF184 | o=6126-42DE | 
+128 | 34 | 18 | engine | 6126A-260DE | g=GF/GFS-KF200 | o=EL 274k | Kofo
+128 | 34 | 18 | alternator | EL 274k | g=GF/GFS-KF200 | o=6126A-260DE | 
+128 | 34 | 19 | engine | WP10-275DE | g=GF/GFS-KF220 | o=EL 314D | Kofo
+128 | 34 | 19 | alternator | EL 314D | g=GF/GFS-KF220 | o=WP10-275DE | 
+128 | 34 | 20 | engine | WT12D-308E | g=GF/GFS-KF236 | o=EL 314D | Kofo
+128 | 34 | 20 | alternator | EL 314D | g=GF/GFS-KF236 | o=WT12D-308E | 
+128 | 34 | 21 | engine | WT13-330DE | g=GF/GFS-KF260 | o=EL 314E | Kofo
+128 | 34 | 21 | alternator | EL 314E | g=GF/GFS-KF260 | o=WT13-330DE | 
+128 | 34 | 22 | engine | WT13-360DE | g=GF/GFS-KF280 | o=EL 314FS | Kofo
+128 | 34 | 22 | alternator | EL 314FS | g=GF/GFS-KF280 | o=WT13-360DE | 
+128 | 34 | 23 | engine | WT13A-390DE | g=GF/GFS-KF304 | o=EL 314F | Kofo
+128 | 34 | 23 | alternator | EL 314F | g=GF/GFS-KF304 | o=WT13A-390DE | 
+129 | 35 | 0 | engine | YN25GB | g=GF/GFS-YN12 | o=EL 164D | 
+129 | 35 | 0 | alternator | EL 164D | g=GF/GFS-YN12 | o=YN25GB | 
+129 | 35 | 1 | engine | YN25GB | g=GF/GFS-YN16 | o=EL 184E | 
+129 | 35 | 1 | alternator | EL 184E | g=GF/GFS-YN16 | o=YN25GB | 
+129 | 35 | 2 | engine | YN25GB | g=GF/GFS-YN20 | o=EL 184E | 
+129 | 35 | 2 | alternator | EL 184E | g=GF/GFS-YN20 | o=YN25GB | 
+129 | 35 | 3 | engine | YN27GB | g=GF/GFS-YN20 | o=EL 184F | 
+129 | 35 | 3 | alternator | EL 184F | g=GF/GFS-YN20 | o=YN27GB | 
+129 | 35 | 4 | engine | YN27GB | g=GF/GFS-YN26 | o=EL 184G | 
+129 | 35 | 4 | alternator | EL 184G | g=GF/GFS-YN26 | o=YN27GB | 
+129 | 35 | 5 | engine | YN27GBZ | g=GF/GFS-YN25I | o=EL 184G | 
+129 | 35 | 5 | alternator | EL 184G | g=GF/GFS-YN25I | o=YN27GBZ | 
+129 | 35 | 6 | engine | YN36GB | g=GF/GFS-YN25II | o=EL 184G | 
+129 | 35 | 6 | alternator | EL 184G | g=GF/GFS-YN25II | o=YN36GB | 
+129 | 35 | 7 | engine | YN36GB | g=GF/GFS-YN28 | o=EL 184G | 
+129 | 35 | 7 | alternator | EL 184G | g=GF/GFS-YN28 | o=YN36GB | 
+129 | 35 | 8 | engine | YN38GB | g=GF/GFS-YN30 | o=EL 184H | 
+129 | 35 | 8 | alternator | EL 184H | g=GF/GFS-YN30 | o=YN38GB | 
+129 | 35 | 9 | engine | YN38GB | g=GF/GFS-YN35 | o=EL 184J | 
+129 | 35 | 9 | alternator | EL 184J | g=GF/GFS-YN35 | o=YN38GB | 
+129 | 35 | 10 | engine | YN38GBZ | g=GF/GFS-YN34 | o=EL 224C | 
+129 | 35 | 10 | alternator | EL 224C | g=GF/GFS-YN34 | o=YN38GBZ | 
+129 | 35 | 11 | engine | YN38GBZ | g=GF/GFS-YN45 | o=EL 224D | 
+129 | 35 | 11 | alternator | EL 224D | g=GF/GFS-YN45 | o=YN38GBZ | 
+129 | 35 | 12 | engine | YN38GBZ | g=GF/GFS-YN40I | o=EL 224D | 
+129 | 35 | 12 | alternator | EL 224D | g=GF/GFS-YN40I | o=YN38GBZ | 
+129 | 35 | 13 | engine | YN48GBZ | g=GF/GFS-YN48 | o=EL 224E | 
+129 | 35 | 13 | alternator | EL 224E | g=GF/GFS-YN48 | o=YN48GBZ | 
+129 | 35 | 14 | engine | YN48GBZ | g=GF/GFS-YN53 | o=EL 224E | 
+129 | 35 | 14 | alternator | EL 224E | g=GF/GFS-YN53 | o=YN48GBZ | 
+129 | 35 | 15 | engine | YN48GBZ | g=GF/GFS-YN60 | o=EL 224F | 
+129 | 35 | 15 | alternator | EL 224F | g=GF/GFS-YN60 | o=YN48GBZ | 
+129 | 35 | 16 | engine | YN48GBZ | g=GF/GFS-YN75 | o=EL 224G | 
+129 | 35 | 16 | alternator | EL 224G | g=GF/GFS-YN75 | o=YN48GBZ | 
+133 | 37 | 0 | engine | K4100D | g=GF/GFS-YX22 | o=EL 184F | 
+133 | 37 | 0 | alternator | EL 184F | g=GF/GFS-YX22 | o=K4100D | 
+133 | 37 | 1 | engine | K4100D | g=GF/GFS-YX25 | o=EL 184G | 
+133 | 37 | 1 | alternator | EL 184G | g=GF/GFS-YX25 | o=K4100D | 
+133 | 37 | 2 | engine | K4100ZD | g=GF/GFS-YX32 | o=EL 184J | 
+133 | 37 | 2 | alternator | EL 184J | g=GF/GFS-YX32 | o=K4100ZD | 
+133 | 37 | 3 | engine | K4102D | g=GF/GFS-YX30 | o=EL 184H | 
+133 | 37 | 3 | alternator | EL 184H | g=GF/GFS-YX30 | o=K4102D | 
+133 | 37 | 4 | engine | K4102ZD | g=GF/GFS-YX34 | o=EL 224C | 
+133 | 37 | 4 | alternator | EL 224C | g=GF/GFS-YX34 | o=K4102ZD | 
+133 | 37 | 5 | engine | ZH4105ZD | g=GF/GFS-YX40 | o=EL 224D | 
+133 | 37 | 5 | alternator | EL 224D | g=GF/GFS-YX40 | o=ZH4105ZD | 
+133 | 37 | 6 | engine | ZH4105ZLD | g=GF/GFS-YX48 | o=EL 224E | 
+133 | 37 | 6 | alternator | EL 224E | g=GF/GFS-YX48 | o=ZH4105ZLD | 
+133 | 37 | 7 | engine | R4105ZD | g=GF/GFS-YX50 | o=EL 224E | 
+133 | 37 | 7 | alternator | EL 224E | g=GF/GFS-YX50 | o=R4105ZD | 
+133 | 37 | 8 | engine | R4105ZLD | g=GF/GFS-YX58 | o=EL 224F | 
+133 | 37 | 8 | alternator | EL 224F | g=GF/GFS-YX58 | o=R4105ZLD | 
+133 | 37 | 9 | engine | R4105AZLD | g=GF/GFS-YX60 | o=EL 224F | 
+133 | 37 | 9 | alternator | EL 224F | g=GF/GFS-YX60 | o=R4105AZLD | 
+133 | 37 | 10 | engine | R4108IZLD | g=GF/GFS-YX68 | o=EL 224G | 
+133 | 37 | 10 | alternator | EL 224G | g=GF/GFS-YX68 | o=R4108IZLD | 
+133 | 37 | 11 | engine | R6105AZD | g=GF/GFS-YX68I | o=EL 224G | 
+133 | 37 | 11 | alternator | EL 224G | g=GF/GFS-YX68I | o=R6105AZD | 
+133 | 37 | 12 | engine | R6105AZLD | g=GF/GFS-YX96 | o=EL 274D | 
+133 | 37 | 12 | alternator | EL 274D | g=GF/GFS-YX96 | o=R6105AZLD | 
+133 | 37 | 13 | engine | R6105IZLD | g=GF/GFS-YX112 | o=EL 274E | 
+133 | 37 | 13 | alternator | EL 274E | g=GF/GFS-YX112 | o=R6105IZLD | 
+133 | 37 | 14 | engine | R6105IZLD | g=GF/GFS-YX120 | o=EL 274F | 
+133 | 37 | 14 | alternator | EL 274F | g=GF/GFS-YX120 | o=R6105IZLD | 
+133 | 37 | 15 | engine | R6108IZLD | g=GF/GFS-YX145 | o=EL 274G | 
+133 | 37 | 15 | alternator | EL 274G | g=GF/GFS-YX145 | o=R6108IZLD | 
+133 | 37 | 16 | engine | R6108ZLD | g=GF/GFS-YX145I | o=EL 274G | 
+133 | 37 | 16 | alternator | EL 274G | g=GF/GFS-YX145I | o=R6108ZLD | 
+133 | 37 | 17 | engine | R9768D | g=GF/GFS-YX184 | o=EL 274J | 
+133 | 37 | 17 | alternator | EL 274J | g=GF/GFS-YX184 | o=R9768D | 
+133 | 37 | 18 | engine | R9768D-1 | g=GF/GFS-YX200 | o=EL 274K | 
+133 | 37 | 18 | alternator | EL 274K | g=GF/GFS-YX200 | o=R9768D-1 | 
+133 | 37 | 19 | engine | R11D | g=GF/GFS-YX260 | o=EL 314E | 
+133 | 37 | 19 | alternator | EL 314E | g=GF/GFS-YX260 | o=R11D | 
+133 | 37 | 20 | engine | R11D-1 | g=GF/GFS-YX304 | o=EL 314F | 
+133 | 37 | 20 | alternator | EL 314F | g=GF/GFS-YX304 | o=R11D-1 | 
+135 | 38 | 0 | engine | NT855-GA | g=GF/GFS-C200 | o=ELS 274J | Cummins
+135 | 38 | 0 | alternator | ELS 274J | g=GF/GFS-C200 | o=NT855-GA | 
+135 | 38 | 1 | engine | NTA855-G1 | g=GF/GFS-C250 | o=ELS 314D | Cummins
+135 | 38 | 1 | alternator | ELS 314D | g=GF/GFS-C250 | o=NTA855-G1 | 
+135 | 38 | 2 | engine | NTA855-G1B | g=GF/GFS-C275 | o=ELS 314E | Cummins
+135 | 38 | 2 | alternator | ELS 314E | g=GF/GFS-C275 | o=NTA855-G1B | 
+135 | 38 | 3 | engine | NTA855-G2 | g=GF/GFS-C275 | o=ELS 314E | Cummins
+135 | 38 | 3 | alternator | ELS 314E | g=GF/GFS-C275 | o=NTA855-G2 | 
+135 | 38 | 4 | engine | NTA855-G3 | g=GF/GFS-C310 | o=ELS 314FS | Cummins
+135 | 38 | 4 | alternator | ELS 314FS | g=GF/GFS-C310 | o=NTA855-G3 | 
+135 | 38 | 5 | engine | KTA19-G2 | g=GF/GFS-C350 | o=ELS 314G | Cummins
+135 | 38 | 5 | alternator | ELS 314G | g=GF/GFS-C350 | o=KTA19-G2 | 
+135 | 38 | 6 | engine | KTA19-G3 | g=GF/GFS-C400 | o=ELS 354C | Cummins
+135 | 38 | 6 | alternator | ELS 354C | g=GF/GFS-C400 | o=KTA19-G3 | 
+135 | 38 | 7 | engine | KTA19-G3A | g=GF/GFS-C440 | o=ELS 354D | Cummins
+135 | 38 | 7 | alternator | ELS 354D | g=GF/GFS-C440 | o=KTA19-G3A | 
+135 | 38 | 8 | engine | KTA19-G4 | g=GF/GFS-C440 | o=ELS 354D | Cummins
+135 | 38 | 8 | alternator | ELS 354D | g=GF/GFS-C440 | o=KTA19-G4 | 
+135 | 38 | 9 | engine | KTAA19-G5 | g=GF/GFS-C470 | o=ELS 354ES | Cummins
+135 | 38 | 9 | alternator | ELS 354ES | g=GF/GFS-C470 | o=KTAA19-G5 | 
+135 | 38 | 10 | engine | KTAA19-G6A | g=GF/GFS-C540 | o=ELS 354FS | Cummins
+135 | 38 | 10 | alternator | ELS 354FS | g=GF/GFS-C540 | o=KTAA19-G6A | 
+135 | 38 | 11 | engine | QSK19-G4 | g=GF/GFS-C500 | o=ELS 354E | Cummins
+135 | 38 | 11 | alternator | ELS 354E | g=GF/GFS-C500 | o=QSK19-G4 | 
+135 | 38 | 12 | engine | QSK19-G5 | g=GF/GFS-C550 | o=ELS 354FS | Cummins
+135 | 38 | 12 | alternator | ELS 354FS | g=GF/GFS-C550 | o=QSK19-G5 | 
+135 | 38 | 13 | engine | KT38-G | g=GF/GFS-C600 | o=ELS 354G | Cummins
+135 | 38 | 13 | alternator | ELS 354G | g=GF/GFS-C600 | o=KT38-G | 
+135 | 38 | 14 | engine | KTA38-G1 | g=GF/GFS-C700 | o=ELS 404C | Cummins
+135 | 38 | 14 | alternator | ELS 404C | g=GF/GFS-C700 | o=KTA38-G1 | 
+135 | 38 | 15 | engine | KTA38-G2 | g=GF/GFS-C700 | o=ELS 404C | Cummins
+135 | 38 | 15 | alternator | ELS 404C | g=GF/GFS-C700 | o=KTA38-G2 | 
+135 | 38 | 16 | engine | KTA38-G2B | g=GF/GFS-C750 | o=ELS 404D | Cummins
+135 | 38 | 16 | alternator | ELS 404D | g=GF/GFS-C750 | o=KTA38-G2B | 
+135 | 38 | 17 | engine | KTA38-G2A | g=GF/GFS-C800 | o=ELS 404D | Cummins
+135 | 38 | 17 | alternator | ELS 404D | g=GF/GFS-C800 | o=KTA38-G2A | 
+135 | 38 | 18 | engine | KTA38-G9 | g=GF/GFS-C990 | o=ELS 404F | Cummins
+135 | 38 | 18 | alternator | ELS 404F | g=GF/GFS-C990 | o=KTA38-G9 | 
+135 | 38 | 19 | engine | QSK38-G4 | g=GF/GFS-C1100 | o=ELS 404G | Cummins
+135 | 38 | 19 | alternator | ELS 404G | g=GF/GFS-C1100 | o=QSK38-G4 | 
+135 | 38 | 20 | engine | QSK38-G5 | g=GF/GFS-C960 | o=ELS 404F | Cummins
+135 | 38 | 20 | alternator | ELS 404F | g=GF/GFS-C960 | o=QSK38-G5 | 
+135 | 38 | 21 | engine | KTA50-G3 | g=GF/GFS-C1100 | o=ELS 404G | Cummins
+135 | 38 | 21 | alternator | ELS 404G | g=GF/GFS-C1100 | o=KTA50-G3 | 
+137 | 39 | 0 | engine | KP8D220D2 | g=GFS-167K | o=EL 274F | 
+137 | 39 | 0 | alternator | EL 274F | g=GFS-167K | o=KP8D220D2 | 
+137 | 39 | 1 | engine | KP8D280D2 | g=GFS-222K | o=EL 274H | 
+137 | 39 | 1 | alternator | EL 274H | g=GFS-222K | o=KP8D280D2 | 
+137 | 39 | 2 | engine | KP9D310D2 | g=GFS-250K | o=EL 274J | 
+137 | 39 | 2 | alternator | EL 274J | g=GFS-250K | o=KP9D310D2 | 
+137 | 39 | 3 | engine | G128ZLD11 | g=GFS-306K | o=EL 314DS | 
+137 | 39 | 3 | alternator | EL 314DS | g=GFS-306K | o=G128ZLD11 | 
+137 | 39 | 4 | engine | G128ZLD11 | g=GFS-333K | o=EL 314D | 
+137 | 39 | 4 | alternator | EL 314D | g=GFS-333K | o=G128ZLD11 | 
+137 | 39 | 5 | engine | G128ZLD22 | g=GFS-361K | o=EL 314E | 
+137 | 39 | 5 | alternator | EL 314E | g=GFS-361K | o=G128ZLD22 | 
+137 | 39 | 6 | engine | KP425 | g=GFS-444K | o=EL 314G | 
+137 | 39 | 6 | alternator | EL 314G | g=GFS-444K | o=KP425 | 
+137 | 39 | 7 | engine | KP515 | g=GFS-556K | o=EL 354D | 
+137 | 39 | 7 | alternator | EL 354D | g=GFS-556K | o=KP515 | 
+137 | 39 | 8 | engine | KPV630 | g=GFS-750K | o=EL 354GS | 
+137 | 39 | 8 | alternator | EL 354GS | g=GFS-750K | o=KPV630 | 
+137 | 39 | 9 | engine | KPV780 | g=GFS-889K | o=EL 404D | 
+137 | 39 | 9 | alternator | EL 404D | g=GFS-889K | o=KPV780 | 
+137 | 39 | 10 | engine | KPV1100 | g=GFS-1111K | o=EL 404F | 
+137 | 39 | 10 | alternator | EL 404F | g=GFS-1111K | o=KPV1100 | 
+137 | 39 | 11 | engine | KPV4TDS | g=GFC-1839K | o=EL 404H | 
+137 | 39 | 11 | alternator | EL 404H | g=GFC-1839K | o=KPV4TDS | 
+139 | 40 | 0 | engine | YN25GB | g=GF/GFS-YN12 | o=EL 164D | 
+139 | 40 | 0 | alternator | EL 164D | g=GF/GFS-YN12 | o=YN25GB | 
+139 | 40 | 1 | engine | YN25GB | g=GF/GFS-YN16 | o=EL 184E | 
+139 | 40 | 1 | alternator | EL 184E | g=GF/GFS-YN16 | o=YN25GB | 
+139 | 40 | 2 | engine | YN25GB | g=GF/GFS-YN20 | o=EL 184E | 
+139 | 40 | 2 | alternator | EL 184E | g=GF/GFS-YN20 | o=YN25GB | 
+139 | 40 | 3 | engine | YN27GB | g=GF/GFS-YN20 | o=EL 184F | 
+139 | 40 | 3 | alternator | EL 184F | g=GF/GFS-YN20 | o=YN27GB | 
+139 | 40 | 4 | engine | YN27GB | g=GF/GFS-YN26 | o=EL 184G | 
+139 | 40 | 4 | alternator | EL 184G | g=GF/GFS-YN26 | o=YN27GB | 
+139 | 40 | 5 | engine | YN27GBZ | g=GF/GFS-YN25I | o=EL 184G | 
+139 | 40 | 5 | alternator | EL 184G | g=GF/GFS-YN25I | o=YN27GBZ | 
+139 | 40 | 6 | engine | YN36GB | g=GF/GFS-YN25II | o=EL 184G | 
+139 | 40 | 6 | alternator | EL 184G | g=GF/GFS-YN25II | o=YN36GB | 
+139 | 40 | 7 | engine | YN36GB | g=GF/GFS-YN28 | o=EL 184G | 
+139 | 40 | 7 | alternator | EL 184G | g=GF/GFS-YN28 | o=YN36GB | 
+139 | 40 | 8 | engine | YN38GB | g=GF/GFS-YN30 | o=EL 184H | 
+139 | 40 | 8 | alternator | EL 184H | g=GF/GFS-YN30 | o=YN38GB | 
+139 | 40 | 9 | engine | YN38GB | g=GF/GFS-YN35 | o=EL 184J | 
+139 | 40 | 9 | alternator | EL 184J | g=GF/GFS-YN35 | o=YN38GB | 
+139 | 40 | 10 | engine | YN38GBZ | g=GF/GFS-YN34 | o=EL 224C | 
+139 | 40 | 10 | alternator | EL 224C | g=GF/GFS-YN34 | o=YN38GBZ | 
+139 | 40 | 11 | engine | YN38GBZ | g=GF/GFS-YN45 | o=EL 224D | 
+139 | 40 | 11 | alternator | EL 224D | g=GF/GFS-YN45 | o=YN38GBZ | 
+139 | 40 | 12 | engine | YN38GBZ | g=GF/GFS-YN40I | o=EL 224D | 
+139 | 40 | 12 | alternator | EL 224D | g=GF/GFS-YN40I | o=YN38GBZ | 
+139 | 40 | 13 | engine | YN48GBZ | g=GF/GFS-YN48 | o=EL 224E | 
+139 | 40 | 13 | alternator | EL 224E | g=GF/GFS-YN48 | o=YN48GBZ | 
+139 | 40 | 14 | engine | YN48GBZ | g=GF/GFS-YN53 | o=EL 224E | 
+139 | 40 | 14 | alternator | EL 224E | g=GF/GFS-YN53 | o=YN48GBZ | 
+139 | 40 | 15 | engine | YN48GBZ | g=GF/GFS-YN60 | o=EL 224F | 
+139 | 40 | 15 | alternator | EL 224F | g=GF/GFS-YN60 | o=YN48GBZ | 
+139 | 40 | 16 | engine | YN48GBZ | g=GF/GFS-YN75 | o=EL 224G | 
+139 | 40 | 16 | alternator | EL 224G | g=GF/GFS-YN75 | o=YN48GBZ | 
+140 | 41 | 0 | engine | YT3B2-15 | g=GF/GFS-YT26 | o=EL 184G | YTO
+140 | 41 | 0 | alternator | EL 184G | g=GF/GFS-YT26 | o=YT3B2-15 | 
+140 | 41 | 1 | engine | YT3A2Z-15 | g=GF/GFS-YT30 | o=EL 184H | YTO
+140 | 41 | 1 | alternator | EL 184H | g=GF/GFS-YT30 | o=YT3A2Z-15 | 
+140 | 41 | 2 | engine | YT4B2Z-15 | g=GF/GFS-YT50 | o=EL 224E | YTO
+140 | 41 | 2 | alternator | EL 224E | g=GF/GFS-YT50 | o=YT4B2Z-15 | 
+140 | 41 | 3 | engine | LR4B5-15 | g=GF/GFS-YT40 | o=EL 224D | YTO
+140 | 41 | 3 | alternator | EL 224D | g=GF/GFS-YT40 | o=LR4B5-15 | 
+140 | 41 | 4 | engine | LR4B3Z-15 | g=GF/GFS-YT52 | o=EL 224F | YTO
+140 | 41 | 4 | alternator | EL 224F | g=GF/GFS-YT52 | o=LR4B3Z-15 | 
+140 | 41 | 5 | engine | LR4M3L-15 | g=GF/GFS-YT75 | o=EL 274C | YTO
+140 | 41 | 5 | alternator | EL 274C | g=GF/GFS-YT75 | o=LR4M3L-15 | 
+140 | 41 | 6 | engine | LR4N5LP-15 | g=GF/GFS-YT80 | o=EL 274C | YTO
+140 | 41 | 6 | alternator | EL 274C | g=GF/GFS-YT80 | o=LR4N5LP-15 | 
+140 | 41 | 7 | engine | LR6A3Z-15 | g=GF/GFS-YT80I | o=EL 274C | YTO
+140 | 41 | 7 | alternator | EL 274C | g=GF/GFS-YT80I | o=LR6A3Z-15 | 
+140 | 41 | 8 | engine | LR6A3L-15 | g=GF/GFS-YT100 | o=EL 274D | YTO
+140 | 41 | 8 | alternator | EL 274D | g=GF/GFS-YT100 | o=LR6A3L-15 | 
+140 | 41 | 9 | engine | LR6B3L-15 | g=GF/GFS-YT120 | o=EL 274F | YTO
+140 | 41 | 9 | alternator | EL 274F | g=GF/GFS-YT120 | o=LR6B3L-15 | 
+140 | 41 | 10 | engine | LR6M3L-15 | g=GF/GFS-YT130 | o=EL 274F | YTO
+140 | 41 | 10 | alternator | EL 274F | g=GF/GFS-YT130 | o=LR6M3L-15 | 
+140 | 41 | 11 | engine | YM6H4L-15 | g=GF/GFS-YT160 | o=EL 274H | YTO
+140 | 41 | 11 | alternator | EL 274H | g=GF/GFS-YT160 | o=YM6H4L-15 | 
+140 | 41 | 12 | engine | YM6H4L-15 | g=GF/GFS-YT180 | o=EL 274J | YTO
+140 | 41 | 12 | alternator | EL 274J | g=GF/GFS-YT180 | o=YM6H4L-15 | 
+140 | 41 | 13 | engine | YM6S4L-15 | g=GF/GFS-YT200 | o=EL 314C | YTO
+140 | 41 | 13 | alternator | EL 314C | g=GF/GFS-YT200 | o=YM6S4L-15 | 
+140 | 41 | 14 | engine | YM6S4L-15 | g=GF/GFS-YT220 | o=EL 314D | YTO
+140 | 41 | 14 | alternator | EL 314D | g=GF/GFS-YT220 | o=YM6S4L-15 | 
+140 | 41 | 15 | engine | YM6S9L-15 | g=GF/GFS-YT250 | o=EL 314E | YTO
+140 | 41 | 15 | alternator | EL 314E | g=GF/GFS-YT250 | o=YM6S9L-15 | 
+140 | 41 | 16 | engine | YM6S9L-15 | g=GF/GFS-YT280 | o=EL 314FS | YTO
+140 | 41 | 16 | alternator | EL 314FS | g=GF/GFS-YT280 | o=YM6S9L-15 | 
+140 | 41 | 17 | engine | YM6S9L-15 | g=GF/GFS-YT300 | o=EL 314F | YTO
+140 | 41 | 17 | alternator | EL 314F | g=GF/GFS-YT300 | o=YM6S9L-15 | 
+140 | 41 | 18 | engine | YM6S9L-15 | g=GF/GFS-YT320 | o=EL 314G | YTO
+140 | 41 | 18 | alternator | EL 314G | g=GF/GFS-YT320 | o=YM6S9L-15 | 
+141 | 42 | 0 | engine | YD380D | g=GF/GFS-YD8 | o=EL 164B | Yangdong
+141 | 42 | 0 | alternator | EL 164B | g=GF/GFS-YD8 | o=YD380D | 
+141 | 42 | 1 | engine | YD385D | g=GF/GFS-YD9 | o=EL 164C | Yangdong
+141 | 42 | 1 | alternator | EL 164C | g=GF/GFS-YD9 | o=YD385D | 
+141 | 42 | 2 | engine | YD480D | g=GF/GFS-YD10 | o=EL 164C | Yangdong
+141 | 42 | 2 | alternator | EL 164C | g=GF/GFS-YD10 | o=YD480D | 
+141 | 42 | 3 | engine | (YD4KD) YD485D | g=GF/GFS-YD12 | o=EL 164D | Yangdong
+141 | 42 | 3 | alternator | EL 164D | g=GF/GFS-YD12 | o=(YD4KD) YD485D | 
+141 | 42 | 4 | engine | YND485D | g=GF/GFS-YD14 | o=EL 184E | Yangdong
+141 | 42 | 4 | alternator | EL 184E | g=GF/GFS-YD14 | o=YND485D | 
+141 | 42 | 5 | engine | YSD490D | g=GF/GFS-YD16 | o=EL 184E | Yangdong
+141 | 42 | 5 | alternator | EL 184E | g=GF/GFS-YD16 | o=YSD490D | 
+141 | 42 | 6 | engine | Y490D | g=GF/GFS-YD19 | o=EL 184F | Yangdong
+141 | 42 | 6 | alternator | EL 184F | g=GF/GFS-YD19 | o=Y490D | 
+141 | 42 | 7 | engine | Y495D | g=GF/GFS-YD22 | o=EL 184F | Yangdong
+141 | 42 | 7 | alternator | EL 184F | g=GF/GFS-YD22 | o=Y495D | 
+141 | 42 | 8 | engine | Y4100D | g=GF/GFS-YD24 | o=EL 184G | Yangdong
+141 | 42 | 8 | alternator | EL 184G | g=GF/GFS-YD24 | o=Y4100D | 
+141 | 42 | 9 | engine | Y4102D | g=GF/GFS-YD26 | o=EL 184H | Yangdong
+141 | 42 | 9 | alternator | EL 184H | g=GF/GFS-YD26 | o=Y4102D | 
+141 | 42 | 10 | engine | Y4105D | g=GF/GFS-YD30 | o=EL 184H | Yangdong
+141 | 42 | 10 | alternator | EL 184H | g=GF/GFS-YD30 | o=Y4105D | 
+141 | 42 | 11 | engine | Y4102ZD | g=GF/GFS-YD32 | o=EL 224C | Yangdong
+141 | 42 | 11 | alternator | EL 224C | g=GF/GFS-YD32 | o=Y4102ZD | 
+141 | 42 | 12 | engine | Y4102ZLD | g=GF/GFS-YD38 | o=EL 224D | Yangdong
+141 | 42 | 12 | alternator | EL 224D | g=GF/GFS-YD38 | o=Y4102ZLD | 
+141 | 42 | 13 | engine | Y4105ZLD | g=GF/GFS-YD44 | o=EL 224E | Yangdong
+141 | 42 | 13 | alternator | EL 224E | g=GF/GFS-YD44 | o=Y4105ZLD | 
+141 | 42 | 14 | engine | YD4EZLD | g=GF/GFS-YD50 | o=EL 224F | Yangdong
+141 | 42 | 14 | alternator | EL 224F | g=GF/GFS-YD50 | o=YD4EZLD | 
+142 | 44 | 0 | alternator | EL 274F | g=GF/GFS-WL128 | o= | 
+142 | 44 | 1 | alternator | EL 274H | g=GF/GFS-WL160 | o= | 
+142 | 44 | 2 | alternator | EL 274J | g=GF/GFS-WL184 | o= | 
+142 | 44 | 3 | alternator | EL 274K | g=GF/GFS-WL200 | o= | 
+142 | 44 | 4 | alternator | EL 314D | g=GF/GFS-WL236 | o= | 
+142 | 44 | 5 | alternator | EL 314E | g=GF/GFS-WL260 | o= | 
+142 | 44 | 6 | alternator | EL 314F | g=GF/GFS-WL304 | o= | 
+142 | 44 | 7 | alternator | EL 354C | g=GF/GFS-WL360 | o= | 
+142 | 44 | 8 | alternator | EL 354C | g=GF/GFS-WL360 | o= | 
+142 | 44 | 9 | alternator | EL 354D | g=GF/GFS-WL400 | o= | 
+142 | 44 | 10 | alternator | EL 354ES | g=GF/GFS-WL440 | o= | 
+142 | 44 | 11 | alternator | EL 354FS | g=GF/GFS-WL500 | o= | 
+142 | 44 | 12 | alternator | EL 354FS | g=GF/GFS-WL500 | o= | 
+142 | 44 | 13 | alternator | EL 354G | g=GF/GFS-WL550 | o= | 
+142 | 44 | 14 | alternator | EL 354H | g=GF/GFS-WL600 | o= | 
+142 | 44 | 15 | alternator | EL 404C | g=GF/GFS-WL640 | o= | 
+142 | 44 | 16 | alternator | EL 404C | g=GF/GFS-WL640 | o= | 
+142 | 44 | 17 | alternator | EL 404D | g=GF/GFS-WL728 | o= | 
+142 | 44 | 18 | alternator | EL 404D | g=GF/GFS-WL728 | o= | 
+142 | 44 | 19 | alternator | EL 404D | g=GF/GFS-WL728 | o= | 
+142 | 44 | 20 | alternator | EL 404D | g=GF/GFS-WL728 | o= | 
+142 | 44 | 21 | alternator | EL 404E | g=GF/GFS-WL800 | o= | 
+143 | 46 | 0 | engine | 1003G | g=GF/GFS-LW25 | o=EL 184G | Lovol
+143 | 46 | 0 | alternator | EL 184G | g=GF/GFS-LW25 | o=1003G | 
+143 | 46 | 1 | engine | 1003TG | g=GF/GFS-LW40 | o=EL 224D | Lovol
+143 | 46 | 1 | alternator | EL 224D | g=GF/GFS-LW40 | o=1003TG | 
+143 | 46 | 2 | engine | 1004G | g=GF/GFS-LW34 | o=EL 224C | Lovol
+143 | 46 | 2 | alternator | EL 224C | g=GF/GFS-LW34 | o=1004G | 
+143 | 46 | 3 | engine | 1004TGIA | g=GF/GFS-LW46 | o=EL 224E | Lovol
+143 | 46 | 3 | alternator | EL 224E | g=GF/GFS-LW46 | o=1004TGIA | 
+143 | 46 | 4 | engine | 1004TG | g=GF/GFS-LW58 | o=EL 224F | Lovol
+143 | 46 | 4 | alternator | EL 224F | g=GF/GFS-LW58 | o=1004TG | 
+143 | 46 | 5 | engine | 1006TG1A | g=GF/GFS-LW75 | o=EL 274C | Lovol
+143 | 46 | 5 | alternator | EL 274C | g=GF/GFS-LW75 | o=1006TG1A | 
+143 | 46 | 6 | engine | 1006TG3A | g=GF/GFS-LW77 | o=EL 274C | Lovol
+143 | 46 | 6 | alternator | EL 274C | g=GF/GFS-LW77 | o=1006TG3A | 
+143 | 46 | 7 | engine | 1006TG2A | g=GF/GFS-LW80 | o=EL 274C | Lovol
+143 | 46 | 7 | alternator | EL 274C | g=GF/GFS-LW80 | o=1006TG2A | 
+143 | 46 | 8 | engine | 1006TAG1A | g=GF/GFS-LW96 | o=EL 274D | Lovol
+143 | 46 | 8 | alternator | EL 274D | g=GF/GFS-LW96 | o=1006TAG1A | 
+143 | 46 | 9 | engine | 1006TAG | g=GF/GFS-LW108 | o=EL 274E | Lovol
+143 | 46 | 9 | alternator | EL 274E | g=GF/GFS-LW108 | o=1006TAG | 
+143 | 46 | 10 | engine | 1106C-P6TAG2A | g=GF/GFS-LW112 | o=EL 274E | Lovol
+143 | 46 | 10 | alternator | EL 274E | g=GF/GFS-LW112 | o=1106C-P6TAG2A | 
+143 | 46 | 11 | engine | 1106C-P6TAG3A | g=GF/GFS-LW126 | o=EL 274F | Lovol
+143 | 46 | 11 | alternator | EL 274F | g=GF/GFS-LW126 | o=1106C-P6TAG3A | 
+143 | 46 | 12 | engine | 1106C-P6TAG4A | g=GF/GFS-LW142 | o=EL 274G | Lovol
+143 | 46 | 12 | alternator | EL 274G | g=GF/GFS-LW142 | o=1106C-P6TAG4A | 
+144 | 48 | 0 | engine | K4100D | g=GFS-W33 | o=EL 184G | 
+144 | 48 | 0 | alternator | EL 184G | g=GFS-W33 | o=K4100D | 
+144 | 48 | 1 | engine | ZH4100D | g=GFS-W33 | o=EL 184G | 
+144 | 48 | 1 | alternator | EL 184G | g=GFS-W33 | o=ZH4100D | 
+144 | 48 | 2 | engine | K4100ZD | g=GFS-W44 | o=EL 184J | 
+144 | 48 | 2 | alternator | EL 184J | g=GFS-W44 | o=K4100ZD | 
+144 | 48 | 3 | engine | ZH4105ZD | g=GFS-W56 | o=EL 224D | 
+144 | 48 | 3 | alternator | EL 224D | g=GFS-W56 | o=ZH4105ZD | 
+144 | 48 | 4 | engine | ZH4105ZD | g=GFS-W67 | o=EL 224E | 
+144 | 48 | 4 | alternator | EL 224E | g=GFS-W67 | o=ZH4105ZD | 
+144 | 48 | 5 | engine | ZH4105ZLD | g=GFS-W67 | o=EL 224E | 
+144 | 48 | 5 | alternator | EL 224E | g=GFS-W67 | o=ZH4105ZLD | 
+144 | 48 | 6 | engine | R4105ZD | g=GFS-W67 | o=EL 224E | 
+144 | 48 | 6 | alternator | EL 224E | g=GFS-W67 | o=R4105ZD | 
+144 | 48 | 7 | engine | R6105ZD | g=GFS-W94 | o=EL 224G | 
+144 | 48 | 7 | alternator | EL 224G | g=GFS-W94 | o=R6105ZD | 
+144 | 48 | 8 | engine | R6105AZLD | g=GFS-W111 | o=EL 274C | 
+144 | 48 | 8 | alternator | EL 274C | g=GFS-W111 | o=R6105AZLD | 
+144 | 48 | 9 | engine | R6105IZLD | g=GFS-W139 | o=EL 274D | 
+144 | 48 | 9 | alternator | EL 274D | g=GFS-W139 | o=R6105IZLD | 
+144 | 48 | 10 | engine | R6105IZLD | g=GFS-W153 | o=EL 274E | 
+144 | 48 | 10 | alternator | EL 274E | g=GFS-W153 | o=R6105IZLD | 
+144 | 48 | 12 | engine | R6108ZLD | g=GFS-W178 | o=EL 274F | 
+144 | 48 | 12 | alternator | EL 274F | g=GFS-W178 | o=R6108ZLD | 
+144 | 48 | 14 | alternator | EL 274H | g=GFS-W222 | o= | 
+144 | 48 | 15 | alternator | EL 274J | g=GFS-W250 | o= | 
+144 | 48 | 16 | alternator | EL 274K | g=GFS-W278 | o= | 
+144 | 48 | 17 | engine | WD618 | g=GFS-W328 | o=EL 314D | 
+144 | 48 | 17 | alternator | EL 314D | g=GFS-W328 | o=WD618 | 
+144 | 48 | 18 | engine | WD618 | g=GFS-W361 | o=EL 314E | 
+144 | 48 | 18 | alternator | EL 314E | g=GFS-W361 | o=WD618 | 
+145 | 50 | 0 | engine | YT3B2-15 | g=GF/GFS-YT26 | o=EL 184G | YTO
+145 | 50 | 0 | alternator | EL 184G | g=GF/GFS-YT26 | o=YT3B2-15 | 
+145 | 50 | 1 | engine | YT3A2Z-15 | g=GF/GFS-YT30 | o=EL 184H | YTO
+145 | 50 | 1 | alternator | EL 184H | g=GF/GFS-YT30 | o=YT3A2Z-15 | 
+145 | 50 | 2 | engine | YT4B2Z-15 | g=GF/GFS-YT50 | o=EL 224E | YTO
+145 | 50 | 2 | alternator | EL 224E | g=GF/GFS-YT50 | o=YT4B2Z-15 | 
+145 | 50 | 3 | engine | LR4B5-15 | g=GF/GFS-YT40 | o=EL 224D | YTO
+145 | 50 | 3 | alternator | EL 224D | g=GF/GFS-YT40 | o=LR4B5-15 | 
+145 | 50 | 4 | engine | LR4B3Z-15 | g=GF/GFS-YT52 | o=EL 224F | YTO
+145 | 50 | 4 | alternator | EL 224F | g=GF/GFS-YT52 | o=LR4B3Z-15 | 
+145 | 50 | 5 | engine | LR4M3L-15 | g=GF/GFS-YT75 | o=EL 274C | YTO
+145 | 50 | 5 | alternator | EL 274C | g=GF/GFS-YT75 | o=LR4M3L-15 | 
+145 | 50 | 6 | engine | LR4N5LP-15 | g=GF/GFS-YT80 | o=EL 274C | YTO
+145 | 50 | 6 | alternator | EL 274C | g=GF/GFS-YT80 | o=LR4N5LP-15 | 
+145 | 50 | 7 | engine | LR6A3Z-15 | g=GF/GFS-YT80I | o=EL 274C | YTO
+145 | 50 | 7 | alternator | EL 274C | g=GF/GFS-YT80I | o=LR6A3Z-15 | 
+145 | 50 | 8 | engine | LR6A3L-15 | g=GF/GFS-YT100 | o=EL 274D | YTO
+145 | 50 | 8 | alternator | EL 274D | g=GF/GFS-YT100 | o=LR6A3L-15 | 
+145 | 50 | 9 | engine | LR6B3L-15 | g=GF/GFS-YT120 | o=EL 274F | YTO
+145 | 50 | 9 | alternator | EL 274F | g=GF/GFS-YT120 | o=LR6B3L-15 | 
+145 | 50 | 10 | engine | LR6M3L-15 | g=GF/GFS-YT130 | o=EL 274F | YTO
+145 | 50 | 10 | alternator | EL 274F | g=GF/GFS-YT130 | o=LR6M3L-15 | 
+145 | 50 | 11 | engine | YM6H4L-15 | g=GF/GFS-YT160 | o=EL 274H | YTO
+145 | 50 | 11 | alternator | EL 274H | g=GF/GFS-YT160 | o=YM6H4L-15 | 
+145 | 50 | 12 | engine | YM6H4L-15 | g=GF/GFS-YT180 | o=EL 274J | YTO
+145 | 50 | 12 | alternator | EL 274J | g=GF/GFS-YT180 | o=YM6H4L-15 | 
+145 | 50 | 13 | engine | YM6S4L-15 | g=GF/GFS-YT200 | o=EL 314C | YTO
+145 | 50 | 13 | alternator | EL 314C | g=GF/GFS-YT200 | o=YM6S4L-15 | 
+145 | 50 | 14 | engine | YM6S4L-15 | g=GF/GFS-YT220 | o=EL 314D | YTO
+145 | 50 | 14 | alternator | EL 314D | g=GF/GFS-YT220 | o=YM6S4L-15 | 
+145 | 50 | 15 | engine | YM6S9L-15 | g=GF/GFS-YT250 | o=EL 314E | YTO
+145 | 50 | 15 | alternator | EL 314E | g=GF/GFS-YT250 | o=YM6S9L-15 | 
+145 | 50 | 16 | engine | YM6S9L-15 | g=GF/GFS-YT280 | o=EL 314FS | YTO
+145 | 50 | 16 | alternator | EL 314FS | g=GF/GFS-YT280 | o=YM6S9L-15 | 
+145 | 50 | 17 | engine | YM6S9L-15 | g=GF/GFS-YT300 | o=EL 314F | YTO
+145 | 50 | 17 | alternator | EL 314F | g=GF/GFS-YT300 | o=YM6S9L-15 | 
+145 | 50 | 18 | engine | YM6S9L-15 | g=GF/GFS-YT320 | o=EL 314G | YTO
+145 | 50 | 18 | alternator | EL 314G | g=GF/GFS-YT320 | o=YM6S9L-15 | 
+146 | 51 | 0 | engine | YD380D | g=GF/GFS-YD8 | o=EL 164B | Yangdong
+146 | 51 | 0 | alternator | EL 164B | g=GF/GFS-YD8 | o=YD380D | 
+146 | 51 | 1 | engine | YD385D | g=GF/GFS-YD9 | o=EL 164C | Yangdong
+146 | 51 | 1 | alternator | EL 164C | g=GF/GFS-YD9 | o=YD385D | 
+146 | 51 | 2 | engine | YD480D | g=GF/GFS-YD10 | o=EL 164C | Yangdong
+146 | 51 | 2 | alternator | EL 164C | g=GF/GFS-YD10 | o=YD480D | 
+146 | 51 | 3 | engine | (YD4KD) YD485D | g=GF/GFS-YD12 | o=EL 164D | Yangdong
+146 | 51 | 3 | alternator | EL 164D | g=GF/GFS-YD12 | o=(YD4KD) YD485D | 
+146 | 51 | 4 | engine | YND485D | g=GF/GFS-YD14 | o=EL 184E | Yangdong
+146 | 51 | 4 | alternator | EL 184E | g=GF/GFS-YD14 | o=YND485D | 
+146 | 51 | 5 | engine | YSD490D | g=GF/GFS-YD16 | o=EL 184E | Yangdong
+146 | 51 | 5 | alternator | EL 184E | g=GF/GFS-YD16 | o=YSD490D | 
+146 | 51 | 6 | engine | Y490D | g=GF/GFS-YD19 | o=EL 184F | Yangdong
+146 | 51 | 6 | alternator | EL 184F | g=GF/GFS-YD19 | o=Y490D | 
+146 | 51 | 7 | engine | Y495D | g=GF/GFS-YD22 | o=EL 184F | Yangdong
+146 | 51 | 7 | alternator | EL 184F | g=GF/GFS-YD22 | o=Y495D | 
+146 | 51 | 8 | engine | Y4100D | g=GF/GFS-YD24 | o=EL 184G | Yangdong
+146 | 51 | 8 | alternator | EL 184G | g=GF/GFS-YD24 | o=Y4100D | 
+146 | 51 | 9 | engine | Y4102D | g=GF/GFS-YD26 | o=EL 184H | Yangdong
+146 | 51 | 9 | alternator | EL 184H | g=GF/GFS-YD26 | o=Y4102D | 
+146 | 51 | 10 | engine | Y4105D | g=GF/GFS-YD30 | o=EL 184H | Yangdong
+146 | 51 | 10 | alternator | EL 184H | g=GF/GFS-YD30 | o=Y4105D | 
+146 | 51 | 11 | engine | Y4102ZD | g=GF/GFS-YD32 | o=EL 224C | Yangdong
+146 | 51 | 11 | alternator | EL 224C | g=GF/GFS-YD32 | o=Y4102ZD | 
+146 | 51 | 12 | engine | Y4102ZLD | g=GF/GFS-YD38 | o=EL 224D | Yangdong
+146 | 51 | 12 | alternator | EL 224D | g=GF/GFS-YD38 | o=Y4102ZLD | 
+146 | 51 | 13 | engine | Y4105ZLD | g=GF/GFS-YD44 | o=EL 224E | Yangdong
+146 | 51 | 13 | alternator | EL 224E | g=GF/GFS-YD44 | o=Y4105ZLD | 
+146 | 51 | 14 | engine | YD4EZLD | g=GF/GFS-YD50 | o=EL 224F | Yangdong
+146 | 51 | 14 | alternator | EL 224F | g=GF/GFS-YD50 | o=YD4EZLD | 
+147 | 52 | 0 | alternator | EL 274F | g=GF/GFS-WL128 | o= | 
+147 | 52 | 1 | alternator | EL 274H | g=GF/GFS-WL160 | o= | 
+147 | 52 | 2 | alternator | EL 274J | g=GF/GFS-WL184 | o= | 
+147 | 52 | 3 | alternator | EL 274K | g=GF/GFS-WL200 | o= | 
+147 | 52 | 4 | alternator | EL 314D | g=GF/GFS-WL236 | o= | 
+147 | 52 | 5 | alternator | EL 314E | g=GF/GFS-WL260 | o= | 
+147 | 52 | 6 | alternator | EL 314F | g=GF/GFS-WL304 | o= | 
+147 | 52 | 7 | alternator | EL 354C | g=GF/GFS-WL360 | o= | 
+147 | 52 | 8 | alternator | EL 354C | g=GF/GFS-WL360 | o= | 
+147 | 52 | 9 | alternator | EL 354D | g=GF/GFS-WL400 | o= | 
+147 | 52 | 10 | alternator | EL 354ES | g=GF/GFS-WL440 | o= | 
+147 | 52 | 11 | alternator | EL 354FS | g=GF/GFS-WL500 | o= | 
+147 | 52 | 12 | alternator | EL 354FS | g=GF/GFS-WL500 | o= | 
+147 | 52 | 13 | alternator | EL 354G | g=GF/GFS-WL550 | o= | 
+147 | 52 | 14 | alternator | EL 354H | g=GF/GFS-WL600 | o= | 
+147 | 52 | 15 | alternator | EL 404C | g=GF/GFS-WL640 | o= | 
+147 | 52 | 16 | alternator | EL 404C | g=GF/GFS-WL640 | o= | 
+147 | 52 | 17 | alternator | EL 404D | g=GF/GFS-WL728 | o= | 
+147 | 52 | 18 | alternator | EL 404D | g=GF/GFS-WL728 | o= | 
+147 | 52 | 19 | alternator | EL 404D | g=GF/GFS-WL728 | o= | 
+147 | 52 | 20 | alternator | EL 404D | g=GF/GFS-WL728 | o= | 
+147 | 52 | 21 | alternator | EL 404E | g=GF/GFS-WL800 | o= | 
+148 | 53 | 0 | engine | 1003G | g=GF/GFS-LW25 | o=EL 184G | Lovol
+148 | 53 | 0 | alternator | EL 184G | g=GF/GFS-LW25 | o=1003G | 
+148 | 53 | 1 | engine | 1003TG | g=GF/GFS-LW40 | o=EL 224D | Lovol
+148 | 53 | 1 | alternator | EL 224D | g=GF/GFS-LW40 | o=1003TG | 
+148 | 53 | 2 | engine | 1004G | g=GF/GFS-LW34 | o=EL 224C | Lovol
+148 | 53 | 2 | alternator | EL 224C | g=GF/GFS-LW34 | o=1004G | 
+148 | 53 | 3 | engine | 1004TGIA | g=GF/GFS-LW46 | o=EL 224E | Lovol
+148 | 53 | 3 | alternator | EL 224E | g=GF/GFS-LW46 | o=1004TGIA | 
+148 | 53 | 4 | engine | 1004TG | g=GF/GFS-LW58 | o=EL 224F | Lovol
+148 | 53 | 4 | alternator | EL 224F | g=GF/GFS-LW58 | o=1004TG | 
+148 | 53 | 5 | engine | 1006TG1A | g=GF/GFS-LW75 | o=EL 274C | Lovol
+148 | 53 | 5 | alternator | EL 274C | g=GF/GFS-LW75 | o=1006TG1A | 
+148 | 53 | 6 | engine | 1006TG3A | g=GF/GFS-LW77 | o=EL 274C | Lovol
+148 | 53 | 6 | alternator | EL 274C | g=GF/GFS-LW77 | o=1006TG3A | 
+148 | 53 | 7 | engine | 1006TG2A | g=GF/GFS-LW80 | o=EL 274C | Lovol
+148 | 53 | 7 | alternator | EL 274C | g=GF/GFS-LW80 | o=1006TG2A | 
+148 | 53 | 8 | engine | 1006TAG1A | g=GF/GFS-LW96 | o=EL 274D | Lovol
+148 | 53 | 8 | alternator | EL 274D | g=GF/GFS-LW96 | o=1006TAG1A | 
+148 | 53 | 9 | engine | 1006TAG | g=GF/GFS-LW108 | o=EL 274E | Lovol
+148 | 53 | 9 | alternator | EL 274E | g=GF/GFS-LW108 | o=1006TAG | 
+148 | 53 | 10 | engine | 1106C-P6TAG2A | g=GF/GFS-LW112 | o=EL 274E | Lovol
+148 | 53 | 10 | alternator | EL 274E | g=GF/GFS-LW112 | o=1106C-P6TAG2A | 
+148 | 53 | 11 | engine | 1106C-P6TAG3A | g=GF/GFS-LW126 | o=EL 274F | Lovol
+148 | 53 | 11 | alternator | EL 274F | g=GF/GFS-LW126 | o=1106C-P6TAG3A | 
+148 | 53 | 12 | engine | 1106C-P6TAG4A | g=GF/GFS-LW142 | o=EL 274G | Lovol
+148 | 53 | 12 | alternator | EL 274G | g=GF/GFS-LW142 | o=1106C-P6TAG4A | 
+149 | 54 | 0 | engine | K4100D | g=GFS-W33 | o=EL 184G | 
+149 | 54 | 0 | alternator | EL 184G | g=GFS-W33 | o=K4100D | 
+149 | 54 | 1 | engine | ZH4100D | g=GFS-W33 | o=EL 184G | 
+149 | 54 | 1 | alternator | EL 184G | g=GFS-W33 | o=ZH4100D | 
+149 | 54 | 2 | engine | K4100ZD | g=GFS-W44 | o=EL 184J | 
+149 | 54 | 2 | alternator | EL 184J | g=GFS-W44 | o=K4100ZD | 
+149 | 54 | 3 | engine | ZH4105ZD | g=GFS-W56 | o=EL 224D | 
+149 | 54 | 3 | alternator | EL 224D | g=GFS-W56 | o=ZH4105ZD | 
+149 | 54 | 4 | engine | ZH4105ZD | g=GFS-W67 | o=EL 224E | 
+149 | 54 | 4 | alternator | EL 224E | g=GFS-W67 | o=ZH4105ZD | 
+149 | 54 | 5 | engine | ZH4105ZLD | g=GFS-W67 | o=EL 224E | 
+149 | 54 | 5 | alternator | EL 224E | g=GFS-W67 | o=ZH4105ZLD | 
+149 | 54 | 6 | engine | R4105ZD | g=GFS-W67 | o=EL 224E | 
+149 | 54 | 6 | alternator | EL 224E | g=GFS-W67 | o=R4105ZD | 
+149 | 54 | 7 | engine | R6105ZD | g=GFS-W94 | o=EL 224G | 
+149 | 54 | 7 | alternator | EL 224G | g=GFS-W94 | o=R6105ZD | 
+149 | 54 | 8 | engine | R6105AZLD | g=GFS-W111 | o=EL 274C | 
+149 | 54 | 8 | alternator | EL 274C | g=GFS-W111 | o=R6105AZLD | 
+149 | 54 | 9 | engine | R6105IZLD | g=GFS-W139 | o=EL 274D | 
+149 | 54 | 9 | alternator | EL 274D | g=GFS-W139 | o=R6105IZLD | 
+149 | 54 | 10 | engine | R6105IZLD | g=GFS-W153 | o=EL 274E | 
+149 | 54 | 10 | alternator | EL 274E | g=GFS-W153 | o=R6105IZLD | 
+149 | 54 | 12 | engine | R6108ZLD | g=GFS-W178 | o=EL 274F | 
+149 | 54 | 12 | alternator | EL 274F | g=GFS-W178 | o=R6108ZLD | 
+149 | 54 | 14 | alternator | EL 274H | g=GFS-W222 | o= | 
+149 | 54 | 15 | alternator | EL 274J | g=GFS-W250 | o= | 
+149 | 54 | 16 | alternator | EL 274K | g=GFS-W278 | o= | 
+149 | 54 | 17 | engine | WD618 | g=GFS-W328 | o=EL 314D | 
+149 | 54 | 17 | alternator | EL 314D | g=GFS-W328 | o=WD618 | 
+149 | 54 | 18 | engine | WD618 | g=GFS-W361 | o=EL 314E | 
+149 | 54 | 18 | alternator | EL 314E | g=GFS-W361 | o=WD618 | 
+150 | 55 | 0 | engine | 1003G | g=GF/GFS-LW38 | o=ELS 184G | Lovol
+150 | 55 | 0 | alternator | ELS 184G | g=GF/GFS-LW38 | o=1003G | 
+150 | 55 | 1 | engine | 1003TG | g=GF/GFS-LW67 | o=ELS 224D | Lovol
+150 | 55 | 1 | alternator | ELS 224D | g=GF/GFS-LW67 | o=1003TG | 
+150 | 55 | 2 | engine | 1004G | g=GF/GFS-LW57 | o=ELS 224C | Lovol
+150 | 55 | 2 | alternator | ELS 224C | g=GF/GFS-LW57 | o=1004G | 
+150 | 55 | 3 | engine | 1004TGIA | g=GF/GFS-LW81 | o=ELS 224E | Lovol
+150 | 55 | 3 | alternator | ELS 224E | g=GF/GFS-LW81 | o=1004TGIA | 
+150 | 55 | 4 | engine | 1004TG | g=GF/GFS-LW98 | o=ELS 224F | Lovol
+150 | 55 | 4 | alternator | ELS 224F | g=GF/GFS-LW98 | o=1004TG | 
+150 | 55 | 5 | engine | 1006TG1A | g=GF/GFS-LW126 | o=ELS 274C | Lovol
+150 | 55 | 5 | alternator | ELS 274C | g=GF/GFS-LW126 | o=1006TG1A | 
+150 | 55 | 6 | engine | 1006TG3A | g=GF/GFS-LW126 | o=ELS 274C | Lovol
+150 | 55 | 6 | alternator | ELS 274C | g=GF/GFS-LW126 | o=1006TG3A | 
+150 | 55 | 7 | engine | 1006TG2A | g=GF/GFS-LW133 | o=ELS 274C | Lovol
+150 | 55 | 7 | alternator | ELS 274C | g=GF/GFS-LW133 | o=1006TG2A | 
+150 | 55 | 8 | engine | 1006TAG1A | g=GF/GFS-LW153 | o=ELS 274D | Lovol
+150 | 55 | 8 | alternator | ELS 274D | g=GF/GFS-LW153 | o=1006TAG1A | 
+150 | 55 | 9 | engine | 1006TAG | g=GF/GFS-LW167 | o=ELS 274E | Lovol
+150 | 55 | 9 | alternator | ELS 274E | g=GF/GFS-LW167 | o=1006TAG | 
+150 | 55 | 10 | engine | 1106C-P6TAG2A | g=GF/GFS-LW178 | o=ELS 274E | Lovol
+150 | 55 | 10 | alternator | ELS 274E | g=GF/GFS-LW178 | o=1106C-P6TAG2A | 
+150 | 55 | 11 | engine | 1106C-P6TAG3A | g=GF/GFS-LW194 | o=ELS 274F | Lovol
+150 | 55 | 11 | alternator | ELS 274F | g=GF/GFS-LW194 | o=1106C-P6TAG3A | 
+150 | 55 | 12 | engine | 1106C-P6TAG4A | g=GF/GFS-LW222 | o=ELS 274G | Lovol
+150 | 55 | 12 | alternator | ELS 274G | g=GF/GFS-LW222 | o=1106C-P6TAG4A | 
+151 | 56 | 0 | engine | YD380D | g=GF/GFS-YD13 | o=ELS 164B | Yangdong
+151 | 56 | 0 | alternator | ELS 164B | g=GF/GFS-YD13 | o=YD380D | 
+151 | 56 | 1 | engine | YD385D | g=GF/GFS-YD16 | o=ELS 164C | Yangdong
+151 | 56 | 1 | alternator | ELS 164C | g=GF/GFS-YD16 | o=YD385D | 
+151 | 56 | 2 | engine | YD480D | g=GF/GFS-YD17 | o=ELS 164C | Yangdong
+151 | 56 | 2 | alternator | ELS 164C | g=GF/GFS-YD17 | o=YD480D | 
+151 | 56 | 3 | engine | (YD4KD) YD485D | g=GF/GFS-YD18 | o=ELS 164D | Yangdong
+151 | 56 | 3 | alternator | ELS 164D | g=GF/GFS-YD18 | o=(YD4KD) YD485D | 
+151 | 56 | 4 | engine | YND485D | g=GF/GFS-YD22 | o=ELS 184E | Yangdong
+151 | 56 | 4 | alternator | ELS 184E | g=GF/GFS-YD22 | o=YND485D | 
+151 | 56 | 5 | engine | YSD490D | g=GF/GFS-YD24 | o=ELS 184E | Yangdong
+151 | 56 | 5 | alternator | ELS 184E | g=GF/GFS-YD24 | o=YSD490D | 
+151 | 56 | 6 | engine | Y490D | g=GF/GFS-YD29 | o=ELS 184F | Yangdong
+151 | 56 | 6 | alternator | ELS 184F | g=GF/GFS-YD29 | o=Y490D | 
+151 | 56 | 7 | engine | Y495D | g=GF/GFS-YD31 | o=ELS 184F | Yangdong
+151 | 56 | 7 | alternator | ELS 184F | g=GF/GFS-YD31 | o=Y495D | 
+151 | 56 | 8 | engine | Y4100D | g=GF/GFS-YD38 | o=ELS 184G | Yangdong
+151 | 56 | 8 | alternator | ELS 184G | g=GF/GFS-YD38 | o=Y4100D | 
+151 | 56 | 9 | engine | Y4102D | g=GF/GFS-YD42 | o=ELS 184H | Yangdong
+151 | 56 | 9 | alternator | ELS 184H | g=GF/GFS-YD42 | o=Y4102D | 
+151 | 56 | 10 | engine | Y4105D | g=GF/GFS-YD48 | o=ELS 184H | Yangdong
+151 | 56 | 10 | alternator | ELS 184H | g=GF/GFS-YD48 | o=Y4105D | 
+151 | 56 | 11 | engine | Y4102ZD | g=GF/GFS-YD50 | o=ELS 184J | Yangdong
+151 | 56 | 11 | alternator | ELS 184J | g=GF/GFS-YD50 | o=Y4102ZD | 
+151 | 56 | 12 | engine | Y4102ZLD | g=GF/GFS-YD55 | o=ELS 224D | Yangdong
+151 | 56 | 12 | alternator | ELS 224D | g=GF/GFS-YD55 | o=Y4102ZLD | 
+151 | 56 | 13 | engine | Y4105ZLD | g=GF/GFS-YD64 | o=ELS 224E | Yangdong
+151 | 56 | 13 | alternator | ELS 224E | g=GF/GFS-YD64 | o=Y4105ZLD | 
+151 | 56 | 14 | engine | YD4EZLD | g=GF/GFS-YD71 | o=ELS 224E | Yangdong
+151 | 56 | 14 | alternator | ELS 224E | g=GF/GFS-YD71 | o=YD4EZLD | 
+152 | 57 | 0 | engine | K4100D | g=GF/GFS-YX33 | o=ELS 184F | 
+152 | 57 | 0 | alternator | ELS 184F | g=GF/GFS-YX33 | o=K4100D | 
+152 | 57 | 1 | engine | K4100D | g=GF/GFS-YX39 | o=ELS 184G | 
+152 | 57 | 1 | alternator | ELS 184G | g=GF/GFS-YX39 | o=K4100D | 
+152 | 57 | 2 | engine | K4100ZD | g=GF/GFS-YX49 | o=ELS 184J | 
+152 | 57 | 2 | alternator | ELS 184J | g=GF/GFS-YX49 | o=K4100ZD | 
+152 | 57 | 3 | engine | K4102D | g=GF/GFS-YX46 | o=ELS 184H | 
+152 | 57 | 3 | alternator | ELS 184H | g=GF/GFS-YX46 | o=K4102D | 
+152 | 57 | 4 | engine | K4102ZD | g=GF/GFS-YX51 | o=ELS 224C | 
+152 | 57 | 4 | alternator | ELS 224C | g=GF/GFS-YX51 | o=K4102ZD | 
+152 | 57 | 5 | engine | ZH4105ZD | g=GF/GFS-YX61 | o=ELS 224D | 
+152 | 57 | 5 | alternator | ELS 224D | g=GF/GFS-YX61 | o=ZH4105ZD | 
+152 | 57 | 6 | engine | ZH4105ZLD | g=GF/GFS-YX73 | o=ELS 224E | 
+152 | 57 | 6 | alternator | ELS 224E | g=GF/GFS-YX73 | o=ZH4105ZLD | 
+152 | 57 | 7 | engine | R4105ZD | g=GF/GFS-YX73 | o=ELS 224E | 
+152 | 57 | 7 | alternator | ELS 224E | g=GF/GFS-YX73 | o=R4105ZD | 
+152 | 57 | 8 | engine | R4105ZLD | g=GF/GFS-YX89 | o=ELS 224F | 
+152 | 57 | 8 | alternator | ELS 224F | g=GF/GFS-YX89 | o=R4105ZLD | 
+152 | 57 | 9 | engine | R4105AZLD | g=GF/GFS-YX89 | o=ELS 224F | 
+152 | 57 | 9 | alternator | ELS 224F | g=GF/GFS-YX89 | o=R4105AZLD | 
+152 | 57 | 10 | engine | R4108IZLD | g=GF/GFS-YX104 | o=ELS 224G | 
+152 | 57 | 10 | alternator | ELS 224G | g=GF/GFS-YX104 | o=R4108IZLD | 
+152 | 57 | 11 | engine | R6105AZD | g=GF/GFS-YX104 | o=ELS 224G | 
+152 | 57 | 11 | alternator | ELS 224G | g=GF/GFS-YX104 | o=R6105AZD | 
+152 | 57 | 12 | engine | R6105AZLD | g=GF/GFS-YX148 | o=ELS 274D | 
+152 | 57 | 12 | alternator | ELS 274D | g=GF/GFS-YX148 | o=R6105AZLD | 
+152 | 57 | 13 | engine | R6105IZLD | g=GF/GFS-YX161 | o=ELS 274E | 
+152 | 57 | 13 | alternator | ELS 274E | g=GF/GFS-YX161 | o=R6105IZLD | 
+152 | 57 | 15 | engine | R6108IZLD | g=GF/GFS-YX194 | o=ELS 274F | 
+152 | 57 | 15 | alternator | ELS 274F | g=GF/GFS-YX194 | o=R6108IZLD | 
+152 | 57 | 16 | engine | R6108ZLD | g=GF/GFS-YX194 | o=ELS 274F | 
+152 | 57 | 16 | alternator | ELS 274F | g=GF/GFS-YX194 | o=R6108ZLD | 
+152 | 57 | 17 | engine | R9768D | g=GF/GFS-YX244 | o=ELS 274H | 
+152 | 57 | 17 | alternator | ELS 274H | g=GF/GFS-YX244 | o=R9768D | 
+152 | 57 | 18 | engine | R9768D-1 | g=GF/GFS-YX278 | o=ELS 274J | 
+152 | 57 | 18 | alternator | ELS 274J | g=GF/GFS-YX278 | o=R9768D-1 | 
+152 | 57 | 19 | engine | R11D | g=GF/GFS-YX361 | o=ELS 314D | 
+152 | 57 | 19 | alternator | ELS 314D | g=GF/GFS-YX361 | o=R11D | 
+152 | 57 | 20 | engine | R11D-1 | g=GF/GFS-YX464 | o=ELS 314F | 
+152 | 57 | 20 | alternator | ELS 314F | g=GF/GFS-YX464 | o=R11D-1 | 
+156 | 60 | 0 | alternator | EL 164A | g= | o= | 
+156 | 60 | 0 | alternator | EL 164A | g= | o= | 
+156 | 60 | 1 | alternator | EL 164B | g= | o= | 
+156 | 60 | 1 | alternator | EL 164B | g= | o= | 
+156 | 60 | 2 | alternator | El 164C | g= | o= | 
+156 | 60 | 2 | alternator | El 164C | g= | o= | 
+156 | 60 | 3 | alternator | EL 164D | g= | o= | 
+156 | 60 | 3 | alternator | EL 164D | g= | o= | 
+156 | 60 | 4 | alternator | EL 184E | g= | o= | 
+156 | 60 | 4 | alternator | EL 184E | g= | o= | 
+156 | 60 | 5 | alternator | EL 184F | g= | o= | 
+156 | 60 | 5 | alternator | EL 184F | g= | o= | 
+156 | 60 | 6 | alternator | EL 184G | g= | o= | 
+156 | 60 | 6 | alternator | EL 184G | g= | o= | 
+156 | 60 | 7 | alternator | EL 184H | g= | o= | 
+156 | 60 | 7 | alternator | EL 184H | g= | o= | 
+156 | 60 | 8 | alternator | EL 184J | g= | o= | 
+156 | 60 | 8 | alternator | EL 184J | g= | o= | 
+156 | 60 | 9 | alternator | EL 224C | g= | o= | 
+156 | 60 | 9 | alternator | EL 224C | g= | o= | 
+156 | 60 | 10 | alternator | EL 224D | g= | o= | 
+156 | 60 | 10 | alternator | EL 224D | g= | o= | 
+156 | 60 | 11 | alternator | EL 224E | g= | o= | 
+156 | 60 | 11 | alternator | EL 224E | g= | o= | 
+156 | 60 | 12 | alternator | EL 224F | g= | o= | 
+156 | 60 | 12 | alternator | EL 224F | g= | o= | 
+156 | 60 | 13 | alternator | EL 224GS | g= | o= | 
+156 | 60 | 13 | alternator | EL 224GS | g= | o= | 
+156 | 60 | 14 | alternator | EL 224G | g= | o= | 
+156 | 60 | 14 | alternator | EL 224G | g= | o= | 
+156 | 60 | 15 | alternator | EL 274C | g= | o= | 
+156 | 60 | 15 | alternator | EL 274C | g= | o= | 
+156 | 60 | 16 | alternator | EL 274D | g= | o= | 
+156 | 60 | 16 | alternator | EL 274D | g= | o= | 
+156 | 60 | 17 | alternator | EL 274E | g= | o= | 
+156 | 60 | 17 | alternator | EL 274E | g= | o= | 
+156 | 60 | 18 | alternator | EL 274F | g= | o= | 
+156 | 60 | 18 | alternator | EL 274F | g= | o= | 
+156 | 60 | 19 | alternator | EL 274G | g= | o= | 
+156 | 60 | 19 | alternator | EL 274G | g= | o= | 
+156 | 60 | 20 | alternator | EL 274H | g= | o= | 
+156 | 60 | 20 | alternator | EL 274H | g= | o= | 
+156 | 60 | 21 | alternator | EL 274J | g= | o= | 
+156 | 60 | 21 | alternator | EL 274J | g= | o= | 
+156 | 60 | 22 | alternator | EL 274K | g= | o= | 
+156 | 60 | 22 | alternator | EL 274K | g= | o= | 
+156 | 60 | 23 | alternator | EL 314C | g= | o= | 
+156 | 60 | 23 | alternator | EL 314C | g= | o= | 
+156 | 60 | 24 | alternator | EL 314D | g= | o= | 
+156 | 60 | 24 | alternator | EL 314D | g= | o= | 
+156 | 60 | 25 | alternator | EL 314E | g= | o= | 
+156 | 60 | 25 | alternator | EL 314E | g= | o= | 
+156 | 60 | 26 | alternator | EL 314FS | g= | o= | 
+156 | 60 | 26 | alternator | EL 314FS | g= | o= | 
+156 | 60 | 27 | alternator | EL 314F | g= | o= | 
+156 | 60 | 27 | alternator | EL 314F | g= | o= | 
+156 | 60 | 28 | alternator | EL 314G | g= | o= | 
+156 | 60 | 28 | alternator | EL 314G | g= | o= | 
+156 | 60 | 29 | alternator | EL 354C | g= | o= | 
+156 | 60 | 29 | alternator | EL 354C | g= | o= | 
+156 | 60 | 30 | alternator | EL 354D | g= | o= | 
+156 | 60 | 30 | alternator | EL 354D | g= | o= | 
+156 | 60 | 31 | alternator | EL 354ES | g= | o= | 
+156 | 60 | 31 | alternator | EL 354ES | g= | o= | 
+156 | 60 | 32 | alternator | EL 354E | g= | o= | 
+156 | 60 | 32 | alternator | EL 354E | g= | o= | 
+156 | 60 | 33 | alternator | EL 354FS | g= | o= | 
+156 | 60 | 33 | alternator | EL 354FS | g= | o= | 
+156 | 60 | 34 | alternator | EL 354F | g= | o= | 
+156 | 60 | 34 | alternator | EL 354F | g= | o= | 
+156 | 60 | 35 | alternator | EL 354G | g= | o= | 
+156 | 60 | 35 | alternator | EL 354G | g= | o= | 
+156 | 60 | 36 | alternator | EL 354H | g= | o= | 
+156 | 60 | 36 | alternator | EL 354H | g= | o= | 
+156 | 60 | 37 | alternator | EL 404B | g= | o= | 
+156 | 60 | 37 | alternator | EL 404B | g= | o= | 
+156 | 60 | 38 | alternator | EL 404C | g= | o= | 
+156 | 60 | 38 | alternator | EL 404C | g= | o= | 
+156 | 60 | 39 | alternator | EL 404D | g= | o= | 
+156 | 60 | 39 | alternator | EL 404D | g= | o= | 
+156 | 60 | 40 | alternator | EL 404E | g= | o= | 
+156 | 60 | 40 | alternator | EL 404E | g= | o= | 
+156 | 60 | 41 | alternator | EL 404F | g= | o= | 
+156 | 60 | 41 | alternator | EL 404F | g= | o= | 
+156 | 60 | 42 | alternator | EL 404G | g= | o= | 
+156 | 60 | 42 | alternator | EL 404G | g= | o= | 
+156 | 60 | 43 | alternator | EL 404H | g= | o= | 
+156 | 60 | 43 | alternator | EL 404H | g= | o= | 
+156 | 60 | 44 | alternator | EL 404I | g= | o= | 
+156 | 60 | 44 | alternator | EL 404I | g= | o= | 
+156 | 60 | 45 | alternator | EL 504D | g= | o= | 
+156 | 60 | 45 | alternator | EL 504D | g= | o= | 
+156 | 60 | 46 | alternator | EL 504E | g= | o= | 
+156 | 60 | 46 | alternator | EL 504E | g= | o= | 
+156 | 60 | 47 | alternator | EL 504F | g= | o= | 
+156 | 60 | 47 | alternator | EL 504F | g= | o= | 
+156 | 60 | 48 | alternator | EL 504G | g= | o= | 
+156 | 60 | 48 | alternator | EL 504G | g= | o= | 
+172 | 61 | 0 | engine | 4B3.9-G1 | g=GFS-C22 | o=EL 184F | Cummins
+172 | 61 | 0 | alternator | EL 184F | g=GFS-C22 | o=4B3.9-G1 | 
+172 | 61 | 1 | engine | 4B3.9-G2 | g=GFS-C22I | o=EL 184F | Cummins
+172 | 61 | 1 | alternator | EL 184F | g=GFS-C22I | o=4B3.9-G2 | 
+172 | 61 | 2 | engine | 4BT3.9-G1 | g=GFS-C30 | o=EL 184H | Cummins
+172 | 61 | 2 | alternator | EL 184H | g=GFS-C30 | o=4BT3.9-G1 | 
+172 | 61 | 3 | engine | 4BT3.9-G1 | g=GFS-C32 | o=EL 184J | Cummins
+172 | 61 | 3 | alternator | EL 184J | g=GFS-C32 | o=4BT3.9-G1 | 
+172 | 61 | 4 | engine | 4BT3.9-G2 | g=GFS-C32I | o=EL 184J | Cummins
+172 | 61 | 4 | alternator | EL 184J | g=GFS-C32I | o=4BT3.9-G2 | 
+172 | 61 | 5 | engine | 4BTA3.9-G2 | g=GFS-C40 | o=EL 224D | Cummins
+172 | 61 | 5 | alternator | EL 224D | g=GFS-C40 | o=4BTA3.9-G2 | 
+172 | 61 | 6 | engine | 4BTA3.9-G2 | g=GFS-C48I | o=EL 224E | Cummins
+172 | 61 | 6 | alternator | EL 224E | g=GFS-C48I | o=4BTA3.9-G2 | 
+172 | 61 | 7 | engine | 4BTA3.9-G2 | g=GFS-C48 | o=EL 224E | Cummins
+172 | 61 | 7 | alternator | EL 224E | g=GFS-C48 | o=4BTA3.9-G2 | 
+172 | 61 | 8 | engine | 4BTA3.9-G11 | g=GFS-C58 | o=EL 224F | Cummins
+172 | 61 | 8 | alternator | EL 224F | g=GFS-C58 | o=4BTA3.9-G11 | 
+172 | 61 | 9 | engine | 6BT5.9-G1 | g=GFS-C68 | o=EL 224G | Cummins
+172 | 61 | 9 | alternator | EL 224G | g=GFS-C68 | o=6BT5.9-G1 | 
+172 | 61 | 10 | engine | 6BT5.9-G2 | g=GFS-C68Ⅰ | o=EL 224G | Cummins
+172 | 61 | 10 | alternator | EL 224G | g=GFS-C68Ⅰ | o=6BT5.9-G2 | 
+172 | 61 | 11 | engine | 6BT5.9-G2 | g=GFS-C80 | o=EL 274C | Cummins
+172 | 61 | 11 | alternator | EL 274C | g=GFS-C80 | o=6BT5.9-G2 | 
+172 | 61 | 12 | engine | 6BT5.9-G2 | g=GFS-C80 I | o=EL 274C | Cummins
+172 | 61 | 12 | alternator | EL 274C | g=GFS-C80 I | o=6BT5.9-G2 | 
+172 | 61 | 13 | engine | 6BTA5.9-G2 | g=GFS-C96 | o=EL 274D | Cummins
+172 | 61 | 13 | alternator | EL 274D | g=GFS-C96 | o=6BTA5.9-G2 | 
+172 | 61 | 14 | engine | 6BTAA5.9-G2 | g=GFS-C112 | o=EL 274E | Cummins
+172 | 61 | 14 | alternator | EL 274E | g=GFS-C112 | o=6BTAA5.9-G2 | 
+172 | 61 | 15 | engine | 6BTAA5.9-G12 | g=GFS-C128 | o=EL 274F | Cummins
+172 | 61 | 15 | alternator | EL 274F | g=GFS-C128 | o=6BTAA5.9-G12 | 
+172 | 61 | 16 | engine | 6CTA8.3-G1 | g=GFS-C145 | o=EL 274G | Cummins
+172 | 61 | 16 | alternator | EL 274G | g=GFS-C145 | o=6CTA8.3-G1 | 
+172 | 61 | 17 | engine | 6CTA8.3-G2 | g=GFS-C145Ⅰ | o=EL 274G | Cummins
+172 | 61 | 17 | alternator | EL 274G | g=GFS-C145Ⅰ | o=6CTA8.3-G2 | 
+172 | 61 | 18 | engine | 6CTAA8.3-G2 | g=GFS-C160 | o=EL 274H | Cummins
+172 | 61 | 18 | alternator | EL 274H | g=GFS-C160 | o=6CTAA8.3-G2 | 
+172 | 61 | 19 | engine | 6LTAA8.9-G2 | g=GFS-C200 | o=EL 274K | Cummins
+172 | 61 | 19 | alternator | EL 274K | g=GFS-C200 | o=6LTAA8.9-G2 | 
+172 | 61 | 20 | engine | 6LTAA8.9-G3 | g=GFS-C200I | o=EL 274K | Cummins
+172 | 61 | 20 | alternator | EL 274K | g=GFS-C200I | o=6LTAA8.9-G3 | 
+172 | 61 | 21 | engine | 6LTAA9.5-G3 | g=GFS-C220 | o=EL 314D | Cummins
+172 | 61 | 21 | alternator | EL 314D | g=GFS-C220 | o=6LTAA9.5-G3 | 
+172 | 61 | 22 | engine | 6LTAA9.5-G1 | g=GFS-C250 | o=EL 314E | Cummins
+172 | 61 | 22 | alternator | EL 314E | g=GFS-C250 | o=6LTAA9.5-G1 | 
+172 | 61 | 23 | engine | 6ZTAA13-G3 | g=GFS-C304 | o=EL 314F | Cummins
+172 | 61 | 23 | alternator | EL 314F | g=GFS-C304 | o=6ZTAA13-G3 | 
+172 | 61 | 24 | engine | 6ZTAA13-G2 | g=GFS-C320 | o=EL 314G | Cummins
+172 | 61 | 24 | alternator | EL 314G | g=GFS-C320 | o=6ZTAA13-G2 | 
+172 | 61 | 25 | engine | 6ZTAA13-G4 | g=GFS-C360 | o=EL 354C | Cummins
+172 | 61 | 25 | alternator | EL 354C | g=GFS-C360 | o=6ZTAA13-G4 | 
+172 | 61 | 26 | engine | QSZ13-G2 | g=GFS-C360Ⅰ | o=EL 354C | Cummins
+172 | 61 | 26 | alternator | EL 354C | g=GFS-C360Ⅰ | o=QSZ13-G2 | 
+172 | 61 | 27 | engine | QSZ13-G3 | g=GFS-C400 | o=EL 354D | Cummins
+172 | 61 | 27 | alternator | EL 354D | g=GFS-C400 | o=QSZ13-G3 | 
+172 | 61 | 28 | engine | QSZ13-G5 | g=GFS-C360Ⅱ | o=EL 354C | Cummins
+172 | 61 | 28 | alternator | EL 354C | g=GFS-C360Ⅱ | o=QSZ13-G5 | 
+172 | 61 | 29 | engine | QSB3.9-G2 | g=GFS-C58 | o=EL 224F | Cummins
+172 | 61 | 29 | alternator | EL 224F | g=GFS-C58 | o=QSB3.9-G2 | 
+172 | 61 | 30 | engine | QSB3.9-G3 | g=GFS-C68Ⅰ | o=EL 224G | Cummins
+172 | 61 | 30 | alternator | EL 224G | g=GFS-C68Ⅰ | o=QSB3.9-G3 | 
+172 | 61 | 31 | engine | QSB5.9-G2 | g=GFS-C80 | o=EL 274C | Cummins
+172 | 61 | 31 | alternator | EL 274C | g=GFS-C80 | o=QSB5.9-G2 | 
+172 | 61 | 32 | engine | QSB5.9-G3 | g=GFS-C96Ⅱ | o=EL 274D | Cummins
+172 | 61 | 32 | alternator | EL 274D | g=GFS-C96Ⅱ | o=QSB5.9-G3 | 
+172 | 61 | 33 | engine | QSB6.7-G3 | g=GFS-C128 | o=EL 274F | Cummins
+172 | 61 | 33 | alternator | EL 274F | g=GFS-C128 | o=QSB6.7-G3 | 
+172 | 61 | 34 | engine | QSB6.7-G4 | g=GFS-C145 | o=EL 274G | Cummins
+172 | 61 | 34 | alternator | EL 274G | g=GFS-C145 | o=QSB6.7-G4 | 
+172 | 61 | 35 | engine | QSL8.9-G2 | g=GFS-C184 | o=EL 274J | Cummins
+172 | 61 | 35 | alternator | EL 274J | g=GFS-C184 | o=QSL8.9-G2 | 
+172 | 61 | 36 | engine | QSL8.9-G3 | g=GFS-C200 | o=EL 274K | Cummins
+172 | 61 | 36 | alternator | EL 274K | g=GFS-C200 | o=QSL8.9-G3 | 
+172 | 61 | 37 | engine | QSL8.9-G4 | g=GFS-C200Ⅱ | o=EL 274K | Cummins
+172 | 61 | 37 | alternator | EL 274K | g=GFS-C200Ⅱ | o=QSL8.9-G4 | 
+172 | 61 | 38 | engine | QSZ13-G6 | g=GFS-C280 | o=EL 314FS | Cummins
+172 | 61 | 38 | alternator | EL 314FS | g=GFS-C280 | o=QSZ13-G6 | 
+172 | 61 | 39 | engine | QSZ13-G7 | g=GFS-C320Ⅰ | o=EL 314G | Cummins
+172 | 61 | 39 | alternator | EL 314G | g=GFS-C320Ⅰ | o=QSZ13-G7 | 
+173 | 62 | 0 | engine | MTA11-G2A | g=GF/GFS-C200 | o=EL 314C | Cummins
+173 | 62 | 0 | alternator | EL 314C | g=GF/GFS-C200 | o=MTA11-G2A | 
+173 | 62 | 1 | engine | MTAA11-G3 | g=GF/GFS-C250 | o=EL 314E | Cummins
+173 | 62 | 1 | alternator | EL 314E | g=GF/GFS-C250 | o=MTAA11-G3 | 
+173 | 62 | 2 | engine | MTA11-G2 | g=GF/GFS-C200 | o=EL 274K | Cummins
+173 | 62 | 2 | alternator | EL 274K | g=GF/GFS-C200 | o=MTA11-G2 | 
+173 | 62 | 3 | engine | NT855-GA | g=GF/GFS-C200I | o=EL 274K | Cummins
+173 | 62 | 3 | alternator | EL 274K | g=GF/GFS-C200I | o=NT855-GA | 
+173 | 62 | 4 | engine | NTA855-G1 | g=GF/GFS-C200 | o=EL 314C | Cummins
+173 | 62 | 4 | alternator | EL 314C | g=GF/GFS-C200 | o=NTA855-G1 | 
+173 | 62 | 5 | engine | NTA855-G1A | g=GF/GFS-C220 | o=EL 314D | Cummins
+173 | 62 | 5 | alternator | EL 314D | g=GF/GFS-C220 | o=NTA855-G1A | 
+173 | 62 | 6 | engine | NTA855-G1B | g=GF/GFS-C250 | o=EL 314E | Cummins
+173 | 62 | 6 | alternator | EL 314E | g=GF/GFS-C250 | o=NTA855-G1B | 
+173 | 62 | 7 | engine | NTA855-G2 | g=GF/GFS-C255 | o=EL 314E | Cummins
+173 | 62 | 7 | alternator | EL 314E | g=GF/GFS-C255 | o=NTA855-G2 | 
+173 | 62 | 8 | engine | NTA855-G2A | g=GF/GFS-C280 | o=EL 314FS | Cummins
+173 | 62 | 8 | alternator | EL 314FS | g=GF/GFS-C280 | o=NTA855-G2A | 
+173 | 62 | 9 | engine | QSNT-G3 | g=GF/GFS-C320 | o=EL 314G | Cummins
+173 | 62 | 9 | alternator | EL 314G | g=GF/GFS-C320 | o=QSNT-G3 | 
+173 | 62 | 10 | engine | NTA855-G4 | g=GF/GFS-C280 | o=EL 314FS | Cummins
+173 | 62 | 10 | alternator | EL 314FS | g=GF/GFS-C280 | o=NTA855-G4 | 
+173 | 62 | 11 | engine | NTAA855-G7 | g=GF/GFS-C300 | o=EL 314F | Cummins
+173 | 62 | 11 | alternator | EL 314F | g=GF/GFS-C300 | o=NTAA855-G7 | 
+173 | 62 | 12 | engine | NTAA855-G7A | g=GF/GFS-C320 | o=EL 314G | Cummins
+173 | 62 | 12 | alternator | EL 314G | g=GF/GFS-C320 | o=NTAA855-G7A | 
+173 | 62 | 13 | engine | KTA19-G2 | g=GF/GFS-C300 | o=EL 314F | Cummins
+173 | 62 | 13 | alternator | EL 314F | g=GF/GFS-C300 | o=KTA19-G2 | 
+173 | 62 | 14 | engine | KTA19-G3 | g=GF/GFS-C360 | o=EL 354C | Cummins
+173 | 62 | 14 | alternator | EL 354C | g=GF/GFS-C360 | o=KTA19-G3 | 
+173 | 62 | 15 | engine | KTA19-G3A | g=GF/GFS-C400 | o=EL 354D | Cummins
+173 | 62 | 15 | alternator | EL 354D | g=GF/GFS-C400 | o=KTA19-G3A | 
+173 | 62 | 16 | engine | KTA19-G4 | g=GF/GFS-C400 | o=EL 354D | Cummins
+173 | 62 | 16 | alternator | EL 354D | g=GF/GFS-C400 | o=KTA19-G4 | 
+173 | 62 | 17 | engine | KTAA19-G5 | g=GF/GFS-C420 | o=EL 354ES | Cummins
+173 | 62 | 17 | alternator | EL 354ES | g=GF/GFS-C420 | o=KTAA19-G5 | 
+173 | 62 | 18 | engine | KTAA19-G6 | g=GF/GFS-C460 | o=EL 354E | Cummins
+173 | 62 | 18 | alternator | EL 354E | g=GF/GFS-C460 | o=KTAA19-G6 | 
+173 | 62 | 19 | engine | KTAA19-G6A | g=GF/GFS-C494 | o=EL 354FS | Cummins
+173 | 62 | 19 | alternator | EL 354FS | g=GF/GFS-C494 | o=KTAA19-G6A | 
+173 | 62 | 20 | engine | KTA19-G8 | g=GF/GFS-C465 | o=EL 354E | Cummins
+173 | 62 | 20 | alternator | EL 354E | g=GF/GFS-C465 | o=KTA19-G8 | 
+173 | 62 | 21 | engine | QSK19-G4 | g=GF/GFS-C520 | o=EL 354F | Cummins
+173 | 62 | 21 | alternator | EL 354F | g=GF/GFS-C520 | o=QSK19-G4 | 
+173 | 62 | 22 | engine | KT38-G | g=GF/GFS-C500 | o=EL 354FS | Cummins
+173 | 62 | 22 | alternator | EL 354FS | g=GF/GFS-C500 | o=KT38-G | 
+173 | 62 | 23 | engine | KT38-GA | g=GF/GFS-C582 | o=EL 354H | Cummins
+173 | 62 | 23 | alternator | EL 354H | g=GF/GFS-C582 | o=KT38-GA | 
+173 | 62 | 24 | engine | KTA38-G1 | g=GF/GFS-C550 | o=EL 354G | Cummins
+173 | 62 | 24 | alternator | EL 354G | g=GF/GFS-C550 | o=KTA38-G1 | 
+173 | 62 | 25 | engine | KTA38-G2 | g=GF/GFS-C600 | o=EL 354H | Cummins
+173 | 62 | 25 | alternator | EL 354H | g=GF/GFS-C600 | o=KTA38-G2 | 
+173 | 62 | 26 | engine | KTA38-G2B | g=GF/GFS-C640 | o=EL 404C | Cummins
+173 | 62 | 26 | alternator | EL 404C | g=GF/GFS-C640 | o=KTA38-G2B | 
+173 | 62 | 27 | engine | KTA38-G2A | g=GF/GFS-C728 | o=EL 404D | Cummins
+173 | 62 | 27 | alternator | EL 404D | g=GF/GFS-C728 | o=KTA38-G2A | 
+173 | 62 | 28 | engine | KTA38-G5 | g=GF/GFS-C800 | o=EL 404E | Cummins
+173 | 62 | 28 | alternator | EL 404E | g=GF/GFS-C800 | o=KTA38-G5 | 
+173 | 62 | 29 | engine | KTA38-G9 | g=GF/GFS-C900 | o=EL 404F | Cummins
+173 | 62 | 29 | alternator | EL 404F | g=GF/GFS-C900 | o=KTA38-G9 | 
+173 | 62 | 30 | engine | QSK38-G5 | g=GF/GFS-C1000 | o=EL 404G | Cummins
+173 | 62 | 30 | alternator | EL 404G | g=GF/GFS-C1000 | o=QSK38-G5 | 
+173 | 62 | 31 | engine | KTA50-G3 | g=GF/GFS-C1000 | o=EL 404G | Cummins
+173 | 62 | 31 | alternator | EL 404G | g=GF/GFS-C1000 | o=KTA50-G3 | 
+173 | 62 | 32 | engine | KTA50-G8 | g=GF/GFS-C1100 | o=EL 404H | Cummins
+173 | 62 | 32 | alternator | EL 404H | g=GF/GFS-C1100 | o=KTA50-G8 | 
+173 | 62 | 33 | engine | KTA50-GS8 | g=GF/GFS-C1120 | o=EL 404I | Cummins
+173 | 62 | 33 | alternator | EL 404I | g=GF/GFS-C1120 | o=KTA50-GS8 | 
+NOTE 108 8 0 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Cummins 2 | 200 – 1311 kW | 34 | MTA11-G2A | EL 314E | Smartgen 6120 | View details →
+NOTE 108 8 2 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Kofo Series | 10 – 338 kW | 24 | K4100DS | EL 184G | RUIFEN6120 | View details →
+NOTE 108 8 3 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Longxin Series | 24 – 289 kW | 19 | R6105IZLD | EL 224E | RUIFEN6120 | View details →
+NOTE 108 8 4 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Lovol Series | 25 – 158 kW | 13 | 1003G | EL 274C | Smartgen 6120 | View details →
+NOTE 108 8 5 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Perkins Series | 7.2 – 2000 kW | 54 | 403A-15G1 | EL 224G | Smartgen 6120 | View details →
+NOTE 108 8 6 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Woling Series | 128 – 889 kW | 22 | D114系列WLD171 | EL 404D | Smartgen 6120 | View details →
+NOTE 108 8 7 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Wuxi Series | 48 – 1111 kW | 52 | WD129TAD23/1500 | EL 354C | Smartgen 6120 | View details →
+NOTE 109 10 0 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Cummins 2 | 200 – 1311 kW | 34 | MTA11-G2A | EL 314E | Smartgen 6120 | View details →
+NOTE 109 10 1 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Cummins | 22 – 444 kW | 40 | 4BTA3.9-G2 | EL 274K | Smartgen 6120 | View details →
+NOTE 109 10 2 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Huachai Series | 13 – 289 kW | 27 | 2105D | EL 224C | RUIFEN6120 | View details →
+NOTE 109 10 3 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Kofo Series | 10 – 338 kW | 24 | K4100DS | EL 184G | RUIFEN6120 | View details →
+NOTE 109 10 4 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Longxin Series | 24 – 289 kW | 19 | R6105IZLD | EL 224E | RUIFEN6120 | View details →
+NOTE 109 10 5 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Lovol Series | 25 – 158 kW | 13 | 1003G | EL 274C | Smartgen 6120 | View details →
+NOTE 109 10 6 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Perkins Series | 7.2 – 2000 kW | 54 | 403A-15G1 | EL 224G | Smartgen 6120 | View details →
+NOTE 109 10 7 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Woling Series | 128 – 889 kW | 22 | D114系列WLD171 | EL 404D | Smartgen 6120 | View details →
+NOTE 111 13 0 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Cummins 2 | 200 – 1311 kW | 34 | MTA11-G2A | EL 314E | Smartgen 6120 | View details →
+NOTE 111 13 1 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Cummins | 22 – 444 kW | 40 | 4BTA3.9-G2 | EL 274K | Smartgen 6120 | View details →
+NOTE 111 13 2 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Huachai Series | 13 – 289 kW | 27 | 2105D | EL 224C | RUIFEN6120 | View details →
+NOTE 111 13 3 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Kofo Series | 10 – 338 kW | 24 | K4100DS | EL 184G | RUIFEN6120 | View details →
+NOTE 111 13 4 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Longxin Series | 24 – 289 kW | 19 | R6105IZLD | EL 224E | RUIFEN6120 | View details →
+NOTE 111 13 5 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Lovol Series | 25 – 158 kW | 13 | 1003G | EL 274C | Smartgen 6120 | View details →
+NOTE 111 13 6 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Woling Series | 128 – 889 kW | 22 | D114系列WLD171 | EL 404D | Smartgen 6120 | View details →
+NOTE 111 13 7 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Wuxi Series | 48 – 1111 kW | 52 | WD129TAD23/1500 | EL 354C | Smartgen 6120 | View details →
+NOTE 112 15 0 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Cummins | 22 – 444 kW | 40 | 4BTA3.9-G2 | EL 274K | Smartgen 6120 | View details →
+NOTE 112 15 2 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Kofo Series | 10 – 338 kW | 24 | K4100DS | EL 184G | RUIFEN6120 | View details →
+NOTE 112 15 3 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Longxin Series | 24 – 289 kW | 19 | R6105IZLD | EL 224E | RUIFEN6120 | View details →
+NOTE 112 15 4 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Perkins Series | 7.2 – 2000 kW | 54 | 403A-15G1 | EL 224G | Smartgen 6120 | View details →
+NOTE 112 15 5 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Woling Series | 128 – 889 kW | 22 | D114系列WLD171 | EL 404D | Smartgen 6120 | View details →
+NOTE 112 15 6 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Wuxi Series | 48 – 1111 kW | 52 | WD129TAD23/1500 | EL 354C | Smartgen 6120 | View details →
+NOTE 113 17 0 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | 60 HZ Engine By Cummins Series 2 | 200 – 1222 kW | 22 | NT855-GA | ELS 314E | Smartgen 6120 | View details →
+NOTE 114 18 14 ô động cơ không đọc được, mã ở cột khác :: RUIFEN6120 sau đầu phát EL 224E
+NOTE 114 19 0 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Cummins 2 | 200 – 1311 kW | 34 | MTA11-G2A | EL 314E | Smartgen 6120 | View details →
+NOTE 114 19 1 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Cummins | 22 – 444 kW | 40 | 4BTA3.9-G2 | EL 274K | Smartgen 6120 | View details →
+NOTE 114 19 2 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Kofo Series | 10 – 338 kW | 24 | K4100DS | EL 184G | RUIFEN6120 | View details →
+NOTE 114 19 3 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Longxin Series | 24 – 289 kW | 19 | R6105IZLD | EL 224E | RUIFEN6120 | View details →
+NOTE 114 19 4 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Lovol Series | 25 – 158 kW | 13 | 1003G | EL 274C | Smartgen 6120 | View details →
+NOTE 114 19 5 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Perkins Series | 7.2 – 2000 kW | 54 | 403A-15G1 | EL 224G | Smartgen 6120 | View details →
+NOTE 114 19 6 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Woling Series | 128 – 889 kW | 22 | D114系列WLD171 | EL 404D | Smartgen 6120 | View details →
+NOTE 114 19 7 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Wuxi Series | 48 – 1111 kW | 52 | WD129TAD23/1500 | EL 354C | Smartgen 6120 | View details →
+NOTE 116 22 0 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Cummins 2 | 200 – 1311 kW | 34 | MTA11-G2A | EL 314E | Smartgen 6120 | View details →
+NOTE 116 22 1 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Cummins | 22 – 444 kW | 40 | 4BTA3.9-G2 | EL 274K | Smartgen 6120 | View details →
+NOTE 116 22 2 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Huachai Series | 13 – 289 kW | 27 | 2105D | EL 224C | RUIFEN6120 | View details →
+NOTE 116 22 3 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Longxin Series | 24 – 289 kW | 19 | R6105IZLD | EL 224E | RUIFEN6120 | View details →
+NOTE 116 22 4 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Lovol Series | 25 – 158 kW | 13 | 1003G | EL 274C | Smartgen 6120 | View details →
+NOTE 116 22 5 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Perkins Series | 7.2 – 2000 kW | 54 | 403A-15G1 | EL 224G | Smartgen 6120 | View details →
+NOTE 116 22 6 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Woling Series | 128 – 889 kW | 22 | D114系列WLD171 | EL 404D | Smartgen 6120 | View details →
+NOTE 116 22 7 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Wuxi Series | 48 – 1111 kW | 52 | WD129TAD23/1500 | EL 354C | Smartgen 6120 | View details →
+NOTE 117 24 0 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | 60 HZ Engine By Cummins Series 2 | 200 – 1222 kW | 22 | NT855-GA | ELS 314E | Smartgen 6120 | View details →
+NOTE 117 24 1 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | 60HZ Engine By Cummins Series | 20 – 444 kW | 26 | 4BTA3.9-G2 | ELS 314G | Smartgen 6120 | View details →
+NOTE 117 24 2 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | 60HZ Engine By Lovol Series | 27 – 178 kW | 13 | 1003G | ELS 274C | Smartgen 6120 | View details →
+NOTE 117 24 3 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | 60HZ Engine By Yangdong Series | 10 – 59 kW | 15 | YD380D | ELS 164C | RUIFEN6120 | View details →
+NOTE 121 27 0 số vô lý so với công suất :: engPower=19408
+NOTE 121 27 1 số vô lý so với công suất :: engPower=19682
+NOTE 121 27 2 số vô lý so với công suất :: engPower=22279
+NOTE 121 27 3 số vô lý so với công suất :: engPower=15326
+NOTE 121 27 4 số vô lý so với công suất :: engPower=20362
+NOTE 121 27 5 số vô lý so với công suất :: engPower=23463
+NOTE 121 27 6 số vô lý so với công suất :: engPower=38510
+NOTE 121 27 7 số vô lý so với công suất :: engPower=40024
+NOTE 121 27 8 số vô lý so với công suất :: engPower=43486
+NOTE 121 27 9 số vô lý so với công suất :: engPower=44402
+NOTE 121 27 10 số vô lý so với công suất :: engPower=48139
+NOTE 121 27 11 số vô lý so với công suất :: engPower=58989
+NOTE 121 27 12 số vô lý so với công suất :: engPower=60552
+NOTE 121 27 13 số vô lý so với công suất :: engPower=54559
+NOTE 121 27 14 số vô lý so với công suất :: engPower=62576
+NOTE 121 27 15 số vô lý so với công suất :: engPower=64337
+NOTE 121 27 16 số vô lý so với công suất :: engPower=79193
+NOTE 121 27 17 số vô lý so với công suất :: engPower=75330
+NOTE 121 27 18 số vô lý so với công suất :: engPower=79447
+NOTE 121 27 19 số vô lý so với công suất :: engPower=85914
+NOTE 121 27 20 số vô lý so với công suất :: engPower=28246
+NOTE 121 27 21 số vô lý so với công suất :: engPower=31916
+NOTE 121 27 22 số vô lý so với công suất :: engPower=37226
+NOTE 121 27 23 số vô lý so với công suất :: engPower=110277
+NOTE 121 27 24 số vô lý so với công suất :: engPower=112892
+NOTE 121 27 25 số vô lý so với công suất :: engPower=112299
+NOTE 121 27 26 số vô lý so với công suất :: engPower=114635
+NOTE 121 27 27 số vô lý so với công suất :: engPower=117360
+NOTE 121 27 28 số vô lý so với công suất :: engPower=121647
+NOTE 121 27 29 số vô lý so với công suất :: engPower=119853
+NOTE 121 27 30 số vô lý so với công suất :: engPower=122711
+NOTE 121 27 31 số vô lý so với công suất :: engPower=145740
+NOTE 121 27 32 số vô lý so với công suất :: engPower=165605
+NOTE 121 27 33 số vô lý so với công suất :: engPower=189350
+NOTE 121 27 34 số vô lý so với công suất :: engPower=215397
+NOTE 121 27 35 số vô lý so với công suất :: engPower=236762
+NOTE 121 27 36 số vô lý so với công suất :: engPower=270465
+NOTE 121 27 37 số vô lý so với công suất :: engPower=296940
+NOTE 121 27 38 số vô lý so với công suất :: engPower=189899
+NOTE 121 27 39 số vô lý so với công suất :: engPower=238532
+NOTE 121 27 40 số vô lý so với công suất :: engPower=274284.6675
+NOTE 121 27 41 số vô lý so với công suất :: engPower=368518.1657
+NOTE 121 27 42 số vô lý so với công suất :: engPower=377034.9908
+NOTE 121 27 43 số vô lý so với công suất :: engPower=470565.6161
+NOTE 121 27 44 số vô lý so với công suất :: engPower=474812.9965
+NOTE 121 27 45 số vô lý so với công suất :: engPower=531352.8001
+NOTE 121 27 46 số vô lý so với công suất :: engPower=743611.4969
+NOTE 121 27 47 số vô lý so với công suất :: engPower=800724.9727
+NOTE 121 27 48 số vô lý so với công suất :: engPower=799831.368
+NOTE 121 27 49 số vô lý so với công suất :: engPower=873117.9856
+NOTE 121 27 50 số vô lý so với công suất :: engPower=1213890.277
+NOTE 121 27 51 số vô lý so với công suất :: engPower=1256033.116
+NOTE 121 27 52 số vô lý so với công suất :: engPower=1374926.67
+NOTE 121 27 53 số vô lý so với công suất :: engPower=1445620.731
+NOTE 122 29 0 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | 60HZ Engine By Lovol Series | 27 – 178 kW | 13 | 1003G | ELS 274C | Smartgen 6120 | View details →
+NOTE 126 32 14 ô động cơ không đọc được, mã ở cột khác :: RUIFEN6120 sau đầu phát EL 224E
+NOTE 129 36 0 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Cummins | 22 – 444 kW | 40 | 4BTA3.9-G2 | EL 274K | Smartgen 6120 | View details →
+NOTE 129 36 1 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Huachai Series | 13 – 289 kW | 27 | 2105D | EL 224C | RUIFEN6120 | View details →
+NOTE 129 36 2 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Kofo Series | 10 – 338 kW | 24 | K4100DS | EL 184G | RUIFEN6120 | View details →
+NOTE 129 36 3 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Longxin Series | 24 – 289 kW | 19 | R6105IZLD | EL 224E | RUIFEN6120 | View details →
+NOTE 129 36 4 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Lovol Series | 25 – 158 kW | 13 | 1003G | EL 274C | Smartgen 6120 | View details →
+NOTE 129 36 5 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Perkins Series | 7.2 – 2000 kW | 54 | 403A-15G1 | EL 224G | Smartgen 6120 | View details →
+NOTE 129 36 6 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Wuxi Series | 48 – 1111 kW | 52 | WD129TAD23/1500 | EL 354C | Smartgen 6120 | View details →
+NOTE 129 36 7 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Yangdong Series | 8 – 56 kW | 15 | YD380D | EL 164C | RUIFEN6120 | View details →
+NOTE 141 43 0 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Cummins | 22 – 444 kW | 40 | 4BTA3.9-G2 | EL 274K | Smartgen 6120 | View details →
+NOTE 141 43 1 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Huachai Series | 13 – 289 kW | 27 | 2105D | EL 224C | RUIFEN6120 | View details →
+NOTE 141 43 2 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Kofo Series | 10 – 338 kW | 24 | K4100DS | EL 184G | RUIFEN6120 | View details →
+NOTE 141 43 3 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Longxin Series | 24 – 289 kW | 19 | R6105IZLD | EL 224E | RUIFEN6120 | View details →
+NOTE 141 43 4 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Lovol Series | 25 – 158 kW | 13 | 1003G | EL 274C | Smartgen 6120 | View details →
+NOTE 141 43 5 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Perkins Series | 7.2 – 2000 kW | 54 | 403A-15G1 | EL 224G | Smartgen 6120 | View details →
+NOTE 141 43 6 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Wuxi Series | 48 – 1111 kW | 52 | WD129TAD23/1500 | EL 354C | Smartgen 6120 | View details →
+NOTE 142 45 0 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Cummins 2 | 200 – 1311 kW | 34 | MTA11-G2A | EL 314E | Smartgen 6120 | View details →
+NOTE 142 45 1 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Cummins | 22 – 444 kW | 40 | 4BTA3.9-G2 | EL 274K | Smartgen 6120 | View details →
+NOTE 142 45 2 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Huachai Series | 13 – 289 kW | 27 | 2105D | EL 224C | RUIFEN6120 | View details →
+NOTE 142 45 3 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Kofo Series | 10 – 338 kW | 24 | K4100DS | EL 184G | RUIFEN6120 | View details →
+NOTE 142 45 4 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Longxin Series | 24 – 289 kW | 19 | R6105IZLD | EL 224E | RUIFEN6120 | View details →
+NOTE 142 45 5 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Lovol Series | 25 – 158 kW | 13 | 1003G | EL 274C | Smartgen 6120 | View details →
+NOTE 142 45 6 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Perkins Series | 7.2 – 2000 kW | 54 | 403A-15G1 | EL 224G | Smartgen 6120 | View details →
+NOTE 142 45 7 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Wuxi Series | 48 – 1111 kW | 52 | WD129TAD23/1500 | EL 354C | Smartgen 6120 | View details →
+NOTE 143 47 0 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Cummins | 22 – 444 kW | 40 | 4BTA3.9-G2 | EL 274K | Smartgen 6120 | View details →
+NOTE 143 47 1 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Huachai Series | 13 – 289 kW | 27 | 2105D | EL 224C | RUIFEN6120 | View details →
+NOTE 143 47 2 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Kofo Series | 10 – 338 kW | 24 | K4100DS | EL 184G | RUIFEN6120 | View details →
+NOTE 143 47 3 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Longxin Series | 24 – 289 kW | 19 | R6105IZLD | EL 224E | RUIFEN6120 | View details →
+NOTE 143 47 4 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Perkins Series | 7.2 – 2000 kW | 54 | 403A-15G1 | EL 224G | Smartgen 6120 | View details →
+NOTE 143 47 5 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Woling Series | 128 – 889 kW | 22 | D114系列WLD171 | EL 404D | Smartgen 6120 | View details →
+NOTE 143 47 6 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Wuxi Series | 48 – 1111 kW | 52 | WD129TAD23/1500 | EL 354C | Smartgen 6120 | View details →
+NOTE 143 47 7 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Yangdong Series | 8 – 56 kW | 15 | YD380D | EL 164C | RUIFEN6120 | View details →
+NOTE 144 48 14 ô động cơ không đọc được, mã ở cột khác :: RUIFEN6120 sau đầu phát EL 274H
+NOTE 144 48 15 ô động cơ không đọc được, mã ở cột khác :: RUIFEN6120 sau đầu phát EL 274J
+NOTE 144 48 16 ô động cơ không đọc được, mã ở cột khác :: RUIFEN6120 sau đầu phát EL 274K
+NOTE 144 49 0 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Cummins 2 | 200 – 1311 kW | 34 | MTA11-G2A | EL 314E | Smartgen 6120 | View details →
+NOTE 144 49 1 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Cummins | 22 – 444 kW | 40 | 4BTA3.9-G2 | EL 274K | Smartgen 6120 | View details →
+NOTE 144 49 2 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Huachai Series | 13 – 289 kW | 27 | 2105D | EL 224C | RUIFEN6120 | View details →
+NOTE 144 49 3 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Kofo Series | 10 – 338 kW | 24 | K4100DS | EL 184G | RUIFEN6120 | View details →
+NOTE 144 49 4 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Lovol Series | 25 – 158 kW | 13 | 1003G | EL 274C | Smartgen 6120 | View details →
+NOTE 144 49 5 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Perkins Series | 7.2 – 2000 kW | 54 | 403A-15G1 | EL 224G | Smartgen 6120 | View details →
+NOTE 144 49 6 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Woling Series | 128 – 889 kW | 22 | D114系列WLD171 | EL 404D | Smartgen 6120 | View details →
+NOTE 144 49 7 dòng tổng quan dòng máy: một dải công suất, không là một tổ máy :: | Engine By Wuxi Series | 48 – 1111 kW | 52 | WD129TAD23/1500 | EL 354C | Smartgen 6120 | View details →
+NOTE 149 54 14 ô động cơ không đọc được, mã ở cột khác :: RUIFEN6120 sau đầu phát EL 274H
+NOTE 149 54 15 ô động cơ không đọc được, mã ở cột khác :: RUIFEN6120 sau đầu phát EL 274J
+NOTE 149 54 16 ô động cơ không đọc được, mã ở cột khác :: RUIFEN6120 sau đầu phát EL 274K
