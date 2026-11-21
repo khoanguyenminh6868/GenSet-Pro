@@ -42,6 +42,9 @@ test("dung tích xi lanh từ đường kính × hành trình và từ in³ kh�
   near(calc("l_from_cuin", { V_in3: 912 }).value, 14.945, 0.001);
   // Hai đường tính độc lập ra cùng một động cơ (lệch < 0,1%).
   near(calc("displacement_l", { bore_mm: 137, stroke_mm: 169, cylinders: 6 }).value / calc("l_from_cuin", { V_in3: 912 }).value, 1, 0.001);
+  // cc → L (S8-1): 1 L = 1000 cm³. Honda GX390: 88 × 64 mm, 1 xi lanh, hãng ghi 389 cm³.
+  assert.equal(calc("l_from_cc", { V_cc: 389 }).value, 0.389);
+  near(calc("displacement_l", { bore_mm: 88, stroke_mm: 64, cylinders: 1 }).value, calc("l_from_cc", { V_cc: 389 }).value, 0.001);
 });
 
 test("mã lực cơ (hp) khác mã lực mét (PS): 600 hp = 447,4 kW; 100 PS = 73,55 kW", () => {
@@ -283,9 +286,9 @@ test("powerMins: ngưỡng là công suất LIÊN TỤC của tổ máy; dự ph
   assert.equal(mp("Công suất dự phòng (ESP) ≥ 550 kVA"), null);
   assert.equal(mp("Công suất định mức ≥ 500 kVA"), null); // không nói liên tục hay dự phòng: không đoán
   assert.equal(mp("Động cơ: công suất liên tục ≥ 440 kW"), null); // kWm của động cơ
-  // Dung sai: "≥ 12 ± 0,5 kVA" là tối thiểu 11,5; "± 5%" không phải 5 kVA.
+  // Dung sai: "≥ 12 ± 0,5 kVA" là tối thiểu 11,5; "± 5%" là 5% của số, không phải 5 kVA (Khoa 21/11/2026: dung sai HSMT tự ghi được tính vào ngưỡng).
   assert.deepEqual({ ...mp("Công suất liên tục ≥ 12 ± 0,5 kVA") }, { kVA: 11.5 });
-  assert.deepEqual({ ...mp("Công suất liên tục ≥ 400 kVA ± 5%") }, { kVA: 400 });
+  assert.deepEqual({ ...mp("Công suất liên tục ≥ 400 kVA ± 5%") }, { kVA: 380 });
 });
 
 test("powerMins: mức tiêu hao tối đa theo đúng mức tải HSMT nêu (100 / 75 / 50%)", () => {

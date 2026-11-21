@@ -1564,6 +1564,8 @@
         }
         const orEng = OR_ENGINE_CELLS.find((x) => x.supplierId === s.id && x.n.includes(+t.n) && headerText.includes(x.header) && x.code.test(String(cells[x.engCell] ?? "").trim()) && ei === x.altCell && ai < 0);
         if (orEng) { note(t, ti, ri, "một ô ghi hai mã", cells[orEng.engCell]); ai = ei; ei = -1; }
+        const bareEng = BARE_ENGINE_CELLS.find((x) => x.supplierId === s.id && x.n.includes(+t.n) && headerText.includes(x.header) && x.code.test(String(cells[x.engCell] ?? "").trim()) && ei === x.altCell && ai < 0);
+        if (bareEng) { ai = ei; ei = bareEng.engCell; }
         const stop = ei >= 0 ? ei : ai >= 0 ? ai : cells.length;
         const titled = engineTable ? null : titledPowers((t.header || []).map(cellsOf), cells, { gi, ei, ai }, title);
         const power = engineTable ? null : titled ? titled.power : powersIn(cells.slice(gi >= 0 ? gi + 1 : 0, stop), headerText + " " + title, true);
@@ -1571,7 +1573,7 @@
         // "TAD1650GE(1345GE)" (TWO_CODE_CELLS): which engine the set has is not known, so no engine record; the alternator stays.
         const twoCodes = ei >= 0 && TWO_CODE_CELLS.some((x) => x.supplierId === s.id && x.n.includes(+t.n) && x.code.test(cells[ei]));
         if (twoCodes) note(t, ti, ri, "một ô ghi hai mã", cells[ei]);
-        if (ei >= 0 && !twoCodes) out.push({ ...common, kind: "engine", model: tidyModel(cells[ei], ENGINE_BRANDS, MARK_KEEP[s.id]), makes: makesFor("engine", rowText, null), other: ai >= 0 ? cells[ai] : null, own: engineTable });
+        if (ei >= 0 && !twoCodes) out.push({ ...common, kind: "engine", model: tidyModel(cells[ei], ENGINE_BRANDS, MARK_KEEP[s.id]), makes: bareEng ? [] : makesFor("engine", rowText, null), other: ai >= 0 ? cells[ai] : null, own: engineTable });
         if (ai >= 0) out.push({ ...common, kind: "alternator", model: tidyModel(cells[ai], ALT_BRANDS), makes: makesFor("alternator", rowText, null, cells[ai]), other: ei >= 0 ? cells[ei] : null });
       });
     });
@@ -1606,7 +1608,7 @@
       const f = fuelFrom(fuelSg.get(o.table), o.line || `| ${o.genset || ""}`) || fuelPage(s.id, o, s.specTables[o.table]?.header?.[0]);
       if (f) { o.fuel = f.fuel; o.fuelFrom = f.from; o.fuelWhy = f.why; }
     }
-    return mergeRepeats(namedPower(s, tableDrops(s, rowExceptions(s, out, note), note), note));
+    return mergeRepeats(namedPower(s, tableDrops(s, rowExceptions(s, columnSpecs(s, out, note), note), note), note));
   }
   // Engine tables Khoa listed one by one (catalog nhóm 3, câu 6 = C, Khoa 20/11/2026): an engine maker's figures on a genset
   // supplier's page, no genset in the row. Keyed by supplier + n + the FIRST header line word for word (a re-crawl that
@@ -1763,6 +1765,42 @@
       return { ...o, power: { rated: { kW: +m[1] } }, specs, powerFrom: "tên tổ máy" };
     });
   }
+  // Figure columns of tables whose first header line has one cell fewer than the rows (S6-1, điều phối 21/11/2026), an explicit
+  // list, not a rule. tecnogen n2001–n2010 (10 tables, 229 rows): "| MODEL | kVA LTP | … | | Regulator | Cylinder | cm3 | …" lost
+  // one of its trailing blank cells, so neither header line lines up as a whole and only the second line's "Kg" was read. The
+  // first line's cells up to "Cylinder" do line up (the second line puts "Engine" over cell 5, the engine of every record).
+  // Read only for the table's engine records whose `engCell` is the record's engine, when the header cells named in `titles`
+  // are word for word those (a re-crawl with another header lapses, noted) and the value has the key's shape.
+  // S6-6 (Khoa 21/11/2026 "làm các cột còn lại"): "kWm 1500 rpm" / "kWm 1800 rpm" → two `engPower` figures, each with its own
+  // label (spec-norm takes the speed from the label: cond.rpm 1500 / 1800), so neither overwrites the other. NOT read:
+  // "cm3" (spec-norm reads the unit cc but has no cc → L formula; config-bot's majority reads a cc figure as BLOCK, so 224 cc
+  // values took the displacement majority away from QSK60-G4, TAD1650GE, 1506A-E88TAG4: waits for a decision on a cc → L formula),
+  // "Aspiration" (cells "N" / "T", no legend on the pages, the shape `asp` asks for is not met) and "Cons. 70%" (the catalog has
+  // fuel at 100 / 75 / 50 % load only). A dash cell ("--", "- - -") is no value.
+  const COLUMN_SPECS = [
+    { supplierId: "tecnogen", n: [2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010], why: "điều phối 21/11/2026 (S6-1, S6-6)",
+      titles: [[0, 7, "Cylinder"], [0, 9, "kWm 1500 rpm"], [0, 10, "kWm 1800 rpm"], [1, 5, "Engine"]], engCell: 5,
+      specs: [["cyl", 7, "Cylinder"], ["engPower", 9, "kWm 1500 rpm"], ["engPower", 10, "kWm 1800 rpm"]] },
+  ];
+  function columnSpecs(s, list, note) {
+    const ex = COLUMN_SPECS.filter((x) => x.supplierId === s.id);
+    if (!ex.length) return list;
+    return list.map((o) => {
+      const x = ex.find((x) => x.n.includes(+o.n));
+      if (!x || o.kind !== "engine") return o;
+      const t = { n: o.n, title: o.title }, hs = (o.header || []).map(cellsOf), cells = cellsOf(o.line || "");
+      if (!x.titles.every(([h, i, w]) => String(hs[h]?.[i] ?? "").trim() === w)) { note(t, o.table, o.row ?? null, "cột thông số theo danh sách không áp: đổi tiêu đề", String(o.header?.[0] ?? "")); return o; }
+      if (String(cells[x.engCell] ?? "").trim() !== String(o.model).trim()) return o;
+      const add = [];
+      for (const [key, i, label] of x.specs) {
+        const v = specVal(cells[i]);
+        if (!v || /^[-–—\s]+$/.test(v) || [...(o.specs || []), ...add].some((sp) => sp.key === key && (key !== "engPower" || sp.label === label))) continue;
+        if (!specFits(key, v)) { note(t, o.table, o.row ?? null, "thông số không đúng dạng: để trống", `${key}=${v}`); continue; }
+        add.push({ key, label, value: v });
+      }
+      return add.length ? { ...o, specs: [...(o.specs || []), ...add] } : o;
+    });
+  }
   // Spec keys of a whole table form left out (catalog-b3, Khoa 20/11/2026), an explicit list, not a rule: matched by supplier
   // AND a title in the table's header. zhengchi-power's tables of "整机编号" (n102+): the "缸数 | 排量(L)" columns disagree with
   // the other suppliers' figures for the same engine (displacement 164 of 321 models, cylinders 57 of 373: WP2.3D25E200
@@ -1781,13 +1819,26 @@
   // An engine cell naming two codes, the second shortened ("TAD1650GE(1345GE)", sanq-power n111 / n117; Khoa 21/11/2026 "A"): the page
   // does not say what the bracket means, and other suppliers give the two codes different displacements (TAD750GE 7.15 L /
   // TAD532GE 4.76 L, TAD1650GE 16.12 L / TAD1345GE 12.78 L). An explicit list: no engine record, the row's alternator is kept.
-  const TWO_CODE_CELLS = [{ supplierId: "sanq-power", n: [111, 117], code: /^[A-Z]+\d+([A-Z]+)\(\d+\1\)$/, khoa: "Khoa 21/11/2026" }];
+  // eastern-lion-fuan n122 / n141 / n146 / n151 (S6-3, điều phối 21/11/2026): "(YD4KD) YD485D", one row each; the tables do not say
+  // what the bracket means (YD4KD appears nowhere else on them) and the whole cell was the engine model. Same rule.
+  const TWO_CODE_CELLS = [{ supplierId: "sanq-power", n: [111, 117], code: /^[A-Z]+\d+([A-Z]+)\(\d+\1\)$/, khoa: "Khoa 21/11/2026" },
+    { supplierId: "eastern-lion-fuan", n: [122, 141, 146, 151], code: /^\(YD4KD\) YD485D$/, khoa: "điều phối 21/11/2026 (S6-3)" }];
   // An engine cell naming two engines joined by "或" (or): "ZS1110或295D", xingguang-jiangsu n108 (bang-roi-29, điều phối
   // 21/11/2026, same rule as TWO_CODE_CELLS). The cell failed isCode, so the alternator "STC-12" of the next cell was read as
   // the ENGINE. An explicit list (supplier + n + the cell indexes of the header "柴油机型号 | 发电机型号"): no engine record,
   // the code of `altCell` is the alternator, noted "một ô ghi hai mã". n110 writes "或" in the ALTERNATOR cell ("TZHW或TFW")
   // and reads its engine right: not listed.
+  // An engine cell that is a bare number ("195", "1100", "4100"), zhengdian-zhengzhou n107 (S6-4, điều phối 21/11/2026): isCode
+  // passes it over, so the alternator "STC-5-4" of the next cell was read as the ENGINE (role swap, 6 rows). An explicit list
+  // (supplier + n + the header titles of the two cells): the bare number of `engCell` is the engine model as written, the code
+  // of `altCell` the alternator. Khoa's rule for "ZS195 / 195": no make (none looked up), no code made up ("195" stays "195").
+  const BARE_ENGINE_CELLS = [{ supplierId: "zhengdian-zhengzhou", n: [107], engCell: 3, altCell: 4, code: /^\d{3,4}$/, header: "柴油机型号 | 发电机型号", why: "điều phối 21/11/2026 (S6-4)" }];
   const OR_ENGINE_CELLS = [{ supplierId: "xingguang-jiangsu", n: [108], engCell: 2, altCell: 3, code: /^[A-Z\d]+或[A-Z\d]+$/, header: "柴油机型号Motor Type", why: "điều phối 21/11/2026" }];
+  // "YD4KD(YD485D)" of comappower n113 / yanan-power n111 (S6-5, điều phối 21/11/2026; 4 rows, tables with no alternator column): the
+  // pages do not say what the bracket means. Same rule as TWO_CODE_CELLS above (kept apart from its declaration on purpose).
+  TWO_CODE_CELLS.push(
+    { supplierId: "comappower", n: [113], code: /^YD4KD\(YD485D\)$/, khoa: "điều phối 21/11/2026 (S6-5)" },
+    { supplierId: "yanan-power", n: [111], code: /^YD4KD\(YD485D\)$/, khoa: "điều phối 21/11/2026 (S6-5)" });
   const MAKE_LEVEL_LOW = [
     { supplierId: "zhengchi-power", title: /整机编号/, khoa: "Khoa 20/11/2026", why: "ô 品牌 là nhãn của cả danh mục (上柴 gồm SC-series lẫn S12R / S16R; 潍柴 gồm WP, M26, PHF, K41xx, R61xx...)" },
   ];
@@ -2061,14 +2112,35 @@
     if (c.length === 1) { const m = c[0].match(/^([^:：]{2,60})[:：]\s*(.+)$/); if (m) c = [m[1].trim(), m[2].trim()]; }
     return [String(c[0] || "").replace(/[:：\s]+$/, "").trim(), ...c.slice(1).map((x) => String(x).trim())];
   }
+  const V_CODE_BRANDS = [...ENGINE_BRANDS, ...ALT_CELL_BRANDS];
+  const V_MAKE_TAIL = /^(penta|deere|somer|alte|petter|wilson|infracore)$/i;
+  const V_GENERIC = /^(engine|model|brand|type|make|motor|heavy|industries|industry|power|co|ltd|corp|inc|group|company|manufacturer|by)\.?$/i;
+  // CLOSED lists (điều phối 21/11/2026, PR #1058; not rules: add a word only when a real cell needs it). An ALL-CAPS word
+  // after the make that names a factory / another maker (V_MAKER_ALIAS: "Cummins CCEC 6BT5.9-G2", "Mitsubishi MHI …") or a
+  // country / legal form (V_PLACE: "Perkins UK 1106A-70TAG4", "Perkins EU 1104A-44TG1", "Yanmar JAPAN 3TNV88") is not part
+  // of the code and goes, even before a code that starts with a digit.
+  const V_MAKER_ALIAS = /^(ccec|dcec|xcec|mhi|sme)$/i;
+  const V_PLACE = /^(uk|usa|us|eu|prc|japan|jp|china|germany|india|korea|italy|france|sweden|ltd|inc|co|ag|gmbh)\.?$/i;
   // A part's code in a value cell: brand words, then one code ("CCEC Cummins NTA855-G2A", "PERKINS , 1106A－70TAG4"). Full-width
   // characters are read by NFKC as keyOf does ("－" is "-"). Choices ("or equivalent", "Series", "a / b") are no code.
   function verticalCode(v) {
     const s = String(v || "").normalize("NFKC").trim();
     if (!s || /\bor\b|equiv|series|optional|select|custom|[/／]|或|可选|cylinder|\bcyl\b|stroke|cool|diesel|gasoline|petrol|\bgas\b|turbo|in-?line|vertical/i.test(s)) return null;
     const words = s.split(/[\s,，]+/).filter(Boolean);
-    let i = 0;
-    while (i < words.length - 1 && /^[a-z&.-]+$/i.test(words[i])) i++;
+    // Letter-only words before the code. No make among them: all are passed over as before ("SGC 420" stays no code:
+    // westinpower's controller). With a make (bang-doc-ma-hang, điều phối 21/11/2026), words after the last make are still
+    // passed over when they cannot be part of a code: the second word of a two-word make ("Volvo Penta", "Leroy Somer"),
+    // a common word ("Engine", "Model", "Heavy Industries", V_GENERIC), a word in lower / mixed case ("Shanghai") or with no
+    // letter ("-", "&"). The first ALL-CAPS word left stays with the code only when the code after it starts with a digit
+    // ("Kohler KDI 2504M" → "KDI 2504M", "Leroy Somer LSA 46.3", "Kubota V 2203"); before a code that starts with a letter it
+    // is a series / company word and goes ("FPT NEF N67TM4" → "N67TM4", "Mitsubishi SME S6R2-PTAA-C" → "S6R2-PTAA-C").
+    let run = 0, last = 0;
+    while (run < words.length - 1 && /^[a-z&.-]+$/i.test(words[run])) {
+      if (brandIn(words[run], V_CODE_BRANDS).length) last = run + 1;
+      run++;
+    }
+    let i = last || run;
+    if (last) while (i < run && (V_MAKE_TAIL.test(words[i]) || V_GENERIC.test(words[i]) || V_MAKER_ALIAS.test(words[i]) || V_PLACE.test(words[i]) || brandIn(words[i], V_CODE_BRANDS).length || /[a-z]/.test(words[i]) || !/[A-Z]/.test(words[i]) || !/^\d/.test(words[run]))) i++;
     const code = words.slice(i).join(" ");
     return isCode(code) ? { code, brand: words.slice(0, i).join(" ") } : null;
   }

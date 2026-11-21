@@ -18,6 +18,9 @@
     rpm_from_poles: { label: "n (v/p) = 120 × f (Hz) / số cực", basis: "Tốc độ đồng bộ của máy điện xoay chiều n = 120 f / p", inputs: ["f_Hz", "poles"], unit: "v/p", calc: (x) => (120 * x.f_Hz) / x.poles },
     displacement_l: { label: "V (L) = π/4 × D² × S × z / 10⁶ (D, S theo mm)", basis: "Thể tích hình trụ: đường kính xi lanh D, hành trình S, số xi lanh z", inputs: ["bore_mm", "stroke_mm", "cylinders"], unit: "L", calc: (x) => (Math.PI / 4) * x.bore_mm ** 2 * x.stroke_mm * x.cylinders / 1e6 },
     l_from_cuin: { label: "V (L) = V (in³) × 0,016387064", basis: "1 in = 25,4 mm (định nghĩa), nên 1 in³ = 0,016387064 L", inputs: ["V_in3"], unit: "L", calc: (x) => x.V_in3 * 0.016387064 },
+    // Khoa 22/11/2026 (S8-1): cc / cm³ / ml → L. Chia cho 1000 (không nhân 0,001) để 2156 → 2.156 đúng chữ số, không đuôi
+    // số học dấu phẩy động (2156 × 0,001 = 2.1560000000000001): dispExact đếm chữ số thập phân của số.
+    l_from_cc: { label: "V (L) = V (cm³) / 1000", basis: "1 L = 1 dm³ = 1000 cm³ (định nghĩa lít, SI); 1 cc = 1 ml = 1 cm³", inputs: ["V_cc"], unit: "L", calc: (x) => x.V_cc / 1000 },
     // Kiểm tra tổ hợp (2026-11-10): công suất điện đầu phát cho ra từ công suất cơ động cơ, và áp suất có ích trung bình.
     kwe_from_kwm: { label: "Pₑ (kWe) = Pₘ (kWm) × η (%) / 100", basis: "Hiệu suất đầu phát η = công suất điện ra / công suất cơ vào trục (IEC 60034-2-1)", inputs: ["P_kWm", "eff_pct"], unit: "kWe", calc: (x) => (x.P_kWm * x.eff_pct) / 100 },
     bmep_4s: { label: "BMEP (bar) = 1200 × P (kW) / (V (L) × n (v/p))", basis: "Động cơ 4 kỳ: một chu trình công tác mỗi 2 vòng quay, P = BMEP × V × n / 2 → BMEP[Pa] = 2P[W] / (V[m³] × n[v/s])", inputs: ["P_kW", "V_L", "n_rpm"], unit: "bar", calc: (x) => (1200 * x.P_kW) / (x.V_L * x.n_rpm) },

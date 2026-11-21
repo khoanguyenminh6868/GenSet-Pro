@@ -405,7 +405,8 @@ test("a main controller from its maker's datasheet (src.kind maker): no source p
   const { problems, result } = run(r), c = result.configs[0];
   assert.deepEqual(problems, []);
   assert.equal(c.controller.fromMaker, true);
-  assert.equal(c.controller.label, "Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào");
+  // NCC "b" of this engine lists DSE7320, the same controller without its generation (IB2600603983 11:44Z).
+  assert.equal(c.controller.label, "Theo tài liệu hãng; NCC b chào DSE7320 (hồ sơ không ghi đời MKII, cần hỏi)");
   assert.equal(c.checks.find((x) => /AMF/.test(x.item)).status, "met", JSON.stringify(c.checks.map((x) => [x.item, x.status])));
   const o = c.checks.find((x) => x.item === "Xuất xứ bộ điều khiển");
   assert.equal(o.status, "confirm");
