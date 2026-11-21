@@ -3473,18 +3473,24 @@ export function madeChecks(c, reqs, row, built) {
     const list = part === "engine" ? built.engines : part === "alternator" ? built.alternators : built.controllers;
     const makes = String(p.make || (list || []).find((x) => x.key === CAT.keyOf(p.model))?.make || "").split(" / ").filter(Boolean);
     const own = p.src?.kind !== "internet" && row ? row : null;
-    const m = CAT.madeIn(part, makes, own ? [[own.line, ...(own.lines?.rows || [])].join(" \n "), (own.header || []).join(" "), own.title || ""] : [p.src?.quote || ""], p.model);
+    let m = CAT.madeIn(part, makes, own ? [[own.line, ...(own.lines?.rows || [])].join(" \n "), (own.header || []).join(" "), own.title || ""] : [p.src?.quote || ""], p.model);
+    // Stamford S4–S7 a supplier offers (Khoa 21/11/2026 "có"), the PLACE asked: the make's default (UK) proves nothing, the
+    // CO is asked. A place the row or the agent's own quote states still counts; a brand asked never comes here.
+    const isDefault = (w) => /^(hãng|mặc định)/.test(w || "");
+    const noDefault = part === "alternator" && makes.some((k) => /stamford/i.test(k)) && NO_PLANT["stamford-avk-china"].re.test(String(p.model).trim().replace(/^stamford\s+/i, ""));
+    if (noDefault && isDefault(m.why)) m = { at: "?", why: "" };
     const x = (c.checks || []).find((y) => norm(y.item) === norm(r.item));
     const inG = m.at !== "?" && CAT.COUNTRY_GROUP[grp].includes(m.at);
     const status = m.at === "?" ? "confirm" : inG ? "met" : "not_met";
     // A not met / met the agent verified from a source of its own stays, unless the row says otherwise.
     const rowSays = !!m.why && !/^(hãng|mặc định)/.test(m.why);
-    if (x && !x.unverified && (x.status === "met" || x.status === "not_met") && !rowSays && x.sourceQuote && CAT.madeIn(part, makes, x.sourceQuote, p.model).at !== "?") continue;
+    const q = x?.sourceQuote ? CAT.madeIn(part, makes, x.sourceQuote, p.model) : null;
+    if (x && !x.unverified && (x.status === "met" || x.status === "not_met") && !rowSays && q && q.at !== "?" && !(noDefault && isDefault(q.why))) continue;
     const at = m.at === "?" ? "" : `sản xuất tại ${madeVi(m.at)}${/^(hãng|mặc định)/.test(m.why || "") ? ` (${m.why})` : ""}`;
     putCheck(c, x, { item: r.item, requirement: r.requirement || "", hsmtQuote: r.quote || "", offered: [PART_VI[part], p.model, at].filter(Boolean).join(" "),
       ...(m.why && !/^(hãng|mặc định)/.test(m.why) ? { sourceQuote: m.why } : {}), part, level: r.level === "option" ? "option" : "core", status, byCode: true, rule: "noi-san-xuat",
       ...(status === "confirm" ? { confirm: "document" } : {}),
-      note: status === "confirm" ? `Cần xác nhận nơi sản xuất ${PART_VI[part].toLowerCase()} (CO): nguồn của cấu hình không ghi${m.why ? ` rõ (${m.why})` : ""}; HSMT đòi nơi sản xuất ${G}.`
+      note: status === "confirm" ? `Cần xác nhận nơi sản xuất ${PART_VI[part].toLowerCase()} (CO): nguồn của cấu hình không ghi${m.why ? ` rõ (${m.why})` : ""}${noDefault ? "; Stamford S4–S7 không lấy nơi mặc định của hãng (Khoa 21/11/2026)" : ""}; HSMT đòi nơi sản xuất ${G}.`
         : status === "met" ? `Code ghi: ${PART_VI[part].toLowerCase()} sản xuất tại ${madeVi(m.at)}, thuộc nhóm ${G}.` : `Code ghi: ${PART_VI[part].toLowerCase()} sản xuất tại ${madeVi(m.at)}, ngoài nhóm ${G} HSMT đòi.` });
   }
   return c;

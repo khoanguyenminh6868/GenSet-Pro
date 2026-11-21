@@ -135,7 +135,19 @@ test("madeChecks (engine_origin / alt_origin / ctl_origin): TQ không đạt, G7
   const rowOf = (sid) => built.engines.find((e) => e.key === C.keyOf("KTA38-G2")).uses.find((u) => u.supplierId === sid);
   const st = (c) => Object.fromEntries(c.checks.map((x) => [x.item, x.status]));
   // Agent ghi "đạt" theo hãng Cummins; dòng ghi CCEC → không đạt.
-  assert.deepEqual(st(madeChecks(cfg("ccec"), reqs, rowOf("ccec"), built)), { "Xuất xứ động cơ": "not_met", "Xuất xứ đầu phát": "met", "Xuất xứ bộ điều khiển": "not_met" });
+  // Đầu phát Stamford S5 NCC chào, HSMT đòi nơi sản xuất: chưa rõ, cần CO (Khoa 21/11/2026), không lấy mặc định Anh.
+  assert.deepEqual(st(madeChecks(cfg("ccec"), reqs, rowOf("ccec"), built)), { "Xuất xứ động cơ": "not_met", "Xuất xứ đầu phát": "confirm", "Xuất xứ bộ điều khiển": "not_met" });
+  const altReq = [reqs[1]], altOf = (model, check) => madeChecks(cfg("bare", { alternator: { model, make: "Stamford" }, checks: check ? [{ item: "Xuất xứ đầu phát", ...check }] : [] }), altReq, null, built).checks[0];
+  const conf = altOf("Stamford S7L1D-K4");
+  assert.equal(conf.status, "confirm"); assert.equal(conf.confirm, "document"); assert.match(conf.note, /không lấy nơi mặc định của hãng \(Khoa 21\/11\/2026\)/);
+  assert.equal(conf.sourceQuote, undefined);
+  // Dải ngoài S4–S7 giữ nơi mặc định; agent ghi "đạt" chỉ nhờ tên hãng thì vẫn về CO; câu nguồn ghi rõ nơi thì giữ.
+  assert.equal(altOf("UCI274F").status, "met");
+  assert.equal(altOf("S4L1D-D41", { status: "met", offered: "Stamford (Anh)", sourceQuote: "| S4L1D-D41 | Stamford |" }).status, "confirm");
+  assert.equal(altOf("S5L1D-H41", { status: "not_met", offered: "Vô Tích", sourceQuote: "| Manufacturer | WUXI STAMFORD" }).status, "not_met");
+  // Thương hiệu: không qua luật này.
+  const brandAlt = madeChecks(cfg("bare", { checks: [{ item: "Xuất xứ đầu phát", status: "met", offered: "Stamford (Anh)" }] }), [req("alt_origin", "Xuất xứ đầu phát", "Đầu phát điện: Thương hiệu: EU/G7")], null, built);
+  assert.equal(st(brandAlt)["Xuất xứ đầu phát"], "met");
   assert.equal(st(madeChecks(cfg("imp"), reqs, rowOf("imp"), built))["Xuất xứ động cơ"], "met");
   const bare = madeChecks(cfg("bare"), reqs, rowOf("bare"), built), x = bare.checks.find((y) => y.item === "Xuất xứ động cơ");
   assert.equal(x.status, "confirm"); assert.equal(x.confirm, "document"); assert.match(x.note, /Cần xác nhận nơi sản xuất động cơ \(CO\)/);
