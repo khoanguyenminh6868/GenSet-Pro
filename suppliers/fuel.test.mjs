@@ -141,3 +141,12 @@ test("man-engines n104 (sua-so-le-1, điều phối 21/11/2026): chỉ dòng E32
   // bảng khác của man-engines (n105: bảng khí tự ghi) không bị đổi bởi mục này
   assert.ok(rec("man-engines", 105).every((r) => r.fuelWhy === undefined || !/datasheet hãng động cơ MAN/.test(r.fuelWhy)));
 });
+
+test("mwm n1007 / n1008 (sua-so-le-1, điều phối 21/11/2026): datasheet hãng TCG 3016 V16 ghi khí tự nhiên → mỗi bảng một bản ghi động cơ `gas` mức D", () => {
+  for (const n of [1007, 1008]) {
+    const m = rec("mwm", n);
+    assert.equal(m.length, 1, `n${n}`);
+    assert.deepEqual([m[0].kind, m[0].fuel, m[0].fuelFrom], ["engine", "gas", "D"], `n${n}`);
+    assert.ok(/MWM/.test(m[0].fuelWhy) && /gas-engine-tcg-3016/.test(m[0].fuelWhy), `n${n}`);
+  }
+});

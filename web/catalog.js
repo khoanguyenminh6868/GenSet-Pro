@@ -982,6 +982,11 @@
     // them from diesel packs): not invented here (điều phối 21/11/2026).
     { supplierId: "man-engines", ns: [104], from: "D", fuel: "gas", header: "| Output kW 1) 50 Hz / 60 Hz | Engine model | Cylinders | Model | Displacement in litres",
       engines: { E3262: "https://www.man.eu/engines/en/products/power-generation/gas/man-motor-e3262.html" }, why: 'datasheet hãng động cơ MAN %M ghi "E3262 naturally aspired engine with natural gas" (%U, đọc 21/11/2026)' },
+    // mwm n1007 / n1008 (datasheets "TCG 3016 V16", EN and CN, one engine record each; the supplier IS the engine maker): the saved table has no
+    // gas word, but the sheet itself (sources/mwm/1007.md line 55 "Natural gas applications 50 | Hz", line 74 "a minimum methane number of MN 80
+    // for natural gas"; 1008.md line 49 "天然气应用 50 Hz", line 68 "MN=80 的天然气"; `From:` …/gas-engine-tcg-3016/) says natural gas. Level D = the
+    // engine maker's own datasheet. `header: ""`: the saved tables have no header line (điều phối 21/11/2026, nhien-lieu-tieu-de-1.md).
+    { supplierId: "mwm", ns: [1007, 1008], from: "D", fuel: "gas", header: "", why: 'datasheet hãng MWM "TCG 3016 V16" ghi "Natural gas applications 50 Hz" và "a minimum methane number of MN 80 for natural gas" (n1008: "天然气应用 50 Hz"; From: mwm.net/en/gas-engines-gensets/gas-engine-tcg-3016/, tệp nguồn lưu 1007.md / 1008.md)' },
     { supplierId: "zc-power", ns: [109], part: "genset", fuel: "gasoline", why: 'tên trang "Gasoline Generators | Factory-Direct Prices | ZC Power"' },
   ];
   // The fuel of record `o` (of `fromSupplier`, or `part` "genset" = of `gensetsOf`) by FUEL_PAGES, or null.
