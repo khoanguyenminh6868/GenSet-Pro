@@ -1608,7 +1608,7 @@
       const f = fuelFrom(fuelSg.get(o.table), o.line || `| ${o.genset || ""}`) || fuelPage(s.id, o, s.specTables[o.table]?.header?.[0]);
       if (f) { o.fuel = f.fuel; o.fuelFrom = f.from; o.fuelWhy = f.why; }
     }
-    return mergeRepeats(namedPower(s, tableDrops(s, rowExceptions(s, out, note), note), note));
+    return mergeRepeats(namedPower(s, tableDrops(s, rowExceptions(s, columnSpecs(s, out, note), note), note), note));
   }
   // Engine tables Khoa listed one by one (catalog nhóm 3, câu 6 = C, Khoa 20/11/2026): an engine maker's figures on a genset
   // supplier's page, no genset in the row. Keyed by supplier + n + the FIRST header line word for word (a re-crawl that
@@ -1763,6 +1763,35 @@
       const specs = (o.specs || []).filter((sp) => sp.key !== "engPower");
       if (/^\d+(\.\d+)?$/.test(ep)) specs.push({ key: "engPower", label: x.engPower[1], value: ep });
       return { ...o, power: { rated: { kW: +m[1] } }, specs, powerFrom: "tên tổ máy" };
+    });
+  }
+  // Figure columns of tables whose first header line has one cell fewer than the rows (S6-1, điều phối 21/11/2026), an explicit
+  // list, not a rule. tecnogen n2001–n2010 (10 tables, 229 rows): "| MODEL | kVA LTP | … | | Regulator | Cylinder | cm3 | …" lost
+  // one of its trailing blank cells, so neither header line lines up as a whole and only the second line's "Kg" was read. The
+  // first line's cells up to "Cylinder" do line up (the second line puts "Engine" over cell 5, the engine of every record).
+  // Read only for the table's engine records whose `engCell` is the record's engine, when the header cells named in `titles`
+  // are word for word those (a re-crawl with another header lapses, noted) and the value has the key's shape.
+  const COLUMN_SPECS = [
+    { supplierId: "tecnogen", n: [2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010], why: "điều phối 21/11/2026 (S6-1)",
+      titles: [[0, 7, "Cylinder"], [1, 5, "Engine"]], engCell: 5, specs: [["cyl", 7, "Cylinder"]] },
+  ];
+  function columnSpecs(s, list, note) {
+    const ex = COLUMN_SPECS.filter((x) => x.supplierId === s.id);
+    if (!ex.length) return list;
+    return list.map((o) => {
+      const x = ex.find((x) => x.n.includes(+o.n));
+      if (!x || o.kind !== "engine") return o;
+      const t = { n: o.n, title: o.title }, hs = (o.header || []).map(cellsOf), cells = cellsOf(o.line || "");
+      if (!x.titles.every(([h, i, w]) => String(hs[h]?.[i] ?? "").trim() === w)) { note(t, o.table, o.row ?? null, "cột thông số theo danh sách không áp: đổi tiêu đề", String(o.header?.[0] ?? "")); return o; }
+      if (String(cells[x.engCell] ?? "").trim() !== String(o.model).trim()) return o;
+      const add = [];
+      for (const [key, i, label] of x.specs) {
+        const v = specVal(cells[i]);
+        if (!v || (o.specs || []).some((sp) => sp.key === key)) continue;
+        if (!specFits(key, v)) { note(t, o.table, o.row ?? null, "thông số không đúng dạng: để trống", `${key}=${v}`); continue; }
+        add.push({ key, label, value: v });
+      }
+      return add.length ? { ...o, specs: [...(o.specs || []), ...add] } : o;
     });
   }
   // Spec keys of a whole table form left out (catalog-b3, Khoa 20/11/2026), an explicit list, not a rule: matched by supplier
