@@ -300,7 +300,7 @@ const dseModels = (t) => [...String(t || "").matchAll(DSE_RE)].map((h) => h[0]);
 const SEG = (seg) => (/mains\W+(?:\(?utility\)?\W+)?failure|\bAMF\b|mains\/generator automatic switching/i.test(seg) ? "amf"
   : /synchroni[sz]|paralleling/i.test(seg) ? "sync" : /auto(?:matic)?\W+start/i.test(seg) ? "start" : null);
 const UNIT = [["amf", /applications in 1 HW:\s*AMF\b|\bAMF\s+(?:unit|controller|genset controller)\b|mains failure unit|auto(?:matic)?\s+mains\s+(?:\(utility\)\s+)?failure\s+(?:control\s+)?(?:module|controller|unit)|automatic mains failure \(AMF\)/i],
-  ["sync", /paralleling\s+(?:gen-?set\s+)?(?:controller|control unit)|common paralleling|paralleling operations|parallel operation up to|synchronising\s+(?:&\s+load sharing\s+)?(?:auto start\s+)?control module|parallel\s+(?:\(with genset\)\s+)?controller|mains parallel|island parallel/i],
+  ["sync", /paralleling\s+(?:gen-?set\s+)?(?:controller|control unit)|common paralleling|paralleling operations|parallel operation up to|synchronising\s+(?:&\s+load sharing\s+)?(?:auto start\s+)?control module|parallel\s+(?:\(with genset\)\s+)?controller|mains parallel|island parallel|peer-to-peer system with up to \d+ synchronous/i],
   ["start", /applications in 1 HW:\s*MRS\b|automatic start module|auto start control module|remote\W+start\W+unit/i]];
 // "HGM6110N/6110NC/6110CAN:" → HGM6110N, HGM6110NC, HGM6110CAN.
 const COLON = /^\W*((?:HGM|DSE)\s?\d{4}[A-Z]*)((?:\/\d{4}[A-Z]*)*)\s*:\s*(.*)$/i;
@@ -328,9 +328,11 @@ export function ctlKinds(suppliers = [], { modelsIn = dseModels } = {}) {
       });
       // (c)
       // A table whose title names several models none of the lines above tells apart (Woodward easYgen-3400XT /
-      // 3500XT): the whole table's kind for each of them.
-      const titled = [...new Set(modelsIn(t.title).map(ctlKey))];
-      if (titled.length && titled.every((m) => !own.has(m))) {
+      // 3500XT): the whole table's kind for each of them. A model of the title the lines above did not tell apart takes it
+      // too when its sibling models got a kind (bdk-ds-3: easYgen-1700 beside 1400 / 1600 / 1800, whose sheet says "easYgen-1000
+      // Series of AMF genset controllers"; the 1700 line itself names no kind).
+      const titled = [...new Set(modelsIn(t.title).map(ctlKey))].filter((m) => !own.has(m));
+      if (titled.length && (own.size === 0 || titled.length < new Set(modelsIn(t.title).map(ctlKey)).size)) {
         const ks = new Set(UNIT.filter(([, re]) => rows.some((l) => re.test(l))).map(([k]) => k));
         if (ks.size) for (const m of titled) own.set(m, ks);
       }
@@ -346,6 +348,8 @@ export const kindOf = (kinds, model) => {
   const k = ctlKey(model);
   if (!k) return null;
   if (kinds.has(k)) return kinds.get(k);
+  // Woodward "easYgen-3500XT": catalog.js reads the sheet's "3400XT/3500XT" as easYgen-3500 (bdk-ds-3).
+  if (/\d{4}XT$/.test(k) && kinds.has(k.slice(0, -2))) return kinds.get(k.slice(0, -2));
   const ends = k.length >= 4 ? [...kinds.keys()].filter((x) => x.endsWith(k)) : [];
   return ends.length === 1 ? kinds.get(ends[0]) : null;
 };
