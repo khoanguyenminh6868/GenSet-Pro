@@ -40,6 +40,12 @@ test("6M33G8D3/5 (cả cách ghi kèm ngoặc) nhận tỉ số nén của 6M33G
   assert.deepEqual(ids(r), ["dung", "tron", "trong"]);
   assert.deepEqual(r.dropped.map((d) => d.u.supplierId).sort(), ["khac", "ngoac", "tron8"]);
 });
+test("mã có tiền tố nước dùng tỉ số nén của mã gốc", () => {
+  const rows = [sup("goc", ["| g-1 | 750 | 600 | 4006-23TAG2A | S5L1D-H41 | 13.6:1 |"]), sup("uk", ["| u-1 | 750 | 600 | UK 4006-23TAG2A | S5L1D-H41 | - |"]), sup("dung", ["| b-1 | 750 | 600 | 6M31G825/5 | S5L1D-H41 | 14:1 |"])];
+  const r = run(rows, free("Tỉ số nén | 14:1"));
+  assert.deepEqual(ids(r), ["dung"]);
+  assert.deepEqual(r.dropped.map((d) => d.u.supplierId).sort(), ["goc", "uk"]);
+});
 test("placeInModel: chỉ đọc nước NCC ghi ngay trước mã", () => {
   assert.equal(placeInModel("India 4006-23TAG2A"), "IN");
   assert.equal(placeInModel("UK 4006-23TAG2A"), "GB");

@@ -1884,7 +1884,9 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       // một thước với bước chấm (comprOff). Nguồn không ghi / mâu thuẫn / không đọc được thì giữ dòng. Gói nhiều cỡ không
       // xét: comprOf đọc cả HSMT, chưa biết con số thuộc cỡ nào.
       if (hints.comprExact && hints.compr != null && !hints.multiSize) {
-        const off = comprOff([...ef, ...(facts.get(`engine:${COMPR_SAME.get(e.key)}`) || [])], hints.compr);
+        // Mã có tiền tố nước ("UK 4006-23TAG2A") là mã gốc do NCC ghi kèm nơi sản xuất: dùng số của mã gốc.
+        const sameKey = COMPR_SAME.get(e.key) || (placeInModel(e.model) ? CAT.keyOf(String(e.model).trim().replace(/^\S+\s+/, "")) : null);
+        const off = comprOff([...ef, ...(facts.get(`engine:${sameKey}`) || [])], hints.compr);
         if (off) { score -= 600; ruled.push("compr"); why.push(`tỉ số nén ${[...new Set(off.map((f) => String(f.value).trim()))].join(" / ")}, HSMT ghi ${hints.compr}:1`); }
       }
       // NCC tự ghi nước sản xuất ngay trước mã động cơ ("India 4006-23TAG2A", kaihua n122; Khoa 21/11/2026): nước ngoài nhóm
