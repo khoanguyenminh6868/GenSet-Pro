@@ -1493,6 +1493,8 @@ export const named = (hints, model) => {
 };
 const CONF = { high: 30, medium: 15 };
 // A supplier offering one engine with one alternator is one choice, however many gensets, pages or tables name it.
+// Plain code-unit order (no locale), so the tie order of `candidates` is the same on every machine.
+const cmpStr = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
 const choiceKey = (r) => `${r.u.supplierId}\n${r.e.key}\n${r.a?.key || squashOf(r.u.other || "")}`;
 // Rows per engine (more for the engine the HSMT names) and per supplier, so other engines and suppliers get a place too.
 // Alternators a supplier sells under its OWN label (Khoa 20/11/2026, #969 "B"): an explicit list of supplier + the code of
@@ -1793,7 +1795,19 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(Object.keys(made).length ? { made } : {}), ...(NORM ? { normSkip } : {}) });
     }
   }
-  rows.sort((x, y) => y.score - x.score);
+  // The prime output (standby ÷ 1.1 when only that is given), in steps of 5% above the HSMT's size; a row below the
+  // size, or that gives neither, last.
+  const gap = (r) => {
+    const p = r.u.power || {}, pr = p.prime?.[cap?.unit] ?? (p.standby?.[cap?.unit] != null ? p.standby[cap.unit] / 1.1 : null);
+    return !cap ? 0 : pr == null ? 50 : pr < cap.value * 0.995 ? 99 : Math.round(20 * (pr / cap.value - 1));
+  };
+  // Rows of equal score keep a fixed order (thu-tu-hang, 2026-11-21): Array.sort is stable, so a tie used to stay in the
+  // order the catalog was walked, and any change in the catalog's engine / row order (a merged engine key, a new supplier)
+  // swapped two rows of the same score at the end of the top 30 (IB2400371783#0: stone-power NTA855G2 ↔ rise-power
+  // P126TIII, both 269). Tie order: nearest the HSMT's size (gap), then the row's own identity (supplier, engine key,
+  // alternator): the same set of rows gives the same order whatever the order they were found in. The score is untouched.
+  const rowOrder = (x, y) => y.score - x.score || gap(x) - gap(y) || cmpStr(choiceKey(x), choiceKey(y)) || cmpStr(String(x.u.other || ""), String(y.u.other || ""));
+  rows.sort(rowOrder);
   const perEngine = new Map(), perSupplier = new Map(), seen = new Set(), out = [];
   const add = (m, k) => m.set(k, (m.get(k) || 0) + 1);
   // The ceiling per make: not when the HSMT names an engine make or model; a make "A / B" counts for A, a row of no make
@@ -1810,12 +1824,6 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       if (!exempt) add(perMake, makeOf(r));
       seen.add(k); add(perEngine, r.e.key); add(perSupplier, r.u.supplierId); out.push(r);
     }
-  };
-  // The prime output (standby ÷ 1.1 when only that is given), in steps of 5% above the HSMT's size; a row below the
-  // size, or that gives neither, last.
-  const gap = (r) => {
-    const p = r.u.power || {}, pr = p.prime?.[cap?.unit] ?? (p.standby?.[cap?.unit] != null ? p.standby[cap.unit] / 1.1 : null);
-    return !cap ? 0 : pr == null ? 50 : pr < cap.value * 0.995 ? 99 : Math.round(20 * (pr / cap.value - 1));
   };
   // Đồng bộ thương hiệu asked (Khoa, 2026-11-12, IB2600594596): the rows of genset makers (gensetMakerOf, as syncCheck
   // reads them) keep SYNC_ROWS places, SYNC_PER_SUPPLIER engines a maker, the size nearest the HSMT's first. Their rows
@@ -1873,7 +1881,7 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
       out.splice(out.indexOf(gone), 1, r); have.add(pairOf(r));
     }
   }
-  out.sort((x, y) => y.score - x.score);
+  out.sort(rowOrder);
   return { top: out, all: rows, dropped };
 }
 // The rows of the configurations a result chose (candidates `keep`): supplierId + engine key of each supplier and of
