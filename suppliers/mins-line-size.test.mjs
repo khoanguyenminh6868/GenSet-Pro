@@ -43,6 +43,18 @@ test("IB2300046353#1: 'tối đa' của số khác không làm mất dung tích;
   assert.equal(engineMins("Máy 20 kVA 3 pha: Động cơ - loại và thông số: Diesel, 4 kỳ, phun nhiên liệu trực tiếp; dung tích > 1,950 lít; công suất liên tục ≥ 19.1 KW; công suất tối đa ≥ 28.6 HP; 1.500 vòng/phút; hành trình ≥ 92 mm").minDisp, 1.95);
   assert.equal(engineMins("Thùng nhiên liệu: đặt bên trong vỏ cách âm, có khóa; dung tích ≥ 65 lít; tiêu thụ tối đa ≤ 4,9 lít/giờ; đường kính ống 20 mm").minDisp, null);
 });
+test("IB2300046353#1: 'tối đa' của số khác không làm mất '4 xilanh' ghi trơ; 'tối đa' của chính số xi lanh thì không phải tối thiểu", () => {
+  const e = engineMins("Máy 20 kVA 3 pha: Động cơ - loại và thông số: Diesel, 4 kỳ, phun nhiên liệu trực tiếp; dung tích > 1,950 lít; công suất liên tục ≥ 19.1 KW; công suất tối đa ≥ 28.6 HP; 1.500 vòng/ phút; 4 xilanh thẳng hàng; tỷ số nén ≥ 18.9:1");
+  assert.equal(e.minCyl, 4);
+  assert.equal(e.cylExact, false);
+  assert.equal(engineMins("Động cơ: Diesel 4 kỳ; ≤ 3 xi lanh thẳng hàng").minCyl, null);
+  assert.equal(engineMins("Động cơ: Diesel 4 kỳ; tối đa 3 xi lanh thẳng hàng").minCyl, null);
+});
+test("IB2300349583#0: mức 'Nâng cao (lựa chọn)' không phải ngưỡng, lấy mức bắt buộc", () => {
+  const m = powerMins("Động cơ: Tiêu hao nhiên liệu: Tối thiểu (bắt buộc): ≤ 7,5 lít/giờ ở 100% tải liên tục, ≤ 5,5 lít/giờ ở 75% tải liên tục. Nâng cao (lựa chọn): ≤ 4,5 lít/giờ ở 75% tải liên tục");
+  assert.equal(m.maxFuel, 7.5);
+  assert.equal(m.maxFuel75, 5.5);
+});
 test("IB2500403535#0: 'tối đa ≥ 12 KW' không làm mất '≥ 3 xilanh'", () => {
   const e = engineMins("Máy 8,5 kVA: Động cơ: Dầu Diesel; 4 kỳ làm mát bằng nước; công suất liên tục ≥ 10 kW, tối đa ≥ 12 KW tại 1500 vòng/phút; ≥ 3 xilanh thẳng hàng; điều tốc điện tử.");
   assert.equal(e.minCyl, 3);

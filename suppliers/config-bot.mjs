@@ -1188,7 +1188,10 @@ export function engineLists(t) {
       const isDisp = DISP_LABEL.test(cell) ? !tankNear(cell) : DISP_BARE.test(cell) && ENGINE_LINES.test(near) && /đ[ộo]ng\s*c[ơo]|(?:xi|xy)[\s-]?lanh/i.test(cell) && !/th[ùu]ng|b[ồo]n\b|b[ìi]nh\b|k[ée]t\b|\btank\b/i.test(cell);
       const least = isDisp && cell.match(/dung\s*t[íi]ch(?:\s*(?:xi|xy)[\s-]?lanh)?\s*:?\s*(?:≥|>=|>)\s*(\d{1,2}(?:[.,]\d{1,3})?)\s*(?:l[íi]t|L)\b(?![/a-z])/i);
       if (least) disp.push(withTol(Number(least[1].replace(",", ".")), tolAt(cell, least.index + least[0].length), -1));
-      const cylLeast = cell.match(/(?:≥|>=)\s*:?\s*0?(\d{1,2})\s*(?:xi|xy)[\s-]?lanh/i);
+      // A bare count is a least too when the only "most" of the cell is the engine's largest power ("công suất tối đa ≥ 28.6 HP; 1.500
+      // vòng/ phút; 4 xilanh thẳng hàng", IB2300046353). Any other "most" ("≤ 3 xi lanh", "đường kính ≤ 112") leaves the cell as it was.
+      const onlyPowerMost = !MAXIMUM.test(cell.replace(/c[ôo]ng\s*su[ấa]t\s*t[ốo]i\s*đa\s*(?:≥|>=|>)\s*\d[\d.,]*\s*(?:HP|kW|kVA)/gi, ""));
+      const cylLeast = cell.match(/(?:≥|>=)\s*:?\s*0?(\d{1,2})\s*(?:xi|xy)[\s-]?lanh/i) || (onlyPowerMost ? inlineCyl(line) : null);
       if (cylLeast && Number(cylLeast[1]) >= 1 && Number(cylLeast[1]) <= 20) cyl.push(Number(cylLeast[1]));
       return;
     }
@@ -1478,6 +1481,9 @@ export function powerRead(t) {
     // closes the row before (113 L/h of the 70% row was read as the 100% limit, and rows at 138–151 L/h were left out).
     // Only when the figure's own line has a label and no load, and the next line is nothing but the load.
     const ls = ft.lastIndexOf("\n", m.index - 1) + 1, own = ft.slice(ls, m.index), le = ft.indexOf("\n", m.index);
+    // A level the HSMT itself marks optional is no limit: "Tối thiểu (bắt buộc): … ≤ 5,5 lít/giờ ở 75% tải. Nâng cao (lựa chọn): ≤ 4,5
+    // lít/giờ ở 75% tải" (IB2300349583): the limit is the required 5,5.
+    if (/n[âa]ng\s*cao\s*\(\s*l[ựu]a\s*ch[ọo]n\s*\)/i.test(own)) continue;
     const ne = le < 0 ? -1 : ft.indexOf("\n", le + 1), next = le < 0 ? "" : ft.slice(le + 1, ne < 0 ? ft.length : ne);
     const under = /\p{L}{2}/u.test(own) && !/\d{2,3}\s*%/.test(own) ? next.match(/^\s*(?:ở\s+)?(?:ho[ạa]t [đd][ộo]ng\s+)?(?:mức\s+)?(\d{2,3})\s*%\s*(?:tải|phụ tải|công suất|load)?\s*[.;,]?\s*$/i) : null;
     // The load right after the figure on its own line ("≤ 3,7 lít/giờ tại (75 %) tải định mức" then "≤ 5,0 lít/giờ tại
