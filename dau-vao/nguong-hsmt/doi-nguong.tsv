@@ -94,7 +94,7 @@ H:IB2400375383#0	maxDisp: null → 7; maxFuel: null → 34; maxFuel75: null → 
 H:IB2400375383#1	maxDisp: null → 8.8; maxFuel: null → 65; maxFuel75: null → 49; maxFuel50: null → 35
 H:IB2400377239#0	minPrime: {"kVA":400} → null
 H:IB2400389856#0	maxFuel: null → 24.2; maxFuel75: 12.5 → 18.2; maxFuel50: null → 12.5
-H:IB2400427929#0	maxFuel: null → 3.5; maxFuel75: 2.5 → 3.2; maxFuel50: 2 → null
+H:IB2400427929#0	maxFuel: null → 3.5; maxFuel75: 2.5 → 3.2; maxFuel50: 2 → 2.5
 H:IB2400428063#0	maxFuel: null → 6; maxFuel75: null → 5
 H:IB2400433961#0	maxDisp: null → 19.6; minCyl: null → 6; minPrime: null → {"kVA":600,"kW":480}
 H:IB2400433961#1	maxDisp: null → 39.2; minCyl: null → 12; minPrime: null → {"kVA":1500,"kW":1200}

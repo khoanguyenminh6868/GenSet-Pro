@@ -48,7 +48,7 @@ H:IB2400311120#2	maxFuel: null → 12; maxFuel75: null → 9
 H:IB2400313681#0	maxFuel: null → 11; maxFuel75: null → 8
 H:IB2400365165#0	maxFuel: null → 4.5
 H:IB2400389856#0	maxFuel: null → 24.2; maxFuel75: 12.5 → 18.2; maxFuel50: null → 12.5
-H:IB2400427929#0	maxFuel: null → 3.5; maxFuel75: 2.5 → 3.2; maxFuel50: 2 → null
+H:IB2400427929#0	maxFuel: null → 3.5; maxFuel75: 2.5 → 3.2; maxFuel50: 2 → 2.5
 H:IB2400428063#0	maxFuel: null → 6; maxFuel75: null → 5
 H:IB2400434949#0	maxFuel: null → 12; maxFuel75: null → 9
 H:IB2400453359#0	maxFuel: null → 4; maxFuel75: null → 3
