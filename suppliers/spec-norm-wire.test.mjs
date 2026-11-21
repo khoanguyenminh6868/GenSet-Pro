@@ -28,14 +28,15 @@ test("the flag is ON by default (Khoa 17/11: every machine); 0 turns it off", ()
   try { assert.equal(specNormOn(), false); } finally { process.env.GENBID_SPEC_NORM = "0"; }
 });
 
-test("by group: fuel on alone leaves a displacement in cc compared as before", () => {
+test("by group: a displacement in cc is compared in litres with the disp group on (l_from_cc, S8-1) and off", () => {
   const H = "| Model | Prime kVA | Prime kW | Engine | Alternator | Displacement (cc) |";
   const list = [sup("cc", ["| c-1 | 420 | 336 | WP13D405E200 | XY1 | 11000 |"], H)];
   const h = free("Dung tích xi lanh ≥ 12 lít\n50 Hz");
   process.env.GENBID_SPEC_NORM = "fuel";
   try { assert.deepEqual(run(list, h).dropped.map((d) => d.ruled), [["disp"]]); } finally { process.env.GENBID_SPEC_NORM = "0"; }
+  // Before S8-1 the disp group left "11000 (cc)" uncompared (no cc → L formula); now 11 L < 12 L.
   process.env.GENBID_SPEC_NORM = "disp";
-  try { assert.equal(run(list, h).dropped.length, 0); } finally { process.env.GENBID_SPEC_NORM = "0"; }
+  try { assert.deepEqual(run(list, h).dropped.map((d) => d.ruled), [["disp"]]); } finally { process.env.GENBID_SPEC_NORM = "0"; }
 });
 
 test("normFig: fuel needs L/h at the HSMT's load; noise its distance; weight / size open or canopied", () => {
@@ -53,8 +54,11 @@ test("normFig: fuel needs L/h at the HSMT's load; noise its distance; weight / s
   assert.deepEqual(normFig({ key: "weight", label: "Gross Weight(kg)", value: "3550" }, { header: [] }, { unit: "kg", enclosure: "enclosed" }).why, ["enclosure"]);
   assert.equal(normFig({ key: "weight", label: "Weight (kg)", value: "3550" }, { title: "Open type diesel generator", header: [] }, { unit: "kg" }).ok, true);
   assert.deepEqual(normFig({ key: "weight", label: "Weight (kg)", value: "3550" }, { title: "Open type diesel generator", header: [] }, { unit: "kg", enclosure: "enclosed" }).why, ["bản open"]);
-  // Displacement in cc: no formula in web/conversions.js, not compared with litres.
-  assert.deepEqual(normFig({ key: "disp", label: "Displacement (cc)", value: "11000" }, { header: [] }, { unit: "L" }).why, ["đơn vị cc"]);
+  // Displacement in cc: l_from_cc of web/conversions.js (S8-1, Khoa 22/11/2026) → litres, compared.
+  assert.deepEqual(normFig({ key: "disp", label: "Displacement (cc)", value: "11000" }, { header: [] }, { unit: "L" }).why, []);
+  assert.equal(normFig({ key: "disp", label: "Displacement (cc)", value: "11000" }, { header: [] }, { unit: "L" }).r.num, 11);
+  // A bare figure in the cc band (unit by magnitude, unitFrom "default") is NOT converted: still not compared.
+  assert.deepEqual(normFig({ key: "disp", label: "Displacement", value: "11000" }, { header: [] }, { unit: "L" }).why, ["đơn vị cc"]);
 });
 
 test("candidates: a fuel figure whose heading names no load is the 100% figure under the flag too (kept, the old 300 points off)", () => {
@@ -74,14 +78,18 @@ test("candidates: a fuel figure whose heading names no load is the 100% figure u
   assert.deepEqual(n.dropped.map((d) => [d.u.supplierId, d.ruled]), [["fl", ["fuel"]]]);
 });
 
-test("candidates: a displacement in cc is not compared with the HSMT's litres under the flag", () => {
+test("candidates: a displacement in cc is compared with the HSMT's litres under the flag (l_from_cc, S8-1)", () => {
   const H = "| Model | Prime kVA | Prime kW | Engine | Alternator | Displacement (cc) |";
   const list = [sup("cc", ["| c-1 | 420 | 336 | WP13D405E200 | XY1 | 11000 |"], H)];
   const h = free("Dung tích xi lanh ≥ 12 lít\n50 Hz");
   assert.deepEqual(run(list, h).dropped.map((d) => d.ruled), [["disp"]]);
+  // Before S8-1: not compared (kept, "Chưa rõ"). Now 11000 cc = 11 L < 12 L, as with the flag off.
   const n = on(() => run(list, h));
-  assert.equal(n.dropped.length, 0);
-  assert.deepEqual(n.top.map((r) => r.u.supplierId), ["cc"]);
+  assert.deepEqual(n.dropped.map((d) => d.ruled), [["disp"]]);
+  // 12500 cc = 12.5 L ≥ 12 L stays.
+  const ok = on(() => run([sup("cc", ["| c-1 | 420 | 336 | WP13D405E200 | XY1 | 12500 |"], H)], h));
+  assert.equal(ok.dropped.length, 0);
+  assert.deepEqual(ok.top.map((r) => r.u.supplierId), ["cc"]);
 });
 
 test("candidates: a source the layer cannot compare keeps the row (Chưa rõ), even when another source is below", () => {
