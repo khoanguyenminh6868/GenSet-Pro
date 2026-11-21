@@ -257,6 +257,24 @@ test("cc → L (S8-1): l_from_cc chia 1000, đúng chữ số; mọi cách viế
   // "cc" không bắt nhầm chữ khác; L vẫn là L.
   assert.equal(SN.normalize({ key: "disp", label: "Displacement", value: "2.156 L" }).num, 2.156);
   assert.equal(SN.normalize({ key: "disp", label: "Displacement", value: "2.156 L" }).conv, undefined);
+  // Viết liền / ô đơn vị tiêu đề "ml", "cm3", "ccm" (điều phối 22/11/2026).
+  for (const [label, value, ctx] of [["Displacement", "2156ml", {}], ["Displacement", "2156ccm", {}], ["Displacement", "2156", { header: ["| Model | Displacement", "| | ml"] }],
+    ["Displacement", "2156", { header: ["| Model | Displacement", "| | cm3"] }], ["Displacement", "2156", { header: ["| Model | Displacement", "| | ccm"] }]]) {
+    const r = SN.normalize({ key: "disp", label, value }, ctx);
+    assert.equal(r.unit, "L", `${value} ${JSON.stringify(ctx)}`); assert.equal(r.num, 2.156, `${value} ${JSON.stringify(ctx)}`);
+  }
+  // Số không hợp lý cho cc: phần thập phân hoặc < 20 → không đổi, missing "number" (không so).
+  for (const [label, value, num] of [["Displacement", "2.156 cc", 2.156], ["Displacement (cc)", "6.7", 6.7], ["Displacement", "12.500 cm3", 12.5], ["Displacement (cc)", "15", 15], ["Displacement (ml)", "1498.5", 1498.5]]) {
+    const r = SN.normalize({ key: "disp", label, value });
+    assert.equal(r.unit, "cc", `${label} | ${value}`); assert.equal(r.num, num, `${label} | ${value}`);
+    assert.ok(r.missing.includes("number"), `${label} | ${value}`); assert.equal(r.conv, undefined, `${label} | ${value}`);
+  }
+  assert.equal(SN.normalize({ key: "disp", label: "Displacement (cc)", value: "20" }).num, 0.02);
+  // cc / cm3 theo sau bởi "/" là lưu lượng / thể tích mỗi vòng, không phải dung tích.
+  for (const [label, value] of [["Displacement", "2156 cm3/min"], ["Displacement", "45 cc/rev"], ["Displacement (cc/rev)", "45"], ["Displacement (cm3 / min)", "2156"]]) {
+    const r = SN.normalize({ key: "disp", label, value });
+    assert.equal(r.unit, null, `${label} | ${value}`); assert.ok(r.missing.includes("unit"), `${label} | ${value}`); assert.equal(r.conv, undefined, `${label} | ${value}`);
+  }
   // selfCheck nay xét được dòng ghi cc (đã là L).
   const sc = SN.selfCheck([SN.normalize({ key: "cyl", label: "Cylinders", value: "1" }), SN.normalize({ key: "bore", label: "Bore x Stroke (mm)", value: "86*72" }), SN.normalize({ key: "disp", label: "Displacement (cc)", value: "418" })]);
   assert.equal(sc?.bad, false);
