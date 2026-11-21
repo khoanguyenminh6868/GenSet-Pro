@@ -152,7 +152,7 @@
 
   // ---- per key ----
   const FUEL_UNITS = [
-    [/g\s*\/\s*\(?\s*k\s*w\s*[.·\-]?\s*h|g\/kwh|克\/千瓦/i, "g/kWh"],
+    [/gr?\s*\/\s*\(?\s*k\s*w\s*[.·\-]?\s*h|g\/kwh|克\/千瓦/i, "g/kWh"],
     // Nm³ (normal cubic metre, gas at reference conditions) is not m³: kept apart, no conversion.
     [/nm3\s*\/\s*k\s*w\s*[.·]?\s*h/i, "Nm³/kWh"],
     [/m3\s*\/\s*k\s*w\s*[.·]?\s*h/i, "m³/kWh"],
@@ -178,6 +178,11 @@
     if (f?.list && loads.length === f.list.length && loads.length > 1) {
       // "Fuel L/h @75% / @100% | 11.9 / 15.8": the figure under the load the key is for (fuel: 100%).
       const w = want || 100, i = loads.findIndex((x) => x.v === w);
+      if (i >= 0) { r.num = f.list[i]; r.cond.load = w; }
+      else return miss(r, "ambiguous");
+    } else if (f?.list && !loads.length && vLoads.length === f.list.length && vLoads.length > 1) {
+      // "342.9 / 457.1 L/h (@75% / @100%)": the loads are named in the cell, in the order of its figures.
+      const w = want || 100, i = vLoads.findIndex((x) => x.v === w);
       if (i >= 0) { r.num = f.list[i]; r.cond.load = w; }
       else return miss(r, "ambiguous");
     } else if (f?.list) { r.options = f.list; miss(r, "ambiguous"); }
@@ -322,7 +327,7 @@
     if (!m) return miss(r, "value");
     r.count = Number(m[0]);
     if (/\bv\b|\dv\b|v\d|\bv-?type|\bvee\b|°\s*v|v型|-v\b/i.test(V)) r.cond.layout = "V";
-    else if (/\bl\b|\dl\b|l\d|\bl-|-l\b|in-?line|直列|vertical/i.test(V)) r.cond.layout = "L";
+    else if (/\bl\b|\dl\b|l\d|\bl-|-l\b|in\s*-?\s*line|直列|vertical/i.test(V)) r.cond.layout = "L";
     const a = V.match(/(\d{2,3})\s*°/); if (a) r.cond.angle = Number(a[1]);
     if (!r.cond.layout) miss(r, "layout");
     return r;
@@ -551,9 +556,11 @@
     if (!spec || !BY_KEY[spec.key]) return null;
     const header = ctx.header || [];
     const fam = FAMILY[spec.key];
-    const c = { title: nf(ctx.title || ""), headerText: nf(header.join(" ")), header, hUnit: headerUnit(spec.label, header) || (fam && fam[0].test(nf(spec.label)) ? soleUnit(header, fam[2], fam[1]) : null) };
+    const hu = headerUnit(spec.label, header) || (fam && fam[0].test(nf(spec.label)) ? soleUnit(header, fam[2], fam[1]) : null);
+    // `unitCell`: the unit cell catalog.js read for this value in a label table (same line, or a unit line above), verbatim.
+    const c = { title: nf(ctx.title || ""), headerText: nf(header.join(" ")), header, hUnit: hu || spec.unitCell || null };
     const r = base(spec);
-    if (c.hUnit) r.cond.headerUnit = c.hUnit;
+    if (hu) r.cond.headerUnit = hu; else if (spec.unitCell) r.cond.unitCell = spec.unitCell;
     DEC_COMMA = ctx.decimalComma != null ? !!ctx.decimalComma : !!decimalCommaEvidence(ctx.rows);
     try { BY_KEY[spec.key](spec, c, r); } finally { DEC_COMMA = false; }
     if (!Object.keys(r.cond).length) delete r.cond;
