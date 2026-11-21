@@ -50,6 +50,22 @@ test("bộ NCC tự chào (không theo tài liệu hãng): không sinh bản", (
   assert.equal(run(b).configs.filter((c) => c.ctlTwin).length, 0);
 });
 
+// IB2600603983, configmatch 2026-11-21T08:52:00Z, cấu hình #4: agent ghi dòng tổ máy B825E5 của agg-fuzhou.
+test("dòng tổ máy của NCC khác: vẫn sinh bản, bản sao lấy dòng tổ máy của NCC chào", () => {
+  const b = base();
+  b.configs[0].genset = { model: "B825E5", src: { kind: "catalog", supplierId: "agg-fuzhou", n: 107, line: LINE } };
+  b.configs[0].checks.push({ item: "Công suất liên tục", status: "met", part: "genset", offered: "750 kVA", sourceQuote: LINE });
+  const r = run(b);
+  assert.deepEqual(r.configs.map((c) => c.controller.model), ["DSE7320 MKII", "DSE7420"]);
+  assert.equal(r.configs[0].genset.model, "B825E5");
+  const t = r.configs[1];
+  assert.deepEqual(t.suppliers.map((s) => s.supplierId), ["voltgent"]);
+  assert.equal(t.genset.model, "VB825-5");
+  assert.equal(t.genset.src.supplierId, "voltgent");
+  assert.notEqual(t.checks.find((x) => x.item === "Công suất liên tục").status, "met");
+  assert.equal(run(r).configs.filter((c) => c.ctlTwin).length, 1);
+});
+
 test("cặp hai bản là một chỗ của trần mỗi hãng", () => {
   const b = base();
   b.configs[0].engine.make = "Volvo Penta"; // trần 1 cấu hình mỗi hãng
