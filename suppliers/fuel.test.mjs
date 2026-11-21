@@ -56,7 +56,7 @@ test("không ghi: menu / khẩu hiệu / đơn vị / chữ mơ hồ / mâu thu�
     // simpson-power n124 ("SIMPSON-GasGenerators") và jianghao-genset n104 ("Gas Generator" + "FuelCon. (L)"): dấu hiệu của
     // trang vẫn không đủ; từ 20/11/2026 có nhiên liệu qua FUEL_PAGES (ca "nhiên liệu theo bảng" cuối tệp).
     ["victory-generator", 129], ["victory-generator", 133],       // "Diesel Twin-cylinder"; chữ xăng ở dòng khác
-    // kingway-power n117 (bể chứa khí sinh học): từ 21/11/2026 có nhiên liệu qua FUEL_PAGES (ca cuối tệp).
+    ["kingway-power", 117],                                       // bể chứa khí sinh học
     // man-engines n104 ("diesel and gas engines" trộn): từ 21/11/2026 chỉ dòng E3262 có nhiên liệu qua FUEL_PAGES (ca cuối tệp).
     ["penlucky", 102],                                            // URL diesel; chỉ mã động cơ K38N
   ]) {
@@ -140,12 +140,4 @@ test("man-engines n104 (sua-so-le-1, điều phối 21/11/2026): chỉ dòng E32
   assert.ok(m.filter((r) => r.model !== "E3262").every((r) => r.fuel === undefined));
   // bảng khác của man-engines (n105: bảng khí tự ghi) không bị đổi bởi mục này
   assert.ok(rec("man-engines", 105).every((r) => r.fuelWhy === undefined || !/datasheet hãng động cơ MAN/.test(r.fuelWhy)));
-});
-
-test("kingway-power n117 (sua-so-le-1, Khoa 21/11/2026 \"Khí\"): bản ghi SC9D340D2 ghi khí theo dòng \"Fuel | Biogas\" của bảng Engine Specifications của trang (mức B)", () => {
-  const k = rec("kingway-power", 117);
-  assert.equal(k.length, 1);
-  assert.equal(k[0].model, "SC9D340D2");
-  assert.deepEqual([k[0].fuel, k[0].fuelFrom], ["gas", "B"]);
-  assert.ok(/\| Fuel \| Biogas/.test(k[0].fuelWhy) && /Engine Specifications/.test(k[0].fuelWhy));
 });
