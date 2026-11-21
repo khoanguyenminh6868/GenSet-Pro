@@ -88,6 +88,21 @@ test("B: a model takes rows of B_MIN_SUPPLIERS (2) suppliers first, then the mak
   assert.deepEqual(models(on, "Cummins").sort(), ["KTA19-G3", "KTA19-G3", "NTA855-G2A"]);
 });
 
+test("B: a second row of the same supplier is not the model's second supplier: it waits for the make's other model", () => {
+  // c1 offers KTA19-G3 in two rows (high; two alternators, or they are one choice), c4 offers NTA855-G2A (low). Two places of the make.
+  const c1 = set("c1", "Cummins", ["| C1 | 420 | 336 | KTA19-G3 | Stamford S5L1D-C41 |", "| C1B | 420 | 336 | KTA19-G3 | Leroy Somer LSA 47.2 S5 |"], "high");
+  c1.specTables[0].header = ["| Model | Prime kVA | Prime kW | Engine | Alternator |"];
+  const list = () => [
+    c1,
+    set("c4", "Cummins", ["| C4 | 420 | 336 | NTA855-G2A |"], "low"),
+    set("y1", "Yuchai", ["| Y1 | 420 | 336 | YC6K520-D30 |", "| Y2 | 420 | 336 | YC6MJ500L-D21 |"], "medium"),
+  ];
+  const off = withEnv({ GENBID_CAND_B: "0" }, () => run(list(), { max: 4, makeCap: 2, pinTop: 0 }).top);
+  assert.deepEqual(models(off, "Cummins"), ["KTA19-G3", "KTA19-G3"]);
+  const on = run(list(), { max: 4, makeCap: 2, pinTop: 0 }).top;
+  assert.deepEqual(models(on, "Cummins").sort(), ["KTA19-G3", "NTA855-G2A"]);
+});
+
 test("B: not when the HSMT names an engine make (no places per make: the order of the scores as before)", () => {
   const h = { ...free(), engineMakes: ["Cummins"] };
   const on = run(B(), { max: 3, makeCap: 2 }, h).top, off = withEnv({ GENBID_CAND_B: "0" }, () => run(B(), { max: 3, makeCap: 2 }, h).top);
