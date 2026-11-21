@@ -118,6 +118,15 @@ Cần biết:
 - Tiêu hao có dung sai ("≤ 21±2 lít/giờ") vẫn không đặt ngưỡng như cũ, không đổi ở bản này.
 - #1042 (RQ) chồng lên nhánh này, cần gộp lại sau commit mới. Top 30 của bản này chưa đo.
 
+## Bản gộp RQ + chốt dung sai (21/11/2026)
+
+Khoa chốt (qua điều phối): IB2300296794 không hạ, giữ 20 kVA; các ca khác có ± hoặc % thì áp, kể cả công suất. Mục "Cần biết" ở trên về IB2300296794 và #1042 đã xử lý.
+
+- #1042 (`ee6478ee`) đã gộp vào `nguong-hsmt-1`, không xung đột.
+- So với `c5fc563e`: đổi đúng 2 lượt RQ của IB2500403535 (`maxFuel75` null → 2,5 / 3,5, ở cả specs và bidhist) và IB2300296794#0 (19,8 → 20). Danh sách `doi-gop-rq.tsv`.
+- So với `2b199862`: specs 18 / 1.880, bidhist 63 / 1.093 (`doi-6ca.tsv`). Theo trường: minPrime 43, minCyl 24, minDisp 21, maxFuel75 4, maxDisp 2. So với main: specs 20, bidhist 192 (`doi-nguong-cuoi.tsv`).
+- Test: 1395 + 148 + 11 pass. Top 30 chưa đo.
+
 ## Việc tiếp
 1. Điều phối giao đo cloud top 30 cho SHA cuối.
 2. Sau khi #1036 merge: gộp main vào #998, đo lại #998 toàn bộ.
