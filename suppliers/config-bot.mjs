@@ -3895,13 +3895,13 @@ export function contKva(list = [], need = {}) {
 // Where a maker-sheet alternator is made: the sheet of a plant the supplier record is (leroy-somer-fuzhou: the Fuzhou
 // plant, Khoa 20/11/2026 "ok") → that country; else the make's default (CAT.madeIn). `brand`: the make's own country, for
 // an HSMT that asks the brand (nhãn hiệu). { at, brand, why }.
-// stamford-avk-china: Khoa 20/11/2026 "1. ok" (the sheets of the Stamford plant in China, made in China as Fuzhou), for
-// S4 / S5 and the older frames. S6 / S7 (S6L1D, S7L1D; dau-phat-hang D, Khoa 21/11/2026 "Stamford: làm 3 cho S6 / S7"):
-// no place: their sheets are Stamford's global ones and name no plant, the China page [1] names no range, and STAMFORD's
-// own page [6003] says the UK Stamford facility makes S4, S5, S6 and S7 → "chưa rõ", the origin check asks the CO.
-// (S4 / S5 stay China against [6003] until Khoa decides again.)
+// stamford-avk-china: Khoa 20/11/2026 "1. ok" (the sheets of the Stamford plant in China, made in China as Fuzhou), now
+// only for the frames outside S4–S7 (UCI / UCDI, PI, HCI). S4, S5, S6, S7 (S4L1D … S7L1D; dau-phat-hang D, Khoa 21/11/2026
+// "Stamford: làm 3 cho S6 / S7", then "2. Ghi chưa rõ" for S4 / S5): no place: their sheets are Stamford's global ones and
+// name no plant, the China page [1] names no range, and STAMFORD's page [6003] says the UK Stamford facility makes S4, S5,
+// S6 and S7 → "chưa rõ", the origin check asks the CO.
 const MAKER_PLANT = { "leroy-somer-fuzhou": { at: "CN", why: "tờ của nhà máy Phúc Châu (leroy-somer-fuzhou)" }, "stamford-avk-china": { at: "CN", why: "tờ của nhà máy Stamford ở Trung Quốc (stamford-avk-china)" } };
-const NO_PLANT = { "stamford-avk-china": { re: /^S[67]L\d/i, why: "tờ S6 / S7 là tờ toàn cầu của Stamford, không ghi nhà máy (Khoa 21/11/2026: chưa rõ, cần NCC xác nhận CO)" } };
+const NO_PLANT = { "stamford-avk-china": { re: /^S[4-7]L\d/i, why: "tờ S4–S7 là tờ toàn cầu của Stamford, không ghi nhà máy (Khoa 21/11/2026: chưa rõ, cần NCC xác nhận CO)" } };
 export const makerPlantOf = (supplierId, model) => (NO_PLANT[supplierId]?.re.test(String(model || "").trim()) ? null : MAKER_PLANT[supplierId] || null);
 export function makerMadeOf(supplierId, make, model) {
   const def = CAT.madeIn("alternator", [make], [""], model), plant = makerPlantOf(supplierId, model), none = !plant && NO_PLANT[supplierId]?.re.test(String(model || "").trim());
@@ -3943,7 +3943,7 @@ export function makerAlts(suppliers, RT, need, { all = false, engineFamily = nul
     // The HSMT's group against the brand's country when it asks the brand, against the place of making otherwise.
     const made = makerMadeOf(x0.supplierId, make, x0.model), mAt = need.origin?.basis === "brand" ? made.brand : made.at;
     if (need.origin && mAt !== "?" && !CAT.COUNTRY_GROUP[need.origin.grp].includes(mAt)) continue;
-    // Stamford S6 / S7 (NO_PLANT): the place the HSMT asks is not known → stays, after the models that state every point.
+    // Stamford S4–S7 (NO_PLANT): the place the HSMT asks is not known → stays, after the models that state every point.
     if (need.origin && mAt === "?") unknown.push("nơi sản xuất (cần NCC xác nhận CO)");
     const named = need.makes.includes(make);
     if (need.makes.length && !need.equivalent && !named) continue;
@@ -4191,7 +4191,7 @@ export function makerAltChecks(c, reqs = [], need = null, { sourcesDir } = {}) {
     const basis = madeBasisOf(q.quote) || madeBasisOf(q.requirement), grp = `${/\bG\s?-?20\b/.test(t) ? "g20" : "g7"}${EU_W.test(t) ? "eu" : ""}`;
     // The brand asked → the make's own country; the place asked → where it is made (a plant's sheet: known).
     const at = basis === "brand" ? made.brand : made.at, inG = at !== "?" && CAT.COUNTRY_GROUP[grp].includes(at);
-    // A sheet whose plant is unknown on purpose (NO_PLANT: Stamford S6 / S7, Khoa 21/11/2026): the place asked → the CO.
+    // A sheet whose plant is unknown on purpose (NO_PLANT: Stamford S4–S7, Khoa 21/11/2026): the place asked → the CO.
     const noPlace = basis && basis !== "brand" && at === "?" && !makerPlantOf(p.src?.supplierId, p.model) && !!NO_PLANT[p.src?.supplierId]?.re.test(String(p.model || "").trim());
     if (!basis || (at === "?" && !noPlace)) continue;
     const x = (c.checks || []).find((y) => norm(y.item) === norm(q.item));

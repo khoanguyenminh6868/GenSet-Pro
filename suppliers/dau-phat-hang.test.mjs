@@ -263,8 +263,8 @@ test("makerDerate (B2): hệ số suy giảm chỉ từ nguồn đã lưu của 
   assert.deepEqual(makerDerate({ supplierId: "mecc-alte", n: 1001, model: "ECO40" }, { temp: 45 }).missing, ["nhiệt độ"]);
 });
 
-test("makerMadeOf: tờ nhà máy Phúc Châu và Stamford Trung Quốc → sản xuất tại Trung Quốc, thương hiệu giữ nước hãng", () => {
+test("makerMadeOf: tờ nhà máy Phúc Châu và Stamford Trung Quốc (dải ngoài S4–S7) → sản xuất tại Trung Quốc, thương hiệu giữ nước hãng", () => {
   assert.deepEqual([makerMadeOf("leroy-somer-fuzhou", "Leroy-Somer", "LSA 49.3 M8").at, makerMadeOf("leroy-somer-fuzhou", "Leroy-Somer", "LSA 49.3 M8").brand], ["CN", "FR"]);
-  const s = makerMadeOf("stamford-avk-china", "Stamford", "S5L1D-H4");
+  const s = makerMadeOf("stamford-avk-china", "Stamford", "UCI274F");
   assert.equal(s.at, "CN"); assert.notEqual(s.brand, "CN"); assert.match(s.why, /Stamford ở Trung Quốc/);
 });

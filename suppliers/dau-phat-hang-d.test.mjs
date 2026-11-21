@@ -58,10 +58,12 @@ test("makerDerate: Mecc một ô (mốc ngay trên, không nội suy); TAL 0xx c
   assert.equal(makerDerate({ supplierId: "stamford-avk-china", n: 1031, model: "S7L1D-G4" }, { alt: 1800 }, SRC).f, 0.94);
 });
 
-test("makerMadeOf: S6 / S7 chưa rõ (Khoa 21/11/2026), S5 vẫn Trung Quốc, thương hiệu Anh; Mecc Alte Ý", () => {
-  assert.deepEqual([makerMadeOf("stamford-avk-china", "Stamford", "S6L1D-C4").at, makerMadeOf("stamford-avk-china", "Stamford", "S7L1D-K4").at], ["?", "?"]);
-  assert.equal(makerMadeOf("stamford-avk-china", "Stamford", "S6L1D-C4").brand, "GB");
-  assert.equal(makerMadeOf("stamford-avk-china", "Stamford", "S5L1D-H4").at, "CN");
+test("makerMadeOf: S4–S7 chưa rõ (Khoa 21/11/2026), thương hiệu Anh; dải ngoài S4–S7 vẫn Trung Quốc; Mecc Alte Ý", () => {
+  for (const m of ["S4L1D-D41", "S5L1D-H4", "S6L1D-C4", "S7L1D-K4"]) {
+    const x = makerMadeOf("stamford-avk-china", "Stamford", m);
+    assert.deepEqual([x.at, x.brand], ["?", "GB"], m);
+  }
+  assert.equal(makerMadeOf("stamford-avk-china", "Stamford", "UCI274F").at, "CN");
   assert.equal(makerMadeOf("mecc-alte", "Mecc Alte", "ECO46 1S4 A").at, "IT");
 });
 
