@@ -2061,14 +2061,25 @@
     if (c.length === 1) { const m = c[0].match(/^([^:：]{2,60})[:：]\s*(.+)$/); if (m) c = [m[1].trim(), m[2].trim()]; }
     return [String(c[0] || "").replace(/[:：\s]+$/, "").trim(), ...c.slice(1).map((x) => String(x).trim())];
   }
+  const V_CODE_BRANDS = [...ENGINE_BRANDS, ...ALT_CELL_BRANDS];
+  const V_MAKE_TAIL = /^(penta|deere|somer|alte|petter|wilson|power|infracore|heavy)$/i;
   // A part's code in a value cell: brand words, then one code ("CCEC Cummins NTA855-G2A", "PERKINS , 1106A－70TAG4"). Full-width
   // characters are read by NFKC as keyOf does ("－" is "-"). Choices ("or equivalent", "Series", "a / b") are no code.
   function verticalCode(v) {
     const s = String(v || "").normalize("NFKC").trim();
     if (!s || /\bor\b|equiv|series|optional|select|custom|[/／]|或|可选|cylinder|\bcyl\b|stroke|cool|diesel|gasoline|petrol|\bgas\b|turbo|in-?line|vertical/i.test(s)) return null;
     const words = s.split(/[\s,，]+/).filter(Boolean);
-    let i = 0;
-    while (i < words.length - 1 && /^[a-z&.-]+$/i.test(words[i])) i++;
+    // Letter-only words before the code: when one of them IS a make, they are brand words only up to the last make (or the
+    // second word of a two-word make: "Volvo Penta", "John Deere", "Leroy Somer", "Mecc Alte"): "CCEC Cummins NTA855-G2A" →
+    // "NTA855-G2A", but "Kohler KDI 2504M" → "KDI 2504M" (bang-doc-ma-hang, điều phối 21/11/2026: "KDI" is part of Kohler's
+    // code). No make among them: all are passed over as before ("SGC 420" stays no code: westinpower's controller).
+    let run = 0, last = 0;
+    while (run < words.length - 1 && /^[a-z&.-]+$/i.test(words[run])) {
+      if (brandIn(words[run], V_CODE_BRANDS).length) last = run + 1;
+      else if (last === run && run > 0 && V_MAKE_TAIL.test(words[run])) last = run + 1;
+      run++;
+    }
+    const i = last || run;
     const code = words.slice(i).join(" ");
     return isCode(code) ? { code, brand: words.slice(0, i).join(" ") } : null;
   }
