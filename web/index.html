@@ -4063,7 +4063,20 @@ const CFG_STATUS = { met: ["Đạt", "ok"], not_met: ["Không đạt", "bad"], u
 // "confirm" (config-bot.mjs confirmChecks, 2026-11-10): nguồn không ghi một điểm chọn khi đặt hàng (điện áp, IP, AVR,
 // MCCB, bồn...) hay một chứng từ (ISO, CE, prototype, CO): không phải nghi ngờ về model, màu trung tính, đếm riêng.
 const cfgStOf = (x) => (x.status === "confirm" ? [x.confirm === "document" ? "Cần chứng từ" : "Xác nhận khi đặt hàng", "cfm"] : CFG_STATUS[x.status] || ["", "mut"]);
-const CFG_SRC = { catalog: "Danh mục trong hệ thống", internet: "Tìm trên internet", controller: "Trang của nhà cung cấp" };
+const CFG_SRC = { catalog: "Danh mục trong hệ thống", internet: "Tìm trên internet", controller: "Trang của nhà cung cấp", maker: "Tài liệu hãng" };
+// Bộ điều khiển + mô-đun truyền thông (config-bot.mjs / ctl-module.mjs, Khoa 20/11/2026): mô-đun ghép (controller.modules) và
+// "Phương án khác đạt tương đương" (controller.alternatives). Kết quả cũ không có hai trường này: không vẽ gì thêm.
+const CTL_KIND_VI = { amf: "AMF (tự động khi mất lưới)", sync: "hòa đồng bộ", start: "chỉ tự khởi động" };
+const cfgOfferHtml = (by, label) => (by ? h`<span class="muted">NCC ${raw(supLink(by, supName(state.supplier?.[by])))} chào</span>` : h`<span class="chip mut" title="${label || "NCC chưa chào"}">NCC chưa chào</span>`);
+function cfgCtlMoreHtml(p) {
+  if (!p?.model) return "";
+  const mods = (p.modules || []).map((m) => h`<div class="small cfgblk cfgmod"><b>Mô-đun:</b> ${m.model}${raw(m.make ? h` <span class="muted">(${m.make})</span>` : "")}${raw(m.order ? h` · mã đặt hàng <b>${m.order}</b>` : "")} ${raw(cfgOfferHtml(m.offeredBy, m.label))}
+    <div class="muted small">${m.label || ""}${m.why?.length ? `${m.label ? "; " : ""}cho: ${m.why.join(", ")}` : ""}${m.why?.includes("Ethernet") ? `. Ethernet nằm trên mô-đun ${m.model}, không phải trên bộ điều khiển.` : ""}</div></div>`).join("");
+  const alts = p.alternatives || [];
+  const alt = alts.length ? h`<div class="small cfgblk cfgalt"><b>Phương án khác đạt tương đương:</b><ul class="suplist">${raw(alts.map((a) => h`<li class="small"><b>${[a.model, ...(a.modules || []).map((m) => `${m.model}${m.order ? ` (${m.order})` : ""}`)].join(" + ")}</b>${raw(a.make ? h` <span class="muted">(${a.make})</span>` : "")} ${raw(a.kind ? h`<span class="chip mut">${CTL_KIND_VI[a.kind] || a.kind}</span>` : "")} · truyền thông đạt ${a.met}/${a.total}${a.unclear?.length ? `, chưa rõ: ${a.unclear.join(", ")}` : ""} · ${raw(cfgOfferHtml(a.notOffered ? null : a.offeredBy, a.label))}</li>`).join(""))}</ul></div>`
+    : p.altLine ? h`<div class="small cfgblk cfgalt">${p.altLine}</div>` : "";
+  return mods + alt;
+}
 // Xuất xứ (Khoa, 2026-10-29): Trung Quốc leaves out engines of foreign makes (Perkins, Cummins, Volvo Penta,
 // Baudouin, Kubota, Yanmar...) and engines whose source gives no make; Khác keeps only foreign makes. The list is web/catalog.js FOREIGN_ENGINE.
 // Tất cả is the default (Khoa, 2026-11-04; was Trung Quốc).
@@ -4269,7 +4282,7 @@ function cfgResultHtml(r, { key = "", size = "", busy = "" } = {}) {
     // An engine and alternator read from the genset's own row show that row once, under the genset.
     const sameRow = (p) => c.genset?.src?.line && p.src?.line === c.genset.src.line;
     // Tên model mở bảng thông số (Khoa, 2026-11-10: thay các nút Xem động cơ / đầu phát / bộ điều khiển).
-    const part = (label, p, kind, link) => (p ? h`<div class="cfgblk"><b>${label}:</b> ${raw(kind === "controller" ? cfgCtlHtml(p.model) : link ? h`<a href="#" data-catopen="${kind}" data-catkey="${window.GenbidCatalog?.keyOf(p.model) || ""}" title="Xem thông số">${p.model}</a>` : h`${p.model}`)}${raw(p.make ? h` <span class="muted">(${p.make})</span>` : "")} <span class="chip mut">${CFG_SRC[p.src?.kind] || ""}</span>${raw(p.unverified ? '<span class="chip warn">⚠ chưa khớp nguồn</span>' : "")}${raw(sameRow(p) ? "" : cfgSrcHtml(p.src))}</div>` : "");
+    const part = (label, p, kind, link) => (p ? h`<div class="cfgblk"><b>${label}:</b> ${raw(kind === "controller" ? cfgCtlHtml(p.model) : link ? h`<a href="#" data-catopen="${kind}" data-catkey="${window.GenbidCatalog?.keyOf(p.model) || ""}" title="Xem thông số">${p.model}</a>` : h`${p.model}`)}${raw(p.make ? h` <span class="muted">(${p.make})</span>` : "")} <span class="chip mut">${CFG_SRC[p.src?.kind] || ""}</span>${raw(p.fromMaker ? h`<span class="chip mut" title="${p.label || `${label} chọn theo tài liệu hãng, NCC chưa chào`}">NCC chưa chào</span>` : "")}${raw(p.unverified ? '<span class="chip warn">⚠ chưa khớp nguồn</span>' : "")}${raw(sameRow(p) ? "" : cfgSrcHtml(p.src))}</div>${raw(kind === "controller" ? cfgCtlMoreHtml(p) : "")}` : "");
     // Mỗi cấu hình thu gọn / mở rộng được (Khoa, 2026-11-10): #1 mở sẵn, các cấu hình sau thu gọn, tiêu đề vẫn đọc được
     // hạng, kết quả, động cơ + đầu phát + bộ điều khiển và nhà cung cấp đầu (+ số còn lại).
     const rk = c.rank || i + 1, cid = `cfgcard|${key}|${size}|${rk}`, first = i === 0;
