@@ -55,3 +55,12 @@ Cần quyết: cách mượn này coi `X^` là `X` **chỉ để loại**, có h
 - Code: `twinFacts` trong `suppliers/config-bot.mjs`, không đụng `rowOrder` / `makeGroup`. Test `suppliers/tach-mu-muon-so.test.mjs` (4 ca đọc hồ sơ thật). `suppliers/*.test.mjs` 1379/1379, `quality --check` đạt.
 - **Điểm không mượn** (đề xuất): mượn số là coi `X^` là `X` chỉ để loại; cộng điểm "có thông số" cho số của khoá khác là dùng giả định đó để đẩy dòng lên. Hệ quả đo được: 147 lượt-dòng thấp điểm hơn main (−8 tới −68, gồm 6M31G1000/5 × 25 và 6M31G800/6 × 17 ở −32). Top 30 đổi đúng 1 lượt: IB2200021335#0, jet-power WP6D180E201^ (−48) rời, bobig-power vào.
 - **Hiển thị:** số mượn KHÔNG hiện ở màn nào; bản ghi và thông số của dòng `^` giữ nguyên. Chỉ khi luật dùng số mượn thì `why` của dòng có câu "có dùng số của mã X (nguồn không chú thích ^)".
+
+## Cập nhật: Khoa 21/11/2026 chọn M (merge cách 2), bản gộp main
+
+Đầu nhánh `c8a85b6b9e20f6831e1d64c7b62a84f036c5c0fd`, merge-base main `50a13de4`. Chỉ gộp main và đổi chữ "ĐO THỬ" thành luật đã duyệt, không đổi hành vi.
+
+- spec-diff main ↔ nhánh: 61.839 → 61.839 bản ghi, **26 đổi, 0 mất, 0 thêm**, 16 bảng của 11 NCC, đảo vai 0. Bản đầy đủ **giống từng dòng** spec-diff của bản đã đo cloud (`6ed2aca5` ↔ `15a6b618`).
+- `suppliers/*.test.mjs` 1417/1417, `quality --check` đạt.
+- Phần main thêm so với bản đã đo (`6ed2aca5` → `50a13de4`): 642 bản ghi mới (556 đầu phát, 86 động cơ, 84 mã động cơ), 2 bản ghi bỏ. Không bản ghi nào mang `^`; không mã động cơ mới nào có dạng `X^` trong `suppliers/cn` (dò theo chữ nguyên văn), nên `twinFacts` không có cặp mới.
+- Top 30 của bản gộp chưa đo lại trên cloud; bản đã đo là `15a6b618`.
