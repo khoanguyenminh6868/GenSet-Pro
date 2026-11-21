@@ -1474,9 +1474,13 @@ export function powerRead(t) {
     const ownLabel = FUEL_LABEL.test(own) && bl && bl.index < tail60.length - own.length;
     const fromBefore = (bl && below && bl.index < labelAt) || ownLabel ? null : bl;
     const load = after || inClause || under || (below && fromBefore && below[1] !== fromBefore[1] ? ["", "-1"] : below || fromBefore);
-    fuel.push({ v: m.v ?? numOf(m[1]), load: load ? Number(load[1]) : /đầy tải|full load/i.test(before.slice(-60)) ? 100 : null });
+    const rq = clause.match(/\b(MRQ|RQ)\b/)?.[1];
+    fuel.push({ v: m.v ?? numOf(m[1]), load: load ? Number(load[1]) : /đầy tải|full load/i.test(before.slice(-60)) ? 100 : null, ...(rq ? { rq } : {}) });
   }
   const one = (list) => (new Set(list).size === 1 ? list[0] : null);
+  // Two figures at one load tagged MRQ and RQ: the limit is the RQ one (Khoa 2026-11-21, IB2500403535). Only when every figure
+  // at that load carries one of the two tags; two figures with no RQ tag still give no limit.
+  const rqOf = (at) => { const r = at.filter((x) => x.rq === "RQ"), m = at.filter((x) => x.rq === "MRQ"); return r.length && m.length && r.length + m.length === at.length ? r : at; };
   // A figure in the engine's or the alternator's section (an alternator of 11 kVA for an 8.5 kVA genset) is the genset's
   // only when no other is given; the smaller second genset (below) is still looked for among all. An alternator is rated
   // at 1–1.4 times its genset: a figure under "đầu phát" outside that is another genset of the tender (100 and 150 kVA,
@@ -1491,7 +1495,7 @@ export function powerRead(t) {
   const unit = list.some((v) => v.kVA != null) ? "kVA" : "kW", same = list.filter((v) => v[unit] != null).sort((a, b) => a[unit] - b[unit]);
   const p = same.length && same.at(-1)[unit] <= same[0][unit] * 1.15 && (unit === "kVA" ? !prime.some((v) => v.kVA == null && v.kW < same[0].kVA * 0.68) : !KVA_FIG.test(text)) ? same[0] : null, full = fuel.filter((x) => x.load === 100), any = fuel.filter((x) => x.load == null);
   // The 75 % and 50 % load limits of the HSMT (2026-11-09: 475 of 1,237 fuel lines of the analyses are at 75 %).
-  return { prime, fuel, mins: { minPrime: p && viaOther ? { ...p, fromOther: true } : p, maxFuel: one((full.length ? full : fuel.length === any.length ? any : []).map((x) => x.v)), maxFuel75: one(fuel.filter((x) => x.load === 75).map((x) => x.v)), maxFuel50: one(fuel.filter((x) => x.load === 50).map((x) => x.v)) } };
+  return { prime, fuel, mins: { minPrime: p && viaOther ? { ...p, fromOther: true } : p, maxFuel: one(rqOf(full.length ? full : fuel.length === any.length ? any : []).map((x) => x.v)), maxFuel75: one(rqOf(fuel.filter((x) => x.load === 75)).map((x) => x.v)), maxFuel50: one(rqOf(fuel.filter((x) => x.load === 50)).map((x) => x.v)) } };
 }
 // The displacement (L) and the cylinders of an engine as its facts give them.
 // The displacement of an engine in litres as a source gives it: a figure with its unit is taken as it is (litres, or cc /
