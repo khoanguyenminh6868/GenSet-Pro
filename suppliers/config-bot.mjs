@@ -1497,8 +1497,8 @@ const CONF = { high: 30, medium: 15 };
 const cmpStr = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
 // Doosan and Hyundai are one make for the group / ceiling of `candidates` (SAME_MAKER of catalog.js keeps both names on an
 // engine): the same engine is "Hyundai / Doosan" or "Doosan / Hyundai" by what the sources say, and the first name used to
-// put it in either group (P126TI, P086TII). Only the group label; `e.make` is not changed. Daewoo is not folded in (not asked).
-const makeGroup = (m) => (m === "Hyundai" ? "Doosan" : m);
+// put it in either group (P126TI, P086TII). Only the group label; `e.make` is not changed. Daewoo is folded in too (Khoa 21/11/2026 "có").
+const makeGroup = (m) => (m === "Hyundai" || m === "Daewoo" ? "Doosan" : m);
 const choiceKey = (r) => `${r.u.supplierId}\n${r.e.key}\n${r.a?.key || squashOf(r.u.other || "")}`;
 // Rows per engine (more for the engine the HSMT names) and per supplier, so other engines and suppliers get a place too.
 // Alternators a supplier sells under its OWN label (Khoa 20/11/2026, #969 "B"): an explicit list of supplier + the code of
