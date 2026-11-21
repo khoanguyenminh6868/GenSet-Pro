@@ -103,3 +103,14 @@ Commit (theo thứ tự): `2e46a386` (a) · `b709cea4` (b) · `80565aa6` (c) · 
 ## Còn lại / cần ghi nhớ
 - bdadl n134 TAD1345GE-B 16,1 L (ở trên); bộ đọc n117 kingway (vai đầu phát, không bản ghi động cơ); `fuelOff` không có diesel tường minh (nếu cần ghi diesel cho 8 dòng man-engines D thì sửa ở config-bot).
 - Tecnogen KL45TSX: đã chuyển S2.
+
+---
+
+# BỔ SUNG 2 (21/11/2026, đầu nhánh `73139d5a`): (d) BỎ, (e) mwm, (f) bdadl n134
+
+**Kết luận: spec-diff so 95ecba26 = 7 bản ghi thông số đổi (thêm bdadl n134), soat-fuel = 6 bản ghi `fuel` đổi (man-engines E3262, mwm n1007 + n1008, simpson ZS ×3); kingway KHÔNG còn `fuel`. 1.338 / 1.338 test, CI (server, spec-diff, suppliers, web) pass.**
+
+- **(d) kingway n117: ĐÃ BỎ** (revert ba commit a938ee72, c3034a29, 6c332218; `git revert`, lịch sử còn). Lý do: bản ghi duy nhất của n117 là vai ĐẦU PHÁT "Kingway KAI250" (genset KGD250B), không có bản ghi động cơ SC9D340D2; nhiên liệu không thuộc bản ghi đầu phát. Mục (d) của tôi ở bổ sung 1 đã sai tiền đề (dựa trên mô tả "1 bản ghi SC9D340D2" trong nhien-lieu-4-bang.md); tôi đã tự phát hiện bản ghi là đầu phát nhưng ghi nhầm là "gắn vào bản ghi duy nhất": phần đó thu hồi. Chữ nguồn ("| Fuel | Biogas" ở `sources/kingway-power/117.md` dòng 83) vẫn đúng, chưa có chỗ ghi hợp lý. Việc của bộ đọc (S2): tạo bản ghi động cơ SC9D340D2 cho bảng nhãn n117, rồi mới ghi `fuel`.
+- **(e) mwm n1007 + n1008**: `FUEL_PAGES` mục `mwm`, `ns: [1007, 1008]`, `fuel: "gas"`, mức **D** (không phải T như đề xuất của nhien-lieu-tieu-de-1.md: NCC chính là hãng động cơ MWM và chữ nằm trong datasheet của hãng; mức D = "datasheet hãng động cơ"), `header: ""` (bảng đã lưu không có dòng tiêu đề). Đã tự mở tệp nguồn: `suppliers/sources/mwm/1007.md` dòng 3 `From: https://www.mwm.net/en/gas-engines-gensets/gas-engine-tcg-3016/`, dòng 55 `| Natural gas applications 50 | Hz`, dòng 74 `a minimum methane number of MN 80 for natural gas.`; `1008.md` dòng 49 `天然气应用 50 Hz`, dòng 68 `MN=80 的天然气`. soat-fuel: `mwm n1007 b23 3016 V16 -→gas/D`, `mwm n1008 b25 3016 V16 -→gas/D`. Chưa kiểm trang sống mwm.net (chỉ tệp nguồn đã lưu 03/11/2026).
+- **(f) bdadl n134 BDA-V360**: `dropspec` disp. Nguồn `suppliers/cn/bdadl-shanghai.json` dòng 1306: `| BDA-V360 | 360/400 | 沃尔沃奔达 | TAD1345GE-B | 6 | 16.1 | 35 | ≤210 | 3200*1100*1800 | 3300`. 16,1 L là số của TAD1642GE (16,12); TAD1345GE-B là 12,78 L (Volvo Penta bulletin `sources/volvo-penta/1011.md`: "12.78 liter, in-line 6 cylinder"; bdadl n116 TAD1345GE ghi 12.78). Dòng duy nhất của động cơ này trong bdadl. spec-diff: `bdadl-shanghai n134 bảng 37: disp: 16.1 → ∅`. Giữ 6 xi lanh.
+- Danh sách spec-diff đầy đủ (7): aosif n1079; bdadl n134; depco n2102; green-power n115; huatai n103; liangzi n113; liangzi n140 (n141 gộp vào n113). Đã thay phần "Số đo" của bổ sung 1 (5 fuel gồm kingway) bằng danh sách này: kingway không còn trong soat-fuel.

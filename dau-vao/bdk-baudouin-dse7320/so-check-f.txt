@@ -1,0 +1,28 @@
+IB2600601812 #1 AMF9 | Cổng kết nối với hệ thống kiểm soát từ xa: met → met (Có RS485)
+ĐIỂM IB2600601812 2 HGM6120CAN [0,0,0,10,7,0,0] → [0,0,0,9,7,0,0]
+IB2600601812 #2 HGM6120CAN | Cổng kết nối với hệ thống kiểm soát từ xa: unclear → met (Có RS485)
+ĐIỂM IB2600601812 3 HGM6120CAN [0,0,0,11,7,0,0] → [0,0,0,10,7,0,0]
+IB2600601812 #3 HGM6120CAN | Cổng kết nối với hệ thống kiểm soát từ xa: unclear → met (Có RS485)
+IB2600601812 #4 AMF25 | Cổng kết nối với hệ thống kiểm soát từ xa: met → met (Có RS485)
+IB2600601812 #5 DSE7320 | Cổng kết nối với hệ thống kiểm soát từ xa: met → met (Có RS485)
+IB2600601812 #6 DSE7320 | Cổng kết nối với hệ thống kiểm soát từ xa: met → met (Có RS485)
+HẠNG IB2600603983 6M31G825/5 DSE7420 1 → 2
+IB2600603983 #1 DSE7420 | Cổng kết nối với hệ thống kiểm soát từ xa: met → met (Có RS485)
+HẠNG IB2600603983 S6R2-PTAA-C DSE7320 2 → 1
+ĐIỂM IB2600603983 2 DSE7320 [0,0,0,39,12,0,2] → [0,0,0,38,12,0,2]
+IB2600603983 #2 DSE7320 | Cổng kết nối với hệ thống kiểm soát từ xa: unclear → met (Có RS485)
+IB2600603983 #3 DSE8610 | Cổng kết nối với hệ thống kiểm soát từ xa: met → met (Có RS485)
+ĐIỂM IB2600603983 4 Deepsea 7320 [1,0,0,37,6,0,2] → [1,0,0,36,6,0,2]
+IB2600603983 #4 Deepsea 7320 | Cổng kết nối với hệ thống kiểm soát từ xa: unclear → met (Có RS485)
+HẠNG IB2600603983 4006-23TAG2A DSE7420 5 → 6
+IB2600603983 #5 DSE7420 | Cổng kết nối với hệ thống kiểm soát từ xa: met → met (Có RS485)
+HẠNG IB2600603983 TWD1744GE DSE7320 6 → 5
+ĐIỂM IB2600603983 6 DSE7320 [1,0,0,38,11,0,2] → [1,0,0,37,11,0,2]
+IB2600603983 #6 DSE7320 | Cổng kết nối với hệ thống kiểm soát từ xa: unclear → met (Có RS485)
+ĐIỂM IB2600603983 7 DSE6120 [1,0,0,43,13,1,2] → [1,0,0,42,13,1,2]
+IB2600603983 #7 DSE6120 | Cổng kết nối với hệ thống kiểm soát từ xa: unclear → met (Qua mô-đun DSE890 MKII (mã 0890-04): Ethernet (DSE890 MKII))
+IB2600603983 #8 null | Cổng kết nối với hệ thống kiểm soát từ xa: unclear → unclear ()
+--- tổng { phanDoi: 14, khacKhac: 0 }
+7 Cổng kết nối với hệ thống kiểm soát từ xa: met → met
+6 Cổng kết nối với hệ thống kiểm soát từ xa: unclear → met
+1 Cổng kết nối với hệ thống kiểm soát từ xa: unclear → unclear

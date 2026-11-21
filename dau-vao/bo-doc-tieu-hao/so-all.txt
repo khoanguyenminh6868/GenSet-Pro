@@ -1,0 +1,13 @@
+== IB2600603983
+  6M31G825/5: điểm [0,0,0,39,8,0,2] → [0,0,0,39,5,0,2]
+  6M31G825/5 | genset|Tiêu hao nhiên liệu 100% tải: unclear → met
+     cũ: genset|Tiêu hao nhiên liệu 100% tải|unclear (Nguồn chưa ghi) :: 
+     mới: genset|Tiêu hao nhiên liệu 100% tải|met (156 L/h (100% PRP)) :: Code so 156 L/h trên tờ hãng động cơ 6M31G825/5 (baudouin [1021], 100% PRP) với mức HSMT ≤ 156 L/h; dòng tổ máy không ghi số so được.
+  6M31G825/5 | genset|Tiêu hao nhiên liệu 75% tải: unclear → met
+     cũ: genset|Tiêu hao nhiên liệu 75% tải|unclear (Nguồn chưa ghi) :: 
+     mới: genset|Tiêu hao nhiên liệu 75% tải|met (113 L/h (75% PRP)) :: Code so 113 L/h trên tờ hãng động cơ 6M31G825/5 (baudouin [1021], 75% PRP) với mức HSMT ≤ 113 L/h; dòng tổ máy không ghi số so được.
+  6M31G825/5 | genset|Tiêu hao nhiên liệu 50% tải: unclear → met
+     cũ: genset|Tiêu hao nhiên liệu 50% tải|unclear (Nguồn chưa ghi) :: 
+     mới: genset|Tiêu hao nhiên liệu 50% tải|met (77 L/h (50% PRP)) :: Code so 77 L/h trên tờ hãng động cơ 6M31G825/5 (baudouin [1021], 50% PRP) với mức HSMT ≤ 77 L/h; dòng tổ máy không ghi số so được.
+
+cấu hình 47, giống hệt 46
