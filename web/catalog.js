@@ -1564,6 +1564,8 @@
         }
         const orEng = OR_ENGINE_CELLS.find((x) => x.supplierId === s.id && x.n.includes(+t.n) && headerText.includes(x.header) && x.code.test(String(cells[x.engCell] ?? "").trim()) && ei === x.altCell && ai < 0);
         if (orEng) { note(t, ti, ri, "một ô ghi hai mã", cells[orEng.engCell]); ai = ei; ei = -1; }
+        const bareEng = BARE_ENGINE_CELLS.find((x) => x.supplierId === s.id && x.n.includes(+t.n) && headerText.includes(x.header) && x.code.test(String(cells[x.engCell] ?? "").trim()) && ei === x.altCell && ai < 0);
+        if (bareEng) { ai = ei; ei = bareEng.engCell; }
         const stop = ei >= 0 ? ei : ai >= 0 ? ai : cells.length;
         const titled = engineTable ? null : titledPowers((t.header || []).map(cellsOf), cells, { gi, ei, ai }, title);
         const power = engineTable ? null : titled ? titled.power : powersIn(cells.slice(gi >= 0 ? gi + 1 : 0, stop), headerText + " " + title, true);
@@ -1571,7 +1573,7 @@
         // "TAD1650GE(1345GE)" (TWO_CODE_CELLS): which engine the set has is not known, so no engine record; the alternator stays.
         const twoCodes = ei >= 0 && TWO_CODE_CELLS.some((x) => x.supplierId === s.id && x.n.includes(+t.n) && x.code.test(cells[ei]));
         if (twoCodes) note(t, ti, ri, "một ô ghi hai mã", cells[ei]);
-        if (ei >= 0 && !twoCodes) out.push({ ...common, kind: "engine", model: tidyModel(cells[ei], ENGINE_BRANDS, MARK_KEEP[s.id]), makes: makesFor("engine", rowText, null), other: ai >= 0 ? cells[ai] : null, own: engineTable });
+        if (ei >= 0 && !twoCodes) out.push({ ...common, kind: "engine", model: tidyModel(cells[ei], ENGINE_BRANDS, MARK_KEEP[s.id]), makes: bareEng ? [] : makesFor("engine", rowText, null), other: ai >= 0 ? cells[ai] : null, own: engineTable });
         if (ai >= 0) out.push({ ...common, kind: "alternator", model: tidyModel(cells[ai], ALT_BRANDS), makes: makesFor("alternator", rowText, null, cells[ai]), other: ei >= 0 ? cells[ei] : null });
       });
     });
@@ -1817,13 +1819,26 @@
   // An engine cell naming two codes, the second shortened ("TAD1650GE(1345GE)", sanq-power n111 / n117; Khoa 21/11/2026 "A"): the page
   // does not say what the bracket means, and other suppliers give the two codes different displacements (TAD750GE 7.15 L /
   // TAD532GE 4.76 L, TAD1650GE 16.12 L / TAD1345GE 12.78 L). An explicit list: no engine record, the row's alternator is kept.
-  const TWO_CODE_CELLS = [{ supplierId: "sanq-power", n: [111, 117], code: /^[A-Z]+\d+([A-Z]+)\(\d+\1\)$/, khoa: "Khoa 21/11/2026" }];
+  // eastern-lion-fuan n122 / n141 / n146 / n151 (S6-3, điều phối 21/11/2026): "(YD4KD) YD485D", one row each; the tables do not say
+  // what the bracket means (YD4KD appears nowhere else on them) and the whole cell was the engine model. Same rule.
+  const TWO_CODE_CELLS = [{ supplierId: "sanq-power", n: [111, 117], code: /^[A-Z]+\d+([A-Z]+)\(\d+\1\)$/, khoa: "Khoa 21/11/2026" },
+    { supplierId: "eastern-lion-fuan", n: [122, 141, 146, 151], code: /^\(YD4KD\) YD485D$/, khoa: "điều phối 21/11/2026 (S6-3)" }];
   // An engine cell naming two engines joined by "或" (or): "ZS1110或295D", xingguang-jiangsu n108 (bang-roi-29, điều phối
   // 21/11/2026, same rule as TWO_CODE_CELLS). The cell failed isCode, so the alternator "STC-12" of the next cell was read as
   // the ENGINE. An explicit list (supplier + n + the cell indexes of the header "柴油机型号 | 发电机型号"): no engine record,
   // the code of `altCell` is the alternator, noted "một ô ghi hai mã". n110 writes "或" in the ALTERNATOR cell ("TZHW或TFW")
   // and reads its engine right: not listed.
+  // An engine cell that is a bare number ("195", "1100", "4100"), zhengdian-zhengzhou n107 (S6-4, điều phối 21/11/2026): isCode
+  // passes it over, so the alternator "STC-5-4" of the next cell was read as the ENGINE (role swap, 6 rows). An explicit list
+  // (supplier + n + the header titles of the two cells): the bare number of `engCell` is the engine model as written, the code
+  // of `altCell` the alternator. Khoa's rule for "ZS195 / 195": no make (none looked up), no code made up ("195" stays "195").
+  const BARE_ENGINE_CELLS = [{ supplierId: "zhengdian-zhengzhou", n: [107], engCell: 3, altCell: 4, code: /^\d{3,4}$/, header: "柴油机型号 | 发电机型号", why: "điều phối 21/11/2026 (S6-4)" }];
   const OR_ENGINE_CELLS = [{ supplierId: "xingguang-jiangsu", n: [108], engCell: 2, altCell: 3, code: /^[A-Z\d]+或[A-Z\d]+$/, header: "柴油机型号Motor Type", why: "điều phối 21/11/2026" }];
+  // "YD4KD(YD485D)" of comappower n113 / yanan-power n111 (S6-5, điều phối 21/11/2026; 4 rows, tables with no alternator column): the
+  // pages do not say what the bracket means. Same rule as TWO_CODE_CELLS above (kept apart from its declaration on purpose).
+  TWO_CODE_CELLS.push(
+    { supplierId: "comappower", n: [113], code: /^YD4KD\(YD485D\)$/, khoa: "điều phối 21/11/2026 (S6-5)" },
+    { supplierId: "yanan-power", n: [111], code: /^YD4KD\(YD485D\)$/, khoa: "điều phối 21/11/2026 (S6-5)" });
   const MAKE_LEVEL_LOW = [
     { supplierId: "zhengchi-power", title: /整机编号/, khoa: "Khoa 20/11/2026", why: "ô 品牌 là nhãn của cả danh mục (上柴 gồm SC-series lẫn S12R / S16R; 潍柴 gồm WP, M26, PHF, K41xx, R61xx...)" },
   ];
