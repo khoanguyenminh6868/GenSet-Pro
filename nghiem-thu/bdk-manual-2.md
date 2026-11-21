@@ -1,5 +1,7 @@
 # bdk-manual-2: chức năng BĐK tuỳ chọn hiện "cần xác nhận" (21/11/2026)
 
+**BẢN CUỐI (thay các số bên dưới):** điều phối quyết BỎ `coolant_level` (manual chỉ ghi số hiển thị, không ghi bảo vệ dừng máy theo mức nước), phần đó về chưa rõ. Còn 2 chức năng: nhiệt độ dầu, hiệu chỉnh tần số qua điều tốc. Đo lại 17 lượt (64 cấu hình, 2.280 check, 1.095 phần): đổi đúng 4 phần, đều chưa rõ → cần xác nhận (IB2600603983 #2, #6); 0 đổi thứ tự, 0 đổi điểm. Test `suppliers` qua hết. SHA mới: xem đầu nhánh `bdk-manual-2` của PR #1043.
+
 PR draft https://github.com/khoanguyenminh6868/GenSet-Pro/pull/1043, SHA `b60f981b`, từ main `753a44fd`. Chưa merge.
 
 ## Kết luận
