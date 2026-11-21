@@ -46,3 +46,10 @@ test("TAD1345GE 16,12 L (số của TAD1642GE): huatai n103 360GF bỏ bore + di
   assert.ok(all.length && all.every((r) => spec(r, "disp") === undefined));
   assert.equal(spec(C.fromSupplier(real("liangzi-yangzhou")).find((r) => r.kind === "engine" && r.model === "TAD1642GE" && r.n === 112), "disp"), "16.12");
 });
+
+test("bdadl n134 BDA-V360 (TAD1345GE-B): 16.1 L (số TAD1642GE) bỏ, 6 xi lanh giữ; TAD1345GE n116 (12.78) không đổi", () => {
+  const b = eng("bdadl-shanghai", 134).find((r) => r.genset === "BDA-V360");
+  assert.equal(spec(b, "disp"), undefined);
+  assert.equal(spec(b, "cyl"), "6");
+  assert.equal(spec(eng("bdadl-shanghai", 116).find((r) => r.model === "TAD1345GE"), "disp"), "12.78");
+});

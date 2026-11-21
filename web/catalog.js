@@ -1806,6 +1806,8 @@
     // aoke / bdadl / fukangsi / pengpai / lees 12.78). Only the keys that are wrong go (the 6 cylinders are right); no figure is written.
     // liangzi repeats the row word for word in n141: `mergeRepeats` would put the figure back, so it is listed too (điều phối 21/11/2026).
     { supplierId: "huatai-yangzhou", n: 103, genset: "360GF", line: "| 360GF | 360 | TAD1345GE | 6L | 144/165 | 16.12 | 48 | 3100 | 3200*1100*1800", act: "dropspec", keys: ["bore", "disp"], khoa: "điều phối 21/11/2026", why: "nguồn ghi 144/165 và 16,12 L (số của TAD1642GE) cho Volvo Penta TAD1345GE (131×158, 12,78 L): bỏ riêng đường kính × hành trình và dung tích, giữ 6 xi lanh" },
+    // bdadl n134 BDA-V360 (TAD1345GE-B): "16.1" L is the TAD1642GE's again (16.12 L); the only row of that engine in this supplier (điều phối 21/11/2026).
+    { supplierId: "bdadl-shanghai", n: 134, genset: "BDA-V360", line: "| BDA-V360 | 360/400 | 沃尔沃奔达 | TAD1345GE-B | 6 | 16.1 | 35 | ≤210 | 3200*1100*1800 | 3300", act: "dropspec", keys: ["disp"], khoa: "điều phối 21/11/2026", why: "nguồn ghi 16,1 L (số của TAD1642GE) cho Volvo Penta TAD1345GE-B (12,78 L): bỏ riêng dung tích, giữ 6 xi lanh" },
     ...[[113, "瑞典沃尔沃"], [140, "沃尔沃遍达"], [141, "瑞典沃尔沃"]].map(([n, mk]) => (
       { supplierId: "liangzi-yangzhou", n, genset: "LZ- V360", line: `| LZ- V360 | 360/450 | ${mk} | TAD1345GE | 6 L | 16.12 | 48 | ≤200 | 3200*1100*1200 | 3100 | 详细参数`, act: "dropspec", keys: ["disp"], khoa: "điều phối 21/11/2026", why: "nguồn ghi 16,12 L (số của TAD1642GE) cho Volvo Penta TAD1345GE (12,78 L): bỏ riêng dung tích, giữ 6 xi lanh" })),
   ];
