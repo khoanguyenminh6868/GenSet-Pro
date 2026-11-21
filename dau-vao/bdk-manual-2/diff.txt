@@ -1,0 +1,6 @@
+IB2600603983 #2 6M31G825/5 + LSA 49.3 M8 + DSE7320 MKII | controller|Khởi động, dừng, tự động cấp điện (AMF) :: Cài đặt, hiệu chỉnh tần số qua hệ thống điều tốc: unclear -> confirm [Frequency Adjust | 0.0 %]
+IB2600603983 #2 6M31G825/5 + LSA 49.3 M8 + DSE7320 MKII | controller|Đo lường, hiển thị :: Nhiệt độ, áp suất bôi trơn: unclear -> confirm [Oil Temperature*]
+IB2600603983 #2 6M31G825/5 + LSA 49.3 M8 + DSE7320 MKII | controller|Bảo vệ, dừng máy :: Mức nước làm mát thấp: unclear -> confirm [Engine Coolant Level*]
+IB2600603983 #6 V20 TE2 + LSA 49.3 M8 + DSE7320 MKII | controller|Khởi động, dừng, tự động cấp điện (AMF) :: Cài đặt, hiệu chỉnh tần số qua hệ thống điều tốc: unclear -> confirm [Frequency Adjust | 0.0 %]
+IB2600603983 #6 V20 TE2 + LSA 49.3 M8 + DSE7320 MKII | controller|Đo lường, hiển thị :: Nhiệt độ, áp suất bôi trơn: unclear -> confirm [Oil Temperature*]
+IB2600603983 #6 V20 TE2 + LSA 49.3 M8 + DSE7320 MKII | controller|Bảo vệ, dừng máy :: Mức nước làm mát thấp: unclear -> confirm [Engine Coolant Level*]

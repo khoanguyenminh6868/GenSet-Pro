@@ -1,0 +1,354 @@
+lost 1087 fuelMinus 181 noRun 0 top5 35
+
+== Luật loại
+434 fuel
+104 fuel+fuel50+fuel75
+100 maxDisp
+76 fuel75
+73 fuel+fuel75
+71 cyl
+67 disp
+58 fuel+fuel50
+38 cyl+disp
+20 fuel50
+20 fuel50+fuel75
+10 cyl+maxDisp
+6 cyl+fuel
+3 cyl+layout
+2 layout
+1 cyl+fuel75
+1 cyl+fuel+fuel50+fuel75+layout
+1 cyl+fuel+layout
+1 cyl+fuel+fuel50+fuel75
+1 cyl+fuel50
+
+== Luật × NCC
+390 fuel | longkai-power
+92 fuel+fuel50+fuel75 | longkai-power
+70 fuel75 | longkai-power
+64 fuel+fuel75 | longkai-power
+50 fuel+fuel50 | longkai-power
+25 fuel | lees-power
+23 disp | cgm-italia
+22 maxDisp | cgm-italia
+22 cyl | agg-fuzhou
+18 fuel50 | longkai-power
+18 fuel | generatordieselchina
+16 maxDisp | agg-fuzhou
+16 cyl+disp | agg-fuzhou
+12 disp | agg-fuzhou
+11 cyl | kaihua-genset
+11 fuel+fuel50+fuel75 | lees-power
+10 fuel50+fuel75 | lees-power
+10 disp | genmac
+10 fuel50+fuel75 | longkai-power
+9 disp | ade-power
+9 cyl | longkai-power
+9 cyl+disp | kaihua-genset
+9 maxDisp | genmac
+9 maxDisp | weichai-power
+8 maxDisp | ade-power
+8 cyl | cgm-italia
+6 cyl | ade-power
+6 cyl+disp | ade-power
+6 cyl+fuel | longkai-power
+6 fuel+fuel75 | lees-power
+5 disp | electra-molins
+5 maxDisp | longkai-power
+5 maxDisp | previa-ningde
+5 fuel75 | lees-power
+4 cyl+maxDisp | ade-power
+4 cyl | koten-power
+4 cyl | landtop-fuzhou
+4 maxDisp | interpower-international
+4 fuel+fuel50 | xinhengxin-fujian
+4 fuel+fuel50 | lees-power
+4 maxDisp | weichai-heavy-machinery
+3 cyl+maxDisp | kaihua-genset
+3 cyl | yihua-fujian
+3 fuel+fuel75 | xinhengxin-fujian
+3 cyl+layout | longkai-power
+3 maxDisp | coelmo
+3 maxDisp | mecca-power
+3 maxDisp | yanan-power
+3 disp | coelmo
+3 cyl+disp | cgm-italia
+2 fuel50 | lees-power
+2 disp | koten-power
+2 disp | landtop-fuzhou
+2 maxDisp | kaihua-genset
+2 maxDisp | voltgent
+2 maxDisp | electra-molins
+2 cyl+disp | genmac
+1 layout | sr-genset
+1 fuel | xinhengxin-fujian
+1 fuel+fuel50+fuel75 | xinhengxin-fujian
+1 cyl+disp | koten-power
+1 cyl+disp | landtop-fuzhou
+1 layout | longkai-power
+1 cyl+fuel75 | longkai-power
+1 cyl+fuel+fuel50+fuel75+layout | longkai-power
+1 cyl+maxDisp | koten-power
+1 cyl+maxDisp | landtop-fuzhou
+1 cyl+maxDisp | agg-fuzhou
+1 maxDisp | penlucky
+1 maxDisp | deman-power
+1 cyl+fuel+layout | longkai-power
+1 cyl | genmac
+1 cyl+fuel+fuel50+fuel75 | longkai-power
+1 maxDisp | baifa-power
+1 cyl+fuel50 | longkai-power
+1 cyl | world-power-fuzhou
+1 cyl | liangzi-yangzhou
+1 cyl | electra-molins
+1 fuel75 | xinhengxin-fujian
+1 disp | interpower-international
+
+== Mẫu giá trị ruled (đầy đủ theo chuỗi, 60 nhóm đầu)
+678 fuel
+276 fuel75
+205 fuel50
+133 cyl
+110 maxDisp
+105 disp
+7 layout
+
+== Model × số xi lanh đọc × ngưỡng xi lanh (nhóm cyl)
+13 kaihua-genset | 8M21G660/5 | đọc  | HSMT min=6 exact=true layout=inline
+8 ade-power | 8M21G660/5 | đọc  | HSMT min=6 exact=true layout=inline
+6 longkai-power | QSB3.9-G2 | đọc [object Object] | HSMT min=4 exact=true layout=inline
+4 longkai-power | QSB3.9-G2 | đọc [object Object] | HSMT min=4 exact=true layout=-
+4 ade-power | 8M21G660/5 | đọc  | HSMT min=6 exact=true layout=-
+3 longkai-power | SC33G1150D2 | đọc [object Object] | HSMT min=12 exact=true layout=v
+3 koten-power | 8M33G770/6 | đọc  | HSMT min=12 exact=true layout=v
+3 landtop-fuzhou | 8M33G770/6 | đọc  | HSMT min=12 exact=true layout=v
+3 agg-fuzhou | 8M33G770/6 | đọc  | HSMT min=12 exact=true layout=v
+3 kaihua-genset | 8M21G660/5 | đọc  | HSMT min=6 exact=true layout=-
+3 cgm-italia | 6M33G4D5/S | đọc  | HSMT min=12 exact=false layout=-
+3 kaihua-genset | 8M21G660/5 | đọc  | HSMT min=12 exact=true layout=v
+3 agg-fuzhou | 6M31G660/5 | đọc  | HSMT min=12 exact=true layout=v
+3 agg-fuzhou | 6M31G528/6 | đọc  | HSMT min=12 exact=true layout=v
+3 agg-fuzhou | 6M31G750/5 | đọc  | HSMT min=12 exact=true layout=v
+2 longkai-power | SC33G1150D2 | đọc [object Object] | HSMT min=12 exact=false layout=-
+2 agg-fuzhou | 6M31G700/6 | đọc  | HSMT min=12 exact=false layout=-
+2 longkai-power | 6BT5.9-G2-96KW | đọc [object Object] | HSMT min=4 exact=true layout=inline
+2 yihua-fujian | 6BT5.9-G2-96KW | đọc  | HSMT min=4 exact=true layout=inline
+2 agg-fuzhou | 6M31G750/5 | đọc  | HSMT min=10 exact=true layout=v
+2 agg-fuzhou | 6M31G700/6 | đọc  | HSMT min=12 exact=true layout=v
+2 genmac | 4M10G4D0/S | đọc  | HSMT min=6 exact=true layout=inline
+2 cgm-italia | 6M31G750/5 | đọc  | HSMT min=12 exact=false layout=-
+2 ade-power | 8M21G660/5 | đọc  | HSMT min=12 exact=true layout=v
+1 ade-power | 4M06G2D0/S | đọc  | HSMT min=1 exact=true layout=-
+1 koten-power | 8M33G770/6 | đọc  | HSMT min=12 exact=false layout=-
+1 landtop-fuzhou | 8M33G770/6 | đọc  | HSMT min=12 exact=false layout=-
+1 agg-fuzhou | 8M33G770/6 | đọc  | HSMT min=12 exact=false layout=-
+1 kaihua-genset | 8M21G660/5 | đọc  | HSMT min=12 exact=true layout=-
+1 agg-fuzhou | 6M31G660/5 | đọc  | HSMT min=12 exact=true layout=-
+1 agg-fuzhou | 6M31G528/6 | đọc  | HSMT min=12 exact=true layout=-
+1 agg-fuzhou | 6M31G750/5 | đọc  | HSMT min=12 exact=true layout=-
+1 kaihua-genset | 8M21G660/5 | đọc  | HSMT min=10 exact=false layout=v
+1 agg-fuzhou | 6M31G660/5 | đọc  | HSMT min=10 exact=false layout=v
+1 agg-fuzhou | 6M31G528/6 | đọc  | HSMT min=10 exact=false layout=v
+1 agg-fuzhou | 6M31G750/5 | đọc  | HSMT min=10 exact=false layout=v
+1 kaihua-genset | 8M21G660/5 | đọc  | HSMT min=10 exact=true layout=v
+1 agg-fuzhou | 6M31G660/5 | đọc  | HSMT min=10 exact=true layout=v
+1 agg-fuzhou | 6M31G528/6 | đọc  | HSMT min=10 exact=true layout=v
+1 longkai-power | 4BTA3.9-G2-58KW | đọc [object Object] | HSMT min=6 exact=false layout=-
+1 agg-fuzhou | 6M31G660/5 | đọc  | HSMT min=8 exact=true layout=v
+1 agg-fuzhou | 6M31G528/6 | đọc  | HSMT min=8 exact=true layout=v
+1 koten-power | 8M33G770/6 | đọc  | HSMT min=6 exact=true layout=-
+1 landtop-fuzhou | 8M33G770/6 | đọc  | HSMT min=6 exact=true layout=-
+1 agg-fuzhou | 12M26G704/6 | đọc  | HSMT min=6 exact=true layout=-
+1 agg-fuzhou | 8M33G770/6 | đọc  | HSMT min=6 exact=true layout=-
+1 longkai-power | SC33G1150D2 | đọc [object Object] | HSMT min=12 exact=false layout=v
+1 koten-power | 8M33G770/6 | đọc  | HSMT min=12 exact=false layout=v
+1 landtop-fuzhou | 8M33G770/6 | đọc  | HSMT min=12 exact=false layout=v
+1 agg-fuzhou | 6M31G700/6 | đọc  | HSMT min=12 exact=false layout=v
+1 agg-fuzhou | 8M33G770/6 | đọc  | HSMT min=12 exact=false layout=v
+1 genmac | 4M10G4D0/S | đọc  | HSMT min=6 exact=true layout=-
+1 longkai-power | 4BTA3.9-G2-58KW | đọc [object Object] | HSMT min=6 exact=true layout=-
+1 longkai-power | 6BT5.9-G2-96KW | đọc [object Object] | HSMT min=4 exact=true layout=-
+1 yihua-fujian | 6BT5.9-G2-96KW | đọc  | HSMT min=4 exact=true layout=-
+1 agg-fuzhou | 16M33G1400/6 | đọc  | HSMT min=12 exact=true layout=-
+1 cgm-italia | 12M26G2D0/S | đọc  | HSMT min=8 exact=true layout=inline
+1 longkai-power | 6BT5.9-G2-86KW | đọc [object Object] | HSMT min=4 exact=true layout=inline
+1 longkai-power | SC33G1150D2 | đọc [object Object] | HSMT min=16 exact=false layout=v
+1 cgm-italia | 6M33G4D5/S | đọc  | HSMT min=16 exact=false layout=v
+1 agg-fuzhou | 12M26G704/6 | đọc  | HSMT min=16 exact=false layout=v
+1 agg-fuzhou | 6M31G700/6 | đọc  | HSMT min=16 exact=false layout=v
+1 world-power-fuzhou | WD145TAD35 | đọc [object Object] | HSMT min=8 exact=false layout=-
+1 liangzi-yangzhou | WD145TAD35 | đọc [object Object] | HSMT min=8 exact=false layout=-
+1 kaihua-genset | 8M21G660/5 | đọc  | HSMT min=10 exact=false layout=-
+1 agg-fuzhou | 6M31G660/5 | đọc  | HSMT min=10 exact=false layout=-
+1 agg-fuzhou | 6M31G528/6 | đọc  | HSMT min=10 exact=false layout=-
+1 agg-fuzhou | 16M33G1400/6 | đọc  | HSMT min=12 exact=true layout=v
+1 electra-molins | 4M10G6D0/S | đọc  | HSMT min=6 exact=false layout=inline
+1 ade-power | 4M10G6D0/S | đọc  | HSMT min=6 exact=false layout=inline
+1 cgm-italia | 4M10G6D0/S | đọc  | HSMT min=6 exact=false layout=inline
+1 cgm-italia | 6M31G660/5 | đọc  | HSMT min=12 exact=true layout=v
+1 cgm-italia | 6M31G750/5 | đọc  | HSMT min=12 exact=true layout=v
+1 cgm-italia | 6M33G4D5/S | đọc  | HSMT min=12 exact=true layout=v
+
+== Nhóm tiêu hao
+5 longkai-power | 4B3.9-G2 | [{"k":"fuel","l":"100% load(Prime power)","v":"6.7","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"5.2","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"3.9","c":"L/h"}] | max=5.5/4.5/-
+5 longkai-power | 4B3.9-G11 | [{"k":"fuel","l":"100% load(Prime power)","v":"5.7","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"4.6","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"3.7","c":"L/h"}] | max=5.5/4.5/-
+5 longkai-power | 4B3.9-G1 | [{"k":"fuel","l":"100% load(Prime power)","v":"7.1","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"5.7","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"4.3","c":"L/h"}] | max=5.5/4.5/-
+4 lees-power | 16V4000G63 | [{"k":"fuel50","l":"50%负载油耗","v":"250.80","c":"L/H"},{"k":"fuel75","l":"75%负载油耗","v":"357.49","c":"L/H"},{"k":"fuel","l":"100%负载油耗","v":"471.66","c":"L/H"}] | max=-/336/232
+3 longkai-power | 4BT3.9-G2 | [{"k":"fuel","l":"100% load(Prime power)","v":"9.3","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"7.3","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"5.3","c":"L/h"}] | max=8.95/-/-
+3 longkai-power | 4BT3.9-G1 | [{"k":"fuel","l":"100% load(Prime power)","v":"10","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"7.9","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"5.9","c":"L/h"}] | max=8.95/-/-
+3 longkai-power | 6LTAA8.9-G3 | [{"k":"fuel","l":"100% load(Prime power)","v":"54.0","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"41.0","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"30.0","c":"L/h"}] | max=53/39/27
+3 longkai-power | 6LTAA9.5-G3 | [{"k":"fuel","l":"100% load(Prime power)","v":"58.0","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"44.0","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"30.0","c":"L/h"}] | max=53/39/27
+3 longkai-power | SC9D340D2 | [{"k":"fuel","l":"100% load(Prime power)","v":"54.1","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"40.8","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"27.3","c":"L/h"}] | max=53/39/27
+3 longkai-power | SC10E380D2 | [{"k":"fuel","l":"100% load(Prime power)","v":"60.9","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"49.4","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"32.1","c":"L/h"}] | max=53/39/27
+3 longkai-power | 6DTAA8.9-G23 | [{"k":"fuel","l":"100% load(Prime power)","v":"55.1","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"40.7","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"27.7","c":"L/h"}] | max=53/39/27
+3 lees-power | P126TI-II | [{"k":"fuel50","l":"50%负载油耗","v":"31.3","c":"L/H"},{"k":"fuel75","l":"75%负载油耗","v":"47","c":"L/H"},{"k":"fuel","l":"100%负载油耗","v":"63","c":"L/H"}] | max=53/39/27
+3 longkai-power | SC25G690D2 | [{"k":"fuel","l":"100% load(Prime power)","v":"105.2","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"79.6","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"55.3","c":"L/h"}] | max=105/-/55
+3 longkai-power | QSZ13-G10 | [{"k":"fuel","l":"100% load(Prime power)","v":"107","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"80","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"54","c":"L/h"}] | max=105/-/55
+3 longkai-power | 6KTAA25-G36 | [{"k":"fuel","l":"100% load(Prime power)","v":"111","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"85","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"61","c":"L/h"}] | max=105/-/55
+3 longkai-power | SC27G755D2 | [{"k":"fuel","l":"100% load(Prime power)","v":"126.0","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"95.3","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"66.3","c":"L/h"}] | max=105/-/55
+3 longkai-power | 6KTAA25-G35 | [{"k":"fuel","l":"100% load(Prime power)","v":"124","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"94","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"68","c":"L/h"}] | max=105/-/55
+3 xinhengxin-fujian | KTA19-G4 | [{"k":"fuel","l":"100% load(Prime power)","v":"113.6","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"85","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"56","c":"L/h"}] | max=105/-/55
+3 longkai-power | 4B3.9-G2 | [{"k":"fuel","l":"100% load(Prime power)","v":"6.7","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"5.2","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"3.9","c":"L/h"}] | max=5/-/-
+3 longkai-power | 4B3.9-G1 | [{"k":"fuel","l":"100% load(Prime power)","v":"7.1","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"5.7","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"4.3","c":"L/h"}] | max=5/-/-
+3 longkai-power | 4B3.9-G12 | [{"k":"fuel","l":"100% load(Prime power)","v":"7.4","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"6.1","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"4.5","c":"L/h"}] | max=5/-/-
+3 longkai-power | SC27G900D2 | [{"k":"fuel","l":"100% load(Prime power)","v":"148.8","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"111.5","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"76.7","c":"L/h"}] | max=135/105/70
+2 longkai-power | 6KTAA25-G36 | [{"k":"fuel","l":"100% load(Prime power)","v":"111","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"85","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"61","c":"L/h"}] | max=103.64/79.83/-
+2 longkai-power | 6KTAA25-G35 | [{"k":"fuel","l":"100% load(Prime power)","v":"124","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"94","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"68","c":"L/h"}] | max=103.64/79.83/-
+2 longkai-power | 6CTAA8.3-G2 | [{"k":"fuel","l":"100% load(Prime power)","v":"45.0","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"34.0","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"23.0","c":"L/h"}] | max=29/-/-
+2 generatordieselchina | 6CTAA8.3-G2 | [{"k":"fuel75","l":"Fuel Consumption","v":"29.3 / 39.0 L/h (@75% / @100%)"},{"k":"fuel","l":"Fuel Consumption","v":"29.3 / 39.0 L/h (@75% / @100%)"}] | max=29/-/-
+2 longkai-power | SC8D280D2 | [{"k":"fuel","l":"100% load(Prime power)","v":"48.6","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"36.2","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"24.3","c":"L/h"}] | max=29/-/-
+2 longkai-power | WP10D200E200 | [{"k":"fuel","l":"100% load(Prime power)","v":"40.0","c":"L/h"}] | max=29/-/-
+2 longkai-power | SC9D310D2 | [{"k":"fuel","l":"100% load(Prime power)","v":"50.6","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"38.2","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"26.3","c":"L/h"}] | max=29/-/-
+2 longkai-power | WP10D238E200 | [{"k":"fuel","l":"100% load(Prime power)","v":"46.0","c":"L/h"}] | max=29/-/-
+2 longkai-power | 6DTAA8.9-G21 | [{"k":"fuel","l":"100% load(Prime power)","v":"44.1","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"32.8","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"22.8","c":"L/h"}] | max=29/-/-
+2 longkai-power | 6DTAA8.9-G24 | [{"k":"fuel","l":"100% load(Prime power)","v":"49.6","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"36.8","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"25.7","c":"L/h"}] | max=29/-/-
+2 longkai-power | SC4H160D2 | [{"k":"fuel","l":"100% load(Prime power)","v":"25","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"16.7","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"12.8","c":"L/h"}] | max=24/-/-
+2 longkai-power | 6BT5.9-G2 | [{"k":"fuel","l":"100% load(Prime power)","v":"24.2","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"18.2","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"12.5","c":"L/h"}] | max=24/-/-
+2 longkai-power | 4HTAA4.3-G23 | [{"k":"fuel","l":"100% load(Prime power)","v":"24.7","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"18.6","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"12.6","c":"L/h"}] | max=24/-/-
+2 longkai-power | 6LTAA8.9-G2 | [{"k":"fuel","l":"100% load(Prime power)","v":"53.0","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"39.0","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"27.0","c":"L/h"}] | max=36/-/-
+2 longkai-power | 6LTAA8.9-G3 | [{"k":"fuel","l":"100% load(Prime power)","v":"54.0","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"41.0","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"30.0","c":"L/h"}] | max=36/-/-
+2 longkai-power | WP10D264E200 | [{"k":"fuel","l":"100% load(Prime power)","v":"50.0","c":"L/h"}] | max=36/-/-
+2 longkai-power | MTA11-G2 | [{"k":"fuel","l":"100% load(Prime power)","v":"43.9","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"33.9","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"24.1","c":"L/h"}] | max=36/-/-
+2 longkai-power | 6CTAA8.3-G9 | [{"k":"fuel","l":"100% load(Prime power)","v":"57.0","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"42.0","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"29.0","c":"L/h"}] | max=36/-/-
+2 longkai-power | 6LTAA9.5-G3 | [{"k":"fuel","l":"100% load(Prime power)","v":"58.0","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"44.0","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"30.0","c":"L/h"}] | max=36/-/-
+2 longkai-power | SC9D340D2 | [{"k":"fuel","l":"100% load(Prime power)","v":"54.1","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"40.8","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"27.3","c":"L/h"}] | max=36/-/-
+2 longkai-power | SC10E380D2 | [{"k":"fuel","l":"100% load(Prime power)","v":"60.9","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"49.4","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"32.1","c":"L/h"}] | max=36/-/-
+2 longkai-power | 6DTAA8.9-G23 | [{"k":"fuel","l":"100% load(Prime power)","v":"55.1","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"40.7","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"27.7","c":"L/h"}] | max=36/-/-
+2 longkai-power | QSNT-G6 | [{"k":"fuel","l":"100% load(Prime power)","v":"53.0","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"39.0","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"27.0","c":"L/h"}] | max=36/-/-
+2 lees-power | P126TI-II | [{"k":"fuel50","l":"50%负载油耗","v":"31.3","c":"L/H"},{"k":"fuel75","l":"75%负载油耗","v":"47","c":"L/H"},{"k":"fuel","l":"100%负载油耗","v":"63","c":"L/H"}] | max=36/-/-
+2 longkai-power | 6ETAA12.8-G32 | [{"k":"fuel","l":"100% load(Prime power)","v":"96.1","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"70.3","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"45.0","c":"L/h"}] | max=90/-/-
+2 longkai-power | 6ZTAA13-G4 | [{"k":"fuel","l":"100% load(Prime power)","v":"91.4","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"66.9","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"44.3","c":"L/h"}] | max=90/-/-
+2 longkai-power | SC25G610D2 | [{"k":"fuel","l":"100% load(Prime power)","v":"100.4","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"75.8","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"53.6","c":"L/h"}] | max=90/-/-
+2 longkai-power | QSZ13-G5 | [{"k":"fuel","l":"100% load(Prime power)","v":"93.2","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"69.9","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"49.0","c":"L/h"}] | max=90/-/-
+2 longkai-power | 6ETAA12.8-G31 | [{"k":"fuel","l":"100% load(Prime power)","v":"99.1","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"72.3","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"48.0","c":"L/h"}] | max=90/-/-
+2 longkai-power | QSZ13-G3 | [{"k":"fuel","l":"100% load(Prime power)","v":"101.0","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"74.2","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"48.9","c":"L/h"}] | max=90/-/-
+2 lees-power | DP158LC | [{"k":"fuel50","l":"50%负载油耗","v":"48.9","c":"L/H"},{"k":"fuel75","l":"75%负载油耗","v":"72.9","c":"L/H"},{"k":"fuel","l":"100%负载油耗","v":"99.6","c":"L/H"}] | max=90/-/-
+2 longkai-power | 12M33D1450E310 | [{"k":"fuel","l":"100% load(Prime power)","v":"404.7","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"163","c":"L/h"}] | max=360/277/190
+2 lees-power | 12V4000G63 | [{"k":"fuel50","l":"50%负载油耗","v":"200.03","c":"L/H"},{"k":"fuel75","l":"75%负载油耗","v":"289.54","c":"L/H"},{"k":"fuel","l":"100%负载油耗","v":"384.05","c":"L/H"}] | max=360/277/190
+2 longkai-power | 6BTAA5.9-G2 | [{"k":"fuel","l":"100% load(Prime power)","v":"30.0","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"23.0","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"16.0","c":"L/h"}] | max=25/-/-
+2 longkai-power | QSB5.9-G3 | [{"k":"fuel","l":"100% load(Prime power)","v":"26.0","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"25.0","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"18.0","c":"L/h"}] | max=25/-/-
+2 generatordieselchina | 6BTA5.9-G2 | [{"k":"fuel75","l":"Fuel Consumption","v":"18.8 / 25.1 L/h (@75% / @100%)"},{"k":"fuel","l":"Fuel Consumption","v":"18.8 / 25.1 L/h (@75% / @100%)"}] | max=25/-/-
+2 longkai-power | 12M33D1108E200 | [{"k":"fuel","l":"100% load(Prime power)","v":"219.8","c":"L/h"}] | max=210/163/114
+2 longkai-power | WP4.1D100E200 | [{"k":"fuel","l":"100% load(Prime power)","v":"18.7","c":"L/h"}] | max=18.15/-/-
+2 longkai-power | SC4H160D2 | [{"k":"fuel","l":"100% load(Prime power)","v":"25","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"16.7","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"12.8","c":"L/h"}] | max=18.15/-/-
+2 longkai-power | 4HTAA4.3-G21 | [{"k":"fuel","l":"100% load(Prime power)","v":"23.0","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"17.1","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"11.8","c":"L/h"}] | max=18.15/-/-
+2 longkai-power | 6BT5.9-G2-96KW | [{"k":"fuel","l":"100% load(Prime power)","v":"22","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"17","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"11","c":"L/h"}] | max=18.15/-/-
+2 longkai-power | 4HTAA4.3-G23 | [{"k":"fuel","l":"100% load(Prime power)","v":"24.7","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"18.6","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"12.6","c":"L/h"}] | max=18.15/-/-
+2 lees-power | P126TI-II | [{"k":"fuel50","l":"50%负载油耗","v":"31.3","c":"L/H"},{"k":"fuel75","l":"75%负载油耗","v":"47","c":"L/H"},{"k":"fuel","l":"100%负载油耗","v":"63","c":"L/H"}] | max=58.1/43.6/30
+2 longkai-power | 4B3.9-G12 | [{"k":"fuel","l":"100% load(Prime power)","v":"7.4","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"6.1","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"4.5","c":"L/h"}] | max=7.5/5.8/-
+2 longkai-power | 4BT3.9-G2 | [{"k":"fuel","l":"100% load(Prime power)","v":"9.3","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"7.3","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"5.3","c":"L/h"}] | max=7.5/5.8/-
+2 longkai-power | 4BT3.9-G1 | [{"k":"fuel","l":"100% load(Prime power)","v":"10","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"7.9","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"5.9","c":"L/h"}] | max=7.5/5.8/-
+2 longkai-power | SC12E420D2 | [{"k":"fuel","l":"100% load(Prime power)","v":"71.6","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"53.4","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"36.1","c":"L/h"}] | max=70/-/-
+2 longkai-power | SC12E460D2 | [{"k":"fuel","l":"100% load(Prime power)","v":"71.6","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"53.4","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"36.1","c":"L/h"}] | max=70/-/-
+2 longkai-power | 6ETAA11.8-G21 | [{"k":"fuel","l":"100% load(Prime power)","v":"72.9","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"54.1","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"37","c":"L/h"}] | max=70/-/-
+2 longkai-power | QSZ13-G6 | [{"k":"fuel","l":"100% load(Prime power)","v":"81.6","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"64.6","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"46.9","c":"L/h"}] | max=70/-/-
+2 longkai-power | SC10E380D2 | [{"k":"fuel","l":"100% load(Prime power)","v":"60.9","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"49.4","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"32.1","c":"L/h"}] | max=60/-/36
+2 lees-power | P126TI-II | [{"k":"fuel50","l":"50%负载油耗","v":"31.3","c":"L/H"},{"k":"fuel75","l":"75%负载油耗","v":"47","c":"L/H"},{"k":"fuel","l":"100%负载油耗","v":"63","c":"L/H"}] | max=60/-/36
+2 longkai-power | QSZ13-G10 | [{"k":"fuel","l":"100% load(Prime power)","v":"107","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"80","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"54","c":"L/h"}] | max=105/76/-
+2 xinhengxin-fujian | KTA19-G4 | [{"k":"fuel","l":"100% load(Prime power)","v":"113.6","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"85","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"56","c":"L/h"}] | max=105/76/-
+2 longkai-power | 6ETAA12.8-G32 | [{"k":"fuel","l":"100% load(Prime power)","v":"96.1","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"70.3","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"45.0","c":"L/h"}] | max=81.3/61/42.1
+2 longkai-power | QSZ13-G7 | [{"k":"fuel","l":"100% load(Prime power)","v":"89.2","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"72","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"52.9","c":"L/h"}] | max=81.3/61/42.1
+2 longkai-power | 6ZTAA13-G4 | [{"k":"fuel","l":"100% load(Prime power)","v":"91.4","c":"L/h"},{"k":"fuel75","l":"75% load(Prime power)","v":"66.9","c":"L/h"},{"k":"fuel50","l":"50% load(Prime power)","v":"44.3","c":"L/h"}] | max=81.3/61/42.1
+2 longkai-power | WP13D440E310 | [{"k":"fuel","l":"100% load(Prime power)","v":"85.5","c":"L/h"}] | max=81.3/61/42.1
+
+== fuelMinus theo NCC / why
+12 westinpower | tiêu hao 106 L/h > 105 L/h HSMT cho phép
+6 westinpower | tiêu hao 56.9 L/h > 36 L/h HSMT cho phép
+6 westinpower | tiêu hao 99 L/h > 90 L/h HSMT cho phép
+6 westinpower | tiêu hao 374 L/h > 360 L/h HSMT cho phép
+6 westinpower | tiêu hao 22.6 L/h > 18.15 L/h HSMT cho phép
+6 westinpower | tiêu hao 5.3 L/h > 4.93 L/h HSMT cho phép
+6 westinpower | tiêu hao 22.6 L/h > 20 L/h HSMT cho phép
+6 westinpower | tiêu hao 56.9 L/h > 55 L/h HSMT cho phép
+6 westinpower | tiêu hao 7.1 L/h > 5.4 L/h HSMT cho phép
+6 westinpower | tiêu hao 56.9 L/h > 53 L/h HSMT cho phép
+6 westinpower | tiêu hao 5.3 L/h > 3.9 L/h HSMT cho phép
+4 westinpower | tiêu hao 33.4 L/h > 32.1 L/h HSMT cho phép
+3 westinpower | tiêu hao 129 L/h > 105 L/h HSMT cho phép
+3 westinpower | tiêu hao 7.1 L/h > 5.7 L/h HSMT cho phép
+3 westinpower | tiêu hao 374 L/h > 345 L/h HSMT cho phép
+3 westinpower | tiêu hao 416 L/h > 345 L/h HSMT cho phép
+3 westinpower | tiêu hao 7.1 L/h > 5.3 L/h HSMT cho phép
+3 westinpower | tiêu hao 340 L/h > 289 L/h HSMT cho phép
+3 westinpower | tiêu hao 33.4 L/h > 25.1 L/h HSMT cho phép
+3 westinpower | tiêu hao 22.6 L/h > 21.25 L/h HSMT cho phép
+3 westinpower | tiêu hao 434 L/h > 415 L/h HSMT cho phép
+3 westinpower | tiêu hao 440 L/h > 415 L/h HSMT cho phép
+3 westinpower | tiêu hao 339.2 L/h > 266.8 L/h HSMT cho phép
+3 westinpower | tiêu hao 301 L/h > 266.8 L/h HSMT cho phép
+3 westinpower | tiêu hao 340 L/h > 266.8 L/h HSMT cho phép
+3 westinpower | tiêu hao 56.9 L/h > 45.1 L/h HSMT cho phép
+3 westinpower | tiêu hao 33.4 L/h > 28 L/h HSMT cho phép
+3 westinpower | tiêu hao 99 L/h > 78 L/h HSMT cho phép
+3 westinpower | tiêu hao 215 L/h > 210 L/h HSMT cho phép
+3 westinpower | tiêu hao 340 L/h > 304 L/h HSMT cho phép
+3 westinpower | tiêu hao 374 L/h > 304 L/h HSMT cho phép
+3 westinpower | tiêu hao 33.4 L/h > 30 L/h HSMT cho phép
+3 westinpower | tiêu hao 14.6 L/h > 12.3 L/h HSMT cho phép
+3 westinpower | tiêu hao 56.9 L/h > 47 L/h HSMT cho phép
+3 westinpower | tiêu hao 340 L/h > 308 L/h HSMT cho phép
+3 westinpower | tiêu hao 301 L/h > 300 L/h HSMT cho phép
+3 westinpower | tiêu hao 340 L/h > 300 L/h HSMT cho phép
+3 westinpower | tiêu hao 56.9 L/h > 52 L/h HSMT cho phép
+3 westinpower | tiêu hao 172 L/h > 170 L/h HSMT cho phép
+3 westinpower | tiêu hao 99 L/h > 80 L/h HSMT cho phép
+
+== noRun
+[]
+
+== Hạng 1-5 gốc ra khỏi top 30
+IB2200018828#0 #5 longkai-power 6WTAA35-G32 -> loại: fuel,fuel75,fuel50
+IB2200049662#0 #2 longkai-power 6KTAA25-G36 -> loại: fuel,fuel75
+IB2300134568#0 #4 longkai-power 4B3.9-G2 -> loại: fuel
+IB2300134568#0 #5 longkai-power 4B3.9-G11 -> loại: fuel
+IB2300230061#0 #3 genmac 6M11G4D0/S -> loại: maxDisp
+IB2300254479#0 #5 rcg-power S12A2-PTA -> còn trong bảng, điểm 241
+IB2300260615#1 #1 longkai-power 20M33G2000/6 -> loại: maxDisp
+IB2300260615#1 #2 longkai-power 20M33G2250/5 -> loại: maxDisp
+IB2300260615#1 #3 kaihua-genset 20M33G2000/6 -> loại: maxDisp
+IB2300260615#1 #4 longkai-power 12M55G2250/6 -> loại: maxDisp
+IB2300260615#1 #5 longkai-power 20M33G2200/6 -> loại: maxDisp
+IB2300278513#0 #4 longkai-power SC27G900D2 -> loại: fuel,fuel50
+IB2300278513#0 #5 dingbo TWD1645GE -> còn trong bảng, điểm 273
+IB2400031785#0 #2 longkai-power 4B3.9-G2 -> loại: fuel,fuel75
+IB2400031785#0 #3 longkai-power 4B3.9-G11 -> loại: fuel,fuel75
+IB2400164837#0 #1 longkai-power 4B3.9-G2 -> loại: fuel
+IB2400238834#0 #5 longkai-power 6BTAA5.9-G2 -> loại: fuel
+IB2400275648#1 #2 genmac 4M10G4D0/S -> loại: disp
+IB2400367420#0 #1 cgm-italia 6M31G725/5 -> loại: maxDisp
+IB2400367420#0 #4 cgm-italia 6M31G750/5 -> loại: maxDisp
+IB2400367420#0 #5 cgm-italia 6M33G4D5/S -> loại: maxDisp
+IB2400440257#0 #1 longkai-power 4B3.9-G2 -> loại: fuel
+IB2400440994#0 #5 longkai-power 4B3.9-G2 -> loại: fuel
+IB2400489270#0 #1 longkai-power 4B3.9-G2 -> loại: fuel
+IB2400493077#0 #1 genmac 4M10G4D0/S -> loại: disp
+IB2400529458#0 #2 genmac 4M06G8D0/S -> loại: disp
+IB2400533611#0 #5 longkai-power SC27G900D2 -> loại: fuel,fuel75,fuel50
+IB2400573523#0 #4 longkai-power SC25G610D2 -> loại: fuel75
+IB2400596787#0 #5 longkai-power SC27G900D2 -> loại: fuel,fuel75,fuel50
+IB2500073242#0 #4 genmac 6M11G2D0/S -> loại: maxDisp
+IB2500073242#0 #5 genmac 6M11G4D0/S -> loại: maxDisp
+IB2500177769#0 #5 longkai-power 6LTAA9.5-G1 -> loại: fuel75
+IB2500291421#1 #2 longkai-power 6KTAA25-G35 -> loại: fuel
+IB2500386455#0 #1 genmac 4M06G10D0/S -> loại: disp
+IB2500553750#0 #3 interpower-international 6M16G2D0/S -> loại: disp
