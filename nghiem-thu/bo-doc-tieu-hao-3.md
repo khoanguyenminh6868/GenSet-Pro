@@ -170,3 +170,18 @@ Ngưỡng hiện tại → ngưỡng khi bỏ dòng có nhãn cỡ khác. Cột 
 | IB2600477305#1 | 15 | minCyl 3 → -; maxFuel 4 → -; maxFuel75 3.2 → -; maxFuel50 2.4 → - | 0 |
 | IB2600562009#0 | 30 | maxFuel - → 5.4 | 0 |
 | IB2600562009#1 | 50 | maxFuel 5.4 → - | 0 |
+
+## Đối chiếu đo cloud lần 2 (22/11/2026): main 3687bb73 ↔ 669b5ae8
+
+Kết quả đo: nhánh `do-gop-tieu-hao2-ket-qua` (76def06b). Script: `dau-vao\bo-doc-tieu-hao\cloud\doi-chieu-2.mjs`, `giai-2*.mjs`; tệp đo lớn ở `genbid-work\doc-cache\soat-1022\cloud2\` (ngoài git). Chạy lại bằng bidhist máy 20/11 12:30 (cloud dùng bản 21/11 17:05); 150/150 dòng mất mới vẫn tái lập.
+
+**Kết luận: còn 1 dòng loại oan, chưa đạt điều kiện 0 oan, CHƯA gộp main.**
+
+- **Dòng oan:** IB2300162912 #0 (750 kVA), longkai-power SC33G1150D2, luật `layout`. "Bố trí chữ V" là của máy 2.500 kVA trong cùng HSMT. `hintsOf` gọi `cylLayoutOf(t)` trên cả chữ HSMT, không theo cỡ; main 65dd6cec (đã có #1036) vẫn vậy. 6 dòng `layout` còn lại đều đúng theo phần của chính cỡ đó.
+- **33 dòng `sizeBlocks` của lần 1:** cả 33 đã có lại trong `all` ở 669b5ae8; `minsForSize` nay trả "of another size" cho các ngưỡng đó.
+- **Dòng mất:** 1.137 = 987 trùng lần 1 + 150 mới; 100 dòng của lần 1 không còn mất (gồm 26 dòng dropspec và 33 dòng trên).
+- **150 dòng mất mới:** tiêu hao 112, xi lanh / dung tích 38. Mọi số vượt đúng ngưỡng; 40 lượt có ngưỡng tiêu hao đã đối chiếu chữ HSMT và mức tải (32 bằng script, 8 đọc tay); ngưỡng hình học đã đọc theo từng lượt; 0 dòng lấy ngưỡng của cỡ khác. 2 bộ số tiêu hao mới: longkai n1141 WP13D490E310, n1142 6M26D484E200, cùng 97.7 L/h ở Prime 400 kW (0,244 L/kWh, hình học khớp); hai động cơ khác nhau ghi trùng số, không có tờ hãng để đối chiếu; bị loại ở IB2400589278 #2 (≤ 89,1).
+- **8.728 dòng đổi điểm:** giải thích hết, 0 dư: 8.515 khớp +8 × số loại thông số mới, 213 khớp −300 (không có bộ số mới so với lần 1); 0 dòng mất loại thông số.
+- **Top 30:** 444 lượt đổi thứ tự / tập, cả 444 có dòng mất, thêm hoặc đổi điểm trong lượt. 472 dòng vào top: 471 đã có trong `all` gốc, 1 dòng thêm là longkai 6M33D633E200 ở IB2500008885 #0 (tờ n1144 đã dropspec). 178 dòng ra top còn trong `all`: đều có nguyên nhân trong lượt.
+
+Đề xuất: `cylLayout` lấy theo phần của cỡ như `minsForSize`; điều phối quyết ai sửa.

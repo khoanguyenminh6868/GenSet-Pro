@@ -1,0 +1,30 @@
+lượt	đổi tập	ngưỡng đổi (thô)	ngưỡng đổi (hiệu lực)	ra all	vào all	ra top	vào top	ra all theo lý do	vào all theo lý do	không giải thích
+IB2200070865#0	có	minCyl: null → 6	minCyl: null → 6	6	0	0	0	{"cyl":6}	{}	0
+IB2200100465#0	có	minDisp: null → 4.837	minDisp: null → 4.837	290	0	27	27	{"disp":290}	{}	0
+IB2300102941#0	có	minDisp: null → 1.95	minDisp: null → 1.95	149	0	6	6	{"disp":149}	{}	0
+IB2300102941#1	có	minDisp: null → 1.95	minDisp: null → 1.95	16	0	2	2	{"disp":16}	{}	0
+IB2300134577#0	không	minCyl: null → 3	minCyl: null → 3	0	0	0	0	{}	{}	0
+IB2300134577#1	không	minCyl: null → 3	minCyl: null → 3	0	0	0	0	{}	{}	0
+IB2300163186#2	có	minDisp: 2.3 → 4.087	minDisp: 2.3 → 4.087	108	0	3	3	{"disp":108}	{}	0
+IB2300163186#3	có	minDisp: 2.3 → 9.726	minDisp: 2.3 → 9.726	1437	0	26	26	{"disp":1437}	{}	0
+IB2300163844#1	có	minDisp: null → 2.9	minDisp: null → 2.9	314	0	10	10	{"disp":314}	{}	0
+IB2300356962#1	có	minCyl: null → 4	minCyl: null → 4	191	0	4	4	{"cyl":191}	{}	0
+IB2400100405#0	có	minDisp: null → 60.2	minDisp: null → 60.2	3	0	3	3	{"disp":3}	{}	0
+IB2400145438#2	có	minPrime: null → {"kVA":12}	minPrime: null → {"kVA":12}	65	0	8	8	{"prime":65}	{}	0
+IB2400145438#3	có	minPrime: {"kVA":13.7} → null	minPrime: {"kVA":13.7} → null	0	183	10	10	{}	{"prime":183}	0
+IB2400365165#0	không	maxFuel: 4.5 → null; maxFuel75: null → 4.25		0	0	0	0	{}	{}	0
+IB2400365165#1	không	maxFuel: null → 4.5; maxFuel75: null → 4	maxFuel: null → 4.5; maxFuel75: null → 4	0	0	0	0	{}	{}	0
+IB2400375383#0	có	minCyl: null → 6	minCyl: null → 6	132	0	4	4	{"cyl":132}	{}	0
+IB2400375383#1	có	minCyl: null → 6	minCyl: null → 6	53	0	1	1	{"cyl":53}	{}	0
+IB2400427929#0	có	minCyl: null → 4	minCyl: null → 4	8	0	5	0	{"cyl":8}	{}	0
+IB2400427929#1	có	minCyl: null → 4	minCyl: null → 4	8	0	0	0	{"cyl":8}	{}	0
+IB2400427929#2	có	minCyl: null → 4	minCyl: null → 4	127	0	7	7	{"cyl":127}	{}	0
+IB2400427929#3	không	minCyl: null → 4	minCyl: null → 4	0	0	0	0	{}	{}	0
+IB2400448320#0	có	minCyl: null → 6	minCyl: null → 6	132	0	4	4	{"cyl":132}	{}	0
+IB2400448320#1	có	minCyl: null → 6	minCyl: null → 6	53	0	1	1	{"cyl":53}	{}	0
+IB2400495696#2	không	minCyl: 4 → null	minCyl: 4 → null	0	0	0	0	{}	{}	0
+IB2500089757#2	không	minCyl: 4 → null	minCyl: 4 → null	0	0	0	0	{}	{}	0
+IB2500114642#0	không	minCyl: null → 1	minCyl: null → 1	0	0	0	0	{}	{}	0
+IB2500114642#1	không	minCyl: null → 1	minCyl: null → 1	0	0	0	0	{}	{}	0
+IB2500114642#2	có	minCyl: null → 6	minCyl: null → 6	27	0	0	0	{"cyl":27}	{}	0
+IB2500222084#0	có	minDisp: null → 2.29	minDisp: null → 2.29	45	0	6	6	{"disp":45}	{}	0
