@@ -102,3 +102,22 @@ test("tiêu đề đổi thì bảng không đọc, có note; NCC khác cùng b�
   const other = { ...s, id: "ncc-khac" };
   assert.ok(!C.fromSupplier(other).some((o) => o.keyScope || (o.own && o.n === 119)));
 });
+
+test("xingguang n108: ô động cơ hai mã 'ZS1110或295D' → không bản ghi động cơ, STC-12 là đầu phát (OR_ENGINE_CELLS)", () => {
+  const notes = [];
+  const r = C.fromSupplier(only(cn("xingguang-jiangsu"), 108), notes);
+  for (const m of ["STC-12", "STC-15"]) {
+    assert.ok(!r.some((o) => o.kind === "engine" && o.model === m), m);
+    const a = r.find((o) => o.kind === "alternator" && o.model === m);
+    assert.ok(a, m);
+    assert.ok(/或/.test(a.line));
+  }
+  assert.deepEqual(r.find((o) => o.model === "STC-12").power, { rated: { kW: 12, kVA: 15 } });
+  assert.deepEqual(notes.filter((x) => x.reason === "một ô ghi hai mã").map((x) => x.detail), ["ZS1110或295D", "ZS1115或2100D"]);
+  // n110 ghi "或" ở ô ĐẦU PHÁT ("TZHW或TFW"): động cơ đọc như cũ.
+  const r110 = C.fromSupplier(only(cn("xingguang-jiangsu"), 110));
+  assert.ok(r110.some((o) => o.kind === "engine" && o.model === "Z12V190B"));
+  // NCC khác cùng dòng: không áp danh sách.
+  const other = { ...only(cn("xingguang-jiangsu"), 108), id: "ncc-khac" };
+  assert.ok(C.fromSupplier(other).some((o) => o.kind === "engine" && o.model === "STC-12"));
+});
