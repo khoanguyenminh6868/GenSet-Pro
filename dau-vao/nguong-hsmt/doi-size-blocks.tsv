@@ -1,0 +1,32 @@
+lượt	đổi
+S:IB2200022333#0	minCyl: null → 6
+S:IB2400491226#0	minCyl: null → 6
+H:IB2200070865#0	minCyl: null → 6
+H:IB2200100465#0	minDisp: null → 4.837
+H:IB2300102941#0	minDisp: null → 1.95
+H:IB2300102941#1	minDisp: null → 1.95
+H:IB2300134577#0	minCyl: null → 3
+H:IB2300134577#1	minCyl: null → 3
+H:IB2300163186#2	minDisp: 2.3 → 4.087
+H:IB2300163186#3	minDisp: 2.3 → 9.726
+H:IB2300163844#1	minDisp: null → 2.9
+H:IB2300356962#1	minCyl: null → 4
+H:IB2400100405#0	minDisp: null → 60.2
+H:IB2400145438#2	minPrime: null → {"kVA":12}
+H:IB2400145438#3	minPrime: {"kVA":13.7} → null
+H:IB2400365165#0	maxFuel: 4.5 → null; maxFuel75: null → 4.25
+H:IB2400365165#1	maxFuel: null → 4.5; maxFuel75: null → 4
+H:IB2400375383#0	minCyl: null → 6
+H:IB2400375383#1	minCyl: null → 6
+H:IB2400427929#0	minCyl: null → 4
+H:IB2400427929#1	minCyl: null → 4
+H:IB2400427929#2	minCyl: null → 4
+H:IB2400427929#3	minCyl: null → 4
+H:IB2400448320#0	minCyl: null → 6
+H:IB2400448320#1	minCyl: null → 6
+H:IB2400495696#2	minCyl: 4 → null
+H:IB2500089757#2	minCyl: 4 → null
+H:IB2500114642#0	minCyl: null → 1
+H:IB2500114642#1	minCyl: null → 1
+H:IB2500114642#2	minCyl: null → 6
+H:IB2500222084#0	minDisp: null → 2.29
