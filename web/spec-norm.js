@@ -289,8 +289,14 @@
     if (!r.unit) miss(r, "unit");
     if (!f) return miss(r, "value");
     if (f.amb) return miss(r, "number");
-    if (f.list || f.range) { r.options = f.list || f.range; return miss(r, "ambiguous"); }
-    r.num = f.num;
+    // One displacement in two units (S9 cc-129, 22/11/2026): "23.7 CU. IN. (390 CC)" (gillette): the whole cell is a figure in in³
+    // and a figure in cc, one in brackets. Read only when the two are the SAME volume (`sameVolume`): then the cc figure is read
+    // (an integer written in cc, l_from_cc as S8-1) and r.conv.same keeps the in³ figure. Two volumes that do not meet within
+    // rounding stay "ambiguous", not compared.
+    const two = f.list && f.list.length === 2 ? sameVolume(V) : null;
+    if (two) r.unit = "cc";
+    else if (f.list || f.range) { r.options = f.list || f.range; return miss(r, "ambiguous"); }
+    r.num = two ? two.cc : f.num;
     if (r.unit === "in³" && conv()) {
       const c = conv().compute({ formula: "l_from_cuin", inputs: [{ name: "V_in3", value: r.num }] });
       if (!c.error) { r.conv = { formula: "l_from_cuin", from: { num: r.num, unit: "in³" } }; r.num = c.value; r.unit = "L"; }
@@ -302,9 +308,24 @@
     if (r.unit === "cc" && r.cond.unitFrom !== "default" && (!Number.isInteger(r.num) || r.num < 20)) return miss(r, "number");
     if (r.unit === "cc" && r.cond.unitFrom !== "default" && conv()?.FORMULAS?.l_from_cc) {
       const c = conv().compute({ formula: "l_from_cc", inputs: [{ name: "V_cc", value: r.num }] });
-      if (!c.error) { r.conv = { formula: "l_from_cc", from: { num: r.num, unit: "cc" } }; r.num = c.value; r.unit = "L"; }
+      if (!c.error) { r.conv = { formula: "l_from_cc", from: { num: r.num, unit: "cc" }, ...(two ? { same: { num: two.in3, unit: "in³" } } : {}) }; r.num = c.value; r.unit = "L"; }
     }
     return r;
+  }
+  // "a CU. IN. (b CC)" / "b CC (a CU. IN.)", the whole cell (after NFKC: "in³" / "cm³" are "in3" / "cm3") → { in3: a, cc: b } when
+  // a in³ (l_from_cuin, × 1000) and b cc meet within half a unit of each one's last written digit; an integer's trailing zeros are
+  // not written digits ("390" is 385–395; 23.7 in³ is 387.6–389.2 cc). Else null.
+  const IN3_U = String.raw`(?:cu\.?\s*in\.?|in3|cubic\s*inch(?:es)?)`, CC_U = String.raw`(?:cc|ccm|cm3|ml)`, FIG = String.raw`(\d+(?:\.\d+)?)`;
+  const IN3_CC = new RegExp(String.raw`^${FIG}\s*${IN3_U}\s*[(（]\s*${FIG}\s*${CC_U}\s*[)）]$`, "i");
+  const CC_IN3 = new RegExp(String.raw`^${FIG}\s*${CC_U}\s*[(（]\s*${FIG}\s*${IN3_U}\s*[)）]$`, "i");
+  function sameVolume(v) {
+    const m1 = v.match(IN3_CC), m2 = m1 ? null : v.match(CC_IN3);
+    if ((!m1 && !m2) || !conv()) return null;
+    const [a, b] = m1 ? [m1[1], m1[2]] : [m2[2], m2[1]];
+    const half = (t) => (t.includes(".") ? 0.5 * 10 ** -t.split(".")[1].length : 0.5 * 10 ** (t.length - t.replace(/0+$/, "").length));
+    const cc = (x) => { const c = conv().compute({ formula: "l_from_cuin", inputs: [{ name: "V_in3", value: x }] }); return c.error ? NaN : c.value * 1000; };
+    const lo = cc(+a - half(a)), hi = cc(+a + half(a));
+    return hi >= +b - half(b) && lo <= +b + half(b) ? { in3: +a, cc: +b } : null;
   }
 
   function bore(spec, ctx, r) {
