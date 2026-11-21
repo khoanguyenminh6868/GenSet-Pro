@@ -1,0 +1,334 @@
+[
+ {
+  "key": "AGC",
+  "model": "AGC",
+  "make": "DEIF",
+  "kind": "",
+  "nNcc": 1,
+  "own": [],
+  "sheets": []
+ },
+ {
+  "key": "AGC150",
+  "model": "AGC-150",
+  "make": "DEIF",
+  "kind": "amf",
+  "nNcc": 2,
+  "own": [
+   "deif"
+  ],
+  "sheets": [
+   "deif#1001",
+   "deif#1004"
+  ]
+ },
+ {
+  "key": "AGC200",
+  "model": "AGC-200",
+  "make": "DEIF",
+  "kind": "",
+  "nNcc": 0,
+  "own": [
+   "deif"
+  ],
+  "sheets": [
+   "deif#1002"
+  ]
+ },
+ {
+  "key": "AGC212",
+  "model": "AGC-212",
+  "make": "DEIF",
+  "kind": "",
+  "nNcc": 0,
+  "own": [
+   "deif"
+  ],
+  "sheets": [
+   "deif#1002"
+  ]
+ },
+ {
+  "key": "AGC213",
+  "model": "AGC-213",
+  "make": "DEIF",
+  "kind": "",
+  "nNcc": 0,
+  "own": [
+   "deif"
+  ],
+  "sheets": [
+   "deif#1002"
+  ]
+ },
+ {
+  "key": "AGC222",
+  "model": "AGC-222",
+  "make": "DEIF",
+  "kind": "",
+  "nNcc": 0,
+  "own": [
+   "deif"
+  ],
+  "sheets": [
+   "deif#1002"
+  ]
+ },
+ {
+  "key": "AGC232",
+  "model": "AGC-232",
+  "make": "DEIF",
+  "kind": "",
+  "nNcc": 0,
+  "own": [
+   "deif"
+  ],
+  "sheets": [
+   "deif#1002"
+  ]
+ },
+ {
+  "key": "AGC233",
+  "model": "AGC-233",
+  "make": "DEIF",
+  "kind": "",
+  "nNcc": 0,
+  "own": [
+   "deif"
+  ],
+  "sheets": [
+   "deif#1002"
+  ]
+ },
+ {
+  "key": "AGC242",
+  "model": "AGC-242",
+  "make": "DEIF",
+  "kind": "",
+  "nNcc": 0,
+  "own": [
+   "deif"
+  ],
+  "sheets": [
+   "deif#1002"
+  ]
+ },
+ {
+  "key": "AGC243",
+  "model": "AGC-243",
+  "make": "DEIF",
+  "kind": "",
+  "nNcc": 0,
+  "own": [
+   "deif"
+  ],
+  "sheets": [
+   "deif#1002"
+  ]
+ },
+ {
+  "key": "AGC244",
+  "model": "AGC-244",
+  "make": "DEIF",
+  "kind": "",
+  "nNcc": 0,
+  "own": [
+   "deif"
+  ],
+  "sheets": [
+   "deif#1002"
+  ]
+ },
+ {
+  "key": "AGC245",
+  "model": "AGC-245",
+  "make": "DEIF",
+  "kind": "",
+  "nNcc": 0,
+  "own": [
+   "deif"
+  ],
+  "sheets": [
+   "deif#1002"
+  ]
+ },
+ {
+  "key": "AGC246",
+  "model": "AGC-246",
+  "make": "DEIF",
+  "kind": "",
+  "nNcc": 0,
+  "own": [
+   "deif"
+  ],
+  "sheets": [
+   "deif#1002"
+  ]
+ },
+ {
+  "key": "AGC4",
+  "model": "AGC-4",
+  "make": "DEIF",
+  "kind": "",
+  "nNcc": 0,
+  "own": [
+   "deif"
+  ],
+  "sheets": [
+   "deif#1001",
+   "deif#1004"
+  ]
+ },
+ {
+  "key": "SGC420",
+  "model": "SGC-420",
+  "make": "DEIF",
+  "kind": "amf",
+  "nNcc": 2,
+  "own": [
+   "deif"
+  ],
+  "sheets": [
+   "deif#1003"
+  ]
+ },
+ {
+  "key": "EASYGEN1000",
+  "model": "easYgen-1000",
+  "make": "Woodward",
+  "kind": "",
+  "nNcc": 0,
+  "own": [
+   "woodward"
+  ],
+  "sheets": [
+   "woodward#1001"
+  ]
+ },
+ {
+  "key": "EASYGEN1400",
+  "model": "easYgen-1400",
+  "make": "Woodward",
+  "kind": "amf",
+  "nNcc": 0,
+  "own": [
+   "woodward"
+  ],
+  "sheets": [
+   "woodward#1001"
+  ]
+ },
+ {
+  "key": "EASYGEN1600",
+  "model": "easYgen-1600",
+  "make": "Woodward",
+  "kind": "amf",
+  "nNcc": 0,
+  "own": [
+   "woodward"
+  ],
+  "sheets": [
+   "woodward#1001"
+  ]
+ },
+ {
+  "key": "EASYGEN1700",
+  "model": "easYgen-1700",
+  "make": "Woodward",
+  "kind": "amf",
+  "nNcc": 0,
+  "own": [
+   "woodward"
+  ],
+  "sheets": [
+   "woodward#1001"
+  ]
+ },
+ {
+  "key": "EASYGEN1800",
+  "model": "easYgen-1800",
+  "make": "Woodward",
+  "kind": "amf",
+  "nNcc": 1,
+  "own": [
+   "woodward"
+  ],
+  "sheets": [
+   "woodward#1001"
+  ]
+ },
+ {
+  "key": "EASYGEN3000",
+  "model": "easYgen-3000",
+  "make": "Woodward",
+  "kind": "",
+  "nNcc": 0,
+  "own": [
+   "woodward"
+  ],
+  "sheets": [
+   "woodward#1002"
+  ]
+ },
+ {
+  "key": "EASYGEN3100",
+  "model": "easYgen-3100",
+  "make": "Woodward",
+  "kind": "sync",
+  "nNcc": 0,
+  "own": [
+   "woodward"
+  ],
+  "sheets": [
+   "woodward#1003"
+  ]
+ },
+ {
+  "key": "EASYGEN3200",
+  "model": "easYgen-3200",
+  "make": "Woodward",
+  "kind": "sync",
+  "nNcc": 0,
+  "own": [
+   "woodward"
+  ],
+  "sheets": [
+   "woodward#1003"
+  ]
+ },
+ {
+  "key": "EASYGEN3400",
+  "model": "easYgen-3400",
+  "make": "Woodward",
+  "kind": "sync",
+  "nNcc": 0,
+  "own": [
+   "woodward"
+  ],
+  "sheets": [
+   "woodward#1002"
+  ]
+ },
+ {
+  "key": "EASYGEN3500",
+  "model": "easYgen-3500",
+  "make": "Woodward",
+  "kind": "sync",
+  "nNcc": 0,
+  "own": [
+   "woodward"
+  ],
+  "sheets": [
+   "woodward#1002"
+  ]
+ },
+ {
+  "key": "EASYGEN3500XT",
+  "model": "easYgen-3500XT",
+  "make": "Woodward",
+  "kind": "sync",
+  "nNcc": 1,
+  "own": [],
+  "sheets": []
+ }
+]
