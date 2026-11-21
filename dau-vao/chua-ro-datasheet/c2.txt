@@ -1,0 +1,169 @@
+lượt 17 | lưu 2026-11-21T03:54:13.398Z | cấu hình 7
+{"engine":{"src":{"n":107,"kind":"catalog","line":"| B825E5 | 825/660 | 750/600 | 6M31G825/5","supplierId":"agg-fuzhou"},"make":"Baudouin","model":"6M31G825/5"},"alternator":{"kva":820,"src":{"n":1012,"url":"https://www.leroy-somer.com/documentation_pdf/5279_en.pdf","kind":"maker","lines":["Ratings 50 Hz - 1 500 R.P.M.","kVA / kW - P.F. = 0.8","| Duty/T°C | Continuous duty/40°C | Continuous duty/40°C | Stand-by/40°C | Stand-by/27°C","| Class/T°K | H/125°K | F/105°K | H/150°K | H/163°K","| Phase | 3 ph. | 3 ph. | 3 ph. | 3 ph.","| Y | 380V | 400V | 415V | 440V | 380V | 400V | 415V | 440V | 380V | 400V | 415V | 440V | 380V | 400V | 415V | 440V","| LSA 49.3 M8 | kVA | 820 | 820 | 820 | 810 | 760 | 760 | 760 | 710 | 910 | 910 | 910 | 885 | 945 | 945 | 945 | 925","| kW | 656 | 656 | 656 | 648 | 608 | 608 | 608 | 568 | 728 | 728 | 728 | 708 | 756 | 756 | 756 | 740"],"supplierId":"leroy-somer-fuzhou"},"make":"Leroy-Somer","model":"LSA 49.3 M8","rating":"Continuous cấp H 125 K / 40 °C, 50 Hz, 3 pha, 380 V","options":[{"line":"| Excitation system | AREP / PMG","what":"Kích từ","value":"AREP / PMG"},{"line":"| AVR type | D350","what":"AVR","value":"D350"}],"fromMaker":true},"controller":{"src":{"n":1001,"kind":"maker","supplierId":"deep-sea-electronics"},"make":"Deep Sea","label":"Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào","model":"DSE7320 MKII","modules":[{"why":["4G","Internet","Ethernet"],"make":"Deep Sea","label":"Mô-đun chọn theo tài liệu hãng, NCC chưa chào","model":"DSE890 MKII","order":"0890-04","compat":{"n":1001,"by":"controller","line":"| DSE890 MKII | DSEWebNet® Gateway | 0890-04","supplierId":"deep-sea-electronics"},"offeredBy":null}],"fromMaker":true},"suppliers":[{"n":107,"why":"Chào đúng động cơ, chưa ghi đầu phát và bộ điều khiển","line":"| B825E5 | 82
+{ met: 17, unclear: 17, confirm: 17 }
+
+[genset/unclear] Tần số
+  YC: 50 Hz
+  chào:  | ghi chú: 
+
+[genset/unclear] Tiêu hao nhiên liệu 100% tải
+  YC: ≤ 156 lít/giờ
+  chào:  | ghi chú: 
+
+[genset/unclear] Tiêu hao nhiên liệu 75% tải
+  YC: ≤ 113 lít/giờ ở 70% tải
+  chào:  | ghi chú: 
+
+[genset/confirm/code/vo-may/order] Kích thước
+  YC: Có vỏ giảm âm ≤ 5800 x 2000 x 2800 mm
+  chào:  | ghi chú: Code ghi: nguồn của cấu hình không ghi số này; kích thước, khối lượng, độ ồn, nhiệt độ làm việc phụ thuộc vỏ cách âm / két nước do nhà lắp ráp chọn khi đặt hàng (Khoa 11/
+
+[genset/confirm/order] Loại tổ máy (trần / vỏ cách âm, cố định / di động)
+  YC: Diesel di động, có vỏ giảm âm, đồng bộ
+  chào:  | ghi chú: 
+
+[genset/confirm/order] Điện áp
+  YC: 380/220 V
+  chào:  | ghi chú: 
+
+[genset/confirm/order] Số pha
+  YC: 3 pha – 4 dây
+  chào:  | ghi chú: 
+
+[genset/unclear] Tiêu hao nhiên liệu 50% tải
+  YC: ≤ 77 lít/giờ
+  chào:  | ghi chú: 
+
+[genset/unclear] Nhận tải một bước
+  YC: Đóng tải 0% đến 100% trong vòng 20 giây
+  chào:  | ghi chú: 
+
+[genset/unclear] Nhiên liệu
+  YC: Dầu diesel
+  chào:  | ghi chú: 
+
+[genset/confirm/code/vo-may/order] Nhiệt độ môi trường làm việc
+  YC: 0 đến 45 °C
+  chào:  | ghi chú: Code ghi: nguồn của cấu hình không ghi số này; kích thước, khối lượng, độ ồn, nhiệt độ làm việc phụ thuộc vỏ cách âm / két nước do nhà lắp ráp chọn khi đặt hàng (Khoa 11/
+
+[genset/confirm/document] Tiêu chuẩn, chứng nhận tổ máy (ISO 3046, IEC 60034, CE, ISO 9001)
+  YC: TCVN 9729:2013 (ISO 8528) hoặc tương đương
+  chào:  | ghi chú: 
+
+[genset/confirm/document] Thử nghiệm mẫu (prototype test)
+  YC: Biên bản thử nghiệm điển hình do đơn vị độc lập phát hành
+  chào:  | ghi chú: 
+
+[genset/confirm/order] Bồn nhiên liệu
+  YC: ≥ 1.000 lít, lắp chung trên máy
+  chào:  | ghi chú: 
+
+[genset/confirm/code/vo-may/order] Độ ồn
+  YC: ≤ 70 ± 5 dB cách 7 m
+  chào:  | ghi chú: Code ghi: nguồn của cấu hình không ghi số này; kích thước, khối lượng, độ ồn, nhiệt độ làm việc phụ thuộc vỏ cách âm / két nước do nhà lắp ráp chọn khi đặt hàng (Khoa 11/
+
+[genset/confirm/order] Vỏ cách âm
+  YC: Thép dày ≥ 2 mm, vật liệu cách âm 100÷150 mm
+  chào:  | ghi chú: 
+
+[genset/confirm/order] Ắc quy
+  YC: 02 bình ≥ 120 Ah, 24 V, có bộ sạc
+  chào:  | ghi chú: 
+
+[genset/confirm/order] Áp-tô-mát / MCCB đầu ra
+  YC: MCCB/ACB 1.250 A
+  chào:  | ghi chú: 
+
+[genset/unclear] Hệ thống xả, giảm thanh, lưu lượng khí xả
+  YC: Có bình giảm thanh đồng bộ
+  chào:  | ghi chú: 
+
+[engine/unclear] Hệ thống nhiên liệu (phun)
+  YC: Phun trực tiếp, điều khiển điện tử (ECU, common rail cao áp)
+  chào:  | ghi chú: 
+
+[engine/unclear] Tốc độ quay
+  YC: ≤ 1.500 vòng/phút
+  chào:  | ghi chú: 
+
+[engine/unclear] Xuất xứ động cơ
+  YC: Nhà sản xuất / nhãn hiệu thuộc nhóm G7, EU
+  chào: Baudouin | ghi chú: Dòng của nhà cung cấp không ghi hãng, cần CO
+
+[engine/unclear] Công suất động cơ
+  YC: Liên tục ≥ 600 kWm; tối đa ≥ 660 kWm
+  chào:  | ghi chú: 
+
+[engine/unclear] Kiểu động cơ
+  YC: Diesel 4 kỳ, làm mát bằng nước
+  chào:  | ghi chú: 
+
+[engine/unclear] Tiêu chuẩn khí thải
+  YC: Phù hợp QCVN 19:2024/BTNMT
+  chào: Miễn trừ khí thải phi đường bộ | ghi chú: Chưa rõ đáp ứng QCVN 19:2024, cần NCC xác nhận
+
+[engine/confirm/code/khoi-dong-lam-mat/order] Hệ thống khởi động
+  YC: Mô tơ DC, kèm ắc quy 24 V
+  chào:  | ghi chú: Code ghi: nguồn của cấu hình không ghi điểm này; ắc quy, bộ sạc, két nước và quạt do nhà lắp ráp chọn theo đơn hàng (Khoa 11/11).
+
+[controller/confirm/code/bdk-hang/document] Xuất xứ bộ điều khiển
+  YC: Nhà sản xuất / nhãn hiệu thuộc nhóm G7, EU
+  chào: Bộ điều khiển DSE7320 MKII | ghi chú: Bộ điều khiển chọn theo tài liệu hãng, NCC chưa chào: cần NCC xác nhận xuất xứ (CO) của bộ điều khiển.
+
+[controller/unclear] Khởi động, dừng, tự động cấp điện (AMF)
+  YC: Kết hợp ATS, khởi động / dừng, dừng khẩn cấp, chọn chế độ
+  chào: Đạt 4/5 | ghi chú: Chưa rõ: Cài đặt, hiệu chỉnh tần số qua hệ thống điều tốc.
+    - unclear: Cài đặt, hiệu chỉnh tần số qua hệ thống điều tốc | Tài liệu hãng không nêu, cần NCC xác nhận
+
+[controller/unclear] Đo lường, hiển thị
+  YC: Đo thông số chung, đầu phát, động cơ
+  chào: Đạt 3/12 | ghi chú: Chưa rõ: Số giờ vận hành máy, Số lần khởi động máy, Công suất tác dụng, công suất biểu kiến, Hệ số công suất, Tốc độ động cơ, Nhiệt độ nước làm mát, Điện áp acquy, Nhiệt 
+    - unclear: Số giờ vận hành máy | 
+    - unclear: Số lần khởi động máy | 
+    - unclear: Công suất tác dụng, công suất biểu kiến | 
+    - unclear: Hệ số công suất | 
+    - unclear: Tốc độ động cơ | 
+    - unclear: Nhiệt độ nước làm mát | 
+    - unclear: Điện áp acquy | 
+    - unclear: Nhiệt độ, áp suất bôi trơn | 
+    - unclear: Mức nhiên liệu trong thùng chứa | 
+
+[controller/unclear] Cảnh báo, nhật ký sự kiện
+  YC: Nhật ký lỗi và các cảnh báo
+  chào: Đạt 0/8 | ghi chú: Chưa rõ: Nhật ký lỗi, Nhiệt độ nước làm mát cao, Áp lực dầu nhớt thấp, Sự cố cảm biến áp suất nhớt, Sự cố cảm biến nhiệt độ, Mức nhiên liệu thấp / hết nhiên liệu, Ắc quy 
+    - unclear: Nhật ký lỗi | Tài liệu hãng chỉ nêu ghi dữ liệu, chưa nêu nhật ký lỗi
+    - unclear: Nhiệt độ nước làm mát cao | 
+    - unclear: Áp lực dầu nhớt thấp | 
+    - unclear: Sự cố cảm biến áp suất nhớt | 
+    - unclear: Sự cố cảm biến nhiệt độ | 
+    - unclear: Mức nhiên liệu thấp / hết nhiên liệu | 
+    - unclear: Ắc quy yếu / điện áp DC cao/thấp | 
+    - unclear: Quá dòng / cắt tải khi quá tải | 
+
+[controller/unclear] Bảo vệ, dừng máy
+  YC: Dừng máy bảo vệ theo danh mục
+  chào: Đạt 1/13 | ghi chú: Chưa rõ: Nhiệt độ nước làm mát cao, Áp lực dầu nhớt thấp, Vượt tốc, Mức nước làm mát thấp, Tần số quá cao/quá thấp, Điện áp AC quá cao/quá thấp, Sai lệch điện áp AC giữa 
+    - unclear: Nhiệt độ nước làm mát cao | 
+    - unclear: Áp lực dầu nhớt thấp | 
+    - unclear: Vượt tốc | 
+    - unclear: Mức nước làm mát thấp | 
+    - unclear: Tần số quá cao/quá thấp | 
+    - unclear: Điện áp AC quá cao/quá thấp | 
+    - unclear: Sai lệch điện áp AC giữa các pha | 
+    - unclear: Quá dòng | 
+    - unclear: Lệch pha | 
+    - unclear: Vượt công suất | 
+    - unclear: Phát ngược công suất | 
+    - unclear: Ngắn mạch | 
+
+[controller/confirm/order] Ngôn ngữ, màn hình bộ điều khiển
+  YC: LCD, tiếng Việt hoặc tiếng Anh
+  chào: Màn hình LCD, nhiều ngôn ngữ | ghi chú: Chưa nêu rõ tiếng Việt / tiếng Anh, cần NCC xác nhận
+
+[alternator/confirm/code/document] Tiêu chuẩn đầu phát
+  YC: ISO 8528-3, IEC 60034, NEMA MG 1.32-33, BS 5514/1
+  chào:  | ghi chú: Code ghi: nguồn của cấu hình không nói tới điểm này.
+
+[alternator/confirm/code/order] Điều chỉnh điện áp (AVR)
+  YC: Tự động ổn định điện áp bằng AVR
+  chào:  | ghi chú: Code ghi: nguồn của cấu hình không nói tới điểm này.
