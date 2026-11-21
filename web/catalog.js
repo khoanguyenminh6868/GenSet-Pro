@@ -1771,9 +1771,16 @@
   // first line's cells up to "Cylinder" do line up (the second line puts "Engine" over cell 5, the engine of every record).
   // Read only for the table's engine records whose `engCell` is the record's engine, when the header cells named in `titles`
   // are word for word those (a re-crawl with another header lapses, noted) and the value has the key's shape.
+  // S6-6 (Khoa 21/11/2026 "làm các cột còn lại"): "kWm 1500 rpm" / "kWm 1800 rpm" → two `engPower` figures, each with its own
+  // label (spec-norm takes the speed from the label: cond.rpm 1500 / 1800), so neither overwrites the other. NOT read:
+  // "cm3" (spec-norm reads the unit cc but has no cc → L formula; config-bot's majority reads a cc figure as BLOCK, so 224 cc
+  // values took the displacement majority away from QSK60-G4, TAD1650GE, 1506A-E88TAG4: waits for a decision on a cc → L formula),
+  // "Aspiration" (cells "N" / "T", no legend on the pages, the shape `asp` asks for is not met) and "Cons. 70%" (the catalog has
+  // fuel at 100 / 75 / 50 % load only). A dash cell ("--", "- - -") is no value.
   const COLUMN_SPECS = [
-    { supplierId: "tecnogen", n: [2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010], why: "điều phối 21/11/2026 (S6-1)",
-      titles: [[0, 7, "Cylinder"], [1, 5, "Engine"]], engCell: 5, specs: [["cyl", 7, "Cylinder"]] },
+    { supplierId: "tecnogen", n: [2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010], why: "điều phối 21/11/2026 (S6-1, S6-6)",
+      titles: [[0, 7, "Cylinder"], [0, 9, "kWm 1500 rpm"], [0, 10, "kWm 1800 rpm"], [1, 5, "Engine"]], engCell: 5,
+      specs: [["cyl", 7, "Cylinder"], ["engPower", 9, "kWm 1500 rpm"], ["engPower", 10, "kWm 1800 rpm"]] },
   ];
   function columnSpecs(s, list, note) {
     const ex = COLUMN_SPECS.filter((x) => x.supplierId === s.id);
@@ -1787,7 +1794,7 @@
       const add = [];
       for (const [key, i, label] of x.specs) {
         const v = specVal(cells[i]);
-        if (!v || (o.specs || []).some((sp) => sp.key === key)) continue;
+        if (!v || /^[-–—\s]+$/.test(v) || [...(o.specs || []), ...add].some((sp) => sp.key === key && (key !== "engPower" || sp.label === label))) continue;
         if (!specFits(key, v)) { note(t, o.table, o.row ?? null, "thông số không đúng dạng: để trống", `${key}=${v}`); continue; }
         add.push({ key, label, value: v });
       }
