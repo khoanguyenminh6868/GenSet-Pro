@@ -1,0 +1,27 @@
+
+## IB2300162912#0 cap 750; 6 dòng; luật layout,disp; cỡ trong HSMT 2500,2275,750,825; top30: 0
+   minDisp 78: mục 2500 ≠ cỡ 750 «nh xy lanh ≥170mm; hành trình piston ≥215mm; dung tích buồng đốt ≥78 lít; tỷ số nén ≥15,5:1 Phần I - Máy »
+   máy: SC33G1150D2, 8M33G770/6, 12M26G704/6, 6M31G700/6
+   câu của đúng cỡ: (không có)
+
+## IB2300260615#1 cap 2000; 25 dòng; luật maxDisp; cỡ trong HSMT 500,2000; top30: 6
+   maxDisp 20: mục 500 ≠ cỡ 2000 « mát khí nạp Phần 1 - Máy 500 kVA: Động cơ - dung tích xi lanh: < 20 lít Phần 1 - Máy 500 kVA: Động cơ - »
+   máy: 20M33G2000/6, 20M33G2250/5, 12M55G2250/6, 20M33G2200/6, 12M55G2550/5
+   câu của đúng cỡ: (không có)
+
+## IB2400275648#1 cap 60; 2 dòng; luật disp; cỡ trong HSMT 30,60,0.5; top30: 2
+   maxDisp 8: không thấy số trong câu dung tích
+   máy: 4M10G4D0/S, 4M10G2D0/S
+   câu của đúng cỡ: (không có)
+
+## IB2500372309#0 cap 630; 3 dòng; luật disp; cỡ trong HSMT 630,700; top30: 0
+   minDisp 25: mục 700 ≠ cỡ 630 «át điện; kiểu xi lanh V-12 hoặc tương đương; dung tích xi lanh ≥ 25 L Động cơ: Tốc độ, nhiên liệu, công s»
+   máy: 6M31G750/5, 6M33G4D5/S
+   câu của đúng cỡ: (không có)
+
+## IB2500464050#0 cap 750; 4 dòng; luật disp; cỡ trong HSMT 750; top30: 0
+   minDisp 29.7: không thấy số trong câu dung tích
+   máy: 8M33G770/6, 6M31G700/6
+   câu của đúng cỡ: Máy phát điện 750 kVA: Động cơ - đường kính xilanh x hành trình piston: ≥ 170 x 220 mm ¦ Máy phát điện 750 kVA: Động cơ - dung tích xilanh: 30 L ± 1% ¦ Máy phát điện 750 kVA: Động cơ - số xilanh, cách bố trí: ≥ 6, thẳng hàng
+
+Lượt: 80 | HSMT nhiều cỡ: 63 | cần xem: 5

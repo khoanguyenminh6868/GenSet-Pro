@@ -1,7 +1,7 @@
 # Vì sao 6M31G825/5 ngoài 30 ứng viên (IB2600603983), 21/11/2026
 
-**Trạng thái: BẢN DỞ.** Đã kiểm: nguyên nhân trên gói này, bản sửa tỉ số nén chạy thật trên gói này, 44 test liên quan.
-**Chưa kiểm:** ảnh hưởng lên toàn bộ gói (đang đo, 928 gói), toàn bộ test `suppliers/*.test.mjs`. Mã sửa ở nhánh `cand-ti-so-nen` (worktree `wt-cand-compr`), CHƯA commit, CHƯA merge.
+**Trạng thái:** mã sửa ở PR draft [#1062](https://github.com/khoanguyenminh6868/GenSet-Pro/pull/1062), SHA d0edb654, CHƯA merge. Đã kiểm: nguyên nhân và `prep` thật trên gói này, toàn bộ test `suppliers/*.test.mjs` (1435/1435).
+**Chưa kiểm:** top 30 trên toàn bộ lượt (điều phối giao phiên đo). Mục "Việc còn lại" số 2 đã sửa trong PR: `6M33G8D3/5` và mã có tiền tố nước; sau sửa Baudouin = #6 6M33G750/5 kaihua, #9 6M31G825/5 voltgent, #22 6M31G825/5 weichai.
 
 ## Kết luận
 

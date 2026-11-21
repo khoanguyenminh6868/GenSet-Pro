@@ -1,0 +1,59 @@
+Dòng mất theo cloud: 1087 | không còn bị loại ở code mới: 26
+[["longkai-power QSB39G2",16],["longkai-power QSB67G3",9],["longkai-power 6M33D633E200",1]]
+Dòng có luật hình học: 292 | chỉ luật hình học: 285
+
+Động cơ: 45 | không điểm lệch: 43 | cần xem: 2
+
+== Cần xem
+20M33G2250/5 (6 dòng, 6 NCC; maxDisp:6) xi lanh 20 (3), dung tích 65.4 (1), 150*185 = 65.38 L, tờ hãng 20 xl - L
+   LỆCH: xi lanh nguồn ghi [[20,2],[16,1]]
+WD145TAD35 (2 dòng, 2 NCC; cyl:2) xi lanh 6 (5), dung tích 14.5 (2), 138*160 = 14.36 L, tờ hãng - xl 14.5 L
+   LỆCH: xi lanh nguồn ghi [[6,4],[12,1]]
+
+== Không điểm lệch
+8M21G660/5 (42 dòng, 2 NCC; maxDisp:12,cyl:37,disp:15) xi lanh 8 (1), dung tích 16.72 (1), 127*165 = 16.72 L, tờ hãng - xl - L
+6M31G660/5 (24 dòng, 2 NCC; maxDisp:9,disp:11,cyl:9) xi lanh 6 (2), dung tích 18.5 (1), 149*177 = 18.52 L, tờ hãng - xl - L
+8M33G770/6 (24 dòng, 3 NCC; cyl:18,disp:9,maxDisp:3) xi lanh 8 (1), dung tích 26.1 (1), -, tờ hãng - xl - L
+6M31G750/5 (16 dòng, 2 NCC; disp:8,cyl:10,maxDisp:3) xi lanh 6 (2), dung tích 18.5 (1), 149*177 = 18.52 L, tờ hãng - xl - L
+6M31G528/6 (15 dòng, 1 NCC; maxDisp:4,disp:7,cyl:8) xi lanh 6 (2), dung tích 18.5 (1), 149*177 = 18.52 L, tờ hãng - xl - L
+6M11G4D0/S (15 dòng, 3 NCC; maxDisp:11,disp:4) xi lanh 6 (1), dung tích 6.75 (1), 105*130 = 6.75 L, tờ hãng - xl - L
+6M11G2D0/S (11 dòng, 4 NCC; maxDisp:10,disp:1) xi lanh 6 (1), dung tích 6.75 (1), 105*130 = 6.75 L, tờ hãng - xl - L
+20M33G2000/6 (10 dòng, 10 NCC; maxDisp:10) xi lanh 20 (3), dung tích 65.4 (1), 150*185 = 65.38 L, tờ hãng 20 xl - L
+6M33G4D5/S (9 dòng, 1 NCC; maxDisp:2,cyl:5,disp:3) xi lanh 6 (1), dung tích 19.6 (1), 150*185 = 19.62 L, tờ hãng - xl - L
+SC33G1150D2 (8 dòng, 1 NCC; cyl:7,layout:6) xi lanh 6 (1), dung tích - (0), 180*215 = 32.83 L, tờ hãng - xl - L
+6M31G700/6 (8 dòng, 1 NCC; disp:5,cyl:6) xi lanh 6 (2), dung tích 18.5 (1), 149*177 = 18.52 L, tờ hãng - xl - L
+4M06G6D0/S (8 dòng, 4 NCC; disp:8) xi lanh 4 (1), dung tích 2.3 (1), 89*92 = 2.29 L, tờ hãng - xl - L
+6BT5.9-G2-96KW (6 dòng, 2 NCC; cyl:6) xi lanh 6 (1), dung tích 5.9 (1), 102*120 = 5.88 L, tờ hãng - xl - L
+6M16G6D0/S (6 dòng, 3 NCC; maxDisp:6) xi lanh 6 (1), dung tích 9.7 (1), 126*130 = 9.73 L, tờ hãng - xl - L
+4M10G6D0/S (6 dòng, 3 NCC; disp:3,cyl:3) xi lanh 4 (1), dung tích 4.1 (1), 105*118 = 4.09 L, tờ hãng - xl - L
+4M10G4D0/S (6 dòng, 2 NCC; cyl:3,disp:5) xi lanh 4 (1), dung tích 4.1 (1), 105*118 = 4.09 L, tờ hãng - xl - L
+6M31G725/5 (6 dòng, 4 NCC; maxDisp:6) xi lanh 6 (4), dung tích 18.5 (1), 149*177 = 18.52 L, tờ hãng 6 xl - L
+4M06G10D0/S (5 dòng, 3 NCC; disp:5) xi lanh 4 (1), dung tích 2.3 (1), 89*92 = 2.29 L, tờ hãng - xl - L
+12M55G2550/5 (5 dòng, 5 NCC; maxDisp:5) xi lanh 12 (2), dung tích 65.6 (1), 180*215 = 65.65 L, tờ hãng - xl - L
+6M16G2D0/S (4 dòng, 3 NCC; maxDisp:2,disp:2) xi lanh 6 (1), dung tích 9.7 (1), 126*130 = 9.73 L, tờ hãng - xl - L
+6M21G8D0/S (4 dòng, 2 NCC; disp:4) xi lanh 6 (1), dung tích 12.54 (1), 127*165 = 12.54 L, tờ hãng - xl - L
+12M26G704/6 (4 dòng, 1 NCC; disp:1,maxDisp:1,cyl:2) xi lanh 12 (1), dung tích 31.8 (1), 150*150 = 31.81 L, tờ hãng - xl - L
+4M06G4D0/S (4 dòng, 2 NCC; disp:4) xi lanh 4 (1), dung tích 2.3 (1), 89*92 = 2.29 L, tờ hãng - xl - L
+4M06G8D0/S (4 dòng, 2 NCC; disp:4) xi lanh 4 (1), dung tích 2.3 (1), 89*92 = 2.29 L, tờ hãng - xl - L
+4M06G2D0/S (3 dòng, 1 NCC; disp:2,cyl:1) xi lanh 4 (1), dung tích 2.3 (1), 89*92 = 2.29 L, tờ hãng - xl - L
+6M31G580/6 (3 dòng, 3 NCC; maxDisp:3) xi lanh 6 (4), dung tích 18.5 (1), 149*177 = 18.52 L, tờ hãng 6 xl - L
+6M31G600/6 (3 dòng, 3 NCC; maxDisp:3) xi lanh 6 (4), dung tích 18.5 (1), 149*177 = 18.52 L, tờ hãng 6 xl - L
+6M31G660/6 (3 dòng, 3 NCC; maxDisp:3) xi lanh 6 (4), dung tích 18.5 (1), 149*177 = 18.52 L, tờ hãng 6 xl - L
+4BTA3.9-G2-58KW (2 dòng, 1 NCC; cyl:2) xi lanh 4 (1), dung tích - (0), 102*120 = 3.92 L, tờ hãng - xl - L
+4M10G2D0/S (2 dòng, 2 NCC; disp:2) xi lanh 4 (1), dung tích 4.1 (1), 105*118 = 4.09 L, tờ hãng - xl - L
+12M55G2250/6 (2 dòng, 2 NCC; maxDisp:2) xi lanh 12 (3), dung tích 65.6 (1), 180*215 = 65.65 L, tờ hãng 12 xl - L
+20M33G2200/6 (2 dòng, 2 NCC; maxDisp:2) xi lanh 20 (3), dung tích 65.4 (1), 150*185 = 65.38 L, tờ hãng 20 xl - L
+16M33G1400/6 (2 dòng, 1 NCC; cyl:2) xi lanh 16 (1), dung tích 52.3 (1), -, tờ hãng - xl - L
+6M33G8D2/5 (2 dòng, 2 NCC; maxDisp:2) xi lanh 6 (2), dung tích 19.6 (1), 150*185 = 19.62 L, tờ hãng 6 xl - L
+6M21G2D0/S (2 dòng, 1 NCC; maxDisp:1,disp:1) xi lanh 6 (1), dung tích 12.54 (1), 127*165 = 12.54 L, tờ hãng - xl - L
+6HTAA6.5-G21 (1 dòng, 1 NCC; layout:1) xi lanh 6 (3), dung tích 6.5 (3), 105*124 = 6.44 L, tờ hãng - xl - L
+12M26G2D0/S (1 dòng, 1 NCC; cyl:1) xi lanh 12 (1), dung tích 31.8 (1), 150*150 = 31.81 L, tờ hãng - xl - L
+6M33G6D2/5 (1 dòng, 1 NCC; maxDisp:1) xi lanh 6 (2), dung tích 19.6 (1), 150*185 = 19.62 L, tờ hãng 6 xl - L
+6M33G8D2/6 (1 dòng, 1 NCC; maxDisp:1) xi lanh 6 (2), dung tích 19.6 (1), 150*185 = 19.62 L, tờ hãng 6 xl - L
+6BT5.9-G2-86KW (1 dòng, 1 NCC; cyl:1) xi lanh 6 (1), dung tích - (0), 102*120 = 5.88 L, tờ hãng - xl - L
+16M55G3000/5 (1 dòng, 1 NCC; maxDisp:1) xi lanh 16 (3), dung tích 87.5 (1), 180*215 = 87.54 L, tờ hãng - xl - L
+16M55G3300/5 (1 dòng, 1 NCC; maxDisp:1) xi lanh 16 (3), dung tích 87.5 (1), 180*215 = 87.54 L, tờ hãng 16 xl - L
+6M16G4D0/S (1 dòng, 1 NCC; disp:1) xi lanh 6 (1), dung tích 9.7 (1), 126*130 = 9.73 L, tờ hãng - xl - L
+
+== Ngưỡng HSMT 1 xi lanh
+IB2200035219#0 ade-power 4M06G2D0/S 
