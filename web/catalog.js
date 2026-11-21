@@ -2064,6 +2064,12 @@
   const V_CODE_BRANDS = [...ENGINE_BRANDS, ...ALT_CELL_BRANDS];
   const V_MAKE_TAIL = /^(penta|deere|somer|alte|petter|wilson|infracore)$/i;
   const V_GENERIC = /^(engine|model|brand|type|make|motor|heavy|industries|industry|power|co|ltd|corp|inc|group|company|manufacturer|by)\.?$/i;
+  // CLOSED lists (điều phối 21/11/2026, PR #1058; not rules: add a word only when a real cell needs it). An ALL-CAPS word
+  // after the make that names a factory / another maker (V_MAKER_ALIAS: "Cummins CCEC 6BT5.9-G2", "Mitsubishi MHI …") or a
+  // country / legal form (V_PLACE: "Perkins UK 1106A-70TAG4", "Perkins EU 1104A-44TG1", "Yanmar JAPAN 3TNV88") is not part
+  // of the code and goes, even before a code that starts with a digit.
+  const V_MAKER_ALIAS = /^(ccec|dcec|xcec|mhi|sme)$/i;
+  const V_PLACE = /^(uk|usa|us|eu|prc|japan|jp|china|germany|india|korea|italy|france|sweden|ltd|inc|co|ag|gmbh)\.?$/i;
   // A part's code in a value cell: brand words, then one code ("CCEC Cummins NTA855-G2A", "PERKINS , 1106A－70TAG4"). Full-width
   // characters are read by NFKC as keyOf does ("－" is "-"). Choices ("or equivalent", "Series", "a / b") are no code.
   function verticalCode(v) {
@@ -2083,7 +2089,7 @@
       run++;
     }
     let i = last || run;
-    if (last) while (i < run && (V_MAKE_TAIL.test(words[i]) || V_GENERIC.test(words[i]) || /[a-z]/.test(words[i]) || !/[A-Z]/.test(words[i]) || !/^\d/.test(words[run]))) i++;
+    if (last) while (i < run && (V_MAKE_TAIL.test(words[i]) || V_GENERIC.test(words[i]) || V_MAKER_ALIAS.test(words[i]) || V_PLACE.test(words[i]) || brandIn(words[i], V_CODE_BRANDS).length || /[a-z]/.test(words[i]) || !/[A-Z]/.test(words[i]) || !/^\d/.test(words[run]))) i++;
     const code = words.slice(i).join(" ");
     return isCode(code) ? { code, brand: words.slice(0, i).join(" ") } : null;
   }

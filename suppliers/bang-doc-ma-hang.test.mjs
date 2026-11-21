@@ -46,9 +46,22 @@ test("sau tên hãng vẫn bóc từ chung / chữ thường / không chữ; ch�
   // giữ: từ toàn hoa ngay trước mã bắt đầu bằng số là phần của mã
   assert.deepEqual(engineOf("Kubota V 2203"), ["V 2203", "Kubota"]);
   assert.deepEqual(engineOf("KOHLER KDW 702"), ["KDW 702", "Kohler"]); // bruno n101
-  // ca mơ hồ: "UK" toàn hoa, 2 chữ, trước mã bắt đầu bằng số → luật GIỮ (không phân biệt được nước với tiền tố dòng);
-  // 0 ô thật trong cn/ có dạng này (đếm 21/11/2026), nêu trong mô tả PR #1058
-  assert.deepEqual(engineOf("Perkins UK 1106A-70TAG4"), ["UK 1106A-70TAG4", "Perkins"]);
+  assert.deepEqual(engineOf("KOHLER LDW 702"), ["LDW 702", "Kohler"]); // bruno n103
+  assert.deepEqual(engineOf("Volvo TAD 1342GE-B"), ["TAD 1342GE-B", "Volvo Penta"]); // energy-gruppi n2007
+  assert.deepEqual(engineOf("Weichai WP10D238E200"), ["WP10D238E200", "Weichai"]);
+});
+
+test("danh sách đóng (điều phối 21/11/2026): tên nhà máy / hãng khác, mã nước, pháp nhân sau tên hãng bị bóc", () => {
+  assert.deepEqual(engineOf("Cummins CCEC 6BT5.9-G2"), ["6BT5.9-G2", "Cummins"]);
+  assert.deepEqual(engineOf("Cummins DCEC 6BTA5.9-G2"), ["6BTA5.9-G2", "Cummins"]);
+  assert.deepEqual(engineOf("Cummins USA 6BT5.9-G2"), ["6BT5.9-G2", "Cummins"]);
+  assert.deepEqual(engineOf("John Deere USA 4045HF158"), ["4045HF158", "John Deere"]);
+  assert.deepEqual(engineOf("Yanmar JAPAN 3TNV88"), ["3TNV88", "Yanmar"]);
+  assert.deepEqual(engineOf("Perkins UK 1106A-70TAG4"), ["1106A-70TAG4", "Perkins"]);
+  assert.deepEqual(engineOf("Perkins UK Ltd 1106A-70TAG4"), ["1106A-70TAG4", "Perkins"]);
+  assert.deepEqual(engineOf("Perkins EU 1104A-44TG1"), ["1104A-44TG1", "Perkins"]);
+  assert.deepEqual(engineOf("Cummins SDEC SC9D340D2")?.[0], "SC9D340D2"); // từ tự là tên hãng (brandIn) đứng sau hãng khác
+  assert.deepEqual(engineOf("Mitsubishi MHI S6R2-PTA"), ["S6R2-PTA", "Mitsubishi"]);
 });
 
 test("đầu phát: Leroy Somer LSA 46.3, Stamford HCI 444D giữ tiền tố dòng", () => {
