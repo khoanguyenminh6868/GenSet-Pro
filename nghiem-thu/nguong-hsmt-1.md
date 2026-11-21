@@ -35,7 +35,7 @@
 - Các ca code không đặt ngưỡng vì nguồn ghi hai số cùng một mức tải (không loại thêm dòng): IB2300349583#0 75% ("bắt buộc ≤ 5,5", "nâng cao ≤ 4,5"), IB2200020538#0 (hai bậc điểm), IB2400365165#0 75% (4,25 và 4).
 
 **Trình Khoa (không tự quyết):**
-1. IB2500403535: HSMT ghi hai số cùng 75% tải: #0 "≤ 2,6 (MRQ)" và "≤ 2.5 (RQ)", #1 "≤ 4 (MRQ)" và "≤ 3,5 (RQ)". Main lấy 2,5 / 3,5 do gán nhầm; bản cuối KHÔNG có ngưỡng 75% ở hai lượt này. Khoa muốn lấy số nào, hay giữ không lọc?
+1. IB2500403535: HSMT ghi hai số cùng 75% tải: #0 "≤ 2,6 (MRQ)" và "≤ 2.5 (RQ)", #1 "≤ 4 (MRQ)" và "≤ 3,5 (RQ)". Main lấy 2,5 / 3,5 do gán nhầm; `2b199862` KHÔNG có ngưỡng 75% ở hai lượt này. **Khoa quyết 21/11/2026: lấy số RQ.** Làm ở PR draft riêng chồng lên #1036, nhánh `nguong-hsmt-2-rq`. Đo so với `2b199862`: đổi đúng 2 lượt của gói này ở cả specs và bidhist (`maxFuel75` null → 2,5 / 3,5), danh sách `dau-vao/nguong-hsmt/doi-rq.tsv`. Test 1388 + 148 + 11 pass. Top 30 chưa đo.
 2. Luật có sẵn "Tại 100% công suất dự phòng ≤ X" tính như 100% tải (IB2400375383#0/#1, IB2400448320#0/#1, 34 và 65 L/h): giữ nguyên, không đổi ở PR này.
 
 ## Soát 69 ngưỡng tiêu hao mới của `bf9e62a5` (đọc nguồn từng ngưỡng, 21/11/2026; `soat-fuel.mjs`, `fuel-lech.mjs`)
