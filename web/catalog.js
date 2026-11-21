@@ -1803,12 +1803,12 @@
       ["pengpai-yangzhou", 126, "PPDL-V250", "| PPDL-V250 | 250/312.5 | 沃尔沃遍达 | TAD1341GE | 6 | 9.36 | 34 | ≤210 | 2900*1100*1600 | 2450"],
       ["pengpai-yangzhou", 126, "PPDL-V280", "| PPDL-V280 | 280/350 | 沃尔沃遍达 | TAD1342GE | 6 | 9.36 | 34 | ≤210 | 2900*1100*1600 | 2450"]].map(([supplierId, n, genset, line]) => (
       { supplierId, n, genset, line, act: "dropspec", keys: ["disp"], khoa: "Khoa 20/11/2026", why: "nguồn ghi 9.36 L (dung tích TAD940GE / TAD941GE) cho động cơ Volvo Penta D13 (12,8 L): bỏ riêng dung tích" })),
-    // longkai n1158 / n1159 / n1016 (bo-doc-tieu-hao 21/11/2026, chờ điều phối duyệt): "6 in line" on 20M33D2020E310 (the sheet's 159*159, 19 L
-    // are a 6-cylinder engine's; other suppliers write 20, 150*185, 65.4 L), "6 in line" on 20M33D2210E310 (its own 150*185, 65.4 L = 20
-    // cylinders), "12 in line" on SC25G610D2 (12 fits its 135*150, 25.8 L; "in line" is against 8 suppliers writing V, 2 write L).
-    // Unread before "N in line" was read; left unread, no figure written in its place.
-    ...[[1158, "LG1600WP", "| No. cylinders | 6 in line"], [1159, "LG1800WP", "| No. cylinders | 6 in line"], [1016, "LG350SC", "| No. cylinders | 12 in line"]].map(([n, genset, line]) => (
-      { supplierId: "longkai-power", n, genset, line, act: "dropspec", keys: ["cyl"], khoa: "điều phối, bo-doc-tieu-hao 21/11/2026", why: "mẫu datasheet ghi số xi lanh / kiểu trái động cơ của dòng: bỏ riêng xi lanh, giữ dòng" })),
+    // longkai n1158 / n1159 / n1016 (bo-doc-tieu-hao): decided by the coordinator 21/11/2026, Khoa informed. Unread before "N in line"
+    // was read; left unread, no figure written in its place. Still open: n1158's 19 L + 159*159 (another engine's set; the bore is still read, as zhengchi n162's).
+    ...[[1158, "LG1600WP", "| No. cylinders | 6 in line", "20M33D2020E310: tờ ghi 6 xi lanh, 159*159, 19 L (6 × π/4 × 159² × 159 = 18,94 L: bộ số của động cơ khác); aosif, hanyang-weifang, yunding-jiangsu ghi 20 xi lanh, 65.4 L (20 × π/4 × 150² × 185 = 65,38 L)"],
+      [1159, "LG1800WP", "| No. cylinders | 6 in line", "20M33D2210E310: tờ ghi 150*185, 65.4 L; 6 xi lanh = 19,62 L, 20 xi lanh = 65,38 L; aosif, hanyang-weifang, yunding-jiangsu ghi 20 xi lanh"],
+      [1016, "LG350SC", "| No. cylinders | 12 in line", "SC25G610D2: số 12 đúng (12 × π/4 × 135² × 150 = 25,76 L) và đã đủ phiếu 12 từ NCC khác; bỏ vì KIỂU \"in line\" trái 8 NCC ghi V"]].map(([n, genset, line, why]) => (
+      { supplierId: "longkai-power", n, genset, line, act: "dropspec", keys: ["cyl"], khoa: "điều phối 21/11/2026", why: `${why}: bỏ riêng xi lanh, giữ dòng` })),
     // westinpower n1064 TP880L (a PDF table written down the page): "Rated rotation speed 1191 r/min"; the same PDF writes "Engine speed Rated 1500 RPM" on page 2.
     { supplierId: "westinpower", n: 1064, genset: "TP880L", line: "| Rated rotation speed | r/min | 1191", act: "dropspec", keys: ["speed"], khoa: "Khoa 20/11/2026", why: "nguồn ghi tốc độ 1191 v/p (trang 2 cùng PDF ghi 1500 RPM): bỏ riêng tốc độ, không lấy số trang 2 thay" },
     // huipu-power n105 HP-P1330 / n106 HP-V280, HP-V400 (Khoa duyệt 20/11/2026, cùng kiểu "458" của jlmech):
