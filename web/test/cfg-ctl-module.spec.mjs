@@ -107,3 +107,35 @@ test.describe("NCC có chào bộ chính, bản sinh hết chỗ", () => {
     await expect(card.locator(".cfgalt")).toContainText("đã đủ 8 cấu hình: DSE7420 (NCC voltgent chào)");
   });
 });
+
+// Ngoại lệ 3 của SHOW_SRC (Khoa 22/11/2026): check ctlOption hiện dòng manual + link trang nguồn; chỗ khác vẫn không in câu trích.
+test.describe("chức năng tuỳ chọn theo manual hãng", () => {
+  const c0 = cm.result.configs[0], LINE = "Oil Temperature*";
+  const mk = (extra) => ({ item: "Bảo vệ và đo lường của bộ điều khiển", part: "controller", group: true, level: "core", status: "confirm", hsmtQuote: "SRCQ_hsmt", requirement: "Nhiệt độ dầu",
+    parts: [
+      { item: "Nhiệt độ dầu bôi trơn", status: "confirm", confirm: "order", ctlOption: "oil_temp", offered: "Nhiệt độ dầu: tuỳ động cơ điện tử", sourceQuote: LINE, factSrc: { supplierId: "deep-sea-electronics", n: 3001, line: LINE }, note: "Áp suất dầu có sẵn; nhiệt độ dầu manual đánh dấu là tuỳ động cơ điện tử được hỗ trợ, cần NCC xác nhận.", ...extra },
+      { item: "Áp suất dầu thấp", status: "met", offered: "Oil Pressure", sourceQuote: "SRCQ_Oil Pressure", factSrc: { supplierId: "deep-sea-electronics", n: 3001, line: "Oil Pressure" } },
+    ] });
+  const doc = { ...cm, result: { ...cm.result, configs: [{ ...c0, checks: [...c0.checks, mk()] }, ...cm.result.configs.slice(1)] } };
+  const supplier = { "deep-sea-electronics": { id: "deep-sea-electronics", names: { en: "Deep Sea Electronics" }, status: "partial", role: "controller_maker", sources: [{ n: 3001, url: "https://example.test/dse-manual.pdf" }] } };
+  test.use({ patch: { colls: { configmatch: { [RICH]: doc }, supplier } } });
+
+  test("hiện dòng manual + link nguồn ở check ctlOption, không hiện câu trích của check khác", async ({ page }) => {
+    await openApp(page, "#goi/" + RICH);
+    await openTab(page, "config");
+    const card = page.locator("#dbody .cfgcard").first();
+    const src = card.locator(".cfgoptsrc");
+    await expect(src).toHaveCount(1);
+    await expect(src).toContainText("Manual của hãng ghi:");
+    await expect(src.locator("q")).toHaveText(LINE);
+    await expect(src.locator('a[href="https://example.test/dse-manual.pdf"]')).toHaveText(/Tài liệu gốc/);
+    await expect(card.locator("li", { hasText: "Nhiệt độ dầu bôi trơn" })).toContainText("Cần NCC xác nhận");
+    await expect(page.locator("#dbody")).not.toContainText("SRCQ_");
+  });
+  test("không có link nguồn thì chỉ câu trích, không vỡ", async ({ page }) => {
+    await openApp(page, "#goi/" + RICH);
+    await openTab(page, "config");
+    await page.evaluate(() => { document.querySelectorAll(".cfgoptsrc a").forEach((a) => a.remove()); });
+    await expect(page.locator("#dbody .cfgoptsrc q")).toHaveText(LINE);
+  });
+});
