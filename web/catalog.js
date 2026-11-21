@@ -969,7 +969,12 @@
     { supplierId: "weichai-power", ns: [125, 126, 127, 128], fuel: "gas", why: 'trang ghi đường dẫn "Generator Set / Overseas Gas" và ảnh "机组燃气" (đọc trang sống 20/11/2026)' },
     { supplierId: "jianghao-genset", ns: [104], fuel: "gas", why: 'trang ghi ngay dưới hai bảng "①The above generators can be used natural gas, oil filed gas, bio-gas…" (tệp nguồn lưu 13–14/11/2026)' },
     { supplierId: "simpson-power", ns: [124], from: "D", fuel: "gasoline", header: "| 机 组 型 号 | 备 用 功 率 ( kW/kVA) | 发 动 机 型 号 | 机 组 尺 寸 (mm) ( 长×宽×高) | 机 组 数 据",
-      engines: { GX390: "https://engines.honda.com/models/model-detail/x-large-gx", GX630: "https://engines.honda.com/models/model-detail/v-twin-horizontal", GX690: "https://engines.honda.com/models/model-detail/v-twin-horizontal" }, why: HONDA_GX },
+      engines: { GX390: "https://engines.honda.com/models/model-detail/x-large-gx", GX630: "https://engines.honda.com/models/model-detail/v-twin-horizontal", GX690: "https://engines.honda.com/models/model-detail/v-twin-horizontal" }, why: HONDA_GX,
+      // The ZS168FA / ZS182F / ZS190F and "31HP" / "35HP" rows (no maker's page found, the page names no fuel): Khoa 21/11/2026
+      // "Simpson: loại cả bảng" = the whole table stays out of the diesel pack. NOT a fact from a source. The catalog has no
+      // "not diesel, kind unknown" value; `dual` (gasoline + gas) is the narrowest that `fuelOff` turns away from a diesel HSMT
+      // and lets through a gas / gasoline one. Level K = "quyết định của Khoa" (no maker, no page); `why` says so.
+      rest: { fuel: "dual", from: "K", why: "QUYẾT ĐỊNH của Khoa 21/11/2026 (không có nguồn hãng): cả bảng SIMPSON-GasGenerators không vào gói diesel; động cơ này không tìm được trang hãng nên loại nhiên liệu KHÔNG rõ, `dual` chỉ để loại khỏi HSMT diesel" } },
     { supplierId: "zc-power", ns: [109], part: "genset", fuel: "gasoline", why: 'tên trang "Gasoline Generators | Factory-Direct Prices | ZC Power"' },
   ];
   // The fuel of record `o` (of `fromSupplier`, or `part` "genset" = of `gensetsOf`) by FUEL_PAGES, or null.
@@ -980,7 +985,9 @@
     if (p.header != null && String(h0 ?? "").trim() !== p.header) return null;
     if (!p.engines) return { fuel: p.fuel, from: p.from || "T", why: p.why };
     const m = o.kind === "engine" && Object.keys(p.engines).find((k) => keyOf(k) === keyOf(o.model));
-    return m ? { fuel: p.fuel, from: p.from || "T", why: p.why.replace("%M", m).replace("%U", p.engines[m]) } : null;
+    if (m) return { fuel: p.fuel, from: p.from || "T", why: p.why.replace("%M", m).replace("%U", p.engines[m]) };
+    // `rest`: the other rows of the same table, by a decision, not by a source (simpson n124, Khoa 21/11/2026 "loại cả bảng").
+    return p.rest ? { fuel: p.rest.fuel, from: p.rest.from, why: p.rest.why } : null;
   };
   // A table's gas set (its header rows are not read): the same signs, no row, the page's URL when known.
   const gasTable = (t, lines, url) => { const f = fuelFrom(fuelSigns({ title: t.title, header: [], rows: lines }, url), null); return !!f && (f.fuel === "gas" || f.fuel === "dual") || GAS_WORD.test(`${t.title || ""} ${lines.join(" ")}`) || lines.some((l) => /-NG$/i.test(cellsOf(l)[0] || "")); };

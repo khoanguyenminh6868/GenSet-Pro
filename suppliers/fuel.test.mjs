@@ -115,7 +115,10 @@ test("nhiên liệu theo bảng (Khoa 20/11/2026, FUEL_PAGES): jianghao n104 kh�
   const gx = sp.filter((r) => /^GX(390|630|690)$/.test(r.model));
   assert.equal(gx.length, 7);
   for (const r of gx) { assert.equal(r.fuel, "gasoline"); assert.equal(r.fuelFrom, "D"); assert.ok(r.fuelWhy.includes(r.model) && /engines\.honda\.com/.test(r.fuelWhy)); }
-  assert.ok(sp.filter((r) => !gx.includes(r)).every((r) => r.fuel === undefined));   // ZS168FA / ZS182F / ZS190F: không rõ
+  // ZS168FA / ZS182F / ZS190F: không rõ hãng và nhiên liệu; Khoa 21/11/2026 "loại cả bảng" → `dual` mức K, ghi rõ là quyết định, không là nguồn hãng
+  const rest = sp.filter((r) => !gx.includes(r));
+  assert.equal(rest.length, 3);
+  for (const r of rest) { assert.equal(r.fuel, "dual"); assert.equal(r.fuelFrom, "K"); assert.ok(/QUYẾT ĐỊNH của Khoa/.test(r.fuelWhy) && /không có nguồn hãng/.test(r.fuelWhy)); }
   const zc = C.gensetsOf(real("zc-power")).filter((r) => r.n === 109);
   assert.equal(zc.length, 9);
   assert.ok(zc.every((r) => r.fuel === "gasoline" && r.fuelFrom === "T"));
