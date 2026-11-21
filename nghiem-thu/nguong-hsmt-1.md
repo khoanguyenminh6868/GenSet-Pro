@@ -150,6 +150,21 @@ Cần biết (không tính là sai):
 - IB2500385135#0: HSMT ghi "số xilanh ghi là 34 (nguyên văn)". Nhánh không đặt ngưỡng; main lấy 4 của cỡ khác.
 - IB2200020538#0: tiêu hao chỉ ghi theo mức điểm (4 điểm / 50 điểm). Nhánh không đặt ngưỡng; main đọc nhầm 110 thành mức 50%.
 
+## Bản sửa 2 ca (22/11/2026, head `50b0b62d`)
+
+Điều phối quyết sửa cả hai trước khi merge, không đo cloud lại nếu chỉ 2 lượt đổi ngưỡng.
+
+- **Sửa:** số xi lanh ghi trơ được đọc khi "tối đa" duy nhất của ô là "công suất tối đa ≥ N" (tính là tối thiểu). Mức "Nâng cao (lựa chọn)" không phải ngưỡng tiêu hao. Có test cho cả hai.
+- **So ngưỡng toàn bộ với `b0f0dc2f` (trên head đã gộp main):** specs 0 / 1.880, bidhist 2 / 1.093: IB2300046353#1 `minCyl` null → 4; IB2300349583#0 `maxFuel75` null → 5,5 (`doi-2luot-nguong.tsv`).
+- **`candidates` của 2 lượt (đo trước khi gộp main; sau gộp ngưỡng không đổi nhưng `web/catalog.js` có đổi):** IB2300046353#1 `all` 1.445 → 1.387, 58 dòng ra đều do số xi lanh, 0 dòng vào, top 30 giữ nguyên cả thứ tự. IB2300349583#0 không dòng nào đổi. Danh sách từng dòng: `doi-2luot-dong.tsv`.
+- **CI và test:** `suppliers`, `server`, Vercel đạt trên `50b0b62d`. Chạy máy: 1453 + 148 + 11 pass.
+- **Gộp main:** `50b0b62d` chứa main `04a2c631`. Main sau đó có thêm commit đổi `web/catalog.js`, GitHub báo vẫn gộp được.
+
+Cần biết:
+- **#1041 (PR bộ nhớ) đã đưa một phần mã ngưỡng và hai tệp test lên main trước #1036** (`config-bot.mjs` 49 dòng). Xung đột khi gộp đều giữ phần của nhánh; phần chỉ main có là câu ghi chú cũ "MRQ / RQ → không có ngưỡng", đã bị luật RQ thay.
+- **11 lượt có số xi lanh ghi trơ cạnh "đường kính ≤" vẫn chưa đọc, main cũng vậy:** IB2400375383 #0–1, IB2400427929 #0–3, IB2400448320 #0–1, IB2500114642 #0–2. Không sửa ở đây vì ngoài phạm vi và sẽ phải đo cloud lại. Luật rộng hơn đã thử đọc nhầm IB2500114642#2 (HSMT ghi 6) thành 1.
+
 ## Việc tiếp
-1. Điều phối quyết 2 ca trên (sửa trong #1036 rồi đo lại, hay merge trước).
+1. Điều phối merge #1036.
 2. Sau khi #1036 merge: gộp main vào #998, đo lại #998 toàn bộ.
+3. PR riêng từ main: `sizeBlocks` theo nhãn cỡ máy (điều phối đã xếp hàng); xét luôn 11 lượt xi lanh trên.
