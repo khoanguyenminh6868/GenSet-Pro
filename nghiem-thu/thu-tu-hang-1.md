@@ -29,8 +29,12 @@ Cùng tập dòng thì cùng thứ tự bất kể thứ tự duyệt (test: đ�
 **Kiểm quy tắc Khoa (bộ nhớ `config-suggest.md`) trước khi sửa:** không mâu thuẫn. Quy tắc 16/11/2026: "cặp cùng hãng giữ cả hai" (Doosan / Hyundai / Daewoo ở `SAME_MAKER`, chuỗi `e.make` giữ cả hai tên), và 19/11 Khoa bảo bỏ "đổi thứ tự / trần CN_ROWS ↔ PER_SUPPLIER": em KHÔNG đụng thứ tự hay trần, chỉ chuẩn hoá NHÃN nhóm khi đếm. Khoa chưa nói gì về việc nhóm theo hãng đầu của chuỗi.
 
 **Sửa (hẹp):** `makeGroup(m) = m === "Hyundai" ? "Doosan" : m`, dùng ở `makeOf` (trần mỗi hãng `perMake`) và ở `byMake` của vòng `MAKE_ROWS` (nhóm G7 / G20). `e.make`, điểm (`makeNamed` +300), xuất xứ, `keptMakes` KHÔNG đổi.
-- Chỉ Doosan + Hyundai (đúng brief). **Daewoo CHƯA gộp** dù `SAME_MAKER` coi cùng hãng: bốn động cơ P180LES / P034TI / P126TI2 / P222LE2 / P222LESII ghi "Daewoo", gộp thêm sẽ đổi nhiều nhóm hơn; cần điều phối / Khoa quyết (đề xuất: gộp, một dòng đổi `makeGroup`).
-- Hãng đứng ĐẦU chuỗi là hãng dùng (như cũ): "Daewoo / Doosan" vẫn ở nhóm Daewoo.
+- Commit 3 (Khoa 21/11/2026 "có"): **Daewoo gộp vào nhóm Doosan** (`makeGroup`: Hyundai, Daewoo → Doosan). Hãng đứng ĐẦU chuỗi vẫn là hãng dùng, rồi mới chuẩn hoá nhãn. Động cơ ghi Daewoo bị ảnh hưởng, ĐO bằng `build()` trên `suppliers/cn` của nhánh (script `scratchpad\daewoo.mjs`), 10 động cơ có "Daewoo" trong `e.make`:
+  - Đầu chuỗi Daewoo, nhóm đổi Daewoo → Doosan (9): PO86TI1 ["Daewoo / Hyundai", 4 dòng], P180LES (2), D086T1I (1), D888 (1), DB33 (1), P034TI (1), P126TI2 (1), P222LE2 (1), P222LESII (1).
+  - Daewoo không đứng đầu, nhóm không đổi (1): PO86TI ["Doosan / Daewoo / Hyundai", 7 dòng].
+  Hệ quả: trần mỗi hãng / `MAKE_ROWS` đếm 9 động cơ này chung nhóm "Doosan" (trước: nhóm "Daewoo" riêng, nhóm này giữ chỗ riêng). D086T1I / D888 / DB33 là mã đọc từ nguồn, em không đánh giá đúng sai của mã.
+  Cách dùng ở config-bot: chỉ chỗ đếm nhóm; `e.make` không đổi nên nơi khác (xuất xứ, +300 `makeNamed`) y cũ.
+- Hãng đứng ĐẦU chuỗi là hãng dùng (như cũ): "Daewoo / Doosan" nay cũng vào nhóm Doosan (vì chuẩn hoá sau khi lấy hãng đầu).
 
 **Kỳ vọng:** các động cơ P126TI ("Doosan / Hyundai" nay), P086TII ("Hyundai / Doosan"), P222LE11 ("Hyundai") chuyển sang nhóm "Doosan" cùng P158LE, P222LE…; trần mỗi hãng đếm chung một nhóm → ở lượt không nêu hãng và dưới `MAKE_CAP`, số dòng Doosan / Hyundai trong top 30 giảm (không tăng); ở lượt G7 / G20 không nêu hãng, một nhóm "Doosan" thay vì "Doosan" + "Hyundai" nên chỗ `MAKE_ROWS` dành cho "Hyundai" biến mất, chuyển cho hãng khác. Lượt nêu hãng / model động cơ (`capOn` tắt, `byMake` tắt) KHÔNG đổi.
 
@@ -50,5 +54,5 @@ Không áp dụng chỉ số đo: brief bảo KHÔNG tự đo top 30; không có
 - Chưa có bẫy mới để ghi vào `suppliers/CLAUDE.md` ngoài hai dòng của PR (xem PR).
 
 ## Cần ghi nhớ
-- Daewoo có gộp vào nhóm Doosan / Hyundai không (Khoa quyết).
+- Khoa 21/11/2026 "có": gộp Daewoo vào nhóm Doosan / Hyundai; hoà điểm xếp theo tên NCC được (xong ở #1015).
 - Thứ tự hoà điểm hiện: điểm → gap → (NCC, khoá động cơ, đầu phát) → chữ ô; đo top 30 so với số cũ sẽ thấy đổi chỗ ở những lượt hoà điểm.

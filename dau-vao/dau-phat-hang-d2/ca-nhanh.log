@@ -5,3 +5,13 @@ IB2600586587 6 {"need":"50 Hz; ≥ 160 kVA ở cột chạy liên tục cấp H 
 IB2600592658 1 {"need":"50 Hz; ≥ 500 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 380 / 440 V (lấy số nhỏ nhất), không quá 130 %; hãng Leroy-Somer","used":0}
 IB2600592684 0 {"need":"50 Hz; ≥ 500 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, không quá 130 %","used":0}
 IB2600594596 0 {"need":"50 Hz; ≥ 400 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, không quá 130 %","used":0}
+IB2600595853 1 {"need":"50 Hz; ≥ 500 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 380 / 440 V (lấy số nhỏ nhất), không quá 130 %; hãng Leroy-Somer","used":0}
+IB2600599817 0 
+IB2600601812 6 {"need":"50 Hz; ≥ 100 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 380 V (lấy số nhỏ nhất), không quá 130 %; ổn định điện áp ±1 %","used":0}
+IB2600602880 1 {"need":"50 Hz; ≥ 150 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 400 V (lấy số nhỏ nhất), không quá 130 %; ổn định điện áp ±1 %; hãng Leroy-Somer","used":1}
+IB2600603983 8 {"need":"50 Hz; ≥ 750 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 380 V (lấy số nhỏ nhất), không quá 130 %; ngắn mạch 300 % / 10 s; ổn định điện áp ±0,5 %; xuất xứ G7 / EU","used":5}
+IB2600604739 0 
+IB2600607539 0 
+IB2600609805 3 {"need":"50 Hz; ≥ 150 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, điện áp 400 V (lấy số nhỏ nhất), không quá 130 %; ổn định điện áp ±1 %; hãng Leroy-Somer","used":1}
+IB2600612866 1 {"need":"50 Hz; ≥ 9 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, không quá 130 %; ổn định điện áp ±1 %","used":0}
+IB2600613475 5 {"need":"50 Hz; ≥ 12 kVA ở cột chạy liên tục cấp H 125 K / 40 °C, 3 pha, không quá 130 %; ổn định điện áp ±1 %","used":0}
