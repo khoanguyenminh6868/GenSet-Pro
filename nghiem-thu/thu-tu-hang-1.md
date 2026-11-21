@@ -56,3 +56,8 @@ Không áp dụng chỉ số đo: brief bảo KHÔNG tự đo top 30; không có
 ## Cần ghi nhớ
 - Khoa 21/11/2026 "có": gộp Daewoo vào nhóm Doosan / Hyundai; hoà điểm xếp theo tên NCC được (xong ở #1015).
 - Thứ tự hoà điểm hiện: điểm → gap → (NCC, khoá động cơ, đầu phát) → chữ ô; đo top 30 so với số cũ sẽ thấy đổi chỗ ở những lượt hoà điểm.
+
+## Cập nhật 21/11/2026 (Khoa: số băm + đo thêm tiêu chí có lý do)
+- (A) #1015 e8a8dc0f: gộp origin/main 04709819 (luật B #996). Khoá phụ nay = băm FNV-1a 32 bit của `choiceKey` (thay `cmpStr`; `cmpStr` và chữ ô chỉ phá va chạm). Thứ tự: điểm → gap → băm → cmpStr → chữ ô; test mới 8 NCC cùng điểm, đảo / xoay danh sách ra cùng thứ tự và KHÔNG theo chữ cái. Test 1520/1520.
+- Mọi sort trong `candidates` sau gộp: `rows.sort` (rowOrder); `order` của Đồng bộ (gap rồi rowOrder, trước chỉ gap rồi điểm); danh sách hãng của MAKE_ROWS (rowOrder của dòng đầu mỗi hãng, trước chỉ điểm); dòng trong hãng (gap rồi rowOrder); thay dòng `keep` (rowOrder ngược, trước chỉ điểm); `out` cuối (ghim 5 dòng đầu rồi rowOrder). `pick` / luật B (`choose`) chỉ lọc và đi theo danh sách đã xếp, không sort lại; `choose` gọi hai lần cùng `rows` nên cùng thứ tự.
+- (B) PR #1025 (nhánh `thu-tu-ly-do`, ĐO THỬ, base = nhánh A) 6c5f22b6: điểm → gap → verified → số loại thông số → băm. "verified" = `status` của hồ sơ NCC (`sup.get(u.supplierId).status`; trong `suppliers/cn` có 236 verified, 199 partial; `sup` là danh sách `suppliers` truyền vào `candidates`). "Số thông số của dòng" = số `key` khác nhau trong `u.specs` của chính dòng (không trần 6 như điểm). Cả hai có sẵn trong `candidates`, không phải đoán.
