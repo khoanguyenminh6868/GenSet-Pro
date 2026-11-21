@@ -1,0 +1,145 @@
+Mẫu cyl: [{"k":"cyl","l":"No. cylinders","v":"4 in line"}]
+Mẫu disp: []
+
+== Xi lanh / dung tích theo (NCC, model): 104
+24 kaihua-genset | 8M21G660/5 | cyl [] | disp [] | maxDisp,cyl,disp | cyl6=inline d-..12.5 , cyl6=inline d-..- , cyl6=inline d19..- , cyl6=inline d-..19
+18 ade-power | 8M21G660/5 | cyl [] | disp [] | maxDisp,cyl,disp | cyl6=inline d-..12.5 , cyl6=inline d19..- , cyl6=inline d-..19 , cyl-+ d-..14.6
+15 agg-fuzhou | 6M31G660/5 | cyl [] | disp [] | maxDisp,disp,cyl | cyl6=inline d-..12.5 , cyl6=inline d19..- , cyl12= d19.6..- , cyl10+v d18.273..-
+15 agg-fuzhou | 6M31G528/6 | cyl [] | disp [] | maxDisp,disp,cyl | cyl6=inline d-..12.5 , cyl6=inline d19..- , cyl12= d19.6..- , cyl10+v d18.273..-
+10 longkai-power | QSB3.9-G2 | cyl [{"k":"cyl","l":"No. cylinders","v":"6 in line"}] | disp [] | cyl,fuel75,fuel,fuel50 | cyl4= d-..- , cyl4=inline d3.9..- , cyl4=inline d-..- , cyl4=inline d2.771..-
+9 cgm-italia | 6M31G660/5 | cyl [] | disp [] | maxDisp,disp,cyl | cyl6=inline d-..12.5 , cyl6=inline d19..- , cyl-+ d-..14.6 , cyl6= d-..12.5
+9 agg-fuzhou | 6M31G750/5 | cyl [] | disp [] | disp,cyl,maxDisp | cyl12= d19.6..- , cyl10+v d18.273..- , cyl10=v d18.273..- , cyl6= d-..15.2
+9 cgm-italia | 6M33G4D5/S | cyl [] | disp [] | maxDisp,cyl,disp | cyl6= d-..15.2 , cyl6= d-..15.3 , cyl16+v d-..- , cyl12+ d-..-
+8 longkai-power | SC33G1150D2 | cyl [{"k":"cyl","l":"No. cylinders","v":"6 in line"}] | disp [] | cyl,fuel,layout,fuel75,fuel50 | cyl12+ d21.927..- , cyl12=v d31.8..- , cyl-+v d78..- , cyl12=v d-..22
+8 koten-power | 8M33G770/6 | cyl [] | disp [] | cyl,disp,maxDisp | cyl12+ d21.927..- , cyl12=v d31.8..- , cyl-+v d78..- , cyl12=v d-..22
+8 landtop-fuzhou | 8M33G770/6 | cyl [] | disp [] | cyl,disp,maxDisp | cyl12+ d21.927..- , cyl12=v d31.8..- , cyl-+v d78..- , cyl12=v d-..22
+8 agg-fuzhou | 6M31G700/6 | cyl [] | disp [] | disp,cyl | cyl12+ d21.927..- , cyl-+v d78..- , cyl12=v d-..22 , cyl12+v d21.927..-
+8 agg-fuzhou | 8M33G770/6 | cyl [] | disp [] | cyl,disp,maxDisp | cyl12+ d21.927..- , cyl12=v d31.8..- , cyl-+v d78..- , cyl12=v d-..22
+7 genmac | 6M11G4D0/S | cyl [] | disp [] | maxDisp,disp | cyl6=v d-..5.9 , cyl-+inline d-..5.9 , cyl6=inline d7.01..- , cyl4+ d-..5.9
+7 cgm-italia | 6M31G750/5 | cyl [] | disp [] | maxDisp,disp,cyl | cyl6= d-..15.2 , cyl6= d-..15.3 , cyl6+ d19.6..- , cyl12+ d-..-
+5 genmac | 4M10G4D0/S | cyl [] | disp [] | cyl,disp | cyl6= d-..- , cyl4+ d4.5..8 , cyl6=inline d7.01..- , cyl4+ d4.5..-
+5 genmac | 6M11G2D0/S | cyl [] | disp [] | maxDisp,disp | cyl-+inline d-..5.9 , cyl6=inline d7.01..- , cyl4+ d-..5.9
+4 agg-fuzhou | 12M26G704/6 | cyl [] | disp [] | disp,maxDisp,cyl | cyl-+v d78..- , cyl12=v d-..22 , cyl6= d-..- , cyl16+v d-..-
+4 cgm-italia | 6M11G4D0/S | cyl [] | disp [] | maxDisp,disp | cyl6=v d-..5.9 , cyl-+inline d-..5.9 , cyl6=inline d7.01..- , cyl4+ d-..5.9
+4 coelmo | 6M11G4D0/S | cyl [] | disp [] | maxDisp,disp | cyl6=v d-..5.9 , cyl-+inline d-..5.9 , cyl6=inline d7.01..- , cyl4+ d-..5.9
+3 ade-power | 4M06G2D0/S | cyl [] | disp [] | disp,cyl | cyl4+ d2.5..- , cyl1= d-..-
+3 longkai-power | 6BT5.9-G2-96KW | cyl [{"k":"cyl","l":"No. cylinders","v":"6 in line"}] | disp [] | cyl,fuel,fuel75,fuel50 | cyl4=inline d4.087..- , cyl4= d4.087..-
+3 yihua-fujian | 6BT5.9-G2-96KW | cyl [] | disp [{"k":"disp","l":"Displacement","v":"5.9L"}] | cyl | cyl4=inline d4.087..- , cyl4= d4.087..-
+3 genmac | 4M06G8D0/S | cyl [] | disp [] | disp | cyl4= d2.672..- , cyl4+ d2.672..- , cyl4+ d4.2..-
+3 cgm-italia | 6M31G725/5 | cyl [] | disp [] | maxDisp | cyl6= d-..15.2 , cyl6= d-..15.3 , cyl6+inline d-..13
+2 ade-power | 6M16G2D0/S | cyl [] | disp [] | maxDisp | cyl-+ d-..5.89
+2 electra-molins | 6M21G8D0/S | cyl [] | disp [] | disp | cyl6=inline d19..- , cyl6=inline d18.8..-
+2 cgm-italia | 6M21G8D0/S | cyl [] | disp [] | disp | cyl6=inline d19..- , cyl6=inline d18.8..-
+2 longkai-power | 4BTA3.9-G2-58KW | cyl [{"k":"cyl","l":"No. cylinders","v":"4 in line"}] | disp [] | cyl | cyl6+ d-..- , cyl6= d-..-
+2 interpower-international | 6M16G6D0/S | cyl [] | disp [] | maxDisp | cyl-+inline d-..6.8 , cyl-+inline d-..8.9
+2 ade-power | 6M16G6D0/S | cyl [] | disp [] | maxDisp | cyl-+inline d-..6.8 , cyl-+inline d-..8.9
+2 cgm-italia | 6M16G6D0/S | cyl [] | disp [] | maxDisp | cyl-+inline d-..6.8 , cyl-+inline d-..8.9
+2 genmac | 4M06G10D0/S | cyl [] | disp [] | disp | cyl4=inline d4.3..- , cyl4+inline d2.85..-
+2 cgm-italia | 4M06G10D0/S | cyl [] | disp [] | disp | cyl4=inline d4.3..- , cyl4+inline d2.85..-
+2 electra-molins | 4M10G6D0/S | cyl [] | disp [] | disp,cyl | cyl-+ d5.9..- , cyl6+inline d-..-
+2 ade-power | 4M10G6D0/S | cyl [] | disp [] | disp,cyl | cyl-+ d5.9..- , cyl6+inline d-..-
+2 cgm-italia | 4M10G6D0/S | cyl [] | disp [] | disp,cyl | cyl-+ d5.9..- , cyl6+inline d-..-
+2 agg-fuzhou | 16M33G1400/6 | cyl [] | disp [] | cyl | cyl12= d-..- , cyl12=v d-..-
+2 ade-power | 4M06G4D0/S | cyl [] | disp [] | disp | cyl4= d2.672..- , cyl4+ d2.672..-
+2 ade-power | 4M06G6D0/S | cyl [] | disp [] | disp | cyl4= d2.672..- , cyl4+ d2.672..-
+2 electra-molins | 4M06G6D0/S | cyl [] | disp [] | disp | cyl4= d2.672..- , cyl4+ d2.672..-
+2 cgm-italia | 4M06G4D0/S | cyl [] | disp [] | disp | cyl4= d2.672..- , cyl4+ d2.672..-
+2 cgm-italia | 4M06G6D0/S | cyl [] | disp [] | disp | cyl4= d2.672..- , cyl4+ d2.672..-
+2 coelmo | 4M06G6D0/S | cyl [] | disp [] | disp | cyl4= d2.672..- , cyl4+ d2.672..-
+2 interpower-international | 6M11G2D0/S | cyl [] | disp [] | maxDisp | cyl-+inline d-..5.9 , cyl4+ d-..5.9
+2 electra-molins | 6M11G2D0/S | cyl [] | disp [] | maxDisp | cyl-+inline d-..5.9 , cyl4+ d-..5.9
+2 cgm-italia | 6M11G2D0/S | cyl [] | disp [] | maxDisp | cyl-+inline d-..5.9 , cyl4+ d-..5.9
+2 cgm-italia | 6M21G2D0/S | cyl [] | disp [] | maxDisp,disp | cyl6=inline d-..9.84 , cyl6+ d13..-
+1 sr-genset | 6HTAA6.5-G21 | cyl [] | disp [] | layout | cyl6=v d-..-
+1 ade-power | 4M06G10D0/S | cyl [] | disp [] | disp | cyl4=inline d4.3..-
+1 ade-power | 4M10G2D0/S | cyl [] | disp [] | disp | cyl4=inline d4.3..-
+1 longkai-power | 20M33G2000/6 | cyl [] | disp [] | maxDisp | cyl-+ d-..20
+1 longkai-power | 20M33G2250/5 | cyl [] | disp [] | maxDisp | cyl-+ d-..20
+1 kaihua-genset | 20M33G2000/6 | cyl [] | disp [] | maxDisp | cyl-+ d-..20
+1 longkai-power | 12M55G2250/6 | cyl [] | disp [] | maxDisp | cyl-+ d-..20
+1 longkai-power | 20M33G2200/6 | cyl [] | disp [] | maxDisp | cyl-+ d-..20
+1 longkai-power | 12M55G2550/5 | cyl [] | disp [] | maxDisp | cyl-+ d-..20
+1 voltgent | 20M33G2000/6 | cyl [] | disp [] | maxDisp | cyl-+ d-..20
+1 penlucky | 20M33G2000/6 | cyl [] | disp [] | maxDisp | cyl-+ d-..20
+1 voltgent | 12M55G2550/5 | cyl [] | disp [] | maxDisp | cyl-+ d-..20
+1 mecca-power | 20M33G2250/5 | cyl [] | disp [] | maxDisp | cyl-+ d-..20
+1 deman-power | 20M33G2000/6 | cyl [] | disp [] | maxDisp | cyl-+ d-..20
+1 mecca-power | 20M33G2000/6 | cyl [] | disp [] | maxDisp | cyl-+ d-..20
+1 previa-ningde | 20M33G2000/6 | cyl [] | disp [] | maxDisp | cyl-+ d-..20
+1 previa-ningde | 20M33G2250/5 | cyl [] | disp [] | maxDisp | cyl-+ d-..20
+1 previa-ningde | 12M55G2250/6 | cyl [] | disp [] | maxDisp | cyl-+ d-..20
+1 previa-ningde | 20M33G2200/6 | cyl [] | disp [] | maxDisp | cyl-+ d-..20
+1 mecca-power | 12M55G2550/5 | cyl [] | disp [] | maxDisp | cyl-+ d-..20
+1 weichai-power | 20M33G2250/5 | cyl [{"k":"cyl","l":"Cylinders","v":"20"}] | disp [] | maxDisp | cyl-+ d-..20
+1 previa-ningde | 12M55G2550/5 | cyl [] | disp [] | maxDisp | cyl-+ d-..20
+1 weichai-power | 20M33G2000/6 | cyl [{"k":"cyl","l":"Cylinders","v":"20"}] | disp [] | maxDisp | cyl-+ d-..20
+1 agg-fuzhou | 20M33G2250/5 | cyl [] | disp [] | maxDisp | cyl-+ d-..20
+1 yanan-power | 20M33G2250/5 | cyl [{"k":"cyl","l":"NO.of Cylinder","v":"16"}] | disp [] | maxDisp | cyl-+ d-..20
+1 agg-fuzhou | 20M33G2000/6 | cyl [] | disp [] | maxDisp | cyl-+ d-..20
+1 yanan-power | 20M33G2000/6 | cyl [{"k":"cyl","l":"NO.of Cylinder","v":"20"}] | disp [] | maxDisp | cyl-+ d-..20
+1 yanan-power | 12M55G2550/5 | cyl [{"k":"cyl","l":"NO.of Cylinder","v":"12"}] | disp [] | maxDisp | cyl-+ d-..20
+1 cgm-italia | 12M26G2D0/S | cyl [] | disp [] | cyl | cyl8=inline d30..-
+1 weichai-heavy-machinery | 6M31G725/5 | cyl [{"k":"cyl","l":"Cylinders","v":"6"}] | disp [] | maxDisp | cyl6= d-..15.2
+1 weichai-power | 6M31G725/5 | cyl [{"k":"cyl","l":"Cylinders","v":"6"}] | disp [] | maxDisp | cyl6= d-..15.2
+1 weichai-heavy-machinery | 6M31G580/6 | cyl [{"k":"cyl","l":"Cylinders","v":"6"}] | disp [] | maxDisp | cyl6= d-..15.2
+1 weichai-power | 6M31G580/6 | cyl [{"k":"cyl","l":"Cylinders","v":"6"}] | disp [] | maxDisp | cyl6= d-..15.2
+1 weichai-heavy-machinery | 6M31G600/6 | cyl [{"k":"cyl","l":"Cylinders","v":"6"}] | disp [] | maxDisp | cyl6= d-..15.2
+1 weichai-power | 6M31G600/6 | cyl [{"k":"cyl","l":"Cylinders","v":"6"}] | disp [] | maxDisp | cyl6= d-..15.2
+1 weichai-power | 6M33G6D2/5 | cyl [{"k":"cyl","l":"Cylinders","v":"6"}] | disp [] | maxDisp | cyl6= d-..15.2
+1 weichai-heavy-machinery | 6M31G660/6 | cyl [{"k":"cyl","l":"Cylinders","v":"6"}] | disp [] | maxDisp | cyl6= d-..15.2
+1 weichai-power | 6M31G660/6 | cyl [{"k":"cyl","l":"Cylinders","v":"6"}] | disp [] | maxDisp | cyl6= d-..15.2
+1 weichai-power | 6M33G8D2/5 | cyl [{"k":"cyl","l":"Cylinders","v":"6"}] | disp [] | maxDisp | cyl6= d-..15.2
+1 weichai-power | 6M33G8D2/6 | cyl [{"k":"cyl","l":"Cylinders","v":"6"}] | disp [] | maxDisp | cyl6= d-..15.2
+1 agg-fuzhou | 6M31G725/5 | cyl [] | disp [] | maxDisp | cyl6= d-..15.2
+1 agg-fuzhou | 6M31G580/6 | cyl [] | disp [] | maxDisp | cyl6= d-..15.2
+1 baifa-power | 6M33G8D2/5 | cyl [] | disp [] | maxDisp | cyl6= d-..15.2
+1 agg-fuzhou | 6M31G600/6 | cyl [] | disp [] | maxDisp | cyl6= d-..15.2
+1 agg-fuzhou | 6M31G660/6 | cyl [] | disp [] | maxDisp | cyl6= d-..15.2
+1 cgm-italia | 4M10G2D0/S | cyl [] | disp [] | disp | cyl4+ d4.5..8
+1 longkai-power | 6BT5.9-G2-86KW | cyl [{"k":"cyl","l":"No. cylinders","v":"6 in line"}] | disp [] | cyl,fuel | cyl4=inline d-..-
+1 cgm-italia | 4M10G4D0/S | cyl [] | disp [] | disp | cyl4+ d4.5..-
+1 cgm-italia | 4M06G8D0/S | cyl [] | disp [] | disp | cyl4+ d4.2..-
+1 world-power-fuzhou | WD145TAD35 | cyl [{"k":"cyl","l":"CYL.","v":"6"}] | disp [] | cyl | cyl8+ d-..-
+1 liangzi-yangzhou | WD145TAD35 | cyl [{"k":"cyl","l":"缸数","v":"6L"}] | disp [{"k":"disp","l":"排量(L)","v":"14.5"}] | cyl | cyl8+ d-..-
+1 cgm-italia | 16M55G3000/5 | cyl [] | disp [] | maxDisp | cyl16+v d-..78
+1 cgm-italia | 16M55G3300/5 | cyl [] | disp [] | maxDisp | cyl16+v d-..78
+1 interpower-international | 6M16G2D0/S | cyl [] | disp [] | disp | cyl6= d9.726..-
+1 cgm-italia | 6M16G2D0/S | cyl [] | disp [] | disp | cyl6= d9.726..-
+1 cgm-italia | 6M16G4D0/S | cyl [] | disp [] | disp | cyl6= d9.726..-
+
+== Tiêu hao: dòng 796
+Suất L/kWh hợp lý (0,17–0,42): 985 | thấp: 12 | cao: 17 | thiếu kW: 145
+Thấp (duy nhất): generatordieselchina 6CTAA8.3-G2 fuel=29.3 @176kW s=0.166
+  generatordieselchina 20V4000G23F fuel=342.9 @2200kW s=0.156
+  generatordieselchina QSB6.7-G32 fuel=26.9 @165kW s=0.163
+  generatordieselchina 6ZTAA13-G2 fuel=60 @385kW s=0.156
+  generatordieselchina NTAA855-G7 fuel=55.4 @330kW s=0.168
+Cao (duy nhất): longkai-power QSB3.9-G2 fuel75=21 @48kW s=0.583
+  longkai-power QSB3.9-G2 fuel=26 @48kW s=0.542
+  longkai-power 4B3.9-G11 fuel50=3.7 @17kW s=0.435
+  longkai-power KTA19-G8 fuel50=118 @520kW s=0.454
+  longkai-power QSB3.9-G2 fuel50=15 @48kW s=0.625
+Dòng lớn hơn công suất HSMT >2%: 538 | xấp xỉ bằng/nhỏ hơn: 195 | không so được: 63
+Trong nhóm lớn hơn: nếu quy tỉ lệ về công suất HSMT thì mọi mức đều đạt: 238 [["longkai-power",211],["xinhengxin-fujian",9],["generatordieselchina",18]]
+
+== Cùng model, các NCC lệch >10 %:
+4BT3.9-G1|fuel [["longkai-power",10],["generatordieselchina",6.1]]
+4BT3.9-G1|fuel75 [["longkai-power",7.9],["generatordieselchina",6.1]]
+6CTAA8.3-G2|fuel [["longkai-power",45],["generatordieselchina",29.3]]
+6CTAA8.3-G2|fuel75 [["longkai-power",34],["generatordieselchina",29.3]]
+
+== Số có nhãn không tách mức tải:
+4 generatordieselchina | 4BT3.9-G1 | fuel75 | 6.1 / 8.2 L/h (@75% / @100%)
+4 generatordieselchina | 4BT3.9-G1 | fuel | 6.1 / 8.2 L/h (@75% / @100%)
+4 generatordieselchina | 6CTAA8.3-G2 | fuel75 | 29.3 / 39.0 L/h (@75% / @100%)
+4 generatordieselchina | 6CTAA8.3-G2 | fuel | 29.3 / 39.0 L/h (@75% / @100%)
+1 generatordieselchina | 20V4000G23F | fuel75 | 342.9 / 457.1 L/h (@75% / @100%)
+1 generatordieselchina | 20V4000G23F | fuel | 342.9 / 457.1 L/h (@75% / @100%)
+2 generatordieselchina | 6BTA5.9-G2 | fuel75 | 18.8 / 25.1 L/h (@75% / @100%)
+2 generatordieselchina | 6BTA5.9-G2 | fuel | 18.8 / 25.1 L/h (@75% / @100%)
+5 generatordieselchina | QSB6.7-G32 | fuel75 | 26.9 / 35.9 L/h (@75% / @100%)
+5 generatordieselchina | QSB6.7-G32 | fuel | 26.9 / 35.9 L/h (@75% / @100%)
+1 generatordieselchina | 6ZTAA13-G2 | fuel75 | 60.0 / 80.0 L/h (@75% / @100%)
+1 generatordieselchina | 6ZTAA13-G2 | fuel | 60.0 / 80.0 L/h (@75% / @100%)
+1 generatordieselchina | NTAA855-G7 | fuel75 | 55.4 / 73.8 L/h (@75% / @100%)
+1 generatordieselchina | NTAA855-G7 | fuel | 55.4 / 73.8 L/h (@75% / @100%)

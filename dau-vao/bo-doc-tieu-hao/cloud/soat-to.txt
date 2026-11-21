@@ -1,0 +1,53 @@
+Số tờ soát: 171 | tờ có điểm lệch: 16
+longkai-power n1053 QSB3.9-G2 (dòng mất 16): tên 3.9 L ≠ thân 5.9 L; net 96 kW / prime 48 kW; suất 0.542 L/kWh (26/48)
+longkai-power n1009 SC9D310D2 (dòng mất 14): hình học 6.98 L ≠ 8.82 L
+longkai-power n1012 SC12E420D2 (dòng mất 10): hình học 10.42 L ≠ 11.8 L
+longkai-power n1018 SC27G755D2 (dòng mất 9): hình học 59.02 L ≠ 25.8 L
+longkai-power n1069 QSB6.7-G3 (dòng mất 9): tên 6.7 L ≠ thân 5.9 L
+longkai-power n1045 6WTAA35-G32 (dòng mất 2): hình học 25.19 L ≠ 35.1 L
+longkai-power n1124 WP2.3D33E200 (dòng mất 2): net 30 kW / prime 18 kW
+longkai-power n1144 6M33D633E200 (dòng mất 1): tên 6 xi lanh ≠ thân 12; hình học 37.88 L ≠ 18.9 L
+longkai-power n1085 QSM11-G2 (dòng mất 0): suất 0.065 L/kWh (18.3/280)
+longkai-power n1104 QSK19-G4 (dòng mất 0): hình học 37.88 L ≠ 18.9 L; suất 0.072 L/kWh (38.4/536)
+longkai-power n1105 QSK19-G11 (dòng mất 0): hình học 37.88 L ≠ 18.9 L
+longkai-power n1107 KT38-GA (dòng mất 0): suất 0.074 L/kWh (37/500)
+longkai-power n1118 QSK38-G5 (dòng mất 0): hình học 50.51 L ≠ 37.7 L
+longkai-power n1158 20M33D2020E310 (dòng mất 0): tên 20 xi lanh ≠ thân 6
+longkai-power n1159 20M33D2210E310 (dòng mất 0): tên 20 xi lanh ≠ thân 6; hình học 19.62 L ≠ 65.4 L
+xinhengxin-fujian n1003 GF-C1250 (dòng mất 0): suất 0.165 L/kWh (269/1630)
+
+== generatordieselchina: tờ có ô đa mức tải
+n101 2000kW Diesel Generator | MTU | Factory Direct
+   Model: R-MYC2500D5/S · 50Hz (1500 rpm)
+   | Standby Power | 2200 kW / 2750 kVA
+   | Prime Power | 2000 kW / 2500 kVA
+   | Engine Model | 20V4000G23F
+   | Alternator | Stamford S7L1D-J4 / Leroy-Somer LSA 52.3 L12
+   | Fuel Consumption | 342.9 / 457.1 L/h (@75% / @100%)
+   | Fuel Efficiency | 192 g/kW·h (ISO 3046-1)
+   | Dimensions (Open / Silent) | 5450×2250×3070 / 12192×2435×2896( 40HP) mm
+   | Weight (Open / Silent) | 15000 / 18000 kg
+   | Frequency | 50Hz (1500 rpm)
+   | Model | R-MYC2500D5/S
+   | Engine | 20V4000G23F
+   | Fuel @75% (L/h) | 342.9
+   | Fuel Efficiency (g/kW·h) | 192
+   | Dimensions — Open (mm) | 5450×2250×3070
+   | Weight — Open / Silent (kg) | 15000 / 18000
+n103 1250kW Diesel Generator | Cummins | Factory Direct
+   Model: R-CC1563D6/S · 60Hz (1800 rpm)
+   | Standby Power | 1250 kW / 1562.5 kVA
+   | Prime Power | 1137 kW / 1421.2 kVA
+   | Engine Model | KTA50-G3
+   | Alternator | Stamford S6L1D-F4 / Leroy-Somer LSA 50.2 M6
+   | Fuel Consumption | 205.1 / 273.4 L/h (@75% / @100%)
+   | Fuel Efficiency | 202 g/kW·h (ISO 3046-1)
+   | Dimensions (Open / Silent) | 5000×2070×2300 / 12192×2435×2896( 40HP) mm
+   | Weight (Open / Silent) | 11000 / 13000 kg
+   | Frequency | 60Hz (1800 rpm)
+   | Model | R-CC1563D6/S
+   | Engine | KTA50-G3
+   | Fuel @75% (L/h) | 205.1
+   | Fuel Efficiency (g/kW·h) | 202
+   | Dimensions — Open (mm) | 5000×2070×2300
+   | Weight — Open / Silent (kg) | 11000 / 13000
