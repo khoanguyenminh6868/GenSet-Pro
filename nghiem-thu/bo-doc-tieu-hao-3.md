@@ -63,7 +63,7 @@ Test suppliers 1.356 / 1.356, spec-norm 148 / 148, `verify` đạt, `quality --c
 2. #1022: gộp main, CI xanh, báo SHA; điều phối giao đo cloud theo SHA đó.
 3. E + C + D, A, G, B chỉ bắt đầu sau khi #1022 merge. `wt-do-1022-nhanh`, `wt-do-1022-goc` còn giữ tới khi đo lại xong.
 
-Tệp có trích chữ HSMT (`soat-nguong.txt`, `soat-muc.txt`) đã chuyển sang `genbid-work\doc-cache\soat-1022\` (ngoài git). Hai tệp này từng lên nhánh `dieu-phoi` ở commit 5b0099d7; lịch sử chưa xoá.
+Tệp có trích chữ HSMT (`soat-nguong.txt`, `soat-muc.txt`) đã chuyển sang `genbid-work\doc-cache\soat-1022\` (ngoài git). Hai tệp này từng lên nhánh `dieu-phoi` ở commit 5b0099d7; Khoa quyết "Giữ nguyên" lịch sử nhánh (điều phối chuyển lời 22/11/2026), không viết lại.
 
 ## Danh sách cho phiên sửa `sizeBlocks`
 
