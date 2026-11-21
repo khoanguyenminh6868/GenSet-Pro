@@ -1,0 +1,2398 @@
+bản ghi cũ 61041, mới 61041 | khác 303 | chỉ cũ 0, chỉ mới 0 | bảng có đổi 145
+{"fuel đổi":93,"cyl thêm":256,"fuel thêm":6}
+
+[baudouin n1021 bảng 97] ×1
+  undefined (bảng nhãn)
+        ⇒ fuel: 193 → 156; fuel75: 186 → 113; fuel50: 190 → 77; cyl: ∅ → 6 / 24
+
+[generatordieselchina n101 bảng 0] ×3
+  undefined (bảng nhãn)
+        ⇒ fuel75: 342.9 → 342.9 / 457.1 L/h (@75% / @100%); fuel: 192 → 342.9 / 457.1 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 342.9 → 342.9 / 457.1 L/h (@75% / @100%); fuel: 192 → 342.9 / 457.1 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 342.9 → 342.9 / 457.1 L/h (@75% / @100%); fuel: 192 → 342.9 / 457.1 L/h (@75% / @100%)
+
+[generatordieselchina n103 bảng 2] ×3
+  undefined (bảng nhãn)
+        ⇒ fuel75: 205.1 → 205.1 / 273.4 L/h (@75% / @100%); fuel: 202 → 205.1 / 273.4 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 205.1 → 205.1 / 273.4 L/h (@75% / @100%); fuel: 202 → 205.1 / 273.4 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 205.1 → 205.1 / 273.4 L/h (@75% / @100%); fuel: 202 → 205.1 / 273.4 L/h (@75% / @100%)
+
+[generatordieselchina n106 bảng 5] ×3
+  undefined (bảng nhãn)
+        ⇒ fuel75: 140.9 → 140.9 / 187.9 L/h (@75% / @100%); fuel: 209 → 140.9 / 187.9 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 140.9 → 140.9 / 187.9 L/h (@75% / @100%); fuel: 209 → 140.9 / 187.9 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 140.9 → 140.9 / 187.9 L/h (@75% / @100%); fuel: 209 → 140.9 / 187.9 L/h (@75% / @100%)
+
+[generatordieselchina n108 bảng 7] ×3
+  undefined (bảng nhãn)
+        ⇒ fuel75: 96.4 → 96.4 / 128.6 L/h (@75% / @100%); fuel: 216 → 96.4 / 128.6 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 96.4 → 96.4 / 128.6 L/h (@75% / @100%); fuel: 216 → 96.4 / 128.6 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 96.4 → 96.4 / 128.6 L/h (@75% / @100%); fuel: 216 → 96.4 / 128.6 L/h (@75% / @100%)
+
+[generatordieselchina n110 bảng 9] ×3
+  undefined (bảng nhãn)
+        ⇒ fuel75: 60.0 → 60.0 / 80.0 L/h (@75% / @100%); fuel: 192 → 60.0 / 80.0 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 60.0 → 60.0 / 80.0 L/h (@75% / @100%); fuel: 192 → 60.0 / 80.0 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 60.0 → 60.0 / 80.0 L/h (@75% / @100%); fuel: 192 → 60.0 / 80.0 L/h (@75% / @100%)
+
+[generatordieselchina n111 bảng 10] ×3
+  undefined (bảng nhãn)
+        ⇒ fuel75: 55.4 → 55.4 / 73.8 L/h (@75% / @100%); fuel: 206.7 → 55.4 / 73.8 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 55.4 → 55.4 / 73.8 L/h (@75% / @100%); fuel: 206.7 → 55.4 / 73.8 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 55.4 → 55.4 / 73.8 L/h (@75% / @100%); fuel: 206.7 → 55.4 / 73.8 L/h (@75% / @100%)
+
+[generatordieselchina n112 bảng 11] ×3
+  undefined (bảng nhãn)
+        ⇒ fuel75: 46.6 → 46.6 / 62.1 L/h (@75% / @100%); fuel: 208.8 → 46.6 / 62.1 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 46.6 → 46.6 / 62.1 L/h (@75% / @100%); fuel: 208.8 → 46.6 / 62.1 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 46.6 → 46.6 / 62.1 L/h (@75% / @100%); fuel: 208.8 → 46.6 / 62.1 L/h (@75% / @100%)
+
+[generatordieselchina n114 bảng 13] ×3
+  undefined (bảng nhãn)
+        ⇒ fuel75: 29.3 → 29.3 / 39.0 L/h (@75% / @100%); fuel: 205 → 29.3 / 39.0 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 29.3 → 29.3 / 39.0 L/h (@75% / @100%); fuel: 205 → 29.3 / 39.0 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 29.3 → 29.3 / 39.0 L/h (@75% / @100%); fuel: 205 → 29.3 / 39.0 L/h (@75% / @100%)
+
+[generatordieselchina n115 bảng 14] ×3
+  undefined (bảng nhãn)
+        ⇒ fuel75: 26.9 → 26.9 / 35.9 L/h (@75% / @100%); fuel: 201 → 26.9 / 35.9 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 26.9 → 26.9 / 35.9 L/h (@75% / @100%); fuel: 201 → 26.9 / 35.9 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 26.9 → 26.9 / 35.9 L/h (@75% / @100%); fuel: 201 → 26.9 / 35.9 L/h (@75% / @100%)
+
+[generatordieselchina n117 bảng 16] ×3
+  undefined (bảng nhãn)
+        ⇒ fuel75: 18.8 → 18.8 / 25.1 L/h (@75% / @100%); fuel: 211 → 18.8 / 25.1 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 18.8 → 18.8 / 25.1 L/h (@75% / @100%); fuel: 211 → 18.8 / 25.1 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 18.8 → 18.8 / 25.1 L/h (@75% / @100%); fuel: 211 → 18.8 / 25.1 L/h (@75% / @100%)
+
+[generatordieselchina n119 bảng 18] ×3
+  undefined (bảng nhãn)
+        ⇒ fuel75: 13.5 → 13.5 / 18.0 L/h (@75% / @100%); fuel: 207 → 13.5 / 18.0 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 13.5 → 13.5 / 18.0 L/h (@75% / @100%); fuel: 207 → 13.5 / 18.0 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 13.5 → 13.5 / 18.0 L/h (@75% / @100%); fuel: 207 → 13.5 / 18.0 L/h (@75% / @100%)
+
+[generatordieselchina n120 bảng 19] ×3
+  undefined (bảng nhãn)
+        ⇒ fuel75: 10.8 → 10.8 / 14.3 L/h (@75% / @100%); fuel: 219 → 10.8 / 14.3 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 10.8 → 10.8 / 14.3 L/h (@75% / @100%); fuel: 219 → 10.8 / 14.3 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 10.8 → 10.8 / 14.3 L/h (@75% / @100%); fuel: 219 → 10.8 / 14.3 L/h (@75% / @100%)
+
+[generatordieselchina n121 bảng 20] ×3
+  undefined (bảng nhãn)
+        ⇒ fuel75: 9.5 → 9.5 / 12.7 L/h (@75% / @100%); fuel: 213 → 9.5 / 12.7 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 9.5 → 9.5 / 12.7 L/h (@75% / @100%); fuel: 213 → 9.5 / 12.7 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 9.5 → 9.5 / 12.7 L/h (@75% / @100%); fuel: 213 → 9.5 / 12.7 L/h (@75% / @100%)
+
+[generatordieselchina n122 bảng 21] ×3
+  undefined (bảng nhãn)
+        ⇒ fuel75: 7.6 → 7.6 / 10.1 L/h (@75% / @100%); fuel: 213 → 7.6 / 10.1 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 7.6 → 7.6 / 10.1 L/h (@75% / @100%); fuel: 213 → 7.6 / 10.1 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 7.6 → 7.6 / 10.1 L/h (@75% / @100%); fuel: 213 → 7.6 / 10.1 L/h (@75% / @100%)
+
+[generatordieselchina n123 bảng 22] ×3
+  undefined (bảng nhãn)
+        ⇒ fuel75: 6.1 → 6.1 / 8.2 L/h (@75% / @100%); fuel: 229 → 6.1 / 8.2 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 6.1 → 6.1 / 8.2 L/h (@75% / @100%); fuel: 229 → 6.1 / 8.2 L/h (@75% / @100%)
+  undefined (bảng nhãn)
+        ⇒ fuel75: 6.1 → 6.1 / 8.2 L/h (@75% / @100%); fuel: 229 → 6.1 / 8.2 L/h (@75% / @100%)
+
+[huatai-yangzhou n111 bảng 10] ×17
+  H: | 组型号Type of set | 输出功率 Power of output (KW/KVA) | 额定电流Rated current (A) | 柴油机参数 Parameters of set | 机组尺寸及重量 Size and weight of machine set
+  H: | 型号 Type | 额定功率 power (KW) | 缸数及类型Numbers& Type of cylinder | 燃油消耗 (g/kw.h)Consumption of fuel(g/kw.h) | 机油容量 Oil capacity (L) | 长×宽×高 Length Width Height (MM) | 净重 Net Weight (kg)
+    0 | 200GF | 135/320 | 362 | WD129TAD23 | 259 | 6缸直列 | 198 | 24 | 2700×900×1400 | 1900
+        ⇒ cyl: ∅ → 6缸直列
+    1 | 250GF | 138/150 | 452.5 | WD135TAD28 | 308 | 6缸直列 | 198 | 24 | 2700×900×1400 | 2000
+        ⇒ cyl: ∅ → 6缸直列
+    2 | 300GF | 138/160 | 543 | WD145TAD30 | 340 | 6缸直列 | 198 | 24 | 2800×900×1500 | 2200
+        ⇒ cyl: ∅ → 6缸直列
+    3 | 320GF | 138/160 | 579.2 | WD145TAD33L | 373 | 6缸直列 | 198 | 30 | 2900×1100×1600 | 2500
+        ⇒ cyl: ∅ → 6缸直列
+    4 | 350GF | 138/160 | 633.5 | WD145TAD35 | 388 | 6缸直列 | 198 | 50 | 3200×1350×1800 | 3300
+        ⇒ cyl: ∅ → 6缸直列
+    5 | 400GF | 138/150 | 724 | WD269TAD38 | 420 | 12缸V型 | 198 | 50 | 3200×1350×1800 | 3300
+        ⇒ cyl: ∅ → 12缸V型
+    6 | 400GF | 138/150 | 724 | WD269TAD41 | 460 | 12缸V型 | 198 | 50 | 3400×1400×1850 | 3600
+        ⇒ cyl: ∅ → 12缸V型
+    7 | 450GF | 138/150 | 814.5 | WD269TAD45 | 512 | 12缸V型 | 198 | 50 | 3600×1400×1850 | 3800
+        ⇒ cyl: ∅ → 12缸V型
+    8 | 500GF | 138/150 | 905 | WD269TAD48 | 530 | 12缸V型 | 198 | 55 | 3600×1400×1850 | 3800
+        ⇒ cyl: ∅ → 12缸V型
+    9 | 500GF | 138/150 | 905 | WD269TAD50 | 556 | 12缸V型 | 198 | 55 | 3650×1500×1900 | 4500
+        ⇒ cyl: ∅ → 12缸V型
+   10 | 500GF | 138/150 | 905 | WD269TAD56 | 618 | 12缸V型 | 198 | 55 | 3800×1800×2100 | 4550
+        ⇒ cyl: ∅ → 12缸V型
+   11 | 600GF | 138/160 | 1086 | WD287TAD61L | 680 | 12缸V型 | 198 | 55 | 3800×1800×2100 | 4550
+        ⇒ cyl: ∅ → 12缸V型
+   12 | 700GF | 140/165 | 1267 | WD305TAD68 | 750 | 12缸V型 | 196 | 55 | 3800×1800×2100 | 4550
+        ⇒ cyl: ∅ → 12缸V型
+   13 | 800GF | 140/165 | 1448 | WD327TAD78 | 858 | 12缸V型 | 196 | 60 | 3900×1850×2100 | 5000
+        ⇒ cyl: ∅ → 12缸V型
+   14 | 850GF | 140/165 | 1538.5 | WD327TAD82 | 902 | 12缸V型 | 196 | 60 | 3900×1850×2100 | 5000
+        ⇒ cyl: ∅ → 12缸V型
+   15 | 900GF | 145/165 | 1629 | WD327TAD88 | 970 | 12缸V型 | 196 | 65 | 4000×2000×2200 | 5500
+        ⇒ cyl: ∅ → 12缸V型
+   16 | 1000GF | 145/165 | 1810 | WD327TAD92 | 1012 | 12缸V型 | 196 | 65 | 4500×2100×2300 | 6000
+        ⇒ cyl: ∅ → 12缸V型
+
+[jiuan-power n136 bảng 35] ×1
+  undefined (bảng nhãn)
+        ⇒ fuel: ∅ → 58.5 / 42.8 / 29.3 L/h (100% / 75% / 50% standby); fuel75: ∅ → 58.5 / 42.8 / 29.3 L/h (100% / 75% / 50% standby); fuel50: ∅ → 58.5 / 42.8 / 29.3 L/h (100% / 75% / 50% standby)
+
+[jiuan-power n137 bảng 36] ×1
+  undefined (bảng nhãn)
+        ⇒ fuel: ∅ → 52.3 / 38.7 / 26.5 L/h (100% / 75% / 50%); fuel75: ∅ → 52.3 / 38.7 / 26.5 L/h (100% / 75% / 50%); fuel50: ∅ → 52.3 / 38.7 / 26.5 L/h (100% / 75% / 50%)
+
+[lees-power n1119 bảng 152] ×1
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 12缸V型水冷
+
+[lees-power n1120 bảng 153] ×1
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 16缸V型水冷
+
+[lees-power n1121 bảng 154] ×1
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 20缸V型水冷
+
+[lees-power n1165 bảng 198] ×1
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6缸直列水冷
+
+[lees-power n1191 bảng 224] ×1
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6缸直列水冷
+
+[lees-power n1192 bảng 225] ×1
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6缸直列水冷
+
+[lees-power n1194 bảng 227] ×1
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 8缸V型水冷
+
+[lees-power n1195 bảng 228] ×1
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 10缸V型水冷
+
+[lees-power n1196 bảng 229] ×1
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 12缸V型水冷
+
+[longkai-power n1001 bảng 17] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1002 bảng 19] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1003 bảng 21] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1004 bảng 22] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1005 bảng 24] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1006 bảng 26] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1007 bảng 28] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1008 bảng 30] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1009 bảng 32] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1010 bảng 34] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1011 bảng 36] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1012 bảng 38] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1013 bảng 40] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1014 bảng 42] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1015 bảng 44] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1021 bảng 56] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1022 bảng 58] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1023 bảng 60] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1024 bảng 62] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1025 bảng 64] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1026 bảng 66] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1027 bảng 68] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1028 bảng 70] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1029 bảng 72] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1030 bảng 74] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1032 bảng 77] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1033 bảng 79] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1034 bảng 81] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1035 bảng 83] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1036 bảng 84] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1037 bảng 86] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6in line
+
+[longkai-power n1038 bảng 88] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1039 bảng 90] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1040 bảng 92] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1041 bảng 94] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6in line
+
+[longkai-power n1042 bảng 96] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6in line
+
+[longkai-power n1043 bảng 98] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6in line
+
+[longkai-power n1044 bảng 100] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6in line
+
+[longkai-power n1045 bảng 102] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6in line
+
+[longkai-power n1046 bảng 104] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6in line
+
+[longkai-power n1047 bảng 106] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1048 bảng 108] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1049 bảng 110] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1050 bảng 112] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1051 bảng 114] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1052 bảng 115] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1053 bảng 117] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1054 bảng 119] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1055 bảng 120] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1056 bảng 122] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1057 bảng 124] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1058 bảng 125] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1059 bảng 127] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1060 bảng 129] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1061 bảng 130] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1062 bảng 132] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1063 bảng 134] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1065 bảng 135] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1066 bảng 136] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1067 bảng 138] ×1
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1068 bảng 140] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1069 bảng 141] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1070 bảng 143] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1071 bảng 145] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1072 bảng 146] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1073 bảng 148] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1074 bảng 150] ×1
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1075 bảng 151] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1076 bảng 153] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1077 bảng 155] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1078 bảng 157] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1079 bảng 158] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1080 bảng 160] ×1
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1081 bảng 162] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1082 bảng 164] ×1
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1083 bảng 166] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1084 bảng 167] ×1
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1085 bảng 169] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1086 bảng 171] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1087 bảng 173] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1088 bảng 175] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1089 bảng 177] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1090 bảng 179] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1091 bảng 181] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1092 bảng 182] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1093 bảng 183] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1094 bảng 185] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1095 bảng 186] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1096 bảng 188] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1097 bảng 189] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1098 bảng 191] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1099 bảng 193] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1100 bảng 194] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1101 bảng 196] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1123 bảng 230] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1124 bảng 231] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1125 bảng 233] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1126 bảng 235] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1127 bảng 237] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1128 bảng 239] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1129 bảng 241] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 4 in line
+
+[longkai-power n1130 bảng 243] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1131 bảng 245] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1132 bảng 247] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1133 bảng 249] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1134 bảng 251] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1135 bảng 253] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1136 bảng 255] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1137 bảng 257] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1138 bảng 259] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1139 bảng 261] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1140 bảng 263] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1141 bảng 265] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1142 bảng 267] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1143 bảng 269] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[longkai-power n1145 bảng 273] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+[xinhengxin-fujian n1001 bảng 22] ×2
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+  undefined (bảng nhãn)
+        ⇒ cyl: ∅ → 6 in line
+
+==== tự kiểm số (verSpec) ====
+(!) [baudouin n1021 bảng 97 fuel] dòng undefined: 193 → 156 (nhãn "100% PRP") | null | undefined
+(!) [baudouin n1021 bảng 97 fuel] dòng undefined: 186 → 113 (nhãn "75% PRP") | null | undefined
+(!) [baudouin n1021 bảng 97 fuel] dòng undefined: 190 → 77 (nhãn "50% PRP") | null | undefined
+    [baudouin n1021 bảng 97 cyl] dòng undefined: ∅ → 6 / 24 (nhãn "N° of Cylinders / Valves") | undefined
+(!) [generatordieselchina n101 bảng 0 fuel] dòng undefined: 342.9 → 342.9 / 457.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":2000,"kVA":2500},"standby":{"kW":2200,"kVA":2750}} | undefined
+(!) [generatordieselchina n101 bảng 0 fuel] dòng undefined: 192 → 342.9 / 457.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":2000,"kVA":2500},"standby":{"kW":2200,"kVA":2750}} | undefined
+(!) [generatordieselchina n101 bảng 0 fuel] dòng undefined: 342.9 → 342.9 / 457.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":2000,"kVA":2500},"standby":{"kW":2200,"kVA":2750}} | undefined
+(!) [generatordieselchina n101 bảng 0 fuel] dòng undefined: 192 → 342.9 / 457.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":2000,"kVA":2500},"standby":{"kW":2200,"kVA":2750}} | undefined
+(!) [generatordieselchina n101 bảng 0 fuel] dòng undefined: 342.9 → 342.9 / 457.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":2000,"kVA":2500},"standby":{"kW":2200,"kVA":2750}} | undefined
+(!) [generatordieselchina n101 bảng 0 fuel] dòng undefined: 192 → 342.9 / 457.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":2000,"kVA":2500},"standby":{"kW":2200,"kVA":2750}} | undefined
+(!) [generatordieselchina n103 bảng 2 fuel] dòng undefined: 205.1 → 205.1 / 273.4 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":1137,"kVA":1421.2},"standby":{"kW":1250,"kVA":1562.5}} | undefined
+(!) [generatordieselchina n103 bảng 2 fuel] dòng undefined: 202 → 205.1 / 273.4 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":1137,"kVA":1421.2},"standby":{"kW":1250,"kVA":1562.5}} | undefined
+(!) [generatordieselchina n103 bảng 2 fuel] dòng undefined: 205.1 → 205.1 / 273.4 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":1137,"kVA":1421.2},"standby":{"kW":1250,"kVA":1562.5}} | undefined
+(!) [generatordieselchina n103 bảng 2 fuel] dòng undefined: 202 → 205.1 / 273.4 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":1137,"kVA":1421.2},"standby":{"kW":1250,"kVA":1562.5}} | undefined
+(!) [generatordieselchina n103 bảng 2 fuel] dòng undefined: 205.1 → 205.1 / 273.4 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":1137,"kVA":1421.2},"standby":{"kW":1250,"kVA":1562.5}} | undefined
+(!) [generatordieselchina n103 bảng 2 fuel] dòng undefined: 202 → 205.1 / 273.4 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":1137,"kVA":1421.2},"standby":{"kW":1250,"kVA":1562.5}} | undefined
+(!) [generatordieselchina n106 bảng 5 fuel] dòng undefined: 140.9 → 140.9 / 187.9 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":755,"kVA":943.8},"standby":{"kW":830,"kVA":1037.5}} | undefined
+(!) [generatordieselchina n106 bảng 5 fuel] dòng undefined: 209 → 140.9 / 187.9 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":755,"kVA":943.8},"standby":{"kW":830,"kVA":1037.5}} | undefined
+(!) [generatordieselchina n106 bảng 5 fuel] dòng undefined: 140.9 → 140.9 / 187.9 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":755,"kVA":943.8},"standby":{"kW":830,"kVA":1037.5}} | undefined
+(!) [generatordieselchina n106 bảng 5 fuel] dòng undefined: 209 → 140.9 / 187.9 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":755,"kVA":943.8},"standby":{"kW":830,"kVA":1037.5}} | undefined
+(!) [generatordieselchina n106 bảng 5 fuel] dòng undefined: 140.9 → 140.9 / 187.9 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":755,"kVA":943.8},"standby":{"kW":830,"kVA":1037.5}} | undefined
+(!) [generatordieselchina n106 bảng 5 fuel] dòng undefined: 209 → 140.9 / 187.9 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":755,"kVA":943.8},"standby":{"kW":830,"kVA":1037.5}} | undefined
+(!) [generatordieselchina n108 bảng 7 fuel] dòng undefined: 96.4 → 96.4 / 128.6 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":500,"kVA":625},"standby":{"kW":550,"kVA":687.5}} | undefined
+(!) [generatordieselchina n108 bảng 7 fuel] dòng undefined: 216 → 96.4 / 128.6 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":500,"kVA":625},"standby":{"kW":550,"kVA":687.5}} | undefined
+(!) [generatordieselchina n108 bảng 7 fuel] dòng undefined: 96.4 → 96.4 / 128.6 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":500,"kVA":625},"standby":{"kW":550,"kVA":687.5}} | undefined
+(!) [generatordieselchina n108 bảng 7 fuel] dòng undefined: 216 → 96.4 / 128.6 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":500,"kVA":625},"standby":{"kW":550,"kVA":687.5}} | undefined
+(!) [generatordieselchina n108 bảng 7 fuel] dòng undefined: 96.4 → 96.4 / 128.6 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":500,"kVA":625},"standby":{"kW":550,"kVA":687.5}} | undefined
+(!) [generatordieselchina n108 bảng 7 fuel] dòng undefined: 216 → 96.4 / 128.6 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":500,"kVA":625},"standby":{"kW":550,"kVA":687.5}} | undefined
+(!) [generatordieselchina n110 bảng 9 fuel] dòng undefined: 60.0 → 60.0 / 80.0 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":350,"kVA":438},"standby":{"kW":385,"kVA":481}} | undefined
+(!) [generatordieselchina n110 bảng 9 fuel] dòng undefined: 192 → 60.0 / 80.0 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":350,"kVA":438},"standby":{"kW":385,"kVA":481}} | undefined
+(!) [generatordieselchina n110 bảng 9 fuel] dòng undefined: 60.0 → 60.0 / 80.0 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":350,"kVA":438},"standby":{"kW":385,"kVA":481}} | undefined
+(!) [generatordieselchina n110 bảng 9 fuel] dòng undefined: 192 → 60.0 / 80.0 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":350,"kVA":438},"standby":{"kW":385,"kVA":481}} | undefined
+(!) [generatordieselchina n110 bảng 9 fuel] dòng undefined: 60.0 → 60.0 / 80.0 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":350,"kVA":438},"standby":{"kW":385,"kVA":481}} | undefined
+(!) [generatordieselchina n110 bảng 9 fuel] dòng undefined: 192 → 60.0 / 80.0 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":350,"kVA":438},"standby":{"kW":385,"kVA":481}} | undefined
+(!) [generatordieselchina n111 bảng 10 fuel] dòng undefined: 55.4 → 55.4 / 73.8 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":300,"kVA":375},"standby":{"kW":330,"kVA":412.5}} | undefined
+(!) [generatordieselchina n111 bảng 10 fuel] dòng undefined: 206.7 → 55.4 / 73.8 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":300,"kVA":375},"standby":{"kW":330,"kVA":412.5}} | undefined
+(!) [generatordieselchina n111 bảng 10 fuel] dòng undefined: 55.4 → 55.4 / 73.8 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":300,"kVA":375},"standby":{"kW":330,"kVA":412.5}} | undefined
+(!) [generatordieselchina n111 bảng 10 fuel] dòng undefined: 206.7 → 55.4 / 73.8 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":300,"kVA":375},"standby":{"kW":330,"kVA":412.5}} | undefined
+(!) [generatordieselchina n111 bảng 10 fuel] dòng undefined: 55.4 → 55.4 / 73.8 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":300,"kVA":375},"standby":{"kW":330,"kVA":412.5}} | undefined
+(!) [generatordieselchina n111 bảng 10 fuel] dòng undefined: 206.7 → 55.4 / 73.8 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":300,"kVA":375},"standby":{"kW":330,"kVA":412.5}} | undefined
+(!) [generatordieselchina n112 bảng 11 fuel] dòng undefined: 46.6 → 46.6 / 62.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":250,"kVA":312.5},"standby":{"kW":275,"kVA":343.8}} | undefined
+(!) [generatordieselchina n112 bảng 11 fuel] dòng undefined: 208.8 → 46.6 / 62.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":250,"kVA":312.5},"standby":{"kW":275,"kVA":343.8}} | undefined
+(!) [generatordieselchina n112 bảng 11 fuel] dòng undefined: 46.6 → 46.6 / 62.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":250,"kVA":312.5},"standby":{"kW":275,"kVA":343.8}} | undefined
+(!) [generatordieselchina n112 bảng 11 fuel] dòng undefined: 208.8 → 46.6 / 62.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":250,"kVA":312.5},"standby":{"kW":275,"kVA":343.8}} | undefined
+(!) [generatordieselchina n112 bảng 11 fuel] dòng undefined: 46.6 → 46.6 / 62.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":250,"kVA":312.5},"standby":{"kW":275,"kVA":343.8}} | undefined
+(!) [generatordieselchina n112 bảng 11 fuel] dòng undefined: 208.8 → 46.6 / 62.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":250,"kVA":312.5},"standby":{"kW":275,"kVA":343.8}} | undefined
+(!) [generatordieselchina n114 bảng 13 fuel] dòng undefined: 29.3 → 29.3 / 39.0 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":160,"kVA":200},"standby":{"kW":176,"kVA":220}} | undefined
+(!) [generatordieselchina n114 bảng 13 fuel] dòng undefined: 205 → 29.3 / 39.0 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":160,"kVA":200},"standby":{"kW":176,"kVA":220}} | undefined
+(!) [generatordieselchina n114 bảng 13 fuel] dòng undefined: 29.3 → 29.3 / 39.0 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":160,"kVA":200},"standby":{"kW":176,"kVA":220}} | undefined
+(!) [generatordieselchina n114 bảng 13 fuel] dòng undefined: 205 → 29.3 / 39.0 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":160,"kVA":200},"standby":{"kW":176,"kVA":220}} | undefined
+(!) [generatordieselchina n114 bảng 13 fuel] dòng undefined: 29.3 → 29.3 / 39.0 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":160,"kVA":200},"standby":{"kW":176,"kVA":220}} | undefined
+(!) [generatordieselchina n114 bảng 13 fuel] dòng undefined: 205 → 29.3 / 39.0 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":160,"kVA":200},"standby":{"kW":176,"kVA":220}} | undefined
+(!) [generatordieselchina n115 bảng 14 fuel] dòng undefined: 26.9 → 26.9 / 35.9 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":150,"kVA":188},"standby":{"kW":165,"kVA":206}} | undefined
+(!) [generatordieselchina n115 bảng 14 fuel] dòng undefined: 201 → 26.9 / 35.9 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":150,"kVA":188},"standby":{"kW":165,"kVA":206}} | undefined
+(!) [generatordieselchina n115 bảng 14 fuel] dòng undefined: 26.9 → 26.9 / 35.9 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":150,"kVA":188},"standby":{"kW":165,"kVA":206}} | undefined
+(!) [generatordieselchina n115 bảng 14 fuel] dòng undefined: 201 → 26.9 / 35.9 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":150,"kVA":188},"standby":{"kW":165,"kVA":206}} | undefined
+(!) [generatordieselchina n115 bảng 14 fuel] dòng undefined: 26.9 → 26.9 / 35.9 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":150,"kVA":188},"standby":{"kW":165,"kVA":206}} | undefined
+(!) [generatordieselchina n115 bảng 14 fuel] dòng undefined: 201 → 26.9 / 35.9 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":150,"kVA":188},"standby":{"kW":165,"kVA":206}} | undefined
+(!) [generatordieselchina n117 bảng 16 fuel] dòng undefined: 18.8 → 18.8 / 25.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":100,"kVA":125},"standby":{"kW":110,"kVA":138}} | undefined
+(!) [generatordieselchina n117 bảng 16 fuel] dòng undefined: 211 → 18.8 / 25.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":100,"kVA":125},"standby":{"kW":110,"kVA":138}} | undefined
+(!) [generatordieselchina n117 bảng 16 fuel] dòng undefined: 18.8 → 18.8 / 25.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":100,"kVA":125},"standby":{"kW":110,"kVA":138}} | undefined
+(!) [generatordieselchina n117 bảng 16 fuel] dòng undefined: 211 → 18.8 / 25.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":100,"kVA":125},"standby":{"kW":110,"kVA":138}} | undefined
+(!) [generatordieselchina n117 bảng 16 fuel] dòng undefined: 18.8 → 18.8 / 25.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":100,"kVA":125},"standby":{"kW":110,"kVA":138}} | undefined
+(!) [generatordieselchina n117 bảng 16 fuel] dòng undefined: 211 → 18.8 / 25.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":100,"kVA":125},"standby":{"kW":110,"kVA":138}} | undefined
+(!) [generatordieselchina n119 bảng 18 fuel] dòng undefined: 13.5 → 13.5 / 18.0 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":73,"kVA":91.2},"standby":{"kW":80.3,"kVA":100.4}} | undefined
+(!) [generatordieselchina n119 bảng 18 fuel] dòng undefined: 207 → 13.5 / 18.0 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":73,"kVA":91.2},"standby":{"kW":80.3,"kVA":100.4}} | undefined
+(!) [generatordieselchina n119 bảng 18 fuel] dòng undefined: 13.5 → 13.5 / 18.0 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":73,"kVA":91.2},"standby":{"kW":80.3,"kVA":100.4}} | undefined
+(!) [generatordieselchina n119 bảng 18 fuel] dòng undefined: 207 → 13.5 / 18.0 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":73,"kVA":91.2},"standby":{"kW":80.3,"kVA":100.4}} | undefined
+(!) [generatordieselchina n119 bảng 18 fuel] dòng undefined: 13.5 → 13.5 / 18.0 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":73,"kVA":91.2},"standby":{"kW":80.3,"kVA":100.4}} | undefined
+(!) [generatordieselchina n119 bảng 18 fuel] dòng undefined: 207 → 13.5 / 18.0 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":73,"kVA":91.2},"standby":{"kW":80.3,"kVA":100.4}} | undefined
+(!) [generatordieselchina n120 bảng 19 fuel] dòng undefined: 10.8 → 10.8 / 14.3 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":55,"kVA":68.8},"standby":{"kW":60,"kVA":75}} | undefined
+(!) [generatordieselchina n120 bảng 19 fuel] dòng undefined: 219 → 10.8 / 14.3 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":55,"kVA":68.8},"standby":{"kW":60,"kVA":75}} | undefined
+(!) [generatordieselchina n120 bảng 19 fuel] dòng undefined: 10.8 → 10.8 / 14.3 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":55,"kVA":68.8},"standby":{"kW":60,"kVA":75}} | undefined
+(!) [generatordieselchina n120 bảng 19 fuel] dòng undefined: 219 → 10.8 / 14.3 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":55,"kVA":68.8},"standby":{"kW":60,"kVA":75}} | undefined
+(!) [generatordieselchina n120 bảng 19 fuel] dòng undefined: 10.8 → 10.8 / 14.3 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":55,"kVA":68.8},"standby":{"kW":60,"kVA":75}} | undefined
+(!) [generatordieselchina n120 bảng 19 fuel] dòng undefined: 219 → 10.8 / 14.3 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":55,"kVA":68.8},"standby":{"kW":60,"kVA":75}} | undefined
+(!) [generatordieselchina n121 bảng 20 fuel] dòng undefined: 9.5 → 9.5 / 12.7 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":50,"kVA":63},"standby":{"kW":55,"kVA":70}} | undefined
+(!) [generatordieselchina n121 bảng 20 fuel] dòng undefined: 213 → 9.5 / 12.7 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":50,"kVA":63},"standby":{"kW":55,"kVA":70}} | undefined
+(!) [generatordieselchina n121 bảng 20 fuel] dòng undefined: 9.5 → 9.5 / 12.7 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":50,"kVA":63},"standby":{"kW":55,"kVA":70}} | undefined
+(!) [generatordieselchina n121 bảng 20 fuel] dòng undefined: 213 → 9.5 / 12.7 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":50,"kVA":63},"standby":{"kW":55,"kVA":70}} | undefined
+(!) [generatordieselchina n121 bảng 20 fuel] dòng undefined: 9.5 → 9.5 / 12.7 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":50,"kVA":63},"standby":{"kW":55,"kVA":70}} | undefined
+(!) [generatordieselchina n121 bảng 20 fuel] dòng undefined: 213 → 9.5 / 12.7 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":50,"kVA":63},"standby":{"kW":55,"kVA":70}} | undefined
+(!) [generatordieselchina n122 bảng 21 fuel] dòng undefined: 7.6 → 7.6 / 10.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":40,"kVA":50},"standby":{"kW":44,"kVA":55}} | undefined
+(!) [generatordieselchina n122 bảng 21 fuel] dòng undefined: 213 → 7.6 / 10.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":40,"kVA":50},"standby":{"kW":44,"kVA":55}} | undefined
+(!) [generatordieselchina n122 bảng 21 fuel] dòng undefined: 7.6 → 7.6 / 10.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":40,"kVA":50},"standby":{"kW":44,"kVA":55}} | undefined
+(!) [generatordieselchina n122 bảng 21 fuel] dòng undefined: 213 → 7.6 / 10.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":40,"kVA":50},"standby":{"kW":44,"kVA":55}} | undefined
+(!) [generatordieselchina n122 bảng 21 fuel] dòng undefined: 7.6 → 7.6 / 10.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":40,"kVA":50},"standby":{"kW":44,"kVA":55}} | undefined
+(!) [generatordieselchina n122 bảng 21 fuel] dòng undefined: 213 → 7.6 / 10.1 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":40,"kVA":50},"standby":{"kW":44,"kVA":55}} | undefined
+(!) [generatordieselchina n123 bảng 22 fuel] dòng undefined: 6.1 → 6.1 / 8.2 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":30,"kVA":38},"standby":{"kW":33,"kVA":42}} | undefined
+(!) [generatordieselchina n123 bảng 22 fuel] dòng undefined: 229 → 6.1 / 8.2 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":30,"kVA":38},"standby":{"kW":33,"kVA":42}} | undefined
+(!) [generatordieselchina n123 bảng 22 fuel] dòng undefined: 6.1 → 6.1 / 8.2 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":30,"kVA":38},"standby":{"kW":33,"kVA":42}} | undefined
+(!) [generatordieselchina n123 bảng 22 fuel] dòng undefined: 229 → 6.1 / 8.2 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":30,"kVA":38},"standby":{"kW":33,"kVA":42}} | undefined
+(!) [generatordieselchina n123 bảng 22 fuel] dòng undefined: 6.1 → 6.1 / 8.2 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":30,"kVA":38},"standby":{"kW":33,"kVA":42}} | undefined
+(!) [generatordieselchina n123 bảng 22 fuel] dòng undefined: 229 → 6.1 / 8.2 L/h (@75% / @100%) (nhãn "Fuel Consumption") | {"prime":{"kW":30,"kVA":38},"standby":{"kW":33,"kVA":42}} | undefined
+    [huatai-yangzhou n111 bảng 10 cyl] dòng 0: ∅ → 6缸直列 (nhãn "缸数及类型Numbers& Type of cylinder") | | 200GF | 135/320 | 362 | WD129TAD23 | 259 | 6缸直列 | 198 | 24 | 2700×900×1400 | 1900
+(!) [jiuan-power n136 bảng 35 fuel] dòng undefined: ∅ → 58.5 / 42.8 / 29.3 L/h (100% / 75% / 50% standby) (nhãn "Fuel Consumption") | {"prime":{"kW":245,"kVA":306},"standby":{"kW":285,"kVA":357}} | undefined
+(!) [jiuan-power n136 bảng 35 fuel] dòng undefined: ∅ → 58.5 / 42.8 / 29.3 L/h (100% / 75% / 50% standby) (nhãn "Fuel Consumption") | {"prime":{"kW":245,"kVA":306},"standby":{"kW":285,"kVA":357}} | undefined
+(!) [jiuan-power n136 bảng 35 fuel] dòng undefined: ∅ → 58.5 / 42.8 / 29.3 L/h (100% / 75% / 50% standby) (nhãn "Fuel Consumption") | {"prime":{"kW":245,"kVA":306},"standby":{"kW":285,"kVA":357}} | undefined
+(!) [jiuan-power n137 bảng 36 fuel] dòng undefined: ∅ → 52.3 / 38.7 / 26.5 L/h (100% / 75% / 50%) (nhãn "Fuel Consumption") | {"prime":{"kW":250,"kVA":312.5},"standby":{"kW":275,"kVA":344}} | undefined
+(!) [jiuan-power n137 bảng 36 fuel] dòng undefined: ∅ → 52.3 / 38.7 / 26.5 L/h (100% / 75% / 50%) (nhãn "Fuel Consumption") | {"prime":{"kW":250,"kVA":312.5},"standby":{"kW":275,"kVA":344}} | undefined
+(!) [jiuan-power n137 bảng 36 fuel] dòng undefined: ∅ → 52.3 / 38.7 / 26.5 L/h (100% / 75% / 50%) (nhãn "Fuel Consumption") | {"prime":{"kW":250,"kVA":312.5},"standby":{"kW":275,"kVA":344}} | undefined
+    [lees-power n1119 bảng 152 cyl] dòng undefined: ∅ → 12缸V型水冷 (nhãn "缸数 & 气缸排列") | undefined
+    [lees-power n1120 bảng 153 cyl] dòng undefined: ∅ → 16缸V型水冷 (nhãn "缸数 & 气缸排列") | undefined
+    [lees-power n1121 bảng 154 cyl] dòng undefined: ∅ → 20缸V型水冷 (nhãn "缸数 & 气缸排列") | undefined
+    [lees-power n1165 bảng 198 cyl] dòng undefined: ∅ → 6缸直列水冷 (nhãn "缸数 & 气缸排列") | undefined
+    [lees-power n1191 bảng 224 cyl] dòng undefined: ∅ → 6缸直列水冷 (nhãn "缸数 & 气缸排列") | undefined
+    [lees-power n1192 bảng 225 cyl] dòng undefined: ∅ → 6缸直列水冷 (nhãn "缸数 & 气缸排列") | undefined
+    [lees-power n1194 bảng 227 cyl] dòng undefined: ∅ → 8缸V型水冷 (nhãn "缸数 & 气缸排列") | undefined
+    [lees-power n1195 bảng 228 cyl] dòng undefined: ∅ → 10缸V型水冷 (nhãn "缸数 & 气缸排列") | undefined
+    [lees-power n1196 bảng 229 cyl] dòng undefined: ∅ → 12缸V型水冷 (nhãn "缸数 & 气缸排列") | undefined
+    [longkai-power n1001 bảng 17 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1002 bảng 19 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1003 bảng 21 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1004 bảng 22 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1005 bảng 24 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1006 bảng 26 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1007 bảng 28 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1008 bảng 30 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1009 bảng 32 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1010 bảng 34 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1011 bảng 36 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1012 bảng 38 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1013 bảng 40 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1014 bảng 42 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1015 bảng 44 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1021 bảng 56 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1022 bảng 58 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1023 bảng 60 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1024 bảng 62 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1025 bảng 64 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1026 bảng 66 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1027 bảng 68 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1028 bảng 70 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1029 bảng 72 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1030 bảng 74 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1032 bảng 77 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1033 bảng 79 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1034 bảng 81 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1035 bảng 83 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1036 bảng 84 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1037 bảng 86 cyl] dòng undefined: ∅ → 6in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1038 bảng 88 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1039 bảng 90 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1040 bảng 92 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1041 bảng 94 cyl] dòng undefined: ∅ → 6in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1042 bảng 96 cyl] dòng undefined: ∅ → 6in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1043 bảng 98 cyl] dòng undefined: ∅ → 6in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1044 bảng 100 cyl] dòng undefined: ∅ → 6in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1045 bảng 102 cyl] dòng undefined: ∅ → 6in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1046 bảng 104 cyl] dòng undefined: ∅ → 6in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1047 bảng 106 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1048 bảng 108 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1049 bảng 110 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1050 bảng 112 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1051 bảng 114 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1052 bảng 115 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1053 bảng 117 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1054 bảng 119 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1055 bảng 120 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1056 bảng 122 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1057 bảng 124 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1058 bảng 125 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1059 bảng 127 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1060 bảng 129 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1061 bảng 130 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1062 bảng 132 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1063 bảng 134 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1065 bảng 135 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1066 bảng 136 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1067 bảng 138 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1068 bảng 140 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1069 bảng 141 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1070 bảng 143 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1071 bảng 145 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1072 bảng 146 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1073 bảng 148 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1074 bảng 150 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1075 bảng 151 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1076 bảng 153 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1077 bảng 155 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1078 bảng 157 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1079 bảng 158 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1080 bảng 160 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1081 bảng 162 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1082 bảng 164 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1083 bảng 166 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1084 bảng 167 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1085 bảng 169 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1086 bảng 171 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1087 bảng 173 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1088 bảng 175 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1089 bảng 177 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1090 bảng 179 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1091 bảng 181 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1092 bảng 182 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1093 bảng 183 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1094 bảng 185 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1095 bảng 186 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1096 bảng 188 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1097 bảng 189 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1098 bảng 191 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1099 bảng 193 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1100 bảng 194 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1101 bảng 196 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1123 bảng 230 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1124 bảng 231 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1125 bảng 233 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1126 bảng 235 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1127 bảng 237 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1128 bảng 239 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1129 bảng 241 cyl] dòng undefined: ∅ → 4 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1130 bảng 243 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1131 bảng 245 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1132 bảng 247 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1133 bảng 249 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1134 bảng 251 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1135 bảng 253 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1136 bảng 255 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1137 bảng 257 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1138 bảng 259 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1139 bảng 261 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1140 bảng 263 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1141 bảng 265 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1142 bảng 267 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1143 bảng 269 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [longkai-power n1145 bảng 273 cyl] dòng undefined: ∅ → 6 in line (nhãn "No. cylinders") | undefined
+    [xinhengxin-fujian n1001 bảng 22 cyl] dòng undefined: ∅ → 6 in line (nhãn "No.Cylinders") | undefined
+
+256  cyl thêm: mới tự xác nhận
+6  fuel thêm: mới không kiểm được
+93  fuel đổi: mới không kiểm được, cũ ?
+
+cần soát tay: 99
+
+==== chuẩn hoá ====
+fuel đổi missing | baudouin n1021 b97 dòng L 6M31G825/5: "156": 193 missing unit → 156 L/h
+fuel75 đổi missing | baudouin n1021 b97 dòng L 6M31G825/5: "113": 186 missing unit → 113 L/h
+fuel50 đổi missing | baudouin n1021 b97 dòng L 6M31G825/5: "77": 190 missing unit → 77 L/h
+cyl thêm | baudouin n1021 b97 dòng L 6M31G825/5: "6 / 24": ∅ → 6 missing layout
+fuel đổi missing | generatordieselchina n101 b0 dòng L 20V4000G23F: "342.9 / 457.1 L/h (@75% / @100%)": 192 g/kWh missing load → 457.1 L/h
+fuel đổi missing | generatordieselchina n101 b0 dòng L S7L1D-J4: "342.9 / 457.1 L/h (@75% / @100%)": 192 g/kWh missing load → 457.1 L/h
+fuel đổi missing | generatordieselchina n101 b0 dòng L LSA 52.3 L12: "342.9 / 457.1 L/h (@75% / @100%)": 192 g/kWh missing load → 457.1 L/h
+fuel đổi missing | generatordieselchina n103 b2 dòng L KTA50-G3: "205.1 / 273.4 L/h (@75% / @100%)": 202 g/kWh missing load → 273.4 L/h
+fuel đổi missing | generatordieselchina n103 b2 dòng L S6L1D-F4: "205.1 / 273.4 L/h (@75% / @100%)": 202 g/kWh missing load → 273.4 L/h
+fuel đổi missing | generatordieselchina n103 b2 dòng L LSA 50.2 M6: "205.1 / 273.4 L/h (@75% / @100%)": 202 g/kWh missing load → 273.4 L/h
+fuel đổi missing | generatordieselchina n106 b5 dòng L KTA38-G2B: "140.9 / 187.9 L/h (@75% / @100%)": 209 g/kWh missing load → 187.9 L/h
+fuel đổi missing | generatordieselchina n106 b5 dòng L S5L1D-H4: "140.9 / 187.9 L/h (@75% / @100%)": 209 g/kWh missing load → 187.9 L/h
+fuel đổi missing | generatordieselchina n106 b5 dòng L TAL-A49-C: "140.9 / 187.9 L/h (@75% / @100%)": 209 g/kWh missing load → 187.9 L/h
+fuel đổi missing | generatordieselchina n108 b7 dòng L KTAA19-G6A: "96.4 / 128.6 L/h (@75% / @100%)": 216 g/kWh missing load → 128.6 L/h
+fuel đổi missing | generatordieselchina n108 b7 dòng L S5L1D-F4: "96.4 / 128.6 L/h (@75% / @100%)": 216 g/kWh missing load → 128.6 L/h
+fuel đổi missing | generatordieselchina n108 b7 dòng L TAL-A473-F: "96.4 / 128.6 L/h (@75% / @100%)": 216 g/kWh missing load → 128.6 L/h
+fuel đổi missing | generatordieselchina n110 b9 dòng L 6ZTAA13-G2: "60.0 / 80.0 L/h (@75% / @100%)": 192 g/kWh missing load → 80 L/h
+fuel đổi missing | generatordieselchina n110 b9 dòng L S4L1D-G4: "60.0 / 80.0 L/h (@75% / @100%)": 192 g/kWh missing load → 80 L/h
+fuel đổi missing | generatordieselchina n110 b9 dòng L TAL-A473-B: "60.0 / 80.0 L/h (@75% / @100%)": 192 g/kWh missing load → 80 L/h
+fuel đổi missing | generatordieselchina n111 b10 dòng L NTAA855-G7: "55.4 / 73.8 L/h (@75% / @100%)": 206.7 g/kWh missing load → 73.8 L/h
+fuel đổi missing | generatordieselchina n111 b10 dòng L S4L1D-F4: "55.4 / 73.8 L/h (@75% / @100%)": 206.7 g/kWh missing load → 73.8 L/h
+fuel đổi missing | generatordieselchina n111 b10 dòng L TAL-A473-A: "55.4 / 73.8 L/h (@75% / @100%)": 206.7 g/kWh missing load → 73.8 L/h
+fuel đổi missing | generatordieselchina n112 b11 dòng L NTA855-G1B: "46.6 / 62.1 L/h (@75% / @100%)": 208.8 g/kWh missing load → 62.1 L/h
+fuel đổi missing | generatordieselchina n112 b11 dòng L S4L1D-D4: "46.6 / 62.1 L/h (@75% / @100%)": 208.8 g/kWh missing load → 62.1 L/h
+fuel đổi missing | generatordieselchina n112 b11 dòng L TAL-A46-G: "46.6 / 62.1 L/h (@75% / @100%)": 208.8 g/kWh missing load → 62.1 L/h
+fuel đổi missing | generatordieselchina n114 b13 dòng L 6CTAA8.3-G2: "29.3 / 39.0 L/h (@75% / @100%)": 205 g/kWh missing load → 39 L/h
+fuel đổi missing | generatordieselchina n114 b13 dòng L UCI274H: "29.3 / 39.0 L/h (@75% / @100%)": 205 g/kWh missing load → 39 L/h
+fuel đổi missing | generatordieselchina n114 b13 dòng L TAL-A44-M: "29.3 / 39.0 L/h (@75% / @100%)": 205 g/kWh missing load → 39 L/h
+fuel đổi missing | generatordieselchina n115 b14 dòng L QSB6.7-G32: "26.9 / 35.9 L/h (@75% / @100%)": 201 g/kWh missing load → 35.9 L/h
+fuel đổi missing | generatordieselchina n115 b14 dòng L UCI274H: "26.9 / 35.9 L/h (@75% / @100%)": 201 g/kWh missing load → 35.9 L/h
+fuel đổi missing | generatordieselchina n115 b14 dòng L TAL-A44-M: "26.9 / 35.9 L/h (@75% / @100%)": 201 g/kWh missing load → 35.9 L/h
+fuel đổi missing | generatordieselchina n117 b16 dòng L 6BTA5.9-G2: "18.8 / 25.1 L/h (@75% / @100%)": 211 g/kWh missing load → 25.1 L/h
+fuel đổi missing | generatordieselchina n117 b16 dòng L UCI274ES: "18.8 / 25.1 L/h (@75% / @100%)": 211 g/kWh missing load → 25.1 L/h
+fuel đổi missing | generatordieselchina n117 b16 dòng L TAL-A44-E: "18.8 / 25.1 L/h (@75% / @100%)": 211 g/kWh missing load → 25.1 L/h
+fuel đổi missing | generatordieselchina n119 b18 dòng L 4BTA3.9-G11: "13.5 / 18.0 L/h (@75% / @100%)": 207 g/kWh missing load → 18 L/h
+fuel đổi missing | generatordieselchina n119 b18 dòng L UCI224F: "13.5 / 18.0 L/h (@75% / @100%)": 207 g/kWh missing load → 18 L/h
+fuel đổi missing | generatordieselchina n119 b18 dòng L TAL-A44-C: "13.5 / 18.0 L/h (@75% / @100%)": 207 g/kWh missing load → 18 L/h
+fuel đổi missing | generatordieselchina n120 b19 dòng L 4BTA3.9-G2: "10.8 / 14.3 L/h (@75% / @100%)": 219 g/kWh missing load → 14.3 L/h
+fuel đổi missing | generatordieselchina n120 b19 dòng L UCI224E: "10.8 / 14.3 L/h (@75% / @100%)": 219 g/kWh missing load → 14.3 L/h
+fuel đổi missing | generatordieselchina n120 b19 dòng L TAL-A42-H: "10.8 / 14.3 L/h (@75% / @100%)": 219 g/kWh missing load → 14.3 L/h
+fuel đổi missing | generatordieselchina n121 b20 dòng L 4BTA3.9-G2: "9.5 / 12.7 L/h (@75% / @100%)": 213 g/kWh missing load → 12.7 L/h
+fuel đổi missing | generatordieselchina n121 b20 dòng L S1L2-Y1: "9.5 / 12.7 L/h (@75% / @100%)": 213 g/kWh missing load → 12.7 L/h
+fuel đổi missing | generatordieselchina n121 b20 dòng L TAL-A42-H: "9.5 / 12.7 L/h (@75% / @100%)": 213 g/kWh missing load → 12.7 L/h
+fuel đổi missing | generatordieselchina n122 b21 dòng L 4BTA3.9-G2: "7.6 / 10.1 L/h (@75% / @100%)": 213 g/kWh missing load → 10.1 L/h
+fuel đổi missing | generatordieselchina n122 b21 dòng L S1L2-R1: "7.6 / 10.1 L/h (@75% / @100%)": 213 g/kWh missing load → 10.1 L/h
+fuel đổi missing | generatordieselchina n122 b21 dòng L TAL-A42-G: "7.6 / 10.1 L/h (@75% / @100%)": 213 g/kWh missing load → 10.1 L/h
+fuel đổi missing | generatordieselchina n123 b22 dòng L 4BT3.9-G1: "6.1 / 8.2 L/h (@75% / @100%)": 229 g/kWh missing load → 8.2 L/h
+fuel đổi missing | generatordieselchina n123 b22 dòng L S1L2-K1: "6.1 / 8.2 L/h (@75% / @100%)": 229 g/kWh missing load → 8.2 L/h
+fuel đổi missing | generatordieselchina n123 b22 dòng L TAL-A42-E: "6.1 / 8.2 L/h (@75% / @100%)": 229 g/kWh missing load → 8.2 L/h
+fuel75 đổi missing | gfe-power n1005 b28 dòng L QSK50-G17: "0": missing unit,value → L/h missing value
+fuel50 đổi missing | gfe-power n1005 b28 dòng L QSK50-G17: "0": missing unit,value → L/h missing value
+fuel75 đổi missing | gfe-power n1005 b28 dòng L S7L1D-G41: "0": missing unit,value → L/h missing value
+fuel50 đổi missing | gfe-power n1005 b28 dòng L S7L1D-G41: "0": missing unit,value → L/h missing value
+fuel75 đổi missing | gfe-power n1006 b29 dòng L KTA50-G16A: "296.2": 296.2 missing unit → 296.2 L/h
+fuel50 đổi missing | gfe-power n1006 b29 dòng L KTA50-G16A: "197.5": 197.5 missing unit → 197.5 L/h
+fuel75 đổi missing | gfe-power n1006 b29 dòng L S7L1D-F41: "296.2": 296.2 missing unit → 296.2 L/h
+fuel50 đổi missing | gfe-power n1006 b29 dòng L S7L1D-F41: "197.5": 197.5 missing unit → 197.5 L/h
+fuel75 đổi missing | gfe-power n1010 b33 dòng L 12M55G2750/5: "385.2": 385.2 missing unit → 385.2 L/h
+fuel50 đổi missing | gfe-power n1010 b33 dòng L 12M55G2750/5: "256.8": 256.8 missing unit → 256.8 L/h
+fuel75 đổi missing | gfe-power n1010 b33 dòng L S7L1D-J41: "385.2": 385.2 missing unit → 385.2 L/h
+fuel50 đổi missing | gfe-power n1010 b33 dòng L S7L1D-J41: "256.8": 256.8 missing unit → 256.8 L/h
+fuel75 đổi missing | gfe-power n1012 b34 dòng L 4012-TAG2A: "225": 225 missing unit → 225 L/h
+fuel50 đổi missing | gfe-power n1012 b34 dòng L 4012-TAG2A: "149": 149 missing unit → 149 L/h
+fuel75 đổi missing | gfe-power n1012 b34 dòng L S7L1D-C41: "225": 225 missing unit → 225 L/h
+fuel50 đổi missing | gfe-power n1012 b34 dòng L S7L1D-C41: "149": 149 missing unit → 149 L/h
+fuel75 đổi missing | gfe-power n1014 b37 dòng L 8M33G1000/5: "145.5": 145.5 missing unit → 145.5 L/h
+fuel50 đổi missing | gfe-power n1014 b37 dòng L 8M33G1000/5: "97": 97 missing unit → 97 L/h
+fuel75 đổi missing | gfe-power n1014 b37 dòng L S6L1D-D4: "145.5": 145.5 missing unit → 145.5 L/h
+fuel50 đổi missing | gfe-power n1014 b37 dòng L S6L1D-D4: "97": 97 missing unit → 97 L/h
+fuel75 đổi missing | gfe-power n1018 b41 dòng L 8M33G1100/5: "160.5": 160.5 missing unit → 160.5 L/h
+fuel50 đổi missing | gfe-power n1018 b41 dòng L 8M33G1100/5: "107": 107 missing unit → 107 L/h
+fuel75 đổi missing | gfe-power n1018 b41 dòng L S6L1D-E4: "160.5": 160.5 missing unit → 160.5 L/h
+fuel50 đổi missing | gfe-power n1018 b41 dòng L S6L1D-E4: "107": 107 missing unit → 107 L/h
+fuel75 đổi missing | gfe-power n1020 b43 dòng L QSK19-G6: "98": 98 missing unit → 98 L/h
+fuel50 đổi missing | gfe-power n1020 b43 dòng L QSK19-G6: "65": 65 missing unit → 65 L/h
+fuel75 đổi missing | gfe-power n1020 b43 dòng L S5L1D-E4: "98": 98 missing unit → 98 L/h
+fuel50 đổi missing | gfe-power n1020 b43 dòng L S5L1D-E4: "65": 65 missing unit → 65 L/h
+fuel75 đổi missing | gfe-power n1022 b47 dòng L GFE350E: "50.2": 50.2 missing unit → 50.2 L/h
+fuel50 đổi missing | gfe-power n1022 b47 dòng L GFE350E: "33.5": 33.5 missing unit → 33.5 L/h
+fuel75 đổi missing | gfe-power n1022 b47 dòng L GFE350A: "50.2": 50.2 missing unit → 50.2 L/h
+fuel50 đổi missing | gfe-power n1022 b47 dòng L GFE350A: "33.5": 33.5 missing unit → 33.5 L/h
+fuel75 đổi missing | gfe-power n1023 b49 dòng L 2206C-E13TAG2L: "58": 58 missing unit → 58 L/h
+fuel50 đổi missing | gfe-power n1023 b49 dòng L 2206C-E13TAG2L: "40": 40 missing unit → 40 L/h
+fuel75 đổi missing | gfe-power n1023 b49 dòng L TAL-A46-H: "58": 58 missing unit → 58 L/h
+fuel50 đổi missing | gfe-power n1023 b49 dòng L TAL-A46-H: "40": 40 missing unit → 40 L/h
+fuel75 đổi missing | gfe-power n1027 b64 dòng L 6M16G300/5: "44.1": 44.1 missing unit → 44.1 L/h
+fuel50 đổi missing | gfe-power n1027 b64 dòng L 6M16G300/5: "29.4": 29.4 missing unit → 29.4 L/h
+fuel75 đổi missing | gfe-power n1027 b64 dòng L S4L1D-D4: "44.1": 44.1 missing unit → 44.1 L/h
+fuel50 đổi missing | gfe-power n1027 b64 dòng L S4L1D-D4: "29.4": 29.4 missing unit → 29.4 L/h
+fuel75 đổi missing | gfe-power n1028 b65 dòng L 6M16G275/5: "42.75": 42.75 missing unit → 42.75 L/h
+fuel50 đổi missing | gfe-power n1028 b65 dòng L 6M16G275/5: "28.5": 28.5 missing unit → 28.5 L/h
+fuel75 đổi missing | gfe-power n1028 b65 dòng L UCDI274K: "42.75": 42.75 missing unit → 42.75 L/h
+fuel50 đổi missing | gfe-power n1028 b65 dòng L UCDI274K: "28.5": 28.5 missing unit → 28.5 L/h
+fuel75 đổi missing | gfe-power n1032 b69 dòng L 6M16G250/5: "38": 38 missing unit → 38 L/h
+fuel50 đổi missing | gfe-power n1032 b69 dòng L 6M16G250/5: "25.5": 25.5 missing unit → 25.5 L/h
+fuel75 đổi missing | gfe-power n1032 b69 dòng L UCDI 274J: "38": 38 missing unit → 38 L/h
+fuel50 đổi missing | gfe-power n1032 b69 dòng L UCDI 274J: "25.5": 25.5 missing unit → 25.5 L/h
+fuel75 đổi missing | gfe-power n1035 b73 dòng L GFE124E: "21.23": 21.23 missing unit → 21.23 L/h
+fuel50 đổi missing | gfe-power n1035 b73 dòng L GFE124E: "14.15": 14.15 missing unit → 14.15 L/h
+fuel75 đổi missing | gfe-power n1035 b73 dòng L GFE124A: "21.23": 21.23 missing unit → 21.23 L/h
+fuel50 đổi missing | gfe-power n1035 b73 dòng L GFE124A: "14.15": 14.15 missing unit → 14.15 L/h
+fuel75 đổi missing | gfe-power n1038 b75 dòng L 4M06G55/5: "8.9": 8.9 missing unit → 8.9 L/h
+fuel50 đổi missing | gfe-power n1038 b75 dòng L 4M06G55/5: "5.9": 5.9 missing unit → 5.9 L/h
+fuel75 đổi missing | gfe-power n1038 b75 dòng L S1L2-R1: "8.9": 8.9 missing unit → 8.9 L/h
+fuel50 đổi missing | gfe-power n1038 b75 dòng L S1L2-R1: "5.9": 5.9 missing unit → 5.9 L/h
+fuel75 đổi missing | gfe-power n1041 b79 dòng L 4M06G44/5: "7": 7 missing unit → 7 L/h
+fuel50 đổi missing | gfe-power n1041 b79 dòng L 4M06G44/5: "4.75": 4.75 missing unit → 4.75 L/h
+fuel75 đổi missing | gfe-power n1041 b79 dòng L S1L2-K1: "7": 7 missing unit → 7 L/h
+fuel50 đổi missing | gfe-power n1041 b79 dòng L S1L2-K1: "4.75": 4.75 missing unit → 4.75 L/h
+cyl thêm | huatai-yangzhou n111 b10 dòng 0 WD129TAD23: "6缸直列": ∅ → 6
+cyl thêm | huatai-yangzhou n111 b10 dòng 1 WD135TAD28: "6缸直列": ∅ → 6
+cyl thêm | huatai-yangzhou n111 b10 dòng 2 WD145TAD30: "6缸直列": ∅ → 6
+cyl thêm | huatai-yangzhou n111 b10 dòng 3 WD145TAD33L: "6缸直列": ∅ → 6
+cyl thêm | huatai-yangzhou n111 b10 dòng 4 WD145TAD35: "6缸直列": ∅ → 6
+cyl thêm | huatai-yangzhou n111 b10 dòng 5 WD269TAD38: "12缸V型": ∅ → 12
+cyl thêm | huatai-yangzhou n111 b10 dòng 6 WD269TAD41: "12缸V型": ∅ → 12
+cyl thêm | huatai-yangzhou n111 b10 dòng 7 WD269TAD45: "12缸V型": ∅ → 12
+cyl thêm | huatai-yangzhou n111 b10 dòng 8 WD269TAD48: "12缸V型": ∅ → 12
+cyl thêm | huatai-yangzhou n111 b10 dòng 9 WD269TAD50: "12缸V型": ∅ → 12
+cyl thêm | huatai-yangzhou n111 b10 dòng 10 WD269TAD56: "12缸V型": ∅ → 12
+cyl thêm | huatai-yangzhou n111 b10 dòng 11 WD287TAD61L: "12缸V型": ∅ → 12
+cyl thêm | huatai-yangzhou n111 b10 dòng 12 WD305TAD68: "12缸V型": ∅ → 12
+cyl thêm | huatai-yangzhou n111 b10 dòng 13 WD327TAD78: "12缸V型": ∅ → 12
+cyl thêm | huatai-yangzhou n111 b10 dòng 14 WD327TAD82: "12缸V型": ∅ → 12
+cyl thêm | huatai-yangzhou n111 b10 dòng 15 WD327TAD88: "12缸V型": ∅ → 12
+cyl thêm | huatai-yangzhou n111 b10 dòng 16 WD327TAD92: "12缸V型": ∅ → 12
+fuel thêm | jiuan-power n136 b35 dòng L 1706A-E93TAG1: "58.5 / 42.8 / 29.3 L/h (100% / 75% / 50% standby)": ∅ → 58.5 L/h
+fuel75 thêm | jiuan-power n136 b35 dòng L 1706A-E93TAG1: "58.5 / 42.8 / 29.3 L/h (100% / 75% / 50% standby)": ∅ → 42.8 L/h
+fuel50 thêm | jiuan-power n136 b35 dòng L 1706A-E93TAG1: "58.5 / 42.8 / 29.3 L/h (100% / 75% / 50% standby)": ∅ → 29.3 L/h
+fuel thêm | jiuan-power n137 b36 dòng L 1706A-E93TAG2: "52.3 / 38.7 / 26.5 L/h (100% / 75% / 50%)": ∅ → 52.3 L/h
+fuel75 thêm | jiuan-power n137 b36 dòng L 1706A-E93TAG2: "52.3 / 38.7 / 26.5 L/h (100% / 75% / 50%)": ∅ → 38.7 L/h
+fuel50 thêm | jiuan-power n137 b36 dòng L 1706A-E93TAG2: "52.3 / 38.7 / 26.5 L/h (100% / 75% / 50%)": ∅ → 26.5 L/h
+fuel50 đổi missing | lees-power n1119 b152 dòng L 12V4000G63: "200.03": 200.03 missing unit → 200.03 L/h
+fuel75 đổi missing | lees-power n1119 b152 dòng L 12V4000G63: "289.54": 289.54 missing unit → 289.54 L/h
+fuel đổi missing | lees-power n1119 b152 dòng L 12V4000G63: "384.05": 384.05 missing unit → 384.05 L/h
+cyl thêm | lees-power n1119 b152 dòng L 12V4000G63: "12缸V型水冷": ∅ → 12
+fuel50 đổi missing | lees-power n1120 b153 dòng L 16V4000G63: "250.80": 250.8 missing unit → 250.8 L/h
+fuel75 đổi missing | lees-power n1120 b153 dòng L 16V4000G63: "357.49": 357.49 missing unit → 357.49 L/h
+fuel đổi missing | lees-power n1120 b153 dòng L 16V4000G63: "471.66": 471.66 missing unit → 471.66 L/h
+cyl thêm | lees-power n1120 b153 dòng L 16V4000G63: "16缸V型水冷": ∅ → 16
+fuel50 đổi missing | lees-power n1121 b154 dòng L 20V4000G63L: "328.93": 328.93 missing unit → 328.93 L/h
+fuel75 đổi missing | lees-power n1121 b154 dòng L 20V4000G63L: "473.66": 473.66 missing unit → 473.66 L/h
+fuel đổi missing | lees-power n1121 b154 dòng L 20V4000G63L: "631.55": 631.55 missing unit → 631.55 L/h
+cyl thêm | lees-power n1121 b154 dòng L 20V4000G63L: "20缸V型水冷": ∅ → 20
+fuel50 đổi missing | lees-power n1122 b155 dòng L 18V2000G85: "158.50": 158.5 missing unit → 158.5 L/h
+fuel75 đổi missing | lees-power n1122 b155 dòng L 18V2000G85: "233.25": 233.25 missing unit → 233.25 L/h
+fuel đổi missing | lees-power n1122 b155 dòng L 18V2000G85: "302.13": 302.13 missing unit → 302.13 L/h
+fuel50 đổi missing | lees-power n1123 b156 dòng L DP222CB: "60": 60 missing unit → 60 L/h
+fuel75 đổi missing | lees-power n1123 b156 dòng L DP222CB: "120": 120 missing unit → 120 L/h
+fuel đổi missing | lees-power n1123 b156 dòng L DP222CB: "160": 160 missing unit → 160 L/h
+fuel50 đổi missing | lees-power n1155 b187 dòng L TAD754GE: "32": 32 missing unit → 32 L/h
+fuel75 đổi missing | lees-power n1155 b187 dòng L TAD754GE: "46": 46 missing unit → 46 L/h
+fuel đổi missing | lees-power n1155 b187 dòng L TAD754GE: "57": 57 missing unit → 57 L/h
+fuel50 đổi missing | lees-power n1156 b188 dòng L TAD1351GE: "37": 37 missing unit → 37 L/h
+fuel75 đổi missing | lees-power n1156 b188 dòng L TAD1351GE: "53": 53 missing unit → 53 L/h
+fuel đổi missing | lees-power n1156 b188 dòng L TAD1351GE: "68": 68 missing unit → 68 L/h
+fuel50 đổi missing | lees-power n1158 b189 dòng L TAD1342GE: "39": 39 missing unit → 39 L/h
+fuel75 đổi missing | lees-power n1158 b189 dòng L TAD1342GE: "56": 56 missing unit → 56 L/h
+fuel đổi missing | lees-power n1158 b189 dòng L TAD1342GE: "73": 73 missing unit → 73 L/h
+fuel50 đổi missing | lees-power n1159 b190 dòng L TAD1343GE: "41": 41 missing unit → 41 L/h
+fuel75 đổi missing | lees-power n1159 b190 dòng L TAD1343GE: "60": 60 missing unit → 60 L/h
+fuel đổi missing | lees-power n1159 b190 dòng L TAD1343GE: "79": 79 missing unit → 79 L/h
+fuel50 đổi missing | lees-power n1160 b192 dòng L TAD1344GE: "45": 45 missing unit → 45 L/h
+fuel75 đổi missing | lees-power n1160 b192 dòng L TAD1344GE: "66": 66 missing unit → 66 L/h
+fuel đổi missing | lees-power n1160 b192 dòng L TAD1344GE: "87": 87 missing unit → 87 L/h
+fuel50 đổi missing | lees-power n1161 b194 dòng L TAD1345GE: "49": 49 missing unit → 49 L/h
+fuel75 đổi missing | lees-power n1161 b194 dòng L TAD1345GE: "73": 73 missing unit → 73 L/h
+fuel đổi missing | lees-power n1161 b194 dòng L TAD1345GE: "97": 97 missing unit → 97 L/h
+fuel50 đổi missing | lees-power n1162 b195 dòng L TAD1641GE: "54": 54 missing unit → 54 L/h
+fuel75 đổi missing | lees-power n1162 b195 dòng L TAD1641GE: "80": 80 missing unit → 80 L/h
+fuel đổi missing | lees-power n1162 b195 dòng L TAD1641GE: "109": 109 missing unit → 109 L/h
+fuel50 đổi missing | lees-power n1164 b197 dòng L TWD1653GE: "70": 70 missing unit → 70 L/h
+fuel75 đổi missing | lees-power n1164 b197 dòng L TWD1653GE: "106": 106 missing unit → 106 L/h
+fuel đổi missing | lees-power n1164 b197 dòng L TWD1653GE: "139": 139 missing unit → 139 L/h
+fuel50 đổi missing | lees-power n1165 b198 dòng L TWD1645GE: "78": 78 missing unit → 78 L/h
+fuel75 đổi missing | lees-power n1165 b198 dòng L TWD1645GE: "111": 111 missing unit → 111 L/h
+fuel đổi missing | lees-power n1165 b198 dòng L TWD1645GE: "144": 144 missing unit → 144 L/h
+cyl thêm | lees-power n1165 b198 dòng L TWD1645GE: "6缸直列水冷": ∅ → 6
+fuel50 đổi missing | lees-power n1166 b199 dòng L TAD1341GE: "38": 38 missing unit → 38 L/h
+fuel75 đổi missing | lees-power n1166 b199 dòng L TAD1341GE: "55": 55 missing unit → 55 L/h
+fuel đổi missing | lees-power n1166 b199 dòng L TAD1341GE: "73": 73 missing unit → 73 L/h
+fuel50 đổi missing | lees-power n1167 b200 dòng L TAD1342GE: "45": 45 missing unit → 45 L/h
+fuel75 đổi missing | lees-power n1167 b200 dòng L TAD1342GE: "66": 66 missing unit → 66 L/h
+fuel đổi missing | lees-power n1167 b200 dòng L TAD1342GE: "88": 88 missing unit → 88 L/h
+fuel50 đổi missing | lees-power n1168 b201 dòng L TAD1343GE: "46": 46 missing unit → 46 L/h
+fuel75 đổi missing | lees-power n1168 b201 dòng L TAD1343GE: "67": 67 missing unit → 67 L/h
+fuel đổi missing | lees-power n1168 b201 dòng L TAD1343GE: "90": 90 missing unit → 90 L/h
+fuel50 đổi missing | lees-power n1169 b202 dòng L TAD1353GE: "54": 54 missing unit → 54 L/h
+fuel75 đổi missing | lees-power n1169 b202 dòng L TAD1353GE: "78": 78 missing unit → 78 L/h
+fuel đổi missing | lees-power n1169 b202 dòng L TAD1353GE: "100": 100 missing unit → 100 L/h
+fuel50 đổi missing | lees-power n1170 b203 dòng L TAD1344GE: "51": 51 missing unit → 51 L/h
+fuel75 đổi missing | lees-power n1170 b203 dòng L TAD1344GE: "74": 74 missing unit → 74 L/h
+fuel đổi missing | lees-power n1170 b203 dòng L TAD1344GE: "100": 100 missing unit → 100 L/h
+fuel50 đổi missing | lees-power n1171 b204 dòng L TAD1650GE: "60": 60 missing unit → 60 L/h
+fuel75 đổi missing | lees-power n1171 b204 dòng L TAD1650GE: "86": 86 missing unit → 86 L/h
+fuel đổi missing | lees-power n1171 b204 dòng L TAD1650GE: "115": 115 missing unit → 115 L/h
+fuel50 đổi missing | lees-power n1172 b205 dòng L TAD1641GE: "63": 63 missing unit → 63 L/h
+fuel75 đổi missing | lees-power n1172 b205 dòng L TAD1641GE: "93": 93 missing unit → 93 L/h
+fuel đổi missing | lees-power n1172 b205 dòng L TAD1641GE: "127": 127 missing unit → 127 L/h
+fuel50 đổi missing | lees-power n1173 b206 dòng L TAD1651GE: "63": 63 missing unit → 63 L/h
+fuel75 đổi missing | lees-power n1173 b206 dòng L TAD1651GE: "92": 92 missing unit → 92 L/h
+fuel đổi missing | lees-power n1173 b206 dòng L TAD1651GE: "128": 128 missing unit → 128 L/h
+fuel50 đổi missing | lees-power n1174 b207 dòng L TAD1642GE: "69": 69 missing unit → 69 L/h
+fuel75 đổi missing | lees-power n1174 b207 dòng L TAD1642GE: "102": 102 missing unit → 102 L/h
+fuel đổi missing | lees-power n1174 b207 dòng L TAD1642GE: "141": 141 missing unit → 141 L/h
+fuel50 đổi missing | lees-power n1175 b208 dòng L TWD1645GE: "82": 82 missing unit → 82 L/h
+fuel75 đổi missing | lees-power n1175 b208 dòng L TWD1645GE: "117": 117 missing unit → 117 L/h
+fuel đổi missing | lees-power n1175 b208 dòng L TWD1645GE: "153": 153 missing unit → 153 L/h
+fuel50 đổi missing | lees-power n1191 b224 dòng L P126TI-II: "31.3": 31.3 missing unit → 31.3 L/h
+fuel75 đổi missing | lees-power n1191 b224 dòng L P126TI-II: "47": 47 missing unit → 47 L/h
+fuel đổi missing | lees-power n1191 b224 dòng L P126TI-II: "63": 63 missing unit → 63 L/h
+cyl thêm | lees-power n1191 b224 dòng L P126TI-II: "6缸直列水冷": ∅ → 6
+fuel50 đổi missing | lees-power n1192 b225 dòng L DP126LB: "38.4": 38.4 missing unit → 38.4 L/h
+fuel75 đổi missing | lees-power n1192 b225 dòng L DP126LB: "57.1": 57.1 missing unit → 57.1 L/h
+fuel đổi missing | lees-power n1192 b225 dòng L DP126LB: "76": 76 missing unit → 76 L/h
+cyl thêm | lees-power n1192 b225 dòng L DP126LB: "6缸直列水冷": ∅ → 6
+fuel50 đổi missing | lees-power n1193 b226 dòng L P158LE: "43.9": 43.9 missing unit → 43.9 L/h
+fuel75 đổi missing | lees-power n1193 b226 dòng L P158LE: "65.1": 65.1 missing unit → 65.1 L/h
+fuel đổi missing | lees-power n1193 b226 dòng L P158LE: "89.3": 89.3 missing unit → 89.3 L/h
+fuel50 đổi missing | lees-power n1194 b227 dòng L DP158LC: "48.9": 48.9 missing unit → 48.9 L/h
+fuel75 đổi missing | lees-power n1194 b227 dòng L DP158LC: "72.9": 72.9 missing unit → 72.9 L/h
+fuel đổi missing | lees-power n1194 b227 dòng L DP158LC: "99.6": 99.6 missing unit → 99.6 L/h
+cyl thêm | lees-power n1194 b227 dòng L DP158LC: "8缸V型水冷": ∅ → 8
+fuel50 đổi missing | lees-power n1195 b228 dòng L DP180LB: "71.2": 71.2 missing unit → 71.2 L/h
+fuel75 đổi missing | lees-power n1195 b228 dòng L DP180LB: "103.8": 103.8 missing unit → 103.8 L/h
+fuel đổi missing | lees-power n1195 b228 dòng L DP180LB: "136.4": 136.4 missing unit → 136.4 L/h
+cyl thêm | lees-power n1195 b228 dòng L DP180LB: "10缸V型水冷": ∅ → 10
+fuel50 đổi missing | lees-power n1196 b229 dòng L DP222LB: "73": 73 missing unit → 73 L/h
+fuel75 đổi missing | lees-power n1196 b229 dòng L DP222LB: "109.2": 109.2 missing unit → 109.2 L/h
+fuel đổi missing | lees-power n1196 b229 dòng L DP222LB: "147.1": 147.1 missing unit → 147.1 L/h
+cyl thêm | lees-power n1196 b229 dòng L DP222LB: "12缸V型水冷": ∅ → 12
+fuel50 đổi missing | lees-power n1197 b230 dòng L DP222CA: "56.5": 56.5 missing unit → 56.5 L/h
+fuel75 đổi missing | lees-power n1197 b230 dòng L DP222CA: "84.8": 84.8 missing unit → 84.8 L/h
+fuel đổi missing | lees-power n1197 b230 dòng L DP222CA: "113": 113 missing unit → 113 L/h
+fuel50 đổi missing | lees-power n1198 b231 dòng L DP222CB: "43.9": 43.9 missing unit → 43.9 L/h
+fuel75 đổi missing | lees-power n1198 b231 dòng L DP222CB: "65.1": 65.1 missing unit → 65.1 L/h
+fuel đổi missing | lees-power n1198 b231 dòng L DP222CB: "145": 145 missing unit → 145 L/h
+fuel50 đổi missing | lees-power n1200 b233 dòng L P126TI: "36": 36 missing unit → 36 L/h
+fuel75 đổi missing | lees-power n1200 b233 dòng L P126TI: "52": 52 missing unit → 52 L/h
+fuel đổi missing | lees-power n1200 b233 dòng L P126TI: "70": 70 missing unit → 70 L/h
+fuel đổi missing | longkai-power n1001 b17 dòng L SC4H95D2: "15": 15 missing unit → 15 L/h
+fuel75 đổi missing | longkai-power n1001 b17 dòng L SC4H95D2: "11.4": 11.4 missing unit → 11.4 L/h
+fuel50 đổi missing | longkai-power n1001 b17 dòng L SC4H95D2: "8.0": 8 missing unit → 8 L/h
+cyl thêm | longkai-power n1001 b17 dòng L SC4H95D2: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1001 b17 dòng L LK224F: "15": 15 missing unit → 15 L/h
+fuel75 đổi missing | longkai-power n1001 b17 dòng L LK224F: "11.4": 11.4 missing unit → 11.4 L/h
+fuel50 đổi missing | longkai-power n1001 b17 dòng L LK224F: "8.0": 8 missing unit → 8 L/h
+cyl thêm | longkai-power n1001 b17 dòng L LK224F: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1002 b19 dòng L SC4H115D2: "20.2": 20.2 missing unit → 20.2 L/h
+fuel75 đổi missing | longkai-power n1002 b19 dòng L SC4H115D2: "15.2": 15.2 missing unit → 15.2 L/h
+fuel50 đổi missing | longkai-power n1002 b19 dòng L SC4H115D2: "10.3": 10.3 missing unit → 10.3 L/h
+cyl thêm | longkai-power n1002 b19 dòng L SC4H115D2: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1002 b19 dòng L LK224G: "20.2": 20.2 missing unit → 20.2 L/h
+fuel75 đổi missing | longkai-power n1002 b19 dòng L LK224G: "15.2": 15.2 missing unit → 15.2 L/h
+fuel50 đổi missing | longkai-power n1002 b19 dòng L LK224G: "10.3": 10.3 missing unit → 10.3 L/h
+cyl thêm | longkai-power n1002 b19 dòng L LK224G: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1003 b21 dòng L SC4H160D2: "25": 25 missing unit → 25 L/h
+fuel75 đổi missing | longkai-power n1003 b21 dòng L SC4H160D2: "16.7": 16.7 missing unit → 16.7 L/h
+fuel50 đổi missing | longkai-power n1003 b21 dòng L SC4H160D2: "12.8": 12.8 missing unit → 12.8 L/h
+cyl thêm | longkai-power n1003 b21 dòng L SC4H160D2: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1003 b21 dòng L LK274D: "25": 25 missing unit → 25 L/h
+fuel75 đổi missing | longkai-power n1003 b21 dòng L LK274D: "16.7": 16.7 missing unit → 16.7 L/h
+fuel50 đổi missing | longkai-power n1003 b21 dòng L LK274D: "12.8": 12.8 missing unit → 12.8 L/h
+cyl thêm | longkai-power n1003 b21 dòng L LK274D: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1004 b22 dòng L SC4H180D2: "28.6": 28.6 missing unit → 28.6 L/h
+fuel75 đổi missing | longkai-power n1004 b22 dòng L SC4H180D2: "21.4": 21.4 missing unit → 21.4 L/h
+fuel50 đổi missing | longkai-power n1004 b22 dòng L SC4H180D2: "14.4": 14.4 missing unit → 14.4 L/h
+cyl thêm | longkai-power n1004 b22 dòng L SC4H180D2: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1004 b22 dòng L LK274D: "28.6": 28.6 missing unit → 28.6 L/h
+fuel75 đổi missing | longkai-power n1004 b22 dòng L LK274D: "21.4": 21.4 missing unit → 21.4 L/h
+fuel50 đổi missing | longkai-power n1004 b22 dòng L LK274D: "14.4": 14.4 missing unit → 14.4 L/h
+cyl thêm | longkai-power n1004 b22 dòng L LK274D: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1005 b24 dòng L SC7H220D2: "36.5": 36.5 missing unit → 36.5 L/h
+fuel75 đổi missing | longkai-power n1005 b24 dòng L SC7H220D2: "27.3": 27.3 missing unit → 27.3 L/h
+fuel50 đổi missing | longkai-power n1005 b24 dòng L SC7H220D2: "18.2": 18.2 missing unit → 18.2 L/h
+cyl thêm | longkai-power n1005 b24 dòng L SC7H220D2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1005 b24 dòng L LK274F: "36.5": 36.5 missing unit → 36.5 L/h
+fuel75 đổi missing | longkai-power n1005 b24 dòng L LK274F: "27.3": 27.3 missing unit → 27.3 L/h
+fuel50 đổi missing | longkai-power n1005 b24 dòng L LK274F: "18.2": 18.2 missing unit → 18.2 L/h
+cyl thêm | longkai-power n1005 b24 dòng L LK274F: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1006 b26 dòng L SC7H230D2: "36.5": 36.5 missing unit → 36.5 L/h
+fuel75 đổi missing | longkai-power n1006 b26 dòng L SC7H230D2: "27.3": 27.3 missing unit → 27.3 L/h
+fuel50 đổi missing | longkai-power n1006 b26 dòng L SC7H230D2: "18.2": 18.2 missing unit → 18.2 L/h
+cyl thêm | longkai-power n1006 b26 dòng L SC7H230D2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1006 b26 dòng L LK274G: "36.5": 36.5 missing unit → 36.5 L/h
+fuel75 đổi missing | longkai-power n1006 b26 dòng L LK274G: "27.3": 27.3 missing unit → 27.3 L/h
+fuel50 đổi missing | longkai-power n1006 b26 dòng L LK274G: "18.2": 18.2 missing unit → 18.2 L/h
+cyl thêm | longkai-power n1006 b26 dòng L LK274G: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1007 b28 dòng L SC7H250D2: "39.9": 39.9 missing unit → 39.9 L/h
+fuel75 đổi missing | longkai-power n1007 b28 dòng L SC7H250D2: "29.6": 29.6 missing unit → 29.6 L/h
+fuel50 đổi missing | longkai-power n1007 b28 dòng L SC7H250D2: "19.8": 19.8 missing unit → 19.8 L/h
+cyl thêm | longkai-power n1007 b28 dòng L SC7H250D2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1007 b28 dòng L LK274G: "39.9": 39.9 missing unit → 39.9 L/h
+fuel75 đổi missing | longkai-power n1007 b28 dòng L LK274G: "29.6": 29.6 missing unit → 29.6 L/h
+fuel50 đổi missing | longkai-power n1007 b28 dòng L LK274G: "19.8": 19.8 missing unit → 19.8 L/h
+cyl thêm | longkai-power n1007 b28 dòng L LK274G: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1008 b30 dòng L SC8D280D2: "48.6": 48.6 missing unit → 48.6 L/h
+fuel75 đổi missing | longkai-power n1008 b30 dòng L SC8D280D2: "36.2": 36.2 missing unit → 36.2 L/h
+fuel50 đổi missing | longkai-power n1008 b30 dòng L SC8D280D2: "24.3": 24.3 missing unit → 24.3 L/h
+cyl thêm | longkai-power n1008 b30 dòng L SC8D280D2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1008 b30 dòng L LK274H: "48.6": 48.6 missing unit → 48.6 L/h
+fuel75 đổi missing | longkai-power n1008 b30 dòng L LK274H: "36.2": 36.2 missing unit → 36.2 L/h
+fuel50 đổi missing | longkai-power n1008 b30 dòng L LK274H: "24.3": 24.3 missing unit → 24.3 L/h
+cyl thêm | longkai-power n1008 b30 dòng L LK274H: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1009 b32 dòng L SC9D310D2: "50.6": 50.6 missing unit → 50.6 L/h
+fuel75 đổi missing | longkai-power n1009 b32 dòng L SC9D310D2: "38.2": 38.2 missing unit → 38.2 L/h
+fuel50 đổi missing | longkai-power n1009 b32 dòng L SC9D310D2: "26.3": 26.3 missing unit → 26.3 L/h
+cyl thêm | longkai-power n1009 b32 dòng L SC9D310D2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1009 b32 dòng L LK274J: "50.6": 50.6 missing unit → 50.6 L/h
+fuel75 đổi missing | longkai-power n1009 b32 dòng L LK274J: "38.2": 38.2 missing unit → 38.2 L/h
+fuel50 đổi missing | longkai-power n1009 b32 dòng L LK274J: "26.3": 26.3 missing unit → 26.3 L/h
+cyl thêm | longkai-power n1009 b32 dòng L LK274J: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1010 b34 dòng L SC9D340D2: "54.1": 54.1 missing unit → 54.1 L/h
+fuel75 đổi missing | longkai-power n1010 b34 dòng L SC9D340D2: "40.8": 40.8 missing unit → 40.8 L/h
+fuel50 đổi missing | longkai-power n1010 b34 dòng L SC9D340D2: "27.3": 27.3 missing unit → 27.3 L/h
+cyl thêm | longkai-power n1010 b34 dòng L SC9D340D2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1010 b34 dòng L LK274K: "54.1": 54.1 missing unit → 54.1 L/h
+fuel75 đổi missing | longkai-power n1010 b34 dòng L LK274K: "40.8": 40.8 missing unit → 40.8 L/h
+fuel50 đổi missing | longkai-power n1010 b34 dòng L LK274K: "27.3": 27.3 missing unit → 27.3 L/h
+cyl thêm | longkai-power n1010 b34 dòng L LK274K: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1011 b36 dòng L SC10E380D2: "60.9": 60.9 missing unit → 60.9 L/h
+fuel75 đổi missing | longkai-power n1011 b36 dòng L SC10E380D2: "49.4": 49.4 missing unit → 49.4 L/h
+fuel50 đổi missing | longkai-power n1011 b36 dòng L SC10E380D2: "32.1": 32.1 missing unit → 32.1 L/h
+cyl thêm | longkai-power n1011 b36 dòng L SC10E380D2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1011 b36 dòng L LK444DS: "60.9": 60.9 missing unit → 60.9 L/h
+fuel75 đổi missing | longkai-power n1011 b36 dòng L LK444DS: "49.4": 49.4 missing unit → 49.4 L/h
+fuel50 đổi missing | longkai-power n1011 b36 dòng L LK444DS: "32.1": 32.1 missing unit → 32.1 L/h
+cyl thêm | longkai-power n1011 b36 dòng L LK444DS: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1012 b38 dòng L SC12E420D2: "71.6": 71.6 missing unit → 71.6 L/h
+fuel75 đổi missing | longkai-power n1012 b38 dòng L SC12E420D2: "53.4": 53.4 missing unit → 53.4 L/h
+fuel50 đổi missing | longkai-power n1012 b38 dòng L SC12E420D2: "36.1": 36.1 missing unit → 36.1 L/h
+cyl thêm | longkai-power n1012 b38 dòng L SC12E420D2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1012 b38 dòng L LK444E: "71.6": 71.6 missing unit → 71.6 L/h
+fuel75 đổi missing | longkai-power n1012 b38 dòng L LK444E: "53.4": 53.4 missing unit → 53.4 L/h
+fuel50 đổi missing | longkai-power n1012 b38 dòng L LK444E: "36.1": 36.1 missing unit → 36.1 L/h
+cyl thêm | longkai-power n1012 b38 dòng L LK444E: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1013 b40 dòng L SC13G420D2: "65.2": 65.2 missing unit → 65.2 L/h
+fuel75 đổi missing | longkai-power n1013 b40 dòng L SC13G420D2: "47.1": 47.1 missing unit → 47.1 L/h
+fuel50 đổi missing | longkai-power n1013 b40 dòng L SC13G420D2: "31.6": 31.6 missing unit → 31.6 L/h
+cyl thêm | longkai-power n1013 b40 dòng L SC13G420D2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1013 b40 dòng L LK444ES: "65.2": 65.2 missing unit → 65.2 L/h
+fuel75 đổi missing | longkai-power n1013 b40 dòng L LK444ES: "47.1": 47.1 missing unit → 47.1 L/h
+fuel50 đổi missing | longkai-power n1013 b40 dòng L LK444ES: "31.6": 31.6 missing unit → 31.6 L/h
+cyl thêm | longkai-power n1013 b40 dòng L LK444ES: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1014 b42 dòng L SC12E460D2: "71.6": 71.6 missing unit → 71.6 L/h
+fuel75 đổi missing | longkai-power n1014 b42 dòng L SC12E460D2: "53.4": 53.4 missing unit → 53.4 L/h
+fuel50 đổi missing | longkai-power n1014 b42 dòng L SC12E460D2: "36.1": 36.1 missing unit → 36.1 L/h
+cyl thêm | longkai-power n1014 b42 dòng L SC12E460D2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1014 b42 dòng L LK444E: "71.6": 71.6 missing unit → 71.6 L/h
+fuel75 đổi missing | longkai-power n1014 b42 dòng L LK444E: "53.4": 53.4 missing unit → 53.4 L/h
+fuel50 đổi missing | longkai-power n1014 b42 dòng L LK444E: "36.1": 36.1 missing unit → 36.1 L/h
+cyl thêm | longkai-power n1014 b42 dòng L LK444E: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1015 b44 dòng L SC15G500D2: "81.2": 81.2 missing unit → 81.2 L/h
+fuel75 đổi missing | longkai-power n1015 b44 dòng L SC15G500D2: "59.8": 59.8 missing unit → 59.8 L/h
+fuel50 đổi missing | longkai-power n1015 b44 dòng L SC15G500D2: "41.1": 41.1 missing unit → 41.1 L/h
+cyl thêm | longkai-power n1015 b44 dòng L SC15G500D2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1015 b44 dòng L LK444F: "81.2": 81.2 missing unit → 81.2 L/h
+fuel75 đổi missing | longkai-power n1015 b44 dòng L LK444F: "59.8": 59.8 missing unit → 59.8 L/h
+fuel50 đổi missing | longkai-power n1015 b44 dòng L LK444F: "41.1": 41.1 missing unit → 41.1 L/h
+cyl thêm | longkai-power n1015 b44 dòng L LK444F: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1016 b46 dòng L SC25G610D2: "100.4": 100.4 missing unit → 100.4 L/h
+fuel75 đổi missing | longkai-power n1016 b46 dòng L SC25G610D2: "75.8": 75.8 missing unit → 75.8 L/h
+fuel50 đổi missing | longkai-power n1016 b46 dòng L SC25G610D2: "53.6": 53.6 missing unit → 53.6 L/h
+fuel đổi missing | longkai-power n1016 b46 dòng L LK544B: "100.4": 100.4 missing unit → 100.4 L/h
+fuel75 đổi missing | longkai-power n1016 b46 dòng L LK544B: "75.8": 75.8 missing unit → 75.8 L/h
+fuel50 đổi missing | longkai-power n1016 b46 dòng L LK544B: "53.6": 53.6 missing unit → 53.6 L/h
+fuel đổi missing | longkai-power n1017 b48 dòng L SC25G690D2: "105.2": 105.2 missing unit → 105.2 L/h
+fuel75 đổi missing | longkai-power n1017 b48 dòng L SC25G690D2: "79.6": 79.6 missing unit → 79.6 L/h
+fuel50 đổi missing | longkai-power n1017 b48 dòng L SC25G690D2: "55.3": 55.3 missing unit → 55.3 L/h
+fuel đổi missing | longkai-power n1017 b48 dòng L LK544C: "105.2": 105.2 missing unit → 105.2 L/h
+fuel75 đổi missing | longkai-power n1017 b48 dòng L LK544C: "79.6": 79.6 missing unit → 79.6 L/h
+fuel50 đổi missing | longkai-power n1017 b48 dòng L LK544C: "55.3": 55.3 missing unit → 55.3 L/h
+fuel đổi missing | longkai-power n1018 b50 dòng L SC27G755D2: "126.0": 126 missing unit → 126 L/h
+fuel75 đổi missing | longkai-power n1018 b50 dòng L SC27G755D2: "95.3": 95.3 missing unit → 95.3 L/h
+fuel50 đổi missing | longkai-power n1018 b50 dòng L SC27G755D2: "66.3": 66.3 missing unit → 66.3 L/h
+fuel đổi missing | longkai-power n1018 b50 dòng L LK544D: "126.0": 126 missing unit → 126 L/h
+fuel75 đổi missing | longkai-power n1018 b50 dòng L LK544D: "95.3": 95.3 missing unit → 95.3 L/h
+fuel50 đổi missing | longkai-power n1018 b50 dòng L LK544D: "66.3": 66.3 missing unit → 66.3 L/h
+fuel đổi missing | longkai-power n1019 b52 dòng L SC27G830D2: "113.9": 113.9 missing unit → 113.9 L/h
+fuel75 đổi missing | longkai-power n1019 b52 dòng L SC27G830D2: "87.5": 87.5 missing unit → 87.5 L/h
+fuel50 đổi missing | longkai-power n1019 b52 dòng L SC27G830D2: "60.1": 60.1 missing unit → 60.1 L/h
+fuel đổi missing | longkai-power n1019 b52 dòng L LK544FS: "113.9": 113.9 missing unit → 113.9 L/h
+fuel75 đổi missing | longkai-power n1019 b52 dòng L LK544FS: "87.5": 87.5 missing unit → 87.5 L/h
+fuel50 đổi missing | longkai-power n1019 b52 dòng L LK544FS: "60.1": 60.1 missing unit → 60.1 L/h
+fuel đổi missing | longkai-power n1020 b54 dòng L SC27G900D2: "148.8": 148.8 missing unit → 148.8 L/h
+fuel75 đổi missing | longkai-power n1020 b54 dòng L SC27G900D2: "111.5": 111.5 missing unit → 111.5 L/h
+fuel50 đổi missing | longkai-power n1020 b54 dòng L SC27G900D2: "76.7": 76.7 missing unit → 76.7 L/h
+fuel đổi missing | longkai-power n1020 b54 dòng L LK544F: "148.8": 148.8 missing unit → 148.8 L/h
+fuel75 đổi missing | longkai-power n1020 b54 dòng L LK544F: "111.5": 111.5 missing unit → 111.5 L/h
+fuel50 đổi missing | longkai-power n1020 b54 dòng L LK544F: "76.7": 76.7 missing unit → 76.7 L/h
+fuel đổi missing | longkai-power n1021 b56 dòng L SC33W990D2: "142.2": 142.2 missing unit → 142.2 L/h
+fuel75 đổi missing | longkai-power n1021 b56 dòng L SC33W990D2: "104.4": 104.4 missing unit → 104.4 L/h
+fuel50 đổi missing | longkai-power n1021 b56 dòng L SC33W990D2: "73.8": 73.8 missing unit → 73.8 L/h
+cyl thêm | longkai-power n1021 b56 dòng L SC33W990D2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1021 b56 dòng L LK634B: "142.2": 142.2 missing unit → 142.2 L/h
+fuel75 đổi missing | longkai-power n1021 b56 dòng L LK634B: "104.4": 104.4 missing unit → 104.4 L/h
+fuel50 đổi missing | longkai-power n1021 b56 dòng L LK634B: "73.8": 73.8 missing unit → 73.8 L/h
+cyl thêm | longkai-power n1021 b56 dòng L LK634B: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1022 b58 dòng L SC33G1150D2: "186.4": 186.4 missing unit → 186.4 L/h
+fuel75 đổi missing | longkai-power n1022 b58 dòng L SC33G1150D2: "138.1": 138.1 missing unit → 138.1 L/h
+fuel50 đổi missing | longkai-power n1022 b58 dòng L SC33G1150D2: "92.6": 92.6 missing unit → 92.6 L/h
+cyl thêm | longkai-power n1022 b58 dòng L SC33G1150D2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1022 b58 dòng L LK634D: "186.4": 186.4 missing unit → 186.4 L/h
+fuel75 đổi missing | longkai-power n1022 b58 dòng L LK634D: "138.1": 138.1 missing unit → 138.1 L/h
+fuel50 đổi missing | longkai-power n1022 b58 dòng L LK634D: "92.6": 92.6 missing unit → 92.6 L/h
+cyl thêm | longkai-power n1022 b58 dòng L LK634D: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1023 b60 dòng L 4HT4.3-G21: "12.8": 12.8 missing unit → 12.8 L/h
+fuel75 đổi missing | longkai-power n1023 b60 dòng L 4HT4.3-G21: "9.7": 9.7 missing unit → 9.7 L/h
+fuel50 đổi missing | longkai-power n1023 b60 dòng L 4HT4.3-G21: "7.3": 7.3 missing unit → 7.3 L/h
+cyl thêm | longkai-power n1023 b60 dòng L 4HT4.3-G21: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1023 b60 dòng L LK224E: "12.8": 12.8 missing unit → 12.8 L/h
+fuel75 đổi missing | longkai-power n1023 b60 dòng L LK224E: "9.7": 9.7 missing unit → 9.7 L/h
+fuel50 đổi missing | longkai-power n1023 b60 dòng L LK224E: "7.3": 7.3 missing unit → 7.3 L/h
+cyl thêm | longkai-power n1023 b60 dòng L LK224E: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1024 b62 dòng L 4HT4.3-G22: "15.1": 15.1 missing unit → 15.1 L/h
+fuel75 đổi missing | longkai-power n1024 b62 dòng L 4HT4.3-G22: "11.8": 11.8 missing unit → 11.8 L/h
+fuel50 đổi missing | longkai-power n1024 b62 dòng L 4HT4.3-G22: "8.1": 8.1 missing unit → 8.1 L/h
+cyl thêm | longkai-power n1024 b62 dòng L 4HT4.3-G22: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1024 b62 dòng L LK224F: "15.1": 15.1 missing unit → 15.1 L/h
+fuel75 đổi missing | longkai-power n1024 b62 dòng L LK224F: "11.8": 11.8 missing unit → 11.8 L/h
+fuel50 đổi missing | longkai-power n1024 b62 dòng L LK224F: "8.1": 8.1 missing unit → 8.1 L/h
+cyl thêm | longkai-power n1024 b62 dòng L LK224F: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1025 b64 dòng L 4HT4.3-G23: "19.5": 19.5 missing unit → 19.5 L/h
+fuel75 đổi missing | longkai-power n1025 b64 dòng L 4HT4.3-G23: "14.3": 14.3 missing unit → 14.3 L/h
+fuel50 đổi missing | longkai-power n1025 b64 dòng L 4HT4.3-G23: "9.9": 9.9 missing unit → 9.9 L/h
+cyl thêm | longkai-power n1025 b64 dòng L 4HT4.3-G23: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1025 b64 dòng L LK224G: "19.5": 19.5 missing unit → 19.5 L/h
+fuel75 đổi missing | longkai-power n1025 b64 dòng L LK224G: "14.3": 14.3 missing unit → 14.3 L/h
+fuel50 đổi missing | longkai-power n1025 b64 dòng L LK224G: "9.9": 9.9 missing unit → 9.9 L/h
+cyl thêm | longkai-power n1025 b64 dòng L LK224G: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1026 b66 dòng L 4HTAA4.3-G21: "23.0": 23 missing unit → 23 L/h
+fuel75 đổi missing | longkai-power n1026 b66 dòng L 4HTAA4.3-G21: "17.1": 17.1 missing unit → 17.1 L/h
+fuel50 đổi missing | longkai-power n1026 b66 dòng L 4HTAA4.3-G21: "11.8": 11.8 missing unit → 11.8 L/h
+cyl thêm | longkai-power n1026 b66 dòng L 4HTAA4.3-G21: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1026 b66 dòng L LK274C: "23.0": 23 missing unit → 23 L/h
+fuel75 đổi missing | longkai-power n1026 b66 dòng L LK274C: "17.1": 17.1 missing unit → 17.1 L/h
+fuel50 đổi missing | longkai-power n1026 b66 dòng L LK274C: "11.8": 11.8 missing unit → 11.8 L/h
+cyl thêm | longkai-power n1026 b66 dòng L LK274C: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1027 b68 dòng L 4HTAA4.3-G23: "24.7": 24.7 missing unit → 24.7 L/h
+fuel75 đổi missing | longkai-power n1027 b68 dòng L 4HTAA4.3-G23: "18.6": 18.6 missing unit → 18.6 L/h
+fuel50 đổi missing | longkai-power n1027 b68 dòng L 4HTAA4.3-G23: "12.6": 12.6 missing unit → 12.6 L/h
+cyl thêm | longkai-power n1027 b68 dòng L 4HTAA4.3-G23: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1027 b68 dòng L LK274D: "24.7": 24.7 missing unit → 24.7 L/h
+fuel75 đổi missing | longkai-power n1027 b68 dòng L LK274D: "18.6": 18.6 missing unit → 18.6 L/h
+fuel50 đổi missing | longkai-power n1027 b68 dòng L LK274D: "12.6": 12.6 missing unit → 12.6 L/h
+cyl thêm | longkai-power n1027 b68 dòng L LK274D: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1028 b70 dòng L 4HTAA4.3-G22: "28.3": 28.3 missing unit → 28.3 L/h
+fuel75 đổi missing | longkai-power n1028 b70 dòng L 4HTAA4.3-G22: "21.3": 21.3 missing unit → 21.3 L/h
+fuel50 đổi missing | longkai-power n1028 b70 dòng L 4HTAA4.3-G22: "14.4": 14.4 missing unit → 14.4 L/h
+cyl thêm | longkai-power n1028 b70 dòng L 4HTAA4.3-G22: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1028 b70 dòng L LK274D: "28.3": 28.3 missing unit → 28.3 L/h
+fuel75 đổi missing | longkai-power n1028 b70 dòng L LK274D: "21.3": 21.3 missing unit → 21.3 L/h
+fuel50 đổi missing | longkai-power n1028 b70 dòng L LK274D: "14.4": 14.4 missing unit → 14.4 L/h
+cyl thêm | longkai-power n1028 b70 dòng L LK274D: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1029 b72 dòng L 6HTAA6.5-G21: "30.5": 30.5 missing unit → 30.5 L/h
+fuel75 đổi missing | longkai-power n1029 b72 dòng L 6HTAA6.5-G21: "23": 23 missing unit → 23 L/h
+fuel50 đổi missing | longkai-power n1029 b72 dòng L 6HTAA6.5-G21: "16.2": 16.2 missing unit → 16.2 L/h
+cyl thêm | longkai-power n1029 b72 dòng L 6HTAA6.5-G21: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1029 b72 dòng L LK274E: "30.5": 30.5 missing unit → 30.5 L/h
+fuel75 đổi missing | longkai-power n1029 b72 dòng L LK274E: "23": 23 missing unit → 23 L/h
+fuel50 đổi missing | longkai-power n1029 b72 dòng L LK274E: "16.2": 16.2 missing unit → 16.2 L/h
+cyl thêm | longkai-power n1029 b72 dòng L LK274E: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1030 b74 dòng L 6HTAA6.5-G22: "33.1": 33.1 missing unit → 33.1 L/h
+fuel75 đổi missing | longkai-power n1030 b74 dòng L 6HTAA6.5-G22: "25.2": 25.2 missing unit → 25.2 L/h
+fuel50 đổi missing | longkai-power n1030 b74 dòng L 6HTAA6.5-G22: "17.6": 17.6 missing unit → 17.6 L/h
+cyl thêm | longkai-power n1030 b74 dòng L 6HTAA6.5-G22: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1030 b74 dòng L LK274F/S: "33.1": 33.1 missing unit → 33.1 L/h
+fuel75 đổi missing | longkai-power n1030 b74 dòng L LK274F/S: "25.2": 25.2 missing unit → 25.2 L/h
+fuel50 đổi missing | longkai-power n1030 b74 dòng L LK274F/S: "17.6": 17.6 missing unit → 17.6 L/h
+cyl thêm | longkai-power n1030 b74 dòng L LK274F/S: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1032 b77 dòng L 6DTAA8.9-G21: "44.1": 44.1 missing unit → 44.1 L/h
+fuel75 đổi missing | longkai-power n1032 b77 dòng L 6DTAA8.9-G21: "32.8": 32.8 missing unit → 32.8 L/h
+fuel50 đổi missing | longkai-power n1032 b77 dòng L 6DTAA8.9-G21: "22.8": 22.8 missing unit → 22.8 L/h
+cyl thêm | longkai-power n1032 b77 dòng L 6DTAA8.9-G21: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1032 b77 dòng L LK274H: "44.1": 44.1 missing unit → 44.1 L/h
+fuel75 đổi missing | longkai-power n1032 b77 dòng L LK274H: "32.8": 32.8 missing unit → 32.8 L/h
+fuel50 đổi missing | longkai-power n1032 b77 dòng L LK274H: "22.8": 22.8 missing unit → 22.8 L/h
+cyl thêm | longkai-power n1032 b77 dòng L LK274H: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1033 b79 dòng L 6DTAA8.9-G24: "49.6": 49.6 missing unit → 49.6 L/h
+fuel75 đổi missing | longkai-power n1033 b79 dòng L 6DTAA8.9-G24: "36.8": 36.8 missing unit → 36.8 L/h
+fuel50 đổi missing | longkai-power n1033 b79 dòng L 6DTAA8.9-G24: "25.7": 25.7 missing unit → 25.7 L/h
+cyl thêm | longkai-power n1033 b79 dòng L 6DTAA8.9-G24: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1033 b79 dòng L LK274J: "49.6": 49.6 missing unit → 49.6 L/h
+fuel75 đổi missing | longkai-power n1033 b79 dòng L LK274J: "36.8": 36.8 missing unit → 36.8 L/h
+fuel50 đổi missing | longkai-power n1033 b79 dòng L LK274J: "25.7": 25.7 missing unit → 25.7 L/h
+cyl thêm | longkai-power n1033 b79 dòng L LK274J: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1034 b81 dòng L 6DTAA8.9-G23: "55.1": 55.1 missing unit → 55.1 L/h
+fuel75 đổi missing | longkai-power n1034 b81 dòng L 6DTAA8.9-G23: "40.7": 40.7 missing unit → 40.7 L/h
+fuel50 đổi missing | longkai-power n1034 b81 dòng L 6DTAA8.9-G23: "27.7": 27.7 missing unit → 27.7 L/h
+cyl thêm | longkai-power n1034 b81 dòng L 6DTAA8.9-G23: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1034 b81 dòng L LK274K: "55.1": 55.1 missing unit → 55.1 L/h
+fuel75 đổi missing | longkai-power n1034 b81 dòng L LK274K: "40.7": 40.7 missing unit → 40.7 L/h
+fuel50 đổi missing | longkai-power n1034 b81 dòng L LK274K: "27.7": 27.7 missing unit → 27.7 L/h
+cyl thêm | longkai-power n1034 b81 dòng L LK274K: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1035 b83 dòng L 6ETAA11.8-G21: "72.9": 72.9 missing unit → 72.9 L/h
+fuel75 đổi missing | longkai-power n1035 b83 dòng L 6ETAA11.8-G21: "54.1": 54.1 missing unit → 54.1 L/h
+fuel50 đổi missing | longkai-power n1035 b83 dòng L 6ETAA11.8-G21: "37": 37 missing unit → 37 L/h
+cyl thêm | longkai-power n1035 b83 dòng L 6ETAA11.8-G21: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1035 b83 dòng L LK444E: "72.9": 72.9 missing unit → 72.9 L/h
+fuel75 đổi missing | longkai-power n1035 b83 dòng L LK444E: "54.1": 54.1 missing unit → 54.1 L/h
+fuel50 đổi missing | longkai-power n1035 b83 dòng L LK444E: "37": 37 missing unit → 37 L/h
+cyl thêm | longkai-power n1035 b83 dòng L LK444E: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1036 b84 dòng L 6ETAA11.8-G31: "79.3": 79.3 missing unit → 79.3 L/h
+fuel75 đổi missing | longkai-power n1036 b84 dòng L 6ETAA11.8-G31: "59.1": 59.1 missing unit → 59.1 L/h
+fuel50 đổi missing | longkai-power n1036 b84 dòng L 6ETAA11.8-G31: "37.5": 37.5 missing unit → 37.5 L/h
+cyl thêm | longkai-power n1036 b84 dòng L 6ETAA11.8-G31: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1036 b84 dòng L LK444E: "79.3": 79.3 missing unit → 79.3 L/h
+fuel75 đổi missing | longkai-power n1036 b84 dòng L LK444E: "59.1": 59.1 missing unit → 59.1 L/h
+fuel50 đổi missing | longkai-power n1036 b84 dòng L LK444E: "37.5": 37.5 missing unit → 37.5 L/h
+cyl thêm | longkai-power n1036 b84 dòng L LK444E: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1037 b86 dòng L 6ETAA12.8-G32: "96.1": 96.1 missing unit → 96.1 L/h
+fuel75 đổi missing | longkai-power n1037 b86 dòng L 6ETAA12.8-G32: "70.3": 70.3 missing unit → 70.3 L/h
+fuel50 đổi missing | longkai-power n1037 b86 dòng L 6ETAA12.8-G32: "45.0": 45 missing unit → 45 L/h
+cyl thêm | longkai-power n1037 b86 dòng L 6ETAA12.8-G32: "6in line": ∅ → 6
+fuel đổi missing | longkai-power n1037 b86 dòng L LK444F: "96.1": 96.1 missing unit → 96.1 L/h
+fuel75 đổi missing | longkai-power n1037 b86 dòng L LK444F: "70.3": 70.3 missing unit → 70.3 L/h
+fuel50 đổi missing | longkai-power n1037 b86 dòng L LK444F: "45.0": 45 missing unit → 45 L/h
+cyl thêm | longkai-power n1037 b86 dòng L LK444F: "6in line": ∅ → 6
+fuel đổi missing | longkai-power n1038 b88 dòng L 6ETAA12.8-G31: "99.1": 99.1 missing unit → 99.1 L/h
+fuel75 đổi missing | longkai-power n1038 b88 dòng L 6ETAA12.8-G31: "72.3": 72.3 missing unit → 72.3 L/h
+fuel50 đổi missing | longkai-power n1038 b88 dòng L 6ETAA12.8-G31: "48.0": 48 missing unit → 48 L/h
+cyl thêm | longkai-power n1038 b88 dòng L 6ETAA12.8-G31: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1038 b88 dòng L LK544B: "99.1": 99.1 missing unit → 99.1 L/h
+fuel75 đổi missing | longkai-power n1038 b88 dòng L LK544B: "72.3": 72.3 missing unit → 72.3 L/h
+fuel50 đổi missing | longkai-power n1038 b88 dòng L LK544B: "48.0": 48 missing unit → 48 L/h
+cyl thêm | longkai-power n1038 b88 dòng L LK544B: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1039 b90 dòng L 6KTAA25-G36: "111": 111 missing unit → 111 L/h
+fuel75 đổi missing | longkai-power n1039 b90 dòng L 6KTAA25-G36: "85": 85 missing unit → 85 L/h
+fuel50 đổi missing | longkai-power n1039 b90 dòng L 6KTAA25-G36: "61": 61 missing unit → 61 L/h
+cyl thêm | longkai-power n1039 b90 dòng L 6KTAA25-G36: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1039 b90 dòng L LK544C: "111": 111 missing unit → 111 L/h
+fuel75 đổi missing | longkai-power n1039 b90 dòng L LK544C: "85": 85 missing unit → 85 L/h
+fuel50 đổi missing | longkai-power n1039 b90 dòng L LK544C: "61": 61 missing unit → 61 L/h
+cyl thêm | longkai-power n1039 b90 dòng L LK544C: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1040 b92 dòng L 6KTAA25-G35: "124": 124 missing unit → 124 L/h
+fuel75 đổi missing | longkai-power n1040 b92 dòng L 6KTAA25-G35: "94": 94 missing unit → 94 L/h
+fuel50 đổi missing | longkai-power n1040 b92 dòng L 6KTAA25-G35: "68": 68 missing unit → 68 L/h
+cyl thêm | longkai-power n1040 b92 dòng L 6KTAA25-G35: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1040 b92 dòng L LK544E: "124": 124 missing unit → 124 L/h
+fuel75 đổi missing | longkai-power n1040 b92 dòng L LK544E: "94": 94 missing unit → 94 L/h
+fuel50 đổi missing | longkai-power n1040 b92 dòng L LK544E: "68": 68 missing unit → 68 L/h
+cyl thêm | longkai-power n1040 b92 dòng L LK544E: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1041 b94 dòng L 6KTAA25-G34: "136": 136 missing unit → 136 L/h
+fuel75 đổi missing | longkai-power n1041 b94 dòng L 6KTAA25-G34: "103": 103 missing unit → 103 L/h
+fuel50 đổi missing | longkai-power n1041 b94 dòng L 6KTAA25-G34: "71": 71 missing unit → 71 L/h
+cyl thêm | longkai-power n1041 b94 dòng L 6KTAA25-G34: "6in line": ∅ → 6
+fuel đổi missing | longkai-power n1041 b94 dòng L LK544FS: "136": 136 missing unit → 136 L/h
+fuel75 đổi missing | longkai-power n1041 b94 dòng L LK544FS: "103": 103 missing unit → 103 L/h
+fuel50 đổi missing | longkai-power n1041 b94 dòng L LK544FS: "71": 71 missing unit → 71 L/h
+cyl thêm | longkai-power n1041 b94 dòng L LK544FS: "6in line": ∅ → 6
+fuel đổi missing | longkai-power n1042 b96 dòng L 6KTAA25-G33: "148": 148 missing unit → 148 L/h
+fuel75 đổi missing | longkai-power n1042 b96 dòng L 6KTAA25-G33: "113": 113 missing unit → 113 L/h
+fuel50 đổi missing | longkai-power n1042 b96 dòng L 6KTAA25-G33: "77.0": 77 missing unit → 77 L/h
+cyl thêm | longkai-power n1042 b96 dòng L 6KTAA25-G33: "6in line": ∅ → 6
+fuel đổi missing | longkai-power n1042 b96 dòng L LK544F: "148": 148 missing unit → 148 L/h
+fuel75 đổi missing | longkai-power n1042 b96 dòng L LK544F: "113": 113 missing unit → 113 L/h
+fuel50 đổi missing | longkai-power n1042 b96 dòng L LK544F: "77.0": 77 missing unit → 77 L/h
+cyl thêm | longkai-power n1042 b96 dòng L LK544F: "6in line": ∅ → 6
+fuel đổi missing | longkai-power n1043 b98 dòng L 6KTAA25-G32: "163": 163 missing unit → 163 L/h
+fuel75 đổi missing | longkai-power n1043 b98 dòng L 6KTAA25-G32: "124": 124 missing unit → 124 L/h
+fuel50 đổi missing | longkai-power n1043 b98 dòng L 6KTAA25-G32: "84": 84 missing unit → 84 L/h
+cyl thêm | longkai-power n1043 b98 dòng L 6KTAA25-G32: "6in line": ∅ → 6
+fuel đổi missing | longkai-power n1043 b98 dòng L LK634B: "163": 163 missing unit → 163 L/h
+fuel75 đổi missing | longkai-power n1043 b98 dòng L LK634B: "124": 124 missing unit → 124 L/h
+fuel50 đổi missing | longkai-power n1043 b98 dòng L LK634B: "84": 84 missing unit → 84 L/h
+cyl thêm | longkai-power n1043 b98 dòng L LK634B: "6in line": ∅ → 6
+fuel đổi missing | longkai-power n1044 b100 dòng L 6KTAA25-G31: "163": 163 missing unit → 163 L/h
+fuel75 đổi missing | longkai-power n1044 b100 dòng L 6KTAA25-G31: "124": 124 missing unit → 124 L/h
+fuel50 đổi missing | longkai-power n1044 b100 dòng L 6KTAA25-G31: "84": 84 missing unit → 84 L/h
+cyl thêm | longkai-power n1044 b100 dòng L 6KTAA25-G31: "6in line": ∅ → 6
+fuel đổi missing | longkai-power n1044 b100 dòng L LK634C: "163": 163 missing unit → 163 L/h
+fuel75 đổi missing | longkai-power n1044 b100 dòng L LK634C: "124": 124 missing unit → 124 L/h
+fuel50 đổi missing | longkai-power n1044 b100 dòng L LK634C: "84": 84 missing unit → 84 L/h
+cyl thêm | longkai-power n1044 b100 dòng L LK634C: "6in line": ∅ → 6
+fuel đổi missing | longkai-power n1045 b102 dòng L 6WTAA35-G32: "192.5": 192.5 missing unit → 192.5 L/h
+fuel75 đổi missing | longkai-power n1045 b102 dòng L 6WTAA35-G32: "142.9": 142.9 missing unit → 142.9 L/h
+fuel50 đổi missing | longkai-power n1045 b102 dòng L 6WTAA35-G32: "96.2": 96.2 missing unit → 96.2 L/h
+cyl thêm | longkai-power n1045 b102 dòng L 6WTAA35-G32: "6in line": ∅ → 6
+fuel đổi missing | longkai-power n1045 b102 dòng L LK634D: "192.5": 192.5 missing unit → 192.5 L/h
+fuel75 đổi missing | longkai-power n1045 b102 dòng L LK634D: "142.9": 142.9 missing unit → 142.9 L/h
+fuel50 đổi missing | longkai-power n1045 b102 dòng L LK634D: "96.2": 96.2 missing unit → 96.2 L/h
+cyl thêm | longkai-power n1045 b102 dòng L LK634D: "6in line": ∅ → 6
+fuel đổi missing | longkai-power n1046 b104 dòng L SC13E550D2: "207.5": 207.5 missing unit → 207.5 L/h
+fuel75 đổi missing | longkai-power n1046 b104 dòng L SC13E550D2: "154.5": 154.5 missing unit → 154.5 L/h
+fuel50 đổi missing | longkai-power n1046 b104 dòng L SC13E550D2: "103.9": 103.9 missing unit → 103.9 L/h
+cyl thêm | longkai-power n1046 b104 dòng L SC13E550D2: "6in line": ∅ → 6
+fuel đổi missing | longkai-power n1046 b104 dòng L LK634E: "207.5": 207.5 missing unit → 207.5 L/h
+fuel75 đổi missing | longkai-power n1046 b104 dòng L LK634E: "154.5": 154.5 missing unit → 154.5 L/h
+fuel50 đổi missing | longkai-power n1046 b104 dòng L LK634E: "103.9": 103.9 missing unit → 103.9 L/h
+cyl thêm | longkai-power n1046 b104 dòng L LK634E: "6in line": ∅ → 6
+fuel đổi missing | longkai-power n1047 b106 dòng L 4B3.9-G11: "5.7": 5.7 missing unit → 5.7 L/h
+fuel75 đổi missing | longkai-power n1047 b106 dòng L 4B3.9-G11: "4.6": 4.6 missing unit → 4.6 L/h
+fuel50 đổi missing | longkai-power n1047 b106 dòng L 4B3.9-G11: "3.7": 3.7 missing unit → 3.7 L/h
+cyl thêm | longkai-power n1047 b106 dòng L 4B3.9-G11: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1047 b106 dòng L LK184E: "5.7": 5.7 missing unit → 5.7 L/h
+fuel75 đổi missing | longkai-power n1047 b106 dòng L LK184E: "4.6": 4.6 missing unit → 4.6 L/h
+fuel50 đổi missing | longkai-power n1047 b106 dòng L LK184E: "3.7": 3.7 missing unit → 3.7 L/h
+cyl thêm | longkai-power n1047 b106 dòng L LK184E: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1048 b108 dòng L 4B3.9-G1: "7.1": 7.1 missing unit → 7.1 L/h
+fuel75 đổi missing | longkai-power n1048 b108 dòng L 4B3.9-G1: "5.7": 5.7 missing unit → 5.7 L/h
+fuel50 đổi missing | longkai-power n1048 b108 dòng L 4B3.9-G1: "4.3": 4.3 missing unit → 4.3 L/h
+cyl thêm | longkai-power n1048 b108 dòng L 4B3.9-G1: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1048 b108 dòng L LK184F: "7.1": 7.1 missing unit → 7.1 L/h
+fuel75 đổi missing | longkai-power n1048 b108 dòng L LK184F: "5.7": 5.7 missing unit → 5.7 L/h
+fuel50 đổi missing | longkai-power n1048 b108 dòng L LK184F: "4.3": 4.3 missing unit → 4.3 L/h
+cyl thêm | longkai-power n1048 b108 dòng L LK184F: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1049 b110 dòng L 4B3.9-G2: "6.7": 6.7 missing unit → 6.7 L/h
+fuel75 đổi missing | longkai-power n1049 b110 dòng L 4B3.9-G2: "5.2": 5.2 missing unit → 5.2 L/h
+fuel50 đổi missing | longkai-power n1049 b110 dòng L 4B3.9-G2: "3.9": 3.9 missing unit → 3.9 L/h
+cyl thêm | longkai-power n1049 b110 dòng L 4B3.9-G2: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1049 b110 dòng L LK184F: "6.7": 6.7 missing unit → 6.7 L/h
+fuel75 đổi missing | longkai-power n1049 b110 dòng L LK184F: "5.2": 5.2 missing unit → 5.2 L/h
+fuel50 đổi missing | longkai-power n1049 b110 dòng L LK184F: "3.9": 3.9 missing unit → 3.9 L/h
+cyl thêm | longkai-power n1049 b110 dòng L LK184F: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1050 b112 dòng L 4B3.9-G12: "7.4": 7.4 missing unit → 7.4 L/h
+fuel75 đổi missing | longkai-power n1050 b112 dòng L 4B3.9-G12: "6.1": 6.1 missing unit → 6.1 L/h
+fuel50 đổi missing | longkai-power n1050 b112 dòng L 4B3.9-G12: "4.5": 4.5 missing unit → 4.5 L/h
+cyl thêm | longkai-power n1050 b112 dòng L 4B3.9-G12: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1050 b112 dòng L LK184G: "7.4": 7.4 missing unit → 7.4 L/h
+fuel75 đổi missing | longkai-power n1050 b112 dòng L LK184G: "6.1": 6.1 missing unit → 6.1 L/h
+fuel50 đổi missing | longkai-power n1050 b112 dòng L LK184G: "4.5": 4.5 missing unit → 4.5 L/h
+cyl thêm | longkai-power n1050 b112 dòng L LK184G: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1051 b114 dòng L 4BT3.9-G1: "10": 10 missing unit → 10 L/h
+fuel75 đổi missing | longkai-power n1051 b114 dòng L 4BT3.9-G1: "7.9": 7.9 missing unit → 7.9 L/h
+fuel50 đổi missing | longkai-power n1051 b114 dòng L 4BT3.9-G1: "5.9": 5.9 missing unit → 5.9 L/h
+cyl thêm | longkai-power n1051 b114 dòng L 4BT3.9-G1: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1051 b114 dòng L LK184J: "10": 10 missing unit → 10 L/h
+fuel75 đổi missing | longkai-power n1051 b114 dòng L LK184J: "7.9": 7.9 missing unit → 7.9 L/h
+fuel50 đổi missing | longkai-power n1051 b114 dòng L LK184J: "5.9": 5.9 missing unit → 5.9 L/h
+cyl thêm | longkai-power n1051 b114 dòng L LK184J: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1052 b115 dòng L 4BT3.9-G2: "9.3": 9.3 missing unit → 9.3 L/h
+fuel75 đổi missing | longkai-power n1052 b115 dòng L 4BT3.9-G2: "7.3": 7.3 missing unit → 7.3 L/h
+fuel50 đổi missing | longkai-power n1052 b115 dòng L 4BT3.9-G2: "5.3": 5.3 missing unit → 5.3 L/h
+cyl thêm | longkai-power n1052 b115 dòng L 4BT3.9-G2: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1052 b115 dòng L LK184J: "9.3": 9.3 missing unit → 9.3 L/h
+fuel75 đổi missing | longkai-power n1052 b115 dòng L LK184J: "7.3": 7.3 missing unit → 7.3 L/h
+fuel50 đổi missing | longkai-power n1052 b115 dòng L LK184J: "5.3": 5.3 missing unit → 5.3 L/h
+cyl thêm | longkai-power n1052 b115 dòng L LK184J: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1053 b117 dòng L QSB3.9-G2: "26": 26 missing unit → 26 L/h
+fuel75 đổi missing | longkai-power n1053 b117 dòng L QSB3.9-G2: "21": 21 missing unit → 21 L/h
+fuel50 đổi missing | longkai-power n1053 b117 dòng L QSB3.9-G2: "15": 15 missing unit → 15 L/h
+cyl thêm | longkai-power n1053 b117 dòng L QSB3.9-G2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1053 b117 dòng L LK224E: "26": 26 missing unit → 26 L/h
+fuel75 đổi missing | longkai-power n1053 b117 dòng L LK224E: "21": 21 missing unit → 21 L/h
+fuel50 đổi missing | longkai-power n1053 b117 dòng L LK224E: "15": 15 missing unit → 15 L/h
+cyl thêm | longkai-power n1053 b117 dòng L LK224E: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1054 b119 dòng L 4BTA3.9-G2-58KW: "14.9": 14.9 missing unit → 14.9 L/h
+fuel75 đổi missing | longkai-power n1054 b119 dòng L 4BTA3.9-G2-58KW: "11.4": 11.4 missing unit → 11.4 L/h
+fuel50 đổi missing | longkai-power n1054 b119 dòng L 4BTA3.9-G2-58KW: "8.1": 8.1 missing unit → 8.1 L/h
+cyl thêm | longkai-power n1054 b119 dòng L 4BTA3.9-G2-58KW: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1054 b119 dòng L LK224F: "14.9": 14.9 missing unit → 14.9 L/h
+fuel75 đổi missing | longkai-power n1054 b119 dòng L LK224F: "11.4": 11.4 missing unit → 11.4 L/h
+fuel50 đổi missing | longkai-power n1054 b119 dòng L LK224F: "8.1": 8.1 missing unit → 8.1 L/h
+cyl thêm | longkai-power n1054 b119 dòng L LK224F: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1055 b120 dòng L 4BTA3.9-G11: "17.6": 17.6 missing unit → 17.6 L/h
+fuel75 đổi missing | longkai-power n1055 b120 dòng L 4BTA3.9-G11: "13.2": 13.2 missing unit → 13.2 L/h
+fuel50 đổi missing | longkai-power n1055 b120 dòng L 4BTA3.9-G11: "9.1": 9.1 missing unit → 9.1 L/h
+cyl thêm | longkai-power n1055 b120 dòng L 4BTA3.9-G11: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1055 b120 dòng L LK224F: "17.6": 17.6 missing unit → 17.6 L/h
+fuel75 đổi missing | longkai-power n1055 b120 dòng L LK224F: "13.2": 13.2 missing unit → 13.2 L/h
+fuel50 đổi missing | longkai-power n1055 b120 dòng L LK224F: "9.1": 9.1 missing unit → 9.1 L/h
+cyl thêm | longkai-power n1055 b120 dòng L LK224F: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1056 b122 dòng L 4BTA3.9-G11: "17.4": 17.4 missing unit → 17.4 L/h
+fuel75 đổi missing | longkai-power n1056 b122 dòng L 4BTA3.9-G11: "13.2": 13.2 missing unit → 13.2 L/h
+fuel50 đổi missing | longkai-power n1056 b122 dòng L 4BTA3.9-G11: "9.1": 9.1 missing unit → 9.1 L/h
+cyl thêm | longkai-power n1056 b122 dòng L 4BTA3.9-G11: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1056 b122 dòng L LK224G: "17.4": 17.4 missing unit → 17.4 L/h
+fuel75 đổi missing | longkai-power n1056 b122 dòng L LK224G: "13.2": 13.2 missing unit → 13.2 L/h
+fuel50 đổi missing | longkai-power n1056 b122 dòng L LK224G: "9.1": 9.1 missing unit → 9.1 L/h
+cyl thêm | longkai-power n1056 b122 dòng L LK224G: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1057 b124 dòng L QSB3.9-G3: "20": 20 missing unit → 20 L/h
+fuel75 đổi missing | longkai-power n1057 b124 dòng L QSB3.9-G3: "17": 17 missing unit → 17 L/h
+fuel50 đổi missing | longkai-power n1057 b124 dòng L QSB3.9-G3: "12": 12 missing unit → 12 L/h
+cyl thêm | longkai-power n1057 b124 dòng L QSB3.9-G3: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1057 b124 dòng L LK224G/S: "20": 20 missing unit → 20 L/h
+fuel75 đổi missing | longkai-power n1057 b124 dòng L LK224G/S: "17": 17 missing unit → 17 L/h
+fuel50 đổi missing | longkai-power n1057 b124 dòng L LK224G/S: "12": 12 missing unit → 12 L/h
+cyl thêm | longkai-power n1057 b124 dòng L LK224G/S: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1058 b125 dòng L 4BTA3.9-G13: "18.8": 18.8 missing unit → 18.8 L/h
+fuel75 đổi missing | longkai-power n1058 b125 dòng L 4BTA3.9-G13: "14.1": 14.1 missing unit → 14.1 L/h
+fuel50 đổi missing | longkai-power n1058 b125 dòng L 4BTA3.9-G13: "10.1": 10.1 missing unit → 10.1 L/h
+cyl thêm | longkai-power n1058 b125 dòng L 4BTA3.9-G13: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1058 b125 dòng L LK224G: "18.8": 18.8 missing unit → 18.8 L/h
+fuel75 đổi missing | longkai-power n1058 b125 dòng L LK224G: "14.1": 14.1 missing unit → 14.1 L/h
+fuel50 đổi missing | longkai-power n1058 b125 dòng L LK224G: "10.1": 10.1 missing unit → 10.1 L/h
+cyl thêm | longkai-power n1058 b125 dòng L LK224G: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1059 b127 dòng L 4BTA3.9-G13: "18.8": 18.8 missing unit → 18.8 L/h
+fuel75 đổi missing | longkai-power n1059 b127 dòng L 4BTA3.9-G13: "14.1": 14.1 missing unit → 14.1 L/h
+fuel50 đổi missing | longkai-power n1059 b127 dòng L 4BTA3.9-G13: "10.1": 10.1 missing unit → 10.1 L/h
+cyl thêm | longkai-power n1059 b127 dòng L 4BTA3.9-G13: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1059 b127 dòng L LK274C: "18.8": 18.8 missing unit → 18.8 L/h
+fuel75 đổi missing | longkai-power n1059 b127 dòng L LK274C: "14.1": 14.1 missing unit → 14.1 L/h
+fuel50 đổi missing | longkai-power n1059 b127 dòng L LK274C: "10.1": 10.1 missing unit → 10.1 L/h
+cyl thêm | longkai-power n1059 b127 dòng L LK274C: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1060 b129 dòng L 6BT5.9-G2-86KW: "22.3": 22.3 missing unit → 22.3 L/h
+fuel75 đổi missing | longkai-power n1060 b129 dòng L 6BT5.9-G2-86KW: "16.9": 16.9 missing unit → 16.9 L/h
+fuel50 đổi missing | longkai-power n1060 b129 dòng L 6BT5.9-G2-86KW: "11.3": 11.3 missing unit → 11.3 L/h
+cyl thêm | longkai-power n1060 b129 dòng L 6BT5.9-G2-86KW: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1060 b129 dòng L LK274C: "22.3": 22.3 missing unit → 22.3 L/h
+fuel75 đổi missing | longkai-power n1060 b129 dòng L LK274C: "16.9": 16.9 missing unit → 16.9 L/h
+fuel50 đổi missing | longkai-power n1060 b129 dòng L LK274C: "11.3": 11.3 missing unit → 11.3 L/h
+cyl thêm | longkai-power n1060 b129 dòng L LK274C: "6 in line": ∅ → 6
+cyl thêm | longkai-power n1061 b130 dòng L 6BT5.9-G1: "6 in line": ∅ → 6
+cyl thêm | longkai-power n1061 b130 dòng L LK274C: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1062 b132 dòng L 6BT5.9-G2-96KW: "22": 22 missing unit → 22 L/h
+fuel75 đổi missing | longkai-power n1062 b132 dòng L 6BT5.9-G2-96KW: "17": 17 missing unit → 17 L/h
+fuel50 đổi missing | longkai-power n1062 b132 dòng L 6BT5.9-G2-96KW: "11": 11 missing unit → 11 L/h
+cyl thêm | longkai-power n1062 b132 dòng L 6BT5.9-G2-96KW: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1062 b132 dòng L LK274D: "22": 22 missing unit → 22 L/h
+fuel75 đổi missing | longkai-power n1062 b132 dòng L LK274D: "17": 17 missing unit → 17 L/h
+fuel50 đổi missing | longkai-power n1062 b132 dòng L LK274D: "11": 11 missing unit → 11 L/h
+cyl thêm | longkai-power n1062 b132 dòng L LK274D: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1063 b134 dòng L 6BT5.9-G2: "24.2": 24.2 missing unit → 24.2 L/h
+fuel75 đổi missing | longkai-power n1063 b134 dòng L 6BT5.9-G2: "18.2": 18.2 missing unit → 18.2 L/h
+fuel50 đổi missing | longkai-power n1063 b134 dòng L 6BT5.9-G2: "12.5": 12.5 missing unit → 12.5 L/h
+cyl thêm | longkai-power n1063 b134 dòng L 6BT5.9-G2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1063 b134 dòng L LK274D: "24.2": 24.2 missing unit → 24.2 L/h
+fuel75 đổi missing | longkai-power n1063 b134 dòng L LK274D: "18.2": 18.2 missing unit → 18.2 L/h
+fuel50 đổi missing | longkai-power n1063 b134 dòng L LK274D: "12.5": 12.5 missing unit → 12.5 L/h
+cyl thêm | longkai-power n1063 b134 dòng L LK274D: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1065 b135 dòng L 6BTAA5.9-G2: "30.0": 30 missing unit → 30 L/h
+fuel75 đổi missing | longkai-power n1065 b135 dòng L 6BTAA5.9-G2: "23.0": 23 missing unit → 23 L/h
+fuel50 đổi missing | longkai-power n1065 b135 dòng L 6BTAA5.9-G2: "16.0": 16 missing unit → 16 L/h
+cyl thêm | longkai-power n1065 b135 dòng L 6BTAA5.9-G2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1065 b135 dòng L LK274D: "30.0": 30 missing unit → 30 L/h
+fuel75 đổi missing | longkai-power n1065 b135 dòng L LK274D: "23.0": 23 missing unit → 23 L/h
+fuel50 đổi missing | longkai-power n1065 b135 dòng L LK274D: "16.0": 16 missing unit → 16 L/h
+cyl thêm | longkai-power n1065 b135 dòng L LK274D: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1066 b136 dòng L QSB5.9-G3: "26.0": 26 missing unit → 26 L/h
+fuel75 đổi missing | longkai-power n1066 b136 dòng L QSB5.9-G3: "25.0": 25 missing unit → 25 L/h
+fuel50 đổi missing | longkai-power n1066 b136 dòng L QSB5.9-G3: "18.0": 18 missing unit → 18 L/h
+cyl thêm | longkai-power n1066 b136 dòng L QSB5.9-G3: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1066 b136 dòng L LK274D: "26.0": 26 missing unit → 26 L/h
+fuel75 đổi missing | longkai-power n1066 b136 dòng L LK274D: "25.0": 25 missing unit → 25 L/h
+fuel50 đổi missing | longkai-power n1066 b136 dòng L LK274D: "18.0": 18 missing unit → 18 L/h
+cyl thêm | longkai-power n1066 b136 dòng L LK274D: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1067 b138 dòng L LK274E: "30.0": 30 missing unit → 30 L/h
+fuel75 đổi missing | longkai-power n1067 b138 dòng L LK274E: "23.0": 23 missing unit → 23 L/h
+fuel50 đổi missing | longkai-power n1067 b138 dòng L LK274E: "16.0": 16 missing unit → 16 L/h
+cyl thêm | longkai-power n1067 b138 dòng L LK274E: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1068 b140 dòng L 6BTAA5.9-G12: "34.0": 34 missing unit → 34 L/h
+fuel75 đổi missing | longkai-power n1068 b140 dòng L 6BTAA5.9-G12: "26.0": 26 missing unit → 26 L/h
+fuel50 đổi missing | longkai-power n1068 b140 dòng L 6BTAA5.9-G12: "17.0": 17 missing unit → 17 L/h
+cyl thêm | longkai-power n1068 b140 dòng L 6BTAA5.9-G12: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1068 b140 dòng L LK274F/S: "34.0": 34 missing unit → 34 L/h
+fuel75 đổi missing | longkai-power n1068 b140 dòng L LK274F/S: "26.0": 26 missing unit → 26 L/h
+fuel50 đổi missing | longkai-power n1068 b140 dòng L LK274F/S: "17.0": 17 missing unit → 17 L/h
+cyl thêm | longkai-power n1068 b140 dòng L LK274F/S: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1069 b141 dòng L QSB6.7-G3: "38.0": 38 missing unit → 38 L/h
+fuel75 đổi missing | longkai-power n1069 b141 dòng L QSB6.7-G3: "31.0": 31 missing unit → 31 L/h
+fuel50 đổi missing | longkai-power n1069 b141 dòng L QSB6.7-G3: "22.0": 22 missing unit → 22 L/h
+cyl thêm | longkai-power n1069 b141 dòng L QSB6.7-G3: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1069 b141 dòng L LK274F/S: "38.0": 38 missing unit → 38 L/h
+fuel75 đổi missing | longkai-power n1069 b141 dòng L LK274F/S: "31.0": 31 missing unit → 31 L/h
+fuel50 đổi missing | longkai-power n1069 b141 dòng L LK274F/S: "22.0": 22 missing unit → 22 L/h
+cyl thêm | longkai-power n1069 b141 dòng L LK274F/S: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1070 b143 dòng L QSB6.7-G4: "43": 43 missing unit → 43 L/h
+fuel75 đổi missing | longkai-power n1070 b143 dòng L QSB6.7-G4: "34": 34 missing unit → 34 L/h
+fuel50 đổi missing | longkai-power n1070 b143 dòng L QSB6.7-G4: "24": 24 missing unit → 24 L/h
+cyl thêm | longkai-power n1070 b143 dòng L QSB6.7-G4: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1070 b143 dòng L LK274G: "43": 43 missing unit → 43 L/h
+fuel75 đổi missing | longkai-power n1070 b143 dòng L LK274G: "34": 34 missing unit → 34 L/h
+fuel50 đổi missing | longkai-power n1070 b143 dòng L LK274G: "24": 24 missing unit → 24 L/h
+cyl thêm | longkai-power n1070 b143 dòng L LK274G: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1071 b145 dòng L 6CTA8.3-G1: "42.0": 42 missing unit → 42 L/h
+fuel75 đổi missing | longkai-power n1071 b145 dòng L 6CTA8.3-G1: "31.0": 31 missing unit → 31 L/h
+fuel50 đổi missing | longkai-power n1071 b145 dòng L 6CTA8.3-G1: "21.0": 21 missing unit → 21 L/h
+cyl thêm | longkai-power n1071 b145 dòng L 6CTA8.3-G1: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1071 b145 dòng L LK274G: "42.0": 42 missing unit → 42 L/h
+fuel75 đổi missing | longkai-power n1071 b145 dòng L LK274G: "31.0": 31 missing unit → 31 L/h
+fuel50 đổi missing | longkai-power n1071 b145 dòng L LK274G: "21.0": 21 missing unit → 21 L/h
+cyl thêm | longkai-power n1071 b145 dòng L LK274G: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1072 b146 dòng L 6CTA8.3-G2: "42.0": 42 missing unit → 42 L/h
+fuel75 đổi missing | longkai-power n1072 b146 dòng L 6CTA8.3-G2: "31.0": 31 missing unit → 31 L/h
+fuel50 đổi missing | longkai-power n1072 b146 dòng L 6CTA8.3-G2: "21.0": 21 missing unit → 21 L/h
+cyl thêm | longkai-power n1072 b146 dòng L 6CTA8.3-G2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1072 b146 dòng L LK274G: "42.0": 42 missing unit → 42 L/h
+fuel75 đổi missing | longkai-power n1072 b146 dòng L LK274G: "31.0": 31 missing unit → 31 L/h
+fuel50 đổi missing | longkai-power n1072 b146 dòng L LK274G: "21.0": 21 missing unit → 21 L/h
+cyl thêm | longkai-power n1072 b146 dòng L LK274G: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1073 b148 dòng L 6CTAA8.3-G2: "45.0": 45 missing unit → 45 L/h
+fuel75 đổi missing | longkai-power n1073 b148 dòng L 6CTAA8.3-G2: "34.0": 34 missing unit → 34 L/h
+fuel50 đổi missing | longkai-power n1073 b148 dòng L 6CTAA8.3-G2: "23.0": 23 missing unit → 23 L/h
+cyl thêm | longkai-power n1073 b148 dòng L 6CTAA8.3-G2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1073 b148 dòng L LK274H: "45.0": 45 missing unit → 45 L/h
+fuel75 đổi missing | longkai-power n1073 b148 dòng L LK274H: "34.0": 34 missing unit → 34 L/h
+fuel50 đổi missing | longkai-power n1073 b148 dòng L LK274H: "23.0": 23 missing unit → 23 L/h
+cyl thêm | longkai-power n1073 b148 dòng L LK274H: "6 in line": ∅ → 6
+cyl thêm | longkai-power n1074 b150 dòng L LK274H: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1075 b151 dòng L 6CTAA8.3-G9: "57.0": 57 missing unit → 57 L/h
+fuel75 đổi missing | longkai-power n1075 b151 dòng L 6CTAA8.3-G9: "42.0": 42 missing unit → 42 L/h
+fuel50 đổi missing | longkai-power n1075 b151 dòng L 6CTAA8.3-G9: "29.0": 29 missing unit → 29 L/h
+cyl thêm | longkai-power n1075 b151 dòng L 6CTAA8.3-G9: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1075 b151 dòng L LK274J: "57.0": 57 missing unit → 57 L/h
+fuel75 đổi missing | longkai-power n1075 b151 dòng L LK274J: "42.0": 42 missing unit → 42 L/h
+fuel50 đổi missing | longkai-power n1075 b151 dòng L LK274J: "29.0": 29 missing unit → 29 L/h
+cyl thêm | longkai-power n1075 b151 dòng L LK274J: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1076 b153 dòng L MTA11-G2: "43.9": 43.9 missing unit → 43.9 L/h
+fuel75 đổi missing | longkai-power n1076 b153 dòng L MTA11-G2: "33.9": 33.9 missing unit → 33.9 L/h
+fuel50 đổi missing | longkai-power n1076 b153 dòng L MTA11-G2: "24.1": 24.1 missing unit → 24.1 L/h
+cyl thêm | longkai-power n1076 b153 dòng L MTA11-G2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1076 b153 dòng L LK274K: "43.9": 43.9 missing unit → 43.9 L/h
+fuel75 đổi missing | longkai-power n1076 b153 dòng L LK274K: "33.9": 33.9 missing unit → 33.9 L/h
+fuel50 đổi missing | longkai-power n1076 b153 dòng L LK274K: "24.1": 24.1 missing unit → 24.1 L/h
+cyl thêm | longkai-power n1076 b153 dòng L LK274K: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1077 b155 dòng L 6LTAA8.9-G2: "53.0": 53 missing unit → 53 L/h
+fuel75 đổi missing | longkai-power n1077 b155 dòng L 6LTAA8.9-G2: "39.0": 39 missing unit → 39 L/h
+fuel50 đổi missing | longkai-power n1077 b155 dòng L 6LTAA8.9-G2: "27.0": 27 missing unit → 27 L/h
+cyl thêm | longkai-power n1077 b155 dòng L 6LTAA8.9-G2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1077 b155 dòng L LK274K: "53.0": 53 missing unit → 53 L/h
+fuel75 đổi missing | longkai-power n1077 b155 dòng L LK274K: "39.0": 39 missing unit → 39 L/h
+fuel50 đổi missing | longkai-power n1077 b155 dòng L LK274K: "27.0": 27 missing unit → 27 L/h
+cyl thêm | longkai-power n1077 b155 dòng L LK274K: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1078 b157 dòng L 6LTAA8.9-G3: "54.0": 54 missing unit → 54 L/h
+fuel75 đổi missing | longkai-power n1078 b157 dòng L 6LTAA8.9-G3: "41.0": 41 missing unit → 41 L/h
+fuel50 đổi missing | longkai-power n1078 b157 dòng L 6LTAA8.9-G3: "30.0": 30 missing unit → 30 L/h
+cyl thêm | longkai-power n1078 b157 dòng L 6LTAA8.9-G3: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1078 b157 dòng L LK274K: "54.0": 54 missing unit → 54 L/h
+fuel75 đổi missing | longkai-power n1078 b157 dòng L LK274K: "41.0": 41 missing unit → 41 L/h
+fuel50 đổi missing | longkai-power n1078 b157 dòng L LK274K: "30.0": 30 missing unit → 30 L/h
+cyl thêm | longkai-power n1078 b157 dòng L LK274K: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1079 b158 dòng L QSNT-G6: "53.0": 53 missing unit → 53 L/h
+fuel75 đổi missing | longkai-power n1079 b158 dòng L QSNT-G6: "39.0": 39 missing unit → 39 L/h
+fuel50 đổi missing | longkai-power n1079 b158 dòng L QSNT-G6: "27.0": 27 missing unit → 27 L/h
+cyl thêm | longkai-power n1079 b158 dòng L QSNT-G6: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1079 b158 dòng L LK274K: "53.0": 53 missing unit → 53 L/h
+fuel75 đổi missing | longkai-power n1079 b158 dòng L LK274K: "39.0": 39 missing unit → 39 L/h
+fuel50 đổi missing | longkai-power n1079 b158 dòng L LK274K: "27.0": 27 missing unit → 27 L/h
+cyl thêm | longkai-power n1079 b158 dòng L LK274K: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1080 b160 dòng L LK444ES: "71.4": 71.4 missing unit → 71.4 L/h
+fuel75 đổi missing | longkai-power n1080 b160 dòng L LK444ES: "54.3": 54.3 missing unit → 54.3 L/h
+fuel50 đổi missing | longkai-power n1080 b160 dòng L LK444ES: "38.2": 38.2 missing unit → 38.2 L/h
+cyl thêm | longkai-power n1080 b160 dòng L LK444ES: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1081 b162 dòng L 6LTAA9.5-G3: "58.0": 58 missing unit → 58 L/h
+fuel75 đổi missing | longkai-power n1081 b162 dòng L 6LTAA9.5-G3: "44.0": 44 missing unit → 44 L/h
+fuel50 đổi missing | longkai-power n1081 b162 dòng L 6LTAA9.5-G3: "30.0": 30 missing unit → 30 L/h
+cyl thêm | longkai-power n1081 b162 dòng L 6LTAA9.5-G3: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1081 b162 dòng L LK444DS: "58.0": 58 missing unit → 58 L/h
+fuel75 đổi missing | longkai-power n1081 b162 dòng L LK444DS: "44.0": 44 missing unit → 44 L/h
+fuel50 đổi missing | longkai-power n1081 b162 dòng L LK444DS: "30.0": 30 missing unit → 30 L/h
+cyl thêm | longkai-power n1081 b162 dòng L LK444DS: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1082 b164 dòng L LK444ES: "71.4": 71.4 missing unit → 71.4 L/h
+fuel75 đổi missing | longkai-power n1082 b164 dòng L LK444ES: "54.3": 54.3 missing unit → 54.3 L/h
+fuel50 đổi missing | longkai-power n1082 b164 dòng L LK444ES: "38.2": 38.2 missing unit → 38.2 L/h
+cyl thêm | longkai-power n1082 b164 dòng L LK444ES: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1083 b166 dòng L 6LTAA9.5-G1: "70.0": 70 missing unit → 70 L/h
+fuel75 đổi missing | longkai-power n1083 b166 dòng L 6LTAA9.5-G1: "52.0": 52 missing unit → 52 L/h
+fuel50 đổi missing | longkai-power n1083 b166 dòng L 6LTAA9.5-G1: "35.0": 35 missing unit → 35 L/h
+cyl thêm | longkai-power n1083 b166 dòng L 6LTAA9.5-G1: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1083 b166 dòng L LK444ES: "70.0": 70 missing unit → 70 L/h
+fuel75 đổi missing | longkai-power n1083 b166 dòng L LK444ES: "52.0": 52 missing unit → 52 L/h
+fuel50 đổi missing | longkai-power n1083 b166 dòng L LK444ES: "35.0": 35 missing unit → 35 L/h
+cyl thêm | longkai-power n1083 b166 dòng L LK444ES: "6 in line": ∅ → 6
+cyl thêm | longkai-power n1084 b167 dòng L LK444E: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1085 b169 dòng L QSM11-G2: "18.3": 18.3 missing unit → 18.3 L/h
+fuel75 đổi missing | longkai-power n1085 b169 dòng L QSM11-G2: "13.8": 13.8 missing unit → 13.8 L/h
+fuel50 đổi missing | longkai-power n1085 b169 dòng L QSM11-G2: "9.1": 9.1 missing unit → 9.1 L/h
+cyl thêm | longkai-power n1085 b169 dòng L QSM11-G2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1085 b169 dòng L LK444E: "18.3": 18.3 missing unit → 18.3 L/h
+fuel75 đổi missing | longkai-power n1085 b169 dòng L LK444E: "13.8": 13.8 missing unit → 13.8 L/h
+fuel50 đổi missing | longkai-power n1085 b169 dòng L LK444E: "9.1": 9.1 missing unit → 9.1 L/h
+cyl thêm | longkai-power n1085 b169 dòng L LK444E: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1086 b171 dòng L QSZ13-G6: "81.6": 81.6 missing unit → 81.6 L/h
+fuel75 đổi missing | longkai-power n1086 b171 dòng L QSZ13-G6: "64.6": 64.6 missing unit → 64.6 L/h
+fuel50 đổi missing | longkai-power n1086 b171 dòng L QSZ13-G6: "46.9": 46.9 missing unit → 46.9 L/h
+cyl thêm | longkai-power n1086 b171 dòng L QSZ13-G6: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1086 b171 dòng L LK444E: "81.6": 81.6 missing unit → 81.6 L/h
+fuel75 đổi missing | longkai-power n1086 b171 dòng L LK444E: "64.6": 64.6 missing unit → 64.6 L/h
+fuel50 đổi missing | longkai-power n1086 b171 dòng L LK444E: "46.9": 46.9 missing unit → 46.9 L/h
+cyl thêm | longkai-power n1086 b171 dòng L LK444E: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1087 b173 dòng L 6ZTAA13-G3: "74.7": 74.7 missing unit → 74.7 L/h
+fuel75 đổi missing | longkai-power n1087 b173 dòng L 6ZTAA13-G3: "55.2": 55.2 missing unit → 55.2 L/h
+fuel50 đổi missing | longkai-power n1087 b173 dòng L 6ZTAA13-G3: "37.2": 37.2 missing unit → 37.2 L/h
+cyl thêm | longkai-power n1087 b173 dòng L 6ZTAA13-G3: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1087 b173 dòng L LK444F: "74.7": 74.7 missing unit → 74.7 L/h
+fuel75 đổi missing | longkai-power n1087 b173 dòng L LK444F: "55.2": 55.2 missing unit → 55.2 L/h
+fuel50 đổi missing | longkai-power n1087 b173 dòng L LK444F: "37.2": 37.2 missing unit → 37.2 L/h
+cyl thêm | longkai-power n1087 b173 dòng L LK444F: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1088 b175 dòng L QSZ13-G7: "89.2": 89.2 missing unit → 89.2 L/h
+fuel75 đổi missing | longkai-power n1088 b175 dòng L QSZ13-G7: "72": 72 missing unit → 72 L/h
+fuel50 đổi missing | longkai-power n1088 b175 dòng L QSZ13-G7: "52.9": 52.9 missing unit → 52.9 L/h
+cyl thêm | longkai-power n1088 b175 dòng L QSZ13-G7: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1088 b175 dòng L LK444F: "89.2": 89.2 missing unit → 89.2 L/h
+fuel75 đổi missing | longkai-power n1088 b175 dòng L LK444F: "72": 72 missing unit → 72 L/h
+fuel50 đổi missing | longkai-power n1088 b175 dòng L LK444F: "52.9": 52.9 missing unit → 52.9 L/h
+cyl thêm | longkai-power n1088 b175 dòng L LK444F: "6 in line": ∅ → 6
+cyl thêm | longkai-power n1089 b177 dòng L QSNT-G3: "6 in line": ∅ → 6
+cyl thêm | longkai-power n1089 b177 dòng L LK444F: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1090 b179 dòng L 6ZTAA13-G4: "91.4": 91.4 missing unit → 91.4 L/h
+fuel75 đổi missing | longkai-power n1090 b179 dòng L 6ZTAA13-G4: "66.9": 66.9 missing unit → 66.9 L/h
+fuel50 đổi missing | longkai-power n1090 b179 dòng L 6ZTAA13-G4: "44.3": 44.3 missing unit → 44.3 L/h
+cyl thêm | longkai-power n1090 b179 dòng L 6ZTAA13-G4: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1090 b179 dòng L LK544B: "91.4": 91.4 missing unit → 91.4 L/h
+fuel75 đổi missing | longkai-power n1090 b179 dòng L LK544B: "66.9": 66.9 missing unit → 66.9 L/h
+fuel50 đổi missing | longkai-power n1090 b179 dòng L LK544B: "44.3": 44.3 missing unit → 44.3 L/h
+cyl thêm | longkai-power n1090 b179 dòng L LK544B: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1091 b181 dòng L QSZ13-G2: "88.8": 88.8 missing unit → 88.8 L/h
+fuel75 đổi missing | longkai-power n1091 b181 dòng L QSZ13-G2: "65.5": 65.5 missing unit → 65.5 L/h
+fuel50 đổi missing | longkai-power n1091 b181 dòng L QSZ13-G2: "44.2": 44.2 missing unit → 44.2 L/h
+cyl thêm | longkai-power n1091 b181 dòng L QSZ13-G2: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1091 b181 dòng L LK544B: "88.8": 88.8 missing unit → 88.8 L/h
+fuel75 đổi missing | longkai-power n1091 b181 dòng L LK544B: "65.5": 65.5 missing unit → 65.5 L/h
+fuel50 đổi missing | longkai-power n1091 b181 dòng L LK544B: "44.2": 44.2 missing unit → 44.2 L/h
+cyl thêm | longkai-power n1091 b181 dòng L LK544B: "6 in line": ∅ → 6
+cyl thêm | longkai-power n1092 b182 dòng L QSNT-G4X: "6 in line": ∅ → 6
+cyl thêm | longkai-power n1092 b182 dòng L LK544B: "6 in line": ∅ → 6
+cyl thêm | longkai-power n1093 b183 dòng L QSK19-G14: "6 in line": ∅ → 6
+cyl thêm | longkai-power n1093 b183 dòng L LK544B: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1094 b185 dòng L QSZ13-G5: "93.2": 93.2 missing unit → 93.2 L/h
+fuel75 đổi missing | longkai-power n1094 b185 dòng L QSZ13-G5: "69.9": 69.9 missing unit → 69.9 L/h
+fuel50 đổi missing | longkai-power n1094 b185 dòng L QSZ13-G5: "49.0": 49 missing unit → 49 L/h
+cyl thêm | longkai-power n1094 b185 dòng L QSZ13-G5: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1094 b185 dòng L LK544B: "93.2": 93.2 missing unit → 93.2 L/h
+fuel75 đổi missing | longkai-power n1094 b185 dòng L LK544B: "69.9": 69.9 missing unit → 69.9 L/h
+fuel50 đổi missing | longkai-power n1094 b185 dòng L LK544B: "49.0": 49 missing unit → 49 L/h
+cyl thêm | longkai-power n1094 b185 dòng L LK544B: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1095 b186 dòng L QSZ13-G3: "101.0": 101 missing unit → 101 L/h
+fuel75 đổi missing | longkai-power n1095 b186 dòng L QSZ13-G3: "74.2": 74.2 missing unit → 74.2 L/h
+fuel50 đổi missing | longkai-power n1095 b186 dòng L QSZ13-G3: "48.9": 48.9 missing unit → 48.9 L/h
+cyl thêm | longkai-power n1095 b186 dòng L QSZ13-G3: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1095 b186 dòng L LK544C: "101.0": 101 missing unit → 101 L/h
+fuel75 đổi missing | longkai-power n1095 b186 dòng L LK544C: "74.2": 74.2 missing unit → 74.2 L/h
+fuel50 đổi missing | longkai-power n1095 b186 dòng L LK544C: "48.9": 48.9 missing unit → 48.9 L/h
+cyl thêm | longkai-power n1095 b186 dòng L LK544C: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1096 b188 dòng L QSZ13-G10: "107": 107 missing unit → 107 L/h
+fuel75 đổi missing | longkai-power n1096 b188 dòng L QSZ13-G10: "80": 80 missing unit → 80 L/h
+fuel50 đổi missing | longkai-power n1096 b188 dòng L QSZ13-G10: "54": 54 missing unit → 54 L/h
+cyl thêm | longkai-power n1096 b188 dòng L QSZ13-G10: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1096 b188 dòng L LK544C: "107": 107 missing unit → 107 L/h
+fuel75 đổi missing | longkai-power n1096 b188 dòng L LK544C: "80": 80 missing unit → 80 L/h
+fuel50 đổi missing | longkai-power n1096 b188 dòng L LK544C: "54": 54 missing unit → 54 L/h
+cyl thêm | longkai-power n1096 b188 dòng L LK544C: "6 in line": ∅ → 6
+cyl thêm | longkai-power n1097 b189 dòng L QSK19-G13: "6 in line": ∅ → 6
+cyl thêm | longkai-power n1097 b189 dòng L LK544C: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1098 b191 dòng L KTAA19-G5: "96": 96 missing unit → 96 kg/h
+fuel75 đổi missing | longkai-power n1098 b191 dòng L KTAA19-G5: "73": 73 missing unit → 73 kg/h
+fuel50 đổi missing | longkai-power n1098 b191 dòng L KTAA19-G5: "48": 48 missing unit → 48 kg/h
+cyl thêm | longkai-power n1098 b191 dòng L KTAA19-G5: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1098 b191 dòng L LK544D: "96": 96 missing unit → 96 kg/h
+fuel75 đổi missing | longkai-power n1098 b191 dòng L LK544D: "73": 73 missing unit → 73 kg/h
+fuel50 đổi missing | longkai-power n1098 b191 dòng L LK544D: "48": 48 missing unit → 48 kg/h
+cyl thêm | longkai-power n1098 b191 dòng L LK544D: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1099 b193 dòng L KTAA19-G6: "112": 112 missing unit → 112 kg/h
+fuel75 đổi missing | longkai-power n1099 b193 dòng L KTAA19-G6: "83": 83 missing unit → 83 kg/h
+fuel50 đổi missing | longkai-power n1099 b193 dòng L KTAA19-G6: "56": 56 missing unit → 56 kg/h
+cyl thêm | longkai-power n1099 b193 dòng L KTAA19-G6: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1099 b193 dòng L LK544E: "112": 112 missing unit → 112 kg/h
+fuel75 đổi missing | longkai-power n1099 b193 dòng L LK544E: "83": 83 missing unit → 83 kg/h
+fuel50 đổi missing | longkai-power n1099 b193 dòng L LK544E: "56": 56 missing unit → 56 kg/h
+cyl thêm | longkai-power n1099 b193 dòng L LK544E: "6 in line": ∅ → 6
+cyl thêm | longkai-power n1100 b194 dòng L QSK19-G12: "6 in line": ∅ → 6
+cyl thêm | longkai-power n1100 b194 dòng L LK544E: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1101 b196 dòng L KTA19-G8: "132": 132 missing unit → 132 L/h
+fuel75 đổi missing | longkai-power n1101 b196 dòng L KTA19-G8: "125": 125 missing unit → 125 L/h
+fuel50 đổi missing | longkai-power n1101 b196 dòng L KTA19-G8: "118": 118 missing unit → 118 L/h
+cyl thêm | longkai-power n1101 b196 dòng L KTA19-G8: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1101 b196 dòng L LK544E: "132": 132 missing unit → 132 L/h
+fuel75 đổi missing | longkai-power n1101 b196 dòng L LK544E: "125": 125 missing unit → 125 L/h
+fuel50 đổi missing | longkai-power n1101 b196 dòng L LK544E: "118": 118 missing unit → 118 L/h
+cyl thêm | longkai-power n1101 b196 dòng L LK544E: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1103 b200 dòng L KT38-G: "119.0": 119 missing unit → 119 kg/h
+fuel75 đổi missing | longkai-power n1103 b200 dòng L KT38-G: "88": 88 missing unit → 88 kg/h
+fuel50 đổi missing | longkai-power n1103 b200 dòng L KT38-G: "62": 62 missing unit → 62 kg/h
+fuel đổi missing | longkai-power n1103 b200 dòng L LK544FS: "119.0": 119 missing unit → 119 kg/h
+fuel75 đổi missing | longkai-power n1103 b200 dòng L LK544FS: "88": 88 missing unit → 88 kg/h
+fuel50 đổi missing | longkai-power n1103 b200 dòng L LK544FS: "62": 62 missing unit → 62 kg/h
+fuel đổi missing | longkai-power n1104 b202 dòng L QSK19-G4: "38.4": 38.4 missing unit → 38.4 L/h
+fuel75 đổi missing | longkai-power n1104 b202 dòng L QSK19-G4: "29.2": 29.2 missing unit → 29.2 L/h
+fuel50 đổi missing | longkai-power n1104 b202 dòng L QSK19-G4: "20.8": 20.8 missing unit → 20.8 L/h
+fuel đổi missing | longkai-power n1104 b202 dòng L LK544F: "38.4": 38.4 missing unit → 38.4 L/h
+fuel75 đổi missing | longkai-power n1104 b202 dòng L LK544F: "29.2": 29.2 missing unit → 29.2 L/h
+fuel50 đổi missing | longkai-power n1104 b202 dòng L LK544F: "20.8": 20.8 missing unit → 20.8 L/h
+fuel đổi missing | longkai-power n1106 b204 dòng L KTA38-G1: "136": 136 missing unit → 136 kg/h
+fuel75 đổi missing | longkai-power n1106 b204 dòng L KTA38-G1: "105": 105 missing unit → 105 kg/h
+fuel50 đổi missing | longkai-power n1106 b204 dòng L KTA38-G1: "74": 74 missing unit → 74 kg/h
+fuel đổi missing | longkai-power n1106 b204 dòng L LK634B/S: "136": 136 missing unit → 136 kg/h
+fuel75 đổi missing | longkai-power n1106 b204 dòng L LK634B/S: "105": 105 missing unit → 105 kg/h
+fuel50 đổi missing | longkai-power n1106 b204 dòng L LK634B/S: "74": 74 missing unit → 74 kg/h
+fuel đổi missing | longkai-power n1107 b206 dòng L KT38-GA: "37": 37 missing unit → 37 L/h
+fuel75 đổi missing | longkai-power n1107 b206 dòng L KT38-GA: "27.5": 27.5 missing unit → 27.5 L/h
+fuel50 đổi missing | longkai-power n1107 b206 dòng L KT38-GA: "19.3": 19.3 missing unit → 19.3 L/h
+fuel đổi missing | longkai-power n1107 b206 dòng L LK634B: "37": 37 missing unit → 37 L/h
+fuel75 đổi missing | longkai-power n1107 b206 dòng L LK634B: "27.5": 27.5 missing unit → 27.5 L/h
+fuel50 đổi missing | longkai-power n1107 b206 dòng L LK634B: "19.3": 19.3 missing unit → 19.3 L/h
+fuel đổi missing | longkai-power n1113 b214 dòng L KTA38-G5: "178": 178 missing unit → 178 kg/h
+fuel75 đổi missing | longkai-power n1113 b214 dòng L KTA38-G5: "137": 137 missing unit → 137 kg/h
+fuel50 đổi missing | longkai-power n1113 b214 dòng L KTA38-G5: "96": 96 missing unit → 96 kg/h
+fuel đổi missing | longkai-power n1113 b214 dòng L LK634E: "178": 178 missing unit → 178 kg/h
+fuel75 đổi missing | longkai-power n1113 b214 dòng L LK634E: "137": 137 missing unit → 137 kg/h
+fuel50 đổi missing | longkai-power n1113 b214 dòng L LK634E: "96": 96 missing unit → 96 kg/h
+fuel đổi missing | longkai-power n1115 b217 dòng L KTA38-G9: "256": 256 missing unit → 256 L/h
+fuel75 đổi missing | longkai-power n1115 b217 dòng L KTA38-G9: "196": 196 missing unit → 196 L/h
+fuel50 đổi missing | longkai-power n1115 b217 dòng L KTA38-G9: "137": 137 missing unit → 137 L/h
+fuel đổi missing | longkai-power n1115 b217 dòng L LK634F: "256": 256 missing unit → 256 L/h
+fuel75 đổi missing | longkai-power n1115 b217 dòng L LK634F: "196": 196 missing unit → 196 L/h
+fuel50 đổi missing | longkai-power n1115 b217 dòng L LK634F: "137": 137 missing unit → 137 L/h
+fuel đổi missing | longkai-power n1117 b220 dòng L KTA50-G3: "254": 254 missing unit → 254 L/h
+fuel75 đổi missing | longkai-power n1117 b220 dòng L KTA50-G3: "195": 195 missing unit → 195 L/h
+fuel50 đổi missing | longkai-power n1117 b220 dòng L KTA50-G3: "138": 138 missing unit → 138 L/h
+fuel đổi missing | longkai-power n1117 b220 dòng L LK634G: "254": 254 missing unit → 254 L/h
+fuel75 đổi missing | longkai-power n1117 b220 dòng L LK634G: "195": 195 missing unit → 195 L/h
+fuel50 đổi missing | longkai-power n1117 b220 dòng L LK634G: "138": 138 missing unit → 138 L/h
+fuel đổi missing | longkai-power n1118 b222 dòng L QSK38-G5: "274": 274 missing unit → 274 L/h
+fuel75 đổi missing | longkai-power n1118 b222 dòng L QSK38-G5: "206": 206 missing unit → 206 L/h
+fuel50 đổi missing | longkai-power n1118 b222 dòng L QSK38-G5: "154": 154 missing unit → 154 L/h
+fuel đổi missing | longkai-power n1118 b222 dòng L LK634G: "274": 274 missing unit → 274 L/h
+fuel75 đổi missing | longkai-power n1118 b222 dòng L LK634G: "206": 206 missing unit → 206 L/h
+fuel50 đổi missing | longkai-power n1118 b222 dòng L LK634G: "154": 154 missing unit → 154 L/h
+fuel đổi missing | longkai-power n1120 b225 dòng L KTA50-G8: "289": 289 missing unit → 289 L/h
+fuel75 đổi missing | longkai-power n1120 b225 dòng L KTA50-G8: "222": 222 missing unit → 222 L/h
+fuel50 đổi missing | longkai-power n1120 b225 dòng L KTA50-G8: "155": 155 missing unit → 155 L/h
+fuel đổi missing | longkai-power n1120 b225 dòng L LK734B: "289": 289 missing unit → 289 L/h
+fuel75 đổi missing | longkai-power n1120 b225 dòng L LK734B: "222": 222 missing unit → 222 L/h
+fuel50 đổi missing | longkai-power n1120 b225 dòng L LK734B: "155": 155 missing unit → 155 L/h
+fuel đổi missing | longkai-power n1121 b227 dòng L KTA50-GS8: "297": 297 missing unit → 297 L/h
+fuel75 đổi missing | longkai-power n1121 b227 dòng L KTA50-GS8: "230": 230 missing unit → 230 L/h
+fuel50 đổi missing | longkai-power n1121 b227 dòng L KTA50-GS8: "163": 163 missing unit → 163 L/h
+fuel đổi missing | longkai-power n1121 b227 dòng L LK734B: "297": 297 missing unit → 297 L/h
+fuel75 đổi missing | longkai-power n1121 b227 dòng L LK734B: "230": 230 missing unit → 230 L/h
+fuel50 đổi missing | longkai-power n1121 b227 dòng L LK734B: "163": 163 missing unit → 163 L/h
+fuel đổi missing | longkai-power n1123 b230 dòng L WP2.3D25E200: "4.7": 4.7 missing unit → 4.7 L/h
+cyl thêm | longkai-power n1123 b230 dòng L WP2.3D25E200: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1123 b230 dòng L LK184E: "4.7": 4.7 missing unit → 4.7 L/h
+cyl thêm | longkai-power n1123 b230 dòng L LK184E: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1124 b231 dòng L WP2.3D33E200: "6.4": 6.4 missing unit → 6.4 L/h
+cyl thêm | longkai-power n1124 b231 dòng L WP2.3D33E200: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1124 b231 dòng L LK184E: "6.4": 6.4 missing unit → 6.4 L/h
+cyl thêm | longkai-power n1124 b231 dòng L LK184E: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1125 b233 dòng L WP2.3D40E200: "7.5": 7.5 missing unit → 7.5 L/h
+cyl thêm | longkai-power n1125 b233 dòng L WP2.3D40E200: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1125 b233 dòng L LK184H: "7.5": 7.5 missing unit → 7.5 L/h
+cyl thêm | longkai-power n1125 b233 dòng L LK184H: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1126 b235 dòng L WP2.3D48E200: "9.2": 9.2 missing unit → 9.2 L/h
+cyl thêm | longkai-power n1126 b235 dòng L WP2.3D48E200: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1126 b235 dòng L LK224D: "9.2": 9.2 missing unit → 9.2 L/h
+cyl thêm | longkai-power n1126 b235 dòng L LK224D: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1127 b237 dòng L WP4.1D66E200: "13.7": 13.7 missing unit → 13.7 L/h
+cyl thêm | longkai-power n1127 b237 dòng L WP4.1D66E200: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1127 b237 dòng L LK224E: "13.7": 13.7 missing unit → 13.7 L/h
+cyl thêm | longkai-power n1127 b237 dòng L LK224E: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1128 b239 dòng L WP4.1D80E200: "17.5": 17.5 missing unit → 17.5 L/h
+cyl thêm | longkai-power n1128 b239 dòng L WP4.1D80E200: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1128 b239 dòng L LK224F: "17.5": 17.5 missing unit → 17.5 L/h
+cyl thêm | longkai-power n1128 b239 dòng L LK224F: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1129 b241 dòng L WP4.1D100E200: "18.7": 18.7 missing unit → 18.7 L/h
+cyl thêm | longkai-power n1129 b241 dòng L WP4.1D100E200: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1129 b241 dòng L LK274C: "18.7": 18.7 missing unit → 18.7 L/h
+cyl thêm | longkai-power n1129 b241 dòng L LK274C: "4 in line": ∅ → 4
+fuel đổi missing | longkai-power n1130 b243 dòng L WP6D132E200: "23.8": 23.8 missing unit → 23.8 L/h
+cyl thêm | longkai-power n1130 b243 dòng L WP6D132E200: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1130 b243 dòng L LK274D: "23.8": 23.8 missing unit → 23.8 L/h
+cyl thêm | longkai-power n1130 b243 dòng L LK274D: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1131 b245 dòng L WP6D152E200: "34.0": 34 missing unit → 34 L/h
+cyl thêm | longkai-power n1131 b245 dòng L WP6D152E200: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1131 b245 dòng L LK274F/S: "34.0": 34 missing unit → 34 L/h
+cyl thêm | longkai-power n1131 b245 dòng L LK274F/S: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1132 b247 dòng L WP6D167E200: "31.8": 31.8 missing unit → 31.8 L/h
+cyl thêm | longkai-power n1132 b247 dòng L WP6D167E200: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1132 b247 dòng L LK274G: "31.8": 31.8 missing unit → 31.8 L/h
+cyl thêm | longkai-power n1132 b247 dòng L LK274G: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1133 b249 dòng L WP10D200E200: "40.0": 40 missing unit → 40 L/h
+cyl thêm | longkai-power n1133 b249 dòng L WP10D200E200: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1133 b249 dòng L LK274H: "40.0": 40 missing unit → 40 L/h
+cyl thêm | longkai-power n1133 b249 dòng L LK274H: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1134 b251 dòng L WP10D238E200: "46.0": 46 missing unit → 46 L/h
+cyl thêm | longkai-power n1134 b251 dòng L WP10D238E200: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1134 b251 dòng L LK274J: "46.0": 46 missing unit → 46 L/h
+cyl thêm | longkai-power n1134 b251 dòng L LK274J: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1135 b253 dòng L WP10D264E200: "50.0": 50 missing unit → 50 L/h
+cyl thêm | longkai-power n1135 b253 dòng L WP10D264E200: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1135 b253 dòng L LK274K: "50.0": 50 missing unit → 50 L/h
+cyl thêm | longkai-power n1135 b253 dòng L LK274K: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1136 b255 dòng L WP10D320E200: "61.0": 61 missing unit → 61 L/h
+cyl thêm | longkai-power n1136 b255 dòng L WP10D320E200: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1136 b255 dòng L LK444E: "61.0": 61 missing unit → 61 L/h
+cyl thêm | longkai-power n1136 b255 dòng L LK444E: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1137 b257 dòng L WP12D317E200: "61.0": 61 missing unit → 61 L/h
+cyl thêm | longkai-power n1137 b257 dòng L WP12D317E200: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1137 b257 dòng L LK444D: "61.0": 61 missing unit → 61 L/h
+cyl thêm | longkai-power n1137 b257 dòng L LK444D: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1138 b259 dòng L WP13D385E200: "73.3": 73.3 missing unit → 73.3 L/h
+cyl thêm | longkai-power n1138 b259 dòng L WP13D385E200: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1138 b259 dòng L LK444FS: "73.3": 73.3 missing unit → 73.3 L/h
+cyl thêm | longkai-power n1138 b259 dòng L LK444FS: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1139 b261 dòng L WP13D405E200: "78.1": 78.1 missing unit → 78.1 L/h
+cyl thêm | longkai-power n1139 b261 dòng L WP13D405E200: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1139 b261 dòng L LK444F: "78.1": 78.1 missing unit → 78.1 L/h
+cyl thêm | longkai-power n1139 b261 dòng L LK444F: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1140 b263 dòng L WP13D440E310: "85.5": 85.5 missing unit → 85.5 L/h
+cyl thêm | longkai-power n1140 b263 dòng L WP13D440E310: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1140 b263 dòng L LK544C: "85.5": 85.5 missing unit → 85.5 L/h
+cyl thêm | longkai-power n1140 b263 dòng L LK544C: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1141 b265 dòng L WP13D490E310: "97.7": 97.7 missing unit → 97.7 L/h
+cyl thêm | longkai-power n1141 b265 dòng L WP13D490E310: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1141 b265 dòng L LK544D: "97.7": 97.7 missing unit → 97.7 L/h
+cyl thêm | longkai-power n1141 b265 dòng L LK544D: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1142 b267 dòng L 6M26D484E200: "97.7": 97.7 missing unit → 97.7 L/h
+cyl thêm | longkai-power n1142 b267 dòng L 6M26D484E200: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1142 b267 dòng L LK544C: "97.7": 97.7 missing unit → 97.7 L/h
+cyl thêm | longkai-power n1142 b267 dòng L LK544C: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1143 b269 dòng L 6M33D572E200: "109.9": 109.9 missing unit → 109.9 kg/h
+cyl thêm | longkai-power n1143 b269 dòng L 6M33D572E200: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1143 b269 dòng L LK544E: "109.9": 109.9 missing unit → 109.9 kg/h
+cyl thêm | longkai-power n1143 b269 dòng L LK544E: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1144 b271 dòng L 6M33D633E200: "136.0": 136 missing unit → 136 L/h
+fuel đổi missing | longkai-power n1144 b271 dòng L LK544F: "136.0": 136 missing unit → 136 L/h
+fuel đổi missing | longkai-power n1145 b273 dòng L 6M33D670E200: "134.3": 134.3 missing unit → 134.3 L/h
+cyl thêm | longkai-power n1145 b273 dòng L 6M33D670E200: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1145 b273 dòng L LK544F: "134.3": 134.3 missing unit → 134.3 L/h
+cyl thêm | longkai-power n1145 b273 dòng L LK544F: "6 in line": ∅ → 6
+fuel đổi missing | longkai-power n1146 b275 dòng L 12M26D792E200: "156.3": 156.3 missing unit → 156.3 kg/h
+fuel đổi missing | longkai-power n1146 b275 dòng L LK634C: "156.3": 156.3 missing unit → 156.3 kg/h
+fuel đổi missing | longkai-power n1148 b277 dòng L 12M26D968E200: "195.3": 195.3 missing unit → 195.3 kg/h
+fuel đổi missing | longkai-power n1148 b277 dòng L LK634D: "195.3": 195.3 missing unit → 195.3 kg/h
+fuel đổi missing | longkai-power n1149 b279 dòng L 12M33D1108E200: "219.8": 219.8 missing unit → 219.8 L/h
+fuel đổi missing | longkai-power n1149 b279 dòng L LK634F: "219.8": 219.8 missing unit → 219.8 L/h
+fuel đổi missing | longkai-power n1150 b280 dòng L 12M33D1210E200: "244.2": 244.2 missing unit → 244.2 L/h
+fuel đổi missing | longkai-power n1150 b280 dòng L LK634G: "244.2": 244.2 missing unit → 244.2 L/h
+fuel đổi missing | longkai-power n1151 b282 dòng L 12M33D1320E200: "268.6": 268.6 missing unit → 268.6 L/h
+fuel đổi missing | longkai-power n1151 b282 dòng L LK734B: "268.6": 268.6 missing unit → 268.6 L/h
+fuel đổi missing | longkai-power n1152 b283 dòng L 12M33D1450E310: "404.7": 404.7 missing unit → 404.7 L/h
+fuel50 đổi missing | longkai-power n1152 b283 dòng L 12M33D1450E310: "163": 163 missing unit → 163 L/h
+fuel đổi missing | longkai-power n1152 b283 dòng L LK734B: "404.7": 404.7 missing unit → 404.7 L/h
+fuel50 đổi missing | longkai-power n1152 b283 dòng L LK734B: "163": 163 missing unit → 163 L/h
+fuel đổi missing | longkai-power n1153 b284 dòng L 16M33D1530E310: "297": 297 missing unit → 297 L/h
+fuel đổi missing | longkai-power n1153 b284 dòng L LK734C: "297": 297 missing unit → 297 L/h
+fuel đổi missing | longkai-power n1154 b286 dòng L 16M33D1580E310: "295": 295 missing unit → 295 kg/h
+fuel đổi missing | longkai-power n1154 b286 dòng L LK734D: "295": 295 missing unit → 295 kg/h
+fuel đổi missing | longkai-power n1155 b287 dòng L 16M33D1680E310: "317.4": 317.4 missing unit → 317.4 L/h
+fuel đổi missing | longkai-power n1155 b287 dòng L LK734D: "317.4": 317.4 missing unit → 317.4 L/h
+fuel đổi missing | longkai-power n1156 b289 dòng L 16M33D1800E310: "340.1": 340.1 missing unit → 340.1 L/h
+fuel đổi missing | longkai-power n1156 b289 dòng L LK734E: "340.1": 340.1 missing unit → 340.1 L/h
+fuel đổi missing | longkai-power n1157 b290 dòng L 16M33D1980E310: "362.8": 362.8 missing unit → 362.8 kg/h
+fuel đổi missing | longkai-power n1157 b290 dòng L LK734E: "362.8": 362.8 missing unit → 362.8 kg/h
+fuel đổi missing | longkai-power n1158 b292 dòng L 20M33D2020E310: "112": 112 missing unit → 112 kg/h
+fuel đổi missing | longkai-power n1158 b292 dòng L LK544E: "112": 112 missing unit → 112 kg/h
+fuel đổi missing | longkai-power n1159 b294 dòng L 20M33D2210E310: "408": 408 missing unit → 408 L/h
+fuel đổi missing | longkai-power n1159 b294 dòng L LK544G: "408": 408 missing unit → 408 L/h
+fuel đổi missing | longkai-power n1160 b296 dòng L 12M55D2210E310: "408": 408 missing unit → 408 kg/h
+fuel đổi missing | longkai-power n1160 b296 dòng L LK544G: "408": 408 missing unit → 408 kg/h
+fuel đổi missing | longkai-power n1161 b298 dòng L 12M55D2450E310: "454": 454 missing unit → 454 L/h
+fuel đổi missing | longkai-power n1161 b298 dòng L LK734H: "454": 454 missing unit → 454 L/h
+fuel đổi missing | longkai-power n1162 b299 dòng L 12M55D2700E310: "507": 507 missing unit → 507 L/h
+fuel đổi missing | longkai-power n1162 b299 dòng L LK734HM: "507": 507 missing unit → 507 L/h
+fuel đổi missing | longkai-power n1163 b301 dòng L 16M55D2900E310: "553": 553 missing unit → 553 L/h
+fuel đổi missing | longkai-power n1163 b301 dòng L LK734HG: "553": 553 missing unit → 553 L/h
+fuel đổi missing | longkai-power n1164 b302 dòng L 16M55D3300E310: "599": 599 missing unit → 599 L/h
+fuel đổi missing | longkai-power n1164 b302 dòng L LK734HG: "599": 599 missing unit → 599 L/h
+fuel đổi missing | longkai-power n1165 b304 dòng L 16M55D3600E310: "691": 691 missing unit → 691 L/h
+fuel đổi missing | longkai-power n1165 b304 dòng L LK734HG: "691": 691 missing unit → 691 L/h
+fuel đổi missing | shanhua n1006 b25 dòng L YC4D60-D25: "≤240": 240 missing unit,load → 240 g/kWh missing load
+fuel đổi missing | shanhua n1006 b25 dòng L HLF-30: "≤240": 240 missing unit,load → 240 g/kWh missing load
+fuel đổi missing | shanhua n1009 b32 dòng L YC4D60-D25: "≤240": 240 missing unit,load → 240 g/kWh missing load
+fuel đổi missing | shanhua n1009 b32 dòng L HLF-30: "≤240": 240 missing unit,load → 240 g/kWh missing load
+fuel đổi missing | shanhua n1028 b81 dòng L HLF-240: "≤210": 210 missing unit,load → 210 g/kWh missing load
+fuel đổi missing | westinpower n1001 b29 dòng L 4016-61TRG3: "470": 470 missing unit,load → 470 L/h missing load
+fuel đổi missing | westinpower n1002 b30 dòng L 4016-61TRG3: "470": 470 missing unit,load → 470 L/h missing load
+fuel đổi missing | westinpower n1004 b32 dòng L 20V4000G14F: "192": 192 missing unit,load → 192 g/kWh missing load
+fuel đổi missing | westinpower n1006 b34 dòng L 20V4000G24F: "190": 190 missing unit,load → 190 g/kWh missing load
+fuel đổi missing | westinpower n1008 b36 dòng L 20V4000G34F: "192": 192 missing unit,load → 192 g/kWh missing load
+fuel đổi missing | westinpower n1013 b41 dòng L 4012-46TWG2A: "258": 258 missing unit,load → 258 L/h missing load
+fuel đổi missing | westinpower n1014 b42 dòng L 4012-46TWG2A: "258": 258 missing unit,load → 258 L/h missing load
+fuel đổi missing | westinpower n1015 b43 dòng L 4012-46TWG2A: "258": 258 missing unit,load → 258 L/h missing load
+fuel đổi missing | westinpower n1016 b44 dòng L 4012-46TAG2A: "301": 301 missing unit,load → 301 L/h missing load
+fuel đổi missing | westinpower n1017 b45 dòng L 4012-46TAG2A: "301": 301 missing unit,load → 301 L/h missing load
+fuel đổi missing | westinpower n1018 b46 dòng L 4012-46TAG2A: "301": 301 missing unit,load → 301 L/h missing load
+fuel đổi missing | westinpower n1019 b47 dòng L 4016TAG2A: "434": 434 missing unit,load → 434 L/h missing load
+fuel đổi missing | westinpower n1020 b48 dòng L 4016TAG2A: "434": 434 missing unit,load → 434 L/h missing load
+fuel đổi missing | westinpower n1021 b49 dòng L 4016TAG2A: "434": 434 missing unit,load → 434 L/h missing load
+fuel đổi missing | westinpower n1022 b50 dòng L YC6C1660-D30: "276.8": 276.8 missing unit,load → 276.8 L/h missing load
+fuel đổi missing | westinpower n1023 b51 dòng L YC12VC2070-D31: "339.2": 339.2 missing unit,load → 339.2 L/h missing load
+fuel đổi missing | westinpower n1024 b52 dòng L S12R-PTAA2-C: "340": 340 missing unit,load → 340 L/h missing load
+fuel đổi missing | westinpower n1025 b53 dòng L S12R-PTAA2-C: "340": 340 missing unit,load → 340 L/h missing load
+fuel đổi missing | westinpower n1026 b54 dòng L S12R-PTAA2-C: "340": 340 missing unit,load → 340 L/h missing load
+fuel đổi missing | westinpower n1027 b55 dòng L S16R-PTA-C: "374": 374 missing unit,load → 374 L/h missing load
+fuel đổi missing | westinpower n1028 b56 dòng L S16R-PTA-C: "374": 374 missing unit,load → 374 L/h missing load
+fuel đổi missing | westinpower n1029 b57 dòng L S16R-PTA-C: "374": 374 missing unit,load → 374 L/h missing load
+fuel đổi missing | westinpower n1030 b58 dòng L S16R-PTA2-C: "416": 416 missing unit,load → 416 L/h missing load
+fuel đổi missing | westinpower n1031 b59 dòng L S16R-PTA2-C: "416": 416 missing unit,load → 416 L/h missing load
+fuel đổi missing | westinpower n1032 b60 dòng L S16R-PTA2-C: "416": 416 missing unit,load → 416 L/h missing load
+fuel đổi missing | westinpower n1033 b61 dòng L S16R-PTAA2-C: "440": 440 missing unit,load → 440 L/h missing load
+fuel đổi missing | westinpower n1034 b62 dòng L S16R-PTAA2-C: "440": 440 missing unit,load → 440 L/h missing load
+fuel đổi missing | westinpower n1035 b63 dòng L S16R-PTAA2-C: "440": 440 missing unit,load → 440 L/h missing load
+fuel đổi missing | westinpower n1038 b66 dòng L 18V2000G26F: "189": 189 missing unit,load → 189 g/kWh missing load
+fuel đổi missing | westinpower n1039 b67 dòng L 18V2000G26F: "189": 189 missing unit,load → 189 g/kWh missing load
+fuel đổi missing | westinpower n1040 b68 dòng L 18V2000G26F: "189": 189 missing unit,load → 189 g/kWh missing load
+fuel đổi missing | westinpower n1041 b69 dòng L 12V4000G14RF: "192": 192 missing unit,load → 192 g/kWh missing load
+fuel đổi missing | westinpower n1042 b70 dòng L 12V4000G14RF: "192": 192 missing unit,load → 192 g/kWh missing load
+fuel đổi missing | westinpower n1043 b71 dòng L 12V4000G14RF: "192": 192 missing unit,load → 192 g/kWh missing load
+fuel đổi missing | westinpower n1044 b72 dòng L 12V4000G24F: "192": 192 missing unit,load → 192 g/kWh missing load
+fuel đổi missing | westinpower n1045 b73 dòng L 12V4000G24F: "192": 192 missing unit,load → 192 g/kWh missing load
+fuel đổi missing | westinpower n1046 b74 dòng L 12V4000G63F: "192": 192 missing unit,load → 192 g/kWh missing load
+fuel đổi missing | westinpower n1047 b75 dòng L 16V4000G14F: "188": 188 missing unit,load → 188 g/kWh missing load
+fuel đổi missing | westinpower n1048 b76 dòng L 16V4000G14F: "188": 188 missing unit,load → 188 g/kWh missing load
+fuel đổi missing | westinpower n1049 b77 dòng L 16V4000G14F: "188": 188 missing unit,load → 188 g/kWh missing load
+fuel đổi missing | westinpower n1063 b91 dòng L 4006-23TAG3A: "172": 172 missing unit,load → 172 L/h missing load
+fuel đổi missing | westinpower n1064 b92 dòng L 4006-23TAG3A: "172": 172 missing unit,load → 172 L/h missing load
+fuel đổi missing | westinpower n1065 b93 dòng L 4006-23TAG3A: "172": 172 missing unit,load → 172 L/h missing load
+fuel đổi missing | westinpower n1066 b94 dòng L 4008TAG2A: "215": 215 missing unit,load → 215 L/h missing load
+fuel đổi missing | westinpower n1067 b95 dòng L 4008TAG2A: "215": 215 missing unit,load → 215 L/h missing load
+fuel đổi missing | westinpower n1068 b96 dòng L 4008TAG2A: "215": 215 missing unit,load → 215 L/h missing load
+fuel đổi missing | westinpower n1069 b97 dòng L 16V2000G25: "198": 198 missing unit,load → 198 g/kWh missing load
+fuel đổi missing | westinpower n1070 b98 dòng L 16V2000G25: "198": 198 missing unit,load → 198 g/kWh missing load
+fuel đổi missing | westinpower n1071 b99 dòng L 16V2000G25: "198": 198 missing unit,load → 198 g/kWh missing load
+fuel đổi missing | westinpower n1072 b100 dòng L 16V2000G65: "201": 201 missing unit,load → 201 g/kWh missing load
+fuel đổi missing | westinpower n1073 b101 dòng L 16V2000G65: "201": 201 missing unit,load → 201 g/kWh missing load
+fuel đổi missing | westinpower n1074 b102 dòng L 16V2000G65: "201": 201 missing unit,load → 201 g/kWh missing load
+fuel đổi missing | westinpower n1079 b107 dòng L YC12VTD1350-D30: "225.3": 225.3 missing unit,load → 225.3 L/h missing load
+fuel đổi missing | westinpower n1085 b113 dòng L 2506C-E15TAG1: "99": 99 missing unit,load → 99 L/h missing load
+fuel đổi missing | westinpower n1086 b114 dòng L 2506C-E15TAG1: "99": 99 missing unit,load → 99 L/h missing load
+fuel đổi missing | westinpower n1087 b115 dòng L 2506C-E15TAG1: "99": 99 missing unit,load → 99 L/h missing load
+fuel đổi missing | westinpower n1088 b116 dòng L 2506C-E15TAG2: "106": 106 missing unit,load → 106 L/h missing load
+fuel đổi missing | westinpower n1089 b117 dòng L 2506C-E15TAG2: "106": 106 missing unit,load → 106 L/h missing load
+fuel đổi missing | westinpower n1090 b118 dòng L 2506C-E15TAG2: "106": 106 missing unit,load → 106 L/h missing load
+fuel đổi missing | westinpower n1091 b119 dòng L 2806C-E18TAG1A: "129": 129 missing unit,load → 129 L/h missing load
+fuel đổi missing | westinpower n1092 b120 dòng L 2806C-E18TAG1A: "129": 129 missing unit,load → 129 L/h missing load
+fuel đổi missing | westinpower n1093 b121 dòng L 2806C-E18TAG1A: "129": 129 missing unit,load → 129 L/h missing load
+fuel đổi missing | westinpower n1094 b122 dòng L 2806A-E18TAG2: "132": 132 missing unit,load → 132 L/h missing load
+fuel đổi missing | westinpower n1095 b123 dòng L 2806A-E18TAG2: "132": 132 missing unit,load → 132 L/h missing load
+fuel đổi missing | westinpower n1096 b124 dòng L 2806A-E18TAG2: "132": 132 missing unit,load → 132 L/h missing load
+fuel đổi missing | westinpower n1100 b128 dòng L 1206A-E70TTAG3: "56.9": 56.9 missing unit,load → 56.9 L/h missing load
+fuel đổi missing | westinpower n1101 b129 dòng L 1206A-E70TTAG3: "56.9": 56.9 missing unit,load → 56.9 L/h missing load
+fuel đổi missing | westinpower n1102 b130 dòng L 1206A-E70TTAG3: "56.9": 56.9 missing unit,load → 56.9 L/h missing load
+fuel đổi missing | westinpower n1105 b133 dòng L 1706A-E93TAG2: "78.4": 78.4 missing unit,load → 78.4 L/h missing load
+fuel đổi missing | westinpower n1106 b134 dòng L YC6MK350-D30: "57.5": 57.5 missing unit,load → 57.5 L/h missing load
+fuel đổi missing | westinpower n1114 b142 dòng L 1106A-70TAG2: "33.4": 33.4 missing unit,load → 33.4 L/h missing load
+fuel đổi missing | westinpower n1115 b143 dòng L 1106A-70TAG2: "33.4": 33.4 missing unit,load → 33.4 L/h missing load
+fuel đổi missing | westinpower n1116 b144 dòng L 1106A-70TAG2: "33.4": 33.4 missing unit,load → 33.4 L/h missing load
+fuel đổi missing | westinpower n1132 b158 dòng L 404A-22G1: "5.3": 5.3 missing unit,load → 5.3 L/h missing load
+fuel đổi missing | westinpower n1133 b159 dòng L 404D-22G: "5.3": 5.3 missing unit,load → 5.3 L/h missing load
+fuel đổi missing | westinpower n1134 b160 dòng L 404A-22G1: "5.3": 5.3 missing unit,load → 5.3 L/h missing load
+fuel đổi missing | westinpower n1135 b161 dòng L 404D-22G: "5.3": 5.3 missing unit,load → 5.3 L/h missing load
+fuel đổi missing | westinpower n1136 b162 dòng L 404A-22G1: "5.3": 5.3 missing unit,load → 5.3 L/h missing load
+fuel đổi missing | westinpower n1137 b163 dòng L 404D-22G: "5.3": 5.3 missing unit,load → 5.3 L/h missing load
+fuel đổi missing | westinpower n1138 b164 dòng L 1103A-33G: "7.1": 7.1 missing unit,load → 7.1 L/h missing load
+fuel đổi missing | westinpower n1139 b165 dòng L 1103A-33G: "7.1": 7.1 missing unit,load → 7.1 L/h missing load
+fuel đổi missing | westinpower n1140 b166 dòng L 1103A-33G: "7.1": 7.1 missing unit,load → 7.1 L/h missing load
+fuel đổi missing | westinpower n1141 b167 dòng L 1103A-33TG1: "7.2": 7.2 missing unit,load → 7.2 L/h missing load
+fuel đổi missing | westinpower n1142 b168 dòng L 1103A-33TG1: "7.2": 7.2 missing unit,load → 7.2 L/h missing load
+fuel đổi missing | westinpower n1143 b169 dòng L 1103A-33TG1: "7.2": 7.2 missing unit,load → 7.2 L/h missing load
+fuel đổi missing | westinpower n1144 b170 dòng L 1103A-33TG2: "14.6": 14.6 missing unit,load → 14.6 L/h missing load
+fuel đổi missing | westinpower n1145 b171 dòng L 1103A-33TG2: "14.6": 14.6 missing unit,load → 14.6 L/h missing load
+fuel đổi missing | westinpower n1146 b172 dòng L 1103A-33TG2: "14.6": 14.6 missing unit,load → 14.6 L/h missing load
+fuel đổi missing | westinpower n1147 b173 dòng L 1104C-44TAG2: "22.6": 22.6 missing unit,load → 22.6 L/h missing load
+fuel đổi missing | westinpower n1148 b174 dòng L 1104C-44TAG2: "22.6": 22.6 missing unit,load → 22.6 L/h missing load
+fuel đổi missing | westinpower n1149 b175 dòng L 1104C-44TAG2: "22.6": 22.6 missing unit,load → 22.6 L/h missing load
+fuel đổi missing | xinhengxin-fujian n1001 b22 dòng L KTA19-G4: "113.6": 113.6 missing unit → 113.6 L/h
+fuel75 đổi missing | xinhengxin-fujian n1001 b22 dòng L KTA19-G4: "85": 85 missing unit → 85 L/h
+fuel50 đổi missing | xinhengxin-fujian n1001 b22 dòng L KTA19-G4: "56": 56 missing unit → 56 L/h
+cyl thêm | xinhengxin-fujian n1001 b22 dòng L KTA19-G4: "6 in line": ∅ → 6
+fuel đổi missing | xinhengxin-fujian n1001 b22 dòng L 544D: "113.6": 113.6 missing unit → 113.6 L/h
+fuel75 đổi missing | xinhengxin-fujian n1001 b22 dòng L 544D: "85": 85 missing unit → 85 L/h
+fuel50 đổi missing | xinhengxin-fujian n1001 b22 dòng L 544D: "56": 56 missing unit → 56 L/h
+cyl thêm | xinhengxin-fujian n1001 b22 dòng L 544D: "6 in line": ∅ → 6
+fuel đổi missing | xinhengxin-fujian n1003 b26 dòng L KTA50-G3: "269": 269 missing unit → 269 L/h
+fuel75 đổi missing | xinhengxin-fujian n1003 b26 dòng L KTA50-G3: "201": 201 missing unit → 201 L/h
+fuel50 đổi missing | xinhengxin-fujian n1003 b26 dòng L KTA50-G3: "134": 134 missing unit → 134 L/h
+
+==== tổ máy (gensetsOf) ====
+bản ghi cũ 1700, mới 1700 | khác 0 | chỉ cũ 0, chỉ mới 0 | bảng có đổi 0
+{}
