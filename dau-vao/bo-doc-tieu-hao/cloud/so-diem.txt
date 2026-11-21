@@ -1,0 +1,38 @@
+Tổng dòng đổi điểm: 8771
+Khớp đúng +8 × số loại thông số động cơ mới: 8590
+Khớp đúng −300 (tiêu hao vượt, không đổi loại thông số): 181
+Khớp +8k và −300 cùng lúc: 0 []
+CHƯA giải thích: 0
+
+Mức chênh: [[8,7733],[24,744],[-300,181],[16,113]]
+Loại thông số thêm (lượt-dòng): [["fuel",5629],["disp",2324],["bore",1271],["cyl",967]]
+Loại thông số mất (lượt-dòng): [] | dòng có mất: 0
+fuelMinus đã ghi: 80 bản ghi khác nhau
+
+−300 theo (NCC, model, nhãn = số): 24
+27 westinpower | 1206A-E70TTAG3 | fuel:Fuel Consumption=56.9 ; fuel75:Fuel consumption75% (of the Prime Power)=41.5L ; fuel5
+15 westinpower | 1104C-44TAG2 | fuel:Fuel Consumption=22.6 ; fuel75:Fuel consumption75% (of the Prime Power)=17.1 ; fuel50
+15 westinpower | S12R-PTAA2-C | fuel:Fuel Consumption=340
+13 westinpower | 1106A-70TAG2 | fuel:Fuel Consumption=33.4 ; fuel75:Fuel consumption75% (of the Prime Power)=24.7 L / h ; 
+12 westinpower | 2506C-E15TAG2 | fuel:Fuel Consumption=106 ; fuel75:Fuel consumption75% (of the Prime Power)=81L / h ; fuel
+12 westinpower | 1103A-33G | fuel:Fuel Consumption=7.1 ; fuel75:Fuel consumption75% (of the Prime Power)=5.61 L / h ; f
+12 westinpower | 2506C-E15TAG1 | fuel:Fuel Consumption=99 ; fuel75:Fuel consumption75% (of the Prime Power)=73L / h ; fuel5
+8 westinpower | S16R-PTA-C | fuel:Fuel Consumption=374
+8 westinpower | 1706A-E93TAG2 | fuel:Fuel Consumption=78.4 ; fuel75:Fuel consumption75% (of the Prime Power)=79.2L ; fuel5
+6 westinpower | YC6MK350-D30 | fuel:Fuel Consumption=57.5 ; fuel75:Fuel consumption75% (of the Prime Power)=45.1L / h ; f
+6 westinpower | 404D-22G | fuel:Fuel Consumption=5.3 ; fuel75:Fuel consumption75% (of the Prime Power)=4.0 ; fuel50:F
+6 westinpower | 404A-22G1 | fuel:Fuel Consumption=5.3 ; fuel75:Fuel consumption75% (of the Prime Power)=4.0 ; fuel50:F
+6 westinpower | 4012-46TAG2A | fuel:Fuel Consumption=301 ; fuel75:Fuel consumption75% (of the Prime Power)=234L ; fuel50:
+5 westinpower | YC12VC2070-D31 | fuel:Fuel Consumption=339.2 ; fuel75:Fuel consumption75% (of the Prime Power)=266.6L / h ;
+4 westinpower | 4016-61TRG3 | fuel:Fuel Consumption=470 ; fuel75:Fuel consumption75% (of the Prime Power)=344L ; fuel50:
+4 westinpower | S16R-PTA-C | fuel:Fuel Consumption=374 ; fuel75:Fuel consumption75% (of the Prime Power)=288 ; fuel50:F
+3 westinpower | 2806C-E18TAG1A | fuel:Fuel Consumption=129 ; fuel75:Fuel consumption75% (of the Prime Power)=96L / h ; fuel
+3 westinpower | S16R-PTA2-C | fuel:Fuel Consumption=416
+3 westinpower | 4016TAG2A | fuel:Fuel Consumption=434 ; fuel75:Fuel consumption75% (of the Prime Power)=316L ; fuel50:
+3 westinpower | S16R-PTAA2-C | fuel:Fuel Consumption=440
+3 westinpower | 4008TAG2A | fuel:Fuel Consumption=215 ; fuel75:Fuel consumption75% (of the Prime Power)=162L / h ; fue
+3 westinpower | 1103A-33TG2 | fuel:Fuel Consumption=14.6 ; fuel75:Fuel consumption75% (of the Prime Power)=10.8 L / h ; 
+3 westinpower | 4006-23TAG3A | fuel:Fuel Consumption=172 ; fuel75:Fuel consumption75% (of the Prime Power)=130L / h ; fue
+1 longkai-power | 6BT5.9-G2 | fuel:100% load(Prime power)=24.2 ; fuel75:75% load(Prime power)=18.2 ; fuel50:50% load(Pri
+
+NCC của −300: [["westinpower",180],["longkai-power",1]]

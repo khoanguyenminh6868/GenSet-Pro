@@ -9,7 +9,7 @@ const docs = JSON.parse(fs.readFileSync(`${ROOT}/doc-cache/bidhist.json`, "utf8"
 const byKey = new Map(Object.values(docs).map((x) => x.d).filter((d) => d?.notifyNo).map((d) => [d.notifyNo, d]));
 const an = new Map();
 for (const [k, x] of Object.entries(JSON.parse(fs.readFileSync(`${ROOT}/doc-cache/analysis.json`, "utf8")).docs)) { const r = x.d?.result; if (!r) continue; an.set(k, r); const no = r.keyInfo?.notifyNo || x.d?.notifyNo; if (no && !an.has(no)) an.set(no, r); }
-const RE = { minDisp: /dung\s*t[íi]ch/gi, minCyl: /(?:x[iy][\s-]?lanh)/gi, minPrime: /li[êe]n\s*t[ụu]c|prime|d[ựu]\s*ph[òo]ng/gi };
+const RE = { maxDisp: /dung\s*t[íi]ch/gi, minDisp: /dung\s*t[íi]ch/gi,minCyl: /(?:x[iy][\s-]?lanh)/gi, minPrime: /li[êe]n\s*t[ụu]c|prime|d[ựu]\s*ph[òo]ng/gi };
 for (const l of fs.readFileSync(TSV, "utf8").trim().split(/\r?\n/).slice(1)) {
   const [k, diff] = l.split("\t"), [no, ri] = k.slice(2).split("#"), j = +ri;
   let text, found;

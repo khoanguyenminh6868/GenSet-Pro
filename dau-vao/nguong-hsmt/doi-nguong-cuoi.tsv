@@ -1,0 +1,212 @@
+lượt	đổi
+S:IB2200046063#0	minPrime: null → {"kVA":10}
+S:IB2200046063#1	minPrime: null → {"kVA":13}
+S:IB2200062073#0	minPrime: null → {"kVA":12}
+S:IB2300120176#0	minPrime: null → {"kVA":12}
+S:IB2300129273#1	minPrime: null → {"kW":2400}
+S:IB2300245556#1	minPrime: null → {"kVA":10}
+S:IB2300245556#2	minPrime: null → {"kVA":12}
+S:IB2300356147#0	maxFuel75: null → 14.5; maxFuel50: null → 10.2
+S:IB2400125924#0	minPrime: {"kVA":8.5} → {"kVA":8}
+S:IB2400125924#1	minPrime: null → {"kVA":12}
+S:IB2400275648#0	maxFuel: null → 8
+S:IB2400275648#1	minPrime: null → {"kVA":59.5}; maxFuel: null → 14.5
+S:IB2500415487#0	minPrime: null → {"kVA":12}
+S:IB2500415487#1	minPrime: null → {"kVA":14.5}
+S:IB2500460613#1	minPrime: null → {"kVA":12}
+S:IB2600098464#0	minPrime: null → {"kVA":320}
+S:IB2600477305#0	minPrime: null → {"kVA":12}
+S:IB2600477305#1	minPrime: null → {"kVA":14.5}
+H:IB2200016981#0	minDisp: null → 1.498; minCyl: null → 3; maxFuel: null → 3.2; maxFuel75: null → 2.6
+H:IB2200016981#1	minDisp: null → 3.769; minCyl: null → 4
+H:IB2200020538#0	maxFuel50: 110 → null
+H:IB2200039869#0	maxFuel: null → 6; maxFuel75: null → 5.21
+H:IB2200046063#0	minPrime: null → {"kVA":10}
+H:IB2200046063#1	minPrime: null → {"kVA":13}
+H:IB2200062073#0	minPrime: null → {"kVA":12}
+H:IB2200062073#1	minDisp: null → 2.3; minCyl: null → 4; maxFuel: 5.7 → 7.4; maxFuel75: null → 5.7
+H:IB2200066148#0	minCyl: null → 1
+H:IB2200066148#1	minCyl: null → 1
+H:IB2200083057#0	maxFuel: null → 104; maxFuel75: null → 80
+H:IB2200087789#1	maxFuel: 36 → 60; maxFuel50: null → 36
+H:IB2200104478#0	minCyl: null → 6
+H:IB2300002060#0	maxFuel: null → 60; maxFuel50: null → 36
+H:IB2300002060#1	maxFuel: null → 105; maxFuel50: null → 55
+H:IB2300031444#0	maxFuel: null → 104; maxFuel75: null → 82
+H:IB2300032777#0	minCyl: null → 4; maxFuel: null → 5
+H:IB2300032777#1	minCyl: null → 4
+H:IB2300046353#0	minDisp: null → 1.95; minCyl: null → 4; maxFuel: null → 4.93; maxFuel75: null → 3.61; maxFuel50: null → 2.7
+H:IB2300046353#1	minCyl: 4 → null; maxFuel: 4.93 → null; maxFuel75: 3.61 → null; maxFuel50: 2.7 → null
+H:IB2300048642#0	maxFuel: null → 4; maxFuel75: null → 3
+H:IB2300067312#0	maxFuel: null → 4; maxFuel75: null → 3
+H:IB2300088930#0	maxFuel: null → 7; maxFuel75: null → 5.6
+H:IB2300096122#0	maxFuel: null → 181; maxFuel75: null → 137
+H:IB2300102941#0	maxFuel: null → 4.93; maxFuel75: null → 3.61; maxFuel50: null → 2.7
+H:IB2300102941#1	maxFuel: null → 5.12; maxFuel75: null → 3.84; maxFuel50: null → 2.95
+H:IB2300108940#0	minDisp: null → 0.674; minCyl: null → 2; maxFuel: null → 6.4
+H:IB2300108940#1	minDisp: null → 2.197; minCyl: 2 → null; maxFuel: null → 5.5
+H:IB2300120176#0	minPrime: null → {"kVA":12}; maxFuel: null → 4.5; maxFuel75: null → 3.5
+H:IB2300134577#0	maxFuel: null → 12; maxFuel75: null → 9
+H:IB2300134577#1	maxFuel: null → 23; maxFuel75: null → 17
+H:IB2300134577#2	maxFuel: null → 37; maxFuel75: null → 30
+H:IB2300162912#0	minDisp: 78 → null; maxFuel: 503.2 → null; maxFuel75: 370 → null; maxFuel50: 251.8 → null
+H:IB2300162912#1	minDisp: null → 78; maxFuel: null → 503.2; maxFuel75: null → 370; maxFuel50: null → 251.8
+H:IB2300163844#0	minCyl: 3 → null
+H:IB2300163844#1	minCyl: null → 3
+H:IB2300165131#0	maxFuel: 23.1 → null; maxFuel75: null → 23.1
+H:IB2300189145#0	minPrime: null → {"kVA":120}
+H:IB2300190927#0	maxFuel: null → 24; maxFuel75: null → 18; maxFuel50: null → 13
+H:IB2300190927#1	maxFuel: null → 34; maxFuel75: null → 26; maxFuel50: null → 18
+H:IB2300198424#0	maxFuel: null → 10.6; maxFuel75: null → 8.26
+H:IB2300214975#0	maxFuel: null → 70.5; maxFuel75: null → 52.5
+H:IB2300222010#0	maxFuel: null → 4.72; maxFuel75: 2.6 → 3.71; maxFuel50: 2.1 → 2.6
+H:IB2300233670#0	maxFuel: null → 400; maxFuel75: null → 300
+H:IB2300236743#1	maxDisp: null → 2.8; minCyl: null → 4; maxFuel: null → 6; maxFuel75: null → 4.5
+H:IB2300243355#0	minPrime: null → {"kVA":100}
+H:IB2300243355#1	minCyl: null → 6
+H:IB2300245556#0	minPrime: null → {"kVA":8.5}
+H:IB2300245748#0	minDisp: null → 2.3; minPrime: null → {"kVA":8.5}
+H:IB2300245748#1	minPrime: null → {"kVA":10}
+H:IB2300253227#0	minDisp: null → 5.9; minCyl: null → 6
+H:IB2300260615#0	maxDisp: null → 20
+H:IB2300260615#1	maxDisp: 20 → null
+H:IB2300273061#2	maxFuel: 36 → 60; maxFuel50: null → 36
+H:IB2300293753#0	maxDisp: null → 1.365
+H:IB2300293753#1	maxDisp: 2.9 → 3.045
+H:IB2300293753#2	maxDisp: 1.3 → null
+H:IB2300296794#0	minPrime: {"kVA":20} → {"kVA":19.8}
+H:IB2300305914#0	cylExact: true → false
+H:IB2300312776#0	maxFuel: null → 4; maxFuel75: null → 3.5
+H:IB2300320688#0	minPrime: null → {"kVA":5}
+H:IB2300320688#1	minPrime: null → {"kVA":6.5}
+H:IB2300335255#0	minDisp: null → 8
+H:IB2300349583#0	maxFuel: null → 7.5; maxFuel75: 4.5 → null
+H:IB2300356137#0	maxFuel75: null → 14.5; maxFuel50: null → 10.2
+H:IB2300356147#0	maxFuel75: null → 14.5; maxFuel50: null → 10.2
+H:IB2300374375#0	minPrime: {"kVA":8.5} → {"kVA":8}
+H:IB2400052694#1	minPrime: null → {"kVA":35}
+H:IB2400058723#0	maxDisp: null → 19.6
+H:IB2400058723#1	maxDisp: null → 32
+H:IB2400062394#0	minCyl: null → 3; maxFuel: null → 12; maxFuel75: null → 9
+H:IB2400062394#1	minCyl: null → 3; maxFuel: null → 23; maxFuel75: null → 17
+H:IB2400062394#2	minCyl: null → 3
+H:IB2400111737#0	maxFuel: null → 4; maxFuel75: null → 3
+H:IB2400111929#0	minCyl: null → 3; maxFuel: null → 4; maxFuel75: null → 3
+H:IB2400114476#0	maxDisp: null → 1.826; minCyl: null → 3; maxFuel: null → 4; maxFuel75: null → 3
+H:IB2400114476#1	minDisp: null → 4.5; maxDisp: 1.826 → null; minCyl: null → 4; maxFuel: null → 10.8; maxFuel75: null → 8
+H:IB2400125924#0	minCyl: null → 3; minPrime: null → {"kVA":8}
+H:IB2400125924#1	minPrime: null → {"kVA":12}
+H:IB2400133175#0	minCyl: null → 3; maxFuel: null → 4; maxFuel75: null → 3
+H:IB2400182235#0	maxFuel75: null → 3.8
+H:IB2400186078#0	minPrime: null → {"kVA":6}
+H:IB2400186078#1	minPrime: null → {"kVA":11.5}
+H:IB2400191578#0	maxFuel: null → 12; maxFuel75: null → 9
+H:IB2400237184#0	minDisp: null → 3.62; maxFuel75: null → 8.25
+H:IB2400237184#1	minDisp: null → 11.6; maxFuel75: null → 71.25
+H:IB2400255232#0	maxFuel: 5.4 → 7.5; maxFuel75: null → 5.4
+H:IB2400257256#0	minPrime: {"kVA":12.5} → {"kVA":12}; maxFuel: null → 4.5; maxFuel75: null → 4
+H:IB2400265203#0	minCyl: null → 3; minPrime: null → {"kW":40,"kVA":50}
+H:IB2400265203#1	minCyl: null → 3; minPrime: null → {"kW":80,"kVA":100}
+H:IB2400275648#0	minDisp: null → 3.3; maxDisp: 8 → null; minCyl: null → 4; maxFuel: null → 8
+H:IB2400275648#1	maxDisp: 8 → null; minPrime: null → {"kVA":59.5}; maxFuel: null → 14.5
+H:IB2400291063#0	minDisp: null → 1.8; minCyl: null → 3; maxFuel: null → 4; maxFuel75: null → 3
+H:IB2400291063#1	minDisp: 1.8 → null; minCyl: 3 → null
+H:IB2400298819#0	maxFuel: null → 58.1; maxFuel75: 30 → 43.6; maxFuel50: null → 30
+H:IB2400299108#0	minDisp: null → 2.6
+H:IB2400299108#1	minDisp: null → 3.5
+H:IB2400299108#2	minDisp: null → 5.5
+H:IB2400311120#0	minCyl: null → 3; maxFuel: null → 4; maxFuel75: null → 3
+H:IB2400311120#1	minDisp: null → 3.3; minCyl: null → 4; maxFuel: null → 10; maxFuel75: null → 8
+H:IB2400311120#2	minDisp: null → 4.5; minCyl: null → 4; maxFuel: null → 12; maxFuel75: null → 9
+H:IB2400313681#0	maxFuel: null → 11; maxFuel75: null → 8
+H:IB2400365165#0	minPrime: {"kVA":7.2} → {"kVA":6.7}; maxFuel: null → 4.5
+H:IB2400365165#1	minPrime: {"kVA":12.5} → {"kVA":12}
+H:IB2400375383#0	maxDisp: null → 7; maxFuel: null → 34; maxFuel75: null → 25; maxFuel50: null → 18
+H:IB2400375383#1	maxDisp: null → 8.8; maxFuel: null → 65; maxFuel75: null → 49; maxFuel50: null → 35
+H:IB2400389856#0	maxFuel: null → 24.2; maxFuel75: 12.5 → 18.2; maxFuel50: null → 12.5
+H:IB2400427929#0	minDisp: null → 2; maxFuel: null → 3.5; maxFuel75: 2.5 → 3.2; maxFuel50: 2 → 2.5
+H:IB2400427929#1	minDisp: null → 2.3
+H:IB2400427929#2	minDisp: null → 2.3
+H:IB2400427929#3	minDisp: null → 4.2
+H:IB2400428063#0	maxFuel: null → 6; maxFuel75: null → 5
+H:IB2400433961#0	maxDisp: null → 19.6; minCyl: null → 6; minPrime: null → {"kVA":600,"kW":480}
+H:IB2400433961#1	maxDisp: null → 39.2; minCyl: null → 12; minPrime: null → {"kVA":1500,"kW":1200}
+H:IB2400434949#0	minDisp: null → 4.5; maxFuel: null → 12; maxFuel75: null → 9
+H:IB2400448320#0	maxDisp: null → 7; maxFuel: null → 34; maxFuel75: null → 25; maxFuel50: null → 18
+H:IB2400448320#1	maxDisp: null → 8.8; maxFuel: null → 65; maxFuel75: null → 49; maxFuel50: null → 35
+H:IB2400453359#0	maxFuel: null → 4; maxFuel75: null → 3
+H:IB2400457172#0	maxFuel: null → 3.6; maxFuel75: null → 3.2
+H:IB2400459339#0	minDisp: null → 4.3
+H:IB2400459339#1	minDisp: null → 4.5
+H:IB2400473260#0	maxFuel: null → 4.5; maxFuel75: null → 3.5
+H:IB2400475145#0	minPrime: null → {"kVA":8}
+H:IB2400487460#0	maxDisp: null → 2.3; maxFuel: null → 3.5; maxFuel75: null → 3
+H:IB2400487460#1	maxDisp: 2.3 → null
+H:IB2400495696#0	maxFuel: null → 9.5
+H:IB2400497000#0	minCyl: null → 3
+H:IB2400497000#1	minCyl: null → 3
+H:IB2400508791#0	minPrime: null → {"kVA":7}
+H:IB2400542354#0	maxFuel: null → 4.5; maxFuel75: null → 4
+H:IB2400563426#0	minCyl: null → 3; maxFuel: null → 3.2; maxFuel75: null → 2.2
+H:IB2400563426#1	maxFuel: null → 16.2
+H:IB2400589278#0	minCyl: null → 6; maxFuel: null → 70
+H:IB2400589278#1	minCyl: null → 6; maxFuel: null → 89.1
+H:IB2400589278#2	maxFuel: null → 89.1
+H:IB2400592848#0	minDisp: null → 1.64; minCyl: null → 3
+H:IB2400602840#0	minCyl: null → 6; minPrime: null → {"kW":128,"kVA":160}
+H:IB2400602840#1	minCyl: null → 12; minPrime: null → {"kW":640,"kVA":800}
+H:IB2500039578#1	maxDisp: null → 60.2; minCyl: null → 16
+H:IB2500061368#0	minPrime: null → {"kVA":150}
+H:IB2500089757#0	minDisp: null → 2.54; minCyl: null → 4; maxFuel: null → 9.5
+H:IB2500089757#1	minDisp: null → 4.837; minCyl: null → 4; maxFuel: null → 28.3
+H:IB2500177469#0	minCyl: null → 3
+H:IB2500177769#0	maxFuel: null → 70; maxFuel75: 35 → 52; maxFuel50: null → 35
+H:IB2500189560#0	minDisp: null → 2.3; minPrime: {"kVA":12.5} → {"kVA":12}
+H:IB2500314001#0	minPrime: {"kVA":8.5} → {"kVA":8}
+H:IB2500336823#0	maxFuel: null → 4; maxFuel75: null → 3
+H:IB2500337925#0	minDisp: null → 32.6; minCyl: null → 4
+H:IB2500337925#1	minDisp: null → 33; minCyl: null → 4
+H:IB2500342833#0	minDisp: null → 4
+H:IB2500385135#0	minDisp: 2.197 → null; minCyl: 4 → null; maxFuel: null → 2.94; maxFuel75: null → 2.2
+H:IB2500385135#1	minDisp: null → 2.197; minCyl: null → 4; maxFuel: null → 5.3; maxFuel75: null → 4
+H:IB2500386455#0	maxFuel: 8.6 → 11.6; maxFuel75: null → 8.6
+H:IB2500394492#0	minPrime: {"kVA":750} → {"kVA":750,"kW":600}
+H:IB2500403212#0	maxFuel: null → 4; maxFuel75: null → 3
+H:IB2500403535#0	maxFuel: null → 3.3
+H:IB2500403535#1	minCyl: null → 3; maxFuel: null → 4.5
+H:IB2500410768#0	maxFuel: null → 7.5
+H:IB2500410768#2	maxFuel: 7.5 → null
+H:IB2500415487#0	minPrime: null → {"kVA":12}
+H:IB2500415487#1	minPrime: null → {"kVA":14.5}
+H:IB2500442970#0	maxFuel: 4.8 → 4.5; maxFuel75: 4.5 → 3.5; maxFuel50: 3.5 → 3
+H:IB2500460613#0	minDisp: null → 1.8; minCyl: null → 3
+H:IB2500460613#2	minPrime: null → {"kVA":12}
+H:IB2500464050#0	minPrime: {"kVA":750} → {"kVA":712.5}
+H:IB2500465111#0	maxFuel: null → 4; maxFuel75: null → 3
+H:IB2500474803#0	maxFuel: null → 101; maxFuel75: 48.8 → 74; maxFuel50: 26 → 48.8
+H:IB2500500319#1	minPrime: null → {"kVA":12}
+H:IB2500531255#0	minDisp: null → 2.3; minCyl: null → 4; maxFuel: null → 4.5; maxFuel75: null → 3.6
+H:IB2500531255#1	minCyl: null → 4; maxFuel: null → 21; maxFuel75: null → 16
+H:IB2500531255#2	minCyl: null → 4
+H:IB2500533266#0	minDisp: null → 4.3; minCyl: null → 4
+H:IB2500533266#1	minDisp: 4.3 → null; minCyl: 4 → null
+H:IB2500571943#0	maxFuel: null → 4.5; maxFuel75: null → 3.5
+H:IB2500597081#0	minDisp: null → 3.9; minCyl: null → 4
+H:IB2500597081#1	minDisp: null → 11; minCyl: null → 6
+H:IB2600072892#0	maxFuel: null → 53; maxFuel75: 27 → 39; maxFuel50: null → 27
+H:IB2600075436#0	minDisp: null → 4.3; minCyl: null → 4; minPrime: null → {"kVA":100}; maxFuel: null → 28.5; maxFuel75: null → 22.3
+H:IB2600075436#2	minDisp: null → 8.8; minCyl: null → 6; maxFuel: null → 49.3; maxFuel75: null → 38.4
+H:IB2600112737#0	minDisp: null → 4.3; minCyl: null → 4; minPrime: null → {"kVA":100}
+H:IB2600112737#2	minDisp: null → 8.8; minCyl: null → 6
+H:IB2600128010#0	maxFuel: null → 60; maxFuel50: null → 36
+H:IB2600128010#1	maxFuel: null → 105; maxFuel50: null → 55
+H:IB2600327799#2	minDisp: null → 8.8; minCyl: null → 6; maxFuel: null → 49.3; maxFuel75: null → 38.4
+H:IB2600334541#0	maxFuel: null → 60; maxFuel50: null → 36
+H:IB2600334541#1	maxFuel: null → 105; maxFuel50: null → 55
+H:IB2600434462#0	maxFuel: 4.8 → 4.5; maxFuel75: 4.5 → 3.5; maxFuel50: 3.5 → 3
+H:IB2600477305#0	minCyl: null → 3; minPrime: null → {"kVA":12}; maxFuel: null → 4; maxFuel75: null → 3.2; maxFuel50: null → 2.4
+H:IB2600477305#1	minCyl: 3 → null; minPrime: null → {"kVA":14.5}; maxFuel: 4 → null; maxFuel75: 3.2 → null; maxFuel50: 2.4 → null
+H:IB2600490227#0	minCyl: null → 2
+H:IB2600562009#0	minCyl: null → 3; minPrime: null → {"kW":24,"kVA":30}; maxFuel: null → 7.5; maxFuel75: null → 5.4
+H:IB2600562009#1	minCyl: null → 3; minPrime: null → {"kW":40,"kVA":50}; maxFuel: 5.4 → null
+H:IB2600588204#0	maxFuel: null → 4.8; maxFuel75: null → 3.6

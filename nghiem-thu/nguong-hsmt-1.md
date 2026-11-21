@@ -99,6 +99,25 @@ Cách đo: chạy lại `candidates` của 159 lượt đổi ngưỡng ở cả
 
 Tổng: 904 dòng lọt sai, 81 dòng loại oan, 29 chỗ top 30. Ca 6 giả định trần là 1,3 × 1,05 = 1,365 L: cách hiểu dung sai này cần Khoa xác nhận.
 
+## Bản sửa 6 ca (21/11/2026, chồng lên `2b199862`)
+
+Điều phối quyết sửa trong #1036. Khoa trả lời "có" cho dung sai: HSMT tự ghi dung sai thì tính vào ngưỡng, chỉ khi dung sai ghi liền sau số ngưỡng trong cùng câu.
+
+Nguyên văn hai câu dung sai: IB2400125924#0 "Công suất liên tục: ≥ 8.5 KVA ± 0.5"; IB2300293753#0 "số xy lanh ≤ 3 và tổng dung tích xy lanh ≤ 1,3 lít ± 5%".
+
+- **Sửa (`suppliers/config-bot.mjs`):** "tối đa" của số khác trong cùng ô không làm mất dung tích / số xi lanh; số của đầu phát không làm mất công suất tổ máy; một máy bị tách hai cỡ liên tục / dự phòng giữ ngưỡng liên tục; dung sai sau số (kể cả sau đơn vị, kể cả %) tính vào công suất và dung tích.
+- **Đổi một test có sẵn:** `domain.test.mjs` từng khẳng định "≥ 400 kVA ± 5%" là 400; theo quyết định của Khoa nay là 380.
+- **Đo lại toàn bộ so với `2b199862`:** specs 16 / 1.880, bidhist 63 / 1.093 lượt đổi (`doi-6ca.tsv`). Theo trường: minPrime 44, minCyl 24, minDisp 21, maxDisp 2. So với main: specs 18, bidhist 193 (`doi-nguong-cuoi.tsv`).
+- **Đọc nguồn cả 79 lượt đổi** (`soat-doi.mjs`): số đúng theo chữ HSMT. Một bản nháp đọc nhầm dung tích thùng 65 L (IB2200046063#1) đã sửa và có test.
+- Test: 1391 + 148 + 11 pass.
+
+Cần biết:
+- IB2300296794#0: chữ bidhist ghi "20 kVA ± 1% (văn bản ghi "+ 1%")", code ra 19,8. Nếu bản gốc là "+ 1%" thì ngưỡng phải là 20. Chưa đối chiếu HSMT gốc.
+- IB2500464050#0: "750 KVA ± 5%" nay nhận từ 712,5 kVA, nới nhiều nhất trong các ca dung sai.
+- IB2500337925: HSMT ghi "dung tích xilanh ≥ 32,6 lít" và "≥ 33 lít" cho máy 12,5 và 30 kVA (nhiều khả năng gõ nhầm); code đọc đúng chữ, `plausible` bỏ nên không loại dòng.
+- Tiêu hao có dung sai ("≤ 21±2 lít/giờ") vẫn không đặt ngưỡng như cũ, không đổi ở bản này.
+- #1042 (RQ) chồng lên nhánh này, cần gộp lại sau commit mới. Top 30 của bản này chưa đo.
+
 ## Việc tiếp
-1. Điều phối quyết: sửa 6 ca trong #1036 (rồi đo lại) hay merge và sửa sau. Chưa sửa mã.
+1. Điều phối giao đo cloud top 30 cho SHA cuối.
 2. Sau khi #1036 merge: gộp main vào #998, đo lại #998 toàn bộ.
