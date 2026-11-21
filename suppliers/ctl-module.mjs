@@ -184,13 +184,12 @@ export function commRestore(x) {
 // Chức năng manual ghi là TUỲ CHỌN / tuỳ cấu hình (bdk-manual-2, Khoa 21/11/2026: chỉ chấm đạt phần có sẵn, tuỳ chọn → "cần
 // xác nhận"). Danh sách tường minh, không phải luật: mỗi mục là một chức năng HSMT và ĐÚNG dòng nguyên văn nói chức năng đó ở
 // bảng "Options and configuration-dependent lines" cùng số nguồn với datasheet của bộ điều khiển. "Hết nhiên liệu", "sai lệch
-// điện áp giữa các pha", "lệch pha" không có ở đây: manual không nói đúng nghĩa đó nên giữ "chưa rõ".
+// điện áp giữa các pha", "lệch pha", "mức nước làm mát thấp" (Engine Coolant Level* chỉ là số hiển thị, không phải bảo vệ dừng
+// máy) không có ở đây: manual không nói đúng nghĩa đó nên giữ "chưa rõ".
 export const OPTION_TITLE = /^Options and configuration-dependent lines\b/;
 export const CTL_OPTION_FNS = [
   { id: "oil_temp", vi: /nhiệt độ.{0,25}(?:dầu|nhớt|bôi trơn)/i, not: /nước|làm mát/i, line: "Oil Temperature*", has: ["Oil Pressure"],
     offered: "Nhiệt độ dầu: tuỳ động cơ điện tử", note: "Áp suất dầu có sẵn; nhiệt độ dầu manual đánh dấu là tuỳ động cơ điện tử được hỗ trợ, cần NCC xác nhận." },
-  { id: "coolant_level", vi: /mức\s+(?:nước|chất|dung dịch)\s*làm mát/i, line: "Engine Coolant Level*",
-    offered: "Mức nước làm mát: tuỳ động cơ điện tử", note: "Manual chỉ ghi hiển thị mức nước làm mát, tuỳ động cơ điện tử được hỗ trợ; không ghi bảo vệ dừng máy theo mức nước. Cần NCC xác nhận." },
   { id: "freq_adjust", vi: /(?:cài đặt|hiệu chỉnh|điều chỉnh).{0,20}tần số.{0,30}(?:điều tốc|governor)/i, line: "Frequency Adjust | 0.0 %",
     offered: "Hiệu chỉnh tần số: tuỳ cấu hình", note: "Manual ghi thông số này khi máy đang chạy và nói có thể không có tuỳ cấu hình bộ điều khiển. Cần NCC xác nhận." },
 ];
