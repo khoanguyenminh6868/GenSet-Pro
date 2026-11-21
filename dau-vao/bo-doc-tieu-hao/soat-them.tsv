@@ -1,0 +1,358 @@
+ncc	n	model	khoa	nhan	gia-tri	o-don-vi	so	ket-qua
+baudouin	1021	6M31G825/5	cyl	N° of Cylinders / Valves	6 / 24		6	khop
+baudouin	1021	6M31G825/5	fuel	100% PRP	156	L/hr	156	L/h@100
+baudouin	1021	6M31G825/5	fuel75	75% PRP	113	L/hr	113	L/h@75
+baudouin	1021	6M31G825/5	fuel50	50% PRP	77	L/hr	77	L/h@50
+generatordieselchina	101	20V4000G23F	fuel75	Fuel Consumption	342.9 / 457.1 L/h (@75% / @100%)		342.9	L/h@75
+generatordieselchina	101	20V4000G23F	fuel	Fuel Consumption	342.9 / 457.1 L/h (@75% / @100%)		457.1	L/h@100
+generatordieselchina	101	S7L1D-J4	fuel75	Fuel Consumption	342.9 / 457.1 L/h (@75% / @100%)		342.9	L/h@75
+generatordieselchina	101	S7L1D-J4	fuel	Fuel Consumption	342.9 / 457.1 L/h (@75% / @100%)		457.1	L/h@100
+generatordieselchina	101	LSA 52.3 L12	fuel75	Fuel Consumption	342.9 / 457.1 L/h (@75% / @100%)		342.9	L/h@75
+generatordieselchina	101	LSA 52.3 L12	fuel	Fuel Consumption	342.9 / 457.1 L/h (@75% / @100%)		457.1	L/h@100
+generatordieselchina	103	KTA50-G3	fuel75	Fuel Consumption	205.1 / 273.4 L/h (@75% / @100%)		205.1	L/h@75
+generatordieselchina	103	KTA50-G3	fuel	Fuel Consumption	205.1 / 273.4 L/h (@75% / @100%)		273.4	L/h@100
+generatordieselchina	103	S6L1D-F4	fuel75	Fuel Consumption	205.1 / 273.4 L/h (@75% / @100%)		205.1	L/h@75
+generatordieselchina	103	S6L1D-F4	fuel	Fuel Consumption	205.1 / 273.4 L/h (@75% / @100%)		273.4	L/h@100
+generatordieselchina	103	LSA 50.2 M6	fuel75	Fuel Consumption	205.1 / 273.4 L/h (@75% / @100%)		205.1	L/h@75
+generatordieselchina	103	LSA 50.2 M6	fuel	Fuel Consumption	205.1 / 273.4 L/h (@75% / @100%)		273.4	L/h@100
+generatordieselchina	106	KTA38-G2B	fuel75	Fuel Consumption	140.9 / 187.9 L/h (@75% / @100%)		140.9	L/h@75
+generatordieselchina	106	KTA38-G2B	fuel	Fuel Consumption	140.9 / 187.9 L/h (@75% / @100%)		187.9	L/h@100
+generatordieselchina	106	S5L1D-H4	fuel75	Fuel Consumption	140.9 / 187.9 L/h (@75% / @100%)		140.9	L/h@75
+generatordieselchina	106	S5L1D-H4	fuel	Fuel Consumption	140.9 / 187.9 L/h (@75% / @100%)		187.9	L/h@100
+generatordieselchina	106	TAL-A49-C	fuel75	Fuel Consumption	140.9 / 187.9 L/h (@75% / @100%)		140.9	L/h@75
+generatordieselchina	106	TAL-A49-C	fuel	Fuel Consumption	140.9 / 187.9 L/h (@75% / @100%)		187.9	L/h@100
+generatordieselchina	108	KTAA19-G6A	fuel75	Fuel Consumption	96.4 / 128.6 L/h (@75% / @100%)		96.4	L/h@75
+generatordieselchina	108	KTAA19-G6A	fuel	Fuel Consumption	96.4 / 128.6 L/h (@75% / @100%)		128.6	L/h@100
+generatordieselchina	108	S5L1D-F4	fuel75	Fuel Consumption	96.4 / 128.6 L/h (@75% / @100%)		96.4	L/h@75
+generatordieselchina	108	S5L1D-F4	fuel	Fuel Consumption	96.4 / 128.6 L/h (@75% / @100%)		128.6	L/h@100
+generatordieselchina	108	TAL-A473-F	fuel75	Fuel Consumption	96.4 / 128.6 L/h (@75% / @100%)		96.4	L/h@75
+generatordieselchina	108	TAL-A473-F	fuel	Fuel Consumption	96.4 / 128.6 L/h (@75% / @100%)		128.6	L/h@100
+generatordieselchina	110	6ZTAA13-G2	fuel75	Fuel Consumption	60.0 / 80.0 L/h (@75% / @100%)		60	L/h@75
+generatordieselchina	110	6ZTAA13-G2	fuel	Fuel Consumption	60.0 / 80.0 L/h (@75% / @100%)		80	L/h@100
+generatordieselchina	110	S4L1D-G4	fuel75	Fuel Consumption	60.0 / 80.0 L/h (@75% / @100%)		60	L/h@75
+generatordieselchina	110	S4L1D-G4	fuel	Fuel Consumption	60.0 / 80.0 L/h (@75% / @100%)		80	L/h@100
+generatordieselchina	110	TAL-A473-B	fuel75	Fuel Consumption	60.0 / 80.0 L/h (@75% / @100%)		60	L/h@75
+generatordieselchina	110	TAL-A473-B	fuel	Fuel Consumption	60.0 / 80.0 L/h (@75% / @100%)		80	L/h@100
+generatordieselchina	111	NTAA855-G7	fuel75	Fuel Consumption	55.4 / 73.8 L/h (@75% / @100%)		55.4	L/h@75
+generatordieselchina	111	NTAA855-G7	fuel	Fuel Consumption	55.4 / 73.8 L/h (@75% / @100%)		73.8	L/h@100
+generatordieselchina	111	S4L1D-F4	fuel75	Fuel Consumption	55.4 / 73.8 L/h (@75% / @100%)		55.4	L/h@75
+generatordieselchina	111	S4L1D-F4	fuel	Fuel Consumption	55.4 / 73.8 L/h (@75% / @100%)		73.8	L/h@100
+generatordieselchina	111	TAL-A473-A	fuel75	Fuel Consumption	55.4 / 73.8 L/h (@75% / @100%)		55.4	L/h@75
+generatordieselchina	111	TAL-A473-A	fuel	Fuel Consumption	55.4 / 73.8 L/h (@75% / @100%)		73.8	L/h@100
+generatordieselchina	112	NTA855-G1B	fuel75	Fuel Consumption	46.6 / 62.1 L/h (@75% / @100%)		46.6	L/h@75
+generatordieselchina	112	NTA855-G1B	fuel	Fuel Consumption	46.6 / 62.1 L/h (@75% / @100%)		62.1	L/h@100
+generatordieselchina	112	S4L1D-D4	fuel75	Fuel Consumption	46.6 / 62.1 L/h (@75% / @100%)		46.6	L/h@75
+generatordieselchina	112	S4L1D-D4	fuel	Fuel Consumption	46.6 / 62.1 L/h (@75% / @100%)		62.1	L/h@100
+generatordieselchina	112	TAL-A46-G	fuel75	Fuel Consumption	46.6 / 62.1 L/h (@75% / @100%)		46.6	L/h@75
+generatordieselchina	112	TAL-A46-G	fuel	Fuel Consumption	46.6 / 62.1 L/h (@75% / @100%)		62.1	L/h@100
+generatordieselchina	114	6CTAA8.3-G2	fuel75	Fuel Consumption	29.3 / 39.0 L/h (@75% / @100%)		29.3	L/h@75
+generatordieselchina	114	6CTAA8.3-G2	fuel	Fuel Consumption	29.3 / 39.0 L/h (@75% / @100%)		39	L/h@100
+generatordieselchina	114	UCI274H	fuel75	Fuel Consumption	29.3 / 39.0 L/h (@75% / @100%)		29.3	L/h@75
+generatordieselchina	114	UCI274H	fuel	Fuel Consumption	29.3 / 39.0 L/h (@75% / @100%)		39	L/h@100
+generatordieselchina	114	TAL-A44-M	fuel75	Fuel Consumption	29.3 / 39.0 L/h (@75% / @100%)		29.3	L/h@75
+generatordieselchina	114	TAL-A44-M	fuel	Fuel Consumption	29.3 / 39.0 L/h (@75% / @100%)		39	L/h@100
+generatordieselchina	115	QSB6.7-G32	fuel75	Fuel Consumption	26.9 / 35.9 L/h (@75% / @100%)		26.9	L/h@75
+generatordieselchina	115	QSB6.7-G32	fuel	Fuel Consumption	26.9 / 35.9 L/h (@75% / @100%)		35.9	L/h@100
+generatordieselchina	115	UCI274H	fuel75	Fuel Consumption	26.9 / 35.9 L/h (@75% / @100%)		26.9	L/h@75
+generatordieselchina	115	UCI274H	fuel	Fuel Consumption	26.9 / 35.9 L/h (@75% / @100%)		35.9	L/h@100
+generatordieselchina	115	TAL-A44-M	fuel75	Fuel Consumption	26.9 / 35.9 L/h (@75% / @100%)		26.9	L/h@75
+generatordieselchina	115	TAL-A44-M	fuel	Fuel Consumption	26.9 / 35.9 L/h (@75% / @100%)		35.9	L/h@100
+generatordieselchina	117	6BTA5.9-G2	fuel75	Fuel Consumption	18.8 / 25.1 L/h (@75% / @100%)		18.8	L/h@75
+generatordieselchina	117	6BTA5.9-G2	fuel	Fuel Consumption	18.8 / 25.1 L/h (@75% / @100%)		25.1	L/h@100
+generatordieselchina	117	UCI274ES	fuel75	Fuel Consumption	18.8 / 25.1 L/h (@75% / @100%)		18.8	L/h@75
+generatordieselchina	117	UCI274ES	fuel	Fuel Consumption	18.8 / 25.1 L/h (@75% / @100%)		25.1	L/h@100
+generatordieselchina	117	TAL-A44-E	fuel75	Fuel Consumption	18.8 / 25.1 L/h (@75% / @100%)		18.8	L/h@75
+generatordieselchina	117	TAL-A44-E	fuel	Fuel Consumption	18.8 / 25.1 L/h (@75% / @100%)		25.1	L/h@100
+generatordieselchina	119	4BTA3.9-G11	fuel75	Fuel Consumption	13.5 / 18.0 L/h (@75% / @100%)		13.5	L/h@75
+generatordieselchina	119	4BTA3.9-G11	fuel	Fuel Consumption	13.5 / 18.0 L/h (@75% / @100%)		18	L/h@100
+generatordieselchina	119	UCI224F	fuel75	Fuel Consumption	13.5 / 18.0 L/h (@75% / @100%)		13.5	L/h@75
+generatordieselchina	119	UCI224F	fuel	Fuel Consumption	13.5 / 18.0 L/h (@75% / @100%)		18	L/h@100
+generatordieselchina	119	TAL-A44-C	fuel75	Fuel Consumption	13.5 / 18.0 L/h (@75% / @100%)		13.5	L/h@75
+generatordieselchina	119	TAL-A44-C	fuel	Fuel Consumption	13.5 / 18.0 L/h (@75% / @100%)		18	L/h@100
+generatordieselchina	120	4BTA3.9-G2	fuel75	Fuel Consumption	10.8 / 14.3 L/h (@75% / @100%)		10.8	L/h@75
+generatordieselchina	120	4BTA3.9-G2	fuel	Fuel Consumption	10.8 / 14.3 L/h (@75% / @100%)		14.3	L/h@100
+generatordieselchina	120	UCI224E	fuel75	Fuel Consumption	10.8 / 14.3 L/h (@75% / @100%)		10.8	L/h@75
+generatordieselchina	120	UCI224E	fuel	Fuel Consumption	10.8 / 14.3 L/h (@75% / @100%)		14.3	L/h@100
+generatordieselchina	120	TAL-A42-H	fuel75	Fuel Consumption	10.8 / 14.3 L/h (@75% / @100%)		10.8	L/h@75
+generatordieselchina	120	TAL-A42-H	fuel	Fuel Consumption	10.8 / 14.3 L/h (@75% / @100%)		14.3	L/h@100
+generatordieselchina	121	4BTA3.9-G2	fuel75	Fuel Consumption	9.5 / 12.7 L/h (@75% / @100%)		9.5	L/h@75
+generatordieselchina	121	4BTA3.9-G2	fuel	Fuel Consumption	9.5 / 12.7 L/h (@75% / @100%)		12.7	L/h@100
+generatordieselchina	121	S1L2-Y1	fuel75	Fuel Consumption	9.5 / 12.7 L/h (@75% / @100%)		9.5	L/h@75
+generatordieselchina	121	S1L2-Y1	fuel	Fuel Consumption	9.5 / 12.7 L/h (@75% / @100%)		12.7	L/h@100
+generatordieselchina	121	TAL-A42-H	fuel75	Fuel Consumption	9.5 / 12.7 L/h (@75% / @100%)		9.5	L/h@75
+generatordieselchina	121	TAL-A42-H	fuel	Fuel Consumption	9.5 / 12.7 L/h (@75% / @100%)		12.7	L/h@100
+generatordieselchina	122	4BTA3.9-G2	fuel75	Fuel Consumption	7.6 / 10.1 L/h (@75% / @100%)		7.6	L/h@75
+generatordieselchina	122	4BTA3.9-G2	fuel	Fuel Consumption	7.6 / 10.1 L/h (@75% / @100%)		10.1	L/h@100
+generatordieselchina	122	S1L2-R1	fuel75	Fuel Consumption	7.6 / 10.1 L/h (@75% / @100%)		7.6	L/h@75
+generatordieselchina	122	S1L2-R1	fuel	Fuel Consumption	7.6 / 10.1 L/h (@75% / @100%)		10.1	L/h@100
+generatordieselchina	122	TAL-A42-G	fuel75	Fuel Consumption	7.6 / 10.1 L/h (@75% / @100%)		7.6	L/h@75
+generatordieselchina	122	TAL-A42-G	fuel	Fuel Consumption	7.6 / 10.1 L/h (@75% / @100%)		10.1	L/h@100
+generatordieselchina	123	4BT3.9-G1	fuel75	Fuel Consumption	6.1 / 8.2 L/h (@75% / @100%)		6.1	L/h@75
+generatordieselchina	123	4BT3.9-G1	fuel	Fuel Consumption	6.1 / 8.2 L/h (@75% / @100%)		8.2	L/h@100
+generatordieselchina	123	S1L2-K1	fuel75	Fuel Consumption	6.1 / 8.2 L/h (@75% / @100%)		6.1	L/h@75
+generatordieselchina	123	S1L2-K1	fuel	Fuel Consumption	6.1 / 8.2 L/h (@75% / @100%)		8.2	L/h@100
+generatordieselchina	123	TAL-A42-E	fuel75	Fuel Consumption	6.1 / 8.2 L/h (@75% / @100%)		6.1	L/h@75
+generatordieselchina	123	TAL-A42-E	fuel	Fuel Consumption	6.1 / 8.2 L/h (@75% / @100%)		8.2	L/h@100
+huatai-yangzhou	111	WD129TAD23	cyl	缸数及类型Numbers& Type of cylinder	6缸直列		6	khop
+huatai-yangzhou	111	WD135TAD28	cyl	缸数及类型Numbers& Type of cylinder	6缸直列		6	khop
+huatai-yangzhou	111	WD145TAD30	cyl	缸数及类型Numbers& Type of cylinder	6缸直列		6	khop
+huatai-yangzhou	111	WD145TAD33L	cyl	缸数及类型Numbers& Type of cylinder	6缸直列		6	khop
+huatai-yangzhou	111	WD145TAD35	cyl	缸数及类型Numbers& Type of cylinder	6缸直列		6	khop
+huatai-yangzhou	111	WD269TAD38	cyl	缸数及类型Numbers& Type of cylinder	12缸V型		12	khop
+huatai-yangzhou	111	WD269TAD41	cyl	缸数及类型Numbers& Type of cylinder	12缸V型		12	khop
+huatai-yangzhou	111	WD269TAD45	cyl	缸数及类型Numbers& Type of cylinder	12缸V型		12	khop
+huatai-yangzhou	111	WD269TAD48	cyl	缸数及类型Numbers& Type of cylinder	12缸V型		12	khop
+huatai-yangzhou	111	WD269TAD50	cyl	缸数及类型Numbers& Type of cylinder	12缸V型		12	khop
+huatai-yangzhou	111	WD269TAD56	cyl	缸数及类型Numbers& Type of cylinder	12缸V型		12	khop
+huatai-yangzhou	111	WD287TAD61L	cyl	缸数及类型Numbers& Type of cylinder	12缸V型		12	khop
+huatai-yangzhou	111	WD305TAD68	cyl	缸数及类型Numbers& Type of cylinder	12缸V型		12	khop
+huatai-yangzhou	111	WD327TAD78	cyl	缸数及类型Numbers& Type of cylinder	12缸V型		12	khop
+huatai-yangzhou	111	WD327TAD82	cyl	缸数及类型Numbers& Type of cylinder	12缸V型		12	khop
+huatai-yangzhou	111	WD327TAD88	cyl	缸数及类型Numbers& Type of cylinder	12缸V型		12	khop
+huatai-yangzhou	111	WD327TAD92	cyl	缸数及类型Numbers& Type of cylinder	12缸V型		12	khop
+jiuan-power	136	1706A-E93TAG1	fuel	Fuel Consumption	58.5 / 42.8 / 29.3 L/h (100% / 75% / 50% standby)		58.5	L/h@100
+jiuan-power	136	1706A-E93TAG1	fuel75	Fuel Consumption	58.5 / 42.8 / 29.3 L/h (100% / 75% / 50% standby)		42.8	L/h@75
+jiuan-power	136	1706A-E93TAG1	fuel50	Fuel Consumption	58.5 / 42.8 / 29.3 L/h (100% / 75% / 50% standby)		29.3	L/h@50
+jiuan-power	137	1706A-E93TAG2	fuel	Fuel Consumption	52.3 / 38.7 / 26.5 L/h (100% / 75% / 50%)		52.3	L/h@100
+jiuan-power	137	1706A-E93TAG2	fuel75	Fuel Consumption	52.3 / 38.7 / 26.5 L/h (100% / 75% / 50%)		38.7	L/h@75
+jiuan-power	137	1706A-E93TAG2	fuel50	Fuel Consumption	52.3 / 38.7 / 26.5 L/h (100% / 75% / 50%)		26.5	L/h@50
+lees-power	1119	12V4000G63	cyl	缸数 & 气缸排列	12缸V型水冷		12	khop
+lees-power	1120	16V4000G63	cyl	缸数 & 气缸排列	16缸V型水冷		16	khop
+lees-power	1121	20V4000G63L	cyl	缸数 & 气缸排列	20缸V型水冷		20	khop
+lees-power	1165	TWD1645GE	cyl	缸数 & 气缸排列	6缸直列水冷		6	khop
+lees-power	1191	P126TI-II	cyl	缸数 & 气缸排列	6缸直列水冷		6	khop
+lees-power	1192	DP126LB	cyl	缸数 & 气缸排列	6缸直列水冷		6	khop
+lees-power	1194	DP158LC	cyl	缸数 & 气缸排列	8缸V型水冷		8	khop
+lees-power	1195	DP180LB	cyl	缸数 & 气缸排列	10缸V型水冷		10	khop
+lees-power	1196	DP222LB	cyl	缸数 & 气缸排列	12缸V型水冷		12	khop
+longkai-power	1001	SC4H95D2	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1001	LK224F	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1002	SC4H115D2	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1002	LK224G	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1003	SC4H160D2	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1003	LK274D	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1004	SC4H180D2	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1004	LK274D	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1005	SC7H220D2	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1005	LK274F	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1006	SC7H230D2	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1006	LK274G	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1007	SC7H250D2	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1007	LK274G	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1008	SC8D280D2	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1008	LK274H	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1009	SC9D310D2	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1009	LK274J	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1010	SC9D340D2	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1010	LK274K	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1011	SC10E380D2	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1011	LK444DS	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1012	SC12E420D2	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1012	LK444E	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1013	SC13G420D2	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1013	LK444ES	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1014	SC12E460D2	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1014	LK444E	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1015	SC15G500D2	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1015	LK444F	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1021	SC33W990D2	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1021	LK634B	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1022	SC33G1150D2	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1022	LK634D	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1023	4HT4.3-G21	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1023	LK224E	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1024	4HT4.3-G22	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1024	LK224F	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1025	4HT4.3-G23	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1025	LK224G	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1026	4HTAA4.3-G21	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1026	LK274C	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1027	4HTAA4.3-G23	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1027	LK274D	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1028	4HTAA4.3-G22	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1028	LK274D	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1029	6HTAA6.5-G21	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1029	LK274E	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1030	6HTAA6.5-G22	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1030	LK274F/S	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1032	6DTAA8.9-G21	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1032	LK274H	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1033	6DTAA8.9-G24	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1033	LK274J	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1034	6DTAA8.9-G23	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1034	LK274K	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1035	6ETAA11.8-G21	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1035	LK444E	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1036	6ETAA11.8-G31	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1036	LK444E	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1037	6ETAA12.8-G32	cyl	No. cylinders	6in line		6	khop
+longkai-power	1037	LK444F	cyl	No. cylinders	6in line		6	khong-NCC-khac
+longkai-power	1038	6ETAA12.8-G31	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1038	LK544B	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1039	6KTAA25-G36	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1039	LK544C	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1040	6KTAA25-G35	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1040	LK544E	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1041	6KTAA25-G34	cyl	No. cylinders	6in line		6	khop
+longkai-power	1041	LK544FS	cyl	No. cylinders	6in line		6	khong-NCC-khac
+longkai-power	1042	6KTAA25-G33	cyl	No. cylinders	6in line		6	khop
+longkai-power	1042	LK544F	cyl	No. cylinders	6in line		6	khong-NCC-khac
+longkai-power	1043	6KTAA25-G32	cyl	No. cylinders	6in line		6	khop
+longkai-power	1043	LK634B	cyl	No. cylinders	6in line		6	khong-NCC-khac
+longkai-power	1044	6KTAA25-G31	cyl	No. cylinders	6in line		6	khop
+longkai-power	1044	LK634C	cyl	No. cylinders	6in line		6	khong-NCC-khac
+longkai-power	1045	6WTAA35-G32	cyl	No. cylinders	6in line		6	khop
+longkai-power	1045	LK634D	cyl	No. cylinders	6in line		6	khong-NCC-khac
+longkai-power	1046	SC13E550D2	cyl	No. cylinders	6in line		6	khop
+longkai-power	1046	LK634E	cyl	No. cylinders	6in line		6	khong-NCC-khac
+longkai-power	1047	4B3.9-G11	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1047	LK184E	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1048	4B3.9-G1	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1048	LK184F	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1049	4B3.9-G2	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1049	LK184F	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1050	4B3.9-G12	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1050	LK184G	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1051	4BT3.9-G1	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1051	LK184J	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1052	4BT3.9-G2	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1052	LK184J	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1053	QSB3.9-G2	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1053	LK224E	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1054	4BTA3.9-G2-58KW	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1054	LK224F	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1055	4BTA3.9-G11	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1055	LK224F	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1056	4BTA3.9-G11	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1056	LK224G	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1057	QSB3.9-G3	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1057	LK224G/S	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1058	4BTA3.9-G13	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1058	LK224G	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1059	4BTA3.9-G13	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1059	LK274C	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1060	6BT5.9-G2-86KW	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1060	LK274C	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1061	6BT5.9-G1	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1061	LK274C	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1062	6BT5.9-G2-96KW	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1062	LK274D	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1063	6BT5.9-G2	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1063	LK274D	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1065	6BTAA5.9-G2	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1065	LK274D	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1066	QSB5.9-G3	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1066	LK274D	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1067	LK274E	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1068	6BTAA5.9-G12	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1068	LK274F/S	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1069	QSB6.7-G3	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1069	LK274F/S	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1070	QSB6.7-G4	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1070	LK274G	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1071	6CTA8.3-G1	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1071	LK274G	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1072	6CTA8.3-G2	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1072	LK274G	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1073	6CTAA8.3-G2	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1073	LK274H	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1074	LK274H	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1075	6CTAA8.3-G9	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1075	LK274J	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1076	MTA11-G2	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1076	LK274K	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1077	6LTAA8.9-G2	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1077	LK274K	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1078	6LTAA8.9-G3	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1078	LK274K	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1079	QSNT-G6	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1079	LK274K	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1080	LK444ES	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1081	6LTAA9.5-G3	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1081	LK444DS	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1082	LK444ES	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1083	6LTAA9.5-G1	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1083	LK444ES	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1084	LK444E	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1085	QSM11-G2	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1085	LK444E	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1086	QSZ13-G6	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1086	LK444E	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1087	6ZTAA13-G3	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1087	LK444F	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1088	QSZ13-G7	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1088	LK444F	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1089	QSNT-G3	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1089	LK444F	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1090	6ZTAA13-G4	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1090	LK544B	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1091	QSZ13-G2	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1091	LK544B	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1092	QSNT-G4X	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1092	LK544B	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1093	QSK19-G14	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1093	LK544B	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1094	QSZ13-G5	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1094	LK544B	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1095	QSZ13-G3	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1095	LK544C	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1096	QSZ13-G10	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1096	LK544C	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1097	QSK19-G13	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1097	LK544C	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1098	KTAA19-G5	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1098	LK544D	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1099	KTAA19-G6	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1099	LK544E	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1100	QSK19-G12	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1100	LK544E	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1101	KTA19-G8	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1101	LK544E	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1123	WP2.3D25E200	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1123	LK184E	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1124	WP2.3D33E200	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1124	LK184E	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1125	WP2.3D40E200	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1125	LK184H	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1126	WP2.3D48E200	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1126	LK224D	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1127	WP4.1D66E200	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1127	LK224E	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1128	WP4.1D80E200	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1128	LK224F	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1129	WP4.1D100E200	cyl	No. cylinders	4 in line		4	khop
+longkai-power	1129	LK274C	cyl	No. cylinders	4 in line		4	khong-NCC-khac
+longkai-power	1130	WP6D132E200	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1130	LK274D	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1131	WP6D152E200	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1131	LK274F/S	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1132	WP6D167E200	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1132	LK274G	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1133	WP10D200E200	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1133	LK274H	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1134	WP10D238E200	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1134	LK274J	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1135	WP10D264E200	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1135	LK274K	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1136	WP10D320E200	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1136	LK444E	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1137	WP12D317E200	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1137	LK444D	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1138	WP13D385E200	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1138	LK444FS	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1139	WP13D405E200	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1139	LK444F	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1140	WP13D440E310	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1140	LK544C	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1141	WP13D490E310	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1141	LK544D	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1142	6M26D484E200	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1142	LK544C	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1143	6M33D572E200	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1143	LK544E	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+longkai-power	1145	6M33D670E200	cyl	No. cylinders	6 in line		6	khop
+longkai-power	1145	LK544F	cyl	No. cylinders	6 in line		6	khong-NCC-khac
+tecgen-fujian	132	TGI184S-16	fuel	Fuel Consumption (g/kw.h))	223		223	KHONG-L/h(g/kWh|load)
+tecgen-fujian	133	TGI224S-44	fuel	Fuel Consumption (g/kw.h))	220		220	KHONG-L/h(g/kWh|load)
+xinhengxin-fujian	1001	KTA19-G4	cyl	No.Cylinders	6 in line		6	khop
+xinhengxin-fujian	1001	544D	cyl	No.Cylinders	6 in line		6	khong-NCC-khac
