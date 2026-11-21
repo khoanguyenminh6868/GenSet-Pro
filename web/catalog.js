@@ -975,6 +975,13 @@
       // "not diesel, kind unknown" value; `dual` (gasoline + gas) is the narrowest that `fuelOff` turns away from a diesel HSMT
       // and lets through a gas / gasoline one. Level K = "quyết định của Khoa" (no maker, no page); `why` says so.
       rest: { fuel: "dual", from: "K", why: "QUYẾT ĐỊNH của Khoa 21/11/2026 (không có nguồn hãng): cả bảng SIMPSON-GasGenerators không vào gói diesel; động cơ này không tìm được trang hãng nên loại nhiên liệu KHÔNG rõ, `dual` chỉ để loại khỏi HSMT diesel" } },
+    // man-engines n104 (marine auxiliary table, D2676 / D2862 / D3872 diesel + E3262 gas; the page names no fuel per row): only the E3262 row
+    // gets `gas`, from the maker's own E3262 page (opened 21/11/2026: "E3262 naturally aspired engine with natural gas"; "the E3262 LE232 for
+    // natural gas and the E3262 LE242 for biogas"). The 8 D-rows stay without fuel: the maker's PDF says "Fuel: DIN EN 590" (diesel), but the
+    // catalog has no explicit "diesel" value (`fuelOff` turns every row that has a fuel away from a diesel HSMT, so writing one would drop
+    // them from diesel packs): not invented here (điều phối 21/11/2026).
+    { supplierId: "man-engines", ns: [104], from: "D", fuel: "gas", header: "| Output kW 1) 50 Hz / 60 Hz | Engine model | Cylinders | Model | Displacement in litres",
+      engines: { E3262: "https://www.man.eu/engines/en/products/power-generation/gas/man-motor-e3262.html" }, why: 'datasheet hãng động cơ MAN %M ghi "E3262 naturally aspired engine with natural gas" (%U, đọc 21/11/2026)' },
     { supplierId: "zc-power", ns: [109], part: "genset", fuel: "gasoline", why: 'tên trang "Gasoline Generators | Factory-Direct Prices | ZC Power"' },
   ];
   // The fuel of record `o` (of `fromSupplier`, or `part` "genset" = of `gensetsOf`) by FUEL_PAGES, or null.

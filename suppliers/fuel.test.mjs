@@ -57,7 +57,7 @@ test("không ghi: menu / khẩu hiệu / đơn vị / chữ mơ hồ / mâu thu�
     // trang vẫn không đủ; từ 20/11/2026 có nhiên liệu qua FUEL_PAGES (ca "nhiên liệu theo bảng" cuối tệp).
     ["victory-generator", 129], ["victory-generator", 133],       // "Diesel Twin-cylinder"; chữ xăng ở dòng khác
     ["kingway-power", 117],                                       // bể chứa khí sinh học
-    ["man-engines", 104],                                         // "diesel and gas engines" trộn
+    // man-engines n104 ("diesel and gas engines" trộn): từ 21/11/2026 chỉ dòng E3262 có nhiên liệu qua FUEL_PAGES (ca cuối tệp).
     ["penlucky", 102],                                            // URL diesel; chỉ mã động cơ K38N
   ]) {
     const rs = rec(id, n);
@@ -128,4 +128,16 @@ test("nhiên liệu theo bảng (Khoa 20/11/2026, FUEL_PAGES): jianghao n104 kh�
   const g = C.build([real("zc-power")]).gensets.filter((e) => e.uses.some((u) => u.n === 109));
   assert.equal(g.length, 9);
   assert.ok(g.every((e) => e.uses.every((u) => u.fuel === "gasoline")));
+});
+
+test("man-engines n104 (sua-so-le-1, điều phối 21/11/2026): chỉ dòng E3262 ghi khí (trang hãng MAN, mức D); 8 dòng D2676 / D2862 / D3872 để trống (catalog không có giá trị diesel tường minh)", () => {
+  const m = rec("man-engines", 104);
+  assert.equal(m.length, 9);
+  const e = m.filter((r) => r.model === "E3262");
+  assert.equal(e.length, 1);
+  assert.deepEqual([e[0].fuel, e[0].fuelFrom], ["gas", "D"]);
+  assert.ok(/E3262 naturally aspired engine with natural gas/.test(e[0].fuelWhy) && /man-motor-e3262/.test(e[0].fuelWhy));
+  assert.ok(m.filter((r) => r.model !== "E3262").every((r) => r.fuel === undefined));
+  // bảng khác của man-engines (n105: bảng khí tự ghi) không bị đổi bởi mục này
+  assert.ok(rec("man-engines", 105).every((r) => r.fuelWhy === undefined || !/datasheet hãng động cơ MAN/.test(r.fuelWhy)));
 });
