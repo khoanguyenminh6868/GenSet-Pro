@@ -479,5 +479,282 @@
    "| Efficiency (%) | 92.8 | 92.8 | 93.0 | 93.4 | 93.1 | 93.0 | 93.2 | 93.6 | 93.3 | 93.3 | 93.5 | 93.7 | 93.7 | 93.7 | 93.8 | 94.0",
    "| Efficiency (%) | 92.9 | 92.9 | 93.1 | 93.2 | 93.2 | 93.1 | 93.3 | 93.3 | 93.4 | 93.4 | 93.6 | 93.6 | 93.7 | 93.8 | 93.9 | 93.9"
   ]
+ },
+ {
+  "n": 1021,
+  "url": "https://www.stamford-avk.com/sites/stamfordavk/files/ESA059B535_S6L1D-C4-D-W311_312.pdf",
+  "title": "Datasheet: S6L1D-C4 Wdg.311/312 - Technical Data Sheet",
+  "from": "https://www.stamford-avk.com/sites/stamfordavk/files/ESA059B535_S6L1D-C4-D-W311_312.pdf",
+  "header": [],
+  "rows": [
+   "S6L1D-C4 Wdg.311/312 - Technical Data Sheet",
+   "| Voltage Regulation | ± 1% | ± 0.5% | ± 0.25% | ± 0.25% | with 4%",
+   "| Insulation System | H",
+   "| Voltage Series Star (V) | 380 | 400 | 415 | 440 | 416 | 440 | 460 | 480",
+   "| Voltage Parallel Star (V) | 190 | 200 | 208 | 220 | 208 | 220 | 230 | 240",
+   "| Voltage Delta (V) | 220 | 230 | 240 | 254 | 240 | 254 | 266 | 277",
+   "| Weight Wound Stator | 803kg | 803kg",
+   "| Weight Wound Rotor | 721kg | 679kg",
+   "| Weight Complete Alternator | 1897kg | 1970kg",
+   "| Shipping weight in a Crate | 1940kg | 2013kg",
+   "| Packing Crate Size | 160x105x153(cm) | 160x105x153(cm)",
+   "| 3-phase | 2-phase L-L 1-phase L-N",
+   "| Efficiency (%) | 94.1 | 94.2 | 94.3 | 94.5 | 94.2 | 94.3 | 94.4 | 94.6 | 94.3 | 94.4 | 94.5 | 94.6 | 94.5 | 94.6 | 94.6 | 94.8",
+   "| Efficiency (%) | 94.3 | 94.4 | 94.4 | 94.4 | 94.4 | 94.4 | 94.5 | 94.5 | 94.5 | 94.6 | 94.6 | 94.6 | 94.6 | 94.7 | 94.7 | 94.8"
+  ]
+ },
+ {
+  "n": 1022,
+  "url": "https://www.stamford-avk.com/sites/stamfordavk/files/ESA059B536_S6L1D-D4-D-W311_312.pdf",
+  "title": "Datasheet: S6L1D-D4 Wdg.311/312 - Technical Data Sheet",
+  "from": "https://www.stamford-avk.com/sites/stamfordavk/files/ESA059B536_S6L1D-D4-D-W311_312.pdf",
+  "header": [],
+  "rows": [
+   "S6L1D-D4 Wdg.311/312 - Technical Data Sheet",
+   "| Voltage Regulation | ± 1% | ± 0.5% | ± 0.25% | ± 0.25% | with 4%",
+   "| Insulation System | H",
+   "| Voltage Series Star (V) | 380 | 400 | 415 | 440 | 416 | 440 | 460 | 480",
+   "| Voltage Parallel Star (V)* | 190 | 200 | 208 | 220 | 208 | 220 | 230 | 240",
+   "| Voltage Delta (V) | 220 | 230 | 240 | 254 | 240 | 254 | 266 | 277",
+   "| Weight Wound Stator | 924kg | 924kg",
+   "| Weight Wound Rotor | 800kg | 758kg",
+   "| Weight Complete Alternator | 1953kg | 2030kg",
+   "| Shipping weight in a Crate | 1996kg | 2073kg",
+   "| Packing Crate Size | 160x105x153(cm) | 160x105x153(cm)",
+   "| 3-phase | 2-phase L-L 1-phase L-N",
+   "| Efficiency (%) | 94.7 | 94.8 | 94.9 | 95.0 | 94.9 | 94.9 | 95.0 | 95.1 | 95.0 | 95.0 | 95.0 | 95.2 | 95.1 | 95.1 | 95.2 | 95.2",
+   "| Efficiency (%) | 94.9 | 95.0 | 95.0 | 95.0 | 95.0 | 95.0 | 95.1 | 95.1 | 95.1 | 95.1 | 95.2 | 95.2 | 95.2 | 95.2 | 95.2 | 95.2"
+  ]
+ },
+ {
+  "n": 1023,
+  "url": "https://www.stamford-avk.com/sites/stamfordavk/files/A059B537-S6L1D-E4-C-W311_312.pdf",
+  "title": "Datasheet: S6L1D-E4 Wdg.311/312 - Technical Data Sheet",
+  "from": "https://www.stamford-avk.com/sites/stamfordavk/files/A059B537-S6L1D-E4-C-W311_312.pdf",
+  "header": [],
+  "rows": [
+   "S6L1D-E4 Wdg.311/312 - Technical Data Sheet",
+   "| Voltage Regulation | ± 1% | ± 0.5% | ± 0.25% | ± 0.25% | with 4%",
+   "| Insulation System | H",
+   "| Voltage Series Star (V) | 380 | 400 | 415 | 440 | 416 | 440 | 460 | 480",
+   "| Voltage Parallel Star (V)* | 190 | 200 | 208 | 220 | 208 | 220 | 230 | 240",
+   "| Voltage Delta (V) | 220 | 230 | 240 | 254 | 240 | 254 | 266 | 277",
+   "| Weight Wound Stator | 999kg | 999kg",
+   "| Weight Wound Rotor | 853kg | 811kg",
+   "| Weight Complete Alternator | 2020kg | 2102kg",
+   "| Shipping weight in a Crate | 2063kg | 2145kg",
+   "| Packing Crate Size | 170x90x153(cm) | 170x90x153(cm)",
+   "| 3-phase | 2-phase L-L 1-phase L-N",
+   "| Efficiency (%) | 94.8 | 94.9 | 95.0 | 95.2 | 94.9 | 95.0 | 95.1 | 95.3 | 95.1 | 95.1 | 95.2 | 95.4 | 95.3 | 95.3 | 95.4 | 95.5",
+   "| Efficiency (%) | 95.0 | 95.1 | 95.1 | 95.1 | 95.1 | 95.2 | 95.2 | 95.2 | 95.2 | 95.2 | 95.3 | 95.3 | 95.3 | 95.4 | 95.4 | 95.4"
+  ]
+ },
+ {
+  "n": 1024,
+  "url": "https://www.stamford-avk.com/sites/stamfordavk/files/ESA059B538_S6L1D-F4-D-W311_312.pdf",
+  "title": "Datasheet: S6L1D-F4 Wdg.311/312 - Technical Data Sheet",
+  "from": "https://www.stamford-avk.com/sites/stamfordavk/files/ESA059B538_S6L1D-F4-D-W311_312.pdf",
+  "header": [],
+  "rows": [
+   "S6L1D-F4 Wdg.311/312 - Technical Data Sheet",
+   "| Voltage Regulation | ± 1% | ± 0.5% | ± 0.25% | ± 0.25% | with 4%",
+   "| Insulation System | H",
+   "| Voltage Series Star (V) | 380 | 400 | 415 | 440 | 416 | 440 | 460 | 480",
+   "| Voltage Parallel Star (V)* | 190 | 200 | 208 | 220 | 208 | 220 | 230 | 240",
+   "| Voltage Delta (V) | 220 | 230 | 240 | 254 | 240 | 254 | 266 | 277",
+   "| Weight Wound Stator | 1098kg | 1098kg",
+   "| Weight Wound Rotor | 966kg | 924kg",
+   "| Weight Complete Alternator | 2326kg | 2269kg",
+   "| Shipping weight in a Crate | 2369kg | 2312kg",
+   "| Packing Crate Size | 170x90x153(cm) | 170x90x153(cm)",
+   "| 3-phase | 2-phase L-L 1-phase L-N",
+   "| Efficiency (%) | 95.2 | 95.3 | 95.4 | 95.5 | 95.3 | 95.4 | 95.5 | 95.6 | 95.5 | 95.5 | 95.6 | 95.7 | 95.7 | 95.7 | 95.8 | 95.9",
+   "| Efficiency (%) | 95.3 | 95.4 | 95.4 | 95.4 | 95.4 | 95.5 | 95.5 | 95.5 | 95.5 | 95.6 | 95.6 | 95.6 | 95.6 | 95.7 | 95.7 | 95.8"
+  ]
+ },
+ {
+  "n": 1025,
+  "url": "https://www.stamford-avk.com/sites/stamfordavk/files/A059B539_S6L1D-G4_20180124.pdf",
+  "title": "Datasheet: S6L1D-G4 Wdg.312 - Technical Data Sheet",
+  "from": "https://www.stamford-avk.com/sites/stamfordavk/files/A059B539_S6L1D-G4_20180124.pdf",
+  "header": [],
+  "rows": [
+   "S6L1D-G4 Wdg.312 - Technical Data Sheet",
+   "| Voltage Regulation | ± 1% | ± 0.5% | ± 0.25%",
+   "| Insulation System | H",
+   "| Voltage Star (V) | 380 | 400 | 415 | 440 | 416 | 440 | 460 | 480",
+   "| Weight Wound Stator | 1297kg | 1297kg",
+   "| Weight Wound Rotor | 1049kg | 1006kg",
+   "| Weight Complete Alternator | 2732kg | 2858kg",
+   "| Shipping weight in a Crate | 2777kg | 2903kg",
+   "| Packing Crate Size | 180x105x153(cm) | 180x105x153(cm)",
+   "| 3-phase | 2-phase L-L 1-phase L-N",
+   "| Efficiency (%) | 94.5 | 94.6 | 94.7 | 95.0 | 94.6 | 94.7 | 94.8 | 95.0 | 94.8 | 94.8 | 94.9 | 95.1 | 95.0 | 95.1 | 95.2 | 95.3",
+   "| Efficiency (%) | 94.7 | 94.6 | 94.8 | 94.8 | 94.8 | 94.7 | 94.9 | 94.9 | 94.9 | 94.9 | 95.0 | 95.0 | 95.0 | 95.0 | 95.1 | 95.2"
+  ]
+ },
+ {
+  "n": 1026,
+  "url": "https://www.stamford-avk.com/sites/stamfordavk/files/A059B540_S6L1D-H4_20171206.pdf",
+  "title": "Datasheet: S6L1D-H4 Wdg.312 - Technical Data Sheet",
+  "from": "https://www.stamford-avk.com/sites/stamfordavk/files/A059B540_S6L1D-H4_20171206.pdf",
+  "header": [],
+  "rows": [
+   "S6L1D-H4 Wdg.312 - Technical Data Sheet",
+   "| Voltage Regulation | ± 1% | ± 0.5% | ± 0.25%",
+   "| Insulation System | H",
+   "| Voltage Star (V) | 380 | 400 | 415 | 440 | 416 | 440 | 460 | 480",
+   "| Weight Wound Stator | 1361kg | 1361kg",
+   "| Weight Wound Rotor | 1116kg | 1073kg",
+   "| Weight Complete Alternator | 2836kg | 2962kg",
+   "| Shipping weight in a Crate | 2881kg | 3007kg",
+   "| Packing Crate Size | 180x105x153(cm) | 180x105x153(cm)",
+   "| 3-phase | 2-phase L-L 1-phase L-N",
+   "| Efficiency (%) | 94.8 | 94.8 | 94.9 | 95.1 | 94.9 | 94.9 | 95.0 | 95.1 | 95.0 | 95.0 | 95.0 | 95.2 | 95.1 | 95.1 | 95.2 | 95.3",
+   "| Efficiency (%) | 94.8 | 94.9 | 94.9 | 94.9 | 94.9 | 94.9 | 95.0 | 95.0 | 94.9 | 95.0 | 95.0 | 95.1 | 95.0 | 95.1 | 95.1 | 95.2"
+  ]
+ },
+ {
+  "n": 1027,
+  "url": "https://www.stamford-avk.com/sites/stamfordavk/files/A062L868_Rev_A.pdf",
+  "title": "Datasheet: S7L1D-C4 Wdg.312 - Technical Data Sheet",
+  "from": "https://www.stamford-avk.com/sites/stamfordavk/files/A062L868_Rev_A.pdf",
+  "header": [],
+  "rows": [
+   "S7L1D-C4 Wdg.312 - Technical Data Sheet",
+   "| Voltage Regulation | ± 1% | ± 0.5% | ± 0.25%",
+   "| Insulation System | H",
+   "| Voltage Star (V) | 380 | 400 | 415 | 440 | 416 | 440 | 460 | 480",
+   "| Weight Wound Stator | 990kg | 990kg",
+   "| Weight Wound Rotor | 1153kg | 1107kg",
+   "| Weight Complete Alternator | 2910kg | 2884kg",
+   "| Shipping weight in a Crate | 2959kg | 2933kg",
+   "| Packing Crate Size | 200 | x 105 x 155 (cm) | 200 | x 105 x 155 (cm)",
+   "| Efficiency (%) | 95.1 | 95.2 | 95.3 | 95.5 | 95.2 | 95.3 | 95.4 | 95.5 | 95.3 | 95.4 | 95.5 | 95.6 | 95.5 | 95.6 | 95.6 | 95.7",
+   "| Efficiency (%) | 95.1 | 95.1 | 95.2 | 95.3 | 95.2 | 95.2 | 95.3 | 95.4 | 95.2 | 95.3 | 95.4 | 95.4 | 95.4 | 95.4 | 95.5 | 95.6"
+  ]
+ },
+ {
+  "n": 1028,
+  "url": "https://www.stamford-avk.com/sites/stamfordavk/files/A062L869_Rev_A.pdf",
+  "title": "Datasheet: S7L1D-D4 Wdg.312 - Technical Data Sheet",
+  "from": "https://www.stamford-avk.com/sites/stamfordavk/files/A062L869_Rev_A.pdf",
+  "header": [],
+  "rows": [
+   "S7L1D-D4 Wdg.312 - Technical Data Sheet",
+   "| Voltage Regulation | ± 1% | ± 0.5% | ± 0.25%",
+   "| Insulation System | H",
+   "| Voltage Star (V) | 380 | 400 | 415 | 440 | 416 | 440 | 460 | 480",
+   "| Weight Wound Stator | 1079kg | 1079kg",
+   "| Weight Wound Rotor | 1255kg | 1203kg",
+   "| Weight Complete Alternator | 3066kg | 3043kg",
+   "| Shipping weight in a Crate | 3115kg | 3092kg",
+   "| Packing Crate Size | 200 | x 105 x 155",
+   "| Efficiency (%) | 95.2 | 95.3 | 95.4 | 95.6 | 95.3 | 95.4 | 95.5 | 95.7 | 95.4 | 95.5 | 95.6 | 95.8 | 95.6 | 95.7 | 95.7 | 95.9",
+   "| Efficiency (%) | 95.2 | 95.3 | 95.3 | 95.4 | 95.3 | 95.3 | 95.4 | 95.5 | 95.4 | 95.4 | 95.5 | 95.6 | 95.5 | 95.6 | 95.7 | 95.7"
+  ]
+ },
+ {
+  "n": 1029,
+  "url": "https://www.stamford-avk.com/sites/stamfordavk/files/ESA062L870_S7L1D-E4-G-W312.pdf",
+  "title": "Datasheet: S7L1D-E4 Wdg.312 - Technical Data Sheet",
+  "from": "https://www.stamford-avk.com/sites/stamfordavk/files/ESA062L870_S7L1D-E4-G-W312.pdf",
+  "header": [],
+  "rows": [
+   "S7L1D-E4 Wdg.312 - Technical Data Sheet",
+   "| Voltage Regulation | ± 0.25% | ± 0.25% | with 4%",
+   "| Insulation System | H",
+   "| Voltage Series (V) | 380 | 400 | 415 | 440 | 416 | 440 | 460 | 480",
+   "| Weight Wound Stator | 1518kg | 1518kg",
+   "| Weight Wound Rotor | 1353kg | 1300kg",
+   "| Weight Complete Alternator | 3350kg | 3264kg",
+   "| Shipping weight in a Crate | 3399kg | 3313kg",
+   "| Packing Crate Size | 200x105x155(cm) | 200x105x155(cm)",
+   "| 3-phase | 2-phase L-L 1-phase L-N",
+   "| Efficiency (%) | 95.8 | 95.8 | 95.9 | 96.1 | 95.9 | 95.9 | 96.0 | 96.1 | 95.9 | 96.0 | 96.1 | 96.2 | 96.1 | 96.1 | 96.2 | 96.3",
+   "| Efficiency (%) | 95.9 | 95.9 | 96.0 | 96.0 | 95.9 | 96.0 | 96.0 | 96.0 | 96.0 | 96.0 | 96.1 | 96.1 | 96.1 | 96.1 | 96.2 | 96.2"
+  ]
+ },
+ {
+  "n": 1030,
+  "url": "https://www.stamford-avk.com/sites/stamfordavk/files/ESA062L871_S7L1D-F4-F-W312.pdf",
+  "title": "Datasheet: S7L1D-F4 Wdg.312 - Technical Data Sheet",
+  "from": "https://www.stamford-avk.com/sites/stamfordavk/files/ESA062L871_S7L1D-F4-F-W312.pdf",
+  "header": [],
+  "rows": [
+   "S7L1D-F4 Wdg.312 - Technical Data Sheet",
+   "| Voltage Regulation | ± 0.25% | ± 0.25%",
+   "| Insulation System | H",
+   "| Voltage Star (V) | 380 | 400 | 415 | 440 | 416 | 440 | 460 | 480",
+   "| Weight Wound Stator | 1518kg | 1518kg",
+   "| Weight Wound Rotor | 1353kg | 1300kg",
+   "| Weight Complete Alternator | 3350kg | 3264kg",
+   "| Shipping weight in a Crate | 3399kg | 3313kg",
+   "| Packing Crate Size | 200 | X 105 X 155(cm) | 200 | X 105 X155(cm)",
+   "| 3-phase | 2-phase L-L 1-phase L-N",
+   "| Efficiency (%) | 95.6 | 95.6 | 95.7 | 95.9 | 95.6 | 95.7 | 95.8 | 95.9 | 95.7 | 95.8 | 95.9 | 96.0 | 95.9 | 95.9 | 96.0 | 96.1",
+   "| Efficiency (%) | 95.6 | 95.6 | 95.7 | 95.8 | 95.7 | 95.7 | 95.8 | 95.8 | 95.7 | 95.8 | 95.8 | 95.9 | 95.8 | 95.9 | 96.0 | 96.0"
+  ]
+ },
+ {
+  "n": 1031,
+  "url": "https://www.stamford-avk.com/sites/stamfordavk/files/A062L872_Rev_A.pdf",
+  "title": "Datasheet: S7L1D-G4 Wdg.312 - Technical Data Sheet",
+  "from": "https://www.stamford-avk.com/sites/stamfordavk/files/A062L872_Rev_A.pdf",
+  "header": [],
+  "rows": [
+   "S7L1D-G4 Wdg.312 - Technical Data Sheet",
+   "| Voltage Regulation | ± 1% | ± 0.5% | ± 0.25%",
+   "| Insulation System | H",
+   "| Voltage Star (V) | 380 | 400 | 415 | 440 | 416 | 440 | 460 | 480",
+   "| Weight Wound Stator | 1350kg | 1350kg",
+   "| Weight Wound Rotor | 1488kg | 1445kg",
+   "| Weight Complete Alternator | 3637kg | 3604kg",
+   "| Shipping weight in a Crate | 3689kg | 3656kg",
+   "| Packing Crate Size | 220 | x 105 x 155 (cm) | 220 | x 105 x 155 (cm)",
+   "| Efficiency (%) | 95.8 | 95.8 | 95.9 | 96.1 | 95.9 | 95.9 | 96.0 | 96.1 | 96.0 | 96.0 | 96.1 | 96.2 | 96.1 | 96.1 | 96.2 | 96.2",
+   "| Efficiency (%) | 95.8 | 95.8 | 95.9 | 96.0 | 95.9 | 95.9 | 96.0 | 96.0 | 96.0 | 96.0 | 96.1 | 96.1 | 96.1 | 96.1 | 96.2 | 96.2"
+  ]
+ },
+ {
+  "n": 1032,
+  "url": "https://www.stamford-avk.com/sites/stamfordavk/files/A062L873_Rev_A.pdf",
+  "title": "Datasheet: S7L1D-H4 Wdg.312 - Technical Data Sheet",
+  "from": "https://www.stamford-avk.com/sites/stamfordavk/files/A062L873_Rev_A.pdf",
+  "header": [],
+  "rows": [
+   "S7L1D-H4 Wdg.312 - Technical Data Sheet",
+   "| Voltage Regulation | ± 1% | ± 0.5% | ± 0.25%",
+   "| Insulation System | H",
+   "| Voltage Star (V) | 380 | 400 | 415 | 440 | 416 | 440 | 460 | 480",
+   "| Weight Wound Stator | 1541kg | 1541kg",
+   "| Weight Wound Rotor | 1693kg | 1651kg",
+   "| Weight Complete Alternator | 4083kg | 4054kg",
+   "| Shipping weight in a Crate | 4135kg | 4106kg",
+   "| Packing Crate Size | 220 | x 105 x 155 (cm) | 220 | x 105 x 155 (cm)",
+   "| Efficiency (%) | 95.9 | 95.9 | 95.9 | 96.1 | 95.9 | 95.9 | 96.0 | 96.1 | 96.0 | 96.0 | 96.1 | 96.2 | 96.1 | 96.1 | 96.2 | 96.2",
+   "| Efficiency (%) | 95.9 | 95.9 | 96.0 | 96.0 | 95.9 | 96.0 | 96.0 | 96.0 | 96.0 | 96.0 | 96.1 | 96.1 | 96.1 | 96.1 | 96.1 | 96.2"
+  ]
+ },
+ {
+  "n": 1033,
+  "url": "https://www.stamford-avk.com/sites/stamfordavk/files/ES10459201_S7L1D-K4-B-W312.pdf",
+  "title": "Datasheet: S7L1D-K4 Wdg.312 - Technical Data Sheet",
+  "from": "https://www.stamford-avk.com/sites/stamfordavk/files/ES10459201_S7L1D-K4-B-W312.pdf",
+  "header": [],
+  "rows": [
+   "S7L1D-K4 Wdg.312 - Technical Data Sheet",
+   "| Voltage Regulation | ± 0.5% | ± 0.25% | ± 0.25%",
+   "| Insulation System | H",
+   "| Voltage Star (V) | 380 | 400 | 415",
+   "| Weight Wound Stator | 2292kg | 2292kg",
+   "| Weight Wound Rotor | 2069kg | 1961kg",
+   "| Weight Complete Alternator | 5000kg | 4980kg",
+   "| Shipping weight in a Crate | 5250kg | 5230kg",
+   "| Packing Crate Size | 230 | x 115 x 155(cm) | 230 | x 115 x 155(cm)",
+   "| 3-phase | 2-phase L-L 1-phase L-N",
+   "| Efficiency (%) | 96.0 | 96.1 | 96.2",
+   "| Efficiency (%) | 96.1 | 96.2 | 96.2 | 96.2 | 96.1 | 96.2 | 96.2 | 96.3 | 96.2 | 96.2 | 96.3 | 96.3 | 96.2 | 96.3 | 96.3 | 96.4"
+  ]
  }
 ]
