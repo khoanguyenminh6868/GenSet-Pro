@@ -7,4 +7,4 @@
 - Thời gian chạy: gốc 2400 s (08:05 – 08:45 UTC), nhánh 2633 s (lượt hoàn chỉnh 10:33:56 – 11:17:51 UTC).
 - Lượt nhánh đầu tiên (từ 08:45) bị dừng giữa chừng khi phiên làm việc khởi động lại (log dừng ở 600 gói), nên chạy lại từ đầu với cùng bidhist; số liệu trên là của lượt chạy lại.
 - Tệp: `gop-goc.json.gz`, `gop-nhanh.json.gz` (chỉ số thông báo, khoá dòng, điểm, cờ). Không có bidhist, token hay chữ HSMT.
-- Bước 5: sẽ thử `create_trigger` một lần; kết quả ghi ở cuối tệp này nếu bị từ chối.
+- Bước 5: đã thử `create_trigger` một lần (đánh thức phiên điều phối) và bị từ chối (routine_bridge_target_other_session: phiên này không được dựng tác vụ đánh thức phiên khác). Không tìm đường khác.
