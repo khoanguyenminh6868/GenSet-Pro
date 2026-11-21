@@ -1822,15 +1822,15 @@
   // Read only for the table's engine records whose `engCell` is the record's engine, when the header cells named in `titles`
   // are word for word those (a re-crawl with another header lapses, noted) and the value has the key's shape.
   // S6-6 (Khoa 21/11/2026 "làm các cột còn lại"): "kWm 1500 rpm" / "kWm 1800 rpm" → two `engPower` figures, each with its own
-  // label (spec-norm takes the speed from the label: cond.rpm 1500 / 1800), so neither overwrites the other. NOT read:
-  // "cm3" (spec-norm reads the unit cc but has no cc → L formula; config-bot's majority reads a cc figure as BLOCK, so 224 cc
-  // values took the displacement majority away from QSK60-G4, TAD1650GE, 1506A-E88TAG4: waits for a decision on a cc → L formula),
+  // label (spec-norm takes the speed from the label: cond.rpm 1500 / 1800), so neither overwrites the other.
+  // S8-2 (Khoa 22/11/2026 "làm cc → L"): "cm3" → `disp`, label "cm3" as the header writes it; spec-norm reads the unit cc from
+  // the label and turns it into litres with l_from_cc of web/conversions.js (S8-1), so the figure votes in litres. NOT read:
   // "Aspiration" (cells "N" / "T", no legend on the pages, the shape `asp` asks for is not met) and "Cons. 70%" (the catalog has
   // fuel at 100 / 75 / 50 % load only). A dash cell ("--", "- - -") is no value.
   const COLUMN_SPECS = [
-    { supplierId: "tecnogen", n: [2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010], why: "điều phối 21/11/2026 (S6-1, S6-6)",
-      titles: [[0, 7, "Cylinder"], [0, 9, "kWm 1500 rpm"], [0, 10, "kWm 1800 rpm"], [1, 5, "Engine"]], engCell: 5,
-      specs: [["cyl", 7, "Cylinder"], ["engPower", 9, "kWm 1500 rpm"], ["engPower", 10, "kWm 1800 rpm"]] },
+    { supplierId: "tecnogen", n: [2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010], why: "điều phối 21/11/2026 (S6-1, S6-6); Khoa 22/11/2026 (S8-2)",
+      titles: [[0, 7, "Cylinder"], [0, 8, "cm3"], [0, 9, "kWm 1500 rpm"], [0, 10, "kWm 1800 rpm"], [1, 5, "Engine"]], engCell: 5,
+      specs: [["cyl", 7, "Cylinder"], ["disp", 8, "cm3"], ["engPower", 9, "kWm 1500 rpm"], ["engPower", 10, "kWm 1800 rpm"]] },
   ];
   function columnSpecs(s, list, note) {
     const ex = COLUMN_SPECS.filter((x) => x.supplierId === s.id);
@@ -1973,6 +1973,14 @@
       ["QSL9G4", "| QSL9G4 | 245 | 279 | 6 | 114X145 | 8.8 | 17.8:1 | 24 | 214 | 61 | 电喷 | 28.5 | 国三", ["compr"], "nguồn ghi 17.8:1, sheet Cummins không xác nhận", "Khoa 20/11/2026"],
       ["QSK60G7", "| QSK60G7 | 1615 | 1790 | 16 | 159X190 | 60.2 | 16.2:1 | 280 | 197 | 380 | 电喷 | 541 | N/A", ["compr"], "nguồn ghi 16.2:1, sheet Cummins không xác nhận", "Khoa 20/11/2026"],
     ].map(([model, line, keys, why, khoa]) => ({ supplierId: "yingtai-jiangsu", n, model, line, act: "dropspec", keys, khoa: khoa || "điều phối 20/11/2026 (cách #952 / #957)", why: `${why}: bỏ riêng số đó, giữ dòng` }))),
+    // tecnogen n2002 cột "cm3" (S8-2, điều phối 22/11/2026, cùng tiền lệ yingtai QSL9G7 ở trên): QSL9 G3 / G7 ghi "8800" cm³ = 8.8 L.
+    // QSL9G7: Cummins ghi 8.9 L (cummins.com "QSL9 G7 & G2"). QSL9G3: 114 × 145 × 6 = 8.88 L, 8.8 là cắt cụt; phiếu này tạo số đông MỚI 8.8
+    // (fdk-energy + tecnogen + yingtai ↔ aosif 8.9) làm gói đòi ≥ 8,9 L loại mọi dòng QSL9G3 của 10 NCC. QSL9G5 (8900) không đụng.
+    ...[["CU275TSX**", "| CU275TSX** | 275 | 250 | 317 | 288 | QSL9G3 | E | 6 | 8800 | 217 | 248 | 44,4 | 51,5 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 3380",
+      "nguồn ghi 8800 cm³ (8.8 L) cho QSL9 G3, hình học 114 × 145 × 6 = 8.88 L (8.8 là cắt cụt) và phiếu này tạo số đông mới 8.8 loại mọi dòng QSL9G3 ở gói đòi ≥ 8,9 L"],
+      ["CU331TSX**", "| CU331TSX** | 330 | 300 | 385 | 350 | QSL9G7 | E | 6 | 8800 | 260 | 300 | 50,3 | 59,7 | T | AUS7310 | ACP 7320 | 68 | 600 | 390 | 120 | 223 | 3680",
+      "nguồn ghi 8800 cm³ (8.8 L), Cummins ghi 8.9 L cho QSL9 G7"]].map(([genset, line, why]) => (
+      { supplierId: "tecnogen", n: 2002, genset, line, act: "dropspec", keys: ["disp"], khoa: "điều phối 22/11/2026 (S8-2)", why: `${why}: bỏ riêng dung tích, giữ dòng` })),
     // dropspec, Khoa 20/11/2026 ("9 dòng loại": the source itself writes a wrong figure; the live page was re-read the same day and
     // equals the saved page word for word, so it is the source, not the reader). No replacement figure is written: the source gives none.
     // aoke-yangzhou n129: 排量(L) "108" / "105" on 250 kW sets (the same table writes "14" and "12.88" for its other engines).
