@@ -1943,8 +1943,8 @@ export function candidates(cat, cap, hints0, { suppliers = [], origin = "all", c
         if (off) { score -= 600; ruled.push("compr"); why.push(`tỉ số nén ${[...new Set(off.map((f) => String(f.value).trim()))].join(" / ")}, HSMT ghi ${hints.compr}:1`); }
       }
       // NCC tự ghi nước sản xuất ngay trước mã động cơ ("India 4006-23TAG2A", kaihua n122; Khoa 21/11/2026): nước ngoài nhóm
-      // HSMT đòi thì loại. Không ghi thì không suy ra.
-      const placed = GROUP_ORIGIN.has(origin) && !madeOut ? placeInModel(e.model) : null;
+      // HSMT đòi thì loại. Không ghi thì không suy ra. Đọc từ ô của CHÍNH dòng, không từ khoá: khoá có thể gộp về mã gốc.
+      const placed = GROUP_ORIGIN.has(origin) && !madeOut ? placeInRow(e, u) : null;
       if (placed && !CAT.COUNTRY_GROUP[origin].includes(placed)) { score -= 600; ruled.push("made"); why.push(`NCC ghi động cơ sản xuất tại ${madeVi(placed)}, HSMT đòi ${GROUP_NAME[origin]}`); }
       if (ruled.length && !isNamed) { dropped.push({ e, u, ruled, src: srcOf, ...(NORM ? { normSkip } : {}) }); continue; }
       rows.push({ e, u, a, score, why, offers, rowCtrl, named: isNamed, maker, ruled, fuelOver, fuelNoLoad, ...(Object.keys(made).length ? { made } : {}), ...(NORM ? { normSkip } : {}) });
@@ -5300,6 +5300,15 @@ export function comprExactOf(r, hsmtCompr) {
 export const COMPR_SAME = new Map([["6M33G8D3/5", "6M33G825/5"], ["6M33G8D3/5(6M33G825/5)", "6M33G825/5"]]);
 // Nước NCC ghi ngay trước mã động cơ. Chỉ hai tiền tố có thật trong suppliers/cn (kaihua n122, soát mọi mã 21/11/2026).
 export const placeInModel = (model) => (/^india\s+\S/i.test(String(model || "").trim()) ? "IN" : /^uk\s+\S/i.test(String(model || "").trim()) ? "GB" : null);
+// Nước ghi trong ô động cơ của một dòng: ô "<nước> <mã>" mà mã đúng là động cơ của bản ghi (khoá có tiền tố hay đã gộp).
+export function placeInRow(e, u) {
+  const code = CAT.keyOf(String(e?.model || "").trim().replace(/^(india|uk)\s+/i, ""));
+  for (const c of CAT.cellsOf(u?.line || "")) {
+    const at = placeInModel(c);
+    if (at && CAT.keyOf(String(c).trim().replace(/^\S+\s+/, "")) === code) return at;
+  }
+  return null;
+}
 export function comprOff(facts, exact) {
   const list = (facts || []).filter((f) => f.key === "compr");
   if (!list.length) return null;

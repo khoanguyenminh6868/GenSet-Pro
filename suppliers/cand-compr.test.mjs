@@ -59,6 +59,17 @@ test("gói G7/EU: dòng NCC ghi India bị loại, dòng UK và dòng không ghi
   assert.deepEqual(r.dropped.map((d) => [d.u.supplierId, d.ruled]), [["in", ["made"]]]);
   assert.ok(ids(go("g20")).includes("in"));
 });
+test("India 4006-23TAG2A bị loại ở g7eu cả khi khoá có tiền tố lẫn khi khoá đã gộp về mã gốc", () => {
+  const rows = [sup("in", ["| i-1 | 750 | 600 | India 4006-23TAG2A | S5L1D-H41 | - |"]), sup("gb", ["| g-1 | 750 | 600 | UK 4006-23TAG2A | S5L1D-H41 | - |"]), sup("none", ["| n-1 | 750 | 600 | 4006-23TAG2A | S5L1D-H41 | - |"])];
+  const built = C.build(rows), bare = "4006-23TAG2A", key = C.keyOf(bare), mine = built.engines.filter((e) => C.keyOf(String(e.model).replace(/^(india|uk)\s+/i, "")) === key);
+  assert.equal(mine.length, 3, "fixture: ba khoá riêng trước khi gộp");
+  const merged = { ...built, engines: [...built.engines.filter((e) => !mine.includes(e)), { ...mine[0], key, model: bare, uses: mine.flatMap((e) => e.uses) }] };
+  for (const cat of [built, merged]) {
+    const r = candidates(cat, { value: 700, unit: "kVA" }, free("Điện áp 380 V"), { suppliers: rows, origin: "g7eu" });
+    assert.deepEqual(ids(r), ["gb", "none"]);
+    assert.deepEqual(r.dropped.map((d) => [d.u.supplierId, d.ruled]), [["in", ["made"]]]);
+  }
+});
 test("comprOff: nguồn mâu thuẫn, không đọc được hoặc không ghi thì không kết luận", () => {
   const f = (...v) => v.map((value) => ({ key: "compr", value }));
   assert.equal(comprOff(f("13.9:1", "13.0:1"), 14), null);
