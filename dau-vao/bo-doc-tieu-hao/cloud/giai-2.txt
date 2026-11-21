@@ -1,0 +1,30 @@
+Mất mới: 150 | có luật loại: 150 | chạy lại không thấy bị loại: 0 | không có bản ghi: 0
+Theo luật: [["fuel",44],["fuel,fuel75",27],["disp",24],["fuel,fuel50",15],["fuel,fuel75,fuel50",12],["fuel75",12],["maxDisp",9],["cyl",5],["fuel75,fuel50",2]]
+Theo NCC: [["longkai-power",102],["cgm-italia",10],["ade-power",7],["lees-power",6],["xinhengxin-fujian",5],["agg-fuzhou",4],["genmac",3],["voltgent",2],["mecca-power",2],["westinpower",1],["previa-ningde",1],["weichai-power",1],["yanan-power",1],["coelmo",1],["electra-molins",1],["koten-power",1],["landtop-fuzhou",1],["generatordieselchina",1]]
+Luật tiêu hao: số > ngưỡng 179 | ô đa mức 1 | cần xem 0
+
+Luật hình học, từng lượt + model:
+   8 IB2300162912#1 cỡ 2275: disp (minDisp 78, maxDisp -, minCyl - exact false) 12M55G2750/5
+   2 IB2300162912#1 cỡ 2275: disp (minDisp 78, maxDisp -, minCyl - exact false) 12M55G2550/5
+   3 IB2400275648#0 cỡ 30: disp (minDisp 3.3, maxDisp -, minCyl 4 exact false) 4M06G8D0/S
+   2 IB2400275648#0 cỡ 30: disp (minDisp 3.3, maxDisp -, minCyl 4 exact false) 4M06G6D0/S
+   3 IB2400299108#0 cỡ 50: disp (minDisp 2.6, maxDisp -, minCyl - exact false) 4M06G10D0/S
+   4 IB2400299108#2 cỡ 100: disp (minDisp 5.5, maxDisp -, minCyl - exact false) 4M10G6D0/S
+   2 IB2400375383#0 cỡ 150: maxDisp (minDisp -, maxDisp 7, minCyl - exact false) 6M16G2D0/S
+   1 IB2400375383#1 cỡ 300: maxDisp (minDisp -, maxDisp 8.8, minCyl - exact false) 6M21G2D0/S
+   1 IB2400433961#1 cỡ 1500: maxDisp (minDisp -, maxDisp 39.2, minCyl 12 exact false) 16M33G1400/6
+   2 IB2400448320#0 cỡ 150: maxDisp (minDisp -, maxDisp 7, minCyl - exact false) 6M16G2D0/S
+   1 IB2400448320#1 cỡ 300: maxDisp (minDisp -, maxDisp 8.8, minCyl - exact false) 6M21G2D0/S
+   1 IB2400602840#1 cỡ 800: cyl (minDisp -, maxDisp -, minCyl 12 exact false) SC33G1150D2
+   3 IB2400602840#1 cỡ 800: cyl (minDisp -, maxDisp -, minCyl 12 exact false) 8M33G770/6
+   1 IB2400602840#1 cỡ 800: cyl (minDisp -, maxDisp -, minCyl 12 exact false) 6M31G700/6
+   1 IB2500039578#1 cỡ 2500: maxDisp (minDisp -, maxDisp 60.2, minCyl 16 exact true) 16M55G3000/5
+   1 IB2500039578#1 cỡ 2500: maxDisp (minDisp -, maxDisp 60.2, minCyl 16 exact true) 16M55G3300/5
+   1 IB2600075436#0 cỡ 100: disp (minDisp 4.3, maxDisp -, minCyl 4 exact false) 4M10G6D0/S
+   1 IB2600112737#0 cỡ 100: disp (minDisp 4.3, maxDisp -, minCyl 4 exact false) 4M10G6D0/S
+
+Không tái lập:
+
+Đổi điểm: 8728 | +8k: 8515 | −300: 213 | +8k−300: 0 | chưa giải thích: 0 | dòng mất loại thông số: 0
+
+−300 trong các lượt chạy lại: 59 [["westinpower 2506C-E15TAG2 fuel=106 fuel75=81L / h fuel50=55L / h",15],["westinpower 404D-22G fuel=5.3 fuel75=4.0 fuel50=2.9",9],["westinpower 404A-22G1 fuel=5.3 fuel75=4.0 fuel50=2.9",9],["westinpower 4016TAG2A fuel=434 fuel75=316L fuel50=210L",6],["westinpower S16R-PTAA2-C fuel=440",6],["westinpower 2506C-E15TAG1 fuel=99 fuel75=73L / h fuel50=51L / h",6],["westinpower 4016-61TRG3 fuel=470 fuel75=344L fuel50=234L",4],["westinpower 1206A-E70TTAG3 fuel=56.9 fuel75=41.5L fuel50=28.1L",3],["westinpower 1706A-E93TAG2 fuel=78.4 fuel75=79.2L fuel50=82.1L",1]]
