@@ -63,6 +63,42 @@ Hệ quả: các ngưỡng này chặt hơn HSMT, nên #1036 sẽ trừ 300 đi�
 ## Danh sách soát sau của #998 (không chặn #998)
 `nghiem-thu/ma-dong-co-trung-1-soat-sau.tsv`: các nhóm chỉ một NCC ghi số, và lượt chưa rõ ngưỡng (IB2500291421#1). Số "20 dòng chưa rõ" gồm dòng của lượt này và phần dòng còn lại của IB2300162912#0 (dòng có thêm luật bố trí); đo lại #998 sau khi #1036 merge sẽ cho số mới.
 
+## Giải thích toàn bộ đo cloud #1036 (`2b199862` ↔ `ae205b52`, kết quả `do-gop-nguong-ket-qua` 2e537f55; 21/11/2026)
+
+**Kết luận: CHƯA merge được. 6 lượt còn sai ngưỡng** (4 mất ngưỡng thật, 2 bỏ qua dung sai ±). 127 / 133 lượt đổi tập không có ca sai ngưỡng.
+
+Cách đo: chạy lại `candidates` của 159 lượt đổi ngưỡng ở cả hai bản, ghi lý do loại từng dòng (`giai-thich-dump.mjs`, `hieu-luc.mjs`, `giai-thich-so.mjs`). **Tái lập khớp cloud 159 / 159** (cùng tập `all`, cùng `top`). Danh sách: `dau-vao/nguong-hsmt/giai-thich-133-luot.tsv`, `giai-thich-top5.txt`.
+
+- **159 lượt đổi ngưỡng, 133 đổi tập.** 26 lượt không đổi: 4 lượt `plausible` bỏ ngưỡng nên ngưỡng hiệu lực như cũ; 22 lượt ngưỡng hiệu lực đổi nhưng không dòng nào đổi trạng thái.
+- **20.262 lượt-dòng ra `all`, 6.034 vào: 100% quy được về một ngưỡng đã đổi của đúng lượt đó** (0 dòng không giải thích).
+
+| Nhãn (một dòng có thể mang nhiều nhãn) | Ra | Vào |
+|---|---:|---:|
+| Dung tích tối đa | 7.523 | 1.950 |
+| Dung tích tối thiểu | 4.915 | 1.274 |
+| Công suất liên tục | 3.925 | 883 |
+| Số xi lanh | 3.791 | 1.728 |
+| Tiêu hao 100% | 1.779 | 389 |
+| Tiêu hao 75% | 200 | 40 |
+| Tiêu hao 50% | 61 | 4 |
+
+- **Dòng VÀO:** do ngưỡng của cỡ khác không còn áp nhầm (đúng), hoặc tiêu hao 75 / 50% đọc lại đúng mức tải. Trừ 904 dòng của 4 ca mất ngưỡng dưới đây.
+- **Nguồn:** đã đọc thêm mọi ngưỡng công suất liên tục đổi (22 lượt) và mọi ngưỡng bị bỏ / nới (`soat-vao.mjs`); dung tích, xi lanh, tiêu hao đã đọc ở các mục trên.
+- **118 dòng hạng 1–5 gốc ra khỏi top 30:** 97 bị loại, 21 bị đẩy. **117 đúng, 1 oan** (IB2400377239#0 sanq-power 2206CE13TAG2, bị đẩy bởi các dòng lọt do ca 1). Phần "đúng" so ngưỡng HSMT với số catalog đang dùng; không mở lại trang nguồn NCC của từng dòng. Vài dòng rớt sát ngưỡng theo luật "giữ chặt" của Khoa (5,88 < 5,9; 119 < 120 kVA).
+
+### 6 ca sai (đo bằng cách chạy lại với ngưỡng đúng theo chữ HSMT, `ca-oan.mjs`)
+
+| # | Lượt | HSMT ghi | Nhánh đọc | Hệ quả so với ngưỡng đúng |
+|---|---|---|---|---|
+| 1 | IB2400377239#0 | "Công suất liên tục tối thiểu 400 kVA" (dòng gắn "Tổ máy 450 kVA": một máy, code tách thành hai cỡ 400 / 450) | không có (main: 400) | 818 dòng lọt, 10 chỗ top 30 |
+| 2 | IB2300245748#2 | "≥ 12.5 ±0.5 kVA" | không có (main: 12), "own: disagree" do đọc cả "≥ 15 KVA" của đầu phát | 65 dòng lọt, 5 chỗ |
+| 3 | IB2300046353#1 | "dung tích > 1,950 lít" | không có (main: 1,95) | 16 dòng lọt, 2 chỗ |
+| 4 | IB2500403535#0 | "≥ 3 xilanh thẳng hàng" | không có (main: 3) | 5 dòng lọt, 1 chỗ |
+| 5 | IB2400125924#0 | "≥ 8.5 KVA ± 0.5" | 8,5 (đơn vị đứng giữa số và ± nên không trừ dung sai; "≥ 12.5 ±0.5" thì code ra 12) | 16 dòng loại oan, 3 chỗ |
+| 6 | IB2300293753#0 | "≤ 1,3 lít ± 5%" | 1,3 | 65 dòng loại oan, 8 chỗ |
+
+Tổng: 904 dòng lọt sai, 81 dòng loại oan, 29 chỗ top 30. Ca 6 giả định trần là 1,3 × 1,05 = 1,365 L: cách hiểu dung sai này cần Khoa xác nhận.
+
 ## Việc tiếp
-1. Đo cloud top 30 cho #1036.
+1. Điều phối quyết: sửa 6 ca trong #1036 (rồi đo lại) hay merge và sửa sau. Chưa sửa mã.
 2. Sau khi #1036 merge: gộp main vào #998, đo lại #998 toàn bộ.

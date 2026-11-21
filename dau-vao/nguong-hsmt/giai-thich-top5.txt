@@ -1,0 +1,204 @@
+
+=== IB2300032777#0 10 kW
+  #1 wintpower 3TNV82A-GGE | LOẠI cyl | 3 xi lanh < 4 HSMT yêu cầu
+
+=== IB2300046353#0 15 kVA
+  #3 sanq-power 403A-15G2 | LOẠI disp,cyl | dung tích 1.496 L < 1.95 L HSMT yêu cầu (số đông nhà cung cấp: 1.49 × 8, 1.131 × 1, 2.2 × 1); 3 xi lanh < 4 HSMT yêu cầu (số đông nhà cung cấp: 3 × 14, 4 × 2)
+  #4 jet-power 403A-15G2 | LOẠI disp,cyl | dung tích 1.496 L < 1.95 L HSMT yêu cầu (số đông nhà cung cấp: 1.49 × 8, 1.131 × 1, 2.2 × 1); 3 xi lanh < 4 HSMT yêu cầu (số đông nhà cung cấp: 3 × 14, 4 × 2)
+  #5 kaihua-genset 403A-15G2 | LOẠI disp,cyl | dung tích 1.496 L < 1.95 L HSMT yêu cầu (số đông nhà cung cấp: 1.49 × 8, 1.131 × 1, 2.2 × 1); 3 xi lanh < 4 HSMT yêu cầu (số đông nhà cung cấp: 3 × 14, 4 × 2)
+
+=== IB2300108940#0 10 kVA
+  #1 uleengen 403A-11G1 | LOẠI cyl | 3 xi lanh, HSMT ghi 2 xi lanh
+  #2 uleengen 403D-11G | LOẠI cyl | 3 xi lanh, HSMT ghi 2 xi lanh (số đông nhà cung cấp: 3 × 16, 4 × 1)
+  #3 kaihua-genset 403D-11G | LOẠI cyl | 3 xi lanh, HSMT ghi 2 xi lanh (số đông nhà cung cấp: 3 × 16, 4 × 1)
+  #4 fdk-energy 403D-11G | LOẠI cyl | 3 xi lanh, HSMT ghi 2 xi lanh (số đông nhà cung cấp: 3 × 16, 4 × 1)
+  #5 fdk-energy 403A-11G1 | LOẠI cyl | 3 xi lanh, HSMT ghi 2 xi lanh (số đông nhà cung cấp: 3 × 12, 4 × 1)
+
+=== IB2300108940#1 20 kVA
+  #1 jet-power V2003-T-E2BG-CHN-1/20.4KW | LOẠI disp | dung tích 1.999 L < 2.197 L HSMT yêu cầu
+  #2 jet-power 4TNV84T-GGE/19.1KW | LOẠI disp | dung tích 1.995 L < 2.197 L HSMT yêu cầu
+  #3 acepow-fuan 4DW9129DYFD10W | ĐẨY: hạng thô 265, dòng mới vào đứng trước 264; top có 0 dòng cùng động cơ, 3 dòng cùng NCC
+  #4 byc-power YCV25N35G20 | ĐẨY: hạng thô 267, dòng mới vào đứng trước 265; top có 0 dòng cùng động cơ, 0 dòng cùng NCC
+  #5 bobig-power 4DW9129DYFD10W | ĐẨY: hạng thô 270, dòng mới vào đứng trước 267; top có 0 dòng cùng động cơ, 0 dòng cùng NCC
+
+=== IB2300120176#0 12 kVA
+  #1 kaihua-genset 403D-11G | LOẠI prime | Prime 11 kVA / ? kW < 12 kVA HSMT yêu cầu
+  #3 hosem-power 403D-11G | LOẠI prime | Prime 11 kVA / ? kW < 12 kVA HSMT yêu cầu
+  #4 sanq-power 403D-11G | LOẠI prime | Prime 11 kVA / 8.8 kW < 12 kVA HSMT yêu cầu
+
+=== IB2300162912#0 750 kVA
+  #4 fdk-energy YC6C1070D31 | ĐẨY: hạng thô 99, dòng mới vào đứng trước 95; top có 1 dòng cùng động cơ, 4 dòng cùng NCC
+  #5 eastern-lion-fuan YC6C1020D31 | ĐẨY: hạng thô 132, dòng mới vào đứng trước 127; top có 2 dòng cùng động cơ, 0 dòng cùng NCC
+
+=== IB2300162912#1 2275 kVA
+  #2 longkai-power 12M55D2450E310 | LOẠI disp | dung tích 65.65 L < 78 L HSMT yêu cầu (số đông nhà cung cấp: 65.65 × 7)
+  #3 dingbo 16V4000G63 | LOẠI disp | dung tích 76.3 L < 78 L HSMT yêu cầu (số đông nhà cung cấp: 76.3 × 5)
+  #4 fdk-energy QSK50-G17 | LOẠI disp | dung tích 49.8 L < 78 L HSMT yêu cầu
+
+=== IB2300189145#0 120 kVA
+  #2 kaihua-genset D1146T | LOẠI prime | Prime 112.5 kVA / 90 kW < 120 kVA HSMT yêu cầu
+  #3 longkai-power D1146T | LOẠI prime | Prime 119 kVA / 95 kW < 120 kVA HSMT yêu cầu
+  #5 fdk-energy QSB5.9-30 | LOẠI prime | Prime 113 kVA / 90 kW < 120 kVA HSMT yêu cầu
+
+=== IB2300222010#0 15 kVA
+  #5 tecgen-fujian 4B3.9-G11 | LOẠI fuel | tiêu hao 5.7 L/h > 4.72 L/h HSMT cho phép
+
+=== IB2300236743#1 18 kVA
+  #1 sanq-power 403A-15G2 | LOẠI cyl | 3 xi lanh < 4 HSMT yêu cầu (số đông nhà cung cấp: 3 × 14, 4 × 2)
+  #2 fdk-energy 4B3.9-G11 | LOẠI maxDisp | dung tích 3.92 L > 2.8 L HSMT cho phép (số đông nhà cung cấp: 3.9 × 9)
+
+=== IB2300253227#0 100 kVA
+  #1 stone-power 6BT5.9-G2 | LOẠI disp | dung tích 5.88 L < 5.9 L HSMT yêu cầu (số đông nhà cung cấp: 5.88 × 17)
+  #2 stone-power 4BTA3.9-G11 | LOẠI disp,cyl | dung tích 3.9 L < 5.9 L HSMT yêu cầu (số đông nhà cung cấp: 3.9 × 11); 4 xi lanh < 6 HSMT yêu cầu (số đông nhà cung cấp: 4 × 19)
+  #3 tecgen-fujian 1104C-44TAG2 | LOẠI disp,cyl | dung tích 4.41 L < 5.9 L HSMT yêu cầu (số đông nhà cung cấp: 4.4 × 20, 12.6 × 1); 4 xi lanh < 6 HSMT yêu cầu (số đông nhà cung cấp: 4 × 25)
+  #4 sanq-power 1104C-44TAG2 | LOẠI disp,cyl | dung tích 4.41 L < 5.9 L HSMT yêu cầu (số đông nhà cung cấp: 4.4 × 20, 12.6 × 1); 4 xi lanh < 6 HSMT yêu cầu (số đông nhà cung cấp: 4 × 25)
+  #5 sanq-power 6BT5.9-G2 | LOẠI disp | dung tích 5.88 L < 5.9 L HSMT yêu cầu (số đông nhà cung cấp: 5.88 × 17)
+
+=== IB2300260615#1 2000 kVA
+  #1 longkai-power 20M33G2250/5 | ĐẨY: hạng thô 90, dòng mới vào đứng trước 89; top có 0 dòng cùng động cơ, 4 dòng cùng NCC
+  #2 longkai-power 20M33G2000/6 | ĐẨY: hạng thô 92, dòng mới vào đứng trước 90; top có 0 dòng cùng động cơ, 4 dòng cùng NCC
+  #3 kaihua-genset 20M33G2000/6 | ĐẨY: hạng thô 137, dòng mới vào đứng trước 134; top có 0 dòng cùng động cơ, 1 dòng cùng NCC
+  #4 longkai-power 20M33G2200/6 | ĐẨY: hạng thô 151, dòng mới vào đứng trước 147; top có 0 dòng cùng động cơ, 4 dòng cùng NCC
+  #5 longkai-power 12M55G2250/6 | ĐẨY: hạng thô 153, dòng mới vào đứng trước 148; top có 0 dòng cùng động cơ, 4 dòng cùng NCC
+
+=== IB2400058723#0 630 kVA
+  #5 powerco-systems 4006-23TAG2A | LOẠI maxDisp | dung tích 22.921 L > 19.6 L HSMT cho phép (số đông nhà cung cấp: 22.9 × 22)
+
+=== IB2400114476#1 45 kVA
+  #1 sanq-power 4TNV106GGE | ĐẨY: hạng thô 127, dòng mới vào đứng trước 126; top có 0 dòng cùng động cơ, 3 dòng cùng NCC
+  #2 wintpower 4TNV106GGE | ĐẨY: hạng thô 128, dòng mới vào đứng trước 126; top có 0 dòng cùng động cơ, 4 dòng cùng NCC
+  #3 kaihua-genset BF4M2012 | ĐẨY: hạng thô 157, dòng mới vào đứng trước 154; top có 0 dòng cùng động cơ, 1 dòng cùng NCC
+  #4 dingbo YC4D75D34 | ĐẨY: hạng thô 172, dòng mới vào đứng trước 166; top có 0 dòng cùng động cơ, 0 dòng cùng NCC
+  #5 uleengen F6L912 | ĐẨY: hạng thô 191, dòng mới vào đứng trước 184; top có 0 dòng cùng động cơ, 3 dòng cùng NCC
+
+=== IB2400186078#0 6 kVA
+  #3 wintpower 3TNM68-GGE | LOẠI prime | Prime 5 kVA / 4 kW < 6 kVA HSMT yêu cầu
+
+=== IB2400237184#0 53 kVA
+  #5 wintpower 4TNV98T-GGE | LOẠI disp | dung tích 3.318 L < 3.62 L HSMT yêu cầu
+
+=== IB2400265203#0 50 kVA
+  #5 sanq-power 1103A-33TG1 | LOẠI prime | Prime 45 kVA / 36 kW < 50 kVA HSMT yêu cầu
+
+=== IB2400265203#1 100 kVA
+  #3 stone-power 4BTA3.9-G11 | LOẠI prime | Prime 90 kVA / 72 kW < 100 kVA HSMT yêu cầu
+
+=== IB2400275648#0 30 kVA
+  #1 allam-power 1103A-33G | LOẠI cyl | 3 xi lanh < 4 HSMT yêu cầu (số đông nhà cung cấp: 3 × 26)
+  #2 powerco-systems 1103A-33G | LOẠI cyl | 3 xi lanh < 4 HSMT yêu cầu (số đông nhà cung cấp: 3 × 26)
+  #3 energy-gruppi 1103A-33G | LOẠI cyl | 3 xi lanh < 4 HSMT yêu cầu (số đông nhà cung cấp: 3 × 26)
+
+=== IB2400291063#0 12 kVA
+  #2 gb-power 403D-15G | LOẠI disp | dung tích 1.496 L < 1.8 L HSMT yêu cầu (số đông nhà cung cấp: 1.496 × 11, 2.2 × 1)
+  #3 kaihua-genset 403A-15G1 | LOẠI disp | dung tích 1.496 L < 1.8 L HSMT yêu cầu (số đông nhà cung cấp: 1.496 × 11, 1.131 × 1, 2.2 × 1)
+  #4 jet-power 403A-15G1 | LOẠI disp | dung tích 1.496 L < 1.8 L HSMT yêu cầu (số đông nhà cung cấp: 1.496 × 11, 1.131 × 1, 2.2 × 1)
+  #5 sanq-power 403D-15G | LOẠI disp | dung tích 1.496 L < 1.8 L HSMT yêu cầu (số đông nhà cung cấp: 1.496 × 11, 2.2 × 1)
+
+=== IB2400299108#0 50 kVA
+  #4 koten-power 4BTA39G2 | ĐẨY: hạng thô 5, dòng mới vào đứng trước 0; top có 3 dòng cùng động cơ, 0 dòng cùng NCC
+
+=== IB2400299108#1 60 kVA
+  #1 sanq-power 1103A-33TG2 | LOẠI disp | dung tích 3.3 L < 3.5 L HSMT yêu cầu (số đông nhà cung cấp: 3.3 × 19)
+
+=== IB2400299108#2 100 kVA
+  #2 stone-power 4BTA3.9-G11 | LOẠI disp | dung tích 3.9 L < 5.5 L HSMT yêu cầu (số đông nhà cung cấp: 3.9 × 11)
+  #3 tecgen-fujian 1104C-44TAG2 | LOẠI disp | dung tích 4.41 L < 5.5 L HSMT yêu cầu (số đông nhà cung cấp: 4.4 × 20, 12.6 × 1)
+  #4 sanq-power 1104C-44TAG2 | LOẠI disp | dung tích 4.41 L < 5.5 L HSMT yêu cầu (số đông nhà cung cấp: 4.4 × 20, 12.6 × 1)
+
+=== IB2400375383#1 300 kVA
+  #1 sanq-power NTA855-G1A | LOẠI maxDisp | dung tích 14 L > 8.8 L HSMT cho phép (số đông nhà cung cấp: 13 × 1, 14 × 12, 10.8 × 1)
+  #3 sanq-power 1506AE88TAG5 | ĐẨY: hạng thô 2, dòng mới vào đứng trước 0; top có 3 dòng cùng động cơ, 4 dòng cùng NCC
+  #4 uleengen MTAA11-G3 | LOẠI maxDisp | dung tích 10.8 L > 8.8 L HSMT cho phép (số đông nhà cung cấp: 11 × 2, 13 × 1, 14 × 1, 10.8 × 6)
+
+=== IB2400377239#0 400 kVA
+  #3 sanq-power 2206CE13TAG2 | ĐẨY: hạng thô 19, dòng mới vào đứng trước 12; top có 2 dòng cùng động cơ, 4 dòng cùng NCC
+
+=== IB2400433961#0 600 kVA
+  #1 stone-power KTA19-G3A | LOẠI prime | Prime 563 kVA / 450 kW < 600 kVA HSMT yêu cầu
+  #2 sanq-power 2506C-E15TAG2 | LOẠI prime | Prime 560 kVA / 450 kW < 600 kVA HSMT yêu cầu
+  #3 stone-power KTAA19-G5 | LOẠI prime | Prime 588 kVA / 470 kW < 600 kVA HSMT yêu cầu
+  #4 yongcai-elecmama KTAA19-G5 | LOẠI prime | Prime 550 kVA / 440 kW < 600 kVA HSMT yêu cầu
+  #5 sanq-power DP180LA | LOẠI prime | Prime 550 kVA / 440 kW < 600 kVA HSMT yêu cầu
+
+=== IB2400433961#1 1500 kVA
+  #3 fdk-energy YC12VC2070-D31 | LOẠI maxDisp | dung tích 79.17 L > 39.2 L HSMT cho phép (số đông nhà cung cấp: 79.17 × 7)
+  #4 uleengen KTA50-GS8 | LOẠI maxDisp | dung tích 50.3 L > 39.2 L HSMT cho phép (số đông nhà cung cấp: 50 × 17, 37.8 × 2)
+  #5 uleengen 4012-46TAG2A | LOẠI maxDisp | dung tích 45.842 L > 39.2 L HSMT cho phép (số đông nhà cung cấp: 45.8 × 23)
+
+=== IB2400448320#1 300 kVA
+  #1 sanq-power NTA855-G1A | LOẠI maxDisp | dung tích 14 L > 8.8 L HSMT cho phép (số đông nhà cung cấp: 13 × 1, 14 × 12, 10.8 × 1)
+  #3 sanq-power 1506AE88TAG5 | ĐẨY: hạng thô 2, dòng mới vào đứng trước 0; top có 3 dòng cùng động cơ, 4 dòng cùng NCC
+  #4 uleengen MTAA11-G3 | LOẠI maxDisp | dung tích 10.8 L > 8.8 L HSMT cho phép (số đông nhà cung cấp: 11 × 2, 13 × 1, 14 × 1, 10.8 × 6)
+
+=== IB2400459339#0 50 kW
+  #1 huali-shandong WP4.1D66E200 | LOẠI disp | dung tích 4.087 L < 4.3 L HSMT yêu cầu (số đông nhà cung cấp: 4.08 × 7, 4.8 × 1, 4.5 × 1)
+  #2 uleengen WP4.1D66E200 | LOẠI disp | dung tích 4.087 L < 4.3 L HSMT yêu cầu (số đông nhà cung cấp: 4.08 × 7, 4.8 × 1, 4.5 × 1)
+  #3 sanq-power 1103A-33TG2 | LOẠI disp | dung tích 3.3 L < 4.3 L HSMT yêu cầu (số đông nhà cung cấp: 3.3 × 19)
+  #4 stone-power 4BTA3.9-G2 | LOẠI disp | dung tích 3.92 L < 4.3 L HSMT yêu cầu (số đông nhà cung cấp: 3.9 × 16)
+
+=== IB2400459339#1 75 kW
+  #1 stone-power 4BTA3.9-G11 | LOẠI disp | dung tích 3.9 L < 4.5 L HSMT yêu cầu (số đông nhà cung cấp: 3.9 × 11)
+  #2 sanq-power 1104C-44TAG1 | LOẠI disp | dung tích 4.41 L < 4.5 L HSMT yêu cầu (số đông nhà cung cấp: 4.4 × 7)
+  #3 sanq-power 1104A-44TG2 | LOẠI disp | dung tích 4.4 L < 4.5 L HSMT yêu cầu (số đông nhà cung cấp: 4.4 × 18)
+  #4 fdk-energy SC4H115D2 | LOẠI disp | dung tích 4.3 L < 4.5 L HSMT yêu cầu (số đông nhà cung cấp: 4.3 × 15)
+  #5 fdk-energy 4HTAA4.3-G33 | LOẠI disp | dung tích 4.3 L < 4.5 L HSMT yêu cầu (số đông nhà cung cấp: 4.3 × 4)
+
+=== IB2400487460#1 40 kVA
+  #5 longkai-power WP23D48E200 | ĐẨY: hạng thô 57, dòng mới vào đứng trước 50; top có 2 dòng cùng động cơ, 4 dòng cùng NCC
+
+=== IB2400602840#1 800 kVA
+  #2 uleengen 4006-23TAG3A | LOẠI cyl | 6 xi lanh < 12 HSMT yêu cầu (số đông nhà cung cấp: 6 × 27)
+  #4 fdk-energy 6KTAA25-G31 | LOẠI cyl | 6 xi lanh < 12 HSMT yêu cầu (số đông nhà cung cấp: 6 × 8)
+  #5 fdk-energy YC6TD1000-D30 | LOẠI cyl,prime | 6 xi lanh < 12 HSMT yêu cầu (số đông nhà cung cấp: 6 × 8); Prime 750 kVA / 600 kW < 800 kVA HSMT yêu cầu
+
+=== IB2500089757#0 30 kVA
+  #1 fdk-energy YC4V45Z-D20 | LOẠI disp | dung tích 2.5 L < 2.54 L HSMT yêu cầu (số đông nhà cung cấp: 2.5 × 3)
+  #2 kaihua-genset 1103A-33G | LOẠI cyl | 3 xi lanh < 4 HSMT yêu cầu (số đông nhà cung cấp: 3 × 26)
+  #3 kaihua-genset 404D-22TG | LOẠI disp | dung tích 2.216 L < 2.54 L HSMT yêu cầu (số đông nhà cung cấp: 22 × 1, 2.2 × 9)
+  #4 fdk-energy WP2.3D33E200 | LOẠI disp | dung tích 2.289 L < 2.54 L HSMT yêu cầu (số đông nhà cung cấp: 2.289 × 8, 2.5 × 1)
+  #5 uleengen WP2.3D33E200 | LOẠI disp | dung tích 2.289 L < 2.54 L HSMT yêu cầu (số đông nhà cung cấp: 2.289 × 8, 2.5 × 1)
+
+=== IB2500089757#1 100 kVA
+  #2 tecgen-fujian 1104C-44TAG2 | LOẠI disp | dung tích 4.41 L < 4.837 L HSMT yêu cầu (số đông nhà cung cấp: 4.4 × 20, 12.6 × 1)
+  #3 sanq-power 1104C-44TAG2 | LOẠI disp | dung tích 4.41 L < 4.837 L HSMT yêu cầu (số đông nhà cung cấp: 4.4 × 20, 12.6 × 1)
+  #5 jet-power 1104C-44TAG2 | LOẠI disp | dung tích 4.41 L < 4.837 L HSMT yêu cầu (số đông nhà cung cấp: 4.4 × 20, 12.6 × 1)
+
+=== IB2500385135#0 10.5 kVA
+  #2 wintpower 3TNV88GGE | ĐẨY: hạng thô 56, dòng mới vào đứng trước 54; top có 2 dòng cùng động cơ, 4 dòng cùng NCC
+
+=== IB2500460613#0 8.5 kVA
+  #1 genmac 403A-11G1 | LOẠI disp | dung tích 1.131 L < 1.8 L HSMT yêu cầu (số đông nhà cung cấp: 1.13 × 8, 1.1 × 2, 2.2 × 1)
+  #2 genmac 403D-11G | LOẠI disp | dung tích 1.131 L < 1.8 L HSMT yêu cầu
+  #3 powerco-systems 403A-11G1 | LOẠI disp | dung tích 1.131 L < 1.8 L HSMT yêu cầu (số đông nhà cung cấp: 1.13 × 8, 1.1 × 2, 2.2 × 1)
+  #4 elcos 403A-11G1 | LOẠI disp | dung tích 1.131 L < 1.8 L HSMT yêu cầu (số đông nhà cung cấp: 1.13 × 8, 1.1 × 2, 2.2 × 1)
+  #5 aj-power 403D-15G | LOẠI disp | dung tích 1.496 L < 1.8 L HSMT yêu cầu (số đông nhà cung cấp: 1.496 × 11, 2.2 × 1)
+
+=== IB2500531255#0 15 kVA
+  #5 genmac 403A-15G2 | LOẠI disp,cyl | dung tích 1.496 L < 2.3 L HSMT yêu cầu (số đông nhà cung cấp: 1.49 × 9, 1.131 × 1, 2.2 × 1); 3 xi lanh < 4 HSMT yêu cầu (số đông nhà cung cấp: 3 × 14, 4 × 2)
+
+=== IB2600075436#0 100 kVA
+  #2 genmac 4M10G110/5 | LOẠI disp | dung tích 4.088 L < 4.3 L HSMT yêu cầu
+
+=== IB2600075436#2 200 kVA
+  #1 genmac 1106A-70TAG4 | LOẠI disp | dung tích 7.01 L < 8.8 L HSMT yêu cầu (số đông nhà cung cấp: 7 × 19)
+  #2 allam-power 1106A-70TAG4 | LOẠI disp | dung tích 7.01 L < 8.8 L HSMT yêu cầu (số đông nhà cung cấp: 7 × 19)
+  #3 energy-gruppi 1106A-70TAG4 | LOẠI disp | dung tích 7.01 L < 8.8 L HSMT yêu cầu (số đông nhà cung cấp: 7 × 19)
+  #4 powerco-systems 1206A-E70TTAG2 | LOẠI disp | dung tích 7.01 L < 8.8 L HSMT yêu cầu (số đông nhà cung cấp: 7 × 6)
+
+=== IB2600112737#0 100 kVA
+  #2 genmac 4M10G110/5 | LOẠI disp | dung tích 4.088 L < 4.3 L HSMT yêu cầu
+
+=== IB2600112737#2 200 kVA
+  #1 genmac 1106A-70TAG4 | LOẠI disp | dung tích 7.01 L < 8.8 L HSMT yêu cầu (số đông nhà cung cấp: 7 × 19)
+  #2 allam-power 1106A-70TAG4 | LOẠI disp | dung tích 7.01 L < 8.8 L HSMT yêu cầu (số đông nhà cung cấp: 7 × 19)
+  #3 energy-gruppi 1106A-70TAG4 | LOẠI disp | dung tích 7.01 L < 8.8 L HSMT yêu cầu (số đông nhà cung cấp: 7 × 19)
+  #4 powerco-systems 1206A-E70TTAG2 | LOẠI disp | dung tích 7.01 L < 8.8 L HSMT yêu cầu (số đông nhà cung cấp: 7 × 6)
+
+=== IB2600327799#2 200 kVA
+  #1 genmac 1106A-70TAG4 | LOẠI disp | dung tích 7.01 L < 8.8 L HSMT yêu cầu (số đông nhà cung cấp: 7 × 19)
+  #2 allam-power 1106A-70TAG4 | LOẠI disp | dung tích 7.01 L < 8.8 L HSMT yêu cầu (số đông nhà cung cấp: 7 × 19)
+  #3 energy-gruppi 1106A-70TAG4 | LOẠI disp | dung tích 7.01 L < 8.8 L HSMT yêu cầu (số đông nhà cung cấp: 7 × 19)
+  #4 powerco-systems 1206A-E70TTAG2 | LOẠI disp | dung tích 7.01 L < 8.8 L HSMT yêu cầu (số đông nhà cung cấp: 7 × 6)
+
+=== IB2600562009#1 50 kVA
+  #5 sanq-power 1103A-33TG1 | LOẠI prime | Prime 45 kVA / 36 kW < 50 kVA HSMT yêu cầu
