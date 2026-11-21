@@ -7,6 +7,9 @@ Viết gọn lại 13/11/2026 (sáng, giờ VN). Cập nhật 16/11: #786 (nối
 ## Đang chạy
 | Việc | Session (id để báo về / hỏi) | Model | Chờ gì |
 |---|---|---|---|
+| S1 sửa số dòng lẻ (`ROW_EXCEPTIONS`; `wt-sua-so-le`, `sua-so-le-1.md`) | `session_011tAj4PKqvTNb6J1EujUBVg` (giao 21/11 01:22Z) | Sonnet | PR draft → điều phối kiểm + đo cloud |
+| S2 đọc mã (`web/catalog.js`; `wt-doc-ma-2`, `doc-ma-2-1.md`) | `session_011tAj4RJTNrRgrq7DGnUisk` | Opus | PR draft → kiểm + đo cloud; merge xong thì mở S4 |
+| S3 thứ tự + hãng (`config-bot.mjs`; `wt-thu-tu-hang`, `thu-tu-hang-1.md`) | `session_011tAj4Qxy7o1Prwh1naQT8a` | Sonnet | PR draft → kiểm + đo cloud |
 
 ## Chưa giao
 | Việc | Ghi chú | Model |
