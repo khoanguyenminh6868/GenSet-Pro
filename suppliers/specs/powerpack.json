@@ -8,6 +8,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 900 kVA / 720 kW | 1000 kVA / 800 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 12M26G1000/5",
    "| No. of Cylinders | | 12",
@@ -26,7 +27,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 870",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 195,5",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 146,5",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 100,8"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 100,8",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 1000 Kva"
   ]
  },
  {
@@ -38,6 +55,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 100 kVA / 80 kW | 110 kVA / 88 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 4M10G6D0",
    "| No. of Cylinders | | 4",
@@ -56,7 +74,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 96",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 21,3",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 16",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 10,6"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 10,6",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 110 Kva"
   ]
  },
  {
@@ -68,6 +102,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 1000 kVA / 800 kW | 1100 kVA / 880 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 12M26G1100/5",
    "| No. of Cylinders | | 12",
@@ -86,7 +121,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 941",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 207,1",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 155,3",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 106,6"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 106,6",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 1100 Kva"
   ]
  },
  {
@@ -98,6 +149,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 1150 kVA / 920 kW | 1250 kVA / 1000 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 12M33G1250/5",
    "| No. of Cylinders | | 12",
@@ -116,7 +168,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 1051",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 236,2",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 175",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 119,5"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 119,5",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 1250 Kva"
   ]
  },
  {
@@ -128,6 +196,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 1250 kVA / 1000 kW | 1400 kVA / 1120 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 12M33G1400/5",
    "| No. of Cylinders | | 12",
@@ -146,7 +215,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 1210",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 258,6",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 190,7",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 129,2"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 129,2",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 1400 Kva"
   ]
  },
  {
@@ -158,6 +243,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 135 kVA / 108 kW | 150 kVA / 120 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 6M11G150",
    "| No. of Cylinders | | 6",
@@ -176,7 +262,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 127",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 30,2",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 23",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 15,9"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 15,9",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 150 Kva"
   ]
  },
  {
@@ -188,6 +290,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 1375 kVA / 1100 kW | 1500 kVA / 1200 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 12M33G1500/5",
    "| No. of Cylinders | | 12",
@@ -206,7 +309,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 1320",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 296,9",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 214,4",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 146,2"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 146,2",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 1500 Kva"
   ]
  },
  {
@@ -218,6 +337,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 150 kVA / 120 kW | 165 kVA / 132 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 6M11G4D0",
    "| No. of Cylinders | | 6",
@@ -236,7 +356,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 147",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 32,6",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 24,6",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 16,7"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 16,7",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 165 Kva"
   ]
  },
  {
@@ -248,6 +384,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 1500 kVA / 1200 kW | 1650 kVA / 1320 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 12M33G1650/5",
    "| No. of Cylinders | | 12",
@@ -266,7 +403,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 1450",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 324",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 234,2",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 156,1"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 156,1",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 1650 Kva"
   ]
  },
  {
@@ -278,6 +431,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 1750 kVA / 1400 kW | 1900 kVA / 1520 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 16M33G1900/5",
    "| No. of Cylinders | | 16",
@@ -296,7 +450,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 1680",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 364,3",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 265,4",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 179,7"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 179,7",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 1950 Kva"
   ]
  },
  {
@@ -308,6 +478,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 18 kVA / 14,4 kW | 20 kVA / 16 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 4M06G2D0/S",
    "| No. of Cylinders | | 4",
@@ -326,7 +497,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 20",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 4,7",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 3,6",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 2,6"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 2,6",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 20 Kva"
   ]
  },
  {
@@ -338,6 +525,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 1830 kVA / 1464 kW | 2000 kVA / 1600 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 16M33G2000/5",
    "| No. of Cylinders | | 16",
@@ -356,7 +544,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 1800",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 401",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 290,7",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 194,7"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 194,7",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 2100 Kva"
   ]
  },
  {
@@ -368,6 +572,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 200 kVA / 160 kW | 220 kVA / 176 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 6M16G2D0/S",
    "| No. of Cylinders | | 6",
@@ -386,7 +591,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 191",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 43,1",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 32,4",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 22,4"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 22,4",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 220 Kva"
   ]
  },
  {
@@ -398,6 +619,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 2050 kVA / 1640 kW | 2250 kVA / 1800 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 16M33G2250/5",
    "| No. of Cylinders | | 16",
@@ -416,7 +638,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 1980",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 428,6",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 311,3",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 208,8"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 208,8",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 2300 Kva"
   ]
  },
  {
@@ -428,6 +666,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 23 kVA / 18,4 kW | 25 kVA / 20 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 4M06G4D0",
    "| No. of Cylinders | | 4",
@@ -446,7 +685,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 25",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 6,1",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 4,5",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 3,2"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 3,2",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 25 Kva"
   ]
  },
  {
@@ -458,6 +713,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 230 kVA / 184 kW | 250 kVA / 200 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 6M16G4D0/S",
    "| No. of Cylinders | | 6",
@@ -476,7 +732,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 225",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 50,9",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 38",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 25,8"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 25,8",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 250 Kva"
   ]
  },
  {
@@ -488,6 +760,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 2250 kVA / 1800 kW | 2500 kVA / 2000 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 20M33G2500/5",
    "| No. of Cylinders | | 20",
@@ -506,7 +779,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 2210",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 466,4",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 360,7",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 240,5"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 240,5",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 2600 Kva"
   ]
  },
  {
@@ -518,6 +807,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 250 kVA / 200 kW | 275 kVA / 220 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 6M16G6D0/S",
    "| No. of Cylinders | | 6",
@@ -536,7 +826,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 251",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 56,9",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 42,2",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 28,3"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 28,3",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 275 Kva"
   ]
  },
  {
@@ -548,6 +854,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 2500 kVA / 2000 kW | 2750 kVA / 2200 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 12M55G2750/5",
    "| No. of Cylinders | | 12",
@@ -566,7 +873,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 2450",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 513,6",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 381,3",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 263,3"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 263,3",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 2750 Kva"
   ]
  },
  {
@@ -578,6 +901,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 32 kVA / 25,6 kW | 35 kVA / 28 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 4M06G6D0",
    "| No. of Cylinders | | 4",
@@ -596,7 +920,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 32",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 7,6",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 5,7",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 4"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 4",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 35 Kva"
   ]
  },
  {
@@ -608,6 +948,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 320 kVA / 256 kW | 350 kVA / 280 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 6M16G350/5",
    "| No. of Cylinders | | 6",
@@ -626,7 +967,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 305",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 70,5",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 52,3",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 35,4"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 35,4",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 350 Kva"
   ]
  },
  {
@@ -638,6 +995,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 360 kVA / 288 kW | 400 kVA / 320 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 6M21G400/5",
    "| No. of Cylinders | | 6",
@@ -656,7 +1014,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 362",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 82,1",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 60,7",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 41"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 41",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 400 Kva"
   ]
  },
  {
@@ -668,6 +1042,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 40 kVA / 32 kW | 44 kVA / 35 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 4M06G8D0",
    "| No. of Cylinders | | 4",
@@ -686,7 +1061,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 40",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 9,5",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 7",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 4,7"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 4,7",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 44 Kva"
   ]
  },
  {
@@ -698,6 +1089,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 400 kVA / 320 kW | 440 kVA / 352 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 6M21G440/5",
    "| No. of Cylinders | | 6",
@@ -716,7 +1108,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 382",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 85,5",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 63,5",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 43,2"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 43,2",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 450 Kva"
   ]
  },
  {
@@ -728,6 +1136,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 45 kVA / 36 kW | 50 kVA / 40 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 4M06G50/5",
    "| No. of Cylinders | | 4",
@@ -746,7 +1155,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 47",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 10,7",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 8",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 5,4"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 5,4",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 55 Kva"
   ]
  },
  {
@@ -758,6 +1183,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 450 kVA / 360 kW | 500 kVA / 400 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 6M21G500/5",
    "| No. of Cylinders | | 6",
@@ -776,7 +1202,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 430",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 95,9",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 69,6",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 46,6"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 46,6",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 500 Kva"
   ]
  },
  {
@@ -788,6 +1230,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 50 kVA / 40 kW | 55 kVA / 44 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 4M10G10D0/S",
    "| No. of Cylinders | | 4",
@@ -806,7 +1249,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 53",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 11,9",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 8,9",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 6"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 6",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 55 Kva"
   ]
  },
  {
@@ -818,6 +1277,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 500 kVA / 400 kW | 550 kVA / 440 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 6M21G550/5",
    "| No. of Cylinders | | 6",
@@ -836,7 +1296,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 476",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 109,5",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 75,3",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 51"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 51",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 550 Kva"
   ]
  },
  {
@@ -848,6 +1324,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 650 kVA / 520 kW | 715 kVA / 572 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 6M33G715/5",
    "| No. of Cylinders | | 6",
@@ -866,7 +1343,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 608",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 136,3",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 100",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 67,1"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 67,1",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 715 Kva"
   ]
  },
  {
@@ -878,6 +1371,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 65 kVA / 52 kW | 72 kVA / 58 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 4M10G2D0",
    "| No. of Cylinders | | 4",
@@ -896,7 +1390,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 63",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 15",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 11,1",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 7,7"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 7,7",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 75 Kva"
   ]
  },
  {
@@ -908,6 +1418,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 680 kVA / 544 kW | 750 kVA / 600 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 6M33G750/5",
    "| No. of Cylinders | | 6",
@@ -926,7 +1437,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 645",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 151,1",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 111,2",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 75,5"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 75,5",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 750 Kva"
   ]
  },
  {
@@ -938,6 +1465,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 750 kVA / 600 kW | 825 kVA / 660 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 6M33G825/5",
    "| No. of Cylinders | | 6",
@@ -956,7 +1484,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 700",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 159,5",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 114,8",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 77,4"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 77,4",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 825 Kva"
   ]
  },
  {
@@ -968,6 +1512,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 80 kVA / 64 kW | 88 kVA / 70 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 4M10G4D0",
    "| No. of Cylinders | | 4",
@@ -986,7 +1531,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 77",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 18,8",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 13,5",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 9,1"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 9,1",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 88 Kva"
   ]
  },
  {
@@ -998,6 +1559,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 800 kVA / 640 kW | 900 kVA / 720 kW",
+   "| Engine Technical Data",
    "| Make | | BAUDOUIN",
    "| Model | | 12M26G900/5",
    "| No. of Cylinders | | 12",
@@ -1016,7 +1578,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 761",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 173,7",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 133,1",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 90,8"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 90,8",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 900 Kva"
   ]
  },
  {
@@ -1028,6 +1606,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 100 kVA / 80 kW | 110 kVA / 88 kW",
+   "| Engine Technical Data",
    "| Make | | FPT IVECO",
    "| Model | | NEF45TM2A.S500",
    "| No. of Cylinders | | 4",
@@ -1046,7 +1625,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 96",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 22",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 16,2",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 11"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 11",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 110 Kva"
   ]
  },
  {
@@ -1058,6 +1653,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 123 kVA / 98 kW | 135 kVA / 108 kW",
+   "| Engine Technical Data",
    "| Make | | FPT IVECO",
    "| Model | | NEF45TM3.S500",
    "| No. of Cylinders | | 4",
@@ -1076,7 +1672,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 118",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 27,6",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 21,6",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 14,4"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 14,4",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 135 Kva"
   ]
  },
  {
@@ -1088,6 +1700,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 170 kVA / 136 kW | 187 kVA / 150 kW",
+   "| Engine Technical Data",
    "| Make | | FPT IVECO",
    "| Model | | NEF67TM4.S500",
    "| No. of Cylinders | | 6",
@@ -1106,7 +1719,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 165",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 36,6",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 29,4",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 18"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 18",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 187 Kva"
   ]
  },
  {
@@ -1118,6 +1747,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 20 kVA / 16 kW | 22 kVA / 17,6 kW",
+   "| Engine Technical Data",
    "| Make | | FPT IVECO",
    "| Model | | R24MAFS01.23A01",
    "| No. of Cylinders | | 4",
@@ -1136,7 +1766,23 @@
    "| Gross Engine Power (Standby 50 Hz) | kWm | 23",
    "| Fuel Consumption 100% 50 Hz | lt/h | 6,3",
    "| Fuel Consumption 75% 50 Hz | lt/h | 5,1",
-   "| Fuel Consumption 50% 50 Hz | lt/h | 3,7"
+   "| Fuel Consumption 50% 50 Hz | lt/h | 3,7",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage Regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <1,5%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 22 kVA"
   ]
  },
  {
@@ -1148,6 +1794,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 200 kVA / 160 kW | 220 kVA / 176 kW",
+   "| Engine Technical Data",
    "| Make | | FPT IVECO",
    "| Model | | NEF67TM7.S502",
    "| No. of Cylinders | | 6",
@@ -1166,7 +1813,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 195",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 38,3",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 33,9",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 21,8"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 21,8",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 220 Kva"
   ]
  },
  {
@@ -1178,6 +1841,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 250 kVA / 200 kW | 275 kVA / 220 kW",
+   "| Engine Technical Data",
    "| Make | | FPT IVECO",
    "| Model | | NEF67TE8P.S550",
    "| No. of Cylinders | | 6",
@@ -1196,7 +1860,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 240",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 51,5",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 41,2",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 26,2"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 26,2",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 275 Kva"
   ]
  },
  {
@@ -1208,6 +1888,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 30 kVA / 24 kW | 33 kVA / 26,4 kW",
+   "| Engine Technical Data",
    "| Make | | FPT IVECO",
    "| Model | | R24MSFS01.31A01",
    "| No. of Cylinders | | 4",
@@ -1226,7 +1907,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 31,1",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 7,8",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 5,9",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 3,9"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 3,9",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 33 Kva"
   ]
  },
  {
@@ -1238,6 +1935,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 300 kVA / 240 kW | 330 kVA / 264 kW",
+   "| Engine Technical Data",
    "| Make | | FPT IVECO",
    "| Model | | CURSOR87TE4.S550",
    "| No. of Cylinders | | 6",
@@ -1256,7 +1954,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 292",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 68,6",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 55,6",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 35,6"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 35,6",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 330 Kva"
   ]
  },
  {
@@ -1268,6 +1982,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 350 kVA / 280 kW | 385 kVA / 308 kW",
+   "| Engine Technical Data",
    "| Make | | FPT IVECO",
    "| Model | | CURSOR13TE2A.S551",
    "| No. of Cylinders | | 6",
@@ -1286,7 +2001,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 330",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 70",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 57,3",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 38,8"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 38,8",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 385 Kva"
   ]
  },
  {
@@ -1298,6 +2029,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 40 kVA / 32 kW | 44 kVA / 35,2 kW",
+   "| Engine Technical Data",
    "| Make | | FPT IVECO",
    "| Model | | R24MSFS01.40A01",
    "| No. of Cylinders | | 4",
@@ -1316,7 +2048,23 @@
    "| Gross Engine Power (Standby 50 Hz) | kWm | 39,6",
    "| Fuel Consumption 100% 50 Hz | lt/h | 9,9",
    "| Fuel Consumption 75% 50 Hz | lt/h | 8,0",
-   "| Fuel Consumption 50% 50 Hz | lt/h | 5,8"
+   "| Fuel Consumption 50% 50 Hz | lt/h | 5,8",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage Regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <1,5%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 44 kVA"
   ]
  },
  {
@@ -1328,6 +2076,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 400 kVA / 320 kW | 440 kVA / 352 kW",
+   "| Engine Technical Data",
    "| Make | | FPT IVECO",
    "| Model | | CURSOR13TE3A.S551",
    "| No. of Cylinders | | 6",
@@ -1346,7 +2095,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 387",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 85,8",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 70,4",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 42,8"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 42,8",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 440 Kva"
   ]
  },
  {
@@ -1358,6 +2123,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 450 kVA / 360 kW | 500 kVA / 400 kW",
+   "| Engine Technical Data",
    "| Make | | FPT IVECO",
    "| Model | | CR13TE6W.S550",
    "| No. of Cylinders | | 6",
@@ -1376,7 +2142,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 414",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 89,9",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 72,5",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 51,8"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 51,8",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 500 Kva"
   ]
  },
  {
@@ -1388,6 +2170,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 50 kVA / 40 kW | 55 kVA / 44 kW",
+   "| Engine Technical Data",
    "| Make | | FPT IVECO",
    "| Model | | R38MSNS01.55A02",
    "| No. of Cylinders | | 4",
@@ -1406,7 +2189,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 55",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 13,8",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 11,6",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 7,9"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 7,9",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 55 Kva"
   ]
  },
  {
@@ -1418,6 +2217,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 500 kVA / 400 kW | 550 kVA / 440 kW",
+   "| Engine Technical Data",
    "| Make | | FPT IVECO",
    "| Model | | CR13TE7W.S550",
    "| No. of Cylinders | | 6",
@@ -1436,7 +2236,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 459",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 100,6",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 80,2",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 51,5"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 51,5",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 550 Kva"
   ]
  },
  {
@@ -1448,6 +2264,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 60 kVA / 48 kW | 66 kVA / 53 kW",
+   "| Engine Technical Data",
    "| Make | | FPT IVECO",
    "| Model | | R38MSNS01.66A02",
    "| No. of Cylinders | | 4",
@@ -1466,7 +2283,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 66",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 15,9",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 13,3",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 9,2"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 9,2",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 66 Kva"
   ]
  },
  {
@@ -1478,6 +2311,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 600 kVA / 480 kW | 660 kVA / 528 kW",
+   "| Engine Technical Data",
    "| Make | | FPT IVECO",
    "| Model | | CR16TE1W.S550",
    "| No. of Cylinders | | 6",
@@ -1496,7 +2330,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 559",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 115",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 87",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 58"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 58",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 660 Kva"
   ]
  },
  {
@@ -1508,6 +2358,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 80 kVA / 64 kW | 88 kVA / 70 kW",
+   "| Engine Technical Data",
    "| Make | | FPT IVECO",
    "| Model | | NEF45SM3.S500",
    "| No. of Cylinders | | 4",
@@ -1526,7 +2377,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 81",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 19,4",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 15,4",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 9,6"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 9,6",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 88 Kva"
   ]
  },
  {
@@ -1538,6 +2405,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 900 kVA / 720 kW | 1000 kVA / 800 kW",
+   "| Engine Technical Data",
    "| Make | | HYUNDAI DOOSAN",
    "| Model | | DP222CC",
    "| No. of Cylinders | | 12",
@@ -1556,7 +2424,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 854",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 192",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 162",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 75"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 75",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 1000 Kva"
   ]
  },
  {
@@ -1568,6 +2452,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 200 kVA / 160 kW | 220 kVA / 176 kW",
+   "| Engine Technical Data",
    "| Make | | HYUNDAI DOOSAN",
    "| Model | | DP054CC",
    "| No. of Cylinders | | 4",
@@ -1586,7 +2471,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 188",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 43",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 31,2",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 21,1"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 21,1",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 220 Kva"
   ]
  },
  {
@@ -1598,6 +2499,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 230 kVA / 184 kW | 250 kVA / 200 kW",
+   "| Engine Technical Data",
    "| Make | | HYUNDAI DOOSAN",
    "| Model | | DP086CB",
    "| No. of Cylinders | | 6",
@@ -1616,7 +2518,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 225",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 46,8",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 35,3",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 24,2"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 24,2",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 250 Kva"
   ]
  },
  {
@@ -1628,6 +2546,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 250 kVA / 200 kW | 275 kVA / 220 kW",
+   "| Engine Technical Data",
    "| Make | | HYUNDAI DOOSAN",
    "| Model | | DP086CC",
    "| No. of Cylinders | | 6",
@@ -1646,7 +2565,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 245",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 51,3",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 38,3",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 26,1"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 26,1",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 275 Kva"
   ]
  },
  {
@@ -1658,6 +2593,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 280 kVA / 224 kW | 300 kVA / 240 kW",
+   "| Engine Technical Data",
    "| Make | | HYUNDAI DOOSAN",
    "| Model | | DP086CD",
    "| No. of Cylinders | | 6",
@@ -1676,7 +2612,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 270",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 56,9",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 41,9",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 28,6"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 28,6",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 300 Kva"
   ]
  },
  {
@@ -1688,6 +2640,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 300 kVA / 240 kW | 330 kVA / 264 kW",
+   "| Engine Technical Data",
    "| Make | | HYUNDAI DOOSAN",
    "| Model | | DP086CE",
    "| No. of Cylinders | | 6",
@@ -1706,7 +2659,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 294",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 62,3",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 45,7",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 30,9"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 30,9",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 330 Kva"
   ]
  },
  {
@@ -1718,6 +2687,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 360 kVA / 288 kW | 400 kVA / 320 kW",
+   "| Engine Technical Data",
    "| Make | | HYUNDAI DOOSAN",
    "| Model | | DP126LB",
    "| No. of Cylinders | | 6",
@@ -1736,7 +2706,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 346",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 76",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 57,1",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 38,4"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 38,4",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 400 Kva"
   ]
  },
  {
@@ -1748,6 +2734,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 410 kVA / 328 kW | 470 kVA / 376 kW",
+   "| Engine Technical Data",
    "| Make | | HYUNDAI DOOSAN",
    "| Model | | P158LE",
    "| No. of Cylinders | | 8",
@@ -1766,7 +2753,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 398",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 81",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 59,1",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 39,8"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 39,8",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 470 Kva"
   ]
  },
  {
@@ -1778,6 +2781,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 450 kVA / 360 kW | 510 kVA / 408 kW",
+   "| Engine Technical Data",
    "| Make | | HYUNDAI DOOSAN",
    "| Model | | DP158LC",
    "| No. of Cylinders | | 8",
@@ -1796,7 +2800,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 433",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 99,6",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 72,9",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 48,9"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 48,9",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 510 Kva"
   ]
  },
  {
@@ -1808,6 +2828,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 530 kVA / 424 kW | 580 kVA / 464 kW",
+   "| Engine Technical Data",
    "| Make | | HYUNDAI DOOSAN",
    "| Model | | DP158LD",
    "| No. of Cylinders | | 8",
@@ -1826,7 +2847,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 494",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 115,1",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 83,4",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 55,1"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 55,1",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 580 Kva"
   ]
  },
  {
@@ -1838,6 +2875,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 570 kVA / 456 kW | 630 kVA / 504 kW",
+   "| Engine Technical Data",
    "| Make | | HYUNDAI DOOSAN",
    "| Model | | DP180LA",
    "| No. of Cylinders | | 10",
@@ -1856,7 +2894,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 536",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 123,6",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 94,2",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 64,8"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 64,8",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 630 Kva"
   ]
  },
  {
@@ -1868,6 +2922,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 640 kVA / 512 kW | 710 kVA / 568 kW",
+   "| Engine Technical Data",
    "| Make | | HYUNDAI DOOSAN",
    "| Model | | DP180LB",
    "| No. of Cylinders | | 10",
@@ -1886,7 +2941,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 596",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 136,4",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 103,8",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 71,2"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 71,2",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 710 Kva"
   ]
  },
  {
@@ -1898,6 +2969,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 680 kVA / 544 kW | 750 kVA / 600 kW",
+   "| Engine Technical Data",
    "| Make | | HYUNDAI DOOSAN",
    "| Model | | DP222LB",
    "| No. of Cylinders | | 12",
@@ -1916,7 +2988,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 640",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 147,1",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 109,2",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 73"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 73",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 750 Kva"
   ]
  },
  {
@@ -1928,6 +3016,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 750 kVA / 600 kW | 825 kVA / 660 kW",
+   "| Engine Technical Data",
    "| Make | | HYUNDAI DOOSAN",
    "| Model | | DP222LC",
    "| No. of Cylinders | | 12",
@@ -1946,7 +3035,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 699",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 161",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 119,1",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 79,3"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 79,3",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 825 Kva"
   ]
  },
  {
@@ -1958,6 +3063,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 800 kVA / 640 kW | 900 kVA / 720 kW",
+   "| Engine Technical Data",
    "| Make | | HYUNDAI DOOSAN",
    "| Model | | DP222CB",
    "| No. of Cylinders | | 12",
@@ -1976,7 +3082,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 790",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 190",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 146",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 102"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 102",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 900 Kva"
   ]
  },
  {
@@ -1988,6 +3110,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 100 kVA / 80 kW | 110 kVA / 88 kW",
+   "| Engine Technical Data",
    "| Make | | KOFO",
    "| Model | | 4RT55-88D",
    "| No. of Cylinders | | 4",
@@ -2006,7 +3129,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 96",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 22,5",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 17,7",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 12,2"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 12,2",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 110 Kva"
   ]
  },
  {
@@ -2018,6 +3157,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 125 kVA / 100 kW | 137 kVA / 109,6 kW",
+   "| Engine Technical Data",
    "| Make | | KOFO",
    "| Model | | 4RT55-110D",
    "| No. of Cylinders | | 4",
@@ -2036,7 +3176,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 121",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 24,5",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 18,4",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 13,2"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 13,2",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 145 Kva"
   ]
  },
  {
@@ -2048,6 +3204,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 135 kVA / 108 kW | 150 kVA / 120 kW",
+   "| Engine Technical Data",
    "| Make | | KOFO",
    "| Model | | 6RT80-132D",
    "| No. of Cylinders | | 6",
@@ -2066,7 +3223,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 145",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 33",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 26",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 16"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 16",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 150 Kva"
   ]
  },
  {
@@ -2078,6 +3251,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 150 kVA / 120 kW | 165 kVA / 132 kW",
+   "| Engine Technical Data",
    "| Make | | KOFO",
    "| Model | | 6RT80-132D",
    "| No. of Cylinders | | 6",
@@ -2096,7 +3270,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 145",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 36,3",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 28,5",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 17,5"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 17,5",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 165 Kva"
   ]
  },
  {
@@ -2108,6 +3298,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 200 kVA / 160 kW | 220 kVA / 176 kW",
+   "| Engine Technical Data",
    "| Make | | KOFO",
    "| Model | | 6RT80-176DE",
    "| No. of Cylinders | | 6",
@@ -2126,7 +3317,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 192",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 39,7",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 29,8",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 19,8"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 19,8",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 220 Kva"
   ]
  },
  {
@@ -2138,6 +3345,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 32 kVA / 25,6 kW | 35 kVA / 28 kW",
+   "| Engine Technical Data",
    "| Make | | KOFO",
    "| Model | | N4100DS",
    "| No. of Cylinders | | 4",
@@ -2156,7 +3364,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 33",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 8,4",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 6,6",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 4,5"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 4,5",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 35 Kva"
   ]
  },
  {
@@ -2168,6 +3392,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 45 kVA / 36 kW | 50 kVA / 40 kW",
+   "| Engine Technical Data",
    "| Make | | KOFO",
    "| Model | | N4100ZDS",
    "| No. of Cylinders | | 4",
@@ -2186,7 +3411,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 47",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 12,4",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 9,3",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 6,2"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 6,2",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 50 Kva"
   ]
  },
  {
@@ -2198,6 +3439,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 63 kVA / 50,4 kW | 70 kVA / 56 kW",
+   "| Engine Technical Data",
    "| Make | | KOFO",
    "| Model | | N4105ZDS",
    "| No. of Cylinders | | 4",
@@ -2216,7 +3458,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 62",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 14,8",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 11,1",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 7,4"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 7,4",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 70 Kva"
   ]
  },
  {
@@ -2228,6 +3486,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 74 kVA / 59,2 kW | 82 kVA / 65,6 kW",
+   "| Engine Technical Data",
    "| Make | | KOFO",
    "| Model | | N4105ZLDS",
    "| No. of Cylinders | | 4",
@@ -2246,7 +3505,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 72",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 13",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 9",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 6"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 6",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 83 Kva"
   ]
  },
  {
@@ -2258,6 +3533,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 9 kVA / 7,2 kW | 10 kVA / 8 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 403A-11G1",
    "| No. of Cylinders | | 3",
@@ -2276,7 +3552,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 9,5",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 2,6",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 2",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 1,5"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 1,5",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 10 Kva"
   ]
  },
  {
@@ -2288,6 +3580,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 910 kVA / 728 kW | 1000 kVA / 800 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 4008-30TAG1",
    "| No. of Cylinders | | 8",
@@ -2306,7 +3599,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 892",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 195",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 143",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 98"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 98",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 1000 Kva"
   ]
  },
  {
@@ -2318,6 +3627,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 100 kVA / 80 kW | 110 kVA / 88 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 1104C-44TAG2",
    "| No. of Cylinders | | 4",
@@ -2336,7 +3646,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 103",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 22,6",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 17,1",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 11,8"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 11,8",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 110 Kva"
   ]
  },
  {
@@ -2348,6 +3674,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 1020 kVA / 816 kW | 1125 kVA / 900 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 4008-30TAG2",
    "| No. of Cylinders | | 8",
@@ -2366,7 +3693,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 997",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 211",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 161",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 113"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 113",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 1125 Kva"
   ]
  },
  {
@@ -2378,6 +3721,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 1150 kVA / 920 kW | 1250 kVA / 1000 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 4008-30TAG3",
    "| No. of Cylinders | | 8",
@@ -2396,7 +3740,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 1105",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 244",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 188",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 120"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 120",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 1250 Kva"
   ]
  },
  {
@@ -2408,6 +3768,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 1250 kVA / 1000 kW | 1385 kVA / 1108 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 4012-46TWG2A",
    "| No. of Cylinders | | 12",
@@ -2426,7 +3787,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 1219",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 259",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 196",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 143"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 143",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 1400 Kva"
   ]
  },
  {
@@ -2438,6 +3815,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 13 kVA / 10,4 kW | 15 kVA / 12 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 403A-15G1",
    "| No. of Cylinders | | 3",
@@ -2456,7 +3834,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 13,5",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 3,7",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 2,8",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 2"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 2",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 15 Kva"
   ]
  },
  {
@@ -2468,6 +3862,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 135 kVA / 108 kW | 150 kVA / 120 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 1106A-70TG1",
    "| No. of Cylinders | | 6",
@@ -2486,7 +3881,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 135,8",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 30,3",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 22,7",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 15,9"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 15,9",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 150 Kva"
   ]
  },
  {
@@ -2498,6 +3909,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 1364 kVA / 1091 kW | 1500 kVA / 1200 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 4012-46TAG1A",
    "| No. of Cylinders | | 12",
@@ -2516,7 +3928,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 1335",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 281",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 212",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 149"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 149",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 1500 Kva"
   ]
  },
  {
@@ -2528,6 +3956,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 150 kVA / 120 kW | 165 kVA / 132 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 1106A-70TAG2",
    "| No. of Cylinders | | 6",
@@ -2546,7 +3975,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 149,1",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 33,4",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 24,7",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 16,4"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 16,4",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 165 Kva"
   ]
  },
  {
@@ -2558,6 +4003,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 1500 kVA / 1200 kW | 1650 kVA / 1320 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 4012-46TAG2A",
    "| No. of Cylinders | | 12",
@@ -2576,7 +4022,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 1467",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 313",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 239",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 161"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 161",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 1650 Kva"
   ]
  },
  {
@@ -2588,6 +4050,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 1705 kVA / 1364 kW | 1875 kVA / 1500 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 4012-46TAG3A",
    "| No. of Cylinders | | 12",
@@ -2606,7 +4069,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 1664",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 374",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 272",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 183"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 183",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 1900 Kva"
   ]
  },
  {
@@ -2618,6 +4097,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 180 kVA / 144 kW | 200 kVA / 160 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 1106A-70TAG3",
    "| No. of Cylinders | | 6",
@@ -2636,7 +4116,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 180,2",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 41,4",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 32",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 20,2"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 20,2",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 200 Kva"
   ]
  },
  {
@@ -2648,6 +4144,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 1850 kVA / 1480 kW | 2000 kVA / 1600 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 4016-61TRG1",
    "| No. of Cylinders | | 16",
@@ -2666,7 +4163,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 1774",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 383.8",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 299.8",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 206.8"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 206.8",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 2000 Kva"
   ]
  },
  {
@@ -2678,6 +4191,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 20 kVA / 16 kW | 22 kVA / 17,6 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 404A-22G1",
    "| No. of Cylinders | | 4",
@@ -2696,7 +4210,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 20,6",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 5,3",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 4",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 2,9"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 2,9",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 22 Kva"
   ]
  },
  {
@@ -2708,6 +4238,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 200 kVA / 160 kW | 220 kVA / 176 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 1106A-70TAG4",
    "| No. of Cylinders | | 6",
@@ -2726,7 +4257,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 196,3",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 45,8",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 24,7",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 23,1"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 23,1",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 225 Kva"
   ]
  },
  {
@@ -2738,6 +4285,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 2000 kVA / 1600 kW | 2250 kVA / 1800 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 4016-61TRG2",
    "| No. of Cylinders | | 16",
@@ -2756,7 +4304,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 1985",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 418.1",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 317.7",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 223.5"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 223.5",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 2250 Kva"
   ]
  },
  {
@@ -2768,6 +4332,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 230 kVA / 184 kW | 250 kVA / 200 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 1206A-E70TTAG2",
    "| No. of Cylinders | | 6",
@@ -2786,7 +4351,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 226,1",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 51",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 38",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 25,5"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 25,5",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 250 Kva"
   ]
  },
  {
@@ -2798,6 +4379,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 2250 kVA / 1800 kW | 2500 kVA / 2000 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 4016-61TRG3",
    "| No. of Cylinders | | 16",
@@ -2816,7 +4398,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 2183",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 470.6",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 350.8",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 244.5"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 244.5",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 2500 Kva"
   ]
  },
  {
@@ -2828,6 +4426,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 250 kVA / 200 kW | 275 kVA / 220 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 1206A-E70TTAG3",
    "| No. of Cylinders | | 6",
@@ -2846,7 +4445,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 248,6",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 56,9",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 41,5",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 28,1"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 28,1",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 275 Kva"
   ]
  },
  {
@@ -2858,6 +4473,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 30 kVA / 24 kW | 33 kVA / 26,4 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 1103A-33G",
    "| No. of Cylinders | | 3",
@@ -2876,7 +4492,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 31",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 7,3",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 5,6",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 4,1"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 4,1",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 33 Kva"
   ]
  },
  {
@@ -2888,6 +4520,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 320 kVA / 256 kW | 350 kVA / 280 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 2206A-E13TAG2",
    "| No. of Cylinders | | 6",
@@ -2906,7 +4539,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 368,4",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 65",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 49",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 34"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 34",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 350 Kva"
   ]
  },
  {
@@ -2918,6 +4567,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 360 kVA / 288 kW | 400 kVA / 320 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 2206A-E13TAG2",
    "| No. of Cylinders | | 6",
@@ -2936,7 +4586,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 368,4",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 71",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 54",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 37"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 37",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 400 Kva"
   ]
  },
  {
@@ -2948,6 +4614,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 400 kVA / 320 kW | 450 kVA / 360 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 2206A-E13TAG3",
    "| No. of Cylinders | | 6",
@@ -2966,7 +4633,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 412,5",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 81",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 62",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 42"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 42",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 450 Kva"
   ]
  },
  {
@@ -2978,6 +4661,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 45 kVA / 36 kW | 50 kVA / 40 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 1103A-33TG1",
    "| No. of Cylinders | | 3",
@@ -2996,7 +4680,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 46,5",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 10,5",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 8",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 5,6"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 5,6",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 50 Kva"
   ]
  },
  {
@@ -3008,6 +4708,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 450 kVA / 360 kW | 500 kVA / 400 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 2506A-E15TAG1",
    "| No. of Cylinders | | 6",
@@ -3026,7 +4727,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 451",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 95",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 72",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 50"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 50",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 500 Kva"
   ]
  },
  {
@@ -3038,6 +4755,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 500 kVA / 400 kW | 550 kVA / 440 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 2506A-E15TAG2",
    "| No. of Cylinders | | 6",
@@ -3056,7 +4774,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 495",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 100",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 76",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 53"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 53",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 550 Kva"
   ]
  },
  {
@@ -3068,6 +4802,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 60 kVA / 48 kW | 66 kVA / 53 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 1103A-33TG2",
    "| No. of Cylinders | | 3",
@@ -3086,7 +4821,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 60,5",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 14,6",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 10,8",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 7,6"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 7,6",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 66 Kva"
   ]
  },
  {
@@ -3098,6 +4849,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 600 kVA / 480 kW | 660 kVA / 528 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 2806A-E18TAG1A",
    "| No. of Cylinders | | 6",
@@ -3116,7 +4868,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 592,7",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 123",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 90",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 61"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 61",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 660 Kva"
   ]
  },
  {
@@ -3128,6 +4896,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 650 kVA / 520 kW | 700 kVA / 560 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 2806A-E18TAG2",
    "| No. of Cylinders | | 6",
@@ -3146,7 +4915,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 628",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 132",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 97",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 66"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 66",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 725 Kva"
   ]
  },
  {
@@ -3158,6 +4943,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 65 kVA / 52 kW | 72 kVA / 58 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 1104A-44TG1",
    "| No. of Cylinders | | 4",
@@ -3176,7 +4962,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 65,6",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 14,8",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 11,2",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 8"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 8",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 72 Kva"
   ]
  },
  {
@@ -3188,6 +4990,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 770 kVA / 616 kW | 850 kVA / 680 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 2806A-E18TTAG5",
    "| No. of Cylinders | | 6",
@@ -3206,7 +5009,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 743",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 162",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 118",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 80"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 80",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 850 Kva"
   ]
  },
  {
@@ -3218,6 +5037,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 80 kVA / 64 kW | 88 kVA / 70 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 1104A-44TG2",
    "| No. of Cylinders | | 4",
@@ -3236,7 +5056,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 80,7",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 18,7",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 14",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 9,7"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 9,7",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 88 Kva"
   ]
  },
  {
@@ -3248,6 +5084,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 800 kVA / 640 kW | 900 kVA / 720 kW",
+   "| Engine Technical Data",
    "| Make | | PERKINS",
    "| Model | | 4006-23TAG3A",
    "| No. of Cylinders | | 6",
@@ -3266,7 +5103,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 786",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 175",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 132",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 91"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 91",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 900 Kva"
   ]
  },
  {
@@ -3278,6 +5131,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 90 kVA / 72 kW | 100 kVA / 80 kW",
+   "| Engine Technical Data",
    "| Make | | YANGDONG",
    "| Model | | Y4110ZLD",
    "| No. of Cylinders | | 4",
@@ -3296,7 +5150,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 88",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 16,2",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 12,5",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 8,8"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 8,8",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 100 Kva"
   ]
  },
  {
@@ -3308,6 +5178,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 100 kVA / 80 kW | 110 kVA / 88 kW",
+   "| Engine Technical Data",
    "| Make | | YANGDONG",
    "| Model | | YD4GZLD",
    "| No. of Cylinders | | 4",
@@ -3326,7 +5197,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 93",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 22,1",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 18,9",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 14,2"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 14,2",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 110 Kva"
   ]
  },
  {
@@ -3338,6 +5225,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 11,7 kVA / 9,36 kW | 13 kVA / 10,4 kW",
+   "| Engine Technical Data",
    "| Make | | YANGDONG",
    "| Model | | YD385D",
    "| No. of Cylinders | | 3",
@@ -3356,7 +5244,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 12",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 4,2",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 3,8",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 3,1"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 3,1",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 15 Kva"
   ]
  },
  {
@@ -3368,6 +5272,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 20 kVA / 16 kW | 22 kVA / 17,6 kW",
+   "| Engine Technical Data",
    "| Make | | YANGDONG",
    "| Model | | YND485D",
    "| No. of Cylinders | | 4",
@@ -3386,7 +5291,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 19",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 5,6",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 4,4",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 3,3"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 3,3",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 22 Kva"
   ]
  },
  {
@@ -3398,6 +5319,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 24,5 kVA / 19,5 kW | 27 kVA / 21,6 kW",
+   "| Engine Technical Data",
    "| Make | | YANGDONG",
    "| Model | | Y490D",
    "| No. of Cylinders | | 4",
@@ -3416,7 +5338,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 26,4",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 6,9",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 5,8",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 4,9"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 4,9",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 27,5 Kva"
   ]
  },
  {
@@ -3428,6 +5366,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 30 kVA / 24 kW | 33 kVA / 26,4 kW",
+   "| Engine Technical Data",
    "| Make | | YANGDONG",
    "| Model | | Y495D",
    "| No. of Cylinders | | 4",
@@ -3446,7 +5385,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 30",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 7,6",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 6",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 3,9"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 3,9",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 35 Kva"
   ]
  },
  {
@@ -3458,6 +5413,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 40 kVA / 32 kW | 44 kVA / 35,2 kW",
+   "| Engine Technical Data",
    "| Make | | YANGDONG",
    "| Model | | Y4102D",
    "| No. of Cylinders | | 4",
@@ -3476,7 +5432,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 36",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 8,3",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 6,6",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 5,1"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 5,1",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 44 Kva"
   ]
  },
  {
@@ -3488,6 +5460,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 50 kVA / 40 kW | 55 kVA / 44 kW",
+   "| Engine Technical Data",
    "| Make | | YANGDONG",
    "| Model | | Y4105D",
    "| No. of Cylinders | | 4",
@@ -3506,7 +5479,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 42",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 10,8",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 7,4",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 6,1"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 6,1",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 55 Kva"
   ]
  },
  {
@@ -3518,6 +5507,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 63 kVA / 50,4 kW | 70 kVA / 56 kW",
+   "| Engine Technical Data",
    "| Make | | YANGDONG",
    "| Model | | Y4105ZLD",
    "| No. of Cylinders | | 4",
@@ -3536,7 +5526,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 61",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 13,3",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 10,7",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 8,3"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 8,3",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 70 Kva"
   ]
  },
  {
@@ -3548,6 +5554,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 72 kVA / 57,6 kW | 80 kVA / 64 kW",
+   "| Engine Technical Data",
    "| Make | | YANGDONG",
    "| Model | | YD4EZLD",
    "| No. of Cylinders | | 4",
@@ -3566,7 +5573,23 @@
    "| Gross Engine Power(Stand By 50 hz) | kWm | 69",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 13,5",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 10,9",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 8,4"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 8,4",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 85 Kva"
   ]
  },
  {
@@ -3578,6 +5601,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 13 kVA / 10,4 kW | 14 kVA / 11,2 kW",
+   "| Engine Technical Data",
    "| Make | | YANMAR",
    "| Model | | 3TNV88-GGEA",
    "| No. of Cylinders | | 3",
@@ -3596,7 +5620,23 @@
    "| Engine Standby Power, Net (50 Hz) | kWm | 13,2",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 2,8",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 2,3",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 1,7"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 1,7",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 14 Kva"
   ]
  },
  {
@@ -3608,6 +5648,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 18 kVA / 14,4 kW | 20 kVA / 16 kW",
+   "| Engine Technical Data",
    "| Make | | YANMAR",
    "| Model | | 4TNV88-GGEA",
    "| No. of Cylinders | | 4",
@@ -3626,7 +5667,23 @@
    "| Engine Standby Power, Net (50 Hz) | kWm | 18",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 3,8",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 3",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 2,3"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 2,3",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 20 Kva"
   ]
  },
  {
@@ -3638,6 +5695,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 21 kVA / 16,8 kW | 23 kVA / 18,4 kW",
+   "| Engine Technical Data",
    "| Make | | YANMAR",
    "| Model | | 4TNV84T-GGEA",
    "| No. of Cylinders | | 4",
@@ -3656,7 +5714,23 @@
    "| Engine Standby Power, Net (50 Hz) | kWm | 21",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 4,4",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 3,5",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 2,6"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 2,6",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 23 Kva"
   ]
  },
  {
@@ -3668,6 +5742,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 34 kVA / 27,2 kW | 38 kVA / 30,4 kW",
+   "| Engine Technical Data",
    "| Make | | YANMAR",
    "| Model | | 4TNV98-GGEA",
    "| No. of Cylinders | | 4",
@@ -3686,7 +5761,23 @@
    "| Engine Standby Power, Net (50 Hz) | kWm | 34,1",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 7",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 5,4",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 3,7"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 3,7",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 38 Kva"
   ]
  },
  {
@@ -3698,6 +5789,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 42 kVA / 33,6 kW | 46 kVA / 36,8 kW",
+   "| Engine Technical Data",
    "| Make | | YANMAR",
    "| Model | | 4TNV98T-GGEA",
    "| No. of Cylinders | | 4",
@@ -3716,7 +5808,23 @@
    "| Engine Standby Power, Net (50 Hz) | kWm | 41,4",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 8,2",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 6,4",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 4,5"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 4,5",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 46 Kva"
   ]
  },
  {
@@ -3728,6 +5836,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 50 kVA / 40 kW | 55 kVA / 44 kW",
+   "| Engine Technical Data",
    "| Make | | YANMAR",
    "| Model | | 4TNV106-GGEA",
    "| No. of Cylinders | | 4",
@@ -3746,7 +5855,23 @@
    "| Engine Standby Power, Net (50 Hz) | kWm | 49,4",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 10,1",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 7,5",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 5,3"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 5,3",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 55 Kva"
   ]
  },
  {
@@ -3758,6 +5883,7 @@
   ],
   "rows": [
    "| 400V, 50 Hz | 57 kVA / 45,6 kW | 63 kVA / 50,4 kW",
+   "| Engine Technical Data",
    "| Make | | YANMAR",
    "| Model | | 4TNV106T-GGEA",
    "| No. of Cylinders | | 4",
@@ -3776,7 +5902,23 @@
    "| Engine Standby Power, Net (50 Hz) | kWm | 56",
    "| Fuel Consumption 100 % 50 Hz | lt/h | 11,2",
    "| Fuel Consumption 75 % 50 Hz | lt/h | 8,5",
-   "| Fuel Consumption 50 % 50 Hz | lt/h | 6,1"
+   "| Fuel Consumption 50 % 50 Hz | lt/h | 6,1",
+   "| Alternator Technical Data",
+   "| No of Phases | | 3",
+   "| Power Factor | | 0,8",
+   "| No of Bearings | | Single",
+   "| No of Poles | | 4",
+   "| No of Leads | | 12/6",
+   "| Voltage Regulation (Steady State) | | ± 1%",
+   "| Insulation Class | | H",
+   "| Protection Class | | IP 23",
+   "| Excitation System | | Self Excitation",
+   "| Voltage regulator | | A.V.R.",
+   "| Connection Type | | Star",
+   "| Total Harmonic Content (No Load) | | <3%",
+   "| Frequency | | 50",
+   "| Voltage Output 50 Hz | | 231/400",
+   "| Rated Power (Standby) 400V 50 Hz | | 63 Kva"
   ]
  }
 ]
