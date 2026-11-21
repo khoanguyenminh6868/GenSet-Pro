@@ -21,8 +21,11 @@ for (const run of Object.keys(A)) {
   for (const [id, model, make] of a.all) {
     if (bIds.has(id) || seen.has(id)) continue;
     seen.add(id); lost++; lostRuns.add(run);
-    const d = b.drop[id];
-    const rule = d ? [...d[2]].sort().join(",") : "KHONG_TRONG_DROPPED";
+    // Dòng trong `dropped` không mang `a` (đầu phát) nên id của nó có khoá đầu phát rỗng: tra theo NCC + băm chữ dòng.
+    const parts = id.split("|"), bare = `${parts[0]}||${parts[parts.length - 1]}`;
+    const d = b.drop[id] || b.drop[bare];
+    const stillIn = !d && b.all.some((r) => { const p = r[0].split("|"); return p[0] === parts[0] && p[p.length - 1] === parts[parts.length - 1]; });
+    const rule = d ? [...d[2]].sort().join(",") : stillIn ? "CON_TRONG_ALL_DOI_DAU_PHAT" : "KHONG_TRONG_DROPPED";
     const bModel = d ? d[0] : "";
     if (d && key(bModel) !== key(model)) renamedLost++;
     inc(byRule, rule); inc(byMake, make || "?");

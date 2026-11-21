@@ -80,4 +80,4 @@ Thứ tự đề xuất: E → A → C → D → B; F, G sau khi Khoa trả lờ
 ## Câu cần Khoa quyết
 - **Q1.** Tổ máy dùng động cơ tờ hãng ghi Diesel, đầu phát ghi 50 Hz: có chấm "đạt" nhiên liệu và tần số của tổ máy không? Đề xuất: **có**, ghi rõ nguồn là động cơ / đầu phát.
 - **Q2.** Có lưu operator manual của BĐK vào nguồn không (bắt đầu từ DSE7320 MKII)? Đề xuất: **có**, chỉ chấm chức năng manual ghi là có sẵn, chức năng tuỳ chọn để "cần xác nhận".
-- **Q3.** HSMT đòi "Nhà sản xuất / nhãn hiệu thuộc G7, EU", động cơ Baudouin (thương hiệu Pháp, Weichai sở hữu và sản xuất theo licence): chấm thế nào? Đề xuất: **"cần xác nhận"**, ghi "thương hiệu Pháp, nơi sản xuất cần CO"; không chấm đạt thẳng.
+- **Q3.** HSMT đòi "Nhà sản xuất / nhãn hiệu thuộc G7, EU", động cơ Baudouin (thương hiệu Pháp; chú thích trong `catalog.js` ghi Weichai sản xuất Baudouin theo licence, chưa kiểm nguồn ngoài): chấm thế nào? Đề xuất: **"cần xác nhận"**, ghi "thương hiệu Pháp, nơi sản xuất cần CO"; không chấm đạt thẳng.

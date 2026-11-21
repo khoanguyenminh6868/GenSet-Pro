@@ -1,17 +1,17 @@
 lượt: 1093, lỗi 0; nhánh ít dòng hơn 278, nhiều hơn 58, bằng 757
-dòng mất khỏi all: 2173 (trong 278 lượt); dòng mới có: 93; dòng mất mà model đổi khoá: 416
-số động cơ + luật: 295
+dòng mất khỏi all: 2173 (trong 278 lượt); dòng mới có: 93; dòng mất mà model đổi khoá: 1307
+số động cơ + luật: 355
 theo luật:
-  KHONG_TRONG_DROPPED: 1329
-  disp: 434
-  maxDisp: 177
-  cyl: 128
-  cyl,disp: 45
-  cyl,disp,layout: 26
-  layout: 17
-  cyl,layout: 9
-  disp,layout: 6
-  cyl,maxDisp: 2
+  disp: 913
+  cyl: 545
+  maxDisp: 365
+  cyl,disp: 98
+  cyl,maxDisp: 64
+  cyl,disp,layout: 62
+  cyl,layout: 58
+  layout: 43
+  disp,layout: 17
+  cyl,layout,maxDisp: 8
 theo hãng:
   Perkins: 486
   ?: 444
