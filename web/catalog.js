@@ -982,6 +982,11 @@
     // them from diesel packs): not invented here (điều phối 21/11/2026).
     { supplierId: "man-engines", ns: [104], from: "D", fuel: "gas", header: "| Output kW 1) 50 Hz / 60 Hz | Engine model | Cylinders | Model | Displacement in litres",
       engines: { E3262: "https://www.man.eu/engines/en/products/power-generation/gas/man-motor-e3262.html" }, why: 'datasheet hãng động cơ MAN %M ghi "E3262 naturally aspired engine with natural gas" (%U, đọc 21/11/2026)' },
+    // kingway-power n117 (the only record: KGD250B / SDEC SC9D340D2): the page's own "Engine Specifications" table has the row
+    // "| Fuel | Biogas" (sources/kingway-power/117.md; the saved specTable carries only the genset rows, no "Fuel" row), and the page sits
+    // under "Gas Generagtor Set > Biogas Generator Set". Level B = a row of the page's own table (Khoa 21/11/2026 "Khí"). `header: ""`: the
+    // saved table has no header line; a re-crawl that gives it one lapses this entry. No maker sheet for the SC9D340D2 was found.
+    { supplierId: "kingway-power", ns: [117], from: "B", fuel: "gas", header: "", why: 'bảng "Engine Specifications" của chính trang ghi dòng "| Fuel | Biogas" (tệp nguồn lưu sources/kingway-power/117.md, trang mục "Biogas Generator Set"; bảng đã lưu trong specTables không mang dòng này)' },
     { supplierId: "zc-power", ns: [109], part: "genset", fuel: "gasoline", why: 'tên trang "Gasoline Generators | Factory-Direct Prices | ZC Power"' },
   ];
   // The fuel of record `o` (of `fromSupplier`, or `part` "genset" = of `gensetsOf`) by FUEL_PAGES, or null.
