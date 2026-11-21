@@ -6,8 +6,8 @@
 // - Đơn vị và điều kiện (mức tải, khoảng cách đo, gross / net, trần / vỏ, chế độ, tốc độ...) chỉ đọc từ chữ có trong
 //   nguồn: ô giá trị, nhãn cột, ô đơn vị của cột ở dòng tiêu đề thứ hai, tên bảng. KHÔNG đoán theo độ lớn con số, không
 //   điền mặc định (không tự coi 50 Hz, cosφ 0,8, 100% tải). Thiếu thì ghi tên vào `missing`.
-// - Quy đổi đơn vị chỉ bằng công thức web/conversions.js (in³ → L, hp → kW, PS → kW), và giữ cả giá trị gốc (`conv`).
-//   cc, gal, cm... không có công thức ở đó thì giữ nguyên đơn vị nguồn.
+// - Quy đổi đơn vị chỉ bằng công thức web/conversions.js (in³ → L, cc / cm³ / ml → L, hp → kW, PS → kW), và giữ cả giá
+//   trị gốc (`conv`). gal, cm... không có công thức ở đó thì giữ nguyên đơn vị nguồn.
 // - Số có dấu phẩy và đúng 3 chữ số sau ("1,642") có thể là phần nghìn hoặc thập phân: không đọc, ghi missing "number".
 // - Thang khí thải (CN / EU Stage / EPA Tier / Euro / IMO) không quy đổi lẫn nhau; "Tier 3", "T3", "Stage II" không
 //   kèm EPA / EU / China thì thang để trống và ghi missing "scale".
@@ -269,9 +269,10 @@
 
   function disp(spec, ctx, r) {
     const L = nf(spec.label), V = nf(spec.value), H = ctx.hUnit || "";
-    const u = (s) => (/in3|cu\.?\s*in|cubic\s*inch/i.test(s) ? "in³" : /\bcc\b|\dcc\b|\bccm\b|cm3|\bml\b/i.test(s) ? "cc" : /\(\s*l\s*\)|\bl\b|\bltrs?\b|\blit(re|er)s?\b|\dl$|升/i.test(s) ? "L" : null);
+    const u = (s) => (/in3|cu\.?\s*in|cubic\s*inch/i.test(s) ? "in³" : /\bcc\b|\dcc\b|\bccm\b|cm3|\bml\b|\bc\.c\.?(?![a-z])/i.test(s) ? "cc" :/\(\s*l\s*\)|\bl\b|\bltrs?\b|\blit(re|er)s?\b|\dl$|升/i.test(s) ? "L" : null);
     r.unit = u(V) || u(L) || u(H);
-    const f = figures(V);
+    // "cm³" / "in³" thành "cm3" / "in3" sau NFKC: số mũ 3 không phải số thứ hai của ô (S8-1; 0 ô như vậy trong cn/ 22/11/2026).
+    const f = figures(V.replace(/(cm|in|dm)\s*3(?![\d.,])/gi, "$1"));
     // Khoa's decision 14/11/2026 ("displacement nên default đơn vị là L hoặc cm³ (cc)"): the ONE exception to "never
     // guess a unit from magnitude", for disp only. When the cell, label, header unit line and table title write no unit,
     // every figure 0.4–100 is L and every figure 400–100000 is cc (the bands catalog.js `likely` uses), then the value is
@@ -291,6 +292,12 @@
     if (r.unit === "in³" && conv()) {
       const c = conv().compute({ formula: "l_from_cuin", inputs: [{ name: "V_in3", value: r.num }] });
       if (!c.error) { r.conv = { formula: "l_from_cuin", from: { num: r.num, unit: "in³" } }; r.num = c.value; r.unit = "L"; }
+    }
+    // cc / cm³ / ml → L (Khoa 22/11/2026, S8-1), CHỈ khi đơn vị ghi ở ô, nhãn hay ô đơn vị tiêu đề. Số trơ mà dải mặc định
+    // 400–100000 gán "cc" (unitFrom "default") KHÔNG đổi: đó là đoán theo độ lớn, giữ "cc" như trước (chờ Khoa quyết).
+    if (r.unit === "cc" && r.cond.unitFrom !== "default" && conv()?.FORMULAS?.l_from_cc) {
+      const c = conv().compute({ formula: "l_from_cc", inputs: [{ name: "V_cc", value: r.num }] });
+      if (!c.error) { r.conv = { formula: "l_from_cc", from: { num: r.num, unit: "cc" } }; r.num = c.value; r.unit = "L"; }
     }
     return r;
   }
