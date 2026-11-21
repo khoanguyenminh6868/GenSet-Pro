@@ -50,3 +50,6 @@ Top 30 (điều phối đo). md5 `build()` không so riêng. URL nguồn không 
 
 ## Cần ghi nhớ
 - Khoa 21/11/2026: lỗi 3 sanq = "A" (giữ đầu phát, không theo tiền lệ bỏ cả dòng).
+
+## Cập nhật 21/11/2026: đã gộp main sau #1017
+Đầu nhánh `c1893236`, so `589596ed`: diff 3 tệp (`web/catalog.js`, `web/CLAUDE.md`, `suppliers/sanq-ma-ghep.test.mjs`), `^` giữ như main. spec-diff 61.229 → 61.199: 0 đổi, 30 mất (đều động cơ sanq), 0 thêm, đảo vai 0 → 0. `suppliers/*.test.mjs` 1368/1368, `quality --check` đạt. Top 30 chưa đo.
