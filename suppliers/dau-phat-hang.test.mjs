@@ -48,7 +48,9 @@ test("altNeedOf IB2600603983: 750 kVA (đầu phát > tổ máy 700), 50 Hz, 380
 test("makerAlts IB2600603983: LSA 49.3 M8 (820 kVA cột H 125 K / 40 °C, AREP / PMG, D350) đứng đầu; M6 730 kVA và TAL-A49 (ngắn mạch 2,7 In / 5 s) không có", () => {
   const need = altNeedOf(IB_REQS, { cap: { value: 700, unit: "kVA" }, hsmtText: IB_TEXT });
   const list = makerAlts(makers, RT, need);
-  assert.deepEqual(list.map((m) => m.model), ["LSA 49.3 M8", "LSA 49.3 L9"]);
+  // D2 (21/11/2026): the Stamford S6 sheets [1021–1022] meet the kVA after 45 °C but state no 300 % / 10 s: after the LSA.
+  assert.deepEqual(list.map((m) => m.model), ["LSA 49.3 M8", "LSA 49.3 L9", "S6L1D-C4", "S6L1D-D4"]);
+  assert.ok(list.slice(2).every((m) => m.unknown.includes("ngắn mạch 300 % / 10 s")));
   const m8 = list[0];
   assert.equal(m8.kva, 820); assert.equal(m8.make, "Leroy-Somer"); assert.equal(m8.supplierId, "leroy-somer-fuzhou"); assert.equal(m8.n, 1012);
   assert.deepEqual(m8.options.map((o) => `${o.what} ${o.value}`), ["Kích từ AREP / PMG", "AVR D350"]);
