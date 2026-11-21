@@ -10,7 +10,7 @@ Viết gọn lại 13/11/2026 (sáng, giờ VN). Cập nhật 16/11: #786 (nối
 | Điều tra nhiên liệu jianghao n104 (chỉ đọc; `jianghao-n104-nhien-lieu.md`) | `session_011tAj4PQJ4qVrY5DgoUUKNZ` (giao 21/11 02:04Z) | Sonnet | nghiệm thu → trình Khoa |
 | S1 sửa số dòng lẻ (`ROW_EXCEPTIONS`; `wt-sua-so-le`, `sua-so-le-1.md`) | `session_011tAj4PKqvTNb6J1EujUBVg` (giao 21/11 01:22Z) | Sonnet | PR draft → điều phối kiểm + đo cloud |
 | S2 đọc mã (`web/catalog.js`; `wt-doc-ma-2`, `doc-ma-2-1.md`) | `session_011tAj4RJTNrRgrq7DGnUisk` | Opus | PR draft → kiểm + đo cloud; merge xong thì mở S4 |
-| S3 thứ tự + hãng (`config-bot.mjs`; `wt-thu-tu-hang`, `thu-tu-hang-1.md`) | `session_011tAj4Qxy7o1Prwh1naQT8a` | Sonnet | PR draft → kiểm + đo cloud |
+| S3 = #1015 draft a333af04 (gốc 95ecba26; `thu-tu-hang-1.md`): thứ tự hoà điểm = điểm → gap → (NCC, động cơ, đầu phát) → chữ ô; `makeGroup` Hyundai → Doosan ở trần mỗi hãng + `MAKE_ROWS`. Điều phối đã đọc diff `config-bot.mjs` (đúng phạm vi, không đổi chỗ tính điểm). ĐANG đo cloud → nhánh `do-gop-thu-tu-hang-ket-qua` (`do-gop-ket-qua-thu-tu-hang/`); về thì kiểm: MỌI điểm từng dòng không đổi, tập top chỉ đổi ở lượt hoà điểm biên hạng 30 hoặc có Doosan / Hyundai. Hỏi Khoa: Daewoo có gộp cùng nhóm không; hoà điểm ở biên nay nghiêng NCC đầu bảng chữ cái. Worktree `wt-thu-tu-hang` phiên con chưa gỡ được (đang bị giữ). | phiên con `session_011tAj4Qxy7o1Prwh1naQT8a`; đo `session_011tAj4NwmsUscq7M1JNCww2` (02:10Z) | Sonnet | đo cloud ~80 phút |
 
 ## Chưa giao
 | Việc | Ghi chú | Model |

@@ -6010,3 +6010,573 @@ ok 1197 - hồi quy giá IB2600603983: 700 kVA: không gói nào giống/gần, 
   ---
   duration_ms: 60.2564
   ...
+# Subtest: có đủ các lượt hồi quy Gợi ý cấu hình đã chọn
+ok 1198 - có đủ các lượt hồi quy Gợi ý cấu hình đã chọn
+  ---
+  duration_ms: 2.9129
+  ...
+# Subtest: hồi quy cấu hình IB2600586587/config: máy một cỡ thường 160 kVA, xuất xứ Tất cả, không điều kiện đặc biệt
+ok 1199 - hồi quy cấu hình IB2600586587/config: máy một cỡ thường 160 kVA, xuất xứ Tất cả, không điều kiện đặc biệt
+  ---
+  duration_ms: 4276.192
+  ...
+# Subtest: hồi quy cấu hình IB2600592684/config-1: gói nhiều cỡ máy: cỡ 30 kVA (nêu đích danh FORTUGEN)
+ok 1200 - hồi quy cấu hình IB2600592684/config-1: gói nhiều cỡ máy: cỡ 30 kVA (nêu đích danh FORTUGEN)
+  ---
+  duration_ms: 9264.8872
+  ...
+# Subtest: hồi quy cấu hình IB2600592684/config-2: gói nhiều cỡ máy: cỡ 500 kVA (nêu đích danh FORTUGEN)
+ok 1201 - hồi quy cấu hình IB2600592684/config-2: gói nhiều cỡ máy: cỡ 500 kVA (nêu đích danh FORTUGEN)
+  ---
+  duration_ms: 4129.236
+  ...
+# Subtest: hồi quy cấu hình IB2600594596/config-1: đồng bộ thương hiệu 2/3 bộ phận, cỡ 300 kVA của gói hai cỡ
+ok 1202 - hồi quy cấu hình IB2600594596/config-1: đồng bộ thương hiệu 2/3 bộ phận, cỡ 300 kVA của gói hai cỡ
+  ---
+  duration_ms: 8455.6486
+  ...
+# Subtest: hồi quy cấu hình IB2600601812/config: HSMT nêu đích danh tổ máy Huyndai DHY110K SE (100 kVA), không cấu hình nào đúng hãng
+ok 1203 - hồi quy cấu hình IB2600601812/config: HSMT nêu đích danh tổ máy Huyndai DHY110K SE (100 kVA), không cấu hình nào đúng hãng
+  ---
+  duration_ms: 15361.8447
+  ...
+# Subtest: hồi quy cấu hình IB2600603983/config: xuất xứ G7/EU tự đọc từ HSMT (chỉ bộ phận chính), 700 kVA
+ok 1204 - hồi quy cấu hình IB2600603983/config: xuất xứ G7/EU tự đọc từ HSMT (chỉ bộ phận chính), 700 kVA
+  ---
+  duration_ms: 15591.5479
+  ...
+# Subtest: agent tự gắn byCode vẫn bị kiểm câu trích
+ok 1205 - agent tự gắn byCode vẫn bị kiểm câu trích
+  ---
+  duration_ms: 8082.9872
+  ...
+# Subtest: codeOf: the agent's item names (as past runs wrote them) map to one code each
+ok 1206 - codeOf: the agent's item names (as past runs wrote them) map to one code each
+  ---
+  duration_ms: 51.8555
+  ...
+# Subtest: missingCodes: lines of the HSMT about codes no requirement carries; a text saying 'không nêu' names none
+ok 1207 - missingCodes: lines of the HSMT about codes no requirement carries; a text saying 'không nêu' names none
+  ---
+  duration_ms: 2.3943
+  ...
+# Subtest: check: requirements take their code's item, part and level; duplicates merge; checks are renamed
+ok 1208 - check: requirements take their code's item, part and level; duplicates merge; checks are renamed
+  ---
+  duration_ms: 552.5605
+  ...
+# Subtest: missingCodes: a goods-table cell holding a whole specification is read clause by clause
+ok 1209 - missingCodes: a goods-table cell holding a whole specification is read clause by clause
+  ---
+  duration_ms: 2.4927
+  ...
+# Subtest: absurd: ô điện áp vô lý (1150 V) bị gắn cờ
+ok 1210 - absurd: ô điện áp vô lý (1150 V) bị gắn cờ
+  ---
+  duration_ms: 70.1276
+  ...
+# Subtest: chỉ hai lý do, mỗi lý do một mức (Khoa 18/11/2026: bỏ lowRead, swap; cylMaj chỉ hiện)
+ok 1211 - chỉ hai lý do, mỗi lý do một mức (Khoa 18/11/2026: bỏ lowRead, swap; cylMaj chỉ hiện)
+  ---
+  duration_ms: 0.9924
+  ...
+# Subtest: absurd: số đúng mà checkSpec chặn thì được nới (cao thế 10,5 kV, 220 V, dòng chỉ ghi kVA, động cơ lớn)
+ok 1212 - absurd: số đúng mà checkSpec chặn thì được nới (cao thế 10,5 kV, 220 V, dòng chỉ ghi kVA, động cơ lớn)
+  ---
+  duration_ms: 1.4522
+  ...
+# Subtest: cylMaj: số xi lanh lệch giá trị thắng số đông (≥ 3 NCC, gấp ≥ 3 lần) bị gắn cờ, chỉ dòng lệch
+ok 1213 - cylMaj: số xi lanh lệch giá trị thắng số đông (≥ 3 NCC, gấp ≥ 3 lần) bị gắn cờ, chỉ dòng lệch
+  ---
+  duration_ms: 14.7235
+  ...
+# Subtest: rowKey: bền qua đánh số lại nguồn / bảng; đổi khi chữ của dòng đổi
+ok 1214 - rowKey: bền qua đánh số lại nguồn / bảng; đổi khi chữ của dòng đổi
+  ---
+  duration_ms: 25.5368
+  ...
+# Subtest: overHalf: NCC có quá nửa số bảng bị nghi
+ok 1215 - overHalf: NCC có quá nửa số bảng bị nghi
+  ---
+  duration_ms: 0.4382
+  ...
+# Subtest: --post: doc rowflags/current mang chữ nguyên văn của dòng; chỉ ghi khi danh sách dòng khác bản trên web
+ok 1216 - --post: doc rowflags/current mang chữ nguyên văn của dòng; chỉ ghi khi danh sách dòng khác bản trên web
+  ---
+  duration_ms: 6.1796
+  ...
+# Subtest: blockedRows: dòng số vô lý bị loại; rowok 'ok' đúng khoá giữ lại; rowok 'drop' loại dòng không cờ
+ok 1217 - blockedRows: dòng số vô lý bị loại; rowok 'ok' đúng khoá giữ lại; rowok 'drop' loại dòng không cờ
+  ---
+  duration_ms: 18.0308
+  ...
+# Subtest: blockedRows: chữ dòng đổi (nguồn cập nhật) thì quyết định cũ thôi áp
+ok 1218 - blockedRows: chữ dòng đổi (nguồn cập nhật) thì quyết định cũ thôi áp
+  ---
+  duration_ms: 32.8266
+  ...
+# Subtest: candidates: dòng bị chặn ra khỏi all kèm lý do rowflag; không chặn thì như cũ; điểm dòng khác không đổi
+ok 1219 - candidates: dòng bị chặn ra khỏi all kèm lý do rowflag; không chặn thì như cũ; điểm dòng khác không đổi
+  ---
+  duration_ms: 536.4562
+  ...
+# Subtest: rowOkOf: đọc rowok/<NCC> thành bảng; đọc lỗi thì rỗng (dòng số vô lý vẫn bị loại)
+ok 1220 - rowOkOf: đọc rowok/<NCC> thành bảng; đọc lỗi thì rỗng (dòng số vô lý vẫn bị loại)
+  ---
+  duration_ms: 0.9943
+  ...
+# Subtest: blockedRows: quyết định áp cho cả DÒNG (số vô lý gắn cờ cả động cơ lẫn đầu phát của dòng)
+ok 1221 - blockedRows: quyết định áp cho cả DÒNG (số vô lý gắn cờ cả động cơ lẫn đầu phát của dòng)
+  ---
+  duration_ms: 5.9661
+  ...
+# Subtest: blockedRows từ rows của rowflags/current (workflow tính) = tự tính; rowFlagsOf đọc lỗi thì null (tự tính)
+ok 1222 - blockedRows từ rows của rowflags/current (workflow tính) = tự tính; rowFlagsOf đọc lỗi thì null (tự tính)
+  ---
+  duration_ms: 65.3681
+  ...
+# Subtest: schema declares the keys the data uses (specTables, brandLicensed, foundedSrc...)
+ok 1223 - schema declares the keys the data uses (specTables, brandLicensed, foundedSrc...)
+  ---
+  duration_ms: 3.3968
+  ...
+# Subtest: every suppliers/cn/*.json has only keys the schema declares
+ok 1224 - every suppliers/cn/*.json has only keys the schema declares
+  ---
+  duration_ms: 5552.2604
+  ...
+# Subtest: verify.mjs rejects a key the schema does not declare
+ok 1225 - verify.mjs rejects a key the schema does not declare
+  ---
+  duration_ms: 29.0121
+  ...
+# Subtest: phát hiện có câu trích đúng, đúng tệp: giữ nguyên
+ok 1226 - phát hiện có câu trích đúng, đúng tệp: giữ nguyên
+  ---
+  duration_ms: 115.1263
+  ...
+# Subtest: problem không có câu trích thật: bỏ
+ok 1227 - problem không có câu trích thật: bỏ
+  ---
+  duration_ms: 44.9996
+  ...
+# Subtest: câu trích đúng nhưng ghi sai tên tệp: giữ câu, bỏ tên tệp
+ok 1228 - câu trích đúng nhưng ghi sai tên tệp: giữ câu, bỏ tên tệp
+  ---
+  duration_ms: 10.2197
+  ...
+# Subtest: câu trích đặt sai tệp: vẫn thấy trong HSDT nên giữ, tên tệp lấy theo tệp có chữ đó khi khớp
+ok 1229 - câu trích đặt sai tệp: vẫn thấy trong HSDT nên giữ, tên tệp lấy theo tệp có chữ đó khi khớp
+  ---
+  duration_ms: 10.6591
+  ...
+# Subtest: ok không có câu trích thành unclear; unclear giữ
+ok 1230 - ok không có câu trích thành unclear; unclear giữ
+  ---
+  duration_ms: 88.8369
+  ...
+# Subtest: hsmtQuote bịa bị bỏ, kind lạ bị loại
+ok 1231 - hsmtQuote bịa bị bỏ, kind lạ bị loại
+  ---
+  duration_ms: 8.1209
+  ...
+# Subtest: kết quả cũ không có selfChecks vẫn chạy; một tệp thì ghi chú không kiểm chéo được
+ok 1232 - kết quả cũ không có selfChecks vẫn chạy; một tệp thì ghi chú không kiểm chéo được
+  ---
+  duration_ms: 8.8382
+  ...
+# Subtest: không có selfChecks (kết quả cũ): điểm cũ 100, pass, không có selfCheckImpact
+ok 1233 - không có selfChecks (kết quả cũ): điểm cũ 100, pass, không có selfCheckImpact
+  ---
+  duration_ms: 8.8997
+  ...
+# Subtest: ok và unclear không ảnh hưởng
+ok 1234 - ok và unclear không ảnh hưởng
+  ---
+  duration_ms: 23.4052
+  ...
+# Subtest: problem bị bỏ vì không có bằng chứng thật thì không tính
+ok 1235 - problem bị bỏ vì không có bằng chứng thật thì không tính
+  ---
+  duration_ms: 100.3045
+  ...
+# Subtest: package_identity: như mục critical not_met: 3/5 → 60, fail
+ok 1236 - package_identity: như mục critical not_met: 3/5 → 60, fail
+  ---
+  duration_ms: 8.2899
+  ...
+# Subtest: model_consistency: như mục critical not_met: 3/5 → 60, fail
+ok 1237 - model_consistency: như mục critical not_met: 3/5 → 60, fail
+  ---
+  duration_ms: 9.2213
+  ...
+# Subtest: catalogue_vs_offer: như mục critical not_met: 3/5 → 60, fail
+ok 1238 - catalogue_vs_offer: như mục critical not_met: 3/5 → 60, fail
+  ---
+  duration_ms: 13.9556
+  ...
+# Subtest: row_match: như mục critical not_met: 3/5 → 60, fail
+ok 1239 - row_match: như mục critical not_met: 3/5 → 60, fail
+  ---
+  duration_ms: 8.0279
+  ...
+# Subtest: supporting_docs: như mục missing không critical: 3/4 → 75, at_risk
+ok 1240 - supporting_docs: như mục missing không critical: 3/4 → 75, at_risk
+  ---
+  duration_ms: 52.5967
+  ...
+# Subtest: adverse_wording: như mục partial không critical: 3.5/4 → 88, at_risk
+ok 1241 - adverse_wording: như mục partial không critical: 3.5/4 → 88, at_risk
+  ---
+  duration_ms: 74.4468
+  ...
+# Subtest: commitment_vs_hsmt: không cộng điểm nhưng không cho pass
+ok 1242 - commitment_vs_hsmt: không cộng điểm nhưng không cho pass
+  ---
+  duration_ms: 10.9285
+  ...
+# Subtest: commitment_vs_hsmt không hạ kết luận đang fail xuống at_risk
+ok 1243 - commitment_vs_hsmt không hạ kết luận đang fail xuống at_risk
+  ---
+  duration_ms: 9.3441
+  ...
+# Subtest: tệp mã nguồn trong git không có ký tự điều khiển (backspace, NUL, ESC...)
+ok 1244 - tệp mã nguồn trong git không có ký tự điều khiển (backspace, NUL, ESC...)
+  ---
+  duration_ms: 1281.8558
+  ...
+# Subtest: pdfText: the same text repeated per model stays in one row
+ok 1245 - pdfText: the same text repeated per model stays in one row
+  ---
+  duration_ms: 2.5528
+  ...
+# Subtest: engine maker's column datasheet: one engine per model column
+ok 1246 - engine maker's column datasheet: one engine per model column
+  ---
+  duration_ms: 52.7949
+  ...
+# Subtest: a row with fewer values than models (merged cells) gives no figure to any column
+ok 1247 - a row with fewer values than models (merged cells) gives no figure to any column
+  ---
+  duration_ms: 3.1298
+  ...
+# Subtest: a maker that also names the engine in a row keeps its Model row as the genset
+ok 1248 - a maker that also names the engine in a row keeps its Model row as the genset
+  ---
+  duration_ms: 2.7923
+  ...
+# Subtest: engines side by side: a column with a rated speed outside 1000-1800/3000/3600 is not read, 1500 and no speed stay
+ok 1249 - engines side by side: a column with a rated speed outside 1000-1800/3000/3600 is not read, 1500 and no speed stay
+  ---
+  duration_ms: 7.0739
+  ...
+# Subtest: diff: thay đổi từng trường, bản ghi mất / thêm, theo NCC
+ok 1250 - diff: thay đổi từng trường, bản ghi mất / thêm, theo NCC
+  ---
+  duration_ms: 21.3642
+  ...
+# Subtest: records: bản ghi trùng khoá đánh số, NCC incomplete bị bỏ
+ok 1251 - records: bản ghi trùng khoá đánh số, NCC incomplete bị bỏ
+  ---
+  duration_ms: 0.4178
+  ...
+# Subtest: swaps: mã mà ≥ 3 NCC khác đọc ở vai kia
+ok 1252 - swaps: mã mà ≥ 3 NCC khác đọc ở vai kia
+  ---
+  duration_ms: 1.3456
+  ...
+# Subtest: checkSpec: quan hệ số với công suất của chính dòng
+ok 1253 - checkSpec: quan hệ số với công suất của chính dòng
+  ---
+  duration_ms: 1.3834
+  ...
+# Subtest: verify: giá trị không tự xác nhận được thì vào danh sách soát tay
+ok 1254 - verify: giá trị không tự xác nhận được thì vào danh sách soát tay
+  ---
+  duration_ms: 0.9843
+  ...
+# Subtest: markdown: bảng theo NCC, ví dụ mỗi dạng, đảo vai tăng thì ghi chặn
+ok 1255 - markdown: bảng theo NCC, ví dụ mỗi dạng, đảo vai tăng thì ghi chặn
+  ---
+  duration_ms: 46.4503
+  ...
+# Subtest: run: hai bản spec-norm.js trong cùng tiến trình, đổi kết quả chuẩn hoá được đếm
+ok 1256 - run: hai bản spec-norm.js trong cùng tiến trình, đổi kết quả chuẩn hoá được đếm
+  ---
+  duration_ms: 14699.7715
+  ...
+# Subtest: CLI: --gate thoát 1 khi đảo vai tăng
+ok 1257 - CLI: --gate thoát 1 khi đảo vai tăng
+  ---
+  duration_ms: 9832.5916
+  ...
+# Subtest: the flag is ON by default (Khoa 17/11: every machine); 0 turns it off
+ok 1258 - the flag is ON by default (Khoa 17/11: every machine); 0 turns it off
+  ---
+  duration_ms: 3.8905
+  ...
+# Subtest: by group: fuel on alone leaves a displacement in cc compared as before
+ok 1259 - by group: fuel on alone leaves a displacement in cc compared as before
+  ---
+  duration_ms: 546.2943
+  ...
+# Subtest: normFig: fuel needs L/h at the HSMT's load; noise its distance; weight / size open or canopied
+ok 1260 - normFig: fuel needs L/h at the HSMT's load; noise its distance; weight / size open or canopied
+  ---
+  duration_ms: 28.0962
+  ...
+# Subtest: candidates: a fuel figure whose heading names no load is the 100% figure under the flag too (kept, the old 300 points off)
+ok 1261 - candidates: a fuel figure whose heading names no load is the 100% figure under the flag too (kept, the old 300 points off)
+  ---
+  duration_ms: 53.6648
+  ...
+# Subtest: candidates: a displacement in cc is not compared with the HSMT's litres under the flag
+ok 1262 - candidates: a displacement in cc is not compared with the HSMT's litres under the flag
+  ---
+  duration_ms: 21.6806
+  ...
+# Subtest: candidates: a source the layer cannot compare keeps the row (Chưa rõ), even when another source is below
+ok 1263 - candidates: a source the layer cannot compare keeps the row (Chưa rõ), even when another source is below
+  ---
+  duration_ms: 10.1848
+  ...
+# Subtest: khoaRules: a weight with no open / canopy written is compared, under the flag too, unless the HSMT asks one build
+ok 1264 - khoaRules: a weight with no open / canopy written is compared, under the flag too, unless the HSMT asks one build
+  ---
+  duration_ms: 34.8359
+  ...
+# Subtest: enginePowerOf: two kW figures with no order under the flag: the smaller is prime, the larger standby
+ok 1265 - enginePowerOf: two kW figures with no order under the flag: the smaller is prime, the larger standby
+  ---
+  duration_ms: 6.8969
+  ...
+# Subtest: oil: lube oil CONSUMPTION (g/kWh) is not the oil capacity
+ok 1266 - oil: lube oil CONSUMPTION (g/kWh) is not the oil capacity
+  ---
+  duration_ms: 12.1777
+  ...
+# Subtest: eff: a gas genset's electrical / thermal / overall efficiency is not the alternator efficiency
+ok 1267 - eff: a gas genset's electrical / thermal / overall efficiency is not the alternator efficiency
+  ---
+  duration_ms: 0.7218
+  ...
+# Subtest: speed: the torque column (peak torque, 最大扭矩) is not the speed
+ok 1268 - speed: the torque column (peak torque, 最大扭矩) is not the speed
+  ---
+  duration_ms: 0.7342
+  ...
+# Subtest: pf: 'cos' inside a word (técnicos) is not the power factor
+ok 1269 - pf: 'cos' inside a word (técnicos) is not the power factor
+  ---
+  duration_ms: 0.3416
+  ...
+# Subtest: cooling: a shifted column's text (ATS screen, control module, power, temperature) is not a cooling value
+ok 1270 - cooling: a shifted column's text (ATS screen, control module, power, temperature) is not a cooling value
+  ---
+  duration_ms: 0.8152
+  ...
+# Subtest: keywords: 吸气方式 → asp, 燃油率 → fuel, 润滑油 容量 → oil
+ok 1271 - keywords: 吸气方式 → asp, 燃油率 → fuel, 润滑油 容量 → oil
+  ---
+  duration_ms: 0.4797
+  ...
+# Subtest: pf: Power factor / 功率因数 labels (the word 'power' no longer drops them)
+ok 1272 - pf: Power factor / 功率因数 labels (the word 'power' no longer drops them)
+  ---
+  duration_ms: 0.9607
+  ...
+# Subtest: cooling: engine cooling only — aftercooling, charge air, piston and air/air cooling are other systems
+ok 1273 - cooling: engine cooling only — aftercooling, charge air, piston and air/air cooling are other systems
+  ---
+  duration_ms: 0.5873
+  ...
+# Subtest: fuel: a percentage is not a fuel figure (lees-power 'Gas Consumption' column sits over the efficiency column: '33%')
+ok 1274 - fuel: a percentage is not a fuel figure (lees-power 'Gas Consumption' column sits over the efficiency column: '33%')
+  ---
+  duration_ms: 0.5238
+  ...
+# Subtest: lees-power: the header has no title over the engine column, so no figure is laid under a title one column to the left
+ok 1275 - lees-power: the header has no title over the engine column, so no figure is laid under a title one column to the left
+  ---
+  duration_ms: 82.2
+  ...
+# Subtest: model: a make before the model is dropped on the line read from a product line too (genesal-energy 'VOLVO TAD1642GE')
+ok 1276 - model: a make before the model is dropped on the line read from a product line too (genesal-energy 'VOLVO TAD1642GE')
+  ---
+  duration_ms: 7.9658
+  ...
+# Subtest: horizontal table: a make of two words before the code ('Volvo Penta TAD734GE') still names an engine row
+ok 1277 - horizontal table: a make of two words before the code ('Volvo Penta TAD734GE') still names an engine row
+  ---
+  duration_ms: 5.4491
+  ...
+# Subtest: runtime: 'Running time @ 75% PRP' and 'Fuel Tank running hours' are hours, not the 75% fuel consumption or the tank
+ok 1278 - runtime: 'Running time @ 75% PRP' and 'Fuel Tank running hours' are hours, not the 75% fuel consumption or the tank
+  ---
+  duration_ms: 0.6186
+  ...
+# Subtest: speed / voltage: a rating-condition title ('1500 rpm, 400V/50Hz/3P, 0.8PF') and 'Fre/Volt HZ/V 频率 /电压' are not speed / voltage
+ok 1279 - speed / voltage: a rating-condition title ('1500 rpm, 400V/50Hz/3P, 0.8PF') and 'Fre/Volt HZ/V 频率 /电压' are not speed / voltage
+  ---
+  duration_ms: 0.8514
+  ...
+# Subtest: dims: the engine's own size ('Engine Size(mm)') is not the genset's
+ok 1280 - dims: the engine's own size ('Engine Size(mm)') is not the genset's
+  ---
+  duration_ms: 0.4616
+  ...
+# Subtest: fuel is the 100% load figure: a label naming another load (25%, 70%, 110%, 1/4) is not `fuel`
+ok 1281 - fuel is the 100% load figure: a label naming another load (25%, 70%, 110%, 1/4) is not `fuel`
+  ---
+  duration_ms: 0.5627
+  ...
+# Subtest: keyOf: a trailing * (footnote) is dropped; O/0 and I/1 stay apart
+ok 1282 - keyOf: a trailing * (footnote) is dropped; O/0 and I/1 stay apart
+  ---
+  duration_ms: 0.3803
+  ...
+# Subtest: horizontal table: a make before the engine model and a * after it are not part of the model
+ok 1283 - horizontal table: a make before the engine model and a * after it are not part of the model
+  ---
+  duration_ms: 1.4739
+  ...
+# Subtest: isCode: cells that are a value, not a model (Khoa 2026-11-17)
+ok 1284 - isCode: cells that are a value, not a model (Khoa 2026-11-17)
+  ---
+  duration_ms: 3.4105
+  ...
+# Subtest: table row: a note after the engine code, or an empty engine cell, does not turn the alternator into the engine
+ok 1285 - table row: a note after the engine code, or an empty engine cell, does not turn the alternator into the engine
+  ---
+  duration_ms: 39.9878
+  ...
+# Subtest: walkedSpecs: a power title over two cells (kVA | kW) does not shift the titles after it (rà soát lệch cột 18/11/2026)
+ok 1286 - walkedSpecs: a power title over two cells (kVA | kW) does not shift the titles after it (rà soát lệch cột 18/11/2026)
+  ---
+  duration_ms: 16.1774
+  ...
+# Subtest: label sheet with no part headings (himoinsa, hipower): the Model beside the engine lines is the engine, Starting power is not the output (rà soát 18/11/2026)
+ok 1287 - label sheet with no part headings (himoinsa, hipower): the Model beside the engine lines is the engine, Starting power is not the output (rà soát 18/11/2026)
+  ---
+  duration_ms: 9.1226
+  ...
+# Subtest: label sheet: the kVA of the genset and the kW of its engine, on two lines, are not one output (longkai, rà soát 18/11/2026)
+ok 1288 - label sheet: the kVA of the genset and the kW of its engine, on two lines, are not one output (longkai, rà soát 18/11/2026)
+  ---
+  duration_ms: 2.1705
+  ...
+# Subtest: engine and alternator are not swapped (acepow, cldj-fujian, longkai, tecnogen; rà soát 18/11/2026)
+ok 1289 - engine and alternator are not swapped (acepow, cldj-fujian, longkai, tecnogen; rà soát 18/11/2026)
+  ---
+  duration_ms: 26.3653
+  ...
+# Subtest: saneSpecs: figures the row's own output rules out are left out (rà soát 18/11/2026, mục A5)
+ok 1290 - saneSpecs: figures the row's own output rules out are left out (rà soát 18/11/2026, mục A5)
+  ---
+  duration_ms: 3.2451
+  ...
+# Subtest: specTodo: NCC chưa có dòng bảng nào, trừ NCC đã đánh dấu tìm không ra
+ok 1291 - specTodo: NCC chưa có dòng bảng nào, trừ NCC đã đánh dấu tìm không ra
+  ---
+  duration_ms: 3.2085
+  ...
+# Subtest: mark: ghi ngày + lý do, sắp theo id, giữ mục cũ
+ok 1292 - mark: ghi ngày + lý do, sắp theo id, giữ mục cũ
+  ---
+  duration_ms: 37.7654
+  ...
+# Subtest: specNone: chưa có tệp → rỗng; tệp hỏng → báo lỗi (không âm thầm tìm lại tất cả)
+ok 1293 - specNone: chưa có tệp → rỗng; tệp hỏng → báo lỗi (không âm thầm tìm lại tất cả)
+  ---
+  duration_ms: 4.4143
+  ...
+# Subtest: partsOf: a text that fits is one part
+ok 1294 - partsOf: a text that fits is one part
+  ---
+  duration_ms: 2.9814
+  ...
+# Subtest: partsOf: whole lines, each part within max, overlap, every line covered, ranges named
+ok 1295 - partsOf: whole lines, each part within max, overlap, every line covered, ranges named
+  ---
+  duration_ms: 10.0811
+  ...
+# Subtest: partsOf: the last line of a part is the first of the next (a table row is not split)
+ok 1296 - partsOf: the last line of a part is the first of the next (a table row is not split)
+  ---
+  duration_ms: 4.6457
+  ...
+# Subtest: partsOf: a very long line is cut in pieces, not lost
+ok 1297 - partsOf: a very long line is cut in pieces, not lost
+  ---
+  duration_ms: 2.1051
+  ...
+# Subtest: specsMerge: technicalSpecs joined, the overlap read twice kept once
+ok 1298 - specsMerge: technicalSpecs joined, the overlap read twice kept once
+  ---
+  duration_ms: 27.6704
+  ...
+# Subtest: specsMerge: same item, other figures in two parts: both kept, unverified, said in the notes
+ok 1299 - specsMerge: same item, other figures in two parts: both kept, unverified, said in the notes
+  ---
+  duration_ms: 0.7345
+  ...
+# Subtest: specsMerge: the same quote with other figures is not chosen between
+ok 1300 - specsMerge: the same quote with other figures is not chosen between
+  ---
+  duration_ms: 0.6285
+  ...
+# Subtest: specsMerge: generatorSets joined by size, nulls filled from the other part
+ok 1301 - specsMerge: generatorSets joined by size, nulls filled from the other part
+  ---
+  duration_ms: 1.1886
+  ...
+# Subtest: specsMerge: sets of the same size stated differently: the field is null, not chosen, a note
+ok 1302 - specsMerge: sets of the same size stated differently: the field is null, not chosen, a note
+  ---
+  duration_ms: 0.8619
+  ...
+# Subtest: specsMerge: prime and standby of the same number are other sizes
+ok 1303 - specsMerge: prime and standby of the same number are other sizes
+  ---
+  duration_ms: 0.6775
+  ...
+# Subtest: specsMerge: generatorCapacity — the same text once; different texts: made from the sets, or null with a note
+ok 1304 - specsMerge: generatorCapacity — the same text once; different texts: made from the sets, or null with a note
+  ---
+  duration_ms: 1.6721
+  ...
+# Subtest: specsFinish: parts without generator content are skipped; all empty is none; checkResult runs on the whole text
+ok 1305 - specsFinish: parts without generator content are skipped; all empty is none; checkResult runs on the whole text
+  ---
+  duration_ms: 79.107
+  ...
+# Subtest: specsFinish: a joined set's quote that is not in the text is dropped
+ok 1306 - specsFinish: a joined set's quote that is not in the text is dropped
+  ---
+  duration_ms: 5.9793
+  ...
+# Subtest: specsMerge: generatorCapacity by figures — other words, same figures: no conflict, the fuller text kept as written
+ok 1307 - specsMerge: generatorCapacity by figures — other words, same figures: no conflict, the fuller text kept as written
+  ---
+  duration_ms: 1.8222
+  ...
+# Subtest: specsMerge: generatorCapacity — two values for one quantity are not known (kind, count, size)
+ok 1308 - specsMerge: generatorCapacity — two values for one quantity are not known (kind, count, size)
+  ---
+  duration_ms: 0.9491
+  ...
+# Subtest: specsMerge: the same entry under other words (the longer quote kept)
+ok 1309 - specsMerge: the same entry under other words (the longer quote kept)
+  ---
+  duration_ms: 0.9462
+  ...
+# Subtest: specsMerge: the same entry, same figures, almost the same requirement, other parts; same item without the size
+ok 1310 - specsMerge: the same entry, same figures, almost the same requirement, other parts; same item without the size
+  ---
+  duration_ms: 1.3612
+  ...
+# Subtest: specsMerge: not merged when in doubt — machine sizes, engine vs alternator, same part, other figures
+ok 1311 - specsMerge: not merged when in doubt — machine sizes, engine vs alternator, same part, other figures
+  ---
+  duration_ms: 1.3746
+  ...

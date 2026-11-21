@@ -2,7 +2,7 @@
 
 **Kết luận: xong cả hai, test 1.495 / 1.495 đạt ở commit 1 (xem "Kiểm" cho commit 2); KHÔNG đo top 30 (đúng brief). Điểm không đổi ở mọi dòng; top 30 chỉ đổi (a) thứ tự giữa các dòng cùng điểm, (b) chỗ cắt ở hạng 30 khi có hoà, (c) lượt có Doosan / Hyundai dưới trần mỗi hãng hoặc `MAKE_ROWS`.**
 
-PR: (điền sau khi mở). Nhánh `thu-tu-hang`, worktree `wt-thu-tu-hang`, merge-base = origin/main 95ecba26 (#1012). Hai commit riêng.
+PR: https://github.com/khoanguyenminh6868/GenSet-Pro/pull/1015 (draft), HEAD a333af04. Nhánh `thu-tu-hang`, worktree `wt-thu-tu-hang`, merge-base = origin/main 95ecba26 (#1012). Hai commit riêng.
 
 ## Tệp đổi
 - `suppliers/config-bot.mjs` (commit 1: `cmpStr`, `gap` dời lên trước lần sắp xếp, `rowOrder`; commit 2: `makeGroup`, hai chỗ dùng).
@@ -37,7 +37,7 @@ Cùng tập dòng thì cùng thứ tự bất kể thứ tự duyệt (test: đ�
 ## Kiểm
 - `node --test suppliers/cand-tie-order.test.mjs suppliers/cand-make-group.test.mjs`: 3 / 3 đạt. Trên origin/main: `cand-tie-order` test 1 "not ok", `cand-make-group` "not ok" (đã chạy trước khi sửa để xác nhận test bắt được lỗi).
 - Commit 1: `node --test web/test/*.test.mjs suppliers/*.test.mjs`: tests 1495, pass 1495, fail 0.
-- Commit 2 + toàn bộ: xem dòng dưới (điền khi chạy xong).
+- Commit 2 + toàn bộ (kèm sửa `suppliers/CLAUDE.md`): tests 1496, pass 1496, fail 0.
 - CI: xem PR.
 
 ## Mẫu đối chiếu (3) và số đo
