@@ -75,9 +75,17 @@ test("S8-2: cột 'cm3' → disp nhãn 'cm3' y ô; spec-norm đổi sang L (l_fr
   assert.ok(!b.specs.some((x) => x.key === "disp"));
 });
 
-test("S8-2 hồ sơ thật: 224 bản ghi động cơ, mỗi bản ghi đúng một disp = ô 8 của dòng, nhãn 'cm3'", () => {
+test("S8-2 hồ sơ thật: 224 bản ghi động cơ, mỗi bản ghi đúng một disp = ô 8 của dòng, nhãn 'cm3'; trừ QSL9G3 / QSL9G7 (dropspec)", () => {
   const s = JSON.parse(fs.readFileSync(new URL("./cn/tecnogen.json", import.meta.url), "utf8"));
   const r = C.fromSupplier(s, []).filter((x) => x.kind === "engine" && x.n >= 2001 && x.n <= 2010);
   assert.equal(r.length, 224);
-  for (const x of r) assert.deepEqual(x.specs.filter((q) => q.key === "disp"), [{ key: "disp", label: "cm3", value: x.line.split("|")[9].trim() }], x.line);
+  // điều phối 22/11/2026: n2002 CU275TSX** QSL9G3 / CU331TSX** QSL9G7 "8800" bỏ riêng dung tích (ROW_EXCEPTIONS); QSL9G5 "8900" giữ.
+  const dropped = new Set(["CU275TSX**|QSL9G3", "CU331TSX**|QSL9G7"]);
+  for (const x of r) {
+    const d = x.specs.filter((q) => q.key === "disp");
+    if (x.n === 2002 && dropped.has(`${x.genset}|${x.model}`)) assert.deepEqual(d, [], x.line);
+    else assert.deepEqual(d, [{ key: "disp", label: "cm3", value: x.line.split("|")[9].trim() }], x.line);
+  }
+  assert.equal(r.filter((x) => x.specs.some((q) => q.key === "disp")).length, 222);
+  assert.equal(r.find((x) => x.model === "QSL9G5").specs.find((q) => q.key === "disp").value, "8900");
 });
